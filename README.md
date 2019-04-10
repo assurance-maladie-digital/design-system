@@ -25,7 +25,7 @@ The goal of our Design System is to unify our work, this allows teams to share t
 <table>
   <thead>
     <tr>
-      <th>Project</th>
+      <th>Package</th>
       <th>Description</th>
     </tr>
   </thead>

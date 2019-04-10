@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "esnext",
+		"strict": true,
+		"jsx": "preserve",
+		"importHelpers": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"baseUrl": ".",
+		"types": [
+			"node",
+			"jest"
+		],
+		"paths": {
+			"@/*": [
+				"src/*"
+			],
+			"tests-unit/*": [
+				"tests/unit/*"
+			]
+		},
+		"lib": [
+			"esnext",
+			"es2017",
+			"es2015",
+			"dom",
+			"dom.iterable",
+			"scripthost"
+		]
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.vue",
+		"tests/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

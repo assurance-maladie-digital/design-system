@@ -1,7 +1,35 @@
 {
-	"name": "vue-dash",
+	"name": "@cnamts/vue-dash",
 	"version": "0.0.0",
 	"description": "",
-	"author": "Dylan Broussard <deraw@outlook.fr>",
-	"license": "MIT"
+	"license": "MIT",
+	"author": {
+		"name": "Dylan Broussard",
+		"email": "deraw@outlook.fr"
+	},
+	"files": [
+		"dist/*",
+		"template/*",
+		"*.ts"
+	],
+	"bin": {
+		"vue-dash": "dist/cli.js"
+	},
+	"scripts": {
+		"build": "cp -r template dist/template && tsc"
+	},
+	"dependencies": {
+		"clear": "^0.1.0",
+		"figlet": "^1.2.1",
+		"sao": "^1.6.1",
+		"superb": "^3.0.0",
+		"validate-npm-package-name": "^3.0.0",
+		"yargs": "^13.2.2"
+	},
+	"devDependencies": {
+		"@types/figlet": "^1.2.0",
+		"@types/node": "^11.13.2",
+		"@types/yargs": "^13.0.0",
+		"typescript": "^3.4.3"
+	}
 }

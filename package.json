@@ -1,5 +1,5 @@
 {
-	"name": "design-system",
+	"name": "@cnamts/design-system",
 	"private": true,
 	"devDependencies": {
 		"eslint": "^5.16.0",
