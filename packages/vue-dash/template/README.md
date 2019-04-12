@@ -13,4 +13,7 @@ $ <%= pm %> run serve
 
 # Build for production
 $ <%= pm %> run build
+
+# Lint & fix
+$ <%= pm %> run lint
 ```

@@ -1,6 +1,7 @@
 import chalk, { log } from './helpers/chalk';
 import cmd from './helpers/cmd';
 
+import * as glob from 'glob';
 import * as superb from 'superb';
 import * as validate from 'validate-npm-package-name';
 
@@ -51,11 +52,42 @@ module.exports = {
 			validation.errors && validation.errors.length && process.exit(1);
 		}
 
-		const actions = [{
+		const actions: any[] = [{
 			type: 'add',
 			files: '**',
-			templateDir: '@/template'
+			templateDir: './template'
 		}];
+
+		// Move & rename static files
+		actions.push({
+			type: 'move',
+			patterns: {
+				'gitignore': '.gitignore',
+				'_package.json': 'package.json',
+				'_.eslintrc.js': '.eslintrc.js',
+				'_tsconfig.json': 'tsconfig.json'
+			}
+		});
+
+		const tsPatterns: any = {};
+
+		const files: string[] = glob.sync('./template/**/*.ts.ejs');
+
+		if (files) {
+			// Move & rename TypeScript files
+			// in /template, .ts files are prefixed with .ejs
+			// to avoid linter & editor problems
+			files.forEach((file) => {
+				const filePath = file.replace('./template/', '');
+				// Remove .ejs (4 last chars)
+				tsPatterns[filePath] = filePath.slice(0, -4);
+			});
+
+			actions.push({
+				type: 'move',
+				patterns: tsPatterns
+			});
+		}
 
 		return actions;
 	},
