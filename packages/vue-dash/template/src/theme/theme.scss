@@ -1,0 +1,303 @@
+// All the global styles of the theme
+
+// * Vuetify
+
+// Reset max-width for Vuetify ripples
+.v-ripple__container,
+.v-ripple__container *,
+.v-input--selection-controls__ripple {
+	max-width: none;
+}
+
+.application--wrap {
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+
+.theme--light.v-input--is-disabled .v-label,
+.theme--light.v-icon.v-icon--disabled, .theme--light.v-list .v-list--disabled {
+	color: #767676 !important
+}
+
+.theme--light.v-btn.v-btn--disabled .v-icon {
+	color: #949494 !important
+}
+
+.v-tabs__bar .v-tabs__item--disabled {
+	color: #333 !important
+}
+
+.theme--light.v-btn.v-btn--disabled {
+	color: #646464 !important
+}
+
+// Reset Vuetify font-size
+.v-btn,
+.v-tabs__div,
+.body-1 {
+	font-size: .9rem !important;
+}
+
+table.v-table tbody td,
+table.v-table thead th,
+.v-datatable__actions,
+.body-2 {
+	font-size: .8rem;
+}
+
+.v-input,
+.v-label,
+.v-list__tile,
+.subheading {
+	font-size: 1rem !important;
+}
+
+.title {
+	font-size: 1.2rem !important;
+}
+
+.headline {
+	font-size: 1.5rem !important;
+}
+
+// * Custom
+
+// Fonts
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto-Bold-webfont.woff2') format('woff2'),
+		url('/fonts/Roboto-Bold-webfont.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto-Regular-webfont.woff2') format('woff2'),
+		url('/fonts/Roboto-Regular-webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'Material Icons';
+	src: url('/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+		url('/fonts/MaterialIcons-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
+// Default styles and helper classes
+* {
+	$transparent: rgba(0, 0, 0, 0);
+
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	scroll-behavior: smooth;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	word-break: break-word;
+	hyphens: auto;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: $transparent;
+}
+
+[v-cloak] {
+	display: none;
+}
+
+html,
+body {
+	// Font size defined by the browser
+	font-size: 100%;
+}
+
+body {
+	min-height: 100vh;
+	line-height: 1.25;
+}
+
+input {
+	appearance: none;
+}
+
+ul {
+	list-style: none;
+}
+
+a,
+input,
+button {
+	transition: .25s;
+}
+
+.sr-only {
+	position: absolute !important;
+	top: 0;
+	left: -999px;
+	width: 1px !important;
+	height: 1px !important;
+	white-space: nowrap;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.required label::after {
+	top: -2px;
+	content: '*';
+	position: relative;
+}
+
+// Fade <transition>
+.fade-enter-active,
+.fade-leave-active {
+	transition-duration: .15s;
+	transition-property: opacity;
+	transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
+
+.page {
+	padding: 48px;
+	align-items: center;
+	flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+	.page {
+		padding: 15px !important;
+	}
+}
+
+.page-card {
+	width: 1184px;
+	min-height: 500px;
+	padding: 16px 24px;
+
+	&:not(.no-shadow) {
+		box-shadow:
+			-1px 3px 5px -2px rgba(0, 0, 0, .1),
+			0 5px 4px 0 rgba(0, 0, 0, .1),
+			0 1px 3px 0 rgba(0, 0, 0, .1),
+			0 -1px 10px 0 rgba(0, 0, 0, .1);
+	}
+}
+
+.overflow-table {
+	width: 100%;
+	position: relative;
+
+	&.fixed {
+		.v-table {
+			overflow: hidden;
+			table-layout: fixed;
+
+			th, td {
+				padding: 0 12px;
+			}
+		}
+	}
+
+	&.row-clickable .v-table tbody tr {
+		cursor: pointer;
+	}
+
+	&.fixed-min-height {
+		.v-table__overflow {
+			min-height: 540px;
+		}
+	}
+
+	thead {
+		background: #eee;
+
+		th {
+			font-size: .8rem;
+			color: #000 !important;
+			font-weight: 400 !important;
+		}
+
+		tr {
+			height: 48px;
+		}
+	}
+
+	.v-table {
+		background-color: transparent;
+	}
+
+	.v-table__overflow {
+		overflow: auto;
+		max-width: 100%;
+		background:
+			// Masks
+			linear-gradient(
+				to right,
+				#fff 30%,
+				rgba(255, 255, 255, 0)
+			),
+			linear-gradient(
+				to right,
+				rgba(255, 255, 255, 0),
+				#fff 70%
+			) 0 100%,
+
+			// Shadows
+			linear-gradient(
+				to right,
+				rgba(0, 0, 0, .2),
+				rgba(0, 0, 0, .1) 0%,
+				transparent
+			),
+			linear-gradient(
+				to left,
+				rgba(0, 0, 0, .2),
+				rgba(0, 0, 0, .1) 0%,
+				transparent
+			) 0 100%;
+		background-repeat: no-repeat;
+		background-color: #fff;
+		background-size:
+			60px 100%,
+			60px 100%,
+			35px 100%,
+			35px 100%;
+		background-position:
+			0 0,
+			100%,
+			0 0,
+			100%;
+		background-attachment:
+			local,
+			local,
+			scroll,
+			scroll;
+	}
+}

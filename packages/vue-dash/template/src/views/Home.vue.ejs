@@ -1,0 +1,51 @@
+<template>
+	<VLayout class="page">
+		<VCard class="page-card py-4 layout column align-start">
+			<h2 class="title font-weight-bold primary--text mb-4">
+				{{ $t('views.home.title') }}
+			</h2>
+
+			<p>{{ $t('views.home.description.block1') }}</p>
+
+			<p>{{ $t('views.home.description.block2') }}</p>
+
+			<RouterLink
+				:to="$t('views.home.about.to')"
+			>
+				{{ $t('views.home.about.label') }}
+			</RouterLink>
+
+			<VSpacer />
+
+			<VBtn
+				class="ma-0"
+				color="accent"
+				outline
+				@click="sendNotification"
+			>
+				{{ $t('views.home.notify') }}
+			</VBtn>
+		</VCard>
+	</VLayout>
+</template>
+
+<script lang="ts">
+	import Vue, { VueConstructor } from 'vue';
+	import { mapActions } from 'vuex';
+
+	import VuexBindings from '@/store/types';
+
+	export default (Vue as VueConstructor<Vue & VuexBindings>).extend({
+		name: 'Home',
+		methods: {
+			...mapActions('notification', ['notify']),
+			sendNotification() {
+				this.notify({
+					type: 'success',
+					message: 'Exemple de notification',
+					icon: 'check'
+				});
+			}
+		}
+	});
+</script>

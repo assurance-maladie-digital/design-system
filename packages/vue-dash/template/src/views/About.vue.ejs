@@ -1,0 +1,44 @@
+<template>
+	<VLayout class="page">
+		<VCard class="page-card py-4 layout column align-start">
+			<h2 class="title font-weight-bold primary--text">
+				{{ $t('views.about.title') }}
+			</h2>
+
+			<Links
+				v-for="(data, index) in $t('views.about.links')"
+				:key="index"
+				:title="data.title"
+				:links="data.links"
+				class="mt-4"
+			/>
+
+			<VSpacer />
+
+			<VBtn
+				exact
+				class="ma-0"
+				color="accent"
+				outline
+				:to="$t('views.about.backBtn.url')"
+			>
+				<VIcon class="mr-2">
+					arrow_back
+				</VIcon>
+
+				{{ $t('views.about.backBtn.label') }}
+			</VBtn>
+		</VCard>
+	</VLayout>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+
+	export default Vue.extend({
+		name: 'About',
+		components: {
+			Links: () => import(/* webpackChunkName: "links" */ '@/components/Links.vue')
+		}
+	});
+</script>

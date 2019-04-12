@@ -1,0 +1,21 @@
+// Exemple service
+import axios, { catcher } from '@/plugins/axios';
+
+const anomalies = {
+	getAll(pagination: object) {
+		return axios
+			.get('/api/all', {
+				params: {
+					pagination
+				}
+			})
+			.catch((error) => catcher(error));
+	},
+	updateStatus(id: string, payload: object) {
+		return axios
+			.post(`/api/${id}/status`, payload)
+			.catch((error) => catcher(error));
+	}
+};
+
+export default anomalies;

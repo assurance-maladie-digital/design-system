@@ -1,0 +1,23 @@
+import Vue from 'vue';
+import Vuetify, { VDatePicker, VTextField, VMenu } from 'vuetify/lib';
+import { Resize, Ripple } from 'vuetify/lib/directives';
+
+import fr from 'vuetify/src/locale/fr';
+
+Vue.use(Vuetify, {
+	components: {
+		VDatePicker,
+		VTextField,
+		VMenu
+	},
+	lang: {
+		locales: { fr },
+		current: 'fr'
+	},
+	directives: {
+		Resize,
+		Ripple
+	}
+});
+
+import 'vuetify/src/stylus/app.styl';

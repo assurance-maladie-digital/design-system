@@ -18,7 +18,7 @@
 
 ## Introduction
 
-The goal of our Design System is to unify our work, this allows teams to share their knowledge more easily and speed-up development of products.
+The goal of our Design System is to unify our work, which allows teams to share their knowledge more easily and speed-up development of products.
 
 ## Ecosystem
 

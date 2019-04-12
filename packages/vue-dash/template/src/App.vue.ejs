@@ -1,0 +1,63 @@
+<template>
+	<!-- VApp is an element which is required to use Vuetify. See https://vuetifyjs.com/en/ for help -->
+	<VApp
+		v-cloak
+		class="main-ctn"
+	>
+		<Header />
+
+		<NotificationBar />
+
+		<Toolbar />
+
+		<VContent role="main">
+			<!-- Transition between routes -->
+			<transition
+				name="fade"
+				mode="out-in"
+			>
+				<!-- Load the component defined in the router for the current route -->
+				<RouterView />
+			</transition>
+		</VContent>
+
+		<Footer />
+	</VApp>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+
+	import { MetaInfo } from 'vue-meta';
+
+	// Static load for faster rendering
+	import Header from '@/components/Header.vue';
+	import Toolbar from '@/components/Toolbar.vue';
+	import Footer from '@/components/Footer.vue';
+
+	// App is your main component, it will contain your application with `router-view`
+	export default Vue.extend({
+		name: 'App',
+		components: {
+			Header,
+			Toolbar,
+			Footer,
+			// Dynamic laod
+			NotificationBar: () => import('@/components/NotificationBar.vue')
+		},
+		metaInfo(): MetaInfo {
+			return {
+				// If no subcomponents specify a metaInfo.title, this title will be used
+				title: this.$t('common.meta.title') as string,
+				// All titles will be injected into this template
+				titleTemplate: this.$t('common.meta.titleTemplate') as string,
+				meta: [
+					{
+						name: 'description',
+						content: this.$t('common.meta.description') as string
+					}
+				]
+			};
+		}
+	});
+</script>

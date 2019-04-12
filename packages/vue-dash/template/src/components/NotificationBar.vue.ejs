@@ -1,0 +1,52 @@
+<template>
+	<VSnackbar
+		v-if="notification"
+		:value="true"
+		:timeout="0"
+		:color="notification.type"
+		top
+	>
+		<VLayout justify-center>
+			<SvgIcon
+				:icon="notification.icon"
+				class="mr-2"
+			/>
+
+			<template>
+				{{ notification.message }}
+			</template>
+		</VLayout>
+
+		<VBtn
+			color="white"
+			flat
+			@click="remove"
+		>
+			{{ $t('components.notificationBar.close') }}
+		</VBtn>
+	</VSnackbar>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import { mapActions, mapState } from 'vuex';
+
+	export default Vue.extend({
+		name: 'NotificationBar',
+		computed: {
+			...mapState('notification', ['notification'])
+		},
+		created() {
+			// Remove notification if present when the page is loaded the first time
+			if (this.notification) {
+				this.remove();
+			}
+		},
+		beforeDestroy() {
+			this.remove();
+		},
+		methods: {
+			...mapActions('notification', ['remove'])
+		}
+	});
+</script>

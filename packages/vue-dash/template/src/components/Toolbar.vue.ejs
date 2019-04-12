@@ -1,0 +1,51 @@
+<template>
+	<VToolbar
+		class="secondary"
+		disabled
+	>
+		<div class="group left">
+			<VBtn
+				exact
+				:aria-label="$t('components.toolbar.actions.home.label')"
+				:to="$t('components.toolbar.actions.home.link')"
+				icon
+			>
+				<SvgIcon
+					color="white"
+					icon="home"
+				/>
+			</VBtn>
+		</div>
+	</VToolbar>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+
+	export default Vue.extend({
+		name: 'Toolbar'
+	});
+</script>
+
+<style lang="scss" scoped>
+	.v-toolbar /deep/ .v-toolbar__content {
+		justify-content: center;
+	}
+
+	.group {
+		top: 50%;
+		position: absolute;
+		transform: translateY(-50%);
+
+		&.left {
+			left: 20px;
+		}
+	}
+
+	@media only screen and (max-width: 1100px) {
+		.group {
+			position: static;
+			transform: none;
+		}
+	}
+</style>

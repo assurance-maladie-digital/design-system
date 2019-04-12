@@ -1,0 +1,94 @@
+<template>
+	<VLayout
+		class="header pb-3 primary"
+		justify-center
+		column
+		align-center
+		tag="header"
+		role="header"
+	>
+		<RouterLink
+			:aria-label="$t('components.header.logoBtn.label')"
+			:to="{ name: 'home' }"
+			exact
+			class="logo-link white"
+		>
+			<img
+				:alt="$t('components.header.logoBtn.alt')"
+				src="../assets/logo.svg"
+				class="d-block mx-auto logo"
+			>
+		</RouterLink>
+
+		<VLayout class="inner-toolbar">
+			<h1 class="white--text headline mt-4">
+				{{ $t('components.header.title') }}
+			</h1>
+		</VLayout>
+	</VLayout>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+
+	export default Vue.extend({
+		name: 'Header'
+	});
+</script>
+
+<style lang="scss" scoped>
+	.header {
+		flex: none;
+		position: relative;
+
+		&::after {
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			content: "";
+			height: 45px;
+			position: absolute;
+			background: #fff;
+		}
+	}
+
+	.logo-link {
+		z-index: 1;
+		overflow: hidden;
+		min-width: 155px;
+		position: relative;
+		display: inline-block;
+		border-bottom-left-radius: 9px;
+		border-bottom-right-radius: 9px;
+	}
+
+	.logo {
+		height: 75px;
+		padding: 8px;
+	}
+
+	.inner-toolbar {
+		width: 100%;
+		position: relative;
+		justify-content: center;
+
+		h1 {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	@media only screen and (max-width: 750px) {
+		.inner-toolbar h1 {
+			max-width: 280px;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.inner-toolbar {
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+</style>

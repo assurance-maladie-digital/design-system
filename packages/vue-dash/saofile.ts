@@ -49,7 +49,7 @@ module.exports = {
 				console.error('Error:', error)
 			});
 
-			validation.errors && validation.errors.length && process.exit(1);
+			validation.errors.length && process.exit(1);
 		}
 
 		const actions: any[] = [{
@@ -65,22 +65,26 @@ module.exports = {
 				'gitignore': '.gitignore',
 				'_package.json': 'package.json',
 				'_.eslintrc.js': '.eslintrc.js',
+				'_.eslintignore': '.eslintignore',
 				'_tsconfig.json': 'tsconfig.json'
 			}
 		});
 
 		const tsPatterns: any = {};
 
-		const files: string[] = glob.sync('./template/**/*.ts.ejs');
+		const files: string[] = glob.sync('./template/**/*.ejs');
 
 		if (files) {
-			// Move & rename TypeScript files
-			// in /template, .ts files are prefixed with .ejs
+			// Move & rename EJS files
+			// in /template, some files are prefixed with .ejs
 			// to avoid linter & editor problems
 			files.forEach((file) => {
 				const filePath = file.replace('./template/', '');
 				// Remove .ejs (4 last chars)
-				tsPatterns[filePath] = filePath.slice(0, -4);
+				const trimed = filePath.slice(0, -4);
+
+				// Add to patterns
+				tsPatterns[filePath] = trimed;
 			});
 
 			actions.push({
@@ -88,6 +92,18 @@ module.exports = {
 				patterns: tsPatterns
 			});
 		}
+
+		// Modify public/index.html
+		actions.push({
+			type: 'modify',
+			files: 'public/index.html',
+			handler(data: string) {
+				// Replace special match for EJS compilation by Vue CLI
+				const newData = data.replace(/{BASE_URL}/g, '<%= BASE_URL %>');
+
+				return newData;
+			}
+		});
 
 		return actions;
 	},

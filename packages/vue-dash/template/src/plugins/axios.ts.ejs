@@ -1,0 +1,21 @@
+import axios from 'axios';
+import Raven from 'raven-js';
+import { AxiosError } from 'axios';
+
+declare const API_URL: string;
+
+const instance = axios.create({
+	withCredentials: false,
+	baseURL: API_URL,
+	headers: {
+		'Accept': 'application/json',
+		'Content-Type': 'application/json'
+	}
+});
+
+export function catcher(error: AxiosError) {
+	Raven.captureException(error);
+	return Promise.reject(error); // For Promise.all().catch
+}
+
+export default instance;

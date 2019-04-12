@@ -17,10 +17,8 @@
 		"@cnamts/vue-dot": "^1.6.2",
 		"axios": "^0.18.0",
 		"dayjs": "^1.8.12",
-		"lodash.clonedeep": "^4.5.0",
 		"raven-js": "^3.27.0",
 		"vue": "^2.6.10",
-		"vue-config": "^1.0.0",
 		"vue-i18n": "^8.10.0",
 		"vue-meta": "^1.6.0",
 		"vue-router": "^3.0.3",
@@ -32,7 +30,6 @@
 	"devDependencies": {
 		"@babel/core": "^7.4.3",
 		"@types/jest": "^24.0.11",
-		"@types/lodash.clonedeep": "^4.5.6",
 		"@types/node": "^11.13.4",
 		"@types/promise.prototype.finally": "^2.0.3",
 		"@typescript-eslint/parser": "^1.6.0",
@@ -77,9 +74,7 @@
 	"jest": {
 		"moduleFileExtensions": [
 			"ts",
-			"tsx",
 			"js",
-			"jsx",
 			"json",
 			"vue"
 		],
@@ -98,7 +93,7 @@
 			"<rootDir>/node_modules/jest-serializer-vue"
 		],
 		"testMatch": [
-			"<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+			"<rootDir>/(tests/unit/**/*.spec.(js|ts)|**/__tests__/*.(js|ts))"
 		],
 		"coverageReporters": [
 			"json",
@@ -114,7 +109,6 @@
 			"!**/node_modules/**",
 			"!**/*.d.ts",
 			"!**/router.ts",
-			"!**/config/index.ts",
 			"!**/main.ts",
 			"!**/plugins/**",
 			"!**/store/**",
@@ -146,6 +140,9 @@
 		]
 	},
 	"majestic": {
-		"jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js test:unit"
+		"jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js",
+		"args": [
+			"test:unit"
+		]
 	}
 }

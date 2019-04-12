@@ -1,0 +1,61 @@
+<template>
+	<VLayout class="page">
+		<VCard class="page-card">
+			<span class="font-weight-bold primary--text code">
+				{{ $t('views.notFound.code') }}
+			</span>
+
+			<h2 class="title mb-2 font-weight-bold">
+				{{ $t('views.notFound.error') }}
+			</h2>
+
+			<p>{{ $t('views.notFound.message') }}</p>
+
+			<VBtn
+				:to="{ name: 'home' }"
+				exact
+				flat
+				color="accent"
+				class="ma-0 back-button"
+			>
+				<SvgIcon
+					icon="back-arrow"
+					class="mr-2"
+				/>
+
+				{{ $t('views.notFound.cta') }}
+			</VBtn>
+		</VCard>
+	</VLayout>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import { MetaInfo } from 'vue-meta';
+
+	export default Vue.extend({
+		name: 'NotFound',
+		metaInfo(): MetaInfo {
+			return {
+				title: this.$t('views.notFound.meta.title') as string,
+				meta: [
+					{
+						name: 'description',
+						content: this.$t('views.notFound.meta.description') as string
+					}
+				]
+			};
+		}
+	});
+</script>
+
+<style lang="scss" scoped>
+	.code {
+		font-size: 6rem;
+		font-family: serif;
+	}
+
+	.back-button {
+		margin: -16px !important;
+	}
+</style>
