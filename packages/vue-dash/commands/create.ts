@@ -1,8 +1,5 @@
 import chalk, { log } from '../helpers/chalk';
 
-import renderHeader from '../helpers/header';
-renderHeader();
-
 import { resolve } from 'path';
 import * as sao from 'sao';
 

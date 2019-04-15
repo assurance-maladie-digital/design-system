@@ -8,4 +8,5 @@ yargs
 	.alias('v', 'version')
 	.alias('h', 'help')
 	.help()
+	.demandCommand()
 	.argv;
