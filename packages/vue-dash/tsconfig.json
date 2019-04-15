@@ -11,7 +11,8 @@
 		"types": [
 			"node",
 			"figlet",
-			"yargs"
+			"yargs",
+			"cross-spawn"
 		],
 		"lib": [
 			"es2018",

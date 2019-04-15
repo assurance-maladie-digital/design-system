@@ -19,7 +19,9 @@
 		"build": "cp -r template dist/template && tsc"
 	},
 	"dependencies": {
+		"@types/cross-spawn": "^6.0.0",
 		"clear": "^0.1.0",
+		"cross-spawn": "^6.0.5",
 		"figlet": "^1.2.1",
 		"glob": "^7.1.3",
 		"sao": "^1.6.1",

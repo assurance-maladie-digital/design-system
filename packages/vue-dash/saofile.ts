@@ -1,6 +1,7 @@
 import chalk, { log } from './helpers/chalk';
 import cmd from './helpers/cmd';
 
+import * as spawn from 'cross-spawn';
 import * as glob from 'glob';
 import * as superb from 'superb';
 import * as validate from 'validate-npm-package-name';
@@ -32,6 +33,12 @@ module.exports = {
 				choices: ['npm', 'yarn'],
 				type: 'list',
 				default: 'yarn'
+			},
+			{
+				name: 'autoStart',
+				type: 'confirm',
+				message: 'Auto start application',
+				default: false
 			}
 		];
 	},
@@ -124,8 +131,18 @@ module.exports = {
 
 		log();
 		log(`🎉  Successfully created project ${chalk.yellow(this.answers.name)}.`);
-		log('👉  Get started with the following commands:\n');
-		cd();
-		cmd(`${this.answers.pm} run serve`);
+
+		if (this.answers.autoStart === false) {
+			log('👉  Get started with the following commands:\n');
+			cd();
+			cmd(`${this.answers.pm} run serve`);
+		} else {
+			const options = ['run', 'serve'];
+
+			spawn.sync(this.answers.pm, options, {
+				cwd: this.outDir,
+				stdio: 'inherit'
+			});
+		}
 	}
 };
