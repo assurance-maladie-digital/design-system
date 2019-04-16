@@ -1,6 +1,6 @@
-# Vue Dash
+<h1 align="center">Vue Dash</h1>
 
-Vue Dash is a tool made to create and manage CNAM front-end projects.
+<p align="center">Vue Dash is a tool made to create and manage CNAM front-end projects.</p>
 
 ![preview](https://user-images.githubusercontent.com/10298932/56207573-5ff3b200-604f-11e9-94c9-ab880eba1524.png)
 
