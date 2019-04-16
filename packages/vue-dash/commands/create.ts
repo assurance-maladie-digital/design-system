@@ -7,14 +7,14 @@ interface Argv {
 	name: string;
 }
 
-exports.command = 'create [name]';
-exports.builder = {};
+exports.command = 'create [name] [options]';
+exports.desc = 'Create new application';
 
 exports.handler = async (argv: Argv) => {
 	// In a custom directory or current directory
 	const outDir = resolve(argv.name || '.');
 
-	log(`✨  Creating new project in ${chalk.yellow(outDir)}`);
+	log(`✨  Creating new application in ${chalk.yellow(outDir)}`);
 
 	const generator = resolve(__dirname, '../');
 
