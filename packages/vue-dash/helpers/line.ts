@@ -1,4 +1,4 @@
-import chalk, { colors } from './chalk';
+import chalk, { colors } from './logger';
 
 // Trace a straight line across the terminal
 export default function traceLine(): void {

@@ -1,5 +1,4 @@
-import chalk, { log } from './helpers/chalk';
-import cmd from './helpers/cmd';
+import chalk, { log, cmd, warn, error } from './helpers/logger';
 
 import * as spawn from 'cross-spawn';
 import * as glob from 'glob';
@@ -58,15 +57,15 @@ module.exports = {
 		// Warnings
 		if (validation.warnings) {
 			validation.warnings.forEach((warning: string) => {
-				console.warn('Warning:', warning)
+				warn(warning)
 			});
 		}
 
 		// Errors
 		if (validation.errors) {
 			// Log all errors
-			validation.errors.forEach((error: string) => {
-				console.error('Error:', error)
+			validation.errors.forEach((err: string) => {
+				error(err);
 			});
 
 			// Exit
@@ -137,20 +136,18 @@ module.exports = {
 		log('📦  Installing dependencies…');
 		await this.npmInstall({ npmClient: this.answers.pm });
 
-		const isNewFolder = this.outDir !== process.cwd();
-
-		const cd = () => {
-			if (isNewFolder) {
-				cmd(`cd ${this.outFolder}`);
-			}
-		}
-
 		log();
 		log(`🎉  Successfully created project ${chalk.yellow(this.answers.name)}.`);
 
 		if (this.answers.autoStart === false) {
 			log('👉  Get started with the following commands:\n');
-			cd();
+
+			const isNewFolder = this.outDir !== process.cwd();
+
+			if (isNewFolder) {
+				cmd(`cd ${this.outFolder}`);
+			}
+
 			cmd(`${this.answers.pm} run serve`);
 		} else {
 			const options = ['run', 'serve'];

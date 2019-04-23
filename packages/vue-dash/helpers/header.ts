@@ -1,4 +1,4 @@
-import chalk, { colors, log, xLog } from './chalk';
+import chalk, { colors, log } from './logger';
 import line from './line';
 import * as figlet from 'figlet';
 
@@ -22,7 +22,7 @@ export default function renderHeader(text = 'Vue Dash'): void {
 	log();
 
 	// Version
-	xLog(`🔖  Version ${version}`, 'event');
+	log(`🔖  Version ${version}`);
 
 	// Author
 	log(`👷  Made by ${chalk.bold(author)}`);

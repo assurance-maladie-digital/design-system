@@ -1,4 +1,4 @@
-import chalk, { log, trace } from '../helpers/chalk';
+import chalk, { event, error } from '../helpers/logger';
 
 import { resolve } from 'path';
 import * as sao from 'sao';
@@ -12,17 +12,17 @@ exports.desc = 'Create new application';
 
 exports.handler = async(argv: Argv) => {
 	// In a custom directory or current directory
-	const outDir = resolve(argv.name || '.');
+	const outDir = resolve(argv.name || process.cwd());
 
-	log(`✨  Creating new application in ${chalk.yellow(outDir)}`);
+	event(`✨  Creating new application in ${chalk.yellow(outDir)}`);
 
 	const generator = resolve(__dirname, '../');
 
 	// See https://saojs.org/api.html#standalone-cli
 	await sao({ generator, outDir, logLevel: 2 })
 		.run()
-		.catch((error: Error) => {
-			trace(error);
+		.catch((err: Error) => {
+			error(err.message);
 			process.exit(1);
 		});
 };
