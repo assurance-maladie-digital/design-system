@@ -1,22 +1,26 @@
 {
 	"name": "@cnamts/vue-dash",
 	"version": "0.0.0",
-	"description": "",
+	"description": "Create and manage CNAM front-end projects",
 	"license": "MIT",
 	"author": {
 		"name": "Dylan Broussard",
 		"email": "deraw@outlook.fr"
 	},
 	"files": [
-		"dist/*",
+		"bin/*",
+		"commands/*",
+		"helpers/*",
 		"template/*",
-		"*.ts"
+		"*.ts",
+		"*.js"
 	],
 	"bin": {
-		"vue-dash": "dist/cli.js"
+		"vue-dash": "./bin/cli.js"
 	},
 	"scripts": {
-		"build": "cp -r template dist/template && tsc"
+		"build": "cp -r template dist/template && tsc",
+		"lint": "eslint **/*.ts --fix"
 	},
 	"dependencies": {
 		"cross-spawn": "^6.0.5",
@@ -32,6 +36,19 @@
 		"@types/figlet": "^1.2.0",
 		"@types/node": "^11.13.2",
 		"@types/yargs": "^13.0.0",
-		"typescript": "^3.4.3"
+		"@typescript-eslint/eslint-plugin": "^1.7.0",
+		"@typescript-eslint/parser": "^1.7.0",
+		"eslint": "^5.16.0",
+		"typescript": "^3.4.3",
+		"yorkie": "^2.0.0"
+	},
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.ts": [
+			"eslint **/*.ts --fix",
+			"git add"
+		]
 	}
 }

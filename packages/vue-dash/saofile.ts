@@ -3,24 +3,30 @@ import cmd from './helpers/cmd';
 
 import * as spawn from 'cross-spawn';
 import * as glob from 'glob';
-import * as superb from 'superb';
 import * as validate from 'validate-npm-package-name';
+
+import * as Superb from 'superb';
+// Make a function, so you can call superb()
+const superb = () => Superb.random();
 
 module.exports = {
 	// Questions for the user
 	prompts() {
 		return [
 			{
+				// Project name
 				name: 'name',
 				message: 'Project name',
 				default: '{outFolder}'
 			},
 			{
+				// Project description
 				name: 'description',
 				message: 'Project description',
-				default: `My ${superb.random()} project`
+				default: `My ${superb()} project`
 			},
 			{
+				// Project author
 				name: 'author',
 				type: 'string',
 				message: 'Author name',
@@ -28,6 +34,7 @@ module.exports = {
 				store: true
 			},
 			{
+				// Package manager to use
 				name: 'pm',
 				message: 'Choose a package manager',
 				choices: ['npm', 'yarn'],
@@ -35,30 +42,38 @@ module.exports = {
 				default: 'yarn'
 			},
 			{
+				// Launch application after creation
 				name: 'autoStart',
 				type: 'confirm',
-				message: 'Auto start application',
+				message: 'Auto start application after creation',
 				default: false
 			}
 		];
 	},
+	// Actions on the files
 	actions() {
+		// Validate the application name
 		const validation = validate(this.answers.name);
 
+		// Warnings
 		if (validation.warnings) {
 			validation.warnings.forEach((warning: string) => {
 				console.warn('Warning:', warning)
 			});
 		}
 
+		// Errors
 		if (validation.errors) {
+			// Log all errors
 			validation.errors.forEach((error: string) => {
 				console.error('Error:', error)
 			});
 
-			validation.errors.length && process.exit(1);
+			// Exit
+			process.exit(1);
 		}
 
+		// Add all files
 		const actions: any[] = [{
 			type: 'add',
 			files: '**',
@@ -114,6 +129,7 @@ module.exports = {
 
 		return actions;
 	},
+	// After prompt & actions
 	async completed() {
 		log('🗃  Initializing git repository…');
 		await this.gitInit();

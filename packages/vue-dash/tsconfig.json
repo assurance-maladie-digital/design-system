@@ -19,7 +19,7 @@
 			"es2015",
 			"scripthost"
 		],
-		"outDir": "dist"
+		"outDir": "bin"
 	},
 	"include": [
 		"**/*.ts"

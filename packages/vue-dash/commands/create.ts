@@ -1,4 +1,4 @@
-import chalk, { log } from '../helpers/chalk';
+import chalk, { log, trace } from '../helpers/chalk';
 
 import { resolve } from 'path';
 import * as sao from 'sao';
@@ -10,7 +10,7 @@ interface Argv {
 exports.command = 'create [name] [options]';
 exports.desc = 'Create new application';
 
-exports.handler = async (argv: Argv) => {
+exports.handler = async(argv: Argv) => {
 	// In a custom directory or current directory
 	const outDir = resolve(argv.name || '.');
 
@@ -22,7 +22,7 @@ exports.handler = async (argv: Argv) => {
 	await sao({ generator, outDir, logLevel: 2 })
 		.run()
 		.catch((error: Error) => {
-			console.trace(error);
+			trace(error);
 			process.exit(1);
 		});
 };

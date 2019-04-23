@@ -1,7 +1,7 @@
 import chalk, { colors } from './chalk';
 
 // Trace a straight line across the terminal
-export default function traceLine() {
+export default function traceLine(): void {
 	const cols = process.stdout.columns || 0;
 
 	// For each column, display `─` in primary color

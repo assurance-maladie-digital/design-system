@@ -6,10 +6,11 @@ export const colors = {
 };
 
 // Basic log
+// eslint-disable-next-line no-console
 export const log = console.log;
 
 // Advanced log
-export function xLog(text: string, type: string) {
+export function xLog(text: string, type: string): void {
 	switch (type) {
 		case 'verbose': {
 			log(chalk.bold.hex('#909090')(('• ' + text)));
@@ -31,6 +32,11 @@ export function xLog(text: string, type: string) {
 			break;
 		}
 	}
-};
+}
+
+export function trace(error: Error) {
+	// eslint-disable-next-line no-console
+	console.trace(error);
+}
 
 export default chalk;

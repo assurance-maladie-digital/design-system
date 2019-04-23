@@ -7,17 +7,15 @@ const author = pkg.author.name;
 const version = pkg.version;
 
 // Display 'Vue Dash' or `text` with 'Georgia11' font, and 'primay' color
-export default function renderHeader(text = 'Vue Dash') {
+export default function renderHeader(text = 'Vue Dash'): void {
+	const txt = figlet.textSync(text, {
+		font: 'Georgia11',
+		horizontalLayout: 'default',
+		verticalLayout: 'default'
+	});
+
 	// Title
-	log(
-		chalk.hex(colors.primary)
-			(figlet.textSync(text, {
-				font: 'Georgia11',
-				horizontalLayout: 'default',
-				verticalLayout: 'default'
-			})
-		)
-	);
+	log(chalk.hex(colors.primary)(txt));
 
 	// Line
 	line();
