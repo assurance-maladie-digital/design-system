@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dash",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Create and manage CNAM front-end projects",
 	"license": "MIT",
 	"author": {
@@ -50,5 +50,6 @@
 			"eslint **/*.ts --fix",
 			"git add"
 		]
-	}
+	},
+	"gitHead": "7af363c1d3396e116434013787685b67ab66cbe0"
 }

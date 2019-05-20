@@ -1,8 +1,7 @@
 {
 	"name": "@cnamts/design-system",
-	"private": true,
 	"devDependencies": {
 		"eslint": "^5.16.0",
-		"lerna": "^3.13.0"
+		"lerna": "^3.14.1"
 	}
 }
