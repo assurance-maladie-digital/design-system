@@ -1,4 +1,4 @@
-import chalk, { log, cmd, warn, error } from './helpers/logger';
+import chalk, { log, cmd, warn, error, done } from './helpers/logger';
 
 import * as spawn from 'cross-spawn';
 import * as glob from 'glob';
@@ -137,9 +137,10 @@ module.exports = {
 		await this.npmInstall({ npmClient: this.answers.pm });
 
 		log();
-		log(`🎉  Successfully created project ${chalk.yellow(this.answers.name)}.`);
+		done(`🎉  Successfully created project ${chalk.yellow(this.answers.name)}.`);
 
 		if (this.answers.autoStart === false) {
+			log();
 			log('👉  Get started with the following commands:\n');
 
 			const isNewFolder = this.outDir !== process.cwd();
