@@ -45,6 +45,14 @@ The goal of our Design System is to unify our work, which allows teams to share 
        A CLI tool to create and manage front-end projects
       </td>
     </tr>
+    <tr>
+      <td>
+        <a href="/packages/vue-dot">Vue Dot</a>
+      </td>
+      <td>
+       The Official CNAM component library
+      </td>
+    </tr>
   </tbody>
 </table>
 

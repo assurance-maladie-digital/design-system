@@ -1,0 +1,149 @@
+{
+	"name": "@cnamts/vue-dot",
+	"version": "1.6.3",
+	"description": "Official CNAM component library",
+	"keywords": [
+		"vue",
+		"vuejs2",
+		"vue-cli",
+		"component-library",
+		"cnam",
+		"vue-dot"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Dylan Broussard",
+		"email": "deraw@outlook.fr"
+	},
+	"files": [
+		"dist/*",
+		"src/*",
+		"public/*",
+		"types/*"
+	],
+	"main": "./dist/vue-dot.common.js",
+	"scripts": {
+		"demo:serve": "vue-cli-service serve",
+		"build-bundle": "vue-cli-service build --target lib --name vue-dot ./src/index.ts",
+		"lint": "vue-cli-service lint",
+		"test:unit": "vue-cli-service test:unit"
+	},
+	"peerDependencies": {
+		"dayjs": "^1.7.7",
+		"languages": "^0.1.3",
+		"vue": "^2.5.2",
+		"vuetify": "^1.4.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.4",
+		"@babel/polyfill": "^7.4.4",
+		"@types/jest": "^24.0.13",
+		"@typescript-eslint/parser": "^1.9.0",
+		"@vue/cli-plugin-babel": "^3.7.0",
+		"@vue/cli-plugin-eslint": "^3.7.0",
+		"@vue/cli-plugin-typescript": "^3.7.0",
+		"@vue/cli-plugin-unit-jest": "^3.7.0",
+		"@vue/cli-service": "^3.7.0",
+		"@vue/eslint-config-standard": "^4.0.0",
+		"@vue/eslint-config-typescript": "^4.0.0",
+		"@vue/test-utils": "^1.0.0-beta.29",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-plugin-transform-imports": "^1.5.1",
+		"babel-polyfill": "^6.26.0",
+		"css-loader": "^2.1.1",
+		"dayjs": "^1.8.14",
+		"eslint": "^5.16.0",
+		"eslint-plugin-vue": "^5.2.2",
+		"html-webpack-plugin": "^3.2.0",
+		"jest": "23.6.0",
+		"languages": "^0.1.3",
+		"lint-staged": "^8.1.7",
+		"node-sass": "^4.12.0",
+		"prepend": "^1.0.2",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.1",
+		"stylus": "^0.54.5",
+		"stylus-loader": "^3.0.2",
+		"ts-jest": "^24.0.2",
+		"ts-node": "^8.1.0",
+		"typescript": "^3.4.5",
+		"uglifyjs-webpack-plugin": "^2.1.3",
+		"vue": "^2.6.10",
+		"vue-cli-plugin-vuetify": "^0.5.0",
+		"vue-server-renderer": "^2.6.10",
+		"vue-template-compiler": "^2.6.10",
+		"vuetify": "^1.5.14",
+		"vuetify-loader": "^1.2.2",
+		"webpack": "^4.32.0",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {}
+		}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 8"
+	],
+	"jest": {
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"vue"
+		],
+		"transform": {
+			"^.+\\.vue$": "vue-jest",
+			".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"moduleNameMapper": {
+			"^vue-dot-src/(.*)$": "<rootDir>/src/$1",
+			"^vue$": "<rootDir>/node_modules/vue/dist/vue.common.js"
+		},
+		"snapshotSerializers": [
+			"jest-serializer-vue"
+		],
+		"testMatch": [
+			"<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+		],
+		"coverageReporters": [
+			"json",
+			"lcov",
+			"text",
+			"html",
+			"text-summary"
+		],
+		"coverageDirectory": "<rootDir>/tests/unit/coverage",
+		"collectCoverage": true,
+		"collectCoverageFrom": [
+			"**/*.{ts,vue}",
+			"!**/node_modules/**",
+			"!**/*.d.ts",
+			"!**/docs/**",
+			"!**/scripts/**",
+			"!**/playground/**"
+		],
+		"testURL": "http://localhost/",
+		"transformIgnorePatterns": [
+			"./node_modules/vuetify"
+		]
+	},
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.ts": [
+			"vue-cli-service lint",
+			"git add"
+		],
+		"*.vue": [
+			"vue-cli-service lint",
+			"git add"
+		]
+	}
+}
