@@ -5,9 +5,17 @@ import { VueConstructor } from 'vue';
 import VueDotPlugin from '../types';
 
 const VueDot: VueDotPlugin = {
-	install(Vue: VueConstructor) {
+	install(Vue: VueConstructor, options) {
 		components(Vue);
 		directives(Vue);
+
+		const theme = options ? options.theme : undefined;
+
+		// Extend the Vue instance with the theme as $theme
+		if (theme) {
+			Vue.prototype.$theme = theme;
+		}
+
 	}
 };
 

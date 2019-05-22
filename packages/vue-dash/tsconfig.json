@@ -1,4 +1,5 @@
 {
+	// Extend root config
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": ".",
@@ -13,6 +14,7 @@
 			"es2015",
 			"scripthost"
 		],
+		// Dist folder
 		"outDir": "bin"
 	},
 	"include": [

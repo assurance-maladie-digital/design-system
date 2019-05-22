@@ -1,5 +1,10 @@
 <template>
-	<div class="doc-section">
+	<VLayout
+		column
+		align-start
+		class="doc-section"
+	>
+		<!-- The title is remplacable through a slot -->
 		<slot name="title">
 			<h3
 				v-if="title"
@@ -9,13 +14,14 @@
 			</h3>
 		</slot>
 
+		<!-- Default slot is the body -->
 		<slot />
 
 		<VDivider
 			v-if="!noDivider"
 			class="divider my-4"
 		/>
-	</div>
+	</VLayout>
 </template>
 
 <script lang="ts">
@@ -37,12 +43,18 @@
 		}
 	});
 
+	/**
+	 * DocSection is a component that renders
+	 * a title, a body and a divider
+	 */
 	@Component
 	export default class DocSection extends Props {}
 </script>
 
 <style lang="scss" scoped>
-	.doc-section {
+	.doc-section,
+	.divider {
+		flex: none;
 		width: 100%;
 	}
 </style>

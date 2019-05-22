@@ -1,4 +1,5 @@
 {
+	// Extend root config
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": ".",
@@ -7,18 +8,24 @@
 			"jest"
 		],
 		"paths": {
-			"vue-dot-src/*": [
+			// Specific alias used in tests
+			"vd-src/*": [
 				"src/*"
 			]
 		}
 	},
 	"include": [
+		// Playground
 		"playground/**/*.ts",
 		"playground/**/*.vue",
+		// Src
 		"src/**/*.ts",
 		"src/**/*.vue",
+		// Tests
 		"tests/**/*.ts",
+		// Types
 		"types/**/*.ts",
+		// JSON
 		"*.json"
 	],
 	"exclude": [

@@ -1,5 +1,7 @@
 import { PluginFunction } from 'vue';
-import { VuetifyTheme } from 'vuetify';
+
+// Types for the library usage
+// eg. Vue.use(VueDot, options)
 
 export interface Icon {
 	name: string;
@@ -7,18 +9,17 @@ export interface Icon {
 }
 
 export interface Config {
-	colors?: VuetifyTheme;
 	icons: Icon[]
 }
 
 export interface Theme {
 	name: string;
 	version: string;
-	config?: Config;
+	config: Config;
 }
 
 export interface VueDotOptions {
-	theme: Theme;
+	theme?: Theme;
 }
 
 export default interface VueDotPlugin {

@@ -1,19 +1,29 @@
-.DS_Store
-node_modules
+# Dependencies
+node_modules/
+
+# Build
+dist/
 
 # Log files
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json*
+
+# Tests coverage
+/tests/unit/coverage
 
 # Editor directories and files
+.DS_Store
 .idea
 .vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw*
+*.sw?
 
 # Generated files
 *.csv

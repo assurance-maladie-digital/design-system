@@ -24,9 +24,9 @@
 	"main": "./dist/vue-dot.common.js",
 	"scripts": {
 		"demo:serve": "vue-cli-service serve",
-		"build-bundle": "vue-cli-service build --target lib --name vue-dot ./src/index.ts",
+		"build": "vue-cli-service build --target lib --name vue-dot ./src/index.ts",
 		"lint": "vue-cli-service lint",
-		"test:unit": "vue-cli-service test:unit"
+		"test": "vue-cli-service test:unit"
 	},
 	"peerDependencies": {
 		"dayjs": "^1.7.7",

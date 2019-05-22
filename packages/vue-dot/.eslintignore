@@ -1,1 +1,3 @@
+# Don't lint these folders
 tests/unit/coverage
+dist/

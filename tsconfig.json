@@ -1,14 +1,24 @@
+// TypeScript configuration
+// shared accross packages
 {
 	"compilerOptions": {
+		// Always transpile to ES5
 		"target": "es5",
 		"module": "commonjs",
+		// Strict Type-Checking
 		"strict": true,
-		"importHelpers": true,
+		// Node.js resolution strategy
 		"moduleResolution": "node",
-		"esModuleInterop": true,
+		// Resolve JSON files as modules
 		"resolveJsonModule": true,
-		"experimentalDecorators": true,
+		// Emit interoperability between CommonJS and ES Modules
+		"esModuleInterop": true,
+		// Allow default imports from modules with no default export.
+		// This does not affect code emit, just typechecking.
 		"allowSyntheticDefaultImports": true,
+		// Enables experimental support for ES7 decorators
+		"experimentalDecorators": true,
+		// Shared types
 		"types": [
 			"node"
 		],

@@ -1,9 +1,9 @@
 <template>
 	<DocSection title="CustomIcon">
-		<!-- <CustomIcon
+		<CustomIcon
 			icon="vuejs"
 			size="50px"
-		/> -->
+		/>
 	</DocSection>
 </template>
 

@@ -1,3 +1,4 @@
+// Custom Vuetify color theme
 export default {
 	primary: '#0c4887',
 	secondary: '#01579b',

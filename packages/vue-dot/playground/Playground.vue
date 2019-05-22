@@ -37,14 +37,9 @@
 					Playground
 				</h1>
 
-				<p class="subheading pt-2">
-					This is a demo of the library, for more detailed information, see the documentation website.
-				</p>
-
 				<VDivider class="my-4" />
 
 				<!-- Examples -->
-
 				<DataListEx :dark="dark" />
 
 				<DatePickerEx />
@@ -81,6 +76,10 @@
 
 	import pkg from '../package.json';
 
+	/**
+	 * Playground is a component that contains examples
+	 * of the library component's
+	*/
 	@Component({
 		components: {
 			DataListEx,
@@ -99,10 +98,6 @@
 <style lang="scss" scoped>
 	/deep/ .v-content__wrap {
 		padding: 50px;
-	}
-
-	.lang-btn /deep/ .v-btn {
-		margin: 0 !important;
 	}
 
 	.main {

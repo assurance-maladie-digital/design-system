@@ -1,4 +1,9 @@
 <template>
+	<!--
+		`aria-hidden` is present, this hides the icon
+		from screen-readers, an accessibile label should be
+		provided by the context/the user
+	-->
 	<span
 		:class="{
 			'vd-large': large,
@@ -15,11 +20,15 @@
 		class="vd-custom-icon"
 		aria-hidden="true"
 	>
+		<!--
+			Default slot, this makes the content
+			of the icon totally customizable
+		-->
 		<slot>
+			<!-- v-html is needed to render the SVG -->
 			<div
-				v-for="iconTheme in themeIcons"
-				:key="iconTheme.name"
-				v-html="iconTheme.svg"
+				v-if="themeIcon"
+				v-html="themeIcon.svg"
 			/>
 		</slot>
 	</span>
@@ -33,14 +42,17 @@
 
 	const Props = Vue.extend({
 		props: {
+			// Color, default is inherited from CSS color
 			color: {
 				type: String,
 				default: 'currentColor'
 			},
+			// The icon from the theme
 			icon: {
 				type: String,
-				default: undefined
+				required: true
 			},
+			// Size properties
 			large: {
 				type: Boolean,
 				default: false
@@ -49,10 +61,6 @@
 				type: Boolean,
 				default: false
 			},
-			size: {
-				type: String,
-				default: ''
-			},
 			small: {
 				type: Boolean,
 				default: false
@@ -60,54 +68,78 @@
 			xLarge: {
 				type: Boolean,
 				default: false
+			},
+			// Custom size
+			size: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
 
+	/**
+	 * CustomIcon is a component used to display an SVG Icon
+	 * defined in the theme that is passed as an option of the plugin
+	 */
 	@Component
 	export default class CustomIcon extends Props {
-		get themeIcons(): Icon[] {
-			// If there is icons in theme
+		get themeIcon(): Icon | undefined {
+			// If there are icons in the theme
 			if (this.$theme && this.$theme.config && this.$theme.config.icons) {
-				const filtered = this.$theme.config.icons.filter((icon: Icon) => {
+				// Find the icon with the name passed in the prop
+				const filtered = this.$theme.config.icons.find((icon: Icon) => {
 					return this.icon === icon.name;
 				});
 
+				// If the icon isn't finded, it will return undefined
 				return filtered;
 			}
 
-			return [];
+			return undefined;
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	$default: 1.35em;
+
 	$small: 1em;
 	$medium: 1.5em;
 	$large: 1.85em;
 	$xLarge: 2.25em;
 
 	.vd-custom-icon {
+		// Icon dimensions
 		width: $default;
 		height: $default;
-		position: relative;
+
 		display: inline-block;
 		vertical-align: middle;
 
+		// Position relative the container since
+		// the child will be positionned absolutely
+		position: relative;
+
 		svg {
+			// Make the SVG element take all space
+			// in the parent, with position absolute
 			left: 0;
 			bottom: 0;
 			width: 100%;
 			height: 100%;
 			position: absolute;
+
+			// Transition when color is updating
 			transition: fill .25s;
 		}
 
 		&.vd-custom-color svg {
+			// Use color from parent,
+			// this makes the icon the color of the prop
 			fill: currentColor;
 		}
 
+		// Sizes
 		&.vd-small {
 			width: $small;
 			height: $small;

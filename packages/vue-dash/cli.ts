@@ -3,6 +3,7 @@
 
 import * as yargs from 'yargs';
 
+// Register the CLI
 yargs
 	.commandDir('commands')
 	.alias('v', 'version')
