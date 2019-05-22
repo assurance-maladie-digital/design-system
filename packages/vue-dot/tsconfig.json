@@ -1,27 +1,16 @@
 {
+	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"target": "es5",
-		"module": "esnext",
-		"strict": true,
-		"jsx": "preserve",
-		"importHelpers": true,
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
-		"baseUrl": "./",
+		"baseUrl": ".",
 		"types": [
 			"node",
 			"jest"
 		],
-		"lib": [
-			"es2017",
-			"es2015",
-			"dom",
-			"dom.iterable",
-			"scripthost"
-		]
+		"paths": {
+			"vue-dot-src/*": [
+				"src/*"
+			]
+		}
 	},
 	"include": [
 		"playground/**/*.ts",
@@ -29,7 +18,7 @@
 		"src/**/*.ts",
 		"src/**/*.vue",
 		"tests/**/*.ts",
-		"scripts/**/*.ts",
+		"types/**/*.ts",
 		"*.json"
 	],
 	"exclude": [
