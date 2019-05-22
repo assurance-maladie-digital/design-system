@@ -16,25 +16,22 @@
 		aria-hidden="true"
 	>
 		<slot>
-			<!-- Custom icons from theme, only render if it's looks like svg -->
-			<template v-if="$theme">
-				<div
-					v-for="iconTheme in themeIcons"
-					:key="iconTheme.name"
-					v-html="iconTheme.svg"
-				/>
-			</template>
+			<div
+				v-for="iconTheme in themeIcons"
+				:key="iconTheme.name"
+				v-html="iconTheme.svg"
+			/>
 		</slot>
 	</span>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
 	import { Icon } from '../../types';
 
-	export default Vue.extend({
-		name: 'CustomIcon',
+	const Props = Vue.extend({
 		props: {
 			color: {
 				type: String,
@@ -64,22 +61,24 @@
 				type: Boolean,
 				default: false
 			}
-		},
-		computed: {
-			themeIcons(): Icon[] {
-				// If there is icons in theme
-				if (this.$theme && this.$theme.config && this.$theme.config.icons) {
-					const filtered = this.$theme.config.icons.filter((icon: Icon) => {
-						return this.icon === icon.name;
-					});
-
-					return filtered;
-				}
-
-				return [];
-			}
 		}
 	});
+
+	@Component
+	export default class CustomIcon extends Props {
+		get themeIcons(): Icon[] {
+			// If there is icons in theme
+			if (this.$theme && this.$theme.config && this.$theme.config.icons) {
+				const filtered = this.$theme.config.icons.filter((icon: Icon) => {
+					return this.icon === icon.name;
+				});
+
+				return filtered;
+			}
+
+			return [];
+		}
+	}
 </script>
 
 <style lang="scss">

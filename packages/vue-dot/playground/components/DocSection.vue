@@ -20,9 +20,9 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-	export default Vue.extend({
-		name: 'DocSection',
+	const Props = Vue.extend({
 		props: {
 			title: {
 				type: String,
@@ -36,6 +36,9 @@
 			}
 		}
 	});
+
+	@Component
+	export default class DocSection extends Props {}
 </script>
 
 <style lang="scss" scoped>

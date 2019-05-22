@@ -71,8 +71,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-
-	import pkg from '../package.json';
+	import Component from 'vue-class-component';
 
 	import DataListEx from './examples/DataListEx.vue';
 	import DatePickerEx from './examples/DatePickerEx.vue';
@@ -80,22 +79,21 @@
 	import CustomIconEx from './examples/CustomIconEx.vue';
 	import DebounceEx from './examples/DebounceEx.vue';
 
-	export default Vue.extend({
-		name: 'Playground',
+	import pkg from '../package.json';
+
+	@Component({
 		components: {
 			DataListEx,
 			DatePickerEx,
 			LangBtnEx,
 			CustomIconEx,
 			DebounceEx
-		},
-		data() {
-			return {
-				dark: false,
-				version: pkg.version
-			};
 		}
-	});
+	})
+	export default class Playground extends Vue {
+		dark = false;
+		version = pkg.version;
+	}
 </script>
 
 <style lang="scss" scoped>

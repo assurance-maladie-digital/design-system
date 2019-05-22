@@ -38,15 +38,12 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-	export default Vue.extend({
-		name: 'DebounceEx',
-		data() {
-			return {
-				text: ''
-			};
-		}
-	});
+	@Component
+	export default class DebounceEx extends Vue {
+		text = '';
+	}
 </script>
 
 <style lang="scss" scoped>

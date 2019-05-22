@@ -18,13 +18,10 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-	export default Vue.extend({
-		name: 'DatePickerEx',
-		data() {
-			return {
-				date: ''
-			};
-		}
-	});
+	@Component
+	export default class DatePickerEx extends Vue {
+		date = '';
+	}
 </script>

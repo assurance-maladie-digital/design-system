@@ -6,8 +6,8 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-	export default Vue.extend({
-		name: 'LangBtnEx'
-	});
+	@Component
+	export default class LangBtnEx extends Vue {}
 </script>
