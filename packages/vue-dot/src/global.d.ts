@@ -1,5 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
-import { Theme } from './types';
+import { Theme } from '../types';
 import { VuetifyObject } from 'vuetify/types';
 
 declare global {

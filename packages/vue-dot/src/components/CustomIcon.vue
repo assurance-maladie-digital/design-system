@@ -31,7 +31,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 
-	import { Icon } from '../types/index';
+	import { Icon } from '../../types';
 
 	export default Vue.extend({
 		name: 'CustomIcon',
