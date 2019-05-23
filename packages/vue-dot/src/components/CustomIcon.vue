@@ -26,7 +26,7 @@
 		-->
 		<slot>
 			<!-- v-html is needed to render the SVG -->
-			<div
+			<span
 				v-if="themeIcon"
 				v-html="themeIcon.svg"
 			/>
@@ -120,7 +120,7 @@
 		// the child will be positionned absolutely
 		position: relative;
 
-		svg {
+		/deep/ svg {
 			// Make the SVG element take all space
 			// in the parent, with position absolute
 			left: 0;
