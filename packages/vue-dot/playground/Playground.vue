@@ -1,5 +1,7 @@
 <template>
 	<VApp :dark="dark">
+		<NotificationBar />
+
 		<VToolbar
 			app
 			dark
@@ -49,6 +51,8 @@
 				<CustomIconEx />
 
 				<DebounceEx />
+
+				<NotificationEx />
 			</VLayout>
 		</VContent>
 
@@ -68,27 +72,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import DataListEx from './examples/DataListEx.vue';
-	import DatePickerEx from './examples/DatePickerEx.vue';
-	import LangBtnEx from './examples/LangBtnEx.vue';
-	import CustomIconEx from './examples/CustomIconEx.vue';
-	import DebounceEx from './examples/DebounceEx.vue';
-
 	import pkg from '../package.json';
 
 	/**
 	 * Playground is a component that contains examples
 	 * of the library component's
 	*/
-	@Component({
-		components: {
-			DataListEx,
-			DatePickerEx,
-			LangBtnEx,
-			CustomIconEx,
-			DebounceEx
-		}
-	})
+	@Component
 	export default class Playground extends Vue {
 		dark = false;
 		version = pkg.version;

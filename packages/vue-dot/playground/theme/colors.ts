@@ -1,10 +1,10 @@
 // Custom Vuetify color theme
 export default {
-	primary: '#0c4887',
-	secondary: '#01579b',
-	accent: '#0098eb',
-	error: '#ee0000',
+	primary: '#003463',
+	secondary: '#0c4887',
+	accent: '#1976dc',
+	error: '#e54d42',
 	info: '#0077c5',
-	success: '#4caf50',
+	success: '#009688',
 	warning: '#977000'
 };

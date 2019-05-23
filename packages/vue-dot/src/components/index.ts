@@ -1,13 +1,15 @@
 import { VueConstructor } from 'vue';
 
 import CustomIcon from './CustomIcon.vue';
+import NotificationBar from './NotificationBar.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
 }
 
 const components: Components = {
-	CustomIcon
+	CustomIcon,
+	NotificationBar
 };
 
 /**

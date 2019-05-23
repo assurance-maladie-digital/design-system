@@ -2,6 +2,11 @@
 // import '@babel/polyfill';
 import Vue from 'vue';
 
+// Register globally all examples
+import './examples';
+
+import store from './store/';
+
 // Disable console tooltip
 Vue.config.productionTip = false;
 
@@ -18,5 +23,6 @@ import Playground from './Playground.vue';
 
 // Create Vue instance
 new Vue({
+	store,
 	render: (h) => h(Playground)
 }).$mount('#app');
