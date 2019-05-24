@@ -35,11 +35,9 @@
 				:class="dark ? 'grey darken-4' : 'white'"
 			>
 				<!-- Introduction -->
-				<h1 class="display-1 font-weight-bold">
+				<h1 class="display-1 mb-5 font-weight-bold">
 					Playground
 				</h1>
-
-				<VDivider class="my-4" />
 
 				<!-- Examples -->
 				<DataListEx :dark="dark" />
@@ -86,13 +84,16 @@
 </script>
 
 <style lang="scss" scoped>
-	/deep/ .v-content__wrap {
-		padding: 50px;
-	}
-
+	// Main container
 	.main {
 		height: 100%;
-		margin: 0 auto;
+		margin: 50px auto;
 		max-width: 1200px;
+	}
+
+	@media screen and (max-width: 1200px) {
+		.main {
+			margin: 15px;
+		}
 	}
 </style>

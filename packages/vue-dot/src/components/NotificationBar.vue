@@ -4,14 +4,24 @@
 		v-bind="options.snackBar"
 		:color="options.snackBar.color || notification.type"
 	>
+		<!--
+			Notification body
+
+			align-center will make sure that the content
+			is always vertically centered (two lines, etc)
+		-->
 		<VLayout align-center>
-			<VIcon v-bind="options.icon">
+			<VIcon
+				v-bind="options.icon"
+				class="vd-notification-icon"
+			>
 				{{ notification.icon }}
 			</VIcon>
 
 			{{ notification.message }}
 		</VLayout>
 
+		<!-- Close button -->
 		<VBtn
 			v-bind="options.btn"
 			@click="rmNotif"
@@ -48,6 +58,7 @@
 			'rmNotif'
 		]),
 		mixins: [
+			// Default configuration
 			customizable({
 				snackBar: {
 					value: true,
@@ -84,3 +95,13 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	$size: 24px;
+
+	// Fixed size to avoid reflow at first render
+	.vd-notification-icon {
+		width: $size;
+		height: $size;
+	}
+</style>

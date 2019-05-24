@@ -1,7 +1,7 @@
 <template>
 	<DocSection title="Notification system">
 		<VBtn
-			color="primary"
+			color="accent"
 			class="ma-0"
 			@click="testNotify"
 		>
