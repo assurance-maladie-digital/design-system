@@ -1,16 +1,11 @@
 <template>
 	<VSnackbar
 		v-if="notification"
-		:value="true"
-		:timeout="0"
-		:color="notification.type"
-		top
+		v-bind="options.snackBar"
+		:color="options.snackBar.color || notification.type"
 	>
 		<VLayout align-center>
-			<VIcon
-				color="white"
-				class="mr-2"
-			>
+			<VIcon v-bind="options.icon">
 				{{ notification.icon }}
 			</VIcon>
 
@@ -18,8 +13,7 @@
 		</VLayout>
 
 		<VBtn
-			color="white"
-			flat
+			v-bind="options.btn"
 			@click="rmNotif"
 		>
 			{{ closeText }}
@@ -32,6 +26,9 @@
 	import Component from 'vue-class-component';
 
 	import { mapActions, mapState } from 'vuex';
+	import { NotificationObj } from '../modules/notification';
+
+	import customizable from '../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {
@@ -49,11 +46,28 @@
 		]),
 		methods: mapActions('notification', [
 			'rmNotif'
-		])
+		]),
+		mixins: [
+			customizable({
+				snackBar: {
+					value: true,
+					timeout: 0,
+					top: true
+				},
+				icon: {
+					color: 'white',
+					class: 'mr-2'
+				},
+				btn: {
+					color: 'white',
+					flat: true
+				}
+			})
+		]
 	})
 	export default class NotificationBar extends Props {
 		// Vuex bindings type declaration
-		notification!: object;
+		notification?: NotificationObj;
 		rmNotif!: () => void;
 
 		created() {
