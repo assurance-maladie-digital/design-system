@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="DataList">
-		<!-- <DataList
+		<DataList
 			:list="[
 				{
 					key: 'Civility',
@@ -35,7 +35,7 @@
 			:value-color="dark ? '#ccc' : '#333'"
 			list-title="Informations"
 			flex
-		/> -->
+		/>
 	</DocSection>
 </template>
 

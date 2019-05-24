@@ -1,6 +1,7 @@
 import { VueConstructor } from 'vue';
 
 import CustomIcon from './CustomIcon.vue';
+import DataList from './DataList.vue';
 import NotificationBar from './NotificationBar.vue';
 
 interface Components {
@@ -9,6 +10,7 @@ interface Components {
 
 const components: Components = {
 	CustomIcon,
+	DataList,
 	NotificationBar
 };
 
