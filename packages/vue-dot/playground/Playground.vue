@@ -1,6 +1,6 @@
 <template>
 	<VApp :dark="dark">
-		<NotificationBar />
+		<NotificationBar close-text="Close" />
 
 		<VToolbar
 			app

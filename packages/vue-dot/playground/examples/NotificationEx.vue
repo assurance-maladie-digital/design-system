@@ -28,25 +28,33 @@
 		notify!: (obj: object) => void;
 		rmNotif!: () => void;
 
-		testNotify() {
-			this.rmNotif();
-
-			// Success notification
-			const success = {
+		notifications = [
+			{
 				type: 'success',
 				message: 'Test notification',
 				icon: 'check'
-			};
-
-			// Error notification
-			const error = {
+			},
+			{
 				type: 'error',
 				message: 'Test notification',
 				icon: 'error'
-			};
+			},
+			{
+				type: 'info',
+				message: 'Test notification',
+				icon: 'info'
+			},
+			{
+				type: 'warning',
+				message: 'Test notification',
+				icon: 'warning'
+			}
+		];
 
-			// Random between success & error
-			const notification = Math.round(Math.random()) ? success: error;
+		testNotify() {
+			this.rmNotif();
+
+			const notification = this.notifications[Math.floor(Math.random() * this.notifications.length)];
 
 			// Notify!
 			this.notify(notification);
