@@ -57,7 +57,7 @@
 
 	const Props = Vue.extend({
 		props: {
-			// The list to display
+			/** The list to display */
 			list: {
 				type: Array,
 				required: true
@@ -87,17 +87,17 @@
 				type: Boolean,
 				default: false
 			},
-			// The text to display as fallback
+			/** The text to display as fallback */
 			placeholder: {
 				type: String,
 				default: '…'
 			},
-			// The list min-width
+			/** The list min-width */
 			minWidth: {
 				type: String,
 				default: undefined
 			},
-			// The key/value width
+			/** The key/value width */
 			width: {
 				type: String,
 				default: '200px'

@@ -3,6 +3,7 @@ import { VueConstructor } from 'vue';
 import CustomIcon from './CustomIcon.vue';
 import DataList from './DataList.vue';
 import NotificationBar from './NotificationBar.vue';
+import PaginatedTable from './PaginatedTable.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -11,7 +12,8 @@ interface Components {
 const components: Components = {
 	CustomIcon,
 	DataList,
-	NotificationBar
+	NotificationBar,
+	PaginatedTable
 };
 
 /**

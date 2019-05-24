@@ -6,7 +6,7 @@ import notification from '../../src/modules/notification';
 
 Vue.use(Vuex);
 
-// See https://vuex.vuejs.org/fr/getting-started.html for help
+/** See https://vuex.vuejs.org/fr/getting-started.html for help */
 const store: StoreOptions<RootState> = {
 	strict: true,
 	state: {},

@@ -19,7 +19,7 @@ import * as merge from 'deepmerge';
 export default function customizable(defaultOptions: object) {
 	return Vue.mixin({
 		props: {
-			// User options
+			/** User options */
 			vuetifyOptions: {
 				type: Object,
 				default: undefined

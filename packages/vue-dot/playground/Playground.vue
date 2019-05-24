@@ -51,6 +51,8 @@
 				<DebounceEx />
 
 				<NotificationEx />
+
+				<PaginatedTableEx />
 			</VLayout>
 		</VContent>
 

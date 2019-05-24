@@ -91,7 +91,7 @@
 					return this.icon === icon.name;
 				});
 
-				// If the icon isn't finded, it will return undefined
+				// If the icon isn't find, it will return undefined
 				return filtered;
 			}
 

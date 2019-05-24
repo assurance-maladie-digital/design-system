@@ -34,8 +34,10 @@
 				type: String,
 				default: undefined
 			},
-			// Disable divider
-			// eg. for last section
+			/**
+			 * Disable divider
+			 * eg. for last section
+			*/
 			noDivider: {
 				type: Boolean,
 				default: false

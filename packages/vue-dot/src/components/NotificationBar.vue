@@ -49,6 +49,9 @@
 		}
 	});
 
+	/**
+	 * NavigationBar is a component that displays a notification using a Snackbar
+	*/
 	@Component({
 		// Vuex bindings
 		computed: mapState('notification', [

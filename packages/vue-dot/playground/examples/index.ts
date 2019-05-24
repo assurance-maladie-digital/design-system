@@ -6,6 +6,7 @@ import LangBtnEx from './LangBtnEx.vue';
 import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
 import NotificationEx from './NotificationEx.vue';
+import PaginatedTableEx from './PaginatedTableEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -17,7 +18,8 @@ const components: Components = {
 	LangBtnEx,
 	CustomIconEx,
 	DebounceEx,
-	NotificationEx
+	NotificationEx,
+	PaginatedTableEx
 };
 
 /**
