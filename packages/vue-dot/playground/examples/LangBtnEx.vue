@@ -1,6 +1,12 @@
 <template>
 	<DocSection title="LangBtn">
-		<LangBtn v-model="lang" />
+		<LangBtn
+			v-model="lang"
+			:available-languages="[
+				'fr',
+				'en'
+			]"
+		/>
 	</DocSection>
 </template>
 

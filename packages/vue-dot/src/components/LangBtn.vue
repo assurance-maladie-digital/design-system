@@ -146,7 +146,7 @@
 					offsetY: true
 				},
 				btn: {
-					color: 'primary',
+					color: 'currentColor',
 					depressed: true,
 					outline: true,
 					ripple: true,
