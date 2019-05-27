@@ -17,7 +17,7 @@ import * as merge from 'deepmerge';
  * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
 */
 export default function customizable(defaultOptions: object) {
-	return Vue.mixin({
+	return Vue.extend({
 		props: {
 			/** User options */
 			vuetifyOptions: {
