@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="LangBtn">
-		<!-- <LangBtn /> -->
+		<LangBtn v-model="lang" />
 	</DocSection>
 </template>
 
@@ -9,7 +9,9 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class LangBtnEx extends Vue {}
+	export default class LangBtnEx extends Vue {
+		lang = 'fr';
+	}
 </script>
 
 <style lang="scss" scoped>
