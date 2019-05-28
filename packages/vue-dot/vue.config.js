@@ -45,7 +45,9 @@ module.exports = {
 					}
 				},
 				/^dayjs/,
-				/^languages/
+				/^languages/,
+				/^vuex/,
+				/^vue-class-component/
 			]
 			: []
 	},
