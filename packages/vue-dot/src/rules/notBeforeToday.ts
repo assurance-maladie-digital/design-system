@@ -16,11 +16,13 @@ function isDateAfterNow(value: string) {
 	return result;
 }
 
-/** Check that the date is not after now */
-export function notAfterNow(errorMessages = defaultErrorMessages) {
+/** Check that the date is not before today */
+export function notBeforeToday(errorMessages = defaultErrorMessages) {
 	return function(value: string) {
+		// If the date is after now, it's a future date, it's valid,
+		// else, the date is before today, it's invalid
 		return isDateAfterNow(value) || errorMessages.default;
 	};
 }
 
-export default notAfterNow();
+export default notBeforeToday();
