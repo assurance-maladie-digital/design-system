@@ -6,8 +6,9 @@ import isLeapYear from 'dayjs/plugin/isLeapYear';
 dayjs.extend(isLeapYear);
 
 import parseDate from '../helpers/parseDate';
+import { ErrorMessages } from './types';
 
-const errorMessages = {
+const defaultErrorMessages: ErrorMessages = {
 	default: 'La date saisie n\'est pas valide.',
 	wrongFormat: 'Le format de la date n\'est pas valide.',
 	monthNotMatch: 'Le jour saisi dépasse le nombre de jours dans le mois.',
@@ -15,7 +16,7 @@ const errorMessages = {
 };
 
 /** Check if the date is valid (exists in the calendar and has the right format) */
-function checkIfDateValid(value: string) {
+function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 	const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
 
 	// If value doesn't match regex, date format isn't valid
@@ -85,8 +86,10 @@ function checkIfDateValid(value: string) {
 }
 
 /** Check that the date is valid */
-function isDateValid(value: string) {
-	return checkIfDateValid(value) || errorMessages.default;
+export function isDateValid(errorMessages = defaultErrorMessages) {
+	return function(value: string) {
+		return checkIfDateValid(value, errorMessages) || errorMessages.default;
+	};
 }
 
-export default isDateValid;
+export default isDateValid();

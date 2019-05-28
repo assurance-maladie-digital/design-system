@@ -1,10 +1,12 @@
+import email from './email';
 import isDateValid from './isDateValid';
+import length from './length';
 import notBeforeToday from './notBeforeToday';
 import required from './required';
-import length from './length';
 
 /** Export all rules */
 export default {
+	email,
 	isDateValid,
 	notBeforeToday,
 	required,

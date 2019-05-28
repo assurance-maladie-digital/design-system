@@ -53,6 +53,8 @@
 				<NotificationEx />
 
 				<PaginatedTableEx />
+
+				<RulesEx />
 			</VLayout>
 		</VContent>
 

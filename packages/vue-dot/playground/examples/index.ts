@@ -7,6 +7,7 @@ import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
 import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
+import RulesEx from './RulesEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -19,7 +20,8 @@ const components: Components = {
 	CustomIconEx,
 	DebounceEx,
 	NotificationEx,
-	PaginatedTableEx
+	PaginatedTableEx,
+	RulesEx
 };
 
 /**

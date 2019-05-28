@@ -1,8 +1,5 @@
 <template>
-	<DocSection
-		no-divider
-		title="PaginatedTable"
-	>
+	<DocSection title="PaginatedTable">
 		<!--
 			On PaginatedTable, we don't need the .sync modifier
 			for :pagination
