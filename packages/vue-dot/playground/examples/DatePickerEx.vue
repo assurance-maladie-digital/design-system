@@ -1,18 +1,8 @@
 <template>
 	<DocSection title="DatePicker">
-		<!-- <DatePicker v-model="date" />
+		<DatePicker v-model="date" />
 
-		<DatePicker
-			birthdate
-			:text-field-options="{
-				appendIcon: 'code',
-				clearable: true,
-				appendIcon: 'code',
-				prependInnerIcon: 'menu',
-				appendOuterIcon: 'home'
-			}"
-			:prepend-icon="false"
-		/> -->
+		<DatePicker v-model="birthDate" />
 	</DocSection>
 </template>
 
@@ -23,5 +13,6 @@
 	@Component
 	export default class DatePickerEx extends Vue {
 		date = '';
+		birthDate = '';
 	}
 </script>
