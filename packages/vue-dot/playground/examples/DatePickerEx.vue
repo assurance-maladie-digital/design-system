@@ -1,13 +1,17 @@
 <template>
 	<DocSection title="DatePicker">
 		<h2 class="subheading font-weight-bold">
-			Without modification
+			Default
 		</h2>
 
 		<DatePicker v-model="date" />
 
+		<p class="mt-3">
+			{{ date }}
+		</p>
+
 		<h2 class="subheading mt-3 font-weight-bold">
-			Custom format
+			Custom
 		</h2>
 
 		<DatePicker
@@ -19,7 +23,11 @@
 					hint: 'DD-MM-YYYY Format'
 				}
 			}"
-		/>
+		>
+			<VIcon slot="icon">
+				cake
+			</VIcon>
+		</DatePicker>
 
 		<p class="mt-3">
 			{{ birthDate }}

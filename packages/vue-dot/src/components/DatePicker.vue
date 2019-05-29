@@ -16,14 +16,17 @@
 				@blur="saveFromTextField"
 			>
 				<VBtn
+					v-if="!noPrependIcon"
 					slot="prepend"
 					v-bind="options.btn"
 					class="ma-0"
 					@click="menu = true"
 				>
-					<VIcon v-bind="options.icon">
-						event
-					</VIcon>
+					<slot name="icon">
+						<VIcon v-bind="options.icon">
+							event
+						</VIcon>
+					</slot>
 				</VBtn>
 			</VTextField>
 		</template>
