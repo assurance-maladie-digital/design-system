@@ -30,11 +30,19 @@
 			</VTextField>
 		</template>
 
-		<!-- Calendar -->
+		<!--
+			Calendar
+
+			We bind max & min properties manually
+			since we set them when using birthdate mode
+		-->
 		<VDatePicker
 			v-if="!noCalendar"
+			ref="picker"
 			v-model="date"
 			v-bind="options.datePicker"
+			:max="options.datePicker.max || max"
+			:min="options.datePicker.min || min"
 			@input="saveDate"
 		/>
 	</VMenu>
@@ -75,6 +83,11 @@
 				type: String,
 				default: 'DD/MM/YYYY'
 			},
+			/** Enables birthdate mode: select year, month then day */
+			birthdate: {
+				type: Boolean,
+				default: false
+			},
 			/** The v-model value */
 			value: {
 				type: String,
@@ -86,7 +99,7 @@
 	/**
 	 * DatePicker is a component that
 	*/
-	@Component({
+	@Component<DatePicker>({
 		mixins: [
 			// Default configuration
 			customizable({
@@ -124,6 +137,18 @@
 		model: {
 			prop: 'value',
 			event: 'change'
+		},
+		// See https://vuetifyjs.com/en/components/date-pickers#date-pickers-birthday-picker
+		watch: {
+			menu(val) {
+				// If birthdate mode is activated
+				if (this.birthdate && val) {
+					setTimeout(() => {
+						// Se the active picker to year
+						(this.$refs.picker as any).activePicker = 'YEAR';
+					});
+				}
+			}
 		}
 	})
 	export default class DatePicker extends Props {
@@ -147,6 +172,9 @@
 		 * Format is '25032018'
 		*/
 		textFieldDate = this.date;
+
+		max = this.birthdate ? new Date().toISOString().substr(0, 10) : null;
+		min = this.birthdate ? '1950-01-01' : null;
 
 		/**
 		 * Return the mask to apply to the TextField

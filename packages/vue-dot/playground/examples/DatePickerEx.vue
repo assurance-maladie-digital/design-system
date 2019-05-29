@@ -13,6 +13,7 @@
 		<DatePicker
 			v-model="birthDate"
 			date-format="DD-MM-YYYY"
+			birthdate
 			:vuetify-options="{
 				textField: {
 					hint: 'DD-MM-YYYY Format'
