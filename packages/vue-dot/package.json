@@ -73,7 +73,6 @@
 		"vue": "^2.6.10",
 		"vue-class-component": "^7.1.0",
 		"vue-cli-plugin-vuetify": "^0.5.0",
-		"vue-server-renderer": "^2.6.10",
 		"vue-template-compiler": "^2.6.10",
 		"vuetify": "^1.5.14",
 		"vuetify-loader": "^1.2.2",
