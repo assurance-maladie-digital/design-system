@@ -21,9 +21,7 @@
 					class="ma-0"
 					@click="menu = true"
 				>
-					<VIcon
-						v-bind="options.icon"
-					>
+					<VIcon v-bind="options.icon">
 						event
 					</VIcon>
 				</VBtn>
@@ -148,6 +146,10 @@
 						(this.$refs.picker as any).activePicker = 'YEAR';
 					});
 				}
+			},
+			/** Update the date when value is provided by the user */
+			value(date) {
+				this.date = date;
 			}
 		}
 	})
@@ -240,6 +242,8 @@
 		saveFromTextField() {
 			// Return if empty/falsy
 			if (!this.textFieldDate) {
+				// Clear v-model
+				this.$emit('change', '');
 				return;
 			}
 

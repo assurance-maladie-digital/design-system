@@ -21,7 +21,17 @@
 			}"
 		/>
 
-		{{ birthDate }}
+		<p class="mt-3">
+			{{ birthDate }}
+		</p>
+
+		<VBtn
+			color="primary"
+			class="ma-0"
+			@click="birthDate = '2010-02-15'"
+		>
+			Set the date
+		</VBtn>
 	</DocSection>
 </template>
 
