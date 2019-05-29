@@ -1,5 +1,4 @@
 import debounce from './debounce';
-import mask from './mask';
 
 import { VueConstructor, DirectiveOptions } from 'vue';
 
@@ -8,8 +7,7 @@ interface Directives {
 }
 
 const directives: Directives = {
-	debounce,
-	mask
+	debounce
 };
 
 /**

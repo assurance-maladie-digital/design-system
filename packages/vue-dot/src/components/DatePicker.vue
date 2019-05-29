@@ -10,8 +10,8 @@
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
-				v-model.lazy="dateFormatted"
-				v-mask="'##/##/####'"
+				v-model="dateFormatted"
+				:mask="maskValue"
 				v-bind="options.textField"
 				@blur="saveFromTextField"
 			>
@@ -46,11 +46,12 @@
 
 	import customizable from '../mixins/customizable';
 
-	import dayjs from 'dayjs';
-	import advancedFormat from 'dayjs/plugin/advancedFormat';
+	// import isDateValid from '../rules/isDateValid';
 
-	// Use custom formats
-	dayjs.extend(advancedFormat);
+	import dayjs from 'dayjs';
+
+	import maskit from '../functions/maskit';
+	import parseDate from '../helpers/parseDate';
 
 	const Props = Vue.extend({
 		props: {
@@ -93,7 +94,10 @@
 					hint: 'Format JJ/MM/AAAA',
 					label: 'Date',
 					persistentHint: true,
-					returnMaskedValue: true
+					validateOnBlur: true,
+					rules: [
+						// isDateValid
+					]
 				},
 				menu: {
 					closeOnContentClick: false,
@@ -116,18 +120,40 @@
 					color: '#808080'
 				}
 			})
-		]
+		],
+		model: {
+			prop: 'value',
+			event: 'change'
+		}
 	})
 	export default class DatePicker extends Props {
 		/** The v-model of VMenu */
 		menu = false;
 
-		/** */
+		/**
+		 * The v-model of the component
+		 *
+		 * @example
+		 * Format is '2018-03-25'
+		 */
 		date = this.value;
 
+		/**
+		 * The v-model of the text field
+		 * it's different od this.date because the formatting
+		 * isn't the same
+		 *
+		 * @example
+		 * Format is '25032018'
+		*/
 		textFieldDate = this.date;
 
-		/** Return the mask to apply to the TextField */
+		/**
+		 * Return the mask to apply to the TextField
+		 *
+		 * @example
+		 * '##/##/####' for default dateFormat
+		 */
 		get maskValue() {
 			// If the mask is false, don't apply mask
 			if (this.mask === false) {
@@ -149,43 +175,88 @@
 			return this.dateFormat.replace(regexp, '#');
 		}
 
-		/** Format date with dayjs and dateFormat */
+		/**
+		 * Format date with dayjs and dateFormat
+		 *
+		 * @example
+		 * Format is '25/03/2018' with default dateFormat
+		 */
+		// Getter
 		get dateFormatted() {
+			/**
+			 * If the date is empty, return now
+			 * to avoid date parsing errors
+			 */
 			if (this.date === '') {
 				return '';
 			}
 
+			/** Format this.date with dateFormat */
 			const formatted = dayjs(this.date).format(this.dateFormat);
 
 			return formatted;
 		}
 
-		/** */
+		// Setter
 		set dateFormatted(value: string) {
 			this.textFieldDate = value;
+			this.saveFromTextField();
 		}
 
+		/** Save the date from calendar, using Vuetify method */
 		saveDate() {
 			(this.$refs.menu as any).save(this.date);
 		}
 
+		/** Save the date from text field blur to sync calendar */
 		saveFromTextField() {
+			// Return if empty/falsy
 			if (!this.textFieldDate) {
 				return;
 			}
 
-			const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
+			const formatted = this.parseDate(this.textFieldDate, this.maskValue);
 
-			// If date doesn't match regex, format isn't valid
-			if (!this.textFieldDate.match(dateFormatRegex)) {
+			/** If formatted is an empty string, the date isn't valid, don't continue */
+			if (!formatted) {
 				return;
 			}
 
-			// console.log(this.textFieldDate, dayjs(this.textFieldDate, 'DD/MM/YYYY'));
-			// this.date = dayjs(this.textFieldDate, 'DD/MM/YYYY').format('YYYY-DD-MM');
-
-			const [day, month, year] = this.textFieldDate.split('/');
+			// Else, the format is valid, we can parse the date
+			const [day, month, year] = formatted.split('/');
+			// Then we set the v-model
+			// (YYYY-MM-DD) format
 			this.date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+
+			// Update v-model
+			this.$emit('change', this.date);
+		}
+
+		parseDate(date: string, mask: string = 'DD/MM/YYYY') {
+			// Mask the value
+			// by default textFieldDate is 25032018 format,
+			// and maskValue is ##/##/####
+			// masked will be 25/03/2018
+
+			// It also supports other formats, eg.:
+			// 20180325 & ####/##/## => 2018/03/25
+			const masked = maskit(date, mask, true);
+
+			// Parse the date to the "standard" format
+			// It masked value is incomplete, eg. "25/",
+			// the result will be "Invalid Date",
+			// so it won't match the regex
+			const formatted = parseDate(masked).format('DD/MM/YYYY');
+
+			// Validate DD/MM/YYYY format
+			const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
+
+			// If the formatted date doesn't match regex, format is invalid
+			if (!formatted.match(dateFormatRegex)) {
+				return '';
+			}
+
+			return formatted;
 		}
 	}
 </script>

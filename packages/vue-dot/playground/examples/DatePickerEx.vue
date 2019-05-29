@@ -1,8 +1,26 @@
 <template>
 	<DocSection title="DatePicker">
+		<h2 class="subheading font-weight-bold">
+			Without modification
+		</h2>
+
 		<DatePicker v-model="date" />
 
-		<DatePicker v-model="birthDate" />
+		<h2 class="subheading mt-3 font-weight-bold">
+			Custom format
+		</h2>
+
+		<DatePicker
+			v-model="birthDate"
+			date-format="DD-MM-YYYY"
+			:vuetify-options="{
+				textField: {
+					hint: 'DD-MM-YYYY Format'
+				}
+			}"
+		/>
+
+		{{ birthDate }}
 	</DocSection>
 </template>
 

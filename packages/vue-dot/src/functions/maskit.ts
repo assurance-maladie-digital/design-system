@@ -1,6 +1,6 @@
-import { Tokens } from '../helpers/maskTokens';
+import tokens from '../helpers/maskTokens';
 
-export default function maskit(value: string = '', mask: string = '', masked = true, tokens: Tokens) {
+export default function maskit(value: string = '', mask: string = '', masked = true) {
 	let iMask = 0;
 	let iValue = 0;
 
