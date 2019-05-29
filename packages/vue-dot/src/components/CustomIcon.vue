@@ -47,10 +47,11 @@
 				type: String,
 				default: 'currentColor'
 			},
-			// The icon from the theme
+			// The icon from the theme,
+			// optionnal when using the slot instead of theme icon
 			icon: {
 				type: String,
-				required: true
+				default: undefined
 			},
 			// Size properties
 			large: {
