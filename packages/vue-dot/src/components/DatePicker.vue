@@ -66,6 +66,11 @@
 				type: Boolean,
 				default: false
 			},
+			/** Disable the prepend icon */
+			noPrependIcon: {
+				type: Boolean,
+				default: false
+			},
 			/**
 			 * Custom mask string.
 			 * By default it's computed from dateFormat
@@ -78,6 +83,11 @@
 			},
 			/** The format of the date inside the text field */
 			dateFormat: {
+				type: String,
+				default: 'DD/MM/YYYY'
+			},
+			/** The format used in the v-model for the user */
+			dateFormatReturn: {
 				type: String,
 				default: 'DD/MM/YYYY'
 			},
@@ -149,7 +159,8 @@
 			},
 			/** Update the date when value is provided by the user */
 			value(date) {
-				this.date = date;
+				// Format the date to 'YYYY-MM-DD' format using dateFormatReturn
+				this.date = parseDate(date, this.dateFormatReturn).format('YYYY-MM-DD');
 			}
 		}
 	})
@@ -175,7 +186,9 @@
 		*/
 		textFieldDate = this.date;
 
+		/** If birthdate is enabled, max is the current date */
 		max = this.birthdate ? new Date().toISOString().substr(0, 10) : null;
+		/** If birthdate is enabled, min is 01/01/1950 */
 		min = this.birthdate ? '1950-01-01' : null;
 
 		/**
@@ -247,7 +260,7 @@
 				return;
 			}
 
-			const formatted = this.parseDate(this.textFieldDate, this.maskValue);
+			const formatted = this.formatDate(this.textFieldDate, this.maskValue);
 
 			/** If formatted is an empty string, the date isn't valid, don't continue */
 			if (!formatted) {
@@ -261,10 +274,12 @@
 			this.date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 
 			// Update v-model
-			this.$emit('change', this.date);
+			// Parse the date with interal format,
+			// and return the date with dateFormatRetun format
+			this.$emit('change', parseDate(this.date, 'YYYY-MM-DD').format(this.dateFormatReturn));
 		}
 
-		parseDate(date: string, mask: string = 'DD/MM/YYYY') {
+		formatDate(date: string, mask: string = '##/##/####') {
 			// Mask the value
 			// by default textFieldDate is 25032018 format,
 			// and maskValue is ##/##/####
@@ -278,7 +293,7 @@
 			// It masked value is incomplete, eg. "25/",
 			// the result will be "Invalid Date",
 			// so it won't match the regex
-			const formatted = parseDate(masked).format('DD/MM/YYYY');
+			const formatted = parseDate(masked, this.dateFormat).format('DD/MM/YYYY');
 
 			// Validate DD/MM/YYYY format
 			const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
@@ -294,6 +309,7 @@
 </script>
 
 <style lang="scss" scoped>
+	// Hide scrollbar in VMenu
 	.vd-date-picker-menu {
 		overflow: hidden;
 	}

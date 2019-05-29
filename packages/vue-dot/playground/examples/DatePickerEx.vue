@@ -28,7 +28,7 @@
 		<VBtn
 			color="primary"
 			class="ma-0"
-			@click="birthDate = '2010-02-15'"
+			@click="birthDate = '15/02/2010'"
 		>
 			Set the date
 		</VBtn>
