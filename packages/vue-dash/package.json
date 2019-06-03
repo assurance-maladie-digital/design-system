@@ -32,6 +32,7 @@
 		"yargs": "^13.2.2"
 	},
 	"devDependencies": {
+		"@cnamts/cli-helpers": "0.1.0",
 		"@types/cross-spawn": "^6.0.0",
 		"@types/figlet": "^1.2.0",
 		"@types/node": "^11.13.2",

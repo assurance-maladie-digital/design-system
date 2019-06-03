@@ -1,5 +1,4 @@
 import * as fs from 'fs-extra';
-import * as path from 'path';
 
 const { execSync } = require('child_process');
 

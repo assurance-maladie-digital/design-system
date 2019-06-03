@@ -53,6 +53,14 @@ The goal of our Design System is to unify our work, which allows teams to share 
        The Official CNAM component library
       </td>
     </tr>
+    <tr>
+      <td>
+        <a href="/packages/cli-helpers">CLI Helpers</a>
+      </td>
+      <td>
+       Helper functions to build CLI tools
+      </td>
+    </tr>
   </tbody>
 </table>
 

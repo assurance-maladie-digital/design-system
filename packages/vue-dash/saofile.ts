@@ -1,4 +1,5 @@
-import chalk, { log, cmd, warn, error, done } from './helpers/logger';
+import { log, cmd, warn, error, done } from '@cnamts/cli-helpers';
+import chalk from 'chalk';
 
 import * as spawn from 'cross-spawn';
 import * as glob from 'glob';

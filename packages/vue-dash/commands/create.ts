@@ -1,4 +1,5 @@
-import chalk, { event, error } from '../helpers/logger';
+import { event, error } from '@cnamts/cli-helpers';
+import chalk from 'chalk';
 
 import { resolve } from 'path';
 import sao from 'sao';
