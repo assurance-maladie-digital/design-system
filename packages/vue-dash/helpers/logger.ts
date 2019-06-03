@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-// Theme
+/** Theme */
 export const colors = {
 	primary: '#01579b'
 };

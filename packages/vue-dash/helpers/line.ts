@@ -1,6 +1,6 @@
 import chalk, { colors } from './logger';
 
-// Trace a straight line across the terminal
+/** Trace a straight line across the terminal */
 export default function traceLine(): void {
 	const cols = process.stdout.columns || 0;
 

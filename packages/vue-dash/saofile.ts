@@ -128,7 +128,7 @@ module.exports = {
 
 		return actions;
 	},
-	// After prompt & actions
+	/** After prompt & actions */
 	async completed() {
 		log('🗃  Initializing git repository…');
 		await this.gitInit();
