@@ -4,12 +4,18 @@ import * as spawn from 'cross-spawn';
 import * as glob from 'glob';
 import validate from 'validate-npm-package-name';
 
+import * as path from 'path';
+
 import * as Superb from 'superb';
 // Make a function, so you can call superb()
 const superb = () => Superb.random();
 
+function getPath(value: string) {
+	return path.join(__dirname, value);
+}
+
 module.exports = {
-	// Questions for the user
+	/** Questions for the user */
 	prompts() {
 		return [
 			{
@@ -49,7 +55,8 @@ module.exports = {
 			}
 		];
 	},
-	// Actions on the files
+
+	/** Actions on the files */
 	actions() {
 		// Validate the application name
 		const validation = validate(this.answers.name);
@@ -72,11 +79,11 @@ module.exports = {
 			process.exit(1);
 		}
 
-		// Add all files
+		// Add all files from the ./template folder
 		const actions: any[] = [{
 			type: 'add',
 			files: '**',
-			templateDir: './template'
+			templateDir: getPath('./template')
 		}];
 
 		// Move & rename static files
@@ -91,28 +98,33 @@ module.exports = {
 			}
 		});
 
-		const tsPatterns: any = {};
+		// Return array of .ejs files in ./template
+		const files: string[] = glob.sync(getPath('./template/**/*.ejs'));
 
-		const files: string[] = glob.sync('./template/**/*.ejs');
+		const patterns: any = {};
 
-		if (files) {
-			// Move & rename EJS files
-			// in /template, some files are prefixed with .ejs
-			// to avoid linter & editor problems
-			files.forEach((file) => {
-				const filePath = file.replace('./template/', '');
-				// Remove .ejs (4 last chars)
-				const trimed = filePath.slice(0, -4);
+		// Move & rename EJS files
 
-				// Add to patterns
-				tsPatterns[filePath] = trimed;
-			});
+		// in /template, some files are prefixed with .ejs
+		// to avoid linter & editor problems
+		files.forEach((file) => {
+			// Convert 'package/location/template/x/file.y'
+			// to 'x/file.y'
+			// slice(1) remove the first char (here it's '/')
+			const filePath = file.replace(getPath('./template'), '').slice(1);
 
-			actions.push({
-				type: 'move',
-				patterns: tsPatterns
-			});
-		}
+			// Remove .ejs (4 last chars)
+			const trimed = filePath.slice(0, -4);
+
+			// Add to patterns
+			patterns[filePath] = trimed;
+		});
+
+		// Rename the files by moving
+		actions.push({
+			type: 'move',
+			patterns
+		});
 
 		// Modify public/index.html
 		actions.push({
@@ -128,6 +140,7 @@ module.exports = {
 
 		return actions;
 	},
+
 	/** After prompt & actions */
 	async completed() {
 		log('🗃  Initializing git repository…');
