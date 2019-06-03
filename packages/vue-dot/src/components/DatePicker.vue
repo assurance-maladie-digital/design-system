@@ -12,8 +12,15 @@
 				ref="input"
 				v-model="dateFormatted"
 				:mask="maskValue"
+				:success-messages="options.textField.successMessages || successMessages"
 				v-bind="options.textField"
-				@blur="saveFromTextField"
+				:class="[
+					{
+						'warning-rules': warningRules.length
+					},
+					...options.textField.class
+				]"
+				@blur="saveFromTextField(); validate(textFieldDate)"
 			>
 				<VBtn
 					v-if="!noPrependIcon"
@@ -55,12 +62,12 @@
 
 	import customizable from '../mixins/customizable';
 
-	// import isDateValid from '../rules/isDateValid';
-
 	import dayjs from 'dayjs';
 
 	import maskit from '../functions/maskit';
 	import parseDate from '../helpers/parseDate';
+
+	import { ValidationRule } from '../rules/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -99,6 +106,11 @@
 				type: Boolean,
 				default: false
 			},
+			/** Same has validation rules from Vuetify, but for warnings */
+			warningRules: {
+				type: [Array, Object],
+				default: () => [] as string[]
+			},
 			/** The v-model value */
 			value: {
 				type: String,
@@ -119,9 +131,7 @@
 					label: 'Date',
 					persistentHint: true,
 					validateOnBlur: true,
-					rules: [
-						// isDateValid
-					]
+					class: 'vd-date-picker-text-field'
 				},
 				menu: {
 					closeOnContentClick: false,
@@ -193,6 +203,12 @@
 		max = this.birthdate ? new Date().toISOString().substr(0, 10) : null;
 		/** If birthdate is enabled, min is 01/01/1950 */
 		min = this.birthdate ? '1950-01-01' : null;
+
+		/**
+		 * The messages from warningRules.
+		 * Not used is already passed as a prop
+		 */
+		successMessages: string[] = [];
 
 		/**
 		 * Return the mask to apply to the TextField
@@ -308,6 +324,22 @@
 
 			return formatted;
 		}
+
+		/** Custom validation for warningRules */
+		validate(value: string) {
+			this.successMessages = [];
+
+			this.warningRules.forEach((rule: ValidationRule) => {
+				/** The result of the validation rule */
+				const result = rule(value);
+
+				// If it's a string, push it to successMessages
+				// If it's a boolean we don't do anything
+				if (typeof result === 'string') {
+					this.successMessages.push(result);
+				}
+			});
+		}
 	}
 </script>
 
@@ -315,5 +347,13 @@
 	// Hide scrollbar in VMenu
 	.vd-date-picker-menu {
 		overflow: hidden;
+	}
+
+	// Change the main color when a warning is present
+	.vd-date-picker-text-field.warning-rules {
+		&.success--text,
+		/deep/ .success--text {
+			color: orange !important;
+		}
 	}
 </style>

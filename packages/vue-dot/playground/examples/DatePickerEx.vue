@@ -18,6 +18,7 @@
 			v-model="birthDate"
 			date-format="DD-MM-YYYY"
 			birthdate
+			:warning-rules="rules"
 			:vuetify-options="{
 				textField: {
 					hint: 'DD-MM-YYYY Format'
@@ -47,9 +48,15 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import required from '../../src/rules/required';
+
 	@Component
 	export default class DatePickerEx extends Vue {
 		date = '';
 		birthDate = '';
+
+		rules = [
+			required
+		];
 	}
 </script>
