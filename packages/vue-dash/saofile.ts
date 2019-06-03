@@ -2,7 +2,7 @@ import chalk, { log, cmd, warn, error, done } from './helpers/logger';
 
 import * as spawn from 'cross-spawn';
 import * as glob from 'glob';
-import * as validate from 'validate-npm-package-name';
+import validate from 'validate-npm-package-name';
 
 import * as Superb from 'superb';
 // Make a function, so you can call superb()

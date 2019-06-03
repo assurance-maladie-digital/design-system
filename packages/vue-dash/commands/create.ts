@@ -1,7 +1,7 @@
 import chalk, { event, error } from '../helpers/logger';
 
 import { resolve } from 'path';
-import * as sao from 'sao';
+import sao from 'sao';
 
 interface Argv {
 	name: string;
