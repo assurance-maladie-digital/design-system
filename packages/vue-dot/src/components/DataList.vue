@@ -106,7 +106,7 @@
 	});
 
 	/**
-	 * DataList is a component used to display an array of
+	 * DataList is a component that displays an array of
 	 * objects containing key/value
 	 */
 	@Component

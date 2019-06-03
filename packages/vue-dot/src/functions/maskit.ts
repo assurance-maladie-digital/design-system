@@ -1,5 +1,10 @@
 import tokens from '../helpers/maskTokens';
 
+/**
+ * Mask a string,
+ * eg. the value '10042019' with the mask '##/##/####'
+ * will become '10/04/2019'
+ */
 export default function maskit(value: string = '', mask: string = '', masked = true) {
 	let iMask = 0;
 	let iValue = 0;

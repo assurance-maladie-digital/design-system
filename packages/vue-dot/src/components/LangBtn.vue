@@ -195,6 +195,7 @@
 				name: this.languages[this.currentLang].nativeName,
 				/** The url of the flag */
 				flagUrl: `${this.flagsUrl}${this.currentLang}.${this.flagsExt}`,
+				/** The accessible name of the main button */
 				ariaLabel: `${this.ariaLabel} ${this.languages[this.currentLang].nativeName}`
 			};
 		}
@@ -231,6 +232,7 @@
 </script>
 
 <style lang="scss" scoped>
+	// Flags styles
 	.vd-lang-btn {
 		.v-avatar img {
 			border-radius: 0%;
@@ -241,6 +243,9 @@
 		}
 	}
 
+	// Allow scrollbar for the menu,
+	// and limit it's height to 300px
+	// (needed when there is a lot of content)
 	.vd-lang-menu {
 		overflow: auto;
 		max-height: 300px;

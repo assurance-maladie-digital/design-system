@@ -120,7 +120,8 @@
 	});
 
 	/**
-	 * DatePicker is a component that
+	 * DatePicker is a component that makes the date picker
+	 from Vuetify simplier to use
 	*/
 	@Component<DatePicker>({
 		mixins: [

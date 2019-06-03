@@ -7,6 +7,7 @@ export interface NotificationObj {
 	icon: string;
 }
 
+/** The module contains only one notification at the time */
 interface NotificationState {
 	notification: NotificationObj | null;
 }
@@ -25,9 +26,11 @@ const actions: ActionTree<NotificationState, RootState> = {
 };
 
 const mutations: MutationTree<NotificationState> = {
+	/** Add (or replace) with the new notification */
 	ADD(state, notification: NotificationObj) {
 		state.notification = notification;
 	},
+	/** Simply erase the notification */
 	DELETE(state) {
 		state.notification = null;
 	}
@@ -35,6 +38,7 @@ const mutations: MutationTree<NotificationState> = {
 
 const getters: GetterTree<NotificationState, RootState> = {};
 
+/** The notification module */
 const notification: Module<NotificationState, RootState> = {
 	namespaced: true,
 	state,

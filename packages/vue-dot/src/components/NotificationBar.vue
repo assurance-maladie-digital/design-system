@@ -42,6 +42,7 @@
 
 	const Props = Vue.extend({
 		props: {
+			/** The text of the close button */
 			closeText: {
 				type: String,
 				default: 'Fermer'
@@ -102,7 +103,7 @@
 <style lang="scss" scoped>
 	$size: 24px;
 
-	// Fixed size to avoid reflow at first render
+	// Fix size of the icon to avoid reflow at first render
 	.vd-notification-icon {
 		width: $size;
 		height: $size;

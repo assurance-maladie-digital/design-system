@@ -1,5 +1,6 @@
 /**
  * Debounce function
+ *
  * @param {Function} callback The function called after debounce
  * @param {Number} time The interval of the debounce in milliseconds
  */

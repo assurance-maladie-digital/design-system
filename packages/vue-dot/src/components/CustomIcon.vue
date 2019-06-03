@@ -79,7 +79,7 @@
 	});
 
 	/**
-	 * CustomIcon is a component used to display an SVG Icon
+	 * CustomIcon is a component that displays an SVG Icon
 	 * defined in the theme that is passed as an option of the plugin
 	 */
 	@Component

@@ -85,7 +85,7 @@ function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 	}
 }
 
-/** Check that the date is valid */
+/** Check that the date is valid (expects ##/##/#### format) */
 export function isDateValid(errorMessages = defaultErrorMessages) {
 	return function(value: string) {
 		return checkIfDateValid(value, errorMessages) || errorMessages.default;
