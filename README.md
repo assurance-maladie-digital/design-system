@@ -1,6 +1,6 @@
 <p align="center">
   <a
-    href="https://assurance-maladie-digital.github.io/"
+    href="https://github.com/assurance-maladie-digital/design-system"
     target="_blank"
     rel="noopener noreferrer"
   >
