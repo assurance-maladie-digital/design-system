@@ -3,6 +3,7 @@ node_modules/
 
 # Build
 dist/
+bin/
 
 # Log files
 logs
@@ -21,3 +22,6 @@ package-lock.json*
 *.njsproj
 *.sln
 *.sw?
+
+# Tests coverage
+tests/unit/coverage
