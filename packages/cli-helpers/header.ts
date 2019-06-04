@@ -3,7 +3,7 @@ import line from './line';
 import figlet from 'figlet';
 
 /** Display text with 'Georgia11' font, and 'primay' color */
-export function renderHeader(text: string, author: string, version: string): void {
+export function renderHeader(text: string, author?: string, version?: string): void {
 	const txt = figlet.textSync(text, {
 		font: 'Georgia11',
 		horizontalLayout: 'default',
@@ -18,10 +18,14 @@ export function renderHeader(text: string, author: string, version: string): voi
 	log();
 
 	// Version
-	log(`🔖  Version ${version}`);
+	if (version) {
+		log(`🔖  Version ${version}`);
+	}
 
 	// Author
-	log(`👷  Made by ${chalk.bold(author)}`);
+	if (author) {
+		log(`👷  Made by ${chalk.bold(author)}`);
+	}
 
 	log();
 }
