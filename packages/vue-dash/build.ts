@@ -1,4 +1,8 @@
 import * as fs from 'fs-extra';
+import { renderHeader } from '@cnamts/cli-helpers';
+import { author } from './package.json';
+
+renderHeader('Self Build', author.name);
 
 const { execSync } = require('child_process');
 
