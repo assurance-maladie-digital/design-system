@@ -3,13 +3,17 @@
 	"version": "2.0.0-alpha.1",
 	"description": "Official CNAM component library",
 	"keywords": [
-		"vue",
-		"vuejs2",
-		"vue-cli",
-		"component-library",
 		"cnam",
-		"vue-dot"
+		"vue",
+		"vue-dot",
+		"vue-cli",
+		"component-library"
 	],
+	"homepage": "https://github.com/assurance-maladie-digital/design-system/blob/master/packages/vue-dot/README.md",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
 	"license": "MIT",
 	"author": {
 		"name": "Dylan Broussard",

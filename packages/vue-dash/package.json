@@ -2,6 +2,17 @@
 	"name": "@cnamts/vue-dash",
 	"version": "0.1.0",
 	"description": "Create and manage CNAM front-end projects",
+	"keywords": [
+		"cnam",
+		"vue",
+		"vue-dash",
+		"scaffolding"
+	],
+	"homepage": "https://github.com/assurance-maladie-digital/design-system/blob/master/packages/vue-dash/README.md",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
 	"license": "MIT",
 	"author": {
 		"name": "Dylan Broussard",
@@ -19,7 +30,7 @@
 		"vue-dash": "./bin/cli.js"
 	},
 	"scripts": {
-		"build": "ts-node --project ./tsconfig.json --files ./build",
+		"build": "ts-node --project tsconfig.json --files build.ts",
 		"lint": "eslint **/*.ts --fix"
 	},
 	"dependencies": {

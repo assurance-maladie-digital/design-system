@@ -2,15 +2,26 @@
 	"name": "@cnamts/cli-helpers",
 	"version": "0.1.0",
 	"description": "Helper functions to build CLI tools",
+	"keywords": [
+		"cnam",
+		"cli",
+		"typescript",
+		"helpers"
+	],
+	"homepage": "https://github.com/assurance-maladie-digital/design-system/blob/master/packages/cli-helpers/README.md",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
 	"license": "MIT",
 	"author": {
 		"name": "Dylan Broussard",
 		"email": "me@deraw.dev"
 	},
-	"main": "index.ts",
 	"files": [
 		"*.ts"
 	],
+	"main": "index.ts",
 	"dependencies": {
 		"figlet": "^1.2.3"
 	},
