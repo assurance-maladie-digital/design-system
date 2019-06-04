@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"author": {
 		"name": "Dylan Broussard",
-		"email": "deraw@outlook.fr"
+		"email": "me@deraw.dev"
 	},
 	"main": "index.ts",
 	"files": [
