@@ -13,13 +13,23 @@
 		/>
 
 		<h2 class="subheading my-3 font-weight-bold">
-			Length & required with default messages
+			Min length & required with default messages
 		</h2>
 
 		<VTextarea
 			label="Required field"
 			rows="1"
 			:rules="textareaRules"
+		/>
+
+		<h2 class="subheading my-3 font-weight-bold">
+			Max length with default messages
+		</h2>
+
+		<VTextarea
+			label="Length field"
+			rows="1"
+			:rules="lengthRule"
 		/>
 	</DocSection>
 </template>
@@ -29,7 +39,8 @@
 	import Component from 'vue-class-component';
 
 	import defaultRequired, { required } from '../../src/rules/required';
-	import length from '../../src/rules/length';
+	import maxLength from '../../src/rules/maxLength';
+	import minLength from '../../src/rules/minLength';
 
 	@Component
 	export default class CustomIconEx extends Vue {
@@ -41,7 +52,11 @@
 
 		textareaRules = [
 			defaultRequired,
-			length(10)
+			minLength(10)
 		];
+
+		lengthRule = [
+			maxLength(10)
+		]
 	}
 </script>

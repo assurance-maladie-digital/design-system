@@ -3,11 +3,16 @@ const defaultErrorMessages = {
 };
 
 /** Check that the field does not exceeds the max length */
-export function length(max: number, errorMessages = defaultErrorMessages) {
+export function maxLength(max: number, errorMessages = defaultErrorMessages) {
 	// Return the validation function
 	return function(value: string) {
-		return !!value && value.length < max || errorMessages.default(max);
+		// If the value is empty, return true (valid)
+		if (!value) {
+			return true;
+		}
+
+		return value.length < max || errorMessages.default(max);
 	};
 }
 
-export default length;
+export default maxLength;

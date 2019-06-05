@@ -1,6 +1,7 @@
 import email from './email';
 import isDateValid from './isDateValid';
-import length from './length';
+import maxLength from './maxLength';
+import minLength from './minLength';
 import notAfterToday from './notAfterToday';
 import notBeforeToday from './notBeforeToday';
 import required from './required';
@@ -12,5 +13,6 @@ export default {
 	notAfterToday,
 	notBeforeToday,
 	required,
-	length
+	maxLength,
+	minLength
 };
