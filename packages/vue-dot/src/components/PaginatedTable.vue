@@ -118,7 +118,7 @@
 		created() {
 			this.localPagination = JSON.parse(
 				// Default to empty object
-				localStorage.getItem('vd-pagination' + this.prefix) || '{}'
+				localStorage.getItem('vd-pagination' + this.id) || '{}'
 			);
 		}
 	}
