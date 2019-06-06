@@ -8,7 +8,7 @@ dayjs.extend(isLeapYear);
 import parseDate from '../helpers/parseDate';
 import { ErrorMessages } from './types';
 
-const defaultErrorMessages: ErrorMessages = {
+const defaultErrorMessages = {
 	default: 'La date saisie n\'est pas valide.',
 	wrongFormat: 'Le format de la date n\'est pas valide.',
 	monthNotMatch: 'Le jour saisi dépasse le nombre de jours dans le mois.',
