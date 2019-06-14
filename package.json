@@ -1,4 +1,5 @@
 {
+	"private": true,
 	"name": "@cnamts/design-system",
 	"devDependencies": {
 		"@types/node": "^12.0.4",
