@@ -1,8 +1,5 @@
 <template>
-	<DocSection
-		no-divider
-		title="Rules"
-	>
+	<DocSection title="Rules">
 		<h2 class="subheading mb-3 font-weight-bold">
 			Required with custom message
 		</h2>

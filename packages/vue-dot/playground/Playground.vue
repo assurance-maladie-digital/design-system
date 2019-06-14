@@ -55,6 +55,8 @@
 				<PaginatedTableEx />
 
 				<RulesEx />
+
+				<CopyBtnEx />
 			</VLayout>
 		</VContent>
 

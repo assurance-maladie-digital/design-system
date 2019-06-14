@@ -1,5 +1,6 @@
 import { VueConstructor } from 'vue';
 
+import CopyBtn from './CopyBtn.vue';
 import CustomIcon from './CustomIcon.vue';
 import DataList from './DataList.vue';
 import DatePicker from './DatePicker.vue';
@@ -12,6 +13,7 @@ interface Components {
 }
 
 const components: Components = {
+	CopyBtn,
 	CustomIcon,
 	DataList,
 	DatePicker,
