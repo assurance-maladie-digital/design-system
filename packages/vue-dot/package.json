@@ -42,6 +42,8 @@
 	"devDependencies": {
 		"@babel/core": "^7.4.4",
 		"@babel/polyfill": "^7.4.4",
+		"@cnamts/cli-helpers": "0.1.0",
+		"@types/fs-extra": "^7.0.0",
 		"@types/jest": "^24.0.13",
 		"@typescript-eslint/parser": "^1.9.0",
 		"@vue/cli-plugin-babel": "^3.7.0",
@@ -70,7 +72,7 @@
 		"style-loader": "^0.23.1",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",
-		"ts-jest": "^24.0.2",
+		"ts-jest": "^23.10.5",
 		"ts-node": "^8.1.0",
 		"typescript": "^3.4.5",
 		"uglifyjs-webpack-plugin": "^2.1.3",
