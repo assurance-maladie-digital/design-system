@@ -27,5 +27,6 @@
 	},
 	"devDependencies": {
 		"@types/figlet": "^1.2.0"
-	}
+	},
+	"gitHead": "f05d735be9b01718e145d32e50fd46ea4259c04d"
 }
