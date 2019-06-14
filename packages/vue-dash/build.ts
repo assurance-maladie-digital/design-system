@@ -22,7 +22,7 @@ fs.copySync('./template', `./${dist}/template`);
 
 // Build the package
 execSync(
-	`tsc`,
+	'tsc',
 	{
 		stdio: 'inherit'
 	}

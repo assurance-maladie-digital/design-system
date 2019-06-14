@@ -76,7 +76,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import pkg from '../package.json';
+	import { version } from '../package.json';
 
 	/**
 	 * Playground is a component that contains examples
@@ -85,7 +85,7 @@
 	@Component
 	export default class Playground extends Vue {
 		dark = false;
-		version = pkg.version;
+		version = version;
 	}
 </script>
 

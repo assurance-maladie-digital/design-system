@@ -28,7 +28,7 @@
 	"main": "./dist/vue-dot.common.js",
 	"scripts": {
 		"playground": "vue-cli-service serve",
-		"build": "vue-cli-service build --target lib --name vue-dot ./src/index.ts",
+		"build": "ts-node --project tsconfig.json --files build.ts",
 		"lint": "vue-cli-service lint",
 		"test": "vue-cli-service test:unit"
 	},
