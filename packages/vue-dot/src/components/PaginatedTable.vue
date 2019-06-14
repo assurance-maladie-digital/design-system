@@ -18,8 +18,7 @@
 		-->
 		<template
 			v-for="slot in Object.keys($scopedSlots)"
-			:slot="slot"
-			slot-scope="scope"
+			v-slot:[slot]="scope"
 		>
 			<slot
 				:name="slot"

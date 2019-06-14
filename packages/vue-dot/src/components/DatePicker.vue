@@ -22,19 +22,20 @@
 				]"
 				@blur="saveFromTextField(); validate(textFieldDate)"
 			>
-				<VBtn
-					v-if="!noPrependIcon"
-					slot="prepend"
-					v-bind="options.btn"
-					class="ma-0"
-					@click="menu = true"
-				>
-					<slot name="icon">
-						<VIcon v-bind="options.icon">
-							event
-						</VIcon>
-					</slot>
-				</VBtn>
+				<template #prepend>
+					<VBtn
+						v-if="!noPrependIcon"
+						v-bind="options.btn"
+						class="ma-0"
+						@click="menu = true"
+					>
+						<slot name="icon">
+							<VIcon v-bind="options.icon">
+								event
+							</VIcon>
+						</slot>
+					</VBtn>
+				</template>
 			</VTextField>
 		</template>
 
@@ -121,7 +122,7 @@
 
 	/**
 	 * DatePicker is a component that makes the date picker
-	 from Vuetify simplier to use
+	 * from Vuetify simplier to use
 	*/
 	@Component<DatePicker>({
 		mixins: [

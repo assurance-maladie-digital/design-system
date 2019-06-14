@@ -25,9 +25,11 @@
 				}
 			}"
 		>
-			<VIcon slot="icon">
-				cake
-			</VIcon>
+			<template #icon>
+				<VIcon>
+					cake
+				</VIcon>
+			</template>
 		</DatePicker>
 
 		<p class="mt-3">

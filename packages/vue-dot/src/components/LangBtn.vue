@@ -7,38 +7,40 @@
 		content-class="vd-lang-menu"
 	>
 		<!-- The activator, the main button -->
-		<VBtn
-			v-if="currentLangData"
-			slot="activator"
-			v-bind="options.btn"
-		>
-			<!--
-				If flags mode is activated:
-				The flag of the current language
-			-->
-			<img
-				v-if="flags"
-				:src="currentLangData.flagUrl"
-				class="vd-current-flag"
-				alt=""
+		<template #activator="{ on }">
+			<VBtn
+				v-if="currentLangData"
+				v-bind="options.btn"
+				v-on="on"
 			>
+				<!--
+					If flags mode is activated:
+					The flag of the current language
+				-->
+				<img
+					v-if="flags"
+					:src="currentLangData.flagUrl"
+					class="vd-current-flag"
+					alt=""
+				>
 
-			<!-- Current language -->
-			<span
-				v-if="currentLangTextBtn"
-				class="ml-2"
-			>
-				{{ currentLangData.name }}
-			</span>
+				<!-- Current language -->
+				<span
+					v-if="currentLangTextBtn"
+					class="ml-2"
+				>
+					{{ currentLangData.name }}
+				</span>
 
-			<!-- Down arrow -->
-			<VIcon
-				v-if="downArrow"
-				v-bind="options.icon"
-			>
-				arrow_drop_down
-			</VIcon>
-		</VBtn>
+				<!-- Down arrow -->
+				<VIcon
+					v-if="downArrow"
+					v-bind="options.icon"
+				>
+					arrow_drop_down
+				</VIcon>
+			</VBtn>
+		</template>
 
 		<!-- Languages list -->
 		<VList v-bind="options.list">
