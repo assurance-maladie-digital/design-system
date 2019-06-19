@@ -2,8 +2,10 @@
 	"private": true,
 	"name": "@cnamts/design-system",
 	"devDependencies": {
+		"@types/fs-extra": "^7.0.0",
 		"@types/node": "^12.0.4",
 		"eslint": "^5.16.0",
+		"fs-extra": "^8.0.1",
 		"lerna": "^3.14.1"
 	}
 }

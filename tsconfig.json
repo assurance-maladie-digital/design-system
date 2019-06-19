@@ -20,7 +20,8 @@
 		"experimentalDecorators": true,
 		// Shared types
 		"types": [
-			"node"
+			"node",
+			"fs-extra"
 		],
 		"lib": [
 			"es2017",

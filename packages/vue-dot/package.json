@@ -43,7 +43,6 @@
 		"@babel/core": "^7.4.4",
 		"@babel/polyfill": "^7.4.4",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.8",
-		"@types/fs-extra": "^7.0.0",
 		"@types/jest": "^24.0.13",
 		"@typescript-eslint/parser": "^1.9.0",
 		"@vue/cli-plugin-babel": "^3.7.0",
