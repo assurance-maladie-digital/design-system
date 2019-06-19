@@ -34,7 +34,7 @@
 		"lint": "eslint **/*.ts --fix"
 	},
 	"dependencies": {
-		"@cnamts/cli-helpers": "^2.0.0-alpha.9",
+		"@cnamts/cli-helpers": "^2.0.0-alpha.10",
 		"cross-spawn": "^6.0.5",
 		"figlet": "^1.2.1",
 		"glob": "^7.1.3",
