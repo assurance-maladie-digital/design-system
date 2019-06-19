@@ -19,9 +19,13 @@
 		"email": "me@deraw.dev"
 	},
 	"files": [
+		"bin/*",
 		"*.ts"
 	],
-	"main": "index.ts",
+	"main": "./bin/index.js",
+	"scripts": {
+		"build": "ts-node --project tsconfig.json --files build.ts"
+	},
 	"dependencies": {
 		"figlet": "^1.2.3"
 	},
