@@ -1,19 +1,28 @@
 {
 	"compilerOptions": {
+		// Always transpile to ES5
 		"target": "es5",
 		"module": "esnext",
+		// Strict Type-Checking
 		"strict": true,
-		"jsx": "preserve",
-		"importHelpers": true,
+		// Node.js resolution strategy
 		"moduleResolution": "node",
+		// Resolve JSON files as modules
+		"resolveJsonModule": true,
+		// Emit interoperability between CommonJS and ES Modules
 		"esModuleInterop": true,
+		// Allow default imports from modules with no default export.
+		// This does not affect code emit, just typechecking.
 		"allowSyntheticDefaultImports": true,
+		// Enables experimental support for ES7 decorators
+		"experimentalDecorators": true,
 		"sourceMap": true,
 		"baseUrl": ".",
 		"types": [
 			"node",
 			"jest"
 		],
+		// Path aliases
 		"paths": {
 			"@/*": [
 				"src/*"

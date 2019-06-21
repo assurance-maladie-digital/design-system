@@ -18,17 +18,16 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
 	import pkg from '../../package.json';
 
-	export default Vue.extend({
-		name: 'Footer',
-		data() {
-			return {
-				version: pkg.version
-			};
-		}
-	});
+	/** The application footer */
+	@Component
+	export default class Footer extends Vue {
+		/** The version from package.json */
+		version = pkg.version;
+	}
 </script>
 
 <style lang="scss" scoped>

@@ -27,24 +27,25 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
 	import { MetaInfo } from 'vue-meta';
 
-	// Static load for faster rendering
+	// Static import for faster rendering
 	import Header from '@/components/Header.vue';
 	import Toolbar from '@/components/Toolbar.vue';
 	import Footer from '@/components/Footer.vue';
 
-	// App is your main component, it will contain your application with `router-view`
-	export default Vue.extend({
-		name: 'App',
+	/** App is the main component */
+	@Component({
 		components: {
 			Header,
 			Toolbar,
-			Footer,
-			// Dynamic laod
-			NotificationBar: () => import('@/components/NotificationBar.vue')
-		},
+			Footer
+		}
+	})
+	export default class App extends Vue {
+		/** The meta informations of the route */
 		metaInfo(): MetaInfo {
 			return {
 				// If no subcomponents specify a metaInfo.title, this title will be used
@@ -59,5 +60,5 @@
 				]
 			};
 		}
-	});
+	}
 </script>

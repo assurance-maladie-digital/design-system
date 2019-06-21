@@ -1,9 +1,9 @@
-declare module 'vue-config';
+// Declare module for every package without types
 declare module '@cnamts/vue-dot';
-declare module 'raven-js/plugins/vue';
 declare module 'vuetify/lib';
 declare module 'vuetify/lib/directives';
 
+// Make Vue SFC modules
 declare module '*.vue' {
 	import Vue from 'vue';
 	export default Vue;

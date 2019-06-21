@@ -9,9 +9,7 @@
 
 			<p>{{ $t('views.home.description.block2') }}</p>
 
-			<RouterLink
-				:to="$t('views.home.about.to')"
-			>
+			<RouterLink :to="$t('views.home.about.to')">
 				{{ $t('views.home.about.label') }}
 			</RouterLink>
 
@@ -30,22 +28,30 @@
 </template>
 
 <script lang="ts">
-	import Vue, { VueConstructor } from 'vue';
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
 	import { mapActions } from 'vuex';
 
-	import VuexBindings from '@/store/types';
+	import { NotificationObj } from '@cnamts/vue-dot/src/modules/notification';
 
-	export default (Vue as VueConstructor<Vue & VuexBindings>).extend({
-		name: 'Home',
-		methods: {
-			...mapActions('notification', ['notify']),
-			sendNotification() {
-				this.notify({
-					type: 'success',
-					message: 'Exemple de notification',
-					icon: 'check'
-				});
-			}
+	/** Home page */
+	@Component({
+		// Vuex bindings
+		methods: mapActions('notification', [
+			'notify'
+		])
+	})
+	export default class Home extends Vue {
+		// Vuex bindings type declaration
+		notify!: (obj: NotificationObj) => void;
+
+		sendNotification() {
+			this.notify({
+				type: 'success',
+				message: 'Exemple de notification',
+				icon: 'check'
+			});
 		}
-	});
+	}
 </script>

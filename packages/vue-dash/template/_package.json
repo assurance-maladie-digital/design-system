@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"description": "<%= description %>",
+	"license": "UNLICENSED",
 	"author": "<%= author %>",
 	"scripts": {
 		"serve": "vue-cli-service serve",
@@ -13,52 +14,51 @@
 		"test:e2e": "vue-cli-service test:e2e"
 	},
 	"dependencies": {
-		"@babel/polyfill": "^7.4.3",
-		"@cnamts/vue-dot": "^1.6.2",
-		"axios": "^0.18.0",
-		"dayjs": "^1.8.12",
-		"raven-js": "^3.27.0",
+		"@cnamts/vue-dot": "^2.0.0-alpha.12",
+		"axios": "^0.19.0",
+		"core-js": "^2.6.5",
+		"dayjs": "^1.8.14",
+		"languages": "^0.1.3",
 		"vue": "^2.6.10",
-		"vue-i18n": "^8.10.0",
-		"vue-meta": "^1.6.0",
-		"vue-router": "^3.0.3",
-		"vuetify": "^1.5.11",
-		"vuetify-loader": "^1.2.1",
-		"vuex": "^3.1.0",
-		"vuex-persist": "^2.0.0"
+		"vue-class-component": "^7.1.0",
+		"vue-i18n": "^8.11.2",
+		"vue-meta": "^2.0.4",
+		"vue-router": "^3.0.6",
+		"vuetify": "^1.5.16",
+		"vuetify-loader": "^1.2.2",
+		"vuex": "^3.1.1",
+		"vuex-persist": "^2.0.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.4.3",
-		"@types/jest": "^24.0.11",
-		"@types/node": "^11.13.4",
-		"@types/promise.prototype.finally": "^2.0.3",
-		"@typescript-eslint/parser": "^1.6.0",
-		"@vue/cli-plugin-babel": "^3.5.5",
-		"@vue/cli-plugin-eslint": "^3.5.1",
-		"@vue/cli-plugin-typescript": "^3.5.3",
-		"@vue/cli-plugin-unit-jest": "^3.5.3",
-		"@vue/cli-service": "^3.5.3",
+		"@babel/core": "^7.0.0-0",
+		"@types/jest": "^23.3.14",
+		"@types/node": "^12.0.10",
+		"@typescript-eslint/parser": "^1.11.0",
+		"@vue/cli-plugin-babel": "^3.8.0",
+		"@vue/cli-plugin-eslint": "^3.8.0",
+		"@vue/cli-plugin-typescript": "^3.8.1",
+		"@vue/cli-plugin-unit-jest": "^3.8.0",
+		"@vue/cli-service": "^3.8.4",
 		"@vue/eslint-config-standard": "^4.0.0",
 		"@vue/eslint-config-typescript": "^4.0.0",
 		"@vue/test-utils": "^1.0.0-beta.29",
 		"babel-core": "7.0.0-bridge.0",
-		"babel-plugin-transform-imports": "^1.5.1",
+		"babel-eslint": "^10.0.1",
 		"eslint": "^5.16.0",
-		"eslint-plugin-vue": "^5.2.2",
+		"eslint-plugin-vue": "^5.2.3",
 		"jest": "^23.6.0",
 		"jest-serializer-vue": "^2.0.2",
-		"languages": "^0.1.3",
-		"lint-staged": "^8.1.5",
-		"majestic": "^1.3.0",
-		"node-sass": "^4.11.0",
+		"lint-staged": "^8.2.1",
+		"majestic": "^1.6.0",
+		"node-sass": "^4.12.0",
 		"sass-loader": "^7.1.0",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",
 		"ts-jest": "^23.10.5",
-		"typescript": "~3.2.1",
+		"typescript": "^3.4.3",
 		"vue-cli-plugin-vuetify": "^0.5.0",
 		"vue-template-compiler": "^2.6.10",
-		"webpack": "^4.29.6"
+		"webpack": "^4.35.0"
 	},
 	"postcss": {
 		"plugins": {
@@ -79,7 +79,6 @@
 			"vue"
 		],
 		"transform": {
-			"^.+\\.jsx?$": "babel-jest",
 			"^.+\\.vue$": "vue-jest",
 			".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
 			"^.+\\.tsx?$": "ts-jest"
@@ -120,7 +119,12 @@
 		"testURL": "http://localhost/",
 		"transformIgnorePatterns": [
 			"./node_modules/(?!vuetify|vue-dot)"
-		]
+		],
+		"globals": {
+			"ts-jest": {
+				"babelConfig": true
+			}
+		}
 	},
 	"gitHooks": {
 		"pre-commit": "lint-staged"
@@ -140,9 +144,6 @@
 		]
 	},
 	"majestic": {
-		"jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js",
-		"args": [
-			"test:unit"
-		]
+		"jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js test:unit"
 	}
 }

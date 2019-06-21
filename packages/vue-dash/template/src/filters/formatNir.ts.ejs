@@ -1,14 +1,16 @@
-// Insert string at specific position
-// source: The string to format
-// index: The position where the replacement will be insert
-// replacement: the string or character to insert
+/**
+ * Insert string at specific position
+ * source: The string to format
+ * index: The position where the replacement will be insert
+ * replacement: the string or character to insert
+ */
 function insertAt(source: string, index: number, replacement: string) {
 	return source.substr(0, index) + replacement + source.substr(index);
 }
 
-// Format NIR: Insert spaces at specific positions of a string
+/** Format NIR: Insert spaces at specific positions of a string */
 const formatNir = (value: string): string => {
-	// All positions to insert space
+	/** All positions to insert space */
 	const positions = [13, 10, 7, 5, 3, 1];
 	let newValue = value;
 

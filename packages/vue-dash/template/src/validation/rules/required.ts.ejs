@@ -1,9 +1,0 @@
-import i18n from '@/i18n';
-
-const errorMessages = {
-	default: i18n.tc('validation.required.default')
-};
-
-const required = (value: string): string | boolean => !!value || errorMessages.default;
-
-export default required;

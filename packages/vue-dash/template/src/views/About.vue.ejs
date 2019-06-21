@@ -34,11 +34,13 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-	export default Vue.extend({
-		name: 'About',
+	/** About page */
+	@Component({
 		components: {
 			Links: () => import(/* webpackChunkName: "links" */ '@/components/Links.vue')
 		}
-	});
+	})
+	export default class About extends Vue {}
 </script>

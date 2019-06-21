@@ -1,9 +1,10 @@
 import axios from 'axios';
-import Raven from 'raven-js';
 import { AxiosError } from 'axios';
 
+/** API_URL env var */
 declare const API_URL: string;
 
+/** The axios isntance */
 const instance = axios.create({
 	withCredentials: false,
 	baseURL: API_URL,
@@ -13,8 +14,8 @@ const instance = axios.create({
 	}
 });
 
+/** Catcher for promises */
 export function catcher(error: AxiosError) {
-	Raven.captureException(error);
 	return Promise.reject(error); // For Promise.all().catch
 }
 

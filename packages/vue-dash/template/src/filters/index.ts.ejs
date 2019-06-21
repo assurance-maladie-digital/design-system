@@ -2,4 +2,5 @@ import Vue from 'vue';
 
 import formatNir from './formatNir';
 
-Vue.filter('nir', formatNir);
+// Register global filters
+Vue.filter('formatNir', formatNir);

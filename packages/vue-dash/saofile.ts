@@ -94,8 +94,7 @@ module.exports = {
 				'gitignore': '.gitignore',
 				'_package.json': 'package.json',
 				'_.eslintrc.js': '.eslintrc.js',
-				'_.eslintignore': '.eslintignore',
-				'_tsconfig.json': 'tsconfig.json'
+				'_.eslintignore': '.eslintignore'
 			}
 		});
 

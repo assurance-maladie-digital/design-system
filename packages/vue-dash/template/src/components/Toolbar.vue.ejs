@@ -1,8 +1,5 @@
 <template>
-	<VToolbar
-		class="secondary"
-		disabled
-	>
+	<VToolbar class="secondary">
 		<div class="group left">
 			<VBtn
 				exact
@@ -10,10 +7,9 @@
 				:to="$t('components.toolbar.actions.home.link')"
 				icon
 			>
-				<SvgIcon
-					color="white"
-					icon="home"
-				/>
+				<VIcon color="white">
+					home
+				</VIcon>
 			</VBtn>
 		</div>
 	</VToolbar>
@@ -21,10 +17,10 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-	export default Vue.extend({
-		name: 'Toolbar'
-	});
+	@Component
+	export default class Toolbar extends Vue {}
 </script>
 
 <style lang="scss" scoped>

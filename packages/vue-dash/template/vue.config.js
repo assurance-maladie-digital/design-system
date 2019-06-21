@@ -6,12 +6,16 @@ module.exports = {
 			splitChunks: {
 				chunks: 'all'
 			}
+		},
+		performance: {
+			hints: false
 		}
 	},
-	chainWebpack: config => {
-		// Vuetify loader
-		config.plugin('VuetifyLoaderPlugin');
-	},
 	// Transpile ES6 inside dependencies
-	transpileDependencies: ['vuex-persist']
+	transpileDependencies: [
+		/node_modules[/\\\\]vuetify[/\\\\]/,
+		'vuex-persist'
+	],
+	// Disable parallel build on the plateform
+	parallel: process.env.NODE_ENV !== 'production'
 };

@@ -4,7 +4,15 @@ import { Resize, Ripple } from 'vuetify/lib/directives';
 
 import fr from 'vuetify/src/locale/fr';
 
+// Import theme colors
+import colors from '@/theme/colors';
+
 Vue.use(Vuetify, {
+	theme: {
+		// Destructure colors object in theme
+		...colors
+	},
+	// Global compoennts
 	components: {
 		VDatePicker,
 		VTextField,
@@ -20,4 +28,5 @@ Vue.use(Vuetify, {
 	}
 });
 
-import 'vuetify/src/stylus/app.styl';
+// Import Vuetify's CSS
+import 'vuetify/dist/vuetify.min.css';

@@ -1,19 +1,23 @@
-import '@babel/polyfill';
 import Vue from 'vue';
+
+// Import plugins
 import './plugins/vuetify';
 import './plugins/vue-dot';
 import './filters';
+
+// Import application parts
 import App from './App.vue';
 import router from './router';
 import store from './store/';
 import i18n from './i18n';
 
+// Remove "tip" from browser console
 Vue.config.productionTip = false;
 
-// Create Vue instance
+// Create main Vue instance
 new Vue({
 	router,
 	store,
 	i18n,
 	render: (h) => h(App)
-}).$mount('#app');
+}).$mount('#app'); // Mount it on #app (in public/index.html)

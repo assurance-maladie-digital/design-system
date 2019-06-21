@@ -21,6 +21,9 @@ module.exports = {
 		// eg. attr= "value" is invalid
 		'vue/no-spaces-around-equal-signs-in-attribute': true,
 
+		// 1 empty line maximum
+		'no-multiple-empty-lines': ['error', { max: 1 }],
+
 		// Force semi
 		'semi': ['error', 'always'],
 

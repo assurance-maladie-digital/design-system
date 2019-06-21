@@ -30,10 +30,11 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-	export default Vue.extend({
-		name: 'Header'
-	});
+	/** The Header of the application */
+	@Component
+	export default class Header extends Vue {}
 </script>
 
 <style lang="scss" scoped>

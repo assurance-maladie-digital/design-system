@@ -1,7 +1,7 @@
 // Exemple service
 import axios, { catcher } from '@/plugins/axios';
 
-const anomalies = {
+const folders = {
 	getAll(pagination: object) {
 		return axios
 			.get('/api/all', {
@@ -18,4 +18,4 @@ const anomalies = {
 	}
 };
 
-export default anomalies;
+export default folders;

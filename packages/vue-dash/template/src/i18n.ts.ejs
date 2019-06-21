@@ -6,23 +6,31 @@ import translations from '@/translations';
 
 Vue.use(VueI18n);
 
-// Get default language from previously selected, or from the browser, or fallback to French
-let defaultLang = window.localStorage.getItem('lang') || navigator.language.substr(0, 2) || 'fr';
+/** The lang to fallback to */
+const fallbackLocale = 'fr';
+
+/**
+ * Get default language from previously selected,
+ * or from the browser, or fallback to French
+ */
+let defaultLang = window.localStorage.getItem('lang') || navigator.language.substr(0, 2) || fallbackLocale;
 
 if (!translations.includes(defaultLang)) {
-	defaultLang = 'fr';
+	defaultLang = fallbackLocale;
 }
 
 const i18n = new VueI18n({
 	locale: defaultLang,
-	fallbackLocale: 'fr', // By default, fallback to French if translation isn't found
+	fallbackLocale, // By default, fallback to French if translation isn't found
 	silentTranslationWarn: true // Remove warnings from the console, as suggested by the author of vue-i18n
 });
 
 const loadedLanguages: string[] = [];
 
-// Set the language everywhere in the app where it needs to be
-// This means i18n locale, axios headers, localstorage and HTML lang attribute
+/**
+ * Set the language everywhere in the app where it needs to be
+ * This means i18n locale, axios headers, localstorage and HTML lang attribute
+ */
 function setI18nLanguage(lang: string): string {
 	i18n.locale = lang;
 	axios.defaults.headers.common['Accept-Language'] = lang;
@@ -37,14 +45,16 @@ function setI18nLanguage(lang: string): string {
 	return lang;
 }
 
-// The function to change language, which loads the translation file if needed with webpack dynamic import
-export function loadLanguageAsync(lang: string): Promise<string> {
+/**
+ * The function to change language, which loads the translation file
+ * if needed with webpack dynamic import
+ */
+export async function loadLanguageAsync(lang: string): Promise<string> {
 	if (!loadedLanguages.includes(lang)) {
-		return import(/* webpackChunkName: "translations-[request]" */ `@/translations/${lang}`).then((messages) => {
-			i18n.setLocaleMessage(lang, messages.default);
-			loadedLanguages.push(lang);
-			return setI18nLanguage(lang);
-		});
+		const messages = await import(/* webpackChunkName: "translations-[request]" */ `@/translations/${lang}`);
+		i18n.setLocaleMessage(lang, messages.default);
+		loadedLanguages.push(lang);
+		return setI18nLanguage(lang);
 	}
 
 	return Promise.resolve(setI18nLanguage(lang));
