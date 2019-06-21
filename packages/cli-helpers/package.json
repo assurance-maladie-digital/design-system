@@ -20,7 +20,8 @@
 	},
 	"files": [
 		"bin/*",
-		"*.ts"
+		"*.ts",
+		"*.js"
 	],
 	"main": "./bin/index.js",
 	"scripts": {
