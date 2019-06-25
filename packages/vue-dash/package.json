@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dash",
-	"version": "2.0.0-alpha.12",
+	"version": "2.0.0-alpha.13",
 	"description": "Create and manage CNAM front-end projects",
 	"keywords": [
 		"cnam",
