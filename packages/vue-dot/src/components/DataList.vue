@@ -2,7 +2,10 @@
 	<div class="vd-data-list">
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
-			<h4 :class="titleClass">
+			<h4
+				v-if="listTitle"
+				:class="titleClass"
+			>
 				{{ listTitle }}
 			</h4>
 		</slot>
