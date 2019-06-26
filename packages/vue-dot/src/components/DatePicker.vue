@@ -161,8 +161,8 @@
 			prop: 'value',
 			event: 'change'
 		},
-		// See https://vuetifyjs.com/en/components/date-pickers#date-pickers-birthday-picker
 		watch: {
+			// See https://vuetifyjs.com/en/components/date-pickers#date-pickers-birthday-picker
 			menu(val) {
 				// If birthdate mode is activated
 				if (this.birthdate && val) {
@@ -176,6 +176,10 @@
 			value(date) {
 				// Format the date to 'YYYY-MM-DD' format using dateFormatReturn
 				this.date = parseDate(date, this.dateFormatReturn).format('YYYY-MM-DD');
+			},
+			/** Validate with warning rules each time textFieldDate is updated */
+			textFieldDate(value) {
+				this.validate(this.value);
 			}
 		}
 	})

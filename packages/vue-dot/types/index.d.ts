@@ -9,7 +9,7 @@ export interface Icon {
 }
 
 export interface Config {
-	icons: Icon[]
+	icons: Icon[];
 }
 
 export interface Theme {
