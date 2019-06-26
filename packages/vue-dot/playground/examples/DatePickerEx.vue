@@ -10,7 +10,7 @@
 			{{ date }}
 		</p>
 
-		<h2 class="subheading mt-3 font-weight-bold">
+		<h2 class="subheading mt-3 mb-2 font-weight-bold">
 			Custom
 		</h2>
 
@@ -25,7 +25,36 @@
 				}
 			}"
 		>
-			<template #icon>
+			<template #prepend-icon>
+				<VIcon>
+					cake
+				</VIcon>
+			</template>
+		</DatePicker>
+
+		<h2 class="subheading mt-3 mb-2 font-weight-bold">
+			Full Custom
+		</h2>
+
+		<DatePicker
+			v-model="birthDate"
+			date-format="DD-MM-YYYY"
+			birthdate
+			append-icon
+			:warning-rules="rules"
+			:vuetify-options="{
+				textField: {
+					placeholder: ' ',
+					hint: ' ',
+					solo: true
+				},
+				menu: {
+					nudgeBottom: 50,
+					nudgeRight: -10
+				}
+			}"
+		>
+			<template #append-icon>
 				<VIcon>
 					cake
 				</VIcon>
@@ -33,7 +62,7 @@
 		</DatePicker>
 
 		<p class="mt-3">
-			{{ birthDate }}
+			Value: {{ birthDate }}
 		</p>
 
 		<VBtn

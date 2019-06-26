@@ -24,12 +24,27 @@
 			>
 				<template #prepend>
 					<VBtn
-						v-if="!noPrependIcon"
+						v-if="!noPrependIcon && !appendIcon"
 						v-bind="options.btn"
 						class="ma-0"
 						@click="menu = true"
 					>
-						<slot name="icon">
+						<slot name="prepend-icon">
+							<VIcon v-bind="options.icon">
+								event
+							</VIcon>
+						</slot>
+					</VBtn>
+				</template>
+
+				<template #append>
+					<VBtn
+						v-if="appendIcon"
+						v-bind="options.btn"
+						class="ma-0"
+						@click="menu = true"
+					>
+						<slot name="append-icon">
 							<VIcon v-bind="options.icon">
 								event
 							</VIcon>
@@ -79,6 +94,11 @@
 			},
 			/** Disable the prepend icon */
 			noPrependIcon: {
+				type: Boolean,
+				default: false
+			},
+			/** Use append icon instead of prepend */
+			appendIcon: {
 				type: Boolean,
 				default: false
 			},
