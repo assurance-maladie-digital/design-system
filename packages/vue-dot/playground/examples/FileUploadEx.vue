@@ -58,8 +58,8 @@
 				Choose a file
 			</template>
 
-			<template #info-text="{ maxSize }">
-				(Max. size: {{ maxSize }}. Allowed formats: PDF, JPEG, PNG)
+			<template #info-text="{ maxSize, extensions }">
+				(Max. size: {{ maxSize }}. Allowed formats: {{ extensions }})
 			</template>
 		</FileUpload>
 

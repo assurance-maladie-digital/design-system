@@ -69,8 +69,9 @@
 					<slot
 						name="info-text"
 						:maxSize="maxSizeReadable"
+						:extensions="extensions"
 					>
-						(Taille max. : {{ maxSizeReadable }}. Formats acceptés : PDF, JPEG, PNG)
+						(Taille max. : {{ maxSizeReadable }}. Formats acceptés : {{ extensions }})
 					</slot>
 				</span>
 			</span>
@@ -106,7 +107,7 @@
 				type: Boolean,
 				default: true
 			},
-			/** Maximum size in bytes */
+			/** Maximum size in bytes per file */
 			fileSizeMax: {
 				type: Number,
 				default: 4096 * 1024 // Default 4MB
@@ -195,12 +196,20 @@
 				return false;
 			}
 
+			// Only add the file if valid
+			this.files.push(file);
+
 			return true;
 		}
 
+		/** Returns the extension of a file (without the dot) */
 		getFileExtension(fileName: string): string {
 			// lastIndexOf returns '.xxx', add 1 to slice the dot
 			return fileName.slice(fileName.lastIndexOf('.') + 1);
+		}
+
+		get extensions() {
+			return this.allowedExtensions.join(', ').toUpperCase();
 		}
 
 		/** This function is executed when content is dropped on the component */
@@ -231,21 +240,13 @@
 							return;
 						}
 
-						// Only add the file if valid
-						if (this.validateFile(file)) {
-							this.files.push(file);
-						}
+						this.validateFile(file);
 					}
 				}
 			} else {
 				// Use DataTransfer interface to access the file(s)
 				for (var i = 0; i < data.files.length; i++) {
-					const file = data.files[i];
-
-					// Only add the file if valid
-					if (this.validateFile(file)) {
-						this.files.push(file);
-					}
+					this.validateFile(data.files[i]);
 				}
 			}
 
@@ -264,12 +265,7 @@
 			}
 
 			for (var i = 0; i < files.length; i++) {
-				const file = files[i];
-
-				// Only add the file if valid
-				if (this.validateFile(file)) {
-					this.files.push(file);
-				}
+				this.validateFile(files[i]);
 			}
 
 			if (!this.error) {
