@@ -17,7 +17,7 @@
 			class="vd-table elevation-1"
 			@pagination:updated="pagination = $event; fetchData()"
 		>
-			<template v-slot:items="props">
+			<template #items="props">
 				<td>{{ props.item.name }}</td>
 
 				<td class="text-xs-right">
