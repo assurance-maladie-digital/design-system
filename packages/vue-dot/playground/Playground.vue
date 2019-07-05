@@ -57,6 +57,8 @@
 				<RulesEx />
 
 				<CopyBtnEx />
+
+				<FileUploadEx />
 			</VLayout>
 		</VContent>
 

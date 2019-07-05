@@ -4,6 +4,7 @@ import CopyBtn from './CopyBtn.vue';
 import CustomIcon from './CustomIcon.vue';
 import DataList from './DataList.vue';
 import DatePicker from './DatePicker.vue';
+import FileUpload from './FileUpload.vue';
 import LangBtn from './LangBtn.vue';
 import NotificationBar from './NotificationBar.vue';
 import PaginatedTable from './PaginatedTable.vue';
@@ -17,6 +18,7 @@ const components: Components = {
 	CustomIcon,
 	DataList,
 	DatePicker,
+	FileUpload,
 	LangBtn,
 	NotificationBar,
 	PaginatedTable
