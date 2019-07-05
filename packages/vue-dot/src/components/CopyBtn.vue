@@ -3,7 +3,7 @@
 		<VBtn
 			v-bind="options.btn"
 			:aria-label="label"
-			@click="btnClicked()"
+			@click="btnClicked"
 		>
 			<slot name="icon">
 				<VIcon>

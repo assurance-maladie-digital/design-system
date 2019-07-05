@@ -1,9 +1,6 @@
 <template>
-	<DocSection
-		no-divider
-		title="CopyBtn"
-	>
-		<p>Click the button bellow to copy "Test".</p>
+	<DocSection title="CopyBtn">
+		<p>Click the button below to copy "Test".</p>
 
 		<CopyBtn
 			text-to-copy="Test"
