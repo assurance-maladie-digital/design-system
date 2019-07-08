@@ -99,8 +99,8 @@
 			},
 			/** The v-model value */
 			value: {
-				type: String,
-				default: ''
+				type: [Array, Object],
+				default: () => []
 			},
 			/** Apply v-ripple on the component */
 			ripple: {
@@ -181,7 +181,11 @@
 			// Maximum size
 			if (file.size >= this.fileSizeMax) {
 				this.error = true;
-				this.$emit('error', ErrorCodes.FILE_TOO_LARGE);
+
+				this.$emit('error', {
+					file,
+					error: ErrorCodes.FILE_TOO_LARGE
+				});
 
 				return false;
 			}
@@ -191,7 +195,11 @@
 			// Extension
 			if (!this.allowedExtensions.includes(fileExt)) {
 				this.error = true;
-				this.$emit('error', ErrorCodes.FILE_EXT_NOT_ALLOWED);
+
+				this.$emit('error', {
+					file,
+					error: ErrorCodes.FILE_EXT_NOT_ALLOWED
+				});
 
 				return false;
 			}
@@ -210,6 +218,15 @@
 
 		get extensions() {
 			return this.allowedExtensions.join(', ').toUpperCase();
+		}
+
+		emitChangeEvent() {
+			if (!this.error) {
+				// Take the first file in single mode
+				const eventValue = this.multiple ? this.files : this.files[0];
+
+				this.$emit('change', eventValue);
+			}
 		}
 
 		/** This function is executed when content is dropped on the component */
@@ -250,9 +267,7 @@
 				}
 			}
 
-			if (!this.error) {
-				this.$emit('change', this.files);
-			}
+			this.emitChangeEvent();
 		}
 
 		/** This function is executed when after a manual file selection */
@@ -268,16 +283,18 @@
 				this.validateFile(files[i]);
 			}
 
-			if (!this.error) {
-				this.$emit('change', this.files);
-			}
+			this.emitChangeEvent();
 		}
 
 		ifTooMuchfiles(files: FileList | DataTransferItemList) {
 			// If not in multiple mode and more than one file,
 			// return error
 			if (!this.multiple && files.length > 1) {
-				this.$emit('error', ErrorCodes.MULTIPLE_FILES_SELECTED);
+				this.$emit('error', {
+					file: files,
+					error: ErrorCodes.MULTIPLE_FILES_SELECTED
+				});
+
 				return true;
 			}
 

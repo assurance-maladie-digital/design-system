@@ -8,6 +8,7 @@
 		</h2>
 
 		<FileUpload
+			v-model="file"
 			@error="error = $event"
 			@change="error = null; success = true"
 		/>
@@ -23,7 +24,7 @@
 			v-else-if="success"
 			class="mb-0 mt-1 success--text"
 		>
-			Succès !
+			{{ file.name }}
 		</p>
 
 		<p
@@ -95,6 +96,8 @@
 	export default class FileUploadEx extends Vue {
 		error = null;
 		success = false;
+
+		file = null;
 
 		errorsText = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
