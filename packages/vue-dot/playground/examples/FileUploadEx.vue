@@ -112,6 +112,11 @@
 		border: none;
 		padding: 10px 15px !important;
 
+		&:hover,
+		&:focus {
+			background: #2172c9 !important;
+		}
+
 		&.dragover {
 			background: #115297 !important;
 		}
