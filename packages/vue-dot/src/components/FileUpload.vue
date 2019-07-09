@@ -97,9 +97,13 @@
 				type: Boolean,
 				default: false
 			},
-			/** The v-model value */
+			/**
+				The v-model value,
+				allow File as type because on single mode,
+				the v-model isn't an array
+			*/
 			value: {
-				type: [Array, Object],
+				type: [Array, Object, File],
 				default: () => []
 			},
 			/** Apply v-ripple on the component */
