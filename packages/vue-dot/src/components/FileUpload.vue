@@ -5,7 +5,7 @@
 	-->
 	<label
 		v-ripple="ripple"
-		class="file-upload primary--text pa-3"
+		class="file-upload d-block primary--text pa-3"
 		:class="{ 'dragover': dragover }"
 		@dragover.prevent="dragover = true"
 		@dragleave="dragover = false"
