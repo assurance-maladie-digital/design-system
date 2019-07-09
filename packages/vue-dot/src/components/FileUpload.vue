@@ -278,6 +278,11 @@
 		inputValueChanged(files: FileList) {
 			this.selfReset();
 
+			// Don't do anything if no file selected
+			if (!files.length) {
+				return;
+			}
+
 			// Stop if multiple files selected in single mode
 			if (this.ifTooMuchfiles(files)) {
 				return;
