@@ -8,17 +8,30 @@
 		</h2>
 
 		<FileUpload
+			ref="fileUpload"
 			v-model="file"
+			input-ref="inputEl"
 			@error="error = $event"
 			@change="error = null; success = true"
 		/>
 
-		<p
+		<VLayout
 			v-if="error"
-			class="mb-0 mt-1 error--text"
+			align-start
+			column
 		>
-			{{ errorsText[error.code] || error.code }}
-		</p>
+			<p class="mb-0 mt-1 error--text">
+				{{ errorsText[error.code] || error }}
+			</p>
+
+			<VBtn
+				class="ma-0 mt-2"
+				color="primary"
+				@click="retry"
+			>
+				Réessayer
+			</VBtn>
+		</VLayout>
 
 		<p
 			v-else-if="success"
@@ -89,11 +102,22 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { VueConstructor } from 'vue';
 	import Component from 'vue-class-component';
 
+	interface Refs {
+		$refs: {
+			fileUpload: {
+				$refs: {
+					inputEl: HTMLInputElement,
+					vdInputEl: HTMLInputElement
+				}
+			}
+		};
+	}
+
 	@Component
-	export default class FileUploadEx extends Vue {
+	export default class FileUploadEx extends (Vue as VueConstructor<Vue & Refs>) {
 		error = null;
 		success = false;
 
@@ -104,6 +128,11 @@
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
 			FILE_EXT_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
 		};
+
+		/** Click on file input */
+		retry() {
+			this.$refs.fileUpload.$refs.inputEl.click();
+		}
 	}
 </script>
 

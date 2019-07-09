@@ -13,6 +13,7 @@
 	>
 		<!-- The actual <input>, masked with CSS -->
 		<input
+			:ref="inputRef"
 			type="file"
 			:disabled="disabled"
 			:multiple="multiple"
@@ -153,6 +154,15 @@
 			accept: {
 				type: String,
 				default: undefined
+			},
+			/**
+			 * The ref attribute value on the input
+			 * It's useful in case you want to trigger events
+			 * on the input element, eg. for a retry button
+			*/
+			inputRef: {
+				type: String,
+				default: 'vdInputEl'
 			}
 		}
 	});
