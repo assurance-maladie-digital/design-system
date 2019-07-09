@@ -17,7 +17,7 @@
 			v-if="error"
 			class="mb-0 mt-1 error--text"
 		>
-			{{ errorsText[error] || error }}
+			{{ errorsText[error.code] || error.code }}
 		</p>
 
 		<p

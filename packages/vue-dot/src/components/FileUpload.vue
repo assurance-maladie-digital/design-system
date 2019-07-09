@@ -194,7 +194,7 @@
 
 				this.$emit('error', {
 					file,
-					error: ErrorCodes.FILE_TOO_LARGE
+					code: ErrorCodes.FILE_TOO_LARGE
 				});
 
 				return false;
@@ -208,7 +208,7 @@
 
 				this.$emit('error', {
 					file,
-					error: ErrorCodes.FILE_EXT_NOT_ALLOWED
+					code: ErrorCodes.FILE_EXT_NOT_ALLOWED
 				});
 
 				return false;
@@ -307,7 +307,7 @@
 			if (!this.multiple && files.length > 1) {
 				this.$emit('error', {
 					file: files,
-					error: ErrorCodes.MULTIPLE_FILES_SELECTED
+					code: ErrorCodes.MULTIPLE_FILES_SELECTED
 				});
 
 				return true;
