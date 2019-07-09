@@ -14,6 +14,7 @@
 		<!-- The actual <input>, masked with CSS -->
 		<input
 			type="file"
+			:disabled="disabled"
 			:multiple="multiple"
 			:accept="computedAccept"
 			class="file-upload-input"
@@ -110,6 +111,11 @@
 			ripple: {
 				type: Boolean,
 				default: true
+			},
+			/** Disable the component */
+			disabled: {
+				type: Boolean,
+				default: false
 			},
 			/** Maximum size in bytes per file */
 			fileSizeMax: {
