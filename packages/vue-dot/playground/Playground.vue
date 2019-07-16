@@ -59,6 +59,8 @@
 				<CopyBtnEx />
 
 				<FileUploadEx />
+
+				<FileListEx />
 			</VLayout>
 		</VContent>
 

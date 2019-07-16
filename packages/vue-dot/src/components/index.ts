@@ -4,6 +4,7 @@ import CopyBtn from './CopyBtn.vue';
 import CustomIcon from './CustomIcon.vue';
 import DataList from './DataList.vue';
 import DatePicker from './DatePicker.vue';
+import FileList from './FileList.vue';
 import FileUpload from './FileUpload.vue';
 import LangBtn from './LangBtn.vue';
 import NotificationBar from './NotificationBar.vue';
@@ -18,6 +19,7 @@ const components: Components = {
 	CustomIcon,
 	DataList,
 	DatePicker,
+	FileList,
 	FileUpload,
 	LangBtn,
 	NotificationBar,

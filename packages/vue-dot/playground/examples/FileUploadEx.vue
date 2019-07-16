@@ -1,8 +1,5 @@
 <template>
-	<DocSection
-		no-divider
-		title="FileUpload"
-	>
+	<DocSection title="FileUpload">
 		<h2 class="subheading mb-2 font-weight-bold">
 			Default with event handlers
 		</h2>
