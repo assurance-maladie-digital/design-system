@@ -24,4 +24,4 @@ package-lock.json*
 *.sw?
 
 # Tests coverage
-tests/unit/coverage
+**/tests/**/coverage/
