@@ -247,6 +247,11 @@
 
 				this.$emit('change', eventValue);
 			}
+
+			// Reset file input
+			// Do after everything for IE
+			const input = this.$refs[this.inputRef] as HTMLInputElement;
+			input.value = '';
 		}
 
 		/** This function is executed when content is dropped on the component */
