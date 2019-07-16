@@ -7,7 +7,7 @@ import validate from 'validate-npm-package-name';
 
 import * as path from 'path';
 
-import * as Superb from 'superb';
+import Superb from 'superb';
 // Make a function, so you can call superb()
 const superb = () => Superb.random();
 
