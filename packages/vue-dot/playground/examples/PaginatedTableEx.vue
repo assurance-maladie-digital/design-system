@@ -103,22 +103,27 @@
 			},
 			{
 				text: 'Calories',
+				align: 'right',
 				value: 'calories'
 			},
 			{
 				text: 'Fat (g)',
+				align: 'right',
 				value: 'fat'
 			},
 			{
 				text: 'Carbs (g)',
+				align: 'right',
 				value: 'carbs'
 			},
 			{
 				text: 'Protein (g)',
+				align: 'right',
 				value: 'protein'
 			},
 			{
 				text: 'Iron (%)',
+				align: 'right',
 				value: 'iron'
 			}
 		];
