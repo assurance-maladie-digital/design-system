@@ -29,7 +29,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import customizable from '../mixins/customizable';
+	import customizable, { Options } from '../mixins/customizable';
 
 	import copyToClipboard from '../functions/copyToClipboard';
 
@@ -39,7 +39,7 @@
 			 * The accessible label of the button
 			 * required because if not present, the button
 			 * will not be properly accessible to screen readers
-			*/
+			 */
 			label: {
 				type: String,
 				required: true
@@ -65,7 +65,7 @@
 	/**
 	 * CopyBtn is a component that copy text to the clipboard and
 	 * shows a tooltip
-	*/
+	 */
 	@Component({
 		mixins: [
 			// Default configuration
@@ -82,6 +82,9 @@
 		]
 	})
 	export default class Copy extends Props {
+		// Mixin computed data
+		options!: Options;
+
 		/** Tooltip v-model */
 		tooltip = false;
 

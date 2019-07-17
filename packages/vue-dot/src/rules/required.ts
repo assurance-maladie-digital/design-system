@@ -4,7 +4,7 @@ const defaultErrorMessages = {
 
 /** Check that the field is non-empty */
 export function required(errorMessages = defaultErrorMessages) {
-	return function(value: string) {
+	return (value: string) => {
 		// If the value is falsy (empty string),
 		// it will return the error message
 

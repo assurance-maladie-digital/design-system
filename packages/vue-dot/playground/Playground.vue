@@ -85,7 +85,7 @@
 	/**
 	 * Playground is a component that contains examples
 	 * of the library component's
-	*/
+	 */
 	@Component
 	export default class Playground extends Vue {
 		dark = false;

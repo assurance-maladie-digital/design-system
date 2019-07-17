@@ -1,4 +1,4 @@
-import { PluginFunction } from 'vue';
+import Vue, { PluginFunction } from 'vue';
 
 // Types for the library usage
 // eg. Vue.use(VueDot, options)
@@ -25,3 +25,5 @@ export interface VueDotOptions {
 export default interface VueDotPlugin {
 	install: PluginFunction<VueDotOptions>;
 }
+
+export type Refs<T extends object> = Vue['$refs'] & T;

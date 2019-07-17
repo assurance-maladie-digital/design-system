@@ -9,10 +9,22 @@ import * as path from 'path';
 
 import Superb from 'superb';
 // Make a function, so you can call superb()
-const superb = () => Superb.random();
+const superb = (): string => Superb.random();
 
-function getPath(value: string) {
+function getPath(value: string): string {
 	return path.join(__dirname, value);
+}
+
+interface Patterns {
+	[key: string]: string;
+}
+
+interface Actions {
+	type: string;
+	files?: string;
+	templateDir?: string;
+	patterns?: Patterns;
+	handler?: (data: string) => string;
 }
 
 module.exports = {
@@ -65,7 +77,7 @@ module.exports = {
 		// Warnings
 		if (validation.warnings) {
 			validation.warnings.forEach((warning: string) => {
-				warn(warning)
+				warn(warning);
 			});
 		}
 
@@ -81,7 +93,7 @@ module.exports = {
 		}
 
 		// Add all files from the ./template folder
-		const actions: any[] = [{
+		const actions: Actions[] = [{
 			type: 'add',
 			files: '**',
 			templateDir: getPath('./template')
@@ -101,7 +113,7 @@ module.exports = {
 		// Return array of .ejs files in ./template
 		const files: string[] = glob.sync(getPath('./template/**/*.ejs'));
 
-		const patterns: any = {};
+		const patterns: Patterns = {};
 
 		// Move & rename EJS files
 

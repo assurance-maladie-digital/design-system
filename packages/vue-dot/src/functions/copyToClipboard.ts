@@ -2,7 +2,7 @@
  * copyToClipboard function
  * It will copy text to the clipboard
  *
- * @param {String} textToCopy The text to copy
+ * @param {string} textToCopy The text to copy
  */
 export default function copyToClipboard(textToCopy: string) {
 	const el = document.createElement('textarea');

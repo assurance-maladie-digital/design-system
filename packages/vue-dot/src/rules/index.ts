@@ -6,7 +6,7 @@ import notAfterToday from './notAfterToday';
 import notBeforeToday from './notBeforeToday';
 import required from './required';
 
-/** Export all rules */
+// Export all rules
 export default {
 	email,
 	isDateValid,

@@ -4,7 +4,7 @@ import { author } from './package.json';
 
 renderHeader('Self Build', author.name);
 
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
 /** Dist folder */
 const dist = 'dist';

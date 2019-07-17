@@ -62,7 +62,7 @@
 		props: {
 			/** The list to display */
 			list: {
-				type: Array,
+				type: [Array, Object],
 				required: true
 			},
 			// Title options

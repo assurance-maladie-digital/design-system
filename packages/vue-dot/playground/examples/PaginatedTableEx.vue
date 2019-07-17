@@ -68,7 +68,7 @@
 	}
 
 	interface DataObj {
-		items: any;
+		items: Dessert[];
 		total: number;
 	}
 
@@ -76,7 +76,7 @@
 	 * This is the Vuetify example
 	 * https://vuetifyjs.com/en/components/data-tables#paginate-and-sort-server-side
 	 * converted to TypeScript and using PaginatedTable
-	*/
+	 */
 	@Component
 	export default class PaginatedTableEx extends Vue {
 		totalDesserts = 0;
@@ -128,9 +128,7 @@
 			}
 		];
 
-		/**
-		 * Fetch data when rendered
-		*/
+		/** Fetch data when rendered */
 		mounted() {
 			this.fetchData();
 		}
@@ -150,7 +148,7 @@
 		 * After 1 second, it will return an API-like object
 		 *
 		 * it handles sorting and pagination
-		*/
+		 */
 		getDataFromApi() {
 			this.loading = true;
 
@@ -207,7 +205,7 @@
 			});
 		}
 
-		// Desserts data
+		/** Desserts data */
 		getDesserts() {
 			return [
 				{

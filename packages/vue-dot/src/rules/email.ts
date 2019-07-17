@@ -4,7 +4,7 @@ const defaultErrorMessages = {
 
 /** Check that the email is valid */
 export function email(errorMessages = defaultErrorMessages) {
-	return function(value: string) {
+	return (value: string) => {
 		const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
 		return emailRegex.test(value) || errorMessages.default;

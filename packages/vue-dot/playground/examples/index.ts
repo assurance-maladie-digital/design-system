@@ -30,9 +30,7 @@ const components: Components = {
 	RulesEx
 };
 
-/**
- * Globally register all components
-*/
+/** Globally register all components */
 Object.keys(components).forEach((name: string) => {
 	Vue.component(name, components[name]);
 });

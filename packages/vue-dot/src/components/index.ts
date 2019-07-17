@@ -26,9 +26,7 @@ const components: Components = {
 	PaginatedTable
 };
 
-/**
- * Globally register all components
-*/
+/** Globally register all components */
 export default (Vue: VueConstructor) => {
 	Object.keys(components).forEach((name: string) => {
 		Vue.component(name, components[name]);

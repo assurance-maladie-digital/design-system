@@ -54,7 +54,8 @@
 		testNotify() {
 			this.rmNotif();
 
-			const notification = this.notifications[Math.floor(Math.random() * this.notifications.length)];
+			const randomIndex = Math.floor(Math.random() * this.notifications.length);
+			const notification = this.notifications[randomIndex];
 
 			// Notify!
 			this.notify(notification);

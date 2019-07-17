@@ -5,7 +5,7 @@ import * as merge from 'deepmerge';
 /**
  * Mixin that merge default options with options passed as props
  *
- * @param {Object} defaultOptions The options to apply by default
+ * @param {object} defaultOptions The options to apply by default
  *
  * @example
  * // Usage in your component:
@@ -15,7 +15,7 @@ import * as merge from 'deepmerge';
  *
  * // Final API
  * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
-*/
+ */
 export default function customizable(defaultOptions: object) {
 	return Vue.extend({
 		props: {
@@ -42,4 +42,12 @@ export default function customizable(defaultOptions: object) {
 			}
 		}
 	});
+}
+
+interface OptionsObj {
+	[key: string]: any;
+}
+
+export interface Options {
+	[key: string]: OptionsObj;
 }

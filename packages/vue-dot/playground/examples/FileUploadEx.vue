@@ -8,7 +8,7 @@
 			ref="fileUpload"
 			v-model="file"
 			input-ref="inputEl"
-			@error="error = $event"
+			@error="setError"
 			@change="error = null; success = true"
 		/>
 
@@ -31,7 +31,7 @@
 		</VLayout>
 
 		<p
-			v-else-if="success"
+			v-else-if="success && file"
 			class="mb-0 mt-1 success--text"
 		>
 			{{ file.name }}
@@ -102,23 +102,27 @@
 	import Vue, { VueConstructor } from 'vue';
 	import Component from 'vue-class-component';
 
-	interface Refs {
-		$refs: {
-			fileUpload: {
-				$refs: {
-					inputEl: HTMLInputElement,
-					vdInputEl: HTMLInputElement
-				}
-			}
-		};
+	import { Refs } from '../../types';
+
+	interface Error {
+		code: string;
 	}
 
 	@Component
-	export default class FileUploadEx extends (Vue as VueConstructor<Vue & Refs>) {
-		error = null;
+	export default class FileUploadEx extends Vue {
+		// Extend $refs
+		$refs!: Refs<{
+			fileUpload: {
+				$refs: {
+					inputEl: HTMLInputElement
+				}
+			}
+		}>;
+
+		error: Error | null = null;
 		success = false;
 
-		file = null;
+		file: File | null = null;
 
 		errorsText = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
@@ -129,6 +133,10 @@
 		/** Click on file input */
 		retry() {
 			this.$refs.fileUpload.$refs.inputEl.click();
+		}
+
+		setError(error: Error) {
+			this.error = error;
 		}
 	}
 </script>

@@ -7,6 +7,7 @@ export const colors = {
 
 // Basic log
 // eslint-disable-next-line no-console
+// tslint:disable-next-line: no-console
 export const log = console.log;
 
 export function cmd(text: string): void {

@@ -37,7 +37,7 @@
 			/**
 			 * Disable divider
 			 * eg. for last section
-			*/
+			 */
 			noDivider: {
 				type: Boolean,
 				default: false

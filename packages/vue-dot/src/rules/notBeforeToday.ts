@@ -5,6 +5,7 @@ const defaultErrorMessages = {
 	default: 'La date ne doit pas être antérieure à aujourd\'hui.'
 };
 
+/** Check that the date is after now */
 function isDateAfterNow(value: string) {
 	// Date is DD/MM/YYYY format
 	const date = parseDate(value);
@@ -18,7 +19,7 @@ function isDateAfterNow(value: string) {
 
 /** Check that the date is not before today (expects ##/##/#### format) */
 export function notBeforeToday(errorMessages = defaultErrorMessages) {
-	return function(value: string) {
+	return (value: string) => {
 		// If the date is after now, it's a future date, it's valid,
 		// else, the date is before today, it's invalid
 		return isDateAfterNow(value) || errorMessages.default;

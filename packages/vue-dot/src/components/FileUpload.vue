@@ -19,7 +19,7 @@
 			:multiple="multiple"
 			:accept="computedAccept"
 			class="file-upload-input"
-			@change="inputValueChanged($event.target.files)"
+			@change="inputValueChanged"
 		>
 
 		<!--
@@ -85,6 +85,10 @@
 	import Vue, { VueConstructor } from 'vue';
 	import Component from 'vue-class-component';
 
+	interface HTMLInputEvent extends Event {
+		target: HTMLInputElement & EventTarget;
+	}
+
 	/** Standardized error codes */
 	enum ErrorCodes {
 		MULTIPLE_FILES_SELECTED = 'MULTIPLE_FILES_SELECTED',
@@ -100,10 +104,10 @@
 				default: false
 			},
 			/**
-				The v-model value,
-				allow File as type because on single mode,
-				the v-model isn't an array
-			*/
+			 * The v-model value,
+			 * allow File as type because on single mode,
+			 * the v-model isn't an array
+			 */
 			value: {
 				type: [Array, Object, File],
 				default: () => []
@@ -150,7 +154,7 @@
 			 *
 			 * This property is not required, by default it will be computed
 			 * based on allowedExtensions
-			*/
+			 */
 			accept: {
 				type: String,
 				default: undefined
@@ -159,7 +163,7 @@
 			 * The ref attribute value on the input
 			 * It's useful in case you want to trigger events
 			 * on the input element, eg. for a retry button
-			*/
+			 */
 			inputRef: {
 				type: String,
 				default: 'vdInputEl'
@@ -170,7 +174,7 @@
 	/**
 	 * FileUpload is a component that enhance the default HTML
 	 * file input element
-	*/
+	 */
 	@Component({
 		model: {
 			prop: 'value',
@@ -287,7 +291,7 @@
 				}
 			} else {
 				// Use DataTransfer interface to access the file(s)
-				for (var i = 0; i < data.files.length; i++) {
+				for (let i = 0; i < data.files.length; i++) {
 					this.validateFile(data.files[i]);
 				}
 			}
@@ -296,11 +300,16 @@
 		}
 
 		/** This function is executed when after a manual file selection */
-		inputValueChanged(files: FileList) {
+		inputValueChanged(event: HTMLInputEvent) {
+			if (!event.target) {
+				return;
+			}
+
+			const files = event.target.files;
 			this.selfReset();
 
 			// Don't do anything if no file selected
-			if (!files.length) {
+			if (!files || !files.length) {
 				return;
 			}
 
@@ -309,7 +318,7 @@
 				return;
 			}
 
-			for (var i = 0; i < files.length; i++) {
+			for (let i = 0; i < files.length; i++) {
 				this.validateFile(files[i]);
 			}
 

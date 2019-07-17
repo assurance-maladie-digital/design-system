@@ -75,13 +75,13 @@
 		/**
 		 * Local pagination
 		 * This is the pagination from local storage
-		*/
+		 */
 		localPagination: object = {};
 
 		/**
 		 * Returns either the local storage pagination,
 		 * or the pagination passed as a prop
-		*/
+		 */
 		get paginationCalc() {
 			// If localPagination isn't empty
 			if (Object.keys(this.localPagination).length) {
@@ -93,7 +93,7 @@
 			return this.pagination;
 		}
 
-		set paginationCalc(value: any) {
+		set paginationCalc(value: object) {
 			if (Object.keys(this.localPagination).length) {
 				this.localPagination = {};
 			}

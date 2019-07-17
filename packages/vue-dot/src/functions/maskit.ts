@@ -15,8 +15,8 @@ export default function maskit(value: string = '', mask: string = '', masked = t
 	while (iMask < mask.length && iValue < value.length) {
 		cMask = mask[iMask];
 
-		let masker = tokens[cMask];
-		let cValue = value[iValue];
+		const masker = tokens[cMask];
+		const cValue = value[iValue];
 
 		if (masker && masker.pattern && !masker.escape) {
 			if (masker.pattern.test(cValue)) {

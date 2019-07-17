@@ -76,7 +76,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import customizable from '../mixins/customizable';
+	import customizable, { Options } from '../mixins/customizable';
 
 	import dayjs from 'dayjs';
 
@@ -84,6 +84,8 @@
 	import parseDate from '../helpers/parseDate';
 
 	import { ValidationRule } from '../rules/types';
+
+	import { Refs } from '../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -143,7 +145,7 @@
 	/**
 	 * DatePicker is a component that makes the date picker
 	 * from Vuetify simplier to use
-	*/
+	 */
 	@Component<DatePicker>({
 		mixins: [
 			// Default configuration
@@ -188,7 +190,7 @@
 				if (this.birthdate && val) {
 					setTimeout(() => {
 						// Se the active picker to year
-						(this.$refs.picker as any).activePicker = 'YEAR';
+						this.$refs.picker.activePicker = 'YEAR';
 					});
 				}
 			},
@@ -204,6 +206,19 @@
 		}
 	})
 	export default class DatePicker extends Props {
+		// Mixin computed data
+		options!: Options;
+
+		// Extend $refs
+		$refs!: Refs<{
+			menu: {
+				save: (date: string) => void;
+			};
+			picker: {
+				activePicker: string;
+			};
+		}>;
+
 		/** The v-model of VMenu */
 		menu = false;
 
@@ -222,7 +237,7 @@
 		 *
 		 * @example
 		 * Format is '25032018'
-		*/
+		 */
 		textFieldDate = this.date;
 
 		/** If birthdate is enabled, max is the current date */
@@ -293,7 +308,7 @@
 
 		/** Save the date from calendar, using Vuetify method */
 		saveDate() {
-			(this.$refs.menu as any).save(this.date);
+			this.$refs.menu.save(this.date);
 		}
 
 		/** Save the date from text field blur to sync calendar */

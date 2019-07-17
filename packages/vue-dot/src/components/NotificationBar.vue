@@ -38,7 +38,7 @@
 	import { mapActions, mapState } from 'vuex';
 	import { NotificationObj } from '../modules/notification';
 
-	import customizable from '../mixins/customizable';
+	import customizable, { Options } from '../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {
@@ -52,7 +52,7 @@
 
 	/**
 	 * NavigationBar is a component that displays a notification using a Snackbar
-	*/
+	 */
 	@Component({
 		// Vuex bindings
 		computed: mapState('notification', [
@@ -81,6 +81,9 @@
 		]
 	})
 	export default class NotificationBar extends Props {
+		// Mixin computed data
+		options!: Options;
+
 		// Vuex bindings type declaration
 		notification?: NotificationObj;
 		rmNotif!: () => void;

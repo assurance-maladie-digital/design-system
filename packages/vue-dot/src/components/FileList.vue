@@ -34,7 +34,7 @@
 						<VBtn
 							v-if="file.state === 'error'"
 							icon
-							@click="$emit('retry')"
+							@click="$emit('retry', file.id)"
 						>
 							<VIcon color="grey darken-1">
 								refresh

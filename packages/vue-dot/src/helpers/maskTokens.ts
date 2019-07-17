@@ -12,17 +12,17 @@ const tokens: Tokens = {
 	'#': {
 		pattern: /\d/
 	},
-	X: {
+	'X': {
 		pattern: /[0-9a-zA-Z]/
 	},
-	S: {
+	'S': {
 		pattern: /[a-zA-Z]/
 	},
-	A: {
+	'A': {
 		pattern: /[a-zA-Z]/,
 		transform: (v: string) => v.toLocaleUpperCase()
 	},
-	a: {
+	'a': {
 		pattern: /[a-zA-Z]/,
 		transform: (v: string) => v.toLocaleLowerCase()
 	},

@@ -6,12 +6,13 @@ module.exports = {
 	extends: [
 		'plugin:vue/recommended',
 		'eslint:recommended',
-		'@vue/typescript'
+		'@vue/typescript',
+		'plugin:jsdoc/recommended'
 	],
 	rules: {
 		// Allow logs in development but not in production
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 
 		// Tab indent in templates
 		'vue/html-indent': ['error', 'tab'],
@@ -22,7 +23,8 @@ module.exports = {
 		'vue/no-spaces-around-equal-signs-in-attribute': true,
 
 		// Force semi-colons
-		'semi': ['error', 'always'],
+		'semi': 'off',
+		'@typescript-eslint/semi': ['error'],
 
 		// Remove space in functions, eg. function()
 		'space-before-function-paren': ['error', 'never'],
@@ -68,9 +70,19 @@ module.exports = {
 			'max': 330,
 			'skipBlankLines': true,
 			'skipComments': true
-		}]
+		}],
+
+		// Force arrow functions
+		'prefer-arrow-callback': 'error',
+
+		// JSDOC: Don't force all params & return
+		'jsdoc/require-param': 0,
+		'jsdoc/require-returns': 0
 	},
 	parserOptions: {
 		parser: '@typescript-eslint/parser'
-	}
+	},
+	plugins: [
+		'jsdoc'
+	]
 };

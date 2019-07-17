@@ -77,7 +77,7 @@
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
 
-	import customizable from '../mixins/customizable';
+	import customizable, { Options } from '../mixins/customizable';
 
 	interface Language {
 		direction: string;
@@ -139,7 +139,7 @@
 	/**
 	 * LangBtn is a component that displays a list of languages
 	 * to choose from when clicking a button
-	*/
+	 */
 	@Component({
 		mixins: [
 			// Default configuration
@@ -165,6 +165,9 @@
 		}
 	})
 	export default class LangBtn extends Props {
+		// Mixin computed data
+		options!: Options;
+
 		currentLang = this.value;
 
 		/** Returns the list of languages to display in the list */
@@ -211,9 +214,9 @@
 				.forEach((lang: string) => {
 					// languages.getLanguageInfo(langcode) Returns an object:
 					// {
-					//	'name': 'name of the language in English',
-					//	'nativeName',
-					//	'direction'
+					//  'name': 'name of the language in English',
+					//  'nativeName',
+					//  'direction'
 					// }
 					// If langcode isn't supported, it returns {}
 					const obj = languages.getLanguageInfo(lang);

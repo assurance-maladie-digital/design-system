@@ -54,6 +54,6 @@
 
 		lengthRule = [
 			maxLength(10)
-		]
+		];
 	}
 </script>

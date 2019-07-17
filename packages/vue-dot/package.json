@@ -60,6 +60,7 @@
 		"dayjs": "^1.8.15",
 		"deepmerge": "^3.2.0",
 		"eslint": "^5.16.0",
+		"eslint-plugin-jsdoc": "^15.5.2",
 		"eslint-plugin-vue": "^5.2.3",
 		"html-webpack-plugin": "^3.2.0",
 		"jest": "23.6.0",
