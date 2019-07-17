@@ -1,10 +1,11 @@
 <template>
 	<VList class="vd-file-list">
-		<template v-for="(file, index) in fileList">
+		<template v-for="(file, index) in files">
 			<VListTile
 				:key="index"
 				avatar
 			>
+				<!-- Icon -->
 				<VListTileAvatar>
 					<VIcon :color="getIconInfo(file.state).color">
 						{{ getIconInfo(file.state).icon }}
@@ -12,6 +13,7 @@
 				</VListTileAvatar>
 
 				<VListTileContent>
+					<!-- File to upload name -->
 					<VListTileTitle
 						:class="{
 							'grey--text text--darken-1': file.state !== 'success'
@@ -20,11 +22,13 @@
 						{{ file.title }}
 					</VListTileTitle>
 
+					<!-- Uploaded file name -->
 					<VListTileSubTitle v-if="file.name">
 						{{ file.name }}
 					</VListTileSubTitle>
 				</VListTileContent>
 
+				<!-- Action buttons -->
 				<VListTileAction class="pr-3">
 					<VLayout justify-end>
 						<VBtn
@@ -51,7 +55,7 @@
 						<VBtn
 							v-if="file.state === 'success'"
 							icon
-							@click="deleteFile(file.id)"
+							@click="$emit('delete-file', file.id)"
 						>
 							<VIcon color="grey darken-1">
 								delete
@@ -70,50 +74,25 @@
 
 	const Props = Vue.extend({
 		props: {
+			/** Show the "view file" button */
 			showViewBtn: {
 				type: Boolean,
 				default: false
+			},
+			/** The list of files to display */
+			files: {
+				type: [Array, Object],
+				required: true
 			}
 		}
 	});
 
-	interface FileListEl {
-		id: number;
-		title: string;
-		state: string;
-		name?: string;
-	}
-
 	/**
-	 * FileList is a component that does things
+	 * FileList is a component that displays a list of files
 	 */
 	@Component
 	export default class FileList extends Props {
-		fileList = [
-			{
-				id: 0,
-				title: 'RIB',
-				state: 'initial'
-			},
-			{
-				id: 1,
-				title: 'Carte d\'identité recto / verso',
-				state: 'error'
-			},
-			{
-				id: 2,
-				title: 'Passeport',
-				state: 'initial'
-			},
-			{
-				id: 3,
-				title: 'Attestation',
-				state: 'success',
-				name: 'file.pdf'
-			}
-		];
-
-		/** Returns the icon name é the color depending on state */
+		/** Returns the icon name & color depending on state */
 		getIconInfo(state: string) {
 			switch (state) {
 				case 'error': {
@@ -138,21 +117,17 @@
 				}
 			}
 		}
-
-		/** Delete a file from the list with his id */
-		deleteFile(id: number) {
-			// Filter out files with the id we want to delete
-			const filtered = this.fileList.filter((file: FileListEl) => file.id !== id);
-
-			// Re-assign the list to update it
-			this.fileList = filtered;
-		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.vd-file-list {
 		width: 100%;
+		max-width: 550px;
+
+		/deep/ .v-list__tile {
+			padding-right: 0 !important;
+		}
 
 		.v-list__tile__content,
 		.v-list__tile__action {
