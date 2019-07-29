@@ -45,7 +45,7 @@ export default function customizable(defaultOptions: object) {
 }
 
 interface OptionsObj {
-	[key: string]: any;
+	[key: string]: unknown;
 }
 
 export interface Options {
