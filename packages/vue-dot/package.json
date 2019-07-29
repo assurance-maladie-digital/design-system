@@ -26,6 +26,7 @@
 		"types/*"
 	],
 	"main": "./dist/vue-dot.common.js",
+	"types": "types/index.d.ts",
 	"scripts": {
 		"playground": "vue-cli-service serve",
 		"build": "ts-node --project tsconfig.json --files build.ts",
@@ -33,56 +34,51 @@
 		"test": "vue-cli-service test:unit"
 	},
 	"peerDependencies": {
-		"dayjs": "^1.7.7",
+		"dayjs": "^1.8.0",
 		"languages": "^0.1.3",
-		"vue": "^2.6.2",
-		"vuetify": "^1.4.0",
-		"vuex": "^3.0.0"
+		"vue": "^2.6.10",
+		"vuetify": "^2.0.0",
+		"vuex": "^3.1.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.5.4",
-		"@babel/polyfill": "^7.4.4",
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.12",
-		"@types/jest": "^24.0.15",
-		"@typescript-eslint/parser": "^1.12.0",
+		"@mdi/js": "^3.8.95",
+		"@types/jest": "^23.3.14",
+		"@typescript-eslint/parser": "^1.13.0",
 		"@vue/cli-plugin-babel": "^3.9.2",
 		"@vue/cli-plugin-eslint": "^3.9.2",
 		"@vue/cli-plugin-typescript": "^3.9.0",
 		"@vue/cli-plugin-unit-jest": "^3.9.0",
-		"@vue/cli-service": "^3.9.2",
+		"@vue/cli-service": "^3.9.3",
 		"@vue/eslint-config-standard": "^4.0.0",
 		"@vue/eslint-config-typescript": "^4.0.0",
 		"@vue/test-utils": "^1.0.0-beta.29",
 		"babel-core": "7.0.0-bridge.0",
-		"babel-plugin-transform-imports": "^2.0.0",
-		"babel-polyfill": "^6.26.0",
-		"css-loader": "^2.1.1",
+		"core-js": "^2.6.5",
 		"dayjs": "^1.8.15",
-		"deepmerge": "^3.2.0",
+		"deepmerge": "^4.0.0",
 		"eslint": "^5.16.0",
-		"eslint-plugin-jsdoc": "^15.5.2",
+		"eslint-plugin-jsdoc": "^15.8.0",
 		"eslint-plugin-vue": "^5.2.3",
 		"html-webpack-plugin": "^3.2.0",
 		"jest": "23.6.0",
 		"languages": "^0.1.3",
-		"lint-staged": "^9.2.0",
-		"node-sass": "^4.12.0",
+		"lint-staged": "^9.2.1",
 		"prepend": "^1.0.2",
+		"sass": "^1.22.9",
 		"sass-loader": "^7.1.0",
-		"style-loader": "^0.23.1",
-		"stylus": "^0.54.5",
-		"stylus-loader": "^3.0.2",
 		"ts-jest": "^23.10.5",
 		"typescript": "^3.5.3",
-		"uglifyjs-webpack-plugin": "^2.1.3",
 		"vue": "^2.6.10",
 		"vue-class-component": "^7.1.0",
-		"vue-cli-plugin-vuetify": "^0.5.0",
+		"vue-cli-plugin-vuetify": "^0.6.1",
 		"vue-template-compiler": "^2.6.10",
-		"vuetify": "^1.5.16",
-		"vuetify-loader": "^1.2.2",
+		"vuetify": "^2.0.2",
+		"vuetify-loader": "^1.3.0",
 		"vuex": "^3.1.1",
-		"webpack": "^4.35.3",
+		"webpack": "^4.38.0",
 		"webpack-node-externals": "^1.7.2"
 	},
 	"postcss": {
@@ -98,9 +94,7 @@
 	"jest": {
 		"moduleFileExtensions": [
 			"ts",
-			"tsx",
 			"js",
-			"jsx",
 			"json",
 			"vue"
 		],
@@ -117,7 +111,7 @@
 			"jest-serializer-vue"
 		],
 		"testMatch": [
-			"<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+			"<rootDir>/(tests/unit/**/*.spec.(js|ts)|**/__tests__/*.(js|ts))"
 		],
 		"coverageReporters": [
 			"json",
@@ -132,8 +126,6 @@
 			"**/*.{ts,vue}",
 			"!**/node_modules/**",
 			"!**/*.d.ts",
-			"!**/docs/**",
-			"!**/scripts/**",
 			"!**/playground/**"
 		],
 		"testURL": "http://localhost/",
@@ -145,11 +137,7 @@
 		"pre-commit": "lint-staged"
 	},
 	"lint-staged": {
-		"*.ts": [
-			"vue-cli-service lint",
-			"git add"
-		],
-		"*.vue": [
+		"*.{ts,vue,js}": [
 			"vue-cli-service lint",
 			"git add"
 		]

@@ -1,16 +1,16 @@
 <template>
 	<DocSection title="DatePicker">
-		<h2 class="subheading font-weight-bold">
+		<h2 class="subtitle-1 font-weight-bold">
 			Default
 		</h2>
 
 		<DatePicker v-model="date" />
 
-		<p class="mt-3">
+		<p class="mt-4">
 			{{ date }}
 		</p>
 
-		<h2 class="subheading mt-3 mb-2 font-weight-bold">
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
 			Custom
 		</h2>
 
@@ -27,12 +27,12 @@
 		>
 			<template #prepend-icon>
 				<VIcon>
-					cake
+					{{ cakeIcon }}
 				</VIcon>
 			</template>
 		</DatePicker>
 
-		<h2 class="subheading mt-3 mb-2 font-weight-bold">
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
 			Full Custom
 		</h2>
 
@@ -56,18 +56,17 @@
 		>
 			<template #append-icon>
 				<VIcon>
-					cake
+					{{ cakeIcon }}
 				</VIcon>
 			</template>
 		</DatePicker>
 
-		<p class="mt-3">
+		<p class="mt-4">
 			Value: {{ birthDate }}
 		</p>
 
 		<VBtn
 			color="primary"
-			class="ma-0"
 			@click="birthDate = '15/02/2010'"
 		>
 			Set the date
@@ -81,10 +80,14 @@
 
 	import required from '../../src/rules/required';
 
+	import { mdiCakeVariant } from '@mdi/js';
+
 	@Component
 	export default class DatePickerEx extends Vue {
 		date = '';
 		birthDate = '';
+
+		cakeIcon = mdiCakeVariant;
 
 		rules = [
 			required

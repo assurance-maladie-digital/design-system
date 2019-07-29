@@ -6,8 +6,8 @@
 	<VDataTable
 		v-if="$attrs"
 		v-bind="$attrs"
-		:pagination.sync="paginationCalc"
-		:total-items="totalItems"
+		:options.sync="optionsCalc"
+		:server-items-length="serverItemsLength"
 		v-on="$listeners"
 	>
 		<!--
@@ -32,14 +32,26 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	export interface Options {
+		page: number;
+		itemsPerPage: number;
+		sortBy: string[];
+		sortDesc: boolean[];
+		groupBy: string[];
+		groupDesc: boolean[];
+		multiSort: boolean;
+		mustSort: boolean;
+	}
+
 	const Props = Vue.extend({
 		inheritAttrs: false, // see https://vuejs.org/v2/api/#inheritAttrs
 		props: {
-			pagination: {
-				type: Object,
+			// Props from Vuetify
+			options: {
+				type: [Array, Object],
 				required: true
 			},
-			totalItems: {
+			serverItemsLength: {
 				type: Number,
 				required: true
 			},
@@ -59,14 +71,14 @@
 	 */
 	@Component<PaginatedTable>({
 		watch: {
-			/** When the pagination is updated */
-			pagination() {
+			/** When the options object is updated */
+			options() {
 				// Save it to local storage
 				localStorage.setItem(
 					'vd-pagination' + this.id,
 					// Local storage only accepts strings,
 					// so we must use JSON.stringify
-					JSON.stringify(this.pagination)
+					JSON.stringify(this.options)
 				);
 			}
 		}
@@ -76,31 +88,32 @@
 		 * Local pagination
 		 * This is the pagination from local storage
 		 */
-		localPagination: object = {};
+		localOptions: Options | {} = {};
 
 		/**
-		 * Returns either the local storage pagination,
-		 * or the pagination passed as a prop
+		 * Returns either the local storage options,
+		 * or the options passed as a prop
 		 */
-		get paginationCalc() {
-			// If localPagination isn't empty
-			if (Object.keys(this.localPagination).length) {
+		get optionsCalc() {
+			// If localOptions isn't empty
+			if (Object.keys(this.localOptions).length) {
 				// return it
-				return this.localPagination;
+				return this.localOptions;
 			}
 
 			// Else, return the prop
-			return this.pagination;
+			return this.options;
 		}
 
-		set paginationCalc(value: object) {
-			if (Object.keys(this.localPagination).length) {
-				this.localPagination = {};
+		set optionsCalc(value: Options | {}) {
+			if (Object.keys(this.localOptions).length) {
+				this.localOptions = {};
 			}
 
 			this.$emit('pagination:updated', value);
 		}
 
+		/** Local storage id */
 		get id() {
 			// If there is a prefix
 			if (this.prefix) {
@@ -113,9 +126,9 @@
 			return '';
 		}
 
-		/** Retreive the pagination from local storage */
+		/** Retreive the options from local storage */
 		created() {
-			this.localPagination = JSON.parse(
+			this.localOptions = JSON.parse(
 				// Default to empty object
 				localStorage.getItem('vd-pagination' + this.id) || '{}'
 			);

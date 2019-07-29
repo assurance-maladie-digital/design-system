@@ -7,11 +7,16 @@
 		>
 			<slot name="icon">
 				<VIcon>
-					content_copy
+					{{ copyIcon }}
 				</VIcon>
 			</slot>
 		</VBtn>
 
+		<!--
+			The tooltip
+			We don't use the activator slot
+			because of problem with events
+		-->
 		<VTooltip
 			v-if="showTooltip"
 			v-model="tooltip"
@@ -33,6 +38,8 @@
 
 	import copyToClipboard from '../functions/copyToClipboard';
 
+	import { mdiContentCopy } from '@mdi/js';
+
 	const Props = Vue.extend({
 		props: {
 			/**
@@ -44,7 +51,7 @@
 				type: String,
 				required: true
 			},
-			/** The tect that will be copied to the clipboard */
+			/** The text that will be copied to the clipboard */
 			textToCopy: {
 				type: String,
 				required: true
@@ -72,11 +79,15 @@
 			customizable({
 				btn: {
 					icon: true,
-					class: 'grey--text text--darken-3 ma-0 copy-tooltip-activator'
+					small: true,
+					class: 'grey--text text--darken-3 copy-tooltip-activator'
 				},
 				tooltip: {
-					/** By default the tooltip is placed on the right */
-					right: true
+					/** By default, the tooltip is placed on the right */
+					right: true,
+					openOnClick: true,
+					openOnHover: false,
+					closeDelay: 2500
 				}
 			})
 		]
@@ -84,6 +95,9 @@
 	export default class Copy extends Props {
 		// Mixin computed data
 		options!: Options;
+
+		// Icon
+		copyIcon = mdiContentCopy;
 
 		/** Tooltip v-model */
 		tooltip = false;

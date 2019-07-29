@@ -1,4 +1,3 @@
 # Don't lint these folders
 tests/coverage
-node_modules/
 dist/

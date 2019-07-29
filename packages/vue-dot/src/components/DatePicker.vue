@@ -11,27 +11,20 @@
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
-				:mask="maskValue"
 				:success-messages="options.textField.successMessages || successMessages"
 				v-bind="options.textField"
-				:class="[
-					{
-						'warning-rules': warningRules.length
-					},
-					...options.textField.class
-				]"
-				@blur="saveFromTextField(); validate(textFieldDate)"
+				:class="textFieldClasses"
+				@blur="textFieldBlur"
 			>
 				<template #prepend>
 					<VBtn
 						v-if="!noPrependIcon && !appendIcon"
 						v-bind="options.btn"
-						class="ma-0"
 						@click="menu = true"
 					>
 						<slot name="prepend-icon">
 							<VIcon v-bind="options.icon">
-								event
+								{{ calendarIcon }}
 							</VIcon>
 						</slot>
 					</VBtn>
@@ -41,12 +34,11 @@
 					<VBtn
 						v-if="appendIcon"
 						v-bind="options.btn"
-						class="ma-0"
 						@click="menu = true"
 					>
 						<slot name="append-icon">
 							<VIcon v-bind="options.icon">
-								event
+								{{ calendarIcon }}
 							</VIcon>
 						</slot>
 					</VBtn>
@@ -67,7 +59,7 @@
 			v-bind="options.datePicker"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
-			@input="saveDate"
+			@change="saveFromCalendar"
 		/>
 	</VMenu>
 </template>
@@ -86,6 +78,11 @@
 	import { ValidationRule } from '../rules/types';
 
 	import { Refs } from '../../types';
+
+	import { mdiCalendar } from '@mdi/js';
+
+	/** Date format used internally */
+	const INTERNAL_FORMAT = 'YYYY-MM-DD';
 
 	const Props = Vue.extend({
 		props: {
@@ -161,13 +158,13 @@
 					closeOnContentClick: false,
 					minWidth: '290px',
 					nudgeBottom: 45,
-					nudgeRight: 45,
-					lazy: true,
+					nudgeRight: 50,
 					zIndex: 1,
 					contentClass: 'vd-date-picker-menu'
 				},
 				btn: {
-					icon: true
+					icon: true,
+					small: true
 				},
 				datePicker: {
 					firstDayOfWeek: 1,
@@ -195,13 +192,30 @@
 				}
 			},
 			/** Update the date when value is provided by the user */
-			value(date) {
-				// Format the date to 'YYYY-MM-DD' format using dateFormatReturn
-				this.date = parseDate(date, this.dateFormatReturn).format('YYYY-MM-DD');
+			value(date: string) {
+				// If the date is cleared
+				if (!date) {
+					// Clear internal models
+					this.date = '';
+					this.textFieldDate = '';
+
+					return;
+				}
+
+				// Format the date to internal format using dateFormatReturn
+				this.date = this.parseDateForModel(date);
+				this.setTextFieldModel();
+				this.validate(this.textFieldDate);
 			},
-			/** Validate with warning rules each time textFieldDate is updated */
-			textFieldDate(value) {
-				this.validate(this.value);
+			/**
+			 * This method is fired every time textFieldDate changes,
+			 * that means on every key strokes, so don't validate
+			 * on input if validateOnBlur is true
+			 */
+			textFieldDate(value: string) {
+				if (!this.options.textField.validateOnBlur) {
+					this.validate(value);
+				}
 			}
 		}
 	})
@@ -219,6 +233,9 @@
 			};
 		}>;
 
+		// Icon
+		calendarIcon = mdiCalendar;
+
 		/** The v-model of VMenu */
 		menu = false;
 
@@ -227,8 +244,10 @@
 		 *
 		 * @example
 		 * Format is '2018-03-25'
+		 *
+		 * Set initial value by parsing if there is one
 		 */
-		date = this.value;
+		date = this.value ? this.parseDateForModel(this.value) : '';
 
 		/**
 		 * The v-model of the text field
@@ -238,7 +257,7 @@
 		 * @example
 		 * Format is '25032018'
 		 */
-		textFieldDate = this.date;
+		textFieldDate = '';
 
 		/** If birthdate is enabled, max is the current date */
 		max = this.birthdate ? new Date().toISOString().substr(0, 10) : null;
@@ -250,6 +269,16 @@
 		 * Not used is already passed as a prop
 		 */
 		successMessages: string[] = [];
+
+		/** Parse a date with dateFormatReturn format to interal format */
+		parseDateForModel(date: string) {
+			return parseDate(date, this.dateFormatReturn).format(INTERNAL_FORMAT);
+		}
+
+		/** Set textField model by parsing this.date */
+		setTextFieldModel() {
+			this.textFieldDate = parseDate(this.date, 'DDMMYYYY').format(this.dateFormat);
+		}
 
 		/**
 		 * Return the mask to apply to the TextField
@@ -306,12 +335,22 @@
 			this.saveFromTextField();
 		}
 
-		/** Save the date from calendar, using Vuetify method */
-		saveDate() {
+		/** Save the date from calendar */
+		saveFromCalendar() {
+			// Save the date using Vuetify method
 			this.$refs.menu.save(this.date);
+
+			// Update textField model
+			this.setTextFieldModel();
+
+			// Apply validation because when the calendar is clicked,
+			// the input loose focus and fire textFieldBlur
+			this.validate(this.textFieldDate);
+
+			this.emitChangeEvent();
 		}
 
-		/** Save the date from text field blur to sync calendar */
+		/** Save the date from text field blur */
 		saveFromTextField() {
 			// Return if empty/falsy
 			if (!this.textFieldDate) {
@@ -329,14 +368,17 @@
 
 			// Else, the format is valid, we can parse the date
 			const [day, month, year] = formatted.split('/');
-			// Then we set the v-model
-			// (YYYY-MM-DD) format
+			// Then we set the v-model (internal format)
 			this.date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 
-			// Update v-model
+			this.emitChangeEvent();
+		}
+
+		/** Update v-model */
+		emitChangeEvent() {
 			// Parse the date with interal format,
 			// and return the date with dateFormatRetun format
-			this.$emit('change', parseDate(this.date, 'YYYY-MM-DD').format(this.dateFormatReturn));
+			this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
 		}
 
 		formatDate(date: string, mask: string = '##/##/####') {
@@ -381,6 +423,26 @@
 				}
 			});
 		}
+
+		/** Compute the classes for VTextField */
+		get textFieldClasses() {
+			return [
+				{
+					'warning-rules': this.warningRules.length
+				},
+				...this.options.textField.class as string[]
+			];
+		}
+
+		/** Fired on blur event of the textField */
+		textFieldBlur() {
+			this.saveFromTextField();
+
+			// If validateOnBlur is true, validate
+			if (this.options.textField.validateOnBlur) {
+				this.validate(this.textFieldDate);
+			}
+		}
 	}
 </script>
 
@@ -393,7 +455,7 @@
 	// Change the main color when a warning is present
 	.vd-date-picker-text-field.warning-rules {
 		&.success--text,
-		/deep/ .success--text {
+		::v-deep .success--text {
 			color: orange !important;
 		}
 	}

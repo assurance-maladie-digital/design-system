@@ -1,13 +1,13 @@
 <template>
-	<VApp :dark="dark">
+	<VApp>
 		<NotificationBar close-text="Close" />
 
-		<VToolbar
+		<VAppBar
 			app
 			dark
 			fixed
 			color="primary"
-			class="px-3"
+			class="px-4"
 		>
 			<VToolbarTitle>VueDot</VToolbarTitle>
 
@@ -15,40 +15,44 @@
 
 			<!-- Dark mode switch button -->
 			<VBtn
-				:light="!dark"
-				:dark="dark"
-				color="white"
+				color="accent"
 				primary
-				flat
-				@click="dark = !dark"
+				:dark="dark"
+				@click="updateTheme"
 			>
-				{{ !dark ? 'Dark' : 'Light' }} mode
+				{{ dark ? 'Light' : 'Dark' }} mode
 			</VBtn>
-		</VToolbar>
+		</VAppBar>
 
 		<VContent>
 			<VLayout
 				column
 				tag="main"
 				align-start
-				class="main elevation-3 px-5 py-4"
+				class="main elevation-3 px-8 py-6"
 				:class="dark ? 'grey darken-4' : 'white'"
 			>
 				<!-- Introduction -->
-				<h1 class="display-1 mb-5 font-weight-bold">
+				<h1 class="display-1 mb-12 font-weight-bold">
 					Playground
 				</h1>
 
 				<!-- Examples -->
-				<DataListEx :dark="dark" />
-
-				<DatePickerEx />
-
-				<LangBtnEx />
+				<CopyBtnEx />
 
 				<CustomIconEx />
 
+				<DataListEx />
+
+				<DatePickerEx />
+
 				<DebounceEx />
+
+				<FileListEx />
+
+				<FileUploadEx />
+
+				<LangBtnEx />
 
 				<NotificationEx />
 
@@ -56,17 +60,13 @@
 
 				<RulesEx />
 
-				<CopyBtnEx />
-
-				<FileUploadEx />
-
-				<FileListEx />
+				<UploadWorkflowEx />
 			</VLayout>
 		</VContent>
 
 		<VFooter
-			color="secondary"
-			class="px-3 white--text"
+			:color="dark ? 'grey darken-3' : 'secondary'"
+			class="white--text elevation-5"
 			app
 		>
 			<VSpacer />
@@ -82,14 +82,39 @@
 
 	import { version } from '../package.json';
 
+	const DARK_THEME_KEY = 'vd-pg-dark';
+
 	/**
 	 * Playground is a component that contains examples
 	 * of the library component's
 	 */
 	@Component
 	export default class Playground extends Vue {
-		dark = false;
 		version = version;
+
+		updateTheme() {
+			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+
+			// Save the preference in localStorage
+			localStorage.setItem(
+				DARK_THEME_KEY,
+				// Local storage only accepts strings,
+				// so we must use JSON.stringify
+				JSON.stringify(this.$vuetify.theme.dark)
+			);
+		}
+
+		created() {
+			// Set theme
+			const stored = localStorage.getItem(DARK_THEME_KEY) || 'false';
+			const darkTheme = JSON.parse(stored);
+
+			this.$vuetify.theme.dark = darkTheme;
+		}
+
+		get dark() {
+			return this.$vuetify.theme.dark;
+		}
 	}
 </script>
 
@@ -101,7 +126,7 @@
 		max-width: 1200px;
 	}
 
-	@media screen and (max-width: 1200px) {
+	@media screen and (max-width: 1260px) {
 		.main {
 			margin: 15px;
 		}

@@ -1,7 +1,7 @@
 <template>
 	<!-- v-debounce -->
 	<DocSection title="v-debounce">
-		<h2 class="subheading mb-3 font-weight-bold">
+		<h2 class="subtitle-1 mb-4 font-weight-bold">
 			Native input
 		</h2>
 
@@ -15,7 +15,7 @@
 			>
 		</label>
 
-		<h2 class="subheading mt-3 font-weight-bold">
+		<h2 class="subtitle-1 mt-4 font-weight-bold">
 			VTextField
 		</h2>
 
@@ -53,11 +53,6 @@
 		padding: 5px 0;
 		color: inherit;
 		font-size: 1rem;
-		border-bottom: 1px solid rgba(0, 0, 0, .42);
-
-		&:focus {
-			color: #01579b;
-			border-color: #01579b;
-		}
+		border-bottom: 1px solid;
 	}
 </style>

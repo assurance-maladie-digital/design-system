@@ -47,7 +47,12 @@ module.exports = {
 			'error',
 			'PascalCase',
 			{
-				ignores: ['transition']
+				'ignores': [
+					'keep-alive',
+					'component',
+					'transition',
+					'transition-group'
+				]
 			}
 		],
 
@@ -71,6 +76,8 @@ module.exports = {
 			'skipBlankLines': true,
 			'skipComments': true
 		}],
+
+		'object-curly-spacing': ['error', 'always'],
 
 		// Force arrow functions
 		'prefer-arrow-callback': 'error',

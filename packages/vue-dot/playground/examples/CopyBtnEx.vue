@@ -14,8 +14,8 @@
 			}"
 		>
 			<template #icon>
-				<VIcon>
-					text_fields
+				<VIcon :color="btnColor">
+					{{ plusIcon }}
 				</VIcon>
 			</template>
 
@@ -30,6 +30,14 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { mdiPlusCircle } from '@mdi/js';
+
 	@Component
-	export default class CopyBtnEx extends Vue {}
+	export default class CopyBtnEx extends Vue {
+		plusIcon = mdiPlusCircle;
+
+		get btnColor() {
+			return this.$vuetify.theme.dark ? 'grey' : '';
+		}
+	}
 </script>

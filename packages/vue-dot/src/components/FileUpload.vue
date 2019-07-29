@@ -5,8 +5,14 @@
 	-->
 	<label
 		v-ripple="ripple"
-		class="file-upload d-block primary--text pa-3"
-		:class="{ 'dragover': dragover }"
+		class="file-upload d-block pa-4"
+		:class="[
+			{
+				'dragover': dragover,
+				'dark-mode': $vuetify.theme.dark
+			},
+			colors.label
+		]"
 		@dragover.prevent="dragover = true"
 		@dragleave="dragover = false"
 		@drop.prevent="dropHandler"
@@ -33,11 +39,14 @@
 						size="40"
 						color="primary"
 					>
-						cloud_upload
+						{{ uploadIcon }}
 					</VIcon>
 				</slot>
 
-				<span class="black--text mt-1 font-weight-medium">
+				<span
+					class="mt-1 font-weight-medium"
+					:class="colors.multiple"
+				>
 					<slot
 						name="action-text"
 						:multiple="multiple"
@@ -46,7 +55,10 @@
 					</slot>
 				</span>
 
-				<span class="grey--text text--darken-1 mb-2">
+				<span
+					class="mb-2"
+					:class="colors.info"
+				>
 					<slot name="or">
 						Ou
 					</slot>
@@ -57,7 +69,7 @@
 					a specific Vuetify class in hover state
 				-->
 				<span
-					class="file-upload-btn primary white--text text-uppercase py-2 px-3 elevation-2"
+					class="file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2"
 					:class="{ 'primary lighten-1': hover }"
 					@mouseover="hover = true"
 					@mouseleave="hover = false"
@@ -67,7 +79,10 @@
 					</slot>
 				</span>
 
-				<span class="grey--text text--darken-1 mt-3 body-2 font-weight-regular">
+				<span
+					:class="colors.info"
+					class="mt-4 body-2 font-weight-regular"
+				>
 					<slot
 						name="info-text"
 						:maxSize="maxSizeReadable"
@@ -84,6 +99,10 @@
 <script lang="ts">
 	import Vue, { VueConstructor } from 'vue';
 	import Component from 'vue-class-component';
+
+	import getFileExtension from '../functions/getFileExtension';
+
+	import { mdiCloudUpload } from '@mdi/js';
 
 	interface HTMLInputEvent extends Event {
 		target: HTMLInputElement & EventTarget;
@@ -182,6 +201,9 @@
 		}
 	})
 	export default class FileUpload extends Props {
+		// Icons
+		uploadIcon = mdiCloudUpload;
+
 		/** The list of accepted files */
 		files: File[] = [];
 		/** For specific styles on hover */
@@ -190,6 +212,20 @@
 		dragover = false;
 		/** Used to not trigger "success" events when there is an error */
 		error = false;
+
+		/**
+		 * Get the differents colors
+		 * depending on theme (light or dark)
+		 */
+		get colors() {
+			const dark = this.$vuetify.theme.dark;
+
+			return {
+				label: dark ? 'white--text' : 'primary--text',
+				multiple: dark ? 'white--text' : 'black--text',
+				info: 'grey--text ' + (dark ? 'text--lighten-1' : 'text--darken-1')
+			};
+		}
 
 		/** Reset self state to initial */
 		selfReset() {
@@ -214,7 +250,7 @@
 				return false;
 			}
 
-			const fileExt = this.getFileExtension(file.name);
+			const fileExt = getFileExtension(file.name);
 
 			// Extension
 			if (!this.allowedExtensions.includes(fileExt)) {
@@ -234,12 +270,7 @@
 			return true;
 		}
 
-		/** Returns the extension of a file (without the dot) */
-		getFileExtension(fileName: string): string {
-			// lastIndexOf returns '.xxx', add 1 to slice the dot
-			return fileName.slice(fileName.lastIndexOf('.') + 1);
-		}
-
+		/** Computed extensions for display */
 		get extensions() {
 			return this.allowedExtensions.join(', ').toUpperCase();
 		}
@@ -388,12 +419,17 @@
 		transition: background .25s;
 
 		&:hover,
-		a:focus {
+		a:focus,
+		&.dragover {
 			background: #f5f5f5;
 		}
 
-		&.dragover {
-			background: #ccc;
+		&.dark-mode {
+			&:hover,
+			a:focus,
+			&.dragover {
+				background: #303030;
+			}
 		}
 	}
 

@@ -43,15 +43,10 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	const Props = Vue.extend({
-		props: {
-			dark: {
-				type: Boolean,
-				required: true
-			}
-		}
-	});
-
 	@Component
-	export default class DataListEx extends Props {}
+	export default class DataListEx extends Vue {
+		get dark() {
+			return this.$vuetify.theme.dark;
+		}
+	}
 </script>

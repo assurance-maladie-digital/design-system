@@ -2,7 +2,6 @@
 	<DocSection title="Notification system">
 		<VBtn
 			color="accent"
-			class="ma-0"
 			@click="testNotify"
 		>
 			Send Notification
@@ -15,6 +14,13 @@
 	import Component from 'vue-class-component';
 
 	import { mapActions } from 'vuex';
+
+	import {
+		mdiCheck,
+		mdiAlertCircle,
+		mdiInformation,
+		mdiAlert
+	} from '@mdi/js';
 
 	@Component({
 		// Vuex bindings
@@ -32,22 +38,22 @@
 			{
 				type: 'success',
 				message: 'Test notification',
-				icon: 'check'
+				icon: mdiCheck
 			},
 			{
 				type: 'error',
 				message: 'Test notification',
-				icon: 'error'
+				icon: mdiAlertCircle
 			},
 			{
 				type: 'info',
 				message: 'Test notification',
-				icon: 'info'
+				icon: mdiInformation
 			},
 			{
 				type: 'warning',
 				message: 'Test notification',
-				icon: 'warning'
+				icon: mdiAlert
 			}
 		];
 

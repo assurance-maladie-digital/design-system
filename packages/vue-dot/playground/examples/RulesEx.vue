@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="Rules">
-		<h2 class="subheading mb-3 font-weight-bold">
+		<h2 class="subtitle-1 mb-4 font-weight-bold">
 			Required with custom message
 		</h2>
 
@@ -9,7 +9,7 @@
 			:rules="textFieldRules"
 		/>
 
-		<h2 class="subheading my-3 font-weight-bold">
+		<h2 class="subtitle-1 my-4 font-weight-bold">
 			Min length & required with default messages
 		</h2>
 
@@ -19,7 +19,7 @@
 			:rules="textareaRules"
 		/>
 
-		<h2 class="subheading my-3 font-weight-bold">
+		<h2 class="subtitle-1 my-4 font-weight-bold">
 			Max length with default messages
 		</h2>
 

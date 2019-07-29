@@ -64,9 +64,6 @@ module.exports = {
 
 					return args;
 				});
-
-			// Use vuetify-loader
-			config.plugin('VuetifyLoaderPlugin');
 		}
 	}
 };

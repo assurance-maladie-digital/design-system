@@ -75,7 +75,7 @@
 				},
 				btn: {
 					color: 'white',
-					flat: true
+					text: true
 				}
 			})
 		]
@@ -85,7 +85,7 @@
 		options!: Options;
 
 		// Vuex bindings type declaration
-		notification?: NotificationObj;
+		notification!: NotificationObj;
 		rmNotif!: () => void;
 
 		created() {

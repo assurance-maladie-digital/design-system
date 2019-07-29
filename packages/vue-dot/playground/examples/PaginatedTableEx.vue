@@ -1,5 +1,11 @@
 <template>
 	<DocSection title="PaginatedTable">
+		<VAlert type="error">
+			Pagination saving isn't working anymore, follow <a
+				href="https://github.com/vuetifyjs/vuetify/issues/8266"
+				class="white--text"
+			>Issue #8266</a> for updates.
+		</VAlert>
 		<!--
 			On PaginatedTable, we don't need the .sync modifier
 			for :pagination
@@ -11,34 +17,19 @@
 		<PaginatedTable
 			:headers="headers"
 			:items="desserts"
-			:pagination="pagination"
-			:total-items="totalDesserts"
+			:options="options"
+			:server-items-length="totalDesserts"
 			:loading="loading"
 			class="vd-table elevation-1"
-			@pagination:updated="pagination = $event; fetchData()"
+			@pagination:updated="options = $event; fetchData()"
 		>
 			<template #items="props">
 				<td>{{ props.item.name }}</td>
-
-				<td class="text-xs-right">
-					{{ props.item.calories }}
-				</td>
-
-				<td class="text-xs-right">
-					{{ props.item.fat }}
-				</td>
-
-				<td class="text-xs-right">
-					{{ props.item.carbs }}
-				</td>
-
-				<td class="text-xs-right">
-					{{ props.item.protein }}
-				</td>
-
-				<td class="text-xs-right">
-					{{ props.item.iron }}
-				</td>
+				<td>{{ props.item.calories }}</td>
+				<td>{{ props.item.fat }}</td>
+				<td>{{ props.item.carbs }}</td>
+				<td>{{ props.item.protein }}</td>
+				<td>{{ props.item.iron }}</td>
 			</template>
 		</PaginatedTable>
 	</DocSection>
@@ -47,6 +38,8 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
+	import { Options } from '../../src/components/PaginatedTable.vue';
 
 	interface Dessert {
 		[key: string]: string | number;
@@ -57,14 +50,6 @@
 		carbs: number;
 		protein: number;
 		iron: string;
-	}
-
-	interface Pagination {
-		descending: boolean;
-		page: number;
-		rowsPerPage: number;
-		sortBy: string | null;
-		totalItems: number;
 	}
 
 	interface DataObj {
@@ -85,45 +70,33 @@
 
 		loading = true;
 
-		// Default value for pagination
-		pagination: Pagination = {
-			descending: false,
-			page: 1,
-			rowsPerPage: 5,
-			sortBy: null,
-			totalItems: 0
-		};
+		// Default value for options
+		options = {} as Options;
 
 		headers = [
 			{
 				text: 'Dessert (100g serving)',
-				align: 'left',
 				sortable: false,
 				value: 'name'
 			},
 			{
 				text: 'Calories',
-				align: 'right',
 				value: 'calories'
 			},
 			{
 				text: 'Fat (g)',
-				align: 'right',
 				value: 'fat'
 			},
 			{
 				text: 'Carbs (g)',
-				align: 'right',
 				value: 'carbs'
 			},
 			{
 				text: 'Protein (g)',
-				align: 'right',
 				value: 'protein'
 			},
 			{
 				text: 'Iron (%)',
-				align: 'right',
 				value: 'iron'
 			}
 		];
@@ -153,18 +126,18 @@
 			this.loading = true;
 
 			return new Promise((resolve, reject) => {
-				const { sortBy, descending, page, rowsPerPage } = this.pagination;
+				const { sortBy, sortDesc, page, itemsPerPage } = this.options;
 
 				let items: Dessert[] = this.getDesserts();
 				const total = items.length;
 
 				// Sorting algorithm
-				if (this.pagination.sortBy && sortBy) {
+				if (this.options.sortBy) {
 					items = items.sort((a, b) => {
-						const sortA = a[sortBy];
-						const sortB = b[sortBy];
+						const sortA = a[sortBy[0]];
+						const sortB = b[sortBy[0]];
 
-						if (descending) {
+						if (sortDesc) {
 							if (sortA < sortB) {
 								return 1;
 							}
@@ -189,8 +162,8 @@
 				}
 
 				// Pagination
-				if (rowsPerPage > 0) {
-					items = items.slice((page - 1) * rowsPerPage, page * rowsPerPage);
+				if (itemsPerPage > 0) {
+					items = items.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 				}
 
 				// Resolve after 1 second

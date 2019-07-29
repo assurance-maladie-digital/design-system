@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="FileUpload">
-		<h2 class="subheading mb-2 font-weight-bold">
+		<h2 class="subtitle-1 mb-2 font-weight-bold">
 			Default with event handlers
 		</h2>
 
@@ -22,7 +22,7 @@
 			</p>
 
 			<VBtn
-				class="ma-0 mt-2"
+				class="mt-2"
 				color="primary"
 				@click="retry"
 			>
@@ -39,12 +39,13 @@
 
 		<p
 			v-else
-			class="mb-0 mt-1 grey--text text--darken-2"
+			class="mb-0 mt-1 grey--text"
+			:class="$vuetify.theme.dark ? 'text--lighten-3' : 'text--darken-2'"
 		>
 			Aucun fichier sélectionné
 		</p>
 
-		<h2 class="subheading mt-3 mb-2 font-weight-bold">
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
 			Translated
 		</h2>
 
@@ -74,7 +75,7 @@
 			</template>
 		</FileUpload>
 
-		<h2 class="subheading mt-3 mb-2 font-weight-bold">
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
 			Custom content & styles
 		</h2>
 
@@ -84,9 +85,9 @@
 					<VIcon
 						size="25"
 						color="white"
-						class="mr-2"
+						class="mr-4"
 					>
-						cloud_upload
+						{{ uploadIcon }}
 					</VIcon>
 
 					<span class="white--text">
@@ -104,6 +105,8 @@
 
 	import { Refs } from '../../types';
 
+	import { mdiCloudUpload } from '@mdi/js';
+
 	interface Error {
 		code: string;
 	}
@@ -118,6 +121,8 @@
 				}
 			}
 		}>;
+
+		uploadIcon = mdiCloudUpload;
 
 		error: Error | null = null;
 		success = false;

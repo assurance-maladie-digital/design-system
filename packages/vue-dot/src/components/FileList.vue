@@ -1,69 +1,75 @@
 <template>
 	<VList class="vd-file-list">
 		<template v-for="(file, index) in files">
-			<VListTile
-				:key="index"
-				avatar
-			>
+			<VListItem :key="index">
 				<!-- Icon -->
-				<VListTileAvatar>
-					<VIcon :color="getIconInfo(file.state).color">
+				<VListItemAvatar>
+					<VIcon
+						:size="24"
+						:color="getIconInfo(file.state).color"
+					>
 						{{ getIconInfo(file.state).icon }}
 					</VIcon>
-				</VListTileAvatar>
+				</VListItemAvatar>
 
-				<VListTileContent>
+				<VListItemContent>
 					<!-- File to upload name -->
-					<VListTileTitle
-						:class="{
-							'grey--text text--darken-1': file.state !== 'success'
-						}"
-					>
+					<VListItemTitle :class="getItemColor(file.state)">
 						{{ file.title }}
-					</VListTileTitle>
+					</VListItemTitle>
 
 					<!-- Uploaded file name -->
-					<VListTileSubTitle v-if="file.name">
+					<VListItemSubtitle v-if="file.name">
 						{{ file.name }}
-					</VListTileSubTitle>
-				</VListTileContent>
+					</VListItemSubtitle>
+				</VListItemContent>
 
 				<!-- Action buttons -->
-				<VListTileAction class="pr-3">
+				<VListItemAction>
 					<VLayout justify-end>
 						<VBtn
 							v-if="file.state === 'error'"
 							icon
+							small
 							@click="$emit('retry', file.id)"
 						>
-							<VIcon color="grey darken-1">
-								refresh
+							<VIcon :color="iconColor">
+								{{ refreshIcon }}
 							</VIcon>
 						</VBtn>
 
 						<VBtn
 							v-if="showViewBtn && file.state === 'success'"
 							icon
+							small
 							class="mr-2"
 							@click="$emit('view-file', file)"
 						>
-							<VIcon color="grey darken-1">
-								visibility
+							<VIcon :color="iconColor">
+								{{ eyeIcon }}
 							</VIcon>
 						</VBtn>
 
 						<VBtn
 							v-if="file.state === 'success'"
 							icon
+							small
 							@click="$emit('delete-file', file.id)"
 						>
-							<VIcon color="grey darken-1">
-								delete
+							<VIcon :color="iconColor">
+								{{ deleteIcon }}
 							</VIcon>
 						</VBtn>
 					</VLayout>
-				</VListTileAction>
-			</VListTile>
+				</VListItemAction>
+			</VListItem>
+
+			<!-- Don't show divider on last item -->
+			<VDivider
+				v-if="index + 1 !== files.length"
+				:key="'divider-' + index"
+				inset
+			/>
 		</template>
 	</VList>
 </template>
@@ -71,6 +77,15 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
+	import {
+		mdiRefresh,
+		mdiEye,
+		mdiDelete,
+		mdiAlertCircle,
+		mdiCheckCircle,
+		mdiFile
+	} from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -92,30 +107,56 @@
 	 */
 	@Component
 	export default class FileList extends Props {
+		// Icons
+		refreshIcon = mdiRefresh;
+		eyeIcon = mdiEye;
+		deleteIcon = mdiDelete;
+
 		/** Returns the icon name & color depending on state */
 		getIconInfo(state: string) {
 			switch (state) {
 				case 'error': {
 					return {
-						icon: 'error',
+						icon: mdiAlertCircle,
 						color: 'error'
 					};
 				}
 
 				case 'success': {
 					return {
-						icon: 'check_circle',
+						icon: mdiCheckCircle,
 						color: 'success'
 					};
 				}
 
 				default: {
 					return {
-						icon: 'insert_drive_file',
+						icon: mdiFile,
 						color: 'grey'
 					};
 				}
 			}
+		}
+
+		/**
+		 * Get the default item color
+		 * depending on theme (light or dark)
+		 */
+		getItemColor(state: string) {
+			let color = 'grey--text ';
+			// Only the modifier changes
+			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
+
+			// Let the default color (null) on success
+			return state !== 'success' ? color : null;
+		}
+
+		/**
+		 * Get the default icon color
+		 * depending on theme (light or dark)
+		 */
+		get iconColor() {
+			return this.$vuetify.theme.dark ? 'grey lighten-1' : 'grey darken-1';
 		}
 	}
 </script>
@@ -123,15 +164,5 @@
 <style lang="scss" scoped>
 	.vd-file-list {
 		width: 100%;
-		max-width: 550px;
-
-		/deep/ .v-list__tile {
-			padding-right: 0 !important;
-		}
-
-		.v-list__tile__content,
-		.v-list__tile__action {
-			border-bottom: 1px solid rgba(0 ,0 ,0, .12);
-		}
 	}
 </style>

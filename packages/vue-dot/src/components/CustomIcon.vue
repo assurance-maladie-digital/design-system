@@ -38,7 +38,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Icon } from '../../types';
+	import { Icon, Theme } from '../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -84,6 +84,8 @@
 	 */
 	@Component
 	export default class CustomIcon extends Props {
+		$theme!: Theme;
+
 		get themeIcon(): Icon | undefined {
 			// If there are icons in the theme
 			if (this.$theme && this.$theme.config && this.$theme.config.icons) {
@@ -121,7 +123,7 @@
 		// the child will be positionned absolutely
 		position: relative;
 
-		/deep/ svg {
+		::v-deep svg {
 			// Make the SVG element take all space
 			// in the parent, with position absolute
 			left: 0;

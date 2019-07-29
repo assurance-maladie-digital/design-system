@@ -8,7 +8,7 @@
 		<slot name="title">
 			<h3
 				v-if="title"
-				class="secondary--text mb-3 font-weight-medium headline"
+				class="secondary--text mb-4 font-weight-medium headline"
 			>
 				{{ title }}
 			</h3>
@@ -19,7 +19,7 @@
 
 		<VDivider
 			v-if="!noDivider"
-			class="divider my-4"
+			class="divider my-6"
 		/>
 	</VLayout>
 </template>

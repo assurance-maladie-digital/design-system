@@ -37,35 +37,35 @@
 					v-if="downArrow"
 					v-bind="options.icon"
 				>
-					arrow_drop_down
+					{{ downArrowIcon }}
 				</VIcon>
 			</VBtn>
 		</template>
 
 		<!-- Languages list -->
 		<VList v-bind="options.list">
-			<VListTile
+			<VListItem
 				v-for="(item, lang) in languages"
 				:key="lang"
 				v-bind="options.listTile"
 				@click="updateLang(lang)"
 			>
-				<VListTileAvatar
+				<VListItemAvatar
 					v-if="flags"
-					v-bind="options.listTileAvatar"
+					v-bind="options.listItemAvatar"
 				>
 					<img
 						:src="`${flagsUrl}${lang}.svg`"
 						class="vd-flag-img"
 						alt=""
 					>
-				</VListTileAvatar>
+				</VListItemAvatar>
 
 				<!-- Language name -->
-				<VListTileTitle v-bind="options.listTileTitle">
+				<VListItemTitle v-bind="options.listTileTitle">
 					{{ item.nativeName }}
-				</VListTileTitle>
-			</VListTile>
+				</VListItemTitle>
+			</VListItem>
 		</VList>
 	</VMenu>
 </template>
@@ -78,6 +78,8 @@
 	import languages from 'languages';
 
 	import customizable, { Options } from '../mixins/customizable';
+
+	import { mdiChevronDown } from '@mdi/js';
 
 	interface Language {
 		direction: string;
@@ -150,9 +152,8 @@
 				btn: {
 					color: 'currentColor',
 					depressed: true,
-					outline: true,
-					ripple: true,
-					class: 'ma-0'
+					outlined: true,
+					ripple: true
 				},
 				icon: {
 					class: 'ml-1'
@@ -167,6 +168,9 @@
 	export default class LangBtn extends Props {
 		// Mixin computed data
 		options!: Options;
+
+		// Icon
+		downArrowIcon = mdiChevronDown;
 
 		currentLang = this.value;
 

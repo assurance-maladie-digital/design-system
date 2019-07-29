@@ -11,7 +11,7 @@ import store from './store/';
 Vue.config.productionTip = false;
 
 // Import plugins
-import './plugins/vuetify';
+import vuetify from './plugins/vuetify';
 import './plugins/vue-dot';
 
 // Globally register DocSection component
@@ -24,5 +24,6 @@ import Playground from './Playground.vue';
 // Create Vue instance
 new Vue({
 	store,
+	vuetify,
 	render: (h) => h(Playground)
 }).$mount('#app');
