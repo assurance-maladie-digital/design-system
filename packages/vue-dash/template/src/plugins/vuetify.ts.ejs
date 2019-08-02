@@ -1,32 +1,19 @@
 import Vue from 'vue';
-import Vuetify, { VDatePicker, VTextField, VMenu } from 'vuetify/lib';
-import { Resize, Ripple } from 'vuetify/lib/directives';
-
-import fr from 'vuetify/src/locale/fr';
+import Vuetify from 'vuetify/lib';
 
 // Import theme colors
 import colors from '@/theme/colors';
 
-Vue.use(Vuetify, {
+Vue.use(Vuetify);
+
+export default new Vuetify({
 	theme: {
 		// Destructure colors object in theme
-		...colors
+		themes: {
+			...colors
+		}
 	},
-	// Global compoennts
-	components: {
-		VDatePicker,
-		VTextField,
-		VMenu
-	},
-	lang: {
-		locales: { fr },
-		current: 'fr'
-	},
-	directives: {
-		Resize,
-		Ripple
+	icons: {
+		iconfont: 'mdiSvg'
 	}
 });
-
-// Import Vuetify's CSS
-import 'vuetify/dist/vuetify.min.css';

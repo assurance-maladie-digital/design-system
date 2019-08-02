@@ -10,55 +10,54 @@
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
 		"test:unit": "vue-cli-service test:unit",
-		"test:unit:gui": "majestic",
-		"test:e2e": "vue-cli-service test:e2e"
+		"test:unit:gui": "majestic"
 	},
 	"dependencies": {
-		"@cnamts/vue-dot": "^2.0.0-alpha.12",
+		"@cnamts/vue-dot": "^2.0.0-alpha.20",
 		"axios": "^0.19.0",
 		"core-js": "^2.6.5",
-		"dayjs": "^1.8.14",
+		"dayjs": "^1.8.15",
 		"languages": "^0.1.3",
 		"vue": "^2.6.10",
 		"vue-class-component": "^7.1.0",
-		"vue-i18n": "^8.11.2",
-		"vue-meta": "^2.0.4",
-		"vue-router": "^3.0.6",
-		"vuetify": "^1.5.16",
-		"vuetify-loader": "^1.2.2",
+		"vue-i18n": "^8.12.0",
+		"vue-meta": "^2.2.0",
+		"vue-router": "^3.0.7",
+		"vuetify": "^2.0.4",
 		"vuex": "^3.1.1",
 		"vuex-persist": "^2.0.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.0.0-0",
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"@mdi/js": "^3.8.95",
 		"@types/jest": "^23.3.14",
-		"@types/node": "^12.0.10",
-		"@typescript-eslint/parser": "^1.11.0",
-		"@vue/cli-plugin-babel": "^3.8.0",
-		"@vue/cli-plugin-eslint": "^3.8.0",
-		"@vue/cli-plugin-typescript": "^3.8.1",
-		"@vue/cli-plugin-unit-jest": "^3.8.0",
-		"@vue/cli-service": "^3.8.4",
+		"@types/node": "^12.6.8",
+		"@typescript-eslint/parser": "^1.13.0",
+		"@vue/cli-plugin-babel": "^3.9.2",
+		"@vue/cli-plugin-eslint": "^3.9.2",
+		"@vue/cli-plugin-typescript": "^3.9.0",
+		"@vue/cli-plugin-unit-jest": "^3.9.0",
+		"@vue/cli-service": "^3.9.3",
 		"@vue/eslint-config-standard": "^4.0.0",
 		"@vue/eslint-config-typescript": "^4.0.0",
 		"@vue/test-utils": "^1.0.0-beta.29",
 		"babel-core": "7.0.0-bridge.0",
-		"babel-eslint": "^10.0.1",
+		"babel-eslint": "^10.0.2",
 		"eslint": "^5.16.0",
 		"eslint-plugin-vue": "^5.2.3",
 		"jest": "^23.6.0",
 		"jest-serializer-vue": "^2.0.2",
-		"lint-staged": "^8.2.1",
+		"lint-staged": "^9.2.1",
 		"majestic": "^1.6.0",
-		"node-sass": "^4.12.0",
+		"sass": "^1.22.9",
 		"sass-loader": "^7.1.0",
-		"stylus": "^0.54.5",
-		"stylus-loader": "^3.0.2",
 		"ts-jest": "^23.10.5",
-		"typescript": "^3.4.3",
-		"vue-cli-plugin-vuetify": "^0.5.0",
+		"typescript": "^3.5.3",
+		"vue-cli-plugin-vuetify": "^0.6.1",
 		"vue-template-compiler": "^2.6.10",
-		"webpack": "^4.35.0"
+		"vuetify-loader": "^1.3.0",
+		"webpack": "^4.38.0"
 	},
 	"postcss": {
 		"plugins": {
@@ -130,20 +129,15 @@
 		"pre-commit": "lint-staged"
 	},
 	"lint-staged": {
-		"*.ts": [
-			"vue-cli-service lint",
-			"git add"
-		],
-		"*.vue": [
-			"vue-cli-service lint",
-			"git add"
-		],
-		"*.js": [
+		"*.{ts,vue,js}": [
 			"vue-cli-service lint",
 			"git add"
 		]
 	},
 	"majestic": {
-		"jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js test:unit"
+		"jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js",
+		"args": [
+			"test:unit"
+		]
 	}
 }

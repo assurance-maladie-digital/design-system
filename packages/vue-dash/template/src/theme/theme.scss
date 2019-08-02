@@ -11,7 +11,7 @@
 }
 
 // Fix for IE
-.application--wrap {
+.v-application--wrap {
 	width: 100%;
 	height: 100%;
 	min-height: 100%;
@@ -27,7 +27,7 @@
 	color: #949494 !important
 }
 
-.v-tabs__bar .v-tabs__item--disabled {
+.v-tabs-bar .v-tabs__item--disabled {
 	color: #333 !important
 }
 
@@ -52,7 +52,7 @@ table.v-table thead th,
 .v-input,
 .v-label,
 .v-list__tile,
-.subheading {
+.subtitle-1 {
 	font-size: 1rem !important;
 }
 
@@ -83,32 +83,6 @@ table.v-table thead th,
 	font-weight: 400;
 	font-style: normal;
 	font-display: fallback;
-}
-
-@font-face {
-	font-family: 'Material Icons';
-	src: url('/fonts/MaterialIcons-Regular.woff2') format('woff2'),
-		url('/fonts/MaterialIcons-Regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: fallback;
-}
-
-.material-icons {
-	font-family: 'Material Icons';
-	font-weight: normal;
-	font-style: normal;
-	font-size: 24px;
-	line-height: 1;
-	letter-spacing: normal;
-	text-transform: none;
-	display: inline-block;
-	white-space: nowrap;
-	word-wrap: normal;
-	direction: ltr;
-	font-feature-settings: 'liga';
-	-webkit-font-feature-settings: 'liga';
-	-webkit-font-smoothing: antialiased;
 }
 
 // Default styles and helper classes
@@ -218,6 +192,14 @@ button {
 			0 1px 3px 0 rgba(0, 0, 0, .1),
 			0 -1px 10px 0 rgba(0, 0, 0, .1);
 	}
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.no-flex {
+	flex: none !important;
 }
 
 // Custom styles for VDataTable

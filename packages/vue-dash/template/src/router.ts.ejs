@@ -8,8 +8,13 @@ import store from '@/store';
 // Directly import Home view for faster rendering of first page
 import Home from '@/views/Home.vue';
 
+// Env var
+declare const MAINTENANCE: string;
+
 Vue.use(Router);
-Vue.use(Meta);
+Vue.use(Meta, {
+	refreshOnceOnNavigation: true
+});
 
 /** See https://router.vuejs.org/fr/essentials/navigation.html for help */
 const router = new Router({
@@ -23,12 +28,26 @@ const router = new Router({
 		{
 			path: '/a-propos',
 			name: 'about',
-			component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+			component: () => import(
+				/* webpackChunkName: "about" */
+				'./views/About.vue'
+			)
+		},
+		{
+			path: '/maintenance',
+			name: 'maintenance',
+			component: () => import(
+				/* webpackChunkName: "maintenance" */
+				'./views/Maintenance.vue'
+			)
 		},
 		{
 			path: '*', // Everything that doesn't match a route
 			name: 'notFound',
-			component: () => import(/* webpackChunkName: "not-found" */ './views/NotFound.vue')
+			component: () => import(
+				/* webpackChunkName: "not-found" */
+				'./views/NotFound.vue'
+			)
 		}
 	],
 	// Native-like scroll behavior
@@ -55,7 +74,26 @@ router.beforeEach((to, from, next) => {
 
 	// Resolve translations before each navigation
 	const lang = i18n.locale;
-	loadLanguageAsync(lang).then(() => next());
+	loadLanguageAsync(lang).then(() => {
+		// If maintenance is enabled
+		if (MAINTENANCE === 'true') {
+			// Avoid infinite loop
+			if ('maintenance' !== to.name) {
+				// Redirect to maintenance page
+				next({ name: 'maintenance' });
+			} else {
+				// Else, resolve route
+				next();
+			}
+		// Else if we're trying to access the maintenance page
+		// when not in maintenance mode, redirect to home
+		} else if ('maintenance' === to.name) {
+			next({ name: 'home' });
+		} else {
+			// Else, default behavior
+			next();
+		}
+	});
 });
 
 export default router;

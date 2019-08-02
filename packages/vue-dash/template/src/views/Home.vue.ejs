@@ -16,9 +16,9 @@
 			<VSpacer />
 
 			<VBtn
-				class="ma-0"
 				color="accent"
-				outline
+				outlined
+				class="mt-4"
 				@click="sendNotification"
 			>
 				{{ $t('views.home.notify') }}
@@ -31,27 +31,39 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { Meta } from '@/decorators';
+
 	import { mapActions } from 'vuex';
 
 	import { NotificationObj } from '@cnamts/vue-dot/src/modules/notification';
 
+	import { mdiCheck } from '@mdi/js';
+
 	/** Home page */
 	@Component({
 		// Vuex bindings
-		methods: mapActions('notification', [
-			'notify'
-		])
+		methods: mapActions('notification', ['notify'])
 	})
 	export default class Home extends Vue {
-		// Vuex bindings type declaration
-		notify!: (obj: NotificationObj) => void;
-
 		sendNotification() {
 			this.notify({
 				type: 'success',
 				message: 'Exemple de notification',
-				icon: 'check'
+				icon: mdiCheck
 			});
+		}
+
+		@Meta
+		metaInfo() {
+			return {
+				title: this.$t('views.home.meta.title'),
+				meta: [
+					{
+						name: 'description',
+						content: this.$t('views.home.meta.description')
+					}
+				]
+			};
 		}
 	}
 </script>

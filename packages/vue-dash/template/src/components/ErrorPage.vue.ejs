@@ -1,0 +1,79 @@
+<template>
+	<VLayout class="page">
+		<VCard class="page-card px-5">
+			<span
+				v-if="code"
+				class="font-weight-bold primary--text code"
+			>
+				{{ code }}
+			</span>
+
+			<h2
+				:class="{
+					'display-2': !code,
+					'title': code
+				}"
+				class="mb-2 font-weight-bold"
+			>
+				{{ title }}
+			</h2>
+
+			<p>{{ message }}</p>
+
+			<VBtn
+				v-if="cta"
+				:to="{ name: 'home' }"
+				exact
+				text
+				color="accent"
+				class="back-button ma-n5"
+			>
+				<VIcon class="mr-2">
+					{{ backArrowIcon }}
+				</VIcon>
+
+				{{ cta }}
+			</VBtn>
+		</VCard>
+	</VLayout>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	import { mdiArrowLeft } from '@mdi/js';
+
+	const Props = Vue.extend({
+		props: {
+			code: {
+				type: String,
+				default: undefined
+			},
+			title: {
+				type: String,
+				required: true
+			},
+			message: {
+				type: String,
+				required: true
+			},
+			cta: {
+				type: String,
+				default: undefined
+			}
+		}
+	});
+
+	@Component
+	export default class ErrorPage extends Props {
+		backArrowIcon = mdiArrowLeft;
+	}
+</script>
+
+<style lang="scss" scoped>
+	.code {
+		font-size: 6rem;
+		font-family: serif;
+	}
+</style>

@@ -1,0 +1,9 @@
+import Vue from 'vue';
+import VuexBindings from './store/types';
+import { VuetifyObject } from 'vuetify/types';
+
+declare module 'vue/types/vue' {
+	interface Vue extends VuexBindings {
+		$vuetify: VuetifyObject;
+	}
+}

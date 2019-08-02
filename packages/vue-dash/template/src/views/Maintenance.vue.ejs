@@ -1,0 +1,55 @@
+<template>
+	<ErrorPage
+		:code="pageInfo.code"
+		:title="pageInfo.title"
+		:message="pageInfo.message"
+	/>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	import ErrorPage from '@/components/ErrorPage.vue';
+
+	import { Meta } from '@/decorators';
+
+	declare const MAINTENANCE_CODE: string;
+	declare const MAINTENANCE_TITLE: string;
+	declare const MAINTENANCE_MESSAGE: string;
+
+	@Component({
+		components: {
+			ErrorPage
+		}
+	})
+	export default class Maintenance extends Vue {
+		get pageInfo() {
+			return {
+				code: MAINTENANCE_CODE || this.$t('views.maintenance.code'),
+				title: MAINTENANCE_TITLE || this.$t('views.maintenance.title'),
+				message: MAINTENANCE_MESSAGE || this.$t('views.maintenance.message')
+			};
+		}
+
+		@Meta
+		metaInfo() {
+			return {
+				title: this.pageInfo.title,
+				meta: [
+					{
+						name: 'description',
+						content: this.pageInfo.message
+					}
+				]
+			};
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.code {
+		font-size: 6rem;
+		font-family: serif;
+	}
+</style>

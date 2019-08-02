@@ -10,8 +10,8 @@ module.exports = {
 	],
 	rules: {
 		// Allow logs in development
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 
 		// Tab indent in templates
 		'vue/html-indent': ['error', 'tab'],
@@ -46,7 +46,10 @@ module.exports = {
 		// Force PascalCase for component names
 		'vue/component-name-in-template-casing': ['error', 'PascalCase', {
 			'ignores': [
-				'transition'
+				'keep-alive',
+				'component',
+				'transition',
+				'transition-group'
 			]
 		}],
 
@@ -69,7 +72,9 @@ module.exports = {
 			'max': 330,
 			'skipBlankLines': true,
 			'skipComments': true
-		}]
+		}],
+
+		'object-curly-spacing': ['error', 'always']
 	},
 	overrides: [
 		{

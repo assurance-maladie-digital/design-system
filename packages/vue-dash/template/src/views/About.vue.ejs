@@ -6,7 +6,7 @@
 			</h2>
 
 			<Links
-				v-for="(data, index) in $t('views.about.links')"
+				v-for="(data, index) in links"
 				:key="index"
 				:title="data.title"
 				:links="data.links"
@@ -17,13 +17,12 @@
 
 			<VBtn
 				exact
-				class="ma-0"
 				color="accent"
-				outline
+				outlined
 				:to="$t('views.about.backBtn.url')"
 			>
 				<VIcon class="mr-2">
-					arrow_back
+					{{ backArrowIcon }}
 				</VIcon>
 
 				{{ $t('views.about.backBtn.label') }}
@@ -36,11 +35,44 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { Meta } from '@/decorators';
+
+	import { Link } from '@/types';
+
+	import { mdiArrowLeft } from '@mdi/js';
+
+	interface LinkItem {
+		title: string;
+		links: Link[];
+	}
+
 	/** About page */
 	@Component({
 		components: {
-			Links: () => import(/* webpackChunkName: "links" */ '@/components/Links.vue')
+			Links: () => import(
+				/* webpackChunkName: "links" */
+				'@/components/Links.vue'
+			)
 		}
 	})
-	export default class About extends Vue {}
+	export default class About extends Vue {
+		backArrowIcon = mdiArrowLeft;
+
+		get links() {
+			return this.$t('views.about.links') as unknown as LinkItem[];
+		}
+
+		@Meta
+		metaInfo() {
+			return {
+				title: this.$t('views.about.meta.title'),
+				meta: [
+					{
+						name: 'description',
+						content: this.$t('views.about.meta.description')
+					}
+				]
+			};
+		}
+	}
 </script>

@@ -29,7 +29,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { MetaInfo } from 'vue-meta';
+	import { Meta } from '@/decorators';
 
 	// Static import for faster rendering
 	import Header from '@/components/Header.vue';
@@ -46,16 +46,17 @@
 	})
 	export default class App extends Vue {
 		/** The meta informations of the route */
-		metaInfo(): MetaInfo {
+		@Meta
+		metaInfo() {
 			return {
 				// If no subcomponents specify a metaInfo.title, this title will be used
-				title: this.$t('common.meta.title') as string,
+				title: this.$t('common.meta.title'),
 				// All titles will be injected into this template
-				titleTemplate: this.$t('common.meta.titleTemplate') as string,
+				titleTemplate: this.$t('common.meta.titleTemplate'),
 				meta: [
 					{
 						name: 'description',
-						content: this.$t('common.meta.description') as string
+						content: this.$t('common.meta.description')
 					}
 				]
 			};

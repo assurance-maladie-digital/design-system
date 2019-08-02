@@ -8,7 +8,7 @@
 				icon
 			>
 				<VIcon color="white">
-					home
+					{{ homeIcon }}
 				</VIcon>
 			</VBtn>
 		</div>
@@ -19,12 +19,16 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { mdiHome } from '@mdi/js';
+
 	@Component
-	export default class Toolbar extends Vue {}
+	export default class Toolbar extends Vue {
+		homeIcon = mdiHome;
+	}
 </script>
 
 <style lang="scss" scoped>
-	.v-toolbar /deep/ .v-toolbar__content {
+	.v-toolbar ::v-deep .v-toolbar__content {
 		justify-content: center;
 	}
 
