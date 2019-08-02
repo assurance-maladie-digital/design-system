@@ -36,17 +36,13 @@ module.exports = {
 						commonjs2: 'vue',
 						amd: 'vue',
 						root: 'Vue'
-					},
-					'vuetify/lib': {
-						commonjs: 'vuetify/lib',
-						commonjs2: 'vuetify/lib',
-						amd: 'vuetify/lib',
-						root: 'Vuetify'
 					}
 				},
+				/^vuetify/,
 				/^dayjs/,
 				/^languages/,
-				/^vuex/
+				/^vuex/,
+				/^@mdi\/js/
 			]
 			: []
 	},
