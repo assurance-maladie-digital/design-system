@@ -8,13 +8,13 @@
 		role="header"
 	>
 		<RouterLink
-			:aria-label="$t('components.header.logoBtn.label')"
+			<% if (i18n) { %>:aria-label="$t('components.header.logoBtn.label')"<% } else { %>aria-label="Accueil"<% } %>
 			:to="{ name: 'home' }"
 			exact
 			class="logo-link white"
 		>
 			<img
-				:alt="$t('components.header.logoBtn.alt')"
+				<% if (i18n) { %>:alt="$t('components.header.logoBtn.alt')"<% } else { %>alt="l'Assurance Maladie"<% } %>
 				src="../assets/logo.svg"
 				class="d-block mx-auto logo"
 			>
@@ -22,7 +22,7 @@
 
 		<VLayout class="inner-toolbar">
 			<h1 class="white--text headline mt-4">
-				{{ $t('components.header.title') }}
+				<% if (i18n) { %>{{ $t('components.header.title') }}<% } else { %>Projet demo<% } %>
 			</h1>
 		</VLayout>
 	</VLayout>

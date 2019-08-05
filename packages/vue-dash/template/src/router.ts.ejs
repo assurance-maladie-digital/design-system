@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Meta from 'vue-meta';
-
-import i18n, { loadLanguageAsync } from '@/i18n';
+<% if (i18n) { %>
+import i18n, { loadLanguageAsync } from '@/i18n';<% } %>
 import store from '@/store';
 
 // Directly import Home view for faster rendering of first page
@@ -72,7 +72,7 @@ router.beforeEach((to, from, next) => {
 	// Remove notification
 	store.dispatch('notification/rmNotif');
 
-	// Resolve translations before each navigation
+	<% if (i18n) { %>// Resolve translations before each navigation
 	const lang = i18n.locale;
 	loadLanguageAsync(lang).then(() => {
 		// If maintenance is enabled
@@ -93,7 +93,24 @@ router.beforeEach((to, from, next) => {
 			// Else, default behavior
 			next();
 		}
-	});
+	});<% } else { %>// If maintenance is enabled
+	if (MAINTENANCE === 'true') {
+		// Avoid infinite loop
+		if ('maintenance' !== to.name) {
+			// Redirect to maintenance page
+			next({ name: 'maintenance' });
+		} else {
+			// Else, resolve route
+			next();
+		}
+	// Else if we're trying to access the maintenance page
+	// when not in maintenance mode, redirect to home
+	} else if ('maintenance' === to.name) {
+		next({ name: 'home' });
+	} else {
+		// Else, default behavior
+		next();
+	}<% } %>
 });
 
 export default router;

@@ -1,9 +1,12 @@
 <template>
 	<ErrorPage
-		:code="$t('views.notFound.code')"
+		<% if (i18n) { %>:code="$t('views.notFound.code')"
 		:title="$t('views.notFound.error')"
 		:message="$t('views.notFound.message')"
-		:cta="$t('views.notFound.cta')"
+		:cta="$t('views.notFound.cta')"<% } else { %>code="404"
+		title="Page non trouvée"
+		message="Il semblerait qu'il y ait eu une erreur !"
+		cta="Retour à la page d'accueil"<% } %>
 	/>
 </template>
 
@@ -24,11 +27,11 @@
 		@Meta
 		metaInfo() {
 			return {
-				title: this.$t('views.notFound.meta.title'),
+				title: <% if (i18n) { %>this.$t('views.notFound.meta.title')<% } else { %>'Erreur 404'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: this.$t('views.notFound.meta.description')
+						content: <% if (i18n) { %>this.$t('views.notFound.meta.description')<% } else { %>'Page non trouvée.'<% } %>
 					}
 				]
 			};

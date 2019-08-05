@@ -50,13 +50,13 @@
 		metaInfo() {
 			return {
 				// If no subcomponents specify a metaInfo.title, this title will be used
-				title: this.$t('common.meta.title'),
+				title: <% if (i18n) { %>this.$t('common.meta.title')<% } else { %>'<%= name.charAt(0).toUpperCase() + name.slice(1) %>'<% } %>,
 				// All titles will be injected into this template
-				titleTemplate: this.$t('common.meta.titleTemplate'),
+				titleTemplate: <% if (i18n) { %>this.$t('common.meta.titleTemplate')<% } else { %>'%s | CNAM'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: this.$t('common.meta.description')
+						content: <% if (i18n) { %>this.$t('common.meta.description')<% } else { %>'<%= description %>.'<% } %>
 					}
 				]
 			};

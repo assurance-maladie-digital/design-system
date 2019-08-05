@@ -26,9 +26,10 @@
 	export default class Maintenance extends Vue {
 		get pageInfo() {
 			return {
-				code: MAINTENANCE_CODE || this.$t('views.maintenance.code'),
-				title: MAINTENANCE_TITLE || this.$t('views.maintenance.title'),
-				message: MAINTENANCE_MESSAGE || this.$t('views.maintenance.message')
+				code: MAINTENANCE_CODE || <% if (i18n) { %>this.$t('views.maintenance.code')<% } else { %>'503'<% } %>,
+				title: MAINTENANCE_TITLE || <% if (i18n) { %>this.$t('views.maintenance.title')<% } else { %>'Maintenance en cours'<% } %>,
+				message: MAINTENANCE_MESSAGE ||<% if (i18n) { %> this.$t('views.maintenance.message')<% } else { %>
+					'L\'application n\'est pas disponible pour le moment, veuillez nous excuser pour l\'interruption.'<% } %>
 			};
 		}
 

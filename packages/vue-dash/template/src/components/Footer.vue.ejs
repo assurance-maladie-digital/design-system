@@ -7,7 +7,7 @@
 		role="footer"
 	>
 		<span class="grey lighten-4 px-3 py-1 secondary--text">
-			{{ $t('components.footer.label') }}
+			<% if (i18n) { %>{{ $t('components.footer.label') }}<% } else { %>Version<% } %>
 
 			<span class="font-weight-bold">
 				{{ version }}

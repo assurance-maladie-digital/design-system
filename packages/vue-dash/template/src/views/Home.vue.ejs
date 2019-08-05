@@ -2,15 +2,19 @@
 	<VLayout class="page">
 		<VCard class="page-card py-4 layout column align-start">
 			<h2 class="title font-weight-bold primary--text mb-4">
-				{{ $t('views.home.title') }}
+				<% if (i18n) { %>{{ $t('views.home.title') }}<% } else { %>Premiers pas<% } %>
 			</h2>
 
-			<p>{{ $t('views.home.description.block1') }}</p>
+			<p><% if (i18n) { %>{{ $t('views.home.description.block1') }}<% } else { %>Vous venez de créer une nouvelle application front-end avec Vue Dash.<% } %></p>
 
-			<p>{{ $t('views.home.description.block2') }}</p>
+			<p><% if (i18n) { %>{{ $t('views.home.description.block2') }}<% } else { %>Tout est prêt, vous pouvez dès à présent commencer à développer !<% } %></p>
 
-			<RouterLink :to="$t('views.home.about.to')">
-				{{ $t('views.home.about.label') }}
+			<% if (i18n) { %><RouterLink :to="$t('views.home.about.to')"><% } else { %><RouterLink
+				:to=" {
+					name: 'about'
+				}"
+			><% } %>
+				<% if (i18n) { %>{{ $t('views.home.about.label') }}<% } else { %>À propos<% } %>
 			</RouterLink>
 
 			<VSpacer />
@@ -21,7 +25,7 @@
 				class="mt-4"
 				@click="sendNotification"
 			>
-				{{ $t('views.home.notify') }}
+				<% if (i18n) { %>{{ $t('views.home.notify') }}<% } else { %>Envoyer une notification<% } %>
 			</VBtn>
 		</VCard>
 	</VLayout>
@@ -56,11 +60,11 @@
 		@Meta
 		metaInfo() {
 			return {
-				title: this.$t('views.home.meta.title'),
+				title: <% if (i18n) { %>this.$t('views.home.meta.title')<% } else { %>'Premiers pas'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: this.$t('views.home.meta.description')
+						content: <% if (i18n) { %>this.$t('views.home.meta.description')<% } else { %>'Votre nouvelle application Vue Dash.'<% } %>
 					}
 				]
 			};

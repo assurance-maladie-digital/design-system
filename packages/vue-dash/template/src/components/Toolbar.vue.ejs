@@ -1,10 +1,15 @@
 <template>
-	<VToolbar class="secondary">
+	<VToolbar
+		tag="section"
+		class="secondary no-flex"
+	>
 		<div class="group left">
 			<VBtn
 				exact
-				:aria-label="$t('components.toolbar.actions.home.label')"
-				:to="$t('components.toolbar.actions.home.link')"
+				<% if (i18n) { %>:aria-label="$t('components.toolbar.actions.home.label')"<% } else { %>aria-label="Accueil"<% } %>
+				<% if (i18n) { %>:to="$t('components.toolbar.actions.home.link')"<% } else { %>to="{
+					name: 'home'
+				}"<% } %>
 				icon
 			>
 				<VIcon color="white">

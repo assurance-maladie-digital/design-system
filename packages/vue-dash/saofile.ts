@@ -6,6 +6,7 @@ import * as glob from 'glob';
 import validate from 'validate-npm-package-name';
 
 import * as path from 'path';
+import * as fs from 'fs-extra';
 
 import Superb from 'superb';
 // Make a function, so you can call superb()
@@ -15,16 +16,21 @@ function getPath(value: string): string {
 	return path.join(__dirname, value);
 }
 
+function getPathCWD(value: string): string {
+	return path.join(process.cwd(), value);
+}
+
 interface Patterns {
 	[key: string]: string;
 }
 
 interface Actions {
 	type: string;
-	files?: string;
+	files?: string | string[];
 	templateDir?: string;
 	patterns?: Patterns;
 	handler?: (data: string) => string;
+	when?: boolean;
 }
 
 module.exports = {
@@ -58,6 +64,13 @@ module.exports = {
 				choices: ['npm', 'yarn'],
 				type: 'list',
 				default: 'yarn'
+			},
+			{
+				// Use i18n (Internationalization)
+				name: 'i18n',
+				type: 'confirm',
+				message: 'Use i18n (internationalization)',
+				default: false
 			},
 			{
 				// Launch application after creation
@@ -104,7 +117,6 @@ module.exports = {
 			type: 'move',
 			patterns: {
 				'gitignore': '.gitignore',
-				'_package.json': 'package.json',
 				'_.eslintrc.js': '.eslintrc.js',
 				'_.eslintignore': '.eslintignore'
 			}
@@ -155,6 +167,22 @@ module.exports = {
 
 	/** After prompt & actions */
 	async completed() {
+		if (!this.answers.i18n) {
+			// Delete i18n files if no i18n
+			// 'remove' action isn't working with folders, do it with fsExtra
+			// (needs to be done here to work)
+			const i18nPaths = [
+				// Translations folder
+				getPathCWD(this.answers.name + '/src/translations'),
+				getPathCWD(this.answers.name + '/src/i18n.ts')
+			];
+
+			// Delete for each path
+			i18nPaths.forEach((path) => {
+				fs.removeSync(path);
+			});
+		}
+
 		log('🗃  Initializing git repository…');
 		await this.gitInit();
 
