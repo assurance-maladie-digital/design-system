@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dash",
-	"version": "2.0.0-alpha.20",
+	"version": "2.0.0-alpha.21",
 	"description": "Create and manage CNAM front-end projects",
 	"keywords": [
 		"cnam",
@@ -34,7 +34,7 @@
 		"lint": "eslint **/*.ts --fix"
 	},
 	"dependencies": {
-		"@cnamts/cli-helpers": "^2.0.0-alpha.12",
+		"@cnamts/cli-helpers": "^2.0.0-alpha.21",
 		"cross-spawn": "^6.0.5",
 		"figlet": "^1.2.3",
 		"glob": "^7.1.4",
