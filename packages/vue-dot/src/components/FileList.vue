@@ -1,62 +1,79 @@
 <template>
-	<VList class="vd-file-list">
+	<VList
+		v-bind="options.list"
+		class="vd-file-list"
+	>
 		<template v-for="(file, index) in files">
-			<VListItem :key="index">
+			<VListItem
+				:key="index"
+				v-bind="options.listItem"
+			>
 				<!-- Icon -->
-				<VListItemAvatar>
+				<VListItemAvatar v-bind="options.listItemAvatar">
 					<VIcon
-						:size="24"
+						v-bind="options.listItemAvatarIcon"
 						:color="getIconInfo(file.state).color"
 					>
 						{{ getIconInfo(file.state).icon }}
 					</VIcon>
 				</VListItemAvatar>
 
-				<VListItemContent>
+				<VListItemContent v-bind="options.listItemContent">
 					<!-- File to upload name -->
-					<VListItemTitle :class="getItemColor(file.state)">
+					<VListItemTitle
+						v-bind="options.listItemTitle"
+						:class="getItemColor(file.state)"
+					>
 						{{ file.title }}
 					</VListItemTitle>
 
 					<!-- Uploaded file name -->
-					<VListItemSubtitle v-if="file.name">
+					<VListItemSubtitle
+						v-if="file.name"
+						v-bind="options.listItemSubtitle"
+					>
 						{{ file.name }}
 					</VListItemSubtitle>
 				</VListItemContent>
 
 				<!-- Action buttons -->
-				<VListItemAction>
-					<VLayout justify-end>
+				<VListItemAction v-bind="options.listItemActions">
+					<VLayout v-bind="options.layout">
 						<VBtn
 							v-if="file.state === 'error'"
-							icon
-							small
+							v-bind="options.retryBtn"
 							@click="$emit('retry', file.id)"
 						>
-							<VIcon :color="iconColor">
+							<VIcon
+								v-bind="options.icon"
+								:color="iconColor"
+							>
 								{{ refreshIcon }}
 							</VIcon>
 						</VBtn>
 
 						<VBtn
 							v-if="showViewBtn && file.state === 'success'"
-							icon
-							small
-							class="mr-2"
+							v-bind="options.viewFileBtn"
 							@click="$emit('view-file', file)"
 						>
-							<VIcon :color="iconColor">
+							<VIcon
+								v-bind="options.icon"
+								:color="iconColor"
+							>
 								{{ eyeIcon }}
 							</VIcon>
 						</VBtn>
 
 						<VBtn
 							v-if="file.state === 'success'"
-							icon
-							small
+							v-bind="options.deleteFileBtn"
 							@click="$emit('delete-file', file.id)"
 						>
-							<VIcon :color="iconColor">
+							<VIcon
+								v-bind="options.icon"
+								:color="iconColor"
+							>
 								{{ deleteIcon }}
 							</VIcon>
 						</VBtn>
@@ -68,7 +85,7 @@
 			<VDivider
 				v-if="index + 1 !== files.length"
 				:key="'divider-' + index"
-				inset
+				v-bind="options.divider"
 			/>
 		</template>
 	</VList>
@@ -78,6 +95,8 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import customizable, { Options } from '../mixins/customizable';
+
 	import {
 		mdiRefresh,
 		mdiEye,
@@ -86,6 +105,13 @@
 		mdiCheckCircle,
 		mdiFile
 	} from '@mdi/js';
+
+	export interface FileItem {
+		id: string;
+		title: string;
+		state: string;
+		name?: string;
+	}
 
 	const Props = Vue.extend({
 		props: {
@@ -102,11 +128,40 @@
 		}
 	});
 
-	/**
-	 * FileList is a component that displays a list of files
-	 */
-	@Component
+	/** FileList is a component that displays a list of files */
+	@Component({
+		mixins: [
+			// Default configuration
+			customizable({
+				listItemAvatarIcon: {
+					size: 24
+				},
+				layout: {
+					justifyEnd: true
+				},
+				divider: {
+					inset: true
+				},
+				retryBtn: {
+					icon: true
+				},
+				viewFileBtn: {
+					icon: true,
+					class: 'mr-2'
+				},
+				deleteFileBtn: {
+					icon: true
+				}
+			})
+		]
+	})
 	export default class FileList extends Props {
+		// Mixin computed data
+		options!: Options;
+
+		// Stronger types
+		files!: FileItem[];
+
 		// Icons
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
