@@ -755,10 +755,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cnamts/cli-helpers@^2.0.0-alpha.12":
-  version "2.0.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@cnamts/cli-helpers/-/cli-helpers-2.0.0-alpha.12.tgz#10e98ed45a8246b1862611de7b70dba60b90101f"
-  integrity sha512-GRp7mJSQBbhxHzUsvxCJwnWR0NCA/wEoFuzV9lvk+NCGnU7H1S/UTJ6Ot5HZGqfHSKxfGrBKVsmxZVK+UQ01ag==
+"@cnamts/cli-helpers@^2.0.0-alpha.21":
+  version "2.0.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@cnamts/cli-helpers/-/cli-helpers-2.0.0-alpha.21.tgz#4b0df3070171626d291273f35730266f5c6524e3"
+  integrity sha512-RbQWb9DultYBGNAlFE57O1nsxmjQTyw90Ju3ztoxaZZNqs0uMPuBJFVCy4ULjxN5swolr4zSK0APamaqstuyIg==
   dependencies:
     figlet "^1.2.3"
 
@@ -882,10 +882,17 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/jest@^23.3.14":
-  version "23.3.14"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.14.tgz#37daaf78069e7948520474c87b80092ea912520a"
-  integrity sha512-Q5hTcfdudEL2yOmluA1zaSyPbzWPmJ3XfSWeP3RyoYvS9hnje1ZyagrZOuQ6+1nQC1Gw+7gap3pLNL3xL6UBug==
+"@types/jest-diff@*":
+  version "20.0.1"
+  resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
+  integrity sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
+
+"@types/jest@^24.0.17":
+  version "24.0.17"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.17.tgz#b66ea026efb746eb5db1356ee28518aaff7af416"
+  integrity sha512-1cy3xkOAfSYn78dsBWy4M3h/QF/HeWPchNFDjysVtp3GHeTdSmtluNnELfCmfNRRHo0OWEcpf+NsEJQvwQfdqQ==
+  dependencies:
+    "@types/jest-diff" "*"
 
 "@types/json-schema@^7.0.3":
   version "7.0.3"

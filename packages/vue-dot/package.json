@@ -45,7 +45,7 @@
 		"@babel/preset-env": "^7.5.5",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.21",
 		"@mdi/js": "^3.8.95",
-		"@types/jest": "^23.3.14",
+		"@types/jest": "^24.0.17",
 		"@typescript-eslint/parser": "^1.13.0",
 		"@vue/cli-plugin-babel": "^3.9.2",
 		"@vue/cli-plugin-eslint": "^3.9.2",
