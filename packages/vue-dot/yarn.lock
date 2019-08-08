@@ -755,10 +755,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cnamts/cli-helpers@^2.0.0-alpha.12":
-  version "2.0.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@cnamts/cli-helpers/-/cli-helpers-2.0.0-alpha.12.tgz#10e98ed45a8246b1862611de7b70dba60b90101f"
-  integrity sha512-GRp7mJSQBbhxHzUsvxCJwnWR0NCA/wEoFuzV9lvk+NCGnU7H1S/UTJ6Ot5HZGqfHSKxfGrBKVsmxZVK+UQ01ag==
+"@cnamts/cli-helpers@^2.0.0-alpha.21":
+  version "2.0.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@cnamts/cli-helpers/-/cli-helpers-2.0.0-alpha.21.tgz#4b0df3070171626d291273f35730266f5c6524e3"
+  integrity sha512-RbQWb9DultYBGNAlFE57O1nsxmjQTyw90Ju3ztoxaZZNqs0uMPuBJFVCy4ULjxN5swolr4zSK0APamaqstuyIg==
   dependencies:
     figlet "^1.2.3"
 
@@ -10596,9 +10596,9 @@ vuetify-loader@^1.3.0:
     loader-utils "^1.2.0"
 
 vuetify@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.0.2.tgz#370916d7e563e84e15dff9eccf24980c61b01e09"
-  integrity sha512-cg7zChvouAYlRhkz3g8A5B/MAOxZYmrq9fksHnWZ1Rs4ZmRwoNs5Kgexp8qaw3dxDs6cRkY7+1NaHuFc/+U0dA==
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.0.5.tgz#3e9cd992bed2f4013bfcfc045ff2e301deb3272d"
+  integrity sha512-t2JNarqqJRzOEtNg2nP9U5EFU4jR6unA8RIiqBGb3pjSCaTxwHzu5H3wkcBh/NM3y6fd40EuIS+SkFejwGD6RQ==
 
 vuex@^3.1.1:
   version "3.1.1"
