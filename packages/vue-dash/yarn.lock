@@ -18,6 +18,13 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@cnamts/cli-helpers@^2.0.0-alpha.21":
+  version "2.0.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@cnamts/cli-helpers/-/cli-helpers-2.0.0-alpha.21.tgz#4b0df3070171626d291273f35730266f5c6524e3"
+  integrity sha512-RbQWb9DultYBGNAlFE57O1nsxmjQTyw90Ju3ztoxaZZNqs0uMPuBJFVCy4ULjxN5swolr4zSK0APamaqstuyIg==
+  dependencies:
+    figlet "^1.2.3"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -64,9 +71,9 @@
   integrity sha512-wBlsw+8n21e6eTd4yVv8YD/E3xq0O6nNnJIquutAsFGE7EyMKz7W6RNT6BRu1SmdgmlCZ9tb0X+j+D6HGr8pZw==
 
 "@types/yargs@^13.0.0":
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-13.0.0.tgz#d2acb3bec0047d8f648ebacdab6b928a900c42c4"
-  integrity sha512-hY0o+kcz9M6kH32NUeb6VURghqMuCVkiUx+8Btsqhj4Hhov/hVGUx9DmBJeIkzlp1uAQK4wngQBCjqWdUUkFyA==
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-13.0.2.tgz#a64674fc0149574ecd90ba746e932b5a5f7b3653"
+  integrity sha512-lwwgizwk/bIIU+3ELORkyuOgDjCh7zuWDFqRtPPhhVgq9N1F7CvLNKg1TX4f2duwtKQ0p044Au9r1PLIXHrIzQ==
   dependencies:
     "@types/yargs-parser" "*"
 
