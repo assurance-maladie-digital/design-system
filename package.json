@@ -3,8 +3,7 @@
 	"name": "@cnamts/design-system",
 	"devDependencies": {
 		"@types/fs-extra": "^8.0.0",
-		"@types/node": "^12.6.8",
-		"eslint": "^5.16.0",
+		"@types/node": "^12.7.1",
 		"fs-extra": "^8.1.0",
 		"lerna": "^3.16.4",
 		"ts-node": "^8.3.0"
