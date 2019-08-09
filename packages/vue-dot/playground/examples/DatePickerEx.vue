@@ -76,6 +76,19 @@
 		>
 			Set the date
 		</VBtn>
+
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+			Show week-ends
+		</h2>
+
+		<DatePicker
+			show-week-ends
+			:vuetify-options="{
+				textField: {
+					clearable: true
+				}
+			}"
+		/>
 	</DocSection>
 </template>
 

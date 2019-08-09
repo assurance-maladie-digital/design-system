@@ -59,6 +59,7 @@
 			v-bind="options.datePicker"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
+			:events="calendarEvents"
 			@change="saveFromCalendar"
 		/>
 	</VMenu>
@@ -69,6 +70,7 @@
 	import Component from 'vue-class-component';
 
 	import customizable, { Options } from '../mixins/customizable';
+	import eventable from '../mixins/eventable';
 
 	import dayjs from 'dayjs';
 
@@ -174,7 +176,8 @@
 				icon: {
 					color: '#808080'
 				}
-			})
+			}),
+			eventable
 		],
 		model: {
 			prop: 'value',
@@ -222,6 +225,8 @@
 	export default class DatePicker extends Props {
 		// Mixin computed data
 		options!: Options;
+		showWeekEnds!: boolean;
+		calendarEvents!: (date: string) => any;
 
 		// Extend $refs
 		$refs!: Refs<{
@@ -432,6 +437,41 @@
 	// Hide scrollbar in VMenu
 	.vd-date-picker-menu {
 		overflow: hidden;
+
+		// Custom events
+		// Disabled when the btn is active
+		::v-deep {
+			.v-btn:not(.v-btn--active) {
+				.v-date-picker-table__events {
+					// Make the container take full space
+					height: 100%;
+					bottom: 0 !important;
+
+					// Put the content in front
+					.v-btn__content {
+						z-index: 2;
+					}
+
+					// Make the dot take full space
+					.vd-custom-event {
+						position: absolute;
+						height: 100%;
+						width: 100%;
+						margin: 0;
+						left: 0;
+						// Make sure we still see the text
+						opacity: .4;
+					}
+				}
+			}
+
+			// Don't show custom events when the date is selected
+			.v-btn.v-btn--active {
+				.vd-custom-event {
+					display: none;
+				}
+			}
+		}
 	}
 
 	// Change the main color when a warning is present
