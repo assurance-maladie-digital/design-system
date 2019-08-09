@@ -20,6 +20,11 @@ function isDateBeforeNow(value: string) {
 /** Check that the date is not after today (expects ##/##/#### format) */
 export function notAfterToday(errorMessages = defaultErrorMessages) {
 	return (value: string) => {
+		// If the value is empty, return true (valid)
+		if (!value) {
+			return true;
+		}
+
 		// If the date is before now, it's a past date, it's valid,
 		// else, the date is after today, it's invalid
 		return isDateBeforeNow(value) || errorMessages.default;
