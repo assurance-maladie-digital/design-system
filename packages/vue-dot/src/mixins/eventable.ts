@@ -4,6 +4,7 @@ import Component from 'vue-class-component';
 import { Options } from './customizable';
 
 import isWeekEnd from '../functions/isWeekEnd';
+import isDateInRange from '../functions/isDateInRange';
 
 const Props = Vue.extend({
 	props: {
@@ -11,6 +12,11 @@ const Props = Vue.extend({
 		showWeekEnds: {
 			type: Boolean,
 			default: false
+		},
+		/** The start date of the range */
+		startDate: {
+			type: String,
+			default: ''
 		}
 	}
 });
@@ -20,6 +26,8 @@ const Props = Vue.extend({
 export default class Eventable extends Props {
 	// Mixin computed data
 	options!: Options;
+	/** DatePicker.date */
+	date!: string;
 
 	/**
 	 * Function event for VCalendar event prop
@@ -41,10 +49,25 @@ export default class Eventable extends Props {
 			return userEvents;
 		}
 
+		// If there is a start date & a date is selected,
+		// add events to date in this range
+		if (this.startDate && this.date) {
+			const inRange = isDateInRange(date, this.startDate, this.date);
+
+			if (inRange) {
+				return 'vd-custom-event accent';
+			}
+		}
+
 		if (this.showWeekEnds) {
+			// Chage color in fonction of theme
 			const weekEndColor = this.$vuetify.theme.dark ? 'grey darken-1' : 'grey lighten-1';
+
 			// Return a string or false (no event)
 			return isWeekEnd(date) ? `vd-custom-event ${weekEndColor}` : false;
 		}
+
+		// By default, return false
+		return false;
 	}
 }
