@@ -5,31 +5,37 @@
  * @param {string} textToCopy The text to copy
  */
 export default function copyToClipboard(textToCopy: string) {
+	/** Use a text area, so we can use execCommand */
 	const el = document.createElement('textarea');
 
+	// Configure the element to be readonly and hidden
 	el.value = textToCopy;
 	el.setAttribute('readonly', '');
 	el.style.position = 'absolute';
 	el.style.left = '-9999px';
 
+	// Append the element
 	document.body.appendChild(el);
 
-	// Check if there is any content selected previously
-	// Store selection if found
-	// Mark as false to know that no selection existed before
+	// Document selection
 	const selection = document.getSelection();
 
-	if (!selection) {
-		return;
+	let selected: Range | false = false;
+
+	if (selection) {
+		// Store previous selection (or false) to restore it after
+		selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 	}
 
-	const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-
+	// Select the text
 	el.select();
+	// Copy it
 	document.execCommand('copy');
+	// Then remove the element from the DOM
 	document.body.removeChild(el);
 
-	if (selected) { // If a selection existed before copying
+	// If a selection existed before copying
+	if (selection && selected) {
 		selection.removeAllRanges(); // Unselect everything on the HTML document
 		selection.addRange(selected); // Restore the original selection
 	}

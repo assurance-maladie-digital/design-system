@@ -101,6 +101,7 @@
 	import Component from 'vue-class-component';
 
 	import getFileExtension from '../functions/getFileExtension';
+	import calcHumanFileSize from '../functions/calcHumanFileSize';
 
 	import { mdiCloudUpload } from '@mdi/js';
 
@@ -371,23 +372,9 @@
 			return false;
 		}
 
-		/** Takes a size in bytes and outputs a human readable value */
-		calcHumanFileSize(size: number, fileSizeUnits: string[]): string {
-			// Calc index
-			const index = Math.floor(Math.log(size) / Math.log(1024));
-
-			// Calc size
-			const computedSize = Number(
-				(size / Math.pow(1024, index))
-				.toFixed(2)
-			) * 1;
-
-			return computedSize + ' ' + fileSizeUnits[index];
-		}
-
 		/** Compute maximum size to human readable */
 		get maxSizeReadable() {
-			return this.calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
+			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
 		}
 
 		get computedAccept(): string {
