@@ -45,12 +45,17 @@
 			:vuetify-options="{
 				textField: {
 					placeholder: ' ',
-					hint: ' ',
-					solo: true
+					hint: null,
+					solo: true,
+					clearable: true
 				},
 				menu: {
 					nudgeBottom: 50,
-					nudgeRight: -10
+					nudgeRight: 0,
+					minWidth: '310px'
+				},
+				datePicker: {
+					width: '310px'
 				}
 			}"
 		>

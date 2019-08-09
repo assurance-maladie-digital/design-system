@@ -72,7 +72,6 @@
 
 	import dayjs from 'dayjs';
 
-	import maskit from '../functions/maskit';
 	import parseDate from '../helpers/parseDate';
 
 	import { ValidationRule } from '../rules/types';
@@ -83,6 +82,7 @@
 
 	/** Date format used internally */
 	const INTERNAL_FORMAT = 'YYYY-MM-DD';
+	const TEXT_FIELD_INTERNAL_FORMAT = 'YYYYMMDD';
 
 	const Props = Vue.extend({
 		props: {
@@ -275,9 +275,20 @@
 			return parseDate(date, this.dateFormatReturn).format(INTERNAL_FORMAT);
 		}
 
+		parseTextFieldDate(date: string) {
+			const formatted = parseDate(date, TEXT_FIELD_INTERNAL_FORMAT);
+
+			// If the formatted date isn't valid, return empty string
+			if (!formatted.isValid()) {
+				return '';
+			}
+
+			return formatted.format(INTERNAL_FORMAT);
+		}
+
 		/** Set textField model by parsing this.date */
 		setTextFieldModel() {
-			this.textFieldDate = parseDate(this.date, 'DDMMYYYY').format(this.dateFormat);
+			this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(TEXT_FIELD_INTERNAL_FORMAT);
 		}
 
 		/**
@@ -286,26 +297,26 @@
 		 * @example
 		 * '##/##/####' for default dateFormat
 		 */
-		get maskValue() {
-			// If the mask is false, don't apply mask
-			if (this.mask === false) {
-				// Undefined is the default value for mask property
-				return undefined;
-			}
+		// get maskValue() {
+		// 	// If the mask is false, don't apply mask
+		// 	if (this.mask === false) {
+		// 		// Undefined is the default value for mask property
+		// 		return undefined;
+		// 	}
 
-			// If a mask is specified by the user, use it
-			if (typeof this.mask === 'string') {
-				return this.mask;
-			}
+		// 	// If a mask is specified by the user, use it
+		// 	if (typeof this.mask === 'string') {
+		// 		return this.mask;
+		// 	}
 
-			// Else, compute the mask from dateFormat
+		// 	// Else, compute the mask from dateFormat
 
-			// Match every letter, case insensitive
-			const regexp = /[a-z]/gmi;
+		// 	// Match every letter, case insensitive
+		// 	const regexp = /[a-z]/gmi;
 
-			// Replace every letter by # (in Vuetify masks, # matches any digit)
-			return this.dateFormat.replace(regexp, '#');
-		}
+		// 	// Replace every letter by # (in Vuetify masks, # matches any digit)
+		// 	return this.dateFormat.replace(regexp, '#');
+		// }
 
 		/**
 		 * Format date with dayjs and dateFormat
@@ -359,17 +370,15 @@
 				return;
 			}
 
-			const formatted = this.formatDate(this.textFieldDate, this.maskValue);
+			const formatted = this.parseTextFieldDate(this.textFieldDate);
 
-			/** If formatted is an empty string, the date isn't valid, don't continue */
+			// If formatted is an empty string, the date isn't valid, don't continue
 			if (!formatted) {
 				return;
 			}
 
-			// Else, the format is valid, we can parse the date
-			const [day, month, year] = formatted.split('/');
-			// Then we set the v-model (internal format)
-			this.date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+			// Set the internal date
+			this.date = formatted;
 
 			this.emitChangeEvent();
 		}
@@ -379,33 +388,6 @@
 			// Parse the date with interal format,
 			// and return the date with dateFormatRetun format
 			this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
-		}
-
-		formatDate(date: string, mask: string = '##/##/####') {
-			// Mask the value
-			// by default textFieldDate is 25032018 format,
-			// and maskValue is ##/##/####
-			// masked will be 25/03/2018
-
-			// It also supports other formats, eg.:
-			// 20180325 & ####/##/## => 2018/03/25
-			const masked = maskit(date, mask, true);
-
-			// Parse the date to the "standard" format
-			// It masked value is incomplete, eg. "25/",
-			// the result will be "Invalid Date",
-			// so it won't match the regex
-			const formatted = parseDate(masked, this.dateFormat).format('DD/MM/YYYY');
-
-			// Validate DD/MM/YYYY format
-			const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
-
-			// If the formatted date doesn't match regex, format is invalid
-			if (!formatted.match(dateFormatRegex)) {
-				return '';
-			}
-
-			return formatted;
 		}
 
 		/** Custom validation for warningRules */
