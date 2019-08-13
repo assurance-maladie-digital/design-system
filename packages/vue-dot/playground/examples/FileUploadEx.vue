@@ -7,7 +7,6 @@
 		<FileUpload
 			ref="fileUpload"
 			v-model="file"
-			input-ref="inputEl"
 			@error="setError"
 			@change="error = null; success = true"
 		/>
@@ -116,9 +115,7 @@
 		// Extend $refs
 		$refs!: Refs<{
 			fileUpload: {
-				$refs: {
-					inputEl: HTMLInputElement
-				}
+				retry: () => void;
 			}
 		}>;
 
@@ -137,7 +134,7 @@
 
 		/** Click on file input */
 		retry() {
-			this.$refs.fileUpload.$refs.inputEl.click();
+			this.$refs.fileUpload.retry();
 		}
 
 		setError(error: Error) {

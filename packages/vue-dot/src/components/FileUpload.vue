@@ -19,7 +19,7 @@
 	>
 		<!-- The actual <input>, masked with CSS -->
 		<input
-			:ref="inputRef"
+			ref="vdInputEl"
 			type="file"
 			:disabled="disabled"
 			:multiple="multiple"
@@ -105,6 +105,8 @@
 
 	import { mdiCloudUpload } from '@mdi/js';
 
+	import { Refs } from '../../types';
+
 	interface HTMLInputEvent extends Event {
 		target: HTMLInputElement & EventTarget;
 	}
@@ -178,15 +180,6 @@
 			accept: {
 				type: String,
 				default: undefined
-			},
-			/**
-			 * The ref attribute value on the input
-			 * It's useful in case you want to trigger events
-			 * on the input element, eg. for a retry button
-			 */
-			inputRef: {
-				type: String,
-				default: 'vdInputEl'
 			}
 		}
 	});
@@ -202,6 +195,10 @@
 		}
 	})
 	export default class FileUpload extends Props {
+		$refs!: Refs<{
+			vdInputEl: HTMLInputElement;
+		}>;
+
 		// Icons
 		uploadIcon = mdiCloudUpload;
 
@@ -286,8 +283,7 @@
 
 			// Reset file input
 			// Do after everything for IE
-			const input = this.$refs[this.inputRef] as HTMLInputElement;
-			input.value = '';
+			this.$refs.vdInputEl.value = '';
 		}
 
 		/** This function is executed when content is dropped on the component */
@@ -392,6 +388,11 @@
 
 			// The result, eg. ".pdf,.jpeg,.jpg,.png"
 			return accept.join();
+		}
+
+		/** Expose retry function which clicks on the input */
+		public retry() {
+			this.$refs.vdInputEl.click();
 		}
 	}
 </script>
