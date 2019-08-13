@@ -17,5 +17,15 @@ export default function isDateInRange(
 	endDate: string,
 	interval = '[)' // By default, don't include the endDate (it's the selected one)
 ) {
-	return dayjs(date).isBetween(startDate, endDate, null, interval);
+	/** The range is "positive" if the startDate is before the endDate */
+	const rangePositive = dayjs(startDate).isBefore(dayjs(endDate));
+
+	// If the range is positive
+	if (rangePositive) {
+		// Return true if the date is between startDate & endDate
+		return dayjs(date).isBetween(startDate, endDate, null, interval);
+	}
+
+	// Default to false
+	return false;
 }

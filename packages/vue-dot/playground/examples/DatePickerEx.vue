@@ -83,7 +83,6 @@
 
 		<DatePicker
 			show-week-ends
-			start-date="2019-08-01"
 			:vuetify-options="{
 				textField: {
 					clearable: true
