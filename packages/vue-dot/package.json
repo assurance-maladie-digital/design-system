@@ -111,7 +111,7 @@
 			"jest-serializer-vue"
 		],
 		"testMatch": [
-			"<rootDir>/(tests/unit/**/*.spec.(js|ts)|**/__tests__/*.(js|ts))"
+			"<rootDir>/tests/unit/**/*.spec.ts"
 		],
 		"coverageReporters": [
 			"json",
