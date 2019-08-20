@@ -99,6 +99,11 @@
 			label="Start Date"
 			date-format="YYYY-MM-DD"
 			date-format-return="YYYY-MM-DD"
+			:vuetify-options="{
+				textField: {
+					hint: 'YYYY-MM-DD Format'
+				}
+			}"
 		/>
 
 		<DatePicker

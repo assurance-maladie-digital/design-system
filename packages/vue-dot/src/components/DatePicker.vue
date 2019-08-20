@@ -11,8 +11,9 @@
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
-				:success-messages="options.textField.successMessages || successMessages"
+				v-mask="maskValue"
 				v-bind="options.textField"
+				:success-messages="options.textField.successMessages || successMessages"
 				:class="textFieldClasses"
 				@blur="textFieldBlur"
 			>
@@ -195,20 +196,23 @@
 				}
 			},
 			/** Update the date when value is provided by the user */
-			value(date: string) {
-				// If the date is cleared
-				if (!date) {
-					// Clear internal models
-					this.date = '';
-					this.textFieldDate = '';
+			value: {
+				handler(date: string) {
+					// If the date is cleared
+					if (!date) {
+						// Clear internal models
+						this.date = '';
+						this.textFieldDate = '';
 
-					return;
-				}
+						return;
+					}
 
-				// Format the date to internal format using dateFormatReturn
-				this.date = this.parseDateForModel(date);
-				this.setTextFieldModel();
-				this.validate(this.textFieldDate);
+					// Format the date to internal format using dateFormatReturn
+					this.date = this.parseDateForModel(date);
+					this.setTextFieldModel();
+					this.validate(this.textFieldDate);
+				},
+				immediate: true
 			},
 			/**
 			 * This method is fired every time textFieldDate changes,
@@ -302,26 +306,26 @@
 		 * @example
 		 * '##/##/####' for default dateFormat
 		 */
-		// get maskValue() {
-		// 	// If the mask is false, don't apply mask
-		// 	if (this.mask === false) {
-		// 		// Undefined is the default value for mask property
-		// 		return undefined;
-		// 	}
+		get maskValue() {
+			// If the mask is false, don't apply mask
+			if (this.mask === false) {
+				// Undefined is the default value for mask property
+				return undefined;
+			}
 
-		// 	// If a mask is specified by the user, use it
-		// 	if (typeof this.mask === 'string') {
-		// 		return this.mask;
-		// 	}
+			// If a mask is specified by the user, use it
+			if (typeof this.mask === 'string') {
+				return this.mask;
+			}
 
-		// 	// Else, compute the mask from dateFormat
+			// Else, compute the mask from dateFormat
 
-		// 	// Match every letter, case insensitive
-		// 	const regexp = /[a-z]/gmi;
+			// Match every letter, case insensitive
+			const regexp = /[a-z]/gmi;
 
-		// 	// Replace every letter by # (in Vuetify masks, # matches any digit)
-		// 	return this.dateFormat.replace(regexp, '#');
-		// }
+			// Replace every letter by # (in Vuetify masks, # matches any digit)
+			return this.dateFormat.replace(regexp, '#');
+		}
 
 		/**
 		 * Format date with dayjs and dateFormat
