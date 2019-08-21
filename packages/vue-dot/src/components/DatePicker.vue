@@ -85,7 +85,6 @@
 
 	/** Date format used internally */
 	const INTERNAL_FORMAT = 'YYYY-MM-DD';
-	const TEXT_FIELD_INTERNAL_FORMAT = 'YYYYMMDD';
 
 	const Props = Vue.extend({
 		props: {
@@ -285,7 +284,7 @@
 		}
 
 		parseTextFieldDate(date: string) {
-			const formatted = parseDate(date, TEXT_FIELD_INTERNAL_FORMAT);
+			const formatted = parseDate(date, this.dateFormat);
 
 			// If the formatted date isn't valid, return empty string
 			if (!formatted.isValid()) {
@@ -297,7 +296,7 @@
 
 		/** Set textField model by parsing this.date */
 		setTextFieldModel() {
-			this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(TEXT_FIELD_INTERNAL_FORMAT);
+			this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
 		}
 
 		/**
