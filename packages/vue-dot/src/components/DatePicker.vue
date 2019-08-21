@@ -160,13 +160,12 @@
 					closeOnContentClick: false,
 					minWidth: '290px',
 					nudgeBottom: 45,
-					nudgeRight: 48,
+					nudgeRight: 45,
 					zIndex: 1,
 					contentClass: 'vd-date-picker-menu'
 				},
 				btn: {
-					icon: true,
-					small: true
+					icon: true
 				},
 				datePicker: {
 					firstDayOfWeek: 1,
