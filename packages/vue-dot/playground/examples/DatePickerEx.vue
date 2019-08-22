@@ -41,13 +41,13 @@
 			date-format="DD-MM-YYYY"
 			birthdate
 			append-icon
-			:warning-rules="rules"
 			:vuetify-options="{
 				textField: {
 					placeholder: ' ',
 					hint: null,
 					solo: true,
-					clearable: true
+					clearable: true,
+					rules
 				},
 				menu: {
 					nudgeBottom: 50,
@@ -118,6 +118,7 @@
 	import Component from 'vue-class-component';
 
 	import required from '../../src/rules/required';
+	import notAfterToday from '../../src/rules/notAfterToday';
 
 	import { mdiCakeVariant } from '@mdi/js';
 
@@ -130,7 +131,8 @@
 		cakeIcon = mdiCakeVariant;
 
 		rules = [
-			required
+			required,
+			notAfterToday
 		];
 	}
 </script>

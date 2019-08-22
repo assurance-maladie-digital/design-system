@@ -238,6 +238,9 @@
 			picker: {
 				activePicker: string;
 			};
+			input: {
+				validate: () => boolean;
+			};
 		}>;
 
 		// Icon
@@ -364,6 +367,15 @@
 			// Apply validation because when the calendar is clicked,
 			// the input loose focus and fire textFieldBlur
 			this.validate(this.textFieldDate);
+
+			// If validateOnBlur is true
+			if (this.options.textField.validateOnBlur) {
+				// Validate the text field
+				// because no blur event is emitted
+				this.$nextTick(() => {
+					this.$refs.input.validate();
+				});
+			}
 
 			this.emitChangeEvent();
 		}
