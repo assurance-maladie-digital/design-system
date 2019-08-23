@@ -99,7 +99,7 @@
 </template>
 
 <script lang="ts">
-	import Vue, { VueConstructor } from 'vue';
+	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
 	import { Refs } from '../../types';
