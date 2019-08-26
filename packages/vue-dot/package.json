@@ -29,6 +29,7 @@
 	"types": "types/index.d.ts",
 	"scripts": {
 		"playground": "vue-cli-service serve",
+		"playground:build": "vue-cli-service build",
 		"build": "ts-node --project tsconfig.json --files build.ts",
 		"lint": "vue-cli-service lint",
 		"test": "vue-cli-service test:unit"
@@ -57,6 +58,7 @@
 		"@vue/eslint-config-typescript": "^4.0.0",
 		"@vue/test-utils": "^1.0.0-beta.29",
 		"babel-core": "7.0.0-bridge.0",
+		"copy-webpack-plugin": "^5.0.4",
 		"core-js": "^2.6.5",
 		"dayjs": "^1.8.15",
 		"deepmerge": "^4.0.0",

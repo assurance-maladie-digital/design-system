@@ -1,15 +1,18 @@
+// Build configuration
 const webpack = require('webpack');
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
-// This is the build configuration
-// If NODE_ENV is production, we're building the library
-// else, we're running the playground
+// If LIB_MODE is true, we're building the library
+// else, we're building the playground
+const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
 
-const entry = process.env.NODE_ENV === 'production' ? './src/index.ts' : './playground/main.ts';
+const entry = LIB_MODE ? './src/index.ts' : './playground/main.ts';
 
 module.exports = {
-	// No source map, accelerates the dev server
+	// No source map on library mode, accelerates the dev server
 	// and we don't need them because we're publishing the source
-	productionSourceMap: false,
+	productionSourceMap: !LIB_MODE,
 	css: {
 		// Extract CSS to separate file for SSR
 		// (in SSR mode without a separate file, an error is thrown
@@ -21,14 +24,13 @@ module.exports = {
 		output: {
 			libraryExport: 'default'
 		},
-		plugins: [
-			// Do not split to chunks when building the library
-			new webpack.optimize.LimitChunkCountPlugin({
-				maxChunks: process.env.NODE_ENV === 'production' ? 1 : 9999
-			})
-		],
+		performance: {
+			// Only show hints in lib mode
+			hints: LIB_MODE ? 'error' : false
+		},
+		plugins: [],
 		// see https://github.com/vuetifyjs/vuetify/issues/4068#issuecomment-394890573
-		externals: process.env.NODE_ENV === 'production' ?
+		externals: LIB_MODE ?
 			[
 				{
 					'vue': {
@@ -46,8 +48,8 @@ module.exports = {
 			]
 			: []
 	},
-	chainWebpack: config => {
-		if (process.env.NODE_ENV === 'production') {
+	chainWebpack: (config) => {
+		if (LIB_MODE) {
 			// Do not split to chunks when building the library
 			config.optimization.delete('splitChunks');
 			config.optimization.splitChunks(false);
@@ -63,3 +65,25 @@ module.exports = {
 		}
 	}
 };
+
+if (!LIB_MODE) {
+	// Copy public folder content from /playground
+	module.exports.configureWebpack.plugins.push(
+		new CopyPlugin([{
+			from: path.join(__dirname, './playground/public'),
+			to: path.join(__dirname, './dist'),
+			toType: 'dir',
+			ignore: [
+				'index.html',
+				'.DS_Store'
+			]
+		}])
+	);
+} else {
+	module.exports.configureWebpack.plugins.push(
+		// Do not split to chunks when building the library
+		new webpack.optimize.LimitChunkCountPlugin({
+			maxChunks: 1
+		})
+	);
+}
