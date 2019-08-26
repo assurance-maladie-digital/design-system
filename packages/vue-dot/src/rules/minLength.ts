@@ -1,4 +1,7 @@
-const defaultErrorMessages = {
+import ruleMessage from '../helpers/ruleMessage';
+import { ErrorMessages } from './types';
+
+const defaultErrorMessages: ErrorMessages<number> = {
 	default: (min: number) => `La longeur minimale du champ est ${min} caractères.`
 };
 
@@ -11,7 +14,7 @@ export function minLength(min: number, errorMessages = defaultErrorMessages) {
 			return true;
 		}
 
-		return value.length > min || errorMessages.default(min);
+		return value.length > min || ruleMessage(errorMessages, 'default', [min]);
 	};
 }
 

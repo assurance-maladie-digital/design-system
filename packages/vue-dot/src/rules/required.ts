@@ -1,4 +1,7 @@
-const defaultErrorMessages = {
+import ruleMessage from '../helpers/ruleMessage';
+import { ErrorMessages } from './types';
+
+const defaultErrorMessages: ErrorMessages = {
 	default: 'Le champ est requis.'
 };
 
@@ -10,7 +13,7 @@ export function required(errorMessages = defaultErrorMessages) {
 
 		// If the value is evaluated to true (non-empty string),
 		// it will return true (success)
-		return Boolean(value) || errorMessages.default;
+		return Boolean(value) || ruleMessage(errorMessages, 'default');
 	};
 }
 
