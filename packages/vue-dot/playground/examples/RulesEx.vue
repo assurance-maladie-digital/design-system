@@ -20,7 +20,7 @@
 		/>
 
 		<h2 class="subtitle-1 my-4 font-weight-bold">
-			Max length with default messages
+			Max & min length with custom messages
 		</h2>
 
 		<VTextarea
@@ -49,11 +49,18 @@
 
 		textareaRules = [
 			defaultRequired,
-			minLength(10)
+			minLength(10) // Default error messages
 		];
 
 		lengthRule = [
-			maxLength(10)
+			// Custom static error messages
+			minLength(2, {
+				default: 'Enter something!'
+			}),
+			// Custom dynamic error messages
+			maxLength(10, {
+				default: (max: number) => `Max ${max} chars!`
+			})
 		];
 	}
 </script>

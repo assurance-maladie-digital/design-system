@@ -1,7 +1,10 @@
+import ruleMessage from '../helpers/ruleMessage';
+import { ErrorMessages } from './types';
+
 import dayjs from 'dayjs';
 import parseDate from '../helpers/parseDate';
 
-const defaultErrorMessages = {
+const defaultErrorMessages: ErrorMessages = {
 	default: 'La date ne doit pas être antérieure à aujourd\'hui.'
 };
 
@@ -27,7 +30,7 @@ export function notBeforeToday(errorMessages = defaultErrorMessages) {
 
 		// If the date is after now, it's a future date, it's valid,
 		// else, the date is before today, it's invalid
-		return isDateAfterNow(value) || errorMessages.default;
+		return isDateAfterNow(value) || ruleMessage(errorMessages, 'default');
 	};
 }
 

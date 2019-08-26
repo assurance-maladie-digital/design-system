@@ -1,4 +1,7 @@
-const defaultErrorMessages = {
+import ruleMessage from '../helpers/ruleMessage';
+import { ErrorMessages } from './types';
+
+const defaultErrorMessages: ErrorMessages = {
 	default: 'L\'email saisi est invalide.'
 };
 
@@ -12,7 +15,7 @@ export function email(errorMessages = defaultErrorMessages) {
 
 		const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
-		return emailRegex.test(value) || errorMessages.default;
+		return emailRegex.test(value) || ruleMessage(errorMessages, 'default');
 	};
 }
 

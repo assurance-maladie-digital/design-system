@@ -1,4 +1,7 @@
-const defaultErrorMessages = {
+import ruleMessage from '../helpers/ruleMessage';
+import { ErrorMessages } from './types';
+
+const defaultErrorMessages: ErrorMessages<number> = {
 	default: (max: number) => `La longeur maximale du champ est ${max} caractères.`
 };
 
@@ -11,7 +14,7 @@ export function maxLength(max: number, errorMessages = defaultErrorMessages) {
 			return true;
 		}
 
-		return value.length < max || errorMessages.default(max);
+		return value.length < max || ruleMessage(errorMessages, 'default', [max]);
 	};
 }
 
