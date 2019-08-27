@@ -28,7 +28,7 @@ info('Building full bundle');
 
 // Build the full bundle
 execSync(
-	`${vueCliServicePath} build --target lib --name vue-dot ./src/index.ts`,
+	`LIB_MODE=true ${vueCliServicePath} build --target lib --name vue-dot ./src/index.ts`,
 	{
 		stdio: 'inherit'
 	}

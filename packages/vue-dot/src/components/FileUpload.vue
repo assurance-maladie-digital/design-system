@@ -19,7 +19,7 @@
 	>
 		<!-- The actual <input>, masked with CSS -->
 		<input
-			:ref="inputRef"
+			ref="vdInputEl"
 			type="file"
 			:disabled="disabled"
 			:multiple="multiple"
@@ -97,12 +97,15 @@
 </template>
 
 <script lang="ts">
-	import Vue, { VueConstructor } from 'vue';
+	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
 	import getFileExtension from '../functions/getFileExtension';
+	import calcHumanFileSize from '../functions/calcHumanFileSize';
 
 	import { mdiCloudUpload } from '@mdi/js';
+
+	import { Refs } from '../../types';
 
 	interface HTMLInputEvent extends Event {
 		target: HTMLInputElement & EventTarget;
@@ -177,15 +180,6 @@
 			accept: {
 				type: String,
 				default: undefined
-			},
-			/**
-			 * The ref attribute value on the input
-			 * It's useful in case you want to trigger events
-			 * on the input element, eg. for a retry button
-			 */
-			inputRef: {
-				type: String,
-				default: 'vdInputEl'
 			}
 		}
 	});
@@ -201,6 +195,10 @@
 		}
 	})
 	export default class FileUpload extends Props {
+		$refs!: Refs<{
+			vdInputEl: HTMLInputElement;
+		}>;
+
 		// Icons
 		uploadIcon = mdiCloudUpload;
 
@@ -285,8 +283,7 @@
 
 			// Reset file input
 			// Do after everything for IE
-			const input = this.$refs[this.inputRef] as HTMLInputElement;
-			input.value = '';
+			this.$refs.vdInputEl.value = '';
 		}
 
 		/** This function is executed when content is dropped on the component */
@@ -371,23 +368,9 @@
 			return false;
 		}
 
-		/** Takes a size in bytes and outputs a human readable value */
-		calcHumanFileSize(size: number, fileSizeUnits: string[]): string {
-			// Calc index
-			const index = Math.floor(Math.log(size) / Math.log(1024));
-
-			// Calc size
-			const computedSize = Number(
-				(size / Math.pow(1024, index))
-				.toFixed(2)
-			) * 1;
-
-			return computedSize + ' ' + fileSizeUnits[index];
-		}
-
 		/** Compute maximum size to human readable */
 		get maxSizeReadable() {
-			return this.calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
+			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
 		}
 
 		get computedAccept(): string {
@@ -405,6 +388,11 @@
 
 			// The result, eg. ".pdf,.jpeg,.jpg,.png"
 			return accept.join();
+		}
+
+		/** Expose retry function which clicks on the input */
+		public retry() {
+			this.$refs.vdInputEl.click();
 		}
 	}
 </script>

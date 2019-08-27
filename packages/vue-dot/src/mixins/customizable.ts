@@ -16,7 +16,7 @@ import * as merge from 'deepmerge';
  * // Final API
  * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
  */
-export default function customizable(defaultOptions: object) {
+export default function customizable(defaultOptions: Options) {
 	return Vue.extend({
 		props: {
 			/** User options */
@@ -26,7 +26,7 @@ export default function customizable(defaultOptions: object) {
 			}
 		},
 		computed: {
-			options(): object {
+			options(): Options {
 				// If we have custom options
 				if (this.vuetifyOptions) {
 					// Merge default options with props
@@ -34,7 +34,7 @@ export default function customizable(defaultOptions: object) {
 					return merge.all([
 						defaultOptions,
 						this.vuetifyOptions
-					]);
+					]) as Options;
 				}
 
 				// Else return default options

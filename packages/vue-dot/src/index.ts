@@ -2,7 +2,7 @@ import components from './components';
 import directives from './directives';
 
 import { VueConstructor } from 'vue';
-import VueDotPlugin from '../types';
+import { VueDotPlugin } from '../types';
 
 const VueDot: VueDotPlugin = {
 	install(Vue: VueConstructor, options) {

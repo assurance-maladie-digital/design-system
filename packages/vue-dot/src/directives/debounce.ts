@@ -1,9 +1,7 @@
 import { DirectiveOptions } from 'vue';
 import debounceFn from '../functions/debounce';
 
-/**
- * v-debounce directive
- */
+/** v-debounce directive */
 const debounce: DirectiveOptions = {
 	inserted(el, binding) {
 		// If the tag the directive is binded to

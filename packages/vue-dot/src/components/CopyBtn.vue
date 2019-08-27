@@ -3,7 +3,7 @@
 		<VBtn
 			v-bind="options.btn"
 			:aria-label="label"
-			@click="btnClicked"
+			@click="copy"
 		>
 			<slot name="icon">
 				<VIcon>
@@ -115,7 +115,7 @@
 		}
 
 		/** When the copy button is clicked */
-		btnClicked() {
+		copy() {
 			// Copy the text to the clipboard
 			copyToClipboard(this.textToCopy);
 

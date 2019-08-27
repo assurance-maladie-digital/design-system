@@ -5,3 +5,4 @@ declare module '*.vue' {
 }
 
 declare module 'languages';
+declare module 'vue-the-mask';

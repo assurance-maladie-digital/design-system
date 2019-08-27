@@ -41,16 +41,21 @@
 			date-format="DD-MM-YYYY"
 			birthdate
 			append-icon
-			:warning-rules="rules"
 			:vuetify-options="{
 				textField: {
 					placeholder: ' ',
-					hint: ' ',
-					solo: true
+					hint: null,
+					solo: true,
+					clearable: true,
+					rules
 				},
 				menu: {
 					nudgeBottom: 50,
-					nudgeRight: -10
+					nudgeRight: 0,
+					minWidth: '310px'
+				},
+				datePicker: {
+					width: '310px'
 				}
 			}"
 		>
@@ -71,6 +76,40 @@
 		>
 			Set the date
 		</VBtn>
+
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+			Show week-ends
+		</h2>
+
+		<DatePicker
+			show-week-ends
+			:vuetify-options="{
+				textField: {
+					clearable: true
+				}
+			}"
+		/>
+
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+			Range
+		</h2>
+
+		<DatePicker
+			v-model="startDate"
+			label="Start Date"
+			date-format="YYYY-MM-DD"
+			date-format-return="YYYY-MM-DD"
+			:vuetify-options="{
+				textField: {
+					hint: 'YYYY-MM-DD Format'
+				}
+			}"
+		/>
+
+		<DatePicker
+			show-week-ends
+			:start-date="startDate"
+		/>
 	</DocSection>
 </template>
 
@@ -79,6 +118,7 @@
 	import Component from 'vue-class-component';
 
 	import required from '../../src/rules/required';
+	import notAfterToday from '../../src/rules/notAfterToday';
 
 	import { mdiCakeVariant } from '@mdi/js';
 
@@ -86,11 +126,13 @@
 	export default class DatePickerEx extends Vue {
 		date = '';
 		birthDate = '';
+		startDate = '2019-08-01';
 
 		cakeIcon = mdiCakeVariant;
 
 		rules = [
-			required
+			required,
+			notAfterToday
 		];
 	}
 </script>

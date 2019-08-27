@@ -12,6 +12,9 @@ import theme from '../theme/theme.json';
 // Import the theme styles
 import '../theme/theme.scss';
 
+import VueTheMask from 'vue-the-mask';
+Vue.use(VueTheMask);
+
 Vue.use(VueDot, {
 	theme
 });

@@ -1,18 +1,29 @@
-import email from './email';
-import isDateValid from './isDateValid';
-import maxLength from './maxLength';
-import minLength from './minLength';
-import notAfterToday from './notAfterToday';
-import notBeforeToday from './notBeforeToday';
-import required from './required';
+import email, { email as emailFn } from './email';
+import isDateValid, { isDateValid as isDateValidFn } from './isDateValid';
+import maxLength, { maxLength as maxLengthFn } from './maxLength';
+import minLength, { minLength as minLengthFn } from './minLength';
+import notAfterToday, { notAfterToday as notAfterTodayFn } from './notAfterToday';
+import notBeforeToday, { notBeforeToday as notBeforeTodayFn } from './notBeforeToday';
+import required, { required as requiredFn } from './required';
+
+// Export all rules function
+export const rulesFunctions = {
+	email: emailFn,
+	isDateValid: isDateValidFn,
+	maxLength: maxLengthFn,
+	minLength: minLengthFn,
+	notAfterToday: notAfterTodayFn,
+	notBeforeToday: notBeforeTodayFn,
+	required: requiredFn
+};
 
 // Export all rules
 export default {
 	email,
 	isDateValid,
+	maxLength,
+	minLength,
 	notAfterToday,
 	notBeforeToday,
-	required,
-	maxLength,
-	minLength
+	required
 };

@@ -1,10 +1,12 @@
 {
 	"private": true,
 	"name": "@cnamts/design-system",
+	"scripts": {
+		"prepublish": "lerna run build"
+	},
 	"devDependencies": {
 		"@types/fs-extra": "^8.0.0",
-		"@types/node": "^12.6.8",
-		"eslint": "^5.16.0",
+		"@types/node": "^12.7.2",
 		"fs-extra": "^8.1.0",
 		"lerna": "^3.16.4",
 		"ts-node": "^8.3.0"

@@ -1,5 +1,5 @@
 <template>
-	<div class="upload-workflow">
+	<div class="vd-upload-workflow">
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
 			<h4 class="title mb-2">
@@ -136,14 +136,9 @@
 		// Extend $refs
 		$refs!: Refs<{
 			fileUpload: {
-				$refs: {
-					vdInputEl: HTMLInputElement;
-				};
+				// retry: () => void;
 			},
-			form: {
-				validate: () => boolean;
-				reset: () => void;
-			};
+			form: HTMLFormElement;
 		}>;
 
 		dialog = false;
@@ -245,7 +240,7 @@
 
 		retry(id: string) {
 			this.selectedItem = id;
-			this.$refs.fileUpload.$refs.vdInputEl.click();
+			this.$refs.fileUpload.retry();
 		}
 
 		mounted() {
@@ -260,7 +255,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.upload-workflow {
+	.vd-upload-workflow {
 		width: 100%;
 		max-width: 550px;
 	}

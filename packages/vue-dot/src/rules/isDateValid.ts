@@ -1,3 +1,6 @@
+import ruleMessage from '../helpers/ruleMessage';
+import { ErrorMessages } from './types';
+
 import dayjs from 'dayjs';
 
 import isLeapYear from 'dayjs/plugin/isLeapYear';
@@ -6,9 +9,8 @@ import isLeapYear from 'dayjs/plugin/isLeapYear';
 dayjs.extend(isLeapYear);
 
 import parseDate from '../helpers/parseDate';
-import { ErrorMessages } from './types';
 
-const defaultErrorMessages = {
+const defaultErrorMessages: ErrorMessages = {
 	default: 'La date saisie n\'est pas valide.',
 	wrongFormat: 'Le format de la date n\'est pas valide.',
 	monthNotMatch: 'Le jour saisi dépasse le nombre de jours dans le mois.',
@@ -21,7 +23,7 @@ function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 
 	// If value doesn't match regex, date format isn't valid
 	if (!value.match(dateFormatRegex)) {
-		return errorMessages.wrongFormat;
+		return ruleMessage(errorMessages, 'wrongFormat');
 	}
 
 	/**
@@ -54,7 +56,7 @@ function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 		// If the day is superior to the day in month,
 		// the date is invalid
 		if (day > DAYS_IN_MONTH[month - 1]) {
-			return errorMessages.monthNotMatch;
+			return ruleMessage(errorMessages, 'monthNotMatch');
 		} else {
 			// Else, the date is valid
 			return true;
@@ -70,14 +72,14 @@ function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 		// and the day is superior to 29 (1-29 range)
 		// the date is invalid
 		if (isLeap && day > 29) {
-			return errorMessages.monthNotMatch;
+			return ruleMessage(errorMessages, 'monthNotMatch');
 		}
 
 		// Else, if it's not a leap year
 		// and the day is superior or equals to 29 (1-28 range)
 		// the date is invalid
 		if (!isLeap && day >= 29) {
-			return errorMessages.notALeapYear;
+			return ruleMessage(errorMessages, 'notALeapYear');
 		}
 
 		// Else, the date is valid
@@ -93,7 +95,7 @@ export function isDateValid(errorMessages = defaultErrorMessages) {
 			return true;
 		}
 
-		return checkIfDateValid(value, errorMessages) || errorMessages.default;
+		return checkIfDateValid(value, errorMessages) || ruleMessage(errorMessages, 'default');
 	};
 }
 

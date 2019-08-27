@@ -11,8 +11,9 @@
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
-				:success-messages="options.textField.successMessages || successMessages"
+				v-mask="maskValue"
 				v-bind="options.textField"
+				:success-messages="options.textField.successMessages || successMessages"
 				:class="textFieldClasses"
 				@blur="textFieldBlur"
 			>
@@ -59,6 +60,7 @@
 			v-bind="options.datePicker"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
+			:events="calendarEvents"
 			@change="saveFromCalendar"
 		/>
 	</VMenu>
@@ -69,10 +71,10 @@
 	import Component from 'vue-class-component';
 
 	import customizable, { Options } from '../mixins/customizable';
+	import eventable from '../mixins/eventable';
 
 	import dayjs from 'dayjs';
 
-	import maskit from '../functions/maskit';
 	import parseDate from '../helpers/parseDate';
 
 	import { ValidationRule } from '../rules/types';
@@ -158,13 +160,12 @@
 					closeOnContentClick: false,
 					minWidth: '290px',
 					nudgeBottom: 45,
-					nudgeRight: 50,
+					nudgeRight: 45,
 					zIndex: 1,
 					contentClass: 'vd-date-picker-menu'
 				},
 				btn: {
-					icon: true,
-					small: true
+					icon: true
 				},
 				datePicker: {
 					firstDayOfWeek: 1,
@@ -174,7 +175,8 @@
 				icon: {
 					color: '#808080'
 				}
-			})
+			}),
+			eventable
 		],
 		model: {
 			prop: 'value',
@@ -192,20 +194,23 @@
 				}
 			},
 			/** Update the date when value is provided by the user */
-			value(date: string) {
-				// If the date is cleared
-				if (!date) {
-					// Clear internal models
-					this.date = '';
-					this.textFieldDate = '';
+			value: {
+				handler(date: string) {
+					// If the date is cleared
+					if (!date) {
+						// Clear internal models
+						this.date = '';
+						this.textFieldDate = '';
 
-					return;
-				}
+						return;
+					}
 
-				// Format the date to internal format using dateFormatReturn
-				this.date = this.parseDateForModel(date);
-				this.setTextFieldModel();
-				this.validate(this.textFieldDate);
+					// Format the date to internal format using dateFormatReturn
+					this.date = this.parseDateForModel(date);
+					this.setTextFieldModel();
+					this.validate(this.textFieldDate);
+				},
+				immediate: true
 			},
 			/**
 			 * This method is fired every time textFieldDate changes,
@@ -222,6 +227,8 @@
 	export default class DatePicker extends Props {
 		// Mixin computed data
 		options!: Options;
+		showWeekEnds!: boolean;
+		calendarEvents!: (date: string) => any;
 
 		// Extend $refs
 		$refs!: Refs<{
@@ -230,6 +237,9 @@
 			};
 			picker: {
 				activePicker: string;
+			};
+			input: {
+				validate: () => boolean;
 			};
 		}>;
 
@@ -275,9 +285,20 @@
 			return parseDate(date, this.dateFormatReturn).format(INTERNAL_FORMAT);
 		}
 
+		parseTextFieldDate(date: string) {
+			const formatted = parseDate(date, this.dateFormat);
+
+			// If the formatted date isn't valid, return empty string
+			if (!formatted.isValid()) {
+				return '';
+			}
+
+			return formatted.format(INTERNAL_FORMAT);
+		}
+
 		/** Set textField model by parsing this.date */
 		setTextFieldModel() {
-			this.textFieldDate = parseDate(this.date, 'DDMMYYYY').format(this.dateFormat);
+			this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
 		}
 
 		/**
@@ -347,6 +368,15 @@
 			// the input loose focus and fire textFieldBlur
 			this.validate(this.textFieldDate);
 
+			// If validateOnBlur is true
+			if (this.options.textField.validateOnBlur) {
+				// Validate the text field
+				// because no blur event is emitted
+				this.$nextTick(() => {
+					this.$refs.input.validate();
+				});
+			}
+
 			this.emitChangeEvent();
 		}
 
@@ -359,17 +389,15 @@
 				return;
 			}
 
-			const formatted = this.formatDate(this.textFieldDate, this.maskValue);
+			const formatted = this.parseTextFieldDate(this.textFieldDate);
 
-			/** If formatted is an empty string, the date isn't valid, don't continue */
+			// If formatted is an empty string, the date isn't valid, don't continue
 			if (!formatted) {
 				return;
 			}
 
-			// Else, the format is valid, we can parse the date
-			const [day, month, year] = formatted.split('/');
-			// Then we set the v-model (internal format)
-			this.date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+			// Set the internal date
+			this.date = formatted;
 
 			this.emitChangeEvent();
 		}
@@ -379,33 +407,6 @@
 			// Parse the date with interal format,
 			// and return the date with dateFormatRetun format
 			this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
-		}
-
-		formatDate(date: string, mask: string = '##/##/####') {
-			// Mask the value
-			// by default textFieldDate is 25032018 format,
-			// and maskValue is ##/##/####
-			// masked will be 25/03/2018
-
-			// It also supports other formats, eg.:
-			// 20180325 & ####/##/## => 2018/03/25
-			const masked = maskit(date, mask, true);
-
-			// Parse the date to the "standard" format
-			// It masked value is incomplete, eg. "25/",
-			// the result will be "Invalid Date",
-			// so it won't match the regex
-			const formatted = parseDate(masked, this.dateFormat).format('DD/MM/YYYY');
-
-			// Validate DD/MM/YYYY format
-			const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
-
-			// If the formatted date doesn't match regex, format is invalid
-			if (!formatted.match(dateFormatRegex)) {
-				return '';
-			}
-
-			return formatted;
 		}
 
 		/** Custom validation for warningRules */
@@ -450,6 +451,41 @@
 	// Hide scrollbar in VMenu
 	.vd-date-picker-menu {
 		overflow: hidden;
+
+		// Custom events
+		// Disabled when the btn is active
+		::v-deep {
+			.v-btn:not(.v-btn--active) {
+				.v-date-picker-table__events {
+					// Make the container take full space
+					height: 100%;
+					bottom: 0 !important;
+
+					// Put the content in front
+					.v-btn__content {
+						z-index: 2;
+					}
+
+					// Make the dot take full space
+					.vd-custom-event {
+						position: absolute;
+						height: 100%;
+						width: 100%;
+						margin: 0;
+						left: 0;
+						// Make sure we still see the text
+						opacity: .4;
+					}
+				}
+			}
+
+			// Don't show custom events when the date is selected
+			.v-btn.v-btn--active {
+				.vd-custom-event {
+					display: none;
+				}
+			}
+		}
 	}
 
 	// Change the main color when a warning is present
