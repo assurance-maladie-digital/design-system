@@ -1,11 +1,5 @@
 <template>
 	<DocSection title="PaginatedTable">
-		<VAlert type="error">
-			Pagination saving isn't working anymore, follow <a
-				href="https://github.com/vuetifyjs/vuetify/issues/8266"
-				class="white--text"
-			>Issue #8266</a> for updates.
-		</VAlert>
 		<!--
 			On PaginatedTable, we don't need the .sync modifier
 			for :pagination
