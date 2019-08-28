@@ -14,7 +14,7 @@ declare global {
 declare module 'vue/types/vue' {
 	// Add this.$vuetify
 	interface Vue {
-		$theme: Theme;
+		$vd: Theme;
 		$vuetify: VuetifyObject;
 	}
 }
