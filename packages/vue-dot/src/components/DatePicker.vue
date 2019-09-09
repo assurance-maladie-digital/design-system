@@ -131,7 +131,7 @@
 			/** Same has validation rules from Vuetify, but for warnings */
 			warningRules: {
 				type: [Array, Object],
-				default: () => [] as string[]
+				default: () => []
 			},
 			/** The v-model value */
 			value: {
@@ -208,7 +208,11 @@
 					// Format the date to internal format using dateFormatReturn
 					this.date = this.parseDateForModel(date);
 					this.setTextFieldModel();
+
+					// Validate warning rules
 					this.validate(this.textFieldDate);
+					// Validate Vuetify rules
+					this.validateVuetify();
 				},
 				immediate: true
 			},
@@ -372,9 +376,7 @@
 			if (this.options.textField.validateOnBlur) {
 				// Validate the text field
 				// because no blur event is emitted
-				this.$nextTick(() => {
-					this.$refs.input.validate();
-				});
+				this.validateVuetify();
 			}
 
 			this.emitChangeEvent();
@@ -425,12 +427,15 @@
 			});
 		}
 
+		/** Validate Vuetify rules */
+		validateVuetify() {
+			this.$nextTick(() => this.$refs.input.validate());
+		}
+
 		/** Compute the classes for VTextField */
 		get textFieldClasses() {
 			return [
-				{
-					'warning-rules': this.warningRules.length
-				},
+				{ 'warning-rules': this.warningRules.length },
 				...this.options.textField.class as string[]
 			];
 		}
