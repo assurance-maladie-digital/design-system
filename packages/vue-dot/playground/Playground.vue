@@ -60,7 +60,7 @@
 
 				<RulesEx />
 
-				<!-- <UploadWorkflowEx /> -->
+				<UploadWorkflowEx />
 			</VLayout>
 		</VContent>
 

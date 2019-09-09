@@ -81,9 +81,9 @@
 				</VListItemAction>
 			</VListItem>
 
-			<!-- Don't show divider on last item -->
+			<!-- Don't show divider on last item if hideListDivider is true -->
 			<VDivider
-				v-if="index + 1 !== files.length"
+				v-if="hideListDivider ? index + 1 !== files.length : true"
 				:key="'divider-' + index"
 				v-bind="options.divider"
 			/>
@@ -124,6 +124,10 @@
 			files: {
 				type: [Array, Object],
 				required: true
+			},
+			hideListDivider: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});

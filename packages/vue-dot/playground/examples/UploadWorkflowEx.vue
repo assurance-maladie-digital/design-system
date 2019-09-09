@@ -3,16 +3,19 @@
 		no-divider
 		title="UploadWorkflow"
 	>
-		<UploadWorkflow :files="files" />
+		<UploadWorkflow v-model="files" />
+
+		<VBtn
+			class="mt-4"
+			color="primary"
+			@click="updateModel"
+		>
+			Update model
+		</VBtn>
 
 		<UploadWorkflow
+			v-model="file"
 			class="mt-12"
-			:files="[
-				{
-					id: 'rib',
-					title: 'RIB'
-				}
-			]"
 		/>
 	</DocSection>
 </template>
@@ -41,5 +44,29 @@
 				title: 'Attestation'
 			}
 		];
+
+		file = [
+			{
+				id: 'rib',
+				title: 'RIB'
+			}
+		];
+
+		updateModel() {
+			this.files = [
+				{
+					id: 'rib',
+					title: 'RIB'
+				},
+				{
+					id: 'cni',
+					title: 'Carte d\'identité recto / verso'
+				},
+				{
+					id: 'pass',
+					title: 'Passeport'
+				}
+			];
+		}
 	}
 </script>
