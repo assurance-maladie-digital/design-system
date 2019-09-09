@@ -28,7 +28,7 @@
 			<!-- v-html is needed to render the SVG -->
 			<span
 				v-if="themeIcon"
-				v-html="themeIcon.svg"
+				v-html="themeIcon"
 			/>
 		</slot>
 	</span>
@@ -38,7 +38,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Icon, Theme } from '../../types';
+	import { Icons, Theme } from '../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -84,18 +84,16 @@
 	 */
 	@Component
 	export default class CustomIcon extends Props {
-		$theme!: Theme;
+		$vd!: Theme;
 
-		get themeIcon(): Icon | undefined {
+		get themeIcon(): string | undefined {
 			// If there are icons in the theme
-			if (this.$theme && this.$theme.config && this.$theme.config.icons) {
+			if (this.$vd && this.$vd.icons) {
 				// Find the icon with the name passed in the prop
-				const filtered = this.$theme.config.icons.find((icon: Icon) => {
-					return this.icon === icon.name;
-				});
+				const icon = this.$vd.icons[this.icon];
 
 				// If the icon isn't find, it will return undefined
-				return filtered;
+				return icon;
 			}
 
 			return undefined;

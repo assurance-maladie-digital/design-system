@@ -3,19 +3,12 @@ import Vue, { PluginFunction } from 'vue';
 // Types for the library usage
 // eg. Vue.use(VueDot, options)
 
-export interface Icon {
-	name: string;
-	svg: string;
-}
-
-export interface Config {
-	icons: Icon[];
+export interface Icons {
+	[key: string]: string;
 }
 
 export interface Theme {
-	name: string;
-	version: string;
-	config: Config;
+	icons: Icons;
 }
 
 export interface VueDotOptions {

@@ -79,7 +79,6 @@
 			customizable({
 				btn: {
 					icon: true,
-					small: true,
 					class: 'grey--text text--darken-3 copy-tooltip-activator'
 				},
 				tooltip: {

@@ -1,10 +1,15 @@
 <template>
 	<DocSection title="DatePicker">
 		<h2 class="subtitle-1 font-weight-bold">
-			Default
+			Default with date validation
 		</h2>
 
-		<DatePicker v-model="date" />
+		<DatePicker
+			v-model="date"
+			:vuetify-rules="{
+				rules: validRules
+			}"
+		/>
 
 		<p class="mt-4">
 			{{ date }}
@@ -96,12 +101,12 @@
 
 		<DatePicker
 			v-model="startDate"
-			label="Start Date"
 			date-format="YYYY-MM-DD"
 			date-format-return="YYYY-MM-DD"
 			:vuetify-options="{
 				textField: {
-					hint: 'YYYY-MM-DD Format'
+					hint: 'YYYY-MM-DD Format',
+					label: 'Start Date'
 				}
 			}"
 		/>
@@ -118,6 +123,7 @@
 	import Component from 'vue-class-component';
 
 	import required from '../../src/rules/required';
+	import isDateValid from '../../src/rules/isDateValid';
 	import notAfterToday from '../../src/rules/notAfterToday';
 
 	import { mdiCakeVariant } from '@mdi/js';
@@ -129,6 +135,10 @@
 		startDate = '2019-08-01';
 
 		cakeIcon = mdiCakeVariant;
+
+		validRules = [
+			isDateValid
+		];
 
 		rules = [
 			required,

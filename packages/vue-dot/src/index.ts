@@ -11,9 +11,9 @@ const VueDot: VueDotPlugin = {
 
 		const theme = options ? options.theme : undefined;
 
-		// Extend the Vue instance with the theme as $theme
+		// Extend the Vue instance with the theme as $vd
 		if (theme) {
-			Vue.prototype.$theme = theme;
+			Vue.prototype.$vd = theme;
 		}
 
 	}

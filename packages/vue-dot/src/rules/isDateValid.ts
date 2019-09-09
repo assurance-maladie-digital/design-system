@@ -19,7 +19,7 @@ const defaultErrorMessages: ErrorMessages = {
 
 /** Check if the date is valid (exists in the calendar and has the right format) */
 function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
-	const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
+	const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d{4}/;
 
 	// If value doesn't match regex, date format isn't valid
 	if (!value.match(dateFormatRegex)) {
