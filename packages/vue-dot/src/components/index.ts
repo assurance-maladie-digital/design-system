@@ -9,6 +9,7 @@ import FileUpload from './FileUpload.vue';
 import LangBtn from './LangBtn.vue';
 import NotificationBar from './NotificationBar.vue';
 import PaginatedTable from './PaginatedTable.vue';
+import UploadWorkflow from './UploadWorkflow.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -23,7 +24,8 @@ const components: Components = {
 	FileUpload,
 	LangBtn,
 	NotificationBar,
-	PaginatedTable
+	PaginatedTable,
+	UploadWorkflow
 };
 
 /** Globally register all components */

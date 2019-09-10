@@ -11,6 +11,7 @@ import FileUploadEx from './FileUploadEx.vue';
 import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
 import RulesEx from './RulesEx.vue';
+import UploadWorkflowEx from './UploadWorkflowEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -27,7 +28,8 @@ const components: Components = {
 	FileUploadEx,
 	NotificationEx,
 	PaginatedTableEx,
-	RulesEx
+	RulesEx,
+	UploadWorkflowEx
 };
 
 /** Globally register all components */
