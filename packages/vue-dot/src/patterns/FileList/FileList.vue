@@ -95,7 +95,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import customizable, { Options } from '../mixins/customizable';
+	import config from './config';
+
+	import customizable, { Options } from '../../mixins/customizable';
 
 	import {
 		mdiRefresh,
@@ -136,27 +138,7 @@
 	@Component({
 		mixins: [
 			// Default configuration
-			customizable({
-				listItemAvatarIcon: {
-					size: 24
-				},
-				layout: {
-					justifyEnd: true
-				},
-				divider: {
-					inset: true
-				},
-				retryBtn: {
-					icon: true
-				},
-				viewFileBtn: {
-					icon: true,
-					class: 'mr-2'
-				},
-				deleteFileBtn: {
-					icon: true
-				}
-			})
+			customizable(config)
 		]
 	})
 	export default class FileList extends Props {

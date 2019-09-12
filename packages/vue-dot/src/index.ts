@@ -1,13 +1,14 @@
-import components from './components';
 import directives from './directives';
+
+import registerComponents from './registerComponents';
 
 import { VueConstructor } from 'vue';
 import { VueDotPlugin } from '../types';
 
 const VueDot: VueDotPlugin = {
 	install(Vue: VueConstructor, options) {
-		components(Vue);
 		directives(Vue);
+		registerComponents(Vue);
 
 		const theme = options ? options.theme : undefined;
 

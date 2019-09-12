@@ -35,10 +35,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { mapActions, mapState } from 'vuex';
-	import { NotificationObj } from '../modules/notification';
+	import config from './config';
 
-	import customizable, { Options } from '../mixins/customizable';
+	import { mapActions, mapState } from 'vuex';
+	import { NotificationObj } from '../../modules/notification';
+
+	import customizable, { Options } from '../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {
@@ -63,21 +65,7 @@
 		]),
 		mixins: [
 			// Default configuration
-			customizable({
-				snackBar: {
-					value: true,
-					timeout: 0,
-					top: true
-				},
-				icon: {
-					color: 'white',
-					class: 'mr-2'
-				},
-				btn: {
-					color: 'white',
-					text: true
-				}
-			})
+			customizable(config)
 		]
 	})
 	export default class NotificationBar extends Props {

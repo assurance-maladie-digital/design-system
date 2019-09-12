@@ -70,16 +70,18 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import customizable, { Options } from '../mixins/customizable';
-	import eventable from '../mixins/eventable';
+	import config from './config';
+
+	import customizable, { Options } from '../../mixins/customizable';
+	import eventable from '../../mixins/eventable';
 
 	import dayjs from 'dayjs';
 
-	import parseDate from '../helpers/parseDate';
+	import parseDate from '../../helpers/parseDate';
 
-	import { ValidationRule } from '../rules/types';
+	import { ValidationRule } from '../../rules/types';
 
-	import { Refs } from '../../types';
+	import { Refs } from '../../../types';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -148,34 +150,7 @@
 	@Component<DatePicker>({
 		mixins: [
 			// Default configuration
-			customizable({
-				textField: {
-					hint: 'Format JJ/MM/AAAA',
-					label: 'Date',
-					persistentHint: true,
-					validateOnBlur: true,
-					class: 'vd-date-picker-text-field'
-				},
-				menu: {
-					closeOnContentClick: false,
-					minWidth: '290px',
-					nudgeBottom: 45,
-					nudgeRight: 45,
-					zIndex: 1,
-					contentClass: 'vd-date-picker-menu'
-				},
-				btn: {
-					icon: true
-				},
-				datePicker: {
-					firstDayOfWeek: 1,
-					noTitle: true,
-					locale: 'fr'
-				},
-				icon: {
-					color: '#808080'
-				}
-			}),
+			customizable(config),
 			eventable
 		],
 		model: {

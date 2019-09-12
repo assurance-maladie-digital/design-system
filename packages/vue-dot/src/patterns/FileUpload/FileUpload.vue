@@ -100,12 +100,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import getFileExtension from '../functions/getFileExtension';
-	import calcHumanFileSize from '../functions/calcHumanFileSize';
+	import getFileExtension from '../../functions/getFileExtension';
+	import calcHumanFileSize from '../../functions/calcHumanFileSize';
 
 	import { mdiCloudUpload } from '@mdi/js';
 
-	import { Refs } from '../../types';
+	import { Refs } from '../../../types';
 
 	interface HTMLInputEvent extends Event {
 		target: HTMLInputElement & EventTarget;

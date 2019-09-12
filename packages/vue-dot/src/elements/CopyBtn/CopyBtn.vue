@@ -34,9 +34,11 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import customizable, { Options } from '../mixins/customizable';
+	import config from './config';
 
-	import copyToClipboard from '../functions/copyToClipboard';
+	import customizable, { Options } from '../../mixins/customizable';
+
+	import copyToClipboard from '../../functions/copyToClipboard';
 
 	import { mdiContentCopy } from '@mdi/js';
 
@@ -76,19 +78,7 @@
 	@Component({
 		mixins: [
 			// Default configuration
-			customizable({
-				btn: {
-					icon: true,
-					class: 'grey--text text--darken-3 copy-tooltip-activator'
-				},
-				tooltip: {
-					/** By default, the tooltip is placed on the right */
-					right: true,
-					openOnClick: true,
-					openOnHover: false,
-					closeDelay: 2500
-				}
-			})
+			customizable(config)
 		]
 	})
 	export default class Copy extends Props {
