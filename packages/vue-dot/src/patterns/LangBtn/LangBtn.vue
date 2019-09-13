@@ -74,10 +74,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import config from './config';
+
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
 
-	import customizable, { Options } from '../mixins/customizable';
+	import customizable, { Options } from '../../mixins/customizable';
 
 	import { mdiChevronDown } from '@mdi/js';
 
@@ -145,20 +147,7 @@
 	@Component({
 		mixins: [
 			// Default configuration
-			customizable({
-				menu: {
-					offsetY: true
-				},
-				btn: {
-					color: 'currentColor',
-					depressed: true,
-					outlined: true,
-					ripple: true
-				},
-				icon: {
-					class: 'ml-1'
-				}
-			})
+			customizable(config)
 		],
 		model: {
 			prop: 'value',

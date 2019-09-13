@@ -76,13 +76,15 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Refs } from '../../types';
+	import config from './config';
 
-	import required from '../rules/required';
+	import { Refs } from '../../../types';
 
-	import customizable, { Options } from '../mixins/customizable';
+	import required from '../../rules/required';
 
-	import FileUpload, { ErrorEvent } from './FileUpload.vue';
+	import customizable, { Options } from '../../mixins/customizable';
+
+	import FileUpload, { ErrorEvent } from '../FileUpload/FileUpload.vue';
 
 	interface FileListItem {
 		id: string;
@@ -123,35 +125,7 @@
 	@Component<UploadWorkflow>({
 		mixins: [
 			// Default configuration
-			customizable({
-				fileUpload: {
-					class: 'mt-6'
-				},
-				dialog: {
-					persistent: true,
-					width: '550'
-				},
-				card: {
-					class: 'pa-4'
-				},
-				select: {
-					outlined: true,
-					validateOnBlur: true,
-					label: 'Nature du fichier'
-				},
-				layout: {
-					wrap: true,
-					class: 'mt-2'
-				},
-				cancelBtn: {
-					text: true,
-					class: 'mr-4',
-					color: 'accent'
-				},
-				confirmBtn: {
-					color: 'accent'
-				}
-			})
+			customizable(config)
 		],
 		model: {
 			prop: 'value',
