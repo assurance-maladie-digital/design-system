@@ -1,0 +1,12 @@
+// Global, non-sscoped styles
+
+// Change the main color when a warning is present
+.v-application {
+	.vd-warning-rules {
+		&.success--text,
+		.success--text {
+			color: orange !important;
+			caret-color: orange !important;
+		}
+	}
+}
