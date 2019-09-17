@@ -96,6 +96,7 @@
 	import Component from 'vue-class-component';
 
 	import config from './config';
+	import { FileItem } from './types';
 
 	import customizable, { Options } from '../../mixins/customizable';
 
@@ -107,13 +108,6 @@
 		mdiCheckCircle,
 		mdiFile
 	} from '@mdi/js';
-
-	export interface FileItem {
-		id: string;
-		title: string;
-		state: string;
-		name?: string;
-	}
 
 	const Props = Vue.extend({
 		props: {

@@ -75,6 +75,7 @@
 	import Component from 'vue-class-component';
 
 	import config from './config';
+	import { Languages } from './types';
 
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
@@ -82,17 +83,6 @@
 	import customizable, { Options } from '../../mixins/customizable';
 
 	import { mdiChevronDown } from '@mdi/js';
-
-	interface Language {
-		direction: string;
-		name: string;
-		nativeName: string;
-	}
-
-	interface Languages {
-		// key is the code of the language
-		[key: string]: Language;
-	}
 
 	const Props = Vue.extend({
 		props: {

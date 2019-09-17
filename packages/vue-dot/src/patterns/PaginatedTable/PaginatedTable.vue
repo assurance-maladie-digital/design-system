@@ -32,16 +32,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	export interface Options {
-		page: number;
-		itemsPerPage: number;
-		sortBy: string[];
-		sortDesc: boolean[];
-		groupBy: string[];
-		groupDesc: boolean[];
-		multiSort: boolean;
-		mustSort: boolean;
-	}
+	import { Options } from './types';
 
 	const Props = Vue.extend({
 		inheritAttrs: false, // see https://vuejs.org/v2/api/#inheritAttrs

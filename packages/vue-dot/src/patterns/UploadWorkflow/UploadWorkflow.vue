@@ -77,27 +77,16 @@
 	import Component from 'vue-class-component';
 
 	import config from './config';
+	import { FileListItem, SelectItem } from './types';
 
-	import { Refs } from '../../../types';
+	import { Refs } from '../../types';
 
 	import required from '../../rules/required';
 
 	import customizable, { Options } from '../../mixins/customizable';
 
-	import FileUpload, { ErrorEvent } from '../FileUpload/FileUpload.vue';
-
-	interface FileListItem {
-		id: string;
-		title: string;
-		state?: string;
-		name?: string;
-		file?: File;
-	}
-
-	interface SelectItem {
-		text: string;
-		value: string;
-	}
+	import FileUpload from '../FileUpload';
+	import { ErrorEvent } from '../FileUpload/types';
 
 	const Props = Vue.extend({
 		props: {

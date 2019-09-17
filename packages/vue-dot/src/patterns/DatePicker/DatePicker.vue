@@ -81,7 +81,7 @@
 
 	import { ValidationRule } from '../../rules/types';
 
-	import { Refs } from '../../../types';
+	import { Refs } from '../../types';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -207,7 +207,7 @@
 		// Mixin computed data
 		options!: Options;
 		showWeekEnds!: boolean;
-		calendarEvents!: (date: string) => any;
+		calendarEvents!: (date: string) => unknown;
 
 		// Extend $refs
 		$refs!: Refs<{

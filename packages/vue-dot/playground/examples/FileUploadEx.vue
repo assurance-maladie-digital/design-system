@@ -102,7 +102,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Refs } from '../../types';
+	import { Refs } from '../../src/types';
 
 	import { mdiCloudUpload } from '@mdi/js';
 
