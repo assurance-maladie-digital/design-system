@@ -105,22 +105,12 @@
 
 	import { mdiCloudUpload } from '@mdi/js';
 
-	import { Refs } from '../../../types';
+	import { Refs } from '../../types';
+	import { ErrorEvent } from './types';
+	import { ErrorCodes } from './errorCodes';
 
 	interface HTMLInputEvent extends Event {
 		target: HTMLInputElement & EventTarget;
-	}
-
-	/** Standardized error codes */
-	export enum ErrorCodes {
-		MULTIPLE_FILES_SELECTED = 'MULTIPLE_FILES_SELECTED',
-		FILE_TOO_LARGE = 'FILE_TOO_LARGE',
-		FILE_EXT_NOT_ALLOWED = 'FILE_EXT_NOT_ALLOWED'
-	}
-
-	export interface ErrorEvent {
-		file: File | DataTransferItemList;
-		code: string;
 	}
 
 	const Props = Vue.extend({

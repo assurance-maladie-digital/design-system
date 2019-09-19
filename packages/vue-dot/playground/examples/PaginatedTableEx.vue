@@ -33,7 +33,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Options } from '../../src/patterns/PaginatedTable/PaginatedTable.vue';
+	import { Options } from '../../src/patterns/PaginatedTable/types';
 
 	interface Dessert {
 		[key: string]: string | number;

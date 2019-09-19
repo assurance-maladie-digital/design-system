@@ -81,7 +81,9 @@
 
 	import parseDate from '../../helpers/parseDate';
 
-	import { Refs } from '../../../types';
+	import { ValidationRule } from '../../rules/types';
+
+	import { Refs } from '../../types';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -204,7 +206,7 @@
 		options!: Options;
 		// eventable
 		showWeekEnds!: boolean;
-		calendarEvents!: (date: string) => any;
+		calendarEvents!: (date: string) => unknown;
 		// warning rules
 		successMessages!: string[];
 		validate!: (value: string) => void;
