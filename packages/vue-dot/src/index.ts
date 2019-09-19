@@ -2,6 +2,9 @@ import directives from './directives';
 
 import registerComponents from './registerComponents';
 
+// Import global styles
+import './global.scss';
+
 import { VueConstructor } from 'vue';
 import { VueDotPlugin } from '../types';
 

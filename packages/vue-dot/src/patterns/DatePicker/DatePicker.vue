@@ -75,11 +75,11 @@
 	import customizable, { Options } from '../../mixins/customizable';
 	import eventable from '../../mixins/eventable';
 
+	import warningRules from '../../mixins/warningRules';
+
 	import dayjs from 'dayjs';
 
 	import parseDate from '../../helpers/parseDate';
-
-	import { ValidationRule } from '../../rules/types';
 
 	import { Refs } from '../../../types';
 
@@ -130,11 +130,6 @@
 				type: Boolean,
 				default: false
 			},
-			/** Same has validation rules from Vuetify, but for warnings */
-			warningRules: {
-				type: [Array, Object],
-				default: () => []
-			},
 			/** The v-model value */
 			value: {
 				type: String,
@@ -151,6 +146,7 @@
 		mixins: [
 			// Default configuration
 			customizable(config),
+			warningRules,
 			eventable
 		],
 		model: {
@@ -206,8 +202,13 @@
 	export default class DatePicker extends Props {
 		// Mixin computed data
 		options!: Options;
+		// eventable
 		showWeekEnds!: boolean;
 		calendarEvents!: (date: string) => any;
+		// warning rules
+		successMessages!: string[];
+		validate!: (value: string) => void;
+		warningRules!: any;
 
 		// Extend $refs
 		$refs!: Refs<{
@@ -252,12 +253,6 @@
 		max = this.birthdate ? new Date().toISOString().substr(0, 10) : null;
 		/** If birthdate is enabled, min is 01/01/1950 */
 		min = this.birthdate ? '1950-01-01' : null;
-
-		/**
-		 * The messages from warningRules.
-		 * Not used is already passed as a prop
-		 */
-		successMessages: string[] = [];
 
 		/** Parse a date with dateFormatReturn format to interal format */
 		parseDateForModel(date: string) {
@@ -386,22 +381,6 @@
 			this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
 		}
 
-		/** Custom validation for warningRules */
-		validate(value: string) {
-			this.successMessages = [];
-
-			this.warningRules.forEach((rule: ValidationRule) => {
-				/** The result of the validation rule */
-				const result = rule(value);
-
-				// If it's a string, push it to successMessages
-				// If it's a boolean we don't do anything
-				if (typeof result === 'string') {
-					this.successMessages.push(result);
-				}
-			});
-		}
-
 		/** Validate Vuetify rules */
 		validateVuetify() {
 			this.$nextTick(() => this.$refs.input.validate());
@@ -410,7 +389,7 @@
 		/** Compute the classes for VTextField */
 		get textFieldClasses() {
 			return [
-				{ 'warning-rules': this.warningRules.length },
+				{ 'vd-warning-rules': this.warningRules.length },
 				...this.options.textField.class as string[]
 			];
 		}
@@ -465,14 +444,6 @@
 					display: none;
 				}
 			}
-		}
-	}
-
-	// Change the main color when a warning is present
-	.vd-date-picker-text-field.warning-rules {
-		&.success--text,
-		::v-deep .success--text {
-			color: orange !important;
 		}
 	}
 </style>
