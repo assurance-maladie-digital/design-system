@@ -58,6 +58,7 @@
 			ref="picker"
 			v-model="date"
 			v-bind="options.datePicker"
+			:picker-date.sync="internalPickerDate"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
 			:events="calendarEvents"
@@ -76,6 +77,7 @@
 	import eventable from '../../mixins/eventable';
 
 	import warningRules from '../../mixins/warningRules';
+	import pickerDate from './mixins/pickerDate';
 
 	import dayjs from 'dayjs';
 
@@ -149,6 +151,7 @@
 			// Default configuration
 			customizable(config),
 			warningRules,
+			pickerDate,
 			eventable
 		],
 		model: {
@@ -211,6 +214,8 @@
 		successMessages!: string[];
 		validate!: (value: string) => void;
 		warningRules!: any;
+		// picker date
+		internalPickerDate!: string;
 
 		// Extend $refs
 		$refs!: Refs<{
