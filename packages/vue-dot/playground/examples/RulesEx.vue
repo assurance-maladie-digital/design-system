@@ -28,6 +28,18 @@
 			rows="1"
 			:rules="lengthRule"
 		/>
+
+		<h2 class="subtitle-1 my-4 font-weight-bold">
+			Special case for required (array)
+		</h2>
+
+		<VSelect
+			v-model="selected"
+			multiple
+			label="Select something"
+			:items="data"
+			:rules="selectRules"
+		/>
 	</DocSection>
 </template>
 
@@ -40,7 +52,7 @@
 	import minLength from '../../src/rules/minLength';
 
 	@Component
-	export default class CustomIconEx extends Vue {
+	export default class RulesEx extends Vue {
 		textFieldRules = [
 			required({
 				default: 'Field is required.'
@@ -61,6 +73,18 @@
 			maxLength(10, {
 				default: (max: number) => `Max ${max} chars!`
 			})
+		];
+
+		selectRules = [
+			defaultRequired
+		];
+
+		selected = [];
+
+		data = [
+			'First',
+			'Second',
+			'Third'
 		];
 	}
 </script>
