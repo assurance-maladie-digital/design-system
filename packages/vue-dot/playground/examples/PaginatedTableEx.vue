@@ -11,11 +11,11 @@
 		<PaginatedTable
 			:headers="headers"
 			:items="desserts"
-			:options="options"
+			:options.sync="options"
 			:server-items-length="totalDesserts"
 			:loading="loading"
 			class="vd-table elevation-1"
-			@pagination:updated="options = $event; fetchData()"
+			@update:options="fetchData"
 		>
 			<template #items="props">
 				<td>{{ props.item.name }}</td>
