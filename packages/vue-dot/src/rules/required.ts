@@ -2,7 +2,7 @@ import ruleMessage from '../helpers/ruleMessage';
 import { ErrorMessages } from './types';
 
 const defaultErrorMessages: ErrorMessages = {
-	default: 'Le champ est requis.'
+	default: 'Le champ est requis'
 };
 
 /** Check that the field is non-empty */

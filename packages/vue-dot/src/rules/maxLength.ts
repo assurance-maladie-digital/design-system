@@ -2,7 +2,7 @@ import ruleMessage from '../helpers/ruleMessage';
 import { ErrorMessages } from './types';
 
 const defaultErrorMessages: ErrorMessages<number> = {
-	default: (max: number) => `La longeur maximale du champ est ${max} caractères.`
+	default: (max: number) => `La longeur maximale du champ est ${max} caractères`
 };
 
 /** Check that the field does not exceeds the max length */
