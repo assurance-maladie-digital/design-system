@@ -251,7 +251,7 @@
 
 				this.$emit('error', {
 					file,
-					code: ErrorCodes.FILE_EXT_NOT_ALLOWED
+					code: ErrorCodes.FILE_EXTENSION_NOT_ALLOWED
 				});
 
 				return false;

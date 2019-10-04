@@ -129,7 +129,7 @@
 		errorsText = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
-			FILE_EXT_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
+			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
 		};
 
 		/** Click on file input */
