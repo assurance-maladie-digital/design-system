@@ -101,7 +101,7 @@
 				this.localOptions = {};
 			}
 
-			this.$emit('pagination:updated', value);
+			this.$emit('update:options', value);
 		}
 
 		/** Local storage id */
