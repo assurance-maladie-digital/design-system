@@ -84,6 +84,7 @@
 	import parseDate from '../../helpers/parseDate';
 
 	import { ValidationRule } from '../../rules/types';
+	import { DATE_FORMAT_REGEX } from '../../rules/isDateValid';
 
 	import { Refs } from '../../types';
 
@@ -269,8 +270,8 @@
 		parseTextFieldDate(date: string) {
 			const formatted = parseDate(date, this.dateFormat);
 
-			// If the formatted date isn't valid, return empty string
-			if (!formatted.isValid()) {
+			// If the date isn't valid, return empty string
+			if (!date.match(DATE_FORMAT_REGEX) || !formatted.isValid()) {
 				return '';
 			}
 

@@ -10,6 +10,8 @@ dayjs.extend(isLeapYear);
 
 import parseDate from '../helpers/parseDate';
 
+export const DATE_FORMAT_REGEX = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d{4}/;
+
 const defaultErrorMessages: ErrorMessages = {
 	default: 'La date saisie n\'est pas valide',
 	wrongFormat: 'Le format de la date n\'est pas valide',
@@ -19,10 +21,8 @@ const defaultErrorMessages: ErrorMessages = {
 
 /** Check if the date is valid (exists in the calendar and has the right format) */
 function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
-	const dateFormatRegex = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d{4}/;
-
 	// If value doesn't match regex, date format isn't valid
-	if (!value.match(dateFormatRegex)) {
+	if (!value.match(DATE_FORMAT_REGEX)) {
 		return ruleMessage(errorMessages, 'wrongFormat');
 	}
 
