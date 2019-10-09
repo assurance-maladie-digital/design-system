@@ -6,8 +6,10 @@
 
 		<DatePicker
 			v-model="date"
-			:vuetify-rules="{
-				rules: validRules
+			:vuetify-options="{
+				textField: {
+					rules: validRules
+				}
 			}"
 		/>
 
