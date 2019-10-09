@@ -16,16 +16,7 @@
 			:loading="loading"
 			class="vd-table elevation-1"
 			@update:options="fetchData"
-		>
-			<template #items="props">
-				<td>{{ props.item.name }}</td>
-				<td>{{ props.item.calories }}</td>
-				<td>{{ props.item.fat }}</td>
-				<td>{{ props.item.carbs }}</td>
-				<td>{{ props.item.protein }}</td>
-				<td>{{ props.item.iron }}</td>
-			</template>
-		</PaginatedTable>
+		/>
 	</DocSection>
 </template>
 
