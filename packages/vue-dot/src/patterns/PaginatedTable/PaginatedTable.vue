@@ -35,7 +35,6 @@
 	import { Options } from './types';
 
 	const Props = Vue.extend({
-		inheritAttrs: false, // see https://vuejs.org/v2/api/#inheritAttrs
 		props: {
 			// Props from Vuetify
 			options: {
@@ -61,6 +60,7 @@
 	 * that stores the pagination in local storage
 	 */
 	@Component<PaginatedTable>({
+		inheritAttrs: false, // see https://vuejs.org/v2/api/#inheritAttrs
 		watch: {
 			/** When the options object is updated */
 			options() {
