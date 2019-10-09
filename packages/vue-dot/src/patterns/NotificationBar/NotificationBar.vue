@@ -53,7 +53,7 @@
 	});
 
 	/**
-	 * NavigationBar is a component that displays a notification using a Snackbar
+	 * NotificationBar is a component that displays a notification using a Snackbar
 	 */
 	@Component({
 		// Vuex bindings
