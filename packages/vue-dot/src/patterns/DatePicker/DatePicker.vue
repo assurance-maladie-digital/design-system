@@ -15,6 +15,7 @@
 				v-bind="options.textField"
 				:success-messages="options.textField.successMessages || successMessages"
 				:class="textFieldClasses"
+				:error.sync="internalErrorProp"
 				@blur="textFieldBlur"
 				@click="textFieldClicked"
 			>
@@ -76,13 +77,13 @@
 
 	import customizable, { Options } from '../../mixins/customizable';
 	import eventable from '../../mixins/eventable';
+	import warningRules from '../../mixins/warningRules';
 
 	import dateLogic from './mixins/dateLogic';
 	import maskValue from './mixins/maskValue';
 	import birthdate from './mixins/birthdate';
 	import pickerDate from './mixins/pickerDate';
-
-	import warningRules from '../../mixins/warningRules';
+	import errorProp from './mixins/errorProp';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -119,12 +120,13 @@
 		mixins: [
 			// Default configuration
 			customizable(config),
+			eventable,
+			warningRules,
 			dateLogic,
 			maskValue,
-			warningRules,
 			birthdate,
 			pickerDate,
-			eventable
+			errorProp
 		],
 		model: {
 			prop: 'value',
@@ -151,6 +153,7 @@
 		textFieldBlur!: () => void;
 		// picker date
 		internalPickerDate!: string;
+		internalErrorProp!: boolean;
 
 		// Icon
 		calendarIcon = mdiCalendar;
