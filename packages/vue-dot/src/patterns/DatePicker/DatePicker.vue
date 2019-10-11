@@ -16,6 +16,7 @@
 				:success-messages="options.textField.successMessages || successMessages"
 				:class="textFieldClasses"
 				@blur="textFieldBlur"
+				@click="textFieldClicked"
 			>
 				<template #prepend>
 					<VBtn
@@ -101,6 +102,11 @@
 			appendIcon: {
 				type: Boolean,
 				default: false
+			},
+			/** Open calendar menu when the text field is clicked */
+			textFieldActivator: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -158,6 +164,13 @@
 				{ 'vd-warning-rules': this.warningRules.length },
 				...this.options.textField.class as string[]
 			];
+		}
+
+		/** Open calendar menu if textFieldActivator is true */
+		textFieldClicked() {
+			if (this.textFieldActivator) {
+				this.menu = true;
+			}
 		}
 	}
 </script>

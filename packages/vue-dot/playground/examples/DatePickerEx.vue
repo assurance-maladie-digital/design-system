@@ -116,6 +116,7 @@
 		<DatePicker
 			show-week-ends
 			:start-date="startDate"
+			text-field-activator
 		/>
 	</DocSection>
 </template>
