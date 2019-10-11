@@ -2,7 +2,7 @@ import ruleMessage from '../helpers/ruleMessage';
 import { ErrorMessages } from './types';
 
 const defaultErrorMessages: ErrorMessages = {
-	default: 'L\'email saisi est invalide.'
+	default: 'L\'email saisi est invalide'
 };
 
 /** Check that the email is valid */

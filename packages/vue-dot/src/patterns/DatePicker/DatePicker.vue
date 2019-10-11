@@ -58,6 +58,7 @@
 			ref="picker"
 			v-model="date"
 			v-bind="options.datePicker"
+			:picker-date.sync="internalPickerDate"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
 			:events="calendarEvents"
@@ -78,12 +79,9 @@
 	import dateLogic from './mixins/dateLogic';
 	import maskValue from './mixins/maskValue';
 	import birthdate from './mixins/birthdate';
+	import pickerDate from './mixins/pickerDate';
 
 	import warningRules from '../../mixins/warningRules';
-
-	import { ValidationRule } from '../../rules/types';
-
-	import { Refs } from '../../types';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -118,8 +116,9 @@
 			dateLogic,
 			maskValue,
 			warningRules,
-			eventable,
-			birthdate
+			birthdate,
+			pickerDate,
+			eventable
 		],
 		model: {
 			prop: 'value',
@@ -134,7 +133,7 @@
 		calendarEvents!: (date: string) => unknown;
 		// mask
 		maskValue?: string;
-		// warning rules$
+		// warning rules
 		successMessages!: string[];
 		warningRules!: any;
 		// date
@@ -144,6 +143,8 @@
 		dateFormatted!: string;
 		saveFromCalendar!: () => void;
 		textFieldBlur!: () => void;
+		// picker date
+		internalPickerDate!: string;
 
 		// Icon
 		calendarIcon = mdiCalendar;

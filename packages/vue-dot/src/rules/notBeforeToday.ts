@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import parseDate from '../helpers/parseDate';
 
 const defaultErrorMessages: ErrorMessages = {
-	default: 'La date ne doit pas être antérieure à aujourd\'hui.'
+	default: 'La date ne doit pas être antérieure à aujourd\'hui'
 };
 
 /** Check that the date is after now */

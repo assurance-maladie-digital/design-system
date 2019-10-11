@@ -11,21 +11,12 @@
 		<PaginatedTable
 			:headers="headers"
 			:items="desserts"
-			:options="options"
+			:options.sync="options"
 			:server-items-length="totalDesserts"
 			:loading="loading"
 			class="vd-table elevation-1"
-			@pagination:updated="options = $event; fetchData()"
-		>
-			<template #items="props">
-				<td>{{ props.item.name }}</td>
-				<td>{{ props.item.calories }}</td>
-				<td>{{ props.item.fat }}</td>
-				<td>{{ props.item.carbs }}</td>
-				<td>{{ props.item.protein }}</td>
-				<td>{{ props.item.iron }}</td>
-			</template>
-		</PaginatedTable>
+			@update:options="fetchData"
+		/>
 	</DocSection>
 </template>
 

@@ -4,6 +4,7 @@ import Component from 'vue-class-component';
 import dayjs from 'dayjs';
 
 import parseDate from '../../../helpers/parseDate';
+import { DATE_FORMAT_REGEX } from '../../../rules/isDateValid';
 
 import { Options } from '../../../mixins/customizable';
 
@@ -116,8 +117,8 @@ export default class DateLogic extends Props {
 	parseTextFieldDate(date: string) {
 		const formatted = parseDate(date, this.dateFormat);
 
-		// If the formatted date isn't valid, return empty string
-		if (!formatted.isValid()) {
+		// If the date isn't valid, return empty string
+		if (!date.match(DATE_FORMAT_REGEX) || !formatted.isValid()) {
 			return '';
 		}
 
