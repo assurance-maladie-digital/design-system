@@ -10,6 +10,8 @@ dayjs.extend(isLeapYear);
 
 import parseDate from '../helpers/parseDate';
 
+const DATE_SEPARATORS = /[- /.]/;
+/** Matches YYYY/MM/DD with one of the DATE_SEPARATORS */
 export const DATE_FORMAT_REGEX = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d{4}/;
 
 const defaultErrorMessages: ErrorMessages = {
@@ -46,7 +48,7 @@ function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 	];
 
 	// Split the date
-	const date = value.split('/');
+	const date = value.split(DATE_SEPARATORS);
 
 	const day = parseInt(date[0], 10);
 	const month = parseInt(date[1], 10);
