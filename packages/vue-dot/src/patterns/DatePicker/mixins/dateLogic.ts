@@ -74,11 +74,14 @@ const Props = Vue.extend({
 export default class DateLogic extends Props {
 	// Extend $refs
 	$refs!: Refs<{
+		/** VMenu */
 		menu: {
 			save: (date: string) => void;
 		};
+		/** VTextField */
 		input: {
 			validate: () => boolean;
+			hasFocused: boolean;
 		};
 	}>;
 
@@ -211,7 +214,16 @@ export default class DateLogic extends Props {
 
 	/** Validate Vuetify rules */
 	validateVuetify() {
-		this.$nextTick(() => this.$refs.input.validate());
+		this.$nextTick(() => {
+			// Set hasFocused to true on VTextField
+			// to fix https://github.com/vuetifyjs/vuetify/issues/7876
+			// (error messages aren't shown if the input hasn't been focused)
+			if (this.$refs.input.hasFocused !== undefined) {
+				this.$refs.input.hasFocused = true;
+			}
+
+			this.$refs.input.validate();
+		});
 	}
 
 	/** Fired on blur event of the textField */
