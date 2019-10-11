@@ -51,5 +51,10 @@ execSync(
 // Remove playground folder
 fs.removeSync(`${dist}/playground`);
 
+// Remove component folders because we don't compile
+// them individually at the moment
+fs.removeSync(`${dist}/src/elements`);
+fs.removeSync(`${dist}/src/patterns`);
+
 log();
 done('Build completed');

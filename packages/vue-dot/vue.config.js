@@ -6,6 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 // If LIB_MODE is true, we're building the library
 // else, we're building the playground
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
+const LIMIT_SIZE = 300000;
 
 const entry = LIB_MODE ? './src/index.ts' : './playground/main.ts';
 
@@ -26,7 +27,9 @@ module.exports = {
 		},
 		performance: {
 			// Only show hints in lib mode
-			hints: LIB_MODE ? 'error' : false
+			hints: LIB_MODE ? 'error' : false,
+			maxEntrypointSize: LIMIT_SIZE,
+			maxAssetSize: LIMIT_SIZE
 		},
 		plugins: [],
 		// see https://github.com/vuetifyjs/vuetify/issues/4068#issuecomment-394890573
