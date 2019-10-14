@@ -24,7 +24,7 @@
 			activator=".copy-tooltip-activator"
 		>
 			<slot name="tooltip">
-				Texte copié !
+				{{ locales.tooltip }}
 			</slot>
 		</VTooltip>
 	</div>
@@ -35,6 +35,7 @@
 	import Component from 'vue-class-component';
 
 	import config from './config';
+	import locales from './locales';
 
 	import customizable, { Options } from '../../mixins/customizable';
 
@@ -87,6 +88,9 @@
 
 		// Icon
 		copyIcon = mdiContentCopy;
+
+		// Locales
+		locales = locales;
 
 		/** Tooltip v-model */
 		tooltip = false;

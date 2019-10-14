@@ -36,6 +36,7 @@
 	import Component from 'vue-class-component';
 
 	import config from './config';
+	import locales from './locales';
 
 	import { mapActions, mapState } from 'vuex';
 	import { NotificationObj } from '../../modules/notification';
@@ -47,7 +48,7 @@
 			/** The text of the close button */
 			closeText: {
 				type: String,
-				default: 'Fermer'
+				default: locales.close
 			}
 		}
 	});
