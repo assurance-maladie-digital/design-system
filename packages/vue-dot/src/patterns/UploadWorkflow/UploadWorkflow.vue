@@ -33,7 +33,7 @@
 				>
 					<slot name="modal-title">
 						<h4 class="mb-4">
-							Fichier transmis
+							{{ locales.modalTitle }}
 						</h4>
 					</slot>
 
@@ -53,7 +53,7 @@
 							@click="dialog = false"
 						>
 							<slot name="cancel-button-text">
-								Retour
+								{{ locales.cancelBtn }}
 							</slot>
 						</VBtn>
 
@@ -62,7 +62,7 @@
 							@click="dialogConfirm"
 						>
 							<slot name="confirm-button-text">
-								Confirmer
+								{{ locales.confirmBtn }}
 							</slot>
 						</VBtn>
 					</VLayout>
@@ -77,6 +77,7 @@
 	import Component from 'vue-class-component';
 
 	import config from './config';
+	import locales from './locales';
 	import { FileListItem, SelectItem } from './types';
 
 	import { Refs } from '../../types';
@@ -101,7 +102,7 @@
 				default() {
 					const plural = this.value.length > 1;
 
-					return `Document${plural ? 's' : ''} à nous transmettre`;
+					return locales.title(plural);
 				}
 			}
 		}
@@ -151,14 +152,17 @@
 		// Stronger types
 		value!: FileListItem[];
 
-		/** Internal value */
-		fileList: FileListItem[] = [];
-
 		// Extend $refs
 		$refs!: Refs<{
 			fileUpload: FileUpload;
 			form: HTMLFormElement;
 		}>;
+
+		// Locales
+		locales = locales;
+
+		/** Internal value */
+		fileList: FileListItem[] = [];
 
 		/** The VDialog v-model */
 		dialog = false;

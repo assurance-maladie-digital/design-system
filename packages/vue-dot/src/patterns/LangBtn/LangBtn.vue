@@ -75,6 +75,7 @@
 	import Component from 'vue-class-component';
 
 	import config from './config';
+	import locales from './locales';
 	import { Languages } from './types';
 
 	// ISO 639-1 language database in a JSON object
@@ -120,7 +121,7 @@
 			},
 			ariaLabel: {
 				type: String,
-				default: 'Choix de la langue. Actuellement :'
+				default: locales.ariaLabel
 			},
 			/** The v-model value */
 			value: {

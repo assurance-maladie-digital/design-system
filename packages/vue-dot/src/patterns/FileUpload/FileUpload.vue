@@ -60,7 +60,7 @@
 					:class="colors.info"
 				>
 					<slot name="or">
-						Ou
+						{{ locales.or }}
 					</slot>
 				</span>
 
@@ -75,7 +75,7 @@
 					@mouseleave="hover = false"
 				>
 					<slot name="button-text">
-						Choisir un fichier
+						{{ locales.chooseFile }}
 					</slot>
 				</span>
 
@@ -88,7 +88,7 @@
 						:maxSize="maxSizeReadable"
 						:extensions="extensions"
 					>
-						(Taille max. : {{ maxSizeReadable }}. Formats acceptés : {{ extensions }})
+						{{ locales.infoText(maxSizeReadable, extensions) }}
 					</slot>
 				</span>
 			</span>
@@ -99,6 +99,8 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
+	import locales from './locales';
 
 	import getFileExtension from '../../functions/getFileExtension';
 	import calcHumanFileSize from '../../functions/calcHumanFileSize';
@@ -196,6 +198,9 @@
 
 		// Icons
 		uploadIcon = mdiCloudUpload;
+
+		// Locales
+		locales = locales;
 
 		/** The list of accepted files */
 		files: File[] = [];
