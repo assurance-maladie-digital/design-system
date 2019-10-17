@@ -4,7 +4,6 @@
 		ref="menu"
 		v-model="menu"
 		v-bind="options.menu"
-		:return-value.sync="date"
 	>
 		<template #activator="{ on }">
 			<!-- TextField to enter date by hand -->
