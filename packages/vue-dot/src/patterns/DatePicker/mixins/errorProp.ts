@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 
 const Props = Vue.extend({
 	props: {
-		// Property from Vuetify DatePicker that needs .sync modifier
+		// Property from Vuetify that needs .sync modifier
 		error: {
 			type: Boolean,
 			default: false
