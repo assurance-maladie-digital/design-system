@@ -101,8 +101,7 @@
 		"moduleNameMapper": {
 			"^@/tests$": "<rootDir>/tests/index.ts",
 			"^@/tests/(.*)$": "<rootDir>/tests/$1",
-			"^@/(.*)$": "<rootDir>/src/$1",
-			"^vue$": "<rootDir>/node_modules/vue/dist/vue.esm.js"
+			"^@/(.*)$": "<rootDir>/src/$1"
 		},
 		"coverageReporters": [
 			"text",
@@ -115,10 +114,11 @@
 			"src/**/*.{ts,vue}",
 			"!**/node_modules/**",
 			"!**/*.d.ts",
+			"!**/index.ts",
 			"!**/playground/**"
 		],
 		"transformIgnorePatterns": [
-			"./node_modules/vuetify"
+			"./node_modules/(?!vuetify)"
 		]
 	},
 	"gitHooks": {

@@ -14,7 +14,8 @@
 			"@/tests": [
 				"tests/"
 			]
-		}
+		},
+		"esModuleInterop": true
 	},
 	"include": [
 		// Playground

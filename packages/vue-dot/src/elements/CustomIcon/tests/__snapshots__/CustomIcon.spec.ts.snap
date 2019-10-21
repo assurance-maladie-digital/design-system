@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomIcon renders correctly 1`] = `<span aria-hidden="true" class="vd-custom-icon vd-custom-color" style="color: currentColor;"><span>icon-src</span></span>`;
+
+exports[`CustomIcon renders correctly with a custom size 1`] = `<span aria-hidden="true" class="vd-custom-icon vd-custom-color" style="color: currentColor; width: 64px; height: 64px;"><span>icon-src</span></span>`;

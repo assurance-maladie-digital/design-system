@@ -114,19 +114,21 @@ export default class DateLogic extends Props {
 	textFieldDate = '';
 
 	mounted() {
-		// Watch VTextField 'hasError' computed value
-		// because 'update:error' event isn't reliable
-		// (it's not fired at initial state and 'validateOnBlur'
-		// can cause issues as well)
-		this.$watch(
-			() => this.$refs.input.hasError,
-			(error: boolean) => {
-				this.$emit('error', error);
-			},
-			{
-				deep: true // Even if we don't watch an object, this is needed
-			}
-		);
+		if (this.$refs.input) {
+			// Watch VTextField 'hasError' computed value
+			// because 'update:error' event isn't reliable
+			// (it's not fired at initial state and 'validateOnBlur'
+			// can cause issues as well)
+			this.$watch(
+				() => this.$refs.input.hasError,
+				(error: boolean) => {
+					this.$emit('error', error);
+				},
+				{
+					deep: true // Even if we don't watch an object, this is needed
+				}
+			);
+		}
 	}
 
 	/** Parse a date with dateFormatReturn format to interal format */

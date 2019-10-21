@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePicker renders correctly 1`] = `
+<vmenu-stub opendelay="0" closedelay="0" contentclass="vd-date-picker-menu" maxwidth="auto" minwidth="290px" nudgebottom="45" nudgeleft="0" nudgeright="45" nudgetop="0" nudgewidth="0" openonclick="true" zindex="1" closeonclick="true" maxheight="auto" origin="top left" transition="v-menu-transition">
+  <vdatepicker-stub locale="fr" notitle="true" width="290" events="function () { [native code] }" eventcolor="warning" firstdayofweek="1" nexticon="$next" previcon="$prev" showcurrent="true" selecteditemstext="$vuetify.datePicker.itemsSelected" type="date" value=""></vdatepicker-stub>
+</vmenu-stub>
+`;

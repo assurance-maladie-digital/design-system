@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyBtn renders correctly 1`] = `
+<div>
+  <vbtn-stub tag="button" activeclass="" icon="true" type="button" aria-label="test" class="grey--text text--darken-3 copy-tooltip-activator">
+    <vicon-stub>
+      M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z
+    </vicon-stub>
+  </vbtn-stub>
+  <vtooltip-stub opendelay="0" closedelay="2500" contentclass="" fixed="true" right="true" activator=".copy-tooltip-activator" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" tag="span">
+    Texte copié !
+  </vtooltip-stub>
+</div>
+`;
