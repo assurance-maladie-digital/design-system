@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
+import html from '@/tests/html';
 
 import FileList from '../';
 
@@ -24,6 +25,6 @@ describe('FileList', () => {
 			}
 		});
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

@@ -32,7 +32,7 @@
 		"playground:build": "vue-cli-service build",
 		"build": "ts-node --project tsconfig.json --files build.ts",
 		"lint": "vue-cli-service lint",
-		"test:unit": "vue-cli-service test:unit"
+		"test": "vue-cli-service test:unit"
 	},
 	"peerDependencies": {
 		"dayjs": "^1.8.0",
@@ -106,6 +106,7 @@
 		"coverageReporters": [
 			"text",
 			"html",
+			"lcov",
 			"text-summary"
 		],
 		"coverageDirectory": "<rootDir>/tests/coverage",

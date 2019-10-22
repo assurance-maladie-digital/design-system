@@ -13,63 +13,7 @@ exports[`UploadWorkflow renders correctly 1`] = `
         <h4 class="mb-4">
           Fichier transmis
         </h4>
-        <vselect-stub errorcount="1" errormessages="" messages="" rules="function (value) {
-    /* istanbul ignore next */
-    cov_19j4ykit9s.f[2]++;
-    var valid; // If the value is an array
-
-    /* istanbul ignore next */
-    cov_19j4ykit9s.s[8]++;
-
-    if (Array.isArray(value)) {
-      /* istanbul ignore next */
-      cov_19j4ykit9s.b[4][0]++;
-      cov_19j4ykit9s.s[9]++;
-      // Check it's length
-      valid = value.length !== 0;
-    } else {
-      /* istanbul ignore next */
-      cov_19j4ykit9s.b[4][1]++;
-      cov_19j4ykit9s.s[10]++;
-      // If the value is falsy (empty string),
-      // it will return the error message
-      // If the value is evaluated to true (non-empty string),
-      // it will return true (success)
-      valid = Boolean(value);
-    }
-
-    /* istanbul ignore next */
-    cov_19j4ykit9s.s[11]++;
-    return (
-      /* istanbul ignore next */
-      (cov_19j4ykit9s.b[5][0]++, valid) ||
-      /* istanbul ignore next */
-      (cov_19j4ykit9s.b[5][1]++, ruleMessage_1.default(errorMessages, 'default'))
-    );
-  }" successmessages="" validateonblur="true" value="" appendicon="$dropdown" backgroundcolor="" label="Nature du fichier" loaderheight="2" clearicon="$clear" outlined="true" type="text" valuecomparator="function deepEqual(a, b) {
-          if (a === b) return true;
-
-          if (a instanceof Date &amp;&amp; b instanceof Date) {
-            // If the values are Date, they were convert to timestamp with getTime and compare it
-            if (a.getTime() !== b.getTime()) return false;
-          }
-
-          if (a !== Object(a) || b !== Object(b)) {
-            // If the values aren't objects, they were already checked for equality
-            return false;
-          }
-
-          var props = Object.keys(a);
-
-          if (props.length !== Object.keys(b).length) {
-            // Different number of props, don't bother to check
-            return false;
-          }
-
-          return props.every(function (p) {
-            return deepEqual(a[p], b[p]);
-          });
-        }" nodatatext="$vuetify.noDataText" items="[object Object],[object Object]" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></vselect-stub>
+        <vselect-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" value="" appendicon="$dropdown" backgroundcolor="" label="Nature du fichier" loaderheight="2" clearicon="$clear" outlined="true" type="text" valuecomparator="{[Function]}" nodatatext="$vuetify.noDataText" items="[object Object],[object Object]" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></vselect-stub>
         <vlayout-stub tag="div" wrap="true" class="mt-2">
           <vspacer-stub></vspacer-stub>
           <vbtn-stub color="accent" tag="button" activeclass="" text="true" type="button" class="mr-4">

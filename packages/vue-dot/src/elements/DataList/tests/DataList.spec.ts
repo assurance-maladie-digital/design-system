@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
+import html from '@/tests/html';
 
 import DataList from '../';
 
@@ -38,7 +39,7 @@ describe('DataList', () => {
 		const titleExists = wrapper.find('h4').exists();
 		expect(titleExists).toBe(false);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly with a title', () => {
@@ -53,7 +54,7 @@ describe('DataList', () => {
 		const elExists = wrapper.find('h4').exists();
 		expect(elExists).toBe(true);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly in column mode', () => {
@@ -68,7 +69,7 @@ describe('DataList', () => {
 		const elExists = wrapper.find('.vd-column').exists();
 		expect(elExists).toBe(true);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly in flex mode', () => {
@@ -83,7 +84,7 @@ describe('DataList', () => {
 		const elExists = wrapper.find('.vd-flex').exists();
 		expect(elExists).toBe(true);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly with an empty list', () => {
@@ -97,6 +98,6 @@ describe('DataList', () => {
 		const elExists = wrapper.find('.vd-field').exists();
 		expect(elExists).toBe(false);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
