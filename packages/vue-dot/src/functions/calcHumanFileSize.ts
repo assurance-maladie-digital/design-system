@@ -1,5 +1,5 @@
 /** Takes a size in bytes and outputs a human readable value */
-export default function calcHumanFileSize(size: number, fileSizeUnits: string[]): string {
+export default function calcHumanFileSize(size: number, fileSizeUnits: string[], separator = ' '): string {
 	// Calc index
 	const index = Math.floor(Math.log(size) / Math.log(1024));
 
@@ -9,5 +9,5 @@ export default function calcHumanFileSize(size: number, fileSizeUnits: string[])
 		.toFixed(2)
 	) * 1;
 
-	return computedSize + ' ' + fileSizeUnits[index];
+	return computedSize + separator + fileSizeUnits[index];
 }

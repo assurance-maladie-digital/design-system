@@ -10,6 +10,7 @@ dayjs.extend(isBetween);
  * @param {string} startDate The start of the range
  * @param {string} endDate The end of the range
  * @param {string} interval The interval for the isBetween function
+ * '[' indicates inclusion, '(' indicates exclusion
  */
 export default function isDateInRange(
 	date: string,
