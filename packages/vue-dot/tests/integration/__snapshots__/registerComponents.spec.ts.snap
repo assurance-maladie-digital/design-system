@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`registerComponents should register all components 1`] = `
+Array [
+  "CopyBtn",
+  "CustomIcon",
+  "DataList",
+  "DatePicker",
+  "FileList",
+  "FileUpload",
+  "KeepAlive",
+  "LangBtn",
+  "NotificationBar",
+  "PaginatedTable",
+  "Transition",
+  "TransitionGroup",
+  "UploadWorkflow",
+]
+`;
