@@ -54,7 +54,7 @@ function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 	const month = parseInt(date[1], 10);
 
 	// For every month except february
-	if (month === 1 || month > 2) {
+	if (month !== 2) {
 		// If the day is superior to the day in month,
 		// the date is invalid
 		if (day > DAYS_IN_MONTH[month - 1]) {
@@ -63,10 +63,7 @@ function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 			// Else, the date is valid
 			return true;
 		}
-	}
-
-	// It's february, we should handle leap years
-	if (month === 2) {
+	} else { // It's february, we should handle leap years
 		const parsed = parseDate(value);
 		const isLeap = parsed.isLeapYear();
 
