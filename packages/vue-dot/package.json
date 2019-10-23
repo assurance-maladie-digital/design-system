@@ -116,7 +116,6 @@
 			"src/**/*.{ts,vue}",
 			"!**/node_modules/**",
 			"!**/*.d.ts",
-			"!**/index.ts",
 			"!**/playground/**"
 		],
 		"transformIgnorePatterns": [

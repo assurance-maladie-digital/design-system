@@ -4,12 +4,8 @@ import { Wrapper } from '@vue/test-utils';
 import localVue, { mountComponent } from '@/tests';
 import html from '@/tests/html';
 
-// Register global components
 import FileUpload from '../../FileUpload';
 import FileList from '../../FileList';
-
-localVue.component('FileUpload', FileUpload);
-localVue.component('FileList', FileList);
 
 import UploadWorkflow from '../';
 
@@ -31,9 +27,30 @@ describe('UploadWorkflow', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(UploadWorkflow, {
+			stubs: {
+				FileList,
+				FileUpload
+			},
 			propsData: {
 				value: files
-			}
+			},
+			sync: false
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with a single file', () => {
+		// Mount component
+		wrapper = mountComponent(UploadWorkflow, {
+			stubs: {
+				FileList,
+				FileUpload
+			},
+			propsData: {
+				value: [files[0]]
+			},
+			sync: false
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
