@@ -3,7 +3,7 @@ import debounceFn from '../../functions/debounce';
 
 /** v-debounce directive */
 const debounce: DirectiveOptions = {
-	inserted(el, binding) {
+	bind(el, binding) {
 		// If the tag the directive is binded to
 		// isn't an input, find one his childrens
 
@@ -26,21 +26,18 @@ const debounce: DirectiveOptions = {
 		const value: string = modifiers.length > 0 ? modifiers[0] : binding.value;
 
 		// Change debounce only if interval has changed
-		if (value !== binding.oldValue) {
-			/* istanbul ignore next */
-			el.oninput = debounceFn(() => {
-				// If the value is a function (for usage with custom inputs),
-				// call it with the input value
-				if (typeof binding.value === 'function') {
-					const inputValue = (el as HTMLInputElement).value;
+		el.oninput = debounceFn(() => {
+			// If the value is a function (for usage with custom inputs),
+			// call it with the input value
+			if (typeof binding.value === 'function') {
+				const inputValue = (el as HTMLInputElement).value;
 
-					binding.value(inputValue);
-				} else {
-					// Else, fire a change event
-					el.dispatchEvent(new Event('change'));
-				}
-			}, parseInt(value, 10));
-		}
+				binding.value(inputValue);
+			} else {
+				// Else, fire a change event
+				el.dispatchEvent(new Event('change'));
+			}
+		}, parseInt(value, 10));
 	}
 };
 
