@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rules should list all rules 1`] = `
+Object {
+  "email": [Function],
+  "isDateValid": [Function],
+  "maxLength": [Function],
+  "minLength": [Function],
+  "notAfterToday": [Function],
+  "notBeforeToday": [Function],
+  "required": [Function],
+}
+`;
+
+exports[`rules should list all rules 2`] = `
+Object {
+  "email": [Function],
+  "isDateValid": [Function],
+  "maxLength": [Function],
+  "minLength": [Function],
+  "notAfterToday": [Function],
+  "notBeforeToday": [Function],
+  "required": [Function],
+}
+`;

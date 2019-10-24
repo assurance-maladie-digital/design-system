@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`directives should register all directives 1`] = `
+Array [
+  "debounce",
+]
+`;

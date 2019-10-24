@@ -8,12 +8,9 @@ Array [
   "DatePicker",
   "FileList",
   "FileUpload",
-  "KeepAlive",
   "LangBtn",
   "NotificationBar",
   "PaginatedTable",
-  "Transition",
-  "TransitionGroup",
   "UploadWorkflow",
 ]
 `;

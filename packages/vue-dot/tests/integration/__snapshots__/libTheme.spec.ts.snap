@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib should register components & directives when passing a theme 1`] = `
+Object {
+  "components": Array [
+    "CopyBtn",
+    "CustomIcon",
+    "DataList",
+    "DatePicker",
+    "FileList",
+    "FileUpload",
+    "LangBtn",
+    "NotificationBar",
+    "PaginatedTable",
+    "UploadWorkflow",
+  ],
+  "directives": Array [
+    "debounce",
+  ],
+}
+`;
