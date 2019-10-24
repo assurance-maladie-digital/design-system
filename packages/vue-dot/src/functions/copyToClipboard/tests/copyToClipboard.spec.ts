@@ -1,16 +1,28 @@
 import copyToClipboard from '../';
 
+interface TSelection {
+	rangeCount?: number;
+	getRangeAt?: (index: number) => string;
+	removeAllRanges?: () => null;
+	addRange?: () => null;
+}
+
+// Custom document type
+interface TDocument {
+	getSelection: () => TSelection | null;
+	execCommand: () => boolean;
+}
+
+// Override default type
+declare var document: TDocument;
+
 /** Mock functions on document */
 function mockDocument(options: object) {
-	(document as TDocument).getSelection = () => {
+	document.getSelection = () => {
 		return options;
 	};
 
-	(document as TDocument).execCommand = () => true;
-}
-
-interface TDocument extends Document {
-	getSelection: () => any;
+	document.execCommand = () => true;
 }
 
 const txt = 'test';
@@ -30,7 +42,7 @@ describe('copyToClipboard', () => {
 	it('is called correctly when text is already selected', () => {
 		mockDocument({
 			rangeCount: 2,
-			getRangeAt: (at: number) => ['a', 'b'][at],
+			getRangeAt: (index: number) => ['a', 'b'][index],
 			removeAllRanges: () => null,
 			addRange: () => null
 		});
@@ -39,7 +51,7 @@ describe('copyToClipboard', () => {
 	});
 
 	it('is called correctly when getSelection is unavailable', () => {
-		(document as TDocument).getSelection = jest.fn(() => null);
+		document.getSelection = jest.fn(() => null);
 
 		expect(copyToClipboard(txt)).toEqual(undefined);
 	});

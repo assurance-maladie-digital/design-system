@@ -3,18 +3,26 @@ import { Wrapper } from '@vue/test-utils';
 
 import localVue, { mountComponent } from '@/tests';
 
-import Vuex from 'vuex';
+import Vuex, { Store } from 'vuex';
 localVue.use(Vuex);
 
 import NotificationBar from '../';
 
 let wrapper: Wrapper<Vue>;
 
+export interface RootState {
+	notification: {
+		type: string;
+		message: string;
+		icon: string;
+	};
+}
+
 // Tests
 describe('NotificationBar', () => {
 	let state;
 	let actions;
-	let store: any;
+	let store: Store<RootState>;
 
 	// Mock store
 	beforeEach(() => {

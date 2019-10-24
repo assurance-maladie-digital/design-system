@@ -77,6 +77,7 @@
 	import customizable, { Options } from '../../mixins/customizable';
 	import eventable from '../../mixins/eventable';
 	import warningRules from '../../mixins/warningRules';
+	import { ValidationRule } from '../../rules/types';
 
 	import dateLogic from './mixins/dateLogic';
 	import maskValue from './mixins/maskValue';
@@ -142,7 +143,7 @@
 		maskValue?: string;
 		// warning rules
 		successMessages!: string[];
-		warningRules!: any;
+		warningRules!: ValidationRule[];
 		// date
 		date!: string;
 		max!: string | null;

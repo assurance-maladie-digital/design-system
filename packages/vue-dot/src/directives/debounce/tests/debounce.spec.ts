@@ -3,6 +3,10 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import debounce from '../';
 
+interface TestComponent extends Vue {
+	value: string;
+}
+
 /** Create the test component */
 function createTestComponent(template: string, spy: jest.Mock, data?: object) {
 	return Vue.component('test', {
@@ -23,7 +27,7 @@ function createTestComponent(template: string, spy: jest.Mock, data?: object) {
 }
 
 /** Do the test with timeout */
-function timeoutTest(input: HTMLInputElement, wrapper: Wrapper<any>, spy: jest.Mock) {
+function timeoutTest(input: HTMLInputElement, wrapper: Wrapper<TestComponent>, spy: jest.Mock) {
 	jest.clearAllTimers();
 	jest.useFakeTimers();
 

@@ -7,7 +7,7 @@ const DEFAULT_OPTIONS = {
 };
 
 interface HTMLFnOpts {
-	attrIgnore: (name: string, value: any) => boolean | boolean;
+	attrIgnore: (name: string, value: unknown) => boolean | boolean;
 	functionRemplacement: string;
 }
 
@@ -26,11 +26,10 @@ interface HTMLFnOpts {
  * `functionRemplacement` is used to ensure a deterministic snapshot
  * (workaround of https://github.com/vuejs/vue-test-utils/issues/975)
  *
- * @param {any} wrapper Default wrapper
+ * @param {Wrapper} wrapper Default wrapper
  * @param {object} options Wrapper options
  * @param {string} options.functionRemplacement Default remplacement is '{[Function]}'.
  * @param {AttrIgnoreFunction} options.attrIgnore Default is `undefined`.
- *
  */
 export default function html(wrapper: Wrapper<Vue>, options?: HTMLFnOpts) {
 	const opts = {

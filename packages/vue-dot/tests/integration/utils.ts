@@ -1,9 +1,9 @@
-import { VueConstructor } from 'vue';
+import { VueConstructor, DirectiveFunction } from 'vue';
 
 interface VueInstance extends VueConstructor {
 	options: {
-		components: any;
-		directives: any;
+		components: VueConstructor[];
+		directives: DirectiveFunction[];
 	};
 }
 
