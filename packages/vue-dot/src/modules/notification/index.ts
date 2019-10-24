@@ -1,5 +1,5 @@
 import { Module, ActionTree, MutationTree, GetterTree } from 'vuex';
-import { RootState } from './';
+import { RootState } from '../';
 
 export interface NotificationObj {
 	type: string;
@@ -8,7 +8,7 @@ export interface NotificationObj {
 }
 
 /** The module contains only one notification at the time */
-interface NotificationState {
+export interface NotificationState {
 	notification: NotificationObj | null;
 }
 
