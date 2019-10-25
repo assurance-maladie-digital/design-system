@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
+import html from '@/tests/html';
 
 import CustomIcon from '../';
 
@@ -41,6 +42,6 @@ describe('CustomIcon', () => {
 			}
 		});
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

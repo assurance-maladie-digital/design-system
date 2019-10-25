@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
+import html from '@/tests/html';
 
 import FileUpload from '../';
 
@@ -13,6 +14,6 @@ describe('FileUpload', () => {
 		// Mount component
 		wrapper = mountComponent(FileUpload);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
+import html from '@/tests/html';
 
 import DatePicker from '../';
 
@@ -13,6 +14,6 @@ describe('DatePicker', () => {
 		// Mount component
 		wrapper = mountComponent(DatePicker);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

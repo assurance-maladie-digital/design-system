@@ -8,35 +8,39 @@ interface TestComponent extends Vue {
 	successMessages: string[];
 }
 
-/** Create the test component */
-function createTestComponent() {
-	return Vue.component('test', {
+/** Create the wrapper */
+function createWrapper() {
+	const component = Vue.component('test', {
 		mixins: [
 			warningRules
 		],
 		template: '<div />'
 	});
+
+	return mount(component, {
+		propsData: {
+			warningRules: [
+				// Required rule
+				(value: string) => Boolean(value) || 'error'
+			]
+		}
+	}) as Wrapper<TestComponent>;
 }
 
 // Tests
 describe('warningRules', () => {
-	it('validates correctly the value', () => {
-		const testComponent = createTestComponent();
-
-		const wrapper = mount(testComponent, {
-			propsData: {
-				warningRules: [
-					// Required rule
-					(value: string) => Boolean(value) || 'error'
-				]
-			}
-		}) as Wrapper<TestComponent>;
+	it('validate the value correctly on error', () => {
+		const wrapper = createWrapper();
 
 		// Empty value
 		wrapper.vm.validate('');
 
 		// Error
 		expect(wrapper.vm.successMessages[0]).toBe('error');
+	});
+
+	it('validates the value correctly on success', () => {
+		const wrapper = createWrapper();
 
 		// Filled value
 		wrapper.vm.validate('test');

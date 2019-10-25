@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
-import localVue, { mountComponent } from '@/tests';
+import { mountComponent } from '@/tests';
 import html from '@/tests/html';
 
 import FileUpload from '../../FileUpload';

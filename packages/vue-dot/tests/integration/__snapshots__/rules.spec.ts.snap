@@ -12,7 +12,7 @@ Object {
 }
 `;
 
-exports[`rules should list all rules 2`] = `
+exports[`rules should list all rules functions 1`] = `
 Object {
   "email": [Function],
   "isDateValid": [Function],
