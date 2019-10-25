@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
-import { Options } from './customizable';
+import { Options } from '../customizable';
 
-import isWeekEnd from '../functions/isWeekEnd';
-import isDateInRange from '../functions/isDateInRange';
+import isWeekEnd from '../../functions/isWeekEnd';
+import isDateInRange from '../../functions/isDateInRange';
 
 const Props = Vue.extend({
 	props: {
@@ -36,7 +36,7 @@ export default class Eventable extends Props {
 	 */
 	calendarEvents(date: string) {
 		/** Events prop from mixin */
-		const userEvents = this.options.datePicker.events;
+		const userEvents = this.options.datePicker ? this.options.datePicker.events : undefined;
 
 		// If the user set events, override default behavior
 		if (userEvents) {
@@ -60,7 +60,7 @@ export default class Eventable extends Props {
 		}
 
 		if (this.showWeekEnds) {
-			// Chage color in fonction of theme
+			// Chage color depending on theme
 			const weekEndColor = this.$vuetify.theme.dark ? 'grey darken-1' : 'grey lighten-1';
 
 			// Return a string or false (no event)

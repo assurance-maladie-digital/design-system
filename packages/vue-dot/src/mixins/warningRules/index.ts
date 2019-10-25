@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
-import { ValidationRule } from '../rules/types';
+import { ValidationRule } from '../../rules/types';
 
 const Props = Vue.extend({
 	props: {

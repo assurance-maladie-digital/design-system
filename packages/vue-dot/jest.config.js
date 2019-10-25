@@ -18,6 +18,8 @@ module.exports = {
 	coverageDirectory: '<rootDir>/tests/coverage',
 	collectCoverage: true,
 	collectCoverageFrom: [
+		// We don't collect coverage for .vue
+		// files for now since it is incorrect
 		'src/**/*.ts',
 		'!**/node_modules/**',
 		'!**/*.d.ts',

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-import * as merge from 'deepmerge';
+import merge from 'deepmerge';
 
 /**
  * Mixin that merge default options with options passed as props
