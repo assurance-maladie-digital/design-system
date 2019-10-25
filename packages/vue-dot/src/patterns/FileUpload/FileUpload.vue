@@ -387,7 +387,7 @@
 			});
 
 			// The result, eg. ".pdf,.jpeg,.jpg,.png"
-			return accept.join();
+			return accept.join('');
 		}
 
 		/** Expose retry function which clicks on the input */
