@@ -138,10 +138,10 @@ module.exports = {
 			const filePath = file.replace(getPath('./template'), '').slice(1);
 
 			// Remove .ejs (4 last chars)
-			const trimed = filePath.slice(0, -4);
+			const filename = filePath.slice(0, -4);
 
 			// Add to patterns
-			patterns[filePath] = trimed;
+			patterns[filePath] = filename;
 		});
 
 		// Rename the files by moving

@@ -16,6 +16,6 @@ module.exports = {
 		/node_modules[/\\\\]vuetify[/\\\\]/,
 		'vuex-persist'
 	],
-	// Disable parallel build on the plateform
+	// Disable parallel build on the platform
 	parallel: process.env.NODE_ENV !== 'production'
 };

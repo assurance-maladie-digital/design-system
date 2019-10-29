@@ -2,7 +2,7 @@ import chalk, { colors, log } from './logger';
 import line from './line';
 import figlet from 'figlet';
 
-/** Display text with 'Georgia11' font, and 'primay' color */
+/** Display text with 'Georgia11' font, and 'primary' color */
 export function renderHeader(text: string, author?: string, version?: string): void {
 	const txt = figlet.textSync(text, {
 		font: 'Georgia11',

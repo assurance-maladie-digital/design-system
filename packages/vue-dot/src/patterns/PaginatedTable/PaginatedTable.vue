@@ -117,7 +117,7 @@
 			return '';
 		}
 
-		/** Retreive the options from local storage */
+		/** Retrieve the options from local storage */
 		created() {
 			this.localOptions = JSON.parse(
 				// Default to empty object

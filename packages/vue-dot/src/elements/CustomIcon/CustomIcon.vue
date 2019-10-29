@@ -1,7 +1,7 @@
 <template>
 	<!--
 		`aria-hidden` is present, this hides the icon
-		from screen-readers, an accessibile label should be
+		from screen-readers, an accessible label should be
 		provided by the context/the user
 	-->
 	<span
@@ -48,7 +48,7 @@
 				default: 'currentColor'
 			},
 			// The icon from the theme,
-			// optionnal when using the slot instead of theme icon
+			// optional when using the slot instead of theme icon
 			icon: {
 				type: String,
 				default: undefined
@@ -118,7 +118,7 @@
 		vertical-align: middle;
 
 		// Position relative the container since
-		// the child will be positionned absolutely
+		// the child will be positioned absolutely
 		position: relative;
 
 		::v-deep svg {

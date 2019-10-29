@@ -212,7 +212,7 @@
 		error = false;
 
 		/**
-		 * Get the differents colors
+		 * Get the different colors
 		 * depending on theme (light or dark)
 		 */
 		get colors() {

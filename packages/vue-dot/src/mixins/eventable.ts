@@ -40,7 +40,7 @@ export default class Eventable extends Props {
 
 		// If the user set events, override default behavior
 		if (userEvents) {
-			// If it's a function, excute it with date parameter
+			// If it's a function, execute it with date parameter
 			if (typeof userEvents === 'function') {
 				return userEvents(date);
 			}
@@ -60,7 +60,7 @@ export default class Eventable extends Props {
 		}
 
 		if (this.showWeekEnds) {
-			// Chage color in fonction of theme
+			// Change color in fonction of theme
 			const weekEndColor = this.$vuetify.theme.dark ? 'grey darken-1' : 'grey lighten-1';
 
 			// Return a string or false (no event)

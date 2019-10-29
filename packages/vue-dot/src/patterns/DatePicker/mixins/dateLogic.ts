@@ -129,7 +129,7 @@ export default class DateLogic extends Props {
 		);
 	}
 
-	/** Parse a date with dateFormatReturn format to interal format */
+	/** Parse a date with dateFormatReturn format to internal format */
 	parseDateForModel(date: string) {
 		return parseDate(date, this.dateFormatReturn).format(INTERNAL_FORMAT);
 	}
@@ -224,8 +224,8 @@ export default class DateLogic extends Props {
 
 	/** Update v-model */
 	emitChangeEvent() {
-		// Parse the date with interal format,
-		// and return the date with dateFormatRetun format
+		// Parse the date with internal format,
+		// and return the date with dateFormatReturn format
 		this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
 	}
 
