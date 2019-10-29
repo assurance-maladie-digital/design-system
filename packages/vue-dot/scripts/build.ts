@@ -1,6 +1,9 @@
 import * as fs from 'fs-extra';
+
 import { renderHeader, info, done, log } from '@cnamts/cli-helpers';
-import { author } from './package.json';
+import { execOpts } from './utils';
+
+import { author } from '../package.json';
 
 renderHeader('Self Build', author.name);
 
@@ -29,10 +32,11 @@ info('Building full bundle');
 // Build the full bundle
 execSync(
 	`LIB_MODE=true ${vueCliServicePath} build --target lib --name vue-dot ./src/index.ts`,
-	{
-		stdio: 'inherit'
-	}
+	execOpts
 );
+
+// Generate Design Tokens
+execSync('ts-node --project tsconfig.json --files scripts/generateTokens.ts', execOpts);
 
 log();
 info('Transpiling TypeScript');
@@ -41,12 +45,7 @@ info('Transpiling TypeScript');
 fs.removeSync(`${dist}/demo.html`);
 
 // Transpile TypeScript
-execSync(
-	`tsc -p tsconfig.build.json --outDir ${dist}`,
-	{
-		stdio: 'inherit'
-	}
-);
+execSync(`tsc -p tsconfig.build.json --outDir ${dist}`, execOpts);
 
 // Remove playground folder
 fs.removeSync(`${dist}/playground`);

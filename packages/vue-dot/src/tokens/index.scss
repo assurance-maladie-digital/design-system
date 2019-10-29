@@ -1,0 +1,23 @@
+// AUTO-GENERATED FILE, DO NOT EDIT
+
+$vd-tokens: (
+	colors: (
+		primary: #003463,
+		secondary: #0c4887,
+		accent: #2576cd,
+		success: #009688,
+		error: #b00000,
+		warning: #ba8b00,
+		pro: #ef6c00
+	)
+);
+
+$vd-colors: map-get($vd-tokens, colors);
+
+$vd-primary: map-get($vd-colors, primary);
+$vd-secondary: map-get($vd-colors, secondary);
+$vd-accent: map-get($vd-colors, accent);
+$vd-success: map-get($vd-colors, success);
+$vd-error: map-get($vd-colors, error);
+$vd-warning: map-get($vd-colors, warning);
+$vd-pro: map-get($vd-colors, pro);
