@@ -144,17 +144,21 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '../../src/tokens';
+
+	$darken-accent: saturate(darken($vd-accent, 10%), 20%);
+
 	.custom.file-upload {
 		border: none;
 		padding: 10px 15px !important;
 
 		&:hover,
 		&:focus {
-			background: #2172c9 !important;
+			background: $darken-accent !important;
 		}
 
 		&.dragover {
-			background: #115297 !important;
+			background: $darken-accent !important;
 		}
 	}
 </style>
