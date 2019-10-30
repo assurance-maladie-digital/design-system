@@ -30,19 +30,19 @@ function createWrapper(mask?: string | boolean, dateFormat?: string) {
 
 // Tests
 describe('maskValue', () => {
-	it('', () => {
+	it('computes a mask from dateFormat if mask prop is empty', () => {
 		const wrapper = createWrapper(undefined, 'YYYY-DD-MM');
 
 		expect(wrapper.vm.maskValue).toBe('####-##-##');
 	});
 
-	it('', () => {
+	it('doesn\'t computes a mask if mask prop is false', () => {
 		const wrapper = createWrapper(false);
 
 		expect(wrapper.vm.maskValue).toBe(undefined);
 	});
 
-	it('', () => {
+	it('returns the mask without modification is mask prop is a string', () => {
 		const mask = '##/##/####';
 		const wrapper = createWrapper(mask);
 

@@ -26,13 +26,13 @@ function createWrapper(error: boolean) {
 
 // Tests
 describe('errorProp', () => {
-	it('', () => {
+	it('receives the value correctly from the prop', () => {
 		const wrapper = createWrapper(false);
 
 		expect(wrapper.vm.internalErrorProp).toBe(false);
 	});
 
-	it('', () => {
+	it('emits an event for .sync when the value is updated', () => {
 		const wrapper = createWrapper(false);
 
 		wrapper.vm.internalErrorProp = true;

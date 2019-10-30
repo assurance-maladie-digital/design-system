@@ -29,7 +29,7 @@ function createWrapper() {
 
 // Tests
 describe('warningRules', () => {
-	it('validate the value correctly on error', () => {
+	it('validates the value correctly on error', () => {
 		const wrapper = createWrapper();
 
 		// Empty value

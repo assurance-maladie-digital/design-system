@@ -16,7 +16,7 @@ const state: NotificationState = {
 	notification: null
 };
 
-const actions: ActionTree<NotificationState, RootState> = {
+export const actions: ActionTree<NotificationState, RootState> = {
 	notify({ commit }, notification: NotificationObj) {
 		commit('ADD', notification);
 	},
@@ -25,7 +25,7 @@ const actions: ActionTree<NotificationState, RootState> = {
 	}
 };
 
-const mutations: MutationTree<NotificationState> = {
+export const mutations: MutationTree<NotificationState> = {
 	/** Add (or replace) with the new notification */
 	ADD(state, notification: NotificationObj) {
 		state.notification = notification;
@@ -36,7 +36,7 @@ const mutations: MutationTree<NotificationState> = {
 	}
 };
 
-const getters: GetterTree<NotificationState, RootState> = {};
+export const getters: GetterTree<NotificationState, RootState> = {};
 
 /** The notification module */
 const notification: Module<NotificationState, RootState> = {

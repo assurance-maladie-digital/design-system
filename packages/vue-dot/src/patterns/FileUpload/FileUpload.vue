@@ -383,11 +383,11 @@
 
 			// Calc the accept="" string from the allowed extensions
 			this.allowedExtensions.forEach((type: string) => {
-				accept.push(`.${type},`);
+				accept.push(`.${type}`);
 			});
 
 			// The result, eg. ".pdf,.jpeg,.jpg,.png"
-			return accept.join('');
+			return accept.join(',');
 		}
 
 		/** Expose retry function which clicks on the input */

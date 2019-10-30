@@ -27,7 +27,7 @@ export function getComponents(Vue: VueConstructor) {
 	return components.sort();
 }
 
-/** Returns the directives from the Vue instance */
+/** Returns the custom directives from the Vue instance */
 export function getDirectives(Vue: VueConstructor) {
 	const instance = Vue as VueInstance;
 

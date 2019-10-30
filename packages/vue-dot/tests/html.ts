@@ -7,18 +7,18 @@ const DEFAULT_OPTIONS = {
 };
 
 interface HTMLFnOpts {
+	/**
+	 * Function is a predicate, to test attribute.
+	 *
+	 * @callback AttrIgnoreFunction
+	 * @param {string} name The attribute name
+	 * @param {string} value The attribute name
+	 * @returns {boolean} Return `true` to ignore the element, `false` otherwise.
+	 */
 	attrIgnore: (name: string, value: unknown) => boolean | boolean;
+
 	functionRemplacement: string;
 }
-
-/**
- * Function is a predicate, to test attribute.
- *
- * @callback AttrIgnoreFunction
- * @param {string} name The attribute name
- * @param {string} value The attribute name
- * @returns {boolean} Return `true` to ignore the element, `false` otherwise.
- */
 
 /**
  * Serialize wrapper.

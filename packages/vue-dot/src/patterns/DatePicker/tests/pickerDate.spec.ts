@@ -26,13 +26,13 @@ function createWrapper() {
 
 // Tests
 describe('pickerDate', () => {
-	it('', () => {
+	it('receives the value correctly from the prop', () => {
 		const wrapper = createWrapper();
 
 		expect(wrapper.vm.internalPickerDate).toBe('2019-10-25');
 	});
 
-	it('', () => {
+	it('emits an event for .sync when the value is updated', () => {
 		const wrapper = createWrapper();
 
 		wrapper.vm.internalPickerDate = '2019-10-22';

@@ -1,6 +1,8 @@
 import Vue, { VueConstructor } from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
+import { Refs } from '../../../types';
+
 import customizable, { Options } from '../../../mixins/customizable';
 
 import dateLogic from '../mixins/dateLogic';
@@ -14,6 +16,13 @@ interface VueInstance extends VueConstructor {
 }
 
 interface TestComponent extends Vue {
+	// Extend $refs
+	$refs: Refs<{
+		input: {
+			hasError: boolean;
+		};
+	}>;
+
 	options: Options;
 	dateFormat: string;
 	dateFormatReturn: string;
@@ -24,6 +33,7 @@ interface TestComponent extends Vue {
 	saveFromCalendar: () => void;
 	parseTextFieldDate: (date: string) => string;
 	textFieldBlur: () => void;
+	dateFormatted: string;
 }
 
 /** Create fake VMenu for refs */
@@ -88,13 +98,13 @@ describe('dateLogic', () => {
 		delete instance.options.components['v-text-field'];
 	});
 
-	it('', () => {
+	it('doesn\'t set the date when the value is empty', () => {
 		const wrapper = createWrapper();
 
 		expect(wrapper.vm.date).toBe('');
 	});
 
-	it('', () => {
+	it('parses the date when the value is filled', () => {
 		const wrapper = createWrapper({
 			value: '29/10/2019'
 		});
@@ -102,7 +112,8 @@ describe('dateLogic', () => {
 		expect(wrapper.vm.date).toBe('2019-10-29');
 	});
 
-	it('', () => {
+	// saveFromTextField
+	it('emits change event when saveFromTextField is called and value is empty', () => {
 		const wrapper = createWrapper();
 
 		wrapper.vm.saveFromTextField();
@@ -110,7 +121,7 @@ describe('dateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('', () => {
+	it('emits change event and parses the date when saveFromTextField is called', () => {
 		const wrapper = createWrapper({
 			value: '29/10/2019'
 		});
@@ -121,7 +132,7 @@ describe('dateLogic', () => {
 		expect(wrapper.vm.date).toBe('2019-10-29');
 	});
 
-	it('', () => {
+	it('doesn\'t emit change event when the date is invalid', () => {
 		const wrapper = createWrapper({
 			value: '2019/10/29'
 		});
@@ -131,7 +142,8 @@ describe('dateLogic', () => {
 		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
-	it('', () => {
+	// parseTextFieldDate
+	it('parses the date when parseTextFieldDate is called with a valid date', () => {
 		const wrapper = createWrapper();
 
 		const parsed = wrapper.vm.parseTextFieldDate('29/10/2019');
@@ -139,7 +151,7 @@ describe('dateLogic', () => {
 		expect(parsed).toBe('2019-10-29');
 	});
 
-	it('', () => {
+	it('returns an empty string when parseTextFieldDate is called with an invalid date', () => {
 		const wrapper = createWrapper();
 
 		const parsed = wrapper.vm.parseTextFieldDate('2019/10/29');
@@ -147,7 +159,8 @@ describe('dateLogic', () => {
 		expect(parsed).toBe('');
 	});
 
-	it('', () => {
+	// saveFromCalendar
+	it('emits change event when called', () => {
 		const wrapper = createWrapper();
 
 		wrapper.vm.saveFromCalendar();
@@ -155,7 +168,7 @@ describe('dateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('', () => {
+	it('validates the VTextField when validateOnBlur is true', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
@@ -167,7 +180,7 @@ describe('dateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('', () => {
+	it('doesn\'t sets hasFocused if it\'s undefined', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
@@ -179,7 +192,8 @@ describe('dateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('', () => {
+	// textFieldBlur
+	it('emits change event when called', () => {
 		const wrapper = createWrapper();
 
 		wrapper.vm.textFieldBlur();
@@ -187,7 +201,7 @@ describe('dateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('', () => {
+	it('validate warning rules when validateOnBlur is true', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
@@ -199,15 +213,41 @@ describe('dateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('', () => {
+	// Error event
+	it('emits error event when VTextField has error', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
 			}
 		});
 
-		(wrapper.vm.$refs.input as any).hasError = true;
+		wrapper.vm.$refs.input.hasError = true;
 
 		expect(wrapper.emitted('error')).toBeTruthy();
+	});
+
+	// dateFormatted
+	it('emits change event when dateFormatted is set', () => {
+		const wrapper = createWrapper();
+
+		wrapper.vm.dateFormatted = '29/10/2019';
+
+		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	it('returns an empty string when the value is empty', () => {
+		const wrapper = createWrapper({
+			value: ''
+		});
+
+		expect(wrapper.vm.dateFormatted).toBe('');
+	});
+
+	it('returns the formatted date when the value is defined', () => {
+		const wrapper = createWrapper({
+			value: '29/10/2019'
+		});
+
+		expect(wrapper.vm.dateFormatted).toBe('29/10/2019');
 	});
 });

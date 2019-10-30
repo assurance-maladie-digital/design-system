@@ -42,7 +42,6 @@ export default class Birthdate extends Props {
 	 * Set active picker on VDatePicker
 	 * See https://vuetifyjs.com/en/components/date-pickers#date-pickers-birthday-picker
 	 */
-	/* istanbul ignore next */
 	setActivePicker() {
 		setTimeout(() => {
 			// Set the active picker to year

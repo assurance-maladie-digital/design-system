@@ -9,7 +9,7 @@ const DATE_WEEK_END = '2019-10-26';
 
 interface TestComponent extends Vue {
 	options: Options;
-	calendarEvents: (date: string) => boolean | any;
+	calendarEvents: (date: string) => boolean | string | string[];
 }
 
 /** Create the test component */

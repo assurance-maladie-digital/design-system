@@ -16,6 +16,7 @@ const localVue = createLocalVue();
 // Add Vuetify
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
+
 const vuetify = new Vuetify();
 
 /** Generic build fonction */

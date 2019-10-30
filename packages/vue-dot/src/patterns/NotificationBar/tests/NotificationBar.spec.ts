@@ -9,21 +9,15 @@ localVue.use(Vuex);
 
 import NotificationBar from '../';
 
-let wrapper: Wrapper<Vue>;
+import { NotificationState } from '../../../modules/notification';
 
-export interface RootState {
-	notification: {
-		type: string;
-		message: string;
-		icon: string;
-	};
-}
+let wrapper: Wrapper<Vue>;
 
 // Tests
 describe('NotificationBar', () => {
 	let state;
 	let actions;
-	let store: Store<RootState>;
+	let store: Store<NotificationState>;
 
 	// Mock store
 	beforeEach(() => {
