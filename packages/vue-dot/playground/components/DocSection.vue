@@ -4,7 +4,7 @@
 		align-start
 		class="doc-section"
 	>
-		<!-- The title is remplacable through a slot -->
+		<!-- The title is replaceable through a slot -->
 		<slot name="title">
 			<h3
 				v-if="title"

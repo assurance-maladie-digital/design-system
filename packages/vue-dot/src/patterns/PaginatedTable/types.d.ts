@@ -1,4 +1,4 @@
-// Vuetify's VDataTable options
+// Vuetify VDataTable options
 export interface Options {
 	page: number;
 	itemsPerPage: number;

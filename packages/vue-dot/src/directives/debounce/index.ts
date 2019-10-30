@@ -5,7 +5,7 @@ import debounceFn from '../../functions/debounce';
 const debounce: DirectiveOptions = {
 	bind(el, binding) {
 		// If the tag the directive is binded to
-		// isn't an input, find one his childrens
+		// isn't an input, find one in his children elements
 
 		// This is used for custom inputs, eg. VTextField
 		if (el.tagName !== 'INPUT') {

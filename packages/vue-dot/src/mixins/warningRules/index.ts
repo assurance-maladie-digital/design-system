@@ -14,7 +14,7 @@ const Props = Vue.extend({
 });
 
 /**
- * Add warning rules: same as Vuetify's rules,
+ * Add warning rules: same as Vuetify rules,
  * but that does not block validation
  */
 @Component
