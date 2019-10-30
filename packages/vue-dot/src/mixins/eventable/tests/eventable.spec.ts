@@ -25,7 +25,7 @@ function createTestComponent(mixinData = {}) {
 
 // Tests
 describe('customizable', () => {
-	it('does nothing when no options are setted', () => {
+	it('does nothing when no options are defined', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;

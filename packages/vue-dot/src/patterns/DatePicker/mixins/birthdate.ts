@@ -45,7 +45,7 @@ export default class Birthdate extends Props {
 	/* istanbul ignore next */
 	setActivePicker() {
 		setTimeout(() => {
-			// Se the active picker to year
+			// Set the active picker to year
 			this.$refs.picker.activePicker = 'YEAR';
 		});
 	}

@@ -10,7 +10,7 @@ import isLeapYear from 'dayjs/plugin/isLeapYear';
 dayjs.extend(isLeapYear);
 
 const DATE_SEPARATORS = /[- /.]/;
-/** Matches YYYY/MM/DD with one of the DATE_SEPARATORS */
+/** Matches DD/MM/YYYY with one of the DATE_SEPARATORS */
 export const DATE_FORMAT_REGEX = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d{4}/;
 
 const defaultErrorMessages: ErrorMessages = {

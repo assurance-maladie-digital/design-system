@@ -8,14 +8,14 @@ import CustomIcon from '../';
 
 let wrapper: Wrapper<Vue>;
 
-const VD_ICONS = {
+const VD_THEME = {
 	icons: {
 		test: 'icon-src'
 	}
 };
 
 const mocks = {
-	$vd: VD_ICONS
+	$vd: VD_THEME
 };
 
 // Tests
@@ -29,7 +29,7 @@ describe('CustomIcon', () => {
 			}
 		});
 
-		expect(wrapper).toMatchSnapshot();
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly with a custom size', () => {
