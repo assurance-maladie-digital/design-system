@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Env var
+public/js/config.js
+
+# Log files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json*
+
+# Editor directories and files
+.DS_Store
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Tests coverage
+/tests/e2e/coverage/
+/tests/unit/coverage/
+
+# Cypress
+/tests/e2e/videos/
+/tests/e2e/screenshots/

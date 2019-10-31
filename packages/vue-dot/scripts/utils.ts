@@ -3,16 +3,6 @@ import { readFileSync, writeFileSync } from 'fs';
 
 import { StdioOptions } from 'child_process';
 
-/**
- * Get path relative current working directory
- *
- * @param {string} value The path to join
- * @returns {string} The normalized path
- */
-export function getPath(value: string): string {
-	return path.join(process.cwd(), value);
-}
-
 /** Common options for exec function */
 export const execOpts = {
 	stdio: 'inherit' as StdioOptions

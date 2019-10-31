@@ -1,10 +1,16 @@
 import * as fs from 'fs-extra';
 import { appendFileSync } from 'fs';
 
-import { info, done, log } from '@cnamts/cli-helpers';
-import { getPath, execOpts, writeToBeginning } from './utils';
+import { info, done, log, getPath } from '@cnamts/cli-helpers';
+import { execOpts, writeToBeginning } from './utils';
 
 import { execSync } from 'child_process';
+
+import tokensObj from '../src/tokens';
+
+interface Tokens {
+	[key: string]: string | Tokens;
+}
 
 const tokensFolder = getPath('src/tokens');
 
@@ -14,9 +20,7 @@ const tokenList = {
 	scss: `${tokensFolder}/index.scss`
 };
 
-// Require is needed because we use module.exports
-// tslint:disable-next-line: no-var-requires
-const tokens = require(tokensFolder);
+const tokens = tokensObj as Tokens;
 delete tokens._jsonToScss; // Remove package config
 
 info('Generating Design Tokens');
@@ -63,7 +67,8 @@ tokenArray.forEach((tokenName) => {
 // Append new content to SCSS file
 appendFileSync(tokenList.scss, linesToAppend.join(''));
 
-// Remove JS file
+// Remove JS files
 fs.removeSync(tokenList.js);
+fs.removeSync(`${tokensFolder}/vuetifyTheme.js`);
 
 done('Generation completed');
