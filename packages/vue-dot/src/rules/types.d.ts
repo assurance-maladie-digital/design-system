@@ -1,4 +1,4 @@
-export type ValidationRule = (value: string) => string | boolean;
+export type ValidationRule = (value: string | string[]) => string | boolean;
 
 export interface ValidationRules {
 	[key: string]: ValidationRule;
