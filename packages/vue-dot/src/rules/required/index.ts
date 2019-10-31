@@ -1,9 +1,6 @@
 import ruleMessage from '../../helpers/ruleMessage';
-import { ErrorMessages } from '../types';
 
-const defaultErrorMessages: ErrorMessages = {
-	default: 'Le champ est requis'
-};
+import { defaultErrorMessages } from './locales';
 
 /** Check that the field is non-empty */
 export function required(errorMessages = defaultErrorMessages) {

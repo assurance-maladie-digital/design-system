@@ -1,9 +1,6 @@
 import ruleMessage from '../../helpers/ruleMessage';
-import { ErrorMessages } from '../types';
 
-const defaultErrorMessages: ErrorMessages<number> = {
-	default: (min: number) => `La longueur minimale du champ est ${min} caractères`
-};
+import { defaultErrorMessages } from './locales';
 
 /** Check that the field exceeds the min length */
 export function minLength(min: number, errorMessages = defaultErrorMessages) {
