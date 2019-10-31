@@ -1,9 +1,5 @@
 <p align="center">
-  <a
-    href="https://github.com/assurance-maladie-digital/design-system"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <a href="https://github.com/assurance-maladie-digital/design-system">
     <img
       src="https://user-images.githubusercontent.com/10298932/55887504-ede21f80-5bad-11e9-891f-231fe0848d59.png"
       alt=""
@@ -18,8 +14,9 @@
 
 <p align="center">
   <a href="https://github.com/assurance-maladie-digital/design-system/blob/master/LICENSE"><img src="https://flat.badgen.net/badge/license/MIT/blue" alt="License MIT"></a>
-  <a href="https://www.npmjs.com/package/@cnamts/vue-dash"><img src="https://flat.badgen.net/badge/npm/WIP/blue" alt="npm Version WIP"></a>
-  <a href="https://www.browserstack.com/" target="_blank" rel="noopener noreferrer"><img src="https://flat.badgen.net/badge/powered%20by/BrowserStack/blue" alt="Powered by BrowserStack"></a>
+  <a href="https://www.npmjs.com/package/@cnamts/vue-dash"><img src="https://flat.badgen.net/npm/v/@cnamts/vue-dot/next" alt="npm Version"></a>
+  <a href="https://codecov.io/gh/assurance-maladie-digital/design-system"><img src="https://flat.badgen.net/codecov/c/github/assurance-maladie-digital/design-system" alt="Codecov" /></a>
+  <a href="https://www.browserstack.com/"><img src="https://flat.badgen.net/badge/powered%20by/BrowserStack/blue" alt="Powered by BrowserStack"></a>
 </p>
 
 ## Introduction
@@ -42,7 +39,7 @@ The goal of our Design System is to unify our work, which allows teams to share 
         <a href="/packages/vue-dash">Vue Dash</a>
       </td>
       <td>
-       A CLI tool to create and manage front-end projects
+       CLI tool to create and manage front-end projects
       </td>
     </tr>
     <tr>
@@ -50,7 +47,7 @@ The goal of our Design System is to unify our work, which allows teams to share 
         <a href="/packages/vue-dot">Vue Dot</a>
       </td>
       <td>
-       The Official CNAM component library
+       Our component library
       </td>
     </tr>
     <tr>
