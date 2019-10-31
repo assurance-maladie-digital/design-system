@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tokens should register all tokens 1`] = `
+Object {
+  "colors": Object {
+    "accent": "#2576cd",
+    "error": "#b00000",
+    "primary": "#003463",
+    "pro": "#ef6c00",
+    "secondary": "#0c4887",
+    "success": "#009688",
+    "warning": "#ba8b00",
+  },
+}
+`;

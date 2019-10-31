@@ -5,7 +5,7 @@ import { Refs } from '../../../types';
 
 const Props = Vue.extend({
 	props: {
-		/** Enables birthdate mode: select year, month then day */
+		/** Enables birthdate mode */
 		birthdate: {
 			type: Boolean,
 			default: false
@@ -13,17 +13,13 @@ const Props = Vue.extend({
 	}
 });
 
-/** Add event handling: week-ends and ranges */
+/** Add birthdate prop: select year, month then day */
 @Component<Birthdate>({
 	watch: {
-		// See https://vuetifyjs.com/en/components/date-pickers#date-pickers-birthday-picker
 		menu(val) {
 			// If birthdate mode is activated
 			if (this.birthdate && val) {
-				setTimeout(() => {
-					// Se the active picker to year
-					this.$refs.picker.activePicker = 'YEAR';
-				});
+				this.setActivePicker();
 			}
 		}
 	}
@@ -38,6 +34,18 @@ export default class Birthdate extends Props {
 
 	/** If birthdate is enabled, max is the current date */
 	max = this.birthdate ? new Date().toISOString().substr(0, 10) : null;
+
 	/** If birthdate is enabled, min is 01/01/1950 */
 	min = this.birthdate ? '1950-01-01' : null;
+
+	/**
+	 * Set active picker on VDatePicker
+	 * See https://vuetifyjs.com/en/components/date-pickers#date-pickers-birthday-picker
+	 */
+	setActivePicker() {
+		setTimeout(() => {
+			// Set the active picker to year
+			this.$refs.picker.activePicker = 'YEAR';
+		});
+	}
 }

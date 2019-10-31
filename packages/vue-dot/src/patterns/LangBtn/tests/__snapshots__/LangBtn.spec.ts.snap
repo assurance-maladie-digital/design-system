@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LangBtn renders correctly 1`] = `
+<vmenu-stub opendelay="0" closedelay="0" contentclass="vd-lang-menu" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition" class="vd-lang-btn">
+  <vlist-stub tag="div" tile="true">
+    <vlistitem-stub activeclass="" tag="div">
+      <!---->
+      <vlistitemtitle-stub>
+        Français
+      </vlistitemtitle-stub>
+    </vlistitem-stub>
+    <vlistitem-stub activeclass="" tag="div">
+      <!---->
+      <vlistitemtitle-stub>
+        English
+      </vlistitemtitle-stub>
+    </vlistitem-stub>
+  </vlist-stub>
+</vmenu-stub>
+`;

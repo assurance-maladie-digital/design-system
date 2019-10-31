@@ -28,7 +28,8 @@
 		"build": "ts-node --project tsconfig.json --files build.ts"
 	},
 	"dependencies": {
-		"figlet": "^1.2.4"
+		"figlet": "^1.2.4",
+		"typescript": "~3.5.3"
 	},
 	"devDependencies": {
 		"@types/figlet": "^1.2.0"

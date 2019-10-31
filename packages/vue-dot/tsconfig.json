@@ -8,11 +8,14 @@
 			"jest"
 		],
 		"paths": {
-			// Specific alias used in tests
-			"vd-src/*": [
-				"src/*"
+			"@/tests/*": [
+				"tests/*"
+			],
+			"@/tests": [
+				"tests/"
 			]
-		}
+		},
+		"esModuleInterop": true
 	},
 	"include": [
 		// Playground

@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataList renders correctly 1`] = `
+<div class="vd-data-list">
+  <!---->
+  <dl class="vd-field">
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Civility
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        …
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Dupont
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        First name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Paul
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
+exports[`DataList renders correctly in column mode 1`] = `
+<div class="vd-data-list">
+  <!---->
+  <dl class="vd-field vd-column">
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Civility
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        …
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Dupont
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        First name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Paul
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
+exports[`DataList renders correctly in flex mode 1`] = `
+<div class="vd-data-list">
+  <!---->
+  <dl class="vd-field vd-column vd-flex">
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Civility
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        …
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Dupont
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        First name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Paul
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
+exports[`DataList renders correctly with a title 1`] = `
+<div class="vd-data-list">
+  <h4 class="mb-3 headline">
+    Informations
+  </h4>
+  <dl class="vd-field">
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Civility
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        …
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        Name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Dupont
+      </dd>
+    </div>
+    <div class="vd-row mb-2">
+      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
+        First name
+      </dt>
+      <dd class="vd-value body-1" style="color: currentColor;">
+        Paul
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
+exports[`DataList renders correctly with an empty list 1`] = `
+<div class="vd-data-list">
+  <!---->
+  <!---->
+</div>
+`;

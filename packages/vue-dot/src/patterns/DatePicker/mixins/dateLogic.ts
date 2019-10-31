@@ -65,7 +65,7 @@ const Props = Vue.extend({
 		 * on input if validateOnBlur is true
 		 */
 		textFieldDate(value: string) {
-			if (!this.options.textField.validateOnBlur) {
+			if (!this.validateOnBlurEnabled) {
 				this.validate(value);
 			}
 		}
@@ -127,6 +127,11 @@ export default class DateLogic extends Props {
 				deep: true // Even if we don't watch an object, this is needed
 			}
 		);
+	}
+
+	/** Check if validateOnBlur is enabled */
+	get validateOnBlurEnabled() {
+		return this.options.textField && this.options.textField.validateOnBlur;
 	}
 
 	/** Parse a date with dateFormatReturn format to internal format */
@@ -191,7 +196,7 @@ export default class DateLogic extends Props {
 		this.validate(this.textFieldDate);
 
 		// If validateOnBlur is true
-		if (this.options.textField.validateOnBlur) {
+		if (this.validateOnBlurEnabled) {
 			// Validate the text field
 			// because no blur event is emitted
 			this.validateVuetify();
@@ -248,7 +253,7 @@ export default class DateLogic extends Props {
 		this.saveFromTextField();
 
 		// If validateOnBlur is true, validate
-		if (this.options.textField.validateOnBlur) {
+		if (this.validateOnBlurEnabled) {
 			this.validate(this.textFieldDate);
 		}
 	}
