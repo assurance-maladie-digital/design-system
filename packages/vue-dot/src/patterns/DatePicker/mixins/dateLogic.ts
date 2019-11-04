@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 import dayjs from 'dayjs';
 
 import parseDate from '../../../helpers/parseDate';
-import { DATE_FORMAT_REGEX } from '../../../rules/isDateValid';
+import { DATE_FORMAT_REGEX } from '../../../rules/isDateValid/checkIfDateValid';
 
 import { Options } from '../../../mixins/customizable';
 
