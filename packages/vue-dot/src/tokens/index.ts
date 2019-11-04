@@ -1,19 +1,8 @@
-// Color used in the Vuetify theme
-// that are also Design Tokens
-export const vuetifyTheme = {
-	// Brand
-	primary: '#003463',
-	secondary: '#0c4887',
-	accent: '#2576cd',
-	// State
-	success: '#009688',
-	error: '#b00000',
-	warning: '#ba8b00'
-};
+import vuetifyTheme from './vuetifyTheme';
 
 const TAB_CHARACTER = '	';
 
-module.exports = {
+const tokens = {
 	colors: {
 		...vuetifyTheme,
 		// Brand
@@ -26,3 +15,5 @@ module.exports = {
 		sassVariableName: 'vd-tokens'
 	}
 };
+
+export = tokens;
