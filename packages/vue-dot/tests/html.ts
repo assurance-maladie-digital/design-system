@@ -27,7 +27,7 @@ interface HTMLFnOpts {
  * (workaround of https://github.com/vuejs/vue-test-utils/issues/975)
  *
  * @param {Wrapper} wrapper Default wrapper
- * @param {object} options Wrapper options
+ * @param {object} [options] Wrapper options
  * @param {string} options.functionRemplacement Default remplacement is '{[Function]}'.
  * @param {AttrIgnoreFunction} options.attrIgnore Default is `undefined`.
  */

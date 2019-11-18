@@ -30,13 +30,13 @@ const links = [
 describe('AppToolbar', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(AppToolbar, {
+		wrapper = mountComponent(AppToolbar<% if (i18n) { %>, {
 			mocks: {
 				$t: (key: string) => {
 					return key === 'components.layout.appToolbar.links' ? links : key;
 				}
 			}
-		});
+		}<% } %>);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

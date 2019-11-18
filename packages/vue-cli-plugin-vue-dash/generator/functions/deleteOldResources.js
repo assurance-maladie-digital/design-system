@@ -1,46 +1,10 @@
-/** Remove files & folders from default template */
-function deleteOldResources(resources, options) {
-	const resourcesToDelete = [
-		{
-			type: 'file',
-			path: 'src/assets/logo.png'
-		},
-		{
-			type: 'folder',
-			path: 'src/router/'
-		},
-		{
-			type: 'file',
-			path: 'src/shims-tsx.d.ts'
-		},
-		{
-			type: 'file',
-			path: 'src/shims-vue.d.ts'
-		},
-		{
-			type: 'file',
-			path: 'src/components/HelloWorld.vue'
-		},
-		{
-			type: 'file',
-			path: 'tests/unit/example.spec.ts'
-		},
-		{
-			type: 'folder',
-			path: 'src/translations/',
-			condition: !options.i18n
-		},
-		{
-			type: 'file',
-			path: 'src/i18n.ts',
-			condition: !options.i18n
-		},
-		{
-			type: 'file',
-			path: 'tests/e2e/specs/test.js'
-		}
-	];
-
+/**
+ * Remove files & folders from default template
+ *
+ * @param {array} resources The complete list of resources (files or folders)
+ * @param {array} resourcesToDelete The list of resources to delete
+ */
+function deleteOldResources(resources, resourcesToDelete) {
 	for (const resource of resourcesToDelete) {
 		let shouldDeleteFile;
 

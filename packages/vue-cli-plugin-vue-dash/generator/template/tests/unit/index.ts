@@ -1,14 +1,14 @@
 // Global test configuration
 import Vue from 'vue';
 
-import VueTestUtils, {
+import <% if (i18n) { %>VueTestUtils, <% } %>{
 	createLocalVue,
 	mount,
 	shallowMount,
 	VueClass,
 	MountOptions,
 	ShallowMountOptions
-} from '@vue/test-utils';
+} from '@vue/test-utils';<% if (i18n) { %>
 
 // If mocks is undefined, init it
 if (!VueTestUtils.config.mocks) {
@@ -17,7 +17,7 @@ if (!VueTestUtils.config.mocks) {
 
 // Mock i18n functions
 VueTestUtils.config.mocks.$t = (key: string) => key;
-VueTestUtils.config.mocks.$tc = (key: string) => key;
+VueTestUtils.config.mocks.$tc = (key: string) => key;<% } %>
 
 // Create empty router and export it
 import VueRouter from 'vue-router';
@@ -39,6 +39,9 @@ localVue.use(VueDot);
 // Add Vuetify
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
+
+// Register global components
+import '@/components/global';
 
 const vuetify = new Vuetify();
 

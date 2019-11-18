@@ -25,13 +25,13 @@ const links = [
 describe('About', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(About, {
+		wrapper = mountComponent(About<% if (i18n) { %>, {
 			mocks: {
 				$t: (key: string) => {
 					return key === 'views.about.links' ? links : key;
 				}
 			}
-		});
+		}<% } %>);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

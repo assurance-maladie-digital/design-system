@@ -49,8 +49,8 @@
 		methods: mapActions('notification', ['notify'])
 	})
 	export default class Home extends Vue {
+		/* istanbul ignore next */
 		sendNotification() {
-			/* istanbul ignore next */
 			this.notify({
 				type: 'success',
 				message: 'Exemple de notification',

@@ -22,13 +22,13 @@ const links = [
 describe('HeaderMenu', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(HeaderMenu, {
+		wrapper = mountComponent(HeaderMenu<% if (i18n) { %>, {
 			mocks: {
 				$t: (key: string) => {
 					return key === 'components.layout.headerMenu.links' ? links : key;
 				}
 			}
-		});
+		}<% } %>);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
