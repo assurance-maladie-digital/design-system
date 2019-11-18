@@ -14,7 +14,7 @@
 		"email": "me@deraw.dev"
 	},
 	"dependencies": {
-		"@cnamts/cli-helpers": "^2.0.0-alpha.39",
+		"@cnamts/cli-helpers": "^2.0.0-alpha.40",
 		"dayjs": "^1.8.16",
 		"fs-extra": "^8.1.0",
 		"superb": "^4.0.0"

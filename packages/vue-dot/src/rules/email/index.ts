@@ -1,9 +1,6 @@
 import ruleMessage from '../../helpers/ruleMessage';
-import { ErrorMessages } from '../types';
 
-const defaultErrorMessages: ErrorMessages = {
-	default: 'L\'email saisi est invalide'
-};
+import { defaultErrorMessages } from './locales';
 
 /** Check that the email is valid */
 export function email(errorMessages = defaultErrorMessages) {

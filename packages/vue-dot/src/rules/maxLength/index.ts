@@ -1,9 +1,6 @@
 import ruleMessage from '../../helpers/ruleMessage';
-import { ErrorMessages } from '../types';
 
-const defaultErrorMessages: ErrorMessages<number> = {
-	default: (max: number) => `La longueur maximale du champ est ${max} caractères`
-};
+import { defaultErrorMessages } from './locales';
 
 /** Check that the field does not exceeds the max length */
 export function maxLength(max: number, errorMessages = defaultErrorMessages) {
