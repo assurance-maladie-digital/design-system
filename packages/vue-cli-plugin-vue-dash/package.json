@@ -1,0 +1,22 @@
+{
+	"name": "vue-cli-plugin-vue-dash",
+	"version": "2.0.0-alpha.41",
+	"description": "Vue CLI plugin to scaffold front-end projects",
+	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+	"license": "MIT",
+	"author": {
+		"name": "Dylan Broussard",
+		"email": "me@deraw.dev"
+	},
+	"main": "index.js",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
+	"dependencies": {
+		"@cnamts/cli-helpers": "^2.0.0-alpha.40",
+		"dayjs": "^1.8.16",
+		"fs-extra": "^8.1.0",
+		"superb": "^4.0.0"
+	}
+}

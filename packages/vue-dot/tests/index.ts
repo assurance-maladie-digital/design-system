@@ -10,7 +10,7 @@ import {
 	ShallowMountOptions
 } from '@vue/test-utils';
 
-// Create localVue with the default plugins
+// Create localVue
 const localVue = createLocalVue();
 
 // Add Vuetify

@@ -36,18 +36,18 @@ The goal of our Design System is to unify our work, which allows teams to share 
   <tbody>
     <tr>
       <td>
-        <a href="/packages/vue-dash">Vue Dash</a>
-      </td>
-      <td>
-       CLI tool to create and manage front-end projects
-      </td>
-    </tr>
-    <tr>
-      <td>
         <a href="/packages/vue-dot">Vue Dot</a>
       </td>
       <td>
        Our component library
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/packages/vue-cli-plugin-vue-dash">Vue CLI plugin Vue Dash</a>
+      </td>
+      <td>
+       Vue CLI plugin to scaffold front-end projects
       </td>
     </tr>
     <tr>

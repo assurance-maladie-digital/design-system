@@ -1,8 +1,8 @@
 import * as fs from 'fs-extra';
 import { appendFileSync } from 'fs';
 
-import { info, done, log } from '@cnamts/cli-helpers';
-import { getPath, execOpts, writeToBeginning } from './utils';
+import { info, done, log, getPath } from '@cnamts/cli-helpers';
+import { execOpts, writeToBeginning } from './utils';
 
 import { execSync } from 'child_process';
 
