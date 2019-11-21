@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.0.0-alpha.41",
+	"version": "2.0.0-alpha.42",
 	"description": "Official CNAM component library",
 	"keywords": [
 		"cnam",
@@ -47,7 +47,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.6.4",
 		"@babel/preset-env": "^7.6.3",
-		"@cnamts/cli-helpers": "^2.0.0-alpha.40",
+		"@cnamts/cli-helpers": "^2.0.0-alpha.42",
 		"@mdi/js": "^4.5.95",
 		"@types/fs-extra": "^8.0.1",
 		"@types/jest": "^24.0.19",
