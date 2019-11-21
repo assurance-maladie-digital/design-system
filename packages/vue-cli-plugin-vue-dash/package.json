@@ -1,5 +1,5 @@
 {
-	"name": "vue-cli-plugin-vue-dash",
+	"name": "@cnamts/vue-cli-plugin-vue-dash",
 	"version": "2.0.0-alpha.42",
 	"description": "Vue CLI plugin to scaffold front-end projects",
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
