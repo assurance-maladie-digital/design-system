@@ -3,7 +3,7 @@
 		// Always transpile to ES5
 		"target": "es5",
 		"module": "esnext",
-		// Strict Type-Checking
+		// Strict type-Checking
 		"strict": true,
 		// Node.js resolution strategy
 		"moduleResolution": "node",
@@ -18,7 +18,7 @@
 		"experimentalDecorators": true,
 		"sourceMap": true,
 		"baseUrl": ".",
-		// Fixe type conflict between Jest and Cypress
+		// Fix type conflict between Jest and Cypress
 		"skipLibCheck": true,
 		"types": [
 			"node",

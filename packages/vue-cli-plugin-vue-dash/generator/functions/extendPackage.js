@@ -7,17 +7,17 @@ function extendPackage(api, options) {
 		dependencies: {
 			'@cnamts/vue-dot': `^${VueDotVersion}`,
 			'axios': '^0.19.0',
-			'core-js': '^3.3.5',
-			'dayjs': '^1.8.16',
+			'core-js': '^3.4.1',
+			'dayjs': '^1.8.17',
 			'languages': '^0.1.3',
 			'vue-class-component': '^7.1.0',
 			'vue-meta': '^2.3.1',
 			'vue-the-mask': '^0.11.1',
-			'vuetify': '^2.1.9'
+			'vuetify': '^2.1.11'
 		},
 		devDependencies: {
-			'@babel/core': '^7.6.4',
-			'@babel/preset-env': '^7.6.3',
+			'@babel/core': '^7.7.2',
+			'@babel/preset-env': '^7.7.1',
 			'@types/webfontloader': '^1.6.29',
 			'@mdi/js': '^4.5.95',
 			'@typescript-eslint/parser': '^1.13.0',
@@ -25,7 +25,7 @@ function extendPackage(api, options) {
 			'jest': '^24.0.9',
 			'jest-serializer-vue': '^2.0.2',
 			'ts-jest': '^24.1.0',
-			'vue-cli-plugin-vuetify': '^2.0.1',
+			'vue-cli-plugin-vuetify': '^2.0.2',
 			'vuetify-loader': '^1.3.0',
 			'webfontloader': '^1.6.28',
 			'webpack': '^4.41.2'
