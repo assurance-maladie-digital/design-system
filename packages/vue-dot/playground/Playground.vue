@@ -52,6 +52,10 @@
 
 				<FileUploadEx />
 
+				<FormFieldEx />
+
+				<FormBuilderEx />
+
 				<LangBtnEx />
 
 				<NotificationEx />
