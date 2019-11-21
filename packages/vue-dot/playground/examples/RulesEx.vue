@@ -51,6 +51,8 @@
 	import maxLength from '../../src/rules/maxLength';
 	import minLength from '../../src/rules/minLength';
 
+	import { ValidationRule } from '../../src/rules/types';
+
 	@Component
 	export default class RulesEx extends Vue {
 		textFieldRules = [
@@ -59,7 +61,7 @@
 			})
 		];
 
-		textareaRules = [
+		textareaRules: ValidationRule[] = [
 			defaultRequired,
 			minLength(10) // Default error messages
 		];
