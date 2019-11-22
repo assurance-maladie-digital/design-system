@@ -8,8 +8,10 @@
 			"es2015",
 			"scripthost"
 		],
-		// Dist folder
-		"outDir": "bin"
+		"types": [
+			"jest",
+			"figlet"
+		]
 	},
 	"include": [
 		"**/*.ts"

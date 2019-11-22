@@ -25,7 +25,7 @@
 	],
 	"main": "./bin/index.js",
 	"scripts": {
-		"build": "ts-node --project tsconfig.json --files build.ts"
+		"build": "ts-node --project tsconfig.json --files ./scripts/build.ts"
 	},
 	"dependencies": {
 		"figlet": "^1.2.4",
