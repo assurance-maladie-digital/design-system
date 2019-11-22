@@ -34,6 +34,7 @@
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
 		"test": "vue-cli-service test:unit",
+		"test:unit:gui": "majestic",
 		"generate:tokens": "ts-node --project tsconfig.json --files scripts/generateTokens.ts"
 	},
 	"peerDependencies": {
@@ -73,6 +74,7 @@
 		"json-to-scss": "^1.4.0",
 		"languages": "^0.1.3",
 		"lint-staged": "^9.4.2",
+		"majestic": "^1.6.1",
 		"sass": "^1.23.0",
 		"sass-loader": "^8.0.0",
 		"typescript": "~3.5.3",
@@ -104,6 +106,12 @@
 		"*.{ts,vue,js}": [
 			"vue-cli-service lint",
 			"git add"
+		]
+	},
+	"majestic": {
+		"jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js",
+		"args": [
+			"test:unit"
 		]
 	},
 	"gitHead": "f05d735be9b01718e145d32e50fd46ea4259c04d"
