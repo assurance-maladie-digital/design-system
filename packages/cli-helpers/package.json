@@ -25,14 +25,19 @@
 	],
 	"main": "./bin/index.js",
 	"scripts": {
-		"build": "ts-node --project tsconfig.json --files ./scripts/build.ts"
+		"build": "ts-node --project tsconfig.json --files ./scripts/build.ts",
+		"test": "jest"
 	},
 	"dependencies": {
 		"figlet": "^1.2.4",
 		"typescript": "~3.5.3"
 	},
 	"devDependencies": {
-		"@types/figlet": "^1.2.0"
+		"@types/figlet": "^1.2.0",
+		"@types/jest": "^24.0.23",
+		"jest": "^24.9.0",
+		"jest-mock-process": "^1.2.0",
+		"ts-jest": "^24.2.0",
 	},
 	"publishConfig": {
 		"access": "public"

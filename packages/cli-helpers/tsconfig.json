@@ -11,7 +11,12 @@
 		"types": [
 			"jest",
 			"figlet"
-		]
+		],
+		"paths": {
+			"@/*": [
+				"src/*"
+			]
+		}
 	},
 	"include": [
 		"**/*.ts"
