@@ -77,7 +77,9 @@ module.exports = {
 		'object-curly-spacing': ['error', 'always'],
 
 		// Disable multi spaces
-		'no-multi-spaces': ['error']
+		'no-multi-spaces': ['error'],
+
+		'no-prototype-builtins': 'off'
 	},
 	overrides: [
 		{
