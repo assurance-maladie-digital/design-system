@@ -9,7 +9,7 @@
 		"vue-cli",
 		"component-library"
 	],
-	"homepage": "https://github.com/assurance-maladie-digital/design-system/blob/master/packages/vue-dot/README.md",
+	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
 		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
 		"email": "me@deraw.dev"
@@ -106,5 +106,8 @@
 			"git add"
 		]
 	},
-	"gitHead": "f05d735be9b01718e145d32e50fd46ea4259c04d"
+	"publishConfig": {
+		"access": "public"
+	},
+	"gitHead": "12f20cd67e2336f2d9990f32e0dfc931a089c707"
 }
