@@ -4,7 +4,7 @@ import WebFontLoader from 'webfontloader';
 WebFontLoader.load({
 	google: {
 		families: [
-			'Open Sans:100,300,400,500,700,900&display=swap',
+			'Open Sans:100,300,400,500,700,900&display=swap'
 		]
 	}
 });
