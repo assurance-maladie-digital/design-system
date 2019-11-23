@@ -51,16 +51,16 @@ import { getPath } from '@cnamts/cli-helpers';
 const myPath = getPath('./file'); // Equivalent to path.join(process.cwd(), './file)
 ```
 
-### line
+### traceLine
 
 Trace a straight line across the terminal using box-drawing character `─`, by default it uses the `primary` color from [colors](./colors.ts), but you can change it.
 
 ```ts
-import { line } from '@cnamts/cli-helpers';
+import { traceLine } from '@cnamts/cli-helpers';
 
-line(); // Example: ───────────────────────
+traceLine(); // Example: ───────────────────────
 
-line('#eee') // With custom color
+traceLine('#eee') // With custom color
 ```
 
 ### logger
@@ -93,3 +93,8 @@ renderHeader('Package', 'Someone', '1.0.0');
 ```
 
 ![Result of renderHeader function in terminal](https://user-images.githubusercontent.com/10298932/69446366-851e7080-0d54-11ea-8c33-beb7e7e30c36.png)
+
+## Contributing
+
+Feel free to open an issue or a pull request to improve this package!
+Just make sure to respect the code style by running `yarn lint` and to update the tests and check the coverage with `yarn test`.
