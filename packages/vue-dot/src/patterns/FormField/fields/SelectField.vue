@@ -1,10 +1,10 @@
 <template>
 	<FormFieldCtn v-bind="$props">
 		<template #content="{ emitChangeEvent }">
-			<VTextField
+			<VSelect
 				v-model="field.value"
-				v-mask="field.mask"
 				:label="field.label"
+				:items="field.items"
 				@change="emitChangeEvent(field)"
 			/>
 		</template>
@@ -25,5 +25,5 @@
 	});
 
 	@Component
-	export default class NumberField extends Props {}
+	export default class SelectField extends Props {}
 </script>

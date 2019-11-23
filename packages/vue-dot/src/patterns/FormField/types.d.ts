@@ -22,6 +22,6 @@ export interface Form {
 	[key: string]: Field;
 }
 
-interface ComponentMap {
+export interface ComponentMap {
 	[key: string]: string;
 }

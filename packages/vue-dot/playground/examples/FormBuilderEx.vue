@@ -2,6 +2,7 @@
 	<DocSection title="FormBuilder">
 		<FormBuilder
 			v-model="form"
+			:layout="formLayout"
 		/>
 	</DocSection>
 </template>
@@ -19,16 +20,16 @@
 				mask: '#####',
 				label: 'Numéro de voie'
 			},
-			// streetNumberComplement: {
-			// 	type: 'select',
-			// 	value: null,
-			// 	items: [
-			// 		'bis',
-			// 		'ter',
-			// 		'quater'
-			// 	],
-			// 	label: 'Complément de voie'
-			// },
+			streetNumberComplement: {
+				type: 'select',
+				value: null,
+				items: [
+					'bis',
+					'ter',
+					'quater'
+				],
+				label: 'Complément de voie'
+			},
 			// streetType: {
 			// 	type: 'autocomplete',
 			// 	rules: [{
@@ -74,5 +75,29 @@
 				label: 'Ville'
 			}
 		};
+
+		formLayout = [
+			{
+				type: 'twoColumns',
+				fields: [
+					'streetNumber',
+					'streetNumberComplement'
+				]
+			},
+			{
+				type: 'oneColumn',
+				fields: [
+					'streetLabel'
+				]
+			}
+		];
+
+		formAutoLayout = [
+			{
+				type: 'address',
+				fields: null,
+				auto: true
+			}
+		];
 	}
 </script>

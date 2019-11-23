@@ -17,8 +17,6 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import FormFieldCtn from '../../FormFieldCtn';
-
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -30,11 +28,7 @@
 		}
 	});
 
-	@Component({
-		components: {
-			FormFieldCtn
-		}
-	})
+	@Component
 	export default class PasswordField extends Props {
 		// Icons
 		eyeIcon = mdiEye;

@@ -14,6 +14,7 @@
 	// Fields
 	import PasswordField from './fields/PasswordField.vue';
 	import NumberField from './fields/NumberField.vue';
+	import SelectField from './fields/SelectField.vue';
 	import TextField from './fields/TextField.vue';
 
 	const Props = Vue.extend({
@@ -33,6 +34,7 @@
 		components: {
 			PasswordField,
 			NumberField,
+			SelectField,
 			TextField
 		}
 	})
@@ -40,6 +42,7 @@
 		componentMap: ComponentMap = {
 			number: 'NumberField',
 			password: 'PasswordField',
+			select: 'SelectField',
 			string: 'TextField'
 		};
 

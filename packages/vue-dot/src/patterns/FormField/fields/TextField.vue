@@ -14,8 +14,6 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import FormFieldCtn from '../../FormFieldCtn';
-
 	const Props = Vue.extend({
 		props: {
 			field: {
@@ -25,10 +23,6 @@
 		}
 	});
 
-	@Component({
-		components: {
-			FormFieldCtn
-		}
-	})
+	@Component
 	export default class TextField extends Props {}
 </script>

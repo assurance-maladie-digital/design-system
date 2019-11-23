@@ -5,7 +5,8 @@
 		"baseUrl": ".",
 		"types": [
 			"node",
-			"jest"
+			"jest",
+			"lodash.clonedeep"
 		],
 		"paths": {
 			"@/tests/*": [
