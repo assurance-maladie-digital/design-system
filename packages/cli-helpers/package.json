@@ -19,11 +19,11 @@
 		"email": "me@deraw.dev"
 	},
 	"files": [
-		"bin/*",
+		"dist/*",
 		"*.ts",
 		"*.js"
 	],
-	"main": "./bin/index.js",
+	"main": "./dist/index.js",
 	"scripts": {
 		"build": "ts-node --project tsconfig.json --files ./scripts/build.ts",
 		"lint": "eslint **/*.ts --fix",

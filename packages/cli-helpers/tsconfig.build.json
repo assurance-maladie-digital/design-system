@@ -2,9 +2,10 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		// Dist folder
-		"outDir": "bin"
+		"outDir": "dist"
 	},
 	"exclude": [
-		"scripts"
+		"scripts",
+		"tests"
 	]
 }

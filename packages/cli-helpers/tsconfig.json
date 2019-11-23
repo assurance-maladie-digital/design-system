@@ -9,6 +9,7 @@
 			"scripthost"
 		],
 		"types": [
+			"node",
 			"jest",
 			"figlet"
 		],
