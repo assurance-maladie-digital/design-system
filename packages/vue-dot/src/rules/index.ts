@@ -6,6 +6,8 @@ import notAfterToday, { notAfterToday as notAfterTodayFn } from './notAfterToday
 import notBeforeToday, { notBeforeToday as notBeforeTodayFn } from './notBeforeToday';
 import required, { required as requiredFn } from './required';
 
+import { ValidationRules } from './types';
+
 // Export all rules function
 export const rulesFunctions = {
 	email: emailFn,

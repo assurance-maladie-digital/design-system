@@ -19,10 +19,10 @@ module.exports = {
 
 		// Disallow spaces around equal in HTML attributes
 		// eg. attr= "value" is invalid
-		'vue/no-spaces-around-equal-signs-in-attribute': true,
+		'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
 
 		// 1 empty line maximum
-		'no-multiple-empty-lines': ['error', { max: 1 }],
+		'no-multiple-empty-lines': ['error', { 'max': 1 }],
 
 		// Force semi
 		'semi': ['error', 'always'],
@@ -77,7 +77,9 @@ module.exports = {
 		'object-curly-spacing': ['error', 'always'],
 
 		// Disable multi spaces
-		'no-multi-spaces': ['error']
+		'no-multi-spaces': ['error'],
+
+		'no-prototype-builtins': 'off'
 	},
 	overrides: [
 		{
@@ -86,6 +88,14 @@ module.exports = {
 				'vue/script-indent': 'off',
 				'indent': ['error', 'tab'],
 				'semi': 'off'
+			}
+		},
+		{
+			files: ['*.vue'],
+			rules: {
+				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
+				// does not work with type definitions
+				'no-unused-vars': 'off'
 			}
 		}
 	],

@@ -20,7 +20,7 @@ module.exports = {
 
 		// Disallow spaces around equal in HTML attributes
 		// eg. attr= "value" is invalid
-		'vue/no-spaces-around-equal-signs-in-attribute': true,
+		'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
 
 		// Force semi-colons
 		'semi': 'off',
@@ -37,7 +37,7 @@ module.exports = {
 		}],
 
 		// Maximum 1 empty line
-		'no-multiple-empty-lines': ['error', { max: 1 }],
+		'no-multiple-empty-lines': ['error', { 'max': 1 }],
 
 		// Remove trailing coma
 		'comma-dangle': ['error', 'never'],
@@ -68,7 +68,7 @@ module.exports = {
 		'brace-style': ['error', '1tbs'],
 
 		// Allow v-html
-		'vue/no-v-html': false,
+		'vue/no-v-html': ['off'],
 
 		// Limit .vue files to 330 lines
 		'max-lines': ['error', {
@@ -82,10 +82,22 @@ module.exports = {
 		// Force arrow functions
 		'prefer-arrow-callback': 'error',
 
+		'no-prototype-builtins': 'off',
+
 		// JSDOC: Don't force all params & return
 		'jsdoc/require-param': 0,
 		'jsdoc/require-returns': 0
 	},
+	overrides: [
+		{
+			files: ['*.vue'],
+			rules: {
+				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
+				// does not work with type definitions
+				'no-unused-vars': 'off'
+			}
+		}
+	],
 	parserOptions: {
 		parser: '@typescript-eslint/parser'
 	},

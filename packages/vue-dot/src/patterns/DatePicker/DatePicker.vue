@@ -5,6 +5,7 @@
 		v-model="menu"
 		v-bind="options.menu"
 	>
+		<!-- eslint-disable-next-line vue/no-unused-vars -->
 		<template #activator="{ on }">
 			<!-- TextField to enter date by hand -->
 			<VTextField

@@ -19,6 +19,8 @@ const Props = Vue.extend({
  */
 @Component
 export default class WarningRules extends Props {
+	warningRules!: ValidationRule[];
+
 	/**
 	 * The messages from warningRules.
 	 * Not used if already passed as a prop*
@@ -33,7 +35,7 @@ export default class WarningRules extends Props {
 		// Reset messages
 		this.successMessages = [];
 
-		this.warningRules.forEach((rule: ValidationRule) => {
+		this.warningRules.forEach((rule) => {
 			/** The result of the validation rule */
 			const result = rule(value);
 
