@@ -2,10 +2,13 @@ import ruleMessage from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
-/** Check that the text accept the desired caracters
+/**
+ * Check that the text accept the desired caracters
+ *
  * @param {string[]} accept : array of accepted caracters
+ * @param {string} errorMessages : the default message
  */
-export function contains(
+export function notContains(
 	accept: string[],
 	errorMessages = defaultErrorMessages
 ) {
@@ -25,4 +28,4 @@ export function contains(
 	};
 }
 
-export default contains;
+export default notContains;

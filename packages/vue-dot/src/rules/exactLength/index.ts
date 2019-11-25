@@ -2,7 +2,12 @@ import ruleMessage from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
-/** Check that the field exceeds the exact length */
+/**
+ * Check that the field exceeds the exact length
+ *
+ * @param {number} length : the exact length of the text
+ * @param {string} errorMessages : the default message
+ */
 export function exactLength(length: number, errorMessages = defaultErrorMessages) {
 	// Return the validation function
 	return (value: string) => {

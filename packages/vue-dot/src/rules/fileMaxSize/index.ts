@@ -2,12 +2,17 @@ import ruleMessage from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
-/** Check that the file does not exceeds the max size in byte */
+/**
+ * Check that the file does not exceeds the max size in byte
+ *
+ * @param {number} max : the max size in byte
+ * @param {string} errorMessages : the default message
+ */
 export function fileMaxSize(max: number, errorMessages = defaultErrorMessages) {
 	// Return the validation function
-	return (value: File) => {
+	return (value: File | undefined) => {
 		// If the value is empty, return true (valid)
-		if (!value || (Array.isArray(value) && !value.length)) {
+		if (!value) {
 			return true;
 		}
 

@@ -20,6 +20,12 @@ describe('exactLength', () => {
 		expect(rule('01')).toBe(true);
 	});
 
+	it('returns true if the value is empty', () => {
+		const rule = exactLength(2);
+
+		expect(rule('')).toBe(true);
+	});
+
 	it('works with custom error messages', () => {
 		const rule = exactLength(10, {
 			default: 'test 10 caractères'

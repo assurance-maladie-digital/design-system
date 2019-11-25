@@ -10,7 +10,7 @@ describe('contains all', () => {
 
 	it('returns an error when text does not include all', () => {
 		expect(typeof rule('a1\\')).toBe('string');
-		expect(rule('a1\\')).toBe(`Doit contenir => !, \\, 1, a`);
+		expect(rule('a1\\')).toBe('Doit contenir => !, \\, 1, a');
 	});
 
 	it('returns true when text include all', () => {

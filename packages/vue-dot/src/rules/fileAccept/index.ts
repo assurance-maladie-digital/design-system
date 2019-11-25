@@ -3,8 +3,11 @@ import ruleMessage from '../../helpers/ruleMessage';
 import { defaultErrorMessages } from './locales';
 import getFileExtension from '../../functions/getFileExtension';
 
-/** Check that the file accept the desired files extension(s) or all if empty
+/**
+ * Check that the file accept the desired files extension(s) or all if empty
+ *
  * @param {string[]} accept : array of accepted files extensions
+ * @param {string[]} errorMessages : the default message
  */
 export function fileAccept(
 	accept: string[],

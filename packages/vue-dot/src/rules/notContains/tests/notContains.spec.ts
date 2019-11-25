@@ -11,7 +11,7 @@ describe('not contains some', () => {
 
 	it('returns an error when text does include some', () => {
 		expect(typeof rule(text)).toBe('string');
-		expect(rule(text)).toBe(`Ne doit pas contenir => !, \\, 1, a`);
+		expect(rule(text)).toBe('Ne doit pas contenir => !, \\, 1, a');
 	});
 
 	it('returns true when text not include some', () => {

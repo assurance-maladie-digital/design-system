@@ -24,7 +24,6 @@ describe('fileAccept', () => {
 		expect(rule(file)).toBe(true);
 	});
 
-
 	it('works with custom error messages', () => {
 		const rule = fileAccept(['.csv'], {
 			default: 'test custom error message'

@@ -13,6 +13,10 @@ describe('match the regex', () => {
 		expect(rule('01')).toBe(true);
 	});
 
+	it('returns true  the value is empty', () => {
+		expect(rule('')).toBe(true);
+	});
+
 	it('works with custom error messages', () => {
 		const rule2 = match(/[0-9]+/, {
 			default: 'test custom bad regex'
