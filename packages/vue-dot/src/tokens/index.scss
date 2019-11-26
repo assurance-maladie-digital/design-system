@@ -9,7 +9,8 @@ $vd-tokens: (
 		error: #b00000,
 		warning: #ba8b00,
 		pro: #ef6c00
-	)
+	),
+	page-width: 1184px
 );
 
 $vd-colors: map-get($vd-tokens, colors);
@@ -21,3 +22,5 @@ $vd-success: map-get($vd-colors, success);
 $vd-error: map-get($vd-colors, error);
 $vd-warning: map-get($vd-colors, warning);
 $vd-pro: map-get($vd-colors, pro);
+
+$vd-page-width: map-get($vd-tokens, page-width);
