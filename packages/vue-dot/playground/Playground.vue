@@ -25,13 +25,7 @@
 		</VAppBar>
 
 		<VContent>
-			<VLayout
-				column
-				tag="main"
-				align-start
-				class="main elevation-3 px-8 py-6"
-				:class="dark ? 'grey darken-4' : 'white'"
-			>
+			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
 				<h1 class="display-1 mb-12 font-weight-bold">
 					Playground
@@ -61,7 +55,7 @@
 				<RulesEx />
 
 				<UploadWorkflowEx />
-			</VLayout>
+			</PageCard>
 		</VContent>
 
 		<VFooter
@@ -115,20 +109,9 @@
 		get dark() {
 			return this.$vuetify.theme.dark;
 		}
-	}
-</script>
 
-<style lang="scss" scoped>
-	// Main container
-	.main {
-		height: 100%;
-		margin: 50px auto;
-		max-width: 1200px;
-	}
-
-	@media screen and (max-width: 1260px) {
-		.main {
-			margin: 15px;
+		get pageCardClass() {
+			return 'px-8 py-6' + (this.dark ? ' grey darken-4' : ' white');
 		}
 	}
-</style>
+</script>

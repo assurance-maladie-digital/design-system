@@ -8,6 +8,7 @@ const tokens = {
 		// Brand
 		pro: '#ef6c00'
 	},
+	'page-width': '1184px',
 	// json-to-scss config
 	'_jsonToScss': {
 		indentationSize: '1',
