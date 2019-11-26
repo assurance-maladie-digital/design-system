@@ -91,13 +91,5 @@
 				]
 			}
 		];
-
-		formAutoLayout = [
-			{
-				type: 'address',
-				fields: null,
-				auto: true
-			}
-		];
 	}
 </script>

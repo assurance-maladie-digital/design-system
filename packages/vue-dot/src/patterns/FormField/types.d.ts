@@ -13,7 +13,7 @@ export interface Field {
 	// options?: any;
 	// uri?: string;
 	// dynamic?: boolean;
-	// mask?: string;
+	mask?: string;
 	// originalName?: string;
 	// fileKey?: string;
 }

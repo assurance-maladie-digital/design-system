@@ -2,6 +2,7 @@
 	<component
 		:is="getComponent(field.type)"
 		:field="field"
+		@change="field = $event"
 	/>
 </template>
 
@@ -12,6 +13,8 @@
 	import { Field, ComponentMap } from './types';
 
 	// Fields
+	// We import them all because the form
+	// can use any of them
 	import PasswordField from './fields/PasswordField.vue';
 	import NumberField from './fields/NumberField.vue';
 	import SelectField from './fields/SelectField.vue';

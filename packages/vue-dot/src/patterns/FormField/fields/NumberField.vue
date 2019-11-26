@@ -15,15 +15,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	const Props = Vue.extend({
-		props: {
-			field: {
-				type: [Array, Object],
-				required: true
-			}
-		}
-	});
+	import FieldProp from '../mixins/fieldProp';
 
+	/** Form field to enter a number (requires a mask) */
 	@Component
-	export default class NumberField extends Props {}
+	export default class NumberField extends FieldProp {}
 </script>

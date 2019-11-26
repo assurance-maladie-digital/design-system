@@ -15,15 +15,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	const Props = Vue.extend({
-		props: {
-			field: {
-				type: [Array, Object],
-				required: true
-			}
-		}
-	});
+	import FieldProp from '../mixins/fieldProp';
 
+	/** Form field to select a value from a list */
 	@Component
-	export default class SelectField extends Props {}
+	export default class SelectField extends FieldProp {}
 </script>

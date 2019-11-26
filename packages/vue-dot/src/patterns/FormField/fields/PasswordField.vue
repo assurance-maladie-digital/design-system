@@ -17,19 +17,16 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import FieldProp from '../mixins/fieldProp';
+
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
 
-	const Props = Vue.extend({
-		props: {
-			field: {
-				type: [Array, Object],
-				required: true
-			}
-		}
-	});
-
+	/**
+	 * Form field to enter a password.
+	 * Adds a button to show/hide the password
+	 */
 	@Component
-	export default class PasswordField extends Props {
+	export default class PasswordField extends FieldProp {
 		// Icons
 		eyeIcon = mdiEye;
 		eyeOffIcon = mdiEyeOff;

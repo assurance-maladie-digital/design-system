@@ -14,15 +14,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	const Props = Vue.extend({
-		props: {
-			field: {
-				type: [Array, Object],
-				required: true
-			}
-		}
-	});
+	import FieldProp from '../mixins/fieldProp';
 
+	/** Form field to enter text */
 	@Component
-	export default class TextField extends Props {}
+	export default class TextField extends FieldProp {}
 </script>

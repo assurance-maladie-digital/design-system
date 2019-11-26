@@ -5,9 +5,10 @@
 			:key="'layout-' + layoutIndex"
 			:layout="formLayout"
 		>
-			<template #default="{field}">
+			<template #default="{ field }">
 				<FormField
 					:value="field"
+					@change="formUpdated"
 				/>
 			</template>
 		</FormLayout>
@@ -35,46 +36,46 @@
 		}
 	});
 
-	@Component({
+	@Component<FormBuilder>({
 		model: {
 			prop: 'value',
 			event: 'change'
 		},
 		components: {
 			FormLayout
+		},
+		watch: {
+			layout: {
+				handler() {
+					this.computeLayout();
+				},
+				immediate: true
+			}
 		}
 	})
 	export default class FormBuilder extends Props {
 		newLayout = {} as any;
 
-		get form() {
-			return this.value;
+		formUpdated(field: any) {
+			const form = clonedeep(this.value);
+
+			form[field.name].value = field.value;
+
+			this.$emit('change', form);
 		}
 
-		set form(value: any) {
-			this.$emit('change', value);
-		}
-
-		magic() {
-			// console.log(this.form, this.layout);
-
+		computeLayout() {
 			this.newLayout = clonedeep(this.layout);
-			// this.newLayout = this.layout;
 
 			this.layout.forEach((layout: any, index: any) => {
 				layout.fields.forEach((field: any, fieldIndex: any) => {
-					this.newLayout[index].fields[fieldIndex] = this.form[field];
+					this.newLayout[index].fields[fieldIndex] = {
+						...this.value[field]
+					};
+
 					this.newLayout[index].fields[fieldIndex].name = field;
 				});
 			});
-		}
-
-		created() {
-			this.magic();
-		}
-
-		mounted() {
-			this.magic();
 		}
 	}
 </script>

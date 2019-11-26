@@ -3,25 +3,13 @@
 		:is="getLayout(layout.type)"
 		:fields="layout.fields"
 	>
-		<!-- eslint-disable -->
+		<!-- eslint-disable vue/no-unused-vars -->
 		<template
 			v-for="(field, index) in layout.fields"
-			#[slotName(index)]="{ field }"
+			#[getSlotName(index)]
 		>
-			<!-- {{ field }} -->
-			<slot v-bind="{field}" />
+			<slot v-bind="{ field }" />
 		</template>
-		<!-- eslint-enable -->
-
-		<!-- <template
-			v-for="slot in Object.keys($scopedSlots)"
-			#[slot]="scope"
-		>
-			<slot
-				:name="slot"
-				v-bind="scope"
-			/>
-		</template> -->
 	</component>
 </template>
 
@@ -60,19 +48,11 @@
 			twoColumns: 'TwoColumnsLayout'
 		};
 
-		slotName(index: number) {
+		getSlotName(index: number) {
 			const nIndex = index + 1;
-			console.log(`content-${nIndex}`);
+
 			return `content-${nIndex}`;
 		}
-
-		// get layout() {
-		// 	return this.value;
-		// }
-
-		// set field(value: Field) {
-		// 	this.$emit('change', value);
-		// }
 
 		getLayout(layoutName: string) {
 			return this.layoutMap[layoutName];
