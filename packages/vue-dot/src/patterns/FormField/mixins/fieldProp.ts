@@ -20,4 +20,20 @@ const Props = Vue.extend({
 export default class FieldProp extends Props {
 	// Stronger types
 	field!: Field;
+
+	/**
+	 * Update the v-model by emitting 'change' event
+	 * Also emits 'refresh' event if the field is dynamic
+	 */
+	emitChangeEvent(field: Field) {
+		this.$nextTick(() => {
+			this.$parent.$emit('change', field);
+		});
+
+		// // If the field has the `dynamic` property
+		// if (field.dynamic) {
+		// 	// Also emit 'refresh' event
+		// 	this.$emit('refresh');
+		// }
+	}
 }

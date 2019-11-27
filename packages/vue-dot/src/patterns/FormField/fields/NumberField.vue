@@ -1,14 +1,10 @@
 <template>
-	<FormFieldCtn v-bind="$props">
-		<template #content="{ emitChangeEvent }">
-			<VTextField
-				v-model="field.value"
-				v-mask="field.mask"
-				:label="field.label"
-				@change="emitChangeEvent(field)"
-			/>
-		</template>
-	</FormFieldCtn>
+	<VTextField
+		v-model="field.value"
+		v-mask="field.mask"
+		:label="field.label"
+		@change="emitChangeEvent(field)"
+	/>
 </template>
 
 <script lang="ts">

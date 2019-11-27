@@ -1,16 +1,12 @@
 <template>
-	<FormFieldCtn v-bind="$props">
-		<template #content="{ emitChangeEvent }">
-			<VTextField
-				v-model="field.value"
-				:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
-				:type="showEyeIcon ? 'text' : 'password'"
-				:label="field.label"
-				@click:append="showEyeIcon = !showEyeIcon"
-				@change="emitChangeEvent(field)"
-			/>
-		</template>
-	</FormFieldCtn>
+	<VTextField
+		v-model="field.value"
+		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
+		:type="showEyeIcon ? 'text' : 'password'"
+		:label="field.label"
+		@click:append="showEyeIcon = !showEyeIcon"
+		@change="emitChangeEvent(field)"
+	/>
 </template>
 
 <script lang="ts">
