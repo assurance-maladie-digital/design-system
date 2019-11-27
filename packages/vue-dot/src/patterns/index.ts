@@ -5,6 +5,7 @@ import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
 import PaginatedTable from './PaginatedTable';
 import UploadWorkflow from './UploadWorkflow';
+import Header from './Header';
 
 export default {
 	DatePicker,
@@ -13,5 +14,6 @@ export default {
 	LangBtn,
 	NotificationBar,
 	PaginatedTable,
-	UploadWorkflow
+	UploadWorkflow,
+	Header
 };

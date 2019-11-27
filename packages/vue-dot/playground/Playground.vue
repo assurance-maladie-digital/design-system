@@ -24,6 +24,15 @@
 			</VBtn>
 		</VAppBar>
 
+		<Header
+			class="mt-12"
+			title="Titre"
+			firstname="Baptiste"
+			lastname="Coulon"
+			:logged-in="true"
+			:actions-list="['text', 'text']"
+			info="administrateur"
+		/>
 		<VContent>
 			<VLayout
 				column
