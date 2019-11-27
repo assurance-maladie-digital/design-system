@@ -2,6 +2,7 @@
 	<DocSection title="FormField">
 		<FormField
 			v-model="field"
+			class="pa-0"
 		/>
 	</DocSection>
 </template>

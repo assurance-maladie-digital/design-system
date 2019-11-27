@@ -2,6 +2,7 @@
 	<component
 		:is="getLayout(layout.type)"
 		:fields="layout.fields"
+		class="vd-form-layout"
 	>
 		<!-- eslint-disable vue/no-unused-vars -->
 		<template
@@ -22,6 +23,8 @@
 	// Layouts
 	import OneColumnLayout from './layouts/OneColumnLayout.vue';
 	import TwoColumnsLayout from './layouts/TwoColumnsLayout.vue';
+	import LayoutM from './layouts/LayoutM.vue';
+	import LayoutMM from './layouts/LayoutMM.vue';
 
 	const Props = Vue.extend({
 		props: {
@@ -39,13 +42,17 @@
 		},
 		components: {
 			OneColumnLayout,
-			TwoColumnsLayout
+			TwoColumnsLayout,
+			LayoutM,
+			LayoutMM
 		}
 	})
 	export default class FormLayout extends Props {
 		layoutMap: LayoutMap = {
 			oneColumn: 'OneColumnLayout',
-			twoColumns: 'TwoColumnsLayout'
+			twoColumns: 'TwoColumnsLayout',
+			m: 'LayoutM',
+			mm: 'LayoutMM'
 		};
 
 		getSlotName(index: number) {
@@ -59,3 +66,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-form-layout + .vd-form-layout {
+		margin-top: 16px !important;
+	}
+</style>

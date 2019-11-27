@@ -13,7 +13,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import FieldProp from '../mixins/fieldProp';
+	import FieldComponent from '../mixins/fieldComponent';
 
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
 
@@ -22,7 +22,7 @@
 	 * Adds a button to show/hide the password
 	 */
 	@Component
-	export default class PasswordField extends FieldProp {
+	export default class PasswordField extends FieldComponent {
 		// Icons
 		eyeIcon = mdiEye;
 		eyeOffIcon = mdiEyeOff;

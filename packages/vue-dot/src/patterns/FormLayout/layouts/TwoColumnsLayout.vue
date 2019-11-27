@@ -1,5 +1,8 @@
 <template>
-	<VLayout wrap>
+	<VLayout
+		wrap
+		class="ma-n4 no-max-width"
+	>
 		<slot
 			name="content-1"
 			v-bind="{ field: fields[0] }"
@@ -28,3 +31,9 @@
 	@Component
 	export default class TwoColumnsLayout extends Props {}
 </script>
+
+<style lang="scss" scoped>
+	.no-max-width {
+		max-width: none;
+	}
+</style>

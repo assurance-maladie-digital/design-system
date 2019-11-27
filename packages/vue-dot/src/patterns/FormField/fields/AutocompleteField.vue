@@ -1,8 +1,8 @@
 <template>
-	<VSelect
+	<VAutocomplete
 		v-model="field.value"
-		:label="field.label"
 		:items="field.items"
+		:label="field.label"
 		@change="emitChangeEvent(field)"
 	/>
 </template>
@@ -13,7 +13,7 @@
 
 	import FieldComponent from '../mixins/fieldComponent';
 
-	/** Form field to select a value from a list */
+	/** Form field to select a value with autocomplete */
 	@Component
-	export default class SelectField extends FieldComponent {}
+	export default class AutocompleteField extends FieldComponent {}
 </script>

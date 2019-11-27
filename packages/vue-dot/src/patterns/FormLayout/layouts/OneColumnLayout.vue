@@ -1,5 +1,5 @@
 <template>
-	<VLayout>
+	<VLayout class="ma-n4">
 		<slot
 			name="content-1"
 			v-bind="{ field: fields[0] }"
@@ -23,3 +23,9 @@
 	@Component
 	export default class OneColumnLayout extends Props {}
 </script>
+
+<style lang="scss" scoped>
+	.no-max-width {
+		max-width: none;
+	}
+</style>

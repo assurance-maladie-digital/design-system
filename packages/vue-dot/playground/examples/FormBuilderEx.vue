@@ -30,20 +30,20 @@
 				],
 				label: 'Complément de voie'
 			},
-			// streetType: {
-			// 	type: 'autocomplete',
-			// 	rules: [{
-			// 		name: 'required'
-			// 	}],
-			// 	value: null,
-			// 	items: [
-			// 		'Allée',
-			// 		'Avenue',
-			// 		'Boulevard',
-			// 		'Aucun'
-			// 	],
-			// 	label: 'Type de voie'
-			// },
+			streetType: {
+				type: 'autocomplete',
+				rules: [{
+					name: 'required'
+				}],
+				value: null,
+				items: [
+					'Allée',
+					'Avenue',
+					'Boulevard',
+					'Aucun'
+				],
+				label: 'Type de voie'
+			},
 			streetLabel: {
 				type: 'string',
 				rules: [{
@@ -78,16 +78,29 @@
 
 		formLayout = [
 			{
-				type: 'twoColumns',
+				type: 'mm',
 				fields: [
 					'streetNumber',
 					'streetNumberComplement'
 				]
 			},
 			{
-				type: 'oneColumn',
+				type: 'm',
+				fields: ['streetType']
+			},
+			{
+				type: 'm',
+				fields: ['streetLabel']
+			},
+			{
+				type: 'm',
+				fields: ['streetComplement']
+			},
+			{
+				type: 'mm',
 				fields: [
-					'streetLabel'
+					'postalCode',
+					'city'
 				]
 			}
 		];

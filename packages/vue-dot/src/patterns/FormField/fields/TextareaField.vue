@@ -1,8 +1,7 @@
 <template>
-	<VSelect
+	<VTextarea
 		v-model="field.value"
 		:label="field.label"
-		:items="field.items"
 		@change="emitChangeEvent(field)"
 	/>
 </template>
@@ -13,7 +12,7 @@
 
 	import FieldComponent from '../mixins/fieldComponent';
 
-	/** Form field to select a value from a list */
+	/** Form field to enter a long text */
 	@Component
-	export default class SelectField extends FieldComponent {}
+	export default class TextareaField extends FieldComponent {}
 </script>

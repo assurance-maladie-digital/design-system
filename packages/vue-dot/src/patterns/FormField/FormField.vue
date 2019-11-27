@@ -1,24 +1,18 @@
 <template>
 	<component
-		:is="getComponent(field.type)"
-		:field="field"
-		@change="field = $event"
+		:is="getField(field.type)"
+		v-model="field"
+		class="vd-form-field"
 	/>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
-	import { Field, ComponentMap } from './types';
+	import { Field } from './types';
 
-	// Fields
-	// We import them all because the form
-	// can use any of them
-	import PasswordField from './fields/PasswordField.vue';
-	import NumberField from './fields/NumberField.vue';
-	import SelectField from './fields/SelectField.vue';
-	import TextField from './fields/TextField.vue';
+	import FieldMap from './mixins/fieldMap';
 
 	const Props = Vue.extend({
 		props: {
@@ -33,22 +27,9 @@
 		model: {
 			prop: 'value',
 			event: 'change'
-		},
-		components: {
-			PasswordField,
-			NumberField,
-			SelectField,
-			TextField
 		}
 	})
-	export default class FormField extends Props {
-		componentMap: ComponentMap = {
-			number: 'NumberField',
-			password: 'PasswordField',
-			select: 'SelectField',
-			string: 'TextField'
-		};
-
+	export default class FormField extends mixins(Props, FieldMap) {
 		get field() {
 			return this.value;
 		}
@@ -56,9 +37,11 @@
 		set field(value: Field) {
 			this.$emit('change', value);
 		}
-
-		getComponent(fieldName: string) {
-			return this.componentMap[fieldName];
-		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-form-field {
+		padding: 16px;
+	}
+</style>

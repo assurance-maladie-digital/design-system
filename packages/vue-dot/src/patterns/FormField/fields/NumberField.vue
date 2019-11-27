@@ -11,9 +11,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import FieldProp from '../mixins/fieldProp';
+	import FieldComponent from '../mixins/fieldComponent';
 
 	/** Form field to enter a number (requires a mask) */
 	@Component
-	export default class NumberField extends FieldProp {}
+	export default class NumberField extends FieldComponent {}
 </script>

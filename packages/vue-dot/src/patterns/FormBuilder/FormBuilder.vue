@@ -61,7 +61,9 @@
 
 			form[field.name].value = field.value;
 
-			this.$emit('change', form);
+			this.$nextTick(() => {
+				this.$emit('change', form);
+			});
 		}
 
 		computeLayout() {
