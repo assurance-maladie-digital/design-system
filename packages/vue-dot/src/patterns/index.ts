@@ -6,6 +6,7 @@ import FormField from './FormField';
 import FormFieldCtn from './FormFieldCtn';
 import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
+import PageCard from './PageCard';
 import PaginatedTable from './PaginatedTable';
 import UploadWorkflow from './UploadWorkflow';
 
@@ -18,6 +19,7 @@ export default {
 	FormFieldCtn,
 	LangBtn,
 	NotificationBar,
+	PageCard,
 	PaginatedTable,
 	UploadWorkflow
 };

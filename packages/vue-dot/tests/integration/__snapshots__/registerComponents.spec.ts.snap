@@ -10,6 +10,7 @@ Array [
   "FileUpload",
   "LangBtn",
   "NotificationBar",
+  "PageCard",
   "PaginatedTable",
   "UploadWorkflow",
 ]

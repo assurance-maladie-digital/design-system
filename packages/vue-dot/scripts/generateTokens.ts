@@ -48,12 +48,19 @@ const linesToAppend: string[] = [];
 // Generate default SCSS exports to avoid using deep-get
 tokenArray.forEach((tokenName) => {
 	// eg. $vd-colors: map-get($vd-tokens, colors);
-	const line = `\n$vd-${tokenName}: map-get($vd-tokens, ${tokenName});\n\n`;
+	const line = `\n$vd-${tokenName}: map-get($vd-tokens, ${tokenName});\n`;
 
 	linesToAppend.push(line);
 
 	// Generate var for each value
 	const tokenContent = tokens[tokenName];
+
+	if (typeof tokenContent !== 'object') {
+		return;
+	}
+
+	linesToAppend.push('\n');
+
 	const tokenContentArray = Object.keys(tokenContent);
 
 	tokenContentArray.forEach((key) => {

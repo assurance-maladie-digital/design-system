@@ -1,8 +1,11 @@
 <template>
-	<VLayout class="page">
+	<VLayout
+		class="vd-page"
+		v-bind="options.layout"
+	>
 		<VCard
 			v-bind="$attrs"
-			class="page-card"
+			class="vd-page-card"
 			:class="computedClass"
 		>
 			<slot />
@@ -13,6 +16,10 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
+	import config from './config';
+
+	import customizable, { Options } from '../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {
@@ -41,14 +48,21 @@
 	});
 
 	/**
-	 * PageCard is a component that displays a
-	 * VCard with specific parameters
+	 * PageCard is a component that displays
+	 * a VCard with specific parameters
 	 */
 	@Component({
 		// Disable attributes inheritance since we bind them to the VCard
-		inheritAttrs: false
+		inheritAttrs: false,
+		mixins: [
+			// Default configuration
+			customizable(config)
+		]
 	})
 	export default class PageCard extends Props {
+		// Mixin computed data
+		options!: Options;
+
 		/** The CSS classes to apply to the VCard */
 		get computedClass() {
 			return [
@@ -63,23 +77,25 @@
 </script>
 
 <style lang="scss" scoped>
-	$pageWidth: 1184px;
-	$minHeight: 500px;
+	@import '../../tokens';
 
-	.page {
+	$min-height: 500px;
+
+	.vd-page {
 		padding: 48px;
 		align-items: center;
 		flex-direction: column;
+		max-width: 100%;
 	}
 
 	@media only screen and (max-width: 600px) {
-		.page {
+		.vd-page {
 			padding: 15px !important;
 		}
 	}
 
-	.page-card {
-		width: $pageWidth;
+	.vd-page-card {
+		width: $vd-page-width;
 		padding: 16px 24px;
 
 		// Override default shadow to fix it in IE
@@ -94,7 +110,7 @@
 		}
 
 		&.min-height {
-			min-height: $minHeight;
+			min-height: $min-height;
 		}
 	}
 </style>

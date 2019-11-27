@@ -11,6 +11,7 @@ Object {
     "FileUpload",
     "LangBtn",
     "NotificationBar",
+    "PageCard",
     "PaginatedTable",
     "UploadWorkflow",
   ],
