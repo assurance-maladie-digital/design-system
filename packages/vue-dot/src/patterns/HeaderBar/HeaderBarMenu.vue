@@ -120,6 +120,7 @@
 		userIcon = mdiAccount;
 		logoutIcon = mdiExitToApp;
 		locales = locales;
+		width: number = 0;
 
 		get agent() {
 			if (this.firstname && this.lastname) {

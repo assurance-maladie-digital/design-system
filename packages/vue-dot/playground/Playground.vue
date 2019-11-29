@@ -24,9 +24,9 @@
 			</VBtn>
 		</VAppBar>
 
-		<Header
+		<HeaderBar
 			class="mt-12"
-			title="Titre"
+			title="Titre long d'une application"
 			firstname="Baptiste"
 			lastname="Coulon"
 			:logged-in="true"

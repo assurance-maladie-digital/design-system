@@ -1,5 +1,6 @@
 <template>
 	<VAppBar
+		class="headerBar"
 		app
 		:elevation="4"
 		:height="$vuetify.breakpoint.smAndDown ? '40' : '80'"
@@ -18,13 +19,12 @@
 			class="primary"
 		/>
 
-		<h1 class="body-1 ml-4">
+		<v-toolbar-title class="body-1 ml-md-4 ml-1">
 			{{ title }}
-		</h1>
-
+		</v-toolbar-title>
 		<VSpacer />
 
-		<HeaderMenu
+		<HeaderBarMenu
 			:logged-in="loggedIn"
 			:firstname="firstname"
 			:lastname="lastname"
@@ -39,7 +39,7 @@
 	import locales from './locales';
 	import Component from 'vue-class-component';
 
-	import HeaderMenu from './HeaderMenu.vue';
+	import HeaderBarMenu from './HeaderBarMenu.vue';
 
 	import { mapState } from 'vuex';
 
@@ -73,16 +73,20 @@
 	});
 
 	/** The Header of the application */
-	@Component<Header>({
+	@Component<HeaderBar>({
 		components: {
-			HeaderMenu
+			HeaderBarMenu
 		}
 	})
-	export default class Header extends Props {
+	export default class HeaderBar extends Props {
 		locales = locales;
 
 	}
 </script>
 
 <style lang="scss" scoped>
+
+.headerBar ::v-deep .v-toolbar__content {
+	padding: 4px 0px;
+}
 </style>
