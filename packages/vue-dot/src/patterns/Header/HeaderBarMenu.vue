@@ -1,15 +1,20 @@
 <template>
 	<VMenu
+		v-model="menu"
 		content-class="menu-active-el"
 		transition="scale-transition"
 		origin="top center"
 		offset-y
 		left
+		@input="$emit('change', $event)"
 	>
-		<template #activator="{ on }">
+		<template
+			v-if="actionsList.length || loggedIn || !hideUserIcon || accountText"
+			#activator="{ on }"
+		>
 			<VBtn
 				class="menu-el text-none px-4 text-right"
-				:width="$vuetify.breakpoint.smAndDown ? 0 : 360"
+				:width="$vuetify.breakpoint.smAndUp ? null : 360"
 				:height="buttonHeight"
 				:large="!$vuetify.breakpoint.smAndDown"
 				text
@@ -22,7 +27,7 @@
 				>
 					<!-- agent firstname and lastname or account text    -->
 					<div class="subtitle-1">
-						{{ agent || locales.account }}
+						{{ loggedIn ? agent : accountText }}
 					</div>
 					<!-- informations -->
 					<div
@@ -35,7 +40,7 @@
 
 				<!-- icon account when user is logged in -->
 				<VIcon
-					v-if="loggedIn"
+					v-if="!hideUserIcon"
 					size="32px"
 					color="grey darken-1"
 					class="ml-2 pa-1 round-icon"
@@ -45,14 +50,14 @@
 			</VBtn>
 		</template>
 		<VList
-			v-if="loggedIn"
+
 			class="py-0 subtitle-1"
 		>
 			<!-- list of optional actions -->
 			<VListItem
 				v-for="(item, index) in actionsList"
 				:key="index"
-				@click="$emit('action', index)"
+				@click="$emit('click:action', index)"
 			>
 				<VListItemContent>
 					{{ item }}
@@ -60,8 +65,8 @@
 			</VListItem>
 			<!-- logout -->
 			<VListItem
-
-				@click="$emit('logout')"
+				v-if="loggedIn"
+				@click="$emit('click:logout')"
 			>
 				<VIcon
 					color="primary"
@@ -95,6 +100,14 @@
 				type: String,
 				default: null
 			},
+			hideUserIcon: {
+				type: Boolean,
+				default: false
+			},
+			accountText: {
+				type: String,
+				default: locales.account
+			},
 			lastname: {
 				type: String,
 				default: null
@@ -105,7 +118,7 @@
 			},
 			actionsList: {
 				type: [Array, Object],
-				default: null
+				default: () => []
 			}
 		}
 
@@ -121,6 +134,7 @@
 		logoutIcon = mdiExitToApp;
 		locales = locales;
 		width: number = 0;
+		menu = false;
 
 		get agent() {
 			if (this.firstname && this.lastname) {

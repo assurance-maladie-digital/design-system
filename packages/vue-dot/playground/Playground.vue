@@ -24,15 +24,6 @@
 			</VBtn>
 		</VAppBar>
 
-		<HeaderBar
-			class="mt-12"
-			title="Titre long d'une application"
-			firstname="Baptiste"
-			lastname="Coulon"
-			:logged-in="true"
-			:actions-list="['text', 'text']"
-			info="administrateur"
-		/>
 		<VContent>
 			<VLayout
 				column
@@ -47,6 +38,8 @@
 				</h1>
 
 				<!-- Examples -->
+				<HeaderEx />
+
 				<CopyBtnEx />
 
 				<CustomIconEx />

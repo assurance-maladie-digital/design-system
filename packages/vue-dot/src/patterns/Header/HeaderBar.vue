@@ -1,7 +1,7 @@
 <template>
 	<VAppBar
 		class="headerBar"
-		app
+		v-bind="$attrs"
 		:elevation="4"
 		:height="$vuetify.breakpoint.smAndDown ? '40' : '80'"
 	>
@@ -19,18 +19,18 @@
 			class="primary"
 		/>
 
-		<v-toolbar-title class="body-1 ml-md-4 ml-1">
-			{{ title }}
-		</v-toolbar-title>
+		<slot
+			name="logo"
+		>
+			<v-toolbar-title
+				class="body-1 ml-md-4 ml-1"
+			>
+				{{ title }}
+			</v-toolbar-title>
+		</slot>
 		<VSpacer />
 
-		<HeaderBarMenu
-			:logged-in="loggedIn"
-			:firstname="firstname"
-			:lastname="lastname"
-			:info="info"
-			:actions-list="actionsList"
-		/>
+		<slot name="items" />
 	</VAppBar>
 </template>
 
@@ -45,29 +45,13 @@
 
 	const Props = Vue.extend({
 		props: {
+			logo: {
+				type: String || Object,
+				default: null
+			},
 			title: {
 				type: String,
 				required: true
-			},
-			loggedIn: {
-				type: Boolean,
-				default: false
-			},
-			firstname: {
-				type: String,
-				default: null
-			},
-			lastname: {
-				type: String,
-				default: null
-			},
-			info: {
-				type: String,
-				default: null
-			},
-			actionsList: {
-				type: [Array, Object],
-				default: null
 			}
 		}
 	});

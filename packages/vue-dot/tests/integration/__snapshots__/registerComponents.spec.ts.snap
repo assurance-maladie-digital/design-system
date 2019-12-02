@@ -8,6 +8,8 @@ Array [
   "DatePicker",
   "FileList",
   "FileUpload",
+  "HeaderBar",
+  "HeaderBarMenu",
   "LangBtn",
   "NotificationBar",
   "PaginatedTable",

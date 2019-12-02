@@ -12,6 +12,7 @@ import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
 import RulesEx from './RulesEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
+import HeaderEx from './HeaderEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -29,7 +30,8 @@ const components: Components = {
 	NotificationEx,
 	PaginatedTableEx,
 	RulesEx,
-	UploadWorkflowEx
+	UploadWorkflowEx,
+	HeaderEx
 };
 
 /** Globally register all components */
