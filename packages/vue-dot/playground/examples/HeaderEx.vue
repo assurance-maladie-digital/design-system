@@ -8,31 +8,26 @@
 			<!-- titre -->
 			<h5>Titre</h5>
 			<HeaderBar
+				:app="false"
 				title="Titre"
-			>
-				<template #items>
-					<HeaderBarMenu
-						account-text=""
-						:hide-user-icon="true"
-					/>
-				</template>
-			</HeaderBar>
+				account-text=""
+			/>
 			<!-- Titre + Mon compte -->
 			<h5>Titre + Mon compte</h5>
 			<HeaderBar
+				:app="false"
 				title="Titre"
 			>
 				<template #items>
-					<HeaderBarMenu
-						account-text="Mon Compte"
-						:hide-user-icon="true"
-					/>
+					<HeaderBarMenu />
 				</template>
 			</HeaderBar>
 			<!-- logo -->
 			<h5>Logo</h5>
 			<HeaderBar
+				:app="false"
 				title="Titre long d'une application"
+				account-text=""
 			>
 				<template #logo>
 					<img
@@ -40,17 +35,12 @@
 						class="d-block"
 						:height="$vuetify.breakpoint.smAndDown ? '36' : '56'"
 					>
-				</template>
-				<template #items>
-					<HeaderBarMenu
-						account-text=""
-						:hide-user-icon="true"
-					/>
 				</template>
 			</HeaderBar>
 			<!-- logo mon compte -->
 			<h5>Logo + Mon compte</h5>
 			<HeaderBar
+				:app="false"
 				title="Titre long d'une application"
 			>
 				<template #logo>
@@ -59,12 +49,6 @@
 						class="d-block"
 						:height="$vuetify.breakpoint.smAndDown ? '36' : '56'"
 					>
-				</template>
-				<template #items>
-					<HeaderBarMenu
-						account-text="Mon Compte"
-						:hide-user-icon="true"
-					/>
 				</template>
 			</HeaderBar>
 
@@ -73,55 +57,81 @@
 			<!-- Prénom nom -->
 			<h5>Prénom nom</h5>
 			<HeaderBar
+				:app="false"
 				title="Titre"
-			>
-				<template #items>
-					<HeaderBarMenu
-						:hide-user-icon="true"
-						firstname="Baptiste"
-						lastname="Coulon"
-						:logged-in="true"
-					/>
-				</template>
-			</HeaderBar>
+				:hide-user-icon="true"
+				firstname="Baptiste"
+				lastname="Coulon"
+				:logged-in="true"
+			/>
 			<!-- Prénom nom + information supplémentaire -->
 			<h5>Prénom nom + information supplémentaire</h5>
 			<HeaderBar
+				:app="false"
 				title="Titre"
+				:hide-user-icon="true"
+				firstname="Baptiste"
+				lastname="Coulon"
+				:logged-in="true"
+				info="information supplémentaire"
+			/>
+			<!-- Prénom Nom + Avatar  -->
+			<h5>Prénom nom + Avatar</h5>
+			<HeaderBar
+				:app="false"
+				title="Titre"
+				:logged-in="true"
+				firstname="Baptiste"
+				lastname="Coulon"
+			/>
+			<!-- Prénom Nom + Informations supplémentaires + Avatar -->
+			<h5>Prénom Nom + Informations supplémentaires + Avatar </h5>
+			<HeaderBar
+				:app="false"
+				title="Titre"
+				:logged-in="true"
+				info="information supplémentaire"
+				firstname="Baptiste"
+				lastname="Coulon"
+			/>
+
+			<h3>Header avec navigation</h3>
+
+			<h5>Onglets seuls</h5>
+			<HeaderBar
+				:app="false"
+				title="Titre"
+				:navigation-list="['onglet', 'onglet']"
+				:hide-user-icon="true"
+				:logged-in="true"
+				firstname="Baptiste"
+				lastname="Coulon"
+			/>
+
+			<h5>Nom du projet + onglets </h5>
+			<HeaderBar
+				:app="false"
+				title="Titre"
+				:navigation-list="['onglet', 'onglet']"
+				breadcrumb="projet"
+				:hide-user-icon="true"
+				:logged-in="true"
+				firstname="Baptiste"
+				lastname="Coulon"
+			/>
+
+			<h5>Nom sous-projet + onglets </h5>
+			<HeaderBar
+				title="Titre"
+				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5']"
+				breadcrumb="sous projet"
+				back
 			>
 				<template #items>
 					<HeaderBarMenu
 						:hide-user-icon="true"
-						firstname="Baptiste"
-						lastname="Coulon"
 						:logged-in="true"
-						info="information supplémentaire"
-					/>
-				</template>
-			</HeaderBar>
-			<!-- Prénom Nom + Avatar  -->
-			<h5>Prénom nom + Avatar</h5>
-			<HeaderBar
-				title="Titre"
-			>
-				<template #items>
-					<HeaderBarMenu
-						:logged-in="true"
-						firstname="Baptiste"
-						lastname="Coulon"
-					/>
-				</template>
-			</HeaderBar>
-			<!-- Prénom Nom + Informations supplémentaires + Avatar -->
-			<h5>Prénom Nom + Informations supplémentaires + Avatar </h5>
-			<HeaderBar
-				title="Titre"
-			>
-				<template #items>
-					<HeaderBarMenu
-						:logged-in="true"
-						info="information supplémentaire"
-						firstname="Baptiste"
+						firstname="Jean philippe baptiste gezg"
 						lastname="Coulon"
 					/>
 				</template>

@@ -14,24 +14,26 @@
 		>
 			<VBtn
 				class="menu-el text-none px-4 text-right"
-				:width="$vuetify.breakpoint.smAndUp ? null : 360"
 				:height="buttonHeight"
-				:large="!$vuetify.breakpoint.smAndDown"
+				:large="!$vuetify.breakpoint.xs"
 				text
+				@click="$emit('click:menu')"
 				v-on="on"
 			>
 				<VLayout
-					v-if="!$vuetify.breakpoint.smAndDown"
 					tag="span"
 					column
 				>
 					<!-- agent firstname and lastname or account text    -->
-					<div class="subtitle-1">
+					<div
+						v-if="!$vuetify.breakpoint.xs"
+						class="subtitle-1"
+					>
 						{{ loggedIn ? agent : accountText }}
 					</div>
 					<!-- informations -->
 					<div
-						v-if="info"
+						v-if="info || !$vuetify.breakpoint.xs"
 						class="body-2"
 					>
 						{{ info }}
@@ -40,7 +42,7 @@
 
 				<!-- icon account when user is logged in -->
 				<VIcon
-					v-if="!hideUserIcon"
+					v-if="(!hideUserIcon && loggedIn) || ($vuetify.breakpoint.xs && !loggedIn)"
 					size="32px"
 					color="grey darken-1"
 					class="ml-2 pa-1 round-icon"
@@ -50,7 +52,7 @@
 			</VBtn>
 		</template>
 		<VList
-
+			:width="$vuetify.breakpoint.xs ? 360 : null"
 			class="py-0 subtitle-1"
 		>
 			<!-- list of optional actions -->
@@ -144,7 +146,7 @@
 		}
 
 		get buttonHeight() {
-			if (this.$vuetify.breakpoint.smAndDown) {
+			if (this.$vuetify.breakpoint.xs) {
 				return 32;
 			} else {
 				return this.info ? 71 : 55;
