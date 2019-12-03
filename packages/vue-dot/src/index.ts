@@ -1,6 +1,6 @@
 import directives from './directives';
 
-import registerComponents from './registerComponents';
+import registerAllComponents from './registerAllComponents';
 
 // Import global styles
 import './styles/global.scss';
@@ -11,7 +11,7 @@ import { VueDotPlugin } from '../types';
 const VueDot: VueDotPlugin = {
 	install(Vue: VueConstructor, options) {
 		directives(Vue);
-		registerComponents(Vue);
+		registerAllComponents(Vue);
 
 		const theme = options ? options.theme : undefined;
 
