@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import registerComponents from '../../src/registerComponents';
+import registerAllComponents from '../../src/registerAllComponents';
 
 import { getComponents } from './utils';
 
-describe('registerComponents', () => {
+describe('registerAllComponents', () => {
 	it('should register all components', () => {
-		registerComponents(Vue);
+		registerAllComponents(Vue);
 
 		expect(getComponents(Vue)).toMatchSnapshot();
 	});
