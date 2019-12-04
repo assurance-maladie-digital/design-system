@@ -124,18 +124,15 @@
 			<HeaderBar
 				title="Titre"
 				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5']"
+				:actions-list="['test1', 'test2']"
 				breadcrumb="sous projet"
 				back
-			>
-				<template #items>
-					<HeaderBarMenu
-						:hide-user-icon="true"
-						:logged-in="true"
-						firstname="Jean philippe baptiste gezg"
-						lastname="Coulon"
-					/>
-				</template>
-			</HeaderBar>
+				:hide-user-icon="false"
+				:logged-in="true"
+				firstname="Jean philippe baptiste gezg"
+				lastname="Coulon"
+				info="info supp"
+			/>
 		</div>
 	</DocSection>
 </template>

@@ -21,26 +21,30 @@
 				v-on="on"
 			>
 				<VLayout
+					v-if="!$vuetify.breakpoint.xs"
 					tag="span"
 					column
 				>
 					<!-- agent firstname and lastname or account text    -->
 					<div
-						v-if="!$vuetify.breakpoint.xs"
+
 						class="subtitle-1"
 					>
 						{{ loggedIn ? agent : accountText }}
 					</div>
 					<!-- informations -->
 					<div
-						v-if="info || !$vuetify.breakpoint.xs"
+						v-if="info"
 						class="body-2"
 					>
 						{{ info }}
 					</div>
 				</VLayout>
 
-				<!-- icon account when user is logged in -->
+				<!-- icon account
+				when user is logged in and icon not hidden
+				when mobile version and the user is not logged In
+				-->
 				<VIcon
 					v-if="(!hideUserIcon && loggedIn) || ($vuetify.breakpoint.xs && !loggedIn)"
 					size="32px"
@@ -52,7 +56,7 @@
 			</VBtn>
 		</template>
 		<VList
-			:width="$vuetify.breakpoint.xs ? 360 : null"
+			v-if="!$vuetify.breakpoint.xs"
 			class="py-0 subtitle-1"
 		>
 			<!-- list of optional actions -->

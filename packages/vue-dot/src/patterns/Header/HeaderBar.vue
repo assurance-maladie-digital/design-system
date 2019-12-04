@@ -6,6 +6,11 @@
 		:elevation="4"
 		:height="$vuetify.breakpoint.xs ? '40' : '80'"
 	>
+		<VAppBarNavIcon
+			v-if="showNavIcon"
+			@click="showActionList = !showActionList"
+		/>
+
 		<img
 			:alt="locales.logoBtn.alt"
 			src="../../assets/logo.svg"
@@ -32,6 +37,7 @@
 		<VSpacer />
 
 		<HeaderBarMenu
+			v-if="!$vuetify.breakpoint.xs"
 			:account-text="accountText"
 			:logged-in="loggedIn"
 			:info="info"
@@ -42,11 +48,10 @@
 		/>
 
 		<template
-			v-if="navigationList || breadcrumb || search"
 			#extension
-			class="test"
 		>
-			<v-toolbar
+			<VToolbar
+				v-if="navigationList || breadcrumb || search"
 				color="primary"
 				class="px-4"
 				:height="$vuetify.breakpoint.xs ? '36' : '48'"
@@ -76,7 +81,7 @@
 					inset
 					class="white mx-sm-4 mr-2 mb-2"
 				/>
-				<v-select
+				<VSelect
 					v-if="navigationList && $vuetify.breakpoint.xs"
 					v-model="tab"
 					dark
@@ -109,7 +114,7 @@
 						{{ mdiMagnify }}
 					</VIcon>
 				</VBtn>
-			</v-toolbar>
+			</VToolbar>
 		</template>
 	</VAppBar>
 </template>
@@ -118,7 +123,7 @@
 	import Vue from 'vue';
 	import locales from './locales';
 	import Component from 'vue-class-component';
-	import { mdiArrowLeft, mdiMagnify } from '@mdi/js';
+	import { mdiArrowLeft, mdiMagnify, mdiAccount, mdiExitToApp } from '@mdi/js';
 
 	import HeaderBarMenu from './HeaderBarMenu.vue';
 
@@ -199,8 +204,17 @@
 		locales = locales;
 		mdiArrowLeft = mdiArrowLeft;
 		mdiMagnify = mdiMagnify;
+		showActionList = false;
 
 		tab = null;
+
+		get showNavIcon() {
+			const show = this.$vuetify.breakpoint.xs && (this.actionsList.length > 0 || this.loggedIn);
+			if (!show) {
+				this.showActionList = false;
+			}
+			return show;
+		}
 
 		get NavSelectItems() {
 
@@ -219,6 +233,6 @@
 }
 
 .headerBar ::v-deep .v-toolbar__content {
-	padding: 4px 0px;
+	padding: 4px 16px;
 }
 </style>
