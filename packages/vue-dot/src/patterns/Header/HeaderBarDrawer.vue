@@ -11,8 +11,12 @@
 			</VListItemAvatar>
 
 			<VListItemContent>
-				<VListItemTitle>{{ firstname }} {{ lastname }} </VListItemTitle>
-				<v-list-item-subtitle>{{ info }} </v-list-item-subtitle>
+				<VListItemTitle class="Subtitle 1">
+					{{ firstname }} {{ lastname }}
+				</VListItemTitle>
+				<v-list-item-subtitle class="body-2">
+					{{ info }}
+				</v-list-item-subtitle>
 			</VListItemContent>
 		</VListItem>
 
@@ -24,6 +28,7 @@
 			<VListItem
 				v-for="(item, index) in actionsList"
 				:key="index"
+				class="Subtitle 1"
 				@click="$emit('click:action', index); showActionList = false"
 			>
 				{{ item }}
@@ -34,7 +39,7 @@
 						{{ mdiExitToApp }}
 					</VIcon>
 				</VListItemIcon>
-				<VListItemContent>
+				<VListItemContent class="Subtitle 1">
 					{{ locales.logOut }}
 				</VListItemContent>
 			</VListItem>

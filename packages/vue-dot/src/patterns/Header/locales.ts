@@ -4,5 +4,6 @@ export default {
 	logoBtn: {
 		label: 'Accueil',
 		alt: 'l\'Assurance Maladie'
-	}
+	},
+	search: 'Recherche'
 };

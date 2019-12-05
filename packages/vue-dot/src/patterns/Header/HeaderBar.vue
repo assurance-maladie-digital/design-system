@@ -3,17 +3,18 @@
 		<VAppBar
 			class="headerBar"
 			v-bind="$attrs"
+			hide-on-scroll
 			:app="app"
 			:elevation="4"
-			cipped-left
 			:height="$vuetify.breakpoint.xs ? '40' : '80'"
 			:extension-height="$vuetify.breakpoint.xs ? '36' : '48'"
 		>
+			<!-- icon menu for mobile -->
 			<VAppBarNavIcon
 				v-if="showNavIcon"
 				@click.stop="$emit('click:menu'); showActionList = !showActionList"
 			/>
-
+			<!-- logo CNAM -->
 			<img
 				:alt="locales.logoBtn.alt"
 				src="../../assets/logo.svg"
@@ -27,8 +28,8 @@
 				inset
 				class="primary"
 			/>
-
-			<slot name="logo">
+			<!-- title slot -->
+			<slot name="title">
 				<VToolbarTitle
 					class="body-1 ml-md-4 ml-1"
 				>
@@ -36,7 +37,7 @@
 				</VToolbarTitle>
 			</slot>
 			<VSpacer />
-
+			<!-- menu right -->
 			<HeaderBarMenu
 				v-if="!$vuetify.breakpoint.xs"
 				:account-text="accountText"
@@ -50,83 +51,29 @@
 				@click:action="$emit('click:action', $event)"
 				@click:logout="$emit('click:logout')"
 			/>
-
+			<!-- tool bar in extension -->
 			<template
-				v-if="navigationList || breadcrumb || search"
+				v-if="navigationList || breadcrumb || searchable"
 				#extension
 			>
-				<VToolbar
-					color="primary"
-					class="px-4"
-					:height="$vuetify.breakpoint.xs ? '36' : '48'"
-				>
-					<VBtn
-						v-if="back && breadcrumb"
-						icon
-						small
-						dark
-						@click.prevent="$emit('return')"
-					>
-						<VIcon
-							color="white"
-						>
-							{{ mdiArrowLeft }}
-						</VIcon>
-					</VBtn>
-					<VCol
-						v-if="breadcrumb"
-						class="white--text text-no-wrap"
-					>
-						{{ breadcrumb }}
-					</VCol>
-					<VDivider
-						v-if="breadcrumb"
-						vertical
-						inset
-						class="white mx-sm-4 mr-2 mb-2"
-					/>
-					<VSelect
-						v-if="navigationList && $vuetify.breakpoint.xs"
-						v-model="tab"
-						dark
-						hide-details
-						:items="NavSelectItems"
-					/>
-					<VTabs
-						v-else-if="navigationList"
-						v-model="tab"
-						:show-arrows="true"
-						dark
-						background-color="transparent"
-					>
-						<VTabsSlider />
-
-						<VTab
-							v-for="(item,i) in navigationList"
-							:key="i"
-						>
-							{{ item }}
-						</VTab>
-					</VTabs>
-					<VSpacer />
-					<VBtn
-						icon
-						small
-						color="white"
-					>
-						<VIcon>
-							{{ mdiMagnify }}
-						</VIcon>
-					</VBtn>
-				</VToolbar>
+				<HeaderBarTool
+					:value="value"
+					:breadcrumb="breadcrumb"
+					:back="back"
+					:searchable="searchable"
+					:navigation-list="navigationList"
+					@input="$emit('input',$event)"
+					@back="$emit('back')"
+					@search="$emit('search', $event)"
+				/>
 			</template>
 		</VAppBar>
+		<!-- drawer -->
 		<HeaderBarDrawer
 			v-model="showActionList"
 			:app="app"
 			temporary
 			fixed
-			:clipped="clipped"
 			:info="info"
 			:actions-list="actionsList"
 			:firstname="firstname"
@@ -141,15 +88,18 @@
 	import Vue from 'vue';
 	import locales from './locales';
 	import Component from 'vue-class-component';
-	import { mdiArrowLeft, mdiMagnify, mdiAccount, mdiExitToApp } from '@mdi/js';
 
 	import HeaderBarMenu from './HeaderBarMenu.vue';
 	import HeaderBarDrawer from './HeaderBarDrawer.vue';
+	import HeaderBarTool from './HeaderBarTool.vue';
 
 	import { mapState } from 'vuex';
+	import { watch } from 'fs';
+	import { log } from '../../../../cli-helpers';
 
 	const Props = Vue.extend({
 		props: {
+			// tab number
 			value: {
 				type: Number,
 				default: 0
@@ -174,7 +124,7 @@
 				type: Boolean,
 				default: false
 			},
-			search: {
+			searchable: {
 				type: Boolean,
 				default: false
 			},
@@ -207,29 +157,27 @@
 				default: null
 			},
 			actionsList: {
-				type: [Array, Object],
+				type: [Array, String],
 				default: () => []
 			}
 		}
 	});
 
-/** The Header of the application */
-@Component<HeaderBar>({
-  components: {
-    HeaderBarMenu, HeaderBarDrawer
-  }
-})
+	/** The Header of the application */
+	@Component<HeaderBar>({
+		components: {
+			HeaderBarMenu, HeaderBarDrawer, HeaderBarTool
+		}
+	})
 	export default class HeaderBar extends Props {
 		locales = locales;
-		mdiArrowLeft = mdiArrowLeft;
-		mdiMagnify = mdiMagnify;
-		mdiAccount = mdiAccount;
-		mdiExitToApp = mdiExitToApp;
 		showActionList = false;
-		clipped = true;
 
-		tab = null;
-
+		/**
+		 * calculate if the menu can be viewed in mobile:
+		 * logged in user
+		 * or actionsList is not empty
+		 */
 		get showNavIcon() {
 			const show = this.$vuetify.breakpoint.xs && (this.actionsList.length > 0 || this.loggedIn);
 			if (!show) {
@@ -238,11 +186,6 @@
 			return show;
 		}
 
-		get NavSelectItems() {
-			return this.navigationList.map((item, index) => {
-			return { text: item, value: index };
-			});
-		}
 	}
 </script>
 

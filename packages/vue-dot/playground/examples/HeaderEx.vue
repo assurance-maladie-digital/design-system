@@ -4,16 +4,22 @@
 	>
 		<div style="width: 100%">
 			<!-- header : non connecté -->
-			<h3>Non connecté</h3>
+			<h2 class="subtitle-1 font-weight-bold">
+				Non connecté
+			</h2>
 			<!-- titre -->
-			<h5>Titre</h5>
+			<h3 class="subtitle-2">
+				Titre
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre"
 				account-text=""
 			/>
 			<!-- Titre + Mon compte -->
-			<h5>Titre + Mon compte</h5>
+			<h3 class="subtitle-2">
+				Titre + Mon compte
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre"
@@ -23,7 +29,9 @@
 				</template>
 			</HeaderBar>
 			<!-- logo -->
-			<h5>Logo</h5>
+			<h3 class="subtitle-2">
+				Logo
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre long d'une application"
@@ -38,7 +46,9 @@
 				</template>
 			</HeaderBar>
 			<!-- logo mon compte -->
-			<h5>Logo + Mon compte</h5>
+			<h3 class="subtitle-2">
+				Logo + Mon compte
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre long d'une application"
@@ -53,9 +63,13 @@
 			</HeaderBar>
 
 			<!-- header : connecté -->
-			<h3>connecté (version avec logo idem)</h3>
+			<h2 class="subtitle-1 font-weight-bold">
+				connecté (version avec logo idem)
+			</h2>
 			<!-- Prénom nom -->
-			<h5>Prénom nom</h5>
+			<h3 class="subtitle-2">
+				Prénom nom
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre"
@@ -65,10 +79,12 @@
 				:logged-in="true"
 			/>
 			<!-- Prénom nom + information supplémentaire -->
-			<h5>Prénom nom + information supplémentaire</h5>
+			<h3 class="subtitle-2">
+				Prénom nom + information supplémentaire
+			</h3>
 			<HeaderBar
 				:app="false"
-				title="Titre"
+				title="Titre gegezg grege rgergreg"
 				:hide-user-icon="true"
 				firstname="Baptiste"
 				lastname="Coulon"
@@ -76,7 +92,9 @@
 				info="information supplémentaire"
 			/>
 			<!-- Prénom Nom + Avatar  -->
-			<h5>Prénom nom + Avatar</h5>
+			<h3 class="subtitle-2">
+				Prénom nom + Avatar
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre"
@@ -85,7 +103,9 @@
 				lastname="Coulon"
 			/>
 			<!-- Prénom Nom + Informations supplémentaires + Avatar -->
-			<h5>Prénom Nom + Informations supplémentaires + Avatar </h5>
+			<h3 class="subtitle-2">
+				Prénom Nom + Informations supplémentaires + Avatar
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre"
@@ -95,9 +115,13 @@
 				lastname="Coulon"
 			/>
 
-			<h3>Header avec navigation</h3>
+			<h2 class="subtitle-1 font-weight-bold">
+				Header avec navigation
+			</h2>
 
-			<h5>Onglets seuls</h5>
+			<h3 class="subtitle-2">
+				Onglets seuls
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre"
@@ -108,7 +132,9 @@
 				lastname="Coulon"
 			/>
 
-			<h5>Nom du projet + onglets </h5>
+			<h3 class="subtitle-2">
+				Nom du projet + onglets
+			</h3>
 			<HeaderBar
 				:app="false"
 				title="Titre"
@@ -120,18 +146,32 @@
 				lastname="Coulon"
 			/>
 
-			<h5>Nom sous-projet + onglets </h5>
+			<h3 class="subtitle-2">
+				Nom sous-projet + onglets
+			</h3>
 			<HeaderBar
-				title="Titre"
+				v-model="navigationIndex"
+				:app="false"
+				title="Titre gerghe  he eh  h h h"
 				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5']"
 				:actions-list="['test1', 'test2']"
 				breadcrumb="sous projet"
 				back
 				:hide-user-icon="false"
 				:logged-in="true"
-				firstname="Jean philippe baptiste gezg"
+				firstname="Jean philippe baptiste gezg  hre hh"
 				lastname="Coulon"
-				info="info supp"
+				info="info supp fz g g egerggg g "
+			/>
+
+			<h3 class="subtitle-2">
+				Recherche activée
+			</h3>
+			<HeaderBar
+				v-model="tab"
+				:app="false"
+				title="Titre gerghe  he eh  h h h"
+				searchable
 			/>
 		</div>
 	</DocSection>
@@ -141,6 +181,11 @@
 	import Vue from 'vue';
 
 	export default Vue.extend({
+		data() {
+			return {
+				navigationIndex: 2
+			};
+		}
 
 	});
 </script>
