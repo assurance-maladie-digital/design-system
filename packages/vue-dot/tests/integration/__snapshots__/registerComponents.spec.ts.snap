@@ -9,7 +9,6 @@ Array [
   "FileList",
   "FileUpload",
   "HeaderBar",
-  "HeaderBarMenu",
   "LangBtn",
   "NotificationBar",
   "PaginatedTable",

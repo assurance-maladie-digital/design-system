@@ -1,6 +1,5 @@
 <template>
 	<VNavigationDrawer
-		v-if="$vuetify.breakpoint.xs"
 		v-model="showActionList"
 		v-bind="$attrs"
 		width="360"

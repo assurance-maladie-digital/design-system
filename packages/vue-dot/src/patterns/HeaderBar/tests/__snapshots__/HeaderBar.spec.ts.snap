@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBar test renders correctly with all option 1`] = `
+<div>
+  <vappbar-stub elevation="4" height="80" tag="header" tile="true" extensionheight="48" src="" value="true" app="true" hideonscroll="true" class="headerBar">
+    <!----> <img alt="l'Assurance Maladie" src="../../assets/logo.svg" height="80" class="d-block">
+    <vdivider-stub inset="true" vertical="true" class="primary"></vdivider-stub>
+    <vtoolbartitle-stub class="body-1 ml-md-4 ml-1">
+      Titre long test
+    </vtoolbartitle-stub>
+    <vspacer-stub></vspacer-stub>
+    <headerbarmenu-stub loggedin="true" firstname="Jean philippe baptiste gezg  hre hh" accounttext="Mon compte" lastname="Coulon" info="info supp fz g g egerggg g" actionslist="['test1', 'test2']"></headerbarmenu-stub>
+  </vappbar-stub>
+  <!---->
+</div>
+`;

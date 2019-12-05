@@ -10,7 +10,6 @@ Object {
     "FileList",
     "FileUpload",
     "HeaderBar",
-    "HeaderBarMenu",
     "LangBtn",
     "NotificationBar",
     "PaginatedTable",

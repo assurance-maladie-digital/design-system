@@ -11,7 +11,7 @@
 		>
 			<!-- icon menu for mobile -->
 			<VAppBarNavIcon
-				v-if="showNavIcon"
+				v-if="showNavDrawer"
 				@click.stop="$emit('click:menu'); showActionList = !showActionList"
 			/>
 			<!-- logo CNAM -->
@@ -70,6 +70,7 @@
 		</VAppBar>
 		<!-- drawer -->
 		<HeaderBarDrawer
+			v-if="showNavDrawer"
 			v-model="showActionList"
 			:app="app"
 			temporary
@@ -174,11 +175,11 @@
 		showActionList = false;
 
 		/**
-		 * calculate if the menu can be viewed in mobile:
+		 * calculate if the drawer can be viewed in mobile:
 		 * logged in user
 		 * or actionsList is not empty
 		 */
-		get showNavIcon() {
+		get showNavDrawer() {
 			const show = this.$vuetify.breakpoint.xs && (this.actionsList.length > 0 || this.loggedIn);
 			if (!show) {
 			this.showActionList = false;
