@@ -88,13 +88,10 @@
 	import locales from './locales';
 	import Component from 'vue-class-component';
 
+	// components specifique for the header bar
 	import HeaderBarMenu from './HeaderBarMenu.vue';
 	import HeaderBarDrawer from './HeaderBarDrawer.vue';
 	import HeaderBarTool from './HeaderBarTool.vue';
-
-	import { mapState } from 'vuex';
-	import { watch } from 'fs';
-	import { log } from '../../../../cli-helpers';
 
 	const Props = Vue.extend({
 		props: {
@@ -102,10 +99,6 @@
 			value: {
 				type: Number,
 				default: 0
-			},
-			logo: {
-				type: String || Object,
-				default: null
 			},
 			title: {
 				type: String,
@@ -115,6 +108,7 @@
 				type: String,
 				default: null
 			},
+			// default app is true
 			app: {
 				type: Boolean,
 				default: true
@@ -178,18 +172,13 @@
 		 * or actionsList is not empty
 		 */
 		get showNavDrawer() {
-			const show = this.$vuetify.breakpoint.smAndDown && (this.actionsList.length > 0 || this.loggedIn);
-			if (!show) {
-			this.showActionList = false;
-			}
-			return show;
+			return this.$vuetify.breakpoint.smAndDown && (this.actionsList.length > 0 || this.loggedIn);
 		}
 
 	}
 </script>
 
 <style lang="scss" scoped>
-
 .header-title {
 	max-width: 300px;
 }

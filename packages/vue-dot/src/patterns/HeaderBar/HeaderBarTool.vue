@@ -5,22 +5,22 @@
 		:height="$vuetify.breakpoint.smAndDown ? '36' : '48'"
 	>
 		<!-- search if search is not null or searchable -->
-		<template v-if="search !== null">
-			<VTextField
-				:dense="$vuetify.breakpoint.smAndDown"
-				clearable
-				autofocus
-				hide-details
-				:placeholder="locales.search"
-				solo
-				flat
-				@blur="search = null"
-				@click:clear="search = null"
-				@keydown.enter.prevent="$emit('search', $event); search = null"
-			/>
-		</template>
-		<!-- search  -->
+		<VTextField
+			v-if="search !== null"
+			:dense="$vuetify.breakpoint.smAndDown"
+			clearable
+			autofocus
+			hide-details
+			:placeholder="locales.search"
+			solo
+			flat
+			@blur="search = null"
+			@click:clear="search = null"
+			@keydown.enter.prevent="$emit('search', $event); search = null"
+		/>
+		<!-- toolbar components with 'back' icon action, breadcrumb, tabs and 'search' icon  -->
 		<template v-else>
+			<!-- back icon -->
 			<VBtn
 				v-if="back && breadcrumb"
 				icon
@@ -34,18 +34,20 @@
 					{{ mdiArrowLeft }}
 				</VIcon>
 			</VBtn>
-			<VCol
+			<!-- breadcrumb -->
+			<div
 				v-if="breadcrumb"
-				class="white--text text-no-wrap"
+				class="white--text text-no-wrap text-truncate"
 			>
 				{{ breadcrumb }}
-			</VCol>
+			</div>
 			<VDivider
 				v-if="breadcrumb"
 				vertical
 				inset
 				class="white mx-sm-4 mr-2 mb-2"
 			/>
+			<!-- select navigation in mobile mode -->
 			<VSelect
 				v-if="navigationList && $vuetify.breakpoint.smAndDown"
 				:value="value"
@@ -54,6 +56,7 @@
 				:items="navigationSelectItems"
 				@change="$emit('input',$event)"
 			/>
+			<!-- tabs if not in mobile -->
 			<VTabs
 				v-else-if="navigationList"
 				:value="value"
@@ -72,6 +75,7 @@
 				</VTab>
 			</VTabs>
 			<VSpacer />
+			<!-- search icon -->
 			<VBtn
 				v-if="searchable"
 				icon
@@ -123,12 +127,15 @@
     })
 	export default class HeaderBarTool extends Props {
 
+		// icons
         mdiArrowLeft = mdiArrowLeft;
-        mdiMagnify = mdiMagnify;
+		mdiMagnify = mdiMagnify;
+
+		// locales
         locales = locales;
         search: String | null  = null;
 
-        //compute the select items
+        // compute the select items
         get navigationSelectItems() {
             return this.navigationList.map((item, index) => {
             return { text: item, value: index };
@@ -139,5 +146,4 @@
 </script>
 
 <style scoped>
-
 </style>

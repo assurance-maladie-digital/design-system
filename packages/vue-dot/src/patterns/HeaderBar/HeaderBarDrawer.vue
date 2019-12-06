@@ -1,8 +1,9 @@
 <template>
 	<VNavigationDrawer
-		v-model="showActionList"
+		:value="value"
 		v-bind="$attrs"
 		width="360"
+		@input="showActionList($event)"
 	>
 		<VListItem>
 			<VListItemAvatar>
@@ -28,11 +29,11 @@
 				v-for="(item, index) in actionsList"
 				:key="index"
 				class="Subtitle 1"
-				@click="$emit('click:action', index); showActionList = false"
+				@click="$emit('click:action', index); showActionList(false)"
 			>
 				{{ item }}
 			</VListItem>
-			<VListItem @click="$emit('click:logout'); showActionList = false">
+			<VListItem @click="$emit('click:logout'); showActionList(false)">
 				<VListItemIcon>
 					<VIcon color="primary">
 						{{ mdiExitToApp }}
@@ -42,7 +43,7 @@
 					{{ locales.logOut }}
 				</VListItemContent>
 			</VListItem>
-			<VListItem @click="showActionList = false">
+			<VListItem @click="showActionList(false)">
 				<VListItemIcon>
 					<VIcon>
 						{{ mdiChevronLeft }}
@@ -88,27 +89,23 @@
 		}
 	});
 
-    @Component<HeaderBarDrawer>({
-        watch: {
-            value(newValue){
-                this.showActionList = newValue;
-            },
-            showActionList(newValue){
-                this.$emit('input', newValue);
-            }
-        }
-    })
+    @Component<HeaderBarDrawer>({})
 	export default class HeaderBarDrawer extends Props {
-        locales = locales;
+		// locales
+		locales = locales;
+
+		// icons
         mdiAccount = mdiAccount;
 		mdiExitToApp = mdiExitToApp;
         mdiChevronLeft = mdiChevronLeft;
 
-        showActionList = false;
+		// show the drawer or not
+        showActionList(value: boolean){
+			this.$emit('input', value);
+		}
 
 	}
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 </style>
