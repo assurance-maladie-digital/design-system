@@ -2,10 +2,10 @@
 
 exports[`HeaderBar test renders correctly with all option 1`] = `
 <div>
-  <vappbar-stub elevation="4" height="80" tag="header" tile="true" extensionheight="48" src="" value="true" app="true" hideonscroll="true" class="headerBar">
+  <vappbar-stub elevation="4" height="80" tag="header" tile="true" extensionheight="48" src="" value="true" app="true" class="header-bar">
     <!----> <img alt="l'Assurance Maladie" src="../../assets/logo.svg" height="80" class="d-block">
     <vdivider-stub inset="true" vertical="true" class="primary"></vdivider-stub>
-    <vtoolbartitle-stub class="body-1 ml-md-4 ml-1">
+    <vtoolbartitle-stub class="body-1 ml-md-4 ml-1 header-title">
       Titre long test
     </vtoolbartitle-stub>
     <vspacer-stub></vspacer-stub>

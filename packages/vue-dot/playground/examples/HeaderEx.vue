@@ -142,7 +142,7 @@
 				breadcrumb="projet"
 				:hide-user-icon="true"
 				:logged-in="true"
-				firstname="Baptiste"
+				:firstname="null"
 				lastname="Coulon"
 			/>
 
@@ -152,23 +152,22 @@
 			<HeaderBar
 				v-model="navigationIndex"
 				:app="false"
-				title="Titre gerghe  he eh  h h h"
+				title="Titre gerghe  he eh  h h h gzeg g ezge g"
 				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5']"
 				:actions-list="['test1', 'test2']"
-				breadcrumb="sous projet"
+				breadcrumb="sous projetgggggggggggggggggggg"
 				back
 				:hide-user-icon="false"
 				:logged-in="true"
-				firstname="Jean philippe baptiste gezg  hre hh"
+				firstname="Jean philippe baptiste gezg  hre hhgggggggggaaaaa"
 				lastname="Coulon"
-				info="info supp fz g g egerggg g "
+				info="info supp fz g g egerggg gfgggggggggggggggggggggggg "
 			/>
 
 			<h3 class="subtitle-2">
 				Recherche activée
 			</h3>
 			<HeaderBar
-				v-model="tab"
 				:app="false"
 				title="Titre gerghe  he eh  h h h"
 				searchable

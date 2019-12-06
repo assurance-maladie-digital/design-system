@@ -1,5 +1,6 @@
 <template>
 	<VMenu
+		v-if="buttonText || showIcon"
 		v-model="menu"
 		content-class="menu-active-el"
 		transition="scale-transition"
@@ -9,35 +10,33 @@
 		@input="$emit('change', $event)"
 	>
 		<template
-			v-if="actionsList.length || loggedIn || !hideUserIcon || accountText"
 			#activator="{ on }"
 		>
 			<VBtn
-				class="menu-el text-none px-4 text-right"
+				class="menu-el text-none px-4 text-right no-text-transform"
 				:height="buttonHeight"
-				:large="!$vuetify.breakpoint.xs"
+				:large="!$vuetify.breakpoint.smAndDown"
 				text
 				@click="$emit('click:menu')"
 				v-on="on"
 			>
 				<VLayout
-					v-if="!$vuetify.breakpoint.xs"
-					tag="span"
+					v-if="buttonText"
+					class="btn-text"
 					column
 				>
 					<!-- agent firstname and lastname or account text    -->
 					<div
-
-						class="subtitle-1"
+						class="subtitle-1 text-truncate"
 					>
-						{{ loggedIn ? agent : accountText }}
+						{{ buttonText }}
 					</div>
 					<!-- informations -->
 					<div
 						v-if="info"
-						class="body-2"
+						class="body-2 text-truncate"
 					>
-						{{ info }}
+						{{ info.trim() }}
 					</div>
 				</VLayout>
 
@@ -46,17 +45,16 @@
 				when mobile version and the user is not logged In
 				-->
 				<VIcon
-					v-if="(!hideUserIcon && loggedIn) || ($vuetify.breakpoint.xs && !loggedIn)"
-					size="32px"
+					v-if="(!hideUserIcon && loggedIn && !$vuetify.breakpoint.smAndDown) || ($vuetify.breakpoint.smAndDown && !loggedIn)"
 					color="grey darken-1"
-					class="ml-2 pa-1 round-icon"
+					class="round-icon ml-1"
 				>
 					{{ userIcon }}
 				</VIcon>
 			</VBtn>
 		</template>
 		<VList
-			v-if="!$vuetify.breakpoint.xs"
+			v-if="!$vuetify.breakpoint.smAndDown"
 			class="py-0 subtitle-1"
 		>
 			<!-- list of optional actions -->
@@ -127,39 +125,65 @@
 				default: () => []
 			}
 		}
-
 	});
 
 	/** The profile button in the Header */
-	@Component<HeaderMenu>({
-
-	})
+	@Component<HeaderMenu>({})
 	export default class HeaderMenu extends Props {
 		// Icons
 		userIcon = mdiAccount;
 		logoutIcon = mdiExitToApp;
+
+		// locales
 		locales = locales;
-		width: number = 0;
+
 		menu = false;
 
+		// compose the user display name
 		get agent() {
-			if (this.firstname && this.lastname) {
-				return `${this.firstname} ${this.lastname}`;
+			const firstname = typeof this.firstname === 'string' ? this.firstname.trim() : '';
+			const lastname = typeof this.lastname === 'string' ? this.lastname.trim() : '';
+			if (firstname.length > 0 || lastname.length > 0) {
+				return `${firstname} ${lastname}`;
 			}
 			return null;
 		}
 
+		/** calcul the button height */
 		get buttonHeight() {
-			if (this.$vuetify.breakpoint.xs) {
+			if (this.$vuetify.breakpoint.smAndDown) {
 				return 32;
 			} else {
 				return this.info ? 71 : 55;
 			}
 		}
+
+		// calcul the button text to display
+		get buttonText(){
+			if (this.$vuetify.breakpoint.smAndDown) return null;
+
+			if( this.loggedIn ){
+				return this.agent;
+			} else if (this.accountText && this.accountText.length >0) {
+				return this.accountText.trim();
+			}
+
+			return null;
+		}
+
+		/** calcul if show the icon */
+		get showIcon(){
+			return (!this.hideUserIcon && this.loggedIn && !this.$vuetify.breakpoint.smAndDown) || (this.$vuetify.breakpoint.smAndDown && !this.loggedIn);
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
+
+	.btn-text {
+		max-width: 270px;
+	}
+
 	.menu-active-el {
 		border-radius: 4px;
 	}

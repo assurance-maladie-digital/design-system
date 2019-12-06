@@ -1,13 +1,12 @@
 <template>
 	<div>
 		<VAppBar
-			class="headerBar"
+			class="header-bar"
 			v-bind="$attrs"
-			hide-on-scroll
 			:app="app"
 			:elevation="4"
-			:height="$vuetify.breakpoint.xs ? '40' : '80'"
-			:extension-height="$vuetify.breakpoint.xs ? '36' : '48'"
+			:height="$vuetify.breakpoint.smAndDown ? '40' : '80'"
+			:extension-height="$vuetify.breakpoint.smAndDown ? '36' : '48'"
 		>
 			<!-- icon menu for mobile -->
 			<VAppBarNavIcon
@@ -19,7 +18,7 @@
 				:alt="locales.logoBtn.alt"
 				src="../../assets/logo.svg"
 				class="d-block"
-				:height="$vuetify.breakpoint.xs ? '40' : '80'"
+				:height="$vuetify.breakpoint.smAndDown ? '40' : '80'"
 				@click="$emit('home')"
 			>
 
@@ -31,7 +30,7 @@
 			<!-- title slot -->
 			<slot name="title">
 				<VToolbarTitle
-					class="body-1 ml-md-4 ml-1"
+					class="body-1 ml-md-4 ml-1 header-title"
 				>
 					{{ title }}
 				</VToolbarTitle>
@@ -39,7 +38,6 @@
 			<VSpacer />
 			<!-- menu right -->
 			<HeaderBarMenu
-				v-if="!$vuetify.breakpoint.xs"
 				:account-text="accountText"
 				:logged-in="loggedIn"
 				:info="info"
@@ -180,7 +178,7 @@
 		 * or actionsList is not empty
 		 */
 		get showNavDrawer() {
-			const show = this.$vuetify.breakpoint.xs && (this.actionsList.length > 0 || this.loggedIn);
+			const show = this.$vuetify.breakpoint.smAndDown && (this.actionsList.length > 0 || this.loggedIn);
 			if (!show) {
 			this.showActionList = false;
 			}
@@ -191,11 +189,16 @@
 </script>
 
 <style lang="scss" scoped>
-.headerBar ::v-deep .v-toolbar__extension {
+
+.header-title {
+	max-width: 300px;
+}
+
+.header-bar ::v-deep .v-toolbar__extension {
   padding: 4px 0px;
 }
 
-.headerBar ::v-deep .v-toolbar__content {
+.header-bar ::v-deep .v-toolbar__content {
   padding: 4px 16px;
 }
 </style>

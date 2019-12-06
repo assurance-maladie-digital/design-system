@@ -2,21 +2,21 @@
 	<VToolbar
 		:color="search === null ? 'primary' : 'transparant'"
 		class="px-4"
-		:height="$vuetify.breakpoint.xs ? '36' : '48'"
+		:height="$vuetify.breakpoint.smAndDown ? '36' : '48'"
 	>
 		<!-- search if search is not null or searchable -->
 		<template v-if="search !== null">
 			<VTextField
+				:dense="$vuetify.breakpoint.smAndDown"
 				clearable
 				autofocus
 				hide-details
 				:placeholder="locales.search"
 				solo
 				flat
-				loader-height="0"
 				@blur="search = null"
 				@click:clear="search = null"
-				@keydown.enter="$emit('search', $event); search = null"
+				@keydown.enter.prevent="$emit('search', $event); search = null"
 			/>
 		</template>
 		<!-- search  -->
@@ -47,7 +47,7 @@
 				class="white mx-sm-4 mr-2 mb-2"
 			/>
 			<VSelect
-				v-if="navigationList && $vuetify.breakpoint.xs"
+				v-if="navigationList && $vuetify.breakpoint.smAndDown"
 				:value="value"
 				dark
 				hide-details
