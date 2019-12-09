@@ -15,11 +15,9 @@ function register(Vue: VueConstructor, componentList: Components) {
 import Vue from 'vue';
 
 import ErrorPage from './ErrorPage';
-import PageCard from './PageCard';
 
 const components: Components = {
-	ErrorPage,
-	PageCard
+	ErrorPage
 };
 
 register(Vue, components);

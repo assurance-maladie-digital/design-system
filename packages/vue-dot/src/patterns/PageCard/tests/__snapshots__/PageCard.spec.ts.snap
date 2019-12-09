@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageCard renders correctly 1`] = `
+<vlayout-stub tag="div" class="vd-page pa-8">
+  <vcard-stub loaderheight="4" tag="div" class="vd-page-card px-6 py-4"></vcard-stub>
+</vlayout-stub>
+`;

@@ -6,10 +6,10 @@
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^8.0.1",
-		"@types/node": "^12.11.2",
+		"@types/node": "^12.12.14",
 		"fs-extra": "^8.1.0",
-		"lerna": "^3.18.1",
-		"ts-node": "^8.4.1",
+		"lerna": "^3.19.0",
+		"ts-node": "^8.5.2",
 		"typescript": "~3.5.3"
 	}
 }

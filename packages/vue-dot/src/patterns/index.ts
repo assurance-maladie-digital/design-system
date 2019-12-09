@@ -3,6 +3,7 @@ import FileList from './FileList';
 import FileUpload from './FileUpload';
 import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
+import PageCard from './PageCard';
 import PaginatedTable from './PaginatedTable';
 import UploadWorkflow from './UploadWorkflow';
 import HeaderBar from './HeaderBar';
@@ -13,6 +14,7 @@ export default {
 	FileUpload,
 	LangBtn,
 	NotificationBar,
+	PageCard,
 	PaginatedTable,
 	UploadWorkflow,
 	HeaderBar

@@ -12,6 +12,7 @@ Object {
     "HeaderBar",
     "LangBtn",
     "NotificationBar",
+    "PageCard",
     "PaginatedTable",
     "UploadWorkflow",
   ],
