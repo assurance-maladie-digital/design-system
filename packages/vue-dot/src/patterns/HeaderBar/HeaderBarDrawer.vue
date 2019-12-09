@@ -2,7 +2,6 @@
 	<VNavigationDrawer
 		:value="value"
 		v-bind="{...$attrs, ...options.drawer}"
-		width="360"
 		@input="toggleDrawer($event)"
 	>
 		<VListItem>
@@ -11,10 +10,10 @@
 			</VListItemAvatar>
 
 			<VListItemContent>
-				<VListItemTitle class="Subtitle 1">
+				<VListItemTitle v-bind="options.userName">
 					{{ firstname }} {{ lastname }}
 				</VListItemTitle>
-				<v-list-item-subtitle class="body-2">
+				<v-list-item-subtitle v-bind="options.userInfo">
 					{{ info }}
 				</v-list-item-subtitle>
 			</VListItemContent>
@@ -34,15 +33,13 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import { mdiAccount, mdiChevronLeft, mdiExitToApp } from '@mdi/js';
+	import { mdiAccount } from '@mdi/js';
 
 	import customizable, { Options } from '../../mixins/customizable';
-	import config from './config';
+	import config from './config/HeaderBardrawer';
 
 	import HeaderBarActions from './HeaderBarActions.vue';
 	import header from './mixins/header';
-
-	import { mapState } from 'vuex';
 
 	const Props = Vue.extend({
 		props: {
@@ -67,8 +64,6 @@
 
 		// icons
 		mdiAccount = mdiAccount;
-		mdiExitToApp = mdiExitToApp;
-		mdiChevronLeft = mdiChevronLeft;
 
 		// show the drawer or not
 		toggleDrawer(value: boolean) {

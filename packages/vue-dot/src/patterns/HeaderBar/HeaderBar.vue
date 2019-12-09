@@ -15,23 +15,19 @@
 			/>
 			<!-- logo CNAM -->
 			<img
-				:alt="locales.logoBtn.alt"
 				src="../../assets/logo.svg"
-				class="d-block"
+				v-bind="options.image"
+				:alt="locales.logoBtn.alt"
 				:height="$vuetify.breakpoint.smAndDown ? '40' : '80'"
 				@click="$emit('home')"
 			>
 
 			<VDivider
-				vertical
-				inset
-				class="primary"
+				v-bind="options.divider"
 			/>
 			<!-- title slot -->
 			<slot name="title">
-				<VToolbarTitle
-					class="body-1 ml-md-4 ml-1 header-title"
-				>
+				<VToolbarTitle v-bind="options.title">
 					{{ title }}
 				</VToolbarTitle>
 			</slot>
@@ -88,10 +84,10 @@
 	import Component from 'vue-class-component';
 
 	import customizable, { Options } from '../../mixins/customizable';
-	import config from './config';
+	import config from './config/headerBar';
 	import header from './mixins/header';
 
-	// components specifique for the header bar
+	// components for the header bar
 	import HeaderBarMenu from './HeaderBarMenu.vue';
 	import HeaderBarDrawer from './HeaderBarDrawer.vue';
 	import HeaderBarTool from './HeaderBarTool.vue';

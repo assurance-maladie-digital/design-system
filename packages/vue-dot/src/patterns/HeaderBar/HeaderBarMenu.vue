@@ -2,19 +2,14 @@
 	<VMenu
 		v-if="buttonText || showIcon"
 		v-model="menu"
-		content-class="menu-active-el"
-		transition="scale-transition"
-		origin="top center"
-		offset-y
-		left
+		v-bind="options.menu"
 		@input="$emit('change', $event)"
 	>
 		<template #activator="{ on }">
 			<VBtn
-				class="menu-el text-none px-4 text-right no-text-transform"
+				v-bind="options.button"
 				:height="buttonHeight"
 				:large="!$vuetify.breakpoint.smAndDown"
-				text
 				@click="clickMenu"
 				v-on="on"
 			>
@@ -24,13 +19,13 @@
 					column
 				>
 					<!-- agent firstname and lastname or account text  -->
-					<div class="subtitle-1 text-truncate">
+					<div v-bind="options.buttonText">
 						{{ buttonText }}
 					</div>
 					<!-- informations -->
 					<div
 						v-if="info"
-						class="body-2 text-truncate"
+						v-bind="options.buttonInfo"
 					>
 						{{ info.trim() }}
 					</div>
@@ -42,10 +37,9 @@
 				-->
 				<VIcon
 					v-if="(!hideUserIcon && loggedIn && !$vuetify.breakpoint.smAndDown) || ($vuetify.breakpoint.smAndDown && !loggedIn)"
-					color="grey darken-1"
-					class="round-icon ml-1"
+					v-bind="options.buttonUserIcon"
 				>
-					{{ userIcon }}
+					{{ mdiAccount }}
 				</VIcon>
 			</VBtn>
 		</template>
@@ -63,24 +57,27 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import customizable, { Options } from '../../mixins/customizable';
+	import config from './config/HeaderBarMenu';
+
 	import { mapActions, mapState } from 'vuex';
 
-	import { mdiAccount, mdiExitToApp } from '@mdi/js';
+	import { mdiAccount } from '@mdi/js';
 
 	import header from './mixins/header';
 
-	const Props = Vue.extend({
-		props: {
-
-		}
-	});
-
-		/** The profile button in the Header */
+	/** The profile button in the Header */
 	@Component<HeaderBarMenu>({
 		components: { HeaderBarActions },
-		mixins: [ header ]
+		mixins: [
+			// Default configuration
+			customizable(config),
+			header
+		]
 	})
-	export default class HeaderBarMenu extends Props {
+	export default class HeaderBarMenu extends Vue {
+		// Mixin computed data
+		options!: Options;
 
 		// mixins
 		actionsList!: [string];
@@ -92,8 +89,7 @@
 		info!: string;
 
 		// Icons
-		userIcon = mdiAccount;
-		logoutIcon = mdiExitToApp;
+		mdiAccount = mdiAccount;
 
 		menu = false;
 

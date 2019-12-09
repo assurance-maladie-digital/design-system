@@ -1,19 +1,15 @@
 <template>
 	<VToolbar
 		:color="search === null ? 'primary' : 'transparant'"
-		class="px-4"
+		v-bind="options.toolbar"
 		:height="$vuetify.breakpoint.smAndDown ? '36' : '48'"
 	>
 		<!-- search if search is not null or searchable -->
 		<VTextField
 			v-if="search !== null"
+			v-bind="options.searchTextField"
 			:dense="$vuetify.breakpoint.smAndDown"
-			clearable
-			autofocus
-			hide-details
 			:placeholder="locales.search"
-			solo
-			flat
 			@blur="search = null"
 			@click:clear="search = null"
 			@keydown.enter.prevent="emitSearch($event); search = null"
@@ -28,22 +24,20 @@
 				dark
 				@click.prevent="emitBack"
 			>
-				<VIcon color="white">
+				<VIcon v-bind="options.backIcon">
 					{{ mdiArrowLeft }}
 				</VIcon>
 			</VBtn>
 			<!-- breadcrumb -->
 			<div
 				v-if="breadcrumb"
-				class="white--text text-no-wrap text-truncate"
+				v-bind="options.breadcrumb"
 			>
 				{{ breadcrumb }}
 			</div>
 			<VDivider
 				v-if="breadcrumb"
-				vertical
-				inset
-				class="white mx-sm-4 mr-2 mb-2"
+				v-bind="options.divider"
 			/>
 			<!-- select navigation in mobile mode -->
 			<VSelect
@@ -58,13 +52,10 @@
 			<VTabs
 				v-else-if="navigationList"
 				:value="value"
-				:show-arrows="true"
-				dark
-				background-color="transparent"
+				v-bind="options.tabs"
 				@change="$emit('input',$event)"
 			>
 				<VTabsSlider />
-
 				<VTab
 					v-for="(item,i) in navigationList"
 					:key="i"
@@ -76,9 +67,7 @@
 			<!-- search icon -->
 			<VBtn
 				v-if="searchable"
-				icon
-				small
-				color="white"
+				v-bind="options.searchBtn"
 				@click="search = ''"
 			>
 				<VIcon>{{ mdiMagnify }}</VIcon>
@@ -93,6 +82,9 @@
 	import { mdiArrowLeft, mdiMagnify } from '@mdi/js';
 	import header from './mixins/header';
 
+	import customizable, { Options } from '../../mixins/customizable';
+	import config from './config/HeaderBarTool';
+
 	const Props = Vue.extend({
 		props: {
 			// tab number
@@ -104,9 +96,15 @@
 	});
 
 	@Component<HeaderBarTool>({
-		mixins: [header]
+		mixins: [
+			// Default configuration
+			customizable(config),
+			header
+		]
 	})
 	export default class HeaderBarTool extends Props {
+		// Mixin computed data
+		options!: Options;
 		// icons
 		mdiArrowLeft = mdiArrowLeft;
 		mdiMagnify = mdiMagnify;
