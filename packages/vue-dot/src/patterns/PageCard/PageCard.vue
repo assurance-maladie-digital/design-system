@@ -2,6 +2,7 @@
 	<VLayout
 		class="vd-page"
 		v-bind="options.layout"
+		:class="paddingClass"
 	>
 		<VCard
 			v-bind="$attrs"
@@ -42,14 +43,24 @@
 			 */
 			cardClass: {
 				type: String,
-				default: 'pa-0'
+				default: undefined
+			},
+			/**
+			 * Customize the padding of the VCard
+			 *
+			 * Separating this from the cardClass allows to change a class
+			 * without having to defining the padding if not needed
+			 */
+			cardPadding: {
+				type: String,
+				default: 'px-6 py-4'
 			}
 		}
 	});
 
 	/**
-	 * PageCard is a component that displays
-	 * a VCard with specific parameters
+	 * PageCard is a component that displays a
+	 * VCard with specific parameters
 	 */
 	@Component({
 		// Disable attributes inheritance since we bind them to the VCard
@@ -67,11 +78,16 @@
 		get computedClass() {
 			return [
 				{
-					'min-height': this.minHeight,
-					'no-shadow': this.noShadow
+					'vd-min-height': this.minHeight,
+					'vd-no-shadow': this.noShadow
 				},
+				this.cardPadding,
 				this.cardClass
 			];
+		}
+
+		get paddingClass() {
+			return this.$vuetify.breakpoint.smAndDown ? 'pa-4' : 'pa-8';
 		}
 	}
 </script>
@@ -79,24 +95,16 @@
 <style lang="scss" scoped>
 	@import '../../tokens';
 
-	$min-height: 500px;
+	$min-height: 512px;
 
 	.vd-page {
-		padding: 48px;
 		align-items: center;
 		flex-direction: column;
 		max-width: 100%;
 	}
 
-	@media only screen and (max-width: 600px) {
-		.vd-page {
-			padding: 15px !important;
-		}
-	}
-
 	.vd-page-card {
 		width: $vd-page-width;
-		padding: 16px 24px;
 
 		// Override default shadow to fix it in IE
 		box-shadow:
@@ -105,11 +113,11 @@
 			0 1px 3px 0 rgba(0, 0, 0, .1),
 			0 -1px 10px 0 rgba(0, 0, 0, .1);
 
-		&.no-shadow {
+		&.vd-no-shadow {
 			box-shadow: none;
 		}
 
-		&.min-height {
+		&.vd-min-height {
 			min-height: $min-height;
 		}
 	}
