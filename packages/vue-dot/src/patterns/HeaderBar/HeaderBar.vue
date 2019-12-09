@@ -2,7 +2,7 @@
 	<div>
 		<VAppBar
 			class="header-bar"
-			v-bind="$attrs"
+			v-bind="{...$attrs, ...options.appBar}"
 			:app="app"
 			:elevation="4"
 			:height="$vuetify.breakpoint.smAndDown ? '40' : '80'"
@@ -11,7 +11,7 @@
 			<!-- icon menu for mobile -->
 			<VAppBarNavIcon
 				v-if="showNavDrawer"
-				@click.stop="$emit('click:menu'); showActionList = !showActionList"
+				@click.stop="clickMenu(); showActionList = !showActionList"
 			/>
 			<!-- logo CNAM -->
 			<img
@@ -45,9 +45,9 @@
 				:actions-list="actionsList"
 				:firstname="firstname"
 				:lastname="lastname"
-				@click:menu="$emit('click:menu')"
-				@click:action="$emit('click:action', $event)"
-				@click:logout="$emit('click:logout')"
+				@click:menu="clickMenu"
+				@click:action="clickAction"
+				@click:logout="clickLogout"
 			/>
 			<!-- tool bar in extension -->
 			<template
@@ -61,8 +61,8 @@
 					:searchable="searchable"
 					:navigation-list="navigationList"
 					@input="$emit('input',$event)"
-					@back="$emit('back')"
-					@search="$emit('search', $event)"
+					@back="emitBack"
+					@search="emitSearch"
 				/>
 			</template>
 		</VAppBar>
@@ -71,14 +71,13 @@
 			v-if="showNavDrawer"
 			v-model="showActionList"
 			:app="app"
-			temporary
-			fixed
 			:info="info"
 			:actions-list="actionsList"
 			:firstname="firstname"
 			:lastname="lastname"
-			@click:action="$emit('click:action', $event)"
-			@click:logout="$emit('click:logout')"
+			:logged-in="loggedIn"
+			@click:action="clickAction"
+			@click:logout="clickLogout"
 		/>
 	</div>
 </template>
@@ -87,6 +86,10 @@
 	import Vue from 'vue';
 	import locales from './locales';
 	import Component from 'vue-class-component';
+
+	import customizable, { Options } from '../../mixins/customizable';
+	import config from './config';
+	import header from './mixins/header';
 
 	// components specifique for the header bar
 	import HeaderBarMenu from './HeaderBarMenu.vue';
@@ -104,54 +107,10 @@
 				type: String,
 				required: true
 			},
-			breadcrumb: {
-				type: String,
-				default: null
-			},
 			// default app is true
 			app: {
 				type: Boolean,
 				default: true
-			},
-			back: {
-				type: Boolean,
-				default: false
-			},
-			searchable: {
-				type: Boolean,
-				default: false
-			},
-			navigationList: {
-				type: Array,
-				default: null
-			},
-			loggedIn: {
-				type: Boolean,
-				default: false
-			},
-			firstname: {
-				type: String,
-				default: null
-			},
-			hideUserIcon: {
-				type: Boolean,
-				default: false
-			},
-			accountText: {
-				type: String,
-				default: locales.account
-			},
-			lastname: {
-				type: String,
-				default: null
-			},
-			info: {
-				type: String,
-				default: null
-			},
-			actionsList: {
-				type: [Array, String],
-				default: () => []
 			}
 		}
 	});
@@ -160,9 +119,20 @@
 	@Component<HeaderBar>({
 		components: {
 			HeaderBarMenu, HeaderBarDrawer, HeaderBarTool
-		}
+		},
+		mixins: [
+			// Default configuration
+			customizable(config),
+			header
+		]
 	})
 	export default class HeaderBar extends Props {
+
+		// Mixin computed data
+		options!: Options;
+		actionsList!: [string];
+		loggedIn!: boolean;
+
 		locales = locales;
 		showActionList = false;
 

@@ -9,15 +9,13 @@
 		left
 		@input="$emit('change', $event)"
 	>
-		<template
-			#activator="{ on }"
-		>
+		<template #activator="{ on }">
 			<VBtn
 				class="menu-el text-none px-4 text-right no-text-transform"
 				:height="buttonHeight"
 				:large="!$vuetify.breakpoint.smAndDown"
 				text
-				@click="$emit('click:menu')"
+				@click="clickMenu"
 				v-on="on"
 			>
 				<VLayout
@@ -25,10 +23,8 @@
 					class="btn-text"
 					column
 				>
-					<!-- agent firstname and lastname or account text    -->
-					<div
-						class="subtitle-1 text-truncate"
-					>
+					<!-- agent firstname and lastname or account text  -->
+					<div class="subtitle-1 text-truncate">
 						{{ buttonText }}
 					</div>
 					<!-- informations -->
@@ -53,96 +49,60 @@
 				</VIcon>
 			</VBtn>
 		</template>
-		<VList
-			v-if="!$vuetify.breakpoint.smAndDown"
-			class="py-0 subtitle-1"
-		>
-			<!-- list of optional actions -->
-			<VListItem
-				v-for="(item, index) in actionsList"
-				:key="index"
-				@click="$emit('click:action', index)"
-			>
-				<VListItemContent>
-					{{ item }}
-				</VListItemContent>
-			</VListItem>
-			<!-- logout -->
-			<VListItem
-				v-if="loggedIn"
-				@click="$emit('click:logout')"
-			>
-				<VIcon
-					color="primary"
-					class="mr-2"
-				>
-					{{ logoutIcon }}
-				</VIcon>
-
-				{{ locales.logOut }}
-			</VListItem>
-		</VList>
+		<HeaderBarActions
+			:actions-list="actionsList"
+			:logged-in="loggedIn"
+			@click:action="clickAction"
+			@click:logout="clickLogout"
+		/>
 	</VMenu>
 </template>
 
 <script lang="ts">
+	import HeaderBarActions from './HeaderBarActions.vue';
 	import Vue from 'vue';
-	import locales from './locales';
 	import Component from 'vue-class-component';
 
 	import { mapActions, mapState } from 'vuex';
 
 	import { mdiAccount, mdiExitToApp } from '@mdi/js';
 
+	import header from './mixins/header';
+
 	const Props = Vue.extend({
 		props: {
-			loggedIn: {
-				type: Boolean,
-				default: false
-			},
-			firstname: {
-				type: String,
-				default: null
-			},
-			hideUserIcon: {
-				type: Boolean,
-				default: false
-			},
-			accountText: {
-				type: String,
-				default: locales.account
-			},
-			lastname: {
-				type: String,
-				default: null
-			},
-			info: {
-				type: String,
-				default: null
-			},
-			actionsList: {
-				type: [Array, Object],
-				default: () => []
-			}
+
 		}
 	});
 
-	/** The profile button in the Header */
-	@Component<HeaderMenu>({})
-	export default class HeaderMenu extends Props {
+		/** The profile button in the Header */
+	@Component<HeaderBarMenu>({
+		components: { HeaderBarActions },
+		mixins: [ header ]
+	})
+	export default class HeaderBarMenu extends Props {
+
+		// mixins
+		actionsList!: [string];
+		firstname!: string;
+		lastname!: string;
+		loggedIn!: boolean;
+		accountText!: string;
+		hideUserIcon!: boolean;
+		info!: string;
+
 		// Icons
 		userIcon = mdiAccount;
 		logoutIcon = mdiExitToApp;
-
-		// locales
-		locales = locales;
 
 		menu = false;
 
 		// compose the user display name
 		get agent() {
-			const firstname = typeof this.firstname === 'string' ? this.firstname.trim() : '';
-			const lastname = typeof this.lastname === 'string' ? this.lastname.trim() : '';
+			const firstname =
+				typeof this.firstname === 'string' ? this.firstname.trim() : '';
+			const lastname =
+				typeof this.lastname === 'string' ? this.lastname.trim() : '';
 			if (firstname.length > 0 || lastname.length > 0) {
 				return `${firstname} ${lastname}`;
 			}
@@ -159,12 +119,14 @@
 		}
 
 		// calcul the button text to display
-		get buttonText(){
-			if (this.$vuetify.breakpoint.smAndDown) return null;
+		get buttonText() {
+			if (this.$vuetify.breakpoint.smAndDown) {
+				return null;
+			}
 
-			if( this.loggedIn ){
+			if (this.loggedIn) {
 				return this.agent;
-			} else if (this.accountText && this.accountText.length >0) {
+			} else if (this.accountText && this.accountText.length > 0) {
 				return this.accountText.trim();
 			}
 
@@ -172,14 +134,18 @@
 		}
 
 		/** calcul if show the icon */
-		get showIcon(){
-			return (!this.hideUserIcon && this.loggedIn && !this.$vuetify.breakpoint.smAndDown) || (this.$vuetify.breakpoint.smAndDown && !this.loggedIn);
+		get showIcon() {
+			return (
+				(!this.hideUserIcon &&
+					this.loggedIn &&
+					!this.$vuetify.breakpoint.smAndDown) ||
+				(this.$vuetify.breakpoint.smAndDown && !this.loggedIn)
+			);
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-
 	.btn-text {
 		max-width: 270px;
 	}

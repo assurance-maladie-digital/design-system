@@ -1,9 +1,9 @@
 <template>
 	<VNavigationDrawer
 		:value="value"
-		v-bind="$attrs"
+		v-bind="{...$attrs, ...options.drawer}"
 		width="360"
-		@input="showActionList($event)"
+		@input="toggleDrawer($event)"
 	>
 		<VListItem>
 			<VListItemAvatar>
@@ -22,45 +22,25 @@
 
 		<VDivider />
 
-		<VList
-			nav
-		>
-			<VListItem
-				v-for="(item, index) in actionsList"
-				:key="index"
-				class="Subtitle 1"
-				@click="$emit('click:action', index); showActionList(false)"
-			>
-				{{ item }}
-			</VListItem>
-			<VListItem @click="$emit('click:logout'); showActionList(false)">
-				<VListItemIcon>
-					<VIcon color="primary">
-						{{ mdiExitToApp }}
-					</VIcon>
-				</VListItemIcon>
-				<VListItemContent class="Subtitle 1">
-					{{ locales.logOut }}
-				</VListItemContent>
-			</VListItem>
-			<VListItem @click="showActionList(false)">
-				<VListItemIcon>
-					<VIcon>
-						{{ mdiChevronLeft }}
-					</VIcon>
-				</VListItemIcon>
-			</VListItem>
-		</VList>
+		<HeaderBarActions
+			:actions-list="actionsList"
+			:logged-in="loggedIn"
+			@click:action="clickAction($event); toggleDrawer(false)"
+			@click:logout="clickLogout(); toggleDrawer(false)"
+		/>
 	</VNavigationDrawer>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import locales from './locales';
 	import { mdiAccount, mdiChevronLeft, mdiExitToApp } from '@mdi/js';
 
-	import HeaderBarMenu from './HeaderBarMenu.vue';
+	import customizable, { Options } from '../../mixins/customizable';
+	import config from './config';
+
+	import HeaderBarActions from './HeaderBarActions.vue';
+	import header from './mixins/header';
 
 	import { mapState } from 'vuex';
 
@@ -69,38 +49,29 @@
 			value: {
 				type: Boolean,
 				default: false
-			},
-			firstname: {
-				type: String,
-				default: null
-			},
-			lastname: {
-				type: String,
-				default: null
-			},
-			info: {
-				type: String,
-				default: null
-			},
-			actionsList: {
-				type: [Array, Object],
-				default: () => []
 			}
 		}
 	});
 
-    @Component<HeaderBarDrawer>({})
+	@Component<HeaderBarDrawer>({
+			mixins: [
+				// Default configuration
+				customizable(config),
+				header
+			],
+			components: { HeaderBarActions }
+	})
 	export default class HeaderBarDrawer extends Props {
-		// locales
-		locales = locales;
+		// Mixin computed data
+		options!: Options;
 
 		// icons
-        mdiAccount = mdiAccount;
+		mdiAccount = mdiAccount;
 		mdiExitToApp = mdiExitToApp;
-        mdiChevronLeft = mdiChevronLeft;
+		mdiChevronLeft = mdiChevronLeft;
 
 		// show the drawer or not
-        showActionList(value: boolean){
+		toggleDrawer(value: boolean) {
 			this.$emit('input', value);
 		}
 

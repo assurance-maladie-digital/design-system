@@ -16,7 +16,7 @@
 			flat
 			@blur="search = null"
 			@click:clear="search = null"
-			@keydown.enter.prevent="$emit('search', $event); search = null"
+			@keydown.enter.prevent="emitSearch($event); search = null"
 		/>
 		<!-- toolbar components with 'back' icon action, breadcrumb, tabs and 'search' icon  -->
 		<template v-else>
@@ -26,11 +26,9 @@
 				icon
 				small
 				dark
-				@click.prevent="$emit('back')"
+				@click.prevent="emitBack"
 			>
-				<VIcon
-					color="white"
-				>
+				<VIcon color="white">
 					{{ mdiArrowLeft }}
 				</VIcon>
 			</VBtn>
@@ -83,9 +81,7 @@
 				color="white"
 				@click="search = ''"
 			>
-				<VIcon>
-					{{ mdiMagnify }}
-				</VIcon>
+				<VIcon>{{ mdiMagnify }}</VIcon>
 			</VBtn>
 		</template>
 	</VToolbar>
@@ -95,7 +91,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 	import { mdiArrowLeft, mdiMagnify } from '@mdi/js';
-	import locales from './locales';
+	import header from './mixins/header';
 
 	const Props = Vue.extend({
 		props: {
@@ -103,45 +99,30 @@
 			value: {
 				type: Number,
 				default: 0
-			},
-			navigationList: {
-				type: Array,
-				default: ()=> []
-			},
-			back: {
-				type: Boolean,
-				default:false
-			},
-			breadcrumb: {
-				type:String,
-				default:null
-			},
-			searchable: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
 
-    @Component<HeaderBarTool>({
-    })
+	@Component<HeaderBarTool>({
+		mixins: [header]
+	})
 	export default class HeaderBarTool extends Props {
-
 		// icons
-        mdiArrowLeft = mdiArrowLeft;
+		mdiArrowLeft = mdiArrowLeft;
 		mdiMagnify = mdiMagnify;
 
+		// mixins
+		navigationList!: [string];
+
 		// locales
-        locales = locales;
-        search: String | null  = null;
+		search: string | null = null;
 
-        // compute the select items
-        get navigationSelectItems() {
-            return this.navigationList.map((item, index) => {
-            return { text: item, value: index };
-            });
-        }
-
+		// compute the select items
+		get navigationSelectItems() {
+			return this.navigationList.map((item, index) => {
+				return { text: item, value: index };
+			});
+		}
 	}
 </script>
 
