@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderBarDrawer test renders with all info correctly 1`] = `
-<vnavigationdrawer-stub height="100%" minivariantwidth="80" mobilebreakpoint="1264" src="" tag="aside" width="360" value="true">
+<vnavigationdrawer-stub fixed="true" height="100%" minivariantwidth="80" mobilebreakpoint="1264" src="" tag="aside" temporary="true" width="360" value="true">
   <vlistitem-stub activeclass="" tag="div">
     <vlistitemavatar-stub size="40">
       <vicon-stub>M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z</vicon-stub>
@@ -16,30 +16,6 @@ exports[`HeaderBarDrawer test renders with all info correctly 1`] = `
     </vlistitemcontent-stub>
   </vlistitem-stub>
   <vdivider-stub></vdivider-stub>
-  <vlist-stub tag="div" tile="true" nav="true">
-    <vlistitem-stub activeclass="" tag="div" class="Subtitle 1">
-      text1
-    </vlistitem-stub>
-    <vlistitem-stub activeclass="" tag="div" class="Subtitle 1">
-      text2
-    </vlistitem-stub>
-    <vlistitem-stub activeclass="" tag="div">
-      <vlistitemicon-stub>
-        <vicon-stub color="primary">
-          M19,3H5C3.89,3 3,3.89 3,5V9H5V5H19V19H5V15H3V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10.08,15.58L11.5,17L16.5,12L11.5,7L10.08,8.41L12.67,11H3V13H12.67L10.08,15.58Z
-        </vicon-stub>
-      </vlistitemicon-stub>
-      <vlistitemcontent-stub class="Subtitle 1">
-        Déconnexion
-      </vlistitemcontent-stub>
-    </vlistitem-stub>
-    <vlistitem-stub activeclass="" tag="div">
-      <vlistitemicon-stub>
-        <vicon-stub>
-          M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z
-        </vicon-stub>
-      </vlistitemicon-stub>
-    </vlistitem-stub>
-  </vlist-stub>
+  <headerbaractions-stub accounttext="Mon compte" actionslist="text1,text2" navigationlist=""></headerbaractions-stub>
 </vnavigationdrawer-stub>
 `;
