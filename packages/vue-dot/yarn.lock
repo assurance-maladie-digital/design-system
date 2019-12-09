@@ -726,7 +726,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cnamts/cli-helpers@^2.0.0-alpha.42":
+"@cnamts/cli-helpers@^2.0.0-alpha.44":
   version "2.0.0-alpha.44"
   resolved "https://registry.yarnpkg.com/@cnamts/cli-helpers/-/cli-helpers-2.0.0-alpha.44.tgz#7890a64d230da286f8608f389ff88d94b699cbc8"
   integrity sha512-76sFII4UbkcFWuEQzIsR4heoBOCp/oWCc29+fuHItCghBoeu/tMSCb0QMAITNIG9VbaybM/w2moyi3UfiFwL/Q==
