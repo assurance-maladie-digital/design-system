@@ -7,10 +7,10 @@ exports[`HeaderBarTool test renders with all info correctly 1`] = `
   <!---->
   <vtabs-stub value="0" dark="true" activeclass="" backgroundcolor="transparent" mobilebreakpoint="1264" nexticon="$next" previcon="$prev" showarrows="true" slidersize="2">
     <vtabsslider-stub></vtabsslider-stub>
-    <vtab-stub ripple="true">
+    <vtab-stub ripple="true" class="subtitle-1">
       onglet1
     </vtab-stub>
-    <vtab-stub ripple="true">
+    <vtab-stub ripple="true" class="subtitle-1">
       onglet2
     </vtab-stub>
   </vtabs-stub>

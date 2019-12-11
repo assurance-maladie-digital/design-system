@@ -41,13 +41,23 @@
 			/>
 			<!-- select navigation in mobile mode -->
 			<VSelect
-				v-if="navigationList && $vuetify.breakpoint.smAndDown"
+				v-if="navigationList && navigationList.length > 0 && $vuetify.breakpoint.smAndDown"
 				:value="value"
-				dark
-				hide-details
+				v-bind="options.select"
 				:items="navigationSelectItems"
 				@change="$emit('input',$event)"
-			/>
+			>
+				<template #selection="{item}">
+					<div v-bind="options.selectedItem">
+						{{ item.text }}
+					</div>
+				</template>
+				<template #item="{item}">
+					<div v-bind="options.selectItem">
+						{{ item.text }}
+					</div>
+				</template>
+			</VSelect>
 			<!-- tabs if not in mobile -->
 			<VTabs
 				v-else-if="navigationList"
@@ -59,6 +69,7 @@
 				<VTab
 					v-for="(item,i) in navigationList"
 					:key="i"
+					v-bind="options.tabItem"
 				>
 					{{ item }}
 				</VTab>

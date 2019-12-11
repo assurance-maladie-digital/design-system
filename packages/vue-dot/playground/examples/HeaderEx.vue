@@ -153,9 +153,9 @@
 				v-model="navigationIndex"
 				:app="false"
 				title="Titre"
-				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5']"
+				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet56666']"
 				:actions-list="['test1', 'test2']"
-				breadcrumb="sous projet"
+				breadcrumb="sous projet test long"
 				back
 				:hide-user-icon="false"
 				:logged-in="true"

@@ -5,15 +5,31 @@ export default {
 	divider: {
 		vertical: true,
 		inset: true,
-		class: 'white mx-sm-4 mr-2 mb-2'
+		class: 'white mx-sm-4 mx-2'
 	},
 	breadcrumb: {
-		class: 'white--text text-no-wrap text-truncate'
+		style: 'max-width:160px; width: 100%',
+		class: 'white--text text-no-wrap text-truncate text-uppercase'
 	},
 	tabs: {
 		showArrows: true,
 		dark: true,
 		backgroundColor: 'transparent'
+	},
+	tabItem: {
+		class: 'subtitle-1'
+	},
+	select: {
+		hideDetails: true,
+		dark: true,
+		class: 'mr-0',
+		backgroundColor: 'transparent'
+	},
+	selectedItem: {
+		class: 'subtitle-1 text-uppercase'
+	},
+	selectItem: {
+		class: 'subtitle-1 text-uppercase'
 	},
 	searchTextField: {
 		clearable: true,
@@ -28,6 +44,7 @@ export default {
 		color: 'white'
 	},
 	backIcon: {
-		color: 'white'
+		color: 'white',
+		class: 'mr-2'
 	}
 };
