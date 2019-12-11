@@ -2,17 +2,17 @@
 	<VList v-bind="options.list">
 		<!-- list of optional actions -->
 		<VListItem
-			:data-test="'itemAction-'+index"
 			v-for="(item, index) in actionsList"
 			:key="index"
+			:data-test="'itemAction-'+index"
 			@click="clickAction(index)"
 		>
 			<VListItemContent>{{ item }}</VListItemContent>
 		</VListItem>
 		<!-- logout -->
 		<VListItem
-			data-test="itemLogout"
 			v-if="loggedIn"
+			data-test="itemLogout"
 			@click="clickLogout"
 		>
 			<VIcon v-bind="options.logoutIcon">
