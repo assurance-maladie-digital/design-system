@@ -37,7 +37,7 @@
 				when mobile version and the user is not logged In
 				-->
 				<VIcon
-					v-if="(!hideUserIcon && loggedIn && !$vuetify.breakpoint.smAndDown) || ($vuetify.breakpoint.smAndDown && !loggedIn)"
+					v-if="showIcon"
 					v-bind="options.buttonUserIcon"
 				>
 					{{ mdiAccount }}
