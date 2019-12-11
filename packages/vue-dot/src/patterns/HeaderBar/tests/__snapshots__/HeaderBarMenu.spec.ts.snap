@@ -6,7 +6,7 @@ exports[`HeaderBarMenu test renders connected correctly 1`] = `
 </vmenu-stub>
 `;
 
-exports[`HeaderBarMenu test renders not connected correctly 1`] = `
+exports[`HeaderBarMenu test renders not connected 1`] = `
 <vmenu-stub opendelay="0" closedelay="0" contentclass="menu-active-el" left="true" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top center" transition="scale-transition">
   <headerbaractions-stub accounttext="Mon compte" actionslist="text1,text2" navigationlist=""></headerbaractions-stub>
 </vmenu-stub>

@@ -23,9 +23,13 @@ describe('HeaderBarMenu test', () => {
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
+
+		wrapper.find('[data-test="buttonMenu"]').trigger('click');
+
+		wrapper.find('text1').trigger('click');
 	});
 
-	it('renders not connected correctly', () => {
+	it('renders not connected', () => {
 		// Mount component
 		wrapper = mountComponent(HeaderBarMenu, {
 			propsData: {

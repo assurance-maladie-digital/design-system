@@ -2,6 +2,7 @@
 	<VList v-bind="options.list">
 		<!-- list of optional actions -->
 		<VListItem
+			:data-test="'itemAction-'+index"
 			v-for="(item, index) in actionsList"
 			:key="index"
 			@click="clickAction(index)"
@@ -10,6 +11,7 @@
 		</VListItem>
 		<!-- logout -->
 		<VListItem
+			data-test="itemLogout"
 			v-if="loggedIn"
 			@click="clickLogout"
 		>

@@ -15,22 +15,23 @@ describe('HeaderBar test', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				value : 2,
-				app:true,
-				title:'Titre long test',
-				navigationList:'[\'onglet1\', \'onglet2\', \'onglet3\', \'onglet4\', \'onglet5\']',
-				actionsList:'[\'test1\', \'test2\']',
-				breadcrumb:'sous projet',
+				app: true,
+				title: 'Titre',
+				navigationList: ['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5'],
+				actionsList: ['test1', 'test2'],
+				breadcrumb: 'sous projet',
 				back: true,
 				searchable: true,
-				hideUserIcon:false,
-				loggedIn:true,
-				firstname:'Jean philippe baptiste gezg  hre hh',
-				lastname:'Coulon',
-				info:'info supp fz g g egerggg g'
+				hideUserIcon: false,
+				loggedIn: true,
+				firstname: 'Prénom',
+				lastname: 'nom',
+				info: 'info supplémentaire'
 			}
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
+
 	});
 
 });

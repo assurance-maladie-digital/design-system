@@ -7,6 +7,7 @@
 	>
 		<template #activator="{ on }">
 			<VBtn
+				data-test="buttonMenu"
 				v-bind="options.button"
 				:height="buttonHeight"
 				:large="!$vuetify.breakpoint.smAndDown"

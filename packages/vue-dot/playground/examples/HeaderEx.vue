@@ -74,8 +74,8 @@
 				:app="false"
 				title="Titre"
 				:hide-user-icon="true"
-				firstname="Baptiste"
-				lastname="Coulon"
+				firstname="Prénom"
+				lastname="nom"
 				:logged-in="true"
 			/>
 			<!-- Prénom nom + information supplémentaire -->
@@ -84,10 +84,10 @@
 			</h3>
 			<HeaderBar
 				:app="false"
-				title="Titre gegezg grege rgergreg"
+				title="Titre"
 				:hide-user-icon="true"
-				firstname="Baptiste"
-				lastname="Coulon"
+				firstname="Prénom"
+				lastname="nom"
 				:logged-in="true"
 				info="information supplémentaire"
 			/>
@@ -99,8 +99,8 @@
 				:app="false"
 				title="Titre"
 				:logged-in="true"
-				firstname="Baptiste"
-				lastname="Coulon"
+				firstname="Prénom"
+				lastname="nom"
 			/>
 			<!-- Prénom Nom + Informations supplémentaires + Avatar -->
 			<h3 class="subtitle-2">
@@ -109,10 +109,10 @@
 			<HeaderBar
 				:app="false"
 				title="Titre"
-				:logged-in="true"
+				logged-in
 				info="information supplémentaire"
-				firstname="Baptiste"
-				lastname="Coulon"
+				firstname="Prénom"
+				lastname="nom"
 			/>
 
 			<h2 class="subtitle-1 font-weight-bold">
@@ -126,10 +126,10 @@
 				:app="false"
 				title="Titre"
 				:navigation-list="['onglet', 'onglet']"
-				:hide-user-icon="true"
-				:logged-in="true"
-				firstname="Baptiste"
-				lastname="Coulon"
+				hide-user-icon
+				logged-in
+				firstname="Prénom"
+				lastname="nom"
 			/>
 
 			<h3 class="subtitle-2">
@@ -140,10 +140,10 @@
 				title="Titre"
 				:navigation-list="['onglet', 'onglet']"
 				breadcrumb="projet"
-				:hide-user-icon="true"
-				:logged-in="true"
+				hide-user-icon
+				logged-in
 				:firstname="null"
-				lastname="Coulon"
+				lastname="nom"
 			/>
 
 			<h3 class="subtitle-2">
@@ -152,16 +152,16 @@
 			<HeaderBar
 				v-model="navigationIndex"
 				:app="false"
-				title="Titre gerghe  he eh  h h h gzeg g ezge g"
+				title="Titre"
 				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5']"
 				:actions-list="['test1', 'test2']"
-				breadcrumb="sous projetgggggggggggggggggggg"
+				breadcrumb="sous projet"
 				back
 				:hide-user-icon="false"
 				:logged-in="true"
-				firstname="Jean philippe baptiste gezg  hre hhgggggggggaaaaa"
-				lastname="Coulon"
-				info="info supp fz g g egerggg gfgggggggggggggggggggggggg "
+				firstname="Prénom"
+				lastname="nom"
+				info="info supplémentaire"
 			/>
 
 			<h3 class="subtitle-2">
@@ -169,7 +169,7 @@
 			</h3>
 			<HeaderBar
 				:app="false"
-				title="Titre gerghe  he eh  h h h"
+				title="Titre"
 				searchable
 			/>
 		</div>

@@ -6,10 +6,10 @@ exports[`HeaderBar test renders correctly with all option 1`] = `
     <!----> <img src="../../assets/logo.svg" alt="l'Assurance Maladie" height="80" class="d-block">
     <vdivider-stub inset="true" vertical="true" class="primary"></vdivider-stub>
     <vtoolbartitle-stub class="body-1 ml-md-4 ml-1 header-title">
-      Titre long test
+      Titre
     </vtoolbartitle-stub>
     <vspacer-stub></vspacer-stub>
-    <headerbarmenu-stub loggedin="true" firstname="Jean philippe baptiste gezg  hre hh" accounttext="Mon compte" lastname="Coulon" info="info supp fz g g egerggg g" actionslist="['test1', 'test2']" navigationlist=""></headerbarmenu-stub>
+    <headerbarmenu-stub loggedin="true" firstname="Prénom" accounttext="Mon compte" lastname="nom" info="info supplémentaire" actionslist="test1,test2" navigationlist=""></headerbarmenu-stub>
   </vappbar-stub>
   <!---->
 </div>
