@@ -61,6 +61,10 @@ The goal of our Design System is to unify our work, which allows teams to share 
   </tbody>
 </table>
 
+## Contributing
+
+If your are interested in contributing, you should read the [Code of Conduct](CODE_OF_CONDUCT.md) and the [Contribution Guide](CONTRIBUTING.md).
+
 ## License
 
 Our Design System is licensed under [MIT License](./LICENSE).
