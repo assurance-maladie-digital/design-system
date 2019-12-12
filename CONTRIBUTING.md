@@ -23,9 +23,7 @@ Explain the problem and include additional details to help maintainers reproduce
 
 ## Suggest changes
 
-Enhancement suggestions are tracked as GitHub issues.
-
-Before creating enhancement suggestions, check the Roadmap to see if what you want is already planned. If you don't see your suggestion, [create a new issue](#submitting-a-good-bug-report).
+Enhancement suggestions are tracked as GitHub issues, [create a new issue](#submitting-a-good-bug-report).
 
 ## Language used
 
