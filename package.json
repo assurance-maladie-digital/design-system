@@ -10,10 +10,10 @@
 		"lint": "mono-run lint --stream",
 		"test": "mono-run test --stream",
 		"build": "mono-run build --stream",
-		"dev:windows": "lerna run playground",
-		"lint:windows": "lerna run lint",
-		"test:windows": "lerna run test",
-		"build:windows": "lerna run build"
+		"dev:lerna": "lerna run playground --stream",
+		"lint:lerna": "lerna run lint --stream",
+		"test:lerna": "lerna run test --stream",
+		"build:lerna": "lerna run build --stream"
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^8.0.1",
