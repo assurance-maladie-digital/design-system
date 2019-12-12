@@ -20,13 +20,18 @@ describe('HeaderBarMenu test', () => {
 				actionsList: ['text1', 'text2'],
 				info: 'information supplémentaire'
 			}
-		});
+		}, true);
 
 		expect(html(wrapper)).toMatchSnapshot();
 
+		// click menu
 		wrapper.find('[data-test="buttonMenu"]').trigger('click');
 
-		wrapper.find('text1').trigger('click');
+		// click action 0 text1
+		wrapper.find('[data-test="itemAction-0"]').trigger('click');
+
+		// logout
+		wrapper.find('[data-test="itemLogout"]').trigger('click');
 	});
 
 	it('renders not connected', () => {

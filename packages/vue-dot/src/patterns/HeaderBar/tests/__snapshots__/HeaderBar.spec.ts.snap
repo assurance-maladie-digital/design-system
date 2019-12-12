@@ -2,15 +2,61 @@
 
 exports[`HeaderBar test renders correctly with all option 1`] = `
 <div>
-  <vappbar-stub elevation="4" height="80" tag="header" tile="true" extensionheight="48" src="" value="true" app="true" class="header-bar">
-    <!----> <img src="../../assets/logo.svg" alt="l'Assurance Maladie" height="80" class="d-block">
-    <vdivider-stub inset="true" vertical="true" class="primary"></vdivider-stub>
-    <vtoolbartitle-stub class="body-1 ml-md-4 ml-1 header-title">
-      Titre
-    </vtoolbartitle-stub>
-    <vspacer-stub></vspacer-stub>
-    <headerbarmenu-stub loggedin="true" firstname="Prénom" accounttext="Mon compte" lastname="nom" info="info supplémentaire" actionslist="test1,test2" navigationlist=""></headerbarmenu-stub>
-  </vappbar-stub>
+  <header class="header-bar v-sheet v-sheet--tile theme--light elevation-4 v-toolbar v-toolbar--extended v-app-bar v-app-bar--fixed" style="height: 128px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
+    <div class="v-toolbar__content" style="height: 80px;">
+      <!----> <img src="../../assets/logo.svg" alt="l'Assurance Maladie" height="80" class="d-block">
+      <hr role="separator" aria-orientation="vertical" class="v-divider v-divider--inset v-divider--vertical theme--light primary">
+      <div class="v-toolbar__title body-1 ml-md-4 ml-1 header-title">
+        Titre
+      </div>
+      <div class="spacer"></div>
+      <div class="v-menu"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--large menu-el text-none px-4 text-right no-text-transform" style="height: 71px;" data-test="buttonMenu"><span class="v-btn__content"><div class="layout btn-text column"><div class="subtitle-1 text-truncate">
+					Prénom nom
+				</div> <div class="body-2 text-truncate">
+					info supplémentaire
+				</div></div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text text--darken-1 round-icon ml-1"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span></button>
+        <div role="menu" class="v-menu__content theme--light menu-active-el" style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top center; z-index: 0; display: none;"></div>
+      </div>
+    </div>
+    <div class="v-toolbar__extension" style="height: 48px;">
+      <header class="v-sheet v-sheet--tile theme--light v-toolbar primary px-4" style="height: 48px;">
+        <div class="v-toolbar__content" style="height: 48px;"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--dark v-size--small" data-test="back"><span class="v-btn__content"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--dark white--text mr-2"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></span></button>
+          <div class="white--text text-no-wrap text-truncate text-uppercase" style="max-width: 160px; width: 100%;">
+            sous projet
+          </div>
+          <hr role="separator" aria-orientation="vertical" class="v-divider v-divider--inset v-divider--vertical theme--light white mx-sm-4 mx-2">
+          <div class="v-tabs theme--dark">
+            <div role="tablist" class="v-item-group theme--dark v-slide-group v-tabs-bar v-tabs-bar--is-mobile v-tabs-bar--show-arrows white--text transparent">
+              <div class="v-slide-group__prev v-slide-group__prev--disabled"><i aria-hidden="true" class="v-icon notranslate v-icon--disabled mdi mdi-chevron-left theme--dark"></i></div>
+              <div class="v-slide-group__wrapper">
+                <div class="v-slide-group__content v-tabs-bar__content">
+                  <div class="v-tabs-slider-wrapper" style="transition: none;">
+                    <div class="v-tabs-slider"></div>
+                  </div>
+                  <div tabindex="0" aria-selected="false" role="tab" class="v-tab subtitle-1">
+                    onglet1
+                  </div>
+                  <div tabindex="0" aria-selected="false" role="tab" class="v-tab subtitle-1">
+                    onglet2
+                  </div>
+                  <div tabindex="0" aria-selected="true" role="tab" class="v-tab v-tab--active subtitle-1">
+                    onglet3
+                  </div>
+                  <div tabindex="0" aria-selected="false" role="tab" class="v-tab subtitle-1">
+                    onglet4
+                  </div>
+                  <div tabindex="0" aria-selected="false" role="tab" class="v-tab subtitle-1">
+                    onglet5
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div> <button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--small white--text" data-test="search-icon"><span class="v-btn__content"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg></span></button>
+        </div>
+      </header>
+    </div>
+  </header>
   <!---->
 </div>
 `;

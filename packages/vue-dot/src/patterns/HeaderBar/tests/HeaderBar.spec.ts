@@ -10,7 +10,7 @@ let wrapper: Wrapper<Vue>;
 
 // Tests
 describe('HeaderBar test', () => {
-	it('renders correctly with all option', () => {
+	it('renders correctly with all option', async() => {
 		// Mount component
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
@@ -28,10 +28,22 @@ describe('HeaderBar test', () => {
 				lastname: 'nom',
 				info: 'info supplémentaire'
 			}
-		});
+		}, true);
 
 		expect(html(wrapper)).toMatchSnapshot();
 
+		// click back
+		wrapper.find('[data-test="back"]').trigger('click');
+
+		// test search a value
+		wrapper.find('[data-test="search-icon"]').trigger('click');
+		await Vue.nextTick();
+		const textInput = wrapper.find('[data-test="search-input"]');
+		textInput.setValue('some value');
+		await Vue.nextTick();
+		wrapper.trigger('keydown', {
+			key: 13
+		});
 	});
 
 });

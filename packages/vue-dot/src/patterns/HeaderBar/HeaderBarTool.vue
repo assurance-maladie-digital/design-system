@@ -6,6 +6,7 @@
 	>
 		<!-- search if search is not null or searchable -->
 		<VTextField
+			data-test="search-input"
 			v-if="search !== null"
 			v-bind="options.searchTextField"
 			:dense="$vuetify.breakpoint.smAndDown"
@@ -18,6 +19,7 @@
 		<template v-else>
 			<!-- back icon -->
 			<VBtn
+				data-test="back"
 				v-if="back && breadcrumb"
 				icon
 				small
@@ -77,6 +79,7 @@
 			<VSpacer />
 			<!-- search icon -->
 			<VBtn
+				data-test="search-icon"
 				v-if="searchable"
 				v-bind="options.searchBtn"
 				@click="search = ''"
