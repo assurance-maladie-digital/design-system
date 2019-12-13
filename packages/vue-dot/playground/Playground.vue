@@ -77,7 +77,7 @@
 	import { version } from '../package.json';
 
 	const DARK_THEME_KEY = 'pg-dark';
-	const STORAGE_VERSION = 4;
+	const STORAGE_VERSION = 1;
 
 	import LocalStorageUtility from '../src/helpers/localStorageUtility';
 
