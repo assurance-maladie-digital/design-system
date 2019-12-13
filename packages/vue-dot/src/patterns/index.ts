@@ -8,6 +8,7 @@ import NotificationBar from './NotificationBar';
 import PageCard from './PageCard';
 import PaginatedTable from './PaginatedTable';
 import UploadWorkflow from './UploadWorkflow';
+import Question from './Question';
 
 export default {
 	DatePicker,
@@ -19,5 +20,6 @@ export default {
 	NotificationBar,
 	PageCard,
 	PaginatedTable,
-	UploadWorkflow
+	UploadWorkflow,
+	Question
 };

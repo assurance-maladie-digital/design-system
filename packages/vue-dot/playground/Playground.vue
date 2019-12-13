@@ -32,6 +32,8 @@
 				</h1>
 
 				<!-- Examples -->
+				<QuestionTextshortEx />
+
 				<CopyBtnEx />
 
 				<CustomIconEx />

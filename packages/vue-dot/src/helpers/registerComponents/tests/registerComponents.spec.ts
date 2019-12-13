@@ -4,6 +4,9 @@ import registerComponents, { Components } from '../';
 
 import { getComponents } from '@/tests/integration/utils';
 
+/**
+ *
+ */
 function createTestComponent(name: string) {
 	return Vue.component(name, {
 		template: '<div />'
