@@ -9,7 +9,11 @@ exports[`DatePicker renders correctly 1`] = `
         <div class="v-text-field__slot"><label for="input-4" class="v-label theme--light" style="left: 0px; position: absolute;">Date</label><input id="input-4" type="text"></div>
       </div>
       <div class="v-text-field__details">
-        <div class="v-messages theme--light"><span name="message-transition" tag="div" class="v-messages__wrapper"><div class="v-messages__message">Format JJ/MM/AAAA</div></span></div>
+        <div class="v-messages theme--light">
+          <div class="v-messages__wrapper">
+            <div class="v-messages__message">Format JJ/MM/AAAA</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
