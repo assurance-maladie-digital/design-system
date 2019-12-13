@@ -3,9 +3,7 @@
 
 // tslint:disable: no-unused-expression
 
-/**
- *
- */
+/** Get the controlItem (not parsed) in localStorage */
 function getControlItem() {
 	return localStorage.getItem('vd-storage-control');
 }
@@ -59,7 +57,7 @@ describe('LocalStorageUtility', () => {
 		expect(localStorage.getItem('vd-test')).toBe(null);
 	});
 
-	it('should set an item correctly', () => {
+	it('should set an item', () => {
 		const localStorageUtility = new LocalStorageUtility();
 
 		localStorageUtility.setItem('test', testString);
@@ -67,12 +65,54 @@ describe('LocalStorageUtility', () => {
 		expect(localStorage.getItem('vd-test')).toBe(normalizedString);
 	});
 
-	it('should get an item correctly', () => {
+	it('should get an item', () => {
 		const localStorageUtility = new LocalStorageUtility();
 
 		localStorage.setItem('vd-test', normalizedString);
 
 		expect(localStorageUtility.getItem('test')).toBe(testString);
+	});
+
+	it('should should get the length', () => {
+		const localStorageUtility = new LocalStorageUtility();
+
+		localStorage.setItem('vd-test', normalizedString);
+
+		expect(localStorageUtility.length).toBe(1);
+	});
+
+	it('should get all data items', () => {
+		const localStorageUtility = new LocalStorageUtility();
+
+		localStorage.setItem('vd-test-1', normalizedString);
+		localStorage.setItem('vd-test-2', normalizedString);
+
+		const expected = [testString, testString];
+
+		expect(localStorageUtility.getAll()).toEqual(expected);
+	});
+
+	it('should clear items', () => {
+		const localStorageUtility = new LocalStorageUtility();
+
+		localStorage.setItem('vd-test-1', normalizedString);
+		localStorage.setItem('vd-test-2', normalizedString);
+
+		localStorageUtility.clear();
+
+		expect(localStorage.getItem('vd-test-1')).toBe(null);
+		expect(localStorage.getItem('vd-test-2')).toBe(null);
+		// It shouldn't clear the control item
+		expect(localStorage.getItem('vd-storage-control')).not.toBe(null);
+	});
+
+	it('should get the name of the nth key in the storage', () => {
+		const localStorageUtility = new LocalStorageUtility();
+
+		localStorage.setItem('vd-test-1', normalizedString);
+		localStorage.setItem('vd-test-2', normalizedString);
+
+		expect(localStorageUtility.key(1)).toEqual('vd-test-2');
 	});
 
 	it('should return null when an item doesn\'t exists', () => {

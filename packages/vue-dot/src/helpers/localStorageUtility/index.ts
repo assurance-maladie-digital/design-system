@@ -106,7 +106,7 @@ export default class LocalStorageUtility {
 	 * [Native method]
 	 */
 	key(n: number) {
-		return this.getAll()[n];
+		return this.getAllKeys()[n];
 	}
 
 	/**
@@ -117,10 +117,21 @@ export default class LocalStorageUtility {
 		const items = [] as any[];
 
 		this.filterStorage((storageKey) => {
-			items.push(localStorage[storageKey]);
+			items.push(this.get(storageKey));
 		});
 
 		return items;
+	}
+
+	/** */
+	private getAllKeys() {
+		const keys = [] as string[];
+
+		this.filterStorage((storageKey) => {
+			keys.push(storageKey);
+		});
+
+		return keys;
 	}
 
 	/**
