@@ -47,8 +47,8 @@
 		"pre-commit": "lint-staged"
 	},
 	"lint-staged": {
-		"*": [
-			"mono-run lint",
+		"*.{js,ts,vue,md}": [
+			"lerna run lint --stream --",
 			"git add"
 		]
 	}
