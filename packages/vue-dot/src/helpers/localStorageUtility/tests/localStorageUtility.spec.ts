@@ -3,6 +3,9 @@
 
 // tslint:disable: no-unused-expression
 
+/**
+ *
+ */
 function getControlItem() {
 	return localStorage.getItem('vd-storage-control');
 }
@@ -115,6 +118,6 @@ describe('LocalStorageUtility', () => {
 		const localStorageUtility = new LocalStorageUtility();
 
 		expect(localStorageUtility.getItem('test')).toBe(null);
-		expect(localStorageUtility.setItem('test', 'test')).toBe(false);
+		expect(localStorageUtility.setItem('test', 'test')).toBe(undefined);
 	});
 });

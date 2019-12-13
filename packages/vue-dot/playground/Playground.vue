@@ -110,7 +110,7 @@
 		}
 
 		get pageCardClass() {
-			return 'px-8 py-6' + (this.dark ? ' grey darken-4' : ' white');
+			return this.dark ? ' grey darken-4' : ' white';
 		}
 	}
 </script>

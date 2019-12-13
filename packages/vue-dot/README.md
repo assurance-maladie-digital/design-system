@@ -14,7 +14,7 @@
 
 <h1 align="center">Vue Dot</h1>
 
-<p align="center">Vue Dot is the component library that implements the Design System of the French Health Insurance.</p>
+<p align="center">Vue Dot is the component library that implements the different parts of our Design System for the French Health Insurance.</p>
 
 ## Installation
 
