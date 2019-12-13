@@ -1,3 +1,6 @@
+// See https://developer.mozilla.org/en-US/docs/Web/API/Storage
+// for native specifications
+
 interface ControlItem {
 	version?: number;
 	expiresAt?: number;
@@ -48,8 +51,10 @@ export default class LocalStorageUtility {
 
 	/**
 	 * [Native method]
+	 *
+	 * @returns {void}
 	 */
-	setItem<T>(key: string, value: T) {
+	setItem<T>(key: string, value: T): void {
 		if (this.localStorageSupported) {
 			// Set the item
 			this.set(this.prefix + key, value);
@@ -76,6 +81,19 @@ export default class LocalStorageUtility {
 		}
 
 		return null;
+	}
+
+	/**
+	 * [Native method]
+	 *
+	 * @returns {void}
+	 */
+	removeItem(key: string): void {
+		this.filterStorage((storageKey) => {
+			if (storageKey === key) {
+				delete localStorage[storageKey];
+			}
+		});
 	}
 
 	/**

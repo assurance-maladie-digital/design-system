@@ -3,6 +3,8 @@
 
 // tslint:disable: no-unused-expression
 
+import LocalStorageUtility from '../';
+
 /** Get the controlItem (not parsed) in localStorage */
 function getControlItem() {
 	return localStorage.getItem('vd-storage-control');
@@ -15,8 +17,6 @@ const normalizedObject = JSON.stringify({});
 
 /** JSON.stringify('test') */
 const normalizedString = JSON.stringify(testString);
-
-import LocalStorageUtility from '../';
 
 describe('LocalStorageUtility', () => {
 	beforeEach(() => localStorage.clear());
@@ -92,6 +92,19 @@ describe('LocalStorageUtility', () => {
 		expect(localStorageUtility.getAll()).toEqual(expected);
 	});
 
+	it('should remove an item', () => {
+		const localStorageUtility = new LocalStorageUtility();
+
+		localStorage.setItem('vd-test-1', normalizedString);
+		localStorage.setItem('vd-test-2', normalizedString);
+
+		localStorageUtility.removeItem('vd-test-1');
+		// Try to remove non existing item
+		localStorageUtility.removeItem('vd-test');
+
+		expect(localStorage.getItem('vd-test-1')).toBe(null);
+	});
+
 	it('should clear items', () => {
 		const localStorageUtility = new LocalStorageUtility();
 
@@ -102,6 +115,7 @@ describe('LocalStorageUtility', () => {
 
 		expect(localStorage.getItem('vd-test-1')).toBe(null);
 		expect(localStorage.getItem('vd-test-2')).toBe(null);
+
 		// It shouldn't clear the control item
 		expect(localStorage.getItem('vd-storage-control')).not.toBe(null);
 	});
