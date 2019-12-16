@@ -3,12 +3,12 @@ import FileList from './FileList';
 import FileUpload from './FileUpload';
 import FormBuilder from './FormBuilder';
 import FormField from './FormField';
+import QuestionField from './QuestionField';
 import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
 import PageCard from './PageCard';
 import PaginatedTable from './PaginatedTable';
 import UploadWorkflow from './UploadWorkflow';
-import Question from './Question';
 
 export default {
 	DatePicker,
@@ -16,10 +16,10 @@ export default {
 	FileUpload,
 	FormBuilder,
 	FormField,
+	QuestionField,
 	LangBtn,
 	NotificationBar,
 	PageCard,
 	PaginatedTable,
-	UploadWorkflow,
-	Question
+	UploadWorkflow
 };

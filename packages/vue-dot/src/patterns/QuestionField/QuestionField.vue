@@ -12,18 +12,14 @@
 						<VIcon>{{ mdiInformation }}</VIcon>
 					</v-btn>
 				</template>
-				<div v-bind="options.tooltipText">
-					{{ value.tooltip }}
-				</div>
+				<div v-bind="options.tooltipText">{{ value.tooltip }}</div>
 			</VTooltip>
 		</div>
-		<div v-bind="options.description">
-			{{ value.description }}
-		</div>
+		<div v-bind="options.description">{{ value.description }}</div>
 		<div v-bind="options.field">
-			<VTextField
-				v-bind="value.metadata"
-				:value="value.value"
+			<FormField
+				:value="formValue"
+				@change="formFieldChanged"
 			/>
 		</div>
 	</VContainer>
@@ -39,16 +35,9 @@
 
 	import customizable, { Options } from '../../mixins/customizable';
 
-	interface QuestionData {
-		title: string;
-		type: string;
-		value: any;
-		description?: string;
-		tooltip?: string;
-		metadata?: {
-			[key: string]: any;
-		};
-	}
+	import { QuestionData, ComponentMap } from './types';
+
+	import { Field } from '../FormField/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -64,14 +53,29 @@
 			prop: 'value',
 			event: 'change'
 		},
-		mixins: [ customizable(config) ]
+		mixins: [customizable(config)]
 	})
 	export default class Question extends Props {
+		componentMap: ComponentMap = {
+			short_text: 'string'
+		};
 
 		mdiInformation = mdiInformation;
 		options!: Options;
 		value!: QuestionData;
 
+		get formValue() {
+			return {
+				value: this.value.value,
+				label: this.value.metadata ? this.value.metadata.label : null,
+				options: this.value.metadata,
+				type: this.componentMap[this.value.type]
+			};
+		}
+
+		formFieldChanged(formFieldValue: Field) {
+			this.$emit('change', { ...this.value, value: formFieldValue.value });
+		}
 	}
 </script>
 

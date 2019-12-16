@@ -34,6 +34,8 @@
 				<!-- Examples -->
 				<QuestionTextshortEx />
 
+				<FormBuilderEx />
+
 				<CopyBtnEx />
 
 				<CustomIconEx />
@@ -49,8 +51,6 @@
 				<FileUploadEx />
 
 				<FormFieldEx />
-
-				<FormBuilderEx />
 
 				<LangBtnEx />
 
