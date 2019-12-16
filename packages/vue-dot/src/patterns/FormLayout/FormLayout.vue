@@ -24,6 +24,7 @@
 	import OneColumnLayout from './layouts/OneColumnLayout.vue';
 	import TwoColumnsLayout from './layouts/TwoColumnsLayout.vue';
 	import LayoutM from './layouts/LayoutM.vue';
+	import LayoutQuestion from './layouts/LayoutQuestion/LayoutQuestion.vue';
 	import LayoutMM from './layouts/LayoutMM.vue';
 
 	const Props = Vue.extend({
@@ -43,6 +44,7 @@
 		components: {
 			OneColumnLayout,
 			TwoColumnsLayout,
+			LayoutQuestion,
 			LayoutM,
 			LayoutMM
 		}
@@ -51,6 +53,7 @@
 		layoutMap: LayoutMap = {
 			oneColumn: 'OneColumnLayout',
 			twoColumns: 'TwoColumnsLayout',
+			question: 'LayoutQuestion',
 			m: 'LayoutM',
 			mm: 'LayoutMM'
 		};
