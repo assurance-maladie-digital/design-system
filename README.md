@@ -10,7 +10,7 @@
 
 <h1 align="center">CNAM Design System</h1>
 
-<p align="center">The Design System used in the French Health Insurance.</p>
+<p align="center">A Design System for the French Health Insurance.</p>
 
 <p align="center">
   <a href="https://github.com/assurance-maladie-digital/design-system/blob/master/LICENSE"><img src="https://flat.badgen.net/badge/license/MIT/blue" alt="License MIT"></a>
@@ -60,6 +60,10 @@ The goal of our Design System is to unify our work, which allows teams to share 
     </tr>
   </tbody>
 </table>
+
+## Contributing
+
+If your are interested in contributing, you should read the [Code of Conduct](CODE_OF_CONDUCT.md) and the [Contribution Guide](CONTRIBUTING.md).
 
 ## License
 
