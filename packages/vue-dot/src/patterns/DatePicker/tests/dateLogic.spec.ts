@@ -223,7 +223,9 @@ describe('dateLogic', () => {
 
 		wrapper.vm.$refs.input.hasError = true;
 
-		expect(wrapper.emitted('error')).toBeTruthy();
+		wrapper.vm.$nextTick(() => {
+			expect(wrapper.emitted('error')).toBeTruthy();
+		});
 	});
 
 	// dateFormatted

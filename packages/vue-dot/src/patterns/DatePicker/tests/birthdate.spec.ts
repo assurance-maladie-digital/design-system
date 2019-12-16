@@ -91,7 +91,9 @@ describe('birthdate', () => {
 
 		wrapper.vm.menu = true;
 
-		expect(spy).toHaveBeenCalled();
+		wrapper.vm.$nextTick(() => {
+			expect(spy).toHaveBeenCalled();
+		});
 	});
 
 	it('calls setActivePicker in watch when menu goes from true to false', () => {
@@ -100,7 +102,9 @@ describe('birthdate', () => {
 
 		wrapper.vm.menu = false;
 
-		expect(spy).toHaveBeenCalled();
+		wrapper.vm.$nextTick(() => {
+			expect(spy).toHaveBeenCalled();
+		});
 	});
 
 	it('updates the active picker when setActivePicker is called', () => {
