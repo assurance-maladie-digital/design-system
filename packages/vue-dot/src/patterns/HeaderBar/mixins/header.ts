@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import locales from '../locales';
+
+import { mdiAccount } from '@mdi/js';
+
+import locales from '../HeaderMenu/locales';
 
 const Props = Vue.extend({
 	props: {
@@ -8,7 +11,7 @@ const Props = Vue.extend({
 			type: Boolean,
 			default: false
 		},
-		firstname: {
+		firstName: {
 			type: String,
 			default: null
 		},
@@ -20,7 +23,7 @@ const Props = Vue.extend({
 			type: String,
 			default: locales.account
 		},
-		lastname: {
+		lastName: {
 			type: String,
 			default: null
 		},
@@ -56,13 +59,19 @@ const Props = Vue.extend({
 
 export default class Header extends Props {
 
-	actionsList!: [string];
-	navigationList!: [string];
+	locales = locales;
 
-	locales: object = locales;
+	actionsList!: string[];
+	navigationList!: string[];
+
+	avatarIcon = mdiAccount;
 
 	clickMenu() {
 		this.$emit('click:menu');
+	}
+
+	menuChanged(value: boolean) {
+		this.$emit('menu:change', value);
 	}
 
 	clickAction(index: number) {

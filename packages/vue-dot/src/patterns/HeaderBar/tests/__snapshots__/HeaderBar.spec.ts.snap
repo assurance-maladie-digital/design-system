@@ -5,16 +5,16 @@ exports[`HeaderBar test renders correctly with all option 1`] = `
   <header class="header-bar v-sheet v-sheet--tile theme--light elevation-4 v-toolbar v-toolbar--extended v-app-bar v-app-bar--fixed" style="height: 128px; margin-top: 0px; transform: translateY(0px); left: 0px; right: 0px;">
     <div class="v-toolbar__content" style="height: 80px;">
       <!----> <img src="../../assets/logo.svg" alt="l'Assurance Maladie" height="80" class="d-block">
-      <hr role="separator" aria-orientation="vertical" class="v-divider v-divider--inset v-divider--vertical theme--light primary">
+      <hr role="separator" aria-orientation="vertical" class="primary v-divider v-divider--inset v-divider--vertical theme--light">
       <div class="v-toolbar__title body-1 ml-md-4 ml-1 header-title">
         Titre
       </div>
       <div class="spacer"></div>
-      <div class="v-menu"><button type="button" class="v-btn v-btn--flat v-btn--text theme--light v-size--large menu-el text-none px-4 text-right no-text-transform" style="height: 71px;" data-test="buttonMenu"><span class="v-btn__content"><div class="layout btn-text column"><div class="subtitle-1 text-truncate">
+      <div class="v-menu"><button type="button" class="menu-el text-none px-4 text-right no-text-transform v-btn v-btn--flat v-btn--text theme--light v-size--large" style="height: 71px;" data-test="buttonMenu"><span class="v-btn__content"><div class="layout vd-btn-text column"><div class="subtitle-1 text-truncate">
 					Prénom nom
 				</div> <div class="body-2 text-truncate">
 					info supplémentaire
-				</div></div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text text--darken-1 round-icon ml-1"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span></button>
+				</div></div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true" class="v-icon notranslate round-icon ml-1 v-icon--svg theme--light grey--text text--darken-1"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span></button>
         <div role="menu" class="v-menu__content theme--light menu-active-el" style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top center; z-index: 0; display: none;"></div>
       </div>
     </div>

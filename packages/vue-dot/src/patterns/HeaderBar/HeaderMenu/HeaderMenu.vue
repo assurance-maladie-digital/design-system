@@ -3,11 +3,12 @@
 		v-if="buttonText || showIcon"
 		v-model="menu"
 		v-bind="options.menu"
-		@input="$emit('change', $event)"
+		@input="menuChanged"
 	>
 		<template #activator="{ on }">
 			<VBtn
 				data-test="buttonMenu"
+				class="menu-el text-none px-4 text-right no-text-transform"
 				v-bind="options.button"
 				:height="buttonHeight"
 				:large="!$vuetify.breakpoint.smAndDown"
@@ -16,17 +17,17 @@
 			>
 				<VLayout
 					v-if="buttonText"
-					class="btn-text"
+					class="vd-btn-text"
 					column
 				>
-					<!-- agent firstname and lastname or account text  -->
-					<div v-bind="options.buttonText">
+					<!-- userDisplayName firstName and lastName or account text  -->
+					<div class="subtitle-1 text-truncate">
 						{{ buttonText }}
 					</div>
 					<!-- informations -->
 					<div
 						v-if="info"
-						v-bind="options.buttonInfo"
+						class="body-2 text-truncate"
 					>
 						{{ info.trim() }}
 					</div>
@@ -38,13 +39,14 @@
 				-->
 				<VIcon
 					v-if="showIcon"
+					class="round-icon ml-1"
 					v-bind="options.buttonUserIcon"
 				>
-					{{ mdiAccount }}
+					{{ avatarIcon }}
 				</VIcon>
 			</VBtn>
 		</template>
-		<HeaderBarActions
+		<HeaderActions
 			:actions-list="actionsList"
 			:logged-in="loggedIn"
 			@click:action="clickAction"
@@ -54,54 +56,34 @@
 </template>
 
 <script lang="ts">
-	import HeaderBarActions from './HeaderBarActions.vue';
+	import HeaderActions from '../HeaderActions/HeaderActions.vue';
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
-	import customizable, { Options } from '../../mixins/customizable';
-	import config from './config/HeaderBarMenu';
+	import customizable from '../../../mixins/customizable';
+	import config from './config';
+	import locales from './locales';
 
 	import { mapActions, mapState } from 'vuex';
 
-	import { mdiAccount } from '@mdi/js';
+	import header from '../mixins/header';
 
-	import header from './mixins/header';
-
+	const MixinsDeclaration = mixins(customizable(config), header);
 	/** The profile button in the Header */
-	@Component<HeaderBarMenu>({
-		components: { HeaderBarActions },
-		mixins: [
-			// Default configuration
-			customizable(config),
-			header
-		]
+	@Component({
+		components: { HeaderActions }
 	})
-	export default class HeaderBarMenu extends Vue {
-		// Mixin computed data
-		options!: Options;
-
-		// mixins
-		actionsList!: [string];
-		firstname!: string;
-		lastname!: string;
-		loggedIn!: boolean;
-		accountText!: string;
-		hideUserIcon!: boolean;
-		info!: string;
-
-		// Icons
-		mdiAccount = mdiAccount;
-
+	export default class HeaderMenu extends MixinsDeclaration {
 		menu = false;
 
 		// compose the user display name
-		get agent() {
-			const firstname =
-				typeof this.firstname === 'string' ? this.firstname.trim() : '';
-			const lastname =
-				typeof this.lastname === 'string' ? this.lastname.trim() : '';
-			if (firstname.length > 0 || lastname.length > 0) {
-				return `${firstname} ${lastname}`;
+		get userDisplayName() {
+			const firstName =
+				typeof this.firstName === 'string' ? this.firstName.trim() : '';
+			const lastName =
+				typeof this.lastName === 'string' ? this.lastName.trim() : '';
+			if (firstName.length > 0 || lastName.length > 0) {
+				return `${firstName} ${lastName}`;
 			}
 			return null;
 		}
@@ -118,16 +100,16 @@
 		// calcul the button text to display
 		get buttonText() {
 			if (this.$vuetify.breakpoint.smAndDown) {
-				return null;
+				return false;
 			}
 
 			if (this.loggedIn) {
-				return this.agent;
+				return this.userDisplayName;
 			} else if (this.accountText && this.accountText.length > 0) {
 				return this.accountText.trim();
 			}
 
-			return null;
+			return false;
 		}
 
 		/** calcul if show the icon */
@@ -143,29 +125,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.btn-text {
+	.vd-btn-text {
 		max-width: 270px;
-	}
-
-	.menu-active-el {
-		border-radius: 4px;
-	}
-
-	.menu-el {
-		right: 15px;
-		position: absolute;
-		text-align: left;
-	}
-
-	.round-icon {
-		border-radius: 50%;
-	}
-
-	@media only screen and (max-width: 600px) {
-		.menu-el {
-			position: relative;
-			margin-top: 10px;
-			right: 0;
-		}
 	}
 </style>

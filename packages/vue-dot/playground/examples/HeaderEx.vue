@@ -1,8 +1,20 @@
 <template>
-	<DocSection
-		title="Header"
-	>
+	<DocSection title="Header">
 		<div style="width: 100%">
+			<h2 class="subtitle-1 font-weight-bold">
+				Test dynamique
+			</h2>
+
+			<textarea
+				class="grey lighten-2"
+				style="width:100%"
+				rows="13"
+				@change="headerEx = JSON.parse($event.target.value)"
+				v-html="headerEx"
+			/>
+
+			<HeaderBar v-bind="headerEx" />
+
 			<!-- header : non connecté -->
 			<h2 class="subtitle-1 font-weight-bold">
 				Non connecté
@@ -14,7 +26,7 @@
 			<HeaderBar
 				:app="false"
 				title="Titre"
-				account-text=""
+				account-text
 			/>
 			<!-- Titre + Mon compte -->
 			<h3 class="subtitle-2">
@@ -35,7 +47,7 @@
 			<HeaderBar
 				:app="false"
 				title="Titre long d'une application"
-				account-text=""
+				account-text
 			>
 				<template #logo>
 					<img
@@ -74,8 +86,8 @@
 				:app="false"
 				title="Titre"
 				:hide-user-icon="true"
-				firstname="Prénom"
-				lastname="nom"
+				first-name="Prénom"
+				last-name="nom"
 				:logged-in="true"
 			/>
 			<!-- Prénom nom + information supplémentaire -->
@@ -86,8 +98,8 @@
 				:app="false"
 				title="Titre"
 				:hide-user-icon="true"
-				firstname="Prénom"
-				lastname="nom"
+				first-name="Prénom"
+				last-name="nom"
 				:logged-in="true"
 				info="information supplémentaire"
 			/>
@@ -99,8 +111,8 @@
 				:app="false"
 				title="Titre"
 				:logged-in="true"
-				firstname="Prénom"
-				lastname="nom"
+				first-name="Prénom"
+				last-name="nom"
 			/>
 			<!-- Prénom Nom + Informations supplémentaires + Avatar -->
 			<h3 class="subtitle-2">
@@ -111,8 +123,8 @@
 				title="Titre"
 				logged-in
 				info="information supplémentaire"
-				firstname="Prénom"
-				lastname="nom"
+				first-name="Prénom"
+				last-name="nom"
 			/>
 
 			<h2 class="subtitle-1 font-weight-bold">
@@ -128,8 +140,8 @@
 				:navigation-list="['onglet', 'onglet']"
 				hide-user-icon
 				logged-in
-				firstname="Prénom"
-				lastname="nom"
+				first-name="Prénom"
+				last-name="nom"
 			/>
 
 			<h3 class="subtitle-2">
@@ -142,8 +154,8 @@
 				breadcrumb="projet"
 				hide-user-icon
 				logged-in
-				:firstname="null"
-				lastname="nom"
+				:first-name="null"
+				last-name="nom"
 			/>
 
 			<h3 class="subtitle-2">
@@ -153,14 +165,14 @@
 				v-model="navigationIndex"
 				:app="false"
 				title="Titre"
-				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet56666']"
+				:navigation-list="['onglet1', 'onglet2', 'onglet3', 'onglet4', 'onglet5']"
 				:actions-list="['test1', 'test2']"
 				breadcrumb="sous projet test long"
 				back
 				:hide-user-icon="false"
 				:logged-in="true"
-				firstname="Prénom"
-				lastname="nom"
+				first-name="Prénom"
+				last-name="nom"
 				info="info supplémentaire"
 			/>
 
@@ -182,13 +194,30 @@
 	export default Vue.extend({
 		data() {
 			return {
-				navigationIndex: 2
+				navigationIndex: 2,
+				headerEx: {
+					app: false,
+					title: 'Titre',
+					navigationList: [
+						'onglet1',
+						'onglet2',
+						'onglet3',
+						'onglet4',
+						'onglet5'
+					],
+					actionsList: ['test1', 'test2'],
+					breadcrumb: 'sous projet test long',
+					back: true,
+					hideUserIcon: false,
+					loggedIn: true,
+					firstName: 'Prénom',
+					lastName: 'nom',
+					info: 'info supplémentaire'
+				}
 			};
 		}
-
 	});
 </script>
 
 <style scoped>
-
 </style>

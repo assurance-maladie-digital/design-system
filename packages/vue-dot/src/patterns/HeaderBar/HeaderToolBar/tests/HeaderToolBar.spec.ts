@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import html from '@/tests/html';
 
-import HeaderBarTool from '../HeaderBarTool.vue';
+import HeaderBarTool from '../HeaderToolBar.vue';
 
 let wrapper: Wrapper<Vue>;
 

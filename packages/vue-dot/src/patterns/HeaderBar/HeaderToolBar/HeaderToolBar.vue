@@ -6,28 +6,28 @@
 	>
 		<!-- search if search is not null or searchable -->
 		<VTextField
-			data-test="search-input"
 			v-if="search !== null"
+			data-test="search-input"
 			v-bind="options.searchTextField"
 			:dense="$vuetify.breakpoint.smAndDown"
-			:placeholder="locales.search"
+			:placeholder="toolBarLocales.search"
 			@blur="search = null"
 			@click:clear="search = null"
-			@keydown.enter.prevent="emitSearch($event); search = null"
+			@keydown.enter="emitSearch($event); search = null"
 		/>
 		<!-- toolbar components with 'back' icon action, breadcrumb, tabs and 'search' icon  -->
 		<template v-else>
 			<!-- back icon -->
 			<VBtn
-				data-test="back"
 				v-if="back && breadcrumb"
+				data-test="back"
 				icon
 				small
 				dark
 				@click.prevent="emitBack"
 			>
 				<VIcon v-bind="options.backIcon">
-					{{ mdiArrowLeft }}
+					{{ backIcon }}
 				</VIcon>
 			</VBtn>
 			<!-- breadcrumb -->
@@ -79,12 +79,12 @@
 			<VSpacer />
 			<!-- search icon -->
 			<VBtn
-				data-test="search-icon"
 				v-if="searchable"
+				data-test="search-icon"
 				v-bind="options.searchBtn"
 				@click="search = ''"
 			>
-				<VIcon>{{ mdiMagnify }}</VIcon>
+				<VIcon>{{ searchIcon }}</VIcon>
 			</VBtn>
 		</template>
 	</VToolbar>
@@ -92,12 +92,14 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 	import { mdiArrowLeft, mdiMagnify } from '@mdi/js';
-	import header from './mixins/header';
+	import header from '../mixins/header';
 
-	import customizable, { Options } from '../../mixins/customizable';
-	import config from './config/HeaderBarTool';
+	import locales from './locales';
+
+	import config from './config';
+	import customizable from '../../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {
@@ -109,25 +111,17 @@
 		}
 	});
 
-	@Component<HeaderBarTool>({
-		mixins: [
-			// Default configuration
-			customizable(config),
-			header
-		]
-	})
-	export default class HeaderBarTool extends Props {
-		// Mixin computed data
-		options!: Options;
+	const MixinsDeclaration = mixins(Props, customizable(config), header);
+
+	@Component({})
+	export default class HeaderToolBar extends MixinsDeclaration {
 		// icons
-		mdiArrowLeft = mdiArrowLeft;
-		mdiMagnify = mdiMagnify;
+		backIcon = mdiArrowLeft;
+		searchIcon = mdiMagnify;
 
-		// mixins
-		navigationList!: [string];
+		toolBarLocales = locales;
 
-		// locales
-		search: string | null = null;
+		search = null;
 
 		// compute the select items
 		get navigationSelectItems() {
@@ -137,6 +131,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-</style>

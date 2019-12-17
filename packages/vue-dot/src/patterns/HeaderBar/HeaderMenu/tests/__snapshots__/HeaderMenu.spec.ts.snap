@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderMenu test renders connected correctly 1`] = `
+<div class="v-menu"><button type="button" class="menu-el text-none px-4 text-right no-text-transform v-btn v-btn--flat v-btn--text theme--light v-size--large" style="height: 71px;" data-test="buttonMenu"><span class="v-btn__content"><div class="layout vd-btn-text column"><div class="subtitle-1 text-truncate">
+					Prénom nom
+				</div> <div class="body-2 text-truncate">
+					information supplémentaire
+				</div></div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true" class="v-icon notranslate round-icon ml-1 v-icon--svg theme--light grey--text text--darken-1"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"></path></svg></span></button>
+  <div role="menu" class="v-menu__content theme--light menu-active-el" style="max-height: auto; min-width: 0px; max-width: auto; top: 12px; left: 12px; transform-origin: top center; z-index: 0; display: none;"></div>
+</div>
+`;
+
+exports[`HeaderMenu test renders not connected 1`] = `
+<vmenu-stub opendelay="0" closedelay="0" contentclass="menu-active-el" left="true" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top center" transition="scale-transition">
+  <headeractions-stub accounttext="Mon compte" actionslist="text1,text2" navigationlist=""></headeractions-stub>
+</vmenu-stub>
+`;

@@ -1,5 +1,8 @@
 <template>
-	<VList v-bind="options.list">
+	<VList
+		v-bind="options.list"
+		class="py-0 subtitle-1"
+	>
 		<!-- list of optional actions -->
 		<VListItem
 			v-for="(item, index) in actionsList"
@@ -15,8 +18,12 @@
 			data-test="itemLogout"
 			@click="clickLogout"
 		>
-			<VIcon v-bind="options.logoutIcon">
-				{{ mdiExitToApp }}
+			<VIcon
+				v-bind="options.logoutIcon"
+				color="primary"
+				class="mr-2"
+			>
+				{{ logoutIcon }}
 			</VIcon>
 			{{ locales.logOut }}
 		</VListItem>
@@ -25,28 +32,23 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
-	import header from './mixins/header';
+	import Component, { mixins } from 'vue-class-component';
+	import header from '../mixins/header';
 
-	import customizable, { Options } from '../../mixins/customizable';
-	import config from './config/HeaderBarActions';
+	import config from './config';
+	import locales from './locales';
 
 	import { mdiExitToApp } from '@mdi/js';
+	import customizable from '../../../mixins/customizable';
+
+	const MixinsDeclaration = mixins( customizable(config), header);
 
 	/** The profile button in the Header */
-	@Component<HeaderBarActions>({
-		mixins: [
-			// Default configuration
-			customizable(config),
-			header
-		]
-	})
-	export default class HeaderBarActions extends Vue {
-		// Mixin computed data
-		options!: Options;
+	@Component({})
+	export default class HeaderActions extends MixinsDeclaration {
+		logoutIcon = mdiExitToApp;
 
-		actionsList!: [string];
-		mdiExitToApp = mdiExitToApp;
+		locales = locales;
 	}
 </script>
 

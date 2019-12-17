@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import html from '@/tests/html';
 
-import HeaderBarDrawer from '../HeaderBarDrawer.vue';
+import HeaderBarDrawer from '../HeaderDrawer.vue';
 
 let wrapper: Wrapper<Vue>;
 
@@ -15,8 +15,8 @@ describe('HeaderBarDrawer test', () => {
 		wrapper = mountComponent(HeaderBarDrawer, {
 			propsData: {
 				value: true,
-				firstname: 'Prénom',
-				lastname: 'nom',
+				firstName: 'Prénom',
+				lastName: 'nom',
 				actionsList: ['text1', 'text2'],
 				info: 'information supplémentaire'
 			}

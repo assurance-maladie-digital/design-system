@@ -17,40 +17,46 @@
 			<img
 				src="../../assets/logo.svg"
 				v-bind="options.image"
+				class="d-block"
 				:alt="locales.logoBtn.alt"
 				:height="$vuetify.breakpoint.smAndDown ? '40' : '80'"
 				@click="$emit('home')"
 			>
 
 			<VDivider
+				class="primary"
 				v-bind="options.divider"
 			/>
 			<!-- title slot -->
 			<slot name="title">
-				<VToolbarTitle v-bind="options.title">
+				<VToolbarTitle
+					v-bind="options.title"
+					class="body-1 ml-md-4 ml-1 header-title"
+				>
 					{{ title }}
 				</VToolbarTitle>
 			</slot>
 			<VSpacer />
 			<!-- menu right -->
-			<HeaderBarMenu
+			<HeaderMenu
 				:account-text="accountText"
 				:logged-in="loggedIn"
 				:info="info"
 				:hide-user-icon="hideUserIcon"
 				:actions-list="actionsList"
-				:firstname="firstname"
-				:lastname="lastname"
+				:first-name="firstName"
+				:last-name="lastName"
+				@menu:change="menuChanged"
 				@click:menu="clickMenu"
 				@click:action="clickAction"
 				@click:logout="clickLogout"
 			/>
-			<!-- tool bar in extension -->
+			<!-- tool bar in extension only if searchable or with a breadcrum or with a navigation list  -->
 			<template
-				v-if="navigationList || breadcrumb || searchable"
+				v-if="navigationList.length || breadcrumb || searchable"
 				#extension
 			>
-				<HeaderBarTool
+				<HeaderToolBar
 					:value="value"
 					:breadcrumb="breadcrumb"
 					:back="back"
@@ -63,14 +69,14 @@
 			</template>
 		</VAppBar>
 		<!-- drawer -->
-		<HeaderBarDrawer
+		<HeaderDrawer
 			v-if="showNavDrawer"
 			v-model="showActionList"
 			:app="app"
 			:info="info"
 			:actions-list="actionsList"
-			:firstname="firstname"
-			:lastname="lastname"
+			:first-name="firstName"
+			:last-name="lastName"
 			:logged-in="loggedIn"
 			@click:action="clickAction"
 			@click:logout="clickLogout"
@@ -81,16 +87,16 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import locales from './locales';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
-	import customizable, { Options } from '../../mixins/customizable';
-	import config from './config/headerBar';
+	import customizable from '../../mixins/customizable';
+	import config from './config';
 	import header from './mixins/header';
 
 	// components for the header bar
-	import HeaderBarMenu from './HeaderBarMenu.vue';
-	import HeaderBarDrawer from './HeaderBarDrawer.vue';
-	import HeaderBarTool from './HeaderBarTool.vue';
+	import HeaderMenu from './HeaderMenu/HeaderMenu.vue';
+	import HeaderDrawer from './HeaderDrawer/HeaderDrawer.vue';
+	import HeaderToolBar from './HeaderToolBar/HeaderToolBar.vue';
 
 	const Props = Vue.extend({
 		props: {
@@ -111,26 +117,16 @@
 		}
 	});
 
-	/** The Header of the application */
-	@Component<HeaderBar>({
-		components: {
-			HeaderBarMenu, HeaderBarDrawer, HeaderBarTool
-		},
-		mixins: [
-			// Default configuration
-			customizable(config),
-			header
-		]
-	})
-	export default class HeaderBar extends Props {
+	const MixinsDeclaration = mixins(Props, customizable(config), header);
 
-		// Mixin computed data
-		options!: Options;
-		actionsList!: [string];
-		loggedIn!: boolean;
+	/** The Header of the application */
+	@Component({
+		components: { HeaderDrawer, HeaderMenu, HeaderToolBar }
+	})
+	export default class HeaderBar extends MixinsDeclaration {
+		showActionList = false;
 
 		locales = locales;
-		showActionList = false;
 
 		/**
 		 * calculate if the drawer can be viewed in mobile:
@@ -138,22 +134,24 @@
 		 * or actionsList is not empty
 		 */
 		get showNavDrawer() {
-			return this.$vuetify.breakpoint.smAndDown && (this.actionsList.length > 0 || this.loggedIn);
+			return (
+				this.$vuetify.breakpoint.smAndDown &&
+				(this.actionsList.length > 0 || this.loggedIn)
+			);
 		}
-
 	}
 </script>
 
 <style lang="scss" scoped>
-.header-title {
-	max-width: 300px;
-}
+	.header-title {
+		max-width: 300px;
+	}
 
-.header-bar ::v-deep .v-toolbar__extension {
-  padding: 4px 0px;
-}
+	.header-bar ::v-deep .v-toolbar__extension {
+		padding: 4px 0px;
+	}
 
-.header-bar ::v-deep .v-toolbar__content {
-  padding: 4px 16px;
-}
+	.header-bar ::v-deep .v-toolbar__content {
+		padding: 4px 16px;
+	}
 </style>

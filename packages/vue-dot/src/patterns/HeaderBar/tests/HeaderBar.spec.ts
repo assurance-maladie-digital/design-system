@@ -24,8 +24,8 @@ describe('HeaderBar test', () => {
 				searchable: true,
 				hideUserIcon: false,
 				loggedIn: true,
-				firstname: 'Prénom',
-				lastname: 'nom',
+				firstName: 'Prénom',
+				lastName: 'nom',
 				info: 'info supplémentaire'
 			}
 		}, true);
@@ -41,9 +41,7 @@ describe('HeaderBar test', () => {
 		const textInput = wrapper.find('[data-test="search-input"]');
 		textInput.setValue('some value');
 		await Vue.nextTick();
-		wrapper.trigger('keydown', {
-			key: 13
-		});
+		wrapper.trigger('keydown.enter');
 	});
 
 });
