@@ -25,6 +25,7 @@
 	],
 	"main": "./dist/index.js",
 	"scripts": {
+		"pre-commit": "lint-staged",
 		"build": "ts-node --project tsconfig.json --files ./scripts/build.ts",
 		"lint": "eslint **/*.ts --fix",
 		"test": "jest"
@@ -35,6 +36,12 @@
 	"devDependencies": {
 		"@types/figlet": "^1.2.0",
 		"jest-mock-process": "^1.2.0"
+	},
+	"lint-staged": {
+		"*.{ts}": [
+			"eslint **/*.ts --fix",
+			"git add"
+		]
 	},
 	"publishConfig": {
 		"access": "public"
