@@ -32,7 +32,7 @@
 				</h1>
 
 				<!-- Examples -->
-				<QuestionTextshortEx />
+				<QuestionLayoutEx />
 
 				<FormBuilderEx />
 

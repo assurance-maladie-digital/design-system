@@ -1,7 +1,7 @@
 <template>
-	<DocSection title="Questionnaire : réponse courte">
+	<DocSection title="Questionnaire : layout question (QUE-30)">
 		<h2 class="subtitle-1 mb-2 font-weight-bold">
-			plusieur réponse courte simple dans un formulaire
+			plusieurs réponses dans un formulaire
 		</h2>
 		<textarea
 			class="blue-grey lighten-5"
@@ -33,6 +33,10 @@
 			{
 				type: 'question',
 				fields: ['q2']
+			},
+			{
+				type: 'm',
+				fields: ['q3']
 			}
 		];
 
@@ -43,11 +47,13 @@
 				value: '',
 				description: 'information supplémentaire',
 				tooltip: 'tooltip info',
-				label: 'label',
-				placeholder: 'placeholder',
-				hint: 'hint',
-				persistentHint: true,
-				outlined: true
+				options: {
+					label: 'label1',
+					placeholder: 'placeholder1',
+					hint: 'hint1',
+					persistentHint: true,
+					outlined: true
+				}
 			},
 			q2: {
 				title: 'Question 2 ?',
@@ -55,11 +61,27 @@
 				value: '',
 				description: 'information supplémentaire',
 				tooltip: 'tooltip info',
-				label: 'label',
-				placeholder: 'placeholder',
-				hint: 'hint',
-				persistentHint: true,
-				outlined: true
+				options: {
+					label: 'label2',
+					placeholder: 'placeholder2',
+					hint: 'hint2',
+					persistentHint: true,
+					outlined: true
+				}
+			},
+			q3: {
+				title: 'Question 3 ?',
+				type: 'string',
+				value: '',
+				description: 'information supplémentaire',
+				tooltip: 'tooltip info',
+				options: {
+					label: 'pas une question',
+					placeholder: 'placeholder3',
+					hint: 'hint3',
+					persistentHint: true,
+					outlined: true
+				}
 			}
 		};
 
