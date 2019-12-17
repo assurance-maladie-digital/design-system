@@ -23,7 +23,6 @@
 		"types": [
 			"node",
 			"jest",
-			"cypress",
 			"vuetify",
 			"webfontloader"
 		],
