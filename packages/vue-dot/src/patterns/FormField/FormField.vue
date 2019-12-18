@@ -42,6 +42,7 @@
 
 <style lang="scss" scoped>
 	.vd-form-field {
+		width: 100%;
 		padding: 16px;
 	}
 </style>

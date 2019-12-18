@@ -1,8 +1,8 @@
 <template>
 	<div class="vd-form-builder">
 		<FormLayout
-			v-for="(formLayout, layoutIndex) in newLayout"
-			:key="'layout-' + layoutIndex"
+			v-for="(formLayout, index) in computedLayout"
+			:key="'layout-' + index"
 			:layout="formLayout"
 		>
 			<template #default="{ field }">
@@ -17,67 +17,28 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
-	import clonedeep from 'lodash.clonedeep';
+	import FormBuilderCore from './mixins/formBuilderCore';
 
 	import FormLayout from '../FormLayout';
 
-	const Props = Vue.extend({
-		props: {
-			value: {
-				type: [Array, Object],
-				required: true
-			},
-			layout: {
-				type: [Array, Object],
-				required: true
-			}
-		}
-	});
+	const MixinsDeclaration = mixins(FormBuilderCore);
 
-	@Component<FormBuilder>({
-		model: {
-			prop: 'value',
-			event: 'change'
-		},
+	/**
+	 * FormBuilder is a component that displays a form
+	 * from a JSON object
+	 */
+	@Component({
 		components: {
 			FormLayout
-		},
-		watch: {
-			layout: {
-				handler() {
-					this.computeLayout();
-				},
-				immediate: true
-			}
 		}
 	})
-	export default class FormBuilder extends Props {
-		newLayout = {} as any;
-
-		formUpdated(field: any) {
-			const form = clonedeep(this.value);
-
-			form[field.name].value = field.value;
-
-			this.$nextTick(() => {
-				this.$emit('change', form);
-			});
-		}
-
-		computeLayout() {
-			this.newLayout = clonedeep(this.layout);
-
-			this.layout.forEach((layout: any, index: any) => {
-				layout.fields.forEach((field: any, fieldIndex: any) => {
-					this.newLayout[index].fields[fieldIndex] = {
-						...this.value[field]
-					};
-
-					this.newLayout[index].fields[fieldIndex].name = field;
-				});
-			});
-		}
-	}
+	export default class FormBuilder extends MixinsDeclaration {}
 </script>
+
+<style lang="scss" scoped>
+	.vd-form-builder {
+		width: 100%;
+	}
+</style>

@@ -1,6 +1,6 @@
 <template>
 	<component
-		:is="getLayout(layout.type)"
+		:is="getLayout(layout.type).component"
 		:fields="layout.fields"
 		class="vd-form-layout"
 	>
@@ -16,13 +16,11 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
-	import { LayoutMap } from './types';
+	import LayoutMap from './mixins/layoutMap';
 
 	// Layouts
-	import OneColumnLayout from './layouts/OneColumnLayout.vue';
-	import TwoColumnsLayout from './layouts/TwoColumnsLayout.vue';
 	import LayoutM from './layouts/LayoutM.vue';
 	import LayoutQuestion from './layouts/LayoutQuestion/LayoutQuestion.vue';
 	import LayoutMM from './layouts/LayoutMM.vue';
@@ -36,36 +34,24 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props, LayoutMap);
+
 	@Component({
 		model: {
 			prop: 'value',
 			event: 'change'
 		},
 		components: {
-			OneColumnLayout,
-			TwoColumnsLayout,
 			LayoutQuestion,
 			LayoutM,
 			LayoutMM
 		}
 	})
-	export default class FormLayout extends Props {
-		layoutMap: LayoutMap = {
-			oneColumn: 'OneColumnLayout',
-			twoColumns: 'TwoColumnsLayout',
-			question: 'LayoutQuestion',
-			m: 'LayoutM',
-			mm: 'LayoutMM'
-		};
-
+	export default class FormLayout extends MixinsDeclaration {
 		getSlotName(index: number) {
 			const nIndex = index + 1;
 
 			return `content-${nIndex}`;
-		}
-
-		getLayout(layoutName: string) {
-			return this.layoutMap[layoutName];
 		}
 	}
 </script>
