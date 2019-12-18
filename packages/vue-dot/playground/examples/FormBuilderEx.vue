@@ -2,7 +2,6 @@
 	<DocSection title="FormBuilder">
 		<FormBuilder
 			v-model="form"
-			:layout="formLayout"
 		/>
 	</DocSection>
 </template>
