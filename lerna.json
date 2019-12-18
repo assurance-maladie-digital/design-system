@@ -2,6 +2,8 @@
 	"packages": [
 		"packages/*"
 	],
+	"npmClient": "yarn",
+	"useWorkspaces": true,
 	"command": {
 		"publish": {
 			"allowBranch": [
@@ -11,6 +13,5 @@
 			"message": "🔖 %s"
 		}
 	},
-	"version": "2.0.0-alpha.44",
-	"npmClient": "yarn"
+	"version": "2.0.0-alpha.44"
 }
