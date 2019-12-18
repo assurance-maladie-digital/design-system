@@ -22,6 +22,11 @@
 // 	[key: string]: Field;
 // }
 
-export interface LayoutMap {
-	[key: string]: string;
+interface LayoutMapItem {
+	component: string;
+	fieldsNumber: number;
+}
+
+export interface ILayoutMap {
+	[key: string]: LayoutMapItem;
 }
