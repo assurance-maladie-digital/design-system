@@ -1,12 +1,15 @@
 <template>
 	<VLayout
 		column
-		class="vd-layout"
+		class="vd-layout ma-n4"
 		grid-list-md
 		v-bind="options.layout"
 	>
-		<div v-if="getField(0).field.title">
-			<div class="body-1 my-0">
+		<div
+			v-if="getField(0).field.title"
+			class="mx-4 mt-4"
+		>
+			<h4 class="body-1 my-0">
 				<!-- title -->
 				<span>{{ getField(0).field.title }}</span>
 				<!-- tooltip -->
@@ -22,16 +25,14 @@
 							</VIcon>
 						</v-btn>
 					</template>
-					<div class="mt-2">
-						{{ getField(0).field.tooltip }}
-					</div>
+					<span v-html="getField(0).field.tooltip" />
 				</VTooltip>
-			</div>
+			</h4>
 		</div>
 		<!-- description/precision -->
-		<div class="body-2">
+		<p class="body-2 mx-4 mb-0">
 			{{ getField(0).field.description }}
-		</div>
+		</p>
 		<!-- the field -->
 		<slot
 			name="content-1"

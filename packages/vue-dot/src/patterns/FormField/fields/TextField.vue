@@ -1,7 +1,7 @@
 <template>
 	<VTextField
 		v-model="field.value"
-		v-bind="field.options"
+		v-bind="field.metadata"
 		@change="emitChangeEvent(field)"
 	/>
 </template>
