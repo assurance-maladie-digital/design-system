@@ -82,7 +82,10 @@
 
 	import { version } from '../package.json';
 
-	const DARK_THEME_KEY = 'vd-pg-dark';
+	const DARK_THEME_KEY = 'pg-dark';
+	const STORAGE_VERSION = 1;
+
+	import LocalStorageUtility from '../src/helpers/localStorageUtility';
 
 	/**
 	 * Playground is a component that contains examples
@@ -92,23 +95,19 @@
 	export default class Playground extends Vue {
 		version = version;
 
+		localStorageUtility = new LocalStorageUtility(STORAGE_VERSION);
+
 		updateTheme() {
 			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
 
 			// Save the preference in localStorage
-			localStorage.setItem(
-				DARK_THEME_KEY,
-				// Local storage only accepts strings,
-				// so we must use JSON.stringify
-				JSON.stringify(this.$vuetify.theme.dark)
-			);
+			this.localStorageUtility.setItem(DARK_THEME_KEY, this.$vuetify.theme.dark);
 		}
 
 		created() {
-			// Set theme
-			const stored = localStorage.getItem(DARK_THEME_KEY) || 'false';
-			const darkTheme = JSON.parse(stored);
+			const darkTheme = this.localStorageUtility.getItem(DARK_THEME_KEY) || false;
 
+			// Set theme
 			this.$vuetify.theme.dark = darkTheme;
 		}
 
