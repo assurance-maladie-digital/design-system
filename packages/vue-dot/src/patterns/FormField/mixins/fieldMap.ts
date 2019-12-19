@@ -41,8 +41,9 @@ export default class FieldMap extends Vue {
 	 * passed in argument
 	 *
 	 * @param {string} fieldName The name of the field
+	 * @returns {string} The field
 	 */
-	getField(fieldName: string) {
+	getField(fieldName: string): string {
 		return this.fieldMap[fieldName];
 	}
 }

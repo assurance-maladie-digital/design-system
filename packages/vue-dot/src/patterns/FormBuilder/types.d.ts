@@ -15,6 +15,8 @@ export interface LayoutItem {
 	type: string;
 }
 
+export type Layout = LayoutItem[];
+
 // ComputedLayout
 export interface ComputedLayoutItem {
 	fields: ComputedField[];

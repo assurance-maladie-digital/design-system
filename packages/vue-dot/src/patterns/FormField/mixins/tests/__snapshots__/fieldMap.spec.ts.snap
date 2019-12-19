@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fieldMap contains the map of fields and their components 1`] = `
+Object {
+  "autocomplete": "AutocompleteField",
+  "number": "NumberField",
+  "password": "PasswordField",
+  "select": "SelectField",
+  "string": "TextField",
+  "textarea": "TextareaField",
+}
+`;
