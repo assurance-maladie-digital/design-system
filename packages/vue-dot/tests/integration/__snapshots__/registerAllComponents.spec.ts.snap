@@ -8,6 +8,8 @@ Array [
   "DatePicker",
   "FileList",
   "FileUpload",
+  "FormBuilder",
+  "FormField",
   "LangBtn",
   "NotificationBar",
   "PageCard",
