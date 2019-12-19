@@ -1,13 +1,11 @@
 export interface Field {
 	type: string;
-	metadata: object;
 	value: string | number | null;
-	// valueToSend?: string;
+	title?: string;
+	description?: string;
+	tooltip?: string;
+	metadata?: object;
 	items?: any[];
-	// rules?: Rule[];
-	// options?: any;
-	// uri?: string;
-	// dynamic?: boolean;
 	mask?: string;
 }
 

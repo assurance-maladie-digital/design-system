@@ -6,18 +6,19 @@ import { ILayoutMap } from '../types';
 /** */
 @Component
 export default class LayoutMap extends Vue {
+	// Don't forget to update layoutEnum
 	layoutMap: ILayoutMap = {
-		question: {
+		Question: {
 			component: 'LayoutQuestion',
-			fieldsNumber: 1
+			numberOfFields: 1
 		},
-		m: {
+		Medium: {
 			component: 'LayoutM',
-			fieldsNumber: 1
+			numberOfFields: 1
 		},
-		mm: {
+		Medium_Medium: {
 			component: 'LayoutMM',
-			fieldsNumber: 2
+			numberOfFields: 2
 		}
 	};
 
