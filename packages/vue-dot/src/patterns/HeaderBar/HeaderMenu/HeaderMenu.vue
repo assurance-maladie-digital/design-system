@@ -26,7 +26,7 @@
 					</div>
 					<!-- informations -->
 					<div
-						v-if="info"
+						v-if="info && loggedIn"
 						class="body-2 text-truncate"
 					>
 						{{ info.trim() }}
@@ -47,6 +47,7 @@
 			</VBtn>
 		</template>
 		<HeaderActions
+			v-if="loggedIn"
 			:actions-list="actionsList"
 			:logged-in="loggedIn"
 			@click:action="clickAction"
