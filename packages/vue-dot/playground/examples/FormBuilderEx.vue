@@ -60,31 +60,36 @@
 			streetNumberComplement: {
 				type: 'select',
 				value: null,
-				items: ['bis', 'ter', 'quater'],
+				items: [
+					'bis',
+					'ter',
+					'quater'
+				],
 				metadata: {
 					label: 'Complément de voie'
 				}
 			},
 			streetType: {
 				type: 'autocomplete',
-				rules: [
-					{
+				rules: [{
 						name: 'required'
-					}
-				],
+				}],
 				value: null,
-				items: ['Allée', 'Avenue', 'Boulevard', 'Aucun'],
+				items: [
+					'Allée',
+					'Avenue',
+					'Boulevard',
+					'Aucun'
+				],
 				metadata: {
 					label: 'Type de voie'
 				}
 			},
 			streetLabel: {
 				type: 'string',
-				rules: [
-					{
-						name: 'required'
-					}
-				],
+				rules: [{
+					name: 'required'
+				}],
 				value: null,
 				metadata: {
 					label: 'Libellé de la voie'
@@ -99,11 +104,9 @@
 			},
 			postalCode: {
 				type: 'number',
-				rules: [
-					{
-						name: 'required'
-					}
-				],
+				rules: [{
+					name: 'required'
+				}],
 				value: null,
 				mask: '#####',
 				metadata: {
@@ -112,11 +115,9 @@
 			},
 			city: {
 				type: 'string',
-				rules: [
-					{
-						name: 'required'
-					}
-				],
+				rules: [{
+					name: 'required'
+				}],
 				value: null,
 				metadata: {
 					label: 'Ville'
