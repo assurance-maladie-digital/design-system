@@ -32,7 +32,6 @@
 				</h1>
 
 				<!-- Examples -->
-
 				<CopyBtnEx />
 
 				<CustomIconEx />

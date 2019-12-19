@@ -30,8 +30,8 @@
 		"vue-dash": "./bin/cli.js"
 	},
 	"scripts": {
-		"lint": "eslint **/*.ts --fix",
-		"build": "ts-node --project tsconfig.json --files build.ts"
+		"build": "ts-node --project tsconfig.json --files build.ts",
+		"lint": "eslint **/*.ts --fix"
 	},
 	"dependencies": {
 		"@cnamts/cli-helpers": "^2.0.0-alpha.44",
