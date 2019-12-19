@@ -61,7 +61,7 @@
 			streetType: {
 				type: 'autocomplete',
 				rules: [{
-						name: 'required'
+					name: 'required'
 				}],
 				value: null,
 				items: [
