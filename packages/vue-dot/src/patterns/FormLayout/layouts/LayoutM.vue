@@ -2,7 +2,7 @@
 	<VLayout class="vd-layout ma-n4">
 		<slot
 			name="content-1"
-			v-bind="getField(0)"
+			:field="getField(0)"
 		/>
 	</VLayout>
 </template>
