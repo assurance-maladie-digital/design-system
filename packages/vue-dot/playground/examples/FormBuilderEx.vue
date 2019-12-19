@@ -25,7 +25,6 @@
 		</VRow>
 
 		<FormBuilder
-			:key="key"
 			v-model="form"
 			:layout="formLayout"
 		/>
@@ -36,18 +35,8 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	@Component<FormBuilderEx>({
-		watch: {
-			form(newValue) {
-				this.key = Math.random() * 100;
-			},
-			formLayout(newValue) {
-				this.key = Math.random() * 100;
-			}
-		}
-	})
+	@Component
 	export default class FormBuilderEx extends Vue {
-		key = 0;
 		form = {
 			streetNumber: {
 				type: 'number',
@@ -139,7 +128,10 @@
 		formLayout = [
 			{
 				type: 'mm',
-				fields: ['streetNumber', 'streetNumberComplement']
+				fields: [
+					'streetNumber',
+					'streetNumberComplement'
+				]
 			},
 			{
 				type: 'm',
@@ -155,7 +147,10 @@
 			},
 			{
 				type: 'mm',
-				fields: ['postalCode', 'city']
+				fields: [
+					'postalCode',
+					'city'
+				]
 			},
 			{
 				type: 'question',

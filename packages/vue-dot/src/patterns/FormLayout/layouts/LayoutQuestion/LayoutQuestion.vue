@@ -3,27 +3,23 @@
 		column
 		class="vd-layout ma-n4"
 	>
-		<div
+		<h4
 			v-if="getField(0).title"
-			class="mx-4 mt-4"
+			class="mx-4 mt-4 body-1 my-0"
 		>
-			<h4 class="body-1 my-0">
-				<span>{{ getField(0).title }}</span>
-				<VTooltip right>
-					<template v-slot:activator="{ on }">
-						<VBtn
-							icon
-							v-on="on"
-						>
-							<VIcon>
-								{{ informationIcon }}
-							</VIcon>
-						</VBtn>
-					</template>
-					<span v-html="getField(0).tooltip" />
-				</VTooltip>
-			</h4>
-		</div>
+			<span>{{ getField(0).title }}</span>
+			<VTooltip right>
+				<template v-slot:activator="{ on }">
+					<VBtn
+						icon
+						v-on="on"
+					>
+						<VIcon>{{ informationIcon }}</VIcon>
+					</VBtn>
+				</template>
+				<span>{{ getField(0).tooltip }}</span>
+			</VTooltip>
+		</h4>
 		<p class="body-2 mx-4 mb-0">
 			{{ getField(0).description }}
 		</p>
