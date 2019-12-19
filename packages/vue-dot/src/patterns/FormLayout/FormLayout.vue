@@ -21,6 +21,7 @@
 	import LayoutMap from './mixins/layoutMap';
 
 	// Layouts
+	import LayoutQuestion from './layouts/LayoutQuestion/LayoutQuestion.vue';
 	import LayoutM from './layouts/LayoutM.vue';
 	import LayoutMM from './layouts/LayoutMM.vue';
 
@@ -41,6 +42,7 @@
 			event: 'change'
 		},
 		components: {
+			LayoutQuestion,
 			LayoutM,
 			LayoutMM
 		}

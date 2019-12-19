@@ -1,7 +1,32 @@
 <template>
 	<DocSection title="FormBuilder">
+		<!-- editable live configuration -->
+		<VRow wrap>
+			<VCol>
+				Liste des champs du formulaire
+				<textarea
+					class="blue-grey lighten-5"
+					style="width:100%"
+					rows="14"
+					@change="form = JSON.parse($event.target.value)"
+					v-html="form"
+				/>
+			</VCol>
+			<VCol>
+				disposition des champs
+				<textarea
+					class="blue-grey lighten-5"
+					style="width:100%"
+					rows="14"
+					@change="formLayout = JSON.parse($event.target.value)"
+					v-html="formLayout"
+				/>
+			</VCol>
+		</VRow>
+
 		<FormBuilder
 			v-model="form"
+			:layout="formLayout"
 		/>
 	</DocSection>
 </template>
@@ -17,7 +42,9 @@
 				type: 'number',
 				value: null,
 				mask: '#####',
-				label: 'Numéro de voie'
+				metadata: {
+					label: 'Numéro de voie'
+				}
 			},
 			streetNumberComplement: {
 				type: 'select',
@@ -27,7 +54,9 @@
 					'ter',
 					'quater'
 				],
-				label: 'Complément de voie'
+				metadata: {
+					label: 'Complément de voie'
+				}
 			},
 			streetType: {
 				type: 'autocomplete',
@@ -41,7 +70,9 @@
 					'Boulevard',
 					'Aucun'
 				],
-				label: 'Type de voie'
+				metadata: {
+					label: 'Type de voie'
+				}
 			},
 			streetLabel: {
 				type: 'string',
@@ -49,12 +80,16 @@
 					name: 'required'
 				}],
 				value: null,
-				label: 'Libellé de la voie'
+				metadata: {
+					label: 'Libellé de la voie'
+				}
 			},
 			streetComplement: {
 				type: 'string',
 				value: null,
-				label: 'Complément d\'adresse'
+				metadata: {
+					label: 'Complément d\'adresse'
+				}
 			},
 			postalCode: {
 				type: 'number',
@@ -63,7 +98,9 @@
 				}],
 				value: null,
 				mask: '#####',
-				label: 'Code postal'
+				metadata: {
+					label: 'Code postal'
+				}
 			},
 			city: {
 				type: 'string',
@@ -71,7 +108,20 @@
 					name: 'required'
 				}],
 				value: null,
-				label: 'Ville'
+				metadata: {
+					label: 'Ville'
+				}
+			},
+			question1: {
+				type: 'string',
+				title: 'Question ?',
+				description: 'information supplémentaire',
+				tooltip: 'tooltip information',
+				value: null,
+				metadata: {
+					label: 'label',
+					placeholder: 'placeholder'
+				}
 			}
 		};
 
@@ -101,6 +151,10 @@
 					'postalCode',
 					'city'
 				]
+			},
+			{
+				type: 'question',
+				fields: ['question1']
 			}
 		];
 	}

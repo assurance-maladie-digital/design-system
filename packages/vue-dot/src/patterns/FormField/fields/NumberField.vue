@@ -2,7 +2,7 @@
 	<VTextField
 		v-model="field.value"
 		v-mask="field.mask"
-		:label="field.label"
+		v-bind="field.metadata"
 		@change="emitChangeEvent(field)"
 	/>
 </template>

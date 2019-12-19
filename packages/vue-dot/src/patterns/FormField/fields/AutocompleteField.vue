@@ -2,7 +2,7 @@
 	<VAutocomplete
 		v-model="field.value"
 		:items="field.items"
-		:label="field.label"
+		v-bind="field.metadata"
 		@change="emitChangeEvent(field)"
 	/>
 </template>

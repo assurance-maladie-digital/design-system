@@ -3,7 +3,7 @@
 		v-model="field.value"
 		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"
-		:label="field.label"
+		v-bind="field.metadata"
 		@click:append="showEyeIcon = !showEyeIcon"
 		@change="emitChangeEvent(field)"
 	/>
