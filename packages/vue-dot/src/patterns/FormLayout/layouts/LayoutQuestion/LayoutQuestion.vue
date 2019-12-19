@@ -2,38 +2,31 @@
 	<VLayout
 		column
 		class="vd-layout ma-n4"
-		grid-list-md
-		v-bind="options.layout"
 	>
 		<div
-			v-if="getField(0).field.title"
+			v-if="getField(0).title"
 			class="mx-4 mt-4"
 		>
 			<h4 class="body-1 my-0">
-				<!-- title -->
-				<span>{{ getField(0).field.title }}</span>
-				<!-- tooltip -->
-				<VTooltip v-bind="options.tooltip">
+				<span>{{ getField(0).title }}</span>
+				<VTooltip right>
 					<template v-slot:activator="{ on }">
-						<v-btn
-							v-bind="options.tooltipBtn"
+						<VBtn
 							icon
 							v-on="on"
 						>
-							<VIcon v-bind="options.informationIcon">
+							<VIcon>
 								{{ informationIcon }}
 							</VIcon>
-						</v-btn>
+						</VBtn>
 					</template>
-					<span v-html="getField(0).field.tooltip" />
+					<span v-html="getField(0).tooltip" />
 				</VTooltip>
 			</h4>
 		</div>
-		<!-- description/precision -->
 		<p class="body-2 mx-4 mb-0">
-			{{ getField(0).field.description }}
+			{{ getField(0).description }}
 		</p>
-		<!-- the field -->
 		<slot
 			name="content-1"
 			v-bind="getField(0)"
@@ -49,14 +42,8 @@
 
 	import LayoutComponent from '../../mixins/layoutComponent';
 
-	import config from './config';
-
-	import customizable from '../../../../mixins/customizable';
-
-	const MixinsDeclaration = mixins(LayoutComponent, customizable(config));
-
 	@Component
-	export default class LayoutQuestion extends MixinsDeclaration {
+	export default class LayoutQuestion extends LayoutComponent {
 		informationIcon = mdiInformation;
 	}
 </script>

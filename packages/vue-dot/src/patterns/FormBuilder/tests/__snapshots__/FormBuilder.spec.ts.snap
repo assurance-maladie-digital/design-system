@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileUpload renders correctly 1`] = `
+<div class="vd-form-builder">
+  <formlayout-stub layout="[object Object]"></formlayout-stub>
+  <formlayout-stub layout="[object Object]"></formlayout-stub>
+  <formlayout-stub layout="[object Object]"></formlayout-stub>
+  <formlayout-stub layout="[object Object]"></formlayout-stub>
+</div>
+`;

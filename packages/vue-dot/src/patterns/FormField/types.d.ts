@@ -1,6 +1,6 @@
 export interface Field {
 	type: string;
-	label: string;
+	metadata: object;
 	value: string | number | null;
 	// valueToSend?: string;
 	items?: any[];

@@ -1,7 +1,7 @@
 <template>
 	<VTextarea
 		v-model="field.value"
-		:label="field.label"
+		v-bind="field.metadata"
 		@change="emitChangeEvent(field)"
 	/>
 </template>

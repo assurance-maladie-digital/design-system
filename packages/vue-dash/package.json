@@ -30,6 +30,7 @@
 		"vue-dash": "./bin/cli.js"
 	},
 	"scripts": {
+		"lint": "eslint **/*.ts --fix",
 		"build": "ts-node --project tsconfig.json --files build.ts"
 	},
 	"dependencies": {
@@ -51,6 +52,15 @@
 		"@typescript-eslint/parser": "^1.13.0",
 		"eslint": "^5.16.0",
 		"yorkie": "^2.0.0"
+	},
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.ts": [
+			"eslint **/*.ts --fix",
+			"git add"
+		]
 	},
 	"gitHead": "f05d735be9b01718e145d32e50fd46ea4259c04d"
 }

@@ -21,8 +21,8 @@
 	import LayoutMap from './mixins/layoutMap';
 
 	// Layouts
-	import LayoutM from './layouts/LayoutM.vue';
 	import LayoutQuestion from './layouts/LayoutQuestion/LayoutQuestion.vue';
+	import LayoutM from './layouts/LayoutM.vue';
 	import LayoutMM from './layouts/LayoutMM.vue';
 
 	const Props = Vue.extend({

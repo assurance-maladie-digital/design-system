@@ -1,7 +1,41 @@
 <template>
 	<DocSection title="FormBuilder">
+		<!-- editable live configuration -->
+		<VContainer fluid>
+			<VRow wrap>
+				<VCol
+					md="6"
+					cols="12"
+				>
+					Liste des champs du formulaire
+					<textarea
+						class="blue-grey lighten-5"
+						style="width:100%"
+						rows="14"
+						@change="form = JSON.parse($event.target.value)"
+						v-html="form"
+					/>
+				</VCol>
+				<VCol
+					md="6"
+					cols="12"
+				>
+					disposition des champs
+					<textarea
+						class="blue-grey lighten-5"
+						style="width:100%"
+						rows="14"
+						@change="formLayout = JSON.parse($event.target.value)"
+						v-html="formLayout"
+					/>
+				</VCol>
+			</VRow>
+		</VContainer>
+
 		<FormBuilder
+			:key="key"
 			v-model="form"
+			:layout="formLayout"
 		/>
 	</DocSection>
 </template>
@@ -10,78 +44,109 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	@Component
+	@Component<FormBuilderEx>({
+		watch: {
+			form(newValue) {
+				this.key = Math.random() * 100;
+			},
+			formLayout(newValue) {
+				this.key = Math.random() * 100;
+			}
+		}
+	})
 	export default class FormBuilderEx extends Vue {
+		key = 0;
 		form = {
 			streetNumber: {
 				type: 'number',
 				value: null,
 				mask: '#####',
-				label: 'Numéro de voie'
+				metadata: {
+					label: 'Numéro de voie'
+				}
 			},
 			streetNumberComplement: {
 				type: 'select',
 				value: null,
-				items: [
-					'bis',
-					'ter',
-					'quater'
-				],
-				label: 'Complément de voie'
+				items: ['bis', 'ter', 'quater'],
+				metadata: {
+					label: 'Complément de voie'
+				}
 			},
 			streetType: {
 				type: 'autocomplete',
-				rules: [{
-					name: 'required'
-				}],
-				value: null,
-				items: [
-					'Allée',
-					'Avenue',
-					'Boulevard',
-					'Aucun'
+				rules: [
+					{
+						name: 'required'
+					}
 				],
-				label: 'Type de voie'
+				value: null,
+				items: ['Allée', 'Avenue', 'Boulevard', 'Aucun'],
+				metadata: {
+					label: 'Type de voie'
+				}
 			},
 			streetLabel: {
 				type: 'string',
-				rules: [{
-					name: 'required'
-				}],
+				rules: [
+					{
+						name: 'required'
+					}
+				],
 				value: null,
-				label: 'Libellé de la voie'
+				metadata: {
+					label: 'Libellé de la voie'
+				}
 			},
 			streetComplement: {
 				type: 'string',
 				value: null,
-				label: 'Complément d\'adresse'
+				metadata: {
+					label: 'Complément d\'adresse'
+				}
 			},
 			postalCode: {
 				type: 'number',
-				rules: [{
-					name: 'required'
-				}],
+				rules: [
+					{
+						name: 'required'
+					}
+				],
 				value: null,
 				mask: '#####',
-				label: 'Code postal'
+				metadata: {
+					label: 'Code postal'
+				}
 			},
 			city: {
 				type: 'string',
-				rules: [{
-					name: 'required'
-				}],
+				rules: [
+					{
+						name: 'required'
+					}
+				],
 				value: null,
-				label: 'Ville'
+				metadata: {
+					label: 'Ville'
+				}
+			},
+			question1: {
+				type: 'string',
+				title: 'Question ?',
+				description: 'information supplémentaire',
+				tooltip: 'tooltip information',
+				value: null,
+				metadata: {
+					label: 'label',
+					placeholder: 'placeholder'
+				}
 			}
 		};
 
 		formLayout = [
 			{
 				type: 'mm',
-				fields: [
-					'streetNumber',
-					'streetNumberComplement'
-				]
+				fields: ['streetNumber', 'streetNumberComplement']
 			},
 			{
 				type: 'm',
@@ -97,10 +162,11 @@
 			},
 			{
 				type: 'mm',
-				fields: [
-					'postalCode',
-					'city'
-				]
+				fields: ['postalCode', 'city']
+			},
+			{
+				type: 'question',
+				fields: ['question1']
 			}
 		];
 	}

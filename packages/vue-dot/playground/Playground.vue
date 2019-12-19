@@ -32,9 +32,6 @@
 				</h1>
 
 				<!-- Examples -->
-				<LayoutQuestionEx />
-
-				<FormBuilderEx />
 
 				<CopyBtnEx />
 
@@ -51,6 +48,8 @@
 				<FileUploadEx />
 
 				<FormFieldEx />
+
+				<FormBuilderEx />
 
 				<LangBtnEx />
 
