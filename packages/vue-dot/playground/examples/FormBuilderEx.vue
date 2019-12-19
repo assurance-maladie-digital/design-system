@@ -1,36 +1,28 @@
 <template>
 	<DocSection title="FormBuilder">
 		<!-- editable live configuration -->
-		<VContainer fluid>
-			<VRow wrap>
-				<VCol
-					md="6"
-					cols="12"
-				>
-					Liste des champs du formulaire
-					<textarea
-						class="blue-grey lighten-5"
-						style="width:100%"
-						rows="14"
-						@change="form = JSON.parse($event.target.value)"
-						v-html="form"
-					/>
-				</VCol>
-				<VCol
-					md="6"
-					cols="12"
-				>
-					disposition des champs
-					<textarea
-						class="blue-grey lighten-5"
-						style="width:100%"
-						rows="14"
-						@change="formLayout = JSON.parse($event.target.value)"
-						v-html="formLayout"
-					/>
-				</VCol>
-			</VRow>
-		</VContainer>
+		<VRow wrap>
+			<VCol>
+				Liste des champs du formulaire
+				<textarea
+					class="blue-grey lighten-5"
+					style="width:100%"
+					rows="14"
+					@change="form = JSON.parse($event.target.value)"
+					v-html="form"
+				/>
+			</VCol>
+			<VCol>
+				disposition des champs
+				<textarea
+					class="blue-grey lighten-5"
+					style="width:100%"
+					rows="14"
+					@change="formLayout = JSON.parse($event.target.value)"
+					v-html="formLayout"
+				/>
+			</VCol>
+		</VRow>
 
 		<FormBuilder
 			:key="key"
