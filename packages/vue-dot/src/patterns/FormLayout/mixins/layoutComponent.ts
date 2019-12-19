@@ -19,8 +19,6 @@ export default class LayoutComponent extends Props {
 	fields!: Field[];
 
 	getField(index: number) {
-		return {
-			field: this.fields[index]
-		};
+		return this.fields[index];
 	}
 }
