@@ -1,10 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileUpload renders correctly 1`] = `
+exports[`FormBuilder renders correctly 1`] = `
 <div class="vd-form-builder">
-  <formlayout-stub layout="[object Object]"></formlayout-stub>
-  <formlayout-stub layout="[object Object]"></formlayout-stub>
-  <formlayout-stub layout="[object Object]"></formlayout-stub>
-  <formlayout-stub layout="[object Object]"></formlayout-stub>
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <fieldset aria-hidden="true">
+            <legend style="width: 0px;"><span>​</span></legend>
+          </fieldset>
+          <div class="v-text-field__slot"><label for="input-7" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Question field</label><input id="input-7" placeholder="Value example" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <fieldset aria-hidden="true">
+            <legend style="width: 0px;"><span>​</span></legend>
+          </fieldset>
+          <div class="v-text-field__slot"><label for="input-14" class="v-label theme--light" style="left: 0px; position: absolute;">Classic field</label><input id="input-14" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

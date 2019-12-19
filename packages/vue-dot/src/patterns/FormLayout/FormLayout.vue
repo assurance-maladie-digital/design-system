@@ -4,12 +4,11 @@
 		:fields="layout.fields"
 		class="vd-form-layout"
 	>
-		<!-- eslint-disable vue/no-unused-vars -->
 		<template
 			v-for="(field, index) in layout.fields"
 			#[getSlotName(index)]
 		>
-			<slot v-bind="{ field }" />
+			<slot :field="field" />
 		</template>
 	</component>
 </template>
@@ -21,9 +20,9 @@
 	import LayoutMap from './mixins/layoutMap';
 
 	// Layouts
-	import LayoutQuestion from './layouts/LayoutQuestion/LayoutQuestion.vue';
 	import LayoutM from './layouts/LayoutM.vue';
 	import LayoutMM from './layouts/LayoutMM.vue';
+	import LayoutQuestion from './layouts/LayoutQuestion.vue';
 
 	const Props = Vue.extend({
 		props: {
@@ -42,9 +41,9 @@
 			event: 'change'
 		},
 		components: {
-			LayoutQuestion,
 			LayoutM,
-			LayoutMM
+			LayoutMM,
+			LayoutQuestion
 		}
 	})
 	export default class FormLayout extends MixinsDeclaration {
@@ -57,7 +56,15 @@
 </script>
 
 <style lang="scss" scoped>
+	$spaceBetweenFields: 16px;
+
 	.vd-form-layout + .vd-form-layout {
-		margin-top: 16px !important;
+		margin-top: $spaceBetweenFields !important;
+	}
+
+	// Use deep selector since we can't
+	// style the slot directly
+	.vd-form-layout ::v-deep .vd-form-field {
+		padding: $spaceBetweenFields;
 	}
 </style>

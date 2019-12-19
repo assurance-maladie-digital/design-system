@@ -1,9 +1,6 @@
 <template>
 	<DocSection title="FormField">
-		<FormField
-			v-model="field"
-			class="pa-0"
-		/>
+		<FormField v-model="field" />
 	</DocSection>
 </template>
 
@@ -11,12 +8,16 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { Field } from '../../src/patterns/FormField/types';
+
 	@Component
 	export default class FormFieldEx extends Vue {
-		field = {
+		field: Field = {
 			type: 'password',
 			value: null,
-			label: 'Mot de passe'
+			metadata: {
+				label: 'Mot de passe'
+			}
 		};
 	}
 </script>

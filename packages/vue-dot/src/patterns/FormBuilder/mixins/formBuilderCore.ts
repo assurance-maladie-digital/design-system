@@ -4,6 +4,7 @@ import Component, { mixins } from 'vue-class-component';
 import clonedeep from 'lodash.clonedeep';
 
 import LayoutMap from '../../FormLayout/mixins/layoutMap';
+import { Layouts } from '../../FormLayout/layoutsEnum';
 
 import {
 	LayoutItem,
@@ -24,9 +25,13 @@ const Props = Vue.extend({
 			type: [Array, Object],
 			default: undefined
 		},
+		/**
+		 * Layout used to generate the default one
+		 * when the layout prop isn't provided
+		 */
 		defaultLayout: {
 			type: String,
-			default: 'm'
+			default: Layouts.Medium
 		}
 	}
 });
@@ -42,7 +47,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 	watch: {
 		layout: {
 			handler() {
-				this.computeLayout();
+				this.computedLayout = this.computeLayout();
 			},
 			immediate: true
 		}
@@ -51,7 +56,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 export default class FormBuilderCore extends MixinsDeclaration {
 	value!: ComputedForm;
 
-	computedLayout = {} as ComputedLayout;
+	computedLayout = {} as ComputedLayout | null;
 
 	formUpdated(field: ComputedField) {
 		const form = clonedeep(this.value);
@@ -63,19 +68,23 @@ export default class FormBuilderCore extends MixinsDeclaration {
 		});
 	}
 
-	computeLayout() {
+	computeLayout(): ComputedLayout | null {
 		let layout = this.layout ? clonedeep(this.layout) : this.getDefaultLayout();
+
+		if (!layout) {
+			return null;
+		}
 
 		layout.forEach((layoutItem: LayoutItem, index: number) => {
 			layout = this.computeFields(layout, layoutItem.fields, index);
 		});
 
-		this.computedLayout = layout;
+		return layout;
 	}
 
 	computeFields(layout: any[], fields: string[], index: number) {
 		if (!fields.length) {
-			return;
+			return [];
 		}
 
 		fields.forEach((field: string, fieldIndex: number) => {
@@ -95,25 +104,26 @@ export default class FormBuilderCore extends MixinsDeclaration {
 
 		const defaultLayout = [];
 
-		const fieldsNumber = this.getLayout(this.defaultLayout).fieldsNumber;
+		const layout = this.getLayout(this.defaultLayout);
 
-		for (let index = 0; index < formKeys.length; index += fieldsNumber) {
+		// If the layout doesn't exists, stop here
+		if (!layout) {
+			return null;
+		}
+
+		const numberOfFields = layout.numberOfFields;
+
+		for (let index = 0; index < formKeys.length; index += numberOfFields) {
+			const fields = formKeys.slice(index, index + numberOfFields);
+
 			const layoutItem = {
 				type: this.defaultLayout,
-				fields: this.getFieldNames(formKeys, fieldsNumber, index)
+				fields
 			};
 
 			defaultLayout.push(layoutItem);
 		}
 
 		return defaultLayout;
-	}
-
-	getFieldNames(formKeys: string[], fieldsNumber: number, index: number) {
-		const fieldsCount = index + fieldsNumber;
-
-		const fields = formKeys.slice(index, fieldsCount);
-
-		return fields;
 	}
 }
