@@ -125,7 +125,43 @@ describe('formBuilderCore', () => {
 		expect(wrapper.vm.computeLayout()).toEqual(expectedLayout);
 	});
 
-	// TODO: Test getDefaultLayout
+	it('doesn\'t fail to execute computeLayout when the layout doesn\'t exists', () => {
+		const wrapper = createWrapper(testForm, undefined, 'unknown');
+
+		expect(wrapper.vm.computeLayout()).toBe(null);
+	});
+
+	it('generates a default layout', () => {
+		const testFormMultiple: Form = {
+			field1: testField,
+			field2: testField
+		};
+
+		const wrapper = createWrapper(testFormMultiple, undefined, Layouts.Medium_Medium);
+
+		const expectedLayout: Layout = [
+			{
+				type: Layouts.Medium_Medium,
+				fields: [
+					'field1',
+					'field2'
+				]
+			}
+		];
+
+		expect(wrapper.vm.getDefaultLayout()).toEqual(expectedLayout);
+	});
+
+	it('doesn\'t fail to execute getDefaultLayout when the layout doesn\'t exists', () => {
+		const testFormMultiple: Form = {
+			field1: testField,
+			field2: testField
+		};
+
+		const wrapper = createWrapper(testFormMultiple, undefined, 'unknown');
+
+		expect(wrapper.vm.getDefaultLayout()).toBe(null);
+	});
 
 	it('emits change event', () => {
 		const wrapper = createWrapper(testForm);

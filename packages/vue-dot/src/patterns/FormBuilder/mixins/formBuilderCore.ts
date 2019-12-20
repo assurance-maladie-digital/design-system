@@ -56,7 +56,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 export default class FormBuilderCore extends MixinsDeclaration {
 	value!: ComputedForm;
 
-	computedLayout = {} as ComputedLayout;
+	computedLayout = {} as ComputedLayout | null;
 
 	formUpdated(field: ComputedField) {
 		const form = clonedeep(this.value);
@@ -68,8 +68,12 @@ export default class FormBuilderCore extends MixinsDeclaration {
 		});
 	}
 
-	computeLayout(): ComputedLayout {
+	computeLayout(): ComputedLayout | null {
 		let layout = this.layout ? clonedeep(this.layout) : this.getDefaultLayout();
+
+		if (!layout) {
+			return null;
+		}
 
 		layout.forEach((layoutItem: LayoutItem, index: number) => {
 			layout = this.computeFields(layout, layoutItem.fields, index);
@@ -100,7 +104,14 @@ export default class FormBuilderCore extends MixinsDeclaration {
 
 		const defaultLayout = [];
 
-		const numberOfFields = this.getLayout(this.defaultLayout).numberOfFields;
+		const layout = this.getLayout(this.defaultLayout);
+
+		// If the layout doesn't exists, stop here
+		if (!layout) {
+			return null;
+		}
+
+		const numberOfFields = layout.numberOfFields;
 
 		for (let index = 0; index < formKeys.length; index += numberOfFields) {
 			const fields = formKeys.slice(index, index + numberOfFields);

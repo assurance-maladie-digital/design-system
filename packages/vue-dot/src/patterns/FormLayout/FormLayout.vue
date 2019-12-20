@@ -20,9 +20,9 @@
 	import LayoutMap from './mixins/layoutMap';
 
 	// Layouts
-	import LayoutQuestion from './layouts/LayoutQuestion.vue';
 	import LayoutM from './layouts/LayoutM.vue';
 	import LayoutMM from './layouts/LayoutMM.vue';
+	import LayoutQuestion from './layouts/LayoutQuestion.vue';
 
 	const Props = Vue.extend({
 		props: {
@@ -41,9 +41,9 @@
 			event: 'change'
 		},
 		components: {
-			LayoutQuestion,
 			LayoutM,
-			LayoutMM
+			LayoutMM,
+			LayoutQuestion
 		}
 	})
 	export default class FormLayout extends MixinsDeclaration {

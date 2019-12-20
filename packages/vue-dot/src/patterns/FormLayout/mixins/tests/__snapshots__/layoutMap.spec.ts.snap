@@ -2,15 +2,15 @@
 
 exports[`layoutMap contains the map of layouts and their components 1`] = `
 Object {
-  "Medium": Object {
+  "medium": Object {
     "component": "LayoutM",
     "numberOfFields": 1,
   },
-  "Medium_Medium": Object {
+  "medium_medium": Object {
     "component": "LayoutMM",
     "numberOfFields": 2,
   },
-  "Question": Object {
+  "question": Object {
     "component": "LayoutQuestion",
     "numberOfFields": 1,
   },
