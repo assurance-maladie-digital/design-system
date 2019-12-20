@@ -5,7 +5,7 @@
 	>
 		<h4
 			v-if="getField(0).title"
-			class="mx-4 mt-4 body-1 my-0"
+			class="mx-4 mt-4 my-0 body-1 "
 		>
 			<span>{{ getField(0).title }}</span>
 
@@ -18,7 +18,12 @@
 						icon
 						v-on="on"
 					>
-						<VIcon>{{ informationIcon }}</VIcon>
+						<VIcon
+							class="mb-1"
+							size="20"
+						>
+							{{ informationIcon }}
+						</VIcon>
 					</VBtn>
 				</template>
 
@@ -45,13 +50,13 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiInformation } from '@mdi/js';
+	import { mdiInformationOutline } from '@mdi/js';
 
 	import LayoutComponent from '../mixins/layoutComponent';
 
 	@Component
 	export default class LayoutQuestion extends LayoutComponent {
-		informationIcon = mdiInformation;
+		informationIcon = mdiInformationOutline;
 
 		/**
 		 * Color of the description text (changes in light/dark mode)
