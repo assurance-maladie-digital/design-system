@@ -1,32 +1,21 @@
 <template>
 	<DocSection title="FormBuilder">
-		<!-- editable live configuration -->
-		<VRow wrap>
-			<VCol>
-				Liste des champs du formulaire
-				<textarea
-					class="blue-grey lighten-5"
-					style="width:100%"
-					rows="14"
-					@change="form = JSON.parse($event.target.value)"
-					v-html="form"
-				/>
-			</VCol>
-			<VCol>
-				disposition des champs
-				<textarea
-					class="blue-grey lighten-5"
-					style="width:100%"
-					rows="14"
-					@change="formLayout = JSON.parse($event.target.value)"
-					v-html="formLayout"
-				/>
-			</VCol>
-		</VRow>
+		<h2 class="subtitle-1 mb-2 font-weight-bold">
+			Classic form
+		</h2>
 
 		<FormBuilder
-			v-model="form"
-			:layout="formLayout"
+			v-model="addressForm"
+			:layout="addressFormLayout"
+		/>
+
+		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+			Questionnaire
+		</h2>
+
+		<FormBuilder
+			v-model="questionForm"
+			default-layout="question"
 		/>
 
 		<h2 class="subtitle-1 mb-4 font-weight-bold">
@@ -58,6 +47,11 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
+	// TODO: Improve type importation/exportation
+	import { Form } from '../../src/patterns/FormField/types';
+	import { Layout } from '../../src/patterns/FormBuilder/types';
+	import { Layouts } from '../../src/patterns/FormLayout/layoutsEnum';
 
 	@Component
 	export default class FormBuilderEx extends Vue {
@@ -105,7 +99,7 @@
 			}
 		];
 
-		form = {
+		addressForm: Form = {
 			streetNumber: {
 				type: 'number',
 				value: null,
@@ -128,9 +122,6 @@
 			},
 			streetType: {
 				type: 'autocomplete',
-				rules: [{
-					name: 'required'
-				}],
 				value: null,
 				items: [
 					'Allée',
@@ -144,9 +135,6 @@
 			},
 			streetLabel: {
 				type: 'string',
-				rules: [{
-					name: 'required'
-				}],
 				value: null,
 				metadata: {
 					label: 'Libellé de la voie'
@@ -161,9 +149,6 @@
 			},
 			postalCode: {
 				type: 'number',
-				rules: [{
-					name: 'required'
-				}],
 				value: null,
 				mask: '#####',
 				metadata: {
@@ -172,58 +157,53 @@
 			},
 			city: {
 				type: 'string',
-				rules: [{
-					name: 'required'
-				}],
 				value: null,
 				metadata: {
 					label: 'Ville'
 				}
-			},
-			question1: {
-				type: 'string',
-				title: 'Question ?',
-				description: 'information supplémentaire',
-				tooltip: 'tooltip information',
-				value: null,
-				metadata: {
-					label: 'label',
-					placeholder: 'placeholder'
-				}
 			}
 		};
 
-		formLayout = [
+		addressFormLayout: Layout = [
 			{
-				type: 'mm',
+				type: Layouts.Medium_Medium,
 				fields: [
 					'streetNumber',
 					'streetNumberComplement'
 				]
 			},
 			{
-				type: 'm',
+				type: Layouts.Medium,
 				fields: ['streetType']
 			},
 			{
-				type: 'm',
+				type: Layouts.Medium,
 				fields: ['streetLabel']
 			},
 			{
-				type: 'm',
+				type: Layouts.Medium,
 				fields: ['streetComplement']
 			},
 			{
-				type: 'mm',
+				type: Layouts.Medium_Medium,
 				fields: [
 					'postalCode',
 					'city'
 				]
-			},
-			{
-				type: 'question',
-				fields: ['question1']
 			}
 		];
+
+		questionForm: Form = {
+			question1: {
+				type: 'string',
+				title: 'Question ?',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					label: 'Label du champ'
+				}
+			}
+		};
 	}
 </script>

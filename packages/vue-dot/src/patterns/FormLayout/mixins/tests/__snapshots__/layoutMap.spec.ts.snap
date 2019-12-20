@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layoutMap contains the map of layouts and their components 1`] = `
+Object {
+  "Medium": Object {
+    "component": "LayoutM",
+    "numberOfFields": 1,
+  },
+  "Medium_Medium": Object {
+    "component": "LayoutMM",
+    "numberOfFields": 2,
+  },
+  "Question": Object {
+    "component": "LayoutQuestion",
+    "numberOfFields": 1,
+  },
+}
+`;
