@@ -1,9 +1,9 @@
 <template>
 	<VTextField
 		v-model="field.value"
+		v-bind="field.metadata"
 		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"
-		v-bind="field.metadata"
 		@click:append="showEyeIcon = !showEyeIcon"
 		@change="emitChangeEvent(field)"
 	/>

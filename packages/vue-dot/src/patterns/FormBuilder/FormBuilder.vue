@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-form-builder">
+	<div
+		v-if="computedLayout"
+		class="vd-form-builder"
+	>
 		<FormLayout
 			v-for="(formLayout, index) in computedLayout"
 			:key="'layout-' + index"

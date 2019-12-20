@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField renders correctly 1`] = `<textfield-stub field="[object Object]" class="vd-form-field"></textfield-stub>`;

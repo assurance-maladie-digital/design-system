@@ -16,6 +16,7 @@
 
 	const Props = Vue.extend({
 		props: {
+			/** v-model value */
 			value: {
 				type: [Array, Object],
 				required: true
@@ -23,13 +24,19 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props, FieldMap);
+
+	/** FormField is a component used to display */
 	@Component({
 		model: {
 			prop: 'value',
 			event: 'change'
 		}
 	})
-	export default class FormField extends mixins(Props, FieldMap) {
+	export default class FormField extends MixinsDeclaration {
+		// Stronger types
+		value!: Field;
+
 		get field() {
 			return this.value;
 		}
@@ -43,6 +50,5 @@
 <style lang="scss" scoped>
 	.vd-form-field {
 		width: 100%;
-		padding: 16px;
 	}
 </style>

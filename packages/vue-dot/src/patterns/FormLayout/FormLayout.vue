@@ -1,15 +1,27 @@
 <template>
+	<!--
+		Will be converted to the layout component
+
+		"Rendered" example:
+		<LayoutMM>
+			<FormField :field="field"> (slot 1)
+			<FormField :field="field"> (slot 2)
+	-->
 	<component
 		:is="getLayout(layout.type).component"
 		:fields="layout.fields"
 		class="vd-form-layout"
 	>
-		<!-- eslint-disable vue/no-unused-vars -->
+		<!--
+			For each field in the layout, create a slot
+			to fill up the layout
+		-->
 		<template
 			v-for="(field, index) in layout.fields"
 			#[getSlotName(index)]
 		>
-			<slot v-bind="{ field }" />
+			<!-- Will be converted to FormField -->
+			<slot :field="field" />
 		</template>
 	</component>
 </template>
@@ -20,13 +32,16 @@
 
 	import LayoutMap from './mixins/layoutMap';
 
+	import { ComputedLayoutItem } from '../FormBuilder/types';
+
 	// Layouts
-	import LayoutQuestion from './layouts/LayoutQuestion/LayoutQuestion.vue';
 	import LayoutM from './layouts/LayoutM.vue';
 	import LayoutMM from './layouts/LayoutMM.vue';
+	import LayoutQuestion from './layouts/LayoutQuestion.vue';
 
 	const Props = Vue.extend({
 		props: {
+			/** The layout to display */
 			layout: {
 				type: [Array, Object],
 				required: true
@@ -36,18 +51,30 @@
 
 	const MixinsDeclaration = mixins(Props, LayoutMap);
 
+	/**
+	 * FormLayout is a component used to
+	 * transform a layout into template
+	 */
 	@Component({
 		model: {
 			prop: 'value',
 			event: 'change'
 		},
 		components: {
-			LayoutQuestion,
 			LayoutM,
-			LayoutMM
+			LayoutMM,
+			LayoutQuestion
 		}
 	})
 	export default class FormLayout extends MixinsDeclaration {
+		layout!: ComputedLayoutItem;
+
+		/**
+		 * Get the name of the slot
+		 *
+		 * @param {number} index The index of the field
+		 * @returns {string} The name of the slot
+		 */
 		getSlotName(index: number) {
 			const nIndex = index + 1;
 
@@ -57,7 +84,15 @@
 </script>
 
 <style lang="scss" scoped>
+	$spaceBetweenFields: 16px;
+
 	.vd-form-layout + .vd-form-layout {
-		margin-top: 16px !important;
+		margin-top: $spaceBetweenFields !important;
+	}
+
+	// Use deep selector since we can't
+	// style the slot directly
+	.vd-form-layout ::v-deep .vd-form-field {
+		padding: $spaceBetweenFields;
 	}
 </style>
