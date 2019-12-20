@@ -132,7 +132,6 @@
 				tooltip: 'tooltip information',
 				value: null,
 				metadata: {
-					class: 'pt-1',
 					label: 'Votre réponse',
 					outlined: true,
 					hint: 'Texte informatif',
