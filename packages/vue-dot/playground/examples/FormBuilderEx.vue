@@ -28,6 +28,30 @@
 			v-model="form"
 			:layout="formLayout"
 		/>
+
+		<h2 class="subtitle-1 mb-4 font-weight-bold">
+			Configuration short text
+		</h2>
+		<VBtn
+			v-if="!showShortTextConfig"
+			@click="showShortTextConfig = true"
+		>
+			Voir config
+		</VBtn>
+		<textarea
+			v-else
+			class="blue-grey lighten-5"
+			style="width:100%"
+			cols="50"
+			rows="17"
+			@change="formShortText = JSON.parse($event.target.value)"
+			v-html="formShortText"
+		/>
+
+		<FormBuilder
+			v-model="formShortText"
+			:layout="questionLayoutShortText"
+		/>
 	</DocSection>
 </template>
 
@@ -37,6 +61,50 @@
 
 	@Component
 	export default class FormBuilderEx extends Vue {
+		showShortTextConfig = false;
+		formShortText = {
+			short_text_1: {
+				type: 'string',
+				title: 'Question',
+				tooltip: 'tooltip information',
+				value: null,
+				metadata: {
+					class: 'pt-1',
+					label: 'Votre réponse',
+					outlined: true,
+					hint: 'Texte informatif',
+					persistentHint: true
+				}
+			},
+			short_text_2: {
+				type: 'string',
+				title: 'Question',
+				description: 'information supplémentaire',
+				tooltip: 'tooltip information',
+				value: null,
+				metadata: {
+					label: 'Votre réponse',
+					counter: false,
+					outlined: true,
+					clearable: true,
+					prefix: '',
+					suffix: '',
+					placeholder: 'placeholder'
+				}
+			}
+		};
+
+		questionLayoutShortText = [
+			{
+				type: 'question',
+				fields: ['short_text_1']
+			},
+			{
+				type: 'question',
+				fields: ['short_text_2']
+			}
+		];
+
 		form = {
 			streetNumber: {
 				type: 'number',
