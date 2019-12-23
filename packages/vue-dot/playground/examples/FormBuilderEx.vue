@@ -135,6 +135,32 @@
 				metadata: {
 					label: 'Label du champ'
 				}
+			},
+			questionPeriode: {
+				type: 'period',
+				title: 'Question periode',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					appendIcon: true,
+					from: {
+						textField: {
+							label: 'Du',
+							outlined: true,
+							hint: 'Texte informatif',
+							persistentHint: true
+						}
+					},
+					to: {
+						textField: {
+							label: 'Au',
+							outlined: true,
+							hint: 'Texte informatif',
+							persistentHint: true
+						}
+					}
+				}
 			}
 		};
 	}
