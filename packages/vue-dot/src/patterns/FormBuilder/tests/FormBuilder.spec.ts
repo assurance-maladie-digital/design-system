@@ -28,33 +28,11 @@ const questionForm = {
 		tooltip: 'date info',
 		value: null,
 		metadata: {
-			label: 'date'
-		}
-	},
-	questionPeriode: {
-		type: 'periode',
-		title: 'Question période',
-		description: 'Informations supplémentaires',
-		tooltip: 'periode info',
-		value: null,
-		metadata: {
 			appendIcon: true,
-				from: {
-					textField: {
-						label: 'Du',
-						outlined: true,
-						hint: 'Texte informatif',
-						persistentHint: true
-					}
-				},
-				to: {
-					textField: {
-						label: 'Au',
-						outlined: true,
-						hint: 'Texte informatif',
-						persistentHint: true
-					}
-				}
+			textField: {
+				outlined: true,
+				hint: 'Texte informatif'
+			}
 		}
 	}
 };
@@ -106,7 +84,7 @@ describe('FormBuilder', () => {
 			},
 			propsData: {
 				value: questionForm,
-				defaultLayout:'question'
+				defaultLayout: 'question'
 
 			}
 		}, true);

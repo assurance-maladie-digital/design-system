@@ -11,10 +11,12 @@ import AutocompleteField from '../fields/AutocompleteField.vue';
 import PasswordField from '../fields/PasswordField.vue';
 import NumberField from '../fields/NumberField.vue';
 import SelectField from '../fields/SelectField.vue';
+import SelectButtonField from '../fields/SelectButtonField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
 import DateField from '../fields/DateField.vue';
 import PeriodeField from '../fields/PeriodeField.vue';
+import SliderField from '../fields/SliderField.vue';
 
 /** List all fields and provide getField() function */
 @Component({
@@ -26,7 +28,9 @@ import PeriodeField from '../fields/PeriodeField.vue';
 		TextareaField,
 		TextField,
 		DateField,
-		PeriodeField
+		PeriodeField,
+		SliderField,
+		SelectButtonField
 	}
 })
 export default class FieldMap extends Vue {
@@ -39,7 +43,9 @@ export default class FieldMap extends Vue {
 		textarea: 'TextareaField',
 		string: 'TextField',
 		date: 'DateField',
-		periode: 'PeriodeField'
+		periode: 'PeriodeField',
+		slider: 'SliderField',
+		selectButton: 'SelectButtonField'
 	};
 
 	/**

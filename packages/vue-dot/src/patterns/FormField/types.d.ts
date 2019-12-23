@@ -1,6 +1,6 @@
 export interface Field {
 	type: string;
-	value: string | number | PeriodeValue | null;
+	value: string | number | string[] | PeriodeValue | null;
 	title?: string;
 	description?: string;
 	tooltip?: string;

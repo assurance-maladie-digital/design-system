@@ -1,7 +1,8 @@
 <template>
 	<VLayout
 		wrap
-		class="ma-n4"
+		row
+		class="ma-n3"
 	>
 		<VCol
 			cols="12"

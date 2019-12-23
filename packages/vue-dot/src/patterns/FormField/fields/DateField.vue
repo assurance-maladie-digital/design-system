@@ -1,9 +1,14 @@
 <template>
-	<DatePicker
-		v-model="field.value"
-		v-bind="field.metadata"
-		@change="emitChangeEvent(field)"
-	/>
+	<v-layout
+		class="ml-0"
+	>
+		<DatePicker
+			v-model="field.value"
+			v-bind="field.metadata"
+			:vuetify-options="field.metadata"
+			@change="emitChangeEvent(field)"
+		/>
+	</v-layout>
 </template>
 
 <script lang="ts">

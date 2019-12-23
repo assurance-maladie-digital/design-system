@@ -77,4 +77,8 @@
 		width: 50%;
 		flex: none;
 	}
+	.vd-layout ::v-deep .v-item-group {
+		width: 50%;
+		flex: none;
+	}
 </style>

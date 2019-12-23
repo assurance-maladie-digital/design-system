@@ -12,11 +12,12 @@
 		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
 			Questionnaire
 		</h2>
-
-		<FormBuilder
-			v-model="questionForm"
-			default-layout="question"
-		/>
+		<VForm>
+			<FormBuilder
+				v-model="questionForm"
+				default-layout="question"
+			/>
+		</VForm>
 	</DocSection>
 </template>
 
@@ -143,7 +144,11 @@
 				tooltip: 'Texte d\'aide',
 				value: null,
 				metadata: {
-					label: 'Label du champ'
+					appendIcon: true,
+					textField: {
+						outlined: true,
+						hint: 'Texte informatif'
+					}
 				}
 			},
 			questionPeriode: {
@@ -170,6 +175,70 @@
 							persistentHint: true
 						}
 					}
+				}
+			},
+			questionSlider: {
+				type: 'slider',
+				title: 'Question slider',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					min: 10,
+					max: 666,
+					step: 0.1,
+					thumbLabel:'always'
+				}
+			},
+			questionSelect: {
+				type: 'select',
+				title: 'Question select',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
+				metadata: {
+					outlined: true,
+					chips: true,
+					menuProps: { offsetY: true },
+					label: 'Votre réponse',
+					hint: 'Texte informatif',
+					persistentHint: true
+				}
+			},
+			questionSelectMultiple: {
+				type: 'autocomplete',
+				title: 'Question select autocomplete multiple',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
+				metadata: {
+					multiple: true,
+					outlined: true,
+					chips: true,
+					menuProps: { offsetY: true },
+					label: 'Votre réponse',
+					hint: 'Texte informatif',
+					persistentHint: true
+				}
+			},
+			questionButtonToggle: {
+				type: 'selectButton',
+				title: 'Question select button',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: [],
+				items: [
+					{ text: 'Abricot', value: 11 },
+					{ text: 'Citron', value: 22 },
+					{ text: 'seul', value: 33, alone: true },
+					{ text: 'seul 2', value: 44, alone: true }
+				],
+				metadata: {
+					hint: 'test',
+					errorMessages: ['test', 'tesgezg'],
+					multiple: true
 				}
 			}
 		};
