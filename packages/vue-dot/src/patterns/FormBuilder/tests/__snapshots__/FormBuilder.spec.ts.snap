@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormBuilder renders correctly 1`] = `
+exports[`FormBuilder renders form classic correctly 1`] = `
 <div class="vd-form-builder">
   <div class="layout vd-layout ma-n4 vd-form-layout">
     <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
@@ -34,6 +34,53 @@ exports[`FormBuilder renders correctly 1`] = `
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormBuilder renders form question correctly 1`] = `
+<div class="vd-form-builder">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question ?</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></button></span></h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="v-input vd-form-field theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-28" class="v-label theme--light" style="left: 0px; position: absolute;">Label du champ</label><input id="input-28" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></button></span></h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="v-menu vd-form-field" label="date">
+      <div class="v-input theme--light v-text-field vd-date-picker-text-field">
+        <div class="v-input__prepend-outer"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></button></div>
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-text-field__slot"><label for="input-41" class="v-label theme--light" style="left: 0px; position: absolute;">Date</label><input id="input-41" type="text"></div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper">
+                <div class="v-messages__message">Format JJ/MM/AAAA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 45px; left: 0px; transform-origin: top left; z-index: 1; display: none;"></div>
     </div>
   </div>
 </div>
