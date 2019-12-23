@@ -135,6 +135,16 @@
 				metadata: {
 					label: 'Label du champ'
 				}
+			},
+			questionDate: {
+				type: 'date',
+				title: 'Question',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					label: 'Label du champ'
+				}
 			}
 		};
 	}
