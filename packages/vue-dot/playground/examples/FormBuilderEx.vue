@@ -29,113 +29,111 @@
 	import { Layout } from '../../src/patterns/FormBuilder/types';
 	import { Layouts } from '../../src/patterns/FormLayout/layoutsEnum';
 
-	@Component
+@Component
 	export default class FormBuilderEx extends Vue {
-		addressForm: Form = {
-			streetNumber: {
-				type: 'number',
-				value: null,
-				mask: '#####',
-				metadata: {
-					label: 'Numéro de voie'
-				}
-			},
-			streetNumberComplement: {
-				type: 'select',
-				value: null,
-				items: [
-					'bis',
-					'ter',
-					'quater'
-				],
-				metadata: {
-					label: 'Complément de voie'
-				}
-			},
-			streetType: {
-				type: 'autocomplete',
-				value: null,
-				items: [
-					'Allée',
-					'Avenue',
-					'Boulevard',
-					'Aucun'
-				],
-				metadata: {
-					label: 'Type de voie'
-				}
-			},
-			streetLabel: {
-				type: 'string',
-				value: null,
-				metadata: {
-					label: 'Libellé de la voie'
-				}
-			},
-			streetComplement: {
-				type: 'string',
-				value: null,
-				metadata: {
-					label: 'Complément d\'adresse'
-				}
-			},
-			postalCode: {
-				type: 'number',
-				value: null,
-				mask: '#####',
-				metadata: {
-					label: 'Code postal'
-				}
-			},
-			city: {
-				type: 'string',
-				value: null,
-				metadata: {
-					label: 'Ville'
-				}
+	addressForm: Form = {
+		streetNumber: {
+			type: 'number',
+			value: null,
+			mask: '#####',
+			metadata: {
+				label: 'Numéro de voie'
 			}
-		};
+		},
+		streetNumberComplement: {
+			type: 'select',
+			value: null,
+			items: ['bis', 'ter', 'quater'],
+			metadata: {
+				label: 'Complément de voie'
+			}
+		},
+		streetType: {
+			type: 'autocomplete',
+			value: null,
+			items: ['Allée', 'Avenue', 'Boulevard', 'Aucun'],
+			metadata: {
+				label: 'Type de voie'
+			}
+		},
+		streetLabel: {
+			type: 'string',
+			value: null,
+			metadata: {
+				label: 'Libellé de la voie'
+			}
+		},
+		streetComplement: {
+			type: 'string',
+			value: null,
+			metadata: {
+				label: 'Complément d\'adresse'
+			}
+		},
+		postalCode: {
+			type: 'number',
+			value: null,
+			mask: '#####',
+			metadata: {
+				label: 'Code postal'
+			}
+		},
+		city: {
+			type: 'string',
+			value: null,
+			metadata: {
+				label: 'Ville'
+			}
+		}
+	};
 
-		addressFormLayout: Layout = [
-			{
-				type: Layouts.Medium_Medium,
-				fields: [
-					'streetNumber',
-					'streetNumberComplement'
-				]
-			},
-			{
-				type: Layouts.Medium,
-				fields: ['streetType']
-			},
-			{
-				type: Layouts.Medium,
-				fields: ['streetLabel']
-			},
-			{
-				type: Layouts.Medium,
-				fields: ['streetComplement']
-			},
-			{
-				type: Layouts.Medium_Medium,
-				fields: [
-					'postalCode',
-					'city'
-				]
-			}
-		];
+	addressFormLayout: Layout = [
+		{
+			type: Layouts.Medium_Medium,
+			fields: ['streetNumber', 'streetNumberComplement']
+		},
+		{
+			type: Layouts.Medium,
+			fields: ['streetType']
+		},
+		{
+			type: Layouts.Medium,
+			fields: ['streetLabel']
+		},
+		{
+			type: Layouts.Medium,
+			fields: ['streetComplement']
+		},
+		{
+			type: Layouts.Medium_Medium,
+			fields: ['postalCode', 'city']
+		}
+	];
 
-		questionForm: Form = {
-			question1: {
-				type: 'string',
-				title: 'Question ?',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: null,
-				metadata: {
-					label: 'Label du champ'
-				}
+	questionForm: Form = {
+		question1: {
+			type: 'string',
+			title: 'Question ?',
+			description: 'Informations supplémentaires',
+			tooltip: 'Texte d\'aide',
+			value: null,
+			metadata: {
+				label: 'Label du champ'
 			}
-		};
+		},
+		question2: {
+			type: 'textarea',
+			title: 'Question',
+			description: 'Informations supplémentaires',
+			tooltip: 'Texte d\'aide',
+			value: null,
+			metadata: {
+				outlined: true,
+				persistentHint: true,
+				hint: 'Texte informatif',
+				placeholder: 'Votre réponse'
+			}
+		}
+	};
 	}
 </script>
