@@ -10,6 +10,55 @@ import FormField from '../../FormField';
 
 let wrapper: Wrapper<Vue>;
 
+const questionForm = {
+	question_string: {
+		type: 'string',
+		title: 'Question ?',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			label: 'Label du champ'
+		}
+	},
+	questionDate: {
+		type: 'date',
+		title: 'Question',
+		description: 'Informations supplémentaires',
+		tooltip: 'date info',
+		value: null,
+		metadata: {
+			label: 'date'
+		}
+	},
+	questionPeriode: {
+		type: 'periode',
+		title: 'Question période',
+		description: 'Informations supplémentaires',
+		tooltip: 'periode info',
+		value: null,
+		metadata: {
+			appendIcon: true,
+				from: {
+					textField: {
+						label: 'Du',
+						outlined: true,
+						hint: 'Texte informatif',
+						persistentHint: true
+					}
+				},
+				to: {
+					textField: {
+						label: 'Au',
+						outlined: true,
+						hint: 'Texte informatif',
+						persistentHint: true
+					}
+				}
+		}
+	}
+};
+
 const testForm = {
 	question: {
 		title: 'Test ?',
@@ -35,7 +84,7 @@ const testForm = {
 
 // Tests
 describe('FormBuilder', () => {
-	it('renders correctly', () => {
+	it('renders form classic correctly', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
@@ -43,6 +92,22 @@ describe('FormBuilder', () => {
 			},
 			propsData: {
 				value: testForm
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders form question correctly', () => {
+		// Mount component
+		wrapper = mountComponent(FormBuilder, {
+			stubs: {
+				FormField
+			},
+			propsData: {
+				value: questionForm,
+				defaultLayout:'question'
+
 			}
 		}, true);
 

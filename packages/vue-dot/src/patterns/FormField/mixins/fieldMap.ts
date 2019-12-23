@@ -14,6 +14,7 @@ import SelectField from '../fields/SelectField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
 import DateField from '../fields/DateField.vue';
+import PeriodeField from '../fields/PeriodeField.vue';
 
 /** List all fields and provide getField() function */
 @Component({
@@ -24,7 +25,8 @@ import DateField from '../fields/DateField.vue';
 		SelectField,
 		TextareaField,
 		TextField,
-		DateField
+		DateField,
+		PeriodeField
 	}
 })
 export default class FieldMap extends Vue {
@@ -36,7 +38,8 @@ export default class FieldMap extends Vue {
 		select: 'SelectField',
 		textarea: 'TextareaField',
 		string: 'TextField',
-		date: 'DateField'
+		date: 'DateField',
+		periode: 'PeriodeField'
 	};
 
 	/**
