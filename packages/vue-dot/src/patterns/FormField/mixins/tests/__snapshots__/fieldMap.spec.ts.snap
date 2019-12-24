@@ -6,6 +6,7 @@ Object {
   "number": "NumberField",
   "password": "PasswordField",
   "select": "SelectField",
+  "slider": "SliderField",
   "string": "TextField",
   "textarea": "TextareaField",
 }
