@@ -135,6 +135,40 @@
 				metadata: {
 					label: 'Label du champ'
 				}
+			},
+			questionSelectMultiple: {
+				type: 'select',
+				title: 'Question select multiple',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
+				metadata: {
+					multiple: true,
+					outlined: true,
+					chips: true,
+					menuProps: { offsetY: true },
+					label: 'Votre réponse',
+					hint: 'Texte informatif',
+					persistentHint: true
+				}
+			},
+			questionSelectMultipleAutocomplete: {
+				type: 'autocomplete',
+				title: 'Question select multiple autocomplete',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
+				metadata: {
+					multiple: true,
+					outlined: true,
+					chips: true,
+					menuProps: { offsetY: true },
+					label: 'Votre réponse',
+					hint: 'Texte informatif',
+					persistentHint: true
+				}
 			}
 		};
 	}

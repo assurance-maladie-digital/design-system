@@ -1,6 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormBuilder renders correctly 1`] = `
+exports[`FormBuilder renders correctly with a specified question layout 1`] = `
+<div class="vd-form-builder">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question ?</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="v-input vd-form-field theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-28" class="v-label theme--light" style="left: 0px; position: absolute;">Label du champ</label><input id="input-28" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question select autocomplete multiple</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-select--is-multi">
+      <div class="v-input__control">
+        <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-39" class="v-input__slot">
+          <fieldset aria-hidden="true">
+            <legend style="width: 0px;"><span>​</span></legend>
+          </fieldset>
+          <div class="v-select__slot"><label for="input-39" class="v-label theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+            <div class="v-select__selections"><input id="input-39" readonly="readonly" type="text" aria-readonly="true" autocomplete="off"></div>
+            <div class="v-input__append-inner">
+              <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+            </div><input type="hidden">
+          </div>
+          <div class="v-menu">
+            <div class="v-menu__content theme--light " style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
+          </div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper">
+              <div class="v-messages__message">Texte informatif</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question select multiple autocomplete</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-select--is-multi v-autocomplete">
+      <div class="v-input__control">
+        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-54" class="v-input__slot">
+          <fieldset aria-hidden="true">
+            <legend style="width: 0px;"><span>​</span></legend>
+          </fieldset>
+          <div class="v-select__slot"><label for="input-54" class="v-label theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+            <div class="v-select__selections"><input id="input-54" type="text" autocomplete="off"></div>
+            <div class="v-input__append-inner">
+              <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+            </div><input type="hidden">
+          </div>
+          <div class="v-menu">
+            <div class="v-menu__content theme--light v-autocomplete__content" style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
+          </div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper">
+              <div class="v-messages__message">Texte informatif</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormBuilder renders form classic correctly 1`] = `
 <div class="vd-form-builder">
   <div class="layout vd-layout ma-n4 vd-form-layout">
     <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">

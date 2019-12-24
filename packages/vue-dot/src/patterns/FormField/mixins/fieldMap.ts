@@ -8,8 +8,8 @@ interface IFieldMap {
 // We import them all because the form
 // can use any of them
 import AutocompleteField from '../fields/AutocompleteField.vue';
-import PasswordField from '../fields/PasswordField.vue';
 import NumberField from '../fields/NumberField.vue';
+import PasswordField from '../fields/PasswordField.vue';
 import SelectField from '../fields/SelectField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
@@ -18,8 +18,8 @@ import TextField from '../fields/TextField.vue';
 @Component({
 	components: {
 		AutocompleteField,
-		PasswordField,
 		NumberField,
+		PasswordField,
 		SelectField,
 		TextareaField,
 		TextField
@@ -32,8 +32,8 @@ export default class FieldMap extends Vue {
 		number: 'NumberField',
 		password: 'PasswordField',
 		select: 'SelectField',
-		textarea: 'TextareaField',
-		string: 'TextField'
+		string: 'TextField',
+		textarea: 'TextareaField'
 	};
 
 	/**
