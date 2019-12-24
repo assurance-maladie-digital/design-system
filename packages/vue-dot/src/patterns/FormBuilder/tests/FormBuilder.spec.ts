@@ -30,6 +30,22 @@ const questionForm = {
 		metadata: {
 			label: 'date'
 		}
+	},
+	question_select: {
+		type: 'select',
+		title: 'Question select',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
+		metadata: {
+			outlined: true,
+			chips: true,
+			menuProps: { offsetY: true, openOnHover:true },
+			label: 'Votre réponse',
+			hint: 'Texte informatif',
+			persistentHint: true
+		}
 	}
 };
 
