@@ -135,6 +135,19 @@
 				metadata: {
 					label: 'Label du champ'
 				}
+			},
+			questionSlider: {
+				type: 'slider',
+				title: 'Question slider',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					min: 10,
+					max: 666,
+					step: 0.1,
+					thumbLabel:'always'
+				}
 			}
 		};
 	}

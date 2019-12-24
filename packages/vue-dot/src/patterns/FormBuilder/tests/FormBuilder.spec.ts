@@ -10,6 +10,31 @@ import FormField from '../../FormField';
 
 let wrapper: Wrapper<Vue>;
 
+const questionForm = {
+	question_string: {
+		type: 'string',
+		title: 'Question ?',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			label: 'Label du champ'
+		}
+	},
+	question_slider: {
+		type: 'slider',
+		title: 'Question slider',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			min: 10,
+			max: 1000,
+			step: 0.6
+		}
+	}
+};
+
 const testForm = {
 	question: {
 		title: 'Test ?',
