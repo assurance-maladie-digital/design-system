@@ -55,14 +55,16 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
+
+	import { ListItem } from './types';
 
 	const Props = Vue.extend({
 		props: {
 			/** The list to display */
 			list: {
-				type: [Array, Object],
+				type: Array as PropType<ListItem[]>,
 				required: true
 			},
 			// Title options
