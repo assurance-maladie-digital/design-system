@@ -33,7 +33,7 @@ const Props = Vue.extend({
 	}
 });
 
-/** Add event handling: week-ends and ranges */
+/** Handle main logic of the DatePicker */
 @Component<DateLogic>({
 	watch: {
 		/** Update the date when value is provided by the user */
