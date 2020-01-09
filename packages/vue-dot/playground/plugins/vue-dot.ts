@@ -15,8 +15,13 @@ import '../theme/theme.scss';
 import VueTheMask from 'vue-the-mask';
 Vue.use(VueTheMask);
 
+export const LOCAL_STORAGE_CONTROL = {
+	version: 1
+};
+
 Vue.use(VueDot, {
 	theme: {
 		icons
-	}
+	},
+	localStorageControl: LOCAL_STORAGE_CONTROL
 });
