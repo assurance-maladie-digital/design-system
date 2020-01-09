@@ -69,7 +69,7 @@
 		>
 			<VSpacer />
 
-			v{{ version }} &copy; 2018-2019 Dylan Broussard
+			v{{ version }} &copy; 2018-2020 Dylan Broussard
 		</VFooter>
 	</VApp>
 </template>
