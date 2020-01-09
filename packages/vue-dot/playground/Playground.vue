@@ -76,10 +76,11 @@
 
 	import { version } from '../package.json';
 
-	const DARK_THEME_KEY = 'pg-dark';
-	const STORAGE_VERSION = 1;
+	import { LOCAL_STORAGE_CONTROL } from './plugins/vue-dot';
 
 	import LocalStorageUtility from '../src/helpers/localStorageUtility';
+
+	const DARK_THEME_KEY = 'pg-dark';
 
 	/**
 	 * Playground is a component that contains examples
@@ -89,7 +90,7 @@
 	export default class Playground extends Vue {
 		version = version;
 
-		localStorageUtility = new LocalStorageUtility(STORAGE_VERSION);
+		localStorageUtility = new LocalStorageUtility(LOCAL_STORAGE_CONTROL.version);
 
 		updateTheme() {
 			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
