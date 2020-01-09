@@ -73,7 +73,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import config from './config';
@@ -93,7 +93,7 @@
 		props: {
 			/** The v-model value (the list of files) */
 			value: {
-				type: [Array, Object],
+				type: Array as PropType<FileListItem[]>,
 				required: true
 			},
 			/** The main title */
@@ -148,9 +148,6 @@
 	export default class UploadWorkflow extends Props {
 		// Mixin computed data
 		options!: Options;
-
-		// Stronger types
-		value!: FileListItem[];
 
 		// Extend $refs
 		$refs!: Refs<{
