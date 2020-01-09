@@ -7,7 +7,9 @@ exports[`UploadWorkflow renders correctly 1`] = `
   </h4>
   <div role="list" class="v-list vd-file-list v-sheet v-sheet--tile theme--light">
     <div tabindex="-1" role="listitem" class="v-list-item theme--light">
-      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
+      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;">
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path>
+        </svg></div>
       <div class="v-list-item__content">
         <div class="v-list-item__title grey--text text--darken-1">
           test
@@ -24,7 +26,9 @@ exports[`UploadWorkflow renders correctly 1`] = `
     </div>
     <hr role="separator" aria-orientation="horizontal" class="v-divider v-divider--inset theme--light">
     <div tabindex="-1" role="listitem" class="v-list-item theme--light">
-      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
+      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;">
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path>
+        </svg></div>
       <div class="v-list-item__content">
         <div class="v-list-item__title grey--text text--darken-1">
           test
@@ -40,7 +44,7 @@ exports[`UploadWorkflow renders correctly 1`] = `
       </div>
     </div>
     <hr role="separator" aria-orientation="horizontal" class="v-divider v-divider--inset theme--light">
-  </div> <label class="file-upload d-block pa-4 primary--text mt-6"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="file-upload-input"> <span class="file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
+  </div> <label class="file-upload d-block pa-4 primary--text mt-6"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="file-upload-input"> <span class="file-upload-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg> <span class="mt-1 font-weight-medium black--text">
 					Placez votre fichier ici
 				</span> <span class="mb-2 grey--text text--darken-1">
 					Ou
@@ -78,7 +82,9 @@ exports[`UploadWorkflow renders correctly with a single file 1`] = `
   </h4>
   <div role="list" class="v-list vd-file-list v-sheet v-sheet--tile theme--light">
     <div tabindex="-1" role="listitem" class="v-list-item theme--light">
-      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
+      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;">
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path>
+        </svg></div>
       <div class="v-list-item__content">
         <div class="v-list-item__title grey--text text--darken-1">
           test
@@ -94,7 +100,7 @@ exports[`UploadWorkflow renders correctly with a single file 1`] = `
       </div>
     </div>
     <hr role="separator" aria-orientation="horizontal" class="v-divider v-divider--inset theme--light">
-  </div> <label class="file-upload d-block pa-4 primary--text mt-6"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="file-upload-input"> <span class="file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
+  </div> <label class="file-upload d-block pa-4 primary--text mt-6"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="file-upload-input"> <span class="file-upload-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg> <span class="mt-1 font-weight-medium black--text">
 					Placez votre fichier ici
 				</span> <span class="mb-2 grey--text text--darken-1">
 					Ou
