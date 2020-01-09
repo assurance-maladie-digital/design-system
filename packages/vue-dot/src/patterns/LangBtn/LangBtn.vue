@@ -71,12 +71,12 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import config from './config';
 	import locales from './locales';
-	import { Languages } from './types';
+	import { Languages, AllLanguagesChar } from './types';
 
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
@@ -92,7 +92,7 @@
 			 * by default it's all (*)
 			 */
 			availableLanguages: {
-				type: [Array, Object, String],
+				type: [Array, String] as PropType<string[] | AllLanguagesChar>,
 				default: '*'
 			},
 			/** Show the down arrow inside the activator button */

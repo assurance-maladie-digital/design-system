@@ -92,7 +92,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import config from './config';
@@ -118,7 +118,7 @@
 			},
 			/** The list of files to display */
 			files: {
-				type: [Array, Object],
+				type: Array as PropType<FileItem[]>,
 				required: true
 			},
 			hideListDivider: {
@@ -138,9 +138,6 @@
 	export default class FileList extends Props {
 		// Mixin computed data
 		options!: Options;
-
-		// Stronger types
-		files!: FileItem[];
 
 		// Icons
 		refreshIcon = mdiRefresh;

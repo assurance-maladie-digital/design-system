@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import Component from 'vue-class-component';
 
 import { ValidationRule } from '../../rules/types';
@@ -7,7 +7,7 @@ const Props = Vue.extend({
 	props: {
 		/** An array of rules (same syntax as Vuetify ones) */
 		warningRules: {
-			type: [Array, Object],
+			type: Array as PropType<ValidationRule[]>,
 			default: () => []
 		}
 	}
@@ -19,8 +19,6 @@ const Props = Vue.extend({
  */
 @Component
 export default class WarningRules extends Props {
-	warningRules!: ValidationRule[];
-
 	/**
 	 * The messages from warningRules.
 	 * Not used if already passed as a prop*

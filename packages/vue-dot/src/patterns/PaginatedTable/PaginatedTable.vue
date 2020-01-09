@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import { Options } from './types';
@@ -38,7 +38,7 @@
 		props: {
 			// Props from Vuetify
 			options: {
-				type: [Array, Object],
+				type: Object as PropType<Options>,
 				required: true
 			},
 			serverItemsLength: {
