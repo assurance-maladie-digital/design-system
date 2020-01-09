@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/assurance-maladie-digital/design-system/blob/master/LICENSE"><img src="https://flat.badgen.net/badge/license/MIT/blue" alt="License MIT"></a>
-  <a href="https://www.npmjs.com/package/@cnamts/vue-dash"><img src="https://flat.badgen.net/npm/v/@cnamts/vue-dot/next" alt="npm Version"></a>
+  <a href="https://www.npmjs.com/package/@cnamts/vue-dot"><img src="https://flat.badgen.net/npm/v/@cnamts/vue-dot/next" alt="npm Version"></a>
   <a href="https://codecov.io/gh/assurance-maladie-digital/design-system"><img src="https://flat.badgen.net/codecov/c/github/assurance-maladie-digital/design-system" alt="Codecov" /></a>
   <a href="https://www.browserstack.com/"><img src="https://flat.badgen.net/badge/powered%20by/BrowserStack/blue" alt="Powered by BrowserStack"></a>
 </p>
