@@ -15,9 +15,9 @@ export interface VueDotOptions {
 	theme?: Theme;
 }
 
-declare const VueDot: VueDotPlugin;
-export default VueDot;
-
 export interface VueDotPlugin {
 	install: PluginFunction<VueDotOptions>;
 }
+
+declare const VueDot: VueDotPlugin;
+export default VueDot;
