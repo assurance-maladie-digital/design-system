@@ -93,7 +93,7 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import config from './config';
 	import { FileItem } from './types';
@@ -128,17 +128,11 @@
 		}
 	});
 
-	/** FileList is a component that displays a list of files */
-	@Component({
-		mixins: [
-			// Default configuration
-			customizable(config)
-		]
-	})
-	export default class FileList extends Props {
-		// Mixin computed data
-		options!: Options;
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
+	/** FileList is a component that displays a list of files */
+	@Component
+	export default class FileList extends MixinsDeclaration {
 		// Icons
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
