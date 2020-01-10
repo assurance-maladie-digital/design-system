@@ -1,5 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
-import { Theme } from '../types';
+import { VueDotOptions } from '../types';
 import { Framework } from 'vuetify/types';
 
 // Extend global interfaces
@@ -14,7 +14,7 @@ declare global {
 declare module 'vue/types/vue' {
 	// Add this.$vuetify
 	interface Vue {
-		$vd: Theme;
+		$vd: VueDotOptions;
 		$vuetify: Framework;
 	}
 }
