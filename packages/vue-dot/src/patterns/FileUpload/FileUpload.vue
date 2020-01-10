@@ -149,13 +149,7 @@
 			/** The size units used in the template for i18n */
 			fileSizeUnits: {
 				type: Array as PropType<string[]>,
-				default: () => [
-					'o',
-					'Ko',
-					'Mo',
-					'Go',
-					'To'
-				]
+				default: () => locales.fileSizeUnits
 			},
 			/** The allowed file extensions */
 			allowedExtensions: {
