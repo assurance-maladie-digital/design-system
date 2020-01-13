@@ -74,7 +74,7 @@ const testForm = {
 
 // Tests
 describe('FormBuilder', () => {
-	it('renders form classic correctly', () => {
+	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
@@ -88,7 +88,7 @@ describe('FormBuilder', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders form question correctly', () => {
+	it('renders correctly with a specified question layout', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
@@ -97,7 +97,6 @@ describe('FormBuilder', () => {
 			propsData: {
 				value: questionForm,
 				defaultLayout:'question'
-
 			}
 		}, true);
 

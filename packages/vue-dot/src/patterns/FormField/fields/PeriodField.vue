@@ -10,7 +10,6 @@
 		>
 			<DatePicker
 				v-model="periodeValue.from"
-				date-format-return="YYYY-MM-DD"
 				v-bind="field.metadata"
 				:vuetify-options="field.metadata.from"
 				@change="changeDate"
@@ -22,7 +21,6 @@
 		>
 			<DatePicker
 				v-model="periodeValue.to"
-				date-format-return="YYYY-MM-DD"
 				v-bind="field.metadata"
 				:vuetify-options="metadataTo"
 				:start-date="periodeValue.from"
@@ -52,23 +50,29 @@
 			to: undefined
 		};
 
-		get metadataTo(){
-			const currentMetadata = this.field.metadata && this.field.metadata.to ? this.field.metadata.to : {};
-			return { ...currentMetadata , datePicker: { min: this.periodeValue.from } };
+		get metadataTo() {
+			const currentMetadata =
+				this.field.metadata &&
+				this.field.metadata.to ?
+				this.field.metadata.to : {};
+			return {
+				...currentMetadata,
+				datePicker: { min: this.periodeValue.from }
+			};
 		}
 
 		// emit the new value when started or ended date change
-		changeDate(){
+		changeDate() {
 			//reset the end date if selected start date greatter
-			if(
-				this.periodeValue.from && this.periodeValue.to &&
-				new Date(this.periodeValue.from)  > new Date(this.periodeValue.to)
-			){
-				this.periodeValue.to = undefined;
+			if (
+			this.periodeValue.from &&
+			this.periodeValue.to &&
+			new Date(this.periodeValue.from) > new Date(this.periodeValue.to)
+			) {
+			this.periodeValue.to = undefined;
 			}
 			this.field.value = this.periodeValue;
 			this.emitChangeEvent(this.field);
 		}
-
 	}
 </script>
