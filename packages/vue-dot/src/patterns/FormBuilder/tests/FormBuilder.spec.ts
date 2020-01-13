@@ -21,31 +21,13 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
-	questionDate: {
-		type: 'date',
-		title: 'Question',
-		description: 'Informations supplémentaires',
-		tooltip: 'date info',
-		value: null,
-		metadata: {
-			label: 'date'
-		}
-	},
-	question_select: {
+	questionSelect: {
 		type: 'select',
 		title: 'Question select',
 		description: 'Informations supplémentaires',
 		tooltip: 'Texte d\'aide',
 		value: null,
-		items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
-		metadata: {
-			outlined: true,
-			chips: true,
-			menuProps: { offsetY: true, openOnHover:true },
-			label: 'Votre réponse',
-			hint: 'Texte informatif',
-			persistentHint: true
-		}
+		items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }]
 	}
 };
 
@@ -74,7 +56,7 @@ const testForm = {
 
 // Tests
 describe('FormBuilder', () => {
-	it('renders form classic correctly', () => {
+	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
@@ -97,7 +79,6 @@ describe('FormBuilder', () => {
 			propsData: {
 				value: questionForm,
 				defaultLayout:'question'
-
 			}
 		}, true);
 
