@@ -13,8 +13,6 @@ import NumberField from '../fields/NumberField.vue';
 import SelectField from '../fields/SelectField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
-import DateField from '../fields/DateField.vue';
-import PeriodeField from '../fields/PeriodeField.vue';
 import SliderField from '../fields/SliderField.vue';
 
 /** List all fields and provide getField() function */
@@ -26,8 +24,6 @@ import SliderField from '../fields/SliderField.vue';
 		SelectField,
 		TextareaField,
 		TextField,
-		DateField,
-		PeriodeField,
 		SliderField
 	}
 })
@@ -40,8 +36,6 @@ export default class FieldMap extends Vue {
 		select: 'SelectField',
 		textarea: 'TextareaField',
 		string: 'TextField',
-		date: 'DateField',
-		periode: 'PeriodeField',
 		slider: 'SliderField'
 	};
 

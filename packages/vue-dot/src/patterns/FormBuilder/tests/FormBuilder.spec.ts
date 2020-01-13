@@ -73,4 +73,19 @@ describe('FormBuilder', () => {
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
+
+	it('renders correctly with a specified question layout', () => {
+		// Mount component
+		wrapper = mountComponent(FormBuilder, {
+			stubs: {
+				FormField
+			},
+			propsData: {
+				value: questionForm,
+				defaultLayout:'question'
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
 });
