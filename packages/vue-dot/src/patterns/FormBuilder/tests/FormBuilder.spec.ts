@@ -75,7 +75,7 @@ describe('FormBuilder', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with a specified default layout', () => {
+	it('renders correctly with a specified question layout', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
