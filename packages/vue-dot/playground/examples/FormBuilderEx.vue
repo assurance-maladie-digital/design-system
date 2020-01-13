@@ -12,12 +12,10 @@
 		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
 			Questionnaire
 		</h2>
-		<VForm>
-			<FormBuilder
-				v-model="questionForm"
-				default-layout="question"
-			/>
-		</VForm>
+		<FormBuilder
+			v-model="questionForm"
+			default-layout="question"
+		/>
 	</DocSection>
 </template>
 
@@ -135,92 +133,6 @@
 				value: null,
 				metadata: {
 					label: 'Label du champ'
-				}
-			},
-			questionDate: {
-				type: 'date',
-				title: 'Question',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: null,
-				metadata: {
-					appendIcon: true,
-					textField: {
-						outlined: true,
-						hint: 'Texte informatif'
-					}
-				}
-			},
-			questionPeriode: {
-				type: 'periode',
-				title: 'Question periode',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: null,
-				metadata: {
-					appendIcon: true,
-					from: {
-						textField: {
-							label: 'Du',
-							outlined: true,
-							hint: 'Texte informatif',
-							persistentHint: true
-						}
-					},
-					to: {
-						textField: {
-							label: 'Au',
-							outlined: true,
-							hint: 'Texte informatif',
-							persistentHint: true
-						}
-					}
-				}
-			},
-			questionSlider: {
-				type: 'slider',
-				title: 'Question slider',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: null,
-				metadata: {
-					min: 10,
-					max: 666,
-					step: 0.1,
-					thumbLabel:'always'
-				}
-			},
-			questionSelect: {
-				type: 'select',
-				title: 'Question select',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: null,
-				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
-				metadata: {
-					outlined: true,
-					chips: true,
-					menuProps: { offsetY: true },
-					label: 'Votre réponse',
-					hint: 'Texte informatif',
-					persistentHint: true
-				}
-			},
-			questionSelectMultiple: {
-				type: 'autocomplete',
-				title: 'Question select autocomplete multiple',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: null,
-				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
-				metadata: {
-					multiple: true,
-					outlined: true,
-					chips: true,
-					menuProps: { offsetY: true },
-					label: 'Votre réponse',
-					hint: 'Texte informatif',
-					persistentHint: true
 				}
 			},
 			questionButtonToggle: {

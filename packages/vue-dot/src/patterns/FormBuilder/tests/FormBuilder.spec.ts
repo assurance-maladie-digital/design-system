@@ -21,18 +21,15 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
-	questionDate: {
-		type: 'date',
-		title: 'Question',
+	questionButtonToggle: {
+		type: 'selectButton',
+		title: 'Question select button',
 		description: 'Informations supplémentaires',
-		tooltip: 'date info',
-		value: null,
+		tooltip: 'Texte d\'aide',
+		value: [],
+		items: [{ text: 'Abricot', value: 1 }, { text: 'Citron', value: 2 }],
 		metadata: {
-			appendIcon: true,
-			textField: {
-				outlined: true,
-				hint: 'Texte informatif'
-			}
+			multiple: true
 		}
 	}
 };
@@ -62,7 +59,7 @@ const testForm = {
 
 // Tests
 describe('FormBuilder', () => {
-	it('renders form classic correctly', () => {
+	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
