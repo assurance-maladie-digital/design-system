@@ -14,9 +14,6 @@ import SelectField from '../fields/SelectField.vue';
 import SelectButtonField from '../fields/SelectButtonField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
-import DateField from '../fields/DateField.vue';
-import PeriodeField from '../fields/PeriodeField.vue';
-import SliderField from '../fields/SliderField.vue';
 
 /** List all fields and provide getField() function */
 @Component({
@@ -25,12 +22,9 @@ import SliderField from '../fields/SliderField.vue';
 		PasswordField,
 		NumberField,
 		SelectField,
+		SelectButtonField,
 		TextareaField,
-		TextField,
-		DateField,
-		PeriodeField,
-		SliderField,
-		SelectButtonField
+		TextField
 	}
 })
 export default class FieldMap extends Vue {
@@ -40,12 +34,9 @@ export default class FieldMap extends Vue {
 		number: 'NumberField',
 		password: 'PasswordField',
 		select: 'SelectField',
-		textarea: 'TextareaField',
+		selectButton: 'SelectButtonField',
 		string: 'TextField',
-		date: 'DateField',
-		periode: 'PeriodeField',
-		slider: 'SliderField',
-		selectButton: 'SelectButtonField'
+		textarea: 'TextareaField'
 	};
 
 	/**

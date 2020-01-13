@@ -12,6 +12,7 @@
 		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
 			Questionnaire
 		</h2>
+
 		<FormBuilder
 			v-model="questionForm"
 			default-layout="question"
@@ -135,7 +136,7 @@
 					label: 'Label du champ'
 				}
 			},
-			questionButtonToggle: {
+			questionSelectButton: {
 				type: 'selectButton',
 				title: 'Question select button',
 				description: 'Informations supplémentaires',

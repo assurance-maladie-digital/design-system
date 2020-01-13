@@ -21,7 +21,7 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
-	questionButtonToggle: {
+	questionSelectButton: {
 		type: 'selectButton',
 		title: 'Question select button',
 		description: 'Informations supplémentaires',
@@ -82,7 +82,6 @@ describe('FormBuilder', () => {
 			propsData: {
 				value: questionForm,
 				defaultLayout: 'question'
-
 			}
 		}, true);
 
