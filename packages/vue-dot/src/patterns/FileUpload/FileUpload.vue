@@ -123,9 +123,9 @@
 				default: false
 			},
 			/**
-			 * The v-model value,
-			 * allow File as type because on single mode,
-			 * the v-model isn't an array
+			 * The v-model value
+			 * (Allow File as type because on single
+			 * mode the v-model isn't an array)
 			 */
 			value: {
 				type: [Array, Object, File],
@@ -149,13 +149,7 @@
 			/** The size units used in the template for i18n */
 			fileSizeUnits: {
 				type: Array as PropType<string[]>,
-				default: () => [
-					'o',
-					'Ko',
-					'Mo',
-					'Go',
-					'To'
-				]
+				default: () => locales.fileSizeUnits
 			},
 			/** The allowed file extensions */
 			allowedExtensions: {
@@ -196,11 +190,11 @@
 			vdInputEl: HTMLInputElement;
 		}>;
 
-		// Icons
-		uploadIcon = mdiCloudUpload;
-
 		// Locales
 		locales = locales;
+
+		// Icons
+		uploadIcon = mdiCloudUpload;
 
 		/** The list of accepted files */
 		files: File[] = [];
@@ -299,7 +293,7 @@
 			const files = data.items || data.files;
 
 			// Stop if multiple files selected in single mode
-			if (this.ifTooMuchfiles(files)) {
+			if (this.ifTooManyFiles(files)) {
 				return;
 			}
 
@@ -342,7 +336,7 @@
 			}
 
 			// Stop if multiple files selected in single mode
-			if (this.ifTooMuchfiles(files)) {
+			if (this.ifTooManyFiles(files)) {
 				return;
 			}
 
@@ -353,7 +347,7 @@
 			this.emitChangeEvent();
 		}
 
-		ifTooMuchfiles(files: FileList | DataTransferItemList) {
+		ifTooManyFiles(files: FileList | DataTransferItemList) {
 			// If not in multiple mode and more than one file,
 			// return error
 			if (!this.multiple && files.length > 1) {
