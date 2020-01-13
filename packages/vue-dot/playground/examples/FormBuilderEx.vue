@@ -56,7 +56,8 @@
 				type: 'autocomplete',
 				value: null,
 				items: [
-					'Allée','Avenue',
+					'Allée',
+					'Avenue',
 					'Boulevard',
 					'Aucun'
 				],
