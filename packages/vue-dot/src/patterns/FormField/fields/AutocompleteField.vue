@@ -3,7 +3,8 @@
 		v-model="field.value"
 		:items="field.items"
 		v-bind="field.metadata"
-		@change="emitChangeEvent(field)"
+		:search-input.sync="searchInput"
+		@change="emitChangeEvent(field); searchInput=''"
 	/>
 </template>
 
@@ -15,5 +16,7 @@
 
 	/** Form field to select a value with autocomplete */
 	@Component
-	export default class AutocompleteField extends FieldComponent {}
+	export default class AutocompleteField extends FieldComponent {
+		searchInput: string | null= null;
+	}
 </script>
