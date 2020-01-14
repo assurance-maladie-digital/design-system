@@ -73,7 +73,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-layout .v-input {
+	.vd-layout ::v-deep .v-input {
 		width: 50%;
 		flex: none;
 	}

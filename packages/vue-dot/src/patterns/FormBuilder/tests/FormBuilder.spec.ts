@@ -30,6 +30,19 @@ const questionForm = {
 		metadata: {
 			outlined: true
 		}
+	},
+	questionDate: {
+		type: 'date',
+		title: 'Question',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			textField: {
+				outlined: true,
+				hint: 'Texte informatif'
+			}
+		}
 	}
 };
 
