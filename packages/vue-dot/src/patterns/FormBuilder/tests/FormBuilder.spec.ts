@@ -11,7 +11,7 @@ import FormField from '../../FormField';
 let wrapper: Wrapper<Vue>;
 
 const questionForm = {
-	question_string: {
+	questionString: {
 		type: 'string',
 		title: 'Question ?',
 		description: 'Informations supplémentaires',
@@ -21,7 +21,30 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
-	questionPeriode: {
+	questionTextarea: {
+		type: 'textarea',
+		title: 'Question longue type textarea',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			outlined: true
+		}
+	},
+	questionDate: {
+		type: 'date',
+		title: 'Question',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			textField: {
+				outlined: true,
+				hint: 'Texte informatif'
+			}
+		}
+	},
+	questionPeriod: {
 		type: 'periode',
 		title: 'Question période',
 		description: 'Informations supplémentaires',
