@@ -148,6 +148,20 @@
 					hint: 'Texte informatif',
 					placeholder: 'Votre réponse'
 				}
+			},
+			questionDate: {
+				type: 'date',
+				title: 'Question Date',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					appendIcon: true,
+					textField: {
+						outlined: true,
+						hint: 'Texte informatif'
+					}
+				}
 			}
 		};
 	}
