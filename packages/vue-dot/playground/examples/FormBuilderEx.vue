@@ -163,9 +163,9 @@
 					}
 				}
 			},
-			questionPeriode: {
+			questionPeriod: {
 				type: 'period',
-				title: 'Question periode',
+				title: 'Question période',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
 				value: null,

@@ -45,10 +45,9 @@ const questionForm = {
 		}
 	},
 	questionPeriod: {
-		type: 'periode',
+		type: 'period',
 		title: 'Question période',
 		description: 'Informations supplémentaires',
-		tooltip: 'periode info',
 		value: null,
 		metadata: {
 			appendIcon: true,
@@ -56,7 +55,6 @@ const questionForm = {
 				textField: {
 					label: 'Du',
 					outlined: true,
-					hint: 'Texte informatif',
 					persistentHint: true
 				}
 			},
@@ -64,7 +62,6 @@ const questionForm = {
 				textField: {
 					label: 'Au',
 					outlined: true,
-					hint: 'Texte informatif',
 					persistentHint: true
 				}
 			}
@@ -119,7 +116,7 @@ describe('FormBuilder', () => {
 			},
 			propsData: {
 				value: questionForm,
-				defaultLayout:'question'
+				defaultLayout: 'question'
 			}
 		}, true);
 

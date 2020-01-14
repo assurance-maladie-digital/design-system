@@ -9,7 +9,7 @@
 			md="6"
 		>
 			<DatePicker
-				v-model="periodeValue.from"
+				v-model="periodValue.from"
 				v-bind="field.metadata"
 				:vuetify-options="field.metadata.from"
 				@change="changeDate"
@@ -20,10 +20,10 @@
 			md="6"
 		>
 			<DatePicker
-				v-model="periodeValue.to"
+				v-model="periodValue.to"
 				v-bind="field.metadata"
 				:vuetify-options="metadataTo"
-				:start-date="periodeValue.from"
+				:start-date="periodValue.from"
 				@change="changeDate"
 			/>
 		</VCol>
@@ -33,9 +33,11 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
 	import DatePicker from '../../DatePicker';
 
 	import FieldComponent from '../mixins/fieldComponent';
+
 	import { PeriodValue } from '../types';
 
 	/** Form date field to enter date */
@@ -45,7 +47,7 @@
 		}
 	})
 	export default class PeriodField extends FieldComponent {
-		periodeValue: PeriodValue = {
+		periodValue: PeriodValue = {
 			from: undefined,
 			to: undefined
 		};
@@ -55,23 +57,25 @@
 				this.field.metadata &&
 				this.field.metadata.to ?
 				this.field.metadata.to : {};
+
 			return {
 				...currentMetadata,
-				datePicker: { min: this.periodeValue.from }
+				datePicker: { min: this.periodValue.from }
 			};
 		}
 
-		// emit the new value when started or ended date change
+		/** Emit the new value when started or ended date change */
 		changeDate() {
-			//reset the end date if selected start date greatter
+			// Reset the end date if selected start date greater
 			if (
-			this.periodeValue.from &&
-			this.periodeValue.to &&
-			new Date(this.periodeValue.from) > new Date(this.periodeValue.to)
+				this.periodValue.from &&
+				this.periodValue.to &&
+				new Date(this.periodValue.from) > new Date(this.periodValue.to)
 			) {
-			this.periodeValue.to = undefined;
+				this.periodValue.to = undefined;
 			}
-			this.field.value = this.periodeValue;
+
+			this.field.value = this.periodValue;
 			this.emitChangeEvent(this.field);
 		}
 	}
