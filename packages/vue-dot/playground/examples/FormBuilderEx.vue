@@ -167,7 +167,6 @@
 				title: 'Question période',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
-				value: null,
 				metadata: {
 					appendIcon: true,
 					from: {

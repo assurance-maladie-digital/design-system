@@ -12,7 +12,6 @@
 				v-model="periodValue.from"
 				v-bind="field.metadata"
 				:vuetify-options="field.metadata.from"
-				@change="changeDate"
 			/>
 		</VCol>
 		<VCol
@@ -24,7 +23,6 @@
 				v-bind="field.metadata"
 				:vuetify-options="metadataTo"
 				:start-date="periodValue.from"
-				@change="changeDate"
 			/>
 		</VCol>
 	</VLayout>
@@ -40,16 +38,37 @@
 
 	import { PeriodValue } from '../types';
 
+	import cloneDeep from 'lodash.clonedeep';
+
 	/** Form date field to enter date */
-	@Component({
+	@Component<PeriodField>({
 		components: {
 			DatePicker
+		},
+		watch: {
+			// lithen the current field value for the component
+			'field.value': {
+				handler(value: PeriodValue | null) {
+					if (value) {
+						this.periodValue = value;
+					}
+				},
+				immediate: true,
+				deep: true
+			},
+			// set the new component period value when once of the datePicker's value change
+			periodValue: {
+				handler(value: PeriodValue) {
+					this.changeDate(value);
+				},
+				deep: true
+			}
 		}
 	})
 	export default class PeriodField extends FieldComponent {
 		periodValue: PeriodValue = {
-			from: undefined,
-			to: undefined
+			from: null,
+			to: null
 		};
 
 		get metadataTo() {
@@ -65,18 +84,23 @@
 		}
 
 		/** Emit the new value when started or ended date change */
-		changeDate() {
+		changeDate(value: PeriodValue) {
 			// Reset the end date if selected start date greater
 			if (
-				this.periodValue.from &&
-				this.periodValue.to &&
-				new Date(this.periodValue.from) > new Date(this.periodValue.to)
+				value.from &&
+				value.to &&
+				new Date(value.from) > new Date(value.to)
 			) {
-				this.periodValue.to = undefined;
+				this.periodValue.to = null;
 			}
 
-			this.field.value = this.periodValue;
-			this.emitChangeEvent(this.field);
+			// set the new value of the field
+			let field = cloneDeep(this.field);
+			field.value = this.periodValue;
+
+			this.$nextTick(() => {
+				this.emitChangeEvent(field);
+			});
 		}
 	}
 </script>
