@@ -136,6 +136,24 @@
 					label: 'Label du champ'
 				}
 			},
+			questionSelectSlider: {
+				type: 'select',
+				title: 'Question select slider',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				items: [
+					{ text: 'text1', value: 'value1' },
+					{ text: 'text2', value: 'value2' },
+					{ text: 'text3', value: 'value3' }
+				],
+				metadata: {
+					ticks:'always',
+					tickSize: 7,
+					thumbLabel: true,
+					slider: true
+				}
+			},
 			questionSlider: {
 				type: 'slider',
 				title: 'Question slider',
