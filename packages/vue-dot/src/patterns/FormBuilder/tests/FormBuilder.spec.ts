@@ -11,7 +11,7 @@ import FormField from '../../FormField';
 let wrapper: Wrapper<Vue>;
 
 const questionForm = {
-	question_string: {
+	questionString: {
 		type: 'string',
 		title: 'Question ?',
 		description: 'Informations supplémentaires',
@@ -80,7 +80,7 @@ describe('FormBuilder', () => {
 			},
 			propsData: {
 				value: questionForm,
-				defaultLayout:'question'
+				defaultLayout: 'question'
 			}
 		}, true);
 
