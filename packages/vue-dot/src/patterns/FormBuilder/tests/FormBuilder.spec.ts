@@ -21,6 +21,16 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
+	questionTextarea: {
+		type: 'textarea',
+		title: 'Question longue type textarea',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			outlined: true
+		}
+	},
 	questionDate: {
 		type: 'date',
 		title: 'Question',
@@ -83,7 +93,7 @@ describe('FormBuilder', () => {
 			},
 			propsData: {
 				value: questionForm,
-				defaultLayout:'question'
+				defaultLayout: 'question'
 			}
 		}, true);
 

@@ -136,9 +136,22 @@
 					label: 'Label du champ'
 				}
 			},
+			question2: {
+				type: 'textarea',
+				title: 'Question',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					outlined: true,
+					persistentHint: true,
+					hint: 'Texte informatif',
+					placeholder: 'Votre réponse'
+				}
+			},
 			questionDate: {
 				type: 'date',
-				title: 'Question',
+				title: 'Question Date',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
 				value: null,
