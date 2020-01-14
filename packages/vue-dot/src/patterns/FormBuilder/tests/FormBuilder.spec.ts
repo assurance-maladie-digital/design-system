@@ -54,15 +54,13 @@ const questionForm = {
 			from: {
 				textField: {
 					label: 'Du',
-					outlined: true,
-					persistentHint: true
+					outlined: true
 				}
 			},
 			to: {
 				textField: {
 					label: 'Au',
-					outlined: true,
-					persistentHint: true
+					outlined: true
 				}
 			}
 		}

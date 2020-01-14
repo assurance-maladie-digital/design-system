@@ -158,8 +158,7 @@
 				metadata: {
 					appendIcon: true,
 					textField: {
-						outlined: true,
-						hint: 'Texte informatif'
+						outlined: true
 					}
 				}
 			},
@@ -174,17 +173,13 @@
 					from: {
 						textField: {
 							label: 'Du',
-							outlined: true,
-							hint: 'Texte informatif',
-							persistentHint: true
+							outlined: true
 						}
 					},
 					to: {
 						textField: {
 							label: 'Au',
-							outlined: true,
-							hint: 'Texte informatif',
-							persistentHint: true
+							outlined: true
 						}
 					}
 				}
