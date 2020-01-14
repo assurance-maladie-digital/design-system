@@ -10,6 +10,29 @@ import FormField from '../../FormField';
 
 let wrapper: Wrapper<Vue>;
 
+const questionForm = {
+	questionString: {
+		type: 'string',
+		title: 'Question ?',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			label: 'Label du champ'
+		}
+	},
+	questionTextarea: {
+		type: 'textarea',
+		title: 'Question longue type textarea',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			outlined: true
+		}
+	}
+};
+
 const testForm = {
 	question: {
 		title: 'Test ?',
@@ -43,6 +66,21 @@ describe('FormBuilder', () => {
 			},
 			propsData: {
 				value: testForm
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with a specified question layout', () => {
+		// Mount component
+		wrapper = mountComponent(FormBuilder, {
+			stubs: {
+				FormField
+			},
+			propsData: {
+				value: questionForm,
+				defaultLayout: 'question'
 			}
 		}, true);
 
