@@ -206,6 +206,27 @@
 					},
 					label: 'Votre réponse'
 				}
+			},
+			questionSelectMultiple: {
+				type: 'select',
+				title: 'Question choix multiple',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: [
+					{
+						text: 'Abricot',
+						value: 1
+					},
+					{
+						text: 'Citron',
+						value: 2
+					}
+				],
+				metadata: {
+					multiple: true,
+					outlined: true,
+					label: 'Votre réponse'
+				}
 			}
 		};
 	}
