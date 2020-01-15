@@ -3,7 +3,7 @@
 		v-bind="field.metadata"
 		:value="field.value"
 		:items="field.items"
-		@change="emitChangeEvent(field)"
+		@change="emitChangeEvent"
 	/>
 </template>
 

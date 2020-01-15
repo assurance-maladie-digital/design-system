@@ -35,7 +35,7 @@ describe('fieldComponent', () => {
 	it('emits change event', () => {
 		const wrapper = createWrapper(testField);
 
-		wrapper.vm.emitChangeEvent(testField);
+		wrapper.vm.emitChangeEvent(testField.value);
 
 		wrapper.vm.$nextTick(() => {
 			expect(wrapper.emitted('change')).toBeTruthy();

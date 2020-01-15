@@ -5,7 +5,7 @@
 		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"
 		@click:append="showEyeIcon = !showEyeIcon"
-		@change="emitChangeEvent(field)"
+		@change="emitChangeEvent"
 	/>
 </template>
 
