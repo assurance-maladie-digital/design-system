@@ -227,6 +227,31 @@
 					outlined: true,
 					label: 'Votre réponse'
 				}
+			},
+			questionSelectAutocomplete: {
+				type: 'autocomplete',
+				title: 'Question select complétion automatique',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: [
+					{
+						text: 'Abricot',
+						value: 1
+					},
+					{
+						text: 'Citron',
+						value: 2
+					}
+				],
+				metadata: {
+					multiple: true,
+					outlined: true,
+					chips: true,
+					menuProps: {
+						offsetY: true
+					},
+					label: 'Votre réponse'
+				}
 			}
 		};
 	}
