@@ -31,6 +31,7 @@
 		"fs-extra": "^8.1.0",
 		"html-webpack-plugin": "^3.2.0",
 		"jest": "24.9.0",
+		"languages": "^0.1.3",
 		"lerna": "^3.20.2",
 		"lint-staged": "^9.5.0",
 		"monorepo-run": "^0.4.2",
@@ -40,6 +41,9 @@
 		"vue": "^2.6.11",
 		"vue-class-component": "^7.2.2",
 		"vue-template-compiler": "^2.6.11",
+		"vue-the-mask": "^0.11.1",
+		"vuetify": "^2.2.4",
+		"vuex": "^3.1.2",
 		"webpack-node-externals": "^1.7.2",
 		"webpack": "^4.41.5"
 	},
