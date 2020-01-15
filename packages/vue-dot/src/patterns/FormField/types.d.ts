@@ -1,6 +1,8 @@
+export type FieldValue = string | number | PeriodValue | null | undefined;
+
 export interface Field {
 	type: string;
-	value?: string | number | PeriodValue | null;
+	value?: FieldValue;
 	title?: string;
 	description?: string;
 	tooltip?: string;

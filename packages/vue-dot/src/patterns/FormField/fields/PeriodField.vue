@@ -89,12 +89,8 @@
 				this.periodValue.to = null;
 			}
 
-			// Set the new value of the field
-			const field = cloneDeep(this.field);
-			field.value = this.periodValue;
-
 			this.$nextTick(() => {
-				this.emitChangeEvent(field);
+				this.emitChangeEvent(this.periodValue);
 			});
 		}
 	}

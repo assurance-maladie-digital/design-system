@@ -4,7 +4,7 @@
 			v-bind="field.metadata"
 			:value="field.value"
 			:vuetify-options="field.metadata"
-			@change="emitChangeEvent(field)"
+			@change="emitChangeEvent"
 		/>
 	</VLayout>
 </template>
