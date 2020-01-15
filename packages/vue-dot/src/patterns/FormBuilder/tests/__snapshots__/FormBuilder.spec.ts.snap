@@ -230,7 +230,7 @@ exports[`FormBuilder renders correctly with a specified question layout 1`] = `
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
-    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question select complétion automatique</span>
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question avec complétion automatique</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">

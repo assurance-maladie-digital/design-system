@@ -228,9 +228,9 @@
 					label: 'Votre réponse'
 				}
 			},
-			questionSelectAutocomplete: {
+			questionAutocomplete: {
 				type: 'autocomplete',
-				title: 'Question select complétion automatique',
+				title: 'Question avec complétion automatique',
 				description: 'Informations supplémentaires',
 				value: null,
 				items: [
