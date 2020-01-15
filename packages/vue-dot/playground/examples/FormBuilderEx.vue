@@ -183,6 +183,30 @@
 					}
 				}
 			},
+			questionSelect: {
+				type: 'select',
+				title: 'Question select',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: [
+					{
+						text: 'Abricot',
+						value: 1
+					},
+					{
+						text: 'Citron',
+						value: 2
+					}
+				],
+				metadata: {
+					outlined: true,
+					chips: true,
+					menuProps: {
+						offsetY: true
+					},
+					label: 'Votre réponse'
+				}
+			},
 			questionSelectMultiple: {
 				type: 'select',
 				title: 'Question select multiple',
