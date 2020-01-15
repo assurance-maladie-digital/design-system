@@ -98,7 +98,7 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import locales from './locales';
 
@@ -175,6 +175,8 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props);
+
 	/**
 	 * FileUpload is a component that enhance the default HTML
 	 * file input element
@@ -185,7 +187,7 @@
 			event: 'change'
 		}
 	})
-	export default class FileUpload extends Props {
+	export default class FileUpload extends MixinsDeclaration {
 		$refs!: Refs<{
 			vdInputEl: HTMLInputElement;
 		}>;

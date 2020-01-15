@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 const Props = Vue.extend({
 	props: {
@@ -11,9 +11,11 @@ const Props = Vue.extend({
 	}
 });
 
+const MixinsDeclaration = mixins(Props);
+
 /** Add error prop from Vuetify and bind it with .sync modifier */
 @Component
-export default class ErrorProp extends Props {
+export default class ErrorProp extends MixinsDeclaration {
 	/**
 	 * Use an internal model
 	 * so we don't modify the prop

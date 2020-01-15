@@ -30,7 +30,7 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { Options } from './types';
 
@@ -57,6 +57,8 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props);
+
 	/**
 	 * PaginatedTable is a wrapper component for the VDataTable
 	 * that stores the pagination in local storage
@@ -71,7 +73,7 @@
 			}
 		}
 	})
-	export default class PaginatedTable extends Props {
+	export default class PaginatedTable extends MixinsDeclaration {
 		localStorageUtility = this.newLocalStorageInstance();
 
 		/**

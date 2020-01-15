@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 import dayjs from 'dayjs';
 
@@ -32,6 +32,8 @@ const Props = Vue.extend({
 		}
 	}
 });
+
+const MixinsDeclaration = mixins(Props);
 
 /** Handle main logic of the DatePicker */
 @Component<DateLogic>({
@@ -71,7 +73,7 @@ const Props = Vue.extend({
 		}
 	}
 })
-export default class DateLogic extends Props {
+export default class DateLogic extends MixinsDeclaration {
 	// Extend $refs
 	$refs!: Refs<{
 		/** VMenu */
