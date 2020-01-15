@@ -43,6 +43,27 @@ const questionForm = {
 				hint: 'Texte informatif'
 			}
 		}
+	},
+	questionPeriod: {
+		type: 'period',
+		title: 'Question période',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			from: {
+				textField: {
+					label: 'Du',
+					outlined: true
+				}
+			},
+			to: {
+				textField: {
+					label: 'Au',
+					outlined: true
+				}
+			}
+		}
 	}
 };
 
