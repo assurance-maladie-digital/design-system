@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { Field } from './types';
@@ -18,7 +18,7 @@
 		props: {
 			/** v-model value */
 			value: {
-				type: [Array, Object],
+				type: Object as PropType<Field>,
 				required: true
 			}
 		}
@@ -34,9 +34,6 @@
 		}
 	})
 	export default class FormField extends MixinsDeclaration {
-		// Stronger types
-		value!: Field;
-
 		get field() {
 			return this.value;
 		}

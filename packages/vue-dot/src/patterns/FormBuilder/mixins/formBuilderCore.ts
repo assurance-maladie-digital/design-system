@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 import clonedeep from 'lodash.clonedeep';
@@ -14,16 +14,18 @@ import {
 	ComputedField
 } from '../types';
 
+import { Form } from '../../FormField/types';
+
 const Props = Vue.extend({
 	props: {
 		/** The form object */
 		value: {
-			type: [Array, Object],
+			type: Object as PropType<Form>,
 			required: true
 		},
 		/** Object describing the layout of the form */
 		layout: {
-			type: [Array, Object],
+			type: Array as PropType<Layout>,
 			default: undefined
 		},
 		/**
@@ -61,8 +63,6 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 	}
 })
 export default class FormBuilderCore extends MixinsDeclaration {
-	value!: ComputedForm;
-
 	/** The layout object containing the fields */
 	computedLayout = {} as ComputedLayout | null;
 

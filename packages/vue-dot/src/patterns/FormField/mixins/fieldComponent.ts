@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import Component from 'vue-class-component';
 
 import { Field, FieldValue } from '../types';
@@ -7,7 +7,7 @@ const Props = Vue.extend({
 	props: {
 		/** The field to display */
 		field: {
-			type: [Array, Object],
+			type: Object as PropType<Field>,
 			required: true
 		}
 	}
@@ -21,9 +21,6 @@ const Props = Vue.extend({
 	}
 })
 export default class FieldComponent extends Props {
-	// Stronger types
-	field!: Field;
-
 	/**
 	 * Update the v-model by emitting 'change' event
 	 *
