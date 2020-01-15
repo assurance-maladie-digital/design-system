@@ -58,6 +58,8 @@
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
+	import locales from './locales';
+
 	import { ListItem } from './types';
 
 	const Props = Vue.extend({
@@ -95,7 +97,7 @@
 			/** The text to display as fallback */
 			placeholder: {
 				type: String,
-				default: '…'
+				default: locales.placeholder
 			},
 			/** The list min-width */
 			minWidth: {
