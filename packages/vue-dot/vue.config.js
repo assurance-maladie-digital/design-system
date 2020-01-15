@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 // If LIB_MODE is true, we're building the library
 // else, we're building the playground
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
-const LIMIT_SIZE = 300000;
+const LIMIT_SIZE = 500000;
 
 const entry = LIB_MODE ? './src/index.ts' : './playground/main.ts';
 

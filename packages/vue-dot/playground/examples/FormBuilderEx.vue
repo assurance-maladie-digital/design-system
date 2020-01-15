@@ -136,38 +136,68 @@
 					label: 'Label du champ'
 				}
 			},
+			question2: {
+				type: 'textarea',
+				title: 'Question',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					outlined: true,
+					persistentHint: true,
+					hint: 'Texte informatif',
+					placeholder: 'Votre réponse'
+				}
+			},
+			questionDate: {
+				type: 'date',
+				title: 'Question Date',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					appendIcon: true,
+					textField: {
+						outlined: true
+					}
+				}
+			},
+			questionPeriod: {
+				type: 'period',
+				title: 'Question période',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				metadata: {
+					appendIcon: true,
+					from: {
+						textField: {
+							label: 'Du',
+							outlined: true
+						}
+					},
+					to: {
+						textField: {
+							label: 'Au',
+							outlined: true
+						}
+					}
+				}
+			},
 			questionSelectMultiple: {
 				type: 'select',
 				title: 'Question select multiple',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
 				value: null,
-				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
+				items: [
+					{ text: 'Abricot', value: 1 },
+					{ text: 'Citron', value: 2 }
+				],
 				metadata: {
 					multiple: true,
 					outlined: true,
 					chips: true,
 					menuProps: { offsetY: true },
-					label: 'Votre réponse',
-					hint: 'Texte informatif',
-					persistentHint: true
-				}
-			},
-			questionSelectMultipleAutocomplete: {
-				type: 'autocomplete',
-				title: 'Question select multiple autocomplete',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: null,
-				items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }],
-				metadata: {
-					multiple: true,
-					outlined: true,
-					chips: true,
-					menuProps: { offsetY: true },
-					label: 'Votre réponse',
-					hint: 'Texte informatif',
-					persistentHint: true
+					label: 'Votre réponse'
 				}
 			}
 		};

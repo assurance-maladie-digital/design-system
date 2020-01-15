@@ -106,7 +106,7 @@ describe('dateLogic', () => {
 
 	it('parses the date when the value is filled', () => {
 		const wrapper = createWrapper({
-			value: '29/10/2019'
+			value: '2019-10-29'
 		});
 
 		expect(wrapper.vm.date).toBe('2019-10-29');
@@ -123,7 +123,7 @@ describe('dateLogic', () => {
 
 	it('emits change event and parses the date when saveFromTextField is called', () => {
 		const wrapper = createWrapper({
-			value: '29/10/2019'
+			value: '2019-10-29'
 		});
 
 		wrapper.vm.saveFromTextField();
@@ -134,7 +134,7 @@ describe('dateLogic', () => {
 
 	it('doesn\'t emit change event when the date is invalid', () => {
 		const wrapper = createWrapper({
-			value: '2019/10/29'
+			value: '29-10-2019'
 		});
 
 		wrapper.vm.saveFromTextField();
@@ -247,7 +247,7 @@ describe('dateLogic', () => {
 
 	it('returns the formatted date when the value is defined', () => {
 		const wrapper = createWrapper({
-			value: '29/10/2019'
+			value: '2019-10-29'
 		});
 
 		expect(wrapper.vm.dateFormatted).toBe('29/10/2019');
