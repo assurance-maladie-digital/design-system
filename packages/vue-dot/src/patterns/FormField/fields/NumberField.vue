@@ -3,7 +3,7 @@
 		v-mask="field.mask"
 		v-bind="field.metadata"
 		:value="field.value"
-		@change="emitChangeEvent(field)"
+		@change="emitChangeEvent"
 	/>
 </template>
 
