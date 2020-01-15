@@ -1,7 +1,7 @@
 <template>
 	<VSelect
-		v-model="field.value"
 		v-bind="field.metadata"
+		:value="field.value"
 		:items="field.items"
 		@change="emitChangeEvent(field)"
 	/>

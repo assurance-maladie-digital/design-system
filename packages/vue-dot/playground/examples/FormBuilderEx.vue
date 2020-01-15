@@ -158,9 +158,53 @@
 				metadata: {
 					appendIcon: true,
 					textField: {
-						outlined: true,
-						hint: 'Texte informatif'
+						outlined: true
 					}
+				}
+			},
+			questionPeriod: {
+				type: 'period',
+				title: 'Question période',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				metadata: {
+					appendIcon: true,
+					from: {
+						textField: {
+							label: 'Du',
+							outlined: true
+						}
+					},
+					to: {
+						textField: {
+							label: 'Au',
+							outlined: true
+						}
+					}
+				}
+			},
+			questionSelect: {
+				type: 'select',
+				title: 'Question select',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: [
+					{
+						text: 'Abricot',
+						value: 1
+					},
+					{
+						text: 'Citron',
+						value: 2
+					}
+				],
+				metadata: {
+					outlined: true,
+					chips: true,
+					menuProps: {
+						offsetY: true
+					},
+					label: 'Votre réponse'
 				}
 			}
 		};
