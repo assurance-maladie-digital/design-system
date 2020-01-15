@@ -2,13 +2,21 @@
 
 @import '../tokens';
 
-// Change the main color when a warning is present
 .v-application {
+	// Change the main color when a warning is present
 	.vd-warning-rules {
 		&.success--text,
 		.success--text {
 			color: $vd-warning !important;
 			caret-color: $vd-warning !important;
 		}
+	}
+
+	// Make the tooltip menu look like a tooltip
+	.vd-copy-tooltip-menu {
+		padding: 6px 16px;
+		box-shadow: none;
+		margin-top: 2px;
+		background: rgba(97, 97, 97, .9);
 	}
 }

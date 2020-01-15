@@ -11,7 +11,7 @@ import FormField from '../../FormField';
 let wrapper: Wrapper<Vue>;
 
 const questionForm = {
-	question_string: {
+	questionString: {
 		type: 'string',
 		title: 'Question ?',
 		description: 'Informations supplémentaires',
@@ -21,13 +21,109 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
+	questionTextarea: {
+		type: 'textarea',
+		title: 'Question longue type textarea',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			outlined: true
+		}
+	},
+	questionDate: {
+		type: 'date',
+		title: 'Question',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			textField: {
+				outlined: true,
+				hint: 'Texte informatif'
+			}
+		}
+	},
+	questionPeriod: {
+		type: 'period',
+		title: 'Question période',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			from: {
+				textField: {
+					label: 'Du',
+					outlined: true
+				}
+			},
+			to: {
+				textField: {
+					label: 'Au',
+					outlined: true
+				}
+			}
+		}
+	},
+	questionSelect: {
+		type: 'select',
+		title: 'Question select',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
+		metadata: {
+			outlined: true,
+			chips: true,
+			menuProps: {
+				offsetY: true
+			},
+			label: 'Votre réponse'
+		}
+	},
+	questionSelectMultiple: {
+		type: 'select',
+		title: 'Question select multiple',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
+		metadata: {
+			multiple: true,
+			outlined: true
+		}
+	},
 	questionSelectButton: {
 		type: 'selectButton',
 		title: 'Question select button',
 		description: 'Informations supplémentaires',
 		tooltip: 'Texte d\'aide',
-		value: [],
-		items: [{ text: 'Abricot', value: 1 }, { text: 'Citron', value: 2 }],
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
 		metadata: {
 			multiple: true
 		}

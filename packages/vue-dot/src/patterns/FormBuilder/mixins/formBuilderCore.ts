@@ -51,6 +51,12 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 				this.computedLayout = this.computeLayout();
 			},
 			immediate: true
+		},
+		value: {
+			handler() {
+				this.computedLayout = this.computeLayout();
+			},
+			immediate: true
 		}
 	}
 })
