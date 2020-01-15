@@ -71,14 +71,18 @@ const questionForm = {
 		description: 'Informations supplémentaires',
 		value: null,
 		items: [
-			{ text: 'Abricot', value: 1 },
-			{ text: 'Citron', value: 2 }
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
 		],
 		metadata: {
 			multiple: true,
 			outlined: true,
-			chips: true,
-			menuProps: { offsetY: true },
 			label: 'Votre réponse'
 		}
 	}
