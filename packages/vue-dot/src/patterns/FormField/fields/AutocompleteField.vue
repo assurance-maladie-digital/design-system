@@ -1,8 +1,8 @@
 <template>
 	<VAutocomplete
-		v-model="field.value"
-		:items="field.items"
 		v-bind="field.metadata"
+		:value="field.value"
+		:items="field.items"
 		@change="emitChangeEvent(field)"
 	/>
 </template>

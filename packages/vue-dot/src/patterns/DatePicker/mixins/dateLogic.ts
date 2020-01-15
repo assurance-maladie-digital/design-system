@@ -23,7 +23,7 @@ const Props = Vue.extend({
 		/** The format used in the v-model for the user */
 		dateFormatReturn: {
 			type: String,
-			default: 'DD/MM/YYYY'
+			default: 'YYYY-MM-DD'
 		},
 		/** The v-model value */
 		value: {

@@ -1,8 +1,8 @@
 <template>
 	<VLayout class="ml-0">
 		<DatePicker
-			v-model="field.value"
 			v-bind="field.metadata"
+			:value="field.value"
 			:vuetify-options="field.metadata"
 			@change="emitChangeEvent(field)"
 		/>

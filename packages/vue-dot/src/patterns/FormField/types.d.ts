@@ -1,12 +1,17 @@
 export interface Field {
 	type: string;
-	value: string | number | null;
+	value?: string | number | PeriodValue | null;
 	title?: string;
 	description?: string;
 	tooltip?: string;
-	metadata?: object;
+	metadata?: any;
 	items?: any[];
 	mask?: string;
+}
+
+export interface PeriodValue {
+	from: string | null;
+	to: string | null;
 }
 
 export interface Form {
