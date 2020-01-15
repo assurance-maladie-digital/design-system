@@ -68,14 +68,13 @@
 		};
 
 		get metadataTo() {
-			const currentMetadata =
-				this.field.metadata &&
-				this.field.metadata.to ?
-				this.field.metadata.to : {};
+			const datePicker = {
+				min: this.periodValue.from
+			};
 
 			return {
-				...currentMetadata,
-				datePicker: { min: this.periodValue.from }
+				datePicker,
+				...this.field.metadata.to
 			};
 		}
 

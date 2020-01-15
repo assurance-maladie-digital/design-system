@@ -21,14 +21,6 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
-	questionSelect: {
-		type: 'select',
-		title: 'Question select',
-		description: 'Informations supplémentaires',
-		tooltip: 'Texte d\'aide',
-		value: null,
-		items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }]
-	},
 	questionTextarea: {
 		type: 'textarea',
 		title: 'Question longue type textarea',
@@ -72,6 +64,14 @@ const questionForm = {
 				}
 			}
 		}
+	},
+	questionSelect: {
+		type: 'select',
+		title: 'Question select',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		items: [{ text: 'Abricot', value: 1 },{ text: 'Citron', value: 2 }]
 	}
 };
 
