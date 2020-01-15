@@ -209,7 +209,7 @@
 			},
 			questionSelectMultiple: {
 				type: 'select',
-				title: 'Question select multiple',
+				title: 'Question choix multiple',
 				description: 'Informations supplémentaires',
 				value: null,
 				items: [
