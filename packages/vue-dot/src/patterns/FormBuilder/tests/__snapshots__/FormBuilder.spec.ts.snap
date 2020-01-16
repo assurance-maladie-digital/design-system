@@ -229,5 +229,36 @@ exports[`FormBuilder renders correctly with a specified question layout 1`] = `
       </div>
     </div>
   </div>
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question avec complétion automatique</span>
+      <!---->
+    </h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
+      <div class="v-input__control">
+        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-103" class="v-input__slot">
+          <fieldset aria-hidden="true">
+            <legend style="width: 0px;"><span>​</span></legend>
+          </fieldset>
+          <div class="v-select__slot"><label for="input-103" class="v-label theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+            <div class="v-select__selections"><input id="input-103" type="text" autocomplete="off"></div>
+            <div class="v-input__append-inner">
+              <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+            </div><input type="hidden">
+          </div>
+          <div class="v-menu">
+            <div class="v-menu__content theme--light v-autocomplete__content" style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
+          </div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

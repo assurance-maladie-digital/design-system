@@ -108,6 +108,30 @@ const questionForm = {
 			multiple: true,
 			outlined: true
 		}
+	},
+	questionAutocomplete: {
+		type: 'autocomplete',
+		title: 'Question avec complétion automatique',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
+		metadata: {
+			outlined: true,
+			chips: true,
+			menuProps: {
+				offsetY: true
+			},
+			label: 'Votre réponse'
+		}
 	}
 };
 
