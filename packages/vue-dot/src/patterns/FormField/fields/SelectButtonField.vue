@@ -104,7 +104,7 @@
 </script>
 
 <style lang="scss" scoped>
-.select-button-border {
-	border: 1px solid var(--v-accent-base) !important;
-}
+	.select-button-border {
+		border: 1px solid var(--v-accent-base) !important;
+	}
 </style>
