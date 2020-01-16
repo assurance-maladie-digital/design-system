@@ -113,16 +113,11 @@ const questionForm = {
 		type: 'selectButton',
 		title: 'Question select button',
 		description: 'Informations supplémentaires',
-		tooltip: 'Texte d\'aide',
 		items: [
-			{
-				text: 'Abricot',
-				value: 1
-			},
-			{
-				text: 'Citron',
-				value: 2
-			}
+			{ text: 'Abricot', value: 11 },
+			{ text: 'Citron', value: 22 },
+			{ text: 'seul', value: 33, alone: true },
+			{ text: 'seul 2', value: 44, alone: true }
 		],
 		metadata: {
 			multiple: true

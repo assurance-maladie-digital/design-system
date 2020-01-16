@@ -229,5 +229,29 @@ exports[`FormBuilder renders correctly with a specified question layout 1`] = `
       </div>
     </div>
   </div>
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question select button</span>
+      <!---->
+    </h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="vd-form-field">
+      <div class="v-item-group theme--light"><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">Abricot</span>
+          <div class="spacer"></div>
+          <!---->
+      </div></span></button><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">Citron</span>
+        <div class="spacer"></div>
+        <!---->
+    </div></span></button><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">seul</span>
+      <div class="spacer"></div>
+      <!---->
+  </div></span></button><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">seul 2</span>
+    <div class="spacer"></div>
+    <!---->
+</div></span></button></div>
+<!---->
+</div>
+</div>
 </div>
 `;

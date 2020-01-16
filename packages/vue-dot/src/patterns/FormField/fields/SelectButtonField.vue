@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<VItemGroup
-			v-model="field.value"
+			:value="field.value"
 			v-bind="field.metadata"
-			@change="emitChangeEvent(field)"
+			@change="emitChangeEvent"
 		>
 			<template v-for="(item, index) in field.items">
 				<VItem
@@ -43,21 +43,8 @@
 				</VItem>
 			</template>
 		</VItemGroup>
-		<template v-if="field.metadata && field.metadata.errorMessages && field.metadata.errorMessages.length">
-			<div
-				v-for="(item,index) in field.metadata.errorMessages"
-				:key="index"
-				class="mx-4 red--text v-messages"
-			>
-				{{ item }}
-			</div>
-			<VCheckbox
-				v-show="false"
-				error
-			/>
-		</template>
 		<span
-			v-else-if="field.metadata && field.metadata.hint"
+			v-if="field.metadata && field.metadata.hint"
 			class="mx-4 v-messages theme--light"
 		>{{ field.metadata.hint }} </span>
 	</div>

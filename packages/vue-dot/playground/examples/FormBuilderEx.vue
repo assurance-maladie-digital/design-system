@@ -232,18 +232,28 @@
 				type: 'selectButton',
 				title: 'Question select button',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
-				value: [],
 				items: [
-					{ text: 'Abricot', value: 11 },
-					{ text: 'Citron', value: 22 },
-					{ text: 'seul', value: 33, alone: true },
-					{ text: 'seul 2', value: 44, alone: true }
+					{
+						text: 'Abricot',
+						value: 11
+					},
+					{
+						text: 'Citron',
+						value: 22
+					},
+					{
+						text: 'seul',
+						value: 33,
+						alone: true
+					},
+					{
+						text: 'seul 2',
+						value: 44,
+						alone: true
+					}
 				],
 				metadata: {
-					hint: 'test',
-					errorMessages: ['test', 'tesgezg'],
-					multiple: true
+					multiple: false
 				}
 			}
 		};
