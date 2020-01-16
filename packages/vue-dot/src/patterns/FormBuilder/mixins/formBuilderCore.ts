@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 import clonedeep from 'lodash.clonedeep';
@@ -10,20 +10,22 @@ import {
 	Layout,
 	LayoutItem,
 	ComputedLayout,
-	ComputedForm,
-	ComputedField
+	ComputedField,
+	ComputedLayoutItem
 } from '../types';
+
+import { Form } from '../../FormField/types';
 
 const Props = Vue.extend({
 	props: {
 		/** The form object */
 		value: {
-			type: [Array, Object],
+			type: Object as PropType<Form>,
 			required: true
 		},
 		/** Object describing the layout of the form */
 		layout: {
-			type: [Array, Object],
+			type: Array as PropType<Layout>,
 			default: undefined
 		},
 		/**
@@ -61,8 +63,6 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 	}
 })
 export default class FormBuilderCore extends MixinsDeclaration {
-	value!: ComputedForm;
-
 	/** The layout object containing the fields */
 	computedLayout = {} as ComputedLayout | null;
 
@@ -77,23 +77,33 @@ export default class FormBuilderCore extends MixinsDeclaration {
 	}
 
 	computeLayout(): ComputedLayout | null {
-		let layout = this.layout ? clonedeep(this.layout) : this.getDefaultLayout();
+		const layout = this.layout ? clonedeep(this.layout) : this.getDefaultLayout();
 
 		if (!layout) {
 			return null;
 		}
 
+		const newLayout: ComputedLayout = [];
+
 		layout.forEach((layoutItem: LayoutItem, index: number) => {
-			layout = this.computeFields(layout, layoutItem.fields, index);
+			const newLayoutItem = this.computeFields(layout as Layout, layoutItem.fields, index);
+
+			if (newLayoutItem) {
+				newLayout.push(newLayoutItem);
+			}
 		});
 
-		return layout;
+		return newLayout;
 	}
 
-	computeFields(layout: any[], fields: string[], index: number) {
+	computeFields(layout: Layout, fields: string[], index: number): ComputedLayoutItem | null {
 		if (!fields.length) {
-			return [];
+			return null;
 		}
+
+		const newLayout = {
+			...layout
+		} as unknown as ComputedLayout;
 
 		fields.forEach((field: string, fieldIndex: number) => {
 			const computedField = {
@@ -101,10 +111,10 @@ export default class FormBuilderCore extends MixinsDeclaration {
 				name: field
 			};
 
-			layout[index].fields[fieldIndex] = computedField;
+			newLayout[index].fields[fieldIndex] = computedField;
 		});
 
-		return layout;
+		return newLayout[index];
 	}
 
 	/**

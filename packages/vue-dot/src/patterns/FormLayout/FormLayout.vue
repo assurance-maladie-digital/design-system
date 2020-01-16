@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import LayoutMap from './mixins/layoutMap';
@@ -43,7 +43,7 @@
 		props: {
 			/** The layout to display */
 			layout: {
-				type: [Array, Object],
+				type: Object as PropType<ComputedLayoutItem>,
 				required: true
 			}
 		}
@@ -67,8 +67,6 @@
 		}
 	})
 	export default class FormLayout extends MixinsDeclaration {
-		layout!: ComputedLayoutItem;
-
 		/**
 		 * Get the name of the slot
 		 *

@@ -109,15 +109,53 @@ const questionForm = {
 			outlined: true
 		}
 	},
+	questionAutocomplete: {
+		type: 'autocomplete',
+		title: 'Question avec complétion automatique',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
+		metadata: {
+			outlined: true,
+			chips: true,
+			menuProps: {
+				offsetY: true
+			},
+			label: 'Votre réponse'
+		}
+	},
 	questionSelectButton: {
 		type: 'selectButton',
 		title: 'Question select button',
 		description: 'Informations supplémentaires',
 		items: [
-			{ text: 'Abricot', value: 11 },
-			{ text: 'Citron', value: 22 },
-			{ text: 'seul', value: 33, alone: true },
-			{ text: 'seul 2', value: 44, alone: true }
+			{
+				text: 'Abricot',
+				value: 11
+			},
+			{
+				text: 'Citron',
+				value: 22
+			},
+			{
+				text: 'seul',
+				value: 33,
+				alone: true
+			},
+			{
+				text: 'seul 2',
+				value: 44,
+				alone: true
+			}
 		],
 		metadata: {
 			multiple: true
