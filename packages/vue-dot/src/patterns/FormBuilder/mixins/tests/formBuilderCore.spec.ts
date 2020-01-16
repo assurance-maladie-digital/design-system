@@ -139,6 +139,35 @@ describe('formBuilderCore', () => {
 		expect(wrapper.vm.computeLayout()).toEqual(expectedLayout);
 	});
 
+	it('computes the layout when it\'s updated', () => {
+		const layout = [
+			{
+				type: Layouts.Question,
+				fields: []
+			}
+		];
+
+		const wrapper = createWrapper(testForm, layout);
+
+		wrapper.setProps({
+			layout: [
+				{
+					type: Layouts.Question,
+					fields: ['field1']
+				}
+			]
+		});
+
+		const expectedLayout: ComputedLayout = [
+			{
+				type: Layouts.Question,
+				fields: [computedField]
+			}
+		];
+
+		expect(wrapper.vm.computeLayout()).toEqual(expectedLayout);
+	});
+
 	it('doesn\'t fail to execute computeLayout when the layout doesn\'t exists', () => {
 		const wrapper = createWrapper(testForm, undefined, 'unknown');
 
