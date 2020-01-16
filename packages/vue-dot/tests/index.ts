@@ -19,6 +19,9 @@ Vue.use(Vuetify);
 
 const vuetify = new Vuetify();
 
+import VueTheMask from 'vue-the-mask';
+Vue.use(VueTheMask);
+
 /** Generic build fonction */
 export function mountComponent(
 	component: VueClass<Vue>,
