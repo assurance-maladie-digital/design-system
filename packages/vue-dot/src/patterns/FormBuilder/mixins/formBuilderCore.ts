@@ -4,6 +4,8 @@ import Component, { mixins } from 'vue-class-component';
 import LayoutMap from '../../FormLayout/mixins/layoutMap';
 import { Layouts } from '../../FormLayout/layoutsEnum';
 
+import deepCopy from '../../../helpers/deepCopy';
+
 import {
 	Layout,
 	LayoutItem,
@@ -46,11 +48,8 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		event: 'change'
 	},
 	watch: {
-		layout: {
-			handler() {
-				this.computedLayout = this.computeLayout();
-			},
-			immediate: true
+		layout() {
+			this.computedLayout = this.computeLayout();
 		},
 		value: {
 			handler() {
@@ -78,7 +77,7 @@ export default class FormBuilderCore extends MixinsDeclaration {
 
 	computeLayout(): ComputedLayout | null {
 		// Clone provided layout or get a default one
-		const layout = this.layout ? [ ...this.layout ] : this.getDefaultLayout();
+		const layout = this.layout ? deepCopy<Layout>(this.layout) : this.getDefaultLayout();
 
 		if (!layout) {
 			return null;
@@ -106,7 +105,7 @@ export default class FormBuilderCore extends MixinsDeclaration {
 			return null;
 		}
 
-		const newLayout = { ...layoutItem } as unknown as ComputedLayoutItem;
+		const newLayout = deepCopy<ComputedLayoutItem>(layoutItem);
 
 		fields.forEach((field: string, fieldIndex: number) => {
 			const computedField = {
