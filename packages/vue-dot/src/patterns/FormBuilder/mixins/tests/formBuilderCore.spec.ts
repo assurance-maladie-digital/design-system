@@ -3,7 +3,14 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import formBuilderCore from '../formBuilderCore';
 import { Form, Field } from '../../../FormField/types';
-import { Layout, ComputedLayout, ComputedField } from '../../types';
+
+import {
+	Layout,
+	ComputedLayout,
+	ComputedField,
+	ComputedLayoutItem
+} from '../../types';
+
 import { Layouts } from 'src/patterns/FormLayout/layoutsEnum';
 
 const testField: Field = {
@@ -54,42 +61,49 @@ describe('formBuilderCore', () => {
 
 		const fields = ['field1'];
 
-		const layout = [
-			{
-				type: Layouts.Medium,
-				fields
-			}
-		];
+		const layoutItem = {
+			type: Layouts.Medium,
+			fields
+		};
 
-		const expectedLayout: ComputedLayout = [
-			{
-				type: Layouts.Medium,
-				fields: [computedField]
-			}
-		];
+		const expectedFields: ComputedLayoutItem = {
+			type: Layouts.Medium,
+			fields: [computedField]
+		};
 
 		// Compute the first field
-		const computedFields = wrapper.vm.computeFields(layout, fields, 0);
+		const computedFields = wrapper.vm.computeFields(layoutItem, fields);
 
-		expect(computedFields).toEqual(expectedLayout);
+		expect(computedFields).toEqual(expectedFields);
 	});
 
 	it('doesn\'t fail to compute the fields if there are none', () => {
 		const wrapper = createWrapper(testForm);
 
-		const fields: any[] = [];
+		const fields: string[] = [];
 
-		const layout = [
+		const layoutItem = {
+			type: Layouts.Medium,
+			fields
+		};
+
+		// Try to compute the first field
+		const computedFields = wrapper.vm.computeFields(layoutItem, fields);
+
+		expect(computedFields).toEqual(null);
+	});
+
+	it('doesn\'t fail to compute the layout if there are no fields', () => {
+		const layout: Layout = [
 			{
 				type: Layouts.Medium,
-				fields
+				fields: []
 			}
 		];
 
-		// Try to compute the first field
-		const computedFields = wrapper.vm.computeFields(layout, fields, 0);
+		const wrapper = createWrapper(testForm, layout);
 
-		expect(computedFields).toEqual([]);
+		expect(wrapper.vm.computeLayout()).toEqual(null);
 	});
 
 	it('computes the layout', () => {

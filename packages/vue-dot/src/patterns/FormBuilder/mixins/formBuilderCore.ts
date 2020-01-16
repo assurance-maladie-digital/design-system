@@ -86,24 +86,26 @@ export default class FormBuilderCore extends MixinsDeclaration {
 		const newLayout: ComputedLayout = [];
 
 		layout.forEach((layoutItem: LayoutItem, index: number) => {
-			const newLayoutItem = this.computeFields(layout as Layout, layoutItem.fields, index);
+			const newLayoutItem = this.computeFields(layout[index], layoutItem.fields);
 
 			if (newLayoutItem) {
 				newLayout.push(newLayoutItem);
 			}
 		});
 
+		if (!newLayout.length) {
+			return null;
+		}
+
 		return newLayout;
 	}
 
-	computeFields(layout: Layout, fields: string[], index: number): ComputedLayoutItem | null {
+	computeFields(layoutItem: LayoutItem, fields: string[]): ComputedLayoutItem | null {
 		if (!fields.length) {
 			return null;
 		}
 
-		const newLayout = {
-			...layout
-		} as unknown as ComputedLayout;
+		const newLayout = { ...layoutItem } as unknown as ComputedLayoutItem;
 
 		fields.forEach((field: string, fieldIndex: number) => {
 			const computedField = {
@@ -111,10 +113,10 @@ export default class FormBuilderCore extends MixinsDeclaration {
 				name: field
 			};
 
-			newLayout[index].fields[fieldIndex] = computedField;
+			newLayout.fields[fieldIndex] = computedField;
 		});
 
-		return newLayout[index];
+		return newLayout;
 	}
 
 	/**

@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import html from '@/tests/html';
 
-import FormBuilder from '../FormBuilder.vue';
+import FormBuilder from '../';
 
 import FormField from '../../FormField';
 
@@ -202,7 +202,7 @@ describe('FormBuilder', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with a specified question layout', () => {
+	it('renders correctly with a question layout', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
