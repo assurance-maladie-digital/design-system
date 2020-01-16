@@ -41,8 +41,6 @@
 
 	import { PeriodValue } from '../types';
 
-	import cloneDeep from 'lodash.clonedeep';
-
 	/** Form period field to enter a period */
 	@Component<PeriodField>({
 		components: {
