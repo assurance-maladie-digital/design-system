@@ -8,8 +8,10 @@ interface IFieldMap {
 // We import them all because the form
 // can use any of them
 import AutocompleteField from '../fields/AutocompleteField.vue';
-import PasswordField from '../fields/PasswordField.vue';
+import DateField from '../fields/DateField.vue';
 import NumberField from '../fields/NumberField.vue';
+import PasswordField from '../fields/PasswordField.vue';
+import PeriodField from '../fields/PeriodField.vue';
 import SelectField from '../fields/SelectField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
@@ -19,8 +21,10 @@ import SliderField from '../fields/SliderField.vue';
 @Component({
 	components: {
 		AutocompleteField,
-		PasswordField,
+		DateField,
 		NumberField,
+		PasswordField,
+		PeriodField,
 		SelectField,
 		TextareaField,
 		TextField,
@@ -31,12 +35,13 @@ export default class FieldMap extends Vue {
 	/** List all field components and their corresponding keys */
 	fieldMap: IFieldMap = {
 		autocomplete: 'AutocompleteField',
+		date: 'DateField',
 		number: 'NumberField',
 		password: 'PasswordField',
+		period: 'PeriodField',
 		select: 'SelectField',
-		textarea: 'TextareaField',
 		string: 'TextField',
-		slider: 'SliderField'
+		textarea: 'TextareaField'
 	};
 
 	/**

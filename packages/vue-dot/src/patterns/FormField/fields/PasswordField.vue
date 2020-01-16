@@ -1,11 +1,11 @@
 <template>
 	<VTextField
-		v-model="field.value"
 		v-bind="field.metadata"
+		:value="field.value"
 		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"
 		@click:append="showEyeIcon = !showEyeIcon"
-		@change="emitChangeEvent(field)"
+		@change="emitChangeEvent"
 	/>
 </template>
 

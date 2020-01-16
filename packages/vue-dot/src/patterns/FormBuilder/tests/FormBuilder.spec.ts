@@ -4,14 +4,14 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import html from '@/tests/html';
 
-import FormBuilder from '../FormBuilder.vue';
+import FormBuilder from '../';
 
 import FormField from '../../FormField';
 
 let wrapper: Wrapper<Vue>;
 
 const questionForm = {
-	question_string: {
+	questionString: {
 		type: 'string',
 		title: 'Question ?',
 		description: 'Informations supplémentaires',
@@ -21,7 +21,137 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
-	question_slider: {
+	questionTextarea: {
+		type: 'textarea',
+		title: 'Question longue type textarea',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			outlined: true
+		}
+	},
+	questionDate: {
+		type: 'date',
+		title: 'Question',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			textField: {
+				outlined: true,
+				hint: 'Texte informatif'
+			}
+		}
+	},
+	questionPeriod: {
+		type: 'period',
+		title: 'Question période',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			from: {
+				textField: {
+					label: 'Du',
+					outlined: true
+				}
+			},
+			to: {
+				textField: {
+					label: 'Au',
+					outlined: true
+				}
+			}
+		}
+	},
+	questionSelect: {
+		type: 'select',
+		title: 'Question select',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
+		metadata: {
+			outlined: true,
+			chips: true,
+			menuProps: {
+				offsetY: true
+			},
+			label: 'Votre réponse'
+		}
+	},
+	questionSelectMultiple: {
+		type: 'select',
+		title: 'Question select multiple',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
+		metadata: {
+			multiple: true,
+			outlined: true
+		}
+	},
+	questionAutocomplete: {
+		type: 'autocomplete',
+		title: 'Question avec complétion automatique',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: [
+			{
+				text: 'Abricot',
+				value: 1
+			},
+			{
+				text: 'Citron',
+				value: 2
+			}
+		],
+		metadata: {
+			outlined: true,
+			chips: true,
+			menuProps: {
+				offsetY: true
+			},
+			label: 'Votre réponse'
+		}
+	},
+	questionSelectSlider: {
+		type: 'select',
+		title: 'Question select slider',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		items: [
+			{ text: 'text1', value: 'value1' },
+			{ text: 'text2', value: 'value2' },
+			{ text: 'text3', value: 'value3' }
+		],
+		metadata: {
+			ticks:'always',
+			tickSize: 7,
+			thumbLabel: true,
+			slider: true
+		}
+	},
+	questionSlider: {
 		type: 'slider',
 		title: 'Question slider',
 		description: 'Informations supplémentaires',
@@ -29,8 +159,9 @@ const questionForm = {
 		value: null,
 		metadata: {
 			min: 10,
-			max: 1000,
-			step: 0.6
+			max: 666,
+			step: 0.1,
+			thumbLabel:'always'
 		}
 	}
 };
@@ -74,7 +205,7 @@ describe('FormBuilder', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with a specified question layout', () => {
+	it('renders correctly with a question layout', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			stubs: {
@@ -82,7 +213,7 @@ describe('FormBuilder', () => {
 			},
 			propsData: {
 				value: questionForm,
-				defaultLayout:'question'
+				defaultLayout: 'question'
 			}
 		}, true);
 

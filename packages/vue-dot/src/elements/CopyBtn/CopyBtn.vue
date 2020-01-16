@@ -1,32 +1,29 @@
 <template>
 	<div>
-		<VBtn
-			v-bind="options.btn"
-			:aria-label="label"
-			@click="copy"
-		>
-			<slot name="icon">
-				<VIcon>
-					{{ copyIcon }}
-				</VIcon>
-			</slot>
-		</VBtn>
-
-		<!--
-			The tooltip
-			We don't use the activator slot
-			because of problem with events
-		-->
-		<VTooltip
-			v-if="showTooltip"
+		<VMenu
 			v-model="tooltip"
-			v-bind="options.tooltip"
-			activator=".copy-tooltip-activator"
+			v-bind="options.menu"
+			:disabled="!showTooltip"
 		>
+			<template #activator="{ on }">
+				<VBtn
+					v-bind="options.btn"
+					:aria-label="label"
+					v-on="on"
+					@click="copy"
+				>
+					<slot name="icon">
+						<VIcon>
+							{{ copyIcon }}
+						</VIcon>
+					</slot>
+				</VBtn>
+			</template>
+
 			<slot name="tooltip">
 				{{ locales.tooltip }}
 			</slot>
-		</VTooltip>
+		</VMenu>
 	</div>
 </template>
 
@@ -82,7 +79,7 @@
 			customizable(config)
 		]
 	})
-	export default class Copy extends Props {
+	export default class CopyBtn extends Props {
 		// Mixin computed data
 		options!: Options;
 
@@ -95,26 +92,16 @@
 		/** Tooltip v-model */
 		tooltip = false;
 
-		/**
-		 * Show the tooltip then hide it after
-		 * tooltipDuration delay
-		 */
-		activateTooltip() {
-			this.tooltip = true;
-
-			setTimeout(() => {
-				this.tooltip = false;
-			}, this.tooltipDuration);
-		}
-
 		/** When the copy button is clicked */
 		copy() {
 			// Copy the text to the clipboard
 			copyToClipboard(this.textToCopy);
 
-			// Activate the tooltip if wanted
 			if (this.showTooltip) {
-				this.activateTooltip();
+				// Hide tooltip after tooltipDuration delay
+				setTimeout(() => {
+					this.tooltip = false;
+				}, this.tooltipDuration);
 			}
 		}
 	}

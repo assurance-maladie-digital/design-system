@@ -1,9 +1,9 @@
 <template>
 	<VTextField
-		v-model="field.value"
 		v-mask="field.mask"
 		v-bind="field.metadata"
-		@change="emitChangeEvent(field)"
+		:value="field.value"
+		@change="emitChangeEvent"
 	/>
 </template>
 

@@ -136,6 +136,123 @@
 					label: 'Label du champ'
 				}
 			},
+			question2: {
+				type: 'textarea',
+				title: 'Question',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					outlined: true,
+					persistentHint: true,
+					hint: 'Texte informatif',
+					placeholder: 'Votre réponse'
+				}
+			},
+			questionDate: {
+				type: 'date',
+				title: 'Question Date',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				metadata: {
+					appendIcon: true,
+					textField: {
+						outlined: true
+					}
+				}
+			},
+			questionPeriod: {
+				type: 'period',
+				title: 'Question période',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				metadata: {
+					appendIcon: true,
+					from: {
+						textField: {
+							label: 'Du',
+							outlined: true
+						}
+					},
+					to: {
+						textField: {
+							label: 'Au',
+							outlined: true
+						}
+					}
+				}
+			},
+			questionSelect: {
+				type: 'select',
+				title: 'Question select',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: [
+					{
+						text: 'Abricot',
+						value: 1
+					},
+					{
+						text: 'Citron',
+						value: 2
+					}
+				],
+				metadata: {
+					outlined: true,
+					chips: true,
+					menuProps: {
+						offsetY: true
+					},
+					label: 'Votre réponse'
+				}
+			},
+			questionSelectMultiple: {
+				type: 'select',
+				title: 'Question choix multiple',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: [
+					{
+						text: 'Abricot',
+						value: 1
+					},
+					{
+						text: 'Citron',
+						value: 2
+					}
+				],
+				metadata: {
+					multiple: true,
+					outlined: true,
+					label: 'Votre réponse'
+				}
+			},
+			questionAutocomplete: {
+				type: 'autocomplete',
+				title: 'Question avec complétion automatique',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: [
+					{
+						text: 'Abricot',
+						value: 1
+					},
+					{
+						text: 'Citron',
+						value: 2
+					}
+				],
+				metadata: {
+					multiple: true,
+					outlined: true,
+					chips: true,
+					menuProps: {
+						offsetY: true
+					},
+					label: 'Votre réponse'
+				}
+			},
 			questionSelectSlider: {
 				type: 'select',
 				title: 'Question select slider',
