@@ -37,6 +37,7 @@
 				value: null,
 				mask: '#####',
 				metadata: {
+					type: 'string',
 					label: 'Numéro de voie'
 				}
 			},
@@ -229,7 +230,7 @@
 				}
 			},
 			questionAutocomplete: {
-				type: 'autocomplete',
+				type: 'string',
 				title: 'Question avec complétion automatique',
 				description: 'Informations supplémentaires',
 				value: null,
@@ -244,6 +245,7 @@
 					}
 				],
 				metadata: {
+					type: 'autocomplete',
 					multiple: true,
 					outlined: true,
 					chips: true,
