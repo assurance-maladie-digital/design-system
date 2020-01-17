@@ -123,5 +123,35 @@ export default {
 			},
 			label: 'Votre réponse'
 		}
+	},
+	questionSelectButton: {
+		type: 'select',
+		title: 'Question select button',
+		description: 'Informations supplémentaires',
+		items: [
+			{
+				text: 'multiple 1',
+				value: 11
+			},
+			{
+				text: 'multiple 2',
+				value: 22
+			},
+			{
+				text: 'seul 1',
+				value: 33,
+				alone: true
+			},
+			{
+				text: 'seul 2',
+				value: 44,
+				alone: true
+			}
+		],
+		metadata: {
+			type: 'choiceButton',
+			multiple: true,
+			hint: 'Texte informatif'
+		}
 	}
 } as Form;

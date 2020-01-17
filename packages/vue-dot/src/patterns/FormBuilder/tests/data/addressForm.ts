@@ -14,9 +14,18 @@ export default {
 		type: 'select',
 		value: null,
 		items: [
-			'bis',
-			'ter',
-			'quater'
+			{
+				text: 'bis',
+				value: 'valueBis'
+			},
+			{
+				text: 'ter',
+				value: 'valueTer'
+			},
+			{
+				text: 'quater',
+				value: 'valueQuater'
+			}
 		],
 		metadata: {
 			label: 'Complément de voie'
@@ -26,10 +35,22 @@ export default {
 		type: 'autocomplete',
 		value: null,
 		items: [
-			'Allée',
-			'Avenue',
-			'Boulevard',
-			'Aucun'
+			{
+				text: 'Allée',
+				value: 'valueAllée'
+			},
+			{
+				text: 'Avenue',
+				value: 'valueAvenue'
+			},
+			{
+				text: 'Boulevard',
+				value: 'valueBoulevard'
+			},
+			{
+				text: 'Aucun',
+				value: null
+			}
 		],
 		metadata: {
 			label: 'Type de voie'
