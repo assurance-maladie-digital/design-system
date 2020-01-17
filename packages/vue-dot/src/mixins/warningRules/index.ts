@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 import { ValidationRule } from '../../rules/types';
 
@@ -13,12 +13,14 @@ const Props = Vue.extend({
 	}
 });
 
+const MixinsDeclaration = mixins(Props);
+
 /**
  * Add warning rules: same as Vuetify rules,
  * but that does not block validation
  */
 @Component
-export default class WarningRules extends Props {
+export default class WarningRules extends MixinsDeclaration {
 	/**
 	 * The messages from warningRules.
 	 * Not used if already passed as a prop*

@@ -72,16 +72,17 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import config from './config';
 	import locales from './locales';
+
 	import { Languages, AllLanguagesChar } from './types';
 
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
 
-	import customizable, { Options } from '../../mixins/customizable';
+	import customizable from '../../mixins/customizable';
 
 	import { mdiChevronDown } from '@mdi/js';
 
@@ -131,24 +132,19 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props, customizable(config));
+
 	/**
 	 * LangBtn is a component that displays a list of languages
 	 * to choose from when clicking a button
 	 */
 	@Component({
-		mixins: [
-			// Default configuration
-			customizable(config)
-		],
 		model: {
 			prop: 'value',
 			event: 'change'
 		}
 	})
-	export default class LangBtn extends Props {
-		// Mixin computed data
-		options!: Options;
-
+	export default class LangBtn extends MixinsDeclaration {
 		// Icon
 		downArrowIcon = mdiChevronDown;
 

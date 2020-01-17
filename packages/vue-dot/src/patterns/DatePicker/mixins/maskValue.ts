@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 const Props = Vue.extend({
 	props: {
@@ -16,14 +16,16 @@ const Props = Vue.extend({
 	}
 });
 
-/** */
+const MixinsDeclaration = mixins(Props);
+
+/** Provides computed date format mask value */
 @Component
-export default class MaskValue extends Props {
+export default class MaskValue extends MixinsDeclaration {
 	/** DatePicker.dateFormat */
 	dateFormat!: string;
 
 	/**
-	 * Return the mask to apply to the TextField
+	 * The mask to apply to the TextField
 	 *
 	 * @example
 	 * '##/##/####' for default dateFormat
