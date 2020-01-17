@@ -3,8 +3,7 @@ export default {
 		hint: 'Format JJ/MM/AAAA',
 		label: 'Date',
 		persistentHint: true,
-		validateOnBlur: true,
-		class: 'vd-date-picker-text-field'
+		validateOnBlur: true
 	},
 	menu: {
 		closeOnContentClick: false,
