@@ -56,7 +56,7 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import locales from './locales';
 
@@ -112,12 +112,14 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props);
+
 	/**
 	 * DataList is a component that displays an array of
 	 * objects containing key/value
 	 */
 	@Component
-	export default class DataList extends Props {}
+	export default class DataList extends MixinsDeclaration {}
 </script>
 
 <style lang="scss" scoped>

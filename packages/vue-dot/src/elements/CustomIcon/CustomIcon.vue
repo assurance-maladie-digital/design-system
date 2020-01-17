@@ -36,7 +36,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { Icons, VueDotOptions } from '../../../types';
 
@@ -78,12 +78,14 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props);
+
 	/**
 	 * CustomIcon is a component that displays an SVG Icon
 	 * defined in the theme that is passed as an option of the plugin
 	 */
 	@Component
-	export default class CustomIcon extends Props {
+	export default class CustomIcon extends MixinsDeclaration {
 		get themeIcon(): string | undefined {
 			// If there are icons in the theme
 			if (this.$vd && this.$vd.theme && this.$vd.theme.icons) {
