@@ -2,9 +2,11 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import formBuilderCore from '../formBuilderCore';
-import { Form, Field } from '../../../FormField/types';
+
+import { Field } from '../../../FormField/types';
 
 import {
+	Form,
 	Layout,
 	ComputedLayout,
 	ComputedField,

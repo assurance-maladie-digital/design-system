@@ -7,14 +7,13 @@ import { Layouts } from '../../FormLayout/layoutsEnum';
 import deepCopy from '../../../helpers/deepCopy';
 
 import {
+	Form,
 	Layout,
 	LayoutItem,
 	ComputedLayout,
 	ComputedField,
 	ComputedLayoutItem
 } from '../types';
-
-import { Form } from '../../FormField/types';
 
 const Props = Vue.extend({
 	props: {
@@ -47,6 +46,9 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		prop: 'value',
 		event: 'change'
 	},
+	// Each time the value or the layout are updated,
+	// we need to compute the layout again in order
+	// to update the values in the fields
 	watch: {
 		layout() {
 			this.computedLayout = this.computeLayout();
@@ -63,7 +65,14 @@ export default class FormBuilderCore extends MixinsDeclaration {
 	/** The layout object containing the fields */
 	computedLayout = {} as ComputedLayout | null;
 
-	formUpdated(field: ComputedField) {
+	/**
+	 * When the form is updated, emit a
+	 * change event with updated data
+	 *
+	 * @param {ComputedField} field The updated field with new value
+	 * @returns {void}
+	 */
+	formUpdated(field: ComputedField): void {
 		const form = {
 			...this.value
 		};
