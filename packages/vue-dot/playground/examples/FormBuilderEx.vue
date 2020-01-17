@@ -272,8 +272,7 @@
 					menuProps: {
 						offsetY: true
 					},
-					label: 'Votre réponse',
-					hint: 'test'
+					label: 'Votre réponse'
 				}
 			},
 			questionSelectButton: {
