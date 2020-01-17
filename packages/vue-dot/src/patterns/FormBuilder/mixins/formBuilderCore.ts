@@ -1,10 +1,10 @@
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import clonedeep from 'lodash.clonedeep';
-
 import LayoutMap from '../../FormLayout/mixins/layoutMap';
 import { Layouts } from '../../FormLayout/layoutsEnum';
+
+import deepCopy from '../../../helpers/deepCopy';
 
 import {
 	Layout,
@@ -48,11 +48,8 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		event: 'change'
 	},
 	watch: {
-		layout: {
-			handler() {
-				this.computedLayout = this.computeLayout();
-			},
-			immediate: true
+		layout() {
+			this.computedLayout = this.computeLayout();
 		},
 		value: {
 			handler() {
@@ -67,7 +64,9 @@ export default class FormBuilderCore extends MixinsDeclaration {
 	computedLayout = {} as ComputedLayout | null;
 
 	formUpdated(field: ComputedField) {
-		const form = clonedeep(this.value);
+		const form = {
+			...this.value
+		};
 
 		form[field.name].value = field.value;
 
@@ -77,7 +76,8 @@ export default class FormBuilderCore extends MixinsDeclaration {
 	}
 
 	computeLayout(): ComputedLayout | null {
-		const layout = this.layout ? clonedeep(this.layout) : this.getDefaultLayout();
+		// Clone provided layout or get a default one
+		const layout = this.layout ? deepCopy<Layout>(this.layout) : this.getDefaultLayout();
 
 		if (!layout) {
 			return null;
@@ -105,7 +105,7 @@ export default class FormBuilderCore extends MixinsDeclaration {
 			return null;
 		}
 
-		const newLayout = { ...layoutItem } as unknown as ComputedLayoutItem;
+		const newLayout = deepCopy<ComputedLayoutItem>(layoutItem);
 
 		fields.forEach((field: string, fieldIndex: number) => {
 			const computedField = {

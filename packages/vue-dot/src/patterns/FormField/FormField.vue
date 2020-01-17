@@ -1,6 +1,6 @@
 <template>
 	<component
-		:is="getField(field.type)"
+		:is="getFieldType()"
 		v-model="field"
 		class="vd-form-field"
 	/>
@@ -34,6 +34,15 @@
 		}
 	})
 	export default class FormField extends MixinsDeclaration {
+		/**
+		 * Get the field type from metadata or default type
+		 *
+		 * @returns {string} The field type
+		 */
+		getFieldType(): string {
+			return this.getField(this.field.metadata.type || this.field.type);
+		}
+
 		get field() {
 			return this.value;
 		}
