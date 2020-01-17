@@ -82,8 +82,8 @@
 			postalCode: {
 				type: 'number',
 				value: null,
-				mask: '#####',
 				metadata: {
+					mask: '#####',
 					label: 'Code postal'
 				}
 			},
@@ -134,6 +134,15 @@
 				value: null,
 				metadata: {
 					label: 'Label du champ'
+				}
+			},
+			questionNumber: {
+				type: 'number',
+				title: 'Question nombre ?',
+				description: 'Informations supplémentaires',
+				value: null,
+				metadata: {
+					mask: '###-###'
 				}
 			},
 			question2: {
