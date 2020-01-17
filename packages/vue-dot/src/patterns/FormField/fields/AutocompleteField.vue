@@ -20,6 +20,14 @@
 	export default class AutocompleteField extends FieldComponent {
 		searchInput: string | null = null;
 
+		/**
+		 * Clear the search input
+		 * See https://github.com/vuetifyjs/vuetify/issues/5926
+		 * for more informations
+		 *
+		 * @param {FieldValue} value The updated value
+		 * @returns {void}
+		 */
 		valueChanged(value: FieldValue) {
 			this.searchInput = '';
 			this.emitChangeEvent(value);

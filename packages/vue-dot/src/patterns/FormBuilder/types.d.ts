@@ -1,5 +1,9 @@
 import { Field } from '../FormField/types';
 
+export interface Form {
+	[key: string]: Field;
+}
+
 // Field and Form
 interface ComputedField extends Field {
 	name: string;

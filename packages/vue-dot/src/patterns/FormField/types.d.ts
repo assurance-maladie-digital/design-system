@@ -21,7 +21,3 @@ export interface PeriodValue {
 	from: string | null;
 	to: string | null;
 }
-
-export interface Form {
-	[key: string]: Field;
-}
