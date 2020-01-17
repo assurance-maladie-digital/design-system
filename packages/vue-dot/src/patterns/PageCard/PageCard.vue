@@ -16,11 +16,11 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import config from './config';
 
-	import customizable, { Options } from '../../mixins/customizable';
+	import customizable from '../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {
@@ -58,22 +58,17 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props, customizable(config));
+
 	/**
 	 * PageCard is a component that displays a
 	 * VCard with specific parameters
 	 */
 	@Component({
 		// Disable attributes inheritance since we bind them to the VCard
-		inheritAttrs: false,
-		mixins: [
-			// Default configuration
-			customizable(config)
-		]
+		inheritAttrs: false
 	})
-	export default class PageCard extends Props {
-		// Mixin computed data
-		options!: Options;
-
+	export default class PageCard extends MixinsDeclaration {
 		/** The CSS classes to apply to the VCard */
 		get computedClass() {
 			return [

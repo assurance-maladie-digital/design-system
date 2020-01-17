@@ -7,7 +7,7 @@
 			dark
 			fixed
 			color="primary"
-			class="px-4"
+			class="vd-playground-app-bar px-4"
 		>
 			<VToolbarTitle>VueDot</VToolbarTitle>
 
@@ -119,3 +119,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-playground-app-bar {
+		z-index: 10;
+	}
+</style>
