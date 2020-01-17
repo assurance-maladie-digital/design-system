@@ -7,7 +7,7 @@
 		>
 			<template v-for="(item, index) in field.items">
 				<VItem
-					v-slot:default="{ active, toggle }"
+					#default="{ active, toggle }"
 					:key="index"
 					:value="item.value"
 				>

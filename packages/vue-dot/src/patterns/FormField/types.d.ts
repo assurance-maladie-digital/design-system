@@ -1,3 +1,8 @@
+export interface PeriodValue {
+	from: string | null;
+	to: string | null;
+}
+
 export type FieldValue = string | string[] | number | PeriodValue | null | undefined;
 
 export interface Field {
@@ -15,9 +20,4 @@ export interface FieldItem {
 	text: string,
 	value: string | number | null | undefined;
 	[key: string]: any;
-}
-
-export interface PeriodValue {
-	from: string | null;
-	to: string | null;
 }
