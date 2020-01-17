@@ -29,12 +29,12 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import config from './config';
 	import locales from './locales';
 
-	import customizable, { Options } from '../../mixins/customizable';
+	import customizable from '../../mixins/customizable';
 
 	import copyToClipboard from '../../functions/copyToClipboard';
 
@@ -69,25 +69,19 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props, customizable(config));
+
 	/**
 	 * CopyBtn is a component that copy text to the clipboard and
 	 * shows a tooltip
 	 */
-	@Component({
-		mixins: [
-			// Default configuration
-			customizable(config)
-		]
-	})
-	export default class CopyBtn extends Props {
-		// Mixin computed data
-		options!: Options;
+	@Component
+	export default class Copy extends MixinsDeclaration {
+		// Locales
+		locales = locales;
 
 		// Icon
 		copyIcon = mdiContentCopy;
-
-		// Locales
-		locales = locales;
 
 		/** Tooltip v-model */
 		tooltip = false;

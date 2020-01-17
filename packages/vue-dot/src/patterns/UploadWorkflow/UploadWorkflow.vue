@@ -74,7 +74,7 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import config from './config';
 	import locales from './locales';
@@ -84,7 +84,7 @@
 
 	import required from '../../rules/required';
 
-	import customizable, { Options } from '../../mixins/customizable';
+	import customizable from '../../mixins/customizable';
 
 	import FileUpload from '../FileUpload';
 	import { ErrorEvent } from '../FileUpload/types';
@@ -108,15 +108,13 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props, customizable(config));
+
 	/**
 	 * UploadWorkflow is a component that let the user select files
 	 * and define a type for them in a pre-defined list
 	 */
 	@Component<UploadWorkflow>({
-		mixins: [
-			// Default configuration
-			customizable(config)
-		],
 		model: {
 			prop: 'value',
 			event: 'change'
@@ -145,10 +143,7 @@
 			}
 		}
 	})
-	export default class UploadWorkflow extends Props {
-		// Mixin computed data
-		options!: Options;
-
+	export default class UploadWorkflow extends MixinsDeclaration {
 		// Extend $refs
 		$refs!: Refs<{
 			fileUpload: FileUpload;

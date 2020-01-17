@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 import { Refs } from '../../../types';
 
@@ -13,6 +13,8 @@ const Props = Vue.extend({
 	}
 });
 
+const MixinsDeclaration = mixins(Props);
+
 /** Add birthdate prop: select year, month then day */
 @Component<Birthdate>({
 	watch: {
@@ -24,7 +26,7 @@ const Props = Vue.extend({
 		}
 	}
 })
-export default class Birthdate extends Props {
+export default class Birthdate extends MixinsDeclaration {
 	// Extend $refs
 	$refs!: Refs<{
 		picker: {

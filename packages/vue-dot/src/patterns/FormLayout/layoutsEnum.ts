@@ -1,9 +1,9 @@
 /** All defined layouts */
 export const enum Layouts {
 	Question = 'Question',
-	// XLarge = 'xl',
+	// XLarge = 'XLarge',
 	Medium_Medium = 'Medium_Medium',
-	// Small_Large = 'sm',
+	// Small_Large = 'Small_Large',
 	Medium = 'Medium'
-	// Small = 's'
+	// Small = 'Small'
 }
