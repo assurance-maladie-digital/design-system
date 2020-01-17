@@ -220,4 +220,15 @@
 			}
 		}
 	}
+
+	// Fix margin-top on enclosed text field
+	// since we're using a slot with a button
+	.vd-date-picker-text-field ::v-deep .v-text-field--enclosed {
+		.v-input__prepend-outer,
+		.v-input__prepend-inner,
+		.v-input__append-inner,
+		.v-input__append-outer {
+			margin-top: 10px !important;
+		}
+	}
 </style>
