@@ -10,7 +10,6 @@ export default {
 		minWidth: '290px',
 		nudgeBottom: 45,
 		nudgeRight: 45,
-		zIndex: 1,
 		contentClass: 'vd-date-picker-menu'
 	},
 	btn: {
