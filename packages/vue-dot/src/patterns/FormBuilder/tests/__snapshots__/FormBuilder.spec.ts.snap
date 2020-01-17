@@ -171,7 +171,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     </p>
     <div class="layout ml-0 vd-form-field">
       <div class="v-menu" textfield="[object Object]">
-        <div class="v-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined vd-date-picker-text-field">
+        <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
           <div class="v-input__control">
             <div class="v-input__slot">
               <fieldset aria-hidden="true">
@@ -189,7 +189,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
             </div>
           </div>
         </div>
-        <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 45px; left: 0px; transform-origin: top left; z-index: 1; display: none;"></div>
+        <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 55px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
       </div>
     </div>
   </div>
@@ -203,7 +203,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <div class="layout ma-n3 wrap row vd-form-field">
       <div class="col-md-6 col-12">
         <div class="v-menu" from="[object Object]" to="[object Object]">
-          <div class="v-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined vd-date-picker-text-field">
+          <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
             <div class="v-input__control">
               <div class="v-input__slot">
                 <fieldset aria-hidden="true">
@@ -221,12 +221,12 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
               </div>
             </div>
           </div>
-          <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 45px; left: 0px; transform-origin: top left; z-index: 1; display: none;"></div>
+          <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 55px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
         </div>
       </div>
       <div class="col-md-6 col-12">
         <div class="v-menu" from="[object Object]" to="[object Object]">
-          <div class="v-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined vd-date-picker-text-field">
+          <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
             <div class="v-input__control">
               <div class="v-input__slot">
                 <fieldset aria-hidden="true">
@@ -244,7 +244,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
               </div>
             </div>
           </div>
-          <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 45px; left: 0px; transform-origin: top left; z-index: 1; display: none;"></div>
+          <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 55px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
         </div>
       </div>
     </div>
