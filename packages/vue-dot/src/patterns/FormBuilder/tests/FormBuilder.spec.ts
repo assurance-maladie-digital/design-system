@@ -21,15 +21,6 @@ const questionForm = {
 			label: 'Label du champ'
 		}
 	},
-	questionNumber: {
-		type: 'number',
-		title: 'Question nombre ?',
-		description: 'Informations supplémentaires',
-		value: null,
-		metadata: {
-			mask: '###-###'
-		}
-	},
 	questionTextarea: {
 		type: 'textarea',
 		title: 'Question longue type textarea',

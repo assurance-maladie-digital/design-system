@@ -1,6 +1,6 @@
 <template>
 	<VTextField
-		v-mask="field.metadata.mask"
+		v-mask="field.mask"
 		v-bind="field.metadata"
 		:value="field.value"
 		@change="emitChangeEvent"
