@@ -25,6 +25,7 @@
 	import FormBuilderCore from './mixins/formBuilderCore';
 
 	import FormLayout from '../FormLayout';
+	import FormField from '../FormField';
 
 	const MixinsDeclaration = mixins(FormBuilderCore);
 
@@ -34,7 +35,8 @@
 	 */
 	@Component({
 		components: {
-			FormLayout
+			FormLayout,
+			FormField
 		}
 	})
 	export default class FormBuilder extends MixinsDeclaration {}
