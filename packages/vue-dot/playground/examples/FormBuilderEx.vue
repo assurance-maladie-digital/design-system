@@ -255,35 +255,38 @@
 					label: 'Votre réponse'
 				}
 			},
-			questionSelectSlider: {
+			questionSelectSliderTick: {
 				type: 'select',
 				title: 'Question select slider',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
-				value: null,
+				value: 'value2',
 				items: [
 					{ text: 'text1', value: 'value1' },
 					{ text: 'text2', value: 'value2' },
 					{ text: 'text3', value: 'value3' }
 				],
 				metadata: {
-					ticks:'always',
-					tickSize: 7,
-					thumbLabel: true,
-					slider: true
+					type: 'choiceSlider'
 				}
 			},
-			questionSlider: {
-				type: 'slider',
-				title: 'Question slider',
+			questionSelectSliderThumb: {
+				type: 'select',
+				title: 'Question select slider thumb',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
-				value: null,
+				value: 'value2',
+				items: [
+					{ text: 'text1', value: 'value1' },
+					{ text: 'text2', value: 'value2' },
+					{ text: 'text3', value: 'value3' }
+				],
 				metadata: {
-					min: 10,
-					max: 666,
-					step: 0.1,
-					thumbLabel:'always'
+					ticks: 'always',
+					tickSize: 7,
+					thumbSize: 30,
+					thumbLabel: true,
+					type: 'choiceSlider'
 				}
 			}
 		};
