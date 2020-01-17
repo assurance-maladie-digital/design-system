@@ -73,13 +73,11 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-layout ::v-deep .v-input {
-		width: 50%;
-		flex: none;
-	}
-
-	.vd-layout ::v-deep .v-item-group {
-		width: 50%;
-		flex: none;
+	.vd-layout ::v-deep {
+		.v-input,
+		.v-item-group {
+			width: 50%;
+			flex: none;
+		}
 	}
 </style>

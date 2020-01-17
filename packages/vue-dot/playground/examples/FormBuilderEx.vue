@@ -45,9 +45,18 @@
 				type: 'select',
 				value: null,
 				items: [
-					'bis',
-					'ter',
-					'quater'
+					{
+						text: 'bis',
+						value: 'valueBis'
+					},
+					{
+						text: 'ter',
+						value: 'valueTer'
+					},
+					{
+						text: 'quater',
+						value: 'valueQuater'
+					}
 				],
 				metadata: {
 					label: 'Complément de voie'
@@ -57,10 +66,22 @@
 				type: 'autocomplete',
 				value: null,
 				items: [
-					'Allée',
-					'Avenue',
-					'Boulevard',
-					'Aucun'
+					{
+						text: 'Allée',
+						value: 'valueAllée'
+					},
+					{
+						text: 'Avenue',
+						value: 'valueAvenue'
+					},
+					{
+						text: 'Boulevard',
+						value: 'valueBoulevard'
+					},
+					{
+						text: 'Aucun',
+						value: null
+					}
 				],
 				metadata: {
 					label: 'Type de voie'
@@ -252,24 +273,25 @@
 					menuProps: {
 						offsetY: true
 					},
-					label: 'Votre réponse'
+					label: 'Votre réponse',
+					hint: 'test'
 				}
 			},
 			questionSelectButton: {
-				type: 'selectButton',
+				type: 'select',
 				title: 'Question select button',
 				description: 'Informations supplémentaires',
 				items: [
 					{
-						text: 'Abricot',
+						text: 'multiple 1',
 						value: 11
 					},
 					{
-						text: 'Citron',
+						text: 'multiple 2',
 						value: 22
 					},
 					{
-						text: 'seul',
+						text: 'seul 1',
 						value: 33,
 						alone: true
 					},
@@ -280,7 +302,9 @@
 					}
 				],
 				metadata: {
-					multiple: true
+					type: 'choiceButton',
+					multiple: true,
+					hint: 'hint'
 				}
 			}
 		};

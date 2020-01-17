@@ -268,21 +268,31 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
       Informations supplémentaires
     </p>
     <div class="vd-form-field">
-      <div class="v-item-group theme--light"><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">Abricot</span>
+      <div class="v-item-group theme--light" type="choiceButton" hint="hint"><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+						multiple 1
+					</span>
           <div class="spacer"></div>
           <!---->
-      </div></span></button><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">Citron</span>
-        <div class="spacer"></div>
-        <!---->
-    </div></span></button><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">seul</span>
-      <div class="spacer"></div>
-      <!---->
-  </div></span></button><button type="button" class="select-button-border mb-2 text-none v-btn v-btn--block theme--light elevation-0 v-size--default transparent" style="height: 40px;"><span class="v-btn__content"><div class="layout mx-0 justify-center row"><span class="body-1 accent--text">seul 2</span>
-    <div class="spacer"></div>
-    <!---->
-</div></span></button></div>
-<!---->
-</div>
-</div>
+          </span></button><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+						multiple 2
+					</span>
+          <div class="spacer"></div>
+          <!---->
+          </span></button><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+						seul 1
+					</span>
+          <div class="spacer"></div>
+          <!---->
+          </span></button><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+						seul 2
+					</span>
+          <div class="spacer"></div>
+          <!---->
+          </span></button></div>
+      <p class="mx-4 v-messages theme--light mb-0">
+        hint
+      </p>
+    </div>
+  </div>
 </div>
 `;

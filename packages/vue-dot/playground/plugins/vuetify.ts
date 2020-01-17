@@ -10,14 +10,6 @@ Vue.use(Vuetify);
 
 export default new Vuetify({
 	theme: {
-		options: {
-			/**
-			 * Enabling customProperties will also generate a css variable for each theme color,
-			 * which you can then use in your components' <style> blocks.
-			 * https://vuetifyjs.com/en/customization/theme#options
-			 */
-      customProperties: true
-    },
 		// Destructure colors object in theme
 		themes: {
 			...colors

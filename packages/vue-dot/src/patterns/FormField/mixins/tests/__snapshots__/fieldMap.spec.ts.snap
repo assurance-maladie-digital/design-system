@@ -3,12 +3,12 @@
 exports[`fieldMap contains the map of fields and their components 1`] = `
 Object {
   "autocomplete": "AutocompleteField",
+  "choiceButton": "ChoiceButtonField",
   "date": "DateField",
   "number": "NumberField",
   "password": "PasswordField",
   "period": "PeriodField",
   "select": "SelectField",
-  "selectButton": "SelectButtonField",
   "string": "TextField",
   "textarea": "TextareaField",
 }

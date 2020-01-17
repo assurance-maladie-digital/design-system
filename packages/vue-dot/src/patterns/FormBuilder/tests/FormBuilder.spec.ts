@@ -134,20 +134,20 @@ const questionForm = {
 		}
 	},
 	questionSelectButton: {
-		type: 'selectButton',
+		type: 'select',
 		title: 'Question select button',
 		description: 'Informations supplémentaires',
 		items: [
 			{
-				text: 'Abricot',
+				text: 'multiple 1',
 				value: 11
 			},
 			{
-				text: 'Citron',
+				text: 'multiple 2',
 				value: 22
 			},
 			{
-				text: 'seul',
+				text: 'seul 1',
 				value: 33,
 				alone: true
 			},
@@ -158,7 +158,9 @@ const questionForm = {
 			}
 		],
 		metadata: {
-			multiple: true
+			type: 'choiceButton',
+			multiple: true,
+			hint: 'hint'
 		}
 	}
 };

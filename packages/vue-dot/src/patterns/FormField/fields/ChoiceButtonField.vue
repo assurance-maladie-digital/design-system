@@ -15,38 +15,32 @@
 						block
 						elevation="0"
 						height="40"
-						class="select-button-border mb-2 text-none"
-						:color="active ? 'accent' : 'transparent'"
+						class="mb-2 text-none"
+						:outlined="!active"
+						color="accent"
 						@click="itemtoggle(item, active, toggle)"
 					>
-						<VLayout
-							justify-center
-							row
-							class="mx-0"
-						>
-							<span
-								class="body-1"
-								:class="active ? 'white--text' : 'accent--text'"
-							>{{ item.text }}</span>
-							<VSpacer />
-							<v-scroll-x-transition>
-								<VIcon
-									v-if="active"
-									size="22"
-									color="white"
-								>
-									{{ checkIcon }}
-								</VIcon>
-							</v-scroll-x-transition>
-						</VLayout>
+						<span class="body-1">
+							{{ item.text }}
+						</span>
+
+						<VSpacer />
+
+						<VScrollXTransition>
+							<VIcon v-if="active">
+								{{ checkIcon }}
+							</VIcon>
+						</VScrollXTransition>
 					</VBtn>
 				</VItem>
 			</template>
 		</VItemGroup>
-		<span
+		<p
 			v-if="field.metadata && field.metadata.hint"
-			class="mx-4 v-messages theme--light"
-		>{{ field.metadata.hint }} </span>
+			class="mx-4 v-messages theme--light mb-0"
+		>
+			{{ field.metadata.hint }}
+		</p>
 	</div>
 </template>
 
@@ -58,13 +52,15 @@
 
 	import FieldComponent from '../mixins/fieldComponent';
 
+	import { FieldItem } from '../types';
+
 	/** Form field to select a value from a list */
 	@Component
-	export default class SelectButtonField extends FieldComponent {
+	export default class ChoiceButtonField extends FieldComponent {
 		checkIcon = mdiCheck;
 
 		/** toggle the item selection */
-		itemtoggle(item: any, active: boolean, toggle: any) {
+		itemtoggle(item: FieldItem, active: boolean, toggle: Function) {
 			// in multpple
 			// uncheck all other selected items when check the item with 'alone' property
 			// or uncheck the items with 'alone' prop if selected when item without alone is selected
@@ -104,7 +100,4 @@
 </script>
 
 <style lang="scss" scoped>
-	.select-button-border {
-		border: 1px solid var(--v-accent-base) !important;
-	}
 </style>
