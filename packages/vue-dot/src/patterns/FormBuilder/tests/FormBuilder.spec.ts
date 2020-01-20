@@ -17,7 +17,7 @@ describe('FormBuilder', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {
-				value: addressForm
+				form: addressForm
 			}
 		}, true);
 
@@ -28,7 +28,7 @@ describe('FormBuilder', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {
-				value: questionForm,
+				form: questionForm,
 				defaultLayout: 'question'
 			}
 		}, true);

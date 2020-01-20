@@ -24,8 +24,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	// TODO: Improve type importation/exportation
-	import { Form, Layout } from '../../src/patterns/FormBuilder/types';
+	import { Layout } from '../../src/patterns/FormBuilder/types';
 	import { Layouts } from '../../src/patterns/FormLayout/layoutsEnum';
 
 	import addressForm from '../../src/patterns/FormBuilder/tests/data/addressForm';

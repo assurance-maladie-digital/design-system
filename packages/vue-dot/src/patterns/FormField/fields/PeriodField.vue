@@ -12,7 +12,7 @@
 				v-model="periodValue.from"
 				v-bind="field.metadata"
 				:vuetify-options="getVuetifyOptions(field.metadata.from)"
-				@change="changeDate"
+				@change="dateUpdated"
 			/>
 		</VCol>
 
@@ -25,7 +25,7 @@
 				v-bind="field.metadata"
 				:vuetify-options="getVuetifyOptions(metadataTo)"
 				:start-date="periodValue.from"
-				@change="changeDate"
+				@change="dateUpdated"
 			/>
 		</VCol>
 	</VLayout>
@@ -80,7 +80,7 @@
 		}
 
 		/** Emit the new value when started or ended date change */
-		changeDate() {
+		dateUpdated() {
 			// Reset the end date if selected start date greater
 			if (
 				this.periodValue.from &&

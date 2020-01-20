@@ -13,10 +13,10 @@
 	@Component
 	export default class FormFieldEx extends Vue {
 		field: Field = {
-			type: 'password',
+			type: 'string',
 			value: null,
 			metadata: {
-				label: 'Mot de passe'
+				label: 'Votre nom'
 			}
 		};
 	}
