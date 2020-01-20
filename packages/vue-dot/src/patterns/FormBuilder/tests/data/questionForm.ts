@@ -12,6 +12,15 @@ export default {
 			outlined: true
 		}
 	},
+	questionNumber: {
+		type: 'number',
+		title: 'Question nombre ?',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			mask: '###-###'
+		}
+	},
 	questionTextarea: {
 		type: 'textarea',
 		title: 'Question longue type textarea',

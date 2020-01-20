@@ -73,8 +73,8 @@ export default {
 	postalCode: {
 		type: 'number',
 		value: null,
-		mask: '#####',
 		metadata: {
+			mask: '#####',
 			label: 'Code postal'
 		}
 	},
