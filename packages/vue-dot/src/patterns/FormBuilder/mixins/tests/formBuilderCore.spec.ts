@@ -43,7 +43,7 @@ function createWrapper(form: Form, layout?: Layout, defaultLayout?: string) {
 
 	return mount(component, {
 		propsData: {
-			value: form,
+			form,
 			defaultLayout,
 			layout
 		}

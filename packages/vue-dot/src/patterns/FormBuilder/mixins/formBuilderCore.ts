@@ -18,7 +18,7 @@ import {
 const Props = Vue.extend({
 	props: {
 		/** The form object */
-		value: {
+		form: {
 			type: Object as PropType<Form>,
 			required: true
 		},
@@ -43,7 +43,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 /** Handle main logic of the FormBuilder */
 @Component<FormBuilderCore>({
 	model: {
-		prop: 'value',
+		prop: 'form',
 		event: 'change'
 	},
 	// Each time the value or the layout are updated,
@@ -53,7 +53,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		layout() {
 			this.computedLayout = this.computeLayout();
 		},
-		value: {
+		form: {
 			handler() {
 				this.computedLayout = this.computeLayout();
 			},
@@ -74,7 +74,7 @@ export default class FormBuilderCore extends MixinsDeclaration {
 	 */
 	formUpdated(field: ComputedField): void {
 		const form = {
-			...this.value
+			...this.form
 		};
 
 		form[field.name].value = field.value;
@@ -118,7 +118,7 @@ export default class FormBuilderCore extends MixinsDeclaration {
 
 		fields.forEach((field: string, fieldIndex: number) => {
 			const computedField = {
-				...this.value[field],
+				...this.form[field],
 				name: field
 			};
 
@@ -135,7 +135,7 @@ export default class FormBuilderCore extends MixinsDeclaration {
 	 * if the defaultLayout doesn't exists
 	 */
 	getDefaultLayout(): Layout | null {
-		const formKeys = Object.keys(this.value);
+		const formKeys = Object.keys(this.form);
 
 		const layout = this.getLayout(this.defaultLayout);
 
