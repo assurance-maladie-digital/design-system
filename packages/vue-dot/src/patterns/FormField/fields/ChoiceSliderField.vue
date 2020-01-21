@@ -33,11 +33,11 @@
 	export default class ChoiceSliderField extends FieldComponent {
 		/** Get the index of the selected item by value
 		 *
-		 * @param {FieldValue} value the current field value
-		 * @returns {number} the index of the selected item, null if not found
+		 * @param {FieldValue} value The current field value
+		 * @returns {number|null} The index of the selected item, null if not found
 		 */
-		getIndex(value: FieldValue) {
-			if(!this.field.items) {
+		getIndex(value: FieldValue): number | null {
+			if (!this.field.items) {
 				return null;
 			}
 
@@ -60,7 +60,13 @@
 
 		/** The ticks labels */
 		get labels() {
-			return this.field.items && this.field.metadata ? this.field.items.map(item => item.text) : [];
+			if (this.field.items && this.field.metadata) {
+				const labels = this.field.items.map(item => item.text);
+
+				return labels;
+			}
+
+			return [];
 		}
 
 		valueUpdated(index: number) {
@@ -72,6 +78,5 @@
 
 			return this.emitChangeEvent(fieldValue);
 		}
-
 	}
 </script>
