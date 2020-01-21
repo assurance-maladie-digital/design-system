@@ -13,7 +13,7 @@
 				v-if="getField(0).tooltip"
 				right
 			>
-				<template v-slot:activator="{ on }">
+				<template #activator="{ on }">
 					<VBtn
 						icon
 						class="ml-1"
