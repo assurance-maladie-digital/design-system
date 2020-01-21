@@ -133,14 +133,14 @@ export default {
 			label: 'Votre réponse'
 		}
 	},
-	questionSelectButton: {
+	questionChoiceButton: {
 		type: 'select',
-		title: 'Question select button',
+		title: 'Question choix boutton',
 		description: 'Informations supplémentaires',
 		items: [
 			{
 				text: 'multiple 1',
-				value: 11
+				value: 'test1'
 			},
 			{
 				text: 'multiple 2',
@@ -155,6 +155,10 @@ export default {
 				text: 'seul 2',
 				value: 44,
 				alone: true
+			},
+			{
+				text: 'null value',
+				value: null
 			}
 		],
 		metadata: {
