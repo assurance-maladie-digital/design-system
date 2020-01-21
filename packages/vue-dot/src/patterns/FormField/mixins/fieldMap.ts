@@ -13,6 +13,7 @@ import NumberField from '../fields/NumberField.vue';
 import PasswordField from '../fields/PasswordField.vue';
 import PeriodField from '../fields/PeriodField.vue';
 import SelectField from '../fields/SelectField.vue';
+import ChoiceSliderField from '../fields/ChoiceSliderField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
 
@@ -25,6 +26,7 @@ import TextField from '../fields/TextField.vue';
 		PasswordField,
 		PeriodField,
 		SelectField,
+		ChoiceSliderField,
 		TextareaField,
 		TextField
 	}
@@ -38,6 +40,7 @@ export default class FieldMap extends Vue {
 		password: 'PasswordField',
 		period: 'PeriodField',
 		select: 'SelectField',
+		choiceSlider: 'ChoiceSliderField',
 		string: 'TextField',
 		textarea: 'TextareaField'
 	};
