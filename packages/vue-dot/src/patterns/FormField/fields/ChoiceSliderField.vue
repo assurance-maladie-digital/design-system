@@ -7,7 +7,7 @@
 		:value="getIndex(field.value)"
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
-		:max="field.items.length -1 "
+		:max="field.items.length - 1"
 		@change="valueUpdated"
 	>
 		<template
@@ -48,23 +48,29 @@
 			return this.isThumbLabel ? 'always' : false;
 		}
 
-		/** Compute the ticks labels when we dont want the thumb label */
+		/** The ticks labels (when we don't want the thumb label) */
 		get thickLabels() {
 			return !this.isThumbLabel ? this.labels : [];
 		}
 
 		/**  Are we in thumb label mode */
 		get isThumbLabel() {
-			return this.field.metadata && this.field.metadata.thumbLabel ? true : false;
+			return this.field.metadata && this.field.metadata.thumbLabel;
 		}
 
-		/** Compute the ticks labels */
+		/** The ticks labels */
 		get labels() {
 			return this.field.items && this.field.metadata ? this.field.items.map(item => item.text) : [];
 		}
 
 		valueUpdated(index: number) {
-			return this.emitChangeEvent(this.field && this.field.items ? this.field.items[index].value : null);
+			let fieldValue = null;
+
+			if (this.field.items) {
+				fieldValue = this.field.items[index].value;
+			}
+
+			return this.emitChangeEvent(fieldValue);
 		}
 
 	}
