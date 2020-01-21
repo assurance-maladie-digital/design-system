@@ -1,12 +1,10 @@
 import Component from 'vue-class-component';
 
-import { FieldItemValue } from './../types.d';
-
 import { ChoiceValue, FieldItem } from '../types';
 
 import FieldComponent from './fieldComponent';
 
-/** Form field to select a value from a list */
+/** Choice field component to controle the item selection if needed */
 @Component<ChoiceField>({
 	watch: {
 		// Listen the current field value for the component
