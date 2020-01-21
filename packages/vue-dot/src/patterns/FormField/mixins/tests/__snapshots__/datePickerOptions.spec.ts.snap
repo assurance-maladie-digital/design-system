@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`datePickerOptions returns the options 1`] = `
+Object {
+  "menu": Object {
+    "nudgeBottom": 55,
+    "nudgeRight": 0,
+  },
+}
+`;
+
+exports[`datePickerOptions returns the options and merge correctly 1`] = `
+Object {
+  "menu": Object {
+    "nudgeBottom": 80,
+    "nudgeRight": 0,
+  },
+  "other": Object {
+    "test": true,
+  },
+}
+`;
