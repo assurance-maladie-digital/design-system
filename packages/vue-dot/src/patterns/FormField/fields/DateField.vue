@@ -3,7 +3,7 @@
 		<DatePicker
 			v-bind="field.metadata"
 			:value="field.value"
-			:vuetify-options="field.metadata"
+			:vuetify-options="getVuetifyOptions(field.metadata)"
 			@change="emitChangeEvent"
 		/>
 	</VLayout>
@@ -11,10 +11,14 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
+
 	import DatePicker from '../../DatePicker';
 
 	import FieldComponent from '../mixins/fieldComponent';
+	import DatePickerOptions from '../mixins/datePickerOptions';
+
+	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
 
 	/** Form date field to enter a date */
 	@Component({
@@ -22,5 +26,5 @@
 			DatePicker
 		}
 	})
-	export default class DateField extends FieldComponent {}
+	export default class DateField extends MixinsDeclaration {}
 </script>
