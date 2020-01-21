@@ -1,21 +1,21 @@
 <template>
 	<VSlider
 		v-if="field.items"
-		color="accent"
-		:value="getIndex(field.value)"
-		class="mt-5"
 		v-bind="field.metadata"
+		color="accent"
+		class="mt-5"
+		:value="getIndex(field.value)"
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
-		:max="field.items.length -1"
-		@change="valueChanged"
+		:max="field.items.length -1 "
+		@change="valueUpdated"
 	>
 		<template
 			v-if="thumbLabel"
-			#thumb-label="props"
+			#thumb-label="{ value }"
 		>
 			<span>
-				{{ labels[props.value] }}
+				{{ labels[value] }}
 			</span>
 		</template>
 	</VSlider>
@@ -28,12 +28,18 @@
 	import FieldComponent from '../mixins/fieldComponent';
 	import { FieldValue } from '../types';
 
-	/** Form field to enter text */
+	/** Choice field type slider*/
 	@Component
 	export default class ChoiceSliderField extends FieldComponent {
-		/** get the index of the selected item by value */
+		/** Get the index of the selected item by value
+		 *
+		 * @param {FieldValue} value the current field value
+		 * @returns {number} the index of the selected item, null if not found
+		 */
 		getIndex(value: FieldValue) {
-			if(!this.field.items) return false;
+			if(!this.field.items) {
+				return null;
+			}
 
 			return this.field.items.findIndex(item => item.value === value);
 		}
@@ -42,22 +48,22 @@
 			return this.isThumbLabel ? 'always' : false;
 		}
 
-		/** compute the ticks labels when we dont want the thumb label */
+		/** Compute the ticks labels when we dont want the thumb label */
 		get thickLabels() {
 			return !this.isThumbLabel ? this.labels : [];
 		}
 
-		/** check if we are in thumb or tick label mode */
+		/**  Are we in thumb label mode */
 		get isThumbLabel() {
 			return this.field.metadata && this.field.metadata.thumbLabel ? true : false;
 		}
 
-		/** compute the ticks labels */
+		/** Compute the ticks labels */
 		get labels() {
 			return this.field.items && this.field.metadata ? this.field.items.map(item => item.text) : [];
 		}
 
-		valueChanged(index: number) {
+		valueUpdated(index: number) {
 			return this.emitChangeEvent(this.field && this.field.items ? this.field.items[index].value : null);
 		}
 

@@ -336,16 +336,16 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
+    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-slider v-slider--horizontal theme--light"><input value="1" id="input-156" readonly="readonly" tabindex="-1" type="choiceSlider">
+          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-156" readonly="readonly" tabindex="-1" type="choiceSlider">
             <div class="v-slider__track-container">
               <div class="v-slider__track-background primary lighten-3" style="right: 0px;"></div>
-              <div class="v-slider__track-fill accent" style="left: 0px; width: 50%;"></div>
+              <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
             </div>
-            <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick v-slider__tick--filled" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">text1</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">text2</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">text3</div></span></div>
-            <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="2" aria-valuenow="1" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container accent--text" style="left: 50%;">
+            <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">Abricot</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">Citron</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">Null</div></span></div>
+            <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container accent--text" style="left: 0%;">
               <div class="v-slider__thumb accent"></div>
             </div>
           </div>
@@ -361,21 +361,21 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
+    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-slider v-slider--horizontal theme--light"><input value="1" id="input-167" readonly="readonly" tabindex="-1" type="choiceSlider">
+          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-167" readonly="readonly" tabindex="-1" type="choiceSlider">
             <div class="v-slider__track-container">
               <div class="v-slider__track-background primary lighten-3" style="right: 0px;"></div>
-              <div class="v-slider__track-fill accent" style="left: 0px; width: 50%;"></div>
+              <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
             </div>
-            <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick v-slider__tick--filled" style="width: 7px; height: 7px;"></span><span class="v-slider__tick" style="width: 7px; height: 7px;"></span><span class="v-slider__tick" style="width: 7px; height: 7px;"></span></div>
-            <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="2" aria-valuenow="1" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 50%;">
+            <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick" style="width: 7px; height: 7px;"></span><span class="v-slider__tick" style="width: 7px; height: 7px;"></span><span class="v-slider__tick" style="width: 7px; height: 7px;"></span></div>
+            <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 0%;">
               <div class="v-slider__thumb accent"></div>
               <div class="v-slider__thumb-label-container">
-                <div class="v-slider__thumb-label accent" style="height: 30px; width: 30px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
+                <div class="v-slider__thumb-label accent" style="height: 60px; width: 60px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
                   <div><span>
-			text2
+			Abricot
 		</span></div>
                 </div>
               </div>

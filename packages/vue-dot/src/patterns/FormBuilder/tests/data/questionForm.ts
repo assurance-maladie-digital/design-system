@@ -1,5 +1,20 @@
 import { Form } from '../../types';
 
+const defaultItems = [
+	{
+		text: 'Abricot',
+		value: 11
+	},
+	{
+		text: 'Citron',
+		value: 'citron'
+	},
+	{
+		text: 'Null',
+		value: null
+	}
+];
+
 export default {
 	questionString: {
 		type: 'string',
@@ -115,11 +130,7 @@ export default {
 		description: 'Informations supplémentaires',
 		tooltip: 'Texte d\'aide',
 		value: 'value2',
-		items: [
-			{ text: 'text1', value: 'value1' },
-			{ text: 'text2', value: 'value2' },
-			{ text: 'text3', value: 'value3' }
-		],
+		items: defaultItems,
 		metadata: {
 			type: 'choiceSlider'
 		}
@@ -130,17 +141,13 @@ export default {
 		description: 'Informations supplémentaires',
 		tooltip: 'Texte d\'aide',
 		value: 'value2',
-		items: [
-			{ text: 'text1', value: 'value1' },
-			{ text: 'text2', value: 'value2' },
-			{ text: 'text3', value: 'value3' }
-		],
+		items: defaultItems,
 		metadata: {
+			type: 'choiceSlider',
 			ticks: 'always',
 			tickSize: 7,
-			thumbSize: 30,
-			thumbLabel: true,
-			type: 'choiceSlider'
+			thumbSize: 60,
+			thumbLabel: true
 		}
 	},
 	questionAutocomplete: {
