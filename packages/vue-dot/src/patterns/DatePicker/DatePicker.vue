@@ -6,13 +6,14 @@
 		v-bind="options.menu"
 	>
 		<!-- eslint-disable-next-line vue/no-unused-vars -->
-		<template #activator="{ on }">
+		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
 				v-mask="maskValue"
 				v-bind="options.textField"
+				:error-messages="options.errorMessages"
 				class="vd-date-picker-text-field"
 				:class="textFieldClasses"
 				:success-messages="options.textField.successMessages || successMessages"

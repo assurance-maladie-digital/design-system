@@ -73,10 +73,16 @@
 				min: this.periodValue.from
 			};
 
-			return {
-				datePicker,
-				...this.field.metadata.to
+			let metadataTo = {
+				datePicker
 			};
+
+			// check if the field have already a specific metadata.to
+			if(this.field.metadata && this.field.metadata.to) {
+				metadataTo = { ...metadataTo, ...this.field.metadata.to };
+			}
+
+			return metadataTo;
 		}
 
 		/** Emit the new value when started or ended date change */

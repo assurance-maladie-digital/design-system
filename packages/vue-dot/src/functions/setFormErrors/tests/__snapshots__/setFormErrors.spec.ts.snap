@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setFormErrors Don"t set an error on unknow field 1`] = `
+Object {
+  "questionPeriod": Object {
+    "metadata": Object {
+      "notExit": Object {
+        "errorMessages": "sub field not exist",
+      },
+    },
+    "type": "period",
+  },
+  "questionString": Object {
+    "type": "string",
+  },
+}
+`;
+
+exports[`setFormErrors Set error messages on difference field type 1`] = `
+Object {
+  "questionAutocomplete": Object {
+    "description": "Informations supplémentaires",
+    "items": Array [
+      Object {
+        "text": "Abricot",
+        "value": 1,
+      },
+      Object {
+        "text": "Citron",
+        "value": 2,
+      },
+    ],
+    "metadata": Object {
+      "chips": true,
+      "label": "Votre réponse",
+      "menuProps": Object {
+        "offsetY": true,
+      },
+      "outlined": true,
+    },
+    "title": "Question avec complétion automatique",
+    "type": "autocomplete",
+    "value": null,
+  },
+  "questionDate": Object {
+    "description": "Informations supplémentaires",
+    "metadata": Object {
+      "appendIcon": true,
+      "errorMessages": Array [
+        "error date 1",
+        "error date 2",
+      ],
+      "textField": Object {
+        "hint": "Texte informatif",
+        "outlined": true,
+      },
+    },
+    "title": "Question",
+    "type": "date",
+    "value": null,
+  },
+  "questionNumber": Object {
+    "description": "Informations supplémentaires",
+    "metadata": Object {
+      "errorMessages": Array [
+        "error number 1",
+        "error number 2",
+      ],
+      "mask": "###-###",
+    },
+    "title": "Question nombre ?",
+    "type": "number",
+    "value": null,
+  },
+  "questionPeriod": Object {
+    "description": "Informations supplémentaires",
+    "metadata": Object {
+      "appendIcon": true,
+      "from": Object {
+        "errorMessages": Array [
+          "Error questionPeriod 1",
+          "Error questionPeriod 2",
+        ],
+        "textField": Object {
+          "label": "Du",
+          "outlined": true,
+        },
+      },
+      "to": Object {
+        "errorMessages": Array [
+          "Error questionPeriod to 1",
+          "Error questionPeriod to 2",
+        ],
+        "textField": Object {
+          "label": "Au",
+          "outlined": true,
+        },
+      },
+    },
+    "title": "Question période",
+    "type": "period",
+    "value": null,
+  },
+  "questionSelect": Object {
+    "description": "Informations supplémentaires",
+    "items": Array [
+      Object {
+        "text": "Abricot",
+        "value": 1,
+      },
+      Object {
+        "text": "Citron",
+        "value": 2,
+      },
+    ],
+    "metadata": Object {
+      "chips": true,
+      "errorMessages": Array [
+        "error select 1",
+        "error select 2",
+      ],
+      "label": "Votre réponse",
+      "menuProps": Object {
+        "offsetY": true,
+      },
+      "outlined": true,
+    },
+    "title": "Question select",
+    "type": "select",
+    "value": null,
+  },
+  "questionSelectMultiple": Object {
+    "description": "Informations supplémentaires",
+    "items": Array [
+      Object {
+        "text": "Abricot",
+        "value": 1,
+      },
+      Object {
+        "text": "Citron",
+        "value": 2,
+      },
+    ],
+    "metadata": Object {
+      "errorMessages": Array [
+        "error select multiple 1",
+        "error select multiple 2",
+      ],
+      "multiple": true,
+      "outlined": true,
+    },
+    "title": "Question select multiple",
+    "type": "select",
+    "value": null,
+  },
+  "questionSelectSliderThumb": Object {
+    "description": "Informations supplémentaires",
+    "items": Array [
+      Object {
+        "text": "Abricot",
+        "value": 11,
+      },
+      Object {
+        "text": "Citron",
+        "value": "citron",
+      },
+      Object {
+        "text": "Null",
+        "value": null,
+      },
+    ],
+    "metadata": Object {
+      "thumbLabel": true,
+      "thumbSize": 60,
+      "tickSize": 7,
+      "ticks": "always",
+      "type": "choiceSlider",
+    },
+    "title": "Question select slider thumb",
+    "tooltip": "Texte d'aide",
+    "type": "select",
+    "value": "value2",
+  },
+  "questionSelectSliderTick": Object {
+    "description": "Informations supplémentaires",
+    "items": Array [
+      Object {
+        "text": "Abricot",
+        "value": 11,
+      },
+      Object {
+        "text": "Citron",
+        "value": "citron",
+      },
+      Object {
+        "text": "Null",
+        "value": null,
+      },
+    ],
+    "metadata": Object {
+      "errorMessages": Array [
+        "error select slider 1",
+        "error select slider 2",
+      ],
+      "type": "choiceSlider",
+    },
+    "title": "Question select slider",
+    "tooltip": "Texte d'aide",
+    "type": "select",
+    "value": "value2",
+  },
+  "questionString": Object {
+    "description": "Informations supplémentaires",
+    "metadata": Object {
+      "errorMessages": Array [
+        "error string 1",
+        "error string 2",
+      ],
+      "label": "Label du champ",
+      "outlined": true,
+    },
+    "title": "Question ?",
+    "tooltip": "Texte d'aide",
+    "type": "string",
+    "value": null,
+  },
+  "questionTextarea": Object {
+    "description": "Informations supplémentaires",
+    "metadata": Object {
+      "errorMessages": Array [
+        "error textarea 1",
+        "error textarea 2",
+      ],
+      "outlined": true,
+    },
+    "title": "Question longue type textarea",
+    "tooltip": "Texte d'aide",
+    "type": "textarea",
+    "value": null,
+  },
+}
+`;

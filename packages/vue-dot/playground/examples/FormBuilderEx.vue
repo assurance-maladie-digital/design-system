@@ -30,6 +30,21 @@
 			class="mt-4 grey lighten-3"
 			v-html="questionValues"
 		/>
+
+		<VBtn
+			color="accent"
+			@click="setFormErrors"
+		>
+			Set errors messages
+		</VBtn>
+
+		<pre
+			v-if="questionErrors"
+			contenteditable="true"
+			class="mt-4 grey lighten-3"
+			@blur="questionErrors = JSON.parse($event.target.textContent)"
+			v-html="questionErrors"
+		/>
 	</DocSection>
 </template>
 
@@ -42,7 +57,9 @@
 
 	import addressForm from '../../src/patterns/FormBuilder/tests/data/addressForm';
 	import questionForm from '../../src/patterns/FormBuilder/tests/data/questionForm';
+	import { questionErrors } from '../../src/functions/setFormErrors/tests/data/formErrors';
 	import getFormValues from '../../src/functions/getFormValues';
+	import setFormErrors from '../../src/functions/setFormErrors';
 	import { FormValues } from '../../src/functions/getFormValues/types';
 
 	@Component
@@ -50,6 +67,8 @@
 		addressForm = addressForm;
 
 		questionForm = questionForm;
+
+		questionErrors = questionErrors;
 
 		questionValues: FormValues | null = null;
 
@@ -84,6 +103,10 @@
 
 		getFormValues() {
 			this.questionValues = getFormValues(this.questionForm);
+		}
+
+		setFormErrors() {
+			this.questionForm = setFormErrors(this.questionErrors, this.questionForm);
 		}
 	}
 </script>
