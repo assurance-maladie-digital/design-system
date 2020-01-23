@@ -14,6 +14,7 @@ import PasswordField from '../fields/PasswordField.vue';
 import PeriodField from '../fields/PeriodField.vue';
 import SelectField from '../fields/SelectField.vue';
 import ChoiceButtonField from '../fields/ChoiceButtonField.vue';
+import ChoiceSliderField from '../fields/ChoiceSliderField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
 
@@ -27,6 +28,7 @@ import TextField from '../fields/TextField.vue';
 		PeriodField,
 		SelectField,
 		ChoiceButtonField,
+		ChoiceSliderField,
 		TextareaField,
 		TextField
 	}
@@ -41,6 +43,7 @@ export default class FieldMap extends Vue {
 		period: 'PeriodField',
 		select: 'SelectField',
 		choiceButton: 'ChoiceButtonField',
+		choiceSlider: 'ChoiceSliderField',
 		string: 'TextField',
 		textarea: 'TextareaField'
 	};

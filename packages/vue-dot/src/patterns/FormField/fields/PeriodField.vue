@@ -11,7 +11,7 @@
 			<DatePicker
 				v-model="periodValue.from"
 				v-bind="field.metadata"
-				:vuetify-options="field.metadata.from"
+				:vuetify-options="getVuetifyOptions(field.metadata.from)"
 				@change="dateUpdated"
 			/>
 		</VCol>
@@ -23,7 +23,7 @@
 			<DatePicker
 				v-model="periodValue.to"
 				v-bind="field.metadata"
-				:vuetify-options="metadataTo"
+				:vuetify-options="getVuetifyOptions(metadataTo)"
 				:start-date="periodValue.from"
 				@change="dateUpdated"
 			/>
@@ -33,13 +33,16 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import DatePicker from '../../DatePicker';
 
-	import FieldComponent from '../mixins/fieldComponent';
-
 	import { PeriodValue } from '../types';
+
+	import FieldComponent from '../mixins/fieldComponent';
+	import DatePickerOptions from '../mixins/datePickerOptions';
+
+	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
 
 	/** Form period field to enter a period */
 	@Component<PeriodField>({
@@ -59,7 +62,7 @@
 			}
 		}
 	})
-	export default class PeriodField extends FieldComponent {
+	export default class PeriodField extends MixinsDeclaration {
 		periodValue: PeriodValue = {
 			from: null,
 			to: null

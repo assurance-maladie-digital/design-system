@@ -1,5 +1,20 @@
 import { Form } from '../../types';
 
+const defaultItems = [
+	{
+		text: 'Abricot',
+		value: 11
+	},
+	{
+		text: 'Citron',
+		value: 'citron'
+	},
+	{
+		text: 'Null',
+		value: null
+	}
+];
+
 export default {
 	questionString: {
 		type: 'string',
@@ -107,6 +122,32 @@ export default {
 		metadata: {
 			multiple: true,
 			outlined: true
+		}
+	},
+	questionSelectSliderTick: {
+		type: 'select',
+		title: 'Question select slider',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: 'value2',
+		items: defaultItems,
+		metadata: {
+			type: 'choiceSlider'
+		}
+	},
+	questionSelectSliderThumb: {
+		type: 'select',
+		title: 'Question select slider thumb',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: 'value2',
+		items: defaultItems,
+		metadata: {
+			type: 'choiceSlider',
+			ticks: 'always',
+			tickSize: 7,
+			thumbSize: 60,
+			thumbLabel: true
 		}
 	},
 	questionAutocomplete: {

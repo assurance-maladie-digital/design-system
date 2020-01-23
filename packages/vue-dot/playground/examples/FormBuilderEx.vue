@@ -17,6 +17,19 @@
 			v-model="questionForm"
 			default-layout="question"
 		/>
+
+		<VBtn
+			color="accent"
+			@click="getFormValues"
+		>
+			Get question values
+		</VBtn>
+
+		<pre
+			v-if="questionValues"
+			class="mt-4 grey lighten-3"
+			v-html="questionValues"
+		/>
 	</DocSection>
 </template>
 
@@ -29,12 +42,16 @@
 
 	import addressForm from '../../src/patterns/FormBuilder/tests/data/addressForm';
 	import questionForm from '../../src/patterns/FormBuilder/tests/data/questionForm';
+	import getFormValues from '../../src/functions/getFormValues';
+	import { FormValues } from '../../src/functions/getFormValues/types';
 
 	@Component
 	export default class FormBuilderEx extends Vue {
 		addressForm = addressForm;
 
 		questionForm = questionForm;
+
+		questionValues: FormValues | null = null;
 
 		addressFormLayout: Layout = [
 			{
@@ -64,5 +81,9 @@
 				]
 			}
 		];
+
+		getFormValues() {
+			this.questionValues = getFormValues(this.questionForm);
+		}
 	}
 </script>
