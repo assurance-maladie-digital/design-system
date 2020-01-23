@@ -1,18 +1,18 @@
 import { Form } from '../../../../patterns/FormBuilder/types';
 import { FormErrors } from '../../types';
 
-// formErrors with invalid values
+/** FormErrors with invalid values */
 export const formErrors = {
 	fieldNameNotExist: [
-		'field not exist'
+		'Field name does not exist'
 	],
-	questionString: 'incorrect Value',
+	questionString: 'Incorrect value',
 	questionPeriod: {
-		notExit: 'sub field not exist'
+		notExist: 'Sub field does not exist'
 	}
 } as FormErrors;
 
-// errors to test the formbuilder question form data
+/** FromErrors related to question form */
 export const questionErrors = {
 	questionString: [
 		'error string 1',

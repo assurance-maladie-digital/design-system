@@ -10,7 +10,7 @@
 		>
 			<DatePicker
 				v-model="periodValue.from"
-				v-bind="field.metadata"
+				v-bind="field.metadata.from"
 				:vuetify-options="getVuetifyOptions(field.metadata.from)"
 				@change="dateUpdated"
 			/>
@@ -22,7 +22,7 @@
 		>
 			<DatePicker
 				v-model="periodValue.to"
-				v-bind="field.metadata"
+				v-bind="metadataTo"
 				:vuetify-options="getVuetifyOptions(metadataTo)"
 				:start-date="periodValue.from"
 				@change="dateUpdated"
@@ -73,16 +73,12 @@
 				min: this.periodValue.from
 			};
 
-			let metadataTo = {
-				datePicker
+			const metadataTo = this.field.metadata ? this.field.metadata.to : undefined;
+
+			return {
+				datePicker,
+				...metadataTo
 			};
-
-			// check if the field have already a specific metadata.to
-			if(this.field.metadata && this.field.metadata.to) {
-				metadataTo = { ...metadataTo, ...this.field.metadata.to };
-			}
-
-			return metadataTo;
 		}
 
 		/** Emit the new value when started or ended date change */

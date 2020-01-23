@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`setFormErrors Don"t set an error on unknow field 1`] = `
+exports[`setFormErrors doesn't sets an error on unknow field 1`] = `
 Object {
   "questionPeriod": Object {
     "metadata": Object {
-      "notExit": Object {
-        "errorMessages": "sub field not exist",
+      "notExist": Object {
+        "errorMessages": "Sub field does not exist",
       },
     },
     "type": "period",
@@ -16,7 +16,7 @@ Object {
 }
 `;
 
-exports[`setFormErrors Set error messages on difference field type 1`] = `
+exports[`setFormErrors sets error messages on different fields 1`] = `
 Object {
   "questionAutocomplete": Object {
     "description": "Informations supplémentaires",
@@ -40,7 +40,6 @@ Object {
     },
     "title": "Question avec complétion automatique",
     "type": "autocomplete",
-    "value": null,
   },
   "questionDate": Object {
     "description": "Informations supplémentaires",
@@ -57,7 +56,6 @@ Object {
     },
     "title": "Question",
     "type": "date",
-    "value": null,
   },
   "questionNumber": Object {
     "description": "Informations supplémentaires",
@@ -70,13 +68,12 @@ Object {
     },
     "title": "Question nombre ?",
     "type": "number",
-    "value": null,
   },
   "questionPeriod": Object {
     "description": "Informations supplémentaires",
     "metadata": Object {
-      "appendIcon": true,
       "from": Object {
+        "appendIcon": true,
         "errorMessages": Array [
           "Error questionPeriod 1",
           "Error questionPeriod 2",
@@ -87,6 +84,7 @@ Object {
         },
       },
       "to": Object {
+        "appendIcon": true,
         "errorMessages": Array [
           "Error questionPeriod to 1",
           "Error questionPeriod to 2",
@@ -99,7 +97,6 @@ Object {
     },
     "title": "Question période",
     "type": "period",
-    "value": null,
   },
   "questionSelect": Object {
     "description": "Informations supplémentaires",
@@ -127,7 +124,6 @@ Object {
     },
     "title": "Question select",
     "type": "select",
-    "value": null,
   },
   "questionSelectMultiple": Object {
     "description": "Informations supplémentaires",
@@ -151,7 +147,6 @@ Object {
     },
     "title": "Question select multiple",
     "type": "select",
-    "value": null,
   },
   "questionSelectSliderThumb": Object {
     "description": "Informations supplémentaires",
@@ -166,7 +161,6 @@ Object {
       },
       Object {
         "text": "Null",
-        "value": null,
       },
     ],
     "metadata": Object {
@@ -194,7 +188,6 @@ Object {
       },
       Object {
         "text": "Null",
-        "value": null,
       },
     ],
     "metadata": Object {
@@ -222,7 +215,6 @@ Object {
     "title": "Question ?",
     "tooltip": "Texte d'aide",
     "type": "string",
-    "value": null,
   },
   "questionTextarea": Object {
     "description": "Informations supplémentaires",
@@ -236,7 +228,6 @@ Object {
     "title": "Question longue type textarea",
     "tooltip": "Texte d'aide",
     "type": "textarea",
-    "value": null,
   },
 }
 `;

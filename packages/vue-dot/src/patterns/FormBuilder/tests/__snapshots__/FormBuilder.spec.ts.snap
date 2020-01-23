@@ -222,7 +222,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     </p>
     <div class="layout ma-n3 wrap row vd-form-field">
       <div class="col-md-6 col-12">
-        <div class="v-menu" from="[object Object]" to="[object Object]">
+        <div class="v-menu" textfield="[object Object]">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
             <div class="v-input__control">
               <div class="v-input__slot">
@@ -245,7 +245,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
         </div>
       </div>
       <div class="col-md-6 col-12">
-        <div class="v-menu" from="[object Object]" to="[object Object]">
+        <div class="v-menu" datepicker="[object Object]" textfield="[object Object]">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
             <div class="v-input__control">
               <div class="v-input__slot">

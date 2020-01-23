@@ -13,9 +13,9 @@
 				v-model="dateFormatted"
 				v-mask="maskValue"
 				v-bind="options.textField"
-				:error-messages="options.errorMessages"
 				class="vd-date-picker-text-field"
 				:class="textFieldClasses"
+				:error-messages="errorMessages || options.textField.errorMessages"
 				:success-messages="options.textField.successMessages || successMessages"
 				:error.sync="internalErrorProp"
 				@blur="textFieldBlur"
@@ -72,7 +72,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import config from './config';
@@ -111,6 +111,11 @@
 			textFieldActivator: {
 				type: Boolean,
 				default: false
+			},
+			/** Open calendar menu when the text field is clicked */
+			errorMessages: {
+				type: Array as PropType<string[]>,
+				default: undefined
 			}
 		}
 	});

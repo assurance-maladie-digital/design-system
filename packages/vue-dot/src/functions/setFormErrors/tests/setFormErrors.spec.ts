@@ -2,16 +2,15 @@ import questionForm from '../../../patterns/FormBuilder/tests/data/questionForm'
 
 import { formErrors, questionErrors, form } from './data/formErrors';
 
-import setFormErrors from '..';
+import setFormErrors from '../';
 
 // Tests
 describe('setFormErrors', () => {
-	it('Set error messages on difference field type', () => {
+	it('sets error messages on different fields', () => {
 		expect(setFormErrors(questionErrors, questionForm)).toMatchSnapshot();
 	});
 
-	it('Don"t set an error on unknow field', () => {
+	it('doesn\'t sets an error on unknow field', () => {
 		expect(setFormErrors(formErrors, form)).toMatchSnapshot();
 	});
-
 });
