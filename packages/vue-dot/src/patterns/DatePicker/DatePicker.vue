@@ -5,7 +5,6 @@
 		v-model="menu"
 		v-bind="options.menu"
 	>
-		<!-- eslint-disable-next-line vue/no-unused-vars -->
 		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
 			<VTextField
@@ -112,7 +111,7 @@
 				type: Boolean,
 				default: false
 			},
-			/** Open calendar menu when the text field is clicked */
+			/** Vuetify errorMessages for textfield */
 			errorMessages: {
 				type: Array as PropType<string[]>,
 				default: undefined

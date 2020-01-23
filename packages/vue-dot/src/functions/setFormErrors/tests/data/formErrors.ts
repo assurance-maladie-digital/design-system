@@ -12,35 +12,11 @@ export const formErrors = {
 	}
 } as FormErrors;
 
-/** FromErrors related to question form */
+/** FormErrors related to question form */
 export const questionErrors = {
 	questionString: [
 		'error string 1',
 		'error string 2'
-	],
-	questionTextarea: [
-		'error textarea 1',
-		'error textarea 2'
-	],
-	questionNumber: [
-		'error number 1',
-		'error number 2'
-	],
-	questionSelect: [
-		'error select 1',
-		'error select 2'
-	],
-	questionSelectMultiple: [
-		'error select multiple 1',
-		'error select multiple 2'
-	],
-	questionSelectSliderTick: [
-		'error select slider 1',
-		'error select slider 2'
-	],
-	questionDate: [
-		'error date 1',
-		'error date 2'
 	],
 	questionPeriod: {
 		from: [

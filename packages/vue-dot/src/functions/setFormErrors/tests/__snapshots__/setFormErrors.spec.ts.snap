@@ -18,216 +18,31 @@ Object {
 
 exports[`setFormErrors sets error messages on different fields 1`] = `
 Object {
-  "questionAutocomplete": Object {
-    "description": "Informations supplémentaires",
-    "items": Array [
-      Object {
-        "text": "Abricot",
-        "value": 1,
-      },
-      Object {
-        "text": "Citron",
-        "value": 2,
-      },
-    ],
-    "metadata": Object {
-      "chips": true,
-      "label": "Votre réponse",
-      "menuProps": Object {
-        "offsetY": true,
-      },
-      "outlined": true,
-    },
-    "title": "Question avec complétion automatique",
-    "type": "autocomplete",
-  },
-  "questionDate": Object {
-    "description": "Informations supplémentaires",
-    "metadata": Object {
-      "appendIcon": true,
-      "errorMessages": Array [
-        "error date 1",
-        "error date 2",
-      ],
-      "textField": Object {
-        "hint": "Texte informatif",
-        "outlined": true,
-      },
-    },
-    "title": "Question",
-    "type": "date",
-  },
-  "questionNumber": Object {
-    "description": "Informations supplémentaires",
-    "metadata": Object {
-      "errorMessages": Array [
-        "error number 1",
-        "error number 2",
-      ],
-      "mask": "###-###",
-    },
-    "title": "Question nombre ?",
-    "type": "number",
-  },
   "questionPeriod": Object {
-    "description": "Informations supplémentaires",
     "metadata": Object {
       "from": Object {
-        "appendIcon": true,
         "errorMessages": Array [
           "Error questionPeriod 1",
           "Error questionPeriod 2",
         ],
-        "textField": Object {
-          "label": "Du",
-          "outlined": true,
-        },
       },
       "to": Object {
-        "appendIcon": true,
         "errorMessages": Array [
           "Error questionPeriod to 1",
           "Error questionPeriod to 2",
         ],
-        "textField": Object {
-          "label": "Au",
-          "outlined": true,
-        },
       },
     },
-    "title": "Question période",
     "type": "period",
   },
-  "questionSelect": Object {
-    "description": "Informations supplémentaires",
-    "items": Array [
-      Object {
-        "text": "Abricot",
-        "value": 1,
-      },
-      Object {
-        "text": "Citron",
-        "value": 2,
-      },
-    ],
-    "metadata": Object {
-      "chips": true,
-      "errorMessages": Array [
-        "error select 1",
-        "error select 2",
-      ],
-      "label": "Votre réponse",
-      "menuProps": Object {
-        "offsetY": true,
-      },
-      "outlined": true,
-    },
-    "title": "Question select",
-    "type": "select",
-  },
-  "questionSelectMultiple": Object {
-    "description": "Informations supplémentaires",
-    "items": Array [
-      Object {
-        "text": "Abricot",
-        "value": 1,
-      },
-      Object {
-        "text": "Citron",
-        "value": 2,
-      },
-    ],
-    "metadata": Object {
-      "errorMessages": Array [
-        "error select multiple 1",
-        "error select multiple 2",
-      ],
-      "multiple": true,
-      "outlined": true,
-    },
-    "title": "Question select multiple",
-    "type": "select",
-  },
-  "questionSelectSliderThumb": Object {
-    "description": "Informations supplémentaires",
-    "items": Array [
-      Object {
-        "text": "Abricot",
-        "value": 11,
-      },
-      Object {
-        "text": "Citron",
-        "value": "citron",
-      },
-      Object {
-        "text": "Null",
-      },
-    ],
-    "metadata": Object {
-      "thumbLabel": true,
-      "thumbSize": 60,
-      "tickSize": 7,
-      "ticks": "always",
-      "type": "choiceSlider",
-    },
-    "title": "Question select slider thumb",
-    "tooltip": "Texte d'aide",
-    "type": "select",
-    "value": "value2",
-  },
-  "questionSelectSliderTick": Object {
-    "description": "Informations supplémentaires",
-    "items": Array [
-      Object {
-        "text": "Abricot",
-        "value": 11,
-      },
-      Object {
-        "text": "Citron",
-        "value": "citron",
-      },
-      Object {
-        "text": "Null",
-      },
-    ],
-    "metadata": Object {
-      "errorMessages": Array [
-        "error select slider 1",
-        "error select slider 2",
-      ],
-      "type": "choiceSlider",
-    },
-    "title": "Question select slider",
-    "tooltip": "Texte d'aide",
-    "type": "select",
-    "value": "value2",
-  },
   "questionString": Object {
-    "description": "Informations supplémentaires",
     "metadata": Object {
       "errorMessages": Array [
         "error string 1",
         "error string 2",
       ],
-      "label": "Label du champ",
-      "outlined": true,
     },
-    "title": "Question ?",
-    "tooltip": "Texte d'aide",
     "type": "string",
-  },
-  "questionTextarea": Object {
-    "description": "Informations supplémentaires",
-    "metadata": Object {
-      "errorMessages": Array [
-        "error textarea 1",
-        "error textarea 2",
-      ],
-      "outlined": true,
-    },
-    "title": "Question longue type textarea",
-    "tooltip": "Texte d'aide",
-    "type": "textarea",
   },
 }
 `;
