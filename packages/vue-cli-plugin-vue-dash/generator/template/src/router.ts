@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import VueRouter from 'vue-router';
 import VueMeta from 'vue-meta';
 <% if (i18n) { %>
@@ -77,8 +78,9 @@ router.beforeEach((to, from, next) => {
 	// Remove notification
 	store.dispatch('notification/rmNotif');
 
-	<% if (i18n) { %>// Resolve translations before each navigation
-	const lang = i18n.locale;
+	<% if (i18n) { %>const lang = i18n.locale;
+
+	// Resolve translations before each navigation
 	loadLanguageAsync(lang).then(() => {
 		if (MAINTENANCE === 'true') {
 			// Avoid infinite loop
