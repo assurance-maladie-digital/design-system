@@ -65,14 +65,15 @@ export default {
 		description: 'Informations supplémentaires',
 		value: null,
 		metadata: {
-			appendIcon: true,
 			from: {
+				appendIcon: true,
 				textField: {
 					label: 'Du',
 					outlined: true
 				}
 			},
 			to: {
+				appendIcon: true,
 				textField: {
 					label: 'Au',
 					outlined: true

@@ -5,8 +5,7 @@
 		v-model="menu"
 		v-bind="options.menu"
 	>
-		<!-- eslint-disable-next-line vue/no-unused-vars -->
-		<template #activator="{ on }">
+		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
@@ -15,6 +14,7 @@
 				v-bind="options.textField"
 				class="vd-date-picker-text-field"
 				:class="textFieldClasses"
+				:error-messages="errorMessages || options.textField.errorMessages"
 				:success-messages="options.textField.successMessages || successMessages"
 				:error.sync="internalErrorProp"
 				@blur="textFieldBlur"
@@ -71,7 +71,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import config from './config';
@@ -110,6 +110,11 @@
 			textFieldActivator: {
 				type: Boolean,
 				default: false
+			},
+			/** Vuetify errorMessages for textfield */
+			errorMessages: {
+				type: Array as PropType<string[]>,
+				default: undefined
 			}
 		}
 	});
