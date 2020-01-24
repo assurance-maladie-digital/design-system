@@ -28,7 +28,7 @@
 	import FieldComponent from '../mixins/fieldComponent';
 	import { FieldValue } from '../types';
 
-	/** Choice field type slider*/
+	/** Choice field type slider */
 	@Component
 	export default class ChoiceSliderField extends FieldComponent {
 		/** Get the index of the selected item by value
@@ -41,7 +41,7 @@
 				return null;
 			}
 
-			return this.field.items.findIndex(item => item.value === value);
+			return this.field.items.findIndex((item) => item.value === value);
 		}
 
 		get thumbLabel() {
@@ -61,7 +61,7 @@
 		/** The ticks labels */
 		get labels() {
 			if (this.field.items && this.field.metadata) {
-				const labels = this.field.items.map(item => item.text);
+				const labels = this.field.items.map((item) => item.text);
 
 				return labels;
 			}

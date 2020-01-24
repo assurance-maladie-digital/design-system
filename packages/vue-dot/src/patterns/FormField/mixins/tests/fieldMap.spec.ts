@@ -26,6 +26,6 @@ describe('fieldMap', () => {
 	it('gets a field component', () => {
 		const wrapper = createWrapper();
 
-		expect(typeof wrapper.vm.getField('string')).toBe('string');
+		expect(typeof wrapper.vm.getField('text')).toBe('string');
 	});
 });

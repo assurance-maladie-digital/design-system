@@ -6,7 +6,7 @@ exports[`FormBuilder renders correctly 1`] = `
     <div class="v-input vd-form-field theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-7" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de voie</label><input id="input-7" type="string"></div>
+          <div class="v-text-field__slot"><label for="input-7" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de voie</label><input id="input-7" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -222,7 +222,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     </p>
     <div class="layout ma-n3 wrap row vd-form-field">
       <div class="col-md-6 col-12">
-        <div class="v-menu" from="[object Object]" to="[object Object]">
+        <div class="v-menu" textfield="[object Object]">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
             <div class="v-input__control">
               <div class="v-input__slot">
@@ -245,7 +245,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
         </div>
       </div>
       <div class="col-md-6 col-12">
-        <div class="v-menu" from="[object Object]" to="[object Object]">
+        <div class="v-menu" datepicker="[object Object]" textfield="[object Object]">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
             <div class="v-input__control">
               <div class="v-input__slot">

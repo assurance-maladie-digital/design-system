@@ -6,7 +6,7 @@ export default {
 		value: null,
 		mask: '#####',
 		metadata: {
-			type: 'string',
+			type: 'text',
 			label: 'Numéro de voie'
 		}
 	},
@@ -36,14 +36,14 @@ export default {
 		}
 	},
 	streetLabel: {
-		type: 'string',
+		type: 'text',
 		value: null,
 		metadata: {
 			label: 'Libellé de la voie'
 		}
 	},
 	streetComplement: {
-		type: 'string',
+		type: 'text',
 		value: null,
 		metadata: {
 			label: 'Complément d\'adresse'
@@ -58,7 +58,7 @@ export default {
 		}
 	},
 	city: {
-		type: 'string',
+		type: 'text',
 		value: null,
 		metadata: {
 			label: 'Ville'

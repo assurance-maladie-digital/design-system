@@ -40,7 +40,9 @@
 		 * @returns {string} The field type
 		 */
 		getFieldType(): string {
-			return this.getField(this.field.metadata.type || this.field.type);
+			const metadataType = this.field.metadata ? this.field.metadata.type as string : undefined;
+
+			return this.getField(metadataType || this.field.type);
 		}
 
 		get field() {

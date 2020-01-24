@@ -41,7 +41,7 @@ export default class FieldMap extends Vue {
 		period: 'PeriodField',
 		select: 'SelectField',
 		choiceSlider: 'ChoiceSliderField',
-		string: 'TextField',
+		text: 'TextField',
 		textarea: 'TextareaField'
 	};
 
