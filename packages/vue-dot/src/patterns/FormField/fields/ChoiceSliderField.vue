@@ -3,6 +3,7 @@
 		v-if="field.items"
 		v-bind="field.metadata"
 		color="accent"
+		track-color="grey lighten-1"
 		class="mt-5"
 		:value="getIndex(field.value)"
 		:thumb-label="thumbLabel"
@@ -10,6 +11,22 @@
 		:max="field.items.length - 1"
 		@change="valueUpdated"
 	>
+		<template
+			v-if="isThumbLabel"
+			#prepend
+		>
+			<span>
+				{{ labelMin }}
+			</span>
+		</template>
+		<template
+			v-if="isThumbLabel"
+			#append
+		>
+			<span>
+				{{ labelMax }}
+			</span>
+		</template>
 		<template
 			v-if="thumbLabel"
 			#thumb-label="{ value }"
@@ -42,6 +59,14 @@
 			}
 
 			return this.field.items.findIndex((item) => item.value === value);
+		}
+
+		get labelMin() {
+			return this.field.metadata && this.field.metadata.labelMin ? this.field.metadata.labelMin : this.labels[0];
+		}
+
+		get labelMax() {
+			return this.field.metadata && this.field.metadata.labelMax ? this.field.metadata.labelMax : this.labels[this.labels.length-1];
 		}
 
 		get thumbLabel() {

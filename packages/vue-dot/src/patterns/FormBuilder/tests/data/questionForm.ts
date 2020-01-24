@@ -2,15 +2,19 @@ import { Form } from '../../types';
 
 const defaultItems = [
 	{
-		text: 'Abricot',
-		value: 11
+		text: '9h',
+		value: 9
 	},
 	{
-		text: 'Citron',
-		value: 'citron'
+		text: '9h30',
+		value: '9.30'
 	},
 	{
-		text: 'Null',
+		text: '10h',
+		value: 10
+	},
+	{
+		text: '10h30',
 		value: null
 	}
 ];
@@ -145,9 +149,20 @@ export default {
 		items: defaultItems,
 		metadata: {
 			type: 'choiceSlider',
-			ticks: 'always',
-			tickSize: 7,
-			thumbSize: 60,
+			thumbLabel: true
+		}
+	},
+	questionSelectSliderThumbLabel: {
+		type: 'select',
+		title: 'Question select slider thumb with custom label',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: 'value2',
+		items: defaultItems,
+		metadata: {
+			labelMin: 'min',
+			labelMax: 'max',
+			type: 'choiceSlider',
 			thumbLabel: true
 		}
 	},

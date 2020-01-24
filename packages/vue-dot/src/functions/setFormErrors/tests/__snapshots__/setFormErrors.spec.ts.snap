@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`setFormErrors doesn't sets an error on unknow field 1`] = `
+exports[`setFormErrors doesn't sets an error on unknown field 1`] = `
 Object {
   "questionPeriod": Object {
     "metadata": Object {
