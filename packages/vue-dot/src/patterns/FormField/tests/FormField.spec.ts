@@ -9,7 +9,7 @@ import FormField from '../FormField.vue';
 let wrapper: Wrapper<Vue>;
 
 const testField = {
-	type: 'string',
+	type: 'text',
 	value: null,
 	metadata: {
 		label: 'Classic field',

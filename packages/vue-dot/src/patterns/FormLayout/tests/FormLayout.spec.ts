@@ -12,7 +12,7 @@ import FormLayout from '../FormLayout.vue';
 let wrapper: Wrapper<Vue>;
 
 const testField: ComputedField = {
-	type: 'string',
+	type: 'text',
 	value: null,
 	name: 'field1'
 };

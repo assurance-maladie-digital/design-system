@@ -6,7 +6,7 @@ import { Field } from '../../../FormField/types';
 import layoutComponent from '../layoutComponent';
 
 const testFieldString = {
-	type: 'string',
+	type: 'text',
 	value: null
 };
 
