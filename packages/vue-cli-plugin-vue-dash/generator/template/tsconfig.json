@@ -3,7 +3,7 @@
 		// Always transpile to ES5
 		"target": "es5",
 		"module": "esnext",
-		// Strict type-Checking
+		// Strict type-checking
 		"strict": true,
 		// Node.js resolution strategy
 		"moduleResolution": "node",

@@ -91,7 +91,7 @@ module.exports = {
 			}
 		},
 		{
-			files: ['*.vue'],
+			files: ['*.vue', '*.js'],
 			rules: {
 				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
 				// does not work with type definitions

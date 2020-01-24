@@ -33,7 +33,7 @@ module.exports = {
 		'!**/translations/**'
 	],
 	transformIgnorePatterns: [
-		'./node_modules/(?!vuetify)'
+		'./node_modules/(?!vuetify|@cnamts/vue-dot)'
 	],
 	globals: {
 		API_URL: 'http://localhost:8080',
