@@ -17,7 +17,7 @@ const defaultItems = [
 
 export default {
 	questionString: {
-		type: 'string',
+		type: 'text',
 		title: 'Question ?',
 		description: 'Informations supplémentaires',
 		tooltip: 'Texte d\'aide',

@@ -9,7 +9,7 @@ Object {
   "password": "PasswordField",
   "period": "PeriodField",
   "select": "SelectField",
-  "string": "TextField",
+  "text": "TextField",
   "textarea": "TextareaField",
 }
 `;

@@ -11,7 +11,7 @@ Object {
     "type": "period",
   },
   "questionString": Object {
-    "type": "string",
+    "type": "text",
   },
 }
 `;
@@ -42,7 +42,7 @@ Object {
         "error string 2",
       ],
     },
-    "type": "string",
+    "type": "text",
   },
 }
 `;

@@ -6,7 +6,7 @@ export const formNull = {
 		value: null,
 		mask: '#####',
 		metadata: {
-			type: 'string',
+			type: 'text',
 			label: 'Numéro de voie'
 		}
 	},
@@ -23,7 +23,7 @@ export const formNull = {
 		}
 	},
 	streetLabel: {
-		type: 'string',
+		type: 'text',
 		value: null,
 		metadata: {
 			label: 'Libellé de la voie'
@@ -47,7 +47,7 @@ export const formNotNull = {
 		]
 	},
 	streetLabel: {
-		type: 'string',
+		type: 'text',
 		value: 'streetLabel'
 	}
 } as Form;

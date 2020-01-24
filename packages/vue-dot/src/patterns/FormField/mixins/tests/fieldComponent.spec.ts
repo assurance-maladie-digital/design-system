@@ -6,7 +6,7 @@ import { Field } from '../../types';
 import fieldComponent from '../fieldComponent';
 
 const testField = {
-	type: 'string',
+	type: 'text',
 	value: null,
 	metadata: {
 		label: 'Field',

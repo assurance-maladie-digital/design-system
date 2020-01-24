@@ -32,7 +32,7 @@ export const questionErrors = {
 
 export const form = {
 	questionString: {
-		type: 'string'
+		type: 'text'
 	},
 	questionPeriod: {
 		type: 'period'
