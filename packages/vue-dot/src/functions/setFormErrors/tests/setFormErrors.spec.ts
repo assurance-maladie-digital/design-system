@@ -8,7 +8,7 @@ describe('setFormErrors', () => {
 		expect(setFormErrors(questionErrors, form)).toMatchSnapshot();
 	});
 
-	it('doesn\'t sets an error on unknow field', () => {
+	it('doesn\'t sets an error on unknown field', () => {
 		expect(setFormErrors(formErrors, form)).toMatchSnapshot();
 	});
 });

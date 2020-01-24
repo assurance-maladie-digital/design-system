@@ -111,7 +111,7 @@
 				type: Boolean,
 				default: false
 			},
-			/** Vuetify errorMessages for textfield */
+			/** Vuetify errorMessages for VTextField */
 			errorMessages: {
 				type: Array as PropType<string[]>,
 				default: undefined

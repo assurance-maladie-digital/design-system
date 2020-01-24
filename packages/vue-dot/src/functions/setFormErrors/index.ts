@@ -11,14 +11,15 @@ import deepCopy from '../../helpers/deepCopy';
  * @returns {Form} The form modified with errorsMessages
  */
 export default function setFormErrors(formErrors: FormErrors, form: Form): Form {
-	let newform = deepCopy(form);
+	const newForm = deepCopy(form);
+
 	// For each field in error
 	for (const [fieldName, errors] of Object.entries(formErrors)) {
-		if (!newform[fieldName] || !errors) {
+		if (!newForm[fieldName] || !errors) {
 			continue;
 		}
 
-		let fieldMetadata = newform[fieldName].metadata || {};
+		const fieldMetadata = newForm[fieldName].metadata || {};
 
 		// If the field exists in our form and we
 		// have errors to set, set errors
@@ -41,8 +42,8 @@ export default function setFormErrors(formErrors: FormErrors, form: Form): Form 
 		}
 
 		// Set the new field metadata to the form
-		newform[fieldName].metadata = fieldMetadata;
+		newForm[fieldName].metadata = fieldMetadata;
 	}
 
-	return newform;
+	return newForm;
 }
