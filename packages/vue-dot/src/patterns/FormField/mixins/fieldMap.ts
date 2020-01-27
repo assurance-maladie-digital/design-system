@@ -44,7 +44,7 @@ export default class FieldMap extends Vue {
 		select: 'SelectField',
 		choiceButton: 'ChoiceButtonField',
 		choiceSlider: 'ChoiceSliderField',
-		string: 'TextField',
+		text: 'TextField',
 		textarea: 'TextareaField'
 	};
 

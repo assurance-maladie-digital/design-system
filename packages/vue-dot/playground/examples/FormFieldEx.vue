@@ -13,7 +13,7 @@
 	@Component
 	export default class FormFieldEx extends Vue {
 		field: Field = {
-			type: 'string',
+			type: 'text',
 			value: null,
 			metadata: {
 				label: 'Votre nom'
