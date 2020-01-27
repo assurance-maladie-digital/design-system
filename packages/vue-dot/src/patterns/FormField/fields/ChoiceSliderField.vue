@@ -19,6 +19,7 @@
 				{{ labelMin }}
 			</span>
 		</template>
+
 		<template
 			v-if="isThumbLabel"
 			#append
@@ -27,6 +28,7 @@
 				{{ labelMax }}
 			</span>
 		</template>
+
 		<template
 			v-if="thumbLabel"
 			#thumb-label="{ value }"
@@ -61,12 +63,24 @@
 			return this.field.items.findIndex((item) => item.value === value);
 		}
 
-		get labelMin() {
-			return this.field.metadata && this.field.metadata.labelMin ? this.field.metadata.labelMin : this.labels[0];
+		get labelMin(): string {
+			// Check if there is a custom labelMin prop in metadata
+			if (this.field.metadata && this.field.metadata.labelMin) {
+				return this.field.metadata.labelMin;
+			}
+
+			// The default value is the first the label
+			return this.labels[0];
 		}
 
-		get labelMax() {
-			return this.field.metadata && this.field.metadata.labelMax ? this.field.metadata.labelMax : this.labels[this.labels.length-1];
+		get labelMax(): string {
+			// Check if there is a custom labelMax prop in metadata
+			if (this.field.metadata && this.field.metadata.labelMax) {
+				return this.field.metadata.labelMax;
+			}
+
+			// The default value is the last the label
+			return this.labels[this.labels.length - 1];
 		}
 
 		get thumbLabel() {
@@ -74,7 +88,7 @@
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */
-		get thickLabels() {
+		get thickLabels(): string[] {
 			return !this.isThumbLabel ? this.labels : [];
 		}
 
@@ -84,7 +98,7 @@
 		}
 
 		/** The ticks labels */
-		get labels() {
+		get labels(): string[] {
 			if (this.field.items && this.field.metadata) {
 				const labels = this.field.items.map((item) => item.text);
 
@@ -94,6 +108,11 @@
 			return [];
 		}
 
+		/**
+		 * Emmit the value of the item's index selected
+		 *
+		 * @param {number} index The index of the selected item
+		 */
 		valueUpdated(index: number) {
 			let fieldValue = null;
 
@@ -101,7 +120,7 @@
 				fieldValue = this.field.items[index].value;
 			}
 
-			return this.emitChangeEvent(fieldValue);
+			this.emitChangeEvent(fieldValue);
 		}
 	}
 </script>
