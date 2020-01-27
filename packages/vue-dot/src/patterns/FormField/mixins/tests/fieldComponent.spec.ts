@@ -32,13 +32,13 @@ function createWrapper(field: Field) {
 
 // Tests
 describe('fieldComponent', () => {
-	it('emits change event', () => {
+	it('emits change event', async() => {
 		const wrapper = createWrapper(testField);
 
 		wrapper.vm.emitChangeEvent(testField.value);
 
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toBeTruthy();
-		});
+		await Vue.nextTick();
+
+		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 });
