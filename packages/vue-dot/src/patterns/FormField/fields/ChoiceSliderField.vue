@@ -63,7 +63,7 @@
 			return this.field.items.findIndex((item) => item.value === value);
 		}
 
-		get labelMin(): string {
+		get labelMin() {
 			// Check if there is a custom labelMin prop in metadata
 			if (this.field.metadata && this.field.metadata.labelMin) {
 				return this.field.metadata.labelMin;
@@ -73,7 +73,7 @@
 			return this.labels[0];
 		}
 
-		get labelMax(): string {
+		get labelMax() {
 			// Check if there is a custom labelMax prop in metadata
 			if (this.field.metadata && this.field.metadata.labelMax) {
 				return this.field.metadata.labelMax;
@@ -88,7 +88,7 @@
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */
-		get thickLabels(): string[] {
+		get thickLabels() {
 			return !this.isThumbLabel ? this.labels : [];
 		}
 
@@ -98,7 +98,7 @@
 		}
 
 		/** The ticks labels */
-		get labels(): string[] {
+		get labels() {
 			if (this.field.items && this.field.metadata) {
 				const labels = this.field.items.map((item) => item.text);
 
