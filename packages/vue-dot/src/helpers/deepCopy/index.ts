@@ -4,7 +4,7 @@
  * @param {any} o The value to copy
  * @returns {any} The copied value (can be typed if needed)
  */
-export default function deepCopy<T = any>(o: any): T {
+export function deepCopy<T = any>(o: any): T {
 	let copy = o;
 	let k;
 

@@ -3,7 +3,7 @@ import Component, { mixins } from 'vue-class-component';
 
 import dayjs from 'dayjs';
 
-import parseDate from '../../../helpers/parseDate';
+import { parseDate } from '../../../helpers/parseDate';
 import { DATE_FORMAT_REGEX } from '../../../rules/isDateValid/checkIfDateValid';
 
 import { Options } from '../../../mixins/customizable';
@@ -73,7 +73,7 @@ const MixinsDeclaration = mixins(Props);
 		}
 	}
 })
-export default class DateLogic extends MixinsDeclaration {
+export class DateLogic extends MixinsDeclaration {
 	// Extend $refs
 	$refs!: Refs<{
 		/** VMenu */

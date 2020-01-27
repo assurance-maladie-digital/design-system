@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import VueDot from '../../src';
 
 import { getComponents, getDirectives } from './utils';

@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import registerDirectives from '../../src/directives';
 
 import { getDirectives } from './utils';

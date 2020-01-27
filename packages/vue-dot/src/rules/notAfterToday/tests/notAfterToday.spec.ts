@@ -1,6 +1,6 @@
-import notAfterToday, { notAfterToday as notAfterTodayFn } from '../';
-
 import dayjs from 'dayjs';
+
+import { notAfterToday, notAfterTodayFn } from '../';
 
 const DATE_FORMAT = 'DD/MM/YYYY';
 

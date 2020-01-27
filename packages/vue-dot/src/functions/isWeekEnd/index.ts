@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
  *
  * @param {string} date The date to check (must be a valid dayjs format)
  */
-export default function isWeekEnd(date: string) {
+export function isWeekEnd(date: string) {
 	/* The name of the day of the week */
 	const day = dayjs(date).format('dddd');
 

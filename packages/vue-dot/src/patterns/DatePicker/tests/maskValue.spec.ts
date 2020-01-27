@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import maskValue from '../mixins/maskValue';
+import { MaskValue } from '../mixins/maskValue';
 
 interface TestComponent extends Vue {
 	mask: string | boolean;
@@ -13,7 +13,7 @@ interface TestComponent extends Vue {
 function createWrapper(mask?: string | boolean, dateFormat?: string) {
 	const component = Vue.component('test', {
 		mixins: [
-			maskValue
+			MaskValue
 		],
 		template: '<div />'
 	});
@@ -29,7 +29,7 @@ function createWrapper(mask?: string | boolean, dateFormat?: string) {
 }
 
 // Tests
-describe('maskValue', () => {
+describe('MaskValue', () => {
 	it('computes a mask from dateFormat if mask prop is empty', () => {
 		const wrapper = createWrapper(undefined, 'YYYY-DD-MM');
 

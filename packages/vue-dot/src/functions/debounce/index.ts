@@ -4,7 +4,7 @@
  * @param {Function} callback The function called after debounce
  * @param {number} [time=500] The interval of the debounce in milliseconds
  */
-export default function debounce(callback: (args: IArguments) => void, time: number = 500): () => void {
+export function debounce(callback: (args: IArguments) => void, time: number = 500): () => void {
 	let interval: NodeJS.Timeout | null;
 
 	return () => {

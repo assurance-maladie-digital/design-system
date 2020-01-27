@@ -1,6 +1,6 @@
 import { mockProcessStdout } from 'jest-mock-process';
 
-import traceLine from '@/traceLine';
+import { traceLine } from '@/traceLine';
 
 describe('traceLine', () => {
 	let mockStdout: jest.SpyInstance;

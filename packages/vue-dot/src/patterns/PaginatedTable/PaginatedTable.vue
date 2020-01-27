@@ -34,7 +34,7 @@
 
 	import { Options } from './types';
 
-	import LocalStorageUtility from '../../helpers/localStorageUtility';
+	import { LocalStorageUtility } from '../../helpers/localStorageUtility';
 
 	const Props = Vue.extend({
 		props: {

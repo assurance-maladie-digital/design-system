@@ -1,4 +1,4 @@
-import deepCopy from '../';
+import { deepCopy } from '../';
 
 // Tests
 describe('deepCopy', () => {
