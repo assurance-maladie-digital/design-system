@@ -21,60 +21,66 @@ import FieldComponent from './fieldComponent';
 })
 export default class ChoiceField extends FieldComponent {
 
-	choiceValue: ChoiceValue = this.isMultiple ? [] : undefined;
+	choiceValue?: ChoiceValue;
 
 	get isMultiple(){
 		return this.field && this.field.metadata && this.field.metadata.multiple;
 	}
 
 	/**
-	 * toggle the item
+	 * Toggle the item
 	 *
-	 * @param {FieldItem} item the selected item
-	 * @param {boolean} active is selected or not
+	 * @param {FieldItem} item The selected item
+	 * @param {boolean} active Is selected or not
 	 */
 	toggleItem(item: FieldItem, active: boolean) {
 
 		/**
-		 * items must be an array
+		 * Items must be an array
+		 * Item value must be defined
 		 */
 		if(!Array.isArray(this.field.items)) return;
 
-		// set the new value in simple mode
+		// Set the new value in simple mode
 		if(!this.isMultiple) {
 			this.choiceValue = active ? undefined : item.value;
 		} else if (active && Array.isArray(this.choiceValue)) {
-			// unselect the item
+			// Unselect the item
 			const valueIndex = this.choiceValue.indexOf(item.value);
 			this.choiceValue.splice(valueIndex,1);
-		} else if (Array.isArray(this.choiceValue)) {
+		} else {
 
-			// can't select a null value in multiple mode
-			if(!item.value) return;
+			// Can't select a null value in multiple mode
+			if (!item.value) return;
+
+			// Init choiceValue as array if not
+			if (!Array.isArray(this.choiceValue)) {
+				this.choiceValue = [];
+			}
 
 			const isAlone: boolean = item.alone || false;
 
-			// if item alone, unselect all other
+			// If item alone, unselect all other
 			if (isAlone) {
 				this.choiceValue = [item.value];
 			} else {
-				// else unselect all alone
+				// Else unselect all alone
 				let index = this.choiceValue.length - 1;
 				while (index >= 0) {
 					const valueSelected = this.choiceValue[index];
-					// search if the item is alone
+					// Search if the item is alone
 					if (
 						this.field.items.find((element) => {
 							return element.value === valueSelected && element.alone;
 						})
 					) {
-						// delete alone item
+						// Delete alone item
 						this.choiceValue.splice(index, 1);
 					}
 
 					index -= 1;
 				}
-				// add the item to the selection
+				// Add the item to the selection
 				this.choiceValue.push(item.value);
 			}
 		}

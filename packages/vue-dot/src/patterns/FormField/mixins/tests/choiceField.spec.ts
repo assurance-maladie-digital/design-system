@@ -77,6 +77,24 @@ describe('choiceField', () => {
 		wrapper.vm.toggleItem(testField.items[4], true);
 	});
 
+	it('test select and unselect item', () => {
+		const wrapper = createWrapper({
+			...testField
+		});
+
+		// test select button 0
+		wrapper.vm.toggleItem(testField.items[0], false);
+		wrapper.vm.$nextTick(() => {
+			expect(wrapper.emitted('change')).toEqual('value1');
+		});
+
+		// test unselect button 0
+		wrapper.vm.toggleItem(testField.items[0], true);
+		wrapper.vm.$nextTick(() => {
+			expect(wrapper.emitted('change')).toEqual(undefined);
+		});
+	});
+
 	it('test select item with value null in multiple', () => {
 		const wrapper = createWrapper({
 			...testField,

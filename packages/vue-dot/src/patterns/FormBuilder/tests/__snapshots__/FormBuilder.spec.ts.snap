@@ -339,7 +339,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-156" readonly="readonly" tabindex="-1" type="choiceSlider">
+          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-160" readonly="readonly" tabindex="-1" type="choiceSlider">
             <div class="v-slider__track-container">
               <div class="v-slider__track-background primary lighten-3" style="right: 0px;"></div>
               <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -364,7 +364,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-167" readonly="readonly" tabindex="-1" type="choiceSlider">
+          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-171" readonly="readonly" tabindex="-1" type="choiceSlider">
             <div class="v-slider__track-container">
               <div class="v-slider__track-background primary lighten-3" style="right: 0px;"></div>
               <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -397,18 +397,12 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     </p>
     <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
       <div class="v-input__control">
-        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-156" class="v-input__slot">
+        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-179" class="v-input__slot">
           <fieldset aria-hidden="true">
             <legend style="width: 0px;"><span>​</span></legend>
           </fieldset>
-          <div class="v-select__slot"><label for="input-156" class="v-label theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-            <div class="v-select__selections"><input id="input-156" type="text" autocomplete="off"></div>
-        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-175" class="v-input__slot">
-          <fieldset aria-hidden="true">
-            <legend style="width: 0px;"><span>​</span></legend>
-          </fieldset>
-          <div class="v-select__slot"><label for="input-175" class="v-label theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-            <div class="v-select__selections"><input id="input-175" type="text" autocomplete="off"></div>
+          <div class="v-select__slot"><label for="input-179" class="v-label theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+            <div class="v-select__selections"><input id="input-179" type="text" autocomplete="off"></div>
             <div class="v-input__append-inner">
               <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
             </div><input type="hidden">
@@ -450,11 +444,6 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
           <!---->
           </span></button><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 						seul 2
-					</span>
-          <div class="spacer"></div>
-          <!---->
-          </span></button><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
-						null value
 					</span>
           <div class="spacer"></div>
           <!---->

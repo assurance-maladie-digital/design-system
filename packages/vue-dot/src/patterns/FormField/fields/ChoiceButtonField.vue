@@ -4,7 +4,7 @@
 			:value="choiceValue"
 			v-bind="field.metadata"
 		>
-			<template v-for="(item, index) in field.items">
+			<template v-for="(item, index) in filterItems">
 				<VItem
 					#default="{ active }"
 					:key="index"
@@ -56,5 +56,17 @@
 	@Component
 	export default class ChoiceButtonField extends ChoiceField {
 		checkIcon = mdiCheck;
+
+		/**
+		 * Filter items with value only
+		 */
+		get filterItems() {
+			if(!Array.isArray(this.field.items)) {
+				return [];
+			}
+			return this.field.items.filter((item) => {
+				return item.value ? true : false;
+			});
+		}
 	}
 </script>
