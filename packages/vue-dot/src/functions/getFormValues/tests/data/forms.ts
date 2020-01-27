@@ -14,9 +14,9 @@ export const formNull = {
 		type: 'select',
 		value: null,
 		items: [
-			'bis',
-			'ter',
-			'quater'
+			{ text: 'bis', value: 1 },
+			{ text: 'ter', value: 2 },
+			{ text: 'quarter', value: 3 }
 		],
 		metadata: {
 			label: 'Complément de voie'
@@ -41,9 +41,9 @@ export const formNotNull = {
 		type: 'select',
 		value: 'bis',
 		items: [
-			'bis',
-			'ter',
-			'quater'
+			{ text: 'bis', value: 1 },
+			{ text: 'ter', value: 2 },
+			{ text: 'quarter', value: 3 }
 		]
 	},
 	streetLabel: {

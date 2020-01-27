@@ -20,10 +20,9 @@ import FieldComponent from './fieldComponent';
 	}
 })
 export default class ChoiceField extends FieldComponent {
-
 	choiceValue?: ChoiceValue;
 
-	get isMultiple(){
+	get isMultiple() {
 		return this.field && this.field.metadata && this.field.metadata.multiple;
 	}
 
@@ -34,16 +33,16 @@ export default class ChoiceField extends FieldComponent {
 	 * @param {boolean} active Is selected or not
 	 */
 	toggleItem(item: FieldItem, active: boolean) {
-
 		/**
 		 * Items must be an array
 		 * Item value must be defined
 		 */
-		if(!Array.isArray(this.field.items)) return;
-
+		if (!Array.isArray(this.field.items)) {
+			return;
+		}
 		// Set the new value in simple mode
-		if(!this.isMultiple) {
-			this.choiceValue = active ? undefined : item.value;
+		if (!this.isMultiple) {
+			this.choiceValue = active ? null : item.value;
 		} else if (active && Array.isArray(this.choiceValue)) {
 			// Unselect the item
 			const valueIndex = this.choiceValue.indexOf(item.value);
@@ -51,14 +50,15 @@ export default class ChoiceField extends FieldComponent {
 		} else {
 
 			// Can't select a null value in multiple mode
-			if (!item.value) return;
-
+			if (!item.value) {
+				return;
+			}
 			// Init choiceValue as array if not
 			if (!Array.isArray(this.choiceValue)) {
 				this.choiceValue = [];
 			}
 
-			const isAlone: boolean = item.alone || false;
+			const isAlone: boolean = Boolean(item.alone);
 
 			// If item alone, unselect all other
 			if (isAlone) {
@@ -69,10 +69,11 @@ export default class ChoiceField extends FieldComponent {
 				while (index >= 0) {
 					const valueSelected = this.choiceValue[index];
 					// Search if the item is alone
+					const isItemSelectedAlone = this.field.items.find((element) => {
+						return element.value === valueSelected && element.alone;
+					});
 					if (
-						this.field.items.find((element) => {
-							return element.value === valueSelected && element.alone;
-						})
+						isItemSelectedAlone
 					) {
 						// Delete alone item
 						this.choiceValue.splice(index, 1);

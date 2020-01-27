@@ -65,7 +65,7 @@
 				return [];
 			}
 			return this.field.items.filter((item) => {
-				return item.value ? true : false;
+				return Boolean(item.value);
 			});
 		}
 	}

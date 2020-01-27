@@ -3,7 +3,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import { Field } from '../../types';
 
-import choiceField from '../choiceField';
+import ChoiceField from '../choiceField';
 
 const testField = {
 	type: 'choice',
@@ -37,7 +37,7 @@ const testField = {
 function createWrapper(field: Field) {
 	const component = Vue.component('test', {
 		mixins: [
-			choiceField
+			ChoiceField
 		],
 		template: '<div />'
 	});
@@ -46,12 +46,154 @@ function createWrapper(field: Field) {
 		propsData: {
 			field
 		}
-	}) as Wrapper<choiceField>;
+	}) as Wrapper<ChoiceField>;
 }
 
 // Tests
 describe('choiceField', () => {
-	it('test items null', () => {
+	it('test select item value not null', async() => {
+		const wrapper = createWrapper({
+			...testField
+		});
+
+		// Test select button 0
+		wrapper.vm.toggleItem(testField.items[0], false);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		expect(changedEvent.value).toEqual(testField.items[0].value);
+	});
+
+	it('test select item value null', async() => {
+		const wrapper = createWrapper({
+			...testField
+		});
+
+		// Test select null value
+		wrapper.vm.toggleItem(testField.items[4], false);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		expect(changedEvent.value).toEqual(null);
+	});
+
+	it('test unselect item', async() => {
+		const wrapper = createWrapper({
+			...testField,
+			value: 'value1'
+		});
+		// Test unselect button 0
+		wrapper.vm.toggleItem(testField.items[0], true);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		expect(changedEvent.value).toEqual(null);
+	});
+
+	it('test select multiple items in multiple', async() => {
+		const wrapper = createWrapper({
+			...testField,
+			metadata: {
+				multiple: true
+			}
+		});
+
+		wrapper.vm.toggleItem(testField.items[0], false);
+		wrapper.vm.toggleItem(testField.items[1], false);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		// Both buttons will be selected
+		expect(changedEvent.value).toEqual(['value1', 44]);
+	});
+
+	it('test unselect multiple items in multiple', async() => {
+		const wrapper = createWrapper({
+			...testField,
+			value: [testField.items[0].value, testField.items[1].value],
+			metadata: {
+				multiple: true
+			}
+		});
+
+		// Unselect the first button multiple
+		wrapper.vm.toggleItem(testField.items[0], true);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		// Second button will stay selected
+		expect(changedEvent.value).toEqual([testField.items[1].value]);
+	});
+
+	it('test select item not alone when one item alone is selected in multiple', async() => {
+		const wrapper = createWrapper({
+			...testField,
+			value: [testField.items[3].value],
+			metadata: {
+				multiple: true
+			}
+		});
+
+		// Select the first button multiple
+		wrapper.vm.toggleItem(testField.items[0], false);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		// The default alone selected will be not selected
+		expect(changedEvent.value).toEqual([testField.items[0].value]);
+	});
+
+	it('test select alone item from multiple selection', async() => {
+		const wrapper = createWrapper({
+			...testField,
+			value: ['value1', 44],
+			metadata: {
+				multiple: true
+			}
+		});
+
+		wrapper.vm.toggleItem(testField.items[2], false);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		expect(changedEvent.value).toEqual([testField.items[2].value]);
+	});
+
+	it('test select other alone item from another alone selected', async() => {
+		// First button multiple is selected by default
+		const wrapper = createWrapper({
+			...testField,
+			value: ['alone1'],
+			metadata: {
+				multiple: true
+			}
+		});
+
+		// Select the second alone button multiple
+		wrapper.vm.toggleItem(testField.items[3], false);
+
+		await Vue.nextTick();
+
+		const changedEvent = wrapper.emitted('change')[0][0] as Field;
+
+		expect(changedEvent.value).toEqual([testField.items[3].value]);
+	});
+
+	it('test items null', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			items: undefined
@@ -59,130 +201,25 @@ describe('choiceField', () => {
 
 		wrapper.vm.toggleItem({ text: 'items null', value: null }, false);
 
+		await Vue.nextTick();
+
+		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
-	it('test select item with value null', () => {
+	it('test select item with value null in multiple', async() => {
 		const wrapper = createWrapper({
 			...testField,
-			value: 'value1'
+			value: [testField.items[0].value],
+			metadata: {
+				multiple: true
+			}
 		});
 
+		// Test select button value null
 		wrapper.vm.toggleItem(testField.items[4], false);
 
-		// test select button value null
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual(null);
-		});
+		await Vue.nextTick();
 
-		wrapper.vm.toggleItem(testField.items[4], true);
-	});
-
-	it('test select and unselect item', () => {
-		const wrapper = createWrapper({
-			...testField
-		});
-
-		// test select button 0
-		wrapper.vm.toggleItem(testField.items[0], false);
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual('value1');
-		});
-
-		// test unselect button 0
-		wrapper.vm.toggleItem(testField.items[0], true);
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual(undefined);
-		});
-	});
-
-	it('test select item with value null in multiple', () => {
-		const wrapper = createWrapper({
-			...testField,
-			value: 'value1',
-			metadata: {
-				multiple: true
-			}
-		});
-
-		wrapper.vm.toggleItem(testField.items[4], false);
-
-		// test select button value null
-		//TODO: test not called (test timeout)
-		// wrapper.vm.$nextTick(() => {
-		// 	expect(wrapper.emitted('change')).toBeFalsy();
-		// });
-	});
-
-	it('emits change event', () => {
-		const wrapper = createWrapper(testField);
-
-		wrapper.vm.toggleItem(testField.items[0], false);
-
-		// test select button and string value
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual('value1');
-		});
-
-		wrapper.vm.toggleItem(testField.items[1], false);
-
-		// test change select not multiple and test number value
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual(44);
-		});
-
-	});
-
-	it('emits change multiple', () => {
-		// first button multiple is selected by default
-		const wrapper = createWrapper({
-			...testField,
-			value: ['value1'],
-			metadata: {
-				multiple: true
-			}
-		});
-
-		// select the second button multiple
-		wrapper.vm.toggleItem(testField.items[1], false);
-
-		// test multiple selection emitted
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual(['value1', 44]);
-		});
-
-		// unselect the first selected button in multiple
-		wrapper.vm.toggleItem(testField.items[0], true);
-	});
-
-	it('emits change multiple alone', () => {
-		const wrapper = createWrapper({
-			...testField,
-			metadata: {
-				multiple: true
-			}
-		});
-
-		// start select multiple button
-		wrapper.vm.toggleItem(testField.items[0], false);
-		wrapper.vm.toggleItem(testField.items[1], false);
-
-		// select first alone button to unselect the multiple buttons
-		wrapper.vm.toggleItem(testField.items[2], false);
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual('alone1');
-		});
-
-		// select another alone button
-		wrapper.vm.toggleItem(testField.items[3], false);
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual('alone2');
-		});
-
-		// select the first button multiple to unselect the alone2 button
-		wrapper.vm.toggleItem(testField.items[0], false);
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toEqual('value1');
-		});
-
+		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 });
