@@ -428,6 +428,30 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     </p>
     <div class="vd-form-field">
       <div class="v-item-group theme--light" type="choiceButton" hint="Texte informatif"><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+						Abricot
+					</span>
+          <div class="spacer"></div>
+          <!---->
+          </span></button><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+						Citron
+					</span>
+          <div class="spacer"></div>
+          <!---->
+          </span></button></div>
+      <p class="mx-4 mb-0 v-messages theme--light">
+        Texte informatif
+      </p>
+    </div>
+  </div>
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 mt-4 my-0 body-1"><span>Question choix boutton multiple</span>
+      <!---->
+    </h4>
+    <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
+      Informations supplémentaires
+    </p>
+    <div class="vd-form-field">
+      <div class="v-item-group theme--light" type="choiceButton"><button type="button" class="mb-2 text-none v-btn v-btn--block v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 						multiple 1
 					</span>
           <div class="spacer"></div>
@@ -448,9 +472,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
           <div class="spacer"></div>
           <!---->
           </span></button></div>
-      <p class="mx-4 mb-0 v-messages theme--light">
-        Texte informatif
-      </p>
+      <!---->
     </div>
   </div>
 </div>

@@ -179,6 +179,16 @@ export default {
 		type: 'select',
 		title: 'Question choix boutton',
 		description: 'Informations supplémentaires',
+		items: defaultItems,
+		metadata: {
+			type: 'choiceButton',
+			hint: 'Texte informatif'
+		}
+	},
+	questionChoiceButtonMultiple: {
+		type: 'select',
+		title: 'Question choix boutton multiple',
+		description: 'Informations supplémentaires',
 		items: [
 			{
 				text: 'multiple 1',
@@ -205,8 +215,7 @@ export default {
 		],
 		metadata: {
 			type: 'choiceButton',
-			multiple: true,
-			hint: 'Texte informatif'
+			multiple: true
 		}
 	}
 } as Form;
