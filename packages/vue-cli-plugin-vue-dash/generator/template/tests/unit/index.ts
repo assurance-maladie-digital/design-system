@@ -1,23 +1,25 @@
 // Global test configuration
 import Vue from 'vue';
 
-import VueTestUtils,
+import {
 	createLocalVue,
 	mount,
 	shallowMount,
-	VueClass,
 	MountOptions,
-	ShallowMountOptions
+	ShallowMountOptions,
+	Wrapper,
+	VueClass,
+	config
 } from '@vue/test-utils';<% if (i18n) { %>
 
 // If mocks is undefined, init it
-if (!VueTestUtils.config.mocks) {
-	VueTestUtils.config.mocks = {};
+if (!config.mocks) {
+	config.mocks = {};
 }
 
 // Mock i18n functions
-VueTestUtils.config.mocks.$t = (key: string) => key;
-VueTestUtils.config.mocks.$tc = (key: string) => key;<% } %>
+config.mocks.$t = (key: string) => key;
+config.mocks.$tc = (key: string) => key;<% } %>
 
 // Create empty router and export it
 import VueRouter, { RouterOptions } from 'vue-router';
@@ -72,15 +74,15 @@ const vuetify = new Vuetify();
  * Generic mount function
  *
  * @param {VueClass} component The component to mount
- * @param {ShallowMountOptions|MountOptions} [options] The mount function options
- * @param {boolean} [fullMount] Use mount instead of shallowMount
- * @returns {VueTestUtils.Wrapper} The wrapper instance
+ * @param {ShallowMountOptions|MountOptions} [options={}] The mount function options
+ * @param {boolean} [fullMount=false] Use mount instead of shallowMount
+ * @returns {Wrapper} The wrapper instance
  */
 export function mountComponent(
 	component: VueClass<Vue>,
 	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
 	fullMount: boolean = false
-): VueTestUtils.Wrapper<Vue> {
+): Wrapper<Vue> {
 	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;
 

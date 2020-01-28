@@ -5,9 +5,10 @@ import {
 	createLocalVue,
 	mount,
 	shallowMount,
-	VueClass,
 	MountOptions,
-	ShallowMountOptions
+	ShallowMountOptions,
+	Wrapper,
+	VueClass
 } from '@vue/test-utils';
 
 // Create localVue
@@ -19,12 +20,19 @@ Vue.use(Vuetify);
 
 const vuetify = new Vuetify();
 
-/** Generic build fonction */
+/**
+ * Generic mount function
+ *
+ * @param {VueClass} component The component to mount
+ * @param {ShallowMountOptions|MountOptions} [options={}] The mount function options
+ * @param {boolean} [fullMount=false] Use mount instead of shallowMount
+ * @returns {Wrapper} The wrapper instance
+ */
 export function mountComponent(
 	component: VueClass<Vue>,
-	options?: ShallowMountOptions<Vue> | MountOptions<Vue>,
-	fullMount = false
-) {
+	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
+	fullMount: boolean = false
+): Wrapper<Vue> {
 	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;
 
