@@ -3,6 +3,7 @@
 		v-if="field.items"
 		v-bind="field.metadata"
 		color="accent"
+		track-color="grey lighten-1"
 		class="mt-5"
 		:value="getIndex(field.value)"
 		:thumb-label="thumbLabel"
@@ -10,6 +11,24 @@
 		:max="field.items.length - 1"
 		@change="valueUpdated"
 	>
+		<template
+			v-if="isThumbLabel"
+			#prepend
+		>
+			<span>
+				{{ labelMin }}
+			</span>
+		</template>
+
+		<template
+			v-if="isThumbLabel"
+			#append
+		>
+			<span>
+				{{ labelMax }}
+			</span>
+		</template>
+
 		<template
 			v-if="thumbLabel"
 			#thumb-label="{ value }"
@@ -44,6 +63,26 @@
 			return this.field.items.findIndex((item) => item.value === value);
 		}
 
+		get labelMin() {
+			// Check if there is a custom labelMin prop in metadata
+			if (this.field.metadata && this.field.metadata.labelMin) {
+				return this.field.metadata.labelMin;
+			}
+
+			// The default value is the first the label
+			return this.labels[0];
+		}
+
+		get labelMax() {
+			// Check if there is a custom labelMax prop in metadata
+			if (this.field.metadata && this.field.metadata.labelMax) {
+				return this.field.metadata.labelMax;
+			}
+
+			// The default value is the last the label
+			return this.labels[this.labels.length - 1];
+		}
+
 		get thumbLabel() {
 			return this.isThumbLabel ? 'always' : false;
 		}
@@ -69,6 +108,11 @@
 			return [];
 		}
 
+		/**
+		 * Emit the value of the item's index selected
+		 *
+		 * @param {number} index The index of the selected item
+		 */
 		valueUpdated(index: number) {
 			let fieldValue = null;
 
@@ -76,7 +120,7 @@
 				fieldValue = this.field.items[index].value;
 			}
 
-			return this.emitChangeEvent(fieldValue);
+			this.emitChangeEvent(fieldValue);
 		}
 	}
 </script>
