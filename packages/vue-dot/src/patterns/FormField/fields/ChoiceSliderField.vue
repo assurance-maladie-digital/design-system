@@ -109,7 +109,7 @@
 		}
 
 		/**
-		 * Emmit the value of the item's index selected
+		 * Emit the value of the item's index selected
 		 *
 		 * @param {number} index The index of the selected item
 		 */
