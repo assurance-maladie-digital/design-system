@@ -49,12 +49,9 @@ function createWrapper(field: Field) {
 	}) as Wrapper<ChoiceField>;
 }
 
-// Tests
 describe('choiceField', () => {
-	it('test select item value not null', async() => {
-		const wrapper = createWrapper({
-			...testField
-		});
+	it('select item value not null', async() => {
+		const wrapper = createWrapper(testField);
 
 		// Test select button 0
 		wrapper.vm.toggleItem(testField.items[0], false);
@@ -66,10 +63,8 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual(testField.items[0].value);
 	});
 
-	it('test select item value null', async() => {
-		const wrapper = createWrapper({
-			...testField
-		});
+	it('select item value null', async() => {
+		const wrapper = createWrapper(testField);
 
 		// Test select null value
 		wrapper.vm.toggleItem(testField.items[4], false);
@@ -81,7 +76,7 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual(null);
 	});
 
-	it('test unselect item', async() => {
+	it('unselect an item', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: 'value1'
@@ -96,7 +91,7 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual(null);
 	});
 
-	it('test select multiple items in multiple', async() => {
+	it('select multiple items in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			metadata: {
@@ -115,7 +110,7 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual(['value1', 44]);
 	});
 
-	it('test unselect multiple items in multiple', async() => {
+	it('unselect one multiple items in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: [testField.items[0].value, testField.items[1].value],
@@ -135,7 +130,7 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual([testField.items[1].value]);
 	});
 
-	it('test select item not alone when one item alone is selected in multiple', async() => {
+	it('select item not alone when one item alone is selected in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: [testField.items[3].value],
@@ -155,7 +150,7 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual([testField.items[0].value]);
 	});
 
-	it('test select alone item from multiple selection', async() => {
+	it('select an alone item from a multiple selection', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: ['value1', 44],
@@ -173,7 +168,7 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual([testField.items[2].value]);
 	});
 
-	it('test select other alone item from another alone selected', async() => {
+	it('select an other alone item from another alone selected', async() => {
 		// First button multiple is selected by default
 		const wrapper = createWrapper({
 			...testField,
@@ -193,7 +188,7 @@ describe('choiceField', () => {
 		expect(changedEvent.value).toEqual([testField.items[3].value]);
 	});
 
-	it('test items null', async() => {
+	it('test field items undefined', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			items: undefined
@@ -206,7 +201,7 @@ describe('choiceField', () => {
 		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
-	it('test select item with value null in multiple', async() => {
+	it('select item with value null in multiple mode not possible', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: [testField.items[0].value],
@@ -215,7 +210,7 @@ describe('choiceField', () => {
 			}
 		});
 
-		// Test select button value null
+		// Select a button with null value
 		wrapper.vm.toggleItem(testField.items[4], false);
 
 		await Vue.nextTick();

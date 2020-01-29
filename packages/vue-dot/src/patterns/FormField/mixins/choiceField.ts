@@ -20,7 +20,7 @@ import FieldComponent from './fieldComponent';
 	}
 })
 export default class ChoiceField extends FieldComponent {
-	choiceValue?: ChoiceValue;
+	choiceValue: ChoiceValue | null = null;
 
 	get isMultiple() {
 		return this.field && this.field.metadata && this.field.metadata.multiple;

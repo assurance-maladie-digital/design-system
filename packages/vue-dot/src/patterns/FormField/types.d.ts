@@ -7,13 +7,19 @@ export type FieldItemValue = string | number | null | undefined;
 
 export type ChoiceValue = FieldItemValue | FieldItemValue[];
 
-export type FieldValue = string | number | PeriodValue | null | undefined | ChoiceValue;
+export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue;
 
 export type ErrorMessages = string[];
 
 export interface PeriodErrorMessages {
 	from?: ErrorMessages;
 	to?: ErrorMessages
+}
+
+export interface FieldItem {
+	text: string,
+	value: FieldItemValue;
+	alone?: boolean;
 }
 
 export interface FieldMetadata {
@@ -30,10 +36,4 @@ export interface Field {
 	metadata?: FieldMetadata;
 	items?: FieldItem[];
 	mask?: string;
-}
-
-export interface FieldItem {
-	text: string,
-	value: FieldItemValue;
-	alone?: boolean;
 }
