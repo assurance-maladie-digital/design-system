@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import colors from './colors';
+import { colors } from './colors';
 
 /** Unicode Box-drawing character, see https://en.wikipedia.org/wiki/Box-drawing_character */
 const LINE_CHARACTER = '─';
@@ -10,7 +10,7 @@ const LINE_CHARACTER = '─';
  *
  * @param {string} [lineColor=colors.primary] The color of the line
  */
-export default function traceLine(lineColor = colors.primary): void {
+export function traceLine(lineColor = colors.primary): void {
 	const cols = process.stdout.columns || 0;
 
 	// For each column, display `─` in primary color

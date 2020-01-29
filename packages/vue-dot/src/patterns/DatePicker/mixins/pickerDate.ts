@@ -15,7 +15,7 @@ const MixinsDeclaration = mixins(Props);
 
 /** Add picker-date prop from Vuetify and bind it with .sync modifier */
 @Component
-export default class PickerDate extends MixinsDeclaration {
+export class PickerDate extends MixinsDeclaration {
 	/**
 	 * Use an internal model
 	 * so we don't modify the prop

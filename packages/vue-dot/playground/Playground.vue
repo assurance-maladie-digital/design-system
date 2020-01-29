@@ -78,7 +78,7 @@
 
 	import { LOCAL_STORAGE_CONTROL } from './plugins/vue-dot';
 
-	import LocalStorageUtility from '../src/helpers/localStorageUtility';
+	import { LocalStorageUtility } from '../src/helpers/localStorageUtility';
 
 	const DARK_THEME_KEY = 'pg-dark';
 

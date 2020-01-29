@@ -1,4 +1,4 @@
-import email, { email as emailFn } from '../';
+import { email, emailFn } from '../';
 
 // Tests
 describe('email', () => {

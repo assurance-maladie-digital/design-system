@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import errorProp from '../mixins/errorProp';
+import { ErrorProp } from '../mixins/errorProp';
 
 interface TestComponent extends Vue {
 	error: boolean;
@@ -12,7 +12,7 @@ interface TestComponent extends Vue {
 function createWrapper(error: boolean) {
 	const component = Vue.component('test', {
 		mixins: [
-			errorProp
+			ErrorProp
 		],
 		template: '<div />'
 	});
@@ -25,7 +25,7 @@ function createWrapper(error: boolean) {
 }
 
 // Tests
-describe('errorProp', () => {
+describe('ErrorProp', () => {
 	it('receives the value correctly from the prop', () => {
 		const wrapper = createWrapper(false);
 

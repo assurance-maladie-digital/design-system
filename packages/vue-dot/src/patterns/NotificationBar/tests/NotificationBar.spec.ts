@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
-import localVue, { mountComponent } from '@/tests';
-import html from '@/tests/html';
+import { localVue, mountComponent } from '@/tests';
+import { html } from '@/tests/html';
 
 import Vuex, { Store } from 'vuex';
 localVue.use(Vuex);

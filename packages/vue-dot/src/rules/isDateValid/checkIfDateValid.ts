@@ -1,8 +1,9 @@
-import ruleMessage from '../../helpers/ruleMessage';
+import { ruleMessage } from '../../helpers/ruleMessage';
 import { ErrorMessages } from '../types';
 
 import dayjs from 'dayjs';
-import parseDate from '../../helpers/parseDate';
+
+import { parseDate } from '../../helpers/parseDate';
 
 import isLeapYear from 'dayjs/plugin/isLeapYear';
 
@@ -14,7 +15,7 @@ const DATE_SEPARATORS = /[- /.]/;
 export const DATE_FORMAT_REGEX = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d{4}/;
 
 /** Check if the date is valid (exists in the calendar and has the right format) */
-export default function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
+export function checkIfDateValid(value: string, errorMessages: ErrorMessages) {
 	// If value doesn't match regex, date format isn't valid
 	if (!value.match(DATE_FORMAT_REGEX)) {
 		return ruleMessage(errorMessages, 'wrongFormat');

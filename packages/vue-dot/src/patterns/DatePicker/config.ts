@@ -1,4 +1,4 @@
-export default {
+export const config = {
 	textField: {
 		hint: 'Format JJ/MM/AAAA',
 		label: 'Date',

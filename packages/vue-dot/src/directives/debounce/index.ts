@@ -1,8 +1,9 @@
 import { DirectiveOptions } from 'vue';
-import debounceFn from '../../functions/debounce';
+
+import { debounce as debounceFn } from '../../functions/debounce';
 
 /** v-debounce directive */
-const debounce: DirectiveOptions = {
+export const debounce: DirectiveOptions = {
 	bind(el, binding) {
 		// If the tag the directive is binded to
 		// isn't an input, find one in his children elements
@@ -40,5 +41,3 @@ const debounce: DirectiveOptions = {
 		}, parseInt(value, 10));
 	}
 };
-
-export default debounce;

@@ -1,4 +1,4 @@
-import ruleMessage from '../';
+import { ruleMessage } from '../';
 
 // Tests
 describe('ruleMessage', () => {

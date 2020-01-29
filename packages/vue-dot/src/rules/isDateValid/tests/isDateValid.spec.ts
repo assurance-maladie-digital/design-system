@@ -1,6 +1,6 @@
-import isDateValid, { isDateValid as isDateValidFn } from '../';
-
 import dayjs from 'dayjs';
+
+import { isDateValid, isDateValidFn } from '../';
 
 const DATE_FORMAT = 'DD/MM/YYYY';
 

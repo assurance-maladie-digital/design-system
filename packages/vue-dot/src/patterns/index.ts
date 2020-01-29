@@ -7,7 +7,7 @@ import PageCard from './PageCard';
 import PaginatedTable from './PaginatedTable';
 import UploadWorkflow from './UploadWorkflow';
 
-export default {
+export const patterns = {
 	DatePicker,
 	FileList,
 	FileUpload,

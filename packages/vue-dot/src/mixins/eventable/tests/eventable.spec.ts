@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import eventable from '../';
-import customizable, { Options } from '../../customizable';
+import { Eventable } from '../';
+import { customizable, Options } from '../../customizable';
 
 const DATE = '2019-10-25';
 const DATE_WEEK_END = '2019-10-26';
@@ -16,7 +16,7 @@ interface TestComponent extends Vue {
 function createTestComponent(mixinData = {}) {
 	return Vue.component('test', {
 		mixins: [
-			eventable,
+			Eventable,
 			customizable(mixinData) // Needed because used in eventable
 		],
 		template: '<div />'
@@ -24,7 +24,7 @@ function createTestComponent(mixinData = {}) {
 }
 
 // Tests
-describe('customizable', () => {
+describe('Eventable', () => {
 	it('does nothing when no options are defined', () => {
 		const testComponent = createTestComponent();
 

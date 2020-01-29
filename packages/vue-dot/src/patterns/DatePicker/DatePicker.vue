@@ -74,18 +74,18 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import config from './config';
+	import { config } from './config';
 
-	import customizable, { Options } from '../../mixins/customizable';
-	import eventable from '../../mixins/eventable';
-	import warningRules from '../../mixins/warningRules';
+	import { customizable, Options } from '../../mixins/customizable';
+	import { Eventable } from '../../mixins/eventable';
+	import { WarningRules } from '../../mixins/warningRules';
 	import { ValidationRule } from '../../rules/types';
 
-	import dateLogic from './mixins/dateLogic';
-	import maskValue from './mixins/maskValue';
-	import birthdate from './mixins/birthdate';
-	import pickerDate from './mixins/pickerDate';
-	import errorProp from './mixins/errorProp';
+	import { DateLogic } from './mixins/dateLogic';
+	import { MaskValue } from './mixins/maskValue';
+	import { Birthdate } from './mixins/birthdate';
+	import { PickerDate } from './mixins/pickerDate';
+	import { ErrorProp } from './mixins/errorProp';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -122,13 +122,13 @@
 		mixins: [
 			// Default configuration
 			customizable(config),
-			eventable,
-			warningRules,
-			dateLogic,
-			maskValue,
-			birthdate,
-			pickerDate,
-			errorProp
+			Eventable,
+			WarningRules,
+			DateLogic,
+			MaskValue,
+			Birthdate,
+			PickerDate,
+			ErrorProp
 		],
 		model: {
 			prop: 'value',

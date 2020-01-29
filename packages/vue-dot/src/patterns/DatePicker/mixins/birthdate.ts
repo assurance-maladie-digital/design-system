@@ -26,7 +26,7 @@ const MixinsDeclaration = mixins(Props);
 		}
 	}
 })
-export default class Birthdate extends MixinsDeclaration {
+export class Birthdate extends MixinsDeclaration {
 	// Extend $refs
 	$refs!: Refs<{
 		picker: {

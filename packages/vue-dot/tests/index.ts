@@ -35,4 +35,4 @@ export function mountComponent(
 	});
 }
 
-export default localVue;
+export { localVue };

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import customizable, { Options } from '../';
+import { customizable, Options } from '../';
 import deepmerge from 'deepmerge';
 
 interface TestComponent extends Vue {

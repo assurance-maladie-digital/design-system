@@ -25,8 +25,8 @@ import { log, done, getPath } from '@cnamts/cli-helpers';
 Or you can import them using their files, like so:
 
 ```ts
-import log, { done } from '@cnamts/cli-helpers/src/logger';
-import getPath from '@cnamts/cli-helpers/src/getPath';
+import { log, done } from '@cnamts/cli-helpers/src/logger';
+import { getPath } from '@cnamts/cli-helpers/src/getPath';
 ```
 
 ## Helpers

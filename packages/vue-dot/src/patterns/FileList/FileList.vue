@@ -95,10 +95,10 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import config from './config';
+	import { config } from './config';
 	import { FileItem } from './types';
 
-	import customizable, { Options } from '../../mixins/customizable';
+	import { customizable, Options } from '../../mixins/customizable';
 
 	import {
 		mdiRefresh,

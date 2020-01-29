@@ -1,9 +1,9 @@
 import chalk from 'chalk';
 import figlet from 'figlet';
 
-import log from './logger';
-import traceLine from './traceLine';
-import colors from './colors';
+import { log } from './logger';
+import { traceLine } from './traceLine';
+import { colors } from './colors';
 
 /**
  * Display header with 'Georgia11' font and 'primary' color
@@ -12,7 +12,7 @@ import colors from './colors';
  * @param {string} [author] Package author
  * @param {string} [version] Package version
  */
-export default function renderHeader(text: string, author?: string, version?: string): void {
+export function renderHeader(text: string, author?: string, version?: string): void {
 	const txt = figlet.textSync(text, {
 		font: 'Georgia11',
 		horizontalLayout: 'default',

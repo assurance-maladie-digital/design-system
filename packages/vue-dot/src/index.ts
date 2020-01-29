@@ -1,6 +1,6 @@
 import directives from './directives';
 
-import registerAllComponents from './registerAllComponents';
+import { registerAllComponents } from './registerAllComponents';
 
 // Import global styles
 import './styles/global.scss';
