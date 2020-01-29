@@ -12,11 +12,4 @@ module.exports = (api) => {
 
 		return serveFn(...args);
 	};
-
-	// Augment build command with fixEnvFile
-	build.fn = (...args) => {
-		fixEnvFile();
-
-		return buildFn(...args);
-	};
 };
