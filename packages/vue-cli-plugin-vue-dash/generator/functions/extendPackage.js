@@ -5,7 +5,7 @@ const VueDotVersion = vdPkg.version;
 function extendPackage(api, options) {
 	const newPackageProperties = {
 		dependencies: {
-			'@cnamts/vue-dot': `^${VueDotVersion}`,
+			'@cnamts/vue-dot': `${VueDotVersion}`,
 			'axios': '^0.19.2',
 			'core-js': '^3.6.4',
 			'dayjs': '^1.8.19',
