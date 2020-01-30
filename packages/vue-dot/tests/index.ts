@@ -19,6 +19,12 @@ Vue.use(Vuetify);
 
 const vuetify = new Vuetify();
 
+// This will always mount a div with data-app attribute in tests for Vuetify components like VSlider
+// See https://github.com/vuetifyjs/vuetify/issues/1210
+const app = document.createElement('div');
+app.setAttribute('data-app', 'true');
+document.body.appendChild(app);
+
 import VueTheMask from 'vue-the-mask';
 Vue.use(VueTheMask);
 
