@@ -43,6 +43,16 @@ function getRessourcesToDelete(options) {
 		{
 			type: 'file',
 			path: 'tests/e2e/specs/test.js'
+		},
+		{
+			type: 'file',
+			path: 'cypress.json',
+			condition: !options.cypress
+		},
+		{
+			type: 'folder',
+			path: 'tests/e2e/',
+			condition: !options.cypress
 		}
 	];
 }
