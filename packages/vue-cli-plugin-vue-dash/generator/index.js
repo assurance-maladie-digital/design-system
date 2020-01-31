@@ -6,34 +6,45 @@ const parseIndexFile = require('./functions/parseIndexFile');
 const getResourcesToDelete = require('./getResourcesToDelete');
 const deleteOldResources = require('./functions/deleteOldResources');
 
+const shouldRenderTemplate = require('../shouldRenderTemplate');
+
 const { capitalizeFirstLetter } = require('../utils');
 
 module.exports = (api, userOptions) => {
-	const options = {
-		...userOptions,
-		// Custom options
-		name: api.rootOptions.projectName,
-		footerDate: getFooterDate(),
-		pm: 'yarn',
-		// Functions
-		capitalizeFirstLetter
-	};
+	const projectName = api.rootOptions.projectName;
 
-	api.render('./template', options);
+	// By default, do not render template when invoking
+	// except if --render-template option is provided
+	// (this prevents erasing an entire project by accident)
+	if (shouldRenderTemplate) {
+		const options = {
+			...userOptions,
+			// Custom options
+			name: projectName,
+			footerDate: getFooterDate(),
+			pm: 'yarn',
+			// Functions
+			capitalizeFirstLetter
+		};
 
-	// Update package.json
-	extendPackage(api, options);
+		api.render('./template', options);
 
-	api.postProcessFiles((resources) => {
-		const resourcesToDelete = getResourcesToDelete(options);
-		deleteOldResources(resources, resourcesToDelete);
+		// Update package.json
+		extendPackage(api, options);
 
-		const indexPath = 'public/index.html';
-		resources[indexPath] = parseIndexFile(resources[indexPath]);
-	});
+		// Delete old ressources and parse public/index.html
+		api.postProcessFiles((resources) => {
+			const resourcesToDelete = getResourcesToDelete(options);
+			deleteOldResources(resources, resourcesToDelete);
 
-	// Delete old resources after writing files to disk
+			const indexPath = 'public/index.html';
+			resources[indexPath] = parseIndexFile(resources[indexPath]);
+		});
+	}
+
+	// Fix package indentation after writing files to the disk
+	// Even if no template is rendered the indentation is modified
 	api.onCreateComplete(() => {
-		fixPackageIndentation();
+		fixPackageIndentation(api.invoking, projectName);
 	});
 };
