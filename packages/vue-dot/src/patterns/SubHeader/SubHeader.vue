@@ -136,7 +136,7 @@
 
 	.vd-sub-header-data-list {
 		// Don't take all available space
-		flex: none !important;
+		flex: none;
 
 		::v-deep .vd-data-list {
 			max-width: 200px;
