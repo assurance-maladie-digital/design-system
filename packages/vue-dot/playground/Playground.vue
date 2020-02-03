@@ -54,6 +54,8 @@
 
 				<RulesEx />
 
+				<SubHeaderEx />
+
 				<UploadWorkflowEx />
 			</PageCard>
 		</VContent>

@@ -12,6 +12,7 @@ Array [
   "NotificationBar",
   "PageCard",
   "PaginatedTable",
+  "SubHeader",
   "UploadWorkflow",
 ]
 `;
