@@ -11,3 +11,42 @@ body {
 .v-content__wrap {
 	height: 100%;
 }
+
+// TODO: Standardize with Vue Dash
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+.v-application {
+	.display-4,
+	.display-3,
+	.display-2,
+	.display-1,
+	.headline,
+	.title,
+	.subtitle-1,
+	.subtitle-2,
+	.body-1,
+	.body-2,
+	.caption,
+	.overline {
+		font-family: 'Open Sans', sans-serif !important;
+	}
+}
+
+// * Custom
+
+// Default styles and helper classes
+* {
+	$transparent: rgba(0, 0, 0, 0);
+
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	scroll-behavior: smooth;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+	word-break: break-word;
+	hyphens: auto;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: $transparent;
+}
