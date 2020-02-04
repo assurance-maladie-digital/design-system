@@ -1,4 +1,4 @@
-import colors from '@/colors';
+import { colors } from '@/colors';
 
 describe('colors object', () => {
 	it('should contains all colors', () => {

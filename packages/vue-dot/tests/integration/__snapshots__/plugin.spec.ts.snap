@@ -15,6 +15,7 @@ Object {
     "NotificationBar",
     "PageCard",
     "PaginatedTable",
+    "SubHeader",
     "UploadWorkflow",
   ],
   "directives": Array [

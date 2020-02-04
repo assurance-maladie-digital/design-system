@@ -2,12 +2,12 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import html from '@/tests/html';
+import { html } from '@/tests/html';
 
 import FormBuilder from '../';
 
-import addressForm from './data/addressForm';
-import questionForm from './data/questionForm';
+import { addressForm } from './data/addressForm';
+import { questionForm } from './data/questionForm';
 
 let wrapper: Wrapper<Vue>;
 

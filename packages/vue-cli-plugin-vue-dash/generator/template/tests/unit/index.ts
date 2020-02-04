@@ -1,34 +1,59 @@
 // Global test configuration
 import Vue from 'vue';
 
-import <% if (i18n) { %>VueTestUtils, <% } %>{
+import {
 	createLocalVue,
 	mount,
 	shallowMount,
-	VueClass,
 	MountOptions,
-	ShallowMountOptions
+	ShallowMountOptions,
+	Wrapper,
+	VueClass,
+	config
 } from '@vue/test-utils';<% if (i18n) { %>
 
 // If mocks is undefined, init it
-if (!VueTestUtils.config.mocks) {
-	VueTestUtils.config.mocks = {};
+if (!config.mocks) {
+	config.mocks = {};
 }
 
 // Mock i18n functions
-VueTestUtils.config.mocks.$t = (key: string) => key;
-VueTestUtils.config.mocks.$tc = (key: string) => key;<% } %>
+config.mocks.$t = (key: string) => key;
+config.mocks.$tc = (key: string) => key;<% } %>
 
 // Create empty router and export it
-import VueRouter from 'vue-router';
+import VueRouter, { RouterOptions } from 'vue-router';
+
+/** Default router instance */
 export const router = new VueRouter();
+
+/**
+ * Create a new router instance with options
+ *
+ * @param {RouterOptions} options The router options
+ * @returns {VueRouter} The router instance
+ */
+export function newRouter(options: RouterOptions) {
+	return new VueRouter(options);
+}
 
 // Create localVue
 const localVue = createLocalVue();
 
 import VueDot from '@cnamts/vue-dot';
 import Meta from 'vue-meta';
-import Vuex from 'vuex';
+
+import Vuex, { Store, StoreOptions } from 'vuex';
+
+/**
+ * Create a new store instance with options
+ *
+ * @param {StoreOptions} options The store options
+ * @returns {Store} The store instance
+ */
+export function newStore(options: StoreOptions<any>): Store<any> {
+	return new Vuex.Store(options);
+}
 
 // Bind plugins
 localVue.use(VueRouter);
@@ -45,12 +70,19 @@ import '@/components/global';
 
 const vuetify = new Vuetify();
 
-/** Generic build fonction */
+/**
+ * Generic mount function
+ *
+ * @param {VueClass} component The component to mount
+ * @param {ShallowMountOptions|MountOptions} [options={}] The mount function options
+ * @param {boolean} [fullMount=false] Use mount instead of shallowMount
+ * @returns {Wrapper} The wrapper instance
+ */
 export function mountComponent(
 	component: VueClass<Vue>,
-	options?: ShallowMountOptions<Vue> | MountOptions<Vue>,
-	fullMount = false
-) {
+	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
+	fullMount: boolean = false
+): Wrapper<Vue> {
 	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;
 

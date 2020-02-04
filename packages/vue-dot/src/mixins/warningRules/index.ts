@@ -20,7 +20,7 @@ const MixinsDeclaration = mixins(Props);
  * but that does not block validation
  */
 @Component
-export default class WarningRules extends MixinsDeclaration {
+export class WarningRules extends MixinsDeclaration {
 	/**
 	 * The messages from warningRules.
 	 * Not used if already passed as a prop*

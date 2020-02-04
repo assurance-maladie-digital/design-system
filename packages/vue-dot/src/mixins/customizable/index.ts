@@ -16,7 +16,7 @@ import merge from 'deepmerge';
  * // Final API
  * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
  */
-export default function customizable(defaultOptions: Options) {
+export function customizable(defaultOptions: Options) {
 	return Vue.extend({
 		props: {
 			/** User options */

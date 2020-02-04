@@ -3,8 +3,8 @@ import Component, { mixins } from 'vue-class-component';
 
 import { Options } from '../customizable';
 
-import isWeekEnd from '../../functions/isWeekEnd';
-import isDateInRange from '../../functions/isDateInRange';
+import { isWeekEnd } from '../../functions/isWeekEnd';
+import { isDateInRange } from '../../functions/isDateInRange';
 
 const Props = Vue.extend({
 	props: {
@@ -25,7 +25,7 @@ const MixinsDeclaration = mixins(Props);
 
 /** Add event handling: week-ends and ranges */
 @Component
-export default class Eventable extends MixinsDeclaration {
+export class Eventable extends MixinsDeclaration {
 	// Mixin computed data
 	options!: Options;
 	/** DatePicker.date */

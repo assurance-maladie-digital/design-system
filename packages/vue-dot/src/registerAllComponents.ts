@@ -1,9 +1,9 @@
 import { VueConstructor } from 'vue';
 
-import registerComponents, { Components } from './helpers/registerComponents';
+import { registerComponents, Components } from './helpers/registerComponents';
 
-import { default as elements } from './elements';
-import { default as patterns } from './patterns';
+import { elements } from './elements';
+import { patterns } from './patterns';
 
 const components: Components[] = [
 	elements,
@@ -15,10 +15,8 @@ const components: Components[] = [
  *
  * @param {VueConstructor} Vue The global Vue instance
  */
-function registerAllComponents(Vue: VueConstructor) {
+export function registerAllComponents(Vue: VueConstructor) {
 	components.forEach((component) => {
 		registerComponents(Vue, component);
 	});
 }
-
-export default registerAllComponents;

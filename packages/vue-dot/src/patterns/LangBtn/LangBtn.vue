@@ -74,15 +74,15 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import config from './config';
-	import locales from './locales';
+	import { config } from './config';
+	import { locales } from './locales';
 
 	import { Languages, AllLanguagesChar } from './types';
 
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
 
-	import customizable from '../../mixins/customizable';
+	import { customizable } from '../../mixins/customizable';
 
 	import { mdiChevronDown } from '@mdi/js';
 

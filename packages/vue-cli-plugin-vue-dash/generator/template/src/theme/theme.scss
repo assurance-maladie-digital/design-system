@@ -7,7 +7,9 @@
 .v-ripple__container *,
 .v-tabs__container,
 .v-input--selection-controls__ripple,
-.v-slide-group__content {
+.v-slide-group__content,
+.v-simple-checkbox svg,
+.no-max-width {
 	max-width: none;
 }
 

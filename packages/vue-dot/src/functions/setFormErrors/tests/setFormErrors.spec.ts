@@ -1,6 +1,6 @@
 import { formErrors, questionErrors, form } from './data/formErrors';
 
-import setFormErrors from '../';
+import { setFormErrors } from '../';
 
 // Tests
 describe('setFormErrors', () => {

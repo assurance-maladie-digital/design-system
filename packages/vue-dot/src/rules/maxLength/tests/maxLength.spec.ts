@@ -1,4 +1,4 @@
-import maxLength from '../';
+import { maxLength } from '../';
 
 // Tests
 describe('maxLength', () => {

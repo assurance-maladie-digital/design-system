@@ -3,22 +3,22 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import { Options } from '../../../../mixins/customizable';
 
-import datePickerOptions from '../datePickerOptions';
+import { DatePickerOptions } from '../datePickerOptions';
 
 /** Create the wrapper */
 function createWrapper() {
 	const component = Vue.component('test', {
 		mixins: [
-			datePickerOptions
+			DatePickerOptions
 		],
 		template: '<div />'
 	});
 
-	return mount(component) as Wrapper<datePickerOptions>;
+	return mount(component) as Wrapper<DatePickerOptions>;
 }
 
 // Tests
-describe('datePickerOptions', () => {
+describe('DatePickerOptions', () => {
 	it('returns the options', () => {
 		const wrapper = createWrapper();
 

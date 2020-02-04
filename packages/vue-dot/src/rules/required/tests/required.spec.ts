@@ -1,4 +1,4 @@
-import required, { required as requiredFn } from '../';
+import { required, requiredFn } from '../';
 
 // Tests
 describe('required', () => {

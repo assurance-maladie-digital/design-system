@@ -1,7 +1,7 @@
 import { FormErrors } from './types';
 import { Form } from '../../patterns/FormBuilder/types';
 
-import deepCopy from '../../helpers/deepCopy';
+import { deepCopy } from '../../helpers/deepCopy';
 
 /**
  * Set error-messages prop on the fields in error
@@ -10,7 +10,7 @@ import deepCopy from '../../helpers/deepCopy';
  * @param {Form} form The form to modify
  * @returns {Form} The form modified with errorsMessages
  */
-export default function setFormErrors(formErrors: FormErrors, form: Form): Form {
+export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 	const newForm = deepCopy(form);
 
 	// For each field in error

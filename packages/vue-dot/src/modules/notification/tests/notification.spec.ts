@@ -1,5 +1,5 @@
-import { createLocalVue } from '@vue/test-utils';
 import Vuex, { ActionTree } from 'vuex';
+import { createLocalVue } from '@vue/test-utils';
 
 import { NotificationState, actions as moduleActions, mutations } from '../';
 

@@ -10,7 +10,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import FieldComponent from '../mixins/fieldComponent';
+	import { FieldComponent } from '../mixins/fieldComponent';
 
 	/** Form field to enter a long text */
 	@Component

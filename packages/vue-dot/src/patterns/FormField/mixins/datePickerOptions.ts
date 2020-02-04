@@ -7,7 +7,7 @@ import merge from 'deepmerge';
 
 /** Merge default options (eg. menu position fix) with metadata */
 @Component
-export default class DatePickerOptions extends Vue {
+export class DatePickerOptions extends Vue {
 	/**
 	 * Get Vuetify options object
 	 *

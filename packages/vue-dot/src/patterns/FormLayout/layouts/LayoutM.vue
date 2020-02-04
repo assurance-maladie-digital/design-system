@@ -11,7 +11,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import LayoutComponent from '../mixins/layoutComponent';
+	import { LayoutComponent } from '../mixins/layoutComponent';
 
 	@Component
 	export default class LayoutM extends LayoutComponent {}

@@ -1,9 +1,9 @@
-import ruleMessage from '../../helpers/ruleMessage';
+import { ruleMessage } from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
 /** Check that the field exceeds the min length */
-export function minLength(min: number, errorMessages = defaultErrorMessages) {
+export function minLengthFn(min: number, errorMessages = defaultErrorMessages) {
 	// Return the validation function
 	return (value: string) => {
 		// If the value is empty, return true (valid)
@@ -15,4 +15,4 @@ export function minLength(min: number, errorMessages = defaultErrorMessages) {
 	};
 }
 
-export default minLength;
+export const minLength = minLengthFn;

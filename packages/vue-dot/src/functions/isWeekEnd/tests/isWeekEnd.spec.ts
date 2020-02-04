@@ -1,4 +1,4 @@
-import isWeekEnd from '../';
+import { isWeekEnd } from '../';
 
 // Tests
 describe('isWeekEnd', () => {

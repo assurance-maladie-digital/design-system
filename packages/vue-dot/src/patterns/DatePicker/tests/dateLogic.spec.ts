@@ -3,9 +3,9 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import { Refs } from '../../../types';
 
-import customizable, { Options } from '../../../mixins/customizable';
+import { customizable, Options } from '../../../mixins/customizable';
 
-import dateLogic from '../mixins/dateLogic';
+import { DateLogic } from '../mixins/dateLogic';
 
 interface VueInstance extends VueConstructor {
 	options: {
@@ -70,7 +70,7 @@ function createTextField(disableHasFocused: boolean) {
 function createWrapper(propsData?: object, mixinData = {}, disableHasFocused: boolean = false) {
 	const component = Vue.component('test', {
 		mixins: [
-			dateLogic,
+			DateLogic,
 			customizable(mixinData)
 		],
 		template: '<div><v-menu ref="menu" /><v-text-field ref="input" /></div>'
@@ -89,7 +89,7 @@ function createWrapper(propsData?: object, mixinData = {}, disableHasFocused: bo
 }
 
 // Tests
-describe('dateLogic', () => {
+describe('DateLogic', () => {
 	// We need to unregister VTextField between each test
 	// because it may change
 	afterEach(() => {

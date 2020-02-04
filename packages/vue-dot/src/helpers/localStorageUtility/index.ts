@@ -6,7 +6,7 @@ interface ControlItem {
 	expiresAt?: number;
 }
 
-export default class LocalStorageUtility {
+export class LocalStorageUtility {
 	readonly localStorageSupported: boolean;
 
 	/** Integer number */

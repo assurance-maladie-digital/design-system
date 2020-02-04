@@ -6,11 +6,13 @@ import { execOpts, writeToBeginning } from './utils';
 
 import { execSync } from 'child_process';
 
-import tokensObj from '../src/tokens';
+import { default as tokensObj } from '../src/tokens';
 
 interface Tokens {
 	[key: string]: string | Tokens;
 }
+
+const tokens = tokensObj as Tokens;
 
 const tokensFolder = getPath('src/tokens');
 
@@ -20,7 +22,6 @@ const tokenList = {
 	scss: `${tokensFolder}/index.scss`
 };
 
-const tokens = tokensObj as Tokens;
 delete tokens._jsonToScss; // Remove package config
 
 info('Generating Design Tokens');

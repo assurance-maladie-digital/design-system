@@ -15,6 +15,7 @@ export default function formatDate(date: string | undefined, format = 'DD/MM/YYY
 
 /**
  * Format a date with time to DD/MM/YYYY HH:mm format
+ *
  * @param {string} [date] The date to format
  * @returns {string} The formatted date
  */

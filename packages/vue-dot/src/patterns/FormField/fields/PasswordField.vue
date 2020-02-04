@@ -13,7 +13,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import FieldComponent from '../mixins/fieldComponent';
+	import { FieldComponent } from '../mixins/fieldComponent';
 
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
 

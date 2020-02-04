@@ -19,7 +19,7 @@ const defaultItems = [
 	}
 ];
 
-export default {
+export const questionForm: Form = {
 	questionString: {
 		type: 'text',
 		title: 'Question ?',
@@ -190,4 +190,4 @@ export default {
 			label: 'Votre réponse'
 		}
 	}
-} as Form;
+};

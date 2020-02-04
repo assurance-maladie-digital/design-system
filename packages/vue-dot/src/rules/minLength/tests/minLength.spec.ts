@@ -1,4 +1,4 @@
-import minLength from '../';
+import { minLength } from '../';
 
 // Tests
 describe('minLength', () => {

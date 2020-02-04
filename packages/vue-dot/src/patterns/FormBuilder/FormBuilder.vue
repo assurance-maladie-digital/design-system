@@ -22,7 +22,7 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import FormBuilderCore from './mixins/formBuilderCore';
+	import { FormBuilderCore } from './mixins/formBuilderCore';
 
 	import FormLayout from '../FormLayout';
 	import FormField from '../FormField';

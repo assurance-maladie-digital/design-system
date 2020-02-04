@@ -1,9 +1,9 @@
-import ruleMessage from '../../helpers/ruleMessage';
+import { ruleMessage } from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
 /** Check that the field is non-empty */
-export function required(errorMessages = defaultErrorMessages) {
+export function requiredFn(errorMessages = defaultErrorMessages) {
 	// The value can be an array of string in select with the multiple prop
 	return (value: string | string[]) => {
 		let valid: boolean;
@@ -25,4 +25,4 @@ export function required(errorMessages = defaultErrorMessages) {
 	};
 }
 
-export default required();
+export const required = requiredFn();

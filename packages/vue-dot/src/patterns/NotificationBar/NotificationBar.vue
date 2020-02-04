@@ -35,13 +35,13 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import config from './config';
-	import locales from './locales';
+	import { config } from './config';
+	import { locales } from './locales';
 
 	import { mapActions, mapState } from 'vuex';
 	import { NotificationObj } from '../../modules/notification';
 
-	import customizable from '../../mixins/customizable';
+	import { customizable } from '../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {

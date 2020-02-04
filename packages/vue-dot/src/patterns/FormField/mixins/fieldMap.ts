@@ -31,7 +31,7 @@ import TextField from '../fields/TextField.vue';
 		TextField
 	}
 })
-export default class FieldMap extends Vue {
+export class FieldMap extends Vue {
 	/** List all field components and their corresponding keys */
 	fieldMap: IFieldMap = {
 		autocomplete: 'AutocompleteField',

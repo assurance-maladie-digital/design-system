@@ -4,11 +4,11 @@ import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
 
 // Import theme colors
-import colors from '../theme/colors';
+import { colors } from '../theme/colors';
 
 Vue.use(Vuetify);
 
-export default new Vuetify({
+export const vuetify = new Vuetify({
 	theme: {
 		// Destructure colors object in theme
 		themes: {

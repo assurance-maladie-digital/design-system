@@ -15,8 +15,8 @@
 
 	import DatePicker from '../../DatePicker';
 
-	import FieldComponent from '../mixins/fieldComponent';
-	import DatePickerOptions from '../mixins/datePickerOptions';
+	import { FieldComponent } from '../mixins/fieldComponent';
+	import { DatePickerOptions } from '../mixins/datePickerOptions';
 
 	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
 

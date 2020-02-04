@@ -7,7 +7,7 @@ import 'dayjs/locale/fr';
 import VueDot from '../../src/';
 
 // Import the theme
-import icons from '../theme/icons';
+import { icons } from '../theme/icons';
 
 // Import the theme styles
 import '../theme/theme.scss';

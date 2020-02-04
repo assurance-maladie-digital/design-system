@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import formBuilderCore from '../formBuilderCore';
+import { FormBuilderCore } from '../formBuilderCore';
 
 import { Field } from '../../../FormField/types';
 
@@ -36,7 +36,7 @@ const testForm: Form = {
 function createWrapper(form: Form, layout?: Layout, defaultLayout?: string) {
 	const component = Vue.component('test', {
 		mixins: [
-			formBuilderCore
+			FormBuilderCore
 		],
 		template: '<div />'
 	});
@@ -47,7 +47,7 @@ function createWrapper(form: Form, layout?: Layout, defaultLayout?: string) {
 			defaultLayout,
 			layout
 		}
-	}) as Wrapper<formBuilderCore>;
+	}) as Wrapper<FormBuilderCore>;
 }
 
 // Tests

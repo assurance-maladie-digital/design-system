@@ -3,7 +3,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import { Field } from '../../types';
 
-import fieldComponent from '../fieldComponent';
+import { FieldComponent } from '../fieldComponent';
 
 const testField = {
 	type: 'text',
@@ -18,7 +18,7 @@ const testField = {
 function createWrapper(field: Field) {
 	const component = Vue.component('test', {
 		mixins: [
-			fieldComponent
+			FieldComponent
 		],
 		template: '<div />'
 	});
@@ -27,7 +27,7 @@ function createWrapper(field: Field) {
 		propsData: {
 			field
 		}
-	}) as Wrapper<fieldComponent>;
+	}) as Wrapper<FieldComponent>;
 }
 
 // Tests

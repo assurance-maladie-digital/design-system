@@ -1,6 +1,6 @@
 import { Form } from '../../types';
 
-export default {
+export const addressForm: Form = {
 	streetNumber: {
 		type: 'number',
 		value: null,
@@ -64,4 +64,4 @@ export default {
 			label: 'Ville'
 		}
 	}
-} as Form;
+};
