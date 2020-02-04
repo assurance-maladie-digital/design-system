@@ -1,22 +1,51 @@
 <template>
 	<DocSection title="SubHeader">
 		<SubHeader
+			:loading="loading"
 			:data-lists="dataLists"
 			title-text="Prénom Nom (d'usage)"
 			sub-title-text="1 69 08 75 125 456 75"
 		>
 			<!-- ProgressBar -->
 			<template #additional-informations>
-				<p class="white--text mt-8 mb-0">
-					Profil complété à 50%
-				</p>
+				<template v-if="loading">
+					<HeaderLoading
+						class="mt-8"
+						height="23"
+						width="150"
+						dark
+					/>
 
-				<VProgressLinear
-					v-bind="progressLinearOpts"
-					:value="progressValue"
-				/>
+					<HeaderLoading
+						class="mt-2"
+						height="10"
+						width="300"
+						tile
+						dark
+					/>
+				</template>
+
+				<template v-else>
+					<p class="white--text mt-8 mb-0">
+						Profil complété à 50%
+					</p>
+
+					<VProgressLinear
+						v-bind="progressLinearOpts"
+						:value="progressValue"
+						class="mb-5"
+					/>
+				</template>
 			</template>
 		</SubHeader>
+
+		<VBtn
+			class="mt-4"
+			color="accent"
+			@click="loading = !loading"
+		>
+			{{ loading ? 'Unset' : 'Set' }} loading
+		</VBtn>
 	</DocSection>
 </template>
 
@@ -65,5 +94,7 @@
 			backgroundColor: '#fff',
 			backgroundOpacity: '.24'
 		};
+
+		loading = false;
 	}
 </script>

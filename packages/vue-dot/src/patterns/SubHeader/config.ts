@@ -7,7 +7,7 @@ export const config = {
 	},
 	contentLayout: {
 		wrap: true,
-		class: 'justify-space-between mb-5'
+		class: 'justify-space-between'
 	},
 	dataListsLayout: {
 		wrap: true
