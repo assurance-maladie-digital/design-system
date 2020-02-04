@@ -5,7 +5,7 @@
 	>
 		<h4
 			v-if="getField(0).title"
-			class="mx-4 mt-4 my-0 body-1"
+			class="mx-4 my-0 body-1"
 		>
 			<span>{{ getField(0).title }}</span>
 
