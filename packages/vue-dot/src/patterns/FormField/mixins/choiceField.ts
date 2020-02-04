@@ -49,7 +49,7 @@ export default class ChoiceField extends FieldComponent {
 			this.choiceValue.splice(valueIndex,1);
 		} else {
 
-			// Can't select a null value in multiple mode
+			// Can't select a value null in multiple mode
 			if (!item.value) {
 				return;
 			}

@@ -66,7 +66,7 @@ describe('choiceField', () => {
 	it('select item value null', async() => {
 		const wrapper = createWrapper(testField);
 
-		// Test select null value
+		// Test select value null
 		wrapper.vm.toggleItem(testField.items[4], false);
 
 		await Vue.nextTick();
@@ -210,7 +210,7 @@ describe('choiceField', () => {
 			}
 		});
 
-		// Select a button with null value
+		// Select a button with a value null
 		wrapper.vm.toggleItem(testField.items[4], false);
 
 		await Vue.nextTick();

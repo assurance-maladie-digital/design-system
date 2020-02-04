@@ -175,7 +175,7 @@ export default {
 	},
 	questionChoiceButtonMultiple: {
 		type: 'select',
-		title: 'Question choix boutton multiple',
+		title: 'Question choix bouton multiple',
 		description: 'Informations supplémentaires',
 		items: [
 			{
