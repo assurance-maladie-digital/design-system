@@ -1,7 +1,10 @@
+import { FieldMetadata } from './../types.d';
 import Vue, { PropType } from 'vue';
 import Component from 'vue-class-component';
 
 import { Field, FieldValue } from '../types';
+import { deepRemoveKeys } from '../../../../src/helpers/deepRemoveKeys';
+import deepCopy from '../../../../src/helpers/deepCopy';
 
 const Props = Vue.extend({
 	props: {
@@ -21,6 +24,10 @@ const Props = Vue.extend({
 	}
 })
 export default class FieldComponent extends Props {
+	get fieldMetadata() {
+		return this.field.metadata;
+	}
+
 	/**
 	 * Update the v-model by emitting 'change' event
 	 *
@@ -28,8 +35,12 @@ export default class FieldComponent extends Props {
 	 * @returns {void}
 	 */
 	emitChangeEvent(value: FieldValue): void {
+
+		const metadata = this.fieldMetadata ? this.clearErrorMessages(this.fieldMetadata) : null;
+
 		const updatedField = {
 			...this.field,
+			metadata,
 			value
 		};
 
@@ -37,5 +48,15 @@ export default class FieldComponent extends Props {
 		this.$nextTick(() => {
 			this.$emit('change', updatedField);
 		});
+	}
+
+	/**
+	 * Clear all ErrorMessage in metadata
+	 *
+	 * @param {FieldMetadata} metadata The field metadata
+	 * @returns {FieldMetadata} The new field metadata without errorMessages
+	 */
+	clearErrorMessages(metadata: FieldMetadata): FieldMetadata {
+		return deepRemoveKeys(deepCopy(metadata), 'errorMessages');
 	}
 }

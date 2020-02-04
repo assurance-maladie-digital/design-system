@@ -77,7 +77,7 @@ export default class FormBuilderCore extends MixinsDeclaration {
 			...this.form
 		};
 
-		form[field.name].value = field.value;
+		form[field.name] = field;
 
 		this.$nextTick(() => {
 			this.$emit('change', form);
