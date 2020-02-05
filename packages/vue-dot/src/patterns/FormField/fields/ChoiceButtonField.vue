@@ -4,7 +4,7 @@
 			:value="choiceValue"
 			v-bind="field.metadata"
 		>
-			<template v-for="(item, index) in filterItems">
+			<template v-for="(item, index) in filteredItems">
 				<VItem
 					#default="{ active }"
 					:key="index"
@@ -34,6 +34,7 @@
 				</VItem>
 			</template>
 		</VItemGroup>
+
 		<p
 			v-if="field && field.metadata && field.metadata.hint"
 			class="mx-4 mb-0 v-messages"
@@ -46,27 +47,33 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiCheck } from '@mdi/js';
 
-	import ChoiceField from '../mixins/choiceField';
+	import { ChoiceField } from '../mixins/choiceField';
+	import FieldComponent from '../mixins/fieldComponent';
+
+	const MixinsDeclaration = mixins(FieldComponent, ChoiceField);
 
 	/** Form field to select a value from a list */
 	@Component
-	export default class ChoiceButtonField extends ChoiceField {
+	export default class ChoiceButtonField extends MixinsDeclaration {
 		checkIcon = mdiCheck;
 
 		/**
 		 * Filter items with value only
 		 */
-		get filterItems() {
-			if(!Array.isArray(this.field.items)) {
+		get filteredItems() {
+			if (!Array.isArray(this.field.items)) {
 				return [];
 			}
-			return this.field.items.filter((item) => {
+
+			const filteredItems = this.field.items.filter((item) => {
 				return Boolean(item.value);
 			});
+
+			return filteredItems;
 		}
 	}
 </script>

@@ -3,7 +3,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import { Field } from '../../types';
 
-import ChoiceField from '../choiceField';
+import { ChoiceField } from '../choiceField';
 
 const testField = {
 	type: 'choice',
