@@ -1,11 +1,11 @@
-import ruleMessage from '../../helpers/ruleMessage';
+import { ruleMessage } from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
-import isDateAfterNow from './isDateAfterNow';
+import { isDateAfterNow } from './isDateAfterNow';
 
 /** Check that the date is not before today (expects ##/##/#### format) */
-export function notBeforeToday(errorMessages = defaultErrorMessages) {
+export function notBeforeTodayFn(errorMessages = defaultErrorMessages) {
 	return (value: string) => {
 		// If the value is empty, return true (valid)
 		if (!value) {
@@ -18,4 +18,4 @@ export function notBeforeToday(errorMessages = defaultErrorMessages) {
 	};
 }
 
-export default notBeforeToday();
+export const notBeforeToday = notBeforeTodayFn();

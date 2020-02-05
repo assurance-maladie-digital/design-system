@@ -1,9 +1,9 @@
-import ruleMessage from '../../helpers/ruleMessage';
+import { ruleMessage } from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
 /** Check that the field does not exceeds the max length */
-export function maxLength(max: number, errorMessages = defaultErrorMessages) {
+export function maxLengthFn(max: number, errorMessages = defaultErrorMessages) {
 	// Return the validation function
 	return (value: string) => {
 		// If the value is empty, return true (valid)
@@ -15,4 +15,4 @@ export function maxLength(max: number, errorMessages = defaultErrorMessages) {
 	};
 }
 
-export default maxLength;
+export const maxLength = maxLengthFn;

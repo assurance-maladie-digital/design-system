@@ -39,12 +39,10 @@ export const mutations: MutationTree<NotificationState> = {
 export const getters: GetterTree<NotificationState, RootState> = {};
 
 /** The notification module */
-const notification: Module<NotificationState, RootState> = {
+export const notification: Module<NotificationState, RootState> = {
 	namespaced: true,
 	state,
 	actions,
 	mutations,
 	getters
 };
-
-export default notification;

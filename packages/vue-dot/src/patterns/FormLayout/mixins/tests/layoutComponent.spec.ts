@@ -3,7 +3,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import { Field } from '../../../FormField/types';
 
-import layoutComponent from '../layoutComponent';
+import { LayoutComponent } from '../layoutComponent';
 
 const testFieldString = {
 	type: 'text',
@@ -24,7 +24,7 @@ const testFields = [
 function createWrapper(fields: Field[]) {
 	const component = Vue.component('test', {
 		mixins: [
-			layoutComponent
+			LayoutComponent
 		],
 		template: '<div />'
 	});
@@ -33,11 +33,11 @@ function createWrapper(fields: Field[]) {
 		propsData: {
 			fields
 		}
-	}) as Wrapper<layoutComponent>;
+	}) as Wrapper<LayoutComponent>;
 }
 
 // Tests
-describe('layoutComponent', () => {
+describe('LayoutComponent', () => {
 	it('retrieves a field', () => {
 		const wrapper = createWrapper(testFields);
 

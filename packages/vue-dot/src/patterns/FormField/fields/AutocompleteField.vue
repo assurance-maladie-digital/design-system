@@ -12,7 +12,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import FieldComponent from '../mixins/fieldComponent';
+	import { FieldComponent } from '../mixins/fieldComponent';
 	import { FieldValue } from '../types';
 
 	/** Form field to select a value with autocomplete */

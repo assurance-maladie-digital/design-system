@@ -28,6 +28,8 @@
 		"tests/**/*.ts",
 		// Types
 		"types/**/*.ts",
+		// Scripts
+		"scripts/**/*.ts",
 		// JSON
 		"*.json"
 	],

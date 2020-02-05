@@ -1,4 +1,4 @@
-export default {
+export const config = {
 	snackBar: {
 		value: true,
 		timeout: 0,

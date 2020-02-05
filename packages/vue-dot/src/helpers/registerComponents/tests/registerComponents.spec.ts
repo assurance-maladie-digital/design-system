@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-import registerComponents, { Components } from '../';
+import { registerComponents, Components } from '../';
 
 import { getComponents } from '@/tests/integration/utils';
 

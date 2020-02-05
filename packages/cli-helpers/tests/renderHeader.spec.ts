@@ -1,6 +1,6 @@
 import { mockConsoleLog } from 'jest-mock-process';
 
-import renderHeader from '@/renderHeader';
+import { renderHeader } from '@/renderHeader';
 
 describe('renderHeader', () => {
 	let mockLog: jest.SpyInstance;

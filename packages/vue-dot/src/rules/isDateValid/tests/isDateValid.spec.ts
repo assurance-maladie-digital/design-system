@@ -1,10 +1,6 @@
-import isDateValid, { isDateValid as isDateValidFn } from '../';
+import { isDateValid, isDateValidFn } from '../';
 
-import dayjs from 'dayjs';
-
-const DATE_FORMAT = 'DD/MM/YYYY';
-
-const validDate = dayjs().format(DATE_FORMAT);
+const validDate = '14/09/2019';
 const invalidDate = '99/99/9999';
 
 // Tests
@@ -14,7 +10,7 @@ describe('isDateValid', () => {
 	});
 
 	it('returns an error when the day doesn\'t match the month dayjs', () => {
-		const date = '31/11/2019'; // Only 30 dayjs in November
+		const date = '31/11/2019'; // Only 30 days in November
 
 		expect(typeof isDateValid(date)).toBe('string');
 	});

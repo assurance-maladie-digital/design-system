@@ -8,7 +8,7 @@ import { Form } from '../../patterns/FormBuilder/types';
  * @param {Form} form The form object
  * @returns {FormValues} The form values
  */
-export default function getFormValues(form: Form): FormValues {
+export function getFormValues(form: Form): FormValues {
 	const formValues: FormValues = {};
 
 	Object.keys(form)

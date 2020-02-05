@@ -1,4 +1,4 @@
-export default {
+export const config = {
 	fileUpload: {
 		class: 'mt-6'
 	},

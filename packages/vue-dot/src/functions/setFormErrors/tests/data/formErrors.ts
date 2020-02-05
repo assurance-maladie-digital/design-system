@@ -13,7 +13,7 @@ export const formErrors = {
 } as FormErrors;
 
 /** FormErrors related to question form */
-export const questionErrors = {
+export const questionErrors: FormErrors = {
 	questionString: [
 		'error string 1',
 		'error string 2'
@@ -28,13 +28,13 @@ export const questionErrors = {
 			'Error questionPeriod to 2'
 		]
 	}
-} as FormErrors;
+};
 
-export const form = {
+export const form: Form = {
 	questionString: {
 		type: 'text'
 	},
 	questionPeriod: {
 		type: 'period'
 	}
-} as Form;
+};

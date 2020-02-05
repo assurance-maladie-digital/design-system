@@ -12,7 +12,7 @@
 
 	import { Field } from './types';
 
-	import FieldMap from './mixins/fieldMap';
+	import { FieldMap } from './mixins/fieldMap';
 
 	const Props = Vue.extend({
 		props: {

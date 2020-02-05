@@ -15,7 +15,7 @@ const MixinsDeclaration = mixins(Props);
 
 /** Add error prop from Vuetify and bind it with .sync modifier */
 @Component
-export default class ErrorProp extends MixinsDeclaration {
+export class ErrorProp extends MixinsDeclaration {
 	/**
 	 * Use an internal model
 	 * so we don't modify the prop

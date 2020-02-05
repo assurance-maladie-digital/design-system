@@ -50,7 +50,7 @@
 
 	import { mdiInformationOutline } from '@mdi/js';
 
-	import LayoutComponent from '../mixins/layoutComponent';
+	import { LayoutComponent } from '../mixins/layoutComponent';
 
 	@Component
 	export default class LayoutQuestion extends LayoutComponent {

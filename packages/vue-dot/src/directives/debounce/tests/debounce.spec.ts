@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import debounce from '../';
+import { debounce } from '../';
 
 interface TestComponent extends Vue {
 	value: string;

@@ -15,7 +15,7 @@ const Props = Vue.extend({
 
 /** Share code between layout components */
 @Component
-export default class LayoutComponent extends Props {
+export class LayoutComponent extends Props {
 	/**
 	 * Get a field by it's index in fields array
 	 *

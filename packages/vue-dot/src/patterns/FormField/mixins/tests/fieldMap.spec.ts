@@ -1,22 +1,22 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import fieldMap from '../fieldMap';
+import { FieldMap } from '../fieldMap';
 
 /** Create the wrapper */
 function createWrapper() {
 	const component = Vue.component('test', {
 		mixins: [
-			fieldMap
+			FieldMap
 		],
 		template: '<div />'
 	});
 
-	return mount(component) as Wrapper<fieldMap>;
+	return mount(component) as Wrapper<FieldMap>;
 }
 
 // Tests
-describe('fieldMap', () => {
+describe('FieldMap', () => {
 	it('contains the map of fields and their components', () => {
 		const wrapper = createWrapper();
 
