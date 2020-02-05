@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import pickerDate from '../mixins/pickerDate';
+import { PickerDate } from '../mixins/pickerDate';
 
 interface TestComponent extends Vue {
 	pickerDate: string;
@@ -12,7 +12,7 @@ interface TestComponent extends Vue {
 function createWrapper() {
 	const component = Vue.component('test', {
 		mixins: [
-			pickerDate
+			PickerDate
 		],
 		template: '<div />'
 	});
@@ -25,7 +25,7 @@ function createWrapper() {
 }
 
 // Tests
-describe('pickerDate', () => {
+describe('PickerDate', () => {
 	it('receives the value correctly from the prop', () => {
 		const wrapper = createWrapper();
 

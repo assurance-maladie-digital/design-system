@@ -1,4 +1,4 @@
-import vuetifyTheme from './vuetifyTheme';
+import { vuetifyTheme } from './vuetifyTheme';
 
 const TAB_CHARACTER = '	';
 
@@ -17,4 +17,7 @@ const tokens = {
 	}
 };
 
+// We need a CommonJS export (and only this) for the
+// package json-to-scss in order to generate a
+// clean token file
 export = tokens;

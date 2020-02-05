@@ -31,7 +31,7 @@ interface HTMLFnOpts {
  * @param {string} options.functionRemplacement Default remplacement is '{[Function]}'.
  * @param {AttrIgnoreFunction} options.attrIgnore Default is `undefined`.
  */
-export default function html(wrapper: Wrapper<Vue>, options?: HTMLFnOpts) {
+export function html(wrapper: Wrapper<Vue>, options?: HTMLFnOpts) {
 	const opts = {
 		...DEFAULT_OPTIONS,
 		...options

@@ -3,7 +3,7 @@
 
 import chalk from 'chalk';
 
-import colors from './colors';
+import { colors } from './colors';
 
 /** Wrapper for console.log to avoid lint errors */
 export const log = console.log;
@@ -70,5 +70,3 @@ export function verbose(text: string): void {
 export function event(text: string): void {
 	console.log(chalk.bold.white(text));
 }
-
-export default log;

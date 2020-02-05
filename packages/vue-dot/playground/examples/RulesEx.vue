@@ -47,22 +47,22 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import defaultRequired, { required } from '../../src/rules/required';
-	import maxLength from '../../src/rules/maxLength';
-	import minLength from '../../src/rules/minLength';
+	import { required, requiredFn } from '../../src/rules/required';
+	import { maxLength } from '../../src/rules/maxLength';
+	import { minLength } from '../../src/rules/minLength';
 
 	import { ValidationRule } from '../../src/rules/types';
 
 	@Component
 	export default class RulesEx extends Vue {
 		textFieldRules = [
-			required({
+			requiredFn({
 				default: 'Field is required.'
 			})
 		];
 
 		textareaRules: ValidationRule[] = [
-			defaultRequired,
+			required,
 			minLength(10) // Default error messages
 		];
 
@@ -78,7 +78,7 @@
 		];
 
 		selectRules = [
-			defaultRequired
+			required
 		];
 
 		selected = [];

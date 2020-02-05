@@ -20,7 +20,7 @@ const Props = Vue.extend({
 		event: 'change'
 	}
 })
-export default class FieldComponent extends Props {
+export class FieldComponent extends Props {
 	/**
 	 * Update the v-model by emitting 'change' event
 	 *

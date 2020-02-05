@@ -2,7 +2,7 @@ import Component from 'vue-class-component';
 
 import { ChoiceValue, FieldItem } from '../types';
 
-import FieldComponent from './fieldComponent';
+import { FieldComponent } from './fieldComponent';
 
 /** Mixin to control the item selection */
 @Component<ChoiceField>({

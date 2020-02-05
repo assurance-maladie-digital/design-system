@@ -52,7 +52,7 @@
 	import { mdiCheck } from '@mdi/js';
 
 	import { ChoiceField } from '../mixins/choiceField';
-	import FieldComponent from '../mixins/fieldComponent';
+	import { FieldComponent } from '../mixins/fieldComponent';
 
 	const MixinsDeclaration = mixins(FieldComponent, ChoiceField);
 

@@ -1,9 +1,11 @@
+const shouldRenderTemplate = require('./shouldRenderTemplate');
+
 const Superb = require('superb');
 
 // Make a function, so you can call superb()
 const superb = () => Superb.random();
 
-module.exports = [
+const prompts = [
 	{
 		name: 'description',
 		type: 'text',
@@ -23,3 +25,5 @@ module.exports = [
 		default: true
 	}
 ];
+
+module.exports = shouldRenderTemplate ? prompts : undefined;

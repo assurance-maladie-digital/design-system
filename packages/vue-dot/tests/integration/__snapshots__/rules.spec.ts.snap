@@ -14,12 +14,12 @@ Object {
 
 exports[`rules should list all rules functions 1`] = `
 Object {
-  "email": [Function],
-  "isDateValid": [Function],
-  "maxLength": [Function],
-  "minLength": [Function],
-  "notAfterToday": [Function],
-  "notBeforeToday": [Function],
-  "required": [Function],
+  "emailFn": [Function],
+  "isDateValidFn": [Function],
+  "maxLengthFn": [Function],
+  "minLengthFn": [Function],
+  "notAfterTodayFn": [Function],
+  "notBeforeTodayFn": [Function],
+  "requiredFn": [Function],
 }
 `;

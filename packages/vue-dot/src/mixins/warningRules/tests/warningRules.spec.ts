@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import warningRules from '../';
+import { WarningRules } from '../';
 
 interface TestComponent extends Vue {
 	validate: (value: string) => void;
@@ -12,7 +12,7 @@ interface TestComponent extends Vue {
 function createWrapper() {
 	const component = Vue.component('test', {
 		mixins: [
-			warningRules
+			WarningRules
 		],
 		template: '<div />'
 	});
@@ -28,7 +28,7 @@ function createWrapper() {
 }
 
 // Tests
-describe('warningRules', () => {
+describe('WarningRules', () => {
 	it('validates the value correctly on error', () => {
 		const wrapper = createWrapper();
 

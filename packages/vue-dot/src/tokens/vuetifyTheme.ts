@@ -2,7 +2,7 @@
  * Colors used in the Vuetify theme
  * that are also Design Tokens
  */
-export default {
+export const vuetifyTheme = {
 	// Brand
 	primary: '#003463',
 	secondary: '#0c4887',

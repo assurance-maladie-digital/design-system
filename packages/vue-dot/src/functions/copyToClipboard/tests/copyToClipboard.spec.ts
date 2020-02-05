@@ -1,4 +1,4 @@
-import copyToClipboard from '../';
+import { copyToClipboard } from '../';
 
 interface TSelection {
 	rangeCount?: number;

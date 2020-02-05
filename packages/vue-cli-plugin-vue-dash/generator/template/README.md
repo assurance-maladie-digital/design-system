@@ -4,7 +4,7 @@
 
 ## Configure config.js
 
-Copy the file `public/js/config.js.dist` and rename it to `public/js/config.js`.
+This is done automatically, but if you want to setup this manually, you should copy the file `public/js/config.js.dist` and rename it to `public/js/config.js`.
 
 You can customize the variables in `config.js` if needed.
 

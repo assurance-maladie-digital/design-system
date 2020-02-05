@@ -1,4 +1,4 @@
-export default {
+export const config = {
 	menu: {
 		offsetX: true,
 		zIndex: 8,

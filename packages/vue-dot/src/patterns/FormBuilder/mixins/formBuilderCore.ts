@@ -4,7 +4,7 @@ import Component, { mixins } from 'vue-class-component';
 import LayoutMap from '../../FormLayout/mixins/layoutMap';
 import { Layouts } from '../../FormLayout/layoutsEnum';
 
-import deepCopy from '../../../helpers/deepCopy';
+import { deepCopy } from '../../../helpers/deepCopy';
 
 import {
 	Form,
@@ -61,7 +61,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		}
 	}
 })
-export default class FormBuilderCore extends MixinsDeclaration {
+export class FormBuilderCore extends MixinsDeclaration {
 	/** The layout object containing the fields */
 	computedLayout = {} as ComputedLayout | null;
 

@@ -15,7 +15,7 @@ const defaultItem = [
 	}
 ];
 
-export default {
+export const addressForm: Form = {
 	streetNumber: {
 		type: 'number',
 		value: null,
@@ -70,4 +70,4 @@ export default {
 			label: 'Ville'
 		}
 	}
-} as Form;
+};

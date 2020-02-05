@@ -7,7 +7,6 @@ Object {
     "lightGrey": "#909090",
     "primary": "#01579b",
   },
-  "default": [Function],
   "done": [Function],
   "error": [Function],
   "event": [Function],

@@ -18,9 +18,9 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import config from './config';
+	import { config } from './config';
 
-	import customizable from '../../mixins/customizable';
+	import { customizable } from '../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {

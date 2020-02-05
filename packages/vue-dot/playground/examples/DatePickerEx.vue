@@ -125,9 +125,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import required from '../../src/rules/required';
-	import isDateValid from '../../src/rules/isDateValid';
-	import notAfterToday from '../../src/rules/notAfterToday';
+	import { required } from '../../src/rules/required';
+	import { isDateValid } from '../../src/rules/isDateValid';
+	import { notAfterToday } from '../../src/rules/notAfterToday';
 
 	import { mdiCakeVariant } from '@mdi/js';
 

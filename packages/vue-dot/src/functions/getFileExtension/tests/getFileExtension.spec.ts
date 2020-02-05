@@ -1,4 +1,4 @@
-import getFileExtension from '../';
+import { getFileExtension } from '../';
 
 // Tests
 describe('getFileExtension', () => {

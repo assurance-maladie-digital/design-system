@@ -1,4 +1,4 @@
-import debounce from '../';
+import { debounce } from '../';
 
 // Tell jest to mock all timeout functions
 jest.useFakeTimers();

@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
+import dayjs from 'dayjs';
+
 import { Refs } from '../../../types';
 
-import birthdate from '../mixins/birthdate';
-
-import dayjs from 'dayjs';
+import { Birthdate } from '../mixins/birthdate';
 
 // Tell jest to mock all timeout functions
 jest.useFakeTimers();
@@ -41,7 +41,7 @@ function createDatePicker() {
 function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
 	const component = Vue.component('test', {
 		mixins: [
-			birthdate
+			Birthdate
 		],
 		watch: {
 			menu: spy ? spy : () => null
@@ -65,7 +65,7 @@ function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
 }
 
 // Tests
-describe('birthdate', () => {
+describe('Birthdate', () => {
 	it('doesn\'t set max & min values when birthdate is false', () => {
 		const wrapper = createWrapper(false);
 

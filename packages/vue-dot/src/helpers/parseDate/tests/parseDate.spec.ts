@@ -1,6 +1,6 @@
-import parseDate from '../';
-
 import dayjs from 'dayjs';
+
+import { parseDate } from '../';
 
 const RESULT_DATE_FORMAT = 'YYYY-MM-DD';
 

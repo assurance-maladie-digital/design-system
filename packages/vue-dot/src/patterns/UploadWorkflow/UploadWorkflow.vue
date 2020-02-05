@@ -76,15 +76,15 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import config from './config';
-	import locales from './locales';
+	import { config } from './config';
+	import { locales } from './locales';
 	import { FileListItem, SelectItem } from './types';
 
 	import { Refs } from '../../types';
 
-	import required from '../../rules/required';
+	import { required } from '../../rules/required';
 
-	import customizable from '../../mixins/customizable';
+	import { customizable } from '../../mixins/customizable';
 
 	import FileUpload from '../FileUpload';
 	import { ErrorEvent } from '../FileUpload/types';

@@ -20,7 +20,7 @@ const MixinsDeclaration = mixins(Props);
 
 /** Provides computed date format mask value */
 @Component
-export default class MaskValue extends MixinsDeclaration {
+export class MaskValue extends MixinsDeclaration {
 	/** DatePicker.dateFormat */
 	dateFormat!: string;
 

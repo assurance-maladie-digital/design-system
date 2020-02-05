@@ -58,7 +58,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import locales from './locales';
+	import { locales } from './locales';
 
 	import { ListItem } from './types';
 

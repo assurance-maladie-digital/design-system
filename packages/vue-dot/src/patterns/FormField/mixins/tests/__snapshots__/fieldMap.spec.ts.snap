@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fieldMap contains the map of fields and their components 1`] = `
+exports[`FieldMap contains the map of fields and their components 1`] = `
 Object {
   "autocomplete": "AutocompleteField",
   "choiceButton": "ChoiceButtonField",

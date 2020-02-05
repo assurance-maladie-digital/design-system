@@ -5,13 +5,13 @@ import Vue from 'vue';
 // Register globally all examples
 import './examples';
 
-import store from './store/';
+import { store } from './store/';
 
 // Disable console tooltip
 Vue.config.productionTip = false;
 
 // Import plugins
-import vuetify from './plugins/vuetify';
+import { vuetify } from './plugins/vuetify';
 import './plugins/vue-dot';
 
 // Globally register DocSection component

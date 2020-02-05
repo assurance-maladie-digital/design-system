@@ -3,7 +3,7 @@
 
 // tslint:disable: no-unused-expression
 
-import LocalStorageUtility from '../';
+import { LocalStorageUtility } from '../';
 
 /** Get the controlItem (not parsed) in localStorage */
 function getControlItem() {

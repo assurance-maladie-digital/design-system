@@ -1,9 +1,9 @@
-import ruleMessage from '../../helpers/ruleMessage';
+import { ruleMessage } from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
 /** Check that the email is valid */
-export function email(errorMessages = defaultErrorMessages) {
+export function emailFn(errorMessages = defaultErrorMessages) {
 	return (value: string) => {
 		// If the value is empty, return true (valid)
 		if (!value) {
@@ -16,4 +16,4 @@ export function email(errorMessages = defaultErrorMessages) {
 	};
 }
 
-export default email();
+export const email = emailFn();

@@ -1,4 +1,4 @@
-import isDateInRange from '../';
+import { isDateInRange } from '../';
 
 const start = '2019-10-21';
 const end = '2019-10-27';

@@ -10,8 +10,8 @@
 		>
 			<DatePicker
 				v-model="periodValue.from"
-				v-bind="field.metadata.from"
-				:vuetify-options="getVuetifyOptions(field.metadata.from)"
+				v-bind="metadataFrom"
+				:vuetify-options="getVuetifyOptions(metadataFrom)"
 				@change="dateUpdated"
 			/>
 		</VCol>
@@ -39,8 +39,8 @@
 
 	import { PeriodValue } from '../types';
 
-	import FieldComponent from '../mixins/fieldComponent';
-	import DatePickerOptions from '../mixins/datePickerOptions';
+	import { FieldComponent } from '../mixins/fieldComponent';
+	import { DatePickerOptions } from '../mixins/datePickerOptions';
 
 	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
 
@@ -79,6 +79,10 @@
 				datePicker,
 				...metadataTo
 			};
+		}
+
+		get metadataFrom() {
+			return this.field.metadata ? this.field.metadata.from : undefined;
 		}
 
 		/** Emit the new value when started or ended date change */

@@ -1,7 +1,0 @@
-# Generated files
-*.csv
-*.zip
-tmp/
-
-# Demo
-demo/

@@ -100,10 +100,10 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import locales from './locales';
+	import { locales } from './locales';
 
-	import getFileExtension from '../../functions/getFileExtension';
-	import calcHumanFileSize from '../../functions/calcHumanFileSize';
+	import { getFileExtension } from '../../functions/getFileExtension';
+	import { calcHumanFileSize } from '../../functions/calcHumanFileSize';
 
 	import { mdiCloudUpload } from '@mdi/js';
 
