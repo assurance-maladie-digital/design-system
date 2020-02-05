@@ -1,4 +1,4 @@
-import { FieldMetadata } from './../types.d';
+import { FieldMetadata } from '../types';
 import Vue, { PropType } from 'vue';
 import Component from 'vue-class-component';
 
@@ -34,7 +34,6 @@ export class FieldComponent extends Props {
 	 * @returns {void}
 	 */
 	emitChangeEvent(value: FieldValue): void {
-
 		const metadata = this.fieldMetadata ? this.clearErrorMessages(this.fieldMetadata) : null;
 
 		const updatedField = {
@@ -50,7 +49,7 @@ export class FieldComponent extends Props {
 	}
 
 	/**
-	 * Clear all ErrorMessage in metadata
+	 * Clear all ErrorMessages in metadata
 	 *
 	 * @param {FieldMetadata} metadata The field metadata
 	 * @returns {FieldMetadata} The new field metadata without errorMessages
