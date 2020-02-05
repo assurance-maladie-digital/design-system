@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getFormValue returns all values 1`] = `
+exports[`getFormValues returns all values 1`] = `
 Object {
   "streetLabel": "streetLabel",
   "streetNumber": 1,
