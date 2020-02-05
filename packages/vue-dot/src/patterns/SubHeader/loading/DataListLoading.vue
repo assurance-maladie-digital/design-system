@@ -1,15 +1,14 @@
 <template>
-	<VLayout>
+	<VLayout wrap>
 		<VLayout
 			v-for="columnIndex in columnsNumber"
 			:key="columnIndex + '-loader'"
-			:style="{
-				marginRight: columnIndex !== columnsNumber ? '80px' : undefined
-			}"
+			class="vd-data-list-loading-item"
 			column
 		>
 			<HeaderLoading
-				height="26"
+				class="mb-2 mt-3"
+				height="1.75rem"
 				width="100"
 				dark
 			/>
@@ -17,16 +16,16 @@
 			<template v-for="index in itemsNumber">
 				<HeaderLoading
 					:key="index + '-key'"
-					class="mt-4"
-					height="14"
+					height="1.25rem"
+					class="mb-1"
 					width="60"
 					dark
 				/>
 
 				<HeaderLoading
 					:key="index + '-value'"
-					class="mt-2"
-					height="22"
+					class="mb-2"
+					height="1.5rem"
 					width="90"
 					dark
 				/>
@@ -57,3 +56,22 @@
 	@Component
 	export default class DataListLoading extends MixinsDeclaration {}
 </script>
+
+<style lang="scss" scoped>
+	.vd-data-list-loading-item {
+		flex: none;
+		margin-left: 8px;
+
+		&:not(:last-child) {
+			margin-right: 80px;
+		}
+	}
+
+	@media only screen and (max-width: 425px) {
+		.vd-data-list-loading-item {
+			&:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+	}
+</style>

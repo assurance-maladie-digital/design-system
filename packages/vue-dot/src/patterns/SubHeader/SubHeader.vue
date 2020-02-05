@@ -1,12 +1,11 @@
 <template>
-	<div class="vd-sub-header secondary white--text py-3 px-6">
+	<div class="vd-sub-header secondary white--text py-6 px-8">
 		<slot name="back-btn">
 			<template v-if="!hideBackBtn">
 				<VSkeletonLoader
 					v-if="loading"
 					height="28"
 					type="button"
-					class="mb-1"
 					width="100"
 					dark
 				/>
@@ -31,12 +30,15 @@
 			v-bind="options.contentLayout"
 			class="vd-sub-header-content"
 		>
-			<div class="vd-sub-header-informations">
+			<VLayout
+				class="vd-sub-header-informations mt-1"
+				column
+			>
 				<slot name="title">
 					<HeaderLoading
 						v-if="loading"
 						width="300"
-						height="32"
+						height="2rem"
 						dark
 					/>
 
@@ -54,7 +56,7 @@
 							v-if="loading"
 							class="mt-1"
 							width="250"
-							height="32"
+							height="2rem"
 							dark
 						/>
 
@@ -71,13 +73,13 @@
 				</slot>
 
 				<slot name="additional-informations" />
-			</div>
+			</VLayout>
 
 			<slot name="right-content">
 				<VLayout
 					v-if="dataLists"
 					v-bind="options.dataListsLayout"
-					class="vd-sub-header-data-list mb-5"
+					class="vd-sub-header-data-list mt-n2 mx-n2"
 				>
 					<DataListLoading v-if="loading" />
 
@@ -88,7 +90,7 @@
 						:list-title="dataList.title"
 						:list="dataList.items"
 						:label-color="fadeWhite"
-						title-class="subtitle-1 font-weight-bold mb-2"
+						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
 					/>
@@ -184,7 +186,9 @@
 	}
 
 	.vd-sub-header-informations {
-		min-width: 310px;
+		flex: none;
+		width: 310px;
+		margin-right: 8px; // Avoid "contact" with right part
 	}
 
 	.vd-sub-header-data-list {
@@ -193,6 +197,7 @@
 
 		::v-deep .vd-data-list {
 			max-width: 200px;
+			margin-left: 8px;
 
 			// Apply margin right to avoid empty
 			// space on smaller screens
@@ -203,6 +208,24 @@
 			.vd-key {
 				display: inline-block;
 				font-size: .75rem !important;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 425px) {
+		.vd-sub-header-informations {
+			// Let section take all width
+			margin-right: 0;
+		}
+
+		// Remove margin right on DataList on small screens
+		.vd-sub-header-data-list {
+			::v-deep .vd-data-list {
+				margin: 0 8px;
+
+				&:not(:last-child) {
+					margin-right: 8px;
+				}
 			}
 		}
 	}

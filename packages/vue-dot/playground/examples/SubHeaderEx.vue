@@ -8,18 +8,20 @@
 		>
 			<!-- ProgressBar -->
 			<template #additional-informations>
+				<VSpacer />
+
 				<template v-if="loading">
 					<HeaderLoading
 						class="mt-8"
-						height="23"
+						height="24"
 						width="150"
 						dark
 					/>
 
 					<HeaderLoading
-						class="mt-2"
-						height="10"
-						width="300"
+						class="mt-2 mb-1"
+						height="8"
+						width="100%"
 						tile
 						dark
 					/>
@@ -33,7 +35,7 @@
 					<VProgressLinear
 						v-bind="progressLinearOpts"
 						:value="progressValue"
-						class="mb-5"
+						class="mb-1"
 					/>
 				</template>
 			</template>

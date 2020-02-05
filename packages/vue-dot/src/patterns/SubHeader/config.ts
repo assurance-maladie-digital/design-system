@@ -3,7 +3,7 @@ export const config = {
 		color: 'transparent',
 		small: true,
 		depressed: true,
-		class: 'text-none font-weight-regular white--text mx-n4 mb-1'
+		class: 'text-none font-weight-regular white--text mx-n4'
 	},
 	contentLayout: {
 		wrap: true,

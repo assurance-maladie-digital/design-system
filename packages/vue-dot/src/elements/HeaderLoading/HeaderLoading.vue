@@ -28,4 +28,11 @@
 			border-radius: 35px;
 		}
 	}
+
+	// Remove border radius when tile option is activated
+	.vd-header-loading.v-skeleton-loader--tile ::v-deep	{
+		.v-skeleton-loader__heading {
+			border-radius: 0;
+		}
+	}
 </style>
