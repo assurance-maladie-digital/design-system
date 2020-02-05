@@ -28,6 +28,12 @@ const computedField: ComputedField = {
 	name: 'field1'
 };
 
+const computedFieldDynamic: ComputedField = {
+	...testField,
+	name: 'field1',
+	dynamic: true
+};
+
 const testForm: Form = {
 	field1: testField
 };
@@ -226,6 +232,32 @@ describe('formBuilderCore', () => {
 		wrapper.vm.$nextTick(() => {
 			expect(wrapper.emitted('change')).toBeTruthy();
 			expect(wrapper.emitted().change[0]).toEqual([updatedTestForm]);
+		});
+	});
+
+	it('don\'t emits refresh event', async() => {
+		const wrapper = createWrapper(testForm);
+
+		const updatedField = computedField;
+		updatedField.value = 'test';
+
+		wrapper.vm.formUpdated(updatedField);
+
+		wrapper.vm.$nextTick(() => {
+			expect(wrapper.emitted('refresh')).toBeFalsy();
+		});
+	});
+
+	it('emits refresh event on dynamic field changed', async() => {
+		const wrapper = createWrapper(testForm);
+
+		const updatedField = computedFieldDynamic;
+		updatedField.value = 'test';
+
+		wrapper.vm.formUpdated(updatedField);
+
+		wrapper.vm.$nextTick(() => {
+			expect(wrapper.emitted('refresh')).toBeTruthy();
 		});
 	});
 });
