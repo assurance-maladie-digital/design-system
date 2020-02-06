@@ -51,6 +51,8 @@
 
 	import { mdiCheck } from '@mdi/js';
 
+	import { FieldItem } from '../types';
+
 	import { ChoiceField } from '../mixins/choiceField';
 	import { FieldComponent } from '../mixins/fieldComponent';
 
@@ -62,16 +64,16 @@
 		checkIcon = mdiCheck;
 
 		/**
-		 * Filter items with value only
+		 * Filter items with truthy value only
+		 *
+		 * @returns {FieldItem[]} The filtered items
 		 */
-		get filteredItems() {
+		get filteredItems(): FieldItem[] {
 			if (!Array.isArray(this.field.items)) {
 				return [];
 			}
 
-			const filteredItems = this.field.items.filter((item) => {
-				return Boolean(item.value);
-			});
+			const filteredItems = this.field.items.filter((item) => Boolean(item.value));
 
 			return filteredItems;
 		}

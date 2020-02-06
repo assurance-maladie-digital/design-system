@@ -148,9 +148,12 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-form-field theme--light v-text-field">
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
       <div class="v-input__control">
         <div class="v-input__slot">
+          <fieldset aria-hidden="true">
+            <legend style="width: 0px;"><span>​</span></legend>
+          </fieldset>
           <div class="v-text-field__slot"><input mask="###-###" id="input-77" type="text"></div>
         </div>
         <div class="v-text-field__details">

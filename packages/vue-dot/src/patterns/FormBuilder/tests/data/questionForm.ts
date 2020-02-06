@@ -37,7 +37,8 @@ export const questionForm: Form = {
 		description: 'Informations supplémentaires',
 		value: null,
 		metadata: {
-			mask: '###-###'
+			mask: '###-###',
+			outlined: true
 		}
 	},
 	questionTextarea: {
