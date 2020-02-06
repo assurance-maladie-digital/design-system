@@ -235,7 +235,7 @@ describe('formBuilderCore', () => {
 		expect(wrapper.emitted().change[0]).toEqual([updatedTestForm]);
 	});
 
-	it('doesn\'t emits refresh event', async() => {
+	it('doesn\'t emits refresh event when the field is not dynamic', async() => {
 		const wrapper = createWrapper(testForm);
 
 		const updatedField = computedField;
