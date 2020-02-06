@@ -34,7 +34,8 @@ export class FieldComponent extends Props {
 	 * @returns {void}
 	 */
 	emitChangeEvent(value: FieldValue): void {
-		const metadata = this.fieldMetadata ? this.clearErrorMessages(this.fieldMetadata) : null;
+
+		const metadata = this.fieldMetadata ? this.clearErrorMessages(deepCopy(this.fieldMetadata)) : undefined;
 
 		const updatedField = {
 			...this.field,
@@ -55,6 +56,6 @@ export class FieldComponent extends Props {
 	 * @returns {FieldMetadata} The new field metadata without errorMessages
 	 */
 	clearErrorMessages(metadata: FieldMetadata): FieldMetadata {
-		return deepRemoveKeys(deepCopy(metadata), 'errorMessages');
+		return deepRemoveKeys(metadata, 'errorMessages');
 	}
 }

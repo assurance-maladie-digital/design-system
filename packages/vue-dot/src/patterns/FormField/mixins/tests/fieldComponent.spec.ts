@@ -41,4 +41,17 @@ describe('fieldComponent', () => {
 
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
+
+	it('emits change event without metadata', async() => {
+		const wrapper = createWrapper({
+			...testField,
+			metadata: undefined
+		});
+
+		wrapper.vm.emitChangeEvent(testField.value);
+
+		await Vue.nextTick();
+
+		expect(wrapper.emitted('change')).toBeTruthy();
+	});
 });
