@@ -28,7 +28,7 @@ const computedField: ComputedField = {
 	name: 'field1'
 };
 
-const computedFieldDynamic: ComputedField = {
+const computedDynamicField: ComputedField = {
 	...testField,
 	name: 'field1',
 	dynamic: true
@@ -214,7 +214,7 @@ describe('formBuilderCore', () => {
 		expect(wrapper.vm.getDefaultLayout()).toBe(null);
 	});
 
-	it('emits change event', () => {
+	it('emits change event', async() => {
 		const wrapper = createWrapper(testForm);
 
 		const updatedField = computedField;
@@ -229,13 +229,13 @@ describe('formBuilderCore', () => {
 			}
 		};
 
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('change')).toBeTruthy();
-			expect(wrapper.emitted().change[0]).toEqual([updatedTestForm]);
-		});
+		await Vue.nextTick();
+
+		expect(wrapper.emitted('change')).toBeTruthy();
+		expect(wrapper.emitted().change[0]).toEqual([updatedTestForm]);
 	});
 
-	it('don\'t emits refresh event', async() => {
+	it('doesn\'t emits refresh event', async() => {
 		const wrapper = createWrapper(testForm);
 
 		const updatedField = computedField;
@@ -243,21 +243,22 @@ describe('formBuilderCore', () => {
 
 		wrapper.vm.formUpdated(updatedField);
 
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('refresh')).toBeFalsy();
-		});
+		await Vue.nextTick();
+
+		expect(wrapper.emitted('refresh')).toBeFalsy();
+
 	});
 
-	it('emits refresh event on dynamic field changed', async() => {
+	it('emits refresh event when a dynamic field is updated', async() => {
 		const wrapper = createWrapper(testForm);
 
-		const updatedField = computedFieldDynamic;
+		const updatedField = computedDynamicField;
 		updatedField.value = 'test';
 
 		wrapper.vm.formUpdated(updatedField);
 
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('refresh')).toBeTruthy();
-		});
+		await Vue.nextTick();
+
+		expect(wrapper.emitted('refresh')).toBeTruthy();
 	});
 });
