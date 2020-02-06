@@ -1,8 +1,9 @@
 /**
  * Deep remove a list of keys in object or array
  *
- * @param {any} collection The parent object to inspect deeply
- * @returns {string | string[]} keys to be deleted
+ * @param {any} collection The collection to inspect deeply
+ * @param {string|string[]} keys The keys to delete
+ * @returns {any} The new collection
  */
 export function deepRemoveKeys<T = any>(collection: any, keys: string | string[]): T {
 	if (collection instanceof Array) {

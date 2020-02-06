@@ -1,10 +1,10 @@
-import { FieldMetadata } from '../types';
 import Vue, { PropType } from 'vue';
 import Component from 'vue-class-component';
 
-import { Field, FieldValue } from '../types';
-import { deepRemoveKeys } from '../../../../src/helpers/deepRemoveKeys';
+import { Field, FieldValue, FieldMetadata } from '../types';
+
 import { deepCopy } from '../../../../src/helpers/deepCopy';
+import { deepRemoveKeys } from '../../../../src/helpers/deepRemoveKeys';
 
 const Props = Vue.extend({
 	props: {
@@ -27,6 +27,7 @@ export class FieldComponent extends Props {
 	get fieldMetadata() {
 		return this.field.metadata;
 	}
+
 	/**
 	 * Update the v-model by emitting 'change' event
 	 *
@@ -34,7 +35,6 @@ export class FieldComponent extends Props {
 	 * @returns {void}
 	 */
 	emitChangeEvent(value: FieldValue): void {
-
 		const metadata = this.fieldMetadata ? this.clearErrorMessages(deepCopy(this.fieldMetadata)) : undefined;
 
 		const updatedField = {

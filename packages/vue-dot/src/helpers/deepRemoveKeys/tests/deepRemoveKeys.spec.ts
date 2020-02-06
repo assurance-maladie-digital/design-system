@@ -1,61 +1,66 @@
 import { deepRemoveKeys } from '../';
 import { deepCopy } from '../../../helpers/deepCopy';
 
-const objToDeepRemove = {
-	a: {
-		b: 'b',
-		c: [{ e: 'key to delete' }]
-	}
+const BASE_OBJECT = {
+	b: 'b',
+	c: [
+		{
+			e: 'e'
+		}
+	]
 };
 
-const objToDeepRemove2 = [
-	{
-		b: 'b',
-		c: [{ e: 'key to delete' }]
-	}
+const DEEP_OBJECT = {
+	a: BASE_OBJECT
+};
+
+const DEEP_ARRAY = [
+	BASE_OBJECT
 ];
 
 // Tests
 describe('deepRemoveKeys', () => {
 	it('deletes a key', () => {
-		const copie = deepCopy(objToDeepRemove);
+		const deepObject = deepCopy(DEEP_OBJECT);
 
-		const newCollection = deepRemoveKeys(copie, 'b');
+		const newCollection = deepRemoveKeys(deepObject, 'c');
 
 		expect(newCollection).toEqual({
 			a: {
-				c: [{ e: 'key to delete' }]
+				b: 'b'
 			}
 		});
 	});
 
 	it('deletes multiple keys', () => {
-		const copie = deepCopy(objToDeepRemove);
+		const deepObject = deepCopy(DEEP_OBJECT);
 
-		const newCollection = deepRemoveKeys(copie, ['b', 'c']);
+		const newCollection = deepRemoveKeys(deepObject, ['b', 'c']);
 
 		expect(newCollection).toEqual({
 			a: {}
 		});
 	});
 
-	it('delete deep key in object', () => {
-		const copie = deepCopy(objToDeepRemove);
+	it('deletes deep key in object', () => {
+		const deepObject = deepCopy(DEEP_OBJECT);
 
-		const newCollection = deepRemoveKeys(copie, 'e');
+		const newCollection = deepRemoveKeys(deepObject, 'e');
 
 		expect(newCollection).toEqual({
 			a: {
 				b: 'b',
-				c: [{}]
+				c: [
+					{}
+				]
 			}
 		});
 	});
 
-	it('delete deep key in an array', () => {
-		const copie = deepCopy(objToDeepRemove2);
+	it('deletes deep key in array', () => {
+		const deepArray = deepCopy(DEEP_ARRAY);
 
-		const newCollection = deepRemoveKeys(copie, 'c');
+		const newCollection = deepRemoveKeys(deepArray, 'c');
 
 		expect(newCollection).toEqual([
 			{
