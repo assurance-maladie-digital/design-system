@@ -26,4 +26,5 @@ export interface Field {
 	metadata?: FieldMetadata;
 	items?: any[];
 	mask?: string;
+	dynamic?: boolean;
 }
