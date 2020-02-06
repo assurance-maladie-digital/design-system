@@ -78,7 +78,13 @@ export class FormBuilderCore extends MixinsDeclaration {
 			...this.form
 		};
 
-		form[field.name].value = field.value;
+		const fieldName = field.name;
+
+		// Delete the field name before updating the form with
+		// the new field since it's not present in original data
+		delete field.name;
+
+		form[fieldName] = field;
 
 		this.$nextTick(() => {
 			this.$emit('change', form);
