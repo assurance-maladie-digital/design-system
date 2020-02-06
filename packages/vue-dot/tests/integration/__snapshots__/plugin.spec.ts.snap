@@ -9,6 +9,7 @@ Object {
     "DatePicker",
     "FileList",
     "FileUpload",
+    "HeaderLoading",
     "LangBtn",
     "NotificationBar",
     "PageCard",

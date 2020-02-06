@@ -1,60 +1,96 @@
 <template>
-	<div class="vd-sub-header secondary white--text py-3 px-6">
+	<div class="vd-sub-header secondary white--text py-6 px-8">
 		<slot name="back-btn">
-			<VBtn
-				v-if="!hideBackBtn"
-				v-bind="options.backBtn"
-				@click="$emit('back')"
-			>
-				<slot name="back-btn-icon">
-					<VIcon class="mr-2">
-						{{ backArrowIcon }}
-					</VIcon>
-				</slot>
+			<template v-if="!hideBackBtn">
+				<VSkeletonLoader
+					v-if="loading"
+					height="28"
+					type="button"
+					width="100"
+					dark
+				/>
 
-				{{ backBtnText }}
-			</VBtn>
+				<VBtn
+					v-else
+					v-bind="options.backBtn"
+					@click="$emit('back')"
+				>
+					<slot name="back-btn-icon">
+						<VIcon class="mr-2">
+							{{ backArrowIcon }}
+						</VIcon>
+					</slot>
+
+					{{ backBtnText }}
+				</VBtn>
+			</template>
 		</slot>
 
 		<VLayout
 			v-bind="options.contentLayout"
 			class="vd-sub-header-content"
 		>
-			<div class="vd-sub-header-informations">
+			<VLayout
+				class="vd-sub-header-informations mt-1"
+				column
+			>
 				<slot name="title">
-					<h2 class="headline font-weight-bold">
+					<HeaderLoading
+						v-if="loading"
+						width="300"
+						height="2rem"
+						dark
+					/>
+
+					<h2
+						v-else
+						class="headline font-weight-bold"
+					>
 						{{ titleText }}
 					</h2>
 				</slot>
 
 				<slot name="sub-title">
-					<p
-						v-if="subTitleText"
-						class="title font-weight-bold mt-1 mb-0"
-						:style="{
-							color: fadeWhite
-						}"
-					>
-						{{ subTitleText }}
-					</p>
+					<template v-if="subTitleText">
+						<HeaderLoading
+							v-if="loading"
+							class="mt-1"
+							width="250"
+							height="2rem"
+							dark
+						/>
+
+						<p
+							v-else
+							class="title font-weight-bold mt-1 mb-0"
+							:style="{
+								color: fadeWhite
+							}"
+						>
+							{{ subTitleText }}
+						</p>
+					</template>
 				</slot>
 
 				<slot name="additional-informations" />
-			</div>
+			</VLayout>
 
 			<slot name="right-content">
 				<VLayout
 					v-if="dataLists"
 					v-bind="options.dataListsLayout"
-					class="vd-sub-header-data-list"
+					class="vd-sub-header-data-list mt-n2 mx-n2"
 				>
+					<DataListLoading v-if="loading" />
+
 					<DataList
 						v-for="(dataList, index) in dataLists"
+						v-else
 						:key="'vd-sub-header-data-list' + index"
 						:list-title="dataList.title"
 						:list="dataList.items"
 						:label-color="fadeWhite"
-						title-class="subtitle-1 font-weight-bold mb-2"
+						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
 					/>
@@ -75,6 +111,8 @@
 	import { customizable } from '../../mixins/customizable';
 
 	import DataList from '../../elements/DataList';
+
+	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
 
@@ -104,6 +142,10 @@
 			dataLists: {
 				type: Array as PropType<IDataList[]>,
 				default: undefined
+			},
+			loading: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -116,7 +158,8 @@
 	 */
 	@Component({
 		components: {
-			DataList
+			DataList,
+			DataListLoading
 		}
 	})
 	export default class SubHeader extends MixinsDeclaration {
@@ -132,6 +175,20 @@
 <style lang="scss" scoped>
 	.vd-sub-header {
 		width: 100%;
+
+		::v-deep {
+			.v-skeleton-loader__heading {
+				width: 100%;
+				height: 100%;
+				border-radius: 20px;
+			}
+		}
+	}
+
+	.vd-sub-header-informations {
+		flex: none;
+		width: 310px;
+		margin-right: 8px; // Avoid "contact" with right part
 	}
 
 	.vd-sub-header-data-list {
@@ -140,6 +197,7 @@
 
 		::v-deep .vd-data-list {
 			max-width: 200px;
+			margin-left: 8px;
 
 			// Apply margin right to avoid empty
 			// space on smaller screens
@@ -150,6 +208,24 @@
 			.vd-key {
 				display: inline-block;
 				font-size: .75rem !important;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 425px) {
+		.vd-sub-header-informations {
+			// Let section take all width
+			margin-right: 0;
+		}
+
+		// Remove margin right on DataList on small screens
+		.vd-sub-header-data-list {
+			::v-deep .vd-data-list {
+				margin: 0 8px;
+
+				&:not(:last-child) {
+					margin-right: 8px;
+				}
 			}
 		}
 	}
