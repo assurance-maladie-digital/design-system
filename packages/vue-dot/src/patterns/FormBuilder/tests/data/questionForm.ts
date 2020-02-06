@@ -37,7 +37,8 @@ export const questionForm: Form = {
 		description: 'Informations supplémentaires',
 		value: null,
 		metadata: {
-			mask: '###-###'
+			mask: '###-###',
+			outlined: true
 		}
 	},
 	questionTextarea: {
@@ -90,16 +91,7 @@ export const questionForm: Form = {
 		title: 'Question select',
 		description: 'Informations supplémentaires',
 		value: null,
-		items: [
-			{
-				text: 'Abricot',
-				value: 1
-			},
-			{
-				text: 'Citron',
-				value: 2
-			}
-		],
+		items: defaultItems,
 		metadata: {
 			outlined: true,
 			chips: true,
@@ -114,16 +106,7 @@ export const questionForm: Form = {
 		title: 'Question select multiple',
 		description: 'Informations supplémentaires',
 		value: null,
-		items: [
-			{
-				text: 'Abricot',
-				value: 1
-			},
-			{
-				text: 'Citron',
-				value: 2
-			}
-		],
+		items: defaultItems,
 		metadata: {
 			multiple: true,
 			outlined: true
@@ -171,16 +154,7 @@ export const questionForm: Form = {
 		title: 'Question avec complétion automatique',
 		description: 'Informations supplémentaires',
 		value: null,
-		items: [
-			{
-				text: 'Abricot',
-				value: 1
-			},
-			{
-				text: 'Citron',
-				value: 2
-			}
-		],
+		items: defaultItems,
 		metadata: {
 			outlined: true,
 			chips: true,
@@ -188,6 +162,49 @@ export const questionForm: Form = {
 				offsetY: true
 			},
 			label: 'Votre réponse'
+		}
+	},
+	questionChoiceButton: {
+		type: 'select',
+		title: 'Question choix bouton',
+		description: 'Informations supplémentaires',
+		items: defaultItems,
+		metadata: {
+			type: 'choiceButton',
+			hint: 'Texte informatif'
+		}
+	},
+	questionChoiceButtonMultiple: {
+		type: 'select',
+		title: 'Question choix bouton multiple',
+		description: 'Informations supplémentaires',
+		items: [
+			{
+				text: 'Multiple 1',
+				value: 'test1'
+			},
+			{
+				text: 'Multiple 2',
+				value: 22
+			},
+			{
+				text: 'Seul 1',
+				value: 33,
+				alone: true
+			},
+			{
+				text: 'Seul 2',
+				value: 44,
+				alone: true
+			},
+			{
+				text: 'Valeur nulle',
+				value: null
+			}
+		],
+		metadata: {
+			type: 'choiceButton',
+			multiple: true
 		}
 	}
 };

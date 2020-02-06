@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="FormBuilder">
-		<h2 class="subtitle-1 mb-2 font-weight-bold">
+		<h2 class="subtitle-1 mb-4 font-weight-bold">
 			Classic form
 		</h2>
 
@@ -9,7 +9,7 @@
 			:layout="addressFormLayout"
 		/>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="subtitle-1 mt-4 mb-4 font-weight-bold">
 			Questionnaire
 		</h2>
 
@@ -19,6 +19,7 @@
 		/>
 
 		<VBtn
+			class="mt-5"
 			color="accent"
 			@click="getFormValues"
 		>
@@ -42,7 +43,10 @@
 		<pre
 			v-if="questionErrors"
 			contenteditable="true"
-			class="mt-4 grey lighten-3"
+			class="mt-4"
+			:class="[
+				$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
+			]"
 			@blur="questionErrors = JSON.parse($event.target.textContent)"
 			v-html="questionErrors"
 		/>

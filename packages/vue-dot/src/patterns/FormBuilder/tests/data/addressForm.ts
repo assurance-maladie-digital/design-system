@@ -1,5 +1,20 @@
 import { Form } from '../../types';
 
+const defaultItem = [
+	{
+		text: 'bis',
+		value: 'valueBis'
+	},
+	{
+		text: 'ter',
+		value: 'valueTer'
+	},
+	{
+		text: 'quater',
+		value: 'valueQuater'
+	}
+];
+
 export const addressForm: Form = {
 	streetNumber: {
 		type: 'number',
@@ -13,11 +28,7 @@ export const addressForm: Form = {
 	streetNumberComplement: {
 		type: 'select',
 		value: null,
-		items: [
-			'bis',
-			'ter',
-			'quater'
-		],
+		items: defaultItem,
 		metadata: {
 			label: 'Complément de voie'
 		}
@@ -25,12 +36,7 @@ export const addressForm: Form = {
 	streetType: {
 		type: 'autocomplete',
 		value: null,
-		items: [
-			'Allée',
-			'Avenue',
-			'Boulevard',
-			'Aucun'
-		],
+		items: defaultItem,
 		metadata: {
 			label: 'Type de voie'
 		}

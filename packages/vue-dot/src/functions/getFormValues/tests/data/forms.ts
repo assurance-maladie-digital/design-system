@@ -1,5 +1,20 @@
 import { Form } from '../../../../patterns/FormBuilder/types';
 
+const defaultItem = [
+	{
+		text: 'bis',
+		value: 1
+	},
+	{
+		text: 'ter',
+		value: 2
+	},
+	{
+		text: 'quarter',
+		value: 3
+	}
+];
+
 export const formNull = {
 	streetNumber: {
 		type: 'number',
@@ -13,11 +28,7 @@ export const formNull = {
 	streetNumberComplement: {
 		type: 'select',
 		value: null,
-		items: [
-			'bis',
-			'ter',
-			'quater'
-		],
+		items: defaultItem,
 		metadata: {
 			label: 'Complément de voie'
 		}
@@ -40,11 +51,7 @@ export const formNotNull = {
 	streetNumberComplement: {
 		type: 'select',
 		value: 'bis',
-		items: [
-			'bis',
-			'ter',
-			'quater'
-		]
+		items: defaultItem
 	},
 	streetLabel: {
 		type: 'text',
