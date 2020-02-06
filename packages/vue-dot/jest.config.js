@@ -23,7 +23,8 @@ module.exports = {
 		'src/**/*.ts',
 		'!**/node_modules/**',
 		'!**/*.d.ts',
-		'!**/playground/**'
+		'!**/playground/**',
+		'!**/data/**'
 	],
 	transformIgnorePatterns: [
 		'./node_modules/(?!vuetify)'
