@@ -36,4 +36,5 @@ export interface Field {
 	metadata?: FieldMetadata;
 	items?: FieldItem[];
 	mask?: string;
+	dynamic?: boolean;
 }

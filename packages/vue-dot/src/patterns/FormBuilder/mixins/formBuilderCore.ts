@@ -68,6 +68,7 @@ export class FormBuilderCore extends MixinsDeclaration {
 	/**
 	 * When the form is updated, emit a
 	 * change event with updated data
+	 * Also emit 'refresh' event if the field is dynamic
 	 *
 	 * @param {ComputedField} field The updated field with new value
 	 * @returns {void}
@@ -77,10 +78,22 @@ export class FormBuilderCore extends MixinsDeclaration {
 			...this.form
 		};
 
-		form[field.name].value = field.value;
+		const fieldName = field.name;
+
+		// Delete the field name before updating the form with
+		// the new field since it's not present in original data
+		delete field.name;
+
+		form[fieldName] = field;
 
 		this.$nextTick(() => {
 			this.$emit('change', form);
+
+			// If the field has the `dynamic` property
+			if (field.dynamic) {
+				// Also emit 'refresh' event
+				this.$emit('refresh');
+			}
 		});
 	}
 
