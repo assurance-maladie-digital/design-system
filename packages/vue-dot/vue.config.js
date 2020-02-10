@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 // If LIB_MODE is true, we're building the library
 // else, we're building the playground
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
-const LIMIT_SIZE = 300000;
+const LIMIT_SIZE = 350000;
 
 const LIB_MODE_CONFIG = {
 	// No source map on library mode, we don't need them
