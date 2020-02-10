@@ -11,7 +11,15 @@ import { FieldComponent } from './fieldComponent';
 		'field.value': {
 			handler(value: ChoiceValue) {
 				if (value) {
-					this.choiceValue = value;
+					/** In multiple mode, put the value in an array if it wasn't already */
+					if (this.isMultiple && !Array.isArray(value)) {
+						this.choiceValue = [value];
+					} else {
+						this.choiceValue = value;
+					}
+				} else {
+					// Reset the choice value
+					this.choiceValue = this.isMultiple ? [] : null;
 				}
 			},
 			immediate: true,
