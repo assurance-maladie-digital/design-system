@@ -89,7 +89,7 @@ describe('choiceField', () => {
 		expect(changeEvent.value).toEqual(null);
 	});
 
-	it('put the initial value (not array) in an array in multiple mode', async() => {
+	it('transforms the initial value into an array in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: testField.items[0].value,
