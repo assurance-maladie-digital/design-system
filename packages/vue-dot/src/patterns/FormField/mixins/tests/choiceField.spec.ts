@@ -89,6 +89,18 @@ describe('choiceField', () => {
 		expect(changeEvent.value).toEqual(null);
 	});
 
+	it('put the initial value (not array) in an array in multiple mode', async() => {
+		const wrapper = createWrapper({
+			...testField,
+			value: testField.items[0].value,
+			metadata: {
+				multiple: true
+			}
+		});
+
+		expect(wrapper.vm.choiceValue).toEqual([testField.items[0].value]);
+	});
+
 	it('selects multiple items in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,

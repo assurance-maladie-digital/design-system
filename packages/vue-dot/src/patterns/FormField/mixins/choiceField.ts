@@ -11,7 +11,15 @@ import { FieldComponent } from './fieldComponent';
 		'field.value': {
 			handler(value: ChoiceValue) {
 				if (value) {
-					this.choiceValue = value;
+					/** In multiple mode, put the new value in an array if not */
+					if(this.isMultiple && !Array.isArray(value)){
+						this.choiceValue = [value];
+					} else {
+						this.choiceValue = value;
+					}
+				} else {
+					// Reset the choice value
+					this.choiceValue = this.isMultiple ? [] : null;
 				}
 			},
 			immediate: true,
@@ -92,6 +100,8 @@ export class ChoiceField extends FieldComponent {
 		}
 
 		this.choiceValue = newChoiceValue;
+
+		console.log('emit', this.choiceValue);
 
 		this.emitChangeEvent(this.choiceValue);
 	}
