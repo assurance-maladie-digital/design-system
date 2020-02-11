@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getSectionValues returns all values 1`] = `
+Object {
+  "quetionId1": 1,
+  "quetionId2": 2,
+}
+`;
