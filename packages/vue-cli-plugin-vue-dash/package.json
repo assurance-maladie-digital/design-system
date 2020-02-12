@@ -21,7 +21,7 @@
 	"main": "index.js",
 	"dependencies": {
 		"@cnamts/cli-helpers": "^2.0.0-alpha.47",
-		"dayjs": "^1.8.19",
+		"dayjs": "^1.8.20",
 		"fs-extra": "^8.1.0",
 		"superb": "^4.0.0"
 	},

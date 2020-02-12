@@ -5,8 +5,7 @@
 		v-model="menu"
 		v-bind="options.menu"
 	>
-		<!-- eslint-disable-next-line vue/no-unused-vars -->
-		<template #activator="{ on }">
+		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
@@ -167,7 +166,7 @@
 		get textFieldClasses() {
 			return [
 				{ 'vd-warning-rules': this.warningRules.length },
-				...this.options.textField.class as string[]
+				...this.options.textField.class as unknown[] || []
 			];
 		}
 
