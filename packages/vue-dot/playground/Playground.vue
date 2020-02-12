@@ -9,7 +9,9 @@
 			color="primary"
 			class="vd-playground-app-bar px-4"
 		>
-			<VToolbarTitle>VueDot</VToolbarTitle>
+			<h1 class="title">
+				VueDot
+			</h1>
 
 			<VSpacer />
 
@@ -27,9 +29,9 @@
 		<VContent>
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
-				<h1 class="display-1 mb-12 font-weight-bold">
+				<h2 class="display-1 mb-12 font-weight-bold">
 					Playground
-				</h1>
+				</h2>
 
 				<!-- Examples -->
 				<CopyBtnEx />
