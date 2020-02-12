@@ -78,8 +78,6 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { version } from '../package.json';
-
 	import { LOCAL_STORAGE_CONTROL } from './plugins/vue-dot';
 
 	import { LocalStorageUtility } from '../src/helpers/localStorageUtility';
@@ -92,7 +90,7 @@
 	 */
 	@Component
 	export default class Playground extends Vue {
-		version = version;
+		version = process.env.VUE_APP_VERSION;
 
 		localStorageUtility = new LocalStorageUtility(LOCAL_STORAGE_CONTROL.version);
 

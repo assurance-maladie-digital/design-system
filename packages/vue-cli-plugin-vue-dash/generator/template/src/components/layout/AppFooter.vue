@@ -20,13 +20,10 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import pkg from '../../../package.json';
-
 	/** The application footer */
 	@Component
 	export default class Footer extends Vue {
-		/** The version from package.json */
-		version = pkg.version;
+		version = process.env.VUE_APP_VERSION;
 	}
 </script>
 
