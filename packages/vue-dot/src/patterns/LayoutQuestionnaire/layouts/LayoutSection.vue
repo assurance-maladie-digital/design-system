@@ -13,6 +13,8 @@
 			<FormBuilder
 				:form="section.questions"
 				default-layout="question"
+				@change="sectionChange"
+				@refresh="$emit('refresh')"
 			/>
 		</div>
 	</VLayout>
@@ -23,6 +25,8 @@
 	import Component from 'vue-class-component';
 
 	import { Section } from '../types';
+
+	import { Form } from '../../FormBuilder/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -40,5 +44,17 @@
 			event: 'change'
 		}
 	})
-	export default class LayoutSection extends Props {}
+	export default class LayoutSection extends Props {
+		/**
+		 * Emit the new section object when the form change
+		 */
+		sectionChange(form: Form) {
+			const newSection = {
+				...this.section,
+				questions: form
+			};
+
+			this.$emit('change', newSection);
+		}
+	}
 </script>

@@ -16,10 +16,23 @@
 				</VExpansionPanelHeader>
 				<VDivider />
 				<VExpansionPanelContent>
-					<LayoutSections :sections="questionnaire.sections" />
+					<LayoutSections
+						:sections="questionnaire.sections"
+						@change="sectionsChanged"
+						@refresh="sectionsrefresh"
+					/>
 				</VExpansionPanelContent>
 			</VExpansionPanel>
 		</VExpansionPanels>
+
+		<pre
+			v-if="sections"
+			class="mt-4"
+			:class="[
+				$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
+			]"
+			v-html="sections"
+		/>
 	</DocSection>
 </template>
 
@@ -27,10 +40,33 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { mapActions } from 'vuex';
+
 	import { questionnaire } from '../../src/patterns/LayoutQuestionnaire/tests/data/questionnaire';
 
-	@Component
+	@Component({
+		// Vuex bindings
+		methods: mapActions('notification', [
+			'notify',
+			'rmNotif'
+		])
+	})
 	export default class LayoutQuestionnaireEx extends Vue {
+		notify!: (obj: object) => void;
+
 		questionnaire = questionnaire;
+		sections: Sections = null;
+
+		sectionsRefresh() {
+			// Notify!
+			this.notify({
+				type: 'success',
+				message: 'champ dynamic changé, rafraichissement demandé'
+			});
+		}
+
+		sectionsChanged(sections) {
+			this.sections = sections;
+		}
 	}
 </script>
