@@ -21,6 +21,7 @@ export const questionnaire = {
 			questions: {
 				question2: {
 					type: 'text',
+					dynamic: true,
 					title: 'Question id 2',
 					description: 'condition > 10',
 					tooltip: 'Tooltip de la question text'

@@ -11,6 +11,8 @@
 			<LayoutSection
 				:key="`layout-section-${sectionId}`"
 				:section="section"
+				@refresh="$emit('refresh')"
+				@change="sectionChanged(sectionId, $event)"
 			/>
 		</template>
 	</div>
@@ -20,7 +22,9 @@
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Sections } from '../types';
+	import { Sections, Section } from '../types';
+
+	import { deepCopy } from '../../../helpers/deepCopy';
 
 	const Props = Vue.extend({
 		props: {
@@ -48,6 +52,20 @@
 		 */
 		indexOfSection(sectionId: string): number {
 			return Object.keys(this.sections).indexOf(sectionId);
+		}
+
+		/**
+		 * Emit the new sections when one of the internal section change
+		 *
+		 * @param {string} sectionId The section id changed
+		 * @param {Section} section The new section object changed
+		 */
+		sectionChanged(sectionId: string, section: Section) {
+			let newSections = deepCopy(this.sections);
+
+			newSections[sectionId] = deepCopy(section);
+
+			this.$emit('change', newSections);
 		}
 	}
 </script>
