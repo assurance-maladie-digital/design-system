@@ -3,7 +3,7 @@
 exports[`setFormErrors doesn't sets an error on unknown field 1`] = `
 Object {
   "questionPeriod": Object {
-    "metadata": Object {
+    "fieldOptions": Object {
       "notExist": Object {
         "errorMessages": "Sub field does not exist",
       },
@@ -19,7 +19,7 @@ Object {
 exports[`setFormErrors sets error messages on different fields 1`] = `
 Object {
   "questionPeriod": Object {
-    "metadata": Object {
+    "fieldOptions": Object {
       "from": Object {
         "errorMessages": Array [
           "Error questionPeriod 1",
@@ -36,7 +36,7 @@ Object {
     "type": "period",
   },
   "questionString": Object {
-    "metadata": Object {
+    "fieldOptions": Object {
       "errorMessages": Array [
         "error string 1",
         "error string 2",

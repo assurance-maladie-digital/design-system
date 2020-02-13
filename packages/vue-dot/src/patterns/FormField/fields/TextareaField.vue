@@ -1,6 +1,6 @@
 <template>
 	<VTextarea
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="field.value"
 		@change="emitChangeEvent"
 	/>

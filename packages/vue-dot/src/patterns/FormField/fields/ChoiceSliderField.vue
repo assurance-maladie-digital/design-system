@@ -1,7 +1,7 @@
 <template>
 	<VSlider
 		v-if="field.items"
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		color="accent"
 		track-color="grey lighten-1"
 		class="mt-5"
@@ -64,9 +64,9 @@
 		}
 
 		get labelMin() {
-			// Check if there is a custom labelMin prop in metadata
-			if (this.field.metadata && this.field.metadata.labelMin) {
-				return this.field.metadata.labelMin;
+			// Check if there is a custom labelMin prop in fieldOptions
+			if (this.field.fieldOptions && this.field.fieldOptions.labelMin) {
+				return this.field.fieldOptions.labelMin;
 			}
 
 			// The default value is the first the label
@@ -74,9 +74,9 @@
 		}
 
 		get labelMax() {
-			// Check if there is a custom labelMax prop in metadata
-			if (this.field.metadata && this.field.metadata.labelMax) {
-				return this.field.metadata.labelMax;
+			// Check if there is a custom labelMax prop in fieldOptions
+			if (this.field.fieldOptions && this.field.fieldOptions.labelMax) {
+				return this.field.fieldOptions.labelMax;
 			}
 
 			// The default value is the last the label
@@ -94,12 +94,12 @@
 
 		/**  Are we in thumb label mode */
 		get isThumbLabel() {
-			return this.field.metadata && this.field.metadata.thumbLabel;
+			return this.field.fieldOptions && this.field.fieldOptions.thumbLabel;
 		}
 
 		/** The ticks labels */
 		get labels() {
-			if (this.field.items && this.field.metadata) {
+			if (this.field.items && this.field.fieldOptions) {
 				const labels = this.field.items.map((item) => item.text);
 
 				return labels;

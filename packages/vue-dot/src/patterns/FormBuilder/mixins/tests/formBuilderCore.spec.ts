@@ -18,7 +18,7 @@ import { Layouts } from 'src/patterns/FormLayout/layoutsEnum';
 const testField: Field = {
 	type: 'text',
 	value: null,
-	metadata: {
+	fieldOptions: {
 		label: 'Test'
 	}
 };

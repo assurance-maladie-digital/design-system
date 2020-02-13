@@ -31,7 +31,7 @@ export class ChoiceField extends FieldComponent {
 	choiceValue: ChoiceValue | null = this.isMultiple ? [] : null;
 
 	get isMultiple(): boolean {
-		return Boolean(this.field && this.field.metadata && this.field.metadata.multiple);
+		return Boolean(this.field && this.field.fieldOptions && this.field.fieldOptions.multiple);
 	}
 
 	/**

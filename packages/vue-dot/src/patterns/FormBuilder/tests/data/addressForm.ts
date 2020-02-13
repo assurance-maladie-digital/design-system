@@ -20,7 +20,7 @@ export const addressForm: Form = {
 		type: 'number',
 		value: null,
 		mask: '#####',
-		metadata: {
+		fieldOptions: {
 			type: 'text',
 			label: 'Numéro de voie'
 		}
@@ -29,7 +29,7 @@ export const addressForm: Form = {
 		type: 'select',
 		value: null,
 		items: defaultItem,
-		metadata: {
+		fieldOptions: {
 			label: 'Complément de voie'
 		}
 	},
@@ -37,28 +37,28 @@ export const addressForm: Form = {
 		type: 'autocomplete',
 		value: null,
 		items: defaultItem,
-		metadata: {
+		fieldOptions: {
 			label: 'Type de voie'
 		}
 	},
 	streetLabel: {
 		type: 'text',
 		value: null,
-		metadata: {
+		fieldOptions: {
 			label: 'Libellé de la voie'
 		}
 	},
 	streetComplement: {
 		type: 'text',
 		value: null,
-		metadata: {
+		fieldOptions: {
 			label: 'Complément d\'adresse'
 		}
 	},
 	postalCode: {
 		type: 'number',
 		value: null,
-		metadata: {
+		fieldOptions: {
 			mask: '#####',
 			label: 'Code postal'
 		}
@@ -66,7 +66,7 @@ export const addressForm: Form = {
 	city: {
 		type: 'text',
 		value: null,
-		metadata: {
+		fieldOptions: {
 			label: 'Ville'
 		}
 	}

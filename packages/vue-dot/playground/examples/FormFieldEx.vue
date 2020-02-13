@@ -15,7 +15,7 @@
 		field: Field = {
 			type: 'text',
 			value: null,
-			metadata: {
+			fieldOptions: {
 				label: 'Votre nom'
 			}
 		};

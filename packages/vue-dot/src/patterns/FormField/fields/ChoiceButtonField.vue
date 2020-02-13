@@ -2,7 +2,7 @@
 	<div>
 		<VItemGroup
 			:value="choiceValue"
-			v-bind="field.metadata"
+			v-bind="field.fieldOptions"
 		>
 			<template v-for="(item, index) in filteredItems">
 				<VItem
@@ -36,11 +36,11 @@
 		</VItemGroup>
 
 		<p
-			v-if="field && field.metadata && field.metadata.hint"
+			v-if="field && field.fieldOptions && field.fieldOptions.hint"
 			class="mx-4 mb-0 v-messages"
 			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
-			{{ field.metadata.hint }}
+			{{ field.fieldOptions.hint }}
 		</p>
 	</div>
 </template>

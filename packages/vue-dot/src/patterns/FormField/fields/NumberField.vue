@@ -1,7 +1,7 @@
 <template>
 	<VTextField
 		v-mask="mask"
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="field.value"
 		@change="emitChangeEvent"
 	/>
@@ -17,7 +17,7 @@
 	@Component
 	export default class NumberField extends FieldComponent {
 		get mask() {
-			return this.field.metadata ? this.field.metadata.mask : '';
+			return this.field.fieldOptions ? this.field.fieldOptions.mask : '';
 		}
 	}
 </script>

@@ -93,7 +93,7 @@ describe('choiceField', () => {
 		const wrapper = createWrapper({
 			...testField,
 			value: testField.items[0].value,
-			metadata: {
+			fieldOptions: {
 				multiple: true
 			}
 		});
@@ -104,7 +104,7 @@ describe('choiceField', () => {
 	it('selects multiple items in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
-			metadata: {
+			fieldOptions: {
 				multiple: true
 			}
 		});
@@ -130,7 +130,7 @@ describe('choiceField', () => {
 				testField.items[0].value,
 				testField.items[1].value
 			],
-			metadata: {
+			fieldOptions: {
 				multiple: true
 			}
 		});
@@ -152,7 +152,7 @@ describe('choiceField', () => {
 			value: [
 				testField.items[3].value
 			],
-			metadata: {
+			fieldOptions: {
 				multiple: true
 			}
 		});
@@ -175,7 +175,7 @@ describe('choiceField', () => {
 				testField.items[0].value,
 				testField.items[1].value
 			],
-			metadata: {
+			fieldOptions: {
 				multiple: true
 			}
 		});
@@ -211,7 +211,7 @@ describe('choiceField', () => {
 			value: [
 				testField.items[0].value
 			],
-			metadata: {
+			fieldOptions: {
 				multiple: true
 			}
 		});

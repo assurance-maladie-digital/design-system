@@ -11,7 +11,7 @@ let wrapper: Wrapper<Vue>;
 const testField = {
 	type: 'text',
 	value: null,
-	metadata: {
+	fieldOptions: {
 		label: 'Classic field',
 		outlined: true
 	}

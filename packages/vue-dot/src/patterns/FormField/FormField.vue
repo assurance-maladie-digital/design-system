@@ -35,14 +35,14 @@
 	})
 	export default class FormField extends MixinsDeclaration {
 		/**
-		 * Get the field type from metadata or default type
+		 * Get the field type from fieldOptions or default type
 		 *
 		 * @returns {string} The field type
 		 */
 		getFieldType(): string {
-			const metadataType = this.field.metadata ? this.field.metadata.type as string : undefined;
+			const fieldOptionsType = this.field.fieldOptions ? this.field.fieldOptions.type as string : undefined;
 
-			return this.getField(metadataType || this.field.type);
+			return this.getField(fieldOptionsType || this.field.type);
 		}
 
 		get field() {

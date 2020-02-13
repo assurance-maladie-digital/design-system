@@ -22,7 +22,7 @@ export interface FieldItem {
 	alone?: boolean;
 }
 
-export interface FieldMetadata {
+export interface FieldOptions {
 	errorMessages?: ErrorMessages | PeriodErrorMessages;
 	[key: string]: any;
 }
@@ -33,7 +33,7 @@ export interface Field {
 	title?: string;
 	description?: string;
 	tooltip?: string;
-	metadata?: FieldMetadata;
+	fieldOptions?: FieldOptions;
 	items?: FieldItem[];
 	mask?: string;
 	dynamic?: boolean;
