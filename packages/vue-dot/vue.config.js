@@ -8,6 +8,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
 const LIMIT_SIZE = 350000;
 
+process.env.VUE_APP_VERSION = require('./package.json').version;
+
 const LIB_MODE_CONFIG = {
 	// No source map on library mode, we don't need them
 	// because we're publishing the source
