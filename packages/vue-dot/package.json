@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.0.0-alpha.47",
+	"version": "2.0.0-alpha.48",
 	"description": "Official CNAM component library",
 	"keywords": [
 		"cnam",
@@ -38,18 +38,18 @@
 		"generate:tokens": "ts-node --project tsconfig.json --files scripts/generateTokens.ts"
 	},
 	"peerDependencies": {
+		"@mdi/js": "^4.3.95",
 		"dayjs": "^1.8.0",
 		"languages": "^0.1.3",
 		"vue": "^2.6.10",
 		"vue-the-mask": "^0.11.1",
 		"vuetify": "^2.0.11",
-		"vuex": "^3.1.0",
-		"@mdi/js": "^4.3.95"
+		"vuex": "^3.1.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.4",
 		"@babel/preset-env": "^7.8.4",
-		"@cnamts/cli-helpers": "^2.0.0-alpha.47",
+		"@cnamts/cli-helpers": "^2.0.0-alpha.48",
 		"@mdi/js": "^4.9.95",
 		"@vue/cli-plugin-babel": "^4.2.2",
 		"@vue/cli-plugin-eslint": "^4.2.2",

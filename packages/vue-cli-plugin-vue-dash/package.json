@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-cli-plugin-vue-dash",
-	"version": "2.0.0-alpha.47",
+	"version": "2.0.0-alpha.48",
 	"description": "Vue CLI plugin to scaffold front-end projects",
 	"keywords": [
 		"cnam",
@@ -20,7 +20,7 @@
 	},
 	"main": "index.js",
 	"dependencies": {
-		"@cnamts/cli-helpers": "^2.0.0-alpha.47",
+		"@cnamts/cli-helpers": "^2.0.0-alpha.48",
 		"dayjs": "^1.8.20",
 		"fs-extra": "^8.1.0",
 		"superb": "^4.0.0"
