@@ -56,6 +56,8 @@
 
 				<PaginatedTableEx />
 
+				<LayoutQuestionnaireEx />
+
 				<RulesEx />
 
 				<SubHeaderEx />

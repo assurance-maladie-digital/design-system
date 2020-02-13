@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section layout show a single section layout 1`] = `
+<vlayout-stub tag="div" column="" class="my-7">
+  <h2 class="body-1 font-weight-bold mb-10">
+    Section titre 1
+  </h2>
+  <div>
+    <formbuilder-stub form="[object Object]" defaultlayout="question"></formbuilder-stub>
+  </div>
+</vlayout-stub>
+`;

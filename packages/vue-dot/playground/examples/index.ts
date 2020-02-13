@@ -12,6 +12,7 @@ import FormFieldEx from './FormFieldEx.vue';
 import FormBuilderEx from './FormBuilderEx.vue';
 import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
+import LayoutQuestionnaireEx from './LayoutQuestionnaireEx.vue';
 import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
@@ -33,6 +34,7 @@ const components: Components = {
 	FormBuilderEx,
 	NotificationEx,
 	PaginatedTableEx,
+	LayoutQuestionnaireEx,
 	RulesEx,
 	SubHeaderEx,
 	UploadWorkflowEx
