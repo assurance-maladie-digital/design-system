@@ -17,21 +17,29 @@
 				<VDivider />
 				<VExpansionPanelContent>
 					<LayoutSections
-						:sections="questionnaire.sections"
-						@change="sectionsChanged"
-						@refresh="sectionsrefresh"
+						v-model="questionnaire.sections"
+						@change="getSectionsValues"
+						@refresh="sectionsRefresh"
 					/>
 				</VExpansionPanelContent>
 			</VExpansionPanel>
 		</VExpansionPanels>
 
+		<VBtn
+			class="mt-5"
+			color="accent"
+			@click="getSectionsValues(questionnaire.sections)"
+		>
+			Get sections values
+		</VBtn>
+
 		<pre
-			v-if="sections"
+			v-if="sectionsValues"
 			class="mt-4"
 			:class="[
 				$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
 			]"
-			v-html="sections"
+			v-html="sectionsValues"
 		/>
 	</DocSection>
 </template>
@@ -44,6 +52,8 @@
 
 	import { questionnaire } from '../../src/patterns/LayoutQuestionnaire/tests/data/questionnaire';
 
+	import { getSectionsValues } from '../../src/functions/getSectionsValues';
+
 	@Component({
 		// Vuex bindings
 		methods: mapActions('notification', [
@@ -55,18 +65,18 @@
 		notify!: (obj: object) => void;
 
 		questionnaire = questionnaire;
-		sections: Sections = null;
+		sectionsValues: FormValues | null = null;
 
 		sectionsRefresh() {
 			// Notify!
 			this.notify({
 				type: 'success',
-				message: 'champ dynamic changé, rafraichissement demandé'
+				message: 'champ dynamic changé'
 			});
 		}
 
-		sectionsChanged(sections) {
-			this.sections = sections;
+		getSectionsValues(sections) {
+			this.sectionsValues = getSectionsValues(sections);
 		}
 	}
 </script>
