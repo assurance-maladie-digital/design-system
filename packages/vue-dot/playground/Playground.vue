@@ -40,6 +40,8 @@
 
 				<DataListEx />
 
+				<DataListItemEx />
+
 				<DatePickerEx />
 
 				<DebounceEx />
