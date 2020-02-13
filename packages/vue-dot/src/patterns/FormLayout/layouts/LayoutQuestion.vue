@@ -5,9 +5,9 @@
 	>
 		<h4
 			v-if="getField(0).title"
-			class="mx-4 my-0 body-1"
+			class="mx-4 my-0"
 		>
-			<span>{{ getField(0).title }}</span>
+			<span class="body-1">{{ getField(0).title }}</span>
 
 			<VTooltip
 				v-if="getField(0).tooltip"

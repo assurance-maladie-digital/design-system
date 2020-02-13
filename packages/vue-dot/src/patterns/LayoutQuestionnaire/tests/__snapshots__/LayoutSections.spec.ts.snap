@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sections layout show multiple section layout 1`] = `
+<div>
+  <!---->
+  <layoutsection-stub section="[object Object]"></layoutsection-stub>
+  <vdivider-stub></vdivider-stub>
+  <layoutsection-stub section="[object Object]"></layoutsection-stub>
+</div>
+`;

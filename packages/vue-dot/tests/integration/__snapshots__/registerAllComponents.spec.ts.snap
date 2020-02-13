@@ -11,6 +11,8 @@ Array [
   "FormBuilder",
   "FormField",
   "LangBtn",
+  "LayoutSection",
+  "LayoutSections",
   "NotificationBar",
   "PageCard",
   "PaginatedTable",
