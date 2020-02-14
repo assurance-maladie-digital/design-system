@@ -166,10 +166,11 @@ export const questionForm: Form = {
 	},
 	questionChoiceButton: {
 		type: 'select',
-		title: 'Question choix bouton',
+		title: 'Question choix bouton inline',
 		description: 'Informations supplémentaires',
 		items: defaultItems,
 		metadata: {
+			inline: true,
 			type: 'choiceButton',
 			hint: 'Texte informatif'
 		}

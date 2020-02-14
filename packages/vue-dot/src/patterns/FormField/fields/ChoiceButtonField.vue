@@ -1,40 +1,36 @@
 <template>
 	<div>
-		<VItemGroup
+		<VBtnToggle
 			:value="choiceValue"
 			v-bind="field.metadata"
+			class="vd-choice-button-field layout wrap accent--text"
+			:class="isInline ? null : 'column'"
 		>
-			<template v-for="(item, index) in filteredItems">
-				<VItem
-					#default="{ active }"
-					:key="index"
-					:value="item.value"
+			<VBtn
+				v-for="(item, index) in filteredItems"
+				:key="index"
+				:value="item.value"
+				elevation="0"
+				height="40"
+				active-class="white--text"
+				:outlined="!isSelected(item.value)"
+				class="mb-2 text-none"
+				color="accent"
+				@click="toggleItem(item)"
+			>
+				<span class="body-1">
+					{{ item.text }}
+				</span>
+
+				<VSpacer />
+				<VIcon
+					v-show="isSelected(item.value)"
+					class="ml-2 white--text"
 				>
-					<VBtn
-						block
-						elevation="0"
-						height="40"
-						class="mb-2 text-none"
-						:outlined="!active"
-						color="accent"
-						@click="toggleItem(item, active)"
-					>
-						<span class="body-1">
-							{{ item.text }}
-						</span>
-
-						<VSpacer />
-
-						<VScrollXTransition>
-							<VIcon v-if="active">
-								{{ checkIcon }}
-							</VIcon>
-						</VScrollXTransition>
-					</VBtn>
-				</VItem>
-			</template>
-		</VItemGroup>
-
+					{{ checkIcon }}
+				</VIcon>
+			</VBtn>
+		</VBtnToggle>
 		<p
 			v-if="field && field.metadata && field.metadata.hint"
 			class="mx-4 mb-0 v-messages"
@@ -51,10 +47,10 @@
 
 	import { mdiCheck } from '@mdi/js';
 
-	import { FieldItem } from '../types';
-
 	import { ChoiceField } from '../mixins/choiceField';
 	import { FieldComponent } from '../mixins/fieldComponent';
+
+	import { FieldItem } from '../types';
 
 	const MixinsDeclaration = mixins(FieldComponent, ChoiceField);
 
@@ -77,5 +73,20 @@
 
 			return filteredItems;
 		}
+
+		get isInline(): Boolean {
+			return this.field && this.field.metadata && this.field.metadata.inline;
+		}
 	}
 </script>
+
+<style lang="scss">
+	.vd-choice-button-field.column .v-btn {
+		border-radius: 4px !important;
+		border-width: 1px !important;
+	}
+
+	.theme--light.vd-choice-button-field:not(.v-btn-toggle--group) .v-btn.v-btn {
+		border-color: currentColor !important;
+	}
+</style>

@@ -16,6 +16,7 @@
 		<FormBuilder
 			v-model="questionForm"
 			default-layout="question"
+			@change="getFormValues"
 		/>
 
 		<VBtn
