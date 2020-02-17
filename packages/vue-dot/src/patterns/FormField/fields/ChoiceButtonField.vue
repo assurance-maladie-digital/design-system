@@ -2,6 +2,7 @@
 	<div>
 		<VItemGroup
 			:value="choiceValue"
+			:multiple="Boolean(field.multiple)"
 			v-bind="field.metadata"
 		>
 			<template v-for="(item, index) in filteredItems">

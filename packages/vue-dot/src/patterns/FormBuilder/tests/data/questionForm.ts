@@ -107,8 +107,8 @@ export const questionForm: Form = {
 		description: 'Informations supplémentaires',
 		value: null,
 		items: defaultItems,
+		multiple: true,
 		metadata: {
-			multiple: true,
 			outlined: true
 		}
 	},
@@ -202,9 +202,9 @@ export const questionForm: Form = {
 				value: null
 			}
 		],
+		multiple: true,
 		metadata: {
-			type: 'choiceButton',
-			multiple: true
+			type: 'choiceButton'
 		}
 	}
 };

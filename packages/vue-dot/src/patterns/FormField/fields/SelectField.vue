@@ -1,6 +1,7 @@
 <template>
 	<VSelect
 		v-bind="field.metadata"
+		:multiple="Boolean(field.multiple)"
 		:value="field.value"
 		:items="field.items"
 		@change="emitChangeEvent"
