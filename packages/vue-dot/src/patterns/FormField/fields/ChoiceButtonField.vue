@@ -68,7 +68,10 @@
 				return [];
 			}
 
-			const filteredItems = this.items.filter((item) => Boolean(item.value));
+			const filteredItems = this.items.filter((item) => {
+					return item.value !== null && item.value !== undefined;
+				}
+			);
 
 			return filteredItems;
 		}
@@ -85,7 +88,7 @@
 		border-width: 1px !important;
 	}
 
-	.vd-choice-button-field:not(.v-btn-toggle--group) .v-btn.v-btn {
+	.theme--light.vd-choice-button-field:not(.v-btn-toggle--group) .v-btn.v-btn {
 		border-color: currentColor !important;
 	}
 </style>

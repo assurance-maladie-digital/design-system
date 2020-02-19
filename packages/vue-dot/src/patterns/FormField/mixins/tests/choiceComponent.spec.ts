@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { Field } from '../../types';
+import { ChoiceValue } from '../../types';
 
 import { ChoiceComponent } from '../choiceComponent';
 
@@ -34,7 +34,7 @@ const testField = {
 };
 
 /** Create the wrapper */
-function createWrapper(field: Field) {
+function createWrapper(field: any) {
 	const component = Vue.component('test', {
 		mixins: [
 			ChoiceComponent
@@ -44,7 +44,7 @@ function createWrapper(field: Field) {
 
 	return mount(component, {
 		propsData: {
-			field
+			...field
 		}
 	}) as Wrapper<ChoiceComponent>;
 }
@@ -57,9 +57,9 @@ describe('choiceComponent', () => {
 
 		await Vue.nextTick();
 
-		const changeEvent = wrapper.emitted('change')[0][0] as Field;
+		const changeEvent = wrapper.emitted('change')[0][0] as ChoiceValue;
 
-		expect(changeEvent.value).toEqual(testField.items[0].value);
+		expect(changeEvent).toEqual(testField.items[0].value);
 	});
 
 	it('selects a null item value', async() => {
@@ -69,9 +69,9 @@ describe('choiceComponent', () => {
 
 		await Vue.nextTick();
 
-		const changeEvent = wrapper.emitted('change')[0][0] as Field;
+		const changeEvent = wrapper.emitted('change')[0][0] as ChoiceValue;
 
-		expect(changeEvent.value).toEqual(null);
+		expect(changeEvent).toEqual(null);
 	});
 
 	it('unselects an item', async() => {
@@ -84,18 +84,16 @@ describe('choiceComponent', () => {
 
 		await Vue.nextTick();
 
-		const changeEvent = wrapper.emitted('change')[0][0] as Field;
+		const changeEvent = wrapper.emitted('change')[0][0] as ChoiceValue;
 
-		expect(changeEvent.value).toEqual(null);
+		expect(changeEvent).toEqual(null);
 	});
 
 	it('transforms the initial value into an array in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: testField.items[0].value,
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		expect(wrapper.vm.choiceValue).toEqual([testField.items[0].value]);
@@ -104,9 +102,7 @@ describe('choiceComponent', () => {
 	it('selects multiple items in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		wrapper.vm.toggleItem(testField.items[0]);
@@ -114,10 +110,10 @@ describe('choiceComponent', () => {
 
 		await Vue.nextTick();
 
-		const changeEvent = wrapper.emitted('change')[1][0] as Field;
+		const changeEvent = wrapper.emitted('change')[1][0] as ChoiceValue;
 
 		// Both buttons should be selected
-		expect(changeEvent.value).toEqual([
+		expect(changeEvent).toEqual([
 			testField.items[0].value,
 			testField.items[1].value
 		]);
@@ -130,9 +126,7 @@ describe('choiceComponent', () => {
 				testField.items[0].value,
 				testField.items[1].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		// Unselect the first button
@@ -140,10 +134,10 @@ describe('choiceComponent', () => {
 
 		await Vue.nextTick();
 
-		const changeEvent = wrapper.emitted('change')[0][0] as Field;
+		const changeEvent = wrapper.emitted('change')[0][0] as ChoiceValue;
 
 		// Second button should stay selected
-		expect(changeEvent.value).toEqual([testField.items[1].value]);
+		expect(changeEvent).toEqual([testField.items[1].value]);
 	});
 
 	it('changes selected "alone" item in multiple mode', async() => {
@@ -152,9 +146,7 @@ describe('choiceComponent', () => {
 			value: [
 				testField.items[3].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		// Select the first button
@@ -162,10 +154,10 @@ describe('choiceComponent', () => {
 
 		await Vue.nextTick();
 
-		const changeEvent = wrapper.emitted('change')[0][0] as Field;
+		const changeEvent = wrapper.emitted('change')[0][0] as ChoiceValue;
 
 		// The default alone selected shouldn't be selected
-		expect(changeEvent.value).toEqual([testField.items[0].value]);
+		expect(changeEvent).toEqual([testField.items[0].value]);
 	});
 
 	it('selects an "alone" item from a multiple selection', async() => {
@@ -175,18 +167,16 @@ describe('choiceComponent', () => {
 				testField.items[0].value,
 				testField.items[1].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		wrapper.vm.toggleItem(testField.items[2]);
 
 		await Vue.nextTick();
 
-		const changeEvent = wrapper.emitted('change')[0][0] as Field;
+		const changeEvent = wrapper.emitted('change')[0][0] as ChoiceValue;
 
-		expect(changeEvent.value).toEqual([testField.items[2].value]);
+		expect(changeEvent).toEqual([testField.items[2].value]);
 	});
 
 	it('doesn\'t selects a field with undefined items', async() => {
@@ -211,9 +201,7 @@ describe('choiceComponent', () => {
 			value: [
 				testField.items[0].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		// Select a button with a null value

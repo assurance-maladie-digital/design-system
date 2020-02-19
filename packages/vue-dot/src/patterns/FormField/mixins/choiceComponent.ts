@@ -31,7 +31,7 @@ const Props = Vue.extend({
 		// Listen the current field value for the component
 		value: {
 			handler(value: ChoiceValue) {
-				if (value) {
+				if (value !== null && value !== undefined) {
 					/** In multiple mode, put the value in an array if it wasn't already */
 					if (this.multiple && !Array.isArray(value)) {
 						this.choiceValue = [value];
@@ -50,8 +50,6 @@ const Props = Vue.extend({
 })
 export class ChoiceComponent extends Props {
 	choiceValue: ChoiceValue | null = this.multiple ? [] : null;
-
-	value!: ChoiceValue;
 
 	/**
 	 * Toggle the item
@@ -85,7 +83,7 @@ export class ChoiceComponent extends Props {
 				newChoiceValue.splice(valueIndex, 1);
 			} else {
 				// Can't select a null value in multiple mode
-				if (!item.value) {
+				if (item.value === undefined || item.value === null) {
 					return;
 				}
 
@@ -136,7 +134,7 @@ export class ChoiceComponent extends Props {
 	 * @returns {boolean} The selected value
 	 */
 	isSelected(value: FieldItemValue): boolean {
-		if (!this.choiceValue) {
+		if (this.choiceValue === null || this.choiceValue === undefined) {
 			return false;
 		}
 

@@ -131,7 +131,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
           <fieldset aria-hidden="true">
             <legend style="width: 0px;"><span>​</span></legend>
           </fieldset>
-          <div class="v-text-field__slot"><label for="input-70" class="v-label theme--light" style="left: 0px; position: absolute;">Label du champ</label><input id="input-70" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-64" class="v-label theme--light" style="left: 0px; position: absolute;">Label du champ</label><input id="input-64" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -154,7 +154,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
           <fieldset aria-hidden="true">
             <legend style="width: 0px;"><span>​</span></legend>
           </fieldset>
-          <div class="v-text-field__slot"><input mask="###-###" id="input-77" type="text"></div>
+          <div class="v-text-field__slot"><input mask="###-###" id="input-71" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -175,7 +175,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
           <fieldset aria-hidden="true">
             <legend style="width: 0px;"><span>​</span></legend>
           </fieldset>
-          <div class="v-text-field__slot"><textarea id="input-88" rows="5"></textarea></div>
+          <div class="v-text-field__slot"><textarea id="input-82" rows="5"></textarea></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -200,7 +200,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
               <fieldset aria-hidden="true">
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
-              <div class="v-text-field__slot"><label for="input-97" class="v-label theme--light" style="left: 0px; position: absolute;">Date</label><input id="input-97" type="text"></div>
+              <div class="v-text-field__slot"><label for="input-91" class="v-label theme--light" style="left: 0px; position: absolute;">Date</label><input id="input-91" type="text"></div>
               <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
             </div>
             <div class="v-text-field__details">
@@ -232,7 +232,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
                 <fieldset aria-hidden="true">
                   <legend style="width: 0px;"><span>​</span></legend>
                 </fieldset>
-                <div class="v-text-field__slot"><label for="input-110" class="v-label theme--light" style="left: 0px; position: absolute;">Du</label><input id="input-110" type="text"></div>
+                <div class="v-text-field__slot"><label for="input-104" class="v-label theme--light" style="left: 0px; position: absolute;">Du</label><input id="input-104" type="text"></div>
                 <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
               </div>
               <div class="v-text-field__details">
@@ -255,7 +255,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
                 <fieldset aria-hidden="true">
                   <legend style="width: 0px;"><span>​</span></legend>
                 </fieldset>
-                <div class="v-text-field__slot"><label for="input-119" class="v-label theme--light" style="left: 0px; position: absolute;">Au</label><input id="input-119" type="text"></div>
+                <div class="v-text-field__slot"><label for="input-113" class="v-label theme--light" style="left: 0px; position: absolute;">Au</label><input id="input-113" type="text"></div>
                 <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
               </div>
               <div class="v-text-field__details">
@@ -279,28 +279,31 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips">
-      <div class="v-input__control">
-        <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-130" class="v-input__slot">
-          <fieldset aria-hidden="true">
-            <legend style="width: 0px;"><span>​</span></legend>
-          </fieldset>
-          <div class="v-select__slot"><label for="input-130" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-            <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">10h30</span></span><input id="input-130" readonly="readonly" type="text" aria-readonly="true" autocomplete="off"></div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
-            </div><input type="hidden">
+    <div class="vd-form-field">
+      <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips">
+        <div class="v-input__control">
+          <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-125" class="v-input__slot">
+            <fieldset aria-hidden="true">
+              <legend style="width: 0px;"><span>​</span></legend>
+            </fieldset>
+            <div class="v-select__slot"><label for="input-125" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+              <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">null</span></span><input id="input-125" readonly="readonly" type="text" aria-readonly="true" autocomplete="off"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+              </div><input type="hidden">
+            </div>
+            <div class="v-menu">
+              <div class="v-menu__content theme--light " style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
+            </div>
           </div>
-          <div class="v-menu">
-            <div class="v-menu__content theme--light " style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
-          </div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <div class="v-messages__wrapper"></div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
           </div>
         </div>
       </div>
+      <!---->
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
@@ -310,30 +313,31 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--is-multi">
-      <div class="v-input__control">
-        <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-142" class="v-input__slot">
-          <fieldset aria-hidden="true">
-            <legend style="width: 0px;"><span>​</span></legend>
-          </fieldset>
-          <div class="v-select__slot">
-            <div class="v-select__selections">
-              <div class="v-select__selection v-select__selection--comma">10h30</div><input id="input-142" readonly="readonly" type="text" aria-readonly="true" autocomplete="off">
+    <div class="vd-form-field">
+      <div class="v-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--is-multi">
+        <div class="v-input__control">
+          <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-138" class="v-input__slot">
+            <fieldset aria-hidden="true">
+              <legend style="width: 0px;"><span>​</span></legend>
+            </fieldset>
+            <div class="v-select__slot">
+              <div class="v-select__selections"><input id="input-138" readonly="readonly" type="text" aria-readonly="true" autocomplete="off"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+              </div><input type="hidden">
             </div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
-            </div><input type="hidden">
+            <div class="v-menu">
+              <div class="v-menu__content theme--light " style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
+            </div>
           </div>
-          <div class="v-menu">
-            <div class="v-menu__content theme--light " style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
-          </div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <div class="v-messages__wrapper"></div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
           </div>
         </div>
       </div>
+      <!---->
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
@@ -341,24 +345,27 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-157" readonly="readonly" tabindex="-1" type="choiceSlider">
-            <div class="v-slider__track-container">
-              <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
-              <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
-            </div>
-            <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">9h</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">9h30</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">10h</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">10h30</div></span></div>
-            <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container accent--text" style="left: 0%;">
-              <div class="v-slider__thumb accent"></div>
+    <div class="vd-form-field">
+      <div class="v-input mt-5 v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-slider v-slider--horizontal theme--light"><input value="3" id="input-154" readonly="readonly" tabindex="-1" type="choiceSlider">
+              <div class="v-slider__track-container">
+                <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
+                <div class="v-slider__track-fill accent" style="left: 0px; width: 100%;"></div>
+              </div>
+              <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick v-slider__tick--filled" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">9h</div></span><span class="v-slider__tick v-slider__tick--filled" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">9h30</div></span><span class="v-slider__tick v-slider__tick--filled" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">10h</div></span><span class="v-slider__tick" style="width: 2px; height: 2px;"><div class="v-slider__tick-label">null</div></span></div>
+              <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container accent--text" style="left: 100%;">
+                <div class="v-slider__thumb accent"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="v-messages theme--light">
-          <div class="v-messages__wrapper"></div>
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
         </div>
       </div>
+      <!---->
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
@@ -366,36 +373,39 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
-      <div class="v-input__prepend-outer"><span>
+    <div class="vd-form-field">
+      <div class="v-input mt-5 v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
+        <div class="v-input__prepend-outer"><span>
 			9h
 		</span></div>
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-168" readonly="readonly" tabindex="-1" type="choiceSlider">
-            <div class="v-slider__track-container">
-              <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
-              <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
-            </div>
-            <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 0%;">
-              <div class="v-slider__thumb accent"></div>
-              <div class="v-slider__thumb-label-container">
-                <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
-                  <div><span>
-			9h
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-slider v-slider--horizontal theme--light"><input value="3" id="input-166" readonly="readonly" tabindex="-1" type="choiceSlider">
+              <div class="v-slider__track-container">
+                <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
+                <div class="v-slider__track-fill accent" style="left: 0px; width: 100%;"></div>
+              </div>
+              <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 100%;">
+                <div class="v-slider__thumb accent"></div>
+                <div class="v-slider__thumb-label-container">
+                  <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
+                    <div><span>
+			null
 		</span></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
         </div>
-        <div class="v-messages theme--light">
-          <div class="v-messages__wrapper"></div>
-        </div>
-      </div>
-      <div class="v-input__append-outer"><span>
-			10h30
+        <div class="v-input__append-outer"><span>
+			null
 		</span></div>
+      </div>
+      <!---->
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
@@ -403,36 +413,39 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
-      <div class="v-input__prepend-outer"><span>
+    <div class="vd-form-field">
+      <div class="v-input mt-5 v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
+        <div class="v-input__prepend-outer"><span>
 			min
 		</span></div>
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-180" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max" type="choiceSlider">
-            <div class="v-slider__track-container">
-              <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
-              <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
-            </div>
-            <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" labelmin="min" labelmax="max" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 0%;">
-              <div class="v-slider__thumb accent"></div>
-              <div class="v-slider__thumb-label-container">
-                <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
-                  <div><span>
-			9h
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-slider v-slider--horizontal theme--light"><input value="3" id="input-179" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max" type="choiceSlider">
+              <div class="v-slider__track-container">
+                <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
+                <div class="v-slider__track-fill accent" style="left: 0px; width: 100%;"></div>
+              </div>
+              <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3" aria-readonly="false" aria-orientation="horizontal" labelmin="min" labelmax="max" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 100%;">
+                <div class="v-slider__thumb accent"></div>
+                <div class="v-slider__thumb-label-container">
+                  <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
+                    <div><span>
+			null
 		</span></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="v-messages theme--light">
+            <div class="v-messages__wrapper"></div>
+          </div>
         </div>
-        <div class="v-messages theme--light">
-          <div class="v-messages__wrapper"></div>
-        </div>
-      </div>
-      <div class="v-input__append-outer"><span>
+        <div class="v-input__append-outer"><span>
 			max
 		</span></div>
+      </div>
+      <!---->
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
@@ -442,28 +455,31 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
-      <div class="v-input__control">
-        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-188" class="v-input__slot">
-          <fieldset aria-hidden="true">
-            <legend style="width: 0px;"><span>​</span></legend>
-          </fieldset>
-          <div class="v-select__slot"><label for="input-188" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-            <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">10h30</span></span><input id="input-188" type="text" autocomplete="off"></div>
-            <div class="v-input__append-inner">
-              <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
-            </div><input type="hidden">
+    <div class="vd-form-field">
+      <div class="v-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
+        <div class="v-input__control">
+          <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-188" class="v-input__slot">
+            <fieldset aria-hidden="true">
+              <legend style="width: 0px;"><span>​</span></legend>
+            </fieldset>
+            <div class="v-select__slot"><label for="input-188" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+              <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">null</span></span><input id="input-188" type="autocomplete" autocomplete="off"></div>
+              <div class="v-input__append-inner">
+                <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+              </div><input type="hidden">
+            </div>
+            <div class="v-menu">
+              <div class="v-menu__content theme--light v-autocomplete__content" style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
+            </div>
           </div>
-          <div class="v-menu">
-            <div class="v-menu__content theme--light v-autocomplete__content" style="max-height: 304px; min-width: 0px; max-width: auto; top: 12px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
-          </div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <div class="v-messages__wrapper"></div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
           </div>
         </div>
       </div>
+      <!---->
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
@@ -474,19 +490,37 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
       Informations supplémentaires
     </p>
     <div class="vd-form-field">
-      <div class="vd-choice-button-field layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" type="choiceButton" hint="Texte informatif"><button type="button" value="9" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
-				9h
+      <div>
+        <div class="vd-choice-button-field layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" type="choiceButton" hint="Texte informatif"><button type="button" value="1" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+				Oui
 			</span>
-          <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="9.30" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
-				9h30
+            <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="0" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+				Non
 			</span>
-          <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="10" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
-				10h
-			</span>
-          <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button></div>
-      <p class="mx-4 mb-0 v-messages theme--light">
-        Texte informatif
-      </p>
+            <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button></div>
+        <p class="mx-4 mb-0 v-messages theme--light">
+          Texte informatif
+        </p>
+      </div>
+      <h4 class="mb-1 body-1">
+        Si oui précisez
+      </h4>
+      <div class="v-input v-textarea v-input--is-disabled theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <fieldset aria-hidden="true">
+              <legend style="width: 0px;"><span>​</span></legend>
+            </fieldset>
+            <div class="v-text-field__slot"><textarea maxlength="400" disabled="disabled" id="input-205" placeholder="Votre réponse" rows="5"></textarea></div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
+            <div class="v-counter theme--light">0 / 400</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="layout vd-layout ma-n4 column vd-form-layout">
@@ -497,19 +531,22 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
       Informations supplémentaires
     </p>
     <div class="vd-form-field">
-      <div class="vd-choice-button-field layout wrap accent--text v-item-group theme--light v-btn-toggle column" type="choiceButton"><button type="button" value="test1" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+      <div>
+        <div class="vd-choice-button-field layout wrap accent--text v-item-group theme--light v-btn-toggle column" type="choiceButton"><button type="button" value="test1" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 				Multiple 1
 			</span>
-          <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="22" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+            <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="22" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 				Multiple 2
 			</span>
-          <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="33" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+            <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="33" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 				Seul 1
 			</span>
-          <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="44" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+            <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="44" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 				Seul 2
 			</span>
-          <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button></div>
+            <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-2 white--text v-icon--svg theme--light" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button></div>
+        <!---->
+      </div>
       <!---->
     </div>
   </div>

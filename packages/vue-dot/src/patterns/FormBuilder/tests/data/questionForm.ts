@@ -19,86 +19,90 @@ const defaultItems = [
 	}
 ];
 
+const closedQuestionItems = [
+	{
+		text: 'Oui',
+		value: 1
+	},
+	{
+		text: 'Non',
+		value: 0
+	}
+];
+
 export const questionForm: Form = {
-	// questionString: {
-	// 	type: 'text',
-	// 	title: 'Question ?',
-	// 	description: 'Informations supplémentaires',
-	// 	tooltip: 'Texte d\'aide',
-	// 	value: null,
-	// 	metadata: {
-	// 		label: 'Label du champ',
-	// 		outlined: true
-	// 	}
-	// },
-	// questionNumber: {
-	// 	type: 'number',
-	// 	title: 'Question nombre ?',
-	// 	description: 'Informations supplémentaires',
-	// 	value: null,
-	// 	metadata: {
-	// 		mask: '###-###',
-	// 		outlined: true
-	// 	}
-	// },
-	// questionTextarea: {
-	// 	type: 'textarea',
-	// 	title: 'Question longue type textarea',
-	// 	description: 'Informations supplémentaires',
-	// 	tooltip: 'Texte d\'aide',
-	// 	value: null,
-	// 	metadata: {
-	// 		outlined: true
-	// 	}
-	// },
-	// questionDate: {
-	// 	type: 'date',
-	// 	title: 'Question',
-	// 	description: 'Informations supplémentaires',
-	// 	value: null,
-	// 	metadata: {
-	// 		appendIcon: true,
-	// 		textField: {
-	// 			outlined: true,
-	// 			hint: 'Texte informatif'
-	// 		}
-	// 	}
-	// },
-	// questionPeriod: {
-	// 	type: 'period',
-	// 	title: 'Question période',
-	// 	description: 'Informations supplémentaires',
-	// 	value: null,
-	// 	metadata: {
-	// 		from: {
-	// 			appendIcon: true,
-	// 			textField: {
-	// 				label: 'Du',
-	// 				outlined: true
-	// 			}
-	// 		},
-	// 		to: {
-	// 			appendIcon: true,
-	// 			textField: {
-	// 				label: 'Au',
-	// 				outlined: true
-	// 			}
-	// 		}
-	// 	}
-	// },
+	questionString: {
+		type: 'text',
+		title: 'Question ?',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			label: 'Label du champ',
+			outlined: true
+		}
+	},
+	questionNumber: {
+		type: 'number',
+		title: 'Question nombre ?',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			mask: '###-###',
+			outlined: true
+		}
+	},
+	questionTextarea: {
+		type: 'textarea',
+		title: 'Question longue type textarea',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			outlined: true
+		}
+	},
+	questionDate: {
+		type: 'date',
+		title: 'Question',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			appendIcon: true,
+			textField: {
+				outlined: true,
+				hint: 'Texte informatif'
+			}
+		}
+	},
+	questionPeriod: {
+		type: 'period',
+		title: 'Question période',
+		description: 'Informations supplémentaires',
+		value: null,
+		metadata: {
+			from: {
+				appendIcon: true,
+				textField: {
+					label: 'Du',
+					outlined: true
+				}
+			},
+			to: {
+				appendIcon: true,
+				textField: {
+					label: 'Au',
+					outlined: true
+				}
+			}
+		}
+	},
 	questionSelect: {
 		type: 'select',
 		title: 'Question select',
 		description: 'Informations supplémentaires',
 		value: null,
 		items: defaultItems,
-		other: {
-			selectedChoice: 9,
-			label: 'test',
-			metadata: {
-				outlined: true
-			}
-		},
 		metadata: {
 			outlined: true,
 			chips: true,
@@ -118,99 +122,108 @@ export const questionForm: Form = {
 			multiple: true,
 			outlined: true
 		}
+	},
+	questionSelectSliderTick: {
+		type: 'select',
+		title: 'Question select slider',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		items: defaultItems,
+		metadata: {
+			type: 'choiceSlider'
+		}
+	},
+	questionSelectSliderThumb: {
+		type: 'select',
+		title: 'Question select slider thumb',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		items: defaultItems,
+		metadata: {
+			type: 'choiceSlider',
+			thumbLabel: true
+		}
+	},
+	questionSelectSliderThumbLabel: {
+		type: 'select',
+		title: 'Question select slider thumb with custom label',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		items: defaultItems,
+		metadata: {
+			labelMin: 'min',
+			labelMax: 'max',
+			type: 'choiceSlider',
+			thumbLabel: true
+		}
+	},
+	questionAutocomplete: {
+		type: 'select',
+		title: 'Question avec complétion automatique',
+		description: 'Informations supplémentaires',
+		value: null,
+		items: defaultItems,
+		metadata: {
+			type: 'autocomplete',
+			outlined: true,
+			chips: true,
+			menuProps: {
+				offsetY: true
+			},
+			label: 'Votre réponse'
+		}
+	},
+	questionChoiceButton: {
+		type: 'select',
+		title: 'Question choix bouton inline',
+		description: 'Informations supplémentaires',
+		items: closedQuestionItems,
+		other: {
+			selectedChoice: 1,
+			label: 'Si oui précisez',
+			metadata: {
+				maxLength: 400,
+				counter: 400,
+				placeholder: 'Votre réponse'
+			}
+		},
+		metadata: {
+			inline: true,
+			type: 'choiceButton',
+			hint: 'Texte informatif'
+		}
+	},
+	questionChoiceButtonMultiple: {
+		type: 'select',
+		title: 'Question choix bouton multiple',
+		description: 'Informations supplémentaires',
+		items: [
+			{
+				text: 'Multiple 1',
+				value: 'test1'
+			},
+			{
+				text: 'Multiple 2',
+				value: 22
+			},
+			{
+				text: 'Seul 1',
+				value: 33,
+				alone: true
+			},
+			{
+				text: 'Seul 2',
+				value: 44,
+				alone: true
+			},
+			{
+				text: 'Valeur nulle',
+				value: null
+			}
+		],
+		metadata: {
+			type: 'choiceButton',
+			multiple: true
+		}
 	}
-	// questionSelectSliderTick: {
-	// 	type: 'select',
-	// 	title: 'Question select slider',
-	// 	description: 'Informations supplémentaires',
-	// 	tooltip: 'Texte d\'aide',
-	// 	items: defaultItems,
-	// 	metadata: {
-	// 		type: 'choiceSlider'
-	// 	}
-	// },
-	// questionSelectSliderThumb: {
-	// 	type: 'select',
-	// 	title: 'Question select slider thumb',
-	// 	description: 'Informations supplémentaires',
-	// 	tooltip: 'Texte d\'aide',
-	// 	items: defaultItems,
-	// 	metadata: {
-	// 		type: 'choiceSlider',
-	// 		thumbLabel: true
-	// 	}
-	// },
-	// questionSelectSliderThumbLabel: {
-	// 	type: 'select',
-	// 	title: 'Question select slider thumb with custom label',
-	// 	description: 'Informations supplémentaires',
-	// 	tooltip: 'Texte d\'aide',
-	// 	items: defaultItems,
-	// 	metadata: {
-	// 		labelMin: 'min',
-	// 		labelMax: 'max',
-	// 		type: 'choiceSlider',
-	// 		thumbLabel: true
-	// 	}
-	// },
-	// questionAutocomplete: {
-	// 	type: 'select',
-	// 	title: 'Question avec complétion automatique',
-	// 	description: 'Informations supplémentaires',
-	// 	value: null,
-	// 	items: defaultItems,
-	// 	metadata: {
-	// 		type: 'autocomplete',
-	// 		outlined: true,
-	// 		chips: true,
-	// 		menuProps: {
-	// 			offsetY: true
-	// 		},
-	// 		label: 'Votre réponse'
-	// 	}
-	// },
-	// questionChoiceButton: {
-	// 	type: 'select',
-	// 	title: 'Question choix bouton inline',
-	// 	description: 'Informations supplémentaires',
-	// 	items: defaultItems,
-	// 	metadata: {
-	// 		inline: true,
-	// 		type: 'choiceButton',
-	// 		hint: 'Texte informatif'
-	// 	}
-	// },
-	// questionChoiceButtonMultiple: {
-	// 	type: 'select',
-	// 	title: 'Question choix bouton multiple',
-	// 	description: 'Informations supplémentaires',
-	// 	items: [
-	// 		{
-	// 			text: 'Multiple 1',
-	// 			value: 'test1'
-	// 		},
-	// 		{
-	// 			text: 'Multiple 2',
-	// 			value: 22
-	// 		},
-	// 		{
-	// 			text: 'Seul 1',
-	// 			value: 33,
-	// 			alone: true
-	// 		},
-	// 		{
-	// 			text: 'Seul 2',
-	// 			value: 44,
-	// 			alone: true
-	// 		},
-	// 		{
-	// 			text: 'Valeur nulle',
-	// 			value: null
-	// 		}
-	// 	],
-	// 	metadata: {
-	// 		type: 'choiceButton',
-	// 		multiple: true
-	// 	}
-	// }
 };

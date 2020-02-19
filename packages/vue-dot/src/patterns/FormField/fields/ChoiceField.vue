@@ -6,16 +6,24 @@
 			:value="typeSelectValue.value"
 			:items="field.items"
 			:metadata="fieldMetadata"
-			:multiple="fieldMetadata && field.metadata.multiple"
+			:multiple="fieldMetadata && fieldMetadata.multiple"
 			@change="typeSelectValue.value = $event"
 		/>
 
 		<!-- the other field -->
-		<VTextarea
-			v-if="showOtherField"
-			v-model="typeSelectValue.other"
-			outlined
-		/>
+		<template v-if="otherField">
+			<h4 class="mb-1 body-1">
+				{{ otherField.label }}
+			</h4>
+			<VTextarea
+				ref="otherField"
+				:value="typeSelectValue.other"
+				v-bind="otherField.metadata"
+				:disabled="isOtherFieldDisabled"
+				outlined
+				@change="typeSelectValue.other = $event"
+			/>
+		</template>
 	</div>
 </template>
 
@@ -27,9 +35,7 @@
 
 	import { IFieldMap } from '../mixins/fieldMap';
 
-	import { TypeSelectValue, FieldItemValue } from '../types';
-
-	import { deepCopy } from '../../../helpers/deepCopy';
+	import { TypeSelectValue, FieldItemValue, ChoiceValue } from '../types';
 
 	// We import them all because the form
 	// can use any of them
@@ -61,14 +67,19 @@
 					this.emitChangeEvent(value);
 				},
 				deep: true
+			},
+			isOtherFieldDisabled(newValue) {
+				if (!newValue) {
+					this.$nextTick(() => this.$refs.otherField.focus());
+				}
 			}
 		}
 	})
 	export default class ChoiceField extends FieldComponent {
 
-		typeSelectValue: TypeSelectValue = { value: null, other: null };
+		typeSelectValue: TypeSelectValue = { value: null };
 
-			/** List all choice field components and their corresponding keys */
+		/** List all choice field components and their corresponding keys */
 		selectFieldMap: IFieldMap = {
 			select: 'ChoiceSelectField',
 			autocomplete: 'ChoiceAutocompleteField',
@@ -76,32 +87,32 @@
 			choiceSlider: 'ChoiceSliderField'
 		};
 
-		get showOtherField() {
+		/** Check if the other field is disable or not */
+		get isOtherFieldDisabled() {
 			const choiceValue: ChoiceValue = this.typeSelectValue ? this.typeSelectValue.value : null;
 			const selectedChoice: FieldItemValue = this.field.other ? this.field.other.selectedChoice : null;
 			if (!selectedChoice || !choiceValue) {
-				return false;
-			}
-			if (Array.isArray(choiceValue)) {
-				return choiceValue.includes(selectedChoice);
+				return true;
+			} else if (Array.isArray(choiceValue)) {
+				return !choiceValue.includes(selectedChoice);
 			} else {
-				return choiceValue === selectedChoice;
+				return choiceValue !== selectedChoice;
 			}
+		}
+
+		get otherField() {
+			return this.field.other;
 		}
 
 		/**
 		 * Returns the field that correspond to the type in metadata or select By default
 		 *
-		 * @returns {string} The field
+		 * @returns {string} The choice field component name
 		 */
 		getField(): string {
 			const metadataType = this.field.metadata ? this.field.metadata.type as string : undefined;
 
 			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
-		}
-
-		otherMetadata() {
-			return this.field.other ? this.field.other.metadata : {};
 		}
 	}
 </script>
