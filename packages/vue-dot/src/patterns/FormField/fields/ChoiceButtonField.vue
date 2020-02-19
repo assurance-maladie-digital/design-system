@@ -4,16 +4,16 @@
 			:value="choiceValue"
 			v-bind="field.metadata"
 			class="vd-choice-button-field layout wrap accent--text"
-			:class="isInline ? null : 'column'"
+			:class="{ 'column' : !isInline }"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"
 				:key="index"
 				:value="item.value"
+				:outlined="!isSelected(item.value)"
 				elevation="0"
 				height="40"
 				active-class="white--text"
-				:outlined="!isSelected(item.value)"
 				class="mb-2 text-none"
 				color="accent"
 				@click="toggleItem(item)"
@@ -88,7 +88,7 @@
 		border-width: 1px !important;
 	}
 
-	.theme--light.vd-choice-button-field:not(.v-btn-toggle--group) .v-btn.v-btn {
+	.vd-choice-button-field:not(.v-btn-toggle--group) .v-btn.v-btn {
 		border-color: currentColor !important;
 	}
 </style>
