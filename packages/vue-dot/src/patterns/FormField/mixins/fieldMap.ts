@@ -1,34 +1,28 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
-interface IFieldMap {
+export interface IFieldMap {
 	[key: string]: string;
 }
 
 // We import them all because the form
 // can use any of them
-import AutocompleteField from '../fields/AutocompleteField.vue';
+import ChoiceField from '../fields/ChoiceField.vue';
 import DateField from '../fields/DateField.vue';
 import NumberField from '../fields/NumberField.vue';
 import PasswordField from '../fields/PasswordField.vue';
 import PeriodField from '../fields/PeriodField.vue';
-import SelectField from '../fields/SelectField.vue';
-import ChoiceButtonField from '../fields/ChoiceButtonField.vue';
-import ChoiceSliderField from '../fields/ChoiceSliderField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
 
 /** List all fields and provide getField() function */
 @Component({
 	components: {
-		AutocompleteField,
 		DateField,
 		NumberField,
 		PasswordField,
 		PeriodField,
-		SelectField,
-		ChoiceButtonField,
-		ChoiceSliderField,
+		ChoiceField,
 		TextareaField,
 		TextField
 	}
@@ -36,14 +30,11 @@ import TextField from '../fields/TextField.vue';
 export class FieldMap extends Vue {
 	/** List all field components and their corresponding keys */
 	fieldMap: IFieldMap = {
-		autocomplete: 'AutocompleteField',
 		date: 'DateField',
 		number: 'NumberField',
 		password: 'PasswordField',
 		period: 'PeriodField',
-		select: 'SelectField',
-		choiceButton: 'ChoiceButtonField',
-		choiceSlider: 'ChoiceSliderField',
+		select: 'ChoiceField',
 		text: 'TextField',
 		textarea: 'TextareaField'
 	};

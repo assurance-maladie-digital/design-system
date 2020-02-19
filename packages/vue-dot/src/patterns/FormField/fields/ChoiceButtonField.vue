@@ -2,7 +2,7 @@
 	<div>
 		<VBtnToggle
 			:value="choiceValue"
-			v-bind="field.metadata"
+			v-bind="metadata"
 			class="vd-choice-button-field layout wrap accent--text"
 			:class="{ 'column' : !isInline }"
 		>
@@ -34,31 +34,28 @@
 		</VBtnToggle>
 
 		<p
-			v-if="field && field.metadata && field.metadata.hint"
+			v-if="metadata && metadata.hint"
 			class="mx-4 mb-0 v-messages"
 			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
-			{{ field.metadata.hint }}
+			{{ metadata.hint }}
 		</p>
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
+	import Component from 'vue-class-component';
 
 	import { mdiCheck } from '@mdi/js';
 
-	import { ChoiceField } from '../mixins/choiceField';
-	import { FieldComponent } from '../mixins/fieldComponent';
+	import { ChoiceComponent } from '../mixins/choiceComponent';
 
 	import { FieldItem } from '../types';
 
-	const MixinsDeclaration = mixins(FieldComponent, ChoiceField);
-
 	/** Form field to select a value from a list */
 	@Component
-	export default class ChoiceButtonField extends MixinsDeclaration {
+	export default class ChoiceButtonField extends ChoiceComponent {
 		checkIcon = mdiCheck;
 
 		/**
@@ -67,17 +64,17 @@
 		 * @returns {FieldItem[]} The filtered items
 		 */
 		get filteredItems(): FieldItem[] {
-			if (!Array.isArray(this.field.items)) {
+			if (!Array.isArray(this.items)) {
 				return [];
 			}
 
-			const filteredItems = this.field.items.filter((item) => Boolean(item.value));
+			const filteredItems = this.items.filter((item) => Boolean(item.value));
 
 			return filteredItems;
 		}
 
-		get isInline(): boolean {
-			return this.field && this.field.metadata && this.field.metadata.inline;
+		get isInline(): Boolean {
+			return this.metadata && this.metadata.inline;
 		}
 	}
 </script>

@@ -1,14 +1,13 @@
 <template>
 	<VSlider
-		v-if="field.items"
-		v-bind="field.metadata"
+		v-bind="metadata"
 		color="accent"
 		track-color="grey lighten-1"
 		class="mt-5"
-		:value="getIndex(field.value)"
+		:value="getIndex(choiceValue)"
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
-		:max="field.items.length - 1"
+		:max="items.length - 1"
 		@change="valueUpdated"
 	>
 		<template
@@ -44,29 +43,29 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FieldComponent } from '../mixins/fieldComponent';
+	import { ChoiceComponent } from '../mixins/choiceComponent';
 	import { FieldValue } from '../types';
 
 	/** Choice field type slider */
 	@Component
-	export default class ChoiceSliderField extends FieldComponent {
+	export default class ChoiceSliderField extends ChoiceComponent {
 		/** Get the index of the selected item by value
 		 *
 		 * @param {FieldValue} value The current field value
 		 * @returns {number|null} The index of the selected item, null if not found
 		 */
 		getIndex(value: FieldValue): number | null {
-			if (!this.field.items) {
+			if (!this.items) {
 				return null;
 			}
 
-			return this.field.items.findIndex((item) => item.value === value);
+			return this.items.findIndex((item) => item.value === value);
 		}
 
 		get labelMin() {
 			// Check if there is a custom labelMin prop in metadata
-			if (this.field.metadata && this.field.metadata.labelMin) {
-				return this.field.metadata.labelMin;
+			if (this.metadata && this.metadata.labelMin) {
+				return this.metadata.labelMin;
 			}
 
 			// The default value is the first the label
@@ -75,8 +74,8 @@
 
 		get labelMax() {
 			// Check if there is a custom labelMax prop in metadata
-			if (this.field.metadata && this.field.metadata.labelMax) {
-				return this.field.metadata.labelMax;
+			if (this.metadata && this.metadata.labelMax) {
+				return this.metadata.labelMax;
 			}
 
 			// The default value is the last the label
@@ -94,13 +93,13 @@
 
 		/**  Are we in thumb label mode */
 		get isThumbLabel() {
-			return this.field.metadata && this.field.metadata.thumbLabel;
+			return this.metadata && this.metadata.thumbLabel;
 		}
 
 		/** The ticks labels */
 		get labels() {
-			if (this.field.items && this.field.metadata) {
-				const labels = this.field.items.map((item) => item.text);
+			if (this.items && this.metadata) {
+				const labels = this.items.map((item) => item.text);
 
 				return labels;
 			}
@@ -116,11 +115,11 @@
 		valueUpdated(index: number) {
 			let fieldValue = null;
 
-			if (this.field.items) {
-				fieldValue = this.field.items[index].value;
+			if (this.items) {
+				fieldValue = this.items[index].value;
 			}
 
-			this.emitChangeEvent(fieldValue);
+			this.emitChoiceUpdated(fieldValue);
 		}
 	}
 </script>

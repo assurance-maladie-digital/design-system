@@ -1,25 +1,46 @@
+import Vue, { PropType } from 'vue';
 import Component from 'vue-class-component';
 
-import { ChoiceValue, FieldItem, FieldItemValue } from '../types';
+import { ChoiceValue, FieldItem, FieldMetadata, FieldItemValue } from '../types';
 
-import { FieldComponent } from './fieldComponent';
+const Props = Vue.extend({
+	props: {
+		/** The choice field to display */
+		value: {
+			type: [Array, Number, String] as PropType<ChoiceValue>,
+			default: null
+		},
+		metadata: {
+			type: Object as PropType<FieldMetadata>,
+			default: null
+		},
+		multiple: {
+			type: Boolean,
+			default: false
+		},
+		items: {
+			type: Array as PropType<FieldItem[]>,
+			required: true
+		}
+	}
+});
 
 /** Mixin to control the item selection */
-@Component<ChoiceField>({
+@Component<ChoiceComponent>({
 	watch: {
 		// Listen the current field value for the component
-		'field.value': {
+		value: {
 			handler(value: ChoiceValue) {
 				if (value) {
 					/** In multiple mode, put the value in an array if it wasn't already */
-					if (this.isMultiple && !Array.isArray(value)) {
+					if (this.multiple && !Array.isArray(value)) {
 						this.choiceValue = [value];
 					} else {
 						this.choiceValue = value;
 					}
 				} else {
 					// Reset the choice value
-					this.choiceValue = this.isMultiple ? [] : null;
+					this.choiceValue = this.multiple ? [] : null;
 				}
 			},
 			immediate: true,
@@ -27,12 +48,10 @@ import { FieldComponent } from './fieldComponent';
 		}
 	}
 })
-export class ChoiceField extends FieldComponent {
-	choiceValue: ChoiceValue | null = this.isMultiple ? [] : null;
+export class ChoiceComponent extends Props {
+	choiceValue: ChoiceValue | null = this.multiple ? [] : null;
 
-	get isMultiple(): boolean {
-		return Boolean(this.field && this.field.metadata && this.field.metadata.multiple);
-	}
+	value!: ChoiceValue;
 
 	/**
 	 * Toggle the item
@@ -45,14 +64,14 @@ export class ChoiceField extends FieldComponent {
 		const active: Boolean = this.isSelected(item.value);
 
 		// Items must be an array
-		if (!Array.isArray(this.field.items)) {
+		if (!Array.isArray(this.items)) {
 			return;
 		}
 
 		let newChoiceValue: ChoiceValue;
 
 		// Set the new value in simple mode
-		if (!this.isMultiple) {
+		if (!this.multiple) {
 			newChoiceValue = active ? null : item.value;
 		} else {
 			newChoiceValue = [
@@ -83,7 +102,7 @@ export class ChoiceField extends FieldComponent {
 						const valueSelected = (newChoiceValue as FieldItemValue[])[index];
 
 						// Search if the item is alone
-						const isItemSelectedAlone = this.field.items.find((element) => {
+						const isItemSelectedAlone = this.items.find((element) => {
 							return element.value === valueSelected && element.alone;
 						});
 
@@ -103,7 +122,11 @@ export class ChoiceField extends FieldComponent {
 
 		this.choiceValue = newChoiceValue;
 
-		this.emitChangeEvent(this.choiceValue);
+		this.emitChoiceUpdated(this.choiceValue);
+	}
+
+	emitChoiceUpdated(newValue: ChoiceValue) {
+		this.$emit('change', newValue);
 	}
 
 	/**
@@ -117,7 +140,7 @@ export class ChoiceField extends FieldComponent {
 			return false;
 		}
 
-		if (this.isMultiple && Array.isArray(this.choiceValue)) {
+		if (this.multiple && Array.isArray(this.choiceValue)) {
 			return this.choiceValue.includes(value);
 		} else {
 			return this.choiceValue === value;

@@ -32,7 +32,7 @@
 				</h1>
 
 				<!-- Examples -->
-				<CopyBtnEx />
+				<!-- <CopyBtnEx />
 
 				<CustomIconEx />
 
@@ -46,11 +46,11 @@
 
 				<FileUploadEx />
 
-				<FormFieldEx />
+				<FormFieldEx /> -->
 
 				<FormBuilderEx />
 
-				<LangBtnEx />
+				<!-- <LangBtnEx />
 
 				<NotificationEx />
 
@@ -60,7 +60,7 @@
 
 				<SubHeaderEx />
 
-				<UploadWorkflowEx />
+				<UploadWorkflowEx /> -->
 			</PageCard>
 		</VContent>
 

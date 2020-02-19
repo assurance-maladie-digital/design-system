@@ -1,13 +1,13 @@
 <template>
 	<DocSection title="FormBuilder">
-		<h2 class="subtitle-1 mb-4 font-weight-bold">
+		<!-- <h2 class="subtitle-1 mb-4 font-weight-bold">
 			Classic form
 		</h2>
 
 		<FormBuilder
 			v-model="addressForm"
 			:layout="addressFormLayout"
-		/>
+		/> -->
 
 		<h2 class="subtitle-1 mt-4 mb-4 font-weight-bold">
 			Questionnaire

@@ -1,8 +1,8 @@
 <template>
 	<VAutocomplete
-		v-bind="field.metadata"
-		:value="field.value"
-		:items="field.items"
+		v-bind="metadata"
+		:value="choiceValue"
+		:items="items"
 		:search-input.sync="searchInput"
 		@change="valueChanged"
 	/>
@@ -12,12 +12,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FieldComponent } from '../mixins/fieldComponent';
-	import { FieldValue } from '../types';
+	import { ChoiceComponent } from '../mixins/choiceComponent';
+
+	import { ChoiceValue } from '../types';
 
 	/** Form field to select a value with autocomplete */
 	@Component
-	export default class AutocompleteField extends FieldComponent {
+	export default class ChoiceAutocompleteField extends ChoiceComponent {
 		searchInput: string | null = null;
 
 		/**
@@ -25,12 +26,12 @@
 		 * See https://github.com/vuetifyjs/vuetify/issues/5926
 		 * for more informations
 		 *
-		 * @param {FieldValue} value The updated value
-		 * @returns {void}
+		 * @param {ChoiceValue} value The updated value
+		 * @returns {void} Nothing
 		 */
-		valueChanged(value: FieldValue) {
+		valueChanged(value: ChoiceValue) {
 			this.searchInput = '';
-			this.emitChangeEvent(value);
+			this.emitChoiceUpdated(value);
 		}
 	}
 </script>

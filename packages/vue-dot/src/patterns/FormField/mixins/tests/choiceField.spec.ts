@@ -3,7 +3,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import { Field } from '../../types';
 
-import { ChoiceField } from '../choiceField';
+import { ChoiceComponent } from '../choiceComponent';
 
 const testField = {
 	type: 'choice',
@@ -37,7 +37,7 @@ const testField = {
 function createWrapper(field: Field) {
 	const component = Vue.component('test', {
 		mixins: [
-			ChoiceField
+			ChoiceComponent
 		],
 		template: '<div />'
 	});
@@ -46,10 +46,10 @@ function createWrapper(field: Field) {
 		propsData: {
 			field
 		}
-	}) as Wrapper<ChoiceField>;
+	}) as Wrapper<ChoiceComponent>;
 }
 
-describe('choiceField', () => {
+describe('choiceComponent', () => {
 	it('selects a not null item value', async() => {
 		const wrapper = createWrapper(testField);
 
