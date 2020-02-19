@@ -23,6 +23,7 @@
 				</span>
 
 				<VSpacer />
+
 				<VIcon
 					v-show="isSelected(item.value)"
 					class="ml-2 white--text"
@@ -31,6 +32,7 @@
 				</VIcon>
 			</VBtn>
 		</VBtnToggle>
+
 		<p
 			v-if="field && field.metadata && field.metadata.hint"
 			class="mx-4 mb-0 v-messages"
@@ -74,7 +76,7 @@
 			return filteredItems;
 		}
 
-		get isInline(): Boolean {
+		get isInline(): boolean {
 			return this.field && this.field.metadata && this.field.metadata.inline;
 		}
 	}
