@@ -1,9 +1,9 @@
 <template>
-	<div>
+	<div class="vd-choice-button-field">
 		<VBtnToggle
 			:value="choiceValue"
 			v-bind="field.metadata"
-			class="vd-choice-button-field layout wrap accent--text"
+			class="vd-choice-button-field-toggle layout wrap accent--text"
 			:class="{ 'column': !isInline }"
 		>
 			<VBtn
@@ -25,8 +25,8 @@
 				<VSpacer />
 
 				<VIcon
-					v-show="isSelected(item.value)"
-					class="ml-2 white--text"
+					:style="{visibility: isSelected(item.value) ? 'visible' : 'hidden'}"
+					class="ml-1 white--text"
 				>
 					{{ checkIcon }}
 				</VIcon>
@@ -82,13 +82,17 @@
 	}
 </script>
 
-<style lang="scss">
-	.vd-choice-button-field.column .v-btn {
-		border-radius: 4px !important;
-		border-width: 1px !important;
-	}
+<style lang="scss" scoped>
+	@import '../../../tokens';
 
-	.vd-choice-button-field:not(.v-btn-toggle--group) .v-btn.v-btn {
-		border-color: currentColor !important;
+	.vd-choice-button-field .vd-choice-button-field-toggle {
+		&.column .v-btn {
+			border-radius: 4px !important;
+			border-width: 1px !important;
+		}
+
+		&:not(.v-btn-toggle--group) .v-btn {
+			border-color: $vd-accent !important;
+		}
 	}
 </style>
