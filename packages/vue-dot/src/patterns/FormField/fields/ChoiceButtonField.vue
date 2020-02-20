@@ -4,7 +4,7 @@
 			:value="choiceValue"
 			v-bind="field.metadata"
 			class="vd-choice-button-field layout wrap accent--text"
-			:class="{ 'column' : !isInline }"
+			:class="{ 'column': !isInline }"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"
