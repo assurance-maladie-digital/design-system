@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<!-- the select component -->
+		<!-- the choice field component -->
 		<component
 			:is="getField()"
 			:value="typeSelectValue.value"
 			:items="field.items"
 			:metadata="fieldMetadata"
 			:multiple="fieldMetadata && fieldMetadata.multiple"
-			@change="typeSelectValue.value = $event"
+			@change="choiceUpdated"
 		/>
 
 		<!-- the other field -->
@@ -17,11 +17,11 @@
 			</h4>
 			<VTextarea
 				ref="otherField"
-				:value="typeSelectValue.other"
+				:value="otherlocalValue"
 				v-bind="otherField.metadata"
-				:disabled="isOtherFieldDisabled"
+				:disabled="!isOtherActive"
 				outlined
-				@change="typeSelectValue.other = $event"
+				@change="otherUpdated"
 			/>
 		</template>
 	</div>
@@ -35,7 +35,7 @@
 
 	import { IFieldMap } from '../mixins/fieldMap';
 
-	import { TypeSelectValue, FieldItemValue, ChoiceValue } from '../types';
+	import { TypeSelectValue, FieldItemValue, OtherValue, ChoiceValue } from '../types';
 
 	// We import them all because the form
 	// can use any of them
@@ -57,27 +57,29 @@
 		watch: {
 			'field.value': {
 				handler(value: TypeSelectValue) {
-					this.typeSelectValue = value || { value: null };
+					this.typeSelectValue = value || this.typeSelectValue;
+
+					// Set the active status
+					this.isOtherActive = this.getOtherActive();
+
+					/**
+					 * Set the other local value if the remote other value is not null
+					 * to keep the local value up for the user
+					 */
+					if(this.typeSelectValue && this.typeSelectValue.other) {
+						this.otherlocalValue = this.typeSelectValue.other;
+					}
 				},
 				immediate: true,
 				deep: true
-			},
-			typeSelectValue: {
-				handler(value: TypeSelectValue) {
-					this.emitChangeEvent(value);
-				},
-				deep: true
-			},
-			isOtherFieldDisabled(newValue) {
-				if (!newValue) {
-					this.$nextTick(() => this.$refs.otherField.focus());
-				}
 			}
 		}
 	})
 	export default class ChoiceField extends FieldComponent {
-
 		typeSelectValue: TypeSelectValue = { value: null };
+
+		isOtherActive: Boolean = false;
+		otherlocalValue: OtherValue = null;
 
 		/** List all choice field components and their corresponding keys */
 		selectFieldMap: IFieldMap = {
@@ -87,21 +89,25 @@
 			choiceSlider: 'ChoiceSliderField'
 		};
 
-		/** Check if the other field is disable or not */
-		get isOtherFieldDisabled() {
+		get otherField() {
+			return this.field.other;
+		}
+
+		/**
+		 * Check if the other field is active or not
+		 *
+		 * @returns {boolean} The other active status
+		 */
+		getOtherActive(): boolean {
 			const choiceValue: ChoiceValue = this.typeSelectValue ? this.typeSelectValue.value : null;
 			const selectedChoice: FieldItemValue = this.field.other ? this.field.other.selectedChoice : null;
 			if (!selectedChoice || !choiceValue) {
-				return true;
+				return false;
 			} else if (Array.isArray(choiceValue)) {
-				return !choiceValue.includes(selectedChoice);
+				return choiceValue.includes(selectedChoice);
 			} else {
-				return choiceValue !== selectedChoice;
+				return choiceValue === selectedChoice;
 			}
-		}
-
-		get otherField() {
-			return this.field.other;
 		}
 
 		/**
@@ -110,9 +116,47 @@
 		 * @returns {string} The choice field component name
 		 */
 		getField(): string {
+			if (!this.field.items) {
+				return null;
+			}
+
 			const metadataType = this.field.metadata ? this.field.metadata.type as string : undefined;
 
 			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
+		}
+
+		/**
+		 * Emit the new type select value when choice updated
+		 *
+		 * @param {ChoiceValue} choiceValue The new choice value selected
+		 */
+		choiceUpdated(choiceValue: ChoiceValue): void {
+			this.typeSelectValue.value = choiceValue;
+
+			this.isOtherActive = this.getOtherActive();
+
+			if (this.isOtherActive) {
+				// Focus the other field when activated
+				this.$nextTick(() => this.$refs.otherField.focus());
+
+				// Get the other local value when activated
+				this.typeSelectValue.other = this.otherlocalValue;
+			} else {
+				this.typeSelectValue.other = null;
+			}
+
+			this.emitChangeEvent(this.typeSelectValue);
+		}
+
+		/**
+		 * Emit the new type select value when other field updated
+		 *
+		 * @param {OtherValue} otherlocalValue The new other local value
+		 */
+		otherUpdated(otherlocalValue: OtherValue): void {
+			this.typeSelectValue.other = otherlocalValue;
+
+			this.emitChangeEvent(this.typeSelectValue);
 		}
 	}
 </script>

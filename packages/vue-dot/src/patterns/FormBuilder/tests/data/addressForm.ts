@@ -19,8 +19,8 @@ export const addressForm: Form = {
 	streetNumber: {
 		type: 'number',
 		value: null,
-		mask: '#####',
 		metadata: {
+			mask: '#####',
 			type: 'text',
 			label: 'Numéro de voie'
 		}

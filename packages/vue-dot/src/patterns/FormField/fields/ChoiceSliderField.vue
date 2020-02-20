@@ -1,13 +1,13 @@
 <template>
 	<VSlider
-		v-bind="metadata"
-		color="accent"
-		track-color="grey lighten-1"
-		class="mt-5"
 		:value="getIndex(choiceValue)"
+		v-bind="metadata"
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
 		:max="items.length - 1"
+		track-color="grey lighten-1"
+		color="accent"
+		class="mt-5"
 		@change="valueUpdated"
 	>
 		<template

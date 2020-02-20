@@ -178,6 +178,10 @@ export const questionForm: Form = {
 		title: 'Question choix bouton inline',
 		description: 'Informations supplémentaires',
 		items: closedQuestionItems,
+		value: {
+			value: 1,
+			other: 'précision'
+		},
 		other: {
 			selectedChoice: 1,
 			label: 'Si oui précisez',

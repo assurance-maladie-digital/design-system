@@ -5,11 +5,13 @@ export interface PeriodValue {
 
 export type FieldItemValue = string | number | null | undefined;
 
+export type OtherValue = string | null ;
+
 export type ChoiceValue = FieldItemValue | FieldItemValue[];
 
 export interface TypeSelectValue {
 	value: ChoiceValue;
-	other?: FieldItemValue;
+	other?: OtherValue;
 }
 
 export type FieldValue = string | number | null | undefined | PeriodValue | TypeSelectValue;

@@ -179,22 +179,6 @@ describe('choiceComponent', () => {
 		expect(changeEvent).toEqual([testField.items[2].value]);
 	});
 
-	it('doesn\'t selects a field with undefined items', async() => {
-		const wrapper = createWrapper({
-			...testField,
-			items: undefined
-		});
-
-		wrapper.vm.toggleItem({
-			text: 'No items',
-			value: null
-		});
-
-		await Vue.nextTick();
-
-		expect(wrapper.emitted('change')).toBeFalsy();
-	});
-
 	it('doesn\'t selects an item with null value in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,

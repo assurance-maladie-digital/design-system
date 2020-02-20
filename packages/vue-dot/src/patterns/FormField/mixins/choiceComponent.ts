@@ -61,11 +61,6 @@ export class ChoiceComponent extends Props {
 	toggleItem(item: FieldItem): void {
 		const active: Boolean = this.isSelected(item.value);
 
-		// Items must be an array
-		if (!Array.isArray(this.items)) {
-			return;
-		}
-
 		let newChoiceValue: ChoiceValue;
 
 		// Set the new value in simple mode
