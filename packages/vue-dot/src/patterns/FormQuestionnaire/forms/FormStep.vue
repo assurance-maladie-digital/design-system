@@ -8,7 +8,7 @@
 				v-if="indexOfSection(sectionId) > 0"
 				:key="sectionId"
 			/>
-			<LayoutSection
+			<FormSection
 				:key="`layout-section-${sectionId}`"
 				:section="section"
 				@refresh="$emit('refresh')"
@@ -43,7 +43,7 @@
 			event: 'change'
 		}
 	})
-	export default class LayoutSections extends Props {
+	export default class FormStep extends Props {
 		/**
 		 * Get the index of the section
 		 *
