@@ -53,7 +53,7 @@ describe('choiceField', () => {
 	it('selects a not null item value', async() => {
 		const wrapper = createWrapper(testField);
 
-		wrapper.vm.toggleItem(testField.items[0], false);
+		wrapper.vm.toggleItem(testField.items[0]);
 
 		await Vue.nextTick();
 
@@ -65,7 +65,7 @@ describe('choiceField', () => {
 	it('selects a null item value', async() => {
 		const wrapper = createWrapper(testField);
 
-		wrapper.vm.toggleItem(testField.items[4], false);
+		wrapper.vm.toggleItem(testField.items[4]);
 
 		await Vue.nextTick();
 
@@ -80,7 +80,7 @@ describe('choiceField', () => {
 			value: 'value1'
 		});
 
-		wrapper.vm.toggleItem(testField.items[0], true);
+		wrapper.vm.toggleItem(testField.items[0]);
 
 		await Vue.nextTick();
 
@@ -109,8 +109,8 @@ describe('choiceField', () => {
 			}
 		});
 
-		wrapper.vm.toggleItem(testField.items[0], false);
-		wrapper.vm.toggleItem(testField.items[1], false);
+		wrapper.vm.toggleItem(testField.items[0]);
+		wrapper.vm.toggleItem(testField.items[1]);
 
 		await Vue.nextTick();
 
@@ -136,7 +136,7 @@ describe('choiceField', () => {
 		});
 
 		// Unselect the first button
-		wrapper.vm.toggleItem(testField.items[0], true);
+		wrapper.vm.toggleItem(testField.items[0]);
 
 		await Vue.nextTick();
 
@@ -158,7 +158,7 @@ describe('choiceField', () => {
 		});
 
 		// Select the first button
-		wrapper.vm.toggleItem(testField.items[0], false);
+		wrapper.vm.toggleItem(testField.items[0]);
 
 		await Vue.nextTick();
 
@@ -180,7 +180,7 @@ describe('choiceField', () => {
 			}
 		});
 
-		wrapper.vm.toggleItem(testField.items[2], false);
+		wrapper.vm.toggleItem(testField.items[2]);
 
 		await Vue.nextTick();
 
@@ -198,7 +198,7 @@ describe('choiceField', () => {
 		wrapper.vm.toggleItem({
 			text: 'No items',
 			value: null
-		}, false);
+		});
 
 		await Vue.nextTick();
 
@@ -217,7 +217,7 @@ describe('choiceField', () => {
 		});
 
 		// Select a button with a null value
-		wrapper.vm.toggleItem(testField.items[4], false);
+		wrapper.vm.toggleItem(testField.items[4]);
 
 		await Vue.nextTick();
 
