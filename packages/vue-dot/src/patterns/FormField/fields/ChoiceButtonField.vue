@@ -25,7 +25,7 @@
 				<VSpacer />
 
 				<VIcon
-					:style="{visibility: isSelected(item.value) ? 'visible' : 'hidden'}"
+					:style="{ visibility: isSelected(item.value) ? 'visible' : 'hidden' }"
 					class="ml-1 white--text"
 				>
 					{{ checkIcon }}
