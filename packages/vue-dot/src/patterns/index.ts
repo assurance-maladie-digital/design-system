@@ -7,8 +7,8 @@ import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
 import PageCard from './PageCard';
 import PaginatedTable from './PaginatedTable';
-import LayoutSection from './LayoutQuestionnaire/layouts/LayoutSection.vue';
-import LayoutSections from './LayoutQuestionnaire/layouts/LayoutSections.vue';
+import FormSection from './FormQuestionnaire/forms/FormSection.vue';
+import FormStep from './FormQuestionnaire/forms/FormStep.vue';
 import SubHeader from './SubHeader';
 import UploadWorkflow from './UploadWorkflow';
 
@@ -19,8 +19,8 @@ export const patterns = {
 	FormBuilder,
 	FormField,
 	LangBtn,
-	LayoutSection,
-	LayoutSections,
+	FormSection,
+	FormStep,
 	NotificationBar,
 	PageCard,
 	PaginatedTable,

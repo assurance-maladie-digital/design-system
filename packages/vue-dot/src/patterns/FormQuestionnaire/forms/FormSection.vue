@@ -44,7 +44,7 @@
 			event: 'change'
 		}
 	})
-	export default class LayoutSection extends Props {
+	export default class FormSection extends Props {
 		/**
 		 * Emit the new section object when the form change
 		 */

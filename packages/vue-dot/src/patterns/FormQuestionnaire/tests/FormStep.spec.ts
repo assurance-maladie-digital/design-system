@@ -5,21 +5,21 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import FormBuilder from '../../FormBuilder';
-import LayoutSection from '../layouts/LayoutSection.vue';
-import LayoutSections from '../layouts/LayoutSections.vue';
+import FormSection from '../forms/FormSection.vue';
+import FormStep from '../forms/FormStep.vue';
 
 import { questionnaire } from './data/questionnaire';
 
 Vue.component('FormBuilder', FormBuilder);
-Vue.component('LayoutSection', LayoutSection);
+Vue.component('FormSection', FormSection);
 
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('Sections layout', () => {
-	it('show multiple section layout', () => {
+describe('Step form', () => {
+	it('show multiple section form', () => {
 		// Mount component
-		wrapper = mountComponent(LayoutSections, {
+		wrapper = mountComponent(FormStep, {
 			propsData: {
 				sections: questionnaire.sections
 			}

@@ -16,7 +16,7 @@
 				</VExpansionPanelHeader>
 				<VDivider />
 				<VExpansionPanelContent>
-					<LayoutSections
+					<FormStep
 						:sections="questionnaire.sections"
 						@change="sectionsChanged"
 						@refresh="sectionsrefresh"
@@ -42,7 +42,7 @@
 
 	import { mapActions } from 'vuex';
 
-	import { questionnaire } from '../../src/patterns/LayoutQuestionnaire/tests/data/questionnaire';
+	import { questionnaire } from '../../src/patterns/FormQuestionnaire/tests/data/questionnaire';
 
 	@Component({
 		// Vuex bindings

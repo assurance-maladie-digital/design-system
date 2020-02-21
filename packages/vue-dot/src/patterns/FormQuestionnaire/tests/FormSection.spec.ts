@@ -5,7 +5,7 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import FormBuilder from '../../FormBuilder';
-import LayoutSection from '../layouts/LayoutSection.vue';
+import FormSection from '../forms/FormSection.vue';
 
 Vue.component('FormBuilder', FormBuilder);
 
@@ -14,10 +14,10 @@ import { questionnaire } from './data/questionnaire';
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('Section layout', () => {
-	it('show a single section layout', () => {
+describe('Section form', () => {
+	it('show a single section form', () => {
 		// Mount component
-		wrapper = mountComponent(LayoutSection, {
+		wrapper = mountComponent(FormSection, {
 			propsData: {
 				section: questionnaire.sections.section1
 			}
