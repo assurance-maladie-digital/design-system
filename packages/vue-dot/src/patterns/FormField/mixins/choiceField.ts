@@ -38,7 +38,6 @@ export class ChoiceField extends FieldComponent {
 	 * Toggle the item
 	 *
 	 * @param {FieldItem} item The selected item
-	 * @param {boolean} active Is selected or not
 	 * @returns {void}
 	 */
 	toggleItem(item: FieldItem): void {
