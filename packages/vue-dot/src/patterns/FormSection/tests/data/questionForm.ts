@@ -1,4 +1,4 @@
-import { Form } from '../../types';
+import { FieldGroup } from '../../types';
 
 const defaultItems = [
 	{
@@ -19,7 +19,7 @@ const defaultItems = [
 	}
 ];
 
-export const questionForm: Form = {
+export const questionForm: FieldGroup = {
 	questionString: {
 		type: 'text',
 		title: 'Question ?',
@@ -88,7 +88,8 @@ export const questionForm: Form = {
 	},
 	questionSelect: {
 		type: 'select',
-		title: 'Question select',
+		dynamic: true,
+		title: 'Question select dynamique',
 		description: 'Informations supplémentaires',
 		value: null,
 		items: defaultItems,
@@ -166,11 +167,10 @@ export const questionForm: Form = {
 	},
 	questionChoiceButton: {
 		type: 'select',
-		title: 'Question choix bouton inline',
+		title: 'Question choix bouton',
 		description: 'Informations supplémentaires',
 		items: defaultItems,
 		metadata: {
-			inline: true,
 			type: 'choiceButton',
 			hint: 'Texte informatif'
 		}

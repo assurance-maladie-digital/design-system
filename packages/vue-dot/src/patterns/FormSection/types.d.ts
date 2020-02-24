@@ -1,10 +1,15 @@
 import { Field } from '../FormField/types';
 
-export interface Form {
+export interface FieldGroup {
 	[key: string]: Field;
 }
 
-// Field and Form
+export interface Section {
+	title?: string;
+	questions: FieldGroup;
+}
+
+// Field and FieldGroup
 interface ComputedField extends Field {
 	name: string;
 }

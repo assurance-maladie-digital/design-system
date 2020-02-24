@@ -1,45 +1,31 @@
 <template>
-	<div
-		v-if="computedLayout"
+	<VLayout
 		class="vd-form-builder"
+		column
 	>
-		<FormLayout
-			v-for="(formLayout, index) in computedLayout"
-			:key="'layout-' + index"
-			:layout="formLayout"
-		>
-			<template #default="{ field }">
-				<FormField
-					:value="field"
-					@change="formUpdated"
-				/>
-			</template>
-		</FormLayout>
-	</div>
+		<!-- mode form simple -->
+		<FormSection
+			v-if="fieldGroup"
+			v-model="fieldGroup"
+			default-layout="question"
+		/>
+
+		<!-- mode section multiple -->
+		<FormSectionGroup
+			v-else-if="sectionGroup"
+			v-model="sectionGroup"
+		/>
+	</VLayout>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
+	import Component from 'vue-class-component';
 
 	import { FormBuilderCore } from './mixins/formBuilderCore';
 
-	import FormLayout from '../FormLayout';
-	import FormField from '../FormField';
-
-	const MixinsDeclaration = mixins(FormBuilderCore);
-
-	/**
-	 * FormBuilder is a component that displays a form
-	 * from a JSON object
-	 */
-	@Component({
-		components: {
-			FormLayout,
-			FormField
-		}
-	})
-	export default class FormBuilder extends MixinsDeclaration {}
+	@Component
+	export default class FormBuilder extends FormBuilderCore {}
 </script>
 
 <style lang="scss" scoped>

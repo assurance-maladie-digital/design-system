@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { FormBuilderCore } from '../formBuilderCore';
+import { FormSectionCore } from '../formSectionCore';
 
 import { Field } from '../../../FormField/types';
 
 import {
-	Form,
+	FieldGroup,
 	Layout,
 	ComputedLayout,
 	ComputedField,
@@ -34,26 +34,26 @@ const computedDynamicField: ComputedField = {
 	dynamic: true
 };
 
-const testForm: Form = {
+const testForm: FieldGroup = {
 	field1: testField
 };
 
 /** Create the wrapper */
-function createWrapper(form: Form, layout?: Layout, defaultLayout?: string) {
+function createWrapper(fieldGroup: FieldGroup, layout?: Layout, defaultLayout?: string) {
 	const component = Vue.component('test', {
 		mixins: [
-			FormBuilderCore
+			FormSectionCore
 		],
 		template: '<div />'
 	});
 
 	return mount(component, {
 		propsData: {
-			form,
+			fieldGroup,
 			defaultLayout,
 			layout
 		}
-	}) as Wrapper<FormBuilderCore>;
+	}) as Wrapper<FormSectionCore>;
 }
 
 // Tests
@@ -183,7 +183,7 @@ describe('formBuilderCore', () => {
 	});
 
 	it('generates a default layout', () => {
-		const testFormMultiple: Form = {
+		const testFormMultiple: FieldGroup = {
 			field1: testField,
 			field2: testField
 		};
@@ -204,7 +204,7 @@ describe('formBuilderCore', () => {
 	});
 
 	it('doesn\'t fail to execute getDefaultLayout when the layout doesn\'t exists', () => {
-		const testFormMultiple: Form = {
+		const testFormMultiple: FieldGroup = {
 			field1: testField,
 			field2: testField
 		};
@@ -220,9 +220,9 @@ describe('formBuilderCore', () => {
 		const updatedField = computedField;
 		updatedField.value = 'test';
 
-		wrapper.vm.formUpdated(updatedField);
+		wrapper.vm.sectionUpdated(updatedField);
 
-		const updatedTestForm: Form = {
+		const updatedTestForm: FieldGroup = {
 			field1: {
 				...testField,
 				value: 'test'
@@ -241,7 +241,7 @@ describe('formBuilderCore', () => {
 		const updatedField = computedField;
 		updatedField.value = 'test';
 
-		wrapper.vm.formUpdated(updatedField);
+		wrapper.vm.sectionUpdated(updatedField);
 
 		await Vue.nextTick();
 
@@ -255,7 +255,7 @@ describe('formBuilderCore', () => {
 		const updatedField = computedDynamicField;
 		updatedField.value = 'test';
 
-		wrapper.vm.formUpdated(updatedField);
+		wrapper.vm.sectionUpdated(updatedField);
 
 		await Vue.nextTick();
 
