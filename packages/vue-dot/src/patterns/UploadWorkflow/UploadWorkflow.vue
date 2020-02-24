@@ -28,8 +28,8 @@
 		>
 			<VCard v-bind="options.card">
 				<VForm
-					ref="form"
-					v-bind="options.form"
+					ref="fieldGroup"
+					v-bind="options.fieldGroup"
 				>
 					<slot name="modal-title">
 						<h4 class="mb-4">
@@ -147,7 +147,7 @@
 		// Extend $refs
 		$refs!: Refs<{
 			fileUpload: FileUpload;
-			form: HTMLFormElement;
+			fieldGroup: HTMLFormElement;
 		}>;
 
 		// Locales
@@ -193,15 +193,15 @@
 
 		/** Fired when the "confirm" button in the dialog is pressed */
 		dialogConfirm() {
-			// Validate the form in the dialog
-			if (this.$refs.form.validate()) {
+			// Validate the fieldGroup in the dialog
+			if (this.$refs.fieldGroup.validate()) {
 				// Close the dialog
 				this.dialog = false;
 
 				this.setFileInList();
 
-				// Reset the form
-				this.$refs.form.reset();
+				// Reset the fieldGroup
+				this.$refs.fieldGroup.reset();
 			}
 		}
 

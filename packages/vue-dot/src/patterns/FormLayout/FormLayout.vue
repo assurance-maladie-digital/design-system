@@ -10,7 +10,7 @@
 	<component
 		:is="getLayout(layout.type).component"
 		:fields="layout.fields"
-		class="vd-form-layout"
+		class="vd-fieldGroup-layout"
 	>
 		<!--
 			For each field in the layout, create a slot
@@ -32,7 +32,7 @@
 
 	import LayoutMap from './mixins/layoutMap';
 
-	import { ComputedLayoutItem } from '../FormBuilder/types';
+	import { ComputedLayoutItem } from '../FormSection/types';
 
 	// Layouts
 	import LayoutM from './layouts/LayoutM.vue';
@@ -84,13 +84,13 @@
 <style lang="scss" scoped>
 	$spaceBetweenFields: 16px;
 
-	.vd-form-layout + .vd-form-layout {
+	.vd-fieldGroup-layout + .vd-fieldGroup-layout {
 		margin-top: $spaceBetweenFields !important;
 	}
 
 	// Use deep selector since we can't
 	// style the slot directly
-	.vd-form-layout ::v-deep .vd-form-field {
+	.vd-fieldGroup-layout ::v-deep .vd-fieldGroup-field {
 		padding: $spaceBetweenFields;
 	}
 </style>

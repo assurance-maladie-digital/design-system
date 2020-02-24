@@ -44,7 +44,7 @@
 
 	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
 
-	/** Form period field to enter a period */
+	/** FieldGroup period field to enter a period */
 	@Component<PeriodField>({
 		components: {
 			DatePicker

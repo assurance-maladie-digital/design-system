@@ -1,4 +1,4 @@
-import { Form } from '../../types';
+import { FieldGroup } from '../../types';
 
 const defaultItem = [
 	{
@@ -15,7 +15,7 @@ const defaultItem = [
 	}
 ];
 
-export const addressForm: Form = {
+export const addressForm: FieldGroup = {
 	streetNumber: {
 		type: 'number',
 		value: null,

@@ -1,4 +1,4 @@
-import { Form } from '../../../../patterns/FormBuilder/types';
+import { FieldGroup } from '../../../../patterns/FormSection/types';
 
 const defaultItem = [
 	{
@@ -40,7 +40,7 @@ export const formNull = {
 			label: 'Libellé de la voie'
 		}
 	}
-} as Form;
+} as FieldGroup;
 
 export const formNotNull = {
 	streetNumber: {
@@ -57,4 +57,4 @@ export const formNotNull = {
 		type: 'text',
 		value: 'streetLabel'
 	}
-} as Form;
+} as FieldGroup;

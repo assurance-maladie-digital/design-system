@@ -12,7 +12,7 @@
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 
-	/** Form field to enter text */
+	/** FieldGroup field to enter text */
 	@Component
 	export default class TextField extends FieldComponent {}
 </script>

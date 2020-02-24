@@ -13,7 +13,7 @@
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 
-	/** Form field to enter a number (requires a mask) */
+	/** FieldGroup field to enter a number (requires a mask) */
 	@Component
 	export default class NumberField extends FieldComponent {
 		get mask() {

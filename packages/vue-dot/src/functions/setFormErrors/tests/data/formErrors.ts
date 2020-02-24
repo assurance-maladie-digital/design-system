@@ -1,4 +1,4 @@
-import { Form } from '../../../../patterns/FormBuilder/types';
+import { FieldGroup } from '../../../../patterns/FormSection/types';
 import { FormErrors } from '../../types';
 
 /** FormErrors with invalid values */
@@ -12,7 +12,7 @@ export const formErrors = {
 	}
 } as FormErrors;
 
-/** FormErrors related to question form */
+/** FormErrors related to question fieldGroup */
 export const questionErrors: FormErrors = {
 	questionString: [
 		'error string 1',
@@ -30,7 +30,7 @@ export const questionErrors: FormErrors = {
 	}
 };
 
-export const form: Form = {
+export const fieldGroup: FieldGroup = {
 	questionString: {
 		type: 'text'
 	},

@@ -4,34 +4,38 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
-import FormBuilder from '../';
+import FormBuilder from '../../FormBuilder';
+import FormSection from '../../FormSection';
+import FormSectionGroup from '../../FormSectionGroup';
 
-import { addressForm } from './data/addressForm';
-import { questionForm } from './data/questionForm';
+import { sectionGroup } from '../../FormSectionGroup/tests/data/sectionGroup';
+import { questionForm } from './../../FormSection/tests/data/questionForm';
+
+Vue.component('FormSection', FormSection);
+Vue.component('FormSectionGroup', FormSectionGroup);
 
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('FormBuilder', () => {
-	it('renders correctly', () => {
+describe('form builder', () => {
+	it('show a form with multiple section', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {
-				form: addressForm
+				sectionGroup: sectionGroup
 			}
-		}, true);
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with a question layout', () => {
+	it('show a form with only fieds', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {
-				form: questionForm,
-				defaultLayout: 'question'
+				fieldGroup: questionForm
 			}
-		}, true);
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

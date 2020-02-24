@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
-import { ComputedField } from '../../FormBuilder/types';
+import { ComputedField } from '../../FormSection/types';
 import { Layouts } from '../layoutsEnum';
 
 import FormLayout from '../FormLayout.vue';

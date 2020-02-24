@@ -1,10 +1,7 @@
-import { Questionnaire } from '../../types';
+import { SectionGroup } from '../../types';
 
 /** the questionnaire for the test */
-export const questionnaire = {
-	type: 'configuration',
-	title: 'Questionnaire titre',
-	sections: {
+export const sectionGroup = {
 		section1: {
 			title: 'Section titre  1',
 			questions: {
@@ -28,5 +25,4 @@ export const questionnaire = {
 				}
 			}
 		}
-	}
-} as Questionnaire;
+} as SectionGroup;

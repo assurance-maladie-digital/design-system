@@ -1,5 +1,5 @@
 import { FormErrors } from './types';
-import { Form } from '../../patterns/FormBuilder/types';
+import { FieldGroup } from '../../patterns/FormSection/types';
 
 import { deepCopy } from '../../helpers/deepCopy';
 
@@ -7,11 +7,11 @@ import { deepCopy } from '../../helpers/deepCopy';
  * Set error-messages prop on the fields in error
  *
  * @param {FormErrors} formErrors The errors list for each fields from the api
- * @param {Form} form The form to modify
- * @returns {Form} The form modified with errorsMessages
+ * @param {FieldGroup} fieldGroup The fieldGroup to modify
+ * @returns {FieldGroup} The fieldGroup modified with errorsMessages
  */
-export function setFormErrors(formErrors: FormErrors, form: Form): Form {
-	const newForm = deepCopy(form);
+export function setFormErrors(formErrors: FormErrors, fieldGroup: FieldGroup): FieldGroup {
+	const newForm = deepCopy(fieldGroup);
 
 	// For each field in error
 	for (const [fieldName, errors] of Object.entries(formErrors)) {
@@ -21,7 +21,7 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 
 		const fieldMetadata = newForm[fieldName].metadata || {};
 
-		// If the field exists in our form and we
+		// If the field exists in our fieldGroup and we
 		// have errors to set, set errors
 		if (Array.isArray(errors)) {
 			fieldMetadata.errorMessages = errors;
@@ -41,7 +41,7 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 			continue;
 		}
 
-		// Set the new field metadata to the form
+		// Set the new field metadata to the fieldGroup
 		newForm[fieldName].metadata = fieldMetadata;
 	}
 
