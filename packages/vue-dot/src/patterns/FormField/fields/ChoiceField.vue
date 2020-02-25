@@ -16,7 +16,7 @@
 				{{ otherField.label }}
 			</h4>
 			<VTextarea
-				ref="otherField"
+				ref="otherFieldRef"
 				:value="otherlocalValue"
 				v-bind="otherField.metadata"
 				:disabled="!isOtherActive"
@@ -35,7 +35,13 @@
 
 	import { IFieldMap } from '../mixins/fieldMap';
 
+	import { Refs } from '../../../types';
+
 	import { TypeSelectValue, FieldItemValue, OtherValue, ChoiceValue } from '../types';
+
+	interface HTMLInputEvent extends Event {
+		target: HTMLInputElement & EventTarget;
+	}
 
 	// We import them all because the form
 	// can use any of them
@@ -76,6 +82,10 @@
 		}
 	})
 	export default class ChoiceField extends FieldComponent {
+		// Extend $refs
+		$refs!: Refs<{
+			otherFieldRef: HTMLInputElement;
+		}>;
 		typeSelectValue: TypeSelectValue = { value: null };
 
 		isOtherActive: Boolean = false;
@@ -116,10 +126,6 @@
 		 * @returns {string} The choice field component name
 		 */
 		getField(): string {
-			if (!this.field.items) {
-				return null;
-			}
-
 			const metadataType = this.field.metadata ? this.field.metadata.type as string : undefined;
 
 			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
@@ -137,7 +143,7 @@
 
 			if (this.isOtherActive) {
 				// Focus the other field when activated
-				this.$nextTick(() => this.$refs.otherField.focus());
+				this.$nextTick(() => this.$refs.otherFieldRef.focus());
 
 				// Get the other local value when activated
 				this.typeSelectValue.other = this.otherlocalValue;

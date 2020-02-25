@@ -55,7 +55,6 @@ export class ChoiceComponent extends Props {
 	 * Toggle the item
 	 *
 	 * @param {FieldItem} item The selected item
-	 * @param {boolean} active Is selected or not
 	 * @returns {void}
 	 */
 	toggleItem(item: FieldItem): void {
@@ -129,11 +128,11 @@ export class ChoiceComponent extends Props {
 	 * @returns {boolean} The selected value
 	 */
 	isSelected(value: FieldItemValue): boolean {
-		if (this.choiceValue === null || this.choiceValue === undefined) {
+		if (!this.choiceValue) {
 			return false;
 		}
 
-		if (this.multiple && Array.isArray(this.choiceValue)) {
+		if (Array.isArray(this.choiceValue)) {
 			return this.choiceValue.includes(value);
 		} else {
 			return this.choiceValue === value;
