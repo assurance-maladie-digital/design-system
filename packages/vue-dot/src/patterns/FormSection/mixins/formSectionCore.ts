@@ -1,3 +1,4 @@
+import { fieldGroup } from './../../../functions/setFormErrors/tests/data/formErrors';
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
@@ -5,6 +6,12 @@ import LayoutMap from '../../FormLayout/mixins/layoutMap';
 import { Layouts } from '../../FormLayout/layoutsEnum';
 
 import { deepCopy } from '../../../helpers/deepCopy';
+
+import FormLayout from '../../FormLayout';
+import FormField from '../../FormField';
+
+import { getFormValues } from '../../../functions/getFormValues';
+import { FormValues } from '../../../functions/getFormValues/types';
 
 import {
 	FieldGroup,
@@ -47,6 +54,10 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 
 /** Handle main logic of the FormSection */
 @Component<FormSectionCore>({
+	components: {
+		FormLayout,
+		FormField
+	},
 	model: {
 		prop: 'fieldGroup',
 		event: 'change'
@@ -93,6 +104,9 @@ export class FormSectionCore extends MixinsDeclaration {
 
 		this.$nextTick(() => {
 			this.$emit('change', fieldGroup);
+
+			const newValues = this.getValues(fieldGroup);
+			this.$emit('change:values', newValues);
 
 			// If the field has the `dynamic` property
 			if (field.dynamic) {
@@ -179,5 +193,15 @@ export class FormSectionCore extends MixinsDeclaration {
 		}
 
 		return defaultLayout;
+	}
+
+	/**
+	 * Return the values of the fieldGroup in params
+	 *
+	 * @param {FieldGroup} fieldGroup the FieldGroup to get value from
+	 * @returns {FormValues} The values of the fieldGroup
+	 */
+	public getValues(fieldGroup: FieldGroup): FormValues {
+		return getFormValues(fieldGroup) as FormValues;
 	}
 }

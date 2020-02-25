@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`form builder show a form with multiple section 1`] = `
-<vlayout-stub tag="div" column="" class="vd-form-builder">
+<div class="vd-form-builder">
   <formsectiongroup-stub sectiongroup="[object Object]"></formsectiongroup-stub>
-</vlayout-stub>
-`;
-
-exports[`form builder show a form with only fieds 1`] = `
-<vlayout-stub tag="div" column="" class="vd-form-builder">
-  <formsection-stub fieldgroup="[object Object]" defaultlayout="question"></formsection-stub>
-</vlayout-stub>
+</div>
 `;

@@ -1,21 +1,15 @@
 <template>
-	<VLayout
+	<div
 		class="vd-form-builder"
-		column
 	>
-		<!-- mode form simple -->
-		<FormSection
-			v-if="fieldGroup"
-			v-model="fieldGroup"
-			default-layout="question"
-		/>
-
-		<!-- mode section multiple -->
+		<!-- section multiple -->
 		<FormSectionGroup
-			v-else-if="sectionGroup"
-			v-model="sectionGroup"
+			:section-group="sectionGroup"
+			@change="$emit('change', $event)"
+			@values="$emit('change:values', $event)"
+			@refresh="$emit('refresh')"
 		/>
-	</VLayout>
+	</div>
 </template>
 
 <script lang="ts">

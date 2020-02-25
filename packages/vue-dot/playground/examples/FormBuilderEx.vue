@@ -5,7 +5,10 @@
 		</h2>
 
 		<FormBuilder
-			:section-group="sectionGroup"
+			v-model="sectionGroup"
+			@change="sectionGroupUpdated"
+			@change:values="valuesUpdated"
+			@refresh="refresh"
 		/>
 	</DocSection>
 </template>
@@ -14,14 +17,59 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { mapActions } from 'vuex';
+
+	import { FieldGroup } from '../../src/patterns/FormSection/types';
 	import { questionForm } from '../../src/patterns/FormSection/tests/data/questionForm';
-	import { sectionGroup } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
+
+	import { FormValues } from '../../src/functions/getFormValues/types';
 
 	import { SectionGroup } from '../../src/patterns/FormSectionGroup/types';
+	import { sectionGroup } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
 
-	@Component
+	@Component({
+		// Vuex bindings
+		methods: mapActions('notification', [
+			'notify',
+			'rmNotif'
+		])
+	})
 	export default class LayoutQuestionnaireEx extends Vue {
-		questionForm = questionForm;
+		notify!: (obj: object) => void;
+
+		questionForm: FieldGroup = questionForm;
 		sectionGroup: SectionGroup = sectionGroup;
+
+		fieldGroupUpdated(fieldGroup: FieldGroup) {
+			// Notify!
+			this.notify({
+				type: 'success',
+				message: 'field group updated'
+			});
+		}
+
+		sectionGroupUpdated(sectionGroup: SectionGroup) {
+			// Notify!
+			this.notify({
+				type: 'success',
+				message: 'section group updated'
+			});
+		}
+
+		valuesUpdated(values: FormValues) {
+			// Notify!
+			this.notify({
+				type: 'success',
+				message: 'values updated'
+			});
+		}
+
+		refresh() {
+			// Notify!
+			this.notify({
+				type: 'success',
+				message: 'champ dynamic changé, rafraichissement demandé'
+			});
+		}
 	}
 </script>
