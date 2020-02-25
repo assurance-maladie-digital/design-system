@@ -6,7 +6,7 @@
 		<FormSectionGroup
 			:section-group="sectionGroup"
 			@change="$emit('change', $event)"
-			@values="$emit('change:values', $event)"
+			@change:values="$emit('change:values', $event)"
 			@refresh="$emit('refresh')"
 		/>
 	</div>

@@ -10,6 +10,17 @@
 			@change:values="valuesUpdated"
 			@refresh="refresh"
 		/>
+
+		<template v-if="formValues">
+			<h6 class="subtitle-1 font-weight-bold">
+				Valeurs
+			</h6>
+			<pre
+
+				class="mt-4 grey lighten-3"
+				v-html="formValues"
+			/>
+		</template>
 	</DocSection>
 </template>
 
@@ -34,34 +45,19 @@
 			'rmNotif'
 		])
 	})
-	export default class LayoutQuestionnaireEx extends Vue {
+	export default class FormBuilderEx extends Vue {
 		notify!: (obj: object) => void;
 
 		questionForm: FieldGroup = questionForm;
 		sectionGroup: SectionGroup = sectionGroup;
-
-		fieldGroupUpdated(fieldGroup: FieldGroup) {
-			// Notify!
-			this.notify({
-				type: 'success',
-				message: 'field group updated'
-			});
-		}
+		formValues: FormValues | null = null;
 
 		sectionGroupUpdated(sectionGroup: SectionGroup) {
-			// Notify!
-			this.notify({
-				type: 'success',
-				message: 'section group updated'
-			});
+			// New section group objct
 		}
 
 		valuesUpdated(values: FormValues) {
-			// Notify!
-			this.notify({
-				type: 'success',
-				message: 'values updated'
-			});
+			this.formValues = values;
 		}
 
 		refresh() {
