@@ -50,7 +50,7 @@
 
 		questionForm: FieldGroup = questionForm;
 		sectionGroup: SectionGroup = sectionGroup;
-		questionValues: Formvalues | null = null;
+		questionValues: FormValues | null = null;
 
 		sectionGroupUpdated(sectionGroup: SectionGroup) {
 			// New section group objct
