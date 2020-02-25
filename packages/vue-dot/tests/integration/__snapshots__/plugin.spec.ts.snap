@@ -12,6 +12,7 @@ Object {
     "FormBuilder",
     "FormField",
     "FormSection",
+    "FormSectionGroup",
     "LangBtn",
     "NotificationBar",
     "PageCard",

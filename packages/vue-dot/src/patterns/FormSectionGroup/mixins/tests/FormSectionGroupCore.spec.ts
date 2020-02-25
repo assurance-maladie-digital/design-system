@@ -1,16 +1,15 @@
-import { FormValues } from './../../../../functions/getFormValues/types.d';
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import FormSection from '../../../FormSection';
-import { FormSectionGroupCore } from '../FormSectionGroupCore';
+import { FormSectionGroupCore } from '../formSectionGroupCore';
 
 import { SectionGroup } from '../../types';
 import { sectionGroup } from '../../tests/data/sectionGroup';
 
-Vue.component('FormSection', FormSection);
+import { FormValues } from './../../../../functions/getFormValues/types.d';
 
-let wrapper: Wrapper<Vue>;
+Vue.component('FormSection', FormSection);
 
 /** Create the wrapper */
 function createWrapper(sectionGroup: SectionGroup) {
@@ -29,7 +28,7 @@ function createWrapper(sectionGroup: SectionGroup) {
 }
 
 // Tests
-describe('form builder', () => {
+describe('form section group', () => {
 	it('emits change event', async() => {
 		const wrapper = createWrapper(sectionGroup);
 
