@@ -1,4 +1,3 @@
-import { fieldGroup } from './../../../functions/setFormErrors/tests/data/formErrors';
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 

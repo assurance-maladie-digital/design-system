@@ -1,7 +1,7 @@
 <template>
-	<DocSection title="FormBuilder">
+	<DocSection title="Form builder">
 		<h2 class="subtitle-1 mb-4 font-weight-bold">
-			Classic form
+			Sections
 		</h2>
 
 		<FormBuilder
@@ -11,14 +11,14 @@
 			@refresh="refresh"
 		/>
 
-		<template v-if="formValues">
+		<template v-if="questionValues">
 			<h6 class="subtitle-1 font-weight-bold">
 				Valeurs
 			</h6>
 			<pre
 
 				class="mt-4 grey lighten-3"
-				v-html="formValues"
+				v-html="questionValues"
 			/>
 		</template>
 	</DocSection>
@@ -50,14 +50,14 @@
 
 		questionForm: FieldGroup = questionForm;
 		sectionGroup: SectionGroup = sectionGroup;
-		formValues: FormValues | null = null;
+		questionValues: Formvalues | null = null;
 
 		sectionGroupUpdated(sectionGroup: SectionGroup) {
 			// New section group objct
 		}
 
 		valuesUpdated(values: FormValues) {
-			this.formValues = values;
+			this.questionValues = values;
 		}
 
 		refresh() {

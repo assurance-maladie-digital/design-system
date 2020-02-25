@@ -56,7 +56,7 @@
 
 	const MixinsDeclaration = mixins(FieldComponent, ChoiceField);
 
-	/** Form field to select a value from a list */
+	/** FieldGroup field to select a value from a list */
 	@Component
 	export default class ChoiceButtonField extends MixinsDeclaration {
 		checkIcon = mdiCheck;
