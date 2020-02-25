@@ -1,9 +1,6 @@
 import Vue, { PropType } from 'vue';
 import Component from 'vue-class-component';
 
-import FormSection from '../../FormSection/FormSection.vue';
-import { FieldGroup } from './../../FormSection/types.d';
-
 import FormSectionGroup from '../../FormSectionGroup/FormSectionGroup.vue';
 import { SectionGroup } from './../../FormSectionGroup/types.d';
 
@@ -13,11 +10,6 @@ const Props = Vue.extend({
 		sectionGroup: {
 			type: Object as PropType<SectionGroup>,
 			default: null
-		},
-		/** The field group object */
-		fieldGroup: {
-			type: Object as PropType<FieldGroup>,
-			default: null
 		}
 	}
 });
@@ -25,14 +17,12 @@ const Props = Vue.extend({
 /** Handle main logic of the FormBuilder */
 @Component<FormBuilderCore>({
 	model: {
-		prop: 'form',
+		prop: 'sectionGroup',
 		event: 'change'
 	},
 	components: {
-		FormSection,
 		FormSectionGroup
 	}
 })
-export class FormBuilderCore extends Props {
-}
+export class FormBuilderCore extends Props {}
 

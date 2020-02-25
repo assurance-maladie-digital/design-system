@@ -26,26 +26,16 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
+	import Component from 'vue-class-component';
 
 	import { FormSectionCore } from './mixins/formSectionCore';
-
-	import FormLayout from '../FormLayout';
-	import FormField from '../FormField';
-
-	const MixinsDeclaration = mixins(FormSectionCore);
 
 	/**
 	 * FormSection is a component that displays a fieldGroup
 	 * from a JSON object
 	 */
-	@Component({
-		components: {
-			FormLayout,
-			FormField
-		}
-	})
-	export default class FormSection extends MixinsDeclaration {}
+	@Component
+	export default class FormSection extends FormSectionCore {}
 </script>
 
 <style lang="scss" scoped>

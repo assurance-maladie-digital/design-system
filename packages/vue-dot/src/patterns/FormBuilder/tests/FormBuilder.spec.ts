@@ -28,15 +28,4 @@ describe('form builder', () => {
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
-
-	it('show a form with only fieds', () => {
-		// Mount component
-		wrapper = mountComponent(FormBuilder, {
-			propsData: {
-				fieldGroup: questionForm
-			}
-		});
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
 });

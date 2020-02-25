@@ -1,53 +1,38 @@
 <template>
-	<div>
-		<template v-for="(section, index) in sectionGroup">
+	<VLayout
+		class="vd-form-builder"
+		column
+	>
+		<template v-for="(section, sectionId) in sectionGroup">
 			<VDivider
-				v-if="Object.keys(sectionGroup).indexOf(index) > 0"
-				:key="`divider-${index}`"
+				v-if="Object.keys(sectionGroup).indexOf(sectionId) > 0"
+				:key="`divider-${sectionId}`"
 				class="vd-section-separator"
 			/>
 			<FormSection
-				:key="`section-${index}`"
+				:key="`section-${sectionId}`"
 				class="ma-5"
 				:title="section.title"
 				:field-group="section.questions"
 				default-layout="question"
+				@change="emitSectionGroupUpdated($event, section)"
+				@refresh="$emit('refresh')"
 			/>
 		</template>
-	</div>
+	</VLayout>
 </template>
 
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { SectionGroup } from './types';
-
-	import FormSection from '../FormSection';
-
-	const Props = Vue.extend({
-		props: {
-			/** The section group object */
-			sectionGroup: {
-				type: Object as PropType<SectionGroup>,
-				required: true
-			}
-		}
-	});
+	import { FormSectionGroupCore } from './mixins/formSectionGroupCore';
 
 	/**
 	 * FormSectionGroup is a component that displays a list of FormSection
 	 */
-	@Component({
-		model: {
-			prop: 'sectionGroup',
-			event: 'change'
-		},
-		components: {
-			FormSection
-		}
-	})
-	export default class FormSectionGroup extends Props {}
+	@Component
+	export default class FormSectionGroup extends FormSectionGroupCore {}
 </script>
 
 <style lang="scss" scoped>

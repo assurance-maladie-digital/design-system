@@ -18,7 +18,7 @@
 			title="Titre section"
 			default-layout="question"
 			@refresh="sectionsRefresh"
-			@change="fieldGroupChanged"
+			@change:values="valuesUpdated"
 		/>
 
 		<VBtn
@@ -136,8 +136,8 @@
 			});
 		}
 
-		fieldGroupChanged() {
-			this.getFormValues();
+		valuesUpdated(formValues: FormValues) {
+			this.questionValues = formValues;
 		}
 	}
 </script>
