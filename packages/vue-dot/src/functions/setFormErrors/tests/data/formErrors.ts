@@ -1,3 +1,4 @@
+import { SectionGroup } from 'src/patterns/FormSectionGroup/types';
 import { Form } from '../../../../patterns/FormSection/types';
 import { FormErrors } from '../../types';
 
@@ -38,3 +39,29 @@ export const form: Form = {
 		type: 'period'
 	}
 };
+
+/** the section group for the test */
+export const sectionGroup = {
+	section1: {
+		title: 'Section 1',
+		questions: {
+			questionString: {
+				type: 'date',
+				title: 'Question 1',
+				description: 'Description de la question date',
+				tooltip: 'Tooltip de la question date'
+			}
+		}
+	},
+	section2: {
+		title: 'Section 2',
+		questions: {
+			questionPeriod: {
+				type: 'period',
+				dynamic: true,
+				title: 'Question 2',
+				tooltip: 'Tooltip de la question text'
+			}
+		}
+	}
+} as SectionGroup;
