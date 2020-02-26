@@ -20,7 +20,7 @@
 
 	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
 
-	/** FieldGroup date field to enter a date */
+	/** Form date field to enter a date */
 	@Component({
 		components: {
 			DatePicker

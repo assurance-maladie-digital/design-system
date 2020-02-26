@@ -8,11 +8,11 @@ import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
 import FileListEx from './FileListEx.vue';
 import FileUploadEx from './FileUploadEx.vue';
+import FormBuilderEx from './FormBuilderEx.vue';
 import FormFieldEx from './FormFieldEx.vue';
 import FormSectionEx from './FormSectionEx.vue';
 import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
-import FormBuilderEx from './FormBuilderEx.vue';
 import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
@@ -30,11 +30,11 @@ const components: Components = {
 	DebounceEx,
 	FileListEx,
 	FileUploadEx,
+	FormBuilderEx,
 	FormFieldEx,
 	FormSectionEx,
 	NotificationEx,
 	PaginatedTableEx,
-	FormBuilderEx,
 	RulesEx,
 	SubHeaderEx,
 	UploadWorkflowEx

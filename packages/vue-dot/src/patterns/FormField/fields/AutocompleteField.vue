@@ -15,7 +15,7 @@
 	import { FieldComponent } from '../mixins/fieldComponent';
 	import { FieldValue } from '../types';
 
-	/** FieldGroup field to select a value with autocomplete */
+	/** Form field to select a value with autocomplete */
 	@Component
 	export default class AutocompleteField extends FieldComponent {
 		searchInput: string | null = null;

@@ -13,7 +13,7 @@
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 
-	/** FieldGroup field to select a value from a list */
+	/** Form field to select a value from a list */
 	@Component
 	export default class SelectField extends FieldComponent {}
 </script>

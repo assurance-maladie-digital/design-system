@@ -13,13 +13,33 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FormBuilderCore } from './mixins/formBuilderCore';
+	import FormSectionGroup from '../FormSectionGroup/FormSectionGroup.vue';
+	import { SectionGroup } from './../FormSectionGroup/types';
 
-	@Component
-	export default class FormBuilder extends FormBuilderCore {}
+	const Props = Vue.extend({
+		props: {
+			/** The form group object */
+			sectionGroup: {
+				type: Object as PropType<SectionGroup>,
+				default: null
+			}
+		}
+	});
+
+	/** Handle main logic of the FormBuilder */
+	@Component({
+		model: {
+			prop: 'sectionGroup',
+			event: 'change'
+		},
+		components: {
+			FormSectionGroup
+		}
+	})
+	export default class FormBuilder extends Props {}
 </script>
 
 <style lang="scss" scoped>

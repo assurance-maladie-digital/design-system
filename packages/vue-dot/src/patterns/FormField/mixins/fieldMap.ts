@@ -5,7 +5,7 @@ interface IFieldMap {
 	[key: string]: string;
 }
 
-// We import them all because the fieldGroup
+// We import them all because the form
 // can use any of them
 import AutocompleteField from '../fields/AutocompleteField.vue';
 import DateField from '../fields/DateField.vue';

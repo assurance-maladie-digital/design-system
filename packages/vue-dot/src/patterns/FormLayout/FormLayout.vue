@@ -10,7 +10,7 @@
 	<component
 		:is="getLayout(layout.type).component"
 		:fields="layout.fields"
-		class="vd-fieldGroup-layout"
+		class="vd-form-layout"
 	>
 		<!--
 			For each field in the layout, create a slot
@@ -84,13 +84,13 @@
 <style lang="scss" scoped>
 	$spaceBetweenFields: 16px;
 
-	.vd-fieldGroup-layout + .vd-fieldGroup-layout {
+	.vd-form-layout + .vd-form-layout {
 		margin-top: $spaceBetweenFields !important;
 	}
 
 	// Use deep selector since we can't
 	// style the slot directly
-	.vd-fieldGroup-layout ::v-deep .vd-fieldGroup-field {
+	.vd-form-layout ::v-deep .vd-form-field {
 		padding: $spaceBetweenFields;
 	}
 </style>

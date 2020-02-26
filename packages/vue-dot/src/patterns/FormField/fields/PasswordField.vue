@@ -18,7 +18,7 @@
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
 
 	/**
-	 * FieldGroup field to enter a password.
+	 * Form field to enter a password.
 	 * Adds a button to show/hide the password
 	 */
 	@Component

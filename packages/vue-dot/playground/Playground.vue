@@ -50,13 +50,13 @@
 
 				<FormSectionEx />
 
+				<FormBuilderEx />
+
 				<LangBtnEx />
 
 				<NotificationEx />
 
 				<PaginatedTableEx />
-
-				<FormBuilderEx />
 
 				<RulesEx />
 

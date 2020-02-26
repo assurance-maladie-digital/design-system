@@ -3,8 +3,8 @@
 exports[`FormSection renders correctly 1`] = `
 <div class="vd-form-section">
   <!---->
-  <div class="layout vd-layout ma-n4 vd-fieldGroup-layout">
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field">
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><label for="input-7" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de voie</label><input id="input-7" type="text"></div>
@@ -17,8 +17,8 @@ exports[`FormSection renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 vd-fieldGroup-layout">
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field v-select">
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field v-select">
       <div class="v-input__control">
         <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-14" class="v-input__slot">
           <div class="v-select__slot"><label for="input-14" class="v-label theme--light" style="left: 0px; position: absolute;">Complément de voie</label>
@@ -39,8 +39,8 @@ exports[`FormSection renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 vd-fieldGroup-layout">
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field v-select v-autocomplete">
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field v-select v-autocomplete">
       <div class="v-input__control">
         <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-25" class="v-input__slot">
           <div class="v-select__slot"><label for="input-25" class="v-label theme--light" style="left: 0px; position: absolute;">Type de voie</label><input id="input-25" type="text" autocomplete="off">
@@ -60,8 +60,8 @@ exports[`FormSection renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 vd-fieldGroup-layout">
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field">
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><label for="input-35" class="v-label theme--light" style="left: 0px; position: absolute;">Libellé de la voie</label><input id="input-35" type="text"></div>
@@ -74,8 +74,8 @@ exports[`FormSection renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 vd-fieldGroup-layout">
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field">
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><label for="input-42" class="v-label theme--light" style="left: 0px; position: absolute;">Complément d'adresse</label><input id="input-42" type="text"></div>
@@ -88,8 +88,8 @@ exports[`FormSection renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 vd-fieldGroup-layout">
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field">
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><label for="input-49" class="v-label theme--light" style="left: 0px; position: absolute;">Code postal</label><input mask="#####" id="input-49" type="text"></div>
@@ -102,8 +102,8 @@ exports[`FormSection renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 vd-fieldGroup-layout">
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field">
+  <div class="layout vd-layout ma-n4 vd-form-layout">
+    <div class="v-input vd-form-field theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><label for="input-56" class="v-label theme--light" style="left: 0px; position: absolute;">Ville</label><input id="input-56" type="text"></div>
@@ -124,12 +124,12 @@ exports[`FormSection renders correctly with a question layout 1`] = `
   <h3 class="title font-weight-bold mb-7">
     Titre section
   </h3>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question ?</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
       <div class="v-input__control">
         <div class="v-input__slot">
           <fieldset aria-hidden="true">
@@ -145,14 +145,14 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question nombre ?</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-fieldGroup-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+    <div class="v-input vd-form-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
       <div class="v-input__control">
         <div class="v-input__slot">
           <fieldset aria-hidden="true">
@@ -168,12 +168,12 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question longue type textarea</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-fieldGroup-field v-textarea theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+    <div class="v-input vd-form-field v-textarea theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
       <div class="v-input__control">
         <div class="v-input__slot">
           <fieldset aria-hidden="true">
@@ -189,14 +189,14 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="layout ml-0 vd-fieldGroup-field">
+    <div class="layout ml-0 vd-form-field">
       <div class="v-menu" textfield="[object Object]">
         <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
           <div class="v-input__control">
@@ -220,14 +220,14 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question période</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="layout ma-n3 wrap row vd-fieldGroup-field">
+    <div class="layout ma-n3 wrap row vd-form-field">
       <div class="col-md-6 col-12">
         <div class="v-menu" textfield="[object Object]">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
@@ -276,14 +276,14 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question select dynamique</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-fieldGroup-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips">
+    <div class="v-input vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips">
       <div class="v-input__control">
         <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-130" class="v-input__slot">
           <fieldset aria-hidden="true">
@@ -307,14 +307,14 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question select multiple</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-fieldGroup-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--is-multi">
+    <div class="v-input vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--is-multi">
       <div class="v-input__control">
         <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-142" class="v-input__slot">
           <fieldset aria-hidden="true">
@@ -340,12 +340,12 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question select slider</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-fieldGroup-field theme--light v-input__slider">
+    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-157" readonly="readonly" tabindex="-1" type="choiceSlider">
@@ -365,12 +365,12 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question select slider thumb</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-fieldGroup-field theme--light v-input__slider">
+    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
       <div class="v-input__prepend-outer"><span>
 			9h
 		</span></div>
@@ -402,12 +402,12 @@ exports[`FormSection renders correctly with a question layout 1`] = `
 		</span></div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question select slider thumb with custom label</span> <span class="v-tooltip v-tooltip--right"><div class="v-tooltip__content" style="left: 0px; max-width: auto; opacity: 0; top: 12px; z-index: 0; display: none;"></div><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input mt-5 vd-fieldGroup-field theme--light v-input__slider">
+    <div class="v-input mt-5 vd-form-field theme--light v-input__slider">
       <div class="v-input__prepend-outer"><span>
 			min
 		</span></div>
@@ -439,14 +439,14 @@ exports[`FormSection renders correctly with a question layout 1`] = `
 		</span></div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question avec complétion automatique</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="v-input vd-fieldGroup-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
+    <div class="v-input vd-form-field v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
       <div class="v-input__control">
         <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-188" class="v-input__slot">
           <fieldset aria-hidden="true">
@@ -470,15 +470,15 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </div>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
-    <h4 class="mx-4 my-0"><span class="body-1">Question choix bouton</span>
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
+    <h4 class="mx-4 my-0"><span class="body-1">Question choix bouton inline</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="vd-choice-button-field vd-fieldGroup-field">
-      <div class="vd-choice-button-field-toggle layout wrap accent--text v-item-group theme--light v-btn-toggle column" type="choiceButton" hint="Texte informatif"><button type="button" value="9" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
+    <div class="vd-choice-button-field vd-form-field">
+      <div class="vd-choice-button-field-toggle layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" type="choiceButton" hint="Texte informatif"><button type="button" value="9" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 				9h
 			</span>
           <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text v-icon--svg theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32" role="img" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span></button><button type="button" value="9.30" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
@@ -493,14 +493,14 @@ exports[`FormSection renders correctly with a question layout 1`] = `
       </p>
     </div>
   </div>
-  <div class="layout vd-layout ma-n4 column vd-fieldGroup-layout">
+  <div class="layout vd-layout ma-n4 column vd-form-layout">
     <h4 class="mx-4 my-0"><span class="body-1">Question choix bouton multiple</span>
       <!---->
     </h4>
     <p class="body-2 mx-4 mb-0 mt-1 grey--text text--darken-1">
       Informations supplémentaires
     </p>
-    <div class="vd-choice-button-field vd-fieldGroup-field">
+    <div class="vd-choice-button-field vd-form-field">
       <div class="vd-choice-button-field-toggle layout wrap accent--text v-item-group theme--light v-btn-toggle column" type="choiceButton"><button type="button" value="test1" class="mb-2 text-none v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: 40px;"><span class="v-btn__content"><span class="body-1">
 				Multiple 1
 			</span>

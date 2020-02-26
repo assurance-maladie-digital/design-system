@@ -2,7 +2,7 @@
 	<component
 		:is="getFieldType()"
 		v-model="field"
-		class="vd-fieldGroup-field"
+		class="vd-form-field"
 	/>
 </template>
 
@@ -56,7 +56,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-fieldGroup-field {
+	.vd-form-field {
 		width: 100%;
 	}
 </style>
