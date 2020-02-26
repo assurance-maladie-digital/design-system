@@ -21,6 +21,14 @@
 				v-html="questionValues"
 			/>
 		</template>
+
+		<VBtn
+			class="mt-5"
+			color="accent"
+			@click="setFormErrors"
+		>
+			Set errors messages
+		</VBtn>
 	</DocSection>
 </template>
 
@@ -36,7 +44,9 @@
 	import { FormValues } from '../../src/functions/getFormValues/types';
 
 	import { SectionGroup } from '../../src/patterns/FormSectionGroup/types';
-	import { sectionGroup } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
+	import { sectionGroup, sectionGroupErrorMessages } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
+
+	import { setSectionGroupErrors } from '../../src/functions/setSectionGroupErrors';
 
 	@Component({
 		// Vuex bindings
@@ -66,6 +76,10 @@
 				type: 'success',
 				message: 'champ dynamic changé, rafraichissement demandé'
 			});
+		}
+
+		setFormErrors() {
+			this.sectionGroup = setSectionGroupErrors(sectionGroupErrorMessages, this.sectionGroup);
 		}
 	}
 </script>

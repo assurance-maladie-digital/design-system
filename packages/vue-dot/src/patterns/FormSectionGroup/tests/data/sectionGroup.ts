@@ -1,4 +1,5 @@
 import { SectionGroup } from '../../types';
+import { FormErrors } from './../../../../functions/setFormErrors/types.d';
 
 /** the questionnaire for the test */
 export const sectionGroup = {
@@ -26,3 +27,7 @@ export const sectionGroup = {
 			}
 		}
 } as SectionGroup;
+
+export const sectionGroupErrorMessages: FormErrors = {
+	question1: ['error', 'error2']
+};
