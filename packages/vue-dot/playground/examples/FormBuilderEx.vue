@@ -5,8 +5,7 @@
 		</h2>
 
 		<FormBuilder
-			v-model="sectionGroup"
-			@change="sectionGroupUpdated"
+			v-model="form"
 			@refresh="refresh"
 		/>
 	</DocSection>
@@ -17,11 +16,6 @@
 	import Component from 'vue-class-component';
 
 	import { mapActions } from 'vuex';
-
-	import { Form } from '../../src/patterns/FormSection/types';
-	import { questionForm } from '../../src/patterns/FormSection/tests/data/questionForm';
-
-	import { FormValues } from '../../src/functions/getFormValues/types';
 
 	import { SectionGroup } from '../../src/patterns/FormSectionGroup/types';
 	import { sectionGroup } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
@@ -36,13 +30,7 @@
 	export default class FormBuilderEx extends Vue {
 		notify!: (obj: object) => void;
 
-		questionForm: Form = questionForm;
-		sectionGroup: SectionGroup = sectionGroup;
-		questionValues: FormValues | null = null;
-
-		sectionGroupUpdated(sectionGroup: SectionGroup) {
-			// New section group objct
-		}
+		form: SectionGroup = sectionGroup;
 
 		refresh() {
 			// Notify!
