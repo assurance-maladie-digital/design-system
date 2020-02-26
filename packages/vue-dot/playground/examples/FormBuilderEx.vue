@@ -1,26 +1,13 @@
 <template>
-	<DocSection title="Form builder">
+	<DocSection title="FormBuilder">
 		<h2 class="subtitle-1 mb-4 font-weight-bold">
-			Sections
+			Classic form
 		</h2>
 
 		<FormBuilder
-			v-model="sectionGroup"
-			@change="sectionGroupUpdated"
-			@change:values="valuesUpdated"
+			v-model="form"
 			@refresh="refresh"
 		/>
-
-		<template v-if="questionValues">
-			<h6 class="subtitle-1 font-weight-bold">
-				Valeurs
-			</h6>
-			<pre
-
-				class="mt-4 grey lighten-3"
-				v-html="questionValues"
-			/>
-		</template>
 	</DocSection>
 </template>
 
@@ -29,11 +16,6 @@
 	import Component from 'vue-class-component';
 
 	import { mapActions } from 'vuex';
-
-	import { Form } from '../../src/patterns/FormSection/types';
-	import { questionForm } from '../../src/patterns/FormSection/tests/data/questionForm';
-
-	import { FormValues } from '../../src/functions/getFormValues/types';
 
 	import { SectionGroup } from '../../src/patterns/FormSectionGroup/types';
 	import { sectionGroup } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
@@ -48,17 +30,7 @@
 	export default class FormBuilderEx extends Vue {
 		notify!: (obj: object) => void;
 
-		questionForm: Form = questionForm;
-		sectionGroup: SectionGroup = sectionGroup;
-		questionValues: FormValues | null = null;
-
-		sectionGroupUpdated(sectionGroup: SectionGroup) {
-			// New section group objct
-		}
-
-		valuesUpdated(values: FormValues) {
-			this.questionValues = values;
-		}
+		form: SectionGroup = sectionGroup;
 
 		refresh() {
 			// Notify!

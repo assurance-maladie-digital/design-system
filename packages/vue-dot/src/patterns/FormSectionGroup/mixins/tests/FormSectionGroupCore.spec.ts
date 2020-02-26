@@ -48,21 +48,4 @@ describe('form section group', () => {
 		expect(wrapper.emitted().change[0]).toEqual([updatedTestForm]);
 	});
 
-	it('emits change:values event', async() => {
-		const wrapper = createWrapper(sectionGroup);
-
-		const updatedFieldGroup = sectionGroup.section2.questions;
-		updatedFieldGroup.question2.value = 'test';
-
-		wrapper.vm.emitSectionGroupUpdated(updatedFieldGroup, sectionGroup.section2);
-
-		const updatedValues: FormValues = {
-			question2: 'test'
-		};
-
-		await Vue.nextTick();
-
-		expect(wrapper.emitted('change:values')).toBeTruthy();
-		expect(wrapper.emitted()['change:values'][0]).toEqual([updatedValues]);
-	});
 });
