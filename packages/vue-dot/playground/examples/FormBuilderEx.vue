@@ -5,8 +5,7 @@
 		</h2>
 
 		<FormBuilder
-			v-model="sectionGroup"
-			@change="sectionGroupUpdated"
+			v-model="form"
 			@refresh="refresh"
 		/>
 
@@ -26,15 +25,10 @@
 
 	import { mapActions } from 'vuex';
 
-	import { Form } from '../../src/patterns/FormSection/types';
-	import { questionForm } from '../../src/patterns/FormSection/tests/data/questionForm';
-
-	import { FormValues } from '../../src/functions/getFormValues/types';
-
 	import { SectionGroup } from '../../src/patterns/FormSectionGroup/types';
 	import { sectionGroup, sectionGroupErrorMessages } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
 
-	import { setSectionGroupErrors } from '../../src/functions/setSectionGroupErrors';
+	import { setFormErrors } from '../../src/functions/setFormErrors';
 
 	@Component({
 		// Vuex bindings
@@ -46,13 +40,7 @@
 	export default class FormBuilderEx extends Vue {
 		notify!: (obj: object) => void;
 
-		questionForm: Form = questionForm;
-		sectionGroup: SectionGroup = sectionGroup;
-		questionValues: FormValues | null = null;
-
-		sectionGroupUpdated(sectionGroup: SectionGroup) {
-			// New section group objct
-		}
+		form: SectionGroup = sectionGroup;
 
 		refresh() {
 			// Notify!
@@ -63,7 +51,7 @@
 		}
 
 		setFormErrors() {
-			this.sectionGroup = setSectionGroupErrors(sectionGroupErrorMessages, this.sectionGroup);
+			this.sectionGroup = setFormErrors(sectionGroupErrorMessages, this.sectionGroup, 'section_group');
 		}
 	}
 </script>
