@@ -9,9 +9,6 @@ import { deepCopy } from '../../../helpers/deepCopy';
 import FormLayout from '../../FormLayout';
 import FormField from '../../FormField';
 
-import { getFormValues } from '../../../functions/getFormValues';
-import { FormValues } from '../../../functions/getFormValues/types';
-
 import {
 	Form,
 	Layout,
@@ -104,9 +101,6 @@ export class FormSectionCore extends MixinsDeclaration {
 		this.$nextTick(() => {
 			this.$emit('change', form);
 
-			const newValues = this.getValues(form);
-			this.$emit('change:values', newValues);
-
 			// If the field has the `dynamic` property
 			if (field.dynamic) {
 				// Also emit 'refresh' event
@@ -192,15 +186,5 @@ export class FormSectionCore extends MixinsDeclaration {
 		}
 
 		return defaultLayout;
-	}
-
-	/**
-	 * Return the values of the form in params
-	 *
-	 * @param {Form} form the Form to get value from
-	 * @returns {FormValues} The values of the form
-	 */
-	public getValues(form: Form): FormValues {
-		return getFormValues(form) as FormValues;
 	}
 }
