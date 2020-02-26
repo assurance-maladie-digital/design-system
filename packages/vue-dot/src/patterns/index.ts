@@ -3,7 +3,6 @@ import FileList from './FileList';
 import FileUpload from './FileUpload';
 import FormBuilder from './FormBuilder';
 import FormSection from './FormSection';
-import FormSectionGroup from './FormSectionGroup';
 import FormField from './FormField';
 import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
@@ -18,7 +17,6 @@ export const patterns = {
 	FileUpload,
 	FormBuilder,
 	FormSection,
-	FormSectionGroup,
 	FormField,
 	LangBtn,
 	NotificationBar,

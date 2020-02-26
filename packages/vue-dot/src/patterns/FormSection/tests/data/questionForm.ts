@@ -1,4 +1,4 @@
-import { FieldGroup } from '../../types';
+import { Form } from '../../types';
 
 const defaultItems = [
 	{
@@ -19,7 +19,7 @@ const defaultItems = [
 	}
 ];
 
-export const questionForm: FieldGroup = {
+export const questionForm: Form = {
 	questionString: {
 		type: 'text',
 		title: 'Question ?',

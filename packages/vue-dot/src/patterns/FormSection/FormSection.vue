@@ -9,6 +9,7 @@
 		>
 			{{ title }}
 		</h3>
+
 		<FormLayout
 			v-for="(formLayout, index) in computedLayout"
 			:key="'layout-' + index"
@@ -31,7 +32,7 @@
 	import { FormSectionCore } from './mixins/formSectionCore';
 
 	/**
-	 * FormSection is a component that displays a fieldGroup
+	 * FormSection is a component that displays a form
 	 * from a JSON object
 	 */
 	@Component

@@ -9,11 +9,8 @@ import { deepCopy } from '../../../helpers/deepCopy';
 import FormLayout from '../../FormLayout';
 import FormField from '../../FormField';
 
-import { getFormValues } from '../../../functions/getFormValues';
-import { FormValues } from '../../../functions/getFormValues/types';
-
 import {
-	FieldGroup,
+	Form,
 	Layout,
 	LayoutItem,
 	ComputedLayout,
@@ -28,12 +25,12 @@ const Props = Vue.extend({
 			type: String,
 			default: null
 		},
-		/** The fieldGroup object */
-		fieldGroup: {
-			type: Object as PropType<FieldGroup>,
+		/** The form object */
+		form: {
+			type: Object as PropType<Form>,
 			required: true
 		},
-		/** Object describing the layout of the fieldGroup */
+		/** Object describing the layout of the form */
 		layout: {
 			type: Array as PropType<Layout>,
 			default: undefined
@@ -58,7 +55,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		FormField
 	},
 	model: {
-		prop: 'fieldGroup',
+		prop: 'form',
 		event: 'change'
 	},
 	// Each time the value or the layout are updated,
@@ -68,7 +65,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		layout() {
 			this.computedLayout = this.computeLayout();
 		},
-		fieldGroup: {
+		form: {
 			handler() {
 				this.computedLayout = this.computeLayout();
 			},
@@ -81,7 +78,7 @@ export class FormSectionCore extends MixinsDeclaration {
 	computedLayout = {} as ComputedLayout | null;
 
 	/**
-	 * When the fieldGroup is updated, emit a
+	 * When the form is updated, emit a
 	 * change event with updated data
 	 * Also emit 'refresh' event if the field is dynamic
 	 *
@@ -89,23 +86,20 @@ export class FormSectionCore extends MixinsDeclaration {
 	 * @returns {void}
 	 */
 	sectionUpdated(field: ComputedField): void {
-		const fieldGroup = {
-			...this.fieldGroup
+		const form = {
+			...this.form
 		};
 
 		const fieldName = field.name;
 
-		// Delete the field name before updating the fieldGroup with
+		// Delete the field name before updating the form with
 		// the new field since it's not present in original data
 		delete field.name;
 
-		fieldGroup[fieldName] = field;
+		form[fieldName] = field;
 
 		this.$nextTick(() => {
-			this.$emit('change', fieldGroup);
-
-			const newValues = this.getValues(fieldGroup);
-			this.$emit('change:values', newValues);
+			this.$emit('change', form);
 
 			// If the field has the `dynamic` property
 			if (field.dynamic) {
@@ -149,7 +143,7 @@ export class FormSectionCore extends MixinsDeclaration {
 
 		fields.forEach((field: string, fieldIndex: number) => {
 			const computedField = {
-				...this.fieldGroup[field],
+				...this.form[field],
 				name: field
 			};
 
@@ -166,7 +160,7 @@ export class FormSectionCore extends MixinsDeclaration {
 	 * if the defaultLayout doesn't exists
 	 */
 	getDefaultLayout(): Layout | null {
-		const formKeys = Object.keys(this.fieldGroup);
+		const formKeys = Object.keys(this.form);
 
 		const layout = this.getLayout(this.defaultLayout);
 
@@ -192,15 +186,5 @@ export class FormSectionCore extends MixinsDeclaration {
 		}
 
 		return defaultLayout;
-	}
-
-	/**
-	 * Return the values of the fieldGroup in params
-	 *
-	 * @param {FieldGroup} fieldGroup the FieldGroup to get value from
-	 * @returns {FormValues} The values of the fieldGroup
-	 */
-	public getValues(fieldGroup: FieldGroup): FormValues {
-		return getFormValues(fieldGroup) as FormValues;
 	}
 }

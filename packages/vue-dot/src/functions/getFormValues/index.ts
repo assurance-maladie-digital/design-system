@@ -1,20 +1,20 @@
 import { FormValues } from './types';
 
-import { FieldGroup } from '../../patterns/FormSection/types';
+import { Form } from '../../patterns/FormSection/types';
 
 /**
  * Return an array with field values
  *
- * @param {FieldGroup} fieldGroup The fieldGroup object
- * @returns {FormValues} The fieldGroup values
+ * @param {Form} form The form object
+ * @returns {FormValues} The form values
  */
-export function getFormValues(fieldGroup: FieldGroup): FormValues {
+export function getFormValues(form: Form): FormValues {
 	const formValues: FormValues = {};
 
-	Object.keys(fieldGroup)
+	Object.keys(form)
 		.map((key: string) => {
-			// Transform FieldGroup to FormValues, formValues.something = value
-			const value = fieldGroup[key].value;
+			// Transform Form to FormValues, formValues.something = value
+			const value = form[key].value;
 
 			if (!value) {
 				return null;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`form builder show a form with multiple section 1`] = `
-<div class="vd-form-builder">
-  <formsectiongroup-stub sectiongroup="[object Object]"></formsectiongroup-stub>
+<div class="vd-form-builder" sectiongroup="[object Object]">
+  <formsectiongroup-stub></formsectiongroup-stub>
 </div>
 `;

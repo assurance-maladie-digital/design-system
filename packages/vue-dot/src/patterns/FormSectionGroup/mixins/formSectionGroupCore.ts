@@ -4,10 +4,7 @@ import Component from 'vue-class-component';
 import { SectionGroup } from '../types';
 
 import FormSection from '../../FormSection';
-import { FieldGroup, Section } from './../../FormSection/types';
-
-import { getFormValues } from '../../../functions/getFormValues';
-import { FormValues } from '../../../functions/getFormValues/types';
+import { Form, Section } from './../../FormSection/types';
 
 const Props = Vue.extend({
 	props: {
@@ -35,39 +32,19 @@ export class FormSectionGroupCore extends Props {
 	/**
 	 * Emit 'change' and 'change:values' when one of the field in the section in parameter has changed
 	 *
-	 * @param {FieldGroup} fieldGroup The new field group object updated
+	 * @param {Form} form The new field group object updated
 	 * @param {Section} section The section id
 	 */
-	emitSectionGroupUpdated(fieldGroup: FieldGroup, section: Section) {
+	emitSectionGroupUpdated(form: Form, section: Section) {
 		const sectionGroup = {
 			...this.sectionGroup
 		};
 
-		section.questions = fieldGroup;
+		section.questions = form;
 
 		this.$nextTick(() => {
 			this.$emit('change', sectionGroup);
-
-			const sectionGroupvalues = this.getValues(sectionGroup);
-
-			this.$emit('change:values', sectionGroupvalues);
 		});
-	}
-
-	/**
-	 * Return the values of the sectionGroup in params
-	 *
-	 * @param {SectionGroup} sectionGroup The sectionGroup to get value from
-	 * @returns {FormValues} The values of the sectionGroup
-	 */
-	public getValues(sectionGroup: SectionGroup): FormValues {
-		let sectionGroupValues: FormValues = {};
-		for (const section of Object.values(sectionGroup)) {
-			const sectionValues = getFormValues(section.questions);
-			sectionGroupValues = { ...sectionGroupValues, ...sectionValues };
-		}
-
-		return sectionGroupValues;
 	}
 }
 

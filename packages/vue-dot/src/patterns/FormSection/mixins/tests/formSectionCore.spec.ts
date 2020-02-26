@@ -7,7 +7,7 @@ import { Field } from '../../../FormField/types';
 import { FormValues } from './../../../../functions/getFormValues/types.d';
 
 import {
-	FieldGroup,
+	Form,
 	Layout,
 	ComputedLayout,
 	ComputedField,
@@ -35,12 +35,12 @@ const computedDynamicField: ComputedField = {
 	dynamic: true
 };
 
-const testForm: FieldGroup = {
+const testForm: Form = {
 	field1: testField
 };
 
 /** Create the wrapper */
-function createWrapper(fieldGroup: FieldGroup, layout?: Layout, defaultLayout?: string) {
+function createWrapper(form: Form, layout?: Layout, defaultLayout?: string) {
 	const component = Vue.component('test', {
 		mixins: [
 			FormSectionCore
@@ -50,7 +50,7 @@ function createWrapper(fieldGroup: FieldGroup, layout?: Layout, defaultLayout?: 
 
 	return mount(component, {
 		propsData: {
-			fieldGroup,
+			form,
 			defaultLayout,
 			layout
 		}
@@ -184,7 +184,7 @@ describe('formBuilderCore', () => {
 	});
 
 	it('generates a default layout', () => {
-		const testFormMultiple: FieldGroup = {
+		const testFormMultiple: Form = {
 			field1: testField,
 			field2: testField
 		};
@@ -205,7 +205,7 @@ describe('formBuilderCore', () => {
 	});
 
 	it('doesn\'t fail to execute getDefaultLayout when the layout doesn\'t exists', () => {
-		const testFormMultiple: FieldGroup = {
+		const testFormMultiple: Form = {
 			field1: testField,
 			field2: testField
 		};
@@ -223,7 +223,7 @@ describe('formBuilderCore', () => {
 
 		wrapper.vm.sectionUpdated(updatedField);
 
-		const updatedTestForm: FieldGroup = {
+		const updatedTestForm: Form = {
 			field1: {
 				...testField,
 				value: 'test'
@@ -234,24 +234,6 @@ describe('formBuilderCore', () => {
 
 		expect(wrapper.emitted('change')).toBeTruthy();
 		expect(wrapper.emitted().change[0]).toEqual([updatedTestForm]);
-	});
-
-	it('emits change:values event', async() => {
-		const wrapper = createWrapper(testForm);
-
-		const updatedField = { ...computedField };
-		updatedField.value = 'test';
-
-		wrapper.vm.sectionUpdated(updatedField);
-
-		const updatedValues: FormValues = {
-			field1: 'test'
-		};
-
-		await Vue.nextTick();
-
-		expect(wrapper.emitted('change:values')).toBeTruthy();
-		expect(wrapper.emitted()['change:values'][0]).toEqual([updatedValues]);
 	});
 
 	it('doesn\'t emits refresh event when the field is not dynamic', async() => {
