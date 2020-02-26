@@ -17,7 +17,7 @@ describe('FormSection', () => {
 		// Mount component
 		wrapper = mountComponent(FormSection, {
 			propsData: {
-				fieldGroup: addressForm
+				form: addressForm
 			}
 		}, true);
 
@@ -29,7 +29,7 @@ describe('FormSection', () => {
 		wrapper = mountComponent(FormSection, {
 			propsData: {
 				title: 'Titre section',
-				fieldGroup: questionForm,
+				form: questionForm,
 				defaultLayout: 'question'
 			}
 		}, true);

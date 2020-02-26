@@ -30,7 +30,7 @@
 
 	import { mapActions } from 'vuex';
 
-	import { FieldGroup } from '../../src/patterns/FormSection/types';
+	import { Form } from '../../src/patterns/FormSection/types';
 	import { questionForm } from '../../src/patterns/FormSection/tests/data/questionForm';
 
 	import { FormValues } from '../../src/functions/getFormValues/types';
@@ -48,7 +48,7 @@
 	export default class FormBuilderEx extends Vue {
 		notify!: (obj: object) => void;
 
-		questionForm: FieldGroup = questionForm;
+		questionForm: Form = questionForm;
 		sectionGroup: SectionGroup = sectionGroup;
 		questionValues: FormValues | null = null;
 

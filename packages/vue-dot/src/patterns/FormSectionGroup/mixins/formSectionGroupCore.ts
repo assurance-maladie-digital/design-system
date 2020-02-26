@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 import { SectionGroup } from '../types';
 
 import FormSection from '../../FormSection';
-import { FieldGroup, Section } from './../../FormSection/types';
+import { Form, Section } from './../../FormSection/types';
 
 import { getFormValues } from '../../../functions/getFormValues';
 import { FormValues } from '../../../functions/getFormValues/types';
@@ -35,15 +35,15 @@ export class FormSectionGroupCore extends Props {
 	/**
 	 * Emit 'change' and 'change:values' when one of the field in the section in parameter has changed
 	 *
-	 * @param {FieldGroup} fieldGroup The new field group object updated
+	 * @param {Form} form The new field group object updated
 	 * @param {Section} section The section id
 	 */
-	emitSectionGroupUpdated(fieldGroup: FieldGroup, section: Section) {
+	emitSectionGroupUpdated(form: Form, section: Section) {
 		const sectionGroup = {
 			...this.sectionGroup
 		};
 
-		section.questions = fieldGroup;
+		section.questions = form;
 
 		this.$nextTick(() => {
 			this.$emit('change', sectionGroup);

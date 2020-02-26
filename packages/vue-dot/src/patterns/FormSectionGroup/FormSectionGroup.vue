@@ -13,7 +13,7 @@
 				:key="`section-${sectionId}`"
 				class="ma-5"
 				:title="section.title"
-				:field-group="section.questions"
+				:form="section.questions"
 				default-layout="question"
 				@change="emitSectionGroupUpdated($event, section)"
 				@refresh="$emit('refresh')"
