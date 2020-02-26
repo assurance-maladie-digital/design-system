@@ -18,7 +18,7 @@
 			title="Titre section"
 			default-layout="question"
 			@refresh="sectionsRefresh"
-			@change:values="valuesUpdated"
+			@change="getFormValues"
 		/>
 
 		<VBtn
@@ -134,10 +134,6 @@
 				type: 'success',
 				message: 'champ dynamic changé, rafraichissement demandé'
 			});
-		}
-
-		valuesUpdated(formValues: FormValues) {
-			this.questionValues = formValues;
 		}
 	}
 </script>

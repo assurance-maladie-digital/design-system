@@ -236,24 +236,6 @@ describe('formBuilderCore', () => {
 		expect(wrapper.emitted().change[0]).toEqual([updatedTestForm]);
 	});
 
-	it('emits change:values event', async() => {
-		const wrapper = createWrapper(testForm);
-
-		const updatedField = { ...computedField };
-		updatedField.value = 'test';
-
-		wrapper.vm.sectionUpdated(updatedField);
-
-		const updatedValues: FormValues = {
-			field1: 'test'
-		};
-
-		await Vue.nextTick();
-
-		expect(wrapper.emitted('change:values')).toBeTruthy();
-		expect(wrapper.emitted()['change:values'][0]).toEqual([updatedValues]);
-	});
-
 	it('doesn\'t emits refresh event when the field is not dynamic', async() => {
 		const wrapper = createWrapper(testForm);
 

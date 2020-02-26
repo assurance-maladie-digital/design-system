@@ -9,7 +9,6 @@ import FormSection from '../../FormSection';
 import FormSectionGroup from '../../FormSectionGroup';
 
 import { sectionGroup } from '../../FormSectionGroup/tests/data/sectionGroup';
-import { questionForm } from './../../FormSection/tests/data/questionForm';
 
 Vue.component('FormSection', FormSection);
 Vue.component('FormSectionGroup', FormSectionGroup);
@@ -22,7 +21,7 @@ describe('form builder', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {
-				sectionGroup: sectionGroup
+				form: sectionGroup
 			}
 		});
 

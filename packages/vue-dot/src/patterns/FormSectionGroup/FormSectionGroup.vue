@@ -24,15 +24,17 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { FormSectionGroupCore } from './mixins/formSectionGroupCore';
+
+	const MixinsDeclaration = mixins(FormSectionGroupCore);
 
 	/**
 	 * FormSectionGroup is a component that displays a list of FormSection
 	 */
 	@Component
-	export default class FormSectionGroup extends FormSectionGroupCore {}
+	export default class FormSectionGroup extends MixinsDeclaration {}
 </script>
 
 <style lang="scss" scoped>
