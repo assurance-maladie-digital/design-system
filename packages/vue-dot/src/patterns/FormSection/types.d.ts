@@ -4,6 +4,11 @@ export interface Form {
 	[key: string]: Field;
 }
 
+export interface Section {
+	title?: string;
+	questions: Form;
+}
+
 // Field and Form
 interface ComputedField extends Field {
 	name: string;

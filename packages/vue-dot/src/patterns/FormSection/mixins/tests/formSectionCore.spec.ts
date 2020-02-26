@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { FormBuilderCore } from '../formBuilderCore';
+import { FormSectionCore } from '../formSectionCore';
 
 import { Field } from '../../../FormField/types';
+import { FormValues } from './../../../../functions/getFormValues/types.d';
 
 import {
 	Form,
@@ -42,7 +43,7 @@ const testForm: Form = {
 function createWrapper(form: Form, layout?: Layout, defaultLayout?: string) {
 	const component = Vue.component('test', {
 		mixins: [
-			FormBuilderCore
+			FormSectionCore
 		],
 		template: '<div />'
 	});
@@ -53,7 +54,7 @@ function createWrapper(form: Form, layout?: Layout, defaultLayout?: string) {
 			defaultLayout,
 			layout
 		}
-	}) as Wrapper<FormBuilderCore>;
+	}) as Wrapper<FormSectionCore>;
 }
 
 // Tests
@@ -217,10 +218,10 @@ describe('formBuilderCore', () => {
 	it('emits change event', async() => {
 		const wrapper = createWrapper(testForm);
 
-		const updatedField = computedField;
+		const updatedField = { ...computedField };
 		updatedField.value = 'test';
 
-		wrapper.vm.formUpdated(updatedField);
+		wrapper.vm.sectionUpdated(updatedField);
 
 		const updatedTestForm: Form = {
 			field1: {
@@ -241,7 +242,7 @@ describe('formBuilderCore', () => {
 		const updatedField = computedField;
 		updatedField.value = 'test';
 
-		wrapper.vm.formUpdated(updatedField);
+		wrapper.vm.sectionUpdated(updatedField);
 
 		await Vue.nextTick();
 
@@ -255,7 +256,7 @@ describe('formBuilderCore', () => {
 		const updatedField = computedDynamicField;
 		updatedField.value = 'test';
 
-		wrapper.vm.formUpdated(updatedField);
+		wrapper.vm.sectionUpdated(updatedField);
 
 		await Vue.nextTick();
 

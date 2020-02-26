@@ -1,42 +1,44 @@
 <template>
-	<div
-		v-if="computedLayout"
-		class="vd-form-builder"
-	>
-		<FormLayout
-			v-for="(formLayout, index) in computedLayout"
-			:key="'layout-' + index"
-			:layout="formLayout"
-		>
-			<template #default="{ field }">
-				<FormField
-					:value="field"
-					@change="formUpdated"
-				/>
-			</template>
-		</FormLayout>
+	<div class="vd-form-builder">
+		<FormSectionGroup
+			:section-group="form"
+			@change="$emit('change', $event)"
+			@change:values="$emit('change:values', $event)"
+			@refresh="$emit('refresh')"
+		/>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { FormBuilderCore } from './mixins/formBuilderCore';
+	import FormSectionGroup from '../FormSectionGroup/FormSectionGroup.vue';
+	import { SectionGroup } from './../FormSectionGroup/types';
 
-	import FormLayout from '../FormLayout';
-	import FormField from '../FormField';
+	const Props = Vue.extend({
+		props: {
+			/** The form group object */
+			form: {
+				type: Object as PropType<SectionGroup>,
+				default: null
+			}
+		}
+	});
 
-	const MixinsDeclaration = mixins(FormBuilderCore);
+	const MixinsDeclaration = mixins(Props);
 
 	/**
 	 * FormBuilder is a component that displays a form
 	 * from a JSON object
 	 */
 	@Component({
+		model: {
+			prop: 'form',
+			event: 'change'
+		},
 		components: {
-			FormLayout,
-			FormField
+			FormSectionGroup
 		}
 	})
 	export default class FormBuilder extends MixinsDeclaration {}

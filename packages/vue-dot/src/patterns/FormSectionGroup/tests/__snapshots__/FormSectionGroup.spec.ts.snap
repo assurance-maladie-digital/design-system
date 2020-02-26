@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form section group show a form section group with multiple section 1`] = `
+<vlayout-stub tag="div" column="" class="vd-form-builder">
+  <!---->
+  <formsection-stub title="Section 1" form="[object Object]" defaultlayout="question" class="ma-5"></formsection-stub>
+  <vdivider-stub class="vd-section-separator"></vdivider-stub>
+  <formsection-stub title="Section 2" form="[object Object]" defaultlayout="question" class="ma-5"></formsection-stub>
+</vlayout-stub>
+`;

@@ -32,7 +32,7 @@
 
 	import LayoutMap from './mixins/layoutMap';
 
-	import { ComputedLayoutItem } from '../FormBuilder/types';
+	import { ComputedLayoutItem } from '../FormSection/types';
 
 	// Layouts
 	import LayoutM from './layouts/LayoutM.vue';

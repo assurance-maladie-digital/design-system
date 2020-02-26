@@ -38,10 +38,11 @@ export class ChoiceField extends FieldComponent {
 	 * Toggle the item
 	 *
 	 * @param {FieldItem} item The selected item
-	 * @param {boolean} active Is selected or not
 	 * @returns {void}
 	 */
-	toggleItem(item: FieldItem, active: boolean): void {
+	toggleItem(item: FieldItem): void {
+		const active: Boolean = this.isSelected(item.value);
+
 		// Items must be an array
 		if (!Array.isArray(this.field.items)) {
 			return;
@@ -102,5 +103,23 @@ export class ChoiceField extends FieldComponent {
 		this.choiceValue = newChoiceValue;
 
 		this.emitChangeEvent(this.choiceValue);
+	}
+
+	/**
+	 * Check if the button is selected
+	 *
+	 * @param {FieldItemValue} value The button value to test if it is selected
+	 * @returns {boolean} The selected value
+	 */
+	isSelected(value: FieldItemValue): boolean {
+		if (!this.choiceValue) {
+			return false;
+		}
+
+		if (this.isMultiple && Array.isArray(this.choiceValue)) {
+			return this.choiceValue.includes(value);
+		} else {
+			return this.choiceValue === value;
+		}
 	}
 }

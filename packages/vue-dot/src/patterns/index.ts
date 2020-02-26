@@ -3,12 +3,11 @@ import FileList from './FileList';
 import FileUpload from './FileUpload';
 import FormBuilder from './FormBuilder';
 import FormField from './FormField';
+import FormSection from './FormSection';
 import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
 import PageCard from './PageCard';
 import PaginatedTable from './PaginatedTable';
-import LayoutSection from './LayoutQuestionnaire/layouts/LayoutSection.vue';
-import LayoutSections from './LayoutQuestionnaire/layouts/LayoutSections.vue';
 import SubHeader from './SubHeader';
 import UploadWorkflow from './UploadWorkflow';
 
@@ -17,10 +16,9 @@ export const patterns = {
 	FileList,
 	FileUpload,
 	FormBuilder,
+	FormSection,
 	FormField,
 	LangBtn,
-	LayoutSection,
-	LayoutSections,
 	NotificationBar,
 	PageCard,
 	PaginatedTable,

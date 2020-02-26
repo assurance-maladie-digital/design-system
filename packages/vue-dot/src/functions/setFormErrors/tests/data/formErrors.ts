@@ -1,4 +1,4 @@
-import { Form } from '../../../../patterns/FormBuilder/types';
+import { Form } from '../../../../patterns/FormSection/types';
 import { FormErrors } from '../../types';
 
 /** FormErrors with invalid values */

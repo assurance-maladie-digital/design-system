@@ -1,5 +1,5 @@
 import { FormErrors } from './types';
-import { Form } from '../../patterns/FormBuilder/types';
+import { Form } from '../../patterns/FormSection/types';
 
 import { deepCopy } from '../../helpers/deepCopy';
 

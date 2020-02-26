@@ -88,7 +88,8 @@ export const questionForm: Form = {
 	},
 	questionSelect: {
 		type: 'select',
-		title: 'Question select',
+		dynamic: true,
+		title: 'Question select dynamique',
 		description: 'Informations supplémentaires',
 		value: null,
 		items: defaultItems,
@@ -166,10 +167,11 @@ export const questionForm: Form = {
 	},
 	questionChoiceButton: {
 		type: 'select',
-		title: 'Question choix bouton',
+		title: 'Question choix bouton inline',
 		description: 'Informations supplémentaires',
 		items: defaultItems,
 		metadata: {
+			inline: true,
 			type: 'choiceButton',
 			hint: 'Texte informatif'
 		}

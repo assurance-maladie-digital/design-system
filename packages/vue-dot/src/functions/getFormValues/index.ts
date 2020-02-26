@@ -1,6 +1,6 @@
 import { FormValues } from './types';
 
-import { Form } from '../../patterns/FormBuilder/types';
+import { Form } from '../../patterns/FormSection/types';
 
 /**
  * Return an array with field values

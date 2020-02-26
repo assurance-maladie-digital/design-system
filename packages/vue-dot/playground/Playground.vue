@@ -48,6 +48,8 @@
 
 				<FormFieldEx />
 
+				<FormSectionEx />
+
 				<FormBuilderEx />
 
 				<LangBtnEx />
@@ -55,8 +57,6 @@
 				<NotificationEx />
 
 				<PaginatedTableEx />
-
-				<LayoutQuestionnaireEx />
 
 				<RulesEx />
 

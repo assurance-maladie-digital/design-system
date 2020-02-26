@@ -1,4 +1,4 @@
-import { Form } from '../../../../patterns/FormBuilder/types';
+import { Form } from '../../../../patterns/FormSection/types';
 
 const defaultItem = [
 	{

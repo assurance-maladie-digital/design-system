@@ -6,6 +6,9 @@ import { Layouts } from '../../FormLayout/layoutsEnum';
 
 import { deepCopy } from '../../../helpers/deepCopy';
 
+import FormLayout from '../../FormLayout';
+import FormField from '../../FormField';
+
 import {
 	Form,
 	Layout,
@@ -17,6 +20,11 @@ import {
 
 const Props = Vue.extend({
 	props: {
+		/** The Section title */
+		title: {
+			type: String,
+			default: null
+		},
 		/** The form object */
 		form: {
 			type: Object as PropType<Form>,
@@ -40,8 +48,12 @@ const Props = Vue.extend({
 
 const MixinsDeclaration = mixins(Props, LayoutMap);
 
-/** Handle main logic of the FormBuilder */
-@Component<FormBuilderCore>({
+/** Handle main logic of the FormSection */
+@Component<FormSectionCore>({
+	components: {
+		FormLayout,
+		FormField
+	},
 	model: {
 		prop: 'form',
 		event: 'change'
@@ -61,7 +73,7 @@ const MixinsDeclaration = mixins(Props, LayoutMap);
 		}
 	}
 })
-export class FormBuilderCore extends MixinsDeclaration {
+export class FormSectionCore extends MixinsDeclaration {
 	/** The layout object containing the fields */
 	computedLayout = {} as ComputedLayout | null;
 
@@ -73,7 +85,7 @@ export class FormBuilderCore extends MixinsDeclaration {
 	 * @param {ComputedField} field The updated field with new value
 	 * @returns {void}
 	 */
-	formUpdated(field: ComputedField): void {
+	sectionUpdated(field: ComputedField): void {
 		const form = {
 			...this.form
 		};
