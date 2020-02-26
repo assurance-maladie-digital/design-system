@@ -7,3 +7,7 @@ Object {
   "streetNumberComplement": "bis",
 }
 `;
+
+exports[`getFormValues returns all values of multiple section 1`] = `Object {}`;
+
+exports[`getFormValues returns an empty object values when incorrect form type in parameter 1`] = `Object {}`;
