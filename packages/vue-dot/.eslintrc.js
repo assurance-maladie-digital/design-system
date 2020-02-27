@@ -84,7 +84,7 @@ module.exports = {
 
 		'no-prototype-builtins': 'off',
 
-		// JSDOC: Don't force all params & return
+		// Don't force all params & return
 		'jsdoc/require-param': 0,
 		'jsdoc/require-returns': 0
 	},

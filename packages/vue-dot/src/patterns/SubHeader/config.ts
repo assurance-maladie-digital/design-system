@@ -3,11 +3,11 @@ export const config = {
 		color: 'transparent',
 		small: true,
 		depressed: true,
-		class: 'text-none font-weight-regular white--text mx-n4 mb-1'
+		class: 'text-none font-weight-regular white--text mx-n4'
 	},
 	contentLayout: {
 		wrap: true,
-		class: 'justify-space-between mb-5'
+		class: 'justify-space-between'
 	},
 	dataListsLayout: {
 		wrap: true
