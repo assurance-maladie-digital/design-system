@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderLoading renders correctly 1`] = `<vskeletonloader-stub type="heading" types="[object Object]" class="vd-header-loading"></vskeletonloader-stub>`;

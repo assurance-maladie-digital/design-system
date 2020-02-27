@@ -9,7 +9,9 @@
 			color="primary"
 			class="vd-playground-app-bar px-4"
 		>
-			<VToolbarTitle>VueDot</VToolbarTitle>
+			<h1 class="title">
+				VueDot
+			</h1>
 
 			<VSpacer />
 
@@ -27,9 +29,9 @@
 		<VContent>
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
-				<h1 class="display-1 mb-12 font-weight-bold">
+				<h2 class="display-1 mb-12 font-weight-bold">
 					Playground
-				</h1>
+				</h2>
 
 				<!-- Examples -->
 				<CopyBtnEx />
@@ -37,6 +39,8 @@
 				<CustomIconEx />
 
 				<DataListEx />
+
+				<DataListItemEx />
 
 				<DatePickerEx />
 
@@ -82,8 +86,6 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { version } from '../package.json';
-
 	import { LOCAL_STORAGE_CONTROL } from './plugins/vue-dot';
 
 	import { LocalStorageUtility } from '../src/helpers/localStorageUtility';
@@ -96,7 +98,7 @@
 	 */
 	@Component
 	export default class Playground extends Vue {
-		version = version;
+		version = process.env.VUE_APP_VERSION;
 
 		localStorageUtility = new LocalStorageUtility(LOCAL_STORAGE_CONTROL.version);
 

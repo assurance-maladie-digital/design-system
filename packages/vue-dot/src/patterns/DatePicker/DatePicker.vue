@@ -172,7 +172,7 @@
 		get textFieldClasses() {
 			return [
 				{ 'vd-warning-rules': this.warningRules.length },
-				...this.options.textField.class as string[]
+				...this.options.textField.class as unknown[] || []
 			];
 		}
 

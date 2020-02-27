@@ -1,5 +1,8 @@
 // Vue CLI configuration
 // see https://cli.vuejs.org/guide/ for help
+
+process.env.VUE_APP_VERSION = require('./package.json').version;
+
 module.exports = {
 	configureWebpack: {
 		devtool: 'source-map',
