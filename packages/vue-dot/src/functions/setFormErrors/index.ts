@@ -76,7 +76,7 @@ function setFormSectionErrors(formErrors: FormErrors, form: Form): Form {
 export function setFormErrors(formErrors: FormErrors, form: Form | SectionGroup, formType: FormType = FormTypeEnum.FORM): Form | SectionGroup {
 	let newForm: Form | SectionGroup = {};
 	if (formType === FormTypeEnum.FORM) {
-		newForm = setFormSectionErrors(formErrors, form as Form);
+		newForm = setFormSectionErrors(formErrors, form as Form) as Form;
 	} else if (formType === FormTypeEnum.SECTION_GROUP) {
 		newForm = setFormSectionGroupErrors(formErrors, form as SectionGroup);
 	}

@@ -1,7 +1,7 @@
-import { formErrors, questionErrors, form, sectionGroup } from './data/formErrors';
-
 import { setFormErrors } from '../';
 import { FormType } from '../types';
+
+import { formErrors, questionErrors, form, sectionGroup } from './data/formErrors';
 
 // Tests
 describe('setFormErrors', () => {

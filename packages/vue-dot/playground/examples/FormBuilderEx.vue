@@ -51,7 +51,7 @@
 		}
 
 		setFormErrors() {
-			this.sectionGroup = setFormErrors(sectionGroupErrorMessages, this.sectionGroup, 'section_group');
+			this.form = setFormErrors(sectionGroupErrorMessages, this.form, 'section_group');
 		}
 	}
 </script>
