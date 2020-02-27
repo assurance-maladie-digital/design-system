@@ -155,7 +155,9 @@
 			let data: Languages = {};
 
 			if (this.availableLanguages !== '*') {
-				this.availableLanguages.forEach((lang: string) => {
+				const availableLanguages = this.availableLanguages as string[];
+
+				availableLanguages.forEach((lang: string) => {
 					// Get the languages info
 					data[lang] = languages.getLanguageInfo(lang);
 				});

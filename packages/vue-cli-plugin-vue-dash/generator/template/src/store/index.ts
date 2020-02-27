@@ -5,7 +5,7 @@ import VuexPersistence from 'vuex-persist';<% } %>
 import { RootState } from './types';
 
 // Use the notification module from Vue Dot
-import notification from '@cnamts/vue-dot/src/modules/notification';<% if (vuexPersist) { %>
+import { notification } from '@cnamts/vue-dot/src/modules/notification';<% if (vuexPersist) { %>
 
 /** The store is saved in the browser's session */
 const vuexLocal = new VuexPersistence<RootState>();<% } %>

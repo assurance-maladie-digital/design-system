@@ -80,7 +80,10 @@
 
 		<FileUpload class="custom accent elevation-3">
 			<template #placeholder>
-				<VLayout align-center>
+				<VLayout
+					tag="span"
+					align-center
+				>
 					<VIcon
 						size="25"
 						color="white"
