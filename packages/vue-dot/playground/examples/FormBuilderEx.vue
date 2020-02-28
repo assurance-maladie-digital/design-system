@@ -23,6 +23,14 @@
 			class="mt-4 grey lighten-3"
 			v-html="formValues"
 		/>
+
+		<VBtn
+			class="mt-5"
+			color="accent"
+			@click="setFormErrors"
+		>
+			Set errors messages
+		</VBtn>
 	</DocSection>
 </template>
 
@@ -33,7 +41,9 @@
 	import { mapActions } from 'vuex';
 
 	import { SectionGroup } from '../../src/patterns/FormSectionGroup/types';
-	import { sectionGroup } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
+	import { sectionGroup, sectionGroupErrorMessages } from '../../src/patterns/FormSectionGroup/tests/data/sectionGroup';
+
+	import { setFormErrors } from '../../src/functions/setFormErrors';
 
 	import { getFormValues } from '../../src/functions/getFormValues';
 	import { FormValues } from '../../src/functions/getFormValues/types';
@@ -61,6 +71,10 @@
 
 		getFormValues(form: SectionGroup) {
 			this.formValues = getFormValues(form, 'section_group');
+		}
+
+		setFormErrors() {
+			this.form = setFormErrors(sectionGroupErrorMessages, this.form, 'section_group') as SectionGroup;
 		}
 	}
 </script>
