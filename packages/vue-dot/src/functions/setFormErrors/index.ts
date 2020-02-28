@@ -1,8 +1,10 @@
-import { FormErrors, FormTypeEnum, FormType } from './types';
+import { FormType } from './../../patterns/FormBuilder/types.d';
+import { FormErrors } from './types';
 import { Form } from '../../patterns/FormSection/types';
 import { SectionGroup } from 'src/patterns/FormSectionGroup/types';
 
 import { deepCopy } from '../../helpers/deepCopy';
+import { FormTypeEnum } from '../../patterns/FormBuilder/formTypeEnum';
 
 /**
  * Set error-messages prop on fields in multiple section in error
@@ -70,15 +72,14 @@ function setFormSectionErrors(formErrors: FormErrors, form: Form): Form {
  * Return a form with all the error messages on each field depending on the form type
  *
  * @param {FormErrors} formErrors The errors list for each fields from the api
- * @param {Form|SectionGroup} form The form errors messages object to set in the form
+ * @param {Form|SectionGroup} form The form object to update with error messages
  * @param {FormType} formType The type of the form to detect the form structure
+ * @returns {Form|SectionGroup} form The form object with the error messages added
  */
-export function setFormErrors(formErrors: FormErrors, form: Form | SectionGroup, formType: FormType = FormTypeEnum.FORM): Form | SectionGroup {
-	let newForm: Form | SectionGroup = {};
-	if (formType === FormTypeEnum.FORM) {
-		newForm = setFormSectionErrors(formErrors, form as Form) as Form;
-	} else if (formType === FormTypeEnum.SECTION_GROUP) {
-		newForm = setFormSectionGroupErrors(formErrors, form as SectionGroup);
+export function setFormErrors(formErrors: FormErrors, form: (Form | SectionGroup), formType: FormType = FormTypeEnum.FORM): (Form | SectionGroup) {
+	if (formType && formType === FormTypeEnum.SECTION_GROUP) {
+		return setFormSectionGroupErrors(formErrors, form as SectionGroup);
+	} else {
+		return setFormSectionErrors(formErrors, form as Form);
 	}
-	return newForm;
 }

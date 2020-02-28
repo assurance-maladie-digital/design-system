@@ -16,7 +16,32 @@ Object {
 }
 `;
 
-exports[`setFormErrors returns an empty object values when incorrect form type in parameter 1`] = `Object {}`;
+exports[`setFormErrors returns an empty object values when incorrect form type in parameter 1`] = `
+Object {
+  "section1": Object {
+    "questions": Object {
+      "questionString": Object {
+        "description": "Description de la question date",
+        "title": "Question 1",
+        "tooltip": "Tooltip de la question date",
+        "type": "date",
+      },
+    },
+    "title": "Section 1",
+  },
+  "section2": Object {
+    "questions": Object {
+      "questionPeriod": Object {
+        "dynamic": true,
+        "title": "Question 2",
+        "tooltip": "Tooltip de la question text",
+        "type": "period",
+      },
+    },
+    "title": "Section 2",
+  },
+}
+`;
 
 exports[`setFormErrors returns the form with errors messages in multiple section 1`] = `
 Object {

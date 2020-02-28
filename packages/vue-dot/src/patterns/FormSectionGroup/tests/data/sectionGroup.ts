@@ -22,11 +22,22 @@ export const sectionGroup = {
 					dynamic: true,
 					title: 'Question 2',
 					tooltip: 'Tooltip de la question text'
+				},
+				question3: {
+					type: 'period',
+					dynamic: true,
+					title: 'Question 3 perdiode',
+					tooltip: 'Tooltip de la question text'
 				}
 			}
 		}
 } as SectionGroup;
 
 export const sectionGroupErrorMessages: FormErrors = {
-	question1: ['error', 'error2']
+	question1: ['error question1'],
+	question2: ['error question2'],
+	question3: {
+		from: ['error from'],
+		to: ['error to']
+	}
 };

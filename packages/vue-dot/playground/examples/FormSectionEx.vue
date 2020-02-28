@@ -65,12 +65,14 @@
 	import { Layout } from '../../src/patterns/FormSection/types';
 	import { Layouts } from '../../src/patterns/FormLayout/layoutsEnum';
 
+	import { Form } from '../../src/patterns/FormSection/types';
 	import { addressForm } from '../../src/patterns/FormSection/tests/data/addressForm';
 	import { questionForm } from '../../src/patterns/FormSection/tests/data/questionForm';
 
 	import { getFormValues } from '../../src/functions/getFormValues';
 	import { FormValues } from '../../src/functions/getFormValues/types';
 	import { setFormErrors } from '../../src/functions/setFormErrors';
+	import { FormErrors } from '../../src/functions/setFormErrors/types';
 	import { questionErrors } from '../../src/functions/setFormErrors/tests/data/formErrors';
 
 	@Component({
@@ -83,11 +85,11 @@
 	export default class FormSectionEx extends Vue {
 		notify!: (obj: object) => void;
 
-		addressForm = addressForm;
+		addressForm: Form = addressForm;
 
-		questionForm = questionForm;
+		questionForm: Form = questionForm;
 
-		questionErrors = questionErrors;
+		questionErrors: FormErrors = questionErrors;
 
 		questionValues: FormValues | null = null;
 
@@ -125,7 +127,7 @@
 		}
 
 		setFormErrors() {
-			this.questionForm = setFormErrors(this.questionErrors, this.questionForm);
+			this.questionForm = setFormErrors(this.questionErrors, this.questionForm) as Form;
 		}
 
 		sectionsRefresh() {

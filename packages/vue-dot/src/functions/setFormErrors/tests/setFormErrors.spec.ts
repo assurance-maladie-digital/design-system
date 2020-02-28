@@ -1,6 +1,5 @@
 import { setFormErrors } from '../';
-import { FormType } from '../types';
-
+import { FormType } from './../../../patterns/FormBuilder/types';
 import { formErrors, questionErrors, form, sectionGroup } from './data/formErrors';
 
 // Tests
