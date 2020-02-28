@@ -12,6 +12,7 @@ Object {
     "FileUpload",
     "FormBuilder",
     "FormField",
+    "FormSection",
     "HeaderLoading",
     "LangBtn",
     "NotificationBar",

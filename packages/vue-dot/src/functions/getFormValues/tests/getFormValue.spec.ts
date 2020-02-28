@@ -1,5 +1,5 @@
 import { formNull, formNotNull, sectionGroup } from './data/forms';
-import { FormType } from './../types';
+import { FormType } from './../../../patterns/FormBuilder/types';
 
 import { getFormValues } from '../';
 

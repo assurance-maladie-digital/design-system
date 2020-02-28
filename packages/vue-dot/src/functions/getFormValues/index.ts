@@ -1,7 +1,9 @@
-import { FormValues, FormTypeEnum, FormType } from './types';
+import { FormValues } from './types';
 
 import { Form } from '../../patterns/FormSection/types';
 import { SectionGroup } from '../../patterns/FormSectionGroup/types';
+import { FormType } from '../../patterns/FormBuilder/types';
+import { FormTypeEnum } from '../../patterns/FormBuilder/formTypeEnum';
 
 /**
  * Return an object with field values
@@ -48,8 +50,9 @@ function getFormSectionGroupValues(sectionGroup: SectionGroup): FormValues {
  *
  * @param {Form|SectionGroup} form The form object to get the values
  * @param {FormType} formType The type of the form to detect the structure
+ * @returns {FormValues} All the fields's value in the form
  */
-export function getFormValues(form: Form | SectionGroup, formType: FormType = FormTypeEnum.FORM): FormValues {
+export function getFormValues(form: (Form | SectionGroup), formType: FormType = FormTypeEnum.FORM): FormValues {
 	let responses: FormValues = {};
 	if (formType === FormTypeEnum.FORM) {
 		responses = getFormSectionValues(form as Form);
