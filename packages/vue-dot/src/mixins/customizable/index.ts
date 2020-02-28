@@ -8,12 +8,12 @@ import merge from 'deepmerge';
  * @param {object} defaultOptions The options to apply by default
  *
  * @example
- * // Usage in your component:
+ * Usage in your component:
  * mixins: [ customizable({ btn: { color: 'primary' } }) ]
  *
  * <VBtn v-bind="options.btn" />
  *
- * // Final API
+ * Final API
  * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
  */
 export function customizable(defaultOptions: Options) {

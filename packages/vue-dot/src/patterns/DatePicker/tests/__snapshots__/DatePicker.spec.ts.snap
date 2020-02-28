@@ -17,6 +17,6 @@ exports[`DatePicker renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div role="menu" class="v-menu__content theme--light vd-date-picker-menu" style="max-height: auto; min-width: 290px; max-width: auto; top: 45px; left: 0px; transform-origin: top left; z-index: 0; display: none;"></div>
+  <!---->
 </div>
 `;
