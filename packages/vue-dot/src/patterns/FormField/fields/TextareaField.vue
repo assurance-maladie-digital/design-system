@@ -2,6 +2,7 @@
 	<VTextarea
 		v-bind="field.metadata"
 		:value="field.value"
+		outlined
 		@change="emitChangeEvent"
 	/>
 </template>

@@ -46,10 +46,7 @@ export const questionForm: Form = {
 		title: 'Question longue type textarea',
 		description: 'Informations supplémentaires',
 		tooltip: 'Texte d\'aide',
-		value: null,
-		metadata: {
-			outlined: true
-		}
+		value: null
 	},
 	questionDate: {
 		type: 'date',
