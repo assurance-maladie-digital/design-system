@@ -1,6 +1,5 @@
 <template>
 	<VLayout
-		class="vd-form-builder"
 		column
 	>
 		<template v-for="(section, sectionId) in sectionGroup">
@@ -15,7 +14,7 @@
 				:title="section.title"
 				:form="section.questions"
 				default-layout="question"
-				@change="emitSectionGroupUpdated($event, section)"
+				@change="emitSectionGroupUpdated($event, sectionId)"
 				@refresh="$emit('refresh')"
 			/>
 		</template>

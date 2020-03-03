@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 import { SectionGroup } from '../types';
 
 import FormSection from '../../FormSection';
-import { Form, Section } from './../../FormSection/types';
+import { Form } from './../../FormSection/types';
 
 const Props = Vue.extend({
 	props: {
@@ -30,17 +30,17 @@ const Props = Vue.extend({
 })
 export class FormSectionGroupCore extends Props {
 	/**
-	 * Emit 'change' and 'change:values' when one of the field in the section in parameter has changed
+	 * Emit 'change' with the new section group updated when one of the field in the section in parameter has changed
 	 *
 	 * @param {Form} form The new field group object updated
-	 * @param {Section} section The section id
+	 * @param {string} sectionId The section id
 	 */
-	emitSectionGroupUpdated(form: Form, section: Section) {
+	emitSectionGroupUpdated(form: Form, sectionId: string) {
 		const sectionGroup = {
 			...this.sectionGroup
 		};
 
-		section.questions = form;
+		sectionGroup[sectionId].questions = form;
 
 		this.$nextTick(() => {
 			this.$emit('change', sectionGroup);

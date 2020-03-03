@@ -35,7 +35,7 @@ describe('form section group', () => {
 		const updatedFieldGroup = sectionGroup.section2.questions;
 		updatedFieldGroup.question2.value = 'test';
 
-		wrapper.vm.emitSectionGroupUpdated(updatedFieldGroup, sectionGroup.section2);
+		wrapper.vm.emitSectionGroupUpdated(updatedFieldGroup, 'section2');
 
 		let updatedTestForm: SectionGroup = {
 			...sectionGroup
