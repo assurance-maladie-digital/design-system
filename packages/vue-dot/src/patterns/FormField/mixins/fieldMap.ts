@@ -9,6 +9,7 @@ interface IFieldMap {
 // can use any of them
 import AutocompleteField from '../fields/AutocompleteField.vue';
 import DateField from '../fields/DateField.vue';
+import FileUploadField from '../fields/FileUploadField';
 import NumberField from '../fields/NumberField.vue';
 import PasswordField from '../fields/PasswordField.vue';
 import PeriodField from '../fields/PeriodField.vue';
@@ -23,6 +24,7 @@ import TextField from '../fields/TextField.vue';
 	components: {
 		AutocompleteField,
 		DateField,
+		FileUploadField,
 		NumberField,
 		PasswordField,
 		PeriodField,
@@ -38,6 +40,7 @@ export class FieldMap extends Vue {
 	fieldMap: IFieldMap = {
 		autocomplete: 'AutocompleteField',
 		date: 'DateField',
+		file: 'FileUploadField',
 		number: 'NumberField',
 		password: 'PasswordField',
 		period: 'PeriodField',

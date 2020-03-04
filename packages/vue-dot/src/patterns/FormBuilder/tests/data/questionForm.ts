@@ -20,6 +20,16 @@ const defaultItems = [
 ];
 
 export const questionForm: Form = {
+	questionFile: {
+		type: 'file',
+		title: 'Question file input ?',
+		description: 'Informations supplémentaires',
+		tooltip: 'Texte d\'aide',
+		value: null,
+		metadata: {
+			label: 'Label du champ'
+		}
+	},
 	questionString: {
 		type: 'text',
 		title: 'Question ?',
