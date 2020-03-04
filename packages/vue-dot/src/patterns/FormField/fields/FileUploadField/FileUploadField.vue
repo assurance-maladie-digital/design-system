@@ -1,33 +1,31 @@
 <template>
 	<div>
+		<!-- The input file showed if there is a file to be controled-->
 		<VFileInput
 			v-show="showFileInput"
 			ref="fileinput"
-			v-bind="field.metadata"
+			v-bind="getMetadata"
 			class="pr-4"
-			persistent-hint
 			outlined
-			:multiple="false"
-			:label="label"
-			:append-icon="paperclipIcon"
-			:hint="hint"
+			clearable
 			prepend-icon=""
-			@change="uploadFile"
+			:append-icon="paperclipIcon"
+			@click:append="clickInputFile"
+			@change="fileUplated"
 		/>
 
+		<!-- The text field to show the existing original file name -->
 		<VTextField
 			v-show="!showFileInput"
 			:value="filename"
-			v-bind="field.metadata"
+			v-bind="getMetadata"
 			class="pr-4"
 			validate-on-blur
 			outlined
-			:hint="hint"
-			persistent-hint
 			readonly
 			prepend-icon=""
 			:append-icon="paperclipIcon"
-			:label="label"
+			@click:append="clickInputFile"
 			@click="clickInputFile"
 		/>
 	</div>
@@ -61,42 +59,50 @@
 
 		paperclipIcon = mdiPaperclip;
 		showFileInput = false;
+		filename: string | null = null;
+
+		/**
+		 * Force the metadata without multiple propertie
+		 */
+		get getMetadata() {
+			let fileUploadMetadata = this.fieldMetadata;
+
+			if (fileUploadMetadata) {
+				delete fileUploadMetadata.multiple;
+			}
+
+			return fileUploadMetadata;
+		}
 
 		mounted() {
-			// if the filename is not defined, we show the FileInput component
-			if (!this.field.originalFileName) {
+			/**
+			 *  Set the original file name is defined
+			 */
+			if (this.field?.originalFileName) {
+				this.filename = this.field.originalFileName;
+			}
+		}
+
+		/**
+		 * Emit the new File if valide
+		 * Emit empty if old value is not
+		 *
+		 * @params {File} file The input file
+		 */
+		fileUplated(file?: File) {
+			if(file) {
 				this.showFileInput = true;
+
+				if (this.$refs.fileinput.validate()) {
+					this.emitChangeEvent(file);
+				}
+			} else {
+				this.showFileInput = false;
+
+				if (this.field.value) {
+					this.emitChangeEvent(file);
+				}
 			}
-		}
-
-		get rules() {
-			const rules: Array = [];
-
-			if(this.fileAccept) {
-				rules.push(fileAccept(this.fileAccept));
-			}
-
-			if(this.fileMaxSize) {
-				rules.push(fileMaxSize(this.fileMaxSize));
-			}
-
-			return rules;
-		}
-
-		/** Hint below the input, composed of max size & extensions */
-		get hint() {
-			const maxSizeMessage = fileMaxSizeMessage(this.fileMaxSize);
-
-			const extensions = fileAcceptMessage(this.fileAccept);
-
-			return `${maxSizeMessage}${maxSizeMessage? ', ': ''}${extensions}`;
-		}
-
-		uploadFile(value: File) {
-			// TODO: upload the file and set the value with the storage ID
-			const textId = 'gegzegezgk';
-
-			this.emitChangeEvent(textId);
 		}
 
 		// On textfield click event, we click on the input file

@@ -1,4 +1,3 @@
-import { fileAccept, fileMaxSize } from '..';
 export interface PeriodValue {
 	from: string | null;
 	to: string | null;
@@ -8,7 +7,7 @@ export type FieldItemValue = string | number | null | undefined;
 
 export type ChoiceValue = FieldItemValue | FieldItemValue[];
 
-export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue;
+export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue | File;
 
 export type ErrorMessages = string[];
 
@@ -25,8 +24,6 @@ export interface FieldItem {
 
 export interface FieldMetadata {
 	errorMessages?: ErrorMessages | PeriodErrorMessages;
-	fileAccept?: string[];
-	fileMaxSize?: number;
 	[key: string]: any;
 }
 

@@ -40,7 +40,7 @@ export class FieldMap extends Vue {
 	fieldMap: IFieldMap = {
 		autocomplete: 'AutocompleteField',
 		date: 'DateField',
-		file: 'FileUploadField',
+		fileUpload: 'FileUploadField',
 		number: 'NumberField',
 		password: 'PasswordField',
 		period: 'PeriodField',

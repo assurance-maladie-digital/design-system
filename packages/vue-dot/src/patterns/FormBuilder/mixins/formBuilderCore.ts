@@ -78,6 +78,9 @@ export class FormBuilderCore extends MixinsDeclaration {
 			...this.form
 		};
 
+		// Emit the changed field
+		this.$emit('change:field', field);
+
 		const fieldName = field.name;
 
 		// Delete the field name before updating the form with
@@ -87,6 +90,7 @@ export class FormBuilderCore extends MixinsDeclaration {
 		form[fieldName] = field;
 
 		this.$nextTick(() => {
+			// Emit the changed form
 			this.$emit('change', form);
 
 			// If the field has the `dynamic` property

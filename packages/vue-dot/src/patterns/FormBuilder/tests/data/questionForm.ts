@@ -21,11 +21,12 @@ const defaultItems = [
 
 export const questionForm: Form = {
 	questionFile: {
-		type: 'file',
+		type: 'fileUpload',
 		title: 'Question file input ?',
 		description: 'Informations supplémentaires',
 		tooltip: 'Texte d\'aide',
 		value: null,
+		originalFileName: 'originalFileName.csv',
 		metadata: {
 			label: 'Label du champ'
 		}
