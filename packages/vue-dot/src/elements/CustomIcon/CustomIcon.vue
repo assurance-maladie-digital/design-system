@@ -6,11 +6,11 @@
 	-->
 	<span
 		:class="{
-			'vd-large': large,
-			'vd-medium': medium,
 			'vd-small': small,
+			'vd-medium': medium,
+			'vd-large': large,
 			'vd-x-large': xLarge,
-			'vd-custom-color': color
+			'vd-custom-color': Boolean(color)
 		}"
 		:style="{
 			color,
@@ -38,39 +38,42 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { Icons, VueDotOptions } from '../../../types';
+	import { ThemeIcon } from './mixins/themeIcon';
 
 	const Props = Vue.extend({
 		props: {
-			// Color, default is inherited from CSS color
+			/**
+			 * Change the color of the icon (any CSS value)
+			 * By default it's inherited from CSS color property
+			 */
 			color: {
 				type: String,
 				default: 'currentColor'
 			},
-			// The icon from the theme,
-			// optional when using the slot instead of theme icon
-			icon: {
-				type: String,
-				default: undefined
-			},
-			// Size properties
-			large: {
-				type: Boolean,
-				default: false
-			},
-			medium: {
-				type: Boolean,
-				default: false
-			},
+			/** Make the icon small (1em) */
 			small: {
 				type: Boolean,
 				default: false
 			},
+			/** Make the icon medium (1.5em) */
+			medium: {
+				type: Boolean,
+				default: false
+			},
+			/** Make the icon large (1.85em) */
+			large: {
+				type: Boolean,
+				default: false
+			},
+			/** Make the icon extra large (2.25em) */
 			xLarge: {
 				type: Boolean,
 				default: false
 			},
-			// Custom size
+			/**
+			 * Apply a custom CSS size (width/height) to the icon
+			 * By default, the size is 1.35em (between small & medium)
+			 */
 			size: {
 				type: String,
 				default: undefined
@@ -78,27 +81,14 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, ThemeIcon);
 
 	/**
 	 * CustomIcon is a component that displays an SVG Icon
 	 * defined in the theme that is passed as an option of the plugin
 	 */
 	@Component
-	export default class CustomIcon extends MixinsDeclaration {
-		get themeIcon(): string | undefined {
-			// If there are icons in the theme
-			if (this.$vd && this.$vd.theme && this.$vd.theme.icons) {
-				// Find the icon with the name passed in the prop
-				const icon = this.$vd.theme.icons[this.icon];
-
-				// If the icon isn't find, it will return undefined
-				return icon;
-			}
-
-			return undefined;
-		}
-	}
+	export default class CustomIcon extends MixinsDeclaration {}
 </script>
 
 <style lang="scss" scoped>
@@ -131,7 +121,7 @@
 			position: absolute;
 
 			// Transition when color is updating
-			transition: fill .25s;
+			transition: fill .15s;
 		}
 
 		&.vd-custom-color svg {

@@ -2,6 +2,7 @@ import Vue, { VueConstructor } from 'vue';
 
 import CopyBtnEx from './CopyBtnEx.vue';
 import DataListEx from './DataListEx.vue';
+import DataListItemEx from './DataListItemEx.vue';
 import DatePickerEx from './DatePickerEx.vue';
 import LangBtnEx from './LangBtnEx.vue';
 import CustomIconEx from './CustomIconEx.vue';
@@ -23,6 +24,7 @@ interface Components {
 const components: Components = {
 	CopyBtnEx,
 	DataListEx,
+	DataListItemEx,
 	DatePickerEx,
 	LangBtnEx,
 	CustomIconEx,
