@@ -73,10 +73,10 @@ describe('Birthdate', () => {
 		expect(wrapper.vm.min).toBe(null);
 	});
 
-	it('sets the min value to 01/01/1950 when birthdate is true', () => {
+	it('sets the min value to 01/01/1900 when birthdate is true', () => {
 		const wrapper = createWrapper(true);
 
-		expect(wrapper.vm.min).toBe('1950-01-01');
+		expect(wrapper.vm.min).toBe('1900-01-01');
 	});
 
 	it('sets the max value to today when birthdate is true', () => {
