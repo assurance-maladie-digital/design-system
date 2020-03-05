@@ -6,11 +6,7 @@
 
 		<DatePicker
 			v-model="date"
-			:vuetify-options="{
-				textField: {
-					rules: validRules
-				}
-			}"
+			:rules="validRules"
 		/>
 
 		<p class="mt-4">
@@ -23,14 +19,11 @@
 
 		<DatePicker
 			v-model="birthDate"
+			label="Birthdate"
 			date-format="DD-MM-YYYY"
+			hint="DD-MM-YYYY Format"
 			birthdate
 			:warning-rules="rules"
-			:vuetify-options="{
-				textField: {
-					hint: 'DD-MM-YYYY Format'
-				}
-			}"
 		>
 			<template #prepend-icon>
 				<VIcon>
@@ -49,10 +42,12 @@
 			birthdate
 			append-icon
 			:vuetify-options="{
+				// The textField options can be binded
+				// directly if needed
 				textField: {
 					placeholder: ' ',
 					hint: null,
-					solo: true,
+					outlined: true,
 					clearable: true,
 					rules
 				},
@@ -90,11 +85,7 @@
 
 		<DatePicker
 			show-week-ends
-			:vuetify-options="{
-				textField: {
-					clearable: true
-				}
-			}"
+			clearable
 		/>
 
 		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
@@ -105,12 +96,9 @@
 			v-model="startDate"
 			date-format="YYYY-MM-DD"
 			date-format-return="YYYY-MM-DD"
-			:vuetify-options="{
-				textField: {
-					hint: 'YYYY-MM-DD Format',
-					label: 'Start Date'
-				}
-			}"
+			hint="YYYY-MM-DD Format"
+			text-field-class="mb-4"
+			label="Start Date"
 		/>
 
 		<DatePicker
@@ -145,6 +133,7 @@
 
 		rules = [
 			required,
+			isDateValid,
 			notAfterToday
 		];
 	}
