@@ -1,4 +1,4 @@
-import { fileAccept } from '..';
+import { fileAccept, fileAcceptMessage } from '..';
 
 // Tests
 describe('fileAccept', () => {
@@ -30,5 +30,19 @@ describe('fileAccept', () => {
 		});
 
 		expect(rule(file)).toBe('test custom error message');
+	});
+
+	it('returns the default message', () => {
+		const message = fileAcceptMessage(['.csv']);
+
+		expect(typeof message).toBe('string');
+	});
+
+	it('works with custom messages', () => {
+		const message = fileAcceptMessage(['.csv'], {
+			default: 'test custom message'
+		});
+
+		expect(message).toBe('test custom message');
 	});
 });

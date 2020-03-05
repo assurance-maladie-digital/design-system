@@ -37,11 +37,7 @@
 
 	import { mdiPaperclip } from '@mdi/js';
 
-	import { locales } from './locales';
-
 	// Utils from Vue Dot
-	import { fileMaxSize, fileMaxSizeMessage } from '../../../../rules/fileMaxSize';
-	import { fileAccept, fileAcceptMessage } from '../../../../rules/fileAccept';
 	import { Refs } from '../../../../types';
 
 	import { FieldComponent } from '../../mixins/fieldComponent';

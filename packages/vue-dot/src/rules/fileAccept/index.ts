@@ -20,11 +20,10 @@ export function fileAccept(
 			return true;
 		}
 		const fileExt = getFileExtension(value.name);
-		const accepted = accept.join(', ');
 
 		return (
 			accept.includes(fileExt) ||
-			ruleMessage(errorMessages, 'default', [accepted])
+			fileAcceptMessage(accept, errorMessages)
 		);
 	};
 }

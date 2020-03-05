@@ -1,4 +1,4 @@
-import { fileMaxSize } from '..';
+import { fileMaxSize, fileMaxSizeMessage } from '..';
 
 // Tests
 describe('fileMaxSize', () => {
@@ -29,5 +29,19 @@ describe('fileMaxSize', () => {
 		});
 
 		expect(rule(file)).toBe('test custom error message');
+	});
+
+	it('returns the information message with the maximum size caculated for human', () => {
+		const message = fileMaxSizeMessage(1);
+
+		expect(typeof message).toBe('string');
+	});
+
+	it('returns custom information messages', () => {
+		const message = fileMaxSizeMessage(1, {
+			default: 'test custom information message'
+		});
+
+		expect(message).toBe('test custom information message');
 	});
 });

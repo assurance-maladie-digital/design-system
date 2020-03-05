@@ -6,6 +6,7 @@ Object {
   "choiceButton": "ChoiceButtonField",
   "choiceSlider": "ChoiceSliderField",
   "date": "DateField",
+  "fileUpload": "FileUploadField",
   "number": "NumberField",
   "password": "PasswordField",
   "period": "PeriodField",
