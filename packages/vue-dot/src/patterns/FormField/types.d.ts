@@ -7,11 +7,14 @@ export type FieldItemValue = string | number | null | undefined;
 
 export type OtherValue = string | null ;
 
+export type MoreValue = string | null;
+
 export type ChoiceValue = FieldItemValue | FieldItemValue[];
 
 export interface TypeSelectValue {
 	value: ChoiceValue;
 	other?: OtherValue;
+	more?: MoreValue;
 }
 
 export type FieldValue = string | number | null | undefined | PeriodValue | TypeSelectValue;
@@ -49,6 +52,7 @@ export interface Field {
 	metadata?: FieldMetadata;
 	items?: FieldItem[];
 	other?: OtherField;
+	more?: FieldMetadata;
 	mask?: string;
 	dynamic?: boolean;
 }

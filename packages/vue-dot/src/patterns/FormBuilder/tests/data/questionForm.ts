@@ -229,5 +229,68 @@ export const questionForm: Form = {
 			type: 'choiceButton',
 			multiple: true
 		}
+	},
+	questionChoiceMoreUniqueSingle: {
+		type: 'select',
+		title: 'Question choix bouton unique avec autre possible',
+		description: 'Informations supplémentaires',
+		items: [
+			{
+				text: 'Multiple 1',
+				value: 'test1'
+			},
+			{
+				text: 'Multiple 2',
+				value: 22
+			},
+			{
+				text: 'Seul 1',
+				value: 33,
+				alone: true
+			},
+			{
+				text: 'Seul 2',
+				value: 44,
+				alone: true
+			}
+		],
+		more: {
+			placeholder: 'Autre'
+		}
+	},
+	questionChoiceMoreUniqueMultiple: {
+		type: 'select',
+		title: 'Question choix bouton multiple avec autre possible',
+		description: 'Informations supplémentaires',
+		items: [
+			{
+				text: 'Multiple 1',
+				value: 'test1'
+			},
+			{
+				text: 'Multiple 2',
+				value: 22
+			},
+			{
+				text: 'Seul 1',
+				value: 33,
+				alone: true
+			},
+			{
+				text: 'Seul 2',
+				value: 44,
+				alone: true
+			}
+		],
+		more: {
+			placeholder: 'Autre'
+		},
+		metadata: {
+			multiple: true
+		},
+		value: {
+			value: [22, 'test1'],
+			more: 'Test réponse autre'
+		}
 	}
 };

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="vd-choice-field">
 		<!-- the choice field component -->
 		<component
 			:is="getField()"
@@ -8,6 +8,17 @@
 			:metadata="fieldMetadata"
 			:multiple="fieldMetadata && fieldMetadata.multiple"
 			@change="choiceUpdated"
+		/>
+
+		<!-- the more choice -->
+		<VTextField
+			v-if="moreField"
+			:value="typeSelectValue.more"
+			v-bind="moreField"
+			outlined
+			class="vd-more-field"
+			:class="{ 'vd-more-field-active': !!typeSelectValue.more }"
+			@change="moreUpdated"
 		/>
 
 		<!-- the other field -->
@@ -37,7 +48,7 @@
 
 	import { Refs } from '../../../types';
 
-	import { TypeSelectValue, FieldItemValue, OtherValue, ChoiceValue } from '../types';
+	import { TypeSelectValue, FieldItemValue, OtherValue, ChoiceValue, MoreValue } from '../types';
 
 	interface HTMLInputEvent extends Event {
 		target: HTMLInputElement & EventTarget;
@@ -103,6 +114,14 @@
 			return this.field.other;
 		}
 
+		get moreField() {
+			return this.field.more;
+		}
+
+		get isMultiple() {
+			return this.field.metadata?.multiple;
+		}
+
 		/**
 		 * Check if the other field is active or not
 		 *
@@ -126,6 +145,11 @@
 		 * @returns {string} The choice field component name
 		 */
 		getField(): string {
+			// Choice field with more option is only a type choiceButton possible
+			if (this.field.more) {
+				return this.selectFieldMap.choiceButton;
+			}
+
 			const metadataType = this.field.metadata ? this.field.metadata.type as string : undefined;
 
 			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
@@ -138,6 +162,11 @@
 		 */
 		choiceUpdated(choiceValue: ChoiceValue): void {
 			this.typeSelectValue.value = choiceValue;
+
+			// Reset the more option if the choice field is not multiple
+			if (choiceValue && !this.isMultiple) {
+				this.typeSelectValue.more = null;
+			}
 
 			this.isOtherActive = this.getOtherActive();
 
@@ -164,5 +193,57 @@
 
 			this.emitChangeEvent(this.typeSelectValue);
 		}
+
+		/**
+		 * Emit the new type select value when more field updated
+		 *
+		 * @param {MoreValue} moreValue The new other local value
+		 */
+		moreUpdated(moreValue: MoreValue): void {
+			this.typeSelectValue.more = moreValue;
+
+			// Reset the choice value if field is not multiple
+			if (moreValue && !this.isMultiple) {
+				this.typeSelectValue.value = null;
+			}
+
+			this.emitChangeEvent(this.typeSelectValue);
+		}
 	}
 </script>
+
+<style lang="scss">
+	@import '../../../tokens';
+
+	.vd-choice-field .vd-more-field.v-text-field {
+
+		// default more text field empty
+		&.v-text-field--enclosed .v-input__control .v-input__slot {
+			height: 40px !important;
+			min-height: 40px !important;
+
+			.v-text-field__slot input {
+				color: $vd-accent !important;
+
+				&::placeholder {
+					color: $vd-accent !important;
+				}
+			}
+
+			fieldset {
+				border-color: $vd-accent !important;
+				border-radius: 4px !important;
+				border-width: 1px !important;
+			}
+		}
+
+		// more text with value (active)
+		&.vd-more-field-active.v-text-field--enclosed .v-input__control .v-input__slot {
+			background-color: $vd-accent !important;
+
+			.v-text-field__slot input {
+				color: white !important;
+			}
+		}
+	}
+</style>
