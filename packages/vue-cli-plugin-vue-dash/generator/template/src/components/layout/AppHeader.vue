@@ -1,32 +1,41 @@
 <template>
 	<VAppBar
+		wrap
 		align-center
-		height="75"
-		class="no-flex"
+		height="80"
+		class="app-header white no-flex"
 	>
 		<RouterLink
 			<% if (i18n) { %>:aria-label="$t('components.layout.appHeader.logoBtn.label')"<% } else { %>aria-label="Accueil"<% } %>
 			<% if (i18n) { %>:to="$t('components.layout.appHeader.logoBtn.link')"<% } else { %>:to="{
 				name: 'home'
 			}"<% } %>
+			:disabled="maintenance"
 			exact
-			class="logo-link"
+			class="app-logo-link"
 		>
 			<img
 				<% if (i18n) { %>:alt="$t('components.layout.appHeader.logoBtn.alt')"<% } else { %>alt="l'Assurance Maladie"<% } %>
-				src="../../assets/logo.svg"
-				class="d-block mx-auto logo"
+				src="@/assets/logo.svg"
+				class="d-block app-logo"
 			>
 		</RouterLink>
 
-		<VDivider
-			vertical
-			inset
-		/>
+		<VLayout
+			align-center
+			class="app-header-title pr-1 py-2"
+		>
+			<VDivider
+				vertical
+				inset
+			/>
 
-		<h1 class="title grey--text text--darken-3 ml-4">
-			<% if (i18n) { %>{{ $t('components.layout.appHeader.title') }}<% } else { %>Projet <%= name %><% } %>
-		</h1>
+			<slot name="title">
+				<VToolbarTitle class="title ml-4 ml-1">
+					<% if (i18n) { %>{{ $t('components.layout.appHeader.title') }}<% } else { %>Projet <%= name %><% } %>
+				</VToolbarTitle>
+			</slot>
+		</VLayout>
 
 		<HeaderMenu v-if="!maintenance" />
 	</VAppBar>
@@ -46,7 +55,7 @@
 			HeaderMenu
 		}
 	})
-	export default class Header extends Vue {
+	export default class AppHeader extends Vue {
 		get maintenance() {
 			return MAINTENANCE === 'true';
 		}
@@ -54,16 +63,29 @@
 </script>
 
 <style lang="scss" scoped>
-	.logo-link {
+	.app-header ::v-deep .v-toolbar__content {
+		padding: 0;
+	}
+
+	.app-header-title {
+		height: 100%;
+	}
+
+	.app-logo-link {
+		height: 100%;
+		display: flex;
 		min-width: 155px;
 
-		&:hover {
+		&:not([disabled]):hover {
 			background: #eee;
+		}
+
+		&[disabled] {
+			pointer-events: none;
 		}
 	}
 
-	.logo {
-		height: 75px;
-		padding: 8px;
+	.app-logo {
+		flex: 1;
 	}
 </style>

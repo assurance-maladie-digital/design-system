@@ -6,16 +6,13 @@ import Vuetify from 'vuetify/lib';
 import fr from 'vuetify/src/locale/fr';
 
 // Import theme colors
-import colors from '@/theme/colors';
+import { themeColors } from '@/theme/colors';
 
 Vue.use(Vuetify);
 
-export default new Vuetify({
+export const vuetify = new Vuetify({
 	theme: {
-		// Destructure colors object in theme
-		themes: {
-			...colors
-		}
+		themes: themeColors
 	},
 	icons: {
 		iconfont: 'mdiSvg'

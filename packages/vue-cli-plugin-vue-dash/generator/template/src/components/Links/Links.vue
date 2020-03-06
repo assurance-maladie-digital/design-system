@@ -7,7 +7,7 @@
 			{{ title }}
 		</h3>
 
-		<ul class="links">
+		<ul>
 			<li
 				v-for="link in links"
 				:key="link.id"
@@ -41,9 +41,3 @@
 	@Component
 	export default class Links extends Props {}
 </script>
-
-<style lang="scss" scoped>
-	.links {
-		list-style-type: disc;
-	}
-</style>
