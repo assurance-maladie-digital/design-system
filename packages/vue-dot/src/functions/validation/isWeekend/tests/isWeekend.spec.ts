@@ -1,16 +1,16 @@
-import { isWeekEnd } from '../';
+import { isWeekend } from '../';
 
 // Tests
-describe('isWeekEnd', () => {
+describe('isWeekend', () => {
 	it('returns true if the day is in a weekend', () => {
 		const date = '2019-10-26'; // Saturday
 
-		expect(isWeekEnd(date)).toBe(true);
+		expect(isWeekend(date)).toBe(true);
 	});
 
 	it('returns false if the day isn\'t in a weekend', () => {
 		const date = '2019-10-21'; // Monday
 
-		expect(isWeekEnd(date)).toBe(false);
+		expect(isWeekend(date)).toBe(false);
 	});
 });

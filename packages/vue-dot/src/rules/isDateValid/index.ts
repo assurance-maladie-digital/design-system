@@ -2,7 +2,7 @@ import { ruleMessage } from '../../helpers/ruleMessage';
 
 import { defaultErrorMessages } from './locales';
 
-import { checkIfDateValid } from './checkIfDateValid';
+import { isDateValid as checkIfDateValid } from '../../functions/validation/isDateValid';
 
 /** Check that the date is valid (expects ##/##/#### format) */
 export function isDateValidFn(errorMessages = defaultErrorMessages) {
@@ -12,7 +12,11 @@ export function isDateValidFn(errorMessages = defaultErrorMessages) {
 			return true;
 		}
 
-		return checkIfDateValid(value, errorMessages) || ruleMessage(errorMessages, 'default');
+		const validationResult = checkIfDateValid(value);
+		// Convert validation result to proper error message
+		const errorMessage = typeof validationResult === 'string' ? ruleMessage(errorMessages, validationResult) : true;
+
+		return errorMessage || ruleMessage(errorMessages, 'default');
 	};
 }
 

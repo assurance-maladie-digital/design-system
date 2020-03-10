@@ -1,5 +1,5 @@
 /**
- * Get filename from Content-Disposition header
+ * Returns filename from Content-Disposition header
  *
  * @param {string} header The header to extract the filename from
  * @param {string} [fallback] A fallback filename (if not provided, returns empty string)
