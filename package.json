@@ -23,7 +23,7 @@
 		"@typescript-eslint/parser": "2.19.2",
 		"@vue/eslint-config-typescript": "5.0.1",
 		"copy-webpack-plugin": "5.1.1",
-		"dayjs": "1.8.20",
+		"dayjs": "1.8.23",
 		"deepmerge": "4.2.2",
 		"eslint": "6.8.0",
 		"eslint-plugin-jsdoc": "21.0.0",
