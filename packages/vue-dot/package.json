@@ -47,23 +47,23 @@
 		"vuex": "^3.1.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.8.4",
-		"@babel/preset-env": "^7.8.4",
+		"@babel/core": "7.8.4",
+		"@babel/preset-env": "7.8.4",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.48",
-		"@mdi/js": "^4.9.95",
-		"@vue/cli-plugin-babel": "^4.2.2",
-		"@vue/cli-plugin-eslint": "^4.2.2",
-		"@vue/cli-plugin-typescript": "^4.2.2",
-		"@vue/cli-plugin-unit-jest": "^4.2.2",
-		"@vue/cli-service": "^4.2.2",
+		"@mdi/js": "4.9.95",
+		"@vue/cli-plugin-babel": "4.2.2",
+		"@vue/cli-plugin-eslint": "4.2.2",
+		"@vue/cli-plugin-typescript": "4.2.2",
+		"@vue/cli-plugin-unit-jest": "4.2.2",
+		"@vue/cli-service": "4.2.2",
 		"@vue/test-utils": "1.0.0-beta.31",
 		"babel-core": "7.0.0-bridge.0",
-		"core-js": "^3.6.4",
-		"json-to-scss": "^1.5.0",
-		"sass": "^1.25.0",
-		"sass-loader": "^8.0.2",
-		"vue-cli-plugin-vuetify": "^2.0.4",
-		"vuetify-loader": "^1.4.3"
+		"core-js": "3.6.4",
+		"json-to-scss": "1.5.0",
+		"sass": "1.25.0",
+		"sass-loader": "8.0.2",
+		"vue-cli-plugin-vuetify": "2.0.4",
+		"vuetify-loader": "1.4.3"
 	},
 	"lint-staged": {
 		"*.{ts,vue}": [
