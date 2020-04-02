@@ -16,7 +16,7 @@
 		"build:lerna": "lerna run build --stream"
 	},
 	"devDependencies": {
-		"@types/fs-extra": "8.0.1",
+		"@types/fs-extra": "8.1.0",
 		"@types/jest": "24.9.1",
 		"@types/node": "12.12.27",
 		"@typescript-eslint/eslint-plugin": "2.19.2",
