@@ -21,7 +21,7 @@
 		"@types/node": "12.12.27",
 		"@typescript-eslint/eslint-plugin": "2.19.2",
 		"@typescript-eslint/parser": "2.19.2",
-		"@vue/eslint-config-typescript": "5.0.1",
+		"@vue/eslint-config-typescript": "5.0.2",
 		"copy-webpack-plugin": "5.1.1",
 		"dayjs": "1.8.20",
 		"deepmerge": "4.2.2",
