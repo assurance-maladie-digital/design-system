@@ -1,0 +1,16 @@
+{
+	// Extend root config
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"types": [
+			"vuepress-types"
+		]
+	},
+	"include": [
+		".vuepress/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

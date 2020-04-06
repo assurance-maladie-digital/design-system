@@ -1,0 +1,29 @@
+{
+	"private": true,
+	"name": "@cnamts/docs",
+	"version": "2.0.0-alpha.50",
+	"description": "Documentation for our Design System",
+	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Dylan Broussard",
+		"email": "me@deraw.dev"
+	},
+	"scripts": {
+		"dev": "vuepress dev",
+		"build": "vuepress build"
+	},
+	"dependencies": {
+		"@cnamts/vue-dot": "^2.0.0-alpha.50",
+		"vuepress": "^1.4.0"
+	},
+	"devDependencies": {
+		"vuepress-plugin-typescript": "^0.2.0",
+		"vuepress-types": "^0.9.0"
+	},
+	"gitHead": "12f20cd67e2336f2d9990f32e0dfc931a089c707"
+}
