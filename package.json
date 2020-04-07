@@ -36,7 +36,7 @@
 		"monorepo-run": "0.4.2",
 		"ts-jest": "24.3.0",
 		"ts-node": "8.8.2",
-		"typescript": "3.7.5",
+		"typescript": "3.8.3",
 		"vue": "2.6.11",
 		"vue-class-component": "7.2.3",
 		"vue-template-compiler": "2.6.11",
