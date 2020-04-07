@@ -48,7 +48,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",
-		"@babel/preset-env": "7.9.0",
+		"@babel/preset-env": "7.9.5",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.48",
 		"@mdi/js": "5.0.45",
 		"@vue/cli-plugin-babel": "4.3.1",
