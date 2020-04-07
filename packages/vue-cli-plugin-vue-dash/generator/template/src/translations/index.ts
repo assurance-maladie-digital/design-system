@@ -1,5 +1,3 @@
-const translations = [
+export const supportedLanguages = [
 	'fr'
 ];
-
-export default translations;
