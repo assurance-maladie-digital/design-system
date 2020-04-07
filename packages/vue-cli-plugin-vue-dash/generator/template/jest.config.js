@@ -22,7 +22,7 @@ module.exports = {
 		'!**/node_modules/**',
 		'!**/*.d.ts',
 		'!**/decorators.ts',
-		'!**/router.ts',
+		'!**/router/**',
 		'!**/main.ts',
 		'!**/theme/**',
 		'!**/plugins/**',
@@ -38,7 +38,6 @@ module.exports = {
 	globals: {
 		API_URL: 'http://localhost:8080',
 		MAINTENANCE: 'false',
-		MAINTENANCE_CODE: '',
 		MAINTENANCE_TITLE: '',
 		MAINTENANCE_MESSAGE: ''
 	}

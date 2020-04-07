@@ -1,0 +1,29 @@
+/* Default, global styles */
+* {
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-size: 100%;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	line-height: 1.25;
+}
+
+#app {
+	width: 100%;
+	display: flex;
+	min-height: 100vh;
+	background: #eee;
+	flex-direction: column;
+	align-items: center;
+}

@@ -8,7 +8,10 @@ module.exports = {
 		devtool: 'source-map',
 		optimization: {
 			splitChunks: {
-				chunks: 'all'
+				chunks: 'all',
+				// Remove default ~ from filename
+				// because it's blocked by firewall
+				automaticNameDelimiter: '.'
 			}
 		},
 		performance: {

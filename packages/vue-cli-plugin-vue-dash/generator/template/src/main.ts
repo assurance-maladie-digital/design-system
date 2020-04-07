@@ -1,15 +1,24 @@
 import Vue from 'vue';
 
+// Register class components hooks
+import Component from 'vue-class-component';
+
+Component.registerHooks([
+	'beforeRouteEnter',
+	'beforeRouteLeave',
+	'beforeRouteUpdate'
+]);
+
 // Import plugins
-import vuetify from './plugins/vuetify';
+import { vuetify } from './plugins/vuetify';
 import './plugins/vue-dot';
 import './plugins/webfontloader';
 
 // Import application parts
 import App from './App.vue';
-import router from './router';
-import store from './store';<% if (i18n) { %>
-import i18n from './i18n';<% } %>
+import { router } from './router';
+import { store } from './store';<% if (i18n) { %>
+import { i18n } from './i18n';<% } %>
 
 // Register global components
 import './components/global';
