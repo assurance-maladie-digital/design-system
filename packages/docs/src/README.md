@@ -1,3 +1,5 @@
-# Hello World
+---
+layout: Home
+---
 
-<Test />
+# Hello World

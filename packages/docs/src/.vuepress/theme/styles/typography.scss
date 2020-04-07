@@ -7,18 +7,41 @@ h6 {
 	display: inline-block;
 }
 
-h1 {
-	font-size: 2.5rem;
-	font-weight: 300;
-	line-height: 2.5rem;
-	letter-spacing: 0.0073529412em;
+.v-content {
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 3.125rem;
+		margin-bottom: 10px;
+	}
+
+	h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 8px;
+	}
+
+	h3 {
+		font-size: 1.35rem;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	h2 + h3 {
+		margin-top: 0;
+	}
 }
+
+// .content h4 {
+// 	font-size: 1.15rem;
+// 	margin-bottom: 5px;
+// 	margin-top: 15px;
+// }
 
 .header-anchor {
 	transition: opacity .15s;
 	text-decoration: none;
 	font-size: .85em;
-	float: left;
 	margin-left: -.75em;
 	margin-top: .125em;
 	padding-right: .23em;
@@ -26,7 +49,25 @@ h1 {
 	position: absolute;
 }
 
+.header-anchor:focus {
+	outline: 0;
+}
+
+h1 .header-anchor {
+	margin-top: 0;
+	font-size: 2rem;
+	margin-left: -.7em;
+}
+
 [id]:hover > .header-anchor,
 .header-anchor:focus {
 	opacity: 1;
+}
+
+.v-application {
+	p code {
+		box-shadow: none;
+		color: #c0341d !important;
+		background-color: #fbe5e1 !important;
+	}
 }

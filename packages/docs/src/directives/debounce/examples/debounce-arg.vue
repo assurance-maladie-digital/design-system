@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<VTextField
-			v-debounce="e => search = e"
+			v-debounce.2000="e => search = e"
 			:value="search"
 			clearable
 			class="form-input"

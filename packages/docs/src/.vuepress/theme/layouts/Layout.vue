@@ -1,13 +1,19 @@
 <template>
 	<div class="theme-container">
 		<VApp>
+			<VNavigationDrawer
+				app
+				fixed
+				clipped
+			/>
+
 			<VContent>
-				<PageCard>
+				<PageCard width="1200px">
 					<Content slot-key="title" />
 
-					<p class="title font-weight-thin">
-						<Content class="title font-weight-thin" slot-key="description" />
-					</p>
+					<Content class="title mb-8" slot-key="description" />
+
+					<VDivider class="mb-5" />
 
 					<Content />
 				</PageCard>

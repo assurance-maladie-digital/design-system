@@ -1,11 +1,11 @@
 <template>
-	<div>
+	<div class="debounce-native-ex">
 		<label class="form-input-label">
 			Rechercher
 
 			<input
 				v-model.lazy="search"
-				v-debounce="1000"
+				v-debounce
 				class="form-input"
 			>
 		</label>
@@ -31,25 +31,40 @@
 
 <style scoped>
 	.form-input-label {
-		display: flex;
-		font-weight: 700;
-		font-size: 1.15rem;
+		color: #ccc;
+		display: inline-flex;
 		flex-direction: column;
+		/*
+		 Use opposite colors with mix-blend-mode
+		 to support dark mode
+		*/
+		mix-blend-mode: difference;
 	}
 
 	.form-input {
-		outline: 0;
 		padding: 8px;
-		margin-top: 8px;
+		margin-top: 2px;
 		font-size: 1rem;
 		font-weight: 400;
 		border-radius: 2px;
-		border: 1px solid rgba(0, 0, 0, .42);
+		outline-color: #ffcb9c;
+		color: hsla(0, 0%, 100%, .8);
+		border: 1px solid hsla(0, 0%, 100%, .7);
+	}
+
+	.form-input-label::selection {
+		color: #fff;
+		background-color: #ad9269;
+	}
+
+	.form-input-label::-moz-selection {
+		color: #fff;
+		background-color: #ad9269;
 	}
 
 	.form-input:focus {
-		color: #003463;
-		border-color: #003463;
+		color: #fff;
+		border-color: #ffcb9c;
 	}
 
 	p {

@@ -51,6 +51,9 @@ table.v-table thead th,
 	font-size: 1rem !important;
 }
 
+// TODO: Improve font loading
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
 .v-application {
 	.display-4,
 	.display-3,
@@ -65,6 +68,12 @@ table.v-table thead th,
 	.caption,
 	.overline {
 		font-family: 'Open Sans', sans-serif !important;
+	}
+
+	.v-btn,
+	.v-tab,
+	.font-weight-medium {
+		font-weight: 600;
 	}
 }
 
