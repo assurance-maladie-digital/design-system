@@ -1,0 +1,73 @@
+// Override some Vuetify styles
+
+// Reset max-width for Vuetify ripples
+.v-ripple__container,
+.v-ripple__container *,
+.v-tabs__container,
+.v-input--selection-controls__ripple,
+.v-slide-group__content,
+.v-simple-checkbox svg,
+.no-max-width {
+	max-width: none;
+}
+
+// Fix color contrast
+.theme--light.v-input--is-disabled .v-label,
+.theme--light.v-icon.v-icon--disabled,
+.theme--light.v-list .v-list--disabled {
+	color: #767676 !important
+}
+
+.theme--light.v-btn.v-btn--disabled .v-icon {
+	color: #949494 !important
+}
+
+.v-tabs-bar .v-tabs__item--disabled {
+	color: #333 !important
+}
+
+.theme--light.v-btn.v-btn--disabled {
+	color: #646464 !important
+}
+
+// Reset Vuetify font-size
+.v-btn,
+.v-tabs__div,
+.body-1 {
+	font-size: .85rem !important;
+}
+
+table.v-table tbody td,
+table.v-table thead th,
+.v-datatable__actions,
+.body-2 {
+	font-size: .8rem;
+}
+
+.v-input,
+.v-label,
+.v-list__tile,
+.subtitle-1 {
+	font-size: 1rem !important;
+}
+
+.v-application {
+	.display-4,
+	.display-3,
+	.display-2,
+	.display-1,
+	.headline,
+	.title,
+	.subtitle-1,
+	.subtitle-2,
+	.body-1,
+	.body-2,
+	.caption,
+	.overline {
+		font-family: 'Open Sans', sans-serif !important;
+	}
+}
+
+.v-data-table__empty-wrapper {
+	color: #717171 !important;
+}

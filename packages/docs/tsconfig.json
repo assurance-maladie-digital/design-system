@@ -8,7 +8,7 @@
 		]
 	},
 	"include": [
-		".vuepress/**/*.ts"
+		"src/.vuepress/**/*.ts"
 	],
 	"exclude": [
 		"node_modules"

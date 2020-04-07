@@ -10,6 +10,8 @@ import VueDot from '@cnamts/vue-dot';
 
 import VueTheMask from 'vue-the-mask';
 
+import './theme/styles/index.scss';
+
 const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 	// Register plugins
 	Vue.use(Vuetify);

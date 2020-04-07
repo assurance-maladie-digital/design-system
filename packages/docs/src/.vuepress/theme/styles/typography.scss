@@ -1,0 +1,32 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display: inline-block;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 300;
+	line-height: 2.5rem;
+	letter-spacing: 0.0073529412em;
+}
+
+.header-anchor {
+	transition: opacity .15s;
+	text-decoration: none;
+	font-size: .85em;
+	float: left;
+	margin-left: -.75em;
+	margin-top: .125em;
+	padding-right: .23em;
+	opacity: 0;
+	position: absolute;
+}
+
+[id]:hover > .header-anchor,
+.header-anchor:focus {
+	opacity: 1;
+}
