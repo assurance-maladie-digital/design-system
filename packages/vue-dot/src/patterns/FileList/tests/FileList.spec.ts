@@ -12,7 +12,6 @@ const files = [{
 	id: '0',
 	title: 'test',
 	state: 'success'
-
 }];
 
 // Tests
