@@ -27,6 +27,7 @@
 		"types/*"
 	],
 	"main": "./dist/vue-dot.common.js",
+	"module": "./src/index.ts",
 	"types": "types/index.d.ts",
 	"scripts": {
 		"pre-commit": "lint-staged",
