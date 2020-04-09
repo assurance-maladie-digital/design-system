@@ -53,7 +53,7 @@
 			},
 			/** The text that will be copied to the clipboard */
 			textToCopy: {
-				type: String,
+				type: [Function, String],
 				required: true
 			},
 			/** Show or hide the tooltip, default is show (true) */
@@ -76,7 +76,7 @@
 	 * shows a tooltip
 	 */
 	@Component
-	export default class Copy extends MixinsDeclaration {
+	export default class CopyBtn extends MixinsDeclaration {
 		// Locales
 		locales = locales;
 
