@@ -19,12 +19,9 @@ export const debounce: DirectiveOptions = {
 		}
 
 		const modifiers = Object.keys(binding.modifiers);
-		// If we have a modifier, it's the interval for the debounce function
-		// eg. v-debounce.1000="callback"
 
-		// else, it's the default usage and the value is the interval variable
-		// eg. v-debounce="1000"
-		const value: string = modifiers.length > 0 ? modifiers[0] : binding.value;
+		// The first modifier is the time
+		const time = modifiers[0] !== undefined ? parseInt(modifiers[0], 10) : undefined;
 
 		// Change debounce only if interval has changed
 		el.oninput = debounceFn(() => {
@@ -38,6 +35,6 @@ export const debounce: DirectiveOptions = {
 				// Else, fire a change event
 				el.dispatchEvent(new Event('change'));
 			}
-		}, parseInt(value, 10));
+		}, time);
 	}
 };
