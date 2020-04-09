@@ -76,7 +76,7 @@
 	 * shows a tooltip
 	 */
 	@Component
-	export default class Copy extends MixinsDeclaration {
+	export default class CopyBtn extends MixinsDeclaration {
 		// Locales
 		locales = locales;
 
