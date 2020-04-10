@@ -7,7 +7,7 @@ import '@cnamts/vue-dot/dist/vue-dot.css';
 import VueDot from '@cnamts/vue-dot';
 
 // Import the theme styles
-import '@/theme/theme.scss';
+import '@/theme/styles/index.scss';
 
 // Register v-mask directive
 import VueTheMask from 'vue-the-mask';

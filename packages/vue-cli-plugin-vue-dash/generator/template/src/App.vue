@@ -21,7 +21,7 @@
 			</transition>
 		</VContent>
 
-		<AppFooter />
+		<AppFooter v-if="!maintenance" />
 	</VApp>
 </template>
 
@@ -34,6 +34,9 @@
 	// Static import for faster rendering
 	import { AppHeader, AppToolbar, AppFooter } from '@/components/layout';
 
+	// Env var
+	declare const MAINTENANCE: string;
+
 	/** App is the main component */
 	@Component({
 		components: {
@@ -43,6 +46,10 @@
 		}
 	})
 	export default class App extends Vue {
+		get maintenance() {
+			return MAINTENANCE === 'true';
+		}
+
 		/** The meta informations of the route */
 		/* istanbul ignore next */
 		@Meta

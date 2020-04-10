@@ -36,7 +36,7 @@
 	declare const MAINTENANCE: string;
 
 	@Component
-	export default class Toolbar extends Vue {
+	export default class AppToolbar extends Vue {
 		<% if (i18n) { %>get links() {
 			return this.$t('components.layout.appToolbar.links') as unknown as ToolbarLink[];
 		}<% } else { %>links: ToolbarLink[] = [

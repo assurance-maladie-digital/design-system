@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
  *
  * @param {string} [date] The date to format
  * @param {string} [format=DD/MM/YYYY] The format to parse the date to
- * @returns {string} The formated date
+ * @returns {string} The formatted date
  */
 export default function formatDate(date: string | undefined, format = 'DD/MM/YYYY'): string {
 	// If no date is provided, return empty string

@@ -1,9 +1,10 @@
 <template>
 	<VLayout
 		tag="footer"
+		wrap
 		align-center
 		justify-center
-		class="footer white px-3 py-2"
+		class="footer px-3 py-2"
 		role="footer"
 	>
 		<span class="grey lighten-4 px-3 py-1 secondary--text">
@@ -22,7 +23,7 @@
 
 	/** The application footer */
 	@Component
-	export default class Footer extends Vue {
+	export default class AppFooter extends Vue {
 		version = process.env.VUE_APP_VERSION;
 	}
 </script>
@@ -30,6 +31,7 @@
 <style lang="scss" scoped>
 	.footer {
 		flex: none;
+		background: #fafafa;
 		box-shadow: 0 10px 10px 10px rgba(0, 0, 0, .2);
 	}
 </style>
