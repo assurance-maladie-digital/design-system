@@ -1,12 +1,17 @@
 import { isDateValid } from '../';
 
-const validDate = '14/09/2019';
-const invalidDate = '99/99/9999';
-
 // Tests
 describe('isDateValid', () => {
 	it('returns an error when the date isn\'t valid', () => {
-		expect(typeof isDateValid(invalidDate)).toBe('string');
+		const date = '99/99/9999';
+
+		expect(typeof isDateValid(date)).toBe('string');
+	});
+
+	it('returns an error when the format is invalid', () => {
+		const date = '2020-04-16';
+
+		expect(typeof isDateValid(date)).toBe('string');
 	});
 
 	it('returns an error when the day doesn\'t match the month', () => {
@@ -34,6 +39,8 @@ describe('isDateValid', () => {
 	});
 
 	it('returns true when the date is valid', () => {
-		expect(isDateValid(validDate)).toBe(true);
+		const date = '14/09/2019';
+
+		expect(isDateValid(date)).toBe(true);
 	});
 });

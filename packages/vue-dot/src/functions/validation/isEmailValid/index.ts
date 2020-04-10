@@ -2,7 +2,7 @@
 export const EMAIL_REGEXP = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 /**
- * Checks if the email is valid
+ * Check if the email is valid
  * (using https://emailregex.com/)
  *
  * @param {string} email The email to check

@@ -18,7 +18,7 @@ export enum DateErrorCodes {
 }
 
 /**
- * Checks if the date is valid
+ * Check if the date is valid
  * (exists in the calendar and has DD/MM/YYYY format)
  *
  * @param {string} date The date to check

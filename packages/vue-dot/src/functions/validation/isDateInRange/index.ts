@@ -4,7 +4,7 @@ import isBetween from 'dayjs/plugin/isBetween';
 dayjs.extend(isBetween);
 
 /**
- * Checks that a date is in a "positive" range
+ * Check that a date is in a "positive" range
  *
  * @param {string} date The date to test
  * @param {string} startDate The start of the range

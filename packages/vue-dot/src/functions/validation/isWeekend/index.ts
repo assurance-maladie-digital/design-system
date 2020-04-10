@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 export const WEEKEND_DAYS = ['Saturday', 'Sunday'];
 
 /**
- * Checks if the date is saturday or sunday
+ * Check if the date is saturday or sunday
  *
  * @param {string} date The date to check (must be a valid dayjs format, eg. YYYY-MM-DD)
  * @returns {boolean} Is the date in a weekend

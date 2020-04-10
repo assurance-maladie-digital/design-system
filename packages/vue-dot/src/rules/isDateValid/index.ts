@@ -1,11 +1,17 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
+import { ValidationRule, ErrorMessages } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
 import { isDateValid as checkIfDateValid } from '../../functions/validation/isDateValid';
 
-/** Check that the date is valid (expects ##/##/#### format) */
-export function isDateValidFn(errorMessages = defaultErrorMessages) {
+/**
+ * Check that the date is valid (expects ##/##/#### format)
+ *
+ * @param {ErrorMessages} [errorMessages] Custom error messages
+ * @returns {ValidationRule} Validation result
+ */
+export function isDateValidFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
 	return (value: string) => {
 		// If the value is empty, return true (valid)
 		if (!value) {

@@ -1,10 +1,16 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
+import { ValidationRule, ErrorMessages } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
-/** Check that the field exceeds the min length */
-export function minLengthFn(min: number, errorMessages = defaultErrorMessages) {
-	// Return the validation function
+/**
+ * Check that the field exceeds the min length
+ *
+ * @param {number} min Minimum length
+ * @param {ErrorMessages} [errorMessages] Custom error messages
+ * @returns {ValidationRule} Validation result
+ */
+export function minLengthFn(min: number, errorMessages: ErrorMessages<number> = defaultErrorMessages): ValidationRule {
 	return (value: string) => {
 		// If the value is empty, return true (valid)
 		if (!value) {
