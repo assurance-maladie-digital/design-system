@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="vd-copy-btn">
 		<VMenu
 			v-model="tooltip"
 			v-bind="options.menu"
@@ -13,7 +13,7 @@
 					@click="copy"
 				>
 					<slot name="icon">
-						<VIcon>
+						<VIcon v-bind="options.icon">
 							{{ copyIcon }}
 						</VIcon>
 					</slot>
@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -51,9 +51,12 @@
 				type: String,
 				required: true
 			},
-			/** The text that will be copied to the clipboard */
+			/**
+			 * The text that will be copied to the clipboard,
+			 * or a function that will return it
+			 */
 			textToCopy: {
-				type: [Function, String],
+				type: [Function, String] as PropType<() => string | string>,
 				required: true
 			},
 			/** Show or hide the tooltip, default is show (true) */
@@ -88,8 +91,17 @@
 
 		/** When the copy button is clicked */
 		copy() {
+			let toCopy: string;
+
+			// Get text to copy
+			if (typeof this.textToCopy === 'function') {
+				toCopy = this.textToCopy();
+			} else {
+				toCopy = this.textToCopy;
+			}
+
 			// Copy the text to the clipboard
-			copyToClipboard(this.textToCopy);
+			copyToClipboard(toCopy);
 
 			if (this.showTooltip) {
 				// Hide tooltip after tooltipDuration delay

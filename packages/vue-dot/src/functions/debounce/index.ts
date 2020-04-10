@@ -5,7 +5,7 @@
  * @param {number} [time=500] The interval of the debounce in milliseconds
  */
 export function debounce(callback: (args: IArguments) => void, time: number = 500): () => void {
-	let interval: NodeJS.Timeout | null;
+	let interval: number | null;
 
 	return () => {
 		if (interval) {
@@ -13,7 +13,7 @@ export function debounce(callback: (args: IArguments) => void, time: number = 50
 		}
 
 		// tslint:disable-next-line:only-arrow-functions
-		interval = setTimeout(function() {
+		interval = window.setTimeout(function() {
 			interval = null;
 
 			callback(arguments);

@@ -62,7 +62,7 @@ describe('debounce', () => {
 		const spy = jest.fn();
 
 		const testComponent = createTestComponent(
-			'<input v-model="value" v-debounce="100">',
+			'<input v-model="value" v-debounce>',
 			spy
 		);
 
@@ -77,11 +77,11 @@ describe('debounce', () => {
 		timeoutTest(input, wrapper, spy);
 	});
 
-	it('works correctly if binded to an element and the input is inside (eg. VTextField)', () => {
+	it('works correctly if not directly binded to an input (eg. VTextField)', () => {
 		const spy = jest.fn();
 
 		const testComponent = createTestComponent(
-			'<div v-debounce.1000="e => value = e"><input :value="value" /></div>',
+			'<div v-debounce="e => value = e"><input :value="value" /></div>',
 			spy
 		);
 
@@ -97,6 +97,25 @@ describe('debounce', () => {
 	});
 
 	it('works correctly if the binding is a function', () => {
+		const spy = jest.fn();
+
+		const testComponent = createTestComponent(
+			'<input v-debounce="e => value = e" :value="value" />',
+			spy
+		);
+
+		const wrapper = mount(testComponent);
+
+		const input = wrapper.find('input') as unknown as HTMLInputElement;
+
+		input.value = 'b';
+
+		wrapper.trigger('input');
+
+		timeoutTest(input, wrapper, spy);
+	});
+
+	it('works correctly if a different delay is provided', () => {
 		const spy = jest.fn();
 
 		const testComponent = createTestComponent(
@@ -119,7 +138,7 @@ describe('debounce', () => {
 		const spy = jest.fn();
 
 		const testComponent = createTestComponent(
-			'<div v-debounce="100" />',
+			'<div v-debounce />',
 			spy
 		);
 

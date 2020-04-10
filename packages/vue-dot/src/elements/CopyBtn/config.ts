@@ -6,7 +6,9 @@ export const config = {
 		contentClass: 'vd-copy-tooltip-menu white--text body-2 ml-2'
 	},
 	btn: {
-		icon: true,
-		class: 'grey--text text--darken-3'
+		icon: true
+	},
+	icon: {
+		color: 'grey darken-3'
 	}
 };
