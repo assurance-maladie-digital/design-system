@@ -188,6 +188,7 @@
 			props: [...propProps],
 			slots: [
 				{
+					text: 'Nom',
 					value: 'name',
 					class: 'xs12'
 				},

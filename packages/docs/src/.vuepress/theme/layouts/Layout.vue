@@ -5,11 +5,13 @@
 				app
 				fixed
 				clipped
-			/>
+			>
+				<Sitemap :items="sidebarItems" />
+			</VNavigationDrawer>
 
 			<VContent>
 				<PageCard width="1200px">
-					<Content slot-key="title" />
+					<Content class="mb-4" slot-key="title" />
 
 					<Content class="title mb-8" slot-key="description" />
 
@@ -21,6 +23,18 @@
 		</VApp>
 	</div>
 </template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	@Component
+	export default class Layout extends Vue {
+		get sidebarItems() {
+			return (this as any).$site.themeConfig.sidebar;
+		}
+	}
+</script>
 
 <style lang="scss">
 	#app {

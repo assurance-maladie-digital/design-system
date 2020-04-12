@@ -4,6 +4,78 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
+	themeConfig: {
+		sidebar: [
+			// {
+			// 	title: 'Commencer',
+			// 	icon: 'forward-arrow',
+			// 	to: '/fr/guide/'
+			// },
+			// {
+			// 	title: 'Thèmes personnalisés',
+			// 	icon: 'painter-palette',
+			// 	to: '/fr/guide/themes/'
+			// },
+			// {
+			// 	title: 'Contribuer',
+			// 	icon: 'heart',
+			// 	to: '/fr/contribuer/'
+			// },
+			// {
+			// 	title: 'Feuille de route',
+			// 	icon: 'clock',
+			// 	to: '/fr/feuille-de-route/'
+			// },
+			// {
+			// 	title: 'Composants IU',
+			// 	icon: 'dashboard',
+			// 	group: 'composants',
+			// 	items: [
+			// 		{
+			// 			title: 'SvgIcon',
+			// 			to: '/fr/composants/svg-icon/'
+			// 		},
+			// 		{
+			// 			title: 'LangBtn',
+			// 			to: '/fr/composants/lang-btn/'
+			// 		},
+			// 		{
+			// 			title: 'DatePicker',
+			// 			to: '/fr/composants/date-picker/'
+			// 		},
+			// 		{
+			// 			title: 'DataList',
+			// 			to: '/fr/composants/data-list/'
+			// 		}
+			// 	]
+			// },
+			{
+				title: 'Directives',
+				group: 'directives',
+				items: [
+					{
+						title: 'Debounce',
+						to: '/directives/debounce/'
+					}
+				]
+			// },
+			// {
+			// 	title: 'Vuetify',
+			// 	icon: 'vuetify',
+			// 	href: 'https://vuetifyjs.com/en/components/api-explorer'
+			},
+			{
+				title: 'Éléments',
+				group: 'elements',
+				items: [
+					{
+						title: 'CopyBtn',
+						to: '/elements/copy-btn'
+					}
+				]
+			}
+		]
+	},
 	chainWebpack(config) {
 		// Fix sass incompatibility,
 		// see https://github.com/vuejs/vuepress/issues/2148

@@ -8,9 +8,11 @@
 	</section>
 </template>
 
-<script>
-	export default {
-		name: 'DocApi',
+<script lang="ts">
+	import Vue from 'vue';
+	import Component, { mixins } from 'vue-class-component';
+
+	const Props = Vue.extend({
 		props: {
 			lang: {
 				type: String,
@@ -20,9 +22,16 @@
 				type: Array,
 				default: () => ([])
 			},
-			api: Object
+			api: {
+				type: Object,
+				default: () => ({})
+			}
 		}
-	}
+	});
+
+	const MixinsDeclaration = mixins(Props);
+
+	export default class DocApi extends MixinsDeclaration {}
 </script>
 
 <style lang="scss" scoped>
