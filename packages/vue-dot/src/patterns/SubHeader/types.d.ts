@@ -1,6 +1,6 @@
-import { ListItem } from '../../elements/DataList/types';
+import { IDataListItem } from '../../elements/DataList/types';
 
 export interface IDataList {
 	title?: string;
-	items: ListItem[];
+	items: IDataListItem[];
 }
