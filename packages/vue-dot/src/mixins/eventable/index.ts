@@ -3,8 +3,8 @@ import Component, { mixins } from 'vue-class-component';
 
 import { Options } from '../customizable';
 
-import { isWeekEnd } from '../../functions/isWeekEnd';
-import { isDateInRange } from '../../functions/isDateInRange';
+import { isWeekend } from '../../functions/validation/isWeekend';
+import { isDateInRange } from '../../functions/validation/isDateInRange';
 
 const Props = Vue.extend({
 	props: {
@@ -66,7 +66,7 @@ export class Eventable extends MixinsDeclaration {
 			const weekEndColor = this.$vuetify.theme.dark ? 'grey darken-1' : 'grey lighten-1';
 
 			// Return a string or false (no event)
-			return isWeekEnd(date) ? `vd-custom-event ${weekEndColor}` : false;
+			return isWeekend(date) ? `vd-custom-event ${weekEndColor}` : false;
 		}
 
 		// By default, return false
