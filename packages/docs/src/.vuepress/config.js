@@ -26,29 +26,6 @@ module.exports = {
 			// 	icon: 'clock',
 			// 	to: '/fr/feuille-de-route/'
 			// },
-			// {
-			// 	title: 'Composants IU',
-			// 	icon: 'dashboard',
-			// 	group: 'composants',
-			// 	items: [
-			// 		{
-			// 			title: 'SvgIcon',
-			// 			to: '/fr/composants/svg-icon/'
-			// 		},
-			// 		{
-			// 			title: 'LangBtn',
-			// 			to: '/fr/composants/lang-btn/'
-			// 		},
-			// 		{
-			// 			title: 'DatePicker',
-			// 			to: '/fr/composants/date-picker/'
-			// 		},
-			// 		{
-			// 			title: 'DataList',
-			// 			to: '/fr/composants/data-list/'
-			// 		}
-			// 	]
-			// },
 			{
 				title: 'Directives',
 				group: 'directives',
@@ -58,11 +35,6 @@ module.exports = {
 						to: '/directives/debounce/'
 					}
 				]
-			// },
-			// {
-			// 	title: 'Vuetify',
-			// 	icon: 'vuetify',
-			// 	href: 'https://vuetifyjs.com/en/components/api-explorer'
 			},
 			{
 				title: 'Éléments',
@@ -71,6 +43,14 @@ module.exports = {
 					{
 						title: 'CopyBtn',
 						to: '/elements/copy-btn'
+					},
+					{
+						title: 'DataList',
+						to: '/elements/data-list'
+					},
+					{
+						title: 'HeaderLoading',
+						to: '/elements/header-loading'
 					}
 				]
 			}
