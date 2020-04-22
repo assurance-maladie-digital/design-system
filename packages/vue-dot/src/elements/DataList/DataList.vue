@@ -10,47 +10,30 @@
 			</h4>
 		</slot>
 
-		<!-- Description list -->
-		<dl
+		<ul
 			v-if="list.length"
-			:class="{
-				'vd-column': column || $vuetify.breakpoint.xs || flex,
-				'vd-flex': flex
-			}"
-			:style="{
-				minWidth
-			}"
-			class="vd-field"
+			class="vd-data-list-field pl-0"
+			:class="listClass"
+			:style="{ minWidth }"
 		>
-			<div
+			<li
 				v-for="(item, index) in list"
 				:key="index"
-				class="vd-row mb-2"
+				class="vd-data-list-row mb-2"
 			>
-				<!-- Key (label) -->
-				<dt
+				<DataListItem
 					v-if="item.key"
-					:style="{
-						width,
-						color: labelColor
-					}"
-					class="vd-key body-1"
-				>
-					{{ item.key }}
-				</dt>
-
-				<!-- Value -->
-				<dd
-					:style="{
-						color: valueColor
-					}"
-					class="vd-value body-1"
-				>
-					<!-- Show value or fallback to placeholder -->
-					{{ item.value || placeholder }}
-				</dd>
-			</div>
-		</dl>
+					:label="item.key"
+					:value="item.value"
+					:chip="item.chip"
+					:icon="getIcon(item.icon)"
+					:placeholder="placeholder"
+					:vuetify-options="item.options"
+					:style="{ width }"
+					class="vd-data-list-item body-1"
+				/>
+			</li>
+		</ul>
 	</div>
 </template>
 
@@ -60,14 +43,20 @@
 
 	import { locales } from './locales';
 
-	import { ListItem } from './types';
+	import DataListItem from './DataListItem';
+
+	import { IDataListItem, DataListIcons } from './types';
 
 	const Props = Vue.extend({
 		props: {
 			/** The list to display */
 			list: {
-				type: Array as PropType<ListItem[]>,
+				type: Array as PropType<DataListItem[]>,
 				required: true
+			},
+			icons: {
+				type: Object as PropType<DataListIcons | undefined>,
+				default: undefined
 			},
 			// Title options
 			titleClass: {
@@ -78,15 +67,7 @@
 				type: String,
 				default: undefined
 			},
-			labelColor: {
-				type: String,
-				default: '#757575'
-			},
-			valueColor: {
-				type: String,
-				default: 'currentColor'
-			},
-			column: {
+			row: {
 				type: Boolean,
 				default: false
 			},
@@ -115,23 +96,43 @@
 	const MixinsDeclaration = mixins(Props);
 
 	/**
-	 * DataList is a component that displays an array of
-	 * objects containing key/value
+	 * DataList is a component that displays list of
+	 * items containing key/value
 	 */
-	@Component
-	export default class DataList extends MixinsDeclaration {}
+	@Component({
+		components: {
+			DataListItem
+		}
+	})
+	export default class DataList extends MixinsDeclaration {
+		get listClass() {
+			return {
+				'vd-column': !this.row || this.flex,
+				'vd-flex': this.flex
+			};
+		}
+
+		getIcon(icon?: string) {
+			if (!icon || !this.icons) {
+				return null;
+			}
+
+			return this.icons[icon];
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-field {
-		// Row
-		.vd-row {
+	.vd-data-list-field {
+		list-style: none;
+
+		.vd-data-list-row {
 			display: flex;
 			flex-wrap: wrap;
 		}
 
-		// Column (default on small screen)
-		&.vd-column .vd-row {
+		// Column
+		&.vd-column .vd-data-list-row {
 			flex-direction: column;
 		}
 
@@ -143,9 +144,9 @@
 		// Do not apply on column mode
 		&:not(.vd-column) {
 			// Default separator
-			.vd-key::after {
-				content: " :";
-			}
+			// .vd-key::after {
+			// 	content: " :";
+			// }
 
 			.vd-value {
 				align-self: flex-end;

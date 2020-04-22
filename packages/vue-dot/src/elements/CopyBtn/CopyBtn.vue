@@ -3,7 +3,7 @@
 		<VMenu
 			v-model="tooltip"
 			v-bind="options.menu"
-			:disabled="!showTooltip"
+			:disabled="hideTooltip"
 		>
 			<template #activator="{ on }">
 				<VBtn
@@ -59,12 +59,12 @@
 				type: [Function, String] as PropType<() => string | string>,
 				required: true
 			},
-			/** Show or hide the tooltip, default is show (true) */
-			showTooltip: {
+			/** Hide the tooltip */
+			hideTooltip: {
 				type: Boolean,
-				default: true
+				default: false
 			},
-			/** The number of milliseconds before the tooltip closes */
+			/** Tooltip display time in milliseconds */
 			tooltipDuration: {
 				type: Number,
 				default: 2500
@@ -103,7 +103,7 @@
 			// Copy the text to the clipboard
 			copyToClipboard(toCopy);
 
-			if (this.showTooltip) {
+			if (!this.hideTooltip) {
 				// Hide tooltip after tooltipDuration delay
 				setTimeout(() => {
 					this.tooltip = false;

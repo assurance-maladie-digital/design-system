@@ -1,9 +1,15 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
+import { ValidationRule, ErrorMessages } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
-/** Check that the field is non-empty */
-export function requiredFn(errorMessages = defaultErrorMessages) {
+/**
+ * Check that the field is non-empty
+ *
+ * @param {ErrorMessages} [errorMessages] Custom error messages
+ * @returns {ValidationRule} Validation result
+ */
+export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
 	// The value can be an array of string in select with the multiple prop
 	return (value: string | string[]) => {
 		let valid: boolean;
