@@ -36,8 +36,9 @@
 					<span
 						v-else
 						class="body-1"
-						v-html="itemValue"
-					/>
+					>
+						{{ itemValue }}
+					</span>
 				</slot>
 			</div>
 		</div>
@@ -51,7 +52,7 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { customizable } from '../../mixins/customizable';
+	import { customizable } from '../../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {

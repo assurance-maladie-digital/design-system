@@ -34,7 +34,7 @@
 
 				<!-- Down arrow -->
 				<VIcon
-					v-if="downArrow"
+					v-if="!hideDownArrow"
 					v-bind="options.icon"
 				>
 					{{ downArrowIcon }}
@@ -96,10 +96,10 @@
 				type: [Array, String] as PropType<string[] | AllLanguagesChar>,
 				default: '*'
 			},
-			/** Show the down arrow inside the activator button */
-			downArrow: {
+			/** Hide the down arrow inside the activator button */
+			hideDownArrow: {
 				type: Boolean,
-				default: true
+				default: false
 			},
 			/** Activate flags mode */
 			flags: {

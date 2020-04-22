@@ -3,96 +3,51 @@
 exports[`DataList renders correctly 1`] = `
 <div class="vd-data-list">
   <!---->
-  <dl class="vd-field">
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Civility
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        …
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Dupont
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        First name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Paul
-      </dd>
-    </div>
-  </dl>
+  <ul class="vd-data-list-field pl-0 vd-column">
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+  </ul>
 </div>
 `;
 
 exports[`DataList renders correctly in column mode 1`] = `
-<div class="vd-data-list">
+<div class="vd-data-list" column="true">
   <!---->
-  <dl class="vd-field vd-column">
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Civility
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        …
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Dupont
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        First name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Paul
-      </dd>
-    </div>
-  </dl>
+  <ul class="vd-data-list-field pl-0 vd-column">
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+  </ul>
 </div>
 `;
 
 exports[`DataList renders correctly in flex mode 1`] = `
 <div class="vd-data-list">
   <!---->
-  <dl class="vd-field vd-column vd-flex">
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Civility
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        …
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Dupont
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        First name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Paul
-      </dd>
-    </div>
-  </dl>
+  <ul class="vd-data-list-field pl-0 vd-column vd-flex">
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+  </ul>
 </div>
 `;
 
@@ -101,32 +56,17 @@ exports[`DataList renders correctly with a title 1`] = `
   <h4 class="mb-3 headline">
     Informations
   </h4>
-  <dl class="vd-field">
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Civility
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        …
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        Name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Dupont
-      </dd>
-    </div>
-    <div class="vd-row mb-2">
-      <dt class="vd-key body-1" style="width: 200px; color: rgb(117, 117, 117);">
-        First name
-      </dt>
-      <dd class="vd-value body-1" style="color: currentColor;">
-        Paul
-      </dd>
-    </div>
-  </dl>
+  <ul class="vd-data-list-field pl-0 vd-column">
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
+    </li>
+  </ul>
 </div>
 `;
 
