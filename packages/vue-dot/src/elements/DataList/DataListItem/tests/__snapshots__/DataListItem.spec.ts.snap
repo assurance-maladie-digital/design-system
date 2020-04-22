@@ -7,7 +7,9 @@ exports[`DataListItem renders correctly 1`] = `
     <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
       Test
     </div>
-    <div class="vd-data-list-item-value"><span class="body-1">…</span></div>
+    <div class="vd-data-list-item-value"><span class="body-1">
+					…
+				</span></div>
   </div>
 </vlayout-stub>
 `;
