@@ -1,6 +1,8 @@
 <template>
 	<VSkeletonLoader
 		v-bind="$attrs"
+		:width="width"
+		:height="height"
 		class="vd-header-loading"
 		type="heading"
 	/>
@@ -8,7 +10,24 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
+
+	const Props = Vue.extend({
+		props: {
+			/** The width of the component */
+			width: {
+				type: String,
+				default: '100px'
+			},
+			/** The height of the component */
+			height: {
+				type: String,
+				default: '1rem'
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props);
 
 	/**
 	 * HeaderLoading is a component that extends VSkeletonLoader
@@ -17,7 +36,7 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class HeaderLoading extends Vue {}
+	export default class HeaderLoading extends MixinsDeclaration {}
 </script>
 
 <style lang="scss" scoped>

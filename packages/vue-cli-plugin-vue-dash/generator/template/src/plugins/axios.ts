@@ -1,8 +1,8 @@
 import axios, { AxiosError } from 'axios';
 
-import store from '@/store';
+import { store } from '@/store';
 
-import { mdiAlert } from '@mdi/js';
+import { mdiAlert as errorIcon } from '@mdi/js';
 <% if (i18n) { %>
 import common from '@/translations/fr/common';
 <% } %>
@@ -40,11 +40,11 @@ instance.interceptors.response.use(undefined, (error: AxiosError) => {
 		store.dispatch('notification/notify', {
 			type: 'error',
 			message: errorMessage,
-			icon: mdiAlert
+			icon: errorIcon
 		});
 	}
 
 	return Promise.reject(error);
 });
 
-export default instance;
+export { instance as axios };

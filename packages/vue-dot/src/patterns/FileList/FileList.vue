@@ -174,7 +174,7 @@
 			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
 
 			// Let the default color (null) on success
-			return state !== 'success' ? color : null;
+			return state !== 'success' ? color : '';
 		}
 
 		/**

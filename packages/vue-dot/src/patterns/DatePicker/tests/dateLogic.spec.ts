@@ -180,7 +180,7 @@ describe('DateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t sets hasFocused if it\'s undefined', () => {
+	it('doesn\'t set hasFocused if it\'s undefined', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true

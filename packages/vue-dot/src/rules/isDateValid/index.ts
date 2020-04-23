@@ -1,18 +1,28 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
+import { ValidationRule, ErrorMessages } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
-import { checkIfDateValid } from './checkIfDateValid';
+import { isDateValid as checkIfDateValid } from '../../functions/validation/isDateValid';
 
-/** Check that the date is valid (expects ##/##/#### format) */
-export function isDateValidFn(errorMessages = defaultErrorMessages) {
+/**
+ * Check that the date is valid (expects ##/##/#### format)
+ *
+ * @param {ErrorMessages} [errorMessages] Custom error messages
+ * @returns {ValidationRule} Validation result
+ */
+export function isDateValidFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
 	return (value: string) => {
 		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;
 		}
 
-		return checkIfDateValid(value, errorMessages) || ruleMessage(errorMessages, 'default');
+		const validationResult = checkIfDateValid(value);
+		// Convert validation result to proper error message
+		const errorMessage = typeof validationResult === 'string' ? ruleMessage(errorMessages, validationResult) : true;
+
+		return errorMessage || ruleMessage(errorMessages, 'default');
 	};
 }
 

@@ -11,7 +11,7 @@
 				ref="input"
 				v-model="dateFormatted"
 				v-mask="maskValue"
-				v-bind="options.textField"
+				v-bind="textFieldOptions"
 				class="vd-date-picker-text-field"
 				:class="textFieldClasses"
 				:error-messages="errorMessages || options.textField.errorMessages"
@@ -89,6 +89,8 @@
 
 	import { mdiCalendar } from '@mdi/js';
 
+	import deepmerge from 'deepmerge';
+
 	const Props = Vue.extend({
 		props: {
 			/** Disable the calendar */
@@ -115,6 +117,15 @@
 			errorMessages: {
 				type: Array as PropType<string[]>,
 				default: undefined
+			},
+			/**
+			 * Provide classes to the VTextField
+			 * This is needed because classes are
+			 * not contained in $attrs
+			 */
+			textFieldClass: {
+				type: [String, Array] as PropType<string | string[]>,
+				default: undefined
 			}
 		}
 	});
@@ -124,6 +135,7 @@
 	 * from Vuetify simpler to use
 	 */
 	@Component<DatePicker>({
+		inheritAttrs: false,
 		mixins: [
 			// Default configuration
 			customizable(config),
@@ -168,12 +180,31 @@
 		/** The v-model of VMenu */
 		menu = false;
 
+		/** Compute the options for VTextField */
+		get textFieldOptions() {
+			// Merge textField options (custom or default) with
+			// directly binded attributes (theses attributes
+			// will override 'options.textField')
+			return deepmerge(this.options.textField || [], this.$attrs);
+		}
+
 		/** Compute the classes for VTextField */
 		get textFieldClasses() {
-			return [
-				{ 'vd-warning-rules': this.warningRules.length },
-				...this.options.textField.class as unknown[] || []
-			];
+			let textFieldClasses = [];
+
+			if (this.warningRules.length) {
+				textFieldClasses.push('vd-warning-rules');
+			}
+
+			if (this.textFieldClass) {
+				if (typeof this.textFieldClass === 'object') {
+					textFieldClasses.push(this.textFieldClass);
+				} else {
+					textFieldClasses.push([this.textFieldClass]);
+				}
+			}
+
+			return textFieldClasses;
 		}
 
 		/** Open calendar menu if textFieldActivator is true */
@@ -228,7 +259,7 @@
 
 	// Fix margin-top on enclosed text field
 	// since we're using a slot with a button
-	.vd-date-picker-text-field ::v-deep .v-text-field--enclosed {
+	.vd-date-picker-text-field.v-text-field--enclosed ::v-deep {
 		.v-input__prepend-outer,
 		.v-input__prepend-inner,
 		.v-input__append-inner,

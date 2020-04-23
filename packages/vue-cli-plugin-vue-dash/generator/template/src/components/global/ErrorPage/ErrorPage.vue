@@ -1,7 +1,7 @@
 <template>
 	<PageCard
+		width="680"
 		card-class="px-5"
-		min-height
 	>
 		<span
 			v-if="code"
@@ -12,7 +12,8 @@
 
 		<h2
 			:class="{
-				'display-2': !code,
+				'display-1': !code,
+				'mb-4': !code,
 				'title': code
 			}"
 			class="mb-2 font-weight-bold"
@@ -22,28 +23,26 @@
 
 		<p>{{ message }}</p>
 
-		<VBtn
+		<VLayout
 			v-if="cta && btnRoute"
-			:to="btnRoute"
-			exact
-			text
-			color="accent"
-			class="back-button ma-n5"
+			class="mt-6"
 		>
-			<VIcon class="mr-2">
-				{{ backArrowIcon }}
-			</VIcon>
+			<VSpacer />
 
-			{{ cta }}
-		</VBtn>
+			<VBtn
+				:to="btnRoute"
+				exact
+				color="primary"
+			>
+				{{ cta }}
+			</VBtn>
+		</VLayout>
 	</PageCard>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-
-	import { mdiArrowLeft } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -77,9 +76,7 @@
 
 	/** Used to display error pages */
 	@Component
-	export default class ErrorPage extends Props {
-		backArrowIcon = mdiArrowLeft;
-	}
+	export default class ErrorPage extends Props {}
 </script>
 
 <style lang="scss" scoped>

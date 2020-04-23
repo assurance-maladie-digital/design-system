@@ -4,7 +4,7 @@
 		it will trigger the <input>
 	-->
 	<label
-		v-ripple="ripple"
+		v-ripple="!noRipple"
 		class="file-upload d-block pa-4"
 		:class="[
 			{
@@ -131,10 +131,10 @@
 				type: [Array, Object, File],
 				default: () => []
 			},
-			/** Apply v-ripple on the component */
-			ripple: {
+			/** Disable v-ripple on the component */
+			noRipple: {
 				type: Boolean,
-				default: true
+				default: false
 			},
 			/** Disable the component */
 			disabled: {

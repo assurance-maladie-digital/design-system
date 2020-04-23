@@ -1,9 +1,9 @@
 <template>
-	<div>
+	<div class="vd-copy-btn">
 		<VMenu
 			v-model="tooltip"
 			v-bind="options.menu"
-			:disabled="!showTooltip"
+			:disabled="hideTooltip"
 		>
 			<template #activator="{ on }">
 				<VBtn
@@ -13,7 +13,7 @@
 					@click="copy"
 				>
 					<slot name="icon">
-						<VIcon>
+						<VIcon v-bind="options.icon">
 							{{ copyIcon }}
 						</VIcon>
 					</slot>
@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -51,17 +51,20 @@
 				type: String,
 				required: true
 			},
-			/** The text that will be copied to the clipboard */
+			/**
+			 * The text that will be copied to the clipboard,
+			 * or a function that will return it
+			 */
 			textToCopy: {
-				type: String,
+				type: [Function, String] as PropType<() => string | string>,
 				required: true
 			},
-			/** Show or hide the tooltip, default is show (true) */
-			showTooltip: {
+			/** Hide the tooltip */
+			hideTooltip: {
 				type: Boolean,
-				default: true
+				default: false
 			},
-			/** The number of milliseconds before the tooltip closes */
+			/** Tooltip display time in milliseconds */
 			tooltipDuration: {
 				type: Number,
 				default: 2500
@@ -76,7 +79,7 @@
 	 * shows a tooltip
 	 */
 	@Component
-	export default class Copy extends MixinsDeclaration {
+	export default class CopyBtn extends MixinsDeclaration {
 		// Locales
 		locales = locales;
 
@@ -88,10 +91,19 @@
 
 		/** When the copy button is clicked */
 		copy() {
-			// Copy the text to the clipboard
-			copyToClipboard(this.textToCopy);
+			let toCopy: string;
 
-			if (this.showTooltip) {
+			// Get text to copy
+			if (typeof this.textToCopy === 'function') {
+				toCopy = this.textToCopy();
+			} else {
+				toCopy = this.textToCopy;
+			}
+
+			// Copy the text to the clipboard
+			copyToClipboard(toCopy);
+
+			if (!this.hideTooltip) {
 				// Hide tooltip after tooltipDuration delay
 				setTimeout(() => {
 					this.tooltip = false;
