@@ -6,26 +6,6 @@ module.exports = {
 	],
 	themeConfig: {
 		sidebar: [
-			// {
-			// 	title: 'Commencer',
-			// 	icon: 'forward-arrow',
-			// 	to: '/fr/guide/'
-			// },
-			// {
-			// 	title: 'Thèmes personnalisés',
-			// 	icon: 'painter-palette',
-			// 	to: '/fr/guide/themes/'
-			// },
-			// {
-			// 	title: 'Contribuer',
-			// 	icon: 'heart',
-			// 	to: '/fr/contribuer/'
-			// },
-			// {
-			// 	title: 'Feuille de route',
-			// 	icon: 'clock',
-			// 	to: '/fr/feuille-de-route/'
-			// },
 			{
 				title: 'Directives',
 				group: 'directives',

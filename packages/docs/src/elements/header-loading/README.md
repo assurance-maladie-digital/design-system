@@ -20,6 +20,7 @@ Vous pouvez entrer des dimensions dans l'exemple ci-dessous et observer le compo
 <DocApi
   :value="['HeaderLoading']"
   :api="{
+    HeaderLoading: {
       props: [{
         name: 'width',
         defaultValue: '100px',
@@ -32,5 +33,6 @@ Vous pouvez entrer des dimensions dans l'exemple ci-dessous et observer le compo
         type: 'string',
         description: 'La hauteur du composant.'
       }]
-    }"
+    }
+  }"
 />

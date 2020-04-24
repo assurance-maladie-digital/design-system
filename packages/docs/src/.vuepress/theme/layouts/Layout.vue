@@ -6,14 +6,20 @@
 				fixed
 				clipped
 			>
-				<Sitemap :items="sidebarItems" />
+				<Sidebar :items="sidebarItems" />
 			</VNavigationDrawer>
 
 			<VContent>
 				<PageCard width="1200px">
-					<Content class="mb-4" slot-key="title" />
+					<Content
+						class="mb-4"
+						slot-key="title"
+					/>
 
-					<Content class="title mb-8" slot-key="description" />
+					<Content
+						class="title mb-8"
+						slot-key="description"
+					/>
 
 					<VDivider class="mb-5" />
 
@@ -35,9 +41,3 @@
 		}
 	}
 </script>
-
-<style lang="scss">
-	#app {
-		background: #eee;
-	}
-</style>

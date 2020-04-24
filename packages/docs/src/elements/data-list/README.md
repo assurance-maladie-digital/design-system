@@ -18,29 +18,36 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
 <DocApi
   :value="['DataList', 'DataListItem']"
   :api="{
+    DataList: {
       props: [{
-        name: 'text-to-copy',
+        name: 'list',
         defaultValue: 'undefined',
-        type: 'string | function',
-        description: 'Le texte a copier ou une fonction qui le retourne. La fonction sera exécutée lors du clic sur le bouton.'
+        type: 'DataListItem[]',
+        description: 'La liste à afficher.'
       },
       {
-        name: 'label',
+        name: 'icons',
         defaultValue: 'undefined',
+        type: 'DataListIcons',
+        description: 'La liste des différentes icônes à afficher.'
+      },
+      {
+        name: 'list-title',
         type: 'string',
-        description: 'Le label accessible du bouton. Cette propriété est nécessaire pour rendre le bouton accessible aux lecteurs d\'écrans, n\'hésitez pas à décrire ce que va copier le bouton.'
+        defaultValue: 'undefined',
+        description: 'Le titre de la liste.'
       },
       {
-        name: 'hide-tooltip',
+        name: 'title-class',
+        type: 'string',
+        defaultValue: '\'mb-3 headline\'',
+        description: 'Les classes à appliquer sur le titre de la liste.'
+      },
+      {
+        name: 'row',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Masquer le `VTooltip`.'
-      },
-      {
-        name: 'tooltip-duration',
-        type: 'number',
-        defaultValue: '2500',
-        description: 'La durée d\'affichage du tooltip en millisecondes.'
+        description: 'Affiche les items de la liste horizontalement.'
       },
       {
         name: 'vuetify-options',
@@ -56,7 +63,54 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         name: 'tooltip',
         description: 'Slot pour remplacer le contenu du tooltip.'
       }]
-    }"
+    },
+    DataListItem: {
+      props: [{
+        name: 'label',
+        type: 'string',
+        defaultValue: 'undefined',
+        description: 'Le label de la valeur.'
+      },
+      {
+        name: 'value',
+        type: 'string',
+        defaultValue: 'undefined',
+        description: 'La valeur a afficher.'
+      },
+      {
+        name: 'placeholder',
+        type: 'string',
+        defaultValue: '\'…\'',
+        description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
+      },
+      {
+        name: 'chip',
+        type: 'boolean',
+        defaultValue: 'false',
+        description: 'Affiche la valeur dans un élément `VChip`.'
+      },
+      {
+        name: 'icon',
+        type: 'string',
+        defaultValue: 'undefined',
+        description: 'Icône SVG à afficher.'
+      },
+      {
+        name: 'vuetify-options',
+        type: 'Options',
+        defaultValue: 'undefined',
+        description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+      }],
+      slots: [{
+        name: 'icon',
+        description: 'Slot pour remplacer l\'icône.'
+      },
+      {
+        name: 'value',
+        description: 'Slot pour remplacer le contenu de l\item.'
+      }]
+    }
+  }"
 />
 <!-- 
 ## Exemples

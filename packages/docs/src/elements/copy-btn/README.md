@@ -20,6 +20,7 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
 <DocApi
   :value="['CopyBtn']"
   :api="{
+    CopyBtn: {
       props: [{
         name: 'text-to-copy',
         defaultValue: 'undefined',
@@ -58,7 +59,8 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
         name: 'tooltip',
         description: 'Slot pour remplacer le contenu du tooltip.'
       }]
-    }"
+    }
+  }"
 />
 
 ## Exemples

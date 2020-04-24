@@ -30,6 +30,7 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
 <DocApi
   :value="['v-debounce']"
   :api="{
+    'v-debounce': {
       options: [{
         name: 'value',
         defaultValue: 'undefined',
@@ -42,7 +43,8 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
         type: 'number',
         description: 'Nombre de millisecondes à attendre avant d\'appeler la fonction `value` ou d\'émettre un événement.'
       }]
-    }"
+    }
+  }"
 />
 
 ## Exemples

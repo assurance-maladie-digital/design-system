@@ -269,7 +269,7 @@
 
 			return {
 				...component,
-				...this.api
+				...this.api[this.current as any]
 				// ...(api[this.current] || {}),
 				// sass: variableApi[this.current] || []
 			};

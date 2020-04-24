@@ -36,25 +36,6 @@
 			:vuetify-options="copyBtnOptions"
 		/>
 
-		<!-- <div class="v-markup__copy">
-			<VIcon
-				title="Copier le code"
-				aria-label="Copier le code"
-				@click="copyMarkup"
-			>
-				{{ copyIcon }}
-			</VIcon>
-
-			<VSlideXTransition>
-				<span
-					v-if="copied"
-					class="v-markup__copied"
-				>
-					Copié
-				</span>
-			</VSlideXTransition>
-		</div> -->
-
 		<!-- <a
 			v-if="filename && file"
 			:href="href"
@@ -75,17 +56,14 @@
 
 	// Prism
 	import 'prismjs';
-	import 'prismjs/components/prism-bash.js';
+	// import 'prismjs/components/prism-bash.js';
 	// import 'prismjs/components/prism-css.js';
 	// import 'prismjs/components/prism-javascript.js';
 	// import 'prismjs/components/prism-json.js';
-	import 'prismjs/components/prism-scss.js';
-	import 'prismjs/components/prism-typescript.js';
+	// import 'prismjs/components/prism-scss.js';
+	// import 'prismjs/components/prism-typescript.js';
 
 	import 'prismjs/themes/prism-tomorrow.css';
-
-	// Utilities
-	// import { getBranch } from '@/util/helpers';
 
 	const Props = Vue.extend({
 		props: {
@@ -122,7 +100,6 @@
 		code = null;
 		copied = false;
 		language: string | null = this.lang;
-		// branch = null;
 
 		copyBtnOptions = {
 			menu: {
@@ -134,19 +111,6 @@
 			}
 		};
 
-		// get file(): string {
-		// 	const split = this.value.split('_');
-		// 	const folder = split.shift();
-		// 	const file = split.join('_');
-
-		// 	return `${folder}/${file}.txt`;
-		// }
-
-		// get href(): string {
-		// 	// return `https://github.com/vuetifyjs/vuetify/tree/${this.branch}/packages/docs/src/snippets/${this.file}`;
-		// 	return '';
-		// }
-
 		get id() {
 			if (this.value === 'markup') {
 				return;
@@ -157,7 +121,6 @@
 
 		mounted() {
 			this.$nextTick(this.init);
-			// this.branch = getBranch();
 		}
 
 		getSlotContent() {
@@ -174,10 +137,6 @@
 			if (this.$slots.default || !this.value) {
 				return;
 			}
-
-			// import(`../../${this.file}`)
-			// 	.then(this.parseRaw)
-			// 	.catch(err => console.log(err));
 		}
 
 		parseRaw(res: any): void {
