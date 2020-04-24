@@ -2,7 +2,7 @@
 	<VLayout
 		wrap
 		row
-		class="ma-n3"
+		class="vd-form-input-xl ma-n3"
 	>
 		<VCol
 			cols="12"

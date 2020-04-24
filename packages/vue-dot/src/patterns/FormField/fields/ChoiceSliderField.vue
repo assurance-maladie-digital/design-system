@@ -4,7 +4,7 @@
 		v-bind="field.metadata"
 		color="accent"
 		track-color="grey lighten-1"
-		class="mt-5"
+		class="vd-choice-slider-field vd-form-input-xl mt-5"
 		:value="getIndex(field.value)"
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"

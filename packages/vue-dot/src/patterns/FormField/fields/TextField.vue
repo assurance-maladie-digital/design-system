@@ -2,6 +2,7 @@
 	<VTextField
 		v-bind="field.metadata"
 		:value="field.value"
+		class="vd-form-input"
 		@change="emitChangeEvent"
 	/>
 </template>

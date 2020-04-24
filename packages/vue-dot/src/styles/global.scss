@@ -19,4 +19,17 @@
 		margin-top: 2px;
 		background: rgba(97, 97, 97, .9);
 	}
+
+	.vd-form-input {
+		width: $vd-input-width;
+
+		&-xl {
+			// 2 inputs + space between them
+			width: $vd-input-width * 2 + 24px * 2;
+		}
+
+		&-xs {
+			width: $vd-input-width / 2;
+		}
+	}
 }

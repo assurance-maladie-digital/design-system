@@ -1,5 +1,5 @@
 <template>
-	<VLayout class="ml-0">
+	<VLayout class="vd-form-input ml-0">
 		<DatePicker
 			v-bind="field.metadata"
 			:value="field.value"

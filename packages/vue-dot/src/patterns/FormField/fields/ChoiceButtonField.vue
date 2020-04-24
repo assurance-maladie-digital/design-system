@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-choice-button-field">
+	<div class="vd-choice-button-field vd-form-input">
 		<VBtnToggle
 			:value="choiceValue"
 			v-bind="field.metadata"

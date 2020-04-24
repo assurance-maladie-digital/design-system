@@ -57,8 +57,6 @@
 
 <style lang="scss" scoped>
 	.vd-form-field {
-		width: 328px;
-
 		+ .vd-form-field {
 			margin-top: 12px;
 		}

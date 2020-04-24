@@ -4,6 +4,7 @@
 		:value="field.value"
 		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"
+		class="vd-form-input"
 		@click:append="showEyeIcon = !showEyeIcon"
 		@change="emitChangeEvent"
 	/>

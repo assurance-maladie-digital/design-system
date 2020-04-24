@@ -9,6 +9,7 @@ const tokens = {
 		pro: '#ef6c00'
 	},
 	'page-width': '1440px',
+	'input-width': '328px',
 	// json-to-scss config
 	'_jsonToScss': {
 		indentationSize: '1',
