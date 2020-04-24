@@ -3,7 +3,7 @@
 		<VBtnToggle
 			:value="choiceValue"
 			v-bind="field.metadata"
-			class="vd-choice-button-field-toggle layout wrap accent--text"
+			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"
 			:class="{ 'column': !isInline }"
 		>
 			<VBtn
@@ -14,7 +14,7 @@
 				elevation="0"
 				height="40"
 				active-class="white--text"
-				class="mb-2 text-none"
+				class="text-none"
 				color="accent"
 				@click="toggleItem(item)"
 			>

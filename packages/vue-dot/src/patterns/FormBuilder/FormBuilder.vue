@@ -1,20 +1,13 @@
 <template>
-	<div
-		v-if="computedLayout"
-		class="vd-form-builder"
-	>
-		<FormLayout
-			v-for="(formLayout, index) in computedLayout"
-			:key="'layout-' + index"
-			:layout="formLayout"
-		>
-			<template #default="{ field }">
-				<FormField
-					:value="field"
-					@change="formUpdated"
-				/>
-			</template>
-		</FormLayout>
+	<div class="vd-form-builder">
+		<FormSection
+			v-for="(section, sectionName) in form"
+			:key="'section-' + sectionName"
+			:section-title="section.title"
+			:fields="section.fields"
+			@change="sectionUpdated($event, sectionName)"
+			@refresh="$emit('refresh')"
+		/>
 	</div>
 </template>
 
@@ -24,8 +17,8 @@
 
 	import { FormBuilderCore } from './mixins/formBuilderCore';
 
-	import FormLayout from '../FormLayout';
-	import FormField from '../FormField';
+	import FormSection from './FormSection';
+	import { Section } from './FormSection/types';
 
 	const MixinsDeclaration = mixins(FormBuilderCore);
 
@@ -35,8 +28,7 @@
 	 */
 	@Component({
 		components: {
-			FormLayout,
-			FormField
+			FormSection
 		}
 	})
 	export default class FormBuilder extends MixinsDeclaration {}

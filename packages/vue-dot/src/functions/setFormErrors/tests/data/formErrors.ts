@@ -31,10 +31,14 @@ export const questionErrors: FormErrors = {
 };
 
 export const form: Form = {
-	questionString: {
-		type: 'text'
-	},
-	questionPeriod: {
-		type: 'period'
+	section1: {
+		fields: {
+			questionString: {
+				type: 'text'
+			},
+			questionPeriod: {
+				type: 'period'
+			}
+		}
 	}
 };

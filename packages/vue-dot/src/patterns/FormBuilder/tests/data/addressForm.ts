@@ -16,58 +16,68 @@ const defaultItem = [
 ];
 
 export const addressForm: Form = {
-	streetNumber: {
-		type: 'number',
-		value: null,
-		mask: '#####',
-		metadata: {
-			type: 'text',
-			label: 'Numéro de voie'
-		}
-	},
-	streetNumberComplement: {
-		type: 'select',
-		value: null,
-		items: defaultItem,
-		metadata: {
-			label: 'Complément de voie'
-		}
-	},
-	streetType: {
-		type: 'autocomplete',
-		value: null,
-		items: defaultItem,
-		metadata: {
-			label: 'Type de voie'
-		}
-	},
-	streetLabel: {
-		type: 'text',
-		value: null,
-		metadata: {
-			label: 'Libellé de la voie'
-		}
-	},
-	streetComplement: {
-		type: 'text',
-		value: null,
-		metadata: {
-			label: 'Complément d\'adresse'
-		}
-	},
-	postalCode: {
-		type: 'number',
-		value: null,
-		metadata: {
-			mask: '#####',
-			label: 'Code postal'
-		}
-	},
-	city: {
-		type: 'text',
-		value: null,
-		metadata: {
-			label: 'Ville'
+	section1: {
+		fields: {
+			streetNumber: {
+				type: 'number',
+				value: null,
+				metadata: {
+					label: 'Numéro de voie',
+					mask: '#####',
+					outlined: true
+				}
+			},
+			streetNumberComplement: {
+				type: 'select',
+				value: null,
+				items: defaultItem,
+				metadata: {
+					label: 'Complément de voie',
+					outlined: true
+				}
+			},
+			streetType: {
+				type: 'autocomplete',
+				value: null,
+				items: defaultItem,
+				metadata: {
+					label: 'Type de voie',
+					outlined: true
+				}
+			},
+			streetLabel: {
+				type: 'text',
+				value: null,
+				metadata: {
+					label: 'Libellé de la voie',
+					outlined: true
+				}
+			},
+			streetComplement: {
+				type: 'text',
+				value: null,
+				metadata: {
+					label: 'Complément d\'adresse',
+					outlined: true
+				}
+			},
+			postalCode: {
+				type: 'number',
+				value: null,
+				metadata: {
+					mask: '#####',
+					label: 'Code postal',
+					outlined: true
+				}
+			},
+			city: {
+				type: 'text',
+				value: null,
+				metadata: {
+					label: 'Ville',
+					outlined: true
+				}
+			}
 		}
 	}
 };

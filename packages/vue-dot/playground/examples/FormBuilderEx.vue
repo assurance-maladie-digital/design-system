@@ -4,20 +4,13 @@
 			Classic form
 		</h2>
 
-		<FormBuilder
-			v-model="addressForm"
-			:layout="addressFormLayout"
-		/>
+		<FormBuilder v-model="addressForm" />
 
 		<h2 class="subtitle-1 mt-4 mb-4 font-weight-bold">
 			Questionnaire
 		</h2>
 
-		<FormBuilder
-			v-model="questionForm"
-			default-layout="question"
-			@change="getFormValues"
-		/>
+		<FormBuilder v-model="questionForm" />
 
 		<VBtn
 			class="mt-5"
@@ -29,11 +22,11 @@
 
 		<pre
 			v-if="questionValues"
-			class="mt-4 grey lighten-3"
+			class="mt-4 px-2 py-1"
 			v-html="questionValues"
 		/>
 
-		<VBtn
+		<!-- <VBtn
 			class="mt-5"
 			color="accent"
 			@click="setFormErrors"
@@ -50,16 +43,13 @@
 			]"
 			@blur="questionErrors = JSON.parse($event.target.textContent)"
 			v-html="questionErrors"
-		/>
+		/> -->
 	</DocSection>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-
-	import { Layout } from '../../src/patterns/FormBuilder/types';
-	import { Layouts } from '../../src/patterns/FormLayout/layoutsEnum';
 
 	import { addressForm } from '../../src/patterns/FormBuilder/tests/data/addressForm';
 	import { questionForm } from '../../src/patterns/FormBuilder/tests/data/questionForm';
@@ -72,41 +62,10 @@
 	@Component
 	export default class FormBuilderEx extends Vue {
 		addressForm = addressForm;
-
 		questionForm = questionForm;
-
 		questionErrors = questionErrors;
 
 		questionValues: FormValues | null = null;
-
-		addressFormLayout: Layout = [
-			{
-				type: Layouts.Medium_Medium,
-				fields: [
-					'streetNumber',
-					'streetNumberComplement'
-				]
-			},
-			{
-				type: Layouts.Medium,
-				fields: ['streetType']
-			},
-			{
-				type: Layouts.Medium,
-				fields: ['streetLabel']
-			},
-			{
-				type: Layouts.Medium,
-				fields: ['streetComplement']
-			},
-			{
-				type: Layouts.Medium_Medium,
-				fields: [
-					'postalCode',
-					'city'
-				]
-			}
-		];
 
 		getFormValues() {
 			this.questionValues = getFormValues(this.questionForm);
@@ -117,3 +76,10 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	pre {
+		border: 1px solid;
+		border-radius: 4px;
+	}
+</style>
