@@ -3,7 +3,7 @@ import { Form } from '../../types';
 const defaultItems = [
 	{
 		text: '9h',
-		value: 9
+		value: null
 	},
 	{
 		text: '9h30',
@@ -14,8 +14,8 @@ const defaultItems = [
 		value: 10
 	},
 	{
-		text: '10h30',
-		value: null
+		text: '11h',
+		value: 11
 	}
 ];
 
@@ -120,7 +120,7 @@ export const questionForm: Form = {
 				title: 'Question select slider',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
-				value: 'value2',
+				value: '9.30',
 				items: defaultItems,
 				metadata: {
 					type: 'choiceSlider'
@@ -131,7 +131,7 @@ export const questionForm: Form = {
 				title: 'Question select slider thumb',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
-				value: 'value2',
+				value: null,
 				items: defaultItems,
 				metadata: {
 					type: 'choiceSlider',
@@ -143,11 +143,10 @@ export const questionForm: Form = {
 				title: 'Question select slider thumb with custom label',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
-				value: 'value2',
+				value: null,
 				items: defaultItems,
 				metadata: {
-					labelMin: 'min',
-					labelMax: 'max',
+					label: 'Label',
 					type: 'choiceSlider',
 					thumbLabel: true
 				}

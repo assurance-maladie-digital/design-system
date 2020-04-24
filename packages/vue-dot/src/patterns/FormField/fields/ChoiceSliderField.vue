@@ -2,40 +2,21 @@
 	<VSlider
 		v-if="field.items"
 		v-bind="field.metadata"
-		color="accent"
-		track-color="grey lighten-1"
-		class="vd-choice-slider-field vd-form-input-xl mt-5"
 		:value="getIndex(field.value)"
-		:thumb-label="thumbLabel"
+		:thumb-label="isThumbLabel"
 		:tick-labels="thickLabels"
 		:max="field.items.length - 1"
+		color="accent"
+		tick-size="6"
+		track-color="grey lighten-1"
+		class="vd-choice-slider-field vd-form-input-xl"
 		@change="valueUpdated"
 	>
 		<template
 			v-if="isThumbLabel"
-			#prepend
-		>
-			<span>
-				{{ labelMin }}
-			</span>
-		</template>
-
-		<template
-			v-if="isThumbLabel"
-			#append
-		>
-			<span>
-				{{ labelMax }}
-			</span>
-		</template>
-
-		<template
-			v-if="thumbLabel"
 			#thumb-label="{ value }"
 		>
-			<span>
-				{{ labels[value] }}
-			</span>
+			{{ labels[value] }}
 		</template>
 	</VSlider>
 </template>
@@ -60,41 +41,23 @@
 				return null;
 			}
 
-			return this.field.items.findIndex((item) => item.value === value);
-		}
+			const index = this.field.items.findIndex((item) => item.value === value);
 
-		get labelMin() {
-			// Check if there is a custom labelMin prop in metadata
-			if (this.field.metadata && this.field.metadata.labelMin) {
-				return this.field.metadata.labelMin;
+			if (index === -1) {
+				return null;
 			}
 
-			// The default value is the first the label
-			return this.labels[0];
-		}
-
-		get labelMax() {
-			// Check if there is a custom labelMax prop in metadata
-			if (this.field.metadata && this.field.metadata.labelMax) {
-				return this.field.metadata.labelMax;
-			}
-
-			// The default value is the last the label
-			return this.labels[this.labels.length - 1];
-		}
-
-		get thumbLabel() {
-			return this.isThumbLabel ? 'always' : false;
+			return index;
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */
 		get thickLabels() {
-			return !this.isThumbLabel ? this.labels : [];
+			return this.isThumbLabel ? [] : this.labels;
 		}
 
 		/**  Are we in thumb label mode */
 		get isThumbLabel() {
-			return this.field.metadata && this.field.metadata.thumbLabel;
+			return Boolean(this.field.metadata?.thumbLabel);
 		}
 
 		/** The ticks labels */
@@ -124,3 +87,28 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	@import '../../../tokens/index';
+
+	.vd-choice-slider-field ::v-deep {
+		.v-input__control {
+			width: auto;
+		}
+
+		.v-slider__ticks-container--always-show .v-slider__tick {
+			border-radius: 50%;
+			background: #bdbdbd;
+
+			&.v-slider__tick--filled {
+				background: $vd-accent !important;
+			}
+		}
+
+		&.theme--dark {
+			.v-slider__ticks-container--always-show .v-slider__tick {
+				background: #fff;
+			}
+		}
+	}
+</style>
