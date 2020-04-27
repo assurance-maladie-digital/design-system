@@ -128,6 +128,7 @@
 		<!-- Env variables -->
 		<script type="text/javascript" src="{BASE_URL}js/config.js"></script>
 		
-		{SCRIPT_MATOMO}	
+		<% if (matomo) { %><!-- matomo -->
+		<script type="text/javascript" src="{BASE_URL}js/lib/matomo.js"></script><% } %>		
 	</body>
 </html>

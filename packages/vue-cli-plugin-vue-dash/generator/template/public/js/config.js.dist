@@ -6,4 +6,6 @@ const API_URL = 'http://localhost:8000/';
 const MAINTENANCE = 'false';
 const MAINTENANCE_TITLE = '';
 const MAINTENANCE_MESSAGE = '';
-{CONFIG_MATOMO}
+<% if (matomo) { %>// Matomo
+const MATOMO_ENABLED='false';
+const MATOMO_SITE_ID = '';'<% } %>
