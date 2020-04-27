@@ -5,6 +5,7 @@ const parseIndexFile = require('./functions/parseIndexFile');
 
 const getResourcesToDelete = require('./getResourcesToDelete');
 const deleteOldResources = require('./functions/deleteOldResources');
+const configureMatomo = require('./functions/configureMatomo');
 
 const shouldRenderTemplate = require('../shouldRenderTemplate');
 
@@ -38,6 +39,9 @@ module.exports = (api, userOptions) => {
 			const resourcesToDelete = getResourcesToDelete(options);
 			deleteOldResources(resources, resourcesToDelete);
 
+			// configure matomo if needed
+			resources = configureMatomo(options.matomo, resources);
+			
 			const indexPath = 'public/index.html';
 			resources[indexPath] = parseIndexFile(resources[indexPath]);
 		});
