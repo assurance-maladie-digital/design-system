@@ -2,7 +2,7 @@
 	<div class="vd-form-section">
 		<h3
 			v-if="sectionTitle"
-			class="title font-weight-bold mb-7"
+			class="title font-weight-bold mb-4"
 		>
 			{{ sectionTitle }}
 		</h3>
@@ -10,7 +10,7 @@
 		<FormField
 			v-for="(field, fieldName) in fields"
 			:key="'field-' + fieldName"
-			:value="field"
+			:field="field"
 			@change="fieldUpdated($event, fieldName)"
 		/>
 	</div>

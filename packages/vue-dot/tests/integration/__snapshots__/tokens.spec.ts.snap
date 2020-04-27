@@ -11,6 +11,7 @@ Object {
     "success": "#009688",
     "warning": "#ba8b00",
   },
+  "input-width": "328px",
   "page-width": "1440px",
 }
 `;

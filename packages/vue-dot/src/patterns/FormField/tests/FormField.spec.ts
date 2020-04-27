@@ -23,7 +23,7 @@ describe('FormField', () => {
 		// Mount component
 		wrapper = mountComponent(FormField, {
 			propsData: {
-				value: testField
+				field: testField
 			}
 		});
 
