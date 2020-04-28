@@ -28,7 +28,7 @@ const prompts = [
 		name: 'matomo',
 		type: 'confirm',
 		message: 'Install Matomo for analytics',
-		default: true
+		default: false
 	}
 ];
 
