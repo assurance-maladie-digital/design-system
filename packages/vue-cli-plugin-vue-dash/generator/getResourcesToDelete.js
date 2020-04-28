@@ -53,6 +53,11 @@ function getRessourcesToDelete(options) {
 			type: 'folder',
 			path: 'tests/e2e/',
 			condition: !options.cypress
+		},
+		{
+			type: 'folder',
+			path: 'public/js/lib',
+			condition: !options.matomo
 		}
 	];
 }
