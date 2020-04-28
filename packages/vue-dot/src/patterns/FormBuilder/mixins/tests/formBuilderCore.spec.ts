@@ -59,31 +59,10 @@ describe('formBuilderCore', () => {
 
 		wrapper.vm.sectionUpdated(updatedField, 'section1');
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
-		const event = wrapper.emitted().change || [];
+		const event = wrapper.emitted('change') || [];
 
-		expect(wrapper.emitted('change')).toBeTruthy();
-		expect(event[0]).toEqual([updatedTestForm]);
+		expect(event[0][0]).toEqual(updatedTestForm);
 	});
-
-	it('doesn\'t emits refresh event when the field is not dynamic', async() => {
-		const wrapper = createWrapper(testForm);
-
-		wrapper.vm.sectionUpdated(updatedField, 'section1');
-
-		await Vue.nextTick();
-
-		expect(wrapper.emitted('refresh')).toBeFalsy();
-	});
-
-	// it('emits refresh event when a dynamic field is updated', async() => {
-	// 	const wrapper = createWrapper(testForm);
-
-	// 	wrapper.vm.sectionUpdated(updatedField, 'section1');
-
-	// 	await Vue.nextTick();
-
-	// 	expect(wrapper.emitted('refresh')).toBeTruthy();
-	// });
 });
