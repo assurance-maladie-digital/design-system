@@ -1,8 +1,11 @@
 <template>
-	<div class="vd-form-section">
+	<div
+		class="vd-form-section"
+		:class="{ 'theme--dark': $vuetify.theme.dark }"
+	>
 		<h3
 			v-if="sectionTitle"
-			class="title font-weight-bold mb-4"
+			class="title font-weight-bold mb-2"
 		>
 			{{ sectionTitle }}
 		</h3>

@@ -37,5 +37,14 @@
 <style lang="scss" scoped>
 	.vd-form-builder {
 		width: 100%;
+
+		.vd-form-section + .vd-form-section {
+			padding-top: 46px;
+			border-top: solid 1px rgba(0, 0, 0, .12);
+
+			&.theme--dark {
+				border-color: rgba(255, 255, 255, .12);
+			}
+		}
 	}
 </style>

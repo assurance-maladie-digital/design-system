@@ -21,7 +21,7 @@ const defaultItems = [
 
 export const questionForm: Form = {
 	section1: {
-		title: 'Exemple',
+		title: 'Section 1',
 		fields: {
 			questionString: {
 				type: 'text',
@@ -114,7 +114,12 @@ export const questionForm: Form = {
 					multiple: true,
 					outlined: true
 				}
-			},
+			}
+		}
+	},
+	section2: {
+		title: 'Section 2',
+		fields: {
 			questionSelectSliderTick: {
 				type: 'select',
 				title: 'Question select slider',
@@ -165,7 +170,12 @@ export const questionForm: Form = {
 					},
 					label: 'Votre réponse'
 				}
-			},
+			}
+		}
+	},
+	section3: {
+		title: 'Section 3',
+		fields: {
 			questionChoiceButton: {
 				type: 'select',
 				title: 'Question choix bouton inline',

@@ -159,8 +159,8 @@ exports[`FormBuilder renders correctly 1`] = `
 exports[`FormBuilder renders correctly with a question layout 1`] = `
 <div class="vd-form-builder" defaultlayout="question">
   <div class="vd-form-section">
-    <h3 class="title font-weight-bold mb-4">
-      Exemple
+    <h3 class="title font-weight-bold mb-2">
+      Section 1
     </h3>
     <div class="layout vd-form-field mb-1 column">
       <h4 class="body-1"><span>Question ?</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
@@ -378,6 +378,11 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div class="vd-form-section">
+    <h3 class="title font-weight-bold mb-2">
+      Section 2
+    </h3>
     <div class="layout vd-form-field mb-1 column">
       <h4 class="body-1"><span>Question select slider</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
       <p class="body-2 grey--text text--darken-1">
@@ -386,7 +391,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
       <div class="v-input vd-choice-slider-field vd-form-input-xl v-input--is-label-active v-input--is-dirty theme--light v-input__slider">
         <div class="v-input__control">
           <div class="v-input__slot">
-            <div class="v-slider v-slider--horizontal theme--light"><input value="1" id="input-113" readonly="readonly" tabindex="-1" type="choiceSlider">
+            <div class="v-slider v-slider--horizontal theme--light"><input value="1" id="input-114" readonly="readonly" tabindex="-1" type="choiceSlider">
               <div class="v-slider__track-container">
                 <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
                 <div class="v-slider__track-fill accent" style="left: 0px; width: 33.33333333333333%;"></div>
@@ -411,7 +416,7 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
       <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
         <div class="v-input__control">
           <div class="v-input__slot">
-            <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-121" readonly="readonly" tabindex="-1" type="choiceSlider">
+            <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-122" readonly="readonly" tabindex="-1" type="choiceSlider">
               <div class="v-slider__track-container">
                 <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
                 <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -441,8 +446,8 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
       </p>
       <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
         <div class="v-input__control">
-          <div class="v-input__slot"><label for="input-130" class="v-label theme--light" style="left: 0px; position: relative;">Label</label>
-            <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-130" readonly="readonly" tabindex="-1" type="choiceSlider">
+          <div class="v-input__slot"><label for="input-131" class="v-label theme--light" style="left: 0px; position: relative;">Label</label>
+            <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-131" readonly="readonly" tabindex="-1" type="choiceSlider">
               <div class="v-slider__track-container">
                 <div class="v-slider__track-background grey lighten-1" style="right: 0px;"></div>
                 <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -474,12 +479,12 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
       </p>
       <div class="v-input vd-form-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
         <div class="v-input__control">
-          <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-136" class="v-input__slot">
+          <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-137" class="v-input__slot">
             <fieldset aria-hidden="true">
               <legend style="width: 0px;"><span>​</span></legend>
             </fieldset>
-            <div class="v-select__slot"><label for="input-136" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-              <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-136" type="text" autocomplete="off"></div>
+            <div class="v-select__slot"><label for="input-137" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+              <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-137" type="text" autocomplete="off"></div>
               <div class="v-input__append-inner">
                 <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
               </div><input type="hidden">
@@ -496,6 +501,11 @@ exports[`FormBuilder renders correctly with a question layout 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div class="vd-form-section">
+    <h3 class="title font-weight-bold mb-2">
+      Section 3
+    </h3>
     <div class="layout vd-form-field mb-1 column">
       <h4 class="body-1 mb-2"><span>Question choix bouton inline</span>
         <!---->
