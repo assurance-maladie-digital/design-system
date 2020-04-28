@@ -26,14 +26,6 @@
 			v-html="questionValues"
 		/>
 
-		<!-- <VBtn
-			class="mt-5"
-			color="accent"
-			@click="setFormErrors"
-		>
-			Set errors messages
-		</VBtn>
-
 		<pre
 			v-if="questionErrors"
 			contenteditable="true"
@@ -43,7 +35,15 @@
 			]"
 			@blur="questionErrors = JSON.parse($event.target.textContent)"
 			v-html="questionErrors"
-		/> -->
+		/>
+
+		<VBtn
+			class="mt-5"
+			color="accent"
+			@click="setFormErrors"
+		>
+			Set errors messages
+		</VBtn>
 	</DocSection>
 </template>
 
