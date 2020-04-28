@@ -7,5 +7,6 @@ const MAINTENANCE = 'false';
 const MAINTENANCE_TITLE = '';
 const MAINTENANCE_MESSAGE = '';
 <% if (matomo) { %>// Matomo
-const MATOMO_ENABLED='false';
-const MATOMO_SITE_ID = '';<% } %>
+const MATOMO_ENABLED = 'false';
+const MATOMO_SITE_ID = '';
+const MATOMO_REDIRECT_URL = 'https://analytics.ameli.fr/';<% } %>

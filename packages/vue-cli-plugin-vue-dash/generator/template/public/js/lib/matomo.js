@@ -7,7 +7,7 @@ if (MATOMO_ENABLED === 'true') {
 	_paq.push(['enableLinkTracking']);
 
 	document.addEventListener('DOMContentLoaded', function() {
-		var u = 'https://analytics.ameli.fr/';
+		var u = MATOMO_REDIRECT_URL;
 
 		_paq.push(['setTrackerUrl', u + 'piwik.php']);
 		_paq.push(['setSiteId', MATOMO_SITE_ID]);
