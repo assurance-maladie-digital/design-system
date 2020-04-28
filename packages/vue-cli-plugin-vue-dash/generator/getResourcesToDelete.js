@@ -11,10 +11,6 @@ function getRessourcesToDelete(options) {
 			path: 'src/assets/logo.png'
 		},
 		{
-			type: 'folder',
-			path: 'src/router/'
-		},
-		{
 			type: 'file',
 			path: 'src/shims-tsx.d.ts'
 		},
