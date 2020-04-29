@@ -16,12 +16,23 @@ install:
 jobs:
   include:
     - stage: test
-      name: 'Lint, test & build'
+      name: 'Lint & test'
       before_script:
         - yarn global add codecov
       script:
         - lerna run lint
         - lerna run test
-        - lerna run build
       after_script:
         - codecov
+
+    - stage: build
+      name: 'Build'
+      script:
+        - lerna run build
+
+    - stage: integration
+      name: 'Integration'
+      before_script:
+        - yarn global add @vue/cli
+      script:
+        - vue create exemple
