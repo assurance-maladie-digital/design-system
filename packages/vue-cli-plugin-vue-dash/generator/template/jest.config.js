@@ -39,6 +39,9 @@ module.exports = {
 		API_URL: 'http://localhost:8080',
 		MAINTENANCE: 'false',
 		MAINTENANCE_TITLE: '',
-		MAINTENANCE_MESSAGE: ''
+		MAINTENANCE_MESSAGE: '',
+		'ts-jest': {
+			isolatedModules: true
+		}
 	}
 };
