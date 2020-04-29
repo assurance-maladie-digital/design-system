@@ -1,5 +1,6 @@
 const vdPkg = require('../../package.json');
-const VueDotVersion = vdPkg.version;
+// Use dev dependency to get Vue Dot version
+const VueDotVersion = vdPkg.devDependencies['@cnamts/vue-dot'] || 'next';
 
 /** Extend package.json */
 function extendPackage(api, options) {
