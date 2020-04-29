@@ -20,6 +20,7 @@ function extendPackage(api, options) {
 			'@mdi/js': '^4.8.95',
 			'@typescript-eslint/eslint-plugin': '^2.17.0',
 			'@typescript-eslint/parser': '^2.17.0',
+			'@types/jest': '25.2.1',
 			'babel-jest': '^25.4.0',
 			'jest': '^25.4.0',
 			'jest-serializer-vue': '^2.0.2',
