@@ -40,6 +40,8 @@ module.exports = {
 		MAINTENANCE: 'false',
 		MAINTENANCE_TITLE: '',
 		MAINTENANCE_MESSAGE: '',
+		// Workaround of error "TypeError: Unable to require `.d.ts` file."
+		// See https://github.com/kulshekhar/ts-jest/issues/805#issuecomment-456055213
 		'ts-jest': {
 			isolatedModules: true
 		}
