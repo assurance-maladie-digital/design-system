@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FormLayout renders correctly 1`] = `<layoutm-stub fields="[object Object]" class="vd-form-layout"></layoutm-stub>`;

@@ -9,32 +9,39 @@ export const formErrors = {
 	questionString: 'Incorrect value',
 	questionPeriod: {
 		notExist: 'Sub field does not exist'
-	}
+	},
+	notExist: [
+		'Field does not exist'
+	]
 } as FormErrors;
 
 /** FormErrors related to question form */
 export const questionErrors: FormErrors = {
 	questionString: [
-		'error string 1',
-		'error string 2'
+		'Erreur string 1',
+		'Erreur string 2'
 	],
 	questionPeriod: {
 		from: [
-			'Error questionPeriod 1',
-			'Error questionPeriod 2'
+			'Erreur questionPeriod 1',
+			'Erreur questionPeriod 2'
 		],
 		to: [
-			'Error questionPeriod to 1',
-			'Error questionPeriod to 2'
+			'Erreur questionPeriod 1',
+			'Erreur questionPeriod 2'
 		]
 	}
 };
 
 export const form: Form = {
-	questionString: {
-		type: 'text'
-	},
-	questionPeriod: {
-		type: 'period'
+	section1: {
+		fields: {
+			questionString: {
+				type: 'text'
+			},
+			questionPeriod: {
+				type: 'period'
+			}
+		}
 	}
 };

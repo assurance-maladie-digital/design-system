@@ -1,9 +1,9 @@
 <template>
-	<div class="vd-choice-button-field">
+	<div class="vd-choice-button-field vd-form-input">
 		<VBtnToggle
 			:value="choiceValue"
 			v-bind="field.metadata"
-			class="vd-choice-button-field-toggle layout wrap accent--text"
+			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"
 			:class="{ 'column': !isInline }"
 		>
 			<VBtn
@@ -14,7 +14,7 @@
 				elevation="0"
 				height="40"
 				active-class="white--text"
-				class="mb-2 text-none"
+				class="text-none"
 				color="accent"
 				@click="toggleItem(item)"
 			>
@@ -35,7 +35,7 @@
 
 		<p
 			v-if="field && field.metadata && field.metadata.hint"
-			class="mx-4 mb-0 v-messages"
+			class="px-3 mb-0 v-messages"
 			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
 			{{ field.metadata.hint }}
@@ -85,13 +85,33 @@
 <style lang="scss" scoped>
 	@import '../../../tokens';
 
-	.vd-choice-button-field .vd-choice-button-field-toggle {
+	.vd-choice-button-field-toggle {
+		background: none !important;
+
 		&.column .v-btn {
 			border-radius: 4px !important;
 			border-width: 1px !important;
+
+			+ .v-btn {
+				margin-top: 8px;
+			}
 		}
 
-		&:not(.v-btn-toggle--group) .v-btn {
+		.v-btn {
+			background: #fff;
+
+			&.v-btn--active::before {
+				opacity: 0 !important;
+			}
+		}
+
+		&.theme--dark {
+			.v-btn {
+				background: #1e1e1e;
+			}
+		}
+
+		&:not(.v-btn-toggle--group) .v-btn.v-btn {
 			border-color: $vd-accent !important;
 		}
 	}

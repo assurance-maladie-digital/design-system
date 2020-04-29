@@ -1,9 +1,49 @@
 <template>
-	<component
-		:is="getFieldType()"
-		v-model="field"
-		class="vd-form-field"
-	/>
+	<VLayout
+		column
+		class="vd-form-field mb-1"
+	>
+		<h4
+			v-if="field.title"
+			class="body-1"
+			:class="{ 'mb-2': !field.tooltip }"
+		>
+			<span>{{ field.title }}</span>
+
+			<VTooltip
+				v-if="field.tooltip"
+				right
+			>
+				<template #activator="{ on }">
+					<VBtn
+						icon
+						class="ml-1"
+						v-on="on"
+					>
+						<VIcon size="20">
+							{{ informationIcon }}
+						</VIcon>
+					</VBtn>
+				</template>
+
+				<span>{{ field.tooltip }}</span>
+			</VTooltip>
+		</h4>
+
+		<p
+			v-if="field.description"
+			:class="descriptionColor"
+			class="body-2"
+		>
+			{{ field.description }}
+		</p>
+
+		<component
+			:is="getFieldType()"
+			:field="field"
+			@change="$emit('change', $event)"
+		/>
+	</VLayout>
 </template>
 
 <script lang="ts">
@@ -14,10 +54,12 @@
 
 	import { FieldMap } from './mixins/fieldMap';
 
+	import { mdiInformationOutline } from '@mdi/js';
+
 	const Props = Vue.extend({
 		props: {
 			/** v-model value */
-			value: {
+			field: {
 				type: Object as PropType<Field>,
 				required: true
 			}
@@ -26,37 +68,50 @@
 
 	const MixinsDeclaration = mixins(Props, FieldMap);
 
-	/** FormField is a component used to display */
+	/**
+	 * FormField is a component used to display a field
+	 * with a description and/or a tooltip
+	 */
 	@Component({
 		model: {
-			prop: 'value',
+			prop: 'field',
 			event: 'change'
 		}
 	})
 	export default class FormField extends MixinsDeclaration {
+		informationIcon = mdiInformationOutline;
+
 		/**
 		 * Get the field type from metadata or default type
 		 *
 		 * @returns {string} The field type
 		 */
 		getFieldType(): string {
-			const metadataType = this.field.metadata ? this.field.metadata.type as string : undefined;
+			const metadataType: string | undefined = this.field.metadata?.type ?? undefined;
 
 			return this.getField(metadataType || this.field.type);
 		}
 
-		get field() {
-			return this.value;
-		}
+		/**
+		 * Color of the description text (changes in light/dark mode)
+		 *
+		 * @returns {string} The color class
+		 */
+		get descriptionColor(): string {
+			let color = 'grey--text ';
 
-		set field(value: Field) {
-			this.$emit('change', value);
+			// Only the modifier changes
+			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
+
+			return color;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.vd-form-field {
-		width: 100%;
+		+ .vd-form-field {
+			margin-top: 12px;
+		}
 	}
 </style>

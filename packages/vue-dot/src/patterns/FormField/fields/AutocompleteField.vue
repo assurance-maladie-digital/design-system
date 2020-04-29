@@ -4,6 +4,7 @@
 		:value="field.value"
 		:items="field.items"
 		:search-input.sync="searchInput"
+		class="vd-form-input"
 		@change="valueChanged"
 	/>
 </template>

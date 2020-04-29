@@ -11,10 +11,10 @@ export class DatePickerOptions extends Vue {
 	/**
 	 * Get Vuetify options object
 	 *
-	 * @param {object} metadata The metadata to merge with
+	 * @param {Options} metadata The metadata to merge with
 	 * @returns {Options} The merged options
 	 */
-	getVuetifyOptions(metadata?: object): Options {
+	getVuetifyOptions(metadata?: Options): Options {
 		const defaultOptions = {
 			menu: {
 				nudgeBottom: 55,

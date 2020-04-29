@@ -16,7 +16,9 @@
 			type: 'text',
 			value: null,
 			metadata: {
-				label: 'Votre nom'
+				label: 'Votre nom',
+				hideDetails: true,
+				outlined: true
 			}
 		};
 	}

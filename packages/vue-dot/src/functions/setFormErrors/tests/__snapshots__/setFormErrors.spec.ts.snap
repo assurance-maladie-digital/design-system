@@ -1,48 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`setFormErrors doesn't sets an error on unknown field 1`] = `
+exports[`setFormErrors doesn't sets an error on unknown fields 1`] = `
 Object {
-  "questionPeriod": Object {
-    "metadata": Object {
-      "notExist": Object {
-        "errorMessages": "Sub field does not exist",
+  "section1": Object {
+    "fields": Object {
+      "questionPeriod": Object {
+        "metadata": Object {
+          "notExist": Object {
+            "errorMessages": "Sub field does not exist",
+          },
+        },
+        "type": "period",
+      },
+      "questionString": Object {
+        "type": "text",
       },
     },
-    "type": "period",
-  },
-  "questionString": Object {
-    "type": "text",
   },
 }
 `;
 
-exports[`setFormErrors sets error messages on different fields 1`] = `
+exports[`setFormErrors sets error messages on fields 1`] = `
 Object {
-  "questionPeriod": Object {
-    "metadata": Object {
-      "from": Object {
-        "errorMessages": Array [
-          "Error questionPeriod 1",
-          "Error questionPeriod 2",
-        ],
+  "section1": Object {
+    "fields": Object {
+      "questionPeriod": Object {
+        "metadata": Object {
+          "from": Object {
+            "errorMessages": Array [
+              "Erreur questionPeriod 1",
+              "Erreur questionPeriod 2",
+            ],
+          },
+          "to": Object {
+            "errorMessages": Array [
+              "Erreur questionPeriod 1",
+              "Erreur questionPeriod 2",
+            ],
+          },
+        },
+        "type": "period",
       },
-      "to": Object {
-        "errorMessages": Array [
-          "Error questionPeriod to 1",
-          "Error questionPeriod to 2",
-        ],
+      "questionString": Object {
+        "metadata": Object {
+          "errorMessages": Array [
+            "Erreur string 1",
+            "Erreur string 2",
+          ],
+        },
+        "type": "text",
       },
     },
-    "type": "period",
-  },
-  "questionString": Object {
-    "metadata": Object {
-      "errorMessages": Array [
-        "error string 1",
-        "error string 2",
-      ],
-    },
-    "type": "text",
   },
 }
 `;

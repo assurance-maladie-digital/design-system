@@ -1,5 +1,5 @@
-import { ErrorMessages, PeriodErrorMessages } from '../../patterns/FormField/types.d';
+import { ErrorMessages, PeriodErrorMessages } from '../../patterns/FormField/types';
 
 export interface FormErrors {
-	[key: string]: ErrorMessages | PeriodErrorMessages;
+	[fieldName: string]: ErrorMessages | PeriodErrorMessages;
 }

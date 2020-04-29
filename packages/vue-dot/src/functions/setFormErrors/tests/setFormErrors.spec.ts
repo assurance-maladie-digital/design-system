@@ -4,11 +4,11 @@ import { setFormErrors } from '../';
 
 // Tests
 describe('setFormErrors', () => {
-	it('sets error messages on different fields', () => {
+	it('sets error messages on fields', () => {
 		expect(setFormErrors(questionErrors, form)).toMatchSnapshot();
 	});
 
-	it('doesn\'t sets an error on unknown field', () => {
+	it('doesn\'t sets an error on unknown fields', () => {
 		expect(setFormErrors(formErrors, form)).toMatchSnapshot();
 	});
 });
