@@ -41,6 +41,10 @@
 	color: #646464 !important
 }
 
+.v-data-table__empty-wrapper {
+	color: #717171 !important;
+}
+
 // Reset Vuetify font-size
 .v-btn,
 .v-tabs__div,
@@ -79,6 +83,20 @@ table.v-table thead th,
 	}
 }
 
-.v-data-table__empty-wrapper {
-	color: #717171 !important;
+// Fix DataTable pagination on IE
+.v-data-footer__select {
+	flex: none !important;
+
+	.v-select,
+	.v-select__selections {
+		flex: none;
+
+		input {
+			@extend .sr-only;
+		}
+	}
+
+	.v-select__selections {
+		display: block;
+	}
 }
