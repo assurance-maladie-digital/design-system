@@ -81,12 +81,10 @@
 					v-bind="options.dataListsLayout"
 					class="vd-sub-header-data-list mt-n2 mx-n2"
 				>
-					<DataListLoading v-if="loading" />
-
 					<DataList
 						v-for="(dataList, index) in dataLists"
-						v-else
 						:key="'vd-sub-header-data-list' + index"
+						:loading="loading"
 						:list-title="dataList.title"
 						:list="dataList.items"
 						:label-color="fadeWhite"
@@ -111,8 +109,6 @@
 	import { customizable } from '../../mixins/customizable';
 
 	import DataList from '../../elements/DataList';
-
-	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
 
@@ -158,8 +154,7 @@
 	 */
 	@Component({
 		components: {
-			DataList,
-			DataListLoading
+			DataList
 		}
 	})
 	export default class SubHeader extends MixinsDeclaration {

@@ -1,39 +1,49 @@
 <template>
-	<div class="vd-data-list">
-		<!-- The title slot can be used to change the title level -->
-		<slot name="title">
-			<h4
-				v-if="listTitle"
-				:class="titleClass"
-			>
-				{{ listTitle }}
-			</h4>
-		</slot>
-
-		<ul
-			v-if="list.length"
-			class="vd-data-list-field pl-0"
-			:class="listClass"
-			:style="{ minWidth }"
+	<div>
+		<DataListLoading
+			v-if="loading"
+			:items-number="list.length"
+			:heading="Boolean(listTitle)"
+		/>
+		<div
+			v-else
+			class="vd-data-list"
 		>
-			<li
-				v-for="(item, index) in list"
-				:key="index"
-				class="vd-data-list-row mb-2"
+			<!-- The title slot can be used to change the title level -->
+			<slot name="title">
+				<h4
+					v-if="listTitle"
+					:class="titleClass"
+				>
+					{{ listTitle }}
+				</h4>
+			</slot>
+
+			<ul
+				v-if="list.length"
+				class="vd-data-list-field pl-0"
+				:class="listClass"
+				:style="{ minWidth }"
 			>
-				<DataListItem
-					v-if="item.key"
-					:label="item.key"
-					:value="item.value"
-					:chip="item.chip"
-					:icon="getIcon(item.icon)"
-					:placeholder="placeholder"
-					:vuetify-options="item.options"
-					:style="{ width }"
-					class="vd-data-list-item body-1"
-				/>
-			</li>
-		</ul>
+				<li
+					v-for="(item, index) in list"
+					:key="index"
+					class="vd-data-list-row mb-2"
+				>
+					<DataListItem
+						v-if="item.key"
+						:label="item.key"
+						:value="item.value"
+						:chip="item.chip"
+						:icon="getIcon(item.icon)"
+						:placeholder="placeholder"
+						:vuetify-options="item.options"
+						:style="{ width }"
+						class="vd-data-list-item body-1"
+					/>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -44,6 +54,7 @@
 	import { locales } from './locales';
 
 	import DataListItem from './DataListItem';
+	import DataListLoading from './DataListLoading';
 
 	import { IDataListItem, DataListIcons } from './types';
 
@@ -89,6 +100,11 @@
 			width: {
 				type: String,
 				default: '200px'
+			},
+			/** Loading */
+			loading: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -101,7 +117,8 @@
 	 */
 	@Component({
 		components: {
-			DataListItem
+			DataListItem,
+			DataListLoading
 		}
 	})
 	export default class DataList extends MixinsDeclaration {

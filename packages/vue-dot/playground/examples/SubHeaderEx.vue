@@ -97,6 +97,6 @@
 			backgroundOpacity: '.24'
 		};
 
-		loading = false;
+		loading = true;
 	}
 </script>
