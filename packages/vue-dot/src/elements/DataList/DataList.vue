@@ -1,49 +1,54 @@
 <template>
 	<div>
-		<DataListLoading
-			v-if="loading"
-			:items-number="list.length"
-			:heading="Boolean(listTitle)"
-		/>
-		<div
-			v-else
-			class="vd-data-list"
+		<v-fade-transition
+			mode="out-in"
 		>
-			<!-- The title slot can be used to change the title level -->
-			<slot name="title">
-				<h4
-					v-if="listTitle"
-					:class="titleClass"
-				>
-					{{ listTitle }}
-				</h4>
-			</slot>
-
-			<ul
-				v-if="list.length"
-				class="vd-data-list-field pl-0"
-				:class="listClass"
-				:style="{ minWidth }"
+			<!-- The DataList loading skeleton -->
+			<DataListLoading
+				v-if="loading"
+				:items-number="loadingItemsNumber"
+				:heading="loadingHeading"
+			/>
+			<div
+				v-else
+				class="vd-data-list"
 			>
-				<li
-					v-for="(item, index) in list"
-					:key="index"
-					class="vd-data-list-row mb-2"
+				<!-- The title slot can be used to change the title level -->
+				<slot name="title">
+					<h4
+						v-if="listTitle"
+						:class="titleClass"
+					>
+						{{ listTitle }}
+					</h4>
+				</slot>
+
+				<ul
+					v-if="list.length"
+					class="vd-data-list-field pl-0"
+					:class="listClass"
+					:style="{ minWidth }"
 				>
-					<DataListItem
-						v-if="item.key"
-						:label="item.key"
-						:value="item.value"
-						:chip="item.chip"
-						:icon="getIcon(item.icon)"
-						:placeholder="placeholder"
-						:vuetify-options="item.options"
-						:style="{ width }"
-						class="vd-data-list-item body-1"
-					/>
-				</li>
-			</ul>
-		</div>
+					<li
+						v-for="(item, index) in list"
+						:key="index"
+						class="vd-data-list-row mb-2"
+					>
+						<DataListItem
+							v-if="item.key"
+							:label="item.key"
+							:value="item.value"
+							:chip="item.chip"
+							:icon="getIcon(item.icon)"
+							:placeholder="placeholder"
+							:vuetify-options="item.options"
+							:style="{ width }"
+							class="vd-data-list-item body-1"
+						/>
+					</li>
+				</ul>
+			</div>
+		</v-fade-transition>
 	</div>
 </template>
 
@@ -103,6 +108,16 @@
 			},
 			/** Loading */
 			loading: {
+				type: Boolean,
+				default: false
+			},
+			/** Number of items during loading */
+			loadingItemsNumber: {
+				type: Number,
+				default: 1
+			},
+			/** Number of items during loading */
+			loadingHeading: {
 				type: Boolean,
 				default: false
 			}

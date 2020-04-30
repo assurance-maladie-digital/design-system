@@ -1,7 +1,10 @@
 <template>
 	<div class="vd-sub-header secondary white--text py-6 px-8">
 		<slot name="back-btn">
-			<template v-if="!hideBackBtn">
+			<v-fade-transition
+				v-if="!hideBackBtn"
+				mode="out-in"
+			>
 				<VSkeletonLoader
 					v-if="loading"
 					height="28"
@@ -23,7 +26,7 @@
 
 					{{ backBtnText }}
 				</VBtn>
-			</template>
+			</v-fade-transition>
 		</slot>
 
 		<VLayout
@@ -35,23 +38,30 @@
 				column
 			>
 				<slot name="title">
-					<HeaderLoading
-						v-if="loading"
-						width="300"
-						height="2rem"
-						dark
-					/>
-
-					<h2
-						v-else
-						class="headline font-weight-bold"
+					<v-fade-transition
+						mode="out-in"
 					>
-						{{ titleText }}
-					</h2>
+						<HeaderLoading
+							v-if="loading"
+							width="300"
+							height="2rem"
+							dark
+						/>
+
+						<h2
+							v-else
+							class="headline font-weight-bold"
+						>
+							{{ titleText }}
+						</h2>
+					</v-fade-transition>
 				</slot>
 
 				<slot name="sub-title">
-					<template v-if="subTitleText">
+					<v-fade-transition
+						v-if="subTitleText"
+						mode="out-in"
+					>
 						<HeaderLoading
 							v-if="loading"
 							class="mt-1"
@@ -69,7 +79,7 @@
 						>
 							{{ subTitleText }}
 						</p>
-					</template>
+					</v-fade-transition>
 				</slot>
 
 				<slot name="additional-informations" />
@@ -79,7 +89,7 @@
 				<VLayout
 					v-if="dataLists"
 					v-bind="options.dataListsLayout"
-					class="vd-sub-header-data-list mt-n2 mx-n2"
+					class="vd-sub-header-data-list mt-n3 mx-n2"
 				>
 					<DataList
 						v-for="(dataList, index) in dataLists"
@@ -91,6 +101,8 @@
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
+						:loading-items-number="2"
+						:loading-heading="true"
 					/>
 				</VLayout>
 			</slot>
