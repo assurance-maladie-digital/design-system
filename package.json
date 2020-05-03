@@ -35,7 +35,7 @@
 		"lint-staged": "10.2.1",
 		"monorepo-run": "0.4.2",
 		"ts-jest": "25.4.0",
-		"ts-node": "8.9.1",
+		"ts-node": "8.10.1",
 		"typescript": "3.8.3",
 		"vue": "2.6.11",
 		"vue-class-component": "7.2.3",
