@@ -5,6 +5,7 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import DataList from '../';
+import { IDataListLoading } from '../DataListLoading/types';
 
 let wrapper: Wrapper<Vue>;
 
@@ -23,6 +24,11 @@ const list = [
 	}
 ];
 
+const listLoading: IDataListLoading = {
+	itemsNumber: 2,
+	heading: false
+};
+
 // Tests
 describe('DataList', () => {
 	it('renders correctly', () => {
@@ -35,6 +41,10 @@ describe('DataList', () => {
 
 		const elExists = wrapper.find('.vd-data-list').exists();
 		expect(elExists).toBe(true);
+
+		// Check items exists
+		const itemsExists = wrapper.find('.vd-data-list-item').exists();
+		expect(itemsExists).toBe(true);
 
 		const titleExists = wrapper.find('h4').exists();
 		expect(titleExists).toBe(false);
@@ -95,9 +105,38 @@ describe('DataList', () => {
 			}
 		});
 
-		const elExists = wrapper.find('.vd-field').exists();
-		expect(elExists).toBe(false);
+		// Check items does not exist
+		const itemsExists = wrapper.find('.vd-data-list-item').exists();
+		expect(itemsExists).toBe(false);
 
 		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders loading', () => {
+		// Mount component
+		wrapper = mountComponent(DataList, {
+			propsData: {
+				list,
+				loading: true,
+				listLoading
+			}
+		});
+
+		// Check that items does not exist
+		let itemsExists = wrapper.find('.vd-data-list-item').exists();
+		expect(itemsExists).toBe(false);
+
+		expect(html(wrapper)).toMatchSnapshot();
+
+		wrapper.setProps({ loading: false });
+
+		Vue.nextTick(() => {
+			// Check that items now exist
+			itemsExists = wrapper.find('.vd-data-list-item').exists();
+			expect(itemsExists).toBe(true);
+
+			expect(html(wrapper)).toMatchSnapshot();
+		});
+
 	});
 });

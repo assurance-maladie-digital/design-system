@@ -1,12 +1,11 @@
 <template>
 	<VLayout wrap>
 		<VLayout
-			v-for="columnIndex in columnsNumber"
-			:key="columnIndex + '-loader'"
 			class="vd-data-list-loading-item"
 			column
 		>
 			<HeaderLoading
+				v-if="heading"
 				class="mb-2 mt-3"
 				height="1.75rem"
 				width="100"
@@ -40,13 +39,15 @@
 
 	const Props = Vue.extend({
 		props: {
-			columnsNumber: {
-				type: Number,
-				default: 4
-			},
+			/** Number of items */
 			itemsNumber: {
 				type: Number,
-				default: 2
+				default: 1
+			},
+			/** Heading Loading option */
+			heading: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});

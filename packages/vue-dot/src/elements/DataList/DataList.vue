@@ -1,39 +1,54 @@
 <template>
-	<div class="vd-data-list">
-		<!-- The title slot can be used to change the title level -->
-		<slot name="title">
-			<h4
-				v-if="listTitle"
-				:class="titleClass"
-			>
-				{{ listTitle }}
-			</h4>
-		</slot>
-
-		<ul
-			v-if="list.length"
-			class="vd-data-list-field pl-0"
-			:class="listClass"
-			:style="{ minWidth }"
+	<div>
+		<v-fade-transition
+			mode="out-in"
 		>
-			<li
-				v-for="(item, index) in list"
-				:key="index"
-				class="vd-data-list-row mb-2"
+			<!-- The DataList loading skeleton -->
+			<DataListLoading
+				v-if="loading && listLoading"
+				:items-number="listLoading.itemsNumber"
+				:heading="listLoading.heading"
+			/>
+			<div
+				v-else
+				class="vd-data-list"
 			>
-				<DataListItem
-					v-if="item.key"
-					:label="item.key"
-					:value="item.value"
-					:chip="item.chip"
-					:icon="getIcon(item.icon)"
-					:placeholder="placeholder"
-					:vuetify-options="item.options"
-					:style="{ width }"
-					class="vd-data-list-item body-1"
-				/>
-			</li>
-		</ul>
+				<!-- The title slot can be used to change the title level -->
+				<slot name="title">
+					<h4
+						v-if="listTitle"
+						:class="titleClass"
+					>
+						{{ listTitle }}
+					</h4>
+				</slot>
+
+				<ul
+					v-if="list.length"
+					class="vd-data-list-field pl-0"
+					:class="listClass"
+					:style="{ minWidth }"
+				>
+					<li
+						v-for="(item, index) in list"
+						:key="index"
+						class="vd-data-list-row mb-2"
+					>
+						<DataListItem
+							v-if="item.key"
+							:label="item.key"
+							:value="item.value"
+							:chip="item.chip"
+							:icon="getIcon(item.icon)"
+							:placeholder="placeholder"
+							:vuetify-options="item.options"
+							:style="{ width }"
+							class="vd-data-list-item body-1"
+						/>
+					</li>
+				</ul>
+			</div>
+		</v-fade-transition>
 	</div>
 </template>
 
@@ -44,8 +59,10 @@
 	import { locales } from './locales';
 
 	import DataListItem from './DataListItem';
+	import DataListLoading from './DataListLoading';
 
 	import { IDataListItem, DataListIcons } from './types';
+	import { IDataListLoading } from './DataListLoading/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -53,6 +70,11 @@
 			list: {
 				type: Array as PropType<DataListItem[]>,
 				required: true
+			},
+			/** The list to display during loading */
+			listLoading: {
+				type: Object as PropType<IDataListLoading>,
+				default: undefined
 			},
 			icons: {
 				type: Object as PropType<DataListIcons | undefined>,
@@ -89,6 +111,11 @@
 			width: {
 				type: String,
 				default: '200px'
+			},
+			/** Loading */
+			loading: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -101,7 +128,8 @@
 	 */
 	@Component({
 		components: {
-			DataListItem
+			DataListItem,
+			DataListLoading
 		}
 	})
 	export default class DataList extends MixinsDeclaration {

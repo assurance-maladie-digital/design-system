@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataListLoading renders correctly default 1`] = `
+<vlayout-stub tag="div" wrap="" label="Test">
+  <vlayout-stub tag="div" column="" class="vd-data-list-loading-item">
+    <!---->
+    <headerloading-stub width="60" height="1.25rem" dark="" class="mb-1"></headerloading-stub>
+    <headerloading-stub width="90" height="1.5rem" dark="" class="mb-2"></headerloading-stub>
+  </vlayout-stub>
+</vlayout-stub>
+`;
+
+exports[`DataListLoading renders with header 1`] = `
+<vlayout-stub tag="div" wrap="">
+  <vlayout-stub tag="div" column="" class="vd-data-list-loading-item">
+    <headerloading-stub width="100" height="1.75rem" dark="" class="mb-2 mt-3"></headerloading-stub>
+    <headerloading-stub width="60" height="1.25rem" dark="" class="mb-1"></headerloading-stub>
+    <headerloading-stub width="90" height="1.5rem" dark="" class="mb-2"></headerloading-stub>
+  </vlayout-stub>
+</vlayout-stub>
+`;
+
+exports[`DataListLoading renders with more items 1`] = `
+<vlayout-stub tag="div" wrap="">
+  <vlayout-stub tag="div" column="" class="vd-data-list-loading-item">
+    <!---->
+    <headerloading-stub width="60" height="1.25rem" dark="" class="mb-1"></headerloading-stub>
+    <headerloading-stub width="90" height="1.5rem" dark="" class="mb-2"></headerloading-stub>
+    <headerloading-stub width="60" height="1.25rem" dark="" class="mb-1"></headerloading-stub>
+    <headerloading-stub width="90" height="1.5rem" dark="" class="mb-2"></headerloading-stub>
+    <headerloading-stub width="60" height="1.25rem" dark="" class="mb-1"></headerloading-stub>
+    <headerloading-stub width="90" height="1.5rem" dark="" class="mb-2"></headerloading-stub>
+  </vlayout-stub>
+</vlayout-stub>
+`;

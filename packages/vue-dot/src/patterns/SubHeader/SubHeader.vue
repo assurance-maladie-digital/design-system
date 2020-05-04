@@ -1,7 +1,10 @@
 <template>
 	<div class="vd-sub-header secondary white--text py-6 px-8">
 		<slot name="back-btn">
-			<template v-if="!hideBackBtn">
+			<v-fade-transition
+				v-if="!hideBackBtn"
+				mode="out-in"
+			>
 				<VSkeletonLoader
 					v-if="loading"
 					height="28"
@@ -23,7 +26,7 @@
 
 					{{ backBtnText }}
 				</VBtn>
-			</template>
+			</v-fade-transition>
 		</slot>
 
 		<VLayout
@@ -35,23 +38,30 @@
 				column
 			>
 				<slot name="title">
-					<HeaderLoading
-						v-if="loading"
-						width="300"
-						height="2rem"
-						dark
-					/>
-
-					<h2
-						v-else
-						class="headline font-weight-bold"
+					<v-fade-transition
+						mode="out-in"
 					>
-						{{ titleText }}
-					</h2>
+						<HeaderLoading
+							v-if="loading"
+							width="300"
+							height="2rem"
+							dark
+						/>
+
+						<h2
+							v-else
+							class="headline font-weight-bold"
+						>
+							{{ titleText }}
+						</h2>
+					</v-fade-transition>
 				</slot>
 
 				<slot name="sub-title">
-					<template v-if="subTitleText">
+					<v-fade-transition
+						v-if="subTitleText"
+						mode="out-in"
+					>
 						<HeaderLoading
 							v-if="loading"
 							class="mt-1"
@@ -69,7 +79,7 @@
 						>
 							{{ subTitleText }}
 						</p>
-					</template>
+					</v-fade-transition>
 				</slot>
 
 				<slot name="additional-informations" />
@@ -79,16 +89,15 @@
 				<VLayout
 					v-if="dataLists"
 					v-bind="options.dataListsLayout"
-					class="vd-sub-header-data-list mt-n2 mx-n2"
+					class="vd-sub-header-data-list mt-n3 mx-n2"
 				>
-					<DataListLoading v-if="loading" />
-
 					<DataList
 						v-for="(dataList, index) in dataLists"
-						v-else
 						:key="'vd-sub-header-data-list' + index"
+						:loading="loading"
 						:list-title="dataList.title"
 						:list="dataList.items"
+						:list-loading="dataList.itemsLoading"
 						:label-color="fadeWhite"
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
@@ -111,8 +120,6 @@
 	import { customizable } from '../../mixins/customizable';
 
 	import DataList from '../../elements/DataList';
-
-	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
 
@@ -143,6 +150,7 @@
 				type: Array as PropType<IDataList[]>,
 				default: undefined
 			},
+			/** Loading mode */
 			loading: {
 				type: Boolean,
 				default: false
@@ -158,8 +166,7 @@
 	 */
 	@Component({
 		components: {
-			DataList,
-			DataListLoading
+			DataList
 		}
 	})
 	export default class SubHeader extends MixinsDeclaration {

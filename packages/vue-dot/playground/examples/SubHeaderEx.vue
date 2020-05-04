@@ -10,34 +10,46 @@
 			<template #additional-informations>
 				<VSpacer />
 
-				<template v-if="loading">
-					<HeaderLoading
-						class="mt-8"
-						height="24"
-						width="150"
-						dark
-					/>
+				<div>
+					<v-fade-transition
+						mode="out-in"
+					>
+						<div
+							v-if="loading"
+							key="progress-skeleton"
+						>
+							<HeaderLoading
+								class="mt-8"
+								height="24"
+								width="160"
+								dark
+							/>
 
-					<HeaderLoading
-						class="mt-2 mb-1"
-						height="8"
-						width="100%"
-						tile
-						dark
-					/>
-				</template>
+							<HeaderLoading
+								class="mt-2 mb-1"
+								height="8"
+								width="100%"
+								tile
+								dark
+							/>
+						</div>
 
-				<template v-else>
-					<p class="white--text mt-8 mb-0">
-						Profil complété à 50%
-					</p>
+						<div
+							v-else
+							key="progress-data"
+						>
+							<p class="white--text mt-8 mb-0">
+								Profil complété à 50%
+							</p>
 
-					<VProgressLinear
-						v-bind="progressLinearOpts"
-						:value="progressValue"
-						class="mb-1"
-					/>
-				</template>
+							<VProgressLinear
+								v-bind="progressLinearOpts"
+								:value="progressValue"
+								class="mb-1"
+							/>
+						</div>
+					</v-fade-transition>
+				</div>
 			</template>
 		</SubHeader>
 
@@ -54,8 +66,10 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+	import { IDataListLoading } from '../../src/elements/DataList/DataListLoading/types';
+	import { IDataListItem } from '../../src/elements/DataList/types';
 
-	const dataListItems = [
+	const dataListItems: IDataListItem[] = [
 		{
 			key: 'Libellé',
 			value: 'Texte saisi'
@@ -66,24 +80,34 @@
 		}
 	];
 
+	const dataListItemsLoading: IDataListLoading =
+		{
+			itemsNumber: 2,
+			heading: true
+		};
+
 	@Component
 	export default class SubHeaderEx extends Vue {
 		dataLists = [
 			{
 				title: 'Catégorie 1',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			},
 			{
 				title: 'Catégorie 2',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			},
 			{
 				title: 'Catégorie 3',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			},
 			{
 				title: 'Catégorie 4',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			}
 		];
 
