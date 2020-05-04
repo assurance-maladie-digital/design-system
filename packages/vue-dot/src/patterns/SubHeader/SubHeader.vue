@@ -97,12 +97,11 @@
 						:loading="loading"
 						:list-title="dataList.title"
 						:list="dataList.items"
+						:list-loading="dataList.itemsLoading"
 						:label-color="fadeWhite"
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
-						:loading-items-number="2"
-						:loading-heading="true"
 					/>
 				</VLayout>
 			</slot>
@@ -151,6 +150,7 @@
 				type: Array as PropType<IDataList[]>,
 				default: undefined
 			},
+			/** Loading mode */
 			loading: {
 				type: Boolean,
 				default: false

@@ -66,8 +66,10 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+	import { IDataListLoading } from '../../src/elements/DataList/DataListLoading/types';
+	import { IDataListItem } from '../../src/elements/DataList/types';
 
-	const dataListItems = [
+	const dataListItems: IDataListItem[] = [
 		{
 			key: 'Libellé',
 			value: 'Texte saisi'
@@ -78,24 +80,34 @@
 		}
 	];
 
+	const dataListItemsLoading: IDataListLoading =
+		{
+			itemsNumber: 2,
+			heading: true
+		};
+
 	@Component
 	export default class SubHeaderEx extends Vue {
 		dataLists = [
 			{
 				title: 'Catégorie 1',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			},
 			{
 				title: 'Catégorie 2',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			},
 			{
 				title: 'Catégorie 3',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			},
 			{
 				title: 'Catégorie 4',
-				items: dataListItems
+				items: dataListItems,
+				itemsLoading: dataListItemsLoading
 			}
 		];
 

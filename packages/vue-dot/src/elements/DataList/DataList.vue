@@ -5,9 +5,9 @@
 		>
 			<!-- The DataList loading skeleton -->
 			<DataListLoading
-				v-if="loading"
-				:items-number="loadingItemsNumber"
-				:heading="loadingHeading"
+				v-if="loading && listLoading"
+				:items-number="listLoading.itemsNumber"
+				:heading="listLoading.heading"
 			/>
 			<div
 				v-else
@@ -62,6 +62,7 @@
 	import DataListLoading from './DataListLoading';
 
 	import { IDataListItem, DataListIcons } from './types';
+	import { IDataListLoading } from './DataListLoading/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -69,6 +70,11 @@
 			list: {
 				type: Array as PropType<DataListItem[]>,
 				required: true
+			},
+			/** The list to display during loading */
+			listLoading: {
+				type: Object as PropType<IDataListLoading>,
+				default: undefined
 			},
 			icons: {
 				type: Object as PropType<DataListIcons | undefined>,
@@ -108,16 +114,6 @@
 			},
 			/** Loading */
 			loading: {
-				type: Boolean,
-				default: false
-			},
-			/** Number of items during loading */
-			loadingItemsNumber: {
-				type: Number,
-				default: 1
-			},
-			/** Number of items during loading */
-			loadingHeading: {
 				type: Boolean,
 				default: false
 			}
