@@ -1,36 +1,40 @@
 <template>
-	<VLayout wrap>
-		<VLayout
-			class="vd-data-list-loading-item"
-			column
-		>
-			<HeaderLoading
-				v-if="heading"
-				class="mb-2 mt-3"
-				height="1.75rem"
-				width="100"
-				dark
-			/>
+	<div
+		class="vd-data-list-loading"
+	>
+		<HeaderLoading
+			v-if="heading"
+			class="mb-2 mt-3"
+			height="1.75rem"
+			width="100"
+			:dark="dark"
+		/>
 
-			<template v-for="index in itemsNumber">
+		<ul
+			:class="listClass"
+			class="vd-data-list-loading-items pl-0"
+		>
+			<li
+				v-for="index in itemsNumber"
+				:key="index + '-loading-item'"
+				class="mr-2"
+			>
 				<HeaderLoading
-					:key="index + '-key'"
 					height="1.25rem"
 					class="mb-1"
 					width="60"
-					dark
+					:dark="dark"
 				/>
 
 				<HeaderLoading
-					:key="index + '-value'"
 					class="mb-2"
 					height="1.5rem"
 					width="90"
-					dark
+					:dark="dark"
 				/>
-			</template>
-		</VLayout>
-	</VLayout>
+			</li>
+		</ul>
+	</div>
 </template>
 
 <script lang="ts">
@@ -48,20 +52,50 @@
 			heading: {
 				type: Boolean,
 				default: false
+			},
+			row: {
+				type: Boolean,
+				default: false
+			},
+			flex: {
+				type: Boolean,
+				default: false
+			},
+			/** Is dark mode */
+			dark: {
+				type: Boolean,
+				default: false
 			}
+
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class DataListLoading extends MixinsDeclaration {}
+	export default class DataListLoading extends MixinsDeclaration {
+		get listClass() {
+			return {
+				'vd-column': !this.row || this.flex,
+				'vd-flex': this.flex
+			};
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-data-list-loading-item {
+	.vd-data-list-loading {
 		flex: none;
 		margin-left: 8px;
+
+		.vd-data-list-loading-items {
+			list-style: none;
+
+			&.vd-flex {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
 
 		&:not(:last-child) {
 			margin-right: 80px;
@@ -69,7 +103,7 @@
 	}
 
 	@media only screen and (max-width: 425px) {
-		.vd-data-list-loading-item {
+		.vd-data-list-loading {
 			&:not(:last-child) {
 				margin-right: 0;
 			}

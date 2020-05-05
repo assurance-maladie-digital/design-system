@@ -8,6 +8,9 @@
 				v-if="loading && listLoading"
 				:items-number="listLoading.itemsNumber"
 				:heading="listLoading.heading"
+				:flex="flex"
+				:row="row"
+				:dark="dark"
 			/>
 			<div
 				v-else
@@ -114,6 +117,11 @@
 			},
 			/** Loading */
 			loading: {
+				type: Boolean,
+				default: false
+			},
+			/** Is dark mode */
+			dark: {
 				type: Boolean,
 				default: false
 			}
