@@ -6,18 +6,22 @@ import { defaultErrorMessages } from './locales';
 /**
  * Check that the field does not exceeds the exact length
  *
- * @param {number} length The exact length allowed
+ * @param {number} lengthValue The exact length allowed
  * @param {ErrorMessages} [errorMessages] Custom error messages
  * @returns {ValidationRule} Validation result
  */
-export function exactLengthFn(length: number, errorMessages: ErrorMessages<number> = defaultErrorMessages): ValidationRule {
+export function exactLengthFn(lengthValue: number, ignoreSpaces = false, errorMessages: ErrorMessages<number> = defaultErrorMessages): ValidationRule {
 	return (value: string) => {
 		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;
 		}
 
-		return value.length === length || ruleMessage(errorMessages, 'default', [length]);
+		if (ignoreSpaces) {
+			value = value.replace(/\s/g, '');
+		}
+
+		return value.length === lengthValue || ruleMessage(errorMessages, 'default', [lengthValue]);
 	};
 }
 
