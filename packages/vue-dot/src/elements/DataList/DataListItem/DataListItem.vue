@@ -41,6 +41,20 @@
 					</span>
 				</slot>
 			</div>
+			<!-- Show value or fallback to placeholder -->
+			<div class="vd-data-list-item-action">
+				<slot
+					name="action"
+				>
+					<a
+						v-if="action"
+						class="body-1 text-none text-accent text-bold"
+						@click="$emit('click:action')"
+					>
+						{{ action }}
+					</a>
+				</slot>
+			</div>
 		</div>
 	</VLayout>
 </template>
@@ -63,6 +77,11 @@
 			},
 			/** Value to display */
 			value: {
+				type: String,
+				default: undefined
+			},
+			/** Value to display */
+			action: {
 				type: String,
 				default: undefined
 			},

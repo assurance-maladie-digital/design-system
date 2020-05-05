@@ -49,7 +49,8 @@
 			},
 			{
 				key: 'Native country',
-				value: 'France'
+				value: 'France',
+				action: 'Modifier'
 			},
 			{
 				key: 'Date of registration',

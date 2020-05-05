@@ -20,4 +20,17 @@ describe('DataListItem', () => {
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
+
+	it('renders with action', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: 'value',
+				action: 'action'
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
 });
