@@ -1,4 +1,4 @@
-import { exactLength } from '..';
+import { exactLength } from '../';
 
 // Tests
 describe('exactLength', () => {
@@ -14,7 +14,7 @@ describe('exactLength', () => {
 		expect(typeof rule('s')).toBe('string');
 	});
 
-	it('returns true when the value is longer than the exact length but spaces are ignored', () => {
+	it('returns true when the value is the exact length without counting spaces', () => {
 		const rule = exactLength(2, true);
 
 		expect(rule('x x')).toBe(true);
