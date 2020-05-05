@@ -99,6 +99,7 @@
 						:list="dataList.items"
 						:list-loading="dataList.itemsLoading"
 						:label-color="fadeWhite"
+						dark
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
