@@ -1,4 +1,1 @@
-export interface IDataListLoading {
-	itemsNumber: number;
-	heading?: boolean;
-}
+export type LoadingHeading = Boolean | String | null;

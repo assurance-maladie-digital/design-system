@@ -56,7 +56,7 @@
 		<VBtn
 			class="mt-4"
 			color="accent"
-			@click="loading = !loading"
+			@click="toggleLoading(loading)"
 		>
 			{{ loading ? 'Unset' : 'Set' }} loading
 		</VBtn>
@@ -66,8 +66,8 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import { IDataListLoading } from '../../src/elements/DataList/DataListLoading/types';
 	import { IDataListItem } from '../../src/elements/DataList/types';
+	import { IDataList } from '../../src/patterns/SubHeader/types';
 
 	const dataListItems: IDataListItem[] = [
 		{
@@ -80,34 +80,28 @@
 		}
 	];
 
-	const dataListItemsLoading: IDataListLoading =
-		{
-			itemsNumber: 2,
-			heading: true
-		};
-
 	@Component
 	export default class SubHeaderEx extends Vue {
-		dataLists = [
+		dataLists: IDataList[] = [
 			{
-				title: 'Catégorie 1',
-				items: dataListItems,
-				itemsLoading: dataListItemsLoading
+				itemsNumber: 2,
+				items: [],
+				heading: true
 			},
 			{
 				title: 'Catégorie 2',
 				items: dataListItems,
-				itemsLoading: dataListItemsLoading
+				itemsNumber: 2
 			},
 			{
 				title: 'Catégorie 3',
 				items: dataListItems,
-				itemsLoading: dataListItemsLoading
+				itemsNumber: 2
 			},
 			{
 				title: 'Catégorie 4',
 				items: dataListItems,
-				itemsLoading: dataListItemsLoading
+				itemsNumber: 2
 			}
 		];
 
@@ -121,6 +115,14 @@
 			backgroundOpacity: '.24'
 		};
 
-		loading = false;
+		loading: Boolean = false;
+
+		toggleLoading(loading: Boolean) {
+
+			this.dataLists[0].title= !loading ? '' : 'Catégorie 1';
+			this.dataLists[0].items = !loading ? [] : dataListItems;
+
+			this.loading = !loading;
+		}
 	}
 </script>

@@ -2,9 +2,15 @@
 	<div
 		class="vd-data-list-loading"
 	>
+		<h4
+			v-if="title"
+			:class="headingClass"
+		>
+			{{ title }}
+		</h4>
 		<HeaderLoading
-			v-if="heading"
-			class="mb-2 mt-3"
+			v-else-if="heading"
+			:class="headingClass"
 			height="1.75rem"
 			width="100"
 			:dark="dark"
@@ -38,8 +44,9 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+	import { LoadingHeading } from './types';
 
 	const Props = Vue.extend({
 		props: {
@@ -50,8 +57,12 @@
 			},
 			/** Heading Loading option */
 			heading: {
-				type: Boolean,
+				type: [Boolean, String] as PropType<LoadingHeading>,
 				default: false
+			},
+			headingClass: {
+				type: String,
+				default: 'mb-3 headline'
 			},
 			row: {
 				type: Boolean,
@@ -79,6 +90,13 @@
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex
 			};
+		}
+
+		/**
+		 * Return the title if it already exist during items loading
+		 */
+		get title() {
+			return this.heading && typeof this.heading === 'string' ? this.heading : false;
 		}
 	}
 </script>

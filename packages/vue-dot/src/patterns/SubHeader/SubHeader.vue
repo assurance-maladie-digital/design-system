@@ -97,7 +97,8 @@
 						:loading="loading"
 						:list-title="dataList.title"
 						:list="dataList.items"
-						:list-loading="dataList.itemsLoading"
+						:items-number="dataList.itemsNumber"
+						:heading="dataList.heading"
 						:label-color="fadeWhite"
 						dark
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"

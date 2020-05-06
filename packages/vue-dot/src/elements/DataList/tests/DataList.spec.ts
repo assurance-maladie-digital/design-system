@@ -5,7 +5,6 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import DataList from '../';
-import { IDataListLoading } from '../DataListLoading/types';
 
 let wrapper: Wrapper<Vue>;
 
@@ -24,10 +23,7 @@ const list = [
 	}
 ];
 
-const listLoading: IDataListLoading = {
-	itemsNumber: 2,
-	heading: false
-};
+const itemsNumber: Number = 2;
 
 // Tests
 describe('DataList', () => {
@@ -118,7 +114,7 @@ describe('DataList', () => {
 			propsData: {
 				list,
 				loading: true,
-				listLoading
+				itemsNumber
 			}
 		});
 

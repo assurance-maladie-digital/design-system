@@ -3,7 +3,7 @@
 		<DataList
 			:loading="loading"
 			:list="data"
-			:list-loading="dataListItemsLoading"
+			:items-number="itemsNumber"
 			:icons="icons"
 			list-title="Informations"
 			flex
@@ -27,18 +27,12 @@
 	import { IDataListItem } from '../../src/elements/DataList/types';
 
 	import { mdiCalendar } from '@mdi/js';
-	import { IDataListLoading } from '../../src/elements/DataList/DataListLoading/types';
 
 	@Component
 	export default class DataListEx extends Vue {
+		loading: Boolean = false;
 
-		loading = false;
-
-		dataListItemsLoading: IDataListLoading =
-		{
-			itemsNumber: 7,
-			heading: true
-		};
+		itemsNumber: Number = 7;
 
 		data: IDataListItem[] = [
 			{

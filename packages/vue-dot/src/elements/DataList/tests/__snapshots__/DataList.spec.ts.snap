@@ -100,7 +100,7 @@ exports[`DataList renders correctly with an empty list 1`] = `
 exports[`DataList renders loading 1`] = `
 <div>
   <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <datalistloading-stub itemsnumber="2"></datalistloading-stub>
+    <datalistloading-stub itemsnumber="2" headingclass="mb-3 headline"></datalistloading-stub>
   </v-fade-transition-stub>
 </div>
 `;

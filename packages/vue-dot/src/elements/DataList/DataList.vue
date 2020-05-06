@@ -5,9 +5,10 @@
 		>
 			<!-- The DataList loading skeleton -->
 			<DataListLoading
-				v-if="loading && listLoading"
-				:items-number="listLoading.itemsNumber"
-				:heading="listLoading.heading"
+				v-if="loading && itemsNumber"
+				:items-number="itemsNumber"
+				:heading="loadingHeading"
+				:heading-class="titleClass"
 				:flex="flex"
 				:row="row"
 				:dark="dark"
@@ -65,7 +66,7 @@
 	import DataListLoading from './DataListLoading';
 
 	import { IDataListItem, DataListIcons } from './types';
-	import { IDataListLoading } from './DataListLoading/types';
+	import { LoadingHeading } from './DataListLoading/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -73,11 +74,6 @@
 			list: {
 				type: Array as PropType<DataListItem[]>,
 				required: true
-			},
-			/** The list to display during loading */
-			listLoading: {
-				type: Object as PropType<IDataListLoading>,
-				default: undefined
 			},
 			icons: {
 				type: Object as PropType<DataListIcons | undefined>,
@@ -115,8 +111,18 @@
 				type: String,
 				default: '200px'
 			},
-			/** Loading */
+			/** Loading mode */
 			loading: {
+				type: Boolean,
+				default: false
+			},
+			/** The loading items number to display during loading */
+			itemsNumber: {
+				type: Number,
+				default: 1
+			},
+			/** Display the loading heading if needed */
+			heading: {
 				type: Boolean,
 				default: false
 			},
@@ -146,6 +152,10 @@
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex
 			};
+		}
+
+		get loadingHeading(): LoadingHeading {
+			return this.listTitle || this.heading || Boolean(this.$slots.title);
 		}
 
 		getIcon(icon?: string) {
