@@ -12,8 +12,8 @@ const defaultRoute: Route = {
 };
 
 const defaultPosition: Position = {
-  x:0,
-  y:0
+    x:0,
+    y:0
 };
 
 const savedPosition: Position = {
@@ -37,5 +37,4 @@ describe('scrollBehavior', () => {
     it('returns the saved position', () => {
 		expect(scrollBehavior(defaultRoute, defaultRoute,savedPosition)).toBe(savedPosition);
     });
-
 });
