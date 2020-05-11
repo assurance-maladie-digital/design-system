@@ -1,9 +1,5 @@
 import { Route } from 'vue-router';
-
-interface Position {
-	x: number;
-	y: number;
-}
+import { Position } from 'vue-router/types/router';
 
 type PositionResult = Position | { selector: string; offset?: Position } | void;
 
