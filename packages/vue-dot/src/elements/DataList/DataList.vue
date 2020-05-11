@@ -1,8 +1,6 @@
 <template>
 	<div class="vd-data-list">
-		<VFadeTransition
-			mode="out-in"
-		>
+		<VFadeTransition mode="out-in">
 			<!-- The DataList loading skeleton -->
 			<DataListLoading
 				v-if="loading"

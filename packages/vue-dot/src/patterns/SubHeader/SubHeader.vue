@@ -38,9 +38,7 @@
 				column
 			>
 				<slot name="title">
-					<VFadeTransition
-						mode="out-in"
-					>
+					<VFadeTransition mode="out-in">
 						<HeaderLoading
 							v-if="loading"
 							width="300"

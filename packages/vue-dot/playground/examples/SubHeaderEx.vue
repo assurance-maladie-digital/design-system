@@ -11,9 +11,7 @@
 				<VSpacer />
 
 				<div>
-					<VFadeTransition
-						mode="out-in"
-					>
+					<VFadeTransition mode="out-in">
 						<div
 							v-if="loading"
 							key="progress-skeleton"
