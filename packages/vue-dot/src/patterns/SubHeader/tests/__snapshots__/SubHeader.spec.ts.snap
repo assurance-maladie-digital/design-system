@@ -86,11 +86,11 @@ exports[`SubHeader test data list with button action and press it 1`] = `
                   Libellé
                 </div>
                 <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
+					Texte à modifier
 				</span></div>
-                <div class="vd-data-list-item-action">
-                  <!---->
-                </div>
+                <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+					Modifier
+				</span></button></div>
               </div>
             </div>
           </li>
@@ -102,7 +102,7 @@ exports[`SubHeader test data list with button action and press it 1`] = `
                   Libellé
                 </div>
                 <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
+					Texte à modifier
 				</span></div>
                 <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
 					Modifier
@@ -127,9 +127,9 @@ exports[`SubHeader test data list with button action and press it 1`] = `
                 <div class="vd-data-list-item-value"><span class="body-1">
 					Texte saisi
 				</span></div>
-                <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
-					Modifier
-				</span></button></div>
+                <div class="vd-data-list-item-action">
+                  <!---->
+                </div>
               </div>
             </div>
           </li>

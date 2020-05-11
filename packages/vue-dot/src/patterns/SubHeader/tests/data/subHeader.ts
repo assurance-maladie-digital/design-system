@@ -11,27 +11,16 @@ export const dataListItems: IDataListItem[] = [
     }
 ];
 
-export const dataListItemsAction1: IDataListItem[] = [
+export const dataListItemsActions: IDataListItem[] = [
     {
         key: 'Libellé',
-        value: 'Texte saisi'
-    },
-    {
-        key: 'Libellé',
-        value: 'Texte saisi',
-        action: 'Modifier'
-    }
-];
-
-export const dataListItemsAction2: IDataListItem[] = [
-    {
-        key: 'Libellé',
-        value: 'Texte saisi',
+        value: 'Texte à modifier',
         action: 'Modifier'
     },
     {
         key: 'Libellé',
-        value: 'Texte saisi'
+        value: 'Texte à modifier',
+        action: 'Modifier'
     }
 ];
 
@@ -42,11 +31,11 @@ export const dataLists: IDataList[] = [
     },
     {
         title: 'Catégorie 2',
-        items: dataListItemsAction1
+        items: dataListItemsActions
     },
     {
         title: 'Catégorie 3',
-        items: dataListItemsAction2
+        items: dataListItems
     },
     {
         title: 'Catégorie 4',

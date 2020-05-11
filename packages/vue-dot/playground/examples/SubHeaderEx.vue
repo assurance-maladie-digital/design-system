@@ -71,7 +71,7 @@
 	export default class SubHeaderEx extends Vue {
 		dataLists: IDataList[] = dataLists;
 
-		actionValue: string | undefined = 'Nouveau Texte saisi';
+		actionValue: string | undefined = 'Nouveau texte saisi';
 
 		progressValue = 50;
 
