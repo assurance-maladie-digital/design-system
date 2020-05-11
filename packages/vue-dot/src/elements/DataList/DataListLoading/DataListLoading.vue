@@ -1,15 +1,7 @@
 <template>
-	<div
-		class="vd-data-list-loading"
-	>
-		<h4
-			v-if="title"
-			:class="headingClass"
-		>
-			{{ title }}
-		</h4>
+	<div class="vd-data-list-loading">
 		<HeaderLoading
-			v-else-if="heading"
+			v-if="heading"
 			:class="headingClass"
 			height="1.75rem"
 			width="100"
@@ -57,7 +49,7 @@
 			},
 			/** Heading Loading option */
 			heading: {
-				type: [Boolean, String] as PropType<LoadingHeading>,
+				type: Boolean,
 				default: false
 			},
 			headingClass: {
@@ -90,13 +82,6 @@
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex
 			};
-		}
-
-		/**
-		 * Return the title if it already exist during items loading
-		 */
-		get title() {
-			return this.heading && typeof this.heading === 'string' ? this.heading : false;
 		}
 	}
 </script>

@@ -1,12 +1,12 @@
 <template>
-	<div>
-		<v-fade-transition
+	<div class="vd-data-list">
+		<VFadeTransition
 			mode="out-in"
 		>
 			<!-- The DataList loading skeleton -->
 			<DataListLoading
-				v-if="loading && itemsNumber"
-				:items-number="itemsNumber"
+				v-if="loading"
+				:items-number="itemsNumberLoading"
 				:heading="loadingHeading"
 				:heading-class="titleClass"
 				:flex="flex"
@@ -15,7 +15,6 @@
 			/>
 			<div
 				v-else
-				class="vd-data-list"
 			>
 				<!-- The title slot can be used to change the title level -->
 				<slot name="title">
@@ -52,7 +51,7 @@
 					</li>
 				</ul>
 			</div>
-		</v-fade-transition>
+		</VFadeTransition>
 	</div>
 </template>
 
@@ -117,12 +116,12 @@
 				default: false
 			},
 			/** The loading items number to display during loading */
-			itemsNumber: {
+			itemsNumberLoading: {
 				type: Number,
 				default: 1
 			},
 			/** Display the loading heading if needed */
-			heading: {
+			headingLoading: {
 				type: Boolean,
 				default: false
 			},
@@ -155,7 +154,7 @@
 		}
 
 		get loadingHeading(): LoadingHeading {
-			return this.listTitle || this.heading || Boolean(this.$slots.title);
+			return this.headingLoading || Boolean(this.listTitle) || Boolean(this.$slots.title);
 		}
 
 		getIcon(icon?: string) {

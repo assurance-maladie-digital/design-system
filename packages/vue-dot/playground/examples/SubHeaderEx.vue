@@ -11,7 +11,7 @@
 				<VSpacer />
 
 				<div>
-					<v-fade-transition
+					<VFadeTransition
 						mode="out-in"
 					>
 						<div
@@ -48,7 +48,7 @@
 								class="mb-1"
 							/>
 						</div>
-					</v-fade-transition>
+					</VFadeTransition>
 				</div>
 			</template>
 		</SubHeader>
@@ -84,24 +84,24 @@
 	export default class SubHeaderEx extends Vue {
 		dataLists: IDataList[] = [
 			{
-				itemsNumber: 2,
 				items: [],
-				heading: true
+				itemsNumberLoading: 2,
+				headingLoading: true
 			},
 			{
 				title: 'Catégorie 2',
 				items: dataListItems,
-				itemsNumber: 2
+				itemsNumberLoading: 2
 			},
 			{
 				title: 'Catégorie 3',
 				items: dataListItems,
-				itemsNumber: 2
+				itemsNumberLoading: 2
 			},
 			{
 				title: 'Catégorie 4',
 				items: dataListItems,
-				itemsNumber: 2
+				itemsNumberLoading: 2
 			}
 		];
 
@@ -115,9 +115,9 @@
 			backgroundOpacity: '.24'
 		};
 
-		loading: Boolean = false;
+		loading: boolean = true;
 
-		toggleLoading(loading: Boolean) {
+		toggleLoading(loading: boolean) {
 
 			this.dataLists[0].title= !loading ? '' : 'Catégorie 1';
 			this.dataLists[0].items = !loading ? [] : dataListItems;

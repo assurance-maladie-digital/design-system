@@ -1,3 +1,4 @@
+import { IDataList } from './../../../patterns/SubHeader/types.d';
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
@@ -5,10 +6,11 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import DataList from '../';
+import { IDataListItem } from '../types';
 
 let wrapper: Wrapper<Vue>;
 
-const list = [
+const list: IDataListItem[] = [
 	{
 		key: 'Civility',
 		value: ''
@@ -23,7 +25,7 @@ const list = [
 	}
 ];
 
-const itemsNumber: Number = 2;
+const itemsNumberLoading: number = 2;
 
 // Tests
 describe('DataList', () => {
@@ -114,7 +116,8 @@ describe('DataList', () => {
 			propsData: {
 				list,
 				loading: true,
-				itemsNumber
+				headingLoading: true,
+				itemsNumberLoading
 			}
 		});
 

@@ -3,6 +3,6 @@ import { IDataListItem } from '../../elements/DataList/types';
 export interface IDataList {
 	title?: string;
 	items: IDataListItem[];
-	itemsNumber: Number;
-	heading?: Boolean;
+	itemsNumberLoading: number;
+	headingLoading?: boolean;
 }

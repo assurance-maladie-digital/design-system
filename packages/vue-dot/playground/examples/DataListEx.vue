@@ -3,7 +3,7 @@
 		<DataList
 			:loading="loading"
 			:list="data"
-			:items-number="itemsNumber"
+			:items-number-loading="itemsNumberLoading"
 			:icons="icons"
 			list-title="Informations"
 			flex
@@ -30,9 +30,9 @@
 
 	@Component
 	export default class DataListEx extends Vue {
-		loading: Boolean = false;
+		loading: boolean = false;
 
-		itemsNumber: Number = 7;
+		itemsNumberLoading: number = 7;
 
 		data: IDataListItem[] = [
 			{

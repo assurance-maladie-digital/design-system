@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataList renders correctly 1`] = `
-<div>
-  <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <div class="vd-data-list">
+<div class="vd-data-list">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <div>
       <!---->
       <ul class="vd-data-list-field pl-0 vd-column">
         <li class="vd-data-list-row mb-2">
@@ -17,14 +17,14 @@ exports[`DataList renders correctly 1`] = `
         </li>
       </ul>
     </div>
-  </v-fade-transition-stub>
+  </vfadetransition-stub>
 </div>
 `;
 
 exports[`DataList renders correctly in column mode 1`] = `
-<div column="true">
-  <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <div class="vd-data-list">
+<div class="vd-data-list" column="true">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <div>
       <!---->
       <ul class="vd-data-list-field pl-0 vd-column">
         <li class="vd-data-list-row mb-2">
@@ -38,14 +38,14 @@ exports[`DataList renders correctly in column mode 1`] = `
         </li>
       </ul>
     </div>
-  </v-fade-transition-stub>
+  </vfadetransition-stub>
 </div>
 `;
 
 exports[`DataList renders correctly in flex mode 1`] = `
-<div>
-  <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <div class="vd-data-list">
+<div class="vd-data-list">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <div>
       <!---->
       <ul class="vd-data-list-field pl-0 vd-column vd-flex">
         <li class="vd-data-list-row mb-2">
@@ -59,14 +59,14 @@ exports[`DataList renders correctly in flex mode 1`] = `
         </li>
       </ul>
     </div>
-  </v-fade-transition-stub>
+  </vfadetransition-stub>
 </div>
 `;
 
 exports[`DataList renders correctly with a title 1`] = `
-<div>
-  <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <div class="vd-data-list">
+<div class="vd-data-list">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <div>
       <h4 class="mb-3 headline">
         Informations
       </h4>
@@ -82,33 +82,33 @@ exports[`DataList renders correctly with a title 1`] = `
         </li>
       </ul>
     </div>
-  </v-fade-transition-stub>
+  </vfadetransition-stub>
 </div>
 `;
 
 exports[`DataList renders correctly with an empty list 1`] = `
-<div>
-  <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <div class="vd-data-list">
+<div class="vd-data-list">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <div>
       <!---->
       <!---->
     </div>
-  </v-fade-transition-stub>
+  </vfadetransition-stub>
 </div>
 `;
 
 exports[`DataList renders loading 1`] = `
-<div>
-  <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <datalistloading-stub itemsnumber="2" headingclass="mb-3 headline"></datalistloading-stub>
-  </v-fade-transition-stub>
+<div class="vd-data-list">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <datalistloading-stub itemsnumber="2" heading="true" headingclass="mb-3 headline"></datalistloading-stub>
+  </vfadetransition-stub>
 </div>
 `;
 
 exports[`DataList renders loading 2`] = `
-<div>
-  <v-fade-transition-stub mode="out-in" origin="top center 0">
-    <div class="vd-data-list">
+<div class="vd-data-list">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <div>
       <!---->
       <ul class="vd-data-list-field pl-0 vd-column">
         <li class="vd-data-list-row mb-2">
@@ -122,6 +122,6 @@ exports[`DataList renders loading 2`] = `
         </li>
       </ul>
     </div>
-  </v-fade-transition-stub>
+  </vfadetransition-stub>
 </div>
 `;

@@ -1,7 +1,7 @@
 <template>
 	<div class="vd-sub-header secondary white--text py-6 px-8">
 		<slot name="back-btn">
-			<v-fade-transition
+			<VFadeTransition
 				v-if="!hideBackBtn"
 				mode="out-in"
 			>
@@ -26,7 +26,7 @@
 
 					{{ backBtnText }}
 				</VBtn>
-			</v-fade-transition>
+			</VFadeTransition>
 		</slot>
 
 		<VLayout
@@ -38,7 +38,7 @@
 				column
 			>
 				<slot name="title">
-					<v-fade-transition
+					<VFadeTransition
 						mode="out-in"
 					>
 						<HeaderLoading
@@ -54,11 +54,11 @@
 						>
 							{{ titleText }}
 						</h2>
-					</v-fade-transition>
+					</VFadeTransition>
 				</slot>
 
 				<slot name="sub-title">
-					<v-fade-transition
+					<VFadeTransition
 						v-if="subTitleText"
 						mode="out-in"
 					>
@@ -79,7 +79,7 @@
 						>
 							{{ subTitleText }}
 						</p>
-					</v-fade-transition>
+					</VFadeTransition>
 				</slot>
 
 				<slot name="additional-informations" />
@@ -97,8 +97,8 @@
 						:loading="loading"
 						:list-title="dataList.title"
 						:list="dataList.items"
-						:items-number="dataList.itemsNumber"
-						:heading="dataList.heading"
+						:items-number-loading="dataList.itemsNumberLoading"
+						:heading-loading="dataList.headingLoading"
 						:label-color="fadeWhite"
 						dark
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
@@ -204,7 +204,7 @@
 		// Don't take all available space
 		flex: none;
 
-		::v-deep .vd-data-list {
+		::v-deep .vd-data-list > div {
 			max-width: 200px;
 			margin-left: 8px;
 
@@ -229,7 +229,7 @@
 
 		// Remove margin right on DataList on small screens
 		.vd-sub-header-data-list {
-			::v-deep .vd-data-list {
+			::v-deep .vd-data-list > div {
 				margin: 0 8px;
 
 				&:not(:last-child) {
