@@ -5,6 +5,7 @@
 			:data-lists="dataLists"
 			title-text="Prénom Nom (d'usage)"
 			sub-title-text="1 69 08 75 125 456 75"
+			@click:list-item="setNewItemValue"
 		>
 			<!-- ProgressBar -->
 			<template #additional-informations>
@@ -48,6 +49,12 @@
 		>
 			{{ loading ? 'Unset' : 'Set' }} loading
 		</VBtn>
+		<vTextField
+			v-model="actionValue"
+			class="mt-4"
+			outlined
+			label="New value"
+		/>
 	</DocSection>
 </template>
 
@@ -55,37 +62,16 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	const dataListItems = [
-		{
-			key: 'Libellé',
-			value: 'Texte saisi'
-		},
-		{
-			key: 'Libellé',
-			value: 'Texte saisi'
-		}
-	];
+	import { IDataList } from '../../src/elements/DataList/types';
+
+	import { dataLists } from '../../src/patterns/SubHeader/tests/data/subHeader';
+	import { IDataListAction } from '../../src/patterns/SubHeader/types';
 
 	@Component
 	export default class SubHeaderEx extends Vue {
-		dataLists = [
-			{
-				title: 'Catégorie 1',
-				items: dataListItems
-			},
-			{
-				title: 'Catégorie 2',
-				items: dataListItems
-			},
-			{
-				title: 'Catégorie 3',
-				items: dataListItems
-			},
-			{
-				title: 'Catégorie 4',
-				items: dataListItems
-			}
-		];
+		dataLists: IDataList[] = dataLists;
+
+		actionValue: string | undefined = 'Nouveau Texte saisi';
 
 		progressValue = 50;
 
@@ -98,5 +84,12 @@
 		};
 
 		loading = false;
+
+		/**
+		 * Set the new item value to the clicked dataList item
+		 */
+		setNewItemValue(payload :IDataListAction) {
+			this.dataLists[payload.list].items[payload.item].value = this.actionValue;
+		}
 	}
 </script>

@@ -93,6 +93,7 @@
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
+						@click:item="$emit('click:list-item', { list: index, item: $event })"
 					/>
 				</VLayout>
 			</slot>
@@ -106,7 +107,6 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { IDataList } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -115,6 +115,7 @@
 	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
+	import { IDataList } from '../../elements/DataList/types';
 
 	const Props = Vue.extend({
 		props: {

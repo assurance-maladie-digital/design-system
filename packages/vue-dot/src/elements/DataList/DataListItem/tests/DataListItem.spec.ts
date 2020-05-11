@@ -21,7 +21,31 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
+	it('renders correctly with value', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: 'value'
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
 	it('renders with action', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				action: 'action'
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('test click button action', async() => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
@@ -29,8 +53,19 @@ describe('DataListItem', () => {
 				value: 'value',
 				action: 'action'
 			}
-		});
+		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		// Find the button action
+		expect(wrapper.find('.vd-data-list-item-action-button').exists()).toBe(true);
+		const actionBtn = wrapper.find('.vd-data-list-item-action-button');
+
+		// Click on it
+		actionBtn.trigger('click');
+
+		// Wait until $emits have been handled
+		await wrapper.vm.$nextTick();
+
+		// Assert event payload
+		expect(wrapper.emitted('click:action')).toBeTruthy();
 	});
 });

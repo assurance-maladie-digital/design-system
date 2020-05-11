@@ -5,23 +5,9 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import DataList from '../';
+import { list } from './data/dataList';
 
 let wrapper: Wrapper<Vue>;
-
-const list = [
-	{
-		key: 'Civility',
-		value: ''
-	},
-	{
-		key: 'Name',
-		value: 'Dupont'
-	},
-	{
-		key: 'First name',
-		value: 'Paul'
-	}
-];
 
 // Tests
 describe('DataList', () => {
@@ -99,5 +85,38 @@ describe('DataList', () => {
 		expect(elExists).toBe(false);
 
 		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders with item action and event', async() => {
+
+		let actionList = list;
+		// Add an action to the second item
+		actionList[1].action = 'Modifier';
+
+		// Mount component
+		wrapper = mountComponent(DataList, {
+			propsData: {
+				list: actionList,
+				flex: true
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+
+		// Find the second item element
+		const itemWithAction = wrapper.findAll('.vd-data-list-item').at(1);
+		expect(itemWithAction.exists()).toBe(true);
+
+		// Find the button action in the second item and click on it
+		const actionBtn = itemWithAction.find('.vd-data-list-item-action-button');
+		expect(actionBtn.exists()).toBe(true);
+		actionBtn.trigger('click');
+
+		// Wait until $emits have been handled
+		await wrapper.vm.$nextTick();
+
+		// Assert event payload
+		expect(wrapper.emitted('click:item')).toEqual([[1]]);
+
 	});
 });

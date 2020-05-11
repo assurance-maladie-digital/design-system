@@ -76,3 +76,59 @@ exports[`DataList renders correctly with an empty list 1`] = `
   <!---->
 </div>
 `;
+
+exports[`DataList renders with item action and event 1`] = `
+<div class="vd-data-list">
+  <!---->
+  <ul class="vd-data-list-field pl-0 vd-column vd-flex">
+    <li class="vd-data-list-row mb-2">
+      <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+        <!---->
+        <div class="vd-data-list-item-content">
+          <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+            Civility
+          </div>
+          <div class="vd-data-list-item-value"><span class="body-1">
+					…
+				</span></div>
+          <div class="vd-data-list-item-action">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+        <!---->
+        <div class="vd-data-list-item-content">
+          <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+            Name
+          </div>
+          <div class="vd-data-list-item-value"><span class="body-1">
+					Dupont
+				</span></div>
+          <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+					Modifier
+				</span></button></div>
+        </div>
+      </div>
+    </li>
+    <li class="vd-data-list-row mb-2">
+      <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+        <!---->
+        <div class="vd-data-list-item-content">
+          <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+            First name
+          </div>
+          <div class="vd-data-list-item-value"><span class="body-1">
+					Paul
+				</span></div>
+          <div class="vd-data-list-item-action">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

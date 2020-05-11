@@ -41,18 +41,19 @@
 					</span>
 				</slot>
 			</div>
-			<!-- Show value or fallback to placeholder -->
+			<!-- Show item action -->
 			<div class="vd-data-list-item-action">
 				<slot
 					name="action"
 				>
-					<a
+					<VBtn
 						v-if="action"
-						class="body-1 text-none text-accent text-bold"
+						text
+						class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button"
 						@click="$emit('click:action')"
 					>
 						{{ action }}
-					</a>
+					</VBtn>
 				</slot>
 			</div>
 		</div>

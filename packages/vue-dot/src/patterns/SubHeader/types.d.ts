@@ -1,6 +1,15 @@
-import { IDataListItem } from '../../elements/DataList/types';
+import { IDataList } from '../../elements/DataList/types';
 
-export interface IDataList {
-	title?: string;
-	items: IDataListItem[];
+export interface ISubHeader {
+	titleText: string,
+	dataLists?: IDataList[],
+	subTitleText?: string,
+	backBtnText?: string,
+	hideBackBtn?: string,
+	loading?: boolean
+}
+
+export interface IDataListAction {
+	list: number;
+	item: number;
 }
