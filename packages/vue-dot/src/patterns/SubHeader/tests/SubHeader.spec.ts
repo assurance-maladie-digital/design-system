@@ -6,7 +6,7 @@ import { html } from '@/tests/html';
 
 import SubHeader from '../';
 
-import { IDataListAction } from './../types.d';
+import { IDataListAction } from '../types';
 import { dataLists } from './data/subHeader';
 
 let wrapper: Wrapper<Vue>;
@@ -24,7 +24,7 @@ describe('SubHeader', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('test data list with button action and press it', async() => {
+	it('emits action event correctly', async() => {
 		const eventActionValue: IDataListAction = { dataListIndex: 1, itemIndex: 1 };
 
 		// Mount component
@@ -34,8 +34,6 @@ describe('SubHeader', () => {
 				dataLists
 			}
 		}, true);
-
-		expect(html(wrapper)).toMatchSnapshot();
 
 		// Find the second data list component
 		const dataList = wrapper.findAll('.vd-data-list').at(1);

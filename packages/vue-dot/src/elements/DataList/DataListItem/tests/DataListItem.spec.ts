@@ -45,7 +45,7 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('test event \'click:action\' when the user clicked the button action', async() => {
+	it('emits click:action event when the button action is pressed', async() => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {

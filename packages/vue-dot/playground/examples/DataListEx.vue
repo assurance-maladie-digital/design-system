@@ -5,7 +5,7 @@
 			:icons="icons"
 			list-title="Informations"
 			flex
-			@click:item-action="setNewItemValue"
+			@click:item-action="setItemValue"
 		/>
 
 		<VTextField
@@ -73,11 +73,11 @@
 		};
 
 		/**
-		 * Example to set the new item value to the corresponding dataList item after clicked on an data list item action
+		 * Set the new value to the corresponding dataList item
 		 *
-		 * @param {number} itemIndex The item index of the clicked data list item action button
+		 * @param {number} itemIndex The index of the item to update
 		 */
-		setNewItemValue(itemIndex: number) {
+		setItemValue(itemIndex: number) {
 			this.$set(this.data[itemIndex], 'value', this.actionValue);
 		}
 	}

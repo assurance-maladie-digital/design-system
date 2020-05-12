@@ -45,7 +45,7 @@ exports[`DataListItem renders correctly with an action 1`] = `
 					…
 				</span></div>
     <div class="vd-data-list-item-action">
-      <vbtn-stub tag="button" activeclass="" text="true" type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-btn">
+      <vbtn-stub color="accent" tag="button" activeclass="" small="true" text="true" type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0">
         action
       </vbtn-stub>
     </div>

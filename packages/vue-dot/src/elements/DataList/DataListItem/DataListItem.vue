@@ -41,12 +41,15 @@
 					</span>
 				</slot>
 			</div>
+
 			<div class="vd-data-list-item-action">
 				<slot name="action">
 					<VBtn
 						v-if="action"
 						text
-						class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-btn"
+						small
+						color="accent"
+						class="vd-data-list-item-action-btn body-1 text-none pa-0"
 						@click="$emit('click:action')"
 					>
 						{{ action }}
@@ -118,3 +121,10 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-data-list-item-action-btn.v-btn {
+		min-width: 0;
+		margin: 0 -1px;
+	}
+</style>

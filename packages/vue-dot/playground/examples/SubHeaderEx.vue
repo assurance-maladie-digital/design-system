@@ -5,7 +5,7 @@
 			:data-lists="dataLists"
 			title-text="Prénom Nom (d'usage)"
 			sub-title-text="1 69 08 75 125 456 75"
-			@click:list-item="setNewItemValue"
+			@click:list-item="setItemValue"
 		>
 			<!-- ProgressBar -->
 			<template #additional-informations>
@@ -63,18 +63,16 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { IDataList } from '../../src/elements/DataList/types';
-
 	import { dataLists } from '../../src/patterns/SubHeader/tests/data/subHeader';
 	import { IDataListAction } from '../../src/patterns/SubHeader/types';
 
 	@Component
 	export default class SubHeaderEx extends Vue {
-		dataLists: IDataList[] = dataLists;
+		dataLists = dataLists;
 
 		actionValue: string | null = 'New text';
 
-		progressValue: number = 50;
+		progressValue = 50;
 
 		progressLinearOpts = {
 			class: 'mt-2',
@@ -84,15 +82,15 @@
 			backgroundOpacity: '.24'
 		};
 
-		loading: boolean = false;
+		loading = false;
 
 		/**
-		 * Example to set the new item value to the corresponding dataList item after clicked on an data list item action
+		 * Set the new value to the corresponding dataList item
 		 *
-		 * @param {IDataListAction} dataListAction The dataListAction object containing the dataListIndex and his ItemIndex
+		 * @param {IDataListAction} dataListAction The dataListAction object containing dataListIndex and itemIndex
 		 */
-		setNewItemValue(dataListAction :IDataListAction) {
-			this.$set(this.dataLists[dataListAction.dataListIndex].items[dataListAction.itemIndex], 'value', this.actionValue);
+		setItemValue({ dataListIndex, itemIndex }: IDataListAction) {
+			this.$set(this.dataLists[dataListIndex].items[itemIndex], 'value', this.actionValue);
 		}
 	}
 </script>

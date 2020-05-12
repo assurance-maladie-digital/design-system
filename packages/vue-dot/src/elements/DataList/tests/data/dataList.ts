@@ -1,6 +1,6 @@
-import { IDataListItem } from './../../types';
+import { IDataList } from './../../types';
 
-export const dataList: IDataListItem[] = [
+export const dataList: IDataList = [
 	{
 		key: 'Civility',
 		value: ''

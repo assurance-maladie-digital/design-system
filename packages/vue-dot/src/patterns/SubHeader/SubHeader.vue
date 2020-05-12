@@ -107,16 +107,15 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
+	import { IDataListAction, DataListsItem } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
 	import DataList from '../../elements/DataList';
-	import { IDataList } from '../../elements/DataList/types';
 
 	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
-	import { IDataListAction } from './types';
 
 	const Props = Vue.extend({
 		props: {
@@ -142,7 +141,7 @@
 			},
 			/** List of DataList components in column mode */
 			dataLists: {
-				type: Array as PropType<IDataList[]>,
+				type: Array as PropType<DataListsItem[]>,
 				default: undefined
 			},
 			loading: {
@@ -178,7 +177,7 @@
 		 * @param {number} dataListIndex The index of the selected data list
 		 * @param {number} itemIndex The index of the item into the selected data list
 		 */
-		dataListItemAction(dataListIndex: number, itemIndex: number) {
+		dataListItemAction(dataListIndex: number, itemIndex: number): void {
 			this.$emit('click:list-item', { dataListIndex, itemIndex } as IDataListAction);
 		}
 	}

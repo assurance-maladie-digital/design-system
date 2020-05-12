@@ -9,11 +9,8 @@ export interface IDataListItem {
 	options?: Options;
 }
 
+export type IDataList = IDataListItem[];
+
 export interface DataListIcons {
 	[key: string]: string;
-}
-
-export interface IDataList {
-	title?: string;
-	items: IDataListItem[];
 }

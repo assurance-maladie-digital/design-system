@@ -70,14 +70,7 @@ exports[`DataList renders correctly with a title 1`] = `
 </div>
 `;
 
-exports[`DataList renders correctly with an empty list 1`] = `
-<div class="vd-data-list">
-  <!---->
-  <!---->
-</div>
-`;
-
-exports[`DataList renders with item action and event 1`] = `
+exports[`DataList renders correctly with an action 1`] = `
 <div class="vd-data-list">
   <!---->
   <ul class="vd-data-list-field pl-0 vd-column vd-flex">
@@ -107,7 +100,7 @@ exports[`DataList renders with item action and event 1`] = `
           <div class="vd-data-list-item-value"><span class="body-1">
 					Dupont
 				</span></div>
-          <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+          <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0 v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text"><span class="v-btn__content">
 					Edit
 				</span></button></div>
         </div>
@@ -130,5 +123,12 @@ exports[`DataList renders with item action and event 1`] = `
       </div>
     </li>
   </ul>
+</div>
+`;
+
+exports[`DataList renders correctly with an empty list 1`] = `
+<div class="vd-data-list">
+  <!---->
+  <!---->
 </div>
 `;

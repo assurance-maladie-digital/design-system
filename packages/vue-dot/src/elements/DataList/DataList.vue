@@ -46,6 +46,7 @@
 	import { locales } from './locales';
 
 	import DataListItem from './DataListItem';
+
 	import { IDataListItem, DataListIcons } from './types';
 
 	const Props = Vue.extend({
