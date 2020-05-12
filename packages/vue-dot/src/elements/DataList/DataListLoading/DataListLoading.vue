@@ -64,7 +64,7 @@
 				type: Boolean,
 				default: false
 			},
-			/** Is dark mode */
+			/** Dark mode */
 			dark: {
 				type: Boolean,
 				default: false
@@ -89,7 +89,6 @@
 <style lang="scss" scoped>
 	.vd-data-list-loading {
 		flex: none;
-		margin-left: 8px;
 
 		.vd-data-list-loading-items {
 			list-style: none;

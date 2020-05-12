@@ -1,4 +1,3 @@
-import { IDataList } from './../../../patterns/SubHeader/types.d';
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
@@ -110,7 +109,7 @@ describe('DataList', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders loading', () => {
+	it('renders loading state correctly', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {

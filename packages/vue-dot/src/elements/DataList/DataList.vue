@@ -11,6 +11,7 @@
 				:row="row"
 				:dark="dark"
 			/>
+
 			<div
 				v-else
 			>
@@ -123,7 +124,7 @@
 				type: Boolean,
 				default: false
 			},
-			/** Is dark mode */
+			/** Dark mode */
 			dark: {
 				type: Boolean,
 				default: false

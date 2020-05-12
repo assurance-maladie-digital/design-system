@@ -13,7 +13,7 @@ let wrapper: Wrapper<Vue>;
 
 // Tests
 describe('DataListLoading', () => {
-	it('renders correctly default', () => {
+	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(DataListLoading, {
 			propsData: {
@@ -24,7 +24,7 @@ describe('DataListLoading', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders with header', () => {
+	it('renders correctly with a header', () => {
 		// Mount component
 		wrapper = mountComponent(DataListLoading, {
 			propsData: {
@@ -35,7 +35,7 @@ describe('DataListLoading', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders with more items', () => {
+	it('renders correctly with more items', () => {
 		// Mount component
 		wrapper = mountComponent(DataListLoading, {
 			propsData: {

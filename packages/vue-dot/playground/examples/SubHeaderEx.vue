@@ -54,7 +54,7 @@
 		<VBtn
 			class="mt-4"
 			color="accent"
-			@click="toggleLoading(loading)"
+			@click="loading = !loading"
 		>
 			{{ loading ? 'Unset' : 'Set' }} loading
 		</VBtn>
@@ -82,7 +82,8 @@
 	export default class SubHeaderEx extends Vue {
 		dataLists: IDataList[] = [
 			{
-				items: [],
+				title: 'Catégorie 1',
+				items: dataListItems,
 				itemsNumberLoading: 2,
 				headingLoading: true
 			},
@@ -113,7 +114,7 @@
 			backgroundOpacity: '.24'
 		};
 
-		loading: boolean = true;
+		loading: boolean = false;
 
 		toggleLoading(loading: boolean) {
 
