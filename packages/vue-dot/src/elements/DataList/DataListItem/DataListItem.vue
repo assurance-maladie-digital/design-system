@@ -41,7 +41,6 @@
 					</span>
 				</slot>
 			</div>
-			<!-- Show item action -->
 			<div class="vd-data-list-item-action">
 				<slot
 					name="action"
