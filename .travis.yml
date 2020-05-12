@@ -15,13 +15,21 @@ install:
 
 jobs:
   include:
-    - stage: test
-      name: 'Lint, test & build'
+    - stage: 'Lint, test & build'
+      name: 'Lint'
+      script:
+        - lerna run lint
+
+    - stage: 'Lint, test & build'
+      name: 'Test'
       before_script:
         - yarn global add codecov
       script:
-        - lerna run lint
         - lerna run test
-        - lerna run build
       after_script:
         - codecov
+
+    - stage: 'Lint, test & build'
+      name: 'Build'
+      script:
+        - lerna run build

@@ -11,10 +11,6 @@ function getRessourcesToDelete(options) {
 			path: 'src/assets/logo.png'
 		},
 		{
-			type: 'folder',
-			path: 'src/router/'
-		},
-		{
 			type: 'file',
 			path: 'src/shims-tsx.d.ts'
 		},
@@ -53,6 +49,11 @@ function getRessourcesToDelete(options) {
 			type: 'folder',
 			path: 'tests/e2e/',
 			condition: !options.cypress
+		},
+		{
+			type: 'folder',
+			path: 'public/js/lib',
+			condition: !options.matomo
 		}
 	];
 }

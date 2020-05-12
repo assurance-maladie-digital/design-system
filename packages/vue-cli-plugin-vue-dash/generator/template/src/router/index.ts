@@ -7,7 +7,7 @@ import { i18n, loadLanguageAsync } from '@/i18n';
 <% } %>
 import { store } from '@/store';
 
-import { scrollBehavior } from './scrollBehavior';
+import { scrollBehavior } from '@cnamts/vue-dot/src/helpers/scrollBehavior';
 import { navigationRedirect } from './navigationRedirect';
 import { routes } from './routes';
 

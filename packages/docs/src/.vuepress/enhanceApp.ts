@@ -5,7 +5,6 @@ import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import { vuetify } from './vuetify';
 
-import '@cnamts/vue-dot/dist/vue-dot.css';
 import VueDot from '@cnamts/vue-dot';
 
 import VueTheMask from 'vue-the-mask';

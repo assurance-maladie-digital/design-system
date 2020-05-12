@@ -1,5 +1,6 @@
 const vdPkg = require('../../package.json');
-const VueDotVersion = vdPkg.version;
+// Use dev dependency to get Vue Dot version
+const VueDotVersion = vdPkg.devDependencies['@cnamts/vue-dot'] || 'next';
 
 /** Extend package.json */
 function extendPackage(api, options) {
@@ -20,10 +21,11 @@ function extendPackage(api, options) {
 			'@mdi/js': '^4.8.95',
 			'@typescript-eslint/eslint-plugin': '^2.17.0',
 			'@typescript-eslint/parser': '^2.17.0',
-			'babel-jest': '^24.9.0',
-			'jest': '^24.9.0',
+			'@types/jest': '25.2.1',
+			'babel-jest': '^25.5.1',
+			'jest': '^25.5.1',
 			'jest-serializer-vue': '^2.0.2',
-			'ts-jest': '^24.3.0',
+			'ts-jest': '^25.4.0',
 			'vue-class-component': '^7.2.2',
 			'vue-cli-plugin-vuetify': '^2.0.3',
 			'vuetify-loader': '^1.4.3',

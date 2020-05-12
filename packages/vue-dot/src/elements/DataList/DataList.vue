@@ -59,13 +59,13 @@
 				default: undefined
 			},
 			// Title options
-			titleClass: {
-				type: String,
-				default: 'mb-3 headline'
-			},
 			listTitle: {
 				type: String,
 				default: undefined
+			},
+			titleClass: {
+				type: String,
+				default: 'mb-3 headline'
 			},
 			row: {
 				type: Boolean,

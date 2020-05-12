@@ -23,6 +23,12 @@ const prompts = [
 		type: 'confirm',
 		message: 'Use Vuex Persist',
 		default: true
+	},
+	{
+		name: 'matomo',
+		type: 'confirm',
+		message: 'Install Matomo for analytics',
+		default: false
 	}
 ];
 

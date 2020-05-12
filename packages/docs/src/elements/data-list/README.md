@@ -107,7 +107,7 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
       },
       {
         name: 'value',
-        description: 'Slot pour remplacer le contenu de l\item.'
+        description: 'Slot pour remplacer le contenu de l\'item.'
       }]
     }
   }"
