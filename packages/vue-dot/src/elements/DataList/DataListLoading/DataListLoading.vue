@@ -1,11 +1,13 @@
 <template>
-	<div class="vd-data-list-loading">
+	<div
+		class="vd-data-list-loading"
+	>
 		<HeaderLoading
 			v-if="heading"
-			:class="headingClass"
-			height="1.75rem"
-			width="100"
 			:dark="dark"
+			:class="titleClass"
+			height="1.5rem"
+			width="100"
 		/>
 
 		<ul
@@ -15,10 +17,11 @@
 			<li
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
-				class="mr-2"
+				class="vd-data-list-loading-item mb-2"
+				:style="{ width }"
 			>
 				<HeaderLoading
-					height="1.25rem"
+					height="1rem"
 					class="mb-1"
 					width="60"
 					:dark="dark"
@@ -38,7 +41,6 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import { LoadingHeading } from './types';
 
 	const Props = Vue.extend({
 		props: {
@@ -52,10 +54,6 @@
 				type: Boolean,
 				default: false
 			},
-			headingClass: {
-				type: String,
-				default: 'mb-3 headline'
-			},
 			row: {
 				type: Boolean,
 				default: false
@@ -68,6 +66,15 @@
 			dark: {
 				type: Boolean,
 				default: false
+			},
+			titleClass: {
+				type: String,
+				default: 'mb-3 headline'
+			},
+			/** The key/value width */
+			width: {
+				type: String,
+				default: '200px'
 			}
 
 		}
@@ -88,10 +95,19 @@
 
 <style lang="scss" scoped>
 	.vd-data-list-loading {
-		flex: none;
 
 		.vd-data-list-loading-items {
 			list-style: none;
+
+			.vd-data-list-loading-item {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			// Column
+			&.vd-column .vd-data-list-loading-item {
+				flex-direction: column;
+			}
 
 			&.vd-flex {
 				display: flex;

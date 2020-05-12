@@ -90,17 +90,20 @@
 			{
 				title: 'Catégorie 2',
 				items: dataListItems,
-				itemsNumberLoading: 2
+				itemsNumberLoading: 2,
+				headingLoading: true
 			},
 			{
 				title: 'Catégorie 3',
 				items: dataListItems,
-				itemsNumberLoading: 2
+				itemsNumberLoading: 2,
+				headingLoading: true
 			},
 			{
 				title: 'Catégorie 4',
 				items: dataListItems,
-				itemsNumberLoading: 2
+				itemsNumberLoading: 2,
+				headingLoading: true
 			}
 		];
 
@@ -115,13 +118,5 @@
 		};
 
 		loading: boolean = false;
-
-		toggleLoading(loading: boolean) {
-
-			this.dataLists[0].title= !loading ? '' : 'Catégorie 1';
-			this.dataLists[0].items = !loading ? [] : dataListItems;
-
-			this.loading = !loading;
-		}
 	}
 </script>

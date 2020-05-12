@@ -97,15 +97,15 @@ exports[`DataList renders correctly with an empty list 1`] = `
 </div>
 `;
 
-exports[`DataList renders loading 1`] = `
+exports[`DataList renders loading state correctly 1`] = `
 <div class="vd-data-list">
   <vfadetransition-stub mode="out-in" origin="top center 0">
-    <datalistloading-stub itemsnumber="2" heading="true" headingclass="mb-3 headline"></datalistloading-stub>
+    <datalistloading-stub itemsnumber="2" heading="true" titleclass="mb-3 headline" width="200px"></datalistloading-stub>
   </vfadetransition-stub>
 </div>
 `;
 
-exports[`DataList renders loading 2`] = `
+exports[`DataList renders loading state correctly 2`] = `
 <div class="vd-data-list">
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>

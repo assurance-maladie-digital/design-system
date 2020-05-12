@@ -4,10 +4,11 @@
 			:loading="loading"
 			:list="data"
 			:items-number-loading="itemsNumberLoading"
+			:heading-loading="headingLoading"
 			:icons="icons"
 			list-title="Informations"
+			title-class="subtitle-1 font-weight-bold mb-2 mt-2"
 			flex
-			title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 		/>
 
 		<VBtn
@@ -33,6 +34,7 @@
 		loading: boolean = false;
 
 		itemsNumberLoading: number = 7;
+		headingLoading: boolean = true;
 
 		data: IDataListItem[] = [
 			{

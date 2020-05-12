@@ -98,8 +98,8 @@
 						:items-number-loading="dataList.itemsNumberLoading"
 						:heading-loading="dataList.headingLoading"
 						:label-color="fadeWhite"
+						title-class="subtitle-1 font-weight-bold mb-2 mt-2"
 						dark
-						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
 					/>

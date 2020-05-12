@@ -109,7 +109,7 @@ describe('DataList', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders loading state correctly', () => {
+	it('renders loading state correctly', async() => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
@@ -128,13 +128,13 @@ describe('DataList', () => {
 
 		wrapper.setProps({ loading: false });
 
-		Vue.nextTick(() => {
-			// Check that items now exist
-			itemsExists = wrapper.find('.vd-data-list-item').exists();
-			expect(itemsExists).toBe(true);
+		await Vue.nextTick();
 
-			expect(html(wrapper)).toMatchSnapshot();
-		});
+		// Check that items now exist
+		itemsExists = wrapper.find('.vd-data-list-item').exists();
+		expect(itemsExists).toBe(true);
+
+		expect(html(wrapper)).toMatchSnapshot();
 
 	});
 });

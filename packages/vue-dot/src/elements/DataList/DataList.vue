@@ -5,16 +5,15 @@
 			<DataListLoading
 				v-if="loading"
 				:items-number="itemsNumberLoading"
-				:heading="loadingHeading"
-				:heading-class="titleClass"
+				:heading="headingLoading"
+				:title-class="titleClass"
 				:flex="flex"
 				:row="row"
+				:width="width"
 				:dark="dark"
 			/>
 
-			<div
-				v-else
-			>
+			<div v-else>
 				<!-- The title slot can be used to change the title level -->
 				<slot name="title">
 					<h4
@@ -61,10 +60,8 @@
 	import { locales } from './locales';
 
 	import DataListItem from './DataListItem';
-	import DataListLoading from './DataListLoading';
-
 	import { IDataListItem, DataListIcons } from './types';
-	import { LoadingHeading } from './DataListLoading/types';
+	import DataListLoading from './DataListLoading';
 
 	const Props = Vue.extend({
 		props: {
@@ -150,10 +147,6 @@
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex
 			};
-		}
-
-		get loadingHeading(): LoadingHeading {
-			return this.headingLoading || Boolean(this.listTitle) || Boolean(this.$slots.title);
 		}
 
 		getIcon(icon?: string) {
