@@ -25,7 +25,6 @@ describe('SubHeader', () => {
 	});
 
 	it('test data list with button action and press it', async() => {
-
 		const eventActionValue: IDataListAction = { list: 1, item: 1 };
 
 		// Mount component

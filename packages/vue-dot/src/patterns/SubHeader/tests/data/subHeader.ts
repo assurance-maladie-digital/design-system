@@ -1,4 +1,4 @@
-import { IDataListItem, IDataList } from './../../../../elements/DataList/types';
+import { IDataListItem, IDataList } from '../../../../elements/DataList/types';
 
 export const dataListItems: IDataListItem[] = [
     {
@@ -15,12 +15,12 @@ export const dataListItemsActions: IDataListItem[] = [
     {
         key: 'Libellé',
         value: 'Texte à modifier',
-        action: 'Modifier'
+        action: 'Edit'
     },
     {
         key: 'Libellé',
         value: 'Texte à modifier',
-        action: 'Modifier'
+        action: 'Edit'
     }
 ];
 

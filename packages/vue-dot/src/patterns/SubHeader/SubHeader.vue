@@ -111,11 +111,11 @@
 	import { customizable } from '../../mixins/customizable';
 
 	import DataList from '../../elements/DataList';
+	import { IDataList } from '../../elements/DataList/types';
 
 	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
-	import { IDataList } from '../../elements/DataList/types';
 
 	const Props = Vue.extend({
 		props: {

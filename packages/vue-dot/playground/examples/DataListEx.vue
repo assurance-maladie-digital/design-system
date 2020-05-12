@@ -7,7 +7,7 @@
 			flex
 			@click:item="setNewItemValue"
 		/>
-		<vTextField
+		<VTextField
 			v-model="actionValue"
 			class="mt-4"
 			outlined
@@ -26,7 +26,7 @@
 
 	@Component
 	export default class DataListEx extends Vue {
-		actionValue: string | undefined = 'Nouveau texte saisi';
+		actionValue: string | null = 'New text';
 
 		data: IDataListItem[] = [
 			{
@@ -59,7 +59,7 @@
 			{
 				key: 'Native country',
 				value: 'France',
-				action: 'Modifier'
+				action: 'Edit'
 			},
 			{
 				key: 'Date of registration',
@@ -72,10 +72,10 @@
 		};
 
 		/**
-		 * Set the new item value to the clicked dataList item
+		 * Set the new item value to the corresponding dataList item
 		 */
 		setNewItemValue(item: number) {
-			this.data[item].value = this.actionValue;
+			this.$set(this.data[item], 'value', this.actionValue);
 		}
 	}
 </script>

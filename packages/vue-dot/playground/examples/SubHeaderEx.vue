@@ -49,7 +49,7 @@
 		>
 			{{ loading ? 'Unset' : 'Set' }} loading
 		</VBtn>
-		<vTextField
+		<VTextField
 			v-model="actionValue"
 			class="mt-4"
 			outlined
@@ -71,9 +71,9 @@
 	export default class SubHeaderEx extends Vue {
 		dataLists: IDataList[] = dataLists;
 
-		actionValue: string | undefined = 'Nouveau texte saisi';
+		actionValue: string | null = 'New text';
 
-		progressValue = 50;
+		progressValue: number = 50;
 
 		progressLinearOpts = {
 			class: 'mt-2',
@@ -83,13 +83,13 @@
 			backgroundOpacity: '.24'
 		};
 
-		loading = false;
+		loading: boolean = false;
 
 		/**
-		 * Set the new item value to the clicked dataList item
+		 * Set the new item value to the corresponding dataList item
 		 */
 		setNewItemValue(payload :IDataListAction) {
-			this.dataLists[payload.list].items[payload.item].value = this.actionValue;
+			this.$set(this.dataLists[payload.list].items[payload.item],'value',this.actionValue);
 		}
 	}
 </script>

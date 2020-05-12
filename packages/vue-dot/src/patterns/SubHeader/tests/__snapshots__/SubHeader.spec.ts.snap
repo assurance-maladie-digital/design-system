@@ -89,7 +89,7 @@ exports[`SubHeader test data list with button action and press it 1`] = `
 					Texte à modifier
 				</span></div>
                 <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
-					Modifier
+					Edit
 				</span></button></div>
               </div>
             </div>
@@ -105,7 +105,7 @@ exports[`SubHeader test data list with button action and press it 1`] = `
 					Texte à modifier
 				</span></div>
                 <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
-					Modifier
+					Edit
 				</span></button></div>
               </div>
             </div>
