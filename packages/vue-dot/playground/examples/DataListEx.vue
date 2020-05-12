@@ -7,6 +7,7 @@
 			flex
 			@click:item="setNewItemValue"
 		/>
+
 		<VTextField
 			v-model="actionValue"
 			class="mt-4"

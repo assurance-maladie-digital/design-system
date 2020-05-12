@@ -49,6 +49,7 @@
 		>
 			{{ loading ? 'Unset' : 'Set' }} loading
 		</VBtn>
+
 		<VTextField
 			v-model="actionValue"
 			class="mt-4"
@@ -89,7 +90,7 @@
 		 * Set the new item value to the corresponding dataList item
 		 */
 		setNewItemValue(payload: IDataListAction) {
-			this.$set(this.dataLists[payload.list].items[payload.item],'value',this.actionValue);
+			this.$set(this.dataLists[payload.list].items[payload.item], 'value', this.actionValue);
 		}
 	}
 </script>
