@@ -84,27 +84,26 @@
 			</VLayout>
 
 			<slot name="right-content">
-				<VLayout
-					v-if="dataLists"
-					v-bind="options.dataListsLayout"
-					class="vd-sub-header-data-list mt-n3 mx-n2"
-				>
-					<DataList
-						v-for="(dataList, index) in dataLists"
-						:key="'vd-sub-header-data-list' + index"
-						:loading="loading"
-						:list-title="dataList.title"
-						:list="dataList.items"
-						:items-number-loading="dataList.itemsNumberLoading"
-						:heading-loading="dataList.headingLoading"
-						:label-color="fadeWhite"
-						title-class="subtitle-1 font-weight-bold mb-2 mt-2"
-						dark
-						width="auto"
-						column
-						@click:item-action="dataListItemAction(index, $event)"
-					/>
-				</VLayout>
+				<VThemeProvider dark>
+					<VLayout
+						v-if="dataLists"
+						v-bind="options.dataListsLayout"
+						class="vd-sub-header-data-list mt-n3 mx-n2"
+					>
+						<DataList
+							v-for="(dataList, index) in dataLists"
+							:key="'vd-sub-header-data-list' + index"
+							:loading="loading"
+							:list-title="dataList.listTitle"
+							:list="dataList.items"
+							:items-number-loading="dataList.itemsNumberLoading"
+							:heading-loading="dataList.headingLoading"
+							title-class="subtitle-1 font-weight-bold mb-2 mt-2"
+							width="auto"
+							@click:item-action="dataListItemAction(index, $event)"
+						/>
+					</VLayout>
+				</VThemeProvider>
 			</slot>
 		</VLayout>
 	</div>
@@ -213,7 +212,7 @@
 		// Don't take all available space
 		flex: none;
 
-		::v-deep .vd-data-list > div {
+		::v-deep .vd-data-list {
 			max-width: 200px;
 			margin-left: 8px;
 
@@ -238,7 +237,7 @@
 
 		// Remove margin right on DataList on small screens
 		.vd-sub-header-data-list {
-			::v-deep .vd-data-list > div {
+			::v-deep .vd-data-list {
 				margin: 0 8px;
 
 				&:not(:last-child) {

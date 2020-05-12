@@ -1,12 +1,9 @@
 <template>
-	<div
-		class="vd-data-list-loading"
-	>
+	<div class="vd-data-list-loading">
 		<HeaderLoading
 			v-if="heading"
-			:dark="dark"
-			:class="titleClass"
 			height="1.5rem"
+			class="mb-4"
 			width="100"
 		/>
 
@@ -17,21 +14,18 @@
 			<li
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
-				class="vd-data-list-loading-item mb-2"
+				class="vd-data-list-loading-item mb-4"
 				:style="{ width }"
 			>
 				<HeaderLoading
 					height="1rem"
 					class="mb-1"
 					width="60"
-					:dark="dark"
 				/>
 
 				<HeaderLoading
-					class="mb-2"
 					height="1.5rem"
 					width="90"
-					:dark="dark"
 				/>
 			</li>
 		</ul>
@@ -39,7 +33,7 @@
 </template>
 
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	const Props = Vue.extend({
@@ -62,11 +56,6 @@
 				type: Boolean,
 				default: false
 			},
-			/** Dark mode */
-			dark: {
-				type: Boolean,
-				default: false
-			},
 			titleClass: {
 				type: String,
 				default: 'mb-3 headline'
@@ -76,7 +65,6 @@
 				type: String,
 				default: '200px'
 			}
-
 		}
 	});
 
@@ -95,7 +83,6 @@
 
 <style lang="scss" scoped>
 	.vd-data-list-loading {
-
 		.vd-data-list-loading-items {
 			list-style: none;
 

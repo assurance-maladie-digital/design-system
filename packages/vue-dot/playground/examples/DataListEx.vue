@@ -1,13 +1,13 @@
 <template>
 	<DocSection title="DataList">
 		<DataList
-			:loading="loading"
 			:list="data"
-			:items-number-loading="itemsNumberLoading"
-			:heading-loading="headingLoading"
 			:icons="icons"
-			list-title="Informations"
+			:loading="loading"
+			:items-number-loading="7"
 			title-class="subtitle-1 font-weight-bold mb-2 mt-2"
+			list-title="Informations"
+			heading-loading
 			flex
 			@click:item-action="setItemValue"
 		/>
@@ -33,20 +33,17 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { IDataListItem } from '../../src/elements/DataList/types';
+	import { IDataList } from '../../src/elements/DataList/types';
 
 	import { mdiCalendar } from '@mdi/js';
 
 	@Component
 	export default class DataListEx extends Vue {
-		loading: boolean = false;
-
-		itemsNumberLoading: number = 7;
-		headingLoading: boolean = true;
+		loading = false;
 
 		actionValue: string | null = 'New text';
 
-		data: IDataListItem[] = [
+		data: IDataList = [
 			{
 				key: 'Civility',
 				value: 'Mr',

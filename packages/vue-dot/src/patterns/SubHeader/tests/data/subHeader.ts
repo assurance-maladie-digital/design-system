@@ -16,38 +16,30 @@ export const dataListItemsActions: IDataList = [
 	{
 		key: 'Libellé',
 		value: 'Texte à modifier',
-		action: 'Edit'
+		action: 'Modifier'
 	},
 	{
 		key: 'Libellé',
 		value: 'Texte à modifier',
-		action: 'Edit'
+		action: 'Modifier'
 	}
 ];
 
 export const dataLists: DataListsItem[] = [
 	{
 		title: 'Catégorie 1',
-		items: dataListItems,
-		itemsNumberLoading: 2,
-		headingLoading: true
+		items: dataListItems
 	},
 	{
 		title: 'Catégorie 2',
-		items: dataListItemsActions,
-		itemsNumberLoading: 2,
-		headingLoading: true
+		items: dataListItemsActions
 	},
 	{
 		title: 'Catégorie 3',
-		items: dataListItems,
-		itemsNumberLoading: 2,
-		headingLoading: true
+		items: dataListItems
 	},
 	{
 		title: 'Catégorie 4',
-		items: dataListItems,
-		itemsNumberLoading: 2,
-		headingLoading: true
+		items: dataListItems
 	}
 ];

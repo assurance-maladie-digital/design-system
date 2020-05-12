@@ -10,7 +10,6 @@
 				:flex="flex"
 				:row="row"
 				:width="width"
-				:dark="dark"
 			/>
 
 			<div v-else>
@@ -52,7 +51,6 @@
 				</ul>
 			</div>
 		</VFadeTransition>
-		<!-- The title slot can be used to change the title level -->
 	</div>
 </template>
 
@@ -61,9 +59,9 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
+	import { IDataListItem, DataListIcons } from './types';
 
 	import DataListItem from './DataListItem';
-	import { IDataListItem, DataListIcons } from './types';
 	import DataListLoading from './DataListLoading';
 
 	const Props = Vue.extend({
@@ -114,18 +112,13 @@
 				type: Boolean,
 				default: false
 			},
-			/** The loading items number to display during loading */
+			/** The number of items to display during loading */
 			itemsNumberLoading: {
 				type: Number,
 				default: 1
 			},
-			/** Display the loading heading if needed */
+			/** Display the heading while loading */
 			headingLoading: {
-				type: Boolean,
-				default: false
-			},
-			/** Dark mode */
-			dark: {
 				type: Boolean,
 				default: false
 			}

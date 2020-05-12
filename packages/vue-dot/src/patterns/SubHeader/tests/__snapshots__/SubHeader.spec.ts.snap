@@ -20,7 +20,9 @@ exports[`SubHeader renders correctly 1`] = `
       </vfadetransition-stub>
       <!---->
     </vlayout-stub>
-    <!---->
+    <vthemeprovider-stub dark="true">
+      <!---->
+    </vthemeprovider-stub>
   </vlayout-stub>
 </div>
 `;

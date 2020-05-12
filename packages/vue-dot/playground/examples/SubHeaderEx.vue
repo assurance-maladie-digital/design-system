@@ -72,7 +72,6 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import { IDataListItem } from '../../src/elements/DataList/types';
 
 	import { dataLists } from '../../src/patterns/SubHeader/tests/data/subHeader';
 	import { IDataListAction } from '../../src/patterns/SubHeader/types';
@@ -93,7 +92,7 @@
 			backgroundOpacity: '.24'
 		};
 
-		loading: boolean = false;
+		loading = false;
 
 		/**
 		 * Set the new value to the corresponding dataList item
