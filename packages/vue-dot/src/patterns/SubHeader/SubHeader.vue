@@ -93,6 +93,7 @@
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
+						@click:item-action="dataListItemAction(index, $event)"
 					/>
 				</VLayout>
 			</slot>
@@ -106,7 +107,7 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { IDataList } from './types';
+	import { IDataListAction, DataListsItem } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -140,7 +141,7 @@
 			},
 			/** List of DataList components in column mode */
 			dataLists: {
-				type: Array as PropType<IDataList[]>,
+				type: Array as PropType<DataListsItem[]>,
 				default: undefined
 			},
 			loading: {
@@ -168,6 +169,16 @@
 		/** Semi-transparent white */
 		get fadeWhite(): string {
 			return 'rgba(255, 255, 255, .7)';
+		}
+
+		/**
+		 * Emit the dataList item object when user clicked on the corresponding action
+		 *
+		 * @param {number} dataListIndex The index of the selected data list
+		 * @param {number} itemIndex The index of the item into the selected data list
+		 */
+		dataListItemAction(dataListIndex: number, itemIndex: number): void {
+			this.$emit('click:list-item', { dataListIndex, itemIndex } as IDataListAction);
 		}
 	}
 </script>
