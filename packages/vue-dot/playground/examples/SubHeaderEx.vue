@@ -88,7 +88,7 @@
 		/**
 		 * Set the new item value to the corresponding dataList item
 		 */
-		setNewItemValue(payload :IDataListAction) {
+		setNewItemValue(payload: IDataListAction) {
 			this.$set(this.dataLists[payload.list].items[payload.item],'value',this.actionValue);
 		}
 	}
