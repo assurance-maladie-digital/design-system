@@ -9,6 +9,14 @@
 			list-title="Informations"
 			title-class="subtitle-1 font-weight-bold mb-2 mt-2"
 			flex
+			@click:item-action="setItemValue"
+		/>
+
+		<VTextField
+			v-model="actionValue"
+			class="mt-4"
+			outlined
+			label="New value"
 		/>
 
 		<VBtn
@@ -35,6 +43,8 @@
 
 		itemsNumberLoading: number = 7;
 		headingLoading: boolean = true;
+
+		actionValue: string | null = 'New text';
 
 		data: IDataListItem[] = [
 			{
@@ -66,7 +76,8 @@
 			},
 			{
 				key: 'Native country',
-				value: 'France'
+				value: 'France',
+				action: 'Edit'
 			},
 			{
 				key: 'Date of registration',
@@ -77,5 +88,14 @@
 		icons = {
 			mdiCalendar
 		};
+
+		/**
+		 * Set the new value to the corresponding dataList item
+		 *
+		 * @param {number} itemIndex The index of the item to update
+		 */
+		setItemValue(itemIndex: number) {
+			this.$set(this.data[itemIndex], 'value', this.actionValue);
+		}
 	}
 </script>

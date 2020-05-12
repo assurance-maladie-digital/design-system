@@ -5,6 +5,7 @@
 			:data-lists="dataLists"
 			title-text="Prénom Nom (d'usage)"
 			sub-title-text="1 69 08 75 125 456 75"
+			@click:list-item="setItemValue"
 		>
 			<!-- ProgressBar -->
 			<template #additional-informations>
@@ -58,6 +59,13 @@
 		>
 			{{ loading ? 'Unset' : 'Set' }} loading
 		</VBtn>
+
+		<VTextField
+			v-model="actionValue"
+			class="mt-4"
+			outlined
+			label="New value"
+		/>
 	</DocSection>
 </template>
 
@@ -65,47 +73,15 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 	import { IDataListItem } from '../../src/elements/DataList/types';
-	import { IDataList } from '../../src/patterns/SubHeader/types';
 
-	const dataListItems: IDataListItem[] = [
-		{
-			key: 'Libellé',
-			value: 'Texte saisi'
-		},
-		{
-			key: 'Libellé',
-			value: 'Texte saisi'
-		}
-	];
+	import { dataLists } from '../../src/patterns/SubHeader/tests/data/subHeader';
+	import { IDataListAction } from '../../src/patterns/SubHeader/types';
 
 	@Component
 	export default class SubHeaderEx extends Vue {
-		dataLists: IDataList[] = [
-			{
-				title: 'Catégorie 1',
-				items: dataListItems,
-				itemsNumberLoading: 2,
-				headingLoading: true
-			},
-			{
-				title: 'Catégorie 2',
-				items: dataListItems,
-				itemsNumberLoading: 2,
-				headingLoading: true
-			},
-			{
-				title: 'Catégorie 3',
-				items: dataListItems,
-				itemsNumberLoading: 2,
-				headingLoading: true
-			},
-			{
-				title: 'Catégorie 4',
-				items: dataListItems,
-				itemsNumberLoading: 2,
-				headingLoading: true
-			}
-		];
+		dataLists = dataLists;
+
+		actionValue: string | null = 'New text';
 
 		progressValue = 50;
 
@@ -118,5 +94,14 @@
 		};
 
 		loading: boolean = false;
+
+		/**
+		 * Set the new value to the corresponding dataList item
+		 *
+		 * @param {IDataListAction} dataListAction The dataListAction object containing dataListIndex and itemIndex
+		 */
+		setItemValue({ dataListIndex, itemIndex }: IDataListAction) {
+			this.$set(this.dataLists[dataListIndex].items[itemIndex], 'value', this.actionValue);
+		}
 	}
 </script>

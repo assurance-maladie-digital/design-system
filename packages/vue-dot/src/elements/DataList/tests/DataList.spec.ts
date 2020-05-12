@@ -5,26 +5,12 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import DataList from '../';
-import { IDataListItem } from '../types';
 
-let wrapper: Wrapper<Vue>;
-
-const list: IDataListItem[] = [
-	{
-		key: 'Civility',
-		value: ''
-	},
-	{
-		key: 'Name',
-		value: 'Dupont'
-	},
-	{
-		key: 'First name',
-		value: 'Paul'
-	}
-];
+import { dataList } from './data/dataList';
 
 const itemsNumberLoading: number = 2;
+
+let wrapper: Wrapper<Vue>;
 
 // Tests
 describe('DataList', () => {
@@ -32,7 +18,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list
+				list: dataList
 			}
 		});
 
@@ -53,7 +39,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list,
+				list: dataList,
 				listTitle: 'Informations'
 			}
 		});
@@ -68,7 +54,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list,
+				list: dataList,
 				column: true
 			}
 		});
@@ -83,7 +69,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list,
+				list: dataList,
 				flex: true
 			}
 		});
@@ -113,7 +99,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list,
+				list: dataList,
 				loading: true,
 				headingLoading: true,
 				itemsNumberLoading
@@ -135,6 +121,52 @@ describe('DataList', () => {
 		expect(itemsExists).toBe(true);
 
 		expect(html(wrapper)).toMatchSnapshot();
+	});
 
+	it('renders correctly with an action', async() => {
+		let actionList = dataList;
+
+		// Add an action to the second item
+		actionList[1].action = 'Edit';
+
+		// Mount component
+		wrapper = mountComponent(DataList, {
+			propsData: {
+				list: actionList,
+				flex: true
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('emits action event', async() => {
+		let actionList = dataList;
+
+		// Add an action to the second item
+		actionList[1].action = 'Edit';
+
+		// Mount component
+		wrapper = mountComponent(DataList, {
+			propsData: {
+				list: actionList,
+				flex: true
+			}
+		}, true);
+
+		// Find the second item element
+		const itemWithAction = wrapper.findAll('.vd-data-list-item').at(1);
+		expect(itemWithAction.exists()).toBe(true);
+
+		// Find the button action in the second item and click on it
+		const actionBtn = itemWithAction.find('.vd-data-list-item-action-btn');
+		expect(actionBtn.exists()).toBe(true);
+
+		actionBtn.trigger('click');
+
+		// Wait until $emits have been handled
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.emitted('click:item-action')).toEqual([[1]]);
 	});
 });
