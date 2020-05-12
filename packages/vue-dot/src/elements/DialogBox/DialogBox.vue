@@ -64,9 +64,8 @@
 	import Component from 'vue-class-component';
 	import Vue, { PropType } from 'vue';
 	import { mdiClose, mdiPhone } from '@mdi/js';
-	import { DialogBoxType } from '@/elements/DialogBox/index';
-	import { ButtonAction } from '@/elements/ListButtonAction';
-
+	import { ButtonAction } from '../ListButtonAction/types';
+	import { DialogBoxType } from './types';
 	const Props = Vue.extend({
 		props: {
 			/** The v-model item */

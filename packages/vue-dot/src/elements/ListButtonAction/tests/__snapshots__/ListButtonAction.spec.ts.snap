@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListButtonAction.vue renders correctly 1`] = `
+<div>
+  <vbtn-stub color="normal" tag="button" activeclass="" type="button" class="ml-6 px-5">
+
+  </vbtn-stub>
+  <vbtn-stub color="normal" tag="button" activeclass="" type="button" class="ml-6 px-5">
+
+  </vbtn-stub>
+</div>
+`;

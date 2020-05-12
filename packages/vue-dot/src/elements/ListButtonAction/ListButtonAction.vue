@@ -14,7 +14,7 @@
 <script lang="ts">
 	import Component from 'vue-class-component';
 	import Vue, { PropType } from 'vue';
-	import { ButtonAction } from '@/elements/ListButtonAction/index';
+	import { ButtonAction } from './types';
 
 	const Props = Vue.extend({
 		props: {

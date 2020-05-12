@@ -1,5 +1,5 @@
 export interface ButtonAction {
-	type:string;
+	type?:string; // reset | submit | refresh | cancel | validate
 	label: string;
 	color?: string;
 	action: Function;

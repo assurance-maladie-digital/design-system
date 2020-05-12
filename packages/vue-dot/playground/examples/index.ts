@@ -13,6 +13,7 @@ import PaginatedTableEx from './PaginatedTableEx.vue';
 import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
+import DialogBoxEx from './DialogBoxEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -31,7 +32,8 @@ const components: Components = {
 	PaginatedTableEx,
 	RulesEx,
 	SubHeaderEx,
-	UploadWorkflowEx
+	UploadWorkflowEx,
+	DialogBoxEx
 };
 
 /** Globally register all components */
