@@ -42,13 +42,11 @@
 				</slot>
 			</div>
 			<div class="vd-data-list-item-action">
-				<slot
-					name="action"
-				>
+				<slot name="action">
 					<VBtn
 						v-if="action"
 						text
-						class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button"
+						class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-btn"
 						@click="$emit('click:action')"
 					>
 						{{ action }}
@@ -80,7 +78,7 @@
 				type: String,
 				default: undefined
 			},
-			/** Value to display */
+			/** Action to display */
 			action: {
 				type: String,
 				default: undefined

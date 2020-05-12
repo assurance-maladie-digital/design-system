@@ -87,10 +87,12 @@
 		loading: boolean = false;
 
 		/**
-		 * Set the new item value to the corresponding dataList item
+		 * Example to set the new item value to the corresponding dataList item after clicked on an data list item action
+		 *
+		 * @param {IDataListAction} dataListAction The dataListAction object containing the dataListIndex and his ItemIndex
 		 */
-		setNewItemValue(payload: IDataListAction) {
-			this.$set(this.dataLists[payload.list].items[payload.item], 'value', this.actionValue);
+		setNewItemValue(dataListAction :IDataListAction) {
+			this.$set(this.dataLists[dataListAction.dataListIndex].items[dataListAction.itemIndex], 'value', this.actionValue);
 		}
 	}
 </script>

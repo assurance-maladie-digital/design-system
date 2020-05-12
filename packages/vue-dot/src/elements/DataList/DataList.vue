@@ -32,7 +32,7 @@
 					:vuetify-options="item.options"
 					:style="{ width }"
 					class="vd-data-list-item body-1"
-					@click:action="$emit('click:item', index)"
+					@click:action="$emit('click:item-action', index)"
 				/>
 			</li>
 		</ul>

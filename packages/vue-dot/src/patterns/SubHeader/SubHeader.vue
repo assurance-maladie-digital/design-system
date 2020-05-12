@@ -93,7 +93,7 @@
 						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
 						width="auto"
 						column
-						@click:item="$emit('click:list-item', { list: index, item: $event })"
+						@click:item-action="dataListItemAction(index, $event)"
 					/>
 				</VLayout>
 			</slot>
@@ -116,6 +116,7 @@
 	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
+	import { IDataListAction } from './types';
 
 	const Props = Vue.extend({
 		props: {
@@ -169,6 +170,16 @@
 		/** Semi-transparent white */
 		get fadeWhite(): string {
 			return 'rgba(255, 255, 255, .7)';
+		}
+
+		/**
+		 * Emit the dataList item object when user clicked on the corresponding action
+		 *
+		 * @param {number} dataListIndex The index of the selected data list
+		 * @param {number} itemIndex The index of the item into the selected data list
+		 */
+		dataListItemAction(dataListIndex: number, itemIndex: number) {
+			this.$emit('click:list-item', { dataListIndex, itemIndex } as IDataListAction);
 		}
 	}
 </script>

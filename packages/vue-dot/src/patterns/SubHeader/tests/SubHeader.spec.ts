@@ -25,7 +25,7 @@ describe('SubHeader', () => {
 	});
 
 	it('test data list with button action and press it', async() => {
-		const eventActionValue: IDataListAction = { list: 1, item: 1 };
+		const eventActionValue: IDataListAction = { dataListIndex: 1, itemIndex: 1 };
 
 		// Mount component
 		wrapper = mountComponent(SubHeader, {
@@ -46,14 +46,13 @@ describe('SubHeader', () => {
 		expect(itemWithAction.exists()).toBe(true);
 
 		// Find the button action in the second item and click on it
-		const actionBtn = itemWithAction.find('.vd-data-list-item-action-button');
+		const actionBtn = itemWithAction.find('.vd-data-list-item-action-btn');
 		expect(actionBtn.exists()).toBe(true);
 		actionBtn.trigger('click');
 
 		// Wait until $emits have been handled
 		await wrapper.vm.$nextTick();
 
-		// Assert event payload
 		expect(wrapper.emitted('click:list-item')).toEqual([[eventActionValue]]);
 	});
 });

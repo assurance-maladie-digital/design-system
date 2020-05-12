@@ -107,8 +107,8 @@ exports[`DataList renders with item action and event 1`] = `
           <div class="vd-data-list-item-value"><span class="body-1">
 					Dupont
 				</span></div>
-          <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-button v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
-					Modifier
+          <div class="vd-data-list-item-action"><button type="button" class="body-1 text-none accent--text text-bold px-0 vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content">
+					Edit
 				</span></button></div>
         </div>
       </div>

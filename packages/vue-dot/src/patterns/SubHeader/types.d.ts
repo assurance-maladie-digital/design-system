@@ -10,6 +10,6 @@ export interface ISubHeader {
 }
 
 export interface IDataListAction {
-	list: number;
-	item: number;
+	dataListIndex: number;
+	itemIndex: number;
 }
