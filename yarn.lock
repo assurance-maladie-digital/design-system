@@ -5771,10 +5771,10 @@ eslint-loader@^2.2.1:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
-eslint-plugin-jsdoc@25.2.1:
-  version "25.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-25.2.1.tgz#f4d1d6e3f4e78dc549ffd3bbb28dacdbd390bda9"
-  integrity sha512-xVf6asIk/Rp4NmX392K72002Dj8GdPW5dKWYu/tzT86H+Yi3Djeee0VF3Y94Wcj7xTH08C3hGpmtJJdtWnMiqQ==
+eslint-plugin-jsdoc@25.4.0:
+  version "25.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-25.4.0.tgz#e5a7296eccbbf7d9bf0125936a26c7c3175238a2"
+  integrity sha512-FQgEALA8nmxyBORBinKJ7kM2fMcF6pXRdLgPfj0H3q5lalVAcgNxmeuLXownAGiS9Z3jU/fD2VX1gykR77qvfw==
   dependencies:
     comment-parser "^0.7.4"
     debug "^4.1.1"
