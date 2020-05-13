@@ -11,34 +11,44 @@
 			<template #additional-informations>
 				<VSpacer />
 
-				<template v-if="loading">
-					<HeaderLoading
-						class="mt-8"
-						height="24"
-						width="150"
-						dark
-					/>
+				<div>
+					<VFadeTransition mode="out-in">
+						<div
+							v-if="loading"
+							key="progress-skeleton"
+						>
+							<HeaderLoading
+								class="mt-8"
+								height="24"
+								width="160"
+								dark
+							/>
 
-					<HeaderLoading
-						class="mt-2 mb-1"
-						height="8"
-						width="100%"
-						tile
-						dark
-					/>
-				</template>
+							<HeaderLoading
+								class="mt-2 mb-1"
+								height="8"
+								width="100%"
+								tile
+								dark
+							/>
+						</div>
 
-				<template v-else>
-					<p class="white--text mt-8 mb-0">
-						Profil complété à 50%
-					</p>
+						<div
+							v-else
+							key="progress-data"
+						>
+							<p class="white--text mt-8 mb-0">
+								Profil complété à 50%
+							</p>
 
-					<VProgressLinear
-						v-bind="progressLinearOpts"
-						:value="progressValue"
-						class="mb-1"
-					/>
-				</template>
+							<VProgressLinear
+								v-bind="progressLinearOpts"
+								:value="progressValue"
+								class="mb-1"
+							/>
+						</div>
+					</VFadeTransition>
+				</div>
 			</template>
 		</SubHeader>
 

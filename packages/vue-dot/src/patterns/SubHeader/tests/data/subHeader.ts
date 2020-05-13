@@ -16,12 +16,12 @@ export const dataListItemsActions: IDataList = [
 	{
 		key: 'Libellé',
 		value: 'Texte à modifier',
-		action: 'Edit'
+		action: 'Modifier'
 	},
 	{
 		key: 'Libellé',
 		value: 'Texte à modifier',
-		action: 'Edit'
+		action: 'Modifier'
 	}
 ];
 
