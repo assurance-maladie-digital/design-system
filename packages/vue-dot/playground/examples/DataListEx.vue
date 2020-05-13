@@ -5,6 +5,14 @@
 			:icons="icons"
 			list-title="Informations"
 			flex
+			@click:item-action="setItemValue"
+		/>
+
+		<VTextField
+			v-model="actionValue"
+			class="mt-4"
+			outlined
+			label="New value"
 		/>
 	</DocSection>
 </template>
@@ -19,6 +27,8 @@
 
 	@Component
 	export default class DataListEx extends Vue {
+		actionValue: string | null = 'New text';
+
 		data: IDataListItem[] = [
 			{
 				key: 'Civility',
@@ -49,7 +59,8 @@
 			},
 			{
 				key: 'Native country',
-				value: 'France'
+				value: 'France',
+				action: 'Edit'
 			},
 			{
 				key: 'Date of registration',
@@ -60,5 +71,14 @@
 		icons = {
 			mdiCalendar
 		};
+
+		/**
+		 * Set the new value to the corresponding dataList item
+		 *
+		 * @param {number} itemIndex The index of the item to update
+		 */
+		setItemValue(itemIndex: number) {
+			this.$set(this.data[itemIndex], 'value', this.actionValue);
+		}
 	}
 </script>

@@ -25,12 +25,14 @@
 					v-if="item.key"
 					:label="item.key"
 					:value="item.value"
+					:action="item.action"
 					:chip="item.chip"
 					:icon="getIcon(item.icon)"
 					:placeholder="placeholder"
 					:vuetify-options="item.options"
 					:style="{ width }"
 					class="vd-data-list-item body-1"
+					@click:action="$emit('click:item-action', index)"
 				/>
 			</li>
 		</ul>
