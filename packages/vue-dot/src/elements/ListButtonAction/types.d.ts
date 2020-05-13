@@ -3,4 +3,5 @@ export interface ButtonAction {
 	label: string;
 	color?: string;
 	action: Function;
+	size?:string
 }

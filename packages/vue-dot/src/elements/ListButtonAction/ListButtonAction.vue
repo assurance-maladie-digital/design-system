@@ -20,9 +20,7 @@
 		props: {
 			/**
 			 * Define props buttons actions by passing
-			 * An array of object ButtonAction,
-			 * If it not passing to Parent then template
-			 * initialization is prioritized
+			 * An array of object ButtonAction
 			 */
 
 			buttonActions: {

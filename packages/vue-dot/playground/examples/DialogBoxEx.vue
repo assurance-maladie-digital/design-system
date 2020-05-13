@@ -1,5 +1,5 @@
 <template>
-	<DocSection title="DialogBox">
+	<DocSection title="DialogBox - ListButtonAction">
 		<ListButtonAction
 			:button-actions="buttonActions"
 		/>
@@ -41,19 +41,30 @@
 			</template>
 			<template #footer>
 				<VBtn
-					color="primary"
-					class="ml-6 px-5"
-					@click="action('validate')"
-				>
-					VALIDATE
-				</VBtn>
-				<VBtn
 					color="normal"
 					class="ml-6 px-5"
 					@click="action('reset')"
 				>
 					RESET
 				</VBtn>
+				<VBtn
+					color="primary"
+					class="ml-6 px-5"
+					@click="action('validate')"
+				>
+					VALIDATE
+				</VBtn>
+			</template>
+		</DialogBox>
+
+		<DialogBox
+			:dialog.sync="dialogThree"
+			:button-actions="[]"
+			title="DIALOG DRAGGABLE"
+			is-draggable
+		>
+			<template #content>
+				<div>Click to the top of Dialog then with a mousedown drag to left, right; to and bottom</div>
 			</template>
 		</DialogBox>
 	</DocSection>
@@ -73,6 +84,7 @@
 		}>;
 		dialogOne = false;
 		dialogTwo = false;
+		dialogThree =false;
 		field: { login?: string, password?: string } = {};
 		valid = true;
 		nameRules = [
@@ -82,6 +94,7 @@
 		buttonActions: ButtonAction[] = [
 			{
 				label: 'Dialog Text',
+				size:'x-large',
 				action: () => {
 					this.dialogText();
 				}
@@ -91,6 +104,13 @@
 				color: 'primary',
 				action: () => {
 					this.dialogForm();
+				}
+			},
+			{
+				label: 'Dialog Draggable',
+				color: 'accent',
+				action: () => {
+					this.dialogDrag();
 				}
 			}
 		];
@@ -106,6 +126,13 @@
 		 */
 		dialogForm() {
 			return this.dialogTwo = true;
+		}
+
+		/**
+		 *  show dialog with form
+		 */
+		dialogDrag() {
+			return this.dialogThree = true;
 		}
 
 		/**

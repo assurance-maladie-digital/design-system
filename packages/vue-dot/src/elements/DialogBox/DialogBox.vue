@@ -1,12 +1,19 @@
 <template>
 	<VDialog
+		v-draggable="isDraggable"
 		:value="dialog"
-		width="743"
+		width="800"
 		@input="$emit('update:dialog',$event)"
 		@keydown.esc="close"
 	>
-		<VCard class="py-6 px-6">
-			<VCardTitle class="pa-0 mb-5">
+		<VCard
+			class="py-6 px-6"
+			:class="{'isDraggable_vdialog': isDraggable}"
+		>
+			<VCardTitle
+				class="pa-0 mb-5"
+				:class="{'popup-header': isDraggable}"
+			>
 				<h2 class="title font-weight-bold">
 					{{ title }}
 				</h2>
@@ -51,7 +58,15 @@
 							class="ml-6 px-5"
 							@click="close"
 						>
-							Fermer
+							ANNULER
+						</VBtn>
+
+						<VBtn
+							color="primary"
+							class="ml-6 px-5"
+							@click="close"
+						>
+							VALIDER
 						</VBtn>
 					</slot>
 				</template>
@@ -66,6 +81,8 @@
 	import { mdiClose, mdiPhone } from '@mdi/js';
 	import { ButtonAction } from '../ListButtonAction/types';
 	import { DialogBoxType } from './types';
+	import { dragDialog } from './config';
+
 	const Props = Vue.extend({
 		props: {
 			/** The v-model item */
@@ -92,11 +109,19 @@
 				default: () => false
 			},
 			/**
-			 * setting the title of modal dynamicly
+			 * setting the title of modal dynamically
 			 */
 			title: {
 				type: String,
 				default: () => 'Dialog Box'
+			},
+			/**
+			 * Dialog could be draggable,
+			 * set to false by default
+			 */
+			isDraggable: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -104,6 +129,15 @@
 		model: {
 			prop: 'item',
 			event: 'change'
+		},
+		directives: {
+			draggable: {
+				bind: (el, binding) => {
+					if (binding.value) {
+						dragDialog(el);
+					}
+				}
+			}
 		}
 	})
 	export default class DialogBox extends Props {
@@ -117,3 +151,15 @@
 		}
 	}
 </script>
+<style lang="scss">
+	.v-dialog.v-dialog--active .popup-header {
+		cursor: grab;
+	}
+
+	.v-dialog.v-dialog--active .popup-header:active {
+		cursor: grabbing;
+	}
+	.isDraggable_vdialog{
+		width:800px;
+	}
+</style>
