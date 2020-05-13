@@ -24,13 +24,13 @@
 				</slot>
 
 				<ul
-					v-if="list.length"
+					v-if="items.length"
 					class="vd-data-list-field pl-0"
 					:class="listClass"
 					:style="{ minWidth }"
 				>
 					<li
-						v-for="(item, index) in list"
+						v-for="(item, index) in items"
 						:key="index"
 						class="vd-data-list-row mb-2"
 					>
@@ -66,8 +66,8 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The list to display */
-			list: {
+			/** The items to display */
+			items: {
 				type: Array as PropType<DataListItem[]>,
 				required: true
 			},

@@ -95,7 +95,7 @@
 							:key="'vd-sub-header-data-list' + index"
 							:loading="loading"
 							:list-title="dataList.listTitle"
-							:list="dataList.items"
+							:items="dataList.items"
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
 							title-class="subtitle-1 font-weight-bold mb-2 mt-2"
