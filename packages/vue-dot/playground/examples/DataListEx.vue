@@ -1,7 +1,7 @@
 <template>
 	<DocSection title="DataList">
 		<DataList
-			:list="data"
+			:items="data"
 			:icons="icons"
 			:loading="loading"
 			:items-number-loading="7"
