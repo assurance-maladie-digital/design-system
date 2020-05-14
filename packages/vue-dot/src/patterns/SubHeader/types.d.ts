@@ -1,6 +1,11 @@
-import { IDataListItem } from '../../elements/DataList/types';
+import { IDataList } from '../../elements/DataList/types';
 
-export interface IDataList {
+export interface IDataListAction {
+	dataListIndex: number;
+	itemIndex: number;
+}
+
+export interface DataListsItem {
 	title?: string;
-	items: IDataListItem[];
+	items: IDataList;
 }
