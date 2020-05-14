@@ -198,23 +198,25 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
   }"
 />
 
-## Playground
+## Exemples
+
+### Playground
 
 <DocExample file="elements/data-list/examples/data-list-playground" />
 
-## Layout
+### Layout
 
 Modification possible de la largeur du composant ou de chaque item
 
 <DocExample file="elements/data-list/examples/data-list-layout" />
 
-## Utilisation du slot 'title'
+### Utilisation du slot 'title'
 
 Vous pouvez utiliser le slot pour personnaliser le titre
 
 <DocExample file="elements/data-list/examples/data-list-slot" />
 
-## Utilisation des slots d'item
+### Utilisation des slots d'item
 
 Vous pouvez utiliser le slot 'icon' pour personnaliser l'icon
 Vous pouvez utiliser le slot 'action' pour personnaliser l'action
