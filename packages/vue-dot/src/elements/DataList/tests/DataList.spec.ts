@@ -15,7 +15,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: dataList
+				items: dataList
 			}
 		});
 
@@ -36,7 +36,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: dataList,
+				items: dataList,
 				listTitle: 'Informations'
 			}
 		});
@@ -51,7 +51,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: dataList,
+				items: dataList,
 				column: true
 			}
 		});
@@ -66,7 +66,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: dataList,
+				items: dataList,
 				flex: true
 			}
 		});
@@ -81,7 +81,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: []
+				items: []
 			}
 		});
 
@@ -101,7 +101,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: dataList,
+				items: dataList,
 				icons: {
 					mdiTest: 'test'
 				}
@@ -119,7 +119,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: dataList,
+				items: dataList,
 				loading: true,
 				itemsNumberLoading: 3,
 				headingLoading: true
@@ -152,7 +152,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: listWithAction,
+				items: listWithAction,
 				flex: true
 			}
 		}, true);
@@ -169,7 +169,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				list: listWithAction,
+				items: listWithAction,
 				flex: true
 			}
 		}, true);
