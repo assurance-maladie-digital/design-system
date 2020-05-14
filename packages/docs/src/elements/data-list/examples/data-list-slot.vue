@@ -1,5 +1,17 @@
 <template>
-	<DataList :items="items" />
+	<VCard>
+		<VCardText>
+			<DataList
+				:items="items"
+			>
+				<template #title>
+					<div class="grey red--text primary pa-5">
+						Titre
+					</div>
+				</template>
+			</DataList>
+		</VCardText>
+	</VCard>
 </template>
 
 <script>
@@ -9,7 +21,7 @@
 				items: [
 					{
 						key: 'Nom',
-						value: 'Dupont'
+						value: ''
 					},
 					{
 						key: 'Prénom',
