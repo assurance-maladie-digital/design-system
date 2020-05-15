@@ -1,7 +1,7 @@
 import { Options } from '../../mixins/customizable';
 
 export interface IDataListItem {
-	key: string;
+	label: string;
 	value?: string;
 	action?: string;
 	chip?: boolean;
