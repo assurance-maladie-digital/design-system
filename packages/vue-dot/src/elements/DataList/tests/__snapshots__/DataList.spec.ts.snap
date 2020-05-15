@@ -219,7 +219,7 @@ exports[`DataList renders correctly with an icon 1`] = `
 exports[`DataList renders loading state correctly 1`] = `
 <div class="vd-data-list">
   <vfadetransition-stub mode="out-in" origin="top center 0">
-    <datalistloading-stub itemsnumber="3" heading="true" titleclass="mb-3 headline" width="200px"></datalistloading-stub>
+    <datalistloading-stub itemsnumber="3" heading="true" itemwidth="200px" title-class="mb-3 headline"></datalistloading-stub>
   </vfadetransition-stub>
 </div>
 `;
