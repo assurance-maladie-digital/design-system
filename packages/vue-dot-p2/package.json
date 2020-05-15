@@ -1,0 +1,65 @@
+{
+	"name": "vue-dot-p2",
+	"version": "2.0.0-alpha.50",
+	"description": "Vue Dot extension for P2",
+	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Dylan Broussard",
+		"email": "me@deraw.dev"
+	},
+	"files": [
+		"dist/*",
+		"src/*",
+		"tests/*",
+		"public/*",
+		"types/*"
+	],
+	"main": "./dist/vue-dot-p2.common.js",
+	"module": "./src/index.ts",
+	"types": "types/index.d.ts",
+	"scripts": {
+		"pre-commit": "lint-staged",
+		"playground": "vue-cli-service serve",
+		"playground:build": "vue-cli-service build",
+		"build": "LIB_MODE=true vue-cli-service build --target lib --name vue-dot-p2 ./src/index.ts",
+		"lint": "vue-cli-service lint",
+		"test": "vue-cli-service test:unit"
+	},
+	"peerDependencies": {
+		"@cnamts/vue-dot": "^2.0.0-alpha.40"
+	},
+	"devDependencies": {
+		"@babel/core": "7.9.6",
+		"@babel/preset-env": "7.9.6",
+		"@cnamts/cli-helpers": "^2.0.0-alpha.48",
+		"@mdi/js": "5.2.45",
+		"@vue/cli-plugin-babel": "4.3.1",
+		"@vue/cli-plugin-eslint": "4.3.1",
+		"@vue/cli-plugin-typescript": "4.3.1",
+		"@vue/cli-plugin-unit-jest": "4.3.1",
+		"@vue/cli-service": "4.3.1",
+		"@vue/test-utils": "1.0.2",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-loader": "8.1.0",
+		"core-js": "3.6.5",
+		"json-to-scss": "1.5.0",
+		"sass": "1.26.5",
+		"sass-loader": "8.0.2",
+		"vue-cli-plugin-vuetify": "2.0.5",
+		"vuetify-loader": "1.4.3"
+	},
+	"lint-staged": {
+		"*.{ts,vue}": [
+			"vue-cli-service lint",
+			"git add"
+		]
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
