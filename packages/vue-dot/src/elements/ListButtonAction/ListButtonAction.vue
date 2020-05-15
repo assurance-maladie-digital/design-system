@@ -25,7 +25,8 @@
 
 			buttonActions: {
 				type: Array as PropType<Array<ButtonAction>>,
-				required: false
+				required: false,
+				default:()=>[]
 			}
 		}
 	});
@@ -46,11 +47,7 @@
 
 		}
 
-		/**
-		 * set by default the color of the button
-		 *
-		 * @param type
-		 */
+		/** set by default the color of the button */
 		setColor(type: string) {
 			let color = '';
 			if (type === 'submit') {

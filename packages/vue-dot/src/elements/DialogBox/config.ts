@@ -1,4 +1,25 @@
-import Vue from 'vue';
+const size = [
+	{
+		name: 'x-small',
+		value: 300
+	},
+	{
+		name: 'small',
+		value: 500
+	},
+	{
+		name: 'medium',
+		value: 900
+	},
+	{
+		name: 'large',
+		value: 1020
+	},
+	{
+		name: 'x-large',
+		value: 1124
+	}
+];
 
 /**
  *  define function of
@@ -22,7 +43,7 @@ export function dragDialog(element: HTMLElement) {
 			d.el.style.transition = 'none';
 		}
 	});
-	document.addEventListener('mousemove', e => {
+	document.addEventListener('mousemove', (e: any) => {
 		if (d.el === undefined) {
 			return;
 		}
@@ -42,14 +63,19 @@ export function dragDialog(element: HTMLElement) {
 		d.el.style.transition = d.oldTransition;
 		d.el = undefined;
 	});
-
-	// TODO to evualate
-	/*setInterval(() => { // prevent out of bounds
-		const dialog: any = document.querySelector('.isDraggable_vdialog');
-		if (dialog === null) {
-			return;
-		}
-		dialog.style.left = Math.min(parseInt(dialog.style.left), window.innerWidth - dialog.getBoundingClientRect().width) + 'px';
-		dialog.style.top = Math.min(parseInt(dialog.style.top), window.innerHeight - dialog.getBoundingClientRect().height) + 'px';
-	}, 100);*/
 }
+
+/**
+ * function to evaluate the size of
+ * the dialog. size could be:
+ * x-small(xs) | small(sm) | medium(md) | large(lg) | x-large(xl)
+ * or pixel format
+ */
+export function sizeOfDialog(entry: string) {
+	let parseStr = size.filter((el) => el.name === entry);
+	if (parseStr.length > 0) {
+		entry = parseStr[0].value.toString();
+	}
+	return entry;
+}
+

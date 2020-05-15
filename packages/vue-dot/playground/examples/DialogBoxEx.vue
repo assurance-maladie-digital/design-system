@@ -1,7 +1,16 @@
 <template>
-	<DocSection title="DialogBox - ListButtonAction">
+	<DocSection title="DialogBox">
+		<h2 class="subtitle-1 mb-4 font-weight-bold">
+			Show list of button actions
+		</h2>
 		<ListButtonAction
 			:button-actions="buttonActions"
+		/>
+		<DialogBox
+			:dialog.sync="dialogSize"
+			:button-actions="[]"
+			:title="size"
+			:size="size"
 		/>
 
 		<DialogBox
@@ -45,30 +54,64 @@
 					class="ml-6 px-5"
 					@click="action('reset')"
 				>
-					RESET
+					ANNULER
 				</VBtn>
 				<VBtn
 					color="primary"
 					class="ml-6 px-5"
 					@click="action('validate')"
 				>
-					VALIDATE
+					VALIDER
 				</VBtn>
 			</template>
 		</DialogBox>
 
 		<DialogBox
 			:dialog.sync="dialogThree"
-			:button-actions="[]"
 			title="DIALOG DRAGGABLE"
 			is-draggable
+			@cancel="dialogThree=false"
+			@validate="dialogThree=false"
 		>
 			<template #content>
 				<div>Click to the top of Dialog then with a mousedown drag to left, right; to and bottom</div>
 			</template>
 		</DialogBox>
+		<div class="mg" />
+		<h2 class="subtitle-1 mb-4 font-weight-bold">
+			Select different size of the dialog
+		</h2>
+		<v-radio-group v-model="size">
+			<v-radio
+				label="x-small"
+				value="x-small"
+			/>
+
+			<v-radio
+				label="small"
+				value="small"
+			/>
+
+			<v-radio
+				label="medium"
+				value="medium"
+			/>
+
+			<v-radio
+				label="large"
+				value="large"
+			/>
+
+			<v-radio
+				label="x-large"
+				value="x-large"
+			/>
+		</v-radio-group>
 	</DocSection>
 </template>
+<style lang="scss">
+	.mg{margin-top:20px}
+</style>
 
 <script lang="ts">
 	import Vue from 'vue';
@@ -76,7 +119,20 @@
 	import { ButtonAction } from '../../src/elements/ListButtonAction/types';
 	import { Refs } from '../../src/types';
 
-	@Component
+	@Component<DialogBoxEx>({
+		watch: {
+			size: {
+				handler(value, oldValue) {
+					if(''!==value){
+						this.size=value;
+						this.dialogSize = true;
+					}
+				},
+				immediate: true,
+				deep: true
+			}
+		}
+	})
 	export default class DialogBoxEx extends Vue {
 		// Refs
 		$refs!: Refs<{
@@ -85,6 +141,8 @@
 		dialogOne = false;
 		dialogTwo = false;
 		dialogThree =false;
+		dialogSize =false;
+		size = '';
 		field: { login?: string, password?: string } = {};
 		valid = true;
 		nameRules = [

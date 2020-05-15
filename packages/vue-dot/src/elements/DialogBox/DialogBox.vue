@@ -1,8 +1,9 @@
 <template>
 	<VDialog
+		ref="vDialog"
 		v-draggable="isDraggable"
 		:value="dialog"
-		width="800"
+		:width="width"
 		@input="$emit('update:dialog',$event)"
 		@keydown.esc="close"
 	>
@@ -56,7 +57,7 @@
 						<VBtn
 							color="normal"
 							class="ml-6 px-5"
-							@click="close"
+							@click="$emit('cancel')"
 						>
 							ANNULER
 						</VBtn>
@@ -64,7 +65,7 @@
 						<VBtn
 							color="primary"
 							class="ml-6 px-5"
-							@click="close"
+							@click="$emit('validate')"
 						>
 							VALIDER
 						</VBtn>
@@ -81,24 +82,28 @@
 	import { mdiClose, mdiPhone } from '@mdi/js';
 	import { ButtonAction } from '../ListButtonAction/types';
 	import { DialogBoxType } from './types';
-	import { dragDialog } from './config';
+	import { dragDialog, sizeOfDialog } from './config';
 
 	const Props = Vue.extend({
 		props: {
 			/** The v-model item */
 			item: {
-				type: Object as PropType<DialogBoxType>,
-				required: false
+				type: Object as PropType<DialogBoxType | {}>,
+				required: false,
+				default: () => {
+				}
 			},
 			/**
 			 * Define props buttons actions by passing
 			 * An array of object ButtonAction,
 			 * If it not passing to Parent then template
 			 * initialization is prioritized
+			 * set value to [] => simple dialog with no button action
 			 */
 			buttonActions: {
-				type: Array as PropType<Array<ButtonAction>>,
-				required: false
+				type: Array as PropType<Array<ButtonAction> | undefined>,
+				required: false,
+				default: () => undefined
 			},
 			/**
 			 *  Show dialog or not
@@ -122,6 +127,13 @@
 			isDraggable: {
 				type: Boolean,
 				default: false
+			},
+			/**
+			 * Define the size|width of the dialogBox
+			 */
+			size: {
+				type: String,
+				default: () => 'medium'
 			}
 		}
 	});
@@ -144,6 +156,13 @@
 		closeIcon = mdiClose; // default icon
 		phoneIcon = mdiPhone; // default icon for iphone
 		/**
+		 *  return the size
+		 *  of the dialog
+		 */
+		get width() {
+			return sizeOfDialog(this.size);
+		}
+		/**
 		 *  close the dialog
 		 */
 		close() {
@@ -159,7 +178,8 @@
 	.v-dialog.v-dialog--active .popup-header:active {
 		cursor: grabbing;
 	}
+
 	.isDraggable_vdialog{
-		width:800px;
+		width: inherit;
 	}
 </style>
