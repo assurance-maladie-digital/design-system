@@ -68,7 +68,7 @@
 		watch: {
 			size: {
 				handler(value, oldValue) {
-					if ('' !== value) {
+					if ('870' !== value) {
 						this.size = value;
 						this.dialog = true;
 					}
