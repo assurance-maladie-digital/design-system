@@ -9,7 +9,7 @@
 				:title-class="titleClass"
 				:flex="flex"
 				:row="row"
-				:width="width"
+				:item-width="itemWidth"
 			/>
 
 			<div v-else>
@@ -43,7 +43,7 @@
 							:icon="getIcon(item.icon)"
 							:placeholder="placeholder"
 							:vuetify-options="item.options"
-							:style="{ width }"
+							:style="{ width: itemWidth }"
 							class="vd-data-list-item body-1"
 							@click:action="$emit('click:item-action', index)"
 						/>
@@ -102,8 +102,8 @@
 				type: String,
 				default: undefined
 			},
-			/** The key/value width */
-			width: {
+			/** The item width */
+			itemWidth: {
 				type: String,
 				default: '200px'
 			},
