@@ -17,7 +17,18 @@
 					},
 					{
 						key: 'Date de naissance',
-						value: '24/09/1970'
+						value: '24/09/1970',
+						chip: true
+					},
+					{
+						key: 'Statut',
+						value: 'Enregistré',
+						chip: true,
+						options: {
+							chip: {
+								color: 'success'
+							}
+						}
 					}
 				]
 			};

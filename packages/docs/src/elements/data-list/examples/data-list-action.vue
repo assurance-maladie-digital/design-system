@@ -1,5 +1,8 @@
 <template>
-	<DataList :items="items" />
+	<DataList
+		:items="items"
+		@click:item-action="updateBirthdate"
+	/>
 </template>
 
 <script>
@@ -17,10 +20,16 @@
 					},
 					{
 						key: 'Date de naissance',
-						value: '24/09/1970'
+						value: '24/09/1970',
+						action: 'Modifier'
 					}
 				]
 			};
+		},
+		methods: {
+			updateBirthdate(itemIndex) {
+				this.$set(this.items[itemIndex], 'value', '01/01/1970');
+			}
 		}
 	};
 </script>

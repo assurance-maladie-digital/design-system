@@ -1,5 +1,11 @@
 <template>
-	<DataList :items="items" />
+	<DataList :items="items">
+		<template #title>
+			<h3 class="subtitle-2 d-block white--text primary py-3 px-4 mb-2">
+				Titre
+			</h3>
+		</template>
+	</DataList>
 </template>
 
 <script>
@@ -9,7 +15,7 @@
 				items: [
 					{
 						key: 'Nom',
-						value: 'Dupont'
+						value: ''
 					},
 					{
 						key: 'Prénom',
