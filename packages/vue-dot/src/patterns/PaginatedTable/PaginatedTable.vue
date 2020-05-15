@@ -32,7 +32,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { Options } from './types';
+	import { DataOptions } from 'vuetify/types';
 
 	import { LocalStorageUtility } from '../../helpers/localStorageUtility';
 
@@ -40,7 +40,7 @@
 		props: {
 			// Props from Vuetify
 			options: {
-				type: Object as PropType<Options>,
+				type: Object as PropType<DataOptions>,
 				required: true
 			},
 			serverItemsLength: {
@@ -80,7 +80,7 @@
 		 * Local pagination
 		 * This is the pagination from local storage
 		 */
-		localOptions: Options | {} = {};
+		localOptions: DataOptions | {} = {};
 
 		/**
 		 * Create a LocalStorageUtility instance
@@ -116,7 +116,7 @@
 			return this.options;
 		}
 
-		set optionsCalc(value: Options | {}) {
+		set optionsCalc(value: DataOptions | {}) {
 			if (Object.keys(this.localOptions).length) {
 				this.localOptions = {};
 			}

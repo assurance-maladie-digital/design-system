@@ -24,7 +24,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Options } from '../../src/patterns/PaginatedTable/types';
+	import { DataOptions } from 'vuetify/types';
 
 	interface Dessert {
 		[key: string]: string | number;
@@ -56,7 +56,7 @@
 		loading = true;
 
 		// Default value for options
-		options = {} as Options;
+		options = {} as DataOptions;
 
 		headers = [
 			{
