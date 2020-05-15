@@ -1,11 +1,5 @@
 <template>
-	<DataList :items="items">
-		<template #title>
-			<h3 class="subtitle-2 d-block white--text primary py-3 px-4 mb-2">
-				Titre
-			</h3>
-		</template>
-	</DataList>
+	<DataList :items="items" />
 </template>
 
 <script>
@@ -15,7 +9,7 @@
 				items: [
 					{
 						key: 'Nom',
-						value: ''
+						value: 'Dupont'
 					},
 					{
 						key: 'Prénom',
@@ -23,7 +17,18 @@
 					},
 					{
 						key: 'Date de naissance',
-						value: '24/09/1970'
+						value: '24/09/1970',
+						chip: true
+					},
+					{
+						key: 'Statut',
+						value: 'Enregistré',
+						chip: true,
+						options: {
+							chip: {
+								color: 'success'
+							}
+						}
 					}
 				]
 			};

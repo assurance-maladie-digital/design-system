@@ -1,89 +1,96 @@
 <template>
-	<VContainer fluid>
-		<VRow>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<VSwitch
-					v-model="loading"
-					class="mb-4"
-					label="mode chargement"
-					@input="loading = !loading"
-				/>
-				<VExpandTransition mode="out-int">
-					<div v-if="loading">
-						<VSwitch
-							v-model="headingLoading"
-							label="avec titre"
-							@input="headingLoading = !headingLoading"
-						/>
-						<VTextField
-							v-if="loading"
-							v-model="itemsNumberLoading"
-							type="number"
-							label="prop = itemsNumberLoading"
-							outlined
-						/>
-					</div>
-				</VExpandTransition>
-				<h4>
-					Valeur item par défaut (placeholder)
-				</h4>
-				<p>Valeur des items visible par défaut quand il n'y en a pas encore.</p>
-				<VTextField
-					v-model="placeholder"
-					outlined
-				/>
-				<h4>
-					Titre (listTitle)
-				</h4>
-				<p>
-					titre de la items.
-				</p>
-				<VTextField
-					v-model="listTitle"
-					outlined
-				/>
-			</VCol>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<VCard>
-					<VCardText>
-						<DataList
-							:list-title="listTitle"
-							:items="items"
-							:loading="loading"
-							:icons="icons"
-							:placeholder="placeholder"
-							:items-number-loading="Number(itemsNumberLoading)"
-							:heading-loading="headingLoading"
-							:title-class="titleClass"
-							@click:item-action="setItemValue"
-						/>
-					</VCardText>
-				</VCard>
-				<h4 class="mt-5">
-					* Liste des items (prop = items)
-				</h4>
-				<p>
-					Cet exemple importe seulement les icones 'mdiCalendar' et 'mdiAccount'
-				</p>
-				<pre
-					v-if="items"
-					contenteditable="true"
-					class="mt-4"
-					:class="[
-						$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
-					]"
-					@blur="items = JSON.parse($event.target.textContent)"
-					v-html="items"
-				/>
-			</VCol>
-		</VRow>
-	</VContainer>
+	<VRow>
+		<VCol
+			cols="12"
+			md="6"
+		>
+			<VSwitch
+				v-model="loading"
+				label="Mode chargement (loading)"
+				hide-details
+				class="mt-0"
+			/>
+
+			<VExpandTransition mode="out-int">
+				<div v-if="loading">
+					<VSwitch
+						v-model="headingLoading"
+						label="Avec titre (heading-loading)"
+						hide-details
+					/>
+
+					<VTextField
+						v-if="loading"
+						v-model.number="itemsNumberLoading"
+						label="Nb. d'items en mode chargement (items-number-loading)"
+						hide-details
+						type="number"
+						class="mt-8"
+						outlined
+					/>
+				</div>
+			</VExpandTransition>
+
+			<VSwitch
+				v-model="row"
+				label="Mode horizontal (row)"
+				hide-details
+			/>
+
+			<VSwitch
+				v-model="flex"
+				label="Mode flexbox (flex)"
+				hide-details
+				class="mb-8"
+			/>
+
+			<VTextField
+				v-model="listTitle"
+				label="Titre (list-title)"
+				hide-details
+				class="mb-8"
+				outlined
+			/>
+
+			<VTextField
+				v-model="placeholder"
+				label="Text de remplacement (placeholder)"
+				hide-details
+				class="mb-8"
+				outlined
+			/>
+
+			<VTextField
+				v-model="itemWidth"
+				label="Largeur de chaque item (item-width)"
+				hide-details
+				outlined
+			/>
+		</VCol>
+
+		<VCol
+			cols="12"
+			md="6"
+		>
+			<VCard>
+				<VCardText>
+					<DataList
+						v-if="itemsNumberLoading"
+						:items="items"
+						:icons="icons"
+						:list-title="listTitle"
+						:loading="loading"
+						:items-number-loading="itemsNumberLoading"
+						:heading-loading="headingLoading"
+						:placeholder="placeholder"
+						:item-width="itemWidth"
+						:flex="flex"
+						:row="row"
+					/>
+				</VCardText>
+			</VCard>
+		</VCol>
+	</VRow>
 </template>
 
 <script>
@@ -92,21 +99,23 @@
 	export default {
 		data() {
 			return {
-				actionValue: '',
 				loading: false,
-				placeholder: 'Valeur',
-				listTitle: 'Titre',
-				titleClass: '',
 				itemsNumberLoading: 3,
 				headingLoading: true,
+				row: false,
+				flex: false,
+				listTitle: 'Titre',
+				placeholder: '…',
+				itemWidth: '200px',
 				icons: {
-					mdiCalendar, mdiAccount
+					calendarIcon: mdiCalendar,
+					userIcon: mdiAccount
 				},
 				items: [
 					{
 						key: 'Nom',
 						value: '',
-						icon: 'mdiAccount'
+						icon: 'userIcon'
 					},
 					{
 						key: 'Prénom',
@@ -121,17 +130,11 @@
 					{
 						key: 'Date de naissance',
 						value: '09/24/1970',
-						action: 'Edit'
+						icon: 'calendarIcon',
+						action: 'Modifier'
 					}
 				]
 			};
-		},
-
-		// Vuex bindings
-		methods: {
-			setItemValue(itemIndex){
-				alert(`Vous avez clicker sur l'action de l'item, voici l'évènement émit => $emit('click:item-action', ${itemIndex})`);
-			}
 		}
 	};
 </script>

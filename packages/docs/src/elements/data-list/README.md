@@ -23,13 +23,15 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         name: 'items',
         defaultValue: 'undefined',
         type: 'DataListItem[]',
-        description: 'La liste des items à afficher.'
+        description: 'La liste des items à afficher.',
+        example: '{\n  key: string;\n  value?: string;\n  action?: string;\n  chip?: boolean;\n  icon?: string;\n  options?: Options;\n}'
       },
       {
         name: 'icons',
         defaultValue: 'undefined',
         type: 'DataListIcons',
-        description: 'La liste des différentes icônes disponible pour les items'
+        description: 'La liste des différentes icônes disponibles pour les items.',
+        example: '{\n  [key: string]: string;\n}'
       },
       {
         name: 'list-title',
@@ -53,43 +55,43 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         name: 'flex',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Affiche les items avec passsage s\'il n\'y a plus de place disponible.'
+        description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
       },
       {
         name: 'placeholder',
         type: 'string',
-        defaultValue: '...',
-        description: 'Affiche un exemple de texte quand il n\'y a pas de valeur.'
+        defaultValue: '\'…\'',
+        description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
       },
       {
-        name: 'minWidth',
+        name: 'min-width',
         type: 'string',
         defaultValue: 'undefined',
-        description: 'Largeur minimum du composant.'
+        description: 'La largeur minimum du composant.'
       },
       {
-        name: 'width',
+        name: 'item-width',
         type: 'string',
-        defaultValue: '200px',
-        description: 'Largeur de chaque item.'
+        defaultValue: '\'200px\'',
+        description: 'La largeur de chaque item.'
       },
       {
         name: 'loading',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Mode chargement des données, liée avec [itemsNumberLoading] et [headingLoading].'
+        description: 'Affiche un état de chargement.'
       },
       {
-        name: 'itemsNumberLoading',
+        name: 'items-number-loading',
         type: 'number',
         defaultValue: '1',
-        description: 'Affiche un modèle d\'item pour chaque nombre pendant le chargement si loading = true.'
+        description: 'Le nombre d\'items à afficher lors du chargement.'
       },
       {
-        name: 'headingLoading',
+        name: 'heading-loading',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Affiche un modèle du titre pendant le chargement si loading = true.'
+        description: 'Affiche un squelette pour le titre pendant le chargement.'
       }],
       slots: [{
         name: 'title',
@@ -97,8 +99,8 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
       }],
       events: [{
         name: 'click:item-action',
-        description: 'Emis lorsque l\'on click sur le bouton d\'action d\'un item',
-        value: '`itemIndex: number`'
+        description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action d\'un item.',
+        value: 'itemIndex: number'
       }]
     },
     DataListItem: {
@@ -112,13 +114,13 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         name: 'value',
         type: 'string',
         defaultValue: 'undefined',
-        description: 'La valeur a afficher.'
+        description: 'La valeur à afficher.'
       },
       {
         name: 'action',
         type: 'string',
         defaultValue: 'undefined',
-        description: 'Le label du bouton action a afficher.'
+        description: 'Le label du bouton action à afficher.'
       },
       {
         name: 'placeholder',
@@ -130,13 +132,13 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         name: 'chip',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Affiche la valeur dans un élément `VChip`.'
+        description: 'Affiche la valeur dans une `VChip`.'
       },
       {
         name: 'icon',
         type: 'string',
         defaultValue: 'undefined',
-        description: 'Icône SVG à afficher.'
+        description: 'Le nom de l\'icône à afficher.'
       },
       {
         name: 'vuetify-options',
@@ -154,7 +156,11 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
       },
       {
         name: 'action',
-        description: 'Slot pour remplacer le contenu de l\'action'
+        description: 'Slot pour remplacer le contenu de l\'action.'
+      }],
+      events: [{
+        name: 'click:action',
+        description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action.'
       }]
     },
     DataListLoading: {
@@ -162,13 +168,13 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         name: 'itemsNumber',
         type: 'number',
         defaultValue: '1',
-        description: 'Affiche un ou plusieurs item(s) en chargement en fonction du nombre'
+        description: 'Le nombre d\'items à afficher pendant le chargement.'
       },
       {
         name: 'heading',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Affiche un modèle de chargement de titre'
+        description: 'Affiche un squelette pour le titre pendant le chargement.'
       },
       {
         name: 'row',
@@ -180,45 +186,57 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         name: 'flex',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Affiche les items avec passsage s\'il n\'y a plus de place disponible.'
-      },
-      {
-        name: 'title-class',
-        type: 'string',
-        defaultValue: '\'mb-3 headline\'',
-        description: 'Les classes à appliquer sur le titre de la liste.'
+        description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
       },
       {
         name: 'width',
         type: 'string',
-        defaultValue: '200px',
-        description: 'Largeur de chaque item.'
+        defaultValue: '\'200px\'',
+        description: 'La largeur de chaque item.'
       }]
     }
   }"
 />
 
-## Exemples
-
-### Playground
+## Playground
 
 <DocExample file="elements/data-list/examples/data-list-playground" />
 
-### Layout
+## Exemples
 
-Modification possible de la largeur du composant ou de chaque item
+### Icônes
 
-<DocExample file="elements/data-list/examples/data-list-layout" />
+Vous pouvez spécifier une icône à afficher pour chaque item de la liste en utilisant la propriété `icons` pour définir la liste des icônes disponibles.<br>
+Si une icône est spécifiée mais qu'elle n'est pas trouvée dans la liste, rien ne sera affiché.
 
-### Utilisation du slot 'title'
+<DocInfo>
 
-Vous pouvez utiliser le slot pour personnaliser le titre
+Il est nécessaire de lister manuellement toutes les icônes possible afin de n'importer que celles-ci et de garantir de meilleures performances.
+
+</DocInfo>
+
+<DocExample file="elements/data-list/examples/data-list-icons" />
+
+### Bouton d'action
+
+Vous pouvez ajouter un bouton d'action à chaque item grâce à la propriété `action` sur l'item.
+
+<DocExample file="elements/data-list/examples/data-list-action" />
+
+### Étiquette
+
+Vous pouvez afficher certains items de la liste dans une `VChip` et de modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
+
+<DocExample file="elements/data-list/examples/data-list-chip" />
+
+### Utilisation des slots
+
+Vous pouvez utiliser le slot `title` pour personnaliser le titre.
 
 <DocExample file="elements/data-list/examples/data-list-slot" />
 
-### Utilisation des slots d'item
+### Personnalisation des composants Vuetify
 
-Vous pouvez utiliser le slot 'icon' pour personnaliser l'icon
-Vous pouvez utiliser le slot 'action' pour personnaliser l'action
+Vous pouvez personnaliser les composants `VLayout`, `VIcon` et `VChip` contenus dans `DataListItem` en utilisant la propriété `options` sur les items de la liste.
 
-<DocExample file="elements/data-list/examples/data-list-item-slots" />
+<DocExample file="elements/data-list/examples/data-list-options" />
