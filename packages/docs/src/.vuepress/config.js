@@ -33,6 +33,16 @@ module.exports = {
 						to: '/elements/header-loading'
 					}
 				]
+			},
+			{
+				title: 'Patterns',
+				group: 'patterns',
+				items: [
+					{
+						title: 'DatePicker',
+						to: '/patterns/date-picker'
+					}
+				]
 			}
 		]
 	},

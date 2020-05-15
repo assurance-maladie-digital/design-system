@@ -1,0 +1,34 @@
+<template>
+	<div>
+		<h2 class="subtitle-1 font-weight-bold">
+			Affichage par défaut avec validation de la date
+		</h2>
+
+		<DatePicker
+			v-model="date"
+			:rules="validRules"
+		/>
+
+		<h4 v-if="date">
+			Format de sortie pour le back
+		</h4>
+
+		<p class="mt-4">
+			{{ date }}
+		</p>
+	</div>
+</template>
+
+<script>
+	import { isDateValid } from '@cnamts/vue-dot/src/rules/isDateValid';
+	export default {
+		data() {
+			return {
+				date: '',
+				validRules: [
+					isDateValid
+				]
+			};
+		}
+	};
+</script>
