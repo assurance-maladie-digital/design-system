@@ -37,7 +37,7 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
         name: 'hide-tooltip',
         type: 'boolean',
         defaultValue: 'false',
-        description: 'Masquer le `VTooltip`.'
+        description: 'Masque le `VTooltip`.'
       },
       {
         name: 'tooltip-duration',
@@ -79,6 +79,6 @@ Vous pouvez utiliser les slots pour personnaliser l'icône ainsi que le contenu 
 
 ### Personnalisation des composants Vuetify
 
-Grâce à la directive `customizable`, il est possible de personnaliser les composants `VMenu`, `VBtn` et `VIcon` contenus dans `CopyBtn`.
+Grâce à la directive `customizable`, vous pouvez personnaliser les composants `VMenu`, `VBtn` et `VIcon` contenus dans `CopyBtn`.
 
 <DocExample file="elements/copy-btn/examples/copy-btn-vuetify-options" />
