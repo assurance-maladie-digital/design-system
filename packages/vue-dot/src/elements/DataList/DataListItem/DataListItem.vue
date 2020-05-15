@@ -46,6 +46,7 @@
 				<slot name="action">
 					<VBtn
 						v-if="action"
+						v-bind="options.actionBtn"
 						text
 						small
 						color="accent"
