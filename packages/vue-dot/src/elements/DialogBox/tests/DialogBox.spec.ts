@@ -6,13 +6,14 @@ import { html } from '@/tests/html';
 
 import DialogBox from '../DialogBox.vue';
 import ListButtonAction from '../../ListButtonAction/ListButtonAction.vue';
+
 let wrapper: Wrapper<Vue>;
 
 // Tests
 describe('DialogBox.vue', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(DialogBox,{
+		wrapper = mountComponent(DialogBox, {
 			components: { ListButtonAction }
 		});
 		expect(html(wrapper)).toMatchSnapshot();
@@ -20,5 +21,13 @@ describe('DialogBox.vue', () => {
 
 	it('trigger event mousedown', () => {
 
+	});
+
+	it('verify size', () => {
+		wrapper = mountComponent(DialogBox, {
+			propsData: {
+				size: 'small'
+			}
+		});
 	});
 });

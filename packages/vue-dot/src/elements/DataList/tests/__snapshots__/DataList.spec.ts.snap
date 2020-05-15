@@ -88,61 +88,59 @@ exports[`DataList renders correctly with a title 1`] = `
 
 exports[`DataList renders correctly with an action 1`] = `
 <div class="vd-data-list">
-  <transition-stub name="fade-transition" mode="out-in">
-    <div>
-      <!---->
-      <ul class="vd-data-list-field pl-0 vd-column vd-flex">
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
-              <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                Civility
-              </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
+  <div>
+    <!---->
+    <ul class="vd-data-list-field pl-0 vd-column vd-flex">
+      <li class="vd-data-list-row mb-2">
+        <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+              Civility
+            </div>
+            <div class="vd-data-list-item-value"><span class="body-1">
 					…
 				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+            <div class="vd-data-list-item-action">
+              <!---->
             </div>
           </div>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
-              <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                Name
-              </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
+        </div>
+      </li>
+      <li class="vd-data-list-row mb-2">
+        <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+              Name
+            </div>
+            <div class="vd-data-list-item-value"><span class="body-1">
 					Dupont
 				</span></div>
-              <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0 v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text"><span class="v-btn__content">
+            <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0 v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text"><span class="v-btn__content">
 					Edit
 				</span></button></div>
-            </div>
           </div>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
-              <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                First name
-              </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
+        </div>
+      </li>
+      <li class="vd-data-list-row mb-2">
+        <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+              First name
+            </div>
+            <div class="vd-data-list-item-value"><span class="body-1">
 					Paul
 				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+            <div class="vd-data-list-item-action">
+              <!---->
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
-  </transition-stub>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 
@@ -159,60 +157,58 @@ exports[`DataList renders correctly with an empty list 1`] = `
 
 exports[`DataList renders correctly with an icon 1`] = `
 <div class="vd-data-list">
-  <transition-stub name="fade-transition" mode="out-in">
-    <div>
-      <!---->
-      <ul class="vd-data-list-field pl-0 vd-column">
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
-              <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                Civility
-              </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
+  <div>
+    <!---->
+    <ul class="vd-data-list-field pl-0 vd-column">
+      <li class="vd-data-list-row mb-2">
+        <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+              Civility
+            </div>
+            <div class="vd-data-list-item-value"><span class="body-1">
 					…
 				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+            <div class="vd-data-list-item-action">
+              <!---->
             </div>
           </div>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light mr-4 mt-2" style="font-size: 24px;">test</i>
-            <div class="vd-data-list-item-content">
-              <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                Name
-              </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
+        </div>
+      </li>
+      <li class="vd-data-list-row mb-2">
+        <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light mr-4 mt-2" style="font-size: 24px;">test</i>
+          <div class="vd-data-list-item-content">
+            <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+              Name
+            </div>
+            <div class="vd-data-list-item-value"><span class="body-1">
 					Dupont
 				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+            <div class="vd-data-list-item-action">
+              <!---->
             </div>
           </div>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
-              <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                First name
-              </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
+        </div>
+      </li>
+      <li class="vd-data-list-row mb-2">
+        <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+              First name
+            </div>
+            <div class="vd-data-list-item-value"><span class="body-1">
 					Paul
 				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+            <div class="vd-data-list-item-action">
+              <!---->
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
-  </transition-stub>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 

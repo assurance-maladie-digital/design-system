@@ -76,6 +76,7 @@
 			<template #content>
 				<div>Click to the top of Dialog then with a mousedown drag to left, right; to and bottom</div>
 			</template>
+			<template #footer />
 		</DialogBox>
 		<div class="mg" />
 		<h2 class="subtitle-1 mb-4 font-weight-bold">
