@@ -1,12 +1,12 @@
 <template>
-	<DataList :list="list" />
+	<DataList :items="items" />
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
-				list: [
+				items: [
 					{
 						key: 'Nom',
 						value: 'Dupont'
