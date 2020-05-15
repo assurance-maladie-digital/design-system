@@ -46,10 +46,7 @@ describe('SubHeader', () => {
 		// Find the button action in the second item and click on it
 		const actionBtn = itemWithAction.find('.vd-data-list-item-action-btn');
 		expect(actionBtn.exists()).toBe(true);
-		actionBtn.trigger('click');
-
-		// Wait until $emits have been handled
-		await wrapper.vm.$nextTick();
+		await actionBtn.trigger('click');
 
 		expect(wrapper.emitted('click:list-item')).toEqual([[eventActionValue]]);
 	});
