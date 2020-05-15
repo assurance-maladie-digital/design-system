@@ -1,7 +1,6 @@
 <template>
 	<VDialog
 		ref="vDialog"
-		v-draggable="isDraggable"
 		:value="dialog"
 		:width="width"
 		@input="$emit('update:dialog',$event)"
@@ -9,11 +8,9 @@
 	>
 		<VCard
 			class="py-6 px-6"
-			:class="{'isDraggable_vdialog': isDraggable}"
 		>
 			<VCardTitle
 				class="pa-0 mb-5"
-				:class="{'popup-header': isDraggable}"
 			>
 				<h2 class="title font-weight-bold">
 					{{ title }}
@@ -43,34 +40,26 @@
 			<!-- Block of button actions //-->
 			<VCardActions class="pa-0">
 				<VSpacer />
-				<!-- If array of ButtonActons object set from Parent //-->
-				<template v-if="buttonActions">
-					<ListButtonAction
-						:button-actions="buttonActions"
-					/>
-				</template>
-				<!-- If template //-->
-				<template v-else>
-					<slot
-						name="footer"
+				<!-- button actions //-->
+				<slot
+					name="footer"
+				>
+					<VBtn
+						color="normal"
+						class="ml-6 px-5"
+						@click="$emit('cancel')"
 					>
-						<VBtn
-							color="normal"
-							class="ml-6 px-5"
-							@click="$emit('cancel')"
-						>
-							ANNULER
-						</VBtn>
+						ANNULER
+					</VBtn>
 
-						<VBtn
-							color="primary"
-							class="ml-6 px-5"
-							@click="$emit('validate')"
-						>
-							VALIDER
-						</VBtn>
-					</slot>
-				</template>
+					<VBtn
+						color="primary"
+						class="ml-6 px-5"
+						@click="$emit('validate')"
+					>
+						VALIDER
+					</VBtn>
+				</slot>
 			</VCardActions>
 			<!-- End of bloc button actions//-->
 		</VCard>
@@ -80,9 +69,8 @@
 	import Component from 'vue-class-component';
 	import Vue, { PropType } from 'vue';
 	import { mdiClose, mdiPhone } from '@mdi/js';
-	import { ButtonAction } from '../ListButtonAction/types';
 	import { DialogBoxType } from './types';
-	import { dragDialog, sizeOfDialog } from './config';
+	import { sizeConfig } from './config';
 
 	const Props = Vue.extend({
 		props: {
@@ -92,18 +80,6 @@
 				required: false,
 				default: () => {
 				}
-			},
-			/**
-			 * Define props buttons actions by passing
-			 * An array of object ButtonAction,
-			 * If it not passing to Parent then template
-			 * initialization is prioritized
-			 * set value to [] => simple dialog with no button action
-			 */
-			buttonActions: {
-				type: Array as PropType<Array<ButtonAction> | undefined>,
-				required: false,
-				default: () => undefined
 			},
 			/**
 			 *  Show dialog or not
@@ -121,14 +97,6 @@
 				default: () => 'Dialog Box'
 			},
 			/**
-			 * Dialog could be draggable,
-			 * set to false by default
-			 */
-			isDraggable: {
-				type: Boolean,
-				default: false
-			},
-			/**
 			 * Define the size|width of the dialogBox
 			 */
 			size: {
@@ -141,15 +109,6 @@
 		model: {
 			prop: 'item',
 			event: 'change'
-		},
-		directives: {
-			draggable: {
-				bind: (el, binding) => {
-					if (binding.value) {
-						dragDialog(el);
-					}
-				}
-			}
 		}
 	})
 	export default class DialogBox extends Props {
@@ -160,8 +119,23 @@
 		 *  of the dialog
 		 */
 		get width() {
-			return sizeOfDialog(this.size);
+			return this.sizeOfDialog(this.size);
 		}
+
+		/**
+		 * function to evaluate the size of
+		 * the dialog. size could be:
+		 * x-small | small | medium | large | x-large
+		 * or pixel format
+		 */
+		sizeOfDialog(entry: string) {
+			let parseStr = sizeConfig.filter((el) => el.name === entry);
+			if (parseStr.length > 0) {
+				entry = parseStr[0].value.toString();
+			}
+			return entry;
+		}
+
 		/**
 		 *  close the dialog
 		 */
@@ -170,16 +144,3 @@
 		}
 	}
 </script>
-<style lang="scss">
-	.v-dialog.v-dialog--active .popup-header {
-		cursor: grab;
-	}
-
-	.v-dialog.v-dialog--active .popup-header:active {
-		cursor: grabbing;
-	}
-
-	.isDraggable_vdialog{
-		width: inherit;
-	}
-</style>

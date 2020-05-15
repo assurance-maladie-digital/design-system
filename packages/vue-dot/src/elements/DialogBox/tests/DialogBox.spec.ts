@@ -5,7 +5,6 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import DialogBox from '../DialogBox.vue';
-import ListButtonAction from '../../ListButtonAction/ListButtonAction.vue';
 
 let wrapper: Wrapper<Vue>;
 
@@ -13,21 +12,7 @@ let wrapper: Wrapper<Vue>;
 describe('DialogBox.vue', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(DialogBox, {
-			components: { ListButtonAction }
-		});
+		wrapper = mountComponent(DialogBox);
 		expect(html(wrapper)).toMatchSnapshot();
-	});
-
-	it('trigger event mousedown', () => {
-
-	});
-
-	it('verify size', () => {
-		wrapper = mountComponent(DialogBox, {
-			propsData: {
-				size: 'small'
-			}
-		});
 	});
 });

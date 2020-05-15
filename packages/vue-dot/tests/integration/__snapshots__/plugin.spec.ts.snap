@@ -12,7 +12,6 @@ Object {
     "FileUpload",
     "HeaderLoading",
     "LangBtn",
-    "ListButtonAction",
     "NotificationBar",
     "PageCard",
     "PaginatedTable",
