@@ -12,7 +12,7 @@
 			class="ml-6 px-5"
 			@click="dialog=true"
 		>
-			CLICK ON ME
+			Show dialog
 		</VBtn>
 
 		<DialogBox
