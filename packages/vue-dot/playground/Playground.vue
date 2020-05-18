@@ -48,6 +48,8 @@
 
 				<FileUploadEx />
 
+				<FooterEx />
+
 				<LangBtnEx />
 
 				<NotificationEx />
