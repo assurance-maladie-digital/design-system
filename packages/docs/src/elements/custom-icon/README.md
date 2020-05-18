@@ -3,8 +3,7 @@
 :::
 
 ::: slot description
-L'élément `CustomIcon` est utilisé pour afficher un icon personaliser qui à été défini dans le theme de la config 'vue-dot'
-Note : Certains icones peuvent ne pas prendre en compte la couleur (ex: vuejs)
+L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée parmi celles définies dans les options du plugin
 :::
 
 ## Utilisation
@@ -24,37 +23,37 @@ Note : Certains icones peuvent ne pas prendre en compte la couleur (ex: vuejs)
         name: 'color',
         defaultValue: 'currentColor',
         type: 'string',
-        description: 'Changer la couleur de l\'icône (n\'importe quelle valeur CSS). Par défaut, il est hérité de la propriété de couleur CSS.'
+        description: 'La couleur de l\'icône (n\'importe quelle valeur CSS). Par défaut, l'icône hérite de la couleur du texte.'
       },
       {
         name: 'small',
         defaultValue: 'false',
         type: 'boolean',
-        description: 'Rendre l\'icône petite (1em).'
+        description: 'Définit la taille de l\’icône à 1em.'
       },
       {
         name: 'medium',
         defaultValue: 'false',
         type: 'boolean',
-        description: 'Rendre l\'icône moyen (1.5em).'
+        description: 'Définit la taille de l\’icône à 1.5em.'
       },
       {
         name: 'large',
         defaultValue: 'false',
         type: 'boolean',
-        description: 'Rendre l\'icône large (1.85em).'
+        description: 'Définit la taille de l\’icône à 1.85em.'
       },
       {
-        name: 'xlarge',
+        name: 'x-large',
         defaultValue: 'false',
         type: 'boolean',
-        description: 'Rendre l\'icône extra large (2.25em).'
+        description: 'Définit la taille de l\’icône à 2.25em.'
       },
       {
         name: 'size',
         type: 'string',
         defaultValue: 'undefined',
-        description: 'Appliquer une taille CSS personnalisée (largeur / hauteur) à l\'icône, par défaut, la taille est de 1,35em (entre petit et moyen).'
+        description: 'Applique une taille CSS personnalisée (largeur / hauteur) à l\'icône. Par défaut, la taille est de 1,35em.'
       }]
     }
   }"
@@ -68,6 +67,6 @@ Note : Certains icones peuvent ne pas prendre en compte la couleur (ex: vuejs)
 
 ### Slot
 
-Utilisez le slot pour afficher un icon personaliser en dehors du theme défini dans 'vue-dot', celui ci ne prendra pas en compte les autres propriétés du composant.
+Vous pouvez utiliser le slot par défaut pour afficher une icône SVG totalement personnalisée.
 
 <DocExample file="elements/custom-icon/examples/custom-icon-slot" />

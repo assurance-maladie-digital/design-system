@@ -21,7 +21,7 @@ const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 	Vue.use(VueDot, {
 		theme: {
 			icons
-		},
+		}
 	});
 	Vue.use(VueTheMask);
 };
