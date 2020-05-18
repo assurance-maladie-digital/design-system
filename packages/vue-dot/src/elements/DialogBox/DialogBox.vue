@@ -22,9 +22,11 @@
 					</VIcon>
 				</VBtn>
 			</VCardTitle>
+
 			<VCardText>
 				<slot />
 			</VCardText>
+
 			<VCardActions class="pa-0">
 				<VSpacer />
 				<slot name="footer">
