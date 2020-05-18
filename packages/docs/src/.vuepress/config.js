@@ -21,12 +21,12 @@ module.exports = {
 				group: 'elements',
 				items: [
 					{
-						title: 'CustomIcon',
-						to: '/elements/custom-icon'
-					},
-					{
 						title: 'CopyBtn',
 						to: '/elements/copy-btn'
+					},
+					{
+						title: 'CustomIcon',
+						to: '/elements/custom-icon'
 					},
 					{
 						title: 'DataList',
