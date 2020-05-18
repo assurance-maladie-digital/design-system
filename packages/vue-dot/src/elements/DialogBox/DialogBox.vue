@@ -3,7 +3,7 @@
 		ref="vDialog"
 		:value="dialog"
 		:width="width"
-		@input="$emit('update:dialog',$event)"
+		@input="$emit('update:dialog', $event)"
 		@keydown.esc="close"
 	>
 		<VCard
