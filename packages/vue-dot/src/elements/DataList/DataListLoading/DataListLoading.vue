@@ -15,7 +15,7 @@
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
 				class="vd-data-list-loading-item mb-4"
-				:style="{ width }"
+				:style="{ width: itemWidth }"
 			>
 				<HeaderLoading
 					height="1rem"
@@ -56,12 +56,8 @@
 				type: Boolean,
 				default: false
 			},
-			titleClass: {
-				type: String,
-				default: 'mb-3 headline'
-			},
-			/** The key/value width */
-			width: {
+			/** The item width */
+			itemWidth: {
 				type: String,
 				default: '200px'
 			}
