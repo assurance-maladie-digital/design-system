@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `FileList` est utilisé pour afficher une liste des fichiers.
+L'élément `FileList` est utilisé pour afficher une liste des fichiers avec un statut ('success', 'error', 'initial') et l'action possible en fonction de ce dernier.
 :::
 
 ## Utilisation
