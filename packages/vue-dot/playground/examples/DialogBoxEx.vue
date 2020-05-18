@@ -10,18 +10,18 @@
 		<VBtn
 			color="primary"
 			class="ml-6 px-5"
-			@click="dialog=true"
+			@click="dialog = true"
 		>
 			Show dialog
 		</VBtn>
 
 		<DialogBox
 			:dialog.sync="dialog"
-			:size="size"
-			@cancel="dialog=false"
-			@validate="dialog=false"
+			:width="width"
+			@cancel="dialog = false"
+			@validate="dialog = false"
 		>
-			<template #content>
+			<template>
 				<div>This it's a simple dialog with a text ...</div>
 			</template>
 		</DialogBox>
@@ -29,30 +29,30 @@
 		<h2 class="subtitle-1 mb-4 font-weight-bold">
 			Select different size of the dialog
 		</h2>
-		<v-radio-group v-model="size">
+		<v-radio-group v-model="width">
 			<v-radio
 				label="x-small"
-				value="x-small"
+				value="300"
 			/>
 
 			<v-radio
 				label="small"
-				value="small"
+				value="500"
 			/>
 
 			<v-radio
 				label="medium"
-				value="medium"
+				value="900"
 			/>
 
 			<v-radio
 				label="large"
-				value="large"
+				value="1020"
 			/>
 
 			<v-radio
 				label="x-large"
-				value="x-large"
+				value="1140"
 			/>
 		</v-radio-group>
 	</DocSection>
@@ -69,10 +69,10 @@
 
 	@Component<DialogBoxEx>({
 		watch: {
-			size: {
+			width: {
 				handler(value, oldValue) {
 					if ('870' !== value) {
-						this.size = value;
+						this.width = value;
 						this.dialog = true;
 					}
 				},
@@ -83,6 +83,6 @@
 	})
 	export default class DialogBoxEx extends Vue {
 		dialog = false;
-		size = '870';
+		width = '870';
 	}
 </script>
