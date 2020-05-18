@@ -1,8 +1,6 @@
 <template>
 	<CustomIcon
-		icon="mdiAccount"
-		size="50px"
-		color="red"
+		icon="github"
 	/>
 </template>
 

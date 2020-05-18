@@ -11,36 +11,17 @@
 				label="couleur"
 			/>
 			<VSelect
-				v-model="props.icon"
-				outlined
-				:items="icons"
-				label="icon"
-			/>
-			<VSelect
 				v-model="props.size"
 				outlined
 				:items="sizes"
-				label="taille"
+				label="taille principale"
 			/>
-			<VSwitch
-				v-model="props.small"
-				label="small"
-				@change="resetSize"
-			/>
-			<VSwitch
-				v-model="props.medium"
-				label="medium"
-				@change="resetSize"
-			/>
-			<VSwitch
-				v-model="props.large"
-				label="large"
-				@change="resetSize"
-			/>
-			<VSwitch
-				v-model="props.xLarge"
-				label="xLarge"
-				@change="resetSize"
+			<VSelect
+				v-model="standardSize"
+				outlined
+				:items="propSizes"
+				label="taille standard"
+				@change="StandardSizeUpdated"
 			/>
 		</VCol>
 		<VCol
@@ -64,33 +45,47 @@
 			return {
 				props: {
 					color: 'red',
+					icon: 'github',
+					size: '40px',
 					small: false,
-					icon: 'mdiAccount',
 					medium: false,
 					large: false,
-					xLarge: false,
-					size: '40px'
+					xLarge: false
 				},
-				icons: [
-					{ text: 'avatar', value: 'mdiAccount' },
-					{ text: 'vuejs (pas de couleur)', value: 'vuejs' }
-				],
 				colors: [
 					{ text: 'blue', value: 'blue' },
 					{ text: 'red', value: 'red' }
 				],
 				sizes: [
-					{ text: '', value: '' },
+					{ text: '', value: null },
 					{ text: '40px', value: '40px' },
 					{ text: '50px', value: '50px' },
 					{ text: '150px', value: '150px' }
+				],
+				standardSize: null,
+				propSizes: [
+					{ text: '', value: '' },
+					{ text: 'small', value: 'small' },
+					{ text: 'medium', value: 'medium' },
+					{ text: 'large', value: 'large' },
+					{ text: 'XLarge', value: 'xLarge' }
 				]
 			};
 		},
 
 		methods: {
-			resetSize() {
-				this.props.size = null;
+			StandardSizeUpdated(standardSize) {
+				// Reset all standard sizes
+				this.props.small = false;
+				this.props.medium = false;
+				this.props.large = false;
+				this.props.xLarge = false;
+
+				// Set new standard size and reset the main size if needed
+				if(standardSize) {
+					this.props[standardSize] = true;
+					this.props.size = null;
+				}
 			}
 		}
 
