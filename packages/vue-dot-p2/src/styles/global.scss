@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'Osp Din';
+	src: url('/ald/fonts/osp-din-webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+
+.v-application .osp-din {
+	font-family: 'Osp Din' !important;
+}

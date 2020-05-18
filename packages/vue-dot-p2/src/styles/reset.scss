@@ -1,0 +1,102 @@
+* {
+	$transparent: rgba(0, 0, 0, 0);
+
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	scroll-behavior: smooth;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+	word-break: break-word;
+	hyphens: auto;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: $transparent;
+}
+
+[v-cloak] {
+	display: none;
+}
+
+// Reset main font-size
+html {
+	// Font size defined by the browser
+	font-size: 100%;
+}
+
+body {
+	min-height: 100vh;
+	font-size: 0.88rem;
+	line-height: 1.25;
+}
+
+// Reset Vuetify font-size
+.v-application {
+	.display-4,
+	.display-3,
+	.display-2,
+	.display-1,
+	.headline,
+	.title,
+	.subtitle-1,
+	.subtitle-2,
+	.body-1,
+	.body-2,
+	.caption,
+	.overline {
+		font-family: 'Open Sans', sans-serif !important;
+	}
+
+	.title,
+	.headline {
+		font-size: 1.13rem !important;
+		font-weight: 600 !important;
+	}
+
+	.v-label,
+	.v-list__tile,
+	.subtitle-1 {
+		font-size: .88rem !important;
+	}
+
+	.v-tabs__div,
+	.body-1 {
+		font-size: .85rem !important;
+		letter-spacing: 0 !important;
+	}
+
+	table.v-table tbody td,
+	table.v-table thead th,
+	.v-datatable__actions,
+	.body-2 {
+		font-size: .8rem;
+	}
+}
+
+// Reset input
+input {
+	appearance: none;
+}
+
+// Reset list
+ul {
+	list-style: none;
+}
+
+// Hide content visually but not for Screen Readers
+.sr-only {
+	position: absolute !important;
+	top: 0;
+	left: -999px;
+	width: 1px !important;
+	height: 1px !important;
+	white-space: nowrap;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Disable ripple globally
+.v-ripple__container,
+.v-input--selection-controls__ripple {
+	display: none !important;
+}

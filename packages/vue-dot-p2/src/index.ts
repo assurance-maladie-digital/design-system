@@ -2,6 +2,9 @@ import { registerAllComponents } from './registerAllComponents';
 
 // Import global styles
 import './styles/global.scss';
+import './styles/reset.scss';
+import './styles/utility.scss';
+import './styles/vuetify.scss';
 
 import { VueConstructor } from 'vue';
 import { VueDotP2Plugin } from '../types';

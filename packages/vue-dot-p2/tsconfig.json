@@ -8,6 +8,9 @@
 			"jest"
 		],
 		"paths": {
+			"@/*": [
+				"src/*"
+			],
 			"@/tests/*": [
 				"tests/*"
 			],

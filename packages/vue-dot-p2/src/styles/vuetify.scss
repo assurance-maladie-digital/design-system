@@ -1,0 +1,99 @@
+// Define some vuetify classes for P2 style
+.v-btn {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+	font-size: 0.81rem !important;
+	.v-btn__content {
+		font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+		font-weight: 600;
+	}
+}
+
+.theme--light.v-btn.v-btn--disabled:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined).p2-primary-btn {
+	background-color: #aed7ed !important;
+}
+
+.theme--light.v-btn.v-btn--disabled:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined).p2-secondary-btn {
+	background-color: #fff !important;
+}
+
+// Apparence du cursor dans les zones de saisies désactivé
+.v-input--selection-controls__input input[disabled] {
+	cursor: not-allowed;
+}
+
+// Radio buttons overridings
+.v-radio > div {
+	width: auto;
+}
+
+.v-radio .v-icon--svg {
+	height: 16px;
+	width: 16px;
+	font-size: 16px !important;
+}
+
+.v-radio .v-input--selection-controls__input {
+	height: 16px;
+}
+
+.v-radio label {
+	color: inherit !important;
+}
+
+.v-radio.theme--light.v-item--active > label {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	color: black !important;
+}
+
+.v-radio.theme--light > label {
+	font-size: 0.88rem !important;
+}
+
+.v-radio .v-icon--svg.theme--light {
+	color: black !important;
+}
+
+// Checkbox
+
+.v-input--checkbox {
+
+	.v-input--selection-controls__input {
+		height: 16px !important;
+		width: 16px !important;
+	}
+
+	.v-icon {
+		height: 16px !important;
+		width: 16px !important;
+		font-size: 16px;
+		border: 1px solid #000;
+		color: #fff !important;
+	}
+
+	&.v-input--is-label-active .v-icon {
+		color: #000 !important;
+	}
+
+	.theme--light.v-label {
+		color: #000!important;
+	}
+}
+
+// Switch button
+
+.v-input--switch.theme--light label {
+	color: black;
+}
+
+.v-input--switch__track.theme--light.primary--text {
+	color: #aedffd !important;
+}
+
+.v-input--switch__thumb.theme--light {
+	color: #888888 !important;
+	&.primary--text {
+		color: #0595c5 !important;
+	}
+}
