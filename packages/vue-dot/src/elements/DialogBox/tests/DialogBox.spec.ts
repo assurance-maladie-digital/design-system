@@ -13,6 +13,7 @@ describe('DialogBox.vue', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(DialogBox);
+
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
