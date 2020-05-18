@@ -204,6 +204,7 @@
 			],
 			events: [
 				{
+					text: 'Nom',
 					value: 'name',
 					class: 'xs12'
 				},
@@ -212,6 +213,7 @@
 					class: 'xs12 mt-2'
 				},
 				{
+					text: 'Valeur',
 					value: 'value',
 					class: 'xs12 mt-2'
 				}
