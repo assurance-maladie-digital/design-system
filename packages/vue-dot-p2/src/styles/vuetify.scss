@@ -168,3 +168,37 @@ a:not(.v-btn) {
 		min-height: 34px !important;
 	}
 }
+
+// VTabs overridings
+
+.theme--light.v-tabs > .v-tabs-bar {
+	background: none;
+	.v-tabs-bar__content {
+		height: 100%;
+		.v-tabs-slider-wrapper {
+			width: 0 !important;
+		};
+		.v-tab {
+			margin-bottom: 5px;
+			margin-right: 5px;
+			background: white;
+			font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+			letter-spacing: normal;
+			color: rgba(0, 0, 0, 0.54) !important;
+			&:hover {
+				text-decoration: none !important;
+			}
+			&:focus {
+				text-decoration: none !important;
+			}
+		};
+		.v-tab--active {
+			margin-bottom: 0;
+			padding-bottom: 5px;
+			color: white !important;
+			&:hover{
+				text-decoration: none !important;
+			}
+		};
+	}
+}

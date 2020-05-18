@@ -9,3 +9,43 @@
 .v-application .osp-din {
 	font-family: 'Osp Din' !important;
 }
+
+// Screen main width management
+
+@media only screen and (max-width: 600px) {
+	.page {
+		padding: 15px !important;
+	}
+}
+
+.main-width {
+	margin: 0 auto;
+	width: 970px !important;
+}
+
+@media (max-width: 991px) {
+	.main-width {
+		margin: 0 15px;
+		width: calc(100% - 30px) !important;
+	}
+
+	* {
+		min-width: 0%;
+	}
+}
+
+@media (min-width: 992px) {
+	.main-width {
+		width: 970px !important;
+	}
+
+	* {
+		min-width: 0%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.main-width {
+		width: 1138px !important;
+	}
+}

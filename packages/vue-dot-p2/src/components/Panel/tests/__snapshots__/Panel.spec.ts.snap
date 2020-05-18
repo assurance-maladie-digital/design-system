@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel renders correctly 1`] = `
+<vlayout-stub id="nature" tag="div" align-center="true" wrap="" tabindex="0" class="panel white main-width">
+  <!---->
+  <vlayout-stub tag="div" class="py-3 px-3">
+    <!---->
+  </vlayout-stub>
+</vlayout-stub>
+`;

@@ -186,6 +186,66 @@
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
+					P2 Components
+				</h2>
+				<Panel column>
+				<!-- <P2DatePicker
+					v-model="date"
+					:date-max="today"
+					:date-picker-rules="requiredRule"
+				/> -->
+				</Panel>
+			</PageCard>
+			<PageCard :card-class="pageCardClass">
+				<!-- Introduction -->
+				<h2 class="display-1 mb-12 font-weight-bold">
+					P2 Table
+				</h2>
+				<div class="layout-tab-example">
+					<VRow>
+						<VTabs
+							v-model="tab"
+							active-class="primary white--text"
+						>
+							<VTab href="#first">
+								First tab
+							</VTab>
+							<VTab href="#second">
+								Second tab
+							</VTab>
+						</VTabs>
+					</VRow>
+					<VRow>
+						<VTabsItems v-model="tab">
+							<VTabItem
+								value="first"
+								:transition="false"
+								:reverse-transition="false"
+							>
+								<Panel
+									column
+								>
+									First Panel
+								</Panel>
+							</VTabItem>
+							<VTabItem
+								value="second"
+								:transition="false"
+								:reverse-transition="false"
+							>
+								<Panel
+									column
+								>
+									Second Panel
+								</Panel>
+							</VTabItem>
+						</VTabsItems>
+					</VRow>
+				</div>
+			</PageCard>
+			<PageCard :card-class="pageCardClass">
+				<!-- Introduction -->
+				<h2 class="display-1 mb-12 font-weight-bold">
 					Informations/Warning/Error messages
 				</h2>
 				<Information>Information message</Information>
@@ -226,6 +286,10 @@
 		radio = '';
 		checkValue = false;
 		switchValue = false;
+		tab = 0;
+
+		date = '2020-05-18';
+		today = '2020-05-18';
 
 		requiredRule = [
 			(v: string) => !!v || 'Input is required'
@@ -258,5 +322,10 @@
 <style lang="scss" scoped>
 	.vd-p2-playground-app-bar {
 		z-index: 10;
+	}
+
+	.layout-tab-example {
+		padding: 20px;
+		background: #f5f5f5;
 	}
 </style>
