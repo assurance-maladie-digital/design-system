@@ -103,7 +103,7 @@
 						Primary button disabled
 					</VBtn>
 				</VLayout>
-				<VLayout>
+				<VLayout class="mt-2">
 					<VBtn
 						rounded
 						depressed
@@ -124,10 +124,14 @@
 						Secondary button disabled
 					</VBtn>
 				</VLayout>
+				<VLayout class="mt-2">
+					<a href="#">Link example</a>
+				</VLayout>
 				<VLayout>
 					<VRadioGroup
 						v-model="radio"
 						row
+						:rules="requiredRule"
 						hide-details
 					>
 						<VRadio
@@ -144,6 +148,7 @@
 				<VLayout>
 					<Checkbox
 						v-model="checkValue"
+						:rules="requiredRule"
 						label="Checkbox P2"
 					/>
 				</VLayout>
@@ -158,6 +163,29 @@
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
+					Text Inputs
+				</h2>
+				<VTextField
+					solo
+					flat
+					validate-on-blur
+					placeholder="Placeholder example"
+					:rules="requiredRule"
+				/>
+				<VTextarea
+					solo
+					flat
+					placeholder="Placeholder example"
+					no-resize
+					:rows="2"
+					:counter="500"
+					:maxlength="500"
+					:rules="requiredRule"
+				/>
+			</PageCard>
+			<PageCard :card-class="pageCardClass">
+				<!-- Introduction -->
+				<h2 class="display-1 mb-12 font-weight-bold">
 					Informations/Warning/Error messages
 				</h2>
 				<Information>Information message</Information>
@@ -165,7 +193,6 @@
 				<Error>Error message</Error>
 			</PageCard>
 		</VContent>
-
 		<VFooter
 			:color="dark ? 'grey darken-3' : 'secondary'"
 			class="white--text elevation-5"
@@ -199,6 +226,10 @@
 		radio = '';
 		checkValue = false;
 		switchValue = false;
+
+		requiredRule = [
+			(v: string) => !!v || 'Input is required'
+		];
 
 		updateTheme() {
 			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
