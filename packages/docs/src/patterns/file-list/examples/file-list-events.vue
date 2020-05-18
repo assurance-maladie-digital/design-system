@@ -39,15 +39,15 @@
 			}
 		];
 
-	  	deleteFile(fileId: number) {
+		deleteFile(fileId: number) {
 			alert(`Evènement 'delete-file' du fichier ${fileId} appeler`);
 		}
 
-	  	retryFile(fileId: number) {
+		retryFile(fileId: number) {
 			alert(`Evènement 'retry' du fichier ${fileId} appeler`);
 		}
 
-	  	viewFile(file: FileItem) {
+		viewFile(file: FileItem) {
 			alert(`Evènement 'retry' du fichier ${JSON.stringify(file)} appeler`);
 		}
 

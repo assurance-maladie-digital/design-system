@@ -25,7 +25,7 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
         name: 'text-to-copy',
         defaultValue: 'undefined',
         type: 'string | function',
-        description: 'Le texte a copier ou une fonction qui le retourne. La fonction sera exécutée lors du clic sur le bouton.'
+        description: 'Le texte à copier ou une fonction qui le retourne. La fonction sera exécutée lors du clic sur le bouton.'
       },
       {
         name: 'label',
