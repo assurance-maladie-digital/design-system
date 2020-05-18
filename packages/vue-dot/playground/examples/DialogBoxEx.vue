@@ -1,5 +1,8 @@
 <template>
-	<DocSection title="DialogBox">
+	<DocSection
+		no-divider
+		title="DialogBox"
+	>
 		<h2 class="subtitle-1 mb-4 font-weight-bold">
 			Show list of button actions
 		</h2>
