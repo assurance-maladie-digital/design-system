@@ -7,6 +7,7 @@ import { defaultErrorMessages } from './locales';
  * Check that the field does not exceeds the exact length
  *
  * @param {number} lengthValue The exact length allowed
+ * @param {boolean} ignoreSpaces Don't count spaces in value
  * @param {ErrorMessages} [errorMessages] Custom error messages
  * @returns {ValidationRule} Validation result
  */
