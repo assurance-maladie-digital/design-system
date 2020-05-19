@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée parmi celles définies dans les options du plugin
+L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée parmi celles définies dans les options du plugin.
 :::
 
 ## Utilisation
@@ -60,7 +60,7 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
 		slots: [
 			{
 				name: 'default',
-				description: 'Slot pour rendre le contenu de l\'icône totalement personnalisable'
+				description: 'Slot pour remplacer le contenu de l'icône.'
 			}
 		]
 	}

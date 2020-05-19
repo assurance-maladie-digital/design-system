@@ -8,22 +8,24 @@
 				v-model="props.color"
 				outlined
 				:items="colors"
-				label="couleur"
+				label="Couleur"
 			/>
+
 			<VSelect
 				v-model="props.size"
 				outlined
 				:items="sizes"
-				label="taille principale"
+				label="Taille personnalisée"
 			/>
 			<VSelect
 				v-model="standardSize"
 				outlined
 				:items="propSizes"
-				label="taille standard"
+				label="Taille standard"
 				@change="StandardSizeUpdated"
 			/>
 		</VCol>
+
 		<VCol
 			cols="12"
 			md="6"
@@ -82,12 +84,11 @@
 				this.props.xLarge = false;
 
 				// Set new standard size and reset the main size if needed
-				if(standardSize) {
+				if (standardSize) {
 					this.props[standardSize] = true;
 					this.props.size = null;
 				}
 			}
 		}
-
 	};
 </script>
