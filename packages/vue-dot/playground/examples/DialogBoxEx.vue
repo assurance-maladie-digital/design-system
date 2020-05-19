@@ -3,25 +3,20 @@
 		no-divider
 		title="DialogBox"
 	>
-		<h2 class="subtitle-1 mb-4 font-weight-bold">
-			Show list of button actions
-		</h2>
-
 		<VBtn
 			color="primary"
-			class="ml-6 px-5"
 			@click="dialog = true"
 		>
 			Show dialog
 		</VBtn>
 
 		<DialogBox
-			:dialog.sync="dialog"
+			v-model="dialog"
 			title="DialogBox"
 			@cancel="dialog = false"
-			@validate="dialog = false"
+			@confirm="dialog = false"
 		>
-			<p>This is a simple dialog with a text ...</p>
+			<p>This is a simple dialog</p>
 		</DialogBox>
 	</DocSection>
 </template>

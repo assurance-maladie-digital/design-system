@@ -1,8 +1,8 @@
 <template>
 	<VDialog
-		:value="dialog"
+		v-model="dialog"
+		v-bind="$attrs"
 		:width="width"
-		@input="$emit('update:dialog', $event)"
 	>
 		<VCard class="py-6 px-6">
 			<VCardTitle class="pa-0 mb-5">
@@ -36,7 +36,8 @@
 
 				<slot name="actions">
 					<VBtn
-						class="ml-6 px-5"
+						color="primary"
+						text
 						@click="$emit('cancel')"
 					>
 						{{ locales.cancel }}
@@ -44,10 +45,10 @@
 
 					<VBtn
 						color="primary"
-						class="ml-6 px-5"
-						@click="$emit('validate')"
+						class="ml-6"
+						@click="$emit('confirm')"
 					>
-						{{ locales.validate }}
+						{{ locales.confirm }}
 					</VBtn>
 				</slot>
 			</VCardActions>
@@ -68,7 +69,7 @@
 			 *  Show dialog or not
 			 *  Default value false, dialog not showing
 			 */
-			dialog: {
+			value: {
 				type: Boolean,
 				default: false
 			},
@@ -89,16 +90,32 @@
 		}
 	});
 
-	@Component
+	@Component({
+		inheritAttrs: false,
+		// v-model
+		model: {
+			prop: 'value',
+			event: 'change'
+		}
+	})
 	export default class DialogBox extends Props {
 		closeIcon = mdiClose;
 		locales = locales;
+
+		/** get and set computed properties: value, for the dialog */
+		get dialog() {
+			return this.value;
+		}
+
+		set dialog(dialog: boolean) {
+			this.$emit('change', dialog);
+		}
 
 		/**
 		 *  close the dialog
 		 */
 		close() {
-			this.$emit('update:dialog', false);
+			this.$emit('change', false);
 		}
 	}
 </script>

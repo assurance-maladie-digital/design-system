@@ -15,10 +15,10 @@ exports[`DialogBox.vue renders correctly 1`] = `
     <vcardtext-stub></vcardtext-stub>
     <vcardactions-stub class="pa-0">
       <vspacer-stub></vspacer-stub>
-      <vbtn-stub tag="button" activeclass="" type="button" class="ml-6 px-5">
+      <vbtn-stub color="primary" tag="button" activeclass="" text="true" type="button">
         Annuler
       </vbtn-stub>
-      <vbtn-stub color="primary" tag="button" activeclass="" type="button" class="ml-6 px-5">
+      <vbtn-stub color="primary" tag="button" activeclass="" type="button" class="ml-6">
         Valider
       </vbtn-stub>
     </vcardactions-stub>
