@@ -78,7 +78,7 @@
 			 */
 			width: {
 				type: String,
-				default: () => '900'
+				default: '900'
 			}
 		}
 	});
