@@ -52,6 +52,7 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
+
 	import { mdiClose, mdiPhone } from '@mdi/js';
 	import { locales } from './locales';
 
