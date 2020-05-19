@@ -22,7 +22,7 @@
 			@validate="dialog = false"
 		>
 			<template>
-				<div>This it's a simple dialog with a text ...</div>
+				<p>This is a simple dialog with a text.</p>
 			</template>
 		</DialogBox>
 		<div class="mg" />
