@@ -71,7 +71,7 @@
 			 */
 			title: {
 				type: String,
-				default: () => 'Dialog Box'
+				default: undefined
 			},
 			/**
 			 * Define the width of the dialogBox
