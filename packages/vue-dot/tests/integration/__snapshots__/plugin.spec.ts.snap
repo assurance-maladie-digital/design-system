@@ -10,6 +10,7 @@ Object {
     "DialogBox",
     "FileList",
     "FileUpload",
+    "FooterWrapper",
     "HeaderLoading",
     "LangBtn",
     "NotificationBar",
