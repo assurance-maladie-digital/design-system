@@ -3,7 +3,6 @@
 		:value="dialog"
 		:width="width"
 		@input="$emit('update:dialog', $event)"
-		@keydown.esc="close"
 	>
 		<VCard class="py-6 px-6">
 			<VCardTitle class="pa-0 mb-5">
