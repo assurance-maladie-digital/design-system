@@ -64,7 +64,7 @@
 			 */
 			dialog: {
 				type: Boolean,
-				default: () => false
+				default: false
 			},
 			/**
 			 * setting the title of modal dynamically
