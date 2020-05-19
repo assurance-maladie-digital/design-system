@@ -49,7 +49,7 @@
 	@Component
 	export default class CustomIconPlayground extends Vue {
 		props: any = {
-			color: 'primary',
+			color: 'blue',
 			icon: 'github',
 			size: '40px',
 			small: false,
@@ -62,7 +62,7 @@
 			{ text: 'red', value: 'red' }
 		];
 		sizes = [
-			{ text: '', value: null },
+			{ text: 'Aucune', value: null },
 			{ text: '40px', value: '40px' },
 			{ text: '50px', value: '50px' },
 			{ text: '150px', value: '150px' }
