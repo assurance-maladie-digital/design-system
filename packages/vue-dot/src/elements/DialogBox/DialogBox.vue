@@ -87,6 +87,7 @@
 		closeIcon = mdiClose;
 		phoneIcon = mdiPhone; // default icon for iphone
 		locales = locales;
+
 		/**
 		 *  close the dialog
 		 */
