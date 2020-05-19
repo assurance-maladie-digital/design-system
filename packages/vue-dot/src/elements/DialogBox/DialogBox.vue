@@ -80,11 +80,13 @@
 			}
 		}
 	});
+
 	@Component
 	export default class DialogBox extends Props {
-		closeIcon = mdiClose; // default icon
+		closeIcon = mdiClose;
 		phoneIcon = mdiPhone; // default icon for iphone
 		locales = locales;
+
 		/**
 		 *  close the dialog
 		 */
