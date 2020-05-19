@@ -4,9 +4,7 @@ exports[`DialogBox.vue renders correctly 1`] = `
 <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="none" origin="center center" retainfocus="true" transition="dialog-transition" width="900">
   <vcard-stub loaderheight="4" tag="div" class="py-6 px-6">
     <vcardtitle-stub class="pa-0 mb-5">
-      <h2 class="title font-weight-bold">
-        Dialog Box
-      </h2>
+      <!---->
       <vspacer-stub></vspacer-stub>
       <vbtn-stub tag="button" activeclass="" icon="true" type="button">
         <vicon-stub>
