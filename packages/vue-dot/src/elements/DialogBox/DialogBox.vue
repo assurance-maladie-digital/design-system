@@ -33,7 +33,8 @@
 
 			<VCardActions class="pa-0">
 				<VSpacer />
-				<slot name="footer">
+
+				<slot name="actions">
 					<VBtn
 						class="ml-6 px-5"
 						@click="$emit('cancel')"
@@ -59,7 +60,7 @@
 	import Component from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { mdiClose, mdiPhone } from '@mdi/js';
+	import { mdiClose } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -91,7 +92,6 @@
 	@Component
 	export default class DialogBox extends Props {
 		closeIcon = mdiClose;
-		phoneIcon = mdiPhone; // default icon for iphone
 		locales = locales;
 
 		/**

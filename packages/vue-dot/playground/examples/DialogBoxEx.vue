@@ -21,7 +21,7 @@
 			@cancel="dialog = false"
 			@validate="dialog = false"
 		>
-			<div>This it's a simple dialog with a text ...</div>
+			<p>This is a simple dialog with a text ...</p>
 		</DialogBox>
 	</DocSection>
 </template>
