@@ -6,9 +6,11 @@
 	>
 		<VCard class="py-6 px-6">
 			<VCardTitle class="pa-0 mb-5">
-				<h2 class="title font-weight-bold">
-					{{ title }}
-				</h2>
+				<slot name="title">
+					<h2 class="title font-weight-bold">
+						{{ title }}
+					</h2>
+				</slot>
 
 				<VSpacer />
 
@@ -51,8 +53,8 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
-	import { mdiClose, mdiPhone } from '@mdi/js';
 	import { locales } from './locales';
+	import { mdiClose, mdiPhone } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -83,8 +85,7 @@
 
 	@Component
 	export default class DialogBox extends Props {
-		closeIcon = mdiClose;
-		phoneIcon = mdiPhone; // default icon for iphone
+		closeIcon = mdiClose; // default icon
 		locales = locales;
 
 		/**
