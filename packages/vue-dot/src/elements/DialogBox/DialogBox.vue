@@ -7,7 +7,10 @@
 		<VCard class="py-6 px-6">
 			<VCardTitle class="pa-0 mb-5">
 				<slot name="title">
-					<h2 class="title font-weight-bold">
+					<h2
+						v-if="title"
+						class="title font-weight-bold"
+					>
 						{{ title }}
 					</h2>
 				</slot>
@@ -35,7 +38,7 @@
 						class="ml-6 px-5"
 						@click="$emit('cancel')"
 					>
-						{{ locales.cancelBtn }}
+						{{ locales.cancel }}
 					</VBtn>
 
 					<VBtn
@@ -43,16 +46,18 @@
 						class="ml-6 px-5"
 						@click="$emit('validate')"
 					>
-						{{ locales.validateBtn }}
+						{{ locales.validate }}
 					</VBtn>
 				</slot>
 			</VCardActions>
 		</VCard>
 	</VDialog>
 </template>
+
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
 	import { locales } from './locales';
 	import { mdiClose, mdiPhone } from '@mdi/js';
 
@@ -64,28 +69,29 @@
 			 */
 			dialog: {
 				type: Boolean,
-				default: () => false
+				default: false
 			},
 			/**
 			 * setting the title of modal dynamically
 			 */
 			title: {
 				type: String,
-				default: () => 'Dialog Box'
+				default: undefined
 			},
 			/**
 			 * Define the width of the dialogBox
 			 */
 			width: {
 				type: String,
-				default: () => '900'
+				default: '900'
 			}
 		}
 	});
 
 	@Component
 	export default class DialogBox extends Props {
-		closeIcon = mdiClose; // default icon
+		closeIcon = mdiClose;
+		phoneIcon = mdiPhone; // default icon for iphone
 		locales = locales;
 
 		/**

@@ -17,6 +17,7 @@
 
 		<DialogBox
 			:dialog.sync="dialog"
+			title="DialogBox"
 			@cancel="dialog = false"
 			@validate="dialog = false"
 		>
