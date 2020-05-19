@@ -81,6 +81,7 @@
 			}
 		}
 	});
+
 	@Component
 	export default class DialogBox extends Props {
 		closeIcon = mdiClose;
