@@ -1,5 +1,3 @@
 <template>
-	<CustomIcon
-		icon="github"
-	/>
+	<CustomIcon icon="github" />
 </template>

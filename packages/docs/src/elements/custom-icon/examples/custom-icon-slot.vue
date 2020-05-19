@@ -8,7 +8,3 @@
 		</svg>
 	</CustomIcon>
 </template>
-
-<script>
-	export default {};
-</script>
