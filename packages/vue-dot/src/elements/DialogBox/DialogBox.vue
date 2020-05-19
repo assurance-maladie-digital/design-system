@@ -31,7 +31,6 @@
 				<VSpacer />
 				<slot name="footer">
 					<VBtn
-						color="normal"
 						class="ml-6 px-5"
 						@click="$emit('cancel')"
 					>
