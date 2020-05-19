@@ -17,7 +17,7 @@
 				label="Taille personnalisée"
 				outlined
 			/>
-			
+
 			<VSelect
 				v-model="standardSize"
 				:items="propSizes"
@@ -42,54 +42,52 @@
 	</VRow>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				props: {
-					color: 'red',
-					icon: 'github',
-					size: '40px',
-					small: false,
-					medium: false,
-					large: false,
-					xLarge: false
-				},
-				colors: [
-					{ text: 'blue', value: 'blue' },
-					{ text: 'red', value: 'red' }
-				],
-				sizes: [
-					{ text: '', value: null },
-					{ text: '40px', value: '40px' },
-					{ text: '50px', value: '50px' },
-					{ text: '150px', value: '150px' }
-				],
-				standardSize: null,
-				propSizes: [
-					{ text: 'Défaut', value: '' },
-					{ text: 'small', value: 'small' },
-					{ text: 'medium', value: 'medium' },
-					{ text: 'large', value: 'large' },
-					{ text: 'XLarge', value: 'xLarge' }
-				]
-			};
-		},
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-		methods: {
-			standardSizeSelected(standardSize) {
-				// Reset all standard sizes
-				this.props.small = false;
-				this.props.medium = false;
-				this.props.large = false;
-				this.props.xLarge = false;
+	@Component
+	export default class CustomIconPlayground extends Vue {
+		props: any = {
+			color: 'primary',
+			icon: 'github',
+			size: '40px',
+			small: false,
+			medium: false,
+			large: false,
+			xLarge: false
+		};
+		colors = [
+			{ text: 'blue', value: 'blue' },
+			{ text: 'red', value: 'red' }
+		];
+		sizes = [
+			{ text: '', value: null },
+			{ text: '40px', value: '40px' },
+			{ text: '50px', value: '50px' },
+			{ text: '150px', value: '150px' }
+		];
+		standardSize= null;
+		propSizes= [
+			{ text: 'Défaut', value: '' },
+			{ text: 'small', value: 'small' },
+			{ text: 'medium', value: 'medium' },
+			{ text: 'large', value: 'large' },
+			{ text: 'XLarge', value: 'xLarge' }
+		];
 
-				// Set new standard size and reset the main size if needed
-				if (standardSize) {
-					this.props[standardSize] = true;
-					this.props.size = null;
-				}
+		standardSizeSelected(standardSize: string) {
+		// Reset all standard sizes
+		this.props.small = false;
+		this.props.medium = false;
+		this.props.large = false;
+		this.props.xLarge = false;
+
+			// Set new standard size and reset the main size if needed
+			if (standardSize) {
+				this.props[standardSize] = true;
+				this.props.size = null;
 			}
 		}
-	};
+	}
 </script>
