@@ -8,11 +8,13 @@ import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
 import FileListEx from './FileListEx.vue';
 import FileUploadEx from './FileUploadEx.vue';
+import FooterEx from './FooterEx.vue';
 import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
 import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
+import DialogBoxEx from './DialogBoxEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -27,11 +29,13 @@ const components: Components = {
 	DebounceEx,
 	FileListEx,
 	FileUploadEx,
+	FooterEx,
 	NotificationEx,
 	PaginatedTableEx,
 	RulesEx,
 	SubHeaderEx,
-	UploadWorkflowEx
+	UploadWorkflowEx,
+	DialogBoxEx
 };
 
 /** Globally register all components */

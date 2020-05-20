@@ -1,6 +1,12 @@
 const vdPkg = require('../../package.json');
 // Use dev dependency to get Vue Dot version
-const VueDotVersion = vdPkg.devDependencies['@cnamts/vue-dot'] || 'next';
+let VueDotVersion = vdPkg.devDependencies['@cnamts/vue-dot'] || 'next';
+
+// If the version is an alpha or a beta
+if (VueDotVersion.includes('alpha') || VueDotVersion.includes('beta')) {
+	// Remove ^ char to avoid version auto-bump
+	VueDotVersion = VueDotVersion.replace('^', '');
+}
 
 /** Extend package.json */
 function extendPackage(api, options) {

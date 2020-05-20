@@ -48,6 +48,8 @@
 
 				<FileUploadEx />
 
+				<FooterEx />
+
 				<LangBtnEx />
 
 				<NotificationEx />
@@ -59,6 +61,8 @@
 				<SubHeaderEx />
 
 				<UploadWorkflowEx />
+
+				<DialogBoxEx />
 			</PageCard>
 		</VContent>
 
