@@ -25,6 +25,10 @@ module.exports = {
 						to: '/elements/copy-btn'
 					},
 					{
+						title: 'CustomIcon',
+						to: '/elements/custom-icon'
+					},
+					{
 						title: 'DataList',
 						to: '/elements/data-list'
 					},
