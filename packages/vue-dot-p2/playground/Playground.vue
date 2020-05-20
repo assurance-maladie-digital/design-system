@@ -182,6 +182,13 @@
 					:maxlength="500"
 					:rules="requiredRule"
 				/>
+				<VSelect
+					v-model="selectedItem"
+					:items="selectedList"
+					label="Seelct component"
+					solo
+					flat
+				/>
 			</PageCard>
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
@@ -189,17 +196,17 @@
 					P2 Components
 				</h2>
 				<Panel column>
-				<!-- <P2DatePicker
-					v-model="date"
-					:date-max="today"
-					:date-picker-rules="requiredRule"
-				/> -->
+					<P2DatePicker
+						v-model="date"
+						:date-max="today"
+						:date-picker-rules="requiredRule"
+					/>
 				</Panel>
 			</PageCard>
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
-					P2 Table
+					P2 Tabs
 				</h2>
 				<div class="layout-tab-example">
 					<VRow>
@@ -246,6 +253,13 @@
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
+					P2 DataTable
+				</h2>
+				<DataTableEx />
+			</PageCard>
+			<PageCard :card-class="pageCardClass">
+				<!-- Introduction -->
+				<h2 class="display-1 mb-12 font-weight-bold">
 					Informations/Warning/Error messages
 				</h2>
 				<Information>Information message</Information>
@@ -286,6 +300,8 @@
 		radio = '';
 		checkValue = false;
 		switchValue = false;
+		selectedList = ['Nb lignes/page', 10, 20 , 30, 50, 100];
+		selectedItem = '';
 		tab = 0;
 
 		date = '2020-05-18';

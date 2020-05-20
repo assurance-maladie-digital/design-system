@@ -1,5 +1,8 @@
 import { registerAllComponents } from './registerAllComponents';
 
+// Import plugins
+import './plugins/vue-dot';
+
 // Import global styles
 import './styles/global.scss';
 import './styles/reset.scss';
