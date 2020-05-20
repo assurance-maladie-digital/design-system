@@ -33,9 +33,7 @@
 		>
 			<VCard>
 				<VCardText>
-					<CustomIcon
-						v-bind="props"
-					/>
+					<CustomIcon v-bind="props" />
 				</VCardText>
 			</VCard>
 		</VCol>
@@ -59,7 +57,7 @@
 			icon: 'github',
 			size: null,
 			small: false,
-			medium: true,
+			medium: false,
 			large: false,
 			xLarge: false
 		};
@@ -75,7 +73,7 @@
 			}
 		];
 
-		standardSize = 'medium';
+		standardSize = '';
 
 		propSizes = [
 			{
@@ -119,7 +117,7 @@
 			}
 		];
 
-		standardSizeSelected(standardSize: string) {
+		standardSizeSelected(standardSize: string): void {
 			// Reset all standard sizes
 			this.props.small = false;
 			this.props.medium = false;
