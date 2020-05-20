@@ -2463,10 +2463,10 @@
   resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.2.0.tgz#2dab76da069dc8ce5dcab461f7f2788317fb01a8"
   integrity sha512-TDZkNpYfkc3X8yv7w1QBziZmmxzNfGKX+YjeNkMpmSiNV0QOdNf9G5cEZB3FH1/oaqpSQEdxuDzURdju2L3lng==
 
-"@types/fs-extra@9.0.0":
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.0.tgz#02b9aa0cdbeedc997642b6736fe48b8e4c271895"
-  integrity sha512-xCbDUSZArlmMjiJdczt8AFNH2MwcMb/pj/HKja1hx3u1qzOUINcJktQMGoGVlgFnzxnuCahxKFlcRBkSAcm33g==
+"@types/fs-extra@9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.1.tgz#91c8fc4c51f6d5dbe44c2ca9ab09310bd00c7918"
+  integrity sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==
   dependencies:
     "@types/node" "*"
 
@@ -2536,10 +2536,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.11.0.tgz#390ea202539c61c8fa6ba4428b57e05bc36dc47b"
   integrity sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
 
-"@types/node@12.12.39":
-  version "12.12.39"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.39.tgz#532d25c1e639d89dd6f3aa1d7b3962e3e7fa943d"
-  integrity sha512-pADGfwnDkr6zagDwEiCVE4yQrv7XDkoeVa4OfA9Ju/zRTk6YNDLGtQbkdL4/56mCQQCs4AhNrBIag6jrp7ZuOg==
+"@types/node@12.12.40":
+  version "12.12.40"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.40.tgz#f6fdf7d6675ee9eb7b8931d3fff8c1f163464ea9"
+  integrity sha512-DGOupyZgr0TnemMORnkgR4G3ow5PV61uVW3w51pcnPIo6NV5hc36l59jxZJ/immrBpV5d7h6tn8/YgSgiA9oTw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"

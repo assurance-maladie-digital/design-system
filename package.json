@@ -12,9 +12,9 @@
 		"build": "lerna run build --stream"
 	},
 	"devDependencies": {
-		"@types/fs-extra": "9.0.0",
+		"@types/fs-extra": "9.0.1",
 		"@types/jest": "25.2.3",
-		"@types/node": "12.12.39",
+		"@types/node": "12.12.40",
 		"@typescript-eslint/eslint-plugin": "2.34.0",
 		"@typescript-eslint/parser": "2.34.0",
 		"@vue/eslint-config-typescript": "5.0.2",
