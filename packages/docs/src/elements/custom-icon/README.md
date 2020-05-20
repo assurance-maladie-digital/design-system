@@ -73,6 +73,10 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
 
 ## Exemples
 
+### Changement de la taille et de la couleur
+
+<DocExample file="elements/custom-icon/examples/custom-icon-size-color" />
+
 ### Slot
 
 Vous pouvez utiliser le slot par défaut pour afficher une icône SVG totalement personnalisée.
