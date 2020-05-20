@@ -61,6 +61,8 @@
 				<SubHeaderEx />
 
 				<UploadWorkflowEx />
+
+				<DialogBoxEx />
 			</PageCard>
 		</VContent>
 
