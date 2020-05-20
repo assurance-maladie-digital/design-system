@@ -3,9 +3,10 @@
 		v-model="dialog"
 		v-bind="$attrs"
 		:width="width"
+		class="vd-dialog-box"
 	>
-		<VCard class="py-6 px-6">
-			<VCardTitle class="pa-0 mb-5">
+		<VCard v-bind="options.card">
+			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
 					<h2
 						v-if="title"
@@ -15,37 +16,33 @@
 					</h2>
 				</slot>
 
-				<VSpacer />
+				<VSpacer v-bind="options.spacer" />
 
 				<VBtn
-					icon
+					v-bind="options.closeBtn"
 					@click="close"
 				>
-					<VIcon>
+					<VIcon v-bind="options.icon">
 						{{ closeIcon }}
 					</VIcon>
 				</VBtn>
 			</VCardTitle>
 
-			<VCardText>
-				<slot />
-			</VCardText>
+			<slot />
 
-			<VCardActions class="pa-0">
-				<VSpacer />
+			<VCardActions v-bind="options.cardActions">
+				<VSpacer v-bind="options.actionsSpacer" />
 
 				<slot name="actions">
 					<VBtn
-						color="primary"
-						text
+						v-bind="options.cancelBtn"
 						@click="$emit('cancel')"
 					>
 						{{ locales.cancel }}
 					</VBtn>
 
 					<VBtn
-						color="primary"
-						class="ml-6"
+						v-bind="options.confirmBtn"
 						@click="$emit('confirm')"
 					>
 						{{ locales.confirm }}
@@ -58,37 +55,43 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
+	import { config } from './config';
 	import { locales } from './locales';
+
+	import { customizable } from '../../mixins/customizable';
+
+	import tokens from '../../tokens';
+
 	import { mdiClose } from '@mdi/js';
+
+	const defaultWidth = tokens['dialog-width']['dialog-medium'];
 
 	const Props = Vue.extend({
 		props: {
 			/**
-			 *  Show dialog or not
-			 *  Default value false, dialog not showing
+			 * Show dialog or not
+			 * Default value false, dialog not showing
 			 */
 			value: {
 				type: Boolean,
 				default: false
 			},
-			/**
-			 * setting the title of modal dynamically
-			 */
+			/** The title of the DialogBox */
 			title: {
 				type: String,
 				default: undefined
 			},
-			/**
-			 * Define the width of the dialogBox
-			 */
+			/** The width of the DialogBox */
 			width: {
 				type: String,
-				default: '900'
+				default: defaultWidth
 			}
 		}
 	});
+
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component({
 		inheritAttrs: false,
@@ -98,23 +101,26 @@
 			event: 'change'
 		}
 	})
-	export default class DialogBox extends Props {
-		closeIcon = mdiClose;
+	export default class DialogBox extends MixinsDeclaration {
 		locales = locales;
 
-		/** get and set computed properties: value, for the dialog */
-		get dialog() {
+		closeIcon = mdiClose;
+
+		/** Internal value */
+		get dialog(): boolean {
 			return this.value;
 		}
 
-		set dialog(dialog: boolean) {
-			this.$emit('change', dialog);
+		set dialog(value: boolean) {
+			this.$emit('change', value);
 		}
 
 		/**
-		 *  close the dialog
+		 * Close the dialog
+		 *
+		 * @returns {void}
 		 */
-		close() {
+		close(): void {
 			this.$emit('change', false);
 		}
 	}
