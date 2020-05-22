@@ -41,7 +41,7 @@ L'élément `PageCard` est utilisé pour afficher une page.
 				{
 					name: 'card-padding',
 					type: 'string',
-					defaultValue: 'px-6 py-4',
+					defaultValue: '\'px-6 py-4\'',
 					description: 'Le padding à appliquer à la `VCard`.'
 				},
 				{
@@ -68,6 +68,7 @@ L'élément `PageCard` est utilisé pour afficher une page.
 ## Exemples
 
 ### Conteneur transparent
+
 Vous pouvez transformer la `PageCard` en simple conteneur en la rendant transparente et en désactivant son ombre ainsi que son espacement interne.
 
 <DocExample file="elements/page-card/examples/page-card-transparent" />
@@ -77,8 +78,9 @@ Vous pouvez transformer la `PageCard` en simple conteneur en la rendant transpar
 Vous pouvez modifier la largeur de `PageCard` en utilisant la propriété `width`.
 
 <DocInfo>
-	La `PageCard` est composée d'une `VCard` contenue dans un `VLayout`.
-	Vous pouvez appliquer les attributs d'une `VCard` au composant, ils seront appliqués sur celle-ci.
+
+La `PageCard` est composée d'une `VCard` contenue dans un `VLayout`. Vous pouvez appliquer les attributs d'une `VCard` au composant, ils seront appliqués sur celle-ci.
+
 </DocInfo>
 
 <DocExample file="elements/page-card/examples/page-card-width" />

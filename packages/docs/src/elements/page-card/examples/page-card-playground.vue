@@ -44,7 +44,7 @@
 				:card-class="cardClass"
 				:card-padding="cardPadding"
 			>
-				Contenu de la page
+				Contenu de la page.
 			</PageCard>
 		</VCol>
 	</VRow>

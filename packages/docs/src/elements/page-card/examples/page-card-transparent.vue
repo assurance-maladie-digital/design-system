@@ -1,10 +1,9 @@
 <template>
-	<div class="grey lighten-3">
-		<PageCard
-			no-shadow
-			card-class="transparent"
-		>
-			Contenu dans une 'PageCard' sans couleur de fond (transparent) et sans ombre
-		</PageCard>
-	</div>
+	<PageCard
+		no-shadow
+		color="transparent"
+		card-padding="pa-0"
+	>
+		Contenu de la page.
+	</PageCard>
 </template>
