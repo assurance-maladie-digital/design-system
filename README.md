@@ -44,10 +44,18 @@ The goal of our Design System is to unify our work, which allows teams to share 
     </tr>
     <tr>
       <td>
+        <a href="https://github.com/assurance-maladie-digital/vue-cli-preset">Vue CLI Preset</a>
+      </td>
+      <td>
+       Vue CLI preset to scaffold front-end projects
+      </td>
+    </tr>
+    <tr>
+      <td>
         <a href="/packages/vue-cli-plugin-vue-dash">Vue CLI plugin Vue Dash</a>
       </td>
       <td>
-       Vue CLI plugin to scaffold front-end projects
+       Vue CLI plugin used in our preset to scaffold front-end projects
       </td>
     </tr>
     <tr>
