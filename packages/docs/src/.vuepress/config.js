@@ -33,6 +33,10 @@ module.exports = {
 						to: '/elements/data-list'
 					},
 					{
+						title: 'DialogBox',
+						to: '/elements/dialog-box'
+					},
+					{
 						title: 'HeaderLoading',
 						to: '/elements/header-loading'
 					}
