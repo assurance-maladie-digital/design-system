@@ -19,7 +19,7 @@
 
 			<VTextField
 				v-model="cardClass"
-				label="Classe de la card"
+				label="Classe de la carte"
 				hide-details
 				outlined
 				class="mt-5"
@@ -27,12 +27,13 @@
 
 			<VTextField
 				v-model="cardPadding"
-				label="Padding de la card"
+				label="Padding de la carte"
 				hide-details
 				outlined
 				class="mt-5"
 			/>
 		</VCol>
+
 		<VCol
 			cols="12"
 			md="6"
@@ -43,7 +44,7 @@
 				:card-class="cardClass"
 				:card-padding="cardPadding"
 			>
-				Contenu personnalisé
+				Contenu de la page
 			</PageCard>
 		</VCol>
 	</VRow>
@@ -56,11 +57,8 @@
 	@Component
 	export default class PageCardPlayground extends Vue {
 		noShadow = false;
-
 		minHeight = false;
-
 		cardClass = null;
-
 		cardPadding = 'px-6 py-4';
 	}
 </script>

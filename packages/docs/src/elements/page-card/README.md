@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `PageCard` est utilisé pour avoir un corps de base de page.
+L'élément `PageCard` est utilisé pour afficher une page.
 :::
 
 ## Utilisation
@@ -21,28 +21,28 @@ L'élément `PageCard` est utilisé pour avoir un corps de base de page.
 		PageCard: {
 			props: [
 				{
-					name: 'minHeight',
+					name: 'min-height',
 					type: 'boolean',
 					defaultValue: 'false',
-					description: 'Réglez la hauteur minimale sur 500 pixels.'
+					description: 'Définit une hauteur minimale de `500px`.'
 				},
 				{
-					name: 'noShadow',
+					name: 'no-shadow',
 					type: 'boolean',
 					defaultValue: 'false',
-					description: 'Supprimer l\'ombre de VCard.'
+					description: 'Supprime l\'ombre de la `VCard`.'
 				},
 				{
-					name: 'cardClass',
+					name: 'card-class',
 					type: 'string',
 					defaultValue: 'undefined',
-					description: 'Personnalise les classes de la VCard.'
+					description: 'Les classes à appliquer à la `VCard.`'
 				},
 				{
-					name: 'cardPadding',
+					name: 'card-padding',
 					type: 'string',
 					defaultValue: 'px-6 py-4',
-					description: 'Personnalise le remplissage de la VCard. Séparer cela de la `cardClass` permet de changer une classe sans avoir à définir le remplissage si non nécessaire'
+					description: 'Le padding à appliquer à la `VCard`.''
 				},
 				{
 					name: 'vuetify-options',
@@ -54,7 +54,7 @@ L'élément `PageCard` est utilisé pour avoir un corps de base de page.
 			slots: [
 				{
 					name: 'default',
-					description: 'Slot pour afficher du cotenu.'
+					description: 'Slot pour afficher du contenu.'
 				}
 			]
 		}
@@ -67,12 +67,10 @@ L'élément `PageCard` est utilisé pour avoir un corps de base de page.
 
 ## Exemples
 
-### Transparent
+### Conteneur transparent
+Vous pouvez transformer la `PageCard` en simple conteneur en la rendant transparente et en désactivant son ombre ainsi que son espacement interne.
 
 <DocExample file="elements/page-card/examples/page-card-transparent" />
-
 ### Largeur
 
 <DocExample file="elements/page-card/examples/page-card-width" />
-
-

@@ -1,6 +1,6 @@
 <template>
 	<PageCard>
-		Contenu personnalisé
+		Contenu de la page
 	</PageCard>
 </template>
 
