@@ -47,10 +47,7 @@
 					<VBtn
 						v-if="action"
 						v-bind="options.actionBtn"
-						text
-						small
-						color="accent"
-						class="vd-data-list-item-action-btn body-1 text-none pa-0"
+						class="vd-data-list-item-action-btn"
 						@click="$emit('click:action')"
 					>
 						{{ action }}
