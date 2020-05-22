@@ -9,8 +9,8 @@ L'élément `PageCard` est utilisé pour afficher une page.
 ## Utilisation
 
 <DocExample
-  eager
-  file="elements/page-card/examples/page-card"
+	eager
+	file="elements/page-card/examples/page-card"
 />
 
 ## API
@@ -42,7 +42,7 @@ L'élément `PageCard` est utilisé pour afficher une page.
 					name: 'card-padding',
 					type: 'string',
 					defaultValue: 'px-6 py-4',
-					description: 'Le padding à appliquer à la `VCard`.''
+					description: 'Le padding à appliquer à la `VCard`.'
 				},
 				{
 					name: 'vuetify-options',
@@ -71,6 +71,14 @@ L'élément `PageCard` est utilisé pour afficher une page.
 Vous pouvez transformer la `PageCard` en simple conteneur en la rendant transparente et en désactivant son ombre ainsi que son espacement interne.
 
 <DocExample file="elements/page-card/examples/page-card-transparent" />
-### Largeur
+
+### Largeur personnalisée
+
+Vous pouvez modifier la largeur de `PageCard` en utilisant la propriété `width`.
+
+<DocInfo>
+	La `PageCard` est composée d'une `VCard` contenue dans un `VLayout`.
+	Vous pouvez appliquer les attributs d'une `VCard` au composant, ils seront appliqués sur celle-ci.
+</DocInfo>
 
 <DocExample file="elements/page-card/examples/page-card-width" />
