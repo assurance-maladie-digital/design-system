@@ -59,3 +59,10 @@ L'élément `PageCard` est utilisé pour avoir un corps de base de page.
 
 <DocExample file="elements/page-card/examples/page-card-playground" />
 
+## Exemple
+
+### Transparent
+
+<DocExample file="elements/page-card/examples/page-card-transparent" />
+
+
