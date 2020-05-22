@@ -43,6 +43,12 @@ L'élément `PageCard` est utilisé pour avoir un corps de base de page.
 					type: 'string',
 					defaultValue: 'px-6 py-4',
 					description: 'Personnalise le remplissage de la VCard. Séparer cela de la `cardClass` permet de changer une classe sans avoir à définir le remplissage si non nécessaire'
+				},
+				{
+					name: 'vuetify-options',
+					type: 'Options',
+					defaultValue: 'undefined',
+					description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
 				}
 			],
 			slots: [
@@ -59,10 +65,14 @@ L'élément `PageCard` est utilisé pour avoir un corps de base de page.
 
 <DocExample file="elements/page-card/examples/page-card-playground" />
 
-## Exemple
+## Exemples
 
 ### Transparent
 
 <DocExample file="elements/page-card/examples/page-card-transparent" />
+
+### Largeur
+
+<DocExample file="elements/page-card/examples/page-card-width" />
 
 
