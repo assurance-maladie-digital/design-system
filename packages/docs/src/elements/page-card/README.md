@@ -9,8 +9,8 @@ L'élément `PageCard` est utilisé pour afficher une page.
 ## Utilisation
 
 <DocExample
-	eager
-	file="elements/page-card/examples/page-card"
+  eager
+  file="elements/page-card/examples/page-card"
 />
 
 ## API
