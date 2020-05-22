@@ -85,27 +85,35 @@ L'élément `DialogBox` est utilisé pour afficher une liste d'informations.
 
 ### Utilisation des slots
 
-Utilisez le slot `default` pour afficher du contenu.
-Vous pouvez en plus utiliser les slots
-- `title` pour personnaliser le titre.
-- `actions` pour personnaliser les actions.
+<DocInfo>
+
+	Utilisez le slot `default` pour afficher du contenu.
+	Vous pouvez en plus utiliser les slots
+	- `title` pour personnaliser le titre.
+	- `actions` pour personnaliser les actions.
+	
+</DocInfo>
 
 <DocExample file="elements/dialog-box/examples/dialog-box-slots" />
 
 ### Personnalisation des composants
 
-Le composant accepte les props vuetify de `VDialog`
+<DocInfo>
 
-Vous pouvez personnaliser certains composants avec la prop vuetify-options` contenant les clées suivantes possible :
-- `card` => `VCard`
-- `cardTitle` => `VCardTitle`
-- `spacer` => `VSpacer`
-- `closeBtn` => `VBtn`
-- `icon` => `VIcon`
-- `cardActions` => `VCardActions`
-- `actionsSpacer` => `VSpacer`
-- `cancelBtn` => `VBtn`
-- `confirmBtn` => `VBtn`
+	La `DialogBox` est composée d'une `VDialog`. 
+	Vous pouvez appliquer les attributs d'une `VDialog` au composant, ils seront appliqués sur celle-ci.
+	Vous pouvez personnaliser certains composants avec la prop vuetify-options` contenant les clées suivantes possible :
+	- `card` => `VCard`
+	- `cardTitle` => `VCardTitle`
+	- `spacer` => `VSpacer`
+	- `closeBtn` => `VBtn`
+	- `icon` => `VIcon`
+	- `cardActions` => `VCardActions`
+	- `actionsSpacer` => `VSpacer`
+	- `cancelBtn` => `VBtn`
+	- `confirmBtn` => `VBtn`
+
+</DocInfo>
 
 <DocExample file="elements/dialog-box/examples/dialog-box-options" />
 
