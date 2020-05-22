@@ -18,6 +18,7 @@
 		"allowSyntheticDefaultImports": true,
 		// Enables experimental support for ES7 decorators
 		"experimentalDecorators": true,
+		"preserveSymlinks": true,
 		// Shared types
 		"types": [
 			"node",

@@ -8,8 +8,6 @@ Array [
   "DatePicker",
   "FileList",
   "FileUpload",
-  "FormBuilder",
-  "FormField",
   "HeaderLoading",
   "LangBtn",
   "NotificationBar",
