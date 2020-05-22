@@ -35,6 +35,10 @@ module.exports = {
 					{
 						title: 'HeaderLoading',
 						to: '/elements/header-loading'
+					},
+					{
+						title: 'PageCard',
+						to: '/elements/page-card'
 					}
 				]
 			}
