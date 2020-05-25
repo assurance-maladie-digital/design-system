@@ -4,7 +4,6 @@ import Component, { mixins } from 'vue-class-component';
 import { ValidatorFile } from './validatorFile';
 
 import { Refs } from '../../../types';
-
 import { HTMLInputEvent } from '../types';
 
 const Props = Vue.extend({

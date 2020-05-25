@@ -3,12 +3,11 @@ import Component, { mixins } from 'vue-class-component';
 
 import { locales } from '../locales';
 
-import { ErrorCodes } from '../enum/errorCodes';
-
 import { getFileExtension } from '../../../functions/getFileExtension';
 import { calcHumanFileSize } from '../../../functions/calcHumanFileSize';
 
 import { ErrorEvent } from '../types';
+import { ErrorCodes } from '../enum/errorCodes';
 
 const Props = Vue.extend({
 	props: {
@@ -124,6 +123,7 @@ export class ValidatorFile extends MixinsDeclaration {
 
 		return true;
 	}
+
 	ifTooManyFiles(files: FileList | DataTransferItemList) {
 		// If not in multiple mode and more than one file,
 		// return error
