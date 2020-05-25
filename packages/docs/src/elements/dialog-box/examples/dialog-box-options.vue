@@ -10,8 +10,9 @@
 		<DialogBox
 			v-model="dialog"
 			title="DialogBox"
-			:vuetify-options="vuetifyOptions"
 			persistent
+			:vuetify-options="vuetifyOptions"
+			@cancel="dialog = false"
 		>
 			<p>Ceci est un exemple avec quelques options vuetify</p>
 		</DialogBox>
@@ -31,13 +32,10 @@
 				class: 'accent--text'
 			},
 			closeBtn: {
-				class: { 'd-none': false }
+				class: { 'd-none': true }
 			},
 			icon: {
 				color: 'accent'
-			},
-			cardActions: {
-				class: 'py-0'
 			},
 			cancelBtn: {
 				color: 'accent',

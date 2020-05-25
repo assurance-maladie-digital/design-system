@@ -4,21 +4,16 @@
 			cols="12"
 			md="6"
 		>
-			<p>Changer le titre</p>
-
 			<VTextField
 				v-model="title"
 				label="Titre"
 				outlined
 			/>
 
-			<p>Changer la largeur</p>
-
 			<VTextField
-				:value="width"
+				v-model="width"
 				label="largeur"
 				outlined
-				@change="width = $event"
 			/>
 		</VCol>
 
@@ -48,7 +43,9 @@
 	@Component
 	export default class DialogBoxPlayground extends Vue {
 		dialog = false;
+
 		width = '800px';
+
 		title = 'Titre de la dialog';
 	}
 </script>

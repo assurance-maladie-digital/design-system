@@ -7,13 +7,11 @@
 			Afficher la boîte de dialogue
 		</VBtn>
 
-		<DialogBox
-			v-model="dialog"
-		>
+		<DialogBox v-model="dialog">
 			<template #title>
-				<div class="display-3">
+				<h4 class="display-3">
 					Titre personnalisé
-				</div>
+				</h4>
 			</template>
 
 			<VCardText>

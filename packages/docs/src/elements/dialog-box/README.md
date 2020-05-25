@@ -116,7 +116,3 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 </DocInfo>
 
 <DocExample file="elements/dialog-box/examples/dialog-box-options" />
-
-### Utilisation des évènements
-
-<DocExample file="elements/dialog-box/examples/dialog-box-events" />
