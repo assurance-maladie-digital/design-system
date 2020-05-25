@@ -31,6 +31,20 @@
 				label="Formats acceptés"
 				outlined
 			/>
+
+			<VSnackbar
+				v-model="snackbar"
+				multi-line
+			>
+				{{ snackbarText }}
+				<v-btn
+					color="red"
+					text
+					@click="snackbar = false"
+				>
+					Fermer
+				</v-btn>
+			</VSnackbar>
 		</VCol>
 		<VCol
 			cols="12"
@@ -39,7 +53,7 @@
 			<FileUpload
 				v-model="file"
 				v-bind="props"
-				@error="alertError"
+				@error="notifError"
 				@change="updatedValue"
 			/>
 		</VCol>
@@ -53,6 +67,10 @@
 	@Component
 	export default class FileUploadRules extends Vue {
 		file: File | null = null;
+
+		snackbar: boolean = false;
+
+		snackbarText: string = '';
 
 		props = {
 			fileSizeMax: 4096 * 1024,
@@ -87,12 +105,16 @@
 				'png'
 		];
 
-		alertError(err: any) {
-			alert(`Evènement 'error' émis avec le code retour '${err.code}'`);
+		notifError(err: any) {
+			this.snackbarText = `Evènement 'error' émis avec le code retour '${err.code}'`;
+
+			this.snackbar = true;
 		}
 
 		updatedValue(value: File) {
-			alert(`Nom du fichier: ${value.name}, taille: ${value.size}`);
+			this.snackbarText = `Nom du fichier: ${value.name}, taille: ${value.size}`;
+
+			this.snackbar = true;
 		}
 
 	}
