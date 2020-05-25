@@ -44,8 +44,6 @@
 
 				<DebounceEx />
 
-				<FileListEx />
-
 				<FileUploadEx />
 
 				<FooterEx />
