@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `DialogBox` est utilisé pour afficher une liste d'informations.
+L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec des actions.
 :::
 
 ## Utilisation
