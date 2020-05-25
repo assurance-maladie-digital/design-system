@@ -105,10 +105,6 @@ describe('eventMapping', () => {
 		// @ts-ignore
 		const event = { target: { files: [file, file] } } as HTMLInputEvent;
 
-		const fileList = event.target.files as FileList;
-
-		// wrapper.vm.ifTooManyFiles(fileList)
-
 		wrapper.vm.inputValueChanged(event);
 	});
 
@@ -148,10 +144,6 @@ describe('eventMapping', () => {
 				files: [file, file]
 			}
 		} as DragEvent;
-
-		const data = fileDropEvent.dataTransfer;
-		// @ts-ignore
-		const files = data.files;
 
 		wrapper.setProps({ multiple: false });
 
