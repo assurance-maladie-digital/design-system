@@ -38,14 +38,14 @@
 						v-bind="options.cancelBtn"
 						@click="$emit('cancel')"
 					>
-						{{ locales.cancel }}
+						{{ ButtonTitles.cancel?ButtonTitles.cancel:locales.cancel }}
 					</VBtn>
 
 					<VBtn
 						v-bind="options.confirmBtn"
 						@click="$emit('confirm')"
 					>
-						{{ locales.confirm }}
+						{{ ButtonTitles.confirm?ButtonTitles.confirm:locales.confirm }}
 					</VBtn>
 				</slot>
 			</VCardActions>
@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -63,6 +63,8 @@
 	import { customizable } from '../../mixins/customizable';
 
 	import tokens from '../../tokens';
+
+	import { ButtonTitles } from './types';
 
 	import { mdiClose } from '@mdi/js';
 
@@ -87,6 +89,11 @@
 			width: {
 				type: String,
 				default: defaultWidth
+			},
+			/** Choosing title for button */
+			ButtonTitles: {
+				type: Object as PropType<ButtonTitles>,
+				default: { cancel: 'Annuler', confirm: 'Valider' }
 			}
 		}
 	});
