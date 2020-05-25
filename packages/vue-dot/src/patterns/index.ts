@@ -1,5 +1,5 @@
 import DatePicker from './DatePicker';
-import FileList from './FileList';
+import FileList from './UploadWorkflow/FileList';
 import FileUpload from './FileUpload';
 import FooterWrapper from './FooterWrapper';
 import LangBtn from './LangBtn';

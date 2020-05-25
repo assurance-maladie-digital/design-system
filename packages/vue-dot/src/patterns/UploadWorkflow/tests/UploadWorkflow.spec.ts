@@ -5,7 +5,7 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import FileUpload from '../../FileUpload';
-import FileList from '../../FileList';
+import FileList from '../FileList';
 
 import UploadWorkflow from '../';
 
