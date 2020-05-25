@@ -1,5 +1,5 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
-import { ValidationRule, ErrorMessages } from '../types';
+import { ValidationRule, ValidationResult, ErrorMessages } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
@@ -12,7 +12,7 @@ import { defaultErrorMessages } from './locales';
  * @returns {ValidationRule} Validation result
  */
 export function exactLengthFn(lengthValue: number, ignoreSpaces = false, errorMessages: ErrorMessages<number> = defaultErrorMessages): ValidationRule {
-	return (value: string) => {
+	return (value: string): ValidationResult => {
 		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;

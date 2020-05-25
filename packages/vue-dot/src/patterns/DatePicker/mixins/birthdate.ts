@@ -18,7 +18,7 @@ const MixinsDeclaration = mixins(Props);
 /** Add birthdate prop: select year, month then day */
 @Component<Birthdate>({
 	watch: {
-		menu(val) {
+		menu(val: boolean): void {
 			// If birthdate mode is activated
 			if (this.birthdate && val) {
 				this.setActivePicker();
@@ -44,7 +44,7 @@ export class Birthdate extends MixinsDeclaration {
 	 * Set active picker on VDatePicker
 	 * See https://vuetifyjs.com/en/components/date-pickers#date-pickers-birthday-picker
 	 */
-	setActivePicker() {
+	setActivePicker(): void {
 		setTimeout(() => {
 			// Set the active picker to year
 			this.$refs.picker.activePicker = 'YEAR';

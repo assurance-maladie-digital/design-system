@@ -51,7 +51,7 @@
 			}
 		];
 
-		updateModel() {
+		updateModel(): void {
 			this.files = [
 				{
 					id: 'rib',

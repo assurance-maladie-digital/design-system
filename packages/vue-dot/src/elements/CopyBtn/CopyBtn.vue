@@ -90,7 +90,7 @@
 		tooltip = false;
 
 		/** When the copy button is clicked */
-		copy() {
+		copy(): void {
 			let toCopy: string;
 
 			// Get text to copy

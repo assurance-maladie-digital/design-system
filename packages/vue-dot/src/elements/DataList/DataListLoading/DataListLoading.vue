@@ -36,6 +36,8 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { IndexedObject } from '../../../types';
+
 	const Props = Vue.extend({
 		props: {
 			/** Number of items */
@@ -68,7 +70,7 @@
 
 	@Component
 	export default class DataListLoading extends MixinsDeclaration {
-		get listClass() {
+		get listClass(): IndexedObject<boolean> {
 			return {
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex

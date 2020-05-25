@@ -1,5 +1,5 @@
-// We can't predict the type of the value, so it's type is any
-export type ValidationRule = (value: any) => string | boolean;
+export type ValidationResult = string | boolean;
+export type ValidationRule = (value: string) => ValidationResult;
 
 export interface ValidationRules {
 	[key: string]: ValidationRule;

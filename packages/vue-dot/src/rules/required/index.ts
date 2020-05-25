@@ -1,5 +1,5 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
-import { ValidationRule, ErrorMessages } from '../types';
+import { ValidationRule, ValidationResult, ErrorMessages } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
@@ -11,7 +11,7 @@ import { defaultErrorMessages } from './locales';
  */
 export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
 	// The value can be an array of string in select with the multiple prop
-	return (value: string | string[]) => {
+	return (value: string | string[]): ValidationResult => {
 		let valid: boolean;
 
 		// If the value is an array

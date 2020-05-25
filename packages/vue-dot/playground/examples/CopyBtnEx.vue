@@ -29,7 +29,7 @@
 	export default class CopyBtnEx extends Vue {
 		plusIcon = mdiPlusCircle;
 
-		get btnColor() {
+		get btnColor(): string {
 			return this.$vuetify.theme.dark ? 'grey' : '';
 		}
 	}
