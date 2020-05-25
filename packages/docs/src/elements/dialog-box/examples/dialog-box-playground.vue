@@ -8,7 +8,7 @@
 
 			<VTextField
 				v-model="title"
-				label="titre"
+				label="Titre"
 				outlined
 			/>
 
