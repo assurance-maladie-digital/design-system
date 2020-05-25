@@ -22,53 +22,31 @@
 			@error="uploadError"
 		/>
 
-		<VDialog
+		<DialogBox
 			v-model="dialog"
 			v-bind="options.dialog"
+			@cancel="dialog = false"
+			@confirm="dialogConfirm"
 		>
-			<VCard v-bind="options.card">
-				<VForm
-					ref="form"
-					v-bind="options.form"
-				>
-					<slot name="modal-title">
-						<h4 class="mb-4">
-							{{ locales.modalTitle }}
-						</h4>
-					</slot>
+			<template #title>
+				<slot name="modal-title">
+					{{ locales.modalTitle }}
+				</slot>
+			</template>
 
-					<VSelect
-						v-model="selectedItem"
-						v-bind="options.select"
-						:items="selectItems"
-						:rules="selectRules"
-						:color="$vuetify.theme.dark ? 'accent' : null"
-					/>
-
-					<VLayout v-bind="options.layout">
-						<VSpacer v-bind="options.spacer" />
-
-						<VBtn
-							v-bind="options.cancelBtn"
-							@click="dialog = false"
-						>
-							<slot name="cancel-button-text">
-								{{ locales.cancelBtn }}
-							</slot>
-						</VBtn>
-
-						<VBtn
-							v-bind="options.confirmBtn"
-							@click="dialogConfirm"
-						>
-							<slot name="confirm-button-text">
-								{{ locales.confirmBtn }}
-							</slot>
-						</VBtn>
-					</VLayout>
-				</VForm>
-			</VCard>
-		</VDialog>
+			<VForm
+				ref="form"
+				v-bind="options.form"
+			>
+				<VSelect
+					v-model="selectedItem"
+					v-bind="options.select"
+					:items="selectItems"
+					:rules="selectRules"
+					:color="$vuetify.theme.dark ? 'accent' : null"
+				/>
+			</VForm>
+		</DialogBox>
 	</div>
 </template>
 
