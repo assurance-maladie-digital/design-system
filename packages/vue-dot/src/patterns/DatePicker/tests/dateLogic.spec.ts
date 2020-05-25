@@ -16,12 +16,12 @@ interface VueInstance extends VueConstructor {
 }
 
 interface TestComponent extends Vue {
-	// Extend $refs
 	$refs: Refs<{
 		input: {
 			hasError: boolean;
 		};
 	}>;
+	// Extend $refs
 
 	options: Options;
 	dateFormat: string;

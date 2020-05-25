@@ -3,7 +3,7 @@ import Component, { mixins } from 'vue-class-component';
 
 import { ValidatorFile } from './validatorFile';
 
-import { Refs }  from '../../../types';
+import { Refs } from '../../../types';
 
 import { HTMLInputEvent } from '../types';
 
@@ -28,6 +28,10 @@ export class EventsMapping extends MixinsDeclaration {
 	$refs!: Refs<{
 		vdInputEl: HTMLInputElement;
 	}>;
+	/** Used to not trigger "success" events when there is an error */
+	error!: boolean;
+	/** The list of accepted files */
+	files!: File[];
 
 	/** This function is executed when after a manual file selection */
 	inputValueChanged(event: HTMLInputEvent) {

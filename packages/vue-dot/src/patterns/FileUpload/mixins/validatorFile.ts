@@ -65,6 +65,7 @@ export class ValidatorFile extends MixinsDeclaration {
 	error = false;
 
 	/** Compute maximum size to human readable */
+
 	get maxSizeReadable() {
 		return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
 	}
@@ -123,7 +124,6 @@ export class ValidatorFile extends MixinsDeclaration {
 
 		return true;
 	}
-
 	ifTooManyFiles(files: FileList | DataTransferItemList) {
 		// If not in multiple mode and more than one file,
 		// return error
