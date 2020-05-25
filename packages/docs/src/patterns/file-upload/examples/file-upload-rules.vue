@@ -4,7 +4,7 @@
 			cols="12"
 			md="6"
 		>
-			<v-combobox
+			<VCombobox
 				v-model="props.fileSizeUnits"
 				:items="defaultFileSizeUnits"
 				label="Unités des tailles"
@@ -15,7 +15,7 @@
 			<v-combobox
 				v-model="props.allowedExtensions"
 				:items="defaultAllowedExtensions"
-				label="Extensions autorisés"
+				label="Extensions autorisées"
 				multiple
 				outlined
 			/>
@@ -37,15 +37,17 @@
 				multi-line
 			>
 				{{ snackbarText }}
-				<v-btn
+
+				<VBtn
 					color="red"
 					text
 					@click="snackbar = false"
 				>
 					Fermer
-				</v-btn>
+				</VBtn>
 			</VSnackbar>
 		</VCol>
+
 		<VCol
 			cols="12"
 			md="6"
@@ -68,9 +70,9 @@
 	export default class FileUploadRules extends Vue {
 		file: File | null = null;
 
-		snackbar: boolean = false;
+		snackbar = false;
 
-		snackbarText: string = '';
+		snackbarText = '';
 
 		props = {
 			fileSizeMax: 4096 * 1024,
@@ -116,6 +118,5 @@
 
 			this.snackbar = true;
 		}
-
 	}
 </script>

@@ -19,6 +19,7 @@
 				label="Désactive le composant"
 			/>
 		</VCol>
+
 		<VCol
 			cols="12"
 			md="6"
