@@ -9,9 +9,8 @@
 
 		<DialogBox
 			v-model="dialog"
-			:vuetify-options="vuetifyOptions"
+			:width="dialogWidth"
 			title="Enregistrement"
-			persistent
 			@cancel="dialog = false"
 			@confirm="dialog = false"
 		>
@@ -24,30 +23,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import tokens from '@cnamts/vue-dot/src/tokens';
+
 	@Component
-	export default class DialogBoxOptions extends Vue {
+	export default class DialogBoxWidth extends Vue {
 		dialog = false;
 
-		vuetifyOptions = {
-			cardTitle: {
-				class: 'pa-0 mb-4 accent--text'
-			},
-			closeBtn: {
-				class: {
-					'd-none': true
-				}
-			},
-			icon: {
-				color: 'accent'
-			},
-			cancelBtn: {
-				color: 'accent',
-				text: false
-			},
-			confirmBtn: {
-				color: 'accent',
-				text: true
-			}
-		};
+		dialogWidth = tokens['dialog-width']['dialog-small'];
 	}
 </script>

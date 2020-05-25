@@ -35,7 +35,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DialogBoxSlot extends Vue {
+	export default class DialogBoxSlots extends Vue {
 		dialog = false;
 	}
 </script>

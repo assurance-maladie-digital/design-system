@@ -29,6 +29,8 @@
 				v-model="dialog"
 				:width="width"
 				:title="title"
+				@cancel="dialog = false"
+				@confirm="dialog = false"
 			>
 				<p>Souhaitez-vous procéder à l'enregistrement ?</p>
 			</DialogBox>
