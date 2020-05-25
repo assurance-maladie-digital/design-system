@@ -12,7 +12,7 @@
 
 			<VTextField
 				v-model="width"
-				label="largeur"
+				label="Largeur"
 				outlined
 			/>
 		</VCol>
@@ -30,7 +30,7 @@
 				:width="width"
 				:title="title"
 			>
-				<p>Texte de contenu</p>
+				<p>Souhaitez-vous procéder à l'enregistrement ?</p>
 			</DialogBox>
 		</VCol>
 	</VRow>
@@ -43,9 +43,7 @@
 	@Component
 	export default class DialogBoxPlayground extends Vue {
 		dialog = false;
-
 		width = '800px';
-
-		title = 'Titre de la dialog';
+		title = 'Enregistrement';
 	}
 </script>

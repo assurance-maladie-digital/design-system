@@ -9,9 +9,11 @@
 
 		<DialogBox
 			v-model="dialog"
-			title="DialogBox"
+			title="Enregistrement"
+			@cancel="dialog = false"
+			@confirm="dialog = false"
 		>
-			<p>Ceci est une simple boîte de dialogue</p>
+			<p>Souhaitez-vous procéder à l'enregistrement ?</p>
 		</DialogBox>
 	</div>
 </template>

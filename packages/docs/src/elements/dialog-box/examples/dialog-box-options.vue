@@ -9,12 +9,12 @@
 
 		<DialogBox
 			v-model="dialog"
-			title="DialogBox"
-			persistent
 			:vuetify-options="vuetifyOptions"
+			title="Enregistrement"
+			persistent
 			@cancel="dialog = false"
 		>
-			<p>Ceci est un exemple avec quelques options vuetify</p>
+			<p>Souhaitez-vous procéder à l'enregistrement ?</p>
 		</DialogBox>
 	</div>
 </template>
@@ -24,15 +24,17 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DialogBoxEx extends Vue {
+	export default class DialogBoxOptions extends Vue {
 		dialog = false;
 
 		vuetifyOptions = {
 			cardTitle: {
-				class: 'accent--text'
+				class: 'pa-0 mb-4 accent--text'
 			},
 			closeBtn: {
-				class: { 'd-none': true }
+				class: {
+					'd-none': true
+				}
 			},
 			icon: {
 				color: 'accent'
@@ -42,6 +44,7 @@
 				text: false
 			},
 			confirmBtn: {
+				color: 'accent',
 				text: true
 			}
 		};

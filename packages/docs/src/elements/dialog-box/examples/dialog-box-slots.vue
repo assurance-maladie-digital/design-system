@@ -9,18 +9,21 @@
 
 		<DialogBox v-model="dialog">
 			<template #title>
-				<h4 class="display-3">
-					Titre personnalisé
+				<h4 class="display-1">
+					Information
 				</h4>
 			</template>
 
-			<VCardText>
-				Contenu personnalisé
+			<VCardText class="px-0">
+				Il est possible d'utiliser les slots pour modifier l'affichage par défaut.
 			</VCardText>
 
 			<template #actions>
-				<VBtn>
-					Action personalisée
+				<VBtn
+					color="primary"
+					@click="dialog = false"
+				>
+					Retour
 				</VBtn>
 			</template>
 		</Dialogbox>
@@ -32,7 +35,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DialogBoxEx extends Vue {
+	export default class DialogBoxSlot extends Vue {
 		dialog = false;
 	}
 </script>

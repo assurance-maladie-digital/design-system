@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec des actions.
+L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec des boutons d'actions.
 :::
 
 ## Utilisation
@@ -24,19 +24,19 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 					name: 'value',
 					defaultValue: 'false',
 					type: 'boolean',
-					description: 'Afficher la boîte de dialogue ou non, valeur par défaut false, boîte de dialogue non affichée'
+					description: 'Contrôle la visibilité de la boîte de dialogue.'
 				},
 				{
 					name: 'title',
 					defaultValue: 'undefined',
 					type: 'string',
-					description: 'Le titre de la boîte de dialogue'
+					description: 'Le titre de la boîte de dialogue.'
 				},
 				{
 					name: 'width',
 					defaultValue: '800px',
 					type: 'string',
-					description: 'Le titre de la boîte de dialogue'
+					description: 'La largeur de la boîte de dialogue.'
 				}
 			],
 			slots: [
@@ -46,7 +46,7 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 				},
 				{
 					name: 'default',
-					description: 'Slot pour ajouter du contenu entre les sltos `title` et les `actions`.'
+					description: 'Slot pour ajouter du contenu entre le titre et les boutons d\'actions..'
 				},
 				{
 					name: 'actions',
@@ -62,15 +62,15 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 			events: [
 				{
 					name: 'change',
-					description: 'Événement émis lorsque la boite de dialog apparait/disparait'
+					description: 'Événement émis lorsque la boite de dialogue apparaît et disparaît.'
 				},
 				{
 					name: 'cancel',
-					description: 'Événement émis lorsque l\'utilisateur clique sur le bouton pour annuler'
+					description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Annuler.'
 				},
 				{
 					name: 'confirm',
-					description: 'Événement émis lorsque l\'utilisateur clique sur le bouton pour confirmer'
+					description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Confirmer.'
 				}
 			]
 		}
