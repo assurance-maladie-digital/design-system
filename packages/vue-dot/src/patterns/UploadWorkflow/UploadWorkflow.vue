@@ -89,7 +89,7 @@
 	import FileUpload from '../FileUpload';
 	import { ErrorEvent } from '../FileUpload/types';
 
-	import FileList from './FileList/FileList.vue';
+	import FileList from './FileList';
 
 	const Props = Vue.extend({
 		props: {
