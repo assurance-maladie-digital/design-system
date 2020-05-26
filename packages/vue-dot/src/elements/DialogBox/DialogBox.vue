@@ -38,14 +38,14 @@
 						v-bind="options.cancelBtn"
 						@click="$emit('cancel')"
 					>
-						{{ buttonLabels.cancel?buttonLabels.cancel:locales.cancel }}
+						{{ btnCancelText?btnCancelText:locales.cancel }}
 					</VBtn>
 
 					<VBtn
 						v-bind="options.confirmBtn"
 						@click="$emit('confirm')"
 					>
-						{{ buttonLabels.confirm?buttonLabels.confirm:locales.confirm }}
+						{{ btnConfirmText?btnConfirmText:locales.confirm }}
 					</VBtn>
 				</slot>
 			</VCardActions>
@@ -63,8 +63,6 @@
 	import { customizable } from '../../mixins/customizable';
 
 	import tokens from '../../tokens';
-
-	import { ButtonLabels } from './types';
 
 	import { mdiClose } from '@mdi/js';
 
@@ -90,10 +88,15 @@
 				type: String,
 				default: defaultWidth
 			},
-			/** Choosing label for button */
-			buttonLabels: {
-				type: Object as PropType<ButtonLabels>,
-				default: { cancel: 'Annuler', confirm: 'Valider' }
+			/** Change label of button cancel */
+			btnCancelText: {
+				type: String,
+				default: undefined
+			},
+			/** Change label of button confirm */
+			btnConfirmText: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
