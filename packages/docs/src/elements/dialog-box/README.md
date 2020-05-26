@@ -39,6 +39,18 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
           description: 'La largeur de la boîte de dialogue.'
         },
         {
+          name: 'cancel-btn-text',
+          defaultValue: 'Annuler',
+          type: 'string',
+          description: 'Le texte du bouton d\'annulation.'
+        },
+        {
+          name: 'confirm-btn-text',
+          defaultValue: 'Valider',
+          type: 'string',
+          description: 'Le texte du bouton de confirmation.'
+        },
+        {
           name: 'vuetify-options',
           type: 'Options',
           defaultValue: 'undefined',
@@ -94,6 +106,12 @@ Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi le
 Vous pouvez modifier la largeur de la boîte de dialogue avec l'attribut `width`.
 
 <DocExample file="elements/dialog-box/examples/dialog-box-width" />
+
+### Modification des textes des boutons
+
+Vous pouvez modifier les textes des boutons par défaut de la boîte de dialogue avec les attributs `cancelBtnText` et `confirmBtnText`.
+
+<DocExample file="elements/dialog-box/examples/dialog-box-btn-text" />
 
 ### Personnalisation des composants
 
