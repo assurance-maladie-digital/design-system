@@ -45,7 +45,7 @@
 						v-bind="options.confirmBtn"
 						@click="$emit('confirm')"
 					>
-						{{ btnConfirmText?btnConfirmText:locales.confirm }}
+						{{ btnConfirmText }}
 					</VBtn>
 				</slot>
 			</VCardActions>
@@ -58,7 +58,6 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
-	import { locales } from './locales';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -91,12 +90,12 @@
 			/** Change label of button cancel */
 			btnCancelText: {
 				type: String,
-				default: undefined
+				default: 'Annuler'
 			},
 			/** Change label of button confirm */
 			btnConfirmText: {
 				type: String,
-				default: undefined
+				default: 'Valider'
 			}
 		}
 	});
@@ -112,8 +111,6 @@
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
-		locales = locales;
-
 		closeIcon = mdiClose;
 
 		/** Internal value */
