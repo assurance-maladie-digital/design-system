@@ -38,14 +38,14 @@
 						v-bind="options.cancelBtn"
 						@click="$emit('cancel')"
 					>
-						{{ locales.cancel }}
+						{{ cancelBtnText }}
 					</VBtn>
 
 					<VBtn
 						v-bind="options.confirmBtn"
 						@click="$emit('confirm')"
 					>
-						{{ locales.confirm }}
+						{{ confirmBtnText }}
 					</VBtn>
 				</slot>
 			</VCardActions>
@@ -87,6 +87,16 @@
 			width: {
 				type: String,
 				default: defaultWidth
+			},
+			/** The label of the cancel button*/
+			cancelBtnText: {
+				type: String,
+				default: locales.cancel
+			},
+			/** The label of the confirm button */
+			confirmBtnText: {
+				type: String,
+				default: locales.confirm
 			}
 		}
 	});
@@ -102,8 +112,6 @@
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
-		locales = locales;
-
 		closeIcon = mdiClose;
 
 		/** Internal value */
