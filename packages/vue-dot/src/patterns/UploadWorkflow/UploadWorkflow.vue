@@ -99,7 +99,7 @@
 		},
 		watch: {
 			value: {
-				handler() {
+				handler(): void {
 					// Clear fileList to avoid duplicates
 					this.fileList = [];
 
@@ -156,7 +156,7 @@
 		}
 
 		/** Get the list of items for the VSelect */
-		get selectItems() {
+		get selectItems(): SelectItem[] {
 			const items: SelectItem[] = [];
 
 			this.value.forEach((file: FileListItem) => {
@@ -170,7 +170,7 @@
 		}
 
 		/** Fired when the "confirm" button in the dialog is pressed */
-		dialogConfirm() {
+		dialogConfirm(): void {
 			// Validate the form in the dialog
 			if (this.$refs.form.validate()) {
 				// Close the dialog
@@ -187,7 +187,7 @@
 		 * Set the file and it's properties in the list
 		 * (emit change event)
 		 */
-		setFileInList() {
+		setFileInList(): void {
 			// Set the state of the file
 			this.updateFileModel(this.selectedItem, 'state', this.error ? 'error' : 'success');
 
@@ -205,7 +205,7 @@
 		}
 
 		/** Set or delete a value in fileList */
-		updateFileModel<T>(id: string, key: string, value: T) {
+		updateFileModel<T>(id: string, key: string, value: T): void {
 			// Find the index with the provided id
 			const index = this.fileList.findIndex((file) => file.id === id);
 
@@ -225,7 +225,7 @@
 		}
 
 		/** Fired when a file has been selected */
-		fileSelected() {
+		fileSelected(): void {
 			// If in single mode
 			if (this.singleMode) {
 				// Set the select v-model to the first item
@@ -238,7 +238,7 @@
 		}
 
 		/** Fired when a "wrong" file is selected */
-		uploadError(error: ErrorEvent) {
+		uploadError(error: ErrorEvent): void {
 			this.error = true;
 			// Reset file (if previously selected)
 			this.uploadedFile = null;
@@ -250,7 +250,7 @@
 		}
 
 		/** Fired when the "delete" button is clicked in FileList */
-		deleteFile(id: string) {
+		deleteFile(id: string): void {
 			// Reset the state
 			this.updateFileModel(id, 'state', 'initial');
 			// Clear name and file
@@ -259,7 +259,7 @@
 		}
 
 		/** Fired when the "retry" button is clicked in FileList */
-		retry(id: string) {
+		retry(id: string): void {
 			// Prefill the select
 			this.selectedItem = id;
 			this.$refs.fileUpload.retry();
