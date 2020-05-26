@@ -36,7 +36,7 @@
 			<span class="vd-file-upload-placeholder">
 				<slot name="icon">
 					<VIcon
-						v-bind="options.uploadIcon"
+						v-bind="options.icon"
 					>
 						{{ uploadIcon }}
 					</VIcon>
@@ -106,10 +106,23 @@
 
 	import { customizable } from '../../mixins/customizable';
 
+	import { calcHumanFileSize } from '../../functions/calcHumanFileSize';
+
 	import { mdiCloudUpload } from '@mdi/js';
+
+	import { IndexedObject } from '../../types';
 
 	const Props = Vue.extend({
 		props: {
+			/**
+			 * The v-model value
+			 * (Allow File as type because on single
+			 * mode the v-model isn't an array)
+			 */
+			value: {
+				type: [File, Array],
+				default: null
+			},
 			/** Disable v-ripple on the component */
 			noRipple: {
 				type: Boolean,
@@ -142,19 +155,14 @@
 		// Icons
 		uploadIcon = mdiCloudUpload;
 
-		/** The list of accepted files */
-		files!: File[];
 		/** For specific styles on hover */
-		hover!: boolean;
-		/** For specific styles on hover with a file (dragover) */
-		dragover!: boolean;
-		/** Used to not trigger "success" events when there is an error */
-		error!:boolean;
+		hover = false;
+
 		/**
 		 * Get the different colors
 		 * depending on theme (light or dark)
 		 */
-		get colors() {
+		get colors(): IndexedObject {
 			const dark = this.$vuetify.theme.dark;
 
 			return {
@@ -162,6 +170,32 @@
 				multiple: dark ? 'white--text' : 'black--text',
 				info: 'grey--text ' + (dark ? 'text--lighten-1' : 'text--darken-1')
 			};
+		}
+
+		/** Compute maximum size to human readable */
+		get maxSizeReadable(): string {
+			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
+		}
+
+		/** Computed extensions for display */
+		get extensions(): string {
+			return this.allowedExtensions.join(', ').toUpperCase();
+		}
+
+		/** compute accept file */
+		get computedAccept(): string {
+			if (this.accept) {
+				return this.accept;
+			}
+			const accept: string[] = [];
+
+			// Calc the accept="" string from the allowed extensions
+			this.allowedExtensions.forEach((type: string) => {
+				accept.push(`.${type}`);
+			});
+
+			// The result, eg. ".pdf,.jpeg,.jpg,.png"
+			return accept.join(',');
 		}
 	}
 </script>

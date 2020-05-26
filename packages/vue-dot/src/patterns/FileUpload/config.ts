@@ -1,5 +1,5 @@
 export const config = {
-	uploadIcon: {
+	icon: {
 		size: 40,
 		color: 'primary'
 	}

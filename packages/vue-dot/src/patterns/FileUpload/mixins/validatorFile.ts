@@ -4,7 +4,6 @@ import Component, { mixins } from 'vue-class-component';
 import { locales } from '../locales';
 
 import { getFileExtension } from '../../../functions/getFileExtension';
-import { calcHumanFileSize } from '../../../functions/calcHumanFileSize';
 
 import { ErrorEvent } from '../types';
 import { ErrorCodes } from '../enum/errorCodes';
@@ -57,41 +56,11 @@ export class ValidatorFile extends MixinsDeclaration {
 	/** The list of accepted files */
 	files: File[] = [];
 
-	/** For specific styles on hover with a file (dragover) */
-	dragover = false;
-
 	/** Used to not trigger "success" events when there is an error */
 	error = false;
 
-	/** Compute maximum size to human readable */
-
-	get maxSizeReadable() {
-		return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
-	}
-
-	/** Computed extensions for display */
-	get extensions() {
-		return this.allowedExtensions.join(', ').toUpperCase();
-	}
-
-	get computedAccept(): string {
-		// Property overrides the default behavior
-		if (this.accept) {
-			return this.accept;
-		}
-		const accept: string[] = [];
-
-		// Calc the accept="" string from the allowed extensions
-		this.allowedExtensions.forEach((type: string) => {
-			accept.push(`.${type}`);
-		});
-
-		// The result, eg. ".pdf,.jpeg,.jpg,.png"
-		return accept.join(',');
-	}
-
 	/** Validate the file (size & extension) */
-	validateFile(file: File) {
+	validateFile(file: File): boolean {
 		// Maximum size
 		if (file.size >= this.fileSizeMax) {
 			this.error = true;
@@ -124,7 +93,7 @@ export class ValidatorFile extends MixinsDeclaration {
 		return true;
 	}
 
-	ifTooManyFiles(files: FileList | DataTransferItemList) {
+	ifTooManyFiles(files: FileList | DataTransferItemList): boolean{
 		// If not in multiple mode and more than one file,
 		// return error
 		if (!this.multiple && files.length > 1) {
@@ -137,14 +106,5 @@ export class ValidatorFile extends MixinsDeclaration {
 		}
 
 		return false;
-	}
-
-	/** Reset self state to initial */
-	selfReset() {
-		this.dragover = false;
-		this.error = false;
-
-		// Clear previous files
-		this.files = [];
 	}
 }

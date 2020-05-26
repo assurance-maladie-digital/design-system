@@ -175,16 +175,16 @@
 		menu = false;
 
 		/** Compute the options for VTextField */
-		get textFieldOptions() {
+		get textFieldOptions(): Options {
 			// Merge textField options (custom or default) with
 			// directly binded attributes (theses attributes
 			// will override 'options.textField')
-			return deepmerge(this.options.textField || [], this.$attrs);
+			return deepmerge(this.options.textField || [], this.$attrs) as Options;
 		}
 
 		/** Compute the classes for VTextField */
-		get textFieldClasses() {
-			let textFieldClasses = [];
+		get textFieldClasses(): (string | string[])[] {
+			const textFieldClasses = [];
 
 			if (this.warningRules.length) {
 				textFieldClasses.push('vd-warning-rules');
@@ -202,7 +202,7 @@
 		}
 
 		/** Open calendar menu if textFieldActivator is true */
-		textFieldClicked() {
+		textFieldClicked(): void {
 			if (this.textFieldActivator) {
 				this.menu = true;
 			}

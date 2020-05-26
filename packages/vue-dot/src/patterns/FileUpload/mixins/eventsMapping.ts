@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 import { ValidatorFile } from './validatorFile';
@@ -6,34 +5,19 @@ import { ValidatorFile } from './validatorFile';
 import { Refs } from '../../../types';
 import { HTMLInputEvent } from '../types';
 
-const Props = Vue.extend({
-	props: {
-		/**
-		 * The v-model value
-		 * (Allow File as type because on single
-		 * mode the v-model isn't an array)
-		 */
-		value: {
-			type: [Array, Object, File],
-			default: () => []
-		}
-	}
-});
-
-const MixinsDeclaration = mixins(Props, ValidatorFile);
+const MixinsDeclaration = mixins(ValidatorFile);
 
 @Component
 export class EventsMapping extends MixinsDeclaration {
 	$refs!: Refs<{
 		vdInputEl: HTMLInputElement;
 	}>;
-	/** Used to not trigger "success" events when there is an error */
-	error!: boolean;
-	/** The list of accepted files */
-	files!: File[];
+
+	/** For specific styles on hover with a file (dragover) */
+	dragover = false;
 
 	/** This function is executed when after a manual file selection */
-	inputValueChanged(event: HTMLInputEvent) {
+	inputValueChanged(event: HTMLInputEvent): void {
 		if (!event.target) {
 			return;
 		}
@@ -58,7 +42,7 @@ export class EventsMapping extends MixinsDeclaration {
 		this.emitChangeEvent();
 	}
 
-	emitChangeEvent() {
+	emitChangeEvent(): void {
 		if (!this.error) {
 			// Take the first file in single mode
 			const eventValue = this.multiple ? this.files : this.files[0];
@@ -72,7 +56,7 @@ export class EventsMapping extends MixinsDeclaration {
 	}
 
 	/** This function is executed when content is dropped on the component */
-	dropHandler(e: DragEvent) {
+	dropHandler(e: DragEvent): void {
 		this.selfReset();
 
 		const data = e.dataTransfer;
@@ -112,8 +96,17 @@ export class EventsMapping extends MixinsDeclaration {
 		this.emitChangeEvent();
 	}
 
+	/** Reset self state to initial */
+	selfReset(): void {
+		this.dragover = false;
+		this.error = false;
+
+		// Clear previous files
+		this.files = [];
+	}
+
 	/** Expose retry function which clicks on the input */
-	public retry() {
+	public retry(): void {
 		this.$refs.vdInputEl.click();
 	}
 }

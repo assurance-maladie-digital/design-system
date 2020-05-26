@@ -3,13 +3,12 @@ import { mount, Wrapper } from '@vue/test-utils';
 import { ValidatorFile } from '../mixins/validatorFile';
 
 interface TestComponent extends Vue {
-	selfReset: () => void;
-	extensions: () => string;
-	maxSizeReadable: () => string;
-	computedAccept: () => string;
 	validateFile: (file: File) => boolean;
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
 }
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type EventType = any;
 
 const component = Vue.component('test', {
 	mixins: [
@@ -20,53 +19,6 @@ const component = Vue.component('test', {
 
 // Tests
 describe('ValidatorFile', () => {
-	it('check self reset function ', () => {
-		const wrapper = mount(component) as Wrapper<TestComponent>;
-
-		expect(wrapper.vm.selfReset()).toBe(undefined);
-	});
-
-	it('check extension format', () => {
-		const wrapper = mount(component, {
-			propsData: {
-				allowedExtensions: ['pdf']
-			}
-		}) as Wrapper<TestComponent>;
-
-		expect(wrapper.vm.extensions).toBe('PDF');
-	});
-
-	it('check sizeof file', () => {
-		const wrapper = mount(component, {
-			propsData: {
-				fileSizeMax: 4096 * 1024,
-				fileSizeUnits: [
-					'o',
-					'Ko',
-					'Mo',
-					'Go',
-					'To'
-				]
-			}
-		}) as Wrapper<TestComponent>;
-
-		expect(wrapper.vm.maxSizeReadable).toBe('4 Mo');
-	});
-
-	it('check file accepted  ', () => {
-		const wrapper = mount(component, {
-			propsData: {
-				allowedExtensions: ['pdf'],
-				accept: undefined
-			}
-		}) as Wrapper<TestComponent>;
-
-		expect(wrapper.vm.computedAccept).toBe('.pdf');
-
-		wrapper.setProps({ accept: 'file' });
-
-		expect(wrapper.vm.computedAccept).toBe('file');
-	});
 
 	it('check validation of file', () => {
 		const wrapper = mount(component, {
@@ -94,12 +46,11 @@ describe('ValidatorFile', () => {
 
 		wrapper.setProps({ multiple: true });
 
-		let  file = {} as FileList;
+		let  file = {} as EventType;
 
 		expect(wrapper.vm.ifTooManyFiles(file)).toBe(false);
 
 		//we can stub out the entire event and file
-		// @ts-ignore
 		file = [{ size: 1000, type: 'image/png', name: 'avatar.png' },{ size: 1000, type: 'image/png', name: 'avatar.png' }];
 
 		wrapper.setProps({ multiple: false });

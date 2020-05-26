@@ -29,12 +29,24 @@
 			</VBtn>
 		</VLayout>
 
-		<p
+		<div
 			v-else-if="success && file"
 			class="mb-0 mt-1 success--text"
 		>
-			{{ file.name }}
-		</p>
+			<div v-if="file.length>0">
+				<ul>
+					<li
+						v-for="(file,index) in file"
+						:key="index"
+					>
+						{{ file.name }}
+					</li>
+				</ul>
+			</div>
+			<div v-else>
+				<p>{{ file.name }}</p>
+			</div>
+		</div>
 
 		<p
 			v-else
@@ -119,7 +131,7 @@
 		$refs!: Refs<{
 			fileUpload: {
 				retry: () => void;
-			}
+			};
 		}>;
 
 		uploadIcon = mdiCloudUpload;
@@ -136,11 +148,11 @@
 		};
 
 		/** Click on file input */
-		retry() {
+		retry(): void {
 			this.$refs.fileUpload.retry();
 		}
 
-		setError(error: Error) {
+		setError(error: Error): void {
 			this.error = error;
 		}
 	}

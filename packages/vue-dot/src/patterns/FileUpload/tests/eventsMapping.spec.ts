@@ -8,18 +8,21 @@ interface TestComponent extends Vue {
 	$refs: Refs<{
 		vdInputEl: HTMLInputElement;
 	}>;
+	selfReset: () => void;
 	retry: () => void;
 	emitChangeEvent: () => void;
 	inputValueChanged: (event: HTMLInputEvent) => void;
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
 	dropHandler: (e: DragEvent) => void;
 }
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type EventType = any;
 
 const component = Vue.component('file-upload', {
 	mixins: [
 		EventsMapping
 	],
-	template: '<input ref="vdInputEl" type="file" id="vd-upload-file">'
+	template: '<input ref="vdInputEl" type="file">'
 });
 
 // Tests
@@ -30,6 +33,12 @@ describe('eventMapping', () => {
 		wrapper.vm.$refs.vdInputEl.click();
 
 		wrapper.vm.retry();
+	});
+
+	it('check self reset function ', () => {
+		const wrapper = mount(component) as Wrapper<TestComponent>;
+
+		expect(wrapper.vm.selfReset()).toBe(undefined);
 	});
 
 	it('check event emitted with no multiple', () => {
@@ -75,7 +84,7 @@ describe('eventMapping', () => {
 	it('check input change with target from event ', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		const event = {} as any;
+		const event = {} as EventType;
 
 		wrapper.vm.inputValueChanged(event);
 	});
@@ -84,8 +93,8 @@ describe('eventMapping', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
-        // @ts-ignore
-		const event = { target: { files: [file] } } as HTMLInputEvent;
+
+		const event = { target: { files: [file] } } as EventType;
 
 		wrapper.vm.inputValueChanged(event);
 	});
@@ -102,8 +111,8 @@ describe('eventMapping', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const file = [{ size: 1000, type: 'image/png', name: 'avatar.png' }];
-		// @ts-ignore
-		const event = { target: { files: [file, file] } } as HTMLInputEvent;
+
+		const event = { target: { files: [file, file] } } as EventType;
 
 		wrapper.vm.inputValueChanged(event);
 	});
@@ -120,14 +129,12 @@ describe('eventMapping', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
-		// @ts-ignore
-		let fileDropEvent = {
-			preventDefault: () => {
-			},
+
+		const fileDropEvent = {
 			dataTransfer: {
 				files: [file]
 			}
-		} as DragEvent;
+		} as EventType;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 	});
@@ -136,14 +143,12 @@ describe('eventMapping', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
-		// @ts-ignore
-		let fileDropEvent = {
-			preventDefault: () => {
-			},
+
+		const fileDropEvent = {
 			dataTransfer: {
 				files: [file, file]
 			}
-		} as DragEvent;
+		} as EventType;
 
 		wrapper.setProps({ multiple: false });
 
@@ -154,15 +159,15 @@ describe('eventMapping', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
-		// @ts-ignore
+
 		let fileDropEvent = {
 			dataTransfer: {
 				files: [file]
 			}
-		} as DragEvent;
+		} as EventType;
 
 		wrapper.vm.dropHandler(fileDropEvent);
-		// @ts-ignore
+
 		fileDropEvent = {
 			dataTransfer: {
 				items: [
@@ -174,10 +179,10 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as DragEvent;
+		} as EventType;
 
 		wrapper.vm.dropHandler(fileDropEvent);
-		// @ts-ignore
+
 		fileDropEvent = {
 			dataTransfer: {
 				items: [
@@ -189,10 +194,10 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as DragEvent;
+		} as EventType;
 
 		wrapper.vm.dropHandler(fileDropEvent);
-		// @ts-ignore
+
 		fileDropEvent = {
 			dataTransfer: {
 				items: [
@@ -204,7 +209,7 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as DragEvent;
+		} as EventType;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 	});
