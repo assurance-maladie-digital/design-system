@@ -10,3 +10,9 @@ export interface Languages {
 }
 
 export type AllLanguagesChar = '*';
+
+export interface CurrentLangData {
+	name: string;
+	flagUrl: string;
+	ariaLabel: string;
+}

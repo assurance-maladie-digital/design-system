@@ -93,7 +93,7 @@ describe('DataList', () => {
 	});
 
 	it('renders correctly with an icon', () => {
-		let listWithIcon = dataList;
+		const listWithIcon = dataList;
 
 		// Add an action to the second item
 		listWithIcon[1].icon = 'mdiTest';
@@ -144,7 +144,7 @@ describe('DataList', () => {
 	});
 
 	it('renders correctly with an action', async() => {
-		let listWithAction = dataList;
+		const listWithAction = dataList;
 
 		// Add an action to the second item
 		listWithAction[1].action = 'Edit';
@@ -161,7 +161,7 @@ describe('DataList', () => {
 	});
 
 	it('emits action event', async() => {
-		let listWithAction = dataList;
+		const listWithAction = dataList;
 
 		// Add an action to the second item
 		listWithAction[2].action = 'Edit';

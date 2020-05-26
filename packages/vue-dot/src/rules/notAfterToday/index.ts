@@ -1,5 +1,5 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
-import { ValidationRule, ErrorMessages } from '../types';
+import { ValidationRule, ValidationResult, ErrorMessages, Value } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
@@ -12,7 +12,7 @@ import { isDateBeforeNow } from './isDateBeforeNow';
  * @returns {ValidationRule} Validation result
  */
 export function notAfterTodayFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
-	return (value: string) => {
+	return (value: Value): ValidationResult => {
 		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;

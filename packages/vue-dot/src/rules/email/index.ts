@@ -1,5 +1,5 @@
 import { ruleMessage } from '../../helpers/ruleMessage';
-import { ValidationRule, ErrorMessages } from '../types';
+import { ValidationRule, ValidationResult, ErrorMessages, Value } from '../types';
 
 import { isEmailValid } from '../../functions/validation/isEmailValid';
 
@@ -12,7 +12,7 @@ import { defaultErrorMessages } from './locales';
  * @returns {ValidationRule} Validation result
  */
 export function emailFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
-	return (value: string) => {
+	return (value: Value): ValidationResult => {
 		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;
