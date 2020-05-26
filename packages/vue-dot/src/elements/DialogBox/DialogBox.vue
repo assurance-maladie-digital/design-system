@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -88,12 +88,12 @@
 				type: String,
 				default: defaultWidth
 			},
-			/** Change label of button cancel */
+			/** The label of the cancel button*/
 			cancelBtnText: {
 				type: String,
 				default: locales.cancel
 			},
-			/** Change label of button confirm */
+			/** The label of the confirm button */
 			confirmBtnText: {
 				type: String,
 				default: locales.confirm
