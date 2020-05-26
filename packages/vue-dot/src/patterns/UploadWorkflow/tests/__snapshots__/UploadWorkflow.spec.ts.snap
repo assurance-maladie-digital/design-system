@@ -49,25 +49,9 @@ exports[`UploadWorkflow renders correctly 1`] = `
 				</span> <span class="mt-4 body-2 font-weight-regular grey--text text--darken-1">
 					Taille max. : 4 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="none" origin="center center" persistent="true" retainfocus="true" transition="dialog-transition" width="550">
-    <vcard-stub loaderheight="4" tag="div" class="pa-4">
-      <vform-stub>
-        <h4 class="mb-4">
-          Fichier transmis
-        </h4>
-        <vselect-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" value="" appendicon="$dropdown" backgroundcolor="" label="Nature du fichier" loaderheight="2" clearicon="$clear" outlined="true" type="text" valuecomparator="{[Function]}" nodatatext="$vuetify.noDataText" items="[object Object],[object Object]" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></vselect-stub>
-        <vlayout-stub tag="div" wrap="true" class="mt-2">
-          <vspacer-stub></vspacer-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" text="true" type="button" class="mr-4">
-            Retour
-          </vbtn-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" type="button">
-            Confirmer
-          </vbtn-stub>
-        </vlayout-stub>
-      </vform-stub>
-    </vcard-stub>
-  </vdialog-stub>
+  <div role="dialog" class="v-dialog__container vd-dialog-box">
+    <!---->
+  </div>
 </div>
 `;
 
@@ -103,24 +87,10 @@ exports[`UploadWorkflow renders correctly with a single file 1`] = `
 				</span> <span class="mt-4 body-2 font-weight-regular grey--text text--darken-1">
 					Taille max. : 4 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="none" origin="center center" persistent="true" retainfocus="true" transition="dialog-transition" width="550">
-    <vcard-stub loaderheight="4" tag="div" class="pa-4">
-      <vform-stub>
-        <h4 class="mb-4">
-          Fichier transmis
-        </h4>
-        <vselect-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" value="" appendicon="$dropdown" backgroundcolor="" label="Nature du fichier" loaderheight="2" clearicon="$clear" outlined="true" type="text" valuecomparator="{[Function]}" nodatatext="$vuetify.noDataText" items="[object Object]" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></vselect-stub>
-        <vlayout-stub tag="div" wrap="true" class="mt-2">
-          <vspacer-stub></vspacer-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" text="true" type="button" class="mr-4">
-            Retour
-          </vbtn-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" type="button">
-            Confirmer
-          </vbtn-stub>
-        </vlayout-stub>
-      </vform-stub>
-    </vcard-stub>
-  </vdialog-stub>
+  <dialogbox persistent="true" width="550">
+    <vform-stub>
+      <vselect-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" value="" appendicon="$dropdown" backgroundcolor="" label="Nature du fichier" loaderheight="2" clearicon="$clear" outlined="true" type="text" valuecomparator="{[Function]}" nodatatext="$vuetify.noDataText" items="[object Object]" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></vselect-stub>
+    </vform-stub>
+  </dialogbox>
 </div>
 `;

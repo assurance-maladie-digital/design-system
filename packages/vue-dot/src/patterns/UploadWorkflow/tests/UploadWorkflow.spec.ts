@@ -7,6 +7,8 @@ import { html } from '@/tests/html';
 import FileUpload from '../../FileUpload';
 import FileList from '../../FileList';
 
+import DialogBox from '../../../elements/DialogBox';
+
 import UploadWorkflow from '../';
 
 let wrapper: Wrapper<Vue>;
@@ -29,7 +31,8 @@ describe('UploadWorkflow', () => {
 		wrapper = mountComponent(UploadWorkflow, {
 			stubs: {
 				FileList,
-				FileUpload
+				FileUpload,
+				DialogBox
 			},
 			propsData: {
 				value: files
