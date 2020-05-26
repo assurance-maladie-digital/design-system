@@ -42,13 +42,13 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
           name: 'cancel-btn-text',
           defaultValue: 'Annuler',
           type: 'string',
-          description: 'Le texte du bouton d\'annulation.'
+          description: 'Le texte du bouton Annuler.'
         },
         {
           name: 'confirm-btn-text',
           defaultValue: 'Valider',
           type: 'string',
-          description: 'Le texte du bouton de confirmation.'
+          description: 'Le texte du bouton Valider.'
         },
         {
           name: 'vuetify-options',
@@ -109,7 +109,7 @@ Vous pouvez modifier la largeur de la boîte de dialogue avec l'attribut `width`
 
 ### Modification des textes des boutons
 
-Vous pouvez modifier les textes des boutons par défaut de la boîte de dialogue avec les attributs `cancelBtnText` et `confirmBtnText`.
+Vous pouvez modifier les textes par défaut des boutons d'actions avec les attributs `cancel-btn-text` et `confirm-btn-text`.
 
 <DocExample file="elements/dialog-box/examples/dialog-box-btn-text" />
 

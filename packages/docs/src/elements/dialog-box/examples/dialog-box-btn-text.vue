@@ -25,7 +25,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DialogBoxWidth extends Vue {
+	export default class DialogBoxBtnText extends Vue {
 		dialog = false;
 	}
 </script>
