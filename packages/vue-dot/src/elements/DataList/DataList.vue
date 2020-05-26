@@ -59,10 +59,12 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { IDataListItem, DataListIcons } from './types';
+	import { DataListIcons } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
+
+	import { IndexedObject } from '../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -138,19 +140,19 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
-		get listClass() {
+		get listClass(): IndexedObject<boolean> {
 			return {
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex
 			};
 		}
 
-		getIcon(icon?: string) {
-			if (!icon || !this.icons) {
+		getIcon(iconName?: string): string | null {
+			if (!iconName || !this.icons) {
 				return null;
 			}
 
-			return this.icons[icon];
+			return this.icons[iconName];
 		}
 	}
 </script>

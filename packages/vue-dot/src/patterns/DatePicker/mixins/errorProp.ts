@@ -20,7 +20,7 @@ export class ErrorProp extends MixinsDeclaration {
 	 * Use an internal model
 	 * so we don't modify the prop
 	 */
-	get internalErrorProp() {
+	get internalErrorProp(): boolean {
 		return this.error;
 	}
 

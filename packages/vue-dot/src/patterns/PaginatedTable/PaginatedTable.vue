@@ -67,7 +67,7 @@
 		inheritAttrs: false, // see https://vuejs.org/v2/api/#inheritAttrs
 		watch: {
 			/** When the options object is updated */
-			options() {
+			options(): void {
 				// Save it to local storage
 				this.localStorageUtility.setItem(this.storageKey, this.options);
 			}
@@ -80,7 +80,7 @@
 		 * Local pagination
 		 * This is the pagination from local storage
 		 */
-		localOptions: DataOptions | {} = {};
+		localOptions = {} as DataOptions;
 
 		/**
 		 * Create a LocalStorageUtility instance
@@ -89,7 +89,7 @@
 		 *
 		 * @returns {LocalStorageUtility} New instance
 		 */
-		newLocalStorageInstance() {
+		newLocalStorageInstance(): LocalStorageUtility {
 			if (!this.$vd || !this.$vd.localStorageControl) {
 				return new LocalStorageUtility();
 			}
@@ -105,7 +105,7 @@
 		 * Returns either the local storage options,
 		 * or the options passed as a prop
 		 */
-		get optionsCalc() {
+		get optionsCalc(): DataOptions {
 			// If localOptions isn't empty
 			if (Object.keys(this.localOptions).length) {
 				// return it
@@ -116,16 +116,16 @@
 			return this.options;
 		}
 
-		set optionsCalc(value: DataOptions | {}) {
+		set optionsCalc(value: DataOptions) {
 			if (Object.keys(this.localOptions).length) {
-				this.localOptions = {};
+				this.localOptions = {} as DataOptions;
 			}
 
 			this.$emit('update:options', value);
 		}
 
 		/** Local storage key */
-		get storageKey() {
+		get storageKey(): string {
 			const prefix = 'pagination';
 
 			// If there is a suffix
@@ -141,7 +141,7 @@
 
 		/** Retrieve the options from local storage */
 		created() {
-			this.localOptions = this.localStorageUtility.getItem(this.storageKey) || {};
+			this.localOptions = this.localStorageUtility.getItem(this.storageKey) || {} as DataOptions;
 		}
 	}
 </script>
