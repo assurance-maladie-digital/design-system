@@ -1,3 +1,3 @@
-export interface ButtonTitles{
+export interface ButtonLabels{
 	[index: string]:string
 }

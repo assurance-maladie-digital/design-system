@@ -38,14 +38,14 @@
 						v-bind="options.cancelBtn"
 						@click="$emit('cancel')"
 					>
-						{{ ButtonTitles.cancel?ButtonTitles.cancel:locales.cancel }}
+						{{ buttonLabels.cancel?buttonLabels.cancel:locales.cancel }}
 					</VBtn>
 
 					<VBtn
 						v-bind="options.confirmBtn"
 						@click="$emit('confirm')"
 					>
-						{{ ButtonTitles.confirm?ButtonTitles.confirm:locales.confirm }}
+						{{ buttonLabels.confirm?buttonLabels.confirm:locales.confirm }}
 					</VBtn>
 				</slot>
 			</VCardActions>
@@ -64,7 +64,7 @@
 
 	import tokens from '../../tokens';
 
-	import { ButtonTitles } from './types';
+	import { ButtonLabels } from './types';
 
 	import { mdiClose } from '@mdi/js';
 
@@ -90,9 +90,9 @@
 				type: String,
 				default: defaultWidth
 			},
-			/** Choosing title for button */
-			ButtonTitles: {
-				type: Object as PropType<ButtonTitles>,
+			/** Choosing label for button */
+			buttonLabels: {
+				type: Object as PropType<ButtonLabels>,
 				default: { cancel: 'Annuler', confirm: 'Valider' }
 			}
 		}
