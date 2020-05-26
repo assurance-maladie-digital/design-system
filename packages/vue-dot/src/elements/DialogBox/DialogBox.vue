@@ -38,14 +38,14 @@
 						v-bind="options.cancelBtn"
 						@click="$emit('cancel')"
 					>
-						{{ btnCancelText }}
+						{{ cancelBtnText }}
 					</VBtn>
 
 					<VBtn
 						v-bind="options.confirmBtn"
 						@click="$emit('confirm')"
 					>
-						{{ btnConfirmText }}
+						{{ confirmBtnText }}
 					</VBtn>
 				</slot>
 			</VCardActions>
@@ -58,6 +58,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
+	import { locales } from './locales';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -88,14 +89,14 @@
 				default: defaultWidth
 			},
 			/** Change label of button cancel */
-			btnCancelText: {
+			cancelBtnText: {
 				type: String,
-				default: 'Annuler'
+				default: locales.cancel
 			},
 			/** Change label of button confirm */
-			btnConfirmText: {
+			confirmBtnText: {
 				type: String,
-				default: 'Valider'
+				default: locales.confirm
 			}
 		}
 	});
