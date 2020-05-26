@@ -92,7 +92,6 @@
 	import FileList from './FileList/FileList.vue';
 
 	const Props = Vue.extend({
-
 		props: {
 			/** The v-model value (the list of files) */
 			value: {
