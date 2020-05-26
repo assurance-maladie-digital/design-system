@@ -5,7 +5,6 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/html';
 
 import FileUpload from '../../FileUpload';
-
 import DialogBox from '../../../elements/DialogBox';
 
 import UploadWorkflow from '../';
