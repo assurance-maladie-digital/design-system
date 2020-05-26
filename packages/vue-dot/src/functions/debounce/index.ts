@@ -4,7 +4,7 @@
  * @param {Function} callback The function called after debounce
  * @param {number} [time=500] The interval of the debounce in milliseconds
  */
-export function debounce(callback: (args: IArguments) => void, time: number = 500): () => void {
+export function debounce(callback: () => void, time: number = 500): () => void {
 	let interval: number | null;
 
 	return () => {
@@ -13,10 +13,10 @@ export function debounce(callback: (args: IArguments) => void, time: number = 50
 		}
 
 		// tslint:disable-next-line:only-arrow-functions
-		interval = window.setTimeout(function() {
+		interval = window.setTimeout(() => {
 			interval = null;
 
-			callback(arguments);
+			callback();
 		}, time);
 	};
 }
