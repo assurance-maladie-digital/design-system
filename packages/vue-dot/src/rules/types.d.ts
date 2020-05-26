@@ -1,5 +1,6 @@
+export type Value = string | null;
 export type ValidationResult = string | boolean;
-export type ValidationRule = (value: string) => ValidationResult;
+export type ValidationRule<T = Value> = (value: T) => ValidationResult;
 
 export interface ValidationRules {
 	[key: string]: ValidationRule;

@@ -3,15 +3,17 @@ import { ValidationRule, ValidationResult, ErrorMessages } from '../types';
 
 import { defaultErrorMessages } from './locales';
 
+export type Value = string | string[] | null;
+
 /**
  * Check that the field is non-empty
  *
  * @param {ErrorMessages} [errorMessages] Custom error messages
  * @returns {ValidationRule} Validation result
  */
-export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
+export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule<Value> {
 	// The value can be an array of string in select with the multiple prop
-	return (value: string | string[]): ValidationResult => {
+	return (value: Value): ValidationResult => {
 		let valid: boolean;
 
 		// If the value is an array
