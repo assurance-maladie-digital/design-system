@@ -93,48 +93,50 @@
 	</VRow>
 </template>
 
-<script>
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
 	import { mdiCalendar, mdiAccount } from '@mdi/js';
 
-	export default {
-		data() {
-			return {
-				loading: false,
-				itemsNumberLoading: 3,
-				headingLoading: true,
-				row: false,
-				flex: false,
-				listTitle: 'Titre',
-				placeholder: '…',
-				itemWidth: '200px',
-				icons: {
-					calendarIcon: mdiCalendar,
-					userIcon: mdiAccount
-				},
-				items: [
-					{
-						key: 'Nom',
-						value: '',
-						icon: 'userIcon'
-					},
-					{
-						key: 'Prénom',
-						value: 'Paul',
-						chip: true,
-						options: {
-							chip: {
-								color: 'success'
-							}
-						}
-					},
-					{
-						key: 'Date de naissance',
-						value: '09/24/1970',
-						icon: 'calendarIcon',
-						action: 'Modifier'
+	@Component
+	export default class DataListPlayground extends Vue {
+		items = [
+			{
+				key: 'Nom',
+				value: '',
+				icon: 'userIcon'
+			},
+			{
+				key: 'Prénom',
+				value: 'Paul',
+				chip: true,
+				options: {
+					chip: {
+						color: 'success'
 					}
-				]
-			};
-		}
-	};
+				}
+			},
+			{
+				key: 'Date de naissance',
+				value: '09/24/1970',
+				icon: 'calendarIcon',
+				action: 'Modifier'
+			}
+		];
+
+		loading = false;
+		itemsNumberLoading = 3;
+		headingLoading = true;
+		row = false;
+		flex = false;
+		listTitle = 'Titre';
+		placeholder = '…';
+		itemWidth = '200px';
+
+		icons = {
+			calendarIcon: mdiCalendar,
+			userIcon: mdiAccount
+		};
+	}
 </script>
