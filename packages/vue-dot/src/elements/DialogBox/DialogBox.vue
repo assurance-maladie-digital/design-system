@@ -38,7 +38,7 @@
 						v-bind="options.cancelBtn"
 						@click="$emit('cancel')"
 					>
-						{{ btnCancelText?btnCancelText:locales.cancel }}
+						{{ btnCancelText }}
 					</VBtn>
 
 					<VBtn
