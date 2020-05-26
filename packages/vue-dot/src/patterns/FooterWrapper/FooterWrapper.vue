@@ -1,6 +1,6 @@
 <template>
 	<VFooter
-		height="64"
+		min-height="64"
 		width="100%"
 		elevation="1"
 		color="#fafafa"
