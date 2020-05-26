@@ -7,7 +7,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DataLisChip extends Vue {
+	export default class DataListChip extends Vue {
 		items = [
 			{
 				key: 'Nom',

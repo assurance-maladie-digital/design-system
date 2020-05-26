@@ -126,19 +126,12 @@
 		];
 
 		loading = false;
-
 		itemsNumberLoading = 3;
-
 		headingLoading = true;
-
 		row = false;
-
 		flex = false;
-
 		listTitle = 'Titre';
-
 		placeholder = '…';
-
 		itemWidth = '200px';
 
 		icons = {

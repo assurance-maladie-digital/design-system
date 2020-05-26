@@ -12,7 +12,7 @@
 	import { mdiCalendar } from '@mdi/js';
 
 	@Component
-	export default class DataListSlot extends Vue {
+	export default class DataListOptions extends Vue {
 		items = [
 			{
 				key: 'Nom',

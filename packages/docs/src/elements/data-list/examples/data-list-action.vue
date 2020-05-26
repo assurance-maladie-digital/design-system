@@ -10,7 +10,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DataLisAction extends Vue {
+	export default class DataListAction extends Vue {
 		items = [
 			{
 				key: 'Nom',
