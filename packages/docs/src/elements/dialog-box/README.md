@@ -82,7 +82,7 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
         },
         {
           name: 'confirm',
-          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Confirmer.'
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Valider.'
         }
       ]
     }
