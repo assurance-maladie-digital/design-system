@@ -89,7 +89,10 @@
 	import FileUpload from '../FileUpload';
 	import { ErrorEvent } from '../FileUpload/types';
 
+	import FileList from './FileList/FileList.vue';
+
 	const Props = Vue.extend({
+
 		props: {
 			/** The v-model value (the list of files) */
 			value: {
@@ -115,6 +118,9 @@
 	 * and define a type for them in a pre-defined list
 	 */
 	@Component<UploadWorkflow>({
+		components: {
+			FileList
+		},
 		model: {
 			prop: 'value',
 			event: 'change'
