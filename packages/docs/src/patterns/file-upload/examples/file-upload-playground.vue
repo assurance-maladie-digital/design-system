@@ -27,7 +27,7 @@
 				outlined
 			/>
 
-			<v-combobox
+			<VCombobox
 				v-model="props.allowedExtensions"
 				:items="defaultAllowedExtensions"
 				label="Extensions autorisées"

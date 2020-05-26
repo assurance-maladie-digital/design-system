@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `FileUpload` est un composant qui améliore l'élément d'entrée de fichier HTML par défaut.
+Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de fichier HTML par défaut.
 :::
 
 ## Utilisation
@@ -33,7 +33,7 @@ L'élément `FileUpload` est un composant qui améliore l'élément d'entrée de
 				description: 'La valeur du ou des fichiers si `multiple`.'
 			},
 			{
-				name: 'noRipple',
+				name: 'no-ripple',
 				defaultValue: 'false',
 				type: 'boolean',
 				description: 'Désactive l\'ondulation quand on click dessus.'
@@ -45,19 +45,19 @@ L'élément `FileUpload` est un composant qui améliore l'élément d'entrée de
 				description: 'Désactive le composant.'
 			},
 			{
-				name: 'fileSizeMax',
+				name: 'file-size-max',
 				defaultValue: '4MB',
 				type: 'number',
 				description: 'Taille maximale en octets par fichier.'
 			},
 			{
-				name: 'fileSizeUnits',
+				name: 'file-size-units',
 				defaultValue: '[\'o\',\'Ko\',\'Mo\',\'Go\',\'To\']',
 				type: 'string[]',
 				description: 'Les unités de taille utilisées dans le modèle pour la traduction.'
 			},
 			{
-				name: 'allowedExtensions',
+				name: 'allowed-extensions',
 				defaultValue: '[\'pdf\',\'jpg\',\'jpeg\',\'png\']',
 				type: 'string[]',
 				description: 'Les extensions de fichiers autorisées.'

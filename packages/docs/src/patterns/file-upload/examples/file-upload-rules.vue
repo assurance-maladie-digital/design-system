@@ -6,6 +6,7 @@
 			@error="notifError"
 			@change="updatedValue"
 		/>
+
 		<VSnackbar
 			v-model="snackbar"
 			:color="snackbarColor"
@@ -56,11 +57,11 @@
 
 		errorsText: any = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
-			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
-			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
+			FILE_TOO_LARGE: 'Le fichier sélectionné est trop volumineux.',
+			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier sélectionné n\'est pas autorisée.'
 		};
 
-		notifError(err: Error) {
+		notifError(error: Error) {
 			this.snackbarText = this.errorsText[err.code] || err.code;
 
 			this.snackbarColor = 'error';

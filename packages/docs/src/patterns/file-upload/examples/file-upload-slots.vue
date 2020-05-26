@@ -7,6 +7,7 @@
 			>
 				<h4>Slot général 'placeholder'</h4>
 			</VCol>
+
 			<VCol
 				cols="12"
 				md="6"
@@ -19,6 +20,7 @@
 							<VRow>
 								Glissez ou cliquez ici pour charger un fichier
 							</VRow>
+
 							<VRow v-if="file">
 								Nom du fichier: {{ file.name }}
 							</VRow>
@@ -37,6 +39,7 @@
 					Tout les autres slots
 				</h4>
 			</VCol>
+
 			<VCol
 				cols="12"
 				md="6"
@@ -46,7 +49,7 @@
 				>
 					<template #icon>
 						<VIcon>
-							{{ mdiDownloadCircle }}
+							{{ downloadIcon}}
 						</VIcon>
 					</template>
 
@@ -63,7 +66,7 @@
 					</template>
 
 					<template #info-text>
-						fichier PDF de maximum 1Mo accepté
+						Fichier PDF de 1Mo maximum accepté
 					</template>
 				</FileUpload>
 			</VCol>
@@ -81,6 +84,6 @@
 	export default class FileUploadSlots extends Vue {
 		file: File | null = null;
 
-		mdiDownloadCircle = mdiDownloadCircle;
+		downloadIcon = mdiDownloadCircle;
 	}
 </script>
