@@ -30,7 +30,7 @@ export class MaskValue extends MixinsDeclaration {
 	 * @example
 	 * '##/##/####' for default dateFormat
 	 */
-	get maskValue() {
+	get maskValue(): string | undefined {
 		// If the mask is false, don't apply mask
 		if (this.mask === false) {
 			// Undefined is the default value for mask property

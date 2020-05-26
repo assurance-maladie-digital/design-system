@@ -96,9 +96,9 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
-	import { FileItem } from './types';
+	import { FileItem, IconInfo } from './types';
 
-	import { customizable, Options } from '../../mixins/customizable';
+	import { customizable } from '../../mixins/customizable';
 
 	import {
 		mdiRefresh,
@@ -139,7 +139,7 @@
 		deleteIcon = mdiDelete;
 
 		/** Returns the icon name & color depending on state */
-		getIconInfo(state: string) {
+		getIconInfo(state: string): IconInfo {
 			switch (state) {
 				case 'error': {
 					return {
@@ -168,7 +168,7 @@
 		 * Get the default item color
 		 * depending on theme (light or dark)
 		 */
-		getItemColor(state: string) {
+		getItemColor(state: string): string {
 			let color = 'grey--text ';
 			// Only the modifier changes
 			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
@@ -181,7 +181,7 @@
 		 * Get the default icon color
 		 * depending on theme (light or dark)
 		 */
-		get iconColor() {
+		get iconColor(): string {
 			return this.$vuetify.theme.dark ? 'grey lighten-1' : 'grey darken-1';
 		}
 	}
