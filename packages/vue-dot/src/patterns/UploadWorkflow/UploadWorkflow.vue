@@ -30,7 +30,9 @@
 		>
 			<template #title>
 				<slot name="modal-title">
-					{{ locales.modalTitle }}
+					<h4 class="mb-4">
+						{{ locales.modalTitle }}
+					</h4>
 				</slot>
 			</template>
 
