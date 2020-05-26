@@ -1,70 +1,35 @@
 <template>
-	<VRow>
-		<VCol
-			cols="12"
-			md="6"
+	<div>
+		<FileUpload
+			v-model="file"
+			v-bind="props"
+			@error="notifError"
+			@change="updatedValue"
+		/>
+		<VSnackbar
+			v-model="snackbar"
+			:color="snackbarColor"
+			multi-line
 		>
-			<VCombobox
-				v-model="props.fileSizeUnits"
-				:items="defaultFileSizeUnits"
-				label="Unités des tailles"
-				multiple
-				outlined
-			/>
+			{{ snackbarText }}
 
-			<v-combobox
-				v-model="props.allowedExtensions"
-				:items="defaultAllowedExtensions"
-				label="Extensions autorisées"
-				multiple
-				outlined
-			/>
-
-			<VTextField
-				v-model="props.fileSizeMax"
-				label="Taille maximum"
-				outlined
-			/>
-
-			<VTextField
-				v-model="props.accept"
-				label="Formats acceptés"
-				outlined
-			/>
-
-			<VSnackbar
-				v-model="snackbar"
-				multi-line
+			<VBtn
+				text
+				@click="snackbar = false"
 			>
-				{{ snackbarText }}
-
-				<VBtn
-					color="red"
-					text
-					@click="snackbar = false"
-				>
-					Fermer
-				</VBtn>
-			</VSnackbar>
-		</VCol>
-
-		<VCol
-			cols="12"
-			md="6"
-		>
-			<FileUpload
-				v-model="file"
-				v-bind="props"
-				@error="notifError"
-				@change="updatedValue"
-			/>
-		</VCol>
-	</VRow>
+				Fermer
+			</VBtn>
+		</VSnackbar>
+	</div>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
+	interface Error {
+		code: string;
+	}
 
 	@Component
 	export default class FileUploadRules extends Vue {
@@ -74,47 +39,39 @@
 
 		snackbarText = '';
 
+		snackbarColor = 'success';
+
 		props = {
-			fileSizeMax: 4096 * 1024,
+			fileSizeMax: 1096 * 1024,
 			fileSizeUnits: [
 				'o',
 				'Ko',
-				'Mo',
-				'Go',
-				'To'
+				'Mo'
 			],
 			allowedExtensions: [
-				'pdf',
-				'jpg',
-				'jpeg',
-				'png'
+				'pdf'
 			],
-			accept: '.png,.jpg,.doc'
+			accept: '.pdf'
 		};
 
-		defaultFileSizeUnits = [
-				'o',
-				'Ko',
-				'Mo',
-				'Go',
-				'To'
-		];
+		errorsText: any = {
+			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
+			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
+			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
+		};
 
-		defaultAllowedExtensions = [
-				'pdf',
-				'jpg',
-				'jpeg',
-				'png'
-		];
+		notifError(err: Error) {
+			this.snackbarText = this.errorsText[err.code] || err.code;
 
-		notifError(err: any) {
-			this.snackbarText = `Evènement 'error' émis avec le code retour '${err.code}'`;
+			this.snackbarColor = 'error';
 
 			this.snackbar = true;
 		}
 
 		updatedValue(value: File) {
-			this.snackbarText = `Nom du fichier: ${value.name}, taille: ${value.size}`;
+			this.snackbarText = 'Le fichier a été accepté pour être traiter';
+
+			this.snackbarColor = 'success';
 
 			this.snackbar = true;
 		}

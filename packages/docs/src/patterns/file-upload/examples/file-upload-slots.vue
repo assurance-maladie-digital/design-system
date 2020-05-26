@@ -5,7 +5,7 @@
 				cols="12"
 				md="6"
 			>
-				<h4>Slot 'placeholder'</h4>
+				<h4>Slot général 'placeholder'</h4>
 			</VCol>
 			<VCol
 				cols="12"
@@ -17,7 +17,7 @@
 					<template #placeholder>
 						<div>
 							<VRow>
-								Glissez ou cliquez ici pour ajouter un fichier
+								Glissez ou cliquez ici pour charger un fichier
 							</VRow>
 							<VRow v-if="file">
 								Nom du fichier: {{ file.name }}
@@ -34,7 +34,7 @@
 				md="6"
 			>
 				<h4 class="mt-4">
-					Slot 'icon'
+					Tout les autres slots
 				</h4>
 			</VCol>
 			<VCol
@@ -49,120 +49,21 @@
 							{{ mdiDownloadCircle }}
 						</VIcon>
 					</template>
-				</FileUpload>
-			</VCol>
-		</VRow>
 
-		<VRow>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<h4 class="mt-4">
-					Slot 'action-text'
-				</h4>
-			</VCol>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<FileUpload
-					v-model="file"
-				>
 					<template #action-text>
-						Glissez votre fichier ici
+						Glissez un fichier ici
 					</template>
-				</FileUpload>
-			</VCol>
-		</VRow>
 
-		<VRow>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<h4 class="mt-4">
-					Slot 'or'
-				</h4>
-			</VCol>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<FileUpload
-					v-model="file"
-				>
 					<template #or>
 						Ou bien
 					</template>
-				</FileUpload>
-			</VCol>
-		</VRow>
 
-		<VRow>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<h4 class="mt-4">
-					Slot 'or'
-				</h4>
-			</VCol>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<FileUpload
-					v-model="file"
-				>
-					<template #or>
-						Ou bien
-					</template>
-				</FileUpload>
-			</VCol>
-		</VRow>
-
-		<VRow>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<h4 class="mt-4">
-					Slot 'button-text'
-				</h4>
-			</VCol>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<FileUpload
-					v-model="file"
-				>
 					<template #button-text>
-						Cliquez ici pour selectionner un fichier
+						Sélectionnez un fichier
 					</template>
-				</FileUpload>
-			</VCol>
-		</VRow>
 
-		<VRow>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<h4 class="mt-4">
-					Slot 'info-text'
-				</h4>
-			</VCol>
-			<VCol
-				cols="12"
-				md="6"
-			>
-				<FileUpload
-					v-model="file"
-				>
 					<template #info-text>
-						La taille du fichier ne doit pas dépasser 500To et doit être au format PDF
+						fichier PDF de maximum 1Mo accepté
 					</template>
 				</FileUpload>
 			</VCol>

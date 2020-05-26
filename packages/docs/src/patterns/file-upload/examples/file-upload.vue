@@ -1,7 +1,5 @@
 <template>
-	<FileUpload
-		v-model="file"
-	/>
+	<FileUpload v-model="file" />
 </template>
 
 <script lang="ts">
