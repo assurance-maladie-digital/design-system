@@ -32,7 +32,7 @@ Utilisation simple avec plusieurs listes d'items
 					name: 'backBtnText',
 					defaultValue: 'Retour',
 					type: 'string',
-					description: 'Personnalisez le texte à l\'intérieur du bouton de retour.'
+					description: 'Le texte du bouton retour.'
 				},
 				{
 					name: 'titleText',

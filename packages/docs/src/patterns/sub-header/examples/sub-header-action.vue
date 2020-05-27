@@ -16,7 +16,7 @@
 
 	@Component
 	export default class SubHeaderAction extends Vue {
-		actionValue: string | null = 'New text';
+		actionValue = 'New text';
 
 		dataLists = [
 			{
