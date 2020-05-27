@@ -45,6 +45,16 @@ module.exports = {
 						to: '/elements/page-card'
 					}
 				]
+			},
+			{
+				title: 'Patterns',
+				group: 'patterns',
+				items: [
+					{
+						title: 'FooterWrapper',
+						to: '/patterns/footer-wrapper'
+					}
+				]
 			}
 		]
 	},
