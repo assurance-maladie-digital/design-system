@@ -88,7 +88,7 @@
 					<VLayout
 						v-if="dataLists"
 						v-bind="options.dataListsLayout"
-						class="vd-sub-header-data-list mt-n3 mx-n2"
+						class="vd-sub-header-data-list mx-n2"
 					>
 						<DataList
 							v-for="(dataList, index) in dataLists"
@@ -98,8 +98,8 @@
 							:items="dataList.items"
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
+							item-width="auto"
 							title-class="subtitle-1 font-weight-bold mb-2 mt-2"
-							width="auto"
 							@click:item-action="dataListItemAction(index, $event)"
 						/>
 					</VLayout>
@@ -225,6 +225,11 @@
 			.vd-key {
 				display: inline-block;
 				font-size: .75rem !important;
+			}
+
+			.vd-data-list-item-label {
+				opacity: .8;
+				color: #fff !important;
 			}
 		}
 	}
