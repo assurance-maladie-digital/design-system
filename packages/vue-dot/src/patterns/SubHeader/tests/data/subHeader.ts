@@ -3,23 +3,23 @@ import { DataListsItem } from '../../types';
 
 export const dataListItems: IDataList = [
 	{
-		label: 'Libellé',
+		key: 'Libellé',
 		value: 'Texte saisi'
 	},
 	{
-		label: 'Libellé',
+		key: 'Libellé',
 		value: 'Texte saisi'
 	}
 ];
 
 export const dataListItemsActions: IDataList = [
 	{
-		label: 'Libellé',
+		key: 'Libellé',
 		value: 'Texte à modifier',
 		action: 'Modifier'
 	},
 	{
-		label: 'Libellé',
+		key: 'Libellé',
 		value: 'Texte à modifier',
 		action: 'Modifier'
 	}

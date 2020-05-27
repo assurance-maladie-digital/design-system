@@ -35,8 +35,8 @@
 						class="vd-data-list-row mb-2"
 					>
 						<DataListItem
-							v-if="item.label"
-							:label="item.label"
+							v-if="item.key"
+							:label="item.key"
 							:value="item.value"
 							:action="item.action"
 							:chip="item.chip"

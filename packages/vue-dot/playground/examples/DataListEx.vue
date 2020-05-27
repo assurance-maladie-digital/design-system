@@ -45,7 +45,7 @@
 
 		data: IDataList = [
 			{
-				label: 'Civility',
+				key: 'Civility',
 				value: 'Mr',
 				chip: true,
 				options: {
@@ -55,29 +55,29 @@
 				}
 			},
 			{
-				label: 'Name',
+				key: 'Name',
 				value: 'Dupont'
 			},
 			{
-				label: 'First name',
+				key: 'First name',
 				value: 'Paul'
 			},
 			{
-				label: 'Birthdate',
+				key: 'Birthdate',
 				value: '09/24/1970',
 				icon: 'mdiCalendar'
 			},
 			{
-				label: 'Nationality',
+				key: 'Nationality',
 				value: 'French'
 			},
 			{
-				label: 'Native country',
+				key: 'Native country',
 				value: 'France',
 				action: 'Edit'
 			},
 			{
-				label: 'Date of registration',
+				key: 'Date of registration',
 				value: ''
 			}
 		];

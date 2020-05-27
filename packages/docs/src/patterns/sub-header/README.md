@@ -3,12 +3,10 @@
 :::
 
 ::: slot description
-L'élément `SubHeader` est utilisé pour afficher une liste d'informations.
+L'élément `SubHeader` est un composant qui affiche des informations sous l'en-tête principal
 :::
 
 ## Utilisation
-
-Utilisation simple avec plusieurs listes d'items
 
 <DocExample
   eager
@@ -23,31 +21,30 @@ Utilisation simple avec plusieurs listes d'items
 		SubHeader: {
 			props: [
 				{
-					name: 'hideBackBtn',
+					name: 'hide-back-btn',
 					defaultValue: 'false',
 					type: 'boolean',
 					description: 'Masquer le bouton de retour.'
 				},
 				{
-					name: 'backBtnText',
+					name: 'back-btn-text',
 					defaultValue: 'Retour',
 					type: 'string',
 					description: 'Le texte du bouton retour.'
 				},
 				{
-					name: 'titleText',
-					required: 'true',
+					name: 'title-text',
 					type: 'string',
-					description: 'Sous titre.'
+					description: 'Le texte du titre.'
 				},
 				{
-					name: 'subTitleText',
+					name: 'sub-title-text',
 					defaultValue: 'undefined',
 					type: 'string',
-					description: 'Sous-titre du SubHeader.'
+					description: 'Le texte du sous-titre.'
 				},
 				{
-					name: 'dataLists',
+					name: 'data-lists',
 					defaultValue: 'undefined',
 					type: 'DataListsItem[]',
 					description: 'Liste des composants DataList en mode colonne.'

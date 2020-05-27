@@ -71,11 +71,11 @@
 				headingLoading: true,
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					}
 				]
@@ -86,11 +86,11 @@
 				headingLoading: true,
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte à modifier'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte à modifier'
 					}
 				]
@@ -101,11 +101,11 @@
 				headingLoading: true,
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					}
 				]
@@ -116,11 +116,11 @@
 				headingLoading: true,
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					}
 				]

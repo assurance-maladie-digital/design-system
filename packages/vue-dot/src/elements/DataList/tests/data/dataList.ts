@@ -2,15 +2,15 @@ import { IDataList } from './../../types';
 
 export const dataList: IDataList = [
 	{
-		label: 'Civility',
+		key: 'Civility',
 		value: ''
 	},
 	{
-		label: 'Name',
+		key: 'Name',
 		value: 'Dupont'
 	},
 	{
-		label: 'First name',
+		key: 'First name',
 		value: 'Paul'
 	}
 ];

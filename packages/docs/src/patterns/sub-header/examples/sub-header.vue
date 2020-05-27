@@ -35,11 +35,11 @@
 				listTitle: 'Catégorie 1',
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					}
 				]
@@ -48,11 +48,11 @@
 				listTitle: 'Catégorie 2',
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte à modifier'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte à modifier'
 					}
 				]
@@ -61,11 +61,11 @@
 				listTitle: 'Catégorie 3',
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					}
 				]
@@ -74,11 +74,11 @@
 				listTitle: 'Catégorie 4',
 				items: [
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					},
 					{
-						label: 'Libellé',
+						key: 'Libellé',
 						value: 'Texte saisi'
 					}
 				]

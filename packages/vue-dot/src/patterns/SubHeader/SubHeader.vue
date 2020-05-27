@@ -138,7 +138,7 @@
 			/** Title of the SubHeader */
 			titleText: {
 				type: String,
-				default: undefined
+				required: true
 			},
 			/** Sub-title of the SubHeader */
 			subTitleText: {
