@@ -129,7 +129,7 @@
 			 */
 			value: {
 				type: [Array, Object, File],
-				default: () => []
+				default: (): File[] => []
 			},
 			/** Disable v-ripple on the component */
 			noRipple: {
@@ -154,7 +154,7 @@
 			/** The allowed file extensions */
 			allowedExtensions: {
 				type: Array as PropType<string[]>,
-				default: () => [
+				default: (): string[] => [
 					'pdf',
 					'jpg',
 					'jpeg',

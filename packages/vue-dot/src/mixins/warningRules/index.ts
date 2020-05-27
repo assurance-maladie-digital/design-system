@@ -8,7 +8,7 @@ const Props = Vue.extend({
 		/** An array of rules (same syntax as Vuetify ones) */
 		warningRules: {
 			type: Array as PropType<ValidationRule[]>,
-			default: () => []
+			default: (): ValidationRule[] => []
 		}
 	}
 });
