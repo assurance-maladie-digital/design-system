@@ -28,9 +28,8 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	interface Error {
-		code: string;
-	}
+	import { ErrorEvent, ErrorCodesType } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
+	import { ErrorCodes } from '@cnamts/vue-dot/src/patterns/FileUpload/errorCodes';
 
 	@Component
 	export default class FileUploadRules extends Vue {
@@ -55,14 +54,14 @@
 			accept: '.pdf'
 		};
 
-		errorsText: any = {
+		errorsText: ErrorCodesType = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop volumineux.',
 			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier sélectionné n\'est pas autorisée.'
 		};
 
-		notifError(error: Error) {
-			this.snackbarText = this.errorsText[err.code] || err.code;
+		notifError(error: ErrorEvent) {
+			this.snackbarText = this.errorsText[error.code] || error.code;
 
 			this.snackbarColor = 'error';
 

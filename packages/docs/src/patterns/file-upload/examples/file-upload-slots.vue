@@ -12,9 +12,7 @@
 				cols="12"
 				md="6"
 			>
-				<FileUpload
-					v-model="file"
-				>
+				<FileUpload v-model="file">
 					<template #placeholder>
 						<div>
 							<VRow>
@@ -44,12 +42,10 @@
 				cols="12"
 				md="6"
 			>
-				<FileUpload
-					v-model="file"
-				>
+				<FileUpload v-model="file">
 					<template #icon>
 						<VIcon>
-							{{ downloadIcon}}
+							{{ downloadIcon }}
 						</VIcon>
 					</template>
 
