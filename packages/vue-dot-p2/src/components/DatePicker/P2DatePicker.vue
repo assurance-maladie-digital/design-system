@@ -2,10 +2,7 @@
 	<VLayout>
 		<DatePicker
 			v-model="computedValue"
-			append-icon
-			show-week-ends
 			:start-date="startDate"
-			text-field-activator
 			:picker-date.sync="internalPickerDate"
 			:vuetify-options="{
 				textField: {
@@ -31,6 +28,9 @@
 					ripple: false
 				}
 			}"
+			append-icon
+			show-week-ends
+			text-field-activator
 			@error="resetInternalPickerDate($event)"
 		>
 			<template #append-icon>
@@ -51,7 +51,7 @@
 	import 'dayjs/locale/fr';
 
 	import { formatDateISO } from '../../services/dateUtils';
-	import { Refs } from '../../types';
+	import { Refs } from '@cnamts/vue-dot/src/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -92,7 +92,7 @@
 			event: 'change'
 		},
 		watch: {
-			effectivePickerDate() {
+			effectivePickerDate(): void {
 				this.internalPickerDate = this.effectivePickerDate;
 			}
 		}
@@ -102,7 +102,7 @@
 
 		isoDateToday: string = formatDateISO(dayjs());
 
-		resetInternalPickerDate(event: boolean) {
+		resetInternalPickerDate(event: boolean): void {
 			if (event) {
 				if (this.effectivePickerDate !== '') {
 					this.internalPickerDate = this.effectivePickerDate;
@@ -114,14 +114,14 @@
 			}
 		}
 
-		getWeekday(date: string) {
+		getWeekday(date: string): string {
 			return dayjs(date).locale('fr').format('dddd').charAt(0).toUpperCase();
 		}
 
 		// computedValue is computed property
 		// with a setter and a getter
 		// Return the value
-		get computedValue() {
+		get computedValue(): string {
 			return this.value;
 		}
 
@@ -131,11 +131,11 @@
 		}
 
 		created() {
-				if (this.effectivePickerDate !== '') {
-					this.internalPickerDate = this.effectivePickerDate;
-				} else {
-					this.internalPickerDate = '';
-				}
+			if (this.effectivePickerDate !== '') {
+				this.internalPickerDate = this.effectivePickerDate;
+			} else {
+				this.internalPickerDate = '';
+			}
 		}
 	}
 </script>

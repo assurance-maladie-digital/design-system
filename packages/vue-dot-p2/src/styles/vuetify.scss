@@ -2,7 +2,8 @@
 .v-btn {
 	padding-left: 15px !important;
 	padding-right: 15px !important;
-	font-size: 0.81rem !important;
+	font-size: .81rem !important;
+
 	.v-btn__content {
 		font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 		font-weight: 600;
@@ -29,11 +30,11 @@ a:not(.v-btn) {
 	}
 }
 
-// GLOBAL INPUTS OVERRIDINGS
+// GLOBAL INPUTS OVERRIDING
 
 // Inputs text size
 .v-input {
-	font-size: 0.88rem !important;
+	font-size: .88rem !important;
 }
 
 .v-messages.theme--light.error--text {
@@ -53,7 +54,7 @@ a:not(.v-btn) {
 	padding: 3px;
 	margin-bottom: 4px;
 	border-color: #941900;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 }
 
 // Apparence du cursor dans les zones de saisies désactivé
@@ -61,7 +62,7 @@ a:not(.v-btn) {
 	cursor: not-allowed;
 }
 
-// Radio buttons overridings
+// Radio buttons overriding
 .v-radio > div {
 	width: auto;
 }
@@ -87,7 +88,7 @@ a:not(.v-btn) {
 }
 
 .v-radio.theme--light > label {
-	font-size: 0.88rem !important;
+	font-size: .88rem !important;
 }
 
 .v-radio .v-icon--svg.theme--light {
@@ -95,9 +96,7 @@ a:not(.v-btn) {
 }
 
 // Checkbox
-
 .v-input--checkbox {
-
 	.v-input--selection-controls__input {
 		height: 16px !important;
 		width: 16px !important;
@@ -109,6 +108,7 @@ a:not(.v-btn) {
 		font-size: 16px;
 		border: 1px solid #000;
 		color: #fff !important;
+
 		&.error--text {
 			color: #fff !important;
 		}
@@ -119,12 +119,11 @@ a:not(.v-btn) {
 	}
 
 	.theme--light.v-label {
-		color: #000!important;
+		color: #000 !important;
 	}
 }
 
 // Switch button
-
 .v-input--switch.theme--light label {
 	color: black;
 }
@@ -134,7 +133,8 @@ a:not(.v-btn) {
 }
 
 .v-input--switch__thumb.theme--light {
-	color: #888888 !important;
+	color: #888 !important;
+
 	&.primary--text {
 		color: #0595c5 !important;
 	}
@@ -162,22 +162,25 @@ a:not(.v-btn) {
 
 .v-text-field.v-text-field--solo {
 	.v-label {
-		font-size: 0.81rem !important;
+		font-size: .81rem !important;
 	}
+
 	.v-input__control {
 		min-height: 34px !important;
 	}
 }
 
-// VTabs overridings
-
+// VTabs overriding
 .theme--light.v-tabs > .v-tabs-bar {
 	background: none;
+
 	.v-tabs-bar__content {
 		height: 100%;
+
 		.v-tabs-slider-wrapper {
 			width: 0 !important;
-		};
+		}
+
 		.v-tab {
 			margin-bottom: 5px;
 			margin-right: 5px;
@@ -185,26 +188,29 @@ a:not(.v-btn) {
 			font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
 			letter-spacing: normal;
 			color: rgba(0, 0, 0, 0.54) !important;
+
 			&:hover {
 				text-decoration: none !important;
 			}
+
 			&:focus {
 				text-decoration: none !important;
 			}
-		};
+		}
+
 		.v-tab--active {
 			margin-bottom: 0;
 			padding-bottom: 5px;
 			color: white !important;
+
 			&:hover{
 				text-decoration: none !important;
 			}
-		};
+		}
 	}
 }
 
 // VDataTable
-
 .v-data-table-header {
 	background-color: rgb(237, 237, 237) !important;
 	color: black !important;

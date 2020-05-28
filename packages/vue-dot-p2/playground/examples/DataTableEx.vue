@@ -1,14 +1,14 @@
 <template>
-	<DocSection title="DataTable Example">
+	<div>
 		<VLayout>
 			<div class="mt-5 pa-0 mr-2">
-				<span
-					class="grey lighten-3 pa-2 px-3"
-				>
+				<span class="grey lighten-3 pa-2 px-3">
 					{{ tableItems.length }} items
 				</span>
 			</div>
+
 			<VSpacer />
+
 			<div class="mt-3 pa-0 select-width">
 				<VSelect
 					v-model="selectedItem"
@@ -20,26 +20,28 @@
 				/>
 			</div>
 		</VLayout>
+
 		<VLayout
 			column
 			class="table-width"
 		>
 			<VDataTable
-				must-sort
 				:headers="tableHeaders"
 				:items="tableItems"
 				:items-per-page="nbSelectedItem"
 				:page.sync="page"
 				:header-props="headerProps"
 				hide-default-footer
+				must-sort
 				@page-count="pageCount = $event"
 			/>
+
 			<Pagination
 				v-model="page"
 				:page-count="pageCount"
 			/>
 		</VLayout>
-	</DocSection>
+	</div>
 </template>
 
 <script lang="ts">
@@ -81,17 +83,17 @@
 			{ content1: 'TOTO', content2: 'TATA', content3: 'TITI' }
 		];
 
-		get nbSelectedItem() {
+		get nbSelectedItem(): number {
 			return this.selectedItem ? Number(this.selectedItem) : 10;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-.select-width {
-	width: 200px
-}
-.table-width {
-	width: 100%
-}
+	.select-width {
+		width: 200px
+	}
+	.table-width {
+		width: 100%
+	}
 </style>

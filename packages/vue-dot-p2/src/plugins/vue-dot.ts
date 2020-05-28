@@ -10,6 +10,7 @@ import '../styles/global.scss';
 import '../styles/reset.scss';
 import '../styles/utility.scss';
 import '../styles/vuetify.scss';
+
 import icons from '@/theme/icons';
 
 Vue.use(VueDot, {

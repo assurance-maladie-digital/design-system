@@ -14,12 +14,14 @@
 // P2 buttons
 .p2-primary-btn {
 	color: #fff !important;
-	background:#0087cf !important;
+	background: #0087cf !important;
+
 	&.theme--light.v-btn.v-btn--disabled {
 		border: 1px solid #ffffff;
 		color: #ffffff !important;
 		background-color: #aed7ed !important;
 	}
+
 	&:hover,
 	&:active,
 	&:focus {
@@ -32,15 +34,17 @@
 	border: 1px solid #ccc !important;
 	border-radius: 100px !important;
 	background: #fff !important;
+
 	&.theme--light.v-btn.v-btn--disabled {
 		border: 1px solid #ffffff;
 		color: #aed7ed !important;
 		background-color: #fff !important;
 	}
+
 	&:hover,
 	&:active,
 	&:focus {
 		color: #fff !important;
-		background:#005da8 !important;
+		background: #005da8 !important;
 	}
 }

@@ -1,8 +1,6 @@
 <template>
 	<VLayout>
-		<VCol
-			class="pa-0 ma-auto largeur-icone"
-		>
+		<VCol class="pa-0 ma-auto largeur-icone">
 			<VIcon
 				size="30px"
 				class="warning--text"
@@ -10,6 +8,7 @@
 				{{ iconWarning }}
 			</VIcon>
 		</VCol>
+
 		<VCol class="pa-1 warning--text">
 			<slot />
 		</VCol>
@@ -19,6 +18,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
 	import { mdiAlertCircle } from '@mdi/js';
 
 	@Component
@@ -29,6 +29,6 @@
 
 <style lang="scss" scoped>
 	.largeur-icone {
-		max-width: 40px!important;
+		max-width: 40px !important;
 	}
 </style>

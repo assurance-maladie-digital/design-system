@@ -23,6 +23,7 @@
 
 				<template v-if="helpBtn">
 					<VSpacer />
+
 					<slot name="bloc-name" />
 				</template>
 			</VLayout>

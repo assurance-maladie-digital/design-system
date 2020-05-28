@@ -26,125 +26,140 @@
 
 		<VContent>
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					Text style
 				</h2>
-				<div
-					class="mb-2"
-				>
+
+				<div class="mb-2">
 					<p class="display-2">
 						Display 2
 					</p>
+
 					<p class="display-1">
 						Display 1
 					</p>
+
 					<p class="headline">
 						Headline
 					</p>
+
 					<p>Classic body</p>
+
 					<p class="osp-din">
 						Classic body osp-din
 					</p>
 				</div>
 			</PageCard>
+
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					Theme colors
 				</h2>
+
 				<h2 class="primary--text">
 					Primary
 				</h2>
+
 				<h2 class="secondary--text">
 					Secondary
 				</h2>
+
 				<h2 class="accent--text">
 					Accent
 				</h2>
+
 				<h2 class="error--text">
 					Error
 				</h2>
+
 				<h2 class="info--text">
 					Info
 				</h2>
+
 				<h2 class="success--text">
 					Success
 				</h2>
+
 				<h2 class="warning--text">
 					Warning
 				</h2>
 			</PageCard>
+
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					Buttons
 				</h2>
-				<VLayout
-					class="mb-2"
-				>
+
+				<VLayout class="mb-2">
 					<VBtn
+						:ripple="false"
 						rounded
 						depressed
-						:ripple="false"
 						class="p2-primary-btn mr-1"
 						title="Primary button"
 					>
 						Primary button
 					</VBtn>
+
 					<VBtn
-						rounded
-						depressed
 						:ripple="false"
-						:disabled="true"
+						rounded
+						disabled
+						depressed
 						class="p2-primary-btn"
 						title="Primary button"
 					>
 						Primary button disabled
 					</VBtn>
 				</VLayout>
+
 				<VLayout class="mt-2">
 					<VBtn
+						:ripple="false"
 						rounded
 						depressed
-						:ripple="false"
 						class="p2-secondary-btn mr-1"
 						title="Secondary button"
 					>
 						Secondary button
 					</VBtn>
+
 					<VBtn
-						rounded
-						depressed
 						:ripple="false"
-						:disabled="true"
+						rounded
+						disabled
+						depressed
 						class="p2-secondary-btn"
 						title="Secondary button"
 					>
 						Secondary button disabled
 					</VBtn>
 				</VLayout>
+
 				<VLayout class="mt-2">
 					<a href="#">Link example</a>
 				</VLayout>
+
 				<VLayout>
 					<VRadioGroup
 						v-model="radio"
-						row
 						:rules="requiredRule"
 						hide-details
+						row
 					>
 						<VRadio
 							color="primary"
 							label="Radio 1"
 							value="Radio 1"
 						/>
+
 						<VRadio
 							label="Radio 2"
 							value="Radio 2"
 						/>
 					</VRadioGroup>
 				</VLayout>
+
 				<VLayout>
 					<Checkbox
 						v-model="checkValue"
@@ -152,6 +167,7 @@
 						label="Checkbox P2"
 					/>
 				</VLayout>
+
 				<VLayout>
 					<VSwitch
 						v-model="switchValue"
@@ -160,28 +176,31 @@
 					/>
 				</VLayout>
 			</PageCard>
+
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					Text Inputs
 				</h2>
+
 				<VTextField
-					solo
-					flat
+					:rules="requiredRule"
+					placeholder="Placeholder example"
 					validate-on-blur
-					placeholder="Placeholder example"
-					:rules="requiredRule"
-				/>
-				<VTextarea
 					solo
 					flat
-					placeholder="Placeholder example"
-					no-resize
-					:rows="2"
-					:counter="500"
-					:maxlength="500"
-					:rules="requiredRule"
 				/>
+
+				<VTextarea
+					:rules="requiredRule"
+					:maxlength="500"
+					:counter="500"
+					:rows="2"
+					solo
+					flat
+					no-resize
+					placeholder="Placeholder example"
+				/>
+
 				<VSelect
 					v-model="selectedItem"
 					:items="selectedList"
@@ -190,11 +209,12 @@
 					flat
 				/>
 			</PageCard>
+
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					P2 Components
 				</h2>
+
 				<Panel column>
 					<P2DatePicker
 						v-model="date"
@@ -203,11 +223,12 @@
 					/>
 				</Panel>
 			</PageCard>
+
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					P2 Tabs
 				</h2>
+
 				<div class="layout-tab-example">
 					<VRow>
 						<VTabs
@@ -217,11 +238,13 @@
 							<VTab href="#first">
 								First tab
 							</VTab>
+
 							<VTab href="#second">
 								Second tab
 							</VTab>
 						</VTabs>
 					</VRow>
+
 					<VRow>
 						<VTabsItems v-model="tab">
 							<VTabItem
@@ -229,20 +252,17 @@
 								:transition="false"
 								:reverse-transition="false"
 							>
-								<Panel
-									column
-								>
+								<Panel column>
 									First Panel
 								</Panel>
 							</VTabItem>
+
 							<VTabItem
 								value="second"
 								:transition="false"
 								:reverse-transition="false"
 							>
-								<Panel
-									column
-								>
+								<Panel column>
 									Second Panel
 								</Panel>
 							</VTabItem>
@@ -250,23 +270,28 @@
 					</VRow>
 				</div>
 			</PageCard>
+
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					P2 DataTable
 				</h2>
+
 				<DataTableEx />
 			</PageCard>
+
 			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
 				<h2 class="display-1 mb-12 font-weight-bold">
 					Informations/Warning/Error messages
 				</h2>
+
 				<Information>Information message</Information>
+
 				<Warning>Warning message</Warning>
+
 				<Error>Error message</Error>
 			</PageCard>
 		</VContent>
+
 		<VFooter
 			:color="dark ? 'grey darken-3' : 'secondary'"
 			class="white--text elevation-5"
@@ -274,7 +299,7 @@
 		>
 			<VSpacer />
 
-			v{{ version }} &copy; 2020 Dylan Broussard
+			v{{ version }} &copy; 2020
 		</VFooter>
 	</VApp>
 </template>
@@ -300,7 +325,15 @@
 		radio = '';
 		checkValue = false;
 		switchValue = false;
-		selectedList = ['Nb lignes/page', 10, 20 , 30, 50, 100];
+		selectedList = [
+			'Nb lignes/page',
+			10,
+			20 ,
+			30,
+			50,
+			100
+		];
+
 		selectedItem = '';
 		tab = 0;
 

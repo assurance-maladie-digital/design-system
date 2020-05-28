@@ -1,18 +1,19 @@
 <template>
 	<VCheckbox
 		v-model="computedCheck"
-		color="black"
+		:label="label"
 		:rules="rules"
 		:on-icon="checkIcon"
 		:off-icon="checkIcon"
 		class="p2-checkbox mt-4"
-		:label="label"
+		color="black"
 	/>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
 	import { mdiCheck } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -43,7 +44,7 @@
 	export default class Checkbox extends Props {
 		checkIcon = mdiCheck;
 
-		get computedCheck() {
+		get computedCheck(): boolean {
 			return this.check;
 		}
 
@@ -52,7 +53,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
