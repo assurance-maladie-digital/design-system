@@ -25,7 +25,7 @@
 
 				<ul
 					v-if="items.length"
-					class="vd-data-list-field pl-0"
+					class="vd-data-list-field pl-0 d-flex"
 					:class="listClass"
 					:style="{ minWidth }"
 				>
@@ -142,8 +142,8 @@
 	export default class DataList extends MixinsDeclaration {
 		get listClass(): IndexedObject<boolean> {
 			return {
-				'vd-column': !this.row || this.flex,
-				'vd-flex': this.flex
+				'flex-column': !this.row && !this.flex,
+				'flex-wrap': this.flex && !this.row
 			};
 		}
 
@@ -161,23 +161,8 @@
 	.vd-data-list-field {
 		list-style: none;
 
-		.vd-data-list-row {
-			display: flex;
-			flex-wrap: wrap;
-		}
-
-		// Column
-		&.vd-column .vd-data-list-row {
-			flex-direction: column;
-		}
-
-		&.vd-flex {
-			display: flex;
-			flex-wrap: wrap;
-		}
-
 		// Do not apply on column mode
-		&:not(.vd-column) {
+		&:not(.flex-column) {
 			// Default separator
 			// .vd-key::after {
 			// 	content: " :";

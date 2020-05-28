@@ -9,7 +9,7 @@
 
 		<ul
 			:class="listClass"
-			class="vd-data-list-loading-items pl-0"
+			class="vd-data-list-loading-items pl-0 d-flex"
 		>
 			<li
 				v-for="index in itemsNumber"
@@ -72,8 +72,8 @@
 	export default class DataListLoading extends MixinsDeclaration {
 		get listClass(): IndexedObject<boolean> {
 			return {
-				'vd-column': !this.row || this.flex,
-				'vd-flex': this.flex
+				'flex-column': !this.row && !this.flex,
+				'flex-wrap': this.flex && !this.row
 			};
 		}
 	}
@@ -83,21 +83,6 @@
 	.vd-data-list-loading {
 		.vd-data-list-loading-items {
 			list-style: none;
-
-			.vd-data-list-loading-item {
-				display: flex;
-				flex-wrap: wrap;
-			}
-
-			// Column
-			&.vd-column .vd-data-list-loading-item {
-				flex-direction: column;
-			}
-
-			&.vd-flex {
-				display: flex;
-				flex-wrap: wrap;
-			}
 		}
 
 		&:not(:last-child) {
