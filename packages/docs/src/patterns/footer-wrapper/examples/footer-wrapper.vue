@@ -9,7 +9,7 @@
 		</FooterBtn>
 
 		<FooterBtn inert>
-			Version x.y.z
+			Version 1.0.0
 		</FooterBtn>
 	</FooterWrapper>
 </template>

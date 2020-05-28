@@ -32,7 +32,7 @@ Le pattern `FooterWrapper` est utilisé avec le composant `FooterBtn` pour affic
           name: 'inert',
           type: 'boolean',
           defaultValue: 'false',
-          description: 'Désactive le bouton'
+          description: 'Rend le bouton inactif.'
         }
       ],
       slots: [
@@ -58,7 +58,7 @@ Vous pouvez rendre un bouton inactif grâce à la propriété `inert`. Celui-ci 
 
 ### Utilisation du slot
 
-Vous pouvez utiliser le slot `default` pour ajouter du contenu.
+Vous pouvez utiliser le slot par défaut pour ajouter du contenu.
 
 <DocExample
   eager
