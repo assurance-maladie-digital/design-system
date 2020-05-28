@@ -1,7 +1,15 @@
 <template>
 	<FooterWrapper>
+		<FooterBtn>
+			CGU
+		</FooterBtn>
+
 		<FooterBtn inert>
-			Mentions légales
+			Version 1
+		</FooterBtn>
+
+		<FooterBtn inert>
+			28/05/2020
 		</FooterBtn>
 	</FooterWrapper>
 </template>

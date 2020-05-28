@@ -3,6 +3,14 @@
 		<FooterBtn>
 			Mentions légales
 		</FooterBtn>
+
+		<FooterBtn>
+			CGU
+		</FooterBtn>
+
+		<FooterBtn inert>
+			Version x.y.z
+		</FooterBtn>
 	</FooterWrapper>
 </template>
 

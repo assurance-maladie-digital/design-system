@@ -3,7 +3,7 @@
 		<VRow>
 			<VSpacer />
 
-			<p class="mb-0>
+			<p class="mb-0">
 				Version 1
 			</p>
 		</VRow>
@@ -23,3 +23,4 @@
 	})
 	export default class FooterSlot extends Vue {}
 </script>
+
