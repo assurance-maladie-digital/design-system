@@ -44,9 +44,9 @@
 
 				<DebounceEx />
 
-				<FileListEx />
-
 				<FileUploadEx />
+
+				<FooterEx />
 
 				<LangBtnEx />
 
@@ -59,6 +59,8 @@
 				<SubHeaderEx />
 
 				<UploadWorkflowEx />
+
+				<DialogBoxEx />
 			</PageCard>
 		</VContent>
 
@@ -94,7 +96,7 @@
 
 		localStorageUtility = new LocalStorageUtility(LOCAL_STORAGE_CONTROL.version);
 
-		updateTheme() {
+		updateTheme(): void {
 			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
 
 			// Save the preference in localStorage
@@ -108,11 +110,11 @@
 			this.$vuetify.theme.dark = darkTheme;
 		}
 
-		get dark() {
+		get dark(): boolean {
 			return this.$vuetify.theme.dark;
 		}
 
-		get pageCardClass() {
+		get pageCardClass(): string {
 			return this.dark ? ' grey darken-4' : ' white';
 		}
 	}

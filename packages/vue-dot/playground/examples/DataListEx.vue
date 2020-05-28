@@ -91,7 +91,7 @@
 		 *
 		 * @param {number} itemIndex The index of the item to update
 		 */
-		setItemValue(itemIndex: number) {
+		setItemValue(itemIndex: number): void {
 			this.$set(this.data[itemIndex], 'value', this.actionValue);
 		}
 	}

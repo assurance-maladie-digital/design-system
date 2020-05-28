@@ -2,7 +2,7 @@ import { copyToClipboard } from '../';
 
 interface TSelection {
 	rangeCount?: number;
-	getRangeAt?: (index: number) => string;
+	getRangeAt?: (index: number) => string | null;
 	removeAllRanges?: () => null;
 	addRange?: () => null;
 }
@@ -14,10 +14,10 @@ interface TDocument {
 }
 
 // Override default type
-declare var document: TDocument;
+declare let document: TDocument;
 
 /** Mock functions on document */
-function mockDocument(options: object) {
+function mockDocument(options: TSelection) {
 	document.getSelection = () => {
 		return options;
 	};

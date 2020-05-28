@@ -5,13 +5,6 @@
 		<CopyBtn
 			text-to-copy="Test"
 			label="Copy to clipboard"
-			:vuetify-options="{
-				tooltip: {
-					right: false,
-					bottom: true,
-					color: 'accent'
-				}
-			}"
 		>
 			<template #icon>
 				<VIcon :color="btnColor">
@@ -36,7 +29,7 @@
 	export default class CopyBtnEx extends Vue {
 		plusIcon = mdiPlusCircle;
 
-		get btnColor() {
+		get btnColor(): string {
 			return this.$vuetify.theme.dark ? 'grey' : '';
 		}
 	}

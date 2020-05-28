@@ -30,6 +30,10 @@ h6 {
 	h2 + h3 {
 		margin-top: 0;
 	}
+
+	ul {
+		margin-bottom: 16px;
+	}
 }
 
 // .content h4 {
@@ -65,7 +69,8 @@ h1 .header-anchor {
 }
 
 .v-application {
-	p code {
+	p code,
+	li code {
 		box-shadow: none;
 		color: #c0341d !important;
 		background-color: #fbe5e1 !important;

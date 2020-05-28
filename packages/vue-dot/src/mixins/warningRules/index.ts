@@ -31,7 +31,7 @@ export class WarningRules extends MixinsDeclaration {
 	successMessages: string[] = [];
 
 	/** Custom validation for warningRules */
-	validate(value: string) {
+	validate(value: string): void {
 		// Reset messages
 		this.successMessages = [];
 

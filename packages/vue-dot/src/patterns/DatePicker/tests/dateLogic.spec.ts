@@ -1,7 +1,7 @@
 import Vue, { VueConstructor } from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { Refs } from '../../../types';
+import { Refs, IndexedObject } from '../../../types';
 
 import { customizable, Options } from '../../../mixins/customizable';
 
@@ -9,9 +9,7 @@ import { DateLogic } from '../mixins/dateLogic';
 
 interface VueInstance extends VueConstructor {
 	options: {
-		components: {
-			[key: string]: VueConstructor[];
-		};
+		components: IndexedObject<VueConstructor[]>;
 	};
 }
 
@@ -67,7 +65,7 @@ function createTextField(disableHasFocused: boolean) {
 }
 
 /** Create the wrapper */
-function createWrapper(propsData?: object, mixinData = {}, disableHasFocused: boolean = false) {
+function createWrapper(propsData?: Record<string, unknown>, mixinData = {}, disableHasFocused = false) {
 	const component = Vue.component('test', {
 		mixins: [
 			DateLogic,

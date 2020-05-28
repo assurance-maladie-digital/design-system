@@ -8,6 +8,10 @@ const tokens = {
 		// Brand
 		pro: '#ef6c00'
 	},
+	'dialog-width': {
+		'dialog-small': '560px',
+		'dialog-medium': '800px'
+	},
 	'page-width': '1440px',
 	// json-to-scss config
 	'_jsonToScss': {

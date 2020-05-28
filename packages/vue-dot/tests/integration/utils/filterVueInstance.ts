@@ -7,7 +7,7 @@ import { VueInstance } from './types';
  * @param {string[]} defaults The elements to filter out
  * @param {string} property The property to filter (eg. components or directives)
  */
-export function filterVueInstance(instance: VueInstance, defaults: string[], property: string) {
+export function filterVueInstance(instance: VueInstance, defaults: string[], property: string): string[] {
 	const instanceElements = Object.keys(instance.options[property]);
 
 	// Remove default elements

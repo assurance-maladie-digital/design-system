@@ -17,12 +17,12 @@
 	</div>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				textToCopy: 'Exemple'
-			};
-		}
-	};
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	@Component
+	export default class CopyBtnEx extends Vue {
+		textToCopy = 'Exemple';
+	}
 </script>
