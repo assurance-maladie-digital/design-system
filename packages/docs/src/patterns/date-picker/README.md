@@ -22,64 +22,64 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
 		DatePicker: {
 			props: [
 				{
-					name: 'noCalendar',
-					defaultValue: 'false',
+					name: 'no-calendar',
 					type: 'boolean',
+					defaultValue: 'false',
 					description: 'Désactive le calendrier.'
 				},
 				{
-					name: 'noPrependIcon',
-					defaultValue: 'false',
+					name: 'no-prepend-icon',
 					type: 'boolean',
+					defaultValue: 'false',
 					description: 'Désactive l\'icône de préfixe'
 				},
 				{
-					name: 'appendIcon',
-					defaultValue: 'false',
+					name: 'append-icon',
 					type: 'boolean',
+					defaultValue: 'false',
 					description: 'Utilise l\'icône d\'ajout au lieu de pré\-ajouter.'
 				},
 				{
-					name: 'textFieldActivator',
-					defaultValue: 'false',
+					name: 'text-field-activator',
 					type: 'boolean',
+					defaultValue: 'false',
 					description: 'Ouvre le menu du calendrier lorsque le champ de texte est cliqué.'
 				},
 				{
-					name: 'textFieldClass',
-					defaultValue: 'undefined',
+					name: 'text-field-class',
 					type: 'string | string[]',
-					description: 'Classes pour le champ VTextField'
-				},
-				{
-					name: 'startDate',
 					defaultValue: 'undefined',
-					type: 'string',
 					description: 'Classes pour le champ VTextField'
 				},
 				{
-					name: 'showWeekEnds',
-					defaultValue: 'false',
+					name: 'start-date',
+					type: 'string',
+					defaultValue: 'undefined',
+					description: 'Classes pour le champ VTextField'
+				},
+				{
+					name: 'show-week-ends',
 					type: 'boolean',
+					defaultValue: 'false',
 					description: 'Affiche les week-ends dans le calendrier'
 				 },
 				{
-					name: 'warningRules',
+					name: 'warning-rules',
 					type: 'ValidationRule[]',
 					defaultValue: '[]',
 					description: 'Un tableau de règles (même syntaxe que celles de Vuetify)'
 				},
 				{
-					name: 'dateFormat',
+					name: 'date-format',
 					type: 'string',
 					defaultValue: 'DD/MM/YYYY',
-					description: 'Le format de la date à l\'intérieur du champ de texte'
+					description: 'Le format de date pour l\'utilisateur'
 				},
 				{
-					name: 'dateFormatReturn',
+					name: 'date-format-return',
 					type: 'string',
 					defaultValue: 'YYYY-MM-DD',
-					description: 'Le format utilisé dans le v-modèle pour l\'utilisateur'
+					description: 'Le format de date pour le traitement'
 				},
 				{
 					name: 'value',
@@ -100,7 +100,7 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
 					description: 'Active le mode date de naissance.'
 				},
 				{
-					name: 'pickerDate',
+					name: 'picker-date',
 					type: 'string',
 					defaultValue: 'undefined',
 					description: 'Propriété de Vuetify DatePicker qui a besoin du modificateur .sync.'
@@ -121,20 +121,24 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
 			slots: [
 				{
 					name: 'prepend',
-					description: 'Ajoute un élément avant le contenu de l\'entrée'
+					description: 'Ajoute un élément avant le champ'
 				},
 				{
 					name: 'append',
-					description: 'Ajoute un élément après le contenu de l\'entrée.'
+					description: 'Ajoute un élément après le champ.'
 				}
 			]
 		}
 	}"
 />
 
+## Playground
+
+<DocExample file="patterns/date-picker/examples/date-picker-playground" />
+
 ## Exemples
 
-### Date de naissance avec utilisation des slots pour modifier l'icon
+### Date de naissance
 
 <DocExample file="patterns/date-picker/examples/date-picker-birthdate" />
 
@@ -145,3 +149,51 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
 ### Période
 
 <DocExample file="patterns/date-picker/examples/date-picker-range" />
+
+### Format
+
+Il est possible de modifier le format côté utilisateur avec l'attribut `date-format` et le format de retour pour le traitement avec `date-format-return`
+
+<DocInfo>
+
+Il est conseiller d'appliquer un mask avec l'attribut `mask` qui doit correspondre à l'attribut `date-format` avec des `#` pour chaque chiffre affin de restreindre l'écriture de l'utilisateur. Voir code exemple.
+
+</DocInfo>
+
+<DocExample file="patterns/date-picker/examples/date-picker-format" />
+
+### Règles de validation
+
+Il est possible de récupérer l'état de validation du champ avec la propriété `error` qui doit être synchroniser avec `.sync`,
+ex: `:error.sync="error"`
+
+Il est possible d'avoir 2 types de règles de validations :
+- `rules` : règles qui invalide le champ en erreur avec la couleur du thème 'error'
+- `warningRules` : règles qui conseille de changer la valeur avec la couleur du thème 'warning'
+
+Il existe les règles de validations suivantes dans vue-dot que vous pouvez ajouter à ces 2 types :
+- `required`
+- `isDateValid`
+- `notAfterToday`
+- `notBeforeToday`
+
+<DocInfo>
+
+Vous pouvez crée vos règles de validations. Ce sont des fonctions qui renvoient `true` quand la valeur est correct sinon une chaine de caractère ou `false`
+ex: `(value) => Boolean(value) || 'la date est invalide'`
+
+</DocInfo>
+
+<DocExample file="patterns/date-picker/examples/date-picker-rules" />
+
+### Personnalisation des composants
+
+Vous pouvez personnaliser les composants Vuetify contenus dans `DatePicker` en utilisant la propriété `vuetify-options` avec les propriétés suivantes :
+
+- `textField` : `VTextField`
+- `datePicker` : `VDatePicker`
+- `icon` : `VIcon`
+- `btn` : `VBtn`
+- `menu` : `VMenu`
+
+<DocExample file="patterns/date-picker/examples/date-picker-options" />

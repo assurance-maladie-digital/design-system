@@ -19,16 +19,17 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
 	import { isDateValid } from '@cnamts/vue-dot/src/rules/isDateValid';
-	export default {
-		data() {
-			return {
-				date: '',
-				validRules: [
-					isDateValid
-				]
-			};
-		}
-	};
+
+	@Component
+	export default class DatePickerEx extends Vue {
+		date = '';
+		validRules = [
+			isDateValid
+		];
+	}
 </script>
