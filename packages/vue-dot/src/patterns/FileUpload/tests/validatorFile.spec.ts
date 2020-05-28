@@ -12,10 +12,10 @@ const component = Vue.component('test', {
 	mixins: [
 		FileValidator
 	],
-	template: '<div />'
+	template: '<input ref="vdInputEl" type="file">'
 });
 
-// Tests
+/* eslint-disable @typescript-eslint/no-explicit-any */
 describe('ValidatorFile', () => {
 	it('check file accepted  ', () => {
 		const wrapper = mount(component, {
@@ -44,13 +44,19 @@ describe('ValidatorFile', () => {
 
 		expect(wrapper.vm.validateFile(file)).toBe(true);
 
+        // check the size limit of file
 		file = { size: 5000 * 1024, type: 'image/png', name: 'avatar.png' } as File;
 
 		expect(wrapper.vm.validateFile(file)).toBe(false);
 
+		expect(wrapper.emitted().error).toBeTruthy();
+
+		// check if the format it's not correct
 		file = { size: 1000, type: 'image/csv', name: 'avatar.csv' } as File;
 
 		expect(wrapper.vm.validateFile(file)).toBe(false);
+
+		expect(wrapper.emitted().error).toBeTruthy();
 	});
 
 	it('check if too many file ', () => {
@@ -58,15 +64,31 @@ describe('ValidatorFile', () => {
 
 		wrapper.setProps({ multiple: true });
 
-		let  file = {} as FileList | any;
+		const fileList = {} as FileList;
 
-		expect(wrapper.vm.ifTooManyFiles(file)).toBe(false);
-
-		//we can stub out the entire event and file
-		file = [{ size: 1000, type: 'image/png', name: 'avatar.png' },{ size: 1000, type: 'image/png', name: 'avatar.png' }];
+		expect(wrapper.vm.ifTooManyFiles(fileList)).toBe(false);
 
 		wrapper.setProps({ multiple: false });
 
-		expect(wrapper.vm.ifTooManyFiles(file)).toBe(true);
+		const event = {
+			target: {
+				files: [
+					{
+						name: 'image.png',
+						size: 50000,
+						type: 'image/png'
+					},
+					{
+						name: 'image.png',
+						size: 50000,
+						type: 'image/png'
+					}
+				]
+			}
+		};
+
+		const files = event.target.files as any;
+
+		expect(wrapper.vm.ifTooManyFiles(files)).toBe(true);
 	});
 });

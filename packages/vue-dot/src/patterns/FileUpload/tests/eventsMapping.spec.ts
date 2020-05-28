@@ -26,7 +26,7 @@ const component = Vue.component('file-upload', {
 	template: '<input ref="vdInputEl" type="file">'
 });
 
-// Tests
+/* eslint-disable @typescript-eslint/no-explicit-any */
 describe('eventMapping', () => {
 	it('check retry event ', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
@@ -119,7 +119,7 @@ describe('eventMapping', () => {
 
 		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
 
-		const event = { target: { files: [file] } } as Event | any;
+		const event = { target: { files: [file] } } as any;
 
 		wrapper.vm.inputValueChanged(event);
 
@@ -138,7 +138,7 @@ describe('eventMapping', () => {
 			}
 		];
 
-		const event = { target: { files: [file, file] } } as Event | any;
+		const event = { target: { files: [file, file] } } as any;
 
 		wrapper.vm.inputValueChanged(event);
 
@@ -164,7 +164,7 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file]
 			}
-		} as DragEvent | any;
+		} as any;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -180,7 +180,7 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file, file]
 			}
-		} as DragEvent | any;
+		} as any;
 
 		wrapper.setProps({ multiple: false });
 
@@ -198,7 +198,7 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file]
 			}
-		} as DragEvent | any;
+		} as any;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -215,7 +215,7 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as DragEvent | any;
+		};
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -232,7 +232,7 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as DragEvent | any;
+		};
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -249,7 +249,7 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as DragEvent | any;
+		};
 
 		wrapper.vm.dropHandler(fileDropEvent);
 

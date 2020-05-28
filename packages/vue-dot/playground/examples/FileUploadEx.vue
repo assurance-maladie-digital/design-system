@@ -144,10 +144,6 @@
 		setError(error: Error): void {
 			this.error = error;
 		}
-
-		updated(){
-			console.log(this.file);
-		}
 	}
 </script>
 
