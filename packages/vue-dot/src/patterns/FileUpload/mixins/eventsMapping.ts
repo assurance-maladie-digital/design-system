@@ -1,11 +1,11 @@
 import Component, { mixins } from 'vue-class-component';
 
-import { ValidatorFile } from './validatorFile';
+import { FileValidator } from './fileValidator';
 
 import { Refs } from '../../../types';
 import { HTMLInputEvent } from '../types';
 
-const MixinsDeclaration = mixins(ValidatorFile);
+const MixinsDeclaration = mixins(FileValidator);
 
 @Component
 export class EventsMapping extends MixinsDeclaration {

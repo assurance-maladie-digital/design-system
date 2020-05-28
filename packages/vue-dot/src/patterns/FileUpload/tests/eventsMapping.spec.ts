@@ -14,9 +14,10 @@ interface TestComponent extends Vue {
 	inputValueChanged: (event: HTMLInputEvent) => void;
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
 	dropHandler: (e: DragEvent) => void;
+	dragover: boolean;
+	error: boolean;
+	files: File;
 }
-/* eslint-disable @typescript-eslint/no-explicit-any */
-type EventType = any;
 
 const component = Vue.component('file-upload', {
 	mixins: [
@@ -30,18 +31,26 @@ describe('eventMapping', () => {
 	it('check retry event ', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		wrapper.vm.$refs.vdInputEl.click();
-
 		wrapper.vm.retry();
+
+		expect(wrapper.vm.$refs.vdInputEl).toBeTruthy();
 	});
 
 	it('check self reset function ', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.selfReset()).toBe(undefined);
+		wrapper.setData({ dragover: true });
+
+		wrapper.vm.selfReset();
+
+		expect(wrapper.vm.dragover).toBe(false);
+
+		expect(wrapper.vm.files).toStrictEqual([]);
+
+		expect(wrapper.vm.error).toBe(false);
 	});
 
-	it('check event emitted with no multiple', () => {
+	it('check event emitted with no multiple', async() => {
 		const wrapper = mount(component, {
 			data() {
 				return {
@@ -53,6 +62,8 @@ describe('eventMapping', () => {
 		wrapper.setProps({ multiple: false });
 
 		wrapper.vm.emitChangeEvent();
+
+		expect(wrapper.emitted().change).toBeTruthy();
 	});
 
 	it('check retry event with multiple', async() => {
@@ -67,6 +78,8 @@ describe('eventMapping', () => {
 		wrapper.setProps({ multiple: true });
 
 		wrapper.vm.emitChangeEvent();
+
+		expect(wrapper.emitted().change).toBeTruthy();
 	});
 
 	it('check retry event with error', async() => {
@@ -79,14 +92,26 @@ describe('eventMapping', () => {
 		}) as Wrapper<TestComponent>;
 
 		wrapper.vm.emitChangeEvent();
+
+		expect(wrapper.vm.$refs.vdInputEl.value).toBe('');
+
+		expect(wrapper.emitted().change).toBeFalsy();
 	});
 
 	it('check input change with target from event ', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		const event = {} as EventType;
+		const event = {} as HTMLInputEvent;
 
-		wrapper.vm.inputValueChanged(event);
+		expect(wrapper.vm.inputValueChanged(event)).toBeUndefined();
+	});
+
+	it('check input change if no files selected ', async() => {
+		const wrapper = mount(component) as Wrapper<TestComponent>;
+
+		const event = { target: {} } as HTMLInputEvent;
+
+		expect(wrapper.vm.inputValueChanged(event)).toBeUndefined();
 	});
 
 	it('check input change ', async() => {
@@ -94,27 +119,30 @@ describe('eventMapping', () => {
 
 		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
 
-		const event = { target: { files: [file] } } as EventType;
+		const event = { target: { files: [file] } } as Event | any;
 
 		wrapper.vm.inputValueChanged(event);
-	});
 
-	it('check input change if no files selected ', () => {
-		const wrapper = mount(component) as Wrapper<TestComponent>;
+		expect(wrapper.emitted().change).toBeTruthy();
 
-		const event = { target: {} } as HTMLInputEvent;
-
-		wrapper.vm.inputValueChanged(event);
 	});
 
 	it('check input change if multiple files selected ', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
+		const file = [
+			{
+				size: 1000,
+				type: 'image/png',
+				name: 'avatar.png',
+				lastModified: 1586592487740
+			}
+		];
 
-		const file = [{ size: 1000, type: 'image/png', name: 'avatar.png' }];
-
-		const event = { target: { files: [file, file] } } as EventType;
+		const event = { target: { files: [file, file] } } as Event | any;
 
 		wrapper.vm.inputValueChanged(event);
+
+		expect(wrapper.emitted().change).toBeFalsy();
 	});
 
 	it('check dropHandler event if no data', async() => {
@@ -123,6 +151,8 @@ describe('eventMapping', () => {
 		const fileDropEvent = {} as DragEvent;
 
 		wrapper.vm.dropHandler(fileDropEvent);
+
+		expect(wrapper.emitted().change).toBeFalsy();
 	});
 
 	it('check dropHandler with multi mode', async() => {
@@ -134,9 +164,11 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file]
 			}
-		} as EventType;
+		} as DragEvent | any;
 
 		wrapper.vm.dropHandler(fileDropEvent);
+
+		expect(wrapper.emitted().change).toBeTruthy();
 	});
 
 	it('check dropHandler  with single mode', async() => {
@@ -148,11 +180,13 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file, file]
 			}
-		} as EventType;
+		} as DragEvent | any;
 
 		wrapper.setProps({ multiple: false });
 
 		wrapper.vm.dropHandler(fileDropEvent);
+
+		expect(wrapper.emitted().change).toBeFalsy();
 	});
 
 	it('check dropHandler with conditions data item', async() => {
@@ -164,9 +198,11 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file]
 			}
-		} as EventType;
+		} as DragEvent | any;
 
 		wrapper.vm.dropHandler(fileDropEvent);
+
+		expect(wrapper.emitted().change).toBeTruthy();
 
 		fileDropEvent = {
 			dataTransfer: {
@@ -179,9 +215,11 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as EventType;
+		} as DragEvent | any;
 
 		wrapper.vm.dropHandler(fileDropEvent);
+
+		expect(wrapper.emitted().change).toBeTruthy();
 
 		fileDropEvent = {
 			dataTransfer: {
@@ -194,9 +232,11 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as EventType;
+		} as DragEvent | any;
 
 		wrapper.vm.dropHandler(fileDropEvent);
+
+		expect(wrapper.emitted().change).toBeTruthy();
 
 		fileDropEvent = {
 			dataTransfer: {
@@ -209,8 +249,10 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		} as EventType;
+		} as DragEvent | any;
 
 		wrapper.vm.dropHandler(fileDropEvent);
+
+		expect(wrapper.emitted().change).toBeTruthy();
 	});
 });

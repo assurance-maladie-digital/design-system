@@ -6,7 +6,7 @@ import { locales } from '../locales';
 import { getFileExtension } from '../../../functions/getFileExtension';
 
 import { ErrorEvent } from '../types';
-import { ErrorCodes } from '../enum/errorCodes';
+import { ErrorCodes } from '../errorCodes';
 
 const Props = Vue.extend({
 	props: {
@@ -52,7 +52,7 @@ const Props = Vue.extend({
 const MixinsDeclaration = mixins(Props);
 
 @Component
-export class ValidatorFile extends MixinsDeclaration {
+export class FileValidator extends MixinsDeclaration {
 	/** The list of accepted files */
 	files: File[] = [];
 
@@ -106,5 +106,21 @@ export class ValidatorFile extends MixinsDeclaration {
 		}
 
 		return false;
+	}
+
+	/** compute accept file */
+	get computedAccept(): string {
+		if (this.accept) {
+			return this.accept;
+		}
+		const accept: string[] = [];
+
+		// Calc the accept="" string from the allowed extensions
+		this.allowedExtensions.forEach((type: string) => {
+			accept.push(`.${type}`);
+		});
+
+		// The result, eg. ".pdf,.jpeg,.jpg,.png"
+		return accept.join(',');
 	}
 }

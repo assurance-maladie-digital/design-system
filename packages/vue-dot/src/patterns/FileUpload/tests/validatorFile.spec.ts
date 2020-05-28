@@ -1,24 +1,36 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
-import { ValidatorFile } from '../mixins/validatorFile';
+import { FileValidator } from '../mixins/fileValidator';
 
 interface TestComponent extends Vue {
 	validateFile: (file: File) => boolean;
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
+	computedAccept: () => string;
 }
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-type EventType = any;
 
 const component = Vue.component('test', {
 	mixins: [
-		ValidatorFile
+		FileValidator
 	],
 	template: '<div />'
 });
 
 // Tests
 describe('ValidatorFile', () => {
+	it('check file accepted  ', () => {
+		const wrapper = mount(component, {
+			propsData: {
+				allowedExtensions: ['pdf'],
+				accept: undefined
+			}
+		}) as Wrapper<TestComponent>;
+
+		expect(wrapper.vm.computedAccept).toBe('.pdf');
+
+		wrapper.setProps({ accept: 'file' });
+
+		expect(wrapper.vm.computedAccept).toBe('file');
+	});
 
 	it('check validation of file', () => {
 		const wrapper = mount(component, {
@@ -46,7 +58,7 @@ describe('ValidatorFile', () => {
 
 		wrapper.setProps({ multiple: true });
 
-		let  file = {} as EventType;
+		let  file = {} as FileList | any;
 
 		expect(wrapper.vm.ifTooManyFiles(file)).toBe(false);
 

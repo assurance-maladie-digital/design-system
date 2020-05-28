@@ -96,7 +96,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
@@ -120,7 +120,7 @@
 			 * mode the v-model isn't an array)
 			 */
 			value: {
-				type: [File, Array],
+				type: [File, Array] as PropType<File | File[]>,
 				default: null
 			},
 			/** Disable v-ripple on the component */
@@ -180,22 +180,6 @@
 		/** Computed extensions for display */
 		get extensions(): string {
 			return this.allowedExtensions.join(', ').toUpperCase();
-		}
-
-		/** compute accept file */
-		get computedAccept(): string {
-			if (this.accept) {
-				return this.accept;
-			}
-			const accept: string[] = [];
-
-			// Calc the accept="" string from the allowed extensions
-			this.allowedExtensions.forEach((type: string) => {
-				accept.push(`.${type}`);
-			});
-
-			// The result, eg. ".pdf,.jpeg,.jpg,.png"
-			return accept.join(',');
 		}
 	}
 </script>

@@ -29,24 +29,12 @@
 			</VBtn>
 		</VLayout>
 
-		<div
+		<p
 			v-else-if="success && file"
 			class="mb-0 mt-1 success--text"
 		>
-			<div v-if="file.length>0">
-				<ul>
-					<li
-						v-for="(file,index) in file"
-						:key="index"
-					>
-						{{ file.name }}
-					</li>
-				</ul>
-			</div>
-			<div v-else>
-				<p>{{ file.name }}</p>
-			</div>
-		</div>
+			{{ file.name }}
+		</p>
 
 		<p
 			v-else
@@ -120,6 +108,7 @@
 	import { Refs } from '../../src/types';
 
 	import { mdiCloudUpload } from '@mdi/js';
+	import { ErrorCodesType } from '../../src/patterns/FileUpload/types';
 
 	interface Error {
 		code: string;
@@ -141,7 +130,7 @@
 
 		file: File | null = null;
 
-		errorsText = {
+		errorsText: ErrorCodesType = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
 			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
@@ -154,6 +143,10 @@
 
 		setError(error: Error): void {
 			this.error = error;
+		}
+
+		updated(){
+			console.log(this.file);
 		}
 	}
 </script>
