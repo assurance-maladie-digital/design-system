@@ -22,7 +22,7 @@
 		"dayjs": "1.8.28",
 		"deepmerge": "4.2.2",
 		"eslint": "6.8.0",
-		"eslint-plugin-jsdoc": "25.4.3",
+		"eslint-plugin-jsdoc": "26.0.0",
 		"eslint-plugin-vue": "6.2.2",
 		"fs-extra": "9.0.0",
 		"jest": "25.5.4",
