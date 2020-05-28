@@ -16,13 +16,29 @@ Le pattern `FooterWrapper` est utilisé avec le composant `FooterBtn` pour affic
 ## API
 
 <DocApi
-  :value="['FooterWrapper']"
+  :value="['FooterWrapper', 'FooterBtn']"
   :api="{
     FooterWrapper: {
       slots: [
         {
           name: 'default',
           description: 'Slot pour ajouter du contenu.'
+        }
+      ]
+    },
+    FooterBtn: {
+      props: [
+        {
+          name: 'inert',
+          type: 'boolean',
+          defaultValue: 'false',
+          description: 'Désactive le bouton'
+        }
+      ],
+      slots: [
+        {
+          name: 'default',
+          description: 'Slot pour le texte.'
         }
       ]
     }
