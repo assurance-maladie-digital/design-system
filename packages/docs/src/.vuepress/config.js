@@ -45,6 +45,16 @@ module.exports = {
 						to: '/elements/page-card'
 					}
 				]
+			},
+			{
+				title: 'Patterns',
+				group: 'patterns',
+				items: [
+					{
+						title: 'PaginatedTable',
+						to: '/patterns/paginated-table'
+					}
+				]
 			}
 		]
 	},
