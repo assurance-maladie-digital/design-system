@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`registerAllComponents should register all components 1`] = `
+Array [
+  "Checkbox",
+  "Error",
+  "Information",
+  "P2DatePicker",
+  "Pagination",
+  "Panel",
+  "Warning",
+]
+`;

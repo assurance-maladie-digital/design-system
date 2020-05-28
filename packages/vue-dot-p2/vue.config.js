@@ -46,6 +46,9 @@ const LIB_MODE_CONFIG = {
 					root: 'Vue'
 				}
 			},
+			/^vuetify/,
+			/^dayjs/,
+			/^@mdi\/js/,
 			/^@cnamts\/vue-dot/
 		]
 	},
