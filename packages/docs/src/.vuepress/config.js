@@ -53,6 +53,10 @@ module.exports = {
 					{
 						title: 'DatePicker',
 						to: '/patterns/date-picker'
+					},
+					{
+						title: 'FooterWrapper',
+						to: '/patterns/footer-wrapper'
 					}
 				]
 			}
