@@ -3,8 +3,7 @@
 :::
 
 ::: slot description
-L'élément `FooterWrapper` est utilisé pour afficher un bas de page générique avec du contenu personnalisé dans le slot `default`.
-Un bouton `FooterBtn` est prévu spécifiquement. 
+Le pattern `FooterWrapper` est utilisé avec le composant `FooterBtn` pour afficher un pied de page.
 :::
 
 ## Utilisation
@@ -23,18 +22,18 @@ Un bouton `FooterBtn` est prévu spécifiquement.
       slots: [
         {
           name: 'default',
-          description: 'Slot pour ajouter du contenu et notament des boutons spécifique `FooterBtn`.'
+          description: 'Slot pour ajouter du contenu.'
         }
       ]
     }
   }"
 />
 
-## Exemple
+## Exemples
 
 ### Bouton inert
 
-Il est possible de désactiver chaques boutons `FooterBtn` avec leur prop `inert`
+Vous pouvez rendre un bouton inactif grâce à la propriété `inert`. Celui-ci sera alors désactivé et rendu en tant que `div`.
 
 <DocExample
   eager
@@ -43,7 +42,7 @@ Il est possible de désactiver chaques boutons `FooterBtn` avec leur prop `inert
 
 ### Utilisation du slot
 
-Vous pouvez utiliser le slot `default` pour personnaliser le contenu.
+Vous pouvez utiliser le slot `default` pour ajouter du contenu.
 
 <DocExample
   eager

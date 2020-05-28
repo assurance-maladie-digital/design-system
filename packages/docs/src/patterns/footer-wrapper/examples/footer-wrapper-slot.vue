@@ -2,8 +2,9 @@
 	<FooterWrapper>
 		<VRow>
 			<VSpacer />
-			<p>
-				version 1
+
+			<p class="mb-0>
+				Version 1
 			</p>
 		</VRow>
 	</FooterWrapper>
