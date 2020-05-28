@@ -98,7 +98,7 @@
 	import { config } from './config';
 	import { FileItem, IconInfo } from './types';
 
-	import { customizable } from '../../mixins/customizable';
+	import { customizable } from '../../../mixins/customizable';
 
 	import {
 		mdiRefresh,

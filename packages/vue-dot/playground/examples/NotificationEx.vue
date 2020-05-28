@@ -15,6 +15,8 @@
 
 	import { mapActions } from 'vuex';
 
+	import { NotificationObj } from '../../src/modules/notification';
+
 	import {
 		mdiCheck,
 		mdiAlertCircle,
@@ -31,7 +33,7 @@
 	})
 	export default class NotificationEx extends Vue {
 		// Vuex bindings type declaration
-		notify!: (obj: object) => void;
+		notify!: (obj: NotificationObj) => void;
 		rmNotif!: () => void;
 
 		notifications = [
@@ -57,7 +59,7 @@
 			}
 		];
 
-		testNotify() {
+		testNotify(): void {
 			this.rmNotif();
 
 			const randomIndex = Math.floor(Math.random() * this.notifications.length);
