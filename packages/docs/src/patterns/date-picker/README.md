@@ -160,6 +160,12 @@ Il est conseiller d'appliquer un mask avec l'attribut `mask` qui doit correspond
 
 </DocInfo>
 
+<DocInfo color="warning">
+
+Attention: Les formats mois et/ou année ne sont pas gérés, il faut pour cela essayer avec le composant vuetify `VDatePicker`
+
+</DocInfo>
+
 <DocExample file="patterns/date-picker/examples/date-picker-format" />
 
 ### Règles de validation
