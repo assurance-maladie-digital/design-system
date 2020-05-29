@@ -26,7 +26,7 @@ const component = Vue.component('file-upload', {
 	template: '<input ref="vdInputEl" type="file">'
 });
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// Test
 describe('eventMapping', () => {
 	it('check retry event ', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
@@ -119,7 +119,7 @@ describe('eventMapping', () => {
 
 		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
 
-		const event = { target: { files: [file] } } as any;
+		const event = { target: { files: [file] } } as unknown as HTMLInputEvent;
 
 		wrapper.vm.inputValueChanged(event);
 
@@ -138,7 +138,7 @@ describe('eventMapping', () => {
 			}
 		];
 
-		const event = { target: { files: [file, file] } } as any;
+		const event = { target: { files: [file, file] } } as unknown as HTMLInputEvent;
 
 		wrapper.vm.inputValueChanged(event);
 
@@ -164,7 +164,7 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file]
 			}
-		} as any;
+		} as unknown as DragEvent;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -180,7 +180,7 @@ describe('eventMapping', () => {
 			dataTransfer: {
 				files: [file, file]
 			}
-		} as any;
+		} as unknown as DragEvent;
 
 		wrapper.setProps({ multiple: false });
 
@@ -192,13 +192,13 @@ describe('eventMapping', () => {
 	it('check dropHandler with conditions data item', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
+		const file = { size: 1000, type: 'image/png', name: 'avatar.png' } as unknown as File;
 
 		let fileDropEvent = {
 			dataTransfer: {
 				files: [file]
 			}
-		} as any;
+		} as unknown as DragEvent;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -215,7 +215,7 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		};
+		}as unknown as DragEvent;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -232,7 +232,7 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		};
+		}as unknown as DragEvent;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 
@@ -249,7 +249,7 @@ describe('eventMapping', () => {
 					}
 				]
 			}
-		};
+		}as unknown as DragEvent;
 
 		wrapper.vm.dropHandler(fileDropEvent);
 

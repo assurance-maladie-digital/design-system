@@ -14,8 +14,7 @@ const component = Vue.component('test', {
 	],
 	template: '<input ref="vdInputEl" type="file">'
 });
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// Test
 describe('ValidatorFile', () => {
 	it('check file accepted  ', () => {
 		const wrapper = mount(component, {
@@ -87,7 +86,7 @@ describe('ValidatorFile', () => {
 			}
 		};
 
-		const files = event.target.files as any;
+		const files = event.target.files as unknown as FileList;
 
 		expect(wrapper.vm.ifTooManyFiles(files)).toBe(true);
 	});
