@@ -1,8 +1,6 @@
 import DatePicker from './DatePicker';
 import FileList from './FileList';
 import FileUpload from './FileUpload';
-import FormBuilder from './FormBuilder';
-import FormField from './FormField';
 import LangBtn from './LangBtn';
 import NotificationBar from './NotificationBar';
 import PageCard from './PageCard';
@@ -14,8 +12,6 @@ export const patterns = {
 	DatePicker,
 	FileList,
 	FileUpload,
-	FormBuilder,
-	FormField,
 	LangBtn,
 	NotificationBar,
 	PageCard,

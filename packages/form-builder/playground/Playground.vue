@@ -1,7 +1,5 @@
 <template>
 	<VApp>
-		<NotificationBar close-text="Close" />
-
 		<VAppBar
 			app
 			dark
@@ -10,7 +8,7 @@
 			class="vd-playground-app-bar px-4"
 		>
 			<h1 class="title">
-				VueDot
+				FormBuilder Playground
 			</h1>
 
 			<VSpacer />
@@ -27,41 +25,11 @@
 		</VAppBar>
 
 		<VContent>
-			<PageCard :card-class="pageCardClass">
-				<!-- Introduction -->
-				<h2 class="display-1 mb-12 font-weight-bold">
-					Playground
-				</h2>
+			<FormFieldEx />
 
-				<!-- Examples -->
-				<CopyBtnEx />
+			<FormBuilderEx />
 
-				<CustomIconEx />
-
-				<DataListEx />
-
-				<DatePickerEx />
-
-				<DebounceEx />
-
-				<FileListEx />
-
-				<FileUploadEx />
-
-				<FormFieldEx />
-
-				<LangBtnEx />
-
-				<NotificationEx />
-
-				<PaginatedTableEx />
-
-				<RulesEx />
-
-				<SubHeaderEx />
-
-				<UploadWorkflowEx />
-			</PageCard>
+			<QuestionnaireEx />
 		</VContent>
 
 		<VFooter
@@ -82,7 +50,7 @@
 
 	import { LOCAL_STORAGE_CONTROL } from './plugins/vue-dot';
 
-	import { LocalStorageUtility } from '../src/helpers/localStorageUtility';
+	import { LocalStorageUtility } from '@cnamts/vue-dot/src/helpers/localStorageUtility';
 
 	const DARK_THEME_KEY = 'pg-dark';
 
@@ -112,10 +80,6 @@
 
 		get dark() {
 			return this.$vuetify.theme.dark;
-		}
-
-		get pageCardClass() {
-			return this.dark ? ' grey darken-4' : ' white';
 		}
 	}
 </script>
