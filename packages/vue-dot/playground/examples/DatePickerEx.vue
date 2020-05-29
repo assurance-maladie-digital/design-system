@@ -38,14 +38,11 @@
 
 		<DatePicker
 			v-model="birthDate"
-			date-format="DD-MM-YYYY"
-			birthdate
-			append-icon
 			:vuetify-options="{
 				// The textField options can be binded
 				// directly if needed
 				textField: {
-					placeholder: ' ',
+					placeholder: null,
 					hint: null,
 					outlined: true,
 					clearable: true,
@@ -60,6 +57,10 @@
 					width: '310px'
 				}
 			}"
+			date-format="DD-MM-YYYY"
+			date-format-return="DD/MM/YYYY"
+			append-icon
+			birthdate
 		>
 			<template #append-icon>
 				<VIcon>
