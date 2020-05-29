@@ -20,6 +20,9 @@ Vue.use(Vuetify);
 
 const vuetify = new Vuetify();
 
+import VueTheMask from 'vue-the-mask';
+localVue.use(VueTheMask);
+
 /**
  * Generic mount function
  *
