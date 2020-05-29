@@ -3,8 +3,8 @@
 		<FileUpload
 			v-model="file"
 			v-bind="props"
-			@error="notifError"
-			@change="updatedValue"
+			@error="showError"
+			@change="valueUpdated"
 		/>
 
 		<VSnackbar
@@ -35,13 +35,11 @@
 		file: File | null = null;
 
 		snackbar = false;
-
 		snackbarText = '';
-
 		snackbarColor = 'success';
 
 		props = {
-			fileSizeMax: 1096 * 1024,
+			fileSizeMax: 4096 * 1024,
 			fileSizeUnits: [
 				'o',
 				'Ko',
@@ -49,7 +47,7 @@
 			],
 			allowedExtensions: [
 				'pdf'
-			],
+			]
 		};
 
 		errorsText: ErrorCodesType = {
@@ -58,19 +56,15 @@
 			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier sélectionné n\'est pas autorisée.'
 		};
 
-		showError(error: ErrorEvent) {
+		showError(error: ErrorEvent): void {
 			this.snackbarText = this.errorsText[error.code] || error.code;
-
 			this.snackbarColor = 'error';
-
 			this.snackbar = true;
 		}
 
-		valueUpdated(value: File) {
+		valueUpdated(value: File): void {
 			this.snackbarText = 'Le fichier a été accepté.';
-
 			this.snackbarColor = 'success';
-
 			this.snackbar = true;
 		}
 	}

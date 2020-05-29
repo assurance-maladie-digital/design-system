@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-Le pattern `FileUpload` est un composant qui permet à l'utilisateur de sélectionner ou de glisser-déposer des fichiers.
+Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélectionner ou de glisser-déposer des fichiers.
 :::
 
 ## Utilisation
@@ -30,7 +30,7 @@ Le pattern `FileUpload` est un composant qui permet à l'utilisateur de sélecti
           name: 'value',
           type: 'File | File[]',
           defaultValue: '[]',
-          description: 'La valeur du ou des fichiers si `multiple`.'
+          description: 'Le ou les fichiers sélectionnés.'
         },
         {
           name: 'no-ripple',
@@ -84,7 +84,7 @@ Le pattern `FileUpload` est un composant qui permet à l'utilisateur de sélecti
         },
         {
           name: 'or',
-          description: 'Slot pour remplacer le texte `Ou`'
+          description: 'Slot pour remplacer le texte `Ou`.'
         },
         {
           name: 'button-text',
@@ -97,14 +97,14 @@ Le pattern `FileUpload` est un composant qui permet à l'utilisateur de sélecti
       ],
       events: [
         {
-          name: 'error',
-           description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
-          value: '{ file: File, code: ErrorCodes }'
-        },
-        {
           name: 'change',
           description: 'Événement émis lorsque la valeur du composant change.',
-          value: 'value: File | File[]'
+          value: 'File | File[]'
+        },
+        {
+          name: 'error',
+          description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
+          value: '{\n  file: File,\n  code: ErrorCodes\n}'
         }
       ]
     }
@@ -119,8 +119,32 @@ Le pattern `FileUpload` est un composant qui permet à l'utilisateur de sélecti
 
 ### Règles de validation
 
+Vous pouvez modifier taille maximale d'un fichier ainsi que les extensions autorisées avec les attributs `fileSizeMax` et `allowedExtensions`.
+
+<DocInfo>
+
+Vous pouvez spécifier la propriété `accept` pour définir quels types de fichiers l'utilisateur peut sélectionner. Par défaut, celle-ci est calculée automatiquement à partir de la propriété `allowedExtensions`.
+
+</DocInfo>
+
 <DocExample file="patterns/file-upload/examples/file-upload-rules" />
 
 ### Utilisation des slots
+
+#### Remplacer le contenu par défaut
+
+Vous pouvez utiliser le slot `placeholder` pour remplacer le contenu par défaut.
+
+<DocExample file="patterns/file-upload/examples/file-upload-slot-placeholder" />
+
+#### Personnalisation par éléments
+
+Vous pouvez utiliser les slots pour remplacer certains contenus par défaut :
+
+- `icon` : l'icône par défaut
+- `action-text` : le texte d\'action
+- `or` : le texte `Ou`
+- `button-text` : le label du bouton d\'action
+- `info-text` : les informations sur le fichier à sélectionner
 
 <DocExample file="patterns/file-upload/examples/file-upload-slots" />

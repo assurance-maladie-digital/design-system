@@ -37,23 +37,17 @@
 
 			<VTextField
 				v-model.number="props.fileSizeMax"
-				label="Taille maximum"
-				outlined
-			/>
-
-			<VTextField
-				v-model="props.accept"
-				label="Formats acceptés"
+				label="Taille maximum (octets)"
 				outlined
 			/>
 
 			<VSnackbar
 				v-model="snackbar"
+				:color="snackbarColor"
 			>
 				{{ snackbarText }}
 
 				<VBtn
-					color="red"
 					text
 					@click="snackbar = false"
 				>
@@ -69,6 +63,8 @@
 			<FileUpload
 				v-model="file"
 				v-bind="props"
+				@error="showError"
+				@change="valueUpdated"
 			/>
 		</VCol>
 	</VRow>
@@ -78,13 +74,31 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { ErrorEvent, ErrorCodesType } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
+	import { ErrorCodes } from '@cnamts/vue-dot/src/patterns/FileUpload/errorCodes';
+
 	@Component
 	export default class FileUploadPlayground extends Vue {
 		file: File | null = null;
 
 		snackbar = false;
-
 		snackbarText = '';
+		snackbarColor = 'success';
+
+		defaultFileSizeUnits = [
+			'o',
+			'Ko',
+			'Mo',
+			'Go',
+			'To'
+		];
+
+		defaultAllowedExtensions = [
+			'pdf',
+			'jpg',
+			'jpeg',
+			'png'
+		];
 
 		props = {
 			multiple: false,
@@ -92,38 +106,24 @@
 			disabled: false,
 			fileSizeMax: 4096 * 1024,
 			fileSizeUnits: this.defaultFileSizeUnits,
-			allowedExtensions: [
-				'pdf',
-				'jpg',
-				'jpeg',
-				'png'
-			],
+			allowedExtensions: this.defaultAllowedExtensions
 		};
 
-		defaultFileSizeUnits = [
-				'o',
-				'Ko',
-				'Mo',
-				'Go',
-				'To'
-		];
+		errorsText: ErrorCodesType = {
+			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
+			FILE_TOO_LARGE: 'Le fichier sélectionné est trop volumineux.',
+			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier sélectionné n\'est pas autorisée.'
+		};
 
-		defaultAllowedExtensions = [
-				'pdf',
-				'jpg',
-				'jpeg',
-				'png'
-		];
-
-		notifError(err: any) {
-			this.snackbarText = `Evènement 'error' émis avec le code retour '${err.code}'`;
-
+		showError(error: ErrorEvent): void {
+			this.snackbarText = this.errorsText[error.code] || error.code;
+			this.snackbarColor = 'error';
 			this.snackbar = true;
 		}
 
-		valueUpdated(value: File) {
-			this.snackbarText = `Nom du fichier: ${value.name}, taille: ${value.size}`;
-
+		valueUpdated(value: File): void {
+			this.snackbarText = 'Le fichier a été accepté.';
+			this.snackbarColor = 'success';
 			this.snackbar = true;
 		}
 	}
