@@ -23,13 +23,13 @@
 
 		/**
 		 * Clear the search input
-		 * See https://github.com/vuetifyjs/vuetify/issues/5926
-		 * for more informations
+		 *
+		 * @see https://github.com/vuetifyjs/vuetify/issues/5926
 		 *
 		 * @param {FieldValue} value The updated value
 		 * @returns {void}
 		 */
-		valueChanged(value: FieldValue) {
+		valueChanged(value: FieldValue): void {
 			this.searchInput = '';
 			this.emitChangeEvent(value);
 		}
