@@ -51,7 +51,14 @@ const MixinsDeclaration = mixins(Props);
 				}
 
 				// Format the date to internal format using dateFormatReturn
-				this.date = this.parseDateForModel(date);
+				const parsed = this.parseDateForModel(date);
+
+				// If parsed is an empty string, the date isn't valid, don't continue
+				if (!parsed) {
+					return;
+				}
+
+				this.date = parsed;
 				this.setTextFieldModel();
 
 				// Validate warning rules
@@ -138,7 +145,13 @@ export class DateLogic extends MixinsDeclaration {
 
 	/** Parse a date with dateFormatReturn format to internal format */
 	parseDateForModel(date: string): string {
-		return parseDate(date, this.dateFormatReturn).format(INTERNAL_FORMAT);
+		const parsed = parseDate(date, this.dateFormatReturn);
+
+		if (!parsed.isValid()) {
+			return '';
+		}
+
+		return parsed.format(INTERNAL_FORMAT);
 	}
 
 	parseTextFieldDate(date: string): string {
@@ -182,7 +195,6 @@ export class DateLogic extends MixinsDeclaration {
 	// Setter
 	set dateFormatted(value: string) {
 		this.textFieldDate = value;
-		this.saveFromTextField();
 	}
 
 	/** Save the date from calendar */
@@ -217,11 +229,6 @@ export class DateLogic extends MixinsDeclaration {
 		}
 
 		const formatted = this.parseTextFieldDate(this.textFieldDate);
-
-		// If formatted is an empty string, the date isn't valid, don't continue
-		if (!formatted) {
-			return;
-		}
 
 		// Set the internal date
 		this.date = formatted;
