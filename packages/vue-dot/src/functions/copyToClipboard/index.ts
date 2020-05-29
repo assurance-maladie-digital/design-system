@@ -4,7 +4,7 @@
  *
  * @param {string} textToCopy The text to copy
  */
-export function copyToClipboard(textToCopy: string) {
+export function copyToClipboard(textToCopy: string): void {
 	/** Use a text area, so we can use execCommand */
 	const el = document.createElement('textarea');
 

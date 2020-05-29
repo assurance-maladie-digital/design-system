@@ -10,6 +10,10 @@ $vd-tokens: (
 		warning: #ba8b00,
 		pro: #ef6c00
 	),
+	dialog-width: (
+		dialog-small: 560px,
+		dialog-medium: 800px
+	),
 	page-width: 1440px,
 	input-width: 328px
 );
@@ -23,6 +27,11 @@ $vd-success: map-get($vd-colors, success);
 $vd-error: map-get($vd-colors, error);
 $vd-warning: map-get($vd-colors, warning);
 $vd-pro: map-get($vd-colors, pro);
+
+$vd-dialog-width: map-get($vd-tokens, dialog-width);
+
+$vd-dialog-small: map-get($vd-dialog-width, dialog-small);
+$vd-dialog-medium: map-get($vd-dialog-width, dialog-medium);
 
 $vd-page-width: map-get($vd-tokens, page-width);
 

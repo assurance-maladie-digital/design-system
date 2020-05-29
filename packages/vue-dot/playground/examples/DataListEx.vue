@@ -1,11 +1,31 @@
 <template>
 	<DocSection title="DataList">
 		<DataList
-			:list="data"
+			:items="data"
 			:icons="icons"
+			:loading="loading"
+			:items-number-loading="7"
+			title-class="subtitle-1 font-weight-bold mb-2 mt-2"
 			list-title="Informations"
+			heading-loading
 			flex
+			@click:item-action="setItemValue"
 		/>
+
+		<VTextField
+			v-model="actionValue"
+			class="mt-4"
+			outlined
+			label="New value"
+		/>
+
+		<VBtn
+			class="mt-4"
+			color="accent"
+			@click="loading = !loading"
+		>
+			{{ loading ? 'Unset' : 'Set' }} loading
+		</VBtn>
 	</DocSection>
 </template>
 
@@ -13,13 +33,17 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { IDataListItem } from '../../src/elements/DataList/types';
+	import { IDataList } from '../../src/elements/DataList/types';
 
 	import { mdiCalendar } from '@mdi/js';
 
 	@Component
 	export default class DataListEx extends Vue {
-		data: IDataListItem[] = [
+		loading = false;
+
+		actionValue: string | null = 'New text';
+
+		data: IDataList = [
 			{
 				key: 'Civility',
 				value: 'Mr',
@@ -49,7 +73,8 @@
 			},
 			{
 				key: 'Native country',
-				value: 'France'
+				value: 'France',
+				action: 'Edit'
 			},
 			{
 				key: 'Date of registration',
@@ -60,5 +85,14 @@
 		icons = {
 			mdiCalendar
 		};
+
+		/**
+		 * Set the new value to the corresponding dataList item
+		 *
+		 * @param {number} itemIndex The index of the item to update
+		 */
+		setItemValue(itemIndex: number): void {
+			this.$set(this.data[itemIndex], 'value', this.actionValue);
+		}
 	}
 </script>

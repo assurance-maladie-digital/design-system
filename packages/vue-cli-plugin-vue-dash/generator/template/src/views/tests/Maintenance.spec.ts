@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests-unit';
-import { html } from '@/tests-unit/html';
+import { html } from '@cnamts/vue-dot/tests/html';
 
 import Maintenance from '../Maintenance.vue';
 

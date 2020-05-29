@@ -77,7 +77,7 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { Languages, AllLanguagesChar } from './types';
+	import { Languages, AllLanguagesChar, CurrentLangData } from './types';
 
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
@@ -151,7 +151,7 @@
 		currentLang = this.value;
 
 		/** Returns the list of languages to display in the list */
-		get languages() {
+		get languages(): Languages {
 			let data: Languages = {};
 
 			if (this.availableLanguages !== '*') {
@@ -171,7 +171,7 @@
 		}
 
 		/** Compute data to simplify the template */
-		get currentLangData() {
+		get currentLangData(): CurrentLangData | null {
 			if (!this.currentLang) {
 				return null;
 			}
@@ -188,7 +188,7 @@
 		}
 
 		/** Returns a formatted object of all the languages */
-		getFormattedLanguages() {
+		getFormattedLanguages(): Languages{
 			const data: Languages = {};
 
 			languages
@@ -210,7 +210,7 @@
 		}
 
 		/** Emit an event with the new value and update currentLang */
-		updateLang(lang: string) {
+		updateLang(lang: string): void {
 			this.currentLang = lang;
 
 			this.$emit('change', lang);

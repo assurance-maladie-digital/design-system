@@ -1,11 +1,5 @@
 import { Route } from 'vue-router';
-
-interface Position {
-	x: number;
-	y: number;
-}
-
-type PositionResult = Position | { selector: string; offset?: Position } | void;
+import { Position, PositionResult } from 'vue-router/types/router';
 
 /**
  * Native-like scroll behavior for Vue Router
@@ -13,7 +7,7 @@ type PositionResult = Position | { selector: string; offset?: Position } | void;
  * @param {Route} to Vue Router to param
  * @param {Route} from Vue Router from param
  * @param {Route} savedPosition Vue Router savedPosition param
- * @returns The computed position
+ * @returns {PositionResult} The computed position
  */
 export function scrollBehavior(to: Route, from: Route, savedPosition: void | Position): PositionResult {
 	// If there is a hash, this is an anchor, scroll to it

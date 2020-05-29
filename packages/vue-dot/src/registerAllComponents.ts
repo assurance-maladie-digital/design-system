@@ -15,7 +15,7 @@ const components: Components[] = [
  *
  * @param {VueConstructor} Vue The global Vue instance
  */
-export function registerAllComponents(Vue: VueConstructor) {
+export function registerAllComponents(Vue: VueConstructor): void {
 	components.forEach((component) => {
 		registerComponents(Vue, component);
 	});

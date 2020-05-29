@@ -9,20 +9,26 @@ const prompts = [
 	{
 		name: 'description',
 		type: 'text',
-		message: 'Project description',
+		message: 'Description du projet',
 		default: `My ${superb()} project`
 	},
 	{
 		name: 'i18n',
 		type: 'confirm',
-		message: 'Use i18n (internationalization)',
+		message: 'Utiliser Vue i18n (pour l\'internationalisation)',
 		default: true
 	},
 	{
 		name: 'vuexPersist',
 		type: 'confirm',
-		message: 'Use Vuex Persist',
+		message: 'Utiliser Vuex Persist',
 		default: true
+	},
+	{
+		name: 'matomo',
+		type: 'confirm',
+		message: 'Installer Matomo (pour les analyses d\'audience)',
+		default: false
 	}
 ];
 

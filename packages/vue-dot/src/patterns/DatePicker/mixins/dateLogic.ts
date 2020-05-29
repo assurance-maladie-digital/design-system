@@ -8,7 +8,7 @@ import { DATE_FORMAT_REGEX } from '../../../functions/validation/isDateValid';
 
 import { Options } from '../../../mixins/customizable';
 
-import { Refs } from '../../../types';
+import { DatePickerRefs } from '../types';
 
 /** Date format used internally */
 const INTERNAL_FORMAT = 'YYYY-MM-DD';
@@ -40,7 +40,7 @@ const MixinsDeclaration = mixins(Props);
 	watch: {
 		/** Update the date when value is provided by the user */
 		value: {
-			handler(date: string) {
+			handler(date: string): void {
 				// If the date is cleared
 				if (!date) {
 					// Clear internal models
@@ -51,7 +51,14 @@ const MixinsDeclaration = mixins(Props);
 				}
 
 				// Format the date to internal format using dateFormatReturn
-				this.date = this.parseDateForModel(date);
+				const parsed = this.parseDateForModel(date);
+
+				// If parsed is an empty string, the date isn't valid, don't continue
+				if (!parsed) {
+					return;
+				}
+
+				this.date = parsed;
 				this.setTextFieldModel();
 
 				// Validate warning rules
@@ -66,7 +73,7 @@ const MixinsDeclaration = mixins(Props);
 		 * that means on every key strokes, so don't validate
 		 * on input if validateOnBlur is true
 		 */
-		textFieldDate(value: string) {
+		textFieldDate(value: string): void {
 			if (!this.validateOnBlurEnabled) {
 				this.validate(value);
 			}
@@ -75,18 +82,7 @@ const MixinsDeclaration = mixins(Props);
 })
 export class DateLogic extends MixinsDeclaration {
 	// Extend $refs
-	$refs!: Refs<{
-		/** VMenu */
-		menu: {
-			save: (date: string) => void;
-		};
-		/** VTextField */
-		input: {
-			validate: () => boolean;
-			hasFocused: boolean;
-			hasError: boolean;
-		};
-	}>;
+	$refs!: DatePickerRefs;
 
 	// DatePicker.options
 	options!: Options;
@@ -132,16 +128,22 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	/** Check if validateOnBlur is enabled */
-	get validateOnBlurEnabled() {
-		return this.options.textField && this.options.textField.validateOnBlur;
+	get validateOnBlurEnabled(): boolean {
+		return Boolean(this.options.textField?.validateOnBlur);
 	}
 
 	/** Parse a date with dateFormatReturn format to internal format */
-	parseDateForModel(date: string) {
-		return parseDate(date, this.dateFormatReturn).format(INTERNAL_FORMAT);
+	parseDateForModel(date: string): string {
+		const parsed = parseDate(date, this.dateFormatReturn);
+
+		if (!parsed.isValid()) {
+			return '';
+		}
+
+		return parsed.format(INTERNAL_FORMAT);
 	}
 
-	parseTextFieldDate(date: string) {
+	parseTextFieldDate(date: string): string {
 		const formatted = parseDate(date, this.dateFormat);
 
 		// If the date isn't valid, return empty string
@@ -153,7 +155,7 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	/** Set textField model by parsing this.date */
-	setTextFieldModel() {
+	setTextFieldModel(): void {
 		this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
 	}
 
@@ -164,7 +166,7 @@ export class DateLogic extends MixinsDeclaration {
 	 * Format is '25/03/2018' with default dateFormat
 	 */
 	// Getter
-	get dateFormatted() {
+	get dateFormatted(): string {
 		/**
 		 * If the date is empty, return now
 		 * to avoid date parsing errors
@@ -182,11 +184,10 @@ export class DateLogic extends MixinsDeclaration {
 	// Setter
 	set dateFormatted(value: string) {
 		this.textFieldDate = value;
-		this.saveFromTextField();
 	}
 
 	/** Save the date from calendar */
-	saveFromCalendar() {
+	saveFromCalendar(): void {
 		// Save the date using Vuetify method
 		this.$refs.menu.save(this.date);
 
@@ -208,7 +209,7 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	/** Save the date from text field blur */
-	saveFromTextField() {
+	saveFromTextField(): void {
 		// Return if empty/falsy
 		if (!this.textFieldDate) {
 			// Clear v-model
@@ -218,11 +219,6 @@ export class DateLogic extends MixinsDeclaration {
 
 		const formatted = this.parseTextFieldDate(this.textFieldDate);
 
-		// If formatted is an empty string, the date isn't valid, don't continue
-		if (!formatted) {
-			return;
-		}
-
 		// Set the internal date
 		this.date = formatted;
 
@@ -230,14 +226,14 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	/** Update v-model */
-	emitChangeEvent() {
+	emitChangeEvent(): void {
 		// Parse the date with internal format,
 		// and return the date with dateFormatReturn format
 		this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
 	}
 
 	/** Validate Vuetify rules */
-	validateVuetify() {
+	validateVuetify(): void {
 		this.$nextTick(() => {
 			// Set hasFocused to true on VTextField
 			// to fix https://github.com/vuetifyjs/vuetify/issues/7876
@@ -251,7 +247,7 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	/** Fired on blur event of the textField */
-	textFieldBlur() {
+	textFieldBlur(): void {
 		this.saveFromTextField();
 
 		// If validateOnBlur is true, validate

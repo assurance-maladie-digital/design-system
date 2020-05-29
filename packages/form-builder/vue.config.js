@@ -65,15 +65,19 @@ const PLAYGROUND_MODE_CONFIG = {
 		entry: './playground/main.ts',
 		plugins: [
 			// Copy public folder content from /playground
-			new CopyPlugin([{
-				from: path.join(__dirname, './playground/public'),
-				to: path.join(__dirname, './dist'),
-				toType: 'dir',
-				ignore: [
-					'index.html',
-					'.DS_Store'
-				]
-			}])
+			new CopyPlugin({
+				patterns: [{
+					from: path.join(__dirname, './playground/public'),
+					to: path.join(__dirname, './dist'),
+					toType: 'dir',
+					globOptions: {
+						ignore: [
+							'index.html',
+							'.DS_Store'
+						]
+					}
+				}]
+			})
 		]
 	},
 	chainWebpack: (config) => {

@@ -1,7 +1,10 @@
 <template>
 	<div class="vd-sub-header secondary white--text py-6 px-8">
 		<slot name="back-btn">
-			<template v-if="!hideBackBtn">
+			<VFadeTransition
+				v-if="!hideBackBtn"
+				mode="out-in"
+			>
 				<VSkeletonLoader
 					v-if="loading"
 					height="28"
@@ -23,7 +26,7 @@
 
 					{{ backBtnText }}
 				</VBtn>
-			</template>
+			</VFadeTransition>
 		</slot>
 
 		<VLayout
@@ -35,23 +38,28 @@
 				column
 			>
 				<slot name="title">
-					<HeaderLoading
-						v-if="loading"
-						width="300"
-						height="2rem"
-						dark
-					/>
+					<VFadeTransition mode="out-in">
+						<HeaderLoading
+							v-if="loading"
+							width="300"
+							height="2rem"
+							dark
+						/>
 
-					<h2
-						v-else
-						class="headline font-weight-bold"
-					>
-						{{ titleText }}
-					</h2>
+						<h2
+							v-else
+							class="headline font-weight-bold"
+						>
+							{{ titleText }}
+						</h2>
+					</VFadeTransition>
 				</slot>
 
 				<slot name="sub-title">
-					<template v-if="subTitleText">
+					<VFadeTransition
+						v-if="subTitleText"
+						mode="out-in"
+					>
 						<HeaderLoading
 							v-if="loading"
 							class="mt-1"
@@ -69,32 +77,33 @@
 						>
 							{{ subTitleText }}
 						</p>
-					</template>
+					</VFadeTransition>
 				</slot>
 
 				<slot name="additional-informations" />
 			</VLayout>
 
 			<slot name="right-content">
-				<VLayout
-					v-if="dataLists"
-					v-bind="options.dataListsLayout"
-					class="vd-sub-header-data-list mt-n2 mx-n2"
-				>
-					<DataListLoading v-if="loading" />
-
-					<DataList
-						v-for="(dataList, index) in dataLists"
-						v-else
-						:key="'vd-sub-header-data-list' + index"
-						:list-title="dataList.title"
-						:list="dataList.items"
-						:label-color="fadeWhite"
-						title-class="subtitle-1 font-weight-bold mb-2 mt-3"
-						width="auto"
-						column
-					/>
-				</VLayout>
+				<VThemeProvider dark>
+					<VLayout
+						v-if="dataLists"
+						v-bind="options.dataListsLayout"
+						class="vd-sub-header-data-list mx-n2"
+					>
+						<DataList
+							v-for="(dataList, index) in dataLists"
+							:key="'vd-sub-header-data-list' + index"
+							:loading="loading"
+							:list-title="dataList.listTitle"
+							:items="dataList.items"
+							:items-number-loading="dataList.itemsNumberLoading"
+							:heading-loading="dataList.headingLoading"
+							item-width="auto"
+							title-class="subtitle-1 font-weight-bold mb-2 mt-2"
+							@click:item-action="dataListItemAction(index, $event)"
+						/>
+					</VLayout>
+				</VThemeProvider>
 			</slot>
 		</VLayout>
 	</div>
@@ -106,13 +115,11 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { IDataList } from './types';
+	import { IDataListAction, DataListsItem } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
 	import DataList from '../../elements/DataList';
-
-	import DataListLoading from './loading/DataListLoading.vue';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
 
@@ -140,9 +147,10 @@
 			},
 			/** List of DataList components in column mode */
 			dataLists: {
-				type: Array as PropType<IDataList[]>,
+				type: Array as PropType<DataListsItem[]>,
 				default: undefined
 			},
+			/** Loading mode */
 			loading: {
 				type: Boolean,
 				default: false
@@ -158,8 +166,7 @@
 	 */
 	@Component({
 		components: {
-			DataList,
-			DataListLoading
+			DataList
 		}
 	})
 	export default class SubHeader extends MixinsDeclaration {
@@ -168,6 +175,16 @@
 		/** Semi-transparent white */
 		get fadeWhite(): string {
 			return 'rgba(255, 255, 255, .7)';
+		}
+
+		/**
+		 * Emit the dataList item object when user clicked on the corresponding action
+		 *
+		 * @param {number} dataListIndex The index of the selected data list
+		 * @param {number} itemIndex The index of the item into the selected data list
+		 */
+		dataListItemAction(dataListIndex: number, itemIndex: number): void {
+			this.$emit('click:list-item', { dataListIndex, itemIndex } as IDataListAction);
 		}
 	}
 </script>
@@ -208,6 +225,11 @@
 			.vd-key {
 				display: inline-block;
 				font-size: .75rem !important;
+			}
+
+			.vd-data-list-item-label {
+				opacity: .8;
+				color: #fff !important;
 			}
 		}
 	}

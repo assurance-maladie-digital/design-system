@@ -41,7 +41,7 @@ Vue.use(VueTheMask);
 export function mountComponent(
 	component: VueClass<Vue>,
 	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
-	fullMount: boolean = false
+	fullMount = false
 ): Wrapper<Vue> {
 	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;

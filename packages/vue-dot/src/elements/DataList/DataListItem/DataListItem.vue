@@ -41,6 +41,19 @@
 					</span>
 				</slot>
 			</div>
+
+			<div class="vd-data-list-item-action">
+				<slot name="action">
+					<VBtn
+						v-if="action"
+						v-bind="options.actionBtn"
+						class="vd-data-list-item-action-btn"
+						@click="$emit('click:action')"
+					>
+						{{ action }}
+					</VBtn>
+				</slot>
+			</div>
 		</div>
 	</VLayout>
 </template>
@@ -63,6 +76,11 @@
 			},
 			/** Value to display */
 			value: {
+				type: String,
+				default: undefined
+			},
+			/** Action to display */
+			action: {
 				type: String,
 				default: undefined
 			},
@@ -101,3 +119,10 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-data-list-item-action-btn.v-btn {
+		min-width: 0;
+		margin: 0 -1px;
+	}
+</style>
