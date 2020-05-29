@@ -41,8 +41,8 @@
 			:rules="selectRules"
 			:items="data"
 			label="Select something"
-			multiple
 			outlined
+			multiple
 		/>
 	</DocSection>
 </template>
