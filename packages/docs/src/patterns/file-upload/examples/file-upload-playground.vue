@@ -36,7 +36,7 @@
 			/>
 
 			<VTextField
-				v-model="props.fileSizeMax"
+				v-model.number="props.fileSizeMax"
 				label="Taille maximum"
 				outlined
 			/>
@@ -49,7 +49,6 @@
 
 			<VSnackbar
 				v-model="snackbar"
-				multi-line
 			>
 				{{ snackbarText }}
 
@@ -92,20 +91,13 @@
 			noRipple: false,
 			disabled: false,
 			fileSizeMax: 4096 * 1024,
-			fileSizeUnits: [
-				'o',
-				'Ko',
-				'Mo',
-				'Go',
-				'To'
-			],
+			fileSizeUnits: this.defaultFileSizeUnits,
 			allowedExtensions: [
 				'pdf',
 				'jpg',
 				'jpeg',
 				'png'
 			],
-			accept: '.png,.jpg,.doc'
 		};
 
 		defaultFileSizeUnits = [
@@ -129,7 +121,7 @@
 			this.snackbar = true;
 		}
 
-		updatedValue(value: File) {
+		valueUpdated(value: File) {
 			this.snackbarText = `Nom du fichier: ${value.name}, taille: ${value.size}`;
 
 			this.snackbar = true;

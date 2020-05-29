@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de fichier HTML par défaut.
+Le pattern `FileUpload` est un composant qui permet à l'utilisateur de sélectionner ou de glisser-déposer des fichiers.
 :::
 
 ## Utilisation
@@ -24,7 +24,7 @@ Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de 
           name: 'multiple',
           defaultValue: 'false',
           type: 'boolean',
-          description: 'Permet de charger plusieurs fichiers.'
+          description: 'Permet de sélectionner plusieurs fichiers.'
         },
         {
           name: 'value',
@@ -36,7 +36,7 @@ Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de 
           name: 'no-ripple',
           defaultValue: 'false',
           type: 'boolean',
-          description: 'Désactive l\'ondulation quand on click dessus.'
+          description: 'Désactive l\'ondulation.'
         },
         {
           name: 'disabled',
@@ -46,33 +46,33 @@ Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de 
         },
         {
           name: 'file-size-max',
-          defaultValue: '4MB',
+          defaultValue: '4194304',
           type: 'number',
-          description: 'Taille maximale en octets par fichier.'
+          description: 'Taille maximale d\'un fichier en octets (par défaut 4 MB).'
         },
         {
           name: 'file-size-units',
-          defaultValue: '[\'o\',\'Ko\',\'Mo\',\'Go\',\'To\']',
+          defaultValue: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
           type: 'string[]',
-          description: 'Les unités de taille utilisées dans le modèle pour la traduction.'
+          description: 'Les unités de taille utilisées pour la traduction.'
         },
         {
           name: 'allowed-extensions',
-          defaultValue: '[\'pdf\',\'jpg\',\'jpeg\',\'png\']',
+          defaultValue: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
           type: 'string[]',
-          description: 'Les extensions de fichiers autorisées.'
+          description: 'Les extensions autorisées.'
         },
         {
           name: 'accept',
           defaultValue: 'undefined',
           type: 'string',
-          description: 'L\'attribut `accept` de input en html. Voir https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types. Cette propriété n\'est pas requise, par défaut, elle sera calculée sur la base des extensions autorisées'
+          description: 'L\'attribut natif `accept`. Par défaut, la valeur sera calculée à partir des extensions autorisées.'
         }
       ],
       slots: [
         {
           name: 'placeholder',
-          description: 'Slot pour remplacer le contenu visuel par défaut.'
+          description: 'Slot pour remplacer le contenu par défaut.'
         },
         {
           name: 'icon',
@@ -80,7 +80,7 @@ Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de 
         },
         {
           name: 'action-text',
-          description: 'Slot pour modifier le texte d\'action.'
+          description: 'Slot pour remplacer le texte d\'action.'
         },
         {
           name: 'or',
@@ -92,13 +92,13 @@ Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de 
         },
         {
           name: 'info-text',
-          description: 'Slot pour remplacer le texte des informations sur les fichiers à choisir.'
+          description: 'Slot pour remplacer les informations sur le fichier à sélectionner.'
         }
       ],
       events: [
         {
           name: 'error',
-          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action.',
+           description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
           value: '{ file: File, code: ErrorCodes }'
         },
         {
@@ -117,7 +117,7 @@ Le pattern `FileUpload` est un composant qui améliore l'élément d'entrée de 
 
 ## Exemples
 
-### Règles de validation sur les tailles et les extensions
+### Règles de validation
 
 <DocExample file="patterns/file-upload/examples/file-upload-rules" />
 

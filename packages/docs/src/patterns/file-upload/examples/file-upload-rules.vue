@@ -10,7 +10,6 @@
 		<VSnackbar
 			v-model="snackbar"
 			:color="snackbarColor"
-			multi-line
 		>
 			{{ snackbarText }}
 
@@ -51,7 +50,6 @@
 			allowedExtensions: [
 				'pdf'
 			],
-			accept: '.pdf'
 		};
 
 		errorsText: ErrorCodesType = {
@@ -60,7 +58,7 @@
 			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier sélectionné n\'est pas autorisée.'
 		};
 
-		notifError(error: ErrorEvent) {
+		showError(error: ErrorEvent) {
 			this.snackbarText = this.errorsText[error.code] || error.code;
 
 			this.snackbarColor = 'error';
@@ -68,8 +66,8 @@
 			this.snackbar = true;
 		}
 
-		updatedValue(value: File) {
-			this.snackbarText = 'Le fichier a été accepté pour être traiter';
+		valueUpdated(value: File) {
+			this.snackbarText = 'Le fichier a été accepté.';
 
 			this.snackbarColor = 'success';
 

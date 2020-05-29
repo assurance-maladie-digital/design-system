@@ -5,7 +5,7 @@
 				cols="12"
 				md="6"
 			>
-				<h4>Slot général 'placeholder'</h4>
+				<h4>Slot placeholder</h4>
 			</VCol>
 
 			<VCol
@@ -34,7 +34,7 @@
 				md="6"
 			>
 				<h4 class="mt-4">
-					Tout les autres slots
+					Autres slots
 				</h4>
 			</VCol>
 
@@ -62,7 +62,7 @@
 					</template>
 
 					<template #info-text>
-						Fichier PDF de 1Mo maximum accepté
+						Fichier PDF de 1 Mo maximum accepté
 					</template>
 				</FileUpload>
 			</VCol>
