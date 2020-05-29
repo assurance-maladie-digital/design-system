@@ -25,12 +25,34 @@ module.exports = {
 						to: '/elements/copy-btn'
 					},
 					{
+						title: 'CustomIcon',
+						to: '/elements/custom-icon'
+					},
+					{
 						title: 'DataList',
 						to: '/elements/data-list'
 					},
 					{
+						title: 'DialogBox',
+						to: '/elements/dialog-box'
+					},
+					{
 						title: 'HeaderLoading',
 						to: '/elements/header-loading'
+					},
+					{
+						title: 'PageCard',
+						to: '/elements/page-card'
+					}
+				]
+			},
+			{
+				title: 'Patterns',
+				group: 'patterns',
+				items: [
+					{
+						title: 'FooterWrapper',
+						to: '/patterns/footer-wrapper'
 					}
 				]
 			},

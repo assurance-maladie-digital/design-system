@@ -107,7 +107,7 @@
 
 	import { mdiCloudUpload } from '@mdi/js';
 
-	import { Refs } from '../../types';
+	import { Refs, IndexedObject } from '../../types';
 	import { ErrorEvent } from './types';
 	import { ErrorCodes } from './errorCodes';
 
@@ -211,7 +211,7 @@
 		 * Get the different colors
 		 * depending on theme (light or dark)
 		 */
-		get colors() {
+		get colors(): IndexedObject {
 			const dark = this.$vuetify.theme.dark;
 
 			return {
@@ -222,7 +222,7 @@
 		}
 
 		/** Reset self state to initial */
-		selfReset() {
+		selfReset(): void {
 			this.dragover = false;
 			this.error = false;
 
@@ -231,7 +231,7 @@
 		}
 
 		/** Validate the file (size & extension) */
-		validateFile(file: File) {
+		validateFile(file: File): boolean {
 			// Maximum size
 			if (file.size >= this.fileSizeMax) {
 				this.error = true;
@@ -265,11 +265,11 @@
 		}
 
 		/** Computed extensions for display */
-		get extensions() {
+		get extensions(): string {
 			return this.allowedExtensions.join(', ').toUpperCase();
 		}
 
-		emitChangeEvent() {
+		emitChangeEvent(): void {
 			if (!this.error) {
 				// Take the first file in single mode
 				const eventValue = this.multiple ? this.files : this.files[0];
@@ -283,7 +283,7 @@
 		}
 
 		/** This function is executed when content is dropped on the component */
-		dropHandler(e: DragEvent) {
+		dropHandler(e: DragEvent): void {
 			this.selfReset();
 
 			const data = e.dataTransfer;
@@ -324,7 +324,7 @@
 		}
 
 		/** This function is executed when after a manual file selection */
-		inputValueChanged(event: HTMLInputEvent) {
+		inputValueChanged(event: HTMLInputEvent): void {
 			if (!event.target) {
 				return;
 			}
@@ -349,7 +349,7 @@
 			this.emitChangeEvent();
 		}
 
-		ifTooManyFiles(files: FileList | DataTransferItemList) {
+		ifTooManyFiles(files: FileList | DataTransferItemList): boolean {
 			// If not in multiple mode and more than one file,
 			// return error
 			if (!this.multiple && files.length > 1) {
@@ -365,7 +365,7 @@
 		}
 
 		/** Compute maximum size to human readable */
-		get maxSizeReadable() {
+		get maxSizeReadable(): string {
 			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
 		}
 
@@ -387,7 +387,7 @@
 		}
 
 		/** Expose retry function which clicks on the input */
-		public retry() {
+		public retry(): void {
 			this.$refs.vdInputEl.click();
 		}
 	}

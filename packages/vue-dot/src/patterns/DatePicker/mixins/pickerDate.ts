@@ -20,7 +20,7 @@ export class PickerDate extends MixinsDeclaration {
 	 * Use an internal model
 	 * so we don't modify the prop
 	 */
-	get internalPickerDate() {
+	get internalPickerDate(): string {
 		return this.pickerDate;
 	}
 

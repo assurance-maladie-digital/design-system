@@ -3,10 +3,11 @@ module.exports = {
 	env: {
 		node: true
 	},
+	parser: 'vue-eslint-parser',
 	extends: [
 		'plugin:vue/recommended',
 		'eslint:recommended',
-		'@vue/typescript',
+		'@vue/typescript/recommended',
 		'plugin:jsdoc/recommended'
 	],
 	rules: {
@@ -84,6 +85,22 @@ module.exports = {
 
 		'no-prototype-builtins': 'off',
 
+		'@typescript-eslint/explicit-module-boundary-types': [
+			'error',
+			{
+				'allowedNames': [
+					'beforeCreate',
+					'created',
+					'beforeMount',
+					'mounted',
+					'beforeUpdate',
+					'updated',
+					'beforeDestroy',
+					'destroyed'
+				]
+			}
+		],
+
 		// Don't force all params & return
 		'jsdoc/require-param': 0,
 		'jsdoc/require-returns': 0
@@ -95,6 +112,12 @@ module.exports = {
 				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
 				// does not work with type definitions
 				'no-unused-vars': 'off'
+			}
+		},
+		{
+			files: ['*.js'],
+			rules: {
+				'@typescript-eslint/no-var-requires': 'off'
 			}
 		}
 	],

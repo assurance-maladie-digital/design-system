@@ -6,4 +6,8 @@ import Vue from 'vue';
  *  myProp: MyType;
  * }>;
  */
-export type Refs<T extends object> = Vue['$refs'] & T;
+export type Refs<T extends Record<string, unknown>> = Vue['$refs'] & T;
+
+export interface IndexedObject<T = string> {
+	[key: string]: T;
+}

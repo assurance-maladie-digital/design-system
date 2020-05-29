@@ -8,9 +8,9 @@ import { execSync } from 'child_process';
 
 import { default as tokensObj } from '../src/tokens';
 
-interface Tokens {
-	[key: string]: string | Tokens;
-}
+import { IndexedObject } from 'src/types';
+
+type Tokens = IndexedObject<string | Tokens>;
 
 const tokens = tokensObj as Tokens;
 

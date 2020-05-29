@@ -118,7 +118,7 @@ exports[`DataList renders correctly with an action 1`] = `
               <div class="vd-data-list-item-value"><span class="body-1">
 					Dupont
 				</span></div>
-              <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0 v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text"><span class="v-btn__content">
+              <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text body-1 text-none pa-0"><span class="v-btn__content">
 					Edit
 				</span></button></div>
             </div>
@@ -219,7 +219,7 @@ exports[`DataList renders correctly with an icon 1`] = `
 exports[`DataList renders loading state correctly 1`] = `
 <div class="vd-data-list">
   <vfadetransition-stub mode="out-in" origin="top center 0">
-    <datalistloading-stub itemsnumber="3" heading="true" titleclass="mb-3 headline" width="200px"></datalistloading-stub>
+    <datalistloading-stub itemsnumber="3" heading="true" itemwidth="200px" title-class="mb-3 headline"></datalistloading-stub>
   </vfadetransition-stub>
 </div>
 `;

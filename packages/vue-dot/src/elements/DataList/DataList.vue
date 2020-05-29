@@ -9,7 +9,7 @@
 				:title-class="titleClass"
 				:flex="flex"
 				:row="row"
-				:width="width"
+				:item-width="itemWidth"
 			/>
 
 			<div v-else>
@@ -43,7 +43,7 @@
 							:icon="getIcon(item.icon)"
 							:placeholder="placeholder"
 							:vuetify-options="item.options"
-							:style="{ width }"
+							:style="{ width: itemWidth }"
 							class="vd-data-list-item body-1"
 							@click:action="$emit('click:item-action', index)"
 						/>
@@ -59,10 +59,12 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { IDataListItem, DataListIcons } from './types';
+	import { DataListIcons } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
+
+	import { IndexedObject } from '../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -102,8 +104,8 @@
 				type: String,
 				default: undefined
 			},
-			/** The key/value width */
-			width: {
+			/** The item width */
+			itemWidth: {
 				type: String,
 				default: '200px'
 			},
@@ -138,19 +140,19 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
-		get listClass() {
+		get listClass(): IndexedObject<boolean> {
 			return {
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex
 			};
 		}
 
-		getIcon(icon?: string) {
-			if (!icon || !this.icons) {
+		getIcon(iconName?: string): string | null {
+			if (!iconName || !this.icons) {
 				return null;
 			}
 
-			return this.icons[icon];
+			return this.icons[iconName];
 		}
 	}
 </script>

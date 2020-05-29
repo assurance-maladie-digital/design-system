@@ -4,3 +4,8 @@ export interface FileItem {
 	state: string;
 	name?: string;
 }
+
+export interface IconInfo {
+	icon: string;
+	color: string;
+}
