@@ -51,6 +51,10 @@ module.exports = {
 				group: 'patterns',
 				items: [
 					{
+						title: 'FooterWrapper',
+						to: '/patterns/footer-wrapper'
+					},
+					{
 						title: 'PaginatedTable',
 						to: '/patterns/paginated-table'
 					}

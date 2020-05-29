@@ -136,11 +136,11 @@
 		};
 
 		/** Click on file input */
-		retry() {
+		retry(): void {
 			this.$refs.fileUpload.retry();
 		}
 
-		setError(error: Error) {
+		setError(error: Error): void {
 			this.error = error;
 		}
 	}
