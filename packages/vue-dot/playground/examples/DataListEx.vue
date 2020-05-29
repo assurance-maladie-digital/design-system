@@ -5,8 +5,8 @@
 			:icons="icons"
 			:loading="loading"
 			:items-number-loading="7"
-			:flex="flex"
-			:row="row"
+			flex
+			row
 			title-class="subtitle-1 font-weight-bold mb-2 mt-2"
 			list-title="Informations"
 			heading-loading
@@ -18,20 +18,6 @@
 			class="mt-4"
 			outlined
 			label="New value"
-		/>
-
-		<VSwitch
-			v-model="row"
-			class="mt-4"
-			color="accent"
-			label="Row"
-		/>
-
-		<VSwitch
-			v-model="flex"
-			class="mt-4"
-			color="accent"
-			label="Flex"
 		/>
 
 		<VBtn
@@ -55,10 +41,6 @@
 	@Component
 	export default class DataListEx extends Vue {
 		loading = false;
-
-		row = false;
-
-		flex = false;
 
 		actionValue: string | null = 'New text';
 
@@ -93,6 +75,7 @@
 			{
 				key: 'Native country',
 				value: 'France',
+				icon: 'mdiCalendar',
 				action: 'Edit'
 			},
 			{

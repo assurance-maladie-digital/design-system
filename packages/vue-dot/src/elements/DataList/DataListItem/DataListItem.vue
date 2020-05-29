@@ -14,32 +14,36 @@
 
 		<div class="vd-data-list-item-content">
 			<div
-				class="vd-data-list-item-label caption"
-				:style="{ color: labelColor }"
+				:class="classContent"
 			>
-				{{ label }}
-			</div>
-
-			<!-- Show value or fallback to placeholder -->
-			<div class="vd-data-list-item-value">
-				<slot
-					name="value"
-					v-bind="{ itemValue }"
+				<div
+					class="vd-data-list-item-label caption"
+					:style="{ color: labelColor }"
 				>
-					<VChip
-						v-if="chip"
-						v-bind="options.chip"
-					>
-						{{ itemValue }}
-					</VChip>
+					{{ label }}
+				</div>
 
-					<span
-						v-else
-						class="body-1"
+				<!-- Show value or fallback to placeholder -->
+				<div class="vd-data-list-item-value">
+					<slot
+						name="value"
+						v-bind="{ itemValue }"
 					>
-						{{ itemValue }}
-					</span>
-				</slot>
+						<VChip
+							v-if="chip"
+							v-bind="options.chip"
+						>
+							{{ itemValue }}
+						</VChip>
+
+						<span
+							v-else
+							class="body-1"
+						>
+							{{ itemValue }}
+						</span>
+					</slot>
+				</div>
 			</div>
 
 			<div class="vd-data-list-item-action">
@@ -66,6 +70,7 @@
 	import { locales } from './locales';
 
 	import { customizable } from '../../../mixins/customizable';
+	import { IndexedObject } from '../../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -98,6 +103,10 @@
 			icon: {
 				type: String,
 				default: undefined
+			},
+			row: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -117,10 +126,30 @@
 		get itemValue(): string {
 			return this.value || this.placeholder;
 		}
+
+		get classContent(): IndexedObject<boolean> {
+			return {
+				'vd-row': this.row
+			};
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.vd-row {
+		display: flex;
+		flex-wrap: wrap;
+
+		.vd-data-list-item-label {
+			align-self: center;
+
+			&::after {
+				content: ":";
+				margin-right: 4px;
+			}
+		}
+	}
+
 	.vd-data-list-item-action-btn.v-btn {
 		min-width: 0;
 		margin: 0 -1px;

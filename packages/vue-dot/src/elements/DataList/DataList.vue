@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-data-list">
+	<div class="vd-data-list align-center">
 		<VFadeTransition mode="out-in">
 			<!-- The DataList loading skeleton -->
 			<DataListLoading
@@ -40,6 +40,7 @@
 							:value="item.value"
 							:action="item.action"
 							:chip="item.chip"
+							:row="row"
 							:icon="getIcon(item.icon)"
 							:placeholder="placeholder"
 							:vuetify-options="item.options"
@@ -142,8 +143,8 @@
 	export default class DataList extends MixinsDeclaration {
 		get listClass(): IndexedObject<boolean> {
 			return {
-				'flex-column': !this.row && !this.flex,
-				'flex-wrap': this.flex && !this.row
+				'flex-column': !this.flex,
+				'flex-wrap': this.flex
 			};
 		}
 

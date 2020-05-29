@@ -16,6 +16,7 @@
 				:key="index + '-loading-item'"
 				class="vd-data-list-loading-item mb-4"
 				:style="{ width: itemWidth }"
+				:class="classItemLoading"
 			>
 				<HeaderLoading
 					height="1rem"
@@ -72,8 +73,14 @@
 	export default class DataListLoading extends MixinsDeclaration {
 		get listClass(): IndexedObject<boolean> {
 			return {
-				'flex-column': !this.row && !this.flex,
-				'flex-wrap': this.flex && !this.row
+				'flex-column': !this.flex,
+				'flex-wrap': this.flex
+			};
+		}
+
+		get classItemLoading(): IndexedObject<boolean> {
+			return {
+				'vd-row': this.row
 			};
 		}
 	}
@@ -87,6 +94,20 @@
 
 		&:not(:last-child) {
 			margin-right: 80px;
+		}
+	}
+
+	.vd-row {
+		display: flex;
+		flex-wrap: wrap;
+
+		.vd-data-list-item-label {
+			align-self: center;
+
+			&::after {
+				content: ":";
+				margin-right: 4px;
+			}
 		}
 	}
 
