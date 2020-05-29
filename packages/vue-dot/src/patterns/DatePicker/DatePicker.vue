@@ -71,14 +71,14 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
+	import { DatePickerRefs } from './types';
 
-	import { customizable, Options } from '../../mixins/customizable';
+	import { customizable, Options, Customizable } from '../../mixins/customizable';
 	import { Eventable } from '../../mixins/eventable';
 	import { WarningRules } from '../../mixins/warningRules';
-	import { ValidationRule } from '../../rules/types';
 
 	import { DateLogic } from './mixins/dateLogic';
 	import { MaskValue } from './mixins/maskValue';
@@ -90,7 +90,7 @@
 
 	import deepmerge from 'deepmerge';
 
-	const Props = Vue.extend({
+	const IProps = Vue.extend({
 		props: {
 			/** Disable the calendar */
 			noCalendar: {
@@ -124,57 +124,49 @@
 		}
 	});
 
+	@Component
+	class Props extends IProps {}
+
+	interface IDatePicker extends Props, Customizable, Eventable, WarningRules, DateLogic, MaskValue, Birthdate, PickerDate, ErrorProp {
+		$refs: DatePickerRefs;
+	}
+
+	const MixinsDeclaration = mixins<IDatePicker>(
+		Props,
+		customizable(config),
+		Eventable,
+		WarningRules,
+		DateLogic,
+		MaskValue,
+		Birthdate,
+		PickerDate,
+		ErrorProp
+	);
+
 	/**
 	 * DatePicker is a component that makes the date picker
 	 * from Vuetify simpler to use
 	 */
 	@Component<DatePicker>({
 		inheritAttrs: false,
-		mixins: [
-			// Default configuration
-			customizable(config),
-			Eventable,
-			WarningRules,
-			DateLogic,
-			MaskValue,
-			Birthdate,
-			PickerDate,
-			ErrorProp
-		],
 		model: {
 			prop: 'value',
 			event: 'change'
 		}
 	})
-	export default class DatePicker extends Props {
-		// Mixin computed data
-		options!: Options;
-		// eventable
-		showWeekEnds!: boolean;
-		calendarEvents!: (date: string) => unknown;
-		// mask
-		maskValue?: string;
-		// warning rules
-		successMessages!: string[];
-		warningRules!: ValidationRule[];
-		// date
-		date!: string;
-		max!: string | null;
-		min!: string | null;
-		dateFormatted!: string;
-		saveFromCalendar!: () => void;
-		textFieldBlur!: () => void;
-		// picker date
-		internalPickerDate!: string;
-		internalErrorProp!: boolean;
-
+	export default class DatePicker extends MixinsDeclaration {
 		// Icon
 		calendarIcon = mdiCalendar;
 
 		/** The v-model of VMenu */
 		menu = false;
 
-		/** Compute the options for VTextField */
+		/**
+		 * Compute the options for the VTextField
+		 * (Merge options and binded attributes)
+		 *
+		 * @returns {Options} Computed options
+		 */
 		get textFieldOptions(): Options {
 			// Merge textField options (custom or default) with
 			// directly binded attributes (theses attributes
@@ -182,7 +174,12 @@
 			return deepmerge(this.options.textField || [], this.$attrs) as Options;
 		}
 
-		/** Compute the classes for VTextField */
+		/**
+		 * Compute the classes for the VTextField
+		 * (Merge user classes and fixed behavior)
+		 *
+		 * @returns {string|string[]} Computed classes
+		 */
 		get textFieldClasses(): (string | string[])[] {
 			const textFieldClasses = [];
 
@@ -201,7 +198,11 @@
 			return textFieldClasses;
 		}
 
-		/** Open calendar menu if textFieldActivator is true */
+		/**
+		 * Open calendar menu if textFieldActivator is true
+		 *
+		 * @returns {void}
+		 */
 		textFieldClicked(): void {
 			if (this.textFieldActivator) {
 				this.menu = true;
