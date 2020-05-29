@@ -9,12 +9,13 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 
+	const MixinsDeclaration = mixins(FieldComponent);
+
 	/** Form field to select a value from a list */
 	@Component
-	export default class SelectField extends FieldComponent {}
+	export default class SelectField extends MixinsDeclaration {}
 </script>

@@ -9,7 +9,7 @@ import { FieldComponent } from './fieldComponent';
 	watch: {
 		// Listen the current field value for the component
 		'field.value': {
-			handler(value: ChoiceValue) {
+			handler(value: ChoiceValue): void {
 				if (value) {
 					/** In multiple mode, put the value in an array if it wasn't already */
 					if (this.isMultiple && !Array.isArray(value)) {
@@ -69,7 +69,7 @@ export class ChoiceField extends FieldComponent {
 					return;
 				}
 
-				const isAlone: boolean = Boolean(item.alone);
+				const isAlone = Boolean(item.alone);
 
 				// If item alone, unselect all other
 				if (isAlone) {

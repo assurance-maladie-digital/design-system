@@ -1,5 +1,6 @@
 import { FormErrors } from './types';
 import { Form } from '../../components/FormBuilder/types';
+import { FieldMetadata } from '../../components/FormField/types';
 
 import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
 
@@ -26,7 +27,7 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 			// If the field exists in our form and we
 			// have errors to set, set errors
 			if (Array.isArray(errors)) {
-				fieldMetadata.errorMessages = errors;
+				(fieldMetadata as FieldMetadata).errorMessages = errors;
 			} else if (typeof errors === 'object') {
 				// For each sub field in error
 				for (const [subFieldName, subErrors] of Object.entries(errors)) {

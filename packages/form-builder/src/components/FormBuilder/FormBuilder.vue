@@ -12,13 +12,11 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { FormBuilderCore } from './mixins/formBuilderCore';
 
 	import FormSection from './FormSection';
-	import { Section } from './FormSection/types';
 
 	const MixinsDeclaration = mixins(FormBuilderCore);
 

@@ -10,7 +10,6 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import DatePicker from '@cnamts/vue-dot/src/patterns/DatePicker';

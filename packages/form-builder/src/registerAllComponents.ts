@@ -9,6 +9,6 @@ import { components } from './components';
  *
  * @param {VueConstructor} Vue The global Vue instance
  */
-export function registerAllComponents(Vue: VueConstructor) {
+export function registerAllComponents(Vue: VueConstructor): void {
 	registerComponents(Vue, components);
 }

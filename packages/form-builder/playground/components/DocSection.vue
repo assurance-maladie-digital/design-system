@@ -17,7 +17,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	const Props = Vue.extend({
 		props: {
@@ -28,10 +28,12 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props);
+
 	/**
 	 * DocSection is a component that renders
 	 * a title, a body and a divider
 	 */
 	@Component
-	export default class DocSection extends Props {}
+	export default class DocSection extends MixinsDeclaration {}
 </script>

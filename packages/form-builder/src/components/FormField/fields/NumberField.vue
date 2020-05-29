@@ -9,16 +9,17 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 
+	const MixinsDeclaration = mixins(FieldComponent);
+
 	/** Form field to enter a number (requires a mask) */
 	@Component
-	export default class NumberField extends FieldComponent {
-		get mask() {
-			return this.field.metadata ? this.field.metadata.mask : '';
+	export default class NumberField extends MixinsDeclaration {
+		get mask(): string {
+			return this.field.metadata?.mask as unknown as string || '';
 		}
 	}
 </script>

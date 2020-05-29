@@ -10,15 +10,16 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 	import { FieldValue } from '../types';
 
+	const MixinsDeclaration = mixins(FieldComponent);
+
 	/** Form field to select a value with autocomplete */
 	@Component
-	export default class AutocompleteField extends FieldComponent {
+	export default class AutocompleteField extends MixinsDeclaration {
 		searchInput: string | null = null;
 
 		/**

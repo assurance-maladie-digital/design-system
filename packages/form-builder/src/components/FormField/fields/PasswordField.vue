@@ -11,19 +11,20 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
+
+	const MixinsDeclaration = mixins(FieldComponent);
 
 	/**
 	 * Form field to enter a password.
 	 * Adds a button to show/hide the password
 	 */
 	@Component
-	export default class PasswordField extends FieldComponent {
+	export default class PasswordField extends MixinsDeclaration {
 		// Icons
 		eyeIcon = mdiEye;
 		eyeOffIcon = mdiEyeOff;

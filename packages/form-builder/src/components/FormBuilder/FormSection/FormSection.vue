@@ -26,7 +26,7 @@
 	import FormField from '../../FormField';
 	import { Field } from '../../FormField/types';
 
-	import { Section, Fields } from './types';
+	import { Fields } from './types';
 
 	const Props = Vue.extend({
 		props: {

@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 import { Field, FieldValue, FieldMetadata } from '../types';
 
@@ -16,6 +16,8 @@ const Props = Vue.extend({
 	}
 });
 
+const MixinsDeclaration = mixins(Props);
+
 /** Share code between field components */
 @Component({
 	model: {
@@ -23,8 +25,8 @@ const Props = Vue.extend({
 		event: 'change'
 	}
 })
-export class FieldComponent extends Props {
-	get fieldMetadata() {
+export class FieldComponent extends MixinsDeclaration {
+	get fieldMetadata(): FieldMetadata | undefined {
 		return this.field.metadata;
 	}
 

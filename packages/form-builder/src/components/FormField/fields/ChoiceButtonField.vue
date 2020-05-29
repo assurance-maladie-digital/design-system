@@ -44,7 +44,6 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiCheck } from '@mdi/js';
@@ -76,8 +75,8 @@
 			return filteredItems;
 		}
 
-		get isInline(): boolean {
-			return this.field && this.field.metadata && this.field.metadata.inline;
+		get isInline(): boolean | null {
+			return this.field?.metadata?.inline as unknown as boolean | null;
 		}
 	}
 </script>

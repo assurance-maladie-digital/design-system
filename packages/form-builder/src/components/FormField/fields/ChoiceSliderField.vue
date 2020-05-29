@@ -22,15 +22,16 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
 	import { FieldValue } from '../types';
 
+	const MixinsDeclaration = mixins(FieldComponent);
+
 	/** Choice field type slider */
 	@Component
-	export default class ChoiceSliderField extends FieldComponent {
+	export default class ChoiceSliderField extends MixinsDeclaration {
 		/** Get the index of the selected item by value
 		 *
 		 * @param {FieldValue} value The current field value
@@ -51,17 +52,17 @@
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */
-		get thickLabels() {
+		get thickLabels(): string[] {
 			return this.isThumbLabel ? [] : this.labels;
 		}
 
 		/**  Are we in thumb label mode */
-		get isThumbLabel() {
+		get isThumbLabel(): boolean {
 			return Boolean(this.field.metadata?.thumbLabel);
 		}
 
 		/** The ticks labels */
-		get labels() {
+		get labels(): string[] {
 			if (this.field.items && this.field.metadata) {
 				const labels = this.field.items.map((item) => item.text);
 
@@ -76,7 +77,7 @@
 		 *
 		 * @param {number} index The index of the selected item
 		 */
-		valueUpdated(index: number) {
+		valueUpdated(index: number): void {
 			let fieldValue = null;
 
 			if (this.field.items) {

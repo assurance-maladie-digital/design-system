@@ -1,3 +1,5 @@
+import { Options } from '@cnamts/vue-dot/src/mixins/customizable';
+
 export interface PeriodValue {
 	from: string | null;
 	to: string | null;
@@ -24,7 +26,6 @@ export interface FieldItem {
 
 export interface FieldMetadata {
 	errorMessages?: ErrorMessages | PeriodErrorMessages;
-	[key: string]: any;
 }
 
 export interface Field {
@@ -33,7 +34,7 @@ export interface Field {
 	title?: string;
 	description?: string;
 	tooltip?: string;
-	metadata?: FieldMetadata;
+	metadata?: Options;
 	items?: FieldItem[];
 	mask?: string;
 	dynamic?: boolean;
