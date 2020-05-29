@@ -60,6 +60,7 @@
 			ref="picker"
 			v-model="date"
 			v-bind="options.datePicker"
+			type="date"
 			:picker-date.sync="internalPickerDate"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
@@ -259,7 +260,9 @@
 		.v-input__prepend-inner,
 		.v-input__append-inner,
 		.v-input__append-outer {
-			margin-top: 10px !important;
+			.v-btn--icon {
+				margin-top: -7px;
+			}
 		}
 	}
 </style>
