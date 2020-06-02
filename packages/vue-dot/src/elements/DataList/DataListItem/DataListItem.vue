@@ -104,6 +104,7 @@
 				type: String,
 				default: undefined
 			},
+			/** Display `label` : `value` in a single row */
 			row: {
 				type: Boolean,
 				default: false
