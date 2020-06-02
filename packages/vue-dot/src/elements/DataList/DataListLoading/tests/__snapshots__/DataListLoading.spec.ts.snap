@@ -3,7 +3,7 @@
 exports[`DataListLoading renders correctly 1`] = `
 <div class="vd-data-list-loading" label="Test">
   <!---->
-  <ul class="vd-data-list-loading-items pl-0 vd-column">
+  <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
     <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
@@ -15,7 +15,7 @@ exports[`DataListLoading renders correctly 1`] = `
 exports[`DataListLoading renders correctly with a header 1`] = `
 <div class="vd-data-list-loading">
   <headerloading-stub width="100" height="1.5rem" class="mb-4"></headerloading-stub>
-  <ul class="vd-data-list-loading-items pl-0 vd-column">
+  <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
     <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
@@ -27,7 +27,7 @@ exports[`DataListLoading renders correctly with a header 1`] = `
 exports[`DataListLoading renders correctly with more items 1`] = `
 <div class="vd-data-list-loading">
   <!---->
-  <ul class="vd-data-list-loading-items pl-0 vd-column">
+  <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
     <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>

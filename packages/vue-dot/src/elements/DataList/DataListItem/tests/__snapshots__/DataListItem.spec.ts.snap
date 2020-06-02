@@ -4,12 +4,14 @@ exports[`DataListItem renders correctly 1`] = `
 <vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
   <!---->
   <div class="vd-data-list-item-content">
-    <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-      Test
+    <div class="">
+      <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+        Test
+      </div>
+      <div class="vd-data-list-item-value"><span class="body-1">
+						…
+					</span></div>
     </div>
-    <div class="vd-data-list-item-value"><span class="body-1">
-					…
-				</span></div>
     <div class="vd-data-list-item-action">
       <!---->
     </div>
@@ -21,12 +23,14 @@ exports[`DataListItem renders correctly with a value 1`] = `
 <vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
   <!---->
   <div class="vd-data-list-item-content">
-    <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-      Test
+    <div class="">
+      <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+        Test
+      </div>
+      <div class="vd-data-list-item-value"><span class="body-1">
+						value
+					</span></div>
     </div>
-    <div class="vd-data-list-item-value"><span class="body-1">
-					value
-				</span></div>
     <div class="vd-data-list-item-action">
       <!---->
     </div>
@@ -38,12 +42,14 @@ exports[`DataListItem renders correctly with an action 1`] = `
 <vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
   <!---->
   <div class="vd-data-list-item-content">
-    <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-      Test
+    <div class="">
+      <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+        Test
+      </div>
+      <div class="vd-data-list-item-value"><span class="body-1">
+						…
+					</span></div>
     </div>
-    <div class="vd-data-list-item-value"><span class="body-1">
-					…
-				</span></div>
     <div class="vd-data-list-item-action">
       <vbtn-stub color="accent" tag="button" activeclass="" small="true" text="true" type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0">
         action
