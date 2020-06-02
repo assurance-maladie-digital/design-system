@@ -98,10 +98,6 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { isDateValid } from '@cnamts/vue-dot/src/rules/isDateValid';
-	import { notAfterToday } from '@cnamts/vue-dot/src/rules/notAfterToday';
-	import { required } from '@cnamts/vue-dot/src/rules/required';
-
 	@Component
 	export default class DatePickerPlayground extends Vue {
 		date = '';

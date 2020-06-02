@@ -10,7 +10,7 @@
 		/>
 
 		<h4 v-if="date">
-			Format de sortie pour le back
+			Format pour le traitement métier
 		</h4>
 
 		<p class="mt-4">

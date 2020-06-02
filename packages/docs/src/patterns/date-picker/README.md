@@ -73,13 +73,13 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
 					name: 'date-format',
 					type: 'string',
 					defaultValue: 'DD/MM/YYYY',
-					description: 'Le format de date pour l\'utilisateur'
+					description: 'Le format de date visuel'
 				},
 				{
 					name: 'date-format-return',
 					type: 'string',
 					defaultValue: 'YYYY-MM-DD',
-					description: 'Le format de date pour le traitement'
+					description: 'Le format de date métier'
 				},
 				{
 					name: 'value',
