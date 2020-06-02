@@ -42,8 +42,6 @@ describe('ValidatorFile', () => {
 			}
 		}) as Wrapper<TestComponent>;
 
-		// let file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
-
 		// be sure that file validation expect format entry
 		expect(wrapper.vm.validateFile(file)).toBe(true);
 
