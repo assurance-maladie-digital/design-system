@@ -1,4 +1,4 @@
-import Vue, { PluginFunction } from 'vue';
+import { PluginFunction } from 'vue';
 
 // Types for the library usage
 // eg. Vue.use(VueDot, options)

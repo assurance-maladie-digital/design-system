@@ -1,6 +1,5 @@
 <template>
 	<DocSection
-		no-divider
 		title="UploadWorkflow"
 	>
 		<UploadWorkflow v-model="files" />
@@ -52,7 +51,7 @@
 			}
 		];
 
-		updateModel() {
+		updateModel(): void {
 			this.files = [
 				{
 					id: 'rib',

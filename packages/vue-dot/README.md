@@ -21,7 +21,7 @@
 To install Vue Dot, you need to use yarn or npm:
 
 ```sh
-yarn global add @cnamts/vue-dot
+yarn add @cnamts/vue-dot
 # OR
-npm install -g @cnamts/vue-dot
+npm install @cnamts/vue-dot
 ```

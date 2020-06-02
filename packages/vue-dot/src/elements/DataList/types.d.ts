@@ -12,5 +12,5 @@ export interface IDataListItem {
 export type IDataList = IDataListItem[];
 
 export interface DataListIcons {
-	[key: string]: string;
+	[iconName: string]: string;
 }

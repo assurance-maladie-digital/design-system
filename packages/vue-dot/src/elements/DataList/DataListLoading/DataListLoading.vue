@@ -15,7 +15,7 @@
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
 				class="vd-data-list-loading-item mb-4"
-				:style="{ width }"
+				:style="{ width: itemWidth }"
 			>
 				<HeaderLoading
 					height="1rem"
@@ -35,6 +35,8 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
+	import { IndexedObject } from '../../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -56,12 +58,8 @@
 				type: Boolean,
 				default: false
 			},
-			titleClass: {
-				type: String,
-				default: 'mb-3 headline'
-			},
-			/** The key/value width */
-			width: {
+			/** The item width */
+			itemWidth: {
 				type: String,
 				default: '200px'
 			}
@@ -72,7 +70,7 @@
 
 	@Component
 	export default class DataListLoading extends MixinsDeclaration {
-		get listClass() {
+		get listClass(): IndexedObject<boolean> {
 			return {
 				'vd-column': !this.row || this.flex,
 				'vd-flex': this.flex

@@ -39,12 +39,12 @@
 			</template>
 
 			<!-- Sass Default -->
-			<Markup
+			<DocMarkup
 				v-if="header.value === 'defaultValue' && header.type === 'sass' && item.defaultValue"
 				:filename="false"
 				lang="sass"
 				value="example"
-			>{{ item.defaultValue }}</Markup>
+			>{{ item.defaultValue }}</DocMarkup>
 
 			<!-- Description -->
 			<!-- <base-markdown
@@ -57,50 +57,50 @@
 			>{{ item.description }}</p>
 
 			<!-- Signature -->
-			<Markup
+			<DocMarkup
 				v-else-if="header.value === 'signature' && item.signature"
 				:filename="false"
 				lang="ts"
 				value="example"
-			>{{ item.signature }}</Markup>
+			>{{ item.signature }}</DocMarkup>
 
 			<!-- Options -->
-			<Markup
+			<DocMarkup
 				v-else-if="header.value === 'example' && item.options"
 				:filename="false"
 				lang="json"
 				value="example"
-			>{{ item.options }}</Markup>
+			>{{ item.options }}</DocMarkup>
 
 			<!-- Snippet -->
-			<Markup
+			<DocMarkup
 				v-else-if="header.value === 'example' && item.snippet"
 				:value="item.snippet"
 			/>
 
 			<!-- Example -->
-			<Markup
+			<DocMarkup
 				v-else-if="header.value === 'example' && item.example"
 				:filename="false"
 				lang="ts"
 				value="example"
-			>{{ item.example }}</Markup>
+			>{{ item.example }}</DocMarkup>
 
 			<!-- Props -->
-			<Markup
+			<DocMarkup
 				v-else-if="header.value === 'props' && item.props"
 				:filename="false"
 				lang="ts"
 				value="example"
-			>{{ item.props }}</Markup>
+			>{{ item.props }}</DocMarkup>
 
 			<!-- Value -->
-			<Markup
+			<DocMarkup
 				v-else-if="header.value === 'value' && item.value"
 				:filename="false"
 				lang="ts"
 				value="example"
-			>{{ item.value }}</Markup>
+			>{{ item.value }}</DocMarkup>
 		</VFlex>
 	</VLayout>
 </template>

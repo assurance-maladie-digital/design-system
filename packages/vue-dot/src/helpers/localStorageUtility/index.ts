@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // See https://developer.mozilla.org/en-US/docs/Web/API/Storage
 // for native specifications
 

@@ -22,6 +22,8 @@
 
 	import { customizable } from '../../mixins/customizable';
 
+	import { IndexedObject } from '../../types';
+
 	const Props = Vue.extend({
 		props: {
 			/** Set min-height to 500px */
@@ -70,7 +72,7 @@
 	})
 	export default class PageCard extends MixinsDeclaration {
 		/** The CSS classes to apply to the VCard */
-		get computedClass() {
+		get computedClass(): (string | IndexedObject<boolean>)[] {
 			return [
 				{
 					'vd-min-height': this.minHeight,
@@ -81,7 +83,7 @@
 			];
 		}
 
-		get paddingClass() {
+		get paddingClass(): string {
 			return this.$vuetify.breakpoint.smAndDown ? 'pa-4' : 'pa-8';
 		}
 	}

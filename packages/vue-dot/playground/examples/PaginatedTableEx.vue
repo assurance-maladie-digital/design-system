@@ -24,7 +24,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Options } from '../../src/patterns/PaginatedTable/types';
+	import { DataOptions } from 'vuetify/types';
 
 	interface Dessert {
 		[key: string]: string | number;
@@ -56,7 +56,7 @@
 		loading = true;
 
 		// Default value for options
-		options = {} as Options;
+		options = {} as DataOptions;
 
 		headers = [
 			{
@@ -91,7 +91,7 @@
 			this.fetchData();
 		}
 
-		fetchData() {
+		fetchData(): void {
 			this.getDataFromApi()
 				.then((value) => {
 					const data = value as DataObj;
@@ -107,10 +107,10 @@
 		 *
 		 * it handles sorting and pagination
 		 */
-		getDataFromApi() {
+		getDataFromApi(): Promise<unknown> {
 			this.loading = true;
 
-			return new Promise((resolve, reject) => {
+			return new Promise((resolve) => {
 				const { sortBy, sortDesc, page, itemsPerPage } = this.options;
 
 				let items: Dessert[] = this.getDesserts();
@@ -164,7 +164,7 @@
 		}
 
 		/** Desserts data */
-		getDesserts() {
+		getDesserts(): Dessert[] {
 			return [
 				{
 					name: 'Frozen Yogurt',
