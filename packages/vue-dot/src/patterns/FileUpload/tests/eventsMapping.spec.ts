@@ -37,7 +37,7 @@ interface FileUpload {
 /**
  *
  */
-function getFileDropEvent({ files, items, kind }: FileUpload): DragEvent | undefined{
+function getFileDropEvent({ files, items, kind }: FileUpload): DragEvent | null{
 	if (files) {
 		return {
 			dataTransfer: {
@@ -60,6 +60,7 @@ function getFileDropEvent({ files, items, kind }: FileUpload): DragEvent | undef
 			}
 		}  as unknown as DragEvent;
 	}
+	return null;
 }
 
 // Test
