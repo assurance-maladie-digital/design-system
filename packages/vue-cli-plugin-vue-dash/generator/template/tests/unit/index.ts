@@ -10,7 +10,9 @@ import {
 	Wrapper,
 	VueClass,
 	config
-} from '@vue/test-utils';<% if (i18n) { %>
+} from '@vue/test-utils';
+
+import { addVApp } from '@cnamts/vue-dot/tests/utils/addVApp';<% if (i18n) { %>
 
 // If mocks is undefined, init it
 if (!config.mocks) {
@@ -65,10 +67,15 @@ localVue.use(VueDot);
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
 
+const vuetify = new Vuetify();
+
+import VueTheMask from 'vue-the-mask';
+localVue.use(VueTheMask);
+
+addVApp();
+
 // Register global components
 import '@/components/global';
-
-const vuetify = new Vuetify();
 
 /**
  * Generic mount function
