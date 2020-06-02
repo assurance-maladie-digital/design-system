@@ -11,29 +11,27 @@
 
 		<template #title>
 			<h3>
-				Prénom Nom (d'usage)
+				Titre
 			</h3>
 		</template>
 
 		<template #sub-title>
-			<h4 class="red--text">
-				1 69 08 75 125 456 75
+			<h4>
+				Sous-titre
 			</h4>
 		</template>
 
 		<template #additional-informations>
-			<VCard>
-				<VCardText>
-					informations supplémentaires
-				</VCardText>
-			</VCard>
+			<p class="mb-0">
+				Informations supplémentaires
+			</p>
 		</template>
 
 		<template #right-content>
-			<VCard>
-				<VCardText>
-					Contenu de droite
-				</VCardText>
+			<VCard class="py-3 px-2">
+				<p class="mb-0">
+					Contenu situé à droite
+				</p>
 			</VCard>
 		</template>
 	</SubHeader>

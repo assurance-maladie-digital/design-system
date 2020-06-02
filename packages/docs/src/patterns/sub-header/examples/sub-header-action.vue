@@ -7,10 +7,7 @@
 			@click:list-item="setItemValue"
 		/>
 
-		<VSnackbar
-			v-model="snackbar"
-			multi-line
-		>
+		<VSnackbar v-model="snackbar">
 			{{ snackbarText }}
 
 			<VBtn
@@ -35,7 +32,6 @@
 		actionValue = 'New text';
 
 		snackbar = false;
-
 		snackbarText = '';
 
 		dataLists = [
@@ -101,24 +97,15 @@
 			}
 		];
 
-		progressValue = 50;
-
-		progressLinearOpts = {
-			class: 'mt-2',
-			color: '#fff',
-			height: '8px',
-			backgroundColor: '#fff',
-			backgroundOpacity: '.24'
-		};
-
 		/**
 		 * Set the new value to the corresponding dataList item
 		 *
 		 * @param {IDataListAction} dataListAction The dataListAction object containing dataListIndex and itemIndex
 		 */
-		setItemValue({ dataListIndex, itemIndex }: IDataListAction) {
-			this.snackbarText = `Vous avez cliquer sur le bouton d'action. ${JSON.stringify({ dataListIndex, itemIndex })}`;
+		setItemValue({ dataListIndex, itemIndex }: IDataListAction): void {
+			const formattedPosition = `DataList n°${dataListIndex}, ligne n°${itemIndex}.`;
 
+			this.snackbarText = `Vous avez cliquer sur le bouton d'action. ${formattedPosition}`;
 			this.snackbar = true;
 		}
 	}

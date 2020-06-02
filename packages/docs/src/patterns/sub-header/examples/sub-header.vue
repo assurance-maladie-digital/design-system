@@ -4,22 +4,21 @@
 		title-text="Prénom Nom (d'usage)"
 		sub-title-text="1 69 08 75 125 456 75"
 	>
-		<!-- ProgressBar -->
 		<template #additional-informations>
 			<VSpacer />
-			<div
-				key="progress-data"
-			>
-				<p class="white--text mt-8 mb-0">
-					Profil complété à 50%
-				</p>
 
-				<VProgressLinear
-					v-bind="progressLinearOpts"
-					:value="progressValue"
-					class="mb-1"
-				/>
-			</div>
+			<p class="white--text mt-8 mb-0">
+				Profil complété à 50%
+			</p>
+
+			<VProgressLinear
+				:value="progressValue"
+				color="#fff"
+				height="8px"
+				class="mt-2 mb-1"
+				background-color="#fff"
+				background-opacity=".24"
+			/>
 		</template>
 	</SubHeader>
 </template>
@@ -29,7 +28,9 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class SubHeaderDoc extends Vue {
+	export default class SubHeaderEx extends Vue {
+		progressValue = 50;
+
 		dataLists = [
 			{
 				listTitle: 'Catégorie 1',
@@ -49,11 +50,11 @@
 				items: [
 					{
 						key: 'Libellé',
-						value: 'Texte à modifier'
+						value: 'Texte saisi'
 					},
 					{
 						key: 'Libellé',
-						value: 'Texte à modifier'
+						value: 'Texte saisi'
 					}
 				]
 			},
@@ -69,30 +70,7 @@
 						value: 'Texte saisi'
 					}
 				]
-			},
-			{
-				listTitle: 'Catégorie 4',
-				items: [
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					}
-				]
 			}
 		];
-
-		progressValue = 50;
-
-		progressLinearOpts = {
-			class: 'mt-2',
-			color: '#fff',
-			height: '8px',
-			backgroundColor: '#fff',
-			backgroundOpacity: '.24'
-		};
 	}
 </script>

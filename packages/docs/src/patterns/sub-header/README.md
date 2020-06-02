@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `SubHeader` est un composant qui affiche des informations sous l'en-tête principal
+Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'en-tête principale.
 :::
 
 ## Utilisation
@@ -24,7 +24,7 @@ L'élément `SubHeader` est un composant qui affiche des informations sous l'en-
 					name: 'hide-back-btn',
 					defaultValue: 'false',
 					type: 'boolean',
-					description: 'Masquer le bouton de retour.'
+					description: 'Masque le bouton de retour.'
 				},
 				{
 					name: 'back-btn-text',
@@ -47,13 +47,13 @@ L'élément `SubHeader` est un composant qui affiche des informations sous l'en-
 					name: 'data-lists',
 					defaultValue: 'undefined',
 					type: 'DataListsItem[]',
-					description: 'Liste des composants DataList en mode colonne.'
+					description: 'Liste des composants `DataList` en mode colonne.'
 				},
 				{
 					name: 'loading',
 					defaultValue: 'false',
 					type: 'boolean',
-					description: 'Liste des composants DataList en mode colonne.'
+					description: 'Liste des composants `DataList` en mode colonne.'
 				}
 			],
 			slots: [
@@ -63,19 +63,19 @@ L'élément `SubHeader` est un composant qui affiche des informations sous l'en-
 				},
 				{
 					name: 'title',
-					description: 'Slot pour personaliser le titre.'
+					description: 'Slot pour remplacer le titre.'
 				},
 				{
 					name: 'sub-title',
-					description: 'Slot pour personaliser le sous titre.'
+					description: 'Slot pour remplacer le sous-titre.'
+				},
+				{
+					name: 'right-content',
+					description: 'Slot pour remplacer le contenu situé à droite.'
 				},
 				{
 					name: 'additional-informations',
 					description: 'Slot pour ajouter des informations complémentaires.'
-				},
-				{
-					name: 'right-content',
-					description: 'Slot pour remplacer la `DataList` dans le contenue de droite.'
 				}
 			]
 		}
@@ -86,23 +86,24 @@ L'élément `SubHeader` est un composant qui affiche des informations sous l'en-
 
 ### Action
 
-Vous pouvez ajouter une action sur chaque item des différentes listes de droite
+Vous pouvez ajouter une action sur les items des différentes listes situées à droite.
 
 <DocExample file="patterns/sub-header/examples/sub-header-action" />
 
 ### Chargement
 
-Vous pouvez affiche le composant avec des listes d'items en chargement
+Vous pouvez afficher le composant en mode chargement.
 
 <DocExample file="patterns/sub-header/examples/sub-header-loading" />
 
 ### Utilisation des slots
 
-Vous pouvez utiliser les slots pour 
-- Le bouton de retour
-- Le titre
-- Le sous titre
-- Des informations supplémentaires
-- Modifier le contenue de droite à la place de la propriété `data-lists`
+Vous pouvez utiliser les slots pour remplacer certains contenus par défaut ou pour en ajouter :
+
+- `back-btn` : le bouton de retour
+- `title` : le titre
+- `sub-title` : le sous-titre
+- `right-content` : le contenu situé à droite
+- `additional-informations` : informations complémentaires
 
 <DocExample file="patterns/sub-header/examples/sub-header-slots" />

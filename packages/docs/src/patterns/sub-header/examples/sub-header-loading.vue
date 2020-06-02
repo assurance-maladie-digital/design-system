@@ -6,7 +6,6 @@
 			title-text="Prénom Nom (d'usage)"
 			sub-title-text="1 69 08 75 125 456 75"
 		>
-			<!-- ProgressBar -->
 			<template #additional-informations>
 				<VSpacer />
 
@@ -41,9 +40,12 @@
 							</p>
 
 							<VProgressLinear
-								v-bind="progressLinearOpts"
 								:value="progressValue"
-								class="mb-1"
+								color="#fff"
+								height="8px"
+								class="mt-2 mb-1"
+								background-color="#fff"
+								background-opacity=".24"
 							/>
 						</div>
 					</VFadeTransition>
@@ -64,6 +66,10 @@
 
 	@Component
 	export default class SubHeaderLoading extends Vue {
+		progressValue = 50;
+
+		loading = false;
+
 		dataLists = [
 			{
 				listTitle: 'Catégorie 1',
@@ -126,17 +132,5 @@
 				]
 			}
 		];
-
-		progressValue = 50;
-
-		progressLinearOpts = {
-			class: 'mt-2',
-			color: '#fff',
-			height: '8px',
-			backgroundColor: '#fff',
-			backgroundOpacity: '.24'
-		};
-
-		loading = false;
 	}
 </script>
