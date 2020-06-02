@@ -62,11 +62,7 @@
 
 	import { customizable } from '../../mixins/customizable';
 
-	import tokens from '../../tokens';
-
 	import { mdiClose } from '@mdi/js';
-
-	const defaultWidth = tokens['dialog-width']['dialog-medium'];
 
 	const Props = Vue.extend({
 		props: {
@@ -86,7 +82,7 @@
 			/** The width of the DialogBox */
 			width: {
 				type: String,
-				default: defaultWidth
+				default: '800px'
 			},
 			/** The label of the cancel button*/
 			cancelBtnText: {
