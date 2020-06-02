@@ -5,8 +5,9 @@
 		</h2>
 
 		<VTextField
-			label="Required field"
 			:rules="textFieldRules"
+			label="Required field"
+			outlined
 		/>
 
 		<h2 class="subtitle-1 my-4 font-weight-bold">
@@ -14,9 +15,10 @@
 		</h2>
 
 		<VTextarea
-			label="Required field"
-			rows="1"
 			:rules="textareaRules"
+			label="Required field"
+			outlined
+			rows="1"
 		/>
 
 		<h2 class="subtitle-1 my-4 font-weight-bold">
@@ -24,9 +26,10 @@
 		</h2>
 
 		<VTextarea
-			label="Length field"
-			rows="1"
 			:rules="lengthRule"
+			label="Length field"
+			outlined
+			rows="1"
 		/>
 
 		<h2 class="subtitle-1 my-4 font-weight-bold">
@@ -35,10 +38,11 @@
 
 		<VSelect
 			v-model="selected"
-			multiple
-			label="Select something"
-			:items="data"
 			:rules="selectRules"
+			:items="data"
+			label="Select something"
+			outlined
+			multiple
 		/>
 	</DocSection>
 </template>

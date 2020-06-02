@@ -130,14 +130,14 @@ describe('DateLogic', () => {
 		expect(wrapper.vm.date).toBe('2019-10-29');
 	});
 
-	it('doesn\'t emit change event when the date is invalid', () => {
+	it('emits change event with empty value when the date is invalid', async() => {
 		const wrapper = createWrapper({
 			value: '29-10-2019'
 		});
 
 		wrapper.vm.saveFromTextField();
 
-		expect(wrapper.emitted('change')).toBeFalsy();
+		expect(wrapper.emitted('change')).toEqual([['']]);
 	});
 
 	// parseTextFieldDate
@@ -212,7 +212,7 @@ describe('DateLogic', () => {
 	});
 
 	// Error event
-	it('emits error event when VTextField has error', () => {
+	it('emits error event when VTextField has error', async() => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
@@ -221,18 +221,19 @@ describe('DateLogic', () => {
 
 		wrapper.vm.$refs.input.hasError = true;
 
-		wrapper.vm.$nextTick(() => {
-			expect(wrapper.emitted('error')).toBeTruthy();
-		});
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 
 	// dateFormatted
-	it('emits change event when dateFormatted is set', () => {
+	it('sets the date correctly when dateFormatted is called', () => {
+		const date = '29/10/2019';
 		const wrapper = createWrapper();
 
-		wrapper.vm.dateFormatted = '29/10/2019';
+		wrapper.vm.dateFormatted = date;
 
-		expect(wrapper.emitted('change')).toBeTruthy();
+		expect(wrapper.vm.textFieldDate).toBe(date);
 	});
 
 	it('returns an empty string when the value is empty', () => {
