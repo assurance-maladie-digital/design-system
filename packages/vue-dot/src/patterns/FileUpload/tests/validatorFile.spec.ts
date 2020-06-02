@@ -14,6 +14,9 @@ const component = Vue.component('test', {
 	],
 	template: '<input ref="vdInputEl" type="file">'
 });
+
+const file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
+
 // Test
 describe('ValidatorFile', () => {
 	it('verify that props: allowedExtensions and accept are reactive', () => {
@@ -39,22 +42,22 @@ describe('ValidatorFile', () => {
 			}
 		}) as Wrapper<TestComponent>;
 
-		let file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
+		// let file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
 
 		// be sure that file validation expect format entry
 		expect(wrapper.vm.validateFile(file)).toBe(true);
 
         // check the size limit of the file, if limit is exceed an error should triggered
-		file = { size: 5000 * 1024, type: 'image/png', name: 'avatar.png' } as File;
+		const fileLimit = { size: 5000 * 1024, type: 'image/png', name: 'avatar.png' } as File;
 
-		expect(wrapper.vm.validateFile(file)).toBe(false);
+		expect(wrapper.vm.validateFile(fileLimit)).toBe(false);
 
 		expect(wrapper.emitted().error).toBeTruthy();
 
 		// check if the format it's not correct an error is triggered,
-		file = { size: 1000, type: 'image/csv', name: 'avatar.csv' } as File;
+		const fileCsv = { size: 1000, type: 'image/csv', name: 'avatar.csv' } as File;
 
-		expect(wrapper.vm.validateFile(file)).toBe(false);
+		expect(wrapper.vm.validateFile(fileCsv)).toBe(false);
 
 		expect(wrapper.emitted().error).toBeTruthy();
 	});
