@@ -115,7 +115,7 @@ Vous pouvez modifier les textes par défaut des boutons d'actions avec les attri
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `DialogBox` en utilisant la propriété `options` avec les propriétés suivantes :
+Vous pouvez personnaliser les composants Vuetify contenus dans `DialogBox` en utilisant la propriété `vuetify-options` avec les propriétés suivantes :
 
 - `card` : `VCard`
 - `cardTitle` : `VCardTitle`
