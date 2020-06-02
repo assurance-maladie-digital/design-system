@@ -7,9 +7,15 @@
    in the URL and a payload
 */
 
-import { axios } from '@/plugins/axios';
+import { axios, AxiosResponse } from '@/plugins/axios';
 
-export function getAll(pagination: object) {
+import { DataPagination } from 'vuetify';
+
+interface Payload {
+	example: string;
+}
+
+export function getAll(pagination: DataPagination): Promise<AxiosResponse> {
 	return axios.get('/api/all', {
 		params: {
 			pagination
@@ -17,6 +23,6 @@ export function getAll(pagination: object) {
 	});
 }
 
-export function updateStatus(id: string, payload: object) {
+export function updateStatus(id: string, payload: Payload): Promise<AxiosResponse> {
 	return axios.post(`/api/${id}/status`, payload);
 }
