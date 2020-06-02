@@ -56,7 +56,7 @@
 		}
 	})
 	export default class AppHeader extends Vue {
-		get maintenance() {
+		get maintenance(): boolean {
 			return MAINTENANCE === 'true';
 		}
 	}

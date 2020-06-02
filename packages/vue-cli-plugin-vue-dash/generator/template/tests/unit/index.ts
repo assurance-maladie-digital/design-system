@@ -33,7 +33,7 @@ export const router = new VueRouter();
  * @param {RouterOptions} options The router options
  * @returns {VueRouter} The router instance
  */
-export function newRouter(options: RouterOptions) {
+export function newRouter(options: RouterOptions): VueRouter {
 	return new VueRouter(options);
 }
 
@@ -51,7 +51,7 @@ import Vuex, { Store, StoreOptions } from 'vuex';
  * @param {StoreOptions} options The store options
  * @returns {Store} The store instance
  */
-export function newStore(options: StoreOptions<any>): Store<any> {
+export function newStore<T = unknown>(options: StoreOptions<T>): Store<T> {
 	return new Vuex.Store(options);
 }
 
@@ -81,7 +81,7 @@ const vuetify = new Vuetify();
 export function mountComponent(
 	component: VueClass<Vue>,
 	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
-	fullMount: boolean = false
+	fullMount = false
 ): Wrapper<Vue> {
 	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;

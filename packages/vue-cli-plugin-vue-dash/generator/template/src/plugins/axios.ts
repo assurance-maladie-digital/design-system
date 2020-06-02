@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 
 import { store } from '@/store';
 
@@ -48,3 +48,4 @@ instance.interceptors.response.use(undefined, (error: AxiosError) => {
 });
 
 export { instance as axios };
+export { AxiosResponse };
