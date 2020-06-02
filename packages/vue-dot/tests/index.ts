@@ -11,6 +11,8 @@ import {
 	VueClass
 } from '@vue/test-utils';
 
+import { addVApp } from './utils/addVApp';
+
 // Create localVue
 const localVue = createLocalVue();
 
@@ -22,6 +24,8 @@ const vuetify = new Vuetify();
 
 import VueTheMask from 'vue-the-mask';
 localVue.use(VueTheMask);
+
+addVApp();
 
 /**
  * Generic mount function
