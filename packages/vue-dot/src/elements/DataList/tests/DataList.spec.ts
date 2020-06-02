@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/html';
+import { html } from '@/tests/utils/html';
 
 import DataList from '../';
 import { dataList } from './data/dataList';
