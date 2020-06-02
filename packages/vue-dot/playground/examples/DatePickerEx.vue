@@ -19,11 +19,12 @@
 
 		<DatePicker
 			v-model="birthDate"
+			:warning-rules="rules"
 			label="Birthdate"
 			date-format="DD-MM-YYYY"
 			hint="DD-MM-YYYY Format"
 			birthdate
-			:warning-rules="rules"
+			outlined
 		>
 			<template #prepend-icon>
 				<VIcon>
@@ -86,7 +87,9 @@
 
 		<DatePicker
 			show-week-ends
+			append-icon
 			clearable
+			outlined
 		/>
 
 		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
@@ -100,12 +103,16 @@
 			hint="YYYY-MM-DD Format"
 			text-field-class="mb-4"
 			label="Start Date"
+			append-icon
+			outlined
 		/>
 
 		<DatePicker
 			show-week-ends
 			:start-date="startDate"
 			text-field-activator
+			append-icon
+			outlined
 		/>
 	</DocSection>
 </template>
