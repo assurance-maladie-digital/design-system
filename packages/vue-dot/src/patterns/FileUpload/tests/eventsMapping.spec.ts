@@ -23,20 +23,59 @@ const component = Vue.component('file-upload', {
 	mixins: [
 		EventsMapping
 	],
-	template: '<input ref="vdInputEl" type="file">'
+	template: '<div><input ref="vdInputEl" type="file"></div>'
 });
+
+const file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
+
+interface FileUpload {
+	files?: File[] | null;
+	items?: {file:File | null};
+	kind?: string;
+}
+
+/**
+ *
+ */
+function getFileDropEvent({ files, items, kind }: FileUpload): DragEvent | undefined{
+	if (files) {
+		return {
+			dataTransfer: {
+				files: files
+			}
+		} as unknown as DragEvent;
+	}
+
+	if (items) {
+		return {
+			dataTransfer: {
+				items: [
+					{
+						kind: kind,
+						getAsFile() {
+							return items.file;
+						}
+					}
+				]
+			}
+		}  as unknown as DragEvent;
+	}
+}
 
 // Test
 describe('eventMapping', () => {
-	it('check retry event ', async() => {
+	it('verify if behavior of retry method it\'s called properly', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
+
+		const spy = jest.spyOn(wrapper.vm, 'retry');
 
 		wrapper.vm.retry();
 
-		expect(wrapper.vm.$refs.vdInputEl).toBeTruthy();
+		expect(spy).toBeCalled();
+
 	});
 
-	it('check self reset function ', () => {
+	it('trigger a self reset then assume that the dragover, files and error data are set to default value ', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		wrapper.setData({ dragover: true });
@@ -50,7 +89,7 @@ describe('eventMapping', () => {
 		expect(wrapper.vm.error).toBe(false);
 	});
 
-	it('check event emitted with no multiple', async() => {
+	it('emit event change when no error detected in single mode: multiple = false', async() => {
 		const wrapper = mount(component, {
 			data() {
 				return {
@@ -66,7 +105,7 @@ describe('eventMapping', () => {
 		expect(wrapper.emitted().change).toBeTruthy();
 	});
 
-	it('check retry event with multiple', async() => {
+	it('emit event change when no error detected in multiple mode: multiple = true', async() => {
 		const wrapper = mount(component, {
 			data() {
 				return {
@@ -82,7 +121,7 @@ describe('eventMapping', () => {
 		expect(wrapper.emitted().change).toBeTruthy();
 	});
 
-	it('check retry event with error', async() => {
+	it('verify that the value of the input field is set empty when an error is detected', async() => {
 		const wrapper = mount(component, {
 			data() {
 				return {
@@ -98,54 +137,65 @@ describe('eventMapping', () => {
 		expect(wrapper.emitted().change).toBeFalsy();
 	});
 
-	it('check input change with target from event ', () => {
+	it('if no event detected to input field, event.target should be null', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const event = {} as HTMLInputEvent;
 
-		expect(wrapper.vm.inputValueChanged(event)).toBeUndefined();
+		const inputValueChanged = jest.spyOn(wrapper.vm, 'inputValueChanged');
+
+		wrapper.vm.inputValueChanged(event);
+
+		expect(inputValueChanged).toHaveReturned();
+
+		expect(inputValueChanged).toBeCalledWith(event);
+
 	});
 
-	it('check input change if no files selected ', async() => {
-		const wrapper = mount(component) as Wrapper<TestComponent>;
+	it('when no change detected a self reset have been to call', async() => {
+		const wrapper = mount(component, {
+			mocks: {
+				selfReset: jest.fn()
+			}
+		}) as Wrapper<TestComponent>;
 
 		const event = { target: {} } as HTMLInputEvent;
 
-		expect(wrapper.vm.inputValueChanged(event)).toBeUndefined();
+		const selfReset = jest.spyOn(wrapper.vm, 'selfReset');
+
+		wrapper.vm.inputValueChanged(event);
+
+		expect(selfReset).toHaveBeenCalled();
 	});
 
-	it('check input change ', async() => {
+	it('if we in single mode with a manual file selection, emitChangeEvent have to be called', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
-
-		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
 
 		const event = { target: { files: [file] } } as unknown as HTMLInputEvent;
 
+		const emitChangeEvent = jest.spyOn(wrapper.vm, 'emitChangeEvent');
+
 		wrapper.vm.inputValueChanged(event);
+
+		expect(emitChangeEvent).toHaveBeenCalled();
 
 		expect(wrapper.emitted().change).toBeTruthy();
 
 	});
 
-	it('check input change if multiple files selected ', () => {
+	it('if we in multiple mode with a manual file selection, verify that: ifTooManyFiles method return true', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
-		const file = [
-			{
-				size: 1000,
-				type: 'image/png',
-				name: 'avatar.png',
-				lastModified: 1586592487740
-			}
-		];
 
 		const event = { target: { files: [file, file] } } as unknown as HTMLInputEvent;
 
+		const ifTooManyFiles = jest.spyOn(wrapper.vm, 'ifTooManyFiles');
+
 		wrapper.vm.inputValueChanged(event);
 
-		expect(wrapper.emitted().change).toBeFalsy();
+		expect(ifTooManyFiles).toReturnWith(true);
 	});
 
-	it('check dropHandler event if no data', async() => {
+	it('on drop handle if event is null, no change event emitted', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const fileDropEvent = {} as DragEvent;
@@ -155,103 +205,56 @@ describe('eventMapping', () => {
 		expect(wrapper.emitted().change).toBeFalsy();
 	});
 
-	it('check dropHandler with multi mode', async() => {
+	it('if it is a drop handler with multiple, assume that a change event is emitted', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
+		const fileDropEvent = getFileDropEvent({ files: file as unknown  as File[] }) ;
 
-		const fileDropEvent = {
-			dataTransfer: {
-				files: [file]
-			}
-		} as unknown as DragEvent;
-
-		wrapper.vm.dropHandler(fileDropEvent);
+		wrapper.vm.dropHandler(fileDropEvent as unknown as DragEvent);
 
 		expect(wrapper.emitted().change).toBeTruthy();
 	});
 
-	it('check dropHandler  with single mode', async() => {
+	it('if it\'s a drop handler with single mode no event change is emitted', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		const file = { size: 1000, type: 'image/png', name: 'avatar.png' };
-
-		const fileDropEvent = {
-			dataTransfer: {
-				files: [file, file]
-			}
-		} as unknown as DragEvent;
+		const fileDropEvent = getFileDropEvent({ files: [file,file] as unknown  as File[] });
 
 		wrapper.setProps({ multiple: false });
 
-		wrapper.vm.dropHandler(fileDropEvent);
+		wrapper.vm.dropHandler(fileDropEvent as unknown  as DragEvent);
 
 		expect(wrapper.emitted().change).toBeFalsy();
 	});
 
-	it('check dropHandler with conditions data item', async() => {
+	it('use DataTransferItemList interface to access the file(s)', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		const file = { size: 1000, type: 'image/png', name: 'avatar.png' } as unknown as File;
+        //if transfer data contains one or more file it should send an event change
+        let fileDropEvent = getFileDropEvent({ files: [file] });
 
-		let fileDropEvent = {
-			dataTransfer: {
-				files: [file]
-			}
-		} as unknown as DragEvent;
-
-		wrapper.vm.dropHandler(fileDropEvent);
+		wrapper.vm.dropHandler(fileDropEvent  as unknown  as DragEvent);
 
 		expect(wrapper.emitted().change).toBeTruthy();
 
-		fileDropEvent = {
-			dataTransfer: {
-				items: [
-					{
-						kind: '',
-						getAsFile() {
-							return file;
-						}
-					}
-				]
-			}
-		}as unknown as DragEvent;
+		// if transfer data contains one or more file  it should send an event change when kind set empty
+		fileDropEvent =getFileDropEvent({ items: { file:file }, kind:'' });
 
-		wrapper.vm.dropHandler(fileDropEvent);
+		wrapper.vm.dropHandler(fileDropEvent as unknown  as DragEvent);
 
 		expect(wrapper.emitted().change).toBeTruthy();
 
-		fileDropEvent = {
-			dataTransfer: {
-				items: [
-					{
-						kind: 'file',
-						getAsFile() {
-							return file;
-						}
-					}
-				]
-			}
-		}as unknown as DragEvent;
+		// if data transfer it's a file contain
+		fileDropEvent =getFileDropEvent({ items: { file:file }, kind:'file' });
 
-		wrapper.vm.dropHandler(fileDropEvent);
+		wrapper.vm.dropHandler(fileDropEvent as unknown  as DragEvent);
 
 		expect(wrapper.emitted().change).toBeTruthy();
 
-		fileDropEvent = {
-			dataTransfer: {
-				items: [
-					{
-						kind: 'file',
-						getAsFile() {
-							return null;
-						}
-					}
-				]
-			}
-		}as unknown as DragEvent;
+		// if data transfer it's a file contain with no file uploaded
+		fileDropEvent =getFileDropEvent({ items: { file:null } , kind:'file' });
 
-		wrapper.vm.dropHandler(fileDropEvent);
+		wrapper.vm.dropHandler(fileDropEvent as unknown  as DragEvent);
 
 		expect(wrapper.emitted().change).toBeTruthy();
 	});

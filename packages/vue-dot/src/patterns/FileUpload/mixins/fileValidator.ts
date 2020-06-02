@@ -93,7 +93,7 @@ export class FileValidator extends MixinsDeclaration {
 		return true;
 	}
 
-	ifTooManyFiles(files: FileList | DataTransferItemList): boolean{
+	ifTooManyFiles(files: FileList | DataTransferItemList): boolean {
 		// If not in multiple mode and more than one file,
 		// return error
 		if (!this.multiple && files.length > 1) {
@@ -108,11 +108,12 @@ export class FileValidator extends MixinsDeclaration {
 		return false;
 	}
 
-	/** compute accept file */
+	/** Compute accept */
 	get computedAccept(): string {
 		if (this.accept) {
 			return this.accept;
 		}
+
 		const accept: string[] = [];
 
 		// Calc the accept="" string from the allowed extensions

@@ -16,7 +16,7 @@ const component = Vue.component('test', {
 });
 // Test
 describe('ValidatorFile', () => {
-	it('check file accepted  ', () => {
+	it('verify that props: allowedExtensions and accept are reactive', () => {
 		const wrapper = mount(component, {
 			propsData: {
 				allowedExtensions: ['pdf'],
@@ -31,7 +31,7 @@ describe('ValidatorFile', () => {
 		expect(wrapper.vm.computedAccept).toBe('file');
 	});
 
-	it('check validation of file', () => {
+	it('assume that extension, size limit and format should be expected', () => {
 		const wrapper = mount(component, {
 			propsData: {
 				allowedExtensions: ['pdf', 'jpg', 'png'],
@@ -41,16 +41,17 @@ describe('ValidatorFile', () => {
 
 		let file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
 
+		// be sure that file validation expect format entry
 		expect(wrapper.vm.validateFile(file)).toBe(true);
 
-        // check the size limit of file
+        // check the size limit of the file, if limit is exceed an error should triggered
 		file = { size: 5000 * 1024, type: 'image/png', name: 'avatar.png' } as File;
 
 		expect(wrapper.vm.validateFile(file)).toBe(false);
 
 		expect(wrapper.emitted().error).toBeTruthy();
 
-		// check if the format it's not correct
+		// check if the format it's not correct an error is triggered,
 		file = { size: 1000, type: 'image/csv', name: 'avatar.csv' } as File;
 
 		expect(wrapper.vm.validateFile(file)).toBe(false);
@@ -58,13 +59,14 @@ describe('ValidatorFile', () => {
 		expect(wrapper.emitted().error).toBeTruthy();
 	});
 
-	it('check if too many file ', () => {
+	it('when select many files it should be true or false', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		wrapper.setProps({ multiple: true });
 
 		const fileList = {} as FileList;
 
+        // should be false if no event detected
 		expect(wrapper.vm.ifTooManyFiles(fileList)).toBe(false);
 
 		wrapper.setProps({ multiple: false });
@@ -88,6 +90,7 @@ describe('ValidatorFile', () => {
 
 		const files = event.target.files as unknown as FileList;
 
+		// should be false if it contain one or more files
 		expect(wrapper.vm.ifTooManyFiles(files)).toBe(true);
 	});
 });
