@@ -1,7 +1,8 @@
 <template>
 	<VLayout
 		v-bind="options.layout"
-		class="vd-data-list-item"
+		class="vd-data-list-item flex-grow-0"
+		tag="li"
 	>
 		<slot name="icon">
 			<VIcon
@@ -44,18 +45,16 @@
 				</div>
 			</div>
 
-			<div class="vd-data-list-item-action">
-				<slot name="action">
-					<VBtn
-						v-if="action"
-						v-bind="options.actionBtn"
-						class="vd-data-list-item-action-btn"
-						@click="$emit('click:action')"
-					>
-						{{ action }}
-					</VBtn>
-				</slot>
-			</div>
+			<slot name="action">
+				<VBtn
+					v-if="action"
+					v-bind="options.actionBtn"
+					class="vd-data-list-item-action-btn"
+					@click="$emit('click:action')"
+				>
+					{{ action }}
+				</VBtn>
+			</slot>
 		</div>
 	</VLayout>
 </template>

@@ -29,26 +29,21 @@
 					:class="listClass"
 					:style="{ minWidth }"
 				>
-					<li
+					<DataListItem
 						v-for="(item, index) in items"
 						:key="index"
-						class="vd-data-list-row mb-2"
-					>
-						<DataListItem
-							v-if="item.key"
-							:label="item.key"
-							:value="item.value"
-							:action="item.action"
-							:chip="item.chip"
-							:row="row"
-							:icon="getIcon(item.icon)"
-							:placeholder="placeholder"
-							:vuetify-options="item.options"
-							:style="{ width: itemWidth }"
-							class="vd-data-list-item body-1"
-							@click:action="$emit('click:item-action', index)"
-						/>
-					</li>
+						:label="item.key"
+						:value="item.value"
+						:action="item.action"
+						:chip="item.chip"
+						:row="row"
+						:icon="getIcon(item.icon)"
+						:placeholder="placeholder"
+						:vuetify-options="item.options"
+						:style="{ width: itemWidth }"
+						class="vd-data-list-item body-1 mb-2"
+						@click:action="$emit('click:item-action', index)"
+					/>
 				</ul>
 			</div>
 		</VFadeTransition>
