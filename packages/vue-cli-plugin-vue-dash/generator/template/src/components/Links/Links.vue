@@ -21,8 +21,10 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
+
+	import { Link } from '@/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -31,7 +33,7 @@
 				default: undefined
 			},
 			links: {
-				type: [Object, Array],
+				type: Array as PropType<Link[]>,
 				required: true
 			}
 		}

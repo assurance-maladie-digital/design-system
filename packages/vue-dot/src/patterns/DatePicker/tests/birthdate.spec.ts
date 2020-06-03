@@ -85,26 +85,26 @@ describe('Birthdate', () => {
 		expect(wrapper.vm.max).toBe(dayjs().format('YYYY-MM-DD'));
 	});
 
-	it('calls setActivePicker in watch when menu goes from false to true', () => {
+	it('calls setActivePicker in watch when menu goes from false to true', async() => {
 		const spy = jest.fn();
 		const wrapper = createWrapper(true, spy, false);
 
 		wrapper.vm.menu = true;
 
-		wrapper.vm.$nextTick(() => {
-			expect(spy).toHaveBeenCalled();
-		});
+		await wrapper.vm.$nextTick();
+
+		expect(spy).toHaveBeenCalled();
 	});
 
-	it('calls setActivePicker in watch when menu goes from true to false', () => {
+	it('calls setActivePicker in watch when menu goes from true to false', async() => {
 		const spy = jest.fn();
 		const wrapper = createWrapper(true, spy, true);
 
 		wrapper.vm.menu = false;
 
-		wrapper.vm.$nextTick(() => {
-			expect(spy).toHaveBeenCalled();
-		});
+		await wrapper.vm.$nextTick();
+
+		expect(spy).toHaveBeenCalled();
 	});
 
 	it('updates the active picker when setActivePicker is called', () => {

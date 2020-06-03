@@ -70,14 +70,14 @@
 
 	import { mapActions, mapState } from 'vuex';
 
-	import { NextRoute } from '@/types';
+	import { RawLocation } from 'vue-router';
 
 	import { mdiAccount, mdiLogoutVariant } from '@mdi/js';
 
 	interface LinkItem {
 		title: string;
 		disabled: boolean;
-		to?: NextRoute;
+		to?: RawLocation;
 	}
 
 	/** User profile button in the HeaderBar */
@@ -87,7 +87,7 @@
 		userIcon = mdiAccount;
 		logoutIcon = mdiLogoutVariant;
 
-		<% if (i18n) { %>get links() {
+		<% if (i18n) { %>get links(): LinkItem[] {
 			return this.$t('components.layout.headerMenu.links') as unknown as LinkItem[];
 		}<% } else { %>links: LinkItem[] = [
 			{

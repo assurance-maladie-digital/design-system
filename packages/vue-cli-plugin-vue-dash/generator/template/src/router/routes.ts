@@ -1,3 +1,6 @@
+// Disable return types for import functions
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 // Directly import Home view for faster rendering of first page
 import Home from '@/views/Home.vue';
 
@@ -16,7 +19,7 @@ export const routes = [
 		// which is lazy-loaded when the route is visited
 		component: () => import(
 			/* webpackChunkName: "about" */
-			'./views/About.vue'
+			'@/views/About.vue'
 		)
 	},
 	{
@@ -24,7 +27,7 @@ export const routes = [
 		name: 'maintenance',
 		component: () => import(
 			/* webpackChunkName: "maintenance" */
-			'./views/Maintenance.vue'
+			'@/views/Maintenance.vue'
 		)
 	},
 	{
@@ -32,7 +35,7 @@ export const routes = [
 		name: 'notFound',
 		component: () => import(
 			/* webpackChunkName: "not-found" */
-			'./views/NotFound.vue'
+			'@/views/NotFound.vue'
 		)
 	}
 ];
