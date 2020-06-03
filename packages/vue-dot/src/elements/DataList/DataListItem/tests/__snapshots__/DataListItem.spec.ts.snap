@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataListItem renders correctly 1`] = `
-<vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
+<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -12,15 +12,13 @@ exports[`DataListItem renders correctly 1`] = `
 						…
 					</span></div>
     </div>
-    <div class="vd-data-list-item-action">
-      <!---->
-    </div>
+    <!---->
   </div>
 </vlayout-stub>
 `;
 
 exports[`DataListItem renders correctly in row mode 1`] = `
-<vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
+<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="vd-row">
@@ -31,17 +29,15 @@ exports[`DataListItem renders correctly in row mode 1`] = `
 						value
 					</span></div>
     </div>
-    <div class="vd-data-list-item-action">
-      <vbtn-stub color="accent" tag="button" activeclass="" small="true" text="true" type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0">
-        Action
-      </vbtn-stub>
-    </div>
+    <vbtn-stub color="accent" tag="button" activeclass="" small="true" text="true" type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0">
+      Action
+    </vbtn-stub>
   </div>
 </vlayout-stub>
 `;
 
 exports[`DataListItem renders correctly value in a chip 1`] = `
-<vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
+<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -54,15 +50,13 @@ exports[`DataListItem renders correctly value in a chip 1`] = `
         </vchip-stub>
       </div>
     </div>
-    <div class="vd-data-list-item-action">
-      <!---->
-    </div>
+    <!---->
   </div>
 </vlayout-stub>
 `;
 
 exports[`DataListItem renders correctly with a value 1`] = `
-<vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
+<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -73,15 +67,13 @@ exports[`DataListItem renders correctly with a value 1`] = `
 						value
 					</span></div>
     </div>
-    <div class="vd-data-list-item-action">
-      <!---->
-    </div>
+    <!---->
   </div>
 </vlayout-stub>
 `;
 
 exports[`DataListItem renders correctly with an action 1`] = `
-<vlayout-stub tag="div" wrap="true" class="vd-data-list-item">
+<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -92,11 +84,9 @@ exports[`DataListItem renders correctly with an action 1`] = `
 						…
 					</span></div>
     </div>
-    <div class="vd-data-list-item-action">
-      <vbtn-stub color="accent" tag="button" activeclass="" small="true" text="true" type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0">
-        action
-      </vbtn-stub>
-    </div>
+    <vbtn-stub color="accent" tag="button" activeclass="" small="true" text="true" type="button" class="vd-data-list-item-action-btn body-1 text-none pa-0">
+      action
+    </vbtn-stub>
   </div>
 </vlayout-stub>
 `;
