@@ -6,6 +6,10 @@ import { html } from '@/tests/utils/html';
 
 import SubHeader from '../';
 
+import HeaderLoading from '../../../elements/HeaderLoading';
+
+Vue.component('HeaderLoading', HeaderLoading);
+
 import { IDataListAction } from '../types';
 import { dataLists } from './data/subHeader';
 
@@ -49,5 +53,40 @@ describe('SubHeader', () => {
 		await actionBtn.trigger('click');
 
 		expect(wrapper.emitted('click:list-item')).toEqual([[eventActionValue]]);
+	});
+
+	it('renders loading state correctly', async() => {
+		// Mount component
+		wrapper = mountComponent(SubHeader, {
+			propsData: {
+				titleText: 'Test',
+				loading: true,
+				dataLists
+			}
+		}, true);
+
+		// Check that items does not exist
+		let itemsExists = wrapper.findAll('.vd-data-list-item').exists();
+		expect(itemsExists).toBe(false);
+
+		// Check that items loading exist
+		let itemsLoadingExists = wrapper.findAll('.vd-data-list-loading-item').exists();
+		expect(itemsLoadingExists).toBe(true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+
+		wrapper.setProps({ loading: false });
+
+		await wrapper.vm.$nextTick();
+
+		// Check that items now exist
+		itemsExists = wrapper.findAll('.vd-data-list-item').exists();
+		expect(itemsExists).toBe(true);
+
+		// Check that items loading does not exist
+		itemsLoadingExists = wrapper.findAll('.vd-data-list-loading-item').exists();
+		expect(itemsLoadingExists).toBe(false);
+
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
