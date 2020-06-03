@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-data-list align-center">
+	<div class="vd-data-list">
 		<VFadeTransition mode="out-in">
 			<!-- The DataList loading skeleton -->
 			<DataListLoading
