@@ -16,9 +16,10 @@
 				:key="index + '-loading-item'"
 				class="vd-data-list-loading-item mb-4"
 				:style="{ width: itemWidth }"
-				:class="classItemLoading"
+				:class="{ 'vd-row': row }"
 			>
 				<HeaderLoading
+					v-if="!row"
 					height="1rem"
 					class="mb-1"
 					width="60"
@@ -26,7 +27,7 @@
 
 				<HeaderLoading
 					height="1.5rem"
-					width="90"
+					:width="row ? '150' : '90'"
 				/>
 			</li>
 		</ul>
@@ -36,8 +37,6 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-
-	import { IndexedObject } from '../../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -71,17 +70,8 @@
 
 	@Component
 	export default class DataListLoading extends MixinsDeclaration {
-		get listClass(): IndexedObject<boolean> {
-			return {
-				'flex-column': !this.flex,
-				'flex-wrap': this.flex
-			};
-		}
-
-		get classItemLoading(): IndexedObject<boolean> {
-			return {
-				'vd-row': this.row
-			};
+		get listClass(): string {
+			return this.flex ? 'flex-wrap' : 'flex-column';
 		}
 	}
 </script>
@@ -100,15 +90,6 @@
 	.vd-row {
 		display: flex;
 		flex-wrap: wrap;
-
-		.vd-data-list-item-label {
-			align-self: center;
-
-			&::after {
-				content: ":";
-				margin-right: 4px;
-			}
-		}
 	}
 
 	@media only screen and (max-width: 425px) {

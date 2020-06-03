@@ -65,8 +65,6 @@
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
 
-	import { IndexedObject } from '../../types';
-
 	const Props = Vue.extend({
 		props: {
 			/** The items to display */
@@ -141,11 +139,8 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
-		get listClass(): IndexedObject<boolean> {
-			return {
-				'flex-column': !this.flex,
-				'flex-wrap': this.flex
-			};
+		get listClass(): string {
+			return this.flex ? 'flex-wrap' : 'flex-column';
 		}
 
 		getIcon(iconName?: string): string | null {
@@ -161,17 +156,5 @@
 <style lang="scss" scoped>
 	.vd-data-list-field {
 		list-style: none;
-
-		// Do not apply on column mode
-		&:not(.flex-column) {
-			// Default separator
-			// .vd-key::after {
-			// 	content: " :";
-			// }
-
-			.vd-value {
-				align-self: flex-end;
-			}
-		}
 	}
 </style>

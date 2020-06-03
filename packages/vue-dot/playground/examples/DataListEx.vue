@@ -5,11 +5,10 @@
 			:icons="icons"
 			:loading="loading"
 			:items-number-loading="7"
-			flex
-			row
 			title-class="subtitle-1 font-weight-bold mb-2 mt-2"
 			list-title="Informations"
 			heading-loading
+			flex
 			@click:item-action="setItemValue"
 		/>
 
@@ -75,7 +74,6 @@
 			{
 				key: 'Native country',
 				value: 'France',
-				icon: 'mdiCalendar',
 				action: 'Edit'
 			},
 			{

@@ -13,9 +13,7 @@
 		</slot>
 
 		<div class="vd-data-list-item-content">
-			<div
-				:class="classContent"
-			>
+			<div :class=" { 'vd-row': row }">
 				<div
 					class="vd-data-list-item-label caption"
 					:style="{ color: labelColor }"
@@ -70,7 +68,6 @@
 	import { locales } from './locales';
 
 	import { customizable } from '../../../mixins/customizable';
-	import { IndexedObject } from '../../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -104,7 +101,7 @@
 				type: String,
 				default: undefined
 			},
-			/** Display `label` : `value` in a single row */
+			/** Display label & value on a single line */
 			row: {
 				type: Boolean,
 				default: false
@@ -126,12 +123,6 @@
 
 		get itemValue(): string {
 			return this.value || this.placeholder;
-		}
-
-		get classContent(): IndexedObject<boolean> {
-			return {
-				'vd-row': this.row
-			};
 		}
 	}
 </script>
