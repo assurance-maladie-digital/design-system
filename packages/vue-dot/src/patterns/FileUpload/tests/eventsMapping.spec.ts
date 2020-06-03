@@ -19,6 +19,12 @@ interface TestComponent extends Vue {
 	files: File;
 }
 
+interface FileUpload {
+	files?: File[] | null;
+	items?: {file:File | null};
+	kind?: string;
+}
+
 const component = Vue.component('file-upload', {
 	mixins: [
 		EventsMapping
@@ -27,12 +33,6 @@ const component = Vue.component('file-upload', {
 });
 
 const file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
-
-interface FileUpload {
-	files?: File[] | null;
-	items?: {file:File | null};
-	kind?: string;
-}
 
 /**
  *
