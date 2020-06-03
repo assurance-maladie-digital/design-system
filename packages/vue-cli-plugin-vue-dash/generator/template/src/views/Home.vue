@@ -35,11 +35,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Meta } from '@/decorators';
+	import { Meta, MetaInfo } from '@/decorators';
 
 	import { mapActions } from 'vuex';
-
-	import { NotificationObj } from '@cnamts/vue-dot/src/modules/notification';
 
 	import { mdiCheck } from '@mdi/js';
 
@@ -50,7 +48,7 @@
 	})
 	export default class Home extends Vue {
 		/* istanbul ignore next */
-		sendNotification() {
+		sendNotification(): void {
 			this.notify({
 				type: 'success',
 				message: 'Exemple de notification',
@@ -60,13 +58,13 @@
 
 		/* istanbul ignore next */
 		@Meta
-		metaInfo() {
+		metaInfo(): MetaInfo {
 			return {
-				title: <% if (i18n) { %>this.$t('views.home.meta.title')<% } else { %>'Premiers pas'<% } %>,
+				title: <% if (i18n) { %>this.$t('views.home.meta.title') as string<% } else { %>'Premiers pas'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: <% if (i18n) { %>this.$t('views.home.meta.description')<% } else { %>'Votre nouvelle application Vue Dash.'<% } %>
+						content: <% if (i18n) { %>this.$t('views.home.meta.description') as string<% } else { %>'Votre nouvelle application Vue Dash.'<% } %>
 					}
 				]
 			};

@@ -14,20 +14,20 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Meta } from '@/decorators';
+	import { Meta, MetaInfo } from '@/decorators';
 
 	/** 404 page */
 	@Component
 	export default class NotFound extends Vue {
 		/* istanbul ignore next */
 		@Meta
-		metaInfo() {
+		metaInfo(): MetaInfo {
 			return {
-				title: <% if (i18n) { %>this.$t('views.notFound.meta.title')<% } else { %>'Erreur 404'<% } %>,
+				title: <% if (i18n) { %>this.$t('views.notFound.meta.title') as string<% } else { %>'Erreur 404'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: <% if (i18n) { %>this.$t('views.notFound.meta.description')<% } else { %>'Page non trouvée.'<% } %>
+						content: <% if (i18n) { %>this.$t('views.notFound.meta.description') as string<% } else { %>'Page non trouvée.'<% } %>
 					}
 				]
 			};

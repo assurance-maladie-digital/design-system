@@ -14,34 +14,34 @@ function extendPackage(api, options) {
 		dependencies: {
 			'@cnamts/vue-dot': `${VueDotVersion}`,
 			'axios': '^0.19.2',
-			'core-js': '^3.6.4',
-			'dayjs': '^1.8.19',
+			'core-js': '^3.6.5',
+			'dayjs': '^1.8.28',
 			'languages': '^0.1.3',
-			'vue-meta': '^2.3.2',
+			'vue-meta': '^2.3.4',
 			'vue-the-mask': '^0.11.1',
-			'vuetify': '^2.2.6'
+			'vuetify': '^2.2.30'
 		},
 		devDependencies: {
-			'@babel/core': '^7.8.3',
-			'@types/webfontloader': '^1.6.29',
-			'@mdi/js': '^4.8.95',
-			'@typescript-eslint/eslint-plugin': '^2.17.0',
-			'@typescript-eslint/parser': '^2.17.0',
-			'@types/jest': '25.2.1',
-			'babel-jest': '^25.5.1',
-			'jest': '^25.5.1',
+			'@babel/core': '^7.10.2',
+			'@types/webfontloader': '^1.6.32',
+			'@mdi/js': '^5.3.45',
+			'@typescript-eslint/eslint-plugin': '^3.1.0',
+			'@typescript-eslint/parser': '^3.1.0',
+			'@types/jest': '25.2.3',
+			'babel-jest': '^26.0.1',
+			'jest': '^26.0.1',
 			'jest-serializer-vue': '^2.0.2',
-			'ts-jest': '^25.4.0',
-			'vue-class-component': '^7.2.2',
-			'vue-cli-plugin-vuetify': '^2.0.3',
-			'vuetify-loader': '^1.4.3',
+			'ts-jest': '^26.1.0',
+			'vue-class-component': '^7.2.3',
+			'vue-cli-plugin-vuetify': '^2.0.5',
+			'vuetify-loader': '^1.4.4',
 			'webfontloader': '^1.6.28',
-			'webpack': '^4.41.5'
+			'webpack': '^4.43.0'
 		}
 	};
 
 	if (options.i18n) {
-		newPackageProperties.dependencies['vue-i18n'] = '^8.15.3';
+		newPackageProperties.dependencies['vue-i18n'] = '^8.18.1';
 	}
 
 	if (options.vuexPersist) {

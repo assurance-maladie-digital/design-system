@@ -94,7 +94,7 @@
 							v-for="(dataList, index) in dataLists"
 							:key="'vd-sub-header-data-list' + index"
 							:loading="loading"
-							:list-title="dataList.listTitle"
+							:list-title="dataList.title"
 							:items="dataList.items"
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
