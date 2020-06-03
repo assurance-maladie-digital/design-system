@@ -15,10 +15,3 @@
 		addressForm = addressForm;
 	}
 </script>
-
-<style lang="scss" scoped>
-	pre {
-		border: 1px solid;
-		border-radius: 4px;
-	}
-</style>

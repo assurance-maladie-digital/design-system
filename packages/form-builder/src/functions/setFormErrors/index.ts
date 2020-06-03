@@ -35,7 +35,7 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 					const subFieldMetadata = fieldMetadata[subFieldName] || {};
 
 					// Add error messages to the sub field metadata
-					subFieldMetadata.errorMessages = subErrors;
+					(subFieldMetadata as FieldMetadata).errorMessages = subErrors;
 
 					// Update the field metadata
 					fieldMetadata[subFieldName] = subFieldMetadata;

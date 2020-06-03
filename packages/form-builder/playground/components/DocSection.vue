@@ -31,8 +31,8 @@
 	const MixinsDeclaration = mixins(Props);
 
 	/**
-	 * DocSection is a component that renders
-	 * a title, a body and a divider
+	 * DocSection is a component that renders a
+	 * PageCard with a title and a body
 	 */
 	@Component
 	export default class DocSection extends MixinsDeclaration {}

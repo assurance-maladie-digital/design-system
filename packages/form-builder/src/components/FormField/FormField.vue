@@ -87,7 +87,7 @@
 		 * @returns {string} The field type
 		 */
 		getFieldType(): string {
-			const metadataType: string | undefined = this.field.metadata?.type ?? undefined;
+			const metadataType: string | undefined = this.field.metadata?.type as string ?? undefined;
 
 			return this.getField(metadataType || this.field.type);
 		}
@@ -109,9 +109,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-form-field {
-		+ .vd-form-field {
-			margin-top: 12px;
-		}
+	.vd-form-field + .vd-form-field {
+		margin-top: 12px;
 	}
 </style>

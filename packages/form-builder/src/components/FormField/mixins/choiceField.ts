@@ -1,8 +1,10 @@
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 import { ChoiceValue, FieldItem, FieldItemValue } from '../types';
 
 import { FieldComponent } from './fieldComponent';
+
+const MixinsDeclaration = mixins(FieldComponent);
 
 /** Mixin to control the item selection */
 @Component<ChoiceField>({
@@ -27,11 +29,11 @@ import { FieldComponent } from './fieldComponent';
 		}
 	}
 })
-export class ChoiceField extends FieldComponent {
+export class ChoiceField extends MixinsDeclaration {
 	choiceValue: ChoiceValue | null = this.isMultiple ? [] : null;
 
 	get isMultiple(): boolean {
-		return Boolean(this.field && this.field.metadata && this.field.metadata.multiple);
+		return Boolean(this.field?.metadata?.multiple);
 	}
 
 	/**

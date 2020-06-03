@@ -50,9 +50,3 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-tap-highlight-color: $transparent;
 }
-
-.v-slide-group__content,
-.v-slider__tick-label,
-.v-slider__thumb-container * {
-	max-width: none;
-}

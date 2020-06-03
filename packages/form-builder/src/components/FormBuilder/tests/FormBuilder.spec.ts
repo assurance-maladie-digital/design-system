@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@cnamts/vue-dot/tests';
-import { html } from '@cnamts/vue-dot/tests/html';
+import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import FormBuilder from '../';
 
@@ -24,12 +24,11 @@ describe('FormBuilder', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with a question layout', () => {
+	it('renders correctly with all fields', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {
-				form: questionForm,
-				defaultLayout: 'question'
+				form: questionForm
 			}
 		}, true);
 
