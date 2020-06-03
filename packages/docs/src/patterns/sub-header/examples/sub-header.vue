@@ -27,13 +27,15 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataListsItem } from '../../../../../vue-dot/src/patterns/SubHeader/types';
+
 	@Component
 	export default class SubHeaderEx extends Vue {
 		progressValue = 50;
 
-		dataLists = [
+		dataLists: DataListsItem[] = [
 			{
-				listTitle: 'Catégorie 1',
+				title: 'Catégorie 1',
 				items: [
 					{
 						key: 'Libellé',
@@ -46,7 +48,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 2',
+				title: 'Catégorie 2',
 				items: [
 					{
 						key: 'Libellé',
@@ -59,7 +61,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 3',
+				title: 'Catégorie 3',
 				items: [
 					{
 						key: 'Libellé',

@@ -77,10 +77,25 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
           name: 'additional-informations',
           description: 'Slot pour ajouter des informations complémentaires.'
         }
+      ],
+      events: [
+        {
+          name: 'click:list-item',
+          description: 'Événement émis lorsque l\'utilisateur clique sur un bouton d\'une liste',
+          value: '{\n dataListIndex: number,\n itemIndex: number\n}'
+        },
+        {
+          name: 'back',
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton retour'
+        }
       ]
     }
   }"
 />
+
+## Playground
+
+<DocExample file="patterns/sub-header/examples/sub-header-playground" />
 
 ## Exemples
 

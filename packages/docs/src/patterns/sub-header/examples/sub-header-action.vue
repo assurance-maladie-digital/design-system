@@ -26,6 +26,7 @@
 	import Component from 'vue-class-component';
 
 	import { IDataListAction } from '@cnamts/vue-dot/src/patterns/SubHeader/types';
+	import { DataListsItem } from '../../../../../vue-dot/src/patterns/SubHeader/types';
 
 	@Component
 	export default class SubHeaderAction extends Vue {
@@ -34,9 +35,9 @@
 		snackbar = false;
 		snackbarText = '';
 
-		dataLists = [
+		dataLists: DataListsItem[] = [
 			{
-				listTitle: 'Catégorie 1',
+				title: 'Catégorie 1',
 				items: [
 					{
 						key: 'Libellé',
@@ -51,7 +52,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 2',
+				title: 'Catégorie 2',
 				items: [
 					{
 						key: 'Libellé',
@@ -66,7 +67,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 3',
+				title: 'Catégorie 3',
 				items: [
 					{
 						key: 'Libellé',
@@ -81,7 +82,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 4',
+				title: 'Catégorie 4',
 				items: [
 					{
 						key: 'Libellé',

@@ -64,15 +64,17 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataListsItem } from '../../../../../vue-dot/src/patterns/SubHeader/types';
+
 	@Component
 	export default class SubHeaderLoading extends Vue {
 		progressValue = 50;
 
 		loading = false;
 
-		dataLists = [
+		dataLists: DataListsItem[] = [
 			{
-				listTitle: 'Catégorie 1',
+				title: 'Catégorie 1',
 				itemsNumberLoading: 2,
 				headingLoading: true,
 				items: [
@@ -87,7 +89,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 2',
+				title: 'Catégorie 2',
 				itemsNumberLoading: 2,
 				headingLoading: true,
 				items: [
@@ -102,7 +104,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 3',
+				title: 'Catégorie 3',
 				itemsNumberLoading: 2,
 				headingLoading: true,
 				items: [
@@ -117,7 +119,7 @@
 				]
 			},
 			{
-				listTitle: 'Catégorie 4',
+				title: 'Catégorie 4',
 				itemsNumberLoading: 2,
 				headingLoading: true,
 				items: [

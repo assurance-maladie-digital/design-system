@@ -57,13 +57,7 @@ module.exports = {
 					{
 						title: 'FooterWrapper',
 						to: '/patterns/footer-wrapper'
-					}
-				]
-			},
-			{
-				title: 'Patterns',
-				group: 'patterns',
-				items: [
+					},
 					{
 						title: 'SubHeader',
 						to: '/patterns/sub-header'
