@@ -34,9 +34,6 @@ const component = Vue.component('file-upload', {
 
 const file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
 
-/**
- *
- */
 function getFileDropEvent({ files, items, kind }: FileUpload): DragEvent | null{
 	if (files) {
 		return {
