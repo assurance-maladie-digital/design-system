@@ -5,7 +5,7 @@ import merge from 'deepmerge';
 
 import { IndexedObject } from '../../types';
 
-type Customizable = ExtendedVue<Vue, unknown, unknown, {
+export type Customizable = ExtendedVue<Vue, unknown, unknown, {
 	options: Options;
 }, {
 	vuetifyOptions: Options;

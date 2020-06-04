@@ -1,7 +1,7 @@
 <template>
 	<VCard
 		:loading="loading"
-		:min-height="loading ? 200 : undefined"
+		:min-height="loading ? 200 : null"
 		class="doc-example mb-12"
 		outlined
 	>
@@ -49,37 +49,6 @@
 				Inverser les couleurs
 			</VTooltip>
 
-			<!-- <VTooltip bottom>
-				<template #activator="{ on }">
-					<VBtn
-						aria-label="Éditer dans Codepen"
-						icon
-						@click="sendToCodepen"
-						v-on="on"
-					>
-						<VIcon>mdi-codepen</VIcon>
-					</VBtn>
-				</template>
-
-				Éditer dans Codepen
-			</VTooltip>
-
-			<VTooltip bottom>
-				<template #activator="{ on }">
-					<VBtn
-						aria-label="Voir sur Github"
-						:href="`https://github.com/vuetifyjs/vuetify/tree/${branch}/packages/docs/src/examples/${file}.vue`"
-						icon
-						target="_blank"
-						v-on="on"
-					>
-						<VIcon>mdi-github-circle</VIcon>
-					</VBtn>
-				</template>
-
-				Voir sur Github
-			</VTooltip> -->
-
 			<VTooltip bottom>
 				<template #activator="{ on }">
 					<VBtn
@@ -118,8 +87,8 @@
 							:value="section"
 						>
 							<VBtn
-								:color="!active ? 'transparent' : ''"
 								:input-value="active"
+								:color="active ? '' : 'transparent'"
 								active-class="grey darken-2 white--text"
 								class="mr-2"
 								depressed
@@ -158,12 +127,6 @@
 			</VCard>
 		</VExpandTransition>
 
-		<!-- <DocCodepen
-			v-if="parsed"
-			ref="codepen"
-			:pen="parsed"
-		/> -->
-
 		<VFadeTransition>
 			<VSheet
 				v-if="component"
@@ -186,8 +149,6 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiStar, mdiInvertColors, mdiCodeTags } from '@mdi/js';
-
-	// import { getBranch } from '@/util/helpers';
 
 	interface Parsed {
 		[key: string]: string;
