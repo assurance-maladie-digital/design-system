@@ -57,6 +57,10 @@ module.exports = {
 					{
 						title: 'FooterWrapper',
 						to: '/patterns/footer-wrapper'
+					},
+					{
+						title: 'UploadWorkflow',
+						to: '/patterns/upload-workflow'
 					}
 				]
 			}
