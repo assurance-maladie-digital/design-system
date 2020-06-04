@@ -37,17 +37,5 @@ export const dataLists: DataListsItem[] = [
 		items: dataListItemsActions,
 		itemsNumberLoading: 2,
 		headingLoading: true
-	},
-	{
-		title: 'Catégorie 3',
-		items: dataListItems,
-		itemsNumberLoading: 2,
-		headingLoading: true
-	},
-	{
-		title: 'Catégorie 4',
-		items: dataListItems,
-		itemsNumberLoading: 2,
-		headingLoading: true
 	}
 ];

@@ -50,7 +50,7 @@ exports[`SubHeader renders loading state correctly 1`] = `
             <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
               <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
             </div>
-            <ul class="vd-data-list-loading-items pl-0 vd-column">
+            <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
               <li class="vd-data-list-loading-item mb-4" style="width: auto;">
                 <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
@@ -77,61 +77,7 @@ exports[`SubHeader renders loading state correctly 1`] = `
             <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
               <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
             </div>
-            <ul class="vd-data-list-loading-items pl-0 vd-column">
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-              </li>
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </transition-stub>
-      </div>
-      <div class="vd-data-list">
-        <transition-stub name="fade-transition" mode="out-in">
-          <div class="vd-data-list-loading" title-class="subtitle-1 font-weight-bold mb-2 mt-2">
-            <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
-              <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-            </div>
-            <ul class="vd-data-list-loading-items pl-0 vd-column">
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-              </li>
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
-                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </transition-stub>
-      </div>
-      <div class="vd-data-list">
-        <transition-stub name="fade-transition" mode="out-in">
-          <div class="vd-data-list-loading" title-class="subtitle-1 font-weight-bold mb-2 mt-2">
-            <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
-              <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-            </div>
-            <ul class="vd-data-list-loading-items pl-0 vd-column">
+            <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
               <li class="vd-data-list-loading-item mb-4" style="width: auto;">
                 <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
@@ -157,7 +103,7 @@ exports[`SubHeader renders loading state correctly 1`] = `
 </div>
 `;
 
-exports[`SubHeader renders loading state correctly 2`] = `
+exports[`SubHeader transition from mode loading to mode normal correctly 1`] = `
 <div class="vd-sub-header secondary white--text py-6 px-8">
   <transition-stub name="fade-transition" mode="out-in"><button type="button" class="v-btn v-btn--depressed theme--light v-size--small transparent text-none font-weight-regular white--text mx-n4"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate mr-2 v-icon--svg theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><path d="M21,11H6.83L10.41,7.41L9,6L3,12L9,18L10.41,16.58L6.83,13H21V11Z"></path></svg></span>
 
@@ -179,37 +125,33 @@ exports[`SubHeader renders loading state correctly 2`] = `
             <h4 class="subtitle-1 font-weight-bold mb-2 mt-2">
               Catégorie 1
             </h4>
-            <ul class="vd-data-list-field pl-0 vd-column">
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
+            <ul class="vd-data-list-field pl-0 d-flex flex-column">
+              <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: auto;">
+                <!---->
+                <div class="vd-data-list-item-content">
+                  <div class="">
                     <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                       Libellé
                     </div>
                     <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
-				</span></div>
-                    <div class="vd-data-list-item-action">
-                      <!---->
-                    </div>
+						Texte saisi
+					</span></div>
                   </div>
+                  <!---->
                 </div>
               </li>
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
+              <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: auto;">
+                <!---->
+                <div class="vd-data-list-item-content">
+                  <div class="">
                     <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                       Libellé
                     </div>
                     <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
-				</span></div>
-                    <div class="vd-data-list-item-action">
-                      <!---->
-                    </div>
+						Texte saisi
+					</span></div>
                   </div>
+                  <!---->
                 </div>
               </li>
             </ul>
@@ -222,123 +164,35 @@ exports[`SubHeader renders loading state correctly 2`] = `
             <h4 class="subtitle-1 font-weight-bold mb-2 mt-2">
               Catégorie 2
             </h4>
-            <ul class="vd-data-list-field pl-0 vd-column">
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
+            <ul class="vd-data-list-field pl-0 d-flex flex-column">
+              <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: auto;">
+                <!---->
+                <div class="vd-data-list-item-content">
+                  <div class="">
                     <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                       Libellé
                     </div>
                     <div class="vd-data-list-item-value"><span class="body-1">
-					Texte à modifier
-				</span></div>
-                    <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--dark v-size--small accent--text body-1 text-none pa-0"><span class="v-btn__content">
-					Modifier
-				</span></button></div>
-                  </div>
+						Texte à modifier
+					</span></div>
+                  </div> <button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--dark v-size--small accent--text body-1 text-none pa-0"><span class="v-btn__content">
+				Modifier
+			</span></button>
                 </div>
               </li>
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
+              <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: auto;">
+                <!---->
+                <div class="vd-data-list-item-content">
+                  <div class="">
                     <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                       Libellé
                     </div>
                     <div class="vd-data-list-item-value"><span class="body-1">
-					Texte à modifier
-				</span></div>
-                    <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--dark v-size--small accent--text body-1 text-none pa-0"><span class="v-btn__content">
-					Modifier
-				</span></button></div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </transition-stub>
-      </div>
-      <div class="vd-data-list">
-        <transition-stub name="fade-transition" mode="out-in">
-          <div>
-            <h4 class="subtitle-1 font-weight-bold mb-2 mt-2">
-              Catégorie 3
-            </h4>
-            <ul class="vd-data-list-field pl-0 vd-column">
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
-                    <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                      Libellé
-                    </div>
-                    <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
-				</span></div>
-                    <div class="vd-data-list-item-action">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
-                    <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                      Libellé
-                    </div>
-                    <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
-				</span></div>
-                    <div class="vd-data-list-item-action">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </transition-stub>
-      </div>
-      <div class="vd-data-list">
-        <transition-stub name="fade-transition" mode="out-in">
-          <div>
-            <h4 class="subtitle-1 font-weight-bold mb-2 mt-2">
-              Catégorie 4
-            </h4>
-            <ul class="vd-data-list-field pl-0 vd-column">
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
-                    <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                      Libellé
-                    </div>
-                    <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
-				</span></div>
-                    <div class="vd-data-list-item-action">
-                      <!---->
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="vd-data-list-row mb-2">
-                <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: auto;">
-                  <!---->
-                  <div class="vd-data-list-item-content">
-                    <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-                      Libellé
-                    </div>
-                    <div class="vd-data-list-item-value"><span class="body-1">
-					Texte saisi
-				</span></div>
-                    <div class="vd-data-list-item-action">
-                      <!---->
-                    </div>
-                  </div>
+						Texte à modifier
+					</span></div>
+                  </div> <button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--dark v-size--small accent--text body-1 text-none pa-0"><span class="v-btn__content">
+				Modifier
+			</span></button>
                 </div>
               </li>
             </ul>
