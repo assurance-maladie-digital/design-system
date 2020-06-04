@@ -28,7 +28,6 @@
 	import Component from 'vue-class-component';
 
 	import { ErrorEvent, ErrorCodesType } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
-	import { ErrorCodes } from '@cnamts/vue-dot/src/patterns/FileUpload/errorCodes';
 
 	@Component
 	export default class FileUploadRules extends Vue {
@@ -62,8 +61,8 @@
 			this.snackbar = true;
 		}
 
-		valueUpdated(value: File): void {
-			this.snackbarText = 'Le fichier a été accepté.';
+		valueUpdated(file: File): void {
+			this.snackbarText =  `Le fichier "${file.name}" a été accepté.`;
 			this.snackbarColor = 'success';
 			this.snackbar = true;
 		}
