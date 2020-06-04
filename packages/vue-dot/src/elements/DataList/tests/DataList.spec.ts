@@ -56,7 +56,7 @@ describe('DataList', () => {
 			}
 		});
 
-		const elExists = wrapper.find('.vd-column').exists();
+		const elExists = wrapper.find('.flex-column').exists();
 		expect(elExists).toBe(true);
 
 		expect(html(wrapper)).toMatchSnapshot();
@@ -71,7 +71,7 @@ describe('DataList', () => {
 			}
 		});
 
-		const elExists = wrapper.find('.vd-flex').exists();
+		const elExists = wrapper.find('.flex-wrap').exists();
 		expect(elExists).toBe(true);
 
 		expect(html(wrapper)).toMatchSnapshot();
