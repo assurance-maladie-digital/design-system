@@ -22,49 +22,49 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
       props: [
         {
           name: 'multiple',
-          defaultValue: 'false',
+          value: 'false',
           type: 'boolean',
           description: 'Permet de sélectionner plusieurs fichiers.'
         },
         {
           name: 'value',
           type: 'File | File[]',
-          defaultValue: '[]',
+          value: '[]',
           description: 'Le ou les fichiers sélectionnés.'
         },
         {
           name: 'no-ripple',
-          defaultValue: 'false',
+          value: 'false',
           type: 'boolean',
           description: 'Désactive l\'ondulation.'
         },
         {
           name: 'disabled',
-          defaultValue: 'false',
+          value: 'false',
           type: 'boolean',
           description: 'Désactive le composant.'
         },
         {
           name: 'file-size-max',
-          defaultValue: '4194304',
+          value: '4194304',
           type: 'number',
           description: 'Taille maximale d\'un fichier en octets (par défaut 4 MB).'
         },
         {
           name: 'file-size-units',
-          defaultValue: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
+          value: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
           type: 'string[]',
           description: 'Les unités de taille utilisées pour la traduction.'
         },
         {
           name: 'allowed-extensions',
-          defaultValue: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
+          value: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
           type: 'string[]',
           description: 'Les extensions autorisées.'
         },
         {
           name: 'accept',
-          defaultValue: 'undefined',
+          value: 'undefined',
           type: 'string',
           description: 'L\'attribut natif `accept`. Par défaut, la valeur sera calculée à partir des extensions autorisées.'
         }
@@ -104,7 +104,7 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
         {
           name: 'error',
           description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
-          value: '{\n  file: File,\n  code: ErrorCodes\n}'
+          value: '{\n	file: File,\n	code: ErrorCodes\n}'
         }
       ]
     }
