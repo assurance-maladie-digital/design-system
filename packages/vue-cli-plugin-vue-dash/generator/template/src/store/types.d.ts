@@ -1,4 +1,4 @@
-// tslint:disable-next-line:no-empty-interface
+/* eslint-disable @typescript-eslint/no-empty-interface */
 export interface RootState {}
 
 import { NotificationObj } from '@cnamts/vue-dot/src/modules/notification';

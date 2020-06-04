@@ -31,7 +31,7 @@ Le pattern `FooterWrapper` est utilisé avec le composant `FooterBtn` pour affic
         {
           name: 'inert',
           type: 'boolean',
-          defaultValue: 'false',
+          value: 'false',
           description: 'Rend le bouton inactif.'
         }
       ],

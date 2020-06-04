@@ -6,7 +6,7 @@
 				fixed
 				clipped
 			>
-				<Sidebar :items="sidebarItems" />
+				<DocSidebar :items="sidebarItems" />
 			</VNavigationDrawer>
 
 			<VContent>

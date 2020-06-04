@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/html';
+import { html } from '@/tests/utils/html';
 
 import DataListItem from '../';
 
@@ -27,6 +27,19 @@ describe('DataListItem', () => {
 			propsData: {
 				label: 'Test',
 				value: 'value'
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly value in a chip', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: 'value',
+				chip: true
 			}
 		});
 
@@ -66,5 +79,22 @@ describe('DataListItem', () => {
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('click:action')).toBeTruthy();
+	});
+
+	it('renders correctly in row mode', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: 'value',
+				action: 'Action',
+				row: true
+			}
+		});
+
+		const elExists = wrapper.find('.vd-row').exists();
+		expect(elExists).toBe(true);
+
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

@@ -1,7 +1,6 @@
 <template>
 	<section class="doc-api">
 		<DocApiItems
-			:lang="lang"
 			:value="value"
 			:api="api"
 		/>
@@ -9,17 +8,13 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	const Props = Vue.extend({
 		props: {
-			lang: {
-				type: String,
-				default: ''
-			},
 			value: {
-				type: Array,
+				type: Array as PropType<string[]>,
 				default: () => ([])
 			},
 			api: {

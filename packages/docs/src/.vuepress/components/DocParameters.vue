@@ -1,65 +1,61 @@
 <template>
-	<div>
-		<div
-			v-if="missingItems.length > 0"
-			class="px-2"
-		>
-			<strong>MISSING ITEMS:</strong>
+	<VDataIterator
+		:items="computedItems"
+		:items-per-page="-1"
+		:search="search"
+		class="component-parameters"
+		hide-default-footer
+	>
+		<template v-slot="{ items }">
+			<div>
+				<template v-for="(item, index) in items">
+					<DocApiItem
+						:key="item.name"
+						:headers="headers"
+						:item="item"
+					/>
 
-			{{ missingItems.join(', ') }}
-		</div>
+					<VDivider
+						v-if="index + 1 !== items.length"
+						:key="`divider-${index}`"
+					/>
+				</template>
+			</div>
+		</template>
 
-		<VDataIterator
-			:items="computedItems"
-			:items-per-page="-1"
-			:search="search"
-			class="component-parameters"
-			hide-default-footer
-		>
-			<template v-slot="{ items }">
-				<div>
-					<template v-for="(item, i) in items">
-						<DocApiItem
-							:key="item.name"
-							:headers="headers"
-							:item="item"
-						/>
-
-						<VDivider
-							v-if="i + 1!== items.length"
-							:key="`divider-${i}`"
-						/>
-					</template>
-				</div>
-			</template>
-
-			<template #no-results>
-				<div class="text-center pa-6 title font-weight-regular">
-					No matching records found
-				</div>
-			</template>
-		</VDataIterator>
-	</div>
+		<template #no-results>
+			<div class="text-center pa-6 title font-weight-regular">
+				Aucune correspondance trouvée
+			</div>
+		</template>
+	</VDataIterator>
 </template>
 
-<script>
-	export default {
-		name: 'DocParameters',
+<script lang="ts">
+	import Vue, { PropType } from 'vue';
+	import Component, { mixins } from 'vue-class-component';
+
+	import { ItemHeader, Item } from '../types';
+
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
+
+	import marked from 'marked';
+
+	type Generator = (key: string, item: Item) => string;
+	type GeneratorList = IndexedObject<Generator>;
+
+	const Props = Vue.extend({
 		props: {
 			target: {
 				type: String,
 				default: ''
 			},
 			headers: {
-				type: Array,
+				type: Array as PropType<ItemHeader[]>,
 				default: () => ([])
 			},
-			lang: {
-				type: String,
-				default: ''
-			},
 			items: {
-				type: Array,
+				type: Array as PropType<Item[]>,
 				default: () => ([])
 			},
 			search: {
@@ -70,62 +66,50 @@
 				type: String,
 				default: ''
 			}
-		},
-		computed: {
-			computedItems () {
-				const items = [];
+		}
+	});
 
-				for (const item of this.items) {
-					const newItem = item !== Object(item)
-						? { name: item }
-						: Object.assign({}, item);
+	const MixinsDeclaration = mixins(Props);
 
-					const keys = Object.keys(newItem);
+	@Component
+	export default class DocParameters extends MixinsDeclaration {
+		get computedItems(): Item[] {
+			const items = [] as Item[];
 
-					for (let i = 0; i < keys.length; i++) {
-						const key = keys[i];
-						const fn = this[`gen${key}`];
+			for (const item of this.items) {
+				const newItem = Object.assign({}, item);
 
-						if (fn) {
-							newItem[key] = fn(newItem[key], item);
-						}
+				const keys = Object.keys(newItem);
+
+				// Call generator function (genKey) for each key if it exists
+				for (let i = 0; i < keys.length; i++) {
+					const key = keys[i];
+					const capitalizedKey = key.charAt(0).toUpperCase() + key.slice(1);
+
+					const fnList = (this as unknown as IndexedObject<Generator>);
+					const fn = fnList[`gen${capitalizedKey}`];
+
+					if (fn && typeof newItem[key] === 'string') {
+						newItem[key] = fn(newItem[key] as string, item);
 					}
-
-					newItem.description = item.description;
-
-					items.push(newItem);
-				}
-				return items;
-			},
-			missingItems() {
-				if (process.env.NODE_ENV !== 'development') {
-					return [];
 				}
 
-				const items = this.computedItems.filter(item => item.description.indexOf('MISSING DESCRIPTION') > -1);
-
-				return items.map(item => item.name);
+				items.push(newItem);
 			}
-		},
-		methods: {
-			parseSource(source) {
-				if (!source) {
-					return '';
-				}
 
-				if (source.match(/^v-/)) {
-					source = source.replace(/v-/, '');
-				}
+			return items;
+		}
 
-				return source;
-			}
+		/** Parse Mardown description to HTML */
+		genDescription(key: string, item: Item): string {
+			return marked(key);
 		}
 	}
 </script>
 
 <style lang="scss">
 	.component-parameters {
-		font-size: 14px;
+		font-size: .9rem;
 
 		p {
 			margin-bottom: 0;

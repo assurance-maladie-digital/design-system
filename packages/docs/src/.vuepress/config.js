@@ -51,6 +51,10 @@ module.exports = {
 				group: 'patterns',
 				items: [
 					{
+						title: 'FileUpload',
+						to: '/patterns/file-upload'
+					},
+					{
 						title: 'FooterWrapper',
 						to: '/patterns/footer-wrapper'
 					},
