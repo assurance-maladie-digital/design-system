@@ -121,7 +121,7 @@
 		}
 
 		valueUpdated(file: File): void {
-			this.snackbarText = `Le fichier '${file.name}' a été accepté.`;
+			this.snackbarText = `Le fichier "${file.name}" a été accepté.`;
 			this.snackbarColor = 'success';
 			this.snackbar = true;
 		}
