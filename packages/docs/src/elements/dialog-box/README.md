@@ -22,38 +22,38 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
       props: [
         {
           name: 'value',
-          defaultValue: 'false',
+          value: 'false',
           type: 'boolean',
           description: 'Contrôle la visibilité de la boîte de dialogue.'
         },
         {
           name: 'title',
-          defaultValue: 'undefined',
+          value: 'undefined',
           type: 'string',
           description: 'Le titre de la boîte de dialogue.'
         },
         {
           name: 'width',
-          defaultValue: '800px',
+          value: '800px',
           type: 'string',
           description: 'La largeur de la boîte de dialogue.'
         },
         {
           name: 'cancel-btn-text',
-          defaultValue: 'Annuler',
+          value: 'Annuler',
           type: 'string',
           description: 'Le texte du bouton Annuler.'
         },
         {
           name: 'confirm-btn-text',
-          defaultValue: 'Valider',
+          value: 'Valider',
           type: 'string',
           description: 'Le texte du bouton Valider.'
         },
         {
           name: 'vuetify-options',
           type: 'Options',
-          defaultValue: 'undefined',
+          value: 'undefined',
           description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
         }
       ],

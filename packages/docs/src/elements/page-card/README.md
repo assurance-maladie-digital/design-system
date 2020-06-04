@@ -23,31 +23,31 @@ L'élément `PageCard` est utilisé pour afficher une page.
         {
           name: 'min-height',
           type: 'boolean',
-          defaultValue: 'false',
+          value: 'false',
           description: 'Définit une hauteur minimale de `500px`.'
         },
         {
           name: 'no-shadow',
           type: 'boolean',
-          defaultValue: 'false',
+          value: 'false',
           description: 'Supprime l\'ombre de la `VCard`.'
         },
         {
           name: 'card-class',
           type: 'string',
-          defaultValue: 'undefined',
+          value: 'undefined',
           description: 'Les classes à appliquer à la `VCard.`'
         },
         {
           name: 'card-padding',
           type: 'string',
-          defaultValue: '\'px-6 py-4\'',
+          value: '\'px-6 py-4\'',
           description: 'Le padding à appliquer à la `VCard`.'
         },
         {
           name: 'vuetify-options',
           type: 'Options',
-          defaultValue: 'undefined',
+          value: 'undefined',
           description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
         }
       ],

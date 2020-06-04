@@ -21,18 +21,20 @@ Vous pouvez entrer des dimensions dans l'exemple ci-dessous et observer le compo
   :value="['HeaderLoading']"
   :api="{
     HeaderLoading: {
-      props: [{
-        name: 'width',
-        defaultValue: '100px',
-        type: 'string',
-        description: 'La largeur du composant.'
-      },
-      {
-        name: 'height',
-        defaultValue: '1rem',
-        type: 'string',
-        description: 'La hauteur du composant.'
-      }]
+      props: [
+        {
+          name: 'width',
+          value: '\'100px\'',
+          type: 'string',
+          description: 'La largeur du composant.'
+        },
+        {
+          name: 'height',
+          value: '\'1rem\'',
+          type: 'string',
+          description: 'La hauteur du composant.'
+        }
+      ]
     }
   }"
 />
