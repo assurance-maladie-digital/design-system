@@ -60,7 +60,7 @@ function getFileDropEvent({ files, items, kind }: FileUpload): DragEvent | null{
 	return null;
 }
 
-// Test
+// Tests
 describe('eventMapping', () => {
 	it('verify if behavior of retry method it\'s called properly', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
