@@ -5,7 +5,6 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import SubHeader from '../';
-
 import HeaderLoading from '../../../elements/HeaderLoading';
 
 Vue.component('HeaderLoading', HeaderLoading);
@@ -29,7 +28,10 @@ describe('SubHeader', () => {
 	});
 
 	it('emits action event correctly', async() => {
-		const eventActionValue: IDataListAction = { dataListIndex: 1, itemIndex: 1 };
+		const eventActionValue: IDataListAction = {
+			dataListIndex: 1,
+			itemIndex: 1
+		};
 
 		// Mount component
 		wrapper = mountComponent(SubHeader, {
@@ -50,6 +52,7 @@ describe('SubHeader', () => {
 		// Find the button action in the second item and click on it
 		const actionBtn = itemWithAction.find('.vd-data-list-item-action-btn');
 		expect(actionBtn.exists()).toBe(true);
+
 		await actionBtn.trigger('click');
 
 		expect(wrapper.emitted('click:list-item')).toEqual([[eventActionValue]]);
@@ -65,39 +68,13 @@ describe('SubHeader', () => {
 			}
 		}, true);
 
-		// Check that items does not exist
+		// Check that items do not exist
 		const itemsExists = wrapper.findAll('.vd-data-list-item').exists();
 		expect(itemsExists).toBe(false);
 
-		// Check that items loading exist
+		// Check that loading items exist
 		const itemsLoadingExists = wrapper.findAll('.vd-data-list-loading-item').exists();
 		expect(itemsLoadingExists).toBe(true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-
-	});
-
-	it('transition from mode loading to mode normal correctly', async() => {
-		// Mount component
-		wrapper = mountComponent(SubHeader, {
-			propsData: {
-				titleText: 'Test',
-				loading: true,
-				dataLists
-			}
-		}, true);
-
-		wrapper.setProps({ loading: false });
-
-		await wrapper.vm.$nextTick();
-
-		// Check that items now exist
-		const itemsExists = wrapper.findAll('.vd-data-list-item').exists();
-		expect(itemsExists).toBe(true);
-
-		// Check that items loading does not exist
-		const itemsLoadingExists = wrapper.findAll('.vd-data-list-loading-item').exists();
-		expect(itemsLoadingExists).toBe(false);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
