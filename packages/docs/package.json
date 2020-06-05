@@ -28,7 +28,11 @@
 		"raw-loader": "4.0.1",
 		"vue-prism-component": "1.2.0",
 		"vuepress-plugin-typescript": "0.2.0",
-		"vuepress-types": "0.9.2"
+		"vuepress-types": "0.9.2",
+		"watchpack": "1.6.1"
+	},
+	"resolutions": {
+		"watchpack": "1.6.1"
 	},
 	"gitHead": "12f20cd67e2336f2d9990f32e0dfc931a089c707"
 }
