@@ -32,7 +32,7 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
           value: 'undefined',
           type: 'DataListIcons',
           description: 'La liste des différentes icônes disponibles pour les items.',
-          example: '{\n	[key: string]: string;\n}'
+          example: '{\n	[iconName: string]: string;\n}'
         },
         {
           name: 'list-title',

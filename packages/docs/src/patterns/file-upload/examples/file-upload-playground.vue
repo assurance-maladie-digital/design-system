@@ -7,38 +7,50 @@
 			<VSwitch
 				v-model="props.multiple"
 				label="Multiple"
+				hide-details
+				class="mt-0"
 			/>
 
 			<VSwitch
 				v-model="props.noRipple"
 				label="Désactive l'ondulation"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VSwitch
 				v-model="props.disabled"
 				label="Désactive le composant"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VCombobox
 				v-model="props.fileSizeUnits"
 				:items="defaultFileSizeUnits"
 				label="Unités des tailles"
+				hide-details
 				multiple
 				outlined
+				class="mt-6"
 			/>
 
 			<VCombobox
 				v-model="props.allowedExtensions"
 				:items="defaultAllowedExtensions"
 				label="Extensions autorisées"
+				hide-details
 				multiple
 				outlined
+				class="mt-6"
 			/>
 
 			<VTextField
 				v-model.number="props.fileSizeMax"
 				label="Taille maximum (octets)"
+				hide-details
 				outlined
+				class="mt-6"
 			/>
 
 			<VSnackbar
