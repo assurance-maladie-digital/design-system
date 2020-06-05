@@ -3,7 +3,7 @@
 		<SubHeader
 			:loading="loading"
 			:data-lists="dataLists"
-			title-text="Prénom Nom (d'usage)"
+			title-text="Paul Dupont"
 			sub-title-text="1 69 08 75 125 456 75"
 		>
 			<template #additional-informations>
@@ -40,7 +40,7 @@
 							</p>
 
 							<VProgressLinear
-								:value="progressValue"
+								:value="50"
 								color="#fff"
 								height="8px"
 								class="mt-2 mb-1"
@@ -56,6 +56,7 @@
 		<VSwitch
 			v-model="loading"
 			label="Chargement"
+			hide-details
 		/>
 	</div>
 </template>
@@ -64,72 +65,36 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { DataListsItem } from '../../../../../vue-dot/src/patterns/SubHeader/types';
+	import { DataListsItem } from '@cnamts/vue-dot/src/patterns/SubHeader/types';
 
 	@Component
 	export default class SubHeaderLoading extends Vue {
-		progressValue = 50;
-
-		loading = false;
+		loading = true;
 
 		dataLists: DataListsItem[] = [
 			{
-				title: 'Catégorie 1',
+				title: 'Informations patient',
 				itemsNumberLoading: 2,
 				headingLoading: true,
 				items: [
 					{
-						key: 'Libellé',
-						value: 'Texte saisi'
+						key: 'Date de naissance',
+						value: '24/09/1970'
 					},
 					{
-						key: 'Libellé',
-						value: 'Texte saisi'
+						key: 'Adresse',
+						value: '75015 Paris'
 					}
 				]
 			},
 			{
-				title: 'Catégorie 2',
-				itemsNumberLoading: 2,
+				title: 'Médecin traitant',
+				itemsNumberLoading: 1,
 				headingLoading: true,
 				items: [
 					{
-						key: 'Libellé',
-						value: 'Texte à modifier'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte à modifier'
-					}
-				]
-			},
-			{
-				title: 'Catégorie 3',
-				itemsNumberLoading: 2,
-				headingLoading: true,
-				items: [
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					}
-				]
-			},
-			{
-				title: 'Catégorie 4',
-				itemsNumberLoading: 2,
-				headingLoading: true,
-				items: [
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
+						key: 'Nom du praticien',
+						value: 'Gérard Leblanc'
 					}
 				]
 			}

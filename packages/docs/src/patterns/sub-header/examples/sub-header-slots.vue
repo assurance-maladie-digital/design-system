@@ -1,38 +1,58 @@
 <template>
-	<SubHeader
-		:data-lists="dataLists"
-		title-text="Prénom Nom (d'usage)"
-	>
+	<SubHeader>
 		<template #back-btn>
-			<VBtn>
+			<VBtn color="white">
 				Retour
 			</VBtn>
 		</template>
 
 		<template #title>
-			<h3>
-				Titre
+			<h3 class="headline font-weight-bold mt-2">
+				Dossier n° 42
 			</h3>
 		</template>
 
 		<template #sub-title>
-			<h4>
-				Sous-titre
+			<h4 class="title mt-1">
+				Traité par Paul Dupont
 			</h4>
 		</template>
 
 		<template #additional-informations>
-			<p class="mb-0">
-				Informations supplémentaires
+			<p class="font-weight-bold mt-4 mb-0">
+				15 Modifications
 			</p>
 		</template>
 
 		<template #right-content>
-			<VCard class="py-3 px-2">
-				<p class="mb-0">
-					Contenu situé à droite
-				</p>
-			</VCard>
+			<VLayout
+				column
+				align-start
+				class="ml-auto flex-grow-0 mt-3"
+			>
+				<VBtn
+					text
+					color="white"
+				>
+					<VIcon class="mr-2">
+						{{ cancelIcon }}
+					</VIcon>
+
+					Clore le dossier
+				</VBtn>
+
+				<VBtn
+					text
+					color="white"
+					class="mt-2"
+				>
+					<VIcon class="mr-2">
+						{{ copyIcon }}
+					</VIcon>
+
+					Dupliquer le dossier
+				</VBtn>
+			</VLayout>
 		</template>
 	</SubHeader>
 </template>
@@ -41,63 +61,11 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { DataListsItem } from '../../../../../vue-dot/src/patterns/SubHeader/types';
+	import { mdiCancel, mdiContentCopy } from '@mdi/js';
 
 	@Component
 	export default class SubHeaderSlots extends Vue {
-		dataLists: DataListsItem[] = [
-			{
-				title: 'Catégorie 1',
-				items: [
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					}
-				]
-			},
-			{
-				title: 'Catégorie 2',
-				items: [
-					{
-						key: 'Libellé',
-						value: 'Texte à modifier'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte à modifier'
-					}
-				]
-			},
-			{
-				title: 'Catégorie 3',
-				items: [
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					}
-				]
-			},
-			{
-				title: 'Catégorie 4',
-				items: [
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					},
-					{
-						key: 'Libellé',
-						value: 'Texte saisi'
-					}
-				]
-			}
-		];
+		cancelIcon = mdiCancel;
+		copyIcon = mdiContentCopy;
 	}
 </script>

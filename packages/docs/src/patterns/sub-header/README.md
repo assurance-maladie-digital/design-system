@@ -22,44 +22,45 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
       props: [
         {
           name: 'hide-back-btn',
-          defaultValue: 'false',
           type: 'boolean',
+          required: true,
           description: 'Masque le bouton de retour.'
         },
         {
           name: 'back-btn-text',
-          defaultValue: 'Retour',
+          value: '\'Retour\'',
           type: 'string',
           description: 'Le texte du bouton retour.'
         },
         {
           name: 'title-text',
           type: 'string',
+          value: 'undefined',
           description: 'Le texte du titre.'
         },
         {
           name: 'sub-title-text',
-          defaultValue: 'undefined',
+          value: 'undefined',
           type: 'string',
           description: 'Le texte du sous-titre.'
         },
         {
           name: 'data-lists',
-          defaultValue: 'undefined',
+          value: 'undefined',
           type: 'DataListsItem[]',
           description: 'Liste des composants `DataList` en mode colonne.'
         },
         {
           name: 'loading',
-          defaultValue: 'false',
+          value: 'false',
           type: 'boolean',
-          description: 'Liste des composants `DataList` en mode colonne.'
+          description: 'Affiche un état de chargement.'
         }
       ],
       slots: [
         {
           name: 'back-btn',
-          description: 'Slot pour remplacer le bouton de retour.'
+          description: 'Slot pour remplacer le bouton retour.'
         },
         {
           name: 'title',
@@ -81,12 +82,12 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
       events: [
         {
           name: 'click:list-item',
-          description: 'Événement émis lorsque l\'utilisateur clique sur un bouton d\'une liste',
-          value: '{\n dataListIndex: number,\n itemIndex: number\n}'
+          description: 'Événement émis lorsque l\'utilisateur clique sur un bouton d\'une liste.',
+          value: '{\n	dataListIndex: number,\n	itemIndex: number\n}'
         },
         {
           name: 'back',
-          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton retour'
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton retour.'
         }
       ]
     }
@@ -99,21 +100,40 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
 
 ## Exemples
 
-### Action
+### Listes de données
 
-Vous pouvez ajouter une action sur les items des différentes listes situées à droite.
+Vous pouvez afficher des listes de données en utilisant la propriété `data-lists`.
+
+<DocExample file="patterns/sub-header/examples/sub-header-data-lists" />
+
+### Boutons d'actions
+
+Vous pouvez ajouter des boutons actions dans les listes de données en utilisant la propriété `action` sur les items.
 
 <DocExample file="patterns/sub-header/examples/sub-header-action" />
 
-### Chargement
+### Informations complémentaires
 
-Vous pouvez afficher le composant en mode chargement.
+Vous pouvez afficher des informations complémentaires en utilisant le slot `additional-informations`.
+
+<DocExample file="patterns/sub-header/examples/sub-header-additional-infos" />
+
+### Mode chargement
+
+Vous pouvez afficher le composant en mode chargement grâce à la propriété `loading`.
+
+<DocInfo>
+
+Vous pouvez utiliser les propriétés `itemsNumberLoading` et `headingLoading` sur chaque [DataList](../../elements/data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
+
+</DocInfo>
+
 
 <DocExample file="patterns/sub-header/examples/sub-header-loading" />
 
 ### Utilisation des slots
 
-Vous pouvez utiliser les slots pour remplacer certains contenus par défaut ou pour en ajouter :
+Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter :
 
 - `back-btn` : le bouton de retour
 - `title` : le titre
