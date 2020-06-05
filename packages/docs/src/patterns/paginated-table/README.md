@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `PaginatedTable` est utilisé pour afficher un tableau avec une pagination dynamique.
+Le pattern `PaginatedTable` est utilisé pour afficher un tableau avec une pagination dynamique.
 :::
 
 ## Utilisation
@@ -22,18 +22,20 @@ L'élément `PaginatedTable` est utilisé pour afficher un tableau avec une pagi
       props: [
         {
           name: 'options',
+          required: true,
           type: 'DataOptions',
           description: 'prop `options` du composant vuetify `VDataTable`'
         },
         {
           name: 'server-items-length',
-          type: 'numner',
+          required: true,
+          type: 'number',
           description: 'Utilisé uniquement lorsque les données sont fournies par un serveur. Doit être réglé au total des éléments disponibles sur le serveur afin que la pagination fonctionne correctement.'
         },
         {
           name: 'suffix',
           type: 'string',
-          defaultValue: '\'\'',
+          value: '\'\'',
           description: 'Le suffixe est utilisé pour stocker différents objets de pagination. Si l\'utilisateur a deux tables mais n\'utilise pas cet attribut, alors les tables partagerons le même objet de pagination'
         }
       ],
@@ -46,3 +48,7 @@ L'élément `PaginatedTable` est utilisé pour afficher un tableau avec une pagi
     }
   }"
 />
+
+## Playground
+
+<DocExample file="patterns/paginated-table/examples/paginated-table-playground" />

@@ -1,13 +1,31 @@
 <template>
-	<PaginatedTable
-		:headers="headers"
-		:items="users"
-		:options.sync="options"
-		:server-items-length="totalUsers"
-		:loading="loading"
-		class="elevation-1"
-		@update:options="fetchData"
-	/>
+	<VRow>
+		<VCol
+			cols="12"
+			md="6"
+		>
+			<VTextField
+				:value="totalUsers"
+				label="Nombre d'items"
+				type="number"
+				@input="totalUsers = parseInt($event)"
+			/>
+		</VCol>
+		<VCol
+			cols="12"
+			md="6"
+		>
+			<PaginatedTable
+				:headers="headers"
+				:items="users"
+				:options.sync="options"
+				:server-items-length="totalUsers"
+				:loading="loading"
+				class="elevation-1"
+				@update:options="fetchData"
+			/>
+		</VCol>
+	</VRow>
 </template>
 
 <script lang="ts">
@@ -29,7 +47,7 @@
 	}
 
 	@Component
-	export default class PaginatedTableEx extends Vue {
+	export default class PaginatedTablePlayground extends Vue {
 		totalUsers = 0;
 
 		users: User[] = [];
