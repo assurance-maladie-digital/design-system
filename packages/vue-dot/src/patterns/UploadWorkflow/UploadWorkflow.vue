@@ -53,36 +53,30 @@
 </template>
 
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
 	import { locales } from './locales';
 	import { FileListItem, SelectItem } from './types';
 
-	import { Refs } from '../../types';
-
 	import { required } from '../../rules/required';
 
 	import { customizable } from '../../mixins/customizable';
 
-	import FileUpload from '../FileUpload';
+	import { UploadLogic } from './mixins/uploadLogic';
+
 	import { ErrorEvent } from '../FileUpload/types';
 
 	import FileList from './FileList';
 
 	const Props = Vue.extend({
 		props: {
-			/** The v-model value (the list of files) */
-			value: {
-				type: Array as PropType<FileListItem[]>,
-				required: true
-			},
 			/** The main title */
 			sectionTitle: {
 				type: String,
 				default() {
-					const plural = this.value.length > 1;
+					const plural = true;//(UploadLogic.value).length > 1;
 
 					return locales.title(plural);
 				}
@@ -90,7 +84,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props, customizable(config), UploadLogic);
 
 	/**
 	 * UploadWorkflow is a component that let the user select files
@@ -103,43 +97,12 @@
 		model: {
 			prop: 'value',
 			event: 'change'
-		},
-		watch: {
-			value: {
-				handler(): void {
-					// Clear fileList to avoid duplicates
-					this.fileList = [];
-
-					// Build fileList from value
-					this.value.forEach((propFile: FileListItem) => {
-						const file = propFile;
-
-						// If there is not state attribute
-						if (!file.state) {
-							// Initiate it
-							file.state = 'initial';
-						}
-
-						this.fileList.push(file);
-					});
-				},
-				immediate: true,
-				deep: true
-			}
 		}
 	})
 	export default class UploadWorkflow extends MixinsDeclaration {
-		// Extend $refs
-		$refs!: Refs<{
-			fileUpload: FileUpload;
-			form: HTMLFormElement;
-		}>;
 
 		// Locales
 		locales = locales;
-
-		/** Internal value */
-		fileList: FileListItem[] = [];
 
 		/** The VDialog v-model */
 		dialog = false;
