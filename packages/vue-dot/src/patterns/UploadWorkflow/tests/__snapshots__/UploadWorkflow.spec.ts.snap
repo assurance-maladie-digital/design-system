@@ -23,7 +23,7 @@ exports[`UploadWorkflow renders correctly 1`] = `
 exports[`UploadWorkflow renders correctly with a single file 1`] = `
 <div class="vd-upload-workflow">
   <h4 class="title mb-2">
-    Documents à nous transmettre
+    Document à nous transmettre
   </h4>
   <filelist-stub files="[object Object]"></filelist-stub> <label class="file-upload d-block pa-4 primary--text mt-6"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="file-upload-input"> <span class="file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
 					Placez votre fichier ici

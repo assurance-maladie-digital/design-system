@@ -53,7 +53,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -64,19 +64,25 @@
 
 	import { customizable } from '../../mixins/customizable';
 
-	import { UploadLogic } from './mixins/uploadLogic';
-
-	import { ErrorEvent } from '../FileUpload/types';
+	import { EventsMapping } from './mixins/eventsMapping';
 
 	import FileList from './FileList';
+	import { Refs } from '../../types';
+	import FileUpload from '../FileUpload';
+	import { ErrorEvent } from '../FileUpload/types';
 
 	const Props = Vue.extend({
 		props: {
+			/** The v-model value (the list of files) */
+			value: {
+				type: Array as PropType<FileListItem[]>,
+				required: true
+			},
 			/** The main title */
 			sectionTitle: {
 				type: String,
 				default() {
-					const plural = true;//(UploadLogic.value).length > 1;
+					const plural = this.value.length > 1;
 
 					return locales.title(plural);
 				}
@@ -84,7 +90,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config), UploadLogic);
+	const MixinsDeclaration = mixins(Props, customizable(config), EventsMapping);
 
 	/**
 	 * UploadWorkflow is a component that let the user select files
@@ -97,9 +103,37 @@
 		model: {
 			prop: 'value',
 			event: 'change'
+		},
+		watch: {
+			value: {
+				handler(): void {
+					// Clear fileList to avoid duplicates
+					this.fileList = [];
+
+					// Build fileList from value
+					this.value.forEach((propFile: FileListItem) => {
+						const file = propFile;
+
+						// If there is not state attribute
+						if (!file.state) {
+							// Initiate it
+							file.state = 'initial';
+						}
+
+						this.fileList.push(file);
+					});
+				},
+				immediate: true,
+				deep: true
+			}
 		}
 	})
 	export default class UploadWorkflow extends MixinsDeclaration {
+		// Extend $refs
+		$refs!: Refs<{
+			fileUpload: FileUpload;
+			form: HTMLFormElement;
+		}>;
 
 		// Locales
 		locales = locales;
@@ -112,13 +146,13 @@
 
 		error = false;
 
+		/** The VSelect v-model */
+		selectedItem = '';
+
 		/** The rules for the select in the dialog */
 		selectRules = [
 			required
 		];
-
-		/** The VSelect v-model */
-		selectedItem = '';
 
 		/** If there is only one file in the list, we're in single mode */
 		get singleMode(): boolean {
@@ -137,20 +171,6 @@
 			});
 
 			return items;
-		}
-
-		/** Fired when the "confirm" button in the dialog is pressed */
-		dialogConfirm(): void {
-			// Validate the form in the dialog
-			if (this.$refs.form.validate()) {
-				// Close the dialog
-				this.dialog = false;
-
-				this.setFileInList();
-
-				// Reset the form
-				this.$refs.form.reset();
-			}
 		}
 
 		/**
@@ -174,24 +194,13 @@
 			this.$emit('change', this.fileList);
 		}
 
-		/** Set or delete a value in fileList */
-		updateFileModel<T>(id: string, key: string, value: T): void {
-			// Find the index with the provided id
-			const index = this.fileList.findIndex((file) => file.id === id);
-
-			// Avoid error if index isn't find
-			if (index === -1) {
-				return;
-			}
-
-			// If the value is undefined
-			if (value === undefined) {
-				// Delete the property
-				Vue.delete(this.fileList[index], key);
-			} else {
-				// Else, set it
-				Vue.set(this.fileList[index], key, value);
-			}
+		/** Fired when the "delete" button is clicked in FileList */
+		deleteFile(id: string): void {
+			// Reset the state
+			this.updateFileModel(id, 'state', 'initial');
+			// Clear name and file
+			this.updateFileModel(id, 'name', undefined);
+			this.updateFileModel(id, 'file', undefined);
 		}
 
 		/** Fired when a file has been selected */
@@ -207,6 +216,20 @@
 			}
 		}
 
+		/** Fired when the "confirm" button in the dialog is pressed */
+		dialogConfirm(): void {
+			// Validate the form in the dialog
+			if (this.$refs.form.validate()) {
+				// Close the dialog
+				this.dialog = false;
+
+				this.setFileInList();
+
+				// Reset the form
+				this.$refs.form.reset();
+			}
+		}
+
 		/** Fired when a "wrong" file is selected */
 		uploadError(error: ErrorEvent): void {
 			this.error = true;
@@ -217,15 +240,6 @@
 
 			// Pass the default FileUpload error
 			this.$emit('error', error);
-		}
-
-		/** Fired when the "delete" button is clicked in FileList */
-		deleteFile(id: string): void {
-			// Reset the state
-			this.updateFileModel(id, 'state', 'initial');
-			// Clear name and file
-			this.updateFileModel(id, 'name', undefined);
-			this.updateFileModel(id, 'file', undefined);
 		}
 
 		/** Fired when the "retry" button is clicked in FileList */
