@@ -34,13 +34,13 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
       options: [
         {
           name: 'value',
-          value: 'undefined',
+          default: 'undefined',
           type: 'function',
           description: 'Fonction exécutée après le délai. Par défaut un évènement `change` sera émit.'
         },
         {
           name: 'arg:time',
-          value: '500',
+          default: '500',
           type: 'number',
           description: 'Nombre de millisecondes à attendre avant d\'appeler la fonction `value` ou d\'émettre un événement.'
         }

@@ -22,49 +22,49 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
       props: [
         {
           name: 'multiple',
-          value: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Permet de sélectionner plusieurs fichiers.'
         },
         {
           name: 'value',
           type: 'File | File[]',
-          value: '[]',
+          default: '[]',
           description: 'Le ou les fichiers sélectionnés.'
         },
         {
           name: 'no-ripple',
-          value: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Désactive l\'ondulation.'
         },
         {
           name: 'disabled',
-          value: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Désactive le composant.'
         },
         {
           name: 'file-size-max',
-          value: '4194304',
+          default: '4194304',
           type: 'number',
           description: 'Taille maximale d\'un fichier en octets (par défaut 4 MB).'
         },
         {
           name: 'file-size-units',
-          value: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
+          default: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
           type: 'string[]',
           description: 'Les unités de taille utilisées pour la traduction.'
         },
         {
           name: 'allowed-extensions',
-          value: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
+          default: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
           type: 'string[]',
           description: 'Les extensions autorisées.'
         },
         {
           name: 'accept',
-          value: 'undefined',
+          default: 'undefined',
           type: 'string',
           description: 'L\'attribut natif `accept`. Par défaut, la valeur sera calculée à partir des extensions autorisées.'
         }

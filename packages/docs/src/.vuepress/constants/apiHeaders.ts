@@ -15,7 +15,7 @@ const propProps: ItemHeader[] = [
 	},
 	{
 		label: 'Valeur',
-		value: 'value',
+		value: 'default',
 		class: 'xs12 md7 text-md-right'
 	},
 	{

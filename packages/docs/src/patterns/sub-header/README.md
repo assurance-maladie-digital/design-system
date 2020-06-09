@@ -23,36 +23,36 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
         {
           name: 'hide-back-btn',
           type: 'boolean',
-          value: 'false',
+          default: 'false',
           description: 'Masque le bouton de retour.'
         },
         {
           name: 'back-btn-text',
-          value: '\'Retour\'',
+          default: '\'Retour\'',
           type: 'string',
           description: 'Le texte du bouton retour.'
         },
         {
           name: 'title-text',
           type: 'string',
-          value: 'undefined',
+          default: 'undefined',
           description: 'Le texte du titre.'
         },
         {
           name: 'sub-title-text',
-          value: 'undefined',
+          default: 'undefined',
           type: 'string',
           description: 'Le texte du sous-titre.'
         },
         {
           name: 'data-lists',
-          value: 'undefined',
+          default: 'undefined',
           type: 'DataListsItem[]',
           description: 'Liste des composants `DataList` en mode colonne.'
         },
         {
           name: 'loading',
-          value: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Affiche un état de chargement.'
         }

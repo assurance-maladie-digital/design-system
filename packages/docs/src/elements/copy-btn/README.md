@@ -37,19 +37,19 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
         {
           name: 'hide-tooltip',
           type: 'boolean',
-          value: 'false',
+          default: 'false',
           description: 'Masque le `VTooltip`.'
         },
         {
           name: 'tooltip-duration',
           type: 'number',
-          value: '2500',
+          default: '2500',
           description: 'La durée d\'affichage du tooltip en millisecondes.'
         },
         {
           name: 'vuetify-options',
           type: 'Options',
-          value: 'undefined',
+          default: 'undefined',
           description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
           options: '{\n	menu: `VMenu`,\n	btn: `VBtn`,\n	icon: `VIcon`\n}'
         }
