@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-Le pattern `PaginatedTable` est utilisé pour afficher un tableau avec une pagination dynamique.
+Le pattern `PaginatedTable` est utilisé pour afficher un tableau à partir de `VDataTable` mais une pagination dynamique.
 :::
 
 ## Utilisation
@@ -42,7 +42,7 @@ Le pattern `PaginatedTable` est utilisé pour afficher un tableau avec une pagin
       slots: [
         {
           name: '$scopedSlots',
-          description: 'L\'utilisation de tout les slots de `VDataTable` est possible.'
+          description: 'L\'utilisation des slots de `VDataTable` est possible.'
         }
       ]
     }
@@ -52,3 +52,9 @@ Le pattern `PaginatedTable` est utilisé pour afficher un tableau avec une pagin
 ## Playground
 
 <DocExample file="patterns/paginated-table/examples/paginated-table-playground" />
+
+### Utilisation du slot
+
+Vous pouvez utiliser les slots du composant vuetify `VDataTable`.
+
+<DocExample file="patterns/paginated-table/examples/paginated-table-slots" />

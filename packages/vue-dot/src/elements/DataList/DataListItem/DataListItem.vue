@@ -120,7 +120,7 @@
 			return this.$vuetify.theme.dark ? 'rgba(255, 255, 255, .7)' : 'rgba(0, 0, 0, .6)';
 		}
 
-		get itemValue(): string {
+		get itemVaalue(): string {
 			return this.value || this.placeholder;
 		}
 	}
