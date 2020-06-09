@@ -1,7 +1,9 @@
 import Component, { mixins } from 'vue-class-component';
 
 import { UpdateFileModel } from './updateFileModel';
+
 import { Refs } from '../../../types';
+
 import FileUpload from '../../FileUpload';
 
 const MixinsDeclaration = mixins(UpdateFileModel);
