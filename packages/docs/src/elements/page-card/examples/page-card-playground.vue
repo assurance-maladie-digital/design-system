@@ -8,13 +8,14 @@
 				v-model="minHeight"
 				label="Hauteur minimum de 500px"
 				hide-details
+				class="mt-0"
 			/>
 
 			<VSwitch
 				v-model="noShadow"
 				label="Enlever l'ombre"
 				hide-details
-				class="mt-2"
+				class="mt-3"
 			/>
 
 			<VTextField
@@ -22,7 +23,7 @@
 				label="Classe de la carte"
 				hide-details
 				outlined
-				class="mt-5"
+				class="mt-6"
 			/>
 
 			<VTextField
@@ -30,7 +31,7 @@
 				label="Padding de la carte"
 				hide-details
 				outlined
-				class="mt-5"
+				class="mt-6"
 			/>
 		</VCol>
 

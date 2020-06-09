@@ -61,6 +61,10 @@ module.exports = {
 					{
 						title: 'PaginatedTable',
 						to: '/patterns/paginated-table'
+					},
+					{
+						title: 'SubHeader',
+						to: '/patterns/sub-header'
 					}
 				]
 			}

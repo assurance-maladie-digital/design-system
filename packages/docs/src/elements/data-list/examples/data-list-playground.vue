@@ -6,7 +6,7 @@
 		>
 			<VSwitch
 				v-model="loading"
-				label="Mode chargement (loading)"
+				label="Mode chargement"
 				hide-details
 				class="mt-0"
 			/>
@@ -15,14 +15,14 @@
 				<div v-if="loading">
 					<VSwitch
 						v-model="headingLoading"
-						label="Avec titre (heading-loading)"
+						label="Avec titre"
 						hide-details
 					/>
 
 					<VTextField
 						v-if="loading"
 						v-model.number="itemsNumberLoading"
-						label="Nb. d'items en mode chargement (items-number-loading)"
+						label="Nb. d'items en mode chargement"
 						hide-details
 						type="number"
 						class="mt-8"
@@ -33,20 +33,20 @@
 
 			<VSwitch
 				v-model="row"
-				label="Mode horizontal (row)"
+				label="Mode horizontal"
 				hide-details
 			/>
 
 			<VSwitch
 				v-model="flex"
-				label="Mode flexbox (flex)"
+				label="Mode flexbox"
 				hide-details
 				class="mb-8"
 			/>
 
 			<VTextField
 				v-model="listTitle"
-				label="Titre (list-title)"
+				label="Titre"
 				hide-details
 				class="mb-8"
 				outlined
@@ -54,7 +54,7 @@
 
 			<VTextField
 				v-model="placeholder"
-				label="Text de remplacement (placeholder)"
+				label="Text de remplacement"
 				hide-details
 				class="mb-8"
 				outlined
@@ -62,7 +62,7 @@
 
 			<VTextField
 				v-model="itemWidth"
-				label="Largeur de chaque item (item-width)"
+				label="Largeur de chaque item"
 				hide-details
 				outlined
 			/>

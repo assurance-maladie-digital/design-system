@@ -95,12 +95,6 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 
 ## Exemples
 
-### Utilisation des slots
-
-Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d'actions.
-
-<DocExample file="elements/dialog-box/examples/dialog-box-slots" />
-
 ### Modification de la largeur
 
 Vous pouvez modifier la largeur de la boîte de dialogue avec l'attribut `width`.
@@ -112,6 +106,12 @@ Vous pouvez modifier la largeur de la boîte de dialogue avec l'attribut `width`
 Vous pouvez modifier les textes par défaut des boutons d'actions avec les attributs `cancel-btn-text` et `confirm-btn-text`.
 
 <DocExample file="elements/dialog-box/examples/dialog-box-btn-text" />
+
+### Utilisation des slots
+
+Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d'actions.
+
+<DocExample file="elements/dialog-box/examples/dialog-box-slots" />
 
 ### Personnalisation des composants
 
