@@ -139,12 +139,6 @@ Vous pouvez utiliser le slot `placeholder` pour remplacer le contenu par défaut
 
 #### Personnalisation par éléments
 
-Vous pouvez utiliser les slots pour remplacer certains contenus par défaut :
-
-- `icon` : l'icône par défaut
-- `action-text` : le texte d\'action
-- `or` : le texte `Ou`
-- `button-text` : le label du bouton d\'action
-- `info-text` : les informations sur le fichier à sélectionner
+Vous pouvez utiliser les slots pour remplacer les textes et l'icône par défaut.
 
 <DocExample file="patterns/file-upload/examples/file-upload-slots" />

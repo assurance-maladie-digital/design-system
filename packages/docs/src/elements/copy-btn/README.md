@@ -50,7 +50,8 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
           name: 'vuetify-options',
           type: 'Options',
           value: 'undefined',
-          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+          options: '{\n	menu: `VMenu`,\n	btn: `VBtn`,\n	icon: `VIcon`\n}'
         }
       ],
       slots: [
@@ -83,6 +84,6 @@ Vous pouvez utiliser les slots pour personnaliser l'icône ainsi que le contenu 
 
 ### Personnalisation des composants Vuetify
 
-Grâce à la directive `customizable`, vous pouvez personnaliser les composants `VMenu`, `VBtn` et `VIcon` contenus dans `CopyBtn`.
+Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
 
 <DocExample file="elements/copy-btn/examples/copy-btn-vuetify-options" />

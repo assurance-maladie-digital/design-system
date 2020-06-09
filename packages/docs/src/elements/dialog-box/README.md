@@ -54,7 +54,8 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
           name: 'vuetify-options',
           type: 'Options',
           value: 'undefined',
-          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+          options: '{\n	card: `VCard`,\n	cardTitle: `VCardTitle`,\n	spacer: `VSpacer`,\n	closeBtn: `VBtn`,\n	icon: `VIcon`,\n	cardActions: `VCardActions`,\n	actionsSpacer: `VSpacer`,\n	cancelBtn: `VBtn`,\n	confirmBtn: `VBtn`\n}'
         }
       ],
       slots: [
@@ -115,17 +116,7 @@ Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi le
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `DialogBox` en utilisant la propriété `vuetify-options` avec les propriétés suivantes :
-
-- `card` : `VCard`
-- `cardTitle` : `VCardTitle`
-- `spacer` : `VSpacer`
-- `closeBtn` : `VBtn`
-- `icon` : `VIcon`
-- `cardActions` : `VCardActions`
-- `actionsSpacer` : `VSpacer`
-- `cancelBtn` : `VBtn`
-- `confirmBtn` : `VBtn`
+Vous pouvez personnaliser les composants Vuetify contenus dans `DialogBox` en utilisant la propriété `vuetify-options`.
 
 <DocInfo>
 

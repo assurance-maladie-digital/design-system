@@ -48,7 +48,8 @@ L'élément `PageCard` est utilisé pour afficher une page.
           name: 'vuetify-options',
           type: 'Options',
           value: 'undefined',
-          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+          options: '{\n	layout: `VLayout`\n}'
         }
       ],
       slots: [

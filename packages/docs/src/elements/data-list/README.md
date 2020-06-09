@@ -151,7 +151,8 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
           name: 'vuetify-options',
           type: 'Options',
           value: 'undefined',
-          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+          options: '{\n	layout: `VLayout`,\n	icon: `VIcon`,\n	chip: `VChip`,\n	actionBtn: `VBtn`\n}'
         }
       ],
       slots: [
@@ -239,7 +240,7 @@ Vous pouvez ajouter un bouton d'action à chaque item grâce à la propriété `
 
 ### Étiquette
 
-Vous pouvez afficher certains items de la liste dans une `VChip` et de modifier l'affichage de celle-ci grâce à la propriété `vuetify-options` sur l'item.
+Vous pouvez afficher certains items de la liste dans une `VChip` et de modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
 
 <DocExample file="elements/data-list/examples/data-list-chip" />
 
@@ -251,6 +252,6 @@ Vous pouvez utiliser le slot `title` pour personnaliser le titre.
 
 ### Personnalisation des composants Vuetify
 
-Vous pouvez personnaliser les composants `VLayout`, `VIcon` et `VChip` contenus dans `DataListItem` en utilisant la propriété `vuetify-options` sur les items de la liste.
+Vous pouvez personnaliser les composants Vuetify contenus dans `DataListItem` en utilisant la propriété `options` sur les items de la liste.
 
 <DocExample file="elements/data-list/examples/data-list-options" />

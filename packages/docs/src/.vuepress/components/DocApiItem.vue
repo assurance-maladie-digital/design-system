@@ -62,9 +62,9 @@
 
 			<!-- Options -->
 			<DocMarkup
-				v-else-if="header.value === 'example' && item.options"
+				v-else-if="header.value === 'options' && item.options"
 				:filename="false"
-				lang="json"
+				lang="ts"
 				value="example"
 			>{{ item.options }}</DocMarkup>
 

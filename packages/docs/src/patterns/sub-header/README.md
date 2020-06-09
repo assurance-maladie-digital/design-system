@@ -23,7 +23,7 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
         {
           name: 'hide-back-btn',
           type: 'boolean',
-          required: true,
+          value: 'false',
           description: 'Masque le bouton de retour.'
         },
         {
@@ -133,12 +133,6 @@ Vous pouvez utiliser les propriétés `itemsNumberLoading` et `headingLoading` s
 
 ### Utilisation des slots
 
-Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter :
-
-- `back-btn` : le bouton de retour
-- `title` : le titre
-- `sub-title` : le sous-titre
-- `right-content` : le contenu situé à droite
-- `additional-informations` : informations complémentaires
+Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter.
 
 <DocExample file="patterns/sub-header/examples/sub-header-slots" />
