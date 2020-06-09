@@ -11,7 +11,7 @@ exports[`SubHeader renders correctly 1`] = `
       Retour
     </vbtn-stub>
   </vfadetransition-stub>
-  <vlayout-stub tag="div" wrap="true" class="vd-sub-header-content justify-space-between">
+  <vlayout-stub tag="div" class="vd-sub-header-content justify-space-between">
     <vlayout-stub tag="div" column="" class="vd-sub-header-informations mt-1">
       <vfadetransition-stub mode="out-in" origin="top center 0">
         <h2 class="headline font-weight-bold">
