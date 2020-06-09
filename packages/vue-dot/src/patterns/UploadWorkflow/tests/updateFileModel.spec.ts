@@ -1,8 +1,9 @@
 import Vue from 'vue';
-import { mount, Wrapper }  from '@vue/test-utils';
+import { mount, Wrapper } from '@vue/test-utils';
+
+import { FileListItem } from '../types';
 
 import { UpdateFileModel } from '../mixins/updateFileModel';
-import { FileListItem } from '../types';
 
 interface TestComponent extends Vue {
 	updateFileModel<T>(id: string, key: string, value: T): void;
@@ -49,7 +50,7 @@ describe('updateFileModel', () => {
 		expect(wrapper.vm.fileList[0].name).toBeUndefined();
 	});
 
-	it('if value and  fileList a set , new field should pass to the current fileList with: key and value', () => {
+	it('if value and  fileList is set , new field should pass to the current fileList with: key and value', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		wrapper.vm.fileList = fileList;
@@ -59,7 +60,5 @@ describe('updateFileModel', () => {
 		expect(wrapper.vm.fileList[0].state).toBeTruthy();
 
 		expect(wrapper.vm.fileList[0].state).toEqual('file');
-
 	});
-
 });
