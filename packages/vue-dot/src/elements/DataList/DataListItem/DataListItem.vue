@@ -14,7 +14,7 @@
 		</slot>
 
 		<div class="vd-data-list-item-content">
-			<div :class=" { 'vd-row': row }">
+			<div :class="{ 'vd-row': row }">
 				<div
 					class="vd-data-list-item-label caption"
 					:style="{ color: labelColor }"
@@ -38,9 +38,8 @@
 						<span
 							v-else
 							class="body-1"
-						>
-							{{ itemValue }}
-						</span>
+							v-html="itemValue"
+						/>
 					</slot>
 				</div>
 			</div>
