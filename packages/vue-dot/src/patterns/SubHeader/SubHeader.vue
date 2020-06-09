@@ -86,7 +86,7 @@
 					<VLayout
 						v-if="dataLists"
 						v-bind="options.dataListsLayout"
-						class="vd-sub-header-data-list mx-n2"
+						class="vd-sub-header-data-list"
 					>
 						<DataList
 							v-for="(dataList, index) in dataLists"
@@ -190,6 +190,7 @@
 <style lang="scss" scoped>
 	.vd-sub-header {
 		width: 100%;
+		overflow-x: auto;
 
 		::v-deep {
 			.v-skeleton-loader__heading {
@@ -200,53 +201,31 @@
 		}
 	}
 
+	.vd-sub-header-data-list,
 	.vd-sub-header-informations {
-		flex: none;
-		width: 310px;
-		margin-right: 8px; // Avoid "contact" with right part
-	}
-
-	.vd-sub-header-data-list {
 		// Don't take all available space
 		flex: none;
-
-		::v-deep .vd-data-list {
-			max-width: 200px;
-			margin-left: 8px;
-
-			// Apply margin right to avoid empty
-			// space on smaller screens
-			&:not(:last-child) {
-				margin-right: 80px;
-			}
-
-			.vd-key {
-				display: inline-block;
-				font-size: .75rem !important;
-			}
-
-			.vd-data-list-item-label {
-				opacity: .8;
-				color: #fff !important;
-			}
-		}
+		max-width: none;
 	}
 
-	@media only screen and (max-width: 425px) {
-		.vd-sub-header-informations {
-			// Let section take all width
-			margin-right: 0;
+	.vd-sub-header-data-list ::v-deep .vd-data-list {
+		max-width: 200px;
+		margin-left: 8px;
+
+		// Apply margin right to avoid empty
+		// space on smaller screens
+		&:not(:last-child) {
+			margin-right: 80px;
 		}
 
-		// Remove margin right on DataList on small screens
-		.vd-sub-header-data-list {
-			::v-deep .vd-data-list {
-				margin: 0 8px;
+		.vd-key {
+			display: inline-block;
+			font-size: .75rem !important;
+		}
 
-				&:not(:last-child) {
-					margin-right: 8px;
-				}
-			}
+		.vd-data-list-item-label {
+			opacity: .8;
+			color: #fff !important;
 		}
 	}
 </style>
