@@ -36,9 +36,14 @@
 						</VChip>
 
 						<span
-							v-else
+							v-else-if="valueHtml"
 							class="body-1"
 							v-html="itemValue"
+						/>
+						<span
+							v-else
+							class="body-1"
+							v-text="itemValue"
 						/>
 					</slot>
 				</div>
@@ -101,6 +106,15 @@
 			},
 			/** Display label & value on a single line */
 			row: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value into innerHTML
+			 *  It is suggested that you only use it when you are
+			 *  absolutely sure about the security of the data source,
+			 * 	or pipe it through a custom filter that sanitizes untrusted HTML
+			 */
+			valueHtml: {
 				type: Boolean,
 				default: false
 			}

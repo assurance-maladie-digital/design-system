@@ -92,6 +92,7 @@
 							v-for="(dataList, index) in dataLists"
 							:key="'vd-sub-header-data-list' + index"
 							:loading="loading"
+							:value-html="valueHtml"
 							:list-title="dataList.title"
 							:items="dataList.items"
 							:items-number-loading="dataList.itemsNumberLoading"
@@ -150,6 +151,15 @@
 			},
 			/** Loading mode */
 			loading: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value into innerHTML
+			 *  It is suggested that you only use it when you are
+			 *  absolutely sure about the security of the data source,
+			 * 	or pipe it through a custom filter that sanitizes untrusted HTML
+			 */
+			valueHtml: {
 				type: Boolean,
 				default: false
 			}

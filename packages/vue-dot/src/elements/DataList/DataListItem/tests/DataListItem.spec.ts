@@ -33,6 +33,37 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
+	it('renders correctly with a value not render html', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: '<span class="caption">value</span>'
+			}
+		});
+
+		const elValue = wrapper.find('.vd-data-list-item-value span');
+		expect(elValue.text()).toBe('<span class="caption">value</span>');
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with a value render html', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: '<span class="caption">value</span>',
+				valueHtml: true
+			}
+		});
+
+		const elValue = wrapper.find('.vd-data-list-item-value span');
+		expect(elValue.text()).toBe('value');
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
 	it('renders correctly value in a chip', () => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {

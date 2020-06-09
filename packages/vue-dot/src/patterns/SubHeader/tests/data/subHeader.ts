@@ -25,6 +25,17 @@ export const dataListItemsActions: IDataList = [
 	}
 ];
 
+export const dataListItemsHtml: IDataList = [
+	{
+		key: 'Libellé',
+		value: '<p>Texte à modifier</p>'
+	},
+	{
+		key: 'Libellé',
+		value: '<div>Texte à modifier</div>'
+	}
+];
+
 export const dataLists: DataListsItem[] = [
 	{
 		title: 'Catégorie 1',
@@ -41,5 +52,24 @@ export const dataLists: DataListsItem[] = [
 	{
 		title: 'Catégorie 4',
 		items: dataListItems
+	}
+];
+
+export const dataListsHtml: DataListsItem[] = [
+	{
+		title: 'Catégorie 1',
+		items: dataListItemsHtml
+	},
+	{
+		title: 'Catégorie 2',
+		items: dataListItemsHtml
+	},
+	{
+		title: 'Catégorie 3',
+		items: dataListItemsHtml
+	},
+	{
+		title: 'Catégorie 4',
+		items: dataListItemsHtml
 	}
 ];

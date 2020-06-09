@@ -37,6 +37,7 @@
 						:action="item.action"
 						:chip="item.chip"
 						:row="row"
+						:value-html="valueHtml"
 						:icon="getIcon(item.icon)"
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
@@ -115,6 +116,15 @@
 			},
 			/** Display the heading while loading */
 			headingLoading: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value into innerHTML
+			 *  It is suggested that you only use it when you are
+			 *  absolutely sure about the security of the data source,
+			 * 	or pipe it through a custom filter that sanitizes untrusted HTML
+			 */
+			valueHtml: {
 				type: Boolean,
 				default: false
 			}

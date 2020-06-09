@@ -7,7 +7,7 @@ import { html } from '@/tests/utils/html';
 import SubHeader from '../';
 
 import { IDataListAction } from '../types';
-import { dataLists } from './data/subHeader';
+import { dataLists, dataListsHtml } from './data/subHeader';
 
 let wrapper: Wrapper<Vue>;
 
@@ -18,6 +18,29 @@ describe('SubHeader', () => {
 		wrapper = mountComponent(SubHeader, {
 			propsData: {
 				titleText: 'Test'
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with values not rendered into html', () => {
+		// Mount component
+		wrapper = mountComponent(SubHeader, {
+			propsData: {
+				dataLists: dataListsHtml
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with datalist values rendered into html', () => {
+		// Mount component
+		wrapper = mountComponent(SubHeader, {
+			propsData: {
+				dataLists: dataListsHtml,
+				valueHtml: true
 			}
 		});
 
