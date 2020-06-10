@@ -36,7 +36,7 @@
 						</VChip>
 
 						<span
-							v-else-if="valueHtml"
+							v-else-if="renderHtmlValue"
 							class="body-1"
 							v-html="itemValue"
 						/>
@@ -111,7 +111,7 @@
 				default: false
 			},
 			/** Render the value as plain HTML */
-			valueHtml: {
+			renderHtmlValue: {
 				type: Boolean,
 				default: false
 			}

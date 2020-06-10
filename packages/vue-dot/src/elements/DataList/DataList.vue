@@ -37,7 +37,7 @@
 						:action="item.action"
 						:chip="item.chip"
 						:row="row"
-						:value-html="valueHtml"
+						:render-html-value="renderHtmlValue"
 						:icon="getIcon(item.icon)"
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
@@ -120,7 +120,7 @@
 				default: false
 			},
 			/** Render the value as plain HTML */
-			valueHtml: {
+			renderHtmlValue: {
 				type: Boolean,
 				default: false
 			}

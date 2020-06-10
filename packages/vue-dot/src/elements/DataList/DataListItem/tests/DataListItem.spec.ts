@@ -52,7 +52,7 @@ describe('DataListItem', () => {
 			propsData: {
 				label: 'Name',
 				value: 'Paul<br> Dupont',
-				valueHtml: true
+				renderHtmlValue: true
 			}
 		});
 
