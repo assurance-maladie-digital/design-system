@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-L'élément `DatePicker` est un champ utiliser pour valider une date entrée par l'utilisateur.
+Le pattern `DatePicker` est un champ utiliser pour valider une date entrée par l'utilisateur.
 Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextField` et `VMenu`
 :::
 
@@ -24,97 +24,97 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
 				{
 					name: 'no-calendar',
 					type: 'boolean',
-					defaultValue: 'false',
+					default: 'false',
 					description: 'Désactive le calendrier.'
 				},
 				{
 					name: 'no-prepend-icon',
 					type: 'boolean',
-					defaultValue: 'false',
+					default: 'false',
 					description: 'Désactive l\'icône de préfixe'
 				},
 				{
 					name: 'append-icon',
 					type: 'boolean',
-					defaultValue: 'false',
+					default: 'false',
 					description: 'Utilise l\'icône d\'ajout au lieu de pré\-ajouter.'
 				},
 				{
 					name: 'text-field-activator',
 					type: 'boolean',
-					defaultValue: 'false',
+					default: 'false',
 					description: 'Ouvre le menu du calendrier lorsque le champ de texte est cliqué.'
 				},
 				{
 					name: 'text-field-class',
 					type: 'string | string[]',
-					defaultValue: 'undefined',
+					default: 'undefined',
 					description: 'Classes pour le champ VTextField'
 				},
 				{
 					name: 'start-date',
 					type: 'string',
-					defaultValue: 'undefined',
+					default: 'undefined',
 					description: 'Classes pour le champ VTextField'
 				},
 				{
 					name: 'show-week-ends',
 					type: 'boolean',
-					defaultValue: 'false',
+					default: 'false',
 					description: 'Affiche les week-ends dans le calendrier'
 				 },
 				{
 					name: 'warning-rules',
 					type: 'ValidationRule[]',
-					defaultValue: '[]',
-					description: 'Un tableau de règles (même syntaxe que celles de Vuetify)'
+					default: '[]',
+					description: 'Accepte un tableau de fonctions qui prennent une valeur d\'entrée comme argument et retourne soit true / false ou une string avec un message d\'erreur'
 				},
 				{
 					name: 'date-format',
 					type: 'string',
-					defaultValue: 'DD/MM/YYYY',
+					default: 'DD/MM/YYYY',
 					description: 'Le format de date visuel'
 				},
 				{
 					name: 'date-format-return',
 					type: 'string',
-					defaultValue: 'YYYY-MM-DD',
+					default: 'YYYY-MM-DD',
 					description: 'Le format de date métier'
 				},
 				{
 					name: 'value',
 					type: 'string',
-					defaultValue: '',
+					default: '',
 					description: 'La valeur du champ'
 				},
 				{
 					name: 'mask',
 					type: '[String, Boolean]',
-					defaultValue: '',
+					default: '',
 					description: 'Chaîne de masque personnalisée. Par défaut, elle est calculée à partir de dateFormat. Si false est transmis, n\'appliquez pas de masque.'
 				},
 				{
 					name: 'birthdate',
 					type: 'boolean',
-					defaultValue: 'false',
+					default: 'false',
 					description: 'Active le mode date de naissance.'
 				},
 				{
 					name: 'picker-date',
 					type: 'string',
-					defaultValue: 'undefined',
+					default: 'undefined',
 					description: 'Propriété de Vuetify DatePicker qui a besoin du modificateur .sync.'
 				},
 				{
 					name: 'error',
 					type: 'boolean',
-					defaultValue: 'false',
+					default: 'false',
 					description: 'Propriété de Vuetify qui a besoin du modificateur .sync'
 				},
 				{
 					name: 'vuetify-options',
 					type: 'Options',
-					defaultValue: 'undefined',
+					default: 'undefined',
 					description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
 				}
 			],
@@ -201,5 +201,11 @@ Vous pouvez personnaliser les composants Vuetify contenus dans `DatePicker` en u
 - `icon` : `VIcon`
 - `btn` : `VBtn`
 - `menu` : `VMenu`
+
+<DocInfo>
+
+Le pattern `DatePicker` est composé d'un `VTextField`. Vous pouvez appliquer les attributs du `VTextField` au composant, ils seront appliqués sur celui-ci.
+
+</DocInfo>
 
 <DocExample file="patterns/date-picker/examples/date-picker-options" />

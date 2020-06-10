@@ -8,8 +8,7 @@
 				placeholder: '',
 				label: 'date',
 				hint: null,
-				outlined: true,
-				clearable: true,
+				outlined: true
 			},
 			menu: {
 				nudgeBottom: 50,
@@ -21,6 +20,7 @@
 				min: new Date().toISOString()
 			}
 		}"
+		clearable
 	/>
 </template>
 
