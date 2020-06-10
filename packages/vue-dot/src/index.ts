@@ -1,16 +1,18 @@
-import directives from './directives';
+import { VueConstructor } from 'vue';
+
+import { directives } from './directives';
+import { registerDirectives } from './helpers/registerDirectives';
 
 import { registerAllComponents } from './registerAllComponents';
 
 // Import global styles
 import './styles/global.scss';
 
-import { VueConstructor } from 'vue';
 import { VueDotPlugin } from '../types';
 
 const VueDot: VueDotPlugin = {
 	install(Vue: VueConstructor, options) {
-		directives(Vue);
+		registerDirectives(Vue, directives);
 		registerAllComponents(Vue);
 
 		// Extend the Vue instance with $vd
