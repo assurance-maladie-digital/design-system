@@ -72,9 +72,9 @@ exports[`DataListItem renders correctly with a value not render html 1`] = `
   <div class="vd-data-list-item-content">
     <div class="">
       <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-        Test
+        Name
       </div>
-      <div class="vd-data-list-item-value"><span class="body-1">&lt;span class="caption"&gt;value&lt;/span&gt;</span></div>
+      <div class="vd-data-list-item-value"><span class="body-1">Paul&lt;br&gt; Dupont</span></div>
     </div>
     <!---->
   </div>
@@ -87,9 +87,9 @@ exports[`DataListItem renders correctly with a value render html 1`] = `
   <div class="vd-data-list-item-content">
     <div class="">
       <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-        Test
+        Name
       </div>
-      <div class="vd-data-list-item-value"><span class="body-1"><span class="caption">value</span></span></div>
+      <div class="vd-data-list-item-value"><span class="body-1">Paul<br> Dupont</span></div>
     </div>
     <!---->
   </div>

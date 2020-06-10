@@ -37,13 +37,13 @@ describe('DataListItem', () => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
-				label: 'Test',
-				value: '<span class="caption">value</span>'
+				label: 'Name',
+				value: 'Paul<br> Dupont'
 			}
 		});
 
 		const elValue = wrapper.find('.vd-data-list-item-value span');
-		expect(elValue.text()).toBe('<span class="caption">value</span>');
+		expect(elValue.text()).toBe('Paul<br> Dupont');
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
@@ -52,14 +52,14 @@ describe('DataListItem', () => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
-				label: 'Test',
-				value: '<span class="caption">value</span>',
+				label: 'Name',
+				value: 'Paul<br> Dupont',
 				valueHtml: true
 			}
 		});
 
 		const elValue = wrapper.find('.vd-data-list-item-value span');
-		expect(elValue.text()).toBe('value');
+		expect(elValue.text()).toBe('Paul Dupont');
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

@@ -5,7 +5,7 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import DataList from '../';
-import { dataList, dataListHtml } from './data/dataList';
+import { dataList } from './data/dataList';
 
 let wrapper: Wrapper<Vue>;
 
@@ -28,29 +28,6 @@ describe('DataList', () => {
 
 		const titleExists = wrapper.find('h4').exists();
 		expect(titleExists).toBe(false);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
-	it('renders correctly with value not rendered into html', () => {
-		// Mount component
-		wrapper = mountComponent(DataList, {
-			propsData: {
-				items: dataListHtml
-			}
-		});
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
-	it('renders correctly with value rendered into html', () => {
-		// Mount component
-		wrapper = mountComponent(DataList, {
-			propsData: {
-				items: dataListHtml,
-				valueHtml: true
-			}
-		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

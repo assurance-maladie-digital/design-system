@@ -27,62 +27,78 @@ exports[`SubHeader renders correctly 1`] = `
 </div>
 `;
 
-exports[`SubHeader renders correctly with datalist values rendered into html 1`] = `
+exports[`SubHeader renders loading state correctly 1`] = `
 <div class="vd-sub-header secondary white--text py-6 px-8">
-  <vfadetransition-stub mode="out-in" origin="top center 0">
-    <vbtn-stub color="transparent" tag="button" activeclass="" small="true" depressed="true" type="button" class="text-none font-weight-regular white--text mx-n4">
-      <vicon-stub class="mr-2">
-        M21,11H6.83L10.41,7.41L9,6L3,12L9,18L10.41,16.58L6.83,13H21V11Z
-      </vicon-stub>
-
-      Retour
-    </vbtn-stub>
-  </vfadetransition-stub>
-  <vlayout-stub tag="div" class="vd-sub-header-content justify-space-between">
-    <vlayout-stub tag="div" column="" class="vd-sub-header-informations mt-1">
-      <vfadetransition-stub mode="out-in" origin="top center 0">
-        <!---->
-      </vfadetransition-stub>
+  <transition-stub name="fade-transition" mode="out-in">
+    <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader v-skeleton-loader--is-loading theme--dark" style="height: 28px; width: 100px;">
+      <div class="v-skeleton-loader__button v-skeleton-loader__bone"></div>
+    </div>
+  </transition-stub>
+  <div class="layout vd-sub-header-content justify-space-between">
+    <div class="layout vd-sub-header-informations mt-1 column">
+      <transition-stub name="fade-transition" mode="out-in">
+        <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 2rem; width: 300px;">
+          <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+        </div>
+      </transition-stub>
       <!---->
-    </vlayout-stub>
-    <vthemeprovider-stub dark="true">
-      <vlayout-stub tag="div" class="vd-sub-header-data-list pl-10 pr-8">
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 1" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1" valuehtml="true"></datalist-stub>
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 2" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1" valuehtml="true"></datalist-stub>
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 3" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1" valuehtml="true"></datalist-stub>
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 4" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1" valuehtml="true"></datalist-stub>
-      </vlayout-stub>
-    </vthemeprovider-stub>
-  </vlayout-stub>
-</div>
-`;
-
-exports[`SubHeader renders correctly with values not rendered into html 1`] = `
-<div class="vd-sub-header secondary white--text py-6 px-8">
-  <vfadetransition-stub mode="out-in" origin="top center 0">
-    <vbtn-stub color="transparent" tag="button" activeclass="" small="true" depressed="true" type="button" class="text-none font-weight-regular white--text mx-n4">
-      <vicon-stub class="mr-2">
-        M21,11H6.83L10.41,7.41L9,6L3,12L9,18L10.41,16.58L6.83,13H21V11Z
-      </vicon-stub>
-
-      Retour
-    </vbtn-stub>
-  </vfadetransition-stub>
-  <vlayout-stub tag="div" class="vd-sub-header-content justify-space-between">
-    <vlayout-stub tag="div" column="" class="vd-sub-header-informations mt-1">
-      <vfadetransition-stub mode="out-in" origin="top center 0">
-        <!---->
-      </vfadetransition-stub>
-      <!---->
-    </vlayout-stub>
-    <vthemeprovider-stub dark="true">
-      <vlayout-stub tag="div" class="vd-sub-header-data-list pl-10 pr-8">
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 1" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1"></datalist-stub>
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 2" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1"></datalist-stub>
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 3" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1"></datalist-stub>
-        <datalist-stub items="[object Object],[object Object]" listtitle="Catégorie 4" titleclass="subtitle-1 font-weight-bold mb-2 mt-2" placeholder="…" itemwidth="auto" itemsnumberloading="1"></datalist-stub>
-      </vlayout-stub>
-    </vthemeprovider-stub>
-  </vlayout-stub>
+    </div>
+    <div class="layout vd-sub-header-data-list pl-10 pr-8">
+      <div class="vd-data-list">
+        <transition-stub name="fade-transition" mode="out-in">
+          <div class="vd-data-list-loading" title-class="subtitle-1 font-weight-bold mb-2 mt-2">
+            <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
+              <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+            </div>
+            <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
+              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+              </li>
+              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </transition-stub>
+      </div>
+      <div class="vd-data-list">
+        <transition-stub name="fade-transition" mode="out-in">
+          <div class="vd-data-list-loading" title-class="subtitle-1 font-weight-bold mb-2 mt-2">
+            <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
+              <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+            </div>
+            <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
+              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+              </li>
+              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+                <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 90px;">
+                  <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </transition-stub>
+      </div>
+    </div>
+  </div>
 </div>
 `;
