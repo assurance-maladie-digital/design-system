@@ -44,8 +44,6 @@ describe('DataListItem', () => {
 
 		const elValue = wrapper.find('.vd-data-list-item-value span');
 		expect(elValue.text()).toBe('Paul<br> Dupont');
-
-		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly a value as plain HTML', () => {
@@ -60,8 +58,6 @@ describe('DataListItem', () => {
 
 		const elValue = wrapper.find('.vd-data-list-item-value span');
 		expect(elValue.text()).toBe('Paul Dupont');
-
-		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly value in a chip', () => {
