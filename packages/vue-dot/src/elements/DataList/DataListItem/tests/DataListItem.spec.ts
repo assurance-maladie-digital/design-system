@@ -33,6 +33,33 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
+	it('renders correctly a value with HTML as text', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Name',
+				value: 'Paul<br> Dupont'
+			}
+		});
+
+		const elValue = wrapper.find('.vd-data-list-item-value span');
+		expect(elValue.text()).toBe('Paul<br> Dupont');
+	});
+
+	it('renders correctly a value as plain HTML', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Name',
+				value: 'Paul<br> Dupont',
+				renderHtmlValue: true
+			}
+		});
+
+		const elValue = wrapper.find('.vd-data-list-item-value span');
+		expect(elValue.text()).toBe('Paul Dupont');
+	});
+
 	it('renders correctly value in a chip', () => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {

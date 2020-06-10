@@ -92,6 +92,7 @@
 							v-for="(dataList, index) in dataLists"
 							:key="'vd-sub-header-data-list' + index"
 							:loading="loading"
+							:render-html-value="renderHtmlValue"
 							:list-title="dataList.title"
 							:items="dataList.items"
 							:items-number-loading="dataList.itemsNumberLoading"
@@ -150,6 +151,11 @@
 			},
 			/** Loading mode */
 			loading: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value as plain HTML */
+			renderHtmlValue: {
 				type: Boolean,
 				default: false
 			}
