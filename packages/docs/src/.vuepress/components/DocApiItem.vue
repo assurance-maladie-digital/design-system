@@ -4,16 +4,25 @@
 		wrap
 	>
 		<VFlex
-			v-for="(header, index) in headers"
+			v-for="(header, index) in computedHeaders"
 			:key="header.name"
 			:class="header.class"
 		>
+			<!-- Special case "required" -->
+			<span
+				v-if="item.required && header.value === 'required'"
+				class="mono"
+				v-text="header.label"
+			/>
+
 			<!-- Header -->
 			<div
-				v-if="!['example', 'props'].includes(header.value) || item.example || item.props"
+				v-else
 				class="text-capitalize overline text--secondary text--darken-3"
-				v-text="header.text || header.value"
+				v-text="header.label || header.value"
 			/>
+
+			<!-- Values -->
 
 			<!-- Name -->
 			<span
@@ -30,31 +39,18 @@
 			/>
 
 			<!-- Default -->
-			<template v-if="header.value === 'defaultValue' && item.defaultValue && header.type !== 'sass'">
+			<template v-if="header.value === 'default' && item.default && !item.required">
 				<span
-					v-if="typeof item.defaultValue === 'string'"
+					v-if="typeof item.default === 'string'"
 					class="mono"
-					v-text="item.defaultValue"
+					v-text="item.default"
 				/>
 			</template>
 
-			<!-- Sass Default -->
-			<DocMarkup
-				v-if="header.value === 'defaultValue' && header.type === 'sass' && item.defaultValue"
-				:filename="false"
-				lang="sass"
-				value="example"
-			>{{ item.defaultValue }}</DocMarkup>
-
-			<!-- Description -->
-			<!-- <base-markdown
-				v-else-if="header.value === 'description' && item.description"
-				:code="item.description"
-			/> -->
-
 			<p
 				v-else-if="header.value === 'description' && item.description"
-			>{{ item.description }}</p>
+				v-html="item.description"
+			/>
 
 			<!-- Signature -->
 			<DocMarkup
@@ -66,9 +62,9 @@
 
 			<!-- Options -->
 			<DocMarkup
-				v-else-if="header.value === 'example' && item.options"
+				v-else-if="header.value === 'options' && item.options"
 				:filename="false"
-				lang="json"
+				lang="ts"
 				value="example"
 			>{{ item.options }}</DocMarkup>
 
@@ -96,7 +92,7 @@
 
 			<!-- Value -->
 			<DocMarkup
-				v-else-if="header.value === 'value' && item.value"
+				v-else-if="header.value === 'value' && item.value && !item.required"
 				:filename="false"
 				lang="ts"
 				value="example"
@@ -105,18 +101,20 @@
 	</VLayout>
 </template>
 
-<script>
-	import Vue from 'vue';
+<script lang="ts">
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
+	import { ItemHeader, Item } from '../types';
 
 	const Props = Vue.extend({
 		props: {
 			headers: {
-				type: Array,
+				type: Array as PropType<ItemHeader[]>,
 				default: () => ([])
 			},
 			item: {
-				type: Object,
+				type: Object as PropType<Item>,
 				default: () => ({})
 			}
 		}
@@ -124,7 +122,12 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	export default class DocApiItem extends MixinsDeclaration {}
+	export default class DocApiItem extends MixinsDeclaration {
+		get computedHeaders(): ItemHeader[] {
+			// Remove headers without corresponding value
+			return this.headers.filter(header => this.item.hasOwnProperty(header.value));
+		}
+	}
 </script>
 
 <style lang="scss">
@@ -135,11 +138,6 @@
 			&.name {
 				color: #d63200;
 			}
-
-			// &.example,
-			// &:hover {
-			// 	 text-decoration: underline;
-			// }
 
 			> .flex {
 				padding: .4rem;

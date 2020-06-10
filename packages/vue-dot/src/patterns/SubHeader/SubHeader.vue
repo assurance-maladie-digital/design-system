@@ -47,7 +47,7 @@
 						/>
 
 						<h2
-							v-else
+							v-else-if="titleText"
 							class="headline font-weight-bold"
 						>
 							{{ titleText }}
@@ -71,9 +71,7 @@
 						<p
 							v-else
 							class="title font-weight-bold mt-1 mb-0"
-							:style="{
-								color: fadeWhite
-							}"
+							:style="{ color: fadeWhite }"
 						>
 							{{ subTitleText }}
 						</p>
@@ -94,7 +92,7 @@
 							v-for="(dataList, index) in dataLists"
 							:key="'vd-sub-header-data-list' + index"
 							:loading="loading"
-							:list-title="dataList.listTitle"
+							:list-title="dataList.title"
 							:items="dataList.items"
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
@@ -138,7 +136,7 @@
 			/** Title of the SubHeader */
 			titleText: {
 				type: String,
-				required: true
+				default: undefined
 			},
 			/** Sub-title of the SubHeader */
 			subTitleText: {

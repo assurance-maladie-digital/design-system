@@ -22,39 +22,40 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
       props: [
         {
           name: 'value',
-          defaultValue: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Contrôle la visibilité de la boîte de dialogue.'
         },
         {
           name: 'title',
-          defaultValue: 'undefined',
+          default: 'undefined',
           type: 'string',
           description: 'Le titre de la boîte de dialogue.'
         },
         {
           name: 'width',
-          defaultValue: '800px',
+          default: '800px',
           type: 'string',
           description: 'La largeur de la boîte de dialogue.'
         },
         {
           name: 'cancel-btn-text',
-          defaultValue: 'Annuler',
+          default: 'Annuler',
           type: 'string',
           description: 'Le texte du bouton Annuler.'
         },
         {
           name: 'confirm-btn-text',
-          defaultValue: 'Valider',
+          default: 'Valider',
           type: 'string',
           description: 'Le texte du bouton Valider.'
         },
         {
           name: 'vuetify-options',
           type: 'Options',
-          defaultValue: 'undefined',
-          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+          default: 'undefined',
+          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+          options: '{\n	card: `VCard`,\n	cardTitle: `VCardTitle`,\n	spacer: `VSpacer`,\n	closeBtn: `VBtn`,\n	icon: `VIcon`,\n	cardActions: `VCardActions`,\n	actionsSpacer: `VSpacer`,\n	cancelBtn: `VBtn`,\n	confirmBtn: `VBtn`\n}'
         }
       ],
       slots: [
@@ -95,12 +96,6 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 
 ## Exemples
 
-### Utilisation des slots
-
-Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d'actions.
-
-<DocExample file="elements/dialog-box/examples/dialog-box-slots" />
-
 ### Modification de la largeur
 
 Vous pouvez modifier la largeur de la boîte de dialogue avec l'attribut `width`.
@@ -113,19 +108,15 @@ Vous pouvez modifier les textes par défaut des boutons d'actions avec les attri
 
 <DocExample file="elements/dialog-box/examples/dialog-box-btn-text" />
 
+### Utilisation des slots
+
+Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d'actions.
+
+<DocExample file="elements/dialog-box/examples/dialog-box-slots" />
+
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `DialogBox` en utilisant la propriété `options` avec les propriétés suivantes :
-
-- `card` : `VCard`
-- `cardTitle` : `VCardTitle`
-- `spacer` : `VSpacer`
-- `closeBtn` : `VBtn`
-- `icon` : `VIcon`
-- `cardActions` : `VCardActions`
-- `actionsSpacer` : `VSpacer`
-- `cancelBtn` : `VBtn`
-- `confirmBtn` : `VBtn`
+Vous pouvez personnaliser les composants Vuetify contenus dans `DialogBox` en utilisant la propriété `vuetify-options`.
 
 <DocInfo>
 

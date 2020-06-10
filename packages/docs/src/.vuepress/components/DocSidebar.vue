@@ -72,5 +72,5 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class Sitemap extends MixinsDeclaration {}
+	export default class DocSitemap extends MixinsDeclaration {}
 </script>

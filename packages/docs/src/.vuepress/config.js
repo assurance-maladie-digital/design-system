@@ -55,8 +55,16 @@ module.exports = {
 						to: '/patterns/date-picker'
 					},
 					{
+						title: 'FileUpload',
+						to: '/patterns/file-upload'
+					},
+					{
 						title: 'FooterWrapper',
 						to: '/patterns/footer-wrapper'
+					},
+					{
+						title: 'SubHeader',
+						to: '/patterns/sub-header'
 					}
 				]
 			}
