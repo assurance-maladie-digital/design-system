@@ -33,7 +33,7 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with a value not render html', () => {
+	it('renders correctly a value with HTML as text', () => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
@@ -48,7 +48,7 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with a value render html', () => {
+	it('renders correctly a value as plain HTML', () => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {

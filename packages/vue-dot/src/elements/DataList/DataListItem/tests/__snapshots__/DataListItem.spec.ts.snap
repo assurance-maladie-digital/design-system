@@ -15,6 +15,36 @@ exports[`DataListItem renders correctly 1`] = `
 </vlayout-stub>
 `;
 
+exports[`DataListItem renders correctly a value as plain HTML 1`] = `
+<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
+  <!---->
+  <div class="vd-data-list-item-content">
+    <div class="">
+      <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+        Name
+      </div>
+      <div class="vd-data-list-item-value"><span class="body-1">Paul<br> Dupont</span></div>
+    </div>
+    <!---->
+  </div>
+</vlayout-stub>
+`;
+
+exports[`DataListItem renders correctly a value with HTML as text 1`] = `
+<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
+  <!---->
+  <div class="vd-data-list-item-content">
+    <div class="">
+      <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
+        Name
+      </div>
+      <div class="vd-data-list-item-value"><span class="body-1">Paul&lt;br&gt; Dupont</span></div>
+    </div>
+    <!---->
+  </div>
+</vlayout-stub>
+`;
+
 exports[`DataListItem renders correctly in row mode 1`] = `
 <vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
   <!---->
@@ -60,36 +90,6 @@ exports[`DataListItem renders correctly with a value 1`] = `
         Test
       </div>
       <div class="vd-data-list-item-value"><span class="body-1">value</span></div>
-    </div>
-    <!---->
-  </div>
-</vlayout-stub>
-`;
-
-exports[`DataListItem renders correctly with a value not render html 1`] = `
-<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
-  <!---->
-  <div class="vd-data-list-item-content">
-    <div class="">
-      <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-        Name
-      </div>
-      <div class="vd-data-list-item-value"><span class="body-1">Paul&lt;br&gt; Dupont</span></div>
-    </div>
-    <!---->
-  </div>
-</vlayout-stub>
-`;
-
-exports[`DataListItem renders correctly with a value render html 1`] = `
-<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
-  <!---->
-  <div class="vd-data-list-item-content">
-    <div class="">
-      <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
-        Name
-      </div>
-      <div class="vd-data-list-item-value"><span class="body-1">Paul<br> Dupont</span></div>
     </div>
     <!---->
   </div>

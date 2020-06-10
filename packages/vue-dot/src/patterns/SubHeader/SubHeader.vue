@@ -154,11 +154,7 @@
 				type: Boolean,
 				default: false
 			},
-			/** Render the value into innerHTML
-			 *  It is suggested that you only use it when you are
-			 *  absolutely sure about the security of the data source,
-			 * 	or pipe it through a custom filter that sanitizes untrusted HTML
-			 */
+			/** Render the value as plain HTML */
 			valueHtml: {
 				type: Boolean,
 				default: false
