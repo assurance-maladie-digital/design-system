@@ -11,8 +11,8 @@ type EventsFunction = (date: string) => Events;
 
 const Props = Vue.extend({
 	props: {
-		/** Show week-ends in calendar */
-		showWeekEnds: {
+		/** Show weekends in calendar */
+		showWeekends: {
 			type: Boolean,
 			default: false
 		},
@@ -26,7 +26,7 @@ const Props = Vue.extend({
 
 const MixinsDeclaration = mixins(Props);
 
-/** Add event handling: week-ends and ranges */
+/** Add event handling: weekends and ranges */
 @Component
 export class Eventable extends MixinsDeclaration {
 	// Mixin computed data
@@ -64,7 +64,7 @@ export class Eventable extends MixinsDeclaration {
 			}
 		}
 
-		if (this.showWeekEnds) {
+		if (this.showWeekends) {
 			// Change color depending on theme
 			const weekEndColor = this.$vuetify.theme.dark ? 'grey darken-1' : 'grey lighten-1';
 
