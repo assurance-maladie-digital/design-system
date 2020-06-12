@@ -25,7 +25,7 @@
 				<VSpacer />
 
 				<VIcon
-					:style="{ visibility: isSelected(item.value) ? 'visible' : 'hidden' }"
+					:style="getIconStyle(item)"
 					class="ml-1 white--text"
 				>
 					{{ checkIcon }}
@@ -52,6 +52,7 @@
 	import { FieldComponent } from '../mixins/fieldComponent';
 
 	import { FieldItem } from '../types';
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
 	const MixinsDeclaration = mixins(FieldComponent, ChoiceField);
 
@@ -77,6 +78,16 @@
 
 		get isInline(): boolean | null {
 			return this.field?.metadata?.inline as unknown as boolean | null;
+		}
+
+		get showHint(): boolean {
+			return Boolean(this.field.metadata?.hint);
+		}
+
+		getIconStyle(item: FieldItem): IndexedObject {
+			return {
+				visibility: this.isSelected(item.value) ? 'visible' : 'hidden'
+			};
 		}
 	}
 </script>
