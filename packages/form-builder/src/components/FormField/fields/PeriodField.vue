@@ -78,7 +78,7 @@
 
 			return {
 				datePicker,
-				...metadataTo
+				...(Object.assign({},metadataTo))
 			};
 		}
 
