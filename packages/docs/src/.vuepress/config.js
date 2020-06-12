@@ -51,6 +51,10 @@ module.exports = {
 				group: 'patterns',
 				items: [
 					{
+						title: 'DatePicker',
+						to: '/patterns/date-picker'
+					},
+					{
 						title: 'FileUpload',
 						to: '/patterns/file-upload'
 					},
