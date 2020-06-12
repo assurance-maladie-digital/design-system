@@ -1,29 +1,30 @@
 <template>
-	<div>
+	<VLayout wrap>
 		<DatePicker
 			v-model="startDate"
-			text-field-class="mb-4"
-			label="Date de départ"
+			label="Date de début"
+			text-field-class="mr-4"
+			outlined
 		/>
 
 		<DatePicker
+			v-model="endDate"
 			:start-date="startDate"
-			:vuetify-options="{
-				datePicker: {
-					min: startDate
-				}
-			}"
 			label="Date de fin"
+			outlined
 		/>
-	</div>
+	</VLayout>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import dayjs from 'dayjs';
+
 	@Component
 	export default class DatePickerRange extends Vue {
-		startDate = '';
+		startDate = dayjs().format('YYYY-MM-DD');
+		endDate = dayjs().add(7, 'day').format('YYYY-MM-DD');
 	}
 </script>

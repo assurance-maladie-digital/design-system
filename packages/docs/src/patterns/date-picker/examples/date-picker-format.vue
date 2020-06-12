@@ -5,17 +5,14 @@
 			date-format="DD-MM-YYYY"
 			hint="Format JJ-MM-AAAA"
 			date-format-return="DD/MM/YYYY"
+			outlined
 		/>
 
-		<h4
+		<p
 			v-if="date"
-			class="mt-4"
+			class="mt-4 mb-0"
 		>
-			Format de sortie
-		</h4>
-
-		<p class="mt-4">
-			{{ date }}
+			Date : {{ date }}
 		</p>
 	</div>
 </template>

@@ -5,59 +5,85 @@
 			md="6"
 		>
 			<VSwitch
+				v-model="props.outlined"
+				label="Mode outlined"
+				hide-details
+				class="mt-0"
+			/>
+
+			<VSwitch
 				v-model="props.noCalendar"
 				label="Désactiver le calendrier"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VSwitch
 				v-model="props.noPrependIcon"
 				label="Supprimer l'icone avant le champ"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VSwitch
 				v-model="props.appendIcon"
-				label="Placer l'icone après le champ texte"
+				label="Placer l'icone dans le champ"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VSwitch
 				v-model="props.textFieldActivator"
 				label="Ouvrir le menu du calendrier lorsque le champ de texte est cliqué"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VSwitch
 				v-model="props.birthdate"
 				label="Mode date de naissance"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VSwitch
-				v-model="props.showWeekEnds"
-				label="Affiche les weekends"
-			/>
-
-			<VTextField
-				v-model="props.textFieldClass"
-				label="Classes du champ texte"
+				v-model="props.showWeekends"
+				label="Afficher les weekends"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VTextField
 				v-model="props.dateFormat"
-				label="format utilisateur"
+				label="Format de date du champ texte"
+				hide-details
+				outlined
+				class="mt-6"
 			/>
 
 			<VTextField
 				v-model="props.dateFormatReturn"
-				label="format de traitement"
+				label="Format de date du v-model"
+				hide-details
+				outlined
+				class="mt-6"
 			/>
 
 			<VTextField
 				v-model="props.mask"
 				placeholder="##/##/####"
-				label="mask"
+				label="Masque"
+				hide-details
+				outlined
+				class="mt-6"
 			/>
 
-			<DatePicker
-				v-model="props.startDate"
-				label="date de départ"
+			<VTextField
+				v-model="props.textFieldClass"
+				label="Classes du champ texte"
+				hide-details
+				outlined
+				class="mt-6"
 			/>
 		</VCol>
 
@@ -68,28 +94,14 @@
 			<DatePicker
 				v-model="date"
 				v-bind="props"
-				:picker-date.sync="pickerDate"
 			/>
 
-			<template v-if="pickerDate">
-				<h4>
-					Date actuelle du menu
-				</h4>
-
-				<p class="mt-4">
-					{{ pickerDate }}
-				</p>
-			</template>
-
-			<template v-if="date">
-				<h4>
-					Format de sortie à traiter
-				</h4>
-
-				<p class="mt-4">
-					{{ date }}
-				</p>
-			</template>
+			<p
+				v-if="date"
+				class="mt-4 mb-0"
+			>
+				Date : {{ date }}
+			</p>
 		</VCol>
 	</VRow>
 </template>
@@ -102,21 +114,17 @@
 	export default class DatePickerPlayground extends Vue {
 		date = '';
 
-		error = false;
-
-		pickerDate = null;
-
 		props = {
+			outlined: false,
 			noCalendar: false,
 			noPrependIcon: false,
 			appendIcon: false,
 			textFieldActivator: false,
 			birthdate: false,
-			showWeekEnds: false,
+			showWeekends: false,
 			textFieldClass: undefined,
 			dateFormat: 'DD/MM/YYYY',
 			dateFormatReturn: 'YYYY-MM-DD',
-			startDate: '',
 			mask: undefined
 		};
 	}

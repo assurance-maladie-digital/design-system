@@ -3,8 +3,8 @@
 		<DatePicker
 			v-model="birthdate"
 			label="Date de naissance"
-			outlined
 			birthdate
+			outlined
 		/>
 
 		<p
@@ -21,7 +21,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DatePickerBirthDate extends Vue {
+	export default class DatePickerBirthdate extends Vue {
 		birthdate = '';
 	}
 </script>

@@ -3,8 +3,7 @@
 :::
 
 ::: slot description
-Le pattern `DatePicker` est un champ utiliser pour valider une date entrée par l'utilisateur.
-Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextField` et `VMenu`
+Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateur de sélectionner ou de saisir une date.
 :::
 
 ## Utilisation
@@ -22,6 +21,18 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
     DatePicker: {
       props: [
         {
+          name: 'value',
+          type: 'string',
+          default: '\'\'',
+          description: 'La date sélectionnée.'
+        },
+        {
+          name: 'outlined',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche le `VTextField` en mode `outlined`.'
+        },
+        {
           name: 'no-calendar',
           type: 'boolean',
           default: 'false',
@@ -31,85 +42,79 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
           name: 'no-prepend-icon',
           type: 'boolean',
           default: 'false',
-          description: 'Désactive l\'icône de préfixe'
+          description: 'Supprime l\'icône avant le `VTextField`.'
         },
         {
           name: 'append-icon',
           type: 'boolean',
           default: 'false',
-          description: 'Utilise l\'icône d\'ajout au lieu de pré\-ajouter.'
+          description: 'Affiche le bouton du calendrier dans le `VTextField`.'
         },
         {
           name: 'text-field-activator',
           type: 'boolean',
           default: 'false',
-          description: 'Ouvre le menu du calendrier lorsque le champ de texte est cliqué.'
+          description: 'Affiche le calendrier lors du clic sur le `VTextField`.'
         },
         {
           name: 'text-field-class',
           type: 'string | string[]',
           default: 'undefined',
-          description: 'Classes pour le champ VTextField'
+          description: 'Les classes à appliquer au `VTextField`.'
         },
         {
           name: 'start-date',
           type: 'string',
           default: 'undefined',
-          description: 'Classes pour le champ VTextField'
+          description: 'La date de début de la période.'
         },
         {
-          name: 'show-week-ends',
+          name: 'show-weekends',
           type: 'boolean',
           default: 'false',
-          description: 'Affiche les week-ends dans le calendrier'
-         },
+          description: 'Affiche les weekends dans le calendrier.'
+        },
         {
           name: 'warning-rules',
           type: 'ValidationRule[]',
           default: '[]',
-          description: 'Accepte un tableau de fonctions qui prennent une valeur d\'entrée comme argument et retourne soit true / false ou une string avec un message d\'erreur'
+          description: 'Les règles d\'alertes, qui ne bloquent pas la validation.'
         },
         {
           name: 'date-format',
           type: 'string',
-          default: 'DD/MM/YYYY',
-          description: 'Le format de date visuel'
+          default: '\'DD/MM/YYYY\'',
+          description: 'Le format de la date affichée dans le `VTextField`.'
         },
         {
           name: 'date-format-return',
           type: 'string',
-          default: 'YYYY-MM-DD',
-          description: 'Le format de date métier'
-        },
-        {
-          name: 'value',
-          type: 'string',
-          default: '',
-          description: 'La valeur du champ'
+          default: '\'YYYY-MM-DD\'',
+          description: 'Le format de la date utilisé avec le `v-model`.'
         },
         {
           name: 'mask',
-          type: '[String, Boolean]',
-          default: '',
-          description: 'Chaîne de masque personnalisée. Par défaut, elle est calculée à partir de dateFormat. Si false est transmis, n\'appliquez pas de masque.'
+          type: 'string | boolean',
+          default: 'undefined',
+          description: 'Masque limitant les caractères pouvant être saisis dans le `VTextField`.'
         },
         {
           name: 'birthdate',
           type: 'boolean',
           default: 'false',
-          description: 'Active le mode date de naissance.'
+          description: 'Simplifie la sélection d\'une date de naissance.'
         },
         {
           name: 'picker-date',
           type: 'string',
           default: 'undefined',
-          description: 'Propriété de Vuetify DatePicker qui a besoin du modificateur .sync.'
+          description: 'Le mois / l\'année affiché, à utiliser avec le modificateur `.sync`.'
         },
         {
           name: 'error',
           type: 'boolean',
           default: 'false',
-          description: 'Propriété de Vuetify qui a besoin du modificateur .sync'
+          description: 'Mets le `VTextField` en erreur manuellement, à utiliser avec le modificateur `.sync`.'
         },
         {
           name: 'vuetify-options',
@@ -122,11 +127,11 @@ Ce composant est assemblé a partir d'éléments vuetify `VDatePicker`, `VTextFi
       slots: [
         {
           name: 'prepend',
-          description: 'Ajoute un élément avant le champ.'
+          description: 'Slot pour ajouter du contenu avant le `VTextField` et remplacer le bouton par défaut.'
         },
         {
           name: 'append',
-          description: 'Ajoute un élément après le champ.'
+          description: 'Slot pour ajouter du contenu dans le `VTextField` et remplacer le bouton par défaut.'
         }
       ]
     }
@@ -165,15 +170,23 @@ Vous pouvez afficher les weekends dans le calendrier en utilisant la propriété
 
 ### Période
 
+Vous pouvez créer une période en fournissant une date de début via la propriété `start-date`. Lorsque l'utilisateur aura sélectionné une date date le calendrier, la période sera alors affichée dans le calendrier.
+
+<DocInfo>
+
+Lorsque que la date de début est située avant la date sélectionnée (période « négative »), la période n'est pas affichée.
+
+</DocInfo>
+
 <DocExample file="patterns/date-picker/examples/date-picker-range" />
 
 ### Format
 
-Il est possible de modifier le format côté utilisateur avec l'attribut `date-format` et le format de retour pour le traitement avec `date-format-return`
+Vous pouvez modifier le format de la date affichée dans le `VTextField` en utilisant la propriété `date-format` ainsi que le format utilisé avec le `v-model` en utilisant la propriété `date-format-return`.
 
 <DocInfo>
 
-Il est conseiller d'appliquer un mask avec l'attribut `mask` qui doit correspondre à l'attribut `date-format` avec des `#` pour chaque chiffre affin de restreindre l'écriture de l'utilisateur. Voir code exemple.
+Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la propriété `date-format`, mais vous pouvez le redéfinir en utilisant la propriété `mask` en utilisant l'[API de la librairie dayjs](https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens).
 
 </DocInfo>
 
@@ -181,37 +194,21 @@ Il est conseiller d'appliquer un mask avec l'attribut `mask` qui doit correspond
 
 ### Règles de validation
 
-Il est possible de récupérer l'état de validation du champ avec la propriété `error` qui doit être synchroniser avec `.sync`,
-ex: `:error.sync="error"`
+Vous pouvez appliquer des [règles de validation Vuetify](https://vuetifyjs.com/fr-FR/components/inputs/#rules) au `VTextField` contenu dans le composant en utilisant la propriété `rules`.
 
-Il est possible d'avoir 2 types de règles de validations :
-- `rules` : règles qui invalide le champ en erreur avec la couleur du thème 'error'
-- `warningRules` : règles qui conseille de changer la valeur avec la couleur du thème 'warning'
+Vous pouvez aussi ajouter des règles d'alertes, qui ne bloquent pas la validation, en utilisant la propriété `warning-rules`.
 
-Il existe les règles de validations suivantes dans vue-dot que vous pouvez ajouter à ces 2 types :
+Pour cela, vous pouvez utiliser les règles de validation inclues dans la librairie, comme :
 - `required`
 - `isDateValid`
 - `notAfterToday`
 - `notBeforeToday`
 
-<DocInfo>
-
-Vous pouvez crée vos règles de validations. Ce sont des fonctions qui renvoient `true` quand la valeur est correct sinon une chaine de caractère ou `false`
-ex: `(value) => Boolean(value) || 'la date est invalide'`
-
-</DocInfo>
-
 <DocExample file="patterns/date-picker/examples/date-picker-rules" />
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `DatePicker` en utilisant la propriété `vuetify-options` avec les propriétés suivantes :
-
-- `textField` : `VTextField`
-- `datePicker` : `VDatePicker`
-- `icon` : `VIcon`
-- `btn` : `VBtn`
-- `menu` : `VMenu`
+Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
 
 <DocInfo>
 
