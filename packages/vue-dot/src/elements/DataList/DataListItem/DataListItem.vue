@@ -36,9 +36,15 @@
 						</VChip>
 
 						<span
-							v-else
+							v-else-if="renderHtmlValue"
 							class="body-1"
 							v-html="itemValue"
+						/>
+
+						<span
+							v-else
+							class="body-1"
+							v-text="itemValue"
 						/>
 					</slot>
 				</div>
@@ -101,6 +107,11 @@
 			},
 			/** Display label & value on a single line */
 			row: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value as plain HTML */
+			renderHtmlValue: {
 				type: Boolean,
 				default: false
 			}

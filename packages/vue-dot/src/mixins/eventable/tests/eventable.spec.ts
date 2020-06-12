@@ -99,12 +99,12 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
 
-	it('returns false when showWeekEnds is on and the date isn\'t a week-end', () => {
+	it('returns false when showWeekends is on and the date isn\'t a weekend', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				showWeekEnds: true
+				showWeekends: true
 			},
 			mocks: {
 				$vuetify: {
@@ -118,12 +118,12 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
 
-	it('returns a CSS class when showWeekEnds is on and the date is a week-end', () => {
+	it('returns a CSS class when showWeekends is on and the date is a weekend', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				showWeekEnds: true
+				showWeekends: true
 			},
 			mocks: {
 				$vuetify: {
@@ -137,12 +137,12 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE_WEEK_END)).toBe('vd-custom-event grey lighten-1');
 	});
 
-	it('returns a CSS class for dark theme when showWeekEnds is on, the date is a week-end and theme is dark', () => {
+	it('returns a CSS class for dark theme when showWeekends is on, the date is a weekend and theme is dark', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				showWeekEnds: true
+				showWeekends: true
 			},
 			mocks: {
 				$vuetify: {
