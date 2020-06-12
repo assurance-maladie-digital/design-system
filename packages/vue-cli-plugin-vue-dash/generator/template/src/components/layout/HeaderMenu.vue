@@ -68,8 +68,6 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { mapActions, mapState } from 'vuex';
-
 	import { RawLocation } from 'vue-router';
 
 	import { mdiAccount, mdiLogoutVariant } from '@mdi/js';

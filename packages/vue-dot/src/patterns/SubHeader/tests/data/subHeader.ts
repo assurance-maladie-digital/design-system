@@ -28,18 +28,14 @@ export const dataListItemsActions: IDataList = [
 export const dataLists: DataListsItem[] = [
 	{
 		title: 'Catégorie 1',
-		items: dataListItems
+		items: dataListItems,
+		itemsNumberLoading: 2,
+		headingLoading: true
 	},
 	{
 		title: 'Catégorie 2',
-		items: dataListItemsActions
-	},
-	{
-		title: 'Catégorie 3',
-		items: dataListItems
-	},
-	{
-		title: 'Catégorie 4',
-		items: dataListItems
+		items: dataListItemsActions,
+		itemsNumberLoading: 2,
+		headingLoading: true
 	}
 ];

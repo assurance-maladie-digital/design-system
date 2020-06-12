@@ -240,7 +240,7 @@ Vous pouvez ajouter un bouton d'action à chaque item grâce à la propriété `
 
 ### Étiquette
 
-Vous pouvez afficher certains items de la liste dans une `VChip` et de modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
+Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
 
 <DocExample file="elements/data-list/examples/data-list-chip" />
 
