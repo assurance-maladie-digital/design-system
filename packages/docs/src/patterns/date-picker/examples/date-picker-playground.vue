@@ -5,58 +5,58 @@
 			md="6"
 		>
 			<VSwitch
-				v-model="prop.noCalendar"
+				v-model="props.noCalendar"
 				label="Désactiver le calendrier"
 			/>
 
 			<VSwitch
-				v-model="prop.noPrependIcon"
+				v-model="props.noPrependIcon"
 				label="Supprimer l'icone avant le champ"
 			/>
 
 			<VSwitch
-				v-model="prop.appendIcon"
+				v-model="props.appendIcon"
 				label="Placer l'icone après le champ texte"
 			/>
 
 			<VSwitch
-				v-model="prop.textFieldActivator"
+				v-model="props.textFieldActivator"
 				label="Ouvrir le menu du calendrier lorsque le champ de texte est cliqué"
 			/>
 
 			<VSwitch
-				v-model="prop.birthdate"
+				v-model="props.birthdate"
 				label="Mode date de naissance"
 			/>
 
 			<VSwitch
-				v-model="prop.showWeekEnds"
+				v-model="props.showWeekEnds"
 				label="Affiche les weekends"
 			/>
 
 			<VTextField
-				v-model="prop.textFieldClass"
+				v-model="props.textFieldClass"
 				label="Classes du champ texte"
 			/>
 
 			<VTextField
-				v-model="prop.dateFormat"
+				v-model="props.dateFormat"
 				label="format utilisateur"
 			/>
 
 			<VTextField
-				v-model="prop.dateFormatReturn"
+				v-model="props.dateFormatReturn"
 				label="format de traitement"
 			/>
 
 			<VTextField
-				v-model="prop.mask"
+				v-model="props.mask"
 				placeholder="##/##/####"
 				label="mask"
 			/>
 
 			<DatePicker
-				v-model="prop.startDate"
+				v-model="props.startDate"
 				label="date de départ"
 			/>
 		</VCol>
@@ -67,7 +67,7 @@
 		>
 			<DatePicker
 				v-model="date"
-				v-bind="prop"
+				v-bind="props"
 				:picker-date.sync="pickerDate"
 			/>
 
@@ -106,7 +106,7 @@
 
 		pickerDate = null;
 
-		prop = {
+		props = {
 			noCalendar: false,
 			noPrependIcon: false,
 			appendIcon: false,

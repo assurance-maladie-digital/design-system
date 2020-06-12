@@ -1,6 +1,6 @@
 <template>
 	<DatePicker
-		v-model="birthDate"
+		v-model="date"
 		:vuetify-options="{
 			// The textField options can be binded
 			// directly if needed
@@ -30,6 +30,6 @@
 
 	@Component
 	export default class DatePickerOptions extends Vue {
-		birthDate = '';
+		date = '';
 	}
 </script>

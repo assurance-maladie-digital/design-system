@@ -8,12 +8,12 @@
 
 		<DatePicker
 			:start-date="startDate"
-			label="Date de fin"
 			:vuetify-options="{
 				datePicker: {
 					min: startDate
 				}
 			}"
+			label="Date de fin"
 		/>
 	</div>
 </template>

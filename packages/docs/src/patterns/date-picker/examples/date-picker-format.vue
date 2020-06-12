@@ -5,7 +5,6 @@
 			date-format="DD-MM-YYYY"
 			hint="Format JJ-MM-AAAA"
 			date-format-return="DD/MM/YYYY"
-			mask="##-##-####"
 		/>
 
 		<h4
@@ -28,6 +27,5 @@
 	@Component
 	export default class DatePickerFormat extends Vue {
 		date = '';
-
 	}
 </script>

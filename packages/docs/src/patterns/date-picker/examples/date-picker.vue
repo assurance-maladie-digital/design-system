@@ -1,19 +1,11 @@
 <template>
 	<div>
-		<h2 class="subtitle-1 font-weight-bold">
-			Affichage par défaut avec validation de la date
-		</h2>
+		<DatePicker v-model="date" />
 
-		<DatePicker
-			v-model="date"
-			:rules="validRules"
-		/>
-
-		<h4 v-if="date">
-			Format pour le traitement métier
-		</h4>
-
-		<p class="mt-4">
+		<p
+			v-if="date"
+			class="mt-4 mb-0"
+		>
 			{{ date }}
 		</p>
 	</div>
@@ -23,13 +15,8 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { isDateValid } from '@cnamts/vue-dot/src/rules/isDateValid';
-
 	@Component
 	export default class DatePickerEx extends Vue {
 		date = '';
-		validRules = [
-			isDateValid
-		];
 	}
 </script>

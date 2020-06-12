@@ -1,6 +1,6 @@
 <template>
 	<DatePicker
-		show-week-ends
-		clearable
+		show-weekends
+		outlined
 	/>
 </template>
