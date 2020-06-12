@@ -13,14 +13,14 @@
 
 			<VSwitch
 				v-model="props.noRipple"
-				label="Désactive l'ondulation"
+				label="Désactiver l'ondulation"
 				hide-details
 				class="mt-3"
 			/>
 
 			<VSwitch
 				v-model="props.disabled"
-				label="Désactive le composant"
+				label="Désactiver le composant"
 				hide-details
 				class="mt-3"
 			/>

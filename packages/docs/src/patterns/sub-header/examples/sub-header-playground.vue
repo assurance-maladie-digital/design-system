@@ -5,14 +5,14 @@
 			md="6"
 		>
 			<VSwitch
-				v-model="hideBackBtn"
+				v-model="props.hideBackBtn"
 				label="Masquer le bouton retour"
 				hide-details
 				class="mt-0"
 			/>
 
 			<VSwitch
-				v-model="showAdditionalData"
+				v-model="props.showAdditionalData"
 				label="Informations complémentaires"
 				hide-details
 				class="mt-3"
@@ -26,35 +26,32 @@
 			/>
 
 			<VSwitch
-				label="Affiche un bouton sur une liste"
+				label="Afficher un bouton sur une liste"
 				hide-details
 				class="mt-3"
 				@change="switchItemAction"
 			/>
 
 			<VTextField
-				v-model="backBtnText"
+				v-model="props.backBtnText"
 				label="Texte du bouton retour"
 				hide-details
-				multiple
 				outlined
 				class="mt-6"
 			/>
 
 			<VTextField
-				v-model="titleText"
+				v-model="props.titleText"
 				label="Texte du titre"
 				hide-details
-				multiple
 				outlined
 				class="mt-6"
 			/>
 
 			<VTextField
-				v-model="subTitleText"
+				v-model="props.subTitleText"
 				label="Texte du sous titre"
 				hide-details
-				multiple
 				outlined
 				class="mt-6"
 			/>
@@ -65,15 +62,12 @@
 			md="6"
 		>
 			<SubHeader
+				v-bind="props"
 				:data-lists="showDataLists ? dataLists : null"
-				:hide-back-btn="hideBackBtn"
-				:back-btn-text="backBtnText"
-				:title-text="titleText"
-				:sub-title-text="subTitleText"
 			>
 				<template
 					#additional-informations
-					v-if="showAdditionalData"
+					v-if="props.showAdditionalData"
 				>
 					<VSpacer />
 
@@ -105,12 +99,15 @@
 	export default class SubHeaderPlayground extends Vue {
 		progressValue = 50;
 
-		hideBackBtn = false;
-		showAdditionalData = true;
 		showDataLists = true;
-		backBtnText = 'Retour';
-		titleText = 'Paul Dupont';
-		subTitleText = '1 69 08 75 125 456 75';
+
+		props = {
+			hideBackBtn: false,
+			showAdditionalData: true,
+			backBtnText: 'Retour',
+			titleText: 'Paul Dupont',
+			subTitleText: '1 69 08 75 125 456 75'
+		};
 
 		dataLists: DataListsItem[] = [
 			{
