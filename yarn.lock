@@ -849,11 +849,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cnamts/vue-dot@2.0.0-alpha.50":
-  version "2.0.0-alpha.50"
-  resolved "https://registry.yarnpkg.com/@cnamts/vue-dot/-/vue-dot-2.0.0-alpha.50.tgz#0fc334da80122aac98b8eaa780fba6885c8a48dd"
-  integrity sha512-av4DZrQ4rVaxzQp0hL4/PxBwosXzgc5OuQ+YCJb0BPtbkzsFYsmu8EetMF3v2W+Vr9TXFRnTHskZJPyMc/OZNw==
-
 "@evocateur/libnpmaccess@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@evocateur/libnpmaccess/-/libnpmaccess-3.1.2.tgz#ecf7f6ce6b004e9f942b098d92200be4a4b1c845"
@@ -11826,6 +11821,13 @@ sass-loader@8.0.2:
     neo-async "^2.6.1"
     schema-utils "^2.6.1"
     semver "^6.3.0"
+
+sass@1.26.7:
+  version "1.26.7"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.26.7.tgz#d3c9f3dd9771632bfb60af8746c308da3765166d"
+  integrity sha512-xgNazdkr6yvgHEfNaOjKtZzhDZmKYMCmoRKMPrTDo7YvjaITIzU2DDYsIUuN/atAg7/JOxPeCQHH7TtCo5Tq2g==
+  dependencies:
+    chokidar ">=2.0.0 <4.0.0"
 
 sass@1.26.8:
   version "1.26.8"
