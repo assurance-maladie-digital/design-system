@@ -4,7 +4,7 @@ import Component, { mixins } from 'vue-class-component';
 import { Field, FieldValue, FieldMetadata } from '../types';
 
 import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
-import { deepRemoveKeys } from '../../../../src/functions/deepRemoveKeys';
+import { deepRemoveKeys } from '@cnamts/vue-dot/src/helpers/deepRemoveKeys';
 
 const Props = Vue.extend({
 	props: {
