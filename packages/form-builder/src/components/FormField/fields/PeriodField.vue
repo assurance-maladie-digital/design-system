@@ -74,7 +74,7 @@
 				min: this.periodValue.from
 			};
 
-			const metadataTo = this.field.metadata?.to;
+			const metadataTo = this.field.metadata?.to as Record<string, unknown> | undefined;
 
 			return {
 				datePicker,

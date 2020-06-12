@@ -8,8 +8,7 @@
 		"publish": {
 			"allowBranch": [
 				"master",
-				"dev",
-				"vue-dot/feat/form-builder"
+				"dev"
 			],
 			"message": "🔖 %s"
 		}

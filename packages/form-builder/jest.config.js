@@ -27,6 +27,6 @@ module.exports = {
 		'!**/data/**'
 	],
 	transformIgnorePatterns: [
-		'./node_modules/(?!vuetify)'
+		'./node_modules/(?!vuetify|@cnamts/vue-dot)'
 	]
 };

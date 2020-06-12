@@ -849,6 +849,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@cnamts/vue-dot@2.0.0-alpha.50":
+  version "2.0.0-alpha.50"
+  resolved "https://registry.yarnpkg.com/@cnamts/vue-dot/-/vue-dot-2.0.0-alpha.50.tgz#0fc334da80122aac98b8eaa780fba6885c8a48dd"
+  integrity sha512-av4DZrQ4rVaxzQp0hL4/PxBwosXzgc5OuQ+YCJb0BPtbkzsFYsmu8EetMF3v2W+Vr9TXFRnTHskZJPyMc/OZNw==
+
 "@evocateur/libnpmaccess@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@evocateur/libnpmaccess/-/libnpmaccess-3.1.2.tgz#ecf7f6ce6b004e9f942b098d92200be4a4b1c845"
