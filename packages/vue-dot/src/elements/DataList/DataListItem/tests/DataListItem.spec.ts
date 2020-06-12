@@ -33,6 +33,46 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
+	it('renders correctly a value with HTML as text', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Name',
+				value: 'Paul<br> Dupont'
+			}
+		});
+
+		const elValue = wrapper.find('.vd-data-list-item-value span');
+		expect(elValue.text()).toBe('Paul<br> Dupont');
+	});
+
+	it('renders correctly a value as plain HTML', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Name',
+				value: 'Paul<br> Dupont',
+				renderHtmlValue: true
+			}
+		});
+
+		const elValue = wrapper.find('.vd-data-list-item-value span');
+		expect(elValue.text()).toBe('Paul Dupont');
+	});
+
+	it('renders correctly value in a chip', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: 'value',
+				chip: true
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
 	it('renders correctly with an action', () => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
@@ -45,7 +85,7 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('emits click:action event when the button action is pressed', async() => {
+	it('emits click:action event when the action button is pressed', async() => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
@@ -66,5 +106,22 @@ describe('DataListItem', () => {
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('click:action')).toBeTruthy();
+	});
+
+	it('renders correctly in row mode', () => {
+		// Mount component
+		wrapper = mountComponent(DataListItem, {
+			propsData: {
+				label: 'Test',
+				value: 'value',
+				action: 'Action',
+				row: true
+			}
+		});
+
+		const elExists = wrapper.find('.vd-row').exists();
+		expect(elExists).toBe(true);
+
+		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

@@ -1,12 +1,13 @@
 import Vue from 'vue';
 
-import registerDirectives from '../../src/directives';
+import { directives } from '../../src/directives';
+import { registerDirectives } from '../../src/helpers/registerDirectives';
 
 import { getDirectives } from './utils';
 
 describe('directives', () => {
 	it('should register all directives', () => {
-		registerDirectives(Vue);
+		registerDirectives(Vue, directives);
 
 		expect(getDirectives(Vue)).toMatchSnapshot();
 	});

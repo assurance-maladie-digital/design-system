@@ -47,21 +47,6 @@ describe('DataList', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly in column mode', () => {
-		// Mount component
-		wrapper = mountComponent(DataList, {
-			propsData: {
-				items: dataList,
-				column: true
-			}
-		});
-
-		const elExists = wrapper.find('.vd-column').exists();
-		expect(elExists).toBe(true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
 	it('renders correctly in flex mode', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
@@ -71,7 +56,7 @@ describe('DataList', () => {
 			}
 		});
 
-		const elExists = wrapper.find('.vd-flex').exists();
+		const elExists = wrapper.find('.flex-wrap').exists();
 		expect(elExists).toBe(true);
 
 		expect(html(wrapper)).toMatchSnapshot();
