@@ -37,6 +37,7 @@
 						:action="item.action"
 						:chip="item.chip"
 						:row="row"
+						:render-html-value="renderHtmlValue"
 						:icon="getIcon(item.icon)"
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
@@ -115,6 +116,11 @@
 			},
 			/** Display the heading while loading */
 			headingLoading: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value as plain HTML */
+			renderHtmlValue: {
 				type: Boolean,
 				default: false
 			}

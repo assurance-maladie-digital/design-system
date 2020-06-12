@@ -8,8 +8,6 @@ export const config = {
 	menu: {
 		closeOnContentClick: false,
 		minWidth: '290px',
-		nudgeBottom: 45,
-		nudgeRight: 45,
 		contentClass: 'vd-date-picker-menu'
 	},
 	btn: {

@@ -10,4 +10,6 @@ export interface DataListsItem {
 	itemsNumberLoading?: number;
 	headingLoading?: boolean;
 	items: IDataList;
+	headingLoading?: boolean;
+	itemsNumberLoading?: number;
 }
