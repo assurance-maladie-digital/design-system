@@ -8,4 +8,6 @@ export interface IDataListAction {
 export interface DataListsItem {
 	title?: string;
 	items: IDataList;
+	headingLoading?: boolean;
+	itemsNumberLoading?: number;
 }
