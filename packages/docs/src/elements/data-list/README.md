@@ -93,6 +93,12 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
           type: 'boolean',
           default: 'false',
           description: 'Affiche un squelette pour le titre pendant le chargement.'
+        },
+        {
+          name: 'render-html-value',
+          default: 'false',
+          type: 'boolean',
+          description: 'Utilise `v-html` pour afficher les valeurs.'
         }
       ],
       slots: [
@@ -146,6 +152,12 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
           type: 'string',
           default: 'undefined',
           description: 'Le nom de l\'icône à afficher.'
+        },
+        {
+          name: 'render-html-value',
+          default: 'false',
+          type: 'boolean',
+          description: 'Utilise `v-html` pour afficher les valeurs.'
         },
         {
           name: 'vuetify-options',
@@ -243,6 +255,18 @@ Vous pouvez ajouter un bouton d'action à chaque item grâce à la propriété `
 Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
 
 <DocExample file="elements/data-list/examples/data-list-chip" />
+
+### Valeurs HTML
+
+Vous pouvez afficher les valeurs via la directive `v-html` en utilisant la propriété `render-html-value`.
+
+<DocInfo color="orange">
+
+Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela peut facilement mener à des attaques XSS. N'utilisez cette directive que sur du contenu de confiance et jamais sur du contenu fourni par l'utilisateur.
+
+</DocInfo>
+
+<DocExample file="elements/data-list/examples/data-list-html-value" />
 
 ### Utilisation des slots
 

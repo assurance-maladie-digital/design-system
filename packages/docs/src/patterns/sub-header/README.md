@@ -51,6 +51,12 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
           description: 'Liste des composants `DataList` en mode colonne.'
         },
         {
+          name: 'render-html-value',
+          default: 'false',
+          type: 'boolean',
+          description: 'Utilise `v-html` pour afficher les valeurs dans les `DataList`.'
+        },
+        {
           name: 'loading',
           default: 'false',
           type: 'boolean',
@@ -104,6 +110,18 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
 
 Vous pouvez afficher des listes de données en utilisant la propriété `data-lists`.
 
+<DocInfo>
+
+Vous pouvez afficher les valeurs dans les DataList via la directive `v-html` en utilisant la propriété `render-html-value`.
+
+</DocInfo>
+
+<DocInfo color="orange">
+
+Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela peut facilement mener à des attaques XSS. N'utilisez cette directive que sur du contenu de confiance et jamais sur du contenu fourni par l'utilisateur.
+
+</DocInfo>
+
 <DocExample file="patterns/sub-header/examples/sub-header-data-lists" />
 
 ### Boutons d'actions
@@ -127,7 +145,6 @@ Vous pouvez afficher le composant en mode chargement grâce à la propriété `l
 Vous pouvez utiliser les propriétés `itemsNumberLoading` et `headingLoading` sur chaque [DataList](../../elements/data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
 
 </DocInfo>
-
 
 <DocExample file="patterns/sub-header/examples/sub-header-loading" />
 
