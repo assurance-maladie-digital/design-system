@@ -33,7 +33,7 @@ export class ChoiceField extends MixinsDeclaration {
 	choiceValue: ChoiceValue | null = this.isMultiple ? [] : null;
 
 	get isMultiple(): boolean {
-		return Boolean(this.field?.metadata?.multiple);
+		return Boolean(this.field.metadata?.multiple);
 	}
 
 	/**
