@@ -17,8 +17,8 @@ yarn add @cnamts/eslint-config -D
 
 ### NPM link
 
-If you want to test it locally first, you can use *** npm link or yarn link***
-at the root the project to registry the module, then use *** npm link @cnamts/eslint-config or yarn link @cnamts/eslint-config *** at the root of the project which wants to use it.
+If you want to test it locally first, you can use  `npm link` or `yarn link`
+at the root the project to registry the module, then use ` npm link @cnamts/eslint-config` or `yarn link @cnamts/eslint-config`  at the root of the project which wants to use it.
 
 
 ## Usage
