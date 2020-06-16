@@ -186,7 +186,7 @@ Vous pouvez modifier le format de la date affichée dans le `VTextField` en util
 
 <DocInfo>
 
-Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la propriété `date-format`, mais vous pouvez le redéfinir en utilisant la propriété `mask` en utilisant l'[API de la librairie dayjs](https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens).
+Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la propriété `date-format`, mais vous pouvez le redéfinir en utilisant la propriété `mask` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
 
 </DocInfo>
 

@@ -17,8 +17,8 @@ function extendPackage(api, options) {
 			'core-js': '^3.6.5',
 			'dayjs': '^1.8.28',
 			'languages': '^0.1.3',
+			'vue-input-facade': '1.3.0',
 			'vue-meta': '^2.3.4',
-			'vue-the-mask': '^0.11.1',
 			'vuetify': '^2.2.30'
 		},
 		devDependencies: {

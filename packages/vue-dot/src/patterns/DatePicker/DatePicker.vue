@@ -10,7 +10,7 @@
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
-				v-mask="maskValue"
+				v-facade="maskValue"
 				v-bind="textFieldOptions"
 				:outlined="outlined"
 				:class="textFieldClasses"
@@ -105,7 +105,7 @@
 				default: false
 			},
 			/**
-			 * Put VTextField on outlined mode,
+			 * Put VTextField in outlined mode,
 			 * default to append icon and adjust VMenu
 			 */
 			outlined: {
