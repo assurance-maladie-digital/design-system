@@ -3,10 +3,16 @@
 :::
 
 ::: slot description
-Le pattern `PaginatedTable` est utilisé pour afficher un tableau à partir de `VDataTable` mais une pagination dynamique.
+Le pattern `PaginatedTable` est utilisé pour afficher une `VDataTable` avec une pagination persistante.
 :::
 
 ## Utilisation
+
+<DocInfo>
+
+Vous pouvez modifier la pagination ou le tri puis recharger la page et constater que ceux-ci sont sauvegardés.
+
+</DocInfo>
 
 <DocExample
   eager
@@ -14,6 +20,12 @@ Le pattern `PaginatedTable` est utilisé pour afficher un tableau à partir de `
 />
 
 ## API
+
+<DocInfo>
+
+Le pattern `PaginatedTable` est un « wrapper », il étend l'API de la [VDataTable](https://vuetifyjs.com/fr-FR/components/data-tables/), vous pouvez donc utiliser les mêmes options et slots que sur celle-ci.
+
+</DocInfo>
 
 <DocApi
   :value="['PaginatedTable']"
@@ -24,37 +36,29 @@ Le pattern `PaginatedTable` est utilisé pour afficher un tableau à partir de `
           name: 'options',
           required: true,
           type: 'DataOptions',
-          description: 'prop `options` du composant vuetify `VDataTable`'
-        },
-        {
-          name: 'server-items-length',
-          required: true,
-          type: 'number',
-          description: 'Utilisé uniquement lorsque les données sont fournies par un serveur. Doit être réglé au total des éléments disponibles sur le serveur afin que la pagination fonctionne correctement.'
+          description: 'Les `options` de la `VDataTable`, à utiliser avec le modificateur `.sync`.'
         },
         {
           name: 'suffix',
           type: 'string',
-          value: '\'\'',
-          description: 'Le suffixe est utilisé pour stocker différents objets de pagination. Si l\'utilisateur a deux tables mais n\'utilise pas cet attribut, alors les tables partagerons le même objet de pagination'
-        }
-      ],
-      slots: [
-        {
-          name: '$scopedSlots',
-          description: 'L\'utilisation des slots de `VDataTable` est possible.'
+          default: '\'\'',
+          description: 'Suffixe à ajouter à l\'objet stocké dans le `localStorage` (permet de dissocier chaque `VDataTable`).'
         }
       ]
     }
   }"
 />
 
-## Playground
+## Exemples
 
-<DocExample file="patterns/paginated-table/examples/paginated-table-playground" />
+### Pagination et tri côté serveur
 
-### Utilisation du slot
+Vous pouvez sauvegarder la pagination et le tri même ci ceux-si sont gérés côté serveur.
 
-Vous pouvez utiliser les slots du composant vuetify `VDataTable`.
+<DocInfo>
 
-<DocExample file="patterns/paginated-table/examples/paginated-table-slots" />
+La propriété `suffix` est utilisée pour dissocier les différentes tables afin de sauvegarder leurs `options` indépendamment.
+
+</DocInfo>
+
+<DocExample file="patterns/paginated-table/examples/paginated-table-api" />

@@ -5,17 +5,9 @@
 		:options.sync="options"
 		:server-items-length="totalUsers"
 		:loading="loading"
-		class="elevation-1"
+		suffix="server-example"
 		@update:options="fetchData"
-	>
-		<template v-slot:item.email="{ item }">
-			<v-chip
-				dark
-			>
-				{{ item.email }}
-			</v-chip>
-		</template>
-	</PaginatedTable>
+	/>
 </template>
 
 <script lang="ts">
@@ -25,9 +17,9 @@
 	import { DataOptions } from 'vuetify/types';
 
 	interface User {
-		[key: string]: string | number;
-		first_name: string;
-		last_name: string;
+		[key: string]: string;
+		firstname: string;
+		lastname: string;
 		email: string;
 	}
 
@@ -37,30 +29,26 @@
 	}
 
 	@Component
-	export default class PaginatedTableEx extends Vue {
+	export default class PaginatedTableApi extends Vue {
 		totalUsers = 0;
 
 		users: User[] = [];
 
 		loading = true;
 
-		// Default value for options
 		options = {} as DataOptions;
 
 		headers = [
 			{
-				text: 'Prénom',
-				sortable: true,
-				value: 'first_name'
+				text: 'Nom',
+				value: 'lastname'
 			},
 			{
-				text: 'Nom',
-				sortable: true,
-				value: 'last_name'
+				text: 'Prénom',
+				value: 'firstname'
 			},
 			{
 				text: 'Email',
-				sortable: true,
 				value: 'email'
 			}
 		];
@@ -72,9 +60,7 @@
 
 		fetchData(): void {
 			this.getDataFromApi()
-				.then((value) => {
-					const data = value as DataObj;
-
+				.then((data) => {
 					this.users = data.items;
 					this.totalUsers = data.total;
 				});
@@ -86,7 +72,7 @@
 		 *
 		 * it handles sorting and pagination
 		 */
-		getDataFromApi(): Promise<unknown> {
+		getDataFromApi(): Promise<DataObj> {
 			this.loading = true;
 
 			return new Promise((resolve) => {
@@ -146,59 +132,81 @@
 		getUsers(): User[] {
 			return [
 				{
-					first_name: 'Fenelia',
-					last_name: 'Grimmert',
-					email: 'fgrimmert0@facebook.com'
+					firstname: 'Virginie',
+					lastname: 'Beauchesne',
+					email: 'virginie.beauchesne@example.com'
 				},
 				{
-					first_name: 'Wilhelm',
-					last_name: 'Downe',
-					email: 'wdowne1@earthlink.net'
+					firstname: 'Simone',
+					lastname: 'Bellefeuille',
+					email: 'simone.bellefeuille@example.com'
 				},
 				{
-					first_name: 'Michel',
-					last_name: 'Pierri',
-					email: 'mpierri2@aboutads.info'
+					firstname: 'Étienne',
+					lastname: 'Salois',
+					email: 'etienne.salois@example.com'
 				},
 				{
-					first_name: 'Sherman',
-					last_name: 'Westcar',
-					email: 'swestcar3@eventbrite.com'
+					firstname: 'Bernadette',
+					lastname: 'Langelier',
+					email: 'bernadette.langelier@example.com'
 				},
 				{
-					first_name: 'Maggi',
-					last_name: 'Barhims',
-					email: 'mbarhims4@gizmodo.com'
+					firstname: 'Agate',
+					lastname: 'Roy',
+					email: 'agate.roy@example.com'
 				},
 				{
-					first_name: 'Aubrey',
-					last_name: 'Sewart',
-					email: 'asewart5@ucoz.com'
+					firstname: 'Louis',
+					lastname: 'Denis',
+					email: 'louis.denis@example.com'
 				},
 				{
-					first_name: 'Misha',
-					last_name: 'Lennie',
-					email: 'mlennie6@istockphoto.com'
+					firstname: 'Édith',
+					lastname: 'Cartier',
+					email: 'edith.cartier@example.com'
 				},
 				{
-					first_name: 'Berta',
-					last_name: 'Southern',
-					email: 'bsouthern7@census.gov'
+					firstname: 'Alphonse',
+					lastname: 'Bouvier',
+					email: 'alphonse.bouvier@example.com'
+
 				},
 				{
-					first_name: 'Sarette',
-					last_name: 'Soitoux',
-					email: 'ssoitoux8@bigcartel.com'
+					firstname: 'Eustache',
+					lastname: 'Dubois',
+					email: 'eustache.dubois@example.com'
+
 				},
 				{
-					first_name: 'Cullan',
-					last_name: 'Jaggli',
-					email: 'cjaggli9@spotify.com'
+					firstname: 'Rosemarie',
+					lastname: 'Quessy',
+					email: 'rosemarie.quessy@example.com'
 				},
 				{
-					first_name: 'Lorenzo',
-					last_name: 'Clerc',
-					email: 'lclerca@gizmodo.com'
+					firstname: 'Serge',
+					lastname: 'Rivard',
+					email: 'serge.rivard@example.com'
+				},
+				{
+					firstname: 'Jacques',
+					lastname: 'Demers',
+					email: 'jacques.demers@example.com'
+				},
+				{
+					firstname: 'Aimée',
+					lastname: 'Josseaume',
+					email: 'aimee.josseaume@example.com'
+				},
+				{
+					firstname: 'Delphine',
+					lastname: 'Robillard',
+					email: 'delphine.robillard@example.com'
+				},
+				{
+					firstname: 'Alexandre',
+					lastname: 'Lazure',
+					email: 'alexandre.lazure@example.com'
 				}
 			];
 		}
