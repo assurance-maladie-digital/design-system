@@ -1,5 +1,5 @@
 <template>
-	<FileUpload class="custom accent elevation-3">
+	<FileUpload class="custom accent elevation-3 px-4 py-3">
 		<template #placeholder>
 			<VLayout
 				tag="span"

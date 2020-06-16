@@ -31,11 +31,7 @@
 			cols="12"
 			md="6"
 		>
-			<VCard>
-				<VCardText>
-					<CustomIcon v-bind="props" />
-				</VCardText>
-			</VCard>
+			<CustomIcon v-bind="props" />
 		</VCol>
 	</VRow>
 </template>

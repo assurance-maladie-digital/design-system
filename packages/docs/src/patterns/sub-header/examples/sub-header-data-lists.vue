@@ -3,6 +3,7 @@
 		:data-lists="dataLists"
 		title-text="Paul Dupont"
 		sub-title-text="1 69 08 75 125 456 75"
+		render-html-value
 	/>
 </template>
 
@@ -24,7 +25,7 @@
 					},
 					{
 						key: 'Adresse',
-						value: '75015<br>Paris'
+						value: '50 Avenue du Professeur André Lemierre<br>75020 Paris'
 					}
 				]
 			},

@@ -9,7 +9,7 @@ import VueDot from '@cnamts/vue-dot';
 
 import { icons } from './icons';
 
-import VueTheMask from 'vue-the-mask';
+import InputFacade from 'vue-input-facade';
 
 import './theme/styles/index.scss';
 
@@ -23,7 +23,8 @@ const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 			icons
 		}
 	});
-	Vue.use(VueTheMask);
+
+	Vue.use(InputFacade);
 };
 
 export default enhanceApp;

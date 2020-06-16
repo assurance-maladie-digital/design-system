@@ -39,11 +39,11 @@
 			/>
 
 			<!-- Default -->
-			<template v-if="header.value === 'value' && item.value && !item.required">
+			<template v-if="header.value === 'default' && item.default && !item.required">
 				<span
-					v-if="typeof item.value === 'string'"
+					v-if="typeof item.default === 'string'"
 					class="mono"
-					v-text="item.value"
+					v-text="item.default"
 				/>
 			</template>
 
@@ -62,9 +62,9 @@
 
 			<!-- Options -->
 			<DocMarkup
-				v-else-if="header.value === 'example' && item.options"
+				v-else-if="header.value === 'options' && item.options"
 				:filename="false"
-				lang="json"
+				lang="ts"
 				value="example"
 			>{{ item.options }}</DocMarkup>
 

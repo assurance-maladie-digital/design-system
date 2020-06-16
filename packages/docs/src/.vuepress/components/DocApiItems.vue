@@ -110,7 +110,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { ApiItems, ApiItem } from '../types';
-	import { apiHeaders } from './constants/apiHeaders';
+	import { apiHeaders } from '../constants/apiHeaders';
 
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 

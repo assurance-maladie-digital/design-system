@@ -1,6 +1,6 @@
 import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
-import { ItemHeader } from '../../types';
+import { ItemHeader } from '../types';
 
 const propProps: ItemHeader[] = [
 	{
@@ -15,7 +15,7 @@ const propProps: ItemHeader[] = [
 	},
 	{
 		label: 'Valeur',
-		value: 'value',
+		value: 'default',
 		class: 'xs12 md7 text-md-right'
 	},
 	{
@@ -31,6 +31,11 @@ const propProps: ItemHeader[] = [
 	{
 		label: 'Exemple',
 		value: 'example',
+		class: 'xs12 mt-2'
+	},
+	{
+		label: 'Options',
+		value: 'options',
 		class: 'xs12 mt-2'
 	}
 ];

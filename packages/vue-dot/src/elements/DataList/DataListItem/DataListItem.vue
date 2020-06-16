@@ -14,7 +14,7 @@
 		</slot>
 
 		<div class="vd-data-list-item-content">
-			<div :class=" { 'vd-row': row }">
+			<div :class="{ 'vd-row': row }">
 				<div
 					class="vd-data-list-item-label caption"
 					:style="{ color: labelColor }"
@@ -36,11 +36,16 @@
 						</VChip>
 
 						<span
+							v-else-if="renderHtmlValue"
+							class="body-1"
+							v-html="itemValue"
+						/>
+
+						<span
 							v-else
 							class="body-1"
-						>
-							{{ itemValue }}
-						</span>
+							v-text="itemValue"
+						/>
 					</slot>
 				</div>
 			</div>
@@ -102,6 +107,11 @@
 			},
 			/** Display label & value on a single line */
 			row: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value as plain HTML */
+			renderHtmlValue: {
 				type: Boolean,
 				default: false
 			}
