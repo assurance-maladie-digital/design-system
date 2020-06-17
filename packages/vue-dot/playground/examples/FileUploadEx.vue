@@ -156,7 +156,7 @@
 		padding: 10px 15px !important;
 
 		&:hover,
-		&:focus {
+		&:focus-within {
 			background: $darken-accent !important;
 		}
 
