@@ -1,6 +1,6 @@
 <template>
 	<VTextField
-		v-mask="mask"
+		v-facade="mask"
 		v-bind="field.metadata"
 		:value="field.value"
 		class="vd-form-input"

@@ -4,4 +4,4 @@ declare module '*.vue' {
 	export default Vue;
 }
 
-declare module 'vue-the-mask';
+declare module 'vue-input-facade';

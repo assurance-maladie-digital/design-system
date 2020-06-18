@@ -403,14 +403,14 @@
 		transition: background .25s;
 
 		&:hover,
-		a:focus,
+		&:focus-within,
 		&.dragover {
 			background: #f5f5f5;
 		}
 
 		&.dark-mode {
 			&:hover,
-			a:focus,
+			&:focus-within,
 			&.dragover {
 				background: #303030;
 			}

@@ -9,8 +9,8 @@ import VueDot from '@cnamts/vue-dot/';
 // Import the theme styles
 import '../theme/theme.scss';
 
-import VueTheMask from 'vue-the-mask';
-Vue.use(VueTheMask);
+import InputFacade from 'vue-input-facade';
+Vue.use(InputFacade);
 
 export const LOCAL_STORAGE_CONTROL = {
 	version: 1
