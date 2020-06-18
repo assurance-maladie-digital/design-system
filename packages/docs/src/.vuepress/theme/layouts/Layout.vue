@@ -1,10 +1,12 @@
 <template>
 	<div class="theme-container">
 		<VApp>
+			<DocHeader @drawer-action="drawer = !drawer" />
+
 			<VNavigationDrawer
-				app
-				fixed
+				v-model="drawer"
 				clipped
+				app
 			>
 				<DocSidebar :items="sidebarItems" />
 			</VNavigationDrawer>
@@ -36,6 +38,8 @@
 
 	@Component
 	export default class Layout extends Vue {
+		drawer = null;
+
 		get sidebarItems() {
 			return (this as any).$site.themeConfig.sidebar;
 		}
