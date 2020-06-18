@@ -5,13 +5,13 @@
 			md="6"
 		>
 			<VTextField
-				v-model="title"
+				v-model="props.title"
 				label="Titre"
 				outlined
 			/>
 
 			<VTextField
-				v-model="width"
+				v-model="props.width"
 				label="Largeur"
 				outlined
 			/>
@@ -27,8 +27,7 @@
 
 			<DialogBox
 				v-model="dialog"
-				:width="width"
-				:title="title"
+				v-bind="props"
 				@cancel="dialog = false"
 				@confirm="dialog = false"
 			>
@@ -45,7 +44,10 @@
 	@Component
 	export default class DialogBoxPlayground extends Vue {
 		dialog = false;
-		width = '800px';
-		title = 'Enregistrement';
+
+		props = {
+			width: '800px',
+			title: 'Enregistrement'
+		};
 	}
 </script>

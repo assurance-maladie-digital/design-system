@@ -1,6 +1,5 @@
 <template>
 	<VCard
-		:id="id"
 		:color="$vuetify.theme.dark ? undefined : 'grey darken-4'"
 		class="v-markup"
 		outlined
@@ -8,8 +7,8 @@
 		<Prism
 			v-if="$slots.default || code"
 			:language="language || undefined"
-			:code="code"
 			:inline="inline"
+			:code="code"
 		>
 			<slot />
 		</Prism>
@@ -29,11 +28,11 @@
 		</div> -->
 
 		<CopyBtn
-			title="Copier le code"
-			label="Copier le code"
 			:tooltip-duration="1000"
 			:text-to-copy="getSlotContent"
 			:vuetify-options="copyBtnOptions"
+			title="Copier le code"
+			label="Copier le code"
 		/>
 
 		<!-- <a
@@ -111,19 +110,7 @@
 			}
 		};
 
-		get id() {
-			if (this.value === 'markup') {
-				return;
-			}
-
-			return 'markup-' + this.value.replace(/_/g, '-');
-		}
-
-		mounted() {
-			this.$nextTick(this.init);
-		}
-
-		getSlotContent() {
+		getSlotContent(): string {
 			const markup = this.$el.querySelector('pre');
 
 			if (!markup) {
@@ -131,17 +118,6 @@
 			}
 
 			return markup.innerText;
-		}
-
-		init(): void {
-			if (this.$slots.default || !this.value) {
-				return;
-			}
-		}
-
-		parseRaw(res: any): void {
-			this.language = this.lang || this.value.split('_').shift() || null;
-			this.code = res.default.trim();
 		}
 	}
 </script>

@@ -63,6 +63,7 @@ fs.removeSync(`${DIST_FOLDER}/playground`);
 // them individually at the moment
 fs.removeSync(`${DIST_FOLDER}/src/elements`);
 fs.removeSync(`${DIST_FOLDER}/src/patterns`);
+fs.removeSync(`${DIST_FOLDER}/src/registerAllComponents.js`);
 
 log();
 done('Build completed');

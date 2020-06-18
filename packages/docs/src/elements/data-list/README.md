@@ -19,181 +19,208 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
   :value="['DataList', 'DataListItem', 'DataListLoading']"
   :api="{
     DataList: {
-      props: [{
-        name: 'items',
-        defaultValue: 'undefined',
-        type: 'DataListItem[]',
-        description: 'La liste des items à afficher.',
-        example: '{\n  key: string;\n  value?: string;\n  action?: string;\n  chip?: boolean;\n  icon?: string;\n  options?: Options;\n}'
-      },
-      {
-        name: 'icons',
-        defaultValue: 'undefined',
-        type: 'DataListIcons',
-        description: 'La liste des différentes icônes disponibles pour les items.',
-        example: '{\n  [key: string]: string;\n}'
-      },
-      {
-        name: 'list-title',
-        type: 'string',
-        defaultValue: 'undefined',
-        description: 'Le titre de la liste.'
-      },
-      {
-        name: 'title-class',
-        type: 'string',
-        defaultValue: '\'mb-3 headline\'',
-        description: 'Les classes à appliquer sur le titre de la liste.'
-      },
-      {
-        name: 'row',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche les items de la liste horizontalement.'
-      },
-      {
-        name: 'flex',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
-      },
-      {
-        name: 'placeholder',
-        type: 'string',
-        defaultValue: '\'…\'',
-        description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
-      },
-      {
-        name: 'min-width',
-        type: 'string',
-        defaultValue: 'undefined',
-        description: 'La largeur minimum du composant.'
-      },
-      {
-        name: 'item-width',
-        type: 'string',
-        defaultValue: '\'200px\'',
-        description: 'La largeur de chaque item.'
-      },
-      {
-        name: 'loading',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche un état de chargement.'
-      },
-      {
-        name: 'items-number-loading',
-        type: 'number',
-        defaultValue: '1',
-        description: 'Le nombre d\'items à afficher lors du chargement.'
-      },
-      {
-        name: 'heading-loading',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche un squelette pour le titre pendant le chargement.'
-      }],
-      slots: [{
-        name: 'title',
-        description: 'Slot pour remplacer le titre par défaut.'
-      }],
-      events: [{
-        name: 'click:item-action',
-        description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action d\'un item.',
-        value: 'itemIndex: number'
-      }]
+      props: [
+        {
+          name: 'items',
+          required: true,
+          type: 'DataListItem[]',
+          description: 'La liste des items à afficher.',
+          example: '{\n	key: string;\n	value?: string;\n	action?: string;\n	chip?: boolean;\n	icon?: string;\n	options?: Options;\n}'
+        },
+        {
+          name: 'icons',
+          default: 'undefined',
+          type: 'DataListIcons',
+          description: 'La liste des différentes icônes disponibles pour les items.',
+          example: '{\n	[iconName: string]: string;\n}'
+        },
+        {
+          name: 'list-title',
+          type: 'string',
+          default: 'undefined',
+          description: 'Le titre de la liste.'
+        },
+        {
+          name: 'title-class',
+          type: 'string',
+          default: '\'mb-3 headline\'',
+          description: 'Les classes à appliquer sur le titre de la liste.'
+        },
+        {
+          name: 'row',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche les items de la liste horizontalement.'
+        },
+        {
+          name: 'flex',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
+        },
+        {
+          name: 'placeholder',
+          type: 'string',
+          default: '\'…\'',
+          description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
+        },
+        {
+          name: 'min-width',
+          type: 'string',
+          default: 'undefined',
+          description: 'La largeur minimum du composant.'
+        },
+        {
+          name: 'item-width',
+          type: 'string',
+          default: '\'200px\'',
+          description: 'La largeur de chaque item.'
+        },
+        {
+          name: 'loading',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche un état de chargement.'
+        },
+        {
+          name: 'items-number-loading',
+          type: 'number',
+          default: '1',
+          description: 'Le nombre d\'items à afficher lors du chargement.'
+        },
+        {
+          name: 'heading-loading',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche un squelette pour le titre pendant le chargement.'
+        },
+        {
+          name: 'render-html-value',
+          default: 'false',
+          type: 'boolean',
+          description: 'Utilise `v-html` pour afficher les valeurs.'
+        }
+      ],
+      slots: [
+        {
+          name: 'title',
+          description: 'Slot pour remplacer le titre par défaut.'
+        }
+      ],
+      events: [
+        {
+          name: 'click:item-action',
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action d\'un item.',
+          value: 'itemIndex: number'
+        }
+      ]
     },
     DataListItem: {
-      props: [{
-        name: 'label',
-        type: 'string',
-        defaultValue: 'undefined',
-        description: 'Le label de la valeur.'
-      },
-      {
-        name: 'value',
-        type: 'string',
-        defaultValue: 'undefined',
-        description: 'La valeur à afficher.'
-      },
-      {
-        name: 'action',
-        type: 'string',
-        defaultValue: 'undefined',
-        description: 'Le label du bouton action à afficher.'
-      },
-      {
-        name: 'placeholder',
-        type: 'string',
-        defaultValue: '\'…\'',
-        description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
-      },
-      {
-        name: 'chip',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche la valeur dans une `VChip`.'
-      },
-      {
-        name: 'icon',
-        type: 'string',
-        defaultValue: 'undefined',
-        description: 'Le nom de l\'icône à afficher.'
-      },
-      {
-        name: 'vuetify-options',
-        type: 'Options',
-        defaultValue: 'undefined',
-        description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
-      }],
-      slots: [{
-        name: 'icon',
-        description: 'Slot pour remplacer l\'icône.'
-      },
-      {
-        name: 'value',
-        description: 'Slot pour remplacer le contenu de l\'item.'
-      },
-      {
-        name: 'action',
-        description: 'Slot pour remplacer le contenu de l\'action.'
-      }],
-      events: [{
-        name: 'click:action',
-        description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action.'
-      }]
+      props: [
+        {
+          name: 'label',
+          type: 'string',
+          required: true,
+          description: 'Le label de la valeur.'
+        },
+        {
+          name: 'value',
+          type: 'string',
+          default: 'undefined',
+          description: 'La valeur à afficher.'
+        },
+        {
+          name: 'action',
+          type: 'string',
+          default: 'undefined',
+          description: 'Le label du bouton action à afficher.'
+        },
+        {
+          name: 'placeholder',
+          type: 'string',
+          default: '\'…\'',
+          description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
+        },
+        {
+          name: 'chip',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche la valeur dans une `VChip`.'
+        },
+        {
+          name: 'icon',
+          type: 'string',
+          default: 'undefined',
+          description: 'Le nom de l\'icône à afficher.'
+        },
+        {
+          name: 'render-html-value',
+          default: 'false',
+          type: 'boolean',
+          description: 'Utilise `v-html` pour afficher les valeurs.'
+        },
+        {
+          name: 'vuetify-options',
+          type: 'Options',
+          default: 'undefined',
+          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+          options: '{\n	layout: `VLayout`,\n	icon: `VIcon`,\n	chip: `VChip`,\n	actionBtn: `VBtn`\n}'
+        }
+      ],
+      slots: [
+        {
+          name: 'icon',
+          description: 'Slot pour remplacer l\'icône.'
+        },
+        {
+          name: 'value',
+          description: 'Slot pour remplacer le contenu de l\'item.'
+        },
+        {
+          name: 'action',
+          description: 'Slot pour remplacer le contenu de l\'action.'
+        }
+      ],
+      events: [
+        {
+          name: 'click:action',
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action.'
+        }
+      ]
     },
     DataListLoading: {
-      props: [{
-        name: 'itemsNumber',
-        type: 'number',
-        defaultValue: '1',
-        description: 'Le nombre d\'items à afficher pendant le chargement.'
-      },
-      {
-        name: 'heading',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche un squelette pour le titre pendant le chargement.'
-      },
-      {
-        name: 'row',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche les items de la liste horizontalement.'
-      },
-      {
-        name: 'flex',
-        type: 'boolean',
-        defaultValue: 'false',
-        description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
-      },
-      {
-        name: 'width',
-        type: 'string',
-        defaultValue: '\'200px\'',
-        description: 'La largeur de chaque item.'
-      }]
+      props: [
+        {
+          name: 'itemsNumber',
+          type: 'number',
+          default: '1',
+          description: 'Le nombre d\'items à afficher pendant le chargement.'
+        },
+        {
+          name: 'heading',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche un squelette pour le titre pendant le chargement.'
+        },
+        {
+          name: 'row',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche les items de la liste horizontalement.'
+        },
+        {
+          name: 'flex',
+          type: 'boolean',
+          default: 'false',
+          description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
+        },
+        {
+          name: 'width',
+          type: 'string',
+          default: '\'200px\'',
+          description: 'La largeur de chaque item.'
+        }
+      ]
     }
   }"
 />
@@ -225,9 +252,21 @@ Vous pouvez ajouter un bouton d'action à chaque item grâce à la propriété `
 
 ### Étiquette
 
-Vous pouvez afficher certains items de la liste dans une `VChip` et de modifier l'affichage de celle-ci grâce à la propriété `vuetify-options` sur l'item.
+Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
 
 <DocExample file="elements/data-list/examples/data-list-chip" />
+
+### Valeurs HTML
+
+Vous pouvez afficher les valeurs via la directive `v-html` en utilisant la propriété `render-html-value`.
+
+<DocInfo color="orange">
+
+Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela peut facilement mener à des attaques XSS. N'utilisez cette directive que sur du contenu de confiance et jamais sur du contenu fourni par l'utilisateur.
+
+</DocInfo>
+
+<DocExample file="elements/data-list/examples/data-list-html-value" />
 
 ### Utilisation des slots
 
@@ -237,6 +276,6 @@ Vous pouvez utiliser le slot `title` pour personnaliser le titre.
 
 ### Personnalisation des composants Vuetify
 
-Vous pouvez personnaliser les composants `VLayout`, `VIcon` et `VChip` contenus dans `DataListItem` en utilisant la propriété `vuetify-options` sur les items de la liste.
+Vous pouvez personnaliser les composants Vuetify contenus dans `DataListItem` en utilisant la propriété `options` sur les items de la liste.
 
 <DocExample file="elements/data-list/examples/data-list-options" />

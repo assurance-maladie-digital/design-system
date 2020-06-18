@@ -5,32 +5,33 @@
 			md="6"
 		>
 			<VSwitch
-				v-model="minHeight"
+				v-model="props.minHeight"
 				label="Hauteur minimum de 500px"
 				hide-details
+				class="mt-0"
 			/>
 
 			<VSwitch
-				v-model="noShadow"
+				v-model="props.noShadow"
 				label="Enlever l'ombre"
 				hide-details
-				class="mt-2"
+				class="mt-3"
 			/>
 
 			<VTextField
-				v-model="cardClass"
+				v-model="props.cardClass"
 				label="Classe de la carte"
 				hide-details
 				outlined
-				class="mt-5"
+				class="mt-6"
 			/>
 
 			<VTextField
-				v-model="cardPadding"
+				v-model="props.cardPadding"
 				label="Padding de la carte"
 				hide-details
 				outlined
-				class="mt-5"
+				class="mt-6"
 			/>
 		</VCol>
 
@@ -38,12 +39,7 @@
 			cols="12"
 			md="6"
 		>
-			<PageCard
-				:no-shadow="noShadow"
-				:min-height="minHeight"
-				:card-class="cardClass"
-				:card-padding="cardPadding"
-			>
+			<PageCard v-bind="props">
 				Contenu de la page.
 			</PageCard>
 		</VCol>
@@ -56,9 +52,11 @@
 
 	@Component
 	export default class PageCardPlayground extends Vue {
-		noShadow = false;
-		minHeight = false;
-		cardClass = null;
-		cardPadding = 'px-6 py-4';
+		props = {
+			noShadow: false,
+			minHeight: false,
+			cardClass: null,
+			cardPadding: 'px-6 py-4'
+		};
 	}
 </script>

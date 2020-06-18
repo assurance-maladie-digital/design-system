@@ -4,6 +4,7 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
+	dest: 'dist',
 	themeConfig: {
 		sidebar: [
 			{
@@ -51,6 +52,10 @@ module.exports = {
 				group: 'patterns',
 				items: [
 					{
+						title: 'DatePicker',
+						to: '/patterns/date-picker'
+					},
+					{
 						title: 'FileUpload',
 						to: '/patterns/file-upload'
 					},
@@ -61,6 +66,14 @@ module.exports = {
 					{
 						title: 'UploadWorkflow',
 						to: '/patterns/upload-workflow'
+					},
+					{
+						title: 'PaginatedTable',
+						to: '/patterns/paginated-table'
+					},
+					{
+						title: 'SubHeader',
+						to: '/patterns/sub-header'
 					}
 				]
 			}

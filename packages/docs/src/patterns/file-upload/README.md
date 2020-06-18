@@ -22,49 +22,49 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
       props: [
         {
           name: 'multiple',
-          defaultValue: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Permet de sélectionner plusieurs fichiers.'
         },
         {
           name: 'value',
           type: 'File | File[]',
-          defaultValue: '[]',
+          default: '[]',
           description: 'Le ou les fichiers sélectionnés.'
         },
         {
           name: 'no-ripple',
-          defaultValue: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Désactive l\'ondulation.'
         },
         {
           name: 'disabled',
-          defaultValue: 'false',
+          default: 'false',
           type: 'boolean',
           description: 'Désactive le composant.'
         },
         {
           name: 'file-size-max',
-          defaultValue: '4194304',
+          default: '4194304',
           type: 'number',
           description: 'Taille maximale d\'un fichier en octets (par défaut 4 MB).'
         },
         {
           name: 'file-size-units',
-          defaultValue: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
+          default: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
           type: 'string[]',
           description: 'Les unités de taille utilisées pour la traduction.'
         },
         {
           name: 'allowed-extensions',
-          defaultValue: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
+          default: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
           type: 'string[]',
           description: 'Les extensions autorisées.'
         },
         {
           name: 'accept',
-          defaultValue: 'undefined',
+          default: 'undefined',
           type: 'string',
           description: 'L\'attribut natif `accept`. Par défaut, la valeur sera calculée à partir des extensions autorisées.'
         }
@@ -104,7 +104,7 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
         {
           name: 'error',
           description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
-          value: '{\n  file: File,\n  code: ErrorCodes\n}'
+          value: '{\n	file: File,\n	code: ErrorCodes\n}'
         }
       ]
     }
@@ -139,12 +139,6 @@ Vous pouvez utiliser le slot `placeholder` pour remplacer le contenu par défaut
 
 #### Personnalisation par éléments
 
-Vous pouvez utiliser les slots pour remplacer certains contenus par défaut :
-
-- `icon` : l'icône par défaut
-- `action-text` : le texte d\'action
-- `or` : le texte `Ou`
-- `button-text` : le label du bouton d\'action
-- `info-text` : les informations sur le fichier à sélectionner
+Vous pouvez utiliser les slots pour remplacer les textes et l'icône par défaut.
 
 <DocExample file="patterns/file-upload/examples/file-upload-slots" />

@@ -5,24 +5,24 @@
 			md="6"
 		>
 			<VSwitch
-				v-model="loading"
-				label="Mode chargement (loading)"
+				v-model="props.loading"
+				label="Mode chargement"
 				hide-details
 				class="mt-0"
 			/>
 
 			<VExpandTransition mode="out-int">
-				<div v-if="loading">
+				<div v-if="props.loading">
 					<VSwitch
-						v-model="headingLoading"
-						label="Avec titre (heading-loading)"
+						v-model="props.headingLoading"
+						label="Avec titre"
 						hide-details
 					/>
 
 					<VTextField
-						v-if="loading"
-						v-model.number="itemsNumberLoading"
-						label="Nb. d'items en mode chargement (items-number-loading)"
+						v-if="props.loading"
+						v-model.number="props.itemsNumberLoading"
+						label="Nb. d'items en mode chargement"
 						hide-details
 						type="number"
 						class="mt-8"
@@ -32,37 +32,37 @@
 			</VExpandTransition>
 
 			<VSwitch
-				v-model="row"
-				label="Mode horizontal (row)"
+				v-model="props.row"
+				label="Mode horizontal"
 				hide-details
 			/>
 
 			<VSwitch
-				v-model="flex"
-				label="Mode flexbox (flex)"
+				v-model="props.flex"
+				label="Mode flexbox"
 				hide-details
 				class="mb-8"
 			/>
 
 			<VTextField
-				v-model="listTitle"
-				label="Titre (list-title)"
-				hide-details
-				class="mb-8"
-				outlined
-			/>
-
-			<VTextField
-				v-model="placeholder"
-				label="Text de remplacement (placeholder)"
+				v-model="props.listTitle"
+				label="Titre"
 				hide-details
 				class="mb-8"
 				outlined
 			/>
 
 			<VTextField
-				v-model="itemWidth"
-				label="Largeur de chaque item (item-width)"
+				v-model="props.placeholder"
+				label="Texte de remplacement"
+				hide-details
+				class="mb-8"
+				outlined
+			/>
+
+			<VTextField
+				v-model="props.itemWidth"
+				label="Largeur de chaque item"
 				hide-details
 				outlined
 			/>
@@ -72,23 +72,12 @@
 			cols="12"
 			md="6"
 		>
-			<VCard>
-				<VCardText>
-					<DataList
-						v-if="itemsNumberLoading"
-						:items="items"
-						:icons="icons"
-						:list-title="listTitle"
-						:loading="loading"
-						:items-number-loading="itemsNumberLoading"
-						:heading-loading="headingLoading"
-						:placeholder="placeholder"
-						:item-width="itemWidth"
-						:flex="flex"
-						:row="row"
-					/>
-				</VCardText>
-			</VCard>
+			<DataList
+				v-if="props.itemsNumberLoading"
+				v-bind="props"
+				:items="items"
+				:icons="icons"
+			/>
 		</VCol>
 	</VRow>
 </template>
@@ -125,14 +114,16 @@
 			}
 		];
 
-		loading = false;
-		itemsNumberLoading = 3;
-		headingLoading = true;
-		row = false;
-		flex = false;
-		listTitle = 'Titre';
-		placeholder = '…';
-		itemWidth = '200px';
+		props = {
+			loading: false,
+			itemsNumberLoading: 3,
+			headingLoading: true,
+			row: false,
+			flex: false,
+			listTitle: 'Titre',
+			placeholder: '…',
+			itemWidth: '200px'
+		};
 
 		icons = {
 			calendarIcon: mdiCalendar,

@@ -3,25 +3,26 @@
 	<VMenu
 		ref="menu"
 		v-model="menu"
-		v-bind="options.menu"
+		v-bind="menuOptions"
 	>
 		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
-				v-mask="maskValue"
+				v-facade="maskValue"
 				v-bind="textFieldOptions"
-				class="vd-date-picker-text-field"
+				:outlined="outlined"
 				:class="textFieldClasses"
 				:success-messages="options.textField.successMessages || successMessages"
 				:error.sync="internalErrorProp"
+				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
 				@click="textFieldClicked"
 			>
 				<template #prepend>
 					<VBtn
-						v-if="!noPrependIcon && !appendIcon"
+						v-if="!noPrependIcon && !showAppendIcon"
 						v-bind="options.btn"
 						@click="menu = true"
 					>
@@ -35,7 +36,7 @@
 
 				<template #append>
 					<VBtn
-						v-if="appendIcon"
+						v-if="showAppendIcon"
 						v-bind="options.btn"
 						@click="menu = true"
 					>
@@ -103,6 +104,14 @@
 				type: Boolean,
 				default: false
 			},
+			/**
+			 * Put VTextField in outlined mode,
+			 * default to append icon and adjust VMenu
+			 */
+			outlined: {
+				type: Boolean,
+				default: false
+			},
 			/** Use append icon instead of prepend */
 			appendIcon: {
 				type: Boolean,
@@ -161,6 +170,19 @@
 
 		/** The v-model of VMenu */
 		menu = false;
+
+		get showAppendIcon(): boolean {
+			return this.appendIcon || this.outlined;
+		}
+
+		get menuOptions(): Options {
+			const position = {
+				nudgeBottom: this.outlined ? 56 : 45,
+				nudgeRight: this.outlined ? 0 : 45
+			};
+
+			return deepmerge(position, this.options.menu) as Options;
+		}
 
 		/**
 		 * Compute the options for the VTextField

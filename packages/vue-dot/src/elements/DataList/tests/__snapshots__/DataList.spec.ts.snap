@@ -5,37 +5,10 @@ exports[`DataList renders correctly 1`] = `
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0 vd-column">
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-      </ul>
-    </div>
-  </vfadetransition-stub>
-</div>
-`;
-
-exports[`DataList renders correctly in column mode 1`] = `
-<div class="vd-data-list" column="true">
-  <vfadetransition-stub mode="out-in" origin="top center 0">
-    <div>
-      <!---->
-      <ul class="vd-data-list-field pl-0 vd-column">
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
+      <ul class="vd-data-list-field pl-0 d-flex flex-column">
+        <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
       </ul>
     </div>
   </vfadetransition-stub>
@@ -47,16 +20,10 @@ exports[`DataList renders correctly in flex mode 1`] = `
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0 vd-column vd-flex">
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
+      <ul class="vd-data-list-field pl-0 d-flex flex-wrap">
+        <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
       </ul>
     </div>
   </vfadetransition-stub>
@@ -70,16 +37,10 @@ exports[`DataList renders correctly with a title 1`] = `
       <h4 class="mb-3 headline">
         Informations
       </h4>
-      <ul class="vd-data-list-field pl-0 vd-column">
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
+      <ul class="vd-data-list-field pl-0 d-flex flex-column">
+        <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
       </ul>
     </div>
   </vfadetransition-stub>
@@ -91,53 +52,42 @@ exports[`DataList renders correctly with an action 1`] = `
   <transition-stub name="fade-transition" mode="out-in">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0 vd-column vd-flex">
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
+      <ul class="vd-data-list-field pl-0 d-flex flex-wrap">
+        <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="">
               <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                 Civility
               </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
-					…
-				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+              <div class="vd-data-list-item-value"><span class="body-1">…</span></div>
             </div>
+            <!---->
           </div>
         </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
+        <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="">
               <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                 Name
               </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
-					Dupont
-				</span></div>
-              <div class="vd-data-list-item-action"><button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text body-1 text-none pa-0"><span class="v-btn__content">
-					Edit
-				</span></button></div>
-            </div>
+              <div class="vd-data-list-item-value"><span class="body-1">Dupont</span></div>
+            </div> <button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text body-1 text-none pa-0"><span class="v-btn__content">
+				Edit
+			</span></button>
           </div>
         </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
+        <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="">
               <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                 First name
               </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
-					Paul
-				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+              <div class="vd-data-list-item-value"><span class="body-1">Paul</span></div>
             </div>
+            <!---->
           </div>
         </li>
       </ul>
@@ -162,52 +112,40 @@ exports[`DataList renders correctly with an icon 1`] = `
   <transition-stub name="fade-transition" mode="out-in">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0 vd-column">
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
+      <ul class="vd-data-list-field pl-0 d-flex flex-column">
+        <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="">
               <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                 Civility
               </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
-					…
-				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+              <div class="vd-data-list-item-value"><span class="body-1">…</span></div>
             </div>
+            <!---->
           </div>
         </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light mr-4 mt-2" style="font-size: 24px;">test</i>
-            <div class="vd-data-list-item-content">
+        <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: 200px;"><i aria-hidden="true" class="v-icon notranslate material-icons theme--light mr-4 mt-2" style="font-size: 24px;">test</i>
+          <div class="vd-data-list-item-content">
+            <div class="">
               <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                 Name
               </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
-					Dupont
-				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+              <div class="vd-data-list-item-value"><span class="body-1">Dupont</span></div>
             </div>
+            <!---->
           </div>
         </li>
-        <li class="vd-data-list-row mb-2">
-          <div class="layout vd-data-list-item wrap vd-data-list-item body-1" style="width: 200px;">
-            <!---->
-            <div class="vd-data-list-item-content">
+        <li class="layout vd-data-list-item flex-grow-0 wrap vd-data-list-item body-1 mb-2" style="width: 200px;">
+          <!---->
+          <div class="vd-data-list-item-content">
+            <div class="">
               <div class="vd-data-list-item-label caption" style="color: rgba(0, 0, 0, 0.6);">
                 First name
               </div>
-              <div class="vd-data-list-item-value"><span class="body-1">
-					Paul
-				</span></div>
-              <div class="vd-data-list-item-action">
-                <!---->
-              </div>
+              <div class="vd-data-list-item-value"><span class="body-1">Paul</span></div>
             </div>
+            <!---->
           </div>
         </li>
       </ul>
@@ -229,16 +167,10 @@ exports[`DataList renders loading state correctly 2`] = `
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0 vd-column">
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
-        <li class="vd-data-list-row mb-2">
-          <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1" style="width: 200px;"></datalistitem-stub>
-        </li>
+      <ul class="vd-data-list-field pl-0 d-flex flex-column">
+        <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item body-1 mb-2" style="width: 200px;"></datalistitem-stub>
       </ul>
     </div>
   </vfadetransition-stub>

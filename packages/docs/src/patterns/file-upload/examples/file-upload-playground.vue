@@ -7,38 +7,50 @@
 			<VSwitch
 				v-model="props.multiple"
 				label="Multiple"
+				hide-details
+				class="mt-0"
 			/>
 
 			<VSwitch
 				v-model="props.noRipple"
-				label="Désactive l'ondulation"
+				label="Désactiver l'ondulation"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VSwitch
 				v-model="props.disabled"
-				label="Désactive le composant"
+				label="Désactiver le composant"
+				hide-details
+				class="mt-3"
 			/>
 
 			<VCombobox
 				v-model="props.fileSizeUnits"
 				:items="defaultFileSizeUnits"
 				label="Unités des tailles"
+				hide-details
 				multiple
 				outlined
+				class="mt-6"
 			/>
 
 			<VCombobox
 				v-model="props.allowedExtensions"
 				:items="defaultAllowedExtensions"
 				label="Extensions autorisées"
+				hide-details
 				multiple
 				outlined
+				class="mt-6"
 			/>
 
 			<VTextField
 				v-model.number="props.fileSizeMax"
 				label="Taille maximum (octets)"
+				hide-details
 				outlined
+				class="mt-6"
 			/>
 
 			<VSnackbar
@@ -75,7 +87,6 @@
 	import Component from 'vue-class-component';
 
 	import { ErrorEvent, ErrorCodesType } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
-	import { ErrorCodes } from '@cnamts/vue-dot/src/patterns/FileUpload/errorCodes';
 
 	@Component
 	export default class FileUploadPlayground extends Vue {
@@ -121,8 +132,8 @@
 			this.snackbar = true;
 		}
 
-		valueUpdated(value: File): void {
-			this.snackbarText = 'Le fichier a été accepté.';
+		valueUpdated(file: File): void {
+			this.snackbarText = `Le fichier "${file.name}" a été accepté.`;
 			this.snackbarColor = 'success';
 			this.snackbar = true;
 		}
