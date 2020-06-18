@@ -35,7 +35,7 @@ export const questionErrors: FormErrors = {
 
 export const form: Form = {
 	section1: {
-		fields: {
+		questions: {
 			questionString: {
 				type: 'text'
 			},

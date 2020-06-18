@@ -4,7 +4,7 @@
 			v-for="(section, sectionName) in form"
 			:key="'section-' + sectionName"
 			:section-title="section.title"
-			:fields="section.fields"
+			:fields="section.questions"
 			@change="sectionUpdated($event, sectionName)"
 			@refresh="$emit('refresh')"
 		/>

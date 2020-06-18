@@ -16,7 +16,7 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 
 	for (const [sectionName] of Object.entries(newForm)) {
 		for (const [fieldName, errors] of Object.entries(formErrors)) {
-			const field = newForm[sectionName].fields[fieldName];
+			const field = newForm[sectionName].questions[fieldName];
 
 			if (!field || !errors) {
 				continue;
@@ -45,7 +45,7 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 			}
 
 			// Set the new field metadata to the form
-			newForm[sectionName].fields[fieldName].metadata = fieldMetadata;
+			newForm[sectionName].questions[fieldName].metadata = fieldMetadata;
 		}
 	}
 

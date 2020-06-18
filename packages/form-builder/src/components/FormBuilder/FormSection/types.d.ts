@@ -6,5 +6,5 @@ export interface Fields {
 
 export interface Section {
 	title?: string;
-	fields: Fields;
+	questions: Fields;
 }

@@ -17,7 +17,7 @@ const defaultItem = [
 
 export const addressForm: Form = {
 	section1: {
-		fields: {
+		questions: {
 			streetNumber: {
 				type: 'number',
 				value: null,

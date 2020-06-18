@@ -35,7 +35,7 @@ export class FormBuilderCore extends MixinsDeclaration {
 	 */
 	sectionUpdated(fields: Fields, sectionName: string): void {
 		const form = { ...this.form };
-		form[sectionName].fields = fields;
+		form[sectionName].questions = fields;
 
 		this.$nextTick(() => {
 			this.$emit('change', form);
