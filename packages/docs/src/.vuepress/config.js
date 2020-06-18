@@ -4,6 +4,7 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
+	dest: 'dist',
 	themeConfig: {
 		sidebar: [
 			{

@@ -35,8 +35,8 @@
 			>
 				<template #activator="{ on }">
 					<VBtn
-						aria-label="Inverser les couleurs"
 						icon
+						aria-label="Inverser les couleurs"
 						@click="dark = !dark"
 						v-on="on"
 					>
