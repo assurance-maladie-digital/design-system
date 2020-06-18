@@ -19,7 +19,7 @@
 	},
 	"dependencies": {
 		"@cnamts/vue-dot": "^2.0.0-alpha.51",
-		"vuepress": "^1.5.1"
+		"vuepress": "^1.5.2"
 	},
 	"devDependencies": {
 		"@types/marked": "0.7.4",
