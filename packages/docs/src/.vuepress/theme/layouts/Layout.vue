@@ -9,6 +9,24 @@
 				app
 			>
 				<DocSidebar :items="sidebarItems" />
+
+				<template #append>
+					<VDivider />
+
+					<div class="px-4 py-2 d-flex">
+						<VBtn
+							text
+							rounded
+							class="text--primary text-none"
+						>
+							<VIcon left>
+								{{ tagIcon }}
+							</VIcon>
+
+							{{ version }}
+						</VBtn>
+					</div>
+				</template>
 			</VNavigationDrawer>
 
 			<VContent>
@@ -36,8 +54,15 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { mdiTagOutline } from '@mdi/js';
+
+	import { version } from '../../../../package.json';
+
 	@Component
 	export default class Layout extends Vue {
+		version = version;
+		tagIcon = mdiTagOutline;
+
 		drawer = null;
 
 		get sidebarItems() {
