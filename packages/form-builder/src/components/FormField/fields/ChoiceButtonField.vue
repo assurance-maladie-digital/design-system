@@ -1,10 +1,11 @@
 <template>
 	<div class="vd-choice-button-field vd-form-input">
 		<VBtnToggle
-			:value="choiceValue"
 			v-bind="field.metadata"
-			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"
+			:value="choiceValue"
+			:multiple="field.multiple"
 			:class="{ 'column': !isInline }"
+			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"

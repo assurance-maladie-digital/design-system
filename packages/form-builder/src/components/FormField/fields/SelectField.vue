@@ -3,6 +3,7 @@
 		v-bind="field.metadata"
 		:value="field.value"
 		:items="field.items"
+		:multiple="field.multiple"
 		class="vd-form-input"
 		@change="emitChangeEvent"
 	/>

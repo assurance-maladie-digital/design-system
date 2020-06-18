@@ -93,9 +93,7 @@ describe('choiceField', () => {
 		const wrapper = createWrapper({
 			...testField,
 			value: testField.items[0].value,
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		expect(wrapper.vm.choiceValue).toEqual([testField.items[0].value]);
@@ -104,9 +102,7 @@ describe('choiceField', () => {
 	it('selects multiple items in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		wrapper.vm.toggleItem(testField.items[0]);
@@ -132,9 +128,7 @@ describe('choiceField', () => {
 				testField.items[0].value,
 				testField.items[1].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		// Unselect the first button
@@ -154,9 +148,7 @@ describe('choiceField', () => {
 			value: [
 				testField.items[3].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		// Select the first button
@@ -177,9 +169,7 @@ describe('choiceField', () => {
 				testField.items[0].value,
 				testField.items[1].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		wrapper.vm.toggleItem(testField.items[2]);
@@ -213,9 +203,7 @@ describe('choiceField', () => {
 			value: [
 				testField.items[0].value
 			],
-			metadata: {
-				multiple: true
-			}
+			multiple: true
 		});
 
 		// Select a button with a null value

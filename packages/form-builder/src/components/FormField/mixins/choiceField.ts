@@ -14,14 +14,14 @@ const MixinsDeclaration = mixins(FieldComponent);
 			handler(value: ChoiceValue): void {
 				if (value) {
 					/** In multiple mode, put the value in an array if it wasn't already */
-					if (this.isMultiple && !Array.isArray(value)) {
+					if (this.field.multiple && !Array.isArray(value)) {
 						this.choiceValue = [value];
 					} else {
 						this.choiceValue = value;
 					}
 				} else {
 					// Reset the choice value
-					this.choiceValue = this.isMultiple ? [] : null;
+					this.choiceValue = this.field.multiple ? [] : null;
 				}
 			},
 			immediate: true,
@@ -30,11 +30,7 @@ const MixinsDeclaration = mixins(FieldComponent);
 	}
 })
 export class ChoiceField extends MixinsDeclaration {
-	choiceValue: ChoiceValue | null = this.isMultiple ? [] : null;
-
-	get isMultiple(): boolean {
-		return Boolean(this.field.metadata?.multiple);
-	}
+	choiceValue: ChoiceValue | null = this.field.multiple ? [] : null;
 
 	/**
 	 * Toggle the item
@@ -53,7 +49,7 @@ export class ChoiceField extends MixinsDeclaration {
 		let newChoiceValue: ChoiceValue;
 
 		// Set the new value in simple mode
-		if (!this.isMultiple) {
+		if (!this.field.multiple) {
 			newChoiceValue = active ? null : item.value;
 		} else {
 			newChoiceValue = [
@@ -118,7 +114,7 @@ export class ChoiceField extends MixinsDeclaration {
 			return false;
 		}
 
-		if (this.isMultiple && Array.isArray(this.choiceValue)) {
+		if (this.field.multiple && Array.isArray(this.choiceValue)) {
 			return this.choiceValue.includes(value);
 		} else {
 			return this.choiceValue === value;
