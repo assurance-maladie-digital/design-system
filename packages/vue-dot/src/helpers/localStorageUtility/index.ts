@@ -29,7 +29,7 @@ export class LocalStorageUtility {
 		expiration?: number,
 		prefix = 'vd-'
 	) {
-		this.localStorageSupported = typeof window.localStorage !== 'undefined' && window.localStorage !== null;
+		this.localStorageSupported = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined' && window.localStorage !== null;
 
 		this.prefix = prefix;
 
@@ -181,6 +181,10 @@ export class LocalStorageUtility {
 	 * @returns {void}
 	 */
 	private filterStorage(callback: (storageKey: string) => void): void {
+		if (!this.localStorageSupported) {
+			return;
+		}
+
 		for (const storageKey in localStorage) {
 			if (storageKey.startsWith(this.prefix) && storageKey !== this.CONTROL_ITEM_KEY) {
 				callback(storageKey);
