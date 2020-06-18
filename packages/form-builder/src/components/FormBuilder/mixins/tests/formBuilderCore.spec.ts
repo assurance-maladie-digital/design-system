@@ -17,7 +17,7 @@ const testField: Field = {
 
 const testForm: Form = {
 	section1: {
-		fields: {
+		questions: {
 			field1: testField
 		}
 	}
@@ -25,7 +25,7 @@ const testForm: Form = {
 
 const updatedTestForm: Form = {
 	section1: {
-		fields: {
+		questions: {
 			field1: {
 				...testField,
 				value: 'test'
@@ -34,7 +34,7 @@ const updatedTestForm: Form = {
 	}
 };
 
-const updatedField = updatedTestForm.section1.fields;
+const updatedField = updatedTestForm.section1.questions;
 
 /** Create the wrapper */
 function createWrapper(form: Form) {

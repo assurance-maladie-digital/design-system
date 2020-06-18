@@ -17,7 +17,7 @@ const defaultItem = [
 
 export const formWithNullValues = {
 	section1: {
-		fields: {
+		questions: {
 			streetNumber: {
 				type: 'number',
 				value: null,
@@ -48,7 +48,7 @@ export const formWithNullValues = {
 
 export const form = {
 	section1: {
-		fields: {
+		questions: {
 			streetNumber: {
 				type: 'number',
 				value: 1,

@@ -3,7 +3,7 @@
 exports[`setFormErrors doesn't sets an error on unknown fields 1`] = `
 Object {
   "section1": Object {
-    "fields": Object {
+    "questions": Object {
       "questionPeriod": Object {
         "metadata": Object {
           "notExist": Object {
@@ -23,7 +23,7 @@ Object {
 exports[`setFormErrors sets error messages on fields 1`] = `
 Object {
   "section1": Object {
-    "fields": Object {
+    "questions": Object {
       "questionPeriod": Object {
         "metadata": Object {
           "from": Object {

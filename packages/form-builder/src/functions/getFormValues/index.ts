@@ -13,7 +13,7 @@ export function getFormValues(form: Form): FormValues {
 
 	// TODO: Use deepFind?
 	for (const [, section] of Object.entries(form)) {
-		for (const [fieldName, field] of Object.entries(section.fields)) {
+		for (const [fieldName, field] of Object.entries(section.questions)) {
 			if (field.value !== null) {
 				formValues[fieldName] = field.value;
 			}
