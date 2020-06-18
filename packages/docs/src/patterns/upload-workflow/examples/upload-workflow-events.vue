@@ -2,9 +2,11 @@
 	<div>
 		<UploadWorkflow
 			v-model="files"
-			@change="updatedValue($event)"
-			@error="showError($event)"
+			:vuetify-options="vuetifyOptions"
+			@change="valueUpdated"
+			@error="showError"
 		/>
+
 		<VSnackbar
 			v-model="snackbar"
 			:color="snackbarColor"
@@ -41,10 +43,20 @@
 				title: 'RIB'
 			},
 			{
-				id: 'cni',
+				id: 'idCard',
 				title: 'Carte d\'identité recto / verso'
 			}
 		];
+
+		vuetifyOptions = {
+			fileUpload: {
+				allowedExtensions: [
+					'png',
+					'jpg',
+					'jpeg'
+				]
+			}
+		};
 
 		errorsText: ErrorCodesType = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
@@ -53,17 +65,19 @@
 		};
 
 		showError(error: ErrorEvent): void {
-			this.snackbarText = this.errorsText[error.code] || error.code;
+			this.snackbarText = this.errorsText[error.code];
 			this.snackbarColor = 'error';
 			this.snackbar = true;
 		}
 
-		updatedValue(fileList: FileListItem[]): void {
-			const lastFileItem = fileList[fileList.length - 1];
+		valueUpdated(fileList: FileListItem[]): void {
+			const { file } = fileList[fileList.length - 1];
 
-			if(!lastFileItem?.file) return;
+			if (!file) {
+				return;
+			}
 
-			this.snackbarText = `Fichier '${lastFileItem.file.name}' ajouté avec succès'`;
+			this.snackbarText = `Le fichier "${file.name}" a été ajouté avec succès.'`;
 			this.snackbarColor = 'success';
 			this.snackbar = true;
 		}

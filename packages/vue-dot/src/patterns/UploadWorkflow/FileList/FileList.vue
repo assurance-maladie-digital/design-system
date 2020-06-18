@@ -37,7 +37,7 @@
 				</VListItemContent>
 
 				<!-- Action buttons -->
-				<VListItemAction v-bind="options.listItemAction">
+				<VListItemAction v-bind="options.listItemActions">
 					<VLayout v-bind="options.layout">
 						<VBtn
 							v-if="file.state === 'error'"
@@ -45,7 +45,7 @@
 							@click="$emit('retry', file.id)"
 						>
 							<VIcon
-								v-bind="options.actionIcon"
+								v-bind="options.icon"
 								:color="iconColor"
 							>
 								{{ refreshIcon }}
@@ -58,7 +58,7 @@
 							@click="$emit('view-file', file)"
 						>
 							<VIcon
-								v-bind="options.actionIcon"
+								v-bind="options.icon"
 								:color="iconColor"
 							>
 								{{ eyeIcon }}
@@ -71,7 +71,7 @@
 							@click="$emit('delete-file', file.id)"
 						>
 							<VIcon
-								v-bind="options.actionIcon"
+								v-bind="options.icon"
 								:color="iconColor"
 							>
 								{{ deleteIcon }}

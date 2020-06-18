@@ -17,16 +17,12 @@
 				title: 'RIB'
 			},
 			{
-				id: 'cni',
+				id: 'idCard',
 				title: 'Carte d\'identité recto / verso'
 			},
 			{
-				id: 'pass',
+				id: 'passport',
 				title: 'Passeport'
-			},
-			{
-				id: 'attest',
-				title: 'Attestation'
 			}
 		];
 
@@ -35,13 +31,6 @@
 				hideListDivider: true,
 				showViewBtn: true,
 				vuetifyOptions: {
-					viewFileBtn: {
-						color: 'primary',
-						icon: false
-					},
-					deleteFileBtn: {
-						icon: false
-					},
 					actionIcon: {
 						size: '24'
 					}
@@ -49,10 +38,9 @@
 			},
 			fileUpload: {
 				noRipple: true,
-				fileSizeMax: 1024 * 1024,
 				allowedExtensions: [
-				'pdf'
-			]
+					'pdf'
+				]
 			},
 			select: {
 				outlined: false

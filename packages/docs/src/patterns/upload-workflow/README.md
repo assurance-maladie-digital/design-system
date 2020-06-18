@@ -3,7 +3,7 @@
 :::
 
 ::: slot description
-Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur d'avoir une liste d'informations concernant des fichiers à transmettre avec leurs état et des actions possible.
+Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sélectionner une liste de fichiers.
 :::
 
 ## Utilisation
@@ -23,20 +23,21 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur d'avoir
         {
           name: 'value',
           type: 'FileListItem[]',
-          defaultValue: 'required',
+          required: true,
           description: 'La liste des fichiers.'
         },
         {
           name: 'section-title',
-          type: 'String',
-          defaultValue: '[]',
-          description: 'Document(s) à nous transmettre.'
+          type: 'string',
+          default: '\'Document(s) à nous transmettre.\'',
+          description: ''
         },
         {
           name: 'vuetify-options',
           type: 'Options',
-          defaultValue: 'undefined',
-          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+          default: 'undefined',
+          description: 'Personnalisation des composants Vuetify et internes en utilisant la directive `customizable`.',
+          options: '{\n	fileUpload: `FileUpload`,\n	dialog: `DialogBox`,\n	form: `VForm`,\n	select: `VSelect`,\n	fileList: `FileList`\n}'
         }
       ],
       slots: [
@@ -65,28 +66,29 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur d'avoir
     FileList: {
       props: [
         {
-          name: 'showViewBtn',
+          name: 'show-view-btn',
           type: 'boolean',
-          defaultValue: 'false',
+          default: 'false',
           description: 'Affiche le bouton `Afficher le fichier`.'
         },
         {
           name: 'files',
           type: 'FileItem[]',
-          defaultValue: 'required',
+          default: 'required',
           description: 'La liste des fichiers à afficher.'
         },
         {
-          name: 'hideListDivider',
+          name: 'hide-list-divider',
           type: 'boolean',
-          defaultValue: 'false',
+          default: 'false',
           description: 'Supprime la ligne de séparation en bas.'
         },
         {
           name: 'vuetify-options',
           type: 'Options',
-          defaultValue: 'undefined',
-          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.'
+          default: 'undefined',
+          description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+          options: '{\n	list: `VList`,\n	listItem: `VListItem`,\n	listItemAvatar: `VListItemAvatar`,\n	listItemAvatarIcon: `VIcon`,\n	listItemContent: `VListItemContent`,\n	listItemTitle: `VListItemTitle`,\n	listItemSubtitle: `VListItemSubtitle`,\n	listItemAction: `VListItemAction`,\n	layout: `VLayout`,\n	retryBtn: `VBtn`,\n	viewFileBtn: `VBtn`,\n	deleteFileBtn: `VBtn`,\n	actionIcon: `VIcon`,\n	divider: `VDivider`\n}'
         }
       ],
       events: [
@@ -110,53 +112,28 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur d'avoir
   }"
 />
 
-## Playground
-
-<DocExample file="patterns/upload-workflow/examples/upload-workflow-playground" />
-
 ## Exemples
 
-### Utilisation des slots
+### Gestion des événements
 
-Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le contenu par défaut du titre et du titre de la modale de sélection du fichier.
-
-<DocExample file="patterns/upload-workflow/examples/upload-workflow-slots" />
-
-### Utilisation des slots
-
-Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le contenu par défaut du titre et du titre de la modale de sélection du fichier.
-
-<DocExample file="patterns/upload-workflow/examples/upload-workflow-slots" />
-
-### Gestion des évènements
-
-Vous pouvez récupérer la liste des fichiers mise à jour avec l'évènement `change` et l'erreur avec `error`
+Vous pouvez réagir lorsque la liste des fichiers est mise à jour grâce à l'évènement `change`, et réagir aux erreurs de validation grâce à l'événement `error`.
 
 <DocExample file="patterns/upload-workflow/examples/upload-workflow-events" />
 
+### Un seul fichier
+
+Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue demandant à l'utilisateur de choisir quel fichier il a sélectionné ne sera pas affichée.
+
+<DocExample file="patterns/upload-workflow/examples/upload-workflow-single-file" />
+
+### Utilisation des slots
+
+Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le contenu par défaut du titre et du titre de la modale de sélection du fichier.
+
+<DocExample file="patterns/upload-workflow/examples/upload-workflow-slots" />
+
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants contenus dans `UploadWorkflow` et `FileList` en utilisant la propriété `vuetify-options` avec les propriétés suivantes :
-
-- `fileUpload` : `FileUpload`
-- `dialog` : `DialogBox`
-- `form` : `VForm`
-- `select` : `VSelect`
-- `fileList` : `FileList`
-  - `list` : `VList`
-  - `listItem` : `VListItem`
-  - `listItemAvatar` : `VListItemAvatar`
-  - `listItemAvatarIcon` : `VIcon`
-  - `listItemContent` : `VListItemContent`
-  - `listItemTitle` : `VListItemTitle`
-  - `listItemSubtitle` : `VListItemSubtitle`
-  - `listItemAction` : `VListItemAction`
-  - `listItemActions` : `VListItemAction`
-  - `layout` : `VLayout`
-  - `retryBtn` : `VBtn`
-  - `viewFileBtn` : `VBtn`
-  - `deleteFileBtn` : `VBtn`
-  - `actionIcon` : `VIcon`
-  - `divider` : `VDivider`
+Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
 
 <DocExample file="patterns/upload-workflow/examples/upload-workflow-options" />

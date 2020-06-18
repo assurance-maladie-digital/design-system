@@ -7,19 +7,11 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class UploadWorkflowEx extends Vue {
+	export default class UploadWorkflowSingleFile extends Vue {
 		files = [
 			{
 				id: 'rib',
 				title: 'RIB'
-			},
-			{
-				id: 'idCard',
-				title: 'Carte d\'identité recto / verso'
-			},
-			{
-				id: 'passport',
-				title: 'Passeport'
 			}
 		];
 	}

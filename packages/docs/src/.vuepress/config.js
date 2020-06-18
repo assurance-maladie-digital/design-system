@@ -64,16 +64,16 @@ module.exports = {
 						to: '/patterns/footer-wrapper'
 					},
 					{
-						title: 'UploadWorkflow',
-						to: '/patterns/upload-workflow'
-					},
-					{
 						title: 'PaginatedTable',
 						to: '/patterns/paginated-table'
 					},
 					{
 						title: 'SubHeader',
 						to: '/patterns/sub-header'
+					},
+					{
+						title: 'UploadWorkflow',
+						to: '/patterns/upload-workflow'
 					}
 				]
 			}
