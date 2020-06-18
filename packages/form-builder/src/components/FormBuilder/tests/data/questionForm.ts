@@ -109,9 +109,9 @@ export const questionForm: Form = {
 				title: 'Question select multiple',
 				description: 'Informations supplémentaires',
 				value: null,
+				multiple: true,
 				items: defaultItems,
 				metadata: {
-					multiple: true,
 					outlined: true
 				}
 			}
@@ -191,6 +191,7 @@ export const questionForm: Form = {
 				type: 'select',
 				title: 'Question choix bouton multiple',
 				description: 'Informations supplémentaires',
+				multiple: true,
 				items: [
 					{
 						text: 'Multiple 1',
@@ -216,8 +217,7 @@ export const questionForm: Form = {
 					}
 				],
 				metadata: {
-					type: 'choiceButton',
-					multiple: true
+					type: 'choiceButton'
 				}
 			}
 		}

@@ -33,6 +33,7 @@ export interface Field {
 	title?: string;
 	description?: string;
 	tooltip?: string;
+	multiple?: boolean;
 	metadata?: FieldMetadata;
 	items?: FieldItem[];
 	mask?: string;

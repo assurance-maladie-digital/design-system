@@ -3,6 +3,7 @@
 		v-bind="field.metadata"
 		:value="field.value"
 		:items="field.items"
+		:multiple="field.multiple"
 		:search-input.sync="searchInput"
 		class="vd-form-input"
 		@change="valueChanged"
