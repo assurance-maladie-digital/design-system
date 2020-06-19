@@ -90,7 +90,7 @@
 
 	@Component
 	export default class FileUploadPlayground extends Vue {
-		file: File | null = null;
+		file: File | File[] | null = null;
 
 		snackbar = false;
 		snackbarText = '';
