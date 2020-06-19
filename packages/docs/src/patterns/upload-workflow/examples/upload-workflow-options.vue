@@ -28,7 +28,7 @@
 
 		vuetifyOptions = {
 			fileList: {
-				hideListDivider: true,
+				hideLastDivider: true,
 				showViewBtn: true,
 				vuetifyOptions: {
 					actionIcon: {

@@ -128,7 +128,7 @@
 			 * mode the v-model isn't an array)
 			 */
 			value: {
-				type: [Array, Object],
+				type: [File, Array] as PropType<File | File[]>,
 				default: () => []
 			},
 			/** Disable v-ripple on the component */

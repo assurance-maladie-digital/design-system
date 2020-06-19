@@ -78,7 +78,7 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           description: 'La liste des fichiers à afficher.'
         },
         {
-          name: 'hide-list-divider',
+          name: 'hide-last-divider',
           type: 'boolean',
           default: 'false',
           description: 'Supprime la ligne de séparation en bas.'
@@ -88,7 +88,7 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           type: 'Options',
           default: 'undefined',
           description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-          options: '{\n	list: `VList`,\n	listItem: `VListItem`,\n	listItemAvatar: `VListItemAvatar`,\n	listItemAvatarIcon: `VIcon`,\n	listItemContent: `VListItemContent`,\n	listItemTitle: `VListItemTitle`,\n	listItemSubtitle: `VListItemSubtitle`,\n	listItemAction: `VListItemAction`,\n	layout: `VLayout`,\n	retryBtn: `VBtn`,\n	viewFileBtn: `VBtn`,\n	deleteFileBtn: `VBtn`,\n	actionIcon: `VIcon`,\n	divider: `VDivider`\n}'
+          options: '{\n	list: `VList`,\n	listItem: `VListItem`,\n	listItemAvatar: `VListItemAvatar`,\n	listItemAvatarIcon: `VIcon`,\n	listItemContent: `VListItemContent`,\n	listItemTitle: `VListItemTitle`,\n	listItemSubtitle: `VListItemSubtitle`,\n	listItemAction: `VListItemAction`,\n	layout: `VLayout`,\n	retryBtn: `VBtn`,\n	viewFileBtn: `VBtn`,\n	deleteFileBtn: `VBtn`,\n	icon: `VIcon`,\n	divider: `VDivider`\n}'
         }
       ],
       events: [
