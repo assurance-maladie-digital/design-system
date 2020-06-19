@@ -14,8 +14,7 @@
 				v-bind="textFieldOptions"
 				:outlined="outlined"
 				:class="textFieldClasses"
-				:error-messages="errorMessages || options.textField.errorMessages"
-				:success-messages="options.textField.successMessages || successMessages"
+				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error.sync="internalErrorProp"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
@@ -122,11 +121,6 @@
 			textFieldActivator: {
 				type: Boolean,
 				default: false
-			},
-			/** Vuetify errorMessages for VTextField */
-			errorMessages: {
-				type: Array as PropType<string[]>,
-				default: undefined
 			},
 			/**
 			 * Provide classes to the VTextField
