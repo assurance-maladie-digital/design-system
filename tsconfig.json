@@ -18,6 +18,8 @@
 		"allowSyntheticDefaultImports": true,
 		// Enables experimental support for ES7 decorators
 		"experimentalDecorators": true,
+		// Do not resolve symlinks to their real path (treat a symlinked file like a real one)
+		"preserveSymlinks": true,
 		// Shared types
 		"types": [
 			"node",
