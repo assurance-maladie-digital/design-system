@@ -1,15 +1,4 @@
 export = {
-	env: {
-		node: true
-	},
-	parser: 'vue-eslint-parser',
-	extends: [
-		'plugin:vue/recommended',
-		'eslint:recommended',
-		'@vue/typescript/recommended', 
-		'plugin:jsdoc/recommended'
-	],
-    rules: {
 		// Allow logs in development but not in production
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
@@ -103,27 +92,4 @@ export = {
 		// Don't force all params & return
 		'jsdoc/require-param': 0,
 		'jsdoc/require-returns': 0
-	},
-	overrides: [
-		{
-			files: ['*.vue'],
-			rules: {
-				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
-				// does not work with type definitions
-				'no-unused-vars': 'off'
-			}
-		},
-		{
-			files: ['*.js'],
-			rules: {
-				'@typescript-eslint/no-var-requires': 'off'
-			}
-		}
-	],
-	parserOptions: {
-		parser: '@typescript-eslint/parser'
-	},
-	plugins: [
-		'jsdoc'
-	]
 };
