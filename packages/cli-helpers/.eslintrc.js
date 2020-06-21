@@ -1,4 +1,4 @@
 module.exports = {
 	root: true,
-	extends: ['plugin:@cnamts/tsRules'],
+	extends: ['plugin:@cnamts/tsRecommended'],
 };
