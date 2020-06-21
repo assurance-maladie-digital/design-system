@@ -15,6 +15,7 @@ Object {
     "dialog-medium": "800px",
     "dialog-small": "560px",
   },
+  "input-width": "328px",
   "page-width": "1440px",
 }
 `;
