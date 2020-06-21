@@ -13,6 +13,7 @@ const tokens = {
 		'dialog-medium': '800px'
 	},
 	'page-width': '1440px',
+	'input-width': '328px',
 	// json-to-scss config
 	'_jsonToScss': {
 		indentationSize: '1',

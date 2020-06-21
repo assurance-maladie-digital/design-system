@@ -37,7 +37,7 @@
 				</VListItemContent>
 
 				<!-- Action buttons -->
-				<VListItemAction v-bind="options.listItemActions">
+				<VListItemAction v-bind="options.listItemAction">
 					<VLayout v-bind="options.layout">
 						<VBtn
 							v-if="file.state === 'error'"
@@ -81,9 +81,8 @@
 				</VListItemAction>
 			</VListItem>
 
-			<!-- Don't show divider on last item if hideListDivider is true -->
 			<VDivider
-				v-if="hideListDivider ? index + 1 !== files.length : true"
+				v-if="showDivider(index)"
 				:key="'divider-' + index"
 				v-bind="options.divider"
 			/>
@@ -121,7 +120,7 @@
 				type: Array as PropType<FileItem[]>,
 				required: true
 			},
-			hideListDivider: {
+			hideLastDivider: {
 				type: Boolean,
 				default: false
 			}
@@ -175,6 +174,15 @@
 
 			// Let the default color (null) on success
 			return state !== 'success' ? color : '';
+		}
+
+		/** Don't show divider on last item if hideLastDivider is true */
+		showDivider(index: number): boolean {
+			if (this.hideLastDivider) {
+				return index + 1 !== this.files.length;
+			}
+
+			return true;
 		}
 
 		/**
