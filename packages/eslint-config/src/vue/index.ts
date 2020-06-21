@@ -1,4 +1,4 @@
-module.exports = {
+export = {
 	env: {
 		node: true
 	},

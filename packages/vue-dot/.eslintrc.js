@@ -1,4 +1,7 @@
 module.exports = {
 	root: true,
-	extends: '@cnamts/eslint-config'
+	plugins: ['@cnamts'],
+	rules: {
+		'@cnamts/ts-strict':1
+	}
 };
