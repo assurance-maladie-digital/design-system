@@ -82,14 +82,14 @@
 		informationIcon = mdiInformationOutline;
 
 		/**
-		 * Get the field type from metadata or default type
+		 * Get the field type from fieldOptions or default type
 		 *
 		 * @returns {string} The field type
 		 */
 		getFieldType(): string {
-			const metadataType: string | undefined = this.field.metadata?.type as string ?? undefined;
+			const fieldOptionsType: string | undefined = this.field.fieldOptions?.type as string ?? undefined;
 
-			return this.getField(metadataType || this.field.type);
+			return this.getField(fieldOptionsType || this.field.type);
 		}
 
 		/**

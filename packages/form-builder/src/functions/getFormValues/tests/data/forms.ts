@@ -22,7 +22,7 @@ export const formWithNullValues = {
 				type: 'number',
 				value: null,
 				mask: '#####',
-				metadata: {
+				fieldOptions: {
 					type: 'text',
 					label: 'Numéro de voie'
 				}
@@ -31,14 +31,14 @@ export const formWithNullValues = {
 				type: 'select',
 				value: null,
 				items: defaultItem,
-				metadata: {
+				fieldOptions: {
 					label: 'Complément de voie'
 				}
 			},
 			streetLabel: {
 				type: 'text',
 				value: null,
-				metadata: {
+				fieldOptions: {
 					label: 'Libellé de la voie'
 				}
 			}

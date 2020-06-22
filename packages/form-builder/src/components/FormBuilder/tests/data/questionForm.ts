@@ -29,7 +29,7 @@ export const questionForm: Form = {
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
 				value: null,
-				metadata: {
+				fieldOptions: {
 					label: 'Label du champ',
 					outlined: true
 				}
@@ -39,7 +39,7 @@ export const questionForm: Form = {
 				title: 'Question nombre ?',
 				description: 'Informations supplémentaires',
 				value: null,
-				metadata: {
+				fieldOptions: {
 					mask: '###-###',
 					outlined: true
 				}
@@ -50,7 +50,7 @@ export const questionForm: Form = {
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
 				value: null,
-				metadata: {
+				fieldOptions: {
 					outlined: true
 				}
 			},
@@ -59,7 +59,7 @@ export const questionForm: Form = {
 				title: 'Question',
 				description: 'Informations supplémentaires',
 				value: null,
-				metadata: {
+				fieldOptions: {
 					appendIcon: true,
 					textField: {
 						outlined: true,
@@ -72,7 +72,7 @@ export const questionForm: Form = {
 				title: 'Question période',
 				description: 'Informations supplémentaires',
 				value: null,
-				metadata: {
+				fieldOptions: {
 					from: {
 						appendIcon: true,
 						textField: {
@@ -95,7 +95,7 @@ export const questionForm: Form = {
 				description: 'Informations supplémentaires',
 				value: null,
 				items: defaultItems,
-				metadata: {
+				fieldOptions: {
 					outlined: true,
 					chips: true,
 					menuProps: {
@@ -111,7 +111,7 @@ export const questionForm: Form = {
 				value: null,
 				multiple: true,
 				items: defaultItems,
-				metadata: {
+				fieldOptions: {
 					outlined: true
 				}
 			}
@@ -127,7 +127,7 @@ export const questionForm: Form = {
 				tooltip: 'Texte d\'aide',
 				value: '9.30',
 				items: defaultItems,
-				metadata: {
+				fieldOptions: {
 					type: 'choiceSlider'
 				}
 			},
@@ -138,7 +138,7 @@ export const questionForm: Form = {
 				tooltip: 'Texte d\'aide',
 				value: null,
 				items: defaultItems,
-				metadata: {
+				fieldOptions: {
 					type: 'choiceSlider',
 					thumbLabel: true
 				}
@@ -150,7 +150,7 @@ export const questionForm: Form = {
 				tooltip: 'Texte d\'aide',
 				value: null,
 				items: defaultItems,
-				metadata: {
+				fieldOptions: {
 					label: 'Label',
 					type: 'choiceSlider',
 					thumbLabel: true
@@ -162,7 +162,7 @@ export const questionForm: Form = {
 				description: 'Informations supplémentaires',
 				value: null,
 				items: defaultItems,
-				metadata: {
+				fieldOptions: {
 					outlined: true,
 					chips: true,
 					menuProps: {
@@ -181,7 +181,7 @@ export const questionForm: Form = {
 				title: 'Question choix bouton inline',
 				description: 'Informations supplémentaires',
 				items: defaultItems,
-				metadata: {
+				fieldOptions: {
 					inline: true,
 					type: 'choiceButton',
 					hint: 'Texte informatif'
@@ -216,7 +216,7 @@ export const questionForm: Form = {
 						value: null
 					}
 				],
-				metadata: {
+				fieldOptions: {
 					type: 'choiceButton'
 				}
 			}

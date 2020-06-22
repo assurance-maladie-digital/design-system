@@ -1,6 +1,6 @@
 <template>
 	<VAutocomplete
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="field.value"
 		:items="field.items"
 		:multiple="field.multiple"
