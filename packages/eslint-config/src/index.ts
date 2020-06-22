@@ -41,7 +41,8 @@ export = {
         jest: true
       },
       extends: [
-        './lib/bases/ts-plugin-override'
+        './lib/bases/ts-plugin-override',
+        './lib/rules/advanced-rules'
       ],
       rules: tsDefaultRules,
      }

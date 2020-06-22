@@ -42,6 +42,6 @@
 		"@vue/eslint-config-typescript": "5.0.2",
 		"eslint": "6.8.0",
 		"eslint-plugin-vue": "6.2.2",
-		"typescript": "~3.4.0"
+		"typescript": "3.8.3"
   }
 }
