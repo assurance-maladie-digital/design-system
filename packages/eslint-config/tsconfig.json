@@ -1,7 +1,26 @@
 {   
     "extends": "../../tsconfig.json",
     "compilerOptions": {
-      "outDir": "./dist",                       /* Redirect output structure to the directory. */
-      "rootDir": "src",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
-     },
-  }
+      "baseUrl": ".",
+      "lib": [
+        "es2018",
+        "es2015",
+        "scripthost"
+      ],
+      "types": [
+        "node",
+      ],
+      "paths": {
+        "@/*": [
+          "src/*"
+        ]
+      }
+    },
+    "include": [
+      "**/*.ts"
+    ],
+    "exclude": [
+      "node_modules",
+      "bin"
+    ]
+}

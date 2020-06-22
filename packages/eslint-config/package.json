@@ -15,14 +15,14 @@
 		"email": "me@deraw.dev"
    },
    "license": "MIT",
-    "author": {
+   "author": {
 		"name": "Dylan Broussard",
 		"email": "me@deraw.dev"
-   },
+	},
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
-	"build": "tsc" 
+    "build": "ts-node --project tsconfig.json --files ./scripts/build.ts"
    },
   "files": [
     "README.md",
