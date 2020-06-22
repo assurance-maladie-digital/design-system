@@ -63,7 +63,7 @@
 		"babel-loader": "8.1.0",
 		"core-js": "3.6.5",
 		"json-to-scss": "1.5.0",
-		"sass": "1.26.8",
+		"sass": "1.26.9",
 		"sass-loader": "8.0.2",
 		"vue-cli-plugin-vuetify": "2.0.5",
 		"vuetify-loader": "1.5.0"
