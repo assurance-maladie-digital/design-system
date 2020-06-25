@@ -70,6 +70,10 @@ module.exports = {
 					{
 						title: 'SubHeader',
 						to: '/patterns/sub-header'
+					},
+					{
+						title: 'UploadWorkflow',
+						to: '/patterns/upload-workflow'
 					}
 				]
 			}
