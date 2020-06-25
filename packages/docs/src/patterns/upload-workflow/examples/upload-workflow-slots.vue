@@ -1,11 +1,15 @@
 <template>
 	<UploadWorkflow v-model="files">
 		<template #title>
-			<h4 class="title font-weight-bold">Documents à sélectionner</h4>
+			<h4 class="title font-weight-bold">
+				Documents à sélectionner
+			</h4>
 		</template>
 
 		<template #modal-title>
-			<h4 class="title font-weight-bold">Sélectionnez le type du fichier</h4>
+			<h4 class="title font-weight-bold">
+				Sélectionnez le type du fichier
+			</h4>
 		</template>
 	</UploadWorkflow>
 </template>
