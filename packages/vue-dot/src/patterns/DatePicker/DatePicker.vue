@@ -14,7 +14,7 @@
 				v-bind="textFieldOptions"
 				:outlined="outlined"
 				:class="textFieldClasses"
-				:success-messages="options.textField.successMessages || successMessages"
+				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error.sync="internalErrorProp"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
