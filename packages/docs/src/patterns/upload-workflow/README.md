@@ -24,13 +24,13 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           name: 'value',
           type: 'FileListItem[]',
           required: true,
-          description: 'La liste des fichiers.'
+          description: 'La liste des fichiers que l\'utilisateur doit sélectionner.'
         },
         {
           name: 'section-title',
           type: 'string',
           default: '\'Document(s) à nous transmettre.\'',
-          description: ''
+          description: 'Le titre de la section.'
         },
         {
           name: 'vuetify-options',
@@ -53,7 +53,7 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque la valeur du composant change.',
+          description: 'Événement émis lorsque la liste de fichiers est mise à jour.',
           value: 'File | File[]'
         },
         {
@@ -66,22 +66,22 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
     FileList: {
       props: [
         {
+          name: 'files',
+          type: 'FileItem[]',
+          required: true,
+          description: 'La liste des fichiers à afficher.'
+        },
+        {
           name: 'show-view-btn',
           type: 'boolean',
           default: 'false',
           description: 'Affiche le bouton `Afficher le fichier`.'
         },
         {
-          name: 'files',
-          type: 'FileItem[]',
-          default: 'required',
-          description: 'La liste des fichiers à afficher.'
-        },
-        {
           name: 'hide-last-divider',
           type: 'boolean',
           default: 'false',
-          description: 'Supprime la ligne de séparation en bas.'
+          description: 'Masque la dernière ligne de séparation de la liste.'
         },
         {
           name: 'vuetify-options',
@@ -94,18 +94,18 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
       events: [
         {
           name: 'retry',
-          description: 'Événement émis lorsque l\'utilisateur clique sur l\'icone `retry`, retourne l\'id de la liste sélectionné.',
-          value: 'id: string'
-        },
-        {
-          name: 'view-file',
-          description: 'Événement émis lorsque l\'utilisateur clique sur l\'icone `view-file`, retourne le fichier de la liste sélectionné.',
-          value: 'file: File'
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton `Réessayer`, retourne l\'id du fichier sélectionné.',
+          value: 'string'
         },
         {
           name: 'delete-file',
-          description: 'Événement émis lorsque l\'utilisateur clique sur l\'icone `delete-file`, retourne l\'id de la liste sélectionné.',
-          value: 'id: string'
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton `Supprimer`, retourne l\'id du fichier sélectionné.',
+          value: 'string'
+        },
+        {
+          name: 'view-file',
+          description: 'Événement émis lorsque l\'utilisateur clique sur le bouton `Afficher le fichier`, retourne le fichier sélectionné.',
+          value: 'File'
         }
       ]
     }
@@ -128,7 +128,7 @@ Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue deman
 
 ### Utilisation des slots
 
-Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le contenu par défaut du titre et du titre de la modale de sélection du fichier.
+Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
 
 <DocExample file="patterns/upload-workflow/examples/upload-workflow-slots" />
 
