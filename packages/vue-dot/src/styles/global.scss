@@ -20,16 +20,20 @@
 		background: rgba(97, 97, 97, .9);
 	}
 
+	// Form input width
 	.vd-form-input {
-		width: $vd-input-width;
+		width: $vd-input-medium;
 
-		&-xl {
-			// 2 inputs + space between them
-			width: $vd-input-width * 2 + 24px * 2;
+		&-s {
+			width: $vd-input-small;
 		}
 
-		&-xs {
-			width: $vd-input-width / 2;
+		&-l {
+			width: $vd-input-large;
+		}
+
+		&-xl {
+			width: $vd-input-x-large;
 		}
 	}
 }
