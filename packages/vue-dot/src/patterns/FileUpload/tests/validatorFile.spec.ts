@@ -19,21 +19,6 @@ const file = { size: 1000, type: 'image/png', name: 'avatar.png' } as File;
 
 // Test
 describe('ValidatorFile', () => {
-	it('verify that props: allowedExtensions and accept are reactive', () => {
-		const wrapper = mount(component, {
-			propsData: {
-				allowedExtensions: ['pdf'],
-				accept: undefined
-			}
-		}) as Wrapper<TestComponent>;
-
-		expect(wrapper.vm.computedAccept).toBe('.pdf');
-
-		wrapper.setProps({ accept: 'file' });
-
-		expect(wrapper.vm.computedAccept).toBe('file');
-	});
-
 	it('assume that extension, size limit and format should be expected', () => {
 		const wrapper = mount(component, {
 			propsData: {

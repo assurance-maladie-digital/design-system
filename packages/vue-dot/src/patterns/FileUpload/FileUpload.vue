@@ -147,6 +147,17 @@
 			disabled: {
 				type: Boolean,
 				default: false
+			},
+			/**
+			 * The accept attribute of <input type="file">
+			 * See https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+			 *
+			 * This property is not required, by default it will be computed
+			 * based on allowedExtensions
+			 */
+			accept: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -196,6 +207,23 @@
 		get extensions(): string {
 			return this.allowedExtensions.join(', ').toUpperCase();
 		}
+
+	/** Compute accept */
+	get computedAccept(): string {
+		if (this.accept) {
+			return this.accept;
+		}
+
+		const accept: string[] = [];
+
+		// Calc the accept="" string from the allowed extensions
+		this.allowedExtensions.forEach((type: string) => {
+			accept.push(`.${type}`);
+		});
+
+		// The result, eg. ".pdf,.jpeg,.jpg,.png"
+		return accept.join(',');
+	}
 	}
 </script>
 
