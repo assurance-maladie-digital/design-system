@@ -69,8 +69,8 @@ Vue.use(Vuetify);
 
 const vuetify = new Vuetify();
 
-import VueTheMask from 'vue-the-mask';
-localVue.use(VueTheMask);
+import InputFacade from 'vue-input-facade';
+localVue.use(InputFacade);
 
 addVApp();
 

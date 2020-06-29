@@ -7,7 +7,6 @@
 		v-if="$attrs"
 		v-bind="$attrs"
 		:options.sync="optionsCalc"
-		:server-items-length="serverItemsLength"
 		v-on="$listeners"
 	>
 		<!--
@@ -41,10 +40,6 @@
 			// Props from Vuetify
 			options: {
 				type: Object as PropType<DataOptions>,
-				required: true
-			},
-			serverItemsLength: {
-				type: Number,
 				required: true
 			},
 			// The suffix is used to store different pagination objects

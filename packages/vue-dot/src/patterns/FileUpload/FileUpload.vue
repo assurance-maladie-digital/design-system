@@ -114,14 +114,29 @@
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * The v-model value
-			 * (Allow File as type because on single
-			 * mode the v-model isn't an array)
-			 */
+			/** Allow multiple files */
+			multiple: {
+				type: Boolean,
+				default: false
+			},
+			/** The v-model value */
 			value: {
-				type: [File, Array] as PropType<File | File[]>,
-				default: null
+				// File is not a valid prop type, use
+				// null to allow any type and
+				// provide custom validation
+				type: null as unknown as PropType<File | File[]>,
+				default: () => [],
+				/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
+				validator: (val): boolean => {
+					if (val === null) {
+						return true;
+					}
+
+					const value = Array.isArray(val) ? val : [val];
+					const isValid = value.every((v) => v !== null && typeof v === 'object');
+
+					return isValid;
+				}
 			},
 			/** Disable v-ripple on the component */
 			noRipple: {
@@ -194,14 +209,14 @@
 		transition: background .25s;
 
 		&:hover,
-		a:focus,
+		&:focus-within,
 		&.dragover {
 			background: #f5f5f5;
 		}
 
 		&.dark-mode {
 			&:hover,
-			a:focus,
+			&:focus-within,
 			&.dragover {
 				background: #303030;
 			}
