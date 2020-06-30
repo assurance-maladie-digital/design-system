@@ -208,22 +208,22 @@
 			return this.allowedExtensions.join(', ').toUpperCase();
 		}
 
-	/** Compute accept */
-	get computedAccept(): string {
-		if (this.accept) {
-			return this.accept;
+		/** Compute accept */
+		get computedAccept(): string {
+			if (this.accept) {
+				return this.accept;
+			}
+
+			const accept: string[] = [];
+
+			// Calc the accept="" string from the allowed extensions
+			this.allowedExtensions.forEach((type: string) => {
+				accept.push(`.${type}`);
+			});
+
+			// The result, eg. ".pdf,.jpeg,.jpg,.png"
+			return accept.join(',');
 		}
-
-		const accept: string[] = [];
-
-		// Calc the accept="" string from the allowed extensions
-		this.allowedExtensions.forEach((type: string) => {
-			accept.push(`.${type}`);
-		});
-
-		// The result, eg. ".pdf,.jpeg,.jpg,.png"
-		return accept.join(',');
-	}
 	}
 </script>
 

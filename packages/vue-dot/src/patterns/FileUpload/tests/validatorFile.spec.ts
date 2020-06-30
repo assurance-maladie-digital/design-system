@@ -5,7 +5,6 @@ import { FileValidator } from '../mixins/fileValidator';
 interface TestComponent extends Vue {
 	validateFile: (file: File) => boolean;
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
-	computedAccept: () => string;
 }
 
 const component = Vue.component('test', {
