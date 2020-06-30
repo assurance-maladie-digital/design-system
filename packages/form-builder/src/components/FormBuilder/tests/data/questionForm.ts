@@ -60,9 +60,8 @@ export const questionForm: Form = {
 				description: 'Informations supplémentaires',
 				value: null,
 				metadata: {
-					appendIcon: true,
+					outlined: true,
 					textField: {
-						outlined: true,
 						hint: 'Texte informatif'
 					}
 				}
@@ -74,17 +73,15 @@ export const questionForm: Form = {
 				value: null,
 				metadata: {
 					from: {
-						appendIcon: true,
+						outlined: true,
 						textField: {
-							label: 'Du',
-							outlined: true
+							label: 'Du'
 						}
 					},
 					to: {
-						appendIcon: true,
+						outlined: true,
 						textField: {
-							label: 'Au',
-							outlined: true
+							label: 'Au'
 						}
 					}
 				}

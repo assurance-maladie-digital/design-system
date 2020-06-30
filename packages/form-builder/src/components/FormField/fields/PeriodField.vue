@@ -2,32 +2,24 @@
 	<VLayout
 		wrap
 		row
-		class="vd-form-input-xl ma-n3"
+		class="ma-n3"
 	>
-		<VCol
-			cols="12"
-			md="6"
-		>
-			<DatePicker
-				v-model="periodValue.from"
-				v-bind="metadataFrom"
-				:vuetify-options="getVuetifyOptions(metadataFrom)"
-				@change="dateUpdated"
-			/>
-		</VCol>
+		<DatePicker
+			v-model="periodValue.from"
+			v-bind="metadataFrom"
+			:vuetify-options="getVuetifyOptions(metadataFrom)"
+			text-field-class="mx-3 vd-form-input no-flex"
+			@change="dateUpdated"
+		/>
 
-		<VCol
-			cols="12"
-			md="6"
-		>
-			<DatePicker
-				v-model="periodValue.to"
-				v-bind="metadataTo"
-				:vuetify-options="getVuetifyOptions(metadataTo)"
-				:start-date="periodValue.from"
-				@change="dateUpdated"
-			/>
-		</VCol>
+		<DatePicker
+			v-model="periodValue.to"
+			v-bind="metadataTo"
+			:vuetify-options="getVuetifyOptions(metadataTo)"
+			:start-date="periodValue.from"
+			text-field-class="mx-3 vd-form-input no-flex"
+			@change="dateUpdated"
+		/>
 	</VLayout>
 </template>
 
