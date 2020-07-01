@@ -35,7 +35,7 @@
 		</VBtnToggle>
 
 		<p
-			v-if="field && field.fieldOptions && field.fieldOptions.hint"
+			v-if="showHint"
 			class="px-3 mb-0 v-messages"
 			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
