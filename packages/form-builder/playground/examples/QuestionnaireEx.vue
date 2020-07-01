@@ -47,11 +47,10 @@
 	import { getFormValues } from '../../src/functions/getFormValues';
 	import { FormValues } from '../../src/functions/getFormValues/types';
 	import { setFormErrors } from '../../src/functions/setFormErrors';
-	import { Form } from '../../src/components/FormBuilder/types';
 
 	@Component
 	export default class QuestionnaireEx extends Vue {
-		questionForm: Form = questionForm;
+		questionForm = questionForm;
 		questionErrors = questionErrors;
 
 		questionValues: FormValues | null = null;
