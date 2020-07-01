@@ -1,12 +1,11 @@
 <template>
-	<VLayout class="vd-form-input ml-0">
-		<DatePicker
-			v-bind="field.fieldOptions"
-			:value="field.value"
-			:vuetify-options="getVuetifyOptions(field.fieldOptions)"
-			@change="emitChangeEvent"
-		/>
-	</VLayout>
+	<DatePicker
+		v-bind="field.fieldOptions"
+		:value="field.value"
+		:vuetify-options="getVuetifyOptions(field.fieldOptions)"
+		text-field-class="vd-form-input"
+		@change="emitChangeEvent"
+	/>
 </template>
 
 <script lang="ts">
