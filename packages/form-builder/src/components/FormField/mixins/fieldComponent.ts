@@ -1,7 +1,7 @@
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import { Field, FieldValue, FieldMetadata } from '../types';
+import { Field, FieldValue, FieldOptions } from '../types';
 
 import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
 import { deepRemoveKeys } from '@cnamts/vue-dot/src/helpers/deepRemoveKeys';
@@ -26,8 +26,8 @@ const MixinsDeclaration = mixins(Props);
 	}
 })
 export class FieldComponent extends MixinsDeclaration {
-	get fieldMetadata(): FieldMetadata | undefined {
-		return this.field.metadata;
+	get fieldOptions(): FieldOptions | undefined {
+		return this.field.fieldOptions;
 	}
 
 	/**
@@ -37,11 +37,11 @@ export class FieldComponent extends MixinsDeclaration {
 	 * @returns {void}
 	 */
 	emitChangeEvent(value: FieldValue): void {
-		const metadata = this.fieldMetadata ? this.clearErrorMessages(deepCopy(this.fieldMetadata)) : undefined;
+		const fieldOptions = this.fieldOptions ? this.clearErrorMessages(deepCopy(this.fieldOptions)) : undefined;
 
 		const updatedField = {
 			...this.field,
-			metadata,
+			fieldOptions,
 			value
 		};
 
@@ -52,12 +52,12 @@ export class FieldComponent extends MixinsDeclaration {
 	}
 
 	/**
-	 * Clear all ErrorMessages in metadata
+	 * Clear all ErrorMessages in fieldOptions
 	 *
-	 * @param {FieldMetadata} metadata The field metadata
-	 * @returns {FieldMetadata} The new field metadata without errorMessages
+	 * @param {FieldOptions} fieldOptions The field fieldOptions
+	 * @returns {FieldOptions} The new field fieldOptions without errorMessages
 	 */
-	clearErrorMessages(metadata: FieldMetadata): FieldMetadata {
-		return deepRemoveKeys(metadata, 'errorMessages');
+	clearErrorMessages(fieldOptions: FieldOptions): FieldOptions {
+		return deepRemoveKeys(fieldOptions, 'errorMessages');
 	}
 }

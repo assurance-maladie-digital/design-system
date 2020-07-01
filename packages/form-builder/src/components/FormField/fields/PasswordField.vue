@@ -1,6 +1,6 @@
 <template>
 	<VTextField
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="field.value"
 		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"

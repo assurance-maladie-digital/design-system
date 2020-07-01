@@ -5,7 +5,7 @@ Object {
   "section1": Object {
     "questions": Object {
       "questionPeriod": Object {
-        "metadata": Object {
+        "fieldOptions": Object {
           "notExist": Object {
             "errorMessages": "Sub field does not exist",
           },
@@ -25,7 +25,7 @@ Object {
   "section1": Object {
     "questions": Object {
       "questionPeriod": Object {
-        "metadata": Object {
+        "fieldOptions": Object {
           "from": Object {
             "errorMessages": Array [
               "Erreur questionPeriod 1",
@@ -42,7 +42,7 @@ Object {
         "type": "period",
       },
       "questionString": Object {
-        "metadata": Object {
+        "fieldOptions": Object {
           "errorMessages": Array [
             "Erreur string 1",
             "Erreur string 2",

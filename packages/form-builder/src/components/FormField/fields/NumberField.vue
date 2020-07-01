@@ -1,7 +1,7 @@
 <template>
 	<VTextField
 		v-facade="mask"
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="field.value"
 		class="vd-form-input"
 		@change="emitChangeEvent"
@@ -19,7 +19,7 @@
 	@Component
 	export default class NumberField extends MixinsDeclaration {
 		get mask(): string {
-			return this.field.metadata?.mask as unknown as string || '';
+			return this.field.fieldOptions?.mask as unknown as string || '';
 		}
 	}
 </script>

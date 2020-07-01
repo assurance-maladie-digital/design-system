@@ -1,7 +1,7 @@
 <template>
 	<div class="vd-choice-button-field vd-form-input">
 		<VBtnToggle
-			v-bind="field.metadata"
+			v-bind="field.fieldOptions"
 			:value="choiceValue"
 			:multiple="field.multiple"
 			:class="{ 'column': !isInline }"
@@ -35,11 +35,11 @@
 		</VBtnToggle>
 
 		<p
-			v-if="field && field.metadata && field.metadata.hint"
+			v-if="field && field.fieldOptions && field.fieldOptions.hint"
 			class="px-3 mb-0 v-messages"
 			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
-			{{ field.metadata.hint }}
+			{{ field.fieldOptions.hint }}
 		</p>
 	</div>
 </template>
@@ -78,11 +78,11 @@
 		}
 
 		get isInline(): boolean | null {
-			return this.field?.metadata?.inline as unknown as boolean | null;
+			return this.field?.fieldOptions?.inline as unknown as boolean | null;
 		}
 
 		get showHint(): boolean {
-			return Boolean(this.field.metadata?.hint);
+			return Boolean(this.field.fieldOptions?.hint);
 		}
 
 		getIconStyle(item: FieldItem): IndexedObject {

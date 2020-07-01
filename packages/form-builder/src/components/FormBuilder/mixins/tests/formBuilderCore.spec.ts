@@ -10,7 +10,7 @@ import { Form } from '../../types';
 const testField: Field = {
 	type: 'text',
 	value: null,
-	metadata: {
+	fieldOptions: {
 		label: 'Test'
 	}
 };

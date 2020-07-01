@@ -5,16 +5,16 @@ import { Options } from '@cnamts/vue-dot/src/mixins/customizable';
 
 import merge from 'deepmerge';
 
-/** Merge default options (eg. menu position fix) with metadata */
+/** Merge default options (eg. menu position fix) with fieldOptions */
 @Component
 export class DatePickerOptions extends Vue {
 	/**
 	 * Get Vuetify options object
 	 *
-	 * @param {Options} metadata The metadata to merge with
+	 * @param {Options} fieldOptions The fieldOptions to merge with
 	 * @returns {Options} The merged options
 	 */
-	getVuetifyOptions(metadata?: Options): Options {
+	getVuetifyOptions(fieldOptions?: Options): Options {
 		const defaultOptions = {
 			menu: {
 				nudgeBottom: 55,
@@ -22,8 +22,8 @@ export class DatePickerOptions extends Vue {
 			}
 		};
 
-		if (metadata) {
-			return merge(defaultOptions, metadata) as unknown as Options;
+		if (fieldOptions) {
+			return merge(defaultOptions, fieldOptions) as unknown as Options;
 		}
 
 		return defaultOptions;

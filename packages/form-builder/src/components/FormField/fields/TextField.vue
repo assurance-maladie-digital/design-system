@@ -1,6 +1,6 @@
 <template>
 	<VTextField
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="field.value"
 		class="vd-form-input"
 		@change="emitChangeEvent"

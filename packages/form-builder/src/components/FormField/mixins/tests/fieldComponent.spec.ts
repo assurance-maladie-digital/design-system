@@ -8,7 +8,7 @@ import { FieldComponent } from '../fieldComponent';
 const testField = {
 	type: 'text',
 	value: null,
-	metadata: {
+	fieldOptions: {
 		label: 'Field',
 		outlined: true
 	}
@@ -42,10 +42,10 @@ describe('fieldComponent', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('emits change event without metadata', async() => {
+	it('emits change event without fieldOptions', async() => {
 		const wrapper = createWrapper({
 			...testField,
-			metadata: undefined
+			fieldOptions: undefined
 		});
 
 		wrapper.vm.emitChangeEvent(testField.value);

@@ -1,6 +1,6 @@
 import { FormErrors } from './types';
 import { Form } from '../../components/FormBuilder/types';
-import { FieldMetadata } from '../../components/FormField/types';
+import { FieldOptions } from '../../components/FormField/types';
 
 import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
 
@@ -22,30 +22,30 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 				continue;
 			}
 
-			const fieldMetadata = field.metadata || {};
+			const fieldOptions = field.fieldOptions || {};
 
 			// If the field exists in our form and we
 			// have errors to set, set errors
 			if (Array.isArray(errors)) {
-				(fieldMetadata as FieldMetadata).errorMessages = errors;
+				(fieldOptions as FieldOptions).errorMessages = errors;
 			} else if (typeof errors === 'object') {
 				// For each sub field in error
 				for (const [subFieldName, subErrors] of Object.entries(errors)) {
-					// Get the sub field metadata or create it
-					const subFieldMetadata = fieldMetadata[subFieldName] || {};
+					// Get the sub field fieldOptions or create it
+					const subFieldOptions = fieldOptions[subFieldName] || {};
 
-					// Add error messages to the sub field metadata
-					(subFieldMetadata as FieldMetadata).errorMessages = subErrors;
+					// Add error messages to the sub field fieldOptions
+					(subFieldOptions as FieldOptions).errorMessages = subErrors;
 
-					// Update the field metadata
-					fieldMetadata[subFieldName] = subFieldMetadata;
+					// Update the field fieldOptions
+					fieldOptions[subFieldName] = subFieldOptions;
 				}
 			} else {
 				continue;
 			}
 
-			// Set the new field metadata to the form
-			newForm[sectionName].questions[fieldName].metadata = fieldMetadata;
+			// Set the new field fieldOptions to the form
+			newForm[sectionName].questions[fieldName].fieldOptions = fieldOptions;
 		}
 	}
 

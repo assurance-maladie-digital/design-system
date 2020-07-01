@@ -1,8 +1,8 @@
 <template>
 	<DatePicker
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="field.value"
-		:vuetify-options="getVuetifyOptions(field.metadata)"
+		:vuetify-options="getVuetifyOptions(field.fieldOptions)"
 		text-field-class="vd-form-input"
 		@change="emitChangeEvent"
 	/>

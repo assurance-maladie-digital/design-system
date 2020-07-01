@@ -1,7 +1,7 @@
 <template>
 	<VSlider
 		v-if="field.items"
-		v-bind="field.metadata"
+		v-bind="field.fieldOptions"
 		:value="getIndex(field.value)"
 		:thumb-label="isThumbLabel"
 		:tick-labels="thickLabels"
@@ -58,12 +58,12 @@
 
 		/**  Are we in thumb label mode */
 		get isThumbLabel(): boolean {
-			return Boolean(this.field.metadata?.thumbLabel);
+			return Boolean(this.field.fieldOptions?.thumbLabel);
 		}
 
 		/** The ticks labels */
 		get labels(): string[] {
-			if (this.field.items && this.field.metadata) {
+			if (this.field.items && this.field.fieldOptions) {
 				const labels = this.field.items.map((item) => item.text);
 
 				return labels;

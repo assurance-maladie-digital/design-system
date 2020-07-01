@@ -6,16 +6,16 @@
 	>
 		<DatePicker
 			v-model="periodValue.from"
-			v-bind="metadataFrom"
-			:vuetify-options="getVuetifyOptions(metadataFrom)"
+			v-bind="fieldOptionsFrom"
+			:vuetify-options="getVuetifyOptions(fieldOptionsFrom)"
 			text-field-class="mx-3 vd-form-input no-flex"
 			@change="dateUpdated"
 		/>
 
 		<DatePicker
 			v-model="periodValue.to"
-			v-bind="metadataTo"
-			:vuetify-options="getVuetifyOptions(metadataTo)"
+			v-bind="fieldOptionsTo"
+			:vuetify-options="getVuetifyOptions(fieldOptionsTo)"
 			:start-date="periodValue.from"
 			text-field-class="mx-3 vd-form-input no-flex"
 			@change="dateUpdated"
@@ -61,21 +61,21 @@
 			to: null
 		};
 
-		get metadataTo(): Options {
+		get fieldOptionsTo(): Options {
 			const datePicker = {
 				min: this.periodValue.from
 			};
 
-			const metadataTo = this.field.metadata?.to as Record<string, unknown> | undefined;
+			const fieldOptionsTo = this.field.fieldOptions?.to as Record<string, unknown> | undefined;
 
 			return {
 				datePicker,
-				...metadataTo
+				...fieldOptionsTo
 			};
 		}
 
-		get metadataFrom(): Options {
-			return this.field.metadata?.from as unknown as Options;
+		get fieldOptionsFrom(): Options {
+			return this.field.fieldOptions?.from as unknown as Options;
 		}
 
 		/** Emit the new value when started or ended date change */
