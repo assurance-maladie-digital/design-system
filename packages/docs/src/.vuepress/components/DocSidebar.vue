@@ -8,7 +8,6 @@
 				:href="item.href || null"
 				:target="item.href ? '_blank' : null"
 				:rel="item.href ? 'noopener noreferrer' : null"
-				ripple
 				exact
 			>
 				<VListItemContent>
@@ -28,7 +27,6 @@
 				<VListItem
 					:to="item.to"
 					slot="activator"
-					ripple
 					exact
 				>
 					<VListItemContent>
@@ -42,7 +40,6 @@
 					v-for="item in item.items"
 					:key="`sub-${item.title}`"
 					:to="item.to"
-					ripple
 					exact
 				>
 					<VListItemContent>
