@@ -10,7 +10,7 @@ Le pattern `FooterWrapper` est utilisé avec le composant `FooterBtn` pour affic
 
 <DocExample
   eager
-  file="patterns/footer-wrapper/examples/footer-wrapper"
+  file="composants/footer-wrapper/examples/footer-wrapper"
 />
 
 ## API
@@ -53,7 +53,7 @@ Vous pouvez rendre un bouton inactif grâce à la propriété `inert`. Celui-ci 
 
 <DocExample
   eager
-  file="patterns/footer-wrapper/examples/footer-wrapper-inert"
+  file="composants/footer-wrapper/examples/footer-wrapper-inert"
 />
 
 ### Utilisation du slot
@@ -62,5 +62,5 @@ Vous pouvez utiliser le slot par défaut pour ajouter du contenu.
 
 <DocExample
   eager
-  file="patterns/footer-wrapper/examples/footer-wrapper-slot"
+  file="composants/footer-wrapper/examples/footer-wrapper-slot"
 />

@@ -10,7 +10,7 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
 
 <DocExample
   eager
-  file="patterns/file-upload/examples/file-upload"
+  file="composants/file-upload/examples/file-upload"
 />
 
 ## API
@@ -113,7 +113,7 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
 
 ## Playground
 
-<DocExample file="patterns/file-upload/examples/file-upload-playground" />
+<DocExample file="composants/file-upload/examples/file-upload-playground" />
 
 ## Exemples
 
@@ -127,7 +127,7 @@ Vous pouvez spécifier la propriété `accept` pour définir quels types de fich
 
 </DocInfo>
 
-<DocExample file="patterns/file-upload/examples/file-upload-rules" />
+<DocExample file="composants/file-upload/examples/file-upload-rules" />
 
 ### Utilisation des slots
 
@@ -135,10 +135,10 @@ Vous pouvez spécifier la propriété `accept` pour définir quels types de fich
 
 Vous pouvez utiliser le slot `placeholder` pour remplacer le contenu par défaut.
 
-<DocExample file="patterns/file-upload/examples/file-upload-slot-placeholder" />
+<DocExample file="composants/file-upload/examples/file-upload-slot-placeholder" />
 
 #### Personnalisation par éléments
 
 Vous pouvez utiliser les slots pour remplacer les textes et l'icône par défaut.
 
-<DocExample file="patterns/file-upload/examples/file-upload-slots" />
+<DocExample file="composants/file-upload/examples/file-upload-slots" />

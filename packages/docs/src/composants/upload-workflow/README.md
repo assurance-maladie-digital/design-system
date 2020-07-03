@@ -10,7 +10,7 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
 
 <DocExample
   eager
-  file="patterns/upload-workflow/examples/upload-workflow"
+  file="composants/upload-workflow/examples/upload-workflow"
 />
 
 ## API
@@ -118,22 +118,22 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
 
 Vous pouvez réagir lorsque la liste des fichiers est mise à jour grâce à l'évènement `change`, et réagir aux erreurs de validation grâce à l'événement `error`.
 
-<DocExample file="patterns/upload-workflow/examples/upload-workflow-events" />
+<DocExample file="composants/upload-workflow/examples/upload-workflow-events" />
 
 ### Un seul fichier
 
 Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue demandant à l'utilisateur de choisir quel fichier il a sélectionné ne sera pas affichée.
 
-<DocExample file="patterns/upload-workflow/examples/upload-workflow-single-file" />
+<DocExample file="composants/upload-workflow/examples/upload-workflow-single-file" />
 
 ### Utilisation des slots
 
 Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
 
-<DocExample file="patterns/upload-workflow/examples/upload-workflow-slots" />
+<DocExample file="composants/upload-workflow/examples/upload-workflow-slots" />
 
 ### Personnalisation des composants
 
 Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
 
-<DocExample file="patterns/upload-workflow/examples/upload-workflow-options" />
+<DocExample file="composants/upload-workflow/examples/upload-workflow-options" />

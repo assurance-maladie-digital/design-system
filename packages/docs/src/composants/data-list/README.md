@@ -10,7 +10,7 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
 
 <DocExample
   eager
-  file="elements/data-list/examples/data-list"
+  file="composants/data-list/examples/data-list"
 />
 
 ## API
@@ -227,7 +227,7 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
 
 ## Playground
 
-<DocExample file="elements/data-list/examples/data-list-playground" />
+<DocExample file="composants/data-list/examples/data-list-playground" />
 
 ## Exemples
 
@@ -242,19 +242,19 @@ Il est nécessaire de lister manuellement toutes les icônes possible afin de n'
 
 </DocInfo>
 
-<DocExample file="elements/data-list/examples/data-list-icons" />
+<DocExample file="composants/data-list/examples/data-list-icons" />
 
 ### Bouton d'action
 
 Vous pouvez ajouter un bouton d'action à chaque item grâce à la propriété `action` sur l'item.
 
-<DocExample file="elements/data-list/examples/data-list-action" />
+<DocExample file="composants/data-list/examples/data-list-action" />
 
 ### Étiquette
 
 Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
 
-<DocExample file="elements/data-list/examples/data-list-chip" />
+<DocExample file="composants/data-list/examples/data-list-chip" />
 
 ### Valeurs HTML
 
@@ -266,16 +266,16 @@ Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela
 
 </DocInfo>
 
-<DocExample file="elements/data-list/examples/data-list-html-value" />
+<DocExample file="composants/data-list/examples/data-list-html-value" />
 
 ### Utilisation des slots
 
 Vous pouvez utiliser le slot `title` pour personnaliser le titre.
 
-<DocExample file="elements/data-list/examples/data-list-slot" />
+<DocExample file="composants/data-list/examples/data-list-slot" />
 
 ### Personnalisation des composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans `DataListItem` en utilisant la propriété `options` sur les items de la liste.
 
-<DocExample file="elements/data-list/examples/data-list-options" />
+<DocExample file="composants/data-list/examples/data-list-options" />

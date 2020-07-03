@@ -10,7 +10,7 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 
 <DocExample
   eager
-  file="elements/dialog-box/examples/dialog-box"
+  file="composants/dialog-box/examples/dialog-box"
 />
 
 ## API
@@ -92,7 +92,7 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 
 ## Playground
 
-<DocExample file="elements/dialog-box/examples/dialog-box-playground" />
+<DocExample file="composants/dialog-box/examples/dialog-box-playground" />
 
 ## Exemples
 
@@ -100,19 +100,19 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 
 Vous pouvez modifier la largeur de la boîte de dialogue avec l'attribut `width`.
 
-<DocExample file="elements/dialog-box/examples/dialog-box-width" />
+<DocExample file="composants/dialog-box/examples/dialog-box-width" />
 
 ### Modification des textes des boutons
 
 Vous pouvez modifier les textes par défaut des boutons d'actions avec les attributs `cancel-btn-text` et `confirm-btn-text`.
 
-<DocExample file="elements/dialog-box/examples/dialog-box-btn-text" />
+<DocExample file="composants/dialog-box/examples/dialog-box-btn-text" />
 
 ### Utilisation des slots
 
 Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d'actions.
 
-<DocExample file="elements/dialog-box/examples/dialog-box-slots" />
+<DocExample file="composants/dialog-box/examples/dialog-box-slots" />
 
 ### Personnalisation des composants
 
@@ -124,4 +124,4 @@ L'élément `Dialogbox` est composé d'un `VDialog`. Vous pouvez appliquer les a
 
 </DocInfo>
 
-<DocExample file="elements/dialog-box/examples/dialog-box-options" />
+<DocExample file="composants/dialog-box/examples/dialog-box-options" />
