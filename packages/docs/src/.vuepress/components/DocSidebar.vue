@@ -11,9 +11,7 @@
 				exact
 			>
 				<VListItemContent>
-					<VListItemTitle>
-						{{ item.title }}
-					</VListItemTitle>
+					<VListItemTitle v-text="item.title" />
 				</VListItemContent>
 			</VListItem>
 
@@ -30,9 +28,7 @@
 					exact
 				>
 					<VListItemContent>
-						<VListItemTitle>
-							{{ item.title }}
-						</VListItemTitle>
+						<VListItemTitle v-text="item.title" />
 					</VListItemContent>
 				</VListItem>
 
@@ -43,9 +39,7 @@
 					exact
 				>
 					<VListItemContent>
-						<VListItemTitle>
-							{{ item.title }}
-						</VListItemTitle>
+						<VListItemTitle v-text="item.title" />
 					</VListItemContent>
 				</VListItem>
 			</VListGroup>
