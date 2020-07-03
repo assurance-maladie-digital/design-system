@@ -12,7 +12,7 @@ Vous pouvez entrer des dimensions dans l'exemple ci-dessous et observer le compo
 
 <DocExample
   eager
-  file="elements/header-loading/examples/header-loading"
+  file="composants/header-loading/examples/header-loading"
 />
 
 ## API

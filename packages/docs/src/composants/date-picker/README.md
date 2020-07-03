@@ -10,7 +10,7 @@ Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateu
 
 <DocExample
   eager
-  file="patterns/date-picker/examples/date-picker"
+  file="composants/date-picker/examples/date-picker"
 />
 
 ## API
@@ -140,7 +140,7 @@ Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateu
 
 ## Playground
 
-<DocExample file="patterns/date-picker/examples/date-picker-playground" />
+<DocExample file="composants/date-picker/examples/date-picker-playground" />
 
 ## Exemples
 
@@ -148,7 +148,10 @@ Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateu
 
 Vous pouvez afficher le `VTextField` en mode `outlined` grâce à la propriété du même nom. Cela va aussi mettre l'icône en mode `append` et modifier la position du menu.
 
-<DocExample file="patterns/date-picker/examples/date-picker-outlined" />
+<DocExample
+  new-in="2.0.0-alpha.52"
+  file="composants/date-picker/examples/date-picker-outlined"
+/>
 
 ### Date de naissance
 
@@ -160,13 +163,13 @@ L'utilisateur sélectionnera l'année en premier, puis le mois et enfin le jour 
 
 </DocInfo>
 
-<DocExample file="patterns/date-picker/examples/date-picker-birthdate" />
+<DocExample file="composants/date-picker/examples/date-picker-birthdate" />
 
 ### Weekends
 
 Vous pouvez afficher les weekends dans le calendrier en utilisant la propriété `show-weekends`.
 
-<DocExample file="patterns/date-picker/examples/date-picker-weekends" />
+<DocExample file="composants/date-picker/examples/date-picker-weekends" />
 
 ### Période
 
@@ -178,7 +181,7 @@ Lorsque que la date de début est située avant la date sélectionnée (période
 
 </DocInfo>
 
-<DocExample file="patterns/date-picker/examples/date-picker-range" />
+<DocExample file="composants/date-picker/examples/date-picker-range" />
 
 ### Format
 
@@ -190,7 +193,7 @@ Par défaut un masque limitant les caractères pouvant être saisis dans le `VTe
 
 </DocInfo>
 
-<DocExample file="patterns/date-picker/examples/date-picker-format" />
+<DocExample file="composants/date-picker/examples/date-picker-format" />
 
 ### Règles de validation
 
@@ -204,7 +207,7 @@ Pour cela, vous pouvez utiliser les règles de validation inclues dans la librai
 - `notAfterToday`
 - `notBeforeToday`
 
-<DocExample file="patterns/date-picker/examples/date-picker-rules" />
+<DocExample file="composants/date-picker/examples/date-picker-rules" />
 
 ### Personnalisation des composants
 
@@ -216,4 +219,4 @@ Le pattern `DatePicker` est composé d'un `VTextField`. Vous pouvez appliquer le
 
 </DocInfo>
 
-<DocExample file="patterns/date-picker/examples/date-picker-options" />
+<DocExample file="composants/date-picker/examples/date-picker-options" />

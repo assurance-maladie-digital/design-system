@@ -18,62 +18,56 @@ module.exports = {
 				]
 			},
 			{
-				title: 'Éléments',
-				group: 'elements',
+				title: 'Composants',
+				group: 'composants',
 				items: [
 					{
 						title: 'CopyBtn',
-						to: '/elements/copy-btn'
+						to: '/composants/copy-btn'
 					},
 					{
 						title: 'CustomIcon',
-						to: '/elements/custom-icon'
+						to: '/composants/custom-icon'
 					},
 					{
 						title: 'DataList',
-						to: '/elements/data-list'
+						to: '/composants/data-list'
+					},
+					{
+						title: 'DatePicker',
+						to: '/composants/date-picker'
 					},
 					{
 						title: 'DialogBox',
-						to: '/elements/dialog-box'
-					},
-					{
-						title: 'HeaderLoading',
-						to: '/elements/header-loading'
-					},
-					{
-						title: 'PageCard',
-						to: '/elements/page-card'
-					}
-				]
-			},
-			{
-				title: 'Patterns',
-				group: 'patterns',
-				items: [
-					{
-						title: 'DatePicker',
-						to: '/patterns/date-picker'
+						to: '/composants/dialog-box'
 					},
 					{
 						title: 'FileUpload',
-						to: '/patterns/file-upload'
+						to: '/composants/file-upload'
 					},
 					{
 						title: 'FooterWrapper',
-						to: '/patterns/footer-wrapper'
+						to: '/composants/footer-wrapper'
+					},
+					{
+						title: 'HeaderLoading',
+						to: '/composants/header-loading'
+					},
+					{
+						title: 'PageCard',
+						to: '/composants/page-card'
 					},
 					{
 						title: 'PaginatedTable',
-						to: '/patterns/paginated-table'
+						to: '/composants/paginated-table'
 					},
 					{
 						title: 'SubHeader',
-						to: '/patterns/sub-header'
+						to: '/composants/sub-header'
 					},
 					{
 						title: 'UploadWorkflow',
-						to: '/patterns/upload-workflow'
+						to: '/composants/upload-workflow'
 					}
 				]
 			}

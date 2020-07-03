@@ -12,7 +12,7 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
 
 <DocExample
   eager
-  file="elements/copy-btn/examples/copy-btn"
+  file="composants/copy-btn/examples/copy-btn"
 />
 
 ## API
@@ -74,16 +74,16 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
 
 Vous pouvez masquer le tooltip en utilisant la propriété `hide-tooltip`.
 
-<DocExample file="elements/copy-btn/examples/copy-btn-no-tooltip" />
+<DocExample file="composants/copy-btn/examples/copy-btn-no-tooltip" />
 
 ### Utilisation des slots
 
 Vous pouvez utiliser les slots pour personnaliser l'icône ainsi que le contenu du tooltip.
 
-<DocExample file="elements/copy-btn/examples/copy-btn-slots" />
+<DocExample file="composants/copy-btn/examples/copy-btn-slots" />
 
 ### Personnalisation des composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
 
-<DocExample file="elements/copy-btn/examples/copy-btn-vuetify-options" />
+<DocExample file="composants/copy-btn/examples/copy-btn-vuetify-options" />

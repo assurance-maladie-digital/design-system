@@ -10,7 +10,7 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
 
 <DocExample
   eager
-  file="elements/custom-icon/examples/custom-icon"
+  file="composants/custom-icon/examples/custom-icon"
 />
 
 ## API
@@ -69,7 +69,7 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
 
 ## Playground
 
-<DocExample file="elements/custom-icon/examples/custom-icon-playground" />
+<DocExample file="composants/custom-icon/examples/custom-icon-playground" />
 
 ## Exemples
 
@@ -77,10 +77,10 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
 
 Vous pouvez modifier la taille et la couleur de l'icône grâce aux propriétés `size` et `color`.
 
-<DocExample file="elements/custom-icon/examples/custom-icon-size-color" />
+<DocExample file="composants/custom-icon/examples/custom-icon-size-color" />
 
 ### Utilisation des slots
 
 Vous pouvez utiliser le slot par défaut pour afficher une icône SVG totalement personnalisée.
 
-<DocExample file="elements/custom-icon/examples/custom-icon-slot" />
+<DocExample file="composants/custom-icon/examples/custom-icon-slot" />

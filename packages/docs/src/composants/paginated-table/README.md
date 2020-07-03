@@ -16,7 +16,7 @@ Vous pouvez modifier la pagination ou le tri puis recharger la page et constater
 
 <DocExample
   eager
-  file="patterns/paginated-table/examples/paginated-table"
+  file="composants/paginated-table/examples/paginated-table"
 />
 
 ## API
@@ -61,4 +61,4 @@ La propriété `suffix` est utilisée pour dissocier les différentes tables afi
 
 </DocInfo>
 
-<DocExample file="patterns/paginated-table/examples/paginated-table-api" />
+<DocExample file="composants/paginated-table/examples/paginated-table-api" />

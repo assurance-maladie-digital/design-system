@@ -10,7 +10,7 @@ L'élément `PageCard` est utilisé pour afficher une page.
 
 <DocExample
   eager
-  file="elements/page-card/examples/page-card"
+  file="composants/page-card/examples/page-card"
 />
 
 ## API
@@ -64,7 +64,7 @@ L'élément `PageCard` est utilisé pour afficher une page.
 
 ## Playground
 
-<DocExample file="elements/page-card/examples/page-card-playground" />
+<DocExample file="composants/page-card/examples/page-card-playground" />
 
 ## Exemples
 
@@ -72,7 +72,7 @@ L'élément `PageCard` est utilisé pour afficher une page.
 
 Vous pouvez transformer la `PageCard` en simple conteneur en la rendant transparente et en désactivant son ombre ainsi que son espacement interne.
 
-<DocExample file="elements/page-card/examples/page-card-transparent" />
+<DocExample file="composants/page-card/examples/page-card-transparent" />
 
 ### Largeur personnalisée
 
@@ -84,4 +84,4 @@ L'élément `PageCard` est composée d'une `VCard` contenue dans un `VLayout`. V
 
 </DocInfo>
 
-<DocExample file="elements/page-card/examples/page-card-width" />
+<DocExample file="composants/page-card/examples/page-card-width" />

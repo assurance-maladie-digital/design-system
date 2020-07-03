@@ -10,7 +10,7 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
 
 <DocExample
   eager
-  file="patterns/sub-header/examples/sub-header"
+  file="composants/sub-header/examples/sub-header"
 />
 
 ## API
@@ -102,7 +102,7 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
 
 ## Playground
 
-<DocExample file="patterns/sub-header/examples/sub-header-playground" />
+<DocExample file="composants/sub-header/examples/sub-header-playground" />
 
 ## Exemples
 
@@ -122,19 +122,19 @@ Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela
 
 </DocInfo>
 
-<DocExample file="patterns/sub-header/examples/sub-header-data-lists" />
+<DocExample file="composants/sub-header/examples/sub-header-data-lists" />
 
 ### Boutons d'actions
 
 Vous pouvez ajouter des boutons actions dans les listes de données en utilisant la propriété `action` sur les items.
 
-<DocExample file="patterns/sub-header/examples/sub-header-action" />
+<DocExample file="composants/sub-header/examples/sub-header-action" />
 
 ### Informations complémentaires
 
 Vous pouvez afficher des informations complémentaires en utilisant le slot `additional-informations`.
 
-<DocExample file="patterns/sub-header/examples/sub-header-additional-infos" />
+<DocExample file="composants/sub-header/examples/sub-header-additional-infos" />
 
 ### Mode chargement
 
@@ -142,14 +142,14 @@ Vous pouvez afficher le composant en mode chargement grâce à la propriété `l
 
 <DocInfo>
 
-Vous pouvez utiliser les propriétés `itemsNumberLoading` et `headingLoading` sur chaque [DataList](../../elements/data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
+Vous pouvez utiliser les propriétés `itemsNumberLoading` et `headingLoading` sur chaque [DataList](../../composants/data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
 
 </DocInfo>
 
-<DocExample file="patterns/sub-header/examples/sub-header-loading" />
+<DocExample file="composants/sub-header/examples/sub-header-loading" />
 
 ### Utilisation des slots
 
 Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter.
 
-<DocExample file="patterns/sub-header/examples/sub-header-slots" />
+<DocExample file="composants/sub-header/examples/sub-header-slots" />
