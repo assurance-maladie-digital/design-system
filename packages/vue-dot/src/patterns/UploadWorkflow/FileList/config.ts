@@ -2,6 +2,9 @@ export const config = {
 	listItemAvatarIcon: {
 		size: 24
 	},
+	listItemTitle: {
+		class: 'text-wrap'
+	},
 	layout: {
 		justifyEnd: true
 	},
