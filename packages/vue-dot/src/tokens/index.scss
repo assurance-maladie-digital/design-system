@@ -14,7 +14,13 @@ $vd-tokens: (
 		dialog-small: 560px,
 		dialog-medium: 800px
 	),
-	page-width: 1440px
+	page-width: 1440px,
+	input-width: (
+		input-small: 128px,
+		input-medium: 328px,
+		input-large: 384px,
+		input-x-large: 536px
+	)
 );
 
 $vd-colors: map-get($vd-tokens, colors);
@@ -33,3 +39,10 @@ $vd-dialog-small: map-get($vd-dialog-width, dialog-small);
 $vd-dialog-medium: map-get($vd-dialog-width, dialog-medium);
 
 $vd-page-width: map-get($vd-tokens, page-width);
+
+$vd-input-width: map-get($vd-tokens, input-width);
+
+$vd-input-small: map-get($vd-input-width, input-small);
+$vd-input-medium: map-get($vd-input-width, input-medium);
+$vd-input-large: map-get($vd-input-width, input-large);
+$vd-input-x-large: map-get($vd-input-width, input-x-large);

@@ -10,11 +10,11 @@
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
-				v-mask="maskValue"
+				v-facade="maskValue"
 				v-bind="textFieldOptions"
 				:outlined="outlined"
 				:class="textFieldClasses"
-				:success-messages="options.textField.successMessages || successMessages"
+				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error.sync="internalErrorProp"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
@@ -105,7 +105,7 @@
 				default: false
 			},
 			/**
-			 * Put VTextField on outlined mode,
+			 * Put VTextField in outlined mode,
 			 * default to append icon and adjust VMenu
 			 */
 			outlined: {
