@@ -39,7 +39,7 @@ describe('MaskValue', () => {
 	it('doesn\'t compute a mask if mask prop is false', () => {
 		const wrapper = createWrapper(false);
 
-		expect(wrapper.vm.maskValue).toBe(undefined);
+		expect(wrapper.vm.maskValue).toBeUndefined();
 	});
 
 	it('returns the mask without modification is mask prop is a string', () => {

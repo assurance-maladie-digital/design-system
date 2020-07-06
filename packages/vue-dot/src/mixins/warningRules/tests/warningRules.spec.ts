@@ -46,6 +46,6 @@ describe('WarningRules', () => {
 		wrapper.vm.validate('test');
 
 		// No error
-		expect(wrapper.vm.successMessages[0]).toBe(undefined);
+		expect(wrapper.vm.successMessages[0]).toBeUndefined();
 	});
 });
