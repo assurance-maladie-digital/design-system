@@ -3,14 +3,14 @@
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
 			<h4 class="title mb-2">
-				{{ sectionTitle }}
+				{{ computedTitle }}
 			</h4>
 		</slot>
 
 		<FileList
 			v-bind="options.fileList"
 			:files="fileList"
-			@delete-file="deleteFile"
+			@delete-file="resetFile"
 			@retry="retry"
 		/>
 
@@ -58,37 +58,26 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { FileListItem, SelectItem } from './types';
 
 	import { required } from '../../rules/required';
 
 	import { customizable } from '../../mixins/customizable';
 
-	import { EventsFileFired } from './mixins/eventsFileFired';
+	import { UploadWorkflowCore } from './mixins/uploadWorkflowCore';
 
 	import FileList from './FileList';
-	import { ErrorEvent } from '../FileUpload/types';
 
 	const Props = Vue.extend({
 		props: {
-			/** The v-model value (the list of files) */
-			value: {
-				type: Array as PropType<FileListItem[]>,
-				required: true
-			},
 			/** The main title */
 			sectionTitle: {
 				type: String,
-				default() {
-					const plural = this.value.length > 1;
-
-					return locales.title(plural);
-				}
+				default: undefined
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config), EventsFileFired);
+	const MixinsDeclaration = mixins(Props, customizable(config), UploadWorkflowCore);
 
 	/**
 	 * UploadWorkflow is a component that let the user select files
@@ -101,29 +90,6 @@
 		model: {
 			prop: 'value',
 			event: 'change'
-		},
-		watch: {
-			value: {
-				handler(): void {
-					// Clear fileList to avoid duplicates
-					this.fileList = [];
-
-					// Build fileList from value
-					this.value.forEach((propFile: FileListItem) => {
-						const file = propFile;
-
-						// If there is not state attribute
-						if (!file.state) {
-							// Initiate it
-							file.state = 'initial';
-						}
-
-						this.fileList.push(file);
-					});
-				},
-				immediate: true,
-				deep: true
-			}
 		}
 	})
 	export default class UploadWorkflow extends MixinsDeclaration {
@@ -135,48 +101,14 @@
 			required
 		];
 
-		/** If there is only one file in the list, we're in single mode */
-		get singleMode(): boolean {
-			return this.fileList.length === 1;
-		}
-
-		/** Get the list of items for the VSelect */
-		get selectItems(): SelectItem[] {
-			const items: SelectItem[] = [];
-
-			this.value.forEach((file: FileListItem) => {
-				items.push({
-					text: file.title,
-					value: file.id
-				});
-			});
-
-			return items;
-		}
-
-		/** Fired when a file has been selected */
-		fileSelected(): void {
-			// If in single mode
-			if (this.singleMode) {
-				// Set the select v-model to the first item
-				this.selectedItem = this.selectItems[0].value;
-				this.setFileInList();
+		get computedTitle(): string {
+			if (this.sectionTitle) {
+				return this.sectionTitle;
 			} else {
-				// Else, open dialog to let the user choose the type of the file
-				this.dialog = true;
+				const plural = this.value.length > 1;
+
+				return locales.title(plural);
 			}
-		}
-
-		/** Fired when a "wrong" file is selected */
-		uploadError(error: ErrorEvent): void {
-			this.error = true;
-			// Reset file (if previously selected)
-			this.uploadedFile = null;
-
-			this.fileSelected();
-
-			// Pass the default FileUpload error
-			this.$emit('error', error);
 		}
 
 		/** Fired when the "retry" button is clicked in FileList */
