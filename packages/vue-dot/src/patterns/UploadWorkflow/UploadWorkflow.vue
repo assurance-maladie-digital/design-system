@@ -11,7 +11,8 @@
 			v-bind="options.fileList"
 			:files="fileList"
 			@delete-file="resetFile"
-			@retry="retry"
+			@retry="showFileUpload"
+			@upload="showFileUpload"
 		/>
 
 		<FileUpload
@@ -53,7 +54,7 @@
 </template>
 
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -111,8 +112,8 @@
 			}
 		}
 
-		/** Fired when the "retry" button is clicked in FileList */
-		retry(id: string): void {
+		/** Prefill the select and click on FileUpload */
+		showFileUpload(id: string): void {
 			// Prefill the select
 			this.selectedItem = id;
 			this.$refs.fileUpload.retry();

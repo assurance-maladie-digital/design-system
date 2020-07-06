@@ -40,6 +40,19 @@
 				<VListItemAction v-bind="options.listItemAction">
 					<VLayout v-bind="options.layout">
 						<VBtn
+							v-if="file.state === 'initial'"
+							v-bind="options.uploadBtn"
+							@click="$emit('upload', file.id)"
+						>
+							<VIcon
+								v-bind="options.icon"
+								:color="iconColor"
+							>
+								{{ uploadIcon }}
+							</VIcon>
+						</VBtn>
+
+						<VBtn
 							v-if="file.state === 'error'"
 							v-bind="options.retryBtn"
 							@click="$emit('retry', file.id)"
@@ -105,6 +118,7 @@
 		mdiDelete,
 		mdiAlertCircle,
 		mdiCheckCircle,
+		mdiUpload,
 		mdiFile
 	} from '@mdi/js';
 
@@ -136,6 +150,7 @@
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
 		deleteIcon = mdiDelete;
+		uploadIcon = mdiUpload;
 
 		/** Returns the icon name & color depending on state */
 		getIconInfo(state: string): IconInfo {
