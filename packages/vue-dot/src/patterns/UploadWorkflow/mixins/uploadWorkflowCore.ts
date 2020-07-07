@@ -134,8 +134,6 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		// Reset file (if previously selected)
 		this.uploadedFile = null;
 
-		this.fileSelected();
-
 		// Pass the default FileUpload error
 		this.$emit('error', error);
 	}
