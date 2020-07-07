@@ -46,7 +46,7 @@ describe('updateFileModel', () => {
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
 		const fileListState = getFileList();
-		fileListState[0].state = 'example';
+		fileListState[0].state = 'success';
 
 		wrapper.vm.initFileList(fileListState);
 
