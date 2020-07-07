@@ -19,22 +19,18 @@ export function deepMapValues<T = any>(
 	mappedValues: MappedValues = {}
 ): MappedValues {
 	if (collection instanceof Array) {
-		collection.forEach(item => {
-			deepMapValues(item, key, mappedValues);
-		});
+		collection.forEach(item => deepMapValues(item, key, mappedValues });
 	} else if (typeof collection === 'object') {
 		Object.getOwnPropertyNames(collection).forEach(collectionKey => {
-			/** Check if the collectionKey equal the desired key
-			 *  Else, continue deep find
-			 */
+			// Check if the collectionKey equal the desired key
+			// else, continue deep find
 			if (
 				typeof collection[collectionKey] === 'object' &&
 				collection[collectionKey].hasOwnProperty(key)
 			) {
-				/** Assign the the desired key value to the current collectionKey only if it's not null */
+				// Assign the desired value to the current collectionKey if it's not null
 				if (collection[collectionKey][key]) {
-					mappedValues[collectionKey] =
-						collection[collectionKey][key];
+					mappedValues[collectionKey] = collection[collectionKey][key];
 				}
 			} else {
 				deepMapValues(

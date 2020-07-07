@@ -19,7 +19,7 @@ const BASE_OBJECT = {
 
 // Tests
 describe('deepMapValues', () => {
-	it('get the values into a new collection', () => {
+	it('returns the desired values', () => {
 		const newCollection = deepMapValues(BASE_OBJECT, 'value');
 
 		expect(newCollection).toEqual({
