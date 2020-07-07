@@ -2,7 +2,6 @@ import { FormValues } from './types';
 
 import { Form } from '../../components/FormBuilder/types';
 import { deepMapValues } from '../deepMapValues';
-import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
 
 /**
  * Return an array with field values
@@ -11,5 +10,5 @@ import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
  * @returns {FormValues} The form values
  */
 export function getFormValues(form: Form): FormValues {
-	return deepMapValues(deepCopy(form), 'value');
+	return deepMapValues(form, 'value');
 }
