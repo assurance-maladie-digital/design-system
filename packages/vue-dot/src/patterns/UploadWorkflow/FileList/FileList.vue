@@ -22,7 +22,10 @@
 					<!-- File to upload name -->
 					<VListItemTitle
 						v-bind="options.listItemTitle"
-						:class="getItemColor(file.state)"
+						:class="[
+							options.listItemTitle.class,
+							getItemColor(file.state)
+						]"
 					>
 						{{ file.title }}
 					</VListItemTitle>
