@@ -44,7 +44,7 @@ describe('GetThemeIcon', () => {
 
 		const wrapper = mount(testComponent, mountOptions) as Wrapper<GetThemeIcon>;
 
-		expect(wrapper.vm.getThemeIcon('')).toBe(undefined);
+		expect(wrapper.vm.getThemeIcon('')).toBeUndefined();
 	});
 
 	it('returns undefined if $vd doesn\'t exists', () => {
@@ -52,6 +52,6 @@ describe('GetThemeIcon', () => {
 
 		const wrapper = mount(testComponent) as Wrapper<GetThemeIcon>;
 
-		expect(wrapper.vm.getThemeIcon('test')).toBe(undefined);
+		expect(wrapper.vm.getThemeIcon('test')).toBeUndefined();
 	});
 });
