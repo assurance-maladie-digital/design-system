@@ -62,9 +62,9 @@
 
 		<VTextField
 			v-model="actionValue"
-			class="mt-4"
-			outlined
 			label="New value"
+			class="vd-form-input mt-4"
+			outlined
 		/>
 	</DocSection>
 </template>
