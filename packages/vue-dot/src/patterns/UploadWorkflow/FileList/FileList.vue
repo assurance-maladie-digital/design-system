@@ -30,6 +30,13 @@
 						{{ file.title }}
 					</VListItemTitle>
 
+					<VListItemSubtitle
+						v-if="file.optional"
+						v-bind="options.listItemSubtitle"
+					>
+						{{ optionalFileText }}
+					</VListItemSubtitle>
+
 					<!-- Uploaded file name -->
 					<VListItemSubtitle
 						v-if="file.name"
@@ -111,6 +118,8 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
+	import { locales } from './locales';
+
 	import { FileItem, IconInfo } from './types';
 
 	import { customizable } from '../../../mixins/customizable';
@@ -137,9 +146,15 @@
 				type: Array as PropType<FileItem[]>,
 				required: true
 			},
+			/** Hide the last divider of the list */
 			hideLastDivider: {
 				type: Boolean,
 				default: false
+			},
+			/** The text to display when a file is optional */
+			optionalFileText: {
+				type: String,
+				default: locales.optional
 			}
 		}
 	});

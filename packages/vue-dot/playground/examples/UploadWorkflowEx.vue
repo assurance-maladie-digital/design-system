@@ -28,7 +28,8 @@
 		files = [
 			{
 				id: 'rib',
-				title: 'RIB'
+				title: 'RIB',
+				optional: true
 			},
 			{
 				id: 'cni',

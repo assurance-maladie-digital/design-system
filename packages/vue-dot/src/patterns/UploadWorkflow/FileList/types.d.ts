@@ -5,6 +5,7 @@ export interface FileItem {
 	title: string;
 	state: FileState;
 	name?: string;
+	optional?: boolean;
 }
 
 export interface IconInfo {
