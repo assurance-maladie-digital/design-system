@@ -5,15 +5,18 @@
 			Native input
 		</h2>
 
-		<label>
-			<input
-				v-model.lazy="text"
-				v-debounce="1000"
-
-				placeholder="Type here"
-				class="vd-simple-input"
-			>
+		<label for="debounce-simple-input">
+			Type below
 		</label>
+
+		<input
+			id="debounce-simple-input"
+
+			v-model.lazy="text"
+			v-debounce="1000"
+
+			class="vd-simple-input"
+		>
 
 		<h2 class="subtitle-1 mt-4 font-weight-bold">
 			VTextField
@@ -49,7 +52,6 @@
 <style lang="scss" scoped>
 	.vd-simple-input {
 		outline: 0;
-		width: 100%;
 		padding: 5px 0;
 		color: inherit;
 		font-size: 1rem;
