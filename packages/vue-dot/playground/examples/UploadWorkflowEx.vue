@@ -2,7 +2,10 @@
 	<DocSection
 		title="UploadWorkflow"
 	>
-		<UploadWorkflow v-model="files" />
+		<UploadWorkflow
+			v-model="files"
+			width="512"
+		/>
 
 		<VBtn
 			class="mt-4"
@@ -14,6 +17,7 @@
 
 		<UploadWorkflow
 			v-model="file"
+			width="512"
 			class="mt-12"
 		/>
 	</DocSection>

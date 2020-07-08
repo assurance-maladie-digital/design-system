@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-upload-workflow">
+	<div
+		:style="widthStyles"
+		class="vd-upload-workflow"
+	>
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
 			<h4 class="title mb-2">
@@ -63,6 +66,7 @@
 	import { required } from '../../rules/required';
 
 	import { customizable } from '../../mixins/customizable';
+	import { Widthable } from '../../mixins/widthable';
 
 	import { UploadWorkflowCore } from './mixins/uploadWorkflowCore';
 
@@ -78,7 +82,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config), UploadWorkflowCore);
+	const MixinsDeclaration = mixins(Props, customizable(config), UploadWorkflowCore, Widthable);
 
 	/**
 	 * UploadWorkflow is a component that let the user select files
@@ -120,12 +124,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.vd-upload-workflow {
-		// Take all available space
-		width: 100%;
-		// But with a maximum width
-		max-width: 550px;
-	}
-</style>

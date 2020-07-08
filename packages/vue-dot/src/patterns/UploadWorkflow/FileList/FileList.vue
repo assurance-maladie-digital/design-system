@@ -1,6 +1,7 @@
 <template>
 	<VList
 		v-bind="options.list"
+		:style="widthStyles"
 		class="vd-file-list"
 	>
 		<template v-for="(file, index) in files">
@@ -123,6 +124,7 @@
 	import { FileItem, IconInfo } from './types';
 
 	import { customizable } from '../../../mixins/customizable';
+	import { Widthable } from '../../../mixins/widthable';
 
 	import {
 		mdiRefresh,
@@ -159,7 +161,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	/** FileList is a component that displays a list of files */
 	@Component
@@ -227,9 +229,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.vd-file-list {
-		width: 100%;
-	}
-</style>
