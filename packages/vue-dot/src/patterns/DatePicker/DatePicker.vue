@@ -272,6 +272,11 @@
 					display: none;
 				}
 			}
+
+			// Fix https://github.com/vuetifyjs/vuetify/issues/11809
+			.v-picker--date {
+				display: flex;
+			}
 		}
 	}
 
