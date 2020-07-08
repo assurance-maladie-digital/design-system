@@ -52,6 +52,7 @@
 						<VBtn
 							v-if="file.state === 'initial'"
 							v-bind="options.uploadBtn"
+							:aria-label="locales.uploadFile"
 							@click="$emit('upload', file.id)"
 						>
 							<VIcon
@@ -65,6 +66,7 @@
 						<VBtn
 							v-if="file.state === 'error'"
 							v-bind="options.retryBtn"
+							:aria-label="locales.uploadFile"
 							@click="$emit('retry', file.id)"
 						>
 							<VIcon
@@ -78,6 +80,7 @@
 						<VBtn
 							v-if="showViewBtn && file.state === 'success'"
 							v-bind="options.viewFileBtn"
+							:aria-label="locales.viewFile"
 							@click="$emit('view-file', file)"
 						>
 							<VIcon
@@ -164,6 +167,9 @@
 	/** FileList is a component that displays a list of files */
 	@Component
 	export default class FileList extends MixinsDeclaration {
+		// Locales
+		locales = locales;
+
 		// Icons
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
