@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { PickerDate } from '../mixins/pickerDate';
+import { PickerDate } from '../pickerDate';
 
 interface TestComponent extends Vue {
 	pickerDate: string;
