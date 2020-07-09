@@ -1,11 +1,11 @@
 import Component, { mixins } from 'vue-class-component';
 
-import { FileValidator } from './fileValidator';
+import { FileValidation } from './fileValidation';
 
 import { Refs } from '../../../types';
 import { HTMLInputEvent } from '../types';
 
-const MixinsDeclaration = mixins(FileValidator);
+const MixinsDeclaration = mixins(FileValidation);
 
 @Component
 export class EventsMapping extends MixinsDeclaration {
@@ -96,17 +96,12 @@ export class EventsMapping extends MixinsDeclaration {
 		this.emitChangeEvent();
 	}
 
-	/** Reset self state to initial */
+	/** Reset state to initial */
 	selfReset(): void {
 		this.dragover = false;
 		this.error = false;
 
 		// Clear previous files
 		this.files = [];
-	}
-
-	/** Expose retry function which clicks on the input */
-	public retry(): void {
-		this.$refs.vdInputEl.click();
 	}
 }

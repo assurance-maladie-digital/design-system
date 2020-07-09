@@ -99,8 +99,8 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { locales } from './locales';
 	import { config } from './config';
+	import { locales } from './locales';
 
 	import { EventsMapping } from './mixins/eventsMapping';
 
@@ -114,11 +114,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Allow multiple files */
-			multiple: {
-				type: Boolean,
-				default: false
-			},
 			/** The v-model value */
 			value: {
 				// File is not a valid prop type, use
@@ -138,6 +133,11 @@
 					return isValid;
 				}
 			},
+			/** Allow multiple files */
+			multiple: {
+				type: Boolean,
+				default: false
+			},
 			/** Disable v-ripple on the component */
 			noRipple: {
 				type: Boolean,
@@ -147,17 +147,6 @@
 			disabled: {
 				type: Boolean,
 				default: false
-			},
-			/**
-			 * The accept attribute of <input type="file">
-			 * See https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
-			 *
-			 * This property is not required, by default it will be computed
-			 * based on allowedExtensions
-			 */
-			accept: {
-				type: String,
-				default: undefined
 			}
 		}
 	});
@@ -208,21 +197,9 @@
 			return this.allowedExtensions.join(', ').toUpperCase();
 		}
 
-		/** Compute accept */
-		get computedAccept(): string {
-			if (this.accept) {
-				return this.accept;
-			}
-
-			const accept: string[] = [];
-
-			// Calc the accept="" string from the allowed extensions
-			this.allowedExtensions.forEach((type: string) => {
-				accept.push(`.${type}`);
-			});
-
-			// The result, eg. ".pdf,.jpeg,.jpg,.png"
-			return accept.join(',');
+		/** Expose retry function which clicks on the input */
+		public retry(): void {
+			this.$refs.vdInputEl.click();
 		}
 	}
 </script>
