@@ -9,13 +9,15 @@ exports[`FileList renders correctly 1`] = `
       </vicon-stub>
     </vlistitemavatar-stub>
     <vlistitemcontent-stub>
-      <vlistitemtitle-stub class="">
+      <vlistitemtitle-stub class=" 0">
         test
       </vlistitemtitle-stub>
+      <!---->
       <!---->
     </vlistitemcontent-stub>
     <vlistitemaction-stub>
       <vlayout-stub tag="div" justifyend="true">
+        <!---->
         <!---->
         <!---->
         <vbtn-stub tag="button" activeclass="" icon="true" type="button">

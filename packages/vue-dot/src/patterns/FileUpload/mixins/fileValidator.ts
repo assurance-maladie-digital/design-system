@@ -62,7 +62,7 @@ export class FileValidator extends MixinsDeclaration {
 			return false;
 		}
 
-		const fileExt = getFileExtension(file.name);
+		const fileExt = getFileExtension(file.name).toLowerCase();
 
 		// Extension
 		if (!this.allowedExtensions.includes(fileExt)) {

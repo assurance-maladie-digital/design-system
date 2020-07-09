@@ -31,11 +31,6 @@
 				type: Boolean,
 				default: false
 			},
-			/** Remove shadow from VCard */
-			noShadow: {
-				type: Boolean,
-				default: false
-			},
 			/**
 			 * Customize the class binded to the VCard
 			 * 'page-card' will be applied regardless of this property.
@@ -74,10 +69,7 @@
 		/** The CSS classes to apply to the VCard */
 		get computedClass(): (string | IndexedObject<boolean>)[] {
 			return [
-				{
-					'vd-min-height': this.minHeight,
-					'vd-no-shadow': this.noShadow
-				},
+				{ 'vd-min-height': this.minHeight },
 				this.cardPadding,
 				this.cardClass
 			];
@@ -109,10 +101,6 @@
 			0 5px 4px 0 rgba(0, 0, 0, .1),
 			0 1px 3px 0 rgba(0, 0, 0, .1),
 			0 -1px 10px 0 rgba(0, 0, 0, .1);
-
-		&.vd-no-shadow {
-			box-shadow: none;
-		}
 
 		&.vd-min-height {
 			min-height: $min-height;

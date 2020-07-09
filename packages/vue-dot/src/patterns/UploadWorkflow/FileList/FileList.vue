@@ -22,10 +22,20 @@
 					<!-- File to upload name -->
 					<VListItemTitle
 						v-bind="options.listItemTitle"
-						:class="getItemColor(file.state)"
+						:class="[
+							options.listItemTitle.class,
+							getItemColor(file.state)
+						]"
 					>
 						{{ file.title }}
 					</VListItemTitle>
+
+					<VListItemSubtitle
+						v-if="file.optional"
+						v-bind="options.listItemSubtitle"
+					>
+						{{ optionalFileText }}
+					</VListItemSubtitle>
 
 					<!-- Uploaded file name -->
 					<VListItemSubtitle
@@ -39,6 +49,19 @@
 				<!-- Action buttons -->
 				<VListItemAction v-bind="options.listItemAction">
 					<VLayout v-bind="options.layout">
+						<VBtn
+							v-if="file.state === 'initial'"
+							v-bind="options.uploadBtn"
+							@click="$emit('upload', file.id)"
+						>
+							<VIcon
+								v-bind="options.icon"
+								:color="iconColor"
+							>
+								{{ uploadIcon }}
+							</VIcon>
+						</VBtn>
+
 						<VBtn
 							v-if="file.state === 'error'"
 							v-bind="options.retryBtn"
@@ -95,6 +118,8 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
+	import { locales } from './locales';
+
 	import { FileItem, IconInfo } from './types';
 
 	import { customizable } from '../../../mixins/customizable';
@@ -105,6 +130,7 @@
 		mdiDelete,
 		mdiAlertCircle,
 		mdiCheckCircle,
+		mdiUpload,
 		mdiFile
 	} from '@mdi/js';
 
@@ -120,9 +146,15 @@
 				type: Array as PropType<FileItem[]>,
 				required: true
 			},
+			/** Hide the last divider of the list */
 			hideLastDivider: {
 				type: Boolean,
 				default: false
+			},
+			/** The text to display when a file is optional */
+			optionalFileText: {
+				type: String,
+				default: locales.optional
 			}
 		}
 	});
@@ -136,6 +168,7 @@
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
 		deleteIcon = mdiDelete;
+		uploadIcon = mdiUpload;
 
 		/** Returns the icon name & color depending on state */
 		getIconInfo(state: string): IconInfo {
