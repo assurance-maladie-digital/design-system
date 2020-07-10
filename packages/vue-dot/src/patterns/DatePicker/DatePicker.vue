@@ -93,7 +93,7 @@
 
 	import { mdiCalendar } from '@mdi/js';
 
-	import deepmerge from 'deepmerge';
+	import deepMerge from 'deepmerge';
 
 	const IProps = Vue.extend({
 		props: {
@@ -182,12 +182,12 @@
 		}
 
 		get menuOptions(): Options {
-			const position = {
+			const position: Options = {
 				nudgeBottom: this.outlined ? 56 : 45,
 				nudgeRight: this.outlined ? 0 : 45
 			};
 
-			return deepmerge(position, this.options.menu) as Options;
+			return deepMerge<Options>(position, this.options.menu);
 		}
 
 		/**
@@ -200,7 +200,7 @@
 			// Merge textField options (custom or default) with
 			// directly binded attributes (theses attributes
 			// will override 'options.textField')
-			return deepmerge(this.options.textField || [], this.$attrs) as Options;
+			return deepMerge<Options>(this.options.textField, this.$attrs);
 		}
 
 		/**

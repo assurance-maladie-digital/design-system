@@ -1,7 +1,7 @@
 import Vue, { PropType } from 'vue';
 import { ExtendedVue } from 'vue/types/vue';
 
-import merge from 'deepmerge';
+import deepMerge from 'deepmerge';
 
 import { IndexedObject } from '../../types';
 
@@ -40,10 +40,7 @@ export function customizable(defaultOptions: Options): Customizable {
 				if (this.vuetifyOptions) {
 					// Merge default options with props
 					// Default first to allow override
-					return merge.all([
-						defaultOptions,
-						this.vuetifyOptions
-					]) as Options;
+					return deepMerge<Options>(defaultOptions, this.vuetifyOptions);
 				}
 
 				// Else return default options
@@ -53,5 +50,5 @@ export function customizable(defaultOptions: Options): Customizable {
 	});
 }
 
-type OptionsObj = IndexedObject<unknown>;
-export type Options = IndexedObject<OptionsObj>;
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export type Options = IndexedObject<any>;

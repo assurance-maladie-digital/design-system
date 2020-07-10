@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import { customizable, Options } from '../';
-import deepmerge from 'deepmerge';
+import deepMerge from 'deepmerge';
 
 interface TestComponent extends Vue {
 	vuetifyOptions: Options;
@@ -42,7 +42,7 @@ describe('customizable', () => {
 			}
 		}) as Wrapper<TestComponent>;
 
-		const merged = deepmerge(DEFAULT_OPTIONS, CUSTOM_OPTIONS);
+		const merged = deepMerge<Options>(DEFAULT_OPTIONS, CUSTOM_OPTIONS);
 
 		expect(wrapper.vm.options).toStrictEqual(merged);
 	});
