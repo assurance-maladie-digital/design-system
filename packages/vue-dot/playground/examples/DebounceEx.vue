@@ -15,7 +15,7 @@
 			v-model.lazy="text"
 			v-debounce="1000"
 
-			class="vd-simple-input"
+			class="vd-simple-input vd-form-input"
 		>
 
 		<h2 class="subtitle-1 mt-4 font-weight-bold">
@@ -27,7 +27,7 @@
 			:value="text"
 
 			label="Type here"
-			class="no-flex"
+			class="vd-form-input"
 		/>
 
 		<p class="mb-0 mt-2">

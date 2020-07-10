@@ -7,6 +7,7 @@
 		<FileUpload
 			ref="fileUpload"
 			v-model="file"
+			width="512"
 			@error="setError"
 			@change="error = null; success = true"
 		/>
@@ -56,6 +57,7 @@
 				'GB',
 				'TB'
 			]"
+			width="512"
 		>
 			<template #action-text="{ multiple }">
 				Place your file{{ multiple ? 's' : '' }} here
@@ -78,7 +80,10 @@
 			Custom content & styles
 		</h2>
 
-		<FileUpload class="custom accent elevation-3">
+		<FileUpload
+			width="512"
+			class="custom accent elevation-3"
+		>
 			<template #placeholder>
 				<VLayout
 					tag="span"

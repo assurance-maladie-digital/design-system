@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Widthable computes the default styles 1`] = `
+Object {
+  "width": "100%",
+}
+`;
+
+exports[`Widthable computes the styles when max-width is defined 1`] = `
+Object {
+  "maxWidth": "512px",
+  "width": "100%",
+}
+`;
+
+exports[`Widthable computes the styles when min-width is defined 1`] = `
+Object {
+  "minWidth": "512px",
+  "width": "100%",
+}
+`;
+
+exports[`Widthable computes the styles when width is null 1`] = `Object {}`;

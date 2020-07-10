@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-sub-header secondary white--text py-6 px-8">
+	<div
+		:style="widthStyles"
+		class="vd-sub-header secondary white--text py-6 px-8"
+	>
 		<slot name="back-btn">
 			<VFadeTransition
 				v-if="!hideBackBtn"
@@ -117,6 +120,7 @@
 	import { IDataListAction, DataListsItem } from './types';
 
 	import { customizable } from '../../mixins/customizable';
+	import { Widthable } from '../../mixins/widthable';
 
 	import DataList from '../../elements/DataList';
 
@@ -162,7 +166,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	/**
 	 * SubHeader is a component that displays
@@ -195,7 +199,6 @@
 
 <style lang="scss" scoped>
 	.vd-sub-header {
-		width: 100%;
 		overflow-x: auto;
 
 		::v-deep {
