@@ -24,6 +24,7 @@
 					<VBtn
 						v-if="!noPrependIcon && !showAppendIcon"
 						v-bind="options.btn"
+						:aria-label="locales.openCalendar"
 						@click="menu = true"
 					>
 						<slot name="prepend-icon">
@@ -38,6 +39,7 @@
 					<VBtn
 						v-if="showAppendIcon"
 						v-bind="options.btn"
+						:aria-label="locales.openCalendar"
 						@click="menu = true"
 					>
 						<slot name="append-icon">
@@ -76,6 +78,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
+	import { locales } from './locales';
 	import { DatePickerRefs } from './types';
 
 	import { customizable, Options, Customizable } from '../../mixins/customizable';
@@ -165,6 +168,9 @@
 		}
 	})
 	export default class DatePicker extends MixinsDeclaration {
+		// Locales
+		locales = locales;
+
 		// Icon
 		calendarIcon = mdiCalendar;
 
