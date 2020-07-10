@@ -157,7 +157,7 @@
 			/** Maximum size in bytes per file */
 			fileSizeMax: {
 				type: Number,
-				default: 4096 * 1024 // Default 4MB
+				default: 10485760 // Default 10MB
 			},
 			/** The size units used in the template for i18n */
 			fileSizeUnits: {
