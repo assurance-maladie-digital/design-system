@@ -11,7 +11,7 @@
 				v-debounce="1000"
 
 				placeholder="Type here"
-				class="vd-simple-input"
+				class="vd-form-input vd-simple-input"
 			>
 		</label>
 
@@ -24,7 +24,7 @@
 			:value="text"
 
 			label="Type here"
-			class="no-flex"
+			class="vd-form-input"
 		/>
 
 		<p class="mb-0 mt-2">
@@ -49,7 +49,6 @@
 <style lang="scss" scoped>
 	.vd-simple-input {
 		outline: 0;
-		width: 100%;
 		padding: 5px 0;
 		color: inherit;
 		font-size: 1rem;

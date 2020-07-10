@@ -7,6 +7,7 @@
 		<VTextField
 			:rules="textFieldRules"
 			label="Required field"
+			class="vd-form-input"
 			outlined
 		/>
 
@@ -17,6 +18,7 @@
 		<VTextarea
 			:rules="textareaRules"
 			label="Required field"
+			class="vd-form-input"
 			outlined
 			rows="1"
 		/>
@@ -28,6 +30,7 @@
 		<VTextarea
 			:rules="lengthRule"
 			label="Length field"
+			class="vd-form-input"
 			outlined
 			rows="1"
 		/>
@@ -41,6 +44,7 @@
 			:rules="selectRules"
 			:items="data"
 			label="Select something"
+			class="vd-form-input"
 			outlined
 			multiple
 		/>

@@ -6,6 +6,7 @@
 
 		<DatePicker
 			v-model="date"
+			text-field-class="vd-form-input"
 			:rules="validRules"
 		/>
 
@@ -23,6 +24,7 @@
 			label="Birthdate"
 			date-format="DD-MM-YYYY"
 			hint="DD-MM-YYYY Format"
+			text-field-class="vd-form-input"
 			birthdate
 			outlined
 		>
@@ -60,6 +62,7 @@
 			}"
 			date-format="DD-MM-YYYY"
 			date-format-return="DD/MM/YYYY"
+			text-field-class="vd-form-input"
 			append-icon
 			birthdate
 		>
@@ -86,6 +89,7 @@
 		</h2>
 
 		<DatePicker
+			text-field-class="vd-form-input"
 			show-week-ends
 			append-icon
 			clearable
@@ -101,7 +105,7 @@
 			date-format="YYYY-MM-DD"
 			date-format-return="YYYY-MM-DD"
 			hint="YYYY-MM-DD Format"
-			text-field-class="mb-4"
+			text-field-class="vd-form-input mb-4"
 			label="Start Date"
 			append-icon
 			outlined
@@ -110,6 +114,7 @@
 		<DatePicker
 			show-week-ends
 			:start-date="startDate"
+			text-field-class="vd-form-input"
 			text-field-activator
 			append-icon
 			outlined
