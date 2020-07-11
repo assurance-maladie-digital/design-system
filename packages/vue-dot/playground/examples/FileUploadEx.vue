@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="FileUpload">
-		<h2 class="subtitle-1 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-2 font-weight-bold">
 			Default with event handlers
 		</h2>
 
@@ -45,7 +45,7 @@
 			Aucun fichier sélectionné
 		</p>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Translated
 		</h2>
 
@@ -76,7 +76,7 @@
 			</template>
 		</FileUpload>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Custom content & styles
 		</h2>
 

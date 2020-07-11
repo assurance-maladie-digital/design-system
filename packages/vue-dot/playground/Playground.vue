@@ -9,7 +9,7 @@
 			color="primary"
 			class="vd-playground-app-bar px-4"
 		>
-			<h1 class="title">
+			<h1 class="text-h6">
 				VueDot
 			</h1>
 
@@ -26,10 +26,10 @@
 			</VBtn>
 		</VAppBar>
 
-		<VContent>
+		<VMain>
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
-				<h2 class="display-1 mb-12 font-weight-bold">
+				<h2 class="text-h4 mb-12 font-weight-bold">
 					Playground
 				</h2>
 
@@ -62,7 +62,7 @@
 
 				<DialogBoxEx />
 			</PageCard>
-		</VContent>
+		</VMain>
 
 		<VFooter
 			:color="dark ? 'grey darken-3' : 'secondary'"

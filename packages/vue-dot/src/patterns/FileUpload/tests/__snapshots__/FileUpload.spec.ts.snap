@@ -9,7 +9,7 @@ exports[`FileUpload renders correctly 1`] = `
 					Ou
 				</span> <span class="file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 					Choisir un fichier
-				</span> <span class="mt-4 body-2 font-weight-regular grey--text text--darken-1">
+				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text text--darken-1">
 					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
 `;

@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="DatePicker">
-		<h2 class="subtitle-1 font-weight-bold">
+		<h2 class="text-subtitle-1 font-weight-bold">
 			Default with date validation
 		</h2>
 
@@ -14,7 +14,7 @@
 			{{ date }}
 		</p>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Custom
 		</h2>
 
@@ -35,7 +35,7 @@
 			</template>
 		</DatePicker>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Full Custom
 		</h2>
 
@@ -84,7 +84,7 @@
 			Set the date
 		</VBtn>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Show week-ends
 		</h2>
 
@@ -96,7 +96,7 @@
 			outlined
 		/>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Range
 		</h2>
 
