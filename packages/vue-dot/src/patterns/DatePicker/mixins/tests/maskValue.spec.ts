@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { MaskValue } from '../mixins/maskValue';
+import { MaskValue } from '../maskValue';
 
 interface TestComponent extends Vue {
 	mask: string | boolean;

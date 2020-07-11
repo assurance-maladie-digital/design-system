@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FileList renders correctly 1`] = `
-<vlist-stub tag="div" tile="true" class="vd-file-list">
+<vlist-stub tag="div" tile="true" class="vd-file-list" style="width: 100%;">
   <vlistitem-stub activeclass="" tag="div">
     <vlistitemavatar-stub size="40">
       <vicon-stub color="success" size="24">
@@ -12,6 +12,7 @@ exports[`FileList renders correctly 1`] = `
       <vlistitemtitle-stub class=" 0">
         test
       </vlistitemtitle-stub>
+      <!---->
       <!---->
     </vlistitemcontent-stub>
     <vlistitemaction-stub>

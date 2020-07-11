@@ -1,6 +1,7 @@
 <template>
 	<VList
 		v-bind="options.list"
+		:style="widthStyles"
 		class="vd-file-list"
 	>
 		<template v-for="(file, index) in files">
@@ -30,6 +31,13 @@
 						{{ file.title }}
 					</VListItemTitle>
 
+					<VListItemSubtitle
+						v-if="file.optional"
+						v-bind="options.listItemSubtitle"
+					>
+						{{ optionalFileText }}
+					</VListItemSubtitle>
+
 					<!-- Uploaded file name -->
 					<VListItemSubtitle
 						v-if="file.name"
@@ -45,6 +53,7 @@
 						<VBtn
 							v-if="file.state === 'initial'"
 							v-bind="options.uploadBtn"
+							:aria-label="locales.uploadFile"
 							@click="$emit('upload', file.id)"
 						>
 							<VIcon
@@ -58,6 +67,7 @@
 						<VBtn
 							v-if="file.state === 'error'"
 							v-bind="options.retryBtn"
+							:aria-label="locales.uploadFile"
 							@click="$emit('retry', file.id)"
 						>
 							<VIcon
@@ -71,6 +81,7 @@
 						<VBtn
 							v-if="showViewBtn && file.state === 'success'"
 							v-bind="options.viewFileBtn"
+							:aria-label="locales.viewFile"
 							@click="$emit('view-file', file)"
 						>
 							<VIcon
@@ -111,9 +122,12 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
+	import { locales } from './locales';
+
 	import { FileItem, IconInfo } from './types';
 
 	import { customizable } from '../../../mixins/customizable';
+	import { Widthable } from '../../../mixins/widthable';
 
 	import {
 		mdiRefresh,
@@ -137,18 +151,27 @@
 				type: Array as PropType<FileItem[]>,
 				required: true
 			},
+			/** Hide the last divider of the list */
 			hideLastDivider: {
 				type: Boolean,
 				default: false
+			},
+			/** The text to display when a file is optional */
+			optionalFileText: {
+				type: String,
+				default: locales.optional
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	/** FileList is a component that displays a list of files */
 	@Component
 	export default class FileList extends MixinsDeclaration {
+		// Locales
+		locales = locales;
+
 		// Icons
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
@@ -212,9 +235,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.vd-file-list {
-		width: 100%;
-	}
-</style>

@@ -17,7 +17,7 @@ export function minLengthFn(min: number, errorMessages: ErrorMessages<number> = 
 			return true;
 		}
 
-		return value.length > min || ruleMessage(errorMessages, 'default', [min]);
+		return value.length >= min || ruleMessage(errorMessages, 'default', [min]);
 	};
 }
 
