@@ -74,6 +74,11 @@
 		}
 	})
 	export default class NotificationBar extends MixinsDeclaration {
+		// We need to declare these types since there is
+		// no Vuex instance when building the library
+		rmNotif!: () => void;
+		notification!: NotificationObj | null;
+
 		snackbarColor: string | null = null;
 
 		created() {
