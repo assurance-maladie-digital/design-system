@@ -82,7 +82,7 @@
 
 				<span
 					:class="colors.info"
-					class="mt-4 body-2 font-weight-regular"
+					class="mt-4 text-body-2 font-weight-regular"
 				>
 					<slot
 						name="info-text"

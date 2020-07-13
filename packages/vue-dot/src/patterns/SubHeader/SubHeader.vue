@@ -51,7 +51,7 @@
 
 						<h2
 							v-else-if="titleText"
-							class="headline font-weight-bold"
+							class="text-h5 font-weight-bold"
 						>
 							{{ titleText }}
 						</h2>
@@ -73,7 +73,7 @@
 
 						<p
 							v-else
-							class="title font-weight-bold mt-1 mb-0"
+							class="text-h6 font-weight-bold mt-1 mb-0"
 							:style="{ color: fadeWhite }"
 						>
 							{{ subTitleText }}
@@ -101,7 +101,7 @@
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
 							item-width="auto"
-							title-class="subtitle-1 font-weight-bold mb-2 mt-2"
+							title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
 							@click:item-action="dataListItemAction(index, $event)"
 						/>
 					</VLayout>

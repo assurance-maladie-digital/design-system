@@ -10,7 +10,7 @@
 				<slot name="title">
 					<h2
 						v-if="title"
-						class="title font-weight-bold"
+						class="text-h6 font-weight-bold"
 					>
 						{{ title }}
 					</h2>

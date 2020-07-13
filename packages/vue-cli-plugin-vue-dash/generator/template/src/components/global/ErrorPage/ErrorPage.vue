@@ -12,9 +12,9 @@
 
 		<h2
 			:class="{
-				'display-1': !code,
+				'text-h4': !code,
 				'mb-4': !code,
-				'title': code
+				'text-h6': code
 			}"
 			class="mb-2 font-weight-bold"
 		>

@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="Rules">
-		<h2 class="subtitle-1 mb-4 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-4 font-weight-bold">
 			Required with custom message
 		</h2>
 
@@ -11,7 +11,7 @@
 			outlined
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Min length & required with default messages
 		</h2>
 
@@ -23,7 +23,7 @@
 			rows="1"
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Max & min length with custom messages
 		</h2>
 
@@ -35,7 +35,7 @@
 			rows="1"
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Special case for required (array)
 		</h2>
 
