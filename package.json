@@ -39,7 +39,6 @@
 		"vue-template-compiler": "2.6.11",
 		"vuetify": "2.3.4",
 		"vuex": "3.5.1",
-		"webpack-node-externals": "1.7.2",
 		"webpack": "4.43.0"
 	},
 	"gitHooks": {
