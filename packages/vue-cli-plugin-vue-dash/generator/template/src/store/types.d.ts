@@ -11,5 +11,5 @@ export interface VuexBindings {
 	// modules/notification
 	notify: (notification: NotificationObj) => void;
 	rmNotif: () => void;
-	notification: NotificationObj;
+	notification: NotificationObj | null;
 }

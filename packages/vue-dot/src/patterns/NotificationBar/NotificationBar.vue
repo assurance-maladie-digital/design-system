@@ -1,16 +1,13 @@
 <template>
 	<VSnackbar
-		v-if="notification"
 		v-bind="options.snackBar"
-		:color="options.snackBar.color || notification.type"
+		:value="Boolean(notification)"
+		:color="snackbarColor"
 	>
-		<!--
-			Notification body
-
-			align-center will make sure that the content
-			is always vertically centered (two lines, etc)
-		-->
-		<VLayout align-center>
+		<div
+			v-if="notification"
+			class="d-flex align-center"
+		>
 			<VIcon
 				v-bind="options.icon"
 				class="vd-notification-icon"
@@ -19,15 +16,19 @@
 			</VIcon>
 
 			{{ notification.message }}
-		</VLayout>
+		</div>
 
-		<!-- Close button -->
-		<VBtn
-			v-bind="options.btn"
-			@click="rmNotif"
-		>
-			{{ closeText }}
-		</VBtn>
+		<template #action="{ attrs }">
+			<VBtn
+				v-bind="{
+					...attrs,
+					...options.btn
+				}"
+				@click="rmNotif"
+			>
+				{{ closeText }}
+			</VBtn>
+		</template>
 	</VSnackbar>
 </template>
 
@@ -56,21 +57,24 @@
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	/**
-	 * NotificationBar is a component that displays a notification using a Snackbar
+	 * NotificationBar is a component that displays
+	 * a notification using a Snackbar
 	 */
-	@Component({
-		// Vuex bindings
-		computed: mapState('notification', [
-			'notification'
-		]),
-		methods: mapActions('notification', [
-			'rmNotif'
-		])
+	@Component<NotificationBar>({
+		computed: mapState('notification', ['notification']),
+		methods: mapActions('notification', ['rmNotif']),
+		watch: {
+			notification() {
+				// Compute snackbar color only when it's being displayed
+				// to avoid seeing the default color on hide transition
+				if (this.notification) {
+					this.snackbarColor = this.options.snackBar.color as string || this.notification.type;
+				}
+			}
+		}
 	})
 	export default class NotificationBar extends MixinsDeclaration {
-		// Vuex bindings type declaration
-		notification!: NotificationObj;
-		rmNotif!: () => void;
+		snackbarColor: string | null = null;
 
 		created() {
 			// Remove notification if present when the
@@ -88,11 +92,8 @@
 </script>
 
 <style lang="scss" scoped>
-	$size: 24px;
-
-	// Fix size of the icon to avoid reflow at first render
 	.vd-notification-icon {
-		width: $size;
-		height: $size;
+		// Use min-width to avoid shrinking with flexbox
+		min-width: 24px;
 	}
 </style>
