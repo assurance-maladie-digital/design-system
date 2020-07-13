@@ -10,7 +10,7 @@
 
 		<NotificationBar />
 
-		<VContent role="main">
+		<VMain>
 			<!-- Transition between routes -->
 			<transition
 				name="fade"
@@ -19,7 +19,7 @@
 				<!-- Load the component defined in the router for the current route -->
 				<RouterView />
 			</transition>
-		</VContent>
+		</VMain>
 
 		<AppFooter v-if="!maintenance" />
 	</VApp>

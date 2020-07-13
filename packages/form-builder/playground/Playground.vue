@@ -7,7 +7,7 @@
 			color="primary"
 			class="vd-playground-app-bar px-4"
 		>
-			<h1 class="title">
+			<h1 class="text-h6">
 				FormBuilder Playground
 			</h1>
 

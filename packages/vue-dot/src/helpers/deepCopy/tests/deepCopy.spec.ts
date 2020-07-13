@@ -33,11 +33,11 @@ describe('deepCopy', () => {
 
 		const copiedArray = deepCopy(arrayToCopy);
 
-		expect(copiedArray[0][0]).toBe(undefined);
+		expect(copiedArray[0][0]).toBeUndefined();
 
 		copiedArray[0][0] = 'test';
 
 		expect(copiedArray[0][0]).toBe('test');
-		expect(arrayToCopy[0][0]).toBe(undefined);
+		expect(arrayToCopy[0][0]).toBeUndefined();
 	});
 });

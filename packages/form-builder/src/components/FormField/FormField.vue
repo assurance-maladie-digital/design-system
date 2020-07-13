@@ -5,7 +5,7 @@
 	>
 		<h4
 			v-if="field.title"
-			class="body-1"
+			class="text-body-1"
 			:class="{ 'mb-2': !field.tooltip }"
 		>
 			<span>{{ field.title }}</span>
@@ -33,7 +33,7 @@
 		<p
 			v-if="field.description"
 			:class="descriptionColor"
-			class="body-2"
+			class="text-body-2"
 		>
 			{{ field.description }}
 		</p>

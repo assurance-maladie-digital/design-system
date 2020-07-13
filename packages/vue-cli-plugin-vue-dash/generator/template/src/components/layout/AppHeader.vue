@@ -31,7 +31,7 @@
 			/>
 
 			<slot name="title">
-				<VToolbarTitle class="title ml-4 ml-1">
+				<VToolbarTitle class="text-h6 ml-4 ml-1">
 					<% if (i18n) { %>{{ $t('components.layout.appHeader.title') }}<% } else { %>Projet <%= name %><% } %>
 				</VToolbarTitle>
 			</slot>

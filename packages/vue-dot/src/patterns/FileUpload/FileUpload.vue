@@ -13,6 +13,7 @@
 			},
 			colors.label
 		]"
+		:style="widthStyles"
 		@dragover.prevent="dragover = true"
 		@dragleave="dragover = false"
 		@drop.prevent="dropHandler"
@@ -81,7 +82,7 @@
 
 				<span
 					:class="colors.info"
-					class="mt-4 body-2 font-weight-regular"
+					class="mt-4 text-body-2 font-weight-regular"
 				>
 					<slot
 						name="info-text"
@@ -110,6 +111,8 @@
 	import { Refs, IndexedObject } from '../../types';
 	import { ErrorEvent } from './types';
 	import { ErrorCodes } from './errorCodes';
+
+	import { Widthable } from '../../mixins/widthable';
 
 	interface HTMLInputEvent extends Event {
 		target: HTMLInputElement & EventTarget;
@@ -154,7 +157,7 @@
 			/** Maximum size in bytes per file */
 			fileSizeMax: {
 				type: Number,
-				default: 4096 * 1024 // Default 4MB
+				default: 10485760 // Default 10MB
 			},
 			/** The size units used in the template for i18n */
 			fileSizeUnits: {
@@ -185,7 +188,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, Widthable);
 
 	/**
 	 * FileUpload is a component that enhance the default HTML
@@ -254,7 +257,7 @@
 				return false;
 			}
 
-			const fileExt = getFileExtension(file.name);
+			const fileExt = getFileExtension(file.name).toLowerCase();
 
 			// Extension
 			if (!this.allowedExtensions.includes(fileExt)) {
@@ -405,8 +408,6 @@
 
 <style lang="scss" scoped>
 	.file-upload {
-		width: 100%;
-		max-width: 550px;
 		cursor: pointer;
 		position: relative;
 		border: 1px dashed;

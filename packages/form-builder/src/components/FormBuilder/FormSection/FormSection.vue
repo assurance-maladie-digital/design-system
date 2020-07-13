@@ -5,7 +5,7 @@
 	>
 		<h3
 			v-if="sectionTitle"
-			class="title font-weight-bold mb-2"
+			class="text-h6 font-weight-bold mb-2"
 		>
 			{{ sectionTitle }}
 		</h3>

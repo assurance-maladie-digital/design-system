@@ -19,7 +19,7 @@
 				color="accent"
 				@click="toggleItem(item)"
 			>
-				<span class="body-1">
+				<span class="text-body-1">
 					{{ item.text }}
 				</span>
 

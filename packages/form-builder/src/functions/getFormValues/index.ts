@@ -11,7 +11,6 @@ import { Form } from '../../components/FormBuilder/types';
 export function getFormValues(form: Form): FormValues {
 	const formValues: FormValues = {};
 
-	// TODO: Use deepFind?
 	for (const [, section] of Object.entries(form)) {
 		for (const [fieldName, field] of Object.entries(section.questions)) {
 			if (field.value !== null) {

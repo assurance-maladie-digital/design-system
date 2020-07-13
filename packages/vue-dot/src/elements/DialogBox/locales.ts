@@ -1,4 +1,4 @@
 export const locales = {
-	cancel: 'Annuler',
-	confirm: 'Valider'
+	cancelBtn: 'Annuler',
+	confirmBtn: 'Valider'
 };

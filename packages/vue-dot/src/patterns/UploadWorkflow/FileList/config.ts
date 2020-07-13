@@ -2,6 +2,9 @@ export const config = {
 	listItemAvatarIcon: {
 		size: 24
 	},
+	listItemTitle: {
+		class: 'text-wrap'
+	},
 	layout: {
 		justifyEnd: true
 	},
@@ -9,6 +12,9 @@ export const config = {
 		inset: true
 	},
 	retryBtn: {
+		icon: true
+	},
+	uploadBtn: {
 		icon: true
 	},
 	viewFileBtn: {

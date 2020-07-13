@@ -172,6 +172,6 @@ describe('LocalStorageUtility', () => {
 		const localStorageUtility = new LocalStorageUtility();
 
 		expect(localStorageUtility.getItem('test')).toBe(null);
-		expect(localStorageUtility.setItem('test', 'test')).toBe(undefined);
+		expect(localStorageUtility.setItem('test', 'test')).toBeUndefined();
 	});
 });

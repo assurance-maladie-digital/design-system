@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateFileModel deletes the key if the value is undefined 1`] = `
+Object {
+  "file": Object {},
+  "id": "1",
+  "title": "UploadWorkflow",
+}
+`;
+
+exports[`updateFileModel doesn't overwrite existing state 1`] = `
+Array [
+  Object {
+    "file": Object {},
+    "id": "1",
+    "name": "avatar.png",
+    "state": "success",
+    "title": "UploadWorkflow",
+  },
+]
+`;
+
+exports[`updateFileModel inits the file list 1`] = `
+Array [
+  Object {
+    "file": Object {},
+    "id": "1",
+    "name": "avatar.png",
+    "state": "initial",
+    "title": "UploadWorkflow",
+  },
+]
+`;

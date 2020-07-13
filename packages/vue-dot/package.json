@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.0.0-alpha.52",
+	"version": "2.0.0-alpha.53",
 	"description": "Implementation of our Design System for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -63,10 +63,10 @@
 		"babel-loader": "8.1.0",
 		"core-js": "3.6.5",
 		"json-to-scss": "1.5.0",
-		"sass": "1.26.9",
-		"sass-loader": "8.0.2",
+		"sass": "1.26.10",
+		"sass-loader": "9.0.2",
 		"vue-cli-plugin-vuetify": "2.0.6",
-		"vuetify-loader": "1.5.0"
+		"vuetify-loader": "1.6.0"
 	},
 	"lint-staged": {
 		"*.{ts,vue}": [

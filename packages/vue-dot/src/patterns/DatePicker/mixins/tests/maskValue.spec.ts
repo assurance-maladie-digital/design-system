@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { MaskValue } from '../mixins/maskValue';
+import { MaskValue } from '../maskValue';
 
 interface TestComponent extends Vue {
 	mask: string | boolean;
@@ -39,7 +39,7 @@ describe('MaskValue', () => {
 	it('doesn\'t compute a mask if mask prop is false', () => {
 		const wrapper = createWrapper(false);
 
-		expect(wrapper.vm.maskValue).toBe(undefined);
+		expect(wrapper.vm.maskValue).toBeUndefined();
 	});
 
 	it('returns the mask without modification is mask prop is a string', () => {
