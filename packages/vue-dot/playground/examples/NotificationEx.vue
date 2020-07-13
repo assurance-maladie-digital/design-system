@@ -24,6 +24,8 @@
 		mdiAlert
 	} from '@mdi/js';
 
+	const notificationMessage = 'Test notification';
+
 	@Component({
 		// Vuex bindings
 		methods: mapActions('notification', [
@@ -39,22 +41,22 @@
 		notifications = [
 			{
 				type: 'success',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiCheck
 			},
 			{
 				type: 'error',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiAlertCircle
 			},
 			{
 				type: 'info',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiInformation
 			},
 			{
 				type: 'warning',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiAlert
 			}
 		];

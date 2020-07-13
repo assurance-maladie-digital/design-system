@@ -13,6 +13,6 @@ export const config = {
 		text: true,
 		small: true,
 		color: 'accent',
-		class: 'body-1 text-none pa-0'
+		class: 'text-body-1 text-none pa-0'
 	}
 };

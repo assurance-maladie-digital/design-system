@@ -1,7 +1,7 @@
 <template>
 	<!-- v-debounce -->
 	<DocSection title="v-debounce">
-		<h2 class="subtitle-1 mb-4 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-4 font-weight-bold">
 			Native input
 		</h2>
 
@@ -18,7 +18,7 @@
 			class="vd-simple-input vd-form-input"
 		>
 
-		<h2 class="subtitle-1 mt-4 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 font-weight-bold">
 			VTextField
 		</h2>
 

@@ -5,7 +5,7 @@
 	>
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
-			<h4 class="title mb-2">
+			<h4 class="text-h6 mb-2">
 				{{ computedTitle }}
 			</h4>
 		</slot>
