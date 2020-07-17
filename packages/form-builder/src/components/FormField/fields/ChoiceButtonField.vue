@@ -1,9 +1,9 @@
 <template>
 	<div class="vd-choice-button-field vd-form-input">
 		<VBtnToggle
-			v-bind="field.fieldOptions"
+			v-bind="options"
 			:value="choiceValue"
-			:multiple="field.multiple"
+			:multiple="multiple"
 			:class="{ 'column': !isInline }"
 			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"
 		>
@@ -39,7 +39,7 @@
 			class="px-3 mb-0 v-messages"
 			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
-			{{ field.fieldOptions.hint }}
+			{{ options.hint }}
 		</p>
 	</div>
 </template>
@@ -49,13 +49,12 @@
 
 	import { mdiCheck } from '@mdi/js';
 
-	import { ChoiceField } from '../mixins/choiceField';
-	import { FieldComponent } from '../mixins/fieldComponent';
+	import { ChoiceComponent } from '../mixins/choiceComponent';
 
 	import { FieldItem } from '../types';
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
-	const MixinsDeclaration = mixins(FieldComponent, ChoiceField);
+	const MixinsDeclaration = mixins(ChoiceComponent);
 
 	/** Form field to select a value from a list */
 	@Component
@@ -68,21 +67,24 @@
 		 * @returns {FieldItem[]} The filtered items
 		 */
 		get filteredItems(): FieldItem[] {
-			if (!Array.isArray(this.field.items)) {
+			if (!Array.isArray(this.items)) {
 				return [];
 			}
 
-			const filteredItems = this.field.items.filter((item) => Boolean(item.value));
+			const filteredItems = this.items.filter((item) => {
+					return item.value !== null && item.value !== undefined;
+				}
+			);
 
 			return filteredItems;
 		}
 
 		get isInline(): boolean | null {
-			return this.field?.fieldOptions?.inline as unknown as boolean | null;
+			return this.options && this.options.inline as unknown as boolean | null;
 		}
 
 		get showHint(): boolean {
-			return Boolean(this.field.fieldOptions?.hint);
+			return Boolean(this.options?.hint);
 		}
 
 		getIconStyle(item: FieldItem): IndexedObject {

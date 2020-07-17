@@ -1,0 +1,21 @@
+<template>
+	<VSelect
+		v-bind="options"
+		:value="choiceValue"
+		:items="items"
+		:multiple="multiple"
+		@change="emitChoiceUpdated($event)"
+	/>
+</template>
+
+<script lang="ts">
+	import Component, { mixins } from 'vue-class-component';
+
+	import { ChoiceComponent } from '../mixins/choiceComponent';
+
+	const MixinsDeclaration = mixins(ChoiceComponent);
+
+	/** Form field to select a value from a list */
+	@Component
+	export default class SelectField extends MixinsDeclaration {}
+</script>

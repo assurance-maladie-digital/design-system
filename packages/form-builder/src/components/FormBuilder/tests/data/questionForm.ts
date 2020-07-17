@@ -154,12 +154,13 @@ export const questionForm: Form = {
 				}
 			},
 			questionAutocomplete: {
-				type: 'autocomplete',
+				type: 'select',
 				title: 'Question avec complétion automatique',
 				description: 'Informations supplémentaires',
 				value: null,
 				items: defaultItems,
 				fieldOptions: {
+					type: 'autocomplete',
 					outlined: true,
 					chips: true,
 					menuProps: {
@@ -215,6 +216,92 @@ export const questionForm: Form = {
 				],
 				fieldOptions: {
 					type: 'choiceButton'
+				}
+			},
+			questionChoiceOther: {
+				title: 'Question choix autre',
+				description: 'Informations supplémentaires',
+				multiple: true,
+				type: 'select',
+				value: {
+					value: null,
+					other: null
+				},
+				items: [
+					{
+						text: 'S',
+						value: 0
+					},
+					{
+						text: 'M',
+						value: 1
+					},
+					{
+						text: 'L',
+						value: 2,
+						alone: true
+					},
+					{
+						text: 'XL',
+						value: 3,
+						alone: true
+					}
+				],
+				other: {
+					// selectedChoice: 'autre',
+					fieldOptions: {
+						hint: 'Veuillez entrez votre taille',
+						placeholder: 'Autre'
+					}
+				},
+				fieldOptions: {
+					type: 'choiceButton',
+					label: 'Classic field',
+					outlined: true
+				}
+			},
+			questionChoiceOtherSelected: {
+				title: 'Question choix autre conditionnel',
+				description: 'Visible quand le choix \'Autre\' est sélectionné',
+				multiple: true,
+				type: 'select',
+				value: {
+					value: 'autre',
+					other: 'XXL'
+				},
+				items: [
+					{
+						text: 'S',
+						value: 0
+					},
+					{
+						text: 'M',
+						value: 1
+					},
+					{
+						text: 'L',
+						value: 2,
+						alone: true
+					},
+					{
+						text: 'XL',
+						value: 3,
+						alone: true
+					},
+					{
+						text: 'Autre',
+						value: 'autre'
+					}
+				],
+				other: {
+					selectedChoice: 'autre',
+					fieldOptions: {
+						hint: 'Veuillez entrez votre taille'
+					}
+				},
+				fieldOptions: {
+					label: 'Classic field',
+					outlined: true
 				}
 			}
 		}

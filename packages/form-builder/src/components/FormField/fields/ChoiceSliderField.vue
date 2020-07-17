@@ -1,22 +1,40 @@
 <template>
 	<VSlider
-		v-if="field.items"
-		v-bind="field.fieldOptions"
-		:value="getIndex(field.value)"
-		:thumb-label="isThumbLabel"
+		:value="getIndex(choiceValue)"
+		v-bind="options"
+		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
-		:max="field.items.length - 1"
-		color="accent"
-		tick-size="6"
+		:max="items.length - 1"
 		track-color="grey lighten-1"
-		class="vd-choice-slider-field vd-form-input-xl"
+		color="accent"
+		class="mt-5"
 		@change="valueUpdated"
 	>
 		<template
 			v-if="isThumbLabel"
+			#prepend
+		>
+			<span>
+				{{ labelMin }}
+			</span>
+		</template>
+
+		<template
+			v-if="isThumbLabel"
+			#append
+		>
+			<span>
+				{{ labelMax }}
+			</span>
+		</template>
+
+		<template
+			v-if="thumbLabel"
 			#thumb-label="{ value }"
 		>
-			{{ labels[value] }}
+			<span>
+				{{ labels[value] }}
+			</span>
 		</template>
 	</VSlider>
 </template>
@@ -24,10 +42,10 @@
 <script lang="ts">
 	import Component, { mixins } from 'vue-class-component';
 
-	import { FieldComponent } from '../mixins/fieldComponent';
+	import { ChoiceComponent } from '../mixins/choiceComponent';
 	import { FieldValue } from '../types';
 
-	const MixinsDeclaration = mixins(FieldComponent);
+	const MixinsDeclaration = mixins(ChoiceComponent);
 
 	/** Choice field type slider */
 	@Component
@@ -38,33 +56,51 @@
 		 * @returns {number|null} The index of the selected item, null if not found
 		 */
 		getIndex(value: FieldValue): number | null {
-			if (!this.field.items) {
+			if (!this.items) {
 				return null;
 			}
 
-			const index = this.field.items.findIndex((item) => item.value === value);
+			return this.items.findIndex((item) => item.value === value);
+		}
 
-			if (index === -1) {
-				return null;
+		get labelMin(): unknown {
+			// Check if there is a custom labelMin prop in metadata
+			if (this.options?.labelMin) {
+				return this.options.labelMin;
 			}
 
-			return index;
+			// The default value is the first the label
+			return this.labels[0];
+		}
+
+		get labelMax(): unknown {
+			// Check if there is a custom labelMax prop in metadata
+			if (this.options && this.options.labelMax) {
+				return this.options.labelMax;
+			}
+
+			// The default value is the last the label
+			return this.labels[this.labels.length - 1];
+		}
+
+		get thumbLabel(): string | boolean {
+			return this.isThumbLabel ? 'always' : false;
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */
 		get thickLabels(): string[] {
-			return this.isThumbLabel ? [] : this.labels;
+			return !this.isThumbLabel ? this.labels : [];
 		}
 
 		/**  Are we in thumb label mode */
 		get isThumbLabel(): boolean {
-			return Boolean(this.field.fieldOptions?.thumbLabel);
+			return Boolean(this.options?.thumbLabel);
 		}
 
 		/** The ticks labels */
 		get labels(): string[] {
-			if (this.field.items && this.field.fieldOptions) {
-				const labels = this.field.items.map((item) => item.text);
+			if (this.items && this.options) {
+				const labels = this.items.map((item) => item.text);
 
 				return labels;
 			}
@@ -80,36 +116,11 @@
 		valueUpdated(index: number): void {
 			let fieldValue = null;
 
-			if (this.field.items) {
-				fieldValue = this.field.items[index].value;
+			if (this.items) {
+				fieldValue = this.items[index].value;
 			}
 
-			this.emitChangeEvent(fieldValue);
+			this.emitChoiceUpdated(fieldValue);
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	@import '@cnamts/vue-dot/src/tokens';
-
-	.vd-choice-slider-field ::v-deep {
-		.v-input__control {
-			width: auto;
-		}
-
-		.v-slider__ticks-container--always-show .v-slider__tick {
-			border-radius: 50%;
-			background: #bdbdbd;
-
-			&.v-slider__tick--filled {
-				background: $vd-accent !important;
-			}
-		}
-
-		&.theme--dark {
-			.v-slider__ticks-container--always-show .v-slider__tick {
-				background: #fff;
-			}
-		}
-	}
-</style>

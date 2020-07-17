@@ -1,0 +1,218 @@
+<template>
+	<div class="vd-form-input">
+		<!-- the choice field component -->
+		<component
+			:is="getField()"
+			:value="choiceValue.value"
+			:items="field.items"
+			:options="fieldOptions"
+			:multiple="field.multiple"
+			@change="choiceUpdated"
+		/>
+
+		<!-- the other field -->
+		<template v-if="otherField">
+			<VExpandTransition
+				v-if="otherField.selectedChoice"
+				hide-on-leave
+			>
+				<div v-if="showOtherField">
+					<h4
+						v-if="otherField.label"
+						class="mb-1 body-1"
+					>
+						{{ otherField.label }}
+					</h4>
+					<VTextarea
+						ref="otherFieldRef"
+						:value="otherValue"
+						v-bind="otherField.fieldOptions"
+						:disabled="!isOtherActive"
+						:rows="1"
+						auto-grow
+						outlined
+						@change="otherUpdated"
+					/>
+				</div>
+			</VExpandTransition>
+			<VTextField
+				v-else
+				:value="otherValue"
+				v-bind="otherField.fieldOptions"
+				outlined
+				:background-color="otherValue ? 'accent' : undefined"
+				color="accent"
+				:dark="Boolean(otherValue)"
+				dense
+				@input="otherInput"
+				@change="otherUpdated"
+			/>
+		</template>
+	</div>
+</template>
+
+<script lang="ts">
+	import Component, { mixins } from 'vue-class-component';
+
+	import { Refs } from '@cnamts/vue-dot/src/types';
+
+	import { FieldComponent } from '../mixins/fieldComponent';
+
+	import { IFieldMap } from '../mixins/fieldMap';
+
+	import { IChoiceValue, FieldItemValue, OtherValue, ChoiceValue, OtherField } from '../types';
+
+	const MixinsDeclaration = mixins(FieldComponent);
+
+	interface HTMLInputEvent extends Event {
+		target: HTMLInputElement & EventTarget;
+	}
+
+	// We import them all because the form
+	// can use any of them
+	import ChoiceAutocompleteField from './ChoiceAutocompleteField.vue';
+	import ChoiceSelectField from './ChoiceSelectField.vue';
+	import ChoiceButtonField from './ChoiceButtonField.vue';
+	import ChoiceSliderField from './ChoiceSliderField.vue';
+	import TextareaField from './TextareaField.vue';
+
+	/** List all fields and provide getField() function */
+	@Component<ChoiceField>({
+		components: {
+			ChoiceAutocompleteField,
+			ChoiceSelectField,
+			ChoiceButtonField,
+			ChoiceSliderField,
+			TextareaField
+		},
+		watch: {
+			'field.value': {
+				handler(value: IChoiceValue) {
+					this.choiceValue = value || this.choiceValue;
+
+					// Set the active status
+					this.isOtherActive = this.getOtherActive();
+
+					/**
+					 * Set the other local value if the remote other value is not null
+					 * to keep the local value up for the user
+					 */
+					if(this.choiceValue?.other) {
+						this.otherValue = this.choiceValue.other;
+					}
+				},
+				immediate: true,
+				deep: true
+			}
+		}
+	})
+	export default class ChoiceField extends MixinsDeclaration {
+		// Extend $refs
+		$refs!: Refs<{
+			otherFieldRef: HTMLInputElement;
+		}>;
+		choiceValue: IChoiceValue = { value: null };
+
+		isOtherActive = false;
+		otherValue: OtherValue = null;
+
+		/** List all choice field components and their corresponding keys */
+		selectFieldMap: IFieldMap = {
+			select: 'ChoiceSelectField',
+			autocomplete: 'ChoiceAutocompleteField',
+			choiceButton: 'ChoiceButtonField',
+			choiceSlider: 'ChoiceSliderField'
+		};
+
+		get otherField(): OtherField | undefined {
+			return this.field.other;
+		}
+
+		get showOtherField(): boolean {
+			if(this.choiceValue.value === this.otherField?.selectedChoice) {
+				return true;
+			}
+
+			if(Array.isArray(this.choiceValue.value) && this.choiceValue.value.includes(this.otherField?.selectedChoice)) {
+				return true;
+			}
+
+			return false;
+		}
+
+		/**
+		 * Check if the other field is active or not
+		 *
+		 * @returns {boolean} The other active status
+		 */
+		getOtherActive(): boolean {
+			const choiceValue: ChoiceValue = this.choiceValue ? this.choiceValue.value : null;
+			const selectedChoice: FieldItemValue = this.field.other ? this.field.other.selectedChoice : null;
+			if (!selectedChoice || !choiceValue) {
+				return false;
+			} else if (Array.isArray(choiceValue)) {
+				return choiceValue.includes(selectedChoice);
+			} else {
+				return choiceValue === selectedChoice;
+			}
+		}
+
+		/**
+		 * Returns the field that correspond to the type in metadata or select By default
+		 *
+		 * @returns {string} The choice field component name
+		 */
+		getField(): string {
+			const metadataType = this.field.fieldOptions ? this.field.fieldOptions.type as string : undefined;
+
+			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
+		}
+
+		/**
+		 * Emit the new type select value when choice updated
+		 *
+		 * @param {ChoiceValue} choiceValue The new choice value selected
+		 */
+		choiceUpdated(choiceValue: ChoiceValue): void {
+			this.choiceValue.value = choiceValue;
+
+			if(this.choiceValue.value && !this.otherField?.selectedChoice){
+				this.otherValue = null;
+			}
+
+			this.isOtherActive = this.getOtherActive();
+
+			if (this.isOtherActive) {
+				// Focus the other field when activated
+				this.$nextTick(() => this.$refs.otherFieldRef.focus());
+
+				// Get the other local value when activated
+				this.choiceValue.other = this.otherValue;
+			} else {
+				this.choiceValue.other = null;
+			}
+
+			this.emitChangeEvent(this.choiceValue);
+		}
+
+		otherInput(otherValue: OtherValue): void {
+			this.otherValue = otherValue?.length ? otherValue : null;
+
+			if(this.otherValue) {
+				this.choiceValue.value = null;
+			}
+		}
+
+		/**
+		 * Emit the new type select value when other field updated
+		 *
+		 * @param {OtherValue} otherValue The new other local value
+		 */
+		otherUpdated(otherValue: OtherValue): void {
+			this.otherValue = otherValue?.length ? otherValue : null;
+			this.choiceValue.other = this.otherValue;
+
+			this.emitChangeEvent(this.choiceValue);
+		}
+	}
+</script>

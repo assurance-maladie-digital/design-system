@@ -87,9 +87,7 @@
 		 * @returns {string} The field type
 		 */
 		getFieldType(): string {
-			const fieldOptionsType: string | undefined = this.field.fieldOptions?.type as string ?? undefined;
-
-			return this.getField(fieldOptionsType || this.field.type);
+			return this.getField(this.field.type);
 		}
 
 		/**

@@ -5,9 +5,16 @@ export interface PeriodValue {
 
 export type FieldItemValue = string | number | null | undefined;
 
+export type OtherValue = string | null;
+
 export type ChoiceValue = FieldItemValue | FieldItemValue[];
 
-export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue;
+export interface IChoiceValue {
+	value: ChoiceValue;
+	other?: OtherValue;
+}
+
+export type FieldValue = string | number | null | undefined | PeriodValue | IChoiceValue;
 
 export type ErrorMessages = string[];
 
@@ -27,6 +34,12 @@ export interface FieldOptions {
 	[key: string]: unknown;
 }
 
+export interface OtherField {
+	label?: string;
+	fieldOptions?: FieldOptions;
+	selectedChoice?: FieldItemValue;
+}
+
 export interface Field {
 	type: string;
 	value?: FieldValue;
@@ -36,6 +49,7 @@ export interface Field {
 	multiple?: boolean;
 	fieldOptions?: FieldOptions;
 	items?: FieldItem[];
+	other?: OtherField;
 	mask?: string;
 	dynamic?: boolean;
 }

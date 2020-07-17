@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChoiceField renders correctly 1`] = `
+<div class="vd-form-input">
+  <choiceselectfield-stub value="autre" options="[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object]"></choiceselectfield-stub>
+  <vexpandtransition-stub mode="in-out" hide-on-leave="">
+    <div>
+      <h4 class="mb-1 body-1">
+        Autre taille
+      </h4>
+      <vtextarea-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text" autogrow="true" rowheight="24" rows="1"></vtextarea-stub>
+    </div>
+  </vexpandtransition-stub>
+</div>
+`;
