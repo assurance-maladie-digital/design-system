@@ -37,10 +37,11 @@ export const addressForm: Form = {
 				}
 			},
 			streetType: {
-				type: 'autocomplete',
+				type: 'select',
 				value: null,
 				items: defaultItem,
 				fieldOptions: {
+					type: 'choiceAutocomplete',
 					label: 'Type de voie',
 					outlined: true
 				}

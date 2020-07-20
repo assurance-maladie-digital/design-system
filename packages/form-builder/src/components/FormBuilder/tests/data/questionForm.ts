@@ -160,7 +160,7 @@ export const questionForm: Form = {
 				value: null,
 				items: defaultItems,
 				fieldOptions: {
-					type: 'autocomplete',
+					type: 'choiceAutocomplete',
 					outlined: true,
 					chips: true,
 					menuProps: {

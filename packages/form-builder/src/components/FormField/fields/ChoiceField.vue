@@ -119,7 +119,7 @@
 		/** List all choice field components and their corresponding keys */
 		selectFieldMap: IFieldMap = {
 			select: 'ChoiceSelectField',
-			autocomplete: 'ChoiceAutocompleteField',
+			choiceAutocomplete: 'ChoiceAutocompleteField',
 			choiceButton: 'ChoiceButtonField',
 			choiceSlider: 'ChoiceSliderField'
 		};
