@@ -295,6 +295,7 @@ export const questionForm: Form = {
 				],
 				other: {
 					selectedChoice: 'autre',
+					label: 'Autre choix',
 					fieldOptions: {
 						hint: 'Veuillez entrez votre taille'
 					}
