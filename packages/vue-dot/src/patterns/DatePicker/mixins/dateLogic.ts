@@ -8,7 +8,7 @@ import { DATE_FORMAT_REGEX } from '../../../functions/validation/isDateValid';
 
 import { Options } from '../../../mixins/customizable';
 
-import { DatePickerRefs } from '../types';
+import { Refs } from '../../../types';
 
 /** Date format used internally */
 const INTERNAL_FORMAT = 'YYYY-MM-DD';
@@ -82,7 +82,18 @@ const MixinsDeclaration = mixins(Props);
 })
 export class DateLogic extends MixinsDeclaration {
 	// Extend $refs
-	$refs!: DatePickerRefs;
+	$refs!: Refs<{
+		/** VMenu */
+		menu: {
+			save: (date: string) => void;
+		};
+		/** VTextField */
+		input: {
+			validate: () => boolean;
+			hasFocused: boolean;
+			hasError: boolean;
+		};
+	}>;
 
 	// DatePicker.options
 	options!: Options;
