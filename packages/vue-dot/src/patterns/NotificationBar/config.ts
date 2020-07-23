@@ -1,7 +1,6 @@
 export const config = {
 	snackBar: {
-		value: true,
-		timeout: 0,
+		timeout: -1,
 		top: true
 	},
 	icon: {

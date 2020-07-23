@@ -79,7 +79,6 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { DatePickerRefs } from './types';
 
 	import { customizable, Options, Customizable } from '../../mixins/customizable';
 	import { Eventable } from '../../mixins/eventable';
@@ -95,7 +94,7 @@
 
 	import deepMerge from 'deepmerge';
 
-	const IProps = Vue.extend({
+	const Props = Vue.extend({
 		props: {
 			/** Disable the calendar */
 			noCalendar: {
@@ -137,14 +136,7 @@
 		}
 	});
 
-	@Component
-	class Props extends IProps {}
-
-	interface IDatePicker extends Props, Customizable, Eventable, WarningRules, DateLogic, MaskValue, Birthdate, PickerDate, ErrorProp {
-		$refs: DatePickerRefs;
-	}
-
-	const MixinsDeclaration = mixins<IDatePicker>(
+	const MixinsDeclaration = mixins(
 		Props,
 		customizable(config),
 		Eventable,
