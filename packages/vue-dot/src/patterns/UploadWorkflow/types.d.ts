@@ -1,7 +1,9 @@
+import { FileState } from './FileList/types';
+
 export interface FileListItem {
 	id: string;
 	title: string;
-	state?: string;
+	state?: FileState;
 	name?: string;
 	file?: File;
 }

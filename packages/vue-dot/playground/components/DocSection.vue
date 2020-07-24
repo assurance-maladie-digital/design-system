@@ -8,7 +8,7 @@
 		<slot name="title">
 			<h3
 				v-if="title"
-				class="secondary--text mb-4 font-weight-medium headline"
+				class="secondary--text mb-4 font-weight-medium text-h5"
 			>
 				{{ title }}
 			</h3>

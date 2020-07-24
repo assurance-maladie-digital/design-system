@@ -3,7 +3,7 @@
 		min-height
 		card-class="py-4 px-5 layout column align-start"
 	>
-		<h2 class="title font-weight-bold primary--text mb-4">
+		<h2 class="text-h6 font-weight-bold primary--text mb-4">
 			<% if (i18n) { %>{{ $t('views.home.title') }}<% } else { %>Premiers pas<% } %>
 		</h2>
 

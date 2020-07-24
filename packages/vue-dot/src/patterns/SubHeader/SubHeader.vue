@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-sub-header secondary white--text py-6 px-8">
+	<div
+		:style="widthStyles"
+		class="vd-sub-header secondary white--text py-6 px-8"
+	>
 		<slot name="back-btn">
 			<VFadeTransition
 				v-if="!hideBackBtn"
@@ -48,7 +51,7 @@
 
 						<h2
 							v-else-if="titleText"
-							class="headline font-weight-bold"
+							class="text-h5 font-weight-bold"
 						>
 							{{ titleText }}
 						</h2>
@@ -70,7 +73,7 @@
 
 						<p
 							v-else
-							class="title font-weight-bold mt-1 mb-0"
+							class="text-h6 font-weight-bold mt-1 mb-0"
 							:style="{ color: fadeWhite }"
 						>
 							{{ subTitleText }}
@@ -98,7 +101,7 @@
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
 							item-width="auto"
-							title-class="subtitle-1 font-weight-bold mb-2 mt-2"
+							title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
 							@click:item-action="dataListItemAction(index, $event)"
 						/>
 					</VLayout>
@@ -117,6 +120,7 @@
 	import { IDataListAction, DataListsItem } from './types';
 
 	import { customizable } from '../../mixins/customizable';
+	import { Widthable } from '../../mixins/widthable';
 
 	import DataList from '../../elements/DataList';
 
@@ -162,7 +166,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	/**
 	 * SubHeader is a component that displays
@@ -195,7 +199,6 @@
 
 <style lang="scss" scoped>
 	.vd-sub-header {
-		width: 100%;
 		overflow-x: auto;
 
 		::v-deep {

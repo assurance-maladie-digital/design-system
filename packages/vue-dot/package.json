@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.0.0-alpha.51",
+	"version": "2.0.0-alpha.53",
 	"description": "Implementation of our Design System for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -49,24 +49,24 @@
 		"vuex": "^3.1.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.10.2",
-		"@babel/preset-env": "7.10.2",
+		"@babel/core": "7.10.5",
+		"@babel/preset-env": "7.10.4",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.51",
 		"@mdi/js": "5.3.45",
-		"@vue/cli-plugin-babel": "4.4.5",
-		"@vue/cli-plugin-eslint": "4.4.5",
-		"@vue/cli-plugin-typescript": "4.4.5",
-		"@vue/cli-plugin-unit-jest": "4.4.5",
-		"@vue/cli-service": "4.4.5",
+		"@vue/cli-plugin-babel": "4.4.6",
+		"@vue/cli-plugin-eslint": "4.4.6",
+		"@vue/cli-plugin-typescript": "4.4.6",
+		"@vue/cli-plugin-unit-jest": "4.4.6",
+		"@vue/cli-service": "4.4.6",
 		"@vue/test-utils": "1.0.3",
 		"babel-core": "7.0.0-bridge.0",
 		"babel-loader": "8.1.0",
 		"core-js": "3.6.5",
 		"json-to-scss": "1.5.0",
-		"sass": "1.26.8",
-		"sass-loader": "8.0.2",
-		"vue-cli-plugin-vuetify": "2.0.5",
-		"vuetify-loader": "1.5.0"
+		"sass": "1.26.10",
+		"sass-loader": "9.0.2",
+		"vue-cli-plugin-vuetify": "2.0.7",
+		"vuetify-loader": "1.6.0"
 	},
 	"lint-staged": {
 		"*.{ts,vue}": [

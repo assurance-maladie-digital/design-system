@@ -14,6 +14,12 @@ describe('minLength', () => {
 		expect(rule('012345678910')).toBe(true);
 	});
 
+	it('returns true when the value equals the maximum', () => {
+		const rule = minLength(10);
+
+		expect(rule('0123456789')).toBe(true);
+	});
+
 	it('returns true if the value is falsy', () => {
 		const rule = minLength(10);
 

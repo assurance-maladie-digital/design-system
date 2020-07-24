@@ -24,6 +24,7 @@
 					<VBtn
 						v-if="!noPrependIcon && !showAppendIcon"
 						v-bind="options.btn"
+						:aria-label="locales.openCalendar"
 						@click="menu = true"
 					>
 						<slot name="prepend-icon">
@@ -38,6 +39,7 @@
 					<VBtn
 						v-if="showAppendIcon"
 						v-bind="options.btn"
+						:aria-label="locales.openCalendar"
 						@click="menu = true"
 					>
 						<slot name="append-icon">
@@ -76,7 +78,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
-	import { DatePickerRefs } from './types';
+	import { locales } from './locales';
 
 	import { customizable, Options, Customizable } from '../../mixins/customizable';
 	import { Eventable } from '../../mixins/eventable';
@@ -90,9 +92,9 @@
 
 	import { mdiCalendar } from '@mdi/js';
 
-	import deepmerge from 'deepmerge';
+	import deepMerge from 'deepmerge';
 
-	const IProps = Vue.extend({
+	const Props = Vue.extend({
 		props: {
 			/** Disable the calendar */
 			noCalendar: {
@@ -134,14 +136,7 @@
 		}
 	});
 
-	@Component
-	class Props extends IProps {}
-
-	interface IDatePicker extends Props, Customizable, Eventable, WarningRules, DateLogic, MaskValue, Birthdate, PickerDate, ErrorProp {
-		$refs: DatePickerRefs;
-	}
-
-	const MixinsDeclaration = mixins<IDatePicker>(
+	const MixinsDeclaration = mixins(
 		Props,
 		customizable(config),
 		Eventable,
@@ -165,6 +160,9 @@
 		}
 	})
 	export default class DatePicker extends MixinsDeclaration {
+		// Locales
+		locales = locales;
+
 		// Icon
 		calendarIcon = mdiCalendar;
 
@@ -176,12 +174,12 @@
 		}
 
 		get menuOptions(): Options {
-			const position = {
+			const position: Options = {
 				nudgeBottom: this.outlined ? 56 : 45,
 				nudgeRight: this.outlined ? 0 : 45
 			};
 
-			return deepmerge(position, this.options.menu) as Options;
+			return deepMerge<Options>(position, this.options.menu);
 		}
 
 		/**
@@ -194,7 +192,7 @@
 			// Merge textField options (custom or default) with
 			// directly binded attributes (theses attributes
 			// will override 'options.textField')
-			return deepmerge(this.options.textField || [], this.$attrs) as Options;
+			return deepMerge<Options>(this.options.textField, this.$attrs);
 		}
 
 		/**
@@ -271,6 +269,11 @@
 				.vd-custom-event {
 					display: none;
 				}
+			}
+
+			// Fix https://github.com/vuetifyjs/vuetify/issues/11809
+			.v-picker--date {
+				display: flex;
 			}
 		}
 	}

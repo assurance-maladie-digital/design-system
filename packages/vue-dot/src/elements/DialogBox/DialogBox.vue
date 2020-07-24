@@ -10,7 +10,7 @@
 				<slot name="title">
 					<h2
 						v-if="title"
-						class="title font-weight-bold"
+						class="text-h6 font-weight-bold"
 					>
 						{{ title }}
 					</h2>
@@ -87,12 +87,12 @@
 			/** The label of the cancel button*/
 			cancelBtnText: {
 				type: String,
-				default: locales.cancel
+				default: locales.cancelBtn
 			},
 			/** The label of the confirm button */
 			confirmBtnText: {
 				type: String,
-				default: locales.confirm
+				default: locales.confirmBtn
 			}
 		}
 	});
