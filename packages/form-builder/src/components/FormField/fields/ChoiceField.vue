@@ -23,6 +23,7 @@
 					>
 						{{ otherField.label }}
 					</h4>
+
 					<VTextarea
 						ref="otherFieldRef"
 						:value="otherValue"
@@ -35,6 +36,7 @@
 					/>
 				</div>
 			</VExpandTransition>
+
 			<VTextField
 				v-else
 				:value="otherValue"
@@ -97,7 +99,7 @@
 					 * Set the other local value if the remote other value is not null
 					 * to keep the local value up for the user
 					 */
-					if(this.choiceValue?.other) {
+					if (this.choiceValue?.other) {
 						this.otherValue = this.choiceValue.other;
 					}
 				},
@@ -111,6 +113,7 @@
 		$refs!: Refs<{
 			otherFieldRef: HTMLInputElement;
 		}>;
+
 		choiceValue: IChoiceValue = { value: null };
 
 		isOtherActive = false;
@@ -129,7 +132,7 @@
 		}
 
 		get showOtherField(): boolean {
-			if(this.choiceValue.value === this.otherField?.selectedChoice) {
+			if (this.choiceValue.value === this.otherField?.selectedChoice) {
 				return true;
 			}
 
