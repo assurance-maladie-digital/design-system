@@ -18,12 +18,12 @@
 		"build": "vuepress build src"
 	},
 	"dependencies": {
-		"@cnamts/vue-dot": "^2.0.0-alpha.51",
+		"@cnamts/vue-dot": "^2.0.0-alpha.53",
 		"vuepress": "^1.5.2"
 	},
 	"devDependencies": {
-		"@types/marked": "0.7.4",
-		"marked": "^1.1.0",
+		"@types/marked": "1.1.0",
+		"marked": "^1.1.1",
 		"prismjs": "1.20.0",
 		"raw-loader": "4.0.1",
 		"vue-prism-component": "1.2.0",
