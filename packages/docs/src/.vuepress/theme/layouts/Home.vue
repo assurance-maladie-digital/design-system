@@ -1,11 +1,11 @@
 <template>
 	<div class="theme-container">
 		<VApp>
-			<VContent>
+			<VMain>
 				<PageCard>
 					<Content />
 				</PageCard>
-			</VContent>
+			</VMain>
 		</VApp>
 	</div>
 </template>

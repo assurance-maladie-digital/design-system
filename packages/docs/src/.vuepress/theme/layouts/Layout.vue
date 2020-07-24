@@ -29,7 +29,7 @@
 				</template>
 			</VNavigationDrawer>
 
-			<VContent>
+			<VMain>
 				<PageCard width="1200px">
 					<Content
 						class="mb-4"
@@ -45,7 +45,7 @@
 
 					<Content />
 				</PageCard>
-			</VContent>
+			</VMain>
 		</VApp>
 	</div>
 </template>
