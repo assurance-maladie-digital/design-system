@@ -25,14 +25,14 @@ const router = new VueRouter({
 router.beforeEach(async(to, from, next) => {
 	// Remove notification
 	store.dispatch('notification/rmNotif');
-	<% if (i18n) { %>
+<% if (i18n) { %>
 	const lang = i18n.locale;
 
 	// Resolve translations before each navigation
 	await loadLanguageAsync(lang).catch(
 		() => next(false) // Cancel navigation on error
 	);
-	<% } %>
+<% } %>
 	navigationRedirect(to, from, next);
 });
 
