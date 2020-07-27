@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import Component from 'vue-class-component';
+import Component, { mixins } from 'vue-class-component';
 
 import { ChoiceValue, FieldItem, FieldOptions, FieldItemValue } from '../types';
 
@@ -25,6 +25,8 @@ const Props = Vue.extend({
 	}
 });
 
+const MixinsDeclaration = mixins(Props);
+
 /** Mixin to control the item selection */
 @Component<ChoiceComponent>({
 	watch: {
@@ -48,7 +50,7 @@ const Props = Vue.extend({
 		}
 	}
 })
-export class ChoiceComponent extends Props {
+export class ChoiceComponent extends MixinsDeclaration {
 	choiceValue: ChoiceValue | null = this.multiple ? [] : null;
 
 	/**

@@ -248,7 +248,6 @@ export const questionForm: Form = {
 					}
 				],
 				other: {
-					// selectedChoice: 'autre',
 					fieldOptions: {
 						hint: 'Veuillez entrez votre taille',
 						placeholder: 'Autre'

@@ -1,8 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChoiceField renders correctly 1`] = `
+exports[`ChoiceField Show the other field text by default 1`] = `
 <div class="vd-form-input">
-  <choiceselectfield-stub value="autre" options="[object Object]" items="[object Object],[object Object],[object Object],[object Object],[object Object]"></choiceselectfield-stub>
+  <choiceselectfield-stub options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>
+  <vtextfield-stub color="accent" dark="true" errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="accent" dense="true" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text"></vtextfield-stub>
+</div>
+`;
+
+exports[`ChoiceField Show the other field textarea when the corresponding choice is selected 1`] = `
+<div class="vd-form-input">
+  <choiceselectfield-stub value="autre" options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>
   <vexpandtransition-stub mode="in-out" hide-on-leave="">
     <div>
       <h4 class="mb-1 body-1">
@@ -11,5 +18,12 @@ exports[`ChoiceField renders correctly 1`] = `
       <vtextarea-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text" autogrow="true" rowheight="24" rows="1"></vtextarea-stub>
     </div>
   </vexpandtransition-stub>
+</div>
+`;
+
+exports[`ChoiceField renders correctly 1`] = `
+<div class="vd-form-input">
+  <choiceselectfield-stub value="0" options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>
+  <!---->
 </div>
 `;

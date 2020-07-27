@@ -26,8 +26,8 @@
 
 					<VTextarea
 						ref="otherFieldRef"
-						:value="otherValue"
 						v-bind="otherField.fieldOptions"
+						:value="otherValue"
 						:disabled="!isOtherActive"
 						:rows="1"
 						auto-grow
@@ -39,8 +39,8 @@
 
 			<VTextField
 				v-else
-				:value="otherValue"
 				v-bind="otherField.fieldOptions"
+				:value="otherValue"
 				outlined
 				:background-color="otherValue ? 'accent' : undefined"
 				color="accent"
@@ -131,12 +131,28 @@
 			return this.field.other;
 		}
 
+		/** Show the other field when there is a choice value corresponding to the other selectedChoice */
 		get showOtherField(): boolean {
-			if (this.choiceValue.value === this.otherField?.selectedChoice) {
+			// Expect the otherfield will have a selectedChoice defined.
+			if (!this.otherField?.selectedChoice) {
+				return false;
+			}
+
+			const choiceFieldValue = this.choiceValue.value;
+			const otherSelectedChoice = this.otherField.selectedChoice;
+
+			// Expect the choiceField value as string equal to the selected choice
+			if (choiceFieldValue === otherSelectedChoice) {
 				return true;
 			}
 
-			if(Array.isArray(this.choiceValue.value) && this.choiceValue.value.includes(this.otherField?.selectedChoice)) {
+			// Otherwise, expect the choiceFieldValue as a array not empty
+			if (!Array.isArray(choiceFieldValue) || !choiceFieldValue.length ) {
+				return false;
+			}
+
+			// Expect the choiceFieldValue's array contains the otherSelectedChoice
+			if(choiceFieldValue.includes(otherSelectedChoice)) {
 				return true;
 			}
 

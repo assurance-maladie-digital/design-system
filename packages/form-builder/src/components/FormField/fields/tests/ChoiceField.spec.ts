@@ -12,10 +12,6 @@ let wrapper: Wrapper<Vue>;
 const testField: Field = {
 	type: 'select',
 	title: 'Votre taille',
-	value: {
-		value: 'autre',
-		other: 'XXL'
-	},
 	items: [
 		{
 			text: 'S',
@@ -26,27 +22,10 @@ const testField: Field = {
 			value: 1
 		},
 		{
-			text: 'L',
-			value: 2,
-			alone: true
-		},
-		{
-			text: 'XL',
-			value: 3,
-			alone: true
-		},
-		{
 			text: 'Autre',
 			value: 'autre'
 		}
 	],
-	other: {
-		label: 'Autre taille',
-		selectedChoice: 'autre',
-		fieldOptions: {
-			hint: 'Veuillez entrez votre taille'
-		}
-	},
 	fieldOptions: {
 		label: 'Classic field',
 		outlined: true
@@ -59,7 +38,59 @@ describe('ChoiceField', () => {
 		// Mount component
 		wrapper = mountComponent(ChoiceField, {
 			propsData: {
-				field: testField
+				field: {
+					...testField,
+					value: {
+						value: '0'
+					}
+				}
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('Show the other field text by default', () => {
+		// Mount component
+		wrapper = mountComponent(ChoiceField, {
+			propsData: {
+				field: {
+					...testField,
+					value: {
+						value: null,
+						other: 'XXL'
+					},
+					other: {
+						label: 'Autre taille',
+						fieldOptions: {
+							hint: 'Veuillez entrez votre taille'
+						}
+					}
+				}
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('Show the other field textarea when the corresponding choice is selected', () => {
+		// Mount component
+		wrapper = mountComponent(ChoiceField, {
+			propsData: {
+				field: {
+					...testField,
+					value: {
+						value: 'autre',
+						other: 'XXL'
+					},
+					other: {
+						label: 'Autre taille',
+						selectedChoice: 'autre',
+						fieldOptions: {
+							hint: 'Veuillez entrez votre taille'
+						}
+					}
+				}
 			}
 		});
 

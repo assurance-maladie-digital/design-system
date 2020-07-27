@@ -124,3 +124,24 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+@import '@cnamts/vue-dot/src/tokens';
+	.vd-choice-slider-field ::v-deep {
+		.v-input__control {
+			width: auto;
+		}
+		.v-slider__ticks-container--always-show .v-slider__tick {
+			border-radius: 50%;
+			background: #bdbdbd;
+			&.v-slider__tick--filled {
+				background: $vd-accent !important;
+			}
+		}
+		&.theme--dark {
+			.v-slider__ticks-container--always-show .v-slider__tick {
+				background: #fff;
+			}
+		}
+	}
+</style>

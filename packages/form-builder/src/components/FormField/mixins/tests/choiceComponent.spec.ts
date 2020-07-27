@@ -2,8 +2,16 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import { ChoiceComponent } from '../choiceComponent';
+import { ChoiceValue, FieldOptions, FieldItem } from '../../types';
 
-const testField = {
+interface IChoiceComponent {
+	value?: ChoiceValue;
+	options?: FieldOptions;
+	multiple?: boolean;
+	items: FieldItem[];
+}
+
+const testField: IChoiceComponent = {
 	items: [
 		{
 			text: 'Test 1',
@@ -31,7 +39,7 @@ const testField = {
 };
 
 /** Create the wrapper */
-function createWrapper(field: any) {
+function createWrapper(field: IChoiceComponent) {
 	const component = Vue.component('test', {
 		mixins: [
 			ChoiceComponent
@@ -52,7 +60,7 @@ describe('choiceComponent', () => {
 
 		wrapper.vm.toggleItem(testField.items[0]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		const event = wrapper.emitted('change') || [];
 
@@ -64,7 +72,7 @@ describe('choiceComponent', () => {
 
 		wrapper.vm.toggleItem(testField.items[4]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		const event = wrapper.emitted('change') || [];
 
@@ -79,7 +87,7 @@ describe('choiceComponent', () => {
 
 		wrapper.vm.toggleItem(testField.items[0]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		const event = wrapper.emitted('change') || [];
 
@@ -105,7 +113,7 @@ describe('choiceComponent', () => {
 		wrapper.vm.toggleItem(testField.items[0]);
 		wrapper.vm.toggleItem(testField.items[1]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		const event = wrapper.emitted('change') || [];
 
@@ -129,7 +137,7 @@ describe('choiceComponent', () => {
 		// Unselect the first button
 		wrapper.vm.toggleItem(testField.items[0]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		const event = wrapper.emitted('change') || [];
 
@@ -149,7 +157,7 @@ describe('choiceComponent', () => {
 		// Select the first button
 		wrapper.vm.toggleItem(testField.items[0]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		const event = wrapper.emitted('change') || [];
 
@@ -169,7 +177,7 @@ describe('choiceComponent', () => {
 
 		wrapper.vm.toggleItem(testField.items[2]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		const event = wrapper.emitted('change') || [];
 
@@ -188,7 +196,7 @@ describe('choiceComponent', () => {
 		// Select a button with a null value
 		wrapper.vm.toggleItem(testField.items[4]);
 
-		await Vue.nextTick();
+		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('change')).toBeFalsy();
 	});
