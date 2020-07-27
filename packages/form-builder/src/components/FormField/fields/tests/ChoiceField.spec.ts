@@ -3,7 +3,7 @@ import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@cnamts/vue-dot/tests';
 import { html } from '@cnamts/vue-dot/tests/utils/html';
-import { Field } from './../../types.d';
+import { Field } from './../../types';
 
 import ChoiceField from '../ChoiceField.vue';
 
@@ -50,7 +50,7 @@ describe('ChoiceField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('Show the other field text by default', () => {
+	it('renders the other field', () => {
 		// Mount component
 		wrapper = mountComponent(ChoiceField, {
 			propsData: {
@@ -73,7 +73,7 @@ describe('ChoiceField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('Show the other field textarea when the corresponding choice is selected', () => {
+	it('renders the other field when the corresponding choice is selected', () => {
 		// Mount component
 		wrapper = mountComponent(ChoiceField, {
 			propsData: {

@@ -80,7 +80,7 @@
 		}
 
 		get isInline(): boolean | null {
-			return this.options && this.options.inline as unknown as boolean | null;
+			return this.options?.inline as unknown as boolean | null;
 		}
 
 		get showHint(): boolean {

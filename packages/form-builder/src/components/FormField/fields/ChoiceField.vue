@@ -147,12 +147,12 @@
 			}
 
 			// Otherwise, expect the choiceFieldValue as a array not empty
-			if (!Array.isArray(choiceFieldValue) || !choiceFieldValue.length ) {
+			if (!Array.isArray(choiceFieldValue) || !choiceFieldValue.length) {
 				return false;
 			}
 
 			// Expect the choiceFieldValue's array contains the otherSelectedChoice
-			if(choiceFieldValue.includes(otherSelectedChoice)) {
+			if (choiceFieldValue.includes(otherSelectedChoice)) {
 				return true;
 			}
 
@@ -167,6 +167,7 @@
 		getOtherActive(): boolean {
 			const choiceFieldValue: ChoiceFieldValue = this.choiceValue ? this.choiceValue.value : null;
 			const selectedChoice: FieldItemValue = this.field.other ? this.field.other.selectedChoice : null;
+
 			if (!selectedChoice || !choiceFieldValue) {
 				return false;
 			} else if (Array.isArray(choiceFieldValue)) {
@@ -195,7 +196,7 @@
 		choiceUpdated(choiceFieldValue: ChoiceFieldValue): void {
 			this.choiceValue.value = choiceFieldValue;
 
-			if(this.choiceValue.value && !this.otherField?.selectedChoice){
+			if (this.choiceValue.value && !this.otherField?.selectedChoice) {
 				this.otherFieldValue = null;
 			}
 
@@ -217,7 +218,7 @@
 		otherInput(otherFieldValue: OtherFieldValue): void {
 			this.otherFieldValue = otherFieldValue?.length ? otherFieldValue : null;
 
-			if(this.otherFieldValue) {
+			if (this.otherFieldValue) {
 				this.choiceValue.value = null;
 			}
 		}
