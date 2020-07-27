@@ -8,7 +8,7 @@ import { HTMLInputEvent } from '../types';
 const MixinsDeclaration = mixins(FileValidation);
 
 @Component
-export class EventsMapping extends MixinsDeclaration {
+export class FileUploadCore extends MixinsDeclaration {
 	$refs!: Refs<{
 		vdInputEl: HTMLInputElement;
 	}>;

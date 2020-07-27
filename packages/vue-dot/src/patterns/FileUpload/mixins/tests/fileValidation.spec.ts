@@ -4,6 +4,8 @@ import { mount, Wrapper } from '@vue/test-utils';
 import { FileValidation } from '../fileValidation';
 
 interface TestComponent extends Vue {
+	files: File[];
+	computedAccept: string;
 	validateFile: (file: File) => boolean;
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
 }
@@ -12,7 +14,7 @@ const component = Vue.component('test', {
 	mixins: [
 		FileValidation
 	],
-	template: '<input ref="vdInputEl" type="file">'
+	template: '<div />'
 });
 
 const file = {
@@ -23,64 +25,69 @@ const file = {
 
 // Tests
 describe('FileValidation', () => {
-	it('assume that extension, size limit and format should be expected', () => {
+	// computedAccept
+	it('computes the default accept string', () => {
+		const wrapper = mount(component) as Wrapper<TestComponent>;
+
+		expect(wrapper.vm.computedAccept).toBe('.pdf,.jpg,.jpeg,.png');
+	});
+
+	it('returns the accept prop value is provided', () => {
 		const wrapper = mount(component, {
 			propsData: {
-				allowedExtensions: ['pdf', 'jpg', 'png'],
-				fileSizeMax: 4096 * 1024
+				accept: '.pdf'
 			}
 		}) as Wrapper<TestComponent>;
 
-		// be sure that file validation expect format entry
-		expect(wrapper.vm.validateFile(file)).toBe(true);
-
-		// check the size limit of the file, if limit is exceed an error should triggered
-		const fileLimit = { size: 5000 * 1024, type: 'image/png', name: 'avatar.png' } as File;
-
-		expect(wrapper.vm.validateFile(fileLimit)).toBe(false);
-
-		expect(wrapper.emitted().error).toBeTruthy();
-
-		// check if the format it's not correct an error is triggered,
-		const fileCsv = { size: 1000, type: 'image/csv', name: 'avatar.csv' } as File;
-
-		expect(wrapper.vm.validateFile(fileCsv)).toBe(false);
-
-		expect(wrapper.emitted().error).toBeTruthy();
+		expect(wrapper.vm.computedAccept).toBe('.pdf');
 	});
 
-	it('when select many files it should be true or false', () => {
+	// validateFile
+	it('returns true if the file is valid', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		wrapper.setProps({ multiple: true });
+		expect(wrapper.vm.validateFile(file)).toBe(true);
+		expect(wrapper.vm.files).toStrictEqual([file]);
+	});
 
-		const fileList = {} as FileList;
-
-        // should be false if no event detected
-		expect(wrapper.vm.ifTooManyFiles(fileList)).toBe(false);
-
-		wrapper.setProps({ multiple: false });
-
-		const event = {
-			target: {
-				files: [
-					{
-						name: 'image.png',
-						size: 50000,
-						type: 'image/png'
-					},
-					{
-						name: 'image.png',
-						size: 50000,
-						type: 'image/png'
-					}
-				]
+	it('returns false if the file is too large', () => {
+		const wrapper = mount(component, {
+			propsData: {
+				fileSizeMax: 500
 			}
-		};
+		}) as Wrapper<TestComponent>;
 
-		const files = event.target.files as unknown as FileList;
+		expect(wrapper.vm.validateFile(file)).toBe(false);
+		expect(wrapper.emitted('error')).toBeTruthy();
+	});
 
-		// should be false if it contain one or more files
+	it('returns false if the extension isn\'t allowed', () => {
+		const wrapper = mount(component, {
+			propsData: {
+				allowedExtensions: ['pdf']
+			}
+		}) as Wrapper<TestComponent>;
+
+		expect(wrapper.vm.validateFile(file)).toBe(false);
+		expect(wrapper.emitted('error')).toBeTruthy();
+	});
+
+	// ifTooManyFiles
+	it('returns false if there is only one file', () => {
+		const wrapper = mount(component) as Wrapper<TestComponent>;
+
+		const files = [file] as unknown as FileList;
+
+		expect(wrapper.vm.ifTooManyFiles(files)).toBe(false);
+		expect(wrapper.emitted('error')).toBeFalsy();
+	});
+
+	it('returns true if there is more than one file', () => {
+		const wrapper = mount(component) as Wrapper<TestComponent>;
+
+		const files = [file, file] as unknown as FileList;
+
 		expect(wrapper.vm.ifTooManyFiles(files)).toBe(true);
+		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 });

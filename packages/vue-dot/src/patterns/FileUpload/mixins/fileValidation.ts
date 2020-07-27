@@ -18,7 +18,7 @@ const Props = Vue.extend({
 		/** Maximum size in bytes per file */
 		fileSizeMax: {
 			type: Number,
-			default: 4096 * 1024 // Default 4MB
+			default: 10485760 // Default 10MB
 		},
 		/** The size units used in the template for i18n */
 		fileSizeUnits: {
@@ -72,7 +72,7 @@ export class FileValidation extends MixinsDeclaration {
 			accept.push(`.${type}`);
 		});
 
-		// The result, eg. ".pdf,.jpeg,.jpg,.png"
+		// The result, eg. ".pdf,.jpg,.jpeg,.png"
 		return accept.join(',');
 	}
 

@@ -36,9 +36,7 @@
 		<slot name="placeholder">
 			<span class="vd-file-upload-placeholder">
 				<slot name="icon">
-					<VIcon
-						v-bind="options.icon"
-					>
+					<VIcon v-bind="options.icon">
 						{{ uploadIcon }}
 					</VIcon>
 				</slot>
@@ -103,7 +101,7 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { EventsMapping } from './mixins/eventsMapping';
+	import { FileUploadCore } from './mixins/fileUploadCore';
 	import { Widthable } from '../../mixins/widthable';
 
 	import { customizable } from '../../mixins/customizable';
@@ -153,7 +151,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config), EventsMapping, Widthable);
+	const MixinsDeclaration = mixins(Props, customizable(config), FileUploadCore, Widthable);
 
 	/**
 	 * FileUpload is a component that enhance the default HTML
@@ -207,7 +205,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.file-upload {
+	.vd-file-upload {
 		cursor: pointer;
 		position: relative;
 		border: 1px dashed;
