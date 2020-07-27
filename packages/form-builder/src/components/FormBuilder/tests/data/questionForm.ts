@@ -148,7 +148,8 @@ export const questionForm: Form = {
 				value: null,
 				items: defaultItems,
 				fieldOptions: {
-					label: 'Label',
+					labelMin: 'min',
+					labelMax: 'max',
 					type: 'choiceSlider',
 					thumbLabel: true
 				}

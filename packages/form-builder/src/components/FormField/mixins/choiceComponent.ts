@@ -5,7 +5,7 @@ import { ChoiceFieldValue, FieldItem, FieldOptions, FieldItemValue } from '../ty
 
 const Props = Vue.extend({
 	props: {
-		/** The choice field value to display */
+		/** The choice field value */
 		value: {
 			type: [Array, Number, String] as PropType<ChoiceFieldValue>,
 			default: null

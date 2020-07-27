@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChoiceField renders correctly 1`] = `
-<div class="vd-form-input">
+<div>
   <choiceselectfield-stub value="0" options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>
   <!---->
 </div>
 `;
 
 exports[`ChoiceField renders the other field 1`] = `
-<div class="vd-form-input">
+<div>
   <choiceselectfield-stub options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>
   <vtextfield-stub color="accent" dark="true" errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="accent" dense="true" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text"></vtextfield-stub>
 </div>
 `;
 
 exports[`ChoiceField renders the other field when the corresponding choice is selected 1`] = `
-<div class="vd-form-input">
+<div>
   <choiceselectfield-stub value="autre" options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>
   <vexpandtransition-stub mode="in-out" hide-on-leave="">
     <div>

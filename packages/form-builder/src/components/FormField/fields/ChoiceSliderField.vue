@@ -13,9 +13,29 @@
 	>
 		<template
 			v-if="isThumbLabel"
+			#prepend
+		>
+			<span>
+				{{ labelMin }}
+			</span>
+		</template>
+
+		<template
+			v-if="isThumbLabel"
+			#append
+		>
+			<span>
+				{{ labelMax }}
+			</span>
+		</template>
+
+		<template
+			v-if="thumbLabel"
 			#thumb-label="{ value }"
 		>
-			{{ labels[value] }}
+			<span>
+				{{ labels[value] }}
+			</span>
 		</template>
 	</VSlider>
 </template>
@@ -62,7 +82,7 @@
 
 		get labelMax(): unknown {
 			// Check if there is a custom labelMax prop in metadata
-			if (this.options && this.options.labelMax) {
+			if (this.options?.labelMax) {
 				return this.options.labelMax;
 			}
 

@@ -4,6 +4,7 @@
 		:value="choiceFieldValue"
 		:items="items"
 		:multiple="multiple"
+		class="vd-form-input"
 		@change="emitChangeEvent($event)"
 	/>
 </template>

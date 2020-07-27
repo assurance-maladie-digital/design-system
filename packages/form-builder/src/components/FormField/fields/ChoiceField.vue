@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-form-input">
+	<div>
 		<!-- the choice field component -->
 		<component
 			:is="getField()"
