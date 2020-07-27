@@ -3,7 +3,7 @@ import { Form } from '../../types';
 const defaultItems = [
 	{
 		text: '9h',
-		value: null
+		value: 0
 	},
 	{
 		text: '9h30',
@@ -215,6 +215,21 @@ export const questionForm: Form = {
 				],
 				fieldOptions: {
 					type: 'choiceButton'
+				}
+			},
+			questionRadio: {
+				type: 'radio',
+				title: 'Question radio',
+				description: 'Informations supplémentaires',
+				value: null,
+				items: defaultItems,
+				fieldOptions: {
+					outlined: true,
+					chips: true,
+					menuProps: {
+						offsetY: true
+					},
+					label: 'Votre réponse'
 				}
 			}
 		}
