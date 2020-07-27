@@ -5,7 +5,7 @@ import { ChoiceFieldValue, FieldItem, FieldOptions, FieldItemValue } from '../ty
 
 const Props = Vue.extend({
 	props: {
-		/** The choice field to display */
+		/** The choice field value to display */
 		value: {
 			type: [Array, Number, String] as PropType<ChoiceFieldValue>,
 			default: null
@@ -32,7 +32,7 @@ const MixinsDeclaration = mixins(Props);
 	watch: {
 		// Listen the current field value for the component
 		value: {
-			handler(value: ChoiceFieldValue) {
+			handler(value: ChoiceFieldValue): void {
 				if (value !== null && value !== undefined) {
 					/** In multiple mode, put the value in an array if it wasn't already */
 					if (this.multiple && !Array.isArray(value)) {
@@ -116,10 +116,10 @@ export class ChoiceComponent extends MixinsDeclaration {
 
 		this.choiceFieldValue = newChoiceValue;
 
-		this.emitChoiceUpdated(this.choiceFieldValue);
+		this.emitChangeEvent(this.choiceFieldValue);
 	}
 
-	emitChoiceUpdated(newValue: ChoiceFieldValue): void {
+	emitChangeEvent(newValue: ChoiceFieldValue): void {
 		this.$emit('change', newValue);
 	}
 
@@ -134,7 +134,7 @@ export class ChoiceComponent extends MixinsDeclaration {
 			return false;
 		}
 
-		if (Array.isArray(this.choiceFieldValue)) {
+		if (this.multiple && Array.isArray(this.choiceFieldValue)) {
 			return this.choiceFieldValue.includes(value);
 		} else {
 			return this.choiceFieldValue === value;

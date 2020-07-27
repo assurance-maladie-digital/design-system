@@ -4,14 +4,14 @@ import { mount, Wrapper } from '@vue/test-utils';
 import { ChoiceComponent } from '../choiceComponent';
 import { ChoiceFieldValue, FieldOptions, FieldItem } from '../../types';
 
-interface IChoiceComponent {
+interface TestComponent {
 	value?: ChoiceFieldValue;
 	options?: FieldOptions;
 	multiple?: boolean;
 	items: FieldItem[];
 }
 
-const testField: IChoiceComponent = {
+const testField: TestComponent = {
 	items: [
 		{
 			text: 'Test 1',
@@ -39,15 +39,15 @@ const testField: IChoiceComponent = {
 };
 
 /** Create the wrapper */
-function createWrapper(field: IChoiceComponent) {
-	const component = Vue.component('test', {
+function createWrapper(field: TestComponent) {
+	const testComponent = Vue.component('test', {
 		mixins: [
 			ChoiceComponent
 		],
 		template: '<div />'
 	});
 
-	return mount(component, {
+	return mount(testComponent, {
 		propsData: {
 			...field
 		}

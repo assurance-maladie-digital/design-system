@@ -393,7 +393,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
         Informations supplémentaires
       </p>
       <div class="vd-form-input">
-        <div class="v-input mt-5 theme--light v-input__slider">
+        <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
           <div class="v-input__control">
             <div class="v-input__slot">
               <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-119" readonly="readonly" tabindex="-1" type="choiceSlider">
@@ -401,7 +401,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
                 </div>
-                <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick" style="width: 2px; height: 2px; left: calc(0% - 1px); top: calc(50% - 1px);"><div class="v-slider__tick-label">9h</div></span><span class="v-slider__tick" style="width: 2px; height: 2px; left: calc(33.333333333333336% - 1px); top: calc(50% - 1px);"><div class="v-slider__tick-label">9h30</div></span><span class="v-slider__tick" style="width: 2px; height: 2px; left: calc(66.66666666666667% - 1px); top: calc(50% - 1px);"><div class="v-slider__tick-label">10h</div></span><span class="v-slider__tick" style="width: 2px; height: 2px; left: calc(100% - 1px); top: calc(50% - 1px);"><div class="v-slider__tick-label">11h</div></span></div>
+                <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(0% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">9h</div></span><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(33.333333333333336% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">9h30</div></span><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(66.66666666666667% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">10h</div></span><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(100% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">11h</div></span></div>
                 <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container accent--text" style="left: 0%;">
                   <div class="v-slider__thumb accent"></div>
                 </div>
@@ -421,10 +421,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
         Informations supplémentaires
       </p>
       <div class="vd-form-input">
-        <div class="v-input mt-5 theme--light v-input__slider">
-          <div class="v-input__prepend-outer"><span>
-			9h
-		</span></div>
+        <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
           <div class="v-input__control">
             <div class="v-input__slot">
               <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-128" readonly="readonly" tabindex="-1" type="choiceSlider">
@@ -437,9 +434,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
                   <transition-stub name="scale-transition">
                     <div class="v-slider__thumb-label-container">
                       <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
-                        <div><span>
-			9h
-		</span></div>
+                        <div>
+                          9h
+                        </div>
                       </div>
                     </div>
                   </transition-stub>
@@ -450,9 +447,6 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
               <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
             </div>
           </div>
-          <div class="v-input__append-outer"><span>
-			11h
-		</span></div>
         </div>
         <!---->
       </div>
@@ -463,10 +457,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
         Informations supplémentaires
       </p>
       <div class="vd-form-input">
-        <div class="v-input mt-5 theme--light v-input__slider">
-          <div class="v-input__prepend-outer"><span>
-			9h
-		</span></div>
+        <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
           <div class="v-input__control">
             <div class="v-input__slot"><label for="input-138" class="v-label theme--light" style="left: 0px; position: relative;">Label</label>
               <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-138" readonly="readonly" tabindex="-1" type="choiceSlider">
@@ -479,9 +470,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
                   <transition-stub name="scale-transition">
                     <div class="v-slider__thumb-label-container">
                       <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
-                        <div><span>
-			9h
-		</span></div>
+                        <div>
+                          9h
+                        </div>
                       </div>
                     </div>
                   </transition-stub>
@@ -492,9 +483,6 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
               <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
             </div>
           </div>
-          <div class="v-input__append-outer"><span>
-			11h
-		</span></div>
         </div>
         <!---->
       </div>

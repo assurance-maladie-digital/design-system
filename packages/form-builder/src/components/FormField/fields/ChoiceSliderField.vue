@@ -1,40 +1,21 @@
 <template>
 	<VSlider
-		:value="getIndex(choiceFieldValue)"
 		v-bind="options"
+		:value="getIndex(choiceFieldValue)"
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
 		:max="items.length - 1"
-		track-color="grey lighten-1"
 		color="accent"
-		class="mt-5"
+		tick-size="6"
+		track-color="grey lighten-1"
+		class="vd-choice-slider-field vd-form-input-xl"
 		@change="valueUpdated"
 	>
 		<template
 			v-if="isThumbLabel"
-			#prepend
-		>
-			<span>
-				{{ labelMin }}
-			</span>
-		</template>
-
-		<template
-			v-if="isThumbLabel"
-			#append
-		>
-			<span>
-				{{ labelMax }}
-			</span>
-		</template>
-
-		<template
-			v-if="thumbLabel"
 			#thumb-label="{ value }"
 		>
-			<span>
-				{{ labels[value] }}
-			</span>
+			{{ labels[value] }}
 		</template>
 	</VSlider>
 </template>
@@ -60,10 +41,16 @@
 				return null;
 			}
 
-			return this.items.findIndex((item) => item.value === value);
+			const index = this.items.findIndex((item) => item.value === value);
+
+			if (index === -1) {
+				return null;
+			}
+
+			return index;
 		}
 
-		get labelMin(): unknown {
+		get labelMin(): string | unknown {
 			// Check if there is a custom labelMin prop in metadata
 			if (this.options?.labelMin) {
 				return this.options.labelMin;
@@ -89,7 +76,7 @@
 
 		/** The ticks labels (when we don't want the thumb label) */
 		get thickLabels(): string[] {
-			return !this.isThumbLabel ? this.labels : [];
+			return this.isThumbLabel ? [] : this.labels;
 		}
 
 		/**  Are we in thumb label mode */
@@ -120,7 +107,7 @@
 				fieldValue = this.items[index].value;
 			}
 
-			this.emitChoiceUpdated(fieldValue);
+			this.emitChangeEvent(fieldValue);
 		}
 	}
 </script>
@@ -132,6 +119,7 @@
 		.v-input__control {
 			width: auto;
 		}
+
 		.v-slider__ticks-container--always-show .v-slider__tick {
 			border-radius: 50%;
 			background: #bdbdbd;
@@ -139,6 +127,7 @@
 				background: $vd-accent !important;
 			}
 		}
+
 		&.theme--dark {
 			.v-slider__ticks-container--always-show .v-slider__tick {
 				background: #fff;

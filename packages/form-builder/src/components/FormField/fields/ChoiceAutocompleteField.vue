@@ -33,7 +33,7 @@
 		 */
 		valueChanged(value: ChoiceFieldValue): void {
 			this.searchInput = '';
-			this.emitChoiceUpdated(value);
+			this.emitChangeEvent(value);
 		}
 	}
 </script>

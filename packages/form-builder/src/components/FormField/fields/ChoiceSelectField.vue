@@ -4,7 +4,7 @@
 		:value="choiceFieldValue"
 		:items="items"
 		:multiple="multiple"
-		@change="emitChoiceUpdated($event)"
+		@change="emitChangeEvent($event)"
 	/>
 </template>
 
