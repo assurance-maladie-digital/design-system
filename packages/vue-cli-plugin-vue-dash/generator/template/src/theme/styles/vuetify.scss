@@ -92,7 +92,7 @@ table.v-table thead th,
 		flex: none;
 
 		input {
-			@extend .sr-only;
+			@extend .d-sr-only;
 		}
 	}
 
