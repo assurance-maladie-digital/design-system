@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FooterWrapper renders correctly 1`] = `
-<vfooter-stub color="#fafafa" elevation="1" height="auto" minheight="64" width="100%" tag="div" tile="true" class="vd-footer-wrapper">
+<vfooter-stub color="#fafafa" elevation="1" height="auto" minheight="64" width="100%" tag="footer" class="vd-footer-wrapper">
   <vrow-stub tag="div" justify="center" class="ma-0"></vrow-stub>
 </vfooter-stub>
 `;

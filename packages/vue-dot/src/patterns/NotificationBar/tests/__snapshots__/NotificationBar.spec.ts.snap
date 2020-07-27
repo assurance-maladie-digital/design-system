@@ -1,16 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotificationBar renders correctly 1`] = `
-<vsnackbar-stub color="success" value="true" top="true" timeout="0">
-  <vlayout-stub tag="div" align-center="">
+<vsnackbar-stub tag="div" value="true" top="true" contentclass="" timeout="-1" transition="v-snack-transition">
+  <div class="d-flex align-center">
     <vicon-stub color="white" class="vd-notification-icon mr-2">
       test-icon
     </vicon-stub>
 
     test
-  </vlayout-stub>
-  <vbtn-stub color="white" tag="button" activeclass="" text="true" type="button">
-    Fermer
-  </vbtn-stub>
+  </div>
 </vsnackbar-stub>
 `;

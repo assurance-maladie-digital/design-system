@@ -1,11 +1,11 @@
 import Vue, { VueConstructor } from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { Refs, IndexedObject } from '../../../types';
+import { Refs, IndexedObject } from '../../../../types';
 
-import { customizable, Options } from '../../../mixins/customizable';
+import { customizable, Options } from '../../../../mixins/customizable';
 
-import { DateLogic } from '../mixins/dateLogic';
+import { DateLogic } from '../dateLogic';
 
 interface VueInstance extends VueConstructor {
 	options: {

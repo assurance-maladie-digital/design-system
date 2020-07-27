@@ -1,38 +1,41 @@
 <template>
 	<DocSection title="Rules">
-		<h2 class="subtitle-1 mb-4 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-4 font-weight-bold">
 			Required with custom message
 		</h2>
 
 		<VTextField
 			:rules="textFieldRules"
 			label="Required field"
+			class="vd-form-input"
 			outlined
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Min length & required with default messages
 		</h2>
 
 		<VTextarea
 			:rules="textareaRules"
 			label="Required field"
+			class="vd-form-input"
 			outlined
 			rows="1"
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Max & min length with custom messages
 		</h2>
 
 		<VTextarea
 			:rules="lengthRule"
 			label="Length field"
+			class="vd-form-input"
 			outlined
 			rows="1"
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Special case for required (array)
 		</h2>
 
@@ -41,6 +44,7 @@
 			:rules="selectRules"
 			:items="data"
 			label="Select something"
+			class="vd-form-input"
 			outlined
 			multiple
 		/>

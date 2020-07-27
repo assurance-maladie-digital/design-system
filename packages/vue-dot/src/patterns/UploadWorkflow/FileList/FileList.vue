@@ -1,6 +1,7 @@
 <template>
 	<VList
 		v-bind="options.list"
+		:style="widthStyles"
 		class="vd-file-list"
 	>
 		<template v-for="(file, index) in files">
@@ -52,6 +53,7 @@
 						<VBtn
 							v-if="file.state === 'initial'"
 							v-bind="options.uploadBtn"
+							:aria-label="locales.uploadFile"
 							@click="$emit('upload', file.id)"
 						>
 							<VIcon
@@ -65,6 +67,7 @@
 						<VBtn
 							v-if="file.state === 'error'"
 							v-bind="options.retryBtn"
+							:aria-label="locales.uploadFile"
 							@click="$emit('retry', file.id)"
 						>
 							<VIcon
@@ -78,6 +81,7 @@
 						<VBtn
 							v-if="showViewBtn && file.state === 'success'"
 							v-bind="options.viewFileBtn"
+							:aria-label="locales.viewFile"
 							@click="$emit('view-file', file)"
 						>
 							<VIcon
@@ -123,6 +127,7 @@
 	import { FileItem, IconInfo } from './types';
 
 	import { customizable } from '../../../mixins/customizable';
+	import { Widthable } from '../../../mixins/widthable';
 
 	import {
 		mdiRefresh,
@@ -159,11 +164,14 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	/** FileList is a component that displays a list of files */
 	@Component
 	export default class FileList extends MixinsDeclaration {
+		// Locales
+		locales = locales;
+
 		// Icons
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
@@ -227,9 +235,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.vd-file-list {
-		width: 100%;
-	}
-</style>

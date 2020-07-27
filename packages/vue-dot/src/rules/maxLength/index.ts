@@ -17,7 +17,7 @@ export function maxLengthFn(max: number, errorMessages: ErrorMessages<number> = 
 			return true;
 		}
 
-		return value.length < max || ruleMessage(errorMessages, 'default', [max]);
+		return value.length <= max || ruleMessage(errorMessages, 'default', [max]);
 	};
 }
 

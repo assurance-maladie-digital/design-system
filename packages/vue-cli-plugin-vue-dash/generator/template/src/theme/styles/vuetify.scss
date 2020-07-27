@@ -48,37 +48,37 @@
 // Reset Vuetify font-size
 .v-btn,
 .v-tabs__div,
-.body-1 {
+.text-body-1 {
 	font-size: .85rem !important;
 }
 
 table.v-table tbody td,
 table.v-table thead th,
 .v-datatable__actions,
-.body-2 {
+.text-body-2 {
 	font-size: .8rem;
 }
 
 .v-input,
 .v-label,
 .v-list__tile,
-.subtitle-1 {
+.text-subtitle-1 {
 	font-size: 1rem !important;
 }
 
 .v-application {
-	.display-4,
-	.display-3,
-	.display-2,
-	.display-1,
-	.headline,
-	.title,
-	.subtitle-1,
-	.subtitle-2,
-	.body-1,
-	.body-2,
-	.caption,
-	.overline {
+	.text-h1,
+	.text-h2,
+	.text-h3,
+	.text-h4,
+	.text-h5,
+	.text-h6,
+	.text-subtitle-1,
+	.text-subtitle-2,
+	.text-body-1,
+	.text-body-2,
+	.text-caption,
+	.text-overline {
 		font-family: 'Open Sans', sans-serif !important;
 	}
 }
@@ -92,7 +92,7 @@ table.v-table thead th,
 		flex: none;
 
 		input {
-			@extend .sr-only;
+			@extend .d-sr-only;
 		}
 	}
 

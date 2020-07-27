@@ -7,6 +7,25 @@ interface ControlItem {
 	expiresAt?: number;
 }
 
+/**
+ * Check if localStorage is available
+ *
+ * @see https://gist.github.com/paulirish/5558557
+ * @returns {boolean} Is localStorage available
+ */
+function isStorageAvailable(): boolean {
+	try {
+		const item = 'test';
+
+		localStorage.setItem(item, item);
+		localStorage.removeItem(item);
+
+		return true;
+	} catch(e) {
+		return false;
+	}
+}
+
 export class LocalStorageUtility {
 	readonly localStorageSupported: boolean;
 
@@ -29,7 +48,7 @@ export class LocalStorageUtility {
 		expiration?: number,
 		prefix = 'vd-'
 	) {
-		this.localStorageSupported = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined' && window.localStorage !== null;
+		this.localStorageSupported = isStorageAvailable();
 
 		this.prefix = prefix;
 

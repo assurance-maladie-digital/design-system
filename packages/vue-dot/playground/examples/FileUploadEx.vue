@@ -1,12 +1,13 @@
 <template>
 	<DocSection title="FileUpload">
-		<h2 class="subtitle-1 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-2 font-weight-bold">
 			Default with event handlers
 		</h2>
 
 		<FileUpload
 			ref="fileUpload"
 			v-model="file"
+			width="512"
 			@error="setError"
 			@change="error = null; success = true"
 		/>
@@ -44,7 +45,7 @@
 			Aucun fichier sélectionné
 		</p>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Translated
 		</h2>
 
@@ -56,6 +57,7 @@
 				'GB',
 				'TB'
 			]"
+			width="512"
 		>
 			<template #action-text="{ multiple }">
 				Place your file{{ multiple ? 's' : '' }} here
@@ -74,11 +76,14 @@
 			</template>
 		</FileUpload>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Custom content & styles
 		</h2>
 
-		<FileUpload class="custom accent elevation-3">
+		<FileUpload
+			width="512"
+			class="custom accent elevation-3"
+		>
 			<template #placeholder>
 				<VLayout
 					tag="span"

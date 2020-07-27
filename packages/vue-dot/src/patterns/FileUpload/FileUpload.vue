@@ -13,6 +13,7 @@
 			},
 			colors.label
 		]"
+		:style="widthStyles"
 		@dragover.prevent="dragover = true"
 		@dragleave="dragover = false"
 		@drop.prevent="dropHandler"
@@ -80,7 +81,7 @@
 
 				<span
 					:class="colors.info"
-					class="mt-4 body-2 font-weight-regular"
+					class="mt-4 text-body-2 font-weight-regular"
 				>
 					<slot
 						name="info-text"
@@ -103,6 +104,7 @@
 	import { locales } from './locales';
 
 	import { EventsMapping } from './mixins/eventsMapping';
+	import { Widthable } from '../../mixins/widthable';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -119,8 +121,8 @@
 				// File is not a valid prop type, use
 				// null to allow any type and
 				// provide custom validation
-				type: null as unknown as PropType<File | File[]>,
-				default: () => [],
+				type: null as unknown as PropType<File | File[] | null>,
+				default: null,
 				/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
 				validator: (val): boolean => {
 					if (val === null) {
@@ -151,7 +153,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config), EventsMapping);
+	const MixinsDeclaration = mixins(Props, customizable(config), EventsMapping, Widthable);
 
 	/**
 	 * FileUpload is a component that enhance the default HTML
@@ -205,9 +207,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-file-upload {
-		width: 100%;
-		max-width: 550px;
+	.file-upload {
 		cursor: pointer;
 		position: relative;
 		border: 1px dashed;

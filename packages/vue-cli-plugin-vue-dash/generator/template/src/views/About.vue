@@ -1,6 +1,6 @@
 <template>
 	<PageCard card-class="py-4 px-5">
-		<h2 class="title font-weight-bold primary--text">
+		<h2 class="text-h6 font-weight-bold primary--text">
 			<% if (i18n) { %>{{ $t('views.about.title') }}<% } else { %>À propos<% } %>
 		</h2>
 

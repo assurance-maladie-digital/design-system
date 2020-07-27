@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { ErrorProp } from '../mixins/errorProp';
+import { ErrorProp } from '../errorProp';
 
 interface TestComponent extends Vue {
 	error: boolean;

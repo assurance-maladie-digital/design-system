@@ -1,21 +1,24 @@
 <template>
 	<!-- v-debounce -->
 	<DocSection title="v-debounce">
-		<h2 class="subtitle-1 mb-4 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-4 font-weight-bold">
 			Native input
 		</h2>
 
-		<label>
-			<input
-				v-model.lazy="text"
-				v-debounce="1000"
-
-				placeholder="Type here"
-				class="vd-simple-input"
-			>
+		<label for="debounce-simple-input">
+			Type below
 		</label>
 
-		<h2 class="subtitle-1 mt-4 font-weight-bold">
+		<input
+			id="debounce-simple-input"
+
+			v-model.lazy="text"
+			v-debounce="1000"
+
+			class="vd-simple-input vd-form-input"
+		>
+
+		<h2 class="text-subtitle-1 mt-4 font-weight-bold">
 			VTextField
 		</h2>
 
@@ -24,7 +27,7 @@
 			:value="text"
 
 			label="Type here"
-			class="no-flex"
+			class="vd-form-input"
 		/>
 
 		<p class="mb-0 mt-2">
@@ -49,7 +52,6 @@
 <style lang="scss" scoped>
 	.vd-simple-input {
 		outline: 0;
-		width: 100%;
 		padding: 5px 0;
 		color: inherit;
 		font-size: 1rem;
