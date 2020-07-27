@@ -2,7 +2,7 @@
 	<div class="vd-choice-button-field vd-form-input">
 		<VBtnToggle
 			v-bind="options"
-			:value="choiceValue"
+			:value="choiceFieldValue"
 			:multiple="multiple"
 			:class="{ 'column': !isInline }"
 			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"

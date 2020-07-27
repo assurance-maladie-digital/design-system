@@ -1,13 +1,13 @@
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import { ChoiceValue, FieldItem, FieldOptions, FieldItemValue } from '../types';
+import { ChoiceFieldValue, FieldItem, FieldOptions, FieldItemValue } from '../types';
 
 const Props = Vue.extend({
 	props: {
 		/** The choice field to display */
 		value: {
-			type: [Array, Number, String] as PropType<ChoiceValue>,
+			type: [Array, Number, String] as PropType<ChoiceFieldValue>,
 			default: null
 		},
 		options: {
@@ -32,17 +32,17 @@ const MixinsDeclaration = mixins(Props);
 	watch: {
 		// Listen the current field value for the component
 		value: {
-			handler(value: ChoiceValue) {
+			handler(value: ChoiceFieldValue) {
 				if (value !== null && value !== undefined) {
 					/** In multiple mode, put the value in an array if it wasn't already */
 					if (this.multiple && !Array.isArray(value)) {
-						this.choiceValue = [value];
+						this.choiceFieldValue = [value];
 					} else {
-						this.choiceValue = value;
+						this.choiceFieldValue = value;
 					}
 				} else {
 					// Reset the choice value
-					this.choiceValue = this.multiple ? [] : null;
+					this.choiceFieldValue = this.multiple ? [] : null;
 				}
 			},
 			immediate: true,
@@ -51,7 +51,7 @@ const MixinsDeclaration = mixins(Props);
 	}
 })
 export class ChoiceComponent extends MixinsDeclaration {
-	choiceValue: ChoiceValue | null = this.multiple ? [] : null;
+	choiceFieldValue: ChoiceFieldValue | null = this.multiple ? [] : null;
 
 	/**
 	 * Toggle the item
@@ -62,19 +62,19 @@ export class ChoiceComponent extends MixinsDeclaration {
 	toggleItem(item: FieldItem): void {
 		const active: boolean = this.isSelected(item.value);
 
-		let newChoiceValue: ChoiceValue;
+		let newChoiceValue: ChoiceFieldValue;
 
 		// Set the new value in simple mode
 		if (!this.multiple) {
 			newChoiceValue = active ? null : item.value;
 		} else {
 			newChoiceValue = [
-				...this.choiceValue as FieldItemValue[]
+				...this.choiceFieldValue as FieldItemValue[]
 			];
 
-			if (active && Array.isArray(this.choiceValue)) {
+			if (active && Array.isArray(this.choiceFieldValue)) {
 				// Unselect the item
-				const valueIndex = this.choiceValue.indexOf(item.value);
+				const valueIndex = this.choiceFieldValue.indexOf(item.value);
 
 				newChoiceValue.splice(valueIndex, 1);
 			} else {
@@ -114,12 +114,12 @@ export class ChoiceComponent extends MixinsDeclaration {
 			}
 		}
 
-		this.choiceValue = newChoiceValue;
+		this.choiceFieldValue = newChoiceValue;
 
-		this.emitChoiceUpdated(this.choiceValue);
+		this.emitChoiceUpdated(this.choiceFieldValue);
 	}
 
-	emitChoiceUpdated(newValue: ChoiceValue): void {
+	emitChoiceUpdated(newValue: ChoiceFieldValue): void {
 		this.$emit('change', newValue);
 	}
 
@@ -130,14 +130,14 @@ export class ChoiceComponent extends MixinsDeclaration {
 	 * @returns {boolean} The selected value
 	 */
 	isSelected(value: FieldItemValue): boolean {
-		if (!this.choiceValue) {
+		if (!this.choiceFieldValue) {
 			return false;
 		}
 
-		if (Array.isArray(this.choiceValue)) {
-			return this.choiceValue.includes(value);
+		if (Array.isArray(this.choiceFieldValue)) {
+			return this.choiceFieldValue.includes(value);
 		} else {
-			return this.choiceValue === value;
+			return this.choiceFieldValue === value;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 <template>
 	<VSelect
 		v-bind="options"
-		:value="choiceValue"
+		:value="choiceFieldValue"
 		:items="items"
 		:multiple="multiple"
 		@change="emitChoiceUpdated($event)"

@@ -1,7 +1,7 @@
 <template>
 	<VAutocomplete
 		v-bind="options"
-		:value="choiceValue"
+		:value="choiceFieldValue"
 		:items="items"
 		:multiple="multiple"
 		:search-input.sync="searchInput"
@@ -14,7 +14,7 @@
 
 	import { ChoiceComponent } from '../mixins/choiceComponent';
 
-	import { ChoiceValue } from '../types';
+	import { ChoiceFieldValue } from '../types';
 
 	const MixinsDeclaration = mixins(ChoiceComponent);
 
@@ -28,10 +28,10 @@
 		 * See https://github.com/vuetifyjs/vuetify/issues/5926
 		 * for more informations
 		 *
-		 * @param {ChoiceValue} value The updated value
+		 * @param {ChoiceFieldValue} value The updated value
 		 * @returns {void} Nothing
 		 */
-		valueChanged(value: ChoiceValue): void {
+		valueChanged(value: ChoiceFieldValue): void {
 			this.searchInput = '';
 			this.emitChoiceUpdated(value);
 		}

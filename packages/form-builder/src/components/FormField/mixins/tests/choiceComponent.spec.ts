@@ -2,10 +2,10 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import { ChoiceComponent } from '../choiceComponent';
-import { ChoiceValue, FieldOptions, FieldItem } from '../../types';
+import { ChoiceFieldValue, FieldOptions, FieldItem } from '../../types';
 
 interface IChoiceComponent {
-	value?: ChoiceValue;
+	value?: ChoiceFieldValue;
 	options?: FieldOptions;
 	multiple?: boolean;
 	items: FieldItem[];
@@ -101,7 +101,7 @@ describe('choiceComponent', () => {
 			multiple: true
 		});
 
-		expect(wrapper.vm.choiceValue).toEqual([testField.items[0].value]);
+		expect(wrapper.vm.choiceFieldValue).toEqual([testField.items[0].value]);
 	});
 
 	it('selects multiple items in multiple mode', async() => {

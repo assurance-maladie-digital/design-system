@@ -1,6 +1,6 @@
 <template>
 	<VSlider
-		:value="getIndex(choiceValue)"
+		:value="getIndex(choiceFieldValue)"
 		v-bind="options"
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"

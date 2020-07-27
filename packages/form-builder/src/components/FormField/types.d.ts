@@ -5,16 +5,16 @@ export interface PeriodValue {
 
 export type FieldItemValue = string | number | null | undefined;
 
-export type OtherValue = string | null;
+export type OtherFieldValue = string | null;
 
-export type ChoiceValue = FieldItemValue | FieldItemValue[];
+export type ChoiceFieldValue = FieldItemValue | FieldItemValue[];
 
-export interface IChoiceValue {
-	value: ChoiceValue;
-	other?: OtherValue;
+export interface ChoiceValue {
+	value: ChoiceFieldValue;
+	other?: OtherFieldValue;
 }
 
-export type FieldValue = string | number | null | undefined | PeriodValue | IChoiceValue;
+export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue;
 
 export type ErrorMessages = string[];
 

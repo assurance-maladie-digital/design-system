@@ -27,7 +27,7 @@
 					<VTextarea
 						ref="otherFieldRef"
 						v-bind="otherField.fieldOptions"
-						:value="otherValue"
+						:value="otherFieldValue"
 						:disabled="!isOtherActive"
 						:rows="1"
 						auto-grow
@@ -40,11 +40,11 @@
 			<VTextField
 				v-else
 				v-bind="otherField.fieldOptions"
-				:value="otherValue"
+				:value="otherFieldValue"
 				outlined
-				:background-color="otherValue ? 'accent' : undefined"
+				:background-color="otherFieldValue ? 'accent' : undefined"
 				color="accent"
-				:dark="Boolean(otherValue)"
+				:dark="Boolean(otherFieldValue)"
 				dense
 				@input="otherInput"
 				@change="otherUpdated"
@@ -62,7 +62,7 @@
 
 	import { IFieldMap } from '../mixins/fieldMap';
 
-	import { IChoiceValue, FieldItemValue, OtherValue, ChoiceValue, OtherField } from '../types';
+	import { ChoiceValue, FieldItemValue, OtherFieldValue, ChoiceFieldValue, OtherField } from '../types';
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
@@ -89,7 +89,7 @@
 		},
 		watch: {
 			'field.value': {
-				handler(value: IChoiceValue) {
+				handler(value: ChoiceValue) {
 					this.choiceValue = value || this.choiceValue;
 
 					// Set the active status
@@ -100,7 +100,7 @@
 					 * to keep the local value up for the user
 					 */
 					if (this.choiceValue?.other) {
-						this.otherValue = this.choiceValue.other;
+						this.otherFieldValue = this.choiceValue.other;
 					}
 				},
 				immediate: true,
@@ -114,10 +114,10 @@
 			otherFieldRef: HTMLInputElement;
 		}>;
 
-		choiceValue: IChoiceValue = { value: null };
+		choiceValue: ChoiceValue = { value: null };
 
 		isOtherActive = false;
-		otherValue: OtherValue = null;
+		otherFieldValue: OtherFieldValue = null;
 
 		/** List all choice field components and their corresponding keys */
 		selectFieldMap: IFieldMap = {
@@ -165,14 +165,14 @@
 		 * @returns {boolean} The other active status
 		 */
 		getOtherActive(): boolean {
-			const choiceValue: ChoiceValue = this.choiceValue ? this.choiceValue.value : null;
+			const choiceFieldValue: ChoiceFieldValue = this.choiceValue ? this.choiceValue.value : null;
 			const selectedChoice: FieldItemValue = this.field.other ? this.field.other.selectedChoice : null;
-			if (!selectedChoice || !choiceValue) {
+			if (!selectedChoice || !choiceFieldValue) {
 				return false;
-			} else if (Array.isArray(choiceValue)) {
-				return choiceValue.includes(selectedChoice);
+			} else if (Array.isArray(choiceFieldValue)) {
+				return choiceFieldValue.includes(selectedChoice);
 			} else {
-				return choiceValue === selectedChoice;
+				return choiceFieldValue === selectedChoice;
 			}
 		}
 
@@ -190,13 +190,13 @@
 		/**
 		 * Emit the new type select value when choice updated
 		 *
-		 * @param {ChoiceValue} choiceValue The new choice value selected
+		 * @param {ChoiceFieldValue} choiceFieldValue The new choice value selected
 		 */
-		choiceUpdated(choiceValue: ChoiceValue): void {
-			this.choiceValue.value = choiceValue;
+		choiceUpdated(choiceFieldValue: ChoiceFieldValue): void {
+			this.choiceValue.value = choiceFieldValue;
 
 			if(this.choiceValue.value && !this.otherField?.selectedChoice){
-				this.otherValue = null;
+				this.otherFieldValue = null;
 			}
 
 			this.isOtherActive = this.getOtherActive();
@@ -206,7 +206,7 @@
 				this.$nextTick(() => this.$refs.otherFieldRef.focus());
 
 				// Get the other local value when activated
-				this.choiceValue.other = this.otherValue;
+				this.choiceValue.other = this.otherFieldValue;
 			} else {
 				this.choiceValue.other = null;
 			}
@@ -214,10 +214,10 @@
 			this.emitChangeEvent(this.choiceValue);
 		}
 
-		otherInput(otherValue: OtherValue): void {
-			this.otherValue = otherValue?.length ? otherValue : null;
+		otherInput(otherFieldValue: OtherFieldValue): void {
+			this.otherFieldValue = otherFieldValue?.length ? otherFieldValue : null;
 
-			if(this.otherValue) {
+			if(this.otherFieldValue) {
 				this.choiceValue.value = null;
 			}
 		}
@@ -225,11 +225,11 @@
 		/**
 		 * Emit the new type select value when other field updated
 		 *
-		 * @param {OtherValue} otherValue The new other local value
+		 * @param {OtherFieldValue} otherFieldValue The new other local value
 		 */
-		otherUpdated(otherValue: OtherValue): void {
-			this.otherValue = otherValue?.length ? otherValue : null;
-			this.choiceValue.other = this.otherValue;
+		otherUpdated(otherFieldValue: OtherFieldValue): void {
+			this.otherFieldValue = otherFieldValue?.length ? otherFieldValue : null;
+			this.choiceValue.other = this.otherFieldValue;
 
 			this.emitChangeEvent(this.choiceValue);
 		}
