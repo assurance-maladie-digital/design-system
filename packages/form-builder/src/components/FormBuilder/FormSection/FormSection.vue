@@ -10,6 +10,10 @@
 			{{ sectionTitle }}
 		</h3>
 
+		<p v-if="sectionDescription">
+			{{ sectionDescription }}
+		</p>
+
 		<FormField
 			v-for="(field, fieldName) in fields"
 			:key="'field-' + fieldName"
@@ -31,6 +35,10 @@
 	const Props = Vue.extend({
 		props: {
 			sectionTitle: {
+				type: String,
+				default: undefined
+			},
+			sectionDescription: {
 				type: String,
 				default: undefined
 			},
