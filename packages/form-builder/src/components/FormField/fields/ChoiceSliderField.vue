@@ -15,27 +15,21 @@
 			v-if="isThumbLabel"
 			#prepend
 		>
-			<span>
-				{{ labelMin }}
-			</span>
+			{{ labelMin }}
 		</template>
 
 		<template
 			v-if="isThumbLabel"
 			#append
 		>
-			<span>
-				{{ labelMax }}
-			</span>
+			{{ labelMax }}
 		</template>
 
 		<template
 			v-if="thumbLabel"
 			#thumb-label="{ value }"
 		>
-			<span>
-				{{ labels[value] }}
-			</span>
+			{{ labels[value] }}
 		</template>
 	</VSlider>
 </template>

@@ -30,6 +30,7 @@
 						:value="otherFieldValue"
 						:disabled="!isOtherActive"
 						:rows="1"
+						class="vd-form-input"
 						auto-grow
 						outlined
 						@change="otherUpdated"
@@ -41,11 +42,12 @@
 				v-else
 				v-bind="otherField.fieldOptions"
 				:value="otherFieldValue"
-				outlined
 				:background-color="otherFieldValue ? 'accent' : undefined"
-				color="accent"
 				:dark="Boolean(otherFieldValue)"
+				class="vd-form-input"
+				color="accent"
 				dense
+				outlined
 				@input="otherInput"
 				@change="otherUpdated"
 			/>

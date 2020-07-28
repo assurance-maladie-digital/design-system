@@ -250,7 +250,6 @@ export const questionForm: Form = {
 				],
 				other: {
 					fieldOptions: {
-						hint: 'Veuillez entrez votre taille',
 						placeholder: 'Autre'
 					}
 				},
@@ -297,7 +296,7 @@ export const questionForm: Form = {
 					selectedChoice: 'autre',
 					label: 'Autre choix',
 					fieldOptions: {
-						hint: 'Veuillez entrez votre taille'
+						placeholder: 'Entrez votre taille'
 					}
 				},
 				fieldOptions: {
