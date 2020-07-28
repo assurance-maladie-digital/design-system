@@ -7,6 +7,10 @@ import { HTMLInputEvent } from '../types';
 
 const MixinsDeclaration = mixins(FileValidation);
 
+/**
+ * Handle main logic of the FileUpload
+ * (File dropped, file selected)
+ */
 @Component
 export class FileUploadCore extends MixinsDeclaration {
 	$refs!: Refs<{

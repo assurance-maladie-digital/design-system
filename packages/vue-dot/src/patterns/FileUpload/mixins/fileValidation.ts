@@ -51,6 +51,10 @@ const Props = Vue.extend({
 
 const MixinsDeclaration = mixins(Props);
 
+/**
+ * Provide computedAccept, validateFile, ifTooManyFiles
+ * and props to configure the default values
+ */
 @Component
 export class FileValidation extends MixinsDeclaration {
 	/** The list of accepted files */
