@@ -422,9 +422,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
       </p>
       <div>
         <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
-          <div class="v-input__prepend-outer"><span>
-			9h
-		</span></div>
+          <div class="v-input__prepend-outer">
+            9h
+          </div>
           <div class="v-input__control">
             <div class="v-input__slot">
               <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-128" readonly="readonly" tabindex="-1" type="choiceSlider">
@@ -437,9 +437,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
                   <transition-stub name="scale-transition">
                     <div class="v-slider__thumb-label-container">
                       <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
-                        <div><span>
-			9h
-		</span></div>
+                        <div>
+                          9h
+                        </div>
                       </div>
                     </div>
                   </transition-stub>
@@ -450,9 +450,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
               <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
             </div>
           </div>
-          <div class="v-input__append-outer"><span>
-			11h
-		</span></div>
+          <div class="v-input__append-outer">
+            11h
+          </div>
         </div>
         <!---->
       </div>
@@ -464,9 +464,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
       </p>
       <div>
         <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
-          <div class="v-input__prepend-outer"><span>
-			min
-		</span></div>
+          <div class="v-input__prepend-outer">
+            min
+          </div>
           <div class="v-input__control">
             <div class="v-input__slot">
               <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-138" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max" type="choiceSlider">
@@ -479,9 +479,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
                   <transition-stub name="scale-transition">
                     <div class="v-slider__thumb-label-container">
                       <div class="v-slider__thumb-label accent" style="height: 32px; width: 32px; transform: translateY(-20%) translateY(-12px) translateX(-50%) rotate(45deg);">
-                        <div><span>
-			9h
-		</span></div>
+                        <div>
+                          9h
+                        </div>
                       </div>
                     </div>
                   </transition-stub>
@@ -492,9 +492,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
               <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
             </div>
           </div>
-          <div class="v-input__append-outer"><span>
-			max
-		</span></div>
+          <div class="v-input__append-outer">
+            max
+          </div>
         </div>
         <!---->
       </div>
@@ -626,7 +626,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
             </button></div>
           <!---->
         </div>
-        <div class="v-input v-input--dense theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
+        <div class="v-input vd-form-input v-input--dense theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
           <div class="v-input__control">
             <div class="v-input__slot">
               <fieldset aria-hidden="true">
@@ -681,13 +681,13 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
             <h4 class="mb-1 body-1">
               Autre choix
             </h4>
-            <div class="v-input v-textarea v-textarea--auto-grow v-textarea--no-resize v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+            <div class="v-input vd-form-input v-textarea v-textarea--auto-grow v-textarea--no-resize v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
               <div class="v-input__control">
                 <div class="v-input__slot">
                   <fieldset aria-hidden="true">
                     <legend style="width: 0px;"><span>​</span></legend>
                   </fieldset>
-                  <div class="v-text-field__slot"><textarea id="input-198" rows="1"></textarea></div>
+                  <div class="v-text-field__slot"><textarea id="input-198" placeholder="Entrez votre taille" rows="1"></textarea></div>
                 </div>
                 <div class="v-text-field__details">
                   <div class="v-messages theme--light">

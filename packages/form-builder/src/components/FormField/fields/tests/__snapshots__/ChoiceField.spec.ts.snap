@@ -10,7 +10,7 @@ exports[`ChoiceField renders correctly 1`] = `
 exports[`ChoiceField renders the other field 1`] = `
 <div>
   <choiceselectfield-stub options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>
-  <vtextfield-stub color="accent" dark="true" errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="accent" dense="true" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text"></vtextfield-stub>
+  <vtextfield-stub color="accent" dark="true" errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="accent" dense="true" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text" class="vd-form-input"></vtextfield-stub>
 </div>
 `;
 
@@ -22,7 +22,7 @@ exports[`ChoiceField renders the other field when the corresponding choice is se
       <h4 class="mb-1 body-1">
         Autre taille
       </h4>
-      <vtextarea-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text" autogrow="true" rowheight="24" rows="1"></vtextarea-stub>
+      <vtextarea-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="XXL" backgroundcolor="" hint="Veuillez entrez votre taille" loaderheight="2" clearicon="$clear" outlined="true" type="text" autogrow="true" rowheight="24" rows="1" class="vd-form-input"></vtextarea-stub>
     </div>
   </vexpandtransition-stub>
 </div>
