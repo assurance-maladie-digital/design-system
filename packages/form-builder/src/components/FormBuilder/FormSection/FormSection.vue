@@ -10,8 +10,8 @@
 			{{ sectionTitle }}
 		</h3>
 
-		<p v-if="sectionDescription">
-			{{ sectionDescription }}
+		<p v-if="description">
+			{{ description }}
 		</p>
 
 		<FormField
@@ -38,7 +38,7 @@
 				type: String,
 				default: undefined
 			},
-			sectionDescription: {
+			description: {
 				type: String,
 				default: undefined
 			},
