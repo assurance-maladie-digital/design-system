@@ -22,6 +22,7 @@ const defaultItems = [
 export const questionForm: Form = {
 	section1: {
 		title: 'Section 1',
+		description: 'Description de la section 1',
 		questions: {
 			questionString: {
 				type: 'text',
