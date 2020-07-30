@@ -3,6 +3,7 @@
 		v-bind="field.fieldOptions"
 		:value="field.value"
 		class="vd-form-input"
+		outlined
 		@change="emitChangeEvent"
 	/>
 </template>

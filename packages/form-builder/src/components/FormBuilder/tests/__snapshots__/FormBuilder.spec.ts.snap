@@ -221,7 +221,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
             <fieldset aria-hidden="true">
               <legend style="width: 0px;"><span>​</span></legend>
             </fieldset>
-            <div class="v-text-field__slot"><textarea id="input-65" rows="5"></textarea></div>
+            <div class="v-text-field__slot"><label for="input-65" class="v-label theme--light" style="left: 0px; position: absolute;">Label du champ</label><textarea id="input-65" rows="5"></textarea></div>
           </div>
           <div class="v-text-field__details">
             <div class="v-messages theme--light">

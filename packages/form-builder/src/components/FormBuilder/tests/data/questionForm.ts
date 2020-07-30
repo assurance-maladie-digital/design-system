@@ -52,7 +52,7 @@ export const questionForm: Form = {
 				tooltip: 'Texte d\'aide',
 				value: null,
 				fieldOptions: {
-					outlined: true
+					label: 'Label du champ'
 				}
 			},
 			questionDate: {
