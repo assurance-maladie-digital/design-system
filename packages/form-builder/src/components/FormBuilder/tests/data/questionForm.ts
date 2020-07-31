@@ -34,6 +34,18 @@ export const questionForm: Form = {
 					outlined: true
 				}
 			},
+			questionPassword: {
+				type: 'text',
+				title: 'Question mot de passe?',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
+				value: null,
+				fieldOptions: {
+					type: 'password',
+					label: 'mot de passe',
+					outlined: true
+				}
+			},
 			questionNumber: {
 				type: 'number',
 				title: 'Question nombre ?',
