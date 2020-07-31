@@ -4,6 +4,7 @@ exports[`FormBuilder renders correctly 1`] = `
 <div class="vd-form-builder">
   <div class="vd-form-section">
     <!---->
+    <!---->
     <div class="layout vd-form-field mb-1 column">
       <!---->
       <!---->
@@ -162,6 +163,9 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 1
     </h3>
+    <p>
+      Description de la section 1
+    </p>
     <div class="layout vd-form-field mb-1 column">
       <h4 class="text-body-1"><span>Question ?</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
       <p class="text-body-2 grey--text text--darken-1">
@@ -377,6 +381,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 2
     </h3>
+    <!---->
     <div class="layout vd-form-field mb-1 column">
       <h4 class="text-body-1"><span>Question select slider</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" role="img" aria-hidden="true"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
       <p class="text-body-2 grey--text text--darken-1">
@@ -504,6 +509,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 3
     </h3>
+    <!---->
     <div class="layout vd-form-field mb-1 column">
       <h4 class="text-body-1 mb-2"><span>Question choix bouton inline</span>
         <!---->
