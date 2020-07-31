@@ -1,27 +1,48 @@
+import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import { ChoiceValue, FieldItem, FieldItemValue } from '../types';
+import { ChoiceFieldValue, FieldItem, FieldOptions, FieldItemValue } from '../types';
 
-import { FieldComponent } from './fieldComponent';
+const Props = Vue.extend({
+	props: {
+		/** The choice field value */
+		value: {
+			type: [Array, Number, String] as PropType<ChoiceFieldValue>,
+			default: null
+		},
+		options: {
+			type: Object as PropType<FieldOptions>,
+			default: null
+		},
+		multiple: {
+			type: Boolean,
+			default: false
+		},
+		items: {
+			type: Array as PropType<FieldItem[]>,
+			required: true
+		}
+	}
+});
 
-const MixinsDeclaration = mixins(FieldComponent);
+const MixinsDeclaration = mixins(Props);
 
 /** Mixin to control the item selection */
-@Component<ChoiceField>({
+@Component<ChoiceComponent>({
 	watch: {
 		// Listen the current field value for the component
-		'field.value': {
-			handler(value: ChoiceValue): void {
-				if (value) {
+		value: {
+			handler(value: ChoiceFieldValue): void {
+				if (value !== null && value !== undefined) {
 					/** In multiple mode, put the value in an array if it wasn't already */
-					if (this.field.multiple && !Array.isArray(value)) {
-						this.choiceValue = [value];
+					if (this.multiple && !Array.isArray(value)) {
+						this.choiceFieldValue = [value];
 					} else {
-						this.choiceValue = value;
+						this.choiceFieldValue = value;
 					}
 				} else {
 					// Reset the choice value
-					this.choiceValue = this.field.multiple ? [] : null;
+					this.choiceFieldValue = this.multiple ? [] : null;
 				}
 			},
 			immediate: true,
@@ -29,8 +50,8 @@ const MixinsDeclaration = mixins(FieldComponent);
 		}
 	}
 })
-export class ChoiceField extends MixinsDeclaration {
-	choiceValue: ChoiceValue | null = this.field.multiple ? [] : null;
+export class ChoiceComponent extends MixinsDeclaration {
+	choiceFieldValue: ChoiceFieldValue | null = this.multiple ? [] : null;
 
 	/**
 	 * Toggle the item
@@ -41,29 +62,24 @@ export class ChoiceField extends MixinsDeclaration {
 	toggleItem(item: FieldItem): void {
 		const active: boolean = this.isSelected(item.value);
 
-		// Items must be an array
-		if (!Array.isArray(this.field.items)) {
-			return;
-		}
-
-		let newChoiceValue: ChoiceValue;
+		let newChoiceValue: ChoiceFieldValue;
 
 		// Set the new value in simple mode
-		if (!this.field.multiple) {
+		if (!this.multiple) {
 			newChoiceValue = active ? null : item.value;
 		} else {
 			newChoiceValue = [
-				...this.choiceValue as FieldItemValue[]
+				...this.choiceFieldValue as FieldItemValue[]
 			];
 
-			if (active && Array.isArray(this.choiceValue)) {
+			if (active && Array.isArray(this.choiceFieldValue)) {
 				// Unselect the item
-				const valueIndex = this.choiceValue.indexOf(item.value);
+				const valueIndex = this.choiceFieldValue.indexOf(item.value);
 
 				newChoiceValue.splice(valueIndex, 1);
 			} else {
 				// Can't select a null value in multiple mode
-				if (!item.value) {
+				if (item.value === undefined || item.value === null) {
 					return;
 				}
 
@@ -80,7 +96,7 @@ export class ChoiceField extends MixinsDeclaration {
 						const valueSelected = (newChoiceValue as FieldItemValue[])[index];
 
 						// Search if the item is alone
-						const isItemSelectedAlone = this.field.items.find((element) => {
+						const isItemSelectedAlone = this.items.find((element) => {
 							return element.value === valueSelected && element.alone;
 						});
 
@@ -98,9 +114,13 @@ export class ChoiceField extends MixinsDeclaration {
 			}
 		}
 
-		this.choiceValue = newChoiceValue;
+		this.choiceFieldValue = newChoiceValue;
 
-		this.emitChangeEvent(this.choiceValue);
+		this.emitChangeEvent(this.choiceFieldValue);
+	}
+
+	emitChangeEvent(newValue: ChoiceFieldValue): void {
+		this.$emit('change', newValue);
 	}
 
 	/**
@@ -110,14 +130,14 @@ export class ChoiceField extends MixinsDeclaration {
 	 * @returns {boolean} The selected value
 	 */
 	isSelected(value: FieldItemValue): boolean {
-		if (!this.choiceValue) {
+		if (!this.choiceFieldValue) {
 			return false;
 		}
 
-		if (this.field.multiple && Array.isArray(this.choiceValue)) {
-			return this.choiceValue.includes(value);
+		if (this.multiple && Array.isArray(this.choiceFieldValue)) {
+			return this.choiceFieldValue.includes(value);
 		} else {
-			return this.choiceValue === value;
+			return this.choiceFieldValue === value;
 		}
 	}
 }

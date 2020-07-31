@@ -1,11 +1,10 @@
 <template>
 	<VSlider
-		v-if="field.items"
-		v-bind="field.fieldOptions"
-		:value="getIndex(field.value)"
-		:thumb-label="isThumbLabel"
+		v-bind="options"
+		:value="getIndex(choiceFieldValue)"
+		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
-		:max="field.items.length - 1"
+		:max="items.length - 1"
 		color="accent"
 		tick-size="6"
 		track-color="grey lighten-1"
@@ -14,6 +13,20 @@
 	>
 		<template
 			v-if="isThumbLabel"
+			#prepend
+		>
+			{{ labelMin }}
+		</template>
+
+		<template
+			v-if="isThumbLabel"
+			#append
+		>
+			{{ labelMax }}
+		</template>
+
+		<template
+			v-if="thumbLabel"
 			#thumb-label="{ value }"
 		>
 			{{ labels[value] }}
@@ -24,10 +37,10 @@
 <script lang="ts">
 	import Component, { mixins } from 'vue-class-component';
 
-	import { FieldComponent } from '../mixins/fieldComponent';
+	import { ChoiceComponent } from '../mixins/choiceComponent';
 	import { FieldValue } from '../types';
 
-	const MixinsDeclaration = mixins(FieldComponent);
+	const MixinsDeclaration = mixins(ChoiceComponent);
 
 	/** Choice field type slider */
 	@Component
@@ -38,17 +51,39 @@
 		 * @returns {number|null} The index of the selected item, null if not found
 		 */
 		getIndex(value: FieldValue): number | null {
-			if (!this.field.items) {
+			if (!this.items) {
 				return null;
 			}
 
-			const index = this.field.items.findIndex((item) => item.value === value);
+			const index = this.items.findIndex((item) => item.value === value);
 
 			if (index === -1) {
 				return null;
 			}
 
 			return index;
+		}
+
+		get labelMin(): string {
+			if (this.options?.labelMin) {
+				return this.options.labelMin as string;
+			}
+
+			// The default value is the first the label
+			return this.labels[0];
+		}
+
+		get labelMax(): string {
+			if (this.options?.labelMax) {
+				return this.options.labelMax as string;
+			}
+
+			// The default value is the last the label
+			return this.labels[this.labels.length - 1];
+		}
+
+		get thumbLabel(): string | boolean {
+			return this.isThumbLabel ? 'always' : false;
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */
@@ -58,13 +93,13 @@
 
 		/**  Are we in thumb label mode */
 		get isThumbLabel(): boolean {
-			return Boolean(this.field.fieldOptions?.thumbLabel);
+			return Boolean(this.options?.thumbLabel);
 		}
 
 		/** The ticks labels */
 		get labels(): string[] {
-			if (this.field.items && this.field.fieldOptions) {
-				const labels = this.field.items.map((item) => item.text);
+			if (this.items && this.options) {
+				const labels = this.items.map((item) => item.text);
 
 				return labels;
 			}
@@ -80,8 +115,8 @@
 		valueUpdated(index: number): void {
 			let fieldValue = null;
 
-			if (this.field.items) {
-				fieldValue = this.field.items[index].value;
+			if (this.items) {
+				fieldValue = this.items[index].value;
 			}
 
 			this.emitChangeEvent(fieldValue);

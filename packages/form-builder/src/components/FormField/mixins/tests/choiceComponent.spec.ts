@@ -1,12 +1,17 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { Field } from '../../types';
+import { ChoiceComponent } from '../choiceComponent';
+import { ChoiceFieldValue, FieldOptions, FieldItem } from '../../types';
 
-import { ChoiceField } from '../choiceField';
+interface TestComponent {
+	value?: ChoiceFieldValue;
+	options?: FieldOptions;
+	multiple?: boolean;
+	items: FieldItem[];
+}
 
-const testField = {
-	type: 'choice',
+const testField: TestComponent = {
 	items: [
 		{
 			text: 'Test 1',
@@ -34,22 +39,22 @@ const testField = {
 };
 
 /** Create the wrapper */
-function createWrapper(field: Field) {
-	const component = Vue.component('test', {
+function createWrapper(field: TestComponent) {
+	const testComponent = Vue.component('test', {
 		mixins: [
-			ChoiceField
+			ChoiceComponent
 		],
 		template: '<div />'
 	});
 
-	return mount(component, {
+	return mount(testComponent, {
 		propsData: {
-			field
+			...field
 		}
-	}) as Wrapper<ChoiceField>;
+	}) as Wrapper<ChoiceComponent>;
 }
 
-describe('choiceField', () => {
+describe('choiceComponent', () => {
 	it('selects a not null item value', async() => {
 		const wrapper = createWrapper(testField);
 
@@ -59,7 +64,7 @@ describe('choiceField', () => {
 
 		const event = wrapper.emitted('change') || [];
 
-		expect(event[0][0].value).toEqual(testField.items[0].value);
+		expect(event[0][0]).toEqual(testField.items[0].value);
 	});
 
 	it('selects a null item value', async() => {
@@ -71,7 +76,7 @@ describe('choiceField', () => {
 
 		const event = wrapper.emitted('change') || [];
 
-		expect(event[0][0].value).toEqual(null);
+		expect(event[0][0]).toEqual(null);
 	});
 
 	it('unselects an item', async() => {
@@ -86,7 +91,7 @@ describe('choiceField', () => {
 
 		const event = wrapper.emitted('change') || [];
 
-		expect(event[0][0].value).toEqual(null);
+		expect(event[0][0]).toEqual(null);
 	});
 
 	it('transforms the initial value into an array in multiple mode', async() => {
@@ -96,7 +101,7 @@ describe('choiceField', () => {
 			multiple: true
 		});
 
-		expect(wrapper.vm.choiceValue).toEqual([testField.items[0].value]);
+		expect(wrapper.vm.choiceFieldValue).toEqual([testField.items[0].value]);
 	});
 
 	it('selects multiple items in multiple mode', async() => {
@@ -112,10 +117,8 @@ describe('choiceField', () => {
 
 		const event = wrapper.emitted('change') || [];
 
-		// const changeEvent = wrapper.emitted('change')[1][0] as Field;
-
 		// Both buttons should be selected
-		expect(event[1][0].value).toEqual([
+		expect(event[1][0]).toEqual([
 			testField.items[0].value,
 			testField.items[1].value
 		]);
@@ -139,7 +142,7 @@ describe('choiceField', () => {
 		const event = wrapper.emitted('change') || [];
 
 		// Second button should stay selected
-		expect(event[0][0].value).toEqual([testField.items[1].value]);
+		expect(event[0][0]).toEqual([testField.items[1].value]);
 	});
 
 	it('changes selected "alone" item in multiple mode', async() => {
@@ -159,7 +162,7 @@ describe('choiceField', () => {
 		const event = wrapper.emitted('change') || [];
 
 		// The default alone selected shouldn't be selected
-		expect(event[0][0].value).toEqual([testField.items[0].value]);
+		expect(event[0][0]).toEqual([testField.items[0].value]);
 	});
 
 	it('selects an "alone" item from a multiple selection', async() => {
@@ -178,23 +181,7 @@ describe('choiceField', () => {
 
 		const event = wrapper.emitted('change') || [];
 
-		expect(event[0][0].value).toEqual([testField.items[2].value]);
-	});
-
-	it('doesn\'t selects a field with undefined items', async() => {
-		const wrapper = createWrapper({
-			...testField,
-			items: undefined
-		});
-
-		wrapper.vm.toggleItem({
-			text: 'No items',
-			value: null
-		});
-
-		await wrapper.vm.$nextTick();
-
-		expect(wrapper.emitted('change')).toBeFalsy();
+		expect(event[0][0]).toEqual([testField.items[2].value]);
 	});
 
 	it('doesn\'t selects an item with null value in multiple mode', async() => {
