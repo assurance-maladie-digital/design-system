@@ -42,7 +42,7 @@
 	"devDependencies": {
 		"@cnamts/cli-helpers": "^2.0.0-alpha.51",
 		"@cnamts/vue-dot": "2.0.0-alpha.53",
-		"@mdi/js": "5.3.45",
+		"@mdi/js": "5.4.55",
 		"@vue/cli-plugin-eslint": "4.4.6",
 		"@vue/cli-plugin-typescript": "4.4.6",
 		"@vue/cli-plugin-unit-jest": "4.4.6",
@@ -51,7 +51,7 @@
 		"json-to-scss": "1.5.0",
 		"sass": "1.26.10",
 		"sass-loader": "9.0.2",
-		"vue-cli-plugin-vuetify": "2.0.6",
+		"vue-cli-plugin-vuetify": "2.0.7",
 		"vuetify-loader": "1.6.0"
 	},
 	"lint-staged": {
