@@ -87,7 +87,15 @@
 		 * @returns {string} The field type
 		 */
 		getFieldType(): string {
-			return this.getField(this.field.type);
+			let fieldType: string = this.field.type;
+
+			// Handle subtypes that are not in type 'select'
+			if (fieldType !== 'select') {
+				const fieldOptionsType = this.field.fieldOptions?.type as string || undefined;
+				fieldType = fieldOptionsType || fieldType;
+			}
+
+			return this.getField(fieldType);
 		}
 
 		/**
