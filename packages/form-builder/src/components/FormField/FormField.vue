@@ -89,9 +89,9 @@
 		getFieldType(): string {
 			let fieldType: string = this.field.type;
 
-			// Field not type 'select' can get sub types
+			// Handle subtypes that are not type 'select'
 			if (fieldType !== 'select') {
-				const fieldOptionsType: string | undefined = this.field.fieldOptions?.type as string ?? undefined;
+				const fieldOptionsType = this.field.fieldOptions?.type as string || undefined;
 				fieldType = fieldOptionsType || fieldType;
 			}
 
