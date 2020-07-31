@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deepMapValues returns the desired values 1`] = `
+Object {
+  "question1": 1,
+  "question2": Object {
+    "other": "autre",
+    "value": "2",
+  },
+  "question4": Object {
+    "other": null,
+    "value": null,
+  },
+}
+`;

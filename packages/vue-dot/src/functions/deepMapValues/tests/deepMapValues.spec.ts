@@ -39,5 +39,7 @@ describe('deepMapValues', () => {
 			question2: BASE_OBJECT.section1.question2.value,
 			question4: BASE_OBJECT.section1.question4.value
 		});
+
+		expect(newCollection).toMatchSnapshot();
 	});
 });
