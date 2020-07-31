@@ -1,15 +1,17 @@
 /* Default, global styles */
 * {
-	max-width: 100%;
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: sans-serif;
+	max-width: 100%;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Open Sans', sans-serif;
 }
 
 html,
 body {
+	/* Font size defined by the browser */
 	font-size: 100%;
 }
 
@@ -17,6 +19,11 @@ body {
 	display: flex;
 	min-height: 100vh;
 	line-height: 1.25;
+}
+
+/* Hide the application while Vue.js is loading */
+[v-cloak] {
+	display: none;
 }
 
 #app {
