@@ -9,6 +9,7 @@ Object {
   "number": "NumberField",
   "password": "PasswordField",
   "period": "PeriodField",
+  "radio": "ChoiceRadioField",
   "select": "SelectField",
   "text": "TextField",
   "textarea": "TextareaField",
