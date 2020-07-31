@@ -9,18 +9,16 @@ export interface MappedValues {
  * Return the mapped values for each first deep finded key of each sub collection
  *
  * @param {any} collection The collection to inspect deeply
- * @param {string} key The key to assign the value for the parent key
+ * @param {string| number} key The key/index to assign the value for the parent key
  * @param {any} mappedValues The new collection of mapped values
  * @returns {any} The new collection
  */
 export function deepMapValues<T = any>(
 	collection: UnknownValue,
-	key: string,
+	key: string | number,
 	mappedValues: MappedValues = {}
 ): MappedValues {
-	if (collection instanceof Array) {
-		collection.forEach(item => deepMapValues(item, key, mappedValues));
-	} else if (typeof collection === 'object') {
+	if (typeof collection === 'object' && !(Array.isArray(collection))) {
 		Object.getOwnPropertyNames(collection).forEach(collectionKey => {
 			// Check if the collectionKey equal the desired key
 			// else, continue deep find
