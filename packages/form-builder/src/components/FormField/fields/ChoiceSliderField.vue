@@ -64,20 +64,18 @@
 			return index;
 		}
 
-		get labelMin(): string | unknown {
-			// Check if there is a custom labelMin prop in metadata
+		get labelMin(): string {
 			if (this.options?.labelMin) {
-				return this.options.labelMin;
+				return this.options.labelMin as string;
 			}
 
 			// The default value is the first the label
 			return this.labels[0];
 		}
 
-		get labelMax(): unknown {
-			// Check if there is a custom labelMax prop in metadata
+		get labelMax(): string {
 			if (this.options?.labelMax) {
-				return this.options.labelMax;
+				return this.options.labelMax as string;
 			}
 
 			// The default value is the last the label
@@ -137,6 +135,7 @@
 		.v-slider__ticks-container--always-show .v-slider__tick {
 			border-radius: 50%;
 			background: #bdbdbd;
+
 			&.v-slider__tick--filled {
 				background: $vd-accent !important;
 			}

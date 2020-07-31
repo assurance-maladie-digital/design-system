@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<!-- the choice field component -->
+		<!-- The choice field component -->
 		<component
 			:is="getField()"
 			:value="choiceValue.value"
@@ -10,7 +10,7 @@
 			@change="choiceUpdated"
 		/>
 
-		<!-- the other field -->
+		<!-- The other field -->
 		<template v-if="otherField">
 			<VExpandTransition
 				v-if="otherField.selectedChoice"
@@ -98,7 +98,7 @@
 					this.isOtherActive = this.getOtherActive();
 
 					/**
-					 * Set the other local value if the remote other value is not null
+					 * Set the other local value if the other value is not null
 					 * to keep the local value up for the user
 					 */
 					if (this.choiceValue?.other) {
@@ -116,7 +116,9 @@
 			otherFieldRef: HTMLInputElement;
 		}>;
 
-		choiceValue: ChoiceValue = { value: null };
+		choiceValue: ChoiceValue = {
+			value: null
+		};
 
 		isOtherActive = false;
 		otherFieldValue: OtherFieldValue = null;
@@ -167,8 +169,8 @@
 		 * @returns {boolean} The other active status
 		 */
 		getOtherActive(): boolean {
-			const choiceFieldValue: ChoiceFieldValue = this.choiceValue ? this.choiceValue.value : null;
-			const selectedChoice: FieldItemValue = this.field.other ? this.field.other.selectedChoice : null;
+			const choiceFieldValue: ChoiceFieldValue = this.choiceValue?.value;
+			const selectedChoice: FieldItemValue = this.field.other?.selectedChoice;
 
 			if (!selectedChoice || !choiceFieldValue) {
 				return false;
@@ -185,7 +187,7 @@
 		 * @returns {string} The choice field component name
 		 */
 		getField(): string {
-			const metadataType = this.field.fieldOptions ? this.field.fieldOptions.type as string : undefined;
+			const metadataType = this.field.fieldOptions?.type as string || undefined;
 
 			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
 		}
