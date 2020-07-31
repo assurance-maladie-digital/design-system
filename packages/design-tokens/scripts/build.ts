@@ -1,25 +1,34 @@
 import * as fs from 'fs-extra';
 import { appendFileSync } from 'fs';
 
-import { info, done, log, getPath } from '@cnamts/cli-helpers';
-import { execOpts, writeToBeginning } from './utils';
+import { info, done, log } from '@cnamts/cli-helpers';
 
-import { execSync } from 'child_process';
+import { writeToBeginning } from './utils/writeToBeginning';
+
+import { execSync, StdioOptions } from 'child_process';
 
 import { default as tokensObj } from '../src/tokens';
 
-import { IndexedObject } from 'src/types';
+const execOpts = {
+	stdio: 'inherit' as StdioOptions
+};
 
-type Tokens = IndexedObject<string | Tokens>;
+type Tokens = {
+	[key: string]: string | Tokens;
+};
 
 const tokens = tokensObj as Tokens;
 
-const tokensFolder = getPath('src/tokens');
+const SRC_FOLDER = './src';
+
+function toKebabCase(value: string): string {
+	return value.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+}
 
 const tokenList = {
-	js: `${tokensFolder}/index.js`,
-	ts: `${tokensFolder}/index.ts`,
-	scss: `${tokensFolder}/index.scss`
+	js: `${SRC_FOLDER}/tokens.js`,
+	ts: `${SRC_FOLDER}/tokens.ts`,
+	scss: `${SRC_FOLDER}/tokens.scss`
 };
 
 delete tokens._jsonToScss; // Remove package config
@@ -48,8 +57,10 @@ const linesToAppend: string[] = [];
 
 // Generate default SCSS exports to avoid using deep-get
 tokenArray.forEach((tokenName) => {
+	const normalizedTokenName = toKebabCase(tokenName);
+
 	// eg. $vd-colors: map-get($vd-tokens, colors);
-	const line = `\n$vd-${tokenName}: map-get($vd-tokens, ${tokenName});\n`;
+	const line = `\n$vd-${normalizedTokenName}: map-get($vd-tokens, ${tokenName});\n`;
 
 	linesToAppend.push(line);
 
@@ -65,8 +76,10 @@ tokenArray.forEach((tokenName) => {
 	const tokenContentArray = Object.keys(tokenContent);
 
 	tokenContentArray.forEach((key) => {
+		const normalizedKey = toKebabCase(key);
+
 		// eg. $vd-accent: map-get($vd-colors, accent);
-		const line = `$vd-${key}: map-get($vd-${tokenName}, ${key});\n`;
+		const line = `$vd-${normalizedKey}: map-get($vd-${normalizedTokenName}, ${key});\n`;
 
 		linesToAppend.push(line);
 	});
@@ -76,7 +89,7 @@ tokenArray.forEach((tokenName) => {
 appendFileSync(tokenList.scss, linesToAppend.join(''));
 
 // Remove JS files
-fs.removeSync(tokenList.js);
-fs.removeSync(`${tokensFolder}/vuetifyTheme.js`);
+// fs.removeSync(tokenList.js);
+fs.removeSync(`${SRC_FOLDER}/colors.js`);
 
 done('Generation completed');

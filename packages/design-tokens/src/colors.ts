@@ -1,8 +1,5 @@
-/**
- * Colors used in the Vuetify theme
- * that are also Design Tokens
- */
-export const vuetifyTheme = {
+/** Light color theme */
+export const lightTheme = {
 	// Brand
 	primary: '#003463',
 	secondary: '#0c4887',

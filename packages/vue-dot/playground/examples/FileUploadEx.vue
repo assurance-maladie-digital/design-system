@@ -153,7 +153,7 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '../../src/tokens';
+	@import '@cnamts/design-tokens/src/tokens';
 
 	$darken-accent: saturate(darken($vd-accent, 10%), 20%);
 

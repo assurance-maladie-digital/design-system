@@ -1,23 +1,23 @@
-import { vuetifyTheme } from './vuetifyTheme';
+import { lightTheme } from './colors';
 
 const TAB_CHARACTER = '	';
 
 const tokens = {
-	'colors': {
-		...vuetifyTheme,
+	colors: {
+		...lightTheme,
 		// Brand
 		pro: '#ef6c00'
 	},
-	'dialog-width': {
-		'dialog-small': '560px',
-		'dialog-medium': '800px'
+	dialogWidth: {
+		dialogSmall: '560px',
+		dialogMedium: '800px'
 	},
-	'page-width': '1440px',
-	'input-width': {
-		'input-small': '128px',
-		'input-medium': '328px',
-		'input-large': '384px',
-		'input-x-large': '536px'
+	pageWidth: '1440px',
+	inputWidth: {
+		inputSmall: '128px',
+		inputMedium: '328px',
+		inputLarge: '384px',
+		inputXLarge: '536px'
 	},
 	// json-to-scss config
 	'_jsonToScss': {
