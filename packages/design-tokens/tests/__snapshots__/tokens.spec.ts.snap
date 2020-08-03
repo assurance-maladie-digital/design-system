@@ -11,16 +11,16 @@ Object {
     "success": "#009688",
     "warning": "#ba8b00",
   },
-  "dialog-width": Object {
-    "dialog-medium": "800px",
-    "dialog-small": "560px",
+  "dialogWidth": Object {
+    "dialogMedium": "800px",
+    "dialogSmall": "560px",
   },
-  "input-width": Object {
-    "input-large": "384px",
-    "input-medium": "328px",
-    "input-small": "128px",
-    "input-x-large": "536px",
+  "inputWidth": Object {
+    "inputLarge": "384px",
+    "inputMedium": "328px",
+    "inputSmall": "128px",
+    "inputXLarge": "536px",
   },
-  "page-width": "1440px",
+  "pageWidth": "1440px",
 }
 `;

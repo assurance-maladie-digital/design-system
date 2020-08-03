@@ -17,11 +17,13 @@
 		"email": "me@deraw.dev"
 	},
 	"files": [
+		"dist/*",
 		"src/*",
 		"*.ts",
 		"*.scss"
 	],
-	"main": "src/tokens.ts",
+	"main": "./dist/tokens.js",
+	"module": "./src/index.ts",
 	"scripts": {
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"test": "jest"

@@ -82,7 +82,7 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '@cnamts/design-tokens/src/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
 	$min-height: 512px;
 

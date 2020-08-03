@@ -20,15 +20,16 @@ type Tokens = {
 const tokens = tokensObj as Tokens;
 
 const SRC_FOLDER = './src';
+const DIST_FOLDER = './dist';
 
 function toKebabCase(value: string): string {
 	return value.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
 }
 
 const tokenList = {
-	js: `${SRC_FOLDER}/tokens.js`,
-	ts: `${SRC_FOLDER}/tokens.ts`,
-	scss: `${SRC_FOLDER}/tokens.scss`
+	js: '/tokens.js',
+	ts: '/tokens.ts',
+	scss: '/tokens.scss'
 };
 
 delete tokens._jsonToScss; // Remove package config
@@ -41,15 +42,12 @@ info('Transpiling TypeScript');
 // Transpile tokens file to JS
 // We need to do this because
 // json-to-scss doesn't support TypeScript
-execSync(`tsc ${tokenList.ts}`, execOpts);
+execSync(`tsc ${SRC_FOLDER}/${tokenList.ts} --outDir ${DIST_FOLDER}`, execOpts);
 
 info('Generating SCSS file');
 
 // Generate SCSS file
-execSync(`json-to-scss ${tokenList.js}`, execOpts);
-
-// Add comment to first line
-writeToBeginning(tokenList.scss, '// AUTO-GENERATED FILE, DO NOT EDIT\n');
+execSync(`json-to-scss ${DIST_FOLDER}/${tokenList.js}`, execOpts);
 
 const tokenArray = Object.keys(tokens);
 
@@ -86,10 +84,6 @@ tokenArray.forEach((tokenName) => {
 });
 
 // Append new content to SCSS file
-appendFileSync(tokenList.scss, linesToAppend.join(''));
-
-// Remove JS files
-// fs.removeSync(tokenList.js);
-fs.removeSync(`${SRC_FOLDER}/colors.js`);
+appendFileSync(`${DIST_FOLDER}/${tokenList.scss}`, linesToAppend.join(''));
 
 done('Generation completed');
