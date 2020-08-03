@@ -1,23 +1,17 @@
 import * as fs from 'fs-extra';
-import { appendFileSync } from 'fs';
 
 import { info, done, log } from '@cnamts/cli-helpers';
 
-import { writeToBeginning } from './utils/writeToBeginning';
-
 import { execSync, StdioOptions } from 'child_process';
 
-import { default as tokensObj } from '../src/tokens';
+import { tokens } from '../src/tokens';
+
+/** @see https://github.com/rlapoele/json-to-scss/blob/master/lib/jsValueToSassString.js */
+import jsValueToSassString from 'json-to-scss/lib/jsValueToSassString';
 
 const execOpts = {
 	stdio: 'inherit' as StdioOptions
 };
-
-type Tokens = {
-	[key: string]: string | Tokens;
-};
-
-const tokens = tokensObj as Tokens;
 
 const SRC_FOLDER = './src';
 const DIST_FOLDER = './dist';
@@ -27,38 +21,48 @@ function toKebabCase(value: string): string {
 }
 
 const tokenList = {
-	js: '/tokens.js',
-	ts: '/tokens.ts',
-	scss: '/tokens.scss'
+	js: 'tokens.js',
+	ts: 'tokens.ts',
+	scss: 'tokens.scss',
+	json: 'tokens.json'
 };
 
-delete tokens._jsonToScss; // Remove package config
+const TAB_CHARACTER = '	';
 
 info('Generating Design Tokens');
-
 log();
-info('Transpiling TypeScript');
 
-// Transpile tokens file to JS
-// We need to do this because
-// json-to-scss doesn't support TypeScript
-execSync(`tsc ${SRC_FOLDER}/${tokenList.ts} --outDir ${DIST_FOLDER}`, execOpts);
+// Create dist folder if it doesn't exist
+if (!fs.existsSync(DIST_FOLDER)) {
+	info('Creating dist folder');
+
+	fs.mkdirSync(DIST_FOLDER);
+} else {
+	info('Removing dist folder content');
+
+	// Clear the content of dist folder
+	fs.emptyDirSync(`./${DIST_FOLDER}`);
+}
+
+info('Generating JSON file');
+
+// Stringify tokens
+const tokensString = JSON.stringify(tokens, null, TAB_CHARACTER);
+// Convert camelCase to kebab-case and append new line
+const jsonFile = toKebabCase(tokensString) + '\n';
+
+fs.writeFileSync(`${DIST_FOLDER}/${tokenList.json}`, jsonFile);
 
 info('Generating SCSS file');
 
-// Generate SCSS file
-execSync(`json-to-scss ${DIST_FOLDER}/${tokenList.js}`, execOpts);
-
+// Generate default SCSS exports from tokens to avoid using deep-get
 const tokenArray = Object.keys(tokens);
 
 const linesToAppend: string[] = [];
 
-// Generate default SCSS exports to avoid using deep-get
 tokenArray.forEach((tokenName) => {
-	const normalizedTokenName = toKebabCase(tokenName);
-
 	// eg. $vd-colors: map-get($vd-tokens, colors);
-	const line = `\n$vd-${normalizedTokenName}: map-get($vd-tokens, ${tokenName});\n`;
+	const line = `\n$vd-${tokenName}: map-get($vd-tokens, ${tokenName});\n`;
 
 	linesToAppend.push(line);
 
@@ -74,16 +78,23 @@ tokenArray.forEach((tokenName) => {
 	const tokenContentArray = Object.keys(tokenContent);
 
 	tokenContentArray.forEach((key) => {
-		const normalizedKey = toKebabCase(key);
-
 		// eg. $vd-accent: map-get($vd-colors, accent);
-		const line = `$vd-${normalizedKey}: map-get($vd-${normalizedTokenName}, ${key});\n`;
+		const line = `$vd-${key}: map-get($vd-${tokenName}, ${key});\n`;
 
 		linesToAppend.push(line);
 	});
 });
 
-// Append new content to SCSS file
-appendFileSync(`${DIST_FOLDER}/${tokenList.scss}`, linesToAppend.join(''));
+// Generate sass string using json-to-scss
+const sassString = jsValueToSassString(tokens, TAB_CHARACTER, 1);
+
+const scssFile = toKebabCase(`$vd-tokens: ${sassString};\n${linesToAppend.join('')}`);
+
+fs.writeFileSync(`${DIST_FOLDER}/${tokenList.scss}`, scssFile);
+
+info('Transpiling TypeScript');
+
+// Transpile tokens file to JS
+execSync(`tsc ${SRC_FOLDER}/${tokenList.ts} --outDir ${DIST_FOLDER}`, execOpts);
 
 done('Generation completed');

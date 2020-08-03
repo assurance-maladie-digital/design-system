@@ -23,7 +23,7 @@ const execOpts = {
 
 const DIST_FOLDER = './dist';
 
-// Create dist folder if not exists
+// Create dist folder if it doesn't exist
 if (!fs.existsSync(DIST_FOLDER)) {
 	info('Creating dist folder');
 
