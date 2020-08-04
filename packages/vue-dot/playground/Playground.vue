@@ -17,9 +17,8 @@
 
 			<!-- Dark mode switch button -->
 			<VBtn
-				color="accent"
-				primary
-				:dark="dark"
+				color="white"
+				class="primary--text"
 				@click="updateTheme"
 			>
 				{{ dark ? 'Light' : 'Dark' }} mode

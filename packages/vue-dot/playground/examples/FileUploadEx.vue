@@ -113,6 +113,7 @@
 	import { Refs } from '../../src/types';
 
 	import { mdiCloudUpload } from '@mdi/js';
+	import { ErrorCodesType } from '../../src/patterns/FileUpload/types';
 
 	interface Error {
 		code: string;
@@ -124,7 +125,7 @@
 		$refs!: Refs<{
 			fileUpload: {
 				retry: () => void;
-			}
+			};
 		}>;
 
 		uploadIcon = mdiCloudUpload;
@@ -134,7 +135,7 @@
 
 		file: File | null = null;
 
-		errorsText = {
+		errorsText: ErrorCodesType = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
 			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
@@ -152,7 +153,7 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '../../src/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
 	$darken-accent: saturate(darken($vd-accent, 10%), 20%);
 

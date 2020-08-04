@@ -6,8 +6,7 @@
 .v-tabs__container,
 .v-input--selection-controls__ripple,
 .v-slide-group__content,
-.v-simple-checkbox svg,
-.no-max-width {
+.v-simple-checkbox svg {
 	max-width: none;
 }
 
@@ -92,7 +91,7 @@ table.v-table thead th,
 		flex: none;
 
 		input {
-			@extend .sr-only;
+			@extend .d-sr-only;
 		}
 	}
 

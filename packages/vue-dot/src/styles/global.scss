@@ -1,6 +1,6 @@
 // Global, non-scoped styles
 
-@import '../tokens';
+@import '@cnamts/design-tokens/dist/tokens';
 
 .v-application {
 	// Change the main color when a warning is present

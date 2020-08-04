@@ -18,9 +18,7 @@ const testComponent = Vue.component('test', {
 	template: '<div/>'
 });
 
-/**
- *
- */
+/** Get list of files */
 function getFileList(): FileListItem[] {
 	return [
 		{

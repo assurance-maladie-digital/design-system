@@ -17,6 +17,7 @@
 				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error.sync="internalErrorProp"
 				class="vd-date-picker-text-field"
+				@input="$emit('input', $event)"
 				@blur="textFieldBlur"
 				@click="textFieldClicked"
 			>
@@ -80,7 +81,7 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { customizable, Options, Customizable } from '../../mixins/customizable';
+	import { customizable, Options } from '../../mixins/customizable';
 	import { Eventable } from '../../mixins/eventable';
 	import { WarningRules } from '../../mixins/warningRules';
 
