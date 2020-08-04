@@ -35,8 +35,7 @@
 		"playground:build": "vue-cli-service build",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
-		"test": "vue-cli-service test:unit",
-		"generate:tokens": "ts-node --project tsconfig.json --files scripts/generateTokens.ts"
+		"test": "vue-cli-service test:unit"
 	},
 	"peerDependencies": {
 		"@mdi/js": "^4.3.95 || ^5.0.0",
