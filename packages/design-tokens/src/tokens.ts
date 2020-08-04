@@ -1,13 +1,9 @@
 import { Tokens } from './types';
 
-import { lightTheme } from './colors';
+import { colors } from './colors';
 
 export const tokens: Tokens = {
-	colors: {
-		...lightTheme,
-		// Brand
-		pro: '#ef6c00'
-	},
+	colors,
 	dialogWidth: {
 		dialogSmall: '560px',
 		dialogMedium: '800px'

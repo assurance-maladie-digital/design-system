@@ -1,4 +1,4 @@
-# Design Tokens`
+# Design Tokens
 
 > Design Tokens of our Design System
 
@@ -20,13 +20,12 @@ Only custom tokens are contained in this package, for default ones like font siz
 
 ### TypeScript
 
-You need to import the tokens from the main file:
+In TypeScript, Design Tokens names are formatted in `camelCase`.
 
 ```ts
-import tokens from '@cnamts/design-tokens';
+import { tokens } from '@cnamts/design-tokens';
+console.log(tokens.pageWidth); // 1440px
 ```
-
-Then you can access the tokens using object syntax like `tokens.colors` or `tokens['dialog-width']`.
 
 You can also import only the color themes:
 
@@ -34,12 +33,38 @@ You can also import only the color themes:
 import { lightTheme } from '@cnamts/design-tokens/src/colors';
 ```
 
-### SCSS
+### JavaScript
 
-You need to import the main file:
+In JavaScript, Design Tokens names are also formatted in `camelCase`.
+
+```ts
+const { tokens } = require('@cnamts/design-tokens');
+console.log(tokens.pageWidth); // 1440px
+```
+
+You can also use the `import` syntax:
+
+```ts
+import { tokens } from '@cnamts/design-tokens';
+```
+
+### Sass
+
+In Sass, Design Tokens names are formatted in `kebab-case`.
 
 ```scss
 @import '@cnamts/design-tokens/src/tokens';
+
+.pro {
+	color: $vd-pro; // #ef6c00
+}
 ```
 
-Then you can access all the tokens using SCSS vars like `$vd-primary`.
+### JSON
+
+In JSON, Design Tokens names are also formatted in `kebab-case`.
+
+```ts
+const { tokens } = require('@cnamts/design-tokens');
+console.log(tokens['page-width']); // 1440px
+```

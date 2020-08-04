@@ -9,3 +9,9 @@ export const lightTheme = {
 	error: '#b00000',
 	warning: '#ba8b00'
 };
+
+export const colors = {
+	...lightTheme,
+	// Brand
+	pro: '#ef6c00'
+};

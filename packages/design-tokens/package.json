@@ -23,7 +23,7 @@
 		"*.scss"
 	],
 	"main": "./dist/tokens.js",
-	"module": "./src/index.ts",
+	"module": "./src/tokens.ts",
 	"scripts": {
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"test": "jest"
