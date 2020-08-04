@@ -23,12 +23,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import tokens from '@cnamts/vue-dot/src/tokens';
+	import { tokens } from '@cnamts/design-tokens';
 
 	@Component
 	export default class DialogBoxWidth extends Vue {
 		dialog = false;
 
-		dialogWidth = tokens['dialog-width']['dialog-small'];
+		dialogWidth = tokens.dialogWidth.dialogSmall;
 	}
 </script>

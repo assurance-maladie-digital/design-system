@@ -10,7 +10,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import tokens from '@cnamts/vue-dot/src/tokens';
+	import { tokens } from '@cnamts/design-tokens';
 
 	@Component
 	export default class CustomIconSizeColor extends Vue {

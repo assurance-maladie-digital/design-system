@@ -1,9 +1,9 @@
 // Import Vuetify theme from Design Tokens
-import { vuetifyTheme } from '@cnamts/vue-dot/src/tokens/vuetifyTheme';
+import { lightTheme } from '@cnamts/design-tokens/src/colors';
 
 /** Custom Vuetify color theme */
 export const themeColors = {
 	light: {
-		...vuetifyTheme
+		...lightTheme
 	}
 };
