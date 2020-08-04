@@ -53,7 +53,7 @@ import { tokens } from '@cnamts/design-tokens';
 In Sass, Design Tokens names are formatted in `kebab-case`.
 
 ```scss
-@import '@cnamts/design-tokens/src/tokens';
+@import '@cnamts/design-tokens/dist/tokens';
 
 .pro {
 	color: $vd-pro; // #ef6c00

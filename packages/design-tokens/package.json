@@ -25,8 +25,16 @@
 	"main": "./dist/tokens.js",
 	"module": "./src/tokens.ts",
 	"scripts": {
+		"pre-commit": "lint-staged",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
+		"lint": "eslint **/*.ts --fix",
 		"test": "jest"
+	},
+	"lint-staged": {
+		"*.{ts}": [
+			"eslint **/*.ts --fix",
+			"git add"
+		]
 	},
 	"publishConfig": {
 		"access": "public"
