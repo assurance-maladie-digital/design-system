@@ -24,13 +24,13 @@
 			</VBtn>
 		</VAppBar>
 
-		<VContent>
+		<VMain>
 			<FormFieldEx />
 
 			<FormBuilderEx />
 
 			<QuestionnaireEx />
-		</VContent>
+		</VMain>
 
 		<VFooter
 			:color="dark ? 'grey darken-3' : 'secondary'"
