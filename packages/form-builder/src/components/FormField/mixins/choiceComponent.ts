@@ -60,7 +60,7 @@ export class ChoiceComponent extends MixinsDeclaration {
 	 * @returns {void}
 	 */
 	toggleItem(item: FieldItem): void {
-		const active: boolean = this.isSelected(item.value);
+		const active = this.isSelected(item.value);
 
 		let newChoiceValue: ChoiceFieldValue;
 

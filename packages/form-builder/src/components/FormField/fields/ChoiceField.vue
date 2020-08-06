@@ -169,8 +169,8 @@
 		 * @returns {boolean} The other active status
 		 */
 		getOtherActive(): boolean {
-			const choiceFieldValue: ChoiceFieldValue = this.choiceValue?.value;
-			const selectedChoice: FieldItemValue = this.field.other?.selectedChoice;
+			const choiceFieldValue = this.choiceValue?.value;
+			const selectedChoice = this.field.other?.selectedChoice;
 
 			if (!selectedChoice || !choiceFieldValue) {
 				return false;

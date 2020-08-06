@@ -72,9 +72,8 @@
 			}
 
 			const filteredItems = this.items.filter((item) => {
-					return item.value !== null && item.value !== undefined;
-				}
-			);
+				return item.value !== null && item.value !== undefined;
+			});
 
 			return filteredItems;
 		}
