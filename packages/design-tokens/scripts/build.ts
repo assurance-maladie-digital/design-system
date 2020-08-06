@@ -5,6 +5,7 @@ import { info, done, log } from '@cnamts/cli-helpers';
 import { execSync, StdioOptions } from 'child_process';
 
 import { tokens } from '../src/tokens';
+import { Tokens } from '../src/types';
 
 /** @see https://github.com/rlapoele/json-to-scss/blob/master/lib/jsValueToSassString.js */
 import jsValueToSassString from 'json-to-scss/lib/jsValueToSassString';
@@ -67,7 +68,7 @@ tokenArray.forEach((tokenName) => {
 	linesToAppend.push(line);
 
 	// Generate var for each value
-	const tokenContent = tokens[tokenName];
+	const tokenContent = (tokens as Tokens)[tokenName];
 
 	if (typeof tokenContent !== 'object') {
 		return;
