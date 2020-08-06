@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 // If LIB_MODE is true, we're building the library
 // else, we're building the playground
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
-const LIMIT_SIZE = 420000;
+const LIMIT_SIZE = 435000;
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
