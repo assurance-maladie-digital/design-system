@@ -51,7 +51,7 @@
 		"@babel/core": "7.11.1",
 		"@babel/preset-env": "7.11.0",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.51",
-		"@mdi/js": "5.4.55",
+		"@mdi/js": "5.5.55",
 		"@vue/cli-plugin-babel": "4.5.3",
 		"@vue/cli-plugin-eslint": "4.5.3",
 		"@vue/cli-plugin-typescript": "4.5.3",
