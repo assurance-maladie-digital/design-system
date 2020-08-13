@@ -4,5 +4,6 @@ exports[`plugin should register components 1`] = `
 Array [
   "FormBuilder",
   "FormField",
+  "FormFieldList",
 ]
 `;

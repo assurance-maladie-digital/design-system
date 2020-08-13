@@ -2,7 +2,7 @@ import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 import { Form } from '../types';
-import { Fields } from '../FormSection/types';
+import { Fields } from '../../FormFieldList/types';
 
 const Props = Vue.extend({
 	props: {

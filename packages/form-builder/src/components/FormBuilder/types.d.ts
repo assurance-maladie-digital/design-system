@@ -1,5 +1,5 @@
-import { Section } from './FormSection/types';
+import { FieldList } from '../FormFieldList/types';
 
 export interface Form {
-	[sectionName: string]: Section;
+	[sectionName: string]: FieldList;
 }

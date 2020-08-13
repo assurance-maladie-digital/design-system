@@ -4,5 +4,6 @@ exports[`registerAllComponents should register all components 1`] = `
 Array [
   "FormBuilder",
   "FormField",
+  "FormFieldList",
 ]
 `;
