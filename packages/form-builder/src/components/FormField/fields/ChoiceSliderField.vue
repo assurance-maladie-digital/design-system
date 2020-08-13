@@ -125,7 +125,7 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '@cnamts/vue-dot/src/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
 	.vd-choice-slider-field ::v-deep {
 		.v-input__control {
