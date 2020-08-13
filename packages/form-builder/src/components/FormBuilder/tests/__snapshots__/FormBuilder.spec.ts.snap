@@ -2,7 +2,7 @@
 
 exports[`FormBuilder renders correctly 1`] = `
 <div class="vd-form-builder">
-  <div class="vd-form-section">
+  <div class="vd-field-list">
     <!---->
     <!---->
     <div class="layout vd-form-field mb-1 column">
@@ -165,7 +165,7 @@ exports[`FormBuilder renders correctly 1`] = `
 
 exports[`FormBuilder renders correctly with all fields 1`] = `
 <div class="vd-form-builder">
-  <div class="vd-form-section">
+  <div class="vd-field-list">
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 1
     </h3>
@@ -413,7 +413,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
       </div>
     </div>
   </div>
-  <div class="vd-form-section">
+  <div class="vd-field-list">
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 2
     </h3>
@@ -565,7 +565,7 @@ exports[`FormBuilder renders correctly with all fields 1`] = `
       </div>
     </div>
   </div>
-  <div class="vd-form-section">
+  <div class="vd-field-list">
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 3
     </h3>

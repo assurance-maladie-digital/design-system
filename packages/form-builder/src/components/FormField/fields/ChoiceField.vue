@@ -64,7 +64,7 @@
 
 	import { IFieldMap } from '../mixins/fieldMap';
 
-	import { ChoiceValue, FieldItemValue, OtherFieldValue, ChoiceFieldValue, OtherField } from '../types';
+	import { ChoiceValue, OtherFieldValue, ChoiceFieldValue, OtherField } from '../types';
 
 	const MixinsDeclaration = mixins(FieldComponent);
 

@@ -1,9 +1,9 @@
 <template>
 	<div class="vd-form-builder">
-		<FormSection
+		<FormFieldList
 			v-for="(section, sectionName) in form"
 			:key="'section-' + sectionName"
-			:section-title="section.title"
+			:list-title="section.title"
 			:description="section.description"
 			:fields="section.questions"
 			@change="sectionUpdated($event, sectionName)"
@@ -17,7 +17,7 @@
 
 	import { FormBuilderCore } from './mixins/formBuilderCore';
 
-	import FormSection from './FormSection';
+	import FormFieldList from '../FormFieldList';
 
 	const MixinsDeclaration = mixins(FormBuilderCore);
 
@@ -27,7 +27,7 @@
 	 */
 	@Component({
 		components: {
-			FormSection
+			FormFieldList
 		}
 	})
 	export default class FormBuilder extends MixinsDeclaration {}
@@ -37,7 +37,7 @@
 	.vd-form-builder {
 		width: 100%;
 
-		.vd-form-section + .vd-form-section {
+		.vd-field-list + .vd-field-list {
 			padding-top: 46px;
 			border-top: solid 1px rgba(0, 0, 0, .12);
 

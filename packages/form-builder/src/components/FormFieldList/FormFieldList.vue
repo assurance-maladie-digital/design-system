@@ -1,13 +1,13 @@
 <template>
 	<div
-		class="vd-form-section"
+		class="vd-field-list"
 		:class="{ 'theme--dark': $vuetify.theme.dark }"
 	>
 		<h3
-			v-if="sectionTitle"
+			v-if="listTitle"
 			class="text-h6 font-weight-bold mb-2"
 		>
-			{{ sectionTitle }}
+			{{ listTitle }}
 		</h3>
 
 		<p v-if="description">
@@ -27,14 +27,14 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import FormField from '../../FormField';
-	import { Field } from '../../FormField/types';
+	import FormField from '../FormField';
+	import { Field } from '../FormField/types';
 
 	import { Fields } from './types';
 
 	const Props = Vue.extend({
 		props: {
-			sectionTitle: {
+			listTitle: {
 				type: String,
 				default: undefined
 			},
@@ -52,15 +52,19 @@
 	const MixinsDeclaration = mixins(Props);
 
 	/**
-	 * FormSection is a component that displays a
-	 * group of fields in a form
+	 * FormFieldList is a component that
+	 * displays a group of fields
 	 */
 	@Component({
 		components: {
 			FormField
+		},
+		model: {
+			prop: 'fields',
+			event: 'change'
 		}
 	})
-	export default class FormSection extends MixinsDeclaration {
+	export default class FormFieldList extends MixinsDeclaration {
 		/**
 		 * When a field is updated, emit a
 		 * change event with updated fields
@@ -88,7 +92,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-form-section {
+	.vd-field-list {
 		width: 100%;
 	}
 </style>
