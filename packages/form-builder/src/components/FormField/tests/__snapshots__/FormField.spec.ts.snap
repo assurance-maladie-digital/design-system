@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField renders correctly 1`] = `
+<vlayout-stub tag="div" column="" class="vd-form-field mb-1">
+  <!---->
+  <!---->
+  <textfield-stub field="[object Object]"></textfield-stub>
+</vlayout-stub>
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getFormValues returns all values 1`] = `
+Object {
+  "streetLabel": "streetLabel",
+  "streetNumber": 1,
+  "streetNumberComplement": "bis",
+}
+`;
