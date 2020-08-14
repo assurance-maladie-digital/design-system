@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`plugin should register components 1`] = `
+Array [
+  "FormBuilder",
+  "FormField",
+  "FormFieldList",
+]
+`;

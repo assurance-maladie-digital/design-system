@@ -1,13 +1,11 @@
 {
-	"name": "@cnamts/vue-dot",
+	"name": "@cnamts/form-builder",
 	"version": "2.0.0-alpha.53",
-	"description": "Implementation of our Design System for the French Health Insurance",
+	"description": "FormBuilder for the French Health Insurance",
 	"keywords": [
 		"cnam",
 		"vue",
-		"vue-dot",
-		"vue-cli",
-		"component-library"
+		"form-builder"
 	],
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
@@ -23,10 +21,9 @@
 		"dist/*",
 		"src/*",
 		"tests/*",
-		"public/*",
 		"types/*"
 	],
-	"main": "./dist/vue-dot.common.js",
+	"main": "./dist/form-builder.common.js",
 	"module": "./src/index.ts",
 	"types": "types/index.d.ts",
 	"scripts": {
@@ -38,29 +35,19 @@
 		"test": "vue-cli-service test:unit"
 	},
 	"peerDependencies": {
-		"@mdi/js": "^4.3.95 || ^5.0.0",
-		"dayjs": "^1.8.0",
-		"languages": "^0.1.3",
 		"vue": "^2.6.10",
-		"vue-input-facade": "^1.3.1",
-		"vue-router": "^3.1.6",
 		"vuetify": "^2.0.11",
-		"vuex": "^3.1.0"
+		"@cnamts/vue-dot": "2.0.0-alpha.53"
 	},
 	"devDependencies": {
-		"@babel/core": "7.11.1",
-		"@babel/preset-env": "7.11.0",
 		"@cnamts/cli-helpers": "^2.0.0-alpha.51",
+		"@cnamts/vue-dot": "2.0.0-alpha.53",
 		"@mdi/js": "5.5.55",
-		"@vue/cli-plugin-babel": "4.5.3",
 		"@vue/cli-plugin-eslint": "4.5.3",
 		"@vue/cli-plugin-typescript": "4.5.3",
 		"@vue/cli-plugin-unit-jest": "4.5.3",
 		"@vue/cli-service": "4.5.3",
 		"@vue/test-utils": "1.0.3",
-		"babel-core": "7.0.0-bridge.0",
-		"babel-loader": "8.1.0",
-		"core-js": "3.6.5",
 		"json-to-scss": "1.5.0",
 		"sass": "1.26.10",
 		"sass-loader": "9.0.3",
@@ -75,6 +62,5 @@
 	},
 	"publishConfig": {
 		"access": "public"
-	},
-	"gitHead": "12f20cd67e2336f2d9990f32e0dfc931a089c707"
+	}
 }

@@ -1,0 +1,26 @@
+{
+	// Extend root config
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"types": [
+			"node",
+			"jest",
+			"vuetify"
+		]
+	},
+	"include": [
+		// Playground
+		"playground/**/*.ts",
+		"playground/**/*.vue",
+		// Src
+		"src/**/*.ts",
+		"src/**/*.vue",
+		// JSON
+		"src/**/*.json"
+	],
+	"exclude": [
+		"node_modules",
+		"src/**/tests"
+	]
+}
