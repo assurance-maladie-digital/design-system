@@ -8,12 +8,10 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { addressForm } from '../../src/components/FormBuilder/tests/data/addressForm';
-
-	const fields = addressForm.section1.questions;
+	import { addressFields } from '../../src/components/FormFieldList/tests/data/addressFields';
 
 	@Component
 	export default class FormFieldListEx extends Vue {
-		fields = fields;
+		fields = addressFields;
 	}
 </script>

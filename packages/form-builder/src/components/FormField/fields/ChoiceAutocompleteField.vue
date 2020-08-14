@@ -6,7 +6,7 @@
 		:multiple="multiple"
 		:search-input.sync="searchInput"
 		class="vd-form-input"
-		@change="valueChanged"
+		@change="valueUpdated"
 	/>
 </template>
 
@@ -32,7 +32,7 @@
 		 * @param {ChoiceFieldValue} value The updated value
 		 * @returns {void} Nothing
 		 */
-		valueChanged(value: ChoiceFieldValue): void {
+		valueUpdated(value: ChoiceFieldValue): void {
 			this.searchInput = '';
 			this.emitChangeEvent(value);
 		}

@@ -29,8 +29,6 @@
 			<FormBuilderEx />
 
 			<FormFieldListEx />
-
-			<QuestionnaireEx />
 		</VMain>
 
 		<VFooter

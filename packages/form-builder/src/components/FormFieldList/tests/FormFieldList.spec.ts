@@ -6,7 +6,7 @@ import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import FormFieldList from '../';
 
-import { questionForm } from '../../FormBuilder/tests/data/questionForm';
+import { addressFields } from './data/addressFields';
 
 let wrapper: Wrapper<Vue>;
 
@@ -16,7 +16,7 @@ describe('FormFieldList', () => {
 		// Mount component
 		wrapper = mountComponent(FormFieldList, {
 			propsData: {
-				fields: questionForm.section1.questions
+				fields: addressFields
 			}
 		});
 

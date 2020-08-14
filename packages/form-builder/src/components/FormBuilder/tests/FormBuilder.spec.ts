@@ -6,7 +6,6 @@ import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import FormBuilder from '../';
 
-import { addressForm } from './data/addressForm';
 import { questionForm } from './data/questionForm';
 
 let wrapper: Wrapper<Vue>;
@@ -14,17 +13,6 @@ let wrapper: Wrapper<Vue>;
 // Tests
 describe('FormBuilder', () => {
 	it('renders correctly', () => {
-		// Mount component
-		wrapper = mountComponent(FormBuilder, {
-			propsData: {
-				form: addressForm
-			}
-		}, true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
-	it('renders correctly with all fields', () => {
 		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {

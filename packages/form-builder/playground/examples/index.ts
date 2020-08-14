@@ -5,13 +5,11 @@ import { registerComponents } from '@cnamts/vue-dot/src/helpers/registerComponen
 import FormBuilderEx from './FormBuilderEx.vue';
 import FormFieldEx from './FormFieldEx.vue';
 import FormFieldListEx from './FormFieldListEx.vue';
-import QuestionnaireEx from './QuestionnaireEx.vue';
 
 const components = {
 	FormBuilderEx,
 	FormFieldEx,
-	FormFieldListEx,
-	QuestionnaireEx
+	FormFieldListEx
 };
 
 registerComponents(Vue, components);

@@ -11,15 +11,18 @@
 import * as fs from 'fs-extra';
 
 import { renderHeader, info, done, log } from '@cnamts/cli-helpers';
-import { execOpts } from './utils';
 
 import { author } from '../package.json';
 
-renderHeader('Self Build', author.name);
+import { execSync, StdioOptions } from 'child_process';
 
-import { execSync } from 'child_process';
+const execOpts = {
+	stdio: 'inherit' as StdioOptions
+};
 
 const DIST_FOLDER = './dist';
+
+renderHeader('Self Build', author.name);
 
 // Create dist folder if not exists
 if (!fs.existsSync(DIST_FOLDER)) {

@@ -135,7 +135,10 @@ export const questionForm: Form = {
 				title: 'Question select slider',
 				description: 'Informations supplémentaires',
 				tooltip: 'Texte d\'aide',
-				value: '9.30',
+				value: {
+					value: '9.30',
+					other: null
+				},
 				items: defaultItems,
 				fieldOptions: {
 					type: 'choiceSlider'

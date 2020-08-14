@@ -7,7 +7,7 @@
 		<DatePicker
 			v-model="periodValue.from"
 			v-bind="fieldOptionsFrom"
-			:vuetify-options="getVuetifyOptions(fieldOptionsFrom)"
+			:vuetify-options="fieldOptionsFrom"
 			text-field-class="mx-3 vd-form-input no-flex"
 			@change="dateUpdated"
 		/>
@@ -15,7 +15,7 @@
 		<DatePicker
 			v-model="periodValue.to"
 			v-bind="fieldOptionsTo"
-			:vuetify-options="getVuetifyOptions(fieldOptionsTo)"
+			:vuetify-options="fieldOptionsTo"
 			:start-date="periodValue.from"
 			text-field-class="mx-3 vd-form-input no-flex"
 			@change="dateUpdated"
@@ -31,11 +31,10 @@
 	import { PeriodValue } from '../types';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
-	import { DatePickerOptions } from '../mixins/datePickerOptions';
 
 	import { Options } from '@cnamts/vue-dot/src/mixins/customizable';
 
-	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
+	const MixinsDeclaration = mixins(FieldComponent);
 
 	/** Form period field to enter a period */
 	@Component<PeriodField>({

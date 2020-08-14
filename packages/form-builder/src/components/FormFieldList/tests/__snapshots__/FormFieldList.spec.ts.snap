@@ -11,6 +11,5 @@ exports[`FormFieldList renders correctly 1`] = `
   <formfield-stub field="[object Object]"></formfield-stub>
   <formfield-stub field="[object Object]"></formfield-stub>
   <formfield-stub field="[object Object]"></formfield-stub>
-  <formfield-stub field="[object Object]"></formfield-stub>
 </div>
 `;

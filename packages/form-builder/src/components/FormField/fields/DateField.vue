@@ -2,7 +2,7 @@
 	<DatePicker
 		v-bind="field.fieldOptions"
 		:value="field.value"
-		:vuetify-options="getVuetifyOptions(field.fieldOptions)"
+		:vuetify-options="field.fieldOptions"
 		text-field-class="vd-form-input"
 		@change="emitChangeEvent"
 	/>
@@ -14,9 +14,8 @@
 	import DatePicker from '@cnamts/vue-dot/src/patterns/DatePicker';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
-	import { DatePickerOptions } from '../mixins/datePickerOptions';
 
-	const MixinsDeclaration = mixins(FieldComponent, DatePickerOptions);
+	const MixinsDeclaration = mixins(FieldComponent);
 
 	/** Form date field to enter a date */
 	@Component({
