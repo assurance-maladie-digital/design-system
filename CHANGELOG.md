@@ -1,4 +1,4 @@
-## v2.0.0-beta.1
+## v2.0.0-beta.0 (18/07/2020)
 
 Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-tokens` et `@cnamts/form-builder`, la mise à jour de Vuetify en version 2.3, du refactoring sur les composants ainsi que l'ajout d'un template pour les Pull Requests et d'un fichier CHANGELOG.
 
@@ -25,8 +25,8 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **template:** Suppression des styles inutiles suite à la mise à jour de Vuetify ([#460](https://github.com/assurance-maladie-digital/design-system/pull/460)) ([cd41eef](https://github.com/assurance-maladie-digital/design-system/commit/cd41eefc028b4eac87fa217ec94cef708c1e05ed))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#459](https://github.com/assurance-maladie-digital/design-system/pull/459)) ([0993af2](https://github.com/assurance-maladie-digital/design-system/commit/0993af28b9b4778088556ec8d3dd6b622971ba3a))
-  
+  - **template:** Mise à jour des dépendances ([#511](https://github.com/assurance-maladie-digital/design-system/pull/511)) ([c120bf1](https://github.com/assurance-maladie-digital/design-system/commit/c120bf1b8474307cfc49c3c354adff14d59ada96))
+
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
@@ -57,6 +57,7 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **pull-requests:** Ajout d'un template pour les Pull Requests ([#464](https://github.com/assurance-maladie-digital/design-system/pull/464)) ([6206290](https://github.com/assurance-maladie-digital/design-system/commit/620629039da9256fe0b6c842eb89f830732f7974))
   - **README:** Ajout du package Design Tokens à la section écosystème ([043c1d5](https://github.com/assurance-maladie-digital/design-system/commit/043c1d55b8c56d950df7e15e00aeb70c036cd47f))
   - **README:** Ajout du package Form Builder à la section écosystème ([c71beca](https://github.com/assurance-maladie-digital/design-system/commit/c71becae7bfa990c70992e695fe0bd0e52dec170))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#513](https://github.com/assurance-maladie-digital/design-system/pull/513))
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([4335c4a](https://github.com/assurance-maladie-digital/design-system/commit/4335c4ab8dcff5840df967f5d22852309a9dde17))
@@ -117,9 +118,11 @@ De même, la constante `vuetifyTheme` a changé d'emplacement et est maintenant 
 
 #### Styles du thème
 
-Suite à la mise à jour de Vuetify, les styles par défaut du thème ont été mis à jour dans Vue Dash, et leur taille a été réduite d'environ 60 lignes. Vous pouvez retrouver le détail de cs changements et mettre à jour ces styles dans vos projets en suivant les modifications des Pull Requests [#460](https://github.com/assurance-maladie-digital/design-system/pull/460) et [#482](https://github.com/assurance-maladie-digital/design-system/pull/482).
+Suite à la mise à jour de Vuetify, les styles par défaut du thème ont été mis à jour dans Vue Dash, et leur taille a été réduite d'environ 60 lignes.
 
-## v2.0.0-alpha.53
+Vous pouvez retrouver le détail de ces changements et mettre à jour ces styles dans vos projets en suivant les modifications des Pull Requests [#460](https://github.com/assurance-maladie-digital/design-system/pull/460) et [#482](https://github.com/assurance-maladie-digital/design-system/pull/482).
+
+## v2.0.0-alpha.53 (10/07/2020)
 
 Cette version comporte de nouvelles fonctionnalités ainsi que des corrections de bugs concernant les composants `UploadWorkflow`, `FileList` et `FileUpload`. Elle inclut également des correctifs d'accessibilité et du refactoring en vue du passage en version bêta.
 
@@ -198,7 +201,7 @@ La prop `no-shadow` a été supprimée car elle ne fonctionnait pas correctement
 />
 ```
 
-## v2.0.0-alpha.52
+## v2.0.0-alpha.52 (01/07/2020)
 
 Cette version comporte un changement de dépendance important, ainsi que des nouvelles fonctionnalités diverses comme les classes de largeur de champs de formulaires, mais aussi des corrections de bugs sur le `FileUpload` et du refactoring en vue du passage en version bêta.
 
@@ -358,7 +361,7 @@ Vous pouvez également supprimer les anciennes classes de votre thème :
 -}
 ```
 
-## v2.0.0-alpha.51
+## v2.0.0-alpha.51 (02/06/2020)
 
 Cette version comporte plusieurs mois de refactoring de la librairie et de son écosystème, c'est la première version d'une série en vue du passage en version bêta.
 
@@ -499,7 +502,7 @@ Cette version comporte plusieurs mois de refactoring de la librairie et de son �
   - **typescript-eslint:** Mise à jour du monorepo vers la `v3.1.0` ([#313](https://github.com/assurance-maladie-digital/design-system/pull/313)) ([9106805](https://github.com/assurance-maladie-digital/design-system/commit/9106805f104ae391f59183038f67419bcf4c98cf))
   - **@types/node:** Mise à jour vers la `v12.12.43` ([#314](https://github.com/assurance-maladie-digital/design-system/pull/314)) ([217069f](https://github.com/assurance-maladie-digital/design-system/commit/217069f36d1be7bca37ddab93d64605cbc0c6f29))
 
-## v2.0.0-alpha.50 (2020-03-06)
+## v2.0.0-alpha.50 (06/03/2020)
 
 Cette version comporte deux correctifs sur le `DatePicker` ainsi qu'une simplification de son utilisation.
 
@@ -529,7 +532,7 @@ Les propriétés passées au composant `DatePicker` sont maintenant passées dir
 />
 ```
 
-## v2.0.0-alpha.49 (2020-02-24)
+## v2.0.0-alpha.49 (24/02/2020)
 
 Cette version comporte un correctif sur les imports dans le template de Vue Dash.
 
