@@ -45,8 +45,12 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
 - 🔒 **Sécurité**
   - **lodash:** Mise à jour vers de la `v4.17.15` vers la `v4.17.19` ([#444](https://github.com/assurance-maladie-digital/design-system/pull/444)) ([3584d6f](https://github.com/assurance-maladie-digital/design-system/commit/3584d6fa8caf80fca4aba4a883be6be191342368))
 
+- ♻️ **Refactoring**
+  - **peerDependencies:** Mise à jour des dépendances ([#508](https://github.com/assurance-maladie-digital/design-system/pull/508)) ([de12946](https://github.com/assurance-maladie-digital/design-system/commit/de1294632dcc0540ee517ae6f5819a98e93cabe0))
+  - **dependencies:** Déplacement des dépendances communes vers la racine ([#509](https://github.com/assurance-maladie-digital/design-system/pull/509)) ([bc40e59](https://github.com/assurance-maladie-digital/design-system/commit/bc40e59ec9a983194bd6cc89b0850852d5b23c68))
+
 - 🔥 **Suppressions**
-  - **dépendances:** Suppression de la dépendance non-utilisée `webpack-node-externals` ([#437](https://github.com/assurance-maladie-digital/design-system/pull/437)) ([035a0dd](https://github.com/assurance-maladie-digital/design-system/commit/035a0ddf3a64467797de579133f880a3d4636990))
+  - **dependencies:** Suppression de la dépendance non-utilisée `webpack-node-externals` ([#437](https://github.com/assurance-maladie-digital/design-system/pull/437)) ([035a0dd](https://github.com/assurance-maladie-digital/design-system/commit/035a0ddf3a64467797de579133f880a3d4636990))
 
 - 📝 **Documentation**
   - **CHANGELOG:** Ajout d'un fichier CHANGELOG ([#456](https://github.com/assurance-maladie-digital/design-system/pull/456)) ([5541e18s](https://github.com/assurance-maladie-digital/design-system/commit/5541e18784a5d4884bc174b96eefc5d25bad5979))
@@ -78,8 +82,8 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **typescript-eslint:** Mise à jour du monorepo vers la `v3.9.0` ([#501](https://github.com/assurance-maladie-digital/design-system/pull/501)) ([a456afc](https://github.com/assurance-maladie-digital/design-system/commit/a456afcad310b4328bf1091bef6e92729f7991aa))
   - **ts-jest:** Mise à jour vers la `v26.2.0` ([#502](https://github.com/assurance-maladie-digital/design-system/pull/502)) ([9b8495c](https://github.com/assurance-maladie-digital/design-system/commit/9b8495c3393a9f863409d4a3f1f94e1849cfc921))
   - **@types/jest:** Mise à jour vers la `v26.0.10` ([#505](https://github.com/assurance-maladie-digital/design-system/pull/505)) ([c7be0f5](https://github.com/assurance-maladie-digital/design-system/commit/c7be0f526c259f05f70932356dfec18580b42e18))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.2.3` ([#506](https://github.com/assurance-maladie-digital/design-system/pull/506)) ([a0b01f0](https://github.com/assurance-maladie-digital/design-system/commit/a0b01f086d70586a2886040cd9643cbbe0d45f90))
   - **@vue/test-utils:** Mise à jour vers la `v1.0.4` ([#507](https://github.com/assurance-maladie-digital/design-system/pull/507)) ([b43fb05](https://github.com/assurance-maladie-digital/design-system/commit/b43fb0581b3a2b962c7b191a7a6cf121460b004b))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.2.4` ([#510](https://github.com/assurance-maladie-digital/design-system/pull/510)) ([9061af7](https://github.com/assurance-maladie-digital/design-system/commit/9061af7c88d3feae5f24c34d67da54cfd4102d12))
 
 ### 📚 Guide de migration
 
@@ -169,7 +173,7 @@ Cette version comporte un changement de dépendance important, ainsi que des nou
 ### Vue Dot
 
 - 💥 **Changements majeurs**
-  - **dépendances:** Remplacement de `vue-the-mask` par `vue-input-facade` ([#363](https://github.com/assurance-maladie-digital/design-system/pull/363)) ([c17ad2b](https://github.com/assurance-maladie-digital/design-system/commit/c17ad2bcb951afb7f5adc37bab8b6c0b440e6016))
+  - **dependencies:** Remplacement de `vue-the-mask` par `vue-input-facade` ([#363](https://github.com/assurance-maladie-digital/design-system/pull/363)) ([c17ad2b](https://github.com/assurance-maladie-digital/design-system/commit/c17ad2bcb951afb7f5adc37bab8b6c0b440e6016))
 
 - ✨ **Nouvelles fonctionnalités**
   - **SubHeader:** Ajout d'un défilement horizontal lorsque le contenu déborde ([a940ce7](https://github.com/assurance-maladie-digital/design-system/commit/a940ce7c3217fabf160364a40c009fbe7d3e2729))
@@ -425,7 +429,7 @@ Cette version comporte plusieurs mois de refactoring de la librairie et de son �
   - **ci:** Ajout de renovate ([#112](https://github.com/assurance-maladie-digital/design-system/pull/112)) ([ca39dfa](https://github.com/assurance-maladie-digital/design-system/commit/ca39dfadb82add9e039588bd6d3d7bb76285e6d2))
 
 - 🔥 **Suppressions**
-  - **dépendances:** Suppression de la dépendance `monorepo-run` ([#196](https://github.com/assurance-maladie-digital/design-system/pull/196)) ([90aa1df](https://github.com/assurance-maladie-digital/design-system/commit/90aa1df8e97527dcbb4b3d8a88a1e1e8e7754f30))
+  - **dependencies:** Suppression de la dépendance `monorepo-run` ([#196](https://github.com/assurance-maladie-digital/design-system/pull/196)) ([90aa1df](https://github.com/assurance-maladie-digital/design-system/commit/90aa1df8e97527dcbb4b3d8a88a1e1e8e7754f30))
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la configuration de Travis CI ([#187](https://github.com/assurance-maladie-digital/design-system/pull/187)) ([7ede478](https://github.com/assurance-maladie-digital/design-system/commit/7ede478631394800aaa0ef675cbf0024ba160059))
