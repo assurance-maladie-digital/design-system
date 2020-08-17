@@ -1,4 +1,6 @@
-## Non publié
+## v2.0.0-beta.1
+
+Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-tokens` et `@cnamts/form-builder`, la mise à jour de Vuetify en version 2.3, du refactoring sur les composants ainsi que l'ajout d'un template pour les Pull Requests et d'un fichier CHANGELOG.
 
 ### Vue Dot
 
@@ -24,6 +26,11 @@
 
 - ⬆️ **Dépendances**
   - **template:** Mise à jour des dépendances ([#459](https://github.com/assurance-maladie-digital/design-system/pull/459)) ([0993af2](https://github.com/assurance-maladie-digital/design-system/commit/0993af28b9b4778088556ec8d3dd6b622971ba3a))
+  
+### FormBuilder
+
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout du package FormBuilder ([#190](https://github.com/assurance-maladie-digital/design-system/pull/190)) ([0e4403e](https://github.com/assurance-maladie-digital/design-system/commit/0e4403e8690d58c2d7925d967c578ff935b8ebc0))
 
 ### Design Tokens
 
@@ -45,6 +52,7 @@
   - **CHANGELOG:** Ajout d'un fichier CHANGELOG ([#456](https://github.com/assurance-maladie-digital/design-system/pull/456)) ([5541e18s](https://github.com/assurance-maladie-digital/design-system/commit/5541e18784a5d4884bc174b96eefc5d25bad5979))
   - **pull-requests:** Ajout d'un template pour les Pull Requests ([#464](https://github.com/assurance-maladie-digital/design-system/pull/464)) ([6206290](https://github.com/assurance-maladie-digital/design-system/commit/620629039da9256fe0b6c842eb89f830732f7974))
   - **README:** Ajout du package Design Tokens à la section écosystème ([043c1d5](https://github.com/assurance-maladie-digital/design-system/commit/043c1d55b8c56d950df7e15e00aeb70c036cd47f))
+  - **README:** Ajout du package Form Builder à la section écosystème ([c71beca](https://github.com/assurance-maladie-digital/design-system/commit/c71becae7bfa990c70992e695fe0bd0e52dec170))
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([4335c4a](https://github.com/assurance-maladie-digital/design-system/commit/4335c4ab8dcff5840df967f5d22852309a9dde17))
@@ -60,7 +68,6 @@
   - **@babel/core:** Mise à jour vers la `v7.11.1` ([#487](https://github.com/assurance-maladie-digital/design-system/pull/487)) ([60f6325](https://github.com/assurance-maladie-digital/design-system/commit/60f6325ca9a2ec7b94def3b4483135c014704fd2))
   - **webpack:** Mise à jour vers la `v4.41.1` ([#461](https://github.com/assurance-maladie-digital/design-system/pull/461)) ([9c4ca26](https://github.com/assurance-maladie-digital/design-system/commit/9c4ca26d2baaeeecc85fa82dea92c79e37fb0f75))
   - **sass-loader:** Mise à jour vers la `v9.0.3` ([#490](https://github.com/assurance-maladie-digital/design-system/pull/490)) ([f498cc1](https://github.com/assurance-maladie-digital/design-system/commit/f498cc111fef8018e00a1cd37a1f2f09a597e618))
-  - **@types/jest:** Mise à jour vers la `v26.0.9` ([#491](https://github.com/assurance-maladie-digital/design-system/pull/491)) ([f5f6ffd](https://github.com/assurance-maladie-digital/design-system/commit/f5f6ffd83e132d38f847fca993be03097c3c602b))
   - **@types/node:** Mise à jour vers la `v12.12.54` ([#492](https://github.com/assurance-maladie-digital/design-system/pull/492)) ([bcf8310](https://github.com/assurance-maladie-digital/design-system/commit/bcf831001723dd2e7b2d80825943269dee42641f))
   - **vuetify:** Mise à jour vers la `v2.3.8` ([#374](https://github.com/assurance-maladie-digital/design-system/pull/374)) ([c335b4a](https://github.com/assurance-maladie-digital/design-system/commit/c335b4a5fa9b6777c30bf4d6e90fcaaa28b92296)) ([#495](https://github.com/assurance-maladie-digital/design-system/pull/495)) ([859c200](https://github.com/assurance-maladie-digital/design-system/commit/859c200babe1d5bf4a2a433ddeaa4807575c62b1))
   - **vue-router:** Mise à jour vers la `v3.4.2` ([#496](https://github.com/assurance-maladie-digital/design-system/pull/496)) ([53b8d27](https://github.com/assurance-maladie-digital/design-system/commit/53b8d272c69174e6219cf24840dd3740634ad2bb))
@@ -70,7 +77,11 @@
   - **@mdi/js:** Mise à jour vers la `v5.5.55` ([#500](https://github.com/assurance-maladie-digital/design-system/pull/500)) ([1843597](https://github.com/assurance-maladie-digital/design-system/commit/184359742ceacd2362e24cb675613cf0850d9dff))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v3.9.0` ([#501](https://github.com/assurance-maladie-digital/design-system/pull/501)) ([a456afc](https://github.com/assurance-maladie-digital/design-system/commit/a456afcad310b4328bf1091bef6e92729f7991aa))
   - **ts-jest:** Mise à jour vers la `v26.2.0` ([#502](https://github.com/assurance-maladie-digital/design-system/pull/502)) ([9b8495c](https://github.com/assurance-maladie-digital/design-system/commit/9b8495c3393a9f863409d4a3f1f94e1849cfc921))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.2.2` ([#503](https://github.com/assurance-maladie-digital/design-system/pull/503)) ([c2e9ce2](https://github.com/assurance-maladie-digital/design-system/commit/c2e9ce2fb69839df336401829506fa4d251a77a8))
+  - **@types/jest:** Mise à jour vers la `v26.0.10` ([#505](https://github.com/assurance-maladie-digital/design-system/pull/505)) ([c7be0f5](https://github.com/assurance-maladie-digital/design-system/commit/c7be0f526c259f05f70932356dfec18580b42e18))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.2.3` ([#506](https://github.com/assurance-maladie-digital/design-system/pull/506)) ([a0b01f0](https://github.com/assurance-maladie-digital/design-system/commit/a0b01f086d70586a2886040cd9643cbbe0d45f90))
+  - **@vue/test-utils:** Mise à jour vers la `v1.0.4` ([#507](https://github.com/assurance-maladie-digital/design-system/pull/507)) ([b43fb05](https://github.com/assurance-maladie-digital/design-system/commit/b43fb0581b3a2b962c7b191a7a6cf121460b004b))
+
+### 📚 Guide de migration
 
 ## v2.0.0-alpha.53
 
@@ -451,3 +462,42 @@ Cette version comporte plusieurs mois de refactoring de la librairie et de son �
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v26.0.2` ([#312](https://github.com/assurance-maladie-digital/design-system/pull/312)) ([3cdf57b](https://github.com/assurance-maladie-digital/design-system/commit/3cdf57b8399b335652bcc3d0c7cd6b2b00c61660))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v3.1.0` ([#313](https://github.com/assurance-maladie-digital/design-system/pull/313)) ([9106805](https://github.com/assurance-maladie-digital/design-system/commit/9106805f104ae391f59183038f67419bcf4c98cf))
   - **@types/node:** Mise à jour vers la `v12.12.43` ([#314](https://github.com/assurance-maladie-digital/design-system/pull/314)) ([217069f](https://github.com/assurance-maladie-digital/design-system/commit/217069f36d1be7bca37ddab93d64605cbc0c6f29))
+
+## v2.0.0-alpha.50 (2020-03-06)
+
+Cette version comporte deux correctifs sur le `DatePicker` ainsi qu'une simplification de son utilisation.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **DatePicker:** Correction de l'alignement des icônes ([23a4724](https://github.com/assurance-maladie-digital/design-system/commit/23a472485afba66c04067676e5c87c26560e2026))
+  - **DatePicker:** Modification de la date minimale en mode `birthdate` de `1950` à `1900` ([31e4950](https://github.com/assurance-maladie-digital/design-system/commit/31e49508a6496ad7989891cb20b0675affddca45))
+
+- ♻️ **Refactoring**
+  - **DatePicker:** Simplification de l'API ([#107](https://github.com/assurance-maladie-digital/design-system/pull/107)) ([f48bb5e](https://github.com/assurance-maladie-digital/design-system/commit/f48bb5e2fb628952cd161353d786b44ea1b66732))
+
+### 📚 Guide de migration
+
+#### Simplification de l'utilisation du DatePicker
+
+Les propriétés passées au composant `DatePicker` sont maintenant passées directement au composant `VTextField` à l'intérieur. Il n'est plus nécessaire de passer par la prop `vuetify-options`, vous pouvez donc simplifier votre code :
+
+```diff
+<DatePicker
+-	:vuetify-options="{
+-		textField: {
+-			clearable: true
+-		}
+-	}"
++	clearable
+/>
+```
+
+## v2.0.0-alpha.49 (2020-02-24)
+
+Cette version comporte un correctif sur les imports dans le template de Vue Dash.
+
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction des imports ([#100](https://github.com/assurance-maladie-digital/design-system/pull/100)) ([44a5d92](https://github.com/assurance-maladie-digital/design-system/commit/44a5d9264e7a13320436f0675ea31de5063bcf82))
