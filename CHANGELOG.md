@@ -8,7 +8,7 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **DatePicker:** Ajout de l'événement `input` ([#457](https://github.com/assurance-maladie-digital/design-system/pull/457)) ([7124804](https://github.com/assurance-maladie-digital/design-system/commit/7124804b432f7446e19170fbaf95aade15c909c0))
 
 - ♻️ **Refactoring**
-  - **NotificationBar:** Refonte du composant suite à la mise à jour de Vuetify ([#346](https://github.com/assurance-maladie-digital/design-system/pull/346)) ([9ec5ca3](https://github.com/assurance-maladie-digital/design-system/commit/9ec5ca39d3ac4f15a5fdfac96f5a6845f46c2f5c))
+  - **NotificationBar:** Refonte du composant suite à la mise à jour de Vuetify ([#436](https://github.com/assurance-maladie-digital/design-system/pull/436)) ([9ec5ca3](https://github.com/assurance-maladie-digital/design-system/commit/9ec5ca39d3ac4f15a5fdfac96f5a6845f46c2f5c))
   - **DatePicker:** Utilisation de la syntaxe standard du helper `mixins` ([#449](https://github.com/assurance-maladie-digital/design-system/pull/449)) ([253f51e](https://github.com/assurance-maladie-digital/design-system/commit/253f51e5930e2b07459d96079e0595aa7b4813a0))
   - **Playground:** Correction de la couleur du bouton pour changer de thème ([f06d77c](https://github.com/assurance-maladie-digital/design-system/commit/f06d77c84952490b639bfd910a49532877555ebd))
   - **FileUpload:** Refonte du composant ([#273](https://github.com/assurance-maladie-digital/design-system/pull/273)) ([f75e491](https://github.com/assurance-maladie-digital/design-system/commit/f75e491dc4cffde64c73f655ff5d9ef48cb7c1ae))
@@ -22,7 +22,7 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **template:** Refonte des styles du thème suite à la mise à jour de Vuetify ([#482](https://github.com/assurance-maladie-digital/design-system/pull/482)) ([d5af459](https://github.com/assurance-maladie-digital/design-system/commit/d5af4590c3ca6c64bd652b037629b7a1740ece34))
 
 - 🔥 **Suppressions**
-  - **template:** Suppression des styles inutiles suite à la mise à jour de Vuetify ([#460](https://github.com/assinutiles suite à la mise à jour de Vuetify-maladie-digital/design-system/pull/460)) ([cd41eef](https://github.com/assurance-maladie-digital/design-system/commit/cd41eefc028b4eac87fa217ec94cef708c1e05ed))
+  - **template:** Suppression des styles inutiles suite à la mise à jour de Vuetify ([#460](https://github.com/assurance-maladie-digital/design-system/pull/460)) ([cd41eef](https://github.com/assurance-maladie-digital/design-system/commit/cd41eefc028b4eac87fa217ec94cef708c1e05ed))
 
 - ⬆️ **Dépendances**
   - **template:** Mise à jour des dépendances ([#459](https://github.com/assurance-maladie-digital/design-system/pull/459)) ([0993af2](https://github.com/assurance-maladie-digital/design-system/commit/0993af28b9b4778088556ec8d3dd6b622971ba3a))
@@ -65,7 +65,7 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **vuetify-loader:** Mise à jour vers la `v1.6.0` ([#434](https://github.com/assurance-maladie-digital/design-system/pull/434)) ([4831a70](https://github.com/assurance-maladie-digital/design-system/commit/4831a70accf2cc604d06d3d74123ce6b4a9dcb4c))
   - **typescript:** Mise à jour vers la `v3.9.7` ([#443](https://github.com/assurance-maladie-digital/design-system/pull/443)) ([cdf483b](https://github.com/assurance-maladie-digital/design-system/commit/cdf483bc0b9fc8efa988efa956ed814940a57d2d))
   - **vue-class-component:** Mise à jour vers la `v7.2.5` ([#453](https://github.com/assurance-maladie-digital/design-system/pull/453)) ([334160f](https://github.com/assurance-maladie-digital/design-system/commit/334160f749f00f055593a774d8df1f615dcccaa7))
-  - **vuetify:** Mise à jour vers la `v2.3.6` ([#451](https://github.com/assurance-maladie-digital/design-system/pull/451)) ([4f25c80](https://github.com/assurance-maladie-digital/design-system/commit/4f25c809fa056b9b825212f473e8adba192ecee7))
+  - **vuetify:** Mise à jour vers la `v2.3` ([#374](https://github.com/assurance-maladie-digital/design-system/pull/374)) ([c335b4a](https://github.com/assurance-maladie-digital/design-system/commit/c335b4a5fa9b6777c30bf4d6e90fcaaa28b92296))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.0.7` ([#448](https://github.com/assurance-maladie-digital/design-system/pull/448)) ([6e7ec58](https://github.com/assurance-maladie-digital/design-system/commit/6e7ec58c59028bd850f8546ce57612ee8ca9142e))
   - **vue-input-facade:** Mise à jour vers la `v1.3.2` ([#473](https://github.com/assurance-maladie-digital/design-system/pull/473)) ([829bc7b](https://github.com/assurance-maladie-digital/design-system/commit/829bc7b14ea57b469a2b9160c1eb4e9c57c2c69f))
   - **babel:** Mise à jour du monorepo vers la `v7.11.0` ([#476](https://github.com/assurance-maladie-digital/design-system/pull/476)) ([0bf9e21](https://github.com/assurance-maladie-digital/design-system/commit/0bf9e21dea0a9b66193a4c2dea99b11571c6c718))
@@ -86,6 +86,38 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.2.4` ([#510](https://github.com/assurance-maladie-digital/design-system/pull/510)) ([9061af7](https://github.com/assurance-maladie-digital/design-system/commit/9061af7c88d3feae5f24c34d67da54cfd4102d12))
 
 ### 📚 Guide de migration
+
+#### Mise à jour de Vuetify
+
+Vuetify a été mis à jour à la version LTS `2.3`, vous pouvez suivre le [guide de migration de Vuetify 2.3](https://github.com/vuetifyjs/vuetify/releases/tag/v2.3.0#user-content-upgrade-guide) pour la mise à jour.
+
+#### Mise à jour des autres dépendances
+
+Nous avons mis à jour les dépendances requises pour Vue Dot, il faut mettre à jour les dépendances suivantes si ce n'est pas déjà fait :
+- **@mdi/js**: `^5.0.0`
+- **vue**: `^2.6.11`
+- **vuetify**: `^2.3.0`
+- **vuex**: `^3.5.0`
+
+#### Design Tokens
+
+Si vous utilisez les Design Tokens initialement présents dans Vue Dot, vous devrez installer le nouveau package `@cnamts/design-tokens` et importer ceux-ci depuis ce package :
+
+```diff
+-import tokens from '@cnamts/vue-dot/src/tokens;
++import { tokens } from '@cnamts/design-tokens;
+```
+
+De même, la constante `vuetifyTheme` a changé d'emplacement et est maintenant appelée `lightTheme`
+
+```diff
+-import { vuetifyTheme } from '@cnamts/vue-dot/src/tokens/vuetifyTheme';
++import { lightTheme } from '@cnamts/design-tokens/src/colors';
+```
+
+#### Styles du thème
+
+Suite à la mise à jour de Vuetify, les styles par défaut du thème ont été mis à jour dans Vue Dash, et leur taille a été réduite d'environ 60 lignes. Vous pouvez retrouver le détail de cs changements et mettre à jour ces styles dans vos projets en suivant les modifications des Pull Requests [#460](https://github.com/assurance-maladie-digital/design-system/pull/460) et [#482](https://github.com/assurance-maladie-digital/design-system/pull/482).
 
 ## v2.0.0-alpha.53
 
