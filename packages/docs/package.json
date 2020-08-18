@@ -18,8 +18,8 @@
 		"build": "vuepress build src"
 	},
 	"dependencies": {
-		"@cnamts/vue-dot": "^2.0.0-alpha.53",
-		"@cnamts/design-tokens": "^2.0.0-alpha.53",
+		"@cnamts/vue-dot": "^2.0.0-beta.0",
+		"@cnamts/design-tokens": "^2.0.0-beta.0",
 		"vuepress": "^1.5.2"
 	},
 	"devDependencies": {

@@ -15,33 +15,33 @@ function extendPackage(api, options) {
 			'@cnamts/vue-dot': `${VueDotVersion}`,
 			'axios': '^0.19.2',
 			'core-js': '^3.6.5',
-			'dayjs': '^1.8.30',
+			'dayjs': '^1.8.33',
 			'languages': '^0.1.3',
-			'vue-input-facade': '^1.3.1',
+			'vue-input-facade': '^1.3.2',
 			'vue-meta': '^2.4.0',
-			'vuetify': '^2.3.6'
+			'vuetify': '^2.3.8'
 		},
 		devDependencies: {
-			'@babel/core': '^7.10.5',
+			'@babel/core': '^7.11.1',
 			'@types/webfontloader': '^1.6.32',
-			'@mdi/js': '^5.3.45',
-			'@typescript-eslint/eslint-plugin': '^3.7.0',
-			'@typescript-eslint/parser': '^3.7.0',
-			'@types/jest': '26.0.7',
-			'babel-jest': '^26.1.0',
-			'jest': '^26.1.0',
+			'@mdi/js': '^5.5.55',
+			'@typescript-eslint/eslint-plugin': '^3.9.1',
+			'@typescript-eslint/parser': '^3.9.1',
+			'@types/jest': '26.0.10',
+			'babel-jest': '^26.3.0',
+			'jest': '^26.4.0',
 			'jest-serializer-vue': '^2.0.2',
-			'ts-jest': '^26.1.3',
+			'ts-jest': '^26.2.0',
 			'vue-class-component': '^7.2.5',
 			'vue-cli-plugin-vuetify': '^2.0.7',
 			'vuetify-loader': '^1.6.0',
 			'webfontloader': '^1.6.28',
-			'webpack': '^4.43.0'
+			'webpack': '^4.44.1'
 		}
 	};
 
 	if (options.i18n) {
-		newPackageProperties.dependencies['vue-i18n'] = '^8.18.2';
+		newPackageProperties.dependencies['vue-i18n'] = '^8.21.0';
 	}
 
 	if (options.vuexPersist) {

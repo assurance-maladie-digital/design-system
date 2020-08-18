@@ -60,10 +60,10 @@ The goal of our Design System is to unify our work, which allows teams to share 
     </tr>
     <tr>
       <td>
-        <a href="/packages/form-builder">Form Builder</a>
+        <a href="/packages/form-builder">FormBuilder</a>
       </td>
       <td>
-       Form Builder components
+       FormBuilder components
       </td>
     </tr>
     <tr>
