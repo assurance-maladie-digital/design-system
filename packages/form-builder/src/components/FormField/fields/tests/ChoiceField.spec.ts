@@ -6,6 +6,7 @@ import { html } from '@cnamts/vue-dot/tests/utils/html';
 import { Field } from './../../types';
 
 import ChoiceField from '../ChoiceField.vue';
+import SelectField from '../SelectField.vue';
 
 let wrapper: Wrapper<Vue>;
 
@@ -95,5 +96,37 @@ describe('ChoiceField', () => {
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('unselect choice to set value to null in multiple mode', async() => {
+		// Mount component
+		wrapper = mountComponent(ChoiceField, {
+			propsData: {
+				field: {
+					...testField,
+					multiple: true,
+					value: {
+						value: [0]
+					}
+				}
+			}
+		}, true);
+
+		wrapper.findComponent(SelectField).vm.$emit('change', []);
+
+		await wrapper.vm.$nextTick();
+
+		const event = wrapper.emitted('change') || [];
+
+		expect(event[0][0]).toEqual(
+			{
+				...testField,
+				multiple: true,
+				value: {
+					value: null,
+					other: null
+				}
+			}
+		);
 	});
 });

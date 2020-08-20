@@ -198,7 +198,11 @@
 		 * @param {ChoiceFieldValue} choiceFieldValue The new choice value selected
 		 */
 		choiceUpdated(choiceFieldValue: ChoiceFieldValue): void {
-			this.choiceValue.value = choiceFieldValue;
+			if (Array.isArray(choiceFieldValue) && !choiceFieldValue.length) {
+				this.choiceValue.value = null;
+			} else {
+				this.choiceValue.value = choiceFieldValue;
+			}
 
 			if (this.choiceValue.value && !this.otherField?.selectedChoice) {
 				this.otherFieldValue = null;
