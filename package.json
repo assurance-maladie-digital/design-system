@@ -34,7 +34,7 @@
 		"sass": "1.26.10",
 		"sass-loader": "9.0.3",
 		"ts-jest": "26.2.0",
-		"ts-node": "8.10.2",
+		"ts-node": "9.0.0",
 		"typescript": "3.9.7",
 		"vue": "2.6.12",
 		"vue-class-component": "7.2.5",
