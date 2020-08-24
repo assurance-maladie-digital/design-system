@@ -1,9 +1,8 @@
 <template>
 	<VAppBar
-		wrap
-		align-center
 		height="80"
-		class="app-header white no-flex"
+		color="white"
+		class="app-header flex-grow-0"
 	>
 		<RouterLink
 			<% if (i18n) { %>:aria-label="$t('components.layout.appHeader.logoBtn.label')"<% } else { %>aria-label="Accueil"<% } %>
