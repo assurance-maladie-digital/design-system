@@ -1,5 +1,8 @@
 // Override some Vuetify styles
 
+// Import visually-hidden mixin
+@import 'vuetify/src/styles/tools/_display.sass';
+
 // Reset max-width for Vuetify ripples
 .v-ripple__container,
 .v-ripple__container *,
@@ -91,7 +94,7 @@ table.v-table thead th,
 		flex: none;
 
 		input {
-			@extend .d-sr-only;
+			@include visually-hidden;
 		}
 	}
 
