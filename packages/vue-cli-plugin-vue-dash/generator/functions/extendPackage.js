@@ -13,23 +13,23 @@ function extendPackage(api, options) {
 	const newPackageProperties = {
 		dependencies: {
 			'@cnamts/vue-dot': `${VueDotVersion}`,
-			'axios': '^0.19.2',
+			'axios': '^0.20.0',
 			'core-js': '^3.6.5',
-			'dayjs': '^1.8.33',
+			'dayjs': '^1.8.34',
 			'languages': '^0.1.3',
 			'vue-input-facade': '^1.3.2',
 			'vue-meta': '^2.4.0',
-			'vuetify': '^2.3.8'
+			'vuetify': '^2.3.9'
 		},
 		devDependencies: {
-			'@babel/core': '^7.11.1',
-			'@types/webfontloader': '^1.6.32',
+			'@babel/core': '^7.11.4',
 			'@mdi/js': '^5.5.55',
-			'@typescript-eslint/eslint-plugin': '^3.9.1',
-			'@typescript-eslint/parser': '^3.9.1',
 			'@types/jest': '26.0.10',
+			'@types/webfontloader': '^1.6.32',
+			'@typescript-eslint/eslint-plugin': '^3.10.1',
+			'@typescript-eslint/parser': '^3.10.1',
 			'babel-jest': '^26.3.0',
-			'jest': '^26.4.0',
+			'jest': '^26.4.2',
 			'jest-serializer-vue': '^2.0.2',
 			'ts-jest': '^26.2.0',
 			'vue-class-component': '^7.2.5',
