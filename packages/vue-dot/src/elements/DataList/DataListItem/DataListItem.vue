@@ -130,10 +130,11 @@
 			return this.$vuetify.theme.dark ? 'rgba(255, 255, 255, .7)' : 'rgba(0, 0, 0, .6)';
 		}
 
-		get itemValue(): string {			
-			if(typeof this.value === 'number' && !this.value.isNaN())
-				return this.value.toString();
-				
+		get itemValue(): string {
+			if (typeof this.value === 'number') {
+				return isNaN(this.value) ? this.placeholder : this.value.toString();
+			}
+
 			return this.value || this.placeholder;
 		}
 	}
