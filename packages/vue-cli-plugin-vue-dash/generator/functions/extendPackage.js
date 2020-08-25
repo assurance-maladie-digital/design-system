@@ -1,18 +1,25 @@
 const vdPkg = require('../../package.json');
-// Use dev dependency to get Vue Dot version
-let VueDotVersion = vdPkg.devDependencies['@cnamts/vue-dot'] || 'next';
 
-// If the version is an alpha or a beta
-if (VueDotVersion.includes('alpha') || VueDotVersion.includes('beta')) {
-	// Remove ^ char to avoid version auto-bump
-	VueDotVersion = VueDotVersion.replace('^', '');
+function normalizeVersion(version) {
+	// If the version is an alpha or a beta
+	if (version.includes('alpha') || version.includes('beta')) {
+		// Remove ^ char to avoid version auto-bump
+		return version.replace('^', '');
+	}
+
+	return version;
 }
+
+// Use dev dependencies to get packages versions
+const VueDotVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/vue-dot'] || 'next');
+const DesignTokensVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/design-tokens'] || 'next');
 
 /** Extend package.json */
 function extendPackage(api, options) {
 	const newPackageProperties = {
 		dependencies: {
-			'@cnamts/vue-dot': `${VueDotVersion}`,
+			'@cnamts/design-tokens': DesignTokensVersion,
+			'@cnamts/vue-dot': VueDotVersion,
 			'axios': '^0.20.0',
 			'core-js': '^3.6.5',
 			'dayjs': '^1.8.34',
