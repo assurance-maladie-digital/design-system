@@ -82,7 +82,7 @@
 			},
 			/** Value to display */
 			value: {
-				type: String,
+				type: [String, Number],
 				default: undefined
 			},
 			/** Action to display */
@@ -131,7 +131,7 @@
 		}
 
 		get itemValue(): string {
-			return this.value || this.placeholder;
+			return this.value.toString() || this.placeholder;
 		}
 	}
 </script>
