@@ -56,7 +56,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { DataListIcons } from './types';
+	import { DataListIcons, IDataList } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
@@ -65,7 +65,7 @@
 		props: {
 			/** The items to display */
 			items: {
-				type: Array as PropType<DataListItem[]>,
+				type: Array as PropType<IDataList>,
 				required: true
 			},
 			icons: {

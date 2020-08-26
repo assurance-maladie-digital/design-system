@@ -82,7 +82,7 @@
 			},
 			/** Value to display */
 			value: {
-				type: String,
+				type: [String, Number],
 				default: undefined
 			},
 			/** Action to display */
@@ -131,6 +131,10 @@
 		}
 
 		get itemValue(): string {
+			if (typeof this.value === 'number') {
+				return isNaN(this.value) ? this.placeholder : this.value.toString();
+			}
+
 			return this.value || this.placeholder;
 		}
 	}
