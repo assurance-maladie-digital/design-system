@@ -26,7 +26,7 @@
 					</VBtn>
 				</template>
 
-				<span>{{ field.tooltip }}</span>
+				<pre>{{ field.tooltip }}</pre>
 			</VTooltip>
 		</h4>
 
