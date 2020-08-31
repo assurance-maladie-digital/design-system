@@ -26,7 +26,7 @@
 					</VBtn>
 				</template>
 
-				<pre>{{ field.tooltip }}</pre>
+				<span class="field-tooltip-text">{{ field.tooltip }}</span>
 			</VTooltip>
 		</h4>
 
@@ -117,5 +117,8 @@
 <style lang="scss" scoped>
 	.vd-form-field + .vd-form-field {
 		margin-top: 12px;
+	}
+	.field-tooltip-text {
+		white-space: pre-wrap;
 	}
 </style>
