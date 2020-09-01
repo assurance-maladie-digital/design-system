@@ -13,6 +13,7 @@
 			<VTooltip
 				v-if="field.tooltip"
 				right
+				max-width="320"
 			>
 				<template #activator="{ on }">
 					<VBtn
