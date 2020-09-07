@@ -32,7 +32,7 @@
 		"lerna": "3.22.1",
 		"lint-staged": "10.3.0",
 		"sass": "1.26.10",
-		"sass-loader": "10.0.1",
+		"sass-loader": "10.0.2",
 		"ts-jest": "26.2.0",
 		"ts-node": "9.0.0",
 		"typescript": "3.9.7",
