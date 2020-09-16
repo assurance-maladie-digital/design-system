@@ -13,7 +13,6 @@
 			<VTooltip
 				v-if="field.tooltip"
 				right
-				max-width="320"
 			>
 				<template #activator="{ on }">
 					<VBtn
@@ -119,6 +118,7 @@
 	.vd-form-field + .vd-form-field {
 		margin-top: 12px;
 	}
+
 	.field-tooltip-text {
 		white-space: pre-wrap;
 	}
