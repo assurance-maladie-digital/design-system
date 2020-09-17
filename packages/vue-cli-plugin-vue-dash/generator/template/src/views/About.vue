@@ -13,13 +13,13 @@
 		/>
 
 		<VBtn
-			exact
-			color="accent"
-			outlined
 			<% if (i18n) { %>:to="$t('views.about.backBtn.to')"<% } else { %>:to="{
 				name: 'home'
 			}"<% } %>
+			color="accent"
 			class="mt-8"
+			outlined
+			exact
 		>
 			<VIcon class="mr-2">
 				{{ backArrowIcon }}
