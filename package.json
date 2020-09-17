@@ -45,6 +45,10 @@
 		"vuex": "3.5.1",
 		"webpack": "4.44.1"
 	},
+	"resolutions": {
+		"jest": "26.4.2",
+		"ts-jest": "26.3.0"
+	},
 	"gitHooks": {
 		"pre-commit": "lerna run pre-commit --stream"
 	}
