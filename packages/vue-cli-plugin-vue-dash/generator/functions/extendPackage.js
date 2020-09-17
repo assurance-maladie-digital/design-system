@@ -22,6 +22,7 @@ function extendPackage(api, options) {
 			'@cnamts/vue-dot': VueDotVersion,
 			'axios': '^0.20.0',
 			'core-js': '^3.6.5',
+			"custom-event-polyfill": "^1.0.7",
 			'dayjs': '^1.8.34',
 			'languages': '^0.1.3',
 			'vue-input-facade': '^1.3.2',
