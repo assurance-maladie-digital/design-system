@@ -31,8 +31,8 @@
 
 			<VBtn
 				:to="btnRoute"
-				exact
 				color="primary"
+				exact
 			>
 				{{ cta }}
 			</VBtn>
@@ -41,8 +41,10 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
+
+	import { Next } from '@/router/types';
 
 	const Props = Vue.extend({
 		props: {
@@ -68,7 +70,7 @@
 			},
 			/** The route of the CTA button, default to home page */
 			btnRoute: {
-				type: [Array, Object],
+				type: [Array, Object] as PropType<Next>,
 				default: () => ({ name: 'home' })
 			}
 		}

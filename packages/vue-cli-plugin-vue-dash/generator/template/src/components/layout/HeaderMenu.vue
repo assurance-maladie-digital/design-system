@@ -1,6 +1,6 @@
 <template>
 	<VMenu
-		content-class="menu-active-el"
+		content-class="rounded"
 		transition="scale-transition"
 		origin="top center"
 		offset-y
@@ -8,7 +8,7 @@
 	>
 		<template #activator="{ on }">
 			<VBtn
-				class="menu-el text-none px-4"
+				class="text-left text-none px-4 mr-4"
 				text
 				large
 				v-on="on"
@@ -25,7 +25,7 @@
 				<VIcon
 					size="32px"
 					color="grey darken-1"
-					class="ml-2 pa-1 round-icon"
+					class="ml-2 pa-1"
 				>
 					{{ userIcon }}
 				</VIcon>
@@ -98,27 +98,3 @@
 		];<% } %>
 	}
 </script>
-
-<style lang="scss" scoped>
-	.menu-active-el {
-		border-radius: 4px;
-	}
-
-	.menu-el {
-		right: 15px;
-		position: absolute;
-		text-align: left;
-	}
-
-	.round-icon {
-		border-radius: 50%;
-	}
-
-	@media only screen and (max-width: 600px) {
-		.menu-el {
-			position: relative;
-			margin-top: 10px;
-			right: 0;
-		}
-	}
-</style>

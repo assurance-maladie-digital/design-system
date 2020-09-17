@@ -1,7 +1,7 @@
 <template>
 	<PageCard
 		min-height
-		card-class="py-4 px-5 layout column align-start"
+		card-class="d-flex flex-column align-start py-4 px-5"
 	>
 		<h2 class="text-h6 font-weight-bold primary--text mb-4">
 			<% if (i18n) { %>{{ $t('views.home.title') }}<% } else { %>Premiers pas<% } %>
@@ -24,6 +24,7 @@
 		<VBtn
 			color="accent"
 			outlined
+			class="mt-8"
 			@click="sendNotification"
 		>
 			<% if (i18n) { %>{{ $t('views.home.notify') }}<% } else { %>Envoyer une notification (exemple)<% } %>
