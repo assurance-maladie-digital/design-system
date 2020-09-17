@@ -43,7 +43,7 @@
 		"vue-template-compiler": "2.6.12",
 		"vuetify": "2.3.10",
 		"vuex": "3.5.1",
-		"webpack": "4.44.1"
+		"webpack": "4.44.2"
 	},
 	"resolutions": {
 		"jest": "26.4.2",
