@@ -25,6 +25,12 @@ const prompts = [
 		default: true
 	},
 	{
+		name: 'cypress',
+		type: 'confirm',
+		message: 'Utiliser cypress pour les tests e2e',
+		default: true
+	},
+	{
 		name: 'matomo',
 		type: 'confirm',
 		message: 'Installer Matomo (pour les analyses d\'audience)',

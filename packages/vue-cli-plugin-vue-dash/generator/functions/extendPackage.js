@@ -17,6 +17,7 @@ const DesignTokensVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/desi
 /** Extend package.json */
 function extendPackage(api, options) {
 	const newPackageProperties = {
+		scripts:{},
 		dependencies: {
 			'@cnamts/design-tokens': DesignTokensVersion,
 			'@cnamts/vue-dot': VueDotVersion,
@@ -56,6 +57,12 @@ function extendPackage(api, options) {
 		// later version there is a bug with
 		// Internet Explorer
 		newPackageProperties.dependencies['vuex-persist'] = '2.0.1';
+	}
+
+	if (options.cypress) {
+		newPackageProperties.devDependencies['@vue/cli-plugin-e2e-cypress'] = '^4.5.0';
+		newPackageProperties.scripts['test:e2e']='vue-cli-service test:e2e --headless';
+		newPackageProperties.scripts['test:e2e:gui']='vue-cli-service test:e2e'
 	}
 
 	api.extendPackage(newPackageProperties);
