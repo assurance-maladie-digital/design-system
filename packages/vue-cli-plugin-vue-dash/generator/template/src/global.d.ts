@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import { VuexBindings } from './store/types';
 
 declare module 'vue/types/vue' {
