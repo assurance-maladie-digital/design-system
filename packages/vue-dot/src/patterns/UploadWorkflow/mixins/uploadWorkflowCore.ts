@@ -99,6 +99,9 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		// Clear name and file
 		this.updateFileModel(id, 'name', undefined);
 		this.updateFileModel(id, 'file', undefined);
+
+		// Update v-model
+		this.$emit('change', this.fileList);
 	}
 
 	/** Validate the form and call setFileInList */
