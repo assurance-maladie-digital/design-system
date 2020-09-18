@@ -28,7 +28,7 @@ export const questionForm: Form = {
 				type: 'text',
 				title: 'Question ?',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide\n	- Texte à la ligne avec tabulation et retour à la ligne automatique',
+				tooltip: 'Texte d\'aide\nSecond texte d\'aide',
 				value: null,
 				fieldOptions: {
 					label: 'Label du champ',
