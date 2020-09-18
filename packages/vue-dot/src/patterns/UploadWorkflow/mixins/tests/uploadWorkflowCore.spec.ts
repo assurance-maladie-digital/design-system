@@ -77,17 +77,19 @@ describe('EventsFileFired', () => {
 	});
 
 	// setFileInList
-	it('sets list item state to success and emits change event', () => {
+	it('sets list item state to success and emits change event', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 		wrapper.vm.selectedItem = '1';
 
 		wrapper.vm.setFileInList();
 
+		await wrapper.vm.$nextTick();
+
 		expect(wrapper.vm.fileList[0].state).toBe('success');
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('sets list item state to error and emits change event', () => {
+	it('sets list item state to error and emits change event', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 		wrapper.vm.selectedItem = '1';
 
@@ -95,17 +97,21 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.setFileInList();
 
+		await wrapper.vm.$nextTick();
+
 		expect(wrapper.vm.fileList[0].state).toBe('error');
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('sets list item name and file and emits change event', () => {
+	it('sets list item name and file and emits change event', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 		wrapper.vm.selectedItem = '1';
 
 		wrapper.vm.uploadedFile = testFile;
 
 		wrapper.vm.setFileInList();
+
+		await wrapper.vm.$nextTick();
 
 		expect(wrapper.vm.fileList[0].name).toBe('avatar.png');
 		expect(wrapper.vm.fileList[0].file).toEqual(testFile);
@@ -126,7 +132,7 @@ describe('EventsFileFired', () => {
 	});
 
 	// dialogConfirm
-	it('closes and resets the dialog form if valid', () => {
+	it('closes and resets the dialog form if valid', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 
 		// Mock validation functions
@@ -135,17 +141,21 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.dialogConfirm();
 
+		await wrapper.vm.$nextTick();
+
 		expect(wrapper.vm.$refs.form.reset).toHaveBeenCalled();
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t closes and resets the dialog form if valid', () => {
+	it('doesn\'t closes and resets the dialog form if valid', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 
 		wrapper.vm.$refs.form.validate = jest.fn().mockReturnValue(false);
 		wrapper.vm.$refs.form.reset = jest.fn();
 
 		wrapper.vm.dialogConfirm();
+
+		await wrapper.vm.$nextTick();
 
 		expect(wrapper.vm.$refs.form.reset).not.toHaveBeenCalled();
 		expect(wrapper.emitted('change')).toBeFalsy();
@@ -183,12 +193,14 @@ describe('EventsFileFired', () => {
 	});
 
 	// uploadError
-	it('emits error event and reset uploaded file', () => {
+	it('emits error event and reset uploaded file', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 
 		wrapper.vm.uploadedFile = testFile;
 
 		wrapper.vm.uploadError('error');
+
+		await wrapper.vm.$nextTick();
 
 		expect(wrapper.vm.uploadedFile).toBe(null);
 		expect(wrapper.emitted('error')).toBeTruthy();
