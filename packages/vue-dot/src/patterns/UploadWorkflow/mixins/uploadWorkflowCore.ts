@@ -88,8 +88,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		// Reset error
 		this.error = false;
 
-		// Update v-model
-		this.$emit('change', this.fileList);
+		this.emitChangeEvent();
 	}
 
 	/** Reset a file from the list */
@@ -100,8 +99,15 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		this.updateFileModel(id, 'name', undefined);
 		this.updateFileModel(id, 'file', undefined);
 
-		// Update v-model
-		this.$emit('change', this.fileList);
+		this.emitChangeEvent();
+	}
+
+	/** Update v-model */
+	emitChangeEvent(): void {
+		// Emit in next tick to respect event order
+		this.$nextTick(() => {
+			this.$emit('change', this.fileList);
+		});
 	}
 
 	/** Validate the form and call setFileInList */
@@ -137,7 +143,13 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		// Reset file (if previously selected)
 		this.uploadedFile = null;
 
+		this.setFileInList();
+
 		// Pass the default FileUpload error
-		this.$emit('error', error);
+		this.$nextTick(() => {
+			this.$emit('error', error);
+		});
+
+		this.error = false;
 	}
 }
