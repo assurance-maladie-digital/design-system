@@ -18,6 +18,7 @@ Cette version comporte des corrections de bugs sur le template de Vue Dash ainsi
   - **template:** Correction d'une erreur de syntaxe SCSS dans le thème par défaut ([#528](https://github.com/assurance-maladie-digital/design-system/pull/528)) ([c776019](https://github.com/assurance-maladie-digital/design-system/commit/c776019d845ae4cc77005de56927e02ff54d11fe))
   - **template:** Correction des styles ([#529](https://github.com/assurance-maladie-digital/design-system/pull/529)) ([61219ba](https://github.com/assurance-maladie-digital/design-system/commit/61219ba4d35cae73a4542ac06f95509ea819175f))
   - **template:** Correction d'un polyfill manquant pour `vue-input-facade` pour IE 11 ([#559](https://github.com/assurance-maladie-digital/design-system/pull/559)) ([0415936](https://github.com/assurance-maladie-digital/design-system/commit/0415936ea50fe08e470494e83685f5b92811e35c))
+  - **template:** Correction de `vue-input-facade` manquant dans `transpileDependencies` ([#570](https://github.com/assurance-maladie-digital/design-system/pull/570)) ([5a278c8](https://github.com/assurance-maladie-digital/design-system/commit/5a278c88345bea1a81806eec4cc5dbbed29ed288))
 
 - ♻️ **Refactoring**
   - **template:** Utilisation des classes d'aide de Vuetify plutôt que des styles personnalisés ([#560](https://github.com/assurance-maladie-digital/design-system/pull/560)) ([c99df42](https://github.com/assurance-maladie-digital/design-system/commit/c99df4222263ac23cea1b4398db02862822f9934))
