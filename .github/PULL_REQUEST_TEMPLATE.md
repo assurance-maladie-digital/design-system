@@ -1,14 +1,17 @@
 # Description
 
-<!-- Veuillez inclure un résumé du changement, du problème résolu ou de la fonctionnalité ajoutée. Veuillez également inclure la motivation et le contexte si cela est pertinent. -->
+<!-- Veuillez inclure un résumé du changement, du problème résolu ou de la fonctionnalité ajoutée. Veuillez également expliquer la motivation et le contexte si cela est pertinent. -->
 
 ## Type de changement
 
 <!-- Veuillez supprimer les options non pertinentes. -->
 
-- [ ] Correction de bug (changement non-bloquant qui corrige un problème)
-- [ ] Nouvelle fonctionnalité (changement non-bloquant qui ajoute des fonctionnalités)
-- [ ] Changement bloquant (correctif ou fonctionnalité qui empêcherait une fonctionnalité existante de fonctionner comme prévu)
+- [ ] Nouvelle fonctionnalité
+- [ ] Correction de bug
+- [ ] Changement cassant
+- [ ] Refactoring
+- [ ] Maintenance
+- [ ] Documentation
 - [ ] Ce changement nécessite une mise à jour de la documentation
 
 ## Checklist
@@ -20,5 +23,5 @@
 - [ ] J'ai apporté les modifications correspondantes à la documentation
 - [ ] Mes modifications ne génèrent aucun nouveau warning
 - [ ] J'ai ajouté des tests qui prouvent que mon correctif est efficace ou que ma fonctionnalité fonctionne
-- [ ] Mes nouveaux tests unitaires et ceux existants passent localement avec mes modifications
+- [ ] Les tests unitaires passent localement avec mes modifications
 - [ ] J'ai mis à jour le fichier Changelog

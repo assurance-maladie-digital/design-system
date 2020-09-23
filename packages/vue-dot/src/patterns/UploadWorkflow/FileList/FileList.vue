@@ -93,7 +93,7 @@
 						</VBtn>
 
 						<VBtn
-							v-if="file.state === 'success'"
+							v-if="file.state !== 'initial'"
 							v-bind="options.deleteFileBtn"
 							@click="$emit('delete-file', file.id)"
 						>

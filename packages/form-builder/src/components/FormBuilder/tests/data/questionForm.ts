@@ -28,7 +28,7 @@ export const questionForm: Form = {
 				type: 'text',
 				title: 'Question ?',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
+				tooltip: 'Texte d\'aide\nSecond texte d\'aide',
 				value: null,
 				fieldOptions: {
 					label: 'Label du champ',

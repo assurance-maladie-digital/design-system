@@ -1,8 +1,8 @@
 <template>
 	<VToolbar
 		dense
-		tag="section"
-		class="secondary no-flex"
+		tag="nav"
+		class="secondary flex-grow-0"
 	>
 		<VTabs
 			v-if="!maintenance"
