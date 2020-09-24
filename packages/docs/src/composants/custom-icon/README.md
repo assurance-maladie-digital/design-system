@@ -69,7 +69,10 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
 
 ## Playground
 
-<DocExample file="composants/custom-icon/examples/custom-icon-playground" />
+<DocExample
+  file="composants/custom-icon/examples/custom-icon-playground"
+  hide-code-block
+/>
 
 ## Exemples
 

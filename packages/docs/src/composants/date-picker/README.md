@@ -140,7 +140,10 @@ Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateu
 
 ## Playground
 
-<DocExample file="composants/date-picker/examples/date-picker-playground" />
+<DocExample
+  file="composants/date-picker/examples/date-picker-playground"
+  hide-code-block
+/>
 
 ## Exemples
 

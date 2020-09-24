@@ -92,7 +92,10 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
 
 ## Playground
 
-<DocExample file="composants/dialog-box/examples/dialog-box-playground" />
+<DocExample
+  file="composants/dialog-box/examples/dialog-box-playground"
+  hide-code-block
+/>
 
 ## Exemples
 

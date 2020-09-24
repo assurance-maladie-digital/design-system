@@ -227,7 +227,10 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
 
 ## Playground
 
-<DocExample file="composants/data-list/examples/data-list-playground" />
+<DocExample
+  file="composants/data-list/examples/data-list-playground"
+  hide-code-block
+/>
 
 ## Exemples
 

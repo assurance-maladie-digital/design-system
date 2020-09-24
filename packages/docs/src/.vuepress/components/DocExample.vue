@@ -49,7 +49,10 @@
 				Inverser les couleurs
 			</VTooltip>
 
-			<VTooltip bottom>
+			<VTooltip
+				v-if="!hideCodeBlock"
+				bottom
+			>
 				<template #activator="{ on }">
 					<VBtn
 						aria-label="Voir la source"
@@ -180,6 +183,10 @@
 			show: {
 				type: Boolean,
 				default: false
+			},
+			hideCodeBlock: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -216,6 +223,10 @@
 
 		mounted() {
 			this.importComponent();
+
+			if (this.hideCodeBlock) {
+				return;
+			}
 
 			if (this.eager) {
 				return this.getFiles();

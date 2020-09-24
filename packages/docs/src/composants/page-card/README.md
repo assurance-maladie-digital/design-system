@@ -58,7 +58,10 @@ L'élément `PageCard` est utilisé pour afficher une page.
 
 ## Playground
 
-<DocExample file="composants/page-card/examples/page-card-playground" />
+<DocExample
+  file="composants/page-card/examples/page-card-playground"
+  hide-code-block
+/>
 
 ## Exemples
 

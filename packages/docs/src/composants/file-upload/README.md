@@ -131,7 +131,10 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
 
 ## Playground
 
-<DocExample file="composants/file-upload/examples/file-upload-playground" />
+<DocExample
+  file="composants/file-upload/examples/file-upload-playground"
+  hide-code-block
+/>
 
 ## Exemples
 
