@@ -16,14 +16,11 @@
 			<img
 				<% if (i18n) { %>:alt="$t('components.layout.appHeader.logoBtn.alt')"<% } else { %>alt="l'Assurance Maladie"<% } %>
 				src="@/assets/logo.svg"
-				class="d-block app-logo"
+				width="155px"
 			>
 		</RouterLink>
 
-		<VLayout
-			align-center
-			class="app-header-title pr-1 py-2"
-		>
+		<div class="d-flex align-center flex-grow-1 app-header-title pr-1 py-2">
 			<VDivider
 				vertical
 				inset
@@ -34,7 +31,7 @@
 					<% if (i18n) { %>{{ $t('components.layout.appHeader.title') }}<% } else { %>Projet <%= name %><% } %>
 				</VToolbarTitle>
 			</slot>
-		</VLayout>
+		</div>
 
 		<HeaderMenu v-if="!maintenance" />
 	</VAppBar>
@@ -73,7 +70,7 @@
 	.app-logo-link {
 		height: 100%;
 		display: flex;
-		min-width: 155px;
+		align-items: center;
 
 		&:not([disabled]):hover {
 			background: #eee;
@@ -82,9 +79,5 @@
 		&[disabled] {
 			pointer-events: none;
 		}
-	}
-
-	.app-logo {
-		flex: 1;
 	}
 </style>
