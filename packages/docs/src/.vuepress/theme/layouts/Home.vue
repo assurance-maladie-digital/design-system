@@ -2,9 +2,7 @@
 	<div class="theme-container">
 		<VApp>
 			<VMain>
-				<PageCard>
-					<Content />
-				</PageCard>
+				<HomePage />
 			</VMain>
 		</VApp>
 	</div>

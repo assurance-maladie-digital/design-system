@@ -20,9 +20,10 @@
 			:class="{ 'logo-small': isMobile }"
 		>
 			<img
-				src="../assets/logo.svg"
+				src="../assets/logo-am.svg"
 				alt="l'Assurance Maladie"
-				class="d-block app-logo"
+				class="d-block app-logo px-4 py-3"
+				width="155px"
 			>
 		</RouterLink>
 
@@ -76,7 +77,6 @@
 	.app-logo-link {
 		height: 100%;
 		display: flex;
-		min-width: 155px;
 
 		&.logo-small {
 			min-width: 108px;
