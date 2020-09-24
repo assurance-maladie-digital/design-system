@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **copy-webpack-plugin:** Mise à jour vers la `v6.1.1` ([#571](https://github.com/assurance-maladie-digital/design-system/pull/571))
+
 ## v2.0.0-beta.1
 
 **Version publiée le 18/09/2020.**
@@ -26,7 +33,7 @@ Cette version comporte des corrections de bugs sur le template de Vue Dash ainsi
 - ⬆️ **Dépendances**
   - **template:** Mise à jour des dépendances ([#564](https://github.com/assurance-maladie-digital/design-system/pull/564)) ([753fc73](https://github.com/assurance-maladie-digital/design-system/commit/753fc73a21890278413997762b13025c24d790a9))
 
-### Form Builder
+### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
   - **FormField:** Gestion des sauts de ligne dans le tooltip ([#540](https://github.com/assurance-maladie-digital/design-system/pull/540)) ([50cdcf9](https://github.com/assurance-maladie-digital/design-system/commit/50cdcf95fba42120b368e95327e0bc2e01cc3b91))
