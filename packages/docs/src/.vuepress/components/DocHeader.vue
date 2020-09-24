@@ -17,7 +17,7 @@
 			exact
 			aria-label="Accueil"
 			class="app-logo-link"
-			:class="{ 'logo-small': isMobile }"
+			:class="{ 'logo-small': smAndDown }"
 		>
 			<img
 				src="../assets/logo-am.svg"
@@ -51,16 +51,26 @@
 
 	@Component
 	export default class DocHeader extends Vue {
-		get isMobile() {
+		isClient = false;
+
+		mounted() {
+			this.isClient = true;
+		}
+
+		get smAndDown() {
+			if (this.isClient) {
+				return false;
+			}
+
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
 		get headerHeight(): number {
-			return this.isMobile ? 56 : 80;
+			return this.smAndDown ? 56 : 80;
 		}
 
 		get titleClasses(): string {
-			return this.isMobile ? 'subtitle-1 ml-2' : 'title ml-4';
+			return this.smAndDown ? 'subtitle-1 ml-2' : 'title ml-4';
 		}
 	}
 </script>
