@@ -68,10 +68,6 @@
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
-	interface HTMLInputEvent extends Event {
-		target: HTMLInputElement & EventTarget;
-	}
-
 	// We import them all because the form
 	// can use any of them
 	import ChoiceAutocompleteField from './ChoiceAutocompleteField.vue';

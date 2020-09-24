@@ -4,14 +4,14 @@
 		class="v-markup"
 		outlined
 	>
-		<Prism
-			v-if="$slots.default || code"
+		<component
+			v-if="prismComponent && ($slots.default || code)"
+			:is="prismComponent"
 			:language="language || undefined"
 			:inline="inline"
-			:code="code"
 		>
 			<slot />
-		</Prism>
+		</component>
 
 		<!-- <div class="v-markup__edit">
 			<a
@@ -87,11 +87,7 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component({
-		components: {
-			Prism: () => import('vue-prism-component')
-		}
-	})
+	@Component
 	export default class DocMarkup extends MixinsDeclaration {
 		pencilIcon = mdiPencil;
 		copyIcon = mdiContentCopy;
@@ -99,6 +95,8 @@
 		code = null;
 		copied = false;
 		language: string | null = this.lang;
+
+		prismComponent = null;
 
 		copyBtnOptions = {
 			menu: {
@@ -109,6 +107,12 @@
 				color: 'white'
 			}
 		};
+
+		mounted() {
+			import('vue-prism-component').then(module => {
+				this.prismComponent = module.default
+			})
+		}
 
 		getSlotContent(): string {
 			const markup = this.$el.querySelector('pre');
