@@ -4,7 +4,7 @@
 			v-debounce="e => search = e"
 			:value="search"
 			clearable
-			class="form-input"
+			class="vd-form-input"
 			label="Rechercher"
 			@click:clear="search = ''"
 		/>

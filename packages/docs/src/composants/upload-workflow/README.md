@@ -33,6 +33,24 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           description: 'Le titre de la section.'
         },
         {
+          name: 'max-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur maximale du composant.'
+        },
+        {
+          name: 'min-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur minimale du composant.'
+        },
+        {
+          name: 'width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur du composant.'
+        },
+        {
           name: 'vuetify-options',
           type: 'Options',
           default: 'undefined',
@@ -82,6 +100,24 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           type: 'boolean',
           default: 'false',
           description: 'Masque la dernière ligne de séparation de la liste.'
+        },
+        {
+          name: 'max-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur maximale du composant.'
+        },
+        {
+          name: 'min-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur minimale du composant.'
+        },
+        {
+          name: 'width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur du composant.'
         },
         {
           name: 'vuetify-options',

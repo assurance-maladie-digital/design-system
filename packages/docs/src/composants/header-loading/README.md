@@ -24,14 +24,14 @@ Vous pouvez entrer des dimensions dans l'exemple ci-dessous et observer le compo
       props: [
         {
           name: 'width',
-          default: '\'100px\'',
           type: 'string',
+          default: '\'100px\'',
           description: 'La largeur du composant.'
         },
         {
           name: 'height',
-          default: '\'1rem\'',
           type: 'string',
+          default: '\'1rem\'',
           description: 'La hauteur du composant.'
         }
       ]

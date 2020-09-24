@@ -27,12 +27,6 @@ L'élément `PageCard` est utilisé pour afficher une page.
           description: 'Définit une hauteur minimale de `500px`.'
         },
         {
-          name: 'no-shadow',
-          type: 'boolean',
-          default: 'false',
-          description: 'Supprime l\'ombre de la `VCard`.'
-        },
-        {
           name: 'card-class',
           type: 'string',
           default: 'undefined',

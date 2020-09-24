@@ -22,8 +22,8 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
       props: [
         {
           name: 'multiple',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Permet de sélectionner plusieurs fichiers.'
         },
         {
@@ -34,39 +34,57 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
         },
         {
           name: 'no-ripple',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Désactive l\'ondulation.'
         },
         {
           name: 'disabled',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Désactive le composant.'
         },
         {
           name: 'file-size-max',
-          default: '4194304',
           type: 'number',
-          description: 'Taille maximale d\'un fichier en octets (par défaut 4 MB).'
+          default: '10485760',
+          description: 'Taille maximale d\'un fichier en octets (par défaut 10 MB).'
         },
         {
           name: 'file-size-units',
-          default: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
           type: 'string[]',
+          default: '[\'o\', \'Ko\', \'Mo\', \'Go\', \'To\']',
           description: 'Les unités de taille utilisées pour la traduction.'
         },
         {
           name: 'allowed-extensions',
-          default: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
           type: 'string[]',
+          default: '[\'pdf\', \'jpg\', \'jpeg\', \'png\']',
           description: 'Les extensions autorisées.'
         },
         {
           name: 'accept',
-          default: 'undefined',
           type: 'string',
+          default: 'undefined',
           description: 'L\'attribut natif `accept`. Par défaut, la valeur sera calculée à partir des extensions autorisées.'
+        },
+        {
+          name: 'max-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur maximale du composant.'
+        },
+        {
+          name: 'min-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur minimale du composant.'
+        },
+        {
+          name: 'width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur du composant.'
         }
       ],
       slots: [

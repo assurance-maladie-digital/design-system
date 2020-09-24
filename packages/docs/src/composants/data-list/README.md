@@ -22,15 +22,15 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
       props: [
         {
           name: 'items',
-          required: true,
           type: 'DataListItem[]',
+          required: true,
           description: 'La liste des items à afficher.',
           example: '{\n	key: string;\n	value?: string;\n	action?: string;\n	chip?: boolean;\n	icon?: string;\n	options?: Options;\n}'
         },
         {
           name: 'icons',
-          default: 'undefined',
           type: 'DataListIcons',
+          default: 'undefined',
           description: 'La liste des différentes icônes disponibles pour les items.',
           example: '{\n	[iconName: string]: string;\n}'
         },
@@ -155,8 +155,8 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         },
         {
           name: 'render-html-value',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Utilise `v-html` pour afficher les valeurs.'
         },
         {

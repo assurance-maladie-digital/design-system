@@ -9,7 +9,7 @@
 			<VTextField
 				v-model="width"
 				label="Largeur"
-				class="form-input mb-4"
+				class="vd-form-input mb-4"
 				hide-details
 				outlined
 			/>
@@ -17,7 +17,7 @@
 			<VTextField
 				v-model="height"
 				label="Hauteur"
-				class="form-input"
+				class="vd-form-input"
 				hide-details
 				outlined
 			/>

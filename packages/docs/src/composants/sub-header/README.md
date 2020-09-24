@@ -28,8 +28,8 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
         },
         {
           name: 'back-btn-text',
-          default: '\'Retour\'',
           type: 'string',
+          default: '\'Retour\'',
           description: 'Le texte du bouton retour.'
         },
         {
@@ -40,27 +40,45 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
         },
         {
           name: 'sub-title-text',
-          default: 'undefined',
           type: 'string',
+          default: 'undefined',
           description: 'Le texte du sous-titre.'
         },
         {
           name: 'data-lists',
-          default: 'undefined',
           type: 'DataListsItem[]',
+          default: 'undefined',
           description: 'Liste des composants `DataList` en mode colonne.'
         },
         {
           name: 'render-html-value',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Utilise `v-html` pour afficher les valeurs dans les `DataList`.'
         },
         {
           name: 'loading',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Affiche un état de chargement.'
+        },
+        {
+          name: 'max-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur maximale du composant.'
+        },
+        {
+          name: 'min-width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur minimale du composant.'
+        },
+        {
+          name: 'width',
+          type: 'number | string',
+          default: 'undefined',
+          description: 'La largeur du composant.'
         }
       ],
       slots: [

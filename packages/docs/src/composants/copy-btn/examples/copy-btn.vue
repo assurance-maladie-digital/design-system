@@ -3,7 +3,7 @@
 		<VTextField
 			v-model="textToCopy"
 			label="Texte à copier"
-			class="form-input"
+			class="vd-form-input"
 			hide-details
 			outlined
 		>

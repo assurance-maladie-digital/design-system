@@ -24,14 +24,14 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
       props: [
         {
           name: 'text-to-copy',
-          required: true,
           type: 'string | function',
+          required: true,
           description: 'Le texte à copier ou une fonction qui le retourne. La fonction sera exécutée lors du clic sur le bouton.'
         },
         {
           name: 'label',
-          required: true,
           type: 'string',
+          required: true,
           description: 'Le label accessible du bouton. Cette propriété est nécessaire pour rendre le bouton accessible aux lecteurs d\'écrans, n\'hésitez pas à décrire ce que va copier le bouton.'
         },
         {

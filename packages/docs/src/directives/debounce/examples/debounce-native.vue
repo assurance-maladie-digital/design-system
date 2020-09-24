@@ -1,14 +1,18 @@
 <template>
 	<div class="debounce-native-ex">
-		<label class="form-input-label">
+		<label
+			for="debounce-simple-input"
+			class="form-input-label"
+		>
 			Rechercher
-
-			<input
-				v-model.lazy="search"
-				v-debounce
-				class="form-input"
-			>
 		</label>
+
+		<input
+			id="debounce-simple-input"
+			v-model.lazy="text"
+			v-debounce
+			class="vd-simple-input vd-form-input"
+		>
 
 		<p v-if="search">
 			Recherche :

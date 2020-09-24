@@ -1,6 +1,6 @@
 <template>
 	<PageCard
-		no-shadow
+		:elevation="0"
 		color="transparent"
 		card-padding="pa-0"
 	>

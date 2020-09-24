@@ -22,32 +22,32 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
       props: [
         {
           name: 'value',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Contrôle la visibilité de la boîte de dialogue.'
         },
         {
           name: 'title',
-          default: 'undefined',
           type: 'string',
+          default: 'undefined',
           description: 'Le titre de la boîte de dialogue.'
         },
         {
           name: 'width',
-          default: '800px',
           type: 'string',
+          default: '800px',
           description: 'La largeur de la boîte de dialogue.'
         },
         {
           name: 'cancel-btn-text',
-          default: 'Annuler',
           type: 'string',
+          default: 'Annuler',
           description: 'Le texte du bouton Annuler.'
         },
         {
           name: 'confirm-btn-text',
-          default: 'Valider',
           type: 'string',
+          default: 'Valider',
           description: 'Le texte du bouton Valider.'
         },
         {

@@ -22,32 +22,32 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
       props: [
         {
           name: 'color',
-          default: '\'currentColor\'',
           type: 'string',
+          default: '\'currentColor\'',
           description: 'La couleur de l\'icône (n\'importe quelle valeur CSS). Par défaut, l\'icône hérite de la couleur du texte.'
         },
         {
           name: 'small',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Définit la taille de l\’icône à 1em.'
         },
         {
           name: 'medium',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Définit la taille de l\’icône à 1.5em.'
         },
         {
           name: 'large',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Définit la taille de l\’icône à 1.85em.'
         },
         {
           name: 'x-large',
-          default: 'false',
           type: 'boolean',
+          default: 'false',
           description: 'Définit la taille de l\’icône à 2.25em.'
         },
         {

@@ -34,8 +34,8 @@ Le pattern `PaginatedTable` est un « wrapper », il étend l'API de la [VDataTa
       props: [
         {
           name: 'options',
-          required: true,
           type: 'DataOptions',
+          required: true,
           description: 'Les `options` de la `VDataTable`, à utiliser avec le modificateur `.sync`.'
         },
         {
