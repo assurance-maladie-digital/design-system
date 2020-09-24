@@ -13,9 +13,7 @@ Vue.use(Vuetify);
 export const vuetify = new Vuetify({
 	theme: {
 		// Destructure colors object in theme
-		themes: {
-			...themeColors
-		}
+		themes: themeColors
 	},
 	icons: {
 		iconfont: 'mdiSvg'
