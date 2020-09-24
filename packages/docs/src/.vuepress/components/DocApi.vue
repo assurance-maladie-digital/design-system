@@ -11,6 +11,8 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { ApiItems } from '../types';
+
 	const Props = Vue.extend({
 		props: {
 			value: {
@@ -18,7 +20,7 @@
 				default: () => ([])
 			},
 			api: {
-				type: Object,
+				type: Object as PropType<ApiItems>,
 				default: () => ({})
 			}
 		}

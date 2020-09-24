@@ -1,11 +1,10 @@
 <template>
 	<VAppBar
-		app
-		wrap
-		align-center
-		clipped-left
 		:height="headerHeight"
-		class="doc-header white no-flex"
+		app
+		clipped-left
+		color="white"
+		class="doc-header flex-grow-0"
 	>
 		<VAppBarNavIcon
 			class="ml-2 hidden-lg-and-up"
@@ -22,15 +21,12 @@
 			<img
 				src="../assets/logo-am.svg"
 				alt="l'Assurance Maladie"
-				class="d-block app-logo px-4 py-3"
+				class="px-4 py-3"
 				width="155px"
 			>
 		</RouterLink>
 
-		<VLayout
-			align-center
-			class="doc-header-title pr-1 py-2"
-		>
+		<div class="d-flex align-center flex-grow-1 app-header-title pr-1 py-2">
 			<VDivider
 				vertical
 				inset
@@ -41,7 +37,7 @@
 					Design System
 				</VToolbarTitle>
 			</slot>
-		</VLayout>
+		</div>
 	</VAppBar>
 </template>
 
@@ -70,7 +66,7 @@
 		}
 
 		get titleClasses(): string {
-			return this.smAndDown ? 'subtitle-1 ml-2' : 'title ml-4';
+			return this.smAndDown ? 'subtitle-1 ml-2' : 'text-h6 ml-4';
 		}
 	}
 </script>
@@ -87,6 +83,7 @@
 	.app-logo-link {
 		height: 100%;
 		display: flex;
+		align-items: center;
 
 		&.logo-small {
 			min-width: 108px;
@@ -99,9 +96,5 @@
 		&[disabled] {
 			pointer-events: none;
 		}
-	}
-
-	.app-logo {
-		flex: 1;
 	}
 </style>

@@ -13,20 +13,6 @@
 			<slot />
 		</component>
 
-		<!-- <div class="v-markup__edit">
-			<a
-				:href="href"
-				target="_blank"
-				rel="noopener"
-				title="Éditer le code"
-				aria-label="Éditer le code"
-			>
-				<VIcon>
-					{{ pencilIcon }}
-				</VIcon>
-			</a>
-		</div> -->
-
 		<CopyBtn
 			:tooltip-duration="1000"
 			:text-to-copy="getSlotContent"
@@ -34,16 +20,6 @@
 			title="Copier le code"
 			label="Copier le code"
 		/>
-
-		<!-- <a
-			v-if="filename && file"
-			:href="href"
-			target="_blank"
-			rel="noopener"
-			class="v-markup__filename"
-		>
-			<span v-text="file" />
-		</a> -->
 	</VCard>
 </template>
 
@@ -172,7 +148,6 @@
 			}
 		}
 
-		// &__edit,
 		.vd-copy-btn {
 			position: absolute;
 			top: 10px;
@@ -193,25 +168,6 @@
 		.vd-copy-btn .v-btn {
 			opacity: 0;
 		}
-
-		// &__edit {
-		// 	right: 36px;
-
-		// 	> a {
-		// 		color: inherit;
-		// 		text-decoration: none;
-		// 	}
-		// }
-
-		// a.v-markup__filename {
-		// 	text-decoration: none;
-		// 	position: absolute;
-		// 	bottom: 0;
-		// 	right: 0;
-		// 	padding: 8px 12px 8px 8px;
-		// 	font-size: 12px;
-		// 	color: rgba(#fff, .56);
-		// }
 
 		&:after {
 			position: absolute;
@@ -250,8 +206,6 @@
 				font-size: 1.5rem;
 				opacity: 0;
 				top: 0;
-				// width: 50px;
-				// height: 50px;
 				z-index: 4;
 			}
 		}

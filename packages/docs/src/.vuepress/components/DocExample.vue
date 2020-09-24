@@ -215,7 +215,6 @@
 		}
 
 		mounted() {
-			// this.branch = getBranch()
 			this.importComponent();
 
 			if (this.eager) {
@@ -297,10 +296,6 @@
 
 			return parsed[1] || '';
 		}
-
-		// sendToCodepen() {
-		// 	this.$refs.codepen.submit();
-		// }
 
 		unobserve(): void {
 			if (this.observer) {

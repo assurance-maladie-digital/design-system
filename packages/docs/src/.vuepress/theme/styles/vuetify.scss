@@ -1,5 +1,8 @@
 // Override some Vuetify styles
 
+// Import visually-hidden mixin
+@import 'vuetify/src/styles/tools/_display.sass';
+
 // Reset max-width for Vuetify ripples
 .v-ripple__container,
 .v-ripple__container *,
@@ -9,6 +12,17 @@
 .v-simple-checkbox svg,
 .no-max-width {
 	max-width: none;
+}
+
+// Fix for IE
+.v-application--wrap {
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+
+.v-content__wrap {
+	width: 100%;
 }
 
 // Fix color contrast
@@ -30,24 +44,28 @@
 	color: #646464 !important
 }
 
+.v-data-table__empty-wrapper {
+	color: #717171 !important;
+}
+
 // Reset Vuetify font-size
 .v-btn,
 .v-tabs__div,
-.body-1 {
+.text-body-1 {
 	font-size: .85rem !important;
 }
 
 table.v-table tbody td,
 table.v-table thead th,
 .v-datatable__actions,
-.body-2 {
+.text-.body-2 {
 	font-size: .8rem;
 }
 
 .v-input,
 .v-label,
 .v-list__tile,
-.subtitle-1 {
+.text-subtitle-1 {
 	font-size: 1rem !important;
 }
 
@@ -55,18 +73,18 @@ table.v-table thead th,
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 .v-application {
-	.display-4,
-	.display-3,
-	.display-2,
-	.display-1,
-	.headline,
-	.title,
-	.subtitle-1,
-	.subtitle-2,
-	.body-1,
-	.body-2,
-	.caption,
-	.overline {
+	.text-h1,
+	.text-h2,
+	.text-h3,
+	.text-h4,
+	.text-h5,
+	.text-h6,
+	.text-subtitle-1,
+	.text-subtitle-2,
+	.text-body-1,
+	.text-body-2,
+	.text-caption,
+	.text-overline {
 		font-family: 'Open Sans', sans-serif !important;
 	}
 
@@ -77,8 +95,22 @@ table.v-table thead th,
 	}
 }
 
-.v-data-table__empty-wrapper {
-	color: #717171 !important;
+// Fix DataTable pagination on IE
+.v-data-footer__select {
+	flex: none !important;
+
+	.v-select,
+	.v-select__selections {
+		flex: none;
+
+		input {
+			@include visually-hidden;
+		}
+	}
+
+	.v-select__selections {
+		display: block;
+	}
 }
 
 .v-select__selections {
