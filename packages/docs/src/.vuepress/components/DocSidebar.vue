@@ -48,13 +48,15 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
+	import { SidebarItem } from '../types';
 
 	const Props = Vue.extend({
 		props: {
 			items: {
-				type: Array,
+				type: Array as PropType<SidebarItem[]>,
 				required: true
 			}
 		}

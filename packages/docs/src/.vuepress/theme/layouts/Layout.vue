@@ -58,6 +58,8 @@
 
 	import { version } from '../../../../package.json';
 
+	import { SidebarItem } from '../../types';
+
 	@Component
 	export default class Layout extends Vue {
 		version = version;
@@ -65,7 +67,7 @@
 
 		drawer = null;
 
-		get sidebarItems() {
+		get sidebarItems(): SidebarItem[] {
 			return (this as any).$site.themeConfig.sidebar;
 		}
 	}

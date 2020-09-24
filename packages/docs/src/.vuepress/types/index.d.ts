@@ -21,3 +21,14 @@ interface Item {
 
 type ApiItem = IndexedObject<Item[]>
 export type ApiItems = IndexedObject<ApiItem>;
+
+interface SideBarLink {
+	title: string;
+	to: string;
+}
+
+export interface SidebarItem {
+	title: string;
+	group: string;
+	items: SideBarLink[];
+}
