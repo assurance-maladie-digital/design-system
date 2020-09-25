@@ -30,7 +30,11 @@ export const questionErrors: FormErrors = {
 			'Erreur questionPeriod 1',
 			'Erreur questionPeriod 2'
 		]
-	}
+	},
+	questionChoiceButton: [
+		'Erreur string1',
+		'Erreur string 2'
+	]
 };
 
 export const form: Form = {

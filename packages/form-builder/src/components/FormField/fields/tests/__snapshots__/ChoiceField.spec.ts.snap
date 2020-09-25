@@ -7,6 +7,13 @@ exports[`ChoiceField renders correctly 1`] = `
 </div>
 `;
 
+exports[`ChoiceField renders selecte field button with error messages 1`] = `
+<div>
+  <choicebuttonfield-stub options="[object Object]" items="[object Object],[object Object],[object Object]"></choicebuttonfield-stub>
+  <!---->
+</div>
+`;
+
 exports[`ChoiceField renders the other field 1`] = `
 <div>
   <choiceselectfield-stub options="[object Object]" items="[object Object],[object Object],[object Object]"></choiceselectfield-stub>

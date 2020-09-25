@@ -34,10 +34,20 @@
 			</VBtn>
 		</VBtnToggle>
 
+		<template v-if="errorMessages">
+			<p
+				v-for="(errorMessage, index) in errorMessages"
+				:key="index"
+				class="px-3 mb-0 v-messages error--text"
+				:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
+			>
+				{{ errorMessage }}
+			</p>
+		</template>
 		<p
-			v-if="showHint"
+			v-else-if="showHint"
 			class="px-3 mb-0 v-messages"
-			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
+			:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
 			{{ options.hint }}
 		</p>
@@ -84,6 +94,13 @@
 
 		get showHint(): boolean {
 			return Boolean(this.options?.hint);
+		}
+
+		get errorMessages(): string[] | null {
+			if (Array.isArray(this.options?.errorMessages) && this.options.errorMessages.length) {
+				return this.options.errorMessages;
+			}
+			return null;
 		}
 
 		getIconStyle(item: FieldItem): IndexedObject {
