@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@cnamts/design-tokens": "2.0.0-beta.0",
 		"@cnamts/vue-dot": "2.0.0-beta.1",
+		"@cnamts/form-builder": "2.0.0-beta.1",
 		"vuepress": "1.5.4"
 	},
 	"devDependencies": {

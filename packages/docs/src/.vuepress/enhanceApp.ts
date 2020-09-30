@@ -7,6 +7,10 @@ import { vuetify } from './vuetify';
 
 import VueDot from '@cnamts/vue-dot';
 
+import FormBuilder from '@cnamts/form-builder';
+
+import '@cnamts/vue-dot/src/styles/global.scss';
+
 import { icons } from './icons';
 
 import InputFacade from 'vue-input-facade';
@@ -25,6 +29,8 @@ const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 	});
 
 	Vue.use(InputFacade);
+
+	Vue.use(FormBuilder);
 };
 
 export default enhanceApp;
