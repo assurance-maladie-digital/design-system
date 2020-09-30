@@ -118,5 +118,6 @@ module.exports = {
 	],
 	parserOptions: {
 		parser: '@typescript-eslint/parser'
-	}
+	},
+	ignorePatterns: [ "tests/e2e/*"] 
 };

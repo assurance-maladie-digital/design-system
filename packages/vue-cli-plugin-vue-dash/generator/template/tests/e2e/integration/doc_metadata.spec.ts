@@ -13,12 +13,10 @@ describe('Check metadata', () => {
 
 	// or make assertions on any of the metadata in the head element
 	it('looks inside <title> tag', () => {
-		cy.get('head title')
-		.should('contain', 'CNAM');
+		cy.get('head title').should('contain', 'CNAM');
 	});
 
 	it('looks inside <meta> tag for description', () => {
-		cy.get('head meta[name="description"]')
-		.should('be.empty');
+		cy.get('head meta[name="description"]').should('be.empty');
 	});
 });

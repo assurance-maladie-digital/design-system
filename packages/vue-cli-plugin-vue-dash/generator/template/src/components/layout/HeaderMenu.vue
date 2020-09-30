@@ -5,6 +5,7 @@
 		origin="top center"
 		offset-y
 		left
+		data-cy="toolbar-elmt"
 	>
 		<template #activator="{ on }">
 			<VBtn

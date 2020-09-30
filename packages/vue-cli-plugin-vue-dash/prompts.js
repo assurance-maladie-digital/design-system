@@ -27,7 +27,7 @@ const prompts = [
 	{
 		name: 'cypress',
 		type: 'confirm',
-		message: 'Utiliser cypress pour les tests e2e',
+		message: 'Utiliser cypress pour les tests d\'interface',
 		default: true
 	},
 	{

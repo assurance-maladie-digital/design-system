@@ -25,3 +25,7 @@ package-lock.json*
 
 # Tests coverage
 **/tests/**/coverage/
+
+# Cypress
+/tests/e2e/videos/
+/tests/e2e/screenshots/

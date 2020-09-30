@@ -23,7 +23,6 @@ module.exports = (api, userOptions) => {
 			name: projectName,
 			footerDate: getFooterDate(),
 			pm: 'yarn',
-			cypress: true, // Disable cypress for now
 			// Functions
 			capitalizeFirstLetter
 		};
