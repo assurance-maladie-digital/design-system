@@ -68,6 +68,10 @@ module.exports = {
 					{
 						title: 'UploadWorkflow',
 						to: '/composants/upload-workflow'
+					},
+					{
+						title: 'FormFieldList',
+						to: '/composants/form-field-list'
 					}
 				]
 			}
