@@ -5,15 +5,15 @@
 				Test dynamique
 			</h2>
 
+			<HeaderBar v-bind="headerEx" />
+
 			<textarea
-				class="grey lighten-2"
+				class="grey lighten-2 my-4"
 				style="width:100%"
 				rows="13"
 				@change="headerEx = JSON.parse($event.target.value)"
 				v-html="headerEx"
 			/>
-
-			<HeaderBar v-bind="headerEx" />
 
 			<!-- header : non connecté -->
 			<h2 class="subtitle-1 font-weight-bold">
