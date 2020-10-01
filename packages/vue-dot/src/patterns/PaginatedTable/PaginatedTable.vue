@@ -29,26 +29,28 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import { Options } from './types';
+
+	import LocalStorageUtility from '../../helpers/localStorageUtility';
 
 	const Props = Vue.extend({
 		props: {
 			// Props from Vuetify
 			options: {
-				type: [Array, Object],
+				type: Object as PropType<Options>,
 				required: true
 			},
 			serverItemsLength: {
 				type: Number,
 				required: true
 			},
-			// The prefix is used to store different pagination objects
+			// The suffix is used to store different pagination objects
 			// If the user has two tables but isn't using this prop,
 			// the tables will share the same saved pagination object
-			prefix: {
+			suffix: {
 				type: String,
 				default: ''
 			}
@@ -65,21 +67,37 @@
 			/** When the options object is updated */
 			options() {
 				// Save it to local storage
-				localStorage.setItem(
-					'vd-pagination' + this.id,
-					// Local storage only accepts strings,
-					// so we must use JSON.stringify
-					JSON.stringify(this.options)
-				);
+				this.localStorageUtility.setItem(this.storageKey, this.options);
 			}
 		}
 	})
 	export default class PaginatedTable extends Props {
+		localStorageUtility = this.newLocalStorageInstance();
+
 		/**
 		 * Local pagination
 		 * This is the pagination from local storage
 		 */
 		localOptions: Options | {} = {};
+
+		/**
+		 * Create a LocalStorageUtility instance
+		 * with version, expiration & prefix
+		 * from Vue Dot options
+		 *
+		 * @returns {LocalStorageUtility} New instance
+		 */
+		newLocalStorageInstance() {
+			if (!this.$vd || !this.$vd.localStorageControl) {
+				return new LocalStorageUtility();
+			}
+
+			return new LocalStorageUtility(
+				this.$vd.localStorageControl.version,
+				this.$vd.localStorageControl.expiration,
+				this.$vd.localStorageControl.prefix
+			);
+		}
 
 		/**
 		 * Returns either the local storage options,
@@ -104,25 +122,24 @@
 			this.$emit('update:options', value);
 		}
 
-		/** Local storage id */
-		get id() {
-			// If there is a prefix
-			if (this.prefix) {
-				// Add a dash before it, to make the key
+		/** Local storage key */
+		get storageKey() {
+			const prefix = 'pagination';
+
+			// If there is a suffix
+			if (this.suffix) {
+				// Add a dash before it to make the key
 				// more readable in local storage
-				return '-' + this.prefix;
+				return `${prefix}-${this.suffix}`;
 			}
 
-			// else, return an empty string
-			return '';
+			// else, return only the prefix
+			return prefix;
 		}
 
 		/** Retrieve the options from local storage */
 		created() {
-			this.localOptions = JSON.parse(
-				// Default to empty object
-				localStorage.getItem('vd-pagination' + this.id) || '{}'
-			);
+			this.localOptions = this.localStorageUtility.getItem(this.storageKey) || {};
 		}
 	}
 </script>

@@ -38,7 +38,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Icons, Theme } from '../../../types';
+	import { Icons, VueDotOptions } from '../../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -84,13 +84,11 @@
 	 */
 	@Component
 	export default class CustomIcon extends Props {
-		$vd!: Theme;
-
 		get themeIcon(): string | undefined {
 			// If there are icons in the theme
-			if (this.$vd && this.$vd.icons) {
+			if (this.$vd && this.$vd.theme && this.$vd.theme.icons) {
 				// Find the icon with the name passed in the prop
-				const icon = this.$vd.icons[this.icon];
+				const icon = this.$vd.theme.icons[this.icon];
 
 				// If the icon isn't find, it will return undefined
 				return icon;

@@ -8,14 +8,16 @@ import CustomIcon from '../';
 
 let wrapper: Wrapper<Vue>;
 
-const VD_THEME = {
-	icons: {
-		test: 'icon-src'
+const VD_OPTIONS = {
+	theme: {
+		icons: {
+			test: 'icon-src'
+		}
 	}
 };
 
 const mocks = {
-	$vd: VD_THEME
+	$vd: VD_OPTIONS
 };
 
 // Tests

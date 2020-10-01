@@ -97,7 +97,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import locales from './locales';
@@ -148,7 +148,7 @@
 			},
 			/** The size units used in the template for i18n */
 			fileSizeUnits: {
-				type: [Array, Object],
+				type: Array as PropType<string[]>,
 				default: () => [
 					'o',
 					'Ko',
@@ -159,7 +159,7 @@
 			},
 			/** The allowed file extensions */
 			allowedExtensions: {
-				type: [Array, Object],
+				type: Array as PropType<string[]>,
 				default: () => [
 					'pdf',
 					'jpg',

@@ -11,13 +11,20 @@ export interface Theme {
 	icons: Icons;
 }
 
-export interface VueDotOptions {
-	theme?: Theme;
+export interface LocalStorageControl {
+	version?: number;
+	expiration?: number;
+	prefix?: string;
 }
 
-declare const VueDot: VueDotPlugin;
-export default VueDot;
+export interface VueDotOptions {
+	theme?: Theme;
+	localStorageControl: LocalStorageControl;
+}
 
 export interface VueDotPlugin {
 	install: PluginFunction<VueDotOptions>;
 }
+
+declare const VueDot: VueDotPlugin;
+export default VueDot;
