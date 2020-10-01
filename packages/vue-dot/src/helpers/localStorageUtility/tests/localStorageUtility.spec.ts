@@ -1,8 +1,6 @@
 // Disable lint rule because it's clearer to just call new Class
 // instead of putting it in a non-used var
 
-// tslint:disable: no-unused-expression
-
 import { LocalStorageUtility } from '../';
 
 /** Get the controlItem (not parsed) in localStorage */
