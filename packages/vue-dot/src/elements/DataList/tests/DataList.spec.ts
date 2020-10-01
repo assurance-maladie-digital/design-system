@@ -172,6 +172,6 @@ describe('DataList', () => {
 		// Wait until $emits have been handled
 		await wrapper.vm.$nextTick();
 
-		expect(wrapper.emitted('click:item-action')).toEqual([[2]]);
+		expect(wrapper.emitted('click-item-action')).toEqual([[2]]);
 	});
 });

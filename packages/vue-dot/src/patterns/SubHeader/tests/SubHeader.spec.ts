@@ -55,7 +55,7 @@ describe('SubHeader', () => {
 
 		await actionBtn.trigger('click');
 
-		expect(wrapper.emitted('click:list-item')).toEqual([[eventActionValue]]);
+		expect(wrapper.emitted('click-list-item')).toEqual([[eventActionValue]]);
 	});
 
 	it('renders loading state correctly', async() => {

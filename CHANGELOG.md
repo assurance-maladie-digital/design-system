@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- ♻️ **Refactoring**
+  - **template:** Utilisation de la syntaxe kebab-case pour les noms des événements ([#588](https://github.com/assurance-maladie-digital/design-system/pull/588))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -11,6 +16,19 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.6.2` ([#578](https://github.com/assurance-maladie-digital/design-system/pull/578)) ([fffe06e](https://github.com/assurance-maladie-digital/design-system/commit/fffe06e53cd63e3cee542b98bf31b186eff7f001))
   - **dayjs:** Mise à jour vers la `v1.9.1` ([#579](https://github.com/assurance-maladie-digital/design-system/pull/579)) ([6a71b88](https://github.com/assurance-maladie-digital/design-system/commit/6a71b8889423b144a3f12940cceec486548e3200))
   - **vuetify:** Mise à jour vers la `v2.3.12` ([#581](https://github.com/assurance-maladie-digital/design-system/pull/581))
+
+### 📚 Guide de migration
+
+#### Nom des événements
+
+Certains noms d'événements ont été normalisés en kebab-case comme recommandé dans le [Style Guide ESLint de Vue.js](https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention-for-vue-js-3-x) :
+
+- `DataList`
+  - `click:item-action` renommé en `click-item-action`
+- `DataListItem`
+  - `click:action` renommé en `click-action`
+- `SubHeader`
+  - `click:list-item` renommé en `click-list-item`
 
 ## v2.0.0-beta.1
 

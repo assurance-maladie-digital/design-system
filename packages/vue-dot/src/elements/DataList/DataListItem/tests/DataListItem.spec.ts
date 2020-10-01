@@ -85,7 +85,7 @@ describe('DataListItem', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('emits click:action event when the action button is pressed', async() => {
+	it('emits click-action event when the action button is pressed', async() => {
 		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
@@ -105,7 +105,7 @@ describe('DataListItem', () => {
 		// Wait until $emits have been handled
 		await wrapper.vm.$nextTick();
 
-		expect(wrapper.emitted('click:action')).toBeTruthy();
+		expect(wrapper.emitted('click-action')).toBeTruthy();
 	});
 
 	it('renders correctly in row mode', () => {

@@ -55,7 +55,7 @@
 					v-if="action"
 					v-bind="options.actionBtn"
 					class="vd-data-list-item-action-btn"
-					@click="$emit('click:action')"
+					@click="$emit('click-action')"
 				>
 					{{ action }}
 				</VBtn>

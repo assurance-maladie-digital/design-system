@@ -5,7 +5,7 @@
 			:data-lists="dataLists"
 			title-text="Prénom Nom (d'usage)"
 			sub-title-text="1 69 08 75 125 456 75"
-			@click:list-item="setItemValue"
+			@click-list-item="setItemValue"
 		>
 			<!-- ProgressBar -->
 			<template #additional-informations>

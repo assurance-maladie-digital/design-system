@@ -9,7 +9,7 @@
 			list-title="Informations"
 			heading-loading
 			flex
-			@click:item-action="setItemValue"
+			@click-item-action="setItemValue"
 		/>
 
 		<VTextField

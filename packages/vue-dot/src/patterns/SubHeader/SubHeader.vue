@@ -102,7 +102,7 @@
 							:heading-loading="dataList.headingLoading"
 							item-width="auto"
 							title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
-							@click:item-action="dataListItemAction(index, $event)"
+							@click-item-action="dataListItemAction(index, $event)"
 						/>
 					</VLayout>
 				</VThemeProvider>
@@ -192,7 +192,7 @@
 		 * @param {number} itemIndex The index of the item into the selected data list
 		 */
 		dataListItemAction(dataListIndex: number, itemIndex: number): void {
-			this.$emit('click:list-item', { dataListIndex, itemIndex } as IDataListAction);
+			this.$emit('click-list-item', { dataListIndex, itemIndex } as IDataListAction);
 		}
 	}
 </script>
