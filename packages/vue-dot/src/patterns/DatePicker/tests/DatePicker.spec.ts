@@ -10,7 +10,7 @@ let wrapper: Wrapper<Vue>;
 
 /** Create fake VTextField for refs */
 function createTextField() {
-	return Vue.component('v-text-field', {
+	return Vue.component('VTextField', {
 		data() {
 			return {
 				hasError: false,

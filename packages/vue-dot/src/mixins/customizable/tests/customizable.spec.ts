@@ -23,7 +23,7 @@ const CUSTOM_OPTIONS = {
 
 /** Create the test component */
 function createTestComponent() {
-	return Vue.component('test', {
+	return Vue.component('Test', {
 		mixins: [
 			customizable(DEFAULT_OPTIONS)
 		],

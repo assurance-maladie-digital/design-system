@@ -36,7 +36,7 @@ interface TestComponent extends Vue {
 
 /** Create fake VMenu for refs */
 function createMenu() {
-	return Vue.component('v-menu', {
+	return Vue.component('VMenu', {
 		methods: {
 			save() {
 				return null;
@@ -48,7 +48,7 @@ function createMenu() {
 
 /** Create fake VTextField for refs */
 function createTextField(disableHasFocused: boolean) {
-	return Vue.component('v-text-field', {
+	return Vue.component('VTextField', {
 		data() {
 			return {
 				hasError: false,
@@ -66,7 +66,7 @@ function createTextField(disableHasFocused: boolean) {
 
 /** Create the wrapper */
 function createWrapper(propsData?: Record<string, unknown>, mixinData = {}, disableHasFocused = false) {
-	const component = Vue.component('test', {
+	const component = Vue.component('Test', {
 		mixins: [
 			DateLogic,
 			customizable(mixinData)
