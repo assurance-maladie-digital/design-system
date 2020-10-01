@@ -112,3 +112,7 @@ Il existe 2 types de champs date:
 ### Gestion de l'évènement
 
 Vous pouvez réagir lorsque le champ est mise à jour grâce à l'évènement `change`
+
+<DocExample
+  file="composants/form-field/examples/form-field-event"
+/>
