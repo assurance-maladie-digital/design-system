@@ -5,7 +5,8 @@
 - ⬆️ **Dépendances**
   - **copy-webpack-plugin:** Mise à jour vers la `v6.1.1` ([#571](https://github.com/assurance-maladie-digital/design-system/pull/571)) ([fa518b0](https://github.com/assurance-maladie-digital/design-system/commit/fa518b06c932f96e98153e4ba6246da623d3090b))
   - **typescript:** Mise à jour vers la `v4.0.3` ([#572](https://github.com/assurance-maladie-digital/design-system/pull/572)) ([3167679](https://github.com/assurance-maladie-digital/design-system/commit/31676794ecee410642c4b8112532e4fdb3b99705))
-  - **ts-jest:** Mise à jour vers la `v26.4.1` ([#573](https://github.com/assurance-maladie-digital/design-system/pull/573))
+  - **ts-jest:** Mise à jour vers la `v26.4.1` ([#573](https://github.com/assurance-maladie-digital/design-system/pull/573)) ([b06f87b](https://github.com/assurance-maladie-digital/design-system/commit/b06f87b33356ec1ec7316015cb81e5f405727ba1))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.3.0` ([#574](https://github.com/assurance-maladie-digital/design-system/pull/574))
 
 ## v2.0.0-beta.1
 
