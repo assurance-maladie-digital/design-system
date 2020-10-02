@@ -71,9 +71,9 @@ module.exports = {
 		// Allow v-html
 		'vue/no-v-html': ['off'],
 
-		// Limit .vue files to 330 lines
+		// Limit .vue files to 350 lines
 		'max-lines': ['error', {
-			'max': 330,
+			'max': 350,
 			'skipBlankLines': true,
 			'skipComments': true
 		}],
@@ -109,22 +109,27 @@ module.exports = {
 		{
 			files: ['*.vue'],
 			rules: {
-				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
-				// does not work with type definitions
-				'no-unused-vars': 'off'
+				// Waiting on https://github.com/vuejs/eslint-plugin-vue/issues/1260
+				'vue/custom-event-name-casing': 'off'
 			}
 		},
 		{
 			files: ['*.js'],
 			rules: {
+				// Allow require() in JS files
 				'@typescript-eslint/no-var-requires': 'off'
+			}
+		},
+		{
+			files: ['*.spec.ts'],
+			rules: {
+				// Sometimes in tests we mock more than one component
+				'vue/one-component-per-file': 'off'
 			}
 		}
 	],
 	parserOptions: {
 		parser: '@typescript-eslint/parser'
 	},
-	plugins: [
-		'jsdoc'
-	]
+	plugins: ['jsdoc']
 };
