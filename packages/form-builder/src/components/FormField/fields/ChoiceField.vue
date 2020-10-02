@@ -13,10 +13,10 @@
 		<!-- The other field -->
 		<template v-if="otherField">
 			<VExpandTransition
-				v-if="otherField.selectedChoice"
+				v-if="IsSelectedChoice"
 				hide-on-leave
 			>
-				<div v-if="showOtherField">
+				<div v-if="showSelectedChoiceOtherField">
 					<h4
 						v-if="otherField.label"
 						class="mb-1 body-1"
@@ -67,10 +67,6 @@
 	import { ChoiceValue, OtherFieldValue, ChoiceFieldValue, OtherField } from '../types';
 
 	const MixinsDeclaration = mixins(FieldComponent);
-
-	interface HTMLInputEvent extends Event {
-		target: HTMLInputElement & EventTarget;
-	}
 
 	// We import them all because the form
 	// can use any of them
@@ -136,14 +132,14 @@
 		}
 
 		/** Show the other field when there is a choice value corresponding to the other selectedChoice */
-		get showOtherField(): boolean {
+		get showSelectedChoiceOtherField(): boolean {
 			// Expect the otherfield will have a selectedChoice defined.
-			if (!this.otherField?.selectedChoice) {
+			if (!this.IsSelectedChoice && !this.otherField?.selectedChoice) {
 				return false;
 			}
 
 			const choiceFieldValue = this.choiceValue.value;
-			const otherSelectedChoice = this.otherField.selectedChoice;
+			const otherSelectedChoice = this.otherField?.selectedChoice;
 
 			// Expect the choiceField value as string equal to the selected choice
 			if (choiceFieldValue === otherSelectedChoice) {
@@ -163,6 +159,10 @@
 			return false;
 		}
 
+		get IsSelectedChoice(): boolean {
+			return this.otherField?.selectedChoice != undefined && this.otherField?.selectedChoice != null;
+		}
+
 		/**
 		 * Check if the other field is active or not
 		 *
@@ -172,7 +172,7 @@
 			const choiceFieldValue = this.choiceValue?.value;
 			const selectedChoice = this.field.other?.selectedChoice;
 
-			if (!selectedChoice || !choiceFieldValue) {
+			if (!this.IsSelectedChoice) {
 				return false;
 			} else if (Array.isArray(choiceFieldValue)) {
 				return choiceFieldValue.includes(selectedChoice);

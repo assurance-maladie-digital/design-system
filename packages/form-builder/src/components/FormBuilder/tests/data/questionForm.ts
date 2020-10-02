@@ -281,13 +281,12 @@ export const questionForm: Form = {
 				multiple: true,
 				type: 'select',
 				value: {
-					value: 'autre',
-					other: 'XXL'
+					value: 0
 				},
 				items: [
 					{
 						text: 'S',
-						value: 0
+						value: 's'
 					},
 					{
 						text: 'M',
@@ -305,11 +304,11 @@ export const questionForm: Form = {
 					},
 					{
 						text: 'Autre',
-						value: 'autre'
+						value: 0
 					}
 				],
 				other: {
-					selectedChoice: 'autre',
+					selectedChoice: 0,
 					label: 'Autre choix',
 					fieldOptions: {
 						placeholder: 'Entrez votre taille'
