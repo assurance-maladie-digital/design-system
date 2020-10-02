@@ -70,7 +70,7 @@ Configuration: voir les pré-requis du composant `FormBuilder`.
 
 <DocInfo>
 
-NOTE : Le champ nombre demande obligatoirement un mask qui utilise le module `vue-input-facade` avec des `#` pour les chiffres
+NOTE : Le champ nombre demande obligatoirement un mask qui utilise le module `vue-input-facade` avec des `#` pour les chiffres<br>
 Voir la documentation <https://www.npmjs.com/package/vue-input-facade> pour plus d'informations sur les usages possibles
 
 </DocInfo>
@@ -83,12 +83,13 @@ Voir la documentation <https://www.npmjs.com/package/vue-input-facade> pour plus
 
 <DocInfo>
 
-Le type de champ  `select` par défaut est composé d'un `VSelect`. Vous pouvez appliquer les attributs d'un `VSelect` au composant.
+Le type de champ  `select` par défaut est composé d'un `VSelect`. Vous pouvez appliquer les attributs d'un `VSelect` au composant.<br>
+
 <br>
-Cependant, il existe des sous types de rendu différent:
-  `select` peut avoir plusieurs rendu utilisateur différents avec les sous types suivant configurable dans `fieldOptions.type` :
-  `choiceSlider` => Rend un aspect de type slide, voir la documentation vuetify
-  `choiceButton` => Rend un aspect de type bouton.
+Cependant, il existe des sous types de rendu différent:<br>
+   `select` peut avoir plusieurs rendu utilisateur différents avec les sous types suivant configurable dans `fieldOptions.type` :<br>
+   `choiceSlider` => Rend un aspect de type slide, voir la documentation vuetify<br>
+   `choiceButton` => Rend un aspect de type bouton.
 <br>
 
 Il est possible d'afficher aussi un champ autre. Voir exemples.
@@ -101,9 +102,9 @@ Il est possible d'afficher aussi un champ autre. Voir exemples.
 
 ### Champs de dates
 
-Il existe 2 types de champs date:
-  `date` => Voir documentation du composant `DatePicker` de `vue-dot` pour connaitre les options possible.
-  `period` => Est composé de deux composant `DatePicker` de `vue-dot`. donc il est possible de changé les options de chacune des dates avec les propriétés `from` et `to` dans `fieldOptions`
+Il existe 2 types de champs date:<br>
+   `date` => Voir documentation du composant `DatePicker` de `vue-dot` pour connaitre les options possible.<br>
+   `period` => Est composé de deux composant `DatePicker` de `vue-dot`. Il est donc possible de changé les options de chacune des dates avec les propriétés `from` et `to` dans `fieldOptions`
 
 <DocExample
   file="composants/form-field/examples/form-field-dates"
