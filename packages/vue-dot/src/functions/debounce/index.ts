@@ -12,7 +12,6 @@ export function debounce(callback: () => void, time = 500): () => void {
 			clearTimeout(interval);
 		}
 
-		// tslint:disable-next-line:only-arrow-functions
 		interval = window.setTimeout(() => {
 			interval = null;
 
