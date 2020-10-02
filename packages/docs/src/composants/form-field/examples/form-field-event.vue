@@ -41,9 +41,13 @@
 			}
 		};
 
-		fieldChanged(field: Field): void {
-			this.dialog = true;
+		async fieldChanged(field: Field): Promise<void> {
 			this.field = field;
+
+			setTimeout(() => {
+				this.dialog = true;
+			}, 100);
+
 		}
 
 	}
