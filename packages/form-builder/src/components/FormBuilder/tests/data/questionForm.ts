@@ -7,7 +7,7 @@ const defaultItems = [
 	},
 	{
 		text: '9h30',
-		value: '9.30'
+		value: 0
 	},
 	{
 		text: '10h',
