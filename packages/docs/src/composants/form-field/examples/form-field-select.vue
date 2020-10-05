@@ -111,6 +111,15 @@
 			},
 			{
 				type: 'select',
+				title: 'Question choix bouton en ligne',
+				items: defaultItems,
+				fieldOptions: {
+					inline: true,
+					type: 'choiceButton'
+				}
+			},
+			{
+				type: 'select',
 				value: null,
 				title: 'Choix boutons avec autre choix conditionnel',
 				items: [
