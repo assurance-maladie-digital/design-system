@@ -7,6 +7,7 @@ module.exports = {
 		'cypress/globals': true
 	},
 	rules: {
-		strict: 'off'
+		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/triple-slash-reference': 'off'
 	}
 };

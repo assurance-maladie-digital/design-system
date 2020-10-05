@@ -1,5 +1,4 @@
 // https://docs.cypress.io/api/introduction/api.html
-/// <reference path="../support/index.d.ts" />
 describe('Toolbar page', () => {
 	beforeEach(() => {
 		cy.visit('/');
