@@ -15,6 +15,11 @@ export const formErrors = {
 	]
 } as FormErrors;
 
+/** FormErrors with bad type */
+export const formErrorsBadtype = {
+	questionString: 4
+} as FormErrors;
+
 /** FormErrors related to question form */
 export const questionErrors: FormErrors = {
 	questionString: [
@@ -55,6 +60,9 @@ export const form: Form = {
 		questions: {
 			questionString: {
 				type: 'text'
+			},
+			questionPassword: {
+				type: 'password'
 			},
 			questionPeriod: {
 				type: 'period'
