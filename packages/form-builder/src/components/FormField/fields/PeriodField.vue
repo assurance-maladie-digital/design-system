@@ -2,6 +2,7 @@
 	<VLayout
 		wrap
 		row
+		class="mx-n3"
 	>
 		<DatePicker
 			v-model="periodValue.from"
