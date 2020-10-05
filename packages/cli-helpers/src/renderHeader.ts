@@ -25,7 +25,6 @@ export function renderHeader(text: string, author?: string, version?: string): v
 	traceLine();
 
 	// Use a true log for assert in tests
-	// tslint:disable-next-line: no-console
 	console.log();
 
 	if (author) {
