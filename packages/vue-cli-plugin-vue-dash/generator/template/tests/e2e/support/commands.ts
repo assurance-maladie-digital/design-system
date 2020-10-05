@@ -24,8 +24,6 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-/// <reference path="./index.d.ts" />
-
 // type for custom commands
 Cypress.Commands.add('dataCy', (value) => {
     return cy.get(`[data-cy=${value}]`);

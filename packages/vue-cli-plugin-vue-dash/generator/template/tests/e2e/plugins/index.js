@@ -4,9 +4,9 @@ const webpack = require('@cypress/webpack-preprocessor');
  */
 module.exports = (on, config) => {
 	const options = {
-        webpackOptions: require('../webpack.config')
-    };
-    on('file:preprocessor', webpack(options));
+		webpackOptions: require('../webpack.config')
+	};
+	on('file:preprocessor', webpack(options));
 	return Object.assign({}, config, {
 		fixturesFolder: 'tests/e2e/fixtures',
 		integrationFolder: 'tests/e2e/integration',

@@ -33,7 +33,7 @@ describe('Home page', () => {
 	it('Check contains of tab: À propos the click button: Retour ', () => {
 		cy.dataCy('tab-content-link').find('a').filter('[aria-selected=false]').click();
 		cy.contains('h2', ' À propos ').parent().find('a').click();
-		cy.url().should('contain', '/'); 
+		cy.url().should('contain', '/');
 	});
 
 });
