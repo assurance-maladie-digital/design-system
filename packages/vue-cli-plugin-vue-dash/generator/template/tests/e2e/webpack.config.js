@@ -12,7 +12,7 @@ module.exports = {
                     {
                         loader: 'ts-loader',
                         options: {
-                            // skip type checking for speed 
+                            // Skip type checking for speed 
                             transpileOnly: false
                         }
                     }
