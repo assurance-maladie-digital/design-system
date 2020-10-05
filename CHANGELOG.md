@@ -3,7 +3,7 @@
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
-  - **FormField:** Possibilité d'avoir plusieurs choix possible quand on entre une valeur dans le champ 'autre'
+  - **FormField:** Possibilité d'avoir plusieurs choix possible quand on entre une valeur dans le champ 'autre' ([#596](https://github.com/assurance-maladie-digital/design-system/pull/596))
 
 ### Interne
 
