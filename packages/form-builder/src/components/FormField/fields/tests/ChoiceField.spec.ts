@@ -1,4 +1,3 @@
-import { ErrorMessages } from '@cnamts/vue-dot/src/rules/types';
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
@@ -98,19 +97,44 @@ describe('ChoiceField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders select field button with error messages', () => {
+	it('renders select field button with simple error message', () => {
 		// Mount component
-		wrapper = mountComponent(ChoiceField, {
-			propsData: {
-				field: {
-					...testField,
-					fieldOptions: {
-						type: 'choiceButton',
-						errorMessages: ['Erreur 1', 'Erreur 2']
+		wrapper = mountComponent(
+			ChoiceField,
+			{
+				propsData: {
+					field: {
+						...testField,
+						fieldOptions: {
+							type: 'choiceButton',
+							errorMessages: 'Erreur'
+						}
 					}
 				}
-			}
-		});
+			},
+			true
+		);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders select field button with multiple error messages', () => {
+		// Mount component
+		wrapper = mountComponent(
+			ChoiceField,
+			{
+				propsData: {
+					field: {
+						...testField,
+						fieldOptions: {
+							type: 'choiceButton',
+							errorMessages: ['Erreur 1', 'Erreur 2']
+						}
+					}
+				}
+			},
+			true
+		);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
