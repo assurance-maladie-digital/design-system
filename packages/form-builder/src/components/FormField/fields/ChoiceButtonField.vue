@@ -98,8 +98,15 @@
 		}
 
 		get errorMessages(): string[] | null {
-			if (Array.isArray(this.options?.errorMessages) && this.options.errorMessages.length) {
-				return this.options.errorMessages;
+
+			const errorMessages = this.options?.errorMessages;
+
+			if (typeof errorMessages == 'string') {
+				return [errorMessages];
+			}
+
+			if (Array.isArray(errorMessages) && errorMessages.length) {
+				return errorMessages;
 			}
 
 			return null;

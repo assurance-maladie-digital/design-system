@@ -4,6 +4,38 @@ exports[`setFormErrors doesn't sets an error on unknown fields 1`] = `
 Object {
   "section1": Object {
     "questions": Object {
+      "questionChoiceButton": Object {
+        "fieldOptions": Object {
+          "type": "choiceButton",
+        },
+        "items": Array [
+          Object {
+            "text": "10h",
+            "value": 10,
+          },
+          Object {
+            "text": "11h",
+            "value": 11,
+          },
+        ],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": Object {
+        "fieldOptions": Object {
+          "type": "choiceButton",
+        },
+        "items": Array [
+          Object {
+            "text": "10h",
+            "value": 10,
+          },
+          Object {
+            "text": "11h",
+            "value": 11,
+          },
+        ],
+        "type": "select",
+      },
       "questionPeriod": Object {
         "fieldOptions": Object {
           "notExist": Object {
@@ -13,6 +45,9 @@ Object {
         "type": "period",
       },
       "questionString": Object {
+        "fieldOptions": Object {
+          "errorMessages": "Incorrect value",
+        },
         "type": "text",
       },
     },
@@ -24,6 +59,43 @@ exports[`setFormErrors sets error messages on fields 1`] = `
 Object {
   "section1": Object {
     "questions": Object {
+      "questionChoiceButton": Object {
+        "fieldOptions": Object {
+          "errorMessages": Array [
+            "Erreur 1",
+            "Erreur 2",
+          ],
+          "type": "choiceButton",
+        },
+        "items": Array [
+          Object {
+            "text": "10h",
+            "value": 10,
+          },
+          Object {
+            "text": "11h",
+            "value": 11,
+          },
+        ],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": Object {
+        "fieldOptions": Object {
+          "errorMessages": "Erreur string",
+          "type": "choiceButton",
+        },
+        "items": Array [
+          Object {
+            "text": "10h",
+            "value": 10,
+          },
+          Object {
+            "text": "11h",
+            "value": 11,
+          },
+        ],
+        "type": "select",
+      },
       "questionPeriod": Object {
         "fieldOptions": Object {
           "from": Object {

@@ -21,6 +21,7 @@ export const questionErrors: FormErrors = {
 		'Erreur string 1',
 		'Erreur string 2'
 	],
+	questionPassword: 'Champ requis',
 	questionPeriod: {
 		from: [
 			'Erreur questionPeriod 1',
@@ -34,8 +35,20 @@ export const questionErrors: FormErrors = {
 	questionChoiceButton: [
 		'Erreur 1',
 		'Erreur 2'
-	]
+	],
+	questionChoiceButtonMultiple: 'Erreur string'
 };
+
+const defaultItems = [
+	{
+		text: '10h',
+		value: 10
+	},
+	{
+		text: '11h',
+		value: 11
+	}
+];
 
 export const form: Form = {
 	section1: {
@@ -45,6 +58,20 @@ export const form: Form = {
 			},
 			questionPeriod: {
 				type: 'period'
+			},
+			questionChoiceButton: {
+				type: 'select',
+				items: defaultItems,
+				fieldOptions: {
+					type: 'choiceButton'
+				}
+			},
+			questionChoiceButtonMultiple: {
+				type: 'select',
+				items: defaultItems,
+				fieldOptions: {
+					type: 'choiceButton'
+				}
 			}
 		}
 	}
