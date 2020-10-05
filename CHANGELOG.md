@@ -194,7 +194,6 @@ Vuetify a été mis à jour à la version LTS `2.3`, vous pouvez suivre le [guid
 #### Mise à jour des autres dépendances
 
 Nous avons mis à jour les dépendances requises pour Vue Dot, il faut mettre à jour les dépendances suivantes si ce n'est pas déjà fait :
-
 - **@mdi/js**: `^5.0.0`
 - **vue**: `^2.6.11`
 - **vuetify**: `^2.3.0`
@@ -269,12 +268,10 @@ Cette version comporte de nouvelles fonctionnalités ainsi que des corrections d
   - **global:** Utilisation de `toBeUndefined()` à la place de `toBe(undefined)` ([#410](https://github.com/assurance-maladie-digital/design-system/pull/410)) ([02d84e2](https://github.com/assurance-maladie-digital/design-system/commit/02d84e242cd6d42377e4cf540da3d73a20ad46a8))
 
 ### Vue Dash
-
 - ⬆️ **Dépendances**
   - **template:** Mise à jour des dépendances ([3cf35fd](https://github.com/assurance-maladie-digital/design-system/commit/3cf35fd42355cf32a8a415bf2a9509a7df426de8))
 
 ### Interne
-
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.0.6` ([#394](https://github.com/assurance-maladie-digital/design-system/pull/394)) ([3fa3d8f](https://github.com/assurance-maladie-digital/design-system/commit/3fa3d8fd14978602f62887f9baccd26bd1a0382d))
   - **babel:** Mise à jour du monorepo vers la `v7.10.4` ([#399](https://github.com/assurance-maladie-digital/design-system/pull/399)) ([62e2e8b](https://github.com/assurance-maladie-digital/design-system/commit/62e2e8bfb2d4137d3b292357e45dc811599d160b))
@@ -296,7 +293,7 @@ Ces composants ont maintenant une largeur par défaut de `100%`, vous pouvez uti
 
 ```diff
 <FileUpload
-+ width="512"
++	width="512"
 />
 ```
 
@@ -306,8 +303,8 @@ La prop `no-shadow` a été supprimée car elle ne fonctionnait pas correctement
 
 ```diff
 <PageCard
-- no-shadow
-+ :elevation="0"
+-	no-shadow
++	:elevation="0"
 />
 ```
 
@@ -389,15 +386,12 @@ Au moment de la sortie de cette version, [Vue the mask](https://github.com/vuejs
 Pour mettre à jour, vous devez supprimer `vue-the-mask` du fichier `package.json`, en utilisant la commande `yarn remove vue-the-mask`, et installer `vue-input-facade` en utilisant `yarn add vue-input-facade`.
 
 Après avoir installé le nouveau package, vous devez mettre à jour la déclaration du module :
-
 ```diff
 // src/modules.d.ts
 -declare module 'vue-the-mask';
 +declare module 'vue-input-facade';
 ```
-
 Et aussi mettre à jour l'utilisation du plugin :
-
 ```diff
 // src/plugins/vue-dot.ts
 -// Register v-mask directive
@@ -409,19 +403,17 @@ Et aussi mettre à jour l'utilisation du plugin :
 ```
 
 Il est également nécessaire d'ajouter `vue-input-facade` à la liste des dépendances qui doivent être transpilées pour assurer la comptabilité des navigateurs comme IE 11 :
-
 ```diff
 // vue.config.js
 // Transpile ES6 inside dependencies
 transpileDependencies: [
- /node_modules[/\\\\]vuetify[/\\\\]/,
- 'vuex-persist',
-+ 'vue-input-facade'
+	/node_modules[/\\\\]vuetify[/\\\\]/,
+	'vuex-persist',
++	'vue-input-facade'
 ]
 ```
 
 Pour la compatibilité des navigateurs comme IE 11, vous devez également ajouter le polyfill `custom-event-polyfill` en utilisant `yarn add custom-event-polyfill`, puis l'importer dans votre application :
-
 ```diff
 // main.ts
 +// Polyfill for vue-input-facade on IE
@@ -437,11 +429,10 @@ Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. 
 ### Renommer `showWeekEnds` sur le `DatePicker`
 
 La prop `showWeekEnds` a été renommée en `showWeekends` :
-
 ```diff
 <DatePicker
-- showWeekEnds
-+ showWeekends
+-	showWeekEnds
++	showWeekends
 />
 ```
 
@@ -451,14 +442,14 @@ Lorsque vous utilisez la prop `outlined` sur le `DatePicker`, le `VMenu` sera ma
 
 ```diff
 <DatePicker
-- :vuetify-options="{
--  menu: {
--   nudgeBottom: 56,
--   nudgeRight: 0
--  }
-- }"
- outlined
-- append-icon
+-	:vuetify-options="{
+-		menu: {
+-			nudgeBottom: 56,
+-			nudgeRight: 0
+-		}
+-	}"
+	outlined
+-	append-icon
 />
 ```
 
@@ -468,8 +459,8 @@ Nous avons ajouté de nouveaux Design Tokens et de nouvelles classes pour ajuste
 
 ```diff
 <VTextField
-- class="form-input"
-+ class="vd-form-input"
+-	class="form-input"
++	class="vd-form-input"
 />
 ```
 
@@ -484,8 +475,8 @@ Vous pouvez également supprimer les anciennes classes de votre thème :
 ```diff
 // src/theme/styles/utility.scss
 -.form-input {
-- width: 328px;
-- flex: none;
+-	width: 328px;
+-	flex: none;
 -}
 ```
 
@@ -655,12 +646,12 @@ Les propriétés passées au composant `DatePicker` sont maintenant passées dir
 
 ```diff
 <DatePicker
-- :vuetify-options="{
--  textField: {
--   clearable: true
--  }
-- }"
-+ clearable
+-	:vuetify-options="{
+-		textField: {
+-			clearable: true
+-		}
+-	}"
++	clearable
 />
 ```
 
@@ -735,8 +726,8 @@ La valeur de l'événement `error` est maintenant un objet contenant le code de 
 
 ```ts
 {
- file: File;
- error: ErrorCodes;
+	file: File;
+	error: ErrorCodes;
 }
 ```
 
