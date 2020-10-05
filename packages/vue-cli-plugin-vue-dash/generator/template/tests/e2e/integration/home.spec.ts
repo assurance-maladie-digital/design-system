@@ -25,7 +25,7 @@ describe('Home page', () => {
 		cy.dataCy('tab-content-link').find('a').filter('[aria-selected=false]').click();
 		cy.url().should('contain', '/a-propos');
 
-		cy.contains('h2', ' À propos ').parent().find('div').should('have.length', 4).each(($el, index, $list) => {
+		cy.contains('h2', ' À propos ').parent().find('div').should('have.length', 4).each(($el) => {
 			cy.wrap($el).find('li');
 		})
 	});
