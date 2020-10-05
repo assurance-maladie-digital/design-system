@@ -222,7 +222,7 @@
 		otherInput(otherFieldValue: OtherFieldValue): void {
 			this.otherFieldValue = otherFieldValue?.length ? otherFieldValue : null;
 
-			if (this.otherFieldValue) {
+			if (this.otherFieldValue && !this.field.multiple) {
 				this.choiceValue.value = null;
 			}
 		}
