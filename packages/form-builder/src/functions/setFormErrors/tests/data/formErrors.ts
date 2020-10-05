@@ -32,8 +32,8 @@ export const questionErrors: FormErrors = {
 		]
 	},
 	questionChoiceButton: [
-		'Erreur string1',
-		'Erreur string 2'
+		'Erreur 1',
+		'Erreur 2'
 	]
 };
 

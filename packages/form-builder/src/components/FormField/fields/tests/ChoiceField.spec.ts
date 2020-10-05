@@ -1,4 +1,4 @@
-import { ErrorMessages } from './../../../../../../vue-dot/src/rules/types.d';
+import { ErrorMessages } from '@cnamts/vue-dot/src/rules/types';
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
@@ -98,7 +98,7 @@ describe('ChoiceField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders selecte field button with error messages', () => {
+	it('renders select field button with error messages', () => {
 		// Mount component
 		wrapper = mountComponent(ChoiceField, {
 			propsData: {

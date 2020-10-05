@@ -44,6 +44,7 @@
 				{{ errorMessage }}
 			</p>
 		</template>
+
 		<p
 			v-else-if="showHint"
 			class="px-3 mb-0 v-messages"
@@ -100,6 +101,7 @@
 			if (Array.isArray(this.options?.errorMessages) && this.options.errorMessages.length) {
 				return this.options.errorMessages;
 			}
+
 			return null;
 		}
 
