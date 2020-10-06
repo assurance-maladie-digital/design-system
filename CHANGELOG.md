@@ -3,7 +3,7 @@
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
-  - **FormField:** Correction d'une erreur de marge sur le champ 'période' ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580))
+  - **FormField:** Correction des marges sur le champ période ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580))
 
 ### Interne
 
