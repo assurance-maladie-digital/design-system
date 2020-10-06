@@ -1,4 +1,4 @@
-import Vue, { VueConstructor } from 'vue';
+import { VueConstructor } from 'vue';
 import { VueDotOptions } from '../types';
 import { Framework } from 'vuetify/types';
 
