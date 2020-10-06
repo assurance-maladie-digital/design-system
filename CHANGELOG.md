@@ -3,8 +3,8 @@
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
-  - **FormField:** Les items du champ de sélection en mode bouton peuvent maintenant avoir une valeur numérique de 0, aussi, pour le champ autre, la valeur 0 peut être sélectionnée pour afficher maintenant la zone de texte approprier quand le choix correspond à la valeur du champ autre associé. ([#591](https://github.com/assurance-maladie-digital/design-system/pull/591))
   - **FormField:** Correction des marges sur le champ période ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580))
+  - **FormField:** Correction de l'affichage du champ select lorsque la valeur est égale à zéro ([#591](https://github.com/assurance-maladie-digital/design-system/pull/591))
 
 ### Interne
 

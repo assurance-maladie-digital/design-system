@@ -550,7 +550,7 @@ exports[`FormBuilder renders correctly 1`] = `
             <h4 class="mb-1 body-1">
               Autre choix
             </h4>
-            <div class="v-input vd-form-input v-textarea v-textarea--auto-grow v-textarea--no-resize theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
+            <div class="v-input vd-form-input v-textarea v-textarea--auto-grow v-textarea--no-resize v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
               <div class="v-input__control">
                 <div class="v-input__slot">
                   <fieldset aria-hidden="true">

@@ -281,7 +281,8 @@ export const questionForm: Form = {
 				multiple: true,
 				type: 'select',
 				value: {
-					value: 0
+					value: 0,
+					other: 'XXL'
 				},
 				items: [
 					{
