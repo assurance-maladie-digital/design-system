@@ -18,6 +18,7 @@ interface TestComponent extends Vue {
 	$refs: Refs<{
 		input: {
 			hasError: boolean;
+			hasFocused?: boolean;
 		};
 	}>;
 
@@ -47,12 +48,12 @@ function createMenu() {
 }
 
 /** Create fake VTextField for refs */
-function createTextField(disableHasFocused: boolean) {
+function createTextField() {
 	return Vue.component('VTextField', {
 		data() {
 			return {
 				hasError: false,
-				hasFocused: disableHasFocused ? undefined : true
+				hasFocused: true
 			};
 		},
 		methods: {
@@ -65,7 +66,7 @@ function createTextField(disableHasFocused: boolean) {
 }
 
 /** Create the wrapper */
-function createWrapper(propsData?: Record<string, unknown>, mixinData = {}, disableHasFocused = false) {
+function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
 	const component = Vue.component('Test', {
 		mixins: [
 			DateLogic,
@@ -81,7 +82,7 @@ function createWrapper(propsData?: Record<string, unknown>, mixinData = {}, disa
 		},
 		stubs: {
 			menu: createMenu(),
-			textField: createTextField(disableHasFocused)
+			textField: createTextField()
 		}
 	}) as Wrapper<TestComponent>;
 }
@@ -130,7 +131,7 @@ describe('DateLogic', () => {
 		expect(wrapper.vm.date).toBe('2019-10-29');
 	});
 
-	it('emits change event with empty value when the date is invalid', async() => {
+	it('emits change event with empty value when the date is invalid', () => {
 		const wrapper = createWrapper({
 			value: '29-10-2019'
 		});
@@ -183,7 +184,9 @@ describe('DateLogic', () => {
 			textField: {
 				validateOnBlur: true
 			}
-		}, true);
+		});
+
+		delete wrapper.vm.$refs.input.hasFocused;
 
 		wrapper.vm.saveFromCalendar();
 
