@@ -98,10 +98,9 @@
 		}
 
 		get errorMessages(): string[] | null {
-
 			const errorMessages = this.options?.errorMessages;
 
-			if (typeof errorMessages == 'string') {
+			if (typeof errorMessages === 'string') {
 				return [errorMessages];
 			}
 
