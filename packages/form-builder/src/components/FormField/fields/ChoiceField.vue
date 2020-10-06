@@ -160,7 +160,7 @@
 		}
 
 		get IsSelectedChoice(): boolean {
-			return this.otherField?.selectedChoice != undefined && this.otherField?.selectedChoice != null;
+			return this.otherField?.selectedChoice !== undefined && this.otherField?.selectedChoice !== null;
 		}
 
 		/**
