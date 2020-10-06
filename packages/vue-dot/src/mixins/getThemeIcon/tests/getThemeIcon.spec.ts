@@ -21,7 +21,7 @@ const mountOptions = {
 
 /** Create the test component */
 function createTestComponent() {
-	return Vue.component('test', {
+	return Vue.component('Test', {
 		mixins: [
 			GetThemeIcon
 		],

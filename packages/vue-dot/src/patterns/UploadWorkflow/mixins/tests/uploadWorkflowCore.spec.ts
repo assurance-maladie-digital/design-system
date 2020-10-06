@@ -29,7 +29,7 @@ interface TestComponent extends Vue {
 
 /** Create fake VForm for refs */
 function createVForm() {
-	return Vue.component('v-form', {
+	return Vue.component('VForm', {
 		template: '<div />'
 	});
 }
@@ -53,7 +53,7 @@ const testFile = {
 
 /** Create the wrapper */
 function createWrapper(value = fileList) {
-	const component = Vue.component('test', {
+	const component = Vue.component('Test', {
 		mixins: [
 			UploadWorkflowCore
 		],

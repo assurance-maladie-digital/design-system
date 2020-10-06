@@ -10,7 +10,7 @@ interface TestComponent extends Vue {
 
 /** Create the wrapper */
 function createWrapper() {
-	const component = Vue.component('test', {
+	const component = Vue.component('Test', {
 		mixins: [
 			WarningRules
 		],
