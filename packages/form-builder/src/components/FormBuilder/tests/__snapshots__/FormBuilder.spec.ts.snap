@@ -136,7 +136,7 @@ exports[`FormBuilder renders correctly 1`] = `
       <p class="text-body-2 grey--text text--darken-1">
         Informations supplémentaires
       </p>
-      <div class="layout ma-n3 wrap row">
+      <div class="layout mx-n3 wrap row">
         <div class="v-menu">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined mx-3 vd-form-input no-flex">
             <div class="v-input__control">

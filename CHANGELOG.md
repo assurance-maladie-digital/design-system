@@ -1,5 +1,10 @@
 ## Non publié
 
+### FormBuilder
+
+- 🐛 **Corrections de bugs**
+  - **FormField:** Correction des marges sur le champ période ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580))
+
 ### Interne
 
 - 🔥 **Suppressions**
