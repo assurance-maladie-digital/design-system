@@ -11,7 +11,7 @@ interface TestComponent extends Vue {
 	initFileList(value: FileListItem[]): void;
 }
 
-const testComponent = Vue.component('test', {
+const testComponent = Vue.component('Test', {
 	mixins: [
 		UpdateFileModel
 	],
