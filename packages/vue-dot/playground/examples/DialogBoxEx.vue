@@ -1,6 +1,5 @@
 <template>
 	<DocSection
-		no-divider
 		title="DialogBox"
 	>
 		<VBtn

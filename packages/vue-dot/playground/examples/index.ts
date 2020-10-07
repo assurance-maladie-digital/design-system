@@ -14,6 +14,7 @@ import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
 import DialogBoxEx from './DialogBoxEx.vue';
+import ErrorPageEx from './ErrorPageEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -33,7 +34,8 @@ const components: Components = {
 	RulesEx,
 	SubHeaderEx,
 	UploadWorkflowEx,
-	DialogBoxEx
+	DialogBoxEx,
+	ErrorPageEx
 };
 
 /** Globally register all components */

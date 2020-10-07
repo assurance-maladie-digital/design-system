@@ -60,6 +60,8 @@
 				<UploadWorkflowEx />
 
 				<DialogBoxEx />
+
+				<ErrorPageEx />
 			</PageCard>
 		</VMain>
 
