@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- 🔨 **Build**
+  - **Vue.Config:** Augmentation de la limite du build vers 450000 ([#607](https://github.com/assurance-maladie-digital/design-system/pull/607))
+
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
