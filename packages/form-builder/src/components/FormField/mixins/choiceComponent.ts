@@ -130,7 +130,7 @@ export class ChoiceComponent extends MixinsDeclaration {
 	 * @returns {boolean} The selected value
 	 */
 	isSelected(value: FieldItemValue): boolean {
-		if (!this.choiceFieldValue) {
+		if (this.choiceFieldValue === undefined || this.choiceFieldValue === null) {
 			return false;
 		}
 
