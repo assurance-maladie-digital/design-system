@@ -43,6 +43,10 @@
 
 				<DebounceEx />
 
+				<DialogBoxEx />
+
+				<ErrorPageEx />
+
 				<FileUploadEx />
 
 				<FooterEx />
@@ -58,10 +62,6 @@
 				<SubHeaderEx />
 
 				<UploadWorkflowEx />
-
-				<DialogBoxEx />
-
-				<ErrorPageEx />
 			</PageCard>
 		</VMain>
 

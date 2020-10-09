@@ -6,6 +6,8 @@ import DatePickerEx from './DatePickerEx.vue';
 import LangBtnEx from './LangBtnEx.vue';
 import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
+import DialogBoxEx from './DialogBoxEx.vue';
+import ErrorPageEx from './ErrorPageEx.vue';
 import FileUploadEx from './FileUploadEx.vue';
 import FooterEx from './FooterEx.vue';
 import NotificationEx from './NotificationEx.vue';
@@ -13,8 +15,6 @@ import PaginatedTableEx from './PaginatedTableEx.vue';
 import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
-import DialogBoxEx from './DialogBoxEx.vue';
-import ErrorPageEx from './ErrorPageEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -27,15 +27,15 @@ const components: Components = {
 	LangBtnEx,
 	CustomIconEx,
 	DebounceEx,
+	DialogBoxEx,
+	ErrorPageEx,
 	FileUploadEx,
 	FooterEx,
 	NotificationEx,
 	PaginatedTableEx,
 	RulesEx,
 	SubHeaderEx,
-	UploadWorkflowEx,
-	DialogBoxEx,
-	ErrorPageEx
+	UploadWorkflowEx
 };
 
 /** Globally register all components */

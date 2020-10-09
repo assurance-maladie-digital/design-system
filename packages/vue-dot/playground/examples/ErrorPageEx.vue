@@ -1,15 +1,10 @@
 <template>
-	<DocSection
-		no-divider
-		title="ErrorPage"
-	>
-		<p>Page d'erreur</p>
-
+	<DocSection title="ErrorPage">
 		<ErrorPage
 			title="Page non trouvé"
-			message="Désolé, cette page n'existe pas ou plus"
+			message="Il semblerait qu'il y ait eu une erreur !"
 			code="404"
-			cta="acceuil"
+			cta="Rtour à l'acceuil"
 		/>
 	</DocSection>
 </template>
