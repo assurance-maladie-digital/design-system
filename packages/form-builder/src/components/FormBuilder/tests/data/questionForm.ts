@@ -7,7 +7,7 @@ const defaultItems = [
 	},
 	{
 		text: '9h30',
-		value: '9.30'
+		value: 0
 	},
 	{
 		text: '10h',
@@ -281,13 +281,13 @@ export const questionForm: Form = {
 				multiple: true,
 				type: 'select',
 				value: {
-					value: 'autre',
+					value: 0,
 					other: 'XXL'
 				},
 				items: [
 					{
 						text: 'S',
-						value: 0
+						value: 's'
 					},
 					{
 						text: 'M',
@@ -305,11 +305,11 @@ export const questionForm: Form = {
 					},
 					{
 						text: 'Autre',
-						value: 'autre'
+						value: 0
 					}
 				],
 				other: {
-					selectedChoice: 'autre',
+					selectedChoice: 0,
 					label: 'Autre choix',
 					fieldOptions: {
 						placeholder: 'Entrez votre taille'
