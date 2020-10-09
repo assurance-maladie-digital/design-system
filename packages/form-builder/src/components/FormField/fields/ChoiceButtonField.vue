@@ -13,24 +13,35 @@
 				:value="item.value"
 				:outlined="!isSelected(item.value)"
 				elevation="0"
-				height="40"
+				height="auto"
+				min-height="40"
 				active-class="white--text"
-				class="text-none"
+				class="text-none text-wrap py-2 text-left"
 				color="accent"
 				@click="toggleItem(item)"
 			>
-				<span class="text-body-1">
-					{{ item.text }}
-				</span>
-
-				<VSpacer />
-
-				<VIcon
-					:style="getIconStyle(item)"
-					class="ml-1 white--text"
-				>
-					{{ checkIcon }}
-				</VIcon>
+				<VLayout>
+					<VRow no-gutters>
+						<VCol
+							cols="11"
+						>
+							<span class="text-body-1">
+								{{ item.text }}
+							</span>
+						</VCol>
+						<VCol
+							cols="1"
+							align-self="center"
+						>
+							<VIcon
+								:style="getIconStyle(item)"
+								class="ml-1 white--text"
+							>
+								{{ checkIcon }}
+							</VIcon>
+						</VCol>
+					</VRow>
+				</VLayout>
 			</VBtn>
 		</VBtnToggle>
 

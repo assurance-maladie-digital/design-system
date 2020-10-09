@@ -235,6 +235,27 @@ export const questionForm: Form = {
 					type: 'choiceButton'
 				}
 			},
+			questionChoiceButtonTextMultiLines: {
+				title: 'Question choix bouton plusieurs lignes',
+				type: 'select',
+				value: {
+					value: 1,
+					other: null
+				},
+				items: [
+					{
+						text: 'Moi et/ou mes proches ne voulions pas être impliqués',
+						value: 1
+					},
+					{
+						text: 'Autre texte',
+						value: 2
+					}
+				],
+				fieldOptions: {
+					type: 'choiceButton'
+				}
+			},
 			questionChoiceOther: {
 				title: 'Question choix autre',
 				description: 'Informations supplémentaires',
@@ -270,6 +291,7 @@ export const questionForm: Form = {
 					}
 				},
 				fieldOptions: {
+					inline: true,
 					type: 'choiceButton',
 					label: 'Classic field',
 					outlined: true
