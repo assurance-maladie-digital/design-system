@@ -43,6 +43,7 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
+
 	import { Next } from '../../types';
 
 	const Props = Vue.extend({

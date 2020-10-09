@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import ErrorPage from '..';
+import ErrorPage from '../';
 
 let wrapper: Wrapper<Vue>;
 
