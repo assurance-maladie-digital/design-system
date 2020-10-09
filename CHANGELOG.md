@@ -5,6 +5,7 @@
 - 🐛 **Corrections de bugs**
   - **FormField:** Correction de l'affichage du champ select lorsque la valeur est égale à zéro ([#591](https://github.com/assurance-maladie-digital/design-system/pull/591))
   - **FormField:** Correction des marges sur le champ période ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580)) ([d8c8303](https://github.com/assurance-maladie-digital/design-system/commit/d8c8303e2ab9f6c8e43bf8abbcc7d73b74103527))
+  - **FormField:** Correction de la largeur du champ textarea ([#609](https://github.com/assurance-maladie-digital/design-system/pull/609))
 
 ### Interne
 
@@ -16,6 +17,7 @@
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la version de yarn dans la configuration de Travis CI ([#589](https://github.com/assurance-maladie-digital/design-system/pull/589)) ([0a47260](https://github.com/assurance-maladie-digital/design-system/commit/0a47260c6b5cfb3782bb6b25a579af918987f38f))
+  - **config:** Mise à jour de la taille maximale du build ([#607](https://github.com/assurance-maladie-digital/design-system/pull/607))
 
 - ⬆️ **Dépendances**
   - **typescript:** Mise à jour vers la `v4.0.3` ([#572](https://github.com/assurance-maladie-digital/design-system/pull/572)) ([3167679](https://github.com/assurance-maladie-digital/design-system/commit/31676794ecee410642c4b8112532e4fdb3b99705))
