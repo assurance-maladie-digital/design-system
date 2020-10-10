@@ -1,5 +1,9 @@
+---
+title: FooterWrapper
+---
+
 ::: slot title
-# FooterWrapper
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

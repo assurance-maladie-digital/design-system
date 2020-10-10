@@ -1,5 +1,9 @@
+---
+title: UploadWorkflow
+---
+
 ::: slot title
-# UploadWorkflow
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

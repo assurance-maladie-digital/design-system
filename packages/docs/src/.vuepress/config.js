@@ -4,6 +4,7 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
+	title: 'Design System Digital',
 	dest: 'dist',
 	themeConfig: {
 		sidebar: [

@@ -1,5 +1,9 @@
+---
+title: CopyBtn
+---
+
 ::: slot title
-# CopyBtn
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

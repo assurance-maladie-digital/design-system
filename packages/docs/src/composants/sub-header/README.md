@@ -1,5 +1,9 @@
+---
+title: SubHeader
+---
+
 ::: slot title
-# SubHeader
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

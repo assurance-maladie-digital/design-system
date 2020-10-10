@@ -1,5 +1,9 @@
+---
+title: PageCard
+---
+
 ::: slot title
-# PageCard
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

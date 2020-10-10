@@ -1,5 +1,9 @@
+---
+title: DatePicker
+---
+
 ::: slot title
-# DatePicker
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

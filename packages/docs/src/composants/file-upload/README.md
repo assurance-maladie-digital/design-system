@@ -1,5 +1,9 @@
+---
+title: FileUpload
+---
+
 ::: slot title
-# FileUpload
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

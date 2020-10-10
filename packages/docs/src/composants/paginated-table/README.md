@@ -1,5 +1,9 @@
+---
+title: PaginatedTable
+---
+
 ::: slot title
-# PaginatedTable
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

@@ -1,5 +1,9 @@
+---
+title: DataList
+---
+
 ::: slot title
-# DataList
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

@@ -1,5 +1,9 @@
+---
+title: CustomIcon
+---
+
 ::: slot title
-# CustomIcon
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

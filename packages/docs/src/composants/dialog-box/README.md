@@ -1,5 +1,9 @@
+---
+title: DialogBox
+---
+
 ::: slot title
-# DialogBox
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
