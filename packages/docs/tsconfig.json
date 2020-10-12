@@ -4,11 +4,13 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"types": [
-			"vuepress-types"
+			"vuepress-types",
+			"marked"
 		]
 	},
 	"include": [
-		"src/.vuepress/**/*.ts"
+		"src/.vuepress/**/*.ts",
+		"src/.vuepress/**/*.vue"
 	],
 	"exclude": [
 		"node_modules"

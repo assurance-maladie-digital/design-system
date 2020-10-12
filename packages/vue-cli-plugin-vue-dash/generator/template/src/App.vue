@@ -10,7 +10,7 @@
 
 		<NotificationBar />
 
-		<VContent role="main">
+		<VMain>
 			<!-- Transition between routes -->
 			<transition
 				name="fade"
@@ -19,7 +19,7 @@
 				<!-- Load the component defined in the router for the current route -->
 				<RouterView />
 			</transition>
-		</VContent>
+		</VMain>
 
 		<AppFooter v-if="!maintenance" />
 	</VApp>
@@ -29,7 +29,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Meta } from '@/decorators';
+	import { Meta, MetaInfo } from '@/decorators';
 
 	// Static import for faster rendering
 	import { AppHeader, AppToolbar, AppFooter } from '@/components/layout';
@@ -46,23 +46,23 @@
 		}
 	})
 	export default class App extends Vue {
-		get maintenance() {
+		get maintenance(): boolean {
 			return MAINTENANCE === 'true';
 		}
 
 		/** The meta informations of the route */
 		/* istanbul ignore next */
 		@Meta
-		metaInfo() {
+		metaInfo(): MetaInfo {
 			return {
 				// If no sub-components specify a metaInfo.title, this title will be used
-				title: <% if (i18n) { %>this.$t('common.meta.title')<% } else { %>'<%= capitalizeFirstLetter(name) %>'<% } %>,
+				title: <% if (i18n) { %>this.$t('common.meta.title') as string<% } else { %>'<%= capitalizeFirstLetter(name) %>'<% } %>,
 				// All titles will be injected into this template
-				titleTemplate: <% if (i18n) { %>this.$t('common.meta.titleTemplate')<% } else { %>'%s | CNAM'<% } %>,
+				titleTemplate: <% if (i18n) { %>this.$t('common.meta.titleTemplate') as string<% } else { %>'%s | CNAM'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: <% if (i18n) { %>this.$t('common.meta.description')<% } else { %>'<%= capitalizeFirstLetter(description) %>.'<% } %>
+						content: <% if (i18n) { %>this.$t('common.meta.description') as string<% } else { %>'<%= capitalizeFirstLetter(description) %>.'<% } %>
 					}
 				]
 			};

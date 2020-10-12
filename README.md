@@ -39,7 +39,15 @@ The goal of our Design System is to unify our work, which allows teams to share 
         <a href="/packages/vue-dot">Vue Dot</a>
       </td>
       <td>
-       Our component library
+       Component library that implements our Design System
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/assurance-maladie-digital/vue-cli-preset">Vue CLI preset</a>
+      </td>
+      <td>
+       Vue CLI preset to scaffold front-end projects
       </td>
     </tr>
     <tr>
@@ -47,7 +55,23 @@ The goal of our Design System is to unify our work, which allows teams to share 
         <a href="/packages/vue-cli-plugin-vue-dash">Vue CLI plugin Vue Dash</a>
       </td>
       <td>
-       Vue CLI plugin to scaffold front-end projects
+       Vue CLI plugin used in our preset to scaffold front-end projects
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/packages/form-builder">FormBuilder</a>
+      </td>
+      <td>
+       FormBuilder components
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/packages/design-tokens">Design Tokens</a>
+      </td>
+      <td>
+       Design Tokens of our Design System
       </td>
     </tr>
     <tr>

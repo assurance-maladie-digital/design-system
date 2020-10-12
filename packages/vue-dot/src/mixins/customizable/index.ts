@@ -1,6 +1,15 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
+import { ExtendedVue } from 'vue/types/vue';
 
-import merge from 'deepmerge';
+import deepMerge from 'deepmerge';
+
+import { IndexedObject } from '../../types';
+
+export type Customizable = ExtendedVue<Vue, unknown, unknown, {
+	options: Options;
+}, {
+	vuetifyOptions: Options;
+}>;
 
 /**
  * Mixin that merge default options with options passed as props
@@ -16,12 +25,12 @@ import merge from 'deepmerge';
  * Final API
  * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
  */
-export function customizable(defaultOptions: Options) {
+export function customizable(defaultOptions: Options): Customizable {
 	return Vue.extend({
 		props: {
 			/** User options */
 			vuetifyOptions: {
-				type: Object,
+				type: Object as PropType<Options>,
 				default: undefined
 			}
 		},
@@ -31,10 +40,7 @@ export function customizable(defaultOptions: Options) {
 				if (this.vuetifyOptions) {
 					// Merge default options with props
 					// Default first to allow override
-					return merge.all([
-						defaultOptions,
-						this.vuetifyOptions
-					]) as Options;
+					return deepMerge<Options>(defaultOptions, this.vuetifyOptions);
 				}
 
 				// Else return default options
@@ -44,10 +50,5 @@ export function customizable(defaultOptions: Options) {
 	});
 }
 
-interface OptionsObj {
-	[key: string]: unknown;
-}
-
-export interface Options {
-	[key: string]: OptionsObj;
-}
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export type Options = IndexedObject<any>;

@@ -4,7 +4,7 @@
 			v-debounce.2000="e => search = e"
 			:value="search"
 			clearable
-			class="form-input"
+			class="vd-form-input"
 			label="Rechercher"
 			@click:clear="search = ''"
 		/>
@@ -21,12 +21,12 @@
 	</div>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				search: ''
-			};
-		}
-	};
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	@Component
+	export default class DebounceArg extends Vue {
+		search = '';
+	}
 </script>

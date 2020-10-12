@@ -1,9 +1,8 @@
 <template>
 	<VAppBar
-		wrap
-		align-center
 		height="80"
-		class="app-header white no-flex"
+		color="white"
+		class="app-header flex-grow-0"
 	>
 		<RouterLink
 			<% if (i18n) { %>:aria-label="$t('components.layout.appHeader.logoBtn.label')"<% } else { %>aria-label="Accueil"<% } %>
@@ -17,25 +16,22 @@
 			<img
 				<% if (i18n) { %>:alt="$t('components.layout.appHeader.logoBtn.alt')"<% } else { %>alt="l'Assurance Maladie"<% } %>
 				src="@/assets/logo.svg"
-				class="d-block app-logo"
+				width="155px"
 			>
 		</RouterLink>
 
-		<VLayout
-			align-center
-			class="app-header-title pr-1 py-2"
-		>
+		<div class="d-flex align-center flex-grow-1 app-header-title pr-1 py-2">
 			<VDivider
 				vertical
 				inset
 			/>
 
 			<slot name="title">
-				<VToolbarTitle class="title ml-4 ml-1">
+				<VToolbarTitle class="text-h6 ml-4">
 					<% if (i18n) { %>{{ $t('components.layout.appHeader.title') }}<% } else { %>Projet <%= name %><% } %>
 				</VToolbarTitle>
 			</slot>
-		</VLayout>
+		</div>
 
 		<HeaderMenu v-if="!maintenance" />
 	</VAppBar>
@@ -56,7 +52,7 @@
 		}
 	})
 	export default class AppHeader extends Vue {
-		get maintenance() {
+		get maintenance(): boolean {
 			return MAINTENANCE === 'true';
 		}
 	}
@@ -74,7 +70,7 @@
 	.app-logo-link {
 		height: 100%;
 		display: flex;
-		min-width: 155px;
+		align-items: center;
 
 		&:not([disabled]):hover {
 			background: #eee;
@@ -83,9 +79,5 @@
 		&[disabled] {
 			pointer-events: none;
 		}
-	}
-
-	.app-logo {
-		flex: 1;
 	}
 </style>

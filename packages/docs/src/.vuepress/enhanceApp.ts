@@ -7,7 +7,9 @@ import { vuetify } from './vuetify';
 
 import VueDot from '@cnamts/vue-dot';
 
-import VueTheMask from 'vue-the-mask';
+import { icons } from './icons';
+
+import InputFacade from 'vue-input-facade';
 
 import './theme/styles/index.scss';
 
@@ -16,8 +18,13 @@ const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 	Vue.use(Vuetify);
 	options.vuetify = vuetify;
 
-	Vue.use(VueDot);
-	Vue.use(VueTheMask);
+	Vue.use(VueDot, {
+		theme: {
+			icons
+		}
+	});
+
+	Vue.use(InputFacade);
 };
 
 export default enhanceApp;

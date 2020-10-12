@@ -1,8 +1,8 @@
 <template>
 	<VToolbar
 		dense
-		tag="section"
-		class="secondary no-flex"
+		tag="nav"
+		class="secondary flex-grow-0"
 	>
 		<VTabs
 			v-if="!maintenance"
@@ -25,19 +25,21 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { Options } from '@cnamts/vue-dot/src/mixins/customizable';
+
 	interface ToolbarLink {
 		label: string;
 		to?: {
 			name: string;
 		};
-		options?: object;
+		options?: Options;
 	}
 
 	declare const MAINTENANCE: string;
 
 	@Component
 	export default class AppToolbar extends Vue {
-		<% if (i18n) { %>get links() {
+		<% if (i18n) { %>get links(): ToolbarLink[] {
 			return this.$t('components.layout.appToolbar.links') as unknown as ToolbarLink[];
 		}<% } else { %>links: ToolbarLink[] = [
 			{
@@ -57,7 +59,7 @@
 			}
 		];<% } %>
 
-		get maintenance() {
+		get maintenance(): boolean {
 			return MAINTENANCE === 'true';
 		}
 	}

@@ -1,6 +1,6 @@
 <template>
 	<VMenu
-		content-class="menu-active-el"
+		content-class="rounded"
 		transition="scale-transition"
 		origin="top center"
 		offset-y
@@ -8,7 +8,7 @@
 	>
 		<template #activator="{ on }">
 			<VBtn
-				class="menu-el text-none px-4"
+				class="text-left text-none px-4 mr-4"
 				text
 				large
 				v-on="on"
@@ -25,7 +25,7 @@
 				<VIcon
 					size="32px"
 					color="grey darken-1"
-					class="ml-2 pa-1 round-icon"
+					class="ml-2 pa-1"
 				>
 					{{ userIcon }}
 				</VIcon>
@@ -68,16 +68,14 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { mapActions, mapState } from 'vuex';
-
-	import { NextRoute } from '@/types';
+	import { RawLocation } from 'vue-router';
 
 	import { mdiAccount, mdiLogoutVariant } from '@mdi/js';
 
 	interface LinkItem {
 		title: string;
 		disabled: boolean;
-		to?: NextRoute;
+		to?: RawLocation;
 	}
 
 	/** User profile button in the HeaderBar */
@@ -87,7 +85,7 @@
 		userIcon = mdiAccount;
 		logoutIcon = mdiLogoutVariant;
 
-		<% if (i18n) { %>get links() {
+		<% if (i18n) { %>get links(): LinkItem[] {
 			return this.$t('components.layout.headerMenu.links') as unknown as LinkItem[];
 		}<% } else { %>links: LinkItem[] = [
 			{
@@ -100,27 +98,3 @@
 		];<% } %>
 	}
 </script>
-
-<style lang="scss" scoped>
-	.menu-active-el {
-		border-radius: 4px;
-	}
-
-	.menu-el {
-		right: 15px;
-		position: absolute;
-		text-align: left;
-	}
-
-	.round-icon {
-		border-radius: 50%;
-	}
-
-	@media only screen and (max-width: 600px) {
-		.menu-el {
-			position: relative;
-			margin-top: 10px;
-			right: 0;
-		}
-	}
-</style>

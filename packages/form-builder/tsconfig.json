@@ -1,0 +1,31 @@
+{
+	// Extend root config
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"types": [
+			"node",
+			"jest"
+		],
+		"esModuleInterop": true
+	},
+	"include": [
+		// Playground
+		"playground/**/*.ts",
+		"playground/**/*.vue",
+		// Src
+		"src/**/*.ts",
+		"src/**/*.vue",
+		// Tests
+		"tests/**/*.ts",
+		// Types
+		"types/**/*.ts",
+		// Scripts
+		"scripts/**/*.ts",
+		// JSON
+		"*.json"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

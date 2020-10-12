@@ -6,10 +6,9 @@ export const config = {
 		class: 'text-none font-weight-regular white--text mx-n4'
 	},
 	contentLayout: {
-		wrap: true,
 		class: 'justify-space-between'
 	},
 	dataListsLayout: {
-		wrap: true
+		class: 'pl-10 pr-8'
 	}
 };

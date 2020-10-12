@@ -1,14 +1,18 @@
 <template>
 	<div class="debounce-native-ex">
-		<label class="form-input-label">
+		<label
+			for="debounce-simple-input"
+			class="form-input-label"
+		>
 			Rechercher
-
-			<input
-				v-model.lazy="search"
-				v-debounce
-				class="form-input"
-			>
 		</label>
+
+		<input
+			id="debounce-simple-input"
+			v-model.lazy="search"
+			v-debounce
+			class="vd-simple-input vd-form-input"
+		>
 
 		<p v-if="search">
 			Recherche :
@@ -19,14 +23,14 @@
 	</div>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				search: ''
-			};
-		}
-	};
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	@Component
+	export default class DebounceNative extends Vue {
+		search = '';
+	}
 </script>
 
 <style scoped>

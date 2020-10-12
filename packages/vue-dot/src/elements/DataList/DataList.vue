@@ -9,7 +9,7 @@
 				:title-class="titleClass"
 				:flex="flex"
 				:row="row"
-				:width="width"
+				:item-width="itemWidth"
 			/>
 
 			<div v-else>
@@ -25,29 +25,26 @@
 
 				<ul
 					v-if="items.length"
-					class="vd-data-list-field pl-0"
+					class="vd-data-list-field pl-0 d-flex"
 					:class="listClass"
 					:style="{ minWidth }"
 				>
-					<li
+					<DataListItem
 						v-for="(item, index) in items"
 						:key="index"
-						class="vd-data-list-row mb-2"
-					>
-						<DataListItem
-							v-if="item.key"
-							:label="item.key"
-							:value="item.value"
-							:action="item.action"
-							:chip="item.chip"
-							:icon="getIcon(item.icon)"
-							:placeholder="placeholder"
-							:vuetify-options="item.options"
-							:style="{ width }"
-							class="vd-data-list-item body-1"
-							@click:action="$emit('click:item-action', index)"
-						/>
-					</li>
+						:label="item.key"
+						:value="item.value"
+						:action="item.action"
+						:chip="item.chip"
+						:row="row"
+						:render-html-value="renderHtmlValue"
+						:icon="getIcon(item.icon)"
+						:placeholder="placeholder"
+						:vuetify-options="item.options"
+						:style="{ width: itemWidth }"
+						class="vd-data-list-item text-body-1 mb-2"
+						@click:action="$emit('click:item-action', index)"
+					/>
 				</ul>
 			</div>
 		</VFadeTransition>
@@ -59,7 +56,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { IDataListItem, DataListIcons } from './types';
+	import { DataListIcons, IDataList } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
@@ -68,7 +65,7 @@
 		props: {
 			/** The items to display */
 			items: {
-				type: Array as PropType<DataListItem[]>,
+				type: Array as PropType<IDataList>,
 				required: true
 			},
 			icons: {
@@ -82,7 +79,7 @@
 			},
 			titleClass: {
 				type: String,
-				default: 'mb-3 headline'
+				default: 'mb-3 text-h5'
 			},
 			row: {
 				type: Boolean,
@@ -102,8 +99,8 @@
 				type: String,
 				default: undefined
 			},
-			/** The key/value width */
-			width: {
+			/** The item width */
+			itemWidth: {
 				type: String,
 				default: '200px'
 			},
@@ -119,6 +116,11 @@
 			},
 			/** Display the heading while loading */
 			headingLoading: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value as plain HTML */
+			renderHtmlValue: {
 				type: Boolean,
 				default: false
 			}
@@ -138,19 +140,16 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
-		get listClass() {
-			return {
-				'vd-column': !this.row || this.flex,
-				'vd-flex': this.flex
-			};
+		get listClass(): string {
+			return this.flex ? 'flex-wrap' : 'flex-column';
 		}
 
-		getIcon(icon?: string) {
-			if (!icon || !this.icons) {
+		getIcon(iconName?: string): string | null {
+			if (!iconName || !this.icons) {
 				return null;
 			}
 
-			return this.icons[icon];
+			return this.icons[iconName];
 		}
 	}
 </script>
@@ -158,32 +157,5 @@
 <style lang="scss" scoped>
 	.vd-data-list-field {
 		list-style: none;
-
-		.vd-data-list-row {
-			display: flex;
-			flex-wrap: wrap;
-		}
-
-		// Column
-		&.vd-column .vd-data-list-row {
-			flex-direction: column;
-		}
-
-		&.vd-flex {
-			display: flex;
-			flex-wrap: wrap;
-		}
-
-		// Do not apply on column mode
-		&:not(.vd-column) {
-			// Default separator
-			// .vd-key::after {
-			// 	content: " :";
-			// }
-
-			.vd-value {
-				align-self: flex-end;
-			}
-		}
 	}
 </style>

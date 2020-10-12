@@ -1,0 +1,22 @@
+{
+	// Extend root config
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"lib": [
+			"es2018",
+			"es2015",
+			"scripthost"
+		],
+		"types": [
+			"node",
+			"jest"
+		]
+	},
+	"include": [
+		"**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

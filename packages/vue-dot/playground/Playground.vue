@@ -9,7 +9,7 @@
 			color="primary"
 			class="vd-playground-app-bar px-4"
 		>
-			<h1 class="title">
+			<h1 class="text-h6">
 				VueDot
 			</h1>
 
@@ -17,19 +17,18 @@
 
 			<!-- Dark mode switch button -->
 			<VBtn
-				color="accent"
-				primary
-				:dark="dark"
+				color="white"
+				class="primary--text"
 				@click="updateTheme"
 			>
 				{{ dark ? 'Light' : 'Dark' }} mode
 			</VBtn>
 		</VAppBar>
 
-		<VContent>
+		<VMain>
 			<PageCard :card-class="pageCardClass">
 				<!-- Introduction -->
-				<h2 class="display-1 mb-12 font-weight-bold">
+				<h2 class="text-h4 mb-12 font-weight-bold">
 					Playground
 				</h2>
 
@@ -44,9 +43,9 @@
 
 				<DebounceEx />
 
-				<FileListEx />
-
 				<FileUploadEx />
+
+				<FooterEx />
 
 				<LangBtnEx />
 
@@ -59,8 +58,10 @@
 				<SubHeaderEx />
 
 				<UploadWorkflowEx />
+
+				<DialogBoxEx />
 			</PageCard>
-		</VContent>
+		</VMain>
 
 		<VFooter
 			:color="dark ? 'grey darken-3' : 'secondary'"
@@ -94,7 +95,7 @@
 
 		localStorageUtility = new LocalStorageUtility(LOCAL_STORAGE_CONTROL.version);
 
-		updateTheme() {
+		updateTheme(): void {
 			this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
 
 			// Save the preference in localStorage
@@ -108,11 +109,11 @@
 			this.$vuetify.theme.dark = darkTheme;
 		}
 
-		get dark() {
+		get dark(): boolean {
 			return this.$vuetify.theme.dark;
 		}
 
-		get pageCardClass() {
+		get pageCardClass(): string {
 			return this.dark ? ' grey darken-4' : ' white';
 		}
 	}

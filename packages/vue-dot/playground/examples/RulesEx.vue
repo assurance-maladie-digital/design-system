@@ -1,44 +1,52 @@
 <template>
 	<DocSection title="Rules">
-		<h2 class="subtitle-1 mb-4 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-4 font-weight-bold">
 			Required with custom message
 		</h2>
 
 		<VTextField
-			label="Required field"
 			:rules="textFieldRules"
+			label="Required field"
+			class="vd-form-input"
+			outlined
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Min length & required with default messages
 		</h2>
 
 		<VTextarea
-			label="Required field"
-			rows="1"
 			:rules="textareaRules"
+			label="Required field"
+			class="vd-form-input"
+			outlined
+			rows="1"
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Max & min length with custom messages
 		</h2>
 
 		<VTextarea
-			label="Length field"
-			rows="1"
 			:rules="lengthRule"
+			label="Length field"
+			class="vd-form-input"
+			outlined
+			rows="1"
 		/>
 
-		<h2 class="subtitle-1 my-4 font-weight-bold">
+		<h2 class="text-subtitle-1 my-4 font-weight-bold">
 			Special case for required (array)
 		</h2>
 
 		<VSelect
 			v-model="selected"
-			multiple
-			label="Select something"
-			:items="data"
 			:rules="selectRules"
+			:items="data"
+			label="Select something"
+			class="vd-form-input"
+			outlined
+			multiple
 		/>
 	</DocSection>
 </template>

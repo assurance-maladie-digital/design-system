@@ -7,7 +7,7 @@ h6 {
 	display: inline-block;
 }
 
-.v-content {
+.content__default > {
 	h1 {
 		font-size: 3rem;
 		font-weight: 700;
@@ -30,13 +30,11 @@ h6 {
 	h2 + h3 {
 		margin-top: 0;
 	}
-}
 
-// .content h4 {
-// 	font-size: 1.15rem;
-// 	margin-bottom: 5px;
-// 	margin-top: 15px;
-// }
+	ul {
+		margin-bottom: 16px;
+	}
+}
 
 .header-anchor {
 	transition: opacity .15s;
@@ -65,7 +63,8 @@ h1 .header-anchor {
 }
 
 .v-application {
-	p code {
+	p code,
+	li code {
 		box-shadow: none;
 		color: #c0341d !important;
 		background-color: #fbe5e1 !important;

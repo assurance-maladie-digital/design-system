@@ -5,7 +5,7 @@
 			:icons="icons"
 			:loading="loading"
 			:items-number-loading="7"
-			title-class="subtitle-1 font-weight-bold mb-2 mt-2"
+			title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
 			list-title="Informations"
 			heading-loading
 			flex
@@ -14,7 +14,7 @@
 
 		<VTextField
 			v-model="actionValue"
-			class="mt-4"
+			class="vd-form-input mt-4"
 			outlined
 			label="New value"
 		/>
@@ -91,7 +91,7 @@
 		 *
 		 * @param {number} itemIndex The index of the item to update
 		 */
-		setItemValue(itemIndex: number) {
+		setItemValue(itemIndex: number): void {
 			this.$set(this.data[itemIndex], 'value', this.actionValue);
 		}
 	}

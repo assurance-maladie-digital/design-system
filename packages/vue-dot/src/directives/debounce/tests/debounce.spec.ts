@@ -8,7 +8,7 @@ interface TestComponent extends Vue {
 }
 
 /** Create the test component (input for debounce) */
-function createTestComponent(template: string, spy: jest.Mock, data?: object) {
+function createTestComponent(template: string, spy: jest.Mock, data?: Record<string, unknown>) {
 	return Vue.component('test', {
 		directives: {
 			debounce

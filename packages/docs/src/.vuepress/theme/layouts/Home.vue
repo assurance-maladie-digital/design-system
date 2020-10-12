@@ -1,11 +1,9 @@
 <template>
 	<div class="theme-container">
 		<VApp>
-			<VContent>
-				<PageCard>
-					<Content />
-				</PageCard>
-			</VContent>
+			<VMain>
+				<HomePage />
+			</VMain>
 		</VApp>
 	</div>
 </template>

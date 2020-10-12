@@ -1,5 +1,9 @@
 import Vue from 'vue';
 
+// Polyfill for vue-input-facade on IE
+// (not included in core-js)
+import 'custom-event-polyfill';
+
 // Register class components hooks
 import Component from 'vue-class-component';
 

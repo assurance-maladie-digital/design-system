@@ -1,126 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UploadWorkflow renders correctly 1`] = `
-<div class="vd-upload-workflow">
-  <h4 class="title mb-2">
+<div class="vd-upload-workflow" style="width: 100%;">
+  <h4 class="text-h6 mb-2">
     Documents à nous transmettre
   </h4>
-  <div role="list" class="v-list vd-file-list v-sheet v-sheet--tile theme--light">
-    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
-      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
-      <div class="v-list-item__content">
-        <div class="v-list-item__title grey--text text--darken-1">
-          test
-        </div>
-        <!---->
-      </div>
-      <div class="v-list-item__action">
-        <div class="layout justifyEnd">
-          <!---->
-          <!---->
-          <!---->
-        </div>
-      </div>
-    </div>
-    <hr role="separator" aria-orientation="horizontal" class="v-divider v-divider--inset theme--light">
-    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
-      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
-      <div class="v-list-item__content">
-        <div class="v-list-item__title grey--text text--darken-1">
-          test
-        </div>
-        <!---->
-      </div>
-      <div class="v-list-item__action">
-        <div class="layout justifyEnd">
-          <!---->
-          <!---->
-          <!---->
-        </div>
-      </div>
-    </div>
-    <hr role="separator" aria-orientation="horizontal" class="v-divider v-divider--inset theme--light">
-  </div> <label class="file-upload d-block pa-4 primary--text mt-6"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="file-upload-input"> <span class="file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
+  <filelist-stub files="[object Object],[object Object]" optionalfiletext="Document facultatif" width="100%"></filelist-stub> <label class="vd-file-upload d-block pa-4 primary--text mt-6" style="width: 100%;"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="vd-file-upload-input"> <span class="vd-file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
 					Placez votre fichier ici
 				</span> <span class="mb-2 grey--text text--darken-1">
 					Ou
-				</span> <span class="file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
+				</span> <span class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 					Choisir un fichier
-				</span> <span class="mt-4 body-2 font-weight-regular grey--text text--darken-1">
-					Taille max. : 4 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
+				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text text--darken-1">
+					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="none" origin="center center" persistent="true" retainfocus="true" transition="dialog-transition" width="550">
-    <vcard-stub loaderheight="4" tag="div" class="pa-4">
-      <vform-stub>
-        <h4 class="mb-4">
-          Fichier transmis
-        </h4>
-        <vselect-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" value="" appendicon="$dropdown" backgroundcolor="" label="Nature du fichier" loaderheight="2" clearicon="$clear" outlined="true" type="text" valuecomparator="{[Function]}" nodatatext="$vuetify.noDataText" items="[object Object],[object Object]" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></vselect-stub>
-        <vlayout-stub tag="div" wrap="true" class="mt-2">
-          <vspacer-stub></vspacer-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" text="true" type="button" class="mr-4">
-            Retour
-          </vbtn-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" type="button">
-            Confirmer
-          </vbtn-stub>
-        </vlayout-stub>
-      </vform-stub>
-    </vcard-stub>
-  </vdialog-stub>
+  <div role="dialog" class="v-dialog__container vd-dialog-box">
+    <!---->
+  </div>
 </div>
 `;
 
 exports[`UploadWorkflow renders correctly with a single file 1`] = `
-<div class="vd-upload-workflow">
-  <h4 class="title mb-2">
+<div class="vd-upload-workflow" style="width: 100%;">
+  <h4 class="text-h6 mb-2">
     Document à nous transmettre
   </h4>
-  <div role="list" class="v-list vd-file-list v-sheet v-sheet--tile theme--light">
-    <div tabindex="-1" role="listitem" class="v-list-item theme--light">
-      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" role="img" aria-hidden="true"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
-      <div class="v-list-item__content">
-        <div class="v-list-item__title grey--text text--darken-1">
-          test
-        </div>
-        <!---->
-      </div>
-      <div class="v-list-item__action">
-        <div class="layout justifyEnd">
-          <!---->
-          <!---->
-          <!---->
-        </div>
-      </div>
-    </div>
-    <hr role="separator" aria-orientation="horizontal" class="v-divider v-divider--inset theme--light">
-  </div> <label class="file-upload d-block pa-4 primary--text mt-6"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="file-upload-input"> <span class="file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
+  <filelist-stub files="[object Object]" optionalfiletext="Document facultatif" width="100%"></filelist-stub> <label class="vd-file-upload d-block pa-4 primary--text mt-6" style="width: 100%;"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="vd-file-upload-input"> <span class="vd-file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate v-icon--svg theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="40px" width="40px" role="img" aria-hidden="true"><path d="M14,13V17H10V13H7L12,8L17,13M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
 					Placez votre fichier ici
 				</span> <span class="mb-2 grey--text text--darken-1">
 					Ou
-				</span> <span class="file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
+				</span> <span class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 					Choisir un fichier
-				</span> <span class="mt-4 body-2 font-weight-regular grey--text text--darken-1">
-					Taille max. : 4 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
+				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text text--darken-1">
+					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="none" origin="center center" persistent="true" retainfocus="true" transition="dialog-transition" width="550">
-    <vcard-stub loaderheight="4" tag="div" class="pa-4">
-      <vform-stub>
-        <h4 class="mb-4">
-          Fichier transmis
-        </h4>
-        <vselect-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" value="" appendicon="$dropdown" backgroundcolor="" label="Nature du fichier" loaderheight="2" clearicon="$clear" outlined="true" type="text" valuecomparator="{[Function]}" nodatatext="$vuetify.noDataText" items="[object Object]" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></vselect-stub>
-        <vlayout-stub tag="div" wrap="true" class="mt-2">
-          <vspacer-stub></vspacer-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" text="true" type="button" class="mr-4">
-            Retour
-          </vbtn-stub>
-          <vbtn-stub color="accent" tag="button" activeclass="" type="button">
-            Confirmer
-          </vbtn-stub>
-        </vlayout-stub>
-      </vform-stub>
-    </vcard-stub>
-  </vdialog-stub>
+  <div role="dialog" class="v-dialog__container vd-dialog-box">
+    <!---->
+  </div>
 </div>
 `;

@@ -32,10 +32,10 @@ describe('exactLength', () => {
 		expect(rule('')).toBe(true);
 	});
 
-	it('returns true if the value is undefined', () => {
+	it('returns true if the value is null', () => {
 		const rule = exactLength(10);
 
-		expect(rule(undefined)).toBe(true);
+		expect(rule(null)).toBe(true);
 	});
 
 	it('works with custom error messages', () => {

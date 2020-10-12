@@ -1,16 +1,40 @@
 <template>
 	<div class="theme-container">
 		<VApp>
+			<DocHeader @drawer-action="drawer = !drawer" />
+
 			<VNavigationDrawer
-				app
-				fixed
+				v-model="drawer"
 				clipped
+				app
 			>
-				<Sidebar :items="sidebarItems" />
+				<DocSidebar :items="sidebarItems" />
+
+				<template #append>
+					<VDivider />
+
+					<div class="px-4 py-2 d-flex">
+						<VBtn
+							text
+							rounded
+							class="text--primary text-none"
+						>
+							<VIcon left>
+								{{ tagIcon }}
+							</VIcon>
+
+							{{ version }}
+						</VBtn>
+					</div>
+				</template>
 			</VNavigationDrawer>
 
-			<VContent>
+			<VMain>
 				<PageCard width="1200px">
+					<!--
+						Use a slot to let Vupress generate title
+						boilerplate (link anchor, id etc)
+					-->
 					<Content
 						class="mb-4"
 						slot-key="title"
@@ -25,7 +49,7 @@
 
 					<Content />
 				</PageCard>
-			</VContent>
+			</VMain>
 		</VApp>
 	</div>
 </template>
@@ -34,10 +58,21 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { mdiTagOutline } from '@mdi/js';
+
+	import { version } from '../../../../package.json';
+
+	import { SidebarItem } from '../../types';
+
 	@Component
 	export default class Layout extends Vue {
-		get sidebarItems() {
-			return (this as any).$site.themeConfig.sidebar;
+		version = version;
+		tagIcon = mdiTagOutline;
+
+		drawer = null;
+
+		get sidebarItems(): SidebarItem[] {
+			return this.$site.themeConfig.sidebar;
 		}
 	}
 </script>

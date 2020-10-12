@@ -2,7 +2,7 @@ import { copyToClipboard } from '../';
 
 interface TSelection {
 	rangeCount?: number;
-	getRangeAt?: (index: number) => string;
+	getRangeAt?: (index: number) => string | null;
 	removeAllRanges?: () => null;
 	addRange?: () => null;
 }
@@ -14,10 +14,10 @@ interface TDocument {
 }
 
 // Override default type
-declare var document: TDocument;
+declare let document: TDocument;
 
 /** Mock functions on document */
-function mockDocument(options: object) {
+function mockDocument(options: TSelection) {
 	document.getSelection = () => {
 		return options;
 	};
@@ -36,7 +36,7 @@ describe('copyToClipboard', () => {
 			removeAllRanges: () => null
 		});
 
-		expect(copyToClipboard(txt)).toBe(undefined);
+		expect(copyToClipboard(txt)).toBeUndefined();
 	});
 
 	it('is called correctly when text is already selected', () => {
@@ -47,12 +47,12 @@ describe('copyToClipboard', () => {
 			addRange: () => null
 		});
 
-		expect(copyToClipboard(txt)).toBe(undefined);
+		expect(copyToClipboard(txt)).toBeUndefined();
 	});
 
 	it('is called correctly when getSelection is unavailable', () => {
 		document.getSelection = jest.fn(() => null);
 
-		expect(copyToClipboard(txt)).toBe(undefined);
+		expect(copyToClipboard(txt)).toBeUndefined();
 	});
 });

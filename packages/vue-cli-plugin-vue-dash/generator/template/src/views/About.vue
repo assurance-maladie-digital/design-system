@@ -1,6 +1,6 @@
 <template>
 	<PageCard card-class="py-4 px-5">
-		<h2 class="title font-weight-bold primary--text">
+		<h2 class="text-h6 font-weight-bold primary--text">
 			<% if (i18n) { %>{{ $t('views.about.title') }}<% } else { %>À propos<% } %>
 		</h2>
 
@@ -13,13 +13,13 @@
 		/>
 
 		<VBtn
-			exact
-			color="accent"
-			outlined
 			<% if (i18n) { %>:to="$t('views.about.backBtn.to')"<% } else { %>:to="{
 				name: 'home'
 			}"<% } %>
+			color="accent"
 			class="mt-8"
+			outlined
+			exact
 		>
 			<VIcon class="mr-2">
 				{{ backArrowIcon }}
@@ -34,7 +34,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Meta } from '@/decorators';
+	import { Meta, MetaInfo } from '@/decorators';
 
 	import { Link } from '@/types';
 
@@ -57,7 +57,7 @@
 	export default class About extends Vue {
 		backArrowIcon = mdiArrowLeft;
 
-		<% if (i18n) { %>get links() {
+		<% if (i18n) { %>get links(): LinkItem[] {
 			return this.$t('views.about.links') as unknown as LinkItem[];
 		}<% } else { %>links = [
 			{
@@ -119,13 +119,13 @@
 
 		/* istanbul ignore next */
 		@Meta
-		metaInfo() {
+		metaInfo(): MetaInfo {
 			return {
-				title: <% if (i18n) { %>this.$t('views.about.meta.title')<% } else { %>'À propos'<% } %>,
+				title: <% if (i18n) { %>this.$t('views.about.meta.title') as string<% } else { %>'À propos'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: <% if (i18n) { %>this.$t('views.about.meta.description')<% } else { %>'Informations et liens utiles.'<% } %>
+						content: <% if (i18n) { %>this.$t('views.about.meta.description') as string<% } else { %>'Informations et liens utiles.'<% } %>
 					}
 				]
 			};

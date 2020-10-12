@@ -21,7 +21,8 @@ module.exports = {
 	// Transpile ES6 inside dependencies
 	transpileDependencies: [
 		/node_modules[/\\\\]vuetify[/\\\\]/,
-		'vuex-persist'
+		'vuex-persist',
+		'vue-input-facade'
 	],
 	// Disable parallel build on the platform
 	parallel: process.env.NODE_ENV !== 'production'

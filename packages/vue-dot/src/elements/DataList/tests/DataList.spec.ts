@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/html';
+import { html } from '@/tests/utils/html';
 
 import DataList from '../';
 import { dataList } from './data/dataList';
@@ -47,21 +47,6 @@ describe('DataList', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly in column mode', () => {
-		// Mount component
-		wrapper = mountComponent(DataList, {
-			propsData: {
-				items: dataList,
-				column: true
-			}
-		});
-
-		const elExists = wrapper.find('.vd-column').exists();
-		expect(elExists).toBe(true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
 	it('renders correctly in flex mode', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
@@ -71,7 +56,7 @@ describe('DataList', () => {
 			}
 		});
 
-		const elExists = wrapper.find('.vd-flex').exists();
+		const elExists = wrapper.find('.flex-wrap').exists();
 		expect(elExists).toBe(true);
 
 		expect(html(wrapper)).toMatchSnapshot();
@@ -93,7 +78,7 @@ describe('DataList', () => {
 	});
 
 	it('renders correctly with an icon', () => {
-		let listWithIcon = dataList;
+		const listWithIcon = dataList;
 
 		// Add an action to the second item
 		listWithIcon[1].icon = 'mdiTest';
@@ -144,7 +129,7 @@ describe('DataList', () => {
 	});
 
 	it('renders correctly with an action', async() => {
-		let listWithAction = dataList;
+		const listWithAction = dataList;
 
 		// Add an action to the second item
 		listWithAction[1].action = 'Edit';
@@ -161,7 +146,7 @@ describe('DataList', () => {
 	});
 
 	it('emits action event', async() => {
-		let listWithAction = dataList;
+		const listWithAction = dataList;
 
 		// Add an action to the second item
 		listWithAction[2].action = 'Edit';

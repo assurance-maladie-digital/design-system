@@ -1,0 +1,42 @@
+{
+	"name": "@cnamts/design-tokens",
+	"version": "2.0.0-beta.0",
+	"description": "Design Tokens for the French Health Insurance",
+	"keywords": [
+		"cnam",
+		"design-tokens"
+	],
+	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Dylan Broussard",
+		"email": "me@deraw.dev"
+	},
+	"files": [
+		"dist/*",
+		"src/*",
+		"*.ts",
+		"*.scss"
+	],
+	"main": "./dist/tokens.js",
+	"module": "./src/tokens.ts",
+	"scripts": {
+		"pre-commit": "lint-staged",
+		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
+		"lint": "eslint **/*.ts --fix",
+		"test": "jest"
+	},
+	"lint-staged": {
+		"*.{ts}": [
+			"eslint **/*.ts --fix",
+			"git add"
+		]
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

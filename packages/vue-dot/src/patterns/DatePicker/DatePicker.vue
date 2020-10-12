@@ -3,26 +3,29 @@
 	<VMenu
 		ref="menu"
 		v-model="menu"
-		v-bind="options.menu"
+		v-bind="menuOptions"
 	>
 		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
 				v-model="dateFormatted"
-				v-mask="maskValue"
+				v-facade="maskValue"
 				v-bind="textFieldOptions"
-				class="vd-date-picker-text-field"
+				:outlined="outlined"
 				:class="textFieldClasses"
-				:success-messages="options.textField.successMessages || successMessages"
+				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error.sync="internalErrorProp"
+				class="vd-date-picker-text-field"
+				@input="$emit('input', $event)"
 				@blur="textFieldBlur"
 				@click="textFieldClicked"
 			>
 				<template #prepend>
 					<VBtn
-						v-if="!noPrependIcon && !appendIcon"
+						v-if="!noPrependIcon && !showAppendIcon"
 						v-bind="options.btn"
+						:aria-label="locales.openCalendar"
 						@click="menu = true"
 					>
 						<slot name="prepend-icon">
@@ -35,8 +38,9 @@
 
 				<template #append>
 					<VBtn
-						v-if="appendIcon"
+						v-if="showAppendIcon"
 						v-bind="options.btn"
+						:aria-label="locales.openCalendar"
 						@click="menu = true"
 					>
 						<slot name="append-icon">
@@ -60,6 +64,7 @@
 			ref="picker"
 			v-model="date"
 			v-bind="options.datePicker"
+			type="date"
 			:picker-date.sync="internalPickerDate"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
@@ -71,14 +76,14 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
+	import { locales } from './locales';
 
 	import { customizable, Options } from '../../mixins/customizable';
 	import { Eventable } from '../../mixins/eventable';
 	import { WarningRules } from '../../mixins/warningRules';
-	import { ValidationRule } from '../../rules/types';
 
 	import { DateLogic } from './mixins/dateLogic';
 	import { MaskValue } from './mixins/maskValue';
@@ -88,7 +93,7 @@
 
 	import { mdiCalendar } from '@mdi/js';
 
-	import deepmerge from 'deepmerge';
+	import deepMerge from 'deepmerge';
 
 	const Props = Vue.extend({
 		props: {
@@ -99,6 +104,14 @@
 			},
 			/** Disable the prepend icon */
 			noPrependIcon: {
+				type: Boolean,
+				default: false
+			},
+			/**
+			 * Put VTextField in outlined mode,
+			 * default to append icon and adjust VMenu
+			 */
+			outlined: {
 				type: Boolean,
 				default: false
 			},
@@ -124,49 +137,32 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(
+		Props,
+		customizable(config),
+		Eventable,
+		WarningRules,
+		DateLogic,
+		MaskValue,
+		Birthdate,
+		PickerDate,
+		ErrorProp
+	);
+
 	/**
 	 * DatePicker is a component that makes the date picker
 	 * from Vuetify simpler to use
 	 */
 	@Component<DatePicker>({
 		inheritAttrs: false,
-		mixins: [
-			// Default configuration
-			customizable(config),
-			Eventable,
-			WarningRules,
-			DateLogic,
-			MaskValue,
-			Birthdate,
-			PickerDate,
-			ErrorProp
-		],
 		model: {
 			prop: 'value',
 			event: 'change'
 		}
 	})
-	export default class DatePicker extends Props {
-		// Mixin computed data
-		options!: Options;
-		// eventable
-		showWeekEnds!: boolean;
-		calendarEvents!: (date: string) => unknown;
-		// mask
-		maskValue?: string;
-		// warning rules
-		successMessages!: string[];
-		warningRules!: ValidationRule[];
-		// date
-		date!: string;
-		max!: string | null;
-		min!: string | null;
-		dateFormatted!: string;
-		saveFromCalendar!: () => void;
-		textFieldBlur!: () => void;
-		// picker date
-		internalPickerDate!: string;
-		internalErrorProp!: boolean;
+	export default class DatePicker extends MixinsDeclaration {
+		// Locales
+		locales = locales;
 
 		// Icon
 		calendarIcon = mdiCalendar;
@@ -174,17 +170,40 @@
 		/** The v-model of VMenu */
 		menu = false;
 
-		/** Compute the options for VTextField */
-		get textFieldOptions() {
+		get showAppendIcon(): boolean {
+			return this.appendIcon || this.outlined;
+		}
+
+		get menuOptions(): Options {
+			const position: Options = {
+				nudgeBottom: this.outlined ? 56 : 45,
+				nudgeRight: this.outlined ? 0 : 45
+			};
+
+			return deepMerge<Options>(position, this.options.menu);
+		}
+
+		/**
+		 * Compute the options for the VTextField
+		 * (Merge options and binded attributes)
+		 *
+		 * @returns {Options} Computed options
+		 */
+		get textFieldOptions(): Options {
 			// Merge textField options (custom or default) with
 			// directly binded attributes (theses attributes
 			// will override 'options.textField')
-			return deepmerge(this.options.textField || [], this.$attrs);
+			return deepMerge<Options>(this.options.textField, this.$attrs);
 		}
 
-		/** Compute the classes for VTextField */
-		get textFieldClasses() {
-			let textFieldClasses = [];
+		/**
+		 * Compute the classes for the VTextField
+		 * (Merge user classes and fixed behavior)
+		 *
+		 * @returns {string|string[]} Computed classes
+		 */
+		get textFieldClasses(): (string | string[])[] {
+			const textFieldClasses = [];
 
 			if (this.warningRules.length) {
 				textFieldClasses.push('vd-warning-rules');
@@ -201,8 +220,12 @@
 			return textFieldClasses;
 		}
 
-		/** Open calendar menu if textFieldActivator is true */
-		textFieldClicked() {
+		/**
+		 * Open calendar menu if textFieldActivator is true
+		 *
+		 * @returns {void}
+		 */
+		textFieldClicked(): void {
 			if (this.textFieldActivator) {
 				this.menu = true;
 			}
@@ -248,6 +271,11 @@
 					display: none;
 				}
 			}
+
+			// Fix https://github.com/vuetifyjs/vuetify/issues/11809
+			.v-picker--date {
+				display: flex;
+			}
 		}
 	}
 
@@ -258,7 +286,9 @@
 		.v-input__prepend-inner,
 		.v-input__append-inner,
 		.v-input__append-outer {
-			margin-top: 10px !important;
+			.v-btn--icon {
+				margin-top: -7px;
+			}
 		}
 	}
 </style>

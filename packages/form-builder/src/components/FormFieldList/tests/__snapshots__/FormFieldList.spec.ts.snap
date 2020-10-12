@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormFieldList renders correctly 1`] = `
+<div class="vd-field-list">
+  <!---->
+  <!---->
+  <formfield-stub field="[object Object]"></formfield-stub>
+  <formfield-stub field="[object Object]"></formfield-stub>
+  <formfield-stub field="[object Object]"></formfield-stub>
+  <formfield-stub field="[object Object]"></formfield-stub>
+  <formfield-stub field="[object Object]"></formfield-stub>
+  <formfield-stub field="[object Object]"></formfield-stub>
+  <formfield-stub field="[object Object]"></formfield-stub>
+</div>
+`;

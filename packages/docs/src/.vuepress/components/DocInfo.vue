@@ -4,6 +4,7 @@
 		border="left"
 		colored-border
 		class="mb-8"
+		width="100%"
 	>
 		<slot />
 	</VAlert>

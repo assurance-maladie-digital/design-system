@@ -1,9 +1,29 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // See https://developer.mozilla.org/en-US/docs/Web/API/Storage
 // for native specifications
 
 interface ControlItem {
 	version?: number;
 	expiresAt?: number;
+}
+
+/**
+ * Check if localStorage is available
+ *
+ * @see https://gist.github.com/paulirish/5558557
+ * @returns {boolean} Is localStorage available
+ */
+function isStorageAvailable(): boolean {
+	try {
+		const item = 'test';
+
+		localStorage.setItem(item, item);
+		localStorage.removeItem(item);
+
+		return true;
+	} catch(e) {
+		return false;
+	}
 }
 
 export class LocalStorageUtility {
@@ -28,7 +48,7 @@ export class LocalStorageUtility {
 		expiration?: number,
 		prefix = 'vd-'
 	) {
-		this.localStorageSupported = typeof window.localStorage !== 'undefined' && window.localStorage !== null;
+		this.localStorageSupported = isStorageAvailable();
 
 		this.prefix = prefix;
 
@@ -180,6 +200,10 @@ export class LocalStorageUtility {
 	 * @returns {void}
 	 */
 	private filterStorage(callback: (storageKey: string) => void): void {
+		if (!this.localStorageSupported) {
+			return;
+		}
+
 		for (const storageKey in localStorage) {
 			if (storageKey.startsWith(this.prefix) && storageKey !== this.CONTROL_ITEM_KEY) {
 				callback(storageKey);

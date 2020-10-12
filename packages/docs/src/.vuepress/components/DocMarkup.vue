@@ -1,50 +1,25 @@
 <template>
 	<VCard
-		:id="id"
 		:color="$vuetify.theme.dark ? undefined : 'grey darken-4'"
 		class="v-markup"
 		outlined
 	>
-		<Prism
-			v-if="$slots.default || code"
+		<component
+			v-if="prismComponent && ($slots.default || code)"
+			:is="prismComponent"
 			:language="language || undefined"
-			:code="code"
 			:inline="inline"
 		>
 			<slot />
-		</Prism>
-
-		<!-- <div class="v-markup__edit">
-			<a
-				:href="href"
-				target="_blank"
-				rel="noopener"
-				title="Éditer le code"
-				aria-label="Éditer le code"
-			>
-				<VIcon>
-					{{ pencilIcon }}
-				</VIcon>
-			</a>
-		</div> -->
+		</component>
 
 		<CopyBtn
-			title="Copier le code"
-			label="Copier le code"
 			:tooltip-duration="1000"
 			:text-to-copy="getSlotContent"
 			:vuetify-options="copyBtnOptions"
+			title="Copier le code"
+			label="Copier le code"
 		/>
-
-		<!-- <a
-			v-if="filename && file"
-			:href="href"
-			target="_blank"
-			rel="noopener"
-			class="v-markup__filename"
-		>
-			<span v-text="file" />
-		</a> -->
 	</VCard>
 </template>
 
@@ -88,11 +63,7 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component({
-		components: {
-			Prism: () => import('vue-prism-component')
-		}
-	})
+	@Component
 	export default class DocMarkup extends MixinsDeclaration {
 		pencilIcon = mdiPencil;
 		copyIcon = mdiContentCopy;
@@ -100,6 +71,8 @@
 		code = null;
 		copied = false;
 		language: string | null = this.lang;
+
+		prismComponent = null;
 
 		copyBtnOptions = {
 			menu: {
@@ -111,19 +84,13 @@
 			}
 		};
 
-		get id() {
-			if (this.value === 'markup') {
-				return;
-			}
-
-			return 'markup-' + this.value.replace(/_/g, '-');
-		}
-
 		mounted() {
-			this.$nextTick(this.init);
+			import('vue-prism-component').then(module => {
+				this.prismComponent = module.default
+			})
 		}
 
-		getSlotContent() {
+		getSlotContent(): string {
 			const markup = this.$el.querySelector('pre');
 
 			if (!markup) {
@@ -131,17 +98,6 @@
 			}
 
 			return markup.innerText;
-		}
-
-		init(): void {
-			if (this.$slots.default || !this.value) {
-				return;
-			}
-		}
-
-		parseRaw(res: any): void {
-			this.language = this.lang || this.value.split('_').shift() || null;
-			this.code = res.default.trim();
 		}
 	}
 </script>
@@ -192,7 +148,6 @@
 			}
 		}
 
-		// &__edit,
 		.vd-copy-btn {
 			position: absolute;
 			top: 10px;
@@ -213,25 +168,6 @@
 		.vd-copy-btn .v-btn {
 			opacity: 0;
 		}
-
-		// &__edit {
-		// 	right: 36px;
-
-		// 	> a {
-		// 		color: inherit;
-		// 		text-decoration: none;
-		// 	}
-		// }
-
-		// a.v-markup__filename {
-		// 	text-decoration: none;
-		// 	position: absolute;
-		// 	bottom: 0;
-		// 	right: 0;
-		// 	padding: 8px 12px 8px 8px;
-		// 	font-size: 12px;
-		// 	color: rgba(#fff, .56);
-		// }
 
 		&:after {
 			position: absolute;
@@ -270,8 +206,6 @@
 				font-size: 1.5rem;
 				opacity: 0;
 				top: 0;
-				// width: 50px;
-				// height: 50px;
 				z-index: 4;
 			}
 		}

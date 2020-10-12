@@ -3,7 +3,6 @@
  *
  * Build assets in /dist folder
  * Use vue-cli-service in lib mode to build Vue Dot
- * Execute generate tokens script
  * Transpile TypeScript to JavaScript
  * Remove demo.html and empty folders
  */
@@ -11,17 +10,20 @@
 import * as fs from 'fs-extra';
 
 import { renderHeader, info, done, log } from '@cnamts/cli-helpers';
-import { execOpts } from './utils';
 
 import { author } from '../package.json';
 
 renderHeader('Self Build', author.name);
 
-import { execSync } from 'child_process';
+import { execSync, StdioOptions } from 'child_process';
+
+const execOpts = {
+	stdio: 'inherit' as StdioOptions
+};
 
 const DIST_FOLDER = './dist';
 
-// Create dist folder if not exists
+// Create dist folder if it doesn't exist
 if (!fs.existsSync(DIST_FOLDER)) {
 	info('Creating dist folder');
 
@@ -44,9 +46,6 @@ execSync(
 	execOpts
 );
 
-// Generate Design Tokens
-execSync('ts-node --project tsconfig.json --files ./scripts/generateTokens.ts', execOpts);
-
 log();
 info('Transpiling TypeScript');
 
@@ -63,6 +62,7 @@ fs.removeSync(`${DIST_FOLDER}/playground`);
 // them individually at the moment
 fs.removeSync(`${DIST_FOLDER}/src/elements`);
 fs.removeSync(`${DIST_FOLDER}/src/patterns`);
+fs.removeSync(`${DIST_FOLDER}/src/registerAllComponents.js`);
 
 log();
 done('Build completed');

@@ -1,7 +1,8 @@
 <template>
 	<VLayout
 		v-bind="options.layout"
-		class="vd-data-list-item"
+		class="vd-data-list-item flex-grow-0"
+		tag="li"
 	>
 		<slot name="icon">
 			<VIcon
@@ -13,49 +14,52 @@
 		</slot>
 
 		<div class="vd-data-list-item-content">
-			<div
-				class="vd-data-list-item-label caption"
-				:style="{ color: labelColor }"
-			>
-				{{ label }}
-			</div>
-
-			<!-- Show value or fallback to placeholder -->
-			<div class="vd-data-list-item-value">
-				<slot
-					name="value"
-					v-bind="{ itemValue }"
+			<div :class="{ 'vd-row': row }">
+				<div
+					class="vd-data-list-item-label text-caption"
+					:style="{ color: labelColor }"
 				>
-					<VChip
-						v-if="chip"
-						v-bind="options.chip"
-					>
-						{{ itemValue }}
-					</VChip>
+					{{ label }}
+				</div>
 
-					<span
-						v-else
-						class="body-1"
+				<!-- Show value or fallback to placeholder -->
+				<div class="vd-data-list-item-value">
+					<slot
+						name="value"
+						v-bind="{ itemValue }"
 					>
-						{{ itemValue }}
-					</span>
-				</slot>
+						<VChip
+							v-if="chip"
+							v-bind="options.chip"
+						>
+							{{ itemValue }}
+						</VChip>
+
+						<span
+							v-else-if="renderHtmlValue"
+							class="text-body-1"
+							v-html="itemValue"
+						/>
+
+						<span
+							v-else
+							class="text-body-1"
+							v-text="itemValue"
+						/>
+					</slot>
+				</div>
 			</div>
 
-			<div class="vd-data-list-item-action">
-				<slot name="action">
-					<VBtn
-						v-if="action"
-						text
-						small
-						color="accent"
-						class="vd-data-list-item-action-btn body-1 text-none pa-0"
-						@click="$emit('click:action')"
-					>
-						{{ action }}
-					</VBtn>
-				</slot>
-			</div>
+			<slot name="action">
+				<VBtn
+					v-if="action"
+					v-bind="options.actionBtn"
+					class="vd-data-list-item-action-btn"
+					@click="$emit('click:action')"
+				>
+					{{ action }}
+				</VBtn>
+			</slot>
 		</div>
 	</VLayout>
 </template>
@@ -78,7 +82,7 @@
 			},
 			/** Value to display */
 			value: {
-				type: String,
+				type: [String, Number],
 				default: undefined
 			},
 			/** Action to display */
@@ -100,6 +104,16 @@
 			icon: {
 				type: String,
 				default: undefined
+			},
+			/** Display label & value on a single line */
+			row: {
+				type: Boolean,
+				default: false
+			},
+			/** Render the value as plain HTML */
+			renderHtmlValue: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -117,12 +131,30 @@
 		}
 
 		get itemValue(): string {
+			if (typeof this.value === 'number') {
+				return isNaN(this.value) ? this.placeholder : this.value.toString();
+			}
+
 			return this.value || this.placeholder;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.vd-row {
+		display: flex;
+		flex-wrap: wrap;
+
+		.vd-data-list-item-label {
+			align-self: center;
+
+			&::after {
+				content: ":";
+				margin-right: 4px;
+			}
+		}
+	}
+
 	.vd-data-list-item-action-btn.v-btn {
 		min-width: 0;
 		margin: 0 -1px;

@@ -11,6 +11,8 @@ import {
 	VueClass
 } from '@vue/test-utils';
 
+import { addVApp } from './utils/addVApp';
+
 // Create localVue
 const localVue = createLocalVue();
 
@@ -19,6 +21,11 @@ import Vuetify from 'vuetify';
 Vue.use(Vuetify);
 
 const vuetify = new Vuetify();
+
+import InputFacade from 'vue-input-facade';
+Vue.use(InputFacade);
+
+addVApp();
 
 /**
  * Generic mount function
@@ -31,7 +38,7 @@ const vuetify = new Vuetify();
 export function mountComponent(
 	component: VueClass<Vue>,
 	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
-	fullMount: boolean = false
+	fullMount = false
 ): Wrapper<Vue> {
 	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;

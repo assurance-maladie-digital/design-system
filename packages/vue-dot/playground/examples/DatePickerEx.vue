@@ -1,11 +1,12 @@
 <template>
 	<DocSection title="DatePicker">
-		<h2 class="subtitle-1 font-weight-bold">
+		<h2 class="text-subtitle-1 font-weight-bold">
 			Default with date validation
 		</h2>
 
 		<DatePicker
 			v-model="date"
+			text-field-class="vd-form-input"
 			:rules="validRules"
 		/>
 
@@ -13,17 +14,19 @@
 			{{ date }}
 		</p>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Custom
 		</h2>
 
 		<DatePicker
 			v-model="birthDate"
+			:warning-rules="rules"
 			label="Birthdate"
 			date-format="DD-MM-YYYY"
 			hint="DD-MM-YYYY Format"
+			text-field-class="vd-form-input"
 			birthdate
-			:warning-rules="rules"
+			outlined
 		>
 			<template #prepend-icon>
 				<VIcon>
@@ -32,20 +35,17 @@
 			</template>
 		</DatePicker>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Full Custom
 		</h2>
 
 		<DatePicker
 			v-model="birthDate"
-			date-format="DD-MM-YYYY"
-			birthdate
-			append-icon
 			:vuetify-options="{
 				// The textField options can be binded
 				// directly if needed
 				textField: {
-					placeholder: ' ',
+					placeholder: null,
 					hint: null,
 					outlined: true,
 					clearable: true,
@@ -60,6 +60,11 @@
 					width: '310px'
 				}
 			}"
+			date-format="DD-MM-YYYY"
+			date-format-return="DD/MM/YYYY"
+			text-field-class="vd-form-input"
+			append-icon
+			birthdate
 		>
 			<template #append-icon>
 				<VIcon>
@@ -79,16 +84,19 @@
 			Set the date
 		</VBtn>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Show week-ends
 		</h2>
 
 		<DatePicker
+			text-field-class="vd-form-input"
 			show-week-ends
+			append-icon
 			clearable
+			outlined
 		/>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Range
 		</h2>
 
@@ -97,14 +105,19 @@
 			date-format="YYYY-MM-DD"
 			date-format-return="YYYY-MM-DD"
 			hint="YYYY-MM-DD Format"
-			text-field-class="mb-4"
+			text-field-class="vd-form-input mb-4"
 			label="Start Date"
+			append-icon
+			outlined
 		/>
 
 		<DatePicker
 			show-week-ends
 			:start-date="startDate"
+			text-field-class="vd-form-input"
 			text-field-activator
+			append-icon
+			outlined
 		/>
 	</DocSection>
 </template>

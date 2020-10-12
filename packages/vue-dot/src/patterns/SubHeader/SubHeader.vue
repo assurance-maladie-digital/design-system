@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-sub-header secondary white--text py-6 px-8">
+	<div
+		:style="widthStyles"
+		class="vd-sub-header secondary white--text py-6 px-8"
+	>
 		<slot name="back-btn">
 			<VFadeTransition
 				v-if="!hideBackBtn"
@@ -47,8 +50,8 @@
 						/>
 
 						<h2
-							v-else
-							class="headline font-weight-bold"
+							v-else-if="titleText"
+							class="text-h5 font-weight-bold"
 						>
 							{{ titleText }}
 						</h2>
@@ -70,10 +73,8 @@
 
 						<p
 							v-else
-							class="title font-weight-bold mt-1 mb-0"
-							:style="{
-								color: fadeWhite
-							}"
+							class="text-h6 font-weight-bold mt-1 mb-0"
+							:style="{ color: fadeWhite }"
 						>
 							{{ subTitleText }}
 						</p>
@@ -88,18 +89,19 @@
 					<VLayout
 						v-if="dataLists"
 						v-bind="options.dataListsLayout"
-						class="vd-sub-header-data-list mt-n3 mx-n2"
+						class="vd-sub-header-data-list"
 					>
 						<DataList
 							v-for="(dataList, index) in dataLists"
 							:key="'vd-sub-header-data-list' + index"
 							:loading="loading"
-							:list-title="dataList.listTitle"
+							:render-html-value="renderHtmlValue"
+							:list-title="dataList.title"
 							:items="dataList.items"
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
-							title-class="subtitle-1 font-weight-bold mb-2 mt-2"
-							width="auto"
+							item-width="auto"
+							title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
 							@click:item-action="dataListItemAction(index, $event)"
 						/>
 					</VLayout>
@@ -118,6 +120,7 @@
 	import { IDataListAction, DataListsItem } from './types';
 
 	import { customizable } from '../../mixins/customizable';
+	import { Widthable } from '../../mixins/widthable';
 
 	import DataList from '../../elements/DataList';
 
@@ -138,7 +141,7 @@
 			/** Title of the SubHeader */
 			titleText: {
 				type: String,
-				required: true
+				default: undefined
 			},
 			/** Sub-title of the SubHeader */
 			subTitleText: {
@@ -154,11 +157,16 @@
 			loading: {
 				type: Boolean,
 				default: false
+			},
+			/** Render the value as plain HTML */
+			renderHtmlValue: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	/**
 	 * SubHeader is a component that displays
@@ -191,7 +199,7 @@
 
 <style lang="scss" scoped>
 	.vd-sub-header {
-		width: 100%;
+		overflow-x: auto;
 
 		::v-deep {
 			.v-skeleton-loader__heading {
@@ -202,48 +210,31 @@
 		}
 	}
 
+	.vd-sub-header-data-list,
 	.vd-sub-header-informations {
-		flex: none;
-		width: 310px;
-		margin-right: 8px; // Avoid "contact" with right part
-	}
-
-	.vd-sub-header-data-list {
 		// Don't take all available space
 		flex: none;
-
-		::v-deep .vd-data-list {
-			max-width: 200px;
-			margin-left: 8px;
-
-			// Apply margin right to avoid empty
-			// space on smaller screens
-			&:not(:last-child) {
-				margin-right: 80px;
-			}
-
-			.vd-key {
-				display: inline-block;
-				font-size: .75rem !important;
-			}
-		}
+		max-width: none;
 	}
 
-	@media only screen and (max-width: 425px) {
-		.vd-sub-header-informations {
-			// Let section take all width
-			margin-right: 0;
+	.vd-sub-header-data-list ::v-deep .vd-data-list {
+		max-width: 200px;
+		margin-left: 8px;
+
+		// Apply margin right to avoid empty
+		// space on smaller screens
+		&:not(:last-child) {
+			margin-right: 80px;
 		}
 
-		// Remove margin right on DataList on small screens
-		.vd-sub-header-data-list {
-			::v-deep .vd-data-list {
-				margin: 0 8px;
+		.vd-key {
+			display: inline-block;
+			font-size: .75rem !important;
+		}
 
-				&:not(:last-child) {
-					margin-right: 8px;
-				}
-			}
+		.vd-data-list-item-label {
+			opacity: .8;
+			color: #fff !important;
 		}
 	}
 </style>

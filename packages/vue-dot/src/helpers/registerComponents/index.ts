@@ -8,10 +8,10 @@ export interface Components {
  * Register components in the global Vue instance
  *
  * @param {VueConstructor} Vue The global Vue instance
- * @param {object} componentList The list of components to register
+ * @param {object} components The list of components to register
  */
-export function registerComponents(Vue: VueConstructor, componentList: Components) {
-	Object.keys(componentList).forEach((name: string) => {
-		Vue.component(name, componentList[name]);
+export function registerComponents(Vue: VueConstructor, components: Components): void {
+	Object.keys(components).forEach((name: string) => {
+		Vue.component(name, components[name]);
 	});
 }

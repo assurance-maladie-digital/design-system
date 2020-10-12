@@ -2,4 +2,4 @@
 layout: Home
 ---
 
-# Hello World
+# Accueil

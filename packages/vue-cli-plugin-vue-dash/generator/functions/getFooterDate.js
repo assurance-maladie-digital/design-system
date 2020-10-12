@@ -5,13 +5,13 @@ dayjs.locale('fr');
 
 const { capitalizeFirstLetter } = require('../../utils');
 
-/** Returns the current date with '– MMMM YYYY' format */
+/** Returns the current date with 'MMMM YYYY' format */
 function getFooterDate() {
 	const month = dayjs().format('MMMM');
 	const capitalizedMonth = capitalizeFirstLetter(month);
 
 	const year = dayjs().format('YYYY');
-	const date = `– ${capitalizedMonth} ${year}`;
+	const date = `${capitalizedMonth} ${year}`;
 
 	return date;
 }

@@ -1,0 +1,49 @@
+<template>
+	<div class="vd-form-builder">
+		<FormFieldList
+			v-for="(section, sectionName) in form"
+			:key="'section-' + sectionName"
+			:list-title="section.title"
+			:description="section.description"
+			:fields="section.questions"
+			@change="sectionUpdated($event, sectionName)"
+			@refresh="$emit('refresh')"
+		/>
+	</div>
+</template>
+
+<script lang="ts">
+	import Component, { mixins } from 'vue-class-component';
+
+	import { FormBuilderCore } from './mixins/formBuilderCore';
+
+	import FormFieldList from '../FormFieldList';
+
+	const MixinsDeclaration = mixins(FormBuilderCore);
+
+	/**
+	 * FormBuilder is a component that displays a form
+	 * from a JSON object
+	 */
+	@Component({
+		components: {
+			FormFieldList
+		}
+	})
+	export default class FormBuilder extends MixinsDeclaration {}
+</script>
+
+<style lang="scss" scoped>
+	.vd-form-builder {
+		width: 100%;
+
+		.vd-field-list + .vd-field-list {
+			padding-top: 46px;
+			border-top: solid 1px rgba(0, 0, 0, .12);
+
+			&.theme--dark {
+				border-color: rgba(255, 255, 255, .12);
+			}
+		}
+	}
+</style>

@@ -62,9 +62,9 @@
 
 		<VTextField
 			v-model="actionValue"
-			class="mt-4"
-			outlined
 			label="New value"
+			class="vd-form-input mt-4"
+			outlined
 		/>
 	</DocSection>
 </template>
@@ -99,7 +99,7 @@
 		 *
 		 * @param {IDataListAction} dataListAction The dataListAction object containing dataListIndex and itemIndex
 		 */
-		setItemValue({ dataListIndex, itemIndex }: IDataListAction) {
+		setItemValue({ dataListIndex, itemIndex }: IDataListAction): void {
 			this.$set(this.dataLists[dataListIndex].items[itemIndex], 'value', this.actionValue);
 		}
 	}

@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 // If LIB_MODE is true, we're building the library
 // else, we're building the playground
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
-const LIMIT_SIZE = 400000;
+const LIMIT_SIZE = 435000;
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
@@ -65,15 +65,19 @@ const PLAYGROUND_MODE_CONFIG = {
 		entry: './playground/main.ts',
 		plugins: [
 			// Copy public folder content from /playground
-			new CopyPlugin([{
-				from: path.join(__dirname, './playground/public'),
-				to: path.join(__dirname, './dist'),
-				toType: 'dir',
-				ignore: [
-					'index.html',
-					'.DS_Store'
-				]
-			}])
+			new CopyPlugin({
+				patterns: [{
+					from: path.join(__dirname, './playground/public'),
+					to: path.join(__dirname, './dist'),
+					toType: 'dir',
+					globOptions: {
+						ignore: [
+							'index.html',
+							'.DS_Store'
+						]
+					}
+				}]
+			})
 		]
 	},
 	chainWebpack: (config) => {

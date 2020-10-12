@@ -15,12 +15,16 @@
 
 	import { mapActions } from 'vuex';
 
+	import { NotificationObj } from '../../src/modules/notification';
+
 	import {
 		mdiCheck,
 		mdiAlertCircle,
 		mdiInformation,
 		mdiAlert
 	} from '@mdi/js';
+
+	const notificationMessage = 'Test notification';
 
 	@Component({
 		// Vuex bindings
@@ -31,33 +35,33 @@
 	})
 	export default class NotificationEx extends Vue {
 		// Vuex bindings type declaration
-		notify!: (obj: object) => void;
+		notify!: (obj: NotificationObj) => void;
 		rmNotif!: () => void;
 
 		notifications = [
 			{
 				type: 'success',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiCheck
 			},
 			{
 				type: 'error',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiAlertCircle
 			},
 			{
 				type: 'info',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiInformation
 			},
 			{
 				type: 'warning',
-				message: 'Test notification',
+				message: notificationMessage,
 				icon: mdiAlert
 			}
 		];
 
-		testNotify() {
+		testNotify(): void {
 			this.rmNotif();
 
 			const randomIndex = Math.floor(Math.random() * this.notifications.length);

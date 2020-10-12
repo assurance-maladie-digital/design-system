@@ -4,6 +4,8 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
+	title: 'Design System Digital',
+	dest: 'dist',
 	themeConfig: {
 		sidebar: [
 			{
@@ -17,20 +19,56 @@ module.exports = {
 				]
 			},
 			{
-				title: 'Éléments',
-				group: 'elements',
+				title: 'Composants',
+				group: 'composants',
 				items: [
 					{
 						title: 'CopyBtn',
-						to: '/elements/copy-btn'
+						to: '/composants/copy-btn'
+					},
+					{
+						title: 'CustomIcon',
+						to: '/composants/custom-icon'
 					},
 					{
 						title: 'DataList',
-						to: '/elements/data-list'
+						to: '/composants/data-list'
+					},
+					{
+						title: 'DatePicker',
+						to: '/composants/date-picker'
+					},
+					{
+						title: 'DialogBox',
+						to: '/composants/dialog-box'
+					},
+					{
+						title: 'FileUpload',
+						to: '/composants/file-upload'
+					},
+					{
+						title: 'FooterWrapper',
+						to: '/composants/footer-wrapper'
 					},
 					{
 						title: 'HeaderLoading',
-						to: '/elements/header-loading'
+						to: '/composants/header-loading'
+					},
+					{
+						title: 'PageCard',
+						to: '/composants/page-card'
+					},
+					{
+						title: 'PaginatedTable',
+						to: '/composants/paginated-table'
+					},
+					{
+						title: 'SubHeader',
+						to: '/composants/sub-header'
+					},
+					{
+						title: 'UploadWorkflow',
+						to: '/composants/upload-workflow'
 					}
 				]
 			},

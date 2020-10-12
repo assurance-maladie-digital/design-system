@@ -1,24 +1,5 @@
 // Custom utility classes
 
-// Hide content visually but not for screen readers
-.sr-only {
-	position: absolute !important;
-	top: 0;
-	left: -999px;
-	width: 1px !important;
-	height: 1px !important;
-	white-space: nowrap;
-	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
-}
-
-// Style for required fields
-.required label::after {
-	top: -2px;
-	content: '*';
-	position: relative;
-}
-
 // Fade <transition>
 .fade-enter-active,
 .fade-leave-active {
@@ -36,6 +17,7 @@
 	width: 100%;
 }
 
+.no-max-width,
 .input-container {
 	max-width: none;
 }
@@ -44,15 +26,6 @@
 	.input-container {
 		max-width: 100%;
 	}
-}
-
-.form-input {
-	width: 328px;
-	flex: none;
-}
-
-.no-flex {
-	flex: none !important;
 }
 
 .pointer {

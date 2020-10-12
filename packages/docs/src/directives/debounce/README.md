@@ -1,5 +1,9 @@
+---
+title: Debounce
+---
+
 ::: slot title
-# Debounce
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -31,18 +35,20 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
   :value="['v-debounce']"
   :api="{
     'v-debounce': {
-      options: [{
-        name: 'value',
-        defaultValue: 'undefined',
-        type: 'function',
-        description: 'Fonction exécutée après le délai. Par défaut un évènement `change` sera émit.'
-      },
-      {
-        name: 'arg:time',
-        defaultValue: '500',
-        type: 'number',
-        description: 'Nombre de millisecondes à attendre avant d\'appeler la fonction `value` ou d\'émettre un événement.'
-      }]
+      options: [
+        {
+          name: 'value',
+          type: 'function',
+          default: 'undefined',
+          description: 'Fonction exécutée après le délai. Par défaut un évènement `change` sera émit.'
+        },
+        {
+          name: 'arg:time',
+          type: 'number',
+          default: '500',
+          description: 'Nombre de millisecondes à attendre avant d\'appeler la fonction `value` ou d\'émettre un événement.'
+        }
+      ]
     }
   }"
 />

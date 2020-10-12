@@ -1,12 +1,13 @@
 <template>
 	<DocSection title="FileUpload">
-		<h2 class="subtitle-1 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mb-2 font-weight-bold">
 			Default with event handlers
 		</h2>
 
 		<FileUpload
 			ref="fileUpload"
 			v-model="file"
+			width="512"
 			@error="setError"
 			@change="error = null; success = true"
 		/>
@@ -44,7 +45,7 @@
 			Aucun fichier sélectionné
 		</p>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Translated
 		</h2>
 
@@ -56,6 +57,7 @@
 				'GB',
 				'TB'
 			]"
+			width="512"
 		>
 			<template #action-text="{ multiple }">
 				Place your file{{ multiple ? 's' : '' }} here
@@ -74,11 +76,14 @@
 			</template>
 		</FileUpload>
 
-		<h2 class="subtitle-1 mt-4 mb-2 font-weight-bold">
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
 			Custom content & styles
 		</h2>
 
-		<FileUpload class="custom accent elevation-3">
+		<FileUpload
+			width="512"
+			class="custom accent elevation-3"
+		>
 			<template #placeholder>
 				<VLayout
 					tag="span"
@@ -108,6 +113,7 @@
 	import { Refs } from '../../src/types';
 
 	import { mdiCloudUpload } from '@mdi/js';
+	import { ErrorCodesType } from '../../src/patterns/FileUpload/types';
 
 	interface Error {
 		code: string;
@@ -119,7 +125,7 @@
 		$refs!: Refs<{
 			fileUpload: {
 				retry: () => void;
-			}
+			};
 		}>;
 
 		uploadIcon = mdiCloudUpload;
@@ -129,25 +135,25 @@
 
 		file: File | null = null;
 
-		errorsText = {
+		errorsText: ErrorCodesType = {
 			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
 			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
 		};
 
 		/** Click on file input */
-		retry() {
+		retry(): void {
 			this.$refs.fileUpload.retry();
 		}
 
-		setError(error: Error) {
+		setError(error: Error): void {
 			this.error = error;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	@import '../../src/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
 	$darken-accent: saturate(darken($vd-accent, 10%), 20%);
 
@@ -156,7 +162,7 @@
 		padding: 10px 15px !important;
 
 		&:hover,
-		&:focus {
+		&:focus-within {
 			background: $darken-accent !important;
 		}
 

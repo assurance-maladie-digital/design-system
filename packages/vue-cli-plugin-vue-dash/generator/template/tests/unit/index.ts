@@ -10,7 +10,9 @@ import {
 	Wrapper,
 	VueClass,
 	config
-} from '@vue/test-utils';<% if (i18n) { %>
+} from '@vue/test-utils';
+
+import { addVApp } from '@cnamts/vue-dot/tests/utils/addVApp';<% if (i18n) { %>
 
 // If mocks is undefined, init it
 if (!config.mocks) {
@@ -33,7 +35,7 @@ export const router = new VueRouter();
  * @param {RouterOptions} options The router options
  * @returns {VueRouter} The router instance
  */
-export function newRouter(options: RouterOptions) {
+export function newRouter(options: RouterOptions): VueRouter {
 	return new VueRouter(options);
 }
 
@@ -51,7 +53,7 @@ import Vuex, { Store, StoreOptions } from 'vuex';
  * @param {StoreOptions} options The store options
  * @returns {Store} The store instance
  */
-export function newStore(options: StoreOptions<any>): Store<any> {
+export function newStore<T = unknown>(options: StoreOptions<T>): Store<T> {
 	return new Vuex.Store(options);
 }
 
@@ -65,10 +67,15 @@ localVue.use(VueDot);
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
 
+const vuetify = new Vuetify();
+
+import InputFacade from 'vue-input-facade';
+localVue.use(InputFacade);
+
+addVApp();
+
 // Register global components
 import '@/components/global';
-
-const vuetify = new Vuetify();
 
 /**
  * Generic mount function
@@ -81,7 +88,7 @@ const vuetify = new Vuetify();
 export function mountComponent(
 	component: VueClass<Vue>,
 	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
-	fullMount: boolean = false
+	fullMount = false
 ): Wrapper<Vue> {
 	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;
