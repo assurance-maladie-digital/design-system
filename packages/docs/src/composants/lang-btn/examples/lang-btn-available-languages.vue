@@ -3,7 +3,9 @@
 		v-model="lang"
 		:available-languages="[
 			'fr',
-			'en'
+			'en',
+			'de',
+			'zh'
 		]"
 	/>
 </template>
@@ -13,7 +15,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class LangBtnEx extends Vue {
+	export default class LangBtnAvailableLanguages extends Vue {
 		lang = 'fr';
 	}
 </script>

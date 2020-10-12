@@ -55,6 +55,10 @@ module.exports = {
 						to: '/composants/header-loading'
 					},
 					{
+						title: 'LangBtn',
+						to: '/composants/lang-btn'
+					},
+					{
 						title: 'PageCard',
 						to: '/composants/page-card'
 					},
@@ -69,16 +73,6 @@ module.exports = {
 					{
 						title: 'UploadWorkflow',
 						to: '/composants/upload-workflow'
-					}
-				]
-			},
-			{
-				title: 'Patterns',
-				group: 'patterns',
-				items: [
-					{
-						title: 'LangBtn',
-						to: '/patterns/lang-btn'
 					}
 				]
 			}
