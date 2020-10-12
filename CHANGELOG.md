@@ -5,10 +5,14 @@
 - ✨ **Nouvelles fonctionnalités**
   - **ErrorPage:** Ajout d'un nouveau template ([#604](https://github.com/assurance-maladie-digital/design-system/pull/604)) ([ce55807](https://github.com/assurance-maladie-digital/design-system/commit/ce558079ead05a855303576856bdc4b1ead37c61))
 
+- ♻️ **Refactoring**
+  - **LangBtn:** Refonte du composant ([#621](https://github.com/assurance-maladie-digital/design-system/pull/621))
+
 ### Vue Dash
 
 - 🔥 **Suppressions**
-  - **template:** Utilisation du composant `ErrorPage` de Vue Dot ([#605](https://github.com/assurance-maladie-digital/design-system/pull/605))
+  - **template:** Utilisation du composant `ErrorPage` de Vue Dot ([#605](https://github.com/assurance-maladie-digital/design-system/pull/605)) ([cea80b5](https://github.com/assurance-maladie-digital/design-system/commit/cea80b59029ef986bc3d0c4c4344c228d2e331e4))
+  - **template:** Suppression des imports des composants globaux ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580))
 
 ### FormBuilder
 
