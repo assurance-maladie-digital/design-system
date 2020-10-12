@@ -10,20 +10,10 @@
 		<template #activator="{ on }">
 			<VBtn
 				v-if="currentLangData"
+				:aria-label="currentLangData.label"
 				v-bind="options.btn"
 				v-on="on"
 			>
-				<!--
-					If flags mode is activated:
-					The flag of the current language
-				-->
-				<img
-					v-if="flags"
-					:src="currentLangData.flagUrl"
-					class="vd-current-flag"
-					alt=""
-				>
-
 				<!-- Current language -->
 				<span
 					v-if="currentLangTextBtn"
@@ -50,17 +40,6 @@
 				v-bind="options.listTile"
 				@click="updateLang(lang)"
 			>
-				<VListItemAvatar
-					v-if="flags"
-					v-bind="options.listItemAvatar"
-				>
-					<img
-						:src="`${flagsUrl}${lang}.svg`"
-						class="vd-flag-img"
-						alt=""
-					>
-				</VListItemAvatar>
-
 				<!-- Language name -->
 				<VListItemTitle v-bind="options.listTileTitle">
 					{{ item.nativeName }}
@@ -94,35 +73,21 @@
 			 */
 			availableLanguages: {
 				type: [Array, String] as PropType<string[] | AllLanguagesChar>,
-				default: '*'
+				default: ['fr','en']
 			},
 			/** Hide the down arrow inside the activator button */
 			hideDownArrow: {
 				type: Boolean,
 				default: false
 			},
-			/** Activate flags mode */
-			flags: {
-				type: Boolean,
-				default: false
-			},
-			/** The location of the flags */
-			flagsUrl: {
-				type: String,
-				default: '/img/flags/'
-			},
-			flagsExt: {
-				type: String,
-				default: 'svg'
-			},
 			/** Show the name of the current language inside the activator button */
 			currentLangTextBtn: {
 				type: Boolean,
 				default: true
 			},
-			ariaLabel: {
+			label: {
 				type: String,
-				default: locales.ariaLabel
+				default: locales.label
 			},
 			/** The v-model value */
 			value: {
@@ -180,10 +145,8 @@
 			return {
 				/** The native name */
 				name: this.languages[this.currentLang].nativeName,
-				/** The url of the flag */
-				flagUrl: `${this.flagsUrl}${this.currentLang}.${this.flagsExt}`,
 				/** The accessible name of the main button */
-				ariaLabel: `${this.ariaLabel} ${this.languages[this.currentLang].nativeName}`
+				label: `${this.label} ${this.languages[this.currentLang].nativeName}`
 			};
 		}
 
@@ -219,17 +182,6 @@
 </script>
 
 <style lang="scss" scoped>
-	// Flags styles
-	.vd-lang-btn {
-		.v-avatar img {
-			border-radius: 0%;
-		}
-
-		.vd-current-flag {
-			width: 30px;
-		}
-	}
-
 	// Allow scrollbar for the menu,
 	// and limit it's height to 300px
 	// (needed when there is a lot of content)

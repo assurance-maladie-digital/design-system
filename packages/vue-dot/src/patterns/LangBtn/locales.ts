@@ -1,3 +1,3 @@
 export const locales = {
-	ariaLabel: 'Choix de la langue. Actuellement :'
+	label: 'Choix de la langue. Actuellement :'
 };
