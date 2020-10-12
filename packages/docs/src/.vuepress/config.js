@@ -55,6 +55,10 @@ module.exports = {
 						to: '/composants/header-loading'
 					},
 					{
+						title: 'LangBtn',
+						to: '/composants/lang-btn'
+					},
+					{
 						title: 'PageCard',
 						to: '/composants/page-card'
 					},
