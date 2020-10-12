@@ -15,9 +15,7 @@
 				v-on="on"
 			>
 				<!-- Current language -->
-				<span
-					class="ml-2"
-				>
+				<span class="ml-2">
 					{{ currentLangData.name }}
 				</span>
 
