@@ -52,7 +52,8 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
           name: 'data-lists',
           type: 'DataListsItem[]',
           default: 'undefined',
-          description: 'Liste des composants `DataList` en mode colonne.'
+          description: 'Liste des composants `DataList` en mode colonne.',
+          example: '{\n	key: string;\n	value?: string;\n	action?: string;\n	chip?: boolean;\n	icon?: string;\n	options?: Options;\n}'
         },
         {
           name: 'render-html-value',

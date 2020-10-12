@@ -28,7 +28,8 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           name: 'value',
           type: 'FileListItem[]',
           required: true,
-          description: 'La liste des fichiers que l\'utilisateur doit sélectionner.'
+          description: 'La liste des fichiers que l\'utilisateur doit sélectionner.',
+          example: '{\n	id: string;\n	title: string;\n	state?: FileState;\n	name?: string;\n	file?: File;\n}'
         },
         {
           name: 'section-title',
@@ -81,7 +82,7 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
         {
           name: 'error',
           description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
-          value: '{\n  file: File,\n  code: ErrorCodes\n}'
+          value: '{\n	file: File,\n	code: ErrorCodes\n}'
         }
       ]
     },
@@ -91,7 +92,8 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           name: 'files',
           type: 'FileItem[]',
           required: true,
-          description: 'La liste des fichiers à afficher.'
+          description: 'La liste des fichiers à afficher.',
+          example: '{\n	id: string;\n	title: string;\n	state: FileState;\n	name?: string;\n	optional?: boolean;\n}'
         },
         {
           name: 'show-view-btn',
