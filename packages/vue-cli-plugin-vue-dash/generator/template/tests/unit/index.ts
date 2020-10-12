@@ -74,9 +74,6 @@ localVue.use(InputFacade);
 
 addVApp();
 
-// Register global components
-import '@/components/global';
-
 /**
  * Generic mount function
  *

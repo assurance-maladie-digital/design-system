@@ -24,9 +24,6 @@ import { router } from './router';
 import { store } from './store';<% if (i18n) { %>
 import { i18n } from './i18n';<% } %>
 
-// Register global components
-import './components/global';
-
 // Remove "tip" from browser console
 Vue.config.productionTip = false;
 
