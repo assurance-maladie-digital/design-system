@@ -283,6 +283,6 @@ Vous pouvez utiliser le slot `title` pour personnaliser le titre.
 
 ### Personnalisation des composants Vuetify
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `DataListItem` en utilisant la propriété `options` sur les items de la liste.
+Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `DataListItem` en utilisant la propriété `options` sur les items de la liste.
 
 <DocExample file="composants/data-list/examples/data-list-options" />

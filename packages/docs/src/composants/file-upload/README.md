@@ -120,7 +120,7 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque la valeur du composant change.',
+          description: 'Événement émis lorsque la valeur change.',
           value: 'File | File[]'
         },
         {

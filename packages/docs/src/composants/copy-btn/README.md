@@ -88,6 +88,6 @@ Vous pouvez utiliser les slots pour personnaliser l'icône ainsi que le contenu 
 
 ### Personnalisation des composants Vuetify
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la prop `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `CopyBtn` en utilisant la prop `vuetify-options`.
 
 <DocExample file="composants/copy-btn/examples/copy-btn-vuetify-options" />

@@ -182,6 +182,6 @@ Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre 
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la prop `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `UploadWorkflow` en utilisant la prop `vuetify-options`.
 
 <DocExample file="composants/upload-workflow/examples/upload-workflow-options" />

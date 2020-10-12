@@ -218,7 +218,7 @@ Pour cela, vous pouvez utiliser les règles de validation inclues dans la librai
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la prop `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `DatePicker` en utilisant la prop `vuetify-options`.
 
 <DocInfo>
 
