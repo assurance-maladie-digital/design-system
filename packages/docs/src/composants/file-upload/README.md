@@ -144,11 +144,11 @@ Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélecti
 
 ### Règles de validation
 
-Vous pouvez modifier taille maximale d'un fichier ainsi que les extensions autorisées avec les attributs `fileSizeMax` et `allowedExtensions`.
+Vous pouvez modifier taille maximale d'un fichier ainsi que les extensions autorisées avec les props `file-size-max` et `allowed-extensions`.
 
 <DocInfo>
 
-Vous pouvez spécifier la propriété `accept` pour définir quels types de fichiers l'utilisateur peut sélectionner. Par défaut, celle-ci est calculée automatiquement à partir de la propriété `allowedExtensions`.
+Vous pouvez spécifier la prop `accept` pour définir quels types de fichiers l'utilisateur peut sélectionner. Par défaut, celle-ci est calculée automatiquement à partir de la prop `allowed-extensions`.
 
 </DocInfo>
 

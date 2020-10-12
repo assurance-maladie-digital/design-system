@@ -53,7 +53,7 @@ Le pattern `FooterWrapper` est utilisé avec le composant `FooterBtn` pour affic
 
 ### Bouton inert
 
-Vous pouvez rendre un bouton inactif grâce à la propriété `inert`. Celui-ci sera alors désactivé et rendu en tant que `div`.
+Vous pouvez rendre un bouton inactif grâce à la prop `inert`. Celui-ci sera alors désactivé et rendu en tant que `div`.
 
 <DocExample
   eager

@@ -240,7 +240,7 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
 
 ### Icônes
 
-Vous pouvez spécifier une icône à afficher pour chaque item de la liste en utilisant la propriété `icons` pour définir la liste des icônes disponibles.<br>
+Vous pouvez spécifier une icône à afficher pour chaque item de la liste en utilisant la prop `icons` pour définir la liste des icônes disponibles.<br>
 Si une icône est spécifiée mais qu'elle n'est pas trouvée dans la liste, rien ne sera affiché.
 
 <DocInfo>
@@ -265,7 +265,7 @@ Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'a
 
 ### Valeurs HTML
 
-Vous pouvez afficher les valeurs via la directive `v-html` en utilisant la propriété `render-html-value`.
+Vous pouvez afficher les valeurs via la directive `v-html` en utilisant la prop `render-html-value`.
 
 <DocInfo color="orange">
 
