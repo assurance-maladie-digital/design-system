@@ -1,5 +1,9 @@
+---
+title: DialogBox
+---
+
 ::: slot title
-# DialogBox
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -119,7 +123,7 @@ Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi le
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `DialogBox` en utilisant la propriété `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `DialogBox` en utilisant la prop `vuetify-options`.
 
 <DocInfo>
 

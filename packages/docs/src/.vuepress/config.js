@@ -4,6 +4,7 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
+	title: 'Design System Digital',
 	dest: 'dist',
 	themeConfig: {
 		sidebar: [
@@ -52,6 +53,10 @@ module.exports = {
 					{
 						title: 'HeaderLoading',
 						to: '/composants/header-loading'
+					},
+					{
+						title: 'LangBtn',
+						to: '/composants/lang-btn'
 					},
 					{
 						title: 'PageCard',

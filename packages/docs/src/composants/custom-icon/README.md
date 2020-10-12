@@ -1,5 +1,9 @@
+---
+title: CustomIcon
+---
+
 ::: slot title
-# CustomIcon
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -78,7 +82,7 @@ L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée pa
 
 ### Modification de la taille et de la couleur
 
-Vous pouvez modifier la taille et la couleur de l'icône grâce aux propriétés `size` et `color`.
+Vous pouvez modifier la taille et la couleur de l'icône grâce aux props `size` et `color`.
 
 <DocExample file="composants/custom-icon/examples/custom-icon-size-color" />
 

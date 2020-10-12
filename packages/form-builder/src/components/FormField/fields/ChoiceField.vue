@@ -13,10 +13,10 @@
 		<!-- The other field -->
 		<template v-if="otherField">
 			<VExpandTransition
-				v-if="otherField.selectedChoice"
+				v-if="choiceSelected"
 				hide-on-leave
 			>
-				<div v-if="showOtherField">
+				<div v-if="showOtherTextareaField">
 					<h4
 						v-if="otherField.label"
 						class="mb-1 body-1"
@@ -132,14 +132,15 @@
 		}
 
 		/** Show the other field when there is a choice value corresponding to the other selectedChoice */
-		get showOtherField(): boolean {
+		get showOtherTextareaField(): boolean {
+			const otherSelectedChoice = this.otherField?.selectedChoice;
+
 			// Expect the otherfield will have a selectedChoice defined.
-			if (!this.otherField?.selectedChoice) {
+			if (!this.choiceSelected && !otherSelectedChoice) {
 				return false;
 			}
 
 			const choiceFieldValue = this.choiceValue.value;
-			const otherSelectedChoice = this.otherField.selectedChoice;
 
 			// Expect the choiceField value as string equal to the selected choice
 			if (choiceFieldValue === otherSelectedChoice) {
@@ -159,6 +160,10 @@
 			return false;
 		}
 
+		get choiceSelected(): boolean {
+			return this.otherField?.selectedChoice !== undefined && this.otherField?.selectedChoice !== null;
+		}
+
 		/**
 		 * Check if the other field is active or not
 		 *
@@ -168,7 +173,7 @@
 			const choiceFieldValue = this.choiceValue?.value;
 			const selectedChoice = this.field.other?.selectedChoice;
 
-			if (!selectedChoice || !choiceFieldValue) {
+			if (!this.choiceSelected) {
 				return false;
 			} else if (Array.isArray(choiceFieldValue)) {
 				return choiceFieldValue.includes(selectedChoice);

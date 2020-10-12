@@ -31,6 +31,10 @@
 
 			<VMain>
 				<PageCard width="1200px">
+					<!--
+						Use a slot to let Vupress generate title
+						boilerplate (link anchor, id etc)
+					-->
 					<Content
 						class="mb-4"
 						slot-key="title"
@@ -68,7 +72,7 @@
 		drawer = null;
 
 		get sidebarItems(): SidebarItem[] {
-			return (this as any).$site.themeConfig.sidebar;
+			return this.$site.themeConfig.sidebar;
 		}
 	}
 </script>
