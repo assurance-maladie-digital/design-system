@@ -16,32 +16,20 @@
 				height="auto"
 				min-height="40"
 				active-class="white--text"
-				class="text-none text-wrap py-2 text-left"
+				class="text-none text-wrap py-2 text-left d-flex"
 				color="accent"
 				@click="toggleItem(item)"
 			>
-				<VLayout>
-					<VRow no-gutters>
-						<VCol
-							cols="11"
-						>
-							<span class="text-body-1">
-								{{ item.text }}
-							</span>
-						</VCol>
-						<VCol
-							cols="1"
-							align-self="center"
-						>
-							<VIcon
-								:style="getIconStyle(item)"
-								class="ml-1 white--text"
-							>
-								{{ checkIcon }}
-							</VIcon>
-						</VCol>
-					</VRow>
-				</VLayout>
+				<span class="text-body-1">
+					{{ item.text }}
+				</span>
+				<VSpacer />
+				<VIcon
+					:style="getIconStyle(item)"
+					class="white--text flex-shrink-0"
+				>
+					{{ checkIcon }}
+				</VIcon>
 			</VBtn>
 		</VBtnToggle>
 
