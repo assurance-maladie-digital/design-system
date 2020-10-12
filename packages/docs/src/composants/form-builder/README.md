@@ -1,42 +1,13 @@
+---
+title: FormBuilder
+---
 ::: slot title
-
-# FormBuilder
-
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
-
-L'élément `FormBuilder` est utilisé pour afficher une questionnaire avec une ou plusieurs sections de `FormFieldList`.
-
-NOTE: Il est construit pour fonctionner avec le package backend symfony `questionnaire-bundle`.
+Le composant `FormBuilder` est utilisé pour afficher une questionnaire.
 :::
-
-## Pré-requis
-
-<DocInfo>
-
-installation
-
-```
-"dependencies": {
-  "@cnamts/vue-dot": "latest",
-    //ajout de la ligne suivante
-  "@cnamts/form-builder": "latest",
-    ....
-}
-```
-
-Configuration.
-
-Ajouter le package comme pour vue-dot dans le projet en souhaiter.
-
-```
-import FormBuilder from '@cnamts/form-builder';
-
-Vue.use(FormBuilder);
-```
-
-</DocInfo>
 
 ## Utilisation
 
@@ -56,7 +27,7 @@ Vue.use(FormBuilder);
           name: 'form',
           type: 'Form',
           required: true,
-          description: 'Le questionnaire avec des sections à afficher',
+          description: 'Le questionnaire à afficher',
           example: '{\n sectionId: {\n  title: string,\n  description: string,\n  questions: FormFieldList\n }\n}'
         }
       ],

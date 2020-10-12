@@ -1,5 +1,5 @@
 <template>
-	<Form-builder :form="form" />
+	<FormBuilder :form="form" />
 </template>
 
 <script lang="ts">

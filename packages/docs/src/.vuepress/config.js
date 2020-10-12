@@ -47,6 +47,10 @@ module.exports = {
 						to: '/composants/file-upload'
 					},
 					{
+						title: 'FormBuilder',
+						to: '/composants/form-builder'
+					},
+					{
 						title: 'FooterWrapper',
 						to: '/composants/footer-wrapper'
 					},
@@ -73,10 +77,6 @@ module.exports = {
 					{
 						title: 'UploadWorkflow',
 						to: '/composants/upload-workflow'
-					},
-					{
-						title: 'FormBuilder',
-						to: '/composants/form-builder'
 					}
 				]
 			}

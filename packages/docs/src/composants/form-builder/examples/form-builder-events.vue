@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Form-builder
+		<FormBuilder
 			:form="form"
 			@change="formChanged"
 			@refresh="formRefresh"

@@ -1,5 +1,5 @@
 <template>
-	<Form-builder :form="form" />
+	<FormBuilder :form="form" />
 </template>
 
 <script lang="ts">
@@ -24,7 +24,7 @@
 						}
 					},
 					questionAge: {
-						type: 'paswword',
+						type: 'password',
 						title: 'Mot de passe',
 						value: null,
 						fieldOptions: {
