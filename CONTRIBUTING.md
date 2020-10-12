@@ -93,7 +93,7 @@ There is currently an [issue when using monorepo-run on Windows](https://github.
 
 #### Code style
 
-You need to respect the code style defined in the EditorConfig file and to resolve any warning or error thrown by *TSLint* or *ESLint*.
+You need to respect the code style defined in the EditorConfig file and to resolve any warning or error thrown by *ESLint*.
 
 #### Commit guidelines
 

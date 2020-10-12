@@ -1,5 +1,4 @@
 // eslint-disable no-console
-// tslint:disable: no-console
 
 import chalk from 'chalk';
 
