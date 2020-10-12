@@ -70,7 +70,7 @@
 			 */
 			availableLanguages: {
 				type: [Array, String] as PropType<string[] | AllLanguagesChar>,
-				default: ['fr','en']
+				default: ['fr', 'en']
 			},
 			/** Hide the down arrow inside the activator button */
 			hideDownArrow: {
