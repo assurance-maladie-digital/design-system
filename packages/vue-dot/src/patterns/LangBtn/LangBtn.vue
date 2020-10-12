@@ -16,7 +16,6 @@
 			>
 				<!-- Current language -->
 				<span
-					v-if="currentLangTextBtn"
 					class="ml-2"
 				>
 					{{ currentLangData.name }}
@@ -79,11 +78,6 @@
 			hideDownArrow: {
 				type: Boolean,
 				default: false
-			},
-			/** Show the name of the current language inside the activator button */
-			currentLangTextBtn: {
-				type: Boolean,
-				default: true
 			},
 			label: {
 				type: String,
