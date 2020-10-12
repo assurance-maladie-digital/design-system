@@ -168,6 +168,12 @@ Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue deman
 
 <DocExample file="composants/upload-workflow/examples/upload-workflow-single-file" />
 
+### Fichiers optionnels
+
+Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
+
+<DocExample file="composants/upload-workflow/examples/upload-workflow-optional" />
+
 ### Utilisation des slots
 
 Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
