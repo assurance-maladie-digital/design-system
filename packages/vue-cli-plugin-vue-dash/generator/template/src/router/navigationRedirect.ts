@@ -1,5 +1,5 @@
 import { Route } from 'vue-router';
-import { Next } from './types';
+import { Next } from '@cnamts/vue-dot/src/types';
 
 // Environment variable
 declare const MAINTENANCE: string;
