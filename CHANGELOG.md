@@ -7,6 +7,7 @@
 
 - ♻️ **Refactoring**
   - **LangBtn:** Refonte du composant ([#621](https://github.com/assurance-maladie-digital/design-system/pull/621)) ([e795fbb](https://github.com/assurance-maladie-digital/design-system/commit/e795fbb178f2293e38cb5ed103e49fb25ad26f7f))
+  - **Style:** Ajout des styles commun ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625))
 
 ### Vue Dash
 
