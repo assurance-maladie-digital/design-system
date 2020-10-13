@@ -1,22 +1,13 @@
+---
+title: FormFieldList
+---
 ::: slot title
-
-# FormFieldList
-
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
-
 L'élément `FormFieldList` est utilisé pour afficher une liste de champs de formulaire pré définie avec le composant `FormField`.
-
 :::
-
-## Pré-requis
-
-<DocInfo>
-
-Pour l'installation, voir installation des dépendences dans la documentation du composant parent `FormBuilder`
-
-</DocInfo>
 
 ## Utilisation
 

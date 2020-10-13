@@ -1,4 +1,4 @@
-w<template>
+<template>
 	<div>
 		<FormFieldList
 			v-model="fieldList.questions"
@@ -32,19 +32,17 @@ w<template>
 	import Component from 'vue-class-component';
 
 	import { FieldList } from '@cnamts/form-builder/src/components/FormFieldList/types';
-	import { setTimeout } from 'timers';
 
 	@Component<FormFieldListEventsEx>({
 		watch: {
 			dialog(newValue) {
-				if(!newValue) {
+				if (!newValue) {
 					this.refresh = false;
 				}
 			}
 		}
 	})
 	export default class FormFieldListEventsEx extends Vue {
-
 		dialog = false;
 		refresh = false;
 
@@ -72,7 +70,6 @@ w<template>
 		listChanged(): void {
 			setTimeout(() => {
 				this.dialog = true;
-
 			}, 400);
 		}
 

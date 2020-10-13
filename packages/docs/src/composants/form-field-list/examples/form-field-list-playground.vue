@@ -1,4 +1,4 @@
-w<template>
+<template>
 	<VRow>
 		<VCol
 			cols="12"
@@ -11,6 +11,7 @@ w<template>
 				clearable
 				outlined
 			/>
+
 			<VTextField
 				v-model="props.description"
 				label="Description du formulaire"
@@ -25,15 +26,11 @@ w<template>
 			cols="12"
 			md="6"
 		>
-			<VCard>
-				<VCardText>
-					<FormFieldList
-						v-model="finalFields"
-						:list-title="props.listTitle"
-						:description="props.description"
-					/>
-				</VCardText>
-			</VCard>
+			<FormFieldList
+				v-model="finalFields"
+				:list-title="props.listTitle"
+				:description="props.description"
+			/>
 		</VCol>
 	</VRow>
 </template>
@@ -55,7 +52,6 @@ w<template>
 		}
 	})
 	export default class FormFieldListPlaygroundEx extends Vue {
-
 		props = {
 			listTitle: undefined,
 			description: undefined

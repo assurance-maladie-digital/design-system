@@ -1,4 +1,4 @@
-w<template>
+<template>
 	<FormFieldList
 		v-model="fieldList.questions"
 	/>
