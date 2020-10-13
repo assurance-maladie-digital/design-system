@@ -1,5 +1,9 @@
+---
+title: CopyBtn
+---
+
 ::: slot title
-# CopyBtn
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -32,7 +36,7 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
           name: 'label',
           type: 'string',
           required: true,
-          description: 'Le label accessible du bouton. Cette propriété est nécessaire pour rendre le bouton accessible aux lecteurs d\'écrans, n\'hésitez pas à décrire ce que va copier le bouton.'
+          description: 'Le label accessible du bouton. Cette prop est nécessaire pour rendre le bouton accessible aux lecteurs d\'écrans, n\'hésitez pas à décrire ce que va copier le bouton.'
         },
         {
           name: 'hide-tooltip',
@@ -72,7 +76,7 @@ Cliquez sur le bouton ci-dessous, le texte contenu dans le champ de formulaire s
 
 ### Tooltip masqué
 
-Vous pouvez masquer le tooltip en utilisant la propriété `hide-tooltip`.
+Vous pouvez masquer le tooltip en utilisant la prop `hide-tooltip`.
 
 <DocExample file="composants/copy-btn/examples/copy-btn-no-tooltip" />
 
@@ -84,6 +88,6 @@ Vous pouvez utiliser les slots pour personnaliser l'icône ainsi que le contenu 
 
 ### Personnalisation des composants Vuetify
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `CopyBtn` en utilisant la prop `vuetify-options`.
 
 <DocExample file="composants/copy-btn/examples/copy-btn-vuetify-options" />

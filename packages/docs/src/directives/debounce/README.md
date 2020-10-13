@@ -1,5 +1,9 @@
+---
+title: Debounce
+---
+
 ::: slot title
-# Debounce
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

@@ -4,6 +4,7 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
+	title: 'Design System Digital',
 	dest: 'dist',
 	themeConfig: {
 		sidebar: [
@@ -46,12 +47,20 @@ module.exports = {
 						to: '/composants/file-upload'
 					},
 					{
+						title: 'FormBuilder',
+						to: '/composants/form-builder'
+					},
+					{
 						title: 'FooterWrapper',
 						to: '/composants/footer-wrapper'
 					},
 					{
 						title: 'HeaderLoading',
 						to: '/composants/header-loading'
+					},
+					{
+						title: 'LangBtn',
+						to: '/composants/lang-btn'
 					},
 					{
 						title: 'PageCard',

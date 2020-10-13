@@ -9,7 +9,7 @@ interface TestComponent extends Vue {
 
 /** Create the test component */
 function createTestComponent() {
-	return Vue.component('test', {
+	return Vue.component('Test', {
 		mixins: [
 			Widthable
 		],

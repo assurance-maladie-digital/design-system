@@ -1,5 +1,9 @@
+---
+title: PageCard
+---
+
 ::: slot title
-# PageCard
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -73,7 +77,7 @@ Vous pouvez transformer la `PageCard` en simple conteneur en la rendant transpar
 
 ### Largeur personnalisée
 
-Vous pouvez modifier la largeur de la `PageCard` en utilisant la propriété `width`.
+Vous pouvez modifier la largeur de la `PageCard` en utilisant la prop `width`.
 
 <DocInfo>
 
