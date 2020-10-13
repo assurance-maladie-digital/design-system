@@ -6,7 +6,7 @@ title: FormFieldList
 :::
 
 ::: slot description
-L'élément `FormFieldList` est utilisé pour afficher une liste de champs de formulaire pré définie avec le composant `FormField`.
+Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d'une liste de champs.
 :::
 
 ## Utilisation
@@ -27,11 +27,11 @@ L'élément `FormFieldList` est utilisé pour afficher une liste de champs de fo
           name: 'fields',
           type: 'Fields',
           required: true,
-          description: 'La liste des champs à afficher',
+          description: 'La liste des champs à afficher.',
           example: '{\n fieldId: Field\n}'
         },
         {
-          name: 'listTitle',
+          name: 'list-title',
           type: 'string',
           required: false,
           description: 'Le titre du formulaire'
@@ -46,12 +46,12 @@ L'élément `FormFieldList` est utilisé pour afficher une liste de champs de fo
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque l\'utilisateur change la valeur d\'un champ',
+          description: 'Événement émis lorsque la valeur d\'un champ change.',
           value: 'fields: Fields'
         },
         {
           name: 'refresh',
-          description: 'Événement émis lorsque l\'utilisateur change la valeur d\'un champ dynamique'
+          description: 'Événement émis lorsque la valeur d\'un champ dynamique change.'
         }
       ]
     }

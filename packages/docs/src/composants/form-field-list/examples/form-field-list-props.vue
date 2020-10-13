@@ -13,7 +13,7 @@
 	import { FieldList } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
 	@Component
-	export default class FormFieldListPropsEx extends Vue {
+	export default class FormFieldListProps extends Vue {
 		fieldList: FieldList = {
 			title: 'Titre',
 			description: 'Description',

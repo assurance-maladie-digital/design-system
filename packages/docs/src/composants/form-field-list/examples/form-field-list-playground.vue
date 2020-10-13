@@ -41,7 +41,7 @@
 
 	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
-	@Component<FormFieldListPlaygroundEx>({
+	@Component<FormFieldListPlayground>({
 		watch: {
 			fields: {
 				handler(newValue) {
@@ -51,7 +51,7 @@
 			}
 		}
 	})
-	export default class FormFieldListPlaygroundEx extends Vue {
+	export default class FormFieldListPlayground extends Vue {
 		props = {
 			listTitle: undefined,
 			description: undefined

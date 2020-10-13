@@ -33,7 +33,7 @@
 
 	import { FieldList } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
-	@Component<FormFieldListEventsEx>({
+	@Component<FormFieldListEvents>({
 		watch: {
 			dialog(newValue) {
 				if (!newValue) {
@@ -42,7 +42,7 @@
 			}
 		}
 	})
-	export default class FormFieldListEventsEx extends Vue {
+	export default class FormFieldListEvents extends Vue {
 		dialog = false;
 		refresh = false;
 
