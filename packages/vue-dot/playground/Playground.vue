@@ -53,6 +53,8 @@
 
 				<LangBtnEx />
 
+				<LoginCardEx />
+
 				<NotificationEx />
 
 				<PaginatedTableEx />
