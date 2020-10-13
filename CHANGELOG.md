@@ -14,6 +14,9 @@
   - **template:** Utilisation du composant `ErrorPage` de Vue Dot ([#605](https://github.com/assurance-maladie-digital/design-system/pull/605)) ([cea80b5](https://github.com/assurance-maladie-digital/design-system/commit/cea80b59029ef986bc3d0c4c4344c228d2e331e4))
   - **template:** Suppression des imports des composants globaux ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580)) ([b9d8835](https://github.com/assurance-maladie-digital/design-system/commit/b9d8835c8693924a212d8425b955b5bdef7bebff))
 
+- ♻️ **Refactoring**
+  - **style:** Suppression des styles commun ([#624](https://github.com/assurance-maladie-digital/design-system/pull/624))
+
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
