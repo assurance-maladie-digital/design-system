@@ -2,38 +2,26 @@
 	<div>
 		<FormBuilder
 			:form="form"
-			@change="formChanged"
-			@refresh="formRefresh"
+			@change="formUpdated"
+			@refresh="formRefreshed"
 		/>
 
-		<DialogBox
-			v-model="dialog"
-			title="Evènements"
+		<VSnackbar
+			v-model="snackbar"
+			color="info"
 		>
-			<p>Evènement 'change' détecter</p>
+			{{ snackbarText }}
 
-			<p v-if="refresh">
-				Evènement 'refresh' détecter
-			</p>
-
-			<p>Nouveau formulaire à jour</p>
-
-			<pre
-				:class="[
-					$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
-				]"
-				v-html="form"
-			/>
-
-			<template #actions>
+			<template v-slot:action="{ attrs }">
 				<VBtn
-					color="primary"
-					@click="dialog = false"
+					text
+					v-bind="attrs"
+					@click="snackbar = false"
 				>
 					Fermer
 				</VBtn>
 			</template>
-		</Dialogbox>
+		</VSnackbar>
 	</div>
 </template>
 
@@ -44,47 +32,59 @@
 	import { Form } from '@cnamts/form-builder/src/components/FormBuilder/types';
 
 	@Component
-	export default class FormBuilderEx extends Vue {
-
-		dialog = false;
-		refresh = false;
+	export default class FormBuilderEvents extends Vue {
+		snackbar = false;
+		snackbarText = '';
 
 		form: Form = {
 			section1: {
-				title: 'Section 1',
-				description: 'Description de la section 1',
+				title: 'Vos informations',
 				questions: {
 					questionString: {
 						type: 'text',
-						title: 'Question simple',
-						value: null
+						value: null,
+						fieldOptions: {
+							label: 'Numéro de Sécurité Sociale',
+							outlined: true
+						}
 					},
 					questionString2: {
 						type: 'select',
 						dynamic: true,
-						title: 'Question dynamique',
 						items: [
 							{
-								value: 'S',
-								text: 'S'
+								text: 'Email',
+								value: 'email'
 							},
 							{
-								value: 'M',
-								text: 'M'
+								text: 'Courrier',
+								value: 'mail'
 							}
 						],
-						value: null
+						value: null,
+						fieldOptions: {
+							label: 'Moyen de contact',
+							outlined: true
+						}
 					}
 				}
 			}
 		};
 
-		formChanged(): void {
-			this.dialog = true;
+		getSnackbarText(eventName: string): string {
+			return `Événement "${eventName}" émis`;
 		}
 
-		formRefresh(): void {
-			this.refresh = true;
+		formUpdated(): void {
+			this.snackbar = true;
+			this.snackbarText = this.getSnackbarText('change');
+		}
+
+		formRefreshed(): void {
+			this.$nextTick(() => {
+				this.snackbar = true;
+				this.snackbarText = this.getSnackbarText('refresh');
+			});
 		}
 	}
 </script>

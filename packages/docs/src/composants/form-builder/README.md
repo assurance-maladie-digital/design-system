@@ -55,12 +55,6 @@ Le composant `FormBuilder` est utilisé pour afficher un questionnaire.
 
 ## Exemples
 
-### Formulaire simple
-
-<DocExample
-  file="composants/form-builder/examples/form-builder-example"
-/>
-
 ### Gestion des évènements
 
 Vous pouvez réagir lorsque le formulaire est mise à jour grâce à l'évènement `change` ainsi que réagir aussi aux champs dynamique changés grâce à l'événement `refresh`.

@@ -5,43 +5,38 @@
 			md="6"
 		>
 			<VTextField
-				v-model.number="props.sectionTitle"
-				label="section: titre"
+				v-model="sectionTitle"
+				label="Titre de la section"
 				hide-details
 				clearable
 				outlined
 			/>
 
 			<VTextField
-				v-model.number="props.sectionDescription"
-				label="section: description"
+				v-model="sectionDescription"
+				label="Description de la section"
 				hide-details
 				clearable
 				outlined
 				class="mt-6"
 			/>
 
-			<VCard class="mt-4">
-				<VCardText>
-					<p>
-						Affichage de la structure
-					</p>
+			<h3 class="text-h6 font-weight-bold mt-4 mb-1">
+				Structure du questionnaire
+			</h3>
 
-					<pre
-						:class="[
-							$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
-						]"
-						v-html="finalForm"
-					/>
-				</VCardText>
-			</VCard>
+			<pre
+				:class="codeBlockColor"
+				class="px-2 py-1"
+				v-html="displayForm"
+			/>
 		</VCol>
 
 		<VCol
 			cols="12"
 			md="6"
 		>
-			<FormBuilder :form="finalForm" />
+			<FormBuilder :form="form" />
 		</VCol>
 	</VRow>
 </template>
@@ -52,55 +47,36 @@
 
 	import { Form } from '@cnamts/form-builder/src/components/FormBuilder/types';
 
-	@Component<FormBuilderPlayground>({
-		watch: {
-			form: {
-				handler(newValue: Form): void {
-					this.finalForm = newValue;
-				},
-				immediate: true
-			}
-		}
-	})
+	@Component
 	export default class FormBuilderPlayground extends Vue {
-		finalForm: Form = {};
-
-		props = {
-			sectionTitle: 'Section 1',
-			sectionDescription: 'Informations personnelles'
-		};
+		sectionTitle = 'Vos informations';
+		sectionDescription = 'Informations personnelles';
 
 		get form(): Form {
 			return {
 				section1: {
-					title: this.props.sectionTitle,
-					description: this.props.sectionDescription,
+					title: this.sectionTitle,
+					description: this.sectionDescription,
 					questions: {
 						questionString: {
 							type: 'text',
-							title: 'Votre nom ?',
 							value: null,
 							fieldOptions: {
-								outlined: true
-							}
-						}
-					}
-				},
-				section2: {
-					title: 'Section 2',
-					description: 'Autres informations',
-					questions: {
-						questionString: {
-							type: 'date',
-							title: 'Date de début de mission ?',
-							value: null,
-							fieldOptions: {
+								label: 'Numéro de Sécurité Sociale',
 								outlined: true
 							}
 						}
 					}
 				}
 			};
+		}
+
+		get displayForm(): string {
+			return JSON.stringify(this.form, null, '\t');
+		}
+
+		get codeBlockColor(): string {
+			return this.$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4';
 		}
 	}
 </script>
