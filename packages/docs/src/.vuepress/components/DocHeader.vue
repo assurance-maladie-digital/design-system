@@ -26,7 +26,7 @@
 			>
 		</RouterLink>
 
-		<div class="d-flex align-center flex-grow-1 app-header-title pr-1 py-2">
+		<div class="d-flex align-center flex-grow-1 doc-header-title pr-1 py-2">
 			<VDivider
 				vertical
 				inset
