@@ -11,18 +11,55 @@
 	@Component
 	export default class FormBuilderEx extends Vue {
 		form: Form = {
-			section1: {
-				title: 'Section 1',
-				description: 'Description de la section 1',
+			informations: {
+				title: 'Vos informations',
 				questions: {
-					questionString: {
+					nir: {
 						type: 'text',
-						title: 'Question ?',
-						description: 'Informations supplémentaires',
-						tooltip: 'Texte d\'aide\nSecond texte d\'aide',
+						value: null,
+						tooltip: 'Entrez votre Numéro de Sécurité Sociale sur 15 caractères',
+						fieldOptions: {
+							label: 'Numéro de Sécurité Sociale',
+							outlined: true
+						}
+					},
+					lastName: {
+						type: 'text',
 						value: null,
 						fieldOptions: {
-							label: 'Label du champ',
+							label: 'Nom',
+							outlined: true
+						}
+					},
+					firstName: {
+						type: 'text',
+						value: null,
+						fieldOptions: {
+							label: 'Prénom',
+							outlined: true
+						}
+					}
+				}
+			},
+			health: {
+				title: 'Votre état de santé',
+				questions: {
+					symptoms: {
+						type: 'text',
+						title: 'Vos symptômes',
+						description: 'Décrivez les symptômes qui vous affectent et leur ordre d\'apparition',
+						value: null,
+						fieldOptions: {
+							label: 'Décrivez vos symptômes',
+							outlined: true
+						}
+					},
+					symptomsDate: {
+						type: 'date',
+						value: null,
+						description: 'Date d\'apparition des symptômes',
+						fieldOptions: {
+							label: 'Date d\'apparition',
 							outlined: true
 						}
 					}

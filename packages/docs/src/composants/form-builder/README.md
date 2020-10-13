@@ -6,7 +6,7 @@ title: FormBuilder
 :::
 
 ::: slot description
-Le composant `FormBuilder` est utilisé pour afficher une questionnaire.
+Le composant `FormBuilder` est utilisé pour afficher un questionnaire.
 :::
 
 ## Utilisation
@@ -27,19 +27,19 @@ Le composant `FormBuilder` est utilisé pour afficher une questionnaire.
           name: 'form',
           type: 'Form',
           required: true,
-          description: 'Le questionnaire à afficher',
-          example: '{\n sectionId: {\n  title: string,\n  description: string,\n  questions: FormFieldList\n }\n}'
+          description: 'Le questionnaire à afficher.',
+          example: '{\n	sectionId: {\n		title?: string,\n		description?: string,\n		questions: FormFieldList\n	}\n}'
         }
       ],
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque l\'utilisateur change la valeur d\'un champ',
+          description: 'Événement émis lorsque la valeur d\'un champ change.',
           value: 'form: Form'
         },
         {
           name: 'refresh',
-          description: 'Événement émis lorsque l\'utilisateur change la valeur d\'un champ dynamique'
+          description: 'Événement émis lorsque la valeur d\'un champ dynamique change.'
         }
       ]
     }
