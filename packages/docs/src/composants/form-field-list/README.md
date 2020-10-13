@@ -28,19 +28,19 @@ Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d
           type: 'Fields',
           required: true,
           description: 'La liste des champs à afficher.',
-          example: '{\n fieldId: Field\n}'
+          example: '{\n	fieldId: Field\n}'
         },
         {
           name: 'list-title',
           type: 'string',
           required: false,
-          description: 'Le titre du formulaire'
+          description: 'Le titre du formulaire.'
         },
         {
           name: 'description',
           type: 'string',
           required: false,
-          description: 'La description du formulaire'
+          description: 'La description du formulaire.'
         }
       ],
       events: [
@@ -71,6 +71,8 @@ Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d
 
 `change` :  Lorsque l'utilisateur change une valeur d'un champ. Renvoi la nouvelle liste en paramètre.<br>
 `refresh` :  Lorsque l'utilisateur change une valeur d'un champ avec la propriété `dynamic: true`
+
+Vous pouvez réagir lorsque le formulaire est mise à jour grâce à l'évènement `change` ainsi que réagir aussi aux champs dynamique changés grâce à l'événement `refresh`.
 
 <DocExample
   file="composants/form-field-list/examples/form-field-list-events"

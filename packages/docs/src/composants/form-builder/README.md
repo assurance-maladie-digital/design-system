@@ -9,6 +9,12 @@ title: FormBuilder
 Le composant `FormBuilder` est utilisé pour afficher un questionnaire.
 :::
 
+<DocInfo>
+
+Le composant `FormBuilder` permet d'afficher un questionnaire composé de sections et d'étapes en utilisant le [FormFieldList](../form-field-list/README.md), vous pouvez utiliser ce dernier pour afficher des formulaires plus simples.
+
+</DocInfo>
+
 ## Utilisation
 
 <DocExample

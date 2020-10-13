@@ -1,34 +1,38 @@
 <template>
-	<FormFieldList
-		v-model="fieldList.questions"
-	/>
+	<FormFieldList v-model="fieldList" />
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FieldList } from '@cnamts/form-builder/src/components/FormFieldList/types';
+	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
 	@Component
 	export default class FormFieldListEx extends Vue {
-		fieldList: FieldList = {
-			questions: {
-				questionStringId: {
-					type: 'text',
-					value: null,
-					fieldOptions: {
-						label: 'Label du champ',
-						outlined: true
-					}
-				},
-				questionDateId: {
-					type: 'date',
-					value: null,
-					fieldOptions: {
-						label: 'Date de naissance',
-						outlined: true
-					}
+		fieldList: Fields = {
+			lastName: {
+				type: 'text',
+				value: null,
+				fieldOptions: {
+					label: 'Nom',
+					outlined: true
+				}
+			},
+			firstName: {
+				type: 'text',
+				value: null,
+				fieldOptions: {
+					label: 'Prénom',
+					outlined: true
+				}
+			},
+			startDate: {
+				type: 'date',
+				value: null,
+				fieldOptions: {
+					label: 'Date de début de l\'arrêt',
+					outlined: true
 				}
 			}
 		};
