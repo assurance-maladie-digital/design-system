@@ -47,6 +47,10 @@ module.exports = {
 						to: '/composants/file-upload'
 					},
 					{
+						title: 'FormBuilder',
+						to: '/composants/form-builder'
+					},
+					{
 						title: 'FooterWrapper',
 						to: '/composants/footer-wrapper'
 					},
