@@ -45,7 +45,7 @@
 				title: 'Votre état de santé',
 				questions: {
 					symptoms: {
-						type: 'text',
+						type: 'textarea',
 						title: 'Vos symptômes',
 						description: 'Décrivez les symptômes qui vous affectent et leur ordre d\'apparition',
 						value: null,
