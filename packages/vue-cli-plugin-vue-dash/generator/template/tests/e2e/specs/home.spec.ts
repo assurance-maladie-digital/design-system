@@ -35,5 +35,4 @@ describe('Home page', () => {
 		cy.contains('h2', ' À propos ').parent().find('a').click();
 		cy.url().should('contain', '/');
 	});
-
 });

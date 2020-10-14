@@ -13,12 +13,10 @@ describe('Toolbar page', () => {
 	});
 
 	it('Check contains menu of popup', () => {
-
 		cy.dataCy('toolbar-elmt').parent().find('button').click();
 
 		cy.contains('Accueil');
 
 		cy.contains('Déconnexion');
 	});
-
 });
