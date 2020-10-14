@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import LoginCard from '../';
+import LoginLayout from '..';
 
 let wrapper: Wrapper<Vue>;
 
@@ -12,14 +12,14 @@ let wrapper: Wrapper<Vue>;
 describe('ErrorPage', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(LoginCard);
+		wrapper = mountComponent(LoginLayout);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('renders correctly custom example', () => {
 		// Mount component
-		wrapper = mountComponent(LoginCard, {
+		wrapper = mountComponent(LoginLayout, {
 			propsData: {
 				title: 'Pas de connexion',
 				description:'description du login',

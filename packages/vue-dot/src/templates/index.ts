@@ -1,7 +1,7 @@
 import ErrorPage from './ErrorPage';
-import LoginCard from './LoginCard';
+import LoginLayout from './LoginLayout';
 
 export const templates = {
 	ErrorPage,
-	LoginCard
+	LoginLayout
 };

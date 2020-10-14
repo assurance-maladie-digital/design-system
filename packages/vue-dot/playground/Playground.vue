@@ -53,7 +53,7 @@
 
 				<LangBtnEx />
 
-				<LoginCardEx />
+				<LoginLayoutEx />
 
 				<NotificationEx />
 

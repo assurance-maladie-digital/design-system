@@ -124,7 +124,7 @@
 			},
 			passwordRules: {
 				type: Array as PropType<ValidationRule[]>,
-				default: () => [required, minLength(8)]
+				default: () => [required]
 			},
 			createLink: {
 				type: Boolean,
@@ -145,7 +145,7 @@
 
 	/** Login page */
 	@Component
-	export default class LoginCard extends MixinsDeclaration {
+	export default class LoginLayout extends MixinsDeclaration {
         // Extend $refs
         $refs!: Refs<{
             loginForm: HTMLFormElement;

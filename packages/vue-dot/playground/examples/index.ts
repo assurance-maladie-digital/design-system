@@ -4,7 +4,7 @@ import CopyBtnEx from './CopyBtnEx.vue';
 import DataListEx from './DataListEx.vue';
 import DatePickerEx from './DatePickerEx.vue';
 import LangBtnEx from './LangBtnEx.vue';
-import LoginCardEx from './LoginCardEx.vue';
+import LoginLayoutEx from './LoginLayoutEx.vue';
 import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
 import DialogBoxEx from './DialogBoxEx.vue';
@@ -26,7 +26,7 @@ const components: Components = {
 	DataListEx,
 	DatePickerEx,
 	LangBtnEx,
-	LoginCardEx,
+	LoginLayoutEx,
 	CustomIconEx,
 	DebounceEx,
 	DialogBoxEx,
