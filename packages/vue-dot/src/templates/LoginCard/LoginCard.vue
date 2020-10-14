@@ -1,67 +1,87 @@
 <template>
-	<div>
-		<VCard>
-			<h2 class="headline text-center mb-6">
-				{{ title }}
-			</h2>
-
-			<span
-				v-if="description"
-				v-html="description"
-			/>
-
-			<VForm ref="loginForm">
-				<VTextField
-					v-model="username"
-					:rules="usernameRules"
-					:label="userNameLabel"
-					outlined
-				/>
-
-				<VTextField
-					v-model="password"
-					:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
-					:rules="passwordRules"
-					:label="passwordLabel"
-					:type="showEyeIcon ? 'text' : 'password'"
-					counter
-					outlined
-					@click:append="showEyeIcon = !showEyeIcon"
-				/>
-			</VForm>
-
-			<VRow
-				v-if="passwordRouteName"
-				justify="end"
+	<VContainer
+		style="max-width:568px"
+		class="pa-0"
+	>
+		<VRow no-gutters>
+			<VCol
+				align-self="center"
 			>
-				<RouterLink
-					:to="{
-						name: passwordRouteName
-					}"
-					class="text-underline accent--text"
+				<VCard>
+					<h2 class="headline text-center pt-6 font-weight-bold">
+						{{ title }}
+					</h2>
+					<VCardText>
+						<p
+							v-if="description"
+							class="subtitle-1 mb-6"
+							v-html="description"
+						/>
+						<VForm
+							ref="loginForm"
+							:readonly="loading"
+							lazy-validation
+						>
+							<VTextField
+								v-model="loginForm.username"
+								:rules="usernameRules"
+								:label="usernameLabel"
+								validate-on-blur
+								outlined
+							/>
+
+							<VTextField
+								v-model="loginForm.password"
+								:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
+								:rules="passwordRules"
+								:label="passwordLabel"
+								:type="showEyeIcon ? 'text' : 'password'"
+								validate-on-blur
+								outlined
+								@click:append="showEyeIcon = !showEyeIcon"
+							/>
+						</VForm>
+						<VRow
+							v-if="passwordLink"
+							justify="end"
+						>
+							<RouterLink
+								class="text-uppercase v-card--link accent--text text-body-2"
+								@click="$emit('click-password')"
+							>
+								{{ locales.passwordForgotten }}
+							</RouterLink>
+						</VRow>
+					</VCardText>
+					<VCardActions class="pa-4 pb-8">
+						<VBtn
+							block
+							x-large
+							:loading="loading"
+							color="primary"
+							@click="clickLogin"
+						>
+							{{ locales.loginBtn }}
+						</VBtn>
+					</VCardActions>
+				</VCard>
+				<div
+					v-if="createLink"
+					class="d-flex justify-center my-4"
 				>
-					{{ locales.passwordForgotten }}
-				</RouterLink>
-			</VRow>
-			<VBtn
-				:loading="loading"
-				@click="clickLogin"
-			>
-				{{ locales.loginBtn }}
-			</VBtn>
-		</VCard>
-		<VRow v-if="createAccountRouteName">
-			{{ locales.newUserLabel }}
-			<RouterLink
-				:to="{
-					name: createAccountRouteName
-				}"
-				class="text-underline accent--text"
-			>
-				{{ locales.createAccountLinkLabel }}
-			</RouterLink>
+					<span>
+						{{ locales.newUserLabel }}
+					</span>
+					<RoutrLink
+						class="text-uppercase v-card--link accent--text ml-2"
+						@click="$emit('click-signup')"
+					>
+						{{ locales.createAccountLinkLabel }}
+					</RoutrLink>
+				</div>
+			</VCol>
 		</VRow>
-	</div>
+	</VContainer>
 </template>
 
 <script lang="ts">
@@ -71,13 +91,14 @@
 	import locales from './locales';
 
 	import { ValidationRule } from '../../rules/types';
-	import { requiredFn } from '../../rules/required';
-	import { emailFn } from '../../rules/email';
-	import { minLengthFn } from '../../rules/minLength';
+	import { required } from '../../rules/required';
+	import { email } from '../../rules/email';
+	import { minLength } from '../../rules/minLength';
 
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
 	import { Refs } from '../../types';
-	import { ErrorMessages } from '../../../../form-builder/src/components/FormField/types';
+
+	import { LoginForm } from './types';
 
 	const Props = Vue.extend({
 		props: {
@@ -98,28 +119,24 @@
 				default: locales.passwordLabel
 			},
 			usernameRules: {
-				type: Object as PropType<ValidationRule[]>,
-				default: () => [requiredFn, emailFn]
+				type: Array as PropType<ValidationRule[]>,
+				default: () => [required, email]
 			},
 			passwordRules: {
-				type: Object as PropType<ValidationRule[]>,
-				default: () => [requiredFn, minLengthFn(6)]
+				type: Array as PropType<ValidationRule[]>,
+				default: () => [required, minLength(8)]
 			},
-			login: {
-				type: Function as PropType<(username: string, password: string) => void>,
-				required: true
+			createLink: {
+				type: Boolean,
+				default: false
 			},
-			passwordRouteName: {
-				type: String,
-				default: null
+			passwordLink: {
+				type: Boolean,
+				default: false
 			},
-			createAccountRouteName: {
-				type: String,
-				default: null
-			},
-			errorMessages: {
-				type: Object as PropType<ErrorMessages>,
-				default: () => null
+			loading: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -134,32 +151,28 @@
             loginForm: HTMLFormElement;
         }>;
 
-        loading = false;
+		loginForm: LoginForm = {
+			username: null,
+			password: null
+		};
 
-		username: string | null= null;
-        password: string | null = null;
+		// Show password Eye icon
+		showEyeIcon = false;
+		// Locales
+        locales = locales;
 
 		// Icons
 		eyeIcon = mdiEye;
 		eyeOffIcon = mdiEyeOff;
 
-		showEyeIcon = false;
+		clickLogin(): void {
 
-        locales = locales;
-
-		async clickLogin(): Promise<void> {
-
-            if(!this.username || !this.password || !this.$refs.loginForm.validate()) {
+            if(!this.$refs.loginForm.validate()) {
                 return;
             }
+			this.$emit('click-login', this.loginForm);
 
-            this.loading = true;
-
-            await this.login(this.username, this.password);
-
-            this.username = null;
-            this.password = null;
-            this.loading = false;
+			this.loginForm.password = null;
 		}
 	}
 </script>

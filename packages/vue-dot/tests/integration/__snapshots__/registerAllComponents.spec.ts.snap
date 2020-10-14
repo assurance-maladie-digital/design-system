@@ -12,6 +12,7 @@ Array [
   "FooterWrapper",
   "HeaderLoading",
   "LangBtn",
+  "LoginCard",
   "NotificationBar",
   "PageCard",
   "PaginatedTable",

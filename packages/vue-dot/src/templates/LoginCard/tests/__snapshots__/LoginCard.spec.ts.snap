@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorPage renders correctly 1`] = `
+<vcontainer-stub tag="div" class="pa-0">
+  <vrow-stub tag="div" nogutters="true">
+    <vcol-stub alignself="center" tag="div">
+      <vcard-stub loaderheight="4" tag="div">
+        <h2 class="headline text-center pt-6 font-weight-bold">
+          J'accède à mon espace
+        </h2>
+        <vcardtext-stub>
+          <!---->
+          <vform-stub lazyvalidation="true">
+            <vtextfield-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" backgroundcolor="" label="Email" loaderheight="2" clearicon="$clear" outlined="true" type="text"></vtextfield-stub>
+            <vtextfield-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" appendicon="M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z" backgroundcolor="" label="Mot de passe" loaderheight="2" clearicon="$clear" outlined="true" type="password"></vtextfield-stub>
+          </vform-stub>
+          <!---->
+        </vcardtext-stub>
+        <vcardactions-stub class="pa-4 pb-8">
+          <vbtn-stub color="primary" tag="button" activeclass="" xlarge="true" block="true" type="button">
+            Me Connecter
+          </vbtn-stub>
+        </vcardactions-stub>
+      </vcard-stub>
+      <!---->
+    </vcol-stub>
+  </vrow-stub>
+</vcontainer-stub>
+`;
+
+exports[`ErrorPage renders correctly custom example 1`] = `
+<vcontainer-stub tag="div" class="pa-0">
+  <vrow-stub tag="div" nogutters="true">
+    <vcol-stub alignself="center" tag="div">
+      <vcard-stub loaderheight="4" tag="div">
+        <h2 class="headline text-center pt-6 font-weight-bold">
+          Pas de connexion
+        </h2>
+        <vcardtext-stub>
+          <p class="subtitle-1 mb-6">description du login</p>
+          <vform-stub lazyvalidation="true" readonly="true">
+            <vtextfield-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" backgroundcolor="" label="Nom d'utilisateur" loaderheight="2" clearicon="$clear" outlined="true" type="text"></vtextfield-stub>
+            <vtextfield-stub errorcount="1" errormessages="" messages="" rules="{[Function]}" successmessages="" validateonblur="true" appendicon="M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z" backgroundcolor="" label="mot secret" loaderheight="2" clearicon="$clear" outlined="true" type="password"></vtextfield-stub>
+          </vform-stub>
+          <vrow-stub tag="div" justify="end">
+            <routerlink class="text-uppercase v-card--link accent--text text-body-2">
+              Mot de passe oublié ?
+            </routerlink>
+          </vrow-stub>
+        </vcardtext-stub>
+        <vcardactions-stub class="pa-4 pb-8">
+          <vbtn-stub color="primary" tag="button" activeclass="" xlarge="true" block="true" loading="true" type="button">
+            Me Connecter
+          </vbtn-stub>
+        </vcardactions-stub>
+      </vcard-stub>
+      <div class="d-flex justify-center my-4"><span>
+					Nouvel utilisateur ?
+				</span>
+        <routrlink class="text-uppercase v-card--link accent--text ml-2">
+          Je créé mon compte
+        </routrlink>
+      </div>
+    </vcol-stub>
+  </vrow-stub>
+</vcontainer-stub>
+`;
