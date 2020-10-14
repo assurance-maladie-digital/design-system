@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
-import { mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import { mountComponent } from '@/tests';
+import { html } from '@/tests/utils/html';
 
 import ErrorPage from '../';
 
