@@ -2,28 +2,26 @@
 	<div>
 		<FormFieldList
 			v-model="fieldList.questions"
-			@change="listChanged"
-			@refresh="listRefresh"
+			@change="listUpdated"
+			@refresh="listRefreshed"
 		/>
 
-		<DialogBox v-model="dialog">
-			<VCardText class="px-0">
-				<p>Un champ à été modifier</p>
-				<p>Evènement `change` emit</p>
-				<p v-if="refresh">
-					Evènement `refresh` émit aussi car ce champ est dynamique
-				</p>
-			</VCardText>
+		<VSnackbar
+			v-model="snackbar"
+			color="info"
+		>
+			{{ snackbarText }}
 
-			<template #actions>
+			<template v-slot:action="{ attrs }">
 				<VBtn
-					color="primary"
-					@click="dialog = false"
+					text
+					v-bind="attrs"
+					@click="snackbar = false"
 				>
 					Fermer
 				</VBtn>
 			</template>
-		</DialogBox>
+		</VSnackbar>
 	</div>
 </template>
 
@@ -33,22 +31,17 @@
 
 	import { FieldList } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
-	@Component<FormFieldListEvents>({
-		watch: {
-			dialog(newValue) {
-				if (!newValue) {
-					this.refresh = false;
-				}
-			}
-		}
-	})
+	@Component
 	export default class FormFieldListEvents extends Vue {
-		dialog = false;
 		refresh = false;
+
+		snackbar = false;
+		snackbarText = '';
 
 		fieldList: FieldList = {
 			questions: {
 				questionStringId: {
+					title: 'Champ pas dynamique',
 					type: 'text',
 					value: null,
 					fieldOptions: {
@@ -57,8 +50,10 @@
 					}
 				},
 				questionDateId: {
+					title: 'Champ dynamique',
 					type: 'date',
 					value: null,
+					dynamic: true,
 					fieldOptions: {
 						label: 'Date de naissance',
 						outlined: true
@@ -67,14 +62,20 @@
 			}
 		};
 
-		listChanged(): void {
-			setTimeout(() => {
-				this.dialog = true;
-			}, 400);
+		getSnackbarText(eventName: string): string {
+			return `Événement "${eventName}" émis`;
 		}
 
-		listRefresh(): void {
-			this.refresh = true;
+		listUpdated(): void {
+			this.snackbar = true;
+			this.snackbarText = this.getSnackbarText('change');
+		}
+
+		listRefreshed(): void {
+			this.$nextTick(() => {
+				this.snackbar = true;
+				this.snackbarText = `${this.snackbarText}, ainsi que ${this.getSnackbarText('refresh')}`;
+			});
 		}
 	}
 </script>

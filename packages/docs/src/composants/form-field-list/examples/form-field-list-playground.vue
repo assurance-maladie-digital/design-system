@@ -27,7 +27,7 @@
 			md="6"
 		>
 			<FormFieldList
-				v-model="finalFields"
+				v-model="fields"
 				:list-title="props.listTitle"
 				:description="props.description"
 			/>
@@ -41,16 +41,7 @@
 
 	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
-	@Component<FormFieldListPlayground>({
-		watch: {
-			fields: {
-				handler(newValue) {
-					this.finalFields = newValue;
-				},
-				immediate: true
-			}
-		}
-	})
+	@Component
 	export default class FormFieldListPlayground extends Vue {
 		props = {
 			listTitle: undefined,
@@ -59,25 +50,23 @@
 
 		finalFields: Fields | null = null;
 
-		get fields(): Fields {
-			return {
-				questionStringId: {
-					type: 'text',
-					value: null,
-					fieldOptions: {
-						label: 'Label du champ',
-						outlined: true
-					}
-				},
-				questionDateId: {
-					type: 'date',
-					value: null,
-					fieldOptions: {
-						label: 'Date de naissance',
-						outlined: true
-					}
+		fields: Fields = {
+			questionStringId: {
+				type: 'text',
+				value: null,
+				fieldOptions: {
+					label: 'Label du champ',
+					outlined: true
 				}
-			};
+			},
+			questionDateId: {
+				type: 'date',
+				value: null,
+				fieldOptions: {
+					label: 'Date de naissance',
+					outlined: true
+				}
+			}
 		}
 	}
 </script>

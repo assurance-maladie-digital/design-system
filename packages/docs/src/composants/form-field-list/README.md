@@ -71,9 +71,8 @@ Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d
 ### Gestion des évènements
 
 `change` :  Lorsque l'utilisateur change une valeur d'un champ. Renvoi la nouvelle liste en paramètre.<br>
-`refresh` :  Lorsque l'utilisateur change une valeur d'un champ avec la propriété `dynamic: true`
 
-Vous pouvez réagir lorsque le formulaire est mise à jour grâce à l'évènement `change` ainsi que réagir aussi aux champs dynamique changés grâce à l'événement `refresh`.
+Vous pouvez réagir lorsque le formulaire est mise à jour grâce à l'évènement `change` ainsi que réagir aussi aux champs dit 'dynamique' changés grâce à l'événement `refresh` seulement lorsque le champ possède la propriété `dynamic: true`.
 
 <DocExample
   file="composants/form-field-list/examples/form-field-list-events"
