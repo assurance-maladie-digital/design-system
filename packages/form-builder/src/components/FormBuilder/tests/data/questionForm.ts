@@ -235,7 +235,7 @@ export const questionForm: Form = {
 					type: 'choiceButton'
 				}
 			},
-			questionChoiceButtonTextMultiLines: {
+			questionChoiceButtonTextMultiLine: {
 				title: 'Question choix bouton plusieurs lignes',
 				type: 'select',
 				value: {
@@ -248,7 +248,7 @@ export const questionForm: Form = {
 						value: 1
 					},
 					{
-						text: 'Autre texte',
+						text: 'Texte 2',
 						value: 2
 					}
 				],

@@ -23,7 +23,9 @@
 				<span class="text-body-1">
 					{{ item.text }}
 				</span>
+
 				<VSpacer />
+
 				<VIcon
 					:style="getIconStyle(item)"
 					class="white--text flex-shrink-0"
