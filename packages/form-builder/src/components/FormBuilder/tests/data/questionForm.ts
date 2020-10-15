@@ -244,7 +244,7 @@ export const questionForm: Form = {
 				},
 				items: [
 					{
-						text: 'Texte qui permet de tester surffgg',
+						text: 'Texte qui permet de tester sur plusieurs lignes',
 						value: 1
 					},
 					{
