@@ -20,7 +20,7 @@
   - **FormField:** Correction des marges sur le champ période ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580)) ([d8c8303](https://github.com/assurance-maladie-digital/design-system/commit/d8c8303e2ab9f6c8e43bf8abbcc7d73b74103527))
   - **FormField:** Correction de la largeur du champ textarea ([#609](https://github.com/assurance-maladie-digital/design-system/pull/609)) ([d927c36](https://github.com/assurance-maladie-digital/design-system/commit/d927c36cbab1b91865f98395ca7898bbfa82cb1f))
   - **FormField:** Correction de l'affichage du champ select lorsque la valeur est égale à zéro ([#591](https://github.com/assurance-maladie-digital/design-system/pull/591)) ([62b90ba](https://github.com/assurance-maladie-digital/design-system/commit/62b90bada5a69973fc8f17b40f64720acca9e711))
-  - **FormField:** Possibilité d'avoir plusieurs choix possible quand on entre une valeur dans le champ 'autre' ([#596](https://github.com/assurance-maladie-digital/design-system/pull/596))
+  - **FormField:** Correction de la sélection multiple sur ChoiceField ([#596](https://github.com/assurance-maladie-digital/design-system/pull/596))
 
 ### Interne
 
