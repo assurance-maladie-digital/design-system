@@ -13,6 +13,5 @@ export type AllLanguagesChar = '*';
 
 export interface CurrentLangData {
 	name: string;
-	flagUrl: string;
-	ariaLabel: string;
+	label: string;
 }
