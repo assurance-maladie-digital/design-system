@@ -97,7 +97,7 @@ describe('ChoiceField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders select field button with simple error message', () => {
+	it('renders with simple error message', () => {
 		// Mount component
 		wrapper = mountComponent(
 			ChoiceField,
@@ -118,7 +118,7 @@ describe('ChoiceField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders select field button with multiple error messages', () => {
+	it('renders with multiple error messages', () => {
 		// Mount component
 		wrapper = mountComponent(
 			ChoiceField,
@@ -128,7 +128,10 @@ describe('ChoiceField', () => {
 						...testField,
 						fieldOptions: {
 							type: 'choiceButton',
-							errorMessages: ['Erreur 1', 'Erreur 2']
+							errorMessages: [
+								'Erreur 1',
+								'Erreur 2'
+							]
 						}
 					}
 				}
