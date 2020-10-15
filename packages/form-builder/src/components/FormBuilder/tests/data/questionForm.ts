@@ -239,11 +239,11 @@ export const questionForm: Form = {
 				title: 'Question choix autre',
 				description: 'Informations supplémentaires',
 				multiple: true,
+				type: 'select',
 				value: {
 					value: [0, 1],
 					other: 'Autre valeur'
 				},
-				type: 'select',
 				items: [
 					{
 						text: 'S',
