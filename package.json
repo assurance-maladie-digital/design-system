@@ -12,7 +12,7 @@
 		"build": "lerna run build --stream"
 	},
 	"devDependencies": {
-		"@mdi/js": "5.6.55",
+		"@mdi/js": "5.7.55",
 		"@types/fs-extra": "9.0.2",
 		"@types/jest": "26.0.14",
 		"@types/node": "12.12.67",
