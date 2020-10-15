@@ -97,7 +97,7 @@ describe('ChoiceField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders with simple error message', () => {
+	it('renders with single error message', () => {
 		// Mount component
 		wrapper = mountComponent(
 			ChoiceField,
