@@ -26,11 +26,11 @@ export const questionErrors: FormErrors = {
 		'Erreur 1',
 		'Erreur 2'
 	],
-	questionPassword: 'Champ requis',
+	questionPassword: 'Erreur',
 	questionPeriod: {
 		from: [
 			'Erreur 1',
-			'Erreur questionPeriod 2'
+			'Erreur 2'
 		],
 		to: [
 			'Erreur 1',
