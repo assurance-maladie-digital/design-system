@@ -262,8 +262,8 @@ export const questionForm: Form = {
 				multiple: true,
 				type: 'select',
 				value: {
-					value: null,
-					other: null
+					value: [0, 1],
+					other: 'Autre valeur'
 				},
 				items: [
 					{
