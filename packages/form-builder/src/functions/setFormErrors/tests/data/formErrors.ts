@@ -15,8 +15,8 @@ export const formErrors = {
 	]
 } as FormErrors;
 
-/** FormErrors with bad type */
-export const formErrorsBadtype = {
+/** FormErrors with wrong types */
+export const formErrorsWrongTypes = {
 	questionString: 4
 } as FormErrors;
 

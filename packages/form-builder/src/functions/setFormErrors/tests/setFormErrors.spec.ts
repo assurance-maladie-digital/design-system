@@ -1,4 +1,4 @@
-import { formErrors, questionErrors, form, formErrorsBadtype } from './data/formErrors';
+import { formErrors, formErrorsWrongTypes, questionErrors, form } from './data/formErrors';
 
 import { setFormErrors } from '../';
 
@@ -12,7 +12,7 @@ describe('setFormErrors', () => {
 		expect(setFormErrors(formErrors, form)).toMatchSnapshot();
 	});
 
-	it('skip error with bad type', () => {
+	it('skips errors with wrong types', () => {
 		expect(setFormErrors(formErrorsBadtype, form)).toMatchSnapshot();
 	});
 });
