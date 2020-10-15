@@ -23,25 +23,25 @@ export const formErrorsWrongTypes = {
 /** FormErrors related to question form */
 export const questionErrors: FormErrors = {
 	questionString: [
-		'Erreur string 1',
-		'Erreur string 2'
+		'Erreur 1',
+		'Erreur 2'
 	],
 	questionPassword: 'Champ requis',
 	questionPeriod: {
 		from: [
-			'Erreur questionPeriod 1',
+			'Erreur 1',
 			'Erreur questionPeriod 2'
 		],
 		to: [
-			'Erreur questionPeriod 1',
-			'Erreur questionPeriod 2'
+			'Erreur 1',
+			'Erreur 2'
 		]
 	},
 	questionChoiceButton: [
 		'Erreur 1',
 		'Erreur 2'
 	],
-	questionChoiceButtonMultiple: 'Erreur string'
+	questionChoiceButtonMultiple: 'Erreur'
 };
 
 const defaultItems = [

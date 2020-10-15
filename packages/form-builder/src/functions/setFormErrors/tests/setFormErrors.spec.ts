@@ -13,6 +13,6 @@ describe('setFormErrors', () => {
 	});
 
 	it('skips errors with wrong types', () => {
-		expect(setFormErrors(formErrorsBadtype, form)).toMatchSnapshot();
+		expect(setFormErrors(formErrorsWrongTypes, form)).toMatchSnapshot();
 	});
 });
