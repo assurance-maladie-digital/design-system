@@ -28,7 +28,7 @@
 
 				<VIcon
 					:style="getIconStyle(item)"
-					class="white--text flex-shrink-0"
+					class="ml-1 white--text flex-shrink-0"
 				>
 					{{ checkIcon }}
 				</VIcon>

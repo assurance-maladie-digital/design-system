@@ -244,7 +244,7 @@ export const questionForm: Form = {
 				},
 				items: [
 					{
-						text: 'Moi et/ou mes proches ne voulions pas être impliqués',
+						text: 'Texte qui permet de tester surffgg',
 						value: 1
 					},
 					{
@@ -291,7 +291,6 @@ export const questionForm: Form = {
 					}
 				},
 				fieldOptions: {
-					inline: true,
 					type: 'choiceButton',
 					label: 'Classic field',
 					outlined: true
