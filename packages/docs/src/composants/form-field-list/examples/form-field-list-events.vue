@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<FormFieldList
-			v-model="fieldList.questions"
+			v-model="fields"
 			@change="listUpdated"
 			@refresh="listRefreshed"
 		/>
@@ -29,7 +29,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FieldList } from '@cnamts/form-builder/src/components/FormFieldList/types';
+	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
 	@Component
 	export default class FormFieldListEvents extends Vue {
@@ -38,43 +38,45 @@
 		snackbar = false;
 		snackbarText = '';
 
-		fieldList: FieldList = {
-			questions: {
-				questionStringId: {
-					title: 'Champ pas dynamique',
-					type: 'text',
-					value: null,
-					fieldOptions: {
-						label: 'Label du champ',
-						outlined: true
+		fields: Fields = {
+			questionString: {
+				type: 'text',
+				value: null,
+				fieldOptions: {
+					label: 'Numéro de Sécurité Sociale',
+					outlined: true
+				}
+			},
+			questionString2: {
+				type: 'select',
+				dynamic: true,
+				items: [
+					{
+						text: 'Email',
+						value: 'email'
+					},
+					{
+						text: 'Courrier',
+						value: 'mail'
 					}
-				},
-				questionDateId: {
-					title: 'Champ dynamique',
-					type: 'date',
-					value: null,
-					dynamic: true,
-					fieldOptions: {
-						label: 'Date de naissance',
-						outlined: true
-					}
+				],
+				value: null,
+				fieldOptions: {
+					label: 'Moyen de contact',
+					outlined: true
 				}
 			}
 		};
 
-		getSnackbarText(eventName: string): string {
-			return `Événement "${eventName}" émis`;
-		}
-
 		listUpdated(): void {
 			this.snackbar = true;
-			this.snackbarText = this.getSnackbarText('change');
+			this.snackbarText = 'Événement "change" émis';
 		}
 
 		listRefreshed(): void {
 			this.$nextTick(() => {
 				this.snackbar = true;
-				this.snackbarText = `${this.snackbarText}, ainsi que ${this.getSnackbarText('refresh')}`;
+				this.snackbarText = 'Événement "change" et "refresh" émis';
 			});
 		}
 	}

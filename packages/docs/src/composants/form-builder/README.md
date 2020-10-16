@@ -64,8 +64,6 @@ Le composant `FormBuilder` permet d'afficher un questionnaire composé de sectio
 
 ### Gestion des évènements
 
-Vous pouvez réagir lorsque le formulaire est mise à jour grâce à l'évènement `change` ainsi que réagir aussi aux champs dynamique changés grâce à l'événement `refresh`.
+Vous pouvez réagir lorsque la valeur d'un champ du formulaire change grâce à l'évènement `change`, ainsi que lorsque la valeur d'un champ dynamique (avec l'attribut `dynamic: true`) change grâce à l'événement `refresh`.
 
-<DocExample
-  file="composants/form-builder/examples/form-builder-events"
-/>
+<DocExample file="composants/form-builder/examples/form-builder-events" />

@@ -1,8 +1,8 @@
 <template>
 	<FormFieldList
-		v-model="fieldList.questions"
-		:list-title="fieldList.title"
-		:description="fieldList.description"
+		v-model="fields"
+		list-title="Votre état de santé"
+		description="Vos symptômes et leur date d'apparition"
 	/>
 </template>
 
@@ -10,29 +10,25 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FieldList } from '@cnamts/form-builder/src/components/FormFieldList/types';
+	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
 
 	@Component
 	export default class FormFieldListProps extends Vue {
-		fieldList: FieldList = {
-			title: 'Titre',
-			description: 'Description',
-			questions: {
-				questionStringId: {
-					type: 'text',
-					value: null,
-					fieldOptions: {
-						label: 'Label du champ',
-						outlined: true
-					}
-				},
-				questionDateId: {
-					type: 'date',
-					value: null,
-					fieldOptions: {
-						label: 'Date de naissance',
-						outlined: true
-					}
+		fields: Fields = {
+			questionStringId: {
+				type: 'textarea',
+				value: null,
+				fieldOptions: {
+					label: 'Décrivez vos symptômes',
+					outlined: true
+				}
+			},
+			questionDateId: {
+				type: 'date',
+				value: null,
+				fieldOptions: {
+					label: 'Date d\'apparition',
+					outlined: true
 				}
 			}
 		};

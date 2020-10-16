@@ -44,18 +44,16 @@
 	@Component
 	export default class FormFieldListPlayground extends Vue {
 		props = {
-			listTitle: undefined,
-			description: undefined
+			listTitle: null,
+			description: null
 		};
-
-		finalFields: Fields | null = null;
 
 		fields: Fields = {
 			questionStringId: {
 				type: 'text',
 				value: null,
 				fieldOptions: {
-					label: 'Label du champ',
+					label: 'Numéro de Sécurité Sociale',
 					outlined: true
 				}
 			},

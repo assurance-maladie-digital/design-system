@@ -1,5 +1,5 @@
 <template>
-	<FormFieldList v-model="fieldList" />
+	<FormFieldList v-model="fields" />
 </template>
 
 <script lang="ts">
@@ -10,7 +10,7 @@
 
 	@Component
 	export default class FormFieldListEx extends Vue {
-		fieldList: Fields = {
+		fields: Fields = {
 			lastName: {
 				type: 'text',
 				value: null,

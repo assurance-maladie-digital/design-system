@@ -34,13 +34,13 @@ Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d
         {
           name: 'list-title',
           type: 'string',
-          required: false,
+          default: '\'undefined\'',
           description: 'Le titre du formulaire.'
         },
         {
           name: 'description',
           type: 'string',
-          required: false,
+          default: '\'undefined\'',
           description: 'La description du formulaire.'
         }
       ],
@@ -68,20 +68,14 @@ Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d
 
 ## Exemples
 
+### Titre et description
+
+Vous pouvez ajouter un titre ainsi qu'une description à votre formulaire en utilisant les props `list-title` et `description`.
+
+<DocExample file="composants/form-field-list/examples/form-field-list-props" />
+
 ### Gestion des évènements
 
-`change` :  Lorsque l'utilisateur change une valeur d'un champ. Renvoi la nouvelle liste en paramètre.<br>
+Vous pouvez réagir lorsque la valeur d'un champ du formulaire change grâce à l'évènement `change`, ainsi que lorsque la valeur d'un champ dynamique (avec l'attribut `dynamic: true`) change grâce à l'événement `refresh`.
 
-Vous pouvez réagir lorsque le formulaire est mise à jour grâce à l'évènement `change` ainsi que réagir aussi aux champs dit 'dynamique' changés grâce à l'événement `refresh` seulement lorsque le champ possède la propriété `dynamic: true`.
-
-<DocExample
-  file="composants/form-field-list/examples/form-field-list-events"
-/>
-
-### Gestion des propriétés: Titre et description
-
-Les propriétés Titre et Description ne sont pas obligatoire.
-
-<DocExample
-  file="composants/form-field-list/examples/form-field-list-props"
-/>
+<DocExample file="composants/form-field-list/examples/form-field-list-events" />

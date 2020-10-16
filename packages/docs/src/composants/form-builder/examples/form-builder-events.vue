@@ -71,19 +71,15 @@
 			}
 		};
 
-		getSnackbarText(eventName: string): string {
-			return `Événement "${eventName}" émis`;
-		}
-
-		formUpdated(): void {
+		listUpdated(): void {
 			this.snackbar = true;
-			this.snackbarText = this.getSnackbarText('change');
+			this.snackbarText = 'Événement "change" émis';
 		}
 
-		formRefreshed(): void {
+		listRefreshed(): void {
 			this.$nextTick(() => {
 				this.snackbar = true;
-				this.snackbarText = this.getSnackbarText('refresh');
+				this.snackbarText = 'Événement "change" et "refresh" émis';
 			});
 		}
 	}
