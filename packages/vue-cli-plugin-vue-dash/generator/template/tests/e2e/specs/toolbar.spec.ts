@@ -1,5 +1,5 @@
 // https://docs.cypress.io/api/introduction/api.html
-describe('Toolbar page', () => {
+describe('Toolbar', () => {
 	beforeEach(() => {
 		cy.visit('/');
 	});
