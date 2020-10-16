@@ -13,9 +13,10 @@
 				:value="item.value"
 				:outlined="!isSelected(item.value)"
 				elevation="0"
-				height="40"
+				height="auto"
+				min-height="40"
 				active-class="white--text"
-				class="text-none"
+				class="text-none text-wrap py-2 text-left"
 				color="accent"
 				@click="toggleItem(item)"
 			>
@@ -27,7 +28,7 @@
 
 				<VIcon
 					:style="getIconStyle(item)"
-					class="ml-1 white--text"
+					class="ml-1 white--text flex-shrink-0"
 				>
 					{{ checkIcon }}
 				</VIcon>

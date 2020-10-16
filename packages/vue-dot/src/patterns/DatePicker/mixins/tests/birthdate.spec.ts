@@ -27,7 +27,7 @@ interface TestComponent extends Vue {
 
 /** Create fake VDatePicker for refs */
 function createDatePicker() {
-	return Vue.component('v-date-picker', {
+	return Vue.component('VDatePicker', {
 		data() {
 			return {
 				activePicker: ''
@@ -39,7 +39,7 @@ function createDatePicker() {
 
 /** Create the wrapper */
 function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
-	const component = Vue.component('test', {
+	const component = Vue.component('Test', {
 		mixins: [
 			Birthdate
 		],

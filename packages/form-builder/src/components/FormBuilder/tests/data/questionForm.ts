@@ -7,7 +7,7 @@ const defaultItems = [
 	},
 	{
 		text: '9h30',
-		value: '9.30'
+		value: 0
 	},
 	{
 		text: '10h',
@@ -235,14 +235,35 @@ export const questionForm: Form = {
 					type: 'choiceButton'
 				}
 			},
+			questionChoiceButtonTextMultiLine: {
+				title: 'Question choix bouton plusieurs lignes',
+				type: 'select',
+				value: {
+					value: 1,
+					other: null
+				},
+				items: [
+					{
+						text: 'Texte qui permet de tester sur plusieurs lignes',
+						value: 1
+					},
+					{
+						text: 'Texte 2',
+						value: 2
+					}
+				],
+				fieldOptions: {
+					type: 'choiceButton'
+				}
+			},
 			questionChoiceOther: {
 				title: 'Question choix autre',
 				description: 'Informations supplémentaires',
 				multiple: true,
 				type: 'select',
 				value: {
-					value: null,
-					other: null
+					value: [0, 1],
+					other: 'Autre valeur'
 				},
 				items: [
 					{
@@ -281,13 +302,13 @@ export const questionForm: Form = {
 				multiple: true,
 				type: 'select',
 				value: {
-					value: 'autre',
+					value: 0,
 					other: 'XXL'
 				},
 				items: [
 					{
 						text: 'S',
-						value: 0
+						value: 's'
 					},
 					{
 						text: 'M',
@@ -305,11 +326,11 @@ export const questionForm: Form = {
 					},
 					{
 						text: 'Autre',
-						value: 'autre'
+						value: 0
 					}
 				],
 				other: {
-					selectedChoice: 'autre',
+					selectedChoice: 0,
 					label: 'Autre choix',
 					fieldOptions: {
 						placeholder: 'Entrez votre taille'

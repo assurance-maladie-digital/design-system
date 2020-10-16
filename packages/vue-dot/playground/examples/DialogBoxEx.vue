@@ -1,8 +1,5 @@
 <template>
-	<DocSection
-		no-divider
-		title="DialogBox"
-	>
+	<DocSection title="DialogBox">
 		<VBtn
 			color="primary"
 			@click="dialog = true"
