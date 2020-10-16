@@ -8,32 +8,14 @@ Object {
         "fieldOptions": Object {
           "type": "choiceButton",
         },
-        "items": Array [
-          Object {
-            "text": "10h",
-            "value": 10,
-          },
-          Object {
-            "text": "11h",
-            "value": 11,
-          },
-        ],
+        "items": Array [],
         "type": "select",
       },
       "questionChoiceButtonMultiple": Object {
         "fieldOptions": Object {
           "type": "choiceButton",
         },
-        "items": Array [
-          Object {
-            "text": "10h",
-            "value": 10,
-          },
-          Object {
-            "text": "11h",
-            "value": 11,
-          },
-        ],
+        "items": Array [],
         "type": "select",
       },
       "questionPassword": Object {
@@ -70,38 +52,20 @@ Object {
           ],
           "type": "choiceButton",
         },
-        "items": Array [
-          Object {
-            "text": "10h",
-            "value": 10,
-          },
-          Object {
-            "text": "11h",
-            "value": 11,
-          },
-        ],
+        "items": Array [],
         "type": "select",
       },
       "questionChoiceButtonMultiple": Object {
         "fieldOptions": Object {
-          "errorMessages": "Erreur string",
+          "errorMessages": "Erreur",
           "type": "choiceButton",
         },
-        "items": Array [
-          Object {
-            "text": "10h",
-            "value": 10,
-          },
-          Object {
-            "text": "11h",
-            "value": 11,
-          },
-        ],
+        "items": Array [],
         "type": "select",
       },
       "questionPassword": Object {
         "fieldOptions": Object {
-          "errorMessages": "Champ requis",
+          "errorMessages": "Erreur",
         },
         "type": "password",
       },
@@ -109,14 +73,14 @@ Object {
         "fieldOptions": Object {
           "from": Object {
             "errorMessages": Array [
-              "Erreur questionPeriod 1",
-              "Erreur questionPeriod 2",
+              "Erreur 1",
+              "Erreur 2",
             ],
           },
           "to": Object {
             "errorMessages": Array [
-              "Erreur questionPeriod 1",
-              "Erreur questionPeriod 2",
+              "Erreur 1",
+              "Erreur 2",
             ],
           },
         },
@@ -125,8 +89,8 @@ Object {
       "questionString": Object {
         "fieldOptions": Object {
           "errorMessages": Array [
-            "Erreur string 1",
-            "Erreur string 2",
+            "Erreur 1",
+            "Erreur 2",
           ],
         },
         "type": "text",
@@ -136,7 +100,7 @@ Object {
 }
 `;
 
-exports[`setFormErrors skip error with bad type 1`] = `
+exports[`setFormErrors skips errors with wrong types 1`] = `
 Object {
   "section1": Object {
     "questions": Object {
@@ -144,32 +108,14 @@ Object {
         "fieldOptions": Object {
           "type": "choiceButton",
         },
-        "items": Array [
-          Object {
-            "text": "10h",
-            "value": 10,
-          },
-          Object {
-            "text": "11h",
-            "value": 11,
-          },
-        ],
+        "items": Array [],
         "type": "select",
       },
       "questionChoiceButtonMultiple": Object {
         "fieldOptions": Object {
           "type": "choiceButton",
         },
-        "items": Array [
-          Object {
-            "text": "10h",
-            "value": 10,
-          },
-          Object {
-            "text": "11h",
-            "value": 11,
-          },
-        ],
+        "items": Array [],
         "type": "select",
       },
       "questionPassword": Object {
