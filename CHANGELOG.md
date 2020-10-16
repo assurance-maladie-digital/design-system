@@ -38,6 +38,9 @@
   - **config:** Mise à jour de la version de yarn dans la configuration de Travis CI ([#589](https://github.com/assurance-maladie-digital/design-system/pull/589)) ([0a47260](https://github.com/assurance-maladie-digital/design-system/commit/0a47260c6b5cfb3782bb6b25a579af918987f38f))
   - **config:** Mise à jour de la taille maximale du build ([#607](https://github.com/assurance-maladie-digital/design-system/pull/607)) ([aa78533](https://github.com/assurance-maladie-digital/design-system/commit/aa785339f6f7d58936f307c71bd78595b2e72230))
 
+- 📝 **Documentation**
+  - **pull-requests:** Mise à jour du template ([#635](https://github.com/assurance-maladie-digital/design-system/pull/635))
+
 - ⬆️ **Dépendances**
   - **typescript:** Mise à jour vers la `v4.0.3` ([#572](https://github.com/assurance-maladie-digital/design-system/pull/572)) ([3167679](https://github.com/assurance-maladie-digital/design-system/commit/31676794ecee410642c4b8112532e4fdb3b99705))
   - **ts-jest:** Mise à jour vers la `v26.4.1` ([#573](https://github.com/assurance-maladie-digital/design-system/pull/573)) ([b06f87b](https://github.com/assurance-maladie-digital/design-system/commit/b06f87b33356ec1ec7316015cb81e5f405727ba1))
@@ -59,7 +62,7 @@
   - **@mdi/js:** Mise à jour vers la `v5.7.55` ([#629](https://github.com/assurance-maladie-digital/design-system/pull/629)) ([9e50f41](https://github.com/assurance-maladie-digital/design-system/commit/9e50f4107d8854314264e84b050f7bbe0cb5d731))
   - **babel:** Mise à jour du monorepo vers la `v7.12.1` ([#632](https://github.com/assurance-maladie-digital/design-system/pull/632)) ([cbbd571](https://github.com/assurance-maladie-digital/design-system/commit/cbbd571fb598a046e1ecef4ad59f2e9aa32c2a89))
   - **vue-router:** Mise à jour vers la `v3.4.7` ([#633](https://github.com/assurance-maladie-digital/design-system/pull/633)) ([d91db7e](https://github.com/assurance-maladie-digital/design-system/commit/d91db7e3c9256ab581afc2ce1ac5131dbc0403d6))
-  - **lint-staged:** Mise à jour vers la `v10.4.1` ([#634](https://github.com/assurance-maladie-digital/design-system/pull/634))
+  - **lint-staged:** Mise à jour vers la `v10.4.1` ([#634](https://github.com/assurance-maladie-digital/design-system/pull/634)) ([d21ce6b](https://github.com/assurance-maladie-digital/design-system/commit/d21ce6b512b2c6f9e521ebaadd560c3d930937fe))
 
 ### 📚 Guide de migration
 
