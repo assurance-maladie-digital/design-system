@@ -17,14 +17,14 @@
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
-  - **FormField:** Ajout de la gestion des messages d'erreur sur `ChoiceButtonField` ([#584](https://github.com/assurance-maladie-digital/design-system/pull/584))
+  - **FormField:** Ajout de la gestion des messages d'erreur sur `ChoiceButtonField` ([#584](https://github.com/assurance-maladie-digital/design-system/pull/584)) ([43acdbd](https://github.com/assurance-maladie-digital/design-system/commit/43acdbd9b7c8e03adf0bc5ee429e8b309d551085))
 
 - 🐛 **Corrections de bugs**
   - **FormField:** Correction des marges sur le champ période ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580)) ([d8c8303](https://github.com/assurance-maladie-digital/design-system/commit/d8c8303e2ab9f6c8e43bf8abbcc7d73b74103527))
   - **FormField:** Correction de la largeur du champ textarea ([#609](https://github.com/assurance-maladie-digital/design-system/pull/609)) ([d927c36](https://github.com/assurance-maladie-digital/design-system/commit/d927c36cbab1b91865f98395ca7898bbfa82cb1f))
   - **FormField:** Correction de l'affichage du champ select lorsque la valeur est égale à zéro ([#591](https://github.com/assurance-maladie-digital/design-system/pull/591)) ([62b90ba](https://github.com/assurance-maladie-digital/design-system/commit/62b90bada5a69973fc8f17b40f64720acca9e711))
-  - **FormField:** Correction de la sélection multiple sur `ChoiceField` ([#596](https://github.com/assurance-maladie-digital/design-system/pull/596))
-  - **FormField:** Correction de l'affichage des textes longs dans `ChoiceButtonField` ([#614](https://github.com/assurance-maladie-digital/design-system/pull/614))
+  - **FormField:** Correction de la sélection multiple sur `ChoiceField` ([#596](https://github.com/assurance-maladie-digital/design-system/pull/596)) ([875ce37](https://github.com/assurance-maladie-digital/design-system/commit/875ce37073640b77e92c72e555435c9ff6293ba3))
+  - **FormField:** Correction de l'affichage des textes longs dans `ChoiceButtonField` ([#614](https://github.com/assurance-maladie-digital/design-system/pull/614)) ([cd5c51b](https://github.com/assurance-maladie-digital/design-system/commit/cd5c51b433ec97a3812c2a037630fb1d13ccd174))
 
 ### Interne
 
@@ -61,7 +61,8 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.6.5` ([#628](https://github.com/assurance-maladie-digital/design-system/pull/628)) ([e2a906f](https://github.com/assurance-maladie-digital/design-system/commit/e2a906f8116aa23a4ea9584f554349a42e18c037))
   - **@mdi/js:** Mise à jour vers la `v5.7.55` ([#629](https://github.com/assurance-maladie-digital/design-system/pull/629)) ([9e50f41](https://github.com/assurance-maladie-digital/design-system/commit/9e50f4107d8854314264e84b050f7bbe0cb5d731))
   - **babel:** Mise à jour du monorepo vers la `v7.12.1` ([#632](https://github.com/assurance-maladie-digital/design-system/pull/632)) ([cbbd571](https://github.com/assurance-maladie-digital/design-system/commit/cbbd571fb598a046e1ecef4ad59f2e9aa32c2a89))
-  - **vue-router:** Mise à jour vers la `v3.4.7` ([#633](https://github.com/assurance-maladie-digital/design-system/pull/633))
+  - **vue-router:** Mise à jour vers la `v3.4.7` ([#633](https://github.com/assurance-maladie-digital/design-system/pull/633)) ([d91db7e](https://github.com/assurance-maladie-digital/design-system/commit/d91db7e3c9256ab581afc2ce1ac5131dbc0403d6))
+  - **lint-staged:** Mise à jour vers la `v10.4.1` ([#634](https://github.com/assurance-maladie-digital/design-system/pull/634))
 
 ### 📚 Guide de migration
 
