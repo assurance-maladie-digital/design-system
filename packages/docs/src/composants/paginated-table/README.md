@@ -1,5 +1,9 @@
+---
+title: PaginatedTable
+---
+
 ::: slot title
-# PaginatedTable
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -23,7 +27,7 @@ Vous pouvez modifier la pagination ou le tri puis recharger la page et constater
 
 <DocInfo>
 
-Le pattern `PaginatedTable` est un « wrapper », il étend l'API de la [VDataTable](https://vuetifyjs.com/fr-FR/components/data-tables/), vous pouvez donc utiliser les mêmes options et slots que sur celle-ci.
+Le pattern `PaginatedTable` est un « wrapper », il étend l'API de la [VDataTable](https://vuetifyjs.com/fr-FR/components/data-tables/), vous pouvez donc utiliser les mêmes props et slots que sur celle-ci.
 
 </DocInfo>
 
@@ -57,7 +61,7 @@ Vous pouvez sauvegarder la pagination et le tri même ci ceux-si sont gérés c�
 
 <DocInfo>
 
-La propriété `suffix` est utilisée pour dissocier les différentes tables afin de sauvegarder leurs `options` indépendamment.
+La prop `suffix` est utilisée pour dissocier les différentes tables afin de sauvegarder leurs `options` indépendamment.
 
 </DocInfo>
 

@@ -27,7 +27,7 @@ const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 			icons
 		}
 	});
-
+	
 	Vue.use(InputFacade);
 
 	Vue.use(FormBuilder);

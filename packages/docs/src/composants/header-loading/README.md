@@ -1,5 +1,9 @@
+---
+title: HeaderLoading
+---
+
 ::: slot title
-# HeaderLoading
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description

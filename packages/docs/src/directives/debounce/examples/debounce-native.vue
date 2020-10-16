@@ -9,7 +9,7 @@
 
 		<input
 			id="debounce-simple-input"
-			v-model.lazy="text"
+			v-model.lazy="search"
 			v-debounce
 			class="vd-simple-input vd-form-input"
 		>

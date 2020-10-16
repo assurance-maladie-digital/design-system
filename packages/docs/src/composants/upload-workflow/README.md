@@ -1,5 +1,9 @@
+---
+title: UploadWorkflow
+---
+
 ::: slot title
-# UploadWorkflow
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -24,7 +28,8 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           name: 'value',
           type: 'FileListItem[]',
           required: true,
-          description: 'La liste des fichiers que l\'utilisateur doit sélectionner.'
+          description: 'La liste des fichiers que l\'utilisateur doit sélectionner.',
+          example: '{\n	id: string;\n	title: string;\n	state?: FileState;\n	name?: string;\n	file?: File;\n}'
         },
         {
           name: 'section-title',
@@ -77,7 +82,7 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
         {
           name: 'error',
           description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
-          value: '{\n  file: File,\n  code: ErrorCodes\n}'
+          value: '{\n	file: File,\n	code: ErrorCodes\n}'
         }
       ]
     },
@@ -87,7 +92,8 @@ Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sél
           name: 'files',
           type: 'FileItem[]',
           required: true,
-          description: 'La liste des fichiers à afficher.'
+          description: 'La liste des fichiers à afficher.',
+          example: '{\n	id: string;\n	title: string;\n	state: FileState;\n	name?: string;\n	optional?: boolean;\n}'
         },
         {
           name: 'show-view-btn',
@@ -162,6 +168,12 @@ Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue deman
 
 <DocExample file="composants/upload-workflow/examples/upload-workflow-single-file" />
 
+### Fichiers optionnels
+
+Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
+
+<DocExample file="composants/upload-workflow/examples/upload-workflow-optional" />
+
 ### Utilisation des slots
 
 Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
@@ -170,6 +182,6 @@ Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre 
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `UploadWorkflow` en utilisant la prop `vuetify-options`.
 
 <DocExample file="composants/upload-workflow/examples/upload-workflow-options" />

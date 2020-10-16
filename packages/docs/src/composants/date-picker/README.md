@@ -1,5 +1,9 @@
+---
+title: DatePicker
+---
+
 ::: slot title
-# DatePicker
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -149,7 +153,7 @@ Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateu
 
 ### Outlined
 
-Vous pouvez afficher le `VTextField` en mode `outlined` grâce à la propriété du même nom. Cela va aussi mettre l'icône en mode `append` et modifier la position du menu.
+Vous pouvez afficher le `VTextField` en mode `outlined` grâce à la prop du même nom. Cela va aussi mettre l'icône en mode `append` et modifier la position du menu.
 
 <DocExample
   new-in="2.0.0-alpha.52"
@@ -158,7 +162,7 @@ Vous pouvez afficher le `VTextField` en mode `outlined` grâce à la propriété
 
 ### Date de naissance
 
-Vous pouvez permettre à l'utilisateur de sélectionner une date naissance plus facilement en utilisant la propriété `birthdate`.
+Vous pouvez permettre à l'utilisateur de sélectionner une date naissance plus facilement en utilisant la prop `birthdate`.
 
 <DocInfo>
 
@@ -170,13 +174,13 @@ L'utilisateur sélectionnera l'année en premier, puis le mois et enfin le jour 
 
 ### Weekends
 
-Vous pouvez afficher les weekends dans le calendrier en utilisant la propriété `show-weekends`.
+Vous pouvez afficher les weekends dans le calendrier en utilisant la prop `show-weekends`.
 
 <DocExample file="composants/date-picker/examples/date-picker-weekends" />
 
 ### Période
 
-Vous pouvez créer une période en fournissant une date de début via la propriété `start-date`. Lorsque l'utilisateur aura sélectionné une date date le calendrier, la période sera alors affichée dans le calendrier.
+Vous pouvez créer une période en fournissant une date de début via la prop `start-date`. Lorsque l'utilisateur aura sélectionné une date date le calendrier, la période sera alors affichée dans le calendrier.
 
 <DocInfo>
 
@@ -188,11 +192,11 @@ Lorsque que la date de début est située avant la date sélectionnée (période
 
 ### Format
 
-Vous pouvez modifier le format de la date affichée dans le `VTextField` en utilisant la propriété `date-format` ainsi que le format utilisé avec le `v-model` en utilisant la propriété `date-format-return`.
+Vous pouvez modifier le format de la date affichée dans le `VTextField` en utilisant la prop `date-format` ainsi que le format utilisé avec le `v-model` en utilisant la prop `date-format-return`.
 
 <DocInfo>
 
-Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la propriété `date-format`, mais vous pouvez le redéfinir en utilisant la propriété `mask` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
+Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la prop `date-format`, mais vous pouvez le redéfinir en utilisant la prop `mask` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
 
 </DocInfo>
 
@@ -200,9 +204,9 @@ Par défaut un masque limitant les caractères pouvant être saisis dans le `VTe
 
 ### Règles de validation
 
-Vous pouvez appliquer des [règles de validation Vuetify](https://vuetifyjs.com/fr-FR/components/inputs/#rules) au `VTextField` contenu dans le composant en utilisant la propriété `rules`.
+Vous pouvez appliquer des [règles de validation Vuetify](https://vuetifyjs.com/fr-FR/components/inputs/#rules) au `VTextField` contenu dans le composant en utilisant la prop `rules`.
 
-Vous pouvez aussi ajouter des règles d'alertes, qui ne bloquent pas la validation, en utilisant la propriété `warning-rules`.
+Vous pouvez aussi ajouter des règles d'alertes, qui ne bloquent pas la validation, en utilisant la prop `warning-rules`.
 
 Pour cela, vous pouvez utiliser les règles de validation inclues dans la librairie, comme :
 - `required`
@@ -214,7 +218,7 @@ Pour cela, vous pouvez utiliser les règles de validation inclues dans la librai
 
 ### Personnalisation des composants
 
-Vous pouvez personnaliser les composants Vuetify contenus dans `CopyBtn` en utilisant la propriété `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `DatePicker` en utilisant la prop `vuetify-options`.
 
 <DocInfo>
 

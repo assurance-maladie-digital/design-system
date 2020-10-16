@@ -13,12 +13,15 @@
 		>
 			{{ snackbarText }}
 
-			<VBtn
-				text
-				@click="snackbar = false"
-			>
-				Fermer
-			</VBtn>
+			<template v-slot:action="{ attrs }">
+				<VBtn
+					text
+					v-bind="attrs"
+					@click="snackbar = false"
+				>
+					Fermer
+				</VBtn>
+			</template>
 		</VSnackbar>
 	</div>
 </template>

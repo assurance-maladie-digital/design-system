@@ -1,5 +1,9 @@
+---
+title: SubHeader
+---
+
 ::: slot title
-# SubHeader
+# {{ $frontmatter.title }}
 :::
 
 ::: slot description
@@ -48,7 +52,8 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
           name: 'data-lists',
           type: 'DataListsItem[]',
           default: 'undefined',
-          description: 'Liste des composants `DataList` en mode colonne.'
+          description: 'Liste des composants `DataList` en mode colonne.',
+          example: '{\n	key: string;\n	value?: string;\n	action?: string;\n	chip?: boolean;\n	icon?: string;\n	options?: Options;\n}'
         },
         {
           name: 'render-html-value',
@@ -129,11 +134,11 @@ Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'
 
 ### Listes de données
 
-Vous pouvez afficher des listes de données en utilisant la propriété `data-lists`.
+Vous pouvez afficher des listes de données en utilisant la prop `data-lists`.
 
 <DocInfo>
 
-Vous pouvez afficher les valeurs dans les DataList via la directive `v-html` en utilisant la propriété `render-html-value`.
+Vous pouvez afficher les valeurs dans les DataList via la directive `v-html` en utilisant la prop `render-html-value`.
 
 </DocInfo>
 
@@ -159,11 +164,11 @@ Vous pouvez afficher des informations complémentaires en utilisant le slot `add
 
 ### Mode chargement
 
-Vous pouvez afficher le composant en mode chargement grâce à la propriété `loading`.
+Vous pouvez afficher le composant en mode chargement grâce à la prop `loading`.
 
 <DocInfo>
 
-Vous pouvez utiliser les propriétés `itemsNumberLoading` et `headingLoading` sur chaque [DataList](../../composants/data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
+Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur chaque [DataList](../data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
 
 </DocInfo>
 

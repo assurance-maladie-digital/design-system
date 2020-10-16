@@ -128,6 +128,10 @@
 			line-height: 1.55;
 		}
 
+		pre > code {
+			padding: 0 !important;
+		}
+
 		code * {
 			font-family: inherit;
 		}
