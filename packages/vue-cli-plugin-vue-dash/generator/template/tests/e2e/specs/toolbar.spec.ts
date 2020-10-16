@@ -5,7 +5,7 @@ describe('Toolbar page', () => {
 	});
 
 	it('Visits the app root url then the current ttitle', () => {
-		cy.contains('div', 'Projet my-project-game');
+		cy.contains('div', 'Projet <%= name %>');
 	});
 
 	it('Click on logo user', () => {

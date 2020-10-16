@@ -1,5 +1,5 @@
 // https://docs.cypress.io/api/introduction/api.html
-describe('Home page', () => {
+describe('Home page : page acceuil', () => {
 	beforeEach(() => {
 		cy.visit('/');
 	});
