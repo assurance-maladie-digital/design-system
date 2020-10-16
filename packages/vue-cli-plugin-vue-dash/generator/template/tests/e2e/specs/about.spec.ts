@@ -1,5 +1,5 @@
 // https://docs.cypress.io/api/introduction/api.html
-describe('Check About page: page à propos', () => {
+describe('About page ', () => {
 	beforeEach(() => {
 		cy.visit('/a-propos');
 	});

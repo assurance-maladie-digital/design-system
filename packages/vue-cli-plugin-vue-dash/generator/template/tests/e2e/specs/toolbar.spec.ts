@@ -9,11 +9,11 @@ describe('Toolbar', () => {
 	});
 
 	it('Click on logo user', () => {
-		cy.dataCy('toolbar-elmt').parent().find('a').should('have.attr', 'href');
+		cy.dataCy('header-menu').parent().find('a').should('have.attr', 'href');
 	});
 
 	it('Check contains menu of popup', () => {
-		cy.dataCy('toolbar-elmt').parent().find('button').click();
+		cy.dataCy('header-menu').parent().find('button').click();
 
 		cy.contains('Accueil');
 
