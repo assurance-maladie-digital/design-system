@@ -1,4 +1,4 @@
-import { formErrorsInvalidValues, formErrorsWrongTypes, formErrors, form } from './data/formErrors';
+import { form, formErrors, formErrorsInvalidValues, formErrorsWrongTypes } from './data/formErrors';
 
 import { setFormErrors } from '../';
 
