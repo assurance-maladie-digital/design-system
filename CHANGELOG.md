@@ -62,7 +62,7 @@
   - **@mdi/js:** Mise à jour vers la `v5.7.55` ([#629](https://github.com/assurance-maladie-digital/design-system/pull/629)) ([9e50f41](https://github.com/assurance-maladie-digital/design-system/commit/9e50f4107d8854314264e84b050f7bbe0cb5d731))
   - **babel:** Mise à jour du monorepo vers la `v7.12.1` ([#632](https://github.com/assurance-maladie-digital/design-system/pull/632)) ([cbbd571](https://github.com/assurance-maladie-digital/design-system/commit/cbbd571fb598a046e1ecef4ad59f2e9aa32c2a89))
   - **vue-router:** Mise à jour vers la `v3.4.7` ([#633](https://github.com/assurance-maladie-digital/design-system/pull/633)) ([d91db7e](https://github.com/assurance-maladie-digital/design-system/commit/d91db7e3c9256ab581afc2ce1ac5131dbc0403d6))
-  - **lint-staged:** Mise à jour vers la `v10.4.1` ([#634](https://github.com/assurance-maladie-digital/design-system/pull/634))
+  - **lint-staged:** Mise à jour vers la `v10.4.1` ([#634](https://github.com/assurance-maladie-digital/design-system/pull/634)) ([d21ce6b](https://github.com/assurance-maladie-digital/design-system/commit/d21ce6b512b2c6f9e521ebaadd560c3d930937fe))
 
 ### 📚 Guide de migration
 
