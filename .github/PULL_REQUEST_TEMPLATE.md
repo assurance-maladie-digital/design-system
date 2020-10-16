@@ -6,13 +6,13 @@
 
 <!-- Veuillez supprimer les options non pertinentes. -->
 
-- [ ] Nouvelle fonctionnalité
-- [ ] Correction de bug
-- [ ] Changement cassant
-- [ ] Refactoring
-- [ ] Maintenance
-- [ ] Documentation
-- [ ] Ce changement nécessite une mise à jour de la documentation
+- Nouvelle fonctionnalité
+- Correction de bug
+- Changement cassant
+- Refactoring
+- Maintenance
+- Documentation
+- Ce changement nécessite une mise à jour de la documentation
 
 ## Checklist
 

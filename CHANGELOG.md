@@ -38,6 +38,9 @@
   - **config:** Mise à jour de la version de yarn dans la configuration de Travis CI ([#589](https://github.com/assurance-maladie-digital/design-system/pull/589)) ([0a47260](https://github.com/assurance-maladie-digital/design-system/commit/0a47260c6b5cfb3782bb6b25a579af918987f38f))
   - **config:** Mise à jour de la taille maximale du build ([#607](https://github.com/assurance-maladie-digital/design-system/pull/607)) ([aa78533](https://github.com/assurance-maladie-digital/design-system/commit/aa785339f6f7d58936f307c71bd78595b2e72230))
 
+- 📝 **Documentation**
+  - **pull-requests:** Mise à jour du template ([#635](https://github.com/assurance-maladie-digital/design-system/pull/635))
+
 - ⬆️ **Dépendances**
   - **typescript:** Mise à jour vers la `v4.0.3` ([#572](https://github.com/assurance-maladie-digital/design-system/pull/572)) ([3167679](https://github.com/assurance-maladie-digital/design-system/commit/31676794ecee410642c4b8112532e4fdb3b99705))
   - **ts-jest:** Mise à jour vers la `v26.4.1` ([#573](https://github.com/assurance-maladie-digital/design-system/pull/573)) ([b06f87b](https://github.com/assurance-maladie-digital/design-system/commit/b06f87b33356ec1ec7316015cb81e5f405727ba1))
