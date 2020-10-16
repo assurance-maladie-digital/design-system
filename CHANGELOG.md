@@ -17,7 +17,7 @@
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
-  - **FormField:** Ajout de la gestion des messages d'erreurs sur le champ de sélection en mode bouton ([#584](https://github.com/assurance-maladie-digital/design-system/pull/584))
+  - **FormField:** Ajout de la gestion des messages d'erreurs sur `ChoiceButtonField` ([#584](https://github.com/assurance-maladie-digital/design-system/pull/584))
 
 - 🐛 **Corrections de bugs**
   - **FormField:** Correction des marges sur le champ période ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580)) ([d8c8303](https://github.com/assurance-maladie-digital/design-system/commit/d8c8303e2ab9f6c8e43bf8abbcc7d73b74103527))
