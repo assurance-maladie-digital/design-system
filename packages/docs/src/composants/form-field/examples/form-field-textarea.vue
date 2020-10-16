@@ -9,14 +9,12 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	@Component
-	export default class FormFieldQuestion extends Vue {
+	export default class FormFieldEx extends Vue {
 		field: Field = {
 			type: 'textarea',
-			title: 'Vos symptômes',
-			description: 'Décrivez les symptômes qui vous affectent et leur ordre d\'apparition.',
 			value: null,
 			fieldOptions: {
-				label: 'Décrivez vos symptômes',
+				label: 'Vos symptômes',
 				hideDetails: true,
 				outlined: true
 			}

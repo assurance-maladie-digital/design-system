@@ -51,6 +51,10 @@ module.exports = {
 						to: '/composants/form-builder'
 					},
 					{
+						title: 'FormField',
+						to: '/composants/form-field'
+					},
+					{
 						title: 'FormFieldList',
 						to: '/composants/form-field-list'
 					},
@@ -81,10 +85,6 @@ module.exports = {
 					{
 						title: 'UploadWorkflow',
 						to: '/composants/upload-workflow'
-					},
-					{
-						title: 'FormField',
-						to: '/composants/form-field'
 					}
 				]
 			}
