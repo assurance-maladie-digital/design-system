@@ -51,6 +51,10 @@ module.exports = {
 						to: '/composants/form-builder'
 					},
 					{
+						title: 'FormFieldList',
+						to: '/composants/form-field-list'
+					},
+					{
 						title: 'FooterWrapper',
 						to: '/composants/footer-wrapper'
 					},

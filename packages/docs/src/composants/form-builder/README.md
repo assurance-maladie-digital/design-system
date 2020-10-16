@@ -10,6 +10,12 @@ title: FormBuilder
 Le composant `FormBuilder` est utilisé pour afficher un questionnaire.
 :::
 
+<DocInfo>
+
+Le composant `FormBuilder` permet d'afficher un questionnaire composé de sections et d'étapes en utilisant le [FormFieldList](../form-field-list/README.md), vous pouvez utiliser ce dernier pour afficher des formulaires plus simples.
+
+</DocInfo>
+
 ## Utilisation
 
 <DocExample
@@ -58,8 +64,6 @@ Le composant `FormBuilder` est utilisé pour afficher un questionnaire.
 
 ### Gestion des évènements
 
-Vous pouvez réagir lorsque le formulaire est mise à jour grâce à l'évènement `change` ainsi que réagir aussi aux champs dynamique changés grâce à l'événement `refresh`.
+Vous pouvez réagir lorsque la valeur d'un champ du formulaire change grâce à l'évènement `change`, ainsi que lorsque la valeur d'un champ dynamique (avec l'attribut `dynamic: true`) change grâce à l'événement `refresh`.
 
-<DocExample
-  file="composants/form-builder/examples/form-builder-events"
-/>
+<DocExample file="composants/form-builder/examples/form-builder-events" />
