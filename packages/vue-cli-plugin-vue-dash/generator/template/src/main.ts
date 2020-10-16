@@ -16,6 +16,7 @@ Component.registerHooks([
 // Import plugins
 import { vuetify } from './plugins/vuetify';
 import './plugins/vue-dot';
+<% if (formBuilder) { %>import './plugins/form-builder';<% } %>
 import './plugins/webfontloader';
 
 // Import application parts

@@ -29,6 +29,12 @@ const prompts = [
 		type: 'confirm',
 		message: 'Installer Matomo (pour les analyses d\'audience)',
 		default: false
+	},
+	{
+		name: 'formBuilder',
+		type: 'confirm',
+		message: 'Installer Form-builder (bundle pour afficher des formulaires)',
+		default: false
 	}
 ];
 
