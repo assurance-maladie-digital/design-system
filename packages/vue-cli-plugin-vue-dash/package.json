@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"@cnamts/design-tokens": "^2.0.0-beta.0",
+		"@cnamts/form-builder": "^2.0.0-beta.2",
 		"@cnamts/vue-dot": "^2.0.0-beta.2"
 	},
 	"publishConfig": {

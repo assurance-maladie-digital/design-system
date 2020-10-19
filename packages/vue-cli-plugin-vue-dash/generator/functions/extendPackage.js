@@ -13,6 +13,7 @@ function normalizeVersion(version) {
 // Use dev dependencies to get packages versions
 const VueDotVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/vue-dot'] || 'next');
 const DesignTokensVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/design-tokens'] || 'next');
+const FormBuilderVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/form-builder'] || 'next');
 
 /** Extend package.json */
 function extendPackage(api, options) {
@@ -50,6 +51,10 @@ function extendPackage(api, options) {
 
 	if (options.i18n) {
 		newPackageProperties.dependencies['vue-i18n'] = '^8.22.0';
+	}
+
+	if (options.formBuilder) {
+		newPackageProperties.dependencies['@cnamts/form-builder'] = FormBuilderVersion;
 	}
 
 	if (options.vuexPersist) {

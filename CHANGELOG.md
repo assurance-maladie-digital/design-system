@@ -1,3 +1,10 @@
+## Non publié
+
+### Vue Dash
+
+- ✨ **Nouvelles fonctionnalités**
+  - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636))
+
 ## v2.0.0-beta.2
 
 **Version publiée le 19/10/2020.**
@@ -47,7 +54,7 @@ Cette version comporte le nouveau composant `ErrorPage` ainsi que des correction
 
 - 📝 **Documentation**
   - **pull-requests:** Mise à jour du template ([#635](https://github.com/assurance-maladie-digital/design-system/pull/635)) ([bd95d61](https://github.com/assurance-maladie-digital/design-system/commit/bd95d6119b8559725ba9390ddc336a57ba342179))
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#645](https://github.com/assurance-maladie-digital/design-system/pull/645))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#645](https://github.com/assurance-maladie-digital/design-system/pull/645)) ([8ad6d76](https://github.com/assurance-maladie-digital/design-system/commit/8ad6d76c6c43d06b602a3d3115b842d10eb09451))
 
 - ⬆️ **Dépendances**
   - **typescript:** Mise à jour vers la `v4.0.3` ([#572](https://github.com/assurance-maladie-digital/design-system/pull/572)) ([3167679](https://github.com/assurance-maladie-digital/design-system/commit/31676794ecee410642c4b8112532e4fdb3b99705))
