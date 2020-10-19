@@ -1,7 +1,7 @@
 <template>
 	<VAppBar
-		:height="headerHeight"
 		app
+		height="80"
 		clipped-left
 		color="white"
 		class="doc-header flex-grow-0"
@@ -16,7 +16,6 @@
 			exact
 			aria-label="Accueil"
 			class="app-logo-link"
-			:class="{ 'logo-small': smAndDown }"
 		>
 			<img
 				src="../assets/logo-am.svg"
@@ -33,7 +32,7 @@
 			/>
 
 			<slot name="title">
-				<VToolbarTitle :class="titleClasses">
+				<VToolbarTitle class="text-h6 ml-4">
 					Design System
 				</VToolbarTitle>
 			</slot>
@@ -46,29 +45,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DocHeader extends Vue {
-		isClient = false;
-
-		mounted() {
-			this.isClient = true;
-		}
-
-		get smAndDown() {
-			if (this.isClient) {
-				return false;
-			}
-
-			return this.$vuetify.breakpoint.smAndDown;
-		}
-
-		get headerHeight(): number {
-			return this.smAndDown ? 56 : 80;
-		}
-
-		get titleClasses(): string {
-			return this.smAndDown ? 'subtitle-1 ml-2' : 'text-h6 ml-4';
-		}
-	}
+	export default class DocHeader extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -84,10 +61,6 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
-
-		&.logo-small {
-			min-width: 108px;
-		}
 
 		&:not([disabled]):hover {
 			background: #eee;
