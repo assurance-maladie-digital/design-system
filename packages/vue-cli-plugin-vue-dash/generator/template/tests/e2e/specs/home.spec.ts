@@ -4,29 +4,21 @@ describe('Home page ', () => {
 		cy.visit('/');
 	});
 
-	it('Verify contains of selected tab: Acceuil | À propos: ', () => {
-		cy.dataCy('toolbar-tabs').find('a').should('have.attr', 'href');
-	});
-
-	it('Check contains tab: Acceuil : ', () => {
-		cy.dataCy('toolbar-tabs').find('a').filter('[aria-selected=true]').click();
-		cy.url().should('contain', '/');
-
+	it('Check contains tab: Acceuil', () => {
 		cy.contains('h2', ' Premiers pas ').parent().find('p').should('have.length', 2);
-		cy.contains('h2', ' Premiers pas ').parent().find('a').contains('À propos').should('have.attr', 'href');
 		cy.contains('h2', ' Premiers pas ').parent().find('button').contains(' Envoyer une notification (exemple) ');
 	});
 
-	it('Click button on tab: Acceuil ', () => {
+	it('Click button on tab: Acceuil', () => {
 		cy.contains('h2', ' Premiers pas ').parent().find('button').click();
 	});
 
-	it('Check contains of tab: À propos : ', () => {
+	it('Check contains and length of the tab: À propos :', () => {
 		cy.dataCy('toolbar-tabs').find('a').filter('[aria-selected=false]').click();
 		cy.url().should('contain', '/a-propos');
 
-		cy.contains('h2', ' À propos ').parent().find('div').should('have.length', 4).each(($el) => {
+		cy.contains('h2', ' À propos').parent().find('div').should('have.length', 4).each(($el) => {
 			cy.wrap($el).find('li');
-		})
+		});
 	});
 });

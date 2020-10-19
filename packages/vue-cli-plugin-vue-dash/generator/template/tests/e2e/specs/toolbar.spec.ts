@@ -4,12 +4,8 @@ describe('Toolbar', () => {
 		cy.visit('/');
 	});
 
-	it('Visits the app root url then the current ttitle', () => {
+	it('Visits the app root url then the current title', () => {
 		cy.contains('div', 'Projet <%= name %>');
-	});
-
-	it('Click on logo user', () => {
-		cy.dataCy('header-menu').parent().find('a').should('have.attr', 'href');
 	});
 
 	it('Check contains menu of popup', () => {
