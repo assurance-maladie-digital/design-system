@@ -1,4 +1,4 @@
-import { IDataList } from '../../elements/DataList/types';
+import { DataList } from '../../elements/DataList/types';
 
 export interface IDataListAction {
 	dataListIndex: number;
@@ -7,7 +7,7 @@ export interface IDataListAction {
 
 export interface DataListsItem {
 	title?: string;
-	items: IDataList;
+	items: DataList;
 	headingLoading?: boolean;
 	itemsNumberLoading?: number;
 }
