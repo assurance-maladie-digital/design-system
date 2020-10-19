@@ -33,6 +33,10 @@ module.exports = {
 						to: '/composants/dialog-box'
 					},
 					{
+						title: 'ErrorPage',
+						to: '/composants/error-page'
+					},
+					{
 						title: 'FileUpload',
 						to: '/composants/file-upload'
 					},
