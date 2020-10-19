@@ -33,7 +33,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { IDataList } from '../../src/elements/DataList/types';
+	import { DataList } from '../../src/elements/DataList/types';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -43,7 +43,7 @@
 
 		actionValue: string | null = 'New text';
 
-		data: IDataList = [
+		data: DataList = [
 			{
 				key: 'Civility',
 				value: 'Mr',
