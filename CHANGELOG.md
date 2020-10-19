@@ -3,7 +3,12 @@
 ### Vue Dash
 
 - ✨ **Nouvelles fonctionnalités**
-  - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636))
+  - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636)) ([dfe1c80](https://github.com/assurance-maladie-digital/design-system/commit/dfe1c80a09d9acdf6ecca2c72de22708938b5784))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **jest:** Mise à jour vers la `v26.6.0` ([#646](https://github.com/assurance-maladie-digital/design-system/pull/646))
 
 ## v2.0.0-beta.2
 
