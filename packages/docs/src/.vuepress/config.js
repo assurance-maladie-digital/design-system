@@ -9,16 +9,6 @@ module.exports = {
 	themeConfig: {
 		sidebar: [
 			{
-				title: 'Directives',
-				group: 'directives',
-				items: [
-					{
-						title: 'Debounce',
-						to: '/directives/debounce/'
-					}
-				]
-			},
-			{
 				title: 'Composants',
 				group: 'composants',
 				items: [
@@ -81,6 +71,16 @@ module.exports = {
 					{
 						title: 'UploadWorkflow',
 						to: '/composants/upload-workflow'
+					}
+				]
+			},
+			{
+				title: 'Directives',
+				group: 'directives',
+				items: [
+					{
+						title: 'Debounce',
+						to: '/directives/debounce/'
 					}
 				]
 			}
