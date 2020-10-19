@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.0.0-beta.1",
+	"version": "2.0.0-beta.2",
 	"description": "Implementation of our Design System for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -49,7 +49,7 @@
 	"devDependencies": {
 		"@babel/core": "7.12.3",
 		"@babel/preset-env": "7.12.1",
-		"@cnamts/cli-helpers": "^2.0.0-alpha.51",
+		"@cnamts/cli-helpers": "^2.0.0-beta.2",
 		"@vue/cli-plugin-babel": "4.5.8",
 		"@vue/cli-plugin-eslint": "4.5.8",
 		"@vue/cli-plugin-typescript": "4.5.8",
@@ -71,5 +71,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"gitHead": "12f20cd67e2336f2d9990f32e0dfc931a089c707"
+	"gitHead": "8665a0d4d9d9fcbff61a3b89c8e368c2dfe4d101"
 }
