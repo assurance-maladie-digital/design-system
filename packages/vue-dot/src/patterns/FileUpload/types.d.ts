@@ -6,7 +6,7 @@ export interface ErrorEvent {
 }
 
 export type ErrorCodesType = {
-	[K in ErrorCodes]: string;
+	[key: string]: string;
 };
 
 export interface HTMLInputEvent extends Event {
