@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- ♻️ **Refactoring**
+  - **DataList:** Renommage de l'interface `IDataList` en `DataList` ([#649](https://github.com/assurance-maladie-digital/design-system/pull/649)) ([62cf170](https://github.com/assurance-maladie-digital/design-system/commit/62cf170b49cc6bad6d02c56e1fcf75d653dac303))
+
 ### Vue Dash
 
 - ✨ **Nouvelles fonctionnalités**
@@ -9,7 +14,19 @@
 
 - ⬆️ **Dépendances**
   - **jest:** Mise à jour vers la `v26.6.0` ([#646](https://github.com/assurance-maladie-digital/design-system/pull/646)) ([ba66508](https://github.com/assurance-maladie-digital/design-system/commit/ba665081397191d5a96179dee920681857fec0f3))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.3` ([#647](https://github.com/assurance-maladie-digital/design-system/pull/647))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.3` ([#647](https://github.com/assurance-maladie-digital/design-system/pull/647)) ([4f3411b](https://github.com/assurance-maladie-digital/design-system/commit/4f3411bc48e17629dc3971a6ef08c0779a7a23f9))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.5.0` ([#648](https://github.com/assurance-maladie-digital/design-system/pull/648))
+
+### 📚 Guide de migration
+
+#### Renommer l'interface `IDataList`
+
+L'interface `IDataList` a été renommée en `DataList` :
+
+```diff
+-import { IDataList } from ' @cnamts/vue-dot/src/elements/DataList/types';
++import { DataList } from ' @cnamts/vue-dot/src/elements/DataList/types';
+```
 
 ## v2.0.0-beta.2
 
@@ -291,7 +308,7 @@ Puis importer ceux-ci depuis le package :
 +import { tokens } from '@cnamts/design-tokens;
 ```
 
-De même, la constante `vuetifyTheme` a changé d'emplacement et est maintenant appelée `lightTheme`
+De même, la constante `vuetifyTheme` a changé d'emplacement et est maintenant appelée `lightTheme` :
 
 ```diff
 -import { vuetifyTheme } from '@cnamts/vue-dot/src/tokens/vuetifyTheme';
@@ -366,7 +383,7 @@ Cette version comporte de nouvelles fonctionnalités ainsi que des corrections d
 
 #### Largeur des composants `FileUpload` et `UploadWorkflow`
 
-Ces composants ont maintenant une largeur par défaut de `100%`, vous pouvez utiliser la prop `width` pour définir une largeur:
+Ces composants ont maintenant une largeur par défaut de `100%`, vous pouvez utiliser la prop `width` pour définir une largeur :
 
 ```diff
 <FileUpload
@@ -463,12 +480,15 @@ Au moment de la sortie de cette version, [Vue the mask](https://github.com/vuejs
 Pour mettre à jour, vous devez supprimer `vue-the-mask` du fichier `package.json`, en utilisant la commande `yarn remove vue-the-mask`, et installer `vue-input-facade` en utilisant `yarn add vue-input-facade`.
 
 Après avoir installé le nouveau package, vous devez mettre à jour la déclaration du module :
+
 ```diff
 // src/modules.d.ts
 -declare module 'vue-the-mask';
 +declare module 'vue-input-facade';
 ```
+
 Et aussi mettre à jour l'utilisation du plugin :
+
 ```diff
 // src/plugins/vue-dot.ts
 -// Register v-mask directive
@@ -480,6 +500,7 @@ Et aussi mettre à jour l'utilisation du plugin :
 ```
 
 Il est également nécessaire d'ajouter `vue-input-facade` à la liste des dépendances qui doivent être transpilées pour assurer la comptabilité des navigateurs comme IE 11 :
+
 ```diff
 // vue.config.js
 // Transpile ES6 inside dependencies
@@ -491,6 +512,7 @@ transpileDependencies: [
 ```
 
 Pour la compatibilité des navigateurs comme IE 11, vous devez également ajouter le polyfill `custom-event-polyfill` en utilisant `yarn add custom-event-polyfill`, puis l'importer dans votre application :
+
 ```diff
 // main.ts
 +// Polyfill for vue-input-facade on IE
@@ -506,6 +528,7 @@ Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. 
 ### Renommer `showWeekEnds` sur le `DatePicker`
 
 La prop `showWeekEnds` a été renommée en `showWeekends` :
+
 ```diff
 <DatePicker
 -	showWeekEnds
