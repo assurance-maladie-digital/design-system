@@ -26,7 +26,7 @@
 			</h2>
 
 			<p class="mb-10">
-				Dernière mise à jour il y a {{ lastUpdated }}
+				Dernière mise à jour {{ lastUpdated }}
 			</p>
 
 			<VBtn
@@ -62,7 +62,22 @@
 		version = version;
 
 		get lastUpdated(): string {
-			const days = dayjs().diff(dayjs(LAST_UPDATED), 'day');
+			const lastUpdated = dayjs(LAST_UPDATED);
+			const days = dayjs().diff(lastUpdated, 'day');
+
+			if (days === 0) {
+				return 'aujourd\'hui';
+			}
+
+			if (days === 1) {
+				return `${days} jour`;
+			}
+
+			if (days >= 30) {
+				const month = dayjs().diff(lastUpdated, 'month');
+
+				return `il y a ${month} mois`;
+			}
 
 			return `${days} jours`;
 		}
