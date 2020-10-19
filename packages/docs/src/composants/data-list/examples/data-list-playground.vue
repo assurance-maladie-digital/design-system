@@ -86,11 +86,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+
 	import { mdiCalendar, mdiAccount } from '@mdi/js';
 
 	@Component
 	export default class DataListPlayground extends Vue {
-		items = [
+		items: DataList = [
 			{
 				key: 'Nom',
 				value: '',

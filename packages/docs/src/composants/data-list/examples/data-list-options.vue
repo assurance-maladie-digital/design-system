@@ -9,11 +9,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+
 	import { mdiCalendar } from '@mdi/js';
 
 	@Component
 	export default class DataListOptions extends Vue {
-		items = [
+		items: DataList = [
 			{
 				key: 'Nom',
 				value: 'Dupont'

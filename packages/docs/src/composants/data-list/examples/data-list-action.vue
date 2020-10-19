@@ -9,9 +9,11 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+
 	@Component
 	export default class DataListAction extends Vue {
-		items = [
+		items: DataList = [
 			{
 				key: 'Nom',
 				value: 'Dupont'
@@ -27,7 +29,7 @@
 			}
 		];
 
-		updateBirthdate(itemIndex: number) {
+		updateBirthdate(itemIndex: number): void {
 			this.$set(this.items[itemIndex], 'value', '01/01/1970');
 		}
 	}
