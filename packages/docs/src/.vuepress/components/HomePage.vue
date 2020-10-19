@@ -32,7 +32,7 @@
 			<VBtn
 				color="primary"
 				to="/composants/copy-btn"
-				class="mb-6"
+				class="home-cta mb-6"
 				large
 			>
 				Commencer
@@ -76,6 +76,11 @@
 
 	.home-title {
 		max-width: 750px;
+	}
+
+	.home-cta {
+		// Set color to avoid light button during hydration
+		background-color: #003463 !important;
 	}
 
 	.home-background {
