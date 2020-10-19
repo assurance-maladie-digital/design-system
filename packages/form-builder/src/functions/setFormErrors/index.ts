@@ -26,7 +26,7 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 
 			// If the field exists in our form and we
 			// have errors to set, set errors
-			if (Array.isArray(errors)) {
+			if (typeof errors === 'string' || Array.isArray(errors)) {
 				(fieldOptions as FieldOptions).errorMessages = errors;
 			} else if (typeof errors === 'object') {
 				// For each sub field in error
