@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.2
+
+**Version publiée le 19/10/2020.**
+
+Cette version comporte le nouveau composant `ErrorPage` ainsi que des corrections de bugs sur le FormBuilder et la refonte du composant `LangBtn`.
 
 ### Vue Dot
 
@@ -15,7 +19,7 @@
   - **template:** Suppression des imports des composants globaux ([#580](https://github.com/assurance-maladie-digital/design-system/pull/580)) ([b9d8835](https://github.com/assurance-maladie-digital/design-system/commit/b9d8835c8693924a212d8425b955b5bdef7bebff))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#644](https://github.com/assurance-maladie-digital/design-system/pull/644))
+  - **template:** Mise à jour des dépendances ([#644](https://github.com/assurance-maladie-digital/design-system/pull/644)) ([9c78937](https://github.com/assurance-maladie-digital/design-system/commit/9c78937246b42887a79927f65c29a8ba503cf5cb))
 
 ### FormBuilder
 
@@ -43,6 +47,7 @@
 
 - 📝 **Documentation**
   - **pull-requests:** Mise à jour du template ([#635](https://github.com/assurance-maladie-digital/design-system/pull/635)) ([bd95d61](https://github.com/assurance-maladie-digital/design-system/commit/bd95d6119b8559725ba9390ddc336a57ba342179))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#645](https://github.com/assurance-maladie-digital/design-system/pull/645))
 
 - ⬆️ **Dépendances**
   - **typescript:** Mise à jour vers la `v4.0.3` ([#572](https://github.com/assurance-maladie-digital/design-system/pull/572)) ([3167679](https://github.com/assurance-maladie-digital/design-system/commit/31676794ecee410642c4b8112532e4fdb3b99705))
@@ -69,11 +74,11 @@
 
 ### 📚 Guide de migration
 
-### Utiliser le composant `ErrorPage`
+#### Utiliser le composant `ErrorPage`
 
 Le composant `ErrorPage` a été ajouté dans Vue Dot, vous pouvez donc le supprimer de votre projet. Il n'y a pas de modification sur l'API du composant.
 
-### Utiliser le type `Next`
+#### Utiliser le type `Next`
 
 Le type `Next` a été ajouté dans Vue Dot, vous pouvez également le supprimer de votre projet :
 
