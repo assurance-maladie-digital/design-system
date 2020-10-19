@@ -55,7 +55,7 @@
 
 	import dayjs from 'dayjs';
 
-	const LAST_UPDATED = '2020-09-18';
+	const LAST_UPDATED = '2020-10-19';
 
 	@Component
 	export default class HomePage extends Vue {
