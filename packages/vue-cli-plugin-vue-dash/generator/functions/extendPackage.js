@@ -24,23 +24,23 @@ function extendPackage(api, options) {
 			'axios': '^0.20.0',
 			'core-js': '^3.6.5',
 			"custom-event-polyfill": "^1.0.7",
-			'dayjs': '^1.8.36',
+			'dayjs': '^1.9.3',
 			'languages': '^0.1.3',
 			'vue-input-facade': '^1.3.2',
 			'vue-meta': '^2.4.0',
-			'vuetify': '^2.3.10'
+			'vuetify': '^2.3.14'
 		},
 		devDependencies: {
-			'@babel/core': '^7.11.6',
-			'@mdi/js': '^5.6.55',
+			'@babel/core': '^7.12.3',
+			'@mdi/js': '^5.7.55',
 			'@types/jest': '26.0.14',
 			'@types/webfontloader': '^1.6.32',
 			'@typescript-eslint/eslint-plugin': '^4.1.1',
 			'@typescript-eslint/parser': '^4.1.1',
-			'babel-jest': '^26.3.0',
-			'jest': '^26.4.2',
+			'babel-jest': '^26.5.2',
+			'jest': '^26.5.3',
 			'jest-serializer-vue': '^2.0.2',
-			'ts-jest': '^26.3.0',
+			'ts-jest': '^26.4.1',
 			'vue-class-component': '^7.2.6',
 			'vue-cli-plugin-vuetify': '^2.0.7',
 			'vuetify-loader': '^1.6.0',
@@ -50,7 +50,7 @@ function extendPackage(api, options) {
 	};
 
 	if (options.i18n) {
-		newPackageProperties.dependencies['vue-i18n'] = '^8.21.1';
+		newPackageProperties.dependencies['vue-i18n'] = '^8.22.0';
 	}
 
 	if (options.formBuilder) {
