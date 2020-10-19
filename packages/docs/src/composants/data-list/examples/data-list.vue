@@ -20,6 +20,10 @@
 			{
 				key: 'Date de naissance',
 				value: '24/09/1970'
+			},
+			{
+				key: 'Nombre d\'enfants',
+				value: 2
 			}
 		];
 	}

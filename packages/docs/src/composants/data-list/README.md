@@ -29,7 +29,7 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
           type: 'DataListItem[]',
           required: true,
           description: 'La liste des items à afficher.',
-          example: '{\n	key: string;\n	value?: string;\n	action?: string;\n	chip?: boolean;\n	icon?: string;\n	options?: Options;\n}'
+          example: '{\n	key: string;\n	value?: string | number;\n	action?: string;\n	chip?: boolean;\n	icon?: string;\n	options?: Options;\n}'
         },
         {
           name: 'icons',
@@ -129,7 +129,7 @@ L'élément `DataList` est utilisé pour afficher une liste d'informations.
         },
         {
           name: 'value',
-          type: 'string',
+          type: 'string | number',
           default: 'undefined',
           description: 'La valeur à afficher.'
         },
