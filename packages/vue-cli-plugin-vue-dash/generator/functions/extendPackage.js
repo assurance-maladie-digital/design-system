@@ -53,7 +53,6 @@ function extendPackage(api, options) {
 		newPackageProperties.dependencies['vue-i18n'] = '^8.21.1';
 	}
 
-	// Add the form-builder dependencie if the option is selected
 	if (options.formBuilder) {
 		newPackageProperties.dependencies['@cnamts/form-builder'] = FormBuilderVersion;
 	}

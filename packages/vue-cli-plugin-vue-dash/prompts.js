@@ -33,7 +33,7 @@ const prompts = [
 	{
 		name: 'formBuilder',
 		type: 'confirm',
-		message: 'Installer Form-builder (bundle pour afficher des formulaires)',
+		message: 'Installer le FormBuilder',
 		default: false
 	}
 ];
