@@ -137,6 +137,16 @@ Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateu
           name: 'append',
           description: 'Slot pour ajouter du contenu dans le `VTextField` et remplacer le bouton par défaut.'
         }
+      ],
+      events: [
+        {
+          name: 'change',
+          description: 'Événement émis lorsque la valeur est mise à jour.'
+        },
+        {
+          name: 'input',
+          description: 'Événement émis dès que l\'utilisateur écrit dans le champ.'
+        }
       ]
     }
   }"
