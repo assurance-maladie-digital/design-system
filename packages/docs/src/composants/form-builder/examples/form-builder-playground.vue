@@ -10,15 +10,17 @@
 				hide-details
 				clearable
 				outlined
+				@input="setSectionValue('title', $event)"
 			/>
 
 			<VTextField
 				v-model="sectionDescription"
 				label="Description de la section"
+				class="mt-8"
 				hide-details
 				clearable
 				outlined
-				class="mt-6"
+				@input="setSectionValue('description', $event)"
 			/>
 
 			<h3 class="text-h6 font-weight-bold mt-4 mb-1">
@@ -36,7 +38,7 @@
 			cols="12"
 			md="6"
 		>
-			<FormBuilder :form="form" />
+			<FormBuilder v-model="form" />
 		</VCol>
 	</VRow>
 </template>
@@ -52,24 +54,22 @@
 		sectionTitle = 'Vos informations';
 		sectionDescription = 'Informations personnelles';
 
-		get form(): Form {
-			return {
-				section1: {
-					title: this.sectionTitle,
-					description: this.sectionDescription,
-					questions: {
-						questionString: {
-							type: 'text',
-							value: null,
-							fieldOptions: {
-								label: 'Numéro de Sécurité Sociale',
-								outlined: true
-							}
+		form: Form = {
+			section1: {
+				title: this.sectionTitle,
+				description: this.sectionDescription,
+				questions: {
+					questionString: {
+						type: 'text',
+						value: null,
+						fieldOptions: {
+							label: 'Numéro de Sécurité Sociale',
+							outlined: true
 						}
 					}
 				}
-			};
-		}
+			}
+		};
 
 		get displayForm(): string {
 			return JSON.stringify(this.form, null, '\t');
@@ -77,6 +77,10 @@
 
 		get codeBlockColor(): string {
 			return this.$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4';
+		}
+
+		setSectionValue(key: string, value: string): void {
+			this.$set(this.form.section1, key, value);
 		}
 	}
 </script>

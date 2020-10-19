@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<FormBuilder
-			:form="form"
+			v-model="form"
 			@change="formUpdated"
 			@refresh="formRefreshed"
 		/>
@@ -71,12 +71,12 @@
 			}
 		};
 
-		listUpdated(): void {
+		formUpdated(): void {
 			this.snackbar = true;
 			this.snackbarText = 'Événement "change" émis';
 		}
 
-		listRefreshed(): void {
+		formRefreshed(): void {
 			this.$nextTick(() => {
 				this.snackbar = true;
 				this.snackbarText = 'Événement "change" et "refresh" émis';

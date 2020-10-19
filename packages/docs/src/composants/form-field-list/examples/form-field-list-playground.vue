@@ -28,8 +28,7 @@
 		>
 			<FormFieldList
 				v-model="fields"
-				:list-title="props.listTitle"
-				:description="props.description"
+				v-bind="props"
 			/>
 		</VCol>
 	</VRow>
