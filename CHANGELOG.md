@@ -24,8 +24,8 @@
 L'interface `IDataList` a été renommée en `DataList` :
 
 ```diff
--import { IDataList } from ' @cnamts/vue-dot/src/elements/DataList/types';
-+import { DataList } from ' @cnamts/vue-dot/src/elements/DataList/types';
+-import { IDataList } from '@cnamts/vue-dot/src/elements/DataList/types';
++import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
 ```
 
 ## v2.0.0-beta.2

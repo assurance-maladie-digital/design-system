@@ -33,7 +33,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { DataList } from '../../src/elements/DataList/types';
+	import { DataList, DataListIcons } from '../../src/elements/DataList/types';
 
 	import { mdiCalendar } from '@mdi/js';
 
@@ -82,7 +82,7 @@
 			}
 		];
 
-		icons = {
+		icons: DataListIcons = {
 			mdiCalendar
 		};
 
