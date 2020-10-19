@@ -235,14 +235,35 @@ export const questionForm: Form = {
 					type: 'choiceButton'
 				}
 			},
+			questionChoiceButtonTextMultiLine: {
+				title: 'Question choix bouton plusieurs lignes',
+				type: 'select',
+				value: {
+					value: 1,
+					other: null
+				},
+				items: [
+					{
+						text: 'Texte qui permet de tester sur plusieurs lignes',
+						value: 1
+					},
+					{
+						text: 'Texte 2',
+						value: 2
+					}
+				],
+				fieldOptions: {
+					type: 'choiceButton'
+				}
+			},
 			questionChoiceOther: {
 				title: 'Question choix autre',
 				description: 'Informations supplémentaires',
 				multiple: true,
 				type: 'select',
 				value: {
-					value: null,
-					other: null
+					value: [0, 1],
+					other: 'Autre valeur'
 				},
 				items: [
 					{

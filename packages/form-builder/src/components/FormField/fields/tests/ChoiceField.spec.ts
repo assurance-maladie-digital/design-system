@@ -96,4 +96,49 @@ describe('ChoiceField', () => {
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
+
+	it('renders with single error message', () => {
+		// Mount component
+		wrapper = mountComponent(
+			ChoiceField,
+			{
+				propsData: {
+					field: {
+						...testField,
+						fieldOptions: {
+							type: 'choiceButton',
+							errorMessages: 'Erreur'
+						}
+					}
+				}
+			},
+			true
+		);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders with multiple error messages', () => {
+		// Mount component
+		wrapper = mountComponent(
+			ChoiceField,
+			{
+				propsData: {
+					field: {
+						...testField,
+						fieldOptions: {
+							type: 'choiceButton',
+							errorMessages: [
+								'Erreur 1',
+								'Erreur 2'
+							]
+						}
+					}
+				}
+			},
+			true
+		);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
 });
