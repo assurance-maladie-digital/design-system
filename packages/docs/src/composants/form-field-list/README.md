@@ -47,12 +47,12 @@ Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque la valeur d\'un champ change.',
+          description: 'Événement émis lorsque la valeur d\'un champ est mise à jour.',
           value: 'fields: Fields'
         },
         {
           name: 'refresh',
-          description: 'Événement émis lorsque la valeur d\'un champ dynamique change.'
+          description: 'Événement émis lorsque la valeur d\'un champ dynamique est mise à jour.'
         }
       ]
     }
