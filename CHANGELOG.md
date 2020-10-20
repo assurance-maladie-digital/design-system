@@ -33,6 +33,30 @@ L'interface `IDataList` a été renommée en `DataList` :
 +import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
 ```
 
+#### Renommer `cta` et `title` sur `ErrorPage`
+
+Les props `cta` et `title` ont été renommées en `btn-text` et `page-title`, et la prop `btn-text` a maintenant la valeur `Retour à l'accueil` par défaut :
+
+```diff
+<ErrorPage
+-	title="Page non trouvée"
++	page-title="Page non trouvée"
+	message="Il semblerait qu'il y ait eu une erreur !"
+	code="404"
+-	cta="Retour à l'acceuil"
+>
+```
+
+Pour désactiver le bouton vous devez maintenant utiliser la prop `no-btn` :
+
+```diff
+<ErrorPage
+	page-title="Page non trouvée"
+	message="Il semblerait qu'il y ait eu une erreur !"
++	no-btn
+>
+```
+
 ## v2.0.0-beta.2
 
 **Version publiée le 19/10/2020.**

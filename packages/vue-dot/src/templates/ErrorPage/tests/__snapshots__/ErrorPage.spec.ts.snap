@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ErrorPage renders correctly 1`] = `
-<pagecard width="680" card-class="px-5" title="Error">
+<pagecard width="680" card-class="px-5">
   <!---->
   <h2 class="mb-2 font-weight-bold text-h4 mb-4">
-
+    Error
   </h2>
   <p>Error message</p>
   <vlayout-stub tag="div" class="mt-6">
