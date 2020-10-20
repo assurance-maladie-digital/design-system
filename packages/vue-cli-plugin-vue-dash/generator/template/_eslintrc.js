@@ -16,8 +16,8 @@ module.exports = {
 
 		'indent': 'off',
 
-		// Force semi-colons
-		'semi': 'off',
+		// Force semi
+		'semi': ['error', 'always'],
 
 		// Remove space in functions, eg. function()
 		'space-before-function-paren': ['error', 'never'],
@@ -33,6 +33,9 @@ module.exports = {
 
 		// No trailing spaces
 		'no-trailing-spaces': 'error',
+
+		'space-before-blocks': ['error', 'always'],
+		'keyword-spacing': ['error', { 'before': true }],
 
 		// Enforces one true brace style, eg.
 		// if () {
@@ -88,12 +91,7 @@ module.exports = {
 		'vue/padding-line-between-blocks': ['error', 'always'],
 
 		// Enforce or forbid parentheses after method calls without arguments in v-on directives
-		'vue/v-on-function-call': ['error',
-			'never',
-			{
-				'ignoreIncludesComment': false
-			}
-		],
+		'vue/v-on-function-call': 'error',
 
 		// Force PascalCase for component names
 		'vue/component-name-in-template-casing': [
@@ -147,24 +145,19 @@ module.exports = {
 	},
 	overrides: [
 		{
+			files: ['*.ts'],
+			rules: {
+				'vue/script-indent': 'off',
+				'indent': ['error', 'tab'],
+				'semi': 'off'
+			}
+		},
+		{
 			files: ['*.vue'],
 			rules: {
-				// Waiting on https://github.com/vuejs/eslint-plugin-vue/issues/1260
-				'vue/custom-event-name-casing': 'off'
-			}
-		},
-		{
-			files: ['*.js'],
-			rules: {
-				// Allow require() in JS files
-				'@typescript-eslint/no-var-requires': 'off'
-			}
-		},
-		{
-			files: ['*.spec.ts'],
-			rules: {
-				// Sometimes in tests we mock more than one component
-				'vue/one-component-per-file': 'off'
+				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
+				// does not work with type definitions
+				'no-unused-vars': 'off'
 			}
 		}
 	],
