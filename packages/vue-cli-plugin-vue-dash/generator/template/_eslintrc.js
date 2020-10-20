@@ -111,8 +111,10 @@ module.exports = {
 
 		/*--------------------- ts rules ---------------------*/
 
+		// Require or disallow semicolons instead of ASI
 		'@typescript-eslint/semi': ['error'],
 
+		// Require explicit return and argument types on exported functions' and classes' public class methods
 		'@typescript-eslint/explicit-module-boundary-types': [
 			'error',
 			{
@@ -125,6 +127,20 @@ module.exports = {
 					'updated',
 					'beforeDestroy',
 					'destroyed'
+				]
+			}
+		],
+
+		// Disallow the declaration of empty interfaces
+		'@typescript-eslint/no-empty-interface': 'error',
+
+		// Require a consistent member declaration order
+		'@typescript-eslint/member-ordering': ['error',
+			{
+				'classes': [
+					'signature',
+					'field',
+					'method'
 				]
 			}
 		]
