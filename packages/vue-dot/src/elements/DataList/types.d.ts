@@ -1,6 +1,6 @@
 import { Options } from '../../mixins/customizable';
 
-export interface IDataListItem {
+export interface DataListItem {
 	key: string;
 	value?: string | number;
 	action?: string;
@@ -9,7 +9,7 @@ export interface IDataListItem {
 	options?: Options;
 }
 
-export type IDataList = IDataListItem[];
+export type DataList = DataListItem[];
 
 export interface DataListIcons {
 	[iconName: string]: string;
