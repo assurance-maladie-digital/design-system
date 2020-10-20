@@ -4,6 +4,7 @@
 
 - ♻️ **Refactoring**
   - **DataList:** Renommage de l'interface `IDataList` en `DataList` ([#649](https://github.com/assurance-maladie-digital/design-system/pull/649)) ([62cf170](https://github.com/assurance-maladie-digital/design-system/commit/62cf170b49cc6bad6d02c56e1fcf75d653dac303))
+  - **ErrorPage:** Refonte du composant ([#651](https://github.com/assurance-maladie-digital/design-system/pull/651))
 
 ### Vue Dash
 
@@ -19,7 +20,7 @@
   - **jest:** Mise à jour vers la `v26.6.0` ([#646](https://github.com/assurance-maladie-digital/design-system/pull/646)) ([ba66508](https://github.com/assurance-maladie-digital/design-system/commit/ba665081397191d5a96179dee920681857fec0f3))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.3` ([#647](https://github.com/assurance-maladie-digital/design-system/pull/647)) ([4f3411b](https://github.com/assurance-maladie-digital/design-system/commit/4f3411bc48e17629dc3971a6ef08c0779a7a23f9))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.5.0` ([#648](https://github.com/assurance-maladie-digital/design-system/pull/648)) ([6796d57](https://github.com/assurance-maladie-digital/design-system/commit/6796d57e34c1cf09f359b1149a24aeb52a60f548))
-  - **@types/jest:** Mise à jour vers la `v26.0.15` ([#650](https://github.com/assurance-maladie-digital/design-system/pull/650))
+  - **@types/jest:** Mise à jour vers la `v26.0.15` ([#650](https://github.com/assurance-maladie-digital/design-system/pull/650)) ([0be84b2](https://github.com/assurance-maladie-digital/design-system/commit/0be84b2be875be1316f32c673afd95d6083a7b51))
 
 ### 📚 Guide de migration
 
@@ -28,8 +29,32 @@
 L'interface `IDataList` a été renommée en `DataList` :
 
 ```diff
--import { IDataList } from ' @cnamts/vue-dot/src/elements/DataList/types';
-+import { DataList } from ' @cnamts/vue-dot/src/elements/DataList/types';
+-import { IDataList } from '@cnamts/vue-dot/src/elements/DataList/types';
++import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+```
+
+#### Renommer `cta` et `title` sur `ErrorPage`
+
+Les props `cta` et `title` ont été renommées en `btn-text` et `page-title`, et la prop `btn-text` a maintenant la valeur `Retour à l'accueil` par défaut :
+
+```diff
+<ErrorPage
+-	title="Page non trouvée"
++	page-title="Page non trouvée"
+	message="Il semblerait qu'il y ait eu une erreur !"
+	code="404"
+-	cta="Retour à l'acceuil"
+>
+```
+
+Pour désactiver le bouton vous devez maintenant utiliser la prop `no-btn` :
+
+```diff
+<ErrorPage
+	page-title="Page non trouvée"
+	message="Il semblerait qu'il y ait eu une erreur !"
++	no-btn
+>
 ```
 
 ## v2.0.0-beta.2

@@ -5,7 +5,7 @@
 	>
 		<span
 			v-if="code"
-			class="font-weight-bold primary--text code"
+			class="font-weight-bold primary--text vd-code"
 		>
 			{{ code }}
 		</span>
@@ -18,13 +18,13 @@
 			}"
 			class="mb-2 font-weight-bold"
 		>
-			{{ title }}
+			{{ pageTitle }}
 		</h2>
 
 		<p>{{ message }}</p>
 
 		<VLayout
-			v-if="cta && btnRoute"
+			v-if="!noBtn && btnText && btnRoute"
 			class="mt-6"
 		>
 			<VSpacer />
@@ -34,7 +34,7 @@
 				color="primary"
 				exact
 			>
-				{{ cta }}
+				{{ btnText }}
 			</VBtn>
 		</VLayout>
 	</PageCard>
@@ -46,15 +46,12 @@
 
 	import { Next } from '../../types';
 
+	import { locales } from './locales';
+
 	const Props = Vue.extend({
 		props: {
-			/** The HTTP code to display (optional) */
-			code: {
-				type: String,
-				default: undefined
-			},
-			/** The title of the ErrorPage (if no code is passed, it will be bigger) */
-			title: {
+			/** The title of the ErrorPage (bigger if code prop isn't present) */
+			pageTitle: {
 				type: String,
 				required: true
 			},
@@ -63,15 +60,25 @@
 				type: String,
 				required: true
 			},
-			/** Display a link to 'home' route when a text is passed */
-			cta: {
+			/** The HTTP code to display (optional) */
+			code: {
 				type: String,
 				default: undefined
 			},
-			/** The route of the CTA button, default to home page */
+			/** Display a link to 'home' route when a text is passed */
+			btnText: {
+				type: String,
+				default: locales.btnText
+			},
+			/** The route of the button, default to home page */
 			btnRoute: {
 				type: [Array, Object] as PropType<Next>,
 				default: () => ({ name: 'home' })
+			},
+			/** Remove the button */
+			noBtn: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -82,8 +89,9 @@
 </script>
 
 <style lang="scss" scoped>
-	.code {
+	.vd-code {
 		font-size: 6rem;
+		line-height: 6rem;
 		font-family: serif;
 	}
 </style>
