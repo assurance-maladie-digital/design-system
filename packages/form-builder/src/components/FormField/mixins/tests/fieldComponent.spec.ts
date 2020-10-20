@@ -16,7 +16,7 @@ const testField = {
 
 /** Create the wrapper */
 function createWrapper(field: Field) {
-	const component = Vue.component('test', {
+	const component = Vue.component('Test', {
 		mixins: [
 			FieldComponent
 		],
