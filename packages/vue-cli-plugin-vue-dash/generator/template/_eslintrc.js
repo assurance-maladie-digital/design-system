@@ -129,8 +129,8 @@ module.exports = {
 			}
 		],
 
-		// Disallow the declaration of empty interfaces
-		'@typescript-eslint/no-empty-interface': 'error',
+		// Consistent with type definition either interface or type
+		'@typescript-eslint/consistent-type-definitions': 'error',
 
 		// Require a consistent member declaration order
 		'@typescript-eslint/member-ordering': ['error',
