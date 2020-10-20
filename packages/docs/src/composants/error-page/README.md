@@ -43,16 +43,22 @@ Le template `ErrorPage` est utilisé pour afficher une page d'erreur.
           description: 'Le code HTTP de l\'erreur.'
         },
         {
-          name: 'cta',
+          name: 'btn-text',
           type: 'string',
           default: '\'Retour à l\'accueil\'',
           description: 'Le message du bouton d\'action.'
         },
         {
-          name: 'btnRoute',
+          name: 'btn-route',
           type: 'Next',
           default: '{ name: \'home\' }',
           description: 'La valeur de la prop `to` du bouton d\'action.'
+        },
+        {
+          name: 'no-btn',
+          type: 'boolean',
+          default: 'false',
+          description: 'Désactive le bouton d\'action.'
         }
       ]
     }
@@ -67,3 +73,15 @@ Le template `ErrorPage` est utilisé pour afficher une page d'erreur.
 />
 
 ## Exemples
+
+### Affichage d'un code d'erreur
+
+Vous pouvez afficher un code d'erreur HTTP en utilisant la prop `code`.
+
+<DocExample file="composants/error-page/examples/error-page-code" />
+
+### Masquer le bouton d'action
+
+Vous pouvez masquer le bouton d'action en utilisant la prop `node-btn`.
+
+<DocExample file="composants/error-page/examples/error-page-no-btn" />
