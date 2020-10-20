@@ -70,7 +70,7 @@
 			}
 
 			if (days === 1) {
-				return `${days} jour`;
+				return `il y a ${days} jour`;
 			}
 
 			if (days >= 30) {
