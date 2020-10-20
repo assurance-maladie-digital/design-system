@@ -29,7 +29,7 @@ Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d
           type: 'Fields',
           required: true,
           description: 'La liste des champs à afficher.',
-          example: '{\n	fieldId: Field\n}'
+          example: '{\n	fieldId: Field;\n}'
         },
         {
           name: 'list-title',

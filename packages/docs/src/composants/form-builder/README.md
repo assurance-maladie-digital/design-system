@@ -35,7 +35,7 @@ Le composant `FormBuilder` permet d'afficher un questionnaire composé de sectio
           type: 'Form',
           required: true,
           description: 'Le questionnaire à afficher.',
-          example: '{\n	sectionId: {\n		title?: string,\n		description?: string,\n		questions: FormFieldList\n	}\n}'
+          example: '{\n	sectionId: {\n		title?: string;\n		description?: string;\n		questions: FormFieldList;\n	}\n}'
         }
       ],
       events: [

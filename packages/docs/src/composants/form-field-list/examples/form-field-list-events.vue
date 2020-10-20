@@ -58,6 +58,10 @@
 					{
 						text: 'Courrier',
 						value: 'mail'
+					},
+					{
+						text: 'SMS',
+						value: 'sms'
 					}
 				],
 				value: null,
