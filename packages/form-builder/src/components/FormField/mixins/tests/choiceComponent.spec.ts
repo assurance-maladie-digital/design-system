@@ -40,7 +40,7 @@ const testField: TestComponent = {
 
 /** Create the wrapper */
 function createWrapper(field: TestComponent) {
-	const testComponent = Vue.component('test', {
+	const testComponent = Vue.component('Test', {
 		mixins: [
 			ChoiceComponent
 		],
