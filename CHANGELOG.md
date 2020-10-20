@@ -4,7 +4,7 @@
 
 - ♻️ **Refactoring**
   - **DataList:** Renommage de l'interface `IDataList` en `DataList` ([#649](https://github.com/assurance-maladie-digital/design-system/pull/649)) ([62cf170](https://github.com/assurance-maladie-digital/design-system/commit/62cf170b49cc6bad6d02c56e1fcf75d653dac303))
-  - **ErrorPage:** Refonte du composant ([#651](https://github.com/assurance-maladie-digital/design-system/pull/651))
+  - **ErrorPage:** Refonte du composant ([#651](https://github.com/assurance-maladie-digital/design-system/pull/651)) ([5e05fd1](https://github.com/assurance-maladie-digital/design-system/commit/5e05fd14efe43d544e1cf24507926db29133379a))
 
 ### Vue Dash
 
@@ -21,6 +21,7 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.3` ([#647](https://github.com/assurance-maladie-digital/design-system/pull/647)) ([4f3411b](https://github.com/assurance-maladie-digital/design-system/commit/4f3411bc48e17629dc3971a6ef08c0779a7a23f9))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.5.0` ([#648](https://github.com/assurance-maladie-digital/design-system/pull/648)) ([6796d57](https://github.com/assurance-maladie-digital/design-system/commit/6796d57e34c1cf09f359b1149a24aeb52a60f548))
   - **@types/jest:** Mise à jour vers la `v26.0.15` ([#650](https://github.com/assurance-maladie-digital/design-system/pull/650)) ([0be84b2](https://github.com/assurance-maladie-digital/design-system/commit/0be84b2be875be1316f32c673afd95d6083a7b51))
+  - **@types/node:** Mise à jour vers la `v12.12.69` ([#653](https://github.com/assurance-maladie-digital/design-system/pull/653))
 
 ### 📚 Guide de migration
 
