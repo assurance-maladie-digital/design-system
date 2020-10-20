@@ -6,20 +6,27 @@ import 'vuetify/dist/vuetify.min.css';
 import { vuetify } from './vuetify';
 
 import VueDot from '@cnamts/vue-dot';
-
 import FormBuilder from '@cnamts/form-builder';
+
+import InputFacade from 'vue-input-facade';
 
 import '@cnamts/vue-dot/src/styles/global.scss';
 
 import { icons } from './icons';
 
-import InputFacade from 'vue-input-facade';
-
 import './theme/styles/index.scss';
 
 const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 	// Register plugins
-	Vue.use(Vuetify);
+	Vue.use(Vuetify, {
+		icons: {
+			iconfont: 'mdiSvg',
+		},
+		options: {
+			variations: false
+		}
+	});
+
 	options.vuetify = vuetify;
 
 	Vue.use(VueDot, {
@@ -27,9 +34,8 @@ const enhanceApp: EnhanceApp = ({ Vue, options }) => {
 			icons
 		}
 	});
-	
-	Vue.use(InputFacade);
 
+	Vue.use(InputFacade);
 	Vue.use(FormBuilder);
 };
 
