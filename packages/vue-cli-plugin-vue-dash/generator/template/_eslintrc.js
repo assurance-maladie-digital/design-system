@@ -145,19 +145,17 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ['*.ts'],
-			rules: {
-				'vue/script-indent': 'off',
-				'indent': ['error', 'tab'],
-				'semi': 'off'
-			}
-		},
-		{
 			files: ['*.vue'],
 			rules: {
 				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
 				// does not work with type definitions
 				'no-unused-vars': 'off'
+			}
+		},
+		{
+			files: ['*.js'],
+			rules: {
+				'@typescript-eslint/no-var-requires': 'off'
 			}
 		}
 	],
