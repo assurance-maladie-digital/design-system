@@ -15,7 +15,7 @@
 				v-model="props.noShadow"
 				label="Enlever l'ombre"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VTextField
@@ -23,7 +23,7 @@
 				label="Classe de la carte"
 				hide-details
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 
 			<VTextField
@@ -31,7 +31,7 @@
 				label="Padding de la carte"
 				hide-details
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 		</VCol>
 

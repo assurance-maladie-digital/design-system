@@ -19,7 +19,7 @@
 				multiple
 				outlined
 				chips
-				class="mt-6"
+				class="mt-8"
 				@change="availableLanguagesUpdated"
 			/>
 		</VCol>

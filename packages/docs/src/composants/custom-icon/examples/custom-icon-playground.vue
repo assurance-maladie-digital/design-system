@@ -8,6 +8,7 @@
 				v-model="props.color"
 				:items="colors"
 				label="Couleur"
+				hide-details
 				outlined
 			/>
 
@@ -15,7 +16,9 @@
 				v-model="standardSize"
 				:items="propSizes"
 				label="Taille standard"
+				hide-details
 				outlined
+				class="mt-8"
 				@change="standardSizeSelected"
 			/>
 
@@ -23,7 +26,9 @@
 				v-model="props.size"
 				:items="sizes"
 				label="Taille personnalisée"
+				hide-details
 				outlined
+				class="mt-8"
 			/>
 		</VCol>
 

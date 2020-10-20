@@ -7,13 +7,16 @@
 			<VTextField
 				v-model="props.title"
 				label="Titre"
+				hide-details
 				outlined
 			/>
 
 			<VTextField
 				v-model="props.width"
 				label="Largeur"
+				hide-details
 				outlined
+				class="mt-8"
 			/>
 		</VCol>
 

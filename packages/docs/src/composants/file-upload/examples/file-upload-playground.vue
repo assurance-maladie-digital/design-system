@@ -15,14 +15,14 @@
 				v-model="props.noRipple"
 				label="Désactiver l'ondulation"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VSwitch
 				v-model="props.disabled"
 				label="Désactiver le composant"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VCombobox
@@ -32,7 +32,7 @@
 				hide-details
 				multiple
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 
 			<VCombobox
@@ -42,7 +42,7 @@
 				hide-details
 				multiple
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 
 			<VTextField
@@ -50,7 +50,7 @@
 				label="Taille maximum (octets)"
 				hide-details
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 
 			<VSnackbar
