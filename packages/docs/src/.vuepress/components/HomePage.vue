@@ -26,13 +26,13 @@
 			</h2>
 
 			<p class="mb-10">
-				Dernière mise à jour il y a {{ lastUpdated }}
+				Dernière mise à jour {{ lastUpdated }}
 			</p>
 
 			<VBtn
 				color="primary"
 				to="/composants/copy-btn"
-				class="mb-6"
+				class="home-cta mb-6"
 				large
 			>
 				Commencer
@@ -55,14 +55,29 @@
 
 	import dayjs from 'dayjs';
 
-	const LAST_UPDATED = '2020-09-18';
+	const LAST_UPDATED = '2020-10-19';
 
 	@Component
 	export default class HomePage extends Vue {
 		version = version;
 
 		get lastUpdated(): string {
-			const days = dayjs().diff(dayjs(LAST_UPDATED), 'day');
+			const lastUpdated = dayjs(LAST_UPDATED);
+			const days = dayjs().diff(lastUpdated, 'day');
+
+			if (days === 0) {
+				return 'aujourd\'hui';
+			}
+
+			if (days === 1) {
+				return 'hier';
+			}
+
+			if (days >= 30) {
+				const month = dayjs().diff(lastUpdated, 'month');
+
+				return `il y a ${month} mois`;
+			}
 
 			return `${days} jours`;
 		}
@@ -76,6 +91,11 @@
 
 	.home-title {
 		max-width: 750px;
+	}
+
+	.home-cta {
+		// Set color to avoid light button during hydration
+		background-color: #003463 !important;
 	}
 
 	.home-background {

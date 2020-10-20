@@ -15,42 +15,42 @@
 				v-model="props.noCalendar"
 				label="Désactiver le calendrier"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VSwitch
 				v-model="props.noPrependIcon"
 				label="Supprimer l'icone avant le champ"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VSwitch
 				v-model="props.appendIcon"
 				label="Placer l'icone dans le champ"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VSwitch
 				v-model="props.textFieldActivator"
 				label="Ouvrir le menu du calendrier lorsque le champ de texte est cliqué"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VSwitch
 				v-model="props.birthdate"
 				label="Mode date de naissance"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VSwitch
 				v-model="props.showWeekends"
 				label="Afficher les weekends"
 				hide-details
-				class="mt-3"
+				class="mt-4"
 			/>
 
 			<VTextField
@@ -58,7 +58,7 @@
 				label="Format de date du champ texte"
 				hide-details
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 
 			<VTextField
@@ -66,7 +66,7 @@
 				label="Format de date du v-model"
 				hide-details
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 
 			<VTextField
@@ -75,7 +75,7 @@
 				label="Masque"
 				hide-details
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 
 			<VTextField
@@ -83,7 +83,7 @@
 				label="Classes du champ texte"
 				hide-details
 				outlined
-				class="mt-6"
+				class="mt-8"
 			/>
 		</VCol>
 

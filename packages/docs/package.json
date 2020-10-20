@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "@cnamts/docs",
-	"version": "2.0.0-alpha.53",
+	"version": "2.0.0-beta.2",
 	"description": "Documentation of our Design System",
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
@@ -19,9 +19,9 @@
 	},
 	"dependencies": {
 		"@cnamts/design-tokens": "2.0.0-beta.0",
-		"@cnamts/vue-dot": "2.0.0-beta.1",
-		"@cnamts/form-builder": "2.0.0-beta.1",
-		"vuepress": "1.6.0"
+		"@cnamts/vue-dot": "2.0.0-beta.2",
+		"@cnamts/form-builder": "2.0.0-beta.2",
+		"vuepress": "1.7.1"
 	},
 	"devDependencies": {
 		"@types/marked": "1.1.0",

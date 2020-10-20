@@ -12,9 +12,11 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+
 	@Component
 	export default class DataListSlot extends Vue {
-		items = [
+		items: DataList = [
 			{
 				key: 'Nom',
 				value: ''

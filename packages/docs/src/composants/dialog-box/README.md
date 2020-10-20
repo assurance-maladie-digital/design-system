@@ -79,7 +79,7 @@ L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec d
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque la boite de dialogue apparaît et disparaît.'
+          description: 'Événement émis lorsque la boîte de dialogue apparaît et disparaît.'
         },
         {
           name: 'cancel',

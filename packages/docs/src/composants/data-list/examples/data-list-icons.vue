@@ -9,11 +9,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataList, DataListIcons } from '@cnamts/vue-dot/src/elements/DataList/types';
+
 	import { mdiCalendar, mdiAccount } from '@mdi/js';
 
 	@Component
-	export default class DataListIcons extends Vue {
-		items = [
+	export default class DataListIconsEx extends Vue {
+		items: DataList = [
 			{
 				key: 'Nom',
 				value: 'Dupont'
@@ -30,7 +32,7 @@
 			}
 		];
 
-		icons = {
+		icons: DataListIcons = {
 			calendarIcon: mdiCalendar,
 			accountIcon: mdiAccount
 		};

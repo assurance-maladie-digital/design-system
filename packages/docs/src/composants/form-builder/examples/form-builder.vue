@@ -1,5 +1,5 @@
 <template>
-	<FormBuilder :form="form" />
+	<FormBuilder v-model="form" />
 </template>
 
 <script lang="ts">

@@ -15,10 +15,10 @@
 			<VTextField
 				v-model="props.description"
 				label="Description du formulaire"
-				class="mt-8"
 				hide-details
 				clearable
 				outlined
+				class="mt-8"
 			/>
 		</VCol>
 
@@ -28,8 +28,7 @@
 		>
 			<FormFieldList
 				v-model="fields"
-				:list-title="props.listTitle"
-				:description="props.description"
+				v-bind="props"
 			/>
 		</VCol>
 	</VRow>

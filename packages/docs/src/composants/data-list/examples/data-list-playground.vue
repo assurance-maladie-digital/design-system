@@ -17,6 +17,7 @@
 						v-model="props.headingLoading"
 						label="Avec titre"
 						hide-details
+						class="mt-4"
 					/>
 
 					<VTextField
@@ -25,8 +26,8 @@
 						label="Nb. d'items en mode chargement"
 						hide-details
 						type="number"
-						class="mt-8"
 						outlined
+						class="mt-8"
 					/>
 				</div>
 			</VExpandTransition>
@@ -35,29 +36,30 @@
 				v-model="props.row"
 				label="Mode horizontal"
 				hide-details
+				class="mt-4"
 			/>
 
 			<VSwitch
 				v-model="props.flex"
 				label="Mode flexbox"
 				hide-details
-				class="mb-8"
+				class="mt-4"
 			/>
 
 			<VTextField
 				v-model="props.listTitle"
 				label="Titre"
 				hide-details
-				class="mb-8"
 				outlined
+				class="mt-8"
 			/>
 
 			<VTextField
 				v-model="props.placeholder"
 				label="Texte de remplacement"
 				hide-details
-				class="mb-8"
 				outlined
+				class="mt-8"
 			/>
 
 			<VTextField
@@ -65,6 +67,7 @@
 				label="Largeur de chaque item"
 				hide-details
 				outlined
+				class="mt-8"
 			/>
 		</VCol>
 
@@ -86,11 +89,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+
 	import { mdiCalendar, mdiAccount } from '@mdi/js';
 
 	@Component
 	export default class DataListPlayground extends Vue {
-		items = [
+		items: DataList = [
 			{
 				key: 'Nom',
 				value: '',

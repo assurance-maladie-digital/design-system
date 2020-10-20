@@ -1,13 +1,17 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+#frontmatter-title {
 	display: inline-block;
 }
 
 .content__default > {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		display: inline-block;
+	}
+
 	h1 {
 		font-size: 3rem;
 		font-weight: 700;

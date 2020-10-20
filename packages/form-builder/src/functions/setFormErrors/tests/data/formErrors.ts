@@ -2,7 +2,7 @@ import { Form } from '../../../../components/FormBuilder/types';
 import { FormErrors } from '../../types';
 
 /** FormErrors with invalid values */
-export const formErrors = {
+export const formErrorsInvalidValues = {
 	fieldNameNotExist: [
 		'Field name does not exist'
 	],
@@ -15,22 +15,33 @@ export const formErrors = {
 	]
 } as FormErrors;
 
+/** FormErrors with wrong types */
+export const formErrorsWrongTypes = {
+	questionString: 4
+} as FormErrors;
+
 /** FormErrors related to question form */
-export const questionErrors: FormErrors = {
+export const formErrors: FormErrors = {
 	questionString: [
-		'Erreur string 1',
-		'Erreur string 2'
+		'Erreur 1',
+		'Erreur 2'
 	],
+	questionPassword: 'Erreur',
 	questionPeriod: {
 		from: [
-			'Erreur questionPeriod 1',
-			'Erreur questionPeriod 2'
+			'Erreur 1',
+			'Erreur 2'
 		],
 		to: [
-			'Erreur questionPeriod 1',
-			'Erreur questionPeriod 2'
+			'Erreur 1',
+			'Erreur 2'
 		]
-	}
+	},
+	questionChoiceButton: [
+		'Erreur 1',
+		'Erreur 2'
+	],
+	questionChoiceButtonMultiple: 'Erreur'
 };
 
 export const form: Form = {
@@ -39,8 +50,25 @@ export const form: Form = {
 			questionString: {
 				type: 'text'
 			},
+			questionPassword: {
+				type: 'password'
+			},
 			questionPeriod: {
 				type: 'period'
+			},
+			questionChoiceButton: {
+				type: 'select',
+				items: [],
+				fieldOptions: {
+					type: 'choiceButton'
+				}
+			},
+			questionChoiceButtonMultiple: {
+				type: 'select',
+				items: [],
+				fieldOptions: {
+					type: 'choiceButton'
+				}
 			}
 		}
 	}

@@ -16,7 +16,7 @@ export interface ChoiceValue {
 
 export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue;
 
-export type ErrorMessages = string[];
+export type ErrorMessages = string | string[];
 
 export interface PeriodErrorMessages {
 	from?: ErrorMessages;

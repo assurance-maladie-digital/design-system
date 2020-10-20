@@ -59,7 +59,7 @@ L'élément `LangBtn` est utilisé pour permettre à l'utilisateur de choisir un
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque la valeur change.',
+          description: 'Événement émis lorsque la valeur est mise à jour.',
           value: 'lang: string'
         }
       ]

@@ -14,7 +14,7 @@ describe('ErrorPage', () => {
 		// Mount component
 		wrapper = mountComponent(ErrorPage, {
 			propsData: {
-				title: 'Error',
+				pageTitle: 'Error',
 				message: 'Error message'
 			}
 		});
