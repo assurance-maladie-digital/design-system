@@ -72,7 +72,7 @@
 			},
 			/** The route of the button, default to home page */
 			btnRoute: {
-				type: [Array, Object] as PropType<Next>,
+				type: [Array, Object, String] as PropType<Next>,
 				default: () => ({ name: 'home' })
 			},
 			/** Remove the button */
