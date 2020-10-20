@@ -29,14 +29,32 @@
 				Dernière mise à jour {{ lastUpdated }}
 			</p>
 
-			<VBtn
-				color="primary"
-				to="/composants/copy-btn"
-				class="home-cta mb-6"
-				large
-			>
-				Commencer
-			</VBtn>
+			<div class="d-flex flex-wrap ma-n3">
+				<VBtn
+					color="primary"
+					to="/composants/copy-btn"
+					class="getting-started-btn ma-3"
+					large
+				>
+					Commencer
+				</VBtn>
+
+				<VBtn
+					color="#24292e"
+					href="https://github.com/assurance-maladie-digital/design-system"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="ma-3"
+					outlined
+					large
+				>
+					<VIcon class="mr-2">
+						{{ githubIcon }}
+					</VIcon>
+
+					Github
+				</VBtn>
+			</div>
 		</div>
 
 		<img
@@ -53,6 +71,8 @@
 
 	import { version } from '../../../package.json';
 
+	import { mdiGithub } from '@mdi/js';
+
 	import dayjs from 'dayjs';
 
 	const LAST_UPDATED = '2020-10-19';
@@ -60,6 +80,7 @@
 	@Component
 	export default class HomePage extends Vue {
 		version = version;
+		githubIcon = mdiGithub;
 
 		get lastUpdated(): string {
 			const lastUpdated = dayjs(LAST_UPDATED);
@@ -93,7 +114,7 @@
 		max-width: 750px;
 	}
 
-	.home-cta {
+	.getting-started-btn {
 		// Set color to avoid light button during hydration
 		background-color: #003463 !important;
 	}
