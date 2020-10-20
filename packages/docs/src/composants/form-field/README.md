@@ -35,7 +35,7 @@ Le composant `FormField` est utilisé pour afficher un champ de formulaire.
       events: [
         {
           name: 'change',
-          description: 'Événement émis lorsque la valeur du champ change.'
+          description: 'Événement émis lorsque la valeur du champ est mise à jour.'
         }
       ]
     }
@@ -65,6 +65,8 @@ Le titre ne doit pas remplacer le label, qui identifie le champ pour les utilisa
 
 ### Types de champs
 
+Vous retrouvez ci-dessous un exemple de chaque type de champ et leurs spécificités.
+
 #### Champ texte
 
 <DocExample file="composants/form-field/examples/form-field-text" />
@@ -77,8 +79,7 @@ Le titre ne doit pas remplacer le label, qui identifie le champ pour les utilisa
 
 <DocInfo>
 
-Le champ nombre demande obligatoirement un mask qui utilise le module `vue-input-facade` avec des `#` pour les chiffres<br>
-Voir la documentation <https://www.npmjs.com/package/vue-input-facade> pour plus d'informations sur les usages possibles
+Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres uniquement, vous devez définir un masque avec l'attribut `mask` de `fieldOptions` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
 
 </DocInfo>
 
@@ -104,6 +105,6 @@ Voir la documentation <https://www.npmjs.com/package/vue-input-facade> pour plus
 
 <DocExample file="composants/form-field/examples/form-field-select-slider" />
 
-#### Champ select button
+#### Champ select bouton
 
 <DocExample file="composants/form-field/examples/form-field-select-button" />

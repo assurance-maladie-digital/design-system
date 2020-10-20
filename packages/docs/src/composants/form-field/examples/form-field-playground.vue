@@ -7,29 +7,29 @@
 			<VSwitch
 				v-model="field.dynamic"
 				label="Champ dynamique"
-				class="mt-0"
 				hide-details
 				clearable
+				class="mt-0"
 			/>
 
 			<VSelect
 				v-model="field.type"
 				:items="fieldTypes"
 				label="Type du champ"
-				class="mt-8"
 				hide-details
 				clearable
 				outlined
+				class="mt-8"
 				@change="setFieldValue"
 			/>
 
 			<VTextField
 				v-model="field.title"
 				label="Titre du champ"
-				class="mt-8"
 				hide-details
 				clearable
 				outlined
+				class="mt-8"
 			/>
 
 			<VExpandTransition mode="out-int">
@@ -37,20 +37,20 @@
 					v-if="field.title"
 					v-model="field.tooltip"
 					label="Texte d'aide"
-					class="mt-8"
 					hide-details
 					clearable
 					outlined
+					class="mt-8"
 				/>
 			</VExpandTransition>
 
 			<VTextField
 				v-model.number="field.description"
 				label="Description du champ"
-				class="mt-8"
 				hide-details
 				clearable
 				outlined
+				class="mt-8"
 			/>
 
 			<VExpandTransition mode="out-int">
@@ -58,10 +58,10 @@
 					v-if="field.type === 'number'"
 					v-model="field.fieldOptions.mask"
 					label="Masque du champ"
-					class="mt-8"
 					hide-details
 					clearable
 					outlined
+					class="mt-8"
 				/>
 			</VExpandTransition>
 
@@ -71,23 +71,23 @@
 						v-model="field.fieldOptions.type"
 						:items="selectFieldTypes"
 						label="Sous-type"
-						class="mt-8"
 						hide-details
 						outlined
+						class="mt-8"
 					/>
 
 					<VSwitch
 						v-model="field.multiple"
 						label="Multiple"
-						class="mt-8"
 						hide-details
+						class="mt-8"
 					/>
 
 					<VSwitch
 						v-model="otherSelected"
 						label="Champ autre"
-						class="mt-8"
 						hide-details
+						class="mt-8"
 					/>
 
 					<VExpandTransition mode="out-int">
@@ -96,19 +96,19 @@
 								v-model.number="field.other.selectedChoice"
 								:items="otherFieldItems"
 								label="Valeur correspondante"
-								class="mt-8"
 								hide-details
 								clearable
 								outlined
+								class="mt-8"
 							/>
 
 							<VTextField
 								v-model="field.other.label"
 								label="Label du champ autre"
-								class="mt-8"
 								hide-details
 								clearable
 								outlined
+								class="mt-8"
 							/>
 						</div>
 					</VExpandTransition>
