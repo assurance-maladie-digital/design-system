@@ -14,20 +14,65 @@ module.exports = {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 
+		'indent': 'off',
+
+		// Force semi-colons
+		'semi': 'off',
+
+		// Remove space in functions, eg. function()
+		'space-before-function-paren': ['error', 'never'],
+
+		// Maximum 1 empty line
+		'no-multiple-empty-lines': ['error', { 'max': 1 }],
+
+		// Remove trailing coma
+		'comma-dangle': ['error', 'never'],
+
+		// Force single quotes
+		'quotes': ['error', 'single'],
+
+		// No trailing spaces
+		'no-trailing-spaces': 'error',
+
+		// Enforces one true brace style, eg.
+		// if () {
+		// }
+		'brace-style': ['error', '1tbs'],
+
+		// Limit .vue files to 350 lines
+		'max-lines': ['error', {
+			'max': 350,
+			'skipBlankLines': true,
+			'skipComments': true
+		}],
+
+		'object-curly-spacing': ['error', 'always'],
+
+		// Force arrow functions
+		'prefer-arrow-callback': 'error',
+
+		'no-prototype-builtins': 'off',
+
+		/*--------------------- vue rules ---------------------*/
+
 		// Tab indent in templates
 		'vue/html-indent': ['error', 'tab'],
-		'indent': 'off',
+
+		// Allow v-html
+		'vue/no-v-html': ['off'],
 
 		// Disallow spaces around equal in HTML attributes
 		// eg. attr= "value" is invalid
 		'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
 
-		// Force semi-colons
-		'semi': 'off',
-		'@typescript-eslint/semi': ['error'],
+		// Enforce specific casing for the Prop name in Vue components
+		'vue/prop-name-casing': ['error'],
 
-		// Remove space in functions, eg. function()
-		'space-before-function-paren': ['error', 'never'],
+		// Require default value for props
+		'vue/require-default-prop': ['error'],
+
+		// Require type definitions in props
+		'vue/require-prop-types': ['error'],
 
 		// .vue <script> indent
 		'vue/script-indent': ['error', 'tab', {
@@ -36,11 +81,19 @@ module.exports = {
 			'ignores': []
 		}],
 
-		// Maximum 1 empty line
-		'no-multiple-empty-lines': ['error', { 'max': 1 }],
+		// Enforce order of properties in components
+		'vue/order-in-components': ['error'],
 
-		// Remove trailing coma
-		'comma-dangle': ['error', 'never'],
+		// This rule requires or disallows blank lines between the given 2 blocks.
+		'vue/padding-line-between-blocks': ['error', 'always'],
+
+		// Enforce or forbid parentheses after method calls without arguments in v-on directives
+		'vue/v-on-function-call': ['error',
+			'never',
+			{
+				'ignoreIncludesComment': false
+			}
+		],
 
 		// Force PascalCase for component names
 		'vue/component-name-in-template-casing': [
@@ -56,33 +109,9 @@ module.exports = {
 			}
 		],
 
-		// Force single quotes
-		'quotes': ['error', 'single'],
+		/*--------------------- ts rules ---------------------*/
 
-		// No trailing spaces
-		'no-trailing-spaces': 'error',
-
-		// Enforces one true brace style, eg.
-		// if () {
-		// }
-		'brace-style': ['error', '1tbs'],
-
-		// Allow v-html
-		'vue/no-v-html': ['off'],
-
-		// Limit .vue files to 350 lines
-		'max-lines': ['error', {
-			'max': 350,
-			'skipBlankLines': true,
-			'skipComments': true
-		}],
-
-		'object-curly-spacing': ['error', 'always'],
-
-		// Force arrow functions
-		'prefer-arrow-callback': 'error',
-
-		'no-prototype-builtins': 'off',
+		'@typescript-eslint/semi': ['error'],
 
 		'@typescript-eslint/explicit-module-boundary-types': [
 			'error',
@@ -104,15 +133,22 @@ module.exports = {
 		{
 			files: ['*.vue'],
 			rules: {
-				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
-				// does not work with type definitions
-				'no-unused-vars': 'off'
+				// Waiting on https://github.com/vuejs/eslint-plugin-vue/issues/1260
+				'vue/custom-event-name-casing': 'off'
 			}
 		},
 		{
 			files: ['*.js'],
 			rules: {
+				// Allow require() in JS files
 				'@typescript-eslint/no-var-requires': 'off'
+			}
+		},
+		{
+			files: ['*.spec.ts'],
+			rules: {
+				// Sometimes in tests we mock more than one component
+				'vue/one-component-per-file': 'off'
 			}
 		}
 	],
