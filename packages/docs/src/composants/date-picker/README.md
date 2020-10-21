@@ -165,10 +165,7 @@ Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateu
 
 Vous pouvez afficher le `VTextField` en mode `outlined` grâce à la prop du même nom. Cela va aussi mettre l'icône en mode `append` et modifier la position du menu.
 
-<DocExample
-  new-in="2.0.0-alpha.52"
-  file="composants/date-picker/examples/date-picker-outlined"
-/>
+<DocExample file="composants/date-picker/examples/date-picker-outlined" />
 
 ### Date de naissance
 

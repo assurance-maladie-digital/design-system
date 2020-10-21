@@ -14,6 +14,7 @@ Le template `ErrorPage` est utilisé pour afficher une page d'erreur.
 
 <DocExample
   eager
+  new-in="2.0.0-beta.2"
   file="composants/error-page/examples/error-page"
 />
 
@@ -82,6 +83,6 @@ Vous pouvez afficher un code d'erreur HTTP en utilisant la prop `code`.
 
 ### Masquer le bouton d'action
 
-Vous pouvez masquer le bouton d'action en utilisant la prop `node-btn`.
+Vous pouvez masquer le bouton d'action en utilisant la prop `no-btn`.
 
 <DocExample file="composants/error-page/examples/error-page-no-btn" />
