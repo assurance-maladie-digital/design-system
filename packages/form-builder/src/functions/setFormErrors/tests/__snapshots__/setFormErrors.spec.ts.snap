@@ -4,6 +4,23 @@ exports[`setFormErrors doesn't sets an error on unknown fields 1`] = `
 Object {
   "section1": Object {
     "questions": Object {
+      "questionChoiceButton": Object {
+        "fieldOptions": Object {
+          "type": "choiceButton",
+        },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": Object {
+        "fieldOptions": Object {
+          "type": "choiceButton",
+        },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionPassword": Object {
+        "type": "password",
+      },
       "questionPeriod": Object {
         "fieldOptions": Object {
           "notExist": Object {
@@ -13,6 +30,9 @@ Object {
         "type": "period",
       },
       "questionString": Object {
+        "fieldOptions": Object {
+          "errorMessages": "Incorrect value",
+        },
         "type": "text",
       },
     },
@@ -24,18 +44,43 @@ exports[`setFormErrors sets error messages on fields 1`] = `
 Object {
   "section1": Object {
     "questions": Object {
+      "questionChoiceButton": Object {
+        "fieldOptions": Object {
+          "errorMessages": Array [
+            "Erreur 1",
+            "Erreur 2",
+          ],
+          "type": "choiceButton",
+        },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": Object {
+        "fieldOptions": Object {
+          "errorMessages": "Erreur",
+          "type": "choiceButton",
+        },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionPassword": Object {
+        "fieldOptions": Object {
+          "errorMessages": "Erreur",
+        },
+        "type": "password",
+      },
       "questionPeriod": Object {
         "fieldOptions": Object {
           "from": Object {
             "errorMessages": Array [
-              "Erreur questionPeriod 1",
-              "Erreur questionPeriod 2",
+              "Erreur 1",
+              "Erreur 2",
             ],
           },
           "to": Object {
             "errorMessages": Array [
-              "Erreur questionPeriod 1",
-              "Erreur questionPeriod 2",
+              "Erreur 1",
+              "Erreur 2",
             ],
           },
         },
@@ -44,10 +89,42 @@ Object {
       "questionString": Object {
         "fieldOptions": Object {
           "errorMessages": Array [
-            "Erreur string 1",
-            "Erreur string 2",
+            "Erreur 1",
+            "Erreur 2",
           ],
         },
+        "type": "text",
+      },
+    },
+  },
+}
+`;
+
+exports[`setFormErrors skips errors with wrong types 1`] = `
+Object {
+  "section1": Object {
+    "questions": Object {
+      "questionChoiceButton": Object {
+        "fieldOptions": Object {
+          "type": "choiceButton",
+        },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": Object {
+        "fieldOptions": Object {
+          "type": "choiceButton",
+        },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionPassword": Object {
+        "type": "password",
+      },
+      "questionPeriod": Object {
+        "type": "period",
+      },
+      "questionString": Object {
         "type": "text",
       },
     },

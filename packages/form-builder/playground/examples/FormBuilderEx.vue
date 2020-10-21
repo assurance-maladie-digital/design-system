@@ -17,14 +17,14 @@
 		/>
 
 		<pre
-			v-if="questionErrors"
+			v-if="formErrors"
 			contenteditable="true"
 			class="mt-4"
 			:class="[
 				$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
 			]"
-			@blur="questionErrors = JSON.parse($event.target.textContent)"
-			v-html="questionErrors"
+			@blur="formErrors = JSON.parse($event.target.textContent)"
+			v-html="formErrors"
 		/>
 
 		<VBtn
@@ -42,7 +42,7 @@
 	import Component from 'vue-class-component';
 
 	import { questionForm } from '../../src/components/FormBuilder/tests/data/questionForm';
-	import { questionErrors } from '../../src/functions/setFormErrors/tests/data/formErrors';
+	import { formErrors } from '../../src/functions/setFormErrors/tests/data/formErrors';
 
 	import { getFormValues } from '../../src/functions/getFormValues';
 	import { FormValues } from '../../src/functions/getFormValues/types';
@@ -51,7 +51,7 @@
 	@Component
 	export default class FormBuilderEx extends Vue {
 		questionForm = questionForm;
-		questionErrors = questionErrors;
+		formErrors = formErrors;
 
 		questionValues: FormValues | null = null;
 
@@ -60,7 +60,7 @@
 		}
 
 		setFormErrors(): void {
-			this.questionForm = setFormErrors(this.questionErrors, this.questionForm);
+			this.questionForm = setFormErrors(this.formErrors, this.questionForm);
 		}
 	}
 </script>

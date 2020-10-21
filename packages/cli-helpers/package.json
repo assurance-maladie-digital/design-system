@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/cli-helpers",
-	"version": "2.0.0-alpha.51",
+	"version": "2.0.0-beta.2",
 	"description": "Helper functions to build CLI tools",
 	"keywords": [
 		"cnam",
@@ -46,5 +46,5 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"gitHead": "f05d735be9b01718e145d32e50fd46ea4259c04d"
+	"gitHead": "8665a0d4d9d9fcbff61a3b89c8e368c2dfe4d101"
 }
