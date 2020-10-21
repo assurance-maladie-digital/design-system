@@ -4,8 +4,14 @@ module.exports = {
 			'vuepress-plugin-typescript'
 		]
 	],
-	title: 'Design System Digital',
 	dest: 'dist',
+	locales: {
+		'/': {
+			lang: 'fr-FR',
+			title: 'Design System Digital',
+			description: 'Un Design System pour l\'Assurance Maladie.'
+		}
+	},
 	themeConfig: {
 		sidebar: [
 			{
