@@ -119,10 +119,10 @@
 									we need to avoid white spaces here
 								-->
 								<DocMarkup
-									:filename="false"
-									:value="file"
+									:code="parsed[section]"
 									class="mb-0"
-								>{{ parsed[section] }}</DocMarkup>
+									tile
+								/>
 							</div>
 						</VWindowItem>
 					</template>

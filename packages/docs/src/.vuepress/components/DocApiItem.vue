@@ -55,18 +55,17 @@
 			<!-- Signature -->
 			<DocMarkup
 				v-else-if="header.value === 'signature' && item.signature"
-				:filename="false"
-				lang="ts"
-				value="example"
-			>{{ item.signature }}</DocMarkup>
+				:code="item.signature"
+				language="ts"
+			/>
 
 			<!-- Options -->
 			<DocMarkup
 				v-else-if="header.value === 'options' && item.options"
-				:filename="false"
-				lang="ts"
-				value="example"
-			>{{ item.options }}</DocMarkup>
+				:code="item.options"
+				hide-language
+				language="ts"
+			/>
 
 			<!-- Snippet -->
 			<DocMarkup
@@ -78,25 +77,24 @@
 			<DocMarkup
 				v-else-if="header.value === 'example' && item.example"
 				:filename="false"
-				lang="ts"
-				value="example"
-			>{{ item.example }}</DocMarkup>
+				:code="item.example"
+				language="ts"
+			/>
 
 			<!-- Props -->
 			<DocMarkup
 				v-else-if="header.value === 'props' && item.props"
-				:filename="false"
-				lang="ts"
-				value="example"
-			>{{ item.props }}</DocMarkup>
+				:code="item.props"
+				language="ts"
+			/>
 
 			<!-- Value -->
 			<DocMarkup
 				v-else-if="header.value === 'value' && item.value && !item.required"
-				:filename="false"
-				lang="ts"
-				value="example"
-			>{{ item.value }}</DocMarkup>
+				:code="item.value"
+				hide-language
+				language="ts"
+			/>
 		</VFlex>
 	</VLayout>
 </template>
