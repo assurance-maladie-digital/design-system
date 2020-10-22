@@ -21,7 +21,8 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.3` ([#647](https://github.com/assurance-maladie-digital/design-system/pull/647)) ([4f3411b](https://github.com/assurance-maladie-digital/design-system/commit/4f3411bc48e17629dc3971a6ef08c0779a7a23f9))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.5.0` ([#648](https://github.com/assurance-maladie-digital/design-system/pull/648)) ([6796d57](https://github.com/assurance-maladie-digital/design-system/commit/6796d57e34c1cf09f359b1149a24aeb52a60f548))
   - **@types/jest:** Mise à jour vers la `v26.0.15` ([#650](https://github.com/assurance-maladie-digital/design-system/pull/650)) ([0be84b2](https://github.com/assurance-maladie-digital/design-system/commit/0be84b2be875be1316f32c673afd95d6083a7b51))
-  - **@types/node:** Mise à jour vers la `v12.12.69` ([#653](https://github.com/assurance-maladie-digital/design-system/pull/653))
+  - **@types/node:** Mise à jour vers la `v12.12.69` ([#653](https://github.com/assurance-maladie-digital/design-system/pull/653)) ([e2d291e](https://github.com/assurance-maladie-digital/design-system/commit/e2d291e59452fa343689a2d14b0035e9bfa04415))
+  - **vuetify:** Mise à jour vers la `v2.3.15` ([#654](https://github.com/assurance-maladie-digital/design-system/pull/654))
 
 ### 📚 Guide de migration
 
