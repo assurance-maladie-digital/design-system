@@ -31,13 +31,15 @@ module.exports = {
 
 		// .vue <script> indent
 		'vue/script-indent': ['error', 'tab', {
-			'baseIndent': 1,
-			'switchCase': 1,
-			'ignores': []
+			baseIndent: 1,
+			switchCase: 1,
+			ignores: []
 		}],
 
 		// Maximum 1 empty line
-		'no-multiple-empty-lines': ['error', { 'max': 1 }],
+		'no-multiple-empty-lines': ['error', {
+			max: 1
+		}],
 
 		// Remove trailing coma
 		'comma-dangle': ['error', 'never'],
@@ -47,7 +49,7 @@ module.exports = {
 			'error',
 			'PascalCase',
 			{
-				'ignores': [
+				ignores: [
 					'keep-alive',
 					'component',
 					'transition',
@@ -72,9 +74,9 @@ module.exports = {
 
 		// Limit .vue files to 350 lines
 		'max-lines': ['error', {
-			'max': 350,
-			'skipBlankLines': true,
-			'skipComments': true
+			max: 350,
+			skipBlankLines: true,
+			skipComments: true
 		}],
 
 		'object-curly-spacing': ['error', 'always'],
@@ -87,7 +89,7 @@ module.exports = {
 		'@typescript-eslint/explicit-module-boundary-types': [
 			'error',
 			{
-				'allowedNames': [
+				allowedNames: [
 					'beforeCreate',
 					'created',
 					'beforeMount',
@@ -112,6 +114,7 @@ module.exports = {
 		{
 			files: ['*.js'],
 			rules: {
+				// Allow require() in JS files
 				'@typescript-eslint/no-var-requires': 'off'
 			}
 		}
