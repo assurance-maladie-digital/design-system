@@ -14,19 +14,60 @@ module.exports = {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 
+		// Tab indent in templates
+		'vue/html-indent': ['error', 'tab'],
 		'indent': 'off',
 
-		// Force semi
-		'semi': ['error', 'always'],
+		// Disallow spaces around equal in HTML attributes
+		// eg. attr= "value" is invalid
+		'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
+
+		// Force semi-colons
+		'semi': 'off',
+		'@typescript-eslint/semi': ['error'],
 
 		// Remove space in functions, eg. function()
 		'space-before-function-paren': ['error', 'never'],
 
+		// .vue <script> indent
+		'vue/script-indent': ['error', 'tab', {
+			baseIndent: 1,
+			switchCase: 1,
+			ignores: []
+		}],
+
+		// Allow modifiers in slot names
+		// eg. <template v-slot.foo>
+		'vue/valid-v-slot': ['error', {
+			allowModifiers: true
+		}],
+
+		// Allow event names like click:row
+		'vue/custom-event-name-casing': ['error', {
+			ignores: ['/^[a-z]+(?:-[a-z]+)*:[a-z]+(?:-[a-z]+)*$/u']
+		}],
+
 		// Maximum 1 empty line
-		'no-multiple-empty-lines': ['error', { 'max': 1 }],
+		'no-multiple-empty-lines': ['error', {
+			max: 1
+		}],
 
 		// Remove trailing coma
 		'comma-dangle': ['error', 'never'],
+
+		// Force PascalCase for component names
+		'vue/component-name-in-template-casing': [
+			'error',
+			'PascalCase',
+			{
+				ignores: [
+					'keep-alive',
+					'component',
+					'transition',
+					'transition-group'
+				]
+			}
+		],
 
 		// Force single quotes
 		'quotes': ['error', 'single'],
@@ -34,19 +75,19 @@ module.exports = {
 		// No trailing spaces
 		'no-trailing-spaces': 'error',
 
-		'space-before-blocks': ['error', 'always'],
-		'keyword-spacing': ['error', { 'before': true }],
-
 		// Enforces one true brace style, eg.
 		// if () {
 		// }
 		'brace-style': ['error', '1tbs'],
 
+		// Allow v-html
+		'vue/no-v-html': ['off'],
+
 		// Limit .vue files to 350 lines
 		'max-lines': ['error', {
-			'max': 350,
-			'skipBlankLines': true,
-			'skipComments': true
+			max: 350,
+			skipBlankLines: true,
+			skipComments: true
 		}],
 
 		'object-curly-spacing': ['error', 'always'],
@@ -56,67 +97,10 @@ module.exports = {
 
 		'no-prototype-builtins': 'off',
 
-		/*--------------------- vue rules ---------------------*/
-
-		// Tab indent in templates
-		'vue/html-indent': ['error', 'tab'],
-
-		// Allow v-html
-		'vue/no-v-html': ['off'],
-
-		// Disallow spaces around equal in HTML attributes
-		// eg. attr= "value" is invalid
-		'vue/no-spaces-around-equal-signs-in-attribute': ['error'],
-
-		// Enforce specific casing for the Prop name in Vue components
-		'vue/prop-name-casing': ['error'],
-
-		// Require default value for props
-		'vue/require-default-prop': ['error'],
-
-		// Require type definitions in props
-		'vue/require-prop-types': ['error'],
-
-		// .vue <script> indent
-		'vue/script-indent': ['error', 'tab', {
-			'baseIndent': 1,
-			'switchCase': 1,
-			'ignores': []
-		}],
-
-		// Enforce order of properties in components
-		'vue/order-in-components': ['error'],
-
-		// This rule requires or disallows blank lines between the given 2 blocks.
-		'vue/padding-line-between-blocks': ['error', 'always'],
-
-		// Enforce or forbid parentheses after method calls without arguments in v-on directives
-		'vue/v-on-function-call': 'error',
-
-		// Force PascalCase for component names
-		'vue/component-name-in-template-casing': [
-			'error',
-			'PascalCase',
-			{
-				'ignores': [
-					'keep-alive',
-					'component',
-					'transition',
-					'transition-group'
-				]
-			}
-		],
-
-		/*--------------------- ts rules ---------------------*/
-
-		// Require or disallow semicolons instead of ASI
-		'@typescript-eslint/semi': ['error'],
-
-		// Require explicit return and argument types on exported functions' and classes' public class methods
 		'@typescript-eslint/explicit-module-boundary-types': [
 			'error',
 			{
-				'allowedNames': [
+				allowedNames: [
 					'beforeCreate',
 					'created',
 					'beforeMount',
@@ -128,34 +112,20 @@ module.exports = {
 				]
 			}
 		],
-
-		// Consistent with type definition either interface or type
-		'@typescript-eslint/consistent-type-definitions': 'error',
-
-		// Require a consistent member declaration order
-		'@typescript-eslint/member-ordering': ['error',
-			{
-				'classes': [
-					'signature',
-					'field',
-					'method'
-				]
-			}
-		]
 	},
 	overrides: [
 		{
-			files: ['*.vue'],
+			files: ['*.js'],
 			rules: {
-				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
-				// does not work with type definitions
-				'no-unused-vars': 'off'
+				// Allow require() in JS files
+				'@typescript-eslint/no-var-requires': 'off'
 			}
 		},
 		{
-			files: ['*.js'],
+			files: ['*.spec.ts'],
 			rules: {
-				'@typescript-eslint/no-var-requires': 'off'
+				// Sometimes in tests we mock more than one component
+				'vue/one-component-per-file': 'off'
 			}
 		}
 	],
