@@ -9,6 +9,10 @@
 ### Vue Dash
 
 - ✨ **Nouvelles fonctionnalités**
+  - **prompts:** Ajout de l'option Cypress ([#567](https://github.com/assurance-maladie-digital/design-system/pull/567)) ([8873ac1](https://github.com/assurance-maladie-digital/design-system/pull/567/commits/8873ac107385cc5f551f9e577ea379e9eb4e8f39))
+
+
+- ✨ **Nouvelles fonctionnalités**
   - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636)) ([dfe1c80](https://github.com/assurance-maladie-digital/design-system/commit/dfe1c80a09d9acdf6ecca2c72de22708938b5784))
 
 - 🔧 **Configuration**
