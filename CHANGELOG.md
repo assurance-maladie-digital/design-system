@@ -11,6 +11,9 @@
 - ✨ **Nouvelles fonctionnalités**
   - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636)) ([dfe1c80](https://github.com/assurance-maladie-digital/design-system/commit/dfe1c80a09d9acdf6ecca2c72de22708938b5784))
 
+- 🔧 **Configuration**
+  - **template:** Suppression de TSLint et mise à jour de la configuration d'ESLint ([#642](https://github.com/assurance-maladie-digital/design-system/pull/642))
+
 ### Interne
 
 - 🚨 **Lint**
@@ -22,7 +25,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.5.0` ([#648](https://github.com/assurance-maladie-digital/design-system/pull/648)) ([6796d57](https://github.com/assurance-maladie-digital/design-system/commit/6796d57e34c1cf09f359b1149a24aeb52a60f548))
   - **@types/jest:** Mise à jour vers la `v26.0.15` ([#650](https://github.com/assurance-maladie-digital/design-system/pull/650)) ([0be84b2](https://github.com/assurance-maladie-digital/design-system/commit/0be84b2be875be1316f32c673afd95d6083a7b51))
   - **@types/node:** Mise à jour vers la `v12.12.69` ([#653](https://github.com/assurance-maladie-digital/design-system/pull/653)) ([e2d291e](https://github.com/assurance-maladie-digital/design-system/commit/e2d291e59452fa343689a2d14b0035e9bfa04415))
-  - **vuetify:** Mise à jour vers la `v2.3.15` ([#654](https://github.com/assurance-maladie-digital/design-system/pull/654))
+  - **vuetify:** Mise à jour vers la `v2.3.15` ([#654](https://github.com/assurance-maladie-digital/design-system/pull/654)) ([a32ea6c](https://github.com/assurance-maladie-digital/design-system/commit/a32ea6c39920baf8b04f57fd29ecfd6d140ec6b5))
 
 ### 📚 Guide de migration
 
