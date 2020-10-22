@@ -1,10 +1,9 @@
 <template>
 	<DocSection title="ErrorPage">
 		<ErrorPage
-			title="Page non trouvé"
+			page-title="Page non trouvée"
 			message="Il semblerait qu'il y ait eu une erreur !"
 			code="404"
-			cta="Rtour à l'acceuil"
 		/>
 	</DocSection>
 </template>

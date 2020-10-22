@@ -7,6 +7,11 @@ exports[`ErrorPage renders correctly 1`] = `
     Error
   </h2>
   <p>Error message</p>
-  <!---->
+  <vlayout-stub tag="div" class="mt-6">
+    <vspacer-stub></vspacer-stub>
+    <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button">
+      Retour à l'accueil
+    </vbtn-stub>
+  </vlayout-stub>
 </pagecard>
 `;

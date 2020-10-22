@@ -56,7 +56,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { DataListIcons, IDataList } from './types';
+	import { DataListIcons, DataList as IDataList } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';

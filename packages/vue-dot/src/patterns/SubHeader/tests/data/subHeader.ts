@@ -1,7 +1,7 @@
-import { IDataList } from '../../../../elements/DataList/types';
+import { DataList } from '../../../../elements/DataList/types';
 import { DataListsItem } from '../../types';
 
-export const dataListItems: IDataList = [
+export const dataListItems: DataList = [
 	{
 		key: 'Libellé',
 		value: 'Texte saisi'
@@ -12,7 +12,7 @@ export const dataListItems: IDataList = [
 	}
 ];
 
-export const dataListItemsActions: IDataList = [
+export const dataListItemsActions: DataList = [
 	{
 		key: 'Libellé',
 		value: 'Texte à modifier',
