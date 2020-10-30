@@ -2291,10 +2291,10 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
-"@types/figlet@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.2.0.tgz#2dab76da069dc8ce5dcab461f7f2788317fb01a8"
-  integrity sha512-TDZkNpYfkc3X8yv7w1QBziZmmxzNfGKX+YjeNkMpmSiNV0QOdNf9G5cEZB3FH1/oaqpSQEdxuDzURdju2L3lng==
+"@types/figlet@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.2.1.tgz#ae3ba62ae70fc2aa10ac76b42541a99680b080a1"
+  integrity sha512-uw+Xmam7sMFHYyVGq5CGH/6Lu0T792bf4T6+jPFtPkWnJ9YVjLKqOLzF7DHuSo/LEHtLWleUO7Zi7EKkg6rSIg==
 
 "@types/fs-extra@9.0.2":
   version "9.0.2"
@@ -2409,10 +2409,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.8.tgz#fe2012f2355e4ce08bca44aeb3abbb21cf88d33f"
   integrity sha512-KPcKqKm5UKDkaYPTuXSx8wEP7vE9GnuaXIZKijwRYcePpZFDVuy2a57LarFKiORbHOuTOOwYzxVxcUzsh2P2Pw==
 
-"@types/node@12.19.1":
-  version "12.19.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.1.tgz#303f74c8a2b35644594139e948b2be470ae1186f"
-  integrity sha512-/xaVmBBjOGh55WCqumLAHXU9VhjGtmyTGqJzFBXRWZzByOXI5JAJNx9xPVGEsNizrNwcec92fQMj458MWfjN1A==
+"@types/node@12.19.3":
+  version "12.19.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.3.tgz#a6e252973214079155f749e8bef99cc80af182fa"
+  integrity sha512-8Jduo8wvvwDzEVJCOvS/G6sgilOLvvhn1eMmK3TW8/T217O7u1jdrK6ImKLv80tVryaPSVeKu6sjDEiFjd4/eg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -13297,10 +13297,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.3.tgz#153bbd468ef07725c1df9c77e8b453f8d36abba5"
-  integrity sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==
+typescript@4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.5.tgz#ae9dddfd1069f1cb5beb3ef3b2170dd7c1332389"
+  integrity sha512-ywmr/VrTVCmNTJ6iV2LwIrfG1P+lv6luD8sUJs+2eI9NLGigaN+nUQc13iHqisq7bra9lnmUSYqbJvegraBOPQ==
 
 uglify-js@3.4.x:
   version "3.4.10"
@@ -13715,10 +13715,10 @@ vuetify-loader@1.6.0:
     file-loader "^4.0.0"
     loader-utils "^1.2.0"
 
-vuetify@2.3.15:
-  version "2.3.15"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.3.15.tgz#ea148acce8f5bc272f64f03a0d2ace09e58e092c"
-  integrity sha512-YVJN/ld60S2mmFCKxoVFkB8X2kmuLT0E28ql4kr8HQUeCYdK8axoca/N8ZIP1hFH4NIz392f0nVpZKS4ZFZBVA==
+vuetify@2.3.16:
+  version "2.3.16"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.3.16.tgz#fc60e54e8d5e7e15c845f8d1fd68cfba3877f22c"
+  integrity sha512-LHPqY+Gmyb/75xJscO0a3CuB4ZdpqHLNaGMAbmfTyapI8Q02+hjABEZzitFU/XObD2KhrNWPJzmGZPhbshGUzg==
 
 vuex@3.5.1:
   version "3.5.1"
