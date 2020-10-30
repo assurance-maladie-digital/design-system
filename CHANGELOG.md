@@ -32,7 +32,8 @@
   - **vue-router:** Mise à jour vers la `v3.4.8` ([#663](https://github.com/assurance-maladie-digital/design-system/pull/663)) ([abbcd87](https://github.com/assurance-maladie-digital/design-system/commit/abbcd878fb48fc0b730dd4c93f6e6a5024d933e6))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.6.0` ([#664](https://github.com/assurance-maladie-digital/design-system/pull/664)) ([55e231a](https://github.com/assurance-maladie-digital/design-system/commit/55e231a6036161a9e187d39f6c798820b78e087d))
   - **lint-staged:** Mise à jour vers la `v10.5.0` ([#665](https://github.com/assurance-maladie-digital/design-system/pull/665)) ([c6218c2](https://github.com/assurance-maladie-digital/design-system/commit/c6218c225358248f7559ad5a5f9f6d4ab24a09e0))
-  - **@types/node:** Mise à jour vers la `v12.19.3` ([#666](https://github.com/assurance-maladie-digital/design-system/pull/666))
+  - **@types/node:** Mise à jour vers la `v12.19.3` ([#666](https://github.com/assurance-maladie-digital/design-system/pull/666)) ([800dc51](https://github.com/assurance-maladie-digital/design-system/commit/800dc51107c186b4baf02a119236b00a0b4fd5e9))
+  - **typescript:** Mise à jour vers la `v4.0.5` ([#667](https://github.com/assurance-maladie-digital/design-system/pull/667))
 
 ### 📚 Guide de migration
 
