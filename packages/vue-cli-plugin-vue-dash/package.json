@@ -19,6 +19,9 @@
 		"email": "me@deraw.dev"
 	},
 	"main": "index.js",
+	"scripts": {
+		"lint": "eslint . --fix"
+	},
 	"dependencies": {
 		"@cnamts/cli-helpers": "^2.0.0-beta.2",
 		"dayjs": "^1.8.34",

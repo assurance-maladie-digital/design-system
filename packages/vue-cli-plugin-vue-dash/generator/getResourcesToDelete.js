@@ -1,9 +1,9 @@
 /**
- * Get the list of ressources to delete
+ * Get the ressources to delete
  *
- * @param {options} options Options, used in conditions
- * @returns {array}
-*/
+ * @param {options} options The plugin options
+ * @returns {Array} The ressources to delete
+ */
 function getRessourcesToDelete(options) {
 	return [
 		{
@@ -63,4 +63,4 @@ function getRessourcesToDelete(options) {
 	];
 }
 
-module.exports = getRessourcesToDelete;
+module.exports = { getRessourcesToDelete };

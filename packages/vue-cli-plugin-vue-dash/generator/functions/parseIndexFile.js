@@ -9,4 +9,4 @@ function parseIndexFile(indexFile) {
 	return indexFile.replace(/{BASE_URL}/g, '<%= BASE_URL %>');
 }
 
-module.exports = parseIndexFile;
+module.exports = { parseIndexFile };

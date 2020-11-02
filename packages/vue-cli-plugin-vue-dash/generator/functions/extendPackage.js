@@ -1,6 +1,16 @@
-const vdPkg = require('../../package.json');
+const { devDependencies } = require('../../package.json');
 
+/**
+ * Pin version for alpha and beta and default to `next`
+ *
+ * @param {string|undefined} version The version to normalize
+ * @returns {string} The normalized version
+ */
 function normalizeVersion(version) {
+	if (!version) {
+		return 'next';
+	}
+
 	// If the version is an alpha or a beta
 	if (version.includes('alpha') || version.includes('beta')) {
 		// Remove ^ char to avoid version auto-bump
@@ -11,11 +21,17 @@ function normalizeVersion(version) {
 }
 
 // Use dev dependencies to get packages versions
-const VueDotVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/vue-dot'] || 'next');
-const DesignTokensVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/design-tokens'] || 'next');
-const FormBuilderVersion = normalizeVersion(vdPkg.devDependencies['@cnamts/form-builder'] || 'next');
+const VueDotVersion = normalizeVersion(devDependencies['@cnamts/vue-dot']);
+const DesignTokensVersion = normalizeVersion(devDependencies['@cnamts/design-tokens']);
+const FormBuilderVersion = normalizeVersion(devDependencies['@cnamts/form-builder']);
 
-/** Extend package.json */
+/**
+ * Extend package.json
+ *
+ * @param {object} api The plugin API
+ * @param {object} options The plugin options
+ * @returns {void}
+ */
 function extendPackage(api, options) {
 	const newPackageProperties = {
 		dependencies: {
@@ -23,7 +39,7 @@ function extendPackage(api, options) {
 			'@cnamts/vue-dot': VueDotVersion,
 			'axios': '^0.20.0',
 			'core-js': '^3.6.5',
-			"custom-event-polyfill": "^1.0.7",
+			'custom-event-polyfill': '^1.0.7',
 			'dayjs': '^1.9.3',
 			'languages': '^0.1.3',
 			'vue-input-facade': '^1.3.2',
@@ -67,4 +83,4 @@ function extendPackage(api, options) {
 	api.extendPackage(newPackageProperties);
 }
 
-module.exports = extendPackage;
+module.exports = { extendPackage };
