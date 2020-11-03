@@ -1,5 +1,7 @@
 import Vue from 'vue';
-import { mount, Wrapper } from '@vue/test-utils';
+import { Wrapper } from '@vue/test-utils';
+
+import { mountComponent } from '../../../../tests/';
 
 import { Eventable } from '../';
 import { customizable, Options } from '../../customizable';
@@ -28,7 +30,7 @@ describe('Eventable', () => {
 	it('does nothing when no options are defined', () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+		const wrapper = mountComponent(testComponent) as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
@@ -42,7 +44,7 @@ describe('Eventable', () => {
 			}
 		});
 
-		const wrapper = mount(testComponent, {
+		const wrapper = mountComponent(testComponent, {
 			propsData: {
 				userEvents
 			}
@@ -60,7 +62,7 @@ describe('Eventable', () => {
 			}
 		});
 
-		const wrapper = mount(testComponent, {
+		const wrapper = mountComponent(testComponent, {
 			propsData: {
 				userEvents
 			}
@@ -72,7 +74,7 @@ describe('Eventable', () => {
 	it('returns a CSS class if the selected date is in the defined range', () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = mount(testComponent, {
+		const wrapper = mountComponent(testComponent, {
 			propsData: {
 				startDate: '2019-10-21'
 			},
@@ -87,7 +89,7 @@ describe('Eventable', () => {
 	it('returns false if the the selected date isn\'t in the defined range', () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = mount(testComponent, {
+		const wrapper = mountComponent(testComponent, {
 			propsData: {
 				startDate: '2019-10-21'
 			},
@@ -102,7 +104,7 @@ describe('Eventable', () => {
 	it('returns false when showWeekends is on and the date isn\'t a weekend', () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = mount(testComponent, {
+		const wrapper = mountComponent(testComponent, {
 			propsData: {
 				showWeekends: true
 			},
@@ -121,7 +123,7 @@ describe('Eventable', () => {
 	it('returns a CSS class when showWeekends is on and the date is a weekend', () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = mount(testComponent, {
+		const wrapper = mountComponent(testComponent, {
 			propsData: {
 				showWeekends: true
 			},
@@ -140,7 +142,7 @@ describe('Eventable', () => {
 	it('returns a CSS class for dark theme when showWeekends is on, the date is a weekend and theme is dark', () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = mount(testComponent, {
+		const wrapper = mountComponent(testComponent, {
 			propsData: {
 				showWeekends: true
 			},
