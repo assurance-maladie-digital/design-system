@@ -35,7 +35,8 @@
   - **@types/figlet:** Mise à jour vers la `v1.2.1` ([#669](https://github.com/assurance-maladie-digital/design-system/pull/669)) ([ec2195c](https://github.com/assurance-maladie-digital/design-system/commit/ec2195c625453256be39096e07217719e4bf1c7b))
   - **sass:** Mise à jour vers la `v1.28.0` ([#670](https://github.com/assurance-maladie-digital/design-system/pull/670)) ([3990e3f](https://github.com/assurance-maladie-digital/design-system/commit/3990e3f05ab395451373a0dde43e7321a17ae4e9))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.6` ([#671](https://github.com/assurance-maladie-digital/design-system/pull/671)) ([efeaa74](https://github.com/assurance-maladie-digital/design-system/commit/efeaa74d10f927d28d3a6c1403dc371bb7820fbd))
-  - **lint-staged:** Mise à jour vers la `v10.5.1` ([#672](https://github.com/assurance-maladie-digital/design-system/pull/672))
+  - **lint-staged:** Mise à jour vers la `v10.5.1` ([#672](https://github.com/assurance-maladie-digital/design-system/pull/672)) ([87fd841](https://github.com/assurance-maladie-digital/design-system/commit/87fd841109408c00f9c0bb9b389ff85813e38ed0))
+  - **@vue/test-utils:** Mise à jour vers la `v1.1.1` ([#673](https://github.com/assurance-maladie-digital/design-system/pull/673))
 
 ### 📚 Guide de migration
 
