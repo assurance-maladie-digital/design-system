@@ -44,12 +44,14 @@ function getVueDotComponent(componentName) {
 	return [componentName, `import ${componentName} from '@cnamts/vue-dot/src/${componentType}/${componentName}'`];
 }
 
-const vueDotLoader = [{
-	match({ pascalTag }) {
-		if (isVueDotComponent(pascalTag)) {
-			return getVueDotComponent(pascalTag);
-		}
+function match(_, { camelTag }) {
+	if (isVueDotComponent(camelTag)) {
+		return getVueDotComponent(camelTag);
 	}
+}
+
+const vueDotLoader = () => [{
+	match
 }];
 
 module.exports = { vueDotLoader };

@@ -26,7 +26,7 @@ const DEFAULT_ERROR_MESSAGE = <% if (i18n) { %>common.defaultErrorMessage<% } el
 instance.interceptors.response.use(undefined, (error: AxiosError) => {
 	let errorMessage: string;
 
-	// If we don't have a error or a 500 HTTP Code
+	// If we don't have an error or we have a 500 HTTP Code
 	if (!error.response || error.response.status >= 500) {
 		// Use the default message
 		errorMessage = DEFAULT_ERROR_MESSAGE;

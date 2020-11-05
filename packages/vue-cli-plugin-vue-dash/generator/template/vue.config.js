@@ -3,7 +3,13 @@
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
+const { vueDotLoader } = require('@cnamts/vue-cli-plugin-vue-dash/vueDotLoader');
+
 module.exports = {
+	chainWebpack: config => {
+		// Auto-load VueDot components
+		config.plugin('VuetifyLoaderPlugin').tap(vueDotLoader);
+	},
 	configureWebpack: {
 		devtool: 'source-map',
 		optimization: {

@@ -19,6 +19,9 @@ import './plugins/vue-dot';<% if (formBuilder) { %>
 import './plugins/form-builder';<% } %>
 import './plugins/webfontloader';
 
+// Import the theme styles
+import '@/theme/styles/index.scss';
+
 // Import application parts
 import App from './App.vue';
 import { router } from './router';
