@@ -566,7 +566,7 @@ exports[`FormBuilder renders correctly 1`] = `
             </div>
           </div>
         </div>
-        <transition-stub name="expand-transition" hide-on-leave="">
+        <transition-stub name="expand-transition">
           <div>
             <h4 class="mb-1 body-1">
               Autre choix
