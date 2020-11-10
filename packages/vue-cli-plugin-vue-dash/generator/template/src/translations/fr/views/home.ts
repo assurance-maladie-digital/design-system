@@ -9,9 +9,6 @@ export default {
 		block2: 'Tout est prêt, vous pouvez dès à présent commencer à développer !'
 	},
 	about: {
-		to: {
-			name: 'about'
-		},
 		label: 'À propos'
 	},
 	notify: 'Envoyer une notification (exemple)'

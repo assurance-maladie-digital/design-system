@@ -13,9 +13,9 @@
 		/>
 
 		<VBtn
-			<% if (i18n) { %>:to="$t('views.about.backBtn.to')"<% } else { %>:to="{
+			:to="{
 				name: 'home'
-			}"<% } %>
+			}"
 			color="accent"
 			class="mt-8"
 			outlined
