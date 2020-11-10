@@ -5,6 +5,7 @@
 		origin="top center"
 		offset-y
 		left
+		data-cy="header-menu"
 	>
 		<template #activator="{ on }">
 			<VBtn

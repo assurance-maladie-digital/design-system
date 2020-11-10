@@ -10,6 +10,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636)) ([dfe1c80](https://github.com/assurance-maladie-digital/design-system/commit/dfe1c80a09d9acdf6ecca2c72de22708938b5784))
+  - **prompts:** Ajout de l'option Cypress ([#567](https://github.com/assurance-maladie-digital/design-system/pull/567)) ([7555363](https://github.com/assurance-maladie-digital/design-system/commit/7555363bae9b65feed20faa3360aadbcc41d3efc))
 
 - ♻️ **Refactoring**
   - **template:** Refonte du fichier `index.html` ([#682](https://github.com/assurance-maladie-digital/design-system/pull/682)) ([195d33d](https://github.com/assurance-maladie-digital/design-system/commit/195d33dbe0e051214eb2aa09c57af4dc4491f585))
@@ -44,7 +45,8 @@
   - **sass:** Mise à jour vers la `v1.29.0` ([#679](https://github.com/assurance-maladie-digital/design-system/pull/679)) ([6c12086](https://github.com/assurance-maladie-digital/design-system/commit/6c12086647d44b2d53ce1fd8e3d8cd3a52d239f7))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.7` ([#680](https://github.com/assurance-maladie-digital/design-system/pull/680)) ([837e24a](https://github.com/assurance-maladie-digital/design-system/commit/837e24ae008d972c290aa35c97b6f548741c4cc1))
   - **dayjs:** Mise à jour vers la `v1.9.5` ([#681](https://github.com/assurance-maladie-digital/design-system/pull/681)) ([f0c0041](https://github.com/assurance-maladie-digital/design-system/commit/f0c0041dfae167df6b3c1c976d3b40ff1da1c9d9))
-  - **vue-router:** Mise à jour vers la `v3.4.9` ([#684](https://github.com/assurance-maladie-digital/design-system/pull/684))
+  - **vue-router:** Mise à jour vers la `v3.4.9` ([#684](https://github.com/assurance-maladie-digital/design-system/pull/684)) ([e7fdf8a](https://github.com/assurance-maladie-digital/design-system/commit/e7fdf8a20214c8d7840bac3dcaa480d12c6f8701))
+  - **core-js:** Mise à jour vers la `v3.7.0` ([#686](https://github.com/assurance-maladie-digital/design-system/pull/686))
 
 ### 📚 Guide de migration
 
