@@ -40,13 +40,13 @@
   - **copy-webpack-plugin:** Mise à jour vers la `v6.3.0` ([#678](https://github.com/assurance-maladie-digital/design-system/pull/678)) ([8ee4f95](https://github.com/assurance-maladie-digital/design-system/commit/8ee4f95c6b175193fd3975d7d2523bf34f1e75a1))
   - **sass:** Mise à jour vers la `v1.29.0` ([#679](https://github.com/assurance-maladie-digital/design-system/pull/679)) ([6c12086](https://github.com/assurance-maladie-digital/design-system/commit/6c12086647d44b2d53ce1fd8e3d8cd3a52d239f7))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.7` ([#680](https://github.com/assurance-maladie-digital/design-system/pull/680)) ([837e24a](https://github.com/assurance-maladie-digital/design-system/commit/837e24ae008d972c290aa35c97b6f548741c4cc1))
-  - **dayjs:** Mise à jour vers la `v1.9.5` ([#681](https://github.com/assurance-maladie-digital/design-system/pull/681)) ([f0c0041](https://github.com/assurance-maladie-digital/design-system/commit/f0c0041dfae167df6b3c1c976d3b40ff1da1c9d9))
   - **vue-router:** Mise à jour vers la `v3.4.9` ([#684](https://github.com/assurance-maladie-digital/design-system/pull/684)) ([e7fdf8a](https://github.com/assurance-maladie-digital/design-system/commit/e7fdf8a20214c8d7840bac3dcaa480d12c6f8701))
   - **core-js:** Mise à jour vers la `v3.7.0` ([#686](https://github.com/assurance-maladie-digital/design-system/pull/686)) ([dc1c015](https://github.com/assurance-maladie-digital/design-system/commit/dc1c0154f94335bb7983a8ce3972fdf31793d0d0))
   - **eslint:** Mise à jour vers la `v7.13.0` ([#687](https://github.com/assurance-maladie-digital/design-system/pull/687) ([f9f9a72](https://github.com/assurance-maladie-digital/design-system/commit/f9f9a72d00d4172f4b6e565d9692cefa0aef17a9))
   - **ts-jest:** Mise à jour vers la `v26.4.4` ([#688](https://github.com/assurance-maladie-digital/design-system/pull/688)) ([43c61b7](https://github.com/assurance-maladie-digital/design-system/commit/43c61b70c21c249db01ea50faea6cc717ea3c0b3))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.7.0` ([#689](https://github.com/assurance-maladie-digital/design-system/pull/689)) ([164a846](https://github.com/assurance-maladie-digital/design-system/commit/164a84625d8fdc56d04c430250b8135c8392082a))
-  - **@types/node:** Mise à jour vers la `v12.19.4` ([#690](https://github.com/assurance-maladie-digital/design-system/pull/690))
+  - **@types/node:** Mise à jour vers la `v12.19.4` ([#690](https://github.com/assurance-maladie-digital/design-system/pull/690)) ([63b8d88](https://github.com/assurance-maladie-digital/design-system/commit/63b8d88c1761cddc5194b1b90584fe6fa2836820))
+  - **dayjs:** Mise à jour vers la `v1.9.6` ([#691](https://github.com/assurance-maladie-digital/design-system/pull/691))
 
 ### 📚 Guide de migration
 
