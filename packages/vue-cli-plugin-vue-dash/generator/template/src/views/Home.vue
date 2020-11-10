@@ -14,7 +14,8 @@
 		<RouterLink
 			:to=" {
 				name: 'about'
-			}"
+			}"<% if (cypress) { %>
+			data-cy="aboutLink"<% } %>
 		>
 			<% if (i18n) { %>{{ $t('views.home.about.label') }}<% } else { %>À propos<% } %>
 		</RouterLink>
@@ -24,7 +25,8 @@
 		<VBtn
 			color="accent"
 			outlined
-			class="mt-8"
+			class="mt-8"<% if (cypress) { %>
+			data-cy="notify"<% } %>
 			@click="sendNotification"
 		>
 			<% if (i18n) { %>{{ $t('views.home.notify') }}<% } else { %>Envoyer une notification (exemple)<% } %>

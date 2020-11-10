@@ -9,7 +9,8 @@
 			:key="index"
 			:title="data.title"
 			:links="data.links"
-			class="mt-4"
+			class="mt-4"<% if (cypress) { %>
+			data-cy="links"<% } %>
 		/>
 
 		<VBtn
@@ -19,7 +20,8 @@
 			color="accent"
 			class="mt-8"
 			outlined
-			exact
+			exact<% if (cypress) { %>
+			data-cy="backBtn"<% } %>
 		>
 			<VIcon class="mr-2">
 				{{ backArrowIcon }}
