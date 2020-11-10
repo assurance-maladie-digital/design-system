@@ -36,6 +36,17 @@ module.exports = {
 			ignores: []
 		}],
 
+		// Allow modifiers in slot names
+		// eg. <template v-slot.foo>
+		'vue/valid-v-slot': ['error', {
+			allowModifiers: true
+		}],
+
+		// Allow event names like click:row
+		'vue/custom-event-name-casing': ['error', {
+			ignores: ['/^[a-z]+(?:-[a-z]+)*:[a-z]+(?:-[a-z]+)*$/u']
+		}],
+
 		// Maximum 1 empty line
 		'no-multiple-empty-lines': ['error', {
 			max: 1
@@ -104,18 +115,17 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ['*.vue'],
-			rules: {
-				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
-				// does not work with type definitions
-				'no-unused-vars': 'off'
-			}
-		},
-		{
 			files: ['*.js'],
 			rules: {
 				// Allow require() in JS files
 				'@typescript-eslint/no-var-requires': 'off'
+			}
+		},
+		{
+			files: ['*.spec.ts'],
+			rules: {
+				// Sometimes in tests we mock more than one component
+				'vue/one-component-per-file': 'off'
 			}
 		}
 	],
