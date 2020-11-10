@@ -46,7 +46,8 @@
   - **ts-jest:** Mise à jour vers la `v26.4.4` ([#688](https://github.com/assurance-maladie-digital/design-system/pull/688)) ([43c61b7](https://github.com/assurance-maladie-digital/design-system/commit/43c61b70c21c249db01ea50faea6cc717ea3c0b3))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.7.0` ([#689](https://github.com/assurance-maladie-digital/design-system/pull/689)) ([164a846](https://github.com/assurance-maladie-digital/design-system/commit/164a84625d8fdc56d04c430250b8135c8392082a))
   - **@types/node:** Mise à jour vers la `v12.19.4` ([#690](https://github.com/assurance-maladie-digital/design-system/pull/690)) ([63b8d88](https://github.com/assurance-maladie-digital/design-system/commit/63b8d88c1761cddc5194b1b90584fe6fa2836820))
-  - **dayjs:** Mise à jour vers la `v1.9.6` ([#691](https://github.com/assurance-maladie-digital/design-system/pull/691))
+  - **dayjs:** Mise à jour vers la `v1.9.6` ([#691](https://github.com/assurance-maladie-digital/design-system/pull/691)) ([ce0e0ef](https://github.com/assurance-maladie-digital/design-system/commit/ce0e0ef609a3060e8d2165a1251e07734c4d84cb))
+  - **babel-loader:** Mise à jour vers la `v8.2.0` ([#692](https://github.com/assurance-maladie-digital/design-system/pull/692))
 
 ### 📚 Guide de migration
 
