@@ -6,7 +6,8 @@
 		:cta="$t('views.notFound.cta')"<% } else { %>code="404"
 		title="Page non trouvée"
 		message="Il semblerait qu'il y ait eu une erreur !"
-		cta="Retour à la page d'accueil"<% } %>
+		cta="Retour à la page d'accueil"<% } if (cypress) { %>
+		data-cy="errorPage"<% } %>
 	/>
 </template>
 

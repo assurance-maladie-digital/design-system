@@ -13,9 +13,12 @@
   - **prompts:** Ajout de l'option Cypress ([#567](https://github.com/assurance-maladie-digital/design-system/pull/567)) ([7555363](https://github.com/assurance-maladie-digital/design-system/commit/7555363bae9b65feed20faa3360aadbcc41d3efc))
   - **config:** Ajout du tree-shaking de VueDot ([#685](https://github.com/assurance-maladie-digital/design-system/pull/685)) ([de1bf9e](https://github.com/assurance-maladie-digital/design-system/commit/de1bf9ea69a2797707202e8213d950ecfd0c9b41))
 
+- 🐛 **Corrections de bugs**
+  - **template:** Correction des attributs `data-cy` manquants ([#695](https://github.com/assurance-maladie-digital/design-system/pull/695))
+
 - ♻️ **Refactoring**
   - **template:** Refonte du fichier `index.html` ([#682](https://github.com/assurance-maladie-digital/design-system/pull/682)) ([195d33d](https://github.com/assurance-maladie-digital/design-system/commit/195d33dbe0e051214eb2aa09c57af4dc4491f585))
-  - **template:** Suppression des routes dans les traductions ([#694](https://github.com/assurance-maladie-digital/design-system/pull/694))
+  - **template:** Suppression des routes dans les traductions ([#694](https://github.com/assurance-maladie-digital/design-system/pull/694)) ([48ff81d](https://github.com/assurance-maladie-digital/design-system/commit/48ff81d12d1961c152b8d5196178eae1fc6b70fe))
 
 - 🚨 **Lint**
   - **config:** Ajout d'ESLint ([#683](https://github.com/assurance-maladie-digital/design-system/pull/683)) ([bf09d5f](https://github.com/assurance-maladie-digital/design-system/commit/bf09d5f62b71b076d0be3c03de18e2df5ad9175e))

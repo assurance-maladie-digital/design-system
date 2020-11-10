@@ -8,7 +8,6 @@
 			v-if="!maintenance"
 			dark
 			background-color="transparent"
-			data-cy="toolbar-tabs"
 		>
 			<VTab
 				v-for="link in links"
