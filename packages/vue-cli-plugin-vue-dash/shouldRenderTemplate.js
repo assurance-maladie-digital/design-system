@@ -6,4 +6,4 @@ const renderOptionPresent = args.includes('--render-template');
 
 const shouldRenderTemplate = createArgumentPresent || (invokeArgumentPresent && renderOptionPresent);
 
-module.exports = shouldRenderTemplate;
+module.exports = { shouldRenderTemplate };
