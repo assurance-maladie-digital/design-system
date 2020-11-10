@@ -1,5 +1,5 @@
 declare namespace Cypress {
-	interface Chainable {
+	export interface Chainable {
 		/**
 		 * Custom command to select DOM element using data-cy attribute
 		 * @example cy.dataCy('greeting')
