@@ -1,0 +1,37 @@
+{
+	"name": "@cnamts/eslint-config",
+	"version": "2.0.0-beta.2",
+	"description": "ESLint configurations used across our projects",
+	"keywords": [
+		"cnam",
+		"lint",
+		"eslint",
+		"vue",
+		"typescript"
+	],
+	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+	"bugs": {
+		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
+		"email": "me@deraw.dev"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Dylan Broussard",
+		"email": "me@deraw.dev"
+	},
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint . --fix"
+	},
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "4.7.0",
+		"@typescript-eslint/parser": "4.7.0"
+	},
+	"peerDependencies": {
+		"eslint": ">= 7"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"gitHead": "8665a0d4d9d9fcbff61a3b89c8e368c2dfe4d101"
+}
