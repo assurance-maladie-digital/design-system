@@ -14,7 +14,7 @@
   - **config:** Ajout du tree-shaking de VueDot ([#685](https://github.com/assurance-maladie-digital/design-system/pull/685)) ([de1bf9e](https://github.com/assurance-maladie-digital/design-system/commit/de1bf9ea69a2797707202e8213d950ecfd0c9b41))
 
 - 🐛 **Corrections de bugs**
-  - **template:** Correction des attributs `data-cy` manquants ([#695](https://github.com/assurance-maladie-digital/design-system/pull/695))
+  - **template:** Correction des attributs `data-cy` manquants ([#695](https://github.com/assurance-maladie-digital/design-system/pull/695)) ([b54b359](https://github.com/assurance-maladie-digital/design-system/commit/b54b359eef4c537371664285c10eebb38e33416c))
 
 - ♻️ **Refactoring**
   - **template:** Refonte du fichier `index.html` ([#682](https://github.com/assurance-maladie-digital/design-system/pull/682)) ([195d33d](https://github.com/assurance-maladie-digital/design-system/commit/195d33dbe0e051214eb2aa09c57af4dc4491f585))
@@ -53,7 +53,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.7.0` ([#689](https://github.com/assurance-maladie-digital/design-system/pull/689)) ([164a846](https://github.com/assurance-maladie-digital/design-system/commit/164a84625d8fdc56d04c430250b8135c8392082a))
   - **@types/node:** Mise à jour vers la `v12.19.4` ([#690](https://github.com/assurance-maladie-digital/design-system/pull/690)) ([63b8d88](https://github.com/assurance-maladie-digital/design-system/commit/63b8d88c1761cddc5194b1b90584fe6fa2836820))
   - **dayjs:** Mise à jour vers la `v1.9.6` ([#691](https://github.com/assurance-maladie-digital/design-system/pull/691)) ([ce0e0ef](https://github.com/assurance-maladie-digital/design-system/commit/ce0e0ef609a3060e8d2165a1251e07734c4d84cb))
-  - **babel-loader:** Mise à jour vers la `v8.2.0` ([#692](https://github.com/assurance-maladie-digital/design-system/pull/692)) ([5aa2fae](https://github.com/assurance-maladie-digital/design-system/commit/5aa2fae7d5bd079ccdbf8b6936feb0524cef5f6c))
+  - **babel-loader:** Mise à jour vers la `v8.2.1` ([#696](https://github.com/assurance-maladie-digital/design-system/pull/696))
 
 ### 📚 Guide de migration
 
