@@ -5,8 +5,7 @@ export function calcHumanFileSize(size: number, fileSizeUnits: string[], separat
 
 	// Calc size
 	const computedSize = Number(
-		(size / Math.pow(1024, index))
-		.toFixed(2)
+		(size / Math.pow(1024, index)).toFixed(2)
 	) * 1;
 
 	return computedSize + separator + fileSizeUnits[index];

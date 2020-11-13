@@ -1,6 +1,6 @@
 module.exports = {
 	extends: [
-		'@cnamts/eslint-config/vue',
+		'@cnamts/eslint-config-vue',
 		'plugin:jsdoc/recommended'
 	],
 	rules: {

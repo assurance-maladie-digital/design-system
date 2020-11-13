@@ -21,7 +21,7 @@ function isStorageAvailable(): boolean {
 		localStorage.removeItem(item);
 
 		return true;
-	} catch(e) {
+	} catch (e) {
 		return false;
 	}
 }

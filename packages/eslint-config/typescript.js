@@ -1,13 +1,13 @@
 module.exports = {
 	root: true,
-	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		ecmaVersion: 2018
-	},
 	env: {
 		node: true,
 		es6: true,
 		jest: true
+	},
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		ecmaVersion: 2018
 	},
 	extends: [
 		'eslint:recommended',
@@ -24,10 +24,27 @@ module.exports = {
 		}],
 
 		// Force semi
-		'semi': ['error', 'always'],
+		'semi': 'off',
+		'@typescript-eslint/semi': ['error'],
+
+		'@typescript-eslint/member-delimiter-style': ['error', {
+			'multiline': {
+				'delimiter': 'semi',
+				'requireLast': true
+			},
+			'singleline': {
+				'delimiter': 'semi',
+				'requireLast': false
+			}
+		}],
 
 		// Remove space in functions, eg. function()
 		'space-before-function-paren': ['error', 'never'],
+
+		// Maximum 1 empty line
+		'no-multiple-empty-lines': ['error', {
+			max: 1
+		}],
 
 		// Remove trailing coma
 		'comma-dangle': ['error', 'never'],
@@ -48,10 +65,17 @@ module.exports = {
 
 		// Limit .vue files to 350 lines
 		'max-lines': ['error', {
-			'max': 350,
-			'skipBlankLines': true,
-			'skipComments': true
+			max: 350,
+			skipBlankLines: true,
+			skipComments: true
 		}],
+
+		'object-curly-spacing': ['error', 'always'],
+
+		// Force arrow functions
+		'prefer-arrow-callback': 'error',
+
+		'no-prototype-builtins': 'off',
 
 		// Prefer const
 		'prefer-const': 'error',
@@ -59,5 +83,14 @@ module.exports = {
 		// No var
 		'no-var': 'error'
 	},
+	overrides: [
+		{
+			files: ['*.js'],
+			rules: {
+				// Allow require() in JS files
+				'@typescript-eslint/no-var-requires': 'off'
+			}
+		}
+	],
 	plugins: ['@typescript-eslint']
 };

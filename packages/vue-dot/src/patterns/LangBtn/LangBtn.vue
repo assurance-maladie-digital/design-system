@@ -143,7 +143,7 @@
 		}
 
 		/** Returns a formatted object of all the languages */
-		getFormattedLanguages(): Languages{
+		getFormattedLanguages(): Languages {
 			const data: Languages = {};
 
 			languages

@@ -1,11 +1,12 @@
 {
-	"name": "@cnamts/eslint-config",
+	"name": "@cnamts/eslint-config-vue",
 	"version": "2.0.0-beta.2",
-	"description": "ESLint configurations used across our projects",
+	"description": "ESLint configurations used across our Vue.js projects",
 	"keywords": [
 		"cnam",
 		"lint",
 		"eslint",
+		"vue",
 		"typescript"
 	],
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
@@ -23,11 +24,12 @@
 		"lint": "eslint . --fix"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "4.7.0",
-		"@typescript-eslint/parser": "4.7.0"
+		"@cnamts/eslint-config": "2.0.0-beta.2",
+		"@vue/eslint-config-typescript": "7.0.0"
 	},
 	"peerDependencies": {
-		"eslint": ">= 7"
+		"eslint": ">= 7",
+		"eslint-plugin-vue": ">=7"
 	},
 	"publishConfig": {
 		"access": "public"
