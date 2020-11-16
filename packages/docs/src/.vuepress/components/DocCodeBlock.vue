@@ -70,7 +70,7 @@
 
 		pre,
 		code {
-			background: transparent;
+			background: transparent !important;
 			font-weight: 300;
 			margin: 0 !important;
 
