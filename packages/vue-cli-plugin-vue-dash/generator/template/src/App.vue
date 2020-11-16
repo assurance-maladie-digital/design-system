@@ -8,7 +8,7 @@
 
 		<AppToolbar />
 
-		<NotificationBar />
+		<NotificationBar<% if (cypress) { %> data-cy="notificationBar"<% } %> />
 
 		<VMain>
 			<!-- Transition between routes -->

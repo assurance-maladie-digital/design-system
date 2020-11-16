@@ -4,12 +4,13 @@
 		color="white"
 		class="app-header flex-grow-0"
 	>
-		<RouterLink
-			<% if (i18n) { %>:aria-label="$t('components.layout.appHeader.logoBtn.label')"<% } else { %>aria-label="Accueil"<% } %>
-			<% if (i18n) { %>:to="$t('components.layout.appHeader.logoBtn.link')"<% } else { %>:to="{
+		<RouterLink<% if (i18n) { %>
+			:aria-label="$t('components.layout.appHeader.logoBtn.label')"<% } %>
+			:to="{
 				name: 'home'
-			}"<% } %>
-			:disabled="maintenance"
+			}"
+			:disabled="maintenance"<% if (!i18n) { %>
+			aria-label="Accueil"<% } %>
 			exact
 			class="app-logo-link"
 		>

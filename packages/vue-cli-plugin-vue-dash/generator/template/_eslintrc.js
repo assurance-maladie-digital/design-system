@@ -31,13 +31,26 @@ module.exports = {
 
 		// .vue <script> indent
 		'vue/script-indent': ['error', 'tab', {
-			'baseIndent': 1,
-			'switchCase': 1,
-			'ignores': []
+			baseIndent: 1,
+			switchCase: 1,
+			ignores: []
+		}],
+
+		// Allow modifiers in slot names
+		// eg. <template v-slot.foo>
+		'vue/valid-v-slot': ['error', {
+			allowModifiers: true
+		}],
+
+		// Allow event names like click:row
+		'vue/custom-event-name-casing': ['error', {
+			ignores: ['/^[a-z]+(?:-[a-z]+)*:[a-z]+(?:-[a-z]+)*$/u']
 		}],
 
 		// Maximum 1 empty line
-		'no-multiple-empty-lines': ['error', { 'max': 1 }],
+		'no-multiple-empty-lines': ['error', {
+			max: 1
+		}],
 
 		// Remove trailing coma
 		'comma-dangle': ['error', 'never'],
@@ -47,7 +60,7 @@ module.exports = {
 			'error',
 			'PascalCase',
 			{
-				'ignores': [
+				ignores: [
 					'keep-alive',
 					'component',
 					'transition',
@@ -72,9 +85,9 @@ module.exports = {
 
 		// Limit .vue files to 350 lines
 		'max-lines': ['error', {
-			'max': 350,
-			'skipBlankLines': true,
-			'skipComments': true
+			max: 350,
+			skipBlankLines: true,
+			skipComments: true
 		}],
 
 		'object-curly-spacing': ['error', 'always'],
@@ -87,7 +100,7 @@ module.exports = {
 		'@typescript-eslint/explicit-module-boundary-types': [
 			'error',
 			{
-				'allowedNames': [
+				allowedNames: [
 					'beforeCreate',
 					'created',
 					'beforeMount',
@@ -102,17 +115,17 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ['*.vue'],
+			files: ['*.js'],
 			rules: {
-				// The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
-				// does not work with type definitions
-				'no-unused-vars': 'off'
+				// Allow require() in JS files
+				'@typescript-eslint/no-var-requires': 'off'
 			}
 		},
 		{
-			files: ['*.js'],
+			files: ['*.spec.ts'],
 			rules: {
-				'@typescript-eslint/no-var-requires': 'off'
+				// Sometimes in tests we mock more than one component
+				'vue/one-component-per-file': 'off'
 			}
 		}
 	],
