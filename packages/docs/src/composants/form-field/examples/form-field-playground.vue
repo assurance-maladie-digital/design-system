@@ -144,6 +144,8 @@
 
 	@Component
 	export default class FormFieldPlayground extends Vue {
+		otherSelected = false;
+
 		field: Field = {
 			type: 'text',
 			title: '',
@@ -167,7 +169,7 @@
 			],
 			value: null,
 			other: {
-				selectedChoice: 0,
+				selectedChoice: null,
 				label: 'Champ autre'
 			},
 			fieldOptions: {
@@ -189,8 +191,6 @@
 				}
 			}
 		};
-
-		otherSelected = false;
 
 		get displayField(): string {
 			const field: Field = {
@@ -252,6 +252,10 @@
 				value: null
 			},
 			{
+				text: 'Complétion automatique',
+				value: 'choiceAutocomplete'
+			},
+			{
 				text: 'Slider',
 				value: 'choiceSlider'
 			},
@@ -262,6 +266,10 @@
 		];
 
 		otherFieldItems = [
+			{
+				text: 'aucune (visible)',
+				value: null
+			},
 			{
 				text: 'S',
 				value: 0

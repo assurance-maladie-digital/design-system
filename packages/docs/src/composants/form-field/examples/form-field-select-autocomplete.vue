@@ -2,6 +2,9 @@
 	<div>
 		<FormField v-model="field" />
 
+		<h4 class="my-4">Multiple</h4>
+		<FormField v-model="fieldMultiple" />
+
 		<h4 class="my-4">Autre choix</h4>
 		<FormField v-model="fieldOther" />
 
@@ -32,13 +35,26 @@
 	]
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldSelectAutocomplete extends Vue {
 		field: Field = {
 			type: 'select',
 			items: defaultItems,
 			value: null,
 			fieldOptions: {
-				type: 'choiceSlider',
+				type: 'choiceAutocomplete',
+				label: 'Moyen de contact',
+				hideDetails: true,
+				outlined: true
+			}
+		};
+
+		fieldMultiple: Field = {
+			type: 'select',
+			multiple: true,
+			items: defaultItems,
+			value: null,
+			fieldOptions: {
+				type: 'choiceAutocomplete',
 				label: 'Moyen de contact',
 				hideDetails: true,
 				outlined: true
@@ -50,7 +66,7 @@
 			items: defaultItems,
 			value: null,
 			fieldOptions: {
-				type: 'choiceSlider',
+				type: 'choiceAutocomplete',
 				label: 'Moyen de contact',
 				hideDetails: true,
 				outlined: true
@@ -73,7 +89,7 @@
 			],
 			value: null,
 			fieldOptions: {
-				type: 'choiceSlider',
+				type: 'choiceAutocomplete',
 				label: 'Moyen de contact',
 				hideDetails: true,
 				outlined: true

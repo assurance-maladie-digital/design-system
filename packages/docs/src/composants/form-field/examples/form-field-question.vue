@@ -14,6 +14,7 @@
 			type: 'textarea',
 			title: 'Vos symptômes',
 			description: 'Décrivez les symptômes qui vous affectent et leur ordre d\'apparition.',
+			tooltip: 'Si vous ne savez pas, appelez la CNAM',
 			value: null,
 			fieldOptions: {
 				label: 'Décrivez vos symptômes',

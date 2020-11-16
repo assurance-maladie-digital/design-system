@@ -108,3 +108,19 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 #### Champ select bouton
 
 <DocExample file="composants/form-field/examples/form-field-select-button" />
+
+#### Champ select complétion automatique
+
+<DocExample file="composants/form-field/examples/form-field-select-autocomplete" />
+
+#### Champ avec information(s) personalisée(s)
+
+<DocExample file="composants/form-field/examples/form-field-info" />
+
+#### Champ avec validation(s) côté client (avant api)
+
+<DocExample file="composants/form-field/examples/form-field-validation" />
+
+#### Champ avec erreur(s) (après api)
+
+<DocExample file="composants/form-field/examples/form-field-errors" />
