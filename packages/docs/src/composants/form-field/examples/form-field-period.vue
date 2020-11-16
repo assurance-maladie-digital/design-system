@@ -9,7 +9,7 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldPeriod extends Vue {
 		field: Field = {
 			type: 'period',
 			value: {

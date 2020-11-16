@@ -32,7 +32,7 @@
 	]
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldSelectSlider extends Vue {
 		field: Field = {
 			type: 'select',
 			items: defaultItems,

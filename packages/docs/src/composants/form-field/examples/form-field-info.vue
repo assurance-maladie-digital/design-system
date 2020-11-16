@@ -18,7 +18,7 @@
 import dayjs from 'dayjs';
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldInfo extends Vue {
 		text: Field = {
 			type: 'text',
 			value: null,

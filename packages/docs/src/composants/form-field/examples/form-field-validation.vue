@@ -18,21 +18,21 @@
 	import { required } from '@cnamts/vue-dot/src/rules/required';
 	import { maxLength } from '@cnamts/vue-dot/src/rules/maxLength';
 
-	const max = 2;
+	const textMaxLength = 2;
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldValidation extends Vue {
 		field: Field = {
 			type: 'text',
 			value: null,
 			fieldOptions: {
 				label: 'Votre nom',
 				outlined: true,
-				hint: `Champ requis, et maximum ${max} caractères`,
+				hint: `Champ requis, et maximum ${textMaxLength} caractères`,
 				persistentHint: true,
 				rules: [
 					required,
-					maxLength(max)
+					maxLength(textMaxLength)
 				]
 			}
 		};

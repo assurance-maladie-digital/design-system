@@ -9,7 +9,7 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldTextarea extends Vue {
 		field: Field = {
 			type: 'textarea',
 			value: null,

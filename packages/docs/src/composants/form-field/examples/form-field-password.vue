@@ -9,7 +9,7 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldPassword extends Vue {
 		field: Field = {
 			type: 'password',
 			value: null,

@@ -17,7 +17,7 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	@Component
-	export default class FormFieldEx extends Vue {
+	export default class FormFieldError extends Vue {
 		text: Field = {
 			type: 'text',
 			value: null,
