@@ -42,6 +42,14 @@ function getResourcesToDelete(options) {
 		},
 		{
 			type: 'file',
+			path: 'src/router/index.js'
+		},
+		{
+			type: 'file',
+			path: 'src/store/index.js'
+		},
+		{
+			type: 'file',
 			path: 'cypress.json',
 			condition: !options.cypress
 		},
