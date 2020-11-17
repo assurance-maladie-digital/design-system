@@ -19,7 +19,17 @@
 			:key="'field-' + fieldName"
 			:field="field"
 			@change="fieldUpdated($event, fieldName)"
-		/>
+		>
+			<template
+				v-for="slot in Object.keys($scopedSlots)"
+				#[slot]="scope"
+			>
+				<slot
+					:name="slot"
+					v-bind="scope"
+				/>
+			</template>
+		</FormField>
 	</div>
 </template>
 

@@ -8,7 +8,17 @@
 			:fields="section.questions"
 			@change="sectionUpdated($event, sectionName)"
 			@refresh="$emit('refresh')"
-		/>
+		>
+			<template
+				v-for="slot in Object.keys($scopedSlots)"
+				#[slot]="scope"
+			>
+				<slot
+					:name="slot"
+					v-bind="scope"
+				/>
+			</template>
+		</FormFieldList>
 	</div>
 </template>
 
