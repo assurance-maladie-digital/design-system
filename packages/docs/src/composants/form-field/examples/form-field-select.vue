@@ -92,7 +92,7 @@
 			fieldOptions: {
 				label: 'Moyen de contact',
 				outlined: true,
-				hint: 'Autre choix en dessus',
+				hint: 'Autre choix possible',
 				persistentHint: true
 			},
 			other: {

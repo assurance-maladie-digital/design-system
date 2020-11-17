@@ -95,9 +95,33 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 
 #### Champ période
 
+<DocInfo>
+
+La valeur du champ est un objet composé de 
+  - from: la valeur du champ `DatePicker` de début
+  - to: la valeur du champ `DatePicker` de fin
+
+</DocInfo>
+
 <DocExample file="composants/form-field/examples/form-field-period" />
 
 #### Champ select
+
+<DocInfo>
+
+La valeur du champ est un objet composé de 
+  - value: la valeur du champ de sélection
+  - other: la valeur du champ autre
+
+</DocInfo>
+
+<DocInfo>
+
+Le champ autre possède 2 modes:
+  - Toujours visible: champ texte en complément des choix proposés
+  - Conditionnel: champ textarea visible seulement quand une certaine valeur de sélection définie est sélectionnée
+
+</DocInfo>
 
 <DocExample file="composants/form-field/examples/form-field-select" />
 
@@ -112,10 +136,6 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 #### Champ select complétion automatique
 
 <DocExample file="composants/form-field/examples/form-field-select-autocomplete" />
-
-#### Champ avec information(s) personalisée(s)
-
-<DocExample file="composants/form-field/examples/form-field-info" />
 
 #### Champ avec validation(s) côté client (avant api)
 

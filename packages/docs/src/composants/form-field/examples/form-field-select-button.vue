@@ -85,13 +85,10 @@
 				type: 'choiceButton',
 				label: 'Moyen de contact',
 				outlined: true,
-				hint: 'Autre choix possible',
 			},
 			other: {
 				fieldOptions: {
-					placeholder: 'autre',
-					hint: 'Autre choix possible ici',
-					persistentHint: true
+					placeholder: 'autre'
 				}
 			}
 		};
@@ -110,15 +107,10 @@
 				type: 'choiceButton',
 				label: 'Moyen de contact',
 				hideDetails: true,
-				outlined: true,
-				hint: 'Autre choix possible',
+				outlined: true
 			},
 			other: {
-				selectedChoice: 'autre',
-				fieldOptions: {
-					hint: 'Autre choix possible ici',
-					persistentHint: true
-				}
+				selectedChoice: 'autre'
 			}
 		};
 	}
