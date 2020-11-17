@@ -56,21 +56,23 @@ function extendPackage(api, options) {
 			'@typescript-eslint/parser': '^4.7.0',
 			'@vue/eslint-config-standard': '^5.1.2',
 			'@vue/eslint-config-typescript': '^7.0.0',
-			'babel-jest': '^26.5.2',
 			'eslint': '^7.13.0',
 			'eslint-plugin-import': '^2.22.1',
 			'eslint-plugin-node': '^11.1.0',
 			'eslint-plugin-promise': '^4.2.1',
 			'eslint-plugin-standard': '^4.1.0',
 			'eslint-plugin-vue': '^7.1.0',
-			'jest': '^26.5.3',
 			'jest-serializer-vue': '^2.0.2',
-			'ts-jest': '^26.4.1',
 			'vue-class-component': '^7.2.6',
 			'vue-cli-plugin-vuetify': '^2.0.7',
 			'vuetify-loader': '^1.6.0',
 			'webfontloader': '^1.6.28',
 			'webpack': '^4.44.2'
+		},
+		resolutions: {
+			'jest': '^26.6.3',
+			'ts-jest': '^26.4.4',
+			'babel-jest': '^26.6.3'
 		}
 	};
 
@@ -96,7 +98,6 @@ function extendPackage(api, options) {
 		newPackageProperties.scripts['test:e2e'] = 'vue-cli-service test:e2e --headless';
 		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e';
 
-		newPackageProperties.resolutions = {};
 		newPackageProperties.resolutions['cypress'] = '^5.6.0';
 	}
 
