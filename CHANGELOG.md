@@ -22,13 +22,14 @@
 
 - 🚨 **Lint**
   - **config:** Ajout d'ESLint ([#683](https://github.com/assurance-maladie-digital/design-system/pull/683)) ([bf09d5f](https://github.com/assurance-maladie-digital/design-system/commit/bf09d5f62b71b076d0be3c03de18e2df5ad9175e))
+  - **config:** Ajout des descriptions JSDoc manquantes dans `vueDotLoader` ([#708](https://github.com/assurance-maladie-digital/design-system/pull/708))
 
 - 🔧 **Configuration**
   - **template:** Suppression de TSLint et mise à jour de la configuration d'ESLint ([#642](https://github.com/assurance-maladie-digital/design-system/pull/642)) ([9f2a06](https://github.com/assurance-maladie-digital/design-system/commit/9f2a06aba4a188a4ebfd58ce6bf407e1c1a88606))
   - **template:** Mise à jour d'ESLint et de la configuration ([#693](https://github.com/assurance-maladie-digital/design-system/pull/693)) ([882df8c](https://github.com/assurance-maladie-digital/design-system/commit/882df8cab1959ec833b2577d0cdca0026f4a66b1))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour de Cypress vers la `v5` ([#707]https://github.com/assurance-maladie-digital/design-system/pull/707)
+  - **template:** Mise à jour de Cypress vers la `v5` ([#707]https://github.com/assurance-maladie-digital/design-system/pull/707) ([6abfc29](https://github.com/assurance-maladie-digital/design-system/commit/6abfc295ad70827d06c1f54eddd38f1457b339b7))
 
 ### Interne
 
