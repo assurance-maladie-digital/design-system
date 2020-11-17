@@ -90,9 +90,14 @@ function extendPackage(api, options) {
 	}
 
 	if (options.cypress) {
-		newPackageProperties.devDependencies['@vue/cli-plugin-e2e-cypress'] = '^4.5.6';
+		newPackageProperties.devDependencies['@vue/cli-plugin-e2e-cypress'] = '~4.5.9';
+
+		newPackageProperties.scripts = {};
 		newPackageProperties.scripts['test:e2e'] = 'vue-cli-service test:e2e --headless';
-		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e'
+		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e';
+
+		newPackageProperties.resolutions = {};
+		newPackageProperties.resolutions['cypress'] = '^5.6.0';
 	}
 
 	api.extendPackage(newPackageProperties);
