@@ -1,6 +1,10 @@
-const fixEnvFile = require('./fixEnvFile');
+const { fixEnvFile } = require('./fixEnvFile');
 
-module.exports = (api) => {
+/**
+ * @param {object} api The plugin API
+ * @returns {void}
+ */
+function augmentServeCommand(api) {
 	const { serve } = api.service.commands;
 
 	const serveFn = serve.fn;
@@ -11,4 +15,8 @@ module.exports = (api) => {
 
 		return serveFn(...args);
 	};
+}
+
+module.exports = (api) => {
+	augmentServeCommand(api);
 };

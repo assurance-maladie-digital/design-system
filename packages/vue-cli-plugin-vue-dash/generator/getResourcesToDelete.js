@@ -1,10 +1,10 @@
 /**
- * Get the list of ressources to delete
+ * Get the ressources to delete
  *
- * @param {options} options Options, used in conditions
- * @returns {array}
-*/
-function getRessourcesToDelete(options) {
+ * @param {options} options The plugin options
+ * @returns {Array} The ressources to delete
+ */
+function getResourcesToDelete(options) {
 	return [
 		{
 			type: 'file',
@@ -63,4 +63,4 @@ function getRessourcesToDelete(options) {
 	];
 }
 
-module.exports = getRessourcesToDelete;
+module.exports = { getResourcesToDelete };

@@ -62,9 +62,6 @@ export default {
 		}
 	],
 	backBtn: {
-		to: {
-			name: 'home'
-		},
 		label: 'Retour'
 	}
 };

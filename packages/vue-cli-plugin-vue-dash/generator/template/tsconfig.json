@@ -50,7 +50,7 @@
 	"include": [
 		"src/**/*.ts",
 		"src/**/*.vue",
-		"tests/**/*.ts"
+		"tests/unit/*.ts"
 	],
 	"exclude": [
 		"node_modules"

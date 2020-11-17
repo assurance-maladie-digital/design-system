@@ -26,7 +26,7 @@
 			</h2>
 
 			<p class="mb-10">
-				Dernière mise à jour {{ lastUpdated }}
+				Dernière publication {{ lastPublished }}
 			</p>
 
 			<div class="d-flex flex-wrap ma-n3">
@@ -75,16 +75,16 @@
 
 	import dayjs from 'dayjs';
 
-	const LAST_UPDATED = '2020-10-19';
+	const LAST_PUBLISHED = '2020-10-19';
 
 	@Component
 	export default class HomePage extends Vue {
 		version = version;
 		githubIcon = mdiGithub;
 
-		get lastUpdated(): string {
-			const lastUpdated = dayjs(LAST_UPDATED);
-			const days = dayjs().diff(lastUpdated, 'day');
+		get lastPublished(): string {
+			const lastPublished = dayjs(LAST_PUBLISHED);
+			const days = dayjs().diff(lastPublished, 'day');
 
 			if (days === 0) {
 				return 'aujourd\'hui';
@@ -95,12 +95,12 @@
 			}
 
 			if (days >= 30) {
-				const month = dayjs().diff(lastUpdated, 'month');
+				const month = dayjs().diff(lastPublished, 'month');
 
 				return `il y a ${month} mois`;
 			}
 
-			return `${days} jours`;
+			return `il y a ${days} jours`;
 		}
 	}
 </script>

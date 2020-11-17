@@ -9,17 +9,19 @@
 			:key="index"
 			:title="data.title"
 			:links="data.links"
-			class="mt-4"
+			class="mt-4"<% if (cypress) { %>
+			data-cy="links"<% } %>
 		/>
 
 		<VBtn
-			<% if (i18n) { %>:to="$t('views.about.backBtn.to')"<% } else { %>:to="{
+			:to="{
 				name: 'home'
-			}"<% } %>
+			}"
 			color="accent"
 			class="mt-8"
 			outlined
-			exact
+			exact<% if (cypress) { %>
+			data-cy="backBtn"<% } %>
 		>
 			<VIcon class="mr-2">
 				{{ backArrowIcon }}

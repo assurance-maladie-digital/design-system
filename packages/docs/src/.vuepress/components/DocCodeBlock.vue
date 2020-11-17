@@ -70,8 +70,9 @@
 
 		pre,
 		code {
-			background: transparent;
+			background: transparent !important;
 			font-weight: 300;
+			white-space: pre-wrap;
 			margin: 0 !important;
 
 			// Remove padding before content
