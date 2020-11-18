@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.3
+
+**Version publiée le 18/11/2020.**
+
+Cette version comporte plusieurs mises à jour du template de Vue Dash comme l'ajout des options FormBuilder et Cypress, ainsi que le Tree shaking de Vue Dot, et d'autres mises à jour comme la refonte du composant `ErrorPage`.
 
 ### Vue Dot
 
@@ -32,7 +36,7 @@
 
 - 🔧 **Configuration**
   - **template:** Suppression de TSLint et mise à jour de la configuration d'ESLint ([#642](https://github.com/assurance-maladie-digital/design-system/pull/642)) ([9f2a06](https://github.com/assurance-maladie-digital/design-system/commit/9f2a06aba4a188a4ebfd58ce6bf407e1c1a88606))
-  - **template:** Mise à jour d'ESLint et de la configuration ([#693](https://github.com/assurance-maladie-digital/design-system/pull/693)) ([882df8c](https://github.com/assurance-maladie-digital/design-system/commit/882df8cab1959ec833b2577d0cdca0026f4a66b1))
+  - **template:** Mise à jour d'ESLint et de la configuration ([#693](https://github.com/assurance-maladie-digital/design-system/pull/693)) ([9f13e39](https://github.com/assurance-maladie-digital/design-system/commit/9f13e392bc76a003a3b3fac6007bf323b702c57d))
 
 - ⬆️ **Dépendances**
   - **template:** Mise à jour de Cypress vers la `v5` ([#707](https://github.com/assurance-maladie-digital/design-system/pull/707) ([6abfc29](https://github.com/assurance-maladie-digital/design-system/commit/6abfc295ad70827d06c1f54eddd38f1457b339b7))
@@ -102,6 +106,72 @@ Pour désactiver le bouton vous devez maintenant utiliser la prop `no-btn` :
 +	no-btn
 >
 ```
+
+#### Tree shaking de Vue Dot
+
+Le Tree shaking est maintenant disponible dans Vue Dash via la fonction `vueDotLoader`, cela permet de charger automatiquement les composants utilisés, et de réduire la taille finale de l'application en ne chargeant pas les composants non utilisés.
+
+Vous pouvez utiliser cette fonction dans le fichier `vue.config.js` :
+
+```diff
+process.env.VUE_APP_VERSION = require('./package.json').version;
+
++const { vueDotLoader } = require('@cnamts/vue-cli-plugin-vue-dash/vueDotLoader');
+
+module.exports = {
++	chainWebpack: config => {
++		// Auto-load VueDot components
++		config.plugin('VuetifyLoaderPlugin').tap(vueDotLoader);
++	},
+  // ...
+};
+```
+
+Puis supprimer l'import de Vue Dot dans votre fichier de plugin :
+
+```diff
+// src/plugins/vue-dot.ts
+import Vue from 'vue';
+
+// Import dayjs locale
+import 'dayjs/locale/fr';
+
+import '@cnamts/vue-dot/dist/vue-dot.css';
+-import VueDot from '@cnamts/vue-dot';
+
+// Import the theme styles
+import '@/theme/styles/index.scss';
+
+// Register v-facade directive
+import InputFacade from 'vue-input-facade';
+Vue.use(InputFacade);
+
+-Vue.use(VueDot);
+```
+
+#### Mettre à jour les variables globales
+
+Il est maintenant recommandé de définir les variables globales en utilisant l'objet `window` afin d'être plus explicite et d'améliorer la maintenabilité des applications, nous vous recommandons de mettre à jour vos applications en suivant les modifications de la Pull Request [#717](https://github.com/assurance-maladie-digital/design-system/pull/717).
+
+#### Migrer de TSLint vers ESLint
+
+TSLint est maintenant déprécié depuis plus d'un an en faveur de [TypeScript ESLint](https://github.com/typescript-eslint/typescript-eslint).
+
+Pour mettre à jour, vous devez supprimer le fichier `tslint.json`, et nous vous conseillons également de mettre à jour ESLint vers la version 7, pour cela vous pouvez suivre les modifications de la Pull Request [#693](https://github.com/assurance-maladie-digital/design-system/pull/693).
+
+#### Mettre à jour Jest et Cypress
+
+Nous vous conseillons de mettre à jour Jest de la `v24` à la `v26`, pour cela vous devez ajouter le champ `resolutions` dans votre fichier `package.json` :
+
+```diff
++resolutions: {
++	'jest': '^26.6.3',
++	'ts-jest': '^26.4.4',
++	'babel-jest': '^26.6.3'
++}
+```
+
+Nous vous conseillons également de mettre à jour Cypress de la `v3` à la `v5`, pour cela vous devez mettre à jour 
 
 ## v2.0.0-beta.2
 
