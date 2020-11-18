@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720))
+
 ## v2.0.0-beta.3
 
 **Version publiée le 18/11/2020.**
@@ -47,6 +54,9 @@ Cette version comporte plusieurs mises à jour du template de Vue Dash comme l'a
 
 - 🚨 **Lint**
   - **config:** Mise à jour des règles de lint ([#651](https://github.com/assurance-maladie-digital/design-system/pull/651)) ([e3acd43](https://github.com/assurance-maladie-digital/design-system/commit/e3acd43e3e14726c0e45b29b58363eacc9e26fb3))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#719](https://github.com/assurance-maladie-digital/design-system/pull/719)) ([7814d0d](https://github.com/assurance-maladie-digital/design-system/commit/7814d0d65869d802aaf36d9c5127a5d4a3d4770b))
 
 - ⬆️ **Dépendances**
   - **@types/jest:** Mise à jour vers la `v26.0.15` ([#650](https://github.com/assurance-maladie-digital/design-system/pull/650)) ([0be84b2](https://github.com/assurance-maladie-digital/design-system/commit/0be84b2be875be1316f32c673afd95d6083a7b51))
@@ -165,13 +175,22 @@ Nous vous conseillons de mettre à jour Jest de la `v24` à la `v26`, pour cela 
 
 ```diff
 +resolutions: {
-+	'jest': '^26.6.3',
-+	'ts-jest': '^26.4.4',
-+	'babel-jest': '^26.6.3'
++	"jest": "^26.6.3",
++	"ts-jest": "^26.4.4",
++	"babel-jest": "^26.6.3"
 +}
 ```
 
-Nous vous conseillons également de mettre à jour Cypress de la `v3` à la `v5`, pour cela vous devez mettre à jour 
+Ainsi que de mettre à jour Cypress de la `v3` à la `v5`, pour cela vous devez mettre à jour `@vue/cli-plugin-e2e-cypress` à la `v4.5.9`, puis ajouter `cypress` dans le champ `resolutions` :
+
+```diff
+resolutions: {
+	"jest": "^26.6.3",
+	"ts-jest": "^26.4.4",
+	"babel-jest": "^26.6.3",
++	"cypress": "^4.6.0"
+}
+```
 
 ## v2.0.0-beta.2
 
