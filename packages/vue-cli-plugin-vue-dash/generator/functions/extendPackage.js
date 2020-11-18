@@ -38,22 +38,22 @@ function extendPackage(api, options) {
 		dependencies: {
 			'@cnamts/design-tokens': DesignTokensVersion,
 			'@cnamts/vue-dot': VueDotVersion,
-			'axios': '^0.20.0',
-			'core-js': '^3.6.5',
+			'axios': '^0.21.0',
+			'core-js': '^3.7.0',
 			'custom-event-polyfill': '^1.0.7',
-			'dayjs': '^1.9.3',
+			'dayjs': '^1.9.6',
 			'languages': '^0.1.3',
 			'vue-input-facade': '^1.3.2',
 			'vue-meta': '^2.4.0',
-			'vuetify': '^2.3.14'
+			'vuetify': '^2.3.18'
 		},
 		devDependencies: {
 			'@babel/core': '^7.12.3',
-			'@mdi/js': '^5.7.55',
-			'@types/jest': '26.0.14',
+			'@mdi/js': '^5.8.55',
+			'@types/jest': '^26.0.15',
 			'@types/webfontloader': '^1.6.32',
-			'@typescript-eslint/eslint-plugin': '^4.7.0',
-			'@typescript-eslint/parser': '^4.7.0',
+			'@typescript-eslint/eslint-plugin': '^4.8.1',
+			'@typescript-eslint/parser': '^4.8.1',
 			'@vue/eslint-config-standard': '^5.1.2',
 			'@vue/eslint-config-typescript': '^7.0.0',
 			'eslint': '^7.13.0',
@@ -77,7 +77,7 @@ function extendPackage(api, options) {
 	};
 
 	if (options.i18n) {
-		newPackageProperties.dependencies['vue-i18n'] = '^8.22.0';
+		newPackageProperties.dependencies['vue-i18n'] = '^8.22.1';
 	}
 
 	if (options.formBuilder) {
