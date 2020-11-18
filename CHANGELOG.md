@@ -12,7 +12,7 @@
   - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636)) ([dfe1c80](https://github.com/assurance-maladie-digital/design-system/commit/dfe1c80a09d9acdf6ecca2c72de22708938b5784))
   - **prompts:** Ajout de l'option Cypress ([#567](https://github.com/assurance-maladie-digital/design-system/pull/567)) ([7555363](https://github.com/assurance-maladie-digital/design-system/commit/7555363bae9b65feed20faa3360aadbcc41d3efc))
   - **config:** Ajout du tree-shaking de VueDot ([#685](https://github.com/assurance-maladie-digital/design-system/pull/685)) ([de1bf9e](https://github.com/assurance-maladie-digital/design-system/commit/de1bf9ea69a2797707202e8213d950ecfd0c9b41))
-  - **template:** Ajout d'une transition par défaut sur les liens ([#716](https://github.com/assurance-maladie-digital/design-system/pull/716))
+  - **template:** Ajout d'une transition par défaut sur les liens ([#716](https://github.com/assurance-maladie-digital/design-system/pull/716)) ([4da5d45](https://github.com/assurance-maladie-digital/design-system/commit/4da5d4557cf00190df1367fbeb7fd60663e33e9c))
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction des attributs `data-cy` manquants ([#695](https://github.com/assurance-maladie-digital/design-system/pull/695)) ([b54b359](https://github.com/assurance-maladie-digital/design-system/commit/b54b359eef4c537371664285c10eebb38e33416c))
@@ -36,6 +36,7 @@
 - ⬆️ **Dépendances**
   - **template:** Mise à jour de Cypress vers la `v5` ([#707](https://github.com/assurance-maladie-digital/design-system/pull/707) ([6abfc29](https://github.com/assurance-maladie-digital/design-system/commit/6abfc295ad70827d06c1f54eddd38f1457b339b7))
   - **template:** Mise à jour de Jest vers la `v26` ([#709](https://github.com/assurance-maladie-digital/design-system/pull/709) ([587c539](https://github.com/assurance-maladie-digital/design-system/commit/587c5394e9508a5688ba04efed3af23d73f1c4fe))
+  - **template:** Mise à jour des dépendances ([#718](https://github.com/assurance-maladie-digital/design-system/pull/718))
 
 ### Interne
 
