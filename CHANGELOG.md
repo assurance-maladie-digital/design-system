@@ -21,6 +21,7 @@
 - ♻️ **Refactoring**
   - **template:** Refonte du fichier `index.html` ([#682](https://github.com/assurance-maladie-digital/design-system/pull/682)) ([195d33d](https://github.com/assurance-maladie-digital/design-system/commit/195d33dbe0e051214eb2aa09c57af4dc4491f585))
   - **template:** Suppression des routes dans les traductions ([#694](https://github.com/assurance-maladie-digital/design-system/pull/694)) ([48ff81d](https://github.com/assurance-maladie-digital/design-system/commit/48ff81d12d1961c152b8d5196178eae1fc6b70fe))
+  - **template:** Utilisation de l'objet `window` pour déclarer les variables globales ([#717](https://github.com/assurance-maladie-digital/design-system/pull/717))
 
 - 🔥 **Suppressions**
   - **template:** Suppression des fichiers JavaScript par défaut ([#711](https://github.com/assurance-maladie-digital/design-system/pull/711)) ([07205d5](https://github.com/assurance-maladie-digital/design-system/commit/07205d58b01180a32599106cdb2374f3b0fc8782))
@@ -36,7 +37,7 @@
 - ⬆️ **Dépendances**
   - **template:** Mise à jour de Cypress vers la `v5` ([#707](https://github.com/assurance-maladie-digital/design-system/pull/707) ([6abfc29](https://github.com/assurance-maladie-digital/design-system/commit/6abfc295ad70827d06c1f54eddd38f1457b339b7))
   - **template:** Mise à jour de Jest vers la `v26` ([#709](https://github.com/assurance-maladie-digital/design-system/pull/709) ([587c539](https://github.com/assurance-maladie-digital/design-system/commit/587c5394e9508a5688ba04efed3af23d73f1c4fe))
-  - **template:** Mise à jour des dépendances ([#718](https://github.com/assurance-maladie-digital/design-system/pull/718))
+  - **template:** Mise à jour des dépendances ([#718](https://github.com/assurance-maladie-digital/design-system/pull/718)) ([aee640e](https://github.com/assurance-maladie-digital/design-system/commit/aee640e66c48cbed086581d254c53a4cbe5718a0))
 
 ### Interne
 
