@@ -12,14 +12,17 @@
   - **prompts:** Ajout de l'option FormBuilder ([#636](https://github.com/assurance-maladie-digital/design-system/pull/636)) ([dfe1c80](https://github.com/assurance-maladie-digital/design-system/commit/dfe1c80a09d9acdf6ecca2c72de22708938b5784))
   - **prompts:** Ajout de l'option Cypress ([#567](https://github.com/assurance-maladie-digital/design-system/pull/567)) ([7555363](https://github.com/assurance-maladie-digital/design-system/commit/7555363bae9b65feed20faa3360aadbcc41d3efc))
   - **config:** Ajout du tree-shaking de VueDot ([#685](https://github.com/assurance-maladie-digital/design-system/pull/685)) ([de1bf9e](https://github.com/assurance-maladie-digital/design-system/commit/de1bf9ea69a2797707202e8213d950ecfd0c9b41))
+  - **template:** Ajout d'une transition par défaut sur les liens ([#716](https://github.com/assurance-maladie-digital/design-system/pull/716))
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction des attributs `data-cy` manquants ([#695](https://github.com/assurance-maladie-digital/design-system/pull/695)) ([b54b359](https://github.com/assurance-maladie-digital/design-system/commit/b54b359eef4c537371664285c10eebb38e33416c))
-  - **template:** Correction du fichier d'entrée ([#715](https://github.com/assurance-maladie-digital/design-system/pull/715))
+  - **template:** Correction du fichier d'entrée ([#715](https://github.com/assurance-maladie-digital/design-system/pull/715)) ([d137477](https://github.com/assurance-maladie-digital/design-system/commit/d13747748bb9aebd1b057990e1ef178ce71eda3f))
 
 - ♻️ **Refactoring**
   - **template:** Refonte du fichier `index.html` ([#682](https://github.com/assurance-maladie-digital/design-system/pull/682)) ([195d33d](https://github.com/assurance-maladie-digital/design-system/commit/195d33dbe0e051214eb2aa09c57af4dc4491f585))
   - **template:** Suppression des routes dans les traductions ([#694](https://github.com/assurance-maladie-digital/design-system/pull/694)) ([48ff81d](https://github.com/assurance-maladie-digital/design-system/commit/48ff81d12d1961c152b8d5196178eae1fc6b70fe))
+
+- 🔥 **Suppressions**
   - **template:** Suppression des fichiers JavaScript par défaut ([#711](https://github.com/assurance-maladie-digital/design-system/pull/711)) ([07205d5](https://github.com/assurance-maladie-digital/design-system/commit/07205d58b01180a32599106cdb2374f3b0fc8782))
 
 - 🚨 **Lint**
