@@ -15,6 +15,7 @@
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction des attributs `data-cy` manquants ([#695](https://github.com/assurance-maladie-digital/design-system/pull/695)) ([b54b359](https://github.com/assurance-maladie-digital/design-system/commit/b54b359eef4c537371664285c10eebb38e33416c))
+  - **template:** Correction du fichier d'entrée ([#715](https://github.com/assurance-maladie-digital/design-system/pull/715))
 
 - ♻️ **Refactoring**
   - **template:** Refonte du fichier `index.html` ([#682](https://github.com/assurance-maladie-digital/design-system/pull/682)) ([195d33d](https://github.com/assurance-maladie-digital/design-system/commit/195d33dbe0e051214eb2aa09c57af4dc4491f585))
@@ -60,7 +61,7 @@
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.9` ([#704](https://github.com/assurance-maladie-digital/design-system/pull/704)) ([c1ac15a](https://github.com/assurance-maladie-digital/design-system/commit/c1ac15a2b38f1a7ce33edb8a0a31607439156b46))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.8.1` ([#706](https://github.com/assurance-maladie-digital/design-system/pull/706)) ([2b842e8](https://github.com/assurance-maladie-digital/design-system/commit/2b842e865b0dc319c8bb5772feb2ccf79b212136))
   - **vuetify:** Mise à jour vers la `v2.3.18` ([#710](https://github.com/assurance-maladie-digital/design-system/pull/710)) ([316014a](https://github.com/assurance-maladie-digital/design-system/commit/316014ac2d10c194863abce6f862b106deb9dca3))
-  - **@types/node:** Mise à jour vers la `v12.19.5` ([#714](https://github.com/assurance-maladie-digital/design-system/pull/714))
+  - **@types/node:** Mise à jour vers la `v12.19.5` ([#714](https://github.com/assurance-maladie-digital/design-system/pull/714)) ([5c06166](https://github.com/assurance-maladie-digital/design-system/commit/5c06166b5e175480d0a92be26d9244061f569215))
 
 ### 📚 Guide de migration
 
