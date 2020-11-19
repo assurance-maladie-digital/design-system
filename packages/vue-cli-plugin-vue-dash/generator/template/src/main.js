@@ -28,8 +28,12 @@ import { router } from './router';
 import { store } from './store';<% if (i18n) { %>
 import { i18n } from './i18n';<% } %>
 
+import { MAINTENANCE_ENABLED } from './constants';
+
 // Remove "tip" from browser console
 Vue.config.productionTip = false;
+// Add global var for maintenance
+Vue.prototype.$maintenanceEnabled = MAINTENANCE_ENABLED;
 
 // Create main Vue instance
 new Vue({

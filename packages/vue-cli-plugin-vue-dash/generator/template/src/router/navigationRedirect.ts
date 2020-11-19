@@ -1,8 +1,7 @@
 import { Route } from 'vue-router';
 import { Next } from '@cnamts/vue-dot/src/types';
 
-// Environment variable
-declare const MAINTENANCE: string;
+import { MAINTENANCE_ENABLED } from '@/constants';
 
 /**
  * Main navigation redirection logic
@@ -13,7 +12,7 @@ declare const MAINTENANCE: string;
  * @returns {void}
  */
 export function navigationRedirect(to: Route, from: Route, next: Next): void {
-	if (MAINTENANCE === 'true') {
+	if (MAINTENANCE_ENABLED) {
 		// Avoid infinite loop
 		if ('maintenance' !== to.name) {
 			// Redirect to maintenance page
