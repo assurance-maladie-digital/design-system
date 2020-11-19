@@ -97,6 +97,20 @@ module.exports = {
 						to: '/directives/debounce/'
 					}
 				]
+			},
+			{
+				title: 'Contribution',
+				group: 'contributions',
+				items: [
+					{
+						title: 'Correction de bug',
+						to: '/contributions/bug-report/'
+					},
+					{
+						title: 'Demande évolution',
+						to: '/contributions/feature-request/'
+					}
+				]
 			}
 		]
 	},
