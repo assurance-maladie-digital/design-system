@@ -1,5 +1,10 @@
 ## Non publié
 
+### FormBuilder
+
+- 📝 **Documentation**
+  - **FormField:** Ajout d'exemples sur les formField ([#702](https://github.com/assurance-maladie-digital/design-system/pull/702))
+
 ### Vue Dot
 
 - ♻️ **Refactoring**
