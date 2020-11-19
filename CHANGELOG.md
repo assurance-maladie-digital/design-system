@@ -1,12 +1,17 @@
 ## Non publié
 
-- 🔧 **Configuration**
-  - **template:** Ajout du modèle d'issue pour rapporter un bug sur github ([#713](https://github.com/assurance-maladie-digital/design-system/pull/713))
+### FormBuilder
+
+- 🐛 **Corrections de bugs**
+  - **peerDependencies:** Correction des intervalles de versions des dépendances ([#721](https://github.com/assurance-maladie-digital/design-system/pull/721))
 
 ### Interne
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720))
+  - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720)) ([5f94ff5](https://github.com/assurance-maladie-digital/design-system/commit/5f94ff5ac4efd685a332135a64c54c9b9c0c882c))
+
+- 🔧 **Configuration**
+  - **template:** Ajout du modèle d'issue pour rapporter un bug sur github ([#713](https://github.com/assurance-maladie-digital/design-system/pull/713))
 
 ## v2.0.0-beta.3
 
@@ -416,7 +421,7 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
   - **CHANGELOG:** Ajout d'un fichier CHANGELOG ([#456](https://github.com/assurance-maladie-digital/design-system/pull/456)) ([5541e18s](https://github.com/assurance-maladie-digital/design-system/commit/5541e18784a5d4884bc174b96eefc5d25bad5979))
   - **pull-requests:** Ajout d'un template pour les Pull Requests ([#464](https://github.com/assurance-maladie-digital/design-system/pull/464)) ([6206290](https://github.com/assurance-maladie-digital/design-system/commit/620629039da9256fe0b6c842eb89f830732f7974))
   - **README:** Ajout du package Design Tokens à la section écosystème ([043c1d5](https://github.com/assurance-maladie-digital/design-system/commit/043c1d55b8c56d950df7e15e00aeb70c036cd47f))
-  - **README:** Ajout du package Form Builder à la section écosystème ([c71beca](https://github.com/assurance-maladie-digital/design-system/commit/c71becae7bfa990c70992e695fe0bd0e52dec170))
+  - **README:** Ajout du package FormBuilder à la section écosystème ([c71beca](https://github.com/assurance-maladie-digital/design-system/commit/c71becae7bfa990c70992e695fe0bd0e52dec170))
   - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#513](https://github.com/assurance-maladie-digital/design-system/pull/513)) ([5962865](https://github.com/assurance-maladie-digital/design-system/commit/596286522cfbf6439fec0efe895fa4965beed4bf))
 
 - 🔧 **Configuration**
