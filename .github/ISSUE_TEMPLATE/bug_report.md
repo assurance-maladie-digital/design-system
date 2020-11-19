@@ -1,41 +1,40 @@
 ---
 name: Rapport d'erreur
-about: Créez un rapport pour nous aider à améliorer les composants Primer React
+about: Créez un rapport pour corriger des erreurs
 
 ---
+# Description
+<!-- Inclure ici une description de l'erreur. -->
 
-**Projet lié au bug**
+## Projet
 <!-- Nom du projet -->
 
-**Décrivez le bogue**
-<!-- Veuillez inclure une description claire et concise de ce qu'est le bogue. -->
-
-**Reproduire**
+## Comment reproduire
 <!-- Étapes pour reproduire le comportement:
 1. Allez dans «...»
 2. Cliquez sur '....'
 3. Faites défiler jusqu'à «....»
 4. Voir erreur -->
 
-**Comportement prévisible**
+## Comportement attendu
 <!-- Une description claire et concise de ce à quoi vous vous attendiez. -->
 
-**Captures d'écran**
+## Captures d'écran
 <!-- Le cas échéant, ajoutez des captures d'écran pour expliquer votre problème. -->
 
-**Environnement**
+## Environnement
   - OS: <!-- Android -->
   - Navigateur: <!-- internet explorer, chrome, safari -->
   - Version: <!-- 22.2 -->
 
-**Priorisation**
+## Priorisation
 
 - [ ] peu prioritaire 
 - [ ] prioritaire
 - [ ] très prioritaire
 
-**Contexte supplémentaire**
+## Contexte supplémentaire
 <!-- Ajoutez ici tout autre contexte sur le problème. -->
 
-**Contacts**
+## Contacts
 <!-- Nom(s) et rôle(s) du ou des contacts le cas échéant -->

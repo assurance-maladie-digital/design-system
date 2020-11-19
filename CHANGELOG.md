@@ -1,7 +1,7 @@
 ## Non publié
 
 - 🔧 **Configuration**
-- **template:** Ajout du modèle d'issue pour rapporter un bug sur github ([#713](https://github.com/assurance-maladie-digital/design-system/pull/713))
+  - **template:** Ajout du modèle d'issue pour rapporter un bug sur github ([#713](https://github.com/assurance-maladie-digital/design-system/pull/713))
 
 ### Interne
 
