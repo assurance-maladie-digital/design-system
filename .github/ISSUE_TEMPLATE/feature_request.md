@@ -4,29 +4,20 @@ about: Créez une demande pour ajouter une nouvelle fonctionnalité
 
 ---
 
-**Projet lié au besoin**
+## Projet
 <!-- Nom du projet -->
 
-**Spécification fonctionnelle générale**
-<!-- Veuillez inclure une description claire et concise de cette demande. -->
+## Description
+<!-- Inclure une description claire avec le plus de détails possible sur chaque comportements. Pensez aux exceptions -->
 
-**Spécification fonctionnelle détaillée**
-<!-- Décrivez dans le détail la façon dont les exigences seront prises en compte. -->
-
-**Pièces jointes**
+## Pièces jointes
 <!-- Le cas échéant, ajoutez des images, lien hypertexte, ou autre support pour visualiser votre besoin. -->
 
-**Tests de non-régression**
-<!-- Le cas échéant, ajoutez ici des tests avec les valeurs en entrée et le résultat en sortie. -->
-
-**Priorisation**
+## Priorisation
 
 - [ ] peu prioritaire 
 - [ ] prioritaire
 - [ ] très prioritaire
 
-**Contexte supplémentaire**
-<!-- Ajoutez ici tout autre contexte sur le besoin. -->
-
-**Contacts**
+## Contacts
 <!-- Nom(s) et rôle(s) du ou des contacts le cas échéant -->
