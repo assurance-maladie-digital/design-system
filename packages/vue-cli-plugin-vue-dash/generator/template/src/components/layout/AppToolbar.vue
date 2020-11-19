@@ -5,7 +5,6 @@
 		class="secondary flex-grow-0"
 	>
 		<VTabs
-			v-if="!maintenance"
 			dark
 			background-color="transparent"
 		>
@@ -35,8 +34,6 @@
 		options?: Options;
 	}
 
-	declare const MAINTENANCE: string;
-
 	@Component
 	export default class AppToolbar extends Vue {
 		<% if (i18n) { %>get links(): ToolbarLink[] {
@@ -58,10 +55,6 @@
 				}
 			}
 		];<% } %>
-
-		get maintenance(): boolean {
-			return MAINTENANCE === 'true';
-		}
 	}
 </script>
 
