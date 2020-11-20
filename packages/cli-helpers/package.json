@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/cli-helpers",
-	"version": "2.0.0-beta.2",
+	"version": "2.0.0-beta.3",
 	"description": "Helper functions to build CLI tools",
 	"keywords": [
 		"cnam",
@@ -34,7 +34,7 @@
 		"figlet": "^1.3.0"
 	},
 	"devDependencies": {
-		"@types/figlet": "1.2.0",
+		"@types/figlet": "1.2.1",
 		"jest-mock-process": "1.4.0"
 	},
 	"lint-staged": {

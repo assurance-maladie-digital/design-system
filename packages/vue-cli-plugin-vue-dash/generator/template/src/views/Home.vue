@@ -11,11 +11,12 @@
 
 		<p><% if (i18n) { %>{{ $t('views.home.description.block2') }}<% } else { %>Tout est prêt, vous pouvez dès à présent commencer à développer !<% } %></p>
 
-		<% if (i18n) { %><RouterLink :to="$t('views.home.about.to')"><% } else { %><RouterLink
+		<RouterLink
 			:to=" {
 				name: 'about'
-			}"
-		><% } %>
+			}"<% if (cypress) { %>
+			data-cy="aboutLink"<% } %>
+		>
 			<% if (i18n) { %>{{ $t('views.home.about.label') }}<% } else { %>À propos<% } %>
 		</RouterLink>
 
@@ -24,7 +25,8 @@
 		<VBtn
 			color="accent"
 			outlined
-			class="mt-8"
+			class="mt-8"<% if (cypress) { %>
+			data-cy="notify"<% } %>
 			@click="sendNotification"
 		>
 			<% if (i18n) { %>{{ $t('views.home.notify') }}<% } else { %>Envoyer une notification (exemple)<% } %>

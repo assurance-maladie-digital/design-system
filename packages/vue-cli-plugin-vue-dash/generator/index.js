@@ -1,13 +1,12 @@
-const getFooterDate = require('./functions/getFooterDate');
-const extendPackage = require('./functions/extendPackage');
-const fixPackageIndentation = require('./functions/fixPackageIndentation');
-const parseIndexFile = require('./functions/parseIndexFile');
+const { getFooterDate } = require('./functions/getFooterDate');
+const { extendPackage } = require('./functions/extendPackage');
+const { fixPackageIndentation } = require('./functions/fixPackageIndentation');
+const { parseIndexFile } = require('./functions/parseIndexFile');
+const { deleteOldResources } = require('./functions/deleteOldResources');
 
-const getResourcesToDelete = require('./getResourcesToDelete');
-const deleteOldResources = require('./functions/deleteOldResources');
+const { getResourcesToDelete } = require('./getResourcesToDelete');
 
-const shouldRenderTemplate = require('../shouldRenderTemplate');
-
+const { shouldRenderTemplate } = require('../shouldRenderTemplate');
 const { capitalizeFirstLetter } = require('../utils');
 
 module.exports = (api, userOptions) => {
@@ -23,7 +22,6 @@ module.exports = (api, userOptions) => {
 			name: projectName,
 			footerDate: getFooterDate(),
 			pm: 'yarn',
-			cypress: false, // Disable cypress for now
 			// Functions
 			capitalizeFirstLetter
 		};

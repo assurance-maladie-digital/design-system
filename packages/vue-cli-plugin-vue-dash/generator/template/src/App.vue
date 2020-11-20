@@ -6,9 +6,9 @@
 	>
 		<AppHeader />
 
-		<AppToolbar />
+		<AppToolbar v-if="!$maintenanceEnabled" />
 
-		<NotificationBar />
+		<NotificationBar<% if (cypress) { %> data-cy="notificationBar"<% } %> />
 
 		<VMain>
 			<!-- Transition between routes -->
@@ -21,7 +21,7 @@
 			</transition>
 		</VMain>
 
-		<AppFooter v-if="!maintenance" />
+		<AppFooter v-if="!$maintenanceEnabled" />
 	</VApp>
 </template>
 
@@ -34,9 +34,6 @@
 	// Static import for faster rendering
 	import { AppHeader, AppToolbar, AppFooter } from '@/components/layout';
 
-	// Env var
-	declare const MAINTENANCE: string;
-
 	/** App is the main component */
 	@Component({
 		components: {
@@ -46,10 +43,6 @@
 		}
 	})
 	export default class App extends Vue {
-		get maintenance(): boolean {
-			return MAINTENANCE === 'true';
-		}
-
 		/** The meta informations of the route */
 		/* istanbul ignore next */
 		@Meta

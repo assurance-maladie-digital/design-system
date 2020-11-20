@@ -4,12 +4,13 @@
 		color="white"
 		class="app-header flex-grow-0"
 	>
-		<RouterLink
-			<% if (i18n) { %>:aria-label="$t('components.layout.appHeader.logoBtn.label')"<% } else { %>aria-label="Accueil"<% } %>
-			<% if (i18n) { %>:to="$t('components.layout.appHeader.logoBtn.link')"<% } else { %>:to="{
+		<RouterLink<% if (i18n) { %>
+			:aria-label="$t('components.layout.appHeader.logoBtn.label')"<% } %>
+			:to="{
 				name: 'home'
-			}"<% } %>
-			:disabled="maintenance"
+			}"
+			:disabled="maintenance"<% if (!i18n) { %>
+			aria-label="Accueil"<% } %>
 			exact
 			class="app-logo-link"
 		>
@@ -33,7 +34,7 @@
 			</slot>
 		</div>
 
-		<HeaderMenu v-if="!maintenance" />
+		<HeaderMenu v-if="!$maintenanceEnabled" />
 	</VAppBar>
 </template>
 
@@ -43,19 +44,13 @@
 
 	import HeaderMenu from './HeaderMenu.vue';
 
-	declare const MAINTENANCE: string;
-
 	/** The Header of the application */
 	@Component({
 		components: {
 			HeaderMenu
 		}
 	})
-	export default class AppHeader extends Vue {
-		get maintenance(): boolean {
-			return MAINTENANCE === 'true';
-		}
-	}
+	export default class AppHeader extends Vue {}
 </script>
 
 <style lang="scss" scoped>
