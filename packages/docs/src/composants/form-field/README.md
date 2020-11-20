@@ -98,8 +98,8 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 <DocInfo>
 
 La valeur du champ est un objet composé de 
-  - from: la valeur du champ `DatePicker` de début
-  - to: la valeur du champ `DatePicker` de fin
+  - from: la valeur du champ [DatePicker](../date-picker/README.md) de début
+  - to: la valeur du champ [DatePicker](../date-picker/README.md) de fin
 
 </DocInfo>
 
@@ -118,8 +118,8 @@ La valeur du champ est un objet composé de
 <DocInfo>
 
 Le champ autre possède 2 modes:
-  - Toujours visible: champ texte en complément des choix proposés
-  - Conditionnel: champ textarea visible seulement quand une certaine valeur de sélection définie est sélectionnée
+  - Visible par défaut: Un champ texte s'affiche en dessous du champ de sélection
+  - Conditionnel: Un champ textarea devient visible seulement quand l'option `other.selectedChoice` est définie avec une des valeurs de la sélection 
 
 </DocInfo>
 
