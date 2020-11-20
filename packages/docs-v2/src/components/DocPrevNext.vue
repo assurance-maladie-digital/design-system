@@ -1,0 +1,72 @@
+<template>
+	<div
+		v-if="prev || next"
+		class="up-next mt-8"
+	>
+		<VDivider class="mb-4" />
+
+		<div class="d-flex">
+			<RouterLink
+				v-if="prev"
+				:to="prev.path"
+				class="text-decoration-none body-1"
+			>
+				<span class="text-h6 text--primary" v-html="arrows.prev" />
+				<span v-text="prev.title" />
+			</RouterLink>
+
+			<VSpacer />
+
+			<RouterLink
+				v-if="next"
+				:to="next.path"
+				class="text-decoration-none body-1"
+			>
+				<span v-text="next.title" />
+				<span class="text-h6 text--primary" v-html="arrows.next" />
+			</RouterLink>
+		</div>
+	</div>
+</template>
+
+<script lang="ts">
+	import Vue, { PropType } from 'vue';
+	import Component, { mixins } from 'vue-class-component';
+
+	import { Next } from '../../../vue-dot/src/types';
+
+	interface Arrows {
+		next: string;
+		prev: string;
+	}
+
+	interface Link {
+		to: Next;
+		title: string;
+	}
+
+	const Props = Vue.extend({
+		props: {
+			prev: {
+				type: Object as PropType<Link>,
+				default: undefined
+			},
+			next: {
+				type: Object as PropType<Link>,
+				default: undefined
+			}
+		}
+	});
+
+	const MixinsDeclation = mixins(Props);
+
+	@Component
+	export default class DocPrevNext extends MixinsDeclation {
+		get arrows(): Arrows {
+			return {
+				next: '&nbsp;→',
+				prev: '←&nbsp;'
+			}
+		}
+	}
+</script>

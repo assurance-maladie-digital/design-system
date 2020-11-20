@@ -1,0 +1,19 @@
+{
+	// Extend root config
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"types": [
+			"@nuxt/types",
+			"@nuxtjs/axios",
+			"@nuxt/vue-app",
+			"@nuxtjs/vuetify"
+		]
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.vue"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
