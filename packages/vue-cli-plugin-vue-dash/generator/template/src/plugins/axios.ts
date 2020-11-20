@@ -6,13 +6,11 @@ import { mdiAlert as errorIcon } from '@mdi/js';
 <% if (i18n) { %>
 import common from '@/translations/fr/common';
 <% } %>
-/** API_URL env var */
-declare const API_URL: string;
 
 /** The axios instance */
 const instance = axios.create({
 	withCredentials: false,
-	baseURL: API_URL,
+	baseURL: window.API_URL,
 	headers: {
 		'Accept': 'application/json',
 		'Content-Type': 'application/json'

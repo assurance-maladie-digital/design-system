@@ -75,7 +75,7 @@
 
 	import dayjs from 'dayjs';
 
-	const LAST_PUBLISHED = '2020-10-19';
+	const LAST_PUBLISHED = '2020-11-18'; // TODO fetch from npm
 
 	@Component
 	export default class HomePage extends Vue {
