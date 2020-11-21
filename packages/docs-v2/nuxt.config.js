@@ -1,16 +1,4 @@
-const remark = require('remark');
-const html = require('remark-html');
-
-const remarkProcessor = remark().use(html);
-
-async function markdownToHtml(content) {
-	return await remarkProcessor
-		.process(content)
-		.then(
-			(file) => String(file),
-			(err) => String(err)
-		);
-}
+import { parseMarkdownDescription } from './src/hooks/parseMarkdownDescription';
 
 export default {
 	target: 'static',
@@ -60,13 +48,6 @@ export default {
 		display: 'swap'
 	},
 	hooks: {
-		'content:file:beforeInsert': async(document) => {
-			if (document.extension !== '.md' || !document.description) {
-				return;
-			}
-
-			const description = await markdownToHtml(document.description);
-			document.description = description;
-		}
+		'content:file:beforeInsert': parseMarkdownDescription
 	}
 };

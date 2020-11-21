@@ -26,8 +26,8 @@
 			v-if="updatedAt"
 			class="mb-0 text-body-2"
 		>
-			<span class="font-weight-medium mr-1">
-				Dernière mise à jour le
+			<span class="font-weight-medium">
+				Dernière modification le
 			</span>
 
 			<span
