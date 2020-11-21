@@ -31,7 +31,7 @@
 				/>
 
 				<DocPageInfo
-					:updated-at="document.updatedAt"
+					:document="document"
 					class="mb-6"
 				/>
 			</VContainer>
