@@ -69,8 +69,13 @@
 					cols="12"
 					md="4"
 				>
+					<VDivider class="hidden-md-and-up" />
+
 					<div class="d-flex align-center">
-						<VDivider vertical />
+						<VDivider
+							vertical
+							class="hidden-sm-and-down"
+						/>
 
 						<p class="px-3 mb-0 text-h6 font-weight-medium">
 							Options
@@ -94,7 +99,10 @@
 					<VDivider />
 
 					<div class="d-flex">
-						<VDivider vertical />
+						<VDivider
+							vertical
+							class="hidden-sm-and-down"
+						/>
 
 						<VResponsive
 							class="overflow-y-auto pa-3"
