@@ -4,10 +4,23 @@ export default {
 	target: 'static',
 	srcDir: './src/',
 	head: {
+		htmlAttrs: {
+			lang: 'fr-FR',
+		},
 		title: 'Design System Digital',
 		meta: [
-			{ charset: 'UTF-8' },
-			{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+			{
+				charset: 'UTF-8'
+			},
+			{
+				name: 'viewport',
+				content: 'width=device-width, initial-scale=1'
+			},
+			{
+				hid: 'description',
+				name: 'description',
+				content: `Un Design System pour l'Assurance Maladie`
+			}
 		]
 	},
 	css: [
@@ -38,7 +51,7 @@ export default {
 	],
 	components: true,
 	vuetify: {
-		optionsPath: './vuetify.options.ts',
+		optionsPath: '~/vuetify.options.ts',
 		defaultAssets: false
 	},
 	googleFonts: {
