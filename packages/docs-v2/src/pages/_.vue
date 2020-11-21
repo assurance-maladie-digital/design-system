@@ -3,37 +3,42 @@
 		<DocHeader />
 
 		<VMain>
-			<VContainer class="h-100 py-4 d-flex flex-column">
-				<article class="flex-grow-1">
-					<h1
-						v-text="document.title"
-						class="text-h4 text-sm-h4 font-weight-bold mb-4"
+			<VContainer class="h-100 py-4">
+				<VSheet
+					max-width="868px"
+					class="mx-auto h-100 d-flex flex-column"
+				>
+					<article class="flex-grow-1">
+						<h1
+							v-text="document.title"
+							class="text-h4 text-sm-h4 font-weight-bold mb-4"
+						/>
+
+						<div
+							v-if="document.description"
+							v-html="document.description"
+							class="description text-h6"
+						/>
+
+						<VDivider
+							v-if="document.divider"
+							class="mt-6 mb-10"
+						/>
+
+						<NuxtContent :document="document" />
+					</article>
+
+					<DocPrevNext
+						:prev="prev"
+						:next="next"
+						class="mt-8 mb-6"
 					/>
 
-					<div
-						v-if="document.description"
-						v-html="document.description"
-						class="description text-h6"
+					<DocPageInfo
+						:document="document"
+						class="mb-6"
 					/>
-
-					<VDivider
-						v-if="document.divider"
-						class="mt-6 mb-10"
-					/>
-
-					<NuxtContent :document="document" />
-				</article>
-
-				<DocPrevNext
-					:prev="prev"
-					:next="next"
-					class="mt-8 mb-6"
-				/>
-
-				<DocPageInfo
-					:document="document"
-					class="mb-6"
-				/>
+				</VSheet>
 			</VContainer>
 		</VMain>
 	</VApp>
