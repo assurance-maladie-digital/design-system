@@ -105,6 +105,8 @@
 		width: 50%;
 		height: 100%;
 		object-fit: cover;
+		background: #2190d3;
+		background: linear-gradient(180deg, #2190d3 0%, #2190d3 50%, #005297 100%);
 	}
 
 	@media only screen and (max-width: 960px) {

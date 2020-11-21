@@ -5,8 +5,8 @@
 		"baseUrl": ".",
 		"types": [
 			"@nuxt/types",
-			"@nuxtjs/axios",
 			"@nuxt/vue-app",
+			"@nuxtjs/axios",
 			"@nuxtjs/vuetify"
 		],
 		"paths": {

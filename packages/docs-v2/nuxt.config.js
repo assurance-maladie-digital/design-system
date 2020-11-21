@@ -23,7 +23,7 @@ export default {
 		]
 	},
 	css: [
-		'@/assets/styles/index.scss',
+		'~/assets/styles/index.scss',
 		'@cnamts/vue-dot/dist/vue-dot.css'
 	],
 	buildModules: [
@@ -49,14 +49,15 @@ export default {
 		'@nuxtjs/axios'
 	],
 	components: true,
+	vuetify: {
+		optionsPath: './vuetify.options.ts',
+		defaultAssets: false
+	},
 	googleFonts: {
 		families: {
 			'Open+Sans': [300, 400, 600, 700]
 		},
 		display: 'swap'
-	},
-	vuetify: {
-		optionsPath: './vuetify.options.ts'
 	},
 	hooks: {
 		'content:file:beforeInsert': async(document) => {
