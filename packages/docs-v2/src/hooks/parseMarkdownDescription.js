@@ -13,7 +13,6 @@ async function markdownToHtml(content) {
 }
 
 export async function parseMarkdownDescription(document) {
-	console.log(document);
 	if (document.extension !== '.md' || !document.description) {
 		return;
 	}

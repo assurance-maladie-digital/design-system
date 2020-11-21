@@ -59,11 +59,11 @@
 					</div>
 				</div>
 
-				<img
-					src="~/assets/design-system-background.png"
-					class="home-background"
-					alt=""
-				>
+				<picture class="home-background">
+					<source srcset="~/assets/design-system-background.webp" type="image/webp">
+					<source srcset="~/assets/design-system-background.png" type="image/png">
+					<img src="~/assets/design-system-background.png" alt="">
+				</picture>
 			</div>
 		</VMain>
 	</VApp>
@@ -93,20 +93,27 @@
 </script>
 
 <style lang="scss" scoped>
+	.home-page {
+		height: 100vh;
+	}
+
 	.home-title {
 		max-width: 750px;
 	}
 
 	.home-content {
-		width: 50%;;
+		width: 50%;
 	}
 
 	.home-background {
 		width: 50%;
-		height: 100%;
-		object-fit: cover;
 		background: #2190d3;
 		background: linear-gradient(180deg, #2190d3 0%, #2190d3 50%, #005297 100%);
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	@media only screen and (max-width: 960px) {
