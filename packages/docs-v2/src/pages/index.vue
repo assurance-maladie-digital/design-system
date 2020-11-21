@@ -6,6 +6,7 @@
 					<div class="d-flex align-center flex-wrap ma-n4">
 						<img
 							width="200px"
+							height="91px"
 							src="~/assets/logo-am.svg"
 							alt="l'Assurance Maladie"
 							class="logo-am ma-4"
@@ -13,6 +14,7 @@
 
 						<img
 							width="90px"
+							height="90px"
 							src="~/assets/logo-digital.svg"
 							alt="Le Digital de l'Assurance Maladie"
 							class="logo-digital ma-4"
@@ -31,7 +33,7 @@
 						Dernière publication {{ lastPublished }}
 					</p>
 
-					<div class="d-flex flex-wrap ma-n3">
+					<div class="d-flex flex-wrap no-max-width ma-n3">
 						<VBtn
 							color="primary"
 							to="/demarrer/introduction"
@@ -123,10 +125,12 @@
 
 		.logo-am {
 			width: 135px;
+			height: 62px;
 		}
 
 		.logo-digital {
 			width: 60px;
+			height: 60px;
 		}
 
 		.home-title {

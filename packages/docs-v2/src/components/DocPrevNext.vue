@@ -11,7 +11,11 @@
 				:to="prev.path"
 				class="text-decoration-none body-1"
 			>
-				<span class="text-h6 text--primary" v-html="arrows.prev" />
+				<span
+					class="text-h6 text--primary"
+					v-html="arrows.prev"
+				/>
+
 				<span v-text="prev.title" />
 			</RouterLink>
 
@@ -23,7 +27,11 @@
 				class="text-decoration-none body-1"
 			>
 				<span v-text="next.title" />
-				<span class="text-h6 text--primary" v-html="arrows.next" />
+
+				<span
+					class="text-h6 text--primary"
+					v-html="arrows.next"
+				/>
 			</RouterLink>
 		</div>
 	</div>

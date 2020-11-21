@@ -7,6 +7,7 @@
 	>
 		<div class="doc-logo-container d-flex align-center">
 			<VAppBarNavIcon
+				aria-label="Afficher/masquer le menu"
 				class="ml-2 hidden-lg-and-up"
 				@click="$emit('drawer-action')"
 			/>
