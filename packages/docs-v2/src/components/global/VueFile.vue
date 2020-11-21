@@ -6,7 +6,6 @@
 			...$attrs,
 			...$props,
 		}"
-		ref="test"
 		v-on="$listeners"
 	/>
 </template>
@@ -48,7 +47,7 @@
 
 				this.$emit('loaded', component.default);
 			} catch (err) {
-				// component = await import('./ExampleMissing')
+				// component = await import('./ExampleMissing');
 				this.$emit('error', err);
 			}
 

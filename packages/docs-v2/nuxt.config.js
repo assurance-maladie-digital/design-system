@@ -24,6 +24,7 @@ export default {
 	},
 	css: [
 		'@/assets/css/base.scss',
+		'@/assets/css/utilities.scss',
 		'@/assets/css/vuetify.scss',
 		'@cnamts/vue-dot/dist/vue-dot.css'
 	],

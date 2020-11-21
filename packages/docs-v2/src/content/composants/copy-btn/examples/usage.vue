@@ -1,9 +1,12 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
+		<p class="mb-0 mr-3">
+			N° de dossier <b>{{ folderId }}</b>
+		</p>
+
 		<CopyBtn
 			v-bind="$attrs"
 			v-on="$listeners"
-			width="56"
 		/>
 	</div>
 </template>
@@ -14,9 +17,11 @@
 
 	@Component
 	export default class Usage extends Vue {
+		folderId = '1456570791';
+
 		defaults = {
 			label: 'test',
-			textToCopy: 'a',
+			textToCopy: this.folderId,
 			hideTooltip: false,
 			tooltipDuration: 2500
 		};
@@ -32,7 +37,5 @@
 				}
 			}
 		};
-
-		tabs = [];
 	}
 </script>

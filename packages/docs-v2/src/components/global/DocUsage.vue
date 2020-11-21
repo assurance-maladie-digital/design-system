@@ -111,6 +111,7 @@
 								hide-details
 								inset
 							/>
+
 							<VSlider
 								v-for="(item, prop) in sliders"
 								:key="prop"
@@ -188,7 +189,6 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiInvertColors } from '@mdi/js';
-import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
 	interface Theme {
 		isDark: true;
@@ -296,15 +296,19 @@ import { IndexedObject } from '@cnamts/vue-dot/src/types';
 				return;
 			}
 
-			const data = component.options.data();
+			Object.assign(this.$data, component.options.data.call(this));
 
-			this.usageProps = Object.assign({}, data.defaults);
+			this.usageProps = Object.assign({}, this.$data.defaults);
 
-			for (const [key, value] of Object.entries(data.options)) {
-				(this as any)[key] = value
+			if (this.$data.options) {
+				for (const [key, value] of Object.entries(this.$data.options)) {
+					(this as any)[key] = value;
+				}
 			}
 
-			this.tabs = data.tabs
+			if (this.$data.tabs) {
+				this.tabs = this.$data.tabs;
+			}
 		}
 
 		toggleRadioProp(props: any, toggled: any): void {

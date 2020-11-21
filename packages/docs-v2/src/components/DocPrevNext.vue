@@ -1,7 +1,7 @@
 <template>
 	<div
 		v-if="prev || next"
-		class="up-next mt-8"
+		class="doc-prev-next"
 	>
 		<VDivider class="mb-4" />
 

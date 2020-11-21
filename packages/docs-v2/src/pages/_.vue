@@ -3,8 +3,8 @@
 		<DocHeader />
 
 		<VMain>
-			<VContainer>
-				<article>
+			<VContainer class="h-100 py-4 d-flex flex-column">
+				<article class="flex-grow-1">
 					<h1
 						v-text="document.title"
 						class="text-h4 text-sm-h4 font-weight-bold mb-4"
@@ -27,6 +27,12 @@
 				<DocPrevNext
 					:prev="prev"
 					:next="next"
+					class="mt-8 mb-6"
+				/>
+
+				<DocPageInfo
+					:updated-at="document.updatedAt"
+					class="mb-6"
 				/>
 			</VContainer>
 		</VMain>
