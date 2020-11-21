@@ -1,16 +1,15 @@
 const remark = require('remark');
 const html = require('remark-html');
 
-function markdownToHtml(content) {
-	remark()
-		.use(html)
-		.process(content, (error, file)  =>{
-			if (error) {
-				throw new Error(error);
-			}
+const remarkProcessor = remark().use(html);
 
-			return String(file);
-		});
+async function markdownToHtml(content) {
+	return await remarkProcessor
+		.process(content)
+		.then(
+			(file) => String(file),
+			(err) => String(err)
+		);
 }
 
 export default {
@@ -19,13 +18,14 @@ export default {
 	head: {
 		title: 'Design System Digital',
 		meta: [
-			{ charset: 'utf-8' },
+			{ charset: 'UTF-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
 		]
 	},
 	css: [
 		'@/assets/css/base.scss',
-		'@/assets/css/vuetify.scss'
+		'@/assets/css/vuetify.scss',
+		'@cnamts/vue-dot/dist/vue-dot.css'
 	],
 	buildModules: [
 		['@nuxt/typescript-build', {
@@ -39,6 +39,14 @@ export default {
 		}],
 		'@nuxtjs/google-fonts'
 	],
+	plugins: [
+		'~/plugins/vue-dot.ts'
+	],
+	build: {
+		transpile: [
+			'@cnamts/vue-dot'
+		]
+	},
 	modules: [
 		'@nuxt/content',
 		'@nuxtjs/axios'
@@ -51,12 +59,13 @@ export default {
 		display: 'swap'
 	},
 	hooks: {
-		'content:file:beforeInsert': async (document) => {
+		'content:file:beforeInsert': async(document) => {
 			if (document.extension !== '.md' || !document.description) {
 				return;
 			}
 
-			document.description = markdownToHtml(document.description);
+			const description = await markdownToHtml(document.description);
+			document.description = description;
 		}
 	}
 };

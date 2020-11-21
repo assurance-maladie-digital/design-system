@@ -33,7 +33,7 @@
 	</VApp>
 </template>
 
-<script>
+<script> // TODO
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 

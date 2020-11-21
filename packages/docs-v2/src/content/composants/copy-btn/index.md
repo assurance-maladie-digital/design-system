@@ -6,3 +6,5 @@ divider: true
 ---
 
 ## Utilisation
+
+<DocUsage name="copy-btn"></DocUsage>

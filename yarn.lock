@@ -884,6 +884,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@cnamts/vue-dot@2.0.0-alpha.3":
+  version "2.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@cnamts/vue-dot/-/vue-dot-2.0.0-alpha.3.tgz#b1dade53c4032b2cd0721ab7a0615a3e961a496e"
+  integrity sha512-C6+TK4I1uVS0PZk0mFfRdB4Bhi+AKVv+2Es0OuwR0LGkHVOvJuzGrK2DU1RnAMkIILm6/AGaus2fviFr4LxJbw==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
