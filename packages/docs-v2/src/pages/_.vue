@@ -44,7 +44,7 @@
 	</VApp>
 </template>
 
-<script> // TODO
+<script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
@@ -53,7 +53,7 @@
 	@Component
 	export default class Slug extends Vue {
 		@AsyncData
-		async asyncData({ $content, params, error }) {
+		async asyncData({ $content, params, error }: any) { // TODO
 			const path =`/${params.pathMatch || 'index'}`;
 			const [document] = await $content({ deep: true }).where({ path }).fetch();
 

@@ -160,7 +160,7 @@
 								</VBtn>
 							</VBtnToggle>
 
-							<VradioGroup
+							<VRadioGroup
 								v-for="(items, prop) in radioGroups"
 								:key="prop"
 								:label="startCase(prop)"
@@ -171,7 +171,7 @@
 									:label="item"
 									@click="toggleRadioProp(items, item)"
 								/>
-							</VradioGroup>
+							</VRadioGroup>
 						</VResponsive>
 					</div>
 				</VCol>
@@ -193,10 +193,18 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { ComponentOptions } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiInvertColors } from '@mdi/js';
+
+	import { VueClass } from 'vue-class-component/lib/declarations';
+
+	interface ImportedComponent extends VueClass<Vue> {
+		options: {
+			data: (this: Vue) => object;
+		};
+	}
 
 	interface Theme {
 		isDark: true;
@@ -299,7 +307,7 @@
 			return str;
 		}
 
-		setContents(component: any): void {
+		setContents(component: ImportedComponent): void {
 			if (!component) {
 				return;
 			}
@@ -319,7 +327,7 @@
 			}
 		}
 
-		toggleRadioProp(props: any, toggled: any): void {
+		toggleRadioProp(props: string[], toggled: string): void {
 			for (const prop of props) {
 				this.usageProps[prop] = false;
 			}
