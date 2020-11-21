@@ -2,12 +2,21 @@
 	// Extend root config
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
+		"baseUrl": ".",
 		"types": [
 			"@nuxt/types",
 			"@nuxtjs/axios",
 			"@nuxt/vue-app",
 			"@nuxtjs/vuetify"
-		]
+		],
+		"paths": {
+			"~/*": [
+				"./src/*"
+			],
+			"@/*": [
+				"./src/*"
+			]
+		}
 	},
 	"include": [
 		"src/**/*.ts",

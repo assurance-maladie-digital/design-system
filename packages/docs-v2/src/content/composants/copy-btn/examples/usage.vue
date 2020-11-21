@@ -1,6 +1,6 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
-		<p class="mb-0 mr-3">
+		<p class="mb-0 mr-2">
 			N° de dossier <b>{{ folderId }}</b>
 		</p>
 

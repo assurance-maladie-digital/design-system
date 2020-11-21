@@ -14,7 +14,7 @@ async function markdownToHtml(content) {
 
 export default {
 	target: 'static',
-	srcDir: 'src/',
+	srcDir: './src/',
 	head: {
 		title: 'Design System Digital',
 		meta: [
@@ -23,9 +23,7 @@ export default {
 		]
 	},
 	css: [
-		'@/assets/css/base.scss',
-		'@/assets/css/utilities.scss',
-		'@/assets/css/vuetify.scss',
+		'@/assets/styles/index.scss',
 		'@cnamts/vue-dot/dist/vue-dot.css'
 	],
 	buildModules: [
@@ -35,9 +33,7 @@ export default {
 				typescript: require.resolve('typescript')
 			}
 		}],
-		['@nuxtjs/vuetify', {
-			icons: false
-		}],
+		'@nuxtjs/vuetify',
 		'@nuxtjs/google-fonts'
 	],
 	plugins: [
@@ -58,6 +54,9 @@ export default {
 			'Open+Sans': [300, 400, 600, 700]
 		},
 		display: 'swap'
+	},
+	vuetify: {
+		optionsPath: './vuetify.options.ts'
 	},
 	hooks: {
 		'content:file:beforeInsert': async(document) => {

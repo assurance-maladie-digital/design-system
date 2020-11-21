@@ -1,7 +1,7 @@
 <template>
 	<VApp>
 		<VMain>
-			<div class="home-page d-flex white">
+			<div class="home-page d-flex h-100 white">
 				<div class="home-content d-flex flex-column align-start justify-center flex-grow-1 px-16 py-10">
 					<div class="d-flex align-center flex-wrap ma-n4">
 						<img
@@ -93,17 +93,12 @@
 </script>
 
 <style lang="scss" scoped>
-	.home-page {
-		height: 100%;
-	}
-
 	.home-title {
 		max-width: 750px;
 	}
 
-	.getting-started-btn {
-		// Set color to avoid light button during hydration
-		background-color: #003463 !important;
+	.home-content {
+		width: 50%;;
 	}
 
 	.home-background {

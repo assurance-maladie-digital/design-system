@@ -20,10 +20,11 @@
 		"generate": "nuxt generate"
 	},
 	"dependencies": {
+		"@cnamts/design-tokens": "2.0.0-beta.0",
+		"@cnamts/vue-dot": "2.0.0-alpha.3",
 		"nuxt": "2.14.7"
 	},
 	"devDependencies": {
-		"@cnamts/vue-dot": "2.0.0-alpha.3",
 		"@nuxtjs/axios": "5.12.2",
 		"@nuxt/content": "1.11.0",
 		"@nuxt/types": "2.14.7",

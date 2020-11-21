@@ -1,0 +1,44 @@
+article {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		display: inline-block;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: normal;
+		margin-bottom: 8px;
+	}
+}
+
+.nuxt-content h2 > a::before,
+.nuxt-content h3 > a:before {
+	content: "#";
+	font-weight: 600;
+	font-size: 1.25rem;
+	line-height: 1.65em;
+	margin-left: -1.25rem;
+	padding-right: .5rem;
+	position: absolute;
+	opacity: 1;
+	text-decoration: none;
+	transition: opacity .15s;
+}
+
+.nuxt-content h2:hover > a::before,
+.nuxt-content h3:hover > a::before {
+	opacity: 1;
+}
+
+@media (min-width: 1024px) {
+	.nuxt-content h2 > a::before,
+	.nuxt-content h3 > a::before {
+		opacity: 0;
+	}
+}
