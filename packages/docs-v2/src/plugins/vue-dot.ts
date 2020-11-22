@@ -4,10 +4,7 @@ import Vue from 'vue';
 // import 'dayjs/locale/fr';
 
 // Import VueDot from src
-// import VueDot from '@cnamts/vue-dot/src/index';
-
-import { registerAllComponents } from '@cnamts/vue-dot/src/registerAllComponents';
-registerAllComponents(Vue);
+import VueDot from '@cnamts/vue-dot/src/index';
 
 // Import the theme
 // import { icons } from '../theme/icons';
@@ -18,4 +15,4 @@ registerAllComponents(Vue);
 // import InputFacade from 'vue-input-facade';
 // Vue.use(InputFacade);
 
-// Vue.use(VueDot);
+Vue.use(VueDot);
