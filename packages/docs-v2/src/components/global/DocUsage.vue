@@ -146,6 +146,17 @@
 								hide-details
 							/>
 
+							<VTextField
+								v-for="(prop) in textFields"
+								:key="prop"
+								v-model="usageProps[prop]"
+								:label="startCase(prop)"
+								class="my-2"
+								dense
+								filled
+								hide-details
+							/>
+
 							<VBtnToggle
 								v-for="(items, prop) in btnToggles"
 								:key="prop"
@@ -237,6 +248,7 @@
 		radioGroups = null;
 		selects = null;
 		sliders = null;
+		textFields = null;
 
 		dark = false;
 		file: string | null = null;
