@@ -193,11 +193,10 @@
 				</VCol>
 
 				<VCol cols="12">
-					<!-- <markup
+					<DocMarkup
 						:code="formatAttributes"
 						rounded="b"
-					/> -->
-					<pre>{{ formatAttributes }}</pre>
+					/>
 				</VCol>
 			</VRow>
 		</VSheet>
@@ -281,10 +280,16 @@
 			}
 
 			attributeArray = attributeArray.sort();
-			const indent = attributeArray.length ? '\r\t' : '';
-			const tail = `${attributeArray.length ? '\r' : ''} />`;
 
-			return `<${this.toPascalCase(this.name)}${indent}${attributeArray.join('\r\t')}${tail}`;
+			// Display attributes on single when none or one attribute
+			const singleLine = attributeArray.length > 1;
+			const space = ' ';
+
+			const indent = singleLine ? '\r\t' : space;
+			const tail = `${singleLine ? '\r' : space}/>`;
+			const attributes = attributeArray.join('\r\t');
+
+			return `<${this.toPascalCase(this.name)}${indent}${attributes}${tail}`;
 		}
 
 		mounted() {
@@ -345,7 +350,7 @@
 				this.usageProps[prop] = false;
 			}
 
-			this.usageProps[toggled] = true
+			this.usageProps[toggled] = true;
 		}
 	}
 </script>

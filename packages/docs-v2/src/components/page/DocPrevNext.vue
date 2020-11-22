@@ -41,7 +41,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { Next } from '../../../vue-dot/src/types';
+	import { Next } from '@cnamts/vue-dot/src/types';
 
 	interface Arrows {
 		next: string;
