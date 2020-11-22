@@ -24,28 +24,14 @@
 		}
 
 		defaults = {
-			label: 'test',
+			label: 'Copier le numéro de dossier',
 			textToCopy: '1456570791',
 			hideTooltip: false,
-			tooltipDuration: 2500,
-			large: false,
-			medium: false,
-			small: false,
-			'x-large': false,
-			'x-small': false
+			tooltipDuration: 2500
 		};
 
 		options = {
 			booleans: ['hide-tooltip'],
-			radioGroups: {
-				size: [
-					'x-small',
-					'small',
-					'medium',
-					'large',
-					'x-large'
-				]
-			},
 			sliders: {
 				tooltipDuration: {
 					label: 'tooltip-duration',
