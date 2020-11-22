@@ -273,7 +273,7 @@
 					continue;
 				}
 
-				let trimmed = key.trim();
+				let trimmed = this.toKebabCase(key.trim());
 
 				if (value !== true) {
 					trimmed += `="${value}"`;
@@ -298,6 +298,10 @@
 		mounted() {
 			this.file = `../../content/examples/${this.name}/usage`;
 			this.importComponent();
+		}
+
+		toKebabCase(str: string) {
+			return str.replace(/\s+/g, '-').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 		}
 
 		toPascalCase(str: string): string {
