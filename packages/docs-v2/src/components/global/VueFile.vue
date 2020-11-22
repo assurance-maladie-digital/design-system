@@ -39,11 +39,11 @@
 			let component = {} as any;
 
 			try {
-				component = await import(
-					/* webpackChunkName: "examples" */
-					/* webpackMode: "lazy" */
-					`../../content/composants/copy-btn/examples/usage.vue`
-				);
+				// component = await import(
+				// 	/* webpackChunkName: "examples" */
+				// 	/* webpackMode: "lazy" */
+				// 	`../../content/composants/copy-btn/examples/usage.vue`
+				// );
 
 				this.$emit('loaded', component.default);
 			} catch (err) {

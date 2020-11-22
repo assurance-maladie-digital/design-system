@@ -288,7 +288,7 @@
 		}
 
 		mounted() {
-			this.file = `../../content/composants/${this.name}/examples/usage`;
+			this.file = `../../content/examples/${this.name}/usage`;
 			this.importComponent();
 		}
 
@@ -308,7 +308,7 @@
 			return import(
 				/* webpackChunkName: "examples" */
 				/* webpackMode: "lazy-once" */
-				`../../content/composants/${this.name}/examples/usage.vue`
+				`../../content/examples/${this.name}/usage.vue`
 			)
 				.then(comp => {
 					this.component = comp.default;
