@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-page-info blue-grey--text text--darken-1 d-flex align-center font-weight-medium justify-space-between text-body-2">
+	<div class="doc-page-info text--secondary d-flex align-center justify-space-between text-body-2">
 		<DocGithubLink
 			:path="document.path"
 			:extension="document.extension"
@@ -11,13 +11,11 @@
 			v-if="formattedUpdatedAt"
 			class="mb-0"
 		>
-			<span class="font-weight-medium">
-				Dernière modification le
-			</span>
+			Dernière modification le
 
 			<span
 				v-text="formattedUpdatedAt"
-				class="text--secondary"
+				class="font-weight-medium"
 			/>
 		</p>
 	</div>

@@ -12,7 +12,7 @@
 				class="text-decoration-none body-1"
 			>
 				<span
-					class="text-h6 text--primary"
+					class="text-h6"
 					v-html="arrows.prev"
 				/>
 
@@ -29,7 +29,7 @@
 				<span v-text="next.title" />
 
 				<span
-					class="text-h6 text--primary"
+					class="text-h6"
 					v-html="arrows.next"
 				/>
 			</RouterLink>

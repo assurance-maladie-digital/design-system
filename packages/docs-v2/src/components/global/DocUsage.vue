@@ -9,6 +9,7 @@
 				<VCol
 					cols="12"
 					md="8"
+					class="d-flex flex-column"
 				>
 					<VResponsive
 						class="d-flex"
@@ -44,7 +45,7 @@
 					<VThemeProvider :dark="dark">
 						<VSheet
 							:color="color"
-							class="overflow-y-auto d-flex align-center justify-center pa-4"
+							class="overflow-y-auto h-100 d-flex align-center justify-center pa-4"
 							max-height="400"
 							min-height="100"
 						>
