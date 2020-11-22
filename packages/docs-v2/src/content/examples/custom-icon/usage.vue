@@ -1,10 +1,6 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
-		<p class="mb-0 mr-2">
-			Dossier n°<b>{{ folderId }}</b>
-		</p>
-
-		<CopyBtn
+		<CustomIcon
 			v-bind="$attrs"
 			v-on="$listeners"
 		/>
@@ -19,24 +15,22 @@
 		inheritAttrs: false
 	})
 	export default class Usage extends Vue {
-		get folderId() {
-			return this.$attrs.textToCopy;
-		}
-
 		defaults = {
-			label: 'test',
-			textToCopy: '1456570791',
-			hideTooltip: false,
-			tooltipDuration: 2500,
+			icon: 'digital',
+			color: null,
 			large: false,
 			medium: false,
 			small: false,
-			'x-large': false,
+			'x-large': true,
 			'x-small': false
 		};
 
 		options = {
-			booleans: ['hide-tooltip'],
+			selects: {
+				color: [
+					'#0c419a'
+				]
+			},
 			radioGroups: {
 				size: [
 					'x-small',
@@ -45,16 +39,7 @@
 					'large',
 					'x-large'
 				]
-			},
-			sliders: {
-				tooltipDuration: {
-					label: 'tooltip-duration',
-					min: 500,
-					max: 5000,
-					step: 500
-				}
-			},
-			textFields: ['textToCopy']
+			}
 		};
 	}
 </script>

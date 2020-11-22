@@ -7,12 +7,13 @@ import Vue from 'vue';
 import VueDot from '@cnamts/vue-dot/src/index';
 
 // Import the theme
-// import { icons } from '../theme/icons';
-
-// Import VueDot styles
-// import '@cnamts/vue-dot/dist/vue-dot.css';
+import { icons } from '../assets/icons';
 
 // import InputFacade from 'vue-input-facade';
 // Vue.use(InputFacade);
 
-Vue.use(VueDot);
+Vue.use(VueDot, {
+	theme: {
+		icons
+	}
+});
