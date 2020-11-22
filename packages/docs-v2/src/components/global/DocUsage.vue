@@ -72,7 +72,10 @@
 				>
 					<VDivider class="hidden-md-and-up" />
 
-					<div class="d-flex align-center">
+					<VSheet
+						class="d-flex align-center"
+						height="44px"
+					>
 						<VDivider
 							vertical
 							class="hidden-sm-and-down"
@@ -95,7 +98,7 @@
 								</template>
 							</DocTooltipBtn>
 						</div>
-					</div>
+					</VSheet>
 
 					<VDivider />
 
