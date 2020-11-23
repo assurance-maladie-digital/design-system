@@ -20,8 +20,5 @@ export default {
 	},
 	icons: {
 		iconfont: 'mdiSvg'
-	},
-	lang: {
-		current: 'fr'
 	}
 };

@@ -1,5 +1,7 @@
 <template>
 	<VAppBar
+		app
+		fixed
 		height="80"
 		clipped-left
 		color="white"

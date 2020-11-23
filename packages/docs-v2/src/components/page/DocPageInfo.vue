@@ -47,7 +47,7 @@
 				return null;
 			}
 
-			return dayjs(this.document.updatedAt).format('DD/MM/YYYY à H[h]m');
+			return dayjs(this.document.updatedAt).format('DD/MM/YYYY à H[h]mm');
 		}
 	}
 </script>

@@ -21,8 +21,7 @@
 			large: false,
 			medium: false,
 			small: false,
-			'x-large': true,
-			'x-small': false
+			'x-large': true
 		};
 
 		options = {
@@ -33,7 +32,6 @@
 			},
 			radioGroups: {
 				size: [
-					'x-small',
 					'small',
 					'medium',
 					'large',

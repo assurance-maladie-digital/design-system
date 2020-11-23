@@ -32,7 +32,7 @@
 									height="44"
 									text
 									tile
-									@click="toggle(); usageProps[prop] = !active;"
+									@click="toggle(); toggleOption(prop, active)"
 								>
 									{{ prop }}
 								</VBtn>
@@ -288,7 +288,7 @@
 			const singleLine = attributeArray.length > 1;
 			const space = ' ';
 
-			const indent = singleLine ? '\r\t' : space;
+			const indent = singleLine ? '\r\t' : attributeArray.length ? space : '';
 			const tail = `${singleLine ? '\r' : space}/>`;
 			const attributes = attributeArray.join('\r\t');
 
@@ -341,14 +341,15 @@
 
 			this.usageProps = Object.assign({}, this.$data.defaults);
 
-			if (this.$data.options) {
-				for (const [key, value] of Object.entries(this.$data.options)) {
+
+			if (this.options) {
+				for (const [key, value] of Object.entries(this.options)) {
 					(this as any)[key] = value;
 				}
 			}
 
-			if (this.$data.tabs) {
-				this.tabs = this.$data.tabs;
+			if (this.tabs) {
+				this.tabs = this.tabs;
 			}
 		}
 
@@ -358,6 +359,10 @@
 			}
 
 			this.usageProps[toggled] = true;
+		}
+
+		toggleOption(prop: string, active: boolean): void {
+			this.$set(this.usageProps, prop, !active);
 		}
 	}
 </script>
