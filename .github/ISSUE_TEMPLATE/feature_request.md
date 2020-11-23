@@ -1,23 +1,26 @@
 ---
-name: Demande d'évolution
+name: Demande de nouvelle fonctionnalité
 about: Créez une demande pour ajouter une nouvelle fonctionnalité
-
 ---
 
-## Projet
-<!-- Nom du projet -->
-
 ## Description
-<!-- Inclure une description claire avec le plus de détails possible sur chaque comportements. Pensez aux exceptions -->
+
+<!-- Écrivez un résumé de la fonctionnalité proposée. -->
 
 ## Pièces jointes
-<!-- Le cas échéant, ajoutez des images, lien hypertexte, ou autre support pour visualiser votre besoin. -->
+
+<!-- Si possible, ajoutez des images, des liens, ou autre pour nous aider à visualiser votre besoin. -->
 
 ## Priorisation
 
-- [ ] peu prioritaire 
-- [ ] prioritaire
-- [ ] très prioritaire
+- [ ] Peu prioritaire 
+- [ ] Prioritaire
+- [ ] Très prioritaire
+
+## Projet
+
+<!-- Nom du projet impacté par le bug. -->
 
 ## Contacts
-<!-- Nom(s) et rôle(s) du ou des contacts le cas échéant -->
+
+<!-- Nom(s) et rôle(s) du ou des personnes à contacter. -->

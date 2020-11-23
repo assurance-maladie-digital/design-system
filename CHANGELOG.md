@@ -18,9 +18,6 @@
   - **babel:** Mise à jour du monorepo vers la `v7.12.7` ([#726](https://github.com/assurance-maladie-digital/design-system/pull/726)) ([8f02cd9](https://github.com/assurance-maladie-digital/design-system/commit/8f02cd92b474b2588daeda6297422fff9ded0894))
   - **eslint:** Mise à jour vers la `v7.13.0` ([#727](https://github.com/assurance-maladie-digital/design-system/pull/727) ([d91574e](https://github.com/assurance-maladie-digital/design-system/commit/d91574ec692f192322b91f08e12c4c7a5becaa35))
 
-- 🔧 **Configuration**
-  - **template:** Ajout du modèle d'issue pour demander une nouvelle fonctionnalité sur github ([#712](https://github.com/assurance-maladie-digital/design-system/pull/712))
-  
 ## v2.0.0-beta.3
 
 **Version publiée le 18/11/2020.**
