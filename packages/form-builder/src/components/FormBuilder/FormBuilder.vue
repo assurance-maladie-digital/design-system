@@ -9,6 +9,12 @@
 			@change="sectionUpdated($event, sectionName)"
 			@refresh="$emit('refresh')"
 		>
+			<!--
+				Pass down the scoped slots
+				see https://github.com/vuejs/vue/pull/7765 for the official discussion
+				and https://stackoverflow.com/questions/50891858/vue-how-to-pass-down-slots-inside-wrapper-component/52823029#52823029
+				for the source of this solution
+			-->
 			<template
 				v-for="slot in Object.keys($scopedSlots)"
 				#[slot]="scope"

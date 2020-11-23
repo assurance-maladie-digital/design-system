@@ -1,6 +1,6 @@
 import { Form } from '../../types';
 
-const scheduleItems = [
+const defaultItems = [
 	{
 		text: '9h',
 		value: null
@@ -21,112 +21,116 @@ const scheduleItems = [
 
 export const questionForm: Form = {
 	section1: {
-		title: 'Champs textes',
-		description: 'Champs textes, date et périodes et leurs sous-types.',
+		title: 'Section 1',
+		description: 'Description de la section 1',
 		questions: {
 			questionString: {
 				type: 'text',
+				title: 'Question ?',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide\nSecond texte d\'aide',
 				value: null,
 				fieldOptions: {
-					label: 'Votre nom',
+					label: 'Label du champ',
 					outlined: true
 				}
 			},
 			questionPassword: {
 				type: 'text',
+				title: 'Question mot de passe ?',
 				value: null,
 				fieldOptions: {
 					type: 'password',
-					label: 'Votre mot de passe',
+					label: 'Mot de passe',
 					outlined: true
 				}
 			},
 			questionNumber: {
 				type: 'number',
+				title: 'Question nombre ?',
 				value: null,
 				fieldOptions: {
-					label: 'Votre âge',
-					mask: '###',
+					mask: '###-###',
 					outlined: true
 				}
 			},
 			questionTextarea: {
 				type: 'textarea',
-				title: 'Vos symptômes',
-				tooltip: 'Décrivez vos symptômes sous le format suivant :\nJJ/DD/MM : Description',
-				description: 'Décrivez les symptômes qui vous affectent et leur ordre d\'apparition.',
+				title: 'Question longue type textarea',
 				value: null,
 				fieldOptions: {
-					label: 'Vos symptômes',
 					outlined: true
 				}
 			},
 			questionDate: {
 				type: 'date',
+				title: 'Question',
 				value: null,
 				fieldOptions: {
 					outlined: true,
-					birthdate: true,
 					textField: {
-						label: 'Votre date de naissance'
+						hint: 'Texte informatif'
 					}
 				}
 			},
 			questionPeriod: {
 				type: 'period',
+				title: 'Question période',
 				value: null,
 				fieldOptions: {
 					from: {
 						outlined: true,
 						textField: {
-							label: 'Début'
+							label: 'Du'
 						}
 					},
 					to: {
 						outlined: true,
 						textField: {
-							label: 'Fin'
+							label: 'Au'
 						}
 					}
+				}
+			},
+			questionSelect: {
+				type: 'select',
+				title: 'Question select',
+				value: null,
+				items: defaultItems,
+				fieldOptions: {
+					outlined: true,
+					chips: true,
+					menuProps: {
+						offsetY: true
+					},
+					label: 'Votre réponse'
+				}
+			},
+			questionSelectMultiple: {
+				type: 'select',
+				title: 'Question select multiple',
+				value: null,
+				multiple: true,
+				items: defaultItems,
+				fieldOptions: {
+					outlined: true
 				}
 			}
 		}
 	},
 	section2: {
-		title: 'Champs de sélection',
+		title: 'Section 2',
 		questions: {
-			questionSelect: {
-				type: 'select',
-				value: null,
-				items: scheduleItems,
-				fieldOptions: {
-					label: 'Votre horaire de rendez-vous',
-					outlined: true,
-					menuProps: {
-						offsetY: true
-					}
-				}
-			},
-			questionSelectMultiple: {
-				type: 'select',
-				value: {
-					value: null
-				},
-				multiple: true,
-				items: scheduleItems,
-				fieldOptions: {
-					label: 'Vos horaires de rendez-vous',
-					outlined: true
-				}
-			},
 			questionSelectSliderTick: {
 				type: 'select',
 				title: 'Question select slider',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
 				value: {
 					value: '9.30',
 					other: null
 				},
-				items: scheduleItems,
+				items: defaultItems,
 				fieldOptions: {
 					type: 'choiceSlider'
 				}
@@ -134,8 +138,10 @@ export const questionForm: Form = {
 			questionSelectSliderThumb: {
 				type: 'select',
 				title: 'Question select slider thumb',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
 				value: null,
-				items: scheduleItems,
+				items: defaultItems,
 				fieldOptions: {
 					type: 'choiceSlider',
 					thumbLabel: true
@@ -144,8 +150,10 @@ export const questionForm: Form = {
 			questionSelectSliderThumbLabel: {
 				type: 'select',
 				title: 'Question select slider thumb with custom label',
+				description: 'Informations supplémentaires',
+				tooltip: 'Texte d\'aide',
 				value: null,
-				items: scheduleItems,
+				items: defaultItems,
 				fieldOptions: {
 					labelMin: 'min',
 					labelMax: 'max',
@@ -156,8 +164,9 @@ export const questionForm: Form = {
 			questionAutocomplete: {
 				type: 'select',
 				title: 'Question avec complétion automatique',
+				description: 'Informations supplémentaires',
 				value: null,
-				items: scheduleItems,
+				items: defaultItems,
 				fieldOptions: {
 					type: 'choiceAutocomplete',
 					outlined: true,
@@ -175,26 +184,19 @@ export const questionForm: Form = {
 		questions: {
 			questionChoiceButton: {
 				type: 'select',
-				title: 'Souhaitez-vous être contacté par nos services ?',
-				items: [
-					{
-						text: 'Oui',
-						value: 1
-					},
-					{
-						text: 'Non',
-						value: 0
-					}
-				],
+				title: 'Question choix bouton inline',
+				description: 'Informations supplémentaires',
+				items: defaultItems,
 				fieldOptions: {
 					inline: true,
 					type: 'choiceButton',
-					hint: 'Vous pourrez choisir le moyen de contact'
+					hint: 'Texte informatif'
 				}
 			},
 			questionChoiceButtonMultiple: {
 				type: 'select',
 				title: 'Question choix bouton multiple',
+				description: 'Informations supplémentaires',
 				multiple: true,
 				items: [
 					{
@@ -247,6 +249,7 @@ export const questionForm: Form = {
 			},
 			questionChoiceOther: {
 				title: 'Question choix autre',
+				description: 'Informations supplémentaires',
 				multiple: true,
 				type: 'select',
 				value: {
