@@ -16,6 +16,10 @@ about: Créez un rapport de bug pour nous aider à améliorer notre Design Syste
   3. Faites défiler jusqu'à « … »
 -->
 
+## Reproduction minimale
+
+<!-- Fournissez un lien vers une reproduction minimale du bug. -->
+
 ## Comportement attendu
 
 <!-- Écrivez un résumé du comportement attendu. -->
