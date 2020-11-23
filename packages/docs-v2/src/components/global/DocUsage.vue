@@ -198,7 +198,7 @@
 				<VCol cols="12">
 					<DocMarkup
 						:code="formatAttributes"
-						rounded="b"
+						tile
 					/>
 				</VCol>
 			</VRow>

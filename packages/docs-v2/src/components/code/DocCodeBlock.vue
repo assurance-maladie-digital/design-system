@@ -4,6 +4,7 @@
 		color="#1f1f1f"
 		class="doc-code-block overflow-hidden"
 		outlined
+		rounded
 		dark
 	>
 		<slot />
