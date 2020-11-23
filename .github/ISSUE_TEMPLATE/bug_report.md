@@ -1,40 +1,50 @@
 ---
-name: Rapport d'erreur
-about: Créez un rapport pour corriger des erreurs
-
+name: Rapport de bug
+about: Créez un rapport de bug pour nous aider à améliorer notre Design System
 ---
-# Description
-<!-- Inclure ici une description de l'erreur. -->
 
-## Projet
-<!-- Nom du projet -->
+## Description
+
+<!-- Écrivez un résumé du bug rencontré. -->
 
 ## Comment reproduire
-<!-- Étapes pour reproduire le comportement:
-1. Allez dans «...»
-2. Cliquez sur '....'
-3. Faites défiler jusqu'à «....»
-4. Voir erreur -->
+
+<!--
+  Décrivez les étapes pour reproduire le bug :
+  1. Allez dans « … »
+  2. Cliquez sur « … »
+  3. Faites défiler jusqu'à « … »
+-->
 
 ## Comportement attendu
-<!-- Une description claire et concise de ce à quoi vous vous attendiez. -->
+
+<!-- Écrivez un résumé du comportement attendu. -->
 
 ## Captures d'écran
-<!-- Le cas échéant, ajoutez des captures d'écran pour expliquer votre problème. -->
+
+<!-- Si applicable, ajoutez des captures d'écran pour compléter votre explication. -->
 
 ## Environnement
-  - OS: <!-- Android -->
-  - Navigateur: <!-- internet explorer, chrome, safari -->
-  - Version: <!-- 22.2 -->
+
+- OS: <!-- Android, … -->
+- Navigateur: <!-- IE 11, Firefox, Safari, … -->
 
 ## Priorisation
 
-- [ ] peu prioritaire 
-- [ ] prioritaire
-- [ ] très prioritaire
+<!-- Sélectionnez le niveau de priorité que vous estimez en fonction de l'impact sur votre projet. -->
 
-## Contexte supplémentaire
-<!-- Ajoutez ici tout autre contexte sur le problème. -->
+- [ ] Peu prioritaire 
+- [ ] Prioritaire
+- [ ] Très prioritaire
+
+## Projet
+
+<!-- Nom du projet impacté par le bug. -->
 
 ## Contacts
-<!-- Nom(s) et rôle(s) du ou des contacts le cas échéant -->
+
+<!-- Nom(s) et rôle(s) du ou des personnes à contacter. -->
+
+## Commentaires 
+
+<!-- Ajoutez ici des précisions ou informations supplémentaires (optionnel). -->
