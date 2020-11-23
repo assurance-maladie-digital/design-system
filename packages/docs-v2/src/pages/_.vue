@@ -48,12 +48,19 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { AsyncData } from '../decorators';
+	import { AsyncData, Middleware } from '../decorators';
 
 	@Component
 	export default class Slug extends Vue {
+		@Middleware
+		middleware({ app, params, redirect }: any): void { // TODO
+			if (params.pathMatch === 'index') {
+				redirect(app.localePath('/'));
+			}
+		}
+
 		@AsyncData
-		async asyncData({ $content, params, error }: any) { // TODO
+		async asyncData({ $content, params, error }: any): Promise<any> { // TODO
 			const path =`/${params.pathMatch || 'index'}`;
 			const [document] = await $content({ deep: true }).where({ path }).fetch();
 
