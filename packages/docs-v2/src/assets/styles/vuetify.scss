@@ -1,4 +1,4 @@
-/* Reset max-width for Vuetify ripples */
+// Reset max-width for Vuetify ripples
 .v-ripple__container,
 .v-ripple__container *,
 .v-tabs__container,
@@ -10,7 +10,7 @@
 	max-width: none;
 }
 
-/* Fix color contrast */
+// Fix color contrast
 .theme--light.v-input--is-disabled .v-label,
 .theme--light.v-icon.v-icon--disabled,
 .theme--light.v-list .v-list--disabled {
@@ -33,7 +33,7 @@
 	color: #717171 !important;
 }
 
-/* Reset Vuetify font-size */
+// Reset Vuetify font-size
 .v-btn,
 .v-tabs__div,
 .text-body-1 {

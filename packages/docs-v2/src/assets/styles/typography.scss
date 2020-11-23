@@ -1,4 +1,4 @@
-article {
+.nuxt-content {
 	h1,
 	h2,
 	h3,
@@ -15,30 +15,31 @@ article {
 		letter-spacing: normal;
 		margin-bottom: 8px;
 	}
-}
 
-.nuxt-content h2 > a::before,
-.nuxt-content h3 > a:before {
-	content: "#";
-	font-weight: 600;
-	font-size: 1.25rem;
-	line-height: 1.65em;
-	margin-left: -1.25rem;
-	padding-right: .5rem;
-	position: absolute;
-	opacity: 1;
-	text-decoration: none;
-	transition: opacity .15s;
-}
+	ul {
+		margin-bottom: 16px;
+	}
 
-.nuxt-content h2:hover > a::before,
-.nuxt-content h3:hover > a::before {
-	opacity: 1;
-}
+	h2 > a::before,
+	h3 > a::before {
+		content: "#";
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 1.65em;
+		margin-left: -1.25rem;
+		padding-right: .5rem;
+		position: absolute;
+		opacity: 1;
+		text-decoration: none;
+		transition: opacity .15s;
 
-@media (min-width: 1024px) {
-	.nuxt-content h2 > a::before,
-	.nuxt-content h3 > a::before {
-		opacity: 0;
+		@media (min-width: 1024px) {
+			opacity: 0;
+		}
+	}
+
+	h2:hover > a::before,
+	h3:hover > a::before {
+		opacity: 1;
 	}
 }

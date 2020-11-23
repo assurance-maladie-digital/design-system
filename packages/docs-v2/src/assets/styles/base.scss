@@ -1,4 +1,4 @@
-/* Default, global styles */
+// Default, global styles
 * {
 	margin: 0;
 	padding: 0;
@@ -11,7 +11,7 @@
 
 html,
 body {
-	/* Font size defined by the browser */
+	// Font size defined by the browser
 	font-size: 100%;
 }
 
@@ -21,23 +21,18 @@ body {
 	line-height: 1.25;
 }
 
-/* Hide the application while Vue.js is loading */
+// Hide the application while Vue.js is loading
 [v-cloak] {
 	display: none;
 }
 
-/* Apply default transition to links */
+// Apply default transition to links
 a {
 	transition: .25s;
 }
 
+// Fix layout width
 #__nuxt,
 #__layout {
 	width: 100%;
-}
-
-.content__default {
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
 }

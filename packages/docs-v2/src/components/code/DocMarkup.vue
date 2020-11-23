@@ -13,17 +13,6 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	// Prism
-	import 'prismjs';
-	import 'prismjs/components/prism-bash.js';
-	import 'prismjs/components/prism-css.js';
-	import 'prismjs/components/prism-javascript.js';
-	import 'prismjs/components/prism-json.js';
-	import 'prismjs/components/prism-scss.js';
-	import 'prismjs/components/prism-typescript.js';
-
-	import 'prismjs/themes/prism-tomorrow.css';
-
 	import Prism from 'vue-prism-component';
 
 	const Props = Vue.extend({

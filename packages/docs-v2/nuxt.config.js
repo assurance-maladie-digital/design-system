@@ -60,6 +60,13 @@ export default {
 		},
 		display: 'swap'
 	},
+	content: {
+		markdown: {
+			prism: {
+				theme: 'prismjs/themes/prism-tomorrow.css'
+			}
+		}
+	},
 	hooks: {
 		'content:file:beforeInsert': parseMarkdownDescription
 	}
