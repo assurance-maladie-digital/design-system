@@ -1,4 +1,5 @@
 import { parseMarkdownDescription } from './src/hooks/parseMarkdownDescription';
+import { transformCodeBlocks } from './src/hooks/transformCodeBlocks';
 
 export default {
 	target: 'static',
@@ -68,6 +69,7 @@ export default {
 		}
 	},
 	hooks: {
-		'content:file:beforeInsert': parseMarkdownDescription
+		'content:file:beforeInsert': parseMarkdownDescription,
+		'content:file:beforeParse': transformCodeBlocks
 	}
 };
