@@ -13,7 +13,8 @@
 - ⬆️ **Dépendances**
   - **copy-webpack-plugin:** Mise à jour vers la `v6.3.2` ([#722](https://github.com/assurance-maladie-digital/design-system/pull/722)) ([9591a89](https://github.com/assurance-maladie-digital/design-system/commit/9591a899e29386117b4cc0983e11adddc39b2a82))
   - **@types/node:** Mise à jour vers la `v12.19.6` ([#723](https://github.com/assurance-maladie-digital/design-system/pull/723)) ([af3d760](https://github.com/assurance-maladie-digital/design-system/commit/af3d760f8e99a588ac0d89477362c3cb7fa09085))
-  - **typescript:** Mise à jour vers la `v4.1.2` ([#724](https://github.com/assurance-maladie-digital/design-system/pull/724))
+  - **typescript:** Mise à jour vers la `v4.1.2` ([#724](https://github.com/assurance-maladie-digital/design-system/pull/724)) ([fe50608](https://github.com/assurance-maladie-digital/design-system/commit/fe5060829a7d67a2fe7480ff919c0365888f3747))
+  - **babel:** Mise à jour du monorepo vers la `v7.12.7` ([#725](https://github.com/assurance-maladie-digital/design-system/pull/725))
 
 ## v2.0.0-beta.3
 
