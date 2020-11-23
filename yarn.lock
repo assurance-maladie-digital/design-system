@@ -2337,10 +2337,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.7.tgz#8ea1e8f8eae2430cf440564b98c6dfce1ec5945d"
   integrity sha512-Zw1vhUSQZYw+7u5dAwNbIA9TuTotpzY/OF7sJM9FqPOF3SPjKnxrjoTktXDZgUjybf4cWVBP7O8wvKdSaGHweg==
 
-"@types/node@12.19.5":
-  version "12.19.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.5.tgz#9be3946136e818597c71c62d04240d0602c645d4"
-  integrity sha512-Wgdl27uw/jUYUFyajUGKSjDNGxmJrZi9sjeG6UJImgUtKbJoO9aldx+1XODN1EpNDX9DirvbvHHmTsNlb8GwMA==
+"@types/node@12.19.6":
+  version "12.19.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.6.tgz#fbf249fa46487dd8c7386d785231368b92a33a53"
+  integrity sha512-U2VopDdmBoYBmtm8Rz340mvvSz34VgX/K9+XCuckvcLGMkt3rbMX8soqFOikIPlPBc5lmw8By9NUK7bEFSBFlQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -4801,10 +4801,10 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-copy-webpack-plugin@6.3.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-6.3.1.tgz#ceb6e9c3e4910e63a774fd4a27451156775f6e2a"
-  integrity sha512-SyIMdP6H3v+zPU+VIhKRsK0ZEF82KZ93JBlKOoIW8SkkuI84FSrHxG+aMTE1u4csbi9PLRqqWTIK+bfJ2xsFuQ==
+copy-webpack-plugin@6.3.2:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-6.3.2.tgz#0e920a6c181a5052aa6e2861b164bda03f83afeb"
+  integrity sha512-MgJ1uouLIbDg4ST1GzqrGQyKoXY5iPqi6fghFqarijam7FQcBa/r6Rg0VkoIuzx75Xq8iAMghyOueMkWUQ5OaA==
   dependencies:
     cacache "^15.0.5"
     fast-glob "^3.2.4"
