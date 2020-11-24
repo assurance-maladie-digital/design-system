@@ -61,15 +61,8 @@ export default {
 		},
 		display: 'swap'
 	},
-	content: {
-		markdown: {
-			prism: {
-				theme: 'prismjs/themes/prism-tomorrow.css'
-			}
-		}
-	},
 	hooks: {
-		'content:file:beforeInsert': parseMarkdownDescription,
-		'content:file:beforeParse': transformCodeBlocks
+		'content:file:beforeParse': transformCodeBlocks,
+		'content:file:beforeInsert': parseMarkdownDescription
 	}
 };

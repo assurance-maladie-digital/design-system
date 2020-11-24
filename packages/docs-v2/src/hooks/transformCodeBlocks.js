@@ -1,4 +1,4 @@
-function replacer(match) {
+function markdownToCodeBlock(match) {
 	/** Get opening tag with language (eg: "```bash") */
 	const tagLangRegexp = /^`{3}([a-z-]*)\n/;
 
@@ -28,5 +28,5 @@ export function transformCodeBlocks(document) {
 		return;
 	}
 
-	document.data = document.data.replace(codeBlockRegex, replacer);
+	document.data = document.data.replace(codeBlockRegex, markdownToCodeBlock);
 }
