@@ -3,25 +3,25 @@
 		<VMain>
 			<div class="home-page d-flex h-100 white">
 				<div class="home-content d-flex flex-column align-start justify-center flex-grow-1 px-16 py-10">
-					<div class="d-flex align-center flex-wrap ma-n4">
+					<div class="d-flex align-center flex-wrap no-max-width my-n2 mx-n4">
 						<img
-							width="200px"
-							height="91px"
+							width="250px"
+							height="114px"
 							src="~/assets/logo-am.svg"
 							alt="l'Assurance Maladie"
-							class="logo-am ma-4"
+							class="logo-am my-2 mx-4"
 						>
 
 						<img
-							width="90px"
-							height="90px"
+							width="85px"
+							height="85px"
 							src="~/assets/logo-digital.svg"
 							alt="Le Digital de l'Assurance Maladie"
-							class="logo-digital ma-4"
+							class="logo-digital my-2 mx-4"
 						>
 					</div>
 
-					<h1 class="home-title text-h3 mt-16 font-weight-bold">
+					<h1 class="home-title text-lg-h3 text-md-h4 text-sm-h5 text-h5 mt-10 mt-sm-16 font-weight-bold">
 						Un Design System pour l'Assurance Maladie
 					</h1>
 
@@ -113,6 +113,7 @@
 		background: linear-gradient(180deg, #2190d3 0%, #2190d3 50%, #005297 100%);
 
 		img {
+			width: 100%;
 			height: 100%;
 			object-fit: cover;
 		}
@@ -132,11 +133,6 @@
 			width: 60px;
 			height: 60px;
 		}
-
-		.home-title {
-			font-size: 1.5rem !important;
-			line-height: 2rem !important;
-		}
 	}
 
 	@media only screen and (max-width: 600px) {
@@ -144,9 +140,17 @@
 			flex-direction: column-reverse;
 		}
 
+		.home-content {
+			width: 100%;
+		}
+
 		.home-background {
 			width: 100%;
 			height: 200px;
+		}
+
+		a {
+			flex-grow: 1;
 		}
 	}
 </style>

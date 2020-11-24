@@ -10,7 +10,7 @@
 		<div class="doc-logo-container d-flex align-center">
 			<VAppBarNavIcon
 				aria-label="Afficher/masquer le menu"
-				class="ml-2 hidden-lg-and-up"
+				class="ml-3 mr-2 hidden-lg-and-up"
 				@click="$emit('drawer-action')"
 			/>
 
@@ -21,7 +21,7 @@
 				class="doc-logo-link"
 			>
 				<img
-					src="~/assets/logo-am.svg"
+					src="~/assets/logo-am-no-text.svg"
 					alt="l'Assurance Maladie"
 					height="80px"
 					width="155px"
