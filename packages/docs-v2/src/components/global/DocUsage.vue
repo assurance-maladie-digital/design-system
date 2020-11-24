@@ -275,6 +275,10 @@
 
 				let trimmed = this.toKebabCase(key.trim());
 
+				if (typeof value === 'number') {
+					trimmed = `:${trimmed}`;
+				}
+
 				if (value !== true) {
 					trimmed += `="${value}"`;
 				}
