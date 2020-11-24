@@ -17,6 +17,5 @@ export async function parseMarkdownDescription(document) {
 		return;
 	}
 
-	const description = await markdownToHtml(document.description);
-	document.description = description;
+	document.description = await markdownToHtml(document.description);
 }
