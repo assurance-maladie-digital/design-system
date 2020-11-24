@@ -5,7 +5,7 @@
 	>
 		<VDivider class="mb-4" />
 
-		<div class="d-flex">
+		<div class="d-flex flex-wrap">
 			<RouterLink
 				v-if="prev"
 				:to="prev.path"

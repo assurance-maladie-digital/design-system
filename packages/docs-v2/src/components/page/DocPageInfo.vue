@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-page-info text--secondary d-flex align-center justify-space-between text-body-2">
+	<div class="doc-page-info text--secondary d-flex align-center justify-space-between flex-wrap text-body-2">
 		<DocGithubLink
 			:path="document.path"
 			:extension="document.extension"
@@ -9,7 +9,7 @@
 
 		<p
 			v-if="formattedUpdatedAt"
-			class="mb-0"
+			class="mb-2"
 		>
 			Dernière modification le
 

@@ -29,7 +29,7 @@
 
 	import { mdiOpenInNew } from '@mdi/js';
 
-	import { DEFAULT_BRANCH, DEFAULT_DIR, REPO } from '../constants';
+	import { DEFAULT_BRANCH, DEFAULT_DIR, REPO } from '../../constants';
 
 	const Props = Vue.extend({
 		props: {
