@@ -10,7 +10,7 @@
 		<div class="doc-logo-container d-flex align-center">
 			<VAppBarNavIcon
 				aria-label="Afficher/masquer le menu"
-				class="ml-3 mr-2 hidden-lg-and-up"
+				class="ml-3 hidden-lg-and-up"
 				@click="$emit('drawer-action')"
 			/>
 
@@ -87,29 +87,38 @@
 					flex-direction: column;
 					height: auto !important;
 				}
+			}
 
-				.doc-logo-container {
-					padding-top: 6px;
-					margin-left: 6px;
-				}
+			.v-toolbar__title {
+				white-space: normal;
+			}
 
-				.doc-header-title {
-					margin-top: 6px;
-					padding-top: 6px !important;
-					padding-bottom: 6px !important;
-					border-top: 1px solid rgba(0, 0, 0, .12);
-				}
+			.doc-logo-container {
+				padding-top: 4px;
+				margin-left: 8px;
+			}
 
-				.v-toolbar__title {
-					white-space: normal;
-				}
+			.doc-logo-link img {
+				height: 48px;
+				object-fit: cover;
+			}
 
-				h1 {
-					font-size: 1rem !important;
-					font-weight: 700;
-					line-height: 1.5rem;
-					letter-spacing: .009375em !important;
-				}
+			.doc-header-title {
+				margin-top: 4px;
+				padding-top: 4px !important;
+				padding-bottom: 4px !important;
+				border-top: 1px solid rgba(0, 0, 0, .12);
+			}
+
+			h1 {
+				font-size: 1rem !important;
+				font-weight: 700;
+				line-height: 1.5rem;
+				letter-spacing: .009375em !important;
+			}
+
+			.v-app-bar__nav-icon {
+				margin-left: 0 !important;
 			}
 		}
 	}

@@ -19,7 +19,7 @@
 				<span v-text="prev.title" />
 			</RouterLink>
 
-			<VSpacer />
+			<VSpacer class="mr-6" />
 
 			<RouterLink
 				v-if="next"

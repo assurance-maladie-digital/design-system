@@ -5,7 +5,7 @@
 			:extension="document.extension"
 		/>
 
-		<VSpacer />
+		<VSpacer class="mr-6" />
 
 		<p
 			v-if="formattedUpdatedAt"
