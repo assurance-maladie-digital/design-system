@@ -1,0 +1,65 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-yarn-cache
+      - run: *run
+      - save_cache: *save-yarn-cache
+  lint:
+    <<: *defaults
+    steps:
+      - run: lerna run lint
+  lint:
+    <<: *defaults
+    steps:
+      - run: lerna run test
+  lint:
+    <<: *defaults
+    steps:
+      - run: lerna run build
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:12
+
+aliases:
+  - &restore-cache
+    name: Restore Yarn Package Cache
+    key: yarn-packages-{{ checksum "yarn.lock" }}
+
+  - &save-cache
+    name: Save Yarn Package Cache
+    key: yarn-packages-{{ checksum "yarn.lock" }}
+    paths:
+      - node_modules/
+      - ~/.cache
+
+  - &run
+    name: Install Dependencies
+    command: yarn install --frozen-lockfile --non-interactive
+
+workflow_filters: &filters
+  filters:
+    branches:
+      ignore:
+       - docs
+
+workflows:
+  lint_test_build:
+    jobs:
+      - install
+      - lint
+        requires:
+          - install
+      - test
+        requires:
+          - install
+      - build
+        <<: *filters
+        requires:
+          - install
