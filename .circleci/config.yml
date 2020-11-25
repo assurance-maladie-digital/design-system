@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  node: circleci/node@4.1.0
 
 defaults: &defaults
   working_directory: ~/project
@@ -46,14 +44,23 @@ jobs:
   lint:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/
       - run: ls -l
   test:
     <<: *defaults
     steps:
-      - run: yarn test
+      - attach_workspace:
+          at: ~/
+      - run:
+        - command: yarn test
+        - environment:
+          NODE_OPTIONS: --max_old_space_size=4096
   build:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/
       - run: yarn build
 
 workflows:
