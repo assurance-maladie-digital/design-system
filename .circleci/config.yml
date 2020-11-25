@@ -1,0 +1,82 @@
+version: 2.1
+
+orbs:
+  codecov: codecov/codecov@1.1.3
+
+defaults: &defaults
+  working_directory: ~/project
+  docker:
+    - image: circleci/node:12-browsers
+
+aliases:
+  - &restore-cache
+    name: Restore Yarn Package Cache
+    key: yarn-packages-{{ checksum "yarn.lock" }}
+
+  - &save-cache
+    name: Save Yarn Package Cache
+    key: yarn-packages-{{ checksum "yarn.lock" }}
+    paths:
+      - node_modules/
+      - ~/.cache
+  - &run
+    name: Install Dependencies
+    command: yarn install --frozen-lockfile --non-interactive
+
+workflow_filters: &filters
+  filters:
+    branches:
+      ignore:
+        - docs
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - run: *run
+      - save_cache: *save-cache
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./project
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: yarn lint
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: yarn test
+      - codecov/upload
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          command: yarn build
+          environment:
+            NODE_OPTIONS: --max_old_space_size=4096
+            CI: 'true'
+            CIRCLE_NODE_TOTAL: '4'
+
+workflows:
+  lint_test_build:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - build:
+          <<: *filters
+          requires:
+            - install

@@ -35,7 +35,7 @@
 		"playground:build": "vue-cli-service build",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
-		"test": "vue-cli-service test:unit"
+		"test": "vue-cli-service test:unit --runInBand"
 	},
 	"peerDependencies": {
 		"@cnamts/design-tokens": "^2.0.0-beta.0",
