@@ -32,7 +32,7 @@
 		"playground:build": "vue-cli-service build",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
-		"test": "vue-cli-service test:unit --maxWorkers=4"
+		"test": "vue-cli-service test:unit --runInBand"
 	},
 	"peerDependencies": {
 		"@cnamts/vue-dot": "^2.0.0-alpha.53",
