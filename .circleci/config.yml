@@ -50,9 +50,9 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: |
-        yarn global add codecov
-        yarn test
-        codecov
+          yarn global add codecov
+          yarn test
+          codecov
   build:
     <<: *defaults
     steps:
