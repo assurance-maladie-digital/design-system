@@ -3,6 +3,7 @@ orbs:
   node: circleci/node@4.1.0
 
 defaults: &defaults
+  working_directory: ~/project
   docker:
     - image: circleci/node:12
 
@@ -34,9 +35,14 @@ jobs:
       - checkout
       - restore_cache: *restore-cache
       - run: *run
+      - run: ls -l
+      - run: ls -l ~/
+      - run: yarn lint
       - save_cache: *save-cache
       - persist_to_workspace:
           root: ~/
+          paths:
+            - ./project
   lint:
     <<: *defaults
     steps:
