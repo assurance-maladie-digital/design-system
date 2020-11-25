@@ -48,7 +48,7 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.12.8",
+		"@babel/core": "7.12.9",
 		"@babel/preset-env": "7.12.7",
 		"@cnamts/cli-helpers": "^2.0.0-beta.3",
 		"@vue/cli-plugin-babel": "4.5.9",
