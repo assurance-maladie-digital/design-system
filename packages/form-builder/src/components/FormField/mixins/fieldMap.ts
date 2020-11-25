@@ -49,4 +49,14 @@ export class FieldMap extends Vue {
 	getField(fieldName: string): string {
 		return this.fieldMap[fieldName];
 	}
+
+	/**
+	 * Checks if the field exists
+	 *
+	 * @param {string} fieldName The name of the field
+	 * @returns {boolean} If the field exists
+	 */
+	fieldExists(fieldName: string): boolean {
+		return Object.keys(this.fieldMap).includes(fieldName);
+	}
 }
