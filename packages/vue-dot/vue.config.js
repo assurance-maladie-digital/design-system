@@ -14,6 +14,7 @@ const LIB_MODE_CONFIG = {
 	// No source map on library mode, we don't need them
 	// because we're publishing the source
 	productionSourceMap: false,
+	parallel: LIB_MODE ? 4 : undefined,
 	css: {
 		// Extract CSS to separate file for SSR
 		// (in SSR mode without a separate file, an error is thrown

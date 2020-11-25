@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
   working_directory: ~/project
   docker:
-    - image: circleci/node:12
+    - image: circleci/node:12-browsers
 
 aliases:
   - &restore-cache
@@ -33,9 +33,6 @@ jobs:
       - checkout
       - restore_cache: *restore-cache
       - run: *run
-      - run: ls -l
-      - run: ls -l ~/
-      - run: yarn lint
       - save_cache: *save-cache
       - persist_to_workspace:
           root: ~/
@@ -46,7 +43,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - run: ls -l
+      - run: yarn lint
   test:
     <<: *defaults
     steps:
