@@ -53,9 +53,9 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-        - command: yarn test
-        - environment:
-          NODE_OPTIONS: --max_old_space_size=4096
+          command: yarn test
+          environment:
+            NODE_OPTIONS: --max_old_space_size=4096
   build:
     <<: *defaults
     steps:
