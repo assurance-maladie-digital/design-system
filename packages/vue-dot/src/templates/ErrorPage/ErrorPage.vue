@@ -44,7 +44,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Next } from '../../types';
+	import { RawLocation } from 'vue-router';
 
 	import { locales } from './locales';
 
@@ -72,7 +72,7 @@
 			},
 			/** The route of the button, default to home page */
 			btnRoute: {
-				type: [Array, Object] as PropType<Next>,
+				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'home' })
 			},
 			/** Remove the button */
