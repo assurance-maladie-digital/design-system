@@ -14,22 +14,16 @@
 			<!-- Barre de recherche dans le tableau -->
 			<template #top>
 				<TableToolbar
-					:search.sync="search"
+					:search="search"
 					:table-loading="tableLoading"
 					search-label="Rechercher"
 					create-btn-label="Ajouter"
 					show-create-btn
+					row-text="fichiers"
+					:nb-total="items.length"
+					:nb-filtered="filteredItems.length"
+					@search="search = $event"
 				>
-					<template #rows-number>
-						<p
-							v-if="nbRow.length !== 0"
-							class="mb-0 mr-4"
-						>
-							{{ filteredItems.length }}/{{ items.length }}
-							lignes
-						</p>
-					</template>
-
 					<template #search-left>
 						<VBtn
 							small
@@ -63,7 +57,6 @@
 
 		search = '';
 		filteredItems: DataTableHeader[] = [];
-		nbRow = 1;
 		tableLoading = false;
 
 		headers: DataTableHeader[] = [

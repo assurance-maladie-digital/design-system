@@ -4,14 +4,21 @@
 		color="white"
 	>
 		<!-- Rows number -->
-		<slot name="rows-number" />
+		<p
+			v-if="showRowsNumber"
+			class="mb-0 font-weight-bold mr-4"
+		>
+			<span>{{ computedNbRows }}</span>
+
+			<span class="ml-1">{{ rowText }}</span>
+		</p>
 
 		<VSpacer />
 
 		<slot name="search-left" />
 		<!-- Search field -->
 		<VTextField
-			v-model="internalSearch"
+			:value="search"
 			clearable
 			single-line
 			hide-details
@@ -19,18 +26,15 @@
 			:append-icon="searchIcon"
 			:disabled="tableLoading"
 			:label="searchLabel"
+			@input="$emit('search', $event)"
 		/>
 
 		<VBtn
 			v-if="showCreateBtn"
 			outlined
 			color="primary"
-			@click="$emit('create')"
+			@click="$emit('click')"
 		>
-			<VIcon>
-				{{ addIcon }}
-			</VIcon>
-
 			{{ createBtnLabel }}
 		</VBtn>
 	</VToolbar>
@@ -40,34 +44,55 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiMagnify, mdiPlus } from '@mdi/js';
+	import { mdiMagnify } from '@mdi/js';
+
+	import { locales } from './locales';
 
 	const Props = Vue.extend({
+		model: {
+			prop: 'search',
+			event: 'search'
+		},
 		props: {
-			/** Disable the search field while loading */
-			tableLoading: {
-				type: Boolean,
-				default: false
+			/** Search field value */
+			search: {
+				type: String,
+				default: ''
 			},
 			/** Label of the search field */
 			searchLabel: {
 				type: String,
 				default: undefined
 			},
-			/** Search field value */
-			search: {
+			/** Text for the number of rows */
+			rowText: {
 				type: String,
-				default: ''
+				default: locales.rowText
 			},
 			/** Show the create button */
 			showCreateBtn: {
 				type: Boolean,
-				default: true
+				default: false
 			},
 			/** Label of the create button */
 			createBtnLabel: {
 				type: String,
 				default: undefined
+			},
+			/** Number of filtered items */
+			nbFiltered: {
+				type: Number,
+				required: true
+			},
+			/** Number of total items */
+			nbTotal: {
+				type: Number,
+				required: true
+			},
+			/** Disable the search field while loading */
+			tableLoading: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -79,15 +104,15 @@
 	export default class TableToolbar extends MixinsDeclaration {
 		// Icons
 		searchIcon = mdiMagnify;
-		addIcon = mdiPlus;
 
-		get internalSearch(): string {
-			return this.search;
+		locales = locales;
+
+		get showRowsNumber(): boolean {
+			return Boolean(this.nbTotal && this.nbFiltered < this.nbTotal);
 		}
 
-		/** Use :search.sync="variable" */
-		set internalSearch(value: string) {
-			this.$emit('update:search', value);
+		get computedNbRows(): string {
+			return `${this.nbFiltered || ''}${this.nbFiltered && this.nbFiltered >= 0 ? '/': ''}${this.nbTotal}`;
 		}
 	}
 </script>
