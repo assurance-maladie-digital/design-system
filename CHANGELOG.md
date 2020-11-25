@@ -1,5 +1,16 @@
 ## Non publié
 
+### Eslint Config
+
+## eslint-congig
+- Ajout d'un nouveau package **eslint-config**: gestion des rules: **eslint** recommend et **typescript** recommend
+([#746](https://github.com/assurance-maladie-digital/design-system/pull/746)) ([88d91eb](https://github.com/assurance-maladie-digital/design-system/pull/746/commits/88d91eb59eed99a7fa0e65af1615faac8ee53ca5))
+
+## eslint-config-vue
+- Ajout d'un nouveau package **eslint-config-vue**: gestion des rules: **eslint-plugin-vue** recommend
+([#746](https://github.com/assurance-maladie-digital/design-system/pull/746)) ([88d91eb](https://github.com/assurance-maladie-digital/design-system/pull/746/commits/88d91eb59eed99a7fa0e65af1615faac8ee53ca5))
+
+
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
