@@ -11,7 +11,7 @@
 ### VueDash
 
 - 🔥 **Suppressions**
-  - **template:** Suppression d'un `margin-left` dupliqué dans le composant `AppHeader` ([#740](https://github.com/assurance-maladie-digital/design-system/pull/740))
+  - **template:** Suppression d'un `margin-left` dupliqué dans le composant `AppHeader` ([#740](https://github.com/assurance-maladie-digital/design-system/pull/740)) ([0b2931a](https://github.com/assurance-maladie-digital/design-system/commit/0b2931af250119a37c96086d623bec2e50655e2d))
 
 ### FormBuilder
 
@@ -20,6 +20,9 @@
 
 - 🐛 **Corrections de bugs**
   - **peerDependencies:** Correction des intervalles de versions des dépendances ([#721](https://github.com/assurance-maladie-digital/design-system/pull/721)) ([951f21a](https://github.com/assurance-maladie-digital/design-system/commit/951f21ae9e6ad935a5fdf92a83d283a82769a526))
+
+- 🚨 **Lint**
+  - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741))
 
 ### Interne
 
