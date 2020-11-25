@@ -58,10 +58,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - run:
-          command: yarn build
-          environment:
-            NODE_OPTIONS: --max_old_space_size=4096
+      - run: yarn build
 
 workflows:
   lint_test_build:
