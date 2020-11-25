@@ -264,7 +264,7 @@ exports[`FormBuilder renders correctly 1`] = `
         <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-82" readonly="readonly" tabindex="-1" type="choiceSlider">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-82" disabled="disabled" readonly="readonly" tabindex="-1" type="choiceSlider">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -295,7 +295,7 @@ exports[`FormBuilder renders correctly 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-91" readonly="readonly" tabindex="-1" type="choiceSlider">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-91" disabled="disabled" readonly="readonly" tabindex="-1" type="choiceSlider">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -337,7 +337,7 @@ exports[`FormBuilder renders correctly 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-101" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max" type="choiceSlider">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-101" disabled="disabled" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max" type="choiceSlider">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>

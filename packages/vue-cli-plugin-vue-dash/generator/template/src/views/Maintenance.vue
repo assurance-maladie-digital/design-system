@@ -13,17 +13,13 @@
 
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
-	// Maintenance related env vars
-	declare const MAINTENANCE_TITLE: string;
-	declare const MAINTENANCE_MESSAGE: string;
-
 	@Component
 	export default class Maintenance extends Vue {
 		get pageInfo(): IndexedObject {
 			// Use env var and default text
 			return {
-				title: MAINTENANCE_TITLE || <% if (i18n) { %>this.$t('views.maintenance.title') as string<% } else { %>'Maintenance en cours'<% } %>,
-				message: MAINTENANCE_MESSAGE ||<% if (i18n) { %> this.$t('views.maintenance.message') as string<% } else { %>
+				title: window.MAINTENANCE_TITLE || <% if (i18n) { %>this.$t('views.maintenance.title') as string<% } else { %>'Maintenance en cours'<% } %>,
+				message: window.MAINTENANCE_MESSAGE ||<% if (i18n) { %> this.$t('views.maintenance.message') as string<% } else { %>
 					'L\'application n\'est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.'<% } %>
 			};
 		}
