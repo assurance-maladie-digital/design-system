@@ -44,6 +44,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.8.2` ([#730](https://github.com/assurance-maladie-digital/design-system/pull/730)) ([140be35](https://github.com/assurance-maladie-digital/design-system/commit/140be3578fc1e80d8660887e83adfeb5c64be81f))
   - **@babel/core:** Mise à jour vers la `v7.12.8` ([#731](https://github.com/assurance-maladie-digital/design-system/pull/731)) ([7ba9944](https://github.com/assurance-maladie-digital/design-system/commit/7ba99444fad1bc36f5a10dddc72d10dd57afd08d))
   - **lint-staged:** Mise à jour vers la `v10.5.2` ([#732](https://github.com/assurance-maladie-digital/design-system/pull/732)) ([e23ed5f](https://github.com/assurance-maladie-digital/design-system/commit/e23ed5f99bb2aad8aa8ab25689cc5e9bae74c58d))
+  - **vuetify:** Mise à jour vers la `v2.3.19` ([#743](https://github.com/assurance-maladie-digital/design-system/pull/743))
 
 ## v2.0.0-beta.3
 
