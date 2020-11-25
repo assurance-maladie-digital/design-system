@@ -1,9 +1,14 @@
 ## Non publié
 
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **ErrorPage:** Correction du type de la prop `btnRoute` ([#736](https://github.com/assurance-maladie-digital/design-system/pull/736))
+
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
-  - **fields:** Ajout des champs personnalisés ([#729](https://github.com/assurance-maladie-digital/design-system/pull/729))
+  - **fields:** Ajout des champs personnalisés ([#729](https://github.com/assurance-maladie-digital/design-system/pull/729)) ([2748f63](https://github.com/assurance-maladie-digital/design-system/commit/2748f63573b849380ccc79a72f8e51f7c671a04c))
 
 - 🐛 **Corrections de bugs**
   - **peerDependencies:** Correction des intervalles de versions des dépendances ([#721](https://github.com/assurance-maladie-digital/design-system/pull/721)) ([951f21a](https://github.com/assurance-maladie-digital/design-system/commit/951f21ae9e6ad935a5fdf92a83d283a82769a526))
