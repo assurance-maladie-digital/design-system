@@ -4,7 +4,8 @@
 
 - 🐛 **Corrections de bugs**
   - **ErrorPage:** Correction du type de la prop `btnRoute` ([#736](https://github.com/assurance-maladie-digital/design-system/pull/736)) ([9b9bbd2](https://github.com/assurance-maladie-digital/design-system/commit/9b9bbd25afbe722e3cd5275a2a370dca9e1fedc4))
-  - **LangBtn:** Correction de la valeur par défaut de la prop `availableLanguages` ([#737](https://github.com/assurance-maladie-digital/design-system/pull/737))
+  - **LangBtn:** Correction de la valeur par défaut de la prop `availableLanguages` ([#737](https://github.com/assurance-maladie-digital/design-system/pull/737)) ([e6cdeac](https://github.com/assurance-maladie-digital/design-system/commit/e6cdeac5ab9c3eedfcce277fec6657e4d57c78a1))
+  - **FileUpload:** Correction du type `ErrorCodeType` et de l'interface `ErrorEvent` ([#738](https://github.com/assurance-maladie-digital/design-system/pull/738))
 
 ### FormBuilder
 
