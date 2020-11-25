@@ -8,7 +8,7 @@
   - **FileUpload:** Correction du type `ErrorCodeType` et de l'interface `ErrorEvent` ([#738](https://github.com/assurance-maladie-digital/design-system/pull/738)) ([d00088f](https://github.com/assurance-maladie-digital/design-system/commit/d00088f5a2584b8ae2dcc6d1464f76e47f5b4f19))
   - **peerDependencies:** Correction d'une dépendance `@cnamts/design-tokens` manquante ([#739](https://github.com/assurance-maladie-digital/design-system/pull/739)) ([bab2654](https://github.com/assurance-maladie-digital/design-system/commit/bab26549758ef8dd93494e02fd406a9e2b0b7c56))
 
-### VueDash
+### Vue Dash
 
 - 🔥 **Suppressions**
   - **template:** Suppression d'un `margin-left` dupliqué dans le composant `AppHeader` ([#740](https://github.com/assurance-maladie-digital/design-system/pull/740)) ([0b2931a](https://github.com/assurance-maladie-digital/design-system/commit/0b2931af250119a37c96086d623bec2e50655e2d))
@@ -22,7 +22,7 @@
   - **peerDependencies:** Correction des intervalles de versions des dépendances ([#721](https://github.com/assurance-maladie-digital/design-system/pull/721)) ([951f21a](https://github.com/assurance-maladie-digital/design-system/commit/951f21ae9e6ad935a5fdf92a83d283a82769a526))
 
 - 🚨 **Lint**
-  - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741))
+  - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
 
 ### Interne
 
