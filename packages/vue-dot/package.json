@@ -38,6 +38,7 @@
 		"test": "vue-cli-service test:unit --runInBand"
 	},
 	"peerDependencies": {
+		"@cnamts/design-tokens": "^2.0.0-beta.0",
 		"@mdi/js": "^5.0.0",
 		"dayjs": "^1.8.0",
 		"languages": "^0.1.3",
