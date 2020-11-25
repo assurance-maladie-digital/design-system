@@ -6,7 +6,12 @@
   - **ErrorPage:** Correction du type de la prop `btnRoute` ([#736](https://github.com/assurance-maladie-digital/design-system/pull/736)) ([9b9bbd2](https://github.com/assurance-maladie-digital/design-system/commit/9b9bbd25afbe722e3cd5275a2a370dca9e1fedc4))
   - **LangBtn:** Correction de la valeur par défaut de la prop `availableLanguages` ([#737](https://github.com/assurance-maladie-digital/design-system/pull/737)) ([e6cdeac](https://github.com/assurance-maladie-digital/design-system/commit/e6cdeac5ab9c3eedfcce277fec6657e4d57c78a1))
   - **FileUpload:** Correction du type `ErrorCodeType` et de l'interface `ErrorEvent` ([#738](https://github.com/assurance-maladie-digital/design-system/pull/738)) ([d00088f](https://github.com/assurance-maladie-digital/design-system/commit/d00088f5a2584b8ae2dcc6d1464f76e47f5b4f19))
-  - **peerDependencies:** Correction d'une dépendance `@cnamts/design-tokens` manquante ([#739](https://github.com/assurance-maladie-digital/design-system/pull/739))
+  - **peerDependencies:** Correction d'une dépendance `@cnamts/design-tokens` manquante ([#739](https://github.com/assurance-maladie-digital/design-system/pull/739)) ([bab2654](https://github.com/assurance-maladie-digital/design-system/commit/bab26549758ef8dd93494e02fd406a9e2b0b7c56))
+
+### VueDash
+
+- 🔥 **Suppressions**
+  - **template:** Suppression d'un `margin-left` dupliqué dans le composant `AppHeader` ([#740](https://github.com/assurance-maladie-digital/design-system/pull/740))
 
 ### FormBuilder
 
