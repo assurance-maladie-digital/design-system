@@ -38,15 +38,15 @@ jobs:
   lint:
     <<: *defaults
     steps:
-      - run: lerna run lint
+      - run: yarn lint
   test:
     <<: *defaults
     steps:
-      - run: lerna run test
+      - run: yarn test
   build:
     <<: *defaults
     steps:
-      - run: lerna run build
+      - run: yarn build
 
 workflows:
   lint_test_build:
