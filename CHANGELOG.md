@@ -7,7 +7,7 @@
 
 ### Interne
 
-- ✨ **Nouvelles fonctionnalités**
+- 🔧 **Configuration**
   - **ci:** Remplacement de Travis CI par CircleCI ([#749](https://github.com/assurance-maladie-digital/design-system/pull/749))
 
 - 📝 **Documentation**
