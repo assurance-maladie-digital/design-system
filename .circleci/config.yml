@@ -53,7 +53,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: yarn test
-      - codecov
+      - codecov/upload
   build:
     <<: *defaults
     steps:
@@ -63,8 +63,8 @@ jobs:
           command: yarn build
           environment:
             NODE_OPTIONS: --max_old_space_size=4096
-            CI: true
-            CIRCLE_NODE_TOTAL: 4
+            CI: 'true'
+            CIRCLE_NODE_TOTAL: '4'
 
 workflows:
   lint_test_build:
