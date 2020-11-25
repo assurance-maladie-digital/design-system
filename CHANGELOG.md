@@ -2,10 +2,16 @@
 
 ### FormBuilder
 
+- ✨ **Nouvelles fonctionnalités**
+  - **fields:** Ajout des champs personnalisés ([#729](https://github.com/assurance-maladie-digital/design-system/pull/729))
+
 - 🐛 **Corrections de bugs**
   - **peerDependencies:** Correction des intervalles de versions des dépendances ([#721](https://github.com/assurance-maladie-digital/design-system/pull/721)) ([951f21a](https://github.com/assurance-maladie-digital/design-system/commit/951f21ae9e6ad935a5fdf92a83d283a82769a526))
 
 ### Interne
+
+- 🔧 **Configuration**
+  - **ci:** Remplacement de Travis CI par CircleCI ([#749](https://github.com/assurance-maladie-digital/design-system/pull/749)) ([d55d994](https://github.com/assurance-maladie-digital/design-system/commit/d55d99476f660a5608da42891053fe079083b2db))
 
 - 📝 **Documentation**
   - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720)) ([5f94ff5](https://github.com/assurance-maladie-digital/design-system/commit/5f94ff5ac4efd685a332135a64c54c9b9c0c882c))
@@ -21,7 +27,7 @@
   - **eslint:** Mise à jour vers la `v7.13.0` ([#727](https://github.com/assurance-maladie-digital/design-system/pull/727) ([d91574e](https://github.com/assurance-maladie-digital/design-system/commit/d91574ec692f192322b91f08e12c4c7a5becaa35))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.8.2` ([#730](https://github.com/assurance-maladie-digital/design-system/pull/730)) ([140be35](https://github.com/assurance-maladie-digital/design-system/commit/140be3578fc1e80d8660887e83adfeb5c64be81f))
   - **@babel/core:** Mise à jour vers la `v7.12.8` ([#731](https://github.com/assurance-maladie-digital/design-system/pull/731)) ([7ba9944](https://github.com/assurance-maladie-digital/design-system/commit/7ba99444fad1bc36f5a10dddc72d10dd57afd08d))
-  - **lint-staged:** Mise à jour vers la `v10.5.2` ([#732](https://github.com/assurance-maladie-digital/design-system/pull/732))
+  - **lint-staged:** Mise à jour vers la `v10.5.2` ([#732](https://github.com/assurance-maladie-digital/design-system/pull/732)) ([e23ed5f](https://github.com/assurance-maladie-digital/design-system/commit/e23ed5f99bb2aad8aa8ab25689cc5e9bae74c58d))
 
 ## v2.0.0-beta.3
 
