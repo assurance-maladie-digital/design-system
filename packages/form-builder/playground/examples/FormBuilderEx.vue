@@ -1,6 +1,13 @@
 <template>
 	<DocSection title="FormBuilder">
-		<FormBuilder v-model="questionForm" />
+		<FormBuilder v-model="questionForm">
+			<template #custom="{ field, emitChangeEvent }">
+				<DateField
+					:field="field"
+					@change="emitChangeEvent"
+				/>
+			</template>
+		</FormBuilder>
 
 		<VBtn
 			class="mt-5"
@@ -13,13 +20,16 @@
 		<pre
 			v-if="questionValues"
 			class="mt-4 px-2 py-1"
+			:class="[
+				$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
+			]"
 			v-html="questionValues"
 		/>
 
 		<pre
 			v-if="formErrors"
 			contenteditable="true"
-			class="mt-4"
+			class="mt-4 px-2 py-1"
 			:class="[
 				$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'
 			]"
@@ -48,7 +58,13 @@
 	import { FormValues } from '../../src/functions/getFormValues/types';
 	import { setFormErrors } from '../../src/functions/setFormErrors';
 
-	@Component
+	import DateField from '../../src/components/FormField/fields/DateField.vue';
+
+	@Component({
+		components: {
+			DateField // Use DateField as a custom field
+		}
+	})
 	export default class FormBuilderEx extends Vue {
 		questionForm = questionForm;
 		formErrors = formErrors;
