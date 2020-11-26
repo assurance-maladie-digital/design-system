@@ -9,7 +9,7 @@
 			:to="{
 				name: 'home'
 			}"
-			:disabled="maintenance"<% if (!i18n) { %>
+			:disabled="$maintenanceEnabled"<% if (!i18n) { %>
 			aria-label="Accueil"<% } %>
 			exact
 			class="app-logo-link"
