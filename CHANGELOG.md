@@ -32,7 +32,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Remplacement de Travis CI par CircleCI ([#749](https://github.com/assurance-maladie-digital/design-system/pull/749)) ([d55d994](https://github.com/assurance-maladie-digital/design-system/commit/d55d99476f660a5608da42891053fe079083b2db))
-  - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#752](https://github.com/assurance-maladie-digital/design-system/pull/752))
+  - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#752](https://github.com/assurance-maladie-digital/design-system/pull/752)) ([1b6fe3b](https://github.com/assurance-maladie-digital/design-system/commit/1b6fe3b3f058b970b2700eaccb987834ccd6954e))
 
 - 📝 **Documentation**
   - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720)) ([5f94ff5](https://github.com/assurance-maladie-digital/design-system/commit/5f94ff5ac4efd685a332135a64c54c9b9c0c882c))
