@@ -1,3 +1,3 @@
 export const locales = {
-    rowText: 'lignes'
+    rowText: (text: string, plural: boolean): string => `${text}${plural ? 's' : ''}`
 };

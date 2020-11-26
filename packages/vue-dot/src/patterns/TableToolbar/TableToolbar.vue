@@ -10,7 +10,7 @@
 		>
 			<span>{{ computedNbRows }}</span>
 
-			<span class="ml-1">{{ rowText }}</span>
+			<span class="ml-1">{{ computedTitle }}</span>
 		</p>
 
 		<VSpacer />
@@ -49,15 +49,11 @@
 	import { locales } from './locales';
 
 	const Props = Vue.extend({
-		model: {
-			prop: 'search',
-			event: 'search'
-		},
 		props: {
 			/** Search field value */
 			search: {
 				type: String,
-				default: ''
+				default: undefined
 			},
 			/** Label of the search field */
 			searchLabel: {
@@ -67,7 +63,7 @@
 			/** Text for the number of rows */
 			rowText: {
 				type: String,
-				default: locales.rowText
+				default: 'ligne'
 			},
 			/** Show the create button */
 			showCreateBtn: {
@@ -100,7 +96,12 @@
 	const MixinsDeclaration = mixins(Props);
 
 	/** Toolbar of a DataTable with search & create button */
-	@Component
+	@Component<TableToolbar>({
+		model: {
+			prop: 'search',
+			event: 'search'
+		}
+	})
 	export default class TableToolbar extends MixinsDeclaration {
 		// Icons
 		searchIcon = mdiMagnify;
@@ -113,6 +114,11 @@
 
 		get computedNbRows(): string {
 			return `${this.nbFiltered || ''}${this.nbFiltered && this.nbFiltered >= 0 ? '/': ''}${this.nbTotal}`;
+		}
+
+		get computedTitle(): string {
+			const plural = this.nbTotal > 1;
+			return locales.rowText(this.rowText, plural);
 		}
 	}
 </script>

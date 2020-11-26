@@ -19,7 +19,7 @@
 					search-label="Rechercher"
 					create-btn-label="Ajouter"
 					show-create-btn
-					row-text="fichiers"
+					row-text="fichier"
 					:nb-total="items.length"
 					:nb-filtered="filteredItems.length"
 					@search="search = $event"
