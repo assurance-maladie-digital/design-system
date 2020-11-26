@@ -1,8 +1,6 @@
 // Vue CLI configuration
 // see https://cli.vuejs.org/guide/ for help
 
-process.env.VUE_APP_VERSION = require('./package.json').version;
-
 const componentMap = {
 	// Elements
 	CopyBtn: 'elements',
