@@ -12,7 +12,7 @@
 
 - 🐛 **Corrections de bugs**
   - **config:** Correction de la variable d'environnement `VUE_APP_VERSION` déclarée dans `vueDotLoader` ([#750](https://github.com/assurance-maladie-digital/design-system/pull/750)) ([d265dac](https://github.com/assurance-maladie-digital/design-system/commit/d265dacf0386e0b213da216818873a945d9e75b1))
-  - **template:** Correction de la variable `maintenance` non définie dans `AppHeader` ([#751](https://github.com/assurance-maladie-digital/design-system/pull/751))
+  - **template:** Correction de la variable `maintenance` non définie dans `AppHeader` ([#751](https://github.com/assurance-maladie-digital/design-system/pull/751)) ([8519cc9](https://github.com/assurance-maladie-digital/design-system/commit/8519cc915cff09c91b497de37806d1c5ad4c666c))
 
 - 🔥 **Suppressions**
   - **template:** Suppression d'un `margin-left` dupliqué dans le composant `AppHeader` ([#740](https://github.com/assurance-maladie-digital/design-system/pull/740)) ([0b2931a](https://github.com/assurance-maladie-digital/design-system/commit/0b2931af250119a37c96086d623bec2e50655e2d))
@@ -32,6 +32,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Remplacement de Travis CI par CircleCI ([#749](https://github.com/assurance-maladie-digital/design-system/pull/749)) ([d55d994](https://github.com/assurance-maladie-digital/design-system/commit/d55d99476f660a5608da42891053fe079083b2db))
+  - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#752](https://github.com/assurance-maladie-digital/design-system/pull/752))
 
 - 📝 **Documentation**
   - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720)) ([5f94ff5](https://github.com/assurance-maladie-digital/design-system/commit/5f94ff5ac4efd685a332135a64c54c9b9c0c882c))
