@@ -6,8 +6,8 @@ export const config = {
 		validateOnBlur: true
 	},
 	menu: {
-		closeOnContentClick: false,
 		minWidth: '290px',
+		closeOnContentClick: false,
 		contentClass: 'vd-date-picker-menu'
 	},
 	btn: {
