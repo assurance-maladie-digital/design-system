@@ -67,7 +67,7 @@ jobs:
             CIRCLE_NODE_TOTAL: '4'
 
 workflows:
-  lint-test_build:
+  lint_test_build:
     jobs:
       - install
       - lint:
