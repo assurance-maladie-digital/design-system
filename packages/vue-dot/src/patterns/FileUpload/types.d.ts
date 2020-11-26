@@ -2,11 +2,11 @@ import { ErrorCodes } from './errorCodes';
 
 export interface ErrorEvent {
 	file: File | DataTransferItemList;
-	code: string;
+	code: ErrorCodes;
 }
 
 export type ErrorCodesType = {
-	[K in ErrorCodes]: string;
+	[key: string]: string;
 };
 
 export interface HTMLInputEvent extends Event {

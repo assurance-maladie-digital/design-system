@@ -24,9 +24,9 @@
 		</VAppBar>
 
 		<VMain>
-			<FormFieldEx />
-
 			<FormBuilderEx />
+
+			<FormFieldEx />
 
 			<FormFieldListEx />
 		</VMain>
