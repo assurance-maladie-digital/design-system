@@ -8,7 +8,10 @@
   - **FileUpload:** Correction du type `ErrorCodeType` et de l'interface `ErrorEvent` ([#738](https://github.com/assurance-maladie-digital/design-system/pull/738)) ([d00088f](https://github.com/assurance-maladie-digital/design-system/commit/d00088f5a2584b8ae2dcc6d1464f76e47f5b4f19))
   - **peerDependencies:** Correction d'une dépendance `@cnamts/design-tokens` manquante ([#739](https://github.com/assurance-maladie-digital/design-system/pull/739)) ([bab2654](https://github.com/assurance-maladie-digital/design-system/commit/bab26549758ef8dd93494e02fd406a9e2b0b7c56))
   - **PaginatedTable:** Correction de l'événement `update:options` émis deux fois ([#766](https://github.com/assurance-maladie-digital/design-system/pull/766)) ([6484e72](https://github.com/assurance-maladie-digital/design-system/commit/6484e72a6d665f773264db83e677533ff5fcb403))
-  - **rules:** Correction des messages d'erreur des règles de validation `notAfterToday` et `notBeforeToday` ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767))
+  - **rules:** Correction des messages d'erreur des règles de validation `notAfterToday` et `notBeforeToday` ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([6c1f24a](https://github.com/assurance-maladie-digital/design-system/commit/6c1f24acf453dac9018b5ed839dab9dad8a3c4fb))
+
+- ♿️ **Accessibilité**
+  - **HeaderLoading:** Ajout des attributs ARIA ([#427](https://github.com/assurance-maladie-digital/design-system/pull/427))
 
 ### Vue Dash
 
@@ -211,6 +214,14 @@ Vue.use(InputFacade);
 -Vue.use(VueDot);
 ```
 
+Si vous utilisez la directive `v-debounce`, vous devez l'importer directement :
+
+```diff
++import { debounce } from '@cnamts/vue-dot/src/directives/debounce';
+
++Vue.directive('debounce', debounce);
+```
+
 #### Mettre à jour les variables globales
 
 Il est maintenant recommandé de définir les variables globales en utilisant l'objet `window` afin d'être plus explicite et d'améliorer la maintenabilité des applications, nous vous recommandons de mettre à jour vos applications en suivant les modifications de la Pull Request [#717](https://github.com/assurance-maladie-digital/design-system/pull/717).
@@ -226,7 +237,7 @@ Pour mettre à jour, vous devez supprimer le fichier `tslint.json`, et nous vous
 Nous vous conseillons de mettre à jour Jest de la `v24` à la `v26`, pour cela vous devez ajouter le champ `resolutions` dans votre fichier `package.json` :
 
 ```diff
-+resolutions: {
++"resolutions": {
 +	"jest": "^26.6.3",
 +	"ts-jest": "^26.4.4",
 +	"babel-jest": "^26.6.3"
@@ -236,7 +247,7 @@ Nous vous conseillons de mettre à jour Jest de la `v24` à la `v26`, pour cela 
 Ainsi que de mettre à jour Cypress de la `v3` à la `v5`, pour cela vous devez mettre à jour `@vue/cli-plugin-e2e-cypress` à la `v4.5.9`, puis ajouter `cypress` dans le champ `resolutions` :
 
 ```diff
-resolutions: {
+"resolutions": {
 	"jest": "^26.6.3",
 	"ts-jest": "^26.4.4",
 	"babel-jest": "^26.6.3",

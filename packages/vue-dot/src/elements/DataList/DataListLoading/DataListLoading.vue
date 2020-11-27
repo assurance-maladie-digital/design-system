@@ -1,5 +1,10 @@
 <template>
-	<div class="vd-data-list-loading">
+	<div
+		role="alert"
+		aria-busy="true"
+		aria-live="polite"
+		class="vd-data-list-loading"
+	>
 		<HeaderLoading
 			v-if="heading"
 			height="1.5rem"
