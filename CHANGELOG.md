@@ -33,7 +33,7 @@
 - 🔧 **Configuration**
   - **ci:** Remplacement de Travis CI par CircleCI ([#749](https://github.com/assurance-maladie-digital/design-system/pull/749)) ([d55d994](https://github.com/assurance-maladie-digital/design-system/commit/d55d99476f660a5608da42891053fe079083b2db))
   - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#752](https://github.com/assurance-maladie-digital/design-system/pull/752)) ([1b6fe3b](https://github.com/assurance-maladie-digital/design-system/commit/1b6fe3b3f058b970b2700eaccb987834ccd6954e))
-  - **config:** Add engines to `package.json` ([#754](https://github.com/assurance-maladie-digital/design-system/pull/754))
+  - **config:** Add engines to `package.json` ([#754](https://github.com/assurance-maladie-digital/design-system/pull/754)) ([51752d3](https://github.com/assurance-maladie-digital/design-system/commit/51752d3661a1e290b16fbd930f5a0d5ba3684198))
 
 - 📝 **Documentation**
   - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720)) ([5f94ff5](https://github.com/assurance-maladie-digital/design-system/commit/5f94ff5ac4efd685a332135a64c54c9b9c0c882c))
@@ -53,6 +53,7 @@
   - **@types/node:** Mise à jour vers la `v12.19.7` ([#745](https://github.com/assurance-maladie-digital/design-system/pull/745)) ([fd9d165](https://github.com/assurance-maladie-digital/design-system/commit/fd9d165c349351111a604a722f857d4eabfc3e2c))
   - **vuex:** Mise à jour vers la `3.6.0` ([#747](https://github.com/assurance-maladie-digital/design-system/pull/747)) ([1ca4491](https://github.com/assurance-maladie-digital/design-system/commit/1ca44918ffacc2afd857fcfeee0f713ba54324f5))
   - **core-js:** Mise à jour vers la `v3.8.0` ([#748](https://github.com/assurance-maladie-digital/design-system/pull/748)) ([3d61261](https://github.com/assurance-maladie-digital/design-system/commit/3d61261f20add9c22e1722fc24dd94c28ef3ee06))
+  - **babel-loader:** Mise à jour vers la `v8.2.2` ([#755](https://github.com/assurance-maladie-digital/design-system/pull/755))
 
 ## v2.0.0-beta.3
 
