@@ -11,7 +11,7 @@
   - **rules:** Correction des messages d'erreur des règles de validation `notAfterToday` et `notBeforeToday` ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([6c1f24a](https://github.com/assurance-maladie-digital/design-system/commit/6c1f24acf453dac9018b5ed839dab9dad8a3c4fb))
 
 - ♿️ **Accessibilité**
-  - **HeaderLoading:** Ajout des attributs ARIA ([#427](https://github.com/assurance-maladie-digital/design-system/pull/427)) ([2db6606](https://github.com/assurance-maladie-digital/design-system/commit/2db660648e1e2565c0efe1f59a95c9d3198ca5a5))
+  - **HeaderLoading:** Ajout des attributs ARIA ([#758](https://github.com/assurance-maladie-digital/design-system/pull/758)) ([2db6606](https://github.com/assurance-maladie-digital/design-system/commit/2db660648e1e2565c0efe1f59a95c9d3198ca5a5))
 
 ### Vue Dash
 
@@ -29,7 +29,10 @@
 
 - 🐛 **Corrections de bugs**
   - **peerDependencies:** Correction des intervalles de versions des dépendances ([#721](https://github.com/assurance-maladie-digital/design-system/pull/721)) ([951f21a](https://github.com/assurance-maladie-digital/design-system/commit/951f21ae9e6ad935a5fdf92a83d283a82769a526))
-  - **ChoiceButtonField:** Correction de la largeur du champ avec la prop `inline` ([#758]9https://github.com/assurance-maladie-digital/design-system/pull/758)9
+  - **ChoiceButtonField:** Correction de la largeur du champ avec la prop `inline` ([#759]https://github.com/assurance-maladie-digital/design-system/pull/759) ([534a729](https://github.com/assurance-maladie-digital/design-system/commit/534a7294b39ea0ddfc26dcf4da023d576766c9f2))
+
+- ♻️ **Refactoring**
+  - **ChoiceField:** Utilisation d'un getter pour `isOtherActive` ([#760](https://github.com/assurance-maladie-digital/design-system/pull/760))
 
 - 🚨 **Lint**
   - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
