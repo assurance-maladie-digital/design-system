@@ -54,4 +54,4 @@ cd design-system
 yarn
 ```
 
-Une fois l'installation des dépendances effectuée, vous êtes prêts à développer !
+Une fois l'installation des dépendances effectuée, vous êtes prêt à développer !
