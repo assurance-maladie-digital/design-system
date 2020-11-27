@@ -86,11 +86,6 @@
 			}
 		];
 
-		/** Fetch data when rendered */
-		mounted() {
-			this.fetchData();
-		}
-
 		fetchData(): void {
 			this.getDataFromApi()
 				.then((value) => {
