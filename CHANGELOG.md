@@ -22,6 +22,9 @@
 - 🔥 **Suppressions**
   - **template:** Suppression d'un `margin-left` dupliqué dans le composant `AppHeader` ([#740](https://github.com/assurance-maladie-digital/design-system/pull/740)) ([0b2931a](https://github.com/assurance-maladie-digital/design-system/commit/0b2931af250119a37c96086d623bec2e50655e2d))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances et de Cypress vers la `v6` ([#761](https://github.com/assurance-maladie-digital/design-system/pull/761))
+
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
@@ -32,7 +35,7 @@
   - **ChoiceButtonField:** Correction de la largeur du champ avec la prop `inline` ([#759]https://github.com/assurance-maladie-digital/design-system/pull/759) ([534a729](https://github.com/assurance-maladie-digital/design-system/commit/534a7294b39ea0ddfc26dcf4da023d576766c9f2))
 
 - ♻️ **Refactoring**
-  - **ChoiceField:** Utilisation d'un getter pour `isOtherActive` ([#760](https://github.com/assurance-maladie-digital/design-system/pull/760))
+  - **ChoiceField:** Utilisation d'un getter pour `isOtherActive` ([#760](https://github.com/assurance-maladie-digital/design-system/pull/760)) ([08064c7](https://github.com/assurance-maladie-digital/design-system/commit/08064c78cad819a605c45b9d5504e37fc12a4fc7))
 
 - 🚨 **Lint**
   - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
