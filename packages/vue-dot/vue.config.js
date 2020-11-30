@@ -7,6 +7,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 // else, we're building the playground
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
 const LIMIT_SIZE = 450000;
+const CI = Boolean(process.env.CI);
+const CIRCLE_NODE_TOTAL = parseFloat(process.env.CIRCLE_NODE_TOTAL);
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
@@ -14,6 +16,7 @@ const LIB_MODE_CONFIG = {
 	// No source map on library mode, we don't need them
 	// because we're publishing the source
 	productionSourceMap: false,
+	parallel: CI ? CIRCLE_NODE_TOTAL : undefined,
 	css: {
 		// Extract CSS to separate file for SSR
 		// (in SSR mode without a separate file, an error is thrown

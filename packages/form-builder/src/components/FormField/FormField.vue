@@ -1,7 +1,7 @@
 <template>
 	<VLayout
 		column
-		class="vd-form-field mb-1"
+		class="vd-form-field"
 	>
 		<h4
 			v-if="field.title"
@@ -26,22 +26,37 @@
 					</VBtn>
 				</template>
 
-				<span class="field-tooltip-text">{{ field.tooltip }}</span>
+				<span
+					class="field-tooltip-text"
+					v-text="field.tooltip"
+				/>
 			</VTooltip>
 		</h4>
 
 		<p
 			v-if="field.description"
 			:class="descriptionColor"
-			class="text-body-2"
+			class="text-body-2 mt-1"
 		>
 			{{ field.description }}
 		</p>
 
+		<!-- Render field -->
 		<component
-			:is="getFieldType()"
+			:is="fieldComponent"
+			v-if="isDefinedField"
 			:field="field"
-			@change="$emit('change', $event)"
+			@change="emitChangeEvent"
+		/>
+
+		<!-- Render custom field -->
+		<slot
+			v-else
+			:name="field.type"
+			v-bind="{
+				field,
+				emitChangeEvent
+			}"
 		/>
 	</VLayout>
 </template>
@@ -86,7 +101,7 @@
 		 *
 		 * @returns {string} The field type
 		 */
-		getFieldType(): string {
+		get fieldComponent(): string {
 			let fieldType: string = this.field.type;
 
 			// Handle subtypes that are not in type 'select'
@@ -96,6 +111,10 @@
 			}
 
 			return this.getField(fieldType);
+		}
+
+		get isDefinedField(): boolean {
+			return this.fieldExists(this.field.type);
 		}
 
 		/**
@@ -110,6 +129,15 @@
 			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
 
 			return color;
+		}
+
+		/**
+		 * Emit change event
+		 *
+		 * @param {Field} value The updated field
+		 */
+		emitChangeEvent(value: Field): void {
+			this.$emit('change', value);
 		}
 	}
 </script>
