@@ -17,15 +17,8 @@
 	width: 100%;
 }
 
-.no-max-width,
-.input-container {
+.no-max-width {
 	max-width: none;
-}
-
-@media only screen and (max-width: 428px) {
-	.input-container {
-		max-width: 100%;
-	}
 }
 
 .pointer {
@@ -33,7 +26,7 @@
 }
 
 // Custom styles for VDataTable
-.custom-table {
+.vd-custom-table {
 	border-top: thin solid rgba(0, 0, 0, .12);
 
 	thead {

@@ -6,7 +6,7 @@ import { registerDirectives } from './helpers/registerDirectives';
 import { registerAllComponents } from './registerAllComponents';
 
 // Import styles
-import './styles/styles.scss';
+import './styles/index.scss';
 
 import { VueDotPlugin } from '../types';
 
