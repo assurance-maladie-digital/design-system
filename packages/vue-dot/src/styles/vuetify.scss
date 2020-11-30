@@ -3,7 +3,8 @@
 // Import visually-hidden mixin
 @import 'vuetify/src/styles/tools/_display.sass';
 
-// Reset max-width for some elements
+// Reset max-width for some elements to make them work properly
+// (due to `max-width: 100%` applied to `*` in base.css)
 .v-ripple__container,
 .v-ripple__container *,
 .v-tabs__container,
@@ -15,7 +16,26 @@
 	max-width: none;
 }
 
-// Fix color contrast for improved accessibility
+// Change font
+.v-application {
+	.text-h1,
+	.text-h2,
+	.text-h3,
+	.text-h4,
+	.text-h5,
+	.text-h6,
+	.text-subtitle-1,
+	.text-subtitle-2,
+	.text-body-1,
+	.text-body-2,
+	.text-caption,
+	.text-overline {
+		font-family: 'Open Sans', sans-serif !important;
+	}
+}
+
+// Fix color contrast of disabled elements to respect
+// contrast-ratios for accessibility
 .theme--light {
 	&.v-label--is-disabled
 	&.v-input--is-disabled .v-label,
@@ -41,45 +61,43 @@
 	color: #717171 !important;
 }
 
-// Fix font size
+// Fix font size (default for these elements is 16px)
 .v-input,
 .v-label {
 	font-size: 1rem !important;
 }
 
-.v-application {
-	.text-h1,
-	.text-h2,
-	.text-h3,
-	.text-h4,
-	.text-h5,
-	.text-h6,
-	.text-subtitle-1,
-	.text-subtitle-2,
-	.text-body-1,
-	.text-body-2,
-	.text-caption,
-	.text-overline {
-		font-family: 'Open Sans', sans-serif !important;
-	}
-}
-
-// Fix DataTable pagination on IE
+// Fix VDataTable pagination on IE
 .v-data-footer__select {
+	// Vuetify applies `flex: 0 0 0` which doesn't work properly on IE 11
+	// Disabling `flex` fixes it while keeping the desired behavior
 	flex: none;
 
+	// The selection is shrunk because `flex: 0 1 0` is applied on `.v-select`
+	// and `flex: 1 1` on `.v-select__selections`
+	// Setting the values to `0 1 auto` and `1 1 auto` fixes it, but there is a
+	// glitch while the input is focused, the width isn't calculated properly
 	.v-select,
 	.v-select__selections {
+		// Not using flex here fixes these issues
 		flex: none;
 		display: block;
 	}
 
+	// Since `.v-select` is now `display: block`, the input is displayed
+	// and takes a lot of space, hide it with visually-hidden
+	// to keep it accessible by screen readers
 	input {
 		@include visually-hidden;
 	}
 }
 
-.v-list-item__content,
-.v-list-item__content > * {
-	flex: 1 0 auto;
+// Fix VDataTable pagination dropdown on IE only
+// (we cannot target this case specifically)
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	// On IE the dropdown list is shrunk, set a min-width has a workaround
+	// (only on IE to avoid side effects)
+	.v-list-item__content {
+		min-width: 38px;
+	}
 }
