@@ -1,5 +1,17 @@
 ## Non publié
 
+### Interne
+
+- ⬆️ **Dépendances**
+  - - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.0` ([#763](https://github.com/assurance-maladie-digital/design-system/pull/763)) ([4e185ac](https://github.com/assurance-maladie-digital/design-system/commit/4e185ac9be717fd72568a3ccb318954ce385ec16))
+  - **@types/node:** Mise à jour vers la `v12.19.8` ([#764](https://github.com/assurance-maladie-digital/design-system/pull/764))
+
+## v2.0.0-beta.4
+
+**Version publiée le 30/11/2020.**
+
+Cette version comporte l'ajout des champs personnalisés sur le FormBuilder ainsi que plusieurs correctifs sur Vue Dot, Vue Dash et le FormBuilder.
+
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
@@ -22,6 +34,9 @@
 - 🔥 **Suppressions**
   - **template:** Suppression d'un `margin-left` dupliqué dans le composant `AppHeader` ([#740](https://github.com/assurance-maladie-digital/design-system/pull/740)) ([0b2931a](https://github.com/assurance-maladie-digital/design-system/commit/0b2931af250119a37c96086d623bec2e50655e2d))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances et de Cypress vers la `v6` ([#761](https://github.com/assurance-maladie-digital/design-system/pull/761)) ([e7ad211](https://github.com/assurance-maladie-digital/design-system/commit/e7ad21116140a9be866ea6affd73bc62890668d3))
+
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
@@ -32,7 +47,7 @@
   - **ChoiceButtonField:** Correction de la largeur du champ avec la prop `inline` ([#759]https://github.com/assurance-maladie-digital/design-system/pull/759) ([534a729](https://github.com/assurance-maladie-digital/design-system/commit/534a7294b39ea0ddfc26dcf4da023d576766c9f2))
 
 - ♻️ **Refactoring**
-  - **ChoiceField:** Utilisation d'un getter pour `isOtherActive` ([#760](https://github.com/assurance-maladie-digital/design-system/pull/760))
+  - **ChoiceField:** Utilisation d'un getter pour `isOtherActive` ([#760](https://github.com/assurance-maladie-digital/design-system/pull/760)) ([08064c7](https://github.com/assurance-maladie-digital/design-system/commit/08064c78cad819a605c45b9d5504e37fc12a4fc7))
 
 - 🚨 **Lint**
   - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
@@ -49,6 +64,7 @@
   - **pull-requests:** Mise à jour du template ([#728](https://github.com/assurance-maladie-digital/design-system/pull/728)) ([847dcd1](https://github.com/assurance-maladie-digital/design-system/commit/847dcd115aba8cbab0ac5b64c73458b81aae628b))
   - **issues:** Ajout d'un template pour les rapports de bugs ([#713](https://github.com/assurance-maladie-digital/design-system/pull/713)) ([ac7ae4a](https://github.com/assurance-maladie-digital/design-system/commit/ac7ae4ad566538122281e44e9c3efe0187205f25))
   - **issues:** Ajout d'un template pour les demandes de nouvelles fonctionnalités ([#712](https://github.com/assurance-maladie-digital/design-system/pull/712)) ([db9cacd](https://github.com/assurance-maladie-digital/design-system/commit/db9cacda9a0123f03b6a822ac85f304067e89201))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#762](https://github.com/assurance-maladie-digital/design-system/pull/762)) ([722445f](https://github.com/assurance-maladie-digital/design-system/commit/722445fd2eb6ed5d6e3649ccbf14f257569cb633))
 
 - ⬆️ **Dépendances**
   - **copy-webpack-plugin:** Mise à jour vers la `v6.3.2` ([#722](https://github.com/assurance-maladie-digital/design-system/pull/722)) ([9591a89](https://github.com/assurance-maladie-digital/design-system/commit/9591a899e29386117b4cc0983e11adddc39b2a82))
@@ -162,7 +178,7 @@ Les props `cta` et `title` ont été renommées en `btn-text` et `page-title`, e
 +	page-title="Page non trouvée"
 	message="Il semblerait qu'il y ait eu une erreur !"
 	code="404"
--	cta="Retour à l'acceuil"
+-	cta="Retour à l'accueil"
 >
 ```
 
@@ -755,7 +771,7 @@ Pour la compatibilité des navigateurs comme IE 11, vous devez également ajoute
 
 Si vous n'utilisez pas directement la directive `v-mask`, c'est tout ce que vous avez à faire !
 
-Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. Vous pourriez configurer `vue-input-facade` pour utiliser `v-mask` (voir [Migrating existing projects](https://github.com/RonaldJerez/vue-input-facade#migrating-existing-projects)), mais nous vous conseillons de le renommer maintenant pour éviter de créer de la dette technique.
+Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. Vous pouvez configurer `vue-input-facade` pour utiliser la directive `v-mask` (voir [Migrating existing projects](https://github.com/RonaldJerez/vue-input-facade#migrating-existing-projects)), mais nous vous conseillons de la renommer maintenant pour éviter de créer de la dette technique.
 
 ### Renommer `showWeekEnds` sur le `DatePicker`
 
