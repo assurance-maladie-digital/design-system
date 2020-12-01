@@ -14,7 +14,7 @@
 			:options.sync="options"
 			:server-items-length="totalDesserts"
 			:loading="loading"
-			class="vd-table elevation-1"
+			class="w-100 elevation-1"
 			@update:options="fetchData"
 		/>
 	</DocSection>
@@ -245,10 +245,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	// Make table take all width
-	.vd-table {
-		width: 100%;
-	}
-</style>
