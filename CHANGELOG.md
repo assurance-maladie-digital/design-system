@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.0` ([#763](https://github.com/assurance-maladie-digital/design-system/pull/763))
+
 ## v2.0.0-beta.4
 
 **Version publiée le 30/11/2020.**
@@ -56,7 +63,7 @@ Cette version comporte l'ajout des champs personnalisés sur le FormBuilder ains
   - **pull-requests:** Mise à jour du template ([#728](https://github.com/assurance-maladie-digital/design-system/pull/728)) ([847dcd1](https://github.com/assurance-maladie-digital/design-system/commit/847dcd115aba8cbab0ac5b64c73458b81aae628b))
   - **issues:** Ajout d'un template pour les rapports de bugs ([#713](https://github.com/assurance-maladie-digital/design-system/pull/713)) ([ac7ae4a](https://github.com/assurance-maladie-digital/design-system/commit/ac7ae4ad566538122281e44e9c3efe0187205f25))
   - **issues:** Ajout d'un template pour les demandes de nouvelles fonctionnalités ([#712](https://github.com/assurance-maladie-digital/design-system/pull/712)) ([db9cacd](https://github.com/assurance-maladie-digital/design-system/commit/db9cacda9a0123f03b6a822ac85f304067e89201))
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#762](https://github.com/assurance-maladie-digital/design-system/pull/762))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#762](https://github.com/assurance-maladie-digital/design-system/pull/762)) ([722445f](https://github.com/assurance-maladie-digital/design-system/commit/722445fd2eb6ed5d6e3649ccbf14f257569cb633))
 
 - ⬆️ **Dépendances**
   - **copy-webpack-plugin:** Mise à jour vers la `v6.3.2` ([#722](https://github.com/assurance-maladie-digital/design-system/pull/722)) ([9591a89](https://github.com/assurance-maladie-digital/design-system/commit/9591a899e29386117b4cc0983e11adddc39b2a82))
