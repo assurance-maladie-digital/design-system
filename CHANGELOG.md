@@ -3,13 +3,31 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **styles:** Ajout des styles `vuetify.scss` et `utilities.scss` ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625))
+  - **styles:** Ajout des styles communs `vuetify.scss` et `utilities.scss` ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625))
 
 ### Interne
 
 - ⬆️ **Dépendances**
   - - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.0` ([#763](https://github.com/assurance-maladie-digital/design-system/pull/763)) ([4e185ac](https://github.com/assurance-maladie-digital/design-system/commit/4e185ac9be717fd72568a3ccb318954ce385ec16))
   - **@types/node:** Mise à jour vers la `v12.19.8` ([#764](https://github.com/assurance-maladie-digital/design-system/pull/764)) ([7542f54](https://github.com/assurance-maladie-digital/design-system/commit/7542f54e6076f56ec1c84be7e028327de26e5865))
+
+### 📚 Guide de migration
+
+#### Utiliser les styles de Vue Dot
+
+Les styles communs aux applications tels que que les ajustements de Vuetify et les classes utilitaires les plus utilisées ont été ajoutés dans Vue Dot, vous pouvez donc supprimer ces styles de vos projets.
+
+Certaines classes ont été renommées par convention :
+
+```diff
+-class="custom-table"
++class="vd-custom-table"
+```
+
+```diff
+-class="no-max-width"
++class="max-width-none"
+```
 
 ## v2.0.0-beta.4
 
@@ -62,7 +80,7 @@ Cette version comporte l'ajout des champs personnalisés sur le FormBuilder ains
 - 🔧 **Configuration**
   - **ci:** Remplacement de Travis CI par CircleCI ([#749](https://github.com/assurance-maladie-digital/design-system/pull/749)) ([d55d994](https://github.com/assurance-maladie-digital/design-system/commit/d55d99476f660a5608da42891053fe079083b2db))
   - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#752](https://github.com/assurance-maladie-digital/design-system/pull/752)) ([1b6fe3b](https://github.com/assurance-maladie-digital/design-system/commit/1b6fe3b3f058b970b2700eaccb987834ccd6954e))
-  - **config:** Add engines to `package.json` ([#754](https://github.com/assurance-maladie-digital/design-system/pull/754)) ([51752d3](https://github.com/assurance-maladie-digital/design-system/commit/51752d3661a1e290b16fbd930f5a0d5ba3684198))
+  - **config:** Ajout du champ `engines` dans le fichier `package.json` ([#754](https://github.com/assurance-maladie-digital/design-system/pull/754)) ([51752d3](https://github.com/assurance-maladie-digital/design-system/commit/51752d3661a1e290b16fbd930f5a0d5ba3684198))
 
 - 📝 **Documentation**
   - **CHANGELOG:** Correction du fichier CHANGELOG ([#720](https://github.com/assurance-maladie-digital/design-system/pull/720)) ([5f94ff5](https://github.com/assurance-maladie-digital/design-system/commit/5f94ff5ac4efd685a332135a64c54c9b9c0c882c))

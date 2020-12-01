@@ -89,6 +89,7 @@
 }
 
 // Fix VDataTable pagination on IE
+// @see https://github.com/vuetifyjs/vuetify/issues/9185
 .v-data-footer__select {
 	// Vuetify applies `flex: 0 0 0` which doesn't work properly on IE 11
 	// Disabling `flex` fixes it while keeping the desired behavior

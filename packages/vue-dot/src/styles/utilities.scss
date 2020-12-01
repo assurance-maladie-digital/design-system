@@ -13,47 +13,16 @@
 	opacity: 0;
 }
 
-.w-100 {
-	width: 100%;
-}
-
-.no-max-width {
-	max-width: none;
-}
-
-.pointer {
-	cursor: pointer;
-}
-
-// Custom styles for VDataTable
-.vd-custom-table {
-	border-top: thin solid rgba(0, 0, 0, .12);
-
-	thead {
-		background: #f8f8f8;
+.v-application {
+	.w-100 {
+		width: 100%;
 	}
 
-	table thead tr {
-		white-space: nowrap;
+	.max-width-none {
+		max-width: none;
 	}
 
-	&.row-clickable table tbody tr {
+	.pointer {
 		cursor: pointer;
-	}
-​
-	&.fixed-min-height {
-		.v-data-table__wrapper {
-			min-height: 540px;
-		}
-	}
-​
-	&.no-mobile-header {
-		.v-data-table-header-mobile {
-			display: none;
-		}
-​
-		table {
-			border-top: 2px solid #eee;
-		}
 	}
 }
