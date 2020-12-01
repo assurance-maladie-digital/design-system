@@ -1,10 +1,15 @@
 ## Non publié
 
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **styles:** Ajout des styles `vuetify.scss` et `utilities.scss` ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625))
+
 ### Interne
 
 - ⬆️ **Dépendances**
   - - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.0` ([#763](https://github.com/assurance-maladie-digital/design-system/pull/763)) ([4e185ac](https://github.com/assurance-maladie-digital/design-system/commit/4e185ac9be717fd72568a3ccb318954ce385ec16))
-  - **@types/node:** Mise à jour vers la `v12.19.8` ([#764](https://github.com/assurance-maladie-digital/design-system/pull/764))
+  - **@types/node:** Mise à jour vers la `v12.19.8` ([#764](https://github.com/assurance-maladie-digital/design-system/pull/764)) ([7542f54](https://github.com/assurance-maladie-digital/design-system/commit/7542f54e6076f56ec1c84be7e028327de26e5865))
 
 ## v2.0.0-beta.4
 
@@ -288,7 +293,6 @@ Cette version comporte le nouveau composant `ErrorPage` ainsi que des correction
 
 - ♻️ **Refactoring**
   - **LangBtn:** Refonte du composant ([#621](https://github.com/assurance-maladie-digital/design-system/pull/621)) ([e795fbb](https://github.com/assurance-maladie-digital/design-system/commit/e795fbb178f2293e38cb5ed103e49fb25ad26f7f))
-  - **Style:** Ajout des styles commun ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625))
 
 ### Vue Dash
 
