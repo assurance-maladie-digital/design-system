@@ -34,11 +34,6 @@
 	}
 }
 
-// Fix font-weight for tabs (default 500)
-.v-tab {
-	font-weight: 600;
-}
-
 // Fix color contrast of disabled elements to respect
 // contrast-ratios for accessibility
 .theme--light {
