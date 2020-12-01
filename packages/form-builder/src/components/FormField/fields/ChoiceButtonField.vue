@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-choice-button-field vd-form-input">
+	<div
+		class="vd-choice-button-field"
+		:class="{ 'vd-form-input': !isInline }"
+	>
 		<VBtnToggle
 			v-bind="options"
 			:value="choiceFieldValue"
@@ -91,7 +94,7 @@
 		}
 
 		get isInline(): boolean | null {
-			return this.options?.inline as unknown as boolean | null;
+			return this.options?.inline as boolean | null;
 		}
 
 		get showHint(): boolean {
