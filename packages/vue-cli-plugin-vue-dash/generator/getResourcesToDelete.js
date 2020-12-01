@@ -1,10 +1,10 @@
 /**
- * Get the list of ressources to delete
+ * Get the ressources to delete
  *
- * @param {options} options Options, used in conditions
- * @returns {array}
-*/
-function getRessourcesToDelete(options) {
+ * @param {options} options The plugin options
+ * @returns {Array} The ressources to delete
+ */
+function getResourcesToDelete(options) {
 	return [
 		{
 			type: 'file',
@@ -42,6 +42,14 @@ function getRessourcesToDelete(options) {
 		},
 		{
 			type: 'file',
+			path: 'src/router/index.js'
+		},
+		{
+			type: 'file',
+			path: 'src/store/index.js'
+		},
+		{
+			type: 'file',
 			path: 'cypress.json',
 			condition: !options.cypress
 		},
@@ -54,8 +62,13 @@ function getRessourcesToDelete(options) {
 			type: 'folder',
 			path: 'public/js/lib',
 			condition: !options.matomo
+		},
+		{
+			type: 'file',
+			path: 'src/plugins/form-builder.ts',
+			condition: !options.formBuilder
 		}
 	];
 }
 
-module.exports = getRessourcesToDelete;
+module.exports = { getResourcesToDelete };

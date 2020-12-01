@@ -6,13 +6,11 @@ import { mdiAlert as errorIcon } from '@mdi/js';
 <% if (i18n) { %>
 import common from '@/translations/fr/common';
 <% } %>
-/** API_URL env var */
-declare const API_URL: string;
 
 /** The axios instance */
 const instance = axios.create({
 	withCredentials: false,
-	baseURL: API_URL,
+	baseURL: window.API_URL,
 	headers: {
 		'Accept': 'application/json',
 		'Content-Type': 'application/json'
@@ -26,7 +24,7 @@ const DEFAULT_ERROR_MESSAGE = <% if (i18n) { %>common.defaultErrorMessage<% } el
 instance.interceptors.response.use(undefined, (error: AxiosError) => {
 	let errorMessage: string;
 
-	// If we don't have a error or a 500 HTTP Code
+	// If we don't have an error or we have a 500 HTTP Code
 	if (!error.response || error.response.status >= 500) {
 		// Use the default message
 		errorMessage = DEFAULT_ERROR_MESSAGE;

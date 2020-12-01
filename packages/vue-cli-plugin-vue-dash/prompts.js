@@ -25,9 +25,21 @@ const prompts = [
 		default: true
 	},
 	{
+		name: 'cypress',
+		type: 'confirm',
+		message: 'Utiliser cypress pour les tests d\'interface',
+		default: true
+	},
+	{
 		name: 'matomo',
 		type: 'confirm',
 		message: 'Installer Matomo (pour les analyses d\'audience)',
+		default: false
+	},
+	{
+		name: 'formBuilder',
+		type: 'confirm',
+		message: 'Installer le FormBuilder',
 		default: false
 	}
 ];

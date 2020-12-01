@@ -2,7 +2,7 @@
 	<div>
 		<!-- The choice field component -->
 		<component
-			:is="getField()"
+			:is="choiceField"
 			:value="choiceValue.value"
 			:items="field.items"
 			:options="fieldOptions"
@@ -28,7 +28,7 @@
 						ref="otherFieldRef"
 						v-bind="otherField.fieldOptions"
 						:value="otherFieldValue"
-						:disabled="!isOtherActive"
+						:disabled="!otherActive"
 						:rows="1"
 						class="vd-form-input"
 						auto-grow
@@ -48,7 +48,7 @@
 				color="accent"
 				dense
 				outlined
-				@input="otherInput"
+				@input="setOtherValue"
 				@change="otherUpdated"
 			/>
 		</template>
@@ -90,9 +90,6 @@
 				handler(value: ChoiceValue) {
 					this.choiceValue = value || this.choiceValue;
 
-					// Set the active status
-					this.isOtherActive = this.getOtherActive();
-
 					/**
 					 * Set the other local value if the other value is not null
 					 * to keep the local value up for the user
@@ -116,7 +113,6 @@
 			value: null
 		};
 
-		isOtherActive = false;
 		otherFieldValue: OtherFieldValue = null;
 
 		/** List all choice field components and their corresponding keys */
@@ -169,7 +165,7 @@
 		 *
 		 * @returns {boolean} The other active status
 		 */
-		getOtherActive(): boolean {
+		get otherActive(): boolean {
 			const choiceFieldValue = this.choiceValue?.value;
 			const selectedChoice = this.field.other?.selectedChoice;
 
@@ -183,11 +179,11 @@
 		}
 
 		/**
-		 * Returns the field that correspond to the type in metadata or select By default
+		 * Returns the field that correspond to the type in metadata or select by default
 		 *
 		 * @returns {string} The choice field component name
 		 */
-		getField(): string {
+		get choiceField(): string {
 			const metadataType = this.field.fieldOptions?.type as string || undefined;
 
 			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
@@ -205,9 +201,7 @@
 				this.otherFieldValue = null;
 			}
 
-			this.isOtherActive = this.getOtherActive();
-
-			if (this.isOtherActive) {
+			if (this.otherActive) {
 				// Focus the other field when activated
 				this.$nextTick(() => this.$refs.otherFieldRef.focus());
 
@@ -220,10 +214,10 @@
 			this.emitChangeEvent(this.choiceValue);
 		}
 
-		otherInput(otherFieldValue: OtherFieldValue): void {
+		setOtherValue(otherFieldValue: OtherFieldValue): void {
 			this.otherFieldValue = otherFieldValue?.length ? otherFieldValue : null;
 
-			if (this.otherFieldValue) {
+			if (this.otherFieldValue && !this.field.multiple) {
 				this.choiceValue.value = null;
 			}
 		}

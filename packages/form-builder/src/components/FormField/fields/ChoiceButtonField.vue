@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-choice-button-field vd-form-input">
+	<div
+		class="vd-choice-button-field"
+		:class="{ 'vd-form-input': !isInline }"
+	>
 		<VBtnToggle
 			v-bind="options"
 			:value="choiceFieldValue"
@@ -13,9 +16,10 @@
 				:value="item.value"
 				:outlined="!isSelected(item.value)"
 				elevation="0"
-				height="40"
+				height="auto"
+				min-height="40"
 				active-class="white--text"
-				class="text-none"
+				class="text-none text-wrap py-2 text-left"
 				color="accent"
 				@click="toggleItem(item)"
 			>
@@ -27,17 +31,28 @@
 
 				<VIcon
 					:style="getIconStyle(item)"
-					class="ml-1 white--text"
+					class="ml-1 white--text flex-shrink-0"
 				>
 					{{ checkIcon }}
 				</VIcon>
 			</VBtn>
 		</VBtnToggle>
 
+		<template v-if="errorMessages">
+			<p
+				v-for="(errorMessage, index) in errorMessages"
+				:key="index"
+				class="px-3 mb-0 v-messages error--text"
+				:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
+			>
+				{{ errorMessage }}
+			</p>
+		</template>
+
 		<p
-			v-if="showHint"
+			v-else-if="showHint"
 			class="px-3 mb-0 v-messages"
-			:class="this.$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
+			:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
 			{{ options.hint }}
 		</p>
@@ -79,11 +94,25 @@
 		}
 
 		get isInline(): boolean | null {
-			return this.options?.inline as unknown as boolean | null;
+			return this.options?.inline as boolean | null;
 		}
 
 		get showHint(): boolean {
 			return Boolean(this.options?.hint);
+		}
+
+		get errorMessages(): string[] | null {
+			const errorMessages = this.options?.errorMessages;
+
+			if (typeof errorMessages === 'string') {
+				return [errorMessages];
+			}
+
+			if (Array.isArray(errorMessages) && errorMessages.length) {
+				return errorMessages;
+			}
+
+			return null;
 		}
 
 		getIconStyle(item: FieldItem): IndexedObject {

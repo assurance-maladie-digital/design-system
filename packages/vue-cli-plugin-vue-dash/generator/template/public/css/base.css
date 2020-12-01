@@ -34,3 +34,8 @@ body {
 	flex-direction: column;
 	align-items: center;
 }
+
+/* Apply default transition to links */
+a {
+	transition: .25s;
+}

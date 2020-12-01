@@ -1,9 +1,13 @@
-module.exports = {
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
 	moduleFileExtensions: ['ts', 'js'],
 	transform: {
 		'^.+\\.ts$': require.resolve('ts-jest')
 	},
-	transformIgnorePatterns: ['/node_modules/'],
+	transformIgnorePatterns: [
+		'/node_modules/'
+	],
 	testMatch: [
 		'<rootDir>/src/**/tests/*.spec.ts',
 		'<rootDir>/tests/**/*.spec.ts'
@@ -25,3 +29,5 @@ module.exports = {
 		'!**/*.d.ts'
 	]
 };
+
+export default config;

@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"target": "es5",
+		"lib": [
+			"es5",
+			"dom"
+		],
+		"types": [
+			"cypress",
+			"./types"
+		]
+	},
+	"include": [
+		"**/*.ts"
+	]
+}

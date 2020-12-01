@@ -38,8 +38,6 @@ export const questionForm: Form = {
 			questionPassword: {
 				type: 'text',
 				title: 'Question mot de passe ?',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
 				value: null,
 				fieldOptions: {
 					type: 'password',
@@ -50,7 +48,6 @@ export const questionForm: Form = {
 			questionNumber: {
 				type: 'number',
 				title: 'Question nombre ?',
-				description: 'Informations supplémentaires',
 				value: null,
 				fieldOptions: {
 					mask: '###-###',
@@ -60,8 +57,6 @@ export const questionForm: Form = {
 			questionTextarea: {
 				type: 'textarea',
 				title: 'Question longue type textarea',
-				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
 				value: null,
 				fieldOptions: {
 					outlined: true
@@ -70,7 +65,6 @@ export const questionForm: Form = {
 			questionDate: {
 				type: 'date',
 				title: 'Question',
-				description: 'Informations supplémentaires',
 				value: null,
 				fieldOptions: {
 					outlined: true,
@@ -82,7 +76,6 @@ export const questionForm: Form = {
 			questionPeriod: {
 				type: 'period',
 				title: 'Question période',
-				description: 'Informations supplémentaires',
 				value: null,
 				fieldOptions: {
 					from: {
@@ -102,7 +95,6 @@ export const questionForm: Form = {
 			questionSelect: {
 				type: 'select',
 				title: 'Question select',
-				description: 'Informations supplémentaires',
 				value: null,
 				items: defaultItems,
 				fieldOptions: {
@@ -117,7 +109,6 @@ export const questionForm: Form = {
 			questionSelectMultiple: {
 				type: 'select',
 				title: 'Question select multiple',
-				description: 'Informations supplémentaires',
 				value: null,
 				multiple: true,
 				items: defaultItems,
@@ -235,14 +226,35 @@ export const questionForm: Form = {
 					type: 'choiceButton'
 				}
 			},
+			questionChoiceButtonTextMultiLine: {
+				title: 'Question choix bouton plusieurs lignes',
+				type: 'select',
+				value: {
+					value: 1,
+					other: null
+				},
+				items: [
+					{
+						text: 'Texte qui permet de tester sur plusieurs lignes',
+						value: 1
+					},
+					{
+						text: 'Texte 2',
+						value: 2
+					}
+				],
+				fieldOptions: {
+					type: 'choiceButton'
+				}
+			},
 			questionChoiceOther: {
 				title: 'Question choix autre',
 				description: 'Informations supplémentaires',
 				multiple: true,
 				type: 'select',
 				value: {
-					value: null,
-					other: null
+					value: [0, 1],
+					other: 'Autre valeur'
 				},
 				items: [
 					{
@@ -317,6 +329,19 @@ export const questionForm: Form = {
 				},
 				fieldOptions: {
 					label: 'Classic field',
+					outlined: true
+				}
+			}
+		}
+	},
+	section4: {
+		title: 'Champs personnalisés',
+		questions: {
+			customQuestion: {
+				type: 'custom',
+				value: null,
+				fieldOptions: {
+					label: 'Question personnalisée',
 					outlined: true
 				}
 			}

@@ -5,6 +5,9 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import ErrorPage from '../';
+import PageCard from '../../../elements/PageCard';
+
+Vue.component('PageCard', PageCard);
 
 let wrapper: Wrapper<Vue>;
 
@@ -14,7 +17,7 @@ describe('ErrorPage', () => {
 		// Mount component
 		wrapper = mountComponent(ErrorPage, {
 			propsData: {
-				title: 'Error',
+				pageTitle: 'Error',
 				message: 'Error message'
 			}
 		});

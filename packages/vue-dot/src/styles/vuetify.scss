@@ -1,0 +1,125 @@
+// Override some Vuetify styles
+
+// Import visually-hidden mixin
+@import 'vuetify/src/styles/tools/_display.sass';
+
+// Reset max-width for some elements to make them work properly
+// (due to `max-width: 100%` applied to `*` in base.css)
+.v-ripple__container,
+.v-ripple__container *,
+.v-tabs__container,
+.v-input--selection-controls__ripple,
+.v-simple-checkbox svg,
+.v-slide-group__content,
+.v-slider__tick-label,
+.v-slider__thumb-container * {
+	max-width: none;
+}
+
+// Change font
+.v-application {
+	.text-h1,
+	.text-h2,
+	.text-h3,
+	.text-h4,
+	.text-h5,
+	.text-h6,
+	.text-subtitle-1,
+	.text-subtitle-2,
+	.text-body-1,
+	.text-body-2,
+	.text-caption,
+	.text-overline {
+		font-family: 'Open Sans', sans-serif !important;
+	}
+}
+
+// Fix font-weight for tabs (default 500)
+.v-tab {
+	font-weight: 600;
+}
+
+// Fix color contrast of disabled elements to respect
+// contrast-ratios for accessibility
+.theme--light {
+	&.v-label--is-disabled
+	&.v-input--is-disabled .v-label,
+	&.v-icon.v-icon--disabled,
+	&.v-list .v-list--disabled {
+		color: #767676 !important;
+	}
+
+	&.v-btn.v-btn--disabled {
+		color: #646464 !important;
+
+		.v-icon {
+			color: #949494 !important;
+		}
+	}
+
+	&.v-data-table .v-data-table__empty-wrapper {
+		color: #717171 !important;
+	}
+
+	// Fix tabs color (disabled and not active)
+	&.v-tabs > .v-tabs-bar {
+		.v-tab:not(.v-tab--active) {
+			&,
+			> .v-icon {
+				color: #505050;
+			}
+		}
+
+		.v-tab--disabled {
+			// Reset opacity (default 0.5)
+			opacity: 1;
+
+			&,
+			> .v-icon {
+				color: #767676 !important;
+			}
+		}
+	}
+}
+
+// Fix font size (default for these elements is 16px)
+.v-input,
+.v-label {
+	font-size: 1rem !important;
+}
+
+// Fix VDataTable pagination on IE
+// @see https://github.com/vuetifyjs/vuetify/issues/9185
+.v-data-footer__select {
+	// Vuetify applies `flex: 0 0 0` which doesn't work properly on IE 11
+	// Disabling `flex` fixes it while keeping the desired behavior
+	flex: none;
+
+	// The selection is shrunk because `flex: 0 1 0` is applied on `.v-select`
+	// and `flex: 1 1` on `.v-select__selections`
+	// Setting the values to `0 1 auto` and `1 1 auto` fixes it, but there is a
+	// glitch while the input is focused, the width isn't calculated properly
+	.v-select,
+	.v-select__selections {
+		// Not using flex here fixes these issues
+		flex: none;
+		display: block;
+	}
+
+	// Since `.v-select` is now `display: block`, the input is displayed
+	// and takes a lot of space, hide it with visually-hidden
+	// to keep it accessible by screen readers
+	input {
+		@include visually-hidden;
+	}
+}
+
+// Fix VDataTable pagination dropdown on IE only
+// (we cannot target this case specifically)
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	// On IE the dropdown list is shrunk, set a min-width has a workaround
+	// (only on IE to avoid side effects)
+	.v-list-item__content {
+		min-width: 38px;
+	}
+}
