@@ -34,6 +34,11 @@
 	}
 }
 
+// Fix font-weight for tabs (default 500)
+.v-tab {
+	font-weight: 600;
+}
+
 // Fix color contrast of disabled elements to respect
 // contrast-ratios for accessibility
 .theme--light {
@@ -41,24 +46,40 @@
 	&.v-input--is-disabled .v-label,
 	&.v-icon.v-icon--disabled,
 	&.v-list .v-list--disabled {
-		color: #767676 !important
+		color: #767676 !important;
 	}
-}
 
-.theme--light.v-btn.v-btn--disabled .v-icon { // TODO
-	color: #949494 !important
-}
+	&.v-btn.v-btn--disabled {
+		color: #646464 !important;
 
-.v-tabs-bar .v-tabs__item--disabled { // TODO
-	color: #333 !important
-}
+		.v-icon {
+			color: #949494 !important;
+		}
+	}
 
-.theme--light.v-btn.v-btn--disabled { // TODO
-	color: #646464 !important
-}
+	&.v-data-table .v-data-table__empty-wrapper {
+		color: #717171 !important;
+	}
 
-.v-data-table__empty-wrapper { // TODO
-	color: #717171 !important;
+	// Fix tabs color (disabled and not active)
+	&.v-tabs > .v-tabs-bar {
+		.v-tab:not(.v-tab--active) {
+			&,
+			> .v-icon {
+				color: #505050;
+			}
+		}
+
+		.v-tab--disabled {
+			// Reset opacity (default 0.5)
+			opacity: 1;
+
+			&,
+			> .v-icon {
+				color: #767676 !important;
+			}
+		}
+	}
 }
 
 // Fix font size (default for these elements is 16px)
