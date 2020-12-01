@@ -19,7 +19,7 @@ about: Créez une demande pour ajouter une nouvelle fonctionnalité
 
 ## Projet
 
-<!-- Nom du projet impacté par le bug. -->
+<!-- Nom du projet à l'origine de la demande. -->
 
 ## Contacts
 

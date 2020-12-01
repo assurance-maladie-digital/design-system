@@ -3,9 +3,12 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **styles:** Ajout des styles communs `vuetify.scss` et `utilities.scss` ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625))
+  - **styles:** Ajout des styles communs `vuetify.scss` et `utilities.scss` ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625)) ([689279d](https://github.com/assurance-maladie-digital/design-system/commit/689279d1eed92256fffb346a041e4a04b764f150))
 
 ### Interne
+
+- 📝 **Documentation**
+  - **issues:** Correction du template pour les demandes de nouvelles fonctionnalités ([#765](https://github.com/assurance-maladie-digital/design-system/pull/765))
 
 - ⬆️ **Dépendances**
   - - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.0` ([#763](https://github.com/assurance-maladie-digital/design-system/pull/763)) ([4e185ac](https://github.com/assurance-maladie-digital/design-system/commit/4e185ac9be717fd72568a3ccb318954ce385ec16))
