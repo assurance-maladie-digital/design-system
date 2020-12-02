@@ -22,7 +22,7 @@
 
 						<VDivider
 							v-if="document.divider"
-							class="mt-6 mb-10"
+							class="mt-6 mb-6"
 						/>
 
 						<NuxtContent :document="document" />

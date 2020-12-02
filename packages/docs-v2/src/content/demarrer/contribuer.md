@@ -21,11 +21,9 @@ Lorsque vous créez une reproduction minimale, supprimez tous les éléments, pr
 
 </DocAlert>
 
-When writing an issue please provide as much detail as possible. Note that “reproduction steps” should be a series of actions another developer should take after clicking your reproduction link, not a recollection of how you discovered the bug.
-
 ## Demandes d'évolution
 
-Todo
+Si une fonctionnalité dont vous avez besoin dans l'un des packages du Design System n'est pas présente ou déjà planifiée, vous pouvez [créer une demande de nouvelle fonctionnalité](https://github.com/assurance-maladie-digital/design-system/issues/new?template=feature_request.md).
 
 ## Développement
 
