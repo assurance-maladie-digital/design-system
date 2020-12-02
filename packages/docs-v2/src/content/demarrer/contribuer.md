@@ -6,7 +6,22 @@ position: 2
 
 ## Rapports de bugs
 
-Todo
+Lorsque vous constatez un bug dans l'un des packages du Design System, vous pouvez créer un rapport de bug pour nous notifier de celui-ci.
+
+Avant d'ouvrir un nouveau rapport de bug, vérifiez :
+- Qu'un rapport similaire n'ait pas déjà été ouvert en cherchant dans les [rapports existants](https://github.com/assurance-maladie-digital/design-system/issues)
+- Que le bug est toujours présent dans la dernière version du package concerné
+
+Une fois ces vérifications effectuées, vous pouvez [créer un rapport de bug](https://github.com/assurance-maladie-digital/design-system/issues/new?template=bug_report.md).
+Lors de l'écriture de votre rapport de bug, essayez de donner le plus de détails possible
+
+<DocAlert type="info">
+
+Lorsque vous créez une reproduction minimale, supprimez tous les éléments, propriétés, variables, données etc qui ne sont pas nécessaires pour reproduire le bug. Cela facilitera le traitement du rapport et le temps qu'il faudra pour identifier puis résoudre le bug.
+
+</DocAlert>
+
+When writing an issue please provide as much detail as possible. Note that “reproduction steps” should be a series of actions another developer should take after clicking your reproduction link, not a recollection of how you discovered the bug.
 
 ## Demandes d'évolution
 
