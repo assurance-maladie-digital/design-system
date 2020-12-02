@@ -16,7 +16,7 @@
 ### FormBuilder
 
 - ♻️ **Refactoring**
-  - **template:** Utilisation des styles communs de Vue Dot ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767))
+  - **template:** Utilisation des styles communs de Vue Dot ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
 
 ### Interne
 
@@ -26,6 +26,7 @@
 - ⬆️ **Dépendances**
   - - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.0` ([#763](https://github.com/assurance-maladie-digital/design-system/pull/763)) ([4e185ac](https://github.com/assurance-maladie-digital/design-system/commit/4e185ac9be717fd72568a3ccb318954ce385ec16))
   - **@types/node:** Mise à jour vers la `v12.19.8` ([#764](https://github.com/assurance-maladie-digital/design-system/pull/764)) ([7542f54](https://github.com/assurance-maladie-digital/design-system/commit/7542f54e6076f56ec1c84be7e028327de26e5865))
+  - **@types/jest:** Mise à jour vers la `v26.0.16` ([#768](https://github.com/assurance-maladie-digital/design-system/pull/768))
 
 ### 📚 Guide de migration
 
