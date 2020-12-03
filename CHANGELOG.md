@@ -26,7 +26,8 @@
 - ⬆️ **Dépendances**
   - - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.0` ([#763](https://github.com/assurance-maladie-digital/design-system/pull/763)) ([4e185ac](https://github.com/assurance-maladie-digital/design-system/commit/4e185ac9be717fd72568a3ccb318954ce385ec16))
   - **@types/node:** Mise à jour vers la `v12.19.8` ([#764](https://github.com/assurance-maladie-digital/design-system/pull/764)) ([7542f54](https://github.com/assurance-maladie-digital/design-system/commit/7542f54e6076f56ec1c84be7e028327de26e5865))
-  - **@types/jest:** Mise à jour vers la `v26.0.16` ([#768](https://github.com/assurance-maladie-digital/design-system/pull/768))
+  - **@types/jest:** Mise à jour vers la `v26.0.16` ([#768](https://github.com/assurance-maladie-digital/design-system/pull/768)) ([61658b5](https://github.com/assurance-maladie-digital/design-system/commit/61658b5dde1981e5c9b2d95c6e1e7f9b8ef671c5))
+  - **ts-node:** Mise à jour vers la `v9.1.0` ([#769](https://github.com/assurance-maladie-digital/design-system/pull/769))
 
 ### 📚 Guide de migration
 
