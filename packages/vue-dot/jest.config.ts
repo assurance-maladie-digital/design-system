@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
 	preset: '@vue/cli-plugin-unit-jest/presets/typescript',
 	testMatch: [
 		'<rootDir>/src/**/tests/*.spec.ts',
@@ -27,6 +29,8 @@ module.exports = {
 		'!**/data/**'
 	],
 	transformIgnorePatterns: [
-		'./node_modules/(?!vuetify|@cnamts/vue-dot)'
+		'./node_modules/(?!vuetify)'
 	]
 };
+
+export default config;

@@ -20,7 +20,7 @@ import './plugins/form-builder';<% } %>
 import './plugins/webfontloader';
 
 // Import the theme styles
-import '@/theme/styles/index.scss';
+import '@/theme/styles.scss';
 
 // Import application parts
 import App from './App.vue';

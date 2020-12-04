@@ -1,4 +1,4 @@
-// Global, non-scoped styles
+// Global styles for components
 
 @import '@cnamts/design-tokens/dist/tokens';
 
@@ -34,6 +34,39 @@
 
 		&-xl {
 			width: $vd-input-x-large;
+		}
+	}
+
+	// Custom styles for VDataTable
+	.vd-data-table {
+		border-top: thin solid rgba(0, 0, 0, .12);
+
+		thead {
+			background: #f8f8f8;
+		}
+
+		table thead tr {
+			white-space: nowrap;
+		}
+
+		&.row-clickable table tbody tr {
+			cursor: pointer;
+		}
+	​
+		&.fixed-min-height {
+			.v-data-table__wrapper {
+				min-height: 540px;
+			}
+		}
+	​
+		&.no-mobile-header {
+			.v-data-table-header-mobile {
+				display: none;
+			}
+	​
+			table {
+				border-top: 2px solid #eee;
+			}
 		}
 	}
 }

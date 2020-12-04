@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormBuilder renders correctly 1`] = `
-<div class="vd-form-builder">
-  <div class="vd-field-list">
+<div class="vd-form-builder w-100">
+  <div class="vd-field-list w-100">
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 1
     </h3>
@@ -240,7 +240,7 @@ exports[`FormBuilder renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="vd-field-list">
+  <div class="vd-field-list w-100">
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 2
     </h3>
@@ -392,7 +392,7 @@ exports[`FormBuilder renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="vd-field-list">
+  <div class="vd-field-list w-100">
     <h3 class="text-h6 font-weight-bold mb-2">
       Section 3
     </h3>
@@ -405,7 +405,7 @@ exports[`FormBuilder renders correctly 1`] = `
         Informations supplémentaires
       </p>
       <div>
-        <div class="vd-choice-button-field vd-form-input">
+        <div class="vd-choice-button-field">
           <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" type="choiceButton" hint="Texte informatif"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				9h30
 			</span>
@@ -581,7 +581,7 @@ exports[`FormBuilder renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="vd-field-list">
+  <div class="vd-field-list w-100">
     <h3 class="text-h6 font-weight-bold mb-2">
       Champs personnalisés
     </h3>

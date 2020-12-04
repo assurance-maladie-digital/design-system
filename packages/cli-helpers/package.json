@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/cli-helpers",
-	"version": "2.0.0-beta.3",
+	"version": "2.0.0-beta.4",
 	"description": "Helper functions to build CLI tools",
 	"keywords": [
 		"cnam",
