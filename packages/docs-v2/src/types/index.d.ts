@@ -8,18 +8,22 @@ export interface ApiProp {
 	default?: string | number | boolean | null | undefined;
 	signature: string;
 	value: string;
+	example?: IndexedObject | string;
+	props?: IndexedObject<IndexedObject | string>;
+	snippet?: string;
 }
 
 type ItemValue = Pick<ApiProp, 'name' | 'type' | 'default' | 'required' | 'description'>;
-type ItemDescription = Pick<ApiProp, 'name' | 'description'>;
+
+type ItemSlot = Pick<ApiProp, 'name' | 'description' | 'props'>;
 type ItemEvent = Pick<ApiProp, 'name' | 'description' | 'value'>;
 type ItemFunction = Pick<ApiProp, 'name' | 'signature' | 'description'>;
-type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description'>;
-type ItemArgument = Pick<ApiProp, 'type' | 'description'>;
+type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description' | 'snippet'>;
+type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'description' | 'example' | 'snippet'>;
 
 interface ApiHeaderList {
 	options: ItemValue[];
-	slots: ItemDescription[];
+	slots: ItemSlot[];
 	props: ItemValue[];
 	events: ItemEvent[];
 	functions: ItemFunction[];

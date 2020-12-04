@@ -103,9 +103,12 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 	import { ApiHeaders, HeaderList, ApiProp } from '../../types';
 
 	import { API_TABLE_HEADERS } from '../../constants';
+
+	type PropObj = IndexedObject<IndexedObject | string> | string;
 
 	const Props = Vue.extend({
 		props: {
@@ -141,7 +144,7 @@
 		getDefaultValue(item: ApiProp): string {
 			const { default: defaultValue } = item;
 
-			const str = defaultValue == null || typeof defaultValue === 'string'
+			const str = !defaultValue || typeof defaultValue === 'string'
 				? String(defaultValue)
 				: JSON.stringify(defaultValue, null, 2);
 
@@ -152,33 +155,41 @@
 			return str; // return Prism.highlight(str, this.field === 'sass' ? Prism.languages.scss : Prism.languages.typescript);
 		}
 
-		getLanguage(item: any): 'html' | 'typescript' {
+		getLanguage(item: ApiProp): 'html' | 'ts' {
 			if (item.snippet) {
 				return 'html';
 			}
 
-			return 'typescript';
+			return 'ts';
 		}
 
-		getCode(item: any): string {
+		getCode(item: ApiProp): string | null {
 			if (item.snippet || item.value) {
 				return this.genHtml(item.snippet || item.value);
 			}
 
-			return this.genTypescript(item.example || item.props);
+			if (item.example) {
+				return this.genTypescript(item.example);
+			}
+
+			if (item.props) {
+				return this.genTypescript(item.props);
+			}
+
+			return null;
 		}
 
-		genTypescript(obj: any): string {
+		genTypescript(obj: PropObj): string {
 			if (typeof obj === 'string') {
 				return obj;
 			}
 
-			const str = JSON.stringify(obj, null, 2);
+			const str = JSON.stringify(obj, null, '\t');
 
 			return str.replace(/: "(.*)"/g, ': $1').replace(/"(.*)":/g, '$1:');
 		}
 
-		genHtml(obj: any): string {
+		genHtml(obj: IndexedObject | string): string {
 			if (typeof obj === 'string') {
 				return obj.trim();
 			}
@@ -186,8 +197,8 @@
 			return this.genTypescript(obj);
 		}
 
-		hasExtraRow(item: any) {
-			return item.example || item.snippet || item.props || item.value;
+		hasExtraRow(item: ApiProp): boolean {
+			return Boolean(item.example || item.snippet || item.props || item.value);
 		}
 	}
 </script>

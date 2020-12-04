@@ -1,7 +1,7 @@
 <template>
 	<VTabItem
 		:key="value"
-		class="doc-code-item"
+		class="doc-component-item"
 	>
 		<slot />
 	</VTabItem>

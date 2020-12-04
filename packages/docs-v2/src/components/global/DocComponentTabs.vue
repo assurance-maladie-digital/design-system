@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-code-group">
+	<div class="doc-component-group">
 		<VTabs
 			v-model="tab"
 			class="mb-8"
