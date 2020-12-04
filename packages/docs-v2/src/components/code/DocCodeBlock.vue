@@ -63,7 +63,6 @@
 
 <style lang="scss">
 	.doc-code-block {
-		width: 100%;
 		position: relative;
 		padding: 12px 52px 12px 16px;
 
