@@ -9,6 +9,7 @@ import DebounceEx from './DebounceEx.vue';
 import DialogBoxEx from './DialogBoxEx.vue';
 import ErrorPageEx from './ErrorPageEx.vue';
 import FileUploadEx from './FileUploadEx.vue';
+import FilterWorkflowEx from './FilterWorkflowEx.vue';
 import FooterEx from './FooterEx.vue';
 import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
@@ -30,6 +31,7 @@ const components: Components = {
 	DialogBoxEx,
 	ErrorPageEx,
 	FileUploadEx,
+	FilterWorkflowEx,
 	FooterEx,
 	NotificationEx,
 	PaginatedTableEx,

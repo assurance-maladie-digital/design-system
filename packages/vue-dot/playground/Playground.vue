@@ -49,6 +49,8 @@
 
 				<FileUploadEx />
 
+				<FilterWorkflowEx />
+
 				<FooterEx />
 
 				<LangBtnEx />

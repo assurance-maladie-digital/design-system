@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterWorkflow renders correctly 1`] = `
+<div>
+  <!---->
+  <vmenu-stub opendelay="0" closedelay="0" contentclass="" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition">
+    <vlist-stub width="200" tag="div" class="py-0">
+      <vlistitem-stub activeclass="" tag="div">
+        <vlistitemtitle-stub>Fichier</vlistitemtitle-stub>
+      </vlistitem-stub>
+      <vlistitem-stub activeclass="" tag="div">
+        <vlistitemtitle-stub>Nombre de téléchargement</vlistitemtitle-stub>
+      </vlistitem-stub>
+      <vlistitem-stub activeclass="" tag="div">
+        <vlistitemtitle-stub>Date</vlistitemtitle-stub>
+      </vlistitem-stub>
+    </vlist-stub>
+  </vmenu-stub>
+  <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="360" origin="center center" retainfocus="true" transition="dialog-transition" width="auto">
+    <vcard-stub loaderheight="4" tag="div">
+      <vcardtext-stub class="pt-4">
+        <vform-stub>
+          <!---->
+        </vform-stub>
+      </vcardtext-stub>
+      <vcardactions-stub class="d-flex justify-center">
+        <vbtn-stub color="accent" tag="button" activeclass="" type="button">
+          Appliquer le filtre
+        </vbtn-stub>
+      </vcardactions-stub>
+    </vcard-stub>
+  </vdialog-stub>
+</div>
+`;
