@@ -24,7 +24,7 @@
 			hide-details
 			class="vd-form-input flex-grow-0 mr-4"
 			:append-icon="searchIcon"
-			:disabled="tableLoading"
+			:disabled="searchLoading"
 			:label="searchLabel"
 			@input="$emit('search', $event)"
 		/>
@@ -58,7 +58,7 @@
 			/** Label of the search field */
 			searchLabel: {
 				type: String,
-				default: undefined
+				default: locales.search
 			},
 			/** Text for the number of rows */
 			rowText: {
@@ -86,7 +86,7 @@
 				required: true
 			},
 			/** Disable the search field while loading */
-			tableLoading: {
+			searchLoading: {
 				type: Boolean,
 				default: false
 			}

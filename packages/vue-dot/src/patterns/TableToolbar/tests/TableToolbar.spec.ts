@@ -12,7 +12,12 @@ let wrapper: Wrapper<Vue>;
 describe('TableToolbar', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(TableToolbar);
+		wrapper = mountComponent(TableToolbar, {
+			propsData: {
+				nbFiltered:0,
+				nbTotal: 0
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
@@ -25,11 +30,25 @@ describe('TableToolbar', () => {
 				tableLoading: true,
 				searchLabel: 'Rechercher',
 				createBtnLabel: 'Ajouter',
-				showCreateBtn: true
+				showCreateBtn: true,
+				nbFiltered:0,
+				nbTotal: 1
 			},
 			slots: {
-				rowsNumber: '<p>4 lignes</p>',
 				searchLeft: '<p>search-left</p>'
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders with multiple items', () => {
+		// Mount component
+		wrapper = mountComponent(TableToolbar, {
+			propsData: {
+				search: 'recherche',
+				nbFiltered:1,
+				nbTotal: 2
 			}
 		}, true);
 

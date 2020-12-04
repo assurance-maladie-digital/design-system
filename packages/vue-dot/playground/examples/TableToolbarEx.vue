@@ -7,7 +7,6 @@
 			calculate-widths
 			:items="items"
 			:search="search"
-			:loading="tableLoading"
 			hide-default-footer
 			@current-items="filteredItems = $event"
 		>
@@ -15,7 +14,7 @@
 			<template #top>
 				<TableToolbar
 					:search="search"
-					:table-loading="tableLoading"
+					:search-loading="tableLoading"
 					search-label="Rechercher"
 					create-btn-label="Ajouter"
 					show-create-btn
