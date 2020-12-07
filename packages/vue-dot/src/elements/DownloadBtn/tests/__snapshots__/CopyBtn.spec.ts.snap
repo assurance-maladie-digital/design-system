@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyBtn renders correctly 1`] = `
+<div class="vd-copy-btn">
+  <vmenu-stub opendelay="0" closedelay="0" contentclass="vd-copy-tooltip-menu white--text text-body-2 ml-2" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" zindex="8" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsetx="true" origin="top left" transition="v-menu-transition">
+    Texte copié !
+  </vmenu-stub>
+</div>
+`;
