@@ -24,7 +24,7 @@
 		"vuepress": "1.7.1"
 	},
 	"devDependencies": {
-		"@types/marked": "1.2.0",
+		"@types/marked": "1.2.1",
 		"marked": "1.2.5",
 		"prismjs": "1.22.0",
 		"raw-loader": "4.0.2",

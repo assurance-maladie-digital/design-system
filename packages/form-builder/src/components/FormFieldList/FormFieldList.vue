@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="vd-field-list"
+		class="vd-field-list w-100"
 		:class="{ 'theme--dark': $vuetify.theme.dark }"
 	>
 		<h3
@@ -106,9 +106,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.vd-field-list {
-		width: 100%;
-	}
-</style>
