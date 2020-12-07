@@ -35,6 +35,9 @@
 			color="primary"
 			@click="$emit('click')"
 		>
+			<VIcon>
+				{{ addIcon }}
+			</VIcon>
 			{{ createBtnLabel }}
 		</VBtn>
 	</VToolbar>
@@ -44,7 +47,7 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiMagnify } from '@mdi/js';
+	import { mdiMagnify, mdiPlus } from '@mdi/js';
 
 	import { locales } from './locales';
 
@@ -105,7 +108,7 @@
 	export default class TableToolbar extends MixinsDeclaration {
 		// Icons
 		searchIcon = mdiMagnify;
-
+		addIcon = mdiPlus;
 		locales = locales;
 
 		get showRowsNumber(): boolean {

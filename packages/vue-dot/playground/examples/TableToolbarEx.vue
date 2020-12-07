@@ -8,6 +8,7 @@
 			:items="items"
 			:search="search"
 			hide-default-footer
+			class="w-100 elevation-1"
 			@current-items="filteredItems = $event"
 		>
 			<!-- Barre de recherche dans le tableau -->
@@ -16,9 +17,9 @@
 					:search="search"
 					:search-loading="tableLoading"
 					search-label="Rechercher"
-					create-btn-label="Ajouter"
 					show-create-btn
 					row-text="fichier"
+
 					:nb-total="items.length"
 					:nb-filtered="filteredItems.length"
 					@search="search = $event"
