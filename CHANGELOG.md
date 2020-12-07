@@ -29,7 +29,8 @@
   - **@types/jest:** Mise à jour vers la `v26.0.16` ([#768](https://github.com/assurance-maladie-digital/design-system/pull/768)) ([61658b5](https://github.com/assurance-maladie-digital/design-system/commit/61658b5dde1981e5c9b2d95c6e1e7f9b8ef671c5))
   - **ts-node:** Mise à jour vers la `v9.1.0` ([#769](https://github.com/assurance-maladie-digital/design-system/pull/769)) ([28e770b](https://github.com/assurance-maladie-digital/design-system/commit/28e770ba03791ec3c65ae58c8fac0606cb4e13e1))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.0.8` ([#770](https://github.com/assurance-maladie-digital/design-system/pull/770)) ([bb7f93a](https://github.com/assurance-maladie-digital/design-system/commit/bb7f93adee82025f927ca8d03b92c012f2995ecf))
-  - **eslint-plugin-vue:** Mise à jour vers la `v7.2.0` ([#771](https://github.com/assurance-maladie-digital/design-system/pull/771)
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.2.0` ([#771](https://github.com/assurance-maladie-digital/design-system/pull/771) ([8695260](https://github.com/assurance-maladie-digital/design-system/commit/869526061b3de69aa519cc412b8fd62681d0d7d6))
+  - **lint-staged:** Mise à jour vers la `v10.5.3` ([#772](https://github.com/assurance-maladie-digital/design-system/pull/772))
 
 ### 📚 Guide de migration
 
