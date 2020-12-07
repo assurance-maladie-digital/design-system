@@ -92,25 +92,28 @@
 			v-model="filterDialog"
 			max-width="360"
 		>
-			<VCard>
+			<VCard v-if="filterTypeEdit">
+				<VCardTitle v-if="filterEditLabel">
+					{{ filterEditLabel }}
+				</VCardTitle>
+
 				<VCardText class="pt-4">
 					<VForm ref="filterForm">
 						<FormFieldList
-							v-if="filterTypeEdit"
 							:fields="filterTypeEdit.fields"
 							@change="fieldsUpdated($event)"
 						/>
 					</VForm>
-				</VCardText>
 
-				<VCardActions class="d-flex justify-center">
 					<VBtn
+						class="mt-8"
+						block
 						color="accent"
 						@click="applyFilter"
 					>
 						{{ locales.applyFilterLabel }}
 					</VBtn>
-				</VCardActions>
+				</VCardText>
 			</VCard>
 		</VDialog>
 	</div>

@@ -14,8 +14,6 @@ export const filterStructures: FilterStructures = {
 				type: 'select',
 				fieldOptions: {
 					type: 'choiceAutocomplete',
-					openOnHover: true,
-					autofocus: true,
 					outlined: true,
 					label: 'Rechercher',
 					menuProps: {
@@ -77,13 +75,13 @@ export const filterStructures: FilterStructures = {
 					from: {
 						outlined: true,
 						textField: {
-							label: 'Date de début'
+							label: 'A partir du'
 						}
 					},
 					to: {
 						outlined: true,
 						textField: {
-							label: 'Date de fin'
+							label: 'Jusqu\'au'
 						}
 					}
 				}
@@ -104,7 +102,7 @@ export const filterStructures: FilterStructures = {
 
 			if (fromValue) {
 
-				text = `Depuis le ${dayjs(fromValue).format('DD/MM/YYYY')}`;
+				text = `A partir du ${dayjs(fromValue).format('DD/MM/YYYY')}`;
 			}
 
 			if (fromValue && toValue) {
@@ -135,14 +133,14 @@ export const filterStructures: FilterStructures = {
 
 			// Check from value
 			if (
-				fromValue && parseDate(value as string).toDate() <= dayjs(fromValue).toDate()
+				fromValue && parseDate(value as string).toDate() < dayjs(fromValue).toDate()
 			) {
 				return false;
 			}
 
 			// Check toValue
 			if (
-				toValue && parseDate(value as string).toDate() >= dayjs(toValue).toDate()
+				toValue && parseDate(value as string).toDate() > dayjs(toValue).toDate()
 			) {
 				return false;
 			}
@@ -157,7 +155,7 @@ export const filterStructures: FilterStructures = {
 				fieldOptions: {
 					outlined: true,
 					mask: '###########',
-					label: 'Supérieur à'
+					label: 'Supérieur ou égal'
 				}
 			},
 			numberMax: {
@@ -165,7 +163,7 @@ export const filterStructures: FilterStructures = {
 				fieldOptions: {
 					outlined: true,
 					mask: '###########',
-					label: 'Inférieur à'
+					label: 'Inférieur ou égal'
 				}
 			}
 		},
@@ -208,12 +206,12 @@ export const filterStructures: FilterStructures = {
 			}
 
 			// Check numberMin
-			if (numberMin && Number.parseInt(value as string, 10) <= Number.parseInt(numberMin, 10)) {
+			if (numberMin && Number.parseInt(value as string, 10) < Number.parseInt(numberMin, 10)) {
 				return false;
 			}
 
 			// Check numberMax
-			if (numberMax && Number.parseInt(value as string, 10) >= Number.parseInt(numberMax, 10)) {
+			if (numberMax && Number.parseInt(value as string, 10) > Number.parseInt(numberMax, 10)) {
 				return false;
 			}
 

@@ -31,5 +31,35 @@ export const dataRows: Rows = [
 		filename: 'fichier3.txt',
 		nbDownload: 3,
 		date: '30/12/2020'
+	},
+	{
+		filename: 'fichier4.txt',
+		nbDownload: 4,
+		date: '30/12/2020'
+	},
+	{
+		filename: 'fichier5.txt',
+		nbDownload: 5,
+		date: '30/12/2020'
+	},
+	{
+		filename: 'fichier6.txt',
+		nbDownload: 6,
+		date: '30/12/2020'
+	},
+	{
+		filename: 'fichier7.txt',
+		nbDownload: 7,
+		date: '30/12/2020'
+	},
+	{
+		filename: 'fichier8.txt',
+		nbDownload: 8,
+		date: '30/12/2020'
+	},
+	{
+		filename: 'fichier9.txt',
+		nbDownload: 9,
+		date: '30/12/2020'
 	}
 ];

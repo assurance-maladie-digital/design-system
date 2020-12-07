@@ -49,6 +49,7 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 
 	filterTypeEdit: FilterStructure | null = null;
 	filterEditName: string | null = null;
+	filterEditLabel: string | null = null;
 
 	/**
 	 * Open the filter dialog
@@ -58,6 +59,7 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 	openFilterDialog(filterName: string): void {
 		const filter: Filter = this.filters[filterName];
 		this.filterTypeEdit = filterStructures[filter.type];
+		this.filterEditLabel = filter.label;
 		this.filterEditName = filterName;
 
 		const activeFilter = this.activeFilters.find((activeFilter) => {
