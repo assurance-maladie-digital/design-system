@@ -3,29 +3,30 @@
 		flat
 		color="white"
 	>
-		<!-- Rows number -->
 		<p
 			v-if="showRowsNumber"
 			class="mb-0 font-weight-bold mr-4"
 		>
 			<span>{{ computedNbRows }}</span>
 
-			<span class="ml-1">{{ computedTitle }}</span>
+			<span class="ml-1">
+				{{ computedTitle }}
+			</span>
 		</p>
 
 		<VSpacer />
 
 		<slot name="search-left" />
-		<!-- Search field -->
+
 		<VTextField
 			:value="search"
+			:disabled="searchLoading"
+			:append-icon="searchIcon"
+			:label="searchLabel"
 			clearable
 			single-line
 			hide-details
 			class="vd-form-input flex-grow-0 mr-4"
-			:append-icon="searchIcon"
-			:disabled="searchLoading"
-			:label="searchLabel"
 			@input="$emit('search', $event)"
 		/>
 
@@ -38,6 +39,7 @@
 			<VIcon>
 				{{ addIcon }}
 			</VIcon>
+
 			{{ createBtnLabel }}
 		</VBtn>
 	</VToolbar>
@@ -109,18 +111,18 @@
 		// Icons
 		searchIcon = mdiMagnify;
 		addIcon = mdiPlus;
-		locales = locales;
 
 		get showRowsNumber(): boolean {
 			return Boolean(this.nbTotal && this.nbFiltered < this.nbTotal);
 		}
 
 		get computedNbRows(): string {
-			return `${this.nbFiltered || ''}${this.nbFiltered && this.nbFiltered >= 0 ? '/': ''}${this.nbTotal}`;
+			return `${this.nbFiltered || ''}${this.nbFiltered && this.nbFiltered >= 0 ? '/' : ''}${this.nbTotal}`;
 		}
 
 		get computedTitle(): string {
 			const plural = this.nbTotal > 1;
+
 			return locales.rowText(this.rowText, plural);
 		}
 	}

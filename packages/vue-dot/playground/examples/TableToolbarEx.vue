@@ -11,7 +11,6 @@
 			class="w-100 elevation-1"
 			@current-items="filteredItems = $event"
 		>
-			<!-- Barre de recherche dans le tableau -->
 			<template #top>
 				<TableToolbar
 					:search="search"
@@ -48,13 +47,10 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { mdiPlusCircle } from '@mdi/js';
 	import { DataTableHeader } from 'vuetify';
 
 	@Component
 	export default class CopyBtnEx extends Vue {
-		plusIcon = mdiPlusCircle;
-
 		search = '';
 		filteredItems: DataTableHeader[] = [];
 		tableLoading = false;
@@ -63,7 +59,7 @@
 			{
 				align: 'start',
 				sortable: true,
-				text: 'nom',
+				text: 'Nom',
 				value: 'lastname'
 			},
 			{
@@ -81,7 +77,7 @@
 			},
 			{
 				firstname: 'Napoléon',
-				lastname: 'bonaparte'
+				lastname: 'Bonaparte'
 			}
 		];
 	}
