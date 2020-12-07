@@ -1,6 +1,6 @@
 <template>
 	<DocSection title="TableToolbar">
-		<p>Barre de recherche pour tableau</p>
+		<p>Barre pour les tableaux avec un champ de recherche par défaut</p>
 
 		<VDataTable
 			:headers="headers"
@@ -14,11 +14,24 @@
 			<template #top>
 				<TableToolbar
 					:search="search"
-					:search-loading="tableLoading"
+					:search-disabled="tableLoading"
 					search-label="Rechercher"
 					show-create-btn
 					row-text="fichier"
-
+					:vuetify-options="{
+						textField: {
+							dense: true
+						},
+						toolbar: {
+							class: 'mt-4'
+						},
+						addBtn: {
+							color: 'red'
+						},
+						addIcon: {
+							color: 'red'
+						}
+					}"
 					:nb-total="items.length"
 					:nb-filtered="filteredItems.length"
 					@search="search = $event"

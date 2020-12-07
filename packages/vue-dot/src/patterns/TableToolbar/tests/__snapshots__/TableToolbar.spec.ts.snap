@@ -12,9 +12,11 @@ exports[`TableToolbar renders correctly 1`] = `
 exports[`TableToolbar renders with full configuration 1`] = `
 <header class="v-sheet theme--light v-toolbar v-toolbar--flat white" style="height: 64px;" tableloading="true">
   <div class="v-toolbar__content" style="height: 64px;">
-    <p class="mb-0 font-weight-bold mr-4"><span>1</span> <span class="ml-1">ligne</span></p>
+    <p class="mb-0 font-weight-bold mr-4"><span>0/1</span> <span class="ml-1">
+			ligne
+		</span></p>
     <div class="spacer"></div>
-    <div class="v-input vd-form-input flex-grow-0 mr-4 v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--single-line">
+    <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--single-line vd-form-input flex-grow-0 mr-4">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><input id="input-7" type="text"></div>
@@ -27,6 +29,7 @@ exports[`TableToolbar renders with full configuration 1`] = `
         </div>
       </div>
     </div> <button type="button" class="v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light v-size--default primary--text"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></svg></span>
+
       Ajouter
       </span></button>
   </div>
@@ -36,9 +39,11 @@ exports[`TableToolbar renders with full configuration 1`] = `
 exports[`TableToolbar renders with multiple items 1`] = `
 <header class="v-sheet theme--light v-toolbar v-toolbar--flat white" style="height: 64px;">
   <div class="v-toolbar__content" style="height: 64px;">
-    <p class="mb-0 font-weight-bold mr-4"><span>1/2</span> <span class="ml-1">lignes</span></p>
+    <p class="mb-0 font-weight-bold mr-4"><span>1/2</span> <span class="ml-1">
+			lignes
+		</span></p>
     <div class="spacer"></div>
-    <div class="v-input vd-form-input flex-grow-0 mr-4 v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--single-line">
+    <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--single-line vd-form-input flex-grow-0 mr-4">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><input id="input-15" type="text"></div>

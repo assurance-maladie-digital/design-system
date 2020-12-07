@@ -1,7 +1,7 @@
 <template>
 	<VToolbar
 		flat
-		color="white"
+		v-bind="options.toolbar"
 	>
 		<p
 			v-if="showRowsNumber"
@@ -10,7 +10,7 @@
 			<span>{{ computedNbRows }}</span>
 
 			<span class="ml-1">
-				{{ computedTitle }}
+				{{ computedRowsText }}
 			</span>
 		</p>
 
@@ -20,23 +20,19 @@
 
 		<VTextField
 			:value="search"
-			:disabled="searchLoading"
+			v-bind="options.textField"
+			:disabled="searchDisabled"
 			:append-icon="searchIcon"
 			:label="searchLabel"
-			clearable
-			single-line
-			hide-details
-			class="vd-form-input flex-grow-0 mr-4"
 			@input="$emit('search', $event)"
 		/>
 
 		<VBtn
 			v-if="showCreateBtn"
-			outlined
-			color="primary"
+			v-bind="options.addBtn"
 			@click="$emit('click')"
 		>
-			<VIcon>
+			<VIcon v-bind="options.addIcon">
 				{{ addIcon }}
 			</VIcon>
 
@@ -51,7 +47,10 @@
 
 	import { mdiMagnify, mdiPlus } from '@mdi/js';
 
+	import { config } from './config';
 	import { locales } from './locales';
+
+	import { customizable } from '../../mixins/customizable';
 
 	const Props = Vue.extend({
 		props: {
@@ -68,7 +67,7 @@
 			/** Text for the number of rows */
 			rowText: {
 				type: String,
-				default: 'ligne'
+				default: locales.defaultRowText
 			},
 			/** Show the create button */
 			showCreateBtn: {
@@ -83,7 +82,7 @@
 			/** Number of filtered items */
 			nbFiltered: {
 				type: Number,
-				required: true
+				default: undefined
 			},
 			/** Number of total items */
 			nbTotal: {
@@ -91,14 +90,14 @@
 				required: true
 			},
 			/** Disable the search field while loading */
-			searchLoading: {
+			searchDisabled: {
 				type: Boolean,
 				default: false
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	/** Toolbar of a DataTable with search & create button */
 	@Component<TableToolbar>({
@@ -113,14 +112,14 @@
 		addIcon = mdiPlus;
 
 		get showRowsNumber(): boolean {
-			return Boolean(this.nbTotal && this.nbFiltered < this.nbTotal);
+			return Boolean(this.nbTotal);
 		}
 
 		get computedNbRows(): string {
-			return `${this.nbFiltered || ''}${this.nbFiltered && this.nbFiltered >= 0 ? '/' : ''}${this.nbTotal}`;
+			return `${this.nbFiltered !== undefined ? (this.nbFiltered + '/') : ''}${this.nbTotal}`;
 		}
 
-		get computedTitle(): string {
+		get computedRowsText(): string {
 			const plural = this.nbTotal > 1;
 
 			return locales.rowText(this.rowText, plural);
