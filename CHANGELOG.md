@@ -33,7 +33,8 @@
   - **lint-staged:** Mise à jour vers la `v10.5.3` ([#772](https://github.com/assurance-maladie-digital/design-system/pull/772)) ([aee38de](https://github.com/assurance-maladie-digital/design-system/commit/aee38de5f56c96ec827c9b960396ddb53b392e80))
   - **sass:** Mise à jour vers la `v1.30.0` ([#773](https://github.com/assurance-maladie-digital/design-system/pull/773)) ([b20f5b4](https://github.com/assurance-maladie-digital/design-system/commit/b20f5b43dd9ef781fc45f5337da88b15602de62b))
   - **eslint:** Mise à jour vers la `v7.15.0` ([#774](https://github.com/assurance-maladie-digital/design-system/pull/774) ([56de200](https://github.com/assurance-maladie-digital/design-system/commit/56de200c4aa817a8409e8d17d9adc51faba4b453))
-  - **dayjs:** Mise à jour vers la `v1.9.7` ([#775](https://github.com/assurance-maladie-digital/design-system/pull/775))
+  - **dayjs:** Mise à jour vers la `v1.9.7` ([#775](https://github.com/assurance-maladie-digital/design-system/pull/775)) ([94ab7b8](https://github.com/assurance-maladie-digital/design-system/commit/94ab7b81de3fad19ac0e3d1d90cabf58f969d570))
+  - **core-js:** Mise à jour vers la `v3.8.1` ([#776](https://github.com/assurance-maladie-digital/design-system/pull/776))
 
 ### 📚 Guide de migration
 
