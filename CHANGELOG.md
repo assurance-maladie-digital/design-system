@@ -4,7 +4,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **styles:** Ajout des styles communs `vuetify.scss` et `utilities.scss` ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625)) ([689279d](https://github.com/assurance-maladie-digital/design-system/commit/689279d1eed92256fffb346a041e4a04b764f150))
-  - **TableToolbar:** Ajout d'un nouveau composant de bare de recherche pour les tableaux ([#738](https://github.com/assurance-maladie-digital/design-system/pull/375))
+  - **TableToolbar:** Ajout d'un nouveau composant ([#735](https://github.com/assurance-maladie-digital/design-system/pull/375))
 
 - 🐛 **Corrections de bugs**
   - **styles:** Correction du style des onglets ([#766](https://github.com/assurance-maladie-digital/design-system/pull/766)) ([ceb0534](https://github.com/assurance-maladie-digital/design-system/commit/ceb0534884e37f89df13ddde14f7551659863441))
