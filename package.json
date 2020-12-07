@@ -21,7 +21,7 @@
 		"@vue/eslint-config-typescript": "7.0.0",
 		"@vue/test-utils": "1.1.1",
 		"copy-webpack-plugin": "6.3.2",
-		"dayjs": "1.9.6",
+		"dayjs": "1.9.7",
 		"deepmerge": "4.2.2",
 		"eslint": "7.14.0",
 		"eslint-plugin-jsdoc": "30.7.8",
