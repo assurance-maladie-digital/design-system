@@ -108,6 +108,9 @@
 
 	import { API_TABLE_HEADERS } from '../../constants';
 
+	import Prism from 'prismjs';
+	import 'prismjs/themes/prism.css';
+
 	type PropObj = IndexedObject<IndexedObject | string> | string;
 
 	const Props = Vue.extend({
@@ -138,7 +141,7 @@
 		getType(value: string): string {
 			const type = Array.isArray(value) ? value.join(' | ') : value;
 
-			return type; // return Prism.highlight(String(type), Prism.languages.typescript);
+			return Prism.highlight(String(type), Prism.languages.typescript);
 		}
 
 		getDefaultValue(item: ApiProp): string {
@@ -152,7 +155,7 @@
 				return `<a target="_blank" href="https://github.com/vuetifyjs/vuetify/search?q=${str.slice(3)}">${str.slice(3)}</a>`;
 			}
 
-			return str; // return Prism.highlight(str, this.field === 'sass' ? Prism.languages.scss : Prism.languages.typescript);
+			return Prism.highlight(str, Prism.languages.typescript);
 		}
 
 		getLanguage(item: ApiProp): 'html' | 'ts' {

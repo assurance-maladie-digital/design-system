@@ -13,9 +13,9 @@
 			</h2>
 
 			<div
-				v-for="(items, itemName) in component"
+				v-for="(items, itemName, itemIndex) in component"
 				:key="`${componentName}-${itemName}`"
-				:class="{ 'mt-6': showTitle }"
+				:class="{ 'mt-6': itemIndex > 0 || showTitle }"
 			>
 				<h3 class="text-h6 mb-4">
 					{{ itemName }}

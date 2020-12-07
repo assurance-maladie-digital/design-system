@@ -68,3 +68,17 @@ yarn
 ```
 
 Une fois l'installation des dépendances effectuée, vous êtes prêt à développer !
+
+### Vue Dot
+
+Todo
+
+### Documentation
+
+Pour modifier la documentation, vous pouvez simplement suivre le lien « Éditer cette page sur GitHub » présent en bas de page, celui-ci ouvrira l'éditeur en ligne de Github, vous permettant d'éditer directement la documentation, puis de créer une nouvelle branche afin de proposer vos modifications via une Pull Request.
+
+La docume
+
+The documentation is located in packages/docs but also uses some files from packages/api-generator. A dev server for the documentation can be started by running yarn dev docs from the project root and will be available on localhost:8080 by default.
+
+If you want to see changes from Vuetify in the documentation you need to run yarn build:lib in the vuetify package before starting the documentation server.

@@ -34,23 +34,8 @@
 }
 
 // Reset Vuetify font-size
-.v-btn,
-.v-tabs__div,
-.text-body-1 {
-	font-size: .85rem !important;
-}
-
-table.v-table tbody td,
-table.v-table thead th,
-.v-datatable__actions,
-.text-body-2 {
-	font-size: .8rem;
-}
-
 .v-input,
-.v-label,
-.v-list__tile,
-.text-subtitle-1 {
+.v-label {
 	font-size: 1rem !important;
 }
 

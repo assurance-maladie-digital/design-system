@@ -63,3 +63,16 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.doc-component-group ::v-deep {
+		.v-slide-group__content::after {
+			content: "";
+			width: 100%;
+			height: 2px;
+			background: #ececec;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+</style>
