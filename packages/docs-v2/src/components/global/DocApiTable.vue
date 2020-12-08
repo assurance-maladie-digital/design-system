@@ -37,15 +37,19 @@
 							<template v-if="header === 'name'">
 								<span
 									:id="item[header].replace('$', '')"
-									class="name-item text-mono primary--text"
+									class="name-item text-mono accent--text d-flex"
 								>
-									<!-- <span class="primary--text">#</span> -->
-									<!-- <app-link
+									<span
+										aria-hidden="true"
+										class="primary--text"
+										v-text="'#'"
+									/>
+
+									<a
 										:href="`#${item[header].replace('$', '')}`"
-										class="font-weight-bold"
+										class="font-weight-bold text-decoration-none"
 										v-text="item[header]"
-									/> -->
-									{{ item[header] }}
+									/>
 								</span>
 							</template>
 
@@ -109,7 +113,6 @@
 	import { API_TABLE_HEADERS } from '../../constants';
 
 	import Prism from 'prismjs';
-	import 'prismjs/themes/prism.css';
 
 	type PropObj = IndexedObject<IndexedObject | string> | string;
 
@@ -237,10 +240,20 @@
 		.extra-row td {
 			padding: 8px 0 !important
 		}
+
+		.text-mono {
+			font-family: monospace;
+		}
 	}
 
 	.name-item {
 		white-space: nowrap;
+		margin-left: -10px;
+
+		span {
+			margin-right: 4px;
+			transition: opacity .15s;
+		}
 
 		&:not(:hover):not(:focus) span {
 			opacity: 0;
