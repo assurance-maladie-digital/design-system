@@ -1,5 +1,5 @@
 // Reset Vuetify styles & tweak theme
-.v-application .nuxt-content-highlight,
+.v-application .nuxt-content,
 .v-application .doc-code-block {
 	pre {
 		padding: 0;
@@ -35,7 +35,7 @@
 		text-shadow: none;
 	}
 
-	code * {
+	.token {
 		font-family: inherit;
 		background-color: transparent;
 	}

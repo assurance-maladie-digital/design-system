@@ -70,7 +70,7 @@
 			content: "";
 			width: 100%;
 			height: 2px;
-			background: #ececec;
+			background: rgba(0, 0, 0, .12);
 			position: absolute;
 			bottom: 0;
 		}

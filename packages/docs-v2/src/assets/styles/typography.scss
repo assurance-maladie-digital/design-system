@@ -49,3 +49,8 @@
 		opacity: 1;
 	}
 }
+
+*::selection {
+	color: #fff;
+	background-color: rgba(12, 65, 154, .99);
+}
