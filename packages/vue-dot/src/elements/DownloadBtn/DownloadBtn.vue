@@ -1,50 +1,136 @@
 <template>
 	<VBtn
-		:loading="state === 'pending'"
-		outlined
-		height="56"
-		color="grey darken-1"
-		class="vd-form-input text-none"
+		v-bind="btnOptions"
 		@click="download"
 	>
-		<VIcon class="mr-2">
+		<VIcon
+			v-if="showFileIcon"
+			v-bind="options.fileIcon"
+		>
 			{{ fileIcon }}
 		</VIcon>
 
-		<span>{{ text }}</span>
+		<span
+			v-if="text"
+			v-bind="options.text"
+		>
+			{{ text }}
+		</span>
 
-		<VSpacer />
-
-		<VIcon color="primary">
+		<VIcon v-bind="options.downloadIcon">
 			{{ downloadIcon }}
 		</VIcon>
 	</VBtn>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiDownload } from '@mdi/js';
+	import { AxiosResponse } from 'axios';
+
+	import contentDisposition from 'content-disposition';
+
+	import { STATE_ENUM } from '../../../types/enums/StateEnum';
+
+	import { downloadFile } from '../../functions/downloadFile';
+
+	import { mdiCheck, mdiDownload, mdiFile } from '@mdi/js';
+
+	import { config } from './config';
+	import { locales } from './locales';
+
+	import { customizable, Options } from '../../mixins/customizable';
+
+	import deepMerge from 'deepmerge';
+	import { mapActions } from 'vuex';
+	import { NotificationObj } from '../../modules/notification';
 
 	const Props = Vue.extend({
 		props: {
 			text: {
 				type: String,
 				default: null
+			},
+			filePromise: {
+				type: Promise as PropType<Promise<AxiosResponse<string>>>,
+				required: true
+			},
+			notification: {
+				type: [Boolean, String],
+				default: locales.downloadSuccess
+			},
+			showFileIcon: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	/**
-	 * CopyBtn is a component that copy text to the clipboard and
-	 * shows a tooltip
+	 * DownloadBtn is a component that download a file from a
+	 * content disposition header string
 	 */
-	@Component
-	export default class CopyBtn extends MixinsDeclaration {
-		downloadIcon = mdiDownload;
+	@Component({
+		// Vuex bindings
+		methods: mapActions('notification', [
+			'notify'
+		])
+	})
+	export default class DownloadBtn extends MixinsDeclaration {
+		notify!: (obj: NotificationObj) => void;
 
+		downloadIcon = mdiDownload;
+		successIcon = mdiCheck;
+		fileIcon = mdiFile;
+
+		// FIXME: Cannot read property 'idle' of undefined
+		state: string = STATE_ENUM.idle;
+
+		locales = locales;
+
+		/**
+		 * Compute the options for the VTextField
+		 * (Merge options and binded attributes)
+		 *
+		 * @returns {Options} Computed options
+		 */
+		get btnOptions(): Options {
+			// Merge textField options (custom or default) with
+			// directly binded attributes (theses attributes
+			// will override 'options.textField')
+			return deepMerge<Options>(this.options.btn, this.$attrs);
+		}
+
+		download(): void {
+
+			this.state = STATE_ENUM.pending;
+
+			this.filePromise
+			.then((response) => {
+					const contentDispositionHeader = response.headers['content-disposition'] as string;
+
+					const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+
+					downloadFile(response.data, filename, 'application/pdf');
+
+					if (this.notification) {
+						const message: string = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
+
+						const notification: NotificationObj = {
+							type: 'success',
+							icon: this.successIcon,
+							message
+						};
+
+						// Notify!
+						this.notify(notification);
+					}
+				})
+				.catch(() => this.state = STATE_ENUM.rejected)
+				.finally(() => this.state = STATE_ENUM.resolved);
+		}
 	}
 </script>

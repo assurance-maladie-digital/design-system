@@ -45,6 +45,8 @@
 
 				<DialogBoxEx />
 
+				<DownloadBtnEx />
+
 				<ErrorPageEx />
 
 				<FileUploadEx />

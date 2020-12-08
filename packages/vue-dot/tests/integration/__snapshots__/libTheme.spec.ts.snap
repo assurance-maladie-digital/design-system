@@ -8,6 +8,7 @@ Object {
     "DataList",
     "DatePicker",
     "DialogBox",
+    "DownloadBtn",
     "ErrorPage",
     "FileUpload",
     "FooterWrapper",

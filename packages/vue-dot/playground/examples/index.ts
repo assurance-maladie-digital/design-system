@@ -7,6 +7,7 @@ import LangBtnEx from './LangBtnEx.vue';
 import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
 import DialogBoxEx from './DialogBoxEx.vue';
+import DownloadBtnEx from './DownloadBtnEx.vue';
 import ErrorPageEx from './ErrorPageEx.vue';
 import FileUploadEx from './FileUploadEx.vue';
 import FooterEx from './FooterEx.vue';
@@ -28,6 +29,7 @@ const components: Components = {
 	CustomIconEx,
 	DebounceEx,
 	DialogBoxEx,
+	DownloadBtnEx,
 	ErrorPageEx,
 	FileUploadEx,
 	FooterEx,

@@ -1,10 +1,14 @@
 export const config = {
-	menu: {
-		offsetX: true,
-		zIndex: 8,
-		contentClass: 'vd-copy-tooltip-menu white--text text-body-2 ml-2'
-	},
 	btn: {
-		icon: true
+		outlined: true,
+		color: 'grey darken-1',
+		class: 'text-none'
+	},
+	fileIcon: {
+		class: 'mr-2'
+	},
+	downloadIcon: {
+		color: 'primary',
+		class: 'ml-2'
 	}
 };

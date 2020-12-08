@@ -1,3 +1,3 @@
 export const locales = {
-	tooltip: 'Télécharger !'
+	downloadSuccess: 'Téléchargé avec succès'
 };

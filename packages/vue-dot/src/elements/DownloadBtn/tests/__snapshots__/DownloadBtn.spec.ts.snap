@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadBtn renders DownloadBtn correctly 1`] = `
+<vbtn-stub color="grey darken-1" outlined="true" tag="button" activeclass="" type="button" class="text-none">
+  <!---->
+  <!---->
+  <vicon-stub color="primary" class="ml-2">
+    M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z
+  </vicon-stub>
+</vbtn-stub>
+`;
