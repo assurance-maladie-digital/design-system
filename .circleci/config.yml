@@ -9,11 +9,11 @@ defaults: &defaults
     - image: circleci/node:12-browsers
 
 aliases:
-  - &restore-cache
+  - &restore_cache
     name: Restore Yarn Package Cache
     key: yarn-packages-{{ checksum "yarn.lock" }}
 
-  - &save-cache
+  - &save_cache
     name: Save Yarn Package Cache
     key: yarn-packages-{{ checksum "yarn.lock" }}
     paths:
@@ -34,9 +34,9 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache: *restore-cache
+      - restore_cache: *restore_cache
       - run: *run
-      - save_cache: *save-cache
+      - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
           paths:

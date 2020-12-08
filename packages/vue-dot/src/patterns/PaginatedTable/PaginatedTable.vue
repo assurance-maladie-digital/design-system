@@ -115,8 +115,6 @@
 			if (Object.keys(this.localOptions).length) {
 				this.localOptions = {} as DataOptions;
 			}
-
-			this.$emit('update:options', value);
 		}
 
 		/** Local storage key */

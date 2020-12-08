@@ -1,0 +1,28 @@
+// Custom utility classes
+
+// Fade <transition>
+.fade-enter-active,
+.fade-leave-active {
+	transition-duration: .15s;
+	transition-property: opacity;
+	transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
+
+.v-application {
+	.w-100 {
+		width: 100%;
+	}
+
+	.max-width-none {
+		max-width: none;
+	}
+
+	.pointer {
+		cursor: pointer;
+	}
+}

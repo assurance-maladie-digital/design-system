@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-form-builder">
+	<div class="vd-form-builder w-100">
 		<FormFieldList
 			v-for="(section, sectionName) in form"
 			:key="'section-' + sectionName"
@@ -50,16 +50,12 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-form-builder {
-		width: 100%;
+	.vd-field-list + .vd-field-list {
+		padding-top: 46px;
+		border-top: solid 1px rgba(0, 0, 0, .12);
 
-		.vd-field-list + .vd-field-list {
-			padding-top: 46px;
-			border-top: solid 1px rgba(0, 0, 0, .12);
-
-			&.theme--dark {
-				border-color: rgba(255, 255, 255, .12);
-			}
+		&.theme--dark {
+			border-color: rgba(255, 255, 255, .12);
 		}
 	}
 </style>
