@@ -9,7 +9,7 @@ export const api: Api = {
 					'string',
 					'function'
 				],
-				description: 'Le texte à copier ou une fonction qui le retourne. La fonction sera exécutée lors du clic sur le bouton.',
+				description: 'Le texte à copier ou une **fonction** qui le `retourne`. La fonction sera exécutée lors du clic sur le bouton.',
 				required: true
 			},
 			{

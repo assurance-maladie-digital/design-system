@@ -1,46 +1,48 @@
 // Reset Vuetify styles & tweak theme
-.v-application .nuxt-content,
-.v-application .doc-code-block {
-	pre {
-		padding: 0;
-		border-radius: 4px;
-		background-color: #1f1f1f;
-	}
+.v-application {
+	.nuxt-content-highlight,
+	.doc-code-block {
+		pre {
+			padding: 0;
+			border-radius: 4px;
+			background-color: #1f1f1f;
+		}
 
-	pre[class*=language] {
-		&::after {
-			content: attr(data-lang);
-			bottom: .75rem;
-			color: #bdbdbd;
+		pre[class*=language] {
+			&::after {
+				content: attr(data-lang);
+				bottom: .75rem;
+				color: #bdbdbd;
+				font-family: inherit;
+				font-size: .7rem;
+				font-weight: 700;
+				position: absolute;
+				right: 1rem;
+				text-transform: uppercase;
+			}
+		}
+
+		code {
 			font-family: inherit;
-			font-size: .7rem;
-			font-weight: 700;
-			position: absolute;
-			right: 1rem;
-			text-transform: uppercase;
+			font-size: 1em;
+			font-weight: 400;
+			background-color: transparent;
+			color: inherit;
+			padding: 0;
+		}
+
+		pre,
+		code {
+			text-shadow: none;
 		}
 	}
 
-	code {
-		font-family: inherit;
-		font-size: 1em;
-		font-weight: 400;
-		background-color: transparent;
-		color: inherit;
-		padding: 0;
+	.nuxt-content-highlight pre {
+		padding: 12px 16px;
 	}
 
-	pre,
-	code {
-		text-shadow: none;
-	}
-
-	.token {
+	span.token {
 		font-family: inherit;
 		background-color: transparent;
 	}
-}
-
-.v-application .nuxt-content-highlight pre {
-	padding: 12px 16px;
 }

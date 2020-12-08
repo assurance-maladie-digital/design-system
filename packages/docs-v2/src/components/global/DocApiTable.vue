@@ -37,9 +37,9 @@
 							<template v-if="header === 'name'">
 								<span
 									:id="item[header].replace('$', '')"
-									class="name-item text-mono accent--text d-flex"
+									class="name-item text-mono d-inline-flex font-weight-bold primary--text"
 								>
-									<span
+									<!-- <span
 										aria-hidden="true"
 										class="primary--text"
 										v-text="'#'"
@@ -49,7 +49,8 @@
 										:href="`#${item[header].replace('$', '')}`"
 										class="font-weight-bold text-decoration-none"
 										v-text="item[header]"
-									/>
+									/> -->
+									{{ item[header] }}
 								</span>
 							</template>
 
@@ -68,11 +69,9 @@
 							</template>
 
 							<template v-else-if="header === 'description'">
-								<!-- <DocMarkup
+								<DocMarkdown
 									v-if="item[header]"
-									:code="item[header]"
-								/> -->
-								{{ item[header] }}
+								>{{ item[header] }}</DocMarkdown>
 							</template>
 
 							<template v-else>
@@ -92,7 +91,6 @@
 								<DocMarkup
 									:code="getCode(item)"
 									:language="getLanguage(item)"
-									class="mr-2 ml-4"
 								/>
 							</td>
 						</tr>
@@ -152,10 +150,10 @@
 
 			const str = !defaultValue || typeof defaultValue === 'string'
 				? String(defaultValue)
-				: JSON.stringify(defaultValue, null, 2);
+				: JSON.stringify(defaultValue, null, '\t');
 
 			if (str.startsWith('gh:')) {
-				return `<a target="_blank" href="https://github.com/vuetifyjs/vuetify/search?q=${str.slice(3)}">${str.slice(3)}</a>`;
+				return `<a target="_blank" href="https://github.com/assurance-maladie-digital/design-system/search?q=${str.slice(3)}">${str.slice(3)}</a>`;
 			}
 
 			return Prism.highlight(str, Prism.languages.typescript);
@@ -234,11 +232,12 @@
 		}
 
 		.extra-row:hover {
-			background: initial !important
+			background: initial !important;
 		}
 
 		.extra-row td {
-			padding: 8px 0 !important
+			padding: 16px;
+			padding-top: 8px;
 		}
 
 		.text-mono {
@@ -248,7 +247,7 @@
 
 	.name-item {
 		white-space: nowrap;
-		margin-left: -10px;
+		// margin-left: -10px;
 
 		span {
 			margin-right: 4px;
