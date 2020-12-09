@@ -21,7 +21,8 @@
 	},
 	"main": "index.js",
 	"scripts": {
-		"lint": "eslint . --fix"
+		"lint": "eslint . --fix",
+		"test": "jest"
 	},
 	"dependencies": {
 		"@cnamts/eslint-config": "2.0.0-beta.2",
