@@ -13,6 +13,8 @@ describe('Validate shareable config eslint-vue of: index.js', () => {
 
 		const results = await eslint.lintText(code);
 
+		console.log(results[0]);
+
 		expect(results[0].errorCount).toEqual(9);
 
 	});

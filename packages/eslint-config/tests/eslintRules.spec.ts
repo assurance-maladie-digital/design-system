@@ -1,9 +1,9 @@
 
+import { ESLint } from 'eslint';
+
 import { code } from './codes';
 
-const { ESLint } = require('eslint');
-
-const eslint = new ESLint();
+const eslint = new ESLint({});
 
 
 describe('Validate shareable config eslint of: index.js', () => {
@@ -17,7 +17,7 @@ describe('Validate shareable config eslint of: index.js', () => {
 	});
 
 
-	it(`If 1st error rule is type : no-var  from: code`, async () => {
+	it(`Check type of rule from: code`, async () => {
 
 		const results = await eslint.lintText(code)
 

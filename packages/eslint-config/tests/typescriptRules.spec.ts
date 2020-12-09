@@ -1,7 +1,7 @@
 
-import { code } from './codes';
+import { ESLint } from 'eslint';
 
-const { ESLint } = require('eslint');
+import { code } from './codes';
 
 const baseConfig = require('../typescript.js');
 
