@@ -31,8 +31,6 @@
 
 	import contentDisposition from 'content-disposition';
 
-	import { STATE_ENUM } from '../../../types/enums/StateEnum';
-
 	import { downloadFile } from '../../functions/downloadFile';
 
 	import { mdiCheck, mdiDownload, mdiFile } from '@mdi/js';
@@ -86,8 +84,7 @@
 		successIcon = mdiCheck;
 		fileIcon = mdiFile;
 
-		// FIXME: Cannot read property 'idle' of undefined
-		state: string = STATE_ENUM.idle;
+		loading = false;
 
 		locales = locales;
 
@@ -106,7 +103,7 @@
 
 		download(): void {
 
-			this.state = STATE_ENUM.pending;
+			this.loading = true;
 
 			this.filePromise
 			.then((response) => {
@@ -129,8 +126,7 @@
 						this.notify(notification);
 					}
 				})
-				.catch(() => this.state = STATE_ENUM.rejected)
-				.finally(() => this.state = STATE_ENUM.resolved);
+				.finally(() => this.loading = false);
 		}
 	}
 </script>

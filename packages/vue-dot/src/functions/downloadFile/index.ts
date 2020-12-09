@@ -29,12 +29,12 @@ export function downloadFile(
 		link.target = '_blank';
 		link.style.display = 'none';
 		link.rel = 'noopener noreferrer';
-		link.href = window.URL.createObjectURL(blob);
+		link.href = URL.createObjectURL(blob);
 		link.download = filename;
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
-		window.URL.revokeObjectURL(link.href);
+		URL.revokeObjectURL(link.href);
 	}
 }
 
