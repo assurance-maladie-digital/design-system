@@ -1,8 +1,9 @@
 export const config = {
 	toolbar: {
+		flat: true,
 		color: 'white'
 	},
-	addBtn: {
+	createdBtn: {
 		outlined: true,
 		color: 'primary'
 	},

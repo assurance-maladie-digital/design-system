@@ -1,6 +1,5 @@
 <template>
 	<VToolbar
-		flat
 		v-bind="options.toolbar"
 	>
 		<p
@@ -29,7 +28,7 @@
 
 		<VBtn
 			v-if="showCreateBtn"
-			v-bind="options.addBtn"
+			v-bind="options.createdBtn"
 			@click="$emit('click')"
 		>
 			<VIcon v-bind="options.addIcon">
@@ -77,7 +76,7 @@
 			/** Label of the create button */
 			createBtnLabel: {
 				type: String,
-				default: undefined
+				default: locales.createBtnLabel
 			},
 			/** Number of filtered items */
 			nbFiltered: {
