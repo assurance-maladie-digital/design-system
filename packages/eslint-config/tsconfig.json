@@ -1,0 +1,22 @@
+{
+	"extends": "../../tsconfig.json",
+	// Extend root config
+	"compilerOptions": {
+		"baseUrl": ".",
+		"lib": [
+			"es2018",
+			"es2015",
+		],
+		"types": [
+			"node",
+			"jest"
+		],
+	},
+	"include": [
+		"tests/*.ts", "tests/validateEslintConfig.spec/ts"
+	],
+	"exclude": [
+		"node_modules",
+		"bin"
+	]
+}
