@@ -5,7 +5,7 @@ import { code } from './codes';
 
 const baseConfig = require('../typescript.js');
 
-
+//Create instance of eslint
 const eslint = new ESLint({
 	useEslintrc: false,
 	baseConfig
