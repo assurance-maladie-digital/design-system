@@ -4,9 +4,9 @@
 
 		<VDataTable
 			:headers="headers"
-			calculate-widths
 			:items="items"
 			:search="search"
+			calculate-widths
 			hide-default-footer
 			class="w-100 elevation-1"
 			@current-items="filteredItems = $event"
@@ -18,20 +18,6 @@
 					search-label="Rechercher"
 					show-create-btn
 					row-text="fichier"
-					:vuetify-options="{
-						textField: {
-							dense: true
-						},
-						toolbar: {
-							class: 'mt-4'
-						},
-						addBtn: {
-							color: 'red'
-						},
-						addIcon: {
-							color: 'red'
-						}
-					}"
 					:nb-total="items.length"
 					:nb-filtered="filteredItems.length"
 					@search="search = $event"
