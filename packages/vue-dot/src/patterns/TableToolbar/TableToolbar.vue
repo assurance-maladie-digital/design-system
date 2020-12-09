@@ -19,8 +19,8 @@
 		<slot name="search-left" />
 
 		<VTextField
-			:value="search"
 			v-bind="options.textField"
+			:value="search"
 			:disabled="searchDisabled"
 			:append-icon="searchIcon"
 			:label="searchLabel"
