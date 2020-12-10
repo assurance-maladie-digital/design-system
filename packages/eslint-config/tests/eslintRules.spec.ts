@@ -3,7 +3,7 @@ import { ESLint } from 'eslint';
 
 import { code } from './codes';
 
-// Create instance of eslint
+// Create an instance of eslint
 const eslint = new ESLint({});
 
 

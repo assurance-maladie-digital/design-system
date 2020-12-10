@@ -14,7 +14,7 @@
 		],
 	},
 	"include": [
-		"tests/*.ts", "tests/validateEslintConfig.spec/ts"
+		"tests/*.ts",
 	],
 	"exclude": [
 		"node_modules",

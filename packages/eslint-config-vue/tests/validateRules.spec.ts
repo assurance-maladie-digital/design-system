@@ -2,7 +2,7 @@ import { ESLint } from 'eslint';
 
 import { codeFn, HtmlCodeTemplate, tsCodeTemplate } from './codes';
 
-// Create instance of eslint
+// Create an instance of eslint
 let eslint = new ESLint({});
 
 
