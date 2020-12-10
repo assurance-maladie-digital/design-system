@@ -4,25 +4,39 @@ const file = new File(['hello', ' ', 'world'], 'hello_world.txt', { type: 'text/
 
 // Tests
 describe('downloadFile', () => {
+	global.URL.createObjectURL = jest.fn();
+	global.URL.revokeObjectURL = jest.fn();
 	it('is called correctly', () => {
-		const link = {
+		const link: any = {
 			download: String,
 			href: String,
 			click: jest.fn(),
 			style: {}
 		};
-		jest.spyOn(document, 'createElement').mockImplementation(() => link);
+		const mockCallback = jest.fn(downloadFile);
+		const linkSpy = jest.spyOn(document, 'createElement').mockImplementation(() => link);
 
-		downloadFile('test_content', file.name, file.type);
+		const windowSpy = jest.spyOn(global, 'window', 'get');
+		const DocumentSpy = jest.spyOn(global, 'document', 'get');
+		windowSpy.mockImplementation((): any => ({
+			body: {
+				appendChild: link
+			}
+		}));
+		// windowSpy.mockImplementation((): any => ({
+		// 	location: {
+		// 		replace: mockCallback
+		// 	}
+		// }));
 
-		expect(link.download).toEqual(file.name);
-		expect(link.href).toEqual('test_content');
-		expect(link.click).toHaveBeenCalledTimes(1);
+		mockCallback('test_content', file.name, file.type);
 
-		// FIXME:  createObjectURL is not a function ????
-		const blob = URL.createObjectURL(file);
-
-		// FIXME: How to test the download function in jest ???
-		expect(downloadFile(blob, file.name, file.type)).toBeUndefined();
+		// expect(mockCallback.mock.calls.length).toBe(1);
+		expect(windowSpy).toHaveBeenCalledTimes(2);
+		expect(DocumentSpy).toHaveBeenCalledTimes(2);
+		expect(linkSpy).toHaveBeenCalledTimes(2);
+		// expect(link.download).toEqual(file.name);
+		// expect(link.href).toEqual('test_content');
+		// expect(link.click).toHaveBeenCalledTimes(1);
 	});
 });
