@@ -26,7 +26,6 @@
 		"vue-prism-component": "1.2.0"
 	},
 	"devDependencies": {
-		"@nuxtjs/axios": "5.12.3",
 		"@nuxt/content": "1.11.1",
 		"@nuxt/types": "2.14.10",
 		"@nuxt/typescript-build": "2.0.3",

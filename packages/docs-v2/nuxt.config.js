@@ -25,8 +25,8 @@ export default {
 		]
 	},
 	css: [
-		'~/assets/styles/index.scss',
-		'@cnamts/vue-dot/dist/vue-dot.css'
+		'@cnamts/vue-dot/dist/vue-dot.css',
+		'~/assets/styles/index.scss'
 	],
 	buildModules: [
 		['@nuxt/typescript-build', {
@@ -47,8 +47,7 @@ export default {
 		]
 	},
 	modules: [
-		'@nuxt/content',
-		'@nuxtjs/axios'
+		'@nuxt/content'
 	],
 	components: true,
 	vuetify: {
