@@ -1,7 +1,7 @@
 <template>
 	<VBtn
 		v-bind="btnOptions"
-		@click="download"
+		@click.native="download"
 	>
 		<VIcon
 			v-if="showFileIcon"
