@@ -48,24 +48,42 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { Context } from '@nuxt/types';
+	import { contentFunc, IContentDocument } from '@nuxt/content/types/content';
+
 	import { AsyncData, Middleware } from '../decorators';
+
+	interface AsyncData extends Context {
+		$content: contentFunc;
+	}
+
+	type Content = IContentDocument[];
+
+	interface PageData {
+		document: IContentDocument;
+		prev: IContentDocument;
+		next: IContentDocument;
+	}
 
 	@Component
 	export default class Slug extends Vue {
 		@Middleware
-		middleware({ app, params, redirect }: any): void { // TODO
+		middleware({ app, params, redirect }: Context): void {
 			if (params.pathMatch === 'index') {
 				redirect(app.localePath('/'));
 			}
 		}
 
 		@AsyncData
-		async asyncData({ $content, params, error }: any): Promise<any> { // TODO
+		async asyncData({ $content, params, error }: AsyncData): Promise<void | PageData> {
 			const path =`/${params.pathMatch || 'index'}`;
-			const [document] = await $content({ deep: true }).where({ path }).fetch();
+			const [document] = await $content({ deep: true }).where({ path }).fetch<Content>();
 
 			if (!document) {
-				return error({ statusCode: 404, message: 'Page non trouvée' })
+				return error({
+					statusCode: 404,
+					message: 'Page non trouvée'
+				});
 			}
 
 			const [prev, next] = await $content({ deep: true })
@@ -80,7 +98,7 @@
 					before: 1,
 					after: 1
 				})
-				.fetch();
+				.fetch<Content>();
 
 			return {
 				document,
