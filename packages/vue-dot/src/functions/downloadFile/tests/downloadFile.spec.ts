@@ -4,47 +4,62 @@ const file = new File(['hello world'], 'hello_world.txt', { type: 'text/plain' }
 
 // Tests
 describe('downloadFile', () => {
-	global.URL.createObjectURL = jest.fn();
-	global.URL.revokeObjectURL = jest.fn();
-	it('Navigateur version .NET correctly', () => {
-		Object.defineProperty(global.navigator, 'appVersion', '.NET');
-		const mockCallback = jest.fn(downloadFile);
 
-		const msSaveOrOpenBlobSpy = jest.spyOn(window.navigator, 'msSaveOrOpenBlob');
-
-		mockCallback('test_content', file.name, file.type);
-
-		expect(msSaveOrOpenBlobSpy).toHaveBeenCalledTimes(1);
-
+	afterEach(() => {
+		jest.restoreAllMocks();
 	});
 
+	global.URL.createObjectURL = jest.fn();
+	global.URL.revokeObjectURL = jest.fn();
+
 	it('is called correctly', () => {
-		const mockCallback = jest.fn(downloadFile);
+		const link = {
+			click: jest.fn(),
+			style: jest.fn(()=>'none')
+		} as any;
+		jest.spyOn(document, 'createElement').mockImplementation(() => link);
+		const appendChilSpy = jest.spyOn(document.body, 'appendChild').mockImplementation();
+		const removeChildSpy = jest.spyOn(document.body, 'removeChild').mockImplementation();
 
-		const windowSpy = jest.spyOn(global, 'window', 'get');
-		const appendChilSpy = jest.spyOn(document.body, 'appendChild');
-		const removeChildSpy = jest.spyOn(document.body, 'removeChild');
-		const DocumentSpy = jest.spyOn(global, 'document', 'get');
-
-		mockCallback('test_content', file.name, file.type);
-		expect(windowSpy).toHaveBeenCalledTimes(2);
-		expect(DocumentSpy).toHaveBeenCalledTimes(3);
+		downloadFile(file, file.name, file.type);
 		expect(appendChilSpy).toHaveBeenCalledTimes(1);
 		expect(removeChildSpy).toHaveBeenCalledTimes(1);
 
-		expect(mockCallback).toHaveBeenCalled();
-		expect(mockCallback.mock.calls.length).toEqual(1);
+		expect(link.rel).toEqual('noopener noreferrer');
+		expect(link.target).toEqual('_blank');
+		expect(link.download).toEqual(file.name);
+		expect(link.style.display).toEqual('none');
+		expect(link.click).toHaveBeenCalledTimes(1);
 
-		// const link: any = {
-		// 	download: String,
-		// 	href: String,
-		// 	click: jest.fn(),
-		// 	style: {},
-		// 	target: String
-		// };
-		// jest.spyOn(document, 'createElement').mockImplementation(() => link);
-		// expect(link.download).toEqual(file.name);
-		// expect(link.href).toEqual('test_content');
-		// expect(link.click).toHaveBeenCalledTimes(1);
+	});
+
+	it('testing utf8Bom', () => {
+		const link = {
+			click: jest.fn(),
+			style : jest.fn(()=>'none')
+		} as unknown as any;
+		jest.spyOn(document, 'createElement').mockImplementation(() => link);
+		jest.spyOn(document.body, 'appendChild').mockImplementation();
+		jest.spyOn(document.body, 'removeChild').mockImplementation();
+		downloadFile(file, file.name, file.type, true);
+		expect(link.click).toHaveBeenCalledTimes(1);
+	});
+
+	it('testing download IE10', () => {
+		global.navigator.msSaveOrOpenBlob = jest.fn();
+		const mockCallback = jest.fn(downloadFile);
+
+		const originalNavigator = { ...navigator };
+		const navigatorSpy = jest.spyOn(global, 'navigator', 'get');
+		// IE10 navigator appVersion contain .NET
+		navigatorSpy.mockImplementation(() => ({
+			...originalNavigator,
+			appVersion: 'test appVersion contain .NET'
+		}));
+
+		mockCallback(file, file.name, file.type);
+
+		expect(navigatorSpy).toHaveBeenCalledTimes(2);
+
 	});
 });
