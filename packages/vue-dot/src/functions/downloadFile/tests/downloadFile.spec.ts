@@ -45,6 +45,36 @@ describe('downloadFile', () => {
 		expect(link.click).toHaveBeenCalledTimes(1);
 	});
 
+	it('testing content type BufferSource', () => {
+		const buffer = new ArrayBuffer(8);
+		const link = {
+			click: jest.fn(),
+			style: jest.fn(()=>'none')
+		} as any;
+		jest.spyOn(document, 'createElement').mockImplementation(() => link);
+		jest.spyOn(document.body, 'appendChild').mockImplementation();
+		jest.spyOn(document.body, 'removeChild').mockImplementation();
+
+		downloadFile(buffer, file.name, file.type);
+
+		expect(link.click).toHaveBeenCalledTimes(1);
+	});
+
+	it('testing content type String', () => {
+		const buffer = new ArrayBuffer(8);
+		const link = {
+			click: jest.fn(),
+			style: jest.fn(()=>'none')
+		} as any;
+		jest.spyOn(document, 'createElement').mockImplementation(() => link);
+		jest.spyOn(document.body, 'appendChild').mockImplementation();
+		jest.spyOn(document.body, 'removeChild').mockImplementation();
+
+		downloadFile('test content string', file.name, file.type);
+
+		expect(link.click).toHaveBeenCalledTimes(1);
+	});
+
 	it('testing download IE10', () => {
 		global.navigator.msSaveOrOpenBlob = jest.fn();
 		const mockCallback = jest.fn(downloadFile);

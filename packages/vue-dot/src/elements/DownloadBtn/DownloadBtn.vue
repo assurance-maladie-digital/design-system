@@ -102,31 +102,30 @@
 		}
 
 		download(): void {
-
 			this.loading = true;
 
 			this.filePromise
 			.then((response) => {
-					const contentDispositionHeader = response.headers['content-disposition'] as string;
+				const contentDispositionHeader = response.headers['content-disposition'] as string;
 
-					const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+				const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
 
-					downloadFile(response.data, filename, 'application/pdf');
+				downloadFile(response.data, filename, 'application/pdf');
 
-					if (this.notification) {
-						const message: string = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
+				if (this.notification) {
+					const message: string = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
 
-						const notification: NotificationObj = {
-							type: 'success',
-							icon: this.successIcon,
-							message
-						};
+					const notification: NotificationObj = {
+						type: 'success',
+						icon: this.successIcon,
+						message
+					};
 
-						// Notify!
-						this.notify(notification);
-					}
-				})
-				.finally(() => this.loading = false);
+					// Notify!
+					this.notify(notification);
+				}
+			})
+			.finally(() => this.loading = false);
 		}
 	}
 </script>
