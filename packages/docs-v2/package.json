@@ -22,12 +22,12 @@
 	"dependencies": {
 		"@cnamts/design-tokens": "2.0.0-beta.4",
 		"@cnamts/vue-dot": "2.0.0-beta.4",
-		"nuxt": "2.14.10",
+		"nuxt": "2.14.11",
 		"vue-prism-component": "1.2.0"
 	},
 	"devDependencies": {
 		"@nuxt/content": "1.11.1",
-		"@nuxt/types": "2.14.10",
+		"@nuxt/types": "2.14.11",
 		"@nuxt/typescript-build": "2.0.3",
 		"@nuxtjs/vuetify": "1.11.2",
 		"@nuxtjs/google-fonts": "1.2.0",
