@@ -44,7 +44,7 @@
 
 		get tabs(): Tabs[] | undefined {
 			if (!this.$slots.default) {
-				return
+				return;
 			}
 
 			const filteredSlots = this.$slots.default.filter(slot => Boolean(slot.tag));

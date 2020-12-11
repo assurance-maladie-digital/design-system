@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { LAST_PUBLISHED } from '../constants';
+import { LAST_PUBLISHED } from '~/constants';
 
 export function getLastPublished(): string {
 	const lastPublished = dayjs(LAST_PUBLISHED);

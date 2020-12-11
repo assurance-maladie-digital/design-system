@@ -1,4 +1,5 @@
 ---
 position: -1
 ---
-<!-- Content is static in index.vue -->
+
+<!-- Static content in index.vue -->

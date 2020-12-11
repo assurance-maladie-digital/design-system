@@ -74,7 +74,7 @@
 			return {
 				next: '&nbsp;→',
 				prev: '←&nbsp;'
-			}
+			};
 		}
 	}
 </script>

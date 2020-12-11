@@ -102,23 +102,27 @@ export const api: Api = {
 				example: 'test'
 			}
 		],
-		modifiers: [{
-			name: 'ss',
-			description: 'aa',
-			type: ['((e: Event) => void)', 'ClickOutsideBindingArgs'],
-			snippet: `
+		modifiers: [
+			{
+				name: 'ss',
+				description: 'aa',
+				type: ['((e: Event) => void)', 'ClickOutsideBindingArgs'],
+				snippet: `
 <template>
-<v-card v-intersect="onIntersect">...</v-card>
+	<VCard v-intersect="onIntersect">
+		…
+	</VCard>
 </template>
+
 <script>
-export default {
-  methods: {
-    // Will be invoked on DOM mount and when the element is intersected
-    onIntersect (entries, observer, isIntersecting) {}
-  }
-}
-</script>`
+	export default {
+		methods: {
+			// Will be invoked on DOM mount and when the element is intersected
+			onIntersect (entries, observer, isIntersecting) {}
 		}
-	]
-}
+	};
+</script>`
+			}
+		]
+	}
 };

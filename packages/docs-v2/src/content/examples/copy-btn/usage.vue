@@ -19,7 +19,7 @@
 		inheritAttrs: false
 	})
 	export default class Usage extends Vue {
-		get folderId() {
+		get folderId(): string {
 			return this.$attrs.textToCopy;
 		}
 

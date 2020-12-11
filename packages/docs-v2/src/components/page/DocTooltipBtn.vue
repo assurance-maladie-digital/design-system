@@ -1,27 +1,24 @@
 <template>
-	<span class="doc-tooltip-btn d-inline-block">
-		<VTooltip
-			bottom
-			content-class="doc-tooltip-btn__content"
-			open-delay="200"
-		>
-			<template #activator="{ on }">
-				<VBtn
-					:aria-label="label"
-					icon
-					v-bind="$attrs"
-					v-on="{
-						...on,
-						...$listeners
-					}"
-				>
-					<slot name="icon" />
-				</VBtn>
-			</template>
+	<VTooltip
+		bottom
+		open-delay="200"
+	>
+		<template #activator="{ on }">
+			<VBtn
+				:aria-label="label"
+				icon
+				v-bind="$attrs"
+				v-on="{
+					...on,
+					...$listeners
+				}"
+			>
+				<slot name="icon" />
+			</VBtn>
+		</template>
 
-			{{ label }}
-		</VTooltip>
-	</span>
+		{{ label }}
+	</VTooltip>
 </template>
 
 <script lang="ts">
@@ -30,13 +27,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			icon: {
-				type: String,
-				default: undefined
-			},
 			label: {
 				type: String,
 				required: true
+			},
+			icon: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -48,9 +45,3 @@
 	})
 	export default class DocTooltipBtn extends MixinsDeclaration {}
 </script>
-
-<style lang="scss">
-	.doc-tooltip-btn__content p {
-		margin: 0;
-	}
-</style>

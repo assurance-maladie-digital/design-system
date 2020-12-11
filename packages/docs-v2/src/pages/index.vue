@@ -86,8 +86,6 @@
 		version = version;
 		githubIcon = mdiGithub;
 
-		mountains = null;
-
 		get lastPublished(): string {
 			return getLastPublished();
 		}
