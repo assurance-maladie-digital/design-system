@@ -1,13 +1,16 @@
 import { createDecorator } from 'vue-class-component';
 
-export const AsyncData = createDecorator((options, key) => {
-	if (options.methods) {
-		options.asyncData = options.methods[key];
-	}
-});
+type Property = 'asyncData' | 'middleware' | 'head';
 
-export const Middleware = createDecorator((options, key) => {
-	if (options.methods) {
-		options.middleware = options.methods[key];
-	}
-});
+function newPropertyDecorator(property: Property) {
+	return createDecorator((options, key) => {
+		if (options.methods) {
+			options[property] = options.methods[key];
+		}
+	});
+}
+
+export const AsyncData = newPropertyDecorator('asyncData');
+export const Middleware = newPropertyDecorator('middleware');
+export const Head = newPropertyDecorator('head');
+

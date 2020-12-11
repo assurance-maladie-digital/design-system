@@ -48,10 +48,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { MetaInfo } from 'vue-meta';
+
 	import { Context } from '@nuxt/types';
 	import { contentFunc, IContentDocument } from '@nuxt/content/types/content';
 
-	import { AsyncData, Middleware } from '../decorators';
+	import { AsyncData, Middleware, Head } from '../decorators';
+	import { getPageMeta } from '../functions/getPageMeta';
 
 	interface AsyncData extends Context {
 		$content: contentFunc;
@@ -67,6 +70,8 @@
 
 	@Component
 	export default class Slug extends Vue {
+		document?: IContentDocument;
+
 		@Middleware
 		middleware({ app, params, redirect }: Context): void {
 			if (params.pathMatch === 'index') {
@@ -105,6 +110,15 @@
 				prev,
 				next
 			};
+		}
+
+		@Head
+		head(): MetaInfo {
+			if (!this.document) {
+				return {};
+			}
+
+			return getPageMeta(this.document.title, this.document.description);
 		}
 	};
 </script>
