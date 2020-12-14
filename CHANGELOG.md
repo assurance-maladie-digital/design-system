@@ -36,7 +36,8 @@
   - **copy-webpack-plugin:** Mise à jour vers la `v6.4.0` ([#778](https://github.com/assurance-maladie-digital/design-system/pull/778)) ([00d5145](https://github.com/assurance-maladie-digital/design-system/commit/00d5145d64642ac11eed8722cefee9cb562b2065))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.9.1` ([#779](https://github.com/assurance-maladie-digital/design-system/pull/779)) ([7e62616](https://github.com/assurance-maladie-digital/design-system/commit/7e62616fb80945aa0ce4dfdec116ea0c95eb2154))
   - **@types/jest:** Mise à jour vers la `v26.0.18` ([#782](https://github.com/assurance-maladie-digital/design-system/pull/782)) ([91b97a3](https://github.com/assurance-maladie-digital/design-system/commit/91b97a3be77c1b9573ad45b279eda2d05606f3b5))
-  - **vuetify:** Mise à jour vers la `v2.3.21` ([#784](https://github.com/assurance-maladie-digital/design-system/pull/784))
+  - **vuetify:** Mise à jour vers la `v2.3.21` ([#784](https://github.com/assurance-maladie-digital/design-system/pull/784)) ([31268b8](https://github.com/assurance-maladie-digital/design-system/commit/31268b8a3d5975c86bbe125486a82cdd91b3b499))
+  - **babel:** Mise à jour du monorepo vers la `v7.12.10` ([#785](https://github.com/assurance-maladie-digital/design-system/pull/785))
 
 ### 📚 Guide de migration
 
