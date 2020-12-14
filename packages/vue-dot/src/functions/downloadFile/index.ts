@@ -2,13 +2,13 @@
  * downloadFile function
  * It will download the content from the brower
  *
- * @param {Blob | string} content The content to download
+ * @param {BufferSource | Blob | string} content The content to download
  * @param {string} filename The filename to download
  * @param {string} type The file type
  * @param {boolean} utf8Bom The utf8 file content
  */
 export function downloadFile(
-	content: Blob | string,
+	content: BufferSource | Blob | string,
 	filename: string,
 	type: string,
 	utf8Bom = false
