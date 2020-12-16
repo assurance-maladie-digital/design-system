@@ -10,6 +10,8 @@ import { filterStructures } from '../filterStructures';
 import { FilterTypesEnum } from '../enums';
 import { ActiveFilters, Filter, Filters, Row, Rows, FilterStructure } from '../types';
 
+import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
+
 const Props = Vue.extend({
 	props: {
 		filters: {
@@ -31,8 +33,7 @@ const MixinsDeclaration = mixins(Props);
 		filters: {
 			handler() {
 				this.filterItems();
-			},
-			immediate: true
+			}
 		},
 		rows: {
 			handler() {
@@ -58,6 +59,11 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 	 */
 	openFilterDialog(filterName: string): void {
 		const filter: Filter = this.filters[filterName];
+
+		if (!filter) {
+			return;
+		}
+
 		this.filterTypeEdit = filterStructures[filter.type];
 		this.filterEditLabel = filter.label;
 		this.filterEditName = filterName;
@@ -65,10 +71,6 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 		const activeFilter = this.activeFilters.find((activeFilter) => {
 			return activeFilter.filterName === filterName;
 		});
-
-		if (!this.filterTypeEdit) {
-			return;
-		}
 
 		// Set the value of the active filter to the edited filter fields
 		if (activeFilter) {
@@ -137,8 +139,8 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 		}
 
 		const filterType = this.filterTypeEdit;
-		const valueToString = filterType.valueToString;
 
+		// Construct form from multiple fields structure for get values
 		const form: Form = {
 			section: {
 				questions : filterType.fields
@@ -153,7 +155,7 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 			return activeFilter.filterName === this.filterEditName;
 		});
 
-		const valueText = valueToString(values);
+		const valueText = filterType.valueToString(values);
 
 		if (valueText && values) {
 			const activeFilterData = {
@@ -171,9 +173,7 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 				this.activeFilters.push(activeFilterData);
 			}
 
-			this.$nextTick(() => {
-				this.filterItems();
-			});
+			this.filterItems();
 		} else if (activeFilterIndex >= 0) {
 			// delete the active filter if the new have no valueText or values
 			this.deleteFilter(activeFilterIndex);
@@ -184,7 +184,7 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 
 	/** Filter the rows with the current active filters */
 	filterItems(): void {
-		let filteredItems: Rows = this.rows;
+		let filteredItems: Rows = deepCopy(this.rows);
 
 		filteredItems = filteredItems.filter((row) => {
 			return this.checkItemValues(row);

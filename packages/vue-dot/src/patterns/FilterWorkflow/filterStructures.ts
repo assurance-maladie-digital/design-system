@@ -1,5 +1,5 @@
 import { parseDate } from '../../helpers/parseDate';
-import { ChoiceFieldValue, PeriodValue, FieldValue } from '@cnamts/form-builder/src/components/FormField/types.d';
+import { PeriodValue, FieldValue } from '@cnamts/form-builder/src/components/FormField/types.d';
 import { FilterStructures, ColumnValue } from './types';
 import { ChoiceValue, FieldItemValue } from '@cnamts/form-builder/src/components/FormField/types';
 import { FormValues } from '@cnamts/form-builder/src/functions/getFormValues/types';
@@ -30,10 +30,6 @@ export const filterStructures: FilterStructures = {
 		valueToString: (formValues: FormValues): string | null => {
 			const fieldSelect = formValues.select as ChoiceValue;
 
-			if (!fieldSelect) {
-				return null;
-			}
-
 			const selectedItems = fieldSelect.value as FieldItemValue[];
 
 			if (!selectedItems || !selectedItems.length) {
@@ -53,10 +49,6 @@ export const filterStructures: FilterStructures = {
 		},
 		filter: (value: ColumnValue, formValues: FormValues): boolean => {
 			const fieldSelect = formValues.select as ChoiceValue;
-
-			if (!fieldSelect) {
-				return true;
-			}
 
 			const selectedItems = fieldSelect?.value as FieldItemValue[];
 

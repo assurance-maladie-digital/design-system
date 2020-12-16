@@ -6,16 +6,14 @@
 			@change="rowsUpdated"
 		/>
 
-		<VList>
-			<VListItem
-				v-for="(row, index) in rowsFiltered"
-				:key="index"
-			>
-				<VListItemContent>
-					{{ JSON.stringify(row) }}
-				</VListItemContent>
-			</VListItem>
-		</VList>
+		<VDataTable
+			:items="rowsFiltered"
+			:headers="headers"
+		/>
+
+		<VBtn @click="rows = rows2">
+			change lignes
+		</VBtn>
 	</DocSection>
 </template>
 
@@ -29,8 +27,32 @@
 	export default class FilterWorkflowEx extends Vue {
 
 		rows: Rows = dataRows;
-		rowsFiltered: Rows | null = null;
+		rowsFiltered: Rows | [] = [];
 		filters: Filters = dataFilters;
+
+		headers = [
+			{
+				text: 'Fichier',
+				value: 'filename'
+			},
+			{
+				text: 'Nombre de téléchargement',
+				value: 'nbDownload'
+			},
+			{
+				text: 'Date',
+				value: 'date'
+			}
+		];
+
+		rows2: Rows = [
+			...dataRows,
+			{
+				filename: 'fichier4.txt',
+				nbDownload: 4,
+				date: '31/12/2020'
+			}
+		];
 
 		rowsUpdated(rows: Rows): void {
 			this.rowsFiltered = rows;
