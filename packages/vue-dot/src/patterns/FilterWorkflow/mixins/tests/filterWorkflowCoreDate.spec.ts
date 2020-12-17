@@ -147,6 +147,27 @@ describe('FilterWorkflowCoreDate', () => {
 		expect(result).toBe(false);
 	});
 
+	it('test type date when row value is null', async() => {
+		const wrapper = createWrapper(filters, rows);
+
+		wrapper.vm.activeFilters = [
+			{
+				filterName: 'date',
+				label: 'Date',
+				text: '20/10/2020 selectionnée',
+				type: 'date',
+				values: { date: { from: '2020/10/20', to: null } }
+			}
+		];
+
+		await wrapper.vm.$nextTick();
+
+		// Row value is not a string
+		const result = wrapper.vm.checkItemValues({ date: null });
+
+		expect(result).toBe(false);
+	});
+
 	it('test type date check Item value null', async() => {
 		const wrapper = createWrapper(filters, rows);
 
@@ -165,5 +186,26 @@ describe('FilterWorkflowCoreDate', () => {
 		const result = wrapper.vm.checkItemValues({ date: '20/10/2020' });
 
 		expect(result).toBeTruthy;
+	});
+
+	it('test type date: apply filter when no value', async() => {
+		const wrapper = createWrapper(filters, rows);
+
+		wrapper.vm.openFilterDialog('date');
+
+		const filterEdit = wrapper.vm.filterTypeEdit as FilterStructure;
+
+		// Change select value
+		const dateFields = filterEdit?.fields;
+		dateFields.date.value = {} as PeriodValue;
+
+		wrapper.vm.fieldsUpdated(dateFields);
+		wrapper.vm.applyFilter();
+
+		const event = wrapper.emitted('change') || [];
+
+		await wrapper.vm.$nextTick();
+
+		expect(event[0][0]).toEqual(rows);
 	});
 });

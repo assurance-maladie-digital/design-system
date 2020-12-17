@@ -1,3 +1,4 @@
+import { locales } from './locales';
 import { parseDate } from '../../helpers/parseDate';
 import { PeriodValue, FieldValue } from '@cnamts/form-builder/src/components/FormField/types.d';
 import { FilterStructures, ColumnValue } from './types';
@@ -15,7 +16,7 @@ export const filterStructures: FilterStructures = {
 				fieldOptions: {
 					type: 'choiceAutocomplete',
 					outlined: true,
-					label: 'Rechercher',
+					label: locales.filterStructure.text.search,
 					menuProps: {
 						origin: 'bottom',
 						maxHeight: 185,
@@ -40,7 +41,7 @@ export const filterStructures: FilterStructures = {
 			const nbSelectedItems = selectedItems.length;
 
 			if (nbSelectedItems > 1) {
-				text = `${nbSelectedItems} éléments sélectionnés`;
+				text = locales.filterStructure.text.selectedElements(nbSelectedItems);
 			} else {
 				text = String(selectedItems[0]);
 			}
@@ -67,13 +68,13 @@ export const filterStructures: FilterStructures = {
 					from: {
 						outlined: true,
 						textField: {
-							label: 'A partir du'
+							label: locales.filterStructure.date.fromLabel
 						}
 					},
 					to: {
 						outlined: true,
 						textField: {
-							label: 'Jusqu\'au'
+							label: locales.filterStructure.date.toLabel
 						}
 					}
 				}
@@ -82,8 +83,8 @@ export const filterStructures: FilterStructures = {
 		valueToString: (formValues: FormValues): string | null => {
 			const filterValue = formValues.date as PeriodValue;
 
-			const fromValue = filterValue?.from;
-			const toValue = filterValue?.to;
+			const fromValue = filterValue.from;
+			const toValue = filterValue.to;
 
 			let text = '';
 
@@ -93,8 +94,7 @@ export const filterStructures: FilterStructures = {
 			}
 
 			if (fromValue) {
-
-				text = `A partir du ${dayjs(fromValue).format('DD/MM/YYYY')}`;
+				text = `${locales.filterStructure.date.fromLabel} ${dayjs(fromValue).format('DD/MM/YYYY')}`;
 			}
 
 			if (fromValue && toValue) {
@@ -102,7 +102,7 @@ export const filterStructures: FilterStructures = {
 			}
 
 			if (toValue) {
-				text += `Jusqu'au ${dayjs(toValue).format('DD/MM/YYYY')}`;
+				text += `${locales.filterStructure.date.toLabel} ${dayjs(toValue).format('DD/MM/YYYY')}`;
 			}
 
 			return text;
@@ -147,7 +147,7 @@ export const filterStructures: FilterStructures = {
 				fieldOptions: {
 					outlined: true,
 					mask: '###########',
-					label: 'Supérieur ou égal'
+					label: locales.filterStructure.number.minLabel
 				}
 			},
 			numberMax: {
@@ -155,7 +155,7 @@ export const filterStructures: FilterStructures = {
 				fieldOptions: {
 					outlined: true,
 					mask: '###########',
-					label: 'Inférieur ou égal'
+					label: locales.filterStructure.number.maxLabel
 				}
 			}
 		},
@@ -170,15 +170,15 @@ export const filterStructures: FilterStructures = {
 			}
 
 			if (numberMin) {
-				text = `supérieur à ${numberMin}`;
+				text = `${locales.filterStructure.number.minLabel} ${numberMin}`;
 			}
 
 			if (numberMax && numberMin) {
-				text += ', ';
+				text += '. ';
 			}
 
 			if (numberMax) {
-				text += `inférieur à ${numberMax}`;
+				text += `${locales.filterStructure.number.maxLabel} ${numberMax}`;
 			}
 
 			return text;
@@ -192,7 +192,6 @@ export const filterStructures: FilterStructures = {
 				return true;
 			}
 
-			// Filter column with value equal
 			if (!value) {
 				return false;
 			}

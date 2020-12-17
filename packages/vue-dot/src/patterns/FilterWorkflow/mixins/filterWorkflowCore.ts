@@ -64,7 +64,12 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 			return;
 		}
 
-		this.filterTypeEdit = filterStructures[filter.type];
+		this.filterTypeEdit = deepCopy(filterStructures[filter.type]);
+
+		if (!this.filterTypeEdit) {
+			return;
+		}
+
 		this.filterEditLabel = filter.label;
 		this.filterEditName = filterName;
 
@@ -196,7 +201,7 @@ export class FilterWorkflowCore extends MixinsDeclaration {
 	/** Check all values of the row with all the corresponding active filter */
 	checkItemValues(row: Row): boolean {
 		for (const activeFilter of this.activeFilters) {
-			const filter = filterStructures[activeFilter.type];
+			const filter = deepCopy(filterStructures[activeFilter.type]);
 			const value = row[activeFilter.filterName];
 
 			// Check the table column value corresponding to the activate filter value

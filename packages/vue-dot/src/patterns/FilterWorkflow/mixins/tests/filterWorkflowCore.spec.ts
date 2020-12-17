@@ -124,70 +124,6 @@ describe('FilterWorkflowCore', () => {
 		expect(event[1][0]).toEqual(rows);
 	});
 
-	it('emits change on filter type number with both min and max', async() => {
-		const wrapper = createWrapper(filters, rows);
-
-		wrapper.vm.openFilterDialog('nbDownload');
-
-		const filterEdit = wrapper.vm.filterTypeEdit as FilterStructure;
-
-		// Change select value
-		const numberFields = filterEdit?.fields;
-		numberFields.numberMin.value = '1';
-		numberFields.numberMax.value = '1';
-
-		wrapper.vm.fieldsUpdated(numberFields);
-		wrapper.vm.applyFilter();
-
-		const event = wrapper.emitted('change') || [];
-
-		await wrapper.vm.$nextTick();
-
-		expect(event[1][0]).toEqual([rows.find((row) => row.nbDownload === 1)]);
-	});
-
-	it('emits change on filter type number with min only', async() => {
-		const wrapper = createWrapper(filters, rows);
-
-		wrapper.vm.openFilterDialog('nbDownload');
-
-		const filterEdit = wrapper.vm.filterTypeEdit as FilterStructure;
-
-		// Change select value
-		const numberFields = filterEdit?.fields;
-		numberFields.numberMin.value = '1';
-
-		wrapper.vm.fieldsUpdated(numberFields);
-		wrapper.vm.applyFilter();
-
-		const event = wrapper.emitted('change') || [];
-
-		await wrapper.vm.$nextTick();
-
-		expect(event[1][0]).toEqual([rows.find((row) => row.nbDownload === 1)]);
-	});
-
-	it('emits change on filter type number with max only', async() => {
-		const wrapper = createWrapper(filters, rows);
-
-		wrapper.vm.openFilterDialog('nbDownload');
-
-		const filterEdit = wrapper.vm.filterTypeEdit as FilterStructure;
-
-		// Change select value
-		const numberFields = filterEdit?.fields;
-		numberFields.numberMax.value = '1';
-
-		wrapper.vm.fieldsUpdated(numberFields);
-		wrapper.vm.applyFilter();
-
-		const event = wrapper.emitted('change') || [];
-
-		await wrapper.vm.$nextTick();
-
-		expect(event[1][0]).toEqual([rows.find((row) => row.nbDownload === 1)]);
-	});
-
 	it('test update Field before editing', async() => {
 		const wrapper = createWrapper(filters, rows);
 
@@ -215,14 +151,22 @@ describe('FilterWorkflowCore', () => {
 
 		await wrapper.vm.$nextTick();
 
-		expect(wrapper.emitted().change?.length).toBe(2);
-		expect(wrapper.emitted().change?.length).toBe(2);
+		expect(wrapper.emitted().change?.length).toBe(1);
 
 		// Result will be undefined beacause there is no editing filter
 		expect(result).toEqual(undefined);
 	});
 
-	it('test apply filter without current editing filter', async() => {
+	it('test apply filter type that does not exist', async() => {
+		const wrapper = createWrapper({ ...filters, unknowColumn: { type: 'unknow', label: 'test' } } as any, rows);
+
+		const result = wrapper.vm.openFilterDialog('unknowColumn');
+
+		// Result will be undefined beacause there is no editing filter
+		expect(result).toEqual(undefined);
+	});
+
+	it('test apply filter without current editing filter to set', async() => {
 		const wrapper = createWrapper(filters, rows);
 
 		const result = wrapper.vm.applyFilter();
@@ -260,6 +204,46 @@ describe('FilterWorkflowCore', () => {
 
 		// Delete filter
 		wrapper.vm.deleteFilter(0);
+
+		event = wrapper.emitted('change') || [];
+
+		await wrapper.vm.$nextTick();
+
+		expect(event[2][0]).toEqual(rows);
+	});
+
+	it('reset the editing filter when apply it without value', async() => {
+		const wrapper = createWrapper(filters, rows);
+
+		wrapper.vm.openFilterDialog('nbDownload');
+
+		let filterEdit = wrapper.vm.filterTypeEdit as FilterStructure;
+
+		// Set filter with one value
+		let numberFields = filterEdit?.fields;
+		numberFields.numberMax.value = '1';
+
+		wrapper.vm.fieldsUpdated(numberFields);
+		wrapper.vm.applyFilter();
+
+		let event = wrapper.emitted('change') || [];
+
+		await wrapper.vm.$nextTick();
+
+		expect(event[1][0]).toEqual([rows.find((row) => row.nbDownload === 1)]);
+
+		// Delete filter
+		wrapper.vm.openFilterDialog('nbDownload');
+
+		filterEdit = wrapper.vm.filterTypeEdit as FilterStructure;
+
+		// Set filter without values
+		numberFields = filterEdit?.fields;
+		numberFields.numberMax.value = null;
+		numberFields.numberMin.value = null;
+
+		wrapper.vm.fieldsUpdated(numberFields);
+		wrapper.vm.applyFilter();
 
 		event = wrapper.emitted('change') || [];
 
