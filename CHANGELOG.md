@@ -34,7 +34,6 @@
   - **dayjs:** Mise à jour vers la `v1.9.7` ([#775](https://github.com/assurance-maladie-digital/design-system/pull/775)) ([94ab7b8](https://github.com/assurance-maladie-digital/design-system/commit/94ab7b81de3fad19ac0e3d1d90cabf58f969d570))
   - **core-js:** Mise à jour vers la `v3.8.1` ([#776](https://github.com/assurance-maladie-digital/design-system/pull/776)) ([ebfadf2](https://github.com/assurance-maladie-digital/design-system/commit/ebfadf246e9412e69158cd85915defce9553ef73))
   - **ts-node:** Mise à jour vers la `v9.1.1` ([#777](https://github.com/assurance-maladie-digital/design-system/pull/777)) ([0bb5cca](https://github.com/assurance-maladie-digital/design-system/commit/0bb5cca27e451f7e69c408406b589374fa8a852e))
-  - **copy-webpack-plugin:** Mise à jour vers la `v6.4.0` ([#778](https://github.com/assurance-maladie-digital/design-system/pull/778)) ([00d5145](https://github.com/assurance-maladie-digital/design-system/commit/00d5145d64642ac11eed8722cefee9cb562b2065))
   - **vuetify:** Mise à jour vers la `v2.3.21` ([#784](https://github.com/assurance-maladie-digital/design-system/pull/784)) ([31268b8](https://github.com/assurance-maladie-digital/design-system/commit/31268b8a3d5975c86bbe125486a82cdd91b3b499))
   - **babel:** Mise à jour du monorepo vers la `v7.12.10` ([#785](https://github.com/assurance-maladie-digital/design-system/pull/785)) ([1a7fa22](https://github.com/assurance-maladie-digital/design-system/commit/1a7fa22da2f11a473f8b1bfe668bb3e148c8c343))
   - **@types/fs-extra:** Mise à jour vers la `v9.0.5` ([#787](https://github.com/assurance-maladie-digital/design-system/pull/787)) ([e8c3a3a](https://github.com/assurance-maladie-digital/design-system/commit/e8c3a3ab84b0980d4a47adb1013a1449309585f4))
@@ -44,7 +43,8 @@
   - **@vue/test-utils:** Mise à jour vers la `v1.1.2` ([#792](https://github.com/assurance-maladie-digital/design-system/pull/792)) ([08c1e39](https://github.com/assurance-maladie-digital/design-system/commit/08c1e39ae82900fae1c51db96dc56807a3c9a31b))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.10.0` ([#794](https://github.com/assurance-maladie-digital/design-system/pull/794)) ([24cf108](https://github.com/assurance-maladie-digital/design-system/commit/24cf108900dccd638a5d0e2f003d5ddba7e512e8))
   - **@babel/preset-env:** Mise à jour vers la `v7.12.11` ([#795](https://github.com/assurance-maladie-digital/design-system/pull/795)) ([28a9507](https://github.com/assurance-maladie-digital/design-system/commit/28a9507d84456bb5b9580deb132bf2616068e192))
-  - **eslint-plugin-vue:** Mise à jour vers la `v7.3.0` ([#796](https://github.com/assurance-maladie-digital/design-system/pull/796)
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.3.0` ([#796](https://github.com/assurance-maladie-digital/design-system/pull/796) ([b8c6291](https://github.com/assurance-maladie-digital/design-system/commit/b8c629103ddeb09ca8edd149a08a8fbdec085b97))
+  - **copy-webpack-plugin:** Mise à jour vers la `v6.4.1` ([#797](https://github.com/assurance-maladie-digital/design-system/pull/797))
 
 ### 📚 Guide de migration
 
