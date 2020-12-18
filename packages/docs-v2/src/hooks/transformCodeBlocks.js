@@ -4,8 +4,8 @@ function markdownToCodeBlock(match) {
 
 	// Remove opening and closing tags
 	const blocContent = match.replace(tagLangRegexp, '').replace(/`{3}/g, '');
-	// Escapes new lines to avoid issues with parsing step
-	const escapedBlocContent = blocContent.replace(/\n/g, '\\n');
+	// Escape new lines and double quotes to avoid issues with parsing step
+	const escapedBlocContent = blocContent.replace(/\n/g, '\\n').replace(/"/g, '&quot;');
 	// Wrap code in backtick chars to avoid issues with quotes (eg: :code="` myVar=""; `")
 	const code = '`' + escapedBlocContent + '`';
 
