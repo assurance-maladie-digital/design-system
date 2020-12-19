@@ -3,6 +3,7 @@
 		:tile="tile"
 		color="#1f1f1f"
 		class="doc-code-block overflow-hidden"
+		:class="{ 'mb-4': !noPadding }"
 		outlined
 		rounded
 		dark
@@ -27,6 +28,10 @@
 	const Props = Vue.extend({
 		props: {
 			tile: {
+				type: Boolean,
+				default: false
+			},
+			noPadding: {
 				type: Boolean,
 				default: false
 			}

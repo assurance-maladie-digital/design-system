@@ -17,13 +17,17 @@
 		margin-bottom: 8px;
 	}
 
-	ul {
-		margin-bottom: 16px;
+	h3 {
+		font-size: 1.25rem;
+		line-height: 2rem;
+		font-weight: 500;
+		letter-spacing: .0125em;
+		margin-top: 12px;
+		margin-bottom: 12px;
 	}
 
-	.doc-code-group + p,
-	.doc-code-block + p {
-		margin-top: 16px;
+	ul {
+		margin-bottom: 16px;
 	}
 
 	h2 > a::before,
