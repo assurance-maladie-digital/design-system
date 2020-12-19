@@ -47,13 +47,13 @@ Une fois les outils installés, vous pouvez cloner le repo :
 
 <doc-code-group>
 
-<doc-code-item label="SSH" value="ssh">
+<doc-code-item label="SSH">
 ```bash
 git clone git@github.com:assurance-maladie-digital/design-system.git
 ```
 </doc-code-item>
 
-<doc-code-item label="HTTPS" value="https">
+<doc-code-item label="HTTPS">
 ```bash
 git clone https://github.com/assurance-maladie-digital/design-system.git
 ```
@@ -75,7 +75,8 @@ Une fois l'installation des dépendances effectuée, vous êtes prêt à dévelo
 
 ### Documentation
 
-La documentation se trouve dans le dossier `packages/docs`, elle est construite en utilisant [Nuxt Content](https://content.nuxtjs.org/fr). Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn dev` depuis le dossier `docs`. Par défaut, la documentation est servie à l'adresse [http://localhost:3000](http://localhost:3000).
+La documentation se trouve dans le dossier `packages/docs`, elle est construite en utilisant [Nuxt Content](https://content.nuxtjs.org/fr). Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn dev` depuis le dossier `docs`.<br>
+Par défaut, la documentation est servie à l'adresse [http://localhost:3000](http://localhost:3000).
 
 ### Vue Dot
 
@@ -105,13 +106,13 @@ Vous pouvez également tester le plugin dans un projet existant en l'installant 
 
 <doc-code-group>
 
-<doc-code-item label="Yarn" value="yarn">
+<doc-code-item label="Yarn">
 ```bash
 yarn add --dev file:/full/path/to/plugin
 ```
 </doc-code-item>
 
-<doc-code-item label="npm" value="npm">
+<doc-code-item label="npm">
 ```bash
 npm install --save-dev file:/full/path/to/plugin
 ```

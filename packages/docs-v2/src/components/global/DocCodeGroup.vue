@@ -29,6 +29,8 @@
 
 	import { VNodeComponentOptions } from 'vue/types/vnode';
 
+	import { slugify } from '../../functions/slugify';
+
 	interface Tabs {
 		value: string;
 		label: string;
@@ -51,11 +53,11 @@
 
 			const tabs = filteredSlots.map((slot) => {
 				const { propsData } = slot.componentOptions as ComponentOptions;
-				const { label, value } = propsData;
+				const { label } = propsData;
 
 				return {
 					label,
-					value
+					value: slugify(label)
 				};
 			});
 
