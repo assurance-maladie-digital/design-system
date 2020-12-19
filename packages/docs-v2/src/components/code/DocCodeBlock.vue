@@ -3,7 +3,7 @@
 		:tile="tile"
 		color="#1f1f1f"
 		class="doc-code-block overflow-hidden"
-		:class="{ 'mb-4': !noPadding }"
+		:class="{ 'mb-4': !noMargin }"
 		outlined
 		rounded
 		dark
@@ -31,7 +31,7 @@
 				type: Boolean,
 				default: false
 			},
-			noPadding: {
+			noMargin: {
 				type: Boolean,
 				default: false
 			}

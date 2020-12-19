@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-code-group">
+	<div class="doc-code-group mb-4">
 		<VTabs
 			v-model="tab"
 			dark
@@ -78,6 +78,10 @@
 			background: #505050;
 			position: absolute;
 			bottom: 0;
+		}
+
+		.doc-code-block {
+			margin-bottom: 0 !important;
 		}
 	}
 </style>

@@ -198,7 +198,7 @@
 				<VCol cols="12">
 					<DocMarkup
 						:code="formatAttributes"
-						no-padding
+						no-margin
 						tile
 					/>
 				</VCol>
