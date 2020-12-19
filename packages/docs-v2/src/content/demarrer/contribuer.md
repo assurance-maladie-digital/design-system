@@ -25,6 +25,10 @@ Lorsque vous créez une reproduction minimale, supprimez tous les éléments, pr
 
 Si une fonctionnalité dont vous avez besoin dans l'un des packages du Design System n'est pas présente ou déjà planifiée, vous pouvez [créer une demande de nouvelle fonctionnalité](https://github.com/assurance-maladie-digital/design-system/issues/new?template=feature_request.md).
 
+## Documentation
+
+Pour modifier la documentation, vous pouvez simplement suivre le lien « Éditer cette page sur GitHub » présent en bas de page, celui-ci ouvrira l'éditeur en ligne de Github, vous permettant d'éditer directement la documentation, puis de créer une nouvelle branche afin de proposer vos modifications via une Pull Request.
+
 ## Développement
 
 Notre Design System est un monorepo utilisant [lerna](https://github.com/lerna/lerna) qui rassemble notre librairie de composants, notre outil de création de projets ainsi que notre documentation et les composants plus macros, ce qui permet de réduire le coût de travailler sur plusieurs projets à la fois.
@@ -69,16 +73,72 @@ yarn
 
 Une fois l'installation des dépendances effectuée, vous êtes prêt à développer !
 
+### Documentation
+
+La documentation se trouve dans le dossier `packages/docs`, elle est construite en utilisant [Nuxt Content](https://content.nuxtjs.org/fr). Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn dev` depuis le dossier `docs`. Par défaut, la documentation est servie à l'adresse [http://localhost:3000](http://localhost:3000).
+
 ### Vue Dot
 
 Todo
 
-### Documentation
+### FormBuilder
 
-Pour modifier la documentation, vous pouvez simplement suivre le lien « Éditer cette page sur GitHub » présent en bas de page, celui-ci ouvrira l'éditeur en ligne de Github, vous permettant d'éditer directement la documentation, puis de créer une nouvelle branche afin de proposer vos modifications via une Pull Request.
+Todo
 
-La docume
+### Vue Dash
 
-The documentation is located in packages/docs but also uses some files from packages/api-generator. A dev server for the documentation can be started by running yarn dev docs from the project root and will be available on localhost:8080 by default.
+Le Starter Kit Vue Dash se trouve dans le dossier `packages/vue-cli-plugin-vue-dash`. C'est un [plugin Vue CLI](https://cli.vuejs.org/guide/plugins-and-presets.html) utilisé en combinaison avec un preset permettant la création de nouveaux projets.
 
-If you want to see changes from Vuetify in the documentation you need to run yarn build:lib in the vuetify package before starting the documentation server.
+Vous pouvez retrouver plus d'informations sur les plugins dans le [Guide de développement de plugins](https://cli.vuejs.org/dev-guide/plugin-dev.html) de Vue CLI.
+
+Pour tester le plugin, vous pouvez créer un nouveau projet en clonant notre [preset Vue CLI](https://github.com/assurance-maladie-digital/vue-cli-preset), puis en spécifiant le chemin vers le plugin :
+
+```json
+"@cnamts/vue-cli-plugin-vue-dash": {
+	"version": "/full/path/to/plugin/"
+}
+```
+
+Et en éxécutant ensuite la commande `vue create --preset /path/to/preset/ my-project` qui vous permet de créer un nouveau projet avec un preset local.
+
+Vous pouvez également tester le plugin dans un projet existant en l'installant :
+
+<doc-code-group>
+
+<doc-code-item label="Yarn" value="yarn">
+```bash
+yarn add --dev file:/full/path/to/plugin
+```
+</doc-code-item>
+
+<doc-code-item label="npm" value="npm">
+```bash
+npm install --save-dev file:/full/path/to/plugin
+```
+</doc-code-item>
+
+</doc-code-group>
+
+Puis en l'invoquant :
+
+```bash
+vue invoke @cnamts/vue-cli-plugin-vue-dash
+```
+
+Par défaut, lorsque le plugin est invoqué manuellement, il ne rend pas le template pour ne pas écraser les fichiers du projet, mais vous pouvez utiliser l'option `--render-template` pour rendre le template :
+
+```bash
+vue invoke @cnamts/vue-cli-plugin-vue-dash -- --render-template
+```
+
+### CLI Helpers
+
+Todo
+
+### Pull Requests
+
+Todo
+
+### Commits
+
+Todo
