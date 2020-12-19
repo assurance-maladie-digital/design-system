@@ -45,21 +45,19 @@ Certaines de nos dépendances ont besoin de [node-gyp](https://github.com/nodejs
 
 Une fois les outils installés, vous pouvez cloner le repo :
 
-<doc-code-group>
-
-<doc-code-item label="SSH">
+<doc-tabs>
+<doc-tab-item label="SSH">
 ```bash
 git clone git@github.com:assurance-maladie-digital/design-system.git
 ```
-</doc-code-item>
+</doc-tab-item>
 
-<doc-code-item label="HTTPS">
+<doc-tab-item label="HTTPS">
 ```bash
 git clone https://github.com/assurance-maladie-digital/design-system.git
 ```
-</doc-code-item>
-
-</doc-code-group>
+</doc-tab-item>
+</doc-tabs>
 
 Ensuite, vous pouvez installer les dépendances :
 
@@ -104,21 +102,21 @@ Et en éxécutant ensuite la commande `vue create --preset /path/to/preset/ my-p
 
 Vous pouvez également tester le plugin dans un projet existant en l'installant :
 
-<doc-code-group>
+<doc-tabs>
 
-<doc-code-item label="Yarn">
+<doc-tab-item label="Yarn">
 ```bash
 yarn add --dev file:/full/path/to/plugin
 ```
-</doc-code-item>
+</doc-tab-item>
 
-<doc-code-item label="npm">
+<doc-tab-item label="npm">
 ```bash
 npm install --save-dev file:/full/path/to/plugin
 ```
-</doc-code-item>
+</doc-tab-item>
 
-</doc-code-group>
+</doc-tabs>
 
 Puis en l'invoquant :
 

@@ -4,18 +4,14 @@ description: L'élément `CopyBtn` est utilisé pour afficher un bouton permetta
 position: 4
 ---
 
-<DocComponentTabs>
+<doc-tabs light>
 
-<DocComponentItem label="Utilisation" value="usage">
+<doc-tab-item label="Utilisation">
+<doc-usage name="copy-btn"></doc-usage>
+</doc-tab-item>
 
-<DocUsage name="copy-btn"></DocUsage>
+<doc-tab-item label="API">
+<doc-api name="copy-btn"></doc-api>
+</doc-tab-item>
 
-</DocComponentItem>
-
-<DocComponentItem label="API" value="api">
-
-<DocApi name="copy-btn"></DocApi>
-
-</DocComponentItem>
-
-</DocComponentTabs>
+</doc-tabs>

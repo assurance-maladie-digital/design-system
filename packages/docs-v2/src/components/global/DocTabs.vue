@@ -2,7 +2,8 @@
 	<div class="doc-code-group mb-4">
 		<VTabs
 			v-model="tab"
-			dark
+			:dark="!light"
+			class="mb-8"
 		>
 			<ClientOnly>
 				<VTab
@@ -25,7 +26,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { VNodeComponentOptions } from 'vue/types/vnode';
 
@@ -40,8 +41,19 @@
 		propsData: Tabs;
 	}
 
+	const Props = Vue.extend({
+		props: {
+			light: {
+				type: Boolean,
+				default: false
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props);
+
 	@Component
-	export default class DocCodeGroup extends Vue {
+	export default class DocTabs extends MixinsDeclaration {
 		tab = null;
 
 		get tabs(): Tabs[] | undefined {
@@ -77,9 +89,13 @@
 			content: "";
 			width: 100%;
 			height: 2px;
-			background: #505050;
+			background: rgba(0, 0, 0, .12);
 			position: absolute;
 			bottom: 0;
+		}
+
+		.theme--dark .v-slide-group__content::after {
+			background: hsla(0, 0%, 100%, .3);
 		}
 
 		.doc-code-block {
