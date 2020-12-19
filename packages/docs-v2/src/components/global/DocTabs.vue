@@ -3,7 +3,6 @@
 		<VTabs
 			v-model="tab"
 			:dark="!light"
-			class="mb-8"
 		>
 			<ClientOnly>
 				<VTab

@@ -31,12 +31,12 @@ export const api: Api = {
 				name: 'x-large',
 				type: 'boolean',
 				default: false,
-				description: 'Définit la taille de l\'icône à `2.25em\.'
+				description: 'Définit la taille de l\'icône à `2.25em`.'
 			},
 			{
 				name: 'size',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Applique une taille CSS personnalisée (largeur / hauteur) à l\'icône. Par défaut, la taille est de `1,35em`.'
 			}
 		],

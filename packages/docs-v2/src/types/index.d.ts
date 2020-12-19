@@ -13,7 +13,7 @@ export interface ApiProp {
 	snippet?: string;
 }
 
-type ItemValue = Pick<ApiProp, 'name' | 'type' | 'default' | 'required' | 'description'>;
+type ItemValue = Pick<ApiProp, 'name' | 'type' | 'default' | 'required' | 'description' | 'example'>;
 
 type ItemSlot = Pick<ApiProp, 'name' | 'description' | 'props'>;
 type ItemEvent = Pick<ApiProp, 'name' | 'description' | 'value'>;

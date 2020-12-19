@@ -50,7 +50,14 @@
 										class="font-weight-bold text-decoration-none"
 										v-text="item[header]"
 									/> -->
+
 									{{ item[header] }}
+
+									<sup
+										v-if="item.required"
+										class="required"
+										v-text="'*'"
+									/>
 								</span>
 							</template>
 
@@ -147,6 +154,10 @@
 
 		getDefaultValue(item: ApiProp): string {
 			const { default: defaultValue } = item;
+
+			if (defaultValue === undefined) {
+				return '—';
+			}
 
 			const str = !defaultValue || typeof defaultValue === 'string'
 				? String(defaultValue)
@@ -256,6 +267,11 @@
 
 		&:not(:hover):not(:focus) span {
 			opacity: 0;
+		}
+
+		.required {
+			top: .35rem;
+			left: 2px;
 		}
 	}
 </style>
