@@ -15,11 +15,9 @@ Avant d'ouvrir un nouveau rapport de bug, vérifiez :
 Une fois ces vérifications effectuées, vous pouvez [créer un rapport de bug](https://github.com/assurance-maladie-digital/design-system/issues/new?template=bug_report.md).
 Lors de l'écriture de votre rapport de bug, essayez de donner le plus de détails possible
 
-<DocAlert type="info">
-
+<doc-alert type="info">
 Lorsque vous créez une reproduction minimale, supprimez tous les éléments, propriétés, variables, données etc qui ne sont pas nécessaires pour reproduire le bug. Cela facilitera le traitement du rapport et le temps qu'il faudra pour identifier puis résoudre le bug.
-
-</DocAlert>
+</doc-alert>
 
 ## Demandes d'évolution
 
@@ -74,15 +72,19 @@ Une fois l'installation des dépendances effectuée, vous êtes prêt à dévelo
 ### Documentation
 
 La documentation se trouve dans le dossier `packages/docs`, elle est construite en utilisant [Nuxt Content](https://content.nuxtjs.org/fr). Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn dev` depuis le dossier `docs`.<br>
-Par défaut, la documentation est servie à l'adresse [http://localhost:3000](http://localhost:3000).
+Par défaut, la documentation est disponible à l'adresse [http://localhost:3000](http://localhost:3000).
 
 ### Vue Dot
 
-Todo
+La librairie de composants Vue Dot se trouve dans le dossier `packages/vue-dot`. Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn playground` depuis le dossier `vue-dot`.<br>
+Par défaut, le playground est disponible à l'adresse [http://localhost:8080](http://localhost:8080).
+
+Vous pouvez tester vos modifications en créant des exemples dans le dossier `playground/examples` et en les ajoutant dans le fichier `Playground.vue`.
 
 ### FormBuilder
 
-Todo
+Les composants du FormBuilder se trouvent dans le dossier `packages/form-builder`. Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn playground` depuis le dossier `form-builder`.<br>
+Par défaut, le playground est disponible à l'adresse [http://localhost:8080](http://localhost:8080).
 
 ### Vue Dash
 
@@ -98,7 +100,7 @@ Pour tester le plugin, vous pouvez créer un nouveau projet en clonant notre [pr
 }
 ```
 
-Et en éxécutant ensuite la commande `vue create --preset /path/to/preset/ my-project` qui vous permet de créer un nouveau projet avec un preset local.
+Et en exécutant ensuite la commande `vue create --preset /path/to/preset/ my-project` qui vous permet de créer un nouveau projet avec un preset local.
 
 Vous pouvez également tester le plugin dans un projet existant en l'installant :
 
@@ -121,23 +123,76 @@ npm install --save-dev file:/full/path/to/plugin
 Puis en l'invoquant :
 
 ```bash
-vue invoke @cnamts/vue-cli-plugin-vue-dash
+vue invoke @cnamts/vue-dash
 ```
 
-Par défaut, lorsque le plugin est invoqué manuellement, il ne rend pas le template pour ne pas écraser les fichiers du projet, mais vous pouvez utiliser l'option `--render-template` pour rendre le template :
+Par défaut, lorsque le plugin est invoqué manuellement, il n'applique pas le template pour ne pas écraser les fichiers du projet, mais vous pouvez utiliser l'option `--render-template` pour l'appliquer :
 
 ```bash
-vue invoke @cnamts/vue-cli-plugin-vue-dash -- --render-template
+vue invoke @cnamts/vue-dash -- --render-template
 ```
 
 ### CLI Helpers
 
-Todo
+La bibliothèque de fonctions d'aide pour la construction d'interfaces en lignes de commandes se trouve dans le dossier `packages/cli-helpers`. Les fonctions sont écrites en TypeScript et construites pour être utilisées dans un environnement [node.js](https://nodejs.org/).
 
-### Pull Requests
+Pour tester une fonction, vous pouvez transpiler la bibliothèque en exécutant la commande `yarn build` depuis le dossier `cli-helpers`, puis importer votre fonction depuis le package.
 
-Todo
+Vous pouvez également utiliser [ts-node](https://www.npmjs.com/package/ts-node) pour écrire votre script de test en TypeScript.
 
 ### Commits
 
-Todo
+Les messages de commit doivent suivre la convention `<gitmoji> <scope>: <message>`, par exemple :
+
+```bash
+✨ vue-dot: Add DatePicker
+```
+
+```bash
+🐛 vue-dash: Fix missing data-cy attributes
+```
+
+#### Règles générales
+
+Les messages de commit doivent :
+
+- Être écrits en Anglais
+- Commencer avec un [Gitmoji](https://gitmoji.dev/) correspondant au type de changement
+- Commencer avec une majuscule
+- Ne pas terminer avec un point
+- Utiliser le mode impératif
+- Commencer avec un verbe (comme *Add*, *Fix*, *Update*, *Refactor*, …)
+
+### Pull Requests
+
+Pour créer une nouvelle branche et effectuer des modifications, vous pouvez nous demander de vous donner les droits d'écriture sur le projet, ou vous pouvez [créer un fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) du repo `design-system`.
+
+Et ensuite ajouter votre fork comme *remote* :
+
+<doc-tabs>
+<doc-tab-item label="SSH">
+```bash
+git remote add fork git@github.com:USERNAME/design-system.git
+```
+</doc-tab-item>
+
+<doc-tab-item label="HTTPS">
+```bash
+git remote add fork https://github.com/USERNAME/design-system.git
+```
+</doc-tab-item>
+</doc-tabs>
+
+Vous pouvez maintenant créer une nouvelle branche sur laquelle travailler, puis commiter vos changements et pousser votre branche en exécutant `git push -u` ou `git push -u fork` si vous avez créé un fork.
+
+<doc-alert type="warning">
+Vous ne devez jamais commiter directement sur la branche de base, mais toujours créer une feature branche sur laquelle travailler.
+</doc-alert>
+
+Enfin, vous pouvez [créer une Pull Request](https://github.com/assurance-maladie-digital/design-system/compare) en suivant et en complétant le template.
+
+<doc-alert type="info">
+
+Comme nous sommes dans un cycle de versioning `beta`, vous devez utiliser la branche `dev` comme branche de base.
+
+</doc-alert>
