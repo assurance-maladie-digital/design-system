@@ -3,22 +3,14 @@
 exports[`FilterWorkflow renders correctly 1`] = `
 <div>
   <!---->
-  <vmenu-stub opendelay="0" closedelay="0" contentclass="" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition">
-    <vlist-stub width="200" tag="div" class="py-0">
-      <vlistitem-stub activeclass="" tag="div">
-        <vlistitemtitle-stub>Fichier</vlistitemtitle-stub>
-      </vlistitem-stub>
-      <vlistitem-stub activeclass="" tag="div">
-        <vlistitemtitle-stub>Nombre de téléchargement</vlistitemtitle-stub>
-      </vlistitem-stub>
-      <vlistitem-stub activeclass="" tag="div">
-        <vlistitemtitle-stub>Date</vlistitemtitle-stub>
-      </vlistitem-stub>
-    </vlist-stub>
-  </vmenu-stub>
-  <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="360" origin="center center" retainfocus="true" transition="dialog-transition" width="auto">
+  <div class="v-menu"><button type="button" class="mr-8 v-btn v-btn--flat v-btn--text theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z"></path></svg></span>
+      filtres
+      </span></button>
     <!---->
-  </vdialog-stub>
+  </div>
+  <div role="dialog" class="v-dialog__container">
+    <!---->
+  </div>
 </div>
 `;
 

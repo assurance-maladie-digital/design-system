@@ -87,6 +87,21 @@ describe('FilterWorkflowCoreText', () => {
 		));
 	});
 
+    it('test type text: mock filter structure without fieldOptions', async() => {
+		const wrapper = createWrapper(filters, rows);
+
+		const newFilterStructures = filterStructures;
+
+		newFilterStructures.text.fields.select.fieldOptions = undefined;
+
+		jest.fn(() => {
+			return { filterStructures: newFilterStructures };
+		});
+
+		wrapper.vm.openFilterDialog('filename');
+
+	});
+
 	it('test type text: item value null', async() => {
 		const wrapper = createWrapper(filters, rows);
 

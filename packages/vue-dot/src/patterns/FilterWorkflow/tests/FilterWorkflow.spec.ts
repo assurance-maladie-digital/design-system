@@ -18,39 +18,47 @@ describe('FilterWorkflow', () => {
 				rows: dataRows,
 				filters: dataFilters
 			}
-		});
+		}, true);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
 	it('show multiple actives filters', () => {
+
+		const activefilters = [
+			{
+				filterName: 'date',
+				label: 'date',
+				text: 'text',
+				type: 'date',
+				values: {
+					date: {
+						from: '2020-12-01',
+						to: null
+					}
+				}
+			},
+			{
+				filterName: 'nbDownload',
+				label: 'Nombre de téléchargement',
+				text: 'minimum 1',
+				type: 'number',
+				values: {
+					numberMin: '1'
+				}
+			}
+		];
+
 		// Mount component
 		wrapper = mountComponent(FilterWorkflow, {
 			propsData: {
 				rows: dataRows,
 				filters: dataFilters
 			},
-			mocks: {
-				activeFilters: [
-					{
-						filterName: 'date',
-						label: 'date',
-						text: 'text',
-						type: 'date',
-						values: {
-							from: '2020/12/01'
-						}
-					},
-					{
-						filterName: 'nbDownload',
-						label: 'Nombre de téléchargement',
-						text: 'minimum 1',
-						type: 'number',
-						values: {
-							min: '1'
-						}
-					}
-				]
+			data: () => {
+				return  {
+					activefilters
+				};
 			}
 		}, true);
 
