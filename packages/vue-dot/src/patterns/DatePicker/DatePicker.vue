@@ -50,6 +50,12 @@
 						</slot>
 					</VBtn>
 				</template>
+
+				<slot
+					v-for="name in Object.keys($slots)"
+					:slot="name"
+					:name="name"
+				/>
 			</VTextField>
 		</template>
 

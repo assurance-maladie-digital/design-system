@@ -119,6 +119,18 @@
 			append-icon
 			outlined
 		/>
+
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
+			Text field Scoped slots
+		</h2>
+
+		<DatePicker>
+			<template #append-outer>
+				<VBtn text>
+					outer
+				</VBtn>
+			</template>
+		</DatePicker>
 	</DocSection>
 </template>
 
