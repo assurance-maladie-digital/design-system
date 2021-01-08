@@ -45,7 +45,8 @@
   - **@babel/preset-env:** Mise à jour vers la `v7.12.11` ([#795](https://github.com/assurance-maladie-digital/design-system/pull/795)) ([28a9507](https://github.com/assurance-maladie-digital/design-system/commit/28a9507d84456bb5b9580deb132bf2616068e192))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.3.0` ([#796](https://github.com/assurance-maladie-digital/design-system/pull/796) ([b8c6291](https://github.com/assurance-maladie-digital/design-system/commit/b8c629103ddeb09ca8edd149a08a8fbdec085b97))
   - **copy-webpack-plugin:** Mise à jour vers la `v6.4.1` ([#797](https://github.com/assurance-maladie-digital/design-system/pull/797)) ([b75a4b9](https://github.com/assurance-maladie-digital/design-system/commit/b75a4b9b7646a69859c43db0624142eeeef2813b))
-  - **eslint:** Mise à jour vers la `v7.17.0` ([#798](https://github.com/assurance-maladie-digital/design-system/pull/798)
+  - **eslint:** Mise à jour vers la `v7.17.0` ([#798](https://github.com/assurance-maladie-digital/design-system/pull/798) ([71076d2](https://github.com/assurance-maladie-digital/design-system/commit/71076d2579ad75807a82fa0c56c8f1c3572bb491))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v30.7.13` ([#799](https://github.com/assurance-maladie-digital/design-system/pull/799))
 
 ### 📚 Guide de migration
 
