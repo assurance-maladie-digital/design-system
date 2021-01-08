@@ -18,5 +18,5 @@
 
 	/** Form field to select a value from a list */
 	@Component
-	export default class SelectField extends MixinsDeclaration {}
+	export default class ChoiceSelectField extends MixinsDeclaration {}
 </script>
