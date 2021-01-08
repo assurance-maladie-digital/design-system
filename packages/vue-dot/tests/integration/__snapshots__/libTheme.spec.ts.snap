@@ -17,6 +17,7 @@ Object {
     "PageCard",
     "PaginatedTable",
     "SubHeader",
+    "TableToolbar",
     "UploadWorkflow",
   ],
   "directives": Array [
