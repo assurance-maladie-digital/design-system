@@ -1,11 +1,10 @@
 <template>
 	<DocSection title="TableToolbar">
-		<p>Barre pour les tableaux avec un champ de recherche par défaut</p>
-
 		<VDataTable
 			:headers="headers"
 			:items="items"
 			:search="search"
+			:loading="loading"
 			calculate-widths
 			hide-default-footer
 			class="w-100 elevation-1"
@@ -13,30 +12,19 @@
 		>
 			<template #top>
 				<TableToolbar
-					:search="search"
-					:search-disabled="tableLoading"
+					v-model="search"
+					:loading="loading"
+					:nb-total="items.length"
+					:nb-filtered="filteredItems.length"
 					search-label="Rechercher"
 					show-create-btn
 					row-text="fichier"
-					:nb-total="items.length"
-					:nb-filtered="filteredItems.length"
-					@search="search = $event"
-				>
-					<template #search-left>
-						<VBtn
-							small
-							class="mr-4 text-none"
-							@click="search = ''"
-						>
-							Reset
-						</VBtn>
-					</template>
-				</TableToolbar>
+				/>
 			</template>
 		</VDataTable>
 
 		<VSwitch
-			v-model="tableLoading"
+			v-model="loading"
 			label="Chargement"
 		/>
 	</DocSection>
@@ -52,7 +40,7 @@
 	export default class CopyBtnEx extends Vue {
 		search = '';
 		filteredItems: DataTableHeader[] = [];
-		tableLoading = false;
+		loading = false;
 
 		headers: DataTableHeader[] = [
 			{

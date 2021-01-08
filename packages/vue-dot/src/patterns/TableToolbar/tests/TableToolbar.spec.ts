@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import TableToolbar from '..';
+import TableToolbar from '../';
 
 let wrapper: Wrapper<Vue>;
 
@@ -14,24 +14,33 @@ describe('TableToolbar', () => {
 		// Mount component
 		wrapper = mountComponent(TableToolbar, {
 			propsData: {
-				nbFiltered:0,
-				nbTotal: 0
+				nbFiltered: 1,
+				nbTotal: 2,
+				showCreateBtn: true
 			}
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders with full configuration', () => {
+	it('renders correctly when loading', () => {
 		// Mount component
 		wrapper = mountComponent(TableToolbar, {
 			propsData: {
-				search: 'recherche',
-				tableLoading: true,
-				searchLabel: 'Rechercher',
-				createBtnLabel: 'Ajouter',
-				showCreateBtn: true,
-				nbFiltered:0,
+				loading: true,
+				nbFiltered: 0,
+				nbTotal: 1
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with content slot', () => {
+		// Mount component
+		wrapper = mountComponent(TableToolbar, {
+			propsData: {
+				nbFiltered: 0,
 				nbTotal: 1
 			},
 			slots: {
@@ -42,15 +51,14 @@ describe('TableToolbar', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders with multiple items', () => {
+	it('renders correctly with no items', () => {
 		// Mount component
 		wrapper = mountComponent(TableToolbar, {
 			propsData: {
-				search: 'recherche',
-				nbFiltered:1,
-				nbTotal: 2
+				nbFiltered: 0,
+				nbTotal: 0
 			}
-		}, true);
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

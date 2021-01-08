@@ -1,16 +1,10 @@
 <template>
-	<VToolbar
-		v-bind="options.toolbar"
-	>
+	<VToolbar v-bind="options.toolbar">
 		<p
 			v-if="showRowsNumber"
 			class="mb-0 font-weight-bold mr-4"
 		>
-			<span>{{ computedNbRows }}</span>
-
-			<span class="ml-1">
-				{{ computedRowsText }}
-			</span>
+			{{ computedNbRows }} {{ computedRowsText }}
 		</p>
 
 		<VSpacer />
@@ -20,7 +14,7 @@
 		<VTextField
 			v-bind="options.textField"
 			:value="search"
-			:disabled="searchDisabled"
+			:disabled="loading"
 			:append-icon="searchIcon"
 			:label="searchLabel"
 			@input="$emit('search', $event)"
@@ -29,6 +23,7 @@
 		<VBtn
 			v-if="showCreateBtn"
 			v-bind="options.createdBtn"
+			:disabled="loading"
 			@click="$emit('click')"
 		>
 			<VIcon v-bind="options.addIcon">
@@ -88,8 +83,8 @@
 				type: Number,
 				required: true
 			},
-			/** Disable the search field while loading */
-			searchDisabled: {
+			/** Disable interactive elements while loading */
+			loading: {
 				type: Boolean,
 				default: false
 			}
@@ -99,7 +94,7 @@
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	/** Toolbar of a DataTable with search & create button */
-	@Component<TableToolbar>({
+	@Component({
 		model: {
 			prop: 'search',
 			event: 'search'
