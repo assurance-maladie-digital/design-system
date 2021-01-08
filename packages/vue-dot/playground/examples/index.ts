@@ -14,6 +14,7 @@ import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
 import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
+import TableToolbarEx from './TableToolbarEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
 
 interface Components {
@@ -35,6 +36,7 @@ const components: Components = {
 	PaginatedTableEx,
 	RulesEx,
 	SubHeaderEx,
+	TableToolbarEx,
 	UploadWorkflowEx
 };
 
