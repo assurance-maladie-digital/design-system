@@ -5,6 +5,7 @@
 		:items="items"
 		:multiple="multiple"
 		:search-input.sync="searchInput"
+		:type="undefined"
 		class="vd-form-input"
 		@change="valueUpdated"
 	/>
