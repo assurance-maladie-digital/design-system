@@ -18,6 +18,9 @@
 - ♻️ **Refactoring**
   - **template:** Utilisation des styles communs de Vue Dot ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
 
+- 🐛 **Corrections de bugs**
+  - **template:** Les Champs de sélection prennnent maintenant les types par défaut de vuetify ([#814](https://github.com/assurance-maladie-digital/design-system/pull/814))
+
 ### Interne
 
 - 🔒 **Sécurité**
