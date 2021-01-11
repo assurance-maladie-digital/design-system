@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@mdi/js": "5.8.55",
-		"@types/fs-extra": "9.0.5",
+		"@types/fs-extra": "9.0.6",
 		"@types/jest": "26.0.19",
 		"@types/node": "12.19.12",
 		"@typescript-eslint/eslint-plugin": "4.12.0",
