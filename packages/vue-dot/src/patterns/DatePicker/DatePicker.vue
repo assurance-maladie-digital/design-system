@@ -2,16 +2,16 @@
 	<!-- DatePicker -->
 	<VMenu
 		ref="menu"
-		v-model="menu"
 		v-bind="menuOptions"
+		v-model="menu"
 	>
 		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
+				v-bind="textFieldOptions"
 				v-model="dateFormatted"
 				v-facade="maskValue"
-				v-bind="textFieldOptions"
 				:outlined="outlined"
 				:class="textFieldClasses"
 				:success-messages="textFieldOptions.successMessages || successMessages"
