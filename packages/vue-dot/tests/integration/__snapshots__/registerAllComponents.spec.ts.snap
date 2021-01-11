@@ -16,6 +16,7 @@ Array [
   "PageCard",
   "PaginatedTable",
   "SubHeader",
+  "TableToolbar",
   "UploadWorkflow",
 ]
 `;
