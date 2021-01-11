@@ -9,6 +9,9 @@
 - 🐛 **Corrections de bugs**
   - **styles:** Correction du style des onglets ([#766](https://github.com/assurance-maladie-digital/design-system/pull/766)) ([ceb0534](https://github.com/assurance-maladie-digital/design-system/commit/ceb0534884e37f89df13ddde14f7551659863441))
 
+- 🚨 **Lint**
+  - **config:** Correction des erreurs de lint ([#813](https://github.com/assurance-maladie-digital/design-system/pull/813))
+
 ### Vue Dash
 
 - ♻️ **Refactoring**
@@ -48,7 +51,7 @@
   - **core-js:** Mise à jour vers la `v3.8.2` ([#808](https://github.com/assurance-maladie-digital/design-system/pull/808)) ([3d3982c](https://github.com/assurance-maladie-digital/design-system/commit/3d3982c4aca154a6dd243490f2d14e723f6cb930))
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.10` ([#809](https://github.com/assurance-maladie-digital/design-system/pull/809)) ([4ff6aba](https://github.com/assurance-maladie-digital/design-system/commit/4ff6abad56ad22cd67de3566cecc5f3bba36478a))
   - **@types/jest:** Mise à jour vers la `v26.0.20` ([#810](https://github.com/assurance-maladie-digital/design-system/pull/810)) ([7a480d1](https://github.com/assurance-maladie-digital/design-system/commit/7a480d1258cdab2d875382598ebe550576ee5b0e))
-  - **webpack:** Mise à jour vers la `v4.45.0` ([#811](https://github.com/assurance-maladie-digital/design-system/pull/811))
+  - **webpack:** Mise à jour vers la `v4.45.0` ([#811](https://github.com/assurance-maladie-digital/design-system/pull/811)) ([83b74ab](https://github.com/assurance-maladie-digital/design-system/commit/83b74ab61415590c7daaf481c5f02432fe7b11da))
 
 ### 📚 Guide de migration
 
