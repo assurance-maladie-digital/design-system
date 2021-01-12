@@ -63,6 +63,8 @@
 
 				<SubHeaderEx />
 
+				<TableToolbarEx />
+
 				<UploadWorkflowEx />
 			</PageCard>
 		</VMain>

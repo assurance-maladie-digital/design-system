@@ -50,19 +50,19 @@
 		"content-disposition": "^0.5.3"
 	},
 	"devDependencies": {
-		"@babel/core": "7.12.9",
-		"@babel/preset-env": "7.12.7",
+		"@babel/core": "7.12.10",
+		"@babel/preset-env": "7.12.11",
 		"@cnamts/cli-helpers": "^2.0.0-beta.4",
-		"@vue/cli-plugin-babel": "4.5.9",
-		"@vue/cli-plugin-eslint": "4.5.9",
-		"@vue/cli-plugin-typescript": "4.5.9",
-		"@vue/cli-plugin-unit-jest": "4.5.9",
-		"@vue/cli-service": "4.5.9",
+		"@vue/cli-plugin-babel": "4.5.10",
+		"@vue/cli-plugin-eslint": "4.5.10",
+		"@vue/cli-plugin-typescript": "4.5.10",
+		"@vue/cli-plugin-unit-jest": "4.5.10",
+		"@vue/cli-service": "4.5.10",
 		"babel-core": "7.0.0-bridge.0",
 		"babel-loader": "8.2.2",
-		"core-js": "3.8.1",
+		"core-js": "3.8.2",
 		"json-to-scss": "1.6.2",
-		"vue-cli-plugin-vuetify": "2.0.8",
+		"vue-cli-plugin-vuetify": "2.0.9",
 		"vuetify-loader": "1.6.0"
 	},
 	"lint-staged": {
