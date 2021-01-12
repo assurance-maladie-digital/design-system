@@ -9,22 +9,27 @@ import { AxiosResponse } from 'axios';
 import DownloadBtn from '../DownloadBtn.vue';
 
 let wrapper: Wrapper<Vue>;
-const contentDispositionHeader = JSON.stringify({ type: 'inline', parameters: { filename: 'justificatif.pdf' } }) as string;
+const contentDispositionHeader = JSON.stringify({
+	type: 'inline',
+	parameters: {
+		filename: 'justificatif.pdf'
+	}
+});
 
 interface TestComponent extends Vue {
 	download: () => void;
 }
 
 const filePromise: Promise<AxiosResponse<string>> = new Promise((resolve) => {
-	resolve(
-		{
-			data: 'test',
-			status: 200,
-			statusText: 'test status Text',
-			headers: { 'content-disposition': contentDispositionHeader },
-			config: {}
-		}
-	);
+	resolve({
+		data: 'test',
+		status: 200,
+		statusText: 'test status Text',
+		headers: {
+			'content-disposition': contentDispositionHeader
+		},
+		config: {}
+	});
 });
 
 // Tests

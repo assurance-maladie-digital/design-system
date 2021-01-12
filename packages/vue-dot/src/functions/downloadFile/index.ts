@@ -14,7 +14,7 @@ export function downloadFile(
 	utf8Bom = false
 ): void {
 	/**
-	 * \ufeff = encodage UTF-8.
+	 * \ufeff = UTF-8 encoding
 	 *
 	 * @see https://stackoverflow.com/a/18925211
 	 */
@@ -37,4 +37,3 @@ export function downloadFile(
 		window.URL.revokeObjectURL(link.href);
 	}
 }
-

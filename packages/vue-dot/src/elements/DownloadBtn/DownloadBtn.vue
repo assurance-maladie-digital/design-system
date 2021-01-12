@@ -113,7 +113,7 @@
 				downloadFile(response.data, filename, 'application/pdf');
 
 				if (this.notification) {
-					const message: string = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
+					const message = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
 
 					const notification: NotificationObj = {
 						type: 'success',
@@ -121,7 +121,6 @@
 						message
 					};
 
-					// Notify!
 					this.notify(notification);
 				}
 			})

@@ -1,10 +1,13 @@
-import { downloadFile } from '..';
+import { downloadFile } from '../';
 
-const file = new File(['hello world'], 'hello_world.txt', { type: 'text/plain' });
+const file = new File(
+	['hello world'],
+	'hello_world.txt',
+	{ type: 'text/plain' }
+);
 
 // Tests
 describe('downloadFile', () => {
-
 	afterEach(() => {
 		jest.restoreAllMocks();
 	});
@@ -15,14 +18,15 @@ describe('downloadFile', () => {
 	it('is called correctly', () => {
 		const link = {
 			click: jest.fn(),
-			style: jest.fn(()=>'none')
+			style: jest.fn(() => 'none')
 		} as any;
+
 		jest.spyOn(document, 'createElement').mockImplementation(() => link);
-		const appendChilSpy = jest.spyOn(document.body, 'appendChild').mockImplementation();
+		const appendChildSpy = jest.spyOn(document.body, 'appendChild').mockImplementation();
 		const removeChildSpy = jest.spyOn(document.body, 'removeChild').mockImplementation();
 
 		downloadFile(file, file.name, file.type);
-		expect(appendChilSpy).toHaveBeenCalledTimes(1);
+		expect(appendChildSpy).toHaveBeenCalledTimes(1);
 		expect(removeChildSpy).toHaveBeenCalledTimes(1);
 
 		expect(link.rel).toEqual('noopener noreferrer');
@@ -30,18 +34,20 @@ describe('downloadFile', () => {
 		expect(link.download).toEqual(file.name);
 		expect(link.style.display).toEqual('none');
 		expect(link.click).toHaveBeenCalledTimes(1);
-
 	});
 
 	it('testing utf8Bom', () => {
 		const link = {
 			click: jest.fn(),
-			style : jest.fn(()=>'none')
+			style : jest.fn(() => 'none')
 		} as unknown as any;
+
 		jest.spyOn(document, 'createElement').mockImplementation(() => link);
 		jest.spyOn(document.body, 'appendChild').mockImplementation();
 		jest.spyOn(document.body, 'removeChild').mockImplementation();
+
 		downloadFile(file, file.name, file.type, true);
+
 		expect(link.click).toHaveBeenCalledTimes(1);
 	});
 
@@ -51,6 +57,7 @@ describe('downloadFile', () => {
 			click: jest.fn(),
 			style: jest.fn(()=>'none')
 		} as any;
+
 		jest.spyOn(document, 'createElement').mockImplementation(() => link);
 		jest.spyOn(document.body, 'appendChild').mockImplementation();
 		jest.spyOn(document.body, 'removeChild').mockImplementation();
@@ -65,6 +72,7 @@ describe('downloadFile', () => {
 			click: jest.fn(),
 			style: jest.fn(()=>'none')
 		} as any;
+
 		jest.spyOn(document, 'createElement').mockImplementation(() => link);
 		jest.spyOn(document.body, 'appendChild').mockImplementation();
 		jest.spyOn(document.body, 'removeChild').mockImplementation();

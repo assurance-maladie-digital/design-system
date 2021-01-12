@@ -1,3 +1,3 @@
 export const locales = {
-	downloadSuccess: 'Téléchargé avec succès'
+	downloadSuccess: 'Document téléchargé avec succès'
 };
