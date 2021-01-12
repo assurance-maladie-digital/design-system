@@ -53,6 +53,9 @@
   - **@types/jest:** Mise à jour vers la `v26.0.20` ([#810](https://github.com/assurance-maladie-digital/design-system/pull/810)) ([7a480d1](https://github.com/assurance-maladie-digital/design-system/commit/7a480d1258cdab2d875382598ebe550576ee5b0e))
   - **webpack:** Mise à jour vers la `v4.45.0` ([#811](https://github.com/assurance-maladie-digital/design-system/pull/811)) ([83b74ab](https://github.com/assurance-maladie-digital/design-system/commit/83b74ab61415590c7daaf481c5f02432fe7b11da))
 
+- 🔧 **Configuration**
+  - **build:** Augmentation de la taille limite à 550k ([#822](https://github.com/assurance-maladie-digital/design-system/pull/822))
+
 ### 📚 Guide de migration
 
 #### Utiliser les styles de Vue Dot
