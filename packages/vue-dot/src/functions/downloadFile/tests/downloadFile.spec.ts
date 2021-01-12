@@ -15,7 +15,7 @@ describe('downloadFile', () => {
 	global.URL.createObjectURL = jest.fn();
 	global.URL.revokeObjectURL = jest.fn();
 
-	it('is called correctly', () => {
+	it('it downloads a file correctly', () => {
 		const link = {
 			click: jest.fn(),
 			style: jest.fn(() => 'none')
@@ -36,11 +36,11 @@ describe('downloadFile', () => {
 		expect(link.click).toHaveBeenCalledTimes(1);
 	});
 
-	it('testing utf8Bom', () => {
+	it('it downloads a file with utf8Bom', () => {
 		const link = {
 			click: jest.fn(),
 			style : jest.fn(() => 'none')
-		} as unknown as any;
+		} as any;
 
 		jest.spyOn(document, 'createElement').mockImplementation(() => link);
 		jest.spyOn(document.body, 'appendChild').mockImplementation();
@@ -51,7 +51,7 @@ describe('downloadFile', () => {
 		expect(link.click).toHaveBeenCalledTimes(1);
 	});
 
-	it('testing content type BufferSource', () => {
+	it('it downloads a file with content type BufferSource', () => {
 		const buffer = new ArrayBuffer(8);
 		const link = {
 			click: jest.fn(),
@@ -67,7 +67,7 @@ describe('downloadFile', () => {
 		expect(link.click).toHaveBeenCalledTimes(1);
 	});
 
-	it('testing content type String', () => {
+	it('it downloads a file with content type String', () => {
 		const link = {
 			click: jest.fn(),
 			style: jest.fn(()=>'none')
@@ -82,7 +82,7 @@ describe('downloadFile', () => {
 		expect(link.click).toHaveBeenCalledTimes(1);
 	});
 
-	it('testing download IE10', () => {
+	it('it downloads a file from navigator version that contain \'.NET\'', () => {
 		global.navigator.msSaveOrOpenBlob = jest.fn();
 		const mockCallback = jest.fn(downloadFile);
 

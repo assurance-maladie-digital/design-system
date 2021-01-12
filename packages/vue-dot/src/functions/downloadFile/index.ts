@@ -1,3 +1,5 @@
+import { BufferSource } from './types.d';
+
 /**
  * downloadFile function
  * It will download the content from the brower
