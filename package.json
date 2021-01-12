@@ -44,6 +44,7 @@
 		"vue-template-compiler": "2.6.12",
 		"vuetify": "2.4.2",
 		"vuex": "3.6.0",
+		"axios": "^0.21.1",
 		"webpack": "4.45.0"
 	},
 	"resolutions": {
