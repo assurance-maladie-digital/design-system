@@ -126,7 +126,7 @@
 <style lang="scss" scoped>
 	@media only screen and (max-width: 512px) {
 		.v-main {
-			padding: 97px 0px 0px !important;
+			padding: 120px 0px 0px !important;
 		}
 	}
 </style>

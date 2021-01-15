@@ -18,12 +18,11 @@
 				to="/"
 				exact
 				aria-label="Accueil"
-				class="doc-logo-link"
+				class="doc-logo-link px-2"
 			>
 				<img
 					src="~/assets/logo-am-no-text.svg"
 					alt="l'Assurance Maladie"
-					height="80px"
 					width="155px"
 				>
 			</RouterLink>
@@ -36,7 +35,7 @@
 			/>
 
 			<slot name="title">
-				<VToolbarTitle class="text-h6 ml-3">
+				<VToolbarTitle class="text-h6 ml-4">
 					Design System
 				</VToolbarTitle>
 			</slot>
@@ -57,9 +56,9 @@
 		padding: 0;
 	}
 
-	.doc-header-title {
+	.doc-header-title,
+	.doc-logo-container {
 		height: 100%;
-		width: 100%;
 	}
 
 	.doc-logo-link {
@@ -89,28 +88,21 @@
 				}
 			}
 
-			.v-toolbar__title {
-				white-space: normal;
-			}
-
 			.doc-logo-container {
-				padding-top: 4px;
-				margin-left: 8px;
-			}
-
-			.doc-logo-link img {
-				height: 48px;
-				object-fit: cover;
+				padding-top: 6px;
+				margin-left: 6px;
 			}
 
 			.doc-header-title {
-				margin-top: 4px;
-				padding-top: 4px !important;
-				padding-bottom: 4px !important;
+				width: 100%;
+				margin-top: 6px;
+				padding-top: 6px !important;
+				padding-bottom: 6px !important;
 				border-top: 1px solid rgba(0, 0, 0, .12);
 			}
 
-			h1 {
+			.v-toolbar__title {
+				white-space: normal;
 				font-size: 1rem !important;
 				font-weight: 700;
 				line-height: 1.5rem;
