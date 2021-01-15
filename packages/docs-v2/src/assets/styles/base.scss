@@ -36,3 +36,9 @@ a {
 #__layout {
 	width: 100%;
 }
+
+.nuxt-content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}

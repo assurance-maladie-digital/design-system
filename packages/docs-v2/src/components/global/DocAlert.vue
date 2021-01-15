@@ -1,7 +1,7 @@
 <template>
 	<VAlert
 		border="left"
-		class="doc-alert"
+		class="doc-alert w-100"
 		text
 		v-bind="$attrs"
 		v-on="$listeners"

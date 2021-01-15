@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-code-group mb-4">
+	<div class="doc-tabs w-100 mb-4">
 		<VTabs
 			v-model="tab"
 			:dark="!light"
@@ -78,7 +78,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.doc-code-group ::v-deep {
+	.doc-tabs ::v-deep {
 		.v-tabs {
 			border-top-left-radius: 4px;
 			border-top-right-radius: 4px;
