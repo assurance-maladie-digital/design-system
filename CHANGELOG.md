@@ -25,6 +25,9 @@
 - 🐛 **Corrections de bugs**
   - **fields:** Suppression des types non standards sur les champs de sélection ([#814](https://github.com/assurance-maladie-digital/design-system/pull/814))
 
+- 🔥 **Suppressions**
+  - **fields:** Suppression du composant `SelectField` non utilisé ([#815](https://github.com/assurance-maladie-digital/design-system/pull/815))
+
 ### Interne
 
 - 🔒 **Sécurité**
