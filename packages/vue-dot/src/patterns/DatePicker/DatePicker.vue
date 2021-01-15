@@ -9,9 +9,9 @@
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
-				v-bind="textFieldOptions"
 				v-model="dateFormatted"
 				v-facade="maskValue"
+				v-bind="textFieldOptions"
 				:outlined="outlined"
 				:class="textFieldClasses"
 				:success-messages="textFieldOptions.successMessages || successMessages"
