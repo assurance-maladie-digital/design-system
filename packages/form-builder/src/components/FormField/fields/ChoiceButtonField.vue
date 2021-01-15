@@ -7,6 +7,7 @@
 			v-bind="options"
 			:value="choiceFieldValue"
 			:multiple="multiple"
+			:type="undefined"
 			:class="{ 'column': !isInline }"
 			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"
 		>

@@ -254,13 +254,13 @@ exports[`FormBuilder renders correctly 1`] = `
         <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-76" disabled="disabled" readonly="readonly" tabindex="-1" type="choiceSlider">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-76" disabled="disabled" readonly="readonly" tabindex="-1">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
                 </div>
                 <div class="v-slider__ticks-container v-slider__ticks-container--always-show"><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(0% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">9h</div></span><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(33.333333333333336% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">9h30</div></span><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(66.66666666666667% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">10h</div></span><span class="v-slider__tick" style="width: 6px; height: 6px; left: calc(100% - 3px); top: calc(50% - 3px);"><div class="v-slider__tick-label">11h</div></span></div>
-                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container accent--text" style="left: 0%;">
+                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" class="v-slider__thumb-container accent--text" style="left: 0%;">
                   <div class="v-slider__thumb accent"></div>
                 </div>
               </div>
@@ -285,12 +285,12 @@ exports[`FormBuilder renders correctly 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-85" disabled="disabled" readonly="readonly" tabindex="-1" type="choiceSlider">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-85" disabled="disabled" readonly="readonly" tabindex="-1">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
                 </div>
-                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 0%;">
+                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 0%;">
                   <div class="v-slider__thumb accent"></div>
                   <transition-stub name="scale-transition">
                     <div class="v-slider__thumb-label-container">
@@ -327,12 +327,12 @@ exports[`FormBuilder renders correctly 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-95" disabled="disabled" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max" type="choiceSlider">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-95" disabled="disabled" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
                 </div>
-                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" labelmin="min" labelmax="max" type="choiceSlider" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 0%;">
+                <div role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" labelmin="min" labelmax="max" class="v-slider__thumb-container v-slider__thumb-container--show-label accent--text" style="left: 0%;">
                   <div class="v-slider__thumb accent"></div>
                   <transition-stub name="scale-transition">
                     <div class="v-slider__thumb-label-container">
@@ -372,7 +372,7 @@ exports[`FormBuilder renders correctly 1`] = `
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
               <div class="v-select__slot"><label for="input-102" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-                <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-102" type="choiceAutocomplete" autocomplete="off"></div>
+                <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-102" type="text" autocomplete="off"></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
                 </div><input type="hidden">
@@ -406,7 +406,7 @@ exports[`FormBuilder renders correctly 1`] = `
       </p>
       <div>
         <div class="vd-choice-button-field">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" type="choiceButton" hint="Texte informatif"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" hint="Texte informatif"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				9h30
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -435,7 +435,7 @@ exports[`FormBuilder renders correctly 1`] = `
       </p>
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" type="choiceButton"><button type="button" value="test1" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column"><button type="button" value="test1" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Multiple 1
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -464,7 +464,7 @@ exports[`FormBuilder renders correctly 1`] = `
       <!---->
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" type="choiceButton"><button type="button" value="1" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column"><button type="button" value="1" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Texte qui permet de tester sur plusieurs lignes
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -487,7 +487,7 @@ exports[`FormBuilder renders correctly 1`] = `
       </p>
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" type="choiceButton" label="Classic field" outlined="true"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" label="Classic field" outlined="true"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				S
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>

@@ -5,6 +5,7 @@
 		:thumb-label="thumbLabel"
 		:tick-labels="thickLabels"
 		:max="items.length - 1"
+		:type="undefined"
 		color="accent"
 		tick-size="6"
 		track-color="grey lighten-1"
