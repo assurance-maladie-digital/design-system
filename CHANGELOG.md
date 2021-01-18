@@ -58,7 +58,8 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.13.0` ([#820](https://github.com/assurance-maladie-digital/design-system/pull/820)) ([df241b9](https://github.com/assurance-maladie-digital/design-system/commit/df241b90b83e8b5e9f53dd9c0b090748d9b2dc95))
   - **sass:** Mise à jour vers la `v1.32.4` ([#821](https://github.com/assurance-maladie-digital/design-system/pull/821)) ([261ba15](https://github.com/assurance-maladie-digital/design-system/commit/261ba152fec64229965a27fa00590cefb805da64))
   - **@types/node:** Mise à jour vers la `v12.19.14` ([#823](https://github.com/assurance-maladie-digital/design-system/pull/823)) ([23668ac](https://github.com/assurance-maladie-digital/design-system/commit/23668acba84ec2bb32f91f8554d7c243f655d733))
-  - **eslint:** Mise à jour vers la `v7.18.0` ([#824](https://github.com/assurance-maladie-digital/design-system/pull/824)
+  - **eslint:** Mise à jour vers la `v7.18.0` ([#824](https://github.com/assurance-maladie-digital/design-system/pull/824) ([154548e](https://github.com/assurance-maladie-digital/design-system/commit/154548e41d354e98dfe91db5a8fb81c769d2b629))
+  - **@mdi/js:** Mise à jour vers la `v5.9.55` ([#825](https://github.com/assurance-maladie-digital/design-system/pull/825))
 
 ### 📚 Guide de migration
 
