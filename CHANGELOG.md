@@ -17,6 +17,9 @@
 - ♻️ **Refactoring**
   - **template:** Utilisation des styles communs de Vue Dot ([#624](https://github.com/assurance-maladie-digital/design-system/pull/624)) ([31c3376](https://github.com/assurance-maladie-digital/design-system/commit/31c3376d6fcda97447c40aeb6e72bd61862b9f69))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#827](https://github.com/assurance-maladie-digital/design-system/pull/827))
+
 ### FormBuilder
 
 - ♻️ **Refactoring**
@@ -59,7 +62,7 @@
   - **@types/node:** Mise à jour vers la `v12.19.14` ([#823](https://github.com/assurance-maladie-digital/design-system/pull/823)) ([23668ac](https://github.com/assurance-maladie-digital/design-system/commit/23668acba84ec2bb32f91f8554d7c243f655d733))
   - **eslint:** Mise à jour vers la `v7.18.0` ([#824](https://github.com/assurance-maladie-digital/design-system/pull/824) ([154548e](https://github.com/assurance-maladie-digital/design-system/commit/154548e41d354e98dfe91db5a8fb81c769d2b629))
   - **@mdi/js:** Mise à jour vers la `v5.9.55` ([#825](https://github.com/assurance-maladie-digital/design-system/pull/825)) ([bafb88e](https://github.com/assurance-maladie-digital/design-system/commit/bafb88e51b4c6decb6e816a7d3e975ef9013b545))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.0.7` ([#826](https://github.com/assurance-maladie-digital/design-system/pull/826))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.0.7` ([#826](https://github.com/assurance-maladie-digital/design-system/pull/826)) ([32722e1](https://github.com/assurance-maladie-digital/design-system/commit/32722e137368adf04326682952c1c1341e47c929))
 
 ### 📚 Guide de migration
 
