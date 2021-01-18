@@ -14,12 +14,15 @@ Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des
   - **styles:** Correction du style des onglets ([#766](https://github.com/assurance-maladie-digital/design-system/pull/766)) ([ceb0534](https://github.com/assurance-maladie-digital/design-system/commit/ceb0534884e37f89df13ddde14f7551659863441))
 
 - 🚨 **Lint**
-  - **config:** Correction des erreurs de lint ([#813](https://github.com/assurance-maladie-digital/design-system/pull/813)) ([ecdcae0](https://github.com/assurance-maladie-digital/design-system/commit/ecdcae00c497ef96d2022a865be82e1b89a322b8))
+  - **global:** Correction des erreurs de lint ([#813](https://github.com/assurance-maladie-digital/design-system/pull/813)) ([ecdcae0](https://github.com/assurance-maladie-digital/design-system/commit/ecdcae00c497ef96d2022a865be82e1b89a322b8))
 
 ### Vue Dash
 
 - ♻️ **Refactoring**
   - **template:** Utilisation des styles communs de Vue Dot ([#624](https://github.com/assurance-maladie-digital/design-system/pull/624)) ([31c3376](https://github.com/assurance-maladie-digital/design-system/commit/31c3376d6fcda97447c40aeb6e72bd61862b9f69))
+
+- 🚨 **Lint**
+  - **global:** Correction des erreurs de lint ([#830](https://github.com/assurance-maladie-digital/design-system/pull/830))
 
 - ⬆️ **Dépendances**
   - **template:** Mise à jour des dépendances ([#827](https://github.com/assurance-maladie-digital/design-system/pull/827)) ([c48c6eb](https://github.com/assurance-maladie-digital/design-system/commit/c48c6ebd58cf6c0067af99fc6f73c4245d3634e3))
@@ -42,7 +45,7 @@ Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des
 
 - 📝 **Documentation**
   - **issues:** Correction du template pour les demandes de nouvelles fonctionnalités ([#765](https://github.com/assurance-maladie-digital/design-system/pull/765)) ([e056de9](https://github.com/assurance-maladie-digital/design-system/commit/e056de9c9fb679677ca77ae47ad44b28c831639f))
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#829](https://github.com/assurance-maladie-digital/design-system/pull/829))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#829](https://github.com/assurance-maladie-digital/design-system/pull/829)) ([7034077](https://github.com/assurance-maladie-digital/design-system/commit/703407742fbb118593947a4bc44627393ecee814))
 
 - ⬆️ **Dépendances**
   - **lint-staged:** Mise à jour vers la `v10.5.3` ([#772](https://github.com/assurance-maladie-digital/design-system/pull/772)) ([aee38de](https://github.com/assurance-maladie-digital/design-system/commit/aee38de5f56c96ec827c9b960396ddb53b392e80))
@@ -131,7 +134,7 @@ Cette version comporte l'ajout des champs personnalisés sur le FormBuilder ains
   - **ChoiceField:** Utilisation d'un getter pour `isOtherActive` ([#760](https://github.com/assurance-maladie-digital/design-system/pull/760)) ([08064c7](https://github.com/assurance-maladie-digital/design-system/commit/08064c78cad819a605c45b9d5504e37fc12a4fc7))
 
 - 🚨 **Lint**
-  - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
+  - **global:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
 
 ### Interne
 
