@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.5
+
+**Version publiée le 18/01/2021.**
+
+Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des styles communs dans Vue Dot et plusieurs correctifs sur le FormBuilder.
 
 ### Vue Dot
 
@@ -18,7 +22,7 @@
   - **template:** Utilisation des styles communs de Vue Dot ([#624](https://github.com/assurance-maladie-digital/design-system/pull/624)) ([31c3376](https://github.com/assurance-maladie-digital/design-system/commit/31c3376d6fcda97447c40aeb6e72bd61862b9f69))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#827](https://github.com/assurance-maladie-digital/design-system/pull/827))
+  - **template:** Mise à jour des dépendances ([#827](https://github.com/assurance-maladie-digital/design-system/pull/827)) ([c48c6eb](https://github.com/assurance-maladie-digital/design-system/commit/c48c6ebd58cf6c0067af99fc6f73c4245d3634e3))
 
 ### FormBuilder
 
@@ -38,6 +42,7 @@
 
 - 📝 **Documentation**
   - **issues:** Correction du template pour les demandes de nouvelles fonctionnalités ([#765](https://github.com/assurance-maladie-digital/design-system/pull/765)) ([e056de9](https://github.com/assurance-maladie-digital/design-system/commit/e056de9c9fb679677ca77ae47ad44b28c831639f))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#829](https://github.com/assurance-maladie-digital/design-system/pull/829))
 
 - ⬆️ **Dépendances**
   - **lint-staged:** Mise à jour vers la `v10.5.3` ([#772](https://github.com/assurance-maladie-digital/design-system/pull/772)) ([aee38de](https://github.com/assurance-maladie-digital/design-system/commit/aee38de5f56c96ec827c9b960396ddb53b392e80))
@@ -355,7 +360,7 @@ Ainsi que de mettre à jour Cypress de la `v3` à la `v5`, pour cela vous devez 
 
 **Version publiée le 19/10/2020.**
 
-Cette version comporte le nouveau composant `ErrorPage` ainsi que des corrections de bugs sur le FormBuilder et la refonte du composant `LangBtn`.
+Cette version comporte l'ajout du composant `ErrorPage` ainsi que plusieurs correctifs sur le FormBuilder et la refonte du composant `LangBtn`.
 
 ### Vue Dot
 
@@ -445,7 +450,7 @@ Le type `Next` a été ajouté dans Vue Dot, vous pouvez également le supprimer
 
 **Version publiée le 18/09/2020.**
 
-Cette version comporte des corrections de bugs sur le template de Vue Dash ainsi que sur les composants `DataListItem` et `UploadWorkflow`.
+Cette version comporte plusieurs correctifs sur le template de Vue Dash ainsi que sur les composants `DataListItem` et `UploadWorkflow`.
 
 ### Vue Dot
 
@@ -648,7 +653,7 @@ Vous pouvez retrouver le détail de ces changements et mettre à jour ces styles
 
 **Version publiée le 10/07/2020.**
 
-Cette version comporte de nouvelles fonctionnalités ainsi que des corrections de bugs concernant les composants `UploadWorkflow`, `FileList` et `FileUpload`. Elle inclut également des correctifs d'accessibilité et du refactoring en vue du passage en version bêta.
+Cette version comporte de nouvelles fonctionnalités ainsi que des correctifs sur les composants `UploadWorkflow`, `FileList` et `FileUpload`. Elle inclut également des correctifs d'accessibilité et du refactoring en vue du passage en version bêta.
 
 ### Vue Dot
 
@@ -714,7 +719,7 @@ Ces composants ont maintenant une largeur par défaut de `100%`, vous pouvez uti
 />
 ```
 
-### Suppression de l'ombre sur `PageCard`
+#### Suppression de l'ombre sur `PageCard`
 
 La prop `no-shadow` a été supprimée car elle ne fonctionnait pas correctement. Pour retirer l'ombre, vous pouvez utiliser la même méthode que sur une `VCard` :
 
@@ -729,7 +734,7 @@ La prop `no-shadow` a été supprimée car elle ne fonctionnait pas correctement
 
 **Version publiée le 01/07/2020.**
 
-Cette version comporte un changement de dépendance important, ainsi que des nouvelles fonctionnalités diverses comme les classes de largeur de champs de formulaires, mais aussi des corrections de bugs sur le `FileUpload` et du refactoring en vue du passage en version bêta.
+Cette version comporte un changement de dépendance important, ainsi que des nouvelles fonctionnalités diverses comme les classes de largeur de champs de formulaires, mais aussi des correctifs sur le `FileUpload` et du refactoring en vue du passage en version bêta.
 
 ### Vue Dot
 
@@ -848,7 +853,7 @@ Si vous n'utilisez pas directement la directive `v-mask`, c'est tout ce que vous
 
 Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. Vous pouvez configurer `vue-input-facade` pour utiliser la directive `v-mask` (voir [Migrating existing projects](https://github.com/RonaldJerez/vue-input-facade#migrating-existing-projects)), mais nous vous conseillons de la renommer maintenant pour éviter de créer de la dette technique.
 
-### Renommer `showWeekEnds` sur le `DatePicker`
+#### Renommer `showWeekEnds` sur le `DatePicker`
 
 La prop `showWeekEnds` a été renommée en `showWeekends` :
 
@@ -859,7 +864,7 @@ La prop `showWeekEnds` a été renommée en `showWeekends` :
 />
 ```
 
-### Utiliser la nouvelle prop `outlined` sur le `DatePicker`
+#### Utiliser la nouvelle prop `outlined` sur le `DatePicker`
 
 Lorsque vous utilisez la prop `outlined` sur le `DatePicker`, le `VMenu` sera maintenant positionné au bon endroit et la prop `append-icon` sera activée automatiquement :
 
@@ -876,7 +881,7 @@ Lorsque vous utilisez la prop `outlined` sur le `DatePicker`, le `VMenu` sera ma
 />
 ```
 
-### Utiliser les nouvelles classes pour les champs de formulaires
+#### Utiliser les nouvelles classes pour les champs de formulaires
 
 Nous avons ajouté de nouveaux Design Tokens et de nouvelles classes pour ajuster la largeur des champs de formulaires, vous pouvez rechercher et remplacer les anciennes classes `form-input` par `vd-form-input` :
 
@@ -1093,7 +1098,7 @@ Cette version comporte un correctif sur les imports dans le template de Vue Dash
 
 **Version publiée le 09/07/2019.**
 
-Cette version comporte des nouvelles fonctionnalités et des corrections de bugs sur le composant `FileUpload`.
+Cette version comporte des nouvelles fonctionnalités et des correctifs sur le composant `FileUpload`.
 
 ### Vue Dot
 
@@ -1124,7 +1129,7 @@ Cette version comporte une mise à jour de l'exemple du `FileUpload` dans le pla
 
 **Version publiée le 08/07/2019.**
 
-Cette version comporte le nouveau composant `FileUpload` ainsi qu'une correction graphique dans le playground.
+Cette version comporte l'ajout du composant `FileUpload` ainsi qu'un correctif graphique dans le playground.
 
 ### Vue Dot
 
@@ -1279,7 +1284,7 @@ Cette version comporte un correctif de dépendance pour Vue Dash et des modifica
 
 **Version publiée le 14/06/2019.**
 
-Cette version comporte le nouveau composant `CopyBtn` ainsi que l'utilisation de la nouvelle directive `v-slot` de Vue.js.
+Cette version comporte l'ajout du composant `CopyBtn` ainsi que l'utilisation de la nouvelle directive `v-slot` de Vue.js.
 
 ### Vue Dot
 
