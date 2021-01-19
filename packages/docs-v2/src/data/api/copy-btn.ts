@@ -34,13 +34,12 @@ export const api: Api = {
 				name: 'vuetify-options',
 				type: 'Options',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				default: undefined,
-				example: `
-				{
-					menu: 'VMenu',
-					btn: 'VBtn',
-					icon: 'VIcon'
-				}`
+				default: 'undefined',
+				example: `{
+	menu: 'VMenu',
+	btn: 'VBtn',
+	icon: 'VIcon'
+}`
 			}
 		],
 		slots: [

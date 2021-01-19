@@ -6,13 +6,13 @@ export const api: Api = {
 			{
 				name: 'width',
 				type: 'string',
-				default: '100px',
+				default: `'100px'`,
 				description: 'La largeur du composant.'
 			},
 			{
 				name: 'height',
 				type: 'string',
-				default: '1rem',
+				default: `'1rem'`,
 				description: 'La hauteur du composant.'
 			}
 		]

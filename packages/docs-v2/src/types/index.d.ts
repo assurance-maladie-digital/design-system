@@ -7,7 +7,7 @@ export interface ApiProp {
 	required?: boolean;
 	default?: string | number | boolean | null | undefined;
 	signature: string;
-	value: string;
+	value: string | undefined;
 	example?: IndexedObject | string;
 	props?: IndexedObject<IndexedObject | string>;
 	snippet?: string;

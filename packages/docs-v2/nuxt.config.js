@@ -6,7 +6,7 @@ export default {
 	srcDir: './src/',
 	head: {
 		htmlAttrs: {
-			lang: 'fr-FR',
+			lang: 'fr-FR'
 		},
 		title: 'Design System Digital',
 		meta: [

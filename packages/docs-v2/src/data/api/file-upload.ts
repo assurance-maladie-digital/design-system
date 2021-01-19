@@ -59,25 +59,25 @@ export const api: Api = {
 			{
 				name: 'accept',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'L\'attribut natif `accept`. Par défaut, la valeur sera calculée à partir des extensions autorisées.'
 			},
 			{
 				name: 'max-width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur maximale du composant.'
 			},
 			{
 				name: 'min-width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur minimale du composant.'
 			},
 			{
 				name: 'width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur du composant.'
 			}
 		],
@@ -117,9 +117,9 @@ export const api: Api = {
 				name: 'error',
 				description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
 				value: `{
-					file: File,
-					code: ErrorCodes
-				}`
+	file: File,
+	code: ErrorCodes
+}`
 			}
 		]
 	}

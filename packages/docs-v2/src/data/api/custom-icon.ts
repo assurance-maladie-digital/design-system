@@ -36,7 +36,7 @@ export const api: Api = {
 			{
 				name: 'size',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Applique une taille CSS personnalisée (largeur / hauteur) à l\'icône. Par défaut, la taille est de `1,35em`.'
 			}
 		],

@@ -7,53 +7,51 @@ export const api: Api = {
 				name: 'value',
 				type: 'FileListItem[]',
 				required: true,
-				description: 'La liste des fichiers que l\'utilisateur doit sélectionner.',
-				example: `
-				{
-					id: string;
-					title: string;
-					state?: FileState;
-					name?: string;
-					file?: File;
-				}`
+				description: `La liste des fichiers que l'utilisateur doit sélectionner.`,
+				example: `{
+	id: string;
+	title: string;
+	state?: FileState;
+	name?: string;
+	file?: File;
+}`
 			},
 			{
 				name: 'section-title',
 				type: 'string',
-				default: 'Document(s) à nous transmettre.',
+				default: `'Document(s) à nous transmettre.'`,
 				description: 'Le titre de la section.'
 			},
 			{
 				name: 'max-width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur maximale du composant.'
 			},
 			{
 				name: 'min-width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur minimale du composant.'
 			},
 			{
 				name: 'width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur du composant.'
 			},
 			{
 				name: 'vuetify-options',
 				type: 'Options',
-				default: undefined,
+				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify et internes en utilisant la directive `customizable`.',
-				example: `
-				{
-					fileUpload: 'FileUpload',
-					dialog: 'DialogBox',
-					form: 'VForm',
-					select: 'VSelect',
-					fileList: 'FileList'
-				}`
+				example: `{
+	fileUpload: 'FileUpload',
+	dialog: 'DialogBox',
+	form: 'VForm',
+	select: 'VSelect',
+	fileList: 'FileList'
+}`
 			}
 		],
 		slots: [
@@ -74,8 +72,11 @@ export const api: Api = {
 			},
 			{
 				name: 'error',
-				description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
-				value: '{\n	file: File,\n	code: ErrorCodes\n}'
+				description: `Événement émis lorsque lorsqu'il y a une erreur de validation.`,
+				value: `{
+	file: File,
+	code: ErrorCodes
+}`
 			}
 		]
 	},
@@ -86,14 +87,13 @@ export const api: Api = {
 				type: 'FileItem[]',
 				required: true,
 				description: 'La liste des fichiers à afficher.',
-				example: `
-				{
-					id: string;
-					title: string;
-					state: FileState;
-					name?: string;
-					optional?: boolean;
-				}`
+				example: `{
+	id: string;
+	title: string;
+	state: FileState;
+	name?: string;
+	optional?: boolean;
+}`
 			},
 			{
 				name: 'show-view-btn',
@@ -110,43 +110,42 @@ export const api: Api = {
 			{
 				name: 'max-width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur maximale du composant.'
 			},
 			{
 				name: 'min-width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur minimale du composant.'
 			},
 			{
 				name: 'width',
 				type: 'number | string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur du composant.'
 			},
 			{
 				name: 'vuetify-options',
 				type: 'Options',
-				default: undefined,
+				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `
-				{
-					list: 'VList',
-					listItem: 'VListItem',
-					listItemAvatar: 'VListItemAvatar',
-					listItemAvatarIcon: 'VIcon',
-					listItemContent: 'VListItemContent',
-					listItemTitle: 'VListItemTitle',
-					listItemSubtitle: 'VListItemSubtitle',
-					listItemAction: 'VListItemAction',
-					layout: 'VLayout',
-					retryBtn: 'VBtn',
-					viewFileBtn: 'VBtn',
-					deleteFileBtn: 'VBtn',
-					icon: 'VIcon',
-					divider: 'VDivider'
-				}`
+				example: `{
+	list: 'VList',
+	listItem: 'VListItem',
+	listItemAvatar: 'VListItemAvatar',
+	listItemAvatarIcon: 'VIcon',
+	listItemContent: 'VListItemContent',
+	listItemTitle: 'VListItemTitle',
+	listItemSubtitle: 'VListItemSubtitle',
+	listItemAction: 'VListItemAction',
+	layout: 'VLayout',
+	retryBtn: 'VBtn',
+	viewFileBtn: 'VBtn',
+	deleteFileBtn: 'VBtn',
+	icon: 'VIcon',
+	divider: 'VDivider'
+}`
 			}
 		],
 		events: [

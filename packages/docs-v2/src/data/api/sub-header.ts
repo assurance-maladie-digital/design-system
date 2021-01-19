@@ -18,29 +18,28 @@ export const api: Api = {
 		{
 			name: 'title-text',
 			type: 'string',
-			default: undefined,
+			default: 'undefined',
 			description: 'Le texte du titre.'
 		},
 		{
 			name: 'sub-title-text',
 			type: 'string',
-			default: undefined,
+			default: 'undefined',
 			description: 'Le texte du sous-titre.'
 		},
 		{
 			name: 'data-lists',
 			type: 'DataListsItem[]',
-			default: undefined,
+			default: 'undefined',
 			description: 'Liste des composants `DataList` en mode colonne.',
-			example: `
-			{
-				key: string;
-				value?: string;
-				action?: string;
-				chip?: boolean;
-				icon?: string;
-				options?: Options;
-			}`
+			example: `{
+	key: string;
+	value?: string;
+	action?: string;
+	chip?: boolean;
+	icon?: string;
+	options?: Options;
+}`
 		},
 		{
 			name: 'render-html-value',
@@ -57,19 +56,19 @@ export const api: Api = {
 		{
 			name: 'max-width',
 			type: 'number | string',
-			default: undefined,
+			default: 'undefined',
 			description: 'La largeur maximale du composant.'
 		},
 		{
 			name: 'min-width',
 			type: 'number | string',
-			default: undefined,
+			default: 'undefined',
 			description: 'La largeur minimale du composant.'
 		},
 		{
 			name: 'width',
 			type: 'number | string',
-			default: undefined,
+			default: 'undefined',
 			description: 'La largeur du composant.'
 		}
 		],
@@ -98,17 +97,16 @@ export const api: Api = {
 		events: [
 			{
 				name: 'click:list-item',
-				description: 'Événement émis lorsque l\'utilisateur clique sur un bouton d\'une liste.',
-				value: `
-				{
-					dataListIndex: number,
-					itemIndex: number
-				}`
+				description: `Événement émis lorsque l'utilisateur clique sur un bouton d'une liste.`,
+				value: `{
+	dataListIndex: number,
+	itemIndex: number
+}`
 			},
 			{
 				name: 'back',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton retour.',
-				value: 'undefined'
+				description: `Événement émis lorsque l'utilisateur clique sur le bouton retour.`,
+				value: undefined
 			}
 		]
 	}

@@ -12,24 +12,23 @@ export const api: Api = {
 			{
 				name: 'card-class',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Les classes à appliquer à la `VCard.`'
 			},
 			{
 				name: 'card-padding',
 				type: 'string',
-				default: 'px-6 py-4',
+				default: `'px-6 py-4'`,
 				description: 'Le padding à appliquer à la `VCard`.'
 			},
 			{
 				name: 'vuetify-options',
 				type: 'Options',
-				default: undefined,
+				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `
-				{
-					layout: 'VLayout'
-				}`
+				example: `{
+	layout: 'VLayout'
+}`
 			}
 		],
 		slots: [

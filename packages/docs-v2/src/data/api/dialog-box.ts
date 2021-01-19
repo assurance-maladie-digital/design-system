@@ -12,44 +12,43 @@ export const api: Api = {
 			{
 				name: 'title',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Le titre de la boîte de dialogue.'
 			},
 			{
 				name: 'width',
 				type: 'string',
-				default: '800px',
+				default: `'800px'`,
 				description: 'La largeur de la boîte de dialogue.'
 			},
 			{
 				name: 'cancel-btn-text',
 				type: 'string',
-				default: 'Annuler',
+				default: `'Annuler'`,
 				description: 'Le texte du bouton Annuler.'
 			},
 			{
 				name: 'confirm-btn-text',
 				type: 'string',
-				default: 'Valider',
+				default: `'Valider'`,
 				description: 'Le texte du bouton Valider.'
 			},
 			{
 				name: 'vuetify-options',
 				type: 'Options',
-				default: undefined,
+				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `
-				{ 
-					card: 'VCard',
-					cardTitle: 'VCardTitle',
-					spacer: 'VSpacer',
-					closeBtn: 'VBtn',
-					icon: 'VIcon',
-					cardActions: 'VCardActions',
-					actionsSpacer: 'VSpacer',
-					cancelBtn: 'VBtn',
-					confirmBtn: 'VBtn'
-				}`
+				example: `{ 
+	card: 'VCard',
+	cardTitle: 'VCardTitle',
+	spacer: 'VSpacer',
+	closeBtn: 'VBtn',
+	icon: 'VIcon',
+	cardActions: 'VCardActions',
+	actionsSpacer: 'VSpacer',
+	cancelBtn: 'VBtn',
+	confirmBtn: 'VBtn'
+}`
 			}
 		],
 		slots: [
@@ -70,17 +69,17 @@ export const api: Api = {
 			{
 				name: 'change',
 				description: 'Événement émis lorsque la boîte de dialogue apparaît et disparaît.',
-				value: 'undefined'
+				value: undefined
 			},
 			{
 				name: 'cancel',
 				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Annuler.',
-				value: 'undefined'
+				value: undefined
 			},
 			{
 				name: 'confirm',
 				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Valider.',
-				value: 'undefined'
+				value: undefined
 			}
 		]
 	}

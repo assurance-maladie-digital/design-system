@@ -6,7 +6,10 @@ export const api: Api = {
 			{
 				name: 'available-languages',
 				type: 'string[] | AllLanguagesChar',
-				default: '[\'fr\', \'en\']',
+				default: `[
+					'fr', 
+					'en'
+				]`,
 				description: 'Liste des langues disponibles (format *ISO 639-1*). Utilisez `*` pour afficher toutes les possibilités.'
 			},
 			{
@@ -18,29 +21,28 @@ export const api: Api = {
 			{
 				name: 'label',
 				type: 'string',
-				default: '\'Choix de la langue. Actuellement\'',
+				default: `'Choix de la langue. Actuellement'`,
 				description: 'Le label accessible du bouton.'
 			},
 			{
 				name: 'value',
 				type: 'string',
-				default: '\'fr\'',
+				default: `'fr'`,
 				description: 'La langue sélectionnée.'
 			},
 			{
 				name: 'vuetify-options',
 				type: 'Options',
-				default: undefined,
+				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `
-				{
-					menu: 'VMenu',
-					btn: 'VBtn',
-					icon: 'VIcon',
-					list: 'VList',
-					listItem: 'VListItem',
-					listItemTitle: 'VListItemTitle'
-				}`
+				example: `{
+	menu: 'VMenu',
+	btn: 'VBtn',
+	icon: 'VIcon',
+	list: 'VList',
+	listItem: 'VListItem',
+	listItemTitle: 'VListItemTitle'
+}`
 			}
 		],
 		events: [

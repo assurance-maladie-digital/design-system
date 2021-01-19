@@ -13,31 +13,31 @@ export const api: Api = {
 				name: 'message',
 				type: 'string',
 				required: true,
-				description: 'Le message d\'erreur à afficher à l\'utilisateur.'
+				description: `Le message d'erreur à afficher à l'utilisateur.`
 			},
 			{
 				name: 'code',
 				type: 'string',
-				default: undefined,
-				description: 'Le code HTTP de l\'erreur.'
+				default: 'undefined',
+				description: `Le code HTTP de l'erreur.`
 			},
 			{
 				name: 'btn-text',
 				type: 'string',
-				default: 'Retour à l\'accueil',
-				description: 'Le message du bouton d\'action.'
+				default: `"Retour à l'accueil"`,
+				description: `Le message du bouton d'action.`
 			},
 			{
 				name: 'btn-route',
 				type: 'Next',
-				default: '{ name: \'home\' }',
+				default: `{ name: 'home' }`,
 				description: 'La valeur de la prop `to` du bouton d\'action.'
 			},
 			{
 				name: 'no-btn',
 				type: 'boolean',
 				default: false,
-				description: 'Désactive le bouton d\'action.'
+				description: `Désactive le bouton d'action.`
 			}
 		]
 	}

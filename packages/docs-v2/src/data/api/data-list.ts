@@ -8,25 +8,34 @@ export const api: Api = {
 				type: 'DataListItem[]',
 				required: true,
 				description: 'La liste des items à afficher.',
-				example: '{\n	key: string;\n	value?: string | number;\n	action?: string;\n	chip?: boolean;\n	icon?: string;\n	options?: Options;\n}'
+				example: `{
+	key: string;
+	value?: string | number;
+	action?: string;
+	chip?: boolean;
+	icon?: string;
+	options?: Options;
+}`
 			},
 			{
 				name: 'icons',
 				type: 'DataListIcons',
-				default: undefined,
+				default: 'undefined',
 				description: 'La liste des différentes icônes disponibles pour les items.',
-				example: '{\n	[iconName: string]: string;\n}'
+				example: `{
+	[iconName: string]: string;
+}`
 			},
 			{
 				name: 'list-title',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Le titre de la liste.'
 			},
 			{
 				name: 'title-class',
 				type: 'string',
-				default: '\'mb-3 headline\'',
+				default: `'mb-3 headline'`,
 				description: 'Les classes à appliquer sur le titre de la liste.'
 			},
 			{
@@ -44,19 +53,19 @@ export const api: Api = {
 			{
 				name: 'placeholder',
 				type: 'string',
-				default: '\'…\'',
+				default: `'…'`,
 				description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
 			},
 			{
 				name: 'min-width',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La largeur minimum du composant.'
 			},
 			{
 				name: 'item-width',
 				type: 'string',
-				default: '\'200px\'',
+				default: '200px',
 				description: 'La largeur de chaque item.'
 			},
 			{
@@ -68,7 +77,7 @@ export const api: Api = {
 			{
 				name: 'items-number-loading',
 				type: 'number',
-				default: '1',
+				default: 1,
 				description: 'Le nombre d\'items à afficher lors du chargement.'
 			},
 			{
@@ -109,19 +118,19 @@ export const api: Api = {
 			{
 				name: 'value',
 				type: 'string | number',
-				default: undefined,
+				default: 'undefined',
 				description: 'La valeur à afficher.'
 			},
 			{
 				name: 'action',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Le label du bouton action à afficher.'
 			},
 			{
 				name: 'placeholder',
 				type: 'string',
-				default: '\'…\'',
+				default: `'…'`,
 				description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
 			},
 			{
@@ -133,7 +142,7 @@ export const api: Api = {
 			{
 				name: 'icon',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Le nom de l\'icône à afficher.'
 			},
 			{
@@ -145,14 +154,14 @@ export const api: Api = {
 			{
 				name: 'vuetify-options',
 				type: 'Options',
-				default: undefined,
+				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
 				example: `{
-					layout: 'VLayout',
-					chip: 'VChip',
-					icon: 'VIcon',
-					actionBtn: 'VBtn'
-				}`
+	layout: 'VLayout',
+	chip: 'VChip',
+	icon: 'VIcon',
+	actionBtn: 'VBtn'
+}`
 			}
 		],
 		slots: [
@@ -173,7 +182,7 @@ export const api: Api = {
 			{
 				name: 'click:action',
 				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action.',
-				value: 'undefined'
+				value: undefined
 			}
 		]
 	},
@@ -206,7 +215,7 @@ export const api: Api = {
 			{
 				name: 'width',
 				type: 'string',
-				default: '200px',
+				default: `'200px'`,
 				description: 'La largeur de chaque item.'
 			}
 		]

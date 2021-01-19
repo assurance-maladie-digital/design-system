@@ -6,7 +6,7 @@ export const api: Api = {
 			{
 				name: 'value',
 				type: 'string',
-				default: '\'\'',
+				default: `''`,
 				description: 'La date sélectionnée.'
 			},
 			{
@@ -42,13 +42,13 @@ export const api: Api = {
 			{
 				name: 'text-field-class',
 				type: 'string | string[]',
-				default: undefined,
+				default: 'undefined',
 				description: 'Les classes à appliquer au `VTextField`.'
 			},
 			{
 				name: 'start-date',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'La date de début de la période.'
 			},
 			{
@@ -66,19 +66,19 @@ export const api: Api = {
 			{
 				name: 'date-format',
 				type: 'string',
-				default: '\'DD/MM/YYYY\'',
+				default: `'DD/MM/YYYY'`,
 				description: 'Le format de la date affichée dans le `VTextField`.'
 			},
 			{
 				name: 'date-format-return',
 				type: 'string',
-				default: '\'YYYY-MM-DD\'',
+				default: `'YYYY-MM-DD'`,
 				description: 'Le format de la date utilisé avec le `v-model`.'
 			},
 			{
 				name: 'mask',
 				type: 'string | boolean',
-				default: undefined,
+				default: 'undefined',
 				description: 'Masque limitant les caractères pouvant être saisis dans le `VTextField`.'
 			},
 			{
@@ -90,7 +90,7 @@ export const api: Api = {
 			{
 				name: 'picker-date',
 				type: 'string',
-				default: undefined,
+				default: 'undefined',
 				description: 'Le mois / l\'année affiché, à utiliser avec le modificateur `.sync`.'
 			},
 			{
@@ -102,16 +102,15 @@ export const api: Api = {
 			{
 				name: 'vuetify-options',
 				type: 'Options',
-				default: undefined,
+				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `
-				{
-					textField: 'VTextField',
-					datePicker: 'VDatePicker',
-					icon: 'VIcon',
-					btn: 'VBtn',
-					menu: 'VMenu'
-				}`
+				example: `{
+	textField: 'VTextField',
+	datePicker: 'VDatePicker',
+	icon: 'VIcon',
+	btn: 'VBtn',
+	menu: 'VMenu'
+}`
 			}
 		],
 		slots: [
@@ -128,12 +127,12 @@ export const api: Api = {
 			{
 				name: 'change',
 				description: 'Événement émis lorsque la valeur est mise à jour.',
-				value: 'undefined'
+				value: undefined
 			},
 			{
 				name: 'input',
 				description: 'Événement émis dès que l\'utilisateur écrit dans le champ.',
-				value: 'undefined'
+				value: undefined
 			}
 		]
 	}
