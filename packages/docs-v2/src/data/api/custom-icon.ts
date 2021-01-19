@@ -6,7 +6,7 @@ export const api: Api = {
 			{
 				name: 'color',
 				type: 'string',
-				default: 'currentColor',
+				default: `'currentColor'`,
 				description: 'La couleur de l\'icône (n\'importe quelle valeur CSS). Par défaut, l\'icône hérite de la couleur du texte.'
 			},
 			{
