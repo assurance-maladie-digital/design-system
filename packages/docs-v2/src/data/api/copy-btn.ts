@@ -27,25 +27,26 @@ export const api: Api = {
 			{
 				name: 'tooltip-duration',
 				type: 'number',
-				description: `La durée d'affichage du tooltip en millisecondes.`,
+				description: 'La durée d\'affichage du tooltip en millisecondes.',
 				default: 2500
 			},
 			{
 				name: 'vuetify-options',
 				type: 'Options',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				default: 'undefined',
-				example: `{
-	menu: 'VMenu',
-	btn: 'VBtn',
-	icon: 'VIcon'
-}`
+				default: undefined,
+				example: `
+				{
+					menu: 'VMenu',
+					btn: 'VBtn',
+					icon: 'VIcon'
+				}`
 			}
 		],
 		slots: [
 			{
 				name: 'icon',
-				description: `Slot pour remplacer l'icône par défaut.`
+				description: 'Slot pour remplacer l\'icône par défaut.'
 			},
 			{
 				name: 'tooltip',
