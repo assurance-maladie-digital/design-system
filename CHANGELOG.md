@@ -29,6 +29,7 @@
 
 - 📝 **Documentation**
   - **issues:** Correction du template pour les demandes de nouvelles fonctionnalités ([#765](https://github.com/assurance-maladie-digital/design-system/pull/765)) ([e056de9](https://github.com/assurance-maladie-digital/design-system/commit/e056de9c9fb679677ca77ae47ad44b28c831639f))
+  - **migration:** Migration des api des composants depuis la v1 ([#833](https://github.com/assurance-maladie-digital/design-system/pull/833))
 
 - ⬆️ **Dépendances**
   - **lint-staged:** Mise à jour vers la `v10.5.3` ([#772](https://github.com/assurance-maladie-digital/design-system/pull/772)) ([aee38de](https://github.com/assurance-maladie-digital/design-system/commit/aee38de5f56c96ec827c9b960396ddb53b392e80))
