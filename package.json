@@ -15,7 +15,7 @@
 		"@mdi/js": "5.9.55",
 		"@types/fs-extra": "9.0.6",
 		"@types/jest": "26.0.20",
-		"@types/node": "12.19.14",
+		"@types/node": "12.19.15",
 		"@typescript-eslint/eslint-plugin": "4.13.0",
 		"@typescript-eslint/parser": "4.13.0",
 		"@vue/eslint-config-typescript": "7.0.0",
