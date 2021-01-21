@@ -1,3 +1,13 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **core-js:** Mise à jour vers la `v3.8.3` ([#832](https://github.com/assurance-maladie-digital/design-system/pull/832)) ([e32c91c](https://github.com/assurance-maladie-digital/design-system/commit/e32c91c5b3418581e502c82ce97ef0fd16f92b17))
+  - **fs-extra:** Mise à jour vers la `v9.1.0` ([#834](https://github.com/assurance-maladie-digital/design-system/pull/834)) ([f6079fb](https://github.com/assurance-maladie-digital/design-system/commit/f6079fbfb6c1e24a366127942919b174c94589b4))
+  - **sass:** Mise à jour vers la `v1.32.5` ([#835](https://github.com/assurance-maladie-digital/design-system/pull/835)) ([49e405e](https://github.com/assurance-maladie-digital/design-system/commit/49e405e9cb4609d2c600f273141663815b06a5f3))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.0.8` ([#836](https://github.com/assurance-maladie-digital/design-system/pull/836))
+
 ## v2.0.0-beta.5
 
 **Version publiée le 18/01/2021.**
@@ -22,7 +32,7 @@ Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des
   - **template:** Utilisation des styles communs de Vue Dot ([#624](https://github.com/assurance-maladie-digital/design-system/pull/624)) ([31c3376](https://github.com/assurance-maladie-digital/design-system/commit/31c3376d6fcda97447c40aeb6e72bd61862b9f69))
 
 - 🚨 **Lint**
-  - **global:** Correction des erreurs de lint ([#830](https://github.com/assurance-maladie-digital/design-system/pull/830))
+  - **global:** Correction des erreurs de lint ([#830](https://github.com/assurance-maladie-digital/design-system/pull/830)) ([3fb4dba](https://github.com/assurance-maladie-digital/design-system/commit/3fb4dba025ad7d6a9e4411b0b10f99ff542201d2))
 
 - ⬆️ **Dépendances**
   - **template:** Mise à jour des dépendances ([#827](https://github.com/assurance-maladie-digital/design-system/pull/827)) ([c48c6eb](https://github.com/assurance-maladie-digital/design-system/commit/c48c6ebd58cf6c0067af99fc6f73c4245d3634e3))
@@ -33,7 +43,7 @@ Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des
   - **template:** Utilisation des styles communs de Vue Dot ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
 
 - 🐛 **Corrections de bugs**
-  - **fields:** Suppression des types non standards sur les champs de sélection ([#814](https://github.com/assurance-maladie-digital/design-system/pull/814))
+  - **fields:** Suppression des types non standards sur les champs de sélection ([#814](https://github.com/assurance-maladie-digital/design-system/pull/814)) ([1936781](https://github.com/assurance-maladie-digital/design-system/commit/1936781d942a1df3b76923df6175a32290d3b9f7))
 
 - 🔥 **Suppressions**
   - **fields:** Suppression du composant `SelectField` non utilisé ([#815](https://github.com/assurance-maladie-digital/design-system/pull/815)) ([09a3ba4](https://github.com/assurance-maladie-digital/design-system/commit/09a3ba44f1eb11ebe168d75cfb92c20ba27a1e71))
