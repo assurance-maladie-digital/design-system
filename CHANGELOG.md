@@ -4,7 +4,10 @@
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction de l'utilisation du composant `ErrorPage` ([#839](https://github.com/assurance-maladie-digital/design-system/pull/839)) ([62d9c32](https://github.com/assurance-maladie-digital/design-system/commit/62d9c3209e85896ce0d0548b3158fc59321cd00a))
-  - **template:** Correction de l'export du service `formatDate` ([#840](https://github.com/assurance-maladie-digital/design-system/pull/840))
+  - **template:** Correction de l'export du service `formatDate` ([#840](https://github.com/assurance-maladie-digital/design-system/pull/840)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
+
+- ♻️ **Refactoring**
+  - **template:** Réécriture du commentaire du service API exemple `folders` ([#841](https://github.com/assurance-maladie-digital/design-system/pull/841))
 
 ### Interne
 
@@ -47,11 +50,11 @@ Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des
 
 ### FormBuilder
 
-- ♻️ **Refactoring**
-  - **template:** Utilisation des styles communs de Vue Dot ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
-
 - 🐛 **Corrections de bugs**
   - **fields:** Suppression des types non standards sur les champs de sélection ([#814](https://github.com/assurance-maladie-digital/design-system/pull/814)) ([1936781](https://github.com/assurance-maladie-digital/design-system/commit/1936781d942a1df3b76923df6175a32290d3b9f7))
+
+- ♻️ **Refactoring**
+  - **template:** Utilisation des styles communs de Vue Dot ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
 
 - 🔥 **Suppressions**
   - **fields:** Suppression du composant `SelectField` non utilisé ([#815](https://github.com/assurance-maladie-digital/design-system/pull/815)) ([09a3ba4](https://github.com/assurance-maladie-digital/design-system/commit/09a3ba44f1eb11ebe168d75cfb92c20ba27a1e71))
