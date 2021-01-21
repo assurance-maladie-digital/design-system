@@ -105,6 +105,7 @@ exports[`FormBuilder renders correctly 1`] = `
       <!---->
       <div class="v-menu">
         <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined vd-form-input">
+          <div class="v-input__prepend-outer"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier" style="display: none;"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
           <div class="v-input__control">
             <div class="v-input__slot">
               <fieldset aria-hidden="true">
@@ -133,12 +134,13 @@ exports[`FormBuilder renders correctly 1`] = `
       <div class="layout mx-n3 wrap row">
         <div class="v-menu">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined mx-3 vd-form-input no-flex">
+            <div class="v-input__prepend-outer"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier" style="display: none;"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
             <div class="v-input__control">
               <div class="v-input__slot">
                 <fieldset aria-hidden="true">
                   <legend style="width: 0px;"><span>​</span></legend>
                 </fieldset>
-                <div class="v-text-field__slot"><label for="input-40" class="v-label theme--light" style="left: 0px; position: absolute;">Du</label><input textfield="[object Object]" id="input-40" type="text"></div>
+                <div class="v-text-field__slot"><label for="input-42" class="v-label theme--light" style="left: 0px; position: absolute;">Du</label><input textfield="[object Object]" id="input-42" type="text"></div>
                 <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
               </div>
               <div class="v-text-field__details">
@@ -154,12 +156,13 @@ exports[`FormBuilder renders correctly 1`] = `
         </div>
         <div class="v-menu">
           <div class="v-input vd-date-picker-text-field theme--light v-text-field v-text-field--enclosed v-text-field--outlined mx-3 vd-form-input no-flex">
+            <div class="v-input__prepend-outer"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier" style="display: none;"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
             <div class="v-input__control">
               <div class="v-input__slot">
                 <fieldset aria-hidden="true">
                   <legend style="width: 0px;"><span>​</span></legend>
                 </fieldset>
-                <div class="v-text-field__slot"><label for="input-47" class="v-label theme--light" style="left: 0px; position: absolute;">Au</label><input datepicker="[object Object]" textfield="[object Object]" id="input-47" type="text"></div>
+                <div class="v-text-field__slot"><label for="input-51" class="v-label theme--light" style="left: 0px; position: absolute;">Au</label><input datepicker="[object Object]" textfield="[object Object]" id="input-51" type="text"></div>
                 <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
               </div>
               <div class="v-text-field__details">
@@ -183,12 +186,12 @@ exports[`FormBuilder renders correctly 1`] = `
       <div>
         <div class="v-input vd-form-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips">
           <div class="v-input__control">
-            <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-55" class="v-input__slot">
+            <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-61" class="v-input__slot">
               <fieldset aria-hidden="true">
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
-              <div class="v-select__slot"><label for="input-55" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-                <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-55" readonly="readonly" type="text" aria-readonly="false" autocomplete="off"></div>
+              <div class="v-select__slot"><label for="input-61" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+                <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-61" readonly="readonly" type="text" aria-readonly="false" autocomplete="off"></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
                 </div><input type="hidden">
@@ -215,12 +218,12 @@ exports[`FormBuilder renders correctly 1`] = `
       <div>
         <div class="v-input vd-form-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--is-multi">
           <div class="v-input__control">
-            <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-64" class="v-input__slot">
+            <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-70" class="v-input__slot">
               <fieldset aria-hidden="true">
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
               <div class="v-select__slot">
-                <div class="v-select__selections"><input id="input-64" readonly="readonly" type="text" aria-readonly="false" autocomplete="off"></div>
+                <div class="v-select__selections"><input id="input-70" readonly="readonly" type="text" aria-readonly="false" autocomplete="off"></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
                 </div><input type="hidden">
@@ -254,7 +257,7 @@ exports[`FormBuilder renders correctly 1`] = `
         <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-76" disabled="disabled" readonly="readonly" tabindex="-1">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-82" disabled="disabled" readonly="readonly" tabindex="-1">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -285,7 +288,7 @@ exports[`FormBuilder renders correctly 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-85" disabled="disabled" readonly="readonly" tabindex="-1">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-91" disabled="disabled" readonly="readonly" tabindex="-1">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -327,7 +330,7 @@ exports[`FormBuilder renders correctly 1`] = `
           </div>
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-95" disabled="disabled" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max">
+              <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-101" disabled="disabled" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max">
                 <div class="v-slider__track-container">
                   <div class="v-slider__track-background grey lighten-1" style="right: 0px; width: calc(100%);"></div>
                   <div class="v-slider__track-fill accent" style="left: 0px; width: 0%;"></div>
@@ -367,12 +370,12 @@ exports[`FormBuilder renders correctly 1`] = `
       <div>
         <div class="v-input vd-form-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--chips v-autocomplete">
           <div class="v-input__control">
-            <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-102" class="v-input__slot">
+            <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-108" class="v-input__slot">
               <fieldset aria-hidden="true">
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
-              <div class="v-select__slot"><label for="input-102" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
-                <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-102" type="text" autocomplete="off"></div>
+              <div class="v-select__slot"><label for="input-108" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
+                <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-108" type="text" autocomplete="off"></div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
                 </div><input type="hidden">
@@ -512,7 +515,7 @@ exports[`FormBuilder renders correctly 1`] = `
               <fieldset aria-hidden="true">
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
-              <div class="v-text-field__slot"><input id="input-151" placeholder="Autre" type="text"></div>
+              <div class="v-text-field__slot"><input id="input-157" placeholder="Autre" type="text"></div>
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--dark">
@@ -533,13 +536,13 @@ exports[`FormBuilder renders correctly 1`] = `
       <div>
         <div class="v-input vd-form-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--is-multi">
           <div class="v-input__control">
-            <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-157" class="v-input__slot">
+            <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-163" class="v-input__slot">
               <fieldset aria-hidden="true">
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
-              <div class="v-select__slot"><label for="input-157" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Classic field</label>
+              <div class="v-select__slot"><label for="input-163" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Classic field</label>
                 <div class="v-select__selections">
-                  <div class="v-select__selection v-select__selection--comma">Autre</div><input id="input-157" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+                  <div class="v-select__selection v-select__selection--comma">Autre</div><input id="input-163" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
                 </div>
                 <div class="v-input__append-inner">
                   <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
@@ -567,7 +570,7 @@ exports[`FormBuilder renders correctly 1`] = `
                   <fieldset aria-hidden="true">
                     <legend style="width: 0px;"><span>​</span></legend>
                   </fieldset>
-                  <div class="v-text-field__slot"><textarea id="input-163" placeholder="Entrez votre taille" rows="1"></textarea></div>
+                  <div class="v-text-field__slot"><textarea id="input-169" placeholder="Entrez votre taille" rows="1"></textarea></div>
                 </div>
                 <div class="v-text-field__details">
                   <div class="v-messages theme--light">
