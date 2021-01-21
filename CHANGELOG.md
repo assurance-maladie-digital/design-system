@@ -4,7 +4,8 @@
 
 - ⬆️ **Dépendances**
   - **core-js:** Mise à jour vers la `v3.8.3` ([#832](https://github.com/assurance-maladie-digital/design-system/pull/832)) ([e32c91c](https://github.com/assurance-maladie-digital/design-system/commit/e32c91c5b3418581e502c82ce97ef0fd16f92b17))
-  - **fs-extra:** Mise à jour vers la `v9.1.0` ([#833](https://github.com/assurance-maladie-digital/design-system/pull/833))
+  - **fs-extra:** Mise à jour vers la `v9.1.0` ([#833](https://github.com/assurance-maladie-digital/design-system/pull/833)) ([f6079fb](https://github.com/assurance-maladie-digital/design-system/commit/f6079fbfb6c1e24a366127942919b174c94589b4))
+  - **sass:** Mise à jour vers la `v1.32.5` ([#834](https://github.com/assurance-maladie-digital/design-system/pull/834))
 
 ## v2.0.0-beta.5
 
