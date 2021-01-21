@@ -1,12 +1,10 @@
 <template>
 	<ErrorPage
 		<% if (i18n) { %>:code="$t('views.notFound.code')"
-		:title="$t('views.notFound.error')"
-		:message="$t('views.notFound.message')"
-		:cta="$t('views.notFound.cta')"<% } else { %>code="404"
+		:page-title="$t('views.notFound.error')"
+		:message="$t('views.notFound.message')"<% } else { %>code="404"
 		title="Page non trouvée"
-		message="Il semblerait qu'il y ait eu une erreur !"
-		cta="Retour à la page d'accueil"<% } if (cypress) { %>
+		message="Il semblerait qu'il y ait eu une erreur !"<% } if (cypress) { %>
 		data-cy="errorPage"<% } %>
 	/>
 </template>

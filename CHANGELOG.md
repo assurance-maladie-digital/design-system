@@ -1,5 +1,33 @@
 ## Non publié
 
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction de l'utilisation du composant `ErrorPage` ([#839](https://github.com/assurance-maladie-digital/design-system/pull/839)) ([62d9c32](https://github.com/assurance-maladie-digital/design-system/commit/62d9c3209e85896ce0d0548b3158fc59321cd00a))
+  - **template:** Correction de l'export du service `formatDate` ([#840](https://github.com/assurance-maladie-digital/design-system/pull/840)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
+
+- ♻️ **Refactoring**
+  - **template:** Réécriture du commentaire du service API exemple `folders` ([#841](https://github.com/assurance-maladie-digital/design-system/pull/841)) ([d3b9ea3](https://github.com/assurance-maladie-digital/design-system/commit/d3b9ea304baa84b76dc5d23f5ac7b33d7d0c2e17))
+
+- 🔥 **Suppressions**
+  - **template:** Suppression de la classe `main-ctn` non utilisée dans le composant `App` ([#842](https://github.com/assurance-maladie-digital/design-system/pull/842))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **core-js:** Mise à jour vers la `v3.8.3` ([#832](https://github.com/assurance-maladie-digital/design-system/pull/832)) ([e32c91c](https://github.com/assurance-maladie-digital/design-system/commit/e32c91c5b3418581e502c82ce97ef0fd16f92b17))
+  - **fs-extra:** Mise à jour vers la `v9.1.0` ([#834](https://github.com/assurance-maladie-digital/design-system/pull/834)) ([f6079fb](https://github.com/assurance-maladie-digital/design-system/commit/f6079fbfb6c1e24a366127942919b174c94589b4))
+  - **sass:** Mise à jour vers la `v1.32.5` ([#835](https://github.com/assurance-maladie-digital/design-system/pull/835)) ([49e405e](https://github.com/assurance-maladie-digital/design-system/commit/49e405e9cb4609d2c600f273141663815b06a5f3))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.0.8` ([#836](https://github.com/assurance-maladie-digital/design-system/pull/836)) ([b03b796](https://github.com/assurance-maladie-digital/design-system/commit/b03b79669d0c356a63892b55c32438632a762003))
+  - **@types/node:** Mise à jour vers la `v12.19.15` ([#837](https://github.com/assurance-maladie-digital/design-system/pull/837)) ([f833b0f](https://github.com/assurance-maladie-digital/design-system/commit/f833b0fc040da2f6e9b393a17217ead53f5fa2b9))
+  - **vuetify:** Mise à jour vers la `v2.4.3` ([#838](https://github.com/assurance-maladie-digital/design-system/pull/838)) ([0f2b152](https://github.com/assurance-maladie-digital/design-system/commit/0f2b152b6206bc64cf736bb31908d2e53effb494))
+
+## v2.0.0-beta.5
+
+**Version publiée le 18/01/2021.**
+
+Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des styles communs dans Vue Dot et plusieurs correctifs sur le FormBuilder.
+
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
@@ -11,23 +39,26 @@
   - **DatePicker:** Correction du problème de masque ([#828](https://github.com/assurance-maladie-digital/design-system/pull/828))
 
 - 🚨 **Lint**
-  - **config:** Correction des erreurs de lint ([#813](https://github.com/assurance-maladie-digital/design-system/pull/813)) ([ecdcae0](https://github.com/assurance-maladie-digital/design-system/commit/ecdcae00c497ef96d2022a865be82e1b89a322b8))
+  - **global:** Correction des erreurs de lint ([#813](https://github.com/assurance-maladie-digital/design-system/pull/813)) ([ecdcae0](https://github.com/assurance-maladie-digital/design-system/commit/ecdcae00c497ef96d2022a865be82e1b89a322b8))
 
 ### Vue Dash
 
 - ♻️ **Refactoring**
   - **template:** Utilisation des styles communs de Vue Dot ([#624](https://github.com/assurance-maladie-digital/design-system/pull/624)) ([31c3376](https://github.com/assurance-maladie-digital/design-system/commit/31c3376d6fcda97447c40aeb6e72bd61862b9f69))
 
+- 🚨 **Lint**
+  - **global:** Correction des erreurs de lint ([#830](https://github.com/assurance-maladie-digital/design-system/pull/830)) ([3fb4dba](https://github.com/assurance-maladie-digital/design-system/commit/3fb4dba025ad7d6a9e4411b0b10f99ff542201d2))
+
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#827](https://github.com/assurance-maladie-digital/design-system/pull/827))
+  - **template:** Mise à jour des dépendances ([#827](https://github.com/assurance-maladie-digital/design-system/pull/827)) ([c48c6eb](https://github.com/assurance-maladie-digital/design-system/commit/c48c6ebd58cf6c0067af99fc6f73c4245d3634e3))
 
 ### FormBuilder
 
+- 🐛 **Corrections de bugs**
+  - **fields:** Suppression des types non standards sur les champs de sélection ([#814](https://github.com/assurance-maladie-digital/design-system/pull/814)) ([1936781](https://github.com/assurance-maladie-digital/design-system/commit/1936781d942a1df3b76923df6175a32290d3b9f7))
+
 - ♻️ **Refactoring**
   - **template:** Utilisation des styles communs de Vue Dot ([#767](https://github.com/assurance-maladie-digital/design-system/pull/767)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
-
-- 🐛 **Corrections de bugs**
-  - **fields:** Suppression des types non standards sur les champs de sélection ([#814](https://github.com/assurance-maladie-digital/design-system/pull/814))
 
 - 🔥 **Suppressions**
   - **fields:** Suppression du composant `SelectField` non utilisé ([#815](https://github.com/assurance-maladie-digital/design-system/pull/815)) ([09a3ba4](https://github.com/assurance-maladie-digital/design-system/commit/09a3ba44f1eb11ebe168d75cfb92c20ba27a1e71))
@@ -39,6 +70,7 @@
 
 - 📝 **Documentation**
   - **issues:** Correction du template pour les demandes de nouvelles fonctionnalités ([#765](https://github.com/assurance-maladie-digital/design-system/pull/765)) ([e056de9](https://github.com/assurance-maladie-digital/design-system/commit/e056de9c9fb679677ca77ae47ad44b28c831639f))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#829](https://github.com/assurance-maladie-digital/design-system/pull/829)) ([7034077](https://github.com/assurance-maladie-digital/design-system/commit/703407742fbb118593947a4bc44627393ecee814))
 
 - ⬆️ **Dépendances**
   - **lint-staged:** Mise à jour vers la `v10.5.3` ([#772](https://github.com/assurance-maladie-digital/design-system/pull/772)) ([aee38de](https://github.com/assurance-maladie-digital/design-system/commit/aee38de5f56c96ec827c9b960396ddb53b392e80))
@@ -127,7 +159,7 @@ Cette version comporte l'ajout des champs personnalisés sur le FormBuilder ains
   - **ChoiceField:** Utilisation d'un getter pour `isOtherActive` ([#760](https://github.com/assurance-maladie-digital/design-system/pull/760)) ([08064c7](https://github.com/assurance-maladie-digital/design-system/commit/08064c78cad819a605c45b9d5504e37fc12a4fc7))
 
 - 🚨 **Lint**
-  - **config:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
+  - **global:** Correction des erreurs de lint ([#741](https://github.com/assurance-maladie-digital/design-system/pull/741)) ([fbb696c](https://github.com/assurance-maladie-digital/design-system/commit/fbb696cf8be995ad3b9a93831acd7fb27393c9ea))
 
 ### Interne
 
@@ -356,7 +388,7 @@ Ainsi que de mettre à jour Cypress de la `v3` à la `v5`, pour cela vous devez 
 
 **Version publiée le 19/10/2020.**
 
-Cette version comporte le nouveau composant `ErrorPage` ainsi que des corrections de bugs sur le FormBuilder et la refonte du composant `LangBtn`.
+Cette version comporte l'ajout du composant `ErrorPage` ainsi que plusieurs correctifs sur le FormBuilder et la refonte du composant `LangBtn`.
 
 ### Vue Dot
 
@@ -446,7 +478,7 @@ Le type `Next` a été ajouté dans Vue Dot, vous pouvez également le supprimer
 
 **Version publiée le 18/09/2020.**
 
-Cette version comporte des corrections de bugs sur le template de Vue Dash ainsi que sur les composants `DataListItem` et `UploadWorkflow`.
+Cette version comporte plusieurs correctifs sur le template de Vue Dash ainsi que sur les composants `DataListItem` et `UploadWorkflow`.
 
 ### Vue Dot
 
@@ -649,7 +681,7 @@ Vous pouvez retrouver le détail de ces changements et mettre à jour ces styles
 
 **Version publiée le 10/07/2020.**
 
-Cette version comporte de nouvelles fonctionnalités ainsi que des corrections de bugs concernant les composants `UploadWorkflow`, `FileList` et `FileUpload`. Elle inclut également des correctifs d'accessibilité et du refactoring en vue du passage en version bêta.
+Cette version comporte de nouvelles fonctionnalités ainsi que des correctifs sur les composants `UploadWorkflow`, `FileList` et `FileUpload`. Elle inclut également des correctifs d'accessibilité et du refactoring en vue du passage en version bêta.
 
 ### Vue Dot
 
@@ -715,7 +747,7 @@ Ces composants ont maintenant une largeur par défaut de `100%`, vous pouvez uti
 />
 ```
 
-### Suppression de l'ombre sur `PageCard`
+#### Suppression de l'ombre sur `PageCard`
 
 La prop `no-shadow` a été supprimée car elle ne fonctionnait pas correctement. Pour retirer l'ombre, vous pouvez utiliser la même méthode que sur une `VCard` :
 
@@ -730,7 +762,7 @@ La prop `no-shadow` a été supprimée car elle ne fonctionnait pas correctement
 
 **Version publiée le 01/07/2020.**
 
-Cette version comporte un changement de dépendance important, ainsi que des nouvelles fonctionnalités diverses comme les classes de largeur de champs de formulaires, mais aussi des corrections de bugs sur le `FileUpload` et du refactoring en vue du passage en version bêta.
+Cette version comporte un changement de dépendance important, ainsi que des nouvelles fonctionnalités diverses comme les classes de largeur de champs de formulaires, mais aussi des correctifs sur le `FileUpload` et du refactoring en vue du passage en version bêta.
 
 ### Vue Dot
 
@@ -849,7 +881,7 @@ Si vous n'utilisez pas directement la directive `v-mask`, c'est tout ce que vous
 
 Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. Vous pouvez configurer `vue-input-facade` pour utiliser la directive `v-mask` (voir [Migrating existing projects](https://github.com/RonaldJerez/vue-input-facade#migrating-existing-projects)), mais nous vous conseillons de la renommer maintenant pour éviter de créer de la dette technique.
 
-### Renommer `showWeekEnds` sur le `DatePicker`
+#### Renommer `showWeekEnds` sur le `DatePicker`
 
 La prop `showWeekEnds` a été renommée en `showWeekends` :
 
@@ -860,7 +892,7 @@ La prop `showWeekEnds` a été renommée en `showWeekends` :
 />
 ```
 
-### Utiliser la nouvelle prop `outlined` sur le `DatePicker`
+#### Utiliser la nouvelle prop `outlined` sur le `DatePicker`
 
 Lorsque vous utilisez la prop `outlined` sur le `DatePicker`, le `VMenu` sera maintenant positionné au bon endroit et la prop `append-icon` sera activée automatiquement :
 
@@ -877,7 +909,7 @@ Lorsque vous utilisez la prop `outlined` sur le `DatePicker`, le `VMenu` sera ma
 />
 ```
 
-### Utiliser les nouvelles classes pour les champs de formulaires
+#### Utiliser les nouvelles classes pour les champs de formulaires
 
 Nous avons ajouté de nouveaux Design Tokens et de nouvelles classes pour ajuster la largeur des champs de formulaires, vous pouvez rechercher et remplacer les anciennes classes `form-input` par `vd-form-input` :
 
@@ -1094,7 +1126,7 @@ Cette version comporte un correctif sur les imports dans le template de Vue Dash
 
 **Version publiée le 09/07/2019.**
 
-Cette version comporte des nouvelles fonctionnalités et des corrections de bugs sur le composant `FileUpload`.
+Cette version comporte des nouvelles fonctionnalités et des correctifs sur le composant `FileUpload`.
 
 ### Vue Dot
 
@@ -1125,7 +1157,7 @@ Cette version comporte une mise à jour de l'exemple du `FileUpload` dans le pla
 
 **Version publiée le 08/07/2019.**
 
-Cette version comporte le nouveau composant `FileUpload` ainsi qu'une correction graphique dans le playground.
+Cette version comporte l'ajout du composant `FileUpload` ainsi qu'un correctif graphique dans le playground.
 
 ### Vue Dot
 
@@ -1280,7 +1312,7 @@ Cette version comporte un correctif de dépendance pour Vue Dash et des modifica
 
 **Version publiée le 14/06/2019.**
 
-Cette version comporte le nouveau composant `CopyBtn` ainsi que l'utilisation de la nouvelle directive `v-slot` de Vue.js.
+Cette version comporte l'ajout du composant `CopyBtn` ainsi que l'utilisation de la nouvelle directive `v-slot` de Vue.js.
 
 ### Vue Dot
 
