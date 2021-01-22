@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { widthable } from './mixins/widthable';
+
 export const api: Api = {
 	FileUpload: {
 		props: [
@@ -11,7 +13,10 @@ export const api: Api = {
 			},
 			{
 				name: 'value',
-				type: 'File | File[]',
+				type: [
+					'File',
+					'File[]'
+				],
 				default: '[]',
 				description: 'Le ou les fichiers sélectionnés.'
 			},
@@ -30,56 +35,28 @@ export const api: Api = {
 			{
 				name: 'file-size-max',
 				type: 'number',
-				default: '10485760',
-				description: 'Taille maximale d\'un fichier en octets (par défaut 10 MB).'
+				default: '10_485_760',
+				description: 'Taille maximale d\'un fichier en octets.<br>Par défaut, 10 MB.'
 			},
 			{
 				name: 'file-size-units',
 				type: 'string[]',
-				default: `[
-					'o', 
-					'Ko', 
-					'Mo',
-					'Go', 
-					'To'
-				]`,
+				default: `['o', 'Ko', 'Mo', 'Go', 'To']`,
 				description: 'Les unités de taille utilisées pour la traduction.'
 			},
 			{
 				name: 'allowed-extensions',
 				type: 'string[]',
-				default: `[
-					'pdf',
-					'jpg',
-					'jpeg',
-					'png'
-				]`,
+				default: `['pdf', 'jpg', 'jpeg', 'png']`,
 				description: 'Les extensions autorisées.'
 			},
 			{
 				name: 'accept',
 				type: 'string',
 				default: 'undefined',
-				description: 'L\'attribut natif `accept`. Par défaut, la valeur sera calculée à partir des extensions autorisées.'
+				description: 'L\'attribut natif `accept`.<br>Par défaut, la valeur sera calculée à partir de la prop `allowed-extensions`.'
 			},
-			{
-				name: 'max-width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur maximale du composant.'
-			},
-			{
-				name: 'min-width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur minimale du composant.'
-			},
-			{
-				name: 'width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur du composant.'
-			}
+			...widthable
 		],
 		slots: [
 			{
@@ -96,7 +73,7 @@ export const api: Api = {
 			},
 			{
 				name: 'or',
-				description: 'Slot pour remplacer le texte `Ou`.'
+				description: 'Slot pour remplacer le texte *Ou*.'
 			},
 			{
 				name: 'button-text',

@@ -5,10 +5,10 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'default',
-				description: 'Slot pour ajouter du contenu.'
+				description: 'Slot pour afficher du contenu.'
 			}
 		]
-		},
+	},
 	FooterBtn: {
 		props: [
 			{

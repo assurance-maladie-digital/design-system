@@ -1,6 +1,6 @@
 ---
 title: FileUpload
-description: Le pattern FileUpload est utilisé pour permettre à l'utilisateur de sélectionner ou de glisser-déposer des fichiers.
+description: Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélectionner ou de glisser-déposer des fichiers.
 position: 10
 ---
 

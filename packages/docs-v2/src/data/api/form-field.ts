@@ -23,11 +23,21 @@ export const api: Api = {
 }`
 			}
 		],
+		slots: [
+			{
+				name: 'default',
+				description: 'Slot pour afficher un champ de formulaire personnalisé.',
+				props: {
+					field: 'Field',
+					emitChangeEvent: '(value: Field) => void'
+				}
+			}
+		],
 		events: [
 			{
 				name: 'change',
 				description: 'Événement émis lorsque la valeur du champ est mise à jour.',
-				value: undefined
+				value: 'FieldValue'
 			}
 		]
 	}

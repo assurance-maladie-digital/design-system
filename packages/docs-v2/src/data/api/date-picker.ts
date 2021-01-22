@@ -41,7 +41,10 @@ export const api: Api = {
 			},
 			{
 				name: 'text-field-class',
-				type: 'string | string[]',
+				type: [
+					'string',
+					'string[]'
+				],
 				default: 'undefined',
 				description: 'Les classes à appliquer au `VTextField`.'
 			},
@@ -77,15 +80,18 @@ export const api: Api = {
 			},
 			{
 				name: 'mask',
-				type: 'string | boolean',
+				type: [
+					'string',
+					'boolean'
+				],
 				default: 'undefined',
-				description: 'Masque limitant les caractères pouvant être saisis dans le `VTextField`.'
+				description: 'Masque limitant les caractères pouvant être saisis dans le `VTextField`.<br>Par défaut, il est calculé à partir de la prop `date-format`. La prop `false` permet de le désactiver.'
 			},
 			{
 				name: 'birthdate',
 				type: 'boolean',
 				default: false,
-				description: 'Simplifie la sélection d\'une date de naissance.'
+				description: 'Simplifie la sélection d\'une date de naissance en choisissant l\'année, le mois puis le jour.'
 			},
 			{
 				name: 'picker-date',
@@ -116,23 +122,23 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'prepend',
-				description: 'Slot pour ajouter du contenu avant le `VTextField` et remplacer le bouton par défaut.'
+				description: 'Slot pour afficher du contenu avant le `VTextField` et remplacer le bouton par défaut.'
 			},
 			{
 				name: 'append',
-				description: 'Slot pour ajouter du contenu dans le `VTextField` et remplacer le bouton par défaut.'
+				description: 'Slot pour afficher du contenu dans le `VTextField` et remplacer le bouton par défaut.'
 			}
 		],
 		events: [
 			{
 				name: 'change',
 				description: 'Événement émis lorsque la valeur est mise à jour.',
-				value: undefined
+				value: 'string'
 			},
 			{
 				name: 'input',
 				description: 'Événement émis dès que l\'utilisateur écrit dans le champ.',
-				value: undefined
+				value: 'string'
 			}
 		]
 	}

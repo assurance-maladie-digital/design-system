@@ -1,6 +1,6 @@
 ---
 title: PageCard
-description: L'élément PageCard est utilisé pour afficher une page.
+description: L'élément `PageCard` est utilisé pour afficher une page.
 position: 17
 ---
 

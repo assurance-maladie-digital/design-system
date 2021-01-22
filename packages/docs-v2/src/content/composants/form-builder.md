@@ -1,6 +1,6 @@
 ---
 title: FormBuilder
-description: Le composant FormBuilder est utilisé pour afficher un questionnaire.
+description: Le composant `FormBuilder` est utilisé pour afficher un questionnaire.
 position: 12
 ---
 

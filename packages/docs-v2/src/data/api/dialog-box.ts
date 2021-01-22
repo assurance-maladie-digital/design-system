@@ -25,20 +25,20 @@ export const api: Api = {
 				name: 'cancel-btn-text',
 				type: 'string',
 				default: `'Annuler'`,
-				description: 'Le texte du bouton Annuler.'
+				description: 'Le texte du bouton *Annuler*.'
 			},
 			{
 				name: 'confirm-btn-text',
 				type: 'string',
 				default: `'Valider'`,
-				description: 'Le texte du bouton Valider.'
+				description: 'Le texte du bouton *Valider*.'
 			},
 			{
 				name: 'vuetify-options',
 				type: 'Options',
 				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `{ 
+				example: `{
 	card: 'VCard',
 	cardTitle: 'VCardTitle',
 	spacer: 'VSpacer',
@@ -54,7 +54,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'default',
-				description: 'Slot pour ajouter du contenu entre le titre et les boutons d\'actions.'
+				description: 'Slot pour afficher du contenu entre le titre et les boutons d\'actions.'
 			},
 			{
 				name: 'title',
@@ -68,17 +68,17 @@ export const api: Api = {
 		events: [
 			{
 				name: 'change',
-				description: 'Événement émis lorsque la boîte de dialogue apparaît et disparaît.',
-				value: undefined
+				description: 'Événement émis lorsque la boîte de dialogue apparaît ou disparaît.',
+				value: 'boolean'
 			},
 			{
 				name: 'cancel',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Annuler.',
+				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Annuler*.',
 				value: undefined
 			},
 			{
 				name: 'confirm',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton Valider.',
+				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Valider*.',
 				value: undefined
 			}
 		]

@@ -1,7 +1,7 @@
 ---
 title: UploadWorkflow
-description: Le pattern UploadWorkflow est utilisé pour permettre à l'utilisateur de sélectionner une liste de fichiers.
-position: 20
+description: Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sélectionner une liste de fichiers.
+position: 21
 ---
 
 <doc-tabs light>

@@ -12,7 +12,7 @@ export const api: Api = {
 	[sectionId]: {
 		title?: string;
 		description?: string;
-		questions: FormFieldList;	
+		questions: FormFieldList;
 	}
 }`
 			}
@@ -21,7 +21,7 @@ export const api: Api = {
 			{
 				name: 'change',
 				description: `Événement émis lorsque la valeur d'un champ est mise à jour.`,
-				value: 'form: Form'
+				value: 'Form'
 			},
 			{
 				name: 'refresh',

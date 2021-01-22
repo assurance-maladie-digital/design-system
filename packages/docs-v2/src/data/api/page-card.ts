@@ -13,13 +13,13 @@ export const api: Api = {
 				name: 'card-class',
 				type: 'string',
 				default: 'undefined',
-				description: 'Les classes à appliquer à la `VCard.`'
+				description: 'Les classes à appliquer sur la `VCard.`'
 			},
 			{
 				name: 'card-padding',
 				type: 'string',
 				default: `'px-6 py-4'`,
-				description: 'Le padding à appliquer à la `VCard`.'
+				description: 'Le padding à appliquer sur la `VCard`.'
 			},
 			{
 				name: 'vuetify-options',

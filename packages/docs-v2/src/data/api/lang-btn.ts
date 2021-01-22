@@ -5,12 +5,12 @@ export const api: Api = {
 		props: [
 			{
 				name: 'available-languages',
-				type: 'string[] | AllLanguagesChar',
-				default: `[
-					'fr', 
-					'en'
-				]`,
-				description: 'Liste des langues disponibles (format *ISO 639-1*). Utilisez `*` pour afficher toutes les possibilités.'
+				type: [
+					'string[]',
+					'AllLanguagesChar'
+				],
+				default: `['fr', 'en']`,
+				description: 'Liste des langues disponibles au format *ISO 639-1*.<br>Utilisez `*` pour afficher toutes les possibilités.'
 			},
 			{
 				name: 'hide-down-arrow',
@@ -22,7 +22,7 @@ export const api: Api = {
 				name: 'label',
 				type: 'string',
 				default: `'Choix de la langue. Actuellement'`,
-				description: 'Le label accessible du bouton.'
+				description: 'Le label du bouton pour les lecteurs d\'écran.'
 			},
 			{
 				name: 'value',
@@ -49,7 +49,7 @@ export const api: Api = {
 			{
 				name: 'change',
 				description: 'Événement émis lorsque la valeur est mise à jour.',
-				value: 'lang: string'
+				value: 'string'
 			}
 		]
 	}

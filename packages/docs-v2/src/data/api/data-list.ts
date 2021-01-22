@@ -21,7 +21,7 @@ export const api: Api = {
 				name: 'icons',
 				type: 'DataListIcons',
 				default: 'undefined',
-				description: 'La liste des différentes icônes disponibles pour les items.',
+				description: 'La liste des différentes icônes qui peuvent être affichées dans les items.',
 				example: `{
 	[iconName: string]: string;
 }`
@@ -42,13 +42,13 @@ export const api: Api = {
 				name: 'row',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche les items de la liste horizontalement.'
+				description: 'Affiche les valeurs à côté des labels.'
 			},
 			{
 				name: 'flex',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
+				description: 'Affiche les items horizontalement avec retour à la ligne lorsqu\'il n\'y a plus assez d\'espace disponible.'
 			},
 			{
 				name: 'placeholder',
@@ -60,31 +60,31 @@ export const api: Api = {
 				name: 'min-width',
 				type: 'string',
 				default: 'undefined',
-				description: 'La largeur minimum du composant.'
+				description: 'La largeur minimale du composant.'
 			},
 			{
 				name: 'item-width',
 				type: 'string',
-				default: '200px',
+				default: `'200px'`,
 				description: 'La largeur de chaque item.'
 			},
 			{
 				name: 'loading',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche un état de chargement.'
+				description: 'Affiche la liste en mode chargement.'
 			},
 			{
 				name: 'items-number-loading',
 				type: 'number',
 				default: 1,
-				description: 'Le nombre d\'items à afficher lors du chargement.'
+				description: 'Le nombre d\'items à afficher en mode chargement.'
 			},
 			{
 				name: 'heading-loading',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche un squelette pour le titre pendant le chargement.'
+				description: 'Affiche un squelette pour le titre en mode chargement.'
 			},
 			{
 				name: 'render-html-value',
@@ -117,7 +117,10 @@ export const api: Api = {
 			},
 			{
 				name: 'value',
-				type: 'string | number',
+				type: [
+					'string',
+					'number'
+				],
 				default: 'undefined',
 				description: 'La valeur à afficher.'
 			},
@@ -171,7 +174,10 @@ export const api: Api = {
 			},
 			{
 				name: 'value',
-				description: 'Slot pour remplacer le contenu de l\'item.'
+				description: 'Slot pour remplacer le contenu de l\'item.',
+				props: {
+					itemValue: 'string | number'
+				}
 			},
 			{
 				name: 'action',
@@ -192,25 +198,25 @@ export const api: Api = {
 				name: 'itemsNumber',
 				type: 'number',
 				default: 1,
-				description: 'Le nombre d\'items à afficher pendant le chargement.'
+				description: 'Le nombre d\'items à afficher en mode chargement.'
 			},
 			{
 				name: 'heading',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche un squelette pour le titre pendant le chargement.'
+				description: 'Affiche un squelette pour le titre en mode chargement.'
 			},
 			{
 				name: 'row',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche les items de la liste horizontalement.'
+				description: 'Affiche les valeurs à côté des labels.'
 			},
 			{
 				name: 'flex',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche les items en ligne avec passage à la ligne lorsqu\'il n\'y a plus de place disponible.'
+				description: 'Affiche les items horizontalement avec retour à la ligne lorsqu\'il n\'y a plus assez d\'espace disponible.'
 			},
 			{
 				name: 'width',

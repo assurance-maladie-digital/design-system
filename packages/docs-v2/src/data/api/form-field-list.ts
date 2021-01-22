@@ -29,7 +29,7 @@ export const api: Api = {
 			{
 				name: 'change',
 				description: `Événement émis lorsque la valeur d'un champ est mise à jour.`,
-				value: 'fields: Fields'
+				value: 'Fields'
 			},
 			{
 				name: 'refresh',

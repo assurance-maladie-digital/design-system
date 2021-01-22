@@ -1,7 +1,7 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-    HeaderLoading: {
+	HeaderLoading: {
 		props: [
 			{
 				name: 'width',

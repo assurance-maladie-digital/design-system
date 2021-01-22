@@ -1,6 +1,6 @@
 ---
 title: ErrorPage
-description: Le template ErrorPage est utilisé pour afficher une page d'erreur.
+description: Le template `ErrorPage` est utilisé pour afficher une page d'erreur.
 position: 9
 ---
 

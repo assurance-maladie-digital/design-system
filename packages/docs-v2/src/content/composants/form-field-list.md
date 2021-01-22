@@ -1,6 +1,6 @@
 ---
 title: FormFieldList
-description: Le composant FormFieldList est utilisé pour afficher un formulaire composé d'une liste de champs.
+description: Le composant `FormFieldList` est utilisé pour afficher un formulaire composé d'une liste de champs.
 position: 13
 ---
 

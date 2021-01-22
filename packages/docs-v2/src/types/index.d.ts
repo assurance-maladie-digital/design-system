@@ -21,10 +21,12 @@ type ItemFunction = Pick<ApiProp, 'name' | 'signature' | 'description'>;
 type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description' | 'snippet'>;
 type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'description' | 'example' | 'snippet'>;
 
+export type Props = ItemValue[];
+
 interface ApiHeaderList {
 	options: ItemValue[];
 	slots: ItemSlot[];
-	props: ItemValue[];
+	props: Props;
 	events: ItemEvent[];
 	functions: ItemFunction[];
 	modifiers: ItemModifier[];

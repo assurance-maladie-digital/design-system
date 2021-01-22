@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { widthable } from './mixins/widthable';
+
 export const api: Api = {
 	UploadWorkflow: {
 		props: [
@@ -7,7 +9,7 @@ export const api: Api = {
 				name: 'value',
 				type: 'FileListItem[]',
 				required: true,
-				description: `La liste des fichiers que l'utilisateur doit sélectionner.`,
+				description: 'La liste des fichiers que l\'utilisateur doit sélectionner.',
 				example: `{
 	id: string;
 	title: string;
@@ -22,24 +24,7 @@ export const api: Api = {
 				default: `'Document(s) à nous transmettre.'`,
 				description: 'Le titre de la section.'
 			},
-			{
-				name: 'max-width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur maximale du composant.'
-			},
-			{
-				name: 'min-width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur minimale du composant.'
-			},
-			{
-				name: 'width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur du composant.'
-			},
+			...widthable,
 			{
 				name: 'vuetify-options',
 				type: 'Options',
@@ -61,7 +46,7 @@ export const api: Api = {
 			},
 			{
 				name: 'modal-title',
-				description: 'Slot pour remplacer le titre de la modale.'
+				description: 'Slot pour remplacer le titre de la boîte de dialogue.'
 			}
 		],
 		events: [
@@ -99,7 +84,7 @@ export const api: Api = {
 				name: 'show-view-btn',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche le bouton `Afficher le fichier`.'
+				description: 'Affiche le bouton *Afficher le fichier*.'
 			},
 			{
 				name: 'hide-last-divider',
@@ -107,24 +92,7 @@ export const api: Api = {
 				default: false,
 				description: 'Masque la dernière ligne de séparation de la liste.'
 			},
-			{
-				name: 'max-width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur maximale du composant.'
-			},
-			{
-				name: 'min-width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur minimale du composant.'
-			},
-			{
-				name: 'width',
-				type: 'number | string',
-				default: 'undefined',
-				description: 'La largeur du composant.'
-			},
+			...widthable,
 			{
 				name: 'vuetify-options',
 				type: 'Options',
@@ -151,19 +119,19 @@ export const api: Api = {
 		events: [
 			{
 				name: 'retry',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton `Réessayer`, retourne l\'id du fichier sélectionné.',
+				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Réessayer*, retourne l\'id du fichier sélectionné.',
 				value: 'string'
 			},
 			{
 				name: 'delete-file',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton `Supprimer`, retourne l\'id du fichier sélectionné.',
+				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Supprimer*, retourne l\'id du fichier sélectionné.',
 				value: 'string'
 			},
 			{
 				name: 'view-file',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton `Afficher le fichier`, retourne le fichier sélectionné.',
+				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
 				value: 'File'
 			}
 		]
-    }
+	}
 };
