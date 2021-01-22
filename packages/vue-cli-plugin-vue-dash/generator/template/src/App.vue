@@ -1,9 +1,6 @@
 <template>
 	<!-- VApp is an element which is required to use Vuetify. See https://vuetifyjs.com/en/ for help -->
-	<VApp
-		v-cloak
-		class="main-ctn"
-	>
+	<VApp v-cloak>
 		<AppHeader />
 
 		<AppToolbar v-if="!$maintenanceEnabled" />

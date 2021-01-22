@@ -9,9 +9,9 @@
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
-				v-bind="textFieldOptions"
 				v-model="dateFormatted"
 				v-facade="maskValue"
+				v-bind="textFieldOptions"
 				:outlined="outlined"
 				:class="textFieldClasses"
 				:success-messages="textFieldOptions.successMessages || successMessages"
@@ -23,7 +23,7 @@
 			>
 				<template #prepend>
 					<VBtn
-						v-if="!noPrependIcon && !showAppendIcon"
+						v-show="!noPrependIcon && !showAppendIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
 						@click="menu = true"
@@ -38,7 +38,7 @@
 
 				<template #append>
 					<VBtn
-						v-if="showAppendIcon"
+						v-show="showAppendIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
 						@click="menu = true"
