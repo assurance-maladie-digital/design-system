@@ -5,7 +5,7 @@
 - 🐛 **Corrections de bugs**
   - **template:** Correction de l'utilisation du composant `ErrorPage` ([#839](https://github.com/assurance-maladie-digital/design-system/pull/839)) ([62d9c32](https://github.com/assurance-maladie-digital/design-system/commit/62d9c3209e85896ce0d0548b3158fc59321cd00a))
   - **template:** Correction de l'export du service `formatDate` ([#840](https://github.com/assurance-maladie-digital/design-system/pull/840)) ([a076f3a](https://github.com/assurance-maladie-digital/design-system/commit/a076f3a7965f930bc257242b6eda032975f81017))
-  - **DatePicker:** Correction des slots conditionnels qui cassent la directive `vue-input-facade` ([#828](https://github.com/assurance-maladie-digital/design-system/pull/828))
+  - **DatePicker:** Correction des slots conditionnels qui cassent la directive `vue-input-facade` ([#828](https://github.com/assurance-maladie-digital/design-system/pull/828)) ([62ebec0](https://github.com/assurance-maladie-digital/design-system/commit/62ebec0c3fb768dda42b63070189ef68e7d2cd1b))
 
 - ♻️ **Refactoring**
   - **template:** Réécriture du commentaire du service API exemple `folders` ([#841](https://github.com/assurance-maladie-digital/design-system/pull/841)) ([d3b9ea3](https://github.com/assurance-maladie-digital/design-system/commit/d3b9ea304baa84b76dc5d23f5ac7b33d7d0c2e17))
@@ -22,6 +22,7 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.0.8` ([#836](https://github.com/assurance-maladie-digital/design-system/pull/836)) ([b03b796](https://github.com/assurance-maladie-digital/design-system/commit/b03b79669d0c356a63892b55c32438632a762003))
   - **@types/node:** Mise à jour vers la `v12.19.15` ([#837](https://github.com/assurance-maladie-digital/design-system/pull/837)) ([f833b0f](https://github.com/assurance-maladie-digital/design-system/commit/f833b0fc040da2f6e9b393a17217ead53f5fa2b9))
   - **vuetify:** Mise à jour vers la `v2.4.3` ([#838](https://github.com/assurance-maladie-digital/design-system/pull/838)) ([0f2b152](https://github.com/assurance-maladie-digital/design-system/commit/0f2b152b6206bc64cf736bb31908d2e53effb494))
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.5.0` ([#843](https://github.com/assurance-maladie-digital/design-system/pull/843)
 
 ## v2.0.0-beta.5
 
