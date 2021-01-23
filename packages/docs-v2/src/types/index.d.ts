@@ -7,7 +7,7 @@ export interface ApiProp {
 	required?: boolean;
 	default?: string | number | boolean | null | undefined;
 	signature: string;
-	value: string;
+	value: string | undefined;
 	example?: IndexedObject | string;
 	props?: IndexedObject<IndexedObject | string>;
 	snippet?: string;
@@ -21,10 +21,12 @@ type ItemFunction = Pick<ApiProp, 'name' | 'signature' | 'description'>;
 type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description' | 'snippet'>;
 type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'description' | 'example' | 'snippet'>;
 
+export type Props = ItemValue[];
+
 interface ApiHeaderList {
 	options: ItemValue[];
 	slots: ItemSlot[];
-	props: ItemValue[];
+	props: Props;
 	events: ItemEvent[];
 	functions: ItemFunction[];
 	modifiers: ItemModifier[];

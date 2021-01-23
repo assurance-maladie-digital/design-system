@@ -63,7 +63,7 @@ export const api: Api = {
 						pageStart: 'number',
 						pageStop: 'number',
 						pageCount: 'number',
-						itemsLength: 'number',
+						itemsLength: 'number'
 					},
 					groupedItems: 'Record<string, any[]>',
 					updateOptions: '(obj: any) => void',

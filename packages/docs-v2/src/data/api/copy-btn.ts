@@ -27,7 +27,7 @@ export const api: Api = {
 			{
 				name: 'tooltip-duration',
 				type: 'number',
-				description: `La durée d'affichage du tooltip en millisecondes.`,
+				description: 'La durée d\'affichage du tooltip en millisecondes.',
 				default: 2500
 			},
 			{
@@ -45,7 +45,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'icon',
-				description: `Slot pour remplacer l'icône par défaut.`
+				description: 'Slot pour remplacer l\'icône par défaut.'
 			},
 			{
 				name: 'tooltip',
