@@ -105,7 +105,6 @@ Et en exécutant ensuite la commande `vue create --preset /path/to/preset/ my-pr
 Vous pouvez également tester le plugin dans un projet existant en l'installant :
 
 <doc-tabs>
-
 <doc-tab-item label="Yarn">
 ```bash
 yarn add --dev file:/full/path/to/plugin
@@ -117,7 +116,6 @@ yarn add --dev file:/full/path/to/plugin
 npm install --save-dev file:/full/path/to/plugin
 ```
 </doc-tab-item>
-
 </doc-tabs>
 
 Puis en l'invoquant :
