@@ -55,6 +55,8 @@
 
 									<sup
 										v-if="item.required"
+										title="Prop obligatoire"
+										aria-label="Prop obligatoire"
 										class="required"
 										v-text="'*'"
 									/>
