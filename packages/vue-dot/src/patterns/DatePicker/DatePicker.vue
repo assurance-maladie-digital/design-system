@@ -2,8 +2,8 @@
 	<!-- DatePicker -->
 	<VMenu
 		ref="menu"
-		v-model="menu"
 		v-bind="menuOptions"
+		v-model="menu"
 	>
 		<template #activator="{}">
 			<!-- TextField to enter date by hand -->
@@ -23,7 +23,7 @@
 			>
 				<template #prepend>
 					<VBtn
-						v-if="!noPrependIcon && !showAppendIcon"
+						v-show="!noPrependIcon && !showAppendIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
 						@click="menu = true"
@@ -38,7 +38,7 @@
 
 				<template #append>
 					<VBtn
-						v-if="showAppendIcon"
+						v-show="showAppendIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
 						@click="menu = true"

@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
  * @param {string} [format=DD/MM/YYYY] The format to parse the date to
  * @returns {string} The formatted date
  */
-export default function formatDate(date: string | undefined, format = 'DD/MM/YYYY'): string {
+export function formatDate(date: string | undefined, format = 'DD/MM/YYYY'): string {
 	// If no date is provided, return empty string
 	// else, format the date
 	return date === undefined ? '' : dayjs(date).format(format);

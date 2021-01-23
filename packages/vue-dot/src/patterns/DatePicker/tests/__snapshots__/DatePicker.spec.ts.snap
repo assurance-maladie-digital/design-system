@@ -3,10 +3,11 @@
 exports[`DatePicker renders correctly 1`] = `
 <div class="v-menu">
   <div class="v-input vd-date-picker-text-field theme--light v-text-field">
-    <div class="v-input__prepend-outer"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
+    <div class="v-input__prepend-outer"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-3" class="v-label theme--light" style="left: 0px; position: absolute;">Date</label><input id="input-3" type="text"></div>
+        <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier" style="display: none;"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
       </div>
       <div class="v-text-field__details">
         <div class="v-messages theme--light">
