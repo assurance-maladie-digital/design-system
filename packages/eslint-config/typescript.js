@@ -19,8 +19,8 @@ module.exports = {
 
 		// Return types
 		'@typescript-eslint/explicit-function-return-type': ['warn', {
-			'allowExpressions': true,
-			'allowTypedFunctionExpressions': true
+			allowExpressions: true,
+			allowTypedFunctionExpressions: true
 		}],
 
 		// Force semi
@@ -28,13 +28,13 @@ module.exports = {
 		'@typescript-eslint/semi': ['error'],
 
 		'@typescript-eslint/member-delimiter-style': ['error', {
-			'multiline': {
-				'delimiter': 'semi',
-				'requireLast': true
+			multiline: {
+				delimiter: 'semi',
+				requireLast: true
 			},
-			'singleline': {
-				'delimiter': 'semi',
-				'requireLast': false
+			singleline: {
+				delimiter: 'semi',
+				requireLast: false
 			}
 		}],
 
@@ -50,7 +50,9 @@ module.exports = {
 		'comma-dangle': ['error', 'never'],
 
 		'space-before-blocks': ['error', 'always'],
-		'keyword-spacing': ['error', { 'before': true }],
+		'keyword-spacing': ['error', {
+			before: true
+		}],
 
 		// Single quotes
 		'quotes': ['error', 'single'],

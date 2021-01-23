@@ -6,6 +6,7 @@
 		"cnam",
 		"lint",
 		"eslint",
+		"javascript",
 		"typescript"
 	],
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",

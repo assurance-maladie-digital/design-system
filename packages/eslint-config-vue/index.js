@@ -40,37 +40,30 @@ module.exports = {
 		}],
 
 		// Force PascalCase for component names
-		'vue/component-name-in-template-casing': [
-			'error',
-			'PascalCase',
-			{
-				ignores: [
-					'keep-alive',
-					'component',
-					'transition',
-					'transition-group'
-				]
-			}
-		],
+		'vue/component-name-in-template-casing': ['error', 'PascalCase', {
+			ignores: [
+				'keep-alive',
+				'component',
+				'transition',
+				'transition-group'
+			]
+		}],
 
 		// Allow v-html
 		'vue/no-v-html': ['off'],
 
-		'@typescript-eslint/explicit-module-boundary-types': [
-			'error',
-			{
-				allowedNames: [
-					'beforeCreate',
-					'created',
-					'beforeMount',
-					'mounted',
-					'beforeUpdate',
-					'updated',
-					'beforeDestroy',
-					'destroyed'
-				]
-			}
-		]
+		'@typescript-eslint/explicit-module-boundary-types': ['error', {
+			allowedNames: [
+				'beforeCreate',
+				'created',
+				'beforeMount',
+				'mounted',
+				'beforeUpdate',
+				'updated',
+				'beforeDestroy',
+				'destroyed'
+			]
+		}]
 	},
 	overrides: [
 		{

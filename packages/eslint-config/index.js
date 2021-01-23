@@ -9,8 +9,7 @@ module.exports = {
 		jest: true
 	},
 	extends: [
-		'eslint:recommended',
-		'plugin:jsdoc/recommended'
+		'eslint:recommended'
 	],
 	rules: {
 		'indent': ['error', 'tab'],
@@ -52,8 +51,5 @@ module.exports = {
 
 		// No var
 		'no-var': 'error'
-	},
-	plugins: [
-		'jsdoc'
-	]
+	}
 };

@@ -1,15 +1,5 @@
 ## Non publié
 
-### Eslint Config
-
-## eslint-congig
-- Ajout d'un nouveau package **eslint-config**: gestion des rules: **eslint** recommend et **typescript** recommend
-([#746](https://github.com/assurance-maladie-digital/design-system/pull/746)) ([88d91eb](https://github.com/assurance-maladie-digital/design-system/pull/746/commits/88d91eb59eed99a7fa0e65af1615faac8ee53ca5))
-
-## eslint-config-vue
-- Ajout d'un nouveau package **eslint-config-vue**: gestion des rules: **eslint-plugin-vue** recommend
-([#746](https://github.com/assurance-maladie-digital/design-system/pull/746)) ([88d91eb](https://github.com/assurance-maladie-digital/design-system/pull/746/commits/88d91eb59eed99a7fa0e65af1615faac8ee53ca5))
-
 ### Vue Dot
 
 - ♻️ **Refactoring**
@@ -27,6 +17,16 @@
 
 - 🔥 **Suppressions**
   - **template:** Suppression de la classe `main-ctn` non utilisée dans le composant `App` ([#842](https://github.com/assurance-maladie-digital/design-system/pull/842)) ([9100b7a](https://github.com/assurance-maladie-digital/design-system/commit/9100b7a49024e9a50504b1987560b04dfc49dcbf))
+
+### Eslint Config
+
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout du package Eslint Config ([#746](https://github.com/assurance-maladie-digital/design-system/pull/746))
+
+### Eslint Config Vue
+
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout du package Eslint Config Vue ([#746](https://github.com/assurance-maladie-digital/design-system/pull/746))
 
 ### Interne
 

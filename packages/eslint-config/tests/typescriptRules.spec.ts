@@ -1,31 +1,27 @@
 
 import { ESLint } from 'eslint';
 
-import { code } from './codes';
+import { code } from './code';
 
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const baseConfig = require('../typescript.js');
 
-//Create an instance of eslint
+// Create an instance of eslint
 const eslint = new ESLint({
 	useEslintrc: false,
 	baseConfig
 });
 
+describe('typescript.js', () => {
+	it('Check total count of error from: code ', async() => {
 
-describe('Validate shareable config eslint of: typescript.js', () => {
-
-
-	it(`Check total count of error from: code `, async () => {
-
-		const results = await eslint.lintText(code)
+		const results = await eslint.lintText(code);
 
 		expect(results[0].errorCount).toEqual(7);
 	});
 
-
-	it(`Check type of rule from: code`, async () => {
-
-		const results = await eslint.lintText(code)
+	it('Check type of rule from: code', async() => {
+		const results = await eslint.lintText(code);
 
 		expect(results[0].messages[0].ruleId).toEqual('no-var');
 
@@ -40,11 +36,9 @@ describe('Validate shareable config eslint of: typescript.js', () => {
 		expect(results[0].messages[5].ruleId).toEqual('@typescript-eslint/no-empty-function');
 
 		expect(results[0].messages[6].ruleId).toEqual('@typescript-eslint/semi');
-
 	});
 
-	it(`Verify error message if correct `, async () => {
-
+	it('Verify error message if correct ', async() => {
 		const results = await eslint.lintText(code);
 
 		expect(results[0].messages[0].message).toEqual('Unexpected var, use let or const instead.');
@@ -60,6 +54,5 @@ describe('Validate shareable config eslint of: typescript.js', () => {
 		expect(results[0].messages[5].message).toEqual('Unexpected empty function.');
 
 		expect(results[0].messages[6].message).toEqual('Missing semicolon.');
-
 	});
 });

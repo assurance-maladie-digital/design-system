@@ -1,26 +1,19 @@
-
 import { ESLint } from 'eslint';
 
-import { code } from './codes';
+import { code } from './code';
 
 // Create an instance of eslint
 const eslint = new ESLint({});
 
-
-describe('Validate shareable config eslint of: index.js', () => {
-
-
-	it(`Check total count of error from: code `, async () => {
-
-		const results = await eslint.lintText(code)
+describe('index.js', () => {
+	it('Check total count of error from: code ', async() => {
+		const results = await eslint.lintText(code);
 
 		expect(results[0].errorCount).toEqual(6);
 	});
 
-
-	it(`Check type of rule from: code`, async () => {
-
-		const results = await eslint.lintText(code)
+	it('Check type of rule from: code', async() => {
+		const results = await eslint.lintText(code);
 
 		expect(results[0].messages[0].ruleId).toEqual('no-var');
 
@@ -33,11 +26,9 @@ describe('Validate shareable config eslint of: index.js', () => {
 		expect(results[0].messages[4].ruleId).toEqual('semi');
 
 		expect(results[0].messages[5].ruleId).toEqual('semi');
-
 	});
 
-	it(`Verify error message if correct `, async () => {
-
+	it('Verify error message if correct ', async() => {
 		const results = await eslint.lintText(code);
 
 		expect(results[0].messages[0].message).toEqual('Unexpected var, use let or const instead.');
@@ -51,6 +42,5 @@ describe('Validate shareable config eslint of: index.js', () => {
 		expect(results[0].messages[4].message).toEqual('Missing semicolon.');
 
 		expect(results[0].messages[5].message).toEqual('Missing semicolon.');
-
 	});
 });

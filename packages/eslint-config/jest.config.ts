@@ -1,7 +1,7 @@
 import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
-	moduleFileExtensions: ['ts', 'js','json'],
+	moduleFileExtensions: ['ts', 'js'],
 	transform: {
 		'^.+\\.ts$': require.resolve('ts-jest')
 	},
@@ -9,7 +9,6 @@ const config: Config.InitialOptions = {
 		'/node_modules/'
 	],
 	testMatch: [
-		'<rootDir>/src/**/tests/*.spec.ts',
 		'<rootDir>/tests/**/*.spec.ts'
 	],
 	coverageReporters: [
@@ -21,7 +20,8 @@ const config: Config.InitialOptions = {
 	coverageDirectory: '<rootDir>/tests/coverage',
 	collectCoverage: true,
 	collectCoverageFrom: [
-		'src/**/*.ts',
+		'*.js',
+		'!.eslintrc.js',
 		'!**/node_modules/**',
 		'!**/*.d.ts'
 	]
