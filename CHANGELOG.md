@@ -2,6 +2,9 @@
 
 ### Vue Dot
 
+- ✨ **Nouvelles fonctionnalités**
+  - **DataList:** Ajout de l'attribut `class` dans les items ([#851](https://github.com/assurance-maladie-digital/design-system/pull/851))
+
 - ♻️ **Refactoring**
   - **TableToolbar:** Renommage de `createBtn` en `addBtn` ([#849](https://github.com/assurance-maladie-digital/design-system/pull/849)) ([98a8ce3](https://github.com/assurance-maladie-digital/design-system/commit/98a8ce335350350174242452fa90f41f11452e72))
 
@@ -29,7 +32,7 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v7.5.0` ([#843](https://github.com/assurance-maladie-digital/design-system/pull/843) ([ef1b1b1](https://github.com/assurance-maladie-digital/design-system/commit/ef1b1b1226d8cf228f5f829b4c5b768aa98f8353))
   - **dayjs:** Mise à jour vers la `v1.10.4` ([#844](https://github.com/assurance-maladie-digital/design-system/pull/844)) ([b443a69](https://github.com/assurance-maladie-digital/design-system/commit/b443a69fa09a92f62a764cf240311317b7c3e160))
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.11` ([#845](https://github.com/assurance-maladie-digital/design-system/pull/845)) ([22b1625](https://github.com/assurance-maladie-digital/design-system/commit/22b1625e8eba7a5d35ebf0917c5424939a3a615c))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.2.2` ([#848](https://github.com/assurance-maladie-digital/design-system/pull/848))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.2.2` ([#848](https://github.com/assurance-maladie-digital/design-system/pull/848)) ([95d5109](https://github.com/assurance-maladie-digital/design-system/commit/95d51095a03bd25e244925f5c0f31deeebcb0db8))
 
 ### 📚 Guide de migration
 

@@ -5,7 +5,7 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import DataList from '../';
-import { dataList } from './data/dataList';
+import { getDataList } from './data/dataList';
 
 let wrapper: Wrapper<Vue>;
 
@@ -15,7 +15,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				items: dataList
+				items: getDataList()
 			}
 		});
 
@@ -36,7 +36,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				items: dataList,
+				items: getDataList(),
 				listTitle: 'Informations'
 			}
 		});
@@ -51,7 +51,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				items: dataList,
+				items: getDataList(),
 				flex: true
 			}
 		});
@@ -78,7 +78,7 @@ describe('DataList', () => {
 	});
 
 	it('renders correctly with an icon', () => {
-		const listWithIcon = dataList;
+		const listWithIcon = getDataList();
 
 		// Add an action to the second item
 		listWithIcon[1].icon = 'mdiTest';
@@ -86,7 +86,7 @@ describe('DataList', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				items: dataList,
+				items: listWithIcon,
 				icons: {
 					mdiTest: 'test'
 				}
@@ -100,11 +100,31 @@ describe('DataList', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
+	it('renders correctly with a class', async() => {
+		const listWithClass = getDataList();
+
+		// Add a class to the second item
+		listWithClass[1].class = 'custom-class';
+
+		// Mount component
+		wrapper = mountComponent(DataList, {
+			propsData: {
+				items: listWithClass
+			}
+		});
+
+		// Check that items now exist
+		const itemsExists = wrapper.find('.vd-data-list-item.custom-class').exists();
+		expect(itemsExists).toBe(true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
 	it('renders loading state correctly', async() => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
-				items: dataList,
+				items: getDataList(),
 				loading: true,
 				itemsNumberLoading: 3,
 				headingLoading: true
@@ -129,7 +149,7 @@ describe('DataList', () => {
 	});
 
 	it('renders correctly with an action', async() => {
-		const listWithAction = dataList;
+		const listWithAction = getDataList();
 
 		// Add an action to the second item
 		listWithAction[1].action = 'Edit';
@@ -146,7 +166,7 @@ describe('DataList', () => {
 	});
 
 	it('emits action event', async() => {
-		const listWithAction = dataList;
+		const listWithAction = getDataList();
 
 		// Add an action to the second item
 		listWithAction[2].action = 'Edit';
