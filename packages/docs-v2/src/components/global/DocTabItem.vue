@@ -34,9 +34,6 @@
 
 <style lang="scss" scoped>
 	.doc-tab-item {
-		display: flex;
-		flex-direction: column;
-
 		::v-deep .doc-code-block {
 			border: none;
 			border-top-left-radius: 0 !important;

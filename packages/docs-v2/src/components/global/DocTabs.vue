@@ -79,6 +79,10 @@
 
 <style lang="scss" scoped>
 	.doc-tabs ::v-deep {
+		.v-window {
+			overflow: visible;
+		}
+
 		.v-tabs {
 			border-top-left-radius: 4px;
 			border-top-right-radius: 4px;
