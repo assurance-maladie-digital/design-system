@@ -33,7 +33,8 @@
   - **dayjs:** Mise à jour vers la `v1.10.4` ([#844](https://github.com/assurance-maladie-digital/design-system/pull/844)) ([b443a69](https://github.com/assurance-maladie-digital/design-system/commit/b443a69fa09a92f62a764cf240311317b7c3e160))
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.11` ([#845](https://github.com/assurance-maladie-digital/design-system/pull/845)) ([22b1625](https://github.com/assurance-maladie-digital/design-system/commit/22b1625e8eba7a5d35ebf0917c5424939a3a615c))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.3.3` ([#850](https://github.com/assurance-maladie-digital/design-system/pull/850)) ([d64cea4](https://github.com/assurance-maladie-digital/design-system/commit/d64cea4ac7a991458b2c26f175429718ab4a0ed3))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.1` ([#831](https://github.com/assurance-maladie-digital/design-system/pull/831))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.1` ([#831](https://github.com/assurance-maladie-digital/design-system/pull/831)) ([4b39cc4](https://github.com/assurance-maladie-digital/design-system/commit/4b39cc485412b555e70d1318993918af880cbdec))
+  - **vue-router/vuex:** Mise à jour de **vue-router** vers la `v3.5.1` et de **vuex** vers la `v3.6.2` ([#852](https://github.com/assurance-maladie-digital/design-system/pull/852))
 
 ### 📚 Guide de migration
 
