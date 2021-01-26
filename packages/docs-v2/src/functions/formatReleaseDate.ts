@@ -1,8 +1,7 @@
 import dayjs from 'dayjs';
-import { LAST_PUBLISHED } from '~/constants';
 
-export function getLastPublished(): string {
-	const lastPublished = dayjs(LAST_PUBLISHED);
+export function formatReleaseDate(date: string): string {
+	const lastPublished = dayjs(date);
 	const days = dayjs().diff(lastPublished, 'day');
 
 	if (days === 0) {
