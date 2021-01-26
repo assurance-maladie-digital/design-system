@@ -4,7 +4,7 @@
 		v-if="component"
 		v-bind="{
 			...$attrs,
-			...$props,
+			...$props
 		}"
 		v-on="$listeners"
 	/>
@@ -35,23 +35,17 @@
 			this.load();
 		}
 
-		async load(): Promise<void> {
-			let component = {} as any;
-
-			try {
-				// component = await import(
-				// 	/* webpackChunkName: "examples" */
-				// 	/* webpackMode: "lazy" */
-				// 	`../../content/composants/copy-btn/examples/usage.vue`
-				// );
-
-				this.$emit('loaded', component.default);
-			} catch (err) {
-				// component = await import('./ExampleMissing');
-				this.$emit('error', err);
-			}
-
-			this.component = component.default;
+		load(): Promise<void | this> {
+			return import(
+				/* webpackChunkName: "examples" */
+				/* webpackMode: "lazy-once" */
+				`../../content/examples/${this.file}.vue`
+			)
+				.then((component) => {
+					this.component = component.default;
+					this.$emit('loaded', component.default);
+				})
+				.catch((error) => this.$emit('error', error));
 		}
 	}
 </script>

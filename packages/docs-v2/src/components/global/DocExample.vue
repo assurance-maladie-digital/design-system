@@ -93,9 +93,7 @@
 				class="pa-4"
 				rounded
 			>
-				<div data-app="true">
-					<component :is="component" />
-				</div>
+				<VueFile :file="file" />
 			</VSheet>
 		</VThemeProvider>
 	</VSheet>
@@ -136,15 +134,10 @@
 		expand = false;
 		hasError = false;
 		selected = 'template';
-		component = null;
 		parsed: Parsed | null = null;
 
 		get sections(): string[] {
 			return ['template', 'script', 'style'].filter((section) => this.parsed && this.parsed[section]);
-		}
-
-		mounted() {
-			this.importComponent();
 		}
 
 		importTemplate(): Promise<void> {
@@ -153,14 +146,6 @@
 				/* webpackMode: "lazy-once" */
 				`!raw-loader!../../content/examples/${this.file}.vue`
 			).then(comp => this.boot(comp.default));
-		}
-
-		importComponent(): Promise<void> {
-			return import(
-				/* webpackChunkName: "examples" */
-				/* webpackMode: "lazy-once" */
-				`../../content/examples/${this.file}.vue`
-			).then(comp => this.component = comp.default);
 		}
 
 		boot(res: string): void {
