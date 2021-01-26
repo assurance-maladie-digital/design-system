@@ -17,8 +17,8 @@
 						/>
 
 						<div
-							v-if="document.description"
-							v-html="document.description"
+							v-if="document.parsedDescription"
+							v-html="document.parsedDescription"
 							class="description text-h6"
 						/>
 
@@ -128,7 +128,7 @@
 				return {};
 			}
 
-			return getPageMeta(this.document.title, this.document.description);
+			return getPageMeta(this.document.title);
 		}
 	};
 </script>
