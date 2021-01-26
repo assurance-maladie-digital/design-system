@@ -16,7 +16,7 @@ describe('TableToolbar', () => {
 			propsData: {
 				nbFiltered: 1,
 				nbTotal: 2,
-				showCreateBtn: true
+				showAddBtn: true
 			}
 		});
 

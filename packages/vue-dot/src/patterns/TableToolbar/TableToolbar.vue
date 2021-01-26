@@ -21,8 +21,8 @@
 		/>
 
 		<VBtn
-			v-if="showCreateBtn"
-			v-bind="options.createdBtn"
+			v-if="showAddBtn"
+			v-bind="options.addBtn"
 			:disabled="loading"
 			@click="$emit('click')"
 		>
@@ -30,7 +30,7 @@
 				{{ addIcon }}
 			</VIcon>
 
-			{{ createBtnLabel }}
+			{{ addBtnLabel }}
 		</VBtn>
 	</VToolbar>
 </template>
@@ -48,6 +48,16 @@
 
 	const Props = Vue.extend({
 		props: {
+			/** Number of total items */
+			nbTotal: {
+				type: Number,
+				required: true
+			},
+			/** Number of filtered items */
+			nbFiltered: {
+				type: Number,
+				default: undefined
+			},
 			/** Search field value */
 			search: {
 				type: String,
@@ -63,25 +73,15 @@
 				type: String,
 				default: locales.defaultRowText
 			},
-			/** Show the create button */
-			showCreateBtn: {
+			/** Show the add button */
+			showAddBtn: {
 				type: Boolean,
 				default: false
 			},
-			/** Label of the create button */
-			createBtnLabel: {
+			/** Label of the add button */
+			addBtnLabel: {
 				type: String,
-				default: locales.createBtnLabel
-			},
-			/** Number of filtered items */
-			nbFiltered: {
-				type: Number,
-				default: undefined
-			},
-			/** Number of total items */
-			nbTotal: {
-				type: Number,
-				required: true
+				default: locales.addBtnLabel
 			},
 			/** Disable interactive elements while loading */
 			loading: {
@@ -93,7 +93,7 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/** Toolbar of a DataTable with search & create button */
+	/** Toolbar of a DataTable with search & add button */
 	@Component({
 		model: {
 			prop: 'search',
