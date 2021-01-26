@@ -1,7 +1,7 @@
 <template>
 	<VTabItem
 		:key="value"
-		class="doc-code-item"
+		class="doc-tab-item nuxt-content"
 	>
 		<slot />
 	</VTabItem>
@@ -33,9 +33,14 @@
 </script>
 
 <style lang="scss" scoped>
-	.doc-code-item ::v-deep .doc-code-block {
-		border: none;
-		border-top-left-radius: 0 !important;
-		border-top-right-radius: 0 !important;
+	.doc-tab-item {
+		display: flex;
+		flex-direction: column;
+
+		::v-deep .doc-code-block {
+			border: none;
+			border-top-left-radius: 0 !important;
+			border-top-right-radius: 0 !important;
+		}
 	}
 </style>

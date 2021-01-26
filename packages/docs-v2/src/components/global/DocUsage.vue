@@ -1,5 +1,8 @@
 <template>
-	<VLazy min-height="198">
+	<VLazy
+		min-height="198"
+		class="w-100"
+	>
 		<VSheet
 			rounded
 			outlined
@@ -208,7 +211,7 @@
 </template>
 
 <script lang="ts">
-	import Vue, { ComponentOptions } from 'vue';
+	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiInvertColors } from '@mdi/js';
