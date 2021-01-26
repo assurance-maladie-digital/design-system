@@ -15,6 +15,7 @@ export const api: Api = {
 	chip?: boolean;
 	icon?: string;
 	options?: Options;
+	class?: string;
 }`
 			},
 			{
