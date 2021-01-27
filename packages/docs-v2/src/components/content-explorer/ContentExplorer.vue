@@ -3,7 +3,6 @@
 		<VNavigationDrawer app>
 			<VTreeview
 				v-model="tree"
-				:open="initiallyOpen"
 				:items="items"
 				activatable
 				item-key="label"
@@ -39,6 +38,8 @@
 
 	import { IContentDocument } from '@nuxt/content/types/content';
 
+	const basePath = '/explorer/'
+
 	type Content = IContentDocument[];
 
 	const Props = Vue.extend({
@@ -46,10 +47,6 @@
 			items: {
 				type: Array as PropType<TreeviewItem[]>,
 				required: true
-			},
-			initiallyOpen: {
-				type: Array as PropType<string[]>,
-				default: () => []
 			}
 		}
 	});
@@ -68,12 +65,6 @@
 
 		tree = [];
 
-		listGroupUpdated(activeItem: TreeviewItem): void {
-			if(activeItem) {
-				this.compileMarkdownToHtml(activeItem.path);
-			}
-		}
-
 		treeviewUpdated(activeItems: TreeviewItem[]): void {
 			const activeItem = activeItems[0];
 
@@ -83,7 +74,7 @@
 		}
 
 		async compileMarkdownToHtml(path: string): Promise<void> {
-			const [document] = await this.$content({ deep: true }).where({ path }).fetch<Content>();
+			const [document] = await this.$content({ deep: true }).where({ path: `${basePath}${path}` }).fetch<Content>();
 
 			this.document = document;
 		}

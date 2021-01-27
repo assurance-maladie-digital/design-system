@@ -3,7 +3,6 @@
 		<VMain>
 			<ContentExplorer
 				:items="items"
-				:initially-open="initiallyOpen"
 			/>
 		</VMain>
 	</VApp>
@@ -20,32 +19,18 @@
 	export default class TestDivider extends Vue {
 		fileMarkdown = mdiLanguageMarkdown;
 
-		initiallyOpen = ['démarrer'];
-
 		items: TreeviewItem[] = [
 			{
 				label: 'démarrer',
-				path: '/demarrer/introduction'
+				path: 'introduction'
 			},
 			{
 				label: 'content',
-				path: '/demarrer/contribuer',
+				path: 'contribuer',
 				children: [
 					{
 						label: 'installation',
-						path: '/demarrer/installation',
-						icon: this.fileMarkdown,
-						children: [
-							{
-								label: 'custom icon',
-								path: '/composants/custom-icon',
-								icon: this.fileMarkdown
-							}
-						]
-					},
-					{
-						label: 'copy btn',
-						path: '/composants/copy-btn',
+						path: 'installation',
 						icon: this.fileMarkdown
 					}
 				]
