@@ -83,26 +83,26 @@
 			overflow: visible;
 		}
 
-		.v-tabs {
-			border-top-left-radius: 4px;
-			border-top-right-radius: 4px;
-		}
-
-		.v-slide-group__content::after {
-			content: "";
-			width: 100%;
-			height: 2px;
-			background: rgba(0, 0, 0, .12);
-			position: absolute;
-			bottom: 0;
-		}
-
-		.theme--dark .v-slide-group__content::after {
-			background: hsla(0, 0%, 100%, .3);
-		}
-
 		.doc-code-block {
 			margin-bottom: 0 !important;
+		}
+
+		> .v-tabs {
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+
+			.v-slide-group__content::after {
+				content: "";
+				width: 100%;
+				height: 2px;
+				background: rgba(0, 0, 0, .12);
+				position: absolute;
+				bottom: 0;
+			}
+
+			&.theme--dark .v-slide-group__content::after {
+				background: hsla(0, 0%, 100%, .3);
+			}
 		}
 	}
 </style>
