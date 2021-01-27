@@ -1,5 +1,8 @@
 <template>
-	<VLazy min-height="198">
+	<VLazy
+		min-height="198"
+		class="w-100"
+	>
 		<VSheet
 			rounded
 			outlined
@@ -49,19 +52,13 @@
 							max-height="400"
 							min-height="100"
 						>
-							<component
-								v-if="component"
-								:is="component"
-								v-bind="{ ...usageProps }"
-							/>
-							<!-- <VueFile
+							<VueFile
 								v-if="file"
-								ref="usage"
 								:file="file"
 								v-bind="{ ...usageProps }"
 								@loaded="setContents"
 								@error="hasError = true"
-							/> -->
+							/>
 						</VSheet>
 					</VThemeProvider>
 				</VCol>
@@ -208,7 +205,7 @@
 </template>
 
 <script lang="ts">
-	import Vue, { ComponentOptions } from 'vue';
+	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiInvertColors } from '@mdi/js';
@@ -244,8 +241,6 @@
 
 		invertColorsIcon = mdiInvertColors;
 
-		component = null;
-
 		booleans = null;
 		btnToggles = null;
 		radioGroups = null;
@@ -254,13 +249,16 @@
 		textFields = null;
 
 		dark = false;
-		file: string | null = null;
 		hasError = false;
 		options = {};
 
 		tab = null;
 		tabs = [];
 		usageProps: any = {};
+
+		get file(): string {
+			return `${this.name}/usage`;
+		}
 
 		get color(): string | undefined {
 			return (this.dark || this.theme.isDark) ? undefined : 'grey lighten-5';
@@ -300,11 +298,6 @@
 			return `<${this.toPascalCase(this.name)}${indent}${attributes}${tail}`;
 		}
 
-		mounted() {
-			this.file = `../../content/examples/${this.name}/usage`;
-			this.importComponent();
-		}
-
 		toKebabCase(str: string): string {
 			return str.replace(/\s+/g, '-').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 		}
@@ -319,18 +312,6 @@
 			const pascalCaseStr = words.map((word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()).join('');
 
 			return pascalCaseStr;
-		}
-
-		importComponent(): Promise<void> {
-			return import(
-				/* webpackChunkName: "examples" */
-				/* webpackMode: "lazy-once" */
-				`../../content/examples/${this.name}/usage.vue`
-			)
-				.then(comp => {
-					this.component = comp.default;
-					this.setContents(comp.default);
-				});
 		}
 
 		startCase(str: string): string {

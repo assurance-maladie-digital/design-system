@@ -21,17 +21,19 @@
 						>
 					</div>
 
-					<h1 class="home-title text-lg-h3 text-md-h4 text-sm-h5 text-h5 mt-10 mt-sm-16 font-weight-bold">
+					<h1 class="home-title text-lg-h3 text-md-h4 text-sm-h5 text-h5 my-10 mt-sm-16 font-weight-bold">
 						Un Design System pour l'Assurance Maladie
 					</h1>
 
-					<h2 class="text-h6 pt-10">
-						v{{ version }}
-					</h2>
+					<template v-if="version && releaseDate">
+						<h2 class="text-h6">
+							{{ version }}
+						</h2>
 
-					<p class="mb-10">
-						Dernière publication {{ lastPublished }}
-					</p>
+						<p class="mb-10">
+							Dernière publication {{ releaseDate }}
+						</p>
+					</template>
 
 					<div class="d-flex flex-wrap no-max-width ma-n3">
 						<VBtn
@@ -56,7 +58,7 @@
 								{{ githubIcon }}
 							</VIcon>
 
-							Github
+							GitHub
 						</VBtn>
 					</div>
 				</div>
@@ -75,19 +77,23 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { version } from '../../package.json';
-
 	import { mdiGithub } from '@mdi/js';
 
-	import { getLastPublished } from '../functions/getLastPublished';
+	import { formatReleaseDate } from '../functions/formatReleaseDate';
+	import { getLatestRelease } from '../services/github/api';
 
 	@Component
 	export default class Index extends Vue {
-		version = version;
 		githubIcon = mdiGithub;
 
-		get lastPublished(): string {
-			return getLastPublished();
+		version: string | null = null;
+		releaseDate: string | null = null;
+
+		async mounted() {
+			const release = await getLatestRelease();
+
+			this.version = release.version;
+			this.releaseDate = formatReleaseDate(release.date);
 		}
 	}
 </script>

@@ -1,6 +1,8 @@
 <template>
 	<VApp>
-		<DocHeader />
+		<DocHeader @drawer-action="drawer = !drawer" />
+
+		<DocDrawer v-model="drawer" />
 
 		<VMain>
 			<VContainer class="h-100 py-4">
@@ -15,8 +17,8 @@
 						/>
 
 						<div
-							v-if="document.description"
-							v-html="document.description"
+							v-if="document.parsedDescription"
+							v-html="document.parsedDescription"
 							class="description text-h6"
 						/>
 
@@ -56,6 +58,8 @@
 	import { AsyncData, Middleware, Head } from '../decorators';
 	import { getPageMeta } from '../functions/getPageMeta';
 
+	import DocDrawer from '../components/drawer/DocDrawer.vue';
+
 	interface AsyncData extends Context {
 		$content: contentFunc;
 	}
@@ -68,9 +72,15 @@
 		next: IContentDocument;
 	}
 
-	@Component
+	@Component({
+		components: {
+			DocDrawer
+		}
+	})
 	export default class Slug extends Vue {
 		document?: IContentDocument;
+
+		drawer = null;
 
 		@Middleware
 		middleware({ app, params, redirect }: Context): void {
@@ -118,7 +128,7 @@
 				return {};
 			}
 
-			return getPageMeta(this.document.title, this.document.description);
+			return getPageMeta(this.document.title);
 		}
 	};
 </script>

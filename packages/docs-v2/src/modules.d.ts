@@ -1,4 +1,5 @@
 // Declare module for every package without typings
+declare module 'vue-input-facade';
 declare module 'vue-prism-component';
 declare module 'prismjs';
 
