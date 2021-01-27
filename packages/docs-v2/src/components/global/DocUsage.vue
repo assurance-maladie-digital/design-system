@@ -94,6 +94,18 @@
 									</VIcon>
 								</template>
 							</DocTooltipBtn>
+
+							<DocTooltipBtn
+								:disabled="hasError"
+								label="Voir la source"
+								@click="expand = !expand"
+							>
+								<template #icon>
+									<VIcon>
+										{{ sourceIcon }}
+									</VIcon>
+								</template>
+							</DocTooltipBtn>
 						</div>
 					</VSheet>
 
@@ -113,48 +125,52 @@
 							<VCheckbox
 								v-for="(prop, i) in booleans"
 								:key="prop"
-								v-model="usageProps[prop]"
+								:value="usageProps[prop]"
 								:class="i === 0 && 'mt-0'"
-								:label="startCase(prop)"
-								dense
+								:label="toKebabCase(prop)"
 								hide-details
+								dense
 								inset
+								@change="setProp(prop, $event)"
 							/>
 
 							<VSlider
 								v-for="(item, prop) in sliders"
 								:key="prop"
-								v-model="usageProps[prop]"
-								:label="item.label"
+								:value="usageProps[prop]"
+								:label="toKebabCase(prop)"
 								:max="item.max"
 								:min="item.min"
 								:step="item.step || 1"
 								class="my-2"
 								hide-details
+								@input="setProp(prop, $event)"
 							/>
 
 							<VSelect
 								v-for="(items, prop) in selects"
 								:key="prop"
-								v-model="usageProps[prop]"
+								:value="usageProps[prop]"
 								:items="items"
-								:label="startCase(prop)"
+								:label="toKebabCase(prop)"
 								class="my-2"
 								clearable
 								dense
 								filled
 								hide-details
+								@input="setProp(prop, $event)"
 							/>
 
 							<VTextField
 								v-for="(prop) in textFields"
 								:key="prop"
-								v-model="usageProps[prop]"
-								:label="startCase(prop)"
+								:value="usageProps[prop]"
+								:label="toKebabCase(prop)"
 								class="my-2"
 								dense
 								filled
 								hide-details
+								@input="setProp(prop, $event)"
 							/>
 
 							<VBtnToggle
@@ -166,7 +182,7 @@
 									v-for="(item, i) in items"
 									:key="`${prop}${i}`"
 									text
-									@click="() => usageProps[prop] = item"
+									@click="toggleBtnProp(items, item)"
 								>
 									{{ item }}
 								</VBtn>
@@ -175,7 +191,7 @@
 							<VRadioGroup
 								v-for="(items, prop) in radioGroups"
 								:key="prop"
-								:label="startCase(prop)"
+								:label="toKebabCase(prop)"
 							>
 								<VRadio
 									v-for="item in items"
@@ -189,15 +205,18 @@
 				</VCol>
 
 				<VCol cols="12">
-					<VDivider />
-				</VCol>
-
-				<VCol cols="12">
-					<DocMarkup
-						:code="formatAttributes"
-						no-margin
-						tile
-					/>
+					<VExpandTransition>
+						<div
+							v-show="expand"
+							class="doc-code"
+						>
+							<DocMarkup
+								:code="formatAttributes"
+								no-margin
+								tile
+							/>
+						</div>
+					</VExpandTransition>
 				</VCol>
 			</VRow>
 		</VSheet>
@@ -208,9 +227,10 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiInvertColors } from '@mdi/js';
+	import { mdiInvertColors, mdiCodeTags } from '@mdi/js';
 
 	import { VueClass } from 'vue-class-component/lib/declarations';
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
 	interface ImportedComponent extends VueClass<Vue> {
 		options: {
@@ -221,6 +241,10 @@
 	interface Theme {
 		isDark: true;
 	}
+
+	type Props = IndexedObject<
+		boolean | string[] | IndexedObject<IndexedObject<number | string>>
+	>;
 
 	const Props = Vue.extend({
 		props: {
@@ -240,6 +264,7 @@
 		theme!: Theme;
 
 		invertColorsIcon = mdiInvertColors;
+		sourceIcon = mdiCodeTags;
 
 		booleans = null;
 		btnToggles = null;
@@ -249,12 +274,14 @@
 		textFields = null;
 
 		dark = false;
+		expand = false;
 		hasError = false;
 		options = {};
 
 		tab = null;
 		tabs = [];
-		usageProps: any = {};
+		usageProps: Props = {};
+		displayProps: Props = {};
 
 		get file(): string {
 			return `${this.name}/usage`;
@@ -267,18 +294,25 @@
 		get formatAttributes(): string {
 			let attributeArray = [];
 
-			for (const [key, value] of Object.entries(this.usageProps)) {
+			for (const [key, value] of Object.entries(this.displayProps)) {
 				if (Boolean(value) === false) {
 					continue;
 				}
 
 				let trimmed = this.toKebabCase(key.trim());
 
-				if (typeof value === 'number') {
+				const isNumber = typeof value === 'number';
+				const isObject = typeof value === 'object';
+
+				const isDynamicValue = isNumber || isObject;
+
+				if (isDynamicValue) {
 					trimmed = `:${trimmed}`;
 				}
 
-				if (value !== true) {
+				if (isObject) {
+					trimmed += `="${key.trim()}"`;
+				} else if (value !== true) {
 					trimmed += `="${value}"`;
 				}
 
@@ -314,8 +348,9 @@
 			return pascalCaseStr;
 		}
 
-		startCase(str: string): string {
-			return str;
+		setProp(prop: string, value: number | string | boolean): void {
+			this.$set(this.usageProps, prop, value);
+			this.$set(this.displayProps, prop, value);
 		}
 
 		setContents(component: ImportedComponent): void {
@@ -325,30 +360,44 @@
 
 			Object.assign(this.$data, component.options.data.call(this));
 
-			this.usageProps = Object.assign({}, this.$data.defaults);
+			const defaults = this.$data.defaultProps as Props;
+			const propsHiddenByDefault = (this.$data.propsHiddenByDefault || []) as string[];
 
+			const filteredDefaults = Object
+				.keys(defaults)
+				.filter((key) => !propsHiddenByDefault.includes(key))
+				.reduce<Props>((res, key) => (res[key] = defaults[key], res), {});
+
+			this.usageProps = Object.assign({}, defaults);
+			this.displayProps = Object.assign({}, filteredDefaults);
 
 			if (this.options) {
 				for (const [key, value] of Object.entries(this.options)) {
-					(this as any)[key] = value;
+					(this as unknown as IndexedObject<unknown>)[key] = value;
 				}
-			}
-
-			if (this.tabs) {
-				this.tabs = this.tabs;
 			}
 		}
 
 		toggleRadioProp(props: string[], toggled: string): void {
 			for (const prop of props) {
-				this.usageProps[prop] = false;
+				this.setProp(prop, false);
 			}
 
-			this.usageProps[toggled] = true;
+			this.setProp(toggled, true);
+		}
+
+		toggleBtnProp(prop: string, item: string): void {;
+			this.$set(this.usageProps, prop, item);
 		}
 
 		toggleOption(prop: string, active: boolean): void {
-			this.$set(this.usageProps, prop, !active);
+			this.setProp(prop, !active);
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.doc-code {
+		border-top: thin solid rgba(0, 0, 0, 0.12);
+	}
+</style>

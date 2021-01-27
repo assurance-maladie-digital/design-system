@@ -15,7 +15,7 @@
 		inheritAttrs: false
 	})
 	export default class Usage extends Vue {
-		defaults = {
+		defaultProps = {
 			icon: 'digital',
 			color: null,
 			large: false,
