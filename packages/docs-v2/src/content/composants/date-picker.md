@@ -21,9 +21,7 @@ Vous pouvez afficher le `VTextField` en mode `outlined` grâce à la prop du mê
 Vous pouvez permettre à l'utilisateur de sélectionner une date naissance plus facilement en utilisant la prop `birthdate`.
 
 <doc-alert type="info">
-
 L'utilisateur sélectionnera l'année en premier, puis le mois et enfin le jour et ne peut pas sélectionner une date future.
-
 </doc-alert>
 
 <doc-example file="date-picker/date-picker-birthdate"></doc-example>
@@ -49,15 +47,41 @@ Lorsque que la date de début est située avant la date sélectionnée (période
 Vous pouvez modifier le format de la date affichée dans le `VTextField` en utilisant la prop `date-format` ainsi que le format utilisé avec le `v-model` en utilisant la prop `date-format-return`.
 
 <doc-alert type="info">
+
 Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la prop `date-format`, mais vous pouvez le redéfinir en utilisant la prop `mask` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
+
 </doc-alert>
 
 <doc-example file="date-picker/date-picker-format"></doc-example>
+
+### Règles de validation
+
+Vous pouvez appliquer des [règles de validation Vuetify](https://vuetifyjs.com/fr-FR/components/inputs/#rules) au `VTextField` contenu dans le composant en utilisant la prop `rules`.
+
+Vous pouvez aussi ajouter des règles d'alertes, qui ne bloquent pas la validation, en utilisant la prop `warning-rules`.
+
+Pour cela, vous pouvez utiliser les règles de validation inclues dans la librairie, comme :
+- `required`
+- `isDateValid`
+- `notAfterToday`
+- `notBeforeToday`
+
+<doc-example file="date-picker/date-picker-rules" /></doc-example>
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
 <doc-api name="date-picker"></doc-api>
+</doc-tab-item>
+
+<doc-tab-item label="Personnalisation">
+
+### Composants Vuetify
+
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `DatePicker` en utilisant la prop `vuetify-options`.
+
+<doc-example file="date-picker/date-picker-options"></doc-example>
+
 </doc-tab-item>
 
 </doc-tabs>

@@ -5,9 +5,9 @@
 		</p>
 
 		<CopyBtn
+			:vuetify-options="vuetifyOptions"
 			label="Copier le texte"
 			text-to-copy="Exemple"
-			:vuetify-options="vuetifyOptions"
 		/>
 	</VLayout>
 </template>

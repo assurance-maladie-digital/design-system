@@ -1,8 +1,8 @@
 <template>
 	<CustomIcon
-		icon="github"
-		size="38px"
 		:color="color"
+		icon="digital"
+		size="56px"
 	/>
 </template>
 
@@ -14,6 +14,6 @@
 
 	@Component
 	export default class CustomIconSizeColor extends Vue {
-		color = tokens.colors.success;
+		color = tokens.colors.secondary;
 	}
 </script>

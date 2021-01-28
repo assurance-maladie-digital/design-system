@@ -24,7 +24,7 @@ Vous pouvez afficher les valeurs dans les DataList via la directive `v-html` en 
 
 Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela peut facilement mener à des attaques XSS. N'utilisez cette directive que sur du contenu de confiance et jamais sur du contenu fourni par l'utilisateur.
 
-</doc-alert type="info">
+</doc-alert>
 
 <doc-example file="sub-header/sub-header-data-lists"></doc-example>
 
@@ -52,16 +52,20 @@ Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur c
 
 <doc-example file="sub-header/sub-header-loading"></doc-example>
 
+</doc-tab-item>
+
+<doc-tab-item label="API">
+<doc-api name="sub-header"></doc-api>
+</doc-tab-item>
+
+<doc-tab-item label="Personnalisation">
+
 ### Utilisation des slots
 
 Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter.
 
 <doc-example file="sub-header/sub-header-slots"></doc-example>
 
-</doc-tab-item>
-
-<doc-tab-item label="API">
-<doc-api name="sub-header"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

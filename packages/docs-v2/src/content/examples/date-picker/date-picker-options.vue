@@ -1,19 +1,9 @@
 <template>
-	<div>
-		<DatePicker
-			v-model="date"
-			:vuetify-options="vuetifyOptions"
-			clearable
-			outlined
-		/>
-
-		<p
-			v-if="date"
-			class="mt-4 mb-0"
-		>
-			Date : {{ date }}
-		</p>
-	</div>
+	<DatePicker
+		:vuetify-options="vuetifyOptions"
+		clearable
+		outlined
+	/>
 </template>
 
 <script lang="ts">
@@ -22,24 +12,23 @@
 
 	@Component
 	export default class DatePickerOptions extends Vue {
-		date = '';
-
 		vuetifyOptions = {
 			// The textField options can be binded
 			// directly to the DatePicker
 			textField: {
 				label: 'Exemple',
-				hideDetails: true,
-				hint: null
+				hideDetails: true
 			},
 			menu: {
-				nudgeBottom: 50,
+				nudgeTop: 0,
 				nudgeRight: 0,
-				minWidth: '310px'
+				minWidth: '328px',
+				offsetY: true,
+				top: true
 			},
 			datePicker: {
 				noTitle: false,
-				width: '310px'
+				width: '328px'
 			}
 		};
 	}

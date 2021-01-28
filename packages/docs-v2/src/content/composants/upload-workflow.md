@@ -28,22 +28,26 @@ Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
 
 <doc-example file="upload-workflow/upload-workflow-optional"></doc-example>
 
+</doc-tab-item>
+
+<doc-tab-item label="API">
+<doc-api name="upload-workflow"></doc-api>
+</doc-tab-item>
+
+<doc-tab-item label="Personnalisation">
+
+### Composants Vuetify
+
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `UploadWorkflow` en utilisant la prop `vuetify-options`.
+
+<doc-example file="upload-workflow/upload-workflow-options"></doc-example>
+
 ### Utilisation des slots
 
 Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
 
 <doc-example file="upload-workflow/upload-workflow-slots"></doc-example>
 
-### Personnalisation des composants
-
-Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `UploadWorkflow` en utilisant la prop `vuetify-options`.
-
-<doc-example file="upload-workflow/upload-workflow-options"></doc-example>
-
-</doc-tab-item>
-
-<doc-tab-item label="API">
-<doc-api name="upload-workflow"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

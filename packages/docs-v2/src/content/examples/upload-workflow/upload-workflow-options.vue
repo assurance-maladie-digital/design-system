@@ -10,7 +10,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class UploadWorkflowEx extends Vue {
+	export default class UploadWorkflowOptions extends Vue {
 		files = [
 			{
 				id: 'rib',

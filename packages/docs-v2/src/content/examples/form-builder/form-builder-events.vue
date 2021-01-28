@@ -83,7 +83,7 @@
 		formRefreshed(): void {
 			this.$nextTick(() => {
 				this.snackbar = true;
-				this.snackbarText = 'Événement "change" et "refresh" émis';
+				this.snackbarText = 'Événements "change" et "refresh" émis';
 			});
 		}
 	}

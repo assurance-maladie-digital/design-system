@@ -20,7 +20,7 @@ La prop `suffix` est utilisée pour dissocier les différentes tables afin de sa
 
 </doc-alert>
 
-<doc-example file="composants/paginated-table/examples/paginated-table-api"></doc-example>
+<doc-example file="paginated-table/paginated-table-api"></doc-example>
 
 </doc-tab-item>
 
