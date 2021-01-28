@@ -14,17 +14,17 @@ position: 19
 
 Vous pouvez afficher des listes de données en utilisant la prop `data-lists`.
 
-<doc-info type="info">
+<doc-alert type="info">
 
 Vous pouvez afficher les valeurs dans les DataList via la directive `v-html` en utilisant la prop `render-html-value`.
 
-</doc-info>
+</doc-alert>
 
-<doc-info type="warning">
+<doc-alert type="warning">
 
 Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela peut facilement mener à des attaques XSS. N'utilisez cette directive que sur du contenu de confiance et jamais sur du contenu fourni par l'utilisateur.
 
-</doc-info type="info">
+</doc-alert type="info">
 
 <doc-example file="sub-header/sub-header-data-lists"></doc-example>
 
@@ -44,11 +44,11 @@ Vous pouvez afficher des informations complémentaires en utilisant le slot `add
 
 Vous pouvez afficher le composant en mode chargement grâce à la prop `loading`.
 
-<doc-info type="info">
+<doc-alert type="info">
 
 Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur chaque [DataList](../data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
 
-</doc-info>
+</doc-alert>
 
 <doc-example file="sub-header/sub-header-loading"></doc-example>
 
