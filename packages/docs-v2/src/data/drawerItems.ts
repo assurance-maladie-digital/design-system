@@ -54,6 +54,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/file-upload'
 			},
 			{
+				title: 'FooterWrapper',
+				to: '/composants/footer-wrapper'
+			},
+			{
 				title: 'FormBuilder',
 				to: '/composants/form-builder'
 			},
@@ -64,10 +68,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'FormFieldList',
 				to: '/composants/form-field-list'
-			},
-			{
-				title: 'FooterWrapper',
-				to: '/composants/footer-wrapper'
 			},
 			{
 				title: 'HeaderLoading',

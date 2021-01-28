@@ -13,7 +13,10 @@
 			</ClientOnly>
 		</VTabs>
 
-		<VTabsItems v-model="tab">
+		<VTabsItems
+			v-model="tab"
+			:class="{ 'pt-8': !noSpacing }"
+		>
 			<slot
 				v-for="slot in Object.keys($slots)"
 				:name="slot"
@@ -43,6 +46,10 @@
 	const Props = Vue.extend({
 		props: {
 			light: {
+				type: Boolean,
+				default: false
+			},
+			noSpacing: {
 				type: Boolean,
 				default: false
 			}

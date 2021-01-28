@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-api w-100 mt-8">
+	<div class="doc-api w-100">
 		<div
 			v-for="(component, componentName, index) in api"
 			:key="componentName"
