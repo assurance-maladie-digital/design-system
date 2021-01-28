@@ -6,6 +6,42 @@ position: 21
 
 <doc-tabs light>
 
+<doc-tab-item label="Utilisation">
+
+## Exemples
+
+### Gestion des événements
+
+Vous pouvez réagir lorsque la liste des fichiers est mise à jour grâce à l'évènement `change`, et réagir aux erreurs de validation grâce à l'événement `error`.
+
+<doc-example file="upload-workflow/upload-workflow-events"></doc-example>
+
+### Un seul fichier
+
+Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue demandant à l'utilisateur de choisir quel fichier il a sélectionné ne sera pas affichée.
+
+<doc-example file="upload-workflow/upload-workflow-single-file"></doc-example>
+
+### Fichiers optionnels
+
+Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
+
+<doc-example file="upload-workflow/upload-workflow-optional"></doc-example>
+
+### Utilisation des slots
+
+Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
+
+<doc-example file="upload-workflow/upload-workflow-slots"></doc-example>
+
+### Personnalisation des composants
+
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `UploadWorkflow` en utilisant la prop `vuetify-options`.
+
+<doc-example file="upload-workflow/upload-workflow-options"></doc-example>
+
+</doc-tab-item>
+
 <doc-tab-item label="API">
 <doc-api name="upload-workflow"></doc-api>
 </doc-tab-item>

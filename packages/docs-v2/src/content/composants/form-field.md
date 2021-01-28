@@ -6,6 +6,70 @@ position: 14
 
 <doc-tabs light>
 
+<doc-tab-item label="Utilisation">
+
+## Exemples
+
+### Titre, description et texte d'aide
+
+Vous pouvez un titre, une description ainsi qu'un texte d'aide sur le champ en utilisant les attributs `title`, `description` et `tooltip`.
+
+<doc-alert type="warning">
+
+Le titre ne doit pas remplacer le label, qui identifie le champ pour les utilisateurs de lecteurs d'écran.
+
+</doc-alert>
+
+<doc-example file="form-field/form-field-question"></doc-example>
+
+### Types de champs
+
+Vous retrouvez ci-dessous un exemple de chaque type de champ et leurs spécificités.
+
+#### Champ texte
+
+<doc-example file="form-field/form-field-text"></doc-example>
+
+#### Champ zone de texte
+
+<doc-example file="form-field/form-field-textarea"></doc-example>
+
+#### Champ nombre
+
+<doc-alert type="info">
+
+Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres uniquement, vous devez définir un masque avec l'attribut `mask` de `fieldOptions` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
+
+</doc-alert>
+
+<doc-example file="form-field/form-field-number"></doc-example>
+
+#### Champ mot de passe
+
+<doc-example file="form-field/form-field-password"></doc-example>
+
+#### Champ date
+
+<doc-example file="form-field/form-field-date"></doc-example>
+
+#### Champ période
+
+<doc-example file="form-field/form-field-period"></doc-example>
+
+#### Champ select
+
+<doc-example file="form-field/form-field-select"></doc-example>
+
+#### Champ select slider
+
+<doc-example file="form-field/form-field-select-slider"></doc-example>
+
+#### Champ select bouton
+
+<doc-example file="form-field/form-field-select-button"></doc-example>
+
+</doc-tab-item>
+
 <doc-tab-item label="API">
 <doc-api name="form-field"></doc-api>
 </doc-tab-item>
