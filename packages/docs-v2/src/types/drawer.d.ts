@@ -3,6 +3,7 @@ interface PageItem {
 	icon?: string;
 	href?: string;
 	to?: string;
+	items?: PageItem[];
 }
 
 export interface DrawerItem {
