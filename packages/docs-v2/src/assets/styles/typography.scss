@@ -1,10 +1,10 @@
 .nuxt-content {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
 		display: inline-block;
 	}
 
@@ -22,8 +22,11 @@
 		line-height: 2rem;
 		font-weight: 700;
 		letter-spacing: .0125em;
-		margin-top: 12px;
 		margin-bottom: 12px;
+
+		&:not(:first-child) {
+			margin-top: 12px;
+		}
 	}
 
 	> h4 {

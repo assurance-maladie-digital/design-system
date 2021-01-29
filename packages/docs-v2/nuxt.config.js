@@ -63,17 +63,22 @@ export default {
 		'@nuxtjs/google-fonts'
 	],
 	plugins: [
-		'~/plugins/vue-dot.ts'
+		'~/plugins/vue-dot.ts',
+		'~/plugins/form-builder.ts',
 	],
 	build: {
 		transpile: [
-			'@cnamts/vue-dot'
+			'@cnamts/vue-dot',
+			'@cnamts/form-builder',
 		]
 	},
 	modules: [
 		'@nuxt/content'
 	],
 	components: true,
+	content: {
+		liveEdit: false
+	},
 	vuetify: {
 		optionsPath: '~/vuetify.options.ts',
 		defaultAssets: false

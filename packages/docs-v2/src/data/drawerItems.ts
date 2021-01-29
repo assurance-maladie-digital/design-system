@@ -1,6 +1,6 @@
 import { DrawerItem } from '~/types/drawer';
 
-import { mdiSpeedometer, mdiViewDashboard } from '@mdi/js';
+import { mdiSpeedometer, mdiViewDashboard, mdiCogs } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
 	{
@@ -54,6 +54,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/file-upload'
 			},
 			{
+				title: 'FooterWrapper',
+				to: '/composants/footer-wrapper'
+			},
+			{
 				title: 'FormBuilder',
 				to: '/composants/form-builder'
 			},
@@ -64,10 +68,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'FormFieldList',
 				to: '/composants/form-field-list'
-			},
-			{
-				title: 'FooterWrapper',
-				to: '/composants/footer-wrapper'
 			},
 			{
 				title: 'HeaderLoading',
@@ -96,6 +96,21 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'UploadWorkflow',
 				to: '/composants/upload-workflow'
+			}
+		]
+	},
+	{
+		title: 'Composants techniques',
+		icon: mdiCogs,
+		items: [
+			{
+				title: 'Directives',
+				items: [
+					{
+						title: 'Debounce',
+						to: '/directives/debounce'
+					}
+				]
 			}
 		]
 	}

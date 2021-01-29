@@ -8,6 +8,21 @@ position: 5
 
 <doc-tab-item label="Utilisation">
 <doc-usage name="custom-icon"></doc-usage>
+
+## Exemples
+
+### Modification de la taille et de la couleur
+
+Vous pouvez modifier la taille et la couleur de l'icône grâce aux props `size` et `color`.
+
+<doc-example file="custom-icon/custom-icon-size-color"></doc-example>
+
+### Utilisation des slots
+
+Vous pouvez utiliser le slot par défaut pour afficher une icône SVG totalement personnalisée.
+
+<doc-example file="custom-icon/custom-icon-slot"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
