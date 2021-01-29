@@ -43,7 +43,7 @@ Certaines de nos dépendances ont besoin de [node-gyp](https://github.com/nodejs
 
 Une fois les outils installés, vous pouvez cloner le repo :
 
-<doc-tabs>
+<doc-tabs no-spacing>
 <doc-tab-item label="SSH">
 ```bash
 git clone git@github.com:assurance-maladie-digital/design-system.git
@@ -104,7 +104,7 @@ Et en exécutant ensuite la commande `vue create --preset /path/to/preset/ my-pr
 
 Vous pouvez également tester le plugin dans un projet existant en l'installant :
 
-<doc-tabs>
+<doc-tabs no-spacing>
 <doc-tab-item label="Yarn">
 ```bash
 yarn add --dev file:/full/path/to/plugin
@@ -167,7 +167,7 @@ Pour créer une nouvelle branche et effectuer des modifications, vous pouvez nou
 
 Et ensuite ajouter votre fork comme *remote* :
 
-<doc-tabs>
+<doc-tabs no-spacing>
 <doc-tab-item label="SSH">
 ```bash
 git remote add fork git@github.com:USERNAME/design-system.git

@@ -38,6 +38,7 @@
 		mdiFolderOpen,
 		mdiLanguageHtml5,
 		mdiLanguageCss3,
+		mdiSass,
 		mdiLanguageJavascript,
 		mdiLanguageTypescript,
 		mdiVuejs,
@@ -71,6 +72,7 @@
 		files = {
 			html: mdiLanguageHtml5,
 			css: mdiLanguageCss3,
+			scss: mdiSass,
 			js: mdiLanguageJavascript,
 			json: mdiCodeJson,
 			ts: mdiLanguageTypescript,

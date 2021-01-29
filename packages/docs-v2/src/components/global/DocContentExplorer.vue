@@ -1,5 +1,8 @@
 <template>
-	<ContentExplorer :items="items" />
+	<ContentExplorer
+		:items="items"
+		class="mb-12"
+	/>
 </template>
 
 <script lang="ts">

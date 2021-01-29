@@ -110,23 +110,91 @@ export const contentExplorerItems: TreeviewItem[] = [
 		children: [
 			{
 				name: 'assets',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'logo.svg',
+						path: 'todo',
+						file: 'svg'
+					}
+				]
 			},
 			{
 				name: 'components',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'layout',
+						path: 'todo'
+					},
+					{
+						name: 'Links',
+						path: 'todo'
+					}
+				]
 			},
 			{
 				name: 'constants',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'index.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
 			},
 			{
 				name: 'plugins',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'axios.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'form-builder.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'vue-dot.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'vuetify.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'webfontloader.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
 			},
 			{
 				name: 'router',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'index.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'navigationRedirect.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'routes.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
 			},
 			{
 				name: 'services',
@@ -134,11 +202,35 @@ export const contentExplorerItems: TreeviewItem[] = [
 			},
 			{
 				name: 'store',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'index.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'types.d.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
 			},
 			{
 				name: 'theme',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'colors.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'styles.scss',
+						path: 'todo',
+						file: 'scss'
+					}
+				]
 			},
 			{
 				name: 'translations',
@@ -146,11 +238,66 @@ export const contentExplorerItems: TreeviewItem[] = [
 			},
 			{
 				name: 'types',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'index.d.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
 			},
 			{
 				name: 'views',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'tests',
+						path: 'todo',
+						children: [
+							{
+								name: 'About.spec.ts',
+								path: 'todo',
+								file: 'ts'
+							},
+							{
+								name: 'Home.spec.ts',
+								path: 'todo',
+								file: 'ts'
+							},
+							{
+								name: 'Maintenance.spec.ts',
+								path: 'todo',
+								file: 'ts'
+							},
+							{
+								name: 'NotFound.spec.ts',
+								path: 'todo',
+								file: 'ts'
+							}
+						]
+					},
+					{
+						name: 'About.vue',
+						path: 'todo',
+						file: 'vue'
+					},
+					{
+						name: 'Home.vue',
+						path: 'todo',
+						file: 'vue'
+					},
+					{
+						name: 'Maintenance.vue',
+						path: 'todo',
+						file: 'vue'
+					},
+					{
+						name: 'NotFound.vue',
+						path: 'todo',
+						file: 'vue'
+					}
+				]
 			},
 			{
 				name: 'App.vue',
@@ -158,7 +305,7 @@ export const contentExplorerItems: TreeviewItem[] = [
 				file: 'vue'
 			},
 			{
-				name: 'decorators',
+				name: 'decorators.ts',
 				path: 'todo',
 				file: 'ts'
 			},
@@ -204,7 +351,7 @@ export const contentExplorerItems: TreeviewItem[] = [
 		file: 'js'
 	},
 	{
-		name: '.eslintrcjs',
+		name: '.eslintrc.js',
 		path: 'todo',
 		file: 'js'
 	},
@@ -229,6 +376,11 @@ export const contentExplorerItems: TreeviewItem[] = [
 		file: 'js'
 	},
 	{
+		name: 'package.json',
+		path: 'todo',
+		file: 'json'
+	},
+	{
 		name: 'postcss.config.js',
 		path: 'todo',
 		file: 'js'
@@ -247,5 +399,10 @@ export const contentExplorerItems: TreeviewItem[] = [
 		name: 'vue.config.js',
 		path: 'todo',
 		file: 'js'
+	},
+	{
+		name: 'yarn.lock',
+		path: 'todo',
+		file: 'txt'
 	}
 ];

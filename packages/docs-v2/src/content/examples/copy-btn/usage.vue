@@ -23,24 +23,31 @@
 			return this.$attrs.textToCopy;
 		}
 
-		defaults = {
+		defaultProps = {
 			label: 'Copier le numéro de dossier',
 			textToCopy: '1456570791',
 			hideTooltip: false,
 			tooltipDuration: 2500
 		};
 
+		propsHiddenByDefault = [
+			'tooltipDuration'
+		];
+
 		options = {
-			booleans: ['hide-tooltip'],
+			booleans: [
+				'hide-tooltip'
+			],
 			sliders: {
 				tooltipDuration: {
-					label: 'tooltip-duration',
 					min: 500,
 					max: 5000,
 					step: 500
 				}
 			},
-			textFields: ['textToCopy']
+			textFields: [
+				'textToCopy'
+			]
 		};
 	}
 </script>
