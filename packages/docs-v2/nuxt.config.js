@@ -76,6 +76,9 @@ export default {
 		'@nuxt/content'
 	],
 	components: true,
+	content: {
+		liveEdit: false
+	},
 	vuetify: {
 		optionsPath: '~/vuetify.options.ts',
 		defaultAssets: false
