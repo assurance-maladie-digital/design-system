@@ -4,7 +4,6 @@
 			:items="items"
 			:search="search"
 			hide-default-footer
-			class="w-100 elevation-1"
 			@current-items="filteredItems = $event"
 		>
 			<template #top>
@@ -31,27 +30,29 @@
 
 		headers: DataTableHeader[] = [
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Nom',
 				value: 'lastname'
 			},
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Prénom',
 				value: 'firstname'
+			},
+			{
+				text: 'Email',
+				value: 'email'
 			}
 		];
 
 		items = [
 			{
-				firstname: 'Christophe',
-				lastname: 'Colomb'
+				firstname: 'Aimée',
+				lastname: 'Josseaume',
+				email: 'aimee.josseaume@example.com'
 			},
 			{
-				firstname: 'Napoléon',
-				lastname: 'Bonaparte'
+				firstname: 'Serge',
+				lastname: 'Rivard',
+				email: 'serge.rivard@example.com'
 			}
 		];
 	}

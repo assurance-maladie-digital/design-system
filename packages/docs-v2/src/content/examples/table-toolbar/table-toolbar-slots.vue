@@ -4,7 +4,6 @@
 		:items="items"
 		:search="search"
 		hide-default-footer
-		class="w-100 elevation-1"
 	>
 		<template #top>
 			<TableToolbar
@@ -12,8 +11,13 @@
 				:nb-total="items.length"
 			>
 				<template #search-left>
-					<VBtn class="mx-1 text-none" small>
-						exemple
+					<VBtn
+						color="primary"
+						class="mx-5"
+						outlined
+						small
+					>
+						Exemple
 					</VBtn>
 				</template>
 			</TableToolbar>
@@ -28,32 +32,34 @@
 	import { DataTableHeader } from 'vuetify';
 
 	@Component
-	export default class TableToolbarSearchLeft extends Vue {
+	export default class TableToolbarSlots extends Vue {
 		search = '';
-		
+
 		headers: DataTableHeader[] = [
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Nom',
 				value: 'lastname'
 			},
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Prénom',
 				value: 'firstname'
+			},
+			{
+				text: 'Email',
+				value: 'email'
 			}
 		];
 
 		items = [
 			{
-				firstname: 'Christophe',
-				lastname: 'Colomb'
+				firstname: 'Rosemarie',
+				lastname: 'Quessy',
+				email: 'rosemarie.quessy@example.com'
 			},
 			{
-				firstname: 'Napoléon',
-				lastname: 'Bonaparte'
+				firstname: 'Alphonse',
+				lastname: 'Bouvier',
+				email: 'alphonse.bouvier@example.com'
 			}
 		];
 	}

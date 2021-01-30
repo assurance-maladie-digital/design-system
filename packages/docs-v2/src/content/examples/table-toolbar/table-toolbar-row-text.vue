@@ -3,13 +3,14 @@
 			:headers="headers"
 			:items="items"
 			:search="search"
-			class="w-100 elevation-1"
 			hide-default-footer
+			@current-items="filteredItems = $event"
 		>
 			<template #top>
 				<TableToolbar
 					v-model="search"
 					:nb-total="items.length"
+					:nb-filtered="filteredItems.length"
 					row-text="fichier"
 				/>
 			</template>
@@ -26,29 +27,33 @@
 	export default class TableToolbarRowText extends Vue {
 		search = '';
 
+		filteredItems: DataTableHeader[] = [];
+
 		headers: DataTableHeader[] = [
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Nom',
 				value: 'lastname'
 			},
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Prénom',
 				value: 'firstname'
-			}
-		];
-		
-		items = [
-			{
-				firstname: 'Christophe',
-				lastname: 'Colomb'
 			},
 			{
-				firstname: 'Napoléon',
-				lastname: 'Bonaparte'
+				text: 'Email',
+				value: 'email'
+			}
+		];
+
+		items = [
+			{
+				firstname: 'Simone',
+				lastname: 'Bellefeuille',
+				email: 'simone.bellefeuille@example.com'
+			},
+			{
+				firstname: 'Jacques',
+				lastname: 'Demers',
+				email: 'jacques.demers@example.com'
 			}
 		];
 	}

@@ -4,7 +4,6 @@
 		:items="items"
 		:search="search"
 		hide-default-footer
-		class="w-100 elevation-1"
 	>
 		<template #top>
 			<TableToolbar
@@ -22,49 +21,52 @@
 	import Component from 'vue-class-component';
 
 	import { DataTableHeader } from 'vuetify';
-	
+
 	@Component
 	export default class TableToolbarOptions extends Vue {
 		search = '';
 
 		vuetifyOptions = {
 			toolbar: {
-				color: 'accent'
+				color: 'grey lighten-4'
 			},
 			textField: {
-				outlined: true
+				outlined: true,
+				dense: true
 			},
 			addBtn: {
-				text: true
+				height: '40'
 			},
 			addIcon: {
-				color:'red'
+				class: 'd-none'
 			}
 		};
 
 		headers: DataTableHeader[] = [
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Nom',
 				value: 'lastname'
 			},
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Prénom',
 				value: 'firstname'
-			}
-		];
-		
-		items = [
-			{
-				firstname: 'Christophe',
-				lastname: 'Colomb'
 			},
 			{
-				firstname: 'Napoléon',
-				lastname: 'Bonaparte'
+				text: 'Email',
+				value: 'email'
+			}
+		];
+
+		items = [
+			{
+				firstname: 'Delphine',
+				lastname: 'Robillard',
+				email: 'delphine.robillard@example.com'
+			},
+			{
+				firstname: 'Alexandre',
+				lastname: 'Lazure',
+				email: 'alexandre.lazure@example.com'
 			}
 		];
 	}

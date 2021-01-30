@@ -4,14 +4,13 @@
 			:items="items"
 			:search="search"
 			hide-default-footer
-			class="w-100 elevation-1"
 			@current-items="filteredItems = $event"
 		>
 			<template #top>
 				<TableToolbar
 					v-model="search"
 					:nb-total="items.length"
-					search-label="Recherche nom/prénom"
+					search-label="Rechercher un patient"
 				/>
 			</template>
 		</VDataTable>
@@ -22,34 +21,36 @@
 	import Component from 'vue-class-component';
 
 	import { DataTableHeader } from 'vuetify';
-	
+
 	@Component
 	export default class TableToolbarSearchLabel extends Vue {
 		search = '';
 
 		headers: DataTableHeader[] = [
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Nom',
 				value: 'lastname'
 			},
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Prénom',
 				value: 'firstname'
+			},
+			{
+				text: 'Email',
+				value: 'email'
 			}
 		];
 
 		items = [
 			{
-				firstname: 'Christophe',
-				lastname: 'Colomb'
+				firstname: 'Louis',
+				lastname: 'Douis',
+				email: 'louis.denis@example.com'
 			},
 			{
-				firstname: 'Napoléon',
-				lastname: 'Bonaparte'
+				firstname: 'Agate',
+				lastname: 'Roy',
+				email: 'agate.roy@example.com'
 			}
 		];
 	}

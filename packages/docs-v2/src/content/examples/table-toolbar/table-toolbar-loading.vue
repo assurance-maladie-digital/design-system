@@ -6,13 +6,13 @@
 			:search="search"
 			:loading="loading"
 			hide-default-footer
-			class="w-100 elevation-1"
 		>
 			<template #top>
 				<TableToolbar
 					v-model="search"
 					:loading="loading"
 					:nb-total="items.length"
+					show-add-btn
 				/>
 			</template>
 		</VDataTable>
@@ -20,6 +20,7 @@
 		<VSwitch
 			v-model="loading"
 			label="Chargement"
+			hide-details
 		/>
 	</div>
 </template>
@@ -34,31 +35,33 @@
 	export default class TableToolbarLoading extends Vue {
 		search = '';
 
-		loading = false;
+		loading = true;
 
 		headers: DataTableHeader[] = [
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Nom',
 				value: 'lastname'
 			},
 			{
-				align: 'start',
-				sortable: true,
 				text: 'Prénom',
 				value: 'firstname'
-			}
-		];
-		
-		items = [
-			{
-				firstname: 'Christophe',
-				lastname: 'Colomb'
 			},
 			{
-				firstname: 'Napoléon',
-				lastname: 'Bonaparte'
+				text: 'Email',
+				value: 'email'
+			}
+		];
+
+		items = [
+			{
+				firstname: 'Édith',
+				lastname: 'Cartier',
+				email: 'edith.cartier@example.com'
+			},
+			{
+				firstname: 'Eustache',
+				lastname: 'Dubois',
+				email: 'eustache.dubois@example.com'
 			}
 		];
 	}
