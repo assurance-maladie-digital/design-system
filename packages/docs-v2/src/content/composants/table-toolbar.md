@@ -10,11 +10,11 @@ position: 21
 
 ## Exemples
 
-### Bouton ajouter
+### Bouton *Ajouter*
 
-Vous pouvez afficher un bouton *Ajouter* en utilisant la prop `show-add-btn`.
+Vous pouvez afficher un bouton permettant une action d'ajout en utilisant la prop `show-add-btn`.
 
-<doc-example file="table-toolbar/table-toolbar-add"></doc-example>
+<doc-example file="table-toolbar/table-toolbar-add-btn"></doc-example>
 
 ### Nombre de lignes filtrées
 
@@ -28,21 +28,13 @@ Vous pouvez afficher le composant en mode chargement en utilisant la prop `loadi
 
 <doc-example file="table-toolbar/table-toolbar-loading"></doc-example>
 
-### Personnalisation du texte pour le nombre de lignes
+### Textes par défaut
 
-Il est également possible de modifier le texte du bouton en utilisant prop `add-btn-label`.
+Il est possible de modifier le texte du nombre de lignes en utilisant la prop `row-text` (la marque du pluriel est ajoutée automatiquement).
 
-Pour l'indicateur du nombre de lignes, par défaut il est indiqué le texte 'ligne' ou 'lignes' automatiquement s'il y en a plusieurs.
+Il est également possible de modifier le texte du champ *Recherche* en utilisant la prop `search-label` ainsi que celui du bouton *Ajouter* en utilisant la prop `add-btn-label`.
 
-Il est possible de modifier ce texte avec la prop `row-text`.
-
-<doc-example file="table-toolbar/table-toolbar-row-text"></doc-example>
-
-### Label de recherche
-
-Vous pouvez modifier le label de la recherche avec la prop `search-label`.
-
-<doc-example file="table-toolbar/table-toolbar-search-label"></doc-example>
+<doc-example file="table-toolbar/table-toolbar-labels"></doc-example>
 
 </doc-tab-item>
 

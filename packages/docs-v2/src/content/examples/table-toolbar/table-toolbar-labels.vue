@@ -10,8 +10,10 @@
 				<TableToolbar
 					v-model="search"
 					:nb-total="items.length"
-					:nb-filtered="filteredItems.length"
-					row-text="fichier"
+					show-add-btn
+					row-text="patient"
+					add-btn-label="Ajouter un patient"
+					search-label="Rechercher un patient"
 				/>
 			</template>
 		</VDataTable>
@@ -24,10 +26,8 @@
 	import { DataTableHeader } from 'vuetify';
 
 	@Component
-	export default class TableToolbarRowText extends Vue {
+	export default class TableToolbarSearchLabel extends Vue {
 		search = '';
-
-		filteredItems: DataTableHeader[] = [];
 
 		headers: DataTableHeader[] = [
 			{
@@ -46,14 +46,14 @@
 
 		items = [
 			{
-				firstname: 'Simone',
-				lastname: 'Bellefeuille',
-				email: 'simone.bellefeuille@example.com'
+				firstname: 'Louis',
+				lastname: 'Douis',
+				email: 'louis.denis@example.com'
 			},
 			{
-				firstname: 'Jacques',
-				lastname: 'Demers',
-				email: 'jacques.demers@example.com'
+				firstname: 'Agate',
+				lastname: 'Roy',
+				email: 'agate.roy@example.com'
 			}
 		];
 	}

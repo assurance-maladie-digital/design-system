@@ -36,9 +36,6 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.1` ([#831](https://github.com/assurance-maladie-digital/design-system/pull/831)) ([4b39cc4](https://github.com/assurance-maladie-digital/design-system/commit/4b39cc485412b555e70d1318993918af880cbdec))
   - **vue-router/vuex:** Mise à jour de **vue-router** vers la `v3.5.1` et de **vuex** vers la `v3.6.2` ([#852](https://github.com/assurance-maladie-digital/design-system/pull/852))
 
-- 📝 **Documentation**
-  - **TableToolbar:** ajout des exemples ([#864](https://github.com/assurance-maladie-digital/design-system/pull/864))
-
 ### 📚 Guide de migration
 
 #### Renommer `showCreateBtn` et `createBtnLabel` sur `TableToolbar`
