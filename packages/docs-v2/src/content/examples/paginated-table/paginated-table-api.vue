@@ -59,7 +59,7 @@
 		}
 
 		fetchData(): void {
-			this.getDataFromApi()
+			this.getDataFromApi(this.options)
 				.then((data) => {
 					this.users = data.items;
 					this.totalUsers = data.total;
@@ -72,17 +72,15 @@
 		 *
 		 * it handles sorting and pagination
 		 */
-		getDataFromApi(): Promise<DataObj> {
+		getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): Promise<DataObj> {
 			this.loading = true;
 
 			return new Promise((resolve) => {
-				const { sortBy, sortDesc, page, itemsPerPage } = this.options;
-
 				let items: User[] = this.getUsers();
 				const total = items.length;
 
 				// Sorting algorithm
-				if (this.options.sortBy) {
+				if (sortBy) {
 					items = items.sort((a, b) => {
 						const sortA = a[sortBy[0]];
 						const sortB = b[sortBy[0]];
