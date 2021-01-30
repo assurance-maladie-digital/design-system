@@ -1,7 +1,7 @@
 ---
 title: Debounce
 description: La directive `v-debounce` est utilisée pour différer une mise à jour de `v-model` sur un champ de formulaire.
-position: 22
+position: 23
 ---
 
 <doc-tabs light>
