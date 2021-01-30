@@ -36,7 +36,8 @@
   - **vue-router/vuex:** Mise à jour de **vue-router** vers la `v3.5.1` et de **vuex** vers la `v3.6.2` ([#852](https://github.com/assurance-maladie-digital/design-system/pull/852)) ([173f133](https://github.com/assurance-maladie-digital/design-system/commit/173f1334594c0b8b5fabe8535ea6273233ad0943))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.1.0` ([#855](https://github.com/assurance-maladie-digital/design-system/pull/855)) ([ec99581](https://github.com/assurance-maladie-digital/design-system/commit/ec995810e6d4292917dc9a935fa8a79c63b04a42))
   - **vuetify-loader:** Mise à jour vers la `v1.7.1` ([#856](https://github.com/assurance-maladie-digital/design-system/pull/856)) ([8b3cd23](https://github.com/assurance-maladie-digital/design-system/commit/8b3cd23a94994d81f9b8c43b4610c59e377e6116))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.4.0` ([#857](https://github.com/assurance-maladie-digital/design-system/pull/857))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.4.0` ([#857](https://github.com/assurance-maladie-digital/design-system/pull/857)) ([b5367eb](https://github.com/assurance-maladie-digital/design-system/commit/b5367ebb03e2e1961599275155a4be5f8c4a431d))
+  - **ts-jest:** Mise à jour vers la `v26.5.0` ([#865](https://github.com/assurance-maladie-digital/design-system/pull/865))
 
 ### 📚 Guide de migration
 
