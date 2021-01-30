@@ -12,7 +12,7 @@ position: 7
 
 ### Outlined
 
-Vous pouvez afficher le `VTextField` en mode `outlined` grâce à la prop du même nom. Cela va aussi mettre l'icône en mode `append` et modifier la position du menu.
+Vous pouvez afficher le `VTextField` en mode `outlined` en utilisant la prop du même nom. Cela va également mettre l'icône en mode `append` et modifier la position du menu.
 
 <doc-example file="date-picker/date-picker-outlined"></doc-example>
 

@@ -10,13 +10,13 @@ position: 9
 
 ## Exemples
 
-### Affichage d'un code d'erreur
+### Code d'erreur
 
 Vous pouvez afficher un code d'erreur HTTP en utilisant la prop `code`.
 
 <doc-example file="error-page/error-page-code"></doc-example>
 
-### Masquer le bouton d'action
+### Bouton d'action masqué
 
 Vous pouvez masquer le bouton d'action en utilisant la prop `no-btn`.
 

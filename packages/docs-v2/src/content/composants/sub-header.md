@@ -42,7 +42,7 @@ Vous pouvez afficher des informations complémentaires en utilisant le slot `add
 
 ### Mode chargement
 
-Vous pouvez afficher le composant en mode chargement grâce à la prop `loading`.
+Vous pouvez afficher le composant en mode chargement en utilisant la prop `loading`.
 
 <doc-alert type="info">
 
@@ -60,7 +60,7 @@ Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur c
 
 <doc-tab-item label="Personnalisation">
 
-### Utilisation des slots
+### Slots
 
 Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter.
 

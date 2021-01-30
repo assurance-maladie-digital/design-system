@@ -21,7 +21,7 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
 
 ## Exemples
 
-### Modification du délai
+### Délai
 
 En utilisant un modificateur, il est possible de régler le délai d'exécution.
 
