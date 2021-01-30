@@ -1,7 +1,7 @@
 ---
 title: UploadWorkflow
 description: Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sélectionner une liste de fichiers.
-position: 21
+position: 22
 ---
 
 <doc-tabs light>
@@ -10,9 +10,9 @@ position: 21
 
 ## Exemples
 
-### Gestion des événements
+### Évènements
 
-Vous pouvez réagir lorsque la liste des fichiers est mise à jour grâce à l'évènement `change`, et réagir aux erreurs de validation grâce à l'événement `error`.
+Vous pouvez réagir lorsque la liste des fichiers est mise à jour en utilisant l'évènement `change`, et réagir aux erreurs de validation en utilisant l'événement `error`.
 
 <doc-example file="upload-workflow/upload-workflow-events"></doc-example>
 
@@ -42,7 +42,7 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Uploa
 
 <doc-example file="upload-workflow/upload-workflow-options"></doc-example>
 
-### Utilisation des slots
+### Slots
 
 Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
 

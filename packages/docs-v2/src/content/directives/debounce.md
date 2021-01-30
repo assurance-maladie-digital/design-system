@@ -1,7 +1,7 @@
 ---
 title: Debounce
 description: La directive `v-debounce` est utilisée pour différer une mise à jour de `v-model` sur un champ de formulaire.
-position: 22
+position: 23
 ---
 
 <doc-tabs light>
@@ -21,7 +21,7 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
 
 ## Exemples
 
-### Modification du délai
+### Délai
 
 En utilisant un modificateur, il est possible de régler le délai d'exécution.
 

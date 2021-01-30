@@ -10,13 +10,13 @@ position: 8
 
 ## Exemples
 
-### Modification de la largeur
+### Largeur
 
 Vous pouvez modifier la largeur de la boîte de dialogue avec l'attribut `width`.
 
 <doc-example file="dialog-box/dialog-box-width"></doc-example>
 
-### Modification des textes des boutons
+### Textes des boutons
 
 Vous pouvez modifier les textes par défaut des boutons d'actions avec les attributs `cancel-btn-text` et `confirm-btn-text`.
 
@@ -36,15 +36,9 @@ Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `Dial
 
 <doc-example file="dialog-box/dialog-box-options"></doc-example>
 
-### Utilisation des slots
+### Slots
 
 Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d'actions.
-
-<doc-alert type="info">
-
-Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `DialogBox` en utilisant la prop `vuetify-options`.
-
-</doc-alert>
 
 <doc-example file="dialog-box/dialog-box-slots"></doc-example>
 

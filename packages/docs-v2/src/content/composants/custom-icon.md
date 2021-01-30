@@ -11,13 +11,13 @@ position: 5
 
 ## Exemples
 
-### Modification de la taille et de la couleur
+### Taille et couleur
 
 Vous pouvez modifier la taille et la couleur de l'icône grâce aux props `size` et `color`.
 
 <doc-example file="custom-icon/custom-icon-size-color"></doc-example>
 
-### Utilisation des slots
+### Slots
 
 Vous pouvez utiliser le slot par défaut pour afficher une icône SVG totalement personnalisée.
 

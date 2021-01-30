@@ -78,6 +78,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/lang-btn'
 			},
 			{
+				title: 'NotificationBar',
+				to: '/composants/notification-bar'
+			},
+			{
 				title: 'PageCard',
 				to: '/composants/page-card'
 			},

@@ -25,13 +25,13 @@ Il est nécessaire de lister manuellement toutes les icônes possible afin de n'
 
 ### Bouton d'action
 
-Vous pouvez ajouter un bouton d'action à chaque item grâce à la propriété `action` sur l'item.
+Vous pouvez ajouter un bouton d'action à chaque item en utilisant la propriété `action` sur l'item.
 
 <doc-example file="data-list/data-list-action"></doc-example>
 
 ### Étiquette
 
-Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'affichage de celle-ci grâce à la propriété `options` sur l'item.
+Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'affichage de celle-ci en utilisant la propriété `options` sur l'item.
 
 <doc-example file="data-list/data-list-chip"></doc-example>
 
@@ -61,7 +61,7 @@ Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `Data
 
 <doc-example file="data-list/data-list-options"></doc-example>
 
-### Utilisation des slots
+### Slots
 
 Vous pouvez utiliser le slot `title` pour personnaliser le titre.
 

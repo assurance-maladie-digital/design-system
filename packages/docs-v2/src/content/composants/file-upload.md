@@ -32,13 +32,13 @@ Vous pouvez spécifier la prop `accept` pour définir quels types de fichiers l'
 
 ### Utilisation des slots
 
-#### Personnalisation par éléments
+#### Textes et icône
 
-Vous pouvez utiliser les slots pour remplacer les textes et l'icône par défaut.
+Vous pouvez utiliser les slots `action-text`, `or`, `button-text`, `info-text` et `icon` pour remplacer les textes et l'icône par défaut.
 
 <doc-example file="file-upload/file-upload-slots"></doc-example>
 
-#### Remplacement du contenu par défaut
+#### Contenu par défaut
 
 Vous pouvez utiliser le slot `placeholder` pour remplacer le contenu par défaut.
 
