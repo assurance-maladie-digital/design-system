@@ -1,3 +1,5 @@
+import fr from 'vuetify/es5/locale/fr';
+
 const lightTheme = {
 	// Brand
 	primary: '#0c419a',
@@ -20,5 +22,11 @@ export default {
 	},
 	icons: {
 		iconfont: 'mdiSvg'
+	},
+	lang: {
+		locales: {
+			fr
+		},
+		current: 'fr'
 	}
 };
