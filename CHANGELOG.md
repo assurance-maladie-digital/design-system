@@ -3,7 +3,7 @@
 ### Vue Dot
 
 - 💥 **Changements majeurs**
-  - **notification:** Mise à jour de l'API du module ([#871](https://github.com/assurance-maladie-digital/design-system/pull/871))
+  - **notification:** Mise à jour de l'API du module ([#871](https://github.com/assurance-maladie-digital/design-system/pull/871)) ([a867125](https://github.com/assurance-maladie-digital/design-system/commit/a8671251f916556f81c71d0ac088c8adff082e60))
 
 - ✨ **Nouvelles fonctionnalités**
   - **DataList:** Ajout de l'attribut `class` dans les items ([#851](https://github.com/assurance-maladie-digital/design-system/pull/851)) ([232b0e7](https://github.com/assurance-maladie-digital/design-system/commit/232b0e79ba7fcd12f2647fde03c86907d4ba8c74))
@@ -41,6 +41,7 @@
   - **vuetify-loader:** Mise à jour vers la `v1.7.1` ([#856](https://github.com/assurance-maladie-digital/design-system/pull/856)) ([8b3cd23](https://github.com/assurance-maladie-digital/design-system/commit/8b3cd23a94994d81f9b8c43b4610c59e377e6116))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.4.0` ([#857](https://github.com/assurance-maladie-digital/design-system/pull/857)) ([b5367eb](https://github.com/assurance-maladie-digital/design-system/commit/b5367ebb03e2e1961599275155a4be5f8c4a431d))
   - **ts-jest:** Mise à jour vers la `v26.5.0` ([#865](https://github.com/assurance-maladie-digital/design-system/pull/865)) ([e75fa7b](https://github.com/assurance-maladie-digital/design-system/commit/e75fa7b9414057025394bafe0e5b2f9cd7f35d51))
+  - **eslint:** Mise à jour vers la `v7.19.0` ([#866](https://github.com/assurance-maladie-digital/design-system/pull/866)
 
 ### 📚 Guide de migration
 
