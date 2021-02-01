@@ -3,8 +3,8 @@ describe('Home page', () => {
 		cy.visit('/');
 	});
 
-	it('displays a notification when notify button is pressed', () => {
-		cy.dataCy('notify').click();
+	it('displays a notification when send notification button is pressed', () => {
+		cy.dataCy('sendNotification').click();
 		cy.dataCy('notificationBar').should('have.class', 'v-snack--active');
 	});
 

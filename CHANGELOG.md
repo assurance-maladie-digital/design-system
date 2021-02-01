@@ -20,6 +20,7 @@
 
 - ♻️ **Refactoring**
   - **template:** Réécriture du commentaire du service API exemple `folders` ([#841](https://github.com/assurance-maladie-digital/design-system/pull/841)) ([d3b9ea3](https://github.com/assurance-maladie-digital/design-system/commit/d3b9ea304baa84b76dc5d23f5ac7b33d7d0c2e17))
+  - **template:** Mise à jour de l'utilisation du module `notification` ([#873](https://github.com/assurance-maladie-digital/design-system/pull/873))
 
 - 🔥 **Suppressions**
   - **template:** Suppression de la classe `main-ctn` non utilisée dans le composant `App` ([#842](https://github.com/assurance-maladie-digital/design-system/pull/842)) ([9100b7a](https://github.com/assurance-maladie-digital/design-system/commit/9100b7a49024e9a50504b1987560b04dfc49dcbf))
