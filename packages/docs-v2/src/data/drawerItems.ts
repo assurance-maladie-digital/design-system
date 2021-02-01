@@ -115,6 +115,15 @@ export const drawerItems: DrawerItem[] = [
 						to: '/directives/debounce'
 					}
 				]
+			},
+			{
+				title: 'Starter Kit',
+				items: [
+					{
+						title: 'Explorer',
+						to: '/starter-kit/explorer'
+					}
+				]
 			}
 		]
 	}

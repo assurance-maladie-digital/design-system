@@ -3,7 +3,7 @@
 		<VMain>
 			<div class="home-page d-flex h-100 white">
 				<div class="home-content d-flex flex-column align-start justify-center flex-grow-1 px-16 py-10">
-					<div class="d-flex align-center flex-wrap no-max-width my-n2 mx-n4">
+					<div class="d-flex align-center flex-wrap max-width-none my-n2 mx-n4">
 						<img
 							width="250px"
 							height="114px"
@@ -35,7 +35,7 @@
 						</p>
 					</template>
 
-					<div class="d-flex flex-wrap no-max-width ma-n3">
+					<div class="d-flex flex-wrap max-width-none ma-n3">
 						<VBtn
 							color="primary"
 							to="/demarrer/introduction"
