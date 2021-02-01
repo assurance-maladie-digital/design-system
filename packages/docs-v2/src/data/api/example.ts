@@ -21,13 +21,13 @@ export const api: Api = {
 			{
 				name: 'tooltip-dution',
 				type: 'number',
-				description: `La durée d'affichage du tooltip en millisecondes.`,
+				description: 'La durée d\'affichage du tooltip en millisecondes.',
 				default: 'gh:sortItems'
 			},
 			{
 				name: 'tooltip-duration',
 				type: 'number',
-				description: `La durée d'affichage du tooltip en millisecondes.`,
+				description: 'La durée d\'affichage du tooltip en millisecondes.',
 				default: 2500
 			},
 			{
@@ -46,7 +46,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'icon',
-				description: `Slot pour remplacer l'icône par défaut.`
+				description: 'Slot pour remplacer l\'icône par défaut.'
 			},
 			{
 				name: 'tooltip',
@@ -83,21 +83,27 @@ export const api: Api = {
 			{
 				name: 'value',
 				description: '',
-				type: ['((e: Event) => void)', 'ClickOutsideBindingArgs'],
+				type: [
+					'((e: Event) => void)',
+					'ClickOutsideBindingArgs'
+				],
 				default: 'undefined',
 				example: {
 					handler: '(e: Event) => void',
 					'closeConditional?': '(e: Event) => boolean',
 					'include?': '() => HTMLElement[]',
 					handler2: '(e: Event) => void',
-					'closeCondtional?': '(e: Event) => boolean',
+					'closeConditional': '(e: Event) => boolean',
 					'include': '() => HTMLElement[]'
 				}
 			},
 			{
 				name: 'argument',
 				description: '',
-				type: ['((e: Event) => void)', 'ClickOutsideBindingArgs'],
+				type: [
+					'((e: Event) => void)',
+					'ClickOutsideBindingArgs'
+				],
 				default: 'undefined',
 				example: 'test'
 			}
@@ -106,7 +112,10 @@ export const api: Api = {
 			{
 				name: 'ss',
 				description: 'aa',
-				type: ['((e: Event) => void)', 'ClickOutsideBindingArgs'],
+				type: [
+					'((e: Event) => void)',
+					'ClickOutsideBindingArgs'
+				],
 				snippet: `
 <template>
 	<VCard v-intersect="onIntersect">

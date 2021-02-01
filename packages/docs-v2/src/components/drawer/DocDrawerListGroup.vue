@@ -32,7 +32,7 @@
 				class="mt-3 mb-2 ml-16"
 			/>
 
-			<VListGroup
+			<DocDrawerListGroup
 				v-else-if="child.items"
 				:key="`sub-group-${i}`"
 				:item="child"

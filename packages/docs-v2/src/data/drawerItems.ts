@@ -1,6 +1,6 @@
 import { DrawerItem } from '~/types/drawer';
 
-import { mdiSpeedometer, mdiViewDashboard } from '@mdi/js';
+import { mdiSpeedometer, mdiViewDashboard, mdiCogs } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
 	{
@@ -78,6 +78,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/lang-btn'
 			},
 			{
+				title: 'NotificationBar',
+				to: '/composants/notification-bar'
+			},
+			{
 				title: 'PageCard',
 				to: '/composants/page-card'
 			},
@@ -96,6 +100,21 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'UploadWorkflow',
 				to: '/composants/upload-workflow'
+			}
+		]
+	},
+	{
+		title: 'Composants techniques',
+		icon: mdiCogs,
+		items: [
+			{
+				title: 'Directives',
+				items: [
+					{
+						title: 'Debounce',
+						to: '/directives/debounce'
+					}
+				]
 			}
 		]
 	}

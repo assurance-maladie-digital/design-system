@@ -4,8 +4,8 @@
 		color="#1f1f1f"
 		class="doc-code-block overflow-hidden"
 		:class="{ 'mb-4': !noMargin }"
+		:rounded="rounded"
 		outlined
-		rounded
 		dark
 	>
 		<slot />
@@ -30,6 +30,10 @@
 			tile: {
 				type: Boolean,
 				default: false
+			},
+			rounded: {
+				type: Boolean,
+				default: true
 			},
 			noMargin: {
 				type: Boolean,

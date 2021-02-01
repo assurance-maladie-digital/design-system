@@ -16,9 +16,9 @@ Vous pouvez ajouter un titre ainsi qu'une description à votre formulaire en uti
 
 <doc-example file="form-field-list/form-field-list-props"></doc-example>
 
-### Gestion des évènements
+### Évènements
 
-Vous pouvez réagir lorsque la valeur d'un champ du formulaire change grâce à l'évènement `change`, ainsi que lorsque la valeur d'un champ dynamique (avec l'attribut `dynamic: true`) change grâce à l'événement `refresh`.
+Vous pouvez réagir lorsque la valeur d'un champ du formulaire change en utilisant l'évènement `change`, ainsi que lorsque la valeur d'un champ dynamique (avec l'attribut `dynamic`) change en utilisant l'événement `refresh`.
 
 <doc-example file="form-field-list/form-field-list-events"></doc-example>
 

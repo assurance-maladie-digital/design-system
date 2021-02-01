@@ -91,7 +91,7 @@
 		<VThemeProvider :dark="dark">
 			<VSheet
 				class="pa-4"
-				rounded
+				rounded="b"
 			>
 				<VueFile :file="file" />
 			</VSheet>

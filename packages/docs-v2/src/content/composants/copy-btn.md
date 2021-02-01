@@ -17,12 +17,6 @@ Vous pouvez masquer le tooltip en utilisant la prop `hide-tooltip`.
 
 <doc-example file="copy-btn/copy-btn-no-tooltip"></doc-example>
 
-### Utilisation des slots
-
-Vous pouvez utiliser les slots pour personnaliser l'icône ainsi que le contenu du tooltip.
-
-<doc-example file="copy-btn/copy-btn-slots"></doc-example>
-
 </doc-tab-item>
 
 <doc-tab-item label="API">
@@ -36,6 +30,12 @@ Vous pouvez utiliser les slots pour personnaliser l'icône ainsi que le contenu 
 Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `CopyBtn` en utilisant la prop `vuetify-options`.
 
 <doc-example file="copy-btn/copy-btn-options"></doc-example>
+
+### Slots
+
+Vous pouvez utiliser les slots `icon` et `tooltip` pour personnaliser l'icône ainsi que le contenu du tooltip.
+
+<doc-example file="copy-btn/copy-btn-slots"></doc-example>
 
 </doc-tab-item>
 

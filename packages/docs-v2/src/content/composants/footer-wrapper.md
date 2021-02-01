@@ -12,11 +12,11 @@ position: 11
 
 ### Bouton inert
 
-Vous pouvez rendre un bouton inactif grâce à la prop `inert`. Celui-ci sera alors désactivé et rendu en tant que `div`.
+Vous pouvez rendre un bouton inactif en utilisant la prop `inert`. Celui-ci sera alors désactivé et généré en tant que `div`.
 
 <doc-example file="footer-wrapper/footer-wrapper-inert"></doc-example>
 
-### Utilisation du slot
+### Slot par défaut
 
 Vous pouvez utiliser le slot par défaut pour ajouter du contenu.
 
