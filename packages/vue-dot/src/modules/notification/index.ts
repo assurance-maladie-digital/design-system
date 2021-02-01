@@ -1,37 +1,36 @@
 import { Module, ActionTree, MutationTree, GetterTree } from 'vuex';
+
 import { RootState } from '../';
+import { NotificationState, NotificationObj } from './types';
 
-export interface NotificationObj {
-	type: string;
-	message: string;
-	icon: string;
-}
+import { notify } from './notify';
 
-/** The module contains only one notification at the time */
-export interface NotificationState {
-	notification: NotificationObj | null;
-}
-
-const state: NotificationState = {
+export const state: NotificationState = {
 	notification: null
 };
 
 export const actions: ActionTree<NotificationState, RootState> = {
-	notify({ commit }, notification: NotificationObj) {
-		commit('ADD', notification);
+	add({ commit, state }, notification: NotificationObj) {
+		notify(commit, state, notification);
 	},
-	rmNotif({ commit }) {
-		commit('DELETE');
+	addNotification({ commit, state }, notification: NotificationObj) {
+		notify(commit, state, notification);
+	},
+	clear({ commit }) {
+		commit('CLEAR');
+	},
+	clearNotification({ commit }) {
+		commit('CLEAR');
 	}
 };
 
 export const mutations: MutationTree<NotificationState> = {
-	/** Add (or replace) with the new notification */
+	/** Add or replace with the new notification */
 	ADD(state, notification: NotificationObj) {
 		state.notification = notification;
 	},
-	/** Simply erase the notification */
-	DELETE(state) {
+	/** Clear the notification */
+	CLEAR(state) {
 		state.notification = null;
 	}
 };
