@@ -31,7 +31,7 @@ export const contentExplorerItems: TreeviewItem[] = [
 						children: [
 							{
 								name: 'matomo.js',
-								path: 'todo'
+								file: 'js'
 							}
 						]
 					},
@@ -125,11 +125,92 @@ export const contentExplorerItems: TreeviewItem[] = [
 				children: [
 					{
 						name: 'layout',
-						path: 'todo'
+						path: 'todo',
+						children: [
+							{
+								name: 'tests',
+								path: 'todo',
+								children: [
+									{
+										name: 'AppFooter.spec.ts',
+										path: 'todo',
+										file: 'ts'
+									},
+									{
+										name: 'AppHeader.spec.ts',
+										path: 'todo',
+										file: 'ts'
+									},
+									{
+										name: 'AppToolbar.spec.ts',
+										path: 'todo',
+										file: 'ts'
+									},
+									{
+										name: 'HeaderMenu.spec.ts',
+										path: 'todo',
+										file: 'ts'
+									}
+								]
+							},
+							{
+								name: 'AppFooter.vue',
+								path: 'todo',
+								file: 'vue'
+							},
+							{
+								name: 'AppHeader.vue',
+								path: 'todo',
+								file: 'vue'
+							},
+							{
+								name: 'AppToolbar.vue',
+								path: 'todo',
+								file: 'vue'
+							},
+							{
+								name: 'HeaderMenu.vue',
+								path: 'todo',
+								file: 'vue'
+							},
+							{
+								name: 'index.ts',
+								path: 'todo',
+								file: 'ts'
+							},
+							{
+								name: 'README.md',
+								path: 'todo',
+								file: 'md²'
+							}
+						]
 					},
 					{
 						name: 'Links',
-						path: 'todo'
+						path: 'todo',
+						children: [
+							{
+								name: 'tests',
+								path: 'todo',
+								children: [
+									{
+										name: 'Links.spec.ts',
+										path: 'todo',
+										file: 'ts'
+									}
+								]
+							},
+							{
+								name: 'index.ts',
+								path: 'todo',
+								file: 'ts'
+							},
+							{
+								name: 'Links.vue',
+								path: 'todo',
+								file: 'vue'
+							}
+						]
 					}
 				]
 			},
@@ -198,7 +279,25 @@ export const contentExplorerItems: TreeviewItem[] = [
 			},
 			{
 				name: 'services',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'folders',
+						path: 'todo',
+						children: [
+							{
+								name: 'api.ts',
+								path: 'todo',
+								file: 'ts'
+							}
+						]
+					},
+					{
+						name: 'dateFormatter.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
 			},
 			{
 				name: 'store',
@@ -234,7 +333,18 @@ export const contentExplorerItems: TreeviewItem[] = [
 			},
 			{
 				name: 'translations',
-				path: 'todo'
+				path: 'todo',
+				children: [
+					{
+						name: 'fr',
+						path: 'todo'
+					},
+					{
+						name: 'index.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
 			},
 			{
 				name: 'types',
@@ -333,7 +443,100 @@ export const contentExplorerItems: TreeviewItem[] = [
 	},
 	{
 		name: 'tests',
-		path: 'todo'
+		path: 'todo',
+		children: [
+			{
+				name: 'e2e',
+				path: 'todo',
+				children: [
+					{
+						name: 'plugins',
+						path: 'todo',
+						children: [
+							{
+								name: 'index.js',
+								path: 'todo',
+								file: 'js'
+							}
+						]
+					},
+					{
+						name: 'specs',
+						path: 'todo',
+						children: [
+							{
+								name: 'About.spec.ts',
+								path: 'todo',
+								file: 'ts'
+							},
+							{
+								name: 'Home.spec.ts',
+								path: 'todo',
+								file: 'ts'
+							},
+							{
+								name: 'NotFound.spec.ts',
+								path: 'todo',
+								file: 'ts'
+							}
+						]
+					},
+					{
+						name: 'support',
+						path: 'todo',
+						children: [
+							{
+								name: 'commands.js',
+								path: 'todo',
+								file: 'js'
+							},
+							{
+								name: 'index.js',
+								path: 'todo',
+								file: 'js'
+							}
+						]
+					},
+					{
+						name: 'types',
+						path: 'todo',
+						children: [
+							{
+								name: 'index.d.ts',
+								path: 'todo',
+								file: 'ts'
+							}
+						]
+					},
+					{
+						name: 'eslintrc.js',
+						path: 'todo',
+						file: 'js'
+					},
+					{
+						name: 'tsconfig.json',
+						path: 'todo',
+						file: 'json'
+					}
+				]
+			},
+			{
+				name: 'unit',
+				path: 'todo',
+				children: [
+					{
+						name: 'App.spec.ts',
+						path: 'todo',
+						file: 'ts'
+					},
+					{
+						name: 'index.ts',
+						path: 'todo',
+						file: 'ts'
+					}
+				]
+			}
+		]
 	},
 	{
 		name: '.browserslist',

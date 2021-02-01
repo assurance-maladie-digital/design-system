@@ -3,6 +3,7 @@
 		<VTreeview
 			v-model="tree"
 			:items="items"
+			hoverable
 			activatable
 			return-object
 			item-key="name"
@@ -95,9 +96,17 @@
 		treeviewUpdated(activeItems: TreeviewItem[]): void {
 			const activeItem = activeItems[0];
 
-			if (activeItem) {
-				this.getContent(activeItem.path);
+			if (!activeItem) {
+				this.document = null;
+				return;
 			}
+
+			if (!activeItem.path) {
+				this.getContent('no-content');
+				return;
+			}
+
+			this.getContent(activeItem.path);
 		}
 
 		async getContent(path: string): Promise<void> {

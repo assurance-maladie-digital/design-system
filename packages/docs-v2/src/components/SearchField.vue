@@ -75,7 +75,6 @@
 		}
 	})
 	export default class SearchField extends Vue {
-		$content!: contentFunc;
 		$refs!: Refs<{
 			search: SearchInput;
 		}>;
