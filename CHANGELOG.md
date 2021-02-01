@@ -2,6 +2,9 @@
 
 ### Vue Dot
 
+- 💥 **Changements majeurs**
+  - **notification:** Mise à jour de l'API du module ([#871](https://github.com/assurance-maladie-digital/design-system/pull/871))
+
 - ✨ **Nouvelles fonctionnalités**
   - **DataList:** Ajout de l'attribut `class` dans les items ([#851](https://github.com/assurance-maladie-digital/design-system/pull/851)) ([232b0e7](https://github.com/assurance-maladie-digital/design-system/commit/232b0e79ba7fcd12f2647fde03c86907d4ba8c74))
 
@@ -37,9 +40,27 @@
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.1.0` ([#855](https://github.com/assurance-maladie-digital/design-system/pull/855)) ([ec99581](https://github.com/assurance-maladie-digital/design-system/commit/ec995810e6d4292917dc9a935fa8a79c63b04a42))
   - **vuetify-loader:** Mise à jour vers la `v1.7.1` ([#856](https://github.com/assurance-maladie-digital/design-system/pull/856)) ([8b3cd23](https://github.com/assurance-maladie-digital/design-system/commit/8b3cd23a94994d81f9b8c43b4610c59e377e6116))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.4.0` ([#857](https://github.com/assurance-maladie-digital/design-system/pull/857)) ([b5367eb](https://github.com/assurance-maladie-digital/design-system/commit/b5367ebb03e2e1961599275155a4be5f8c4a431d))
-  - **ts-jest:** Mise à jour vers la `v26.5.0` ([#865](https://github.com/assurance-maladie-digital/design-system/pull/865))
+  - **ts-jest:** Mise à jour vers la `v26.5.0` ([#865](https://github.com/assurance-maladie-digital/design-system/pull/865)) ([e75fa7b](https://github.com/assurance-maladie-digital/design-system/commit/e75fa7b9414057025394bafe0e5b2f9cd7f35d51))
 
 ### 📚 Guide de migration
+
+### Renommer `notify` et `rmNotif`
+
+Les méthodes `notify` et `rmNotif` du module `notification` ont été renommées en `addNotification` et `clearNotification`, vous pouvez les renommer à travers votre projet, par exemple :
+
+```diff
+-methods: mapActions('notification', ['notify', 'rmNotif'])
++methods: mapActions('notification', ['addNotification', 'clearNotification'])
+```
+
+Deux méthodes `add` et `clear` on également été ajoutées pour simplifier l'utilisation hors des composants :
+
+```diff
+-store.dispatch('notification/notify', notification);
++store.dispatch('notification/add', notification);
+-store.dispatch('notification/rmNotif');
++store.dispatch('notification/clear');
+```
 
 #### Renommer `showCreateBtn` et `createBtnLabel` sur `TableToolbar`
 

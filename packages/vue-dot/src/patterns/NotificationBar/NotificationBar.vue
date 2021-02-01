@@ -24,7 +24,7 @@
 					...attrs,
 					...options.btn
 				}"
-				@click="rmNotif"
+				@click="clearNotification"
 			>
 				{{ closeText }}
 			</VBtn>
@@ -40,10 +40,10 @@
 	import { locales } from './locales';
 
 	import { mapActions, mapState } from 'vuex';
-	import { NotificationObj } from '../../modules/notification';
 
 	import { customizable } from '../../mixins/customizable';
 
+	import { NotificationObj } from '../../modules/notification/types';
 	const Props = Vue.extend({
 		props: {
 			/** The text of the close button */
@@ -62,9 +62,9 @@
 	 */
 	@Component<NotificationBar>({
 		computed: mapState('notification', ['notification']),
-		methods: mapActions('notification', ['rmNotif']),
+		methods: mapActions('notification', ['clearNotification']),
 		watch: {
-			notification() {
+			notification(): void {
 				// Compute snackbar color only when it's being displayed
 				// to avoid seeing the default color on hide transition
 				if (this.notification) {
@@ -76,7 +76,7 @@
 	export default class NotificationBar extends MixinsDeclaration {
 		// We need to declare these types since there is
 		// no Vuex instance when building the library
-		rmNotif!: () => void;
+		clearNotification!: () => void;
 		notification!: NotificationObj | null;
 
 		snackbarColor: string | null = null;
@@ -85,13 +85,13 @@
 			// Remove notification if present when the
 			// component is loaded the first time
 			if (this.notification) {
-				this.rmNotif();
+				this.clearNotification();
 			}
 		}
 
 		beforeDestroy() {
-			// Clear notification on end lifecycle
-			this.rmNotif();
+			// Clear notification on lifecycle end
+			this.clearNotification();
 		}
 	}
 </script>
