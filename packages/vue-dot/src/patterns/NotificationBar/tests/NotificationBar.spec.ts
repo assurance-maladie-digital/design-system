@@ -9,7 +9,7 @@ localVue.use(Vuex);
 
 import NotificationBar from '../';
 
-import { NotificationState } from '../../../modules/notification';
+import { NotificationState } from '../../../modules/notification/types';
 
 let wrapper: Wrapper<Vue>;
 
@@ -30,7 +30,7 @@ describe('NotificationBar', () => {
 		};
 
 		actions = {
-			rmNotif: jest.fn()
+			clearNotification: jest.fn()
 		};
 
 		store = new Vuex.Store({
