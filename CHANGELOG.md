@@ -7,6 +7,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **DataList:** Ajout de l'attribut `class` dans les items ([#851](https://github.com/assurance-maladie-digital/design-system/pull/851)) ([232b0e7](https://github.com/assurance-maladie-digital/design-system/commit/232b0e79ba7fcd12f2647fde03c86907d4ba8c74))
+  - **NotificationBar:** Ajout d'icônes par défaut ([#872](https://github.com/assurance-maladie-digital/design-system/pull/872))
 
 - ♻️ **Refactoring**
   - **TableToolbar:** Renommage de `createBtn` en `addBtn` ([#849](https://github.com/assurance-maladie-digital/design-system/pull/849)) ([98a8ce3](https://github.com/assurance-maladie-digital/design-system/commit/98a8ce335350350174242452fa90f41f11452e72))
@@ -41,7 +42,7 @@
   - **eslint:** Mise à jour vers la `v7.19.0` ([#866](https://github.com/assurance-maladie-digital/design-system/pull/866) ([d96d11e](https://github.com/assurance-maladie-digital/design-system/commit/d96d11ee9b14c12ea7729e7a17fab45a432d16fb))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.6.0` ([#867](https://github.com/assurance-maladie-digital/design-system/pull/867)) ([b66104c](https://github.com/assurance-maladie-digital/design-system/commit/b66104c64aa345540ce81c7dc8526fa62b147299))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.2` ([#875](https://github.com/assurance-maladie-digital/design-system/pull/875)) ([47223ba](https://github.com/assurance-maladie-digital/design-system/commit/47223ba72aeb3c5e83ccbc6251b3c7799f976641))
-  - **sass:** Mise à jour vers la `v1.32.6` ([#876](https://github.com/assurance-maladie-digital/design-system/pull/876))
+  - **sass:** Mise à jour vers la `v1.32.6` ([#876](https://github.com/assurance-maladie-digital/design-system/pull/876)) ([65a6ac8](https://github.com/assurance-maladie-digital/design-system/commit/65a6ac83c26e2cf141f67948adf82683683d5490))
 
 ### 📚 Guide de migration
 
