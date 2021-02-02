@@ -14,7 +14,7 @@ position: 16
 
 Vous pouvez modifier les langues disponibles dans la liste en utilisant la prop `available-languages`.
 
-<doc-example file="lang-btn/lang-btn-available-languages"></doc-example>
+<doc-example file="lang-btn/available-languages"></doc-example>
 
 </doc-tab-item>
 
@@ -28,7 +28,7 @@ Vous pouvez modifier les langues disponibles dans la liste en utilisant la prop 
 
 Vous pouvez personnaliser les composants Vuetify contenus dans l'élement `LangBtn` en utilisant la prop `vuetify-options`.
 
-<doc-example file="lang-btn/lang-btn-options"></doc-example>
+<doc-example file="lang-btn/options"></doc-example>
 
 </doc-tab-item>
 

@@ -21,13 +21,13 @@ Cependant, il est possible d'ajouter une identifiant sur les notifications et de
 
 Vous pouvez envoyer des notifications de type *succès*, *erreur*, *avertissement* ou *information*.
 
-<doc-example file="notification-bar/notification-bar-types"></doc-example>
+<doc-example file="notification-bar/types"></doc-example>
 
 ### Texte du bouton
 
 Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la prop `close-btn-text`.
 
-<doc-example file="notification-bar/notification-bar-label"></doc-example>
+<doc-example file="notification-bar/label"></doc-example>
 
 </doc-tab-item>
 
@@ -41,7 +41,7 @@ Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la pro
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `NotificationBar` en utilisant la prop `vuetify-options`.
 
-<doc-example file="notification-bar/notification-bar-options"></doc-example>
+<doc-example file="notification-bar/options"></doc-example>
 
 </doc-tab-item>
 

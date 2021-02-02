@@ -14,13 +14,13 @@ position: 9
 
 Vous pouvez afficher un code d'erreur HTTP en utilisant la prop `code`.
 
-<doc-example file="error-page/error-page-code"></doc-example>
+<doc-example file="error-page/code"></doc-example>
 
 ### Bouton d'action masqué
 
 Vous pouvez masquer le bouton d'action en utilisant la prop `no-btn`.
 
-<doc-example file="error-page/error-page-no-btn"></doc-example>
+<doc-example file="error-page/no-btn"></doc-example>
 
 </doc-tab-item>
 

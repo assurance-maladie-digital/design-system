@@ -20,7 +20,7 @@ Le titre ne doit pas remplacer le label, qui identifie le champ pour les utilisa
 
 </doc-alert>
 
-<doc-example file="form-field/form-field-question"></doc-example>
+<doc-example file="form-field/question"></doc-example>
 
 ### Types de champs
 
@@ -28,11 +28,11 @@ Vous retrouvez ci-dessous un exemple de chaque type de champ et leurs spécifici
 
 #### Champ texte
 
-<doc-example file="form-field/form-field-text"></doc-example>
+<doc-example file="form-field/text"></doc-example>
 
 #### Champ zone de texte
 
-<doc-example file="form-field/form-field-textarea"></doc-example>
+<doc-example file="form-field/textarea"></doc-example>
 
 #### Champ nombre
 
@@ -42,31 +42,31 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 
 </doc-alert>
 
-<doc-example file="form-field/form-field-number"></doc-example>
+<doc-example file="form-field/number"></doc-example>
 
 #### Champ mot de passe
 
-<doc-example file="form-field/form-field-password"></doc-example>
+<doc-example file="form-field/password"></doc-example>
 
 #### Champ date
 
-<doc-example file="form-field/form-field-date"></doc-example>
+<doc-example file="form-field/date"></doc-example>
 
 #### Champ période
 
-<doc-example file="form-field/form-field-period"></doc-example>
+<doc-example file="form-field/period"></doc-example>
 
 #### Champ select
 
-<doc-example file="form-field/form-field-select"></doc-example>
+<doc-example file="form-field/select"></doc-example>
 
 #### Champ select slider
 
-<doc-example file="form-field/form-field-select-slider"></doc-example>
+<doc-example file="form-field/select-slider"></doc-example>
 
 #### Champ select bouton
 
-<doc-example file="form-field/form-field-select-button"></doc-example>
+<doc-example file="form-field/select-button"></doc-example>
 
 </doc-tab-item>
 

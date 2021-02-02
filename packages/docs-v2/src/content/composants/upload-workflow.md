@@ -14,19 +14,19 @@ position: 22
 
 Vous pouvez réagir lorsque la liste des fichiers est mise à jour en utilisant l'évènement `change`, et réagir aux erreurs de validation en utilisant l'événement `error`.
 
-<doc-example file="upload-workflow/upload-workflow-events"></doc-example>
+<doc-example file="upload-workflow/events"></doc-example>
 
 ### Un seul fichier
 
 Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue demandant à l'utilisateur de choisir quel fichier il a sélectionné ne sera pas affichée.
 
-<doc-example file="upload-workflow/upload-workflow-single-file"></doc-example>
+<doc-example file="upload-workflow/single-file"></doc-example>
 
 ### Fichiers optionnels
 
 Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
 
-<doc-example file="upload-workflow/upload-workflow-optional"></doc-example>
+<doc-example file="upload-workflow/optional"></doc-example>
 
 </doc-tab-item>
 
@@ -40,13 +40,13 @@ Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `UploadWorkflow` en utilisant la prop `vuetify-options`.
 
-<doc-example file="upload-workflow/upload-workflow-options"></doc-example>
+<doc-example file="upload-workflow/options"></doc-example>
 
 ### Slots
 
 Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
 
-<doc-example file="upload-workflow/upload-workflow-slots"></doc-example>
+<doc-example file="upload-workflow/slots"></doc-example>
 
 </doc-tab-item>
 

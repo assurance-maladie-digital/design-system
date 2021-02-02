@@ -25,13 +25,13 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
 
 En utilisant un modificateur, il est possible de régler le délai d'exécution.
 
-<doc-example file="debounce/debounce-arg"></doc-example>
+<doc-example file="debounce/arg"></doc-example>
 
 ### Champs de formulaires natifs
 
 Les champs de formulaires natifs sont également supportés.
 
-<doc-example file="debounce/debounce-native"></doc-example>
+<doc-example file="debounce/native"></doc-example>
 
 </doc-tab-item>
 

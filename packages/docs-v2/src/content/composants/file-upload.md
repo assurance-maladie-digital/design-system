@@ -20,7 +20,7 @@ Vous pouvez spécifier la prop `accept` pour définir quels types de fichiers l'
 
 </doc-alert>
 
-<doc-example file="file-upload/file-upload-rules"></doc-example>
+<doc-example file="file-upload/rules"></doc-example>
 
 </doc-tab-item>
 
@@ -36,13 +36,13 @@ Vous pouvez spécifier la prop `accept` pour définir quels types de fichiers l'
 
 Vous pouvez utiliser les slots `action-text`, `or`, `button-text`, `info-text` et `icon` pour remplacer les textes et l'icône par défaut.
 
-<doc-example file="file-upload/file-upload-slots"></doc-example>
+<doc-example file="file-upload/slots"></doc-example>
 
 #### Contenu par défaut
 
 Vous pouvez utiliser le slot `placeholder` pour remplacer le contenu par défaut.
 
-<doc-example file="file-upload/file-upload-slot-placeholder"></doc-example>
+<doc-example file="file-upload/slot-placeholder"></doc-example>
 
 </doc-tab-item>
 

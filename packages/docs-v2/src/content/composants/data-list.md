@@ -21,19 +21,19 @@ Si une icône est spécifiée mais qu'elle n'est pas trouvée dans la liste, rie
 Il est nécessaire de lister manuellement toutes les icônes possible afin de n'importer que celles que vous allez utiliser et de garantir de meilleures performances.
 </doc-alert>
 
-<doc-example file="data-list/data-list-icons"></doc-example>
+<doc-example file="data-list/icons"></doc-example>
 
 ### Bouton d'action
 
 Vous pouvez ajouter un bouton d'action à chaque item en utilisant la propriété `action` sur l'item.
 
-<doc-example file="data-list/data-list-action"></doc-example>
+<doc-example file="data-list/action"></doc-example>
 
 ### Étiquette
 
 Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l'affichage de celle-ci en utilisant la propriété `options` sur l'item.
 
-<doc-example file="data-list/data-list-chip"></doc-example>
+<doc-example file="data-list/chip"></doc-example>
 
 ### Valeurs HTML
 
@@ -45,7 +45,7 @@ Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela
 
 </doc-alert>
 
-<doc-example file="data-list/data-list-html-value"></doc-example>
+<doc-example file="data-list/html-value"></doc-example>
 
 </doc-tab-item>
 
@@ -59,13 +59,13 @@ Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela
 
 Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `DataListItem` en utilisant la propriété `options` sur les items de la liste.
 
-<doc-example file="data-list/data-list-options"></doc-example>
+<doc-example file="data-list/options"></doc-example>
 
 ### Slots
 
 Vous pouvez utiliser le slot `title` pour personnaliser le titre.
 
-<doc-example file="data-list/data-list-slot"></doc-example>
+<doc-example file="data-list/slot"></doc-example>
 
 </doc-tab-item>
 

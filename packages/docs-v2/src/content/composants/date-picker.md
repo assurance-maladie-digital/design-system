@@ -14,7 +14,7 @@ position: 7
 
 Vous pouvez afficher le `VTextField` en mode `outlined` en utilisant la prop du même nom. Cela va également mettre l'icône en mode `append` et modifier la position du menu.
 
-<doc-example file="date-picker/date-picker-outlined"></doc-example>
+<doc-example file="date-picker/outlined"></doc-example>
 
 ### Date de naissance
 
@@ -24,13 +24,13 @@ Vous pouvez permettre à l'utilisateur de sélectionner une date naissance plus 
 L'utilisateur sélectionnera l'année en premier, puis le mois et enfin le jour et ne peut pas sélectionner une date future.
 </doc-alert>
 
-<doc-example file="date-picker/date-picker-birthdate"></doc-example>
+<doc-example file="date-picker/birthdate"></doc-example>
 
 ### Weekends
 
 Vous pouvez afficher les weekends dans le calendrier en utilisant la prop `show-weekends`.
 
-<doc-example file="date-picker/date-picker-weekends"></doc-example>
+<doc-example file="date-picker/weekends"></doc-example>
 
 ### Période
 
@@ -40,7 +40,7 @@ Vous pouvez créer une période en fournissant une date de début via la prop `s
 Lorsque que la date de début est située avant la date sélectionnée (période « négative »), la période n'est pas affichée.
 </doc-alert>
 
-<doc-example file="date-picker/date-picker-range"></doc-example>
+<doc-example file="date-picker/range"></doc-example>
 
 ### Format
 
@@ -52,7 +52,7 @@ Par défaut un masque limitant les caractères pouvant être saisis dans le `VTe
 
 </doc-alert>
 
-<doc-example file="date-picker/date-picker-format"></doc-example>
+<doc-example file="date-picker/format"></doc-example>
 
 ### Règles de validation
 
@@ -66,7 +66,7 @@ Pour cela, vous pouvez utiliser les règles de validation inclues dans la librai
 - `notAfterToday`
 - `notBeforeToday`
 
-<doc-example file="date-picker/date-picker-rules" /></doc-example>
+<doc-example file="date-picker/rules" /></doc-example>
 
 </doc-tab-item>
 
@@ -80,7 +80,7 @@ Pour cela, vous pouvez utiliser les règles de validation inclues dans la librai
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `DatePicker` en utilisant la prop `vuetify-options`.
 
-<doc-example file="date-picker/date-picker-options"></doc-example>
+<doc-example file="date-picker/options"></doc-example>
 
 </doc-tab-item>
 

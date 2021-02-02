@@ -17,7 +17,7 @@
 
 	import { mapActions, mapState } from 'vuex';
 
-	import { NotificationTypes } from '@cnamts/vue-dot/src/modules/notification';
+	import { NotificationTypes } from '@cnamts/vue-dot/src/modules/notification/types';
 
 	const EXAMPLE_REF = 'type-example';
 

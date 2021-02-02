@@ -26,19 +26,19 @@ Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela
 
 </doc-alert>
 
-<doc-example file="sub-header/sub-header-data-lists"></doc-example>
+<doc-example file="sub-header/data-lists"></doc-example>
 
 ### Boutons d'actions
 
 Vous pouvez ajouter des boutons actions dans les listes de données en utilisant la propriété `action` sur les items.
 
-<doc-example file="sub-header/sub-header-action"></doc-example>
+<doc-example file="sub-header/action"></doc-example>
 
 ### Informations complémentaires
 
 Vous pouvez afficher des informations complémentaires en utilisant le slot `additional-informations`.
 
-<doc-example file="sub-header/sub-header-additional-infos"></doc-example>
+<doc-example file="sub-header/additional-infos"></doc-example>
 
 ### Mode chargement
 
@@ -50,7 +50,7 @@ Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur c
 
 </doc-alert>
 
-<doc-example file="sub-header/sub-header-loading"></doc-example>
+<doc-example file="sub-header/loading"></doc-example>
 
 </doc-tab-item>
 
@@ -64,7 +64,7 @@ Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur c
 
 Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter.
 
-<doc-example file="sub-header/sub-header-slots"></doc-example>
+<doc-example file="sub-header/slots"></doc-example>
 
 </doc-tab-item>
 

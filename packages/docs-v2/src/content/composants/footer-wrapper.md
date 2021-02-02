@@ -14,13 +14,13 @@ position: 11
 
 Vous pouvez rendre un bouton inactif en utilisant la prop `inert`. Celui-ci sera alors désactivé et généré en tant que `div`.
 
-<doc-example file="footer-wrapper/footer-wrapper-inert"></doc-example>
+<doc-example file="footer-wrapper/inert"></doc-example>
 
 ### Slot par défaut
 
 Vous pouvez utiliser le slot par défaut pour ajouter du contenu.
 
-<doc-example file="footer-wrapper/footer-wrapper-slot"></doc-example>
+<doc-example file="footer-wrapper/slot"></doc-example>
 
 </doc-tab-item>
 

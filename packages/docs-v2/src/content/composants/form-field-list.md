@@ -14,13 +14,13 @@ position: 13
 
 Vous pouvez ajouter un titre ainsi qu'une description à votre formulaire en utilisant les props `list-title` et `description`.
 
-<doc-example file="form-field-list/form-field-list-props"></doc-example>
+<doc-example file="form-field-list/props"></doc-example>
 
 ### Évènements
 
 Vous pouvez réagir lorsque la valeur d'un champ du formulaire change en utilisant l'évènement `change`, ainsi que lorsque la valeur d'un champ dynamique (avec l'attribut `dynamic`) change en utilisant l'événement `refresh`.
 
-<doc-example file="form-field-list/form-field-list-events"></doc-example>
+<doc-example file="form-field-list/events"></doc-example>
 
 </doc-tab-item>
 

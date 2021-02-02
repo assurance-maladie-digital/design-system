@@ -14,7 +14,7 @@ position: 18
 
 Vous pouvez transformer la `PageCard` en simple conteneur en la rendant transparente et en désactivant son ombre ainsi que son espacement interne.
 
-<doc-example file="page-card/page-card-transparent"></doc-example>
+<doc-example file="page-card/transparent"></doc-example>
 
 ### Largeur personnalisée
 
@@ -26,7 +26,7 @@ L'élément `PageCard` est composée d'une `VCard` contenue dans un `VLayout`. V
 
 </doc-alert>
 
-<doc-example file="page-card/page-card-width"></doc-example>
+<doc-example file="page-card/width"></doc-example>
 
 </doc-tab-item>
 
