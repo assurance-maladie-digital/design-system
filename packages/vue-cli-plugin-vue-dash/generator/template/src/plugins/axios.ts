@@ -2,7 +2,6 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 
 import { store } from '@/store';
 
-import { mdiAlert as errorIcon } from '@mdi/js';
 <% if (i18n) { %>
 import common from '@/translations/fr/common';
 <% } %>
@@ -35,10 +34,9 @@ instance.interceptors.response.use(undefined, (error: AxiosError) => {
 
 	if (errorMessage) {
 		// Send notification error
-		store.dispatch('notification/notify', {
+		store.dispatch('notification/add', {
 			type: 'error',
-			message: errorMessage,
-			icon: errorIcon
+			message: errorMessage
 		});
 	}
 

@@ -3,7 +3,7 @@ export type NotificationTypes = 'success' | 'error' | 'info' | 'warning';
 export interface NotificationObj {
 	type: NotificationTypes;
 	message: string;
-	icon: string;
+	icon?: string;
 	ref?: string;
 }
 
