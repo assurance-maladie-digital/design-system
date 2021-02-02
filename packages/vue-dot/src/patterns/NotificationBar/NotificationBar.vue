@@ -12,7 +12,7 @@
 				v-bind="options.icon"
 				class="vd-notification-icon"
 			>
-				{{ notification.icon }}
+				{{ icon }}
 			</VIcon>
 
 			{{ notification.message }}
@@ -26,7 +26,7 @@
 				}"
 				@click="clearNotification"
 			>
-				{{ closeText }}
+				{{ closeBtnText }}
 			</VBtn>
 		</template>
 	</VSnackbar>
@@ -43,11 +43,20 @@
 
 	import { customizable } from '../../mixins/customizable';
 
+	import { IndexedObject } from '../../types';
 	import { NotificationObj } from '../../modules/notification/types';
+
+	import {
+		mdiCheck,
+		mdiAlertCircle,
+		mdiInformation,
+		mdiAlert
+	} from '@mdi/js';
+
 	const Props = Vue.extend({
 		props: {
 			/** The text of the close button */
-			closeText: {
+			closeBtnText: {
 				type: String,
 				default: locales.close
 			}
@@ -79,7 +88,22 @@
 		clearNotification!: () => void;
 		notification!: NotificationObj | null;
 
+		iconMapping: IndexedObject = {
+			success: mdiCheck,
+			error: mdiAlertCircle,
+			info: mdiInformation,
+			warning: mdiAlert
+		};
+
 		snackbarColor: string | null = null;
+
+		get icon(): string | null {
+			if (!this.notification) {
+				return null;
+			}
+
+			return this.notification.icon || this.iconMapping[this.notification.type];
+		}
 
 		created() {
 			// Remove notification if present when the
