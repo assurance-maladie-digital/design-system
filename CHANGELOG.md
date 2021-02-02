@@ -41,7 +41,7 @@
   - **ts-jest:** Mise à jour vers la `v26.5.0` ([#865](https://github.com/assurance-maladie-digital/design-system/pull/865)) ([e75fa7b](https://github.com/assurance-maladie-digital/design-system/commit/e75fa7b9414057025394bafe0e5b2f9cd7f35d51))
   - **eslint:** Mise à jour vers la `v7.19.0` ([#866](https://github.com/assurance-maladie-digital/design-system/pull/866) ([d96d11e](https://github.com/assurance-maladie-digital/design-system/commit/d96d11ee9b14c12ea7729e7a17fab45a432d16fb))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.6.0` ([#867](https://github.com/assurance-maladie-digital/design-system/pull/867)) ([b66104c](https://github.com/assurance-maladie-digital/design-system/commit/b66104c64aa345540ce81c7dc8526fa62b147299))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.2` ([#874](https://github.com/assurance-maladie-digital/design-system/pull/874))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.2` ([#875](https://github.com/assurance-maladie-digital/design-system/pull/875))
 
 ### 📚 Guide de migration
 
