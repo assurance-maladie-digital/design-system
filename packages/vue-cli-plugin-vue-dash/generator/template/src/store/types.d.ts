@@ -9,7 +9,7 @@ import { NotificationObj } from '@cnamts/vue-dot/src/modules/notification';
  */
 export interface VuexBindings {
 	// modules/notification
-	notify: (notification: NotificationObj) => void;
-	rmNotif: () => void;
+	addNotification: (notification: NotificationObj) => void;
+	clearNotification: () => void;
 	notification: NotificationObj | null;
 }
