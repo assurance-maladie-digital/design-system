@@ -34,13 +34,13 @@ export const api: Api = {
 				description: 'Le texte ajouté après le nombre de résultats.<br>La marque du pluriel est ajoutée automatiquement.'
 			},
 			{
-				name: 'show-create-btn',
+				name: 'show-add-btn',
 				type: 'boolean',
 				default: false,
 				description: 'Affiche le bouton *Ajouter*.'
 			},
 			{
-				name: 'create-btn-label',
+				name: 'add-btn-label',
 				type: 'string',
 				default: `'Ajouter'`,
 				description: 'Le label du bouton *Ajouter*.'
@@ -59,7 +59,7 @@ export const api: Api = {
 				example: `{
 	toolbar: 'VToolbar',
 	textField: 'VTextField',
-	createBtn: 'VBtn',
+	addBtn: 'VBtn',
 	addIcon: 'VIcon'
 }`
 			}
