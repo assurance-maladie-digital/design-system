@@ -12,7 +12,7 @@
 				v-bind="options.icon"
 				class="vd-notification-icon"
 			>
-				{{ notification.icon }}
+				{{ icon }}
 			</VIcon>
 
 			{{ notification.message }}
@@ -24,9 +24,9 @@
 					...attrs,
 					...options.btn
 				}"
-				@click="rmNotif"
+				@click="clearNotification"
 			>
-				{{ closeText }}
+				{{ closeBtnText }}
 			</VBtn>
 		</template>
 	</VSnackbar>
@@ -40,14 +40,23 @@
 	import { locales } from './locales';
 
 	import { mapActions, mapState } from 'vuex';
-	import { NotificationObj } from '../../modules/notification';
 
 	import { customizable } from '../../mixins/customizable';
+
+	import { IndexedObject } from '../../types';
+	import { NotificationObj } from '../../modules/notification/types';
+
+	import {
+		mdiCheck,
+		mdiAlertCircle,
+		mdiInformation,
+		mdiAlert
+	} from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
 			/** The text of the close button */
-			closeText: {
+			closeBtnText: {
 				type: String,
 				default: locales.close
 			}
@@ -62,9 +71,9 @@
 	 */
 	@Component<NotificationBar>({
 		computed: mapState('notification', ['notification']),
-		methods: mapActions('notification', ['rmNotif']),
+		methods: mapActions('notification', ['clearNotification']),
 		watch: {
-			notification() {
+			notification(): void {
 				// Compute snackbar color only when it's being displayed
 				// to avoid seeing the default color on hide transition
 				if (this.notification) {
@@ -76,22 +85,37 @@
 	export default class NotificationBar extends MixinsDeclaration {
 		// We need to declare these types since there is
 		// no Vuex instance when building the library
-		rmNotif!: () => void;
+		clearNotification!: () => void;
 		notification!: NotificationObj | null;
 
+		iconMapping: IndexedObject = {
+			success: mdiCheck,
+			error: mdiAlertCircle,
+			info: mdiInformation,
+			warning: mdiAlert
+		};
+
 		snackbarColor: string | null = null;
+
+		get icon(): string | null {
+			if (!this.notification) {
+				return null;
+			}
+
+			return this.notification.icon || this.iconMapping[this.notification.type];
+		}
 
 		created() {
 			// Remove notification if present when the
 			// component is loaded the first time
 			if (this.notification) {
-				this.rmNotif();
+				this.clearNotification();
 			}
 		}
 
 		beforeDestroy() {
-			// Clear notification on end lifecycle
-			this.rmNotif();
+			// Clear notification on lifecycle end
+			this.clearNotification();
 		}
 	}
 </script>

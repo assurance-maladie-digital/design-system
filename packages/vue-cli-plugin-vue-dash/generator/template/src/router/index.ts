@@ -24,7 +24,7 @@ const router = new VueRouter({
 
 router.beforeEach(async(to, from, next) => {
 	// Remove notification
-	store.dispatch('notification/rmNotif');
+	store.dispatch('notification/clear');
 <% if (i18n) { %>
 	const lang = i18n.locale;
 

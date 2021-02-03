@@ -11,5 +11,5 @@ export default {
 	about: {
 		label: 'À propos'
 	},
-	notify: 'Envoyer une notification (exemple)'
+	sendNotification: 'Envoyer une notification (exemple)'
 };

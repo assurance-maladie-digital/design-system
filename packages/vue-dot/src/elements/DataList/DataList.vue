@@ -42,6 +42,7 @@
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
 						:style="{ width: itemWidth }"
+						:class="item.class"
 						class="vd-data-list-item text-body-1 mb-2"
 						@click:action="$emit('click:item-action', index)"
 					/>
