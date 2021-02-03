@@ -28,18 +28,14 @@
 	})
 	export default class NotificationBarLabel extends Vue {
 		get showNotificationBar(): boolean {
-			if (!this.notification) {
-				return false;
-			}
-
-			return this.notification.ref === EXAMPLE_REF;
+			return this.notification && this.notification.ref === EXAMPLE_REF;
 		}
 
 		notifyUser(): void {
 			this.addNotification({
 				ref: EXAMPLE_REF,
 				type: 'info',
-				message: 'Voici un exemple de notification.'
+				message: 'Exemple de notification.'
 			});
 		}
 	}

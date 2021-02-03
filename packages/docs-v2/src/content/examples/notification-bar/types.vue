@@ -27,11 +27,7 @@
 	})
 	export default class NotificationBarTypes extends Vue {
 		get showNotificationBar(): boolean {
-			if (!this.notification) {
-				return false;
-			}
-
-			return this.notification.ref === EXAMPLE_REF;
+			return this.notification && this.notification.ref === EXAMPLE_REF;
 		}
 
 		notifyUser(): void {
