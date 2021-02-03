@@ -26,10 +26,10 @@
 			color="accent"
 			outlined
 			class="mt-8"<% if (cypress) { %>
-			data-cy="notify"<% } %>
+			data-cy="sendNotification"<% } %>
 			@click="sendNotification"
 		>
-			<% if (i18n) { %>{{ $t('views.home.notify') }}<% } else { %>Envoyer une notification (exemple)<% } %>
+			<% if (i18n) { %>{{ $t('views.home.sendNotification') }}<% } else { %>Envoyer une notification exemple<% } %>
 		</VBtn>
 	</PageCard>
 </template>
@@ -42,20 +42,17 @@
 
 	import { mapActions } from 'vuex';
 
-	import { mdiCheck } from '@mdi/js';
-
 	/** Home page */
 	@Component({
 		// Vuex bindings
-		methods: mapActions('notification', ['notify'])
+		methods: mapActions('notification', ['addNotification'])
 	})
 	export default class Home extends Vue {
 		/* istanbul ignore next */
 		sendNotification(): void {
-			this.notify({
+			this.addNotification({
 				type: 'success',
-				message: 'Exemple de notification',
-				icon: mdiCheck
+				message: 'Exemple de notification'
 			});
 		}
 
