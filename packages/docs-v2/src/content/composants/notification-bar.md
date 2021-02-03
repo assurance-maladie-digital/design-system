@@ -8,6 +8,8 @@ position: 17
 
 <doc-tab-item label="Utilisation">
 
+<doc-example file="notification-bar/usage"></doc-example>
+
 <doc-alert type="info">
 
 Il est conseillé de n'avoir qu'un seul composant `NotificationBar` par page, car leur affichage est contrôlé par le module `notification`.<br>

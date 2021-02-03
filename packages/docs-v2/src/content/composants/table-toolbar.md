@@ -8,6 +8,8 @@ position: 21
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="table-toolbar"></doc-usage>
+
 ## Exemples
 
 ### Bouton *Ajouter*

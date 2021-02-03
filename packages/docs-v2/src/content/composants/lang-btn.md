@@ -8,6 +8,8 @@ position: 16
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="lang-btn"></doc-usage>
+
 ## Exemples
 
 ### Langues disponibles

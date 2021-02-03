@@ -1,6 +1,6 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
-		<CustomIcon
+		<HeaderLoading
 			v-bind="$attrs"
 			v-on="$listeners"
 		/>
@@ -14,26 +14,22 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class CustomIconUsage extends Vue {
+	export default class HeaderLoadingUsage extends Vue {
 		defaultProps = {
-			icon: 'digital',
-			xLarge: true
+			width: '100px',
+			height: '1rem'
 		};
 
+		propsHiddenByDefault = [
+			'width',
+			'height'
+		];
+
 		options = {
-			selects: {
-				color: [
-					'#0c419a'
-				]
-			},
-			radioGroups: {
-				size: [
-					'small',
-					'medium',
-					'large',
-					'xLarge'
-				]
-			}
+			textFields: [
+				'width',
+				'height'
+			]
 		};
 	}
 </script>

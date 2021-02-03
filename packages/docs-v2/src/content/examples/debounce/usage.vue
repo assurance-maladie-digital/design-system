@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<VTextField
-			v-debounce.2000="e => search = e"
+			v-debounce="e => search = e"
 			:value="search"
 			outlined
 			clearable
@@ -29,7 +29,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DebounceArg extends Vue {
+	export default class DebounceUsage extends Vue {
 		search = '';
 	}
 </script>

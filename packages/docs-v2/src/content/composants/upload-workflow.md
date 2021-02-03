@@ -8,6 +8,8 @@ position: 22
 
 <doc-tab-item label="Utilisation">
 
+<doc-example file="upload-workflow/usage"></doc-example>
+
 ## Exemples
 
 ### Évènements

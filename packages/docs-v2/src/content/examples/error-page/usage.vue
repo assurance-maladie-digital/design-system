@@ -1,8 +1,9 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
-		<CustomIcon
+		<ErrorPage
 			v-bind="$attrs"
 			v-on="$listeners"
+			btn-route="/"
 		/>
 	</div>
 </template>
@@ -14,26 +15,21 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class CustomIconUsage extends Vue {
+	export default class ErrorPageUsage extends Vue {
 		defaultProps = {
-			icon: 'digital',
-			xLarge: true
+			pageTitle: 'Page non trouvée',
+			message: 'Il semblerait qu\'il y ait eu une erreur !'
 		};
 
 		options = {
-			selects: {
-				color: [
-					'#0c419a'
-				]
-			},
-			radioGroups: {
-				size: [
-					'small',
-					'medium',
-					'large',
-					'xLarge'
-				]
-			}
+			booleans: [
+				'noBtn'
+			],
+			textFields: [
+				'pageTitle',
+				'message',
+				'code'
+			]
 		};
 	}
 </script>

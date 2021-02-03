@@ -8,6 +8,8 @@ position: 19
 
 <doc-tab-item label="Utilisation">
 
+<doc-example file="paginated-table/usage"></doc-example>
+
 ## Exemples
 
 ### Pagination et tri côté serveur

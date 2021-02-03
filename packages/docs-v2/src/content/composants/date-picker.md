@@ -8,6 +8,8 @@ position: 7
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="date-picker"></doc-usage>
+
 ## Exemples
 
 ### Outlined

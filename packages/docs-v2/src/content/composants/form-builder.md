@@ -8,6 +8,8 @@ position: 12
 
 <doc-tab-item label="Utilisation">
 
+<doc-example file="form-builder/usage"></doc-example>
+
 ## Exemples
 
 ### Évènements

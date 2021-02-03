@@ -1,6 +1,6 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
-		<CustomIcon
+		<LangBtn
 			v-bind="$attrs"
 			v-on="$listeners"
 		/>
@@ -14,25 +14,25 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class CustomIconUsage extends Vue {
+	export default class LangBtnUsage extends Vue {
 		defaultProps = {
-			icon: 'digital',
-			xLarge: true
+			availableLanguages: [
+				'fr',
+				'en',
+				'de'
+			]
 		};
 
+		propsHiddenByDefault = [
+			'availableLanguages'
+		];
+
 		options = {
-			selects: {
-				color: [
-					'#0c419a'
-				]
-			},
-			radioGroups: {
-				size: [
-					'small',
-					'medium',
-					'large',
-					'xLarge'
-				]
+			booleans: [
+				'hideDownArrow'
+			],
+			combobox: {
+				availableLanguages: this.defaultProps.availableLanguages
 			}
 		};
 	}

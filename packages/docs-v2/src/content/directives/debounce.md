@@ -8,6 +8,8 @@ position: 23
 
 <doc-tab-item label="Utilisation">
 
+<doc-example file="debounce/usage"></doc-example>
+
 <doc-alert type="info">
 
 Avec les composants, il n'est pas possible d'utiliser la syntaxe `v-model.lazy`.

@@ -8,6 +8,8 @@ position: 10
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="file-upload"></doc-usage>
+
 ## Exemples
 
 ### Règles de validation

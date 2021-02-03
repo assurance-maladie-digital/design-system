@@ -35,7 +35,7 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class Usage extends Vue {
+	export default class DataListUsage extends Vue {
 		defaultProps = {
 			items,
 			placeholder: '…',

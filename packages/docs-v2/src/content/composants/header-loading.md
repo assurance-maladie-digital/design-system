@@ -6,6 +6,10 @@ position: 15
 
 <doc-tabs light>
 
+<doc-tab-item label="Utilisation">
+<doc-usage name="header-loading"></doc-usage>
+</doc-tab-item>
+
 <doc-tab-item label="API">
 <doc-api name="header-loading"></doc-api>
 </doc-tab-item>

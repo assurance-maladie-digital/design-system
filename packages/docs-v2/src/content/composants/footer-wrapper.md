@@ -8,6 +8,8 @@ position: 11
 
 <doc-tab-item label="Utilisation">
 
+<doc-example file="footer-wrapper/usage"></doc-example>
+
 ## Exemples
 
 ### Bouton inert

@@ -8,6 +8,8 @@ position: 8
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="dialog-box"></doc-usage>
+
 ## Exemples
 
 ### Largeur

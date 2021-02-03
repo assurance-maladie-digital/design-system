@@ -1,9 +1,11 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
-		<CustomIcon
+		<PageCard
 			v-bind="$attrs"
 			v-on="$listeners"
-		/>
+		>
+			Contenu de la page.
+		</PageCard>
 	</div>
 </template>
 
@@ -14,26 +16,26 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class CustomIconUsage extends Vue {
+	export default class PageCardUsage extends Vue {
 		defaultProps = {
-			icon: 'digital',
-			xLarge: true
+			cardPadding: 'px-6 py-4'
 		};
 
+		propsHiddenByDefault = [
+			'cardPadding'
+		];
+
+		slotContent = `
+	Contenu de la page.
+`;
+
 		options = {
-			selects: {
-				color: [
-					'#0c419a'
-				]
-			},
-			radioGroups: {
-				size: [
-					'small',
-					'medium',
-					'large',
-					'xLarge'
-				]
-			}
+			booleans: [
+				'minHeight'
+			],
+			textFields: [
+				'cardPadding'
+			]
 		};
 	}
 </script>

@@ -18,7 +18,7 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class Usage extends Vue {
+	export default class CopyBtnUsage extends Vue {
 		get folderId(): string {
 			return this.$attrs.textToCopy;
 		}
@@ -26,7 +26,6 @@
 		defaultProps = {
 			label: 'Copier le numéro de dossier',
 			textToCopy: '1456570791',
-			hideTooltip: false,
 			tooltipDuration: 2500
 		};
 

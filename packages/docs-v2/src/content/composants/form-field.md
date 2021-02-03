@@ -8,6 +8,8 @@ position: 14
 
 <doc-tab-item label="Utilisation">
 
+<doc-example file="form-field/usage"></doc-example>
+
 ## Exemples
 
 ### Titre, description et texte d'aide

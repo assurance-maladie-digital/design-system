@@ -8,6 +8,8 @@ position: 18
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="page-card"></doc-usage>
+
 ## Exemples
 
 ### Conteneur transparent

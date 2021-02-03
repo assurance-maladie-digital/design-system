@@ -8,6 +8,8 @@ position: 20
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="sub-header"></doc-usage>
+
 ## Exemples
 
 ### Listes de données

@@ -8,6 +8,8 @@ position: 9
 
 <doc-tab-item label="Utilisation">
 
+<doc-usage name="error-page"></doc-usage>
+
 ## Exemples
 
 ### Code d'erreur

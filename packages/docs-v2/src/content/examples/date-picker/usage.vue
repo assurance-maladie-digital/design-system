@@ -1,8 +1,9 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
-		<CustomIcon
+		<DatePicker
 			v-bind="$attrs"
 			v-on="$listeners"
+			text-field-class="vd-form-input"
 		/>
 	</div>
 </template>
@@ -14,26 +15,20 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class CustomIconUsage extends Vue {
-		defaultProps = {
-			icon: 'digital',
-			xLarge: true
+	export default class DatePickerUsage extends Vue {
+		options = {
+			booleans: [
+				'noCalendar',
+				'noPrependIcon',
+				'appendIcon',
+				'textFieldActivator',
+				'showWeekends',
+				'birthdate'
+			]
 		};
 
-		options = {
-			selects: {
-				color: [
-					'#0c419a'
-				]
-			},
-			radioGroups: {
-				size: [
-					'small',
-					'medium',
-					'large',
-					'xLarge'
-				]
-			}
-		};
+		tabs = [
+			'outlined'
+		];
 	}
 </script>
