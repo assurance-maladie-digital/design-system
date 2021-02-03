@@ -1,10 +1,9 @@
 <template>
 	<DocSection title="DownloadBtn">
 		<DownloadBtn
-			show-file-icon
-			text="justificatif.pdf"
-			notification="Justificatif Téléchargé"
 			:file-promise="promise"
+			text="justificatif.pdf"
+			show-file-icon
 		/>
 	</DocSection>
 </template>
@@ -18,17 +17,15 @@
 	@Component
 	export default class DownloadBtnEx extends Vue {
 		promise: Promise<AxiosResponse<string>> = new Promise((resolve) => {
-			resolve(
-				{
-					data: 'test',
-					status: 200,
-					statusText: 'test status Text',
-					headers: {
-						'content-disposition': 'filebody'
-					},
-					config: {}
-				}
-			);
+			resolve({ // TODO
+				data: 'test', // TODO filename
+				status: 200,
+				statusText: 'test status Text',
+				headers: {
+					'content-disposition': 'filebody'
+				},
+				config: {}
+			});
 		});
 	}
 </script>

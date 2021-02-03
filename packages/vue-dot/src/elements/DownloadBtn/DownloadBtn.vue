@@ -27,13 +27,14 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	// TODO: sort imports
 	import { AxiosResponse } from 'axios';
 
 	import contentDisposition from 'content-disposition';
 
 	import { downloadFile } from '../../functions/downloadFile';
 
-	import { mdiCheck, mdiDownload, mdiFile } from '@mdi/js';
+	import { mdiDownload, mdiFile } from '@mdi/js';
 
 	import { config } from './config';
 	import { locales } from './locales';
@@ -42,19 +43,20 @@
 
 	import deepMerge from 'deepmerge';
 	import { mapActions } from 'vuex';
-	import { NotificationObj } from '../../modules/notification';
+
+	import { NotificationObj } from '../../modules/notification/types';
 
 	const Props = Vue.extend({
 		props: {
-			text: {
-				type: String,
-				default: null
-			},
 			filePromise: {
 				type: Promise as PropType<Promise<AxiosResponse<string>>>,
 				required: true
 			},
-			notification: {
+			text: { // TODO?
+				type: String,
+				default: undefined
+			},
+			notification: { // TODO
 				type: [Boolean, String],
 				default: locales.downloadSuccess
 			},
@@ -68,63 +70,60 @@
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	/**
-	 * DownloadBtn is a component that download a file from a
-	 * content disposition header string
+	 * TODO: DownloadBtn is a component that download a file from
+	 * a content disposition header string
 	 */
 	@Component({
-		// Vuex bindings
-		methods: mapActions('notification', [
-			'notify'
-		])
+		inheritAttrs: false,
+		methods: mapActions('notification', ['addNotification'])
 	})
 	export default class DownloadBtn extends MixinsDeclaration {
-		notify!: (obj: NotificationObj) => void;
-
-		downloadIcon = mdiDownload;
-		successIcon = mdiCheck;
-		fileIcon = mdiFile;
-
-		loading = false;
+		addNotification!: (obj: NotificationObj) => void;
 
 		locales = locales;
 
+		downloadIcon = mdiDownload;
+		fileIcon = mdiFile;
+
+		loading = false; // TODO
+
 		/**
-		 * Compute the options for the VTextField
+		 * Compute the options for the VBtn
 		 * (Merge options and binded attributes)
 		 *
 		 * @returns {Options} Computed options
 		 */
 		get btnOptions(): Options {
-			// Merge textField options (custom or default) with
+			// Merge btn options (custom or default) with
 			// directly binded attributes (theses attributes
-			// will override 'options.textField')
+			// will override 'options.btn')
 			return deepMerge<Options>(this.options.btn, this.$attrs);
 		}
 
-		download(): void {
-			this.loading = true;
+		download(): void { // TODO
+			this.loading = true; // TODO
 
 			this.filePromise
-			.then((response) => {
-				const contentDispositionHeader = response.headers['content-disposition'] as string;
+				.then((response) => {
+					const contentDispositionHeader = response.headers['content-disposition'] as string;
 
-				const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+					const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
 
-				downloadFile(response.data, filename, 'application/pdf');
+					downloadFile(response.data, filename, 'application/pdf'); // TODO type!
 
-				if (this.notification) {
-					const message = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
+					if (this.notification) {
+						const message = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
 
-					const notification: NotificationObj = {
-						type: 'success',
-						icon: this.successIcon,
-						message
-					};
+						const notification: NotificationObj = {
+							type: 'success',
+							message
+						};
 
-					this.notify(notification);
-				}
-			})
-			.finally(() => this.loading = false);
+						this.addNotification(notification);
+					}
+				})
+				// TODO: catch
+				.finally(() => this.loading = false);
 		}
 	}
 </script>

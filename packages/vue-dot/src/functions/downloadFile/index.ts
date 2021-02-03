@@ -1,13 +1,14 @@
-import { BufferSource } from './types.d';
+import { BufferSource } from './types';
 
+// TODO
 /**
  * downloadFile function
- * It will download the content from the brower
+ * It will download the content from the browser
  *
  * @param {BufferSource | Blob | string} content The content to download
  * @param {string} filename The filename to download
  * @param {string} type The file type
- * @param {boolean} utf8Bom The utf8 file content
+ * @param {boolean} utf8Bom The utf8 file content TODO
  */
 export function downloadFile(
 	content: BufferSource | Blob | string,

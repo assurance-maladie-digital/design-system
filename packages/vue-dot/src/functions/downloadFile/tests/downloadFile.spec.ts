@@ -19,7 +19,7 @@ describe('downloadFile', () => {
 		const link = {
 			click: jest.fn(),
 			style: jest.fn(() => 'none')
-		} as any;
+		} as any; // TODO
 
 		jest.spyOn(document, 'createElement').mockImplementation(() => link);
 		const appendChildSpy = jest.spyOn(document.body, 'appendChild').mockImplementation();
@@ -88,6 +88,7 @@ describe('downloadFile', () => {
 
 		const originalNavigator = { ...navigator };
 		const navigatorSpy = jest.spyOn(global, 'navigator', 'get');
+		// TODO
 		// IE10 navigator appVersion contain .NET
 		navigatorSpy.mockImplementation(() => ({
 			...originalNavigator,

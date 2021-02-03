@@ -9,6 +9,7 @@ import { AxiosResponse } from 'axios';
 import DownloadBtn from '../DownloadBtn.vue';
 
 let wrapper: Wrapper<Vue>;
+
 const contentDispositionHeader = JSON.stringify({
 	type: 'inline',
 	parameters: {
@@ -20,7 +21,7 @@ interface TestComponent extends Vue {
 	download: () => void;
 }
 
-const filePromise: Promise<AxiosResponse<string>> = new Promise((resolve) => {
+const filePromise: Promise<AxiosResponse<string>> = new Promise((resolve) => { // TODO: extract to data to use in playground
 	resolve({
 		data: 'test',
 		status: 200,
@@ -45,7 +46,7 @@ describe('DownloadBtn', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders DownloadBtn with props', () => {
+	it('renders DownloadBtn with props', () => { // TODO
 		// Mount component
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
@@ -59,7 +60,7 @@ describe('DownloadBtn', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('testing download action', async() => {
+	it('testing download action', async() => { // TODO
 		// Mount component
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
@@ -70,7 +71,7 @@ describe('DownloadBtn', () => {
 			}
 		}, true) as Wrapper<TestComponent>;
 
-		const download = jest.spyOn(wrapper.vm, 'download' as any);
+		const download = jest.spyOn(wrapper.vm, 'download' as any); // TODO
 
 		const actionBtn = wrapper.find('button');
 		expect(actionBtn.exists()).toBe(true);
