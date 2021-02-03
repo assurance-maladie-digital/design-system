@@ -85,7 +85,7 @@ export const api: Api = {
 					'boolean'
 				],
 				default: 'undefined',
-				description: 'Masque limitant les caractères pouvant être saisis dans le `VTextField`.<br>Par défaut, il est calculé à partir de la prop `date-format`. La prop `false` permet de le désactiver.'
+				description: 'Masque limitant les caractères pouvant être saisis dans le `VTextField`.<br>Par défaut, il est calculé à partir de la prop `date-format`. La valeur `false` permet de le désactiver.'
 			},
 			{
 				name: 'birthdate',

@@ -14,7 +14,7 @@ position: 19
 
 ### Pagination et tri côté serveur
 
-Vous pouvez sauvegarder la pagination et le tri même ci ceux-si sont gérés côté serveur.
+Vous pouvez sauvegarder la pagination et le tri même si ceux-ci sont gérés côté serveur.
 
 <doc-alert type="info">
 
