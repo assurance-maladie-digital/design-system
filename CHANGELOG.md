@@ -21,7 +21,7 @@
 
 - ♻️ **Refactoring**
   - **template:** Réécriture du commentaire du service API exemple `folders` ([#841](https://github.com/assurance-maladie-digital/design-system/pull/841)) ([d3b9ea3](https://github.com/assurance-maladie-digital/design-system/commit/d3b9ea304baa84b76dc5d23f5ac7b33d7d0c2e17))
-  - **template:** Mise à jour de l'utilisation du module `notification` ([#873](https://github.com/assurance-maladie-digital/design-system/pull/873))
+  - **template:** Mise à jour de l'utilisation du module `notification` ([#873](https://github.com/assurance-maladie-digital/design-system/pull/873)) ([4cc853b](https://github.com/assurance-maladie-digital/design-system/commit/4cc853b724918f53779f309e7c94777148fbd404))
 
 - 🔥 **Suppressions**
   - **template:** Suppression de la classe `main-ctn` non utilisée dans le composant `App` ([#842](https://github.com/assurance-maladie-digital/design-system/pull/842)) ([9100b7a](https://github.com/assurance-maladie-digital/design-system/commit/9100b7a49024e9a50504b1987560b04dfc49dcbf))
@@ -44,6 +44,7 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.6.0` ([#867](https://github.com/assurance-maladie-digital/design-system/pull/867)) ([b66104c](https://github.com/assurance-maladie-digital/design-system/commit/b66104c64aa345540ce81c7dc8526fa62b147299))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.2` ([#875](https://github.com/assurance-maladie-digital/design-system/pull/875)) ([47223ba](https://github.com/assurance-maladie-digital/design-system/commit/47223ba72aeb3c5e83ccbc6251b3c7799f976641))
   - **sass:** Mise à jour vers la `v1.32.6` ([#876](https://github.com/assurance-maladie-digital/design-system/pull/876)) ([65a6ac8](https://github.com/assurance-maladie-digital/design-system/commit/65a6ac83c26e2cf141f67948adf82683683d5490))
+  - **babel:** Mise à jour du monorepo vers la `v7.12.13` ([#877](https://github.com/assurance-maladie-digital/design-system/pull/877))
 
 ### 📚 Guide de migration
 
