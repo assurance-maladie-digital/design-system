@@ -2,65 +2,82 @@
 	<VApp>
 		<VMain>
 			<div class="home-page d-flex h-100 white">
-				<div class="home-content d-flex flex-column align-start justify-center flex-grow-1 px-16 py-10">
-					<div class="d-flex align-center flex-wrap max-width-none my-n2 mx-n4">
-						<img
-							width="250px"
-							height="114px"
-							src="~/assets/logo-am.svg"
-							alt="l'Assurance Maladie"
-							class="logo-am my-2 mx-4"
-						>
+				<div class="home-content d-flex flex-column align-start flex-grow-1 px-16 py-10">
+					<div class="d-flex flex-column justify-center flex-grow-1">
+						<div class="d-flex align-center flex-wrap max-width-none my-n2 mx-n4">
+							<img
+								width="250px"
+								height="114px"
+								src="~/assets/logo-am.svg"
+								alt="l'Assurance Maladie"
+								class="logo-am my-2 mx-4"
+							>
 
-						<img
-							width="85px"
-							height="85px"
-							src="~/assets/logo-digital.svg"
-							alt="Le Digital de l'Assurance Maladie"
-							class="logo-digital my-2 mx-4"
-						>
+							<img
+								width="85px"
+								height="85px"
+								src="~/assets/logo-digital.svg"
+								alt="Le Digital de l'Assurance Maladie"
+								class="logo-digital my-2 mx-4"
+							>
+						</div>
+
+						<h1 class="home-title text-lg-h3 text-md-h4 text-sm-h5 text-h5 my-10 mt-sm-16 font-weight-bold">
+							Un Design System pour l'Assurance Maladie
+						</h1>
+
+						<template v-if="version && releaseDate">
+							<h2 class="text-h6">
+								{{ version }}
+							</h2>
+
+							<p class="mb-10">
+								Dernière publication {{ releaseDate }}
+							</p>
+						</template>
+
+						<div class="d-flex flex-wrap max-width-none ma-n3">
+							<VBtn
+								color="primary"
+								to="/demarrer/introduction"
+								class="getting-started-btn ma-3"
+								large
+							>
+								Commencer
+							</VBtn>
+
+							<VBtn
+								color="#24292e"
+								href="https://github.com/assurance-maladie-digital/design-system"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="ma-3"
+								outlined
+								large
+							>
+								<VIcon class="mr-2">
+									{{ githubIcon }}
+								</VIcon>
+
+								GitHub
+							</VBtn>
+						</div>
 					</div>
 
-					<h1 class="home-title text-lg-h3 text-md-h4 text-sm-h5 text-h5 my-10 mt-sm-16 font-weight-bold">
-						Un Design System pour l'Assurance Maladie
-					</h1>
-
-					<template v-if="version && releaseDate">
-						<h2 class="text-h6">
-							{{ version }}
-						</h2>
-
-						<p class="mb-10">
-							Dernière publication {{ releaseDate }}
-						</p>
-					</template>
-
-					<div class="d-flex flex-wrap max-width-none ma-n3">
-						<VBtn
-							color="primary"
-							to="/demarrer/introduction"
-							class="getting-started-btn ma-3"
-							large
-						>
-							Commencer
-						</VBtn>
-
-						<VBtn
-							color="#24292e"
-							href="https://github.com/assurance-maladie-digital/design-system"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="ma-3"
-							outlined
-							large
-						>
-							<VIcon class="mr-2">
-								{{ githubIcon }}
-							</VIcon>
-
-							GitHub
-						</VBtn>
-					</div>
+					<a
+						href="https://www.netlify.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="d-flex flex-column text--primary text-decoration-none text-subtitle-1 mt-16"
+					>
+						<img
+							src="https://www.netlify.com/img/global/badges/netlify-light.svg"
+							alt="Déployé par Netlify"
+							width="132px"
+							height="59px"
+							class="mt-1"
+						/>
+					</a>
 				</div>
 
 				<picture class="home-background">
