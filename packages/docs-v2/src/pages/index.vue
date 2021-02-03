@@ -26,7 +26,21 @@
 							Un Design System pour l'Assurance Maladie
 						</h1>
 
-						<template v-if="version && releaseDate">
+						<template v-if="state === 'idle' || state === 'pending'">
+							<HeaderLoading
+								width="130px"
+								height="2rem"
+								class="mb-2"
+							/>
+
+							<HeaderLoading
+								width="170px"
+								height="1.25rem"
+								class="mb-10"
+							/>
+						</template>
+
+						<template v-else-if="state === 'resolved'">
 							<h2 class="text-h6">
 								{{ version }}
 							</h2>
@@ -96,6 +110,8 @@
 
 	import { mdiGithub } from '@mdi/js';
 
+	import { STATE_ENUM } from '../types/enums/StateEnum';
+
 	import { formatReleaseDate } from '../functions/formatReleaseDate';
 	import { getLatestRelease } from '../services/github/api';
 
@@ -103,12 +119,17 @@
 	export default class Index extends Vue {
 		githubIcon = mdiGithub;
 
+		state = STATE_ENUM.idle;
+
 		version: string | null = null;
 		releaseDate: string | null = null;
 
 		async mounted() {
+			this.state = STATE_ENUM.pending;
+
 			const release = await getLatestRelease();
 
+			this.state = STATE_ENUM.resolved;
 			this.version = release.version;
 			this.releaseDate = formatReleaseDate(release.date);
 		}
