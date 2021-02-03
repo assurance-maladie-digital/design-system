@@ -48,7 +48,7 @@
 					<VThemeProvider :dark="dark">
 						<VSheet
 							:color="color"
-							class="overflow-y-auto h-100 d-flex align-center justify-center pa-4"
+							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 							max-height="400"
 							min-height="100"
 						>
@@ -111,7 +111,7 @@
 
 					<VDivider />
 
-					<div class="d-flex">
+					<div class="d-flex usage-options">
 						<VDivider
 							vertical
 							class="hidden-sm-and-down"
@@ -120,7 +120,7 @@
 						<VResponsive
 							class="overflow-y-auto pa-3"
 							height="100%"
-							max-height="400"
+							max-height="400px"
 						>
 							<VCheckbox
 								v-for="(prop, i) in booleans"
@@ -155,6 +155,20 @@
 								:label="toKebabCase(prop)"
 								class="my-2"
 								clearable
+								dense
+								filled
+								hide-details
+								@input="setProp(prop, $event)"
+							/>
+
+							<VCombobox
+								v-for="(items, prop) in combobox"
+								:key="prop"
+								:value="usageProps[prop]"
+								:items="items"
+								:label="toKebabCase(prop)"
+								class="my-2"
+								multiple
 								dense
 								filled
 								hide-details
@@ -211,7 +225,7 @@
 							class="doc-code"
 						>
 							<DocMarkup
-								:code="formatAttributes"
+								:code="usageCode"
 								no-margin
 								tile
 							/>
@@ -246,6 +260,30 @@
 		boolean | string[] | IndexedObject<IndexedObject<number | string>>
 	>;
 
+	interface Slider {
+		min: number;
+		max: number;
+		step?: number;
+	}
+
+	type Sliders = IndexedObject<Slider>;
+
+	type Combobox = IndexedObject<string[]>;
+	type Selects = IndexedObject<string[]>;
+	type RadioGroups = IndexedObject<string[]>;
+	type BtnToggles = IndexedObject<string[]>;
+
+	interface Options {
+		booleans?: string[];
+		btnToggles?: BtnToggles;
+		radioGroups?: RadioGroups;
+		selects?: Selects;
+		combobox?: Combobox;
+		sliders?: Sliders;
+		textFields?: string[];
+		slotContent?: string;
+	}
+
 	const Props = Vue.extend({
 		props: {
 			name: {
@@ -266,22 +304,25 @@
 		invertColorsIcon = mdiInvertColors;
 		sourceIcon = mdiCodeTags;
 
-		booleans = null;
-		btnToggles = null;
-		radioGroups = null;
-		selects = null;
-		sliders = null;
-		textFields = null;
+		booleans: string[] | null = null;
+		btnToggles: BtnToggles | null = null;
+		radioGroups: RadioGroups | null = null;
+		selects: Selects | null = null;
+		combobox: Combobox | null = null;
+		sliders: Sliders | null = null;
+		textFields: string[] | null = null;
+		slotContent: string | null = null;
+
+		options: Options = {};
+		usageProps: Props = {};
+		displayProps: Props = {};
 
 		dark = false;
 		expand = false;
 		hasError = false;
-		options = {};
 
 		tab = null;
-		tabs = [];
-		usageProps: Props = {};
-		displayProps: Props = {};
+		tabs: string[] = [];
 
 		get file(): string {
 			return `${this.name}/usage`;
@@ -291,7 +332,7 @@
 			return (this.dark || this.theme.isDark) ? undefined : 'grey lighten-5';
 		}
 
-		get formatAttributes(): string {
+		get usageCode(): string {
 			let attributeArray = [];
 
 			for (const [key, value] of Object.entries(this.displayProps)) {
@@ -322,14 +363,28 @@
 			attributeArray = attributeArray.sort();
 
 			// Display attributes on single when none or one attribute
+			const slotContent = Boolean(this.slotContent);
+			const name = this.toPascalCase(this.name);
+
 			const singleLine = attributeArray.length > 1;
 			const space = ' ';
 
 			const indent = singleLine ? '\r\t' : attributeArray.length ? space : '';
-			const tail = `${singleLine ? '\r' : space}/>`;
-			const attributes = attributeArray.join('\r\t');
 
-			return `<${this.toPascalCase(this.name)}${indent}${attributes}${tail}`;
+			let tail = '';
+
+			if (singleLine) {
+				tail += '\r';
+			} else if (!singleLine && !slotContent) {
+				tail += space;
+			}
+
+			tail += `${slotContent ? '' : '/'}>`;
+
+			const attributes = attributeArray.join('\r\t');
+			const endContent = slotContent ? `${this.slotContent}</${name}>` : '';
+
+			return `<${name}${indent}${attributes}${tail}${endContent}`;
 		}
 
 		toKebabCase(str: string): string {
@@ -343,9 +398,7 @@
 				return '';
 			}
 
-			const pascalCaseStr = words.map((word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()).join('');
-
-			return pascalCaseStr;
+			return words.map((word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()).join('');
 		}
 
 		setProp(prop: string, value: number | string | boolean): void {
@@ -363,13 +416,15 @@
 			const defaults = this.$data.defaultProps as Props;
 			const propsHiddenByDefault = (this.$data.propsHiddenByDefault || []) as string[];
 
-			const filteredDefaults = Object
-				.keys(defaults)
-				.filter((key) => !propsHiddenByDefault.includes(key))
-				.reduce<Props>((res, key) => (res[key] = defaults[key], res), {});
+			if (defaults) {
+				const filteredDefaults = Object
+					.keys(defaults)
+					.filter((key) => !propsHiddenByDefault.includes(key))
+					.reduce<Props>((res, key) => (res[key] = defaults[key], res), {});
 
-			this.usageProps = Object.assign({}, defaults);
-			this.displayProps = Object.assign({}, filteredDefaults);
+				this.usageProps = Object.assign({}, defaults);
+				this.displayProps = Object.assign({}, filteredDefaults);
+			}
 
 			if (this.options) {
 				for (const [key, value] of Object.entries(this.options)) {
@@ -386,7 +441,7 @@
 			this.setProp(toggled, true);
 		}
 
-		toggleBtnProp(prop: string, item: string): void {;
+		toggleBtnProp(prop: string, item: string): void {
 			this.$set(this.usageProps, prop, item);
 		}
 
@@ -398,6 +453,10 @@
 
 <style lang="scss" scoped>
 	.doc-code {
-		border-top: thin solid rgba(0, 0, 0, 0.12);
+		border-top: thin solid rgba(0, 0, 0, .12);
+	}
+
+	.usage-options {
+		min-height: 100%;
 	}
 </style>
