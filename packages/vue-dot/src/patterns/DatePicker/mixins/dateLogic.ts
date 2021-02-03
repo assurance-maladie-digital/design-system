@@ -246,10 +246,6 @@ export class DateLogic extends MixinsDeclaration {
 	/** Validate Vuetify rules */
 	validateVuetify(): void {
 		this.$nextTick(() => {
-			if (!this.$refs.input) {
-				return;
-			}
-
 			// Set hasFocused to true on VTextField
 			// to fix https://github.com/vuetifyjs/vuetify/issues/7876
 			// (error messages aren't shown if the input hasn't been focused)
