@@ -174,7 +174,6 @@ export class DateLogic extends MixinsDeclaration {
 	 * @example
 	 * Format is '25/03/2018' with default dateFormat
 	 */
-	// Getter
 	get dateFormatted(): string {
 		/**
 		 * If the date is empty, return now
@@ -183,14 +182,13 @@ export class DateLogic extends MixinsDeclaration {
 		if (this.date === '') {
 			return '';
 		}
-		/** Format this.date with dateFormat */
-		const formatted = parseDate(this.date, 'YYYY-MM-DD').format(this.dateFormat);
 
+		/** Format this.date with dateFormat */
+		const formatted = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
 
 		return formatted;
 	}
 
-	// Setter
 	set dateFormatted(value: string) {
 		this.textFieldDate = value;
 	}

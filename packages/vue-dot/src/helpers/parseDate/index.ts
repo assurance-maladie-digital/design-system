@@ -1,24 +1,28 @@
-import dayjs, { tz } from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
+import dayjs from 'dayjs';
 
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 dayjs.extend(customParseFormat);
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 /** Parse custom format with dayjs */
 export function parseDate(value: string, format = 'DD/MM/YYYY'): dayjs.Dayjs {
+	// Currently dayjs doesn't work well with timezone offsets and parsing
+	// To fix this, we set the hour based on timezone offset
+	// so we don't go back or forward multiple hours
 
-	let keepLocalTime = true;
-	const date = new Date();
-	let tzOffset = date.getTimezoneOffset();
-	if (tzOffset === 0) {
-		tzOffset = 1;
+	/** Timezone offset in minutes */
+	const timezoneOffset = (new Date()).getTimezoneOffset();
+
+	let offset = '00';
+
+	if (timezoneOffset > 0) {
+		offset = '14';
+	} else {
+		offset = '04';
 	}
-	if (tzOffset > 0) {
-		keepLocalTime = false;
-	}
-	return dayjs(value, format).hour(2).utcOffset(tzOffset, keepLocalTime);
+
+	const dateWithTime = `${value} ${offset}:00:00`;
+	const formatWithTime = `${format} HH:mm:ss`;
+
+	return dayjs(dateWithTime, formatWithTime);
 }
