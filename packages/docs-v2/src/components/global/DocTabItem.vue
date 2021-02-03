@@ -34,7 +34,7 @@
 
 <style lang="scss" scoped>
 	.doc-tab-item {
-		::v-deep .doc-code-block {
+		::v-deep > .doc-code-block {
 			border: none;
 			border-top-left-radius: 0 !important;
 			border-top-right-radius: 0 !important;
