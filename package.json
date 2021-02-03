@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@mdi/js": "5.9.55",
-		"@types/content-disposition": "^0.5.3",
+		"@types/content-disposition": "0.5.3",
 		"@types/fs-extra": "9.0.6",
 		"@types/jest": "26.0.20",
 		"@types/node": "12.19.15",
@@ -44,7 +44,7 @@
 		"vue-template-compiler": "2.6.12",
 		"vuetify": "2.4.3",
 		"vuex": "3.6.2",
-		"axios": "^0.21.1",
+		"axios": "0.21.1",
 		"webpack": "4.46.0"
 	},
 	"resolutions": {
