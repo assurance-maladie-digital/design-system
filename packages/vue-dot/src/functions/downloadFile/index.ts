@@ -1,9 +1,7 @@
 import { BufferSource } from './types';
 
-// TODO
 /**
- * downloadFile function
- * It will download the content from the browser
+ * Download a file
  *
  * @param {BufferSource | Blob | string} content The content to download
  * @param {string} filename The filename to download
@@ -29,6 +27,7 @@ export function downloadFile(
 		window.navigator.msSaveOrOpenBlob(blob, filename);
 	} else {
 		const link = document.createElement('a');
+
 		link.target = '_blank';
 		link.style.display = 'none';
 		link.rel = 'noopener noreferrer';
@@ -36,6 +35,7 @@ export function downloadFile(
 		link.download = filename;
 		document.body.appendChild(link);
 		link.click();
+
 		document.body.removeChild(link);
 		window.URL.revokeObjectURL(link.href);
 	}

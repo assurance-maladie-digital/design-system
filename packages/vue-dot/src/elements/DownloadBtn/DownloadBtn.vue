@@ -3,7 +3,7 @@
 		v-bind="btnOptions"
 		@click.native="download"
 	>
-		<VIcon v-bind="options.downloadIcon">
+		<VIcon v-bind="options.icon">
 			{{ downloadIcon }}
 		</VIcon>
 

@@ -16,7 +16,7 @@ interface TestComponent extends Vue {
 
 // Tests
 describe('DownloadBtn', () => {
-	it('renders DownloadBtn correctly', () => {
+	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
@@ -30,22 +30,7 @@ describe('DownloadBtn', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders DownloadBtn with props', () => { // TODO
-		// Mount component
-		wrapper = mountComponent(DownloadBtn, {
-			propsData: {
-				filePromise,
-				notification: 'Justificatif Téléchargé'
-			},
-			slots: {
-				default: 'justificatif.pdf'
-			}
-		}, true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
-	it('testing download action', async() => { // TODO
+	it('calls download function when pressed', async() => {
 		// Mount component
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
@@ -60,14 +45,9 @@ describe('DownloadBtn', () => {
 		}, true) as Wrapper<TestComponent>;
 
 		const download = jest.spyOn((wrapper.vm as TestComponent), 'download');
-
 		const actionBtn = wrapper.find('button');
-		expect(actionBtn.exists()).toBe(true);
 
 		actionBtn.trigger('click');
-
-		// Wait until $emits have been handled
-		await wrapper.vm.$nextTick();
 
 		expect(download).toBeCalled();
 	});

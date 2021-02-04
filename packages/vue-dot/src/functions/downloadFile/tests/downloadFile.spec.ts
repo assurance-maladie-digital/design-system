@@ -1,8 +1,8 @@
 import { downloadFile } from '../';
 
-const file = new File( // TODO
-	['hello world'],
-	'hello_world.txt',
+const file = new File(
+	['attestation.txt'],
+	'attestation.txt',
 	{ type: 'text/plain' }
 );
 
@@ -14,8 +14,8 @@ describe('downloadFile', () => {
 
 	beforeEach(() => {
 		link = {
-			click: jest.fn(),
-			style: {}
+			style: {},
+			click: jest.fn()
 		} as unknown as HTMLAnchorElement;
 
 		jest.spyOn(document, 'createElement').mockImplementation(() => link);
@@ -31,11 +31,11 @@ describe('downloadFile', () => {
 	global.URL.createObjectURL = jest.fn();
 	global.URL.revokeObjectURL = jest.fn();
 
-	it('it downloads a file correctly', () => {
+	it('it downloads a file', () => {
 		downloadFile(file, file.name, file.type);
+
 		expect(appendChildSpy).toHaveBeenCalledTimes(1);
 		expect(removeChildSpy).toHaveBeenCalledTimes(1);
-
 		expect(link.rel).toEqual('noopener noreferrer');
 		expect(link.target).toEqual('_blank');
 		expect(link.download).toEqual(file.name);
@@ -58,14 +58,13 @@ describe('downloadFile', () => {
 	});
 
 	it('it downloads a file with content type String', () => {
-		downloadFile('test content string', file.name, file.type);
+		downloadFile('test', file.name, file.type);
 
 		expect(link.click).toHaveBeenCalledTimes(1);
 	});
 
-	it('it downloads a file from navigator version that contain \'.NET\'', () => {
+	it('it downloads a file on Internet Explorer', () => {
 		window.navigator.msSaveOrOpenBlob = jest.fn(() => true);
-
 		const navigatorSpy = jest.spyOn(global, 'navigator', 'get');
 
 		downloadFile(file, file.name, file.type);

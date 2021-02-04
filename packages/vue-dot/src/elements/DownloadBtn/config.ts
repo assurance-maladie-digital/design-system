@@ -4,7 +4,7 @@ export const config = {
 		color: 'primary',
 		class: 'text-none'
 	},
-	downloadIcon: {
+	icon: {
 		color: 'primary',
 		class: 'mr-3'
 	}
