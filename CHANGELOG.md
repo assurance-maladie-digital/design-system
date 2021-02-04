@@ -44,7 +44,8 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.6.0` ([#867](https://github.com/assurance-maladie-digital/design-system/pull/867)) ([b66104c](https://github.com/assurance-maladie-digital/design-system/commit/b66104c64aa345540ce81c7dc8526fa62b147299))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.14.2` ([#875](https://github.com/assurance-maladie-digital/design-system/pull/875)) ([47223ba](https://github.com/assurance-maladie-digital/design-system/commit/47223ba72aeb3c5e83ccbc6251b3c7799f976641))
   - **sass:** Mise à jour vers la `v1.32.6` ([#876](https://github.com/assurance-maladie-digital/design-system/pull/876)) ([65a6ac8](https://github.com/assurance-maladie-digital/design-system/commit/65a6ac83c26e2cf141f67948adf82683683d5490))
-  - **babel:** Mise à jour du monorepo vers la `v7.12.13` ([#877](https://github.com/assurance-maladie-digital/design-system/pull/877))
+  - **babel:** Mise à jour du monorepo vers la `v7.12.13` ([#877](https://github.com/assurance-maladie-digital/design-system/pull/877)) ([0e468b8](https://github.com/assurance-maladie-digital/design-system/commit/0e468b86ceebb842de3bfca52978fd4c804fe62e))
+  - **@vue/test-utils:** Mise à jour vers la `v1.1.3` ([#879](https://github.com/assurance-maladie-digital/design-system/pull/879))
 
 ### 📚 Guide de migration
 
