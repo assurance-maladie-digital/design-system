@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import dayjs from 'dayjs';
-
 import { parseDate } from '../../../helpers/parseDate';
 import { DATE_FORMAT_REGEX } from '../../../functions/validation/isDateValid';
 
@@ -176,7 +174,6 @@ export class DateLogic extends MixinsDeclaration {
 	 * @example
 	 * Format is '25/03/2018' with default dateFormat
 	 */
-	// Getter
 	get dateFormatted(): string {
 		/**
 		 * If the date is empty, return now
@@ -187,12 +184,11 @@ export class DateLogic extends MixinsDeclaration {
 		}
 
 		/** Format this.date with dateFormat */
-		const formatted = dayjs(this.date).format(this.dateFormat);
+		const formatted = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
 
 		return formatted;
 	}
 
-	// Setter
 	set dateFormatted(value: string) {
 		this.textFieldDate = value;
 	}
