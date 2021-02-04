@@ -3,23 +3,11 @@
 		v-bind="btnOptions"
 		@click.native="download"
 	>
-		<VIcon
-			v-if="showFileIcon"
-			v-bind="options.fileIcon"
-		>
-			{{ fileIcon }}
-		</VIcon>
-
-		<span
-			v-if="text"
-			v-bind="options.text"
-		>
-			{{ text }}
-		</span>
-
 		<VIcon v-bind="options.downloadIcon">
 			{{ downloadIcon }}
 		</VIcon>
+
+		<slot />
 	</VBtn>
 </template>
 
@@ -27,24 +15,24 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	// TODO: sort imports
-	import { AxiosResponse } from 'axios';
-
-	import contentDisposition from 'content-disposition';
-
-	import { downloadFile } from '../../functions/downloadFile';
-
-	import { mdiDownload, mdiFile } from '@mdi/js';
-
-	import { config } from './config';
-	import { locales } from './locales';
-
-	import { customizable, Options } from '../../mixins/customizable';
-
 	import deepMerge from 'deepmerge';
 	import { mapActions } from 'vuex';
 
+	import { AxiosResponse } from 'axios';
+	import contentDisposition from 'content-disposition';
+
+	import { mdiDownload } from '@mdi/js';
+
+	import { downloadFile } from '../../functions/downloadFile';
+
+	import { customizable, Options } from '../../mixins/customizable';
 	import { NotificationObj } from '../../modules/notification/types';
+
+	import { IndexedObject } from '../../types';
+	import { FileInfo } from './types';
+
+	import { config } from './config';
+	import { locales } from './locales';
 
 	const Props = Vue.extend({
 		props: {
@@ -52,17 +40,9 @@
 				type: Promise as PropType<Promise<AxiosResponse<string>>>,
 				required: true
 			},
-			text: { // TODO?
-				type: String,
-				default: undefined
-			},
 			notification: { // TODO
 				type: [Boolean, String],
 				default: locales.downloadSuccess
-			},
-			showFileIcon: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
@@ -83,7 +63,6 @@
 		locales = locales;
 
 		downloadIcon = mdiDownload;
-		fileIcon = mdiFile;
 
 		loading = false; // TODO
 
@@ -94,36 +73,49 @@
 		 * @returns {Options} Computed options
 		 */
 		get btnOptions(): Options {
-			// Merge btn options (custom or default) with
-			// directly binded attributes (theses attributes
-			// will override 'options.btn')
+			// Merge btn options (custom or default) with directly binded
+			// attributes (theses attributes will override 'options.btn')
 			return deepMerge<Options>(this.options.btn, this.$attrs);
 		}
 
-		download(): void { // TODO
+		getFileInfo(headers: IndexedObject): FileInfo {
+			const contentType = headers['Content-Type'];
+			const contentDispositionHeader = headers['Content-Disposition'] as string;
+			const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+
+			return {
+				name: filename,
+				type: contentType
+			};
+		}
+
+		notifyUser(): void {
+			const message = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
+
+			this.addNotification({
+				type: 'success',
+				message
+			});
+		}
+
+		async download(): Promise<void> {
 			this.loading = true; // TODO
 
-			this.filePromise
-				.then((response) => {
-					const contentDispositionHeader = response.headers['content-disposition'] as string;
+			try {
+				const { data, headers } = await this.filePromise;
+				const { name, type } = this.getFileInfo(headers);
 
-					const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+				downloadFile(data, name, type);
 
-					downloadFile(response.data, filename, 'application/pdf'); // TODO type!
+				if (this.notification) {
+					this.notifyUser();
+				}
 
-					if (this.notification) {
-						const message = typeof this.notification === 'boolean' ? locales.downloadSuccess : this.notification as string;
+			} catch (error) {
+				this.$emit('error', error);
+			}
 
-						const notification: NotificationObj = {
-							type: 'success',
-							message
-						};
-
-						this.addNotification(notification);
-					}
-				})
-				// TODO: catch
-				.finally(() => this.loading = false);
+			this.loading = false;
 		}
 	}
 </script>

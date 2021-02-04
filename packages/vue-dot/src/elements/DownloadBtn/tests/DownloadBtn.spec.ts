@@ -4,34 +4,15 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import { AxiosResponse } from 'axios';
-
 import DownloadBtn from '../DownloadBtn.vue';
 
-let wrapper: Wrapper<Vue>;
+import { filePromise } from './data/filePromise';
 
-const contentDispositionHeader = JSON.stringify({
-	type: 'inline',
-	parameters: {
-		filename: 'justificatif.pdf'
-	}
-});
+let wrapper: Wrapper<Vue>;
 
 interface TestComponent extends Vue {
 	download: () => void;
 }
-
-const filePromise: Promise<AxiosResponse<string>> = new Promise((resolve) => { // TODO: extract to data to use in playground
-	resolve({
-		data: 'test',
-		status: 200,
-		statusText: 'test status Text',
-		headers: {
-			'content-disposition': contentDispositionHeader
-		},
-		config: {}
-	});
-});
 
 // Tests
 describe('DownloadBtn', () => {
@@ -40,6 +21,9 @@ describe('DownloadBtn', () => {
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
 				filePromise
+			},
+			slots: {
+				default: 'justificatif.pdf'
 			}
 		}, true);
 
@@ -51,9 +35,10 @@ describe('DownloadBtn', () => {
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
 				filePromise,
-				showFileIcon: true,
-				text: 'justificatif.pdf',
 				notification: 'Justificatif Téléchargé'
+			},
+			slots: {
+				default: 'justificatif.pdf'
 			}
 		}, true);
 
@@ -66,12 +51,15 @@ describe('DownloadBtn', () => {
 			propsData: {
 				filePromise
 			},
+			slots: {
+				default: 'justificatif.pdf'
+			},
 			mocks: {
 				download: jest.fn()
 			}
 		}, true) as Wrapper<TestComponent>;
 
-		const download = jest.spyOn(wrapper.vm, 'download' as any); // TODO
+		const download = jest.spyOn((wrapper.vm as TestComponent), 'download');
 
 		const actionBtn = wrapper.find('button');
 		expect(actionBtn.exists()).toBe(true);

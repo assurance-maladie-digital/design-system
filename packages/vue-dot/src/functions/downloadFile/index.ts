@@ -25,7 +25,7 @@ export function downloadFile(
 
 	const blob = new Blob(blobContent, { type });
 
-	if (0 < navigator.appVersion.toString().indexOf('.NET')) {
+	if (window.navigator.msSaveOrOpenBlob) {
 		window.navigator.msSaveOrOpenBlob(blob, filename);
 	} else {
 		const link = document.createElement('a');
