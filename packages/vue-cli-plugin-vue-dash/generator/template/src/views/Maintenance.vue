@@ -1,7 +1,8 @@
 <template>
 	<ErrorPage
-		:title="pageInfo.title"
+		:page-title="pageInfo.title"
 		:message="pageInfo.message"
+		no-btn
 	/>
 </template>
 

@@ -4,8 +4,8 @@ describe('NotFound page', () => {
 	});
 
 	it('contains title and description', () => {
-		cy.dataCy('errorPage').find('h2').should('exist');;
-		cy.dataCy('errorPage').find('p').should('exist');;
+		cy.dataCy('errorPage').find('h2').should('exist');
+		cy.dataCy('errorPage').find('p').should('exist');
 	});
 
 	it('goes back to home page', () => {

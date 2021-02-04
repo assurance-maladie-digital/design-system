@@ -3,7 +3,7 @@ export const config = {
 		flat: true,
 		color: 'white'
 	},
-	createdBtn: {
+	addBtn: {
 		outlined: true,
 		color: 'primary'
 	},

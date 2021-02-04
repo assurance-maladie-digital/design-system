@@ -7,6 +7,7 @@ export interface DataListItem {
 	chip?: boolean;
 	icon?: string;
 	options?: Options;
+	class?: string;
 }
 
 export type DataList = DataListItem[];

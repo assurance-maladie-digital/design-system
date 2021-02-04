@@ -17,8 +17,8 @@
 					:nb-total="items.length"
 					:nb-filtered="filteredItems.length"
 					search-label="Rechercher"
-					show-create-btn
 					row-text="fichier"
+					show-add-btn
 				/>
 			</template>
 		</VDataTable>

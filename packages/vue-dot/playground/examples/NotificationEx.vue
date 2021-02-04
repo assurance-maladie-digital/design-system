@@ -15,7 +15,7 @@
 
 	import { mapActions } from 'vuex';
 
-	import { NotificationObj } from '../../src/modules/notification';
+	import { NotificationObj } from '../../src/modules/notification/types';
 
 	import {
 		mdiCheck,
@@ -29,16 +29,16 @@
 	@Component({
 		// Vuex bindings
 		methods: mapActions('notification', [
-			'notify',
-			'rmNotif'
+			'addNotification',
+			'clearNotification'
 		])
 	})
 	export default class NotificationEx extends Vue {
 		// Vuex bindings type declaration
-		notify!: (obj: NotificationObj) => void;
-		rmNotif!: () => void;
+		addNotification!: (obj: NotificationObj) => void;
+		clearNotification!: () => void;
 
-		notifications = [
+		notifications: NotificationObj[] = [
 			{
 				type: 'success',
 				message: notificationMessage,
@@ -62,13 +62,13 @@
 		];
 
 		testNotify(): void {
-			this.rmNotif();
+			this.clearNotification();
 
 			const randomIndex = Math.floor(Math.random() * this.notifications.length);
 			const notification = this.notifications[randomIndex];
 
 			// Notify!
-			this.notify(notification);
+			this.addNotification(notification);
 		}
 	}
 </script>
