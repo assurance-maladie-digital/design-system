@@ -65,7 +65,7 @@
 		"core-js": "3.8.3",
 		"json-to-scss": "1.6.2",
 		"vue-cli-plugin-vuetify": "2.1.0",
-		"vuetify-loader": "1.7.1"
+		"vuetify-loader": "1.7.2"
 	},
 	"lint-staged": {
 		"*.{ts,vue}": [
