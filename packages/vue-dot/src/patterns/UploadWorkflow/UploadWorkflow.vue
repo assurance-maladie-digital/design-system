@@ -20,8 +20,8 @@
 
 		<FileUpload
 			ref="fileUpload"
-			v-bind="options.fileUpload"
 			v-model="uploadedFile"
+			v-bind="options.fileUpload"
 			@change="fileSelected"
 			@error="uploadError"
 		/>
