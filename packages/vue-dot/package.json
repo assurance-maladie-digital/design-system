@@ -48,8 +48,8 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.12.10",
-		"@babel/preset-env": "7.12.11",
+		"@babel/core": "7.12.13",
+		"@babel/preset-env": "7.12.13",
 		"@cnamts/cli-helpers": "^2.0.0-beta.4",
 		"@vue/cli-plugin-babel": "4.5.11",
 		"@vue/cli-plugin-eslint": "4.5.11",
@@ -60,8 +60,8 @@
 		"babel-loader": "8.2.2",
 		"core-js": "3.8.3",
 		"json-to-scss": "1.6.2",
-		"vue-cli-plugin-vuetify": "2.0.9",
-		"vuetify-loader": "1.6.0"
+		"vue-cli-plugin-vuetify": "2.1.0",
+		"vuetify-loader": "1.7.1"
 	},
 	"lint-staged": {
 		"*.{ts,vue}": [

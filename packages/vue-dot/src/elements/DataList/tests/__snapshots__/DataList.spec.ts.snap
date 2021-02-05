@@ -30,6 +30,21 @@ exports[`DataList renders correctly in flex mode 1`] = `
 </div>
 `;
 
+exports[`DataList renders correctly with a class 1`] = `
+<div class="vd-data-list">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <div>
+      <!---->
+      <ul class="vd-data-list-field pl-0 d-flex flex-column">
+        <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item text-body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item text-body-1 mb-2 custom-class" style="width: 200px;"></datalistitem-stub>
+        <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item text-body-1 mb-2" style="width: 200px;"></datalistitem-stub>
+      </ul>
+    </div>
+  </vfadetransition-stub>
+</div>
+`;
+
 exports[`DataList renders correctly with a title 1`] = `
 <div class="vd-data-list">
   <vfadetransition-stub mode="out-in" origin="top center 0">
