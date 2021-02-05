@@ -1,6 +1,7 @@
 <template>
 	<VBtn
 		v-bind="btnOptions"
+		:loading="state === STATE_ENUM.pending"
 		@click.native="download"
 	>
 		<VIcon v-bind="options.icon">
@@ -28,6 +29,7 @@
 	import { customizable, Options } from '../../mixins/customizable';
 	import { NotificationObj } from '../../modules/notification/types';
 
+	import { STATE_ENUM } from '../../constants/enums/StateEnum';
 	import { IndexedObject } from '../../types';
 	import { FileInfo } from './types';
 
@@ -61,10 +63,11 @@
 		addNotification!: (obj: NotificationObj) => void;
 
 		locales = locales;
+		STATE_ENUM = STATE_ENUM;
 
 		downloadIcon = mdiDownload;
 
-		loading = false; // TODO
+		state = STATE_ENUM.idle;
 
 		/**
 		 * Compute the options for the VBtn
@@ -99,7 +102,7 @@
 		}
 
 		async download(): Promise<void> {
-			this.loading = true; // TODO
+			this.state = STATE_ENUM.pending;
 
 			try {
 				const { data, headers } = await this.filePromise;
@@ -107,15 +110,15 @@
 
 				downloadFile(data, name, type);
 
+				this.state = STATE_ENUM.resolved;
+
 				if (this.notification) {
 					this.notifyUser();
 				}
-
 			} catch (error) {
 				this.$emit('error', error);
+				this.state = STATE_ENUM.rejected;
 			}
-
-			this.loading = false;
 		}
 	}
 </script>
