@@ -1,58 +1,41 @@
-// Theme styles
-html,
-body {
-	font-size: 100% !important;
-}
-
-.no-flex {
-	flex: none !important;
-}
-
-.v-content__wrap {
-	height: 100%;
-}
-
-// TODO: Standardize with Vue Dash
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
-.v-application {
-	.text-h1,
-	.text-h2,
-	.text-h3,
-	.text-h4,
-	.text-h5,
-	.text-h6,
-	.text-subtitle-1,
-	.text-subtitle-2,
-	.text-body-1,
-	.text-body-2,
-	.text-caption,
-	.text-overline {
-		font-family: 'Open Sans', sans-serif !important;
-	}
-}
-
-// * Custom
-
-// Default styles and helper classes
+/* Default, global styles */
 * {
-	$transparent: rgba(0, 0, 0, 0);
-
-	max-width: 100%;
 	margin: 0;
 	padding: 0;
 	border: 0;
+	max-width: 100%;
+	box-sizing: border-box;
 	scroll-behavior: smooth;
 	font-family: 'Open Sans', sans-serif;
-	box-sizing: border-box;
-	word-break: break-word;
-	hyphens: auto;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-tap-highlight-color: $transparent;
 }
 
-.v-slide-group__content,
-.v-slider__tick-label,
-.v-slider__thumb-container * {
-	max-width: none;
+html,
+body {
+	/* Font size defined by the browser */
+	font-size: 100%;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	line-height: 1.25;
+}
+
+/* Hide the application while Vue.js is loading */
+[v-cloak] {
+	display: none;
+}
+
+#app {
+	width: 100%;
+	display: flex;
+	min-height: 100vh;
+	background: #eee;
+}
+
+/* Apply default transition to links */
+a {
+	transition: .25s;
 }

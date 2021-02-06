@@ -78,7 +78,7 @@
 		</p>
 
 		<VBtn
-			color="primary"
+			color="accent"
 			@click="birthDate = '15/02/2010'"
 		>
 			Set the date
