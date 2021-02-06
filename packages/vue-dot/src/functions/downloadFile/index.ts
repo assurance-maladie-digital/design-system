@@ -6,7 +6,7 @@ import { BufferSource } from './types';
  * @param {BufferSource | Blob | string} content The content to download
  * @param {string} filename The filename to download
  * @param {string} type The file type
- * @param {boolean} utf8Bom The utf8 file content TODO
+ * @param {boolean} utf8Bom Add UTF-8 header for Excel files
  */
 export function downloadFile(
 	content: BufferSource | Blob | string,

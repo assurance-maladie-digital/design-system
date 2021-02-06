@@ -4,9 +4,11 @@
 		:loading="state === STATE_ENUM.pending"
 		@click.native="download"
 	>
-		<VIcon v-bind="options.icon">
-			{{ downloadIcon }}
-		</VIcon>
+		<slot name="icon">
+			<VIcon v-bind="options.icon">
+				{{ downloadIcon }}
+			</VIcon>
+		</slot>
 
 		<slot />
 	</VBtn>
@@ -42,7 +44,7 @@
 				type: Promise as PropType<Promise<AxiosResponse<string>>>,
 				required: true
 			},
-			notification: { // TODO
+			notification: {
 				type: [Boolean, String],
 				default: locales.downloadSuccess
 			}
@@ -52,8 +54,8 @@
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	/**
-	 * TODO: DownloadBtn is a component that download a file from
-	 * a content disposition header string
+	 * DownloadBtn is a component that allows to
+	 * download a file from a network request
 	 */
 	@Component({
 		inheritAttrs: false,
