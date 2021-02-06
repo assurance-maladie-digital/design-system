@@ -28,10 +28,13 @@ body {
 	display: none;
 }
 
-#app {
+.v-application {
 	width: 100%;
 	display: flex;
 	min-height: 100vh;
+}
+
+.v-application.theme--light {
 	background: #eee;
 }
 
