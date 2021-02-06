@@ -78,7 +78,7 @@
 		</p>
 
 		<VBtn
-			color="primary"
+			color="accent"
 			@click="birthDate = '15/02/2010'"
 		>
 			Set the date
@@ -90,7 +90,7 @@
 
 		<DatePicker
 			text-field-class="vd-form-input"
-			show-week-ends
+			show-weekends
 			append-icon
 			clearable
 			outlined
@@ -112,13 +112,27 @@
 		/>
 
 		<DatePicker
-			show-week-ends
 			:start-date="startDate"
 			text-field-class="vd-form-input"
 			text-field-activator
+			show-weekends
 			append-icon
 			outlined
 		/>
+
+		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
+			TextField slots
+		</h2>
+
+		<DatePicker>
+			<template #append-outer>
+				<VBtn icon>
+					<VIcon>
+						{{ infoIcon }}
+					</VIcon>
+				</VBtn>
+			</template>
+		</DatePicker>
 	</DocSection>
 </template>
 
@@ -130,7 +144,7 @@
 	import { isDateValid } from '../../src/rules/isDateValid';
 	import { notAfterToday } from '../../src/rules/notAfterToday';
 
-	import { mdiCakeVariant } from '@mdi/js';
+	import { mdiCakeVariant, mdiInformationOutline } from '@mdi/js';
 
 	@Component
 	export default class DatePickerEx extends Vue {
@@ -139,6 +153,7 @@
 		startDate = '2019-08-01';
 
 		cakeIcon = mdiCakeVariant;
+		infoIcon = mdiInformationOutline;
 
 		validRules = [
 			isDateValid

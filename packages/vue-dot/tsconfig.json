@@ -5,7 +5,8 @@
 		"baseUrl": ".",
 		"types": [
 			"node",
-			"jest"
+			"jest",
+			"content-disposition"
 		],
 		"paths": {
 			"@/tests/*": [
