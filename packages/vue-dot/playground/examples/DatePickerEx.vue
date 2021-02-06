@@ -121,13 +121,15 @@
 		/>
 
 		<h2 class="text-subtitle-1 mt-4 mb-2 font-weight-bold">
-			Text field Scoped slots
+			TextField slots
 		</h2>
 
 		<DatePicker>
 			<template #append-outer>
-				<VBtn text>
-					outer
+				<VBtn icon>
+					<VIcon>
+						{{ infoIcon }}
+					</VIcon>
 				</VBtn>
 			</template>
 		</DatePicker>
@@ -142,7 +144,7 @@
 	import { isDateValid } from '../../src/rules/isDateValid';
 	import { notAfterToday } from '../../src/rules/notAfterToday';
 
-	import { mdiCakeVariant } from '@mdi/js';
+	import { mdiCakeVariant, mdiInformationOutline } from '@mdi/js';
 
 	@Component
 	export default class DatePickerEx extends Vue {
@@ -151,6 +153,7 @@
 		startDate = '2019-08-01';
 
 		cakeIcon = mdiCakeVariant;
+		infoIcon = mdiInformationOutline;
 
 		validRules = [
 			isDateValid
