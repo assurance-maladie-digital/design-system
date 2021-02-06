@@ -78,7 +78,7 @@
 		</p>
 
 		<VBtn
-			color="primary"
+			color="accent"
 			@click="birthDate = '15/02/2010'"
 		>
 			Set the date
@@ -90,7 +90,7 @@
 
 		<DatePicker
 			text-field-class="vd-form-input"
-			show-week-ends
+			show-weekends
 			append-icon
 			clearable
 			outlined
@@ -112,10 +112,10 @@
 		/>
 
 		<DatePicker
-			show-week-ends
 			:start-date="startDate"
 			text-field-class="vd-form-input"
 			text-field-activator
+			show-weekends
 			append-icon
 			outlined
 		/>

@@ -45,6 +45,8 @@
 
 				<DialogBoxEx />
 
+				<DownloadBtnEx />
+
 				<ErrorPageEx />
 
 				<FileUploadEx />
@@ -60,6 +62,8 @@
 				<RulesEx />
 
 				<SubHeaderEx />
+
+				<TableToolbarEx />
 
 				<UploadWorkflowEx />
 			</PageCard>

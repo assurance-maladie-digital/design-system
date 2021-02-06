@@ -1,12 +1,14 @@
 import Vuex, { ActionTree } from 'vuex';
 import { createLocalVue } from '@vue/test-utils';
 
-import { NotificationState, actions as moduleActions, mutations } from '../';
+import { NotificationState, NotificationObj } from '../types';
+
+import { actions as moduleActions, mutations } from '../';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-const notificationObj = {
+const notificationObj: NotificationObj = {
 	type: 'success',
 	message: 'test',
 	icon: 'icon'
@@ -22,26 +24,50 @@ function createStore(state: NotificationState) {
 
 // Tests
 describe('notification', () => {
-	it('updates the state when calling notify action', () => {
-		const state = {
+	it('updates the state when calling `add` action', () => {
+		const state: NotificationState = {
 			notification: null
 		};
 
 		const store = createStore(state);
 
-		store.dispatch('notify', notificationObj);
+		store.dispatch('add', notificationObj);
 
 		expect(state.notification).toBe(notificationObj);
 	});
 
-	it('clears state when calling rmNotif action', () => {
-		const state = {
+	it('updates the state when calling `addNotification` action', () => {
+		const state: NotificationState = {
+			notification: null
+		};
+
+		const store = createStore(state);
+
+		store.dispatch('addNotification', notificationObj);
+
+		expect(state.notification).toBe(notificationObj);
+	});
+
+	it('clears state when calling `clear` action', () => {
+		const state: NotificationState = {
 			notification: notificationObj
 		};
 
 		const store = createStore(state);
 
-		store.dispatch('rmNotif');
+		store.dispatch('clear');
+
+		expect(state.notification).toBe(null);
+	});
+
+	it('clears state when calling `clearNotification` action', () => {
+		const state: NotificationState = {
+			notification: notificationObj
+		};
+
+		const store = createStore(state);
+
+		store.dispatch('clearNotification');
 
 		expect(state.notification).toBe(null);
 	});

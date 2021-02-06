@@ -8,6 +8,7 @@ Object {
     "DataList",
     "DatePicker",
     "DialogBox",
+    "DownloadBtn",
     "ErrorPage",
     "FileUpload",
     "FooterWrapper",
@@ -17,6 +18,7 @@ Object {
     "PageCard",
     "PaginatedTable",
     "SubHeader",
+    "TableToolbar",
     "UploadWorkflow",
   ],
   "directives": Array [

@@ -7,6 +7,7 @@ import LangBtnEx from './LangBtnEx.vue';
 import CustomIconEx from './CustomIconEx.vue';
 import DebounceEx from './DebounceEx.vue';
 import DialogBoxEx from './DialogBoxEx.vue';
+import DownloadBtnEx from './DownloadBtnEx.vue';
 import ErrorPageEx from './ErrorPageEx.vue';
 import FileUploadEx from './FileUploadEx.vue';
 import FooterEx from './FooterEx.vue';
@@ -14,6 +15,7 @@ import NotificationEx from './NotificationEx.vue';
 import PaginatedTableEx from './PaginatedTableEx.vue';
 import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
+import TableToolbarEx from './TableToolbarEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
 
 interface Components {
@@ -28,6 +30,7 @@ const components: Components = {
 	CustomIconEx,
 	DebounceEx,
 	DialogBoxEx,
+	DownloadBtnEx,
 	ErrorPageEx,
 	FileUploadEx,
 	FooterEx,
@@ -35,6 +38,7 @@ const components: Components = {
 	PaginatedTableEx,
 	RulesEx,
 	SubHeaderEx,
+	TableToolbarEx,
 	UploadWorkflowEx
 };
 
