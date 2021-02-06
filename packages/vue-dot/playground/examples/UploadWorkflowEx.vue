@@ -7,7 +7,7 @@
 
 		<VBtn
 			class="mt-4"
-			color="primary"
+			color="accent"
 			@click="updateModel"
 		>
 			Update model
