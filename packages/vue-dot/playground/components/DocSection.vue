@@ -1,9 +1,5 @@
 <template>
-	<VLayout
-		column
-		align-start
-		class="doc-section"
-	>
+	<div class="doc-section d-flex flex-column align-start">
 		<!-- The title is replaceable through a slot -->
 		<slot name="title">
 			<h3
@@ -19,9 +15,9 @@
 
 		<VDivider
 			v-if="!noDivider"
-			class="divider my-6"
+			class="w-100 my-6"
 		/>
-	</VLayout>
+	</div>
 </template>
 
 <script lang="ts">
@@ -52,11 +48,3 @@
 	@Component
 	export default class DocSection extends Props {}
 </script>
-
-<style lang="scss" scoped>
-	.doc-section,
-	.divider {
-		flex: none;
-		width: 100%;
-	}
-</style>

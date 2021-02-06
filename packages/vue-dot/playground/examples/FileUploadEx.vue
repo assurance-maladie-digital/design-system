@@ -12,10 +12,9 @@
 			@change="error = null; success = true"
 		/>
 
-		<VLayout
+		<div
 			v-if="error"
-			align-start
-			column
+			class="d-flex flex-column align-start"
 		>
 			<p class="mb-0 mt-1 error--text">
 				{{ errorsText[error.code] || error }}
@@ -28,7 +27,7 @@
 			>
 				Réessayer
 			</VBtn>
-		</VLayout>
+		</div>
 
 		<p
 			v-else-if="success && file"
@@ -85,10 +84,7 @@
 			class="custom accent elevation-3"
 		>
 			<template #placeholder>
-				<VLayout
-					tag="span"
-					align-center
-				>
+				<span class="d-flex align-center">
 					<VIcon
 						size="25"
 						color="white"
@@ -100,7 +96,7 @@
 					<span class="white--text">
 						Select or drop a file
 					</span>
-				</VLayout>
+				</span>
 			</template>
 		</FileUpload>
 	</DocSection>
@@ -157,9 +153,9 @@
 
 	$darken-accent: saturate(darken($vd-accent, 10%), 20%);
 
-	.custom.file-upload {
+	.vd-file-upload.custom {
 		border: none;
-		padding: 10px 15px !important;
+		padding: 10px 16px !important;
 
 		&:hover,
 		&:focus-within {
