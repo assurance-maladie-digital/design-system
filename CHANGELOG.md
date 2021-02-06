@@ -29,6 +29,9 @@
 
 ### Interne
 
+- ♻️ **Refactoring**
+  - **playground:** Mise à jour des styles ([#885](https://github.com/assurance-maladie-digital/design-system/pull/885))
+
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#822](https://github.com/assurance-maladie-digital/design-system/pull/822)) ([d3b64be](https://github.com/assurance-maladie-digital/design-system/commit/d3b64beec8e2e2250434e110fd6410c401db7174))
 
@@ -49,7 +52,7 @@
   - **babel:** Mise à jour du monorepo vers la `v7.12.13` ([#877](https://github.com/assurance-maladie-digital/design-system/pull/877)) ([0e468b8](https://github.com/assurance-maladie-digital/design-system/commit/0e468b86ceebb842de3bfca52978fd4c804fe62e))
   - **@vue/test-utils:** Mise à jour vers la `v1.1.3` ([#879](https://github.com/assurance-maladie-digital/design-system/pull/879)) ([3b2e342](https://github.com/assurance-maladie-digital/design-system/commit/3b2e342f460febec27c1d40109d6caedb8171ae1))
   - **@types/node:** Mise à jour vers la `v12.19.16` ([#880](https://github.com/assurance-maladie-digital/design-system/pull/880)) ([6b0e312](https://github.com/assurance-maladie-digital/design-system/commit/6b0e312ac2c9dd0dc823272a04eb43aa651a9e81))
-  - **vuetify-loader:** Mise à jour vers la `v1.7.2` ([#881](https://github.com/assurance-maladie-digital/design-system/pull/881))
+  - **vuetify-loader:** Mise à jour vers la `v1.7.2` ([#881](https://github.com/assurance-maladie-digital/design-system/pull/881)) ([1e16b11](https://github.com/assurance-maladie-digital/design-system/commit/1e16b1157bfc7b681a7c9ca023549eb4a3165f1c))
 
 ### 📚 Guide de migration
 
