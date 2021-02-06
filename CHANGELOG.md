@@ -9,6 +9,7 @@
   - **DataList:** Ajout de l'attribut `class` dans les items ([#851](https://github.com/assurance-maladie-digital/design-system/pull/851)) ([232b0e7](https://github.com/assurance-maladie-digital/design-system/commit/232b0e79ba7fcd12f2647fde03c86907d4ba8c74))
   - **NotificationBar:** Ajout d'icônes par défaut ([#872](https://github.com/assurance-maladie-digital/design-system/pull/872)) ([ab50ce0](https://github.com/assurance-maladie-digital/design-system/commit/ab50ce0438c1a8479caa8a3ddaec858c4b5e7910))
   - **constants:** Ajout de l'énumération `STATE_ENUM` ([#883](https://github.com/assurance-maladie-digital/design-system/pull/883)) ([02ac43f](https://github.com/assurance-maladie-digital/design-system/commit/02ac43fa349b7e1124130349118a703608384fa8))
+  - **DownloadBtn:** Ajout d'un nouveau composant et de la fonction `downloadFile` ([#781](https://github.com/assurance-maladie-digital/design-system/pull/781))
 
 - ♻️ **Refactoring**
   - **TableToolbar:** Renommage de `createBtn` en `addBtn` ([#849](https://github.com/assurance-maladie-digital/design-system/pull/849)) ([98a8ce3](https://github.com/assurance-maladie-digital/design-system/commit/98a8ce335350350174242452fa90f41f11452e72))
@@ -99,7 +100,6 @@ Cette version comporte l'ajout du composant `TableToolbar` ainsi que l'ajout des
 - ✨ **Nouvelles fonctionnalités**
   - **styles:** Ajout des styles communs `vuetify.scss` et `utilities.scss` ([#625](https://github.com/assurance-maladie-digital/design-system/pull/625)) ([689279d](https://github.com/assurance-maladie-digital/design-system/commit/689279d1eed92256fffb346a041e4a04b764f150))
   - **TableToolbar:** Ajout d'un nouveau composant ([#735](https://github.com/assurance-maladie-digital/design-system/pull/375)) ([4b88587](https://github.com/assurance-maladie-digital/design-system/commit/4b88587d39b8807957832e20702a0d1dd3b29fab))
-  - **DownloadBtn:** Ajout du bouton de téléchargement et de la fonction 'downloadFile' associée ([#781](https://github.com/assurance-maladie-digital/design-system/pull/781))
 
 - 🐛 **Corrections de bugs**
   - **styles:** Correction du style des onglets ([#766](https://github.com/assurance-maladie-digital/design-system/pull/766)) ([ceb0534](https://github.com/assurance-maladie-digital/design-system/commit/ceb0534884e37f89df13ddde14f7551659863441))
