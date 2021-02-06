@@ -9,6 +9,7 @@
   - **DataList:** Ajout de l'attribut `class` dans les items ([#851](https://github.com/assurance-maladie-digital/design-system/pull/851)) ([232b0e7](https://github.com/assurance-maladie-digital/design-system/commit/232b0e79ba7fcd12f2647fde03c86907d4ba8c74))
   - **NotificationBar:** Ajout d'icônes par défaut ([#872](https://github.com/assurance-maladie-digital/design-system/pull/872)) ([ab50ce0](https://github.com/assurance-maladie-digital/design-system/commit/ab50ce0438c1a8479caa8a3ddaec858c4b5e7910))
   - **constants:** Ajout de l'énumération `STATE_ENUM` ([#883](https://github.com/assurance-maladie-digital/design-system/pull/883)) ([02ac43f](https://github.com/assurance-maladie-digital/design-system/commit/02ac43fa349b7e1124130349118a703608384fa8))
+  - **DownloadBtn:** Ajout d'un nouveau composant et de la fonction `downloadFile` ([#781](https://github.com/assurance-maladie-digital/design-system/pull/781))
 
 - ♻️ **Refactoring**
   - **TableToolbar:** Renommage de `createBtn` en `addBtn` ([#849](https://github.com/assurance-maladie-digital/design-system/pull/849)) ([98a8ce3](https://github.com/assurance-maladie-digital/design-system/commit/98a8ce335350350174242452fa90f41f11452e72))

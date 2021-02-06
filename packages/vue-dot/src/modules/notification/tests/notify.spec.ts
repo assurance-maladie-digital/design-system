@@ -1,4 +1,4 @@
-import Vuex, { ActionTree } from 'vuex';
+import Vuex from 'vuex';
 import { createLocalVue } from '@vue/test-utils';
 
 import { NotificationState, NotificationObj } from '../types';
