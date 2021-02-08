@@ -50,6 +50,16 @@
 						</slot>
 					</VBtn>
 				</template>
+
+				<!--
+					Pass down slots
+					@see https://stackoverflow.com/questions/50891858/vue-how-to-pass-down-slots-inside-wrapper-component/52823029#52823029
+				-->
+				<slot
+					v-for="name in Object.keys($slots)"
+					:slot="name"
+					:name="name"
+				/>
 			</VTextField>
 		</template>
 
