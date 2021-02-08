@@ -41,7 +41,7 @@ exports[`DataListItem renders correctly value in a chip 1`] = `
         Test
       </div>
       <div class="vd-data-list-item-value">
-        <vchip-stub activeclass="" tag="span" active="true" closeicon="$delete" closelabel="$vuetify.close" filtericon="$complete" class="mt-1">
+        <vchip-stub activeclass="" tag="span" active="true" closeicon="$delete" filtericon="$complete" class="mt-1">
           value
         </vchip-stub>
       </div>
