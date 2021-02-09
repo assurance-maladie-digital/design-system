@@ -46,6 +46,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/dialog-box'
 			},
 			{
+				title: 'DownloadBtn',
+				to: '/composants/download-btn'
+			},
+			{
 				title: 'ErrorPage',
 				to: '/composants/error-page'
 			},

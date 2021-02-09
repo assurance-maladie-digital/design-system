@@ -1,7 +1,7 @@
 ---
 title: PageCard
 description: L'élément `PageCard` est utilisé pour afficher une page.
-position: 18
+position: 19
 ---
 
 <doc-tabs light>

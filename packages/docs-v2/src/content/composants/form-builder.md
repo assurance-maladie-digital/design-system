@@ -1,7 +1,7 @@
 ---
 title: FormBuilder
 description: Le composant `FormBuilder` est utilisé pour afficher un questionnaire.
-position: 12
+position: 13
 ---
 
 <doc-tabs light>
