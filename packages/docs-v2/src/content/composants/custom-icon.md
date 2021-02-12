@@ -7,6 +7,7 @@ position: 5
 <doc-tabs light>
 
 <doc-tab-item label="Utilisation">
+
 <doc-usage name="custom-icon"></doc-usage>
 
 ## Exemples

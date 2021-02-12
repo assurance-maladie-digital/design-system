@@ -7,6 +7,7 @@ position: 4
 <doc-tabs light>
 
 <doc-tab-item label="Utilisation">
+
 <doc-usage name="copy-btn"></doc-usage>
 
 ## Exemples

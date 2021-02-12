@@ -13,7 +13,7 @@ Avant d'ouvrir un nouveau rapport de bug, vérifiez :
 - Que le bug est toujours présent dans la dernière version du package concerné
 
 Une fois ces vérifications effectuées, vous pouvez [créer un rapport de bug](https://github.com/assurance-maladie-digital/design-system/issues/new?template=bug_report.md).
-Lors de l'écriture de votre rapport de bug, essayez de donner le plus de détails possible
+Lors de l'écriture de votre rapport de bug, essayez de donner le plus de détails possible.
 
 <doc-alert type="info">
 Lorsque vous créez une reproduction minimale, supprimez tous les éléments, propriétés, variables, données etc qui ne sont pas nécessaires pour reproduire le bug. Cela facilitera le traitement du rapport et le temps qu'il faudra pour identifier puis résoudre le bug.
@@ -43,7 +43,7 @@ Certaines de nos dépendances ont besoin de [node-gyp](https://github.com/nodejs
 
 Une fois les outils installés, vous pouvez cloner le repo :
 
-<doc-tabs no-spacing>
+<doc-tabs code>
 <doc-tab-item label="SSH">
 ```bash
 git clone git@github.com:assurance-maladie-digital/design-system.git
@@ -104,7 +104,7 @@ Et en exécutant ensuite la commande `vue create --preset /path/to/preset/ my-pr
 
 Vous pouvez également tester le plugin dans un projet existant en l'installant :
 
-<doc-tabs no-spacing>
+<doc-tabs code>
 <doc-tab-item label="Yarn">
 ```bash
 yarn add --dev file:/full/path/to/plugin
@@ -167,7 +167,7 @@ Pour créer une nouvelle branche et effectuer des modifications, vous pouvez nou
 
 Et ensuite ajouter votre fork comme *remote* :
 
-<doc-tabs no-spacing>
+<doc-tabs code>
 <doc-tab-item label="SSH">
 ```bash
 git remote add fork git@github.com:USERNAME/design-system.git

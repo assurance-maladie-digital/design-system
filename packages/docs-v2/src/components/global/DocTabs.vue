@@ -1,5 +1,8 @@
 <template>
-	<div class="doc-tabs w-100 mb-4">
+	<div
+		class="doc-tabs w-100 mb-4"
+		:class="{ 'tabs-code': code }"
+	>
 		<VTabs
 			v-model="tab"
 			:dark="!light"
@@ -15,7 +18,7 @@
 
 		<VTabsItems
 			v-model="tab"
-			:class="{ 'pt-8': !noSpacing }"
+			:class="{ 'pt-8': !code }"
 		>
 			<slot
 				v-for="slot in Object.keys($slots)"
@@ -49,7 +52,7 @@
 				type: Boolean,
 				default: false
 			},
-			noSpacing: {
+			code: {
 				type: Boolean,
 				default: false
 			}
@@ -90,10 +93,6 @@
 			overflow: visible;
 		}
 
-		.doc-code-block {
-			margin-bottom: 0 !important;
-		}
-
 		> .v-tabs {
 			border-top-left-radius: 4px;
 			border-top-right-radius: 4px;
@@ -110,6 +109,15 @@
 			&.theme--dark .v-slide-group__content::after {
 				background: hsla(0, 0%, 100%, .3);
 			}
+		}
+	}
+
+	.doc-tabs.tabs-code ::v-deep {
+		.doc-code-block {
+			border: none;
+			margin-bottom: 0 !important;
+			border-top-left-radius: 0 !important;
+			border-top-right-radius: 0 !important;
 		}
 	}
 </style>
