@@ -16,7 +16,7 @@
 		"@types/content-disposition": "0.5.3",
 		"@types/fs-extra": "9.0.6",
 		"@types/jest": "26.0.20",
-		"@types/node": "12.19.16",
+		"@types/node": "12.20.1",
 		"@typescript-eslint/eslint-plugin": "4.15.0",
 		"@typescript-eslint/parser": "4.15.0",
 		"@vue/eslint-config-typescript": "7.0.0",
