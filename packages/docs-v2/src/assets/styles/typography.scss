@@ -63,6 +63,10 @@
 	h3:hover > a::before {
 		opacity: 1;
 	}
+
+	[id] {
+		scroll-margin: 80px 0 0 0;
+	}
 }
 
 *::selection {

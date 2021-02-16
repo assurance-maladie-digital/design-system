@@ -2,16 +2,18 @@
 	<div
 		class="doc-tabs w-100 mb-4"
 		:class="{ 'tabs-code': code }"
+		:id="id"
 	>
 		<VTabs
 			v-model="tab"
-			:dark="!light"
+			:dark="code"
 		>
 			<ClientOnly>
 				<VTab
 					v-for="(item) in tabs"
 					:key="item.value"
 					v-text="item.label"
+					@click="setHash(item.value)"
 				/>
 			</ClientOnly>
 		</VTabs>
@@ -37,24 +39,24 @@
 
 	import { slugify } from '../../functions/slugify';
 
-	interface Tabs {
+	interface Tab {
 		value: string;
 		label: string;
 	}
 
 	interface ComponentOptions extends VNodeComponentOptions {
-		propsData: Tabs;
+		propsData: Tab;
 	}
 
 	const Props = Vue.extend({
 		props: {
-			light: {
-				type: Boolean,
-				default: false
-			},
 			code: {
 				type: Boolean,
 				default: false
+			},
+			namespace: {
+				type: String,
+				default: 'onglets'
 			}
 		}
 	});
@@ -63,14 +65,14 @@
 
 	@Component
 	export default class DocTabs extends MixinsDeclaration {
-		tab = null;
+		tab: number | null = null;
 
-		get tabs(): Tabs[] | undefined {
+		get tabs(): Tab[] | undefined {
 			if (!this.$slots.default) {
 				return;
 			}
 
-			const filteredSlots = this.$slots.default.filter(slot => Boolean(slot.tag));
+			const filteredSlots = this.$slots.default.filter((slot) => Boolean(slot.tag));
 
 			const tabs = filteredSlots.map((slot) => {
 				const { propsData } = slot.componentOptions as ComponentOptions;
@@ -83,6 +85,42 @@
 			});
 
 			return tabs;
+		}
+
+		get id(): string | undefined {
+			return this.code ? undefined : this.namespace;
+		}
+
+		findTabIndex(value: string): number | undefined {
+			return this.tabs?.findIndex((tab) => tab.value === value);
+		}
+
+		setHash(hash: string): void {
+			if (this.code) {
+				return;
+			}
+
+			// Set hash using native API to avoid scroll jump
+			window.location.hash = `${this.namespace}/${hash}`;
+		}
+
+		async mounted() {
+			if (this.code) {
+				return;
+			}
+
+			const hash = this.$nuxt.$route.hash;
+			const [namespace, tab] = hash.replace('#', '').split('/');
+
+			const tabIndex = this.findTabIndex(tab);
+
+			if (tabIndex) {
+				this.tab = tabIndex;
+			}
+
+			if (namespace) {
+				this.$vuetify.goTo(`#${namespace}`);
+			}
 		}
 	}
 </script>
