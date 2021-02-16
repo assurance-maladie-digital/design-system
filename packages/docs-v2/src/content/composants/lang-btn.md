@@ -4,7 +4,7 @@ description: L'élément `LangBtn` est utilisé pour permettre à l'utilisateur 
 position: 17
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

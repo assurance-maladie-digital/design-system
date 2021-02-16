@@ -4,7 +4,7 @@ description: Le pattern `SubHeader` est utilisé pour afficher un bloc d'informa
 position: 21
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

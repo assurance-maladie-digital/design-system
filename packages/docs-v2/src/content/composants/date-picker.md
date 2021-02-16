@@ -4,7 +4,7 @@ description: Le pattern `DatePicker` est un composant utilisé pour permettre à
 position: 7
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

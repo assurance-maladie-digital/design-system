@@ -4,7 +4,7 @@ description: Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilis
 position: 23
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

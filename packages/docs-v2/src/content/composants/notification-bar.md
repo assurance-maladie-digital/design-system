@@ -4,7 +4,7 @@ description: Le pattern `NotificationBar` est utilisé avec le module Vuex `noti
 position: 18
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

@@ -4,7 +4,7 @@ description: Le composant `FormField` est utilisé pour afficher un champ de for
 position: 15
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

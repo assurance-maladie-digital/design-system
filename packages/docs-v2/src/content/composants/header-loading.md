@@ -4,7 +4,7 @@ description: L'élément `HeaderLoading` est une extension du composant `VSkelet
 position: 16
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 <doc-usage name="header-loading"></doc-usage>

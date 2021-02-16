@@ -4,7 +4,7 @@ description: Le pattern `FooterWrapper` est utilisé avec le composant `FooterBt
 position: 12
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

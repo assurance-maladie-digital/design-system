@@ -4,7 +4,7 @@ description: Le template `ErrorPage` est utilisé pour afficher une page d'erreu
 position: 10
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

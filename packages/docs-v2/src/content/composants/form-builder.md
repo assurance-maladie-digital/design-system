@@ -4,7 +4,7 @@ description: Le composant `FormBuilder` est utilisé pour afficher un questionna
 position: 13
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

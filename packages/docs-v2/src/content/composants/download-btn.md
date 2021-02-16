@@ -6,7 +6,7 @@ position: 9
 
 <notification-bar></notification-bar>
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

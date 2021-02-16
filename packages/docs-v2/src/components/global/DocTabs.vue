@@ -56,7 +56,7 @@
 			},
 			namespace: {
 				type: String,
-				default: 'onglets'
+				default: 'section'
 			}
 		}
 	});

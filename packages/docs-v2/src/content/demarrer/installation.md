@@ -40,7 +40,7 @@ Le projet sera créé dans un nouveau dossier au nom de votre projet.
 
 Installation d'une des librairies du Design System dans un projet existant.
 
-<doc-tabs light>
+<doc-tabs namespace="composants">
 <doc-tab-item label="Vue Dot">
 
 Vue Dot est la librairie de composants qui implémente le Design System.
@@ -67,10 +67,10 @@ Ensuite, vous pouvez créer un fichier plugin `src/plugins/vue-dot.ts` avec le c
 // src/plugins/vue-dot.ts
 import Vue from 'vue';
 
-// Import VueDot styles
+// Import Vue Dot styles
 import '@cnamts/vue-dot/dist/vue-dot.css';
 
-// Import VueDot from src
+// Import Vue Dot from src
 import VueDot from '@cnamts/vue-dot';
 
 Vue.use(VueDot);
@@ -168,7 +168,7 @@ const { vueDotLoader } = require('@cnamts/vue-cli-plugin-vue-dash/vueDotLoader')
 
 module.exports = {
 	chainWebpack: config => {
-		// Auto-load VueDot components
+		// Auto-load Vue Dot components
 		config.plugin('VuetifyLoaderPlugin').tap(vueDotLoader);
 	}
 };

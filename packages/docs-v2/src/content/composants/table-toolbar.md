@@ -4,7 +4,7 @@ description: Le pattern `TableToolbar` est utilisé pour afficher une barre au-d
 position: 22
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

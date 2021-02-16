@@ -4,7 +4,7 @@ description: Le pattern `FileUpload` est utilisé pour permettre à l'utilisateu
 position: 11
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

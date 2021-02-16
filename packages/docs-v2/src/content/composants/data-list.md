@@ -4,7 +4,7 @@ description: L'élément `DataList` est utilisé pour afficher une liste d'infor
 position: 6
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

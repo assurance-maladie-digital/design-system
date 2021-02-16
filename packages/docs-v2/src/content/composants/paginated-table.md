@@ -4,7 +4,7 @@ description: Le pattern `PaginatedTable` est utilisé pour afficher une `VDataTa
 position: 20
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

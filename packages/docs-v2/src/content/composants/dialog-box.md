@@ -4,7 +4,7 @@ description: L'élément `DialogBox` est utilisé pour afficher une boîte de di
 position: 8
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

@@ -4,7 +4,7 @@ description: Le composant `FormFieldList` est utilisé pour afficher un formulai
 position: 14
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

@@ -4,7 +4,7 @@ description: L'élément `CopyBtn` est utilisé pour afficher un bouton permetta
 position: 4
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

@@ -4,7 +4,7 @@ description: L'élément `CustomIcon` est utilisé pour afficher une icône pers
 position: 5
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 

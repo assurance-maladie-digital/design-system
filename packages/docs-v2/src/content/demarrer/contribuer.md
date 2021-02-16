@@ -69,7 +69,7 @@ yarn
 
 Une fois l'installation des dépendances effectuée, vous êtes prêt à développer !
 
-<doc-tabs light>
+<doc-tabs namespace="package">
 <doc-tab-item label="Documentation">
 
 La documentation se trouve dans le dossier `packages/docs`, elle est construite en utilisant [Nuxt Content](https://content.nuxtjs.org/fr). Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn dev` depuis le dossier `docs`.<br>

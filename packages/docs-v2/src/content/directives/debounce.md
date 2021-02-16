@@ -4,7 +4,7 @@ description: La directive `v-debounce` est utilisée pour différer une mise à 
 position: 24
 ---
 
-<doc-tabs light>
+<doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
