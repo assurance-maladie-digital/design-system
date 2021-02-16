@@ -69,24 +69,31 @@ yarn
 
 Une fois l'installation des dépendances effectuée, vous êtes prêt à développer !
 
-### Documentation
+<doc-tabs light>
+<doc-tab-item label="Documentation">
 
 La documentation se trouve dans le dossier `packages/docs`, elle est construite en utilisant [Nuxt Content](https://content.nuxtjs.org/fr). Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn dev` depuis le dossier `docs`.<br>
 Par défaut, la documentation est disponible à l'adresse [http://localhost:3000](http://localhost:3000).
 
-### Vue Dot
+</doc-tab-item>
+
+<doc-tab-item label="Vue Dot">
 
 La librairie de composants Vue Dot se trouve dans le dossier `packages/vue-dot`. Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn playground` depuis le dossier `vue-dot`.<br>
 Par défaut, le playground est disponible à l'adresse [http://localhost:8080](http://localhost:8080).
 
 Vous pouvez tester vos modifications en créant des exemples dans le dossier `playground/examples` et en les ajoutant dans le fichier `Playground.vue`.
 
-### FormBuilder
+</doc-tab-item>
+
+<doc-tab-item label="Form Builder">
 
 Les composants du FormBuilder se trouvent dans le dossier `packages/form-builder`. Vous pouvez démarrer un serveur de développement en exécutant la commande `yarn playground` depuis le dossier `form-builder`.<br>
 Par défaut, le playground est disponible à l'adresse [http://localhost:8080](http://localhost:8080).
 
-### Vue Dash
+</doc-tab-item>
+
+<doc-tab-item label="Vue Dash">
 
 Le Starter Kit Vue Dash se trouve dans le dossier `packages/vue-cli-plugin-vue-dash`. C'est un [plugin Vue CLI](https://cli.vuejs.org/guide/plugins-and-presets.html) utilisé en combinaison avec un preset permettant la création de nouveaux projets.
 
@@ -130,13 +137,18 @@ Par défaut, lorsque le plugin est invoqué manuellement, il n'applique pas le t
 vue invoke @cnamts/vue-dash -- --render-template
 ```
 
-### CLI Helpers
+</doc-tab-item>
+
+<doc-tab-item label="CLI Helpers">
 
 La bibliothèque de fonctions d'aide pour la construction d'interfaces en lignes de commandes se trouve dans le dossier `packages/cli-helpers`. Les fonctions sont écrites en TypeScript et construites pour être utilisées dans un environnement [node.js](https://nodejs.org/).
 
 Pour tester une fonction, vous pouvez transpiler la bibliothèque en exécutant la commande `yarn build` depuis le dossier `cli-helpers`, puis importer votre fonction depuis le package.
 
 Vous pouvez également utiliser [ts-node](https://www.npmjs.com/package/ts-node) pour écrire votre script de test en TypeScript.
+
+</doc-tab-item>
+</doc-tabs>
 
 ### Commits
 
