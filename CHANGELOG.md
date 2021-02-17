@@ -13,7 +13,7 @@
   - **DatePicker:** Transmission des slots du `VTextField` ([#812](https://github.com/assurance-maladie-digital/design-system/pull/812))
 
 - 🐛 **Corrections de bugs**
-  - **LocalStorageUtility:** Correction du préfixe manquant dans la méthode `removeItem` ([#901](https://github.com/assurance-maladie-digital/design-system/pull/901))
+  - **LocalStorageUtility:** Correction du préfixe manquant dans la méthode `removeItem` ([#901](https://github.com/assurance-maladie-digital/design-system/pull/901)) ([c7afef6](https://github.com/assurance-maladie-digital/design-system/commit/c7afef688d2b3eb83460d310ab35046bb9a25424))
 
 - ♻️ **Refactoring**
   - **TableToolbar:** Renommage de `createBtn` en `addBtn` ([#849](https://github.com/assurance-maladie-digital/design-system/pull/849)) ([98a8ce3](https://github.com/assurance-maladie-digital/design-system/commit/98a8ce335350350174242452fa90f41f11452e72))
@@ -31,6 +31,9 @@
 
 - 🔥 **Suppressions**
   - **template:** Suppression de la classe `main-ctn` non utilisée dans le composant `App` ([#842](https://github.com/assurance-maladie-digital/design-system/pull/842)) ([9100b7a](https://github.com/assurance-maladie-digital/design-system/commit/9100b7a49024e9a50504b1987560b04dfc49dcbf))
+
+- 🔧 **Configuration**
+  - **config:** Ajout du champ `engines` au fichier `package.json` ([#906](https://github.com/assurance-maladie-digital/design-system/pull/906))
 
 ### Interne
 

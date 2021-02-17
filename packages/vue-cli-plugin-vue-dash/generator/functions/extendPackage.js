@@ -86,6 +86,10 @@ function extendPackage(api, options) {
 			'jest': '^26.6.3',
 			'ts-jest': '^26.4.4',
 			'babel-jest': '^26.6.3'
+		},
+		engines: {
+			'node': '^12 || ^14',
+			'yarn': '^1.12'
 		}
 	};
 
