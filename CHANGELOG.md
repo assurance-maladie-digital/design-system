@@ -14,7 +14,7 @@
 
 - 🐛 **Corrections de bugs**
   - **LocalStorageUtility:** Correction du préfixe manquant dans la méthode `removeItem` ([#901](https://github.com/assurance-maladie-digital/design-system/pull/901)) ([c7afef6](https://github.com/assurance-maladie-digital/design-system/commit/c7afef688d2b3eb83460d310ab35046bb9a25424))
-  - **DatePicker:** Correction de l'espacement du slot `prepend` ([#908](https://github.com/assurance-maladie-digital/design-system/pull/908))
+  - **DatePicker:** Correction de l'espacement du slot `prepend` ([#908](https://github.com/assurance-maladie-digital/design-system/pull/908)) ([5074a55](https://github.com/assurance-maladie-digital/design-system/commit/5074a558603c8dbc664a6e8dedcaf845e8b10d36))
 
 - ♻️ **Refactoring**
   - **TableToolbar:** Renommage de `createBtn` en `addBtn` ([#849](https://github.com/assurance-maladie-digital/design-system/pull/849)) ([98a8ce3](https://github.com/assurance-maladie-digital/design-system/commit/98a8ce335350350174242452fa90f41f11452e72))
@@ -35,6 +35,9 @@
 
 - 🔧 **Configuration**
   - **config:** Ajout du champ `engines` au fichier `package.json` ([#906](https://github.com/assurance-maladie-digital/design-system/pull/906)) ([ec1eec4](https://github.com/assurance-maladie-digital/design-system/commit/ec1eec41a86911a6f4fb76cddbec2f9407912b23))
+
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#908](https://github.com/assurance-maladie-digital/design-system/pull/908))
 
 ### Interne
 
