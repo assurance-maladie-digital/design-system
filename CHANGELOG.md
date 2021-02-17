@@ -12,6 +12,9 @@
   - **DownloadBtn:** Ajout d'un nouveau composant et de la fonction `downloadFile` ([#781](https://github.com/assurance-maladie-digital/design-system/pull/781)) ([988039b](https://github.com/assurance-maladie-digital/design-system/commit/988039b081b9dbb3aa1fcf606fdd2f6e54564aa3))
   - **DatePicker:** Transmission des slots du `VTextField` ([#812](https://github.com/assurance-maladie-digital/design-system/pull/812))
 
+- 🐛 **Corrections de bugs**
+  - **LocalStorageUtility:** Correction du préfixe manquant dans la méthode `removeItem` ([#901](https://github.com/assurance-maladie-digital/design-system/pull/901))
+
 - ♻️ **Refactoring**
   - **TableToolbar:** Renommage de `createBtn` en `addBtn` ([#849](https://github.com/assurance-maladie-digital/design-system/pull/849)) ([98a8ce3](https://github.com/assurance-maladie-digital/design-system/commit/98a8ce335350350174242452fa90f41f11452e72))
 
@@ -57,7 +60,7 @@
   - **eslint:** Mise à jour vers la `v7.20.0` ([#898](https://github.com/assurance-maladie-digital/design-system/pull/898) ([7ad2a9e](https://github.com/assurance-maladie-digital/design-system/commit/7ad2a9eef0afe91f9f63ed6c0e5e33c6ef1ad101))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.6.0` ([#899](https://github.com/assurance-maladie-digital/design-system/pull/899) ([10b375a](https://github.com/assurance-maladie-digital/design-system/commit/10b375ad084191284765322722150cb740c40bd1))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v32.0.2` ([#900](https://github.com/assurance-maladie-digital/design-system/pull/900)) ([dde6d47](https://github.com/assurance-maladie-digital/design-system/commit/dde6d47277d13ab404b370575e61facdf26c5680))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.15.1` ([#902](https://github.com/assurance-maladie-digital/design-system/pull/902))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.15.1` ([#902](https://github.com/assurance-maladie-digital/design-system/pull/902)) ([f79f5ec](https://github.com/assurance-maladie-digital/design-system/commit/f79f5ecda1d8189437e79f883e8addeb1d82c987))
 
 ### 📚 Guide de migration
 
