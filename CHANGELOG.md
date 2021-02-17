@@ -54,9 +54,10 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v31.6.1` ([#886](https://github.com/assurance-maladie-digital/design-system/pull/886)) ([136603a](https://github.com/assurance-maladie-digital/design-system/commit/136603ad1934d9a30da324d6e503315e36bc36ee))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.15.0` ([#888](https://github.com/assurance-maladie-digital/design-system/pull/888)) ([d7e2180](https://github.com/assurance-maladie-digital/design-system/commit/d7e2180c0f2d9130445e67f7a1c5a80925931dbc))
   - **ts-jest:** Mise à jour vers la `v26.5.1` ([#889](https://github.com/assurance-maladie-digital/design-system/pull/889)) ([a9e1642](https://github.com/assurance-maladie-digital/design-system/commit/a9e164237a3f70c43dc315dd3515ee5f2720c196))
-  - **typescript:** Mise à jour vers la `v4.1.4` ([#890](https://github.com/assurance-maladie-digital/design-system/pull/890)) ([77aa336](https://github.com/assurance-maladie-digital/design-system/commit/77aa33627fd16d11efef9399f21c18b4bfdc54bf))
   - **vuetify:** Mise à jour vers la `v2.4.4` ([#891](https://github.com/assurance-maladie-digital/design-system/pull/891)) ([227d2ae](https://github.com/assurance-maladie-digital/design-system/commit/227d2ae7c390d901e167cabc2495454659d3a856))
-  - **sass:** Mise à jour vers la `v1.32.7` ([#892](https://github.com/assurance-maladie-digital/design-system/pull/892))
+  - **sass:** Mise à jour vers la `v1.32.7` ([#892](https://github.com/assurance-maladie-digital/design-system/pull/892)) ([acef4e8](https://github.com/assurance-maladie-digital/design-system/commit/acef4e8ac8f28a389362b4ceebfc7a65e0a6a1ac))
+  - **typescript:** Mise à jour vers la `v4.1.5` ([#893](https://github.com/assurance-maladie-digital/design-system/pull/893)) ([b7b8a8d](https://github.com/assurance-maladie-digital/design-system/commit/b7b8a8d66d7190b5c51cb35c276fdd645fd1f41c))
+  - **@types/fs-extra:** Mise à jour vers la `v9.0.7` ([#895](https://github.com/assurance-maladie-digital/design-system/pull/895))
 
 ### 📚 Guide de migration
 
