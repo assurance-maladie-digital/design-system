@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.0.0-beta.5",
+	"version": "2.0.0-beta.6",
 	"description": "Implementation of our Design System for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -43,13 +43,13 @@
 	"peerDependencies": {
 		"@cnamts/design-tokens": "^2.0.0-beta.0",
 		"@mdi/js": "^5.0.0",
+		"axios": "^0.21.1",
 		"dayjs": "^1.8.0",
 		"languages": "^0.1.3",
 		"vue": "^2.6.11",
 		"vue-input-facade": "^1.3.1",
 		"vuetify": "^2.3.0",
-		"vuex": "^3.5.0",
-		"axios": "^0.21.1"
+		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
 		"@babel/core": "7.12.16",
