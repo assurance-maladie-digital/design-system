@@ -41,7 +41,7 @@
 		"content-disposition": "^0.5.3"
 	},
 	"peerDependencies": {
-		"@cnamts/design-tokens": "^2.0.0-beta.0",
+		"@cnamts/design-tokens": "^2.0.0-beta.0 || ^2.0.0-beta",
 		"@mdi/js": "^5.0.0",
 		"axios": "^0.21.1",
 		"dayjs": "^1.8.0",
