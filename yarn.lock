@@ -870,6 +870,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@cnamts/vue-dot@2.0.0-form-builder.4":
+  version "2.0.0-form-builder.4"
+  resolved "https://registry.yarnpkg.com/@cnamts/vue-dot/-/vue-dot-2.0.0-form-builder.4.tgz#ca8195388c02fbfb1e78c65ede18cbb262ab8825"
+  integrity sha512-Bm/9YJDfSBp7UEZGZR96KwfLbGY2GXJCjqkw848yJTdce4/qLLd095DSmGWZ+9CXt/Qdl4C5PQ/SMi4KeRzQ9Q==
+
 "@eslint/eslintrc@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.3.0.tgz#d736d6963d7003b6514e6324bec9c602ac340318"

@@ -29,9 +29,9 @@
 		"superb": "^4.0.0"
 	},
 	"devDependencies": {
-		"@cnamts/design-tokens": "^2.0.0-beta.4",
-		"@cnamts/form-builder": "^2.0.0-beta.6",
-		"@cnamts/vue-dot": "^2.0.0-beta.6"
+		"@cnamts/design-tokens": "2.0.0-beta.4",
+		"@cnamts/form-builder": "2.0.0-beta.6",
+		"@cnamts/vue-dot": "2.0.0-form-builder.4"
 	},
 	"publishConfig": {
 		"access": "public"
