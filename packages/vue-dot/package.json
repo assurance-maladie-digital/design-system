@@ -62,7 +62,7 @@
 		"@vue/cli-service": "4.5.11",
 		"babel-core": "7.0.0-bridge.0",
 		"babel-loader": "8.2.2",
-		"core-js": "3.8.3",
+		"core-js": "3.9.1",
 		"json-to-scss": "1.6.2",
 		"vue-cli-plugin-vuetify": "2.1.0",
 		"vuetify-loader": "1.7.2"

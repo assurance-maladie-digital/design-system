@@ -3,7 +3,8 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **babel:** Mise à jour du monorepo vers la `v7.13.8` ([#912](https://github.com/assurance-maladie-digital/design-system/pull/912))
+  - **babel:** Mise à jour du monorepo vers la `v7.13.8` ([#912](https://github.com/assurance-maladie-digital/design-system/pull/912)) ([cda9e0b](https://github.com/assurance-maladie-digital/design-system/commit/cda9e0b2a253ca78032809169861faad5a763e77))
+  - **core-js:** Mise à jour vers la `v3.9.1` ([#913](https://github.com/assurance-maladie-digital/design-system/pull/913))
 
 ## v2.0.0-beta.6
 
