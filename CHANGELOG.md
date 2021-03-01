@@ -1263,6 +1263,24 @@ Cette version comporte l'ajout des composants `SubHeader`, `HeaderLoading` et `D
   - **@vue/test-utils:** Mise à jour vers la `v1.0.0-beta.31` ([#74](https://github.com/assurance-maladie-digital/design-system/pull/74)) ([aaa695a](https://github.com/assurance-maladie-digital/design-system/commit/aaa695a8b38c91e3f5a0668f9f1f89a48996749c))
   - **global:** Mise à jour des dépendances ([0d0360b](https://github.com/assurance-maladie-digital/design-system/commit/0d0360b38e336e7e441d86c6d52301a76abe463d))
 
+## v2.0.0-alpha.20
+
+**Version publiée le 16/07/2019.**
+
+Cette version comporte
+
+### Interne
+
+- 🔒 **Sécurité**
+  - **lodash.defaultsdeep:** Mise à jour vers de la `v4.6.0` vers la `v4.6.1` ([#2](https://github.com/assurance-maladie-digital/design-system/pull/2)) ([5207c3a](https://github.com/assurance-maladie-digital/design-system/commit/5207c3a1df8cef6fea812eea128c98df25576fcd))
+  - **lodash:** Mise à jour vers de la `v4.17.11` vers la `v4.17.14` ([#3](https://github.com/assurance-maladie-digital/design-system/pull/3)) ([de7e2a1](https://github.com/assurance-maladie-digital/design-system/commit/de7e2a113dd1ea2ef10de91131e00ca13c9c0ad3))
+
+- 🔧 **Configuration**
+  - **config:** Mise à jour du fichier `.gitignore` ([c4857f8](https://github.com/assurance-maladie-digital/design-system/commit/c4857f8582d1fe74247ccc0c8196a800a0a97599))
+
+- ⬆️ **Dépendances**
+  - **global:** Mise à jour des dépendances ([0f08698](https://github.com/assurance-maladie-digital/design-system/commit/0f086982028abd02d204537ef9167bf702539569))
+
 ## v2.0.0-alpha.19
 
 **Version publiée le 09/07/2019.**
