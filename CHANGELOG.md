@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **babel:** Mise à jour du monorepo vers la `v7.13.8` ([#912](https://github.com/assurance-maladie-digital/design-system/pull/912))
+
 ## v2.0.0-beta.6
 
 **Version publiée le 19/02/2021.**
@@ -52,7 +59,7 @@ Cette version comporte la refonte du module `notification` ainsi que de nouvelle
   - **config:** Mise à jour de la taille maximale du build ([#822](https://github.com/assurance-maladie-digital/design-system/pull/822)) ([d3b64be](https://github.com/assurance-maladie-digital/design-system/commit/d3b64beec8e2e2250434e110fd6410c401db7174))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#916](https://github.com/assurance-maladie-digital/design-system/pull/916))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#916](https://github.com/assurance-maladie-digital/design-system/pull/916)) ([d395c7f](https://github.com/assurance-maladie-digital/design-system/commit/d395c7f5c24e39f999a456f478f74dcbd32fcd2b))
 
 - ⬆️ **Dépendances**
   - **core-js:** Mise à jour vers la `v3.8.3` ([#832](https://github.com/assurance-maladie-digital/design-system/pull/832)) ([e32c91c](https://github.com/assurance-maladie-digital/design-system/commit/e32c91c5b3418581e502c82ce97ef0fd16f92b17))
