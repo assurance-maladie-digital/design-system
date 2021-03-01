@@ -1,3 +1,16 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **babel:** Mise à jour du monorepo vers la `v7.13.8` ([#912](https://github.com/assurance-maladie-digital/design-system/pull/912)) ([cda9e0b](https://github.com/assurance-maladie-digital/design-system/commit/cda9e0b2a253ca78032809169861faad5a763e77))
+  - **core-js:** Mise à jour vers la `v3.9.1` ([#913](https://github.com/assurance-maladie-digital/design-system/pull/913)) ([2a3c2c7](https://github.com/assurance-maladie-digital/design-system/commit/2a3c2c7b1c59c47f3776c29d3c151a8265d4593c))
+  - **@types/node:** Mise à jour vers la `v12.20.4` ([#914](https://github.com/assurance-maladie-digital/design-system/pull/914)) ([9a1de50](https://github.com/assurance-maladie-digital/design-system/commit/9a1de50aeb4d19c51b54c6e4d4e0ce284b399755))
+  - **sass:** Mise à jour vers la `v1.32.8` ([#915](https://github.com/assurance-maladie-digital/design-system/pull/915)) ([03a86bb](https://github.com/assurance-maladie-digital/design-system/commit/03a86bb9092af743c792d2106b64b4d033110f3d))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v32.2.0` ([#918](https://github.com/assurance-maladie-digital/design-system/pull/918)) ([80742bd](https://github.com/assurance-maladie-digital/design-system/commit/80742bd102baa73f90e60b6b4e5b08e04e19344f))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.16.0` ([#921](https://github.com/assurance-maladie-digital/design-system/pull/921)) ([f3ee16c](https://github.com/assurance-maladie-digital/design-system/commit/f3ee16cd5805eb7b715c516d2f8fa0529d514f83))
+  - **vuetify:** Mise à jour vers la `v2.4.5` ([#922](https://github.com/assurance-maladie-digital/design-system/pull/922))
+
 ## v2.0.0-beta.6
 
 **Version publiée le 19/02/2021.**
@@ -52,7 +65,7 @@ Cette version comporte la refonte du module `notification` ainsi que de nouvelle
   - **config:** Mise à jour de la taille maximale du build ([#822](https://github.com/assurance-maladie-digital/design-system/pull/822)) ([d3b64be](https://github.com/assurance-maladie-digital/design-system/commit/d3b64beec8e2e2250434e110fd6410c401db7174))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#916](https://github.com/assurance-maladie-digital/design-system/pull/916))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#916](https://github.com/assurance-maladie-digital/design-system/pull/916)) ([d395c7f](https://github.com/assurance-maladie-digital/design-system/commit/d395c7f5c24e39f999a456f478f74dcbd32fcd2b))
 
 - ⬆️ **Dépendances**
   - **core-js:** Mise à jour vers la `v3.8.3` ([#832](https://github.com/assurance-maladie-digital/design-system/pull/832)) ([e32c91c](https://github.com/assurance-maladie-digital/design-system/commit/e32c91c5b3418581e502c82ce97ef0fd16f92b17))
