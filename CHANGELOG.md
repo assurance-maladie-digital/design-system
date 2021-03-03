@@ -1,5 +1,10 @@
 ## Non publié
 
+### Design Tokens
+
+- ♻️ **Refactoring**
+  - **colors:** Mise à jour des couleurs du thème ([#935](https://github.com/assurance-maladie-digital/design-system/pull/935))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -16,7 +21,7 @@
   - **@babel/preset-env:** Mise à jour vers la `v7.13.9` ([#930](https://github.com/assurance-maladie-digital/design-system/pull/930)) ([eef7033](https://github.com/assurance-maladie-digital/design-system/commit/eef70338f0bb9c34c9887fd5b888f2e6dc27d1d2))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.7.0` ([#931](https://github.com/assurance-maladie-digital/design-system/pull/931) ([c857651](https://github.com/assurance-maladie-digital/design-system/commit/c857651baca753ab8ac608716cf811befc452867))
   - **lerna:** Mise à jour vers la `v4` ([#933](https://github.com/assurance-maladie-digital/design-system/pull/933)) ([226be74](https://github.com/assurance-maladie-digital/design-system/commit/226be74146a7567422aae8dba6026de02cfff409))
-  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.2.2` ([#934](https://github.com/assurance-maladie-digital/design-system/pull/934))
+  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.2.2` ([#934](https://github.com/assurance-maladie-digital/design-system/pull/934)) ([70dffde](https://github.com/assurance-maladie-digital/design-system/commit/70dffde0112022b566bbb8a229af21a23bf63818))
 
 ## v2.0.0-beta.6
 
