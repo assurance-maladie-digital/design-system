@@ -1,8 +1,8 @@
 /** Light color theme */
 export const lightTheme = {
 	// Brand
-	primary: '#003463',
-	secondary: '#0c4887',
+	primary: '#0c419a',
+	secondary: '#007fad',
 	accent: '#2576cd',
 	// State
 	success: '#009688',
