@@ -811,7 +811,7 @@ Cette version comporte de nouvelles fonctionnalités ainsi que des correctifs su
 
 - ♿️ **Accessibilité**
   - **DatePicker/FileList:** Ajout des `aria-label` manquants ([#427](https://github.com/assurance-maladie-digital/design-system/pull/427)) ([f069e35](https://github.com/assurance-maladie-digital/design-system/commit/f069e35376d002182fcbd9ff7de7c7de3297471c))
-  - **playground:** Correction du label dans l'exemple `debounce` ([#428](https://github.com/assurance-maladie-digital/design-system/pull/428)) ([fafee4e](https://github.com/assurance-maladie-digital/design-system/commit/fafee4e596f6404546179af407c36d72e2e5e78c))
+  - **playground:** Correction du label dans l'exemple de la directive `debounce` ([#428](https://github.com/assurance-maladie-digital/design-system/pull/428)) ([fafee4e](https://github.com/assurance-maladie-digital/design-system/commit/fafee4e596f6404546179af407c36d72e2e5e78c))
 
 - ♻️ **Refactoring**
   - **UploadWorkflow:** Extraction des fonctionnalités en mixins ([#342](https://github.com/assurance-maladie-digital/design-system/pull/342)) ([479e56b](https://github.com/assurance-maladie-digital/design-system/commit/479e56bfca55f3e56f5e8b3da51913d610237d1a))
@@ -1288,6 +1288,41 @@ Cette version comporte l'ajout des composants `SubHeader`, `HeaderLoading` et `D
   - **@vue/test-utils:** Mise à jour vers la `v1.0.0-beta.31` ([#74](https://github.com/assurance-maladie-digital/design-system/pull/74)) ([aaa695a](https://github.com/assurance-maladie-digital/design-system/commit/aaa695a8b38c91e3f5a0668f9f1f89a48996749c))
   - **global:** Mise à jour des dépendances ([0d0360b](https://github.com/assurance-maladie-digital/design-system/commit/0d0360b38e336e7e441d86c6d52301a76abe463d))
 
+## v2.0.0-alpha.21
+
+**Version publiée le 05/08/2019.**
+
+Cette version comporte la mise à jour de Vuetify vers la version 2.0 ainsi que l'ajout du composant `FileList`.
+
+### Vue Dot
+
+- 💥 **Changements majeurs**
+  - **dependencies:** Mise à jour de Vuetify vers la `v2` ([d8f796b](https://github.com/assurance-maladie-digital/design-system/commit/d8f796b727b3461e43659dd65dbe84a55868d4d8))
+
+- ✨ **Nouvelles fonctionnalités**
+  - **FileList:** Ajout d'un nouveau composant ([be010ae](https://github.com/assurance-maladie-digital/design-system/commit/be010ae321d31b4000bb58c0bf9ea419257898ec))
+  - **FileList:** Ajout de la prop `files` ([6adccfe](https://github.com/assurance-maladie-digital/design-system/commit/6adccfe1b2a7defc6418f7ff46f74dc4d2a90672))
+
+- ♻️ **Refactoring**
+  - **playground:** Mise à jour de l'exemple du composant `PaginatedTable` ([76207cc](https://github.com/assurance-maladie-digital/design-system/commit/76207ccebfee726e4b856a58e3c6be6339e15e5b))
+
+- 🚨 **Lint**
+  - **config:** Mise à jour de la configuration ([fc31d42](https://github.com/assurance-maladie-digital/design-system/commit/fc31d4290d02c5b1fa9fccc1b1698d18f5730093))
+  - **types:** Suppression du type `any` ([e87fa48](https://github.com/assurance-maladie-digital/design-system/commit/e87fa487eee90686e1f38ae855d2634d8c73aab7))
+
+### Vue Dash
+
+- 💥 **Changements majeurs**
+  - **dependencies:** Mise à jour de Vuetify vers la `v2` ([223e704](https://github.com/assurance-maladie-digital/design-system/commit/223e704120e02f529b8a770cf4f563376591627a))
+
+- ✨ **Nouvelles fonctionnalités**
+  - **prompts:** Ajout de l'option i18n ([6f2ca58](https://github.com/assurance-maladie-digital/design-system/commit/6f2ca5806e73cb1ed9028598340c091b4b09b5c4))
+
+### Interne
+
+- 🔧 **Configuration**
+  - **build:** Mise à jour de la configuration ([299264c](https://github.com/assurance-maladie-digital/design-system/commit/299264c0807f10da75f9fd296d58965276a1ac99))
+
 ## v2.0.0-alpha.20
 
 **Version publiée le 16/07/2019.**
@@ -1340,7 +1375,7 @@ Cette version comporte une mise à jour de l'exemple du `FileUpload` dans le pla
 ### Vue Dot
 
 - ♻️ **Refactoring**
-  - **playground:** Mise à jour de l'exemple du `FileUpload` ([87c26a8](https://github.com/assurance-maladie-digital/design-system/commit/87c26a8a4dcccb293e2a1194a8470f67930411e9))
+  - **playground:** Mise à jour de l'exemple du composant `FileUpload` ([87c26a8](https://github.com/assurance-maladie-digital/design-system/commit/87c26a8a4dcccb293e2a1194a8470f67930411e9))
 
 ## v2.0.0-alpha.17
 
