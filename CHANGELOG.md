@@ -1292,7 +1292,12 @@ Cette version comporte l'ajout des composants `SubHeader`, `HeaderLoading` et `D
 
 **Version publiée le 16/07/2019.**
 
-Cette version comporte
+Cette version comporte un correctif sur le `FileUpload` ainsi que des mises à jour de sécurité.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **FileUpload:** Correction de la valeur qui ne se réinitialise pas sur IE 11 ([d14ab02](https://github.com/assurance-maladie-digital/design-system/commit/d14ab02e882fd7eb8a19283f8a3c418769746f6b))
 
 ### Interne
 
