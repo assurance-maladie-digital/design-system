@@ -52,8 +52,8 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.13.8",
-		"@babel/preset-env": "7.13.9",
+		"@babel/core": "7.13.10",
+		"@babel/preset-env": "7.13.10",
 		"@cnamts/cli-helpers": "^2.0.0-beta.4",
 		"@vue/cli-plugin-babel": "4.5.11",
 		"@vue/cli-plugin-eslint": "4.5.11",
