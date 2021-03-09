@@ -10,7 +10,7 @@ Pour créer notre formulaire, nous allons utiliser le [composant `VForm` de Vuet
 
 Nous allons créer un formulaire avec quelques informations, pour cela nous ajoutons un titre, plusieurs champs textes et un bouton de validation :
 
-```html
+```vue
 <template>
 	<VForm>
 		<h2 class="text-h6 font-weight-bold mb-4">
@@ -100,7 +100,7 @@ export default class UserForm extends Vue {
 
 Ensuite, nous allons ajouter la prop `rules` sur chaque de notre formulaire :
 
-```html
+```vue
 <VTextField
 	v-model="email"
 	:rules="emailRules"
@@ -125,7 +125,7 @@ Vous pouvez tester la fonctionnalité que nous venons d'implémenter en rempliss
 
 Pour implémenter notre bouton de validation, nous allons appeler la méthode `validate` du composant `VForm`. Pour ce faire, nous allons ajouter une référence sur ce composant, ce qui nous permettra d'y accéder dans une méthode :
 
-```html
+```vue
 <template>
 	<VForm ref="form">
 		…
@@ -162,7 +162,7 @@ La déclaration de type `$refs` permet d'augmenter le type par défaut d'une ré
 
 Nous pouvons maintenant appeler la méthode `validate`, qui va effectuer la validation du formulaire et nous retourner un booléen correspondant à la validité du formulaire :
 
-```html
+```vue
 <template>
 	<VForm ref="form">
 		<VBtn

@@ -3,7 +3,7 @@
 		<Prism
 			:code="code"
 			:inline="inline"
-			:language="language"
+			:language="computedLang"
 			:data-lang="dataLang"
 		/>
 	</DocCodeBlock>
@@ -57,6 +57,14 @@
 		get dataLang(): string | undefined {
 			if (this.hideLanguage) {
 				return;
+			}
+
+			return this.language;
+		}
+
+		get computedLang(): string {
+			if (this.language === 'vue') {
+				return 'html';
 			}
 
 			return this.language;

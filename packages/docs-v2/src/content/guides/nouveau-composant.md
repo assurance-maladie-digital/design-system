@@ -14,7 +14,7 @@ La syntaxe de classes permet une meilleure intégration entre Vue.js et TypeScri
 
 La définition minimale d'un composant est la suivante :
 
-```html
+```vue
 <template>
 	<div>Hello World</div>
 </template>
@@ -47,7 +47,7 @@ Le nom du composant est défini par le nom de la classe.
 
 Les propriétés ajoutées au corps de la classe correspondent aux données du composant, qui sont réactives et que vous pouvez utilisez dans la section `<template>` :
 
-```html
+```vue
 <template>
 	<div>Hello {{ message }}</div>
 </template>
@@ -73,7 +73,7 @@ Avec Vue Class Component, la valeur par défaut d'une donnée ne doit pas être 
 
 Les fonctions déclarées dans le corps de la classe correspondent aux méthodes du composant :
 
-```html
+```vue
 <template>
 	<button @click="hello">
 		Click
@@ -97,7 +97,7 @@ Les fonctions déclarées dans le corps de la classe correspondent aux méthodes
 
 Les accesseurs (*getters*) définis dans le corps de la classe correspondent aux propriétés calculées :
 
-```html
+```vue
 <template>
 	<div>Hello {{ message }}</div>
 </template>
@@ -172,7 +172,7 @@ Nous recommandons de toujours utiliser cette syntaxe afin d'écrire les composan
 
 Voici un exemple complet d'un composant avec des props :
 
-```html
+```vue
 <template>
 	<div>Hello {{ message }}</div>
 </template>
@@ -201,7 +201,7 @@ Voici un exemple complet d'un composant avec des props :
 
 Les autres options comme `components` ou `watch` doivent être passées comme paramètres du décorateur :
 
-```html
+```vue
 <template>
 	<OtherComponent />
 </template>
@@ -223,7 +223,7 @@ Les autres options comme `components` ou `watch` doivent être passées comme pa
 
 Si vous souhaitez accéder à un membre de la classe (avec le mot clé `this`) dans un `watch`, vous devez augmenter le type du décorateur en passant la classe comme paramètre (`@Component<HelloWorld>`) :
 
-```html
+```vue
 <template>
 	<input v-model="fullName" />
 </template>
