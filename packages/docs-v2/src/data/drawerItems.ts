@@ -1,6 +1,6 @@
 import { DrawerItem } from '~/types/drawer';
 
-import { mdiSpeedometer, mdiViewDashboard, mdiCogs } from '@mdi/js';
+import { mdiSpeedometer, mdiViewDashboard, mdiCogs, mdiTeach } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
 	{
@@ -128,6 +128,16 @@ export const drawerItems: DrawerItem[] = [
 						to: '/starter-kit/explorer'
 					}
 				]
+			}
+		]
+	},
+	{
+		title: 'Guides',
+		icon: mdiTeach,
+		items: [
+			{
+				title: 'Nouveau composant',
+				to: '/guides/nouveau-composant'
 			}
 		]
 	}
