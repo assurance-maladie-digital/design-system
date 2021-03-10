@@ -76,5 +76,5 @@ code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
 	color: #fff;
 	text-shadow: none;
-	background-color: rgba(12, 65, 154, .99);
+	background-color: rgba(12, 65, 154, .99) !important;
 }

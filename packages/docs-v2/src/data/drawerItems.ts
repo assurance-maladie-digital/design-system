@@ -142,6 +142,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Validation d\'un formulaire',
 				to: '/guides/validation-formulaire'
+			},
+			{
+				title: 'Nouvelle page',
+				to: '/guides/nouvelle-page'
 			}
 		]
 	}

@@ -149,7 +149,9 @@ export default class HelloWorld extends Vue {
 ```
 
 <doc-alert type="info">
-Vous n'avez pas besoin de définir de type de retour sur les hooks.
+
+Vous n'avez pas besoin de définir de type de retour sur les *hooks*.
+
 </doc-alert>
 
 ### Props
