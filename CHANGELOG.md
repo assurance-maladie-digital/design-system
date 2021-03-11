@@ -10,7 +10,15 @@
 - ♻️ **Refactoring**
   - **colors:** Mise à jour des couleurs du thème ([#935](https://github.com/assurance-maladie-digital/design-system/pull/935)) ([18ac9cb](https://github.com/assurance-maladie-digital/design-system/commit/18ac9cb11d2e55b1146735d821770ae390c6c060))
 
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#948](https://github.com/assurance-maladie-digital/design-system/pull/948))
+
 ### Interne
+
+- 📝 **Documentation**
+  - **LICENSE:** Mise à jour de la licence ([#947](https://github.com/assurance-maladie-digital/design-system/pull/947)) ([e83ad12](https://github.com/assurance-maladie-digital/design-system/commit/e83ad12060e231d667b46cf950134b9c14151c0b))
 
 - ⬆️ **Dépendances**
   - **babel:** Mise à jour du monorepo vers la `v7.13.8` ([#912](https://github.com/assurance-maladie-digital/design-system/pull/912)) ([cda9e0b](https://github.com/assurance-maladie-digital/design-system/commit/cda9e0b2a253ca78032809169861faad5a763e77))
@@ -26,7 +34,7 @@
   - **lerna:** Mise à jour vers la `v4` ([#933](https://github.com/assurance-maladie-digital/design-system/pull/933)) ([226be74](https://github.com/assurance-maladie-digital/design-system/commit/226be74146a7567422aae8dba6026de02cfff409))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.2.2` ([#934](https://github.com/assurance-maladie-digital/design-system/pull/934)) ([70dffde](https://github.com/assurance-maladie-digital/design-system/commit/70dffde0112022b566bbb8a229af21a23bf63818))
   - **ts-jest:** Mise à jour vers la `v26.5.3` ([#936](https://github.com/assurance-maladie-digital/design-system/pull/936)) ([a1d15ce](https://github.com/assurance-maladie-digital/design-system/commit/a1d15ce1dfb25c2e4644145348e14d0caeb5f7c8))
-  - **typescript:** Mise à jour vers la `v4.2.3` ([#938](https://github.com/assurance-maladie-digital/design-system/pull/938))
+  - **typescript:** Mise à jour vers la `v4.2.3` ([#938](https://github.com/assurance-maladie-digital/design-system/pull/938)) ([49ab486](https://github.com/assurance-maladie-digital/design-system/commit/49ab4860575a9853c740657900f76fe2b6da8ec5))
 
 ## v2.0.0-beta.6
 
