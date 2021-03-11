@@ -23,7 +23,7 @@
 			>
 				<template #prepend>
 					<VBtn
-						v-show="!noPrependIcon && !showAppendIcon"
+						v-show="showPrependIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
 						@click="menu = true"
@@ -180,6 +180,10 @@
 		/** The v-model of VMenu */
 		menu = false;
 
+		get showPrependIcon(): boolean {
+			return !this.noPrependIcon && !this.showAppendIcon;
+		}
+
 		get showAppendIcon(): boolean {
 			return this.appendIcon || this.outlined;
 		}
@@ -217,6 +221,10 @@
 
 			if (this.warningRules.length) {
 				textFieldClasses.push('vd-warning-rules');
+			}
+
+			if (!this.showPrependIcon) {
+				textFieldClasses.push('vd-no-prepend-icon');
 			}
 
 			if (this.textFieldClass) {
@@ -300,5 +308,11 @@
 				margin-top: -7px;
 			}
 		}
+	}
+
+	// Remove spacing on prepend slot since we're using v-show
+	// @see https://github.com/assurance-maladie-digital/design-system/issues/907
+	.vd-no-prepend-icon ::v-deep .v-input__prepend-outer {
+		margin: 0 !important;
 	}
 </style>

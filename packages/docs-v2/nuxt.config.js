@@ -20,7 +20,7 @@ export default {
 			{
 				hid: 'description',
 				name: 'description',
-				content: `Un Design System pour l'Assurance Maladie`
+				content: 'Un Design System pour l\'Assurance Maladie'
 			}
 		],
 		link: [
@@ -64,12 +64,12 @@ export default {
 	],
 	plugins: [
 		'~/plugins/vue-dot.ts',
-		'~/plugins/form-builder.ts',
+		'~/plugins/form-builder.ts'
 	],
 	build: {
 		transpile: [
 			'@cnamts/vue-dot',
-			'@cnamts/form-builder',
+			'@cnamts/form-builder'
 		]
 	},
 	modules: [
