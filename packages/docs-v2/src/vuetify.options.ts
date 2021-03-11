@@ -1,15 +1,6 @@
 import fr from 'vuetify/es5/locale/fr';
 
-const lightTheme = {
-	// Brand
-	primary: '#0c419a',
-	secondary: '#0c4887',
-	accent: '#2576cd',
-	// State
-	success: '#009688',
-	error: '#b00000',
-	warning: '#ba8b00'
-};
+import { lightTheme } from '@cnamts/design-tokens/dist/colors';
 
 export default {
 	theme: {
