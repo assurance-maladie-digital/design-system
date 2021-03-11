@@ -76,7 +76,7 @@
 		>
 			<VSpacer />
 
-			v{{ version }} &copy; 2018-2020 Dylan Broussard
+			v{{ version }} &copy; 2018-present CNAM
 		</VFooter>
 	</VApp>
 </template>
