@@ -29,6 +29,8 @@
 
 	import { IContentDocument as Document } from '@nuxt/content/types/content';
 
+	import DocGithubLink from '../page/DocGithubLink.vue';
+
 	const Props = Vue.extend({
 		props: {
 			document: {
@@ -40,7 +42,11 @@
 
 	const MixinsDeclation = mixins(Props);
 
-	@Component
+	@Component({
+		components: {
+			DocGithubLink
+		}
+	})
 	export default class DocPageInfo extends MixinsDeclation {
 		get formattedUpdatedAt(): string | null {
 			if (!this.document.updatedAt) {

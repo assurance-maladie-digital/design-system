@@ -24,6 +24,8 @@
 
 	import Prism from 'vue-prism-component';
 
+	import DocCodeBlock from '../code/DocCodeBlock.vue';
+
 	const Props = Vue.extend({
 		props: {
 			language: {
@@ -49,7 +51,8 @@
 
 	@Component({
 		components: {
-			Prism
+			Prism,
+			DocCodeBlock
 		},
 		inheritAttrs: false
 	})

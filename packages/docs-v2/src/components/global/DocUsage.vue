@@ -246,6 +246,8 @@
 	import { VueClass } from 'vue-class-component/lib/declarations';
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
+	import DocTooltipBtn from '../page/DocTooltipBtn.vue';
+
 	interface ImportedComponent extends VueClass<Vue> {
 		options: {
 			data: (this: Vue) => object;
@@ -296,6 +298,9 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component({
+		components: {
+			DocTooltipBtn
+		},
 		inject: ['theme']
 	})
 	export default class DocUsage extends MixinsDeclaration {

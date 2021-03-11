@@ -59,6 +59,8 @@
 	import { getPageMeta } from '../functions/getPageMeta';
 
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
+	import DocPageInfo from '../components/page/DocPageInfo.vue';
+	import DocPrevNext from '../components/page/DocPrevNext.vue';
 
 	interface AsyncData extends Context {
 		$content: contentFunc;
@@ -74,7 +76,9 @@
 
 	@Component({
 		components: {
-			DocDrawer
+			DocDrawer,
+			DocPageInfo,
+			DocPrevNext
 		}
 	})
 	export default class Slug extends Vue {

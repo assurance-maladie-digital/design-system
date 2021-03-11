@@ -105,6 +105,8 @@
 
 	import { mdiInvertColors, mdiCodeTags } from '@mdi/js';
 
+	import DocTooltipBtn from '../page/DocTooltipBtn.vue';
+
 	interface Parsed {
 		[key: string]: string;
 		template: string;
@@ -125,7 +127,11 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component
+	@Component({
+		components: {
+			DocTooltipBtn
+		}
+	})
 	export default class DocExample extends MixinsDeclaration {
 		invertColorsIcon = mdiInvertColors;
 		sourceIcon = mdiCodeTags;
