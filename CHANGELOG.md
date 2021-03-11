@@ -10,10 +10,15 @@
 - ♻️ **Refactoring**
   - **colors:** Mise à jour des couleurs du thème ([#935](https://github.com/assurance-maladie-digital/design-system/pull/935)) ([18ac9cb](https://github.com/assurance-maladie-digital/design-system/commit/18ac9cb11d2e55b1146735d821770ae390c6c060))
 
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#948](https://github.com/assurance-maladie-digital/design-system/pull/948))
+
 ### Interne
 
 - 📝 **Documentation**
-  - **LICENSE:** Mise à jour de la licence ([#947](https://github.com/assurance-maladie-digital/design-system/pull/947))
+  - **LICENSE:** Mise à jour de la licence ([#947](https://github.com/assurance-maladie-digital/design-system/pull/947)) ([e83ad12](https://github.com/assurance-maladie-digital/design-system/commit/e83ad12060e231d667b46cf950134b9c14151c0b))
 
 - ⬆️ **Dépendances**
   - **babel:** Mise à jour du monorepo vers la `v7.13.8` ([#912](https://github.com/assurance-maladie-digital/design-system/pull/912)) ([cda9e0b](https://github.com/assurance-maladie-digital/design-system/commit/cda9e0b2a253ca78032809169861faad5a763e77))
