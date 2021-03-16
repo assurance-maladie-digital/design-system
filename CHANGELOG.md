@@ -4,6 +4,7 @@
 
 - 🐛 **Corrections de bugs**
   - **FooterBtn:** Correction de la couleur du bouton écrasée par Vuetify avec la prop `inert` ([#939](https://github.com/assurance-maladie-digital/design-system/pull/939)) ([22dc501](https://github.com/assurance-maladie-digital/design-system/commit/22dc5016efbf11cdd502a34eede9df1e68cd5b03))
+  - **SubHeader:** Correction de la couleur des boutons d'actions dans les `DataList` ([#957](https://github.com/assurance-maladie-digital/design-system/pull/957))
 
 ### Design Tokens
 
@@ -18,7 +19,7 @@
 ### Interne
 
 - ♻️ **Refactoring**
-  - **playground:** Mise à jour des styles suite à la mise à jour du thème ([#885](https://github.com/assurance-maladie-digital/design-system/pull/885))
+  - **playground:** Mise à jour des styles suite à la mise à jour du thème ([#955](https://github.com/assurance-maladie-digital/design-system/pull/955)) ([4e6b777](https://github.com/assurance-maladie-digital/design-system/commit/4e6b777eaacaced206c77a4a4b811ebadfba3a1b))
 
 - 📝 **Documentation**
   - **LICENSE:** Mise à jour de la licence ([#947](https://github.com/assurance-maladie-digital/design-system/pull/947)) ([e83ad12](https://github.com/assurance-maladie-digital/design-system/commit/e83ad12060e231d667b46cf950134b9c14151c0b))
