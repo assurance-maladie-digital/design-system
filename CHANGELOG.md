@@ -17,6 +17,9 @@
 
 ### Interne
 
+- ♻️ **Refactoring**
+  - **playground:** Mise à jour des styles suite à la mise à jour du thème ([#885](https://github.com/assurance-maladie-digital/design-system/pull/885))
+
 - 📝 **Documentation**
   - **LICENSE:** Mise à jour de la licence ([#947](https://github.com/assurance-maladie-digital/design-system/pull/947)) ([e83ad12](https://github.com/assurance-maladie-digital/design-system/commit/e83ad12060e231d667b46cf950134b9c14151c0b))
 
@@ -35,7 +38,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.17.0` ([#940](https://github.com/assurance-maladie-digital/design-system/pull/940)) ([e6fca3d](https://github.com/assurance-maladie-digital/design-system/commit/e6fca3dcdcb8beeeffd76835218e087917e3cb85))
   - **babel:** Mise à jour du monorepo vers la `v7.13.10` ([#941](https://github.com/assurance-maladie-digital/design-system/pull/941)) ([2745f3c](https://github.com/assurance-maladie-digital/design-system/commit/2745f3cbaf165f04e674f4e1ddf20374eced560d))
   - **@types/node:** Mise à jour vers la `v12.20.5` ([#943](https://github.com/assurance-maladie-digital/design-system/pull/943)) ([333e2bc](https://github.com/assurance-maladie-digital/design-system/commit/333e2bc5d748cde76aae6473c5a17ea04a3bb814))
-  - **vuetify:** Mise à jour vers la `v2.4.6` ([#944](https://github.com/assurance-maladie-digital/design-system/pull/944))
+  - **vuetify:** Mise à jour vers la `v2.4.6` ([#944](https://github.com/assurance-maladie-digital/design-system/pull/944)) ([c5bd6af](https://github.com/assurance-maladie-digital/design-system/commit/c5bd6af1f6461bf7a13c9920c4027aa324402668))
 
 ## v2.0.0-beta.6
 
