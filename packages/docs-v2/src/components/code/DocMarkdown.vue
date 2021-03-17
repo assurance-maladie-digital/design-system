@@ -22,8 +22,7 @@
 		render(h, {
 			children: nodes = [],
 			data,
-			props,
-			slots
+			props
 		}) {
 			const children = [];
 			const node = nodes[0] || {};

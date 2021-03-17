@@ -119,7 +119,11 @@
 
 	import { API_TABLE_HEADERS } from '../../constants';
 
+	import DocMarkdown from '../code/DocMarkdown.vue';
+
 	import Prism from 'prismjs';
+
+	import 'prismjs/components/prism-typescript.js';
 
 	type PropObj = IndexedObject<IndexedObject | string> | string;
 
@@ -142,7 +146,11 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component
+	@Component({
+		components: {
+			DocMarkdown
+		}
+	})
 	export default class DocApiTable extends MixinsDeclaration {
 		get headers(): string[] {
 			return API_TABLE_HEADERS[this.field];
