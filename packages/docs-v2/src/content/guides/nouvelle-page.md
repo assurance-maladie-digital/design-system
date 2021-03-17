@@ -128,7 +128,7 @@ export const routes = [
 
 <doc-alert type="info">
 
-La syntaxe `component: () => import('@/views/UserDeclaration.vue')` est un import dynamique de Webpack. Cela permet de créer un chunk spécifique pour cette route et de charger celui-ci que lorsque la route est visitée.<br>
+La syntaxe `component: () => import('@/views/UserDeclaration.vue')` est un [import dynamique de webpack](https://webpack.js.org/guides/code-splitting/). Cela permet de créer un chunk spécifique pour cette route et de charger celui-ci que lorsque la route est visitée.<br>
 La page d'accueil n'est pas importée de manière asynchrone afin de charger cette page le plus rapidement possible.
 
 </doc-alert>
@@ -141,13 +141,13 @@ Vous pouvez également créer un lien vers cette page :
 
 ```vue
 <VBtn
-  :to="{
-    name: 'userDeclaration'
-  }"
-  large
-  color="primary"
+	:to="{
+		name: 'userDeclaration'
+	}"
+	large
+	color="primary"
 >
-  Me déclarer
+	Me déclarer
 </VBtn>
 ```
 

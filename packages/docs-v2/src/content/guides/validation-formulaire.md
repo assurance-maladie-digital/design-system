@@ -123,7 +123,7 @@ Vous pouvez tester la fonctionnalité que nous venons d'implémenter en rempliss
 
 ### Bouton de validation
 
-Pour implémenter notre bouton de validation, nous allons appeler la méthode `validate` du composant `VForm`. Pour ce faire, nous allons ajouter une référence sur ce composant, ce qui nous permettra d'y accéder dans une méthode :
+Pour implémenter notre bouton de validation, nous allons appeler la méthode `validate` du composant `VForm`. Pour ce faire, nous allons ajouter une [référence](https://fr.vuejs.org/v2/guide/components-edge-cases.html#Acceder-a-des-instances-de-composants-enfants-et-des-elements-enfants) sur ce composant, ce qui nous permettra d'y accéder dans une méthode :
 
 ```vue
 <template>
@@ -213,7 +213,7 @@ Nous pouvons maintenant appeler la méthode `validate`, qui va effectuer la vali
 <doc-alert type="warning">
 
 La méthode `submitDeclaration` est déclarée comme asynchrone grâce au mot-clé `async` et son type de retour est donc une promesse `Promise<void>`.<br>
-Il est nécessaire de déclarer cette fonction comme telle car nous appelons la méthode `$nextTick`, afin d'attendre le prochain cycle de rendu du composant et que la validation faite par Vuetify soit effective.<br>
+Il est nécessaire de déclarer cette fonction comme telle car nous appelons la [méthode `$nextTick`](https://fr.vuejs.org/v2/guide/reactivity.html#File-d%E2%80%99attente-de-mise-a-jour-asynchrone), afin d'attendre le prochain cycle de rendu du composant et que la validation faite par Vuetify soit effective.<br>
 Sans cela, la validation ne fonctionnera pas correctement.
 
 </doc-alert>
