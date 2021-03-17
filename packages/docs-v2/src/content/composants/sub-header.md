@@ -32,7 +32,7 @@ Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela
 
 ### Boutons d'actions
 
-Vous pouvez ajouter des boutons actions dans les listes de données en utilisant la propriété `action` sur les items.
+Vous pouvez ajouter des boutons d'actions dans les listes de données en utilisant la propriété `action` sur les items.
 
 <doc-example file="sub-header/action"></doc-example>
 

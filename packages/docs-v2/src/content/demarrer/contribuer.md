@@ -6,7 +6,7 @@ position: 2
 
 ## Rapports de bugs
 
-Lorsque vous constatez un bug dans l'un des packages du Design System, vous pouvez créer un rapport de bug pour nous notifier de celui-ci.
+Lorsque vous constatez un bug dans l'un des packages du Design System, vous pouvez créer un rapport de bug pour notifier l'équipe de celui-ci.
 
 Avant d'ouvrir un nouveau rapport de bug, vérifiez :
 - Qu'un rapport similaire n'ait pas déjà été ouvert en cherchant dans les [rapports existants](https://github.com/assurance-maladie-digital/design-system/issues)
@@ -175,7 +175,7 @@ Les messages de commit doivent :
 
 ### Pull Requests
 
-Pour créer une nouvelle branche et effectuer des modifications, vous pouvez nous demander de vous donner les droits d'écriture sur le projet, ou vous pouvez [créer un fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) du repo `design-system`.
+Pour créer une nouvelle branche et effectuer des modifications, vous pouvez faire une demande à l'équipe pour vous donner les droits d'écriture sur le projet, ou vous pouvez [créer un fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) du repo `design-system`.
 
 Et ensuite ajouter votre fork comme *remote* :
 
@@ -203,6 +203,6 @@ Enfin, vous pouvez [créer une Pull Request](https://github.com/assurance-maladi
 
 <doc-alert type="info">
 
-Comme nous sommes dans un cycle de versioning `beta`, vous devez utiliser la branche `dev` comme branche de base.
+Comme le projet est dans un cycle de versioning `beta`, vous devez utiliser la branche `dev` comme branche de base.
 
 </doc-alert>

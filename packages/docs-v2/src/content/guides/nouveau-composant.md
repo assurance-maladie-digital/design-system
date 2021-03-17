@@ -6,7 +6,7 @@ position: 26
 
 ## Syntaxe
 
-Pour écrire nos composants, nous utilisons la syntaxe de classes via [Vue Class Component](https://github.com/vuejs/vue-class-component), combinée à la syntaxe de [composants monofichier](https://fr.vuejs.org/v2/guide/single-file-components.html).
+Pour écrire les composants, il est recommandé d'utiliser la syntaxe de classes via [Vue Class Component](https://github.com/vuejs/vue-class-component), combinée à la syntaxe de [composants monofichier](https://fr.vuejs.org/v2/guide/single-file-components.html).
 
 La syntaxe de composants monofichiers permet d'écrire le template, la logique et les styles d'un composant dans un seul fichier avec l'extension `.vue`. Ces différentes sections sont liées, et les réunir rend le composant plus cohérent et facile à maintenir.
 

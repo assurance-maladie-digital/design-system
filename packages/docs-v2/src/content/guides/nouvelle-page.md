@@ -48,13 +48,13 @@ Vous pouvez maintenant importer les composants que vous souhaitez afficher dans 
 
 <doc-alert type="info">
 
-Nous utilisons le [composant `PageCard`](/composants/page-card) pour afficher une carte avec une largeur de page standard.
+Le [composant `PageCard`](/composants/page-card) est utilisé pour afficher une carte avec une largeur de page standard.
 
 </doc-alert>
 
 ### Métadonnées
 
-Il est recommandé d'ajouter des métadonnées comme le titre et la description sur chaque page. Pour cela, nous utilisons [Vue Meta](https://vue-meta.nuxtjs.org/).
+Il est recommandé d'ajouter des métadonnées comme le titre et la description sur chaque page. Pour cela, vous pouvez utiliser [Vue Meta](https://vue-meta.nuxtjs.org/).
 
 Pour déclarer ces informations, vous pouvez créer une méthode `metaInfo` annotée avec le décorateur `@Meta` :
 
@@ -96,7 +96,8 @@ Le commentaire `/* istanbul ignore next */` permet de ne pas inclure la méthode
 
 <doc-alert type="info">
 
-Le titre et la description sont stockés dans le fichier de traduction `userDeclaration`, nous utilisons la méthode `this.$t()` de [Vue i18n](https://kazupon.github.io/vue-i18n/guide/formatting.html) pour récupérer ces valeurs.
+Le titre et la description sont stockés dans le fichier de traduction `userDeclaration`.<br>
+La méthode `this.$t()` de [Vue i18n](https://kazupon.github.io/vue-i18n/guide/formatting.html) permet de récupérer ces valeurs.
 
 </doc-alert>
 

@@ -6,9 +6,7 @@ position: 27
 
 ## Création du formulaire
 
-Pour créer notre formulaire, nous allons utiliser le [composant `VForm` de Vuetify](https://vuetifyjs.com/en/components/forms/).
-
-Nous allons créer un formulaire avec quelques informations, pour cela nous ajoutons un titre, plusieurs champs textes et un bouton de validation :
+Pour créer le formulaire, vous pouvez utiliser le [composant `VForm` de Vuetify](https://vuetifyjs.com/en/components/forms/) et ajouter des informations comme un titre, plusieurs champs textes et un bouton de validation :
 
 ```vue
 <template>
@@ -72,7 +70,7 @@ Nous allons créer un formulaire avec quelques informations, pour cela nous ajou
 Dans Vuetify, les règles de validation se présentent sous la forme d'un tableau de fonctions appliqué sur les composants via la prop `rules`.<br>
 Si la règle renvoie une chaîne de caractères, celle-ci est affichée comme erreur. Si la règle renvoie `true`, une erreur est affichée sans message. Si la règle renvoie `false`, aucune erreur n'est affichée.
 
-Ici, nous allons utiliser les règles `required` et `email` de la bibliothèque de règles de Vue Dot :
+Ici, vous pouvez utiliser les règles `required` et `email` de la bibliothèque de règles de Vue Dot :
 
 ```ts
 import Vue from 'vue';
@@ -98,7 +96,7 @@ export default class UserForm extends Vue {
 }
 ```
 
-Ensuite, nous allons ajouter la prop `rules` sur chaque de notre formulaire :
+Ensuite, vous devez ajouter la prop `rules` sur chacun des champs du formulaire :
 
 ```vue
 <VTextField
@@ -113,17 +111,17 @@ Ensuite, nous allons ajouter la prop `rules` sur chaque de notre formulaire :
 
 <doc-alert type="info">
 
-Nous utilisons la prop `validate-on-blur` pour déferrer la validation au moment où l'utilisateur focus un autre élément.
+La prop `validate-on-blur` sert à déferrer la validation au moment où l'utilisateur sort du champ.
 
 </doc-alert>
 
-Vous pouvez tester la fonctionnalité que nous venons d'implémenter en remplissant par exemple le champ email avec une adresse erronée :
+Vous pouvez tester la fonctionnalité implémentée en remplissant par exemple le champ email avec une adresse erronée :
 
 <doc-example file="guides/form-validation/rules-form"></doc-example>
 
 ### Bouton de validation
 
-Pour implémenter notre bouton de validation, nous allons appeler la méthode `validate` du composant `VForm`. Pour ce faire, nous allons ajouter une [référence](https://fr.vuejs.org/v2/guide/components-edge-cases.html#Acceder-a-des-instances-de-composants-enfants-et-des-elements-enfants) sur ce composant, ce qui nous permettra d'y accéder dans une méthode :
+Pour implémenter notre bouton de validation, vous pouvez appeler la méthode `validate` du composant `VForm`. Pour ce faire, vous devez ajouter une [référence](https://fr.vuejs.org/v2/guide/components-edge-cases.html#Acceder-a-des-instances-de-composants-enfants-et-des-elements-enfants) sur ce composant, ce qui vous permettra d'y accéder dans une méthode :
 
 ```vue
 <template>
@@ -160,7 +158,7 @@ La déclaration de type `$refs` permet d'augmenter le type par défaut d'une ré
 
 </doc-alert>
 
-Nous pouvons maintenant appeler la méthode `validate`, qui va effectuer la validation du formulaire et nous retourner un booléen correspondant à la validité du formulaire :
+Vous pouvez maintenant appeler la méthode `validate`, qui va effectuer la validation du formulaire et retourner un booléen correspondant à la validité du formulaire :
 
 ```vue
 <template>
@@ -213,7 +211,7 @@ Nous pouvons maintenant appeler la méthode `validate`, qui va effectuer la vali
 <doc-alert type="warning">
 
 La méthode `submitDeclaration` est déclarée comme asynchrone grâce au mot-clé `async` et son type de retour est donc une promesse `Promise<void>`.<br>
-Il est nécessaire de déclarer cette fonction comme telle car nous appelons la [méthode `$nextTick`](https://fr.vuejs.org/v2/guide/reactivity.html#File-d%E2%80%99attente-de-mise-a-jour-asynchrone), afin d'attendre le prochain cycle de rendu du composant et que la validation faite par Vuetify soit effective.<br>
+Il est nécessaire de déclarer cette fonction comme telle pour appeler la [méthode `$nextTick`](https://fr.vuejs.org/v2/guide/reactivity.html#File-d%E2%80%99attente-de-mise-a-jour-asynchrone) de manière asynchrone, afin d'attendre le prochain cycle de rendu du composant et que la validation faite par Vuetify soit effective.<br>
 Sans cela, la validation ne fonctionnera pas correctement.
 
 </doc-alert>

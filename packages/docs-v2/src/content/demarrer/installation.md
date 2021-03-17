@@ -6,7 +6,7 @@ position: 1
 
 ## Création d'un nouveau projet
 
-Pour créer des nouveaux projets, nous utilisons [Vue CLI](https://cli.vuejs.org/guide/installation.html), un outil développé par l'équipe cœur de Vue.js en combinaison avec un Vue Dash, un outil qui nous permet de pré-configurer les nouveaux projets avec les règles et les outils de l'Assurance Maladie.
+Pour créer des nouveaux projets, il est recommandé d'utiliser [Vue CLI](https://cli.vuejs.org/guide/installation.html), un outil développé par l'équipe cœur de Vue.js en combinaison avec Vue Dash, un outil interne qui permet de pré-configurer les nouveaux projets avec les règles et les outils de l'Assurance Maladie.
 
 ### Pré-requis
 

@@ -13,7 +13,7 @@ position: 18
 <doc-alert type="info">
 
 Il est conseillé de n'avoir qu'un seul composant `NotificationBar` par page, car leur affichage est contrôlé par le module `notification`.<br>
-Cependant, il est possible d'ajouter une identifiant sur les notifications et de n'afficher que le composant correspondant, c'est ce que nous faisons dans les exemples ci-dessous.
+Cependant, il est possible d'ajouter un identifiant sur les notifications et de n'afficher que le composant correspondant, c'est ce qui est fait dans les exemples ci-dessous.
 
 </doc-alert>
 
