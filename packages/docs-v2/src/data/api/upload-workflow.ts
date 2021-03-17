@@ -62,6 +62,11 @@ export const api: Api = {
 	file: File,
 	code: ErrorCodes
 }`
+			},
+			{
+				name: 'view-file',
+				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
+				value: 'FileItem'
 			}
 		]
 	},
@@ -130,7 +135,7 @@ export const api: Api = {
 			{
 				name: 'view-file',
 				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
-				value: 'File'
+				value: 'FileItem'
 			}
 		]
 	}

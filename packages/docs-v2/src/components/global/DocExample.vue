@@ -78,6 +78,7 @@
 								<DocMarkup
 									:code="parsed[section]"
 									:rounded="false"
+									no-margin
 								/>
 							</VWindowItem>
 						</template>
