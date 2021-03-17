@@ -4,23 +4,13 @@
 			<div class="home-page d-flex h-100 white">
 				<div class="home-content d-flex flex-column align-start flex-grow-1 px-16 py-10">
 					<div class="d-flex flex-column justify-center flex-grow-1">
-						<div class="d-flex align-center flex-wrap max-width-none my-n2 mx-n4">
-							<img
-								width="250px"
-								height="114px"
-								src="~/assets/logo-am.svg"
-								alt="l'Assurance Maladie"
-								class="logo-am my-2 mx-4"
-							>
-
-							<img
-								width="85px"
-								height="85px"
-								src="~/assets/logo-digital.svg"
-								alt="Le Digital de l'Assurance Maladie"
-								class="logo-digital my-2 mx-4"
-							>
-						</div>
+						<img
+							width="250px"
+							height="114px"
+							src="~/assets/logo-am.svg"
+							alt="l'Assurance Maladie"
+							class="logo-am"
+						>
 
 						<h1 class="home-title text-lg-h3 text-md-h4 text-sm-h5 text-h5 my-10 mt-sm-16 font-weight-bold">
 							Un Design System pour l'Assurance Maladie
@@ -167,13 +157,8 @@
 		}
 
 		.logo-am {
-			width: 135px;
-			height: 62px;
-		}
-
-		.logo-digital {
-			width: 60px;
-			height: 60px;
+			width: 175px;
+			height: 80px;
 		}
 	}
 
