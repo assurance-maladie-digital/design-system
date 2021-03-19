@@ -1,5 +1,8 @@
 <template>
-	<DocSection title="UploadWorkflow">
+	<DocSection
+		title="UploadWorkflow"
+		no-divider
+	>
 		<UploadWorkflow
 			v-model="files"
 			width="512"

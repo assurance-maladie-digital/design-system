@@ -25,6 +25,7 @@ interface TestComponent extends Vue {
 	fileSelected(): void;
 	selectItems: SelectItem[];
 	uploadError(error: string): void;
+	emitViewFileEvent(file: FileListItem): void;
 }
 
 /** Create fake VForm for refs */
@@ -204,5 +205,16 @@ describe('EventsFileFired', () => {
 
 		expect(wrapper.vm.uploadedFile).toBe(null);
 		expect(wrapper.emitted('error')).toBeTruthy();
+	});
+
+	// viewFile
+	it('emits view-file event', async() => {
+		const wrapper = createWrapper() as Wrapper<TestComponent>;
+
+		wrapper.vm.emitViewFileEvent(fileListItem);
+
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.emitted('view-file')).toBeTruthy();
 	});
 });
