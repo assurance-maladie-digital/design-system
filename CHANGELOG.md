@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.7
+
+**Version publiée le 19/03/2021.**
+
+Cette version comporte la mise à jour des couleurs du thème ainsi plusieurs correctifs sur Vue Dot et Vue Dash.
 
 ### Vue Dot
 
@@ -7,18 +11,18 @@
   - **SubHeader:** Correction de la couleur des boutons d'actions dans les `DataList` ([#957](https://github.com/assurance-maladie-digital/design-system/pull/957)) ([49a102e](https://github.com/assurance-maladie-digital/design-system/commit/49a102ef8db1f54e6e008ad04116ce7d4c24908b))
   - **UploadWorkflow:** Correction de l'événement `view-file` non émis ([#959](https://github.com/assurance-maladie-digital/design-system/pull/959)) ([11dadfb](https://github.com/assurance-maladie-digital/design-system/commit/11dadfb947e9e820c9065c4f8640bd49cb1d8b6e))
 
-### Design Tokens
-
-- ♻️ **Refactoring**
-  - **colors:** Mise à jour des couleurs du thème ([#935](https://github.com/assurance-maladie-digital/design-system/pull/935)) ([18ac9cb](https://github.com/assurance-maladie-digital/design-system/commit/18ac9cb11d2e55b1146735d821770ae390c6c060))
-
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
   - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#948](https://github.com/assurance-maladie-digital/design-system/pull/948)) ([17348c0](https://github.com/assurance-maladie-digital/design-system/commit/17348c088ecca36c003db85e261c7a11fb820254))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#967](https://github.com/assurance-maladie-digital/design-system/pull/967))
+  - **template:** Mise à jour des dépendances ([#967](https://github.com/assurance-maladie-digital/design-system/pull/967)) ([f54073f](https://github.com/assurance-maladie-digital/design-system/commit/f54073f8356785e8e36f3570be05bb8ba7e02618))
+
+### Design Tokens
+
+- ♻️ **Refactoring**
+  - **colors:** Mise à jour des couleurs du thème ([#935](https://github.com/assurance-maladie-digital/design-system/pull/935)) ([18ac9cb](https://github.com/assurance-maladie-digital/design-system/commit/18ac9cb11d2e55b1146735d821770ae390c6c060))
 
 ### Interne
 
@@ -27,6 +31,7 @@
 
 - 📝 **Documentation**
   - **LICENSE:** Mise à jour de la licence ([#947](https://github.com/assurance-maladie-digital/design-system/pull/947)) ([e83ad12](https://github.com/assurance-maladie-digital/design-system/commit/e83ad12060e231d667b46cf950134b9c14151c0b))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#968](https://github.com/assurance-maladie-digital/design-system/pull/968))
 
 - ⬆️ **Dépendances**
   - **core-js:** Mise à jour vers la `v3.9.1` ([#913](https://github.com/assurance-maladie-digital/design-system/pull/913)) ([2a3c2c7](https://github.com/assurance-maladie-digital/design-system/commit/2a3c2c7b1c59c47f3776c29d3c151a8265d4593c))
