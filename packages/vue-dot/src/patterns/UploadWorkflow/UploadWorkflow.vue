@@ -16,6 +16,7 @@
 			@delete-file="resetFile"
 			@retry="showFileUpload"
 			@upload="showFileUpload"
+			@view-file="emitViewFileEvent"
 		/>
 
 		<FileUpload
