@@ -590,22 +590,22 @@ export const contentExplorerItems: TreeviewItem[] = [
 	},
 	{
 		name: 'README.md',
-		path: 'todo',
+		path: 'README.md',
 		file: 'md'
 	},
 	{
 		name: 'tsconfig.json',
-		path: 'todo',
+		path: 'tsconfig.json',
 		file: 'json'
 	},
 	{
 		name: 'vue.config.js',
-		path: 'todo',
+		path: 'vue.config.js',
 		file: 'js'
 	},
 	{
 		name: 'yarn.lock',
-		path: 'todo',
+		path: 'yarn.lock',
 		file: 'txt'
 	}
 ];
