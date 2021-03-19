@@ -17,6 +17,9 @@
 - 🐛 **Corrections de bugs**
   - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#948](https://github.com/assurance-maladie-digital/design-system/pull/948)) ([17348c0](https://github.com/assurance-maladie-digital/design-system/commit/17348c088ecca36c003db85e261c7a11fb820254))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#967](https://github.com/assurance-maladie-digital/design-system/pull/967))
+
 ### Interne
 
 - ♻️ **Refactoring**
