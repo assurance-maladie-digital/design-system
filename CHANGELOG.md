@@ -42,7 +42,8 @@
   - **ts-jest:** Mise à jour vers la `v26.5.4` ([#962](https://github.com/assurance-maladie-digital/design-system/pull/962)) ([7a1757d](https://github.com/assurance-maladie-digital/design-system/commit/7a1757d3fde111ec87d6197d67c1fd45512ac063))
   - **@types/jest:** Mise à jour vers la `v26.0.21` ([#963](https://github.com/assurance-maladie-digital/design-system/pull/963)) ([3810918](https://github.com/assurance-maladie-digital/design-system/commit/3810918bed51ab6dce1188b4e7d360d18253b319))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.3.0` ([#965](https://github.com/assurance-maladie-digital/design-system/pull/965)) ([42246b4](https://github.com/assurance-maladie-digital/design-system/commit/42246b418a31919c093db84cab0b3c0048732b2a))
-  - **@types/node:** Mise à jour vers la `v14` ([#966](https://github.com/assurance-maladie-digital/design-system/pull/966))
+  - **@types/node:** Mise à jour vers la `v14` ([#966](https://github.com/assurance-maladie-digital/design-system/pull/966)) ([16c87a5](https://github.com/assurance-maladie-digital/design-system/commit/16c87a56ff568100737685ce542f5c0c123d433b))
+  - **@types/fs-extra:** Mise à jour vers la `v9.0.8` ([#927](https://github.com/assurance-maladie-digital/design-system/pull/927))
 
 ## v2.0.0-beta.6
 
