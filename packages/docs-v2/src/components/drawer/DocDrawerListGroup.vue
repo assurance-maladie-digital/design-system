@@ -66,6 +66,8 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component({
+		/** @see https://github.com/kaorun343/vue-property-decorator/issues/102 */
+		name: 'DocDrawerListGroup',
 		components: {
 			DocDrawerListItem
 		}
