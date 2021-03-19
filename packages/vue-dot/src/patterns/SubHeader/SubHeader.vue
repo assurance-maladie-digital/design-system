@@ -236,5 +236,9 @@
 			opacity: .8;
 			color: #fff !important;
 		}
+
+		.vd-data-list-item-action-btn {
+			color: #fff !important;
+		}
 	}
 </style>

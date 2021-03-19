@@ -69,15 +69,13 @@
 			</PageCard>
 		</VMain>
 
-		<VFooter
-			:color="dark ? 'grey darken-3' : 'secondary'"
-			class="white--text elevation-5"
-			app
-		>
+		<FooterWrapper class="px-8">
 			<VSpacer />
 
-			v{{ version }} &copy; 2018-present CNAM
-		</VFooter>
+			<p class="grey--text text--darken-3 mb-0">
+				v{{ version }} &copy; 2018-present CNAM
+			</p>
+		</FooterWrapper>
 	</VApp>
 </template>
 
