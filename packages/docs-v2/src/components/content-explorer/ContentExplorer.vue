@@ -7,6 +7,7 @@
 			activatable
 			return-object
 			item-key="name"
+			selection-type="independent"
 			@update:active="treeviewUpdated"
 		>
 			<template #prepend="{ item, open }">
@@ -93,9 +94,7 @@
 		tree = [];
 		drawer = false;
 
-		treeviewUpdated(activeItems: TreeviewItem[]): void {
-			const activeItem = activeItems[0];
-
+		treeviewUpdated([activeItem]: TreeviewItem[]): void {
 			if (!activeItem) {
 				this.document = null;
 				return;

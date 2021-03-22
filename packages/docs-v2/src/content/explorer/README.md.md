@@ -1,8 +1,8 @@
-Le fichier `README.md` permet de décrire votre projet et comment faire fonctionner celui-ci.
+Le fichier `README.md` contient des informations sur le projet comme sa description et les instructions pour faire fonctionner celui-ci.
 
 ## Contenu par défaut
 
-Par défaut, il contient des informations sur les commandes à exécuter pour lancer le serveur de développement, les tests, la vérification de la qualité et la construction de l'application.
+Par défaut, il contient des informations sur les commandes à exécuter pour lancer le serveur de développement, les tests, la vérification de la qualité et la compilation de l'application.
 
 ## Plus d'informations
 

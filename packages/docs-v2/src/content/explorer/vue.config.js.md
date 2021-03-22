@@ -1,4 +1,4 @@
-Le fichier `vue.config.js` contient la configuration globale de Vue CLI.
+Le fichier `vue.config.js` contient la configuration globale de [Vue CLI](https://cli.vuejs.org/).
 
 <doc-alert type="warning">
 Il n'est pas recommandé d'éditer ce fichier.
@@ -48,7 +48,7 @@ configureWebpack: {
 }
 ```
 
-Ce bloc permet de surcharger la [configuration de webpack](https://webpack.js.org/configuration/) par défaut, afin notamment de retirer le caractère `~` qui est bloqué par le pare-feu ou encore de masquer les warnings sur la taille de l'application lors de la construction de l'application.
+Ce bloc permet de surcharger la [configuration de webpack](https://webpack.js.org/configuration/) par défaut, afin notamment de retirer le caractère `~` qui est bloqué par le pare-feu ou encore de masquer les warnings sur la taille de l'application lors de la compilation de l'application.
 
 ### Transpilation des dépendances
 
@@ -70,7 +70,7 @@ Ce bloc permet d'indiquer à [Babel](https://babeljs.io/) les dépendances à tr
 parallel: process.env.NODE_ENV !== 'production'
 ```
 
-Cette ligne permet de désactiver l'utilisation de [thread-loader](https://www.npmjs.com/package/thread-loader) lors de la construction de l'application sur la plateforme, car cela génère des erreurs comme nous utilisons certaines options des loaders de webpack.
+Cette ligne permet de désactiver l'utilisation de [thread-loader](https://www.npmjs.com/package/thread-loader) lors de la compilation de l'application sur la plateforme, car cela génère des erreurs comme nous utilisons certaines options des loaders de webpack.
 
 ## Plus d'informations
 

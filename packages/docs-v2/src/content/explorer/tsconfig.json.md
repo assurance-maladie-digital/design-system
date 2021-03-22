@@ -1,12 +1,14 @@
-Le fichier `tsconfig.js` permet de configurer le compilateur de TypeScript ainsi que de spécifier les fichiers qui composent le projet.
+Le fichier `tsconfig.js` contient la configuration du compilateur de [TypeScript](https://www.typescriptlang.org/) ainsi que la liste des fichiers qui composent le projet.
 
 <doc-alert type="warning">
-Il n'est pas recommandé d'éditer ce fichier.
+
+Il n'est pas recommandé d'éditer ce fichier, hormis la section `types`.
+
 </doc-alert>
 
 ## Configuration par défaut
 
-Par défaut, le fichier contient beaucoup d'options de configuration. Voici les éléments les plus significatifs :
+Par défaut, le fichier contient plusieurs options de configuration, voici les éléments les plus significatifs :
 
 ### Types
 
@@ -20,6 +22,12 @@ Par défaut, le fichier contient beaucoup d'options de configuration. Voici les 
 ```
 
 Ce bloc permet de définir la liste des packages fournissant des définitions de types à importer.
+
+<doc-alert type="info">
+
+Si vous utilisez des dépendances et que celles-ci ont une définition de types inclue dans [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped), vous pouvez l'ajouter dans ce bloc.
+
+</doc-alert>
 
 ### Alias
 

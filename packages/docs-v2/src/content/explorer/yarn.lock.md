@@ -1,6 +1,6 @@
-Le fichier `yarn.lock` permet à [Yarn](https://classic.yarnpkg.com/en/) de garantir une installation consistante des dépendances sur tous les postes.
+Le fichier `yarn.lock` contient les informations dont [Yarn](https://classic.yarnpkg.com/en/) a besoin pour garantir une installation consistante des dépendances sur tous les postes.
 
-Ce fichier détaille toutes les dépendances et sous-dépendances, ainsi que les versions nécessaires de celles-ci.
+Ce fichier détaille toute l'arborescence des dépendances et notamment les versions de celles-ci.
 
 <doc-alert type="error">
 Ce fichier est généré automatiquement, vous ne devez pas le modifier directement.
