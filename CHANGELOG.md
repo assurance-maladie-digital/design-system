@@ -2,9 +2,12 @@
 
 ### Vue Dash
 
+- 🐛 **Corrections de bugs**
+  - **template:** Correction d'une faute d'orthographe dans le fichier `.editorconfig` ([#977](https://github.com/assurance-maladie-digital/design-system/pull/977))
+
 - 🔥 **Suppressions**
   - **template:** Suppression du fichier `.eslintignore` ([#975](https://github.com/assurance-maladie-digital/design-system/pull/975)) ([692e8b5](https://github.com/assurance-maladie-digital/design-system/commit/692e8b5bb9261a00a9670cf0e59155b9af77e1f4))
-  - **template:** Suppression des commentaires inutiles dans le fichier `tsconfig.json` ([#976](https://github.com/assurance-maladie-digital/design-system/pull/976))
+  - **template:** Suppression des commentaires inutiles dans le fichier `tsconfig.json` ([#976](https://github.com/assurance-maladie-digital/design-system/pull/976)) ([09ba95f](https://github.com/assurance-maladie-digital/design-system/commit/09ba95f9983a38efd2c819ddd0310e20cc3399c0))
 
 ### Interne
 
