@@ -69,7 +69,7 @@
 					</div>
 
 					<a
-						href="https://www.netlify.com"
+						href="https://netlify.com"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="d-flex flex-column text--primary text-decoration-none text-subtitle-1 mt-16"
