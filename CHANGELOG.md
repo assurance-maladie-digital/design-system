@@ -3,7 +3,8 @@
 ### Vue Dash
 
 - 🔥 **Suppressions**
-  - **template:** Suppression du fichier `.eslintignore` ([#975](https://github.com/assurance-maladie-digital/design-system/pull/975))
+  - **template:** Suppression du fichier `.eslintignore` ([#975](https://github.com/assurance-maladie-digital/design-system/pull/975)) ([692e8b5](https://github.com/assurance-maladie-digital/design-system/commit/692e8b5bb9261a00a9670cf0e59155b9af77e1f4))
+  - **template:** Suppression des commentaires inutiles dans le fichier `tsconfig.json` ([#976](https://github.com/assurance-maladie-digital/design-system/pull/976))
 
 ### Interne
 
