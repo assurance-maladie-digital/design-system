@@ -4,7 +4,8 @@
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.3.1` ([#969](https://github.com/assurance-maladie-digital/design-system/pull/969)) ([9110b1c](https://github.com/assurance-maladie-digital/design-system/commit/9110b1c5973b0df4dc1d1bb97e681a38e73ccb8c))
-  - **eslint-plugin-vue:** Mise à jour vers la `v7.8.0` ([#970](https://github.com/assurance-maladie-digital/design-system/pull/970)
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.8.0` ([#970](https://github.com/assurance-maladie-digital/design-system/pull/970) ([55a14e7](https://github.com/assurance-maladie-digital/design-system/commit/55a14e7e0b0389f0ca28ab7382760339d4376a40))
+  - **@babel/preset-env:** Mise à jour vers la `v7.13.12` ([#971](https://github.com/assurance-maladie-digital/design-system/pull/971))
 
 ## v2.0.0-beta.7
 
