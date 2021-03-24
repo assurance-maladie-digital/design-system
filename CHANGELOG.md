@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dash
+
+- 🔥 **Suppressions**
+  - **template:** Suppression du fichier `.eslintignore` ([#975](https://github.com/assurance-maladie-digital/design-system/pull/975))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -7,7 +12,7 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v7.8.0` ([#970](https://github.com/assurance-maladie-digital/design-system/pull/970) ([55a14e7](https://github.com/assurance-maladie-digital/design-system/commit/55a14e7e0b0389f0ca28ab7382760339d4376a40))
   - **@babel/preset-env:** Mise à jour vers la `v7.13.12` ([#971](https://github.com/assurance-maladie-digital/design-system/pull/971)) ([9d29676](https://github.com/assurance-maladie-digital/design-system/commit/9d296768e16665f81109a5d98ead9e741ee24c97))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.19.0` ([#972](https://github.com/assurance-maladie-digital/design-system/pull/972)) ([4aec6dd](https://github.com/assurance-maladie-digital/design-system/commit/4aec6dd389c802db8db751d210fa393b508337f0))
-  - **vuetify:** Mise à jour vers la `v2.4.8` ([#974](https://github.com/assurance-maladie-digital/design-system/pull/974))
+  - **vuetify:** Mise à jour vers la `v2.4.8` ([#974](https://github.com/assurance-maladie-digital/design-system/pull/974)) ([8f9f21f](https://github.com/assurance-maladie-digital/design-system/commit/8f9f21fa15b9dc994c6ddf670be09ceb2c7496c8))
 
 ## v2.0.0-beta.7
 
