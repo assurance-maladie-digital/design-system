@@ -25,6 +25,7 @@
 
 		<NuxtContent
 			v-if="document"
+			:key="document.path"
 			:document="document"
 			class="flex-grow-1 ml-4"
 		/>
