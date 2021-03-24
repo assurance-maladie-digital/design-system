@@ -3,43 +3,52 @@ import { TreeviewItem } from '~/components/content-explorer/types';
 export const contentExplorerItems: TreeviewItem[] = [
 	{
 		name: 'public',
-		path: 'public',
+		path: 'public/index',
 		children: [
 			{
 				name: 'css',
+				path: 'public/css/index',
 				children: [
 					{
 						name: 'base.css',
+						path: 'public/css/base.css',
 						file: 'css'
 					},
 					{
 						name: 'loader.css',
+						path: 'public/css/loader.css',
 						file: 'css'
 					}
 				]
 			},
 			{
 				name: 'js',
+				path: 'public/js/index',
 				children: [
 					{
 						name: 'lib',
+						path: 'public/js/lib/index',
 						children: [
 							{
 								name: 'matomo.js',
+								path: 'public/js/lib/matomo.js',
 								file: 'js'
 							}
 						]
 					},
 					{
 						name: 'config.js',
+						path: 'public/js/config.js',
 						file: 'js'
 					},
 					{
 						name: 'config.js.dist',
+						path: 'public/js/config.js.dist',
 						file: 'js'
 					},
 					{
 						name: 'config.js.env',
+						path: 'public/js/config.js.env',
 						file: 'js'
 					}
 				]

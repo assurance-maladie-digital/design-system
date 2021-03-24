@@ -1,7 +1,7 @@
 Le fichier `cypress.json` contient la configuration globale de [Cypress](https://www.cypress.io/).
 
 <doc-alert type="info">
-Ce fichier n'est présent dans votre projet uniquement si vous avez choisi d'installer Cypress lors de la création.
+Ce fichier n'est présent uniquement si vous avez choisi d'installer Cypress lors de la création du projet.
 </doc-alert>
 
 <doc-alert type="warning">
