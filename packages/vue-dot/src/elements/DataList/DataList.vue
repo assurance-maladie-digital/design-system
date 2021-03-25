@@ -80,7 +80,7 @@
 			},
 			titleClass: {
 				type: String,
-				default: 'mb-3 text-h5'
+				default: 'text-subtitle-1 font-weight-bold mb-3'
 			},
 			row: {
 				type: Boolean,
