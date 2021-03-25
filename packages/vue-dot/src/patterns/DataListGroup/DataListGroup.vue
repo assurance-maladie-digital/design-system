@@ -21,6 +21,8 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { DataListIcons } from '../../elements/DataList/types';
+
 	import { DataListGroupItems, DataListActionEvent } from './types';
 
 	const Props = Vue.extend({
@@ -29,6 +31,10 @@
 				type: Array as PropType<DataListGroupItems>,
 				required: true
 			},
+			icons: {
+				type: Object as PropType<DataListIcons | undefined>,
+				default: undefined
+			},
 			itemWidth: {
 				type: String,
 				default: '200px'
@@ -36,10 +42,6 @@
 			loading: {
 				type: Boolean,
 				default: false
-			},
-			icons: {
-				type: Object,
-				default: undefined
 			},
 			renderHtmlValue: {
 				type: Boolean,
@@ -59,7 +61,12 @@
 		 * @param {number} itemIndex The index of the item into the selected data list
 		 */
 		emitItemAction(dataListIndex: number, itemIndex: number): void {
-			this.$emit('click:list-item', { dataListIndex, itemIndex } as DataListActionEvent);
+			const eventValue: DataListActionEvent = {
+				dataListIndex,
+				itemIndex
+			};
+
+			this.$emit('click:list-item', eventValue);
 		}
 	}
 </script>

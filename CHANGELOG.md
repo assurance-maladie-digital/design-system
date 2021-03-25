@@ -5,8 +5,11 @@
 - 💥 **Changements majeurs**
   - **DataList:** Suppression de la prop `flex` ([#982](https://github.com/assurance-maladie-digital/design-system/pull/982)) ([725ff60](https://github.com/assurance-maladie-digital/design-system/commit/725ff6026a3af646b3342d160be0fedf761ce73c))
 
+- ✨ **Nouvelles fonctionnalités**
+  - **DataListGroup:** Ajout d'un nouveau composant ([#985](https://github.com/assurance-maladie-digital/design-system/pull/985))
+
 - 🐛 **Corrections de bugs**
-  - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984))
+  - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984)) ([d3512d2](https://github.com/assurance-maladie-digital/design-system/commit/d3512d2ed19502b4f3a5fb6ed9c7cbfed783a969))
 
 - ♻️ **Refactoring**
   - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
