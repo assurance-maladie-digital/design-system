@@ -44,14 +44,14 @@ exports[`SubHeader renders loading state correctly 1`] = `
       <!---->
     </div>
     <div class="layout vd-sub-header-data-list pl-10 pr-8">
-      <div class="vd-data-list">
+      <div class="vd-data-list" style="width: 100%;" item-width="auto">
         <transition-stub name="fade-transition" mode="out-in">
           <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading" title-class="text-subtitle-1 font-weight-bold mb-2 mt-2">
             <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
               <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
             </div>
             <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+              <li class="vd-data-list-loading-item mb-4">
                 <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
                 </div>
@@ -59,7 +59,7 @@ exports[`SubHeader renders loading state correctly 1`] = `
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
                 </div>
               </li>
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+              <li class="vd-data-list-loading-item mb-4">
                 <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
                 </div>
@@ -71,14 +71,14 @@ exports[`SubHeader renders loading state correctly 1`] = `
           </div>
         </transition-stub>
       </div>
-      <div class="vd-data-list">
+      <div class="vd-data-list" style="width: 100%;" item-width="auto">
         <transition-stub name="fade-transition" mode="out-in">
           <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading" title-class="text-subtitle-1 font-weight-bold mb-2 mt-2">
             <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-4 v-skeleton-loader--is-loading theme--dark" style="height: 1.5rem; width: 100px;">
               <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
             </div>
             <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+              <li class="vd-data-list-loading-item mb-4">
                 <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
                 </div>
@@ -86,7 +86,7 @@ exports[`SubHeader renders loading state correctly 1`] = `
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
                 </div>
               </li>
-              <li class="vd-data-list-loading-item mb-4" style="width: auto;">
+              <li class="vd-data-list-loading-item mb-4">
                 <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 1rem; width: 60px;">
                   <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
                 </div>
