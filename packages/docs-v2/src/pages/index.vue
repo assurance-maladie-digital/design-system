@@ -79,7 +79,6 @@
 							alt="Déployé par Netlify"
 							width="132px"
 							height="59px"
-							class="mt-1"
 						/>
 					</a>
 				</div>
@@ -105,6 +104,8 @@
 	import { formatReleaseDate } from '../functions/formatReleaseDate';
 	import { getLatestRelease } from '../services/github/api';
 
+	import { Fetch } from '../decorators';
+
 	@Component
 	export default class Index extends Vue {
 		githubIcon = mdiGithub;
@@ -114,7 +115,8 @@
 		version: string | null = null;
 		releaseDate: string | null = null;
 
-		async mounted() {
+		@Fetch
+		async fetch(): Promise<void> {
 			this.state = STATE_ENUM.pending;
 
 			const release = await getLatestRelease();
@@ -123,12 +125,16 @@
 			this.version = release.version;
 			this.releaseDate = formatReleaseDate(release.date);
 		}
+
+		mounted() {
+			this.$fetch();
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.home-page {
-		height: 100vh;
+		min-height: 100vh;
 	}
 
 	.home-title {
