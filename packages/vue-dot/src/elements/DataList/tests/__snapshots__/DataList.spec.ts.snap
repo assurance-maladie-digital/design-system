@@ -34,7 +34,7 @@ exports[`DataList renders correctly with a title 1`] = `
 <div class="vd-data-list" style="width: 100%;">
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>
-      <h4 class="mb-3 text-h5">
+      <h4 class="text-subtitle-1 font-weight-bold mb-3">
         Informations
       </h4>
       <ul class="vd-data-list-field pl-0">
@@ -157,7 +157,7 @@ exports[`DataList renders correctly with an icon 1`] = `
 exports[`DataList renders loading state correctly 1`] = `
 <div class="vd-data-list" style="width: 100%;">
   <vfadetransition-stub mode="out-in" origin="top center 0">
-    <datalistloading-stub itemsnumber="3" heading="true" title-class="mb-3 text-h5"></datalistloading-stub>
+    <datalistloading-stub itemsnumber="3" heading="true" title-class="text-subtitle-1 font-weight-bold mb-3"></datalistloading-stub>
   </vfadetransition-stub>
 </div>
 `;
