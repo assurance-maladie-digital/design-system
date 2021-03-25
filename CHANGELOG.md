@@ -1,12 +1,17 @@
 ## Non publié
 
+### Vue Dot
+
+- 💥 **Changements majeurs**
+  - **DataList:** Suppression de la prop `flex` ([#982](https://github.com/assurance-maladie-digital/design-system/pull/982))
+
+- ♻️ **Refactoring**
+  - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction d'une faute d'orthographe dans le fichier `.editorconfig` ([#977](https://github.com/assurance-maladie-digital/design-system/pull/977)) ([2728d53](https://github.com/assurance-maladie-digital/design-system/commit/2728d53e80e6eb28b7ffccfe637275296917d010))
-
-- ♻️ **Refactoring**
-  - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981))
 
 - 🔥 **Suppressions**
   - **template:** Suppression du fichier `.eslintignore` ([#975](https://github.com/assurance-maladie-digital/design-system/pull/975)) ([692e8b5](https://github.com/assurance-maladie-digital/design-system/commit/692e8b5bb9261a00a9670cf0e59155b9af77e1f4))

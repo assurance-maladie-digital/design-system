@@ -47,21 +47,6 @@ describe('DataList', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly in flex mode', () => {
-		// Mount component
-		wrapper = mountComponent(DataList, {
-			propsData: {
-				items: getDataList(),
-				flex: true
-			}
-		});
-
-		const elExists = wrapper.find('.flex-wrap').exists();
-		expect(elExists).toBe(true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
 	it('renders correctly with an empty list', () => {
 		// Mount component
 		wrapper = mountComponent(DataList, {
