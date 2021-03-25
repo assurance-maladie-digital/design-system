@@ -7,6 +7,7 @@
 		<VTabs
 			v-model="tab"
 			:dark="code"
+			show-arrows
 		>
 			<ClientOnly>
 				<VTab
@@ -132,10 +133,11 @@
 		}
 
 		> .v-tabs {
+			position: relative;
 			border-top-left-radius: 4px;
 			border-top-right-radius: 4px;
 
-			.v-slide-group__content::after {
+			&::after {
 				content: "";
 				width: 100%;
 				height: 2px;
@@ -144,7 +146,7 @@
 				bottom: 0;
 			}
 
-			&.theme--dark .v-slide-group__content::after {
+			&.theme--dark::after {
 				background: hsla(0, 0%, 100%, .3);
 			}
 		}
