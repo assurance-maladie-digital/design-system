@@ -34,6 +34,70 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.19.0` ([#972](https://github.com/assurance-maladie-digital/design-system/pull/972)) ([4aec6dd](https://github.com/assurance-maladie-digital/design-system/commit/4aec6dd389c802db8db751d210fa393b508337f0))
   - **vuetify:** Mise à jour vers la `v2.4.8` ([#974](https://github.com/assurance-maladie-digital/design-system/pull/974)) ([8f9f21f](https://github.com/assurance-maladie-digital/design-system/commit/8f9f21fa15b9dc994c6ddf670be09ceb2c7496c8))
 
+### 📚 Guide de migration
+
+#### Utilisation du nouveau composant `DataListGroup`
+
+La prop `flex` du composant a été supprimée, et ce comportement est maintenant porté par le nouveau composant `DataListGroup`.
+
+Si vous utilisiez ce fonctionnement dans votre projet pour définir plusieurs colonnes de données :
+
+```html
+<DataList
+	:items="data"
+	flex
+/>
+```
+
+avec la structure de données suivante :
+
+```ts
+import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+
+data: DataList = [
+	{
+		key: 'Nom',
+		value: 'Dupont'
+	},
+	{
+		key: 'Prénom',
+		value: 'Paul'
+	},
+	// Autres items
+];
+```
+
+Vous devez maintenant utiliser le composant `DataListGroup` :
+
+```html
+<DataListGroup :items="items" />
+```
+
+avec la structure de données suivante :
+
+```ts
+items: DataListGroupItems = [
+	{
+		items: [
+			{
+				key: 'Nom',
+				value: 'Dupont'
+			},
+			// Autres items
+		]
+	},
+	{
+		items: [
+			{
+				key: 'Prénom',
+				value: 'Paul'
+			},
+			// Autres items
+		]
+	},
+	// Autres items
+```
+
 ## v2.0.0-beta.7
 
 **Version publiée le 19/03/2021.**
@@ -168,7 +232,7 @@ Cette version comporte la refonte du module `notification` ainsi que de nouvelle
 
 ### 📚 Guide de migration
 
-### Renommer `notify` et `rmNotif`
+#### Renommer `notify` et `rmNotif`
 
 Les méthodes `notify` et `rmNotif` du module `notification` ont été renommées en `addNotification` et `clearNotification`, vous pouvez les renommer à travers votre projet, par exemple :
 
