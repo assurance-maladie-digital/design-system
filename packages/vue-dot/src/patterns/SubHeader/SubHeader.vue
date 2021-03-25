@@ -101,7 +101,6 @@
 							:items-number-loading="dataList.itemsNumberLoading"
 							:heading-loading="dataList.headingLoading"
 							item-width="auto"
-							title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
 							@click:item-action="dataListItemAction(index, $event)"
 						/>
 					</VLayout>

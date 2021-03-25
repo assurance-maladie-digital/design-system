@@ -129,6 +129,10 @@ module.exports = {
 			}
 		}
 	],
+	ignorePatterns: [
+		'tests/unit/coverage',
+		'dist/'
+	],
 	parserOptions: {
 		parser: '@typescript-eslint/parser'
 	}

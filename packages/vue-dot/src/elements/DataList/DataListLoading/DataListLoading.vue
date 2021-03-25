@@ -12,15 +12,11 @@
 			width="100"
 		/>
 
-		<ul
-			:class="listClass"
-			class="vd-data-list-loading-items pl-0 d-flex"
-		>
+		<ul class="vd-data-list-loading-items pl-0">
 			<li
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
 				class="vd-data-list-loading-item mb-4"
-				:style="{ width: itemWidth }"
 				:class="{ 'vd-row': row }"
 			>
 				<HeaderLoading
@@ -58,15 +54,6 @@
 			row: {
 				type: Boolean,
 				default: false
-			},
-			flex: {
-				type: Boolean,
-				default: false
-			},
-			/** The item width */
-			itemWidth: {
-				type: String,
-				default: '200px'
 			}
 		}
 	});
@@ -74,11 +61,7 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class DataListLoading extends MixinsDeclaration {
-		get listClass(): string {
-			return this.flex ? 'flex-wrap' : 'flex-column';
-		}
-	}
+	export default class DataListLoading extends MixinsDeclaration {}
 </script>
 
 <style lang="scss" scoped>
