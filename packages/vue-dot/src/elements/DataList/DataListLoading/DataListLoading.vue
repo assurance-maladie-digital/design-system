@@ -12,10 +12,7 @@
 			width="100"
 		/>
 
-		<ul
-			:class="listClass"
-			class="vd-data-list-loading-items pl-0"
-		>
+		<ul class="vd-data-list-loading-items pl-0">
 			<li
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"

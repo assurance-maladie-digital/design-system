@@ -40,7 +40,7 @@
 						:icon="getIcon(item.icon)"
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
-						:class="item.class"
+						:class="getItemClass(index, item.class)"
 						class="vd-data-list-item text-body-1 mb-2"
 						@click:action="$emit('click:item-action', index)"
 					/>
@@ -55,7 +55,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { DataListIcons, DataList as IDataList } from './types';
+	import { DataListIcons, DataList as IDataList, ItemClass } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
@@ -134,11 +134,26 @@
 
 			return this.icons[iconName];
 		}
+
+		getItemClass(index: number, itemClass?: string): ItemClass {
+			const margin = {
+				'mb-2': index === this.items.length
+			};
+
+			return [
+				margin,
+				itemClass
+			];
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.vd-data-list-field {
 		list-style: none;
+	}
+
+	.vd-data-list-item:last-of-type {
+		margin-bottom: 0 !important;
 	}
 </style>
