@@ -5,9 +5,12 @@
 - 💥 **Changements majeurs**
   - **DataList:** Suppression de la prop `flex` ([#982](https://github.com/assurance-maladie-digital/design-system/pull/982)) ([725ff60](https://github.com/assurance-maladie-digital/design-system/commit/725ff6026a3af646b3342d160be0fedf761ce73c))
 
+- 🐛 **Corrections de bugs**
+  - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984))
+
 - ♻️ **Refactoring**
   - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
-  - **DataList:** Mise à jour du style par défaut du titre ([#983](https://github.com/assurance-maladie-digital/design-system/pull/983))
+  - **DataList:** Mise à jour du style par défaut du titre ([#983](https://github.com/assurance-maladie-digital/design-system/pull/983)) ([2728d53](https://github.com/assurance-maladie-digital/design-system/commit/2728d53e80e6eb28b7ffccfe637275296917d010))
 
 ### Vue Dash
 
