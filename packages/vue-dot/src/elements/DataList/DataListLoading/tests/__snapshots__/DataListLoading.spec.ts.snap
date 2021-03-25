@@ -4,7 +4,7 @@ exports[`DataListLoading renders correctly 1`] = `
 <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading" label="Test">
   <!---->
   <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
@@ -16,15 +16,15 @@ exports[`DataListLoading renders correctly in column mode 1`] = `
 <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
   <!---->
   <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
@@ -36,15 +36,15 @@ exports[`DataListLoading renders correctly in flex mode 1`] = `
 <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
   <!---->
   <ul class="vd-data-list-loading-items pl-0 d-flex flex-wrap">
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
@@ -56,15 +56,15 @@ exports[`DataListLoading renders correctly in row mode 1`] = `
 <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
   <!---->
   <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
-    <li class="vd-data-list-loading-item mb-4 vd-row" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4 vd-row">
       <!---->
       <headerloading-stub width="150" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4 vd-row" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4 vd-row">
       <!---->
       <headerloading-stub width="150" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4 vd-row" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4 vd-row">
       <!---->
       <headerloading-stub width="150" height="1.5rem"></headerloading-stub>
     </li>
@@ -76,7 +76,7 @@ exports[`DataListLoading renders correctly with a header 1`] = `
 <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
   <headerloading-stub width="100" height="1.5rem" class="mb-4"></headerloading-stub>
   <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
@@ -88,15 +88,15 @@ exports[`DataListLoading renders correctly with more items 1`] = `
 <div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
   <!---->
   <ul class="vd-data-list-loading-items pl-0 d-flex flex-column">
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item mb-4" style="width: 200px;">
+    <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90" height="1.5rem"></headerloading-stub>
     </li>
