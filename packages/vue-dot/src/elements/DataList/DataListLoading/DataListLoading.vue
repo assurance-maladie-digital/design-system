@@ -14,7 +14,7 @@
 
 		<ul
 			:class="listClass"
-			class="vd-data-list-loading-items pl-0 d-flex"
+			class="vd-data-list-loading-items pl-0"
 		>
 			<li
 				v-for="index in itemsNumber"
@@ -57,10 +57,6 @@
 			row: {
 				type: Boolean,
 				default: false
-			},
-			flex: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
@@ -68,11 +64,7 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class DataListLoading extends MixinsDeclaration {
-		get listClass(): string {
-			return this.flex ? 'flex-wrap' : 'flex-column';
-		}
-	}
+	export default class DataListLoading extends MixinsDeclaration {}
 </script>
 
 <style lang="scss" scoped>

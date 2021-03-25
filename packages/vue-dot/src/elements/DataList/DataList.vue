@@ -10,7 +10,6 @@
 				:items-number="itemsNumberLoading"
 				:heading="headingLoading"
 				:title-class="titleClass"
-				:flex="flex"
 				:row="row"
 			/>
 
@@ -27,8 +26,7 @@
 
 				<ul
 					v-if="items.length"
-					class="vd-data-list-field pl-0 d-flex"
-					:class="listClass"
+					class="vd-data-list-field pl-0"
 				>
 					<DataListItem
 						v-for="(item, index) in items"
@@ -88,10 +86,6 @@
 				type: Boolean,
 				default: false
 			},
-			flex: {
-				type: Boolean,
-				default: false
-			},
 			/** The text to display as fallback */
 			placeholder: {
 				type: String,
@@ -133,10 +127,6 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
-		get listClass(): string {
-			return this.flex ? 'flex-wrap' : 'flex-column';
-		}
-
 		getIcon(iconName?: string): string | null {
 			if (!iconName || !this.icons) {
 				return null;
