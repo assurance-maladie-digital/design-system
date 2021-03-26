@@ -5,8 +5,11 @@
 - 💥 **Changements majeurs**
   - **DataList:** Suppression de la prop `flex` ([#982](https://github.com/assurance-maladie-digital/design-system/pull/982)) ([725ff60](https://github.com/assurance-maladie-digital/design-system/commit/725ff6026a3af646b3342d160be0fedf761ce73c))
 
+- ✨ **Nouvelles fonctionnalités**
+  - **DataListGroup:** Ajout d'un nouveau composant ([#985](https://github.com/assurance-maladie-digital/design-system/pull/985))
+
 - 🐛 **Corrections de bugs**
-  - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984))
+  - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984)) ([d3512d2](https://github.com/assurance-maladie-digital/design-system/commit/d3512d2ed19502b4f3a5fb6ed9c7cbfed783a969))
 
 - ♻️ **Refactoring**
   - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
@@ -30,6 +33,70 @@
   - **@babel/preset-env:** Mise à jour vers la `v7.13.12` ([#971](https://github.com/assurance-maladie-digital/design-system/pull/971)) ([9d29676](https://github.com/assurance-maladie-digital/design-system/commit/9d296768e16665f81109a5d98ead9e741ee24c97))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.19.0` ([#972](https://github.com/assurance-maladie-digital/design-system/pull/972)) ([4aec6dd](https://github.com/assurance-maladie-digital/design-system/commit/4aec6dd389c802db8db751d210fa393b508337f0))
   - **vuetify:** Mise à jour vers la `v2.4.8` ([#974](https://github.com/assurance-maladie-digital/design-system/pull/974)) ([8f9f21f](https://github.com/assurance-maladie-digital/design-system/commit/8f9f21fa15b9dc994c6ddf670be09ceb2c7496c8))
+
+### 📚 Guide de migration
+
+#### Utilisation du nouveau composant `DataListGroup`
+
+La prop `flex` du composant a été supprimée, et ce comportement est maintenant porté par le nouveau composant `DataListGroup`.
+
+Si vous utilisiez ce fonctionnement dans votre projet pour définir plusieurs colonnes de données :
+
+```html
+<DataList
+	:items="data"
+	flex
+/>
+```
+
+avec la structure de données suivante :
+
+```ts
+import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
+
+data: DataList = [
+	{
+		key: 'Nom',
+		value: 'Dupont'
+	},
+	{
+		key: 'Prénom',
+		value: 'Paul'
+	},
+	// Autres items
+];
+```
+
+Vous devez maintenant utiliser le composant `DataListGroup` :
+
+```html
+<DataListGroup :items="items" />
+```
+
+avec la structure de données suivante :
+
+```ts
+items: DataListGroupItems = [
+	{
+		items: [
+			{
+				key: 'Nom',
+				value: 'Dupont'
+			},
+			// Autres items
+		]
+	},
+	{
+		items: [
+			{
+				key: 'Prénom',
+				value: 'Paul'
+			},
+			// Autres items
+		]
+	},
+	// Autres items
+```
 
 ## v2.0.0-beta.7
 
@@ -165,7 +232,7 @@ Cette version comporte la refonte du module `notification` ainsi que de nouvelle
 
 ### 📚 Guide de migration
 
-### Renommer `notify` et `rmNotif`
+#### Renommer `notify` et `rmNotif`
 
 Les méthodes `notify` et `rmNotif` du module `notification` ont été renommées en `addNotification` et `clearNotification`, vous pouvez les renommer à travers votre projet, par exemple :
 
@@ -732,7 +799,7 @@ Cette première version bêta comporte deux nouveaux packages, `@cnamts/design-t
 - ♻️ **Refactoring**
   - **NotificationBar:** Refonte du composant suite à la mise à jour de Vuetify ([#436](https://github.com/assurance-maladie-digital/design-system/pull/436)) ([9ec5ca3](https://github.com/assurance-maladie-digital/design-system/commit/9ec5ca39d3ac4f15a5fdfac96f5a6845f46c2f5c))
   - **DatePicker:** Utilisation de la syntaxe standard du helper `mixins` ([#449](https://github.com/assurance-maladie-digital/design-system/pull/449)) ([253f51e](https://github.com/assurance-maladie-digital/design-system/commit/253f51e5930e2b07459d96079e0595aa7b4813a0))
-  - **Playground:** Correction de la couleur du bouton pour changer de thème ([f06d77c](https://github.com/assurance-maladie-digital/design-system/commit/f06d77c84952490b639bfd910a49532877555ebd))
+  - **playground:** Correction de la couleur du bouton pour changer de thème ([f06d77c](https://github.com/assurance-maladie-digital/design-system/commit/f06d77c84952490b639bfd910a49532877555ebd))
   - **FileUpload:** Refonte du composant ([#273](https://github.com/assurance-maladie-digital/design-system/pull/273)) ([f75e491](https://github.com/assurance-maladie-digital/design-system/commit/f75e491dc4cffde64c73f655ff5d9ef48cb7c1ae))
 
 ### Vue Dash
