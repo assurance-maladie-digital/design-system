@@ -2218,10 +2218,10 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
-"@types/figlet@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.2.1.tgz#ae3ba62ae70fc2aa10ac76b42541a99680b080a1"
-  integrity sha512-uw+Xmam7sMFHYyVGq5CGH/6Lu0T792bf4T6+jPFtPkWnJ9YVjLKqOLzF7DHuSo/LEHtLWleUO7Zi7EKkg6rSIg==
+"@types/figlet@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.5.0.tgz#6a90e52614d299b558e9ae8b9c92931b00f857bf"
+  integrity sha512-LffgrNrwx2bs52gXSuycuMSbxwnVgNeWJAEyo8dNnDcIqNCZ13zNJeoNU2IWs62EeUORIj34zkEN7oeMrWdJ8Q==
 
 "@types/fs-extra@9.0.8":
   version "9.0.8"
