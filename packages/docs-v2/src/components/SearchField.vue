@@ -49,7 +49,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { contentFunc, IContentDocument } from '@nuxt/content/types/content';
+	import { IContentDocument } from '@nuxt/content/types/content';
 
 	import { Refs } from '@cnamts/vue-dot/src/types';
 

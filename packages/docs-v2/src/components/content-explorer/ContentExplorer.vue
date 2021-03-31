@@ -1,34 +1,51 @@
 <template>
-	<div class="content-explorer d-flex h-100 w-100">
-		<VTreeview
-			v-model="tree"
-			:items="items"
-			hoverable
-			activatable
-			return-object
-			item-key="name"
-			selection-type="independent"
-			@update:active="treeviewUpdated"
+	<div>
+		<VTextField
+			v-model="search"
+			label="Rechercher un élément"
+			hide-details
+			clearable
+			filled
+			class="mb-4"
 		>
-			<template #prepend="{ item, open }">
-				<VIcon v-if="!item.file">
-					{{ open ? openFolderIcon : folderIcon }}
-				</VIcon>
-
-				<VIcon v-else>
-					{{ files[item.file] }}
+			<template #prepend-inner>
+				<VIcon class="mr-2">
+					{{ searchIcon }}
 				</VIcon>
 			</template>
-		</VTreeview>
+		</VTextField>
 
-		<VDivider vertical />
+		<div class="content-explorer d-flex h-100 w-100">
+			<VTreeview
+				v-model="tree"
+				:items="items"
+				:search="search"
+				hoverable
+				activatable
+				return-object
+				item-key="name"
+				@update:active="treeviewUpdated"
+			>
+				<template #prepend="{ item, open }">
+					<VIcon v-if="!item.file">
+						{{ open ? openFolderIcon : folderIcon }}
+					</VIcon>
 
-		<NuxtContent
-			v-if="document"
-			:key="document.path"
-			:document="document"
-			class="flex-grow-1 ml-4"
-		/>
+					<VIcon v-else>
+						{{ files[item.file] }}
+					</VIcon>
+				</template>
+			</VTreeview>
+
+			<VDivider vertical />
+
+			<NuxtContent
+				v-if="document"
+				:key="document.path"
+				:document="document"
+				class="flex-grow-1 ml-4"
+			/>
+		</div>
 	</div>
 </template>
 
@@ -55,6 +72,8 @@
 	import { IContentDocument } from '@nuxt/content/types/content';
 	import { TreeviewItem } from './types';
 
+	import { mdiMagnify } from '@mdi/js';
+
 	const basePath = '/explorer/';
 
 	type Content = IContentDocument[];
@@ -72,6 +91,8 @@
 
 	@Component
 	export default class ContentExplorer extends MixinsDeclaration {
+		searchIcon = mdiMagnify;
+
 		files = {
 			html: mdiLanguageHtml5,
 			css: mdiLanguageCss3,
@@ -94,6 +115,7 @@
 
 		tree = [];
 		drawer = false;
+		search = '';
 
 		treeviewUpdated([activeItem]: TreeviewItem[]): void {
 			if (!activeItem) {
