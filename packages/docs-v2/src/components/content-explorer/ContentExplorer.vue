@@ -118,9 +118,13 @@
 		drawer = false;
 		search = '';
 
+		mounted() {
+			this.getContent('initial');
+		}
+
 		treeviewUpdated([activeItem]: TreeviewItem[]): void {
 			if (!activeItem) {
-				this.document = null;
+				this.getContent('initial');
 				return;
 			}
 
