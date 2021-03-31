@@ -30,17 +30,10 @@
 		<DialogBox
 			v-model="dialog"
 			v-bind="options.dialog"
+			:title="locales.modalTitle"
 			@cancel="dialog = false"
 			@confirm="dialogConfirm"
 		>
-			<template #title>
-				<slot name="modal-title">
-					<h4 class="mb-4">
-						{{ locales.modalTitle }}
-					</h4>
-				</slot>
-			</template>
-
 			<VForm
 				ref="form"
 				v-bind="options.form"
