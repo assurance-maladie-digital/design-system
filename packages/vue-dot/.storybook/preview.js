@@ -1,7 +1,9 @@
 // Imports for configuring Vuetify
 import Vue from 'vue'
 import Vuetify from 'vuetify'
-import { options } from './vuetify' // <== important
+
+import 'vuetify/dist/vuetify.min.css'
+
 
 // configure Vue to use Vuetify
 Vue.use(Vuetify)
@@ -9,6 +11,12 @@ Vue.use(Vuetify)
 // this was the only thing here by default
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+}
+
+export const options = {
+	icons: {
+        iconfont: 'mdiSvg',
+    }
 }
 
 // instantiate Vuetify instance with any component/story level params
@@ -24,7 +32,7 @@ export const decorators = [
       vuetify,
       components: { wrapped },
       template: `
-        <v-app>
+        <v-app style="border:1px solid rgba(0,0,0,0.1); box-shadow: 4px ;width:95%;margin:auto;min-height:80px!important">
           <v-container fluid>
             <wrapped />
           </v-container>

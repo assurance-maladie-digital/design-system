@@ -93,7 +93,6 @@
 
 <style lang="scss" scoped>
 	$default: 1.35em;
-
 	$small: 1em;
 	$medium: 1.5em;
 	$large: 1.85em;

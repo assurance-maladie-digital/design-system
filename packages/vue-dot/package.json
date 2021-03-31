@@ -36,11 +36,10 @@
     "build": "ts-node --project tsconfig.json --files scripts/build.ts",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit --runInBand",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@storybook/addon-knobs": "^6.1.21",
     "content-disposition": "^0.5.3"
   },
   "peerDependencies": {

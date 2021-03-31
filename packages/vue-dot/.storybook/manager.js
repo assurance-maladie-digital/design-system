@@ -1,6 +1,7 @@
 import { addons } from '@storybook/addons'
-import { themes } from '@storybook/theming'
+import dsTheme from './dsTheme'
 
-/*addons.setConfig({
-  theme: themes.dark,
-})*/
+
+addons.setConfig({
+	theme: dsTheme,
+})
