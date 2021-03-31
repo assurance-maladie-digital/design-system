@@ -20,6 +20,7 @@
 				v-model="tree"
 				:items="items"
 				:search="search"
+				dense
 				hoverable
 				activatable
 				return-object
@@ -151,17 +152,9 @@
 				cursor: pointer;
 			}
 
-			.v-treeview-node__root {
-				min-height: 42px;
-			}
-
 			.v-treeview-node__label {
 				font-size: .9rem;
 			}
 		}
-	}
-
-	.nuxt-content-container {
-		min-width: 0;
 	}
 </style>
