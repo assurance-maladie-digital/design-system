@@ -5,10 +5,8 @@
 			:icons="icons"
 			:loading="loading"
 			:items-number-loading="7"
-			title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
 			list-title="Informations"
 			heading-loading
-			flex
 			@click:item-action="setItemValue"
 		/>
 

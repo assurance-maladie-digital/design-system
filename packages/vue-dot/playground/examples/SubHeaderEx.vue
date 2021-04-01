@@ -2,7 +2,7 @@
 	<DocSection title="SubHeader">
 		<SubHeader
 			:loading="loading"
-			:data-lists="dataLists"
+			:data-list-group-items="dataListGroupItems"
 			title-text="Prénom Nom (d'usage)"
 			sub-title-text="1 69 08 75 125 456 75"
 			@click:list-item="setItemValue"
@@ -73,12 +73,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { dataLists } from '../../src/patterns/SubHeader/tests/data/subHeader';
-	import { IDataListAction } from '../../src/patterns/SubHeader/types';
+	import { DataListActionEvent } from '../../src/patterns/DataListGroup/types';
+	import { dataListGroupItems } from '../../src/patterns/SubHeader/tests/data/subHeader';
 
 	@Component
 	export default class SubHeaderEx extends Vue {
-		dataLists = dataLists;
+		dataListGroupItems = dataListGroupItems;
 
 		actionValue: string | null = 'New text';
 
@@ -97,10 +97,10 @@
 		/**
 		 * Set the new value to the corresponding dataList item
 		 *
-		 * @param {IDataListAction} dataListAction The dataListAction object containing dataListIndex and itemIndex
+		 * @param {DataListActionEvent} dataListAction The dataListAction object containing dataListIndex and itemIndex
 		 */
-		setItemValue({ dataListIndex, itemIndex }: IDataListAction): void {
-			this.$set(this.dataLists[dataListIndex].items[itemIndex], 'value', this.actionValue);
+		setItemValue({ dataListIndex, itemIndex }: DataListActionEvent): void {
+			this.$set(this.dataListGroupItems[dataListIndex].items[itemIndex], 'value', this.actionValue);
 		}
 	}
 </script>
