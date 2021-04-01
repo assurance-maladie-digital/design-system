@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions';
 import DataList from '../elements/DataList/index';
 import *as icons from '@mdi/js';
 
+ 
 export default {
 	component: DataList,
 	title: 'Elements/DataList',
@@ -36,6 +37,7 @@ export default {
 	}
 };
 
+//
 export const UseCase = (args, { argTypes} ) : unknown => ({
 	components: { DataList },
 	props: Object.keys(argTypes),
@@ -47,6 +49,7 @@ export const UseCase = (args, { argTypes} ) : unknown => ({
 	methods: { updateBirthdate: action('click:item-action') }
 });
 
+//
 export const Playground =  UseCase.bind({});
 Playground.args ={
 	items : [
@@ -90,13 +93,15 @@ Playground.args ={
 	icons: icons
 };
 
+//
 export const SlotTitle =  UseCase.bind({});
 SlotTitle.args ={
 	title : `
 	<template #title>
 	  <h3 class="subtitle-2 d-block white--text primary py-3 px-4 mb-2">
-		Titre
+		Titre 
 	  </h3>
     </template>
-	`
+	`,
+	icons: icons
 }
