@@ -6,6 +6,7 @@ Object {
     "CopyBtn",
     "CustomIcon",
     "DataList",
+    "DataListGroup",
     "DatePicker",
     "DialogBox",
     "DownloadBtn",
