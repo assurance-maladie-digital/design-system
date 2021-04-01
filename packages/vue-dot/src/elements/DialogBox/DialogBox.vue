@@ -30,7 +30,10 @@
 
 			<slot />
 
-			<VCardActions v-bind="options.cardActions">
+			<div
+				v-bind="options.actionsCtn"
+				class="vd-dialog-box-actions-ctn"
+			>
 				<VSpacer v-bind="options.actionsSpacer" />
 
 				<slot name="actions">
@@ -48,7 +51,7 @@
 						{{ confirmBtnText }}
 					</VBtn>
 				</slot>
-			</VCardActions>
+			</div>
 		</VCard>
 	</VDialog>
 </template>
