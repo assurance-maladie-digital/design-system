@@ -30,15 +30,21 @@ export default {
 			control: { type:'object' },
 			table: { category: 'props' }
 		},
-		icons: { control: null , table: { category: 'props' } }
+		icons: { control: null , table: { category: 'props' } },
+		'click:item-action' : { action: 'updateBirthdate'},
+		title :{ control: 'text' }
 	}
 };
 
 export const UseCase = (args, { argTypes} ) : unknown => ({
 	components: { DataList },
 	props: Object.keys(argTypes),
-	template: '<DataList v-bind="$props" @click:item-action="action" />',
-	methods: { action: action('item-action') }
+	template: `
+	<DataList v-bind="$props" @click:item-action="updateBirthdate"> 
+	       ${ args.title }
+	</DataList>
+		`,
+	methods: { updateBirthdate: action('click:item-action') }
 });
 
 export const Playground =  UseCase.bind({});
@@ -83,3 +89,14 @@ Playground.args ={
 	],
 	icons: icons
 };
+
+export const SlotTitle =  UseCase.bind({});
+SlotTitle.args ={
+	title : `
+	<template #title>
+	  <h3 class="subtitle-2 d-block white--text primary py-3 px-4 mb-2">
+		Titre
+	  </h3>
+    </template>
+	`
+}
