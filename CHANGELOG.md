@@ -37,7 +37,11 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.19.0` ([#972](https://github.com/assurance-maladie-digital/design-system/pull/972)) ([4aec6dd](https://github.com/assurance-maladie-digital/design-system/commit/4aec6dd389c802db8db751d210fa393b508337f0))
   - **vuetify:** Mise à jour vers la `v2.4.8` ([#974](https://github.com/assurance-maladie-digital/design-system/pull/974)) ([8f9f21f](https://github.com/assurance-maladie-digital/design-system/commit/8f9f21fa15b9dc994c6ddf670be09ceb2c7496c8))
   - **@types/jest:** Mise à jour vers la `v26.0.22` ([#986](https://github.com/assurance-maladie-digital/design-system/pull/986)) ([f53fb04](https://github.com/assurance-maladie-digital/design-system/commit/f53fb045b9a7eca5d09164b1fce702d7f8144174))
-  - **@types/node:** Mise à jour vers la `v14.14.37` ([#987](https://github.com/assurance-maladie-digital/design-system/pull/987))
+  - **@types/node:** Mise à jour vers la `v14.14.37` ([#987](https://github.com/assurance-maladie-digital/design-system/pull/987)) ([77cdbd9](https://github.com/assurance-maladie-digital/design-system/commit/77cdbd911bf1451b66618f33e2dee839cd06a518))
+  - **@types/fs-extra:** Mise à jour vers la `v9.0.9` ([#988](https://github.com/assurance-maladie-digital/design-system/pull/988)) ([c034cad](https://github.com/assurance-maladie-digital/design-system/commit/c034cad0a3b546b8fdb9b83eef389d44e0620dc1))
+  - **babel:** Mise à jour du monorepo vers la `v7.13.14` ([#990](https://github.com/assurance-maladie-digital/design-system/pull/990)) ([1c4d49c](https://github.com/assurance-maladie-digital/design-system/commit/1c4d49cb9ffe95b45084b39e8f480ae87b467acf))
+  - **eslint:** Mise à jour vers la `v7.23.0` ([#991](https://github.com/assurance-maladie-digital/design-system/pull/991) ([0af2d03](https://github.com/assurance-maladie-digital/design-system/commit/0af2d0352f87dde7a1410600f4daead64ab8112a))
+  - **@types/figlet:** Mise à jour vers la `v1.5.0` ([#992](https://github.com/assurance-maladie-digital/design-system/pull/992))
 
 ### 📚 Guide de migration
 
