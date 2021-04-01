@@ -12,6 +12,8 @@
 
 <p align="center">A Design System for the French Health Insurance.</p>
 
+La 1000e PR :D
+
 <p align="center">
   <a href="https://github.com/assurance-maladie-digital/design-system/blob/master/LICENSE"><img src="https://flat.badgen.net/badge/license/MIT/blue" alt="License MIT"></a>
   <a href="https://www.npmjs.com/package/@cnamts/vue-dot"><img src="https://flat.badgen.net/npm/v/@cnamts/vue-dot/next" alt="npm Version"></a>
