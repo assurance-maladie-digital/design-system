@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="content-explorer">
 		<VTextField
 			v-model="search"
 			label="Rechercher un élément"
@@ -15,7 +15,7 @@
 			</template>
 		</VTextField>
 
-		<div class="content-explorer d-flex h-100 w-100">
+		<div class="content d-flex h-100 w-100">
 			<VTreeview
 				v-model="tree"
 				:items="items"
@@ -40,12 +40,19 @@
 
 			<VDivider vertical />
 
-			<NuxtContent
-				v-if="document"
-				:key="document.path"
-				:document="document"
-				class="flex-grow-1 ml-4"
-			/>
+			<div class="content flex-grow-1 ml-4">
+				<VProgressLinear
+					v-show="state === 'pending'"
+					indeterminate
+					absolute
+				/>
+
+				<NuxtContent
+					v-if="document"
+					:key="document.path"
+					:document="document"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -67,15 +74,15 @@
 		mdiFileImage,
 		mdiSvg,
 		mdiLanguageMarkdown,
-		mdiFileDocumentOutline
+		mdiFileDocumentOutline,
+		mdiMagnify
 	} from '@mdi/js';
 
+	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 	import { IContentDocument } from '@nuxt/content/types/content';
 	import { TreeviewItem } from './types';
 
 	import { Fetch } from '../../decorators';
-
-	import { mdiMagnify } from '@mdi/js';
 
 	const basePath = '/explorer/';
 
@@ -95,6 +102,8 @@
 	@Component
 	export default class ContentExplorer extends MixinsDeclaration {
 		searchIcon = mdiMagnify;
+		openFolderIcon = mdiFolderOpen;
+		folderIcon = mdiFolder;
 
 		files = {
 			html: mdiLanguageHtml5,
@@ -111,17 +120,15 @@
 			txt: mdiFileDocumentOutline
 		};
 
-		openFolderIcon = mdiFolderOpen;
-		folderIcon = mdiFolder;
-
 		document: IContentDocument | null = null;
 
 		tree = [];
 		drawer = false;
 		search = '';
+		state: STATE_ENUM = STATE_ENUM.idle;
 
 		@Fetch
-		fetch(): void {
+		async fetch() {
 			this.getContent('initial');
 		}
 
@@ -140,16 +147,24 @@
 		}
 
 		async getContent(path: string): Promise<void> {
+			const loading = setTimeout(() => this.state = STATE_ENUM.pending, 500);
+
 			const [document] = await this.$content({ deep: true })
-				.where({ path: `${basePath}${path}` })
+				.where({ path: basePath + path })
 				.fetch<Content>();
 
+			this.state = STATE_ENUM.resolved;
 			this.document = document;
+			clearTimeout(loading);
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.content {
+		position: relative;
+	}
+
 	.v-treeview {
 		flex: 0 0 250px;
 		overflow-x: auto;
