@@ -19,7 +19,12 @@ export default {
 			control : 'text', 
 			defaultValue : `Simple title`
 		},
-		content: { control: 'text' , defaultValue: `<p>Souhaitez-vous procéder à l'enregistrement ?</p>` , table: {category: 'slots'} },
+		content: { control: 'text' , 
+		defaultValue: `
+		<VCardText class="px-0">
+		     Il est possible d'utiliser les slots pour modifier l'affichage par défaut.
+	    </VCardText>
+	   ` , table: {category: 'slots'} },
 		width : { control: 'number', defaultValue: 500 }
 	},
 	decorators: [ HeadTitle ] 
