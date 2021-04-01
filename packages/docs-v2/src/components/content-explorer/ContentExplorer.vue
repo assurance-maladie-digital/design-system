@@ -73,6 +73,8 @@
 	import { IContentDocument } from '@nuxt/content/types/content';
 	import { TreeviewItem } from './types';
 
+	import { Fetch } from '../../decorators';
+
 	import { mdiMagnify } from '@mdi/js';
 
 	const basePath = '/explorer/';
@@ -118,7 +120,8 @@
 		drawer = false;
 		search = '';
 
-		mounted() {
+		@Fetch
+		fetch(): void {
 			this.getContent('initial');
 		}
 
