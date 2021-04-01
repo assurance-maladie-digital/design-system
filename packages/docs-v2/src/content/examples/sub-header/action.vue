@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<SubHeader
-			:data-lists="dataLists"
+			:data-list-group-items="dataListGroupItems"
 			title-text="Paul Dupont"
 			sub-title-text="1 69 08 75 125 456 75"
 			@click:list-item="setItemValue"
@@ -25,14 +25,14 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { IDataListAction, DataListsItem } from '@cnamts/vue-dot/src/patterns/SubHeader/types';
+	import { DataListGroupItems, DataListActionEvent } from '@cnamts/vue-dot/src/patterns/DataListGroup/types';
 
 	@Component
 	export default class SubHeaderAction extends Vue {
 		snackbar = false;
 		snackbarText = '';
 
-		dataLists: DataListsItem[] = [
+		dataListGroupItems: DataListGroupItems = [
 			{
 				title: 'Informations patient',
 				items: [
@@ -67,9 +67,9 @@
 		/**
 		 * Set the new value to the corresponding dataList item
 		 *
-		 * @param {IDataListAction} dataListAction The dataListAction object containing dataListIndex and itemIndex
+		 * @param {DataListActionEvent} dataListAction The dataListAction object containing dataListIndex and itemIndex
 		 */
-		setItemValue({ dataListIndex, itemIndex }: IDataListAction): void {
+		setItemValue({ dataListIndex, itemIndex }: DataListActionEvent): void {
 			const formattedPosition = `n°${dataListIndex + 1}, ligne n°${itemIndex + 1}.`;
 
 			this.snackbarText = `Vous avez cliqué sur le bouton d'action de la DataList ${formattedPosition}`;

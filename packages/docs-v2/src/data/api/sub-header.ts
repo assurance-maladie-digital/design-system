@@ -30,18 +30,16 @@ export const api: Api = {
 				description: 'Le texte du sous-titre.'
 			},
 			{
-				name: 'data-lists',
-				type: 'DataListsItem[]',
+				name: 'data-list-group-items',
+				type: 'DataListGroupItems | undefined',
 				default: 'undefined',
-				description: 'Liste de `DataList` en mode colonne.',
+				description: 'Liste de `DataList`.',
 				example: `{
-	key: string;
-	value?: string;
-	action?: string;
-	chip?: boolean;
-	icon?: string;
-	options?: Options;
-}`
+	title?: string;
+	items: DataList;
+	headingLoading?: boolean;
+	itemsNumberLoading?: number;
+}[]`
 			},
 			{
 				name: 'render-html-value',

@@ -14,7 +14,7 @@ position: 21
 
 ### Listes de données
 
-Vous pouvez afficher des listes de données en utilisant la prop `data-lists`.
+Vous pouvez afficher des listes de données en utilisant la prop `data-list-group-items`.
 
 <doc-alert type="info">
 
@@ -28,7 +28,7 @@ Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela
 
 </doc-alert>
 
-<doc-example file="sub-header/data-lists"></doc-example>
+<doc-example file="sub-header/data-list-group"></doc-example>
 
 ### Boutons d'actions
 
