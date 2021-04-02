@@ -17,7 +17,8 @@
 
 		<div class="content d-flex h-100 w-100">
 			<VTreeview
-				v-model="tree"
+				:open.sync="tree"
+				:active.sync="activeItem"
 				:items="items"
 				:search="search"
 				dense
@@ -84,6 +85,8 @@
 
 	import { Fetch } from '../../decorators';
 
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
+
 	const basePath = '/explorer/';
 
 	type Content = IContentDocument[];
@@ -99,7 +102,13 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component
+	@Component<ContentExplorer>({
+		watch: {
+			$route(): void {
+				this.setContent();
+			}
+		}
+	})
 	export default class ContentExplorer extends MixinsDeclaration {
 		searchIcon = mdiMagnify;
 		openFolderIcon = mdiFolderOpen;
@@ -122,7 +131,8 @@
 
 		document: IContentDocument | null = null;
 
-		tree = [];
+		tree: IndexedObject[] = [];
+		activeItem: IndexedObject[] = [];
 		drawer = false;
 		search = '';
 		state: STATE_ENUM = STATE_ENUM.idle;
@@ -132,6 +142,51 @@
 			this.getContent('initial');
 		}
 
+		mounted() {
+			this.setContent();
+		}
+
+		setContent(): void {
+			const path = this.$nuxt.$route.hash.replace('#', '');
+
+			if (!path) {
+				this.getContent('initial');
+				return;
+			}
+
+			this.getContent(path);
+			this.updateTree(path);
+		}
+
+		updateTree(path: string): void {
+			path.split('/').forEach((page) => {
+				this.tree.push({
+					name: page
+				});
+			});
+
+			const splitted = path.split('/');
+			const last = splitted[splitted.length - 1];
+
+			const name = last === 'index' ? splitted[splitted.length - 2] : last;
+
+			this.activeItem = [
+				{
+					path,
+					name
+				}
+			];
+		}
+
+		setHash(hash: string): void {
+			// Set hash using native API to avoid scroll jump
+			window.location.hash = hash;
+		}
+
+		removeHash(): void {
+			history.pushState('', document.title, window.location.pathname);
+		}
+
 		treeviewUpdated([activeItem]: TreeviewItem[]): void {
 			if (!activeItem) {
 				this.getContent('initial');
@@ -139,10 +194,12 @@
 			}
 
 			if (!activeItem.path) {
+				this.removeHash();
 				this.getContent('no-content');
 				return;
 			}
 
+			this.setHash(activeItem.path);
 			this.getContent(activeItem.path);
 		}
 
