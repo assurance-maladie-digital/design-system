@@ -105,7 +105,9 @@
 	@Component<ContentExplorer>({
 		watch: {
 			$route(): void {
-				this.setContent();
+				if (!this.treeViewClicked) {
+					this.setContent();
+				}
 			}
 		}
 	})
@@ -136,6 +138,7 @@
 		drawer = false;
 		search = '';
 		state: STATE_ENUM = STATE_ENUM.idle;
+		treeViewClicked = false;
 
 		@Fetch
 		async fetch() {
@@ -169,7 +172,7 @@
 			const last = splitted[splitted.length - 1];
 
 			const rawName = last === 'index' ? splitted[splitted.length - 2] : last;
-			const name = last.replace('_', '.');
+			const name = rawName.replace('_', '.');
 
 			this.activeItem = [
 				{
@@ -189,7 +192,10 @@
 		}
 
 		treeviewUpdated([activeItem]: TreeviewItem[]): void {
+			this.treeViewClicked = true;
+
 			if (!activeItem) {
+				this.removeHash();
 				this.getContent('initial');
 				return;
 			}
@@ -214,6 +220,7 @@
 			this.state = STATE_ENUM.resolved;
 			this.document = document;
 			clearTimeout(loading);
+			this.treeViewClicked = false;
 		}
 	}
 </script>
