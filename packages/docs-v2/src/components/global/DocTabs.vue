@@ -64,7 +64,13 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component
+	@Component<DocTabs>({
+		watch: {
+			$route(): void {
+				this.setTab();
+			}
+		}
+	})
 	export default class DocTabs extends MixinsDeclaration {
 		tab: number | null = null;
 
@@ -105,7 +111,7 @@
 			window.location.hash = `${this.namespace}/${hash}`;
 		}
 
-		async mounted() {
+		setTab(): void {
 			if (this.code) {
 				return;
 			}
@@ -122,6 +128,10 @@
 			if (namespace) {
 				this.$vuetify.goTo(`#${namespace}`);
 			}
+		}
+
+		mounted() {
+			this.setTab();
 		}
 	}
 </script>
