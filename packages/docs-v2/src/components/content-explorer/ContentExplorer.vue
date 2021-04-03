@@ -168,7 +168,8 @@
 			const splitted = path.split('/');
 			const last = splitted[splitted.length - 1];
 
-			const name = last === 'index' ? splitted[splitted.length - 2] : last;
+			const rawName = last === 'index' ? splitted[splitted.length - 2] : last;
+			const name = last.replace('_', '.');
 
 			this.activeItem = [
 				{
