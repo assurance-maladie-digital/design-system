@@ -33,7 +33,7 @@ export const decorators = [
       vuetify: new Vuetify(options),
       components: { wrapped },
       template: `
-        <v-app style="border:1px solid rgba(0,0,0,0.1); box-shadow: 4px ;width:95%;margin:auto;min-height:80px!important">
+        <v-app style="border:1px solid rgba(0,0,0,0.1); box-shadow: 4px ;width:95%;margin:auto;min-height:80px!important;padding:30px">
           <v-container fluid>
             <wrapped />
           </v-container>

@@ -1,19 +1,19 @@
 import { Args, ArgTypes } from '@storybook/api';
-import CustomIcon from '../elements/CustomIcon/index';
+import NotificationBar from '../patterns/NotificationBar/index';
 
 export default {
-	component: CustomIcon,
-	title: 'Elements/CostumIcon',
+	component: NotificationBar,
+	title: 'Patterns/NotificationBar',
 	excludeStories: /.*Data$/,
 	argTypes: {
 	}
 };
 
 export const UseCase = (args: Args, { argTypes } : ArgTypes) : unknown => ({
-	components: { CustomIcon },
+	components: { NotificationBar },
 	props: Object.keys(argTypes),
 	template : `
-	      <CustomIcon v-bind="$props" />
+	      <NotificationBar v-bind="$props" />
 	`
 });
 UseCase.args = {

@@ -1,19 +1,19 @@
 import { Args, ArgTypes } from '@storybook/api';
-import CustomIcon from '../elements/CustomIcon/index';
+import LangBtn from '../patterns/LangBtn/index';
 
 export default {
-	component: CustomIcon,
-	title: 'Elements/CostumIcon',
+	component: LangBtn,
+	title: 'Patterns/LangBtn',
 	excludeStories: /.*Data$/,
 	argTypes: {
 	}
 };
 
 export const UseCase = (args: Args, { argTypes } : ArgTypes) : unknown => ({
-	components: { CustomIcon },
+	components: { LangBtn },
 	props: Object.keys(argTypes),
 	template : `
-	      <CustomIcon v-bind="$props" />
+	      <LangBtn v-bind="$props" />
 	`
 });
 UseCase.args = {

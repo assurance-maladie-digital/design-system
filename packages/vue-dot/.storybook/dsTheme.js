@@ -20,17 +20,16 @@ export default create({
   textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors
-  barTextColor: 'white',
-  barSelectedColor: 'white',
-  barBg: '#003463',
+  barTextColor: '#003463',
+  barSelectedColor: '#003463',
+  barBg: 'white',
 
   // Form colors
-  inputBg: 'white',
+  inputBg: '#2d2d2d',
   inputBorder: 'silver',
-  inputTextColor: 'black',
+  inputTextColor: 'white',
   inputBorderRadius: 4,
 
   brandTitle: 'Design System',
-  brandUrl: 'https://example.com',
-  brandImage: 'https://digital-design-system.netlify.app/assets/img/logo-am.25026cc3.svg',
+  brandUrl: 'https://digital-design-system.netlify.app',
 });

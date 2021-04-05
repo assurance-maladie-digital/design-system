@@ -1,19 +1,19 @@
 import { Args, ArgTypes } from '@storybook/api';
-import CustomIcon from '../elements/CustomIcon/index';
+import FooterWrapper from '../patterns/FooterWrapper/index';
 
 export default {
-	component: CustomIcon,
-	title: 'Elements/CostumIcon',
+	component: FooterWrapper,
+	title: 'Patterns/FooterWrapper',
 	excludeStories: /.*Data$/,
 	argTypes: {
 	}
 };
 
 export const UseCase = (args: Args, { argTypes } : ArgTypes) : unknown => ({
-	components: { CustomIcon },
+	components: { FooterWrapper },
 	props: Object.keys(argTypes),
 	template : `
-	      <CustomIcon v-bind="$props" />
+	      <FooterWrapper v-bind="$props" />
 	`
 });
 UseCase.args = {

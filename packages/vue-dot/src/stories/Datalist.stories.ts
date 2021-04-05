@@ -1,8 +1,12 @@
 import { action } from '@storybook/addon-actions';
+import { Args, ArgTypes } from '@storybook/api';
 import DataList from '../elements/DataList/index';
 import *as icons from '@mdi/js';
 
- 
+interface TemplateArgs{
+    args: void;
+}
+
 export default {
 	component: DataList,
 	title: 'Elements/DataList',
@@ -32,17 +36,17 @@ export default {
 			table: { category: 'props' }
 		},
 		icons: { control: null , table: { category: 'props' } },
-		'click:item-action' : { action: 'updateBirthdate'},
+		'click:item-action' : { action: 'updateBirthdate' },
 		title :{ control: 'text' }
 	}
 };
 
 //
-export const UseCase = (args, { argTypes} ) : unknown => ({
+export const UseCase = (args: Args, { argTypes } : ArgTypes) : unknown=> ({
 	components: { DataList },
 	props: Object.keys(argTypes),
 	template: `
-	<DataList v-bind="$props" @click:item-action="updateBirthdate"> 
+	<DataList v-bind="$props" @click:item-action="updateBirthdate">
 	       ${ args.title }
 	</DataList>
 		`,
@@ -50,8 +54,8 @@ export const UseCase = (args, { argTypes} ) : unknown => ({
 });
 
 //
-export const Playground =  UseCase.bind({});
-Playground.args ={
+export const Playground: any =  UseCase.bind({});
+Playground.args = {
 	items : [
 		{
 			key: 'Civility',
@@ -94,14 +98,14 @@ Playground.args ={
 };
 
 //
-export const SlotTitle =  UseCase.bind({});
+export const SlotTitle: any =  UseCase.bind({});
 SlotTitle.args ={
 	title : `
 	<template #title>
 	  <h3 class="subtitle-2 d-block white--text primary py-3 px-4 mb-2">
-		Titre 
+		Titre
 	  </h3>
     </template>
 	`,
 	icons: icons
-}
+};

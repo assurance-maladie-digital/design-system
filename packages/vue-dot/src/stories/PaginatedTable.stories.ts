@@ -1,19 +1,19 @@
 import { Args, ArgTypes } from '@storybook/api';
-import CustomIcon from '../elements/CustomIcon/index';
+import PaginatedTable from '../patterns/PaginatedTable/index';
 
 export default {
-	component: CustomIcon,
-	title: 'Elements/CostumIcon',
+	component: PaginatedTable,
+	title: 'Patterns/PaginatedTable',
 	excludeStories: /.*Data$/,
 	argTypes: {
 	}
 };
 
 export const UseCase = (args: Args, { argTypes } : ArgTypes) : unknown => ({
-	components: { CustomIcon },
+	components: { PaginatedTable },
 	props: Object.keys(argTypes),
 	template : `
-	      <CustomIcon v-bind="$props" />
+	      <PaginatedTable v-bind="$props" />
 	`
 });
 UseCase.args = {

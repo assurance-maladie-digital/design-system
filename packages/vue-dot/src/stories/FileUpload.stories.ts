@@ -1,8 +1,5 @@
-import { action } from '@storybook/addon-actions';
+import { Args, ArgTypes } from '@storybook/api';
 import FileUpload from '../patterns/FileUpload/index';
-import *as icons from '@mdi/js';
-
-
 
 export default {
 	component: FileUpload,
@@ -10,7 +7,7 @@ export default {
 	excludeStories: /.*Data$/
 };
 
-export const UseCase = (args, { argTypes} ) : unknown => ({
+export const UseCase = (args:Args, { argTypes }: ArgTypes ) : unknown => ({
 	components: { FileUpload },
 	props: Object.keys(argTypes),
 	template : `
@@ -18,4 +15,4 @@ export const UseCase = (args, { argTypes} ) : unknown => ({
 	`
 });
 UseCase.args ={
-}
+};

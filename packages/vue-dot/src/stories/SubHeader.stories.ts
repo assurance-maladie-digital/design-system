@@ -1,19 +1,19 @@
 import { Args, ArgTypes } from '@storybook/api';
-import CustomIcon from '../elements/CustomIcon/index';
+import SubHeader from '../patterns/SubHeader/index';
 
 export default {
-	component: CustomIcon,
-	title: 'Elements/CostumIcon',
+	component: SubHeader,
+	title: 'Patterns/SubHeader',
 	excludeStories: /.*Data$/,
 	argTypes: {
 	}
 };
 
 export const UseCase = (args: Args, { argTypes } : ArgTypes) : unknown => ({
-	components: { CustomIcon },
+	components: { SubHeader },
 	props: Object.keys(argTypes),
 	template : `
-	      <CustomIcon v-bind="$props" />
+	      <SubHeader v-bind="$props" />
 	`
 });
 UseCase.args = {

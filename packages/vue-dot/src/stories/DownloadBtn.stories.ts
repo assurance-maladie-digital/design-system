@@ -1,8 +1,5 @@
-import { action } from '@storybook/addon-actions';
+import { Args, ArgTypes } from '@storybook/api';
 import DownloadBtn from '../elements/DownloadBtn/index';
-import *as icons from '@mdi/js';
-
-
 
 export default {
 	component: DownloadBtn,
@@ -10,7 +7,7 @@ export default {
 	excludeStories: /.*Data$/
 };
 
-export const UseCase = (args, { argTypes} ) : unknown => ({
+export const UseCase = (args:Args, { argTypes } :ArgTypes) : unknown => ({
 	components: { DownloadBtn },
 	props: Object.keys(argTypes),
 	template : `
@@ -19,6 +16,4 @@ export const UseCase = (args, { argTypes} ) : unknown => ({
     </DownloadBtn>
 	`
 });
-UseCase.args ={
-    filePromise : () =>{  }
-}
+UseCase.args ={};

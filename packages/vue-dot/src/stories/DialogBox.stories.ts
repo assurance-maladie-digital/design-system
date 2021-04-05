@@ -1,11 +1,8 @@
-import { action } from '@storybook/addon-actions';
+import { Args, ArgTypes } from '@storybook/api';
 import DialogBox from '../elements/DialogBox/index';
-import *as icons from '@mdi/js';
 
-const HeadTitle = () => {
-	return {
-	  template: '<div style="background:#003463;color: white;height:60px"><p>Dialog box </p><story/></div>',
-	};
+const HeadTitle = (): unknown => {
+	return { template: '<div style="background:#003463;color: white;height:60px"><p>Dialog box </p><story/></div>' };
 };
 //
 export default {
@@ -15,30 +12,29 @@ export default {
 	argTypes : {
 		dialog : {  control: 'boolean' , defaultValue: false },
 		width : { control: 'number', defaultValue: 500 },
-		cancelBtnText: { control: 'text', defaultValue: 'Annuler'},
-		confirmBtnText: { control: 'text', defaultValue: 'Valider'},
+		cancelBtnText: { control: 'text', defaultValue: 'Annuler' },
+		confirmBtnText: { control: 'text', defaultValue: 'Valider' },
 		title :{
-			control : 'text', 
+			control : 'text',
 			defaultValue : `
 			<h4 class="display-1">
 			   Information
 		    </h4>`
 		},
-		default: { control: 'text' , 
+		default: { control: 'text' ,
 		defaultValue: `
 		    <VCardText class="px-0">
 		        Il est possible d'utiliser les slots pour modifier l'affichage par défaut.
 	        </VCardText>
-	   ` , table: {category: 'slots'} },
-	    actions: {
-			control : 'text', 
+	   ` , table: { category: 'slots' } },
+	actions: {
+			control : 'text',
 			defaultValue : ''
-		},
-	},
-	decorators: [ HeadTitle ] 
+		}
+	}
 };
 
-const Template = (args, { argTypes} ) : unknown => ({
+const Template = (args: Args, { argTypes }: ArgTypes ) : unknown => ({
 	components: { DialogBox },
 	props: Object.keys(argTypes),
     template : `
@@ -48,24 +44,24 @@ const Template = (args, { argTypes} ) : unknown => ({
 	    @cancel="dialog = false"
 	    @confirm="dialog = false"
     >
-	    <template v-if="${args.title !=='' }" #title> 
+	    <template v-if="${args.title !=='' }" #title>
 		    ${args.title}
 		</template>
-		<template v-if="${ args.default !=='' }" #default> 
+		<template v-if="${ args.default !=='' }" #default>
 		    ${args.default}
 		</template>
-		<template v-if="${ args.actions !=='' }" #actions> 
+		<template v-if="${ args.actions !=='' }" #actions>
 		    ${args.actions}
 		</template>
 	</DialogBox>
 	`
 });
 // Use case
-export const UseCase = Template.bind({})
+export const UseCase: any  = Template.bind({});
 UseCase.args = {
-}
+};
 // Vuetify options
-export const VuetifyOptions = Template.bind({})
+export const VuetifyOptions: any = Template.bind({});
 VuetifyOptions.args = {
 	vuetifyOptions : {
 		cardTitle: {
@@ -87,5 +83,5 @@ VuetifyOptions.args = {
 			color: 'accent',
 			text: true
 		}
-	},
+	}
   };
