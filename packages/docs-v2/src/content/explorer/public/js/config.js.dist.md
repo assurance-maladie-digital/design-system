@@ -29,7 +29,7 @@ window.MAINTENANCE_MESSAGE = '';
 - `MAINTENANCE_TITLE` peut être utilisée pour modifier le titre par défaut de la page de maintenance
 - `MAINTENANCE_MESSAGE` peut être utilisée pour modifier le texte par défaut de la page de maintenance
 
-Si vous avez choisi d'installer Matomo lors de la création du projet, vous aurez également les variables d'environnement suivantes :
+Si vous avez choisi d'installer [Matomo](https://fr.matomo.org/) lors de la création du projet, vous aurez également les variables d'environnement suivantes :
 
 ```js
 // Matomo

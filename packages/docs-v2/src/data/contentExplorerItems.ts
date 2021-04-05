@@ -55,26 +55,32 @@ export const contentExplorerItems: TreeviewItem[] = [
 			},
 			{
 				name: 'android-chrome-192x192.png',
+				path: 'public/android-chrome-192x192.png',
 				file: 'png'
 			},
 			{
 				name: 'android-chrome-512x512.png',
+				path: 'public/android-chrome-512x512.png',
 				file: 'png'
 			},
 			{
 				name: 'apple-touch-icon.png',
+				path: 'public/apple-touch-icon.png',
 				file: 'png'
 			},
 			{
 				name: 'favicon-16x16.png',
+				path: 'public/favicon-16x16.png',
 				file: 'png'
 			},
 			{
 				name: 'favicon-32x32.png',
+				path: 'public/favicon-32x32.png',
 				file: 'png'
 			},
 			{
 				name: 'favicon.ico',
+				path: 'public/favicon.ico',
 				file: 'ico'
 			},
 			{
@@ -83,10 +89,12 @@ export const contentExplorerItems: TreeviewItem[] = [
 			},
 			{
 				name: 'robots.txt',
+				path: 'public/robots.txt',
 				file: 'txt'
 			},
 			{
 				name: 'safari-pinned-tab.svg',
+				path: 'public/safari-pinned-tab.svg',
 				file: 'svg'
 			},
 			{
