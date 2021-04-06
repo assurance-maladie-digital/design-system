@@ -5,6 +5,8 @@ import { registerDirectives } from './helpers/registerDirectives';
 
 import { registerAllComponents } from './registerAllComponents';
 
+// PYKEngine was here
+
 // Import styles
 import './styles/index.scss';
 
