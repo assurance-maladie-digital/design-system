@@ -1,7 +1,7 @@
 ---
 title: DownloadBtn
 description: L'élément `DownloadBtn` est utilisé pour permettre à l'utilisateur de télécharger un document provenant d'une API.
-position: 9
+position: 10
 ---
 
 <notification-bar></notification-bar>

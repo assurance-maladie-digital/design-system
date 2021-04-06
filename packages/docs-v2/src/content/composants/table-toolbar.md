@@ -1,7 +1,7 @@
 ---
 title: TableToolbar
 description: Le pattern `TableToolbar` est utilisé pour afficher une barre au-dessus des tableaux.
-position: 22
+position: 23
 ---
 
 <doc-tabs>

@@ -1,7 +1,7 @@
 ---
 title: PaginatedTable
 description: Le pattern `PaginatedTable` est utilisé pour afficher une `VDataTable` avec une pagination persistante.
-position: 20
+position: 21
 ---
 
 <doc-tabs>

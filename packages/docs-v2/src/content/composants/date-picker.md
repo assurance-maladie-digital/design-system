@@ -1,7 +1,7 @@
 ---
 title: DatePicker
 description: Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateur de sélectionner ou de saisir une date.
-position: 7
+position: 8
 ---
 
 <doc-tabs>

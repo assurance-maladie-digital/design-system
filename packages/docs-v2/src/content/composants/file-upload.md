@@ -1,7 +1,7 @@
 ---
 title: FileUpload
 description: Le pattern `FileUpload` est utilisé pour permettre à l'utilisateur de sélectionner ou de glisser-déposer des fichiers.
-position: 11
+position: 12
 ---
 
 <doc-tabs>

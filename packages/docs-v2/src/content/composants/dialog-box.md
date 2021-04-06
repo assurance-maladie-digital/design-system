@@ -1,7 +1,7 @@
 ---
 title: DialogBox
 description: L'élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec des boutons d'actions.
-position: 8
+position: 9
 ---
 
 <doc-tabs>

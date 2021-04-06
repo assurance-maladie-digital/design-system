@@ -1,7 +1,7 @@
 ---
 title: LangBtn
 description: L'élément `LangBtn` est utilisé pour permettre à l'utilisateur de choisir une langue.
-position: 17
+position: 18
 ---
 
 <doc-tabs>

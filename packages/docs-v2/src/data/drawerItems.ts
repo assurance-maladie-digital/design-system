@@ -38,6 +38,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/data-list'
 			},
 			{
+				title: 'DataListGroup',
+				to: '/composants/data-list-group'
+			},
+			{
 				title: 'DatePicker',
 				to: '/composants/date-picker'
 			},
