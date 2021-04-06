@@ -39,13 +39,11 @@
 		defaultProps = {
 			items,
 			placeholder: '…',
-			itemWidth: '200px',
 			itemsNumberLoading: 1
 		};
 
 		propsHiddenByDefault = [
 			'placeholder',
-			'itemWidth',
 			'itemsNumberLoading'
 		];
 
@@ -64,13 +62,11 @@
 			},
 			textFields: [
 				'listTitle',
-				'placeholder',
-				'itemWidth'
+				'placeholder'
 			]
 		};
 
 		tabs = [
-			'flex',
 			'row'
 		];
 	}

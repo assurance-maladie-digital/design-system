@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { widthable } from './mixins/widthable';
+
 export const api: Api = {
 	DataList: {
 		props: [
@@ -36,7 +38,7 @@ export const api: Api = {
 			{
 				name: 'title-class',
 				type: 'string',
-				default: `'mb-3 headline'`,
+				default: `'text-subtitle-1 font-weight-bold mb-3'`,
 				description: 'Les classes à appliquer sur le titre de la liste.'
 			},
 			{
@@ -46,28 +48,10 @@ export const api: Api = {
 				description: 'Affiche les valeurs à côté des labels.'
 			},
 			{
-				name: 'flex',
-				type: 'boolean',
-				default: false,
-				description: 'Affiche les items horizontalement avec retour à la ligne lorsqu\'il n\'y a plus assez d\'espace disponible.'
-			},
-			{
 				name: 'placeholder',
 				type: 'string',
 				default: `'…'`,
 				description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
-			},
-			{
-				name: 'min-width',
-				type: 'string',
-				default: 'undefined',
-				description: 'La largeur minimale du composant.'
-			},
-			{
-				name: 'item-width',
-				type: 'string',
-				default: `'200px'`,
-				description: 'La largeur de chaque item.'
 			},
 			{
 				name: 'loading',
@@ -92,7 +76,8 @@ export const api: Api = {
 				default: false,
 				type: 'boolean',
 				description: 'Utilise `v-html` pour afficher les valeurs.'
-			}
+			},
+			...widthable
 		],
 		slots: [
 			{
@@ -212,12 +197,6 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Affiche les valeurs à côté des labels.'
-			},
-			{
-				name: 'flex',
-				type: 'boolean',
-				default: false,
-				description: 'Affiche les items horizontalement avec retour à la ligne lorsqu\'il n\'y a plus assez d\'espace disponible.'
 			},
 			{
 				name: 'width',
