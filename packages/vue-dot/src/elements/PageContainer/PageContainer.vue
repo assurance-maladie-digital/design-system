@@ -1,8 +1,8 @@
 <template>
 	<VSheet
-		class="vd-page-container"
-		:class="paddingClass"
 		:width="containerSize"
+		:class="paddingClass"
+		class="vd-page-container"
 	>
 		<slot />
 	</VSheet>
