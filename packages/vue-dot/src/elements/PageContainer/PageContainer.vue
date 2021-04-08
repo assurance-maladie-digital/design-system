@@ -17,19 +17,16 @@
 	const Props = Vue.extend({
 		props: {
 			/**
-			 * Define the size of the container
+			 * The size of the container
 			 *
-			 * Default value: "xl"
+			 * @default xl
 			 */
 			size: {
 				type: String,
-				validator: value => [
-					'xl',
-					'l',
-					'm',
-					'xs'
-				].includes(value.toLowerCase()),
-				default: 'xl'
+				default: 'xl',
+				validator(value) {
+					return ['xl', 'l', 'm', 's'].includes(value.toLowerCase());
+				}
 			}
 		}
 	});
@@ -38,30 +35,28 @@
 
 	@Component
 	export default class PageContainer extends MixinsDeclaration {
-		/**
-		 * Use vutify breackpoint to return responsive margin for the container
-		 */
 		get paddingClass(): string {
-			const breakpoints : IndexedObject<string> = {
-				'xs': 'mx-0',
-				'sm': 'mx-4',
-				'md': 'mx-8',
-				'lg': 'mx-8',
-				'xl': 'mx-8'
+			const containerMargin: IndexedObject<string> = {
+				xs: 'mx-0',
+				sm: 'mx-4',
+				md: 'mx-8',
+				lg: 'mx-8',
+				x': 'mx-8'
 			};
-			return breakpoints[this.$vuetify.breakpoint.name];
+
+			const margin = containerMargin[this.$vuetify.breakpoint.name];
+
+			return `my-10 mx-${margin}`;
 		}
 
-		/**
-		 * Use "size" props to define the size of the container
-		 */
 		get containerSize(): number {
 			const containerWidth : IndexedObject<number> = {
-				'xl': 1440,
-				'l': 960,
-				'm': 800,
-				'xs': 600
+				xl: 1440,
+				l: 960,
+				m: 800,
+				s: 600
 			};
+
 			return containerWidth[this.size];
 		}
 	}
