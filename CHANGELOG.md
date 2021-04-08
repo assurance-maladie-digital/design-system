@@ -46,7 +46,8 @@
   - **core-js:** Mise à jour vers la `v3.10.0` ([#994](https://github.com/assurance-maladie-digital/design-system/pull/994)) ([0e71a92](https://github.com/assurance-maladie-digital/design-system/commit/0e71a92d5e399ace1c049961349ee9d984702eb6))
   - **vuetify:** Mise à jour vers la `v2.4.9` ([#999](https://github.com/assurance-maladie-digital/design-system/pull/999)) ([fd29bae](https://github.com/assurance-maladie-digital/design-system/commit/fd29bae0887e218862d8533d94fe92530898dc3f))
   - **@types/fs-extra:** Mise à jour vers la `v9.0.10` ([#133](https://github.com/assurance-maladie-digital/design-system/pull/133)) ([8f401e7](https://github.com/assurance-maladie-digital/design-system/commit/8f401e779fb4135629b8234cdec0c4a44fd71216))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.21.0` ([#1005](https://github.com/assurance-maladie-digital/design-system/pull/1005))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.21.0` ([#1005](https://github.com/assurance-maladie-digital/design-system/pull/1005)) ([3fcdaab](https://github.com/assurance-maladie-digital/design-system/commit/3fcdaabef358fd5ccf8bf90662afdaf4550e78a6))
+  - **core-js:** Mise à jour vers la `v3.10.1` ([#1008](https://github.com/assurance-maladie-digital/design-system/pull/1008))
 
 ### 📚 Guide de migration
 
