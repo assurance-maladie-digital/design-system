@@ -41,7 +41,7 @@
 				sm: 'mx-4',
 				md: 'mx-8',
 				lg: 'mx-8',
-				x': 'mx-8'
+				x: 'mx-8'
 			};
 
 			const margin = containerMargin[this.$vuetify.breakpoint.name];
