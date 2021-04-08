@@ -16,6 +16,7 @@ Array [
   "LangBtn",
   "NotificationBar",
   "PageCard",
+  "PageContainer",
   "PaginatedTable",
   "SubHeader",
   "TableToolbar",
