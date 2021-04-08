@@ -1,7 +1,6 @@
 ---
 title: Nouveau composant
 description: Création d'un nouveau composant dans un projet standard.
-position: 27
 ---
 
 ## Syntaxe

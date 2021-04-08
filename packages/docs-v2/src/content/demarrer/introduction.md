@@ -1,6 +1,5 @@
 ---
 title: Introduction
-position: 0
 ---
 
 Notre Design System est un outil Open Source au service des produits digitaux de l'Assurance Maladie. Il met à disposition des équipes de conception, développeurs, designers ainsi qu'aux product owners un ensemble d'outils et de principes qui serviront de fondation pour le développement des applications.

@@ -1,7 +1,6 @@
 ---
 title: DataList
 description: L'élément `DataList` est utilisé pour afficher une liste d'informations.
-position: 6
 ---
 
 <doc-tabs>

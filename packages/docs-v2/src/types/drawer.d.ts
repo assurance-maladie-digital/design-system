@@ -11,3 +11,8 @@ export interface DrawerItem {
 	icon: string;
 	items: PageItem[];
 }
+
+export interface SurroundItemsPaths {
+	prevPath?: string;
+	nextPath?: string;
+}

@@ -1,7 +1,6 @@
 ---
 title: DataListGroup
 description: Le pattern `DataListGroup` est utilisé pour afficher une liste de `DataList`.
-position: 7
 ---
 
 <doc-tabs>

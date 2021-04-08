@@ -1,6 +1,6 @@
 ---
 title: Accueil
-position: -1
+hiddenInDrawer: true
 ---
 
 <!-- Static content in index.vue -->

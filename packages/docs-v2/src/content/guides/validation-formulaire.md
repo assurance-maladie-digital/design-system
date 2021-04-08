@@ -1,7 +1,6 @@
 ---
 title: Validation d'un formulaire
 description: Création et validation d'un formulaire dans un projet standard.
-position: 28
 ---
 
 ## Création du formulaire

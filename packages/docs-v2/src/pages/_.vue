@@ -52,27 +52,21 @@
 
 	import { MetaInfo } from 'vue-meta';
 
-	import { Context } from '@nuxt/types';
-	import { contentFunc, IContentDocument } from '@nuxt/content/types/content';
+	import {
+		Context,
+		Content,
+		ContentDocument,
+		AsyncDataParams,
+		PageData
+	} from '../types/content';
 
 	import { AsyncData, Middleware, Head } from '../decorators';
 	import { getPageMeta } from '../functions/getPageMeta';
+	import { getSurroundDrawerItems } from '../functions/getSurroundDrawerItems';
 
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
 	import DocPageInfo from '../components/page/DocPageInfo.vue';
 	import DocPrevNext from '../components/page/DocPrevNext.vue';
-
-	interface AsyncData extends Context {
-		$content: contentFunc;
-	}
-
-	type Content = IContentDocument[];
-
-	interface PageData {
-		document: IContentDocument;
-		prev: IContentDocument;
-		next: IContentDocument;
-	}
 
 	@Component({
 		components: {
@@ -82,7 +76,7 @@
 		}
 	})
 	export default class Slug extends Vue {
-		document?: IContentDocument;
+		document?: ContentDocument;
 
 		drawer = null;
 
@@ -94,7 +88,7 @@
 		}
 
 		@AsyncData
-		async asyncData({ $content, params, error }: AsyncData): Promise<void | PageData> {
+		async asyncData({ $content, params, error }: AsyncDataParams): Promise<void | PageData> {
 			const path =`/${params.pathMatch || 'index'}`;
 			const [document] = await $content({ deep: true }).where({ path }).fetch<Content>();
 
@@ -105,19 +99,7 @@
 				});
 			}
 
-			const [prev, next] = await $content({ deep: true })
-				.only(['title', 'slug', 'path'])
-				.where({
-					position: {
-						$gt: -1
-					}
-				})
-				.sortBy('position', 'asc')
-				.surround(document.slug, {
-					before: 1,
-					after: 1
-				})
-				.fetch<Content>();
+			const { prev, next } = await getSurroundDrawerItems($content, path);
 
 			return {
 				document,

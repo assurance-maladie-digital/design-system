@@ -1,7 +1,6 @@
 ---
 title: Contribuer
 description: Merci de prendre le temps de contribuer au Design System, c'est de cette manière qu'il va pouvoir évoluer et s'adapter aux différents besoins des équipes et des projets.
-position: 2
 ---
 
 ## Rapports de bugs

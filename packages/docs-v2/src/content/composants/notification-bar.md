@@ -1,7 +1,6 @@
 ---
 title: NotificationBar
 description: Le pattern `NotificationBar` est utilisé avec le module Vuex `notification` pour afficher des notifications à l'utilisateur.
-position: 19
 ---
 
 <doc-tabs>
