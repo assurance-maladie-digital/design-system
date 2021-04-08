@@ -36,15 +36,12 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component({
-
-	})
-
+	@Component
 	export default class PageContainer extends MixinsDeclaration {
 		/**
 		 * Use vutify breackpoint to return responsive margin for the container
 		 */
-		get paddingClass(): string | IndexedObject<string> {
+		get paddingClass(): string {
 			const breakpoints : IndexedObject<string> = {
 				'xs': 'mx-0',
 				'sm': 'mx-4',
@@ -58,7 +55,7 @@
 		/**
 		 * Use "size" props to define the size of the container
 		 */
-		get containerSize(): number | IndexedObject<string> {
+		get containerSize(): number {
 			const containerWidth : IndexedObject<number> = {
 				'xl': 1440,
 				'l': 960,
@@ -69,15 +66,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	@import '@cnamts/design-tokens/dist/tokens';
-
-	.vd {
-		&-page {
-			&-container {
-				display: flex;
-			}
-		}
-	}
-</style>
