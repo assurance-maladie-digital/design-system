@@ -67,6 +67,8 @@
 
 				<TableToolbarEx />
 
+				<FilterModuleEx />
+
 				<UploadWorkflowEx />
 			</PageCard>
 		</VMain>

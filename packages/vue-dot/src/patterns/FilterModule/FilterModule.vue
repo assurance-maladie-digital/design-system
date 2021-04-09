@@ -1,5 +1,10 @@
 <template>
-	<div />
+	<div
+		class="vd-filter-module"
+		@click="openFilterList"
+	>
+		Filter Me
+	</div>
 </template>
 
 <script lang="ts">
@@ -13,7 +18,10 @@
 
 	const Props = Vue.extend({
 		props: {
-
+			values: {
+				type: Array,
+				default: undefined
+			}
 		}
 	});
 
@@ -35,9 +43,18 @@
 
 		/** The v-model of VMenu */
 		menu = false;
+
+		openFilterList(): void {
+			console.log('clicked');
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
-
+	.vd {
+		&-filter-module {
+			width: 150px;
+			display: flex;
+		}
+	}
 </style>

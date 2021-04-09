@@ -18,6 +18,7 @@ import RulesEx from './RulesEx.vue';
 import SubHeaderEx from './SubHeaderEx.vue';
 import TableToolbarEx from './TableToolbarEx.vue';
 import UploadWorkflowEx from './UploadWorkflowEx.vue';
+import FilterModuleEx from './FilterModuleEx.vue';
 
 interface Components {
 	[name: string]: VueConstructor;
@@ -41,7 +42,8 @@ const components: Components = {
 	RulesEx,
 	SubHeaderEx,
 	TableToolbarEx,
-	UploadWorkflowEx
+	UploadWorkflowEx,
+	FilterModuleEx
 };
 
 /** Globally register all components */
