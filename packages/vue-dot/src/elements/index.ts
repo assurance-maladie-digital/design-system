@@ -5,6 +5,7 @@ import DialogBox from './DialogBox';
 import DownloadBtn from './DownloadBtn';
 import HeaderLoading from './HeaderLoading';
 import PageCard from './PageCard';
+import FilterSelector from './FilterSelector';
 
 export const elements = {
 	CopyBtn,
@@ -13,5 +14,6 @@ export const elements = {
 	DialogBox,
 	DownloadBtn,
 	HeaderLoading,
-	PageCard
+	PageCard,
+	FilterSelector
 };

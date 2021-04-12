@@ -12,6 +12,7 @@ Array [
   "ErrorPage",
   "FileUpload",
   "FilterModule",
+  "FilterSelector",
   "FooterWrapper",
   "HeaderLoading",
   "LangBtn",

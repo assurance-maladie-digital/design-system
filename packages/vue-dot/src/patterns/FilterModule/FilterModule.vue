@@ -2,24 +2,32 @@
 	<div
 		class="vd-filter-module"
 	>
-		<VBtn
-			color="white"
-			class="primary--text"
-			@click="openFilterList"
-		>
-			Filters
-		</VBtn>
+		<FilterSelector
+			:list="arrangeFilter"
+			@open-dialog="openModal($event)"
+		/>
 		<!--<div
 			v-for="(item, i) in arrangeFilter"
 			:key="i"
 		>
-			{{ item.header.value }}
-			<div
-				v-for="(value, i2) in item.list"
-				:key="i2"
+			<VSelect
+				v-model="value"
+				:items="item.list"
+				:label="item.header.value"
+				multiple
 			>
-				{{ value }}
-			</div>
+				<template v-slot:selection="{ item, index }">
+					<v-chip v-if="index === 0">
+						<span>{{ item }}</span>
+					</v-chip>
+					<span
+						v-if="index === 1"
+						class="grey--text caption"
+					>
+						(+{{ value.length - 1 }} others)
+					</span>
+				</template>
+			</VSelect>
 		</div>-->
 	</div>
 </template>
@@ -62,11 +70,17 @@
 		// Locales
 		locales = locales;
 
+		value = [];
+
 		openFilterList(): void {
 			this.arrangeFilter.forEach(data => {
 				console.log(data.header.text);
 				console.log(data.list);
 			});
+		}
+
+		openModal(index: number): void {
+			console.log(this.arrangeFilter[index].list);
 		}
 
 		get arrangeFilter(): Array<string> {
