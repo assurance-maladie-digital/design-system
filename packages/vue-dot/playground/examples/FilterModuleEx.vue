@@ -21,9 +21,10 @@
 					show-add-btn
 				>
 					<template #search-left>
-						<FilterModule :values="items" />
-						<FilterModule />
-						<FilterModule />
+						<FilterModule
+							:values="items"
+							:list="headers"
+						/>
 					</template>
 				</TableToolbar>
 			</template>

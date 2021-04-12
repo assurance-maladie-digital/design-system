@@ -1,9 +1,26 @@
 <template>
 	<div
 		class="vd-filter-module"
-		@click="openFilterList"
 	>
-		Filter Me
+		<VBtn
+			color="white"
+			class="primary--text"
+			@click="openFilterList"
+		>
+			Filters
+		</VBtn>
+		<!--<div
+			v-for="(item, i) in arrangeFilter"
+			:key="i"
+		>
+			{{ item.header.value }}
+			<div
+				v-for="(value, i2) in item.list"
+				:key="i2"
+			>
+				{{ value }}
+			</div>
+		</div>-->
 	</div>
 </template>
 
@@ -19,6 +36,10 @@
 	const Props = Vue.extend({
 		props: {
 			values: {
+				type: Array,
+				default: undefined
+			},
+			list: {
 				type: Array,
 				default: undefined
 			}
@@ -41,11 +62,30 @@
 		// Locales
 		locales = locales;
 
-		/** The v-model of VMenu */
-		menu = false;
-
 		openFilterList(): void {
-			console.log('clicked');
+			this.arrangeFilter.forEach(data => {
+				console.log(data.header.text);
+				console.log(data.list);
+			});
+		}
+
+		get arrangeFilter(): Array<string> {
+			const filters: Array<any> = [];
+			this.list.forEach((data, i) => {
+				let valueList: Array<any> = [];
+				this.values.forEach((datum, di) => {
+					Object.keys(datum).forEach((header, ti) => {
+						if(header === data.value) {
+							valueList.push(Object.values(this.values[di])[ti]);
+						}
+					});
+				});
+				filters.push({
+					header: data,
+					list: valueList
+				});
+			});
+			return filters;
 		}
 	}
 </script>
