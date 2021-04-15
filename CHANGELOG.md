@@ -8,7 +8,8 @@
 - ✨ **Nouvelles fonctionnalités**
   - **DataListGroup:** Ajout d'un nouveau composant ([#985](https://github.com/assurance-maladie-digital/design-system/pull/985)) ([4dfecf2](https://github.com/assurance-maladie-digital/design-system/commit/4dfecf20f1e78dc8a05f5c52a02febf57924358d))
   - **PageContainer:** Ajout d'un nouveau composant ([#1010](https://github.com/assurance-maladie-digital/design-system/pull/1010)) ([077b7d8](https://github.com/assurance-maladie-digital/design-system/commit/077b7d8c8ce69804d2be45a0f757f1e11b92d95e))
-  - **PageContainer:** Ajout de la prop `spacing` ([#1023](https://github.com/assurance-maladie-digital/design-system/pull/1023))
+  - **PageContainer:** Ajout de la prop `spacing` ([#1023](https://github.com/assurance-maladie-digital/design-system/pull/1023)) ([28e5bca](https://github.com/assurance-maladie-digital/design-system/commit/28e5bcab39a557c040ab7925f263ca64db3b057c))
+  - **PageContainer:** Ajout de la prop `color` ([#1024](https://github.com/assurance-maladie-digital/design-system/pull/1024))
 
 - 🐛 **Corrections de bugs**
   - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984)) ([d3512d2](https://github.com/assurance-maladie-digital/design-system/commit/d3512d2ed19502b4f3a5fb6ed9c7cbfed783a969))

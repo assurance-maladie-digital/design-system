@@ -2,6 +2,7 @@
 	<VSheet
 		:width="containerSize"
 		:class="spacingClass"
+		:color="color"
 		class="vd-page-container"
 	>
 		<slot />
@@ -32,6 +33,11 @@
 			spacing: {
 				type: String,
 				default: undefined
+			},
+			/** The background color of the container */
+			color: {
+				type: String,
+				default: 'transparent'
 			}
 		}
 	});
