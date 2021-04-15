@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageContainer renders correctly 1`] = `<vsheet-stub width="1440" tag="div" class="vd-page-container my-10 mx-mx-8"></vsheet-stub>`;
+exports[`PageContainer renders correctly 1`] = `<vsheet-stub width="1440" tag="div" class="vd-page-container my-10 mx-8"></vsheet-stub>`;
