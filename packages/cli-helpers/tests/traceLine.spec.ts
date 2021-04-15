@@ -10,7 +10,6 @@ describe('traceLine', () => {
 	});
 
 	it('should not render anything without columns', () => {
-
 		traceLine();
 
 		expect(mockStdout).toHaveBeenCalledTimes(0);
