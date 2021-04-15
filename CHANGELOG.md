@@ -8,11 +8,12 @@
 - ✨ **Nouvelles fonctionnalités**
   - **DataListGroup:** Ajout d'un nouveau composant ([#985](https://github.com/assurance-maladie-digital/design-system/pull/985)) ([4dfecf2](https://github.com/assurance-maladie-digital/design-system/commit/4dfecf20f1e78dc8a05f5c52a02febf57924358d))
   - **PageContainer:** Ajout d'un nouveau composant ([#1010](https://github.com/assurance-maladie-digital/design-system/pull/1010)) ([077b7d8](https://github.com/assurance-maladie-digital/design-system/commit/077b7d8c8ce69804d2be45a0f757f1e11b92d95e))
+  - **PageContainer:** Ajout de la prop `spacing` ([#1023](https://github.com/assurance-maladie-digital/design-system/pull/1023))
 
 - 🐛 **Corrections de bugs**
   - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984)) ([d3512d2](https://github.com/assurance-maladie-digital/design-system/commit/d3512d2ed19502b4f3a5fb6ed9c7cbfed783a969))
   - **DialogBox:** Correction des styles ([#995](https://github.com/assurance-maladie-digital/design-system/pull/995)) ([3ecad7c](https://github.com/assurance-maladie-digital/design-system/commit/3ecad7c3ebdb3cb29d75ffe5fc4fe3276a2e6d46))
-  - **PageContainer:** Correction de l'espace non calculé correctement ([#1022](https://github.com/assurance-maladie-digital/design-system/pull/1022))
+  - **PageContainer:** Correction de l'espace non calculé correctement ([#1022](https://github.com/assurance-maladie-digital/design-system/pull/1022)) ([bf88b9b](https://github.com/assurance-maladie-digital/design-system/commit/bf88b9b632fd704a936fc2d7c09b942dabec7066))
 
 - ♻️ **Refactoring**
   - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
