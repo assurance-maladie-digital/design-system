@@ -8,10 +8,13 @@
 - ✨ **Nouvelles fonctionnalités**
   - **DataListGroup:** Ajout d'un nouveau composant ([#985](https://github.com/assurance-maladie-digital/design-system/pull/985)) ([4dfecf2](https://github.com/assurance-maladie-digital/design-system/commit/4dfecf20f1e78dc8a05f5c52a02febf57924358d))
   - **PageContainer:** Ajout d'un nouveau composant ([#1010](https://github.com/assurance-maladie-digital/design-system/pull/1010)) ([077b7d8](https://github.com/assurance-maladie-digital/design-system/commit/077b7d8c8ce69804d2be45a0f757f1e11b92d95e))
+  - **PageContainer:** Ajout de la prop `spacing` ([#1023](https://github.com/assurance-maladie-digital/design-system/pull/1023)) ([28e5bca](https://github.com/assurance-maladie-digital/design-system/commit/28e5bcab39a557c040ab7925f263ca64db3b057c))
+  - **PageContainer:** Ajout de la prop `color` ([#1024](https://github.com/assurance-maladie-digital/design-system/pull/1024)) ([1565ab0](https://github.com/assurance-maladie-digital/design-system/commit/1565ab09df783fdfd095dc1b6ae2b8a227ddf32f))
 
 - 🐛 **Corrections de bugs**
   - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984)) ([d3512d2](https://github.com/assurance-maladie-digital/design-system/commit/d3512d2ed19502b4f3a5fb6ed9c7cbfed783a969))
   - **DialogBox:** Correction des styles ([#995](https://github.com/assurance-maladie-digital/design-system/pull/995)) ([3ecad7c](https://github.com/assurance-maladie-digital/design-system/commit/3ecad7c3ebdb3cb29d75ffe5fc4fe3276a2e6d46))
+  - **PageContainer:** Correction de l'espace non calculé correctement ([#1022](https://github.com/assurance-maladie-digital/design-system/pull/1022)) ([bf88b9b](https://github.com/assurance-maladie-digital/design-system/commit/bf88b9b632fd704a936fc2d7c09b942dabec7066))
 
 - ♻️ **Refactoring**
   - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
@@ -20,6 +23,9 @@
   - **SubHeader:** Utilisation de la prop `modal-title` au lieu du slot ([#997](https://github.com/assurance-maladie-digital/design-system/pull/997)) ([8136c91](https://github.com/assurance-maladie-digital/design-system/commit/8136c91b6c8e60eeee96ff7f789c1472d4021e76))
 
 ### Vue Dash
+
+- ✨ **Nouvelles fonctionnalités**
+  - **config:** Ajout des composants `DataListGroup` et `PageContainer` pour le tree-shaking de VueDot ([#1025](https://github.com/assurance-maladie-digital/design-system/pull/1025)) ([877bb4d](https://github.com/assurance-maladie-digital/design-system/commit/877bb4d103c8e57fde0d4733398a35635653034c))
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction d'une faute d'orthographe dans le fichier `.editorconfig` ([#977](https://github.com/assurance-maladie-digital/design-system/pull/977)) ([2728d53](https://github.com/assurance-maladie-digital/design-system/commit/2728d53e80e6eb28b7ffccfe637275296917d010))
@@ -33,6 +39,9 @@
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#1011](https://github.com/assurance-maladie-digital/design-system/pull/1011)) ([e05cb6a](https://github.com/assurance-maladie-digital/design-system/commit/e05cb6aab53419a8ebc8f5d588f437b224279b2f))
+
+- 🚨 **Lint**
+  - **global:** Correction des erreurs de lint ([#1026](https://github.com/assurance-maladie-digital/design-system/pull/1026))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.3.1` ([#969](https://github.com/assurance-maladie-digital/design-system/pull/969)) ([9110b1c](https://github.com/assurance-maladie-digital/design-system/commit/9110b1c5973b0df4dc1d1bb97e681a38e73ccb8c))
@@ -50,7 +59,7 @@
   - **@types/fs-extra:** Mise à jour vers la `v9.0.11` ([#1017](https://github.com/assurance-maladie-digital/design-system/pull/1017)) ([5cc330e](https://github.com/assurance-maladie-digital/design-system/commit/5cc330e114a46f6a2c45a62299a8f60e575faac4))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.22.0` ([#1018](https://github.com/assurance-maladie-digital/design-system/pull/1018)) ([3153543](https://github.com/assurance-maladie-digital/design-system/commit/315354323f4330be37886fbdccef51c87355407b))
   - **@types/node:** Mise à jour vers la `v14.14.40` ([#1020](https://github.com/assurance-maladie-digital/design-system/pull/1020)) ([2676517](https://github.com/assurance-maladie-digital/design-system/commit/26765173b98e6e07cb456102f7c56c34d55b1f72))
-  - **ts-jest:** Mise à jour vers la `v26.5.5` ([#1021](https://github.com/assurance-maladie-digital/design-system/pull/1021))
+  - **ts-jest:** Mise à jour vers la `v26.5.5` ([#1021](https://github.com/assurance-maladie-digital/design-system/pull/1021)) ([721c9bc](https://github.com/assurance-maladie-digital/design-system/commit/721c9bcdecc71cf10b1ae5755106e798177da6bd))
 
 ### 📚 Guide de migration
 

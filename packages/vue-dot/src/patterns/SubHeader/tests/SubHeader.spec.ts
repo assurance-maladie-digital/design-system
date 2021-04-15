@@ -9,7 +9,6 @@ import HeaderLoading from '../../../elements/HeaderLoading';
 
 Vue.component('HeaderLoading', HeaderLoading);
 
-import { DataListActionEvent } from '../../../patterns/DataListGroup/types';
 import { dataListGroupItems } from './data/subHeader';
 
 let wrapper: Wrapper<Vue>;

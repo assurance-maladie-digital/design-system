@@ -1,7 +1,8 @@
 <template>
 	<VSheet
 		:width="containerSize"
-		:class="paddingClass"
+		:class="spacingClass"
+		:color="color"
 		class="vd-page-container"
 	>
 		<slot />
@@ -27,6 +28,16 @@
 				validator(value) {
 					return ['xl', 'l', 'm', 's'].includes(value.toLowerCase());
 				}
+			},
+			/** Overwrite default spacing */
+			spacing: {
+				type: String,
+				default: undefined
+			},
+			/** The background color of the container */
+			color: {
+				type: String,
+				default: 'transparent'
 			}
 		}
 	});
@@ -35,22 +46,26 @@
 
 	@Component
 	export default class PageContainer extends MixinsDeclaration {
-		get paddingClass(): string {
+		get spacingClass(): string {
+			if (this.spacing) {
+				return this.spacing;
+			}
+
 			const containerMargin: IndexedObject<string> = {
 				xs: 'mx-0',
 				sm: 'mx-4',
 				md: 'mx-8',
 				lg: 'mx-8',
-				x: 'mx-8'
+				xl: 'mx-8'
 			};
 
 			const margin = containerMargin[this.$vuetify.breakpoint.name];
 
-			return `my-10 mx-${margin}`;
+			return `my-10 ${margin}`;
 		}
 
 		get containerSize(): number {
-			const containerWidth : IndexedObject<number> = {
+			const containerWidth: IndexedObject<number> = {
 				xl: 1440,
 				l: 960,
 				m: 800,
