@@ -27,6 +27,11 @@
 				validator(value) {
 					return ['xl', 'l', 'm', 's'].includes(value.toLowerCase());
 				}
+			},
+			/** Overwrite default spacing */
+			spacing: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -36,6 +41,10 @@
 	@Component
 	export default class PageContainer extends MixinsDeclaration {
 		get spacingClass(): string {
+			if (this.spacing) {
+				return this.spacing;
+			}
+
 			const containerMargin: IndexedObject<string> = {
 				xs: 'mx-0',
 				sm: 'mx-4',
@@ -50,7 +59,7 @@
 		}
 
 		get containerSize(): number {
-			const containerWidth : IndexedObject<number> = {
+			const containerWidth: IndexedObject<number> = {
 				xl: 1440,
 				l: 960,
 				m: 800,
