@@ -24,7 +24,7 @@
 		"copy-webpack-plugin": "6.4.1",
 		"dayjs": "1.10.4",
 		"deepmerge": "4.2.2",
-		"eslint": "7.23.0",
+		"eslint": "7.24.0",
 		"eslint-plugin-jsdoc": "32.3.0",
 		"eslint-plugin-vue": "7.8.0",
 		"fs-extra": "9.1.0",
