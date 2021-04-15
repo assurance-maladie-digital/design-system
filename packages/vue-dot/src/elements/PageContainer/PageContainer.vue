@@ -1,7 +1,7 @@
 <template>
 	<VSheet
 		:width="containerSize"
-		:class="paddingClass"
+		:class="spacingClass"
 		class="vd-page-container"
 	>
 		<slot />
@@ -35,18 +35,18 @@
 
 	@Component
 	export default class PageContainer extends MixinsDeclaration {
-		get paddingClass(): string {
+		get spacingClass(): string {
 			const containerMargin: IndexedObject<string> = {
 				xs: 'mx-0',
 				sm: 'mx-4',
 				md: 'mx-8',
 				lg: 'mx-8',
-				x: 'mx-8'
+				xl: 'mx-8'
 			};
 
 			const margin = containerMargin[this.$vuetify.breakpoint.name];
 
-			return `my-10 mx-${margin}`;
+			return `my-10 ${margin}`;
 		}
 
 		get containerSize(): number {

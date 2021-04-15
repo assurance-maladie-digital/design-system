@@ -12,6 +12,7 @@
 - 🐛 **Corrections de bugs**
   - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#984](https://github.com/assurance-maladie-digital/design-system/pull/984)) ([d3512d2](https://github.com/assurance-maladie-digital/design-system/commit/d3512d2ed19502b4f3a5fb6ed9c7cbfed783a969))
   - **DialogBox:** Correction des styles ([#995](https://github.com/assurance-maladie-digital/design-system/pull/995)) ([3ecad7c](https://github.com/assurance-maladie-digital/design-system/commit/3ecad7c3ebdb3cb29d75ffe5fc4fe3276a2e6d46))
+  - **PageContainer:** Correction de l'espace non calculé correctement ([#1022](https://github.com/assurance-maladie-digital/design-system/pull/1022))
 
 - ♻️ **Refactoring**
   - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
@@ -50,7 +51,7 @@
   - **@types/fs-extra:** Mise à jour vers la `v9.0.11` ([#1017](https://github.com/assurance-maladie-digital/design-system/pull/1017)) ([5cc330e](https://github.com/assurance-maladie-digital/design-system/commit/5cc330e114a46f6a2c45a62299a8f60e575faac4))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.22.0` ([#1018](https://github.com/assurance-maladie-digital/design-system/pull/1018)) ([3153543](https://github.com/assurance-maladie-digital/design-system/commit/315354323f4330be37886fbdccef51c87355407b))
   - **@types/node:** Mise à jour vers la `v14.14.40` ([#1020](https://github.com/assurance-maladie-digital/design-system/pull/1020)) ([2676517](https://github.com/assurance-maladie-digital/design-system/commit/26765173b98e6e07cb456102f7c56c34d55b1f72))
-  - **ts-jest:** Mise à jour vers la `v26.5.5` ([#1021](https://github.com/assurance-maladie-digital/design-system/pull/1021))
+  - **ts-jest:** Mise à jour vers la `v26.5.5` ([#1021](https://github.com/assurance-maladie-digital/design-system/pull/1021)) ([721c9bc](https://github.com/assurance-maladie-digital/design-system/commit/721c9bcdecc71cf10b1ae5755106e798177da6bd))
 
 ### 📚 Guide de migration
 
