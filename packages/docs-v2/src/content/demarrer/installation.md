@@ -1,7 +1,6 @@
 ---
 title: Installation
 description: Création d'un nouveau projet ou ajout d'un composant du Design System à un projet existant.
-position: 1
 ---
 
 ## Création d'un nouveau projet

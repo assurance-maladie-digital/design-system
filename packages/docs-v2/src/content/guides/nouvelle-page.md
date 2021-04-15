@@ -1,7 +1,6 @@
 ---
 title: Nouvelle page
 description: Création d'une nouvelle page dans un projet standard.
-position: 29
 ---
 
 ## Création de la page

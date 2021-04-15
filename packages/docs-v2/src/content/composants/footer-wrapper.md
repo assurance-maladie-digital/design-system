@@ -1,7 +1,6 @@
 ---
 title: FooterWrapper
 description: Le pattern `FooterWrapper` est utilisé avec le composant `FooterBtn` pour afficher un pied de page.
-position: 13
 ---
 
 <doc-tabs>

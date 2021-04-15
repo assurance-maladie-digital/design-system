@@ -1,7 +1,6 @@
 ---
 title: HeaderLoading
 description: L'élément `HeaderLoading` est une extension du composant `VSkeletonLoader`, il est utilisé pour afficher un élément de chargement avec des dimensions personnalisées.
-position: 17
 ---
 
 <doc-tabs>
