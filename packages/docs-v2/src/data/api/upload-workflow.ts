@@ -16,7 +16,7 @@ export const api: Api = {
 	state?: FileState;
 	name?: string;
 	file?: File;
-}`
+}[]`
 			},
 			{
 				name: 'section-title',

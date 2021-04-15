@@ -18,7 +18,7 @@ export const api: Api = {
 	icon?: string;
 	options?: Options;
 	class?: string;
-}`
+}[]`
 			},
 			{
 				name: 'icons',
