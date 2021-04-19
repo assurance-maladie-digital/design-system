@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.8
+
+**Version publiée le 19/04/2021.**
+
+Cette version comporte l'ajout des nouveaux composants `DataListGroup` et `PageContainer`, la refonte du composant `DataList` ainsi que plusieurs correctifs sur Vue Dot.
 
 ### Vue Dot
 
@@ -36,7 +40,7 @@
   - **template:** Suppression des classes inutiles dans le fichier `logo.svg` ([#978](https://github.com/assurance-maladie-digital/design-system/pull/978)) ([5e9ec77](https://github.com/assurance-maladie-digital/design-system/commit/5e9ec776e9e41df95e3494de1a4208f2eb3a5fa6))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#1031](https://github.com/assurance-maladie-digital/design-system/pull/1031))
+  - **template:** Mise à jour des dépendances ([#1031](https://github.com/assurance-maladie-digital/design-system/pull/1031)) ([1245c05](https://github.com/assurance-maladie-digital/design-system/commit/1245c052549e8c19285d5b9ede84043eab2b3bca))
 
 ### Interne
 
@@ -45,6 +49,9 @@
 
 - 🚨 **Lint**
   - **global:** Correction des erreurs de lint ([#1026](https://github.com/assurance-maladie-digital/design-system/pull/1026)) ([cd06e18](https://github.com/assurance-maladie-digital/design-system/commit/cd06e18c19df846a2d51cf0a91d995cb5bc1f8d7))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1032](https://github.com/assurance-maladie-digital/design-system/pull/1032))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.3.1` ([#969](https://github.com/assurance-maladie-digital/design-system/pull/969)) ([9110b1c](https://github.com/assurance-maladie-digital/design-system/commit/9110b1c5973b0df4dc1d1bb97e681a38e73ccb8c))
@@ -129,11 +136,22 @@ items: DataListGroupItems = [
 	// Autres items
 ```
 
+#### Renommer la prop `data-lists` sur le `SubHeader`
+
+La prop `data-lists` a été renommée en `data-list-group-items` :
+
+```diff
+<SubHeader
+-	:data-lists="items"
++	:data-list-group-items="items"
+>
+```
+
 ## v2.0.0-beta.7
 
 **Version publiée le 19/03/2021.**
 
-Cette version comporte la mise à jour des couleurs du thème ainsi plusieurs correctifs sur Vue Dot et Vue Dash.
+Cette version comporte la mise à jour des couleurs du thème ainsi que plusieurs correctifs sur Vue Dot et Vue Dash.
 
 ### Vue Dot
 
@@ -281,9 +299,9 @@ Deux méthodes `add` et `clear` on également été ajoutées pour simplifier l'
 +store.dispatch('notification/clear');
 ```
 
-#### Renommer `showCreateBtn` et `createBtnLabel` sur `TableToolbar`
+#### Renommer `show-create-btn` et `create-btn-label` sur `TableToolbar`
 
-Les props `showCreateBtn` et `createBtnLabel` on été renommées en `showAddBtn` et `addBtnLabel` :
+Les props `show-create-btn` et `create-btn-label` on été renommées en `show-add-btn` et `add-btn-label` :
 
 ```diff
 <TableToolbar
@@ -1152,9 +1170,9 @@ Si vous n'utilisez pas directement la directive `v-mask`, c'est tout ce que vous
 
 Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. Vous pouvez configurer `vue-input-facade` pour utiliser la directive `v-mask` (voir [Migrating existing projects](https://github.com/RonaldJerez/vue-input-facade#migrating-existing-projects)), mais nous vous conseillons de la renommer maintenant pour éviter de créer de la dette technique.
 
-#### Renommer `showWeekEnds` sur le `DatePicker`
+#### Renommer `show-week-ends` sur le `DatePicker`
 
-La prop `showWeekEnds` a été renommée en `showWeekends` :
+La prop `show-week-ends` a été renommée en `show-weekends` :
 
 ```diff
 <DatePicker
