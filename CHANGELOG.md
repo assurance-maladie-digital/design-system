@@ -35,6 +35,9 @@
   - **template:** Suppression des commentaires inutiles dans le fichier `tsconfig.json` ([#976](https://github.com/assurance-maladie-digital/design-system/pull/976)) ([09ba95f](https://github.com/assurance-maladie-digital/design-system/commit/09ba95f9983a38efd2c819ddd0310e20cc3399c0))
   - **template:** Suppression des classes inutiles dans le fichier `logo.svg` ([#978](https://github.com/assurance-maladie-digital/design-system/pull/978)) ([5e9ec77](https://github.com/assurance-maladie-digital/design-system/commit/5e9ec776e9e41df95e3494de1a4208f2eb3a5fa6))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#1031](https://github.com/assurance-maladie-digital/design-system/pull/1031))
+
 ### Interne
 
 - 🔧 **Configuration**
@@ -60,7 +63,7 @@
   - **ts-jest:** Mise à jour vers la `v26.5.5` ([#1021](https://github.com/assurance-maladie-digital/design-system/pull/1021)) ([721c9bc](https://github.com/assurance-maladie-digital/design-system/commit/721c9bcdecc71cf10b1ae5755106e798177da6bd))
   - **@types/node:** Mise à jour vers la `v14.14.41` ([#1027](https://github.com/assurance-maladie-digital/design-system/pull/1027)) ([47caec5](https://github.com/assurance-maladie-digital/design-system/commit/47caec536449152a8a588a61819835397adfa288))
   - **sass:** Mise à jour vers la `v1.32.10` ([#1029](https://github.com/assurance-maladie-digital/design-system/pull/1029)) ([fa336e3](https://github.com/assurance-maladie-digital/design-system/commit/fa336e34a1b5ffc8481faa24f80ef3b9f856200f))
-  - **@types/figlet:** Mise à jour vers la `v1.5.1` ([#1030](https://github.com/assurance-maladie-digital/design-system/pull/1030))
+  - **@types/figlet:** Mise à jour vers la `v1.5.1` ([#1030](https://github.com/assurance-maladie-digital/design-system/pull/1030)) ([2b112f6](https://github.com/assurance-maladie-digital/design-system/commit/2b112f66d25126e4df07291cf75657705cbfe82d))
 
 ### 📚 Guide de migration
 
