@@ -29,6 +29,11 @@
 				:slot="slot"
 			/>
 		</VTabsItems>
+
+		<VDivider
+			v-if="bottomDivider"
+			class="mb-6"
+		/>
 	</div>
 </template>
 
@@ -58,6 +63,10 @@
 			namespace: {
 				type: String,
 				default: 'section'
+			},
+			bottomDivider: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
