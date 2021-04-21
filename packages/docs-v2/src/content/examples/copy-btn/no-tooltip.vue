@@ -1,5 +1,5 @@
 <template>
-	<VLayout align-center>
+	<div class="d-flex align-center">
 		<p class="mb-0 mr-1">
 			Copiez le texte :
 		</p>
@@ -9,5 +9,5 @@
 			text-to-copy="Exemple"
 			hide-tooltip
 		/>
-	</VLayout>
+	</div>
 </template>

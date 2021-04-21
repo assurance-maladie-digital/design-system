@@ -25,11 +25,7 @@
 		</template>
 
 		<template #right-content>
-			<VLayout
-				column
-				align-start
-				class="ml-auto flex-grow-0 mt-3"
-			>
+			<div class="d-flex flex-column align-start flex-grow-0 ml-auto mt-auto">
 				<VBtn
 					text
 					color="white"
@@ -52,7 +48,7 @@
 
 					Dupliquer le dossier
 				</VBtn>
-			</VLayout>
+			</div>
 		</template>
 	</SubHeader>
 </template>

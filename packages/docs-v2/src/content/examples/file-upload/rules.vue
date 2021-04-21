@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="w-100">
 		<FileUpload
 			v-model="file"
 			v-bind="props"

@@ -1,5 +1,5 @@
 <template>
-	<VLayout align-center>
+	<div class="d-flex align-center">
 		<p class="mb-0 mr-1">
 			Copiez le texte :
 		</p>
@@ -18,7 +18,7 @@
 				Le texte a bien été copié
 			</template>
 		</CopyBtn>
-	</VLayout>
+	</div>
 </template>
 
 <script lang="ts">

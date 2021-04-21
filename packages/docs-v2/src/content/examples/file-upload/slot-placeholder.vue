@@ -1,10 +1,7 @@
 <template>
 	<FileUpload class="custom accent elevation-3 px-4 py-3">
 		<template #placeholder>
-			<VLayout
-				tag="span"
-				align-center
-			>
+			<span class="d-flex align-center">
 				<VIcon
 					size="25"
 					color="white"
@@ -16,7 +13,7 @@
 				<span class="white--text">
 					Déposez un fichier ici ou cliquer pour sélectionner
 				</span>
-			</VLayout>
+			</span>
 		</template>
 	</FileUpload>
 </template>
@@ -34,3 +31,9 @@
 		uploadIcon = mdiCloudUpload;
 	}
 </script>
+
+<style lang="scss" scoped>
+	.v-icon {
+		flex: none;
+	}
+</style>

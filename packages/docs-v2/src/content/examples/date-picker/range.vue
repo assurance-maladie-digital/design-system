@@ -1,5 +1,5 @@
 <template>
-	<VLayout wrap>
+	<div class="d-flex flex-wrap w-100">
 		<DatePicker
 			v-model="startDate"
 			label="Date de début"
@@ -13,7 +13,7 @@
 			label="Date de fin"
 			outlined
 		/>
-	</VLayout>
+	</div>
 </template>
 
 <script lang="ts">
