@@ -47,7 +47,7 @@ Vous pouvez afficher le composant en mode chargement en utilisant la prop `loadi
 
 <doc-alert type="info">
 
-Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur chaque [DataList](../data-list/README.md) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
+Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur chaque [DataList](/composants/data-list) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
 
 </doc-alert>
 
