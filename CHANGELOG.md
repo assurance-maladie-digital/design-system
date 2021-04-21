@@ -7,7 +7,8 @@
   - **ci:** Mise à jour de `codecov` vers la `v1.1.5` ([#1028](https://github.com/assurance-maladie-digital/design-system/pull/1028)) ([acbac61](https://github.com/assurance-maladie-digital/design-system/commit/acbac614caaccdc8acfefe5f11124fb2802d1bc5))
 
 - ⬆️ **Dépendances**
-  - **vuetify:** Mise à jour vers la `v2.4.11` ([#1033](https://github.com/assurance-maladie-digital/design-system/pull/1033))
+  - **vuetify:** Mise à jour vers la `v2.4.11` ([#1033](https://github.com/assurance-maladie-digital/design-system/pull/1033)) ([7f1fdf6](https://github.com/assurance-maladie-digital/design-system/commit/7f1fdf6275d72401f0c043e1abbad0e6977581df))
+  - **core-js:** Mise à jour vers la `v3.10.2` ([#1034](https://github.com/assurance-maladie-digital/design-system/pull/1034))
 
 ## v2.0.0-beta.8
 
