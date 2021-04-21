@@ -66,7 +66,14 @@ cd design-system
 yarn
 ```
 
-Une fois l'installation des dépendances effectuée, vous êtes prêt à développer !
+Finalement, vous devez compiler une première fois les librairies :
+
+```bash
+# Compilez toutes les librairies
+yarn build
+```
+
+Une fois ces étapes effectuées, vous êtes prêt à développer !
 
 <doc-tabs namespace="package">
 <doc-tab-item label="Documentation">
