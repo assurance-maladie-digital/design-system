@@ -3,7 +3,8 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-  - **LangBtn:** Correction de l'espacement lorsque la prop `hide-down-arrow` est présente ([#1039](https://github.com/assurance-maladie-digital/design-system/pull/1039))
+  - **LangBtn:** Correction de l'espacement lorsque la prop `hide-down-arrow` est présente ([#1039](https://github.com/assurance-maladie-digital/design-system/pull/1039)) ([6556629](https://github.com/assurance-maladie-digital/design-system/commit/6556629cca23dbd2780a261d2e2f8bec15c55c75))
+  - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#1040](https://github.com/assurance-maladie-digital/design-system/pull/1040))
 
 ### Interne
 

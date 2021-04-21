@@ -16,8 +16,11 @@
 			<li
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
-				class="vd-data-list-loading-item mb-4"
-				:class="{ 'vd-row': row }"
+				class="vd-data-list-loading-item"
+				:class="{
+					'vd-row': row,
+					'mb-4': index !== itemsNumber
+				}"
 			>
 				<HeaderLoading
 					v-if="!row"

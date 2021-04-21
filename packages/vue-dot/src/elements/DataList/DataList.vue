@@ -41,7 +41,7 @@
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
 						:class="getItemClass(index, item.class)"
-						class="vd-data-list-item text-body-1 mb-2"
+						class="vd-data-list-item text-body-1"
 						@click:action="$emit('click:item-action', index)"
 					/>
 				</ul>
@@ -137,7 +137,7 @@
 
 		getItemClass(index: number, itemClass?: string): ItemClass {
 			const margin = {
-				'mb-2': index === this.items.length
+				'mb-2': index !== this.items.length - 1
 			};
 
 			return [
@@ -151,9 +151,5 @@
 <style lang="scss" scoped>
 	.vd-data-list-field {
 		list-style: none;
-	}
-
-	.vd-data-list-item:last-of-type {
-		margin-bottom: 0 !important;
 	}
 </style>
