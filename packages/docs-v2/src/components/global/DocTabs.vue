@@ -21,7 +21,7 @@
 
 		<VTabsItems
 			v-model="tab"
-			:class="{ 'pt-8': !code }"
+			:class="{ 'pt-4': !code }"
 		>
 			<slot
 				v-for="slot in Object.keys($slots)"
