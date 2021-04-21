@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.8
+
+**Version publiée le 19/04/2021.**
+
+Cette version comporte l'ajout des nouveaux composants `DataListGroup` et `PageContainer`, la refonte du composant `DataList` ainsi que plusieurs correctifs sur Vue Dot.
 
 ### Vue Dot
 
@@ -35,19 +39,24 @@
   - **template:** Suppression des commentaires inutiles dans le fichier `tsconfig.json` ([#976](https://github.com/assurance-maladie-digital/design-system/pull/976)) ([09ba95f](https://github.com/assurance-maladie-digital/design-system/commit/09ba95f9983a38efd2c819ddd0310e20cc3399c0))
   - **template:** Suppression des classes inutiles dans le fichier `logo.svg` ([#978](https://github.com/assurance-maladie-digital/design-system/pull/978)) ([5e9ec77](https://github.com/assurance-maladie-digital/design-system/commit/5e9ec776e9e41df95e3494de1a4208f2eb3a5fa6))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#1031](https://github.com/assurance-maladie-digital/design-system/pull/1031)) ([1245c05](https://github.com/assurance-maladie-digital/design-system/commit/1245c052549e8c19285d5b9ede84043eab2b3bca))
+
 ### Interne
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#1011](https://github.com/assurance-maladie-digital/design-system/pull/1011)) ([e05cb6a](https://github.com/assurance-maladie-digital/design-system/commit/e05cb6aab53419a8ebc8f5d588f437b224279b2f))
 
 - 🚨 **Lint**
-  - **global:** Correction des erreurs de lint ([#1026](https://github.com/assurance-maladie-digital/design-system/pull/1026))
+  - **global:** Correction des erreurs de lint ([#1026](https://github.com/assurance-maladie-digital/design-system/pull/1026)) ([cd06e18](https://github.com/assurance-maladie-digital/design-system/commit/cd06e18c19df846a2d51cf0a91d995cb5bc1f8d7))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1032](https://github.com/assurance-maladie-digital/design-system/pull/1032))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.3.1` ([#969](https://github.com/assurance-maladie-digital/design-system/pull/969)) ([9110b1c](https://github.com/assurance-maladie-digital/design-system/commit/9110b1c5973b0df4dc1d1bb97e681a38e73ccb8c))
   - **@babel/preset-env:** Mise à jour vers la `v7.13.12` ([#971](https://github.com/assurance-maladie-digital/design-system/pull/971)) ([9d29676](https://github.com/assurance-maladie-digital/design-system/commit/9d296768e16665f81109a5d98ead9e741ee24c97))
   - **@types/jest:** Mise à jour vers la `v26.0.22` ([#986](https://github.com/assurance-maladie-digital/design-system/pull/986)) ([f53fb04](https://github.com/assurance-maladie-digital/design-system/commit/f53fb045b9a7eca5d09164b1fce702d7f8144174))
-  - **@types/figlet:** Mise à jour vers la `v1.5.0` ([#992](https://github.com/assurance-maladie-digital/design-system/pull/992)) ([b4b8bac](https://github.com/assurance-maladie-digital/design-system/commit/b4b8bacb306c881b61328d6850ae95d729d46139))
   - **core-js:** Mise à jour vers la `v3.10.0` ([#994](https://github.com/assurance-maladie-digital/design-system/pull/994)) ([0e71a92](https://github.com/assurance-maladie-digital/design-system/commit/0e71a92d5e399ace1c049961349ee9d984702eb6))
   - **vuetify:** Mise à jour vers la `v2.4.9` ([#999](https://github.com/assurance-maladie-digital/design-system/pull/999)) ([fd29bae](https://github.com/assurance-maladie-digital/design-system/commit/fd29bae0887e218862d8533d94fe92530898dc3f))
   - **core-js:** Mise à jour vers la `v3.10.1` ([#1008](https://github.com/assurance-maladie-digital/design-system/pull/1008)) ([5054f0f](https://github.com/assurance-maladie-digital/design-system/commit/5054f0fe2f7d4c41b81227445529f45f6d35d91c))
@@ -58,8 +67,10 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v7.9.0` ([#1016](https://github.com/assurance-maladie-digital/design-system/pull/1016) ([e6d6720](https://github.com/assurance-maladie-digital/design-system/commit/e6d67208fe7096f921c9337619940357ee525f05))
   - **@types/fs-extra:** Mise à jour vers la `v9.0.11` ([#1017](https://github.com/assurance-maladie-digital/design-system/pull/1017)) ([5cc330e](https://github.com/assurance-maladie-digital/design-system/commit/5cc330e114a46f6a2c45a62299a8f60e575faac4))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.22.0` ([#1018](https://github.com/assurance-maladie-digital/design-system/pull/1018)) ([3153543](https://github.com/assurance-maladie-digital/design-system/commit/315354323f4330be37886fbdccef51c87355407b))
-  - **@types/node:** Mise à jour vers la `v14.14.40` ([#1020](https://github.com/assurance-maladie-digital/design-system/pull/1020)) ([2676517](https://github.com/assurance-maladie-digital/design-system/commit/26765173b98e6e07cb456102f7c56c34d55b1f72))
   - **ts-jest:** Mise à jour vers la `v26.5.5` ([#1021](https://github.com/assurance-maladie-digital/design-system/pull/1021)) ([721c9bc](https://github.com/assurance-maladie-digital/design-system/commit/721c9bcdecc71cf10b1ae5755106e798177da6bd))
+  - **@types/node:** Mise à jour vers la `v14.14.41` ([#1027](https://github.com/assurance-maladie-digital/design-system/pull/1027)) ([47caec5](https://github.com/assurance-maladie-digital/design-system/commit/47caec536449152a8a588a61819835397adfa288))
+  - **sass:** Mise à jour vers la `v1.32.10` ([#1029](https://github.com/assurance-maladie-digital/design-system/pull/1029)) ([fa336e3](https://github.com/assurance-maladie-digital/design-system/commit/fa336e34a1b5ffc8481faa24f80ef3b9f856200f))
+  - **@types/figlet:** Mise à jour vers la `v1.5.1` ([#1030](https://github.com/assurance-maladie-digital/design-system/pull/1030)) ([2b112f6](https://github.com/assurance-maladie-digital/design-system/commit/2b112f66d25126e4df07291cf75657705cbfe82d))
 
 ### 📚 Guide de migration
 
@@ -125,11 +136,22 @@ items: DataListGroupItems = [
 	// Autres items
 ```
 
+#### Renommer la prop `data-lists` sur le `SubHeader`
+
+La prop `data-lists` a été renommée en `data-list-group-items` :
+
+```diff
+<SubHeader
+-	:data-lists="items"
++	:data-list-group-items="items"
+>
+```
+
 ## v2.0.0-beta.7
 
 **Version publiée le 19/03/2021.**
 
-Cette version comporte la mise à jour des couleurs du thème ainsi plusieurs correctifs sur Vue Dot et Vue Dash.
+Cette version comporte la mise à jour des couleurs du thème ainsi que plusieurs correctifs sur Vue Dot et Vue Dash.
 
 ### Vue Dot
 
@@ -277,9 +299,9 @@ Deux méthodes `add` et `clear` on également été ajoutées pour simplifier l'
 +store.dispatch('notification/clear');
 ```
 
-#### Renommer `showCreateBtn` et `createBtnLabel` sur `TableToolbar`
+#### Renommer `show-create-btn` et `create-btn-label` sur `TableToolbar`
 
-Les props `showCreateBtn` et `createBtnLabel` on été renommées en `showAddBtn` et `addBtnLabel` :
+Les props `show-create-btn` et `create-btn-label` on été renommées en `show-add-btn` et `add-btn-label` :
 
 ```diff
 <TableToolbar
@@ -1148,9 +1170,9 @@ Si vous n'utilisez pas directement la directive `v-mask`, c'est tout ce que vous
 
 Si vous l'utilisez, vous devez rechercher et remplacer `v-mask` par `v-facade`. Vous pouvez configurer `vue-input-facade` pour utiliser la directive `v-mask` (voir [Migrating existing projects](https://github.com/RonaldJerez/vue-input-facade#migrating-existing-projects)), mais nous vous conseillons de la renommer maintenant pour éviter de créer de la dette technique.
 
-#### Renommer `showWeekEnds` sur le `DatePicker`
+#### Renommer `show-week-ends` sur le `DatePicker`
 
-La prop `showWeekEnds` a été renommée en `showWeekends` :
+La prop `show-week-ends` a été renommée en `show-weekends` :
 
 ```diff
 <DatePicker
