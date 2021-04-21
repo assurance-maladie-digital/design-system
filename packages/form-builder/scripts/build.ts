@@ -56,8 +56,8 @@ fs.removeSync(`${DIST_FOLDER}/demo.html`);
 // Transpile TypeScript
 execSync(`tsc -p tsconfig.build.json --outDir ${DIST_FOLDER}`, execOpts);
 
-// Remove playground folder
-fs.removeSync(`${DIST_FOLDER}/playground`);
+// Remove dev folder
+fs.removeSync(`${DIST_FOLDER}/dev`);
 
 // Remove component folders because we don't compile
 // them individually at the moment

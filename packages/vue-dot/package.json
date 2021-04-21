@@ -30,9 +30,9 @@
 	"module": "./src/index.ts",
 	"types": "./types/index.d.ts",
 	"scripts": {
+		"postinstall": "ts-node --project tsconfig.json --files scripts/post-install.ts",
 		"pre-commit": "lint-staged",
-		"playground": "vue-cli-service serve",
-		"playground:build": "vue-cli-service build",
+		"dev": "vue-cli-service serve",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
 		"test": "vue-cli-service test:unit --runInBand"
@@ -52,18 +52,12 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.13.16",
-		"@babel/preset-env": "7.13.15",
 		"@cnamts/cli-helpers": "^2.0.0-beta.8",
 		"@vue/cli-plugin-babel": "4.5.12",
 		"@vue/cli-plugin-eslint": "4.5.12",
 		"@vue/cli-plugin-typescript": "4.5.12",
 		"@vue/cli-plugin-unit-jest": "4.5.12",
 		"@vue/cli-service": "4.5.12",
-		"babel-core": "7.0.0-bridge.0",
-		"babel-loader": "8.2.2",
-		"core-js": "3.10.2",
-		"json-to-scss": "1.6.2",
 		"vue-cli-plugin-vuetify": "2.3.1",
 		"vuetify-loader": "1.7.2"
 	},

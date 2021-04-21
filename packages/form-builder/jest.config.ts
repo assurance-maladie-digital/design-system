@@ -25,7 +25,7 @@ const config: Config.InitialOptions = {
 		'src/**/*.ts',
 		'!**/node_modules/**',
 		'!**/*.d.ts',
-		'!**/playground/**',
+		'!**/dev/**',
 		'!**/data/**'
 	],
 	transformIgnorePatterns: [
