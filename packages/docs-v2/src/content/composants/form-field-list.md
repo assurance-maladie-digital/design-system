@@ -9,7 +9,7 @@ description: Le composant `FormFieldList` est utilisé pour afficher un formulai
 
 <doc-alert type="info">
 
-Ce composant requiert l'installation de la dépendance [Form Builder](/demarrer/installation#composants/form-builder).
+Ce composant requiert l'installation de la dépendance [FormBuilder](/demarrer/installation#composants/form-builder).
 
 </doc-alert>
 
