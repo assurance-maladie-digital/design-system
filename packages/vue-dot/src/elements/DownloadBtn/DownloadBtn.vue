@@ -41,7 +41,7 @@
 	const Props = Vue.extend({
 		props: {
 			filePromise: {
-				type: Promise as PropType<Promise<AxiosResponse<string>>>,
+				type: Function as PropType<() => Promise<AxiosResponse<Blob>>>,
 				required: true
 			},
 			notification: {
@@ -107,7 +107,7 @@
 			this.state = STATE_ENUM.pending;
 
 			try {
-				const { data, headers } = await this.filePromise;
+				const { data, headers } = await this.filePromise();
 				const { name, type } = this.getFileInfo(headers);
 
 				downloadFile(data, name, type);
