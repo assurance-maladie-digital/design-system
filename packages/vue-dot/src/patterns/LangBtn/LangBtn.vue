@@ -15,7 +15,7 @@
 				v-on="on"
 			>
 				<!-- Current language -->
-				<span class="ml-2">
+				<span :class="currentLangClass">
 					{{ currentLangData.name }}
 				</span>
 
@@ -107,6 +107,10 @@
 
 		currentLang = this.value;
 
+		get currentLangClass(): string | undefined {
+			return this.hideDownArrow ? undefined : 'ml-1';
+		}
+
 		/** Returns the list of languages to display in the list */
 		get languages(): Languages {
 			let data: Languages = {};
@@ -143,7 +147,7 @@
 		}
 
 		/** Returns a formatted object of all the languages */
-		getFormattedLanguages(): Languages{
+		getFormattedLanguages(): Languages {
 			const data: Languages = {};
 
 			languages

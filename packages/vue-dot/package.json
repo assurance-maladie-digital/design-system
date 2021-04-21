@@ -52,7 +52,7 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.13.15",
+		"@babel/core": "7.13.16",
 		"@babel/preset-env": "7.13.15",
 		"@cnamts/cli-helpers": "^2.0.0-beta.8",
 		"@vue/cli-plugin-babel": "4.5.12",
@@ -62,7 +62,7 @@
 		"@vue/cli-service": "4.5.12",
 		"babel-core": "7.0.0-bridge.0",
 		"babel-loader": "8.2.2",
-		"core-js": "3.10.1",
+		"core-js": "3.10.2",
 		"json-to-scss": "1.6.2",
 		"vue-cli-plugin-vuetify": "2.3.1",
 		"vuetify-loader": "1.7.2"
