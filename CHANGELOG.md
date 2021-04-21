@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de `codecov` vers la `v1.1.5` ([#1028](https://github.com/assurance-maladie-digital/design-system/pull/1028))
+
 ## v2.0.0-beta.8
 
 **Version publiée le 19/04/2021.**
@@ -51,7 +58,7 @@ Cette version comporte l'ajout des nouveaux composants `DataListGroup` et `PageC
   - **global:** Correction des erreurs de lint ([#1026](https://github.com/assurance-maladie-digital/design-system/pull/1026)) ([cd06e18](https://github.com/assurance-maladie-digital/design-system/commit/cd06e18c19df846a2d51cf0a91d995cb5bc1f8d7))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1032](https://github.com/assurance-maladie-digital/design-system/pull/1032))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1032](https://github.com/assurance-maladie-digital/design-system/pull/1032)) ([cbae6d5](https://github.com/assurance-maladie-digital/design-system/commit/cbae6d5b2c4d148b6f6207351950fd9671adc2d5))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.3.1` ([#969](https://github.com/assurance-maladie-digital/design-system/pull/969)) ([9110b1c](https://github.com/assurance-maladie-digital/design-system/commit/9110b1c5973b0df4dc1d1bb97e681a38e73ccb8c))
