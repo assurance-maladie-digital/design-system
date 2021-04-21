@@ -3,7 +3,7 @@
 ### Interne
 
 - 🔧 **Configuration**
-  - **ci:** Mise à jour de `codecov` vers la `v1.1.5` ([#1028](https://github.com/assurance-maladie-digital/design-system/pull/1028))
+  - **ci:** Utilisation de l'image `cimg/node` à la place de `circle/node` ([#1038](https://github.com/assurance-maladie-digital/design-system/pull/1038))
 
 ## v2.0.0-beta.8
 
@@ -31,7 +31,7 @@ Cette version comporte l'ajout des nouveaux composants `DataListGroup` et `PageC
   - **DataList:** Utilisation de la mixin `widthable` ([#981](https://github.com/assurance-maladie-digital/design-system/pull/981)) ([38c0853](https://github.com/assurance-maladie-digital/design-system/commit/38c0853186519f648b7c034bd9186aafefc8deec))
   - **DataList:** Mise à jour du style par défaut du titre ([#983](https://github.com/assurance-maladie-digital/design-system/pull/983)) ([2728d53](https://github.com/assurance-maladie-digital/design-system/commit/2728d53e80e6eb28b7ffccfe637275296917d010))
   - **SubHeader:** Utilisation du composant `DataListGroup` ([#989](https://github.com/assurance-maladie-digital/design-system/pull/989)) ([c25f357](https://github.com/assurance-maladie-digital/design-system/commit/c25f357a1f633cda7072d1f2236d342fed42b2e6))
-  - **SubHeader:** Utilisation de la prop `modal-title` au lieu du slot ([#997](https://github.com/assurance-maladie-digital/design-system/pull/997)) ([8136c91](https://github.com/assurance-maladie-digital/design-system/commit/8136c91b6c8e60eeee96ff7f789c1472d4021e76))
+  - **SubHeader:** Utilisation de la prop `modal-title` à la place du slot ([#997](https://github.com/assurance-maladie-digital/design-system/pull/997)) ([8136c91](https://github.com/assurance-maladie-digital/design-system/commit/8136c91b6c8e60eeee96ff7f789c1472d4021e76))
 
 ### Vue Dash
 
