@@ -7,6 +7,12 @@ description: Le composant `FormFieldList` est utilisé pour afficher un formulai
 
 <doc-tab-item label="Utilisation">
 
+<doc-alert type="info">
+
+Ce composant requiert l'installation de la dépendance [Form Builder](/demarrer/installation#composants/form-builder).
+
+</doc-alert>
+
 <doc-example file="form-field-list/usage"></doc-example>
 
 ## Exemples

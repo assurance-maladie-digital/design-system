@@ -7,6 +7,12 @@ description: Le composant `FormBuilder` est utilisé pour afficher un questionna
 
 <doc-tab-item label="Utilisation">
 
+<doc-alert type="info">
+
+Ce composant requiert l'installation de la dépendance [Form Builder](/demarrer/installation#composants/form-builder).
+
+</doc-alert>
+
 <doc-example file="form-builder/usage"></doc-example>
 
 ## Exemples
