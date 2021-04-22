@@ -2,6 +2,7 @@
 	<VBtn
 		v-bind="btnOptions"
 		:loading="state === STATE_ENUM.pending"
+		class="vd-download-btn"
 		@click.native="download"
 	>
 		<slot name="icon">
@@ -125,3 +126,15 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-download-btn ::v-deep {
+		.v-btn__content {
+			flex-wrap: wrap;
+		}
+
+		.v-icon {
+			flex: none;
+		}
+	}
+</style>
