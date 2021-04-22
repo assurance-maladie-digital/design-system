@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- 🔥 **Suppressions**
+  - **lerna:** Suppression des propriétés `gitHead` dans les fichiers `package.json` ([#1045](https://github.com/assurance-maladie-digital/design-system/pull/1045))
+
 ## v2.0.0-beta.9
 
 **Version publiée le 22/04/2021.**
@@ -14,7 +21,7 @@ Cette version comporte des correctifs sur les composants `DownloadBtn`, `DataLis
 ### Vue Dash
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#1043](https://github.com/assurance-maladie-digital/design-system/pull/1043))
+  - **template:** Mise à jour des dépendances ([#1043](https://github.com/assurance-maladie-digital/design-system/pull/1043)) ([b2edc3b](https://github.com/assurance-maladie-digital/design-system/commit/b2edc3bc60cb81c627fc9b18af7a50f03634b1be))
 
 ### Interne
 
@@ -23,7 +30,7 @@ Cette version comporte des correctifs sur les composants `DownloadBtn`, `DataLis
   - **ci:** Mise à jour de `codecov` vers la `v1.1.5` ([#1028](https://github.com/assurance-maladie-digital/design-system/pull/1028)) ([acbac61](https://github.com/assurance-maladie-digital/design-system/commit/acbac614caaccdc8acfefe5f11124fb2802d1bc5))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1044](https://github.com/assurance-maladie-digital/design-system/pull/1044))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1044](https://github.com/assurance-maladie-digital/design-system/pull/1044)) ([2a52a8f](https://github.com/assurance-maladie-digital/design-system/commit/2a52a8f00623f7e3adbd5e0320f24cca1acfc50b))
 
 - ⬆️ **Dépendances**
   - **vuetify:** Mise à jour vers la `v2.4.11` ([#1033](https://github.com/assurance-maladie-digital/design-system/pull/1033)) ([7f1fdf6](https://github.com/assurance-maladie-digital/design-system/commit/7f1fdf6275d72401f0c043e1abbad0e6977581df))
