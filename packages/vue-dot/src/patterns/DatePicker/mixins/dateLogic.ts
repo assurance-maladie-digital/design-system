@@ -9,7 +9,7 @@ import { Options } from '../../../mixins/customizable';
 import { Refs } from '../../../types';
 
 /** Date format used internally */
-const INTERNAL_FORMAT = 'YYYY-MM-DD';
+export const INTERNAL_FORMAT = 'YYYY-MM-DD';
 
 const Props = Vue.extend({
 	props: {

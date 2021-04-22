@@ -2,6 +2,7 @@
 	<VBtn
 		v-bind="btnOptions"
 		:loading="state === STATE_ENUM.pending"
+		class="vd-download-btn"
 		@click.native="download"
 	>
 		<slot name="icon">
@@ -33,6 +34,7 @@
 
 	import { STATE_ENUM } from '../../constants/enums/StateEnum';
 	import { IndexedObject } from '../../types';
+	import { ContentHeadersEnum } from './ContentHeadersEnum';
 	import { FileInfo } from './types';
 
 	import { config } from './config';
@@ -84,8 +86,8 @@
 		}
 
 		getFileInfo(headers: IndexedObject): FileInfo {
-			const contentType = headers['Content-Type'];
-			const contentDispositionHeader = headers['Content-Disposition'] as string;
+			const contentType = headers[ContentHeadersEnum.TYPE];
+			const contentDispositionHeader = headers[ContentHeadersEnum.DISPOSITION] as string;
 			const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
 
 			return {
@@ -124,3 +126,15 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-download-btn ::v-deep {
+		.v-btn__content {
+			flex-wrap: wrap;
+		}
+
+		.v-icon {
+			flex: none;
+		}
+	}
+</style>

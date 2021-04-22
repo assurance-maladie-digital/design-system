@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios';
+import { ContentHeadersEnum } from '../../ContentHeadersEnum';
 
 /** Returns a promise that returns a file */
 export function filePromise(): Promise<AxiosResponse<string>> {
@@ -8,8 +9,8 @@ export function filePromise(): Promise<AxiosResponse<string>> {
 			status: 200,
 			statusText: 'OK',
 			headers: {
-				'Content-Disposition': 'attachment; filename="attestation.txt"',
-				'Content-Type': 'text/plain'
+				[ContentHeadersEnum.TYPE]: 'text/plain',
+				[ContentHeadersEnum.DISPOSITION]: 'attachment; filename="attestation.txt"'
 			},
 			config: {}
 		});
