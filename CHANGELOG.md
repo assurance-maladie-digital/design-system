@@ -1,11 +1,27 @@
 ## Non publié
 
+### Interne
+
+- 🔥 **Suppressions**
+  - **lerna:** Suppression des propriétés `gitHead` dans les fichiers `package.json` ([#1045](https://github.com/assurance-maladie-digital/design-system/pull/1045))
+
+## v2.0.0-beta.9
+
+**Version publiée le 22/04/2021.**
+
+Cette version comporte des correctifs sur les composants `DownloadBtn`, `DataList` et `LangBtn`.
+
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
   - **LangBtn:** Correction de l'espacement lorsque la prop `hide-down-arrow` est présente ([#1039](https://github.com/assurance-maladie-digital/design-system/pull/1039)) ([6556629](https://github.com/assurance-maladie-digital/design-system/commit/6556629cca23dbd2780a261d2e2f8bec15c55c75))
   - **DataList:** Correction d'un espace en trop sur le dernier item de la liste ([#1040](https://github.com/assurance-maladie-digital/design-system/pull/1040)) ([91a8c07](https://github.com/assurance-maladie-digital/design-system/commit/91a8c07703573899ab42a91513005724c3ce71ed))
-  - **DownloadBtn:** Correction du type de la prop `file-promise` et du téléchargement du fichier ([#1041](https://github.com/assurance-maladie-digital/design-system/pull/1041))
+  - **DownloadBtn:** Correction du type de la prop `file-promise` et du téléchargement du fichier ([#1041](https://github.com/assurance-maladie-digital/design-system/pull/1041)) ([b5b2fcd](https://github.com/assurance-maladie-digital/design-system/commit/b5b2fcdda70847b13f529456904373392f0a8309))
+
+### Vue Dash
+
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#1043](https://github.com/assurance-maladie-digital/design-system/pull/1043)) ([b2edc3b](https://github.com/assurance-maladie-digital/design-system/commit/b2edc3bc60cb81c627fc9b18af7a50f03634b1be))
 
 ### Interne
 
@@ -13,11 +29,14 @@
   - **ci:** Utilisation de l'image `cimg/node` à la place de `circle/node` ([#1038](https://github.com/assurance-maladie-digital/design-system/pull/1038)) ([7a809f1](https://github.com/assurance-maladie-digital/design-system/commit/7a809f1d7983da3c2728fc366523361111b58509))
   - **ci:** Mise à jour de `codecov` vers la `v1.1.5` ([#1028](https://github.com/assurance-maladie-digital/design-system/pull/1028)) ([acbac61](https://github.com/assurance-maladie-digital/design-system/commit/acbac614caaccdc8acfefe5f11124fb2802d1bc5))
 
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1044](https://github.com/assurance-maladie-digital/design-system/pull/1044)) ([2a52a8f](https://github.com/assurance-maladie-digital/design-system/commit/2a52a8f00623f7e3adbd5e0320f24cca1acfc50b))
+
 - ⬆️ **Dépendances**
   - **vuetify:** Mise à jour vers la `v2.4.11` ([#1033](https://github.com/assurance-maladie-digital/design-system/pull/1033)) ([7f1fdf6](https://github.com/assurance-maladie-digital/design-system/commit/7f1fdf6275d72401f0c043e1abbad0e6977581df))
-  - **core-js:** Mise à jour vers la `v3.10.2` ([#1034](https://github.com/assurance-maladie-digital/design-system/pull/1034)) ([7d3602a](https://github.com/assurance-maladie-digital/design-system/commit/7d3602a81715820faa1e0095d8022591ad9c1de9))
   - **sass:** Mise à jour vers la `v1.32.11` ([#1035](https://github.com/assurance-maladie-digital/design-system/pull/1035)) ([098733f](https://github.com/assurance-maladie-digital/design-system/commit/098733ff3091915cd922dae7bf96849742219b88))
   - **babel:** Mise à jour du monorepo vers la `v7.13.16` ([#1036](https://github.com/assurance-maladie-digital/design-system/pull/1036)) ([0870dec](https://github.com/assurance-maladie-digital/design-system/commit/0870dec9462a54761254ec7f279a6f10a6889689))
+  - **core-js:** Mise à jour vers la `v3.11.0` ([#1042](https://github.com/assurance-maladie-digital/design-system/pull/1042)) ([e50fce3](https://github.com/assurance-maladie-digital/design-system/commit/e50fce350682ad4a87ccbe6cd2c5a8097f3046e2))
 
 ## v2.0.0-beta.8
 

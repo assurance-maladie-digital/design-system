@@ -39,7 +39,7 @@ function extendPackage(api, options) {
 			'@cnamts/design-tokens': DesignTokensVersion,
 			'@cnamts/vue-dot': VueDotVersion,
 			'axios': '^0.21.1',
-			'core-js': '^3.10.1',
+			'core-js': '^3.11.0',
 			'custom-event-polyfill': '^1.0.7',
 			'dayjs': '^1.10.4',
 			'languages': '^0.1.3',
@@ -47,10 +47,10 @@ function extendPackage(api, options) {
 			'vue-input-facade': '^1.3.2',
 			'vue-meta': '^2.4.0',
 			'vue-router': '^3.5.1',
-			'vuetify': '^2.4.9'
+			'vuetify': '^2.4.11'
 		},
 		devDependencies: {
-			'@babel/core': '^7.13.15',
+			'@babel/core': '^7.13.16',
 			'@mdi/js': '^5.9.55',
 			'@types/jest': '^26.0.22',
 			'@types/webfontloader': '^1.6.0',
@@ -72,7 +72,7 @@ function extendPackage(api, options) {
 			'eslint-plugin-promise': '^4.3.1',
 			'eslint-plugin-vue': '^7.9.0',
 			'jest-serializer-vue': '^2.0.2',
-			'sass': '^1.32.10',
+			'sass': '^1.32.11',
 			'sass-loader': '^10.1.1',
 			'typescript': '~4.2.4',
 			'vue-class-component': '^7.2.6',
