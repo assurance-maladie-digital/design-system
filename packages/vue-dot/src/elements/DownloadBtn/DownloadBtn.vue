@@ -33,6 +33,7 @@
 
 	import { STATE_ENUM } from '../../constants/enums/StateEnum';
 	import { IndexedObject } from '../../types';
+	import { ContentHeadersEnum } from './ContentHeadersEnum';
 	import { FileInfo } from './types';
 
 	import { config } from './config';
@@ -84,8 +85,8 @@
 		}
 
 		getFileInfo(headers: IndexedObject): FileInfo {
-			const contentType = headers['Content-Type'];
-			const contentDispositionHeader = headers['Content-Disposition'] as string;
+			const contentType = headers[ContentHeadersEnum.TYPE];
+			const contentDispositionHeader = headers[ContentHeadersEnum.DISPOSITION] as string;
 			const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
 
 			return {
