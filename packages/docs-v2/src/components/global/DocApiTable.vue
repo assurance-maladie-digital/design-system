@@ -80,6 +80,7 @@
 							<template v-else-if="header === 'description'">
 								<DocMarkdown
 									v-if="item[header]"
+									class="description"
 								>{{ item[header] }}</DocMarkdown>
 							</template>
 
@@ -190,7 +191,7 @@
 
 		getCode(item: ApiProp): string | null {
 			if (item.snippet || item.value) {
-				return this.genHtml(item.snippet || item.value);
+				return this.genHtml(item.snippet || item.value as string);
 			}
 
 			if (item.example) {
@@ -263,6 +264,10 @@
 
 		.text-mono {
 			font-family: monospace;
+		}
+
+		::v-deep .description {
+			min-width: 248px;
 		}
 	}
 
