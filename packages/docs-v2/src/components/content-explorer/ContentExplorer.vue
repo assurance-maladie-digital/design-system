@@ -15,7 +15,7 @@
 			</template>
 		</VTextField>
 
-		<div class="content d-flex flex-wrap flex-sm-nowrap h-100">
+		<div class="content d-flex flex-wrap flex-sm-nowrap max-width-none h-100 ma-n4">
 			<VTreeview
 				:open.sync="tree"
 				:active.sync="activeItem"
@@ -40,7 +40,10 @@
 				</template>
 			</VTreeview>
 
-			<VDivider :vertical="!$vuetify.breakpoint.xs" />
+			<VDivider
+				:vertical="!$vuetify.breakpoint.xs"
+				class="ma-4 ma-sm-0"
+			/>
 
 			<div class="content flex-grow-1 ma-4">
 				<VProgressLinear
