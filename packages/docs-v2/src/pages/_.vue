@@ -5,7 +5,7 @@
 		<DocDrawer v-model="drawer" />
 
 		<VMain>
-			<VContainer class="h-100 py-4 py-sm-8">
+			<VContainer class="h-100 pa-5 pa-sm-8">
 				<VSheet
 					max-width="868px"
 					class="mx-auto h-100 d-flex flex-column"
