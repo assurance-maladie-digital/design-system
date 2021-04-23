@@ -15,7 +15,7 @@
 			</template>
 		</VTextField>
 
-		<div class="content d-flex h-100 w-100">
+		<div class="content d-flex flex-wrap flex-sm-nowrap h-100">
 			<VTreeview
 				:open.sync="tree"
 				:active.sync="activeItem"
@@ -26,6 +26,7 @@
 				activatable
 				return-object
 				item-key="name"
+				class="ma-4"
 				@update:active="treeviewUpdated"
 			>
 				<template #prepend="{ item, open }">
@@ -39,9 +40,9 @@
 				</template>
 			</VTreeview>
 
-			<VDivider vertical />
+			<VDivider :vertical="!$vuetify.breakpoint.xs" />
 
-			<div class="content flex-grow-1 ml-4">
+			<div class="content flex-grow-1 ma-4">
 				<VProgressLinear
 					v-show="state === 'pending'"
 					indeterminate
@@ -231,7 +232,7 @@
 	}
 
 	.v-treeview {
-		flex: 0 0 250px;
+		width: 100%;
 		overflow-x: auto;
 
 		::v-deep {
@@ -242,6 +243,12 @@
 			.v-treeview-node__label {
 				font-size: .9rem;
 			}
+		}
+	}
+
+	@media (min-width: 600px) {
+		.v-treeview {
+		flex: 0 0 256px;
 		}
 	}
 </style>
