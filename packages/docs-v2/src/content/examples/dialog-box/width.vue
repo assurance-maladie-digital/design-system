@@ -4,7 +4,7 @@
 			color="primary"
 			@click="dialog = true"
 		>
-			Afficher la boîte de dialogue
+			Afficher le composant
 		</VBtn>
 
 		<DialogBox
