@@ -14,7 +14,7 @@
 		<VMain>
 			<div class="d-flex justify-center">
 				<PageContainer>
-					<Playground />
+					<Playground class="d-flex justify-center" />
 				</PageContainer>
 			</div>
 		</VMain>
