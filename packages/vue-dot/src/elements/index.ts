@@ -6,6 +6,7 @@ import DownloadBtn from './DownloadBtn';
 import HeaderLoading from './HeaderLoading';
 import PageCard from './PageCard';
 import FilterSelector from './FilterSelector';
+import FilterManager from './FilterManager';
 
 export const elements = {
 	CopyBtn,
@@ -15,5 +16,6 @@ export const elements = {
 	DownloadBtn,
 	HeaderLoading,
 	PageCard,
-	FilterSelector
+	FilterSelector,
+	FilterManager
 };

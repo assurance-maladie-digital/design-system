@@ -22,8 +22,8 @@
 				>
 					<template #search-left>
 						<FilterModule
-							:values="items"
-							:list="headers"
+							:filters="filters"
+							@filter-list="filterTable($event)"
 						/>
 					</template>
 				</TableToolbar>
@@ -74,5 +74,69 @@
 				lastname: 'Bonaparte'
 			}
 		];
+
+		filters = [
+			{
+				label: 'Moyen de contact',
+				key: 'name',
+				form: {
+					filterList: {
+						type: 'select',
+						multiple: true,
+						dynamic: true,
+						items: [
+							{
+								text: 'Email',
+								value: 'email'
+							},
+							{
+								text: 'Courrier',
+								value: 'mail'
+							},
+							{
+								text: 'SMS',
+								value: 'sms'
+							}
+						],
+						value: null,
+						fieldOptions: {
+							outlined: true
+						}
+					}
+				}
+			},
+			{
+				label: 'fichier',
+				key: 'file',
+				form: {
+					filterList: {
+						type: 'select',
+						dynamic: true,
+						items: [
+							{
+								text: 'Jpeg',
+								value: 'jpeg'
+							},
+							{
+								text: 'PDF',
+								value: 'pdf'
+							},
+							{
+								text: 'Mp3',
+								value: 'mp3'
+							}
+						],
+						value: null,
+						fieldOptions: {
+							outlined: true
+						}
+					}
+				}
+			}
+		];
+
+		filterTable(event: Array<string>): void {
+			console.log('event');
+		}
 	}
 </script>

@@ -11,6 +11,7 @@ Array [
   "DownloadBtn",
   "ErrorPage",
   "FileUpload",
+  "FilterManager",
   "FilterModule",
   "FilterSelector",
   "FooterWrapper",

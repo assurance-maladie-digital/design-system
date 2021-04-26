@@ -2,33 +2,40 @@
 	<div
 		class="vd-filter-module"
 	>
-		<FilterSelector
-			:list="arrangeFilter"
-			@open-dialog="openModal($event)"
+		<FilterManager
+			v-if="displayFiltersCount"
+			:applyed-filters="applyedFilters"
+			@edit-filters="openModal"
+			@clear-filters-row="clearFiltersRow"
+			@reset-filters="resetFilters"
 		/>
-		<!--<div
-			v-for="(item, i) in arrangeFilter"
-			:key="i"
+		<FilterSelector
+			:filters="filters"
+			@filter-selected="openModal"
+		/>
+		<v-dialog
+			v-model="dialog"
+			max-width="300px"
 		>
-			<VSelect
-				v-model="value"
-				:items="item.list"
-				:label="item.header.value"
-				multiple
-			>
-				<template v-slot:selection="{ item, index }">
-					<v-chip v-if="index === 0">
-						<span>{{ item }}</span>
-					</v-chip>
-					<span
-						v-if="index === 1"
-						class="grey--text caption"
-					>
-						(+{{ value.length - 1 }} others)
-					</span>
-				</template>
-			</VSelect>
-		</div>-->
+			<v-card>
+				<v-card-text>
+					<v-card-title />
+					<FormFieldList
+						v-model="modalContent"
+						@change="updateSelectedFilters"
+					/>
+					<v-card-actions class="vd-filter-action">
+						<v-btn
+							color="primary"
+							dark
+							@click="applyFilter"
+						>
+							Appliquer le filtre
+						</v-btn>
+					</v-card-actions>
+				</v-card-text>
+			</v-card>
+		</v-dialog>
 	</div>
 </template>
 
@@ -41,15 +48,14 @@
 
 	import { customizable } from '../../mixins/customizable';
 
+	import FormFieldList from '@cnamts/form-builder/src/components/FormFieldList';
+
 	const Props = Vue.extend({
 		props: {
-			values: {
+			filters: {
 				type: Array,
-				default: undefined
-			},
-			list: {
-				type: Array,
-				default: undefined
+				default: undefined,
+				required: true
 			}
 		}
 	});
@@ -59,56 +65,69 @@
 		customizable(config)
 	);
 
-	@Component<FilterModule>({
-		inheritAttrs: false,
-		model: {
-			prop: 'value',
-			event: 'change'
+	@Component({
+		components: {
+			FormFieldList
 		}
 	})
 	export default class FilterModule extends MixinsDeclaration {
 		// Locales
 		locales = locales;
 
-		value = [];
+		filterIndex = undefined;
 
-		openFilterList(): void {
-			this.arrangeFilter.forEach(data => {
-				console.log(data.header.text);
-				console.log(data.list);
-			});
-		}
+		dialog = false;
+
+		modalContent = null;
+
+		selectedFilters = undefined;
+
+		applyedFilters = null;
 
 		openModal(index: number): void {
-			console.log(this.arrangeFilter[index].list);
+			this.filterIndex = index;
+			this.modalContent = this.filters[index].form;
+			this.dialog = true;
 		}
 
-		get arrangeFilter(): Array<string> {
-			const filters: Array<any> = [];
-			this.list.forEach((data, i) => {
-				let valueList: Array<any> = [];
-				this.values.forEach((datum, di) => {
-					Object.keys(datum).forEach((header, ti) => {
-						if(header === data.value) {
-							valueList.push(Object.values(this.values[di])[ti]);
-						}
-					});
-				});
-				filters.push({
-					header: data,
-					list: valueList
-				});
-			});
-			return filters;
+		applyFilter(): void {
+			if (this.applyedFilters === null) {
+				this.applyedFilters = this.filters;
+			}
+			this.applyedFilters[this.filterIndex].form.filterList = this.selectedFilters.filterList;
+			this.$emit('filter-list', this.selectedFilters);
+			this.dialog = false;
+			this.modalContent = null;
+		}
+
+		clearFiltersRow(index: number): void {
+			this.applyedFilters[index].form.filterList = this.filters[index].form.filterList;
+		}
+
+		resetFilters(): void {
+			this.applyedFilters = null;
+		}
+
+		updateSelectedFilters(data: string): void {
+			this.selectedFilters = data;
+		}
+
+		get displayFiltersCount(): boolean {
+			return this.applyedFilters === null ? false : true;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.vd {
-		&-filter-module {
-			width: 150px;
-			display: flex;
+		&-filter {
+			&-module {
+				margin-right: 2rem;
+			}
+			&-action {
+				display: flex;
+				justify-content: center;
+			}
 		}
 	}
 </style>

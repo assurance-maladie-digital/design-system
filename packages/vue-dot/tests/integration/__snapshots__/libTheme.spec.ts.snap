@@ -12,6 +12,7 @@ Object {
     "DownloadBtn",
     "ErrorPage",
     "FileUpload",
+    "FilterManager",
     "FilterModule",
     "FilterSelector",
     "FooterWrapper",
