@@ -2,13 +2,13 @@
 	<div
 		class="vd-filter-module"
 	>
-		<FilterManager
+		<!--<FilterManager
 			v-if="displayFiltersCount"
 			:applyed-filters="applyedFilters"
 			@edit-filters="openModal"
 			@clear-filters-row="clearFiltersRow"
 			@reset-filters="resetFilters"
-		/>
+		/>-->
 		<FilterSelector
 			:filters="filters"
 			@filter-selected="openModal"
@@ -95,7 +95,7 @@
 				this.applyedFilters = this.filters;
 			}
 			this.applyedFilters[this.filterIndex].form.filterList = this.selectedFilters.filterList;
-			this.$emit('filter-list', this.selectedFilters);
+			this.$emit('filter-list', this.applyedFilters);
 			this.dialog = false;
 			this.modalContent = null;
 		}

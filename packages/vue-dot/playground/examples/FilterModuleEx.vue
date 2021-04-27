@@ -136,7 +136,7 @@
 		];
 
 		filterTable(event: Array<string>): void {
-			console.log('event');
+			console.log(event);
 		}
 	}
 </script>
