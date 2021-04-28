@@ -1,5 +1,4 @@
 {
-	// Extend root config
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": ".",
@@ -10,19 +9,13 @@
 		"esModuleInterop": true
 	},
 	"include": [
-		// Playground
-		"playground/**/*.ts",
-		"playground/**/*.vue",
-		// Src
+		"dev/**/*.ts",
+		"dev/**/*.vue",
 		"src/**/*.ts",
 		"src/**/*.vue",
-		// Tests
 		"tests/**/*.ts",
-		// Types
 		"types/**/*.ts",
-		// Scripts
 		"scripts/**/*.ts",
-		// JSON
 		"*.json"
 	],
 	"exclude": [
