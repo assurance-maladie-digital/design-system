@@ -5,7 +5,7 @@
 	],
 	"name": "@cnamts/design-system",
 	"scripts": {
-		"postinstall": "lerna run postinstall --stream",
+		"postinstall": "lerna run post-install --stream",
 		"prepublishOnly": "lerna run build",
 		"dev": "lerna run dev --stream",
 		"lint": "lerna run lint --stream",

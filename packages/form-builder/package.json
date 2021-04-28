@@ -27,7 +27,7 @@
 	"module": "./src/index.ts",
 	"types": "./types/index.d.ts",
 	"scripts": {
-		"postinstall": "ts-node --project tsconfig.json --files scripts/post-install.ts",
+		"post-install": "ts-node --project tsconfig.json --files scripts/post-install.ts",
 		"pre-commit": "lint-staged",
 		"dev": "vue-cli-service serve",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
