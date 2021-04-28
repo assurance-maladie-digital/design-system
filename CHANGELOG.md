@@ -16,7 +16,8 @@
   - **lerna:** Suppression des propriétés `gitHead` dans les fichiers `package.json` ([#1045](https://github.com/assurance-maladie-digital/design-system/pull/1045)) ([d941896](https://github.com/assurance-maladie-digital/design-system/commit/d94189622cc1fe5e03484472199336a86ba4404d))
   
 - ⬆️ **Dépendances**
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v32.3.3` ([#1050](https://github.com/assurance-maladie-digital/design-system/pull/1050))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v32.3.3` ([#1050](https://github.com/assurance-maladie-digital/design-system/pull/1050)) ([032075b](https://github.com/assurance-maladie-digital/design-system/commit/032075b24f7d44f46888eb3d668c4b7266401ecf))
+  - **eslint:** Mise à jour vers la `v7.25.0` ([#1051](https://github.com/assurance-maladie-digital/design-system/pull/1051)
 
 ## v2.0.0-beta.9
 

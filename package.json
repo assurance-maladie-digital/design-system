@@ -31,7 +31,7 @@
 		"custom-event-polyfill": "1.0.7",
 		"dayjs": "1.10.4",
 		"deepmerge": "4.2.2",
-		"eslint": "7.24.0",
+		"eslint": "7.25.0",
 		"eslint-plugin-jsdoc": "32.3.3",
 		"eslint-plugin-vue": "7.9.0",
 		"fs-extra": "9.1.0",
