@@ -43,7 +43,7 @@ info('Building full bundle');
 
 // Build the full bundle
 execSync(
-	`LIB_MODE=true ${vueCliServicePath} build --target lib --name form-builder ./src/index.ts`,
+	`cross-env LIB_MODE=true ${vueCliServicePath} build --target lib --name form-builder ./src/index.ts`,
 	execOpts
 );
 
