@@ -1,10 +1,8 @@
 // Build configuration
 const webpack = require('webpack');
-const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
 
 // If LIB_MODE is true, we're building the library
-// else, we're building the playground
+// else, we're building the dev environment
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
 const LIMIT_SIZE = 315000;
 
@@ -46,6 +44,7 @@ const LIB_MODE_CONFIG = {
 					root: 'Vue'
 				}
 			},
+			/^core-js/,
 			/^vuetify/,
 			/^dayjs/,
 			/^languages/,
@@ -60,38 +59,26 @@ const LIB_MODE_CONFIG = {
 	}
 };
 
-const PLAYGROUND_MODE_CONFIG = {
+const DEV_MODE_CONFIG = {
 	configureWebpack: {
-		entry: './playground/main.ts',
-		plugins: [
-			// Copy public folder content from /playground
-			new CopyPlugin({
-				patterns: [{
-					from: path.join(__dirname, './playground/public'),
-					to: path.join(__dirname, './dist'),
-					toType: 'dir',
-					globOptions: {
-						ignore: [
-							'index.html',
-							'.DS_Store'
-						]
-					}
-				}]
-			})
-		]
+		entry: './dev/main.ts'
 	},
 	chainWebpack: (config) => {
-		// Use index.html in playground folder
+		// Use index.html in dev folder
 		config
 			.plugin('html')
 			.tap(args => {
-				args[0].template = './playground/public/index.html';
+				args[0].template = './dev/index.html';
 
 				return args;
 			});
-	}
+	},
+	transpileDependencies: [
+		'vuetify',
+		'vue-input-facade'
+	]
 };
 
-const currentConfig = LIB_MODE ? LIB_MODE_CONFIG : PLAYGROUND_MODE_CONFIG;
+const currentConfig = LIB_MODE ? LIB_MODE_CONFIG : DEV_MODE_CONFIG;
 
 module.exports = currentConfig;
