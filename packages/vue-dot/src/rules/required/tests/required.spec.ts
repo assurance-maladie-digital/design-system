@@ -10,7 +10,7 @@ describe('required', () => {
 		expect(typeof required([])).toBe('string');
 	});
 
-	it('returns an error when the value is filled with spaces only', () => {
+	it('returns an error when the value is filled with spaces', () => {
 		expect(typeof required('  ')).toBe('string');
 	});
 
