@@ -10,10 +10,13 @@
 ### Interne
 
 - ♻️ **Refactoring**
-  - **playground:** Refonte des playgrounds ([#1049](https://github.com/assurance-maladie-digital/design-system/pull/1049))
+  - **playground:** Refonte des playgrounds ([#1049](https://github.com/assurance-maladie-digital/design-system/pull/1049)) ([1760712](https://github.com/assurance-maladie-digital/design-system/commit/1760712883088452cd84324759ac6b81b33e1403))
 
 - 🔥 **Suppressions**
   - **lerna:** Suppression des propriétés `gitHead` dans les fichiers `package.json` ([#1045](https://github.com/assurance-maladie-digital/design-system/pull/1045)) ([d941896](https://github.com/assurance-maladie-digital/design-system/commit/d94189622cc1fe5e03484472199336a86ba4404d))
+  
+- ⬆️ **Dépendances**
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v32.3.3` ([#1050](https://github.com/assurance-maladie-digital/design-system/pull/1050))
 
 ## v2.0.0-beta.9
 
