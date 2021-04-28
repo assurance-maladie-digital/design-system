@@ -5,12 +5,19 @@
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du calcul de la date maximale en mode `birthdate` ([#1046](https://github.com/assurance-maladie-digital/design-system/pull/1046)) ([7fcbd97](https://github.com/assurance-maladie-digital/design-system/commit/7fcbd97bef15a903b65e6d5bfc07febca8a10f40))
   - **DownloadBtn:** Correction du nom des headers ([#1047](https://github.com/assurance-maladie-digital/design-system/pull/1047)) ([b722431](https://github.com/assurance-maladie-digital/design-system/commit/b7224312d2a4e6bbef1affbf7f94c51057a91990))
-  - **DownloadBtn:** Correction des styles sur les écrans mobiles ([#1048](https://github.com/assurance-maladie-digital/design-system/pull/1048))
+  - **DownloadBtn:** Correction des styles sur les écrans mobiles ([#1048](https://github.com/assurance-maladie-digital/design-system/pull/1048)) ([ee4abbb](https://github.com/assurance-maladie-digital/design-system/commit/ee4abbb25ff6be0c0c335c7b98e86f2edd866a1d))
 
 ### Interne
 
+- ♻️ **Refactoring**
+  - **playground:** Refonte des playgrounds ([#1049](https://github.com/assurance-maladie-digital/design-system/pull/1049)) ([1760712](https://github.com/assurance-maladie-digital/design-system/commit/1760712883088452cd84324759ac6b81b33e1403))
+
 - 🔥 **Suppressions**
   - **lerna:** Suppression des propriétés `gitHead` dans les fichiers `package.json` ([#1045](https://github.com/assurance-maladie-digital/design-system/pull/1045)) ([d941896](https://github.com/assurance-maladie-digital/design-system/commit/d94189622cc1fe5e03484472199336a86ba4404d))
+  
+- ⬆️ **Dépendances**
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v32.3.3` ([#1050](https://github.com/assurance-maladie-digital/design-system/pull/1050)) ([032075b](https://github.com/assurance-maladie-digital/design-system/commit/032075b24f7d44f46888eb3d668c4b7266401ecf))
+  - **eslint:** Mise à jour vers la `v7.25.0` ([#1051](https://github.com/assurance-maladie-digital/design-system/pull/1051)
 
 ## v2.0.0-beta.9
 
