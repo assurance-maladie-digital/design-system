@@ -7,7 +7,13 @@
   - **DownloadBtn:** Correction du nom des headers ([#1047](https://github.com/assurance-maladie-digital/design-system/pull/1047)) ([b722431](https://github.com/assurance-maladie-digital/design-system/commit/b7224312d2a4e6bbef1affbf7f94c51057a91990))
   - **DownloadBtn:** Correction des styles sur les écrans mobiles ([#1048](https://github.com/assurance-maladie-digital/design-system/pull/1048)) ([ee4abbb](https://github.com/assurance-maladie-digital/design-system/commit/ee4abbb25ff6be0c0c335c7b98e86f2edd866a1d))
   - **rules:** Suppression des espaces blancs sur les chaînes de caractères dans la règle `required` ([#1055](https://github.com/assurance-maladie-digital/design-system/pull/1055)) ([c0cef39](https://github.com/assurance-maladie-digital/design-system/commit/c0cef39ef5491b991dd1f104dcbd3d31e169c876))
-  - **DatePicker:** Sélection de l'année `1990` par défaut en mode `birthdate` ([#1060](https://github.com/assurance-maladie-digital/design-system/pull/1060))
+  - **DatePicker:** Sélection de l'année `1990` par défaut en mode `birthdate` ([#1060](https://github.com/assurance-maladie-digital/design-system/pull/1060)) ([cad4b36](https://github.com/assurance-maladie-digital/design-system/commit/cad4b3650353391e6ea24ea8e4d8d4c5433a9ec2))
+
+- ♻️ **Refactoring**
+  - **ErrorPage:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1062](https://github.com/assurance-maladie-digital/design-system/pull/1062)) ([4877246](https://github.com/assurance-maladie-digital/design-system/commit/4877246872e45a0fb5d5840d339444f1ed59c166))
+
+- 🔥 **Suppressions**
+  - **PageCard:** Suppression du composant ([#1063](https://github.com/assurance-maladie-digital/design-system/pull/1063))
 
 ### Interne
 
