@@ -1,3 +1,4 @@
+import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
 import FileUpload from './FileUpload';
 import FooterWrapper from './FooterWrapper';
@@ -9,6 +10,7 @@ import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
 
 export const patterns = {
+	DataListGroup,
 	DatePicker,
 	FileUpload,
 	FooterWrapper,

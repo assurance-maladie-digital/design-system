@@ -110,6 +110,13 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		});
 	}
 
+	emitViewFileEvent(file: FileListItem): void {
+		// Emit in next tick to respect event order
+		this.$nextTick(() => {
+			this.$emit('view-file', file);
+		});
+	}
+
 	/** Validate the form and call setFileInList */
 	dialogConfirm(): void {
 		// Validate the form in the dialog

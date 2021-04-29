@@ -1,7 +1,10 @@
+import dayjs from 'dayjs';
 import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 import { Refs } from '../../../types';
+
+import { INTERNAL_FORMAT } from './dateLogic';
 
 const Props = Vue.extend({
 	props: {
@@ -35,7 +38,7 @@ export class Birthdate extends MixinsDeclaration {
 	}>;
 
 	/** If birthdate is enabled, max is the current date */
-	max = this.birthdate ? new Date().toISOString().substr(0, 10) : null;
+	max = this.birthdate ? dayjs().format(INTERNAL_FORMAT) : null;
 
 	/** If birthdate is enabled, min is 01/01/1900 */
 	min = this.birthdate ? '1900-01-01' : null;

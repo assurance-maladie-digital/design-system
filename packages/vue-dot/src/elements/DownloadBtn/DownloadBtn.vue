@@ -2,6 +2,7 @@
 	<VBtn
 		v-bind="btnOptions"
 		:loading="state === STATE_ENUM.pending"
+		class="vd-download-btn"
 		@click.native="download"
 	>
 		<slot name="icon">
@@ -33,6 +34,7 @@
 
 	import { STATE_ENUM } from '../../constants/enums/StateEnum';
 	import { IndexedObject } from '../../types';
+	import { ContentHeadersEnum } from './ContentHeadersEnum';
 	import { FileInfo } from './types';
 
 	import { config } from './config';
@@ -41,7 +43,7 @@
 	const Props = Vue.extend({
 		props: {
 			filePromise: {
-				type: Promise as PropType<Promise<AxiosResponse<string>>>,
+				type: Function as PropType<() => Promise<AxiosResponse<Blob>>>,
 				required: true
 			},
 			notification: {
@@ -84,8 +86,8 @@
 		}
 
 		getFileInfo(headers: IndexedObject): FileInfo {
-			const contentType = headers['Content-Type'];
-			const contentDispositionHeader = headers['Content-Disposition'] as string;
+			const contentType = headers[ContentHeadersEnum.TYPE];
+			const contentDispositionHeader = headers[ContentHeadersEnum.DISPOSITION] as string;
 			const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
 
 			return {
@@ -107,7 +109,7 @@
 			this.state = STATE_ENUM.pending;
 
 			try {
-				const { data, headers } = await this.filePromise;
+				const { data, headers } = await this.filePromise();
 				const { name, type } = this.getFileInfo(headers);
 
 				downloadFile(data, name, type);
@@ -124,3 +126,15 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-download-btn ::v-deep {
+		.v-btn__content {
+			flex-wrap: wrap;
+		}
+
+		.v-icon {
+			flex: none;
+		}
+	}
+</style>

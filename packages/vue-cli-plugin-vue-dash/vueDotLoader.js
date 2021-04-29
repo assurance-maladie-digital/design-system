@@ -6,10 +6,13 @@ const componentMap = {
 	CopyBtn: 'elements',
 	CustomIcon: 'elements',
 	DataList: 'elements',
+	DialogBox: 'elements',
+	DownloadBtn: 'elements',
 	HeaderLoading: 'elements',
 	PageCard: 'elements',
-	DialogBox: 'elements',
+	PageContainer: 'elements',
 	// Patterns
+	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
 	FileUpload: 'patterns',
 	FooterWrapper: 'patterns',
@@ -17,6 +20,7 @@ const componentMap = {
 	NotificationBar: 'patterns',
 	PaginatedTable: 'patterns',
 	SubHeader: 'patterns',
+	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
 	// Templates
 	ErrorPage: 'templates'
