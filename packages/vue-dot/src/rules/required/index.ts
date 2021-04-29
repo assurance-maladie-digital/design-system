@@ -26,7 +26,11 @@ export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages):
 
 			// If the value is evaluated to true (non-empty string),
 			// it will return true (success)
-			valid = Boolean(value);
+			if (typeof value === 'string') {
+				valid = Boolean(value.trim());
+			} else {
+				valid = Boolean(value);
+			}
 		}
 
 		return valid || ruleMessage(errorMessages, 'default');
