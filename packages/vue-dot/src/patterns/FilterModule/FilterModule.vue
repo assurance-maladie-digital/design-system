@@ -2,45 +2,45 @@
 	<div
 		class="vd-filter-module"
 	>
-		<!--<FilterManager
+		<FilterManager
 			v-if="displayFiltersCount"
-			:applyed-filters="applyedFilters"
+			:applied-filters="appliedFilters"
 			@edit-filters="openModal"
 			@clear-filters-row="clearFiltersRow"
 			@reset-filters="resetFilters"
-		/>-->
+		/>
 		<FilterSelector
 			:filters="filters"
 			@filter-selected="openModal"
 		/>
-		<v-dialog
+		<VDialog
 			v-model="dialog"
 			max-width="300px"
 		>
-			<v-card>
-				<v-card-text>
-					<v-card-title />
+			<VCard>
+				<VCardText>
+					<VCardTitle />
 					<FormFieldList
 						v-model="modalContent"
 						@change="updateSelectedFilters"
 					/>
-					<v-card-actions class="vd-filter-action">
-						<v-btn
+					<VCardActions class="vd-filter-action">
+						<VBtn
 							color="primary"
 							dark
 							@click="applyFilter"
 						>
 							Appliquer le filtre
-						</v-btn>
-					</v-card-actions>
-				</v-card-text>
-			</v-card>
-		</v-dialog>
+						</VBtn>
+					</VCardActions>
+				</VCardText>
+			</VCard>
+		</VDialog>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -50,11 +50,13 @@
 
 	import FormFieldList from '@cnamts/form-builder/src/components/FormFieldList';
 
+	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
+	import { FilterItem, FilterItemForm } from './types';
+
 	const Props = Vue.extend({
 		props: {
 			filters: {
-				type: Array,
-				default: undefined,
+				type: Array as PropType<FilterItem[]>,
 				required: true
 			}
 		}
@@ -74,15 +76,15 @@
 		// Locales
 		locales = locales;
 
-		filterIndex = undefined;
+		filterIndex: number | null = null;
 
 		dialog = false;
 
-		modalContent = null;
+		modalContent: FilterItemForm | null = null;
 
-		selectedFilters = undefined;
+		selectedFilters: Fields | null = null;
 
-		applyedFilters = null;
+		appliedFilters: FilterItem[] | null = null;
 
 		openModal(index: number): void {
 			this.filterIndex = index;
@@ -91,29 +93,40 @@
 		}
 
 		applyFilter(): void {
-			if (this.applyedFilters === null) {
-				this.applyedFilters = this.filters;
+			if (this.appliedFilters === null) {
+				this.appliedFilters = this.filters;
 			}
-			this.applyedFilters[this.filterIndex].form.filterList = this.selectedFilters.filterList;
-			this.$emit('filter-list', this.applyedFilters);
+			if (this.filterIndex === null || this.selectedFilters === null) {
+				return;
+			}
+			this.appliedFilters[this.filterIndex].form.filter = this.selectedFilters.filter;
+			this.$emit('filter-list', this.appliedFilters);
 			this.dialog = false;
 			this.modalContent = null;
 		}
 
 		clearFiltersRow(index: number): void {
-			this.applyedFilters[index].form.filterList = this.filters[index].form.filterList;
+			if (this.appliedFilters === null) {
+				return;
+			}
+			this.appliedFilters[index].form.filter.value = null;
 		}
 
 		resetFilters(): void {
-			this.applyedFilters = null;
+			this.appliedFilters = null;
 		}
 
-		updateSelectedFilters(data: string): void {
+		updateSelectedFilters(data: Fields): void {
 			this.selectedFilters = data;
 		}
 
 		get displayFiltersCount(): boolean {
-			return this.applyedFilters === null ? false : true;
+			if(this.appliedFilters === null) {
+				return false;
+			}
+			return !this.appliedFilters.every(item => {
+				item.form.filter.value === null;
+			});
 		}
 	}
 </script>

@@ -80,7 +80,7 @@
 				label: 'Moyen de contact',
 				key: 'name',
 				form: {
-					filterList: {
+					filter: {
 						type: 'select',
 						multiple: true,
 						dynamic: true,
@@ -109,7 +109,7 @@
 				label: 'fichier',
 				key: 'file',
 				form: {
-					filterList: {
+					filter: {
 						type: 'select',
 						dynamic: true,
 						items: [
@@ -136,6 +136,7 @@
 		];
 
 		filterTable(event: Array<string>): void {
+			// eslint-disable-next-line
 			console.log(event);
 		}
 	}

@@ -1,7 +1,7 @@
 <template>
-	<v-menu offset-y>
+	<VMenu offset-y>
 		<template #activator="{ on, attrs }">
-			<v-btn
+			<VBtn
 				color="secondary"
 				dark
 				rounded
@@ -10,7 +10,7 @@
 				style="text-transform:lowercase;"
 				v-on="on"
 			>
-				{{ `${applyedFilters.length} ${applyedFilters > 1 ? 'filtres' : 'filtre'}` }}
+				{{ displayFiltersCount }}
 				<VIcon
 					color="white"
 					class="ml-2"
@@ -18,27 +18,26 @@
 				>
 					{{ closeIcon }}
 				</VIcon>
-			</v-btn>
+			</VBtn>
 		</template>
-		<v-list>
-			<v-list-item
-				v-for="(item, index) in applyedFilters"
+		<VList>
+			<VListItem
+				v-for="(item, index) in displayFiltersRow"
 				:key="index"
 			>
-				<v-list-item-title v-if="item.form.filterList.value">
+				<VListItemTitle>
 					<div style="display: flex; align-items:center;">
 						<div style="width:300px;">
-							<div>
-								{{ item.label }}
+							<div class="my-2">
+								{{ item.filter.label }}
 							</div>
-							<div>
-								{{ item.form.filterList.value.value }}
-								<!--{{ `${item.form.filterList.value.value.length} ${item.form.filterList.value.value > 1 ? item.label : item.label} sélectionné` }}-->
+							<div class="my-2">
+								{{ `${item.filter.form.filter.value.value.length} ${item.filter.label} ${item.filter.form.filter.value.value.length > 1 ? 'sélectionnés' : 'sélectionné'}` }}
 							</div>
 						</div>
 						<div
 							class="mr-2"
-							@click="editFilters(index)"
+							@click="editFilters(item.index)"
 						>
 							<VIcon
 								color="black"
@@ -49,7 +48,7 @@
 						</div>
 						<div
 							class="mr-2"
-							@click="clearFiltersRow(index)"
+							@click="clearFiltersRow(item.index)"
 						>
 							<VIcon
 								color="black"
@@ -59,25 +58,27 @@
 							</VIcon>
 						</div>
 					</div>
-				</v-list-item-title>
-			</v-list-item>
-		</v-list>
-	</v-menu>
+				</VListItemTitle>
+			</VListItem>
+		</VList>
+	</VMenu>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiCloseCircle } from '@mdi/js';
 	import { mdiWindowClose } from '@mdi/js';
 	import { mdiPencil } from '@mdi/js';
 
+	import { FilterItem } from '../../patterns/FilterModule/types';
+	import { FilterManagerItem } from './types';
+
 	const Props = Vue.extend({
 		props: {
-			applyedFilters: {
-				type: Array,
-				default: undefined,
+			appliedFilters: {
+				type: Array as PropType<FilterItem[]>,
 				required: true
 			}
 		}
@@ -102,6 +103,22 @@
 
 		resetFilters(): void {
 			this.$emit('reset-filters');
+		}
+
+		get displayFiltersRow(): FilterManagerItem[] {
+			const displayedFilters: FilterManagerItem[] = [];
+			this.appliedFilters.forEach((filter, index) => {
+				let item = {
+					index: index,
+					filter: filter
+				};
+				filter.form.filter.value !== null ? displayedFilters.push(item) : '';
+			});
+			return displayedFilters;
+		}
+
+		get displayFiltersCount(): string {
+			return `${this.displayFiltersRow.length} ${this.displayFiltersRow.length > 1 ? 'filtres' : 'filtre'}`;
 		}
 	}
 </script>

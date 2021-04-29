@@ -1,5 +1,5 @@
 <template>
-	<v-menu offset-y>
+	<VMenu offset-y>
 		<template #activator="{ on, attrs }">
 			<v-btn
 				color="secondary"
@@ -16,30 +16,31 @@
 				Filtres
 			</v-btn>
 		</template>
-		<v-list>
-			<v-list-item
+		<VList>
+			<VListItem
 				v-for="(item, index) in filters"
 				:key="index"
 			>
-				<v-list-item-title @click="openModal(index)">
+				<VListItemTitle @click="openModal(index)">
 					{{ item.label }}
-				</v-list-item-title>
-			</v-list-item>
-		</v-list>
-	</v-menu>
+				</VListItemTitle>
+			</VListItem>
+		</VList>
+	</VMenu>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiFilterVariant } from '@mdi/js';
 
+	import { FilterItem } from '../../patterns/FilterModule/types';
+
 	const Props = Vue.extend({
 		props: {
 			filters: {
-				type: Array,
-				default: undefined,
+				type: Array as PropType<FilterItem[]>,
 				required: true
 			}
 		}
