@@ -20,6 +20,10 @@ function getResourcesToDelete(options) {
 		},
 		{
 			type: 'file',
+			path: 'src/main.js'
+		},
+		{
+			type: 'file',
 			path: 'src/components/HelloWorld.vue'
 		},
 		{
