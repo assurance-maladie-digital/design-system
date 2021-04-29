@@ -47,7 +47,8 @@ function extendPackage(api, options) {
 			'vue-input-facade': '^1.3.2',
 			'vue-meta': '^2.4.0',
 			'vue-router': '^3.5.1',
-			'vuetify': '^2.4.11'
+			'vuetify': '^2.4.11',
+			"vuex": "^3.4.0"
 		},
 		devDependencies: {
 			'@babel/core': '^7.13.16',
