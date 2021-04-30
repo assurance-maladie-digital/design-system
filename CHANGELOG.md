@@ -7,7 +7,13 @@
   - **DownloadBtn:** Correction du nom des headers ([#1047](https://github.com/assurance-maladie-digital/design-system/pull/1047)) ([b722431](https://github.com/assurance-maladie-digital/design-system/commit/b7224312d2a4e6bbef1affbf7f94c51057a91990))
   - **DownloadBtn:** Correction des styles sur les écrans mobiles ([#1048](https://github.com/assurance-maladie-digital/design-system/pull/1048)) ([ee4abbb](https://github.com/assurance-maladie-digital/design-system/commit/ee4abbb25ff6be0c0c335c7b98e86f2edd866a1d))
   - **rules:** Suppression des espaces blancs sur les chaînes de caractères dans la règle `required` ([#1055](https://github.com/assurance-maladie-digital/design-system/pull/1055)) ([c0cef39](https://github.com/assurance-maladie-digital/design-system/commit/c0cef39ef5491b991dd1f104dcbd3d31e169c876))
-  - **DatePicker:** Sélection de l'année `1990` par défaut en mode `birthdate` ([#1060](https://github.com/assurance-maladie-digital/design-system/pull/1060))
+  - **DatePicker:** Sélection de l'année `1990` par défaut en mode `birthdate` ([#1060](https://github.com/assurance-maladie-digital/design-system/pull/1060)) ([cad4b36](https://github.com/assurance-maladie-digital/design-system/commit/cad4b3650353391e6ea24ea8e4d8d4c5433a9ec2))
+
+- ♻️ **Refactoring**
+  - **ErrorPage:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1062](https://github.com/assurance-maladie-digital/design-system/pull/1062)) ([4877246](https://github.com/assurance-maladie-digital/design-system/commit/4877246872e45a0fb5d5840d339444f1ed59c166))
+
+- 🔥 **Suppressions**
+  - **PageCard:** Suppression du composant ([#1066](https://github.com/assurance-maladie-digital/design-system/pull/1066)) ([1175200](https://github.com/assurance-maladie-digital/design-system/commit/11752004fcd5a70876e9c759a294d588ef46097a))
 
 ### Interne
 
@@ -26,6 +32,7 @@
   - **core-js:** Mise à jour vers la `v3.11.1` ([#1056](https://github.com/assurance-maladie-digital/design-system/pull/1056)) ([506e9b7](https://github.com/assurance-maladie-digital/design-system/commit/506e9b74312df80350b133b219b2f15dcafa243f))
   - **cross-env:** Épinglage de la dépendance à la `v7.0.3` ([#1057](https://github.com/assurance-maladie-digital/design-system/pull/1057)) ([2602657](https://github.com/assurance-maladie-digital/design-system/commit/260265707cf180d4152fe0c7b7e6b2bf8c5e99c4))
   - **sass:** Mise à jour vers la `v1.32.12` ([#1059](https://github.com/assurance-maladie-digital/design-system/pull/1059)) ([739a054](https://github.com/assurance-maladie-digital/design-system/commit/739a054b2bd3ee4ba020af8209edf6b1ce3300f9))
+  - **babel:** Mise à jour du monorepo vers la `v7.14.0` ([#1063](https://github.com/assurance-maladie-digital/design-system/pull/1063))
 
 ## v2.0.0-beta.9
 
