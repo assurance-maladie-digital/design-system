@@ -49,62 +49,60 @@
 
 				<!-- Action buttons -->
 				<VListItemAction v-bind="options.listItemAction">
-					<VLayout v-bind="options.layout">
-						<VBtn
-							v-if="file.state === 'initial'"
-							v-bind="options.uploadBtn"
-							:aria-label="locales.uploadFile"
-							@click="$emit('upload', file.id)"
+					<VBtn
+						v-if="file.state === 'initial'"
+						v-bind="options.uploadBtn"
+						:aria-label="locales.uploadFile"
+						@click="$emit('upload', file.id)"
+					>
+						<VIcon
+							v-bind="options.icon"
+							:color="iconColor"
 						>
-							<VIcon
-								v-bind="options.icon"
-								:color="iconColor"
-							>
-								{{ uploadIcon }}
-							</VIcon>
-						</VBtn>
+							{{ uploadIcon }}
+						</VIcon>
+					</VBtn>
 
-						<VBtn
-							v-if="file.state === 'error'"
-							v-bind="options.retryBtn"
-							:aria-label="locales.uploadFile"
-							@click="$emit('retry', file.id)"
+					<VBtn
+						v-if="file.state === 'error'"
+						v-bind="options.retryBtn"
+						:aria-label="locales.uploadFile"
+						@click="$emit('retry', file.id)"
+					>
+						<VIcon
+							v-bind="options.icon"
+							:color="iconColor"
 						>
-							<VIcon
-								v-bind="options.icon"
-								:color="iconColor"
-							>
-								{{ refreshIcon }}
-							</VIcon>
-						</VBtn>
+							{{ refreshIcon }}
+						</VIcon>
+					</VBtn>
 
-						<VBtn
-							v-if="showViewBtn && file.state === 'success'"
-							v-bind="options.viewFileBtn"
-							:aria-label="locales.viewFile"
-							@click="$emit('view-file', file)"
+					<VBtn
+						v-if="showViewBtn && file.state === 'success'"
+						v-bind="options.viewFileBtn"
+						:aria-label="locales.viewFile"
+						@click="$emit('view-file', file)"
+					>
+						<VIcon
+							v-bind="options.icon"
+							:color="iconColor"
 						>
-							<VIcon
-								v-bind="options.icon"
-								:color="iconColor"
-							>
-								{{ eyeIcon }}
-							</VIcon>
-						</VBtn>
+							{{ eyeIcon }}
+						</VIcon>
+					</VBtn>
 
-						<VBtn
-							v-if="file.state !== 'initial'"
-							v-bind="options.deleteFileBtn"
-							@click="$emit('delete-file', file.id)"
+					<VBtn
+						v-if="file.state !== 'initial'"
+						v-bind="options.deleteFileBtn"
+						@click="$emit('delete-file', file.id)"
+					>
+						<VIcon
+							v-bind="options.icon"
+							:color="iconColor"
 						>
-							<VIcon
-								v-bind="options.icon"
-								:color="iconColor"
-							>
-								{{ deleteIcon }}
-							</VIcon>
-						</VBtn>
-					</VLayout>
+							{{ deleteIcon }}
+						</VIcon>
+					</VBtn>
 				</VListItemAction>
 			</VListItem>
 

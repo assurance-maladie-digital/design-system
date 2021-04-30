@@ -15,7 +15,8 @@
 - ♻️ **Refactoring**
   - **ErrorPage:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1062](https://github.com/assurance-maladie-digital/design-system/pull/1062)) ([4877246](https://github.com/assurance-maladie-digital/design-system/commit/4877246872e45a0fb5d5840d339444f1ed59c166))
   - **PageContainer:** Ajout d'un conteneur interne et correction de l'espacement interne ([#1067](https://github.com/assurance-maladie-digital/design-system/pull/1067)) ([4b5a40e](https://github.com/assurance-maladie-digital/design-system/commit/4b5a40e1a2f251c1e64e21703689bde43df7aec9))
-  - **DataListItem:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1075](https://github.com/assurance-maladie-digital/design-system/pull/1075))
+  - **DataListItem:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1075](https://github.com/assurance-maladie-digital/design-system/pull/1075)) ([214c4f2](https://github.com/assurance-maladie-digital/design-system/commit/214c4f22cbc163865c63b71694bef6d2824ba1f4))
+  - **FileList:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1076](https://github.com/assurance-maladie-digital/design-system/pull/1076))
 
 - 🔥 **Suppressions**
   - **PageCard:** Suppression du composant ([#1066](https://github.com/assurance-maladie-digital/design-system/pull/1066)) ([1175200](https://github.com/assurance-maladie-digital/design-system/commit/11752004fcd5a70876e9c759a294d588ef46097a))
