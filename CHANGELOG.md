@@ -3,7 +3,7 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **DownloadBtn:** Ajout de la prop `fallback-filename` et d'un nom de fichier par défaut ([#1068](https://github.com/assurance-maladie-digital/design-system/pull/1068))
+  - **DownloadBtn:** Ajout de la prop `fallback-filename` et d'un nom de fichier par défaut ([#1068](https://github.com/assurance-maladie-digital/design-system/pull/1068)) ([490b05e](https://github.com/assurance-maladie-digital/design-system/commit/490b05ee895195176e37567b1ecfb2acd28ae094))
 
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du calcul de la date maximale en mode `birthdate` ([#1046](https://github.com/assurance-maladie-digital/design-system/pull/1046)) ([7fcbd97](https://github.com/assurance-maladie-digital/design-system/commit/7fcbd97bef15a903b65e6d5bfc07febca8a10f40))
@@ -18,6 +18,11 @@
 
 - 🔥 **Suppressions**
   - **PageCard:** Suppression du composant ([#1066](https://github.com/assurance-maladie-digital/design-system/pull/1066)) ([1175200](https://github.com/assurance-maladie-digital/design-system/commit/11752004fcd5a70876e9c759a294d588ef46097a))
+
+### Vue Dash
+
+- ♻️ **Refactoring**
+  - **template:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1069](https://github.com/assurance-maladie-digital/design-system/pull/1069))
 
 ### Interne
 
