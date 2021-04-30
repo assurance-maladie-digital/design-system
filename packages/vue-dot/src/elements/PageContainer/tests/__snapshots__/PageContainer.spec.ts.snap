@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageContainer renders correctly 1`] = `<vsheet-stub color="transparent" width="1440" tag="div" class="vd-page-container my-10 mx-8"></vsheet-stub>`;
+exports[`PageContainer renders correctly 1`] = `
+<div class="vd-page-container d-flex justify-center py-10 px-8">
+  <vsheet-stub color="transparent" width="1440" tag="div"></vsheet-stub>
+</div>
+`;
