@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataListItem renders correctly 1`] = `
-<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
+<li class="vd-data-list-item d-flex flex-wrap">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -12,11 +12,11 @@ exports[`DataListItem renders correctly 1`] = `
     </div>
     <!---->
   </div>
-</vlayout-stub>
+</li>
 `;
 
 exports[`DataListItem renders correctly in row mode 1`] = `
-<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
+<li class="vd-data-list-item d-flex flex-wrap">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="vd-row">
@@ -29,11 +29,11 @@ exports[`DataListItem renders correctly in row mode 1`] = `
       Action
     </vbtn-stub>
   </div>
-</vlayout-stub>
+</li>
 `;
 
 exports[`DataListItem renders correctly value in a chip 1`] = `
-<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
+<li class="vd-data-list-item d-flex flex-wrap">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -48,11 +48,11 @@ exports[`DataListItem renders correctly value in a chip 1`] = `
     </div>
     <!---->
   </div>
-</vlayout-stub>
+</li>
 `;
 
 exports[`DataListItem renders correctly with a value 1`] = `
-<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
+<li class="vd-data-list-item d-flex flex-wrap">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -63,11 +63,11 @@ exports[`DataListItem renders correctly with a value 1`] = `
     </div>
     <!---->
   </div>
-</vlayout-stub>
+</li>
 `;
 
 exports[`DataListItem renders correctly with an action 1`] = `
-<vlayout-stub tag="li" wrap="true" class="vd-data-list-item flex-grow-0">
+<li class="vd-data-list-item d-flex flex-wrap">
   <!---->
   <div class="vd-data-list-item-content">
     <div class="">
@@ -80,5 +80,5 @@ exports[`DataListItem renders correctly with an action 1`] = `
       action
     </vbtn-stub>
   </div>
-</vlayout-stub>
+</li>
 `;

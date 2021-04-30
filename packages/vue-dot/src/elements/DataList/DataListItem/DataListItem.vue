@@ -1,9 +1,5 @@
 <template>
-	<VLayout
-		v-bind="options.layout"
-		class="vd-data-list-item flex-grow-0"
-		tag="li"
-	>
+	<li class="vd-data-list-item d-flex flex-wrap">
 		<slot name="icon">
 			<VIcon
 				v-if="icon"
@@ -61,7 +57,7 @@
 				</VBtn>
 			</slot>
 		</div>
-	</VLayout>
+	</li>
 </template>
 
 <script lang="ts">
