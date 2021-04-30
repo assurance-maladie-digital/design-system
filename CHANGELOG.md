@@ -13,7 +13,7 @@
   - **ErrorPage:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1062](https://github.com/assurance-maladie-digital/design-system/pull/1062)) ([4877246](https://github.com/assurance-maladie-digital/design-system/commit/4877246872e45a0fb5d5840d339444f1ed59c166))
 
 - 🔥 **Suppressions**
-  - **PageCard:** Suppression du composant ([#1063](https://github.com/assurance-maladie-digital/design-system/pull/1063))
+  - **PageCard:** Suppression du composant ([#1066](https://github.com/assurance-maladie-digital/design-system/pull/1066))
 
 ### Interne
 
