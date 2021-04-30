@@ -13,7 +13,7 @@
 
 		<VMain>
 			<PageContainer>
-				<Playground class="d-flex justify-center" />
+				<Playground />
 			</PageContainer>
 		</VMain>
 	</VApp>
