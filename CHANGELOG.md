@@ -39,7 +39,8 @@
 ### FormBuilder
 
 - ♻️ **Refactoring**
-  - **FormField:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1080](https://github.com/assurance-maladie-digital/design-system/pull/1080))
+  - **FormField:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1080](https://github.com/assurance-maladie-digital/design-system/pull/1080)) ([011f6e9](https://github.com/assurance-maladie-digital/design-system/commit/011f6e9f2489c367748f47616abcb8dfaee76d18))
+  - **PeriodField:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1081](https://github.com/assurance-maladie-digital/design-system/pull/1081))
 
 ### Interne
 
