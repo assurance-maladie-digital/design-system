@@ -34,10 +34,7 @@
 			</VFadeTransition>
 		</slot>
 
-		<div
-			v-bind="options.contentLayout"
-			class="vd-sub-header-content d-flex justify-space-between"
-		>
+		<div class="vd-sub-header-content d-flex justify-space-between">
 			<div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
 				<slot name="title">
 					<VFadeTransition mode="out-in">
