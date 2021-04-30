@@ -23,7 +23,7 @@
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction de la dépendance `vuex` manquante ([#1071](https://github.com/assurance-maladie-digital/design-system/pull/1071)) ([02030c7](https://github.com/assurance-maladie-digital/design-system/commit/02030c7e9be765c5b0a8b45523a9bbd03f3109c8))
-  - **template:** Correction de la fermeture de la balise `VCard` dans le fichier `About.vue` ([#1073](https://github.com/assurance-maladie-digital/design-system/pull/1073))
+  - **template:** Correction de la fermeture de la balise `VCard` dans le fichier `About.vue` ([#1073](https://github.com/assurance-maladie-digital/design-system/pull/1073)) ([0b02155](https://github.com/assurance-maladie-digital/design-system/commit/0b02155016a7df3abead548aea1ae1a86290b493))
 
 - ♻️ **Refactoring**
   - **template:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1069](https://github.com/assurance-maladie-digital/design-system/pull/1069)) ([d2c32f2](https://github.com/assurance-maladie-digital/design-system/commit/d2c32f21db04c2e77f04f63569dee038a2785dc7))
@@ -39,7 +39,10 @@
 
 - 🔥 **Suppressions**
   - **lerna:** Suppression des propriétés `gitHead` dans les fichiers `package.json` ([#1045](https://github.com/assurance-maladie-digital/design-system/pull/1045)) ([d941896](https://github.com/assurance-maladie-digital/design-system/commit/d94189622cc1fe5e03484472199336a86ba4404d))
-  
+
+- 📝 **Documentation**
+  - **pull-requests:** Mise à jour du template ([#1074](https://github.com/assurance-maladie-digital/design-system/pull/1074))
+
 - ⬆️ **Dépendances**
   - **eslint:** Mise à jour vers la `v7.25.0` ([#1051](https://github.com/assurance-maladie-digital/design-system/pull/1051) ([ce1d298](https://github.com/assurance-maladie-digital/design-system/commit/ce1d298e9c08920585d6ba33ca020964a5693cad))
   - **@types/jest:** Mise à jour vers la `v26.0.23` ([#1052](https://github.com/assurance-maladie-digital/design-system/pull/1052)) ([dfadb25](https://github.com/assurance-maladie-digital/design-system/commit/dfadb25f7ea95f43dcc183b2e1778e269818086e))
