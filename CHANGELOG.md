@@ -22,7 +22,10 @@
 ### Vue Dash
 
 - ♻️ **Refactoring**
-  - **template:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1069](https://github.com/assurance-maladie-digital/design-system/pull/1069))
+  - **template:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1069](https://github.com/assurance-maladie-digital/design-system/pull/1069)) ([d2c32f2](https://github.com/assurance-maladie-digital/design-system/commit/d2c32f21db04c2e77f04f63569dee038a2785dc7))
+
+- 🔥 **Suppressions**
+  - **config:** Suppression du composant `PageCard` pour le tree-shaking de VueDot ([#1070](https://github.com/assurance-maladie-digital/design-system/pull/1070))
 
 ### Interne
 
