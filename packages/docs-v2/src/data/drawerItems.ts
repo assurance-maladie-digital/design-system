@@ -94,6 +94,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/page-card'
 			},
 			{
+				title: 'PageContainer',
+				to: '/composants/page-container'
+			},
+			{
 				title: 'PaginatedTable',
 				to: '/composants/paginated-table'
 			},
