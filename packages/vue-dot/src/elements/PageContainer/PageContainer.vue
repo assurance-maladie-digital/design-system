@@ -1,12 +1,11 @@
 <template>
 	<div
 		:class="spacingClass"
-		class="d-flex justify-center"
+		class="vd-page-container d-flex justify-center"
 	>
 		<VSheet
 			:width="containerSize"
 			:color="color"
-			class="vd-page-container"
 		>
 			<slot />
 		</VSheet>
