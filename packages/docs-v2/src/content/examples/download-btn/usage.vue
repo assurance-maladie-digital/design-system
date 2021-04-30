@@ -20,15 +20,17 @@
 		status: 200,
 		statusText: 'OK',
 		headers: {
-			'Content-Disposition': 'attachment; filename="attestation.txt"',
-			'Content-Type': 'text/plain'
+			'content-disposition': 'attachment; filename="attestation.txt"',
+			'content-type': 'text/plain'
 		},
 		config: {}
 	};
 
-	const filePromise: Promise<AxiosResponse<string>> = new Promise((resolve) => {
-		setTimeout(() => resolve(file), 1500);
-	});
+	const filePromise: () => Promise<AxiosResponse<string>> = () => {
+		return new Promise((resolve) => {
+			setTimeout(() => resolve(file), 1500);
+		});
+	};
 
 	@Component({
 		inheritAttrs: false

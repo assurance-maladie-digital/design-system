@@ -19,6 +19,14 @@ Le nom et le type du document sont récupérés des headers HTTP `Content-Dispos
 
 <doc-example file="download-btn/name-type"></doc-example>
 
+### Nom par défaut
+
+Vous pouvez utiliser la prop `fallback-filename` pour définir un nom de fichier par défaut s'il n'est pas présent dans le header `Content-Disposition`.
+
+Si cette propriété n'est pas présente, le nom par défaut sera la date du jour et l'heure de téléchargement.
+
+<doc-example file="download-btn/fallback-filename"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">

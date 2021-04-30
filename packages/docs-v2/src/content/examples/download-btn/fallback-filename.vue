@@ -1,10 +1,18 @@
 <template>
-	<DownloadBtn
-		:file-promise="getFileFromApi"
-		:vuetify-options="vuetifyOptions"
-	>
-		Télécharger mon attestation
-	</DownloadBtn>
+	<div>
+		<DownloadBtn
+			:file-promise="getFileFromApi"
+			:fallback-filename="fallbackFilename"
+		>
+			Télécharger mon attestation
+		</DownloadBtn>
+
+		<VCheckbox
+			v-model="useFallback"
+			label="Utiliser un nom par défaut"
+			hide-details
+		/>
+	</div>
 </template>
 
 <script lang="ts">
@@ -18,29 +26,23 @@
 		status: 200,
 		statusText: 'OK',
 		headers: {
-			'content-disposition': 'attachment; filename="attestation.txt"',
 			'content-type': 'text/plain'
 		},
 		config: {}
 	};
 
 	@Component
-	export default class DownloadBtnOptions extends Vue {
+	export default class DownloadBtnNameType extends Vue {
+		useFallback = true;
+
 		getFileFromApi(): Promise<AxiosResponse<string>> {
 			return new Promise((resolve) => {
 				setTimeout(() => resolve(file), 1500);
 			});
 		}
 
-		vuetifyOptions = {
-			// The btn options can be binded
-			// directly to the DownloadBtn
-			btn: {
-				outlined: false
-			},
-			icon: {
-				class: 'd-none'
-			}
-		};
+		get fallbackFilename(): string | undefined {
+			return this.useFallback ? 'Attestation.txt' : undefined;
+		}
 	}
 </script>
