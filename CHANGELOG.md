@@ -22,10 +22,11 @@
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
-  - **template:** Correction de la dépendance `vuex` manquante ([#1071](https://github.com/assurance-maladie-digital/design-system/pull/1071))
+  - **template:** Correction de la dépendance `vuex` manquante ([#1071](https://github.com/assurance-maladie-digital/design-system/pull/1071)) ([02030c7](https://github.com/assurance-maladie-digital/design-system/commit/02030c7e9be765c5b0a8b45523a9bbd03f3109c8))
 
 - ♻️ **Refactoring**
   - **template:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1069](https://github.com/assurance-maladie-digital/design-system/pull/1069)) ([d2c32f2](https://github.com/assurance-maladie-digital/design-system/commit/d2c32f21db04c2e77f04f63569dee038a2785dc7))
+  - **template:** Renommage du fichier `main.js` en `main.ts` ([#1072](https://github.com/assurance-maladie-digital/design-system/pull/1072))
 
 - 🔥 **Suppressions**
   - **config:** Suppression du composant `PageCard` pour le tree-shaking de VueDot ([#1070](https://github.com/assurance-maladie-digital/design-system/pull/1070)) ([66f63e7](https://github.com/assurance-maladie-digital/design-system/commit/66f63e7c25ca9f5956cf24aeea113fc298e4329c))
