@@ -112,7 +112,7 @@
 					index: index,
 					filter: filter
 				};
-				filter.form.filter.value !== null ? displayedFilters.push(item) : '';
+				filter.form.filter.value ? displayedFilters.push(item) : '';
 			});
 			return displayedFilters;
 		}

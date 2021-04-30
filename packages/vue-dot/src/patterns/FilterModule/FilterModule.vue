@@ -5,7 +5,7 @@
 		<FilterManager
 			v-if="displayFiltersCount"
 			:applied-filters="appliedFilters"
-			@edit-filters="openModal"
+			@edit-filters="editFilters"
 			@clear-filters-row="clearFiltersRow"
 			@reset-filters="resetFilters"
 		/>
@@ -53,6 +53,8 @@
 	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
 	import { FilterItem, FilterItemForm } from './types';
 
+	import { deepCopy } from '../../helpers/deepCopy';
+
 	const Props = Vue.extend({
 		props: {
 			filters: {
@@ -94,7 +96,7 @@
 
 		applyFilter(): void {
 			if (this.appliedFilters === null) {
-				this.appliedFilters = this.filters;
+				this.appliedFilters = deepCopy<FilterItem[]>(this.filters);
 			}
 			if (this.filterIndex === null || this.selectedFilters === null) {
 				return;
@@ -109,7 +111,15 @@
 			if (this.appliedFilters === null) {
 				return;
 			}
-			this.appliedFilters[index].form.filter.value = null;
+			this.$set(this.appliedFilters[index].form.filter, 'value', null);
+		}
+
+		editFilters(index: number): void {
+			if(this.appliedFilters === null) {
+				return;
+			}
+			this.modalContent = this.appliedFilters[index].form;
+			this.dialog = true;
 		}
 
 		resetFilters(): void {
@@ -124,9 +134,7 @@
 			if(this.appliedFilters === null) {
 				return false;
 			}
-			return !this.appliedFilters.every(item => {
-				item.form.filter.value === null;
-			});
+			return this.appliedFilters.some(item => item.form.filter.value !== null);
 		}
 	}
 </script>
