@@ -11,6 +11,7 @@
 
 - ♻️ **Refactoring**
   - **ErrorPage:** Utilisation du composant `PageContainer` à la place de `PageCard` ([#1062](https://github.com/assurance-maladie-digital/design-system/pull/1062)) ([4877246](https://github.com/assurance-maladie-digital/design-system/commit/4877246872e45a0fb5d5840d339444f1ed59c166))
+  - **PageContainer:** Ajout d'un conteneur interne et correction de l'espacement interne ([#1067](https://github.com/assurance-maladie-digital/design-system/pull/1067))
 
 - 🔥 **Suppressions**
   - **PageCard:** Suppression du composant ([#1066](https://github.com/assurance-maladie-digital/design-system/pull/1066)) ([1175200](https://github.com/assurance-maladie-digital/design-system/commit/11752004fcd5a70876e9c759a294d588ef46097a))
@@ -32,7 +33,7 @@
   - **cross-env:** Épinglage de la dépendance à la `v7.0.3` ([#1057](https://github.com/assurance-maladie-digital/design-system/pull/1057)) ([2602657](https://github.com/assurance-maladie-digital/design-system/commit/260265707cf180d4152fe0c7b7e6b2bf8c5e99c4))
   - **sass:** Mise à jour vers la `v1.32.12` ([#1059](https://github.com/assurance-maladie-digital/design-system/pull/1059)) ([739a054](https://github.com/assurance-maladie-digital/design-system/commit/739a054b2bd3ee4ba020af8209edf6b1ce3300f9))
   - **babel:** Mise à jour du monorepo vers la `v7.14.0` ([#1063](https://github.com/assurance-maladie-digital/design-system/pull/1063)) ([646ac7e](https://github.com/assurance-maladie-digital/design-system/commit/646ac7eb458bc33dd3dcd66dce631d23cd61ccd3))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v33` ([#1065](https://github.com/assurance-maladie-digital/design-system/pull/1065))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v33` ([#1065](https://github.com/assurance-maladie-digital/design-system/pull/1065)) ([49545b5](https://github.com/assurance-maladie-digital/design-system/commit/49545b5767c1be5cdf3c00633809e48bd31af21e))
 
 ## v2.0.0-beta.9
 
