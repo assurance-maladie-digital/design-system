@@ -1,43 +1,42 @@
 <template>
-	<PageCard
-		width="680"
-		card-class="px-5"
-	>
-		<span
-			v-if="code"
-			class="font-weight-bold primary--text vd-code"
-		>
-			{{ code }}
-		</span>
-
-		<h2
-			:class="{
-				'text-h4': !code,
-				'mb-4': !code,
-				'text-h6': code
-			}"
-			class="mb-2 font-weight-bold"
-		>
-			{{ pageTitle }}
-		</h2>
-
-		<p>{{ message }}</p>
-
-		<VLayout
-			v-if="!noBtn && btnText && btnRoute"
-			class="mt-6"
-		>
-			<VSpacer />
-
-			<VBtn
-				:to="btnRoute"
-				color="primary"
-				exact
+	<PageContainer size="s">
+		<VCard class="pa-8">
+			<span
+				v-if="code"
+				class="font-weight-bold primary--text vd-code"
 			>
-				{{ btnText }}
-			</VBtn>
-		</VLayout>
-	</PageCard>
+				{{ code }}
+			</span>
+
+			<h2
+				:class="{
+					'text-h4': !code,
+					'mb-4': !code,
+					'text-h6': code
+				}"
+				class="mb-2 font-weight-bold"
+			>
+				{{ pageTitle }}
+			</h2>
+
+			<p>{{ message }}</p>
+
+			<div
+				v-if="!noBtn && btnText && btnRoute"
+				class="d-flex mt-6"
+			>
+				<VSpacer />
+
+				<VBtn
+					:to="btnRoute"
+					color="primary"
+					exact
+				>
+					{{ btnText }}
+				</VBtn>
+			</div>
+		</VCard>
+	</PageContainer>
 </template>
 
 <script lang="ts">

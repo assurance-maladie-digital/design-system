@@ -30,6 +30,9 @@
 		"lint": "eslint **/*.ts --fix",
 		"test": "jest"
 	},
+	"devDependencies": {
+		"json-to-scss": "1.6.2"
+	},
 	"lint-staged": {
 		"*.{ts}": [
 			"eslint **/*.ts --fix",
