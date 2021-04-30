@@ -17,10 +17,11 @@
   - **PageContainer:** Ajout d'un conteneur interne et correction de l'espacement interne ([#1067](https://github.com/assurance-maladie-digital/design-system/pull/1067)) ([4b5a40e](https://github.com/assurance-maladie-digital/design-system/commit/4b5a40e1a2f251c1e64e21703689bde43df7aec9))
   - **DataListItem:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1075](https://github.com/assurance-maladie-digital/design-system/pull/1075)) ([214c4f2](https://github.com/assurance-maladie-digital/design-system/commit/214c4f22cbc163865c63b71694bef6d2824ba1f4))
   - **FileList:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1076](https://github.com/assurance-maladie-digital/design-system/pull/1076)) ([142e27d](https://github.com/assurance-maladie-digital/design-system/commit/142e27d5b40693daec7623f9dfe8ff45bc02340b))
+  - **debounce:** Utilisation de `addEventListener` dans la directive ([#1079](https://github.com/assurance-maladie-digital/design-system/pull/1079))
 
 - 🔥 **Suppressions**
   - **PageCard:** Suppression du composant ([#1066](https://github.com/assurance-maladie-digital/design-system/pull/1066)) ([1175200](https://github.com/assurance-maladie-digital/design-system/commit/11752004fcd5a70876e9c759a294d588ef46097a))
-  - **SubHeader:** Suppression des options `layout` inutiles ([#1078](https://github.com/assurance-maladie-digital/design-system/pull/1078))
+  - **SubHeader:** Suppression des options `layout` inutiles ([#1078](https://github.com/assurance-maladie-digital/design-system/pull/1078)) ([024c1ad](https://github.com/assurance-maladie-digital/design-system/commit/024c1ad115d66d3c1b8152509b5d4a0b35e9a173))
 
 ### Vue Dash
 

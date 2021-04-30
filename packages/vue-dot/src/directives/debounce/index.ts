@@ -23,8 +23,7 @@ export const debounce: DirectiveOptions = {
 		// The first modifier is the time
 		const time = modifiers[0] !== undefined ? parseInt(modifiers[0], 10) : undefined;
 
-		// Change debounce only if interval has changed
-		el.oninput = debounceFn(() => {
+		const inputHandler = debounceFn(() => {
 			// If the value is a function (for usage with custom inputs),
 			// call it with the input value
 			if (typeof binding.value === 'function') {
@@ -36,5 +35,7 @@ export const debounce: DirectiveOptions = {
 				el.dispatchEvent(new Event('change'));
 			}
 		}, time);
+
+		el.addEventListener('input', inputHandler);
 	}
 };
