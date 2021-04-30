@@ -19,6 +19,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import dayjs from 'dayjs';
 	import deepMerge from 'deepmerge';
 	import { mapActions } from 'vuex';
 
@@ -45,6 +46,10 @@
 			filePromise: {
 				type: Function as PropType<() => Promise<AxiosResponse<Blob>>>,
 				required: true
+			},
+			fallbackFilename: {
+				type: String,
+				default: undefined
 			},
 			notification: {
 				type: [Boolean, String],
@@ -85,13 +90,23 @@
 			return deepMerge<Options>(this.options.btn, this.$attrs);
 		}
 
+		getTimestampFilename(): string {
+			return dayjs().format('YYYY-MM-DD - HH[h]mm[m]ss[s]');
+		}
+
 		getFileInfo(headers: IndexedObject): FileInfo {
 			const contentType = headers[ContentHeadersEnum.TYPE];
 			const contentDispositionHeader = headers[ContentHeadersEnum.DISPOSITION] as string;
-			const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+			let filename: string | null = null;
+
+			try {
+				filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+			} catch {
+				filename = this.fallbackFilename || this.getTimestampFilename();
+			}
 
 			return {
-				name: filename,
+				name: filename as string,
 				type: contentType
 			};
 		}
