@@ -30,6 +30,7 @@
 
 				<% if (i18n) { %>{{ $t('views.about.backBtn.label') }}<% } else { %>Retour<% } %>
 			</VBtn>
+		</VCard>
 	</PageContainer>
 </template>
 
