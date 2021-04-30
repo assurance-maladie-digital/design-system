@@ -90,10 +90,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/notification-bar'
 			},
 			{
-				title: 'PageCard',
-				to: '/composants/page-card'
-			},
-			{
 				title: 'PageContainer',
 				to: '/composants/page-container'
 			},

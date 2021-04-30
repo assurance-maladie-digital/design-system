@@ -25,9 +25,11 @@ Vous pouvez maintenant importer les composants que vous souhaitez afficher dans 
 
 ```vue
 <template>
-	<PageCard>
-		<UserForm />
-	</PageCard>
+	<PageContainer>
+		<VCard class="pa-8">
+			<UserForm />
+		</VCard>
+	</PageContainer>
 </template>
 
 <script lang="ts">
@@ -47,7 +49,7 @@ Vous pouvez maintenant importer les composants que vous souhaitez afficher dans 
 
 <doc-alert type="info">
 
-Le [composant `PageCard`](/composants/page-card) est utilisé pour afficher une carte avec une largeur de page standard.
+Le [composant `PageContainer`](/composants/page-container) est utilisé pour afficher une page avec une largeur standard.
 
 </doc-alert>
 
