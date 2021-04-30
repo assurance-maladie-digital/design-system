@@ -40,9 +40,12 @@
 
 - ♻️ **Refactoring**
   - **FormField:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1080](https://github.com/assurance-maladie-digital/design-system/pull/1080)) ([011f6e9](https://github.com/assurance-maladie-digital/design-system/commit/011f6e9f2489c367748f47616abcb8dfaee76d18))
-  - **PeriodField:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1081](https://github.com/assurance-maladie-digital/design-system/pull/1081))
+  - **PeriodField:** Suppression de l'utilisation du composant `VLayout` déprécié ([#1081](https://github.com/assurance-maladie-digital/design-system/pull/1081)) ([a860b26](https://github.com/assurance-maladie-digital/design-system/commit/a860b2696442dbf204fd24e58271cbc6dc375dc4))
 
 ### Interne
+
+- 🐛 **Corrections de bugs**
+  - **playgrounds:** Correction des playgrounds ([#1082](https://github.com/assurance-maladie-digital/design-system/pull/1082))
 
 - ♻️ **Refactoring**
   - **playground:** Refonte des playgrounds ([#1049](https://github.com/assurance-maladie-digital/design-system/pull/1049)) ([1760712](https://github.com/assurance-maladie-digital/design-system/commit/1760712883088452cd84324759ac6b81b33e1403))
