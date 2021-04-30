@@ -12,11 +12,9 @@
 		</VAppBar>
 
 		<VMain>
-			<div class="d-flex justify-center">
-				<PageContainer>
-					<Playground class="d-flex justify-center" />
-				</PageContainer>
-			</div>
+			<PageContainer>
+				<Playground class="d-flex justify-center" />
+			</PageContainer>
 		</VMain>
 	</VApp>
 </template>
