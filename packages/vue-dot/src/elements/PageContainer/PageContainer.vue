@@ -1,12 +1,15 @@
 <template>
-	<VSheet
-		:width="containerSize"
+	<div
 		:class="spacingClass"
-		:color="color"
-		class="vd-page-container"
+		class="vd-page-container d-flex justify-center"
 	>
-		<slot />
-	</VSheet>
+		<VSheet
+			:width="containerSize"
+			:color="color"
+		>
+			<slot />
+		</VSheet>
+	</div>
 </template>
 
 <script lang="ts">
@@ -52,16 +55,16 @@
 			}
 
 			const containerMargin: IndexedObject<string> = {
-				xs: 'mx-0',
-				sm: 'mx-4',
-				md: 'mx-8',
-				lg: 'mx-8',
-				xl: 'mx-8'
+				xs: 'px-0',
+				sm: 'px-4',
+				md: 'px-8',
+				lg: 'px-8',
+				xl: 'px-8'
 			};
 
 			const margin = containerMargin[this.$vuetify.breakpoint.name];
 
-			return `my-10 ${margin}`;
+			return `py-10 ${margin}`;
 		}
 
 		get containerSize(): number {
