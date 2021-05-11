@@ -31,9 +31,9 @@
 							<div class="my-2">
 								{{ item.filter.label }}
 							</div>
-							<div class="my-2">
+							<!--<div class="my-2">
 								{{ `${item.filter.form.filter.value.value.length} ${item.filter.label} ${item.filter.form.filter.value.value.length > 1 ? 'sélectionnés' : 'sélectionné'}` }}
-							</div>
+							</div>-->
 						</div>
 						<div
 							class="mr-2"

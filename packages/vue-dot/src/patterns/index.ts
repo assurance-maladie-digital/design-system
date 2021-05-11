@@ -9,6 +9,8 @@ import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
 import FilterModule from './FilterModule';
+import RangeFilter from './RangeFilter';
+import PeriodFilter from './PeriodFilter';
 
 export const patterns = {
 	DataListGroup,
@@ -21,5 +23,7 @@ export const patterns = {
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow,
-	FilterModule
+	FilterModule,
+	RangeFilter,
+	PeriodFilter
 };

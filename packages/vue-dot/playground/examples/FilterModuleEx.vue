@@ -43,6 +43,8 @@
 
 	import { DataTableHeader } from 'vuetify';
 
+	import dayjs from 'dayjs';
+
 	@Component
 	export default class FilterModuleEx extends Vue {
 		search = '';
@@ -79,6 +81,7 @@
 			{
 				label: 'Moyen de contact',
 				key: 'name',
+				type: 'select',
 				form: {
 					filter: {
 						type: 'select',
@@ -106,30 +109,26 @@
 				}
 			},
 			{
-				label: 'fichier',
-				key: 'file',
+				label: 'Range',
+				key: 'number',
+				type: 'range',
 				form: {
 					filter: {
-						type: 'select',
-						dynamic: true,
-						items: [
-							{
-								text: 'Jpeg',
-								value: 'jpeg'
-							},
-							{
-								text: 'PDF',
-								value: 'pdf'
-							},
-							{
-								text: 'Mp3',
-								value: 'mp3'
-							}
-						],
-						value: null,
-						fieldOptions: {
-							outlined: true
-						}
+						min: 0,
+						max: 90,
+						value: null
+					}
+				}
+			},
+			{
+				label: 'Date',
+				key: 'date',
+				type: 'date',
+				form: {
+					filter: {
+						startDate: dayjs().format('YYYY-MM-DD'),
+						endDate: dayjs().add(7, 'day').format('YYYY-MM-DD'),
+						value: null
 					}
 				}
 			}

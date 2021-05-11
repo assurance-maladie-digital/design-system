@@ -13,29 +13,41 @@
 			:filters="filters"
 			@filter-selected="openModal"
 		/>
-		<VDialog
+		<DialogBox
 			v-model="dialog"
-			max-width="300px"
+			width="400px"
+			:title="modalTitle"
+			@cancel="dialog = false"
+			@confirm="dialog = false"
 		>
-			<VCard>
-				<VCardText>
-					<VCardTitle />
-					<FormFieldList
-						v-model="modalContent"
-						@change="updateSelectedFilters"
-					/>
-					<VCardActions class="vd-filter-action">
-						<VBtn
-							color="primary"
-							dark
-							@click="applyFilter"
-						>
-							Appliquer le filtre
-						</VBtn>
-					</VCardActions>
-				</VCardText>
-			</VCard>
-		</VDialog>
+			<div v-if="contentType === 'select'">
+				<FormFieldList
+					v-model="modalContent"
+					@change="updateSelectedFilters"
+				/>
+			</div>
+			<div v-else-if="contentType === 'range'">
+				<RangeFilter
+					v-model="modalContent"
+					@change="updateSelectedFilters"
+				/>
+			</div>
+			<div v-else-if="contentType === 'date'">
+				<PeriodFilter
+					v-model="modalContent"
+					@change="updateSelectedFilters"
+				/>
+			</div>
+			<template #actions>
+				<VBtn
+					color="primary"
+					dark
+					@click="applyFilter"
+				>
+					Appliquer le filtre
+				</VBtn>
+			</template>
+		</DialogBox>
 	</div>
 </template>
 
@@ -82,7 +94,11 @@
 
 		dialog = false;
 
+		contentType: string | null = null;
+
 		modalContent: FilterItemForm | null = null;
+
+		modalTitle: string | null = null;
 
 		selectedFilters: Fields | null = null;
 
@@ -90,6 +106,8 @@
 
 		openModal(index: number): void {
 			this.filterIndex = index;
+			this.modalTitle = this.filters[index].label;
+			this.contentType = this.filters[index].type;
 			this.modalContent = this.filters[index].form;
 			this.dialog = true;
 		}
@@ -105,6 +123,7 @@
 			this.$emit('filter-list', this.appliedFilters);
 			this.dialog = false;
 			this.modalContent = null;
+			this.modalTitle = null;
 		}
 
 		clearFiltersRow(index: number): void {
@@ -130,6 +149,10 @@
 			this.selectedFilters = data;
 		}
 
+		test(event: string) :void {
+			console.log(event);
+		}
+
 		get displayFiltersCount(): boolean {
 			if(this.appliedFilters === null) {
 				return false;
@@ -147,7 +170,7 @@
 			}
 			&-action {
 				display: flex;
-				justify-content: center;
+				justify-content: flex-end;
 			}
 		}
 	}
