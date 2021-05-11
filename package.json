@@ -49,7 +49,7 @@
 		"vue-input-facade": "1.2.0",
 		"vue-router": "3.5.1",
 		"vue-template-compiler": "2.6.12",
-		"vuetify": "2.4.11",
+		"vuetify": "2.5.0",
 		"vuex": "3.6.2",
 		"webpack": "4.46.0"
 	},
