@@ -33,6 +33,7 @@
 			:min="form.filter.min"
 			hide-details
 			class="align-center mb-6"
+			@change="fieldUpdate"
 		>
 			<template #prepend>
 				{{ form.filter.min }}
@@ -92,7 +93,7 @@
 				}
 			};
 			this.$nextTick(() => {
-				this.$emit('change', 'range updated');
+				this.$emit('change', res);
 			});
 		}
 	}

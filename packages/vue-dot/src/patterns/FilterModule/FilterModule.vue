@@ -137,6 +137,9 @@
 			if(this.appliedFilters === null) {
 				return;
 			}
+			this.filterIndex = index;
+			this.modalTitle = this.appliedFilters[index].label;
+			this.contentType = this.appliedFilters[index].type;
 			this.modalContent = this.appliedFilters[index].form;
 			this.dialog = true;
 		}
@@ -147,10 +150,6 @@
 
 		updateSelectedFilters(data: Fields): void {
 			this.selectedFilters = data;
-		}
-
-		test(event: string) :void {
-			console.log(event);
 		}
 
 		get displayFiltersCount(): boolean {
