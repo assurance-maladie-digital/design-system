@@ -5,6 +5,7 @@ import DialogBox from './DialogBox';
 import DownloadBtn from './DownloadBtn';
 import HeaderLoading from './HeaderLoading';
 import PageContainer from './PageContainer';
+import ExternalLinks from './ExternalLinks';
 
 export const elements = {
 	CopyBtn,
@@ -13,5 +14,6 @@ export const elements = {
 	DialogBox,
 	DownloadBtn,
 	HeaderLoading,
-	PageContainer
+	PageContainer,
+	ExternalLinks
 };
