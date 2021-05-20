@@ -1,8 +1,10 @@
 <template>
-	<div class="liens-externes">
+	<div class="external-link">
 		<VBtn
 			v-show="!drawer"
-			class="font-weight-bold py-1 liens-externes-btn accent"
+			ref="menuBtn"
+			class="font-weight-bold py-1 external-link-btn btn-height accent"
+			:style="{top: nudgeTop?`${nudgeTop}px`: ''}"
 			@click="drawer = true"
 		>
 			<VIcon color="white">
@@ -12,7 +14,10 @@
 		<VNavigationDrawer
 			v-model="drawer"
 			:class="{ 'fixed-on-scroll': fixed }"
-			class="liens-externes-drawer elevation-2"
+			:style="{
+				top: `${positionTop}px`
+			}"
+			class="external-link-drawer"
 			:width="width"
 			absolute
 			floating
@@ -23,7 +28,7 @@
 				tile
 				depressed
 				color="accent"
-				class="text-none"
+				class="text-none btn-height"
 				@click="drawer = false"
 			>
 				{{ btnText }}
@@ -37,11 +42,7 @@
 
 			<VList
 				v-if="items.length"
-				:style="{
-					top: distanceTop,
-					maxHeight: innerMaxHeight,
-				}"
-				class="liens-externes-links"
+				class="external-links"
 			>
 				<VListItem
 					v-for="item in items"
@@ -54,7 +55,9 @@
 					</VListItemContent>
 					<VListItemIcon>
 						<VIcon>
-							{{ iconRightChevron }}
+							<slot name="LinkIcon">
+								{{ iconLinks }}
+							</slot>
 						</VIcon>
 					</VListItemIcon>
 				</VListItem>
@@ -64,7 +67,7 @@
 				v-else
 				class="mx-5 my-3"
 			>
-				{{ locales.emptyLink }}
+				{{ noDatas }}
 			</p>
 		</VNavigationDrawer>
 	</div>
@@ -79,30 +82,48 @@
 	import { ExternalLink } from './types';
 	import { Refs } from '../../types';
 
-	import { mdiChevronRight, mdiChevronLeft } from '@mdi/js';
+	import { mdiChevronRight, mdiChevronLeft , mdiOpenInNew } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
+			/**
+			 * Fixed on scroll or not
+			 */
 			fixed: {
 				type: Boolean,
 				default: false
 			},
-			distanceTop: {
-				type: String,
-				default: '25px'
-			},
+			/**
+			 * Set with of the menu drawer
+			 * default value: 45px
+			 */
 			width:{
 				type: Number,
 				default: 450
 			},
+			/**
+			 * Content of the list
+			 * Type of an ExternalLink with: text and href fields
+			 */
 			items: {
 				type: Array as PropType<Array<ExternalLink>> ,
 				required: false,
 				default: () => []
 			},
+			/**
+			 * Title of the menu drawer
+			 */
 			btnText:{
 				type: String,
 				default : locales.btnText
+			},
+			/**
+			 *  Set position of the icon
+			 */
+			nudgeTop: {
+				type: Number,
+				required: false,
+				default: undefined
 			}
 		}
 	});
@@ -115,55 +136,54 @@
 
 		iconRightChevron = mdiChevronRight;
 		iconLeftChevron = mdiChevronLeft;
+		iconLinks = mdiOpenInNew;
 
 		drawer = false;
 
 		maxHeight = 'auto';
 		innerMaxHeight = 'auto';
 
-		/** Set drawer maximum height */
-		public setMaxHeight(): void{
-			/** Margin with window */
-			const marginBottom = 15;
-			/** Calc height */
-			const height = window.innerHeight - this.getDistanceFromTop() - marginBottom;
+		positionTop = 0;
 
-			this.maxHeight = height + 'px';
+        /** return text data */
+        get noDatas():string{
+            return locales.noDatas;
+        }
 
-			const btnHeight = this.$refs.menuBtn.$el.getBoundingClientRect().height;
-
-			// Set the inner height (drawer - btn = list height)
-			this.innerMaxHeight = height - btnHeight + 'px';
+		mounted():void {
+          this.positionTop =this.getDistanceFromTop();
 		}
 
 		/** Get distance between the button and windows top */
 		public getDistanceFromTop() : number{
-			return window.pageYOffset + this.$refs.menuBtn.$el.getBoundingClientRect().top;
+			return window.pageYOffset + (this.$refs.menuBtn.$el.getBoundingClientRect().top -this.$refs.menuBtn.$el.getBoundingClientRect().height-10);
 		}
 	}
 </script>
 
 <style lang="scss">
 
-.liens-externes {
-  left: 0 !important;
+.external-link {
+ min-height: 48px;
 }
-
-.liens-externes-btn {
-  position: absolute !important;
+.btn-height{
+	min-height: 48px;
+}
+.external-link-btn {
+  position: absolute;
   z-index: 6;
   left: 0;
-  min-height: 48px;
   border-radius: 0;
 }
 
-.liens-externes-drawer {
-  z-index: 5 !important;
+.external-link-drawer {
+  z-index: 5 ;
   left: 0;
-  height: auto !important;
+  max-height: 344px;
 }
 
-.liens-externes-links {
+.external-links {
   overflow-y: auto;
+  max-height: 296px;
 }
 </style>
