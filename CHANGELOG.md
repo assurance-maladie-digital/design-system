@@ -56,7 +56,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de la configuration de renovate ([#1106](https://github.com/assurance-maladie-digital/design-system/pull/1106)) ([974f29e](https://github.com/assurance-maladie-digital/design-system/commit/974f29e645ea9cf23e4da8002e99f9626a30eadb))
-  - **ci:** Mise à jour de `codecov` vers la `v1.2.0` ([#1091](https://github.com/assurance-maladie-digital/design-system/pull/1091))
+  - **ci:** Mise à jour de `codecov` vers la `v1.2.0` ([#1091](https://github.com/assurance-maladie-digital/design-system/pull/1091)) ([0084c5b](https://github.com/assurance-maladie-digital/design-system/commit/0084c5b62ab4452050c0690b6381c1286515aa7e))
 
 - 📝 **Documentation**
   - **pull-requests:** Mise à jour du template ([#1074](https://github.com/assurance-maladie-digital/design-system/pull/1074)) ([b8da289](https://github.com/assurance-maladie-digital/design-system/commit/b8da289b6d3ec4e0313483795df5227160de9fed))
@@ -75,6 +75,7 @@
   - **@types/node:** Mise à jour vers la `v14.17.0` ([#1088](https://github.com/assurance-maladie-digital/design-system/pull/1088)) ([6111d7f](https://github.com/assurance-maladie-digital/design-system/commit/6111d7fab3f375af9c3dc5c84ac3db5e4cbcb975))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v34` ([#1097](https://github.com/assurance-maladie-digital/design-system/pull/1097)) ([75c3cba](https://github.com/assurance-maladie-digital/design-system/commit/75c3cbac7be7218e5b6dcba755a6da2cea73f77d))
   - **ts-jest:** Mise à jour vers la `v26.5.6` ([#1090](https://github.com/assurance-maladie-digital/design-system/pull/1090)) ([f1bdef2](https://github.com/assurance-maladie-digital/design-system/commit/f1bdef27f10cde61a65738b20660936793dbb153))
+  - **lint-staged:** Mise à jour vers la `v11` ([#1093](https://github.com/assurance-maladie-digital/design-system/pull/1093))
 
 ## v2.0.0-beta.9
 
