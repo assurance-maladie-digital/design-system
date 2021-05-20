@@ -54,6 +54,9 @@
   - **lerna:** Suppression des propriétés `gitHead` dans les fichiers `package.json` ([#1045](https://github.com/assurance-maladie-digital/design-system/pull/1045)) ([d941896](https://github.com/assurance-maladie-digital/design-system/commit/d94189622cc1fe5e03484472199336a86ba4404d))
   - **playground:** Suppression d'une `div` inutile ([#1077](https://github.com/assurance-maladie-digital/design-system/pull/1077)) ([dbd9878](https://github.com/assurance-maladie-digital/design-system/commit/dbd987889a8b09bbe71988076ede8c24ebc8b1ea))
 
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de la configuration de renovate ([#1106](https://github.com/assurance-maladie-digital/design-system/pull/1106))
+
 - 📝 **Documentation**
   - **pull-requests:** Mise à jour du template ([#1074](https://github.com/assurance-maladie-digital/design-system/pull/1074)) ([b8da289](https://github.com/assurance-maladie-digital/design-system/commit/b8da289b6d3ec4e0313483795df5227160de9fed))
 
