@@ -3,6 +3,8 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
+ - **ExternalLinks:** Ajout du nouveau composant `ExternalLinks` ([#1105](https://github.com/assurance-maladie-digital/design-system/pull/1105)) ([330010ca](https://github.com/assurance-maladie-digital/design-system/commit/7756321a657a535bb0d2d0822cfe11ce330010ca))
+
   - **DownloadBtn:** Ajout de la prop `fallback-filename` et d'un nom de fichier par défaut ([#1068](https://github.com/assurance-maladie-digital/design-system/pull/1068)) ([490b05e](https://github.com/assurance-maladie-digital/design-system/commit/490b05ee895195176e37567b1ecfb2acd28ae094))
 
 - 🐛 **Corrections de bugs**
