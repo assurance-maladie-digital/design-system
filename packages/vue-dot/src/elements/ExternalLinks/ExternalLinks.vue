@@ -27,7 +27,7 @@
 				block
 				tile
 				depressed
-				color="accent"
+				color="red"
 				class="text-none btn-height"
 				@click="drawer = false"
 			>
@@ -118,7 +118,7 @@
 				default : locales.btnText
 			},
 			/**
-			 *  Set position of the icon
+			 *  Set position of the button drawer
 			 */
 			nudgeTop: {
 				type: Number,
