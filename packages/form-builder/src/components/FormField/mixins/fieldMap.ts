@@ -24,9 +24,9 @@ import TextField from '../fields/TextField.vue';
 		PasswordField,
 		PeriodField,
 		ChoiceField,
+		RangeField,
 		TextareaField,
-		TextField,
-		RangeField
+		TextField
 	}
 })
 export class FieldMap extends Vue {
@@ -37,9 +37,9 @@ export class FieldMap extends Vue {
 		password: 'PasswordField',
 		period: 'PeriodField',
 		select: 'ChoiceField',
+		range: 'RangeField',
 		text: 'TextField',
-		textarea: 'TextareaField',
-		range: 'RangeField'
+		textarea: 'TextareaField'
 	};
 
 	/**

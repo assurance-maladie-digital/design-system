@@ -60,7 +60,10 @@
 					if (value) {
 						this.rangeValue = value;
 					} else {
-						this.rangeValue =[this.field.min as number, this.field.max as number];
+						this.rangeValue = [
+							this.field.min as number,
+							this.field.max as number
+						];
 					}
 				},
 				immediate: true,
