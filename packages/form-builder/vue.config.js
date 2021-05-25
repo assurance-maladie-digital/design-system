@@ -4,7 +4,7 @@ const webpack = require('webpack');
 // If LIB_MODE is true, we're building the library
 // else, we're building the dev environment
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
-const LIMIT_SIZE = 315000;
+const LIMIT_SIZE = 325_000;
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
