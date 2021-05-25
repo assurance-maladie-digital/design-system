@@ -12,9 +12,9 @@ import NumberField from '../fields/NumberField.vue';
 import PasswordField from '../fields/PasswordField.vue';
 import PeriodField from '../fields/PeriodField.vue';
 import ChoiceField from '../fields/ChoiceField.vue';
+import RangeField from '../fields/RangeField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
-import RangeField from '../fields/RangeField.vue';
 
 /** List all fields and provide getField() function */
 @Component({
