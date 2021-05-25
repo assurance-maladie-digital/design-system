@@ -1,3 +1,10 @@
+## Non publié
+
+### FormBuilder
+
+- 🔧 **Configuration**
+  - **config:** Mise à jour de la taille maximale du build ([#1123](https://github.com/assurance-maladie-digital/design-system/pull/1123))
+
 ## v2.0.0-beta.10
 
 **Version publiée le 25/05/2021.**
@@ -72,7 +79,7 @@ Cette version comporte la suppression du composant `PageCard`, l'ajout de la pro
 
 - 📝 **Documentation**
   - **pull-requests:** Mise à jour du template ([#1074](https://github.com/assurance-maladie-digital/design-system/pull/1074)) ([b8da289](https://github.com/assurance-maladie-digital/design-system/commit/b8da289b6d3ec4e0313483795df5227160de9fed))
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1122](https://github.com/assurance-maladie-digital/design-system/pull/1122))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1122](https://github.com/assurance-maladie-digital/design-system/pull/1122)) ([e2eb5a9](https://github.com/assurance-maladie-digital/design-system/commit/e2eb5a942f3ed71c81b843e4bd082f1eaffc3646))
 
 - ⬆️ **Dépendances**
   - **@types/jest:** Mise à jour vers la `v26.0.23` ([#1052](https://github.com/assurance-maladie-digital/design-system/pull/1052)) ([dfadb25](https://github.com/assurance-maladie-digital/design-system/commit/dfadb25f7ea95f43dcc183b2e1778e269818086e))
