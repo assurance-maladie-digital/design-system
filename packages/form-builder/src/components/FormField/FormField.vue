@@ -1,8 +1,5 @@
 <template>
-	<VLayout
-		column
-		class="vd-form-field"
-	>
+	<div class="vd-form-field">
 		<h4
 			v-if="field.title"
 			class="text-body-1"
@@ -36,7 +33,7 @@
 		<p
 			v-if="field.description"
 			:class="descriptionColor"
-			class="text-body-2 mt-1"
+			class="text-body-2"
 		>
 			{{ field.description }}
 		</p>
@@ -58,7 +55,7 @@
 				emitChangeEvent
 			}"
 		/>
-	</VLayout>
+	</div>
 </template>
 
 <script lang="ts">

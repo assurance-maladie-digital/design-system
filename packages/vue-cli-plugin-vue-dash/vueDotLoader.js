@@ -9,8 +9,9 @@ const componentMap = {
 	DialogBox: 'elements',
 	DownloadBtn: 'elements',
 	HeaderLoading: 'elements',
-	PageCard: 'elements',
+	PageContainer: 'elements',
 	// Patterns
+	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
 	FileUpload: 'patterns',
 	FooterWrapper: 'patterns',

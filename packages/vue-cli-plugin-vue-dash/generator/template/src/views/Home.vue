@@ -1,37 +1,36 @@
 <template>
-	<PageCard
-		min-height
-		card-class="d-flex flex-column align-start py-4 px-5"
-	>
-		<h2 class="text-h6 font-weight-bold primary--text mb-4">
-			<% if (i18n) { %>{{ $t('views.home.title') }}<% } else { %>Premiers pas<% } %>
-		</h2>
+	<PageContainer>
+		<VCard class="pa-8">
+			<h2 class="text-h6 font-weight-bold primary--text mb-4">
+				<% if (i18n) { %>{{ $t('views.home.title') }}<% } else { %>Premiers pas<% } %>
+			</h2>
 
-		<p><% if (i18n) { %>{{ $t('views.home.description.block1') }}<% } else { %>Vous venez de créer une nouvelle application front-end avec Vue Dash.<% } %></p>
+			<p><% if (i18n) { %>{{ $t('views.home.description.block1') }}<% } else { %>Vous venez de créer une nouvelle application front-end avec Vue Dash.<% } %></p>
 
-		<p><% if (i18n) { %>{{ $t('views.home.description.block2') }}<% } else { %>Tout est prêt, vous pouvez dès à présent commencer à développer !<% } %></p>
+			<p><% if (i18n) { %>{{ $t('views.home.description.block2') }}<% } else { %>Tout est prêt, vous pouvez dès à présent commencer à développer !<% } %></p>
 
-		<RouterLink
-			:to=" {
-				name: 'about'
-			}"<% if (cypress) { %>
-			data-cy="aboutLink"<% } %>
-		>
-			<% if (i18n) { %>{{ $t('views.home.about.label') }}<% } else { %>À propos<% } %>
-		</RouterLink>
+			<RouterLink
+				:to=" {
+					name: 'about'
+				}"<% if (cypress) { %>
+				data-cy="aboutLink"<% } %>
+			>
+				<% if (i18n) { %>{{ $t('views.home.about.label') }}<% } else { %>À propos<% } %>
+			</RouterLink>
 
-		<VSpacer />
+			<VSpacer />
 
-		<VBtn
-			color="accent"
-			outlined
-			class="mt-8"<% if (cypress) { %>
-			data-cy="sendNotification"<% } %>
-			@click="sendNotification"
-		>
-			<% if (i18n) { %>{{ $t('views.home.sendNotification') }}<% } else { %>Envoyer une notification exemple<% } %>
-		</VBtn>
-	</PageCard>
+			<VBtn
+				color="accent"
+				outlined
+				class="mt-8"<% if (cypress) { %>
+				data-cy="sendNotification"<% } %>
+				@click="sendNotification"
+			>
+				<% if (i18n) { %>{{ $t('views.home.sendNotification') }}<% } else { %>Envoyer une notification exemple<% } %>
+			</VBtn>
+		</VCard>
+	</PageContainer>
 </template>
 
 <script lang="ts">

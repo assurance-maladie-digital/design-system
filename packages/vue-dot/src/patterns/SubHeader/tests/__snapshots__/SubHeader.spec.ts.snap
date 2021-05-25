@@ -11,7 +11,7 @@ exports[`SubHeader renders correctly 1`] = `
       Retour
     </vbtn-stub>
   </vfadetransition-stub>
-  <div class="vd-sub-header-content d-flex justify-space-between justify-space-between">
+  <div class="vd-sub-header-content d-flex justify-space-between">
     <div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
       <vfadetransition-stub mode="out-in" origin="top center 0">
         <h2 class="text-h5 font-weight-bold">
@@ -34,7 +34,7 @@ exports[`SubHeader renders loading state correctly 1`] = `
       <div class="v-skeleton-loader__button v-skeleton-loader__bone"></div>
     </div>
   </transition-stub>
-  <div class="vd-sub-header-content d-flex justify-space-between justify-space-between">
+  <div class="vd-sub-header-content d-flex justify-space-between">
     <div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
       <transition-stub name="fade-transition" mode="out-in">
         <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 2rem; width: 300px;">
