@@ -2,8 +2,11 @@
 
 ### FormBuilder
 
+- ✨ **Nouvelles fonctionnalités**
+  - **RangeField:** Ajout d'un nouveau champ ([#1112](https://github.com/assurance-maladie-digital/design-system/pull/1112))
+
 - 🔧 **Configuration**
-  - **config:** Mise à jour de la taille maximale du build ([#1123](https://github.com/assurance-maladie-digital/design-system/pull/1123))
+  - **config:** Mise à jour de la taille maximale du build ([#1123](https://github.com/assurance-maladie-digital/design-system/pull/1123)) ([ea78c19](https://github.com/assurance-maladie-digital/design-system/commit/ea78c197d8fc026c648c5e46e828e2da19f12c8e))
 
 ## v2.0.0-beta.10
 

@@ -3,6 +3,11 @@ export interface PeriodValue {
 	to: string | null;
 }
 
+export interface RangeValue {
+	min: number | null;
+	max: number | null;
+}
+
 export type FieldItemValue = string | number | null | undefined;
 
 export type OtherFieldValue = string | null;
@@ -14,7 +19,7 @@ export interface ChoiceValue {
 	other?: OtherFieldValue;
 }
 
-export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue;
+export type FieldValue = string | number | null | undefined | PeriodValue | ChoiceValue | number[];
 
 export type ErrorMessages = string | string[];
 
@@ -44,6 +49,8 @@ export interface Field {
 	type: string;
 	value?: FieldValue;
 	title?: string;
+	min?: number;
+	max?: number;
 	description?: string;
 	tooltip?: string;
 	multiple?: boolean;
