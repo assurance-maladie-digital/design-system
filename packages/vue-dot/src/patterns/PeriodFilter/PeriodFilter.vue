@@ -67,7 +67,6 @@
 					}
 				}
 			};
-			console.log(res);
 			this.$nextTick(() => {
 				this.$emit('change', res);
 			});
