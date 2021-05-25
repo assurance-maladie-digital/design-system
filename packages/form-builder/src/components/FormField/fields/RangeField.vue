@@ -7,10 +7,10 @@
 			>
 				<VTextField
 					v-model="rangeValue[0]"
+					:label="minLabel"
 					block
-					:label="field.fieldOptions.minFieldLabel || 'Valeur min'"
 					outlined
-					@change="fieldUpdate"
+					@change="emitChangeEvent(rangeValue)"
 				/>
 			</VCol>
 
@@ -20,9 +20,9 @@
 			>
 				<VTextField
 					v-model="rangeValue[1]"
-					:label="field.fieldOptions.maxFieldLabel || 'Valeur max'"
+					:label="maxLabel"
 					outlined
-					@change="fieldUpdate"
+					@change="emitChangeEvent(rangeValue)"
 				/>
 			</VCol>
 		</VForm>
@@ -33,7 +33,7 @@
 			:min="field.min"
 			hide-details
 			class="align-center mb-6"
-			@change="fieldUpdate"
+			@change="emitChangeEvent(rangeValue)"
 		>
 			<template #prepend>
 				{{ field.min }}
@@ -50,6 +50,11 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { FieldComponent } from '../mixins/fieldComponent';
+
+	const locales = {
+		minLabel: 'Valeur min',
+		maxLabel: 'Valeur max'
+	};
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
@@ -74,10 +79,12 @@
 	export default class RangeField extends MixinsDeclaration {
 		rangeValue: number[] = [];
 
-		fieldUpdate(): void {
-			this.$nextTick(() => {
-				this.emitChangeEvent(this.rangeValue);
-			});
+		get minLabel(): string {
+			return this.field.fieldOptions?.minFieldLabel as string || locales.minLabel;
+		}
+
+		get maxLabel(): string {
+			return this.field.fieldOptions?.maxFieldLabel as string || locales.maxLabel;
 		}
 	}
 </script>
