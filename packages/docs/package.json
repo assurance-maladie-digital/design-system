@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "@cnamts/docs-v2",
+	"name": "@cnamts/docs",
 	"version": "2.0.0-beta.10",
 	"description": "Documentation of our Design System",
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
