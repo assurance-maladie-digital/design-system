@@ -1,6 +1,9 @@
 <template>
 	<VApp>
-		<DocHeader @drawer-action="drawer = !drawer" />
+		<DocHeader
+			:drawer="drawer"
+			@drawer-action="drawer = !drawer"
+		/>
 
 		<DocDrawer v-model="drawer" />
 

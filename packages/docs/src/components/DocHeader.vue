@@ -8,7 +8,7 @@
 		class="doc-header flex-grow-0"
 	>
 		<VAppBarNavIcon
-			aria-label="Afficher ou masquer le menu"
+			:aria-label="drawerActionLabel"
 			class="ml-2 ml-sm-3 hidden-lg-and-up"
 			@click="$emit('drawer-action')"
 		/>
@@ -45,16 +45,33 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import DocSearchField from './DocSearchField.vue';
+
+	const Props = Vue.extend({
+		props: {
+			drawer: {
+				type: Boolean,
+				default: false
+			}
+		}
+	})
+
+	const MixinsDeclaration = mixins(Props);
 
 	@Component({
 		components: {
 			DocSearchField
 		}
 	})
-	export default class DocHeader extends Vue {}
+	export default class DocHeader extends MixinsDeclaration {
+		get drawerActionLabel(): string {
+			const action = this.drawer ? 'Masquer' : 'Afficher';
+
+			return `${action} le menu`;
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
