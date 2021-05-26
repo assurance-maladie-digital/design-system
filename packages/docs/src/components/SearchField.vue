@@ -109,8 +109,10 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
 	.search-field {
-		max-width: 328px;
+		max-width: $vd-input-medium;
 	}
 
 	.search-icon,
