@@ -6,7 +6,7 @@
 		>
 			<h2
 				v-if="showTitle"
-				class="text-h5 font-weight-bold mt-0 mb-0"
+				class="text-h5 font-weight-bold my-0"
 				:class="{ 'mt-14': index > 0 }"
 			>
 				{{ componentName }}

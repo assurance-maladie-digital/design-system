@@ -45,9 +45,9 @@
 						class="pa-2"
 						mandatory
 					>
-						<template v-for="(section, i) in sections">
+						<template v-for="(section, index) in sections">
 							<VItem
-								:key="`item-${i}`"
+								:key="`item-${index}`"
 								:value="section"
 							>
 								<template #default="{ active, toggle }">
@@ -70,9 +70,9 @@
 						v-model="selected"
 						class="grey lighten-5"
 					>
-						<template v-for="(section, i) in sections">
+						<template v-for="(section, index) in sections">
 							<VWindowItem
-								:key="`window-${i}`"
+								:key="`window-${index}`"
 								:value="section"
 							>
 								<DocMarkup
@@ -144,15 +144,23 @@
 		parsed: Parsed | null = null;
 
 		get sections(): string[] {
-			return ['template', 'script', 'style'].filter((section) => this.parsed && this.parsed[section]);
+			const componentSections = [
+				'template',
+				'script',
+				'style'
+			];
+
+			return componentSections.filter((section) => this.parsed && this.parsed[section]);
 		}
 
-		importTemplate(): Promise<void> {
-			return import(
+		async importTemplate(): Promise<void> {
+			const component = await import(
 				/* webpackChunkName: "examples-source" */
 				/* webpackMode: "lazy-once" */
 				`!raw-loader!../../content/examples/${this.file}.vue`
-			).then(comp => this.boot(comp.default));
+			);
+
+			return this.boot(component.default);
 		}
 
 		boot(res: string): void {

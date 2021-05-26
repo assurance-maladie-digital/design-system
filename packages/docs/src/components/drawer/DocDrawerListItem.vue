@@ -21,13 +21,15 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
+	import { PageItem } from '../../types/drawer';
 
 	const Props = Vue.extend({
 		props: {
 			item: {
-				type: Object,
+				type: Object as PropType<PageItem>,
 				default: () => ({})
 			}
 		}

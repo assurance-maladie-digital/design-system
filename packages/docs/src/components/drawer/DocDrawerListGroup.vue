@@ -1,6 +1,6 @@
 <template>
 	<VListGroup
-		v-model="expandedList"
+		v-model="expand"
 		v-bind="$attrs"
 		:group="groupNamespace"
 		:prepend-icon="icon"
@@ -78,10 +78,10 @@
 		}
 	})
 	export default class DocDrawerListGroup extends MixinsDeclaration {
-		expandedList: boolean | null = null;
+		expand: boolean | null = null;
 
 		get groupNamespace(): string {
-			return this.genGroup(this.item.items);
+			return this.genGroupNamespace(this.item.items);
 		}
 
 		get icon(): string | undefined {
@@ -91,17 +91,17 @@
 
 			const [offIcon, onIcon] = this.item.icon.split(ICON_SEPARATOR);
 
-			if (!this.expandedList) {
+			if (!this.expand) {
 				return offIcon;
 			}
 
 			return onIcon || offIcon;
 		}
 
-		genGroup(items: PageItem[]): string {
+		genGroupNamespace(items: PageItem[]): string {
 			const groupItems = items.map((item) => {
 				if (item.items) {
-					return this.genGroup(item.items);
+					return this.genGroupNamespace(item.items);
 				}
 
 				return item.to;

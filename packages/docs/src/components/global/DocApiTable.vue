@@ -5,9 +5,9 @@
 		rounded
 	>
 		<VSimpleTable
-			class="doc-api-table"
 			v-bind="$attrs"
 			v-on="$listeners"
+			class="doc-api-table"
 		>
 			<thead>
 				<tr>
