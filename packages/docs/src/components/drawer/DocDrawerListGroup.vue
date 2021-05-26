@@ -1,11 +1,11 @@
 <template>
 	<VListGroup
 		v-model="expandedList"
+		v-bind="$attrs"
 		:group="groupNamespace"
 		:prepend-icon="icon"
 		class="v-list-group--default"
 		no-action
-		v-bind="$attrs"
 	>
 		<template #activator>
 			<VListItemContent>

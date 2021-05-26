@@ -55,7 +55,9 @@
 							<VueFile
 								v-if="file"
 								:file="file"
-								v-bind="{ ...usageProps }"
+								v-bind="{
+									...usageProps
+								}"
 								@loaded="setContents"
 								@error="hasError = true"
 							/>

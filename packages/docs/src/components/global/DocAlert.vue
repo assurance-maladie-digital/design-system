@@ -1,10 +1,10 @@
 <template>
 	<VAlert
+		v-bind="$attrs"
+		v-on="$listeners"
 		border="left"
 		class="doc-alert w-100"
 		text
-		v-bind="$attrs"
-		v-on="$listeners"
 	>
 		<slot />
 	</VAlert>

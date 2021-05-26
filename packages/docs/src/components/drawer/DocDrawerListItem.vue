@@ -1,5 +1,7 @@
 <template>
 	<VListItem
+		v-bind="$attrs"
+		v-on="$listeners"
 		:href="item.href"
 		:rel="item.href ? 'nofollow' : undefined"
 		:target="item.href ? '_blank' : undefined"
@@ -7,8 +9,6 @@
 		:nuxt="Boolean(item.to)"
 		class="v-list-item--default"
 		color="primary"
-		v-bind="$attrs"
-		v-on="$listeners"
 	>
 		<VListItemIcon v-if="item.icon">
 			<VIcon v-text="item.icon" />

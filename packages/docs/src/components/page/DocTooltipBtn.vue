@@ -5,13 +5,13 @@
 	>
 		<template #activator="{ on }">
 			<VBtn
-				:aria-label="label"
-				icon
 				v-bind="$attrs"
 				v-on="{
 					...on,
 					...$listeners
 				}"
+				:aria-label="label"
+				icon
 			>
 				<slot name="icon" />
 			</VBtn>
