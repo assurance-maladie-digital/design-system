@@ -3,6 +3,9 @@ import Vue from 'vue';
 // Import dayjs locale
 // import 'dayjs/locale/fr';
 
+// Import VueDot styles
+import '@cnamts/vue-dot/dist/vue-dot.css';
+
 // Import VueDot from src
 import VueDot from '@cnamts/vue-dot/src/index';
 
