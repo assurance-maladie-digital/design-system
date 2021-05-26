@@ -12,7 +12,11 @@ let wrapper: Wrapper<Vue>;
 describe('FilterModule', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(FilterModule);
+		wrapper = mountComponent(FilterModule, {
+			propsData: {
+				filters: []
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

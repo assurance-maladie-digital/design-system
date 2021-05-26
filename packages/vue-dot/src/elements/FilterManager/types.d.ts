@@ -1,6 +1,6 @@
-import { FilterItem } from '../../patterns/FilterModule/types';
+import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 export interface FilterManagerItem {
 	index: number,
-	filter: FilterItem
+	filter: Field
 }

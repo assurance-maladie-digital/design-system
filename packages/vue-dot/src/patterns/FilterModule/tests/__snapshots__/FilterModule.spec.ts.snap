@@ -3,19 +3,9 @@
 exports[`FilterModule renders correctly 1`] = `
 <div class="vd-filter-module">
   <!---->
-  <filterselector></filterselector>
-  <v-dialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="300px" origin="center center" retainfocus="true" scrollable="true" transition="dialog-transition" width="auto">
-    <v-card-stub loaderheight="4" tag="div">
-      <v-card-text-stub style="height: 300px;">
-        <v-card-title-stub></v-card-title-stub>
-        <formfieldlist-stub></formfieldlist-stub>
-        <v-card-actions-stub>
-          <v-btn-stub color="primary" dark="true" tag="button" activeclass="" type="button">
-            Appliquer le filtre
-          </v-btn-stub>
-        </v-card-actions-stub>
-      </v-card-text-stub>
-    </v-card-stub>
-  </v-dialog-stub>
+  <filterselector filters=""></filterselector>
+  <dialogbox width="400px">
+    <formfield-stub></formfield-stub>
+  </dialogbox>
 </div>
 `;

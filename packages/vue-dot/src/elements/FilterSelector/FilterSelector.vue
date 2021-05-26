@@ -22,7 +22,7 @@
 				:key="index"
 			>
 				<VListItemTitle @click="openModal(index)">
-					{{ item.label }}
+					{{ item.fieldOptions.modalTitle }}
 				</VListItemTitle>
 			</VListItem>
 		</VList>
@@ -35,12 +35,12 @@
 
 	import { mdiFilterVariant } from '@mdi/js';
 
-	import { FilterItem } from '../../patterns/FilterModule/types';
+	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	const Props = Vue.extend({
 		props: {
 			filters: {
-				type: Array as PropType<FilterItem[]>,
+				type: Array as PropType<Field[]>,
 				required: true
 			}
 		}

@@ -1,7 +1,5 @@
 <template>
-	<div
-		class="vd-filter-module"
-	>
+	<div class="vd-filter-module">
 		<FilterManager
 			v-if="displayFiltersCount"
 			:applied-filters="appliedFilters"
@@ -9,10 +7,12 @@
 			@clear-filters-row="clearFiltersRow"
 			@reset-filters="resetFilters"
 		/>
+
 		<FilterSelector
 			:filters="filters"
 			@filter-selected="openModal"
 		/>
+
 		<DialogBox
 			v-model="dialog"
 			width="400px"
@@ -20,31 +20,17 @@
 			@cancel="dialog = false"
 			@confirm="dialog = false"
 		>
-			<div v-if="contentType === 'select'">
-				<FormFieldList
-					v-model="modalContent"
-					@change="updateSelectedFilters"
-				/>
-			</div>
-			<div v-else-if="contentType === 'range'">
-				<RangeFilter
-					v-model="modalContent"
-					@change="updateSelectedFilters"
-				/>
-			</div>
-			<div v-else-if="contentType === 'date'">
-				<PeriodFilter
-					v-model="modalContent"
-					@change="updateSelectedFilters"
-				/>
-			</div>
+			<FormField
+				v-model="modalContent"
+				@change="updateSelectedFilters"
+			/>
 			<template #actions>
 				<VBtn
 					color="primary"
 					dark
 					@click="applyFilter"
 				>
-					Appliquer le filtre
+					{{ locales.apply }}
 				</VBtn>
 			</template>
 		</DialogBox>
@@ -60,17 +46,16 @@
 
 	import { customizable } from '../../mixins/customizable';
 
-	import FormFieldList from '@cnamts/form-builder/src/components/FormFieldList';
+	import FormField from '@cnamts/form-builder/src/components/FormField';
 
-	import { Fields } from '@cnamts/form-builder/src/components/FormFieldList/types';
-	import { FilterItem, FilterItemForm } from './types';
+	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	import { deepCopy } from '../../helpers/deepCopy';
 
 	const Props = Vue.extend({
 		props: {
 			filters: {
-				type: Array as PropType<FilterItem[]>,
+				type: Array as PropType<Field[]>,
 				required: true
 			}
 		}
@@ -83,7 +68,7 @@
 
 	@Component({
 		components: {
-			FormFieldList
+			FormField
 		}
 	})
 	export default class FilterModule extends MixinsDeclaration {
@@ -96,41 +81,39 @@
 
 		contentType: string | null = null;
 
-		modalContent: FilterItemForm | null = null;
+		modalContent: Field | null = null;
 
 		modalTitle: string | null = null;
 
-		selectedFilters: Fields | null = null;
+		selectedFilters: Field | null = null;
 
-		appliedFilters: FilterItem[] | null = null;
+		appliedFilters: Field[] | null = null;
 
 		openModal(index: number): void {
 			this.filterIndex = index;
-			this.modalTitle = this.filters[index].label;
+			this.modalTitle = this.filters[index].fieldOptions?.modalTitle as string;
 			this.contentType = this.filters[index].type;
-			this.modalContent = this.filters[index].form;
+			this.modalContent = this.filters[index];
 			this.dialog = true;
 		}
 
 		applyFilter(): void {
 			if (this.appliedFilters === null) {
-				this.appliedFilters = deepCopy<FilterItem[]>(this.filters);
+				this.appliedFilters = deepCopy<Field[]>(this.filters);
 			}
 			if (this.filterIndex === null || this.selectedFilters === null) {
 				return;
 			}
-			this.appliedFilters[this.filterIndex].form.filter = this.selectedFilters.filter;
+			this.$set(this.appliedFilters, this.filterIndex,  this.selectedFilters);
 			this.$emit('filter-list', this.appliedFilters);
 			this.dialog = false;
-			this.modalContent = null;
-			this.modalTitle = null;
 		}
 
 		clearFiltersRow(index: number): void {
 			if (this.appliedFilters === null) {
 				return;
 			}
-			this.$set(this.appliedFilters[index].form.filter, 'value', null);
+			this.$set(this.appliedFilters[index], 'value', null);
 		}
 
 		editFilters(index: number): void {
@@ -138,9 +121,9 @@
 				return;
 			}
 			this.filterIndex = index;
-			this.modalTitle = this.appliedFilters[index].label;
+			this.modalTitle = this.appliedFilters[index].fieldOptions?.modalTitle as string;
 			this.contentType = this.appliedFilters[index].type;
-			this.modalContent = this.appliedFilters[index].form;
+			this.modalContent = this.appliedFilters[index];
 			this.dialog = true;
 		}
 
@@ -148,7 +131,7 @@
 			this.appliedFilters = null;
 		}
 
-		updateSelectedFilters(data: Fields): void {
+		updateSelectedFilters(data: Field): void {
 			this.selectedFilters = data;
 		}
 
@@ -156,7 +139,7 @@
 			if(this.appliedFilters === null) {
 				return false;
 			}
-			return this.appliedFilters.some(item => item.form.filter.value !== null);
+			return this.appliedFilters.some(item => item.value !== null);
 		}
 	}
 </script>

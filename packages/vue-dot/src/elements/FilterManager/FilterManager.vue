@@ -29,7 +29,7 @@
 					<div style="display: flex; align-items:center;">
 						<div style="width:300px;">
 							<div class="my-2">
-								{{ item.filter.label }}
+								{{ item.filter.fieldOptions.modalTitle }}
 							</div>
 							<!--<div class="my-2">
 								{{ `${item.filter.form.filter.value.value.length} ${item.filter.label} ${item.filter.form.filter.value.value.length > 1 ? 'sélectionnés' : 'sélectionné'}` }}
@@ -39,10 +39,7 @@
 							class="mr-2"
 							@click="editFilters(item.index)"
 						>
-							<VIcon
-								color="black"
-								class=""
-							>
+							<VIcon color="black">
 								{{ editIcon }}
 							</VIcon>
 						</div>
@@ -72,13 +69,13 @@
 	import { mdiWindowClose } from '@mdi/js';
 	import { mdiPencil } from '@mdi/js';
 
-	import { FilterItem } from '../../patterns/FilterModule/types';
+	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 	import { FilterManagerItem } from './types';
 
 	const Props = Vue.extend({
 		props: {
 			appliedFilters: {
-				type: Array as PropType<FilterItem[]>,
+				type: Array as PropType<Field[]>,
 				required: true
 			}
 		}
@@ -112,7 +109,7 @@
 					index: index,
 					filter: filter
 				};
-				filter.form.filter.value ? displayedFilters.push(item) : '';
+				filter.value ? displayedFilters.push(item) : '';
 			});
 			return displayedFilters;
 		}
@@ -122,7 +119,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
