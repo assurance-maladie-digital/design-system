@@ -10,7 +10,8 @@
 
 - ⬆️ **Dépendances**
   - **core-js:** Mise à jour vers la `v3.13.0` ([#1124](https://github.com/assurance-maladie-digital/design-system/pull/1124)) ([7f76d41](https://github.com/assurance-maladie-digital/design-system/commit/7f76d418c16a8074f03b8cd5cb892807c966c831))
-  - **vuetify:** Mise à jour vers la `v2.5.1` ([#1126](https://github.com/assurance-maladie-digital/design-system/pull/1126))
+  - **vuetify:** Mise à jour vers la `v2.5.1` ([#1126](https://github.com/assurance-maladie-digital/design-system/pull/1126)) ([17be1a7](https://github.com/assurance-maladie-digital/design-system/commit/17be1a768f757844aa5b06a2b764e024b0677ba5))
+  - **dayjs:** Mise à jour vers la `v1.10.5` ([#1127](https://github.com/assurance-maladie-digital/design-system/pull/1127))
 
 ## v2.0.0-beta.10
 
