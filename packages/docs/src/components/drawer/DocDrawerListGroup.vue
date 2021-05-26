@@ -1,7 +1,7 @@
 <template>
 	<VListGroup
-		v-model="model"
-		:group="group"
+		v-model="expandedList"
+		:group="groupNamespace"
 		:prepend-icon="icon"
 		class="v-list-group--default"
 		no-action
@@ -16,10 +16,10 @@
 			</VListItemContent>
 		</template>
 
-		<template v-for="(child, i) in item.items">
+		<template v-for="(child, index) in item.items">
 			<VSubheader
 				v-if="child.heading"
-				:key="`heading-${i}`"
+				:key="`heading-${index}`"
 				class="text--primary font-weight-black text-uppercase"
 				inset
 				v-text="child.title"
@@ -27,21 +27,21 @@
 
 			<VDivider
 				v-else-if="child.divider"
-				:key="`divider-${i}`"
+				:key="`divider-${index}`"
 				inset
 				class="mt-3 mb-2 ml-16"
 			/>
 
 			<DocDrawerListGroup
 				v-else-if="child.items"
-				:key="`sub-group-${i}`"
+				:key="`sub-group-${index}`"
 				:item="child"
 				sub-group
 			/>
 
 			<DocDrawerListItem
 				v-else
-				:key="`child-${i}`"
+				:key="`child-${index}`"
 				:item="child"
 			/>
 		</template>
@@ -49,16 +49,21 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import DocDrawerListItem from './DocDrawerListItem.vue';
 
+	import { DrawerItem, PageItem } from '../../types/drawer';
+
+	const ICON_SEPARATOR = ':';
+	const GROUP_ITEM_SEPARATOR = '|';
+
 	const Props = Vue.extend({
 		props: {
 			item: {
-				type: Object,
-				default: () => ({})
+				type: Object as PropType<DrawerItem>,
+				default: null
 			}
 		}
 	});
@@ -73,30 +78,36 @@
 		}
 	})
 	export default class DocDrawerListGroup extends MixinsDeclaration {
-		model = null;
+		expandedList: boolean | null = null;
 
-		get group() {
+		get groupNamespace(): string {
 			return this.genGroup(this.item.items);
 		}
 
-		get icon() {
+		get icon(): string | undefined {
 			if (!this.item.icon) {
 				return undefined;
 			}
 
-			const [off, on] = this.item.icon.split(':');
+			const [offIcon, onIcon] = this.item.icon.split(ICON_SEPARATOR);
 
-			return this.model ? (on || off) : off;
+			if (!this.expandedList) {
+				return offIcon;
+			}
+
+			return onIcon || offIcon;
 		}
 
-		genGroup(items: any) {
-			return items.reduce((acc: any, cur: any) => {
-				acc.push(
-					cur.items ? this.genGroup(cur.items) : cur.to
-				);
+		genGroup(items: PageItem[]): string {
+			const groupItems = items.map((item) => {
+				if (item.items) {
+					return this.genGroup(item.items);
+				}
 
-				return acc;
-			}, []).join('|');
+				return item.to;
+			});
+
+			return groupItems.join(GROUP_ITEM_SEPARATOR);
 		}
 	}
 </script>

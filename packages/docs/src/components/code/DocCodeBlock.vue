@@ -1,10 +1,10 @@
 <template>
 	<VSheet
 		:tile="tile"
-		color="#1f1f1f"
-		class="doc-code-block overflow-hidden"
-		:class="{ 'mb-4': !noMargin }"
 		:rounded="rounded"
+		:class="{ 'mb-4': !noMargin }"
+		class="doc-code-block overflow-hidden"
+		color="#1f1f1f"
 		outlined
 		dark
 	>

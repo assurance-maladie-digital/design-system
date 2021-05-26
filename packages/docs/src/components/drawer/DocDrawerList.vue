@@ -4,36 +4,36 @@
 		expand
 		nav
 	>
-		<template v-for="(item, i) in items">
+		<template v-for="(item, index) in items">
 			<VSubheader
 				v-if="item.heading"
-				:key="`heading-${i}`"
+				:key="`heading-${index}`"
 				class="text--primary font-weight-black text-uppercase"
 				v-text="item.heading"
 			/>
 
 			<VDivider
 				v-else-if="item.divider"
-				:key="`divider-${i}`"
+				:key="`divider-${index}`"
 				class="mt-3 mb-2 ml-2 mr-n2"
 			/>
 
 			<DocDrawerListGroup
 				v-else-if="item.items"
-				:key="`group-${i}`"
+				:key="`group-${index}`"
 				:item="item"
 			/>
 
 			<slot
 				v-else-if="$scopedSlots.item"
 				name="item"
-				:index="i"
+				:index="index"
 				:item="item"
 			/>
 
 			<DocDrawerListItem
 				v-else
-				:key="`item-${i}`"
+				:key="`item-${index}`"
 				:item="item"
 			/>
 		</template>
