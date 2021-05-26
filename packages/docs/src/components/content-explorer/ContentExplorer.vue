@@ -91,6 +91,12 @@
 
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
+	const HASH_DELIMITER = '#';
+	const PATH_DELIMITER = '/';
+
+	const DOT_FILE_CHAR = '.';
+	const ESCAPED_DOT_FILE_CHAR = '_';
+
 	const basePath = '/explorer/';
 
 	type Content = IContentDocument[];
@@ -154,7 +160,7 @@
 		}
 
 		setContent(): void {
-			const path = this.$nuxt.$route.hash.replace('#', '');
+			const path = this.$nuxt.$route.hash.replace(HASH_DELIMITER, '');
 
 			if (!path) {
 				this.getContent('initial');
@@ -166,17 +172,17 @@
 		}
 
 		updateTree(path: string): void {
-			path.split('/').forEach((page) => {
+			path.split(PATH_DELIMITER).forEach((page) => {
 				this.tree.push({
 					name: page
 				});
 			});
 
-			const splitted = path.split('/');
+			const splitted = path.split(PATH_DELIMITER);
 			const last = splitted[splitted.length - 1];
 
 			const rawName = last === 'index' ? splitted[splitted.length - 2] : last;
-			const name = rawName.replace('_', '.');
+			const name = rawName.replace(ESCAPED_DOT_FILE_CHAR, DOT_FILE_CHAR);
 
 			this.activeItem = [
 				{
