@@ -9,7 +9,7 @@
 				:background-color="textFieldBgColor"
 				:class="isSearching ? 'rounded-b-0' : ' rounded-lg'"
 				:flat="!isFocused && !isSearching"
-				class="search-field ml-2 mr-6"
+				class="doc-search-field ml-2 mr-6"
 				type="search"
 				autocomplete="off"
 				label="Rechercher"
@@ -22,7 +22,7 @@
 				<template #prepend-inner>
 					<VIcon
 						:color="iconColor"
-						class="search-icon mx-2"
+						class="doc-search-field-icon mx-2"
 					>
 						{{ searchIcon }}
 					</VIcon>
@@ -59,7 +59,7 @@
 		blur: () => void;
 	}
 
-	@Component<SearchField>({
+	@Component<DocSearchField>({
 		watch: {
 			async search(search: string): Promise<void> {
 				if (!search) {
@@ -74,7 +74,7 @@
 			}
 		}
 	})
-	export default class SearchField extends Vue {
+	export default class DocSearchField extends Vue {
 		$refs!: Refs<{
 			search: SearchInput;
 		}>;
@@ -111,12 +111,12 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.search-field {
+	.doc-search-field {
 		max-width: $vd-input-medium;
-	}
 
-	.search-icon,
-	.search-icon ::v-deep svg {
-		max-width: none;
+		&-icon,
+		&-icon ::v-deep svg {
+			max-width: none;
+		}
 	}
 </style>

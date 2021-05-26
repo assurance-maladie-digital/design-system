@@ -39,7 +39,7 @@
 
 		<VSpacer />
 
-		<SearchField />
+		<DocSearchField />
 	</VAppBar>
 </template>
 
@@ -47,11 +47,11 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import SearchField from './SearchField.vue';
+	import DocSearchField from './DocSearchField.vue';
 
 	@Component({
 		components: {
-			SearchField
+			DocSearchField
 		}
 	})
 	export default class DocHeader extends Vue {}
