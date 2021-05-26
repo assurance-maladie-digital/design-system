@@ -46,6 +46,8 @@
 
 	import { customizable } from '../../mixins/customizable';
 
+	import FilterManager from './FilterManager';
+	import FilterSelector from './FilterSelector';
 	import FormField from '@cnamts/form-builder/src/components/FormField';
 
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
@@ -68,6 +70,8 @@
 
 	@Component({
 		components: {
+			FilterManager,
+			FilterSelector,
 			FormField
 		}
 	})
