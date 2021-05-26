@@ -45,6 +45,9 @@
 
 	import { slugify } from '../../functions/slugify';
 
+	const HASH_DELIMITER = '#';
+	const PATH_DELIMITER = '/';
+
 	interface Tab {
 		value: string;
 		label: string;
@@ -126,7 +129,7 @@
 			}
 
 			const hash = this.$nuxt.$route.hash;
-			const [namespace, tab] = hash.replace('#', '').split('/');
+			const [namespace, tab] = hash.replace(HASH_DELIMITER, '').split(PATH_DELIMITER);
 
 			const tabIndex = this.findTabIndex(tab);
 
@@ -135,7 +138,7 @@
 			}
 
 			if (namespace) {
-				this.$vuetify.goTo(`#${namespace}`);
+				this.$vuetify.goTo(HASH_DELIMITER + namespace);
 			}
 		}
 

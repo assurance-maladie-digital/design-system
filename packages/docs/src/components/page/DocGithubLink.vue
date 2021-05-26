@@ -8,7 +8,7 @@
 		<a
 			:href="link"
 			target="_blank"
-			rel="noopener"
+			rel="noopener noreferrer"
 			class="text-decoration-none primary--text font-weight-medium d-inline-block"
 		>
 			GitHub
@@ -31,6 +31,8 @@
 
 	import { DEFAULT_BRANCH, DEFAULT_DIR, REPO } from '../../constants';
 
+	const PATH_DELIMITER = '/';
+
 	const Props = Vue.extend({
 		props: {
 			path: {
@@ -46,6 +48,7 @@
 
 	const MixinsDeclaration = mixins(Props);
 
+	@Component
 	export default class DocGithubLink extends MixinsDeclaration {
 		openInNewIcon = mdiOpenInNew;
 
@@ -59,7 +62,7 @@
 				`content${this.path}${this.extension}`
 			];
 
-			return linkArray.filter(path => Boolean(path)).join('/');
+			return linkArray.filter(path => Boolean(path)).join(PATH_DELIMITER);
 		}
 	}
 </script>
