@@ -9,7 +9,8 @@
   - **config:** Mise à jour de la taille maximale du build ([#1123](https://github.com/assurance-maladie-digital/design-system/pull/1123)) ([ea78c19](https://github.com/assurance-maladie-digital/design-system/commit/ea78c197d8fc026c648c5e46e828e2da19f12c8e))
 
 - ⬆️ **Dépendances**
-  - **core-js:** Mise à jour vers la `v3.13.0` ([#1124](https://github.com/assurance-maladie-digital/design-system/pull/1124))
+  - **core-js:** Mise à jour vers la `v3.13.0` ([#1124](https://github.com/assurance-maladie-digital/design-system/pull/1124)) ([7f76d41](https://github.com/assurance-maladie-digital/design-system/commit/7f76d418c16a8074f03b8cd5cb892807c966c831))
+  - **vuetify:** Mise à jour vers la `v2.5.1` ([#1126](https://github.com/assurance-maladie-digital/design-system/pull/1126))
 
 ## v2.0.0-beta.10
 
