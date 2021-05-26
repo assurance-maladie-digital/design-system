@@ -12,6 +12,7 @@
 				class="text-decoration-none body-1"
 			>
 				<span
+					aria-hidden="true"
 					class="text-h6"
 					v-html="arrows.prev"
 				/>
@@ -29,6 +30,7 @@
 				<span v-text="next.title" />
 
 				<span
+					aria-hidden="true"
 					class="text-h6"
 					v-html="arrows.next"
 				/>
