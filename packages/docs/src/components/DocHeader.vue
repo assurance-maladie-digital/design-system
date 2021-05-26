@@ -8,7 +8,7 @@
 		class="doc-header flex-grow-0"
 	>
 		<VAppBarNavIcon
-			aria-label="Afficher/masquer le menu"
+			aria-label="Afficher ou masquer le menu"
 			class="ml-2 ml-sm-3 hidden-lg-and-up"
 			@click="$emit('drawer-action')"
 		/>
@@ -18,7 +18,7 @@
 			nuxt
 			exact
 			aria-label="Accueil"
-			class="doc-logo px-2"
+			class="doc-header-logo px-2"
 		>
 			<img
 				src="~/assets/logo-am-no-text.svg"
@@ -62,12 +62,12 @@
 		padding: 0;
 	}
 
-	.doc-logo,
+	.doc-header-logo,
 	.doc-header-title {
 		height: 100%;
 	}
 
-	.doc-logo {
+	.doc-header-logo {
 		min-width: 172px;
 		display: flex;
 		align-items: center;
@@ -83,7 +83,7 @@
 
 	@media only screen and (max-width: 425px) {
 		.spacer,
-		.doc-logo {
+		.doc-header-logo {
 			display: none !important;
 		}
 	}
