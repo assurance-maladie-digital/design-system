@@ -3,9 +3,9 @@
 exports[`FilterModule renders correctly 1`] = `
 <div class="vd-filter-module">
   <!---->
-  <filterselector filters=""></filterselector>
-  <dialogbox width="400px">
-    <formfield-stub></formfield-stub>
-  </dialogbox>
+  <filterselector-stub filters=""></filterselector-stub>
+  <div role="dialog" class="v-dialog__container vd-dialog-box">
+    <!---->
+  </div>
 </div>
 `;
