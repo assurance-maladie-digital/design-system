@@ -99,7 +99,7 @@
 
 	import { mdiGithub } from '@mdi/js';
 
-	import { STATE_ENUM } from '../types/enums/StateEnum';
+	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 	import { formatReleaseDate } from '../functions/formatReleaseDate';
 	import { getLatestRelease } from '../services/github/api';
