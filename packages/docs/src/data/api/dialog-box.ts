@@ -54,7 +54,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'default',
-				description: 'Slot pour afficher du contenu entre le titre et les boutons d\'actions.'
+				description: 'Slot pour afficher du contenu entre le titre et les boutons d’actions.'
 			},
 			{
 				name: 'title',
@@ -62,7 +62,7 @@ export const api: Api = {
 			},
 			{
 				name: 'actions',
-				description: 'Slot pour remplacer les boutons d\'actions par défaut.'
+				description: 'Slot pour remplacer les boutons d’actions par défaut.'
 			}
 		],
 		events: [
@@ -73,12 +73,12 @@ export const api: Api = {
 			},
 			{
 				name: 'cancel',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Annuler*.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Annuler*.',
 				value: undefined
 			},
 			{
 				name: 'confirm',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Valider*.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Valider*.',
 				value: undefined
 			}
 		]

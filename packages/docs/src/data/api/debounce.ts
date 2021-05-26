@@ -14,7 +14,7 @@ export const api: Api = {
 			{
 				name: 'time',
 				type: 'number',
-				description: 'Nombre de millisecondes à attendre avant d\'appeler la fonction `value` ou d\'émettre un événement.<br>Par défaut, la durée est de *500ms*.',
+				description: 'Nombre de millisecondes à attendre avant d’appeler la fonction `value` ou d’émettre un événement.<br>Par défaut, la durée est de *500ms*.',
 				snippet: '<input v-debounce.1000>'
 			}
 		]

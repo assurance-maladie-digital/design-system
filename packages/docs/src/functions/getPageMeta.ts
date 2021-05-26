@@ -1,7 +1,7 @@
 import { MetaInfo } from 'vue-meta';
 
 const DEFAULT_TITLE = 'Design System Digital';
-const DEFAULT_DESCRIPTION = 'Un Design System pour l\'Assurance Maladie.';
+const DEFAULT_DESCRIPTION = 'Un Design System pour l’Assurance Maladie.';
 
 export function getPageMeta(title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION): MetaInfo {
 	return {

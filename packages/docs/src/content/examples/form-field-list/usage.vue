@@ -31,7 +31,7 @@
 				type: 'date',
 				value: null,
 				fieldOptions: {
-					label: 'Date de début de l\'arrêt',
+					label: 'Date de début de l’arrêt',
 					outlined: true
 				}
 			}

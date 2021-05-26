@@ -27,7 +27,7 @@
 				type: 'date',
 				value: null,
 				fieldOptions: {
-					label: 'Date d\'apparition',
+					label: 'Date d’apparition',
 					outlined: true
 				}
 			}

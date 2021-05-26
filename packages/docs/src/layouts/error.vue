@@ -59,7 +59,7 @@
 	})
 	export default class Error extends MixinsDeclaration {
 		drawer = null;
-		message = 'Il semblerait qu\'il y ait eu une erreur !';
+		message = 'Il semblerait qu’il y ait eu une erreur !';
 
 		get code(): string | undefined {
 			return this.error.statusCode?.toString();

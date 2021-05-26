@@ -16,13 +16,13 @@ export const api: Api = {
 				name: 'hide-down-arrow',
 				type: 'boolean',
 				default: false,
-				description: 'Masque la flèche vers le bas à l\'intérieur du bouton.'
+				description: 'Masque la flèche vers le bas à l’intérieur du bouton.'
 			},
 			{
 				name: 'label',
 				type: 'string',
 				default: `'Choix de la langue. Actuellement'`,
-				description: 'Le label du bouton pour les lecteurs d\'écran.'
+				description: 'Le label du bouton pour les lecteurs d’écran.'
 			},
 			{
 				name: 'value',

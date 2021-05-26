@@ -51,7 +51,7 @@ export const api: Api = {
 				name: 'placeholder',
 				type: 'string',
 				default: `'…'`,
-				description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
+				description: 'Le texte à afficher lorsqu’il n’y a pas de valeur.'
 			},
 			{
 				name: 'loading',
@@ -63,7 +63,7 @@ export const api: Api = {
 				name: 'items-number-loading',
 				type: 'number',
 				default: 1,
-				description: 'Le nombre d\'items à afficher en mode chargement.'
+				description: 'Le nombre d’items à afficher en mode chargement.'
 			},
 			{
 				name: 'heading-loading',
@@ -88,7 +88,7 @@ export const api: Api = {
 		events: [
 			{
 				name: 'click:item-action',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action d\'un item.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton d’action d’un item.',
 				value: 'itemIndex: number'
 			}
 		]
@@ -120,7 +120,7 @@ export const api: Api = {
 				name: 'placeholder',
 				type: 'string',
 				default: `'…'`,
-				description: 'Le texte à afficher lorsqu\'il n\'y a pas de valeur.'
+				description: 'Le texte à afficher lorsqu’il n’y a pas de valeur.'
 			},
 			{
 				name: 'chip',
@@ -132,7 +132,7 @@ export const api: Api = {
 				name: 'icon',
 				type: 'string',
 				default: 'undefined',
-				description: 'Le nom de l\'icône à afficher.'
+				description: 'Le nom de l’icône à afficher.'
 			},
 			{
 				name: 'render-html-value',
@@ -156,24 +156,24 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'icon',
-				description: 'Slot pour remplacer l\'icône.'
+				description: 'Slot pour remplacer l’icône.'
 			},
 			{
 				name: 'value',
-				description: 'Slot pour remplacer le contenu de l\'item.',
+				description: 'Slot pour remplacer le contenu de l’item.',
 				props: {
 					itemValue: 'string | number'
 				}
 			},
 			{
 				name: 'action',
-				description: 'Slot pour remplacer le contenu de l\'action.'
+				description: 'Slot pour remplacer le contenu de l’action.'
 			}
 		],
 		events: [
 			{
 				name: 'click:action',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton d\'action.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton d’action.',
 				value: undefined
 			}
 		]
@@ -184,7 +184,7 @@ export const api: Api = {
 				name: 'itemsNumber',
 				type: 'number',
 				default: 1,
-				description: 'Le nombre d\'items à afficher en mode chargement.'
+				description: 'Le nombre d’items à afficher en mode chargement.'
 			},
 			{
 				name: 'heading',

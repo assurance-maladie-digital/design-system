@@ -78,7 +78,7 @@ export const api: Api = {
 			},
 			{
 				name: 'click',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Ajouter*.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Ajouter*.',
 				value: undefined
 			}
 		]

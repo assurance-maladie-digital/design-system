@@ -50,9 +50,9 @@
 		};
 
 		errorsText: ErrorCodesType = {
-			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
+			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu’un seul fichier.',
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop volumineux.',
-			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier sélectionné n\'est pas autorisée.'
+			FILE_EXTENSION_NOT_ALLOWED: 'L’extension du fichier sélectionné n’est pas autorisée.'
 		};
 
 		showError(error: ErrorEvent): void {

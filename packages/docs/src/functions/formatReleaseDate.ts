@@ -5,7 +5,7 @@ export function formatReleaseDate(date: string): string {
 	const days = dayjs().diff(lastPublished, 'day');
 
 	if (days === 0) {
-		return 'aujourd\'hui';
+		return 'aujourd’hui';
 	}
 
 	if (days === 1) {

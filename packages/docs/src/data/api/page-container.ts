@@ -14,7 +14,7 @@ export const api: Api = {
 				name: 'spacing',
 				type: 'string',
 				default: 'undefined',
-				description: 'L\'espacement externe du conteneur.<br>Par défaut :\n- `40px` verticalement\n- `32px` horizontalement, `16px` en `sm` et `0` en `xs`.'
+				description: 'L’espacement externe du conteneur.<br>Par défaut :\n- `40px` verticalement\n- `32px` horizontalement, `16px` en `sm` et `0` en `xs`.'
 			},
 			{
 				name: 'color',

@@ -144,7 +144,7 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/nouveau-composant'
 			},
 			{
-				title: 'Validation d\'un formulaire',
+				title: 'Validation d’un formulaire',
 				to: '/guides/validation-formulaire'
 			},
 			{

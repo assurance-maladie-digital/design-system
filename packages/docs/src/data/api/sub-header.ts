@@ -91,7 +91,7 @@ export const api: Api = {
 		events: [
 			{
 				name: 'click:list-item',
-				description: 'Événement émis lorsque l\'utilisateur clique sur un bouton d\'une liste.',
+				description: 'Événement émis lorsque l’utilisateur clique sur un bouton d’une liste.',
 				value: `{
 	dataListIndex: number,
 	itemIndex: number
@@ -99,7 +99,7 @@ export const api: Api = {
 			},
 			{
 				name: 'back',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Retour*.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Retour*.',
 				value: undefined
 			}
 		]

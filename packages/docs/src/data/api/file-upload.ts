@@ -24,7 +24,7 @@ export const api: Api = {
 				name: 'no-ripple',
 				type: 'boolean',
 				default: false,
-				description: 'Désactive l\'ondulation.'
+				description: 'Désactive l’ondulation.'
 			},
 			{
 				name: 'disabled',
@@ -36,7 +36,7 @@ export const api: Api = {
 				name: 'file-size-max',
 				type: 'number',
 				default: '10_485_760',
-				description: 'Taille maximale d\'un fichier en octets.<br>Par défaut, 10 MB.'
+				description: 'Taille maximale d’un fichier en octets.<br>Par défaut, 10 MB.'
 			},
 			{
 				name: 'file-size-units',
@@ -54,7 +54,7 @@ export const api: Api = {
 				name: 'accept',
 				type: 'string',
 				default: 'undefined',
-				description: 'L\'attribut natif `accept`.<br>Par défaut, la valeur sera calculée à partir de la prop `allowed-extensions`.'
+				description: 'L’attribut natif `accept`.<br>Par défaut, la valeur sera calculée à partir de la prop `allowed-extensions`.'
 			},
 			...widthable
 		],
@@ -65,11 +65,11 @@ export const api: Api = {
 			},
 			{
 				name: 'icon',
-				description: 'Slot pour remplacer l\'icône par défaut.'
+				description: 'Slot pour remplacer l’icône par défaut.'
 			},
 			{
 				name: 'action-text',
-				description: 'Slot pour remplacer le texte d\'action.'
+				description: 'Slot pour remplacer le texte d’action.'
 			},
 			{
 				name: 'or',
@@ -77,7 +77,7 @@ export const api: Api = {
 			},
 			{
 				name: 'button-text',
-				description: 'Slot pour remplacer le label du bouton d\'action.'
+				description: 'Slot pour remplacer le label du bouton d’action.'
 			},
 			{
 				name: 'info-text',
@@ -92,7 +92,7 @@ export const api: Api = {
 			},
 			{
 				name: 'error',
-				description: 'Événement émis lorsque lorsqu\'il y a une erreur de validation.',
+				description: 'Événement émis lorsque lorsqu’il y a une erreur de validation.',
 				value: `{
 	file: File,
 	code: ErrorCodes

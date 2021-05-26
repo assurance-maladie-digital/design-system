@@ -47,7 +47,7 @@
 			},
 			{
 				id: 'idCard',
-				title: 'Carte d\'identité recto / verso'
+				title: 'Carte d’identité recto / verso'
 			}
 		];
 
@@ -62,9 +62,9 @@
 		};
 
 		errorsText: ErrorCodesType = {
-			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu\'un seul fichier.',
+			MULTIPLE_FILES_SELECTED: 'Vous ne pouvez sélectionner qu’un seul fichier.',
 			FILE_TOO_LARGE: 'Le fichier sélectionné est trop lourd.',
-			FILE_EXTENSION_NOT_ALLOWED: 'L\'extension du fichier n\'est pas autorisée.'
+			FILE_EXTENSION_NOT_ALLOWED: 'L’extension du fichier n’est pas autorisée.'
 		};
 
 		showError(error: ErrorEvent): void {

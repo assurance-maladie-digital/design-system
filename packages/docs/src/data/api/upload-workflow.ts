@@ -9,7 +9,7 @@ export const api: Api = {
 				name: 'value',
 				type: 'FileListItem[]',
 				required: true,
-				description: 'La liste des fichiers que l\'utilisateur doit sélectionner.',
+				description: 'La liste des fichiers que l’utilisateur doit sélectionner.',
 				example: `{
 	id: string;
 	title: string;
@@ -65,7 +65,7 @@ export const api: Api = {
 			},
 			{
 				name: 'view-file',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
 				value: 'FileItem'
 			}
 		]
@@ -124,17 +124,17 @@ export const api: Api = {
 		events: [
 			{
 				name: 'retry',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Réessayer*, retourne l\'id du fichier sélectionné.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Réessayer*, retourne l’id du fichier sélectionné.',
 				value: 'string'
 			},
 			{
 				name: 'delete-file',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Supprimer*, retourne l\'id du fichier sélectionné.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Supprimer*, retourne l’id du fichier sélectionné.',
 				value: 'string'
 			},
 			{
 				name: 'view-file',
-				description: 'Événement émis lorsque l\'utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
 				value: 'FileItem'
 			}
 		]

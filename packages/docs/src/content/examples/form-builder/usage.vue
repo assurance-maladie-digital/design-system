@@ -46,7 +46,7 @@
 					symptoms: {
 						type: 'textarea',
 						title: 'Vos symptômes',
-						description: 'Décrivez les symptômes qui vous affectent et leur ordre d\'apparition.',
+						description: 'Décrivez les symptômes qui vous affectent et leur ordre d’apparition.',
 						value: null,
 						fieldOptions: {
 							label: 'Décrivez vos symptômes',
@@ -56,9 +56,9 @@
 					symptomsDate: {
 						type: 'date',
 						value: null,
-						description: 'Date d\'apparition des symptômes',
+						description: 'Date d’apparition des symptômes',
 						fieldOptions: {
-							label: 'Date d\'apparition',
+							label: 'Date d’apparition',
 							outlined: true
 						}
 					}

@@ -25,7 +25,7 @@ export const api: Api = {
 				name: 'no-prepend-icon',
 				type: 'boolean',
 				default: false,
-				description: 'Supprime l\'icône avant le `VTextField`.'
+				description: 'Supprime l’icône avant le `VTextField`.'
 			},
 			{
 				name: 'append-icon',
@@ -64,7 +64,7 @@ export const api: Api = {
 				name: 'warning-rules',
 				type: 'ValidationRule[]',
 				default: '[]',
-				description: 'Les règles d\'alertes, qui ne bloquent pas la validation.'
+				description: 'Les règles d’alertes, qui ne bloquent pas la validation.'
 			},
 			{
 				name: 'date-format',
@@ -91,13 +91,13 @@ export const api: Api = {
 				name: 'birthdate',
 				type: 'boolean',
 				default: false,
-				description: 'Simplifie la sélection d\'une date de naissance en choisissant l\'année, le mois puis le jour.'
+				description: 'Simplifie la sélection d’une date de naissance en choisissant l’année, le mois puis le jour.'
 			},
 			{
 				name: 'picker-date',
 				type: 'string',
 				default: 'undefined',
-				description: 'Le mois / l\'année affiché, à utiliser avec le modificateur `.sync`.<br>En mode date de naissance, l\'année sélectionnée sera `1990` par défaut.'
+				description: 'Le mois / l’année affiché, à utiliser avec le modificateur `.sync`.<br>En mode date de naissance, l’année sélectionnée sera `1990` par défaut.'
 			},
 			{
 				name: 'error',
@@ -137,7 +137,7 @@ export const api: Api = {
 			},
 			{
 				name: 'input',
-				description: 'Événement émis dès que l\'utilisateur écrit dans le champ.',
+				description: 'Événement émis dès que l’utilisateur écrit dans le champ.',
 				value: 'string'
 			}
 		]

@@ -15,7 +15,7 @@ export const api: Api = {
 			{
 				name: 'label',
 				type: 'string',
-				description: 'Le label accessible du bouton. Cette prop est nécessaire pour rendre le bouton accessible aux lecteurs d\'écrans, n\'hésitez pas à décrire ce que va copier le bouton.',
+				description: 'Le label accessible du bouton. Cette prop est nécessaire pour rendre le bouton accessible aux lecteurs d’écrans, n’hésitez pas à décrire ce que va copier le bouton.',
 				required: true
 			},
 			{
@@ -27,7 +27,7 @@ export const api: Api = {
 			{
 				name: 'tooltip-duration',
 				type: 'number',
-				description: 'La durée d\'affichage du tooltip en millisecondes.',
+				description: 'La durée d’affichage du tooltip en millisecondes.',
 				default: 2500
 			},
 			{
@@ -45,7 +45,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'icon',
-				description: 'Slot pour remplacer l\'icône par défaut.'
+				description: 'Slot pour remplacer l’icône par défaut.'
 			},
 			{
 				name: 'tooltip',

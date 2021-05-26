@@ -20,7 +20,7 @@ export default {
 			{
 				hid: 'description',
 				name: 'description',
-				content: 'Un Design System pour l\'Assurance Maladie'
+				content: 'Un Design System pour l’Assurance Maladie'
 			}
 		],
 		link: [

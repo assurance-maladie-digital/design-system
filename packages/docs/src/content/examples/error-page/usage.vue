@@ -18,7 +18,7 @@
 	export default class ErrorPageUsage extends Vue {
 		defaultProps = {
 			pageTitle: 'Page non trouvée',
-			message: 'Il semblerait qu\'il y ait eu une erreur !'
+			message: 'Il semblerait qu’il y ait eu une erreur !'
 		};
 
 		options = {

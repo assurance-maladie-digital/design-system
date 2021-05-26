@@ -50,7 +50,7 @@
 			},
 			{
 				id: 'idCard',
-				title: 'Carte d\'identité recto / verso'
+				title: 'Carte d’identité recto / verso'
 			},
 			{
 				id: 'passport',
