@@ -236,6 +236,8 @@
 </script>
 
 <style lang="scss" scoped>
+	$treeview-width: 256px;
+
 	.content {
 		position: relative;
 	}
@@ -257,7 +259,7 @@
 
 	@media (min-width: 600px) {
 		.v-treeview {
-		flex: 0 0 256px;
+			flex: 0 0 $treeview-width;
 		}
 	}
 </style>
