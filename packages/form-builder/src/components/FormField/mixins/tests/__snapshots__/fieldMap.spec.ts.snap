@@ -6,6 +6,7 @@ Object {
   "number": "NumberField",
   "password": "PasswordField",
   "period": "PeriodField",
+  "range": "RangeField",
   "select": "ChoiceField",
   "text": "TextField",
   "textarea": "TextareaField",

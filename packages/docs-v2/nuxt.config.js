@@ -70,7 +70,15 @@ export default {
 		transpile: [
 			'@cnamts/vue-dot',
 			'@cnamts/form-builder'
-		]
+		],
+		// Fix https://github.com/nuxt/nuxt.js/issues/9224
+		babel: {
+			plugins: [
+				['@babel/plugin-proposal-private-methods', {
+					loose: true
+				}]
+			]
+		}
 	},
 	modules: [
 		'@nuxt/content'
