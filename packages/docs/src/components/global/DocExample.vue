@@ -5,7 +5,7 @@
 		rounded
 	>
 		<VLazy
-			min-height="52"
+			min-height="52px"
 			@mouseenter="importTemplate"
 		>
 			<div class="text-right pa-2">
