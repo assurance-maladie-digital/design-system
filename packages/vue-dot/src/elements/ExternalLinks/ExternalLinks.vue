@@ -1,5 +1,5 @@
 <template>
-	<div class="external-link">
+	<div class="external-links">
 		<VBtn
 			v-show="!drawer"
 			ref="menuBtn"
