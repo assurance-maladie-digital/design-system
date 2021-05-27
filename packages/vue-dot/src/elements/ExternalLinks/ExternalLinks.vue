@@ -150,8 +150,8 @@
             return locales.noDatas;
         }
 
-		mounted():void {
-          this.positionTop =this.getDistanceFromTop();
+		mounted(): void {
+			this.positionTop = this.getDistanceFromTop();
 		}
 
 		/** Get distance between the button and windows top */
