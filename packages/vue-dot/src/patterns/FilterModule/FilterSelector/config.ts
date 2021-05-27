@@ -1,9 +1,10 @@
 export const config = {
     icon: {
-		color: 'white',
+		color: 'primary',
 		class: 'mr-2'
 	},
 	btn: {
-		color: 'secondary'
+		color: 'primary',
+		text: true
 	}
 };
