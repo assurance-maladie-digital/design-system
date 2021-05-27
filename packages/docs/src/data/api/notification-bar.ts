@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { customizable } from './mixins/customizable';
+
 export const api: Api = {
 	NotificationBar: {
 		props: [
@@ -9,17 +11,11 @@ export const api: Api = {
 				default: `'Fermer'`,
 				description: 'Le texte du bouton *Fermer*.'
 			},
-			{
-				name: 'vuetify-options',
-				type: 'Options',
-				default: 'undefined',
-				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `{
+			...customizable(`{
 	snackBar: 'VSnackbar',
 	icon: 'VIcon',
 	btn: 'VBtn'
-}`
-			}
+}`)
 		]
 	}
 };

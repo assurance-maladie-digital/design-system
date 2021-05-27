@@ -2,7 +2,7 @@ Le fichier `tsconfig.js` contient la configuration du compilateur de [TypeScript
 
 <doc-alert type="warning">
 
-Il n'est pas recommandé d'éditer ce fichier, hormis la section `types`.
+Il n’est pas recommandé d’éditer ce fichier, hormis la section `types`.
 
 </doc-alert>
 
@@ -25,7 +25,7 @@ Ce bloc permet de définir la liste des packages fournissant des définitions de
 
 <doc-alert type="info">
 
-Si vous utilisez des dépendances et que celles-ci ont une définition de types inclue dans [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped), vous pouvez l'ajouter dans ce bloc.
+Si vous utilisez des dépendances et que celles-ci ont une définition de types incluse dans [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped), vous pouvez l’ajouter dans ce bloc.
 
 </doc-alert>
 
@@ -47,6 +47,6 @@ Si vous utilisez des dépendances et que celles-ci ont une définition de types 
 
 Ce bloc permet de définir des alias pour certains chemins. Vous pouvez utiliser ces alias dans votre code afin de le rendre plus lisible.
 
-## Plus d'informations
+## Plus d’informations
 
-Vous pouvez retrouver plus d'informations sur la documentation de [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+Vous pouvez retrouver plus d’informations sur la documentation de [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).

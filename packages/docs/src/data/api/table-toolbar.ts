@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { customizable } from './mixins/customizable';
+
 export const api: Api = {
 	TableToolbar: {
 		props: [
@@ -51,18 +53,12 @@ export const api: Api = {
 				default: false,
 				description: 'Désactive les éléments interactifs.'
 			},
-			{
-				name: 'vuetify-options',
-				type: 'Options',
-				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				default: 'undefined',
-				example: `{
+			...customizable(`{
 	toolbar: 'VToolbar',
 	textField: 'VTextField',
 	addBtn: 'VBtn',
 	addIcon: 'VIcon'
-}`
-			}
+}`)
 		],
 		slots: [
 			{

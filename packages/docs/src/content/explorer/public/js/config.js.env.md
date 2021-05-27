@@ -1,4 +1,4 @@
-Le fichier `config.js` contient les variables d'environnement utilisées pour le déploiement sur la plateforme.
+Le fichier `config.js` contient les variables d’environnement utilisées pour le déploiement sur la plateforme.
 
 ## Syntaxe
 
@@ -8,4 +8,4 @@ La syntaxe de ce fichier est différente de celle des fichiers `config.js` et `c
 window.VUE_APP_ENV = '{{ VUE_APP_ENV }}';
 ```
 
-Celles-ci seront ajoutées automatiquement lors du déploiement en remplaçant la partie `{{ VUE_APP_ENV }}` par la valeur définie dans les variables d'environnement sur la plateforme.
+Celles-ci seront ajoutées automatiquement lors du déploiement en remplaçant la partie `{{ VUE_APP_ENV }}` par la valeur définie dans les variables d’environnement sur la plateforme.

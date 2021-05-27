@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { customizable } from './mixins/customizable';
+
 export const api: Api = {
 	LangBtn: {
 		props: [
@@ -10,7 +12,7 @@ export const api: Api = {
 					'AllLanguagesChar'
 				],
 				default: `['fr', 'en']`,
-				description: 'Liste des langues disponibles au format *ISO 639-1*.<br>Utilisez `*` pour afficher toutes les possibilités.'
+				description: 'Liste des langues disponibles au format *ISO 639-1*.<br>Utilisez le caractère `*` pour afficher toutes les possibilités.'
 			},
 			{
 				name: 'hide-down-arrow',
@@ -30,20 +32,14 @@ export const api: Api = {
 				default: `'fr'`,
 				description: 'La langue sélectionnée.'
 			},
-			{
-				name: 'vuetify-options',
-				type: 'Options',
-				default: 'undefined',
-				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `{
-	menu: 'VMenu',
-	btn: 'VBtn',
-	icon: 'VIcon',
-	list: 'VList',
-	listItem: 'VListItem',
-	listItemTitle: 'VListItemTitle'
-}`
-			}
+			...customizable(`{
+				menu: 'VMenu',
+				btn: 'VBtn',
+				icon: 'VIcon',
+				list: 'VList',
+				listItem: 'VListItem',
+				listItemTitle: 'VListItemTitle'
+}`)
 		],
 		events: [
 			{

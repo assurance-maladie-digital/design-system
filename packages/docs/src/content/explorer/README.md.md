@@ -2,8 +2,8 @@ Le fichier `README.md` contient des informations sur le projet comme sa descript
 
 ## Contenu par défaut
 
-Par défaut, il contient des informations sur les commandes à exécuter pour lancer le serveur de développement, les tests, la vérification de la qualité et la compilation de l'application.
+Par défaut, il contient des informations sur les commandes à exécuter pour lancer le serveur de développement, les tests, la vérification de la qualité ainsi que la compilation de l’application.
 
-## Plus d'informations
+## Plus d’informations
 
-Vous pouvez retrouver plus d'informations sur la [documentation de Github](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes).
+Vous pouvez retrouver plus d’informations sur la [documentation de Github](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes).

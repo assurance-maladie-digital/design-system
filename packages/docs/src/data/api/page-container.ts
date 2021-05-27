@@ -20,7 +20,7 @@ export const api: Api = {
 				name: 'color',
 				type: 'string',
 				default: `'transparent'`,
-				description: 'La couleur du composant.'
+				description: 'La couleur de fond du composant.'
 			}
 		],
 		slots: [

@@ -75,7 +75,7 @@ export const api: Api = {
 				name: 'render-html-value',
 				default: false,
 				type: 'boolean',
-				description: 'Utilise `v-html` pour afficher les valeurs.'
+				description: 'Utilise la directive `v-html` pour afficher les valeurs.'
 			},
 			...widthable
 		],
@@ -138,7 +138,7 @@ export const api: Api = {
 				name: 'render-html-value',
 				type: 'boolean',
 				default: false,
-				description: 'Utilise `v-html` pour afficher les valeurs.'
+				description: 'Utilise la directive `v-html` pour afficher les valeurs.'
 			},
 			{
 				name: 'vuetify-options',

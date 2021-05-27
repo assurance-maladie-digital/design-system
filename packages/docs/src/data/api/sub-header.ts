@@ -1,6 +1,7 @@
 import { Api } from '~/types';
 
 import { widthable } from './mixins/widthable';
+import { customizable } from './mixins/customizable';
 
 export const api: Api = {
 	SubHeader: {
@@ -45,7 +46,7 @@ export const api: Api = {
 				name: 'render-html-value',
 				type: 'boolean',
 				default: false,
-				description: 'Utilise `v-html` pour afficher les valeurs dans les `DataList`.'
+				description: 'Utilise la directive `v-html` pour afficher les valeurs dans les `DataList`.'
 			},
 			{
 				name: 'loading',
@@ -54,17 +55,11 @@ export const api: Api = {
 				description: 'Affiche le composant en mode chargement.'
 			},
 			...widthable,
-			{
-				name: 'vuetify-options',
-				type: 'Options',
-				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				default: 'undefined',
-				example: `{
+			...customizable(`{
 	backBtn: 'VBtn',
 	contentLayout: 'VLayout',
 	dataListsLayout: 'VLayout'
-}`
-			}
+}`)
 		],
 		slots: [
 			{

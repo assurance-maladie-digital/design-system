@@ -11,9 +11,9 @@ description: Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilis
 
 ## Exemples
 
-### Évènements
+### Événements
 
-Vous pouvez réagir lorsque la liste des fichiers est mise à jour en utilisant l'évènement `change`, et réagir aux erreurs de validation en utilisant l'événement `error`.
+Vous pouvez réagir lorsque la liste des fichiers est mise à jour en utilisant l'événement `change`, et réagir aux erreurs de validation en utilisant l'événement `error`.
 
 <doc-example file="upload-workflow/events"></doc-example>
 

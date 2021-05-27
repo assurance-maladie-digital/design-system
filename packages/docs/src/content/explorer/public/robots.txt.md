@@ -1,7 +1,7 @@
-Le fichier `robots.txt` contient les règles d'exclusion des robots qui indexent les sites internet.
+Le fichier `robots.txt` contient les règles d’exclusion des robots qui indexent les sites internet.
 
 <doc-alert type="warning">
-Il n'est pas recommandé d'éditer ce fichier.
+Il n’est pas recommandé d’éditer ce fichier.
 </doc-alert>
 
 ## Configuration par défaut
@@ -15,6 +15,6 @@ Disallow:
 
 Cette configuration autorise les robots à indexer toutes les pages du site.
 
-## Plus d'informations
+## Plus d’informations
 
-Vous pouvez retrouver plus d'informations sur la documentation de [Google](https://developers.google.com/search/docs/advanced/robots/create-robots-txt?hl=fr).
+Vous pouvez retrouver plus d’informations sur la documentation de [Google](https://developers.google.com/search/docs/advanced/robots/create-robots-txt?hl=fr).
