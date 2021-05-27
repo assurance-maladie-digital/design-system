@@ -108,7 +108,6 @@
 			 */
 			items: {
 				type: Array as PropType<Array<ExternalLink>> ,
-				required: false,
 				default: () => []
 			},
 			/**
