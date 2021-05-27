@@ -1,12 +1,12 @@
 <template>
 	<VLazy
 		min-height="198"
-		class="w-100"
+		class="doc-usage w-100"
 	>
 		<VSheet
 			rounded
 			outlined
-			class="overflow-hidden mt-4 mb-12"
+			class="overflow-hidden mb-12"
 		>
 			<VRow no-gutters>
 				<VCol
