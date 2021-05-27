@@ -352,7 +352,6 @@
 				const isNumber = typeof value === 'number';
 				const isObject = typeof value === 'object';
 				const isFunction = typeof value === 'function';
-				console.log(value, typeof value, isFunction);
 
 				const isDynamicValue = isNumber || isObject || isFunction;
 
