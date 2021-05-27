@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExternalLinks.vue renders correctly 1`] = `
-<div class="external-link">
-  <vbtn-stub tag="button" activeclass="" type="button" class="font-weight-bold py-1 external-link-btn btn-height accent">
+<div>
+  <vbtn-stub color="accent" tag="button" activeclass="" type="button" class="external-link-btn font-weight-bold py-1 btn-height">
     <vicon-stub color="white">
       M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z
     </vicon-stub>
   </vbtn-stub>
-  <vnavigationdrawer-stub absolute="true" mobilebreakpoint="1264" floating="true" height="100%" minivariantwidth="56" src="" tag="aside" width="450" class="external-link-drawer" style="top: 0px;">
+  <vnavigationdrawer-stub absolute="true" mobilebreakpoint="1264" floating="true" height="100%" minivariantwidth="56" src="" tag="aside" width="256" class="external-link-drawer" style="top: 0px;">
     <vbtn-stub color="accent" tile="true" tag="button" activeclass="" large="true" block="true" depressed="true" type="button" class="text-none btn-height">
       Consulter les données externes.
 
@@ -17,7 +17,7 @@ exports[`ExternalLinks.vue renders correctly 1`] = `
       </vicon-stub>
     </vbtn-stub>
     <p class="mx-5 my-3">
-      Pas de donnees.
+      Pas de données.
     </p>
   </vnavigationdrawer-stub>
 </div>
