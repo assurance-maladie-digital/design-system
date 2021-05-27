@@ -1,7 +1,7 @@
 <template>
 	<VMenu offset-y>
 		<template #activator="{ on, attrs }">
-			<v-btn
+			<VBtn
 				color="secondary"
 				text
 				v-bind="attrs"
@@ -13,17 +13,17 @@
 				>
 					{{ filterIcon }}
 				</VIcon>
-				Filtres
-			</v-btn>
+
+				{{ locales.filters }}
+			</VBtn>
 		</template>
 		<VList>
 			<VListItem
 				v-for="(item, index) in filters"
 				:key="index"
+				@click="openModal(index)"
 			>
-				<VListItemTitle @click="openModal(index)">
-					{{ item.fieldOptions.modalTitle }}
-				</VListItemTitle>
+				{{ item.fieldOptions.modalTitle }}
 			</VListItem>
 		</VList>
 	</VMenu>
@@ -32,6 +32,8 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
+	import { locales } from './locales';
 
 	import { mdiFilterVariant } from '@mdi/js';
 
@@ -50,6 +52,9 @@
 
 	@Component
 	export default class FilterSelector extends MixinsDeclaration {
+		// Locales
+		locales = locales;
+
 		isOpen = false;
 
 		// Icons
@@ -60,7 +65,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-
-</style>

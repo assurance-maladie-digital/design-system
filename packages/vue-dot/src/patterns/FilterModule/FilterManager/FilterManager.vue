@@ -6,11 +6,11 @@
 				dark
 				rounded
 				v-bind="attrs"
-				class="mr-2"
-				style="text-transform:lowercase;"
+				class="mr-2 text-lowercase"
 				v-on="on"
 			>
 				{{ displayFiltersCount }}
+
 				<VIcon
 					color="white"
 					class="ml-2"
@@ -26,34 +26,32 @@
 				:key="index"
 			>
 				<VListItemTitle>
-					<div style="display: flex; align-items:center;">
-						<div style="width:300px;">
+					<div class="d-flex align-center">
+						<div class="vd-filter-manager">
 							<div class="my-2">
 								{{ item.filter.fieldOptions.modalTitle }}
 							</div>
-							<!--<div class="my-2">
-								{{ `${item.filter.form.filter.value.value.length} ${item.filter.label} ${item.filter.form.filter.value.value.length > 1 ? 'sélectionnés' : 'sélectionné'}` }}
-							</div>-->
 						</div>
-						<div
-							class="mr-2"
-							@click="editFilters(item.index)"
-						>
-							<VIcon color="black">
-								{{ editIcon }}
-							</VIcon>
-						</div>
-						<div
-							class="mr-2"
-							@click="clearFiltersRow(item.index)"
+						<VBtn
+							icon
+							@click="editFilter(item.index)"
 						>
 							<VIcon
-								color="black"
-								class=""
+								v-bind="options.icon"
+							>
+								{{ editIcon }}
+							</VIcon>
+						</VBtn>
+						<VBtn
+							icon
+							@click="clearFilter(item.index)"
+						>
+							<VIcon
+								v-bind="options.icon"
 							>
 								{{ deleteIcon }}
 							</VIcon>
-						</div>
+						</VBtn>
 					</div>
 				</VListItemTitle>
 			</VListItem>
@@ -65,9 +63,12 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiCloseCircle } from '@mdi/js';
-	import { mdiWindowClose } from '@mdi/js';
-	import { mdiPencil } from '@mdi/js';
+	import { config } from './config';
+	import { locales } from './locales';
+
+	import { customizable } from '../../../mixins/customizable';
+
+	import { mdiCloseCircle, mdiWindowClose, mdiPencil } from '@mdi/js';
 
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 	import { FilterManagerItem } from './types';
@@ -81,21 +82,24 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component
 	export default class FilterManager extends MixinsDeclaration {
+		// Locales
+		locales = locales;
+
 		// Icon
 		closeIcon = mdiCloseCircle;
 		deleteIcon = mdiWindowClose;
 		editIcon = mdiPencil;
 
-		editFilters(index: number): void {
-			this.$emit('edit-filters', index);
+		editFilter(index: number): void {
+			this.$emit('edit-filter', index);
 		}
 
-		clearFiltersRow(index: number): void {
-			this.$emit('clear-filters-row', index);
+		clearFilter(index: number): void {
+			this.$emit('clear-filter', index);
 		}
 
 		resetFilters(): void {
@@ -106,16 +110,28 @@
 			const displayedFilters: FilterManagerItem[] = [];
 			this.appliedFilters.forEach((filter, index) => {
 				let item = {
-					index: index,
-					filter: filter
+					index,
+					filter
 				};
-				filter.value ? displayedFilters.push(item) : '';
+				if(filter.value) {
+					displayedFilters.push(item);
+				}
 			});
 			return displayedFilters;
 		}
 
 		get displayFiltersCount(): string {
-			return `${this.displayFiltersRow.length} ${this.displayFiltersRow.length > 1 ? 'filtres' : 'filtre'}`;
+			return `${this.displayFiltersRow.length} ${this.displayFiltersRow.length > 1 ? locales.filters : locales.filter}`;
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd {
+		&-filter {
+			&-manager {
+				width:300px;
+			}
+		}
+	}
+</style>

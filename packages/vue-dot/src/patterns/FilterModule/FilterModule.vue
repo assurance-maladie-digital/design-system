@@ -3,8 +3,8 @@
 		<FilterManager
 			v-if="displayFiltersCount"
 			:applied-filters="appliedFilters"
-			@edit-filters="editFilters"
-			@clear-filters-row="clearFiltersRow"
+			@edit-filter="editFilter"
+			@clear-filter="clearFilter"
 			@reset-filters="resetFilters"
 		/>
 
@@ -22,6 +22,7 @@
 		>
 			<FormField
 				v-model="modalContent"
+				block
 				@change="updateSelectedFilters"
 			/>
 			<template #actions>
@@ -63,10 +64,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(
-		Props,
-		customizable(config)
-	);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component({
 		components: {
@@ -113,14 +111,14 @@
 			this.dialog = false;
 		}
 
-		clearFiltersRow(index: number): void {
+		clearFilter(index: number): void {
 			if (this.appliedFilters === null) {
 				return;
 			}
 			this.$set(this.appliedFilters[index], 'value', null);
 		}
 
-		editFilters(index: number): void {
+		editFilter(index: number): void {
 			if(this.appliedFilters === null) {
 				return;
 			}
