@@ -2,14 +2,11 @@
 	<VMenu offset-y>
 		<template #activator="{ on, attrs }">
 			<VBtn
-				color="secondary"
-				text
-				v-bind="attrs"
+				v-bind="[attrs, options.btn]"
 				v-on="on"
 			>
 				<VIcon
-					color="primary"
-					class="mr-2"
+					v-bind="options.icon"
 				>
 					{{ filterIcon }}
 				</VIcon>
@@ -33,7 +30,10 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { config } from './config';
 	import { locales } from './locales';
+
+	import { customizable } from '../../../mixins/customizable';
 
 	import { mdiFilterVariant } from '@mdi/js';
 
@@ -48,7 +48,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component
 	export default class FilterSelector extends MixinsDeclaration {

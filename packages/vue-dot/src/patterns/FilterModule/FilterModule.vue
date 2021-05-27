@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-filter-module">
+	<div class="mr-5">
 		<FilterManager
 			v-if="displayFiltersCount"
 			:applied-filters="appliedFilters"
@@ -15,20 +15,19 @@
 
 		<DialogBox
 			v-model="dialog"
-			width="400px"
+			v-bind="options.modal"
 			:title="modalTitle"
 			@cancel="dialog = false"
 			@confirm="dialog = false"
 		>
 			<FormField
 				v-model="modalContent"
-				block
+				v-bind="options.form"
 				@change="updateSelectedFilters"
 			/>
 			<template #actions>
 				<VBtn
-					color="primary"
-					dark
+					v-bind="options.validateBtn"
 					@click="applyFilter"
 				>
 					{{ locales.apply }}
@@ -87,7 +86,7 @@
 
 		modalTitle: string | null = null;
 
-		selectedFilters: Field | null = null;
+		selectedFilter: Field | null = null;
 
 		appliedFilters: Field[] | null = null;
 
@@ -103,10 +102,10 @@
 			if (this.appliedFilters === null) {
 				this.appliedFilters = deepCopy<Field[]>(this.filters);
 			}
-			if (this.filterIndex === null || this.selectedFilters === null) {
+			if (this.filterIndex === null || this.selectedFilter === null) {
 				return;
 			}
-			this.$set(this.appliedFilters, this.filterIndex,  this.selectedFilters);
+			this.$set(this.appliedFilters, this.filterIndex,  this.selectedFilter);
 			this.$emit('filter-list', this.appliedFilters);
 			this.dialog = false;
 		}
@@ -122,19 +121,15 @@
 			if(this.appliedFilters === null) {
 				return;
 			}
-			this.filterIndex = index;
-			this.modalTitle = this.appliedFilters[index].fieldOptions?.modalTitle as string;
-			this.contentType = this.appliedFilters[index].type;
-			this.modalContent = this.appliedFilters[index];
-			this.dialog = true;
+			this.openModal(index);
 		}
 
 		resetFilters(): void {
 			this.appliedFilters = null;
 		}
 
-		updateSelectedFilters(data: Field): void {
-			this.selectedFilters = data;
+		updateSelectedFilters(filter: Field): void {
+			this.selectedFilter = filter;
 		}
 
 		get displayFiltersCount(): boolean {
@@ -145,17 +140,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.vd {
-		&-filter {
-			&-module {
-				margin-right: 2rem;
-			}
-			&-action {
-				display: flex;
-				justify-content: flex-end;
-			}
-		}
-	}
-</style>

@@ -2,18 +2,13 @@
 	<VMenu offset-y>
 		<template #activator="{ on, attrs }">
 			<VBtn
-				color="secondary"
-				dark
-				rounded
-				v-bind="attrs"
-				class="mr-2 text-lowercase"
+				v-bind="[attrs, options.btn]"
 				v-on="on"
 			>
 				{{ displayFiltersCount }}
 
 				<VIcon
-					color="white"
-					class="ml-2"
+					v-bind="options.closeIcon"
 					@click="resetFilters"
 				>
 					{{ closeIcon }}
@@ -25,35 +20,35 @@
 				v-for="(item, index) in displayFiltersRow"
 				:key="index"
 			>
-				<VListItemTitle>
-					<div class="d-flex align-center">
-						<div class="vd-filter-manager">
-							<div class="my-2">
-								{{ item.filter.fieldOptions.modalTitle }}
-							</div>
+				<div class="d-flex align-center">
+					<div class="vd-filter-manager">
+						<div class="my-2">
+							{{ item.filter.fieldOptions.modalTitle }}
 						</div>
-						<VBtn
-							icon
-							@click="editFilter(item.index)"
-						>
-							<VIcon
-								v-bind="options.icon"
-							>
-								{{ editIcon }}
-							</VIcon>
-						</VBtn>
-						<VBtn
-							icon
-							@click="clearFilter(item.index)"
-						>
-							<VIcon
-								v-bind="options.icon"
-							>
-								{{ deleteIcon }}
-							</VIcon>
-						</VBtn>
 					</div>
-				</VListItemTitle>
+
+					<VBtn
+						icon
+						@click="editFilter(item.index)"
+					>
+						<VIcon
+							v-bind="options.icon"
+						>
+							{{ editIcon }}
+						</VIcon>
+					</VBtn>
+
+					<VBtn
+						icon
+						@click="clearFilter(item.index)"
+					>
+						<VIcon
+							v-bind="options.icon"
+						>
+							{{ deleteIcon }}
+						</VIcon>
+					</VBtn>
+				</div>
 			</VListItem>
 		</VList>
 	</VMenu>
