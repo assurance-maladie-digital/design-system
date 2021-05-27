@@ -121,7 +121,11 @@
 			if(this.appliedFilters === null) {
 				return;
 			}
-			this.openModal(index);
+			this.filterIndex = index;
+			this.modalTitle = this.appliedFilters[index].fieldOptions?.modalTitle as string;
+			this.contentType = this.appliedFilters[index].type;
+			this.modalContent = this.appliedFilters[index];
+			this.dialog = true;
 		}
 
 		resetFilters(): void {
