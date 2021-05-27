@@ -31,22 +31,23 @@
 	export default class VueFile extends MixinsDeclaration {
 		component: Vue | null = null;
 
-		created() {
-			this.load();
+		async created() {
+			await this.load();
 		}
 
-		async load(): Promise<this | void> {
+		async load(): Promise<void> {
 			try {
+				const file = this.file;
 				const component = await import(
 					/* webpackChunkName: "examples" */
 					/* webpackMode: "lazy-once" */
-					`../../content/examples/${this.file}.vue`
+					`../../content/examples/${file}.vue`
 				);
 
 				this.component = component.default;
 				this.$emit('loaded', component.default);
 			} catch(error) {
-				return this.$emit('error', error);
+				this.$emit('error', error);
 			}
 		}
 	}

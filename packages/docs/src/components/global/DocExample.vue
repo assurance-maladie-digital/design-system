@@ -154,13 +154,18 @@
 		}
 
 		async importTemplate(): Promise<void> {
-			const component = await import(
-				/* webpackChunkName: "examples-source" */
-				/* webpackMode: "lazy-once" */
-				`!raw-loader!../../content/examples/${this.file}.vue`
-			);
+			try {
+				const file = this.file;
+				const component = await import(
+					/* webpackChunkName: "examples-source" */
+					/* webpackMode: "lazy-once" */
+					`!raw-loader!../../content/examples/${file}.vue`
+				);
 
-			return this.boot(component.default);
+				this.boot(component.default);
+			} catch(error) {
+				this.$emit('error', error);
+			}
 		}
 
 		boot(res: string): void {
