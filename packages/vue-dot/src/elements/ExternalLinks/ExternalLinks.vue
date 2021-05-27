@@ -1,48 +1,38 @@
 <template>
-	<div class="external-links">
+	<div>
 		<VBtn
 			v-show="!drawer"
 			ref="menuBtn"
-			class="font-weight-bold py-1 external-link-btn btn-height accent"
-			:style="{top: nudgeTop?`${nudgeTop}px`: ''}"
+			v-bind="options.vBtn"
+			:style="nudgePositionTop"
 			@click="drawer = true"
 		>
-			<VIcon color="white">
+			<VIcon v-bind="options.vIcon">
 				{{ iconRightChevron }}
 			</VIcon>
 		</VBtn>
+
 		<VNavigationDrawer
 			v-model="drawer"
-			:class="{ 'fixed-on-scroll': fixed }"
-			:style="{
-				top: `${positionTop}px`
-			}"
-			class="external-link-drawer"
-			:width="width"
-			absolute
-			floating
+			v-bind="options.vNavigationDrawer"
+			:class="{ 'fixed-on-scroll': fixed, 'external-link-drawer':true}"
+			:style="posTop"
 		>
 			<VBtn
-				large
-				block
-				tile
-				depressed
-				color="red"
-				class="text-none btn-height"
+				v-bind="options.vBtnNavDrawer"
 				@click="drawer = false"
 			>
 				{{ btnText }}
 
 				<VSpacer />
 
-				<VIcon color="white">
+				<VIcon v-bind="options.vIcon">
 					{{ iconLeftChevron }}
 				</VIcon>
 			</VBtn>
 
 			<VList
 				v-if="items.length"
-				class="external-links"
 			>
 				<VListItem
 					v-for="item in items"
@@ -76,14 +66,19 @@
 
 <script lang='ts'>
 	import Vue , { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
+	import { config } from './config';
 	import { locales } from './locales';
 
-	import { ExternalLink } from './types';
+	import { customizable } from '../../mixins/customizable';
+
+	import { ExternalLink, IFieldStyleType } from './types';
 	import { Refs } from '../../types';
 
 	import { mdiChevronRight, mdiChevronLeft , mdiOpenInNew } from '@mdi/js';
+
+	import { Widthable } from '../../mixins/widthable';
 
 	const Props = Vue.extend({
 		props: {
@@ -95,25 +90,17 @@
 				default: false
 			},
 			/**
-			 * Set with of the menu drawer
-			 * default value: 45px
-			 */
-			width:{
-				type: Number,
-				default: 450
-			},
-			/**
 			 * Content of the list
 			 * Type of an ExternalLink with: text and href fields
 			 */
 			items: {
-				type: Array as PropType<Array<ExternalLink>> ,
+				type: Array as PropType<ExternalLink[]>,
 				default: () => []
 			},
 			/**
 			 * Title of the menu drawer
 			 */
-			btnText:{
+			btnText: {
 				type: String,
 				default : locales.btnText
 			},
@@ -121,15 +108,16 @@
 			 *  Set position of the button drawer
 			 */
 			nudgeTop: {
-				type: Number,
-				required: false,
+				type: String,
 				default: undefined
 			}
 		}
 	});
 
+	const MixinsDeclaration = mixins(customizable(config), Props, Widthable);
+
 	@Component
-	export default class ExternalLinks extends Props {
+	export default class ExternalLinks extends MixinsDeclaration {
         $refs!: Refs<{
 			menuBtn: Vue;
 		}>;
@@ -149,6 +137,18 @@
         get noDatas():string{
             return locales.noDatas;
         }
+        /** return the nudge position of button drawer */
+        get nudgePositionTop(): IFieldStyleType {
+			return {
+				top: this.nudgeTop?this.nudgeTop +'px':''
+			};
+		}
+        /** return the position top of the nutton drawer */
+		get posTop(): IFieldStyleType{
+			return {
+				top: this.positionTop +'px'
+			};
+		}
 
 		mounted(): void {
 			this.positionTop = this.getDistanceFromTop();
@@ -179,7 +179,8 @@
 .external-link-drawer {
   z-index: 5 ;
   left: 0;
-  max-height: 344px;
+  min-width: 320px!important;
+  max-height: 320px;
 }
 
 .external-links {

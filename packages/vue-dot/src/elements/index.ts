@@ -14,6 +14,6 @@ export const elements = {
 	DialogBox,
 	DownloadBtn,
 	HeaderLoading,
-	PageContainer,
-	ExternalLinks
+	ExternalLinks,
+	PageContainer
 };
