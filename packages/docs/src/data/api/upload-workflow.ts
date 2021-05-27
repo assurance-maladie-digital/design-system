@@ -1,6 +1,7 @@
 import { Api } from '~/types';
 
 import { widthable } from './mixins/widthable';
+import { customizable } from './mixins/customizable';
 
 export const api: Api = {
 	UploadWorkflow: {
@@ -25,19 +26,13 @@ export const api: Api = {
 				description: 'Le titre de la section.'
 			},
 			...widthable,
-			{
-				name: 'vuetify-options',
-				type: 'Options',
-				default: 'undefined',
-				description: 'Personnalisation des composants Vuetify et internes en utilisant la directive `customizable`.',
-				example: `{
+			...customizable(`{
 	fileUpload: 'FileUpload',
 	dialog: 'DialogBox',
 	form: 'VForm',
 	select: 'VSelect',
 	fileList: 'FileList'
-}`
-			}
+}`)
 		],
 		slots: [
 			{
@@ -98,12 +93,7 @@ export const api: Api = {
 				description: 'Masque la dernière ligne de séparation de la liste.'
 			},
 			...widthable,
-			{
-				name: 'vuetify-options',
-				type: 'Options',
-				default: 'undefined',
-				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
-				example: `{
+			...customizable(`{
 	list: 'VList',
 	listItem: 'VListItem',
 	listItemAvatar: 'VListItemAvatar',
@@ -118,8 +108,7 @@ export const api: Api = {
 	deleteFileBtn: 'VBtn',
 	icon: 'VIcon',
 	divider: 'VDivider'
-}`
-			}
+}`)
 		],
 		events: [
 			{
