@@ -1,8 +1,8 @@
 <template>
 	<div
-		class="doc-tabs w-100 mb-4"
 		:class="{ 'tabs-code': code }"
 		:id="id"
+		class="doc-tabs w-100 mb-4"
 	>
 		<VTabs
 			v-model="tab"

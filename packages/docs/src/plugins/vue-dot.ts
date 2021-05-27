@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 // Import dayjs locale
-// import 'dayjs/locale/fr';
+import 'dayjs/locale/fr';
 
 // Import VueDot styles
 import '@cnamts/vue-dot/dist/vue-dot.css';
