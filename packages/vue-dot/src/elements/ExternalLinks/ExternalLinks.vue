@@ -53,6 +53,7 @@
 					<VListItemContent>
 						<VListItemTitle v-text="item.text" />
 					</VListItemContent>
+
 					<VListItemIcon>
 						<VIcon>
 							<slot name="LinkIcon">
