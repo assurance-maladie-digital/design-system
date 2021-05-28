@@ -15,7 +15,6 @@ export type Customizable = ExtendedVue<Vue, unknown, unknown, {
  * Mixin that merge default options with options passed as props
  *
  * @param {object} defaultOptions The options to apply by default
- *
  * @example
  * Usage in your component:
  * mixins: [ customizable({ btn: { color: 'primary' } }) ]

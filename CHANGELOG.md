@@ -3,16 +3,29 @@
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
-  - **RangeField:** Ajout d'un nouveau champ ([#1112](https://github.com/assurance-maladie-digital/design-system/pull/1112))
+  - **RangeField:** Ajout d'un nouveau champ ([#1112](https://github.com/assurance-maladie-digital/design-system/pull/1112)) ([f21d0f5](https://github.com/assurance-maladie-digital/design-system/commit/f21d0f52e0336b0d4ca58951da4fa912cf895c6c))
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#1123](https://github.com/assurance-maladie-digital/design-system/pull/1123)) ([ea78c19](https://github.com/assurance-maladie-digital/design-system/commit/ea78c197d8fc026c648c5e46e828e2da19f12c8e))
+
+### Interne
+
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.17` ([#1099](https://github.com/assurance-maladie-digital/design-system/pull/1099)) ([1ad5f9c](https://github.com/assurance-maladie-digital/design-system/commit/1ad5f9c70b8dc6a4188a9928bbb26f41cd5ea468))
+
+- 🚨 **Lint**
+  - **global:** Correction des erreurs de lint ([#1130](https://github.com/assurance-maladie-digital/design-system/pull/1130))
+
+- ⬆️ **Dépendances**
+  - **core-js:** Mise à jour vers la `v3.13.0` ([#1124](https://github.com/assurance-maladie-digital/design-system/pull/1124)) ([7f76d41](https://github.com/assurance-maladie-digital/design-system/commit/7f76d418c16a8074f03b8cd5cb892807c966c831))
+  - **vuetify:** Mise à jour vers la `v2.5.1` ([#1126](https://github.com/assurance-maladie-digital/design-system/pull/1126)) ([17be1a7](https://github.com/assurance-maladie-digital/design-system/commit/17be1a768f757844aa5b06a2b764e024b0677ba5))
+  - **dayjs:** Mise à jour vers la `v1.10.5` ([#1127](https://github.com/assurance-maladie-digital/design-system/pull/1127)) ([2e0217c](https://github.com/assurance-maladie-digital/design-system/commit/2e0217c8a42300b01a4a08b3dc3a2e5b403e7b39))
 
 ## v2.0.0-beta.10
 
 **Version publiée le 25/05/2021.**
 
-Cette version comporte la suppression du composant `PageCard`, l'ajout de la prop `fallback-filename` sur le composant `DownloadBtn`, ansi que la correction de la copie des fichiers lors de la création d'un nouveau projet et la refonte des environnements de développement.
+Cette version comporte la suppression du composant `PageCard`, l'ajout de la prop `fallback-filename` sur le composant `DownloadBtn`, ainsi que la correction de la copie des fichiers lors de la création d'un nouveau projet et la refonte des environnements de développement.
 
 ### Vue Dot
 

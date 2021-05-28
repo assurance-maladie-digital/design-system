@@ -46,7 +46,8 @@
 	/** Choice field type slider */
 	@Component
 	export default class ChoiceSliderField extends MixinsDeclaration {
-		/** Get the index of the selected item by value
+		/**
+		 * Get the index of the selected item by value
 		 *
 		 * @param {FieldValue} value The current field value
 		 * @returns {number|null} The index of the selected item, null if not found
