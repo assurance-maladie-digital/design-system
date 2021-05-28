@@ -18,10 +18,7 @@
 			v-bind="options.dialog"
 			:title="filterTitle"
 		>
-			<FormField
-				v-model="modalContent"
-				@change="updateSelectedFilters"
-			/>
+			<FormField v-model="dialogContent" />
 
 			<template #actions>
 				<VBtn
@@ -79,9 +76,8 @@
 		dialog = false;
 
 		dialogContent: Field | null = null;
-		filterTitle: string | null = null;
 
-		selectedFilter: Field | null = null;
+		filterTitle: string | null = null;
 
 		appliedFilters: Field[] | null = null;
 
@@ -102,7 +98,7 @@
 		}
 
 		applyFilter(): void {
-			if (this.filterIndex === null || this.selectedFilter === null) {
+			if (this.filterIndex === null || this.dialogContent === null) {
 				return;
 			}
 
@@ -110,7 +106,7 @@
 				this.appliedFilters = deepCopy<Field[]>(this.filters);
 			}
 
-			this.$set(this.appliedFilters, this.filterIndex, this.selectedFilter);
+			this.$set(this.appliedFilters, this.filterIndex, this.dialogContent);
 			this.$emit('filter-list', this.appliedFilters);
 			this.dialog = false;
 		}
@@ -138,10 +134,6 @@
 
 		resetFilters(): void {
 			this.appliedFilters = null;
-		}
-
-		updateSelectedFilters(filter: Field): void {
-			this.selectedFilter = filter;
 		}
 	}
 </script>
