@@ -88,7 +88,13 @@
 		watch: {
 			'field.value': {
 				handler(value: ChoiceValue) {
-					this.choiceValue = value || this.choiceValue;
+					if (!value) {
+						this.choiceValue = {
+							value: null
+						};
+					} else {
+						this.choiceValue = value;
+					}
 
 					/**
 					 * Set the other local value if the other value is not null
@@ -109,9 +115,7 @@
 			otherFieldRef: HTMLInputElement;
 		}>;
 
-		choiceValue: ChoiceValue = {
-			value: null
-		};
+		choiceValue = {} as ChoiceValue;
 
 		otherFieldValue: OtherFieldValue = null;
 
