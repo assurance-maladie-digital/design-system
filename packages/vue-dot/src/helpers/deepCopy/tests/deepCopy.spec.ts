@@ -13,7 +13,6 @@ describe('deepCopy', () => {
 
 		copiedObj.a.b = 'test';
 
-		expect(copiedObj.a.b).toBe('test');
 		expect(objToCopy.a.b).toBe('b');
 	});
 
@@ -24,7 +23,6 @@ describe('deepCopy', () => {
 
 		copiedArray[0][0] = 'test';
 
-		expect(copiedArray[0][0]).toBe('test');
 		expect(arrayToCopy[0][0]).toBe('a');
 	});
 
@@ -41,10 +39,6 @@ describe('deepCopy', () => {
 		copiedArray[0][1] = 'test';
 		copiedArray[0][2] = 'test';
 
-		expect(copiedArray[0][0]).toBe('test');
-		expect(copiedArray[0][1]).toBe('test');
-		expect(copiedArray[0][2]).toBe('test');
-
 		expect(arrayToCopy[0][0]).toBe(false);
 		expect(arrayToCopy[0][1]).toBeNull();
 		expect(arrayToCopy[0][2]).toBe(0);
@@ -59,7 +53,6 @@ describe('deepCopy', () => {
 
 		copiedArray[0][0] = 'test';
 
-		expect(copiedArray[0][0]).toBe('test');
 		expect(arrayToCopy[0][0]).toBeUndefined();
 	});
 });
