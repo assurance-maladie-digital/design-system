@@ -1,16 +1,9 @@
 export const config = {
-	icon: {
-		color: 'grey'
-	},
-	form: {
-		block: true
-	},
-	modal: {
+	dialog: {
 		width: '380px'
 	},
 	validateBtn: {
 		class: 'mt-4',
-		color: 'primary',
-		dark: true
+		color: 'primary'
 	}
 };

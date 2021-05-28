@@ -1,7 +1,7 @@
 <template>
 	<div class="vd-filter-module">
 		<FilterManager
-			v-if="displayFiltersCount"
+			v-if="filtersCount"
 			:applied-filters="appliedFilters"
 			@edit-filter="editFilter"
 			@clear-filter="clearFilter"
@@ -10,19 +10,16 @@
 
 		<FilterSelector
 			:filters="filters"
-			@filter-selected="openModal"
+			@filter-selected="openDialog($event, filters)"
 		/>
 
 		<DialogBox
 			v-model="dialog"
-			v-bind="options.modal"
-			:title="modalTitle"
-			@cancel="dialog = false"
-			@confirm="dialog = false"
+			v-bind="options.dialog"
+			:title="filterTitle"
 		>
 			<FormField
 				v-model="modalContent"
-				v-bind="options.form"
 				@change="updateSelectedFilters"
 			/>
 
@@ -81,36 +78,36 @@
 
 		dialog = false;
 
-		modalContent: Field | null = null;
-
-		modalTitle: string | null = null;
+		dialogContent: Field | null = null;
+		filterTitle: string | null = null;
 
 		selectedFilter: Field | null = null;
 
 		appliedFilters: Field[] | null = null;
 
-		get displayFiltersCount(): boolean {
+		get filtersCount(): number {
 			if (this.appliedFilters === null) {
-				return false;
+				return 0;
 			}
 
-			return this.appliedFilters.some(item => item.value !== null);
+			return this.appliedFilters.filter(item => item.value !== null).length;
 		}
 
-		openModal(index: number): void {
+		openDialog(index: number, filters: Field[]): void {
+			const filter = filters[index];
 			this.filterIndex = index;
-			this.modalTitle = this.filters[index].fieldOptions?.modalTitle as string;
-			this.modalContent = this.filters[index];
+			this.filterTitle = filter.fieldOptions?.filterTitle as string;
+			this.dialogContent = filter;
 			this.dialog = true;
 		}
 
 		applyFilter(): void {
-			if (this.appliedFilters === null) {
-				this.appliedFilters = deepCopy<Field[]>(this.filters);
-			}
-
 			if (this.filterIndex === null || this.selectedFilter === null) {
 				return;
+			}
+
+			if (this.appliedFilters === null) {
+				this.appliedFilters = deepCopy<Field[]>(this.filters);
 			}
 
 			this.$set(this.appliedFilters, this.filterIndex, this.selectedFilter);
@@ -124,6 +121,11 @@
 			}
 
 			this.$set(this.appliedFilters[index], 'value', null);
+
+			if (this.filtersCount === 0) {
+				this.resetFilters();
+				return;
+			}
 		}
 
 		editFilter(index: number): void {
@@ -131,10 +133,7 @@
 				return;
 			}
 
-			this.filterIndex = index;
-			this.modalTitle = this.appliedFilters[index].fieldOptions?.modalTitle as string;
-			this.modalContent = this.appliedFilters[index];
-			this.dialog = true;
+			this.openDialog(index, this.appliedFilters);
 		}
 
 		resetFilters(): void {

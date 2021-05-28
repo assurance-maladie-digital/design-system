@@ -1,13 +1,14 @@
 <template>
-	<VMenu offset-y>
+	<VMenu v-bind="options.menu">
 		<template #activator="{ on, attrs }">
 			<VBtn
-				v-bind="[attrs, options.btn]"
+				v-bind="{
+					...attrs,
+					...options.btn
+				}"
 				v-on="on"
 			>
-				<VIcon
-					v-bind="options.icon"
-				>
+				<VIcon v-bind="options.icon">
 					{{ filterIcon }}
 				</VIcon>
 
@@ -15,13 +16,14 @@
 			</VBtn>
 		</template>
 
-		<VList>
+		<VList v-bind="options.list">
 			<VListItem
 				v-for="(item, index) in filters"
 				:key="index"
-				@click="openModal(index)"
+				v-bind="options.listItem"
+				@click="emitFilterSelectedEvent(index)"
 			>
-				{{ item.fieldOptions.modalTitle }}
+				{{ item.fieldOptions.filterTitle }}
 			</VListItem>
 		</VList>
 	</VMenu>
@@ -59,9 +61,7 @@
 		// Icons
 		filterIcon = mdiFilterVariant;
 
-		isOpen = false;
-
-		openModal(index: number): void {
+		emitFilterSelectedEvent(index: number): void {
 			this.$emit('filter-selected', index);
 		}
 	}

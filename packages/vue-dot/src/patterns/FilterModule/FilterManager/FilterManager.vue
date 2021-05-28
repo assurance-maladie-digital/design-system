@@ -1,11 +1,14 @@
 <template>
-	<VMenu offset-y>
+	<VMenu v-bind="options.menu">
 		<template #activator="{ on, attrs }">
 			<VBtn
-				v-bind="[attrs, options.btn]"
+				v-bind="{
+					...attrs,
+					...options.closeBtn
+				}"
 				v-on="on"
 			>
-				{{ displayFiltersCount }}
+				{{ filtersCount }}
 
 				<VIcon
 					v-bind="options.closeIcon"
@@ -16,30 +19,31 @@
 			</VBtn>
 		</template>
 
-		<VList>
+		<VList v-bind="options.list">
 			<VListItem
-				v-for="(item, index) in displayFiltersRow"
+				v-for="(item, index) in filters"
 				:key="index"
+				v-bind="options.listItem"
 			>
 				<div class="d-flex align-center">
 					<div class="vd-filter-manager my-2">
-						{{ item.filter.fieldOptions.modalTitle }}
+						{{ item.filter.fieldOptions.filterTitle }}
 					</div>
 
 					<VBtn
-						icon
+						v-bind="options.editBtn"
 						@click="editFilter(item.index)"
 					>
-						<VIcon v-bind="options.icon">
+						<VIcon v-bind="options.editIcon">
 							{{ editIcon }}
 						</VIcon>
 					</VBtn>
 
 					<VBtn
-						icon
+						v-bind="options.deleteBtn"
 						@click="clearFilter(item.index)"
 					>
-						<VIcon v-bind="options.icon">
+						<VIcon v-bind="options.deleteIcon">
 							{{ deleteIcon }}
 						</VIcon>
 					</VBtn>
@@ -84,7 +88,7 @@
 		deleteIcon = mdiWindowClose;
 		editIcon = mdiPencil;
 
-		get displayFiltersRow(): FilterManagerItem[] {
+		get filters(): FilterManagerItem[] {
 			const displayedFilters: FilterManagerItem[] = [];
 
 			this.appliedFilters.forEach((filter, index) => {
@@ -101,8 +105,10 @@
 			return displayedFilters;
 		}
 
-		get displayFiltersCount(): string {
-			return `${this.displayFiltersRow.length} ${this.displayFiltersRow.length > 1 ? locales.filters : locales.filter}`;
+		get filtersCount(): string {
+			const plural = this.filters.length > 1;
+
+			return `${this.filters.length} ${locales.filter(plural)}`;
 		}
 
 		editFilter(index: number): void {

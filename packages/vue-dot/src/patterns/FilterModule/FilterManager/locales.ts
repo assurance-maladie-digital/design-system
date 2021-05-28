@@ -1,4 +1,3 @@
 export const locales = {
-	filters: 'filtres',
-	filter: 'filtre'
+	filter: (plural: boolean): string => `filtre${plural ? 's' : ''}`
 };
