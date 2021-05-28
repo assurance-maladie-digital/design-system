@@ -3,7 +3,10 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-  - **functions:** Correction de la copie des valeurs fausses dans la fonction `deepCopy` ([#1138](https://github.com/assurance-maladie-digital/design-system/pull/1138))
+  - **functions:** Correction de la copie des valeurs fausses dans la fonction `deepCopy` ([#1138](https://github.com/assurance-maladie-digital/design-system/pull/1138)) ([832dfdd](https://github.com/assurance-maladie-digital/design-system/commit/832dfddca11e3bd533e1a6d356e49893a3386a72))
+
+- 🔧 **Configuration**
+  - **config:** Mise à jour de la taille maximale du build ([#1139](https://github.com/assurance-maladie-digital/design-system/pull/1139))
 
 ### FormBuilder
 
