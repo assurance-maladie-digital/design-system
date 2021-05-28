@@ -2,11 +2,14 @@
 
 ### Vue Dot
 
+- ✨ **Nouvelles fonctionnalités**
+  - **FilterModule:** Ajout d'un nouveau composant ([#1102](https://github.com/assurance-maladie-digital/design-system/pull/1102))
+
 - 🐛 **Corrections de bugs**
   - **functions:** Correction de la copie des valeurs fausses dans la fonction `deepCopy` ([#1138](https://github.com/assurance-maladie-digital/design-system/pull/1138)) ([832dfdd](https://github.com/assurance-maladie-digital/design-system/commit/832dfddca11e3bd533e1a6d356e49893a3386a72))
 
 - 🔧 **Configuration**
-  - **config:** Mise à jour de la taille maximale du build ([#1139](https://github.com/assurance-maladie-digital/design-system/pull/1139))
+  - **config:** Mise à jour de la taille maximale du build ([#1139](https://github.com/assurance-maladie-digital/design-system/pull/1139)) ([c9b445b](https://github.com/assurance-maladie-digital/design-system/commit/c9b445b153ea4dd896fa4d08d8615a8b22377259))
 
 ### FormBuilder
 
