@@ -1,12 +1,17 @@
 ## Non publié
 
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **functions:** Correction de la copie des valeurs fausses dans la fonction `deepCopy` ([#1138](https://github.com/assurance-maladie-digital/design-system/pull/1138))
+
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
   - **RangeField:** Ajout d'un nouveau champ ([#1112](https://github.com/assurance-maladie-digital/design-system/pull/1112)) ([f21d0f5](https://github.com/assurance-maladie-digital/design-system/commit/f21d0f52e0336b0d4ca58951da4fa912cf895c6c))
 
 - 🐛 **Corrections de bugs**
-  - **fields:** Correction de la réinitialisation de la valeur de certains champs ([#1136](https://github.com/assurance-maladie-digital/design-system/pull/1136))
+  - **fields:** Correction de la réinitialisation de la valeur de certains champs ([#1136](https://github.com/assurance-maladie-digital/design-system/pull/1136)) ([41ac4eb](https://github.com/assurance-maladie-digital/design-system/commit/41ac4ebb1f935e9b1ca14fbe7be2953cd6de07cf))
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#1123](https://github.com/assurance-maladie-digital/design-system/pull/1123)) ([ea78c19](https://github.com/assurance-maladie-digital/design-system/commit/ea78c197d8fc026c648c5e46e828e2da19f12c8e))

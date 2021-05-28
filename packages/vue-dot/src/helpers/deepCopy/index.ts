@@ -15,7 +15,7 @@ export function deepCopy<T = any>(o: UnknownValue): T {
 		copy = Object.prototype.toString.call(o) === '[object Array]' ? [] : {};
 
 		for (k in o) {
-			if (o[k]) {
+			if (o[k] !== undefined) {
 				copy[k] = deepCopy(o[k]);
 			}
 		}
