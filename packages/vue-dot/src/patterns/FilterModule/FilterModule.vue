@@ -1,5 +1,5 @@
 <template>
-	<div class="mr-5">
+	<div class="vd-filter-module">
 		<FilterManager
 			v-if="displayFiltersCount"
 			:applied-filters="appliedFilters"
@@ -25,6 +25,7 @@
 				v-bind="options.form"
 				@change="updateSelectedFilters"
 			/>
+
 			<template #actions>
 				<VBtn
 					v-bind="options.validateBtn"
@@ -44,12 +45,12 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { customizable } from '../../mixins/customizable';
-
 	import FilterManager from './FilterManager';
 	import FilterSelector from './FilterSelector';
-	import FormField from '@cnamts/form-builder/src/components/FormField';
 
+	import { customizable } from '../../mixins/customizable';
+
+	import FormField from '@cnamts/form-builder/src/components/FormField';
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	import { deepCopy } from '../../helpers/deepCopy';
@@ -80,8 +81,6 @@
 
 		dialog = false;
 
-		contentType: string | null = null;
-
 		modalContent: Field | null = null;
 
 		modalTitle: string | null = null;
@@ -90,10 +89,17 @@
 
 		appliedFilters: Field[] | null = null;
 
+		get displayFiltersCount(): boolean {
+			if (this.appliedFilters === null) {
+				return false;
+			}
+
+			return this.appliedFilters.some(item => item.value !== null);
+		}
+
 		openModal(index: number): void {
 			this.filterIndex = index;
 			this.modalTitle = this.filters[index].fieldOptions?.modalTitle as string;
-			this.contentType = this.filters[index].type;
 			this.modalContent = this.filters[index];
 			this.dialog = true;
 		}
@@ -102,10 +108,12 @@
 			if (this.appliedFilters === null) {
 				this.appliedFilters = deepCopy<Field[]>(this.filters);
 			}
+
 			if (this.filterIndex === null || this.selectedFilter === null) {
 				return;
 			}
-			this.$set(this.appliedFilters, this.filterIndex,  this.selectedFilter);
+
+			this.$set(this.appliedFilters, this.filterIndex, this.selectedFilter);
 			this.$emit('filter-list', this.appliedFilters);
 			this.dialog = false;
 		}
@@ -114,16 +122,17 @@
 			if (this.appliedFilters === null) {
 				return;
 			}
+
 			this.$set(this.appliedFilters[index], 'value', null);
 		}
 
 		editFilter(index: number): void {
-			if(this.appliedFilters === null) {
+			if (this.appliedFilters === null) {
 				return;
 			}
+
 			this.filterIndex = index;
 			this.modalTitle = this.appliedFilters[index].fieldOptions?.modalTitle as string;
-			this.contentType = this.appliedFilters[index].type;
 			this.modalContent = this.appliedFilters[index];
 			this.dialog = true;
 		}
@@ -134,13 +143,6 @@
 
 		updateSelectedFilters(filter: Field): void {
 			this.selectedFilter = filter;
-		}
-
-		get displayFiltersCount(): boolean {
-			if(this.appliedFilters === null) {
-				return false;
-			}
-			return this.appliedFilters.some(item => item.value !== null);
 		}
 	}
 </script>

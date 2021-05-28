@@ -15,25 +15,22 @@
 				</VIcon>
 			</VBtn>
 		</template>
+
 		<VList>
 			<VListItem
 				v-for="(item, index) in displayFiltersRow"
 				:key="index"
 			>
 				<div class="d-flex align-center">
-					<div class="vd-filter-manager">
-						<div class="my-2">
-							{{ item.filter.fieldOptions.modalTitle }}
-						</div>
+					<div class="vd-filter-manager my-2">
+						{{ item.filter.fieldOptions.modalTitle }}
 					</div>
 
 					<VBtn
 						icon
 						@click="editFilter(item.index)"
 					>
-						<VIcon
-							v-bind="options.icon"
-						>
+						<VIcon v-bind="options.icon">
 							{{ editIcon }}
 						</VIcon>
 					</VBtn>
@@ -42,9 +39,7 @@
 						icon
 						@click="clearFilter(item.index)"
 					>
-						<VIcon
-							v-bind="options.icon"
-						>
+						<VIcon v-bind="options.icon">
 							{{ deleteIcon }}
 						</VIcon>
 					</VBtn>
@@ -89,6 +84,27 @@
 		deleteIcon = mdiWindowClose;
 		editIcon = mdiPencil;
 
+		get displayFiltersRow(): FilterManagerItem[] {
+			const displayedFilters: FilterManagerItem[] = [];
+
+			this.appliedFilters.forEach((filter, index) => {
+				let item = {
+					index,
+					filter
+				};
+
+				if (filter.value) {
+					displayedFilters.push(item);
+				}
+			});
+
+			return displayedFilters;
+		}
+
+		get displayFiltersCount(): string {
+			return `${this.displayFiltersRow.length} ${this.displayFiltersRow.length > 1 ? locales.filters : locales.filter}`;
+		}
+
 		editFilter(index: number): void {
 			this.$emit('edit-filter', index);
 		}
@@ -100,33 +116,11 @@
 		resetFilters(): void {
 			this.$emit('reset-filters');
 		}
-
-		get displayFiltersRow(): FilterManagerItem[] {
-			const displayedFilters: FilterManagerItem[] = [];
-			this.appliedFilters.forEach((filter, index) => {
-				let item = {
-					index,
-					filter
-				};
-				if(filter.value) {
-					displayedFilters.push(item);
-				}
-			});
-			return displayedFilters;
-		}
-
-		get displayFiltersCount(): string {
-			return `${this.displayFiltersRow.length} ${this.displayFiltersRow.length > 1 ? locales.filters : locales.filter}`;
-		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd {
-		&-filter {
-			&-manager {
-				width:300px;
-			}
-		}
+	.vd-filter-manager {
+		width: 300px;
 	}
 </style>

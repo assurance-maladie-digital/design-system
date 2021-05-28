@@ -1,3 +1,3 @@
 export const locales = {
-    apply: 'Appliquer le filtre'
+	apply: 'Appliquer le filtre'
 };

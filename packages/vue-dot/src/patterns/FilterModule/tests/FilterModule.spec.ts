@@ -5,6 +5,7 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import DialogBox from '../../../elements/DialogBox';
+
 import FilterModule from '../';
 
 let wrapper: Wrapper<Vue>;

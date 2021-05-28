@@ -14,6 +14,7 @@
 				{{ locales.filters }}
 			</VBtn>
 		</template>
+
 		<VList>
 			<VListItem
 				v-for="(item, index) in filters"
@@ -55,10 +56,10 @@
 		// Locales
 		locales = locales;
 
-		isOpen = false;
-
 		// Icons
 		filterIcon = mdiFilterVariant;
+
+		isOpen = false;
 
 		openModal(index: number): void {
 			this.$emit('filter-selected', index);

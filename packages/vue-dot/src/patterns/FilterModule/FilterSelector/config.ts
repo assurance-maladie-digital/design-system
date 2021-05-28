@@ -1,5 +1,5 @@
 export const config = {
-    icon: {
+	icon: {
 		color: 'primary',
 		class: 'mr-2'
 	},

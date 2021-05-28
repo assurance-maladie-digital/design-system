@@ -1,3 +1,3 @@
 export const locales = {
-    filters: 'Filtres'
+	filters: 'Filtres'
 };

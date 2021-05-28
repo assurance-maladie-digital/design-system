@@ -1,8 +1,8 @@
 export const config = {
-    icon: {
+	icon: {
 		color: 'grey'
 	},
-    closeIcon: {
+	closeIcon: {
 		color: 'white',
 		class: 'ml-2'
 	},
@@ -10,6 +10,6 @@ export const config = {
 		color: 'secondary',
 		dark: true,
 		rounded: true,
-		class: 'mr-2 text-lowercase'
+		class: 'text-lowercase mr-2'
 	}
 };
