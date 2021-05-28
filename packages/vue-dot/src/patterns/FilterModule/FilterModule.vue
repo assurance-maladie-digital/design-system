@@ -71,14 +71,12 @@
 		// Locales
 		locales = locales;
 
-		filterIndex: number | null = null;
-
 		dialog = false;
 
-		dialogContent: Field | null = null;
-
+		filterIndex: number | null = null;
 		filterTitle: string | null = null;
 
+		dialogContent: Field | null = null;
 		appliedFilters: Field[] | null = null;
 
 		get filtersCount(): number {
@@ -90,10 +88,12 @@
 		}
 
 		openDialog(index: number, filters: Field[]): void {
-			const filter = filters[index];
 			this.filterIndex = index;
+
+			const filter = filters[index];
 			this.filterTitle = filter.fieldOptions?.filterTitle as string;
 			this.dialogContent = filter;
+
 			this.dialog = true;
 		}
 
@@ -120,7 +120,6 @@
 
 			if (this.filtersCount === 0) {
 				this.resetFilters();
-				return;
 			}
 		}
 

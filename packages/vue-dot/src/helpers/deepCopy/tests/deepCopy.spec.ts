@@ -49,4 +49,17 @@ describe('deepCopy', () => {
 		expect(arrayToCopy[0][1]).toBeNull();
 		expect(arrayToCopy[0][2]).toBe(0);
 	});
+
+	it('should copy an array containing undefined', () => {
+		const arrayToCopy = [[undefined]];
+
+		const copiedArray = deepCopy(arrayToCopy);
+
+		expect(copiedArray[0][0]).toBeUndefined();
+
+		copiedArray[0][0] = 'test';
+
+		expect(copiedArray[0][0]).toBe('test');
+		expect(arrayToCopy[0][0]).toBeUndefined();
+	});
 });
