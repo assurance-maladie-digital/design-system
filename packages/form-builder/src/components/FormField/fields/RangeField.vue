@@ -6,9 +6,8 @@
 				sm="6"
 			>
 				<VTextField
-					v-model="rangeValue[0]"
-					:label="minLabel"
-					block
+					v-model="rangeValue[1]"
+					:label="maxLabel"
 					outlined
 					@change="emitChangeEvent(rangeValue)"
 				/>
@@ -19,8 +18,9 @@
 				sm="6"
 			>
 				<VTextField
-					v-model="rangeValue[1]"
-					:label="maxLabel"
+					v-model="rangeValue[0]"
+					:label="minLabel"
+					block
 					outlined
 					@change="emitChangeEvent(rangeValue)"
 				/>
