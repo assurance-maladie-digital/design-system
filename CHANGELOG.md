@@ -3,7 +3,7 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **FilterModule:** Ajout d'un nouveau composant ([#1102](https://github.com/assurance-maladie-digital/design-system/pull/1102))
+  - **FilterModule:** Ajout d'un nouveau composant ([#1102](https://github.com/assurance-maladie-digital/design-system/pull/1102)) ([73f97ff](https://github.com/assurance-maladie-digital/design-system/commit/73f97ffc20da05112173c084158965bd4ecbf8d9))
 
 - 🐛 **Corrections de bugs**
   - **functions:** Correction de la copie des valeurs fausses dans la fonction `deepCopy` ([#1138](https://github.com/assurance-maladie-digital/design-system/pull/1138)) ([832dfdd](https://github.com/assurance-maladie-digital/design-system/commit/832dfddca11e3bd533e1a6d356e49893a3386a72))
@@ -26,6 +26,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.17` ([#1099](https://github.com/assurance-maladie-digital/design-system/pull/1099)) ([1ad5f9c](https://github.com/assurance-maladie-digital/design-system/commit/1ad5f9c70b8dc6a4188a9928bbb26f41cd5ea468))
+  - **ci:** Mise à jour de `codecov` vers la `v1.2.3` ([#1131](https://github.com/assurance-maladie-digital/design-system/pull/1131))
 
 - 🚨 **Lint**
   - **global:** Correction des erreurs de lint ([#1130](https://github.com/assurance-maladie-digital/design-system/pull/1130)) ([f4f6cf4](https://github.com/assurance-maladie-digital/design-system/commit/f4f6cf4f18af1f5376584dfee1fae8aed88234e0))
