@@ -33,7 +33,7 @@
 		"deepmerge": "4.2.2",
 		"eslint": "7.27.0",
 		"eslint-plugin-jsdoc": "35.0.0",
-		"eslint-plugin-vue": "7.9.0",
+		"eslint-plugin-vue": "7.10.0",
 		"fs-extra": "10.0.0",
 		"jest": "26.6.3",
 		"languages": "0.1.3",
