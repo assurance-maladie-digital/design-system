@@ -1,12 +1,15 @@
 export const config = {
+	listItem: {
+		class: 'flex-wrap'
+	},
 	listItemAvatarIcon: {
 		size: 24
 	},
 	listItemTitle: {
 		class: 'text-wrap'
 	},
-	layout: {
-		justifyEnd: true
+	listItemAction: {
+		class: 'flex-row'
 	},
 	divider: {
 		inset: true

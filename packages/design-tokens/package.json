@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/design-tokens",
-	"version": "2.0.0-beta.4",
+	"version": "2.0.0-beta.10",
 	"description": "Design Tokens for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -29,6 +29,9 @@
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "eslint **/*.ts --fix",
 		"test": "jest"
+	},
+	"devDependencies": {
+		"json-to-scss": "1.6.2"
 	},
 	"lint-staged": {
 		"*.{ts}": [

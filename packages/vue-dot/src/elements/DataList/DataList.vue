@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-data-list">
+	<div
+		:style="widthStyles"
+		class="vd-data-list"
+	>
 		<VFadeTransition mode="out-in">
 			<!-- The DataList loading skeleton -->
 			<DataListLoading
@@ -7,9 +10,7 @@
 				:items-number="itemsNumberLoading"
 				:heading="headingLoading"
 				:title-class="titleClass"
-				:flex="flex"
 				:row="row"
-				:item-width="itemWidth"
 			/>
 
 			<div v-else>
@@ -25,9 +26,7 @@
 
 				<ul
 					v-if="items.length"
-					class="vd-data-list-field pl-0 d-flex"
-					:class="listClass"
-					:style="{ minWidth }"
+					class="vd-data-list-field pl-0"
 				>
 					<DataListItem
 						v-for="(item, index) in items"
@@ -41,9 +40,8 @@
 						:icon="getIcon(item.icon)"
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
-						:style="{ width: itemWidth }"
-						:class="item.class"
-						class="vd-data-list-item text-body-1 mb-2"
+						:class="getItemClass(index, item.class)"
+						class="vd-data-list-item text-body-1"
 						@click:action="$emit('click:item-action', index)"
 					/>
 				</ul>
@@ -57,10 +55,12 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { DataListIcons, DataList as IDataList } from './types';
+	import { DataListIcons, DataList as IDataList, ItemClass } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
+
+	import { Widthable } from '../../mixins/widthable';
 
 	const Props = Vue.extend({
 		props: {
@@ -80,13 +80,9 @@
 			},
 			titleClass: {
 				type: String,
-				default: 'mb-3 text-h5'
+				default: 'text-subtitle-1 font-weight-bold mb-3'
 			},
 			row: {
-				type: Boolean,
-				default: false
-			},
-			flex: {
 				type: Boolean,
 				default: false
 			},
@@ -94,16 +90,6 @@
 			placeholder: {
 				type: String,
 				default: locales.placeholder
-			},
-			/** The list min-width */
-			minWidth: {
-				type: String,
-				default: undefined
-			},
-			/** The item width */
-			itemWidth: {
-				type: String,
-				default: '200px'
 			},
 			/** Loading mode */
 			loading: {
@@ -128,7 +114,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, Widthable);
 
 	/**
 	 * DataList is a component that displays list of
@@ -141,16 +127,23 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
-		get listClass(): string {
-			return this.flex ? 'flex-wrap' : 'flex-column';
-		}
-
 		getIcon(iconName?: string): string | null {
 			if (!iconName || !this.icons) {
 				return null;
 			}
 
 			return this.icons[iconName];
+		}
+
+		getItemClass(index: number, itemClass?: string): ItemClass {
+			const margin = {
+				'mb-2': index !== this.items.length - 1
+			};
+
+			return [
+				margin,
+				itemClass
+			];
 		}
 	}
 </script>

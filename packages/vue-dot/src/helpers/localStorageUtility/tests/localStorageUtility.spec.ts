@@ -96,9 +96,9 @@ describe('LocalStorageUtility', () => {
 		localStorage.setItem('vd-test-1', normalizedString);
 		localStorage.setItem('vd-test-2', normalizedString);
 
-		localStorageUtility.removeItem('vd-test-1');
+		localStorageUtility.removeItem('test-1');
 		// Try to remove non existing item
-		localStorageUtility.removeItem('vd-test');
+		localStorageUtility.removeItem('test');
 
 		expect(localStorage.getItem('vd-test-1')).toBe(null);
 	});

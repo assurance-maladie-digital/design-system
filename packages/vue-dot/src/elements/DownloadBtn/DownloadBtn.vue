@@ -2,6 +2,7 @@
 	<VBtn
 		v-bind="btnOptions"
 		:loading="state === STATE_ENUM.pending"
+		class="vd-download-btn"
 		@click.native="download"
 	>
 		<slot name="icon">
@@ -18,6 +19,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import dayjs from 'dayjs';
 	import deepMerge from 'deepmerge';
 	import { mapActions } from 'vuex';
 
@@ -33,6 +35,7 @@
 
 	import { STATE_ENUM } from '../../constants/enums/StateEnum';
 	import { IndexedObject } from '../../types';
+	import { ContentHeadersEnum } from './ContentHeadersEnum';
 	import { FileInfo } from './types';
 
 	import { config } from './config';
@@ -41,8 +44,12 @@
 	const Props = Vue.extend({
 		props: {
 			filePromise: {
-				type: Promise as PropType<Promise<AxiosResponse<string>>>,
+				type: Function as PropType<() => Promise<AxiosResponse<Blob>>>,
 				required: true
+			},
+			fallbackFilename: {
+				type: String,
+				default: undefined
 			},
 			notification: {
 				type: [Boolean, String],
@@ -83,13 +90,23 @@
 			return deepMerge<Options>(this.options.btn, this.$attrs);
 		}
 
+		getTimestampFilename(): string {
+			return dayjs().format('YYYY-MM-DD - HH[h]mm[m]ss[s]');
+		}
+
 		getFileInfo(headers: IndexedObject): FileInfo {
-			const contentType = headers['Content-Type'];
-			const contentDispositionHeader = headers['Content-Disposition'] as string;
-			const filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+			const contentType = headers[ContentHeadersEnum.TYPE];
+			const contentDispositionHeader = headers[ContentHeadersEnum.DISPOSITION] as string;
+			let filename: string | null = null;
+
+			try {
+				filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+			} catch {
+				filename = this.fallbackFilename || this.getTimestampFilename();
+			}
 
 			return {
-				name: filename,
+				name: filename as string,
 				type: contentType
 			};
 		}
@@ -107,7 +124,7 @@
 			this.state = STATE_ENUM.pending;
 
 			try {
-				const { data, headers } = await this.filePromise;
+				const { data, headers } = await this.filePromise();
 				const { name, type } = this.getFileInfo(headers);
 
 				downloadFile(data, name, type);
@@ -124,3 +141,15 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-download-btn ::v-deep {
+		.v-btn__content {
+			flex-wrap: wrap;
+		}
+
+		.v-icon {
+			flex: none;
+		}
+	}
+</style>

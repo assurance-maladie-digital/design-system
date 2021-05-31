@@ -141,7 +141,7 @@ export class LocalStorageUtility {
 	 */
 	removeItem(key: string): void {
 		this.filterStorage((storageKey) => {
-			if (storageKey === key) {
+			if (storageKey === this.prefix + key) {
 				delete localStorage[storageKey];
 			}
 		});

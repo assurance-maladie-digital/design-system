@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ErrorPage renders correctly 1`] = `
-<pagecard-stub cardclass="px-5" cardpadding="px-6 py-4" width="680">
-  <!---->
-  <h2 class="mb-2 font-weight-bold text-h4 mb-4">
-    Error
-  </h2>
-  <p>Error message</p>
-  <vlayout-stub tag="div" class="mt-6">
-    <vspacer-stub></vspacer-stub>
-    <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button">
-      Retour à l'accueil
-    </vbtn-stub>
-  </vlayout-stub>
-</pagecard-stub>
+<pagecontainer-stub size="s" color="transparent">
+  <vcard-stub loaderheight="4" tag="div" class="pa-8">
+    <!---->
+    <h2 class="mb-2 font-weight-bold text-h4 mb-4">
+      Error
+    </h2>
+    <p>Error message</p>
+    <div class="d-flex mt-6">
+      <vspacer-stub></vspacer-stub>
+      <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button">
+        Retour à l'accueil
+      </vbtn-stub>
+    </div>
+  </vcard-stub>
+</pagecontainer-stub>
 `;

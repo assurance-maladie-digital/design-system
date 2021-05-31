@@ -3,7 +3,9 @@ node_modules/
 
 # Build
 dist/
-bin/
+
+# Playground
+**/dev/Playground.vue
 
 # Log files
 logs

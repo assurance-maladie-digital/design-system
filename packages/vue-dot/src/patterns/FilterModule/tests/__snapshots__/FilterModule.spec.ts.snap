@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterModule renders correctly 1`] = `
+<div class="vd-filter-module">
+  <!---->
+  <filterselector-stub filters=""></filterselector-stub>
+  <div role="dialog" class="v-dialog__container vd-dialog-box">
+    <!---->
+  </div>
+</div>
+`;

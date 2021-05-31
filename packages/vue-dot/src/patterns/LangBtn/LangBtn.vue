@@ -15,7 +15,7 @@
 				v-on="on"
 			>
 				<!-- Current language -->
-				<span class="ml-2">
+				<span :class="currentLangClass">
 					{{ currentLangData.name }}
 				</span>
 
@@ -106,6 +106,10 @@
 		downArrowIcon = mdiChevronDown;
 
 		currentLang = this.value;
+
+		get currentLangClass(): string | undefined {
+			return this.hideDownArrow ? undefined : 'ml-1';
+		}
 
 		/** Returns the list of languages to display in the list */
 		get languages(): Languages {

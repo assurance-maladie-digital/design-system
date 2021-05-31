@@ -47,7 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-footer-btn.v-btn {
+	.theme--light.vd-footer-btn.v-btn {
 		color: #424242 !important;
 	}
 </style>

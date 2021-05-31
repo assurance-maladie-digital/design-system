@@ -6,10 +6,12 @@ const componentMap = {
 	CopyBtn: 'elements',
 	CustomIcon: 'elements',
 	DataList: 'elements',
-	HeaderLoading: 'elements',
-	PageCard: 'elements',
 	DialogBox: 'elements',
+	DownloadBtn: 'elements',
+	HeaderLoading: 'elements',
+	PageContainer: 'elements',
 	// Patterns
+	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
 	FileUpload: 'patterns',
 	FooterWrapper: 'patterns',
@@ -17,6 +19,7 @@ const componentMap = {
 	NotificationBar: 'patterns',
 	PaginatedTable: 'patterns',
 	SubHeader: 'patterns',
+	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
 	// Templates
 	ErrorPage: 'templates'
@@ -48,7 +51,6 @@ function getVueDotComponent(componentName) {
  * components array, the second should be a corresponding import
  *
  * @see https://github.com/vuetifyjs/vuetify-loader#automatic-imports
- *
  * @param {string} _ The tag as it was originally used in the template
  * @param {object} options The options of the component
  * @param {string} options.camelTag The tag normalized to PascalCase

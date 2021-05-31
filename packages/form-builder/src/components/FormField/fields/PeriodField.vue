@@ -1,14 +1,10 @@
 <template>
-	<VLayout
-		wrap
-		row
-		class="mx-n3"
-	>
+	<div class="d-flex flex-wrap mx-n3">
 		<DatePicker
 			v-model="periodValue.from"
 			v-bind="fieldOptionsFrom"
 			:vuetify-options="fieldOptionsFrom"
-			text-field-class="mx-3 vd-form-input no-flex"
+			text-field-class="vd-form-input mx-3"
 			@change="dateUpdated"
 		/>
 
@@ -17,10 +13,10 @@
 			v-bind="fieldOptionsTo"
 			:vuetify-options="fieldOptionsTo"
 			:start-date="periodValue.from"
-			text-field-class="mx-3 vd-form-input no-flex"
+			text-field-class="vd-form-input mx-3"
 			@change="dateUpdated"
 		/>
-	</VLayout>
+	</div>
 </template>
 
 <script lang="ts">
@@ -45,7 +41,12 @@
 			// Listen the current field value for the component
 			'field.value': {
 				handler(value: PeriodValue | null): void {
-					if (value) {
+					if (!value) {
+						this.periodValue = {
+							from: null,
+							to: null
+						};
+					} else {
 						this.periodValue = value;
 					}
 				},
@@ -55,10 +56,7 @@
 		}
 	})
 	export default class PeriodField extends MixinsDeclaration {
-		periodValue: PeriodValue = {
-			from: null,
-			to: null
-		};
+		periodValue = {} as PeriodValue;
 
 		get fieldOptionsTo(): Options {
 			const datePicker = {
