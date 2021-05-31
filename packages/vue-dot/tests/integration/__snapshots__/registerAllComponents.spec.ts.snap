@@ -13,6 +13,7 @@ Array [
   "FileUpload",
   "FilterModule",
   "FooterWrapper",
+  "HeaderBar",
   "HeaderLoading",
   "LangBtn",
   "NotificationBar",
