@@ -13,6 +13,7 @@ Object {
     "ErrorPage",
     "ExternalLinks",
     "FileUpload",
+    "FilterModule",
     "FooterWrapper",
     "HeaderLoading",
     "LangBtn",
