@@ -53,8 +53,8 @@ describe('Validate shareable config eslint-vue of: index.js', () => {
 			const results = await eslint.lintText(HtmlCodeTemplate);
 
 			expect(results[0].messages[0].ruleId).toBeNull();
-			expect(results[0].messages[0].message).toEqual('Parsing error: \'>\' expected.'); 
-			
+			expect(results[0].messages[0].message).toEqual('Parsing error: \'>\' expected.');
+
 		});
 	});
 

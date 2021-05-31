@@ -9,7 +9,7 @@ exports[`FileList renders correctly 1`] = `
       </vicon-stub>
     </vlistitemavatar-stub>
     <vlistitemcontent-stub>
-      <vlistitemtitle-stub class=" 0">
+      <vlistitemtitle-stub class="text-wrap">
         test
       </vlistitemtitle-stub>
       <!---->

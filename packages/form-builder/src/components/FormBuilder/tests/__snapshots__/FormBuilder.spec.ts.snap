@@ -112,7 +112,7 @@ exports[`FormBuilder renders correctly 1`] = `
                 <legend style="width: 0px;"><span>​</span></legend>
               </fieldset>
               <div class="v-text-field__slot"><label for="input-31" class="v-label theme--light" style="left: 0px; position: absolute;">Date</label><input textfield="[object Object]" id="input-31" type="text"></div>
-              <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
+              <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
             </div>
             <div class="v-text-field__details">
               <div class="v-messages theme--light">
@@ -141,7 +141,7 @@ exports[`FormBuilder renders correctly 1`] = `
                   <legend style="width: 0px;"><span>​</span></legend>
                 </fieldset>
                 <div class="v-text-field__slot"><label for="input-42" class="v-label theme--light" style="left: 0px; position: absolute;">Du</label><input textfield="[object Object]" id="input-42" type="text"></div>
-                <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
+                <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
               </div>
               <div class="v-text-field__details">
                 <div class="v-messages theme--light">
@@ -163,7 +163,7 @@ exports[`FormBuilder renders correctly 1`] = `
                   <legend style="width: 0px;"><span>​</span></legend>
                 </fieldset>
                 <div class="v-text-field__slot"><label for="input-51" class="v-label theme--light" style="left: 0px; position: absolute;">Au</label><input datepicker="[object Object]" textfield="[object Object]" id="input-51" type="text"></div>
-                <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
+                <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
               </div>
               <div class="v-text-field__details">
                 <div class="v-messages theme--light">
@@ -409,15 +409,15 @@ exports[`FormBuilder renders correctly 1`] = `
       </p>
       <div>
         <div class="vd-choice-button-field">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" hint="Texte informatif"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle" inline="true" hint="Texte informatif"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				9h30
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="10" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="10" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				10h
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="11" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="11" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				11h
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -438,19 +438,19 @@ exports[`FormBuilder renders correctly 1`] = `
       </p>
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column"><button type="button" value="test1" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column"><button type="button" value="test1" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Multiple 1
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="22" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="22" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Multiple 2
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="33" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="33" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Seul 1
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="44" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="44" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Seul 2
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -467,11 +467,11 @@ exports[`FormBuilder renders correctly 1`] = `
       <!---->
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column"><button type="button" value="1" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column"><button type="button" value="1" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Texte qui permet de tester sur plusieurs lignes
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="2" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="2" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				Texte 2
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -490,19 +490,19 @@ exports[`FormBuilder renders correctly 1`] = `
       </p>
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" label="Classic field" outlined="true"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" label="Classic field" outlined="true"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				S
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="1" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="1" class="text-none text-wrap py-2 text-left v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default accent" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				M
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="2" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="2" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				L
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="3" class="text-none text-wrap py-2 text-left v-btn v-btn--depressed v-btn--flat v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="3" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				XL
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>

@@ -73,7 +73,7 @@ exports[`DataList renders correctly with an action 1`] = `
                 Name
               </div>
               <div class="vd-data-list-item-value"><span class="text-body-1">Dupont</span></div>
-            </div> <button type="button" class="vd-data-list-item-action-btn v-btn v-btn--flat v-btn--text theme--light v-size--small accent--text text-body-1 text-none pa-0"><span class="v-btn__content">
+            </div> <button type="button" class="vd-data-list-item-action-btn v-btn v-btn--text theme--light v-size--small accent--text text-body-1 text-none pa-0"><span class="v-btn__content">
 				Edit
 			</span></button>
           </div>
