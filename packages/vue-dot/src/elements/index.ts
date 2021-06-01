@@ -13,7 +13,7 @@ export const elements = {
 	DataList,
 	DialogBox,
 	DownloadBtn,
-	HeaderLoading,
 	ExternalLinks,
+	HeaderLoading,
 	PageContainer
 };

@@ -1,4 +1,4 @@
 export const locales = {
-	noDatas: 'Pas de données.',
-	btnText: 'Consulter les données externes.'
+	noData: 'Pas de données.',
+	btnText: 'Consulter les données externes'
 };

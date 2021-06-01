@@ -1,8 +1,8 @@
+import { IndexedObject } from '../../types';
+
 export interface ExternalLink {
 	text: string;
 	href: string;
 }
 
-export interface IFieldStyleType{
- [ key: string ]: string
-}
+export type StyleObject = IndexedObject<string | undefined>;

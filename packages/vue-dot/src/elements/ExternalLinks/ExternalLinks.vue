@@ -1,22 +1,26 @@
 <template>
-	<div>
+	<div
+		:class="{ 'vd-fixed-on-scroll': fixed }"
+		class="vd-external-links"
+	>
 		<VBtn
 			v-show="!drawer"
 			ref="menuBtn"
-			v-bind="options.vBtn"
+			v-bind="options.btn"
 			:style="nudgePositionTop"
+			class="vd-external-links-btn"
 			@click="drawer = true"
 		>
-			<VIcon v-bind="options.vIcon">
+			<VIcon v-bind="options.icon">
 				{{ iconRightChevron }}
 			</VIcon>
 		</VBtn>
 
 		<VNavigationDrawer
 			v-model="drawer"
-			v-bind="options.vNavigationDrawer"
-			:class="{ 'fixed-on-scroll': fixed, 'external-link-drawer':true}"
+			v-bind="options.navigationDrawer"
 			:style="posTop"
+			class="vd-external-links-drawer"
 		>
 			<VBtn
 				v-bind="options.vBtnNavDrawer"
@@ -33,33 +37,34 @@
 
 			<VList
 				v-if="items.length"
-				v-bind="options.vList"
+				v-bind="options.list"
+				class="vd-external-links-list"
 			>
 				<VListItem
-					v-for="item in items"
-					:key="item.text"
+					v-for="(item, index) in items"
+					:key="index"
+					v-bind="options.listItem"
 					:href="item.href"
-					target="_blank"
 				>
 					<VListItemContent>
 						<VListItemTitle v-text="item.text" />
 					</VListItemContent>
 
 					<VListItemIcon>
-						<VIcon>
-							<slot name="LinkIcon">
+						<slot name="link-icon">
+							<VIcon>
 								{{ iconLinks }}
-							</slot>
-						</VIcon>
+							</VIcon>
+						</slot>
 					</VListItemIcon>
 				</VListItem>
 			</VList>
 
 			<p
 				v-else
-				class="mx-5 my-3"
+				class="px-4 py-3 mb-0"
 			>
-				{{ noDatas }}
+				{{ locales.noData }}
 			</p>
 		</VNavigationDrawer>
 	</div>
@@ -74,12 +79,13 @@
 
 	import { customizable } from '../../mixins/customizable';
 
-	import { ExternalLink, IFieldStyleType } from './types';
+	import { ExternalLink, StyleObject } from './types';
 	import { Refs } from '../../types';
 
-	import { mdiChevronRight, mdiChevronLeft , mdiOpenInNew } from '@mdi/js';
+	import { mdiChevronRight, mdiChevronLeft, mdiOpenInNew } from '@mdi/js';
 
 	import { Widthable } from '../../mixins/widthable';
+	import { convertToUnit } from '../../helpers/convertToUnit';
 
 	const Props = Vue.extend({
 		props: {
@@ -103,25 +109,27 @@
 			 */
 			btnText: {
 				type: String,
-				default : locales.btnText
+				default: locales.btnText
 			},
 			/**
 			 *  Set position of the button drawer
 			 */
 			nudgeTop: {
-				type: String,
+				type: [String, Number],
 				default: undefined
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(customizable(config), Props, Widthable);
+	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	@Component
 	export default class ExternalLinks extends MixinsDeclaration {
-        $refs!: Refs<{
+		$refs!: Refs<{
 			menuBtn: Vue;
 		}>;
+
+		locales = locales;
 
 		iconRightChevron = mdiChevronRight;
 		iconLeftChevron = mdiChevronLeft;
@@ -129,25 +137,19 @@
 
 		drawer = false;
 
-		maxHeight = 'auto';
-		innerMaxHeight = 'auto';
-
 		positionTop = 0;
 
-        /** return text data */
-        get noDatas():string{
-            return locales.noDatas;
-        }
-        /** return the nudge position of button drawer */
-        get nudgePositionTop(): IFieldStyleType {
+		/** return the nudge position of button drawer */
+		get nudgePositionTop(): StyleObject {
 			return {
-				top: this.nudgeTop?this.nudgeTop +'px':''
+				top: convertToUnit(this.nudgeTop)
 			};
 		}
-        /** return the position top of the nutton drawer */
-		get posTop(): IFieldStyleType{
+
+		/** return the position top of the nutton drawer */
+		get posTop(): StyleObject {
 			return {
-				top: this.positionTop +'px'
+				top: convertToUnit(this.positionTop)
 			};
 		}
 
@@ -155,37 +157,37 @@
 			this.positionTop = this.getDistanceFromTop();
 		}
 
-		/** Get distance between the button and windows top */
-		public getDistanceFromTop() : number{
-			return window.pageYOffset + (this.$refs.menuBtn.$el.getBoundingClientRect().top -this.$refs.menuBtn.$el.getBoundingClientRect().height-10);
+		/** Get distance between the button and window top */
+		public getDistanceFromTop(): number {
+			const pageScroll = window.pageYOffset;
+
+			return pageScroll + (this.$refs.menuBtn.$el.getBoundingClientRect().top - this.$refs.menuBtn.$el.getBoundingClientRect().height - 16);
 		}
 	}
 </script>
 
 <style lang="scss">
+	$list-max-height: 248px;
 
-.external-link {
- min-height: 48px;
-}
-.btn-height{
-	min-height: 48px;
-}
-.external-link-btn {
-  position: absolute;
-  z-index: 6;
-  left: 0;
-  border-radius: 0;
-}
+	.vd-external-links-btn {
+		// Use CSS since Vuetify forces a 16px minimum spacing
+		position: absolute;
+		z-index: 4;
+		left: 0;
+	}
 
-.external-link-drawer {
-  z-index: 5 ;
-  left: 0;
-  min-width: 320px!important;
-  max-height: 350px;
-}
+	.vd-external-links-list {
+		max-height: $list-max-height;
+		overflow-y: auto;
+	}
 
-.external-links {
-  overflow-y: auto;
-  max-height: 296px;
-}
+	.vd-external-links-drawer {
+		z-index: 3;
+		left: 0;
+		min-width: 320px !important;
+
+		::v-deep .v-navigation-drawer__content {
+			overflow: hidden;
+		}
+	}
 </style>
