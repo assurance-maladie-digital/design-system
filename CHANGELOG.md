@@ -15,6 +15,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **RangeField:** Ajout d'un nouveau champ ([#1112](https://github.com/assurance-maladie-digital/design-system/pull/1112)) ([f21d0f5](https://github.com/assurance-maladie-digital/design-system/commit/f21d0f52e0336b0d4ca58951da4fa912cf895c6c))
+  - **FormFieldList:** Ajout du slot `section-description` ([#1143](https://github.com/assurance-maladie-digital/design-system/pull/1143))
 
 - 🐛 **Corrections de bugs**
   - **fields:** Correction de la réinitialisation de la valeur de certains champs ([#1136](https://github.com/assurance-maladie-digital/design-system/pull/1136)) ([41ac4eb](https://github.com/assurance-maladie-digital/design-system/commit/41ac4ebb1f935e9b1ca14fbe7be2953cd6de07cf))
@@ -37,7 +38,7 @@
   - **typescript:** Mise à jour vers la `v4.3.2` ([#1132](https://github.com/assurance-maladie-digital/design-system/pull/1132)) ([c3741d2](https://github.com/assurance-maladie-digital/design-system/commit/c3741d2fd6f5f8db68624066a2f24870988ed5d6))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.10.0` ([#1140](https://github.com/assurance-maladie-digital/design-system/pull/1140) ([d37bc3b](https://github.com/assurance-maladie-digital/design-system/commit/d37bc3b0e4e28674555c5f572aa88d8d9f19eee4))
   - **core-js:** Mise à jour vers la `v3.13.1` ([#1141](https://github.com/assurance-maladie-digital/design-system/pull/1141)) ([abf06cb](https://github.com/assurance-maladie-digital/design-system/commit/abf06cb6b9c4536d78dce312b90972f80c822ba8))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.1.1` ([#1142](https://github.com/assurance-maladie-digital/design-system/pull/1142))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.1.1` ([#1142](https://github.com/assurance-maladie-digital/design-system/pull/1142)) ([c676851](https://github.com/assurance-maladie-digital/design-system/commit/c6768511fb7d2fa65cfe61ddc3dea20c3d878f4e))
 
 ## v2.0.0-beta.10
 
