@@ -62,13 +62,13 @@
 		watch: {
 			'field.value': {
 				handler(value: number[] | null): void {
-					if (value) {
-						this.rangeValue = value;
-					} else {
+					if (!value) {
 						this.rangeValue = [
 							this.field.min as number,
 							this.field.max as number
 						];
+					} else {
+						this.rangeValue = value;
 					}
 				},
 				immediate: true,

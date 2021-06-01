@@ -41,7 +41,12 @@
 			// Listen the current field value for the component
 			'field.value': {
 				handler(value: PeriodValue | null): void {
-					if (value) {
+					if (!value) {
+						this.periodValue = {
+							from: null,
+							to: null
+						};
+					} else {
 						this.periodValue = value;
 					}
 				},
@@ -51,10 +56,7 @@
 		}
 	})
 	export default class PeriodField extends MixinsDeclaration {
-		periodValue: PeriodValue = {
-			from: null,
-			to: null
-		};
+		periodValue = {} as PeriodValue;
 
 		get fieldOptionsTo(): Options {
 			const datePicker = {

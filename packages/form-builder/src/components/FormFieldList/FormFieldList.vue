@@ -10,9 +10,14 @@
 			{{ listTitle }}
 		</h3>
 
-		<p v-if="description">
-			{{ description }}
-		</p>
+		<slot
+			name="section-description"
+			v-bind="{ description }"
+		>
+			<p v-if="description">
+				{{ description }}
+			</p>
+		</slot>
 
 		<FormField
 			v-for="(field, fieldName) in fields"
