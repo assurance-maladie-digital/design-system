@@ -11,8 +11,8 @@
 		</h3>
 
 		<slot
-			name="description"
-			v-bind="description"
+			name="section-description"
+			v-bind="{ description }"
 		>
 			<p v-if="description">
 				{{ description }}
