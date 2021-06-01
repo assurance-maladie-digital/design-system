@@ -92,7 +92,7 @@
 			const displayedFilters: FilterManagerItem[] = [];
 
 			this.appliedFilters.forEach((filter, index) => {
-				let item = {
+				const item = {
 					index,
 					filter
 				};

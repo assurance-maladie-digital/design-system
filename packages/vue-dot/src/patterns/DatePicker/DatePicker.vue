@@ -2,8 +2,8 @@
 	<!-- DatePicker -->
 	<VMenu
 		ref="menu"
-		v-bind="menuOptions"
 		v-model="menu"
+		v-bind="menuOptions"
 	>
 		<template #activator="{}">
 			<!-- TextField to enter date by hand -->

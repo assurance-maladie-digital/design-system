@@ -25,11 +25,11 @@ export type ErrorMessages = string | string[];
 
 export interface PeriodErrorMessages {
 	from?: ErrorMessages;
-	to?: ErrorMessages
+	to?: ErrorMessages;
 }
 
 export interface FieldItem {
-	text: string,
+	text: string;
 	value: FieldItemValue;
 	alone?: boolean;
 }
