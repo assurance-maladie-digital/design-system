@@ -33,6 +33,7 @@
 
 			<VList
 				v-if="items.length"
+				v-bind="options.vList"
 			>
 				<VListItem
 					v-for="item in items"
@@ -180,7 +181,7 @@
   z-index: 5 ;
   left: 0;
   min-width: 320px!important;
-  max-height: 320px;
+  max-height: 350px;
 }
 
 .external-links {
