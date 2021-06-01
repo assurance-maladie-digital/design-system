@@ -1,73 +1,75 @@
 <template>
-	<div
-		:class="{ 'vd-fixed-on-scroll': fixed }"
+	<VMenu
+		v-model="menu"
+		v-bind="options.menu"
+		:top="bottom"
+		:content-class="menuClass"
 		class="vd-external-links"
 	>
-		<VBtn
-			v-show="!drawer"
-			ref="menuBtn"
-			v-bind="options.btn"
-			:style="nudgePositionTop"
-			class="vd-external-links-btn"
-			@click="drawer = true"
-		>
-			<VIcon v-bind="options.icon">
-				{{ iconRightChevron }}
-			</VIcon>
-		</VBtn>
-
-		<VNavigationDrawer
-			v-model="drawer"
-			v-bind="options.navigationDrawer"
-			:style="posTop"
-			class="vd-external-links-drawer"
-		>
+		<template #activator="{ on, attrs }">
 			<VBtn
-				v-bind="options.vBtnNavDrawer"
-				@click="drawer = false"
+				v-bind="{
+					...attrs,
+					...options.btn
+				}"
+				:style="btnStyle"
+				class="vd-external-links-btn"
+				@mouseenter="hover = true"
+				@mouseleave="hover = false"
+				v-on="on"
 			>
-				{{ btnText }}
+				<span
+					:class="btnTextSpacing"
+					class="vd-external-links-btn-text white--text text-none"
+				>
+					{{ btnText }}
+				</span>
 
-				<VSpacer />
+				<VSpacer v-bind="options.spacer" />
 
-				<VIcon v-bind="options.vIcon">
-					{{ iconLeftChevron }}
+				<VIcon v-bind="options.btnIcon">
+					{{ arrowIcon }}
 				</VIcon>
 			</VBtn>
+		</template>
 
-			<VList
-				v-if="items.length"
-				v-bind="options.list"
-				class="vd-external-links-list"
+		<VList
+			v-if="items.length"
+			v-bind="options.list"
+			class="vd-external-links-list"
+		>
+			<VListItem
+				v-for="(item, index) in items"
+				:key="index"
+				:href="item.href"
+				v-bind="options.listItem"
 			>
-				<VListItem
-					v-for="(item, index) in items"
-					:key="index"
-					v-bind="options.listItem"
-					:href="item.href"
-				>
-					<VListItemContent>
-						<VListItemTitle v-text="item.text" />
-					</VListItemContent>
+				<VListItemContent v-bind="options.listItemContent">
+					<VListItemTitle
+						v-bind="options.listItemTitle"
+						v-text="item.text"
+					/>
+				</VListItemContent>
 
-					<VListItemIcon>
-						<slot name="link-icon">
-							<VIcon>
-								{{ iconLinks }}
-							</VIcon>
-						</slot>
-					</VListItemIcon>
-				</VListItem>
-			</VList>
+				<VListItemIcon v-bind="options.listItemIcon">
+					<slot name="link-icon">
+						<VIcon v-bind="options.linkIcon">
+							{{ linkIcon }}
+						</VIcon>
+					</slot>
+				</VListItemIcon>
+			</VListItem>
+		</VList>
 
-			<p
-				v-else
-				class="px-4 py-3 mb-0"
-			>
+		<VCard
+			v-else
+			v-bind="options.card"
+		>
+			<p class="mb-0">
 				{{ locales.noData }}
 			</p>
-		</VNavigationDrawer>
-	</div>
+		</VCard>
+	</VMenu>
 </template>
 
 <script lang='ts'>
@@ -79,115 +81,166 @@
 
 	import { customizable } from '../../mixins/customizable';
 
-	import { ExternalLink, StyleObject } from './types';
-	import { Refs } from '../../types';
+	import { ExternalLink } from './types';
+	import { IndexedObject } from '../../types';
 
-	import { mdiChevronRight, mdiChevronLeft, mdiOpenInNew } from '@mdi/js';
+	import {
+		mdiChevronRight as rightArrowIcon,
+		mdiChevronLeft as leftArrowIcon,
+		mdiOpenInNew
+	} from '@mdi/js';
 
-	import { Widthable } from '../../mixins/widthable';
 	import { convertToUnit } from '../../helpers/convertToUnit';
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * Fixed on scroll or not
-			 */
-			fixed: {
-				type: Boolean,
-				default: false
-			},
-			/**
-			 * Content of the list
-			 * Type of an ExternalLink with: text and href fields
-			 */
+			/** Links to display in the list */
 			items: {
 				type: Array as PropType<ExternalLink[]>,
 				default: () => []
 			},
-			/**
-			 * Title of the menu drawer
-			 */
+			/** The label of the button */
 			btnText: {
 				type: String,
 				default: locales.btnText
 			},
-			/**
-			 *  Set position of the button drawer
-			 */
+			/** Align the component towards left */
+			left: {
+				type: Boolean,
+				default: false
+			},
+			/** Align the component towards right */
+			right: {
+				type: Boolean,
+				default: false
+			},
+			/** Align the component towards top */
+			top: {
+				type: Boolean,
+				default: false
+			},
+			/** Align the component towards bottom */
+			bottom: {
+				type: Boolean,
+				default: false
+			},
+			/** Nudge the component to the top */
 			nudgeTop: {
 				type: [String, Number],
-				default: undefined
+				default: 0
+			},
+			/** Nudge the component to the bottom */
+			nudgeBottom: {
+				type: [String, Number],
+				default: 0
+			},
+			/** Apply position: fixed */
+			fixed: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component
 	export default class ExternalLinks extends MixinsDeclaration {
-		$refs!: Refs<{
-			menuBtn: Vue;
-		}>;
-
 		locales = locales;
 
-		iconRightChevron = mdiChevronRight;
-		iconLeftChevron = mdiChevronLeft;
-		iconLinks = mdiOpenInNew;
+		linkIcon = mdiOpenInNew;
 
-		drawer = false;
+		menu = false;
+		hover = false;
 
-		positionTop = 0;
+		get menuClass(): string {
+			const positionClass = this.right ? 'right-0' : 'left-0';
 
-		/** return the nudge position of button drawer */
-		get nudgePositionTop(): StyleObject {
+			return `vd-external-links-menu ${positionClass}`;
+		}
+
+		get btnTextSpacing(): string {
+			return this.right ? 'ml-2' : 'mr-2';
+		}
+
+		get transform(): string {
+			let translateValue: string;
+
+			if (this.menu || this.hover) {
+				translateValue = '0';
+			} else {
+				translateValue = this.right ? 'calc(100% - 48px)' : 'calc(-100% + 48px)';
+			}
+
+			return `translateX(${translateValue})`;
+		}
+
+		get computedNudgeTop(): string {
+			return this.top ? convertToUnit(this.nudgeTop) as string : 'auto';
+		}
+
+		get computedNudgeBottom(): string {
+			return this.bottom ? convertToUnit(this.nudgeBottom) as string : 'auto';
+		}
+
+		get btnStyle(): IndexedObject {
+			const transform = this.transform;
+			const position = this.fixed ? 'fixed' : 'absolute';
+			const flexDirection = this.right ? 'row-reverse' : 'row';
+
+			const top = this.computedNudgeTop;
+			const bottom = this.computedNudgeBottom;
+			const left = this.left ? '0' : 'auto';
+			const right = this.right ? '0' : 'auto';
+
+			// Change z-index to avoid shadow bleeding (VMenu is 8)
+			const zIndex = this.top ? '8' : '9';
+
 			return {
-				top: convertToUnit(this.nudgeTop)
+				transform,
+				position,
+				flexDirection,
+				top,
+				bottom,
+				left,
+				right,
+				zIndex
 			};
 		}
 
-		/** return the position top of the nutton drawer */
-		get posTop(): StyleObject {
-			return {
-				top: convertToUnit(this.positionTop)
-			};
-		}
+		get arrowIcon(): string {
+			if (this.right) {
+				return this.menu ? rightArrowIcon : leftArrowIcon;
+			}
 
-		mounted(): void {
-			this.positionTop = this.getDistanceFromTop();
-		}
-
-		/** Get distance between the button and window top */
-		public getDistanceFromTop(): number {
-			const pageScroll = window.pageYOffset;
-
-			return pageScroll + (this.$refs.menuBtn.$el.getBoundingClientRect().top - this.$refs.menuBtn.$el.getBoundingClientRect().height - 16);
+			return this.menu ? leftArrowIcon : rightArrowIcon;
 		}
 	}
 </script>
 
 <style lang="scss">
+	.vd-external-links-menu {
+		// Use CSS since Vuetify forces a 12px minimum spacing
+		&.left-0 {
+			left: 0 !important;
+		}
+
+		&.right-0 {
+			left: auto !important; // Override Vuetify computation
+			right: 0 !important;
+		}
+	}
+</style>
+
+<style lang="scss" scoped>
 	$list-max-height: 248px;
 
-	.vd-external-links-btn {
-		// Use CSS since Vuetify forces a 16px minimum spacing
-		position: absolute;
-		z-index: 4;
-		left: 0;
+	.vd-external-links-btn ::v-deep .v-btn__content {
+		flex-direction: inherit;
 	}
 
 	.vd-external-links-list {
 		max-height: $list-max-height;
 		overflow-y: auto;
-	}
-
-	.vd-external-links-drawer {
-		z-index: 3;
-		left: 0;
-		min-width: 320px !important;
-
-		::v-deep .v-navigation-drawer__content {
-			overflow: hidden;
-		}
 	}
 </style>
