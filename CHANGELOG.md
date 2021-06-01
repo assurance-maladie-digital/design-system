@@ -20,6 +20,9 @@
 - 🐛 **Corrections de bugs**
   - **fields:** Correction de la réinitialisation de la valeur de certains champs ([#1136](https://github.com/assurance-maladie-digital/design-system/pull/1136)) ([41ac4eb](https://github.com/assurance-maladie-digital/design-system/commit/41ac4ebb1f935e9b1ca14fbe7be2953cd6de07cf))
 
+- ♻️ **Refactoring**
+  - **RangeField:** Inversion des champs min et max ([#1147](https://github.com/assurance-maladie-digital/design-system/pull/1147))
+
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#1123](https://github.com/assurance-maladie-digital/design-system/pull/1123)) ([ea78c19](https://github.com/assurance-maladie-digital/design-system/commit/ea78c197d8fc026c648c5e46e828e2da19f12c8e))
 
@@ -39,7 +42,7 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v7.10.0` ([#1140](https://github.com/assurance-maladie-digital/design-system/pull/1140) ([d37bc3b](https://github.com/assurance-maladie-digital/design-system/commit/d37bc3b0e4e28674555c5f572aa88d8d9f19eee4))
   - **core-js:** Mise à jour vers la `v3.13.1` ([#1141](https://github.com/assurance-maladie-digital/design-system/pull/1141)) ([abf06cb](https://github.com/assurance-maladie-digital/design-system/commit/abf06cb6b9c4536d78dce312b90972f80c822ba8))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.26.0` ([#1144](https://github.com/assurance-maladie-digital/design-system/pull/1144)) ([2292a0e](https://github.com/assurance-maladie-digital/design-system/commit/2292a0e8594b1b491a307934738127461d23a682))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.1.2` ([#1145](https://github.com/assurance-maladie-digital/design-system/pull/1145))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.1.2` ([#1145](https://github.com/assurance-maladie-digital/design-system/pull/1145)) ([1e30311](https://github.com/assurance-maladie-digital/design-system/commit/1e303119efcde35e45f31f44bc54e5909ece0f48))
 
 ## v2.0.0-beta.10
 
