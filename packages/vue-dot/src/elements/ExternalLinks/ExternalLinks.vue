@@ -79,10 +79,12 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { customizable } from '../../mixins/customizable';
+	import { PositionEnum } from './PositionEnum';
 
-	import { ExternalLink } from './types';
+	import { ExternalLink, Position } from './types';
 	import { IndexedObject } from '../../types';
+
+	import { customizable } from '../../mixins/customizable';
 
 	import {
 		mdiChevronRight as rightArrowIcon,
@@ -92,8 +94,26 @@
 
 	import { convertToUnit } from '../../helpers/convertToUnit';
 
+	const SPACE_CHARACTER = ' ';
+
 	const Props = Vue.extend({
 		props: {
+			/** Position of the component */
+			position: {
+				type: String,
+				required: true,
+				validator(value: string): boolean {
+					const isValid = value.match(/^(top|bottom) (left|right)$/) !== null;
+
+					if (!isValid) {
+						// @see https://github.com/vuejs/vue/issues/9467#issuecomment-808924803
+						// eslint-disable-next-line no-console
+						console.error(`Wrong value for the \`position\` prop. Given: "${value}", expected "(top|bottom) (left|right)".`);
+					}
+
+					return true;
+				}
+			},
 			/** Links to display in the list */
 			items: {
 				type: Array as PropType<ExternalLink[]>,
@@ -103,26 +123,6 @@
 			btnText: {
 				type: String,
 				default: locales.btnText
-			},
-			/** Align the component towards left */
-			left: {
-				type: Boolean,
-				default: false
-			},
-			/** Align the component towards right */
-			right: {
-				type: Boolean,
-				default: false
-			},
-			/** Align the component towards top */
-			top: {
-				type: Boolean,
-				default: false
-			},
-			/** Align the component towards bottom */
-			bottom: {
-				type: Boolean,
-				default: false
 			},
 			/** Nudge the component to the top */
 			nudgeTop: {
@@ -153,6 +153,32 @@
 		menu = false;
 		hover = false;
 
+		get computedPosition(): Position {
+			const [ y, x ] = this.position.split(SPACE_CHARACTER);
+
+			return { x, y };
+		}
+
+		get right(): boolean {
+			return this.computedPosition.x === PositionEnum.RIGHT;
+		}
+
+		get left(): boolean {
+			return this.computedPosition.x === PositionEnum.LEFT;
+		}
+
+		get top(): boolean {
+			return this.computedPosition.y === PositionEnum.TOP;
+		}
+
+		get bottom(): boolean {
+			return this.computedPosition.y === PositionEnum.BOTTOM;
+		}
+
+		get open(): boolean {
+			return this.menu || this.hover;
+		}
+
 		get menuClass(): string {
 			const positionClass = this.right ? 'right-0' : 'left-0';
 
@@ -166,7 +192,7 @@
 		get transform(): string {
 			let translateValue: string;
 
-			if (this.menu || this.hover) {
+			if (this.open) {
 				translateValue = '0';
 			} else {
 				translateValue = this.right ? 'calc(100% - 48px)' : 'calc(-100% + 48px)';
@@ -209,11 +235,12 @@
 		}
 
 		get arrowIcon(): string {
-			if (this.right) {
-				return this.menu ? rightArrowIcon : leftArrowIcon;
-			}
+			const iconMapping: IndexedObject = {
+				right: this.open ? rightArrowIcon : leftArrowIcon,
+				left: this.open ? leftArrowIcon : rightArrowIcon
+			};
 
-			return this.menu ? leftArrowIcon : rightArrowIcon;
+			return iconMapping[this.computedPosition.x];
 		}
 	}
 </script>
@@ -242,5 +269,11 @@
 	.vd-external-links-list {
 		max-height: $list-max-height;
 		overflow-y: auto;
+	}
+
+	@media only screen and (max-height: 340px) {
+		.vd-external-links-btn {
+			z-index: 8 !important;
+		}
 	}
 </style>

@@ -12,7 +12,11 @@ let wrapper: Wrapper<Vue>;
 describe('ExternalLinks.vue', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(ExternalLinks);
+		wrapper = mountComponent(ExternalLinks, {
+			propsData: {
+				position: 'top left'
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

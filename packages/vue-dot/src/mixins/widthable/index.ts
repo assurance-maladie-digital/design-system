@@ -1,7 +1,6 @@
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import { IndexedObject } from '../../types';
 import { convertToUnit } from '../../helpers/convertToUnit';
 
 export type NumberOrNumberString = PropType<string | number | undefined>;
@@ -27,8 +26,8 @@ const MixinsDeclaration = mixins(Props);
 
 @Component
 export class Widthable extends MixinsDeclaration {
-	get widthStyles(): IndexedObject {
-		const styles: IndexedObject = {};
+	get widthStyles(): Record<string, string> {
+		const styles: Record<string, string> = {};
 
 		const minWidth = convertToUnit(this.minWidth);
 		const maxWidth = convertToUnit(this.maxWidth);

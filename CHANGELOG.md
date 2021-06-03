@@ -4,6 +4,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **FilterModule:** Ajout d'un nouveau composant ([#1102](https://github.com/assurance-maladie-digital/design-system/pull/1102)) ([73f97ff](https://github.com/assurance-maladie-digital/design-system/commit/73f97ffc20da05112173c084158965bd4ecbf8d9))
+ - **ExternalLinks:** Ajout du nouveau composant ([#1105](https://github.com/assurance-maladie-digital/design-system/pull/1105))
 
 - 🐛 **Corrections de bugs**
   - **functions:** Correction de la copie des valeurs fausses dans la fonction `deepCopy` ([#1138](https://github.com/assurance-maladie-digital/design-system/pull/1138)) ([832dfdd](https://github.com/assurance-maladie-digital/design-system/commit/832dfddca11e3bd533e1a6d356e49893a3386a72))
@@ -49,7 +50,6 @@ Cette version comporte la suppression du composant `PageCard`, l'ajout de la pro
 
 - ✨ **Nouvelles fonctionnalités**
   - **DownloadBtn:** Ajout de la prop `fallback-filename` et d'un nom de fichier par défaut ([#1068](https://github.com/assurance-maladie-digital/design-system/pull/1068)) ([490b05e](https://github.com/assurance-maladie-digital/design-system/commit/490b05ee895195176e37567b1ecfb2acd28ae094))
- - **ExternalLinks:** Ajout du nouveau composant `ExternalLinks` ([#1105](https://github.com/assurance-maladie-digital/design-system/pull/1105))
 
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du calcul de la date maximale en mode `birthdate` ([#1046](https://github.com/assurance-maladie-digital/design-system/pull/1046)) ([7fcbd97](https://github.com/assurance-maladie-digital/design-system/commit/7fcbd97bef15a903b65e6d5bfc07febca8a10f40))
