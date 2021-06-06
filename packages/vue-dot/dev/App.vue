@@ -1,6 +1,7 @@
 <template>
 	<VApp>
-		<VAppBar
+		<HeaderBar :nav-bar="navBar" />
+		<!--<VAppBar
 			app
 			dark
 			color="primary"
@@ -15,7 +16,7 @@
 			<PageContainer>
 				<Playground />
 			</PageContainer>
-		</VMain>
+		</VMain>-->
 	</VApp>
 </template>
 
@@ -30,5 +31,28 @@
 			Playground
 		}
 	})
-	export default class App extends Vue {}
+	export default class App extends Vue {
+		navBar = {
+			title: 'Nom du projet',
+			pro: false,
+			menu: [
+				{
+					label: 'item',
+					link: ''
+				},
+				{
+					label: 'item',
+					link: ''
+				},
+				{
+					label: 'item',
+					link: ''
+				},
+				{
+					label: 'item',
+					link: ''
+				}
+			]
+		};
+	}
 </script>
