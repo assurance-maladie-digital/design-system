@@ -46,7 +46,8 @@
   - **vue:** Mise à jour vers la `v2.6.13` ([#1148](https://github.com/assurance-maladie-digital/design-system/pull/1148)) ([8e1e105](https://github.com/assurance-maladie-digital/design-system/commit/8e1e10569a63e537c6d36c886c7f21778fc4d037))
   - **vuetify:** Mise à jour vers la `v2.5.3` ([#1149](https://github.com/assurance-maladie-digital/design-system/pull/1149)) ([9bd9597](https://github.com/assurance-maladie-digital/design-system/commit/9bd959746ed5a151eecb32328cdc04ee1de221c4))
   - **@types/node:** Mise à jour vers la `v14.17.2` ([#1151](https://github.com/assurance-maladie-digital/design-system/pull/1151)) ([d69625f](https://github.com/assurance-maladie-digital/design-system/commit/d69625fa7a570f474e9d979a255f21076d9eb3f3))
-  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.1` ([#1152](https://github.com/assurance-maladie-digital/design-system/pull/1152))
+  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.1` ([#1152](https://github.com/assurance-maladie-digital/design-system/pull/1152)) ([4e71476](https://github.com/assurance-maladie-digital/design-system/commit/4e714761c03184d7fd774ea8976a254811c20c72))
+  - **sass:** Épinglage de la dépendance à la `v1.32.13` ([#1157](https://github.com/assurance-maladie-digital/design-system/pull/1157))
 
 ## v2.0.0-beta.10
 
