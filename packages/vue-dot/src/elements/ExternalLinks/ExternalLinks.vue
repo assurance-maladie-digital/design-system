@@ -190,12 +190,13 @@
 		}
 
 		get transform(): string {
+			const MIN_BTN_WIDTH = '48px';
 			let translateValue: string;
 
 			if (this.open) {
 				translateValue = '0';
 			} else {
-				translateValue = this.right ? 'calc(100% - 48px)' : 'calc(-100% + 48px)';
+				translateValue = this.right ? `calc(100% - ${MIN_BTN_WIDTH})` : `calc(-100% + ${MIN_BTN_WIDTH})`;
 			}
 
 			return `translateX(${translateValue})`;
