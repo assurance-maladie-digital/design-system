@@ -1,6 +1,15 @@
 <template>
 	<VApp>
-		<HeaderBar :nav-bar="navBar" />
+		<HeaderBar :nav-bar="navBar">
+			<template #company-logo>
+				<div class="d-none d-md-block">
+					COMPANY LOGO
+				</div>
+			</template>
+			<template #user-bar>
+				TEST
+			</template>
+		</HeaderBar>
 		<!--<VAppBar
 			app
 			dark

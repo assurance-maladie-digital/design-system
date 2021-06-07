@@ -1,11 +1,9 @@
 <template>
 	<div
-		class="vd-header-nav"
+		class="vd-header-nav d-none d-md-flex"
 		:class="backgroundColor"
 	>
-		<VBtn
-			v-bind="options.homeBtn"
-		>
+		<VBtn v-bind="options.homeBtn">
 			<VIcon>
 				{{ navBar.pro ? menuIcon : homeIcon }}
 			</VIcon>
@@ -13,7 +11,10 @@
 		<div class="d-flex align-center">
 			{{ navBar.title }}
 		</div>
-		<VDivider v-bind="options.divider" />
+		<VDivider
+			v-if="!navBar.pro"
+			v-bind="options.divider"
+		/>
 		<nav
 			v-if="!navBar.pro && navBar.menu"
 			class="d-flex"
@@ -73,7 +74,6 @@
 <style lang="scss" scoped>
 	.vd {
 		&-header-nav {
-			display: flex;
 			width: 100%;
 			height: 40px;
 			color: white;
