@@ -1,13 +1,15 @@
 <template>
 	<VApp>
-		<HeaderBar :nav-bar="navBar">
-			<template #company-logo>
+		<HeaderBar :header="header">
+			<!--<template #company-logo>
 				<div class="d-none d-md-block">
 					COMPANY LOGO
 				</div>
-			</template>
+			</template>-->
 			<template #user-bar>
-				TEST
+				<div class="mr-7">
+					TEST
+				</div>
 			</template>
 		</HeaderBar>
 		<!--<VAppBar
@@ -41,27 +43,34 @@
 		}
 	})
 	export default class App extends Vue {
-		navBar = {
-			title: 'Nom du projet',
-			pro: false,
-			menu: [
-				{
-					label: 'item',
-					link: ''
-				},
-				{
-					label: 'item',
-					link: ''
-				},
-				{
-					label: 'item',
-					link: ''
-				},
-				{
-					label: 'item',
-					link: ''
-				}
-			]
+		header = {
+			type: '',
+			service: {
+				name: 'Nom du service',
+				baseLine: 'Description'
+			},
+			navBar: {
+				title: 'Nom du projet',
+				pro: false,
+				menu: [
+					{
+						label: 'item',
+						href: ''
+					},
+					{
+						label: 'item',
+						href: ''
+					},
+					{
+						label: 'item',
+						href: ''
+					},
+					{
+						label: 'item',
+						href: ''
+					}
+				]
+			}
 		};
 	}
 </script>

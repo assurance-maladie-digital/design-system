@@ -3,33 +3,52 @@
 		class="vd-header"
 		:class="headerBarHeight"
 	>
-		<dir class="vd-header-container">
+		<div class="vd-header-container">
 			<div class="d-flex align-center">
 				<div class="vd-header-logo">
-					Header LOGO
+					<img
+						v-if="header.navBar.pro"
+						src="../../assets/images/ameli-pro.png"
+						alt=""
+					>
+					<img
+						v-else
+						src="../../assets/images/logo.png"
+						alt=""
+					>
 				</div>
-				<slot name="company-logo" />
-				<div>
-					<VDivider
-						v-bind="options.divider"
-					/>
-					<div>
-						<div>
-							Nom du service
-						</div>
-						<div>
-							Baseline - précisions sur la plateforme
+				<slot name="company-logo">
+					<div
+						v-if="header.service"
+						class="vd-header-title"
+					>
+						<VDivider
+							v-bind="options.divider"
+						/>
+						<div class="d-flex flex-column">
+							<div
+								v-if="header.service.name"
+								class="vd-header-title-main"
+							>
+								{{ header.service.name }}
+							</div>
+							<div
+								v-if="header.service.baseLine"
+								class="vd-header-title-sub"
+							>
+								{{ header.service.baseLine }}
+							</div>
 						</div>
 					</div>
-				</div>
+				</slot>
 			</div>
 			<div class="d-flex align-center">
 				<slot name="user-bar" />
 			</div>
-		</dir>
+		</div>
 		<HeaderNavBar
-			v-if="navBar"
-			:nav-bar="navBar"
+			v-if="header.navBar"
+			:nav-bar="header.navBar"
 		/>
 	</div>
 </template>
@@ -45,15 +64,15 @@
 
 	import HeaderNavBar from './HeaderNavBar';
 
-	import { NavBar } from './types';
+	import { HeaderConfig } from './types';
 
 	const Props = Vue.extend({
 		components: {
 			HeaderNavBar
 		},
 		props: {
-			navBar: {
-				type: Object as PropType<NavBar>,
+			header: {
+				type: Object as PropType<HeaderConfig>,
 				default: null
 			}
 		}
@@ -70,7 +89,7 @@
 		locales = locales;
 
 		get headerBarHeight() :string {
-			return this.navBar ? 'long' : 'short';
+			return this.header.navBar ? 'long' : 'short';
 		}
 	}
 </script>
@@ -78,8 +97,10 @@
 <style lang="scss" scoped>
 	.vd {
 		&-header {
-			width: 100%;
-			box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+			width: 100vw;
+			box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+						0px 2px 2px rgba(0, 0, 0, 0.14),
+						0px 1px 5px rgba(0, 0, 0, 0.12);
 
 			&-container {
 				display: flex;
@@ -96,9 +117,23 @@
 			}
 
 			&-logo {
-				width: 250px;
 				display: flex;
 				justify-content: center;
+			}
+
+			&-title {
+				display: flex;
+				color: #0C419A;
+
+				&-main {
+					font-size: 16px;
+					line-height: 18px;
+				}
+
+				&-sub {
+					font-size: 12px;
+					line-height: 14px;
+				}
 			}
 		}
 	}

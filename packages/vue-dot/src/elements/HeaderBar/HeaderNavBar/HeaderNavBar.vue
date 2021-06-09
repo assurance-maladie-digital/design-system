@@ -1,9 +1,11 @@
 <template>
 	<div
-		class="vd-header-nav d-none d-md-flex"
+		class="vd-header-nav d-none d-md-flex align-center"
 		:class="backgroundColor"
 	>
-		<VBtn v-bind="options.homeBtn">
+		<VBtn
+			v-bind="options.homeBtn"
+		>
 			<VIcon>
 				{{ navBar.pro ? menuIcon : homeIcon }}
 			</VIcon>
@@ -12,20 +14,21 @@
 			{{ navBar.title }}
 		</div>
 		<VDivider
-			v-if="!navBar.pro"
+			v-if="!navBar.pro || !navBar.title"
 			v-bind="options.divider"
 		/>
 		<nav
 			v-if="!navBar.pro && navBar.menu"
 			class="d-flex"
 		>
-			<VBtn
+			<!--<router-link
 				v-for="(item, index) in navBar.menu"
 				:key="index"
 				v-bind="options.menuBtn"
+				:to="item.href"
 			>
 				{{ item.label }}
-			</VBtn>
+			</router-link>-->
 		</nav>
 	</div>
 </template>
