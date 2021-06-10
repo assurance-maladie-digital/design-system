@@ -13,7 +13,8 @@
   - **config:** Mise à jour de la taille maximale du build ([#1139](https://github.com/assurance-maladie-digital/design-system/pull/1139)) ([c9b445b](https://github.com/assurance-maladie-digital/design-system/commit/c9b445b153ea4dd896fa4d08d8615a8b22377259))
 
 - 🎨 **Qualité de code**
-  - **global:** Utilisation de l'interface `IndexedObject` au lieu de types personnalisés ([#1163](https://github.com/assurance-maladie-digital/design-system/pull/1163))
+  - **global:** Utilisation de l'interface `IndexedObject` au lieu de types personnalisés ([#1163](https://github.com/assurance-maladie-digital/design-system/pull/1163)) ([50a29e5](https://github.com/assurance-maladie-digital/design-system/commit/50a29e548b59020799fa8a665603f37ed508ded8))
+  - **global:** Amélioration de la qualité du code ([#1164](https://github.com/assurance-maladie-digital/design-system/pull/1164))
 
 ### FormBuilder
 
