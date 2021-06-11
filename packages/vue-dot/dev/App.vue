@@ -1,14 +1,18 @@
 <template>
 	<VApp>
-		<HeaderBar :header="header">
-			<!--<template #company-logo>
+		<HeaderBar
+			:nav-bar="navBar"
+			:service="service"
+			:type="type"
+		>
+			<template #company-logo>
 				<div class="d-none d-md-block">
 					COMPANY LOGO
 				</div>
-			</template>-->
+			</template>
 			<template #user-bar>
 				<div class="mr-7">
-					TEST
+					AUTH
 				</div>
 			</template>
 		</HeaderBar>
@@ -43,34 +47,33 @@
 		}
 	})
 	export default class App extends Vue {
-		header = {
-			type: '',
-			service: {
-				name: 'Nom du service',
-				baseLine: 'Description'
-			},
-			navBar: {
-				title: 'Nom du projet',
-				pro: false,
-				menu: [
-					{
-						label: 'item',
-						href: ''
-					},
-					{
-						label: 'item',
-						href: ''
-					},
-					{
-						label: 'item',
-						href: ''
-					},
-					{
-						label: 'item',
-						href: ''
-					}
-				]
-			}
+		type = 'ameli-pro';
+
+		navBar = {
+			title: 'Nom du projet',
+			menu: [
+				{
+					label: 'item',
+					href: ''
+				},
+				{
+					label: 'item',
+					href: ''
+				},
+				{
+					label: 'item',
+					href: ''
+				},
+				{
+					label: 'item',
+					href: ''
+				}
+			]
+		};
+
+		service = {
+			name: 'Nom du service',
+			baseLine: 'Description'
 		};
 	}
 </script>

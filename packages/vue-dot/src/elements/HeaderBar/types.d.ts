@@ -5,7 +5,6 @@ export interface NavBarItem {
 
 export interface NavBar {
 	title: string | null;
-    pro: boolean;
 	menu?: NavBarItem[];
 }
 export interface ServiceItem {
@@ -14,7 +13,6 @@ export interface ServiceItem {
 }
 
 export interface HeaderConfig {
-	type?: string;
 	service?: ServiceItem;
 	navBar?: NavBar;
 }

@@ -4,51 +4,68 @@
 		:class="headerBarHeight"
 	>
 		<div class="vd-header-container">
+			<div class="d-flex align-center d-md-none">
+				MENU
+			</div>
 			<div class="d-flex align-center">
 				<div class="vd-header-logo">
 					<img
-						v-if="header.navBar.pro"
+						v-if="hasLogoSlot || hasService"
+						src="../../assets/images/simple-logo.png"
+						alt=""
+					>
+					<img
+						v-else-if="type === 'cnam'"
+						src="../../assets/images/logo.png"
+						alt=""
+					>
+					<img
+						v-else-if="type === 'ameli-pro'"
 						src="../../assets/images/ameli-pro.png"
 						alt=""
 					>
 					<img
-						v-else
-						src="../../assets/images/logo.png"
+						v-else-if="type === 'risque-pro'"
+						src="../../assets/images/logo-pro.png"
 						alt=""
 					>
 				</div>
 				<slot name="company-logo">
 					<div
-						v-if="header.service"
-						class="vd-header-title"
+						v-if="hasService"
+						class="vd-header-title d-none d-md-flex"
 					>
 						<VDivider
 							v-bind="options.divider"
 						/>
 						<div class="d-flex flex-column">
 							<div
-								v-if="header.service.name"
+								v-if="service.name"
 								class="vd-header-title-main"
 							>
-								{{ header.service.name }}
+								{{ service.name }}
 							</div>
 							<div
-								v-if="header.service.baseLine"
+								v-if="service.baseLine"
 								class="vd-header-title-sub"
 							>
-								{{ header.service.baseLine }}
+								{{ service.baseLine }}
 							</div>
 						</div>
 					</div>
 				</slot>
 			</div>
-			<div class="d-flex align-center">
+			<div
+				v-if="hasUserSlot"
+				class="d-flex align-center"
+			>
 				<slot name="user-bar" />
 			</div>
 		</div>
 		<HeaderNavBar
-			v-if="header.navBar"
-			:nav-bar="header.navBar"
+			v-if="hasNavBar"
+			:nav-bar="navBar"
+			:is-pro="hasProTemplate"
 		/>
 	</div>
 </template>
@@ -64,16 +81,32 @@
 
 	import HeaderNavBar from './HeaderNavBar';
 
-	import { HeaderConfig } from './types';
+	import { NavBar, ServiceItem } from './types';
 
 	const Props = Vue.extend({
 		components: {
 			HeaderNavBar
 		},
 		props: {
-			header: {
-				type: Object as PropType<HeaderConfig>,
+			navBar: {
+				type: Object as PropType<NavBar>,
 				default: null
+			},
+			service: {
+				type: Object as PropType<ServiceItem>,
+				default: null
+			},
+			type: {
+				type: String,
+				required: true,
+				validator(value: string): boolean {
+					const isValid = value.match(/^(ameli-pro|risque-pro|cnam)$/) !== null;
+					if (!isValid) {
+						// eslint-disable-next-line no-console
+						console.error(`Wrong value for the \`position\` prop. Given: "${value}", expected "(ameli-pro|risque-pro|cnam)".`);
+					}
+					return true;
+				}
 			}
 		}
 	});
@@ -88,8 +121,28 @@
 	export default class HeaderBar extends MixinsDeclaration {
 		locales = locales;
 
+		get hasLogoSlot() :boolean {
+			return Boolean(this.$slots['company-logo']);
+		}
+
+		get hasUserSlot() :boolean {
+			return Boolean(this.$slots['user-bar']);
+		}
+
+		get hasNavBar() :boolean {
+			return Boolean(this.navBar !== null);
+		}
+
+		get hasService() :boolean {
+			return Boolean(this.service !== null);
+		}
+
+		get hasProTemplate() :boolean {
+			return Boolean(this.type === 'ameli-pro' && !this.hasService && !this.hasLogoSlot);
+		}
+
 		get headerBarHeight() :string {
-			return this.header.navBar ? 'long' : 'short';
+			return this.hasNavBar ? 'long' : 'short';
 		}
 	}
 </script>
@@ -97,7 +150,7 @@
 <style lang="scss" scoped>
 	.vd {
 		&-header {
-			width: 100vw;
+			width: 100%;
 			box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
 						0px 2px 2px rgba(0, 0, 0, 0.14),
 						0px 1px 5px rgba(0, 0, 0, 0.12);
@@ -122,7 +175,6 @@
 			}
 
 			&-title {
-				display: flex;
 				color: #0C419A;
 
 				&-main {

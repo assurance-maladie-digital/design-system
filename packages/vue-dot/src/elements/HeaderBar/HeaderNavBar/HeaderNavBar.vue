@@ -7,18 +7,18 @@
 			v-bind="options.homeBtn"
 		>
 			<VIcon>
-				{{ navBar.pro ? menuIcon : homeIcon }}
+				{{ isPro ? menuIcon : homeIcon }}
 			</VIcon>
 		</VBtn>
 		<div class="d-flex align-center">
 			{{ navBar.title }}
 		</div>
 		<VDivider
-			v-if="!navBar.pro || !navBar.title"
+			v-if="isPro || !navBar.title"
 			v-bind="options.divider"
 		/>
 		<nav
-			v-if="!navBar.pro && navBar.menu"
+			v-if="isPro && navBar.menu"
 			class="d-flex"
 		>
 			<!--<router-link
@@ -52,6 +52,10 @@
 			navBar: {
 				type: Object as PropType<NavBar>,
 				default: null
+			},
+			isPro: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -69,7 +73,7 @@
 		menuIcon = mdiMenu;
 
 		get backgroundColor() :string {
-			return this.navBar.pro ? 'background-pro' : 'background-primary';
+			return this.isPro ? 'background-pro' : 'background-primary';
 		}
 	}
 </script>
