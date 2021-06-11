@@ -87,7 +87,7 @@
 				type: String,
 				default: '800px'
 			},
-			/** The label of the cancel button*/
+			/** The label of the cancel button */
 			cancelBtnText: {
 				type: String,
 				default: locales.cancelBtn

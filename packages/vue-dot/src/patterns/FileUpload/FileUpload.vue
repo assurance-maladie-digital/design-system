@@ -122,7 +122,7 @@
 				type: null as unknown as PropType<File | File[] | null>,
 				default: null,
 				/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
-				validator: (val): boolean => {
+				validator(val): boolean {
 					if (val === null) {
 						return true;
 					}
