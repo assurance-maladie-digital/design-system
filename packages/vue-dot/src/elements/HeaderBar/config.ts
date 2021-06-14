@@ -8,6 +8,11 @@ export const config = {
         inset: true,
         vertical: true
 	},
+	homeBtn: {
+		class: 'ml-7',
+        color: 'primary',
+        icon: true
+    },
     menu: {
         offsetX: true,
         zIndex: 8,

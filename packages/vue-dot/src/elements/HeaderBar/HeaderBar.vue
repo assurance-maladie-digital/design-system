@@ -5,7 +5,14 @@
 	>
 		<div class="vd-header-container">
 			<div class="d-flex align-center d-md-none">
-				MENU
+				<VBtn
+					v-bind="options.homeBtn"
+					@click="openMenu"
+				>
+					<VIcon>
+						{{ menuIcon }}
+					</VIcon>
+				</VBtn>
 			</div>
 			<div class="d-flex align-center">
 				<div class="vd-header-logo">
@@ -63,9 +70,18 @@
 			</div>
 		</div>
 		<HeaderNavBar
-			v-if="hasNavBar"
-			:nav-bar="navBar"
+			v-if="(hasNavBar && responsiveHeight) || hasService"
 			:is-pro="hasProTemplate"
+			:nav-bar="navBar"
+			:reactive-display="responsiveHeight"
+			:service="service"
+			@navigate="$emit('navigate')"
+			@open-menu="openMenu"
+		/>
+		<HeaderMenu
+			:is-open="isOpen"
+			:nav-bar="navBar"
+			@navigate="$emit('navigate')"
 		/>
 	</div>
 </template>
@@ -79,12 +95,16 @@
 
 	import { customizable } from '../../mixins/customizable';
 
+	import HeaderMenu from './HeaderMenu';
 	import HeaderNavBar from './HeaderNavBar';
 
 	import { NavBar, ServiceItem } from './types';
 
+	import { mdiMenu } from '@mdi/js';
+
 	const Props = Vue.extend({
 		components: {
+			HeaderMenu,
 			HeaderNavBar
 		},
 		props: {
@@ -121,6 +141,10 @@
 	export default class HeaderBar extends MixinsDeclaration {
 		locales = locales;
 
+		menuIcon = mdiMenu;
+
+		isOpen = false;
+
 		get hasLogoSlot() :boolean {
 			return Boolean(this.$slots['company-logo']);
 		}
@@ -142,7 +166,22 @@
 		}
 
 		get headerBarHeight() :string {
-			return this.hasNavBar ? 'long' : 'short';
+			return (this.hasNavBar && this.responsiveHeight) || this.hasService ? 'long' : 'short';
+		}
+
+		get responsiveHeight() :boolean {
+			switch (this.$vuetify.breakpoint.name) {
+				case 'xs': return false;
+				case 'sm': return false;
+				case 'md': return true;
+				case 'lg': return true;
+				case 'xl': return true;
+			}
+			return false;
+		}
+
+		openMenu() :void {
+			this.isOpen = !this.isOpen;
 		}
 	}
 </script>

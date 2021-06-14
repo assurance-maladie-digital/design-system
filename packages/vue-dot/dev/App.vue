@@ -2,14 +2,13 @@
 	<VApp>
 		<HeaderBar
 			:nav-bar="navBar"
-			:service="service"
 			:type="type"
 		>
-			<template #company-logo>
+			<!-- <template #company-logo>
 				<div class="d-none d-md-block">
 					COMPANY LOGO
 				</div>
-			</template>
+			</template> -->
 			<template #user-bar>
 				<div class="mr-7">
 					AUTH

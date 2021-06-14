@@ -1,35 +1,63 @@
 <template>
 	<div
-		class="vd-header-nav d-none d-md-flex align-center"
-		:class="backgroundColor"
+		class="vd-header-nav align-center"
+		:class="[backgroundColor, hasService ? 'd-flex': 'd-none d-md-flex']"
 	>
-		<VBtn
-			v-bind="options.homeBtn"
+		<div
+			v-if="hasService && !reactiveDisplay"
+			class="ml-4"
 		>
-			<VIcon>
-				{{ isPro ? menuIcon : homeIcon }}
-			</VIcon>
-		</VBtn>
-		<div class="d-flex align-center">
-			{{ navBar.title }}
-		</div>
-		<VDivider
-			v-if="isPro || !navBar.title"
-			v-bind="options.divider"
-		/>
-		<nav
-			v-if="isPro && navBar.menu"
-			class="d-flex"
-		>
-			<!--<router-link
-				v-for="(item, index) in navBar.menu"
-				:key="index"
-				v-bind="options.menuBtn"
-				:to="item.href"
+			<div
+				v-if="service.name"
+				class="vd-header-service"
 			>
-				{{ item.label }}
-			</router-link>-->
-		</nav>
+				{{ service.name }} {{ service.name && service.baseLine ? '/' : '' }}
+			</div>
+			<div
+				v-if="service.baseLine"
+				class="vd-header-service"
+			>
+				{{ service.baseLine }}
+			</div>
+		</div>
+		<div
+			v-else
+			class="d-flex ml-14"
+		>
+			<VBtn
+				v-bind="options.homeBtn"
+				@click="actionSelector"
+			>
+				<VIcon>
+					{{ isPro ? menuIcon : homeIcon }}
+				</VIcon>
+			</VBtn>
+			<div
+				v-if="navBar !== null"
+				class="d-flex align-center"
+			>
+				<div>
+					{{ navBar.title }}
+				</div>
+				<VDivider
+					v-if="!isPro"
+					v-bind="options.divider"
+				/>
+			</div>
+			<nav
+				v-if="isPro && navBar.menu"
+				class="d-flex"
+			>
+				<!--<router-link
+					v-for="(item, index) in navBar.menu"
+					:key="index"
+					v-bind="options.menuBtn"
+					:to="item.href"
+				>
+					{{ item.label }}
+				</router-link>-->
+			</nav>
+		</div>
 	</div>
 </template>
 
@@ -42,7 +70,7 @@
 
 	import { customizable } from '../../../mixins/customizable';
 
-	import { NavBar } from '../types';
+	import { NavBar, ServiceItem } from '../types';
 
 	import { mdiHomeOutline } from '@mdi/js';
 	import { mdiMenu } from '@mdi/js';
@@ -56,6 +84,14 @@
 			isPro: {
 				type: Boolean,
 				default: false
+			},
+			reactiveDisplay: {
+				type: Boolean,
+				default: false
+			},
+			service: {
+				type: Object as PropType<ServiceItem>,
+				default: null
 			}
 		}
 	});
@@ -75,22 +111,49 @@
 		get backgroundColor() :string {
 			return this.isPro ? 'background-pro' : 'background-primary';
 		}
+
+		get hasService() :boolean {
+			return Boolean(this.service !== null);
+		}
+
+		actionSelector() :void {
+			if(this.isPro) {
+				this.openMenu();
+			} else {
+				this.emitNavigationEvent();
+			}
+		}
+
+		emitNavigationEvent() :void {
+			this.$emit('navigate');
+		}
+
+		openMenu() :void {
+			// eslint-disable-next-line
+			this.$emit('open-menu');
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.vd {
-		&-header-nav {
-			width: 100%;
-			height: 40px;
-			color: white;
+		&-header {
+			&-service {
+				font-size: 16px;
+				line-height: 18px;
+			}
+			&-nav {
+				width: 100%;
+				height: 40px;
+				color: white;
 
-			&.background {
-				&-pro {
-					background-color: #007FAD;
-				}
-				&-primary {
-					background-color: #001C6B;
+				&.background {
+					&-pro {
+						background-color: #007FAD;
+					}
+					&-primary {
+						background-color: #001C6B;
+					}
 				}
 			}
 		}
