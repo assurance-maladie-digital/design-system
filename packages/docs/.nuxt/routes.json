@@ -1,0 +1,16 @@
+[
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/docs/src/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_de85857e"
+  },
+  {
+    "name": "all",
+    "path": "/*",
+    "component": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/docs/src/pages/_.vue",
+    "chunkName": "pages/_",
+    "_name": "_d592ec64"
+  }
+]
