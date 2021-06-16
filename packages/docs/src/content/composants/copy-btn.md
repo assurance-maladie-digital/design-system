@@ -1,6 +1,6 @@
 ---
 title: CopyBtn
-description: L'élément `CopyBtn` est utilisé pour afficher un bouton permettant à l'utilisateur de copier du texte.
+description: L’élément `CopyBtn` est utilisé pour afficher un bouton permettant à l’utilisateur de copier du texte.
 ---
 
 <doc-tabs>
@@ -27,13 +27,13 @@ Vous pouvez masquer le tooltip en utilisant la prop `hide-tooltip`.
 
 ### Composants Vuetify
 
-Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `CopyBtn` en utilisant la prop `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans l’élément `CopyBtn` en utilisant la prop `vuetify-options`.
 
 <doc-example file="copy-btn/options"></doc-example>
 
 ### Slots
 
-Vous pouvez utiliser les slots `icon` et `tooltip` pour personnaliser l'icône ainsi que le contenu du tooltip.
+Vous pouvez utiliser les slots `icon` et `tooltip` pour personnaliser l’icône ainsi que le contenu du tooltip.
 
 <doc-example file="copy-btn/slots"></doc-example>
 
