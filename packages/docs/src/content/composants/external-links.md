@@ -13,8 +13,4 @@ description: L'élément `ExternalLinks` est utilisé pour afficher un menu avec
  <doc-api name="external-links"></doc-api>
 </doc-tab-item>
 
-<doc-tab-item label="Personnalisation">
- 
-</doc-tab-item>
-
 </doc-tabs>

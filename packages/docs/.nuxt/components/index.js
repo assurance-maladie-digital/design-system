@@ -16,11 +16,11 @@ export { default as DocHeader } from '../../src/components/DocHeader.vue'
 export { default as DocSearchField } from '../../src/components/DocSearchField.vue'
 export { default as CodeDocCodeBlock } from '../../src/components/code/DocCodeBlock.vue'
 export { default as CodeDocMarkdown } from '../../src/components/code/DocMarkdown.vue'
-export { default as ContentExplorer } from '../../src/components/content-explorer/ContentExplorer.vue'
 export { default as DrawerDocDrawer } from '../../src/components/drawer/DocDrawer.vue'
 export { default as DrawerDocDrawerList } from '../../src/components/drawer/DocDrawerList.vue'
 export { default as DrawerDocDrawerListGroup } from '../../src/components/drawer/DocDrawerListGroup.vue'
 export { default as DrawerDocDrawerListItem } from '../../src/components/drawer/DocDrawerListItem.vue'
+export { default as ContentExplorer } from '../../src/components/content-explorer/ContentExplorer.vue'
 export { default as PageDocGithubLink } from '../../src/components/page/DocGithubLink.vue'
 export { default as PageDocPageInfo } from '../../src/components/page/DocPageInfo.vue'
 export { default as PageDocPrevNext } from '../../src/components/page/DocPrevNext.vue'
@@ -42,11 +42,11 @@ export const LazyDocHeader = import('../../src/components/DocHeader.vue' /* webp
 export const LazyDocSearchField = import('../../src/components/DocSearchField.vue' /* webpackChunkName: "components/doc-search-field" */).then(c => wrapFunctional(c.default || c))
 export const LazyCodeDocCodeBlock = import('../../src/components/code/DocCodeBlock.vue' /* webpackChunkName: "components/code-doc-code-block" */).then(c => wrapFunctional(c.default || c))
 export const LazyCodeDocMarkdown = import('../../src/components/code/DocMarkdown.vue' /* webpackChunkName: "components/code-doc-markdown" */).then(c => wrapFunctional(c.default || c))
-export const LazyContentExplorer = import('../../src/components/content-explorer/ContentExplorer.vue' /* webpackChunkName: "components/content-explorer" */).then(c => wrapFunctional(c.default || c))
 export const LazyDrawerDocDrawer = import('../../src/components/drawer/DocDrawer.vue' /* webpackChunkName: "components/drawer-doc-drawer" */).then(c => wrapFunctional(c.default || c))
 export const LazyDrawerDocDrawerList = import('../../src/components/drawer/DocDrawerList.vue' /* webpackChunkName: "components/drawer-doc-drawer-list" */).then(c => wrapFunctional(c.default || c))
 export const LazyDrawerDocDrawerListGroup = import('../../src/components/drawer/DocDrawerListGroup.vue' /* webpackChunkName: "components/drawer-doc-drawer-list-group" */).then(c => wrapFunctional(c.default || c))
 export const LazyDrawerDocDrawerListItem = import('../../src/components/drawer/DocDrawerListItem.vue' /* webpackChunkName: "components/drawer-doc-drawer-list-item" */).then(c => wrapFunctional(c.default || c))
+export const LazyContentExplorer = import('../../src/components/content-explorer/ContentExplorer.vue' /* webpackChunkName: "components/content-explorer" */).then(c => wrapFunctional(c.default || c))
 export const LazyPageDocGithubLink = import('../../src/components/page/DocGithubLink.vue' /* webpackChunkName: "components/page-doc-github-link" */).then(c => wrapFunctional(c.default || c))
 export const LazyPageDocPageInfo = import('../../src/components/page/DocPageInfo.vue' /* webpackChunkName: "components/page-doc-page-info" */).then(c => wrapFunctional(c.default || c))
 export const LazyPageDocPrevNext = import('../../src/components/page/DocPrevNext.vue' /* webpackChunkName: "components/page-doc-prev-next" */).then(c => wrapFunctional(c.default || c))
