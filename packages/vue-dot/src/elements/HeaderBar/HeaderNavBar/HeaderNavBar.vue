@@ -22,7 +22,7 @@
 		</div>
 		<div
 			v-else
-			class="d-flex ml-14"
+			class="d-flex align-center ml-14"
 		>
 			<VBtn
 				v-bind="options.homeBtn"
@@ -34,29 +34,28 @@
 			</VBtn>
 			<div
 				v-if="navBar !== null"
-				class="d-flex align-center"
+				class="vd-header-title d-flex align-center"
 			>
 				<div>
 					{{ navBar.title }}
 				</div>
-				<VDivider
+				<!-- <VDivider
 					v-if="!isPro"
 					v-bind="options.divider"
-				/>
+				/> -->
 			</div>
-			<nav
-				v-if="isPro && navBar.menu"
-				class="d-flex"
+			<VTabs
+				v-if="!isPro && navBar.menu"
+				v-bind="options.navTabs"
 			>
-				<!--<router-link
+				<VTab
 					v-for="(item, index) in navBar.menu"
 					:key="index"
-					v-bind="options.menuBtn"
 					:to="item.href"
 				>
 					{{ item.label }}
-				</router-link>-->
-			</nav>
+				</VTab>
+			</VTabs>
 		</div>
 	</div>
 </template>
@@ -120,17 +119,12 @@
 			if(this.isPro) {
 				this.openMenu();
 			} else {
-				this.emitNavigationEvent();
+				this.$router.push('/');
 			}
 		}
 
-		emitNavigationEvent() :void {
-			this.$emit('navigate');
-		}
-
 		openMenu() :void {
-			// eslint-disable-next-line
-			this.$emit('open-menu');
+			this.$emit('open-menu', true);
 		}
 	}
 </script>
@@ -138,13 +132,18 @@
 <style lang="scss" scoped>
 	.vd {
 		&-header {
+			&-title {
+				width: 200px;
+			}
+
 			&-service {
 				font-size: 16px;
 				line-height: 18px;
 			}
+
 			&-nav {
 				width: 100%;
-				height: 40px;
+				height: 48px;
 				color: white;
 
 				&.background {

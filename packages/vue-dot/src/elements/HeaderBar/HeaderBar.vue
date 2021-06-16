@@ -7,7 +7,7 @@
 			<div class="d-flex align-center d-md-none">
 				<VBtn
 					v-bind="options.homeBtn"
-					@click="openMenu"
+					@click="openMenu(true)"
 				>
 					<VIcon>
 						{{ menuIcon }}
@@ -75,13 +75,13 @@
 			:nav-bar="navBar"
 			:reactive-display="responsiveHeight"
 			:service="service"
-			@navigate="$emit('navigate')"
 			@open-menu="openMenu"
 		/>
 		<HeaderMenu
 			:is-open="isOpen"
 			:nav-bar="navBar"
-			@navigate="$emit('navigate')"
+			:service="service"
+			@open-menu="openMenu"
 		/>
 	</div>
 </template>
@@ -180,8 +180,8 @@
 			return false;
 		}
 
-		openMenu() :void {
-			this.isOpen = !this.isOpen;
+		openMenu(value: boolean) :void {
+			this.isOpen = value;
 		}
 	}
 </script>
@@ -205,7 +205,7 @@
 			}
 
 			&.long {
-				height: 160px;
+				height: 168px;
 			}
 
 			&-logo {

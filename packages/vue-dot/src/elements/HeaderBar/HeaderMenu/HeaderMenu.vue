@@ -3,16 +3,39 @@
 		class="vd-header-menu"
 		:class="[isOpen ? 'd-block' : 'd-none']"
 	>
-		<div class="d-flex column">
-			<VBtn
-				v-for="(item, i) in navBar.menu"
-				:key="i"
-				v-bind="options.homeBtn"
-				@click="emitNavigationEvent"
-			>
-				Click
-			</VBtn>
+		<div
+			class="vd-header-menu-container"
+			:class="responsiveMenu"
+		>
+			<div class="vd-header-menu-title d-flex align-center">
+				<h4	class="ml-3">
+					{{ hasService ? service.name : locales.menu }}
+				</h4>
+				<VBtn
+					v-bind="options.closeBtn"
+					@click="openMenu"
+				>
+					<VIcon>
+						{{ closeMenuIcon }}
+					</VIcon>
+				</VBtn>
+			</div>
+			<div class="d-flex column">
+				<ul>
+					<li
+						v-for="(item, i) in navBar.menu"
+						:key="i"
+						v-bind="options.homeBtn"
+					>
+						Click
+					</li>
+				</ul>
+			</div>
 		</div>
+		<div
+			class="vd-header-menu-click-capture d-none d-sm-block"
+			@click="openMenu"
+		/>
 	</div>
 </template>
 
@@ -25,7 +48,9 @@
 
 	import { customizable } from '../../../mixins/customizable';
 
-	import { NavBar } from '../types';
+	import { NavBar, ServiceItem } from '../types';
+
+	import { mdiChevronLeft } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -35,6 +60,10 @@
 			},
 			navBar: {
 				type: Object as PropType<NavBar>,
+				default: null
+			},
+			service: {
+				type: Object as PropType<ServiceItem>,
 				default: null
 			}
 		}
@@ -49,8 +78,18 @@
 	export default class HeaderMenu extends MixinsDeclaration {
 		locales = locales;
 
-		emitNavigationEvent() :void {
-			this.$emit('navigate');
+		closeMenuIcon = mdiChevronLeft;
+
+		get hasService() :boolean {
+			return Boolean(this.service !== null);
+		}
+
+		get responsiveMenu() :string {
+			return this.$vuetify.breakpoint.name === 'xs' ? 'mobile' : '';
+		}
+
+		openMenu() :void {
+			this.$emit('open-menu', false);
 		}
 	}
 </script>
@@ -59,11 +98,42 @@
 	.vd {
 		&-header {
 			&-menu {
-				width: 100%;
 				position: fixed;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
 				z-index: 99;
-				background-color: white;
-				height: 100%;
+
+				&-click-capture {
+					position: fixed;
+					top: 0;
+					left: 305px;
+					bottom: 0;
+					right: 0;
+				}
+
+				&-container {
+					width: 305px;
+					position: fixed;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					background-color: #007FAD;
+					height: 100%;
+
+					&.mobile {
+						width: 100%;
+					}
+				}
+
+				&-title {
+					color: white;
+					text-transform: uppercase;
+					justify-content: space-between;
+					height: 55px;
+					border-bottom: white 2px solid;
+				}
 			}
 		}
 	}

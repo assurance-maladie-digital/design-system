@@ -2,6 +2,7 @@
 	<VApp>
 		<HeaderBar
 			:nav-bar="navBar"
+			:service="service"
 			:type="type"
 		>
 			<!-- <template #company-logo>
@@ -46,7 +47,7 @@
 		}
 	})
 	export default class App extends Vue {
-		type = 'ameli-pro';
+		type = 'cnam';
 
 		navBar = {
 			title: 'Nom du projet',

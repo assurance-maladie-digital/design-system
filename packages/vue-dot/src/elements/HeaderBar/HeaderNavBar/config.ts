@@ -10,9 +10,8 @@ export const config = {
         inset: true,
         vertical: true
     },
-    menuBtn: {
-        class: 'd-flex align-center text-uppercase mr-3 px-4',
-        dark: true,
-        text: true
+    navTabs: {
+        backgroundColor: '#001C6B',
+        dark: true
     }
 };
