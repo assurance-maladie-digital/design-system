@@ -1,22 +1,6 @@
 <template>
 	<VApp>
-		<HeaderBar
-			:nav-bar="navBar"
-			:service="service"
-			:type="type"
-		>
-			<template #company-logo>
-				<div>
-					COMPANY LOGO
-				</div>
-			</template>
-			<template #user-bar>
-				<div class="mr-7">
-					AUTH
-				</div>
-			</template>
-		</HeaderBar>
-		<!--<VAppBar
+		<VAppBar
 			app
 			dark
 			color="primary"
@@ -31,7 +15,7 @@
 			<PageContainer>
 				<Playground />
 			</PageContainer>
-		</VMain>-->
+		</VMain>
 	</VApp>
 </template>
 
@@ -47,33 +31,6 @@
 		}
 	})
 	export default class App extends Vue {
-		type = 'cnam';
 
-		navBar = {
-			title: 'Nom du projet',
-			menu: [
-				{
-					label: 'item',
-					href: ''
-				},
-				{
-					label: 'item',
-					href: ''
-				},
-				{
-					label: 'item',
-					href: ''
-				},
-				{
-					label: 'item',
-					href: ''
-				}
-			]
-		};
-
-		service = {
-			name: 'Nom du service',
-			baseLine: 'Description'
-		};
 	}
 </script>
