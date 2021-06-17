@@ -5,11 +5,11 @@
 			:service="service"
 			:type="type"
 		>
-			<!-- <template #company-logo>
-				<div class="d-none d-md-block">
+			<template #company-logo>
+				<div>
 					COMPANY LOGO
 				</div>
-			</template> -->
+			</template>
 			<template #user-bar>
 				<div class="mr-7">
 					AUTH

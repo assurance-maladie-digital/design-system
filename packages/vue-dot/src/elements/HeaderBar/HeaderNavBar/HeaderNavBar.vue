@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="vd-header-nav align-center"
-		:class="[backgroundColor, hasService ? 'd-flex': 'd-none d-md-flex']"
+		:class="[backgroundColor, serviceClasses]"
 	>
 		<div
 			v-if="hasService && !reactiveDisplay"
@@ -39,10 +39,6 @@
 				<div>
 					{{ navBar.title }}
 				</div>
-				<!-- <VDivider
-					v-if="!isPro"
-					v-bind="options.divider"
-				/> -->
 			</div>
 			<VTabs
 				v-if="!isPro && navBar.menu"
@@ -113,6 +109,10 @@
 
 		get hasService() :boolean {
 			return Boolean(this.service !== null);
+		}
+
+		get serviceClasses() :string {
+			return this.hasService ? 'd-flex': 'd-none d-md-flex';
 		}
 
 		actionSelector() :void {

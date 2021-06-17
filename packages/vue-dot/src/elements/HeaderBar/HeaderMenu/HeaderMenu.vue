@@ -1,14 +1,14 @@
 <template>
 	<div
 		class="vd-header-menu"
-		:class="[isOpen ? 'd-block' : 'd-none']"
+		:class="isMenuOpen"
 	>
 		<div
 			class="vd-header-menu-container"
 			:class="responsiveMenu"
 		>
 			<div class="vd-header-menu-title d-flex align-center">
-				<h4	class="ml-3">
+				<h4	class="ml-5">
 					{{ hasService ? service.name : locales.menu }}
 				</h4>
 				<VBtn
@@ -20,16 +20,15 @@
 					</VIcon>
 				</VBtn>
 			</div>
-			<div class="d-flex column">
-				<ul>
-					<li
-						v-for="(item, i) in navBar.menu"
-						:key="i"
-						v-bind="options.homeBtn"
-					>
-						Click
-					</li>
-				</ul>
+			<div class="vd-header-menu-navigation d-flex flex-column ml-5">
+				<router-link
+					v-for="(item, i) in navBar.menu"
+					:key="i"
+					:to="item.href"
+					class="vd-header-menu-navigation-item my-3"
+				>
+					{{ item.label }}
+				</router-link>
 			</div>
 		</div>
 		<div
@@ -80,6 +79,10 @@
 
 		closeMenuIcon = mdiChevronLeft;
 
+		get isMenuOpen() :string {
+			return this.isOpen ? 'd-block' : 'd-none';
+		}
+
 		get hasService() :boolean {
 			return Boolean(this.service !== null);
 		}
@@ -104,6 +107,14 @@
 				bottom: 0;
 				right: 0;
 				z-index: 99;
+
+				&-navigation {
+
+					&-item {
+						text-transform: uppercase;
+						color: white;
+					}
+				}
 
 				&-click-capture {
 					position: fixed;
