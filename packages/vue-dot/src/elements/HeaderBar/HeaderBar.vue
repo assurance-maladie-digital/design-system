@@ -17,23 +17,7 @@
 			<div class="d-flex align-center">
 				<div class="vd-header-logo">
 					<img
-						v-if="hasLogoSlot || hasService"
-						src="../../assets/images/simple-logo.png"
-						alt=""
-					>
-					<img
-						v-else-if="type === 'cnam'"
-						src="../../assets/images/logo.png"
-						alt=""
-					>
-					<img
-						v-else-if="type === 'ameli-pro'"
-						src="../../assets/images/ameli-pro.png"
-						alt=""
-					>
-					<img
-						v-else-if="type === 'risque-pro'"
-						src="../../assets/images/logo-pro.png"
+						:src="headerLogo"
 						alt=""
 					>
 				</div>
@@ -91,7 +75,6 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
-	import { locales } from './locales';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -103,10 +86,6 @@
 	import { mdiMenu } from '@mdi/js';
 
 	const Props = Vue.extend({
-		components: {
-			HeaderMenu,
-			HeaderNavBar
-		},
 		props: {
 			navBar: {
 				type: Object as PropType<NavBar>,
@@ -123,7 +102,7 @@
 					const isValid = value.match(/^(ameli-pro|risque-pro|cnam)$/) !== null;
 					if (!isValid) {
 						// eslint-disable-next-line no-console
-						console.error(`Wrong value for the \`position\` prop. Given: "${value}", expected "(ameli-pro|risque-pro|cnam)".`);
+						console.error(`Wrong value for the \`type\` prop. Given: "${value}", expected "(ameli-pro|risque-pro|cnam)".`);
 					}
 					return true;
 				}
@@ -137,10 +116,13 @@
 	 * HeaderBar is a component that can be used as the app main header
 	 * it contains the HeaderNavBar component
 	 */
-	@Component
+	@Component({
+		components: {
+			HeaderMenu,
+			HeaderNavBar
+		}
+	})
 	export default class HeaderBar extends MixinsDeclaration {
-		locales = locales;
-
 		menuIcon = mdiMenu;
 
 		isOpen = false;
@@ -163,6 +145,20 @@
 
 		get hasProTemplate() :boolean {
 			return Boolean(this.type === 'ameli-pro' && !this.hasService && !this.hasLogoSlot);
+		}
+
+		get headerLogo() :string | null {
+			if(this.hasLogoSlot || this.hasService) {
+				return require('../../assets/svg/logo-no-text.svg');
+			} else if(this.type === 'cnam') {
+				return require('../../assets/svg/logo.svg');
+			} else if(this.type === 'ameli-pro') {
+				return require('../../assets/svg/ameli-pro.svg');
+			} else if(this.type === 'risque-pro') {
+				return require('../../assets/svg/risque-pro.svg');
+			}
+
+			return null;
 		}
 
 		get headerBarHeight() :string {

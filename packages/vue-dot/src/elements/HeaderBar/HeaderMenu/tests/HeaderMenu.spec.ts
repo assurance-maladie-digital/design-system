@@ -13,12 +13,12 @@ describe('HeaderMenu', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(HeaderMenu, {
-            propsData: {
-                isopen: true,
+			propsData: {
+				isopen: true,
 				navBar: {},
 				service: {}
 			}
-        });
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

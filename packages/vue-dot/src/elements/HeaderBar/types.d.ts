@@ -7,6 +7,7 @@ export interface NavBar {
 	title: string | null;
 	menu?: NavBarItem[];
 }
+
 export interface ServiceItem {
 	name?: string;
 	baseLine?: string;

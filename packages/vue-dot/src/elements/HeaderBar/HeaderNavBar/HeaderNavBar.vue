@@ -61,7 +61,6 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
-	import { locales } from './locales';
 
 	import { customizable } from '../../../mixins/customizable';
 
@@ -98,8 +97,6 @@
 	 */
 	@Component
 	export default class HeaderNavBar extends MixinsDeclaration {
-		locales = locales;
-
 		homeIcon = mdiHomeOutline;
 		menuIcon = mdiMenu;
 

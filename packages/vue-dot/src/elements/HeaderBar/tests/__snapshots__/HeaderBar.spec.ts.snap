@@ -11,7 +11,7 @@ exports[`HeaderBar renders correctly 1`] = `
       </vbtn-stub>
     </div>
     <div class="d-flex align-center">
-      <div class="vd-header-logo"><img src="../../assets/images/simple-logo.png" alt=""></div>
+      <div class="vd-header-logo"><img src="" alt=""></div>
       <div class="vd-header-title d-none d-md-flex">
         <vdivider-stub light="true" inset="true" vertical="true" class="mx-3"></vdivider-stub>
         <div class="d-flex flex-column">
