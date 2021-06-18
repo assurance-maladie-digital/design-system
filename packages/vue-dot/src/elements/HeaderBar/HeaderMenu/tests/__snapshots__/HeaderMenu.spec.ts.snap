@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderMenu renders correctly 1`] = `
+<div class="vd-header-menu d-none" isopen="true">
+  <div class="vd-header-menu-container">
+    <div class="vd-header-menu-title d-flex align-center">
+      <h4 class="ml-5">
+
+      </h4>
+      <vbtn-stub color="white" tag="button" activeclass="" icon="true" type="button" class="d-flex columns mr-3">
+        <vicon-stub>
+          M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z
+        </vicon-stub>
+      </vbtn-stub>
+    </div>
+    <div class="vd-header-menu-navigation d-flex flex-column ml-5"></div>
+  </div>
+  <div class="vd-header-menu-click-capture d-none d-sm-block"></div>
+</div>
+`;

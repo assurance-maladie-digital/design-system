@@ -1,8 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderBar renders correctly 1`] = `
-<div>
-  Header
-  <headernavbar-stub></headernavbar-stub>
+<div class="vd-header long">
+  <div class="vd-header-container">
+    <div class="d-flex align-center d-md-none">
+      <vbtn-stub color="primary" tag="button" activeclass="" icon="true" type="button" class="ml-7">
+        <vicon-stub>
+          M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z
+        </vicon-stub>
+      </vbtn-stub>
+    </div>
+    <div class="d-flex align-center">
+      <div class="vd-header-logo"><img src="../../assets/images/simple-logo.png" alt=""></div>
+      <div class="vd-header-title d-none d-md-flex">
+        <vdivider-stub light="true" inset="true" vertical="true" class="mx-3"></vdivider-stub>
+        <div class="d-flex flex-column">
+          <!---->
+          <!---->
+        </div>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <headernavbar-stub navbar="[object Object]" reactivedisplay="true" service="[object Object]"></headernavbar-stub>
+  <headermenu-stub navbar="[object Object]" service="[object Object]"></headermenu-stub>
 </div>
 `;

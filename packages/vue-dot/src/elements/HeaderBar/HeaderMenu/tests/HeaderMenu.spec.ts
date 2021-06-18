@@ -4,21 +4,21 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import HeaderBar from '../';
+import HeaderMenu from '../';
 
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('HeaderBar', () => {
+describe('HeaderMenu', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(HeaderBar, {
-			propsData: {
+		wrapper = mountComponent(HeaderMenu, {
+            propsData: {
+                isopen: true,
 				navBar: {},
-				service: {},
-				type: ''
+				service: {}
 			}
-		});
+        });
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

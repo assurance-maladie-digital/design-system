@@ -1,7 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderNavBar renders correctly 1`] = `
-<div>
-  Header Nav Bar
+<div class="vd-header-nav align-center background-primary d-flex">
+  <div class="ml-4">
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`HeaderNavBar renders correctly with a pro template 1`] = `
+<div class="vd-header-nav align-center background-pro d-flex">
+  <div class="ml-4">
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`HeaderNavBar renders correctly with a reactive render 1`] = `
+<div class="vd-header-nav align-center background-primary d-flex">
+  <div class="d-flex align-center ml-14"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default white--text d-flex columns mr-3"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22L12 3Z"></path></svg></span></span></button>
+    <div class="vd-header-title d-flex align-center">
+      <div>
+
+      </div>
+    </div>
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`HeaderNavBar renders correctly with a reactive render and a pro template 1`] = `
+<div class="vd-header-nav align-center background-pro d-flex">
+  <div class="d-flex align-center ml-14"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default white--text d-flex columns mr-3"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg></span></span></button>
+    <div class="vd-header-title d-flex align-center">
+      <div>
+
+      </div>
+    </div>
+    <!---->
+  </div>
 </div>
 `;
