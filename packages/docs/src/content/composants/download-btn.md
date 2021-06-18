@@ -1,8 +1,9 @@
 ---
 title: DownloadBtn
-description: L'élément `DownloadBtn` est utilisé pour permettre à l'utilisateur de télécharger un document provenant d'une API.
+description: L’élément `DownloadBtn` est utilisé pour permettre à l’utilisateur de télécharger un document provenant d’une API.
 ---
 
+<!-- NotificationBar is required to display notifications from DownloadBtn -->
 <notification-bar></notification-bar>
 
 <doc-tabs>
@@ -21,9 +22,9 @@ Le nom et le type du document sont récupérés des headers HTTP `Content-Dispos
 
 ### Nom par défaut
 
-Vous pouvez utiliser la prop `fallback-filename` pour définir un nom de fichier par défaut s'il n'est pas présent dans le header `Content-Disposition`.
+Vous pouvez utiliser la prop `fallback-filename` pour définir un nom de fichier par défaut s’il n’est pas présent dans le header `Content-Disposition`.
 
-Si cette propriété n'est pas présente, le nom par défaut sera la date du jour et l'heure de téléchargement.
+Si cette propriété n’est pas présente, le nom par défaut sera la date du jour et l’heure de téléchargement.
 
 <doc-example file="download-btn/fallback-filename"></doc-example>
 
@@ -37,13 +38,13 @@ Si cette propriété n'est pas présente, le nom par défaut sera la date du jou
 
 ### Composants Vuetify
 
-Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `DialogBox` en utilisant la prop `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans l’élément `DialogBox` en utilisant la prop `vuetify-options`.
 
 <doc-example file="download-btn/options"></doc-example>
 
 ### Slots
 
-Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d'actions.
+Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi les slots `title` et `actions` pour remplacer le titre et les boutons d’actions.
 
 <doc-example file="download-btn/slots"></doc-example>
 
