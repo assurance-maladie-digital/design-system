@@ -1,13 +1,13 @@
 <template>
 	<div class="d-flex align-center">
 		<p class="mb-0 mr-1">
-			Copiez le texte :
+			Utilisateur n°<b>5654119707</b>
 		</p>
 
 		<CopyBtn
 			:vuetify-options="vuetifyOptions"
-			label="Copier le texte"
-			text-to-copy="Exemple"
+			label="Copier le numéro d'utilisateur"
+			text-to-copy="5654119707"
 		/>
 	</div>
 </template>

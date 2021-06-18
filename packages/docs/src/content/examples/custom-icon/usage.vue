@@ -25,7 +25,8 @@
 		options = {
 			selects: {
 				color: [
-					tokens.colors.primary
+					tokens.colors.primary,
+					tokens.colors.secondary
 				]
 			},
 			radioGroups: {
