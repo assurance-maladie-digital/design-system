@@ -2,7 +2,7 @@
 	<div class="debounce-native-ex">
 		<label
 			for="debounce-simple-input"
-			class="vd-form-input-label d-block"
+			class="form-input-label"
 		>
 			Rechercher
 		</label>
@@ -11,7 +11,7 @@
 			id="debounce-simple-input"
 			v-model.lazy="search"
 			v-debounce
-			class="vd-form-input"
+			class="form-input"
 		>
 
 		<p v-if="search">
@@ -30,43 +30,47 @@
 
 	@Component
 	export default class DebounceNative extends Vue {
-		search = '';
+		search: string | null = null;
 	}
 </script>
 
 <style scoped>
 	.form-input-label {
-		color: #ccc;
+		width: 328px;
+		display: block;
+		color: hsla(0, 0%, 100%, .7);
+		font-weight: 300;
 		/**
-		 * Use opposite colors with mix-blend-mode
+		 * Use inverted colors with mix-blend-mode
 		 * to support dark mode
 		 */
 		mix-blend-mode: difference;
 	}
 
-	.vd-form-input {
+	.form-input {
+		width: 328px;
 		padding: 8px;
 		margin-top: 2px;
 		font-size: 1rem;
 		font-weight: 400;
-		border-radius: 2px;
-		outline-color: #ffcb9c;
+		border-radius: 4px;
 		mix-blend-mode: difference;
-		color: hsla(0, 0%, 100%, .8);
-		border: 1px solid hsla(0, 0%, 100%, .7);
+		color: hsla(0, 0%, 100%, .7);
+		outline-color: hsla(0, 0%, 60%, .7);
+		border: 1px solid hsla(0, 0%, 60%, .7);
 	}
 
-	.vd-form-input-label::selection {
+	.form-input-label::selection {
 		color: #fff;
 		background-color: #ad9269;
 	}
 
-	.vd-form-input-label::-moz-selection {
+	.form-input-label::-moz-selection {
 		color: #fff;
 		background-color: #ad9269;
 	}
 
-	.vd-form-input:focus {
+	.form-input:focus {
 		color: #fff;
 		border-color: #ffcb9c;
 	}
