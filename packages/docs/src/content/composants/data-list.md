@@ -13,7 +13,7 @@ description: L'élément `DataList` est utilisé pour afficher une liste d'infor
 
 ### Icônes
 
-Vous pouvez spécifier une icône à afficher pour chaque item de la liste en utilisant la prop `icons` pour définir la liste des icônes disponibles.
+Vous pouvez spécifier une icône à afficher pour chaque item de la liste en utilisant la prop `icons` afin de définir la liste des icônes disponibles.
 Si une icône est spécifiée mais qu'elle n'est pas trouvée dans la liste, rien ne sera affiché.
 
 <doc-alert type="info">
