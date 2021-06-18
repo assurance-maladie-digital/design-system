@@ -13,11 +13,13 @@
 		items: DataList = [
 			{
 				key: 'Nom',
-				value: 'Dupont'
+				value: 'Dupont',
+				chip: true
 			},
 			{
 				key: 'Prénom',
-				value: 'Paul'
+				value: 'Paul',
+				chip: true
 			},
 			{
 				key: 'Date de naissance',

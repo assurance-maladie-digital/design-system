@@ -11,37 +11,44 @@
 
 	import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
 
-	import { mdiCalendar } from '@mdi/js';
+	import { mdiAccount, mdiCalendar } from '@mdi/js';
 
 	@Component
 	export default class DataListOptions extends Vue {
+		itemOptions = {
+			icon: {
+				color: 'grey darken-2',
+				class: 'mt-0 mr-4'
+			}
+		};
+
 		items: DataList = [
 			{
 				key: 'Nom',
-				value: 'Dupont'
+				value: 'Dupont',
+				icon: 'accountIcon',
+				chip: true,
+				options: this.itemOptions
 			},
 			{
 				key: 'Prénom',
-				value: 'Paul'
+				value: 'Paul',
+				icon: 'accountIcon',
+				chip: true,
+				options: this.itemOptions
 			},
 			{
 				key: 'Date de naissance',
 				value: '24/09/1970',
 				icon: 'calendarIcon',
 				chip: true,
-				options: {
-					chip: {
-						color: 'success'
-					},
-					icon: {
-						color: 'accent'
-					}
-				}
+				options: this.itemOptions
 			}
 		];
 
 		icons = {
-			calendarIcon: mdiCalendar
+			calendarIcon: mdiCalendar,
+			accountIcon: mdiAccount
 		};
 	}
 </script>

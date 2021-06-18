@@ -17,14 +17,14 @@ Vous pouvez spécifier une icône à afficher pour chaque item de la `DataList` 
 Si une icône est spécifiée mais qu’elle n’est pas trouvée dans la liste, rien ne sera affiché.
 
 <doc-alert type="info">
-Il est nécessaire de lister manuellement toutes les icônes afin de n’importer que celles que vous allez utiliser et de garantir de meilleures performances.
+Il est nécessaire de lister manuellement toutes les icônes afin de n’importer que celles que vous allez utiliser et ainsi de garantir de meilleures performances.
 </doc-alert>
 
 <doc-example file="data-list-group/icons"></doc-example>
 
 ### Bouton d’action
 
-Vous pouvez ajouter un bouton d’action à chaque item en utilisant la propriété `action` sur l’item.
+Vous pouvez ajouter un bouton d’action à un item en utilisant la propriété `action` sur celui-ci.
 
 <doc-example file="data-list-group/action"></doc-example>
 

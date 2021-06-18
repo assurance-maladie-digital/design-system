@@ -28,7 +28,7 @@
 				large: true
 			},
 			icon: {
-				color: 'accent'
+				color: 'grey darken-3'
 			}
 		};
 	}
