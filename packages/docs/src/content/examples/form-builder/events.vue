@@ -2,8 +2,8 @@
 	<div>
 		<FormBuilder
 			v-model="form"
-			@change="formUpdated"
-			@refresh="formRefreshed"
+			@change="updated"
+			@refresh="refreshed"
 		/>
 
 		<VSnackbar
@@ -76,12 +76,12 @@
 			}
 		};
 
-		formUpdated(): void {
+		updated(): void {
 			this.snackbar = true;
 			this.snackbarText = 'Événement "change" émis';
 		}
 
-		formRefreshed(): void {
+		refreshed(): void {
 			this.$nextTick(() => {
 				this.snackbar = true;
 				this.snackbarText = 'Événements "change" et "refresh" émis';
