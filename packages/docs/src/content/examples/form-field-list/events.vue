@@ -2,20 +2,21 @@
 	<div>
 		<FormFieldList
 			v-model="fields"
-			@change="listUpdated"
-			@refresh="listRefreshed"
+			@change="updated"
+			@refresh="refreshed"
 		/>
 
 		<VSnackbar
+			v-if="snackbarText"
 			v-model="snackbar"
 			color="info"
 		>
 			{{ snackbarText }}
 
-			<template v-slot:action="{ attrs }">
+			<template #action="{ attrs }">
 				<VBtn
-					text
 					v-bind="attrs"
+					text
 					@click="snackbar = false"
 				>
 					Fermer
@@ -36,7 +37,7 @@
 		refresh = false;
 
 		snackbar = false;
-		snackbarText = '';
+		snackbarText: string | null = null;
 
 		fields: Fields = {
 			questionString: {
@@ -72,12 +73,12 @@
 			}
 		};
 
-		listUpdated(): void {
+		updated(): void {
 			this.snackbar = true;
 			this.snackbarText = 'Événement "change" émis';
 		}
 
-		listRefreshed(): void {
+		refreshed(): void {
 			this.$nextTick(() => {
 				this.snackbar = true;
 				this.snackbarText = 'Événements "change" et "refresh" émis';

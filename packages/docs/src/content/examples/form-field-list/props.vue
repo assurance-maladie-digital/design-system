@@ -2,7 +2,7 @@
 	<FormFieldList
 		v-model="fields"
 		list-title="Votre état de santé"
-		description="Vos symptômes et leur date d'apparition."
+		description="Vos symptômes et leur date d’apparition."
 	/>
 </template>
 
