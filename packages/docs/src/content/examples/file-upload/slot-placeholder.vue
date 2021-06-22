@@ -11,7 +11,7 @@
 				</VIcon>
 
 				<span class="white--text">
-					Déposez un fichier ici ou cliquer pour sélectionner
+					Sélectionner un fichier
 				</span>
 			</span>
 		</template>

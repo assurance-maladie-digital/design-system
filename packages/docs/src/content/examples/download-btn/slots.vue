@@ -5,8 +5,6 @@
 		:outlined="false"
 		tile
 		color="white"
-		height="auto"
-		min-height="56"
 		width="396px"
 		class="text--primary"
 	>
@@ -64,6 +62,10 @@
 		vuetifyOptions = {
 			icon: {
 				class: 'd-none'
+			},
+			btn: {
+				height: 'auto',
+				minHeight: 56
 			}
 		};
 	}
