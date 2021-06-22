@@ -6,9 +6,8 @@
 				sm="6"
 			>
 				<VTextField
-					v-model="rangeValue[0]"
-					:label="minLabel"
-					block
+					v-model="rangeValue[1]"
+					:label="maxLabel"
 					outlined
 					@change="emitChangeEvent(rangeValue)"
 				/>
@@ -19,8 +18,9 @@
 				sm="6"
 			>
 				<VTextField
-					v-model="rangeValue[1]"
-					:label="maxLabel"
+					v-model="rangeValue[0]"
+					:label="minLabel"
+					block
 					outlined
 					@change="emitChangeEvent(rangeValue)"
 				/>
@@ -62,13 +62,13 @@
 		watch: {
 			'field.value': {
 				handler(value: number[] | null): void {
-					if (value) {
-						this.rangeValue = value;
-					} else {
+					if (!value) {
 						this.rangeValue = [
 							this.field.min as number,
 							this.field.max as number
 						];
+					} else {
+						this.rangeValue = value;
 					}
 				},
 				immediate: true,

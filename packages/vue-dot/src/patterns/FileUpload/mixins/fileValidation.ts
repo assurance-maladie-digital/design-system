@@ -18,7 +18,7 @@ const Props = Vue.extend({
 		/** Maximum size in bytes per file */
 		fileSizeMax: {
 			type: Number,
-			default: 10485760 // Default 10MB
+			default: 10_485_760 // Default 10MB
 		},
 		/** The size units used in the template for i18n */
 		fileSizeUnits: {
