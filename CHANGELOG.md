@@ -16,6 +16,11 @@
   - **global:** Utilisation de l'interface `IndexedObject` au lieu de types personnalisés ([#1163](https://github.com/assurance-maladie-digital/design-system/pull/1163)) ([50a29e5](https://github.com/assurance-maladie-digital/design-system/commit/50a29e548b59020799fa8a665603f37ed508ded8))
   - **global:** Amélioration de la qualité du code ([#1164](https://github.com/assurance-maladie-digital/design-system/pull/1164)) ([a1872eb](https://github.com/assurance-maladie-digital/design-system/commit/a1872eb17a334804eadc7bf8cb458200728a7337))
 
+### Vue Dash
+
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#1181](https://github.com/assurance-maladie-digital/design-system/pull/1181))
+
 ### FormBuilder
 
 - ✨ **Nouvelles fonctionnalités**
@@ -57,7 +62,7 @@
   - **core-js:** Mise à jour vers la `v3.15.0` ([#1177](https://github.com/assurance-maladie-digital/design-system/pull/1177)) ([5d12a31](https://github.com/assurance-maladie-digital/design-system/commit/5d12a31fc8728f553c478635cc57ef5234213bbb))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.4.0` ([#1178](https://github.com/assurance-maladie-digital/design-system/pull/1178)) ([64fec70](https://github.com/assurance-maladie-digital/design-system/commit/64fec70b8209bb2b2bef7753a843113dab824a4d))
   - **vue-router:** Mise à jour vers la `v3.5.2` ([#1179](https://github.com/assurance-maladie-digital/design-system/pull/1179)) ([5747ee2](https://github.com/assurance-maladie-digital/design-system/commit/5747ee22f87ae54711517741f8240754b035947b))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.28.0` ([#1180](https://github.com/assurance-maladie-digital/design-system/pull/1180))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.28.0` ([#1180](https://github.com/assurance-maladie-digital/design-system/pull/1180)) ([2ee9767](https://github.com/assurance-maladie-digital/design-system/commit/2ee9767e8aed1bbf172827d7a03e6adfbca40324))
 
 ## v2.0.0-beta.10
 
@@ -103,8 +108,6 @@ Cette version comporte la suppression du composant `PageCard`, l'ajout de la pro
 
 - 🚨 **Lint**
   - **global:** Correction des erreurs de lint ([#1110](https://github.com/assurance-maladie-digital/design-system/pull/1110)) ([69367f6](https://github.com/assurance-maladie-digital/design-system/commit/69367f6525e9e337862f5f837896935e615e2ab6))
-
-### Vue Dash
 
 - ⬆️ **Dépendances**
   - **template:** Mise à jour des dépendances ([#1121](https://github.com/assurance-maladie-digital/design-system/pull/1121)) ([905da01](https://github.com/assurance-maladie-digital/design-system/commit/905da0196818f71a8fba2ff14fb4d7b1a9034aad))
