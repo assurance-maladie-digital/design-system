@@ -1,5 +1,5 @@
 <template>
-	<div class="w-100">
+	<div>
 		<FileUpload
 			v-model="file"
 			v-bind="props"
@@ -14,7 +14,7 @@
 		>
 			{{ snackbarText }}
 
-			<template v-slot:action="{ attrs }">
+			<template #action="{ attrs }">
 				<VBtn
 					v-bind="attrs"
 					text

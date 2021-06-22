@@ -35,8 +35,8 @@
 
 	@Component
 	export default class FileUploadSlots extends Vue {
-		file: File | null = null;
-
 		downloadIcon = mdiFileUpload;
+
+		file: File | null = null;
 	}
 </script>

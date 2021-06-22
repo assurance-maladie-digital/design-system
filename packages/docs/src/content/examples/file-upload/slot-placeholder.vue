@@ -1,7 +1,7 @@
 <template>
-	<FileUpload class="custom accent elevation-3 px-4 py-3">
+	<FileUpload class="accent elevation-3 px-4 py-3">
 		<template #placeholder>
-			<span class="d-flex align-center">
+			<span class="d-flex align-center white--text">
 				<VIcon
 					size="25"
 					color="white"
@@ -10,9 +10,7 @@
 					{{ uploadIcon }}
 				</VIcon>
 
-				<span class="white--text">
-					Sélectionner un fichier
-				</span>
+				Sélectionner un fichier
 			</span>
 		</template>
 	</FileUpload>
@@ -26,9 +24,9 @@
 
 	@Component
 	export default class FileUploadSlotPlaceholder extends Vue {
-		file: File | null = null;
-
 		uploadIcon = mdiCloudUpload;
+
+		file: File | null = null;
 	}
 </script>
 
