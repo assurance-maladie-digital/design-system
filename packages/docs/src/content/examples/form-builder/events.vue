@@ -7,15 +7,16 @@
 		/>
 
 		<VSnackbar
+			v-if="snackbarText"
 			v-model="snackbar"
 			color="info"
 		>
 			{{ snackbarText }}
 
-			<template v-slot:action="{ attrs }">
+			<template #action="{ attrs }">
 				<VBtn
-					text
 					v-bind="attrs"
+					text
 					@click="snackbar = false"
 				>
 					Fermer
@@ -34,7 +35,7 @@
 	@Component
 	export default class FormBuilderEvents extends Vue {
 		snackbar = false;
-		snackbarText = '';
+		snackbarText: string | null = null;
 
 		form: Form = {
 			section1: {
