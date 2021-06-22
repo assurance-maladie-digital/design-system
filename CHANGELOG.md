@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.11
+
+**Version publiée le 22/06/2021.**
+
+Cette version comporte l'ajout des nouveaux composants `FilterModule` et `ExternalLinks`, ainsi que le nouveau champ de formulaire `RangeField` et plusieurs corrections sur Vue Dot et le FormBuilder.
 
 ### Vue Dot
 
@@ -19,7 +23,7 @@
 ### Vue Dash
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#1181](https://github.com/assurance-maladie-digital/design-system/pull/1181))
+  - **template:** Mise à jour des dépendances ([#1181](https://github.com/assurance-maladie-digital/design-system/pull/1181)) ([dba5edc](https://github.com/assurance-maladie-digital/design-system/commit/dba5edcb0dfd7903269b3e98fefad266c1632592))
 
 ### FormBuilder
 
@@ -44,6 +48,9 @@
 
 - 🚨 **Lint**
   - **global:** Correction des erreurs de lint ([#1130](https://github.com/assurance-maladie-digital/design-system/pull/1130)) ([f4f6cf4](https://github.com/assurance-maladie-digital/design-system/commit/f4f6cf4f18af1f5376584dfee1fae8aed88234e0))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1182](https://github.com/assurance-maladie-digital/design-system/pull/1182))
 
 - ⬆️ **Dépendances**
   - **vuetify:** Mise à jour vers la `v2.5.1` ([#1126](https://github.com/assurance-maladie-digital/design-system/pull/1126)) ([17be1a7](https://github.com/assurance-maladie-digital/design-system/commit/17be1a768f757844aa5b06a2b764e024b0677ba5))
