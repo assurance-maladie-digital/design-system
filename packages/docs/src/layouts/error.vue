@@ -1,17 +1,23 @@
 <template>
 	<VApp>
-		<DocHeader @drawer-action="drawer = !drawer" />
+		<DocHeader :drawer.sync="drawer" />
 
 		<DocDrawer v-model="drawer" />
 
 		<VMain>
 			<div class="h-100 d-flex align-center justify-center flex-column text-center ma-auto pa-4">
-				<span class="vd-error-code font-weight-bold primary--text">
+				<span
+					v-if="code"
+					class="vd-error-code font-weight-bold primary--text"
+				>
 					{{ code }}
 				</span>
 
-				<h2 class="text-h6 font-weight-bold mb-2">
-					{{ error.message }}
+				<h2
+					v-if="title"
+					class="text-h6 font-weight-bold mb-2"
+				>
+					{{ title }}
 				</h2>
 
 				<p>{{ message }}</p>
@@ -63,6 +69,10 @@
 
 		get code(): string | undefined {
 			return this.error.statusCode?.toString();
+		}
+
+		get title(): string | undefined {
+			return this.error.message;
 		}
 
 		@Head
