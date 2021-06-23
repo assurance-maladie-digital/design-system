@@ -1,16 +1,16 @@
 <template>
 	<div class="d-flex align-center">
 		<p class="mb-0 mr-1">
-			Copiez le texte :
+			Ticket n°<b>7079114565</b>
 		</p>
 
 		<CopyBtn
-			label="Copier le texte"
-			text-to-copy="Exemple"
+			label="Copier le numéro de ticket"
+			text-to-copy="7079114565"
 		>
 			<template #icon>
 				<VIcon>
-					{{ addIcon }}
+					{{ duplicateIcon }}
 				</VIcon>
 			</template>
 
@@ -25,10 +25,10 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { mdiPlusCircle } from '@mdi/js';
+	import { mdiContentDuplicate  } from '@mdi/js';
 
 	@Component
 	export default class CopyBtnSlots extends Vue {
-		addIcon = mdiPlusCircle;
+		duplicateIcon = mdiContentDuplicate ;
 	}
 </script>

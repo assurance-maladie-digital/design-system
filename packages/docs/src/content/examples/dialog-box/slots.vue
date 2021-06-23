@@ -9,13 +9,13 @@
 
 		<DialogBox v-model="dialog">
 			<template #title>
-				<h4 class="display-1">
+				<h4 class="text-h4">
 					Information
 				</h4>
 			</template>
 
 			<VCardText class="px-0">
-				Il est possible d'utiliser les slots pour modifier l'affichage par défaut.
+				Il est possible d’utiliser les slots pour modifier l’affichage par défaut.
 			</VCardText>
 
 			<template #actions>

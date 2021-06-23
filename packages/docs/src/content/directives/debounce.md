@@ -1,6 +1,6 @@
 ---
 title: Debounce
-description: La directive `v-debounce` est utilisée pour différer une mise à jour de `v-model` sur un champ de formulaire.
+description: La directive `v-debounce` est utilisée pour différer la mise à jour d’un `v-model` sur un champ de formulaire.
 ---
 
 <doc-tabs>
@@ -11,12 +11,12 @@ description: La directive `v-debounce` est utilisée pour différer une mise à 
 
 <doc-alert type="info">
 
-Avec les composants, il n'est pas possible d'utiliser la syntaxe `v-model.lazy`.
+Avec les composants Vue.js, il n’est pas possible d’utiliser la syntaxe `v-model.lazy`.
 
 La solution de contournement consiste à implémenter manuellement ce comportement en appliquant la valeur avec `:value="search"` et à mettre à jour celle-ci avec une fonction, comme par exemple :<br>
 `@change="e => search = e"`.
 
-Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/6914) sur le projet Vue.js pour plus d'informations.
+Vous pouvez consulter [l’issue associée](https://github.com/vuejs/vue/issues/6914) sur le projet Vue.js pour plus d’informations.
 
 </doc-alert>
 
@@ -24,7 +24,7 @@ Vous pouvez consulter [l'issue associée](https://github.com/vuejs/vue/issues/69
 
 ### Délai
 
-En utilisant un modificateur, il est possible de régler le délai d'exécution.
+En utilisant un modificateur, il est possible de modifier le délai d’exécution.
 
 <doc-example file="debounce/arg"></doc-example>
 

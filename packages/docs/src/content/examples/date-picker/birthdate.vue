@@ -11,7 +11,7 @@
 			v-if="birthdate"
 			class="mt-4 mb-0"
 		>
-			Date : {{ birthdate }}
+			Date saisie : {{ birthdate }}
 		</p>
 	</div>
 </template>
@@ -22,6 +22,6 @@
 
 	@Component
 	export default class DatePickerBirthdate extends Vue {
-		birthdate = '';
+		birthdate: string | null = null;
 	}
 </script>

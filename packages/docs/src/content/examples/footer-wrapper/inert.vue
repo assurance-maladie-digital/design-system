@@ -25,5 +25,5 @@
 			FooterBtn
 		}
 	})
-	export default class FooterInert extends Vue {}
+	export default class FooterWrapperInertBtn extends Vue {}
 </script>

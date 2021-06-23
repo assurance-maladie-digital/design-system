@@ -18,7 +18,7 @@
 
 	@Component
 	export default class DatePickerRules extends Vue {
-		date = '';
+		date: string | null = null;
 
 		validRules = [
 			required,

@@ -14,7 +14,7 @@
 			@confirm="dialog = false"
 			v-on="$listeners"
 		>
-			<p>Souhaitez-vous procéder à l'enregistrement ?</p>
+			<p>Souhaitez-vous procéder à l’enregistrement ?</p>
 		</DialogBox>
 	</div>
 </template>
@@ -39,7 +39,7 @@
 		];
 
 		slotContent = `
-	<p>Souhaitez-vous procéder à l'enregistrement ?</p>
+	<p>Souhaitez-vous procéder à l’enregistrement ?</p>
 `;
 
 		options = {

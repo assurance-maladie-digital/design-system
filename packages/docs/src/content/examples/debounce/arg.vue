@@ -8,7 +8,7 @@
 			hide-details
 			class="vd-form-input"
 			label="Rechercher"
-			@click:clear="search = ''"
+			@click:clear="search = null"
 		/>
 
 		<p
@@ -30,6 +30,6 @@
 
 	@Component
 	export default class DebounceArg extends Vue {
-		search = '';
+		search: string | null = null;
 	}
 </script>

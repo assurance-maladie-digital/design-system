@@ -32,7 +32,7 @@
 	};
 
 	@Component
-	export default class DownloadBtnNameType extends Vue {
+	export default class DownloadFallbackFilename extends Vue {
 		useFallback = true;
 
 		getFileFromApi(): Promise<AxiosResponse<string>> {
