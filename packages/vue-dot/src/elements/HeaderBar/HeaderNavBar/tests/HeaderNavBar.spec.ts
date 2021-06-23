@@ -16,7 +16,7 @@ describe('HeaderNavBar', () => {
 			propsData: {
 				navBar: {},
 				isPro: false,
-				reactiveDisplay: false,
+				isDesktop: false,
 				service: {}
 			}
 		});
@@ -29,33 +29,33 @@ describe('HeaderNavBar', () => {
 			propsData: {
 				navBar: {},
 				isPro: true,
-				reactiveDisplay: false,
+				isDesktop: false,
 				service: {}
 			}
 		}, true);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
-	it('renders correctly with a reactive render', () => {
+	it('renders correctly with a responsive render', () => {
 		// Mount component
 		wrapper = mountComponent(HeaderNavBar, {
 			propsData: {
 				navBar: {},
 				isPro: false,
-				reactiveDisplay: true,
+				isDesktop: true,
 				service: {}
 			}
 		}, true);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
-	it('renders correctly with a reactive render and a pro template', () => {
+	it('renders correctly with a responsive render and a pro template', () => {
 		// Mount component
 		wrapper = mountComponent(HeaderNavBar, {
 			propsData: {
 				navBar: {},
 				isPro: true,
-				reactiveDisplay: true,
+				isDesktop: true,
 				service: {}
 			}
 		}, true);

@@ -14,7 +14,6 @@ describe('HeaderMenu', () => {
 		// Mount component
 		wrapper = mountComponent(HeaderMenu, {
 			propsData: {
-				isopen: true,
 				navBar: {},
 				service: null
 			}

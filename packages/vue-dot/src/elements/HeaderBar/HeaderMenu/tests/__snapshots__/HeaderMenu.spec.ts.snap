@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderMenu renders correctly 1`] = `
-<div class="vd-header-menu d-none" isopen="true">
-  <div class="vd-header-menu-container">
-    <div class="vd-header-menu-title d-flex align-center">
+<div class="d-flex align-center d-md-none">
+  <vappbarnavicon-stub color="primary" icon="true" class="ml-7"></vappbarnavicon-stub>
+  <vnavigationdrawer-stub fixed="true" mobilebreakpoint="1264" hideoverlay="true" height="100%" minivariantwidth="56" src="" tag="aside" width="305" left="true" class="vd-header-menu-container">
+    <vsheet-stub height="55" tag="div" class="vd-header-menu-title d-flex align-center justify-space-between text-uppercase">
       <h4 class="ml-5">
         Menu
       </h4>
@@ -12,9 +13,10 @@ exports[`HeaderMenu renders correctly 1`] = `
           M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z
         </vicon-stub>
       </vbtn-stub>
-    </div>
-    <div class="vd-header-menu-navigation d-flex flex-column ml-5"></div>
-  </div>
-  <div class="vd-header-menu-click-capture d-none d-sm-block"></div>
+    </vsheet-stub>
+    <vlist-stub tag="div" dense="true" nav="true">
+      <vlistitemgroup-stub activeclass="v-item--active" tag="div"></vlistitemgroup-stub>
+    </vlist-stub>
+  </vnavigationdrawer-stub>
 </div>
 `;
