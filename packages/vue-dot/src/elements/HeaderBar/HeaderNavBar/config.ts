@@ -1,6 +1,6 @@
 export const config = {
 	homeBtn: {
-		class: 'd-flex columns mr-3',
+		class: 'd-flex mr-3',
 		color: 'white',
 		icon: true
 	},

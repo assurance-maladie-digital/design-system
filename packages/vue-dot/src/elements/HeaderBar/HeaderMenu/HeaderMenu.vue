@@ -1,40 +1,50 @@
 <template>
-	<div
-		class="vd-header-menu"
-		:class="isMenuOpen"
-	>
-		<div
-			class="vd-header-menu-container"
-			:class="responsiveMenu"
+	<div class="d-flex align-center d-md-none">
+		<VAppBarNavIcon
+			v-bind="options.homeBtn"
+			@click.stop="drawer = !drawer"
+		/>
+		<VNavigationDrawer
+			v-model="drawer"
+			v-bind="options.menuConfig"
+			:width="responsiveMenu"
 		>
-			<div class="vd-header-menu-title d-flex align-center">
+			<VSheet v-bind="options.menuHeader">
 				<h4	class="ml-5">
-					{{ hasService ? service.name : locales.menu }}
+					{{ menuTitle }}
 				</h4>
+
 				<VBtn
 					v-bind="options.closeBtn"
-					@click="openMenu"
+					@click="drawer = !drawer"
 				>
 					<VIcon>
 						{{ closeMenuIcon }}
 					</VIcon>
 				</VBtn>
-			</div>
-			<div class="vd-header-menu-navigation d-flex flex-column ml-5">
-				<router-link
-					v-for="(item, i) in navBar.menu"
-					:key="i"
-					:to="item.href"
-					class="vd-header-menu-navigation-item my-3"
-				>
-					{{ item.label }}
-				</router-link>
-			</div>
-		</div>
-		<div
-			class="vd-header-menu-click-capture d-none d-sm-block"
-			@click="openMenu"
-		/>
+			</VSheet>
+
+			<VList
+				nav
+				dense
+			>
+				<VListItemGroup	v-model="group">
+					<VListItem
+						v-for="(item, index) in navBar.menu"
+						:key="index"
+						:to="item.href"
+					>
+						<RouterLink
+							class="vd-header-menu-navigation-item text-uppercase py-3 pl-2"
+						>
+							<VListItem-title>
+								{{ item.label }}
+							</VListItem-title>
+						</RouterLink>
+					</VListItem>
+				</VListItemGroup>
+			</VList>
+		</VNavigationDrawer>
 	</div>
 </template>
 
@@ -53,10 +63,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			isOpen: {
-				type: Boolean,
-				default: false
-			},
 			navBar: {
 				type: Object as PropType<NavBar>,
 				default: null
@@ -70,29 +76,33 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * HeaderNavBar is a component that display a navigation menu into the HeaderBar
-	 */
-	@Component
+	/** HeaderMenu is a component that display a navigation menu into the HeaderBar for responsive version */
+	@Component<HeaderMenu>({
+		watch: {
+			group() {
+				this.drawer = false;
+			}
+		}
+	})
 	export default class HeaderMenu extends MixinsDeclaration {
 		locales = locales;
 
 		closeMenuIcon = mdiChevronLeft;
 
-		get isMenuOpen() :string {
-			return this.isOpen ? 'd-block' : 'd-none';
-		}
+		drawer = false;
 
-		get hasService() :boolean {
+		group = null;
+
+		get hasService(): boolean {
 			return Boolean(this.service !== null);
 		}
 
-		get responsiveMenu() :string {
-			return this.$vuetify.breakpoint.name === 'xs' ? 'mobile' : '';
+		get menuTitle(): string | undefined {
+			return this.hasService ? this.service.name : locales.menu;
 		}
 
-		openMenu() :void {
-			this.$emit('open-menu', false);
+		get responsiveMenu(): string {
+			return this.$vuetify.breakpoint.name === 'xs' ? '100vw' : '305';
 		}
 	}
 </script>
@@ -101,48 +111,20 @@
 	.vd {
 		&-header {
 			&-menu {
-				position: fixed;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				z-index: 99;
-
 				&-navigation {
-
 					&-item {
-						text-transform: uppercase;
 						color: white;
 					}
 				}
 
-				&-click-capture {
-					position: fixed;
-					top: 0;
-					left: 305px;
-					bottom: 0;
-					right: 0;
-				}
-
 				&-container {
-					width: 305px;
-					position: fixed;
-					top: 0;
-					left: 0;
-					bottom: 0;
-					background-color: #007FAD;
+					background-color: #007fad;
 					height: 100%;
-
-					&.mobile {
-						width: 100%;
-					}
 				}
 
 				&-title {
+					background-color: #007fad;
 					color: white;
-					text-transform: uppercase;
-					justify-content: space-between;
-					height: 55px;
 					border-bottom: white 2px solid;
 				}
 			}

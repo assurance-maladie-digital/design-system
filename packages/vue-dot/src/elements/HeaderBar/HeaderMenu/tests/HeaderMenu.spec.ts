@@ -16,7 +16,7 @@ describe('HeaderMenu', () => {
 			propsData: {
 				isopen: true,
 				navBar: {},
-				service: {}
+				service: null
 			}
 		});
 

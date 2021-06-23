@@ -1,44 +1,43 @@
 <template>
-	<div
-		class="vd-header"
-		:class="headerBarHeight"
+	<VSheet
+		:height="headerBarHeight"
+		class="vd-header-bar"
+		tag="header"
 	>
-		<div class="vd-header-container">
-			<div class="d-flex align-center d-md-none">
-				<VBtn
-					v-bind="options.homeBtn"
-					@click="openMenu(true)"
-				>
-					<VIcon>
-						{{ menuIcon }}
-					</VIcon>
-				</VBtn>
-			</div>
+		<VSheet	v-bind="options.headerContainer">
+			<HeaderMenu
+				:nav-bar="navBar"
+				:service="service"
+			/>
+
 			<div class="d-flex align-center">
-				<div class="vd-header-logo">
+				<div class="d-flex justify-center">
 					<img
 						:src="headerLogo"
 						alt=""
 					>
 				</div>
+
 				<slot name="company-logo">
 					<div
 						v-if="hasService"
-						class="vd-header-title d-none d-md-flex"
+						class="vd-header-bar-title d-none d-md-flex"
 					>
 						<VDivider
 							v-bind="options.divider"
 						/>
+
 						<div class="d-flex flex-column">
 							<div
 								v-if="service.name"
-								class="vd-header-title-main"
+								class="vd-header-bar-title-main"
 							>
 								{{ service.name }}
 							</div>
+
 							<div
 								v-if="service.baseLine"
-								class="vd-header-title-sub"
+								class="vd-header-bar-title-sub"
 							>
 								{{ service.baseLine }}
 							</div>
@@ -46,28 +45,23 @@
 					</div>
 				</slot>
 			</div>
+
 			<div
 				v-if="hasUserSlot"
 				class="d-flex align-center"
 			>
 				<slot name="user-bar" />
 			</div>
-		</div>
+		</VSheet>
+
 		<HeaderNavBar
-			v-if="(hasNavBar && responsiveHeight) || hasService"
+			v-if="(hasNavBar && isDesktop) || hasService"
 			:is-pro="hasProTemplate"
 			:nav-bar="navBar"
-			:reactive-display="responsiveHeight"
+			:is-desktop="isDesktop"
 			:service="service"
-			@open-menu="openMenu"
 		/>
-		<HeaderMenu
-			:is-open="isOpen"
-			:nav-bar="navBar"
-			:service="service"
-			@open-menu="openMenu"
-		/>
-	</div>
+	</VSheet>
 </template>
 
 <script lang="ts">
@@ -102,7 +96,8 @@
 					const isValid = value.match(/^(ameli-pro|risque-pro|cnam)$/) !== null;
 					if (!isValid) {
 						// eslint-disable-next-line no-console
-						console.error(`Wrong value for the \`type\` prop. Given: "${value}", expected "(ameli-pro|risque-pro|cnam)".`);
+						console.error(`Wrong value for the \`type\` prop. 
+						Given: "${value}", expected "(ameli-pro|risque-pro|cnam)".`);
 					}
 					return true;
 				}
@@ -127,45 +122,49 @@
 
 		isOpen = false;
 
-		get hasLogoSlot() :boolean {
+		get hasLogoSlot(): boolean {
 			return Boolean(this.$slots['company-logo']);
 		}
 
-		get hasUserSlot() :boolean {
+		get hasUserSlot(): boolean {
 			return Boolean(this.$slots['user-bar']);
 		}
 
-		get hasNavBar() :boolean {
+		get hasNavBar(): boolean {
 			return Boolean(this.navBar !== null);
 		}
 
-		get hasService() :boolean {
+		get hasService(): boolean {
 			return Boolean(this.service !== null);
 		}
 
-		get hasProTemplate() :boolean {
+		get hasProTemplate(): boolean {
 			return Boolean(this.type === 'ameli-pro' && !this.hasService && !this.hasLogoSlot);
 		}
 
-		get headerLogo() :string | null {
+		get headerLogo(): string | null {
+			let img :string;
+
 			if(this.hasLogoSlot || this.hasService) {
-				return require('../../assets/svg/logo-no-text.svg');
+				img = 'cnam-no-text';
 			} else if(this.type === 'cnam') {
-				return require('../../assets/svg/logo.svg');
+				img = 'cnam';
 			} else if(this.type === 'ameli-pro') {
-				return require('../../assets/svg/ameli-pro.svg');
+				img = 'ameli-pro';
 			} else if(this.type === 'risque-pro') {
-				return require('../../assets/svg/risque-pro.svg');
+				img = 'risque-pro';
+			} else {
+				img = 'cnam';
 			}
 
-			return null;
+			return require(`../../assets/logos/${img}.svg`);
 		}
 
-		get headerBarHeight() :string {
-			return (this.hasNavBar && this.responsiveHeight) || this.hasService ? 'long' : 'short';
+		get headerBarHeight(): number {
+			return (this.hasNavBar && this.isDesktop) || this.hasService ? 168 : 120;
 		}
 
-		get responsiveHeight() :boolean {
+		get isDesktop(): boolean {
 			switch (this.$vuetify.breakpoint.name) {
 				case 'xs': return false;
 				case 'sm': return false;
@@ -175,52 +174,27 @@
 			}
 			return false;
 		}
-
-		openMenu(value: boolean) :void {
-			this.isOpen = value;
-		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd {
-		&-header {
-			width: 100%;
-			box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-						0px 2px 2px rgba(0, 0, 0, 0.14),
-						0px 1px 5px rgba(0, 0, 0, 0.12);
+	.vd-header-bar {
+		width: 100%;
+		box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+					0px 2px 2px rgba(0, 0, 0, 0.14),
+					0px 1px 5px rgba(0, 0, 0, 0.12);
 
-			&-container {
-				display: flex;
-				height: 120px;
-				justify-content: space-between;
+		&-title {
+			color: #0c419a;
+
+			&-main {
+				font-size: 16px;
+				line-height: 18px;
 			}
 
-			&.short {
-				height: 120px;
-			}
-
-			&.long {
-				height: 168px;
-			}
-
-			&-logo {
-				display: flex;
-				justify-content: center;
-			}
-
-			&-title {
-				color: #0C419A;
-
-				&-main {
-					font-size: 16px;
-					line-height: 18px;
-				}
-
-				&-sub {
-					font-size: 12px;
-					line-height: 14px;
-				}
+			&-sub {
+				font-size: 12px;
+				line-height: 14px;
 			}
 		}
 	}

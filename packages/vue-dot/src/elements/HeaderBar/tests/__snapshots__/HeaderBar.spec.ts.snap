@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderBar renders correctly 1`] = `
-<div class="vd-header long">
+<header class="vd-header long">
   <div class="vd-header-container">
     <div class="d-flex align-center d-md-none">
       <vbtn-stub color="primary" tag="button" activeclass="" icon="true" type="button" class="ml-7">
@@ -24,5 +24,5 @@ exports[`HeaderBar renders correctly 1`] = `
   </div>
   <headernavbar-stub navbar="[object Object]" reactivedisplay="true" service="[object Object]"></headernavbar-stub>
   <headermenu-stub navbar="[object Object]" service="[object Object]"></headermenu-stub>
-</div>
+</header>
 `;

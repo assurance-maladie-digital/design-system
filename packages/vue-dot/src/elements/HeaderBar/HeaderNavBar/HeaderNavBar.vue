@@ -4,7 +4,7 @@
 		:class="[backgroundColor, serviceClasses]"
 	>
 		<div
-			v-if="hasService && !reactiveDisplay"
+			v-if="hasService && !isDesktop"
 			class="ml-4"
 		>
 			<div
@@ -13,6 +13,7 @@
 			>
 				{{ service.name }} {{ service.name && service.baseLine ? '/' : '' }}
 			</div>
+
 			<div
 				v-if="service.baseLine"
 				class="vd-header-service"
@@ -20,6 +21,7 @@
 				{{ service.baseLine }}
 			</div>
 		</div>
+
 		<div
 			v-else
 			class="d-flex align-center ml-14"
@@ -32,14 +34,14 @@
 					{{ isPro ? menuIcon : homeIcon }}
 				</VIcon>
 			</VBtn>
+
 			<div
 				v-if="navBar !== null"
 				class="vd-header-title d-flex align-center"
 			>
-				<div>
-					{{ navBar.title }}
-				</div>
+				{{ navBar.title }}
 			</div>
+
 			<VTabs
 				v-if="!isPro && navBar.menu"
 				v-bind="options.navTabs"
@@ -79,7 +81,7 @@
 				type: Boolean,
 				default: false
 			},
-			reactiveDisplay: {
+			isDesktop: {
 				type: Boolean,
 				default: false
 			},
@@ -92,27 +94,25 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * HeaderNavBar is a component that display a navigation menu into the HeaderBar
-	 */
+	/** HeaderNavBar is a component that display a navigation menu into the HeaderBar */
 	@Component
 	export default class HeaderNavBar extends MixinsDeclaration {
 		homeIcon = mdiHomeOutline;
 		menuIcon = mdiMenu;
 
-		get backgroundColor() :string {
+		get backgroundColor(): string {
 			return this.isPro ? 'background-pro' : 'background-primary';
 		}
 
-		get hasService() :boolean {
+		get hasService(): boolean {
 			return Boolean(this.service !== null);
 		}
 
-		get serviceClasses() :string {
+		get serviceClasses(): string {
 			return this.hasService ? 'd-flex': 'd-none d-md-flex';
 		}
 
-		actionSelector() :void {
+		actionSelector(): void {
 			if(this.isPro) {
 				this.openMenu();
 			} else {
@@ -120,36 +120,34 @@
 			}
 		}
 
-		openMenu() :void {
+		openMenu(): void {
 			this.$emit('open-menu', true);
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd {
-		&-header {
-			&-title {
-				width: 200px;
-			}
+	.vd-header {
+		&-title {
+			width: 200px;
+		}
 
-			&-service {
-				font-size: 16px;
-				line-height: 18px;
-			}
+		&-service {
+			font-size: 16px;
+			line-height: 18px;
+		}
 
-			&-nav {
-				width: 100%;
-				height: 48px;
-				color: white;
+		&-nav {
+			width: 100%;
+			height: 48px;
+			color: white;
 
-				&.background {
-					&-pro {
-						background-color: #007FAD;
-					}
-					&-primary {
-						background-color: #001C6B;
-					}
+			&.background {
+				&-pro {
+					background-color: #007fAd;
+				}
+				&-primary {
+					background-color: #001c6b;
 				}
 			}
 		}
