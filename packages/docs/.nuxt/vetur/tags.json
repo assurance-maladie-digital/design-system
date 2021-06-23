@@ -47,6 +47,9 @@
   "CodeDocMarkdown": {
     "description": "Auto imported from components/code/DocMarkdown.vue"
   },
+  "ContentExplorer": {
+    "description": "Auto imported from components/content-explorer/ContentExplorer.vue"
+  },
   "DrawerDocDrawer": {
     "description": "Auto imported from components/drawer/DocDrawer.vue"
   },
@@ -58,9 +61,6 @@
   },
   "DrawerDocDrawerListItem": {
     "description": "Auto imported from components/drawer/DocDrawerListItem.vue"
-  },
-  "ContentExplorer": {
-    "description": "Auto imported from components/content-explorer/ContentExplorer.vue"
   },
   "PageDocGithubLink": {
     "description": "Auto imported from components/page/DocGithubLink.vue"

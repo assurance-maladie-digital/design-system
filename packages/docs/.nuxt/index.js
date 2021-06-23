@@ -13,10 +13,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_7ba6471c from 'nuxt_plugin_plugin_7ba6471c' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_plugin_679fb252 from 'nuxt_plugin_plugin_679fb252' // Source: ./vuetify/plugin.js (mode: 'all')
-import nuxt_plugin_pluginclient_30372498 from 'nuxt_plugin_pluginclient_30372498' // Source: ./content/plugin.client.js (mode: 'client')
-import nuxt_plugin_pluginserver_d41ed3c0 from 'nuxt_plugin_pluginserver_d41ed3c0' // Source: ./content/plugin.server.js (mode: 'server')
+import nuxt_plugin_plugin_fcc6775c from 'nuxt_plugin_plugin_fcc6775c' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_58cf30dc from 'nuxt_plugin_plugin_58cf30dc' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_pluginclient_2fa016ce from 'nuxt_plugin_pluginclient_2fa016ce' // Source: ./content/plugin.client.js (mode: 'client')
+import nuxt_plugin_pluginserver_d54cef54 from 'nuxt_plugin_pluginserver_d54cef54' // Source: ./content/plugin.server.js (mode: 'server')
 import nuxt_plugin_vuedot_3e7bf93e from 'nuxt_plugin_vuedot_3e7bf93e' // Source: ../src/plugins/vue-dot.ts (mode: 'all')
 import nuxt_plugin_formbuilder_dc09afb6 from 'nuxt_plugin_formbuilder_dc09afb6' // Source: ../src/plugins/form-builder.ts (mode: 'all')
 
@@ -211,20 +211,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_7ba6471c === 'function') {
-    await nuxt_plugin_plugin_7ba6471c(app.context, inject)
+  if (typeof nuxt_plugin_plugin_fcc6775c === 'function') {
+    await nuxt_plugin_plugin_fcc6775c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_679fb252 === 'function') {
-    await nuxt_plugin_plugin_679fb252(app.context, inject)
+  if (typeof nuxt_plugin_plugin_58cf30dc === 'function') {
+    await nuxt_plugin_plugin_58cf30dc(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_pluginclient_30372498 === 'function') {
-    await nuxt_plugin_pluginclient_30372498(app.context, inject)
+  if (process.client && typeof nuxt_plugin_pluginclient_2fa016ce === 'function') {
+    await nuxt_plugin_pluginclient_2fa016ce(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_pluginserver_d41ed3c0 === 'function') {
-    await nuxt_plugin_pluginserver_d41ed3c0(app.context, inject)
+  if (process.server && typeof nuxt_plugin_pluginserver_d54cef54 === 'function') {
+    await nuxt_plugin_pluginserver_d54cef54(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vuedot_3e7bf93e === 'function') {
