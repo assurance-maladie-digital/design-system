@@ -6,7 +6,7 @@ description: L'élément `ExternalLinks` est utilisé pour afficher un menu avec
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
- <doc-example file="external-links/usage"></doc-example>
+ <doc-usage name="external-links"></doc-example>
 </doc-tab-item>
 
 <doc-tab-item label="API">

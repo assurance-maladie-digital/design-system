@@ -8,9 +8,9 @@
       color=" accent-4"
 	>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-color-white">ExternalLinks: top left</v-toolbar-title>
+      <v-toolbar-title class="text-color-white">ExternalLinks</v-toolbar-title>
     </v-app-bar>
-     <ExternalLinks :items="links" position="top left" nudgeTop=60 />
+     <ExternalLinks :items="links" position="top left" nudgeTop=80 />
   </v-card>
 </template>
 <script lang="ts">
@@ -23,8 +23,17 @@
 	})
 	export default class ExternalLinksUsage extends Vue {
 
-        clicked = true;
-		drawer=true;
+        options = {
+			radioGroups: {
+				position: [
+					'top left',
+					'top right',
+					'bottom left',
+					'bottom right'
+				]
+			}
+		};
+
 		links:ExternalLink[]  = [
 			{
 				href: 'https://www.ameli.fr/professionnel-de-la-lpp',
@@ -55,8 +64,3 @@
 		];
 	}
 </script>
-<style lang="scss">
-	.menuClass{
-    border:1px solid red!important
-}
-</style>
