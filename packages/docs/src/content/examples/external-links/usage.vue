@@ -1,22 +1,18 @@
 <template>
-        <v-card>
-          <v-toolbar>
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
-            <template v-slot:extension>
-              <v-fab-transition>
-
-              </v-fab-transition>
-            </template>
-          </v-toolbar>
-          <v-card-text
-            style="height: 300px;"
-            class="grey lighten-5 text-center"
-          >
-		     <ExternalLinks  :items="links" position="top right" nudgeTop=112 />
-          </v-card-text>
-        </v-card>
+  <v-card
+    class="mx-auto overflow-hidden"
+    height="400"
+    width="80%"
+  >
+    <v-app-bar
+      color=" accent-4"
+	>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-toolbar-title class="text-color-white">ExternalLinks: top left</v-toolbar-title>
+    </v-app-bar>
+     <ExternalLinks :items="links" position="top left" nudgeTop=60 />
+  </v-card>
 </template>
-
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
@@ -28,6 +24,7 @@
 	export default class ExternalLinksUsage extends Vue {
 
         clicked = true;
+		drawer=true;
 		links:ExternalLink[]  = [
 			{
 				href: 'https://www.ameli.fr/professionnel-de-la-lpp',
