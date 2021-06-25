@@ -9,7 +9,7 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	@Component
-	export default class FormFieldSlider extends Vue {
+	export default class FormFieldSliderThumb extends Vue {
 		field: Field = {
 			type: 'select',
 			items: [
@@ -34,7 +34,9 @@
 			fieldOptions: {
 				type: 'choiceSlider',
 				label: 'Durée',
-				hideDetails: true
+				hideDetails: true,
+				thumbLabel: true,
+				thumbSize: '36px'
 			}
 		};
 	}
