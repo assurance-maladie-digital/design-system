@@ -118,7 +118,9 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.vd-choice-slider-field.thumb-label {
+	// Increase min-height when using tick labels with hide-details
+	// to make up for the additional space
+	.vd-choice-slider-field:not(.thumb-label) {
 		&.v-input--hide-details {
 			min-height: 40px;
 		}
