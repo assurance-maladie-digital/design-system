@@ -1,17 +1,23 @@
 <template>
 	<VApp>
-		<DocHeader @drawer-action="drawer = !drawer" />
+		<DocHeader :drawer.sync="drawer" />
 
 		<DocDrawer v-model="drawer" />
 
 		<VMain>
-			<div class="h-100 d-flex align-center justify-center flex-column text-center pa-4 ma-auto">
-				<span class="font-weight-bold primary--text vd-code">
+			<div class="h-100 d-flex align-center justify-center flex-column text-center ma-auto pa-4">
+				<span
+					v-if="code"
+					class="vd-error-code font-weight-bold primary--text"
+				>
 					{{ code }}
 				</span>
 
-				<h2 class="text-h6 font-weight-bold mb-2">
-					{{ error.message }}
+				<h2
+					v-if="title"
+					class="text-h6 font-weight-bold mb-2"
+				>
+					{{ title }}
 				</h2>
 
 				<p>{{ message }}</p>
@@ -22,7 +28,7 @@
 					color="primary"
 					class="mt-6 mb-12"
 				>
-					Retour à l'accueil
+					Retour à l’accueil
 				</VBtn>
 			</div>
 		</VMain>
@@ -58,11 +64,15 @@
 		}
 	})
 	export default class Error extends MixinsDeclaration {
-		drawer = null;
+		drawer: boolean | null = null;
 		message = 'Il semblerait qu’il y ait eu une erreur !';
 
 		get code(): string | undefined {
 			return this.error.statusCode?.toString();
+		}
+
+		get title(): string | undefined {
+			return this.error.message;
 		}
 
 		@Head
@@ -73,7 +83,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-code {
+	.vd-error-code {
 		font-size: 6rem;
 		line-height: 6rem;
 		font-family: serif;

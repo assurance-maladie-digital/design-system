@@ -14,6 +14,6 @@
 
 	@Component
 	export default class CustomIconSizeColor extends Vue {
-		color = tokens.colors.secondary;
+		color = tokens.colors.primary;
 	}
 </script>

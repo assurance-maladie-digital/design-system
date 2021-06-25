@@ -146,7 +146,7 @@
 		tree: IndexedObject[] = [];
 		activeItem: IndexedObject[] = [];
 		drawer = false;
-		search = '';
+		search: string | null = null;
 		state: STATE_ENUM = STATE_ENUM.idle;
 		treeViewClicked = false;
 

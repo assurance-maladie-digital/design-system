@@ -1,5 +1,5 @@
 <template>
-	<div class="w-100">
+	<div>
 		<FileUpload
 			v-model="file"
 			v-bind="props"
@@ -8,17 +8,21 @@
 		/>
 
 		<VSnackbar
+			v-if="snackbarText"
 			v-model="snackbar"
 			:color="snackbarColor"
 		>
 			{{ snackbarText }}
 
-			<VBtn
-				text
-				@click="snackbar = false"
-			>
-				Fermer
-			</VBtn>
+			<template #action="{ attrs }">
+				<VBtn
+					v-bind="attrs"
+					text
+					@click="snackbar = false"
+				>
+					Fermer
+				</VBtn>
+			</template>
 		</VSnackbar>
 	</div>
 </template>
@@ -34,7 +38,7 @@
 		file: File | null = null;
 
 		snackbar = false;
-		snackbarText = '';
+		snackbarText: string | null = null;
 		snackbarColor = 'success';
 
 		props = {

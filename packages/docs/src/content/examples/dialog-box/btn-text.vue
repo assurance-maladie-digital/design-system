@@ -15,7 +15,7 @@
 			@cancel="dialog = false"
 			@confirm="dialog = false"
 		>
-			<p>Souhaitez-vous procéder à l'enregistrement ?</p>
+			<p>Souhaitez-vous procéder à l’enregistrement ?</p>
 		</DialogBox>
 	</div>
 </template>

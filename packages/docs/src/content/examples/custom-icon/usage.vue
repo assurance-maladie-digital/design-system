@@ -11,6 +11,8 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { tokens } from '@cnamts/design-tokens';
+
 	@Component({
 		inheritAttrs: false
 	})
@@ -23,7 +25,8 @@
 		options = {
 			selects: {
 				color: [
-					'#0c419a'
+					tokens.colors.primary,
+					tokens.colors.secondary
 				]
 			},
 			radioGroups: {

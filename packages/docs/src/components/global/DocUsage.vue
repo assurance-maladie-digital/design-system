@@ -25,7 +25,7 @@
 							show-arrows="always"
 						>
 							<VSlideItem
-								v-for="(prop) in tabs"
+								v-for="prop in tabs"
 								:key="prop"
 								v-slot="{ active, toggle }"
 							>
@@ -35,7 +35,7 @@
 									height="44"
 									text
 									tile
-									@click="toggle(); toggleOption(prop, active)"
+									@click="toggleOption(toggle, prop, active)"
 								>
 									{{ prop }}
 								</VBtn>
@@ -48,16 +48,14 @@
 					<VThemeProvider :dark="dark">
 						<VSheet
 							:color="color"
-							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 							max-height="400"
 							min-height="100"
+							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 						>
 							<VueFile
 								v-if="file"
 								:file="file"
-								v-bind="{
-									...usageProps
-								}"
+								v-bind="usageProps"
 								@loaded="setContents"
 								@error="hasError = true"
 							/>
@@ -72,19 +70,19 @@
 					<VDivider class="hidden-md-and-up" />
 
 					<VSheet
-						class="d-flex align-center"
 						height="44px"
+						class ="d-flex align-center"
 					>
 						<VDivider
 							vertical
 							class="hidden-sm-and-down"
 						/>
 
-						<p class="px-3 mb-0 text-h6 font-weight-medium">
+						<p class="text-h6 font-weight-medium px-3 mb-0">
 							Options
 						</p>
 
-						<div class="pa-1 ms-auto">
+						<div class="ms-auto pa-1">
 							<DocTooltipBtn
 								:disabled="hasError"
 								label="Inverser les couleurs"
@@ -113,22 +111,22 @@
 
 					<VDivider />
 
-					<div class="d-flex usage-options">
+					<div class="d-flex doc-usage-options">
 						<VDivider
 							vertical
 							class="hidden-sm-and-down"
 						/>
 
 						<VResponsive
-							class="overflow-y-auto pa-3"
 							height="100%"
 							max-height="400px"
+							class="overflow-y-auto pa-3"
 						>
 							<VCheckbox
-								v-for="(prop, i) in booleans"
+								v-for="(prop, index) in booleans"
 								:key="prop"
 								:value="usageProps[prop]"
-								:class="i === 0 && 'mt-0'"
+								:class="{ 'mt-0': index === 0 }"
 								:label="toKebabCase(prop)"
 								hide-details
 								dense
@@ -178,7 +176,7 @@
 							/>
 
 							<VTextField
-								v-for="(prop) in textFields"
+								v-for="prop in textFields"
 								:key="prop"
 								:value="usageProps[prop]"
 								:label="toKebabCase(prop)"
@@ -195,10 +193,10 @@
 								class="my-2"
 							>
 								<VBtn
-									v-for="(item, i) in items"
-									:key="`${prop}${i}`"
+									v-for="(item, index) in items"
+									:key="`${prop}${index}`"
 									text
-									@click="toggleBtnProp(items, item)"
+									@click="setProp(items, item)"
 								>
 									{{ item }}
 								</VBtn>
@@ -208,11 +206,13 @@
 								v-for="(items, prop) in radioGroups"
 								:key="prop"
 								:label="toKebabCase(prop)"
+								:value="getRadioGroupValue(items)"
 							>
 								<VRadio
 									v-for="item in items"
 									:key="item"
 									:label="item"
+									:value="item"
 									@click="toggleRadioProp(items, item)"
 								/>
 							</VRadioGroup>
@@ -247,8 +247,12 @@
 
 	import { VueClass } from 'vue-class-component/lib/declarations';
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
+	import { UsageProps } from '../../types/usage';
 
 	import DocTooltipBtn from '../page/DocTooltipBtn.vue';
+
+	import { getUsageCode } from '../../functions/getUsageCode';
+	import { toKebabCase } from '../../functions/toKebabCase';
 
 	interface ImportedComponent extends VueClass<Vue> {
 		options: {
@@ -259,10 +263,6 @@
 	interface Theme {
 		isDark: true;
 	}
-
-	type Props = IndexedObject<
-		boolean | string[] | IndexedObject<IndexedObject<number | string>>
-	>;
 
 	interface Slider {
 		min: number;
@@ -308,6 +308,8 @@
 	export default class DocUsage extends MixinsDeclaration {
 		theme!: Theme;
 
+		toKebabCase = toKebabCase;
+
 		invertColorsIcon = mdiInvertColors;
 		sourceIcon = mdiCodeTags;
 
@@ -321,8 +323,8 @@
 		slotContent: string | null = null;
 
 		options: Options = {};
-		usageProps: Props = {};
-		displayProps: Props = {};
+		usageProps: UsageProps = {};
+		displayProps: UsageProps = {};
 
 		dark = false;
 		expand = false;
@@ -340,73 +342,7 @@
 		}
 
 		get usageCode(): string {
-			let attributeArray = [];
-
-			for (const [key, value] of Object.entries(this.displayProps)) {
-				if (Boolean(value) === false) {
-					continue;
-				}
-
-				let trimmed = this.toKebabCase(key.trim());
-
-				const isNumber = typeof value === 'number';
-				const isObject = typeof value === 'object';
-				const isFunction = typeof value === 'function';
-
-				const isDynamicValue = isNumber || isObject || isFunction;
-
-				if (isDynamicValue) {
-					trimmed = `:${trimmed}`;
-				}
-
-				if (isObject || isFunction) {
-					trimmed += `="${key.trim()}"`;
-				} else if (value !== true) {
-					trimmed += `="${value}"`;
-				}
-
-				attributeArray.push(trimmed);
-			}
-
-			attributeArray = attributeArray.sort();
-
-			// Display attributes on single when none or one attribute
-			const slotContent = Boolean(this.slotContent);
-			const name = this.toPascalCase(this.name);
-
-			const singleLine = attributeArray.length > 1;
-			const space = ' ';
-
-			const indent = singleLine ? '\r\t' : attributeArray.length ? space : '';
-
-			let tail = '';
-
-			if (singleLine) {
-				tail += '\r';
-			} else if (!singleLine && !slotContent) {
-				tail += space;
-			}
-
-			tail += `${slotContent ? '' : '/'}>`;
-
-			const attributes = attributeArray.join('\r\t');
-			const endContent = slotContent ? `${this.slotContent}</${name}>` : '';
-
-			return `<${name}${indent}${attributes}${tail}${endContent}`;
-		}
-
-		toKebabCase(str: string): string {
-			return str.replace(/\s+/g, '-').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-		}
-
-		toPascalCase(str: string): string {
-			const words = str.match(/[a-z]+/gi);
-
-			if (!words) {
-				return '';
-			}
-
-			return words.map((word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()).join('');
+			return getUsageCode(this.name, this.displayProps, this.slotContent);
 		}
 
 		setProp(prop: string, value: number | string | boolean): void {
@@ -421,23 +357,28 @@
 
 			Object.assign(this.$data, component.options.data.call(this));
 
-			const defaults = this.$data.defaultProps as Props;
+			const defaults = this.$data.defaultProps as UsageProps;
 			const propsHiddenByDefault = (this.$data.propsHiddenByDefault || []) as string[];
 
 			if (defaults) {
-				const filteredDefaults = Object
+				const filteredDefaults: UsageProps = {};
+
+				Object
 					.keys(defaults)
 					.filter((key) => !propsHiddenByDefault.includes(key))
-					.reduce<Props>((res, key) => (res[key] = defaults[key], res), {});
+					// Convert array back to object
+					.map((key) => filteredDefaults[key] = defaults[key]);
 
 				this.usageProps = Object.assign({}, defaults);
 				this.displayProps = Object.assign({}, filteredDefaults);
 			}
 
-			if (this.options) {
-				for (const [key, value] of Object.entries(this.options)) {
-					(this as unknown as IndexedObject<unknown>)[key] = value;
-				}
+			if (!this.options) {
+				return;
+			}
+
+			for (const [key, value] of Object.entries(this.options)) {
+				(this as unknown as IndexedObject<unknown>)[key] = value;
 			}
 		}
 
@@ -449,11 +390,23 @@
 			this.setProp(toggled, true);
 		}
 
-		toggleBtnProp(prop: string, item: string): void {
-			this.$set(this.usageProps, prop, item);
+		getRadioGroupValue(items: string[]): string {
+			let value = '';
+
+			for (const item of items) {
+				const itemValue = this.usageProps[item];
+
+				if (itemValue) {
+					value = item;
+				}
+			}
+
+			return value;
 		}
 
-		toggleOption(prop: string, active: boolean): void {
+		toggleOption(toggle: () => void, prop: string, active: boolean): void {
+			toggle();
+
 			this.setProp(prop, !active);
 		}
 	}
@@ -464,7 +417,7 @@
 		border-top: thin solid rgba(0, 0, 0, .12);
 	}
 
-	.usage-options {
+	.doc-usage-options {
 		min-height: 100%;
 	}
 </style>

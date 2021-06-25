@@ -1,8 +1,21 @@
 <template>
 	<DataList :items="items">
 		<template #title>
-			<h3 class="subtitle-2 d-block white--text primary py-3 px-4 mb-2">
-				Titre
+			<h3 class="text-subtitle-1 font-weight-bold mb-3">
+				Liste de données
+
+				<VTooltip bottom>
+					<template #activator="{ on, attrs }">
+						<VIcon
+							v-bind="attrs"
+							v-on="on"
+						>
+							{{ informationIcon }}
+						</VIcon>
+					</template>
+
+					<span>Cette liste contient des données concernant le patient.</span>
+				</VTooltip>
 			</h3>
 		</template>
 	</DataList>
@@ -14,12 +27,16 @@
 
 	import { DataList } from '@cnamts/vue-dot/src/elements/DataList/types';
 
+	import { mdiInformationOutline } from '@mdi/js';
+
 	@Component
 	export default class DataListSlot extends Vue {
+		informationIcon = mdiInformationOutline;
+
 		items: DataList = [
 			{
 				key: 'Nom',
-				value: ''
+				value: undefined
 			},
 			{
 				key: 'Prénom',

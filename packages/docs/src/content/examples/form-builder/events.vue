@@ -2,20 +2,21 @@
 	<div>
 		<FormBuilder
 			v-model="form"
-			@change="formUpdated"
-			@refresh="formRefreshed"
+			@change="updated"
+			@refresh="refreshed"
 		/>
 
 		<VSnackbar
+			v-if="snackbarText"
 			v-model="snackbar"
 			color="info"
 		>
 			{{ snackbarText }}
 
-			<template v-slot:action="{ attrs }">
+			<template #action="{ attrs }">
 				<VBtn
-					text
 					v-bind="attrs"
+					text
 					@click="snackbar = false"
 				>
 					Fermer
@@ -34,7 +35,7 @@
 	@Component
 	export default class FormBuilderEvents extends Vue {
 		snackbar = false;
-		snackbarText = '';
+		snackbarText: string | null = null;
 
 		form: Form = {
 			section1: {
@@ -75,12 +76,12 @@
 			}
 		};
 
-		formUpdated(): void {
+		updated(): void {
 			this.snackbar = true;
 			this.snackbarText = 'Événement "change" émis';
 		}
 
-		formRefreshed(): void {
+		refreshed(): void {
 			this.$nextTick(() => {
 				this.snackbar = true;
 				this.snackbarText = 'Événements "change" et "refresh" émis';

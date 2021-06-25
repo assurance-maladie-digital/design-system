@@ -1,7 +1,10 @@
 <template>
 	<FileUpload v-model="file">
 		<template #icon>
-			<VIcon>
+			<VIcon
+				large
+				color="primary"
+			>
 				{{ downloadIcon }}
 			</VIcon>
 		</template>
@@ -11,7 +14,7 @@
 		</template>
 
 		<template #or>
-			Ou bien
+			Sinon
 		</template>
 
 		<template #button-text>
@@ -28,12 +31,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { mdiDownloadCircle } from '@mdi/js';
+	import { mdiFileUpload } from '@mdi/js';
 
 	@Component
 	export default class FileUploadSlots extends Vue {
-		file: File | null = null;
+		downloadIcon = mdiFileUpload;
 
-		downloadIcon = mdiDownloadCircle;
+		file: File | null = null;
 	}
 </script>

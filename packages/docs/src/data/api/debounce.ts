@@ -6,7 +6,7 @@ export const api: Api = {
 			{
 				name: 'value',
 				type: 'function',
-				description: 'Fonction exécutée après le délai.<br>Par défaut un événement `change` sera émit.',
+				description: 'Fonction exécutée une fois le délai écoulé.<br>Par défaut un événement `change` sera émit.',
 				default: 'undefined'
 			}
 		],

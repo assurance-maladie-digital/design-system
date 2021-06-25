@@ -8,7 +8,7 @@ export const api: Api = {
 				type: 'string',
                 required: true,
 				default: true,
-				description: 'Contrôler le positionnement du bouton. Choix possible: `top left` ,  `top right` , `bottom left` ou `bottom right`',
+				description: 'Definir le mode de positionnement du défilement du bouton-menu dans la page. Choix possible: `top left` ,  `top right` , `bottom left` ou `bottom right`',
                 example: `position="top left"`
 			},
             {
@@ -26,12 +26,35 @@ export const api: Api = {
                 default:'Consulter les données externes',
 				description: 'Attribuer une etiquette au bouton.'
 			},
+			{
+               name: 'nudgeTop',
+			   type: '[string, number]',
+			   default: '0',
+			   description: 'Décaler le bouton-menu un peu plus vers le haut.'
+			},
+			{
+				name: 'nudgeBottom',
+				type: '[string, number]',
+				default: '0',
+				description: 'Décaler le bouton-menu un peu plus vers le bas.'
+			 },
             {
 				name: 'fixed',
 				type: 'boolean',
                 default:false,
-				description: 'Postionnement en fixe ou absolute.'
+				description: 'Postionnement en mode fixe ou absolute.'
 			},
+			{
+				name: 'vuetify-options',
+				type: 'Options',
+				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+				default: 'undefined',
+				example: `{
+	menu: 'VMenu',
+	btn: 'VBtn',
+	btnIcon: 'VIcon'
+}`
+			}
         ]
     }
 }

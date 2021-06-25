@@ -1,6 +1,6 @@
 ---
 title: ErrorPage
-description: Le template `ErrorPage` est utilisé pour afficher une page d'erreur.
+description: Le template `ErrorPage` est utilisé pour afficher une page d’erreur.
 ---
 
 <doc-tabs>
@@ -11,15 +11,15 @@ description: Le template `ErrorPage` est utilisé pour afficher une page d'erreu
 
 ## Exemples
 
-### Code d'erreur
+### Code d’erreur
 
-Vous pouvez afficher un code d'erreur HTTP en utilisant la prop `code`.
+Vous pouvez afficher un code d’erreur HTTP en utilisant la prop `code`.
 
 <doc-example file="error-page/code"></doc-example>
 
-### Bouton d'action masqué
+### Bouton d’action masqué
 
-Vous pouvez masquer le bouton d'action en utilisant la prop `no-btn`.
+Vous pouvez masquer le bouton d’action en utilisant la prop `no-btn`.
 
 <doc-example file="error-page/no-btn"></doc-example>
 

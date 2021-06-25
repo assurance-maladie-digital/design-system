@@ -1,6 +1,6 @@
 ---
 title: DatePicker
-description: Le pattern `DatePicker` est un composant utilisé pour permettre à l'utilisateur de sélectionner ou de saisir une date.
+description: Le pattern `DatePicker` est un composant utilisé pour permettre à l’utilisateur de sélectionner ou de saisir une date.
 ---
 
 <doc-tabs>
@@ -13,16 +13,16 @@ description: Le pattern `DatePicker` est un composant utilisé pour permettre à
 
 ### Outlined
 
-Vous pouvez afficher le `VTextField` en mode `outlined` en utilisant la prop du même nom. Cela va également mettre l'icône en mode `append` et modifier la position du menu.
+Vous pouvez afficher le `VTextField` en mode `outlined` en utilisant la prop du même nom, l’icône passera alors en mode `append` et la position du menu sera également modifiée.
 
 <doc-example file="date-picker/outlined"></doc-example>
 
 ### Date de naissance
 
-Vous pouvez permettre à l'utilisateur de sélectionner une date naissance plus facilement en utilisant la prop `birthdate`.
+Vous pouvez permettre à l’utilisateur de sélectionner une date naissance plus facilement en utilisant la prop `birthdate`.
 
 <doc-alert type="info">
-L'utilisateur sélectionnera l'année en premier, puis le mois et enfin le jour et ne peut pas sélectionner une date future.
+L’utilisateur sélectionnera l’année en premier, puis le mois et enfin le jour et ne peut pas sélectionner une date future.
 </doc-alert>
 
 <doc-example file="date-picker/birthdate"></doc-example>
@@ -35,10 +35,10 @@ Vous pouvez afficher les weekends dans le calendrier en utilisant la prop `show-
 
 ### Période
 
-Vous pouvez créer une période en fournissant une date de début via la prop `start-date`. Lorsque l'utilisateur aura sélectionné une date date le calendrier, la période sera alors affichée dans le calendrier.
+Vous pouvez créer une période en fournissant une date de début via la prop `start-date`. Lorsque l’utilisateur aura sélectionné une date date le calendrier, la période sera alors affichée dans le calendrier.
 
 <doc-alert type="info">
-Lorsque que la date de début est située avant la date sélectionnée (période « négative »), la période n'est pas affichée.
+Lorsque que la date de début est située avant la date sélectionnée (période « négative »), la période n’est pas affichée.
 </doc-alert>
 
 <doc-example file="date-picker/range"></doc-example>
@@ -49,7 +49,7 @@ Vous pouvez modifier le format de la date affichée dans le `VTextField` en util
 
 <doc-alert type="info">
 
-Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la prop `date-format`, mais vous pouvez le redéfinir en utilisant la prop `mask` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
+Par défaut un masque limitant les caractères pouvant être saisis dans le `VTextField` est calculé à partir de la prop `date-format`, mais vous pouvez le redéfinir via la prop `mask` en utilisant l’[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
 
 </doc-alert>
 
@@ -59,7 +59,7 @@ Par défaut un masque limitant les caractères pouvant être saisis dans le `VTe
 
 Vous pouvez appliquer des [règles de validation Vuetify](https://vuetifyjs.com/fr-FR/components/inputs/#rules) au `VTextField` contenu dans le composant en utilisant la prop `rules`.
 
-Vous pouvez aussi ajouter des règles d'alertes, qui ne bloquent pas la validation, en utilisant la prop `warning-rules`.
+Vous pouvez aussi ajouter des règles d’alertes, qui ne bloquent pas la validation, en utilisant la prop `warning-rules`.
 
 Pour cela, vous pouvez utiliser les règles de validation inclues dans la librairie, comme :
 - `required`

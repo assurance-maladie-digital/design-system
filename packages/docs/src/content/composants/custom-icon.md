@@ -1,6 +1,6 @@
 ---
 title: CustomIcon
-description: L'élément `CustomIcon` est utilisé pour afficher une icône personnalisée parmi celles définies dans les options de Vue Dot.
+description: L’élément `CustomIcon` est utilisé pour afficher une icône personnalisée parmi celles définies dans les options de Vue Dot.
 ---
 
 <doc-tabs>
@@ -13,7 +13,7 @@ description: L'élément `CustomIcon` est utilisé pour afficher une icône pers
 
 ### Taille et couleur
 
-Vous pouvez modifier la taille et la couleur de l'icône grâce aux props `size` et `color`.
+Vous pouvez modifier la taille et la couleur de l’icône grâce aux props `size` et `color`.
 
 <doc-example file="custom-icon/size-color"></doc-example>
 

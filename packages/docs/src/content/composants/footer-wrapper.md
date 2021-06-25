@@ -11,9 +11,9 @@ description: Le pattern `FooterWrapper` est utilisé avec le composant `FooterBt
 
 ## Exemples
 
-### Bouton inert
+### Bouton inactif
 
-Vous pouvez rendre un bouton inactif en utilisant la prop `inert`. Celui-ci sera alors désactivé et généré en tant que `div`.
+Vous pouvez rendre un bouton inactif en utilisant la prop `inert`. Celui-ci sera alors désactivé et l’élément généré sera une `div`.
 
 <doc-example file="footer-wrapper/inert"></doc-example>
 

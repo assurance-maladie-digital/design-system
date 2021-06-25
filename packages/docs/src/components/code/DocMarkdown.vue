@@ -1,12 +1,14 @@
-<script land="ts">
-	import Vue from 'vue';
+<script lang="ts">
+	import Vue, { VNode } from 'vue';
 
 	import remark from 'remark';
 	import html from 'remark-html';
 
+	import { VFile } from 'vfile';
+
 	const remarkProcessor = remark().use(html);
 
-	function markdownToHtml(content) {
+	function markdownToHtml(content: string): VFile {
 		return remarkProcessor.processSync(content);
 	}
 
@@ -23,7 +25,7 @@
 			children: nodes = [],
 			data,
 			props
-		}) {
+		}): VNode | VNode[] {
 			const children = [];
 			const node = nodes[0] || {};
 
@@ -32,7 +34,7 @@
 			} else if (nodes.length > 1) {
 				children.push(nodes);
 			} else {
-				const text = node.text || data.domProps?.textContent || '';
+				const text: string = node.text || data.domProps?.textContent || '';
 
 				data.domProps = {
 					...data.domProps,

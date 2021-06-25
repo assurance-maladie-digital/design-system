@@ -12,7 +12,7 @@
 			v-if="date"
 			class="mt-4 mb-0"
 		>
-			Date : {{ date }}
+			Date saisie : {{ date }}
 		</p>
 	</div>
 </template>
@@ -23,6 +23,6 @@
 
 	@Component
 	export default class DatePickerFormat extends Vue {
-		date = '';
+		date: string | null = null;
 	}
 </script>

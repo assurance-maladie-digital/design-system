@@ -9,7 +9,7 @@ description: Le composant `FormBuilder` est utilisé pour afficher un questionna
 
 <doc-alert type="info">
 
-Ce composant requiert l'installation du package [FormBuilder](/demarrer/installation#composants/form-builder).
+Ce composant requiert l’installation du package [FormBuilder](/demarrer/installation#composants/form-builder).
 
 </doc-alert>
 
@@ -19,7 +19,7 @@ Ce composant requiert l'installation du package [FormBuilder](/demarrer/installa
 
 ### Événements
 
-Vous pouvez réagir lorsque la valeur d'un champ du formulaire change en utilisant l'événement `change`, ainsi que lorsque la valeur d'un champ dynamique (avec l'attribut `dynamic`) change en utilisant l'événement `refresh`.
+Vous pouvez écouter la mise à jour de la valeur d’un champ du formulaire en utilisant l’événement `change`, ainsi que la mise à jour de la valeur d’un champ dynamique (avec l’attribut `dynamic`) en utilisant l’événement `refresh`.
 
 <doc-example file="form-builder/events"></doc-example>
 

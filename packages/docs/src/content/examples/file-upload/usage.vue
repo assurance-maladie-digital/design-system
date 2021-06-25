@@ -1,5 +1,5 @@
 <template>
-	<div class="d-flex flex-wrap align-center justify-center w-100">
+	<div class="d-flex flex-wrap align-center justify-center flex-grow-1">
 		<FileUpload
 			v-bind="$attrs"
 			v-on="$listeners"

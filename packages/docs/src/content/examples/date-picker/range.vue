@@ -22,9 +22,11 @@
 
 	import dayjs from 'dayjs';
 
+	const DATE_FORMAT = 'YYYY-MM-DD';
+
 	@Component
 	export default class DatePickerRange extends Vue {
-		startDate = dayjs().format('YYYY-MM-DD');
-		endDate = dayjs().add(7, 'day').format('YYYY-MM-DD');
+		startDate = dayjs().format(DATE_FORMAT);
+		endDate = dayjs().add(7, 'day').format(DATE_FORMAT);
 	}
 </script>

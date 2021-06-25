@@ -1,9 +1,9 @@
 <template>
 	<VMenu
+		ref="menu"
 		v-model="menu"
 		v-bind="options.menu"
 		:top="bottom"
-		:content-class="menuClass"
 		class="vd-external-links"
 	>
 		<template #activator="{ on, attrs }">
