@@ -3,7 +3,12 @@
 ### Vue Dot
 
 - 🔧 **Configuration**
-  - **config:** Mise à jour de la taille maximale du build ([#1183](https://github.com/assurance-maladie-digital/design-system/pull/1183))
+  - **config:** Mise à jour de la taille maximale du build ([#1183](https://github.com/assurance-maladie-digital/design-system/pull/1183)) ([cd82a69](https://github.com/assurance-maladie-digital/design-system/commit/cd82a69f9f284592bdb805aec359ae78080a97db))
+
+### FormBuilder
+
+- ♻️ **Refactoring**
+  - **ChoiceSliderField:** Refonte du composant ([#1193](https://github.com/assurance-maladie-digital/design-system/pull/1193))
 
 ## v2.0.0-beta.11
 
