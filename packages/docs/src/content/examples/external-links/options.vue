@@ -1,20 +1,7 @@
 <template>
-   <v-card>
-          <v-toolbar>
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
-            <template v-slot:extension>
-              <v-fab-transition>
-
-              </v-fab-transition>
-            </template>
-          </v-toolbar>
-          <v-card-text
-            style="height: 300px;"
-            class="grey lighten-5 text-center"
-          >
-		     <ExternalLinks  position="top left" :vuetify-options="vuetifyOptions" nudgeTop=112 />
-          </v-card-text>
-        </v-card>
+   <v-card class="mx-auto overflow-hidden" height="200" >
+		    <ExternalLinks :items="links" position="top left" :vuetify-options="vuetifyOptions" />
+    </v-card>
 </template>
 
 <script lang="ts">
@@ -32,5 +19,34 @@
 		        class: 'd-flex px-3'
 	        },
 		};
+
+		links:ExternalLink[]  = [
+			{
+				href: 'https://www.ameli.fr/professionnel-de-la-lpp',
+				text: 'Vers ameli pro'
+			},
+			{
+				href: 'https://www.impots.gouv.fr/portail/',
+				text: 'Impots GOUV'
+			},
+			{
+				href: 'https://github.com/assurance-maladie-digital',
+				text: 'Design System'
+			},
+			{
+				href: 'https://www.lassuranceretraite.fr/portail-info/home.html',
+				text: 'Assurance retraite'
+			}
+			,
+			{
+				href: 'https://www.lassuranceretraite.fr/portail-info/home.html',
+				text: 'Assurance maladie'
+			}
+			,
+			{
+				href: 'https://www.lassuranceretraite.fr/portail-info/home.html',
+				text: 'Assurance'
+			}
+		];
 	}
 </script>

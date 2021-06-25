@@ -1,40 +1,22 @@
 <template>
-  <v-card
-    class="mx-auto overflow-hidden"
-    height="400"
-    width="80%"
-  >
-    <v-app-bar
-      color=" accent-4"
-	>
+  <v-card class="mx-auto overflow-hidden" height="200" width="80%">
+    <v-app-bar color=" accent-4">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title class="text-color-white">ExternalLinks</v-toolbar-title>
     </v-app-bar>
-     <ExternalLinks :items="links" position="top left" nudgeTop=80 />
+    <v-card-text><ExternalLinks :items="links" position="top left" nudgeTop=80 /></v-card-text>
   </v-card>
 </template>
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
-    import { ExternalLink } from '../../../../../vue-dot/src/elements/ExternalLinks/types';
+import Vue from "vue";
+import Component from "vue-class-component";
+import { ExternalLink } from "../../../../../vue-dot/src/elements/ExternalLinks/types";
 
-	@Component({
-		inheritAttrs: false
-	})
-	export default class ExternalLinksUsage extends Vue {
-
-        options = {
-			radioGroups: {
-				position: [
-					'top left',
-					'top right',
-					'bottom left',
-					'bottom right'
-				]
-			}
-		};
-
-		links:ExternalLink[]  = [
+@Component({
+  inheritAttrs: false
+})
+export default class ExternalLinksUsage extends Vue {
+	links:ExternalLink[]  = [
 			{
 				href: 'https://www.ameli.fr/professionnel-de-la-lpp',
 				text: 'Vers ameli pro'
@@ -62,5 +44,5 @@
 				text: 'Assurance'
 			}
 		];
-	}
+}
 </script>
