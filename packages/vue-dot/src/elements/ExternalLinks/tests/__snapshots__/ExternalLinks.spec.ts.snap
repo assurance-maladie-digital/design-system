@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExternalLinks.vue renders correctly 1`] = `
-<vmenu-stub opendelay="0" closedelay="0" contentclass="vd-external-links-menu left-0" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" tile="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition" class="vd-external-links">
+<vmenu-stub opendelay="0" closedelay="0" contentclass="" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" tile="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition" class="vd-external-links">
   <vcard-stub loaderheight="4" tag="div" class="px-4 py-3">
     <p class="mb-0">
       Pas de données.
