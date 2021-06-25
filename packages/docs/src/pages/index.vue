@@ -5,15 +5,15 @@
 				<div class="home-content d-flex flex-column align-start flex-grow-1 px-16 py-10">
 					<div class="d-flex flex-column justify-center flex-grow-1">
 						<img
+							src="~/assets/logo-am.svg"
+							alt="l’Assurance Maladie"
 							width="250px"
 							height="114px"
-							src="~/assets/logo-am.svg"
-							alt="l'Assurance Maladie"
 							class="logo-am"
 						>
 
 						<h1 class="home-title text-lg-h3 text-md-h4 text-sm-h5 text-h5 my-10 mt-sm-16 font-weight-bold">
-							Un Design System pour l'Assurance Maladie
+							Un Design System pour l’Assurance Maladie
 						</h1>
 
 						<template v-if="state === 'idle' || state === 'pending'">

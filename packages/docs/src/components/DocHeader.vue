@@ -10,7 +10,7 @@
 		<VAppBarNavIcon
 			:aria-label="drawerActionLabel"
 			class="ml-2 ml-sm-3 hidden-lg-and-up"
-			@click="$emit('drawer-action')"
+			@click="emitDrawerEvent"
 		/>
 
 		<RouterLink
@@ -22,7 +22,7 @@
 		>
 			<img
 				src="~/assets/logo-am-no-text.svg"
-				alt="l'Assurance Maladie"
+				alt="l’Assurance Maladie"
 				width="156px"
 			>
 		</RouterLink>
@@ -70,6 +70,10 @@
 			const action = this.drawer ? 'Masquer' : 'Afficher';
 
 			return `${action} le menu`;
+		}
+
+		emitDrawerEvent(): void {
+			this.$emit('update:drawer', !this.drawer);
 		}
 	}
 </script>

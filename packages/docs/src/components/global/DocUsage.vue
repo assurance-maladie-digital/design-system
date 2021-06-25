@@ -25,7 +25,7 @@
 							show-arrows="always"
 						>
 							<VSlideItem
-								v-for="(prop) in tabs"
+								v-for="prop in tabs"
 								:key="prop"
 								v-slot="{ active, toggle }"
 							>
@@ -48,9 +48,9 @@
 					<VThemeProvider :dark="dark">
 						<VSheet
 							:color="color"
-							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 							max-height="400"
 							min-height="100"
+							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 						>
 							<VueFile
 								v-if="file"
@@ -70,8 +70,8 @@
 					<VDivider class="hidden-md-and-up" />
 
 					<VSheet
-						class="d-flex align-center"
 						height="44px"
+						class ="d-flex align-center"
 					>
 						<VDivider
 							vertical
@@ -118,9 +118,9 @@
 						/>
 
 						<VResponsive
-							class="overflow-y-auto pa-3"
 							height="100%"
 							max-height="400px"
+							class="overflow-y-auto pa-3"
 						>
 							<VCheckbox
 								v-for="(prop, index) in booleans"

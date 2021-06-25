@@ -1,9 +1,6 @@
 <template>
 	<VApp>
-		<DocHeader
-			:drawer="drawer"
-			@drawer-action="drawer = !drawer"
-		/>
+		<DocHeader :drawer.sync="drawer" />
 
 		<DocDrawer v-model="drawer" />
 
@@ -81,7 +78,7 @@
 	export default class Slug extends Vue {
 		document?: ContentDocument;
 
-		drawer = null;
+		drawer: boolean | null = null;
 
 		@Middleware
 		middleware({ app, params, redirect }: Context): void {
@@ -91,9 +88,11 @@
 		}
 
 		@AsyncData
-		async asyncData({ $content, params, error }: AsyncDataParams): Promise<void | PageData> {
+		async asyncData({ $content, params, error }: AsyncDataParams): Promise<PageData | void> {
 			const path =`/${params.pathMatch || 'index'}`;
-			const [document] = await $content({ deep: true }).where({ path }).fetch<Content>();
+			const [document] = await $content({ deep: true })
+				.where({ path })
+				.fetch<Content>();
 
 			if (!document) {
 				return error({
