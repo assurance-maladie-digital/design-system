@@ -72,13 +72,11 @@
 				firstname: 'Alphonse',
 				lastname: 'Bouvier',
 				email: 'alphonse.bouvier@example.com'
-
 			},
 			{
 				firstname: 'Eustache',
 				lastname: 'Dubois',
 				email: 'eustache.dubois@example.com'
-
 			},
 			{
 				firstname: 'Rosemarie',
