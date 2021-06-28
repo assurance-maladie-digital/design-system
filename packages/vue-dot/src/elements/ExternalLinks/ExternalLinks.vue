@@ -1,9 +1,9 @@
 <template>
 	<VMenu
-		ref="menu"
 		v-model="menu"
 		v-bind="options.menu"
 		:top="bottom"
+		:content-class="menuClass"
 		class="vd-external-links"
 	>
 		<template #activator="{ on, attrs }">
@@ -182,7 +182,7 @@
 		get menuClass(): string {
 			const positionClass = this.right ? 'right-0' : 'left-0';
 
-			return `vd-external-links-menu ${positionClass}`;
+			return 'vd-external-links-menu';
 		}
 
 		get btnTextSpacing(): string {
@@ -230,8 +230,8 @@
 				top,
 				bottom,
 				left,
-				right,
-				zIndex
+				right
+				//zIndex   TODO
 			};
 		}
 

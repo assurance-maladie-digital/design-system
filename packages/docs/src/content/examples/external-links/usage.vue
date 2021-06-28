@@ -1,11 +1,10 @@
 <template>
-  <v-card class="mx-auto overflow-hidden" height="200" width="80%">
-    <v-app-bar color=" accent-4">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-color-white">ExternalLinks</v-toolbar-title>
-    </v-app-bar>
-    <v-card-text><ExternalLinks :items="links" position="top left" nudgeTop=80 /></v-card-text>
-  </v-card>
+  <VCard class="mx-auto overflow-hidden" height="200" width="80%">
+    <VAppBar color=" accent-4">
+      <VToolbarTitle class="text-color-white">ExternalLinks</VToolbarTitle>
+    </VAppBar>
+    <VCardText><ExternalLinks :items="links" position="top left" nudgeTop=80 /></VCardText>
+  </VCard>
 </template>
 <script lang="ts">
 import Vue from "vue";

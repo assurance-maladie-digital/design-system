@@ -1,7 +1,7 @@
 <template>
-  <v-card class="mx-auto overflow-hidden" height="200" width="50%">
-    <v-card-text><ExternalLinks position="top right" /></v-card-text>
-  </v-card>
+  <VCard class="mx-auto overflow-hidden" height="200" width="50%">
+    <VCardText><ExternalLinks position="top right" /></VCardText>
+  </VCard>
 </template>
 <script lang="ts">
 import Vue from "vue";

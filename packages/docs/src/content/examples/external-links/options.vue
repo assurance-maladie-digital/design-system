@@ -1,12 +1,14 @@
 <template>
-   <v-card class="mx-auto overflow-hidden" height="200" >
+    <VCard class="mx-auto overflow-hidden" height="200" >
 		    <ExternalLinks :items="links" position="top left" :vuetify-options="vuetifyOptions" />
-    </v-card>
+    </VCard>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+	
+    import { ExternalLink } from '../../../../../vue-dot/src/elements/ExternalLinks/types';
 
 	@Component
 	export default class ExternalLinksOptions extends Vue {
