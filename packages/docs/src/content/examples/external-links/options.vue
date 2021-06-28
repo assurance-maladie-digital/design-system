@@ -12,14 +12,14 @@
 
 	@Component
 	export default class ExternalLinksOptions extends Vue {
-		vuetifyOptions = {
-             btn: {
+	     vuetifyOptions = {
+                  btn: {
 		        tile: true,
 		        minHeight: '48px',
 		        width: '328px',
 		        color: 'red',
 		        class: 'd-flex px-3'
-	        },
+	             },
 		};
 
 		links:ExternalLink[]  = [
