@@ -20,7 +20,6 @@
 		"generate": "nuxt generate"
 	},
 	"dependencies": {
-		"@babel/plugin-proposal-private-methods": "^7.14.5",
 		"@cnamts/design-tokens": "2.0.0-beta.10",
 		"@cnamts/form-builder": "2.0.0-beta.11",
 		"@cnamts/vue-dot": "2.0.0-beta.11",
