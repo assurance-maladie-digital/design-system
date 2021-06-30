@@ -1,11 +1,11 @@
 ---
 title: Nouvelle page
-description: Création d'une nouvelle page dans un projet standard.
+description: Création d’une nouvelle page dans un projet standard.
 ---
 
 ## Création de la page
 
-Une page est une *Vue* qui contient des composants et qui sera affichée en allant accédant à une URL spécifique grâce à [Vue Router](https://router.vuejs.org/fr/).
+Une page est une *Vue* qui contient des composants et qui sera affichée en allant accédant à une URL spécifique définie grâce à [Vue Router](https://router.vuejs.org/fr/).
 
 Pour cela, vous pouvez créer un nouveau fichier `UserDeclaration.vue` dans le dossier `views` :
 
@@ -19,7 +19,7 @@ views/
 └── +UserDeclaration.vue
 ```
 
-Une page est également un composant Vue.js, vous pouvez donc initialiser ce fichier avec la [définition minimale d'un composant](/guides/nouveau-composant#syntaxe).
+Une page est un composant Vue.js, vous pouvez donc initialiser ce fichier avec la [définition minimale d’un composant](/guides/nouveau-composant#syntaxe).
 
 Vous pouvez maintenant importer les composants que vous souhaitez afficher dans cette page et les utiliser dans le template :
 
@@ -55,7 +55,7 @@ Le [composant `PageContainer`](/composants/page-container) est utilisé pour aff
 
 ### Métadonnées
 
-Il est recommandé d'ajouter des métadonnées comme le titre et la description sur chaque page. Pour cela, vous pouvez utiliser [Vue Meta](https://vue-meta.nuxtjs.org/).
+Il est recommandé d’ajouter des métadonnées comme le titre et la description sur chaque page. Pour cela, vous pouvez utiliser [Vue Meta](https://vue-meta.nuxtjs.org/).
 
 Pour déclarer ces informations, vous pouvez créer une méthode `metaInfo` annotée avec le décorateur `@Meta` :
 
@@ -104,7 +104,7 @@ La méthode `this.$t()` de [Vue i18n](https://kazupon.github.io/vue-i18n/guide/f
 
 ## Ajout de la page au routeur
 
-Une fois la page créée, vous devez l'ajouter à la déclaration des routes du routeur dans le fichier `routes.ts` afin de pouvoir y accéder :
+Une fois la page créée, vous devez l’ajouter à la déclaration des routes du routeur dans le fichier `routes.ts` afin de pouvoir y accéder :
 
 ```ts
 export const routes = [
@@ -130,8 +130,8 @@ export const routes = [
 
 <doc-alert type="info">
 
-La syntaxe `component: () => import('@/views/UserDeclaration.vue')` est un [import dynamique de webpack](https://webpack.js.org/guides/code-splitting/). Cela permet de créer un chunk spécifique pour cette route et de charger celui-ci que lorsque la route est visitée.<br>
-La page d'accueil n'est pas importée de manière asynchrone afin de charger cette page le plus rapidement possible.
+La syntaxe `component: () => import('@/views/UserDeclaration.vue')` est un [import dynamique de webpack](https://webpack.js.org/guides/code-splitting/). Cela permet de créer un chunk spécifique pour cette route et de ne charger celui-ci que lorsque la route est visitée.<br>
+La page d’accueil n’est pas importée de manière asynchrone afin de charger cette page le plus rapidement possible.
 
 </doc-alert>
 
@@ -154,10 +154,10 @@ Vous pouvez également créer un lien vers cette page :
 ```
 
 <doc-alert type="info">
-Pour créer des liens, il est préférable d'utiliser le nom de la route plutôt que son chemin, cela permet de modifier le chemin sans casser les liens vers cette page.
+Pour créer des liens, il est préférable d’utiliser le nom de la route plutôt que son chemin, cela permet de modifier le chemin sans casser les liens vers cette page.
 </doc-alert>
 
-Vous pouvez aussi utiliser la navigation programmatique pour rediriger l'utilisateur vers cette page :
+Vous pouvez aussi rediriger l’utilisateur vers cette page en utilisant la navigation programmatique :
 
 ```ts
 router.push({
