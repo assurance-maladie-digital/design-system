@@ -24,18 +24,18 @@
 
 	@Component
 	export default class TableToolbarOptions extends Vue {
-		search = '';
+		search: string | null = null;
 
 		vuetifyOptions = {
 			toolbar: {
-				color: 'grey lighten-4'
+				color: 'grey lighten-5'
 			},
 			textField: {
 				outlined: true,
 				dense: true
 			},
 			addBtn: {
-				height: '40'
+				height: '40px'
 			},
 			addIcon: {
 				class: 'd-none'

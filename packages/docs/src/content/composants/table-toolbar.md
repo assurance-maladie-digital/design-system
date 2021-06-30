@@ -13,7 +13,7 @@ description: Le pattern `TableToolbar` est utilisé pour afficher une barre au-d
 
 ### Bouton *Ajouter*
 
-Vous pouvez afficher un bouton permettant une action d'ajout en utilisant la prop `show-add-btn`.
+Vous pouvez afficher un bouton permettant une action d’ajout en utilisant la prop `show-add-btn`.
 
 <doc-example file="table-toolbar/add-btn"></doc-example>
 

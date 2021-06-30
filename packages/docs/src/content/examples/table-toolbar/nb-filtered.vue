@@ -24,7 +24,7 @@
 
 	@Component
 	export default class TableToolbarNbFiltered extends Vue {
-		search = '';
+		search: string | null = null;
 
 		filteredItems: DataTableHeader[] = [];
 

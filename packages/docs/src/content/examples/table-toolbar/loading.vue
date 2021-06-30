@@ -33,7 +33,7 @@
 
 	@Component
 	export default class TableToolbarLoading extends Vue {
-		search = '';
+		search: string | null = null;
 
 		loading = true;
 

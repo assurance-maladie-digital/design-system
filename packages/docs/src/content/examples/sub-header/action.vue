@@ -7,16 +7,21 @@
 			@click:list-item="setItemValue"
 		/>
 
-		<VSnackbar v-model="snackbar">
+		<VSnackbar
+			v-model="snackbar"
+			color="info"
+		>
 			{{ snackbarText }}
 
-			<VBtn
-				text
-				color="red"
-				@click="snackbar = false"
-			>
-				Fermer
-			</VBtn>
+			<template #action="{ attrs }">
+				<VBtn
+					v-bind="attrs"
+					text
+					@click="snackbar = false"
+				>
+					Fermer
+				</VBtn>
+			</template>
 		</VSnackbar>
 	</div>
 </template>
@@ -30,7 +35,7 @@
 	@Component
 	export default class SubHeaderAction extends Vue {
 		snackbar = false;
-		snackbarText = '';
+		snackbarText: string | null = null;
 
 		dataListGroupItems: DataListGroupItems = [
 			{
@@ -71,8 +76,9 @@
 		 */
 		setItemValue({ dataListIndex, itemIndex }: DataListActionEvent): void {
 			const formattedPosition = `n°${dataListIndex + 1}, ligne n°${itemIndex + 1}.`;
+			console.log(formattedPosition);
 
-			this.snackbarText = `Vous avez cliqué sur le bouton d'action de la DataList ${formattedPosition}`;
+			this.snackbarText = `Vous avez cliqué sur le bouton d’action de la DataList ${formattedPosition}`;
 			this.snackbar = true;
 		}
 	}
