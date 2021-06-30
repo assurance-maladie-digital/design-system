@@ -1,9 +1,19 @@
 <template>
-  <VCard class="mx-auto overflow-hidden" height="200" width="80%">
-    <VAppBar color=" accent-4">
-      <VToolbarTitle class="text-color-white">ExternalLinks</VToolbarTitle>
-    </VAppBar>
-    <VCardText><ExternalLinks :items="links" position="top left" nudgeTop=80 /></VCardText>
+  <VCard
+       class="mx-auto overflow-hidden"
+	   height="200"
+	   width="80%"
+	>
+        <VAppBar color="accent-4">
+            <VToolbarTitle class="text-color-white">ExternalLinks</VToolbarTitle>
+        </VAppBar>
+        <VCardText>
+		    <ExternalLinks
+			    :items="links"
+				position="top left"
+				nudgeTop=80
+			/>
+	    </VCardText>
   </VCard>
 </template>
 <script lang="ts">
