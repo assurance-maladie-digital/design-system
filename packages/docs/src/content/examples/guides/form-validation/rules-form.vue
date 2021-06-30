@@ -52,9 +52,9 @@
 
 	@Component
 	export default class UserForm extends Vue {
-		lastName = '';
-		firstName = '';
-		email = '';
+		lastName: string | null = null;
+		firstName: string | null = null;
+		email: string | null = null;
 
 		nameRules = [
 			required

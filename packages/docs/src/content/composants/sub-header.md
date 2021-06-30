@@ -1,6 +1,6 @@
 ---
 title: SubHeader
-description: Le pattern `SubHeader` est utilisé pour afficher un bloc d'informations sous l'en-tête principale.
+description: Le pattern `SubHeader` est utilisé pour afficher un bloc d’informations sous l’en-tête principale.
 ---
 
 <doc-tabs>
@@ -23,15 +23,15 @@ Vous pouvez afficher les valeurs dans les DataList via la directive `v-html` en 
 
 <doc-alert type="warning">
 
-Attention, l'utilisation de la directive `v-html` peut être dangereuse car cela peut facilement mener à des attaques XSS. N'utilisez cette directive que sur du contenu de confiance et jamais sur du contenu fourni par l'utilisateur.
+Attention, l’utilisation de la directive `v-html` peut être dangereuse car cela peut facilement mener à des attaques XSS. N’utilisez cette directive que sur du contenu de confiance et jamais sur du contenu fourni par l’utilisateur.
 
 </doc-alert>
 
 <doc-example file="sub-header/data-list-group"></doc-example>
 
-### Boutons d'actions
+### Boutons d’actions
 
-Vous pouvez ajouter des boutons d'actions dans les listes de données en utilisant la propriété `action` sur les items.
+Vous pouvez ajouter des boutons d’actions dans les listes de données en utilisant la propriété `action` sur les items.
 
 <doc-example file="sub-header/action"></doc-example>
 
@@ -47,7 +47,7 @@ Vous pouvez afficher le composant en mode chargement en utilisant la prop `loadi
 
 <doc-alert type="info">
 
-Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur chaque [DataList](/composants/data-list) pour contrôler le nombre d'items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
+Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur chaque [DataList](/composants/data-list) pour contrôler le nombre d’items à afficher pendant le chargement ainsi que la visibilité du squelette de chargement pour le titre.
 
 </doc-alert>
 

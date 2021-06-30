@@ -13,9 +13,9 @@
 				<template #search-left>
 					<VBtn
 						color="primary"
-						class="mx-5"
 						outlined
 						small
+						class="mx-5"
 					>
 						Exemple
 					</VBtn>
@@ -33,7 +33,7 @@
 
 	@Component
 	export default class TableToolbarSlots extends Vue {
-		search = '';
+		search: string | null = null;
 
 		headers: DataTableHeader[] = [
 			{

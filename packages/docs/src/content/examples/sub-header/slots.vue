@@ -1,14 +1,18 @@
 <template>
 	<SubHeader>
 		<template #back-btn>
-			<VBtn color="white">
+			<VBtn
+				color="white"
+				depressed
+				class="secondary--text"
+			>
 				Retour
 			</VBtn>
 		</template>
 
 		<template #title>
 			<h3 class="headline font-weight-bold mt-2">
-				Dossier n° 42
+				Dossier n°&nbsp;42
 			</h3>
 		</template>
 
@@ -20,7 +24,7 @@
 
 		<template #additional-informations>
 			<p class="font-weight-bold mt-4 mb-0">
-				15 Modifications
+				15 modifications
 			</p>
 		</template>
 

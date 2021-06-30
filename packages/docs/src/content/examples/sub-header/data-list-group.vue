@@ -14,7 +14,7 @@
 	import { DataListGroupItems } from '@cnamts/vue-dot/src/patterns/DataListGroup/types';
 
 	@Component
-	export default class SubHeaderDataLists extends Vue {
+	export default class SubHeaderDataListGroup extends Vue {
 		dataListGroupItems: DataListGroupItems = [
 			{
 				title: 'Informations patient',

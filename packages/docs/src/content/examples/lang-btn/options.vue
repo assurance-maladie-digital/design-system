@@ -17,9 +17,6 @@
 			btn: {
 				outlined: false,
 				color: 'primary'
-			},
-			menu: {
-				top: true
 			}
 		};
 	}

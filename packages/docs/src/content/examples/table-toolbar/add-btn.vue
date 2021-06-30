@@ -22,8 +22,8 @@
 	import { DataTableHeader } from 'vuetify';
 
 	@Component
-	export default class TableToolbarAdd extends Vue {
-		search = '';
+	export default class TableToolbarAddBtn extends Vue {
+		search: string | null = null;
 
 		headers: DataTableHeader[] = [
 			{

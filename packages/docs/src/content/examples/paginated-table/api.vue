@@ -4,8 +4,8 @@
 		:items="users"
 		:options.sync="options"
 		:server-items-length="totalUsers"
-		:loading="loading"
-		suffix="server-example"
+		:loading="state === STATE_ENUM.pending"
+		suffix="api-example"
 		@update:options="fetchData"
 	/>
 </template>
@@ -13,6 +13,8 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+
+	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 	import { DataOptions } from 'vuetify/types';
 
@@ -30,13 +32,13 @@
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
+		STATE_ENUM = STATE_ENUM;
+
 		totalUsers = 0;
-
 		users: User[] = [];
-
-		loading = true;
-
 		options = {} as DataOptions;
+
+		state = STATE_ENUM.idle;
 
 		headers = [
 			{
@@ -53,27 +55,29 @@
 			}
 		];
 
-		/** Fetch data when rendered */
-		mounted() {
-			this.fetchData();
+		async fetchData(): Promise<void> {
+			const { items, total } = await this.getDataFromApi(this.options);
+
+			this.users = items;
+			this.totalUsers = total;
 		}
 
-		fetchData(): void {
-			this.getDataFromApi(this.options)
-				.then((data) => {
-					this.users = data.items;
-					this.totalUsers = data.total;
-				});
+		async wait(ms: number) {
+			return new Promise(resolve => {
+				setTimeout(resolve, ms);
+			});
 		}
 
 		/**
 		 * This function returns a promise
 		 * After 1 second, it will return an API-like object
 		 *
-		 * it handles sorting and pagination
+		 * It handles sorting and pagination
 		 */
-		getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): Promise<DataObj> {
-			this.loading = true;
+		async getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): Promise<DataObj> {
+			this.state = STATE_ENUM.pending;
+
+			await this.wait(1000);
 
 			return new Promise((resolve) => {
 				let items: User[] = this.getUsers();
@@ -114,19 +118,15 @@
 					items = items.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 				}
 
-				// Resolve after 1 second
-				setTimeout(() => {
-					this.loading = false;
+				resolve({
+					items,
+					total
+				});
 
-					resolve({
-						items,
-						total
-					});
-				}, 1000);
+				this.state = STATE_ENUM.resolved;
 			});
 		}
 
-		/** Users data */
 		getUsers(): User[] {
 			return [
 				{
@@ -168,13 +168,11 @@
 					firstname: 'Alphonse',
 					lastname: 'Bouvier',
 					email: 'alphonse.bouvier@example.com'
-
 				},
 				{
 					firstname: 'Eustache',
 					lastname: 'Dubois',
 					email: 'eustache.dubois@example.com'
-
 				},
 				{
 					firstname: 'Rosemarie',

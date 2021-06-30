@@ -9,7 +9,7 @@ description: Le composant `FormField` est utilisé pour afficher un champ de for
 
 <doc-alert type="info">
 
-Ce composant requiert l'installation du package [FormBuilder](/demarrer/installation#composants/form-builder).
+Ce composant requiert l’installation du package [FormBuilder](/demarrer/installation#composants/form-builder).
 
 </doc-alert>
 
@@ -17,13 +17,13 @@ Ce composant requiert l'installation du package [FormBuilder](/demarrer/installa
 
 ## Exemples
 
-### Titre, description et texte d'aide
+### Titre, description et texte d’aide
 
-Vous pouvez un titre, une description ainsi qu'un texte d'aide sur le champ en utilisant les attributs `title`, `description` et `tooltip`.
+Vous pouvez un titre, une description ainsi qu’un texte d’aide sur le champ en utilisant les attributs `title`, `description` et `tooltip`.
 
 <doc-alert type="warning">
 
-Le titre ne doit pas remplacer le label, qui identifie le champ pour les utilisateurs de lecteurs d'écran.
+Le titre ne doit pas remplacer le label, qui identifie le champ pour les utilisateurs de lecteurs d’écran.
 
 </doc-alert>
 
@@ -45,7 +45,7 @@ Vous retrouvez ci-dessous un exemple de chaque type de champ et leurs spécifici
 
 <doc-alert type="info">
 
-Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres uniquement, vous devez définir un masque avec l'attribut `mask` de `fieldOptions` en utilisant l'[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
+Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres uniquement, vous devez définir un masque avec l’attribut `mask` de l’objet `fieldOptions` en utilisant l’[API de la librairie vue-input-facade](https://ronaldjerez.github.io/vue-input-facade/).
 
 </doc-alert>
 
@@ -70,6 +70,8 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 #### Champ select slider
 
 <doc-example file="form-field/select-slider"></doc-example>
+
+<doc-example file="form-field/select-slider-thumb"></doc-example>
 
 #### Champ select bouton
 
