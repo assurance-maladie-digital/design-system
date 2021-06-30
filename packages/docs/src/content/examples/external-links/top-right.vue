@@ -1,21 +1,21 @@
 <template>
-  <VCard
-       class="mx-auto overflow-hidden"
-	   height="200"
-	   width="50%"
+	<VCard
+		class="mx-auto overflow-hidden"
+		height="200"
+		width="50%"
 	>
-        <VCardText>
-		    <ExternalLinks position="top right" />
-	    </VCardText>
-  </VCard>
+		<VCardText>
+			<ExternalLinks position="top right" />
+		</VCardText>
+	</VCard>
 </template>
-<script lang='ts'>
-import Vue from 'vue';
-import Component from 'vue-class-component';
+
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
 
 @Component({
-  inheritAttrs: false
+	inheritAttrs: false
 })
-export default class ExternalLinksTopRight extends Vue {
-}
+export default class ExternalLinksTopRight extends Vue {}
 </script>

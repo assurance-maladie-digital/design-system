@@ -182,7 +182,7 @@
 		get menuClass(): string {
 			const positionClass = this.right ? 'right-0' : 'left-0';
 
-			return 'vd-external-links-menu';
+			return `vd-external-links-menu ${positionClass}`;
 		}
 
 		get btnTextSpacing(): string {
@@ -230,7 +230,8 @@
 				top,
 				bottom,
 				left,
-				right
+				right,
+				zIndex
 			};
 		}
 
