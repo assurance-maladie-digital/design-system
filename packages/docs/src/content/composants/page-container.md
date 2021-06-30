@@ -1,6 +1,6 @@
 ---
 title: PageContainer
-description: L'élément `PageContainer` est un conteneur transparent utilisé pour afficher une page.
+description: L’élément `PageContainer` est un conteneur transparent utilisé pour afficher une page.
 ---
 
 <doc-tabs>

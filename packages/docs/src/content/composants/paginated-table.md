@@ -1,6 +1,6 @@
 ---
 title: PaginatedTable
-description: Le pattern `PaginatedTable` est utilisé pour afficher une `VDataTable` avec une pagination persistante.
+description: Le pattern `PaginatedTable` est utilisé pour afficher une [`VDataTable`](https://vuetifyjs.com/en/components/data-tables/) de Vuetify avec une pagination persistante.
 ---
 
 <doc-tabs>
@@ -17,7 +17,7 @@ Vous pouvez sauvegarder la pagination et le tri même si ceux-ci sont gérés c�
 
 <doc-alert type="info">
 
-La prop `suffix` est utilisée pour dissocier les différentes tables afin de sauvegarder leurs `options` indépendamment.
+Vous pouvez utiliser la prop `suffix` pour dissocier les différentes tables afin de sauvegarder leurs propriétés `options` indépendamment.
 
 </doc-alert>
 
