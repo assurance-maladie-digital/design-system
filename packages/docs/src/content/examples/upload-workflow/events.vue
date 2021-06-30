@@ -13,10 +13,10 @@
 		>
 			{{ snackbarText }}
 
-			<template v-slot:action="{ attrs }">
+			<template #action="{ attrs }">
 				<VBtn
-					text
 					v-bind="attrs"
+					text
 					@click="snackbar = false"
 				>
 					Fermer
@@ -37,7 +37,7 @@
 	@Component
 	export default class UploadWorkflowEvents extends Vue {
 		snackbar = false;
-		snackbarText = '';
+		snackbarText: string | null = null;
 		snackbarColor = 'success';
 
 		files = [

@@ -1,6 +1,6 @@
 ---
 title: UploadWorkflow
-description: Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilisateur de sélectionner une liste de fichiers.
+description: Le pattern `UploadWorkflow` est utilisé pour permettre à l’utilisateur de sélectionner une liste de fichiers.
 ---
 
 <doc-tabs>
@@ -13,13 +13,13 @@ description: Le pattern `UploadWorkflow` est utilisé pour permettre à l'utilis
 
 ### Événements
 
-Vous pouvez réagir lorsque la liste des fichiers est mise à jour en utilisant l'événement `change`, et réagir aux erreurs de validation en utilisant l'événement `error`.
+Vous pouvez réagir lorsque la liste des fichiers est mise à jour en utilisant l’événement `change`, et réagir aux erreurs de validation en utilisant l’événement `error`.
 
 <doc-example file="upload-workflow/events"></doc-example>
 
 ### Un seul fichier
 
-Lorsque que la liste ne contient qu'un seul fichier, la boîte de dialogue demandant à l'utilisateur de choisir quel fichier il a sélectionné ne sera pas affichée.
+Lorsque que la liste ne contient qu’un seul fichier, la boîte de dialogue demandant à l’utilisateur de choisir quel fichier il a sélectionné ne sera pas affichée.
 
 <doc-example file="upload-workflow/single-file"></doc-example>
 
@@ -31,7 +31,7 @@ Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
 
 ### Bouton *Afficher le fichier*
 
-Vous pouvez afficher un bouton permettant de visualiser un fichier sélectionné en utilisant l'option `showViewBtn` du composant `FileList`.
+Vous pouvez afficher un bouton permettant de visualiser un fichier sélectionné en utilisant l’option `showViewBtn` du composant `FileList`.
 
 <doc-example file="upload-workflow/view-file"></doc-example>
 

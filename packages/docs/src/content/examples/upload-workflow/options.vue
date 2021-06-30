@@ -32,7 +32,7 @@
 				showViewBtn: true,
 				vuetifyOptions: {
 					actionIcon: {
-						size: '24'
+						size: '24px'
 					}
 				}
 			},
