@@ -64,9 +64,9 @@
 			form: FormRef;
 		}>;
 
-		lastName = '';
-		firstName = '';
-		email = '';
+		lastName: string | null = null;
+		firstName: string | null = null;
+		email: string | null = null;
 
 		nameRules = [
 			required
