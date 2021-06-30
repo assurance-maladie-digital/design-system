@@ -16,10 +16,10 @@
 	    </VCardText>
   </VCard>
 </template>
-<script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import { ExternalLink } from "../../../../../vue-dot/src/elements/ExternalLinks/types";
+<script lang='ts'>
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import { ExternalLink } from '../../../../../vue-dot/src/elements/ExternalLinks/types';
 
 @Component({
   inheritAttrs: false
