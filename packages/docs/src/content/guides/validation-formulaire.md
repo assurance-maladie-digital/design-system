@@ -1,11 +1,11 @@
 ---
-title: Validation d'un formulaire
-description: Création et validation d'un formulaire dans un projet standard.
+title: Validation d’un formulaire
+description: Création et validation d’un formulaire dans un projet standard.
 ---
 
 ## Création du formulaire
 
-Pour créer le formulaire, vous pouvez utiliser le [composant `VForm` de Vuetify](https://vuetifyjs.com/en/components/forms/) et ajouter des informations comme un titre, plusieurs champs textes et un bouton de validation :
+Pour créer le formulaire, vous pouvez utiliser le [composant `VForm` de Vuetify](https://vuetifyjs.com/en/components/forms/) et ajouter un titre, des champs textes et un bouton de validation :
 
 ```vue
 <template>
@@ -53,9 +53,9 @@ Pour créer le formulaire, vous pouvez utiliser le [composant `VForm` de Vuetify
 
 	@Component
 	export default class UserForm extends Vue {
-		lastName = '';
-		firstName = '';
-		email = '';
+		lastName: string | null = null;
+		firstName: string | null = null;
+		email: string | null = null;
 	}
 </script>
 ```
@@ -66,10 +66,10 @@ Pour créer le formulaire, vous pouvez utiliser le [composant `VForm` de Vuetify
 
 ### Règles de validation
 
-Dans Vuetify, les règles de validation se présentent sous la forme d'un tableau de fonctions appliqué sur les composants via la prop `rules`.<br>
-Si la règle renvoie une chaîne de caractères, celle-ci est affichée comme erreur. Si la règle renvoie `true`, une erreur est affichée sans message. Si la règle renvoie `false`, aucune erreur n'est affichée.
+Dans Vuetify, les règles de validation se présentent sous la forme d’un tableau de fonctions appliqué sur les composants via la prop `rules`.<br>
+Si la règle renvoie une chaîne de caractères, celle-ci est affichée comme erreur. Si la règle renvoie `true`, une erreur est affichée sans message. Si la règle renvoie `false`, aucune erreur n’est affichée.
 
-Ici, vous pouvez utiliser les règles `required` et `email` de la bibliothèque de règles de Vue Dot :
+Dans notre formulaire, vous pouvez utiliser les règles `required` et `email` de la bibliothèque de règles de Vue Dot :
 
 ```ts
 import Vue from 'vue';
@@ -80,9 +80,9 @@ import { email } from '@cnamts/vue-dot/src/rules/email';
 
 @Component
 export default class UserForm extends Vue {
-	lastName = '';
-	firstName = '';
-	email = '';
+	lastName: string | null = null;
+	firstName: string | null = null;
+	email: string | null = null;
 
 	nameRules = [
 		required
@@ -110,17 +110,17 @@ Ensuite, vous devez ajouter la prop `rules` sur chacun des champs du formulaire 
 
 <doc-alert type="info">
 
-La prop `validate-on-blur` sert à déferrer la validation au moment où l'utilisateur sort du champ.
+La prop `validate-on-blur` sert à déferrer la validation au moment où l’utilisateur sort du champ.
 
 </doc-alert>
 
-Vous pouvez tester la fonctionnalité implémentée en remplissant par exemple le champ email avec une adresse erronée :
+Vous pouvez tester la fonctionnalité implémentée en remplissant par exemple le champ email dans l’exemple ci-dessous avec une adresse email erronée :
 
 <doc-example file="guides/form-validation/rules-form"></doc-example>
 
 ### Bouton de validation
 
-Pour implémenter notre bouton de validation, vous pouvez appeler la méthode `validate` du composant `VForm`. Pour ce faire, vous devez ajouter une [référence](https://fr.vuejs.org/v2/guide/components-edge-cases.html#Acceder-a-des-instances-de-composants-enfants-et-des-elements-enfants) sur ce composant, ce qui vous permettra d'y accéder dans une méthode :
+Pour implémenter notre bouton de validation, vous pouvez appeler la méthode `validate` du composant `VForm`. Pour ce faire, vous devez ajouter une [référence](https://fr.vuejs.org/v2/guide/components-edge-cases.html#Acceder-a-des-instances-de-composants-enfants-et-des-elements-enfants) sur ce composant, ce qui vous permettra d’y accéder dans une méthode :
 
 ```vue
 <template>
@@ -153,11 +153,11 @@ Pour implémenter notre bouton de validation, vous pouvez appeler la méthode `v
 
 <doc-alert type="info">
 
-La déclaration de type `$refs` permet d'augmenter le type par défaut d'une référence, et donc de déclarer les méthodes `validate` et `reset` sur la ref `form`.
+La déclaration de type `$refs` permet d’augmenter le type par défaut d’une référence, et donc de déclarer les méthodes `validate` et `reset` sur la propriété `form`.
 
 </doc-alert>
 
-Vous pouvez maintenant appeler la méthode `validate`, qui va effectuer la validation du formulaire et retourner un booléen correspondant à la validité du formulaire :
+Vous pouvez maintenant appeler la méthode `validate`, qui va effectuer la validation du formulaire et retourner un booléen correspondant à la validité de celui-ci :
 
 ```vue
 <template>
@@ -209,8 +209,8 @@ Vous pouvez maintenant appeler la méthode `validate`, qui va effectuer la valid
 
 <doc-alert type="warning">
 
-La méthode `submitDeclaration` est déclarée comme asynchrone grâce au mot-clé `async` et son type de retour est donc une promesse `Promise<void>`.<br>
-Il est nécessaire de déclarer cette fonction comme telle pour appeler la [méthode `$nextTick`](https://fr.vuejs.org/v2/guide/reactivity.html#File-d%E2%80%99attente-de-mise-a-jour-asynchrone) de manière asynchrone, afin d'attendre le prochain cycle de rendu du composant et que la validation faite par Vuetify soit effective.<br>
+La méthode `submitDeclaration` est déclarée comme asynchrone grâce au mot-clé `async` et son type de retour est une promesse `Promise<void>`.<br>
+Il est nécessaire de déclarer cette fonction comme telle pour appeler la [méthode `$nextTick`](https://fr.vuejs.org/v2/guide/reactivity.html#File-d%E2%80%99attente-de-mise-a-jour-asynchrone) de manière asynchrone, afin d’attendre le prochain cycle de rendu du composant et que la validation faite par Vuetify soit effective.<br>
 Sans cela, la validation ne fonctionnera pas correctement.
 
 </doc-alert>
