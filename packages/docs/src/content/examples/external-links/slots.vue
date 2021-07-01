@@ -5,9 +5,14 @@
 	>
 		<ExternalLinks
 			:items="links"
-			:vuetify-options="vuetifyOptions"
 			position="top left"
-		/>
+		>
+			<template #link-icon>
+				<VIcon>
+					{{ arrowIcon }}
+				</VIcon>
+			</template>
+		</ExternalLinks>
 	</VCard>
 </template>
 
@@ -17,8 +22,12 @@
 
 	import { ExternalLink } from '@cnamts/vue-dot/src/elements/ExternalLinks/types';
 
+	import { mdiArrowTopRight } from '@mdi/js';
+
 	@Component
-	export default class ExternalLinksOptions extends Vue {
+	export default class ExternalLinksSlots extends Vue {
+		arrowIcon = mdiArrowTopRight;
+		
 		links: ExternalLink[] = [
 			{
 				href: 'https://ameli.fr/',
@@ -33,14 +42,5 @@
 				text: 'Design System'
 			}
 		];
-
-		vuetifyOptions = {
-			btn: {
-				color: 'primary'
-			},
-			list: {
-				dense: true
-			}
-		};
 	}
 </script>

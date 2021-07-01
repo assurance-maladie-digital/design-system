@@ -1,6 +1,6 @@
 ---
 title: ExternalLinks
-description: L'élément `ExternalLinks` est utilisé pour afficher un menu avec une liste vers des liens externes.
+description: L’élément `ExternalLinks` est utilisé pour afficher un menu avec une liste vers des liens externes.
 ---
 
 <doc-tabs>
@@ -9,46 +9,44 @@ description: L'élément `ExternalLinks` est utilisé pour afficher un menu avec
 
 <doc-usage name="external-links"></doc-usage>
 
-### Positionnement: 
+### Décalage
 
-- top left
+Il est possible de décaler le composant vers le haut ou vers le bas en utilisant les props `nudge-top` et `nude-bottom`.
 
-Vers le haut à gauche
+<doc-example file="external-links/nudge-top"></doc-example>
 
- <doc-example file="external-links/top-left"></doc-example>
+### Pas de données
 
-- top right
+Lorsqu’il n’y a pas de données, un message par défaut est affiché.
 
-Vers le haut à droite
+<doc-example file="external-links/no-data"></doc-example>
 
- <doc-example file="external-links/top-right"></doc-example>
+### Texte du bouton
 
-- bottom left
+Vous pouvez modifier le texte par défaut du bouton en utilisant la prop `btn-text`.
 
-Vers le bas à gauche
-
- <doc-example file="external-links/bottom-left"></doc-example>
-
-- bottom right
-
-Vers le bas à droite
-
- <doc-example file="external-links/bottom-right"></doc-example>
+<doc-example file="external-links/btn-text"></doc-example>
 
 </doc-tab-item>
 
-
-
 <doc-tab-item label="API">
- <doc-api name="external-links"></doc-api>
+<doc-api name="external-links"></doc-api>
 </doc-tab-item>
 
 <doc-tab-item label="Personnalisation">
 
 ### Composants Vuetify
 
-Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `ExternalLinks` en utilisant la prop `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans l’élément `ExternalLinks` en utilisant la prop `vuetify-options`.
 
- <doc-example file="external-links/options"></doc-example>
+<doc-example file="external-links/options"></doc-example>
+
+### Slots
+
+Vous pouvez utiliser le slot `link-icon` pour remplacer l’icône dans les liens.
+
+<doc-example file="external-links/slots"></doc-example>
+
 </doc-tab-item>
+
 </doc-tabs>

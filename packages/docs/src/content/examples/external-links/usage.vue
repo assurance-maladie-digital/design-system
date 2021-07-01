@@ -1,53 +1,70 @@
 <template>
 	<VCard
 		class="mx-auto overflow-hidden"
-		height="200"
-		width="80%"
+		min-height="200px"
+		width="100%"
 	>
-		<VAppBar color="accent-4">
-			<VToolbarTitle class="text-color-white">ExternalLinks</VToolbarTitle>
-		</VAppBar>
-		<VCardText>
-			<ExternalLinks :items="links" position="top left" nudgeTop="80" />
-		</VCardText>
+		<ExternalLinks
+			v-bind="$attrs"
+			v-on="$listeners"
+		/>
 	</VCard>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-import { ExternalLink } from '../../../../../vue-dot/src/elements/ExternalLinks/types';
+	import { ExternalLink } from '@cnamts/vue-dot/src/elements/ExternalLinks/types';
 
-@Component({
-	inheritAttrs: false
-})
-export default class ExternalLinksUsage extends Vue {
-	links: ExternalLink[] = [
+	const items: ExternalLink[] = [
 		{
-			href: "https://www.ameli.fr/professionnel-de-la-lpp",
-			text: "Vers ameli pro"
+			href: 'https://ameli.fr/',
+			text: 'Ameli'
 		},
 		{
-			href: "https://www.impots.gouv.fr/portail/",
-			text: "Impots GOUV"
-		},
-		{
-			href: "https://github.com/assurance-maladie-digital",
-			text: "Design System"
-		},
-		{
-			href: "https://www.lassuranceretraite.fr/portail-info/home.html",
-			text: "Assurance retraite"
-		},
-		{
-			href: "https://www.lassuranceretraite.fr/portail-info/home.html",
-			text: "Assurance maladie"
-		},
-		{
-			href: "https://www.lassuranceretraite.fr/portail-info/home.html",
-			text: "Assurance"
+			href: 'https://espacepro.ameli.fr/',
+			text: 'Ameli Pro'
 		}
 	];
-}
+
+	@Component({
+		inheritAttrs: false
+	})
+	export default class ExternalLinksUsage extends Vue {
+		defaultProps = {
+			items,
+			position: 'top left',
+			nudgeTop: 0,
+			nudgeBottom: 0
+		};
+
+		propsHiddenByDefault = [
+			'nudgeTop',
+			'nudgeBottom'
+		];
+
+		options = {
+			selects: {
+				position: [
+					'top left',
+					'top right',
+					'bottom left',
+					'bottom right'
+				]
+			},
+			sliders: {
+				nudgeTop: {
+					min: 0,
+					max: 50,
+					step: 10
+				},
+				nudgeBottom: {
+					min: 0,
+					max: 50,
+					step: 10
+				}
+			}
+		};
+	}
 </script>

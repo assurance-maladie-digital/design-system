@@ -1,11 +1,17 @@
 <template>
 	<VCard
 		class="mx-auto overflow-hidden"
-		min-height="200px"
+		min-height="274px"
 	>
+		<VAppBar>
+			<VToolbarTitle class="grey--text text--darken-3">
+				ExternalLinks
+			</VToolbarTitle>
+		</VAppBar>
+
 		<ExternalLinks
 			:items="links"
-			:vuetify-options="vuetifyOptions"
+			nudge-top="80px"
 			position="top left"
 		/>
 	</VCard>
@@ -18,7 +24,7 @@
 	import { ExternalLink } from '@cnamts/vue-dot/src/elements/ExternalLinks/types';
 
 	@Component
-	export default class ExternalLinksOptions extends Vue {
+	export default class ExternalLinksNudgeTop extends Vue {
 		links: ExternalLink[] = [
 			{
 				href: 'https://ameli.fr/',
@@ -27,20 +33,7 @@
 			{
 				href: 'https://espacepro.ameli.fr/',
 				text: 'Ameli Pro'
-			},
-			{
-				href: 'https://github.com/assurance-maladie-digital',
-				text: 'Design System'
 			}
 		];
-
-		vuetifyOptions = {
-			btn: {
-				color: 'primary'
-			},
-			list: {
-				dense: true
-			}
-		};
 	}
 </script>

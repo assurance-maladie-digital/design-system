@@ -5,8 +5,8 @@
 	>
 		<ExternalLinks
 			:items="links"
-			:vuetify-options="vuetifyOptions"
 			position="top left"
+			btn-text="Afficher les liens externes"
 		/>
 	</VCard>
 </template>
@@ -18,7 +18,7 @@
 	import { ExternalLink } from '@cnamts/vue-dot/src/elements/ExternalLinks/types';
 
 	@Component
-	export default class ExternalLinksOptions extends Vue {
+	export default class ExternalLinksBtnText extends Vue {
 		links: ExternalLink[] = [
 			{
 				href: 'https://ameli.fr/',
@@ -33,14 +33,5 @@
 				text: 'Design System'
 			}
 		];
-
-		vuetifyOptions = {
-			btn: {
-				color: 'primary'
-			},
-			list: {
-				dense: true
-			}
-		};
 	}
 </script>

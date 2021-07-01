@@ -1,48 +1,44 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-    EternalLinks: {
-        props: [
-            {
+	ExternalLinks: {
+		props: [
+			{
 				name: 'position',
 				type: 'string',
-                required: true,
-				default: true,
-				description: 'Definir le mode de positionnement du défilement du bouton-menu dans la page. Choix possible: `top left` ,  `top right` , `bottom left` ou `bottom right`',
-                example: `position="top left"`
+				required: true,
+				description: 'La position du menu dans le conteneur.<br>En premier argument la position verticale (`top` ou `bottom`) et en second la position horizontale (`left` ou `right`).',
+				example: `position="top left"`
 			},
-            {
+			{
 				name: 'items',
-				type: [
-					'ExternalLink',
-					'ExternalLink[]'
-				],
+				type: 'ExternalLink[]',
 				default: '[]',
 				description: 'La liste des liens externes à afficher.'
 			},
-            {
-				name: 'btnText',
+			{
+				name: 'btn-text',
 				type: 'string',
-                default:'Consulter les données externes',
-				description: 'Attribuer une etiquette au bouton.'
+				default: `'Consulter les données externes'`,
+				description: 'Le texte du bouton.'
 			},
 			{
-               name: 'nudgeTop',
-			   type: '[string, number]',
-			   default: '0',
-			   description: 'Décaler le bouton-menu un peu plus vers le haut.'
-			},
-			{
-				name: 'nudgeBottom',
+				name: 'nudge-top',
 				type: '[string, number]',
-				default: '0',
-				description: 'Décaler le bouton-menu un peu plus vers le bas.'
-			 },
-            {
+				default: 0,
+				description: 'Décale le bouton vers le bas.'
+			},
+			{
+				name: 'nudge-bottom',
+				type: '[string, number]',
+				default: 0,
+				description: 'Décale le bouton vers le haut.'
+			},
+			{
 				name: 'fixed',
 				type: 'boolean',
-                default:false,
-				description: 'Postionnement en mode fixe ou absolute.'
+				default: false,
+				description: 'Positionne le bouton en mode fixe par rapport à la page.'
 			},
 			{
 				name: 'vuetify-options',
@@ -52,9 +48,23 @@ export const api: Api = {
 				example: `{
 	menu: 'VMenu',
 	btn: 'VBtn',
-	btnIcon: 'VIcon'
+	spacer: 'VSpacer',
+	btnIcon: 'VIcon',
+	list: 'VList',
+	listItem: 'VListItem',
+	listItemContent: 'VListItemContent',
+	listItemTitle: 'VListItemTitle',
+	listItemIcon: 'VListItemIcon',
+	linkIcon: 'VIcon',
+	card: 'VCard'
 }`
 			}
-        ]
-    }
-}
+		],
+		slots: [
+			{
+				name: 'link-icon',
+				description: 'Slot pour remplacer l’icône dans les liens.'
+			}
+		]
+	}
+};
