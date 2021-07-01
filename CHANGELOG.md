@@ -8,10 +8,20 @@
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
-  - **ChoiceSliderField:** Correction des styles pour l'affichage des étiquettes ([#1194](https://github.com/assurance-maladie-digital/design-system/pull/1194))
+  - **ChoiceSliderField:** Correction des styles pour l'affichage des étiquettes ([#1194](https://github.com/assurance-maladie-digital/design-system/pull/1194)) ([3707e4b](https://github.com/assurance-maladie-digital/design-system/commit/3707e4bcfc163983b527cd7ca5fbb26485bb057a))
 
 - ♻️ **Refactoring**
   - **ChoiceSliderField:** Refonte du composant ([#1193](https://github.com/assurance-maladie-digital/design-system/pull/1193)) ([8252ccf](https://github.com/assurance-maladie-digital/design-system/commit/8252ccfd3bf8637c20bf52b06e5e8c7f856d796e))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **core-js:** Mise à jour vers la `v3.15.2` ([#1184](https://github.com/assurance-maladie-digital/design-system/pull/1184)) ([49828a8](https://github.com/assurance-maladie-digital/design-system/commit/49828a8b47ba9816aaa7223dfd90d2a921338326))
+  - **vuetify:** Mise à jour vers la `v2.5.6` ([#1185](https://github.com/assurance-maladie-digital/design-system/pull/1185)) ([87fdf22](https://github.com/assurance-maladie-digital/design-system/commit/87fdf224f0bfe9bfc711d28436fe55e78b7b77f6))
+  - **@types/node:** Mise à jour vers la `v14.17.4` ([#1186](https://github.com/assurance-maladie-digital/design-system/pull/1186)) ([f54d89a](https://github.com/assurance-maladie-digital/design-system/commit/f54d89a205fc4f68aa59c6a066aa10c2dbc033f2))
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.12.1` ([#1189](https://github.com/assurance-maladie-digital/design-system/pull/1189)) ([644dcc2](https://github.com/assurance-maladie-digital/design-system/commit/644dcc29454d2dc8cb274e0f67441f55509a4867))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.28.1` ([#1196](https://github.com/assurance-maladie-digital/design-system/pull/1196)) ([f895221](https://github.com/assurance-maladie-digital/design-system/commit/f895221b75e068618b34c02697e0b9474ebeefbe))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.4.1` ([#1197](https://github.com/assurance-maladie-digital/design-system/pull/1197))
 
 ## v2.0.0-beta.11
 
@@ -68,7 +78,6 @@ Cette version comporte l'ajout des nouveaux composants `FilterModule` et `Extern
   - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1182](https://github.com/assurance-maladie-digital/design-system/pull/1182)) ([c2b3f63](https://github.com/assurance-maladie-digital/design-system/commit/c2b3f63d4982bfe1c6a745f1ddf80472ab86018e))
 
 - ⬆️ **Dépendances**
-  - **vuetify:** Mise à jour vers la `v2.5.1` ([#1126](https://github.com/assurance-maladie-digital/design-system/pull/1126)) ([17be1a7](https://github.com/assurance-maladie-digital/design-system/commit/17be1a768f757844aa5b06a2b764e024b0677ba5))
   - **dayjs:** Mise à jour vers la `v1.10.5` ([#1127](https://github.com/assurance-maladie-digital/design-system/pull/1127)) ([2e0217c](https://github.com/assurance-maladie-digital/design-system/commit/2e0217c8a42300b01a4a08b3dc3a2e5b403e7b39))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.1` ([#1152](https://github.com/assurance-maladie-digital/design-system/pull/1152)) ([4e71476](https://github.com/assurance-maladie-digital/design-system/commit/4e714761c03184d7fd774ea8976a254811c20c72))
   - **sass:** Épinglage de la dépendance à la `v1.32.13` ([#1157](https://github.com/assurance-maladie-digital/design-system/pull/1157)) ([ac5c3e3](https://github.com/assurance-maladie-digital/design-system/commit/ac5c3e3a2d61667a892c35d3683b7971710a599b))
