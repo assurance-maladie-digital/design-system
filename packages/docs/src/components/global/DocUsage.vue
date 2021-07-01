@@ -71,7 +71,7 @@
 
 					<VSheet
 						height="44px"
-						class ="d-flex align-center"
+						class="d-flex align-center"
 					>
 						<VDivider
 							vertical
@@ -154,7 +154,6 @@
 								:items="items"
 								:label="toKebabCase(prop)"
 								class="my-2"
-								clearable
 								dense
 								filled
 								hide-details

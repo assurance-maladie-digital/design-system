@@ -19,12 +19,18 @@
 	export default class CustomIconUsage extends Vue {
 		defaultProps = {
 			icon: 'digital',
+			color: '#000',
 			xLarge: true
 		};
+
+		propsHiddenByDefault = [
+			'color'
+		];
 
 		options = {
 			selects: {
 				color: [
+					'#000',
 					tokens.colors.primary,
 					tokens.colors.secondary
 				]

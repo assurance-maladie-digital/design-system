@@ -54,7 +54,6 @@
 			],
 			sliders: {
 				itemsNumberLoading: {
-					label: 'itemsNumberLoading',
 					min: 1,
 					max: 5,
 					step: 1
