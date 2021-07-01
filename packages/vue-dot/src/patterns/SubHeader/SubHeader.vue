@@ -89,7 +89,7 @@
 						:render-html-value="renderHtmlValue"
 						item-width="auto"
 						class="flex-nowrap flex-shrink-0"
-						@click:item-action="emitItemAction"
+						@click:list-item="emitItemAction"
 					/>
 				</VThemeProvider>
 			</slot>
