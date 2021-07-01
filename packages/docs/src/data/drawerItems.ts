@@ -58,6 +58,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/error-page'
 			},
 			{
+				title: 'ExternalLinks',
+				to: '/composants/external-links'
+			},
+			{
 				title: 'FileUpload',
 				to: '/composants/file-upload'
 			},
