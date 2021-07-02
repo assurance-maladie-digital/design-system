@@ -12,7 +12,7 @@ export const api: Api = {
 			{
 				name: 'suffix',
 				type: 'string',
-				default: `''`,
+				default: 'undefined',
 				description: 'Suffixe ajouté à l’objet stocké dans le `localStorage` permettant de différencier plusieurs `VDataTable`.'
 			}
 		]
