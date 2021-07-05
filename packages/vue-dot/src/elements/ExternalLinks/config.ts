@@ -1,7 +1,8 @@
 export const config = {
 	menu: {
 		offsetY: true,
-		tile: true
+		tile: true,
+		zIndex: 4
 	},
 	btn: {
 		tile: true,
