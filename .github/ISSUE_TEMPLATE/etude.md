@@ -5,9 +5,10 @@ about: Créez une archive à propos d'une étude, d'un ADR ou d'un POC
 
 ## Type
 
-- [ ] Étude
-- [ ] ADR
-- [ ] POC
+<!-- Retirer les mentions inutiles -->
+- Étude
+- ADR
+- POC
 
 ## Description
 
@@ -23,5 +24,4 @@ about: Créez une archive à propos d'une étude, d'un ADR ou d'un POC
 
 ## Résultat
 
-- [ ] O.K
-- [ ] K.O
+<!-- OK ou KO -->
