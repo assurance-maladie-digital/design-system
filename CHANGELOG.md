@@ -17,6 +17,7 @@
   - **ChoiceSliderField:** Correction des styles pour l'affichage des étiquettes ([#1194](https://github.com/assurance-maladie-digital/design-system/pull/1194)) ([3707e4b](https://github.com/assurance-maladie-digital/design-system/commit/3707e4bcfc163983b527cd7ca5fbb26485bb057a))
   - **ChoiceSliderField:** Correction de la valeur par défaut manquante ([#1204](https://github.com/assurance-maladie-digital/design-system/pull/1204)) ([350e9e5](https://github.com/assurance-maladie-digital/design-system/commit/350e9e56ef8c0f88875299368d4a33de53758bda))
   - **PeriodField:** Correction de la largeur des champs ([#1208](https://github.com/assurance-maladie-digital/design-system/pull/1208)) ([a1ef419](https://github.com/assurance-maladie-digital/design-system/commit/a1ef41997c998905911afc32bbae35baa7199b3e))
+  - **ChoiceButtonField:** Correction de l'espacement interne ([#1211](https://github.com/assurance-maladie-digital/design-system/pull/1211))
 
 - ♻️ **Refactoring**
   - **ChoiceSliderField:** Refonte du composant ([#1193](https://github.com/assurance-maladie-digital/design-system/pull/1193)) ([8252ccf](https://github.com/assurance-maladie-digital/design-system/commit/8252ccfd3bf8637c20bf52b06e5e8c7f856d796e))
@@ -34,7 +35,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.28.1` ([#1196](https://github.com/assurance-maladie-digital/design-system/pull/1196)) ([f895221](https://github.com/assurance-maladie-digital/design-system/commit/f895221b75e068618b34c02697e0b9474ebeefbe))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.4.1` ([#1197](https://github.com/assurance-maladie-digital/design-system/pull/1197)) ([8325600](https://github.com/assurance-maladie-digital/design-system/commit/8325600eebb77ac5735f60277cdc9b2d1bf3954f))
   - **typescript:** Mise à jour vers la `v4.3.5` ([#1201](https://github.com/assurance-maladie-digital/design-system/pull/1201)) ([c958d51](https://github.com/assurance-maladie-digital/design-system/commit/c958d510657de591daf65ee53936c89d9e7a48cf))
-  - **eslint:** Mise à jour vers la `v7.30.0` ([#1206](https://github.com/assurance-maladie-digital/design-system/pull/1206))
+  - **eslint:** Mise à jour vers la `v7.30.0` ([#1206](https://github.com/assurance-maladie-digital/design-system/pull/1206)) ([0e79970](https://github.com/assurance-maladie-digital/design-system/commit/0e79970185130f4227da0ae305cbac78cd540867))
 
 ## v2.0.0-beta.11
 
