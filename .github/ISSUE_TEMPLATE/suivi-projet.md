@@ -1,6 +1,6 @@
 ---
 name: Suivi de projet
-about: Créez un compte rendu afin de faire une synthèse de l'état de santé du projet.
+about: Créez un compte rendu afin de faire une synthèse de l'état de santé du projet
 ---
 
 ## Date
