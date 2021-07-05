@@ -6,7 +6,7 @@
   - **SubHeader:** Correction de l'événement `click:list-item` ne fonctionnant pas ([#1203](https://github.com/assurance-maladie-digital/design-system/pull/1203)) ([13056bb](https://github.com/assurance-maladie-digital/design-system/commit/13056bb354fc9860c9def9978630414d040b7f62))
 
 - ♻️ **Refactoring**
-  - **PaginatedTable:** Modification de la valeur par défaut de la prop `suffix` à `undefined` ([#1205](https://github.com/assurance-maladie-digital/design-system/pull/1205))
+  - **PaginatedTable:** Modification de la valeur par défaut de la prop `suffix` à `undefined` ([#1205](https://github.com/assurance-maladie-digital/design-system/pull/1205)) ([8df8e55](https://github.com/assurance-maladie-digital/design-system/commit/8df8e55c59fe820e99f0c0722e243f25b5cd9ffc))
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#1183](https://github.com/assurance-maladie-digital/design-system/pull/1183)) ([cd82a69](https://github.com/assurance-maladie-digital/design-system/commit/cd82a69f9f284592bdb805aec359ae78080a97db))
@@ -21,6 +21,9 @@
   - **ChoiceSliderField:** Refonte du composant ([#1193](https://github.com/assurance-maladie-digital/design-system/pull/1193)) ([8252ccf](https://github.com/assurance-maladie-digital/design-system/commit/8252ccfd3bf8637c20bf52b06e5e8c7f856d796e))
 
 ### Interne
+
+- 📝 **Documentation**
+  - **issues:** Mise à jour des templates ([#1208](https://github.com/assurance-maladie-digital/design-system/pull/1208))
 
 - ⬆️ **Dépendances**
   - **core-js:** Mise à jour vers la `v3.15.2` ([#1184](https://github.com/assurance-maladie-digital/design-system/pull/1184)) ([49828a8](https://github.com/assurance-maladie-digital/design-system/commit/49828a8b47ba9816aaa7223dfd90d2a921338326))
