@@ -73,7 +73,7 @@
 </template>
 
 <script lang='ts'>
-	import Vue , { PropType } from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -220,8 +220,8 @@
 			const left = this.left ? '0' : 'auto';
 			const right = this.right ? '0' : 'auto';
 
-			// Change z-index to avoid shadow bleeding (VMenu is 8)
-			const zIndex = this.top ? '8' : '9';
+			// Change z-index to avoid shadow bleeding (VMenu is set to 4)
+			const zIndex = this.top ? '4' : '5';
 
 			return {
 				transform,
@@ -274,7 +274,7 @@
 
 	@media only screen and (max-height: 340px) {
 		.vd-external-links-btn {
-			z-index: 8 !important;
+			z-index: 4 !important;
 		}
 	}
 </style>
