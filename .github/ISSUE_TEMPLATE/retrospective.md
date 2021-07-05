@@ -10,6 +10,7 @@ about: Créez une archive à propos d'une rétrospective
 ## Participants
 
 <!-- Retirer de la liste les personnes non-présentes -->
+
 - Aubin
 - Dylan
 - François
