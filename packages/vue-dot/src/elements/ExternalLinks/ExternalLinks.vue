@@ -263,8 +263,14 @@
 <style lang="scss" scoped>
 	$list-max-height: 248px;
 
-	.vd-external-links-btn ::v-deep .v-btn__content {
-		flex-direction: inherit;
+	.vd-external-links-btn {
+		// Allow overgrow on mobile
+		max-width: none;
+
+		::v-deep .v-btn__content {
+			// Control flex-direction on the parent
+			flex-direction: inherit;
+		}
 	}
 
 	.vd-external-links-list {
