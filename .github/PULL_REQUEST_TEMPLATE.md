@@ -7,7 +7,7 @@
 
 ## Playground
 
-<!-- Copiez-collez votre playground pour tester vos changements --->
+<!-- Copiez-collez votre playground pour tester vos changements -->
 
 <details>
 

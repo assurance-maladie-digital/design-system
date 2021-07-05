@@ -1,6 +1,6 @@
 ---
 name: Rétrospective
-about: Créez une archive à propos d'une rétrospective 
+about: Créez une archive à propos d'une rétrospective
 ---
 
 ## Date

@@ -13,9 +13,9 @@ about: Créez une demande pour ajouter une nouvelle fonctionnalité
 
 ## Priorisation
 
-- [ ] Peu prioritaire 
-- [ ] Prioritaire
-- [ ] Très prioritaire
+- Peu prioritaire 
+- Prioritaire
+- Très prioritaire
 
 ## Projet
 
