@@ -1,11 +1,12 @@
 ---
 name: Étude, ADR ou POC
-about: Créez une archive à propos d'une étude, d'un ADR ou d'un POC 
+about: Créez une archive à propos d'une étude, d'une Architecture Description Report ou d'un Proof Of Concept 
 ---
 
 ## Type
 
 <!-- Retirer les mentions inutiles -->
+
 - Étude
 - ADR
 - POC
