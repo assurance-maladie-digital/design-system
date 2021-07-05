@@ -8,6 +8,9 @@ export const config = {
 		color: 'primary',
 		class: 'ml-6'
 	},
+	addIcon: {
+		class: 'mr-1'
+	},
 	textField: {
 		clearable: true,
 		singleLine: true,
