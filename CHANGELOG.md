@@ -4,6 +4,7 @@
 
 - 🐛 **Corrections de bugs**
   - **SubHeader:** Correction de l'événement `click:list-item` ne fonctionnant pas ([#1203](https://github.com/assurance-maladie-digital/design-system/pull/1203)) ([13056bb](https://github.com/assurance-maladie-digital/design-system/commit/13056bb354fc9860c9def9978630414d040b7f62))
+  - **styles:** Correction de la position du curseur de redimensionnement dans les champs de formulaires ([#1212](https://github.com/assurance-maladie-digital/design-system/pull/1212))
 
 - ♻️ **Refactoring**
   - **PaginatedTable:** Modification de la valeur par défaut de la prop `suffix` à `undefined` ([#1205](https://github.com/assurance-maladie-digital/design-system/pull/1205)) ([8df8e55](https://github.com/assurance-maladie-digital/design-system/commit/8df8e55c59fe820e99f0c0722e243f25b5cd9ffc))
@@ -17,7 +18,7 @@
   - **ChoiceSliderField:** Correction des styles pour l'affichage des étiquettes ([#1194](https://github.com/assurance-maladie-digital/design-system/pull/1194)) ([3707e4b](https://github.com/assurance-maladie-digital/design-system/commit/3707e4bcfc163983b527cd7ca5fbb26485bb057a))
   - **ChoiceSliderField:** Correction de la valeur par défaut manquante ([#1204](https://github.com/assurance-maladie-digital/design-system/pull/1204)) ([350e9e5](https://github.com/assurance-maladie-digital/design-system/commit/350e9e56ef8c0f88875299368d4a33de53758bda))
   - **PeriodField:** Correction de la largeur des champs ([#1208](https://github.com/assurance-maladie-digital/design-system/pull/1208)) ([a1ef419](https://github.com/assurance-maladie-digital/design-system/commit/a1ef41997c998905911afc32bbae35baa7199b3e))
-  - **ChoiceButtonField:** Correction de l'espacement interne ([#1211](https://github.com/assurance-maladie-digital/design-system/pull/1211))
+  - **ChoiceButtonField:** Correction de l'espacement interne ([#1211](https://github.com/assurance-maladie-digital/design-system/pull/1211)) ([f6d4795](https://github.com/assurance-maladie-digital/design-system/commit/f6d4795afae962d373d4dc31dc5d0f2fa9b46f65))
 
 - ♻️ **Refactoring**
   - **ChoiceSliderField:** Refonte du composant ([#1193](https://github.com/assurance-maladie-digital/design-system/pull/1193)) ([8252ccf](https://github.com/assurance-maladie-digital/design-system/commit/8252ccfd3bf8637c20bf52b06e5e8c7f856d796e))
