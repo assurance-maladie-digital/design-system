@@ -8,10 +8,15 @@
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
-  - **ChoiceSliderField:** Correction des styles pour l'affichage des étiquettes ([#1194](https://github.com/assurance-maladie-digital/design-system/pull/1194))
+  - **ChoiceSliderField:** Correction des styles pour l'affichage des étiquettes ([#1194](https://github.com/assurance-maladie-digital/design-system/pull/1194)) ([8df8e55](https://github.com/assurance-maladie-digital/design-system/commit/8df8e55c59fe820e99f0c0722e243f25b5cd9ffc))
 
 - ♻️ **Refactoring**
   - **ChoiceSliderField:** Refonte du composant ([#1193](https://github.com/assurance-maladie-digital/design-system/pull/1193)) ([8252ccf](https://github.com/assurance-maladie-digital/design-system/commit/8252ccfd3bf8637c20bf52b06e5e8c7f856d796e))
+
+### Interne
+
+- 📝 **Documentation**
+  - **issues:** Mise à jour des templates ([#1208](https://github.com/assurance-maladie-digital/design-system/pull/1208))
 
 ## v2.0.0-beta.11
 
