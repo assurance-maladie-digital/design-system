@@ -31,7 +31,7 @@ exports[`ChoiceField renders the other field when the corresponding choice is se
 exports[`ChoiceField renders with multiple error messages 1`] = `
 <div>
   <div class="vd-choice-button-field vd-form-input">
-    <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" errormessages="Erreur 1,Erreur 2"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+    <div class="vd-choice-button-field-toggle layout wrap accent--text v-item-group theme--light v-btn-toggle column" errormessages="Erreur 1,Erreur 2"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				S
 			</span>
         <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -44,10 +44,10 @@ exports[`ChoiceField renders with multiple error messages 1`] = `
 			</span>
         <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
       </button></div>
-    <p class="px-3 mb-0 v-messages error--text theme--light">
+    <p class="px-3 mt-2 mb-0 v-messages error--text theme--light">
       Erreur 1
     </p>
-    <p class="px-3 mb-0 v-messages error--text theme--light">
+    <p class="px-3 mt-2 mb-0 v-messages error--text theme--light">
       Erreur 2
     </p>
   </div>
@@ -58,7 +58,7 @@ exports[`ChoiceField renders with multiple error messages 1`] = `
 exports[`ChoiceField renders with single error message 1`] = `
 <div>
   <div class="vd-choice-button-field vd-form-input">
-    <div class="vd-choice-button-field-toggle mb-2 layout wrap accent--text v-item-group theme--light v-btn-toggle column" errormessages="Erreur"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+    <div class="vd-choice-button-field-toggle layout wrap accent--text v-item-group theme--light v-btn-toggle column" errormessages="Erreur"><button type="button" value="0" class="text-none text-wrap py-2 text-left v-btn v-btn--outlined theme--light elevation-0 v-size--default accent--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
 				S
 			</span>
         <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -71,7 +71,7 @@ exports[`ChoiceField renders with single error message 1`] = `
 			</span>
         <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate ml-1 white--text flex-shrink-0 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
       </button></div>
-    <p class="px-3 mb-0 v-messages error--text theme--light">
+    <p class="px-3 mt-2 mb-0 v-messages error--text theme--light">
       Erreur
     </p>
   </div>

@@ -9,7 +9,7 @@
 			:multiple="multiple"
 			:type="undefined"
 			:class="{ 'column': !isInline }"
-			class="vd-choice-button-field-toggle mb-2 layout wrap accent--text"
+			class="vd-choice-button-field-toggle layout wrap accent--text"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"
@@ -43,7 +43,7 @@
 			<p
 				v-for="(errorMessage, index) in errorMessages"
 				:key="index"
-				class="px-3 mb-0 v-messages error--text"
+				class="px-3 mt-2 mb-0 v-messages error--text"
 				:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 			>
 				{{ errorMessage }}
@@ -52,7 +52,7 @@
 
 		<p
 			v-else-if="showHint"
-			class="px-3 mb-0 v-messages"
+			class="px-3 mt-2 mb-0 v-messages"
 			:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 		>
 			{{ options.hint }}
