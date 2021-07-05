@@ -9,81 +9,31 @@ about: Créez une archive à propos d'une rétrospective
 
 ## Participants
 
-- [ ] Aubin
-- [ ] Dylan
-- [ ] François
-- [ ] Kevin
-- [ ] Valentin
-- [ ] Yvon
+<!-- Retirer de la liste les personnes non-présentes -->
+- Aubin
+- Dylan
+- François
+- Kevin
+- Valentin
+- Yvon
 
-## Sur quels points avons-nous été performants ?
+## Ce qui a bien fonctionné ?
 
 <!-- Listez les trois points où nous avons été performants et sur lesquels l'équipe s'accorde -->
--
--
--
 
-## Sur quels points avons-nous été inefficaces ?
+## Ce qui n'a pas bien fonctionné ?
 
 <!-- Listez les trois points où nous n'avons pas été inefficaces et sur lesquels l'équipe s'accorde -->
--
--
--
 
-## Qu'aurions-nous pu mieux faire ?
+## Ce que nous pouvons améliorer ?
 
 <!-- Listez les trois points où nous aurions pu mieux faire et sur lesquels l'équipe s'accorde -->
--
--
--
 
 ## Retours individualisés
 
 <!-- Rapportez les retours individuels de manière anonymisée -->
-- P1
 
-Les + :
-
-Les - :
-
-A améliorer :
-
-- P2
-
-Les + :
-
-Les - :
-
-A améliorer :
-
-- P3
-
-Les + :
-
-Les - :
-
-A améliorer :
-
-- P4
-
-Les + :
-
-Les - :
-
-A améliorer :
-
-- P5
-
-Les + :
-
-Les - :
-
-A améliorer :
-
-- P6
-
-Les + :
-
-Les - :
-
-A améliorer :
+|     | Les + | Les - | À améliorer |
+| --- | ----- | ----- | ----------- |
+| P1  | | | | |
+| P2  | | | | |
