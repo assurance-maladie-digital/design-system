@@ -25,8 +25,7 @@
 		propsHiddenByDefault = [
 			'searchLabel',
 			'rowText',
-			'addBtnLabel',
-			'nbTotal'
+			'addBtnLabel'
 		];
 
 		options = {
