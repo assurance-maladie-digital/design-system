@@ -1,5 +1,5 @@
 ---
-name: Compte-rendu de suivi de projet
+name: Suivi de projet
 about: Créez un compte rendu afin de faire une syntèse de l'état de santé du projet. 
 ---
 
