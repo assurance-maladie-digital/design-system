@@ -1,10 +1,10 @@
 <template>
-	<div class="d-flex flex-wrap mx-n3">
+	<div class="d-flex flex-wrap max-width-none mx-n3">
 		<DatePicker
 			v-model="periodValue.from"
 			v-bind="fieldOptionsFrom"
 			:vuetify-options="fieldOptionsFrom"
-			text-field-class="vd-form-input mx-3"
+			text-field-class="vd-form-input flex-grow-0 mx-3"
 			@change="dateUpdated"
 		/>
 
@@ -13,7 +13,7 @@
 			v-bind="fieldOptionsTo"
 			:vuetify-options="fieldOptionsTo"
 			:start-date="periodValue.from"
-			text-field-class="vd-form-input mx-3"
+			text-field-class="vd-form-input flex-grow-0 mx-3"
 			@change="dateUpdated"
 		/>
 	</div>
