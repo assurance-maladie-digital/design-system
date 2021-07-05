@@ -5,12 +5,13 @@ export const config = {
 	},
 	addBtn: {
 		outlined: true,
-		color: 'primary'
+		color: 'primary',
+		class: 'ml-6'
 	},
 	textField: {
 		clearable: true,
 		singleLine: true,
 		hideDetails: true,
-		class: 'vd-form-input flex-grow-0 mr-4'
+		class: 'vd-form-input flex-grow-0'
 	}
 };
