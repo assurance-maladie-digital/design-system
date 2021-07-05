@@ -33,7 +33,19 @@
 	type ThumbLabelValue = boolean | string | undefined;
 
 	/** Choice field type slider */
-	@Component
+	@Component<ChoiceSliderField>({
+		watch: {
+			value: {
+				handler(value: FieldValue): void {
+					// If the value is null, set it to the first item
+					if (value === null) {
+						this.valueUpdated(0);
+					}
+				},
+				immediate: true
+			}
+		}
+	})
 	export default class ChoiceSliderField extends MixinsDeclaration {
 		/**
 		 * Get the index of the selected item by value
