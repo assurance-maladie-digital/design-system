@@ -61,14 +61,14 @@
 			</VListItem>
 		</VList>
 
-		<VCard
+		<VSheet
 			v-else
-			v-bind="options.card"
+			v-bind="options.sheet"
 		>
 			<p class="mb-0">
 				{{ locales.noData }}
 			</p>
-		</VCard>
+		</VSheet>
 	</VMenu>
 </template>
 

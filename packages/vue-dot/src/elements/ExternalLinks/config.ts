@@ -21,7 +21,8 @@ export const config = {
 		target: '_blank',
 		rel: 'noopener noreferrer'
 	},
-	card: {
+	sheet: {
+		elevation: 0,
 		class: 'px-4 py-3'
 	}
 };
