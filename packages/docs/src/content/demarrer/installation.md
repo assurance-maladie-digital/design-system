@@ -1,11 +1,11 @@
 ---
 title: Installation
-description: Création d'un nouveau projet ou ajout d'un composant du Design System à un projet existant.
+description: Création d’un nouveau projet ou installation d’un composant du Design System dans un projet existant.
 ---
 
-## Création d'un nouveau projet
+## Création d’un nouveau projet
 
-Pour créer des nouveaux projets, il est recommandé d'utiliser [Vue CLI](https://cli.vuejs.org/guide/installation.html), un outil développé par l'équipe cœur de Vue.js en combinaison avec Vue Dash, un outil interne qui permet de pré-configurer les nouveaux projets avec les règles et les outils de l'Assurance Maladie.
+Pour créer un nouveau projet, il est recommandé d’utiliser [Vue CLI](https://cli.vuejs.org/guide/installation.html), un outil développé par l’équipe cœur de Vue.js en combinaison avec Vue Dash, un outil interne qui permet de pré-configurer les nouveaux projets avec les règles et les outils de l’Assurance Maladie.
 
 ### Pré-requis
 
@@ -15,7 +15,7 @@ Pour créer un nouveau projet, vous devez installer les outils suivants :
 - [Yarn](https://classic.yarnpkg.com/)
 - [Vue CLI](https://cli.vuejs.org/guide/installation.html)
 
-Certaines de nos dépendances ont besoin de [node-gyp](https://github.com/nodejs/node-gyp#installation) pour fonctionner. Vous n'avez pas besoin d'installer node-gyp directement, mais vous pouvez avoir besoin d'outils supplémentaires, en particulier sur Windows. Consultez la documentation de node-gyp pour plus de détails.
+Certaines de nos dépendances ont besoin de [node-gyp](https://github.com/nodejs/node-gyp#installation) pour fonctionner. Vous n’avez pas besoin d’installer *node-gyp* directement, mais vous pouvez avoir besoin d’outils supplémentaires, en particulier sur Windows. Consultez la documentation de *node-gyp* pour plus de détails.
 
 ### Création
 
@@ -25,26 +25,94 @@ Une fois les outils installés, vous pouvez créer un nouveau projet :
 vue create my-project --preset assurance-maladie-digital/vue-cli-preset
 ```
 
-Une série de questions vous sera posée pour vous permettre d'ajouter les fonctionnalités dont vous avez besoin pour votre projet.
+Les questions suivantes vous seront posées pour vous permettre d’ajouter les fonctionnalités dont vous avez besoin pour votre projet :
 
-<!-- Todo: détailler et expliquer les questions -->
+<v-expansion-panels>
+
+<v-expansion-panel>
+<v-expansion-panel-header>
+Description du projet ?
+</v-expansion-panel-header>
+
+<v-expansion-panel-content>
+
+Vous pouvez décrire succinctement votre projet. Cette description sera utilisée dans le fichier *README.md* et comme valeur par défaut de la balise meta description.
+
+</v-expansion-panel-content>
+</v-expansion-panel>
+
+<v-expansion-panel>
+<v-expansion-panel-header>
+Utiliser Vue i18n gérer les textes de l’application ?
+</v-expansion-panel-header>
+
+<v-expansion-panel-content>
+
+Utilisation de [Vue i18n](https://kazupon.github.io/vue-i18n/) pour gérer les textes de l’application. Cela permet de séparer les textes des composants et de les rendre plus maintenable mais également de gérer plusieurs langues.
+
+</v-expansion-panel-content>
+</v-expansion-panel>
+
+<v-expansion-panel>
+<v-expansion-panel-header>
+Utiliser Vuex Persist pour persister le store ?
+</v-expansion-panel-header>
+
+<v-expansion-panel-content>
+
+Utilisation de [Vuex Persist](https://championswimmer.in/vuex-persist/) pour persister le store [Vuex](https://vuex.vuejs.org/) dans un stockage persistent comme le *localStorage*.
+
+</v-expansion-panel-content>
+</v-expansion-panel>
+
+<v-expansion-panel>
+<v-expansion-panel-header>
+Utiliser Cypress pour les tests d’interface ?
+</v-expansion-panel-header>
+
+<v-expansion-panel-content>
+
+Utilisation de [Cypress](https://www.cypress.io/) pour les tests d’interface (ou end-to-end).
+
+</v-expansion-panel-content>
+</v-expansion-panel>
+
+<v-expansion-panel>
+<v-expansion-panel-header>
+Utiliser Matomo pour l’analyse d’audience ?
+</v-expansion-panel-header>
+
+<v-expansion-panel-content>
+
+Utilisation de [Matomo](https://fr.matomo.org/) pour l’analyse d’audience.
+
+</v-expansion-panel-content>
+</v-expansion-panel>
+
+</v-expansion-panels>
+
+<br>
 
 <doc-alert type="info">
 Le projet sera créé dans un nouveau dossier au nom de votre projet.
 </doc-alert>
 
-<!-- Todo: lien vers l'explication détaillée du contenu de la stack -->
+<doc-alert type="info">
+
+Vous pouvez retrouver le détail des dossiers et fichiers créés dans le [Starter Kit Explorer](/starter-kit/explorer).
+
+</doc-alert>
 
 ## Installation dans un projet existant
 
-Installation d'une des librairies du Design System dans un projet existant.
+Installation d’une des librairies du Design System dans un projet existant.
 
 <doc-tabs namespace="composants">
 <doc-tab-item label="Vue Dot">
 
-Vue Dot est la librairie de composants qui implémente le Design System.
+Vue Dot est la librairie qui porte les composants du Design System.
 
-Pour l'ajouter dans votre projet, vous devez l'installer :
+Pour l’ajouter dans votre projet, vous devez l’installer :
 
 <doc-tabs code>
 <doc-tab-item label="Yarn">
@@ -75,7 +143,7 @@ import VueDot from '@cnamts/vue-dot';
 Vue.use(VueDot);
 ```
 
-Puis importer ce fichier dans le fichier d'entrée de votre application :
+Puis importer ce fichier dans le fichier d’entrée de votre application :
 
 ```ts
 // src/main.ts
@@ -86,9 +154,9 @@ import './plugins/vue-dot';
 
 <doc-tab-item label="Form Builder">
 
-Le FormBuilder est un ensemble de composants pour afficher des formulaires. Avant de l'installer, vous devez installer Vue Dot.
+Le FormBuilder est un ensemble de composants pour afficher des formulaires. Avant de l’installer, vous devez installer Vue Dot.
 
-Pour l'ajouter dans votre projet, vous devez l'installer :
+Pour l’ajouter dans votre projet, vous devez l’installer :
 
 <doc-tabs code>
 <doc-tab-item label="Yarn">
@@ -115,7 +183,7 @@ import FormBuilder from '@cnamts/form-builder';
 Vue.use(FormBuilder);
 ```
 
-Puis importer ce fichier dans le fichier d'entrée de votre application :
+Puis importer ce fichier dans le fichier d’entrée de votre application :
 
 ```ts
 // src/main.ts
@@ -125,9 +193,9 @@ import './plugins/form-builder';
 
 <doc-tab-item label="Vue Dash">
 
-Vue Dash est le [plugin Vue CLI](https://cli.vuejs.org/guide/plugins-and-presets.html) qui génère le template d'un nouveau projet.
+Vue Dash est le [plugin Vue CLI](https://cli.vuejs.org/guide/plugins-and-presets.html) qui génère le template d’un nouveau projet.
 
-Pour l'ajouter dans votre projet, vous devez l'installer :
+Pour l’ajouter dans un projet existant, vous devez l’installer :
 
 <doc-tabs code>
 <doc-tab-item label="Yarn">
@@ -143,13 +211,13 @@ npm install -D @cnamts/vue-cli-plugin-vue-dash
 </doc-tab-item>
 </doc-tabs>
 
-puis l'invoquer :
+puis l’invoquer :
 
 ```bash
 vue invoke @cnamts/vue-dash
 ```
 
-Par défaut, lorsque le plugin est invoqué manuellement, il n'applique pas le template pour ne pas écraser les fichiers du projet, mais vous pouvez utiliser l'option `--render-template` pour l'appliquer :
+Par défaut, lorsque le plugin est invoqué manuellement, il n’applique pas le template afin de ne pas écraser les fichiers du projet, mais vous pouvez utiliser l’option `--render-template` pour l’appliquer :
 
 ```bash
 vue invoke @cnamts/vue-dash -- --render-template
@@ -159,7 +227,7 @@ vue invoke @cnamts/vue-dash -- --render-template
 
 Par défaut, tous les composants de Vue Dot sont importés et enregistrés de manière globale.
 
-Pour n'importer que les composants que vous utilisez afin de réduire la taille de l'application finale, il est possible d'utiliser le loader `vueDotLoader` en combinaison avec le plugin [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader) :
+Pour n’importer que les composants que vous utilisez afin de réduire la taille de l’application finale, il est possible d’utiliser le loader `vueDotLoader` en combinaison avec le plugin [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader) :
 
 ```js
 // vue.config.js
