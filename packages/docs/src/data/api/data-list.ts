@@ -82,7 +82,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'title',
-				description: 'Slot pour remplacer le titre par défaut.'
+				description: 'Slot pour remplacer le titre.'
 			}
 		],
 		events: [

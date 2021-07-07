@@ -58,11 +58,11 @@ export const api: Api = {
 			},
 			{
 				name: 'title',
-				description: 'Slot pour remplacer le titre par défaut.'
+				description: 'Slot pour remplacer le titre.'
 			},
 			{
 				name: 'actions',
-				description: 'Slot pour remplacer les boutons d’actions par défaut.'
+				description: 'Slot pour remplacer les boutons d’actions.'
 			}
 		],
 		events: [

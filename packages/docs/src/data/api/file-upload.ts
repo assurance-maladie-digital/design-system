@@ -61,11 +61,11 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'placeholder',
-				description: 'Slot pour remplacer le contenu par défaut.'
+				description: 'Slot pour remplacer le contenu du bouton.'
 			},
 			{
 				name: 'icon',
-				description: 'Slot pour remplacer l’icône par défaut.'
+				description: 'Slot pour remplacer l’icône.'
 			},
 			{
 				name: 'action-text',

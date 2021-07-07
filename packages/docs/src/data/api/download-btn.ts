@@ -42,7 +42,7 @@ export const api: Api = {
 			},
 			{
 				name: 'icon',
-				description: 'Slot pour remplacer l’icône par défaut.'
+				description: 'Slot pour remplacer l’icône.'
 			}
 		],
 		events: [

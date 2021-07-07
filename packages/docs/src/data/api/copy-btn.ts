@@ -9,13 +9,13 @@ export const api: Api = {
 					'string',
 					'function'
 				],
-				description: 'Le texte à copier ou une fonction qui le retourne. La fonction sera exécutée lors du clic sur le bouton.',
+				description: 'Le texte à copier ou une fonction qui retourne celui-ci.<br>La fonction sera exécutée lors du clic sur le bouton.',
 				required: true
 			},
 			{
 				name: 'label',
 				type: 'string',
-				description: 'Le label accessible du bouton. Cette prop est nécessaire pour rendre le bouton accessible aux lecteurs d’écrans, n’hésitez pas à décrire ce que va copier le bouton.',
+				description: 'Le label accessible du bouton.<br>Cette prop est nécessaire pour rendre le bouton accessible aux lecteurs d’écrans, vous pouvez décrire ce que va copier le bouton.',
 				required: true
 			},
 			{
@@ -45,7 +45,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'icon',
-				description: 'Slot pour remplacer l’icône par défaut.'
+				description: 'Slot pour remplacer l’icône.'
 			},
 			{
 				name: 'tooltip',
