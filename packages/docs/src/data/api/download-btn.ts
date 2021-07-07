@@ -13,13 +13,13 @@ export const api: Api = {
 				name: 'fallback-filename',
 				type: 'string',
 				default: 'undefined',
-				description: 'Le nom du fichier à utiliser si le nom n’est pas présent dans le header `Content-Disposition`.<br>Par défault, le nom du fichier sera la date du jour et l’heure de téléchargement.'
+				description: 'Le nom du fichier à utiliser si le nom n’est pas présent dans le header `Content-Disposition` de la réponse du service API.<br>Par défaut, le nom du fichier sera la date du jour et l’heure du téléchargement.'
 			},
 			{
 				name: 'notification',
 				type: [
-					'boolean',
-					'string'
+					'string',
+					'boolean'
 				],
 				default: `'Document téléchargé avec succès.'`,
 				description: 'Le texte de la notification de succès.<br>La valeur `false` permet de désactiver l’affichage de la notification.'

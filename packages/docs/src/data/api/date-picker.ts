@@ -25,7 +25,7 @@ export const api: Api = {
 				name: 'no-prepend-icon',
 				type: 'boolean',
 				default: false,
-				description: 'Supprime l’icône avant le `VTextField`.'
+				description: 'Masque l’icône avant le `VTextField`.'
 			},
 			{
 				name: 'append-icon',
@@ -76,7 +76,7 @@ export const api: Api = {
 				name: 'date-format-return',
 				type: 'string',
 				default: `'YYYY-MM-DD'`,
-				description: 'Le format de la date utilisé avec le `v-model`.'
+				description: 'Le format de la date utilisée avec le `v-model`.'
 			},
 			{
 				name: 'mask',

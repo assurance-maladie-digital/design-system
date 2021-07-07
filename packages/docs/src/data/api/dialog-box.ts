@@ -68,7 +68,7 @@ export const api: Api = {
 		events: [
 			{
 				name: 'change',
-				description: 'Événement émis lorsque la boîte de dialogue apparaît ou disparaît.',
+				description: 'Événement émis lorsque la visibilité de la boîte de dialogue est modifiée.',
 				value: 'boolean'
 			},
 			{
