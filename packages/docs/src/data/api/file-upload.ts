@@ -6,12 +6,6 @@ export const api: Api = {
 	FileUpload: {
 		props: [
 			{
-				name: 'multiple',
-				type: 'boolean',
-				default: false,
-				description: 'Permet de sélectionner plusieurs fichiers.'
-			},
-			{
 				name: 'value',
 				type: [
 					'File',
@@ -21,16 +15,22 @@ export const api: Api = {
 				description: 'Le ou les fichiers sélectionnés.'
 			},
 			{
-				name: 'no-ripple',
+				name: 'multiple',
 				type: 'boolean',
 				default: false,
-				description: 'Désactive l’ondulation.'
+				description: 'Permet de sélectionner plusieurs fichiers.'
 			},
 			{
 				name: 'disabled',
 				type: 'boolean',
 				default: false,
 				description: 'Désactive le composant.'
+			},
+			{
+				name: 'no-ripple',
+				type: 'boolean',
+				default: false,
+				description: 'Désactive l’ondulation.'
 			},
 			{
 				name: 'file-size-max',
