@@ -1,8 +1,8 @@
 <template>
 	<VSheet
-		class="overflow-hidden"
 		outlined
 		rounded
+		class="overflow-hidden"
 	>
 		<VSimpleTable
 			v-bind="$attrs"
@@ -15,12 +15,8 @@
 						v-for="header in headers"
 						:key="header"
 						:class="header"
-					>
-						<div
-							class="text-capitalize"
-							v-text="header"
-						/>
-					</th>
+						v-text="getHeaderName(header)"
+					/>
 				</tr>
 			</thead>
 
@@ -28,29 +24,14 @@
 				<template v-for="item in items">
 					<tr
 						:key="item.name"
-						:class="['regular-row', hasExtraRow(item) && 'has-extra-row']"
+						:class="getTableRowClasses(item)"
 					>
 						<td
-							v-for="(header, i) in headers"
-							:key="i"
+							v-for="(header, index) in headers"
+							:key="index"
 						>
 							<template v-if="header === 'name'">
-								<span
-									:id="item[header].replace('$', '')"
-									class="name-item text-mono d-inline-flex font-weight-bold primary--text"
-								>
-									<!-- <span
-										aria-hidden="true"
-										class="primary--text"
-										v-text="'#'"
-									/>
-
-									<a
-										:href="`#${item[header].replace('$', '')}`"
-										class="font-weight-bold text-decoration-none"
-										v-text="item[header]"
-									/> -->
-
+								<span class="name-item text-mono d-inline-flex font-weight-bold primary--text">
 									{{ item[header] }}
 
 									<sup
@@ -92,7 +73,7 @@
 
 					<template v-if="hasExtraRow(item)">
 						<tr
-							:key="`${item.name}_extra`"
+							:key="`${item.name}-extra`"
 							class="extra-row"
 						>
 							<td />
@@ -101,6 +82,7 @@
 								<DocMarkup
 									:code="getCode(item)"
 									:language="getLanguage(item)"
+									no-margin
 								/>
 							</td>
 						</tr>
@@ -118,7 +100,7 @@
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 	import { ApiHeaders, HeaderList, ApiProp } from '../../types';
 
-	import { API_TABLE_HEADERS } from '../../constants';
+	import { API_TABLE_HEADERS, API_TABLE_HEADER_MAPPING } from '../../constants';
 
 	import DocMarkdown from '../code/DocMarkdown.vue';
 
@@ -157,6 +139,20 @@
 			return API_TABLE_HEADERS[this.field];
 		}
 
+		getHeaderName(header: string): string {
+			return API_TABLE_HEADER_MAPPING[header];
+		}
+
+		getTableRowClasses(item: ApiProp): string[] {
+			const classes = ['regular-row'];
+
+			if (this.hasExtraRow(item)) {
+				classes.push('has-extra-row');
+			}
+			
+			return classes;
+		}
+
 		getType(value: string): string {
 			const type = Array.isArray(value) ? value.join(' | ') : value;
 
@@ -173,10 +169,6 @@
 			const str = !defaultValue || typeof defaultValue === 'string'
 				? String(defaultValue)
 				: JSON.stringify(defaultValue, null, '\t');
-
-			if (str.startsWith('gh:')) {
-				return `<a target="_blank" href="https://github.com/assurance-maladie-digital/design-system/search?q=${str.slice(3)}">${str.slice(3)}</a>`;
-			}
 
 			return Prism.highlight(str, Prism.languages.typescript);
 		}
@@ -212,6 +204,7 @@
 
 			const str = JSON.stringify(obj, null, '\t');
 
+			// Remove quotes around values and keys
 			return str.replace(/: "(.*)"/g, ': $1').replace(/"(.*)":/g, '$1:');
 		}
 
@@ -232,7 +225,10 @@
 <style lang="scss" scoped>
 	.doc-api-table {
 		th {
-			&.name {
+			white-space: nowrap;
+
+			&.name,
+			&.default {
 				width: 20%;
 			}
 
@@ -273,7 +269,6 @@
 
 	.name-item {
 		white-space: nowrap;
-		// margin-left: -10px;
 
 		span {
 			margin-right: 4px;
