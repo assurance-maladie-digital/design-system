@@ -5,16 +5,18 @@
 		tag="header"
 	>
 		<VSheet	v-bind="options.headerContainer">
-			<HeaderMenu
-				:nav-bar="navBar"
-				:service="service"
-			/>
+			<div class="d-flex d-md-none">
+				<HeaderMenu
+					:nav-bar="navBar"
+					:service="service"
+				/>
+			</div>
 
 			<div class="d-flex align-center">
 				<div class="d-flex justify-center">
 					<img
 						:src="headerLogo"
-						alt=""
+						alt="Caisse Nationale d'Assurance Maladie"
 					>
 				</div>
 
@@ -46,11 +48,33 @@
 				</slot>
 			</div>
 
-			<div
-				v-if="hasUserSlot"
-				class="d-flex align-center"
-			>
-				<slot name="user-bar" />
+			<div class="d-flex">
+				<div
+					v-if="hasUserSlot && isDesktop"
+					class="d-flex align-center"
+				>
+					<slot name="user-bar" />
+				</div>
+
+				<div
+					v-if="hasUserSlot && !isDesktop"
+					class="d-flex align-center"
+				>
+					<div>
+						<VBtn
+							v-bind="options.collapseBtn"
+							@click="collapse"
+						>
+							<VIcon>
+								{{ isCollapsed ? arrowRight : arrowLeft }}
+							</VIcon>
+						</VBtn>
+					</div>
+
+					<div v-if="isCollapsed">
+						<slot name="user-bar" />
+					</div>
+				</div>
 			</div>
 		</VSheet>
 
@@ -78,6 +102,8 @@
 	import { NavBar, ServiceItem } from './types';
 
 	import { mdiMenu } from '@mdi/js';
+	import { mdiChevronLeftCircleOutline } from '@mdi/js';
+	import { mdiChevronRightCircleOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -118,9 +144,14 @@
 		}
 	})
 	export default class HeaderBar extends MixinsDeclaration {
+		// icons
 		menuIcon = mdiMenu;
+		arrowLeft = mdiChevronLeftCircleOutline;
+		arrowRight = mdiChevronRightCircleOutline;
 
 		isOpen = false;
+
+		isCollapsed = false;
 
 		get hasLogoSlot(): boolean {
 			return Boolean(this.$slots['company-logo']);
@@ -145,7 +176,9 @@
 		get headerLogo(): string | null {
 			let img :string;
 
-			if(this.hasLogoSlot || this.hasService) {
+			if (this.isCollapsed) {
+				img = 'cnam-no-text';
+			} else if(this.hasLogoSlot || this.hasService) {
 				img = 'cnam-no-text';
 			} else if(this.type === 'cnam') {
 				img = 'cnam';
@@ -173,6 +206,10 @@
 				case 'xl': return true;
 			}
 			return false;
+		}
+
+		collapse(): void {
+			this.isCollapsed = !this.isCollapsed;
 		}
 	}
 </script>

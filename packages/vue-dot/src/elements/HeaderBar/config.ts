@@ -2,6 +2,11 @@ export const config = {
 	btn: {
 		icon: true
 	},
+	collapseBtn: {
+		class: 'mr-7',
+		color: 'primary',
+		icon: true
+	},
 	divider: {
 		class: 'mx-3',
 		light: true,

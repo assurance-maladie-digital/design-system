@@ -3,9 +3,11 @@
 exports[`HeaderBar renders correctly 1`] = `
 <vsheet-stub height="168" tag="header" class="vd-header-bar">
   <vsheet-stub height="120" tag="div" class="d-flex justify-space-between">
-    <headermenu-stub navbar="[object Object]" service="[object Object]"></headermenu-stub>
+    <div class="d-flex d-md-none">
+      <headermenu-stub navbar="[object Object]" service="[object Object]"></headermenu-stub>
+    </div>
     <div class="d-flex align-center">
-      <div class="d-flex justify-center"><img src="" alt=""></div>
+      <div class="d-flex justify-center"><img src="" alt="Caisse Nationale d'Assurance Maladie"></div>
       <div class="vd-header-bar-title d-none d-md-flex">
         <vdivider-stub light="true" inset="true" vertical="true" class="mx-3"></vdivider-stub>
         <div class="d-flex flex-column">
@@ -14,7 +16,10 @@ exports[`HeaderBar renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <!---->
+    <div class="d-flex">
+      <!---->
+      <!---->
+    </div>
   </vsheet-stub>
   <headernavbar-stub navbar="[object Object]" isdesktop="true" service="[object Object]"></headernavbar-stub>
 </vsheet-stub>
