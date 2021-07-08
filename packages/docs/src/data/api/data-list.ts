@@ -39,7 +39,7 @@ export const api: Api = {
 				name: 'title-class',
 				type: 'string',
 				default: `'text-subtitle-1 font-weight-bold mb-3'`,
-				description: 'Les classes à appliquer sur le titre de la liste.'
+				description: 'Les classes à appliquer au titre de la liste.'
 			},
 			{
 				name: 'row',
