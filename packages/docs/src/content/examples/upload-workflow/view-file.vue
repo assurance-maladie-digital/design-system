@@ -30,7 +30,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FileItem } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/FileList/types';
+	import { FileListItem } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
 
 	interface FileInfo {
 		title: string;
@@ -64,7 +64,7 @@
 			}
 		};
 
-		showFileInfo({ title, name }: FileItem): void {
+		showFileInfo({ title, name }: FileListItem): void {
 			this.fileInfo = {
 				title,
 				name
