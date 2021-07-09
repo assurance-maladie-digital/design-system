@@ -61,7 +61,7 @@
 	});
 
 	@Component
-	export default class DocRoadMapItem extends Props {
+	export default class DocRoadmapItem extends Props {
 		get issueNumber(): string | undefined {
 			const issueParts = this.issue?.split('/');
 
