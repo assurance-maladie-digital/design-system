@@ -63,6 +63,10 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 
 <doc-example file="form-field/period"></doc-example>
 
+#### Champ Intervalle
+
+<doc-example file="form-field/range"></doc-example>
+
 #### Champ select
 
 <doc-example file="form-field/select"></doc-example>
