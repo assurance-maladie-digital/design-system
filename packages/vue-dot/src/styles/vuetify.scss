@@ -9,11 +9,18 @@
 .v-ripple__container *,
 .v-tabs__container,
 .v-input--selection-controls__ripple,
+.v-textarea.v-text-field--enclosed .v-text-field__slot,
 .v-simple-checkbox svg,
 .v-slide-group__content,
 .v-slider__tick-label,
 .v-slider__thumb-container * {
 	max-width: none;
+}
+
+// Fix resize cursor position in textarea fields
+.v-textarea.v-text-field--enclosed .v-text-field__slot textarea {
+	margin-top: 10px;
+	min-height: 46px;
 }
 
 // Change font

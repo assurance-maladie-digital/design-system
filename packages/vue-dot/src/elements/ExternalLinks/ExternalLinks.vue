@@ -61,19 +61,19 @@
 			</VListItem>
 		</VList>
 
-		<VCard
+		<VSheet
 			v-else
-			v-bind="options.card"
+			v-bind="options.sheet"
 		>
 			<p class="mb-0">
 				{{ locales.noData }}
 			</p>
-		</VCard>
+		</VSheet>
 	</VMenu>
 </template>
 
 <script lang='ts'>
-	import Vue , { PropType } from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
@@ -220,8 +220,8 @@
 			const left = this.left ? '0' : 'auto';
 			const right = this.right ? '0' : 'auto';
 
-			// Change z-index to avoid shadow bleeding (VMenu is 8)
-			const zIndex = this.top ? '8' : '9';
+			// Change z-index to avoid shadow bleeding (VMenu is set to 4)
+			const zIndex = this.top ? '4' : '5';
 
 			return {
 				transform,
@@ -263,8 +263,14 @@
 <style lang="scss" scoped>
 	$list-max-height: 248px;
 
-	.vd-external-links-btn ::v-deep .v-btn__content {
-		flex-direction: inherit;
+	.vd-external-links-btn {
+		// Allow overgrow on mobile
+		max-width: none;
+
+		::v-deep .v-btn__content {
+			// Control flex-direction on the parent
+			flex-direction: inherit;
+		}
 	}
 
 	.vd-external-links-list {
@@ -274,7 +280,7 @@
 
 	@media only screen and (max-height: 340px) {
 		.vd-external-links-btn {
-			z-index: 8 !important;
+			z-index: 4 !important;
 		}
 	}
 </style>

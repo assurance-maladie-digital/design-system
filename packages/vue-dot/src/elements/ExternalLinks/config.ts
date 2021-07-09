@@ -1,7 +1,8 @@
 export const config = {
 	menu: {
 		offsetY: true,
-		tile: true
+		tile: true,
+		zIndex: 4
 	},
 	btn: {
 		tile: true,
@@ -20,7 +21,8 @@ export const config = {
 		target: '_blank',
 		rel: 'noopener noreferrer'
 	},
-	card: {
+	sheet: {
+		elevation: 0,
 		class: 'px-4 py-3'
 	}
 };
