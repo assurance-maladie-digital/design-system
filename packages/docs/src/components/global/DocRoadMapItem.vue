@@ -2,48 +2,59 @@
 	<div>
 		<VRow
 			no-gutters
+			align="center"
 			class="mb-3"
 		>
-			<div class="font-weight-bold">
-				{{ item.title }}
-			</div>
+			<h3 class="font-weight-bold">
+				{{ title }}
+			</h3>
 
-			<VRow
-				no-gutters
-				align="center"
+			<VChip
+				class="ml-4 ml-sm-8 mt-2 mt-sm-0 px-3 text-caption"
+				:class="labelColor"
 			>
-				<span :class="`ml-0 ml-sm-8 mt-2 mt-sm-0 px-3 rounded-pill text-caption white--text ${item.labelColor}`">{{ item.label }}</span>
-			</VRow>
+				{{ labelFromMapping }}
+			</VChip>
 		</VRow>
 
-		<div>
-			{{ item.description }}
-		</div>
+		<p>
+			{{ description }}
+		</p>
 
-		<div
-			v-if="item.issue && issueNumber"
-			class="mt-1"
+		<a
+			v-if="issue && issueNumber"
+			:href="issue"
+			target="_blank"
+			rel="noopener noreferrer"
 		>
-			<a
-				:href="item.issue"
-				target="_blank"
-			>
-				{{ issueLabel }}
-			</a>
-		</div>
+			{{ issueLabel }}
+		</a>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { RoadMapItem } from '../../types/roadMap';
+	import { labelMapping } from '../../data/roadmap/labelMapping';
+
 
 	const Props = Vue.extend({
 		props: {
-			item: {
-				type: Object as PropType<RoadMapItem>,
+			title: {
+				type: String,
+				required: true
+			},
+			description: {
+				type: String,
+				required: true
+			},
+			label: {
+				type: String,
+				required: true
+			},
+			issue: {
+				type: String,
 				required: true
 			}
 		}
@@ -52,7 +63,7 @@
 	@Component
 	export default class DocRoadMapItem extends Props {
 		get issueNumber(): string | undefined {
-			const issueParts = this.item.issue?.split('/');
+			const issueParts = this.issue?.split('/');
 
 			if (issueParts?.length === 1) {
 				return undefined;
@@ -63,6 +74,14 @@
 
 		get issueLabel(): string {
 			return `#${this.issueNumber as string}`;
+		}
+
+		get labelColor(): string {
+			return labelMapping[this.label]?.color;
+		}
+
+		get labelFromMapping (): string {
+			return labelMapping[this.label]?.label;
 		}
 	}
 </script>
