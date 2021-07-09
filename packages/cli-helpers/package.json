@@ -35,7 +35,7 @@
 	},
 	"devDependencies": {
 		"@types/figlet": "1.5.1",
-		"jest-mock-process": "1.4.0"
+		"jest-mock-process": "1.4.1"
 	},
 	"lint-staged": {
 		"*.{ts}": [
