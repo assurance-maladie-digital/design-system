@@ -1,6 +1,6 @@
-import { RoadMapLabelMapping } from '~/types/roadmap';
+import { RoadmapLabelMapping } from '~/types/roadmap';
 
-export const labelMapping: RoadMapLabelMapping = {
+export const labelMapping: RoadmapLabelMapping = {
 	documentation: {
 		label: 'Documentation',
 		color: 'secondary'
