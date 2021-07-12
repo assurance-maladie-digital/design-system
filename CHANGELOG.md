@@ -28,6 +28,11 @@
 - ♻️ **Refactoring**
   - **ChoiceSliderField:** Refonte du composant ([#1193](https://github.com/assurance-maladie-digital/design-system/pull/1193)) ([8252ccf](https://github.com/assurance-maladie-digital/design-system/commit/8252ccfd3bf8637c20bf52b06e5e8c7f856d796e))
 
+### Documentation
+
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout de la documentation ([#1128](https://github.com/assurance-maladie-digital/design-system/pull/1128))
+
 ### Interne
 
 - 📝 **Documentation**
@@ -48,7 +53,7 @@
   - **@types/jest:** Mise à jour vers la `v26.0.24` ([#1239](https://github.com/assurance-maladie-digital/design-system/pull/1239)) ([1c11bed](https://github.com/assurance-maladie-digital/design-system/commit/1c11bed345efe02d200c50edbb8ebec8f52e2ca1))
   - **@types/node:** Mise à jour vers la `v14.17.5` ([#1241](https://github.com/assurance-maladie-digital/design-system/pull/1241)) ([689f5bd](https://github.com/assurance-maladie-digital/design-system/commit/689f5bde6c7472df2f127bcdbbbdb24ff6a81508))
   - **ts-node:** Mise à jour vers la `v10.1.0` ([#1248](https://github.com/assurance-maladie-digital/design-system/pull/1248)) ([7ce067e](https://github.com/assurance-maladie-digital/design-system/commit/7ce067ee846279dc76711f69bb4b8473d657fde1))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.4.3` ([#1249](https://github.com/assurance-maladie-digital/design-system/pull/1249))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.4.3` ([#1249](https://github.com/assurance-maladie-digital/design-system/pull/1249)) ([4e667bd](https://github.com/assurance-maladie-digital/design-system/commit/4e667bdefb8f084b387deae8f9fb18806e1ba37f))
 
 ## v2.0.0-beta.11
 
