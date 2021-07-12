@@ -10,19 +10,19 @@
 			</h3>
 
 			<VChip
-				class="ml-4 ml-sm-8 mt-2 mt-sm-0 px-3 text-caption"
 				:class="labelColor"
+				class="text-caption ml-4 ml-sm-8 mt-2 mt-sm-0 px-3"
 			>
 				{{ labelFromMapping }}
 			</VChip>
 		</VRow>
 
 		<p class="mb-2">
-			{{ description ? description : '...'  }}
+			{{ description || '…' }}
 		</p>
 
 		<a
-			v-if="issue && issueNumber"
+			v-if="issue && issueLabel"
 			:href="issue"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -38,20 +38,19 @@
 
 	import { labelMapping } from '../../data/roadmap/labelMapping';
 
-
 	const Props = Vue.extend({
 		props: {
 			title: {
 				type: String,
 				required: true
 			},
-			description: {
-				type: String,
-				default: null
-			},
 			label: {
 				type: String,
 				required: true
+			},
+			description: {
+				type: String,
+				default: null
 			},
 			issue: {
 				type: String,
@@ -66,21 +65,25 @@
 			const issueParts = this.issue?.split('/');
 
 			if (issueParts?.length === 1) {
-				return undefined;
+				return;
 			}
 
 			return issueParts?.pop();
 		}
 
-		get issueLabel(): string {
-			return `#${this.issueNumber as string}`;
+		get issueLabel(): string | undefined {
+			if (!this.issueNumber) {
+				return;
+			}
+
+			return `#${this.issueNumber}`;
 		}
 
 		get labelColor(): string {
 			return labelMapping[this.label]?.color;
 		}
 
-		get labelFromMapping (): string {
+		get labelFromMapping(): string {
 			return labelMapping[this.label]?.label;
 		}
 	}
