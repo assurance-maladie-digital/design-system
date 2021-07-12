@@ -16,6 +16,8 @@ export const api: Api = {
 	tooltip?: string;
 	multiple?: boolean;
 	fieldOptions?: FieldOptions;
+	min?: number;
+	max?: number;
 	items?: FieldItem[];
 	other?: OtherField;
 	mask?: string;
