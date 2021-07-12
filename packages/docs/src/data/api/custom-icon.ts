@@ -7,7 +7,7 @@ export const api: Api = {
 				name: 'color',
 				type: 'string',
 				default: `'currentColor'`,
-				description: 'La couleur de l’icône (n’importe quelle valeur CSS). Par défaut, l’icône hérite de la couleur du texte.'
+				description: 'La couleur de l’icône (une valeur CSS).<br>Par défaut, l’icône hérite de la couleur du texte.'
 			},
 			{
 				name: 'small',
@@ -37,7 +37,7 @@ export const api: Api = {
 				name: 'size',
 				type: 'string',
 				default: 'undefined',
-				description: 'Applique une taille CSS personnalisée (largeur / hauteur) à l’icône. Par défaut, la taille est de `1,35em`.'
+				description: 'Applique une taille CSS personnalisée (largeur / hauteur) à l’icône.<br>Par défaut, la taille est de `1,35em`.'
 			}
 		],
 		slots: [

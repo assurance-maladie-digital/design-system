@@ -4,7 +4,7 @@ Il est utilisé pour générer le fichier `config.js` en local, qui est importé
 
 <doc-alert type="info">
 
-Les variables sont ajoutées à l’objet global `window`. Cet objet est accessible à n’importe quel endroit dans votre application.
+Les variables sont ajoutées à l’objet global `window`. Cet objet est accessible partout dans votre application.
 
 </doc-alert>
 

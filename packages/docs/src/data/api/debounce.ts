@@ -1,7 +1,7 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	vDebounce: {
+	debounce: {
 		argument: [
 			{
 				name: 'value',

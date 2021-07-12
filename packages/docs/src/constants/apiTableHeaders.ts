@@ -1,3 +1,4 @@
+import { IndexedObject } from '@cnamts/vue-dot/src/types';
 import { HeaderList } from '~/types';
 
 export const API_TABLE_HEADERS: Record<HeaderList, string[]> = {
@@ -35,4 +36,12 @@ export const API_TABLE_HEADERS: Record<HeaderList, string[]> = {
 		'type',
 		'description'
 	]
+};
+
+export const API_TABLE_HEADER_MAPPING: IndexedObject = {
+	name: 'Nom',
+	type: 'Type',
+	default: 'Valeur par défaut',
+	description: 'Description',
+	signature: 'Signature'
 };
