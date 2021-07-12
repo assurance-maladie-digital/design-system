@@ -1,6 +1,6 @@
 export interface RoadmapItem {
 	title: string;
-	description: string;
+	description?: string;
 	label: string;
 	issue?: string;
 }

@@ -17,8 +17,8 @@
 			</VChip>
 		</VRow>
 
-		<p>
-			{{ description }}
+		<p class="mb-2">
+			{{ description ? description : '...'  }}
 		</p>
 
 		<a
@@ -47,7 +47,7 @@
 			},
 			description: {
 				type: String,
-				required: true
+				default: null
 			},
 			label: {
 				type: String,
@@ -55,7 +55,7 @@
 			},
 			issue: {
 				type: String,
-				required: true
+				default: null
 			}
 		}
 	});
