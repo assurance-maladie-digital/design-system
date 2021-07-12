@@ -1,0 +1,87 @@
+.nuxt-content {
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		display: inline-block;
+	}
+
+	> h2 {
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: normal;
+		margin-top: 16px;
+		margin-bottom: 8px;
+	}
+
+	> h3 {
+		font-size: 1.25rem;
+		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: .0125em;
+		margin-bottom: 12px;
+
+		&:not(:first-child) {
+			margin-top: 12px;
+		}
+	}
+
+	> h4 {
+		font-size: 1rem;
+		line-height: 1.75rem;
+		font-weight: 700;
+		letter-spacing: .009375em;
+		margin-bottom: 8px;
+	}
+
+	> ul {
+		margin-bottom: 16px;
+	}
+
+	h2 > a::before,
+	h3 > a::before {
+		content: "#";
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 1.55em;
+		margin-left: -1rem;
+		padding-right: 0.35rem;
+		position: absolute;
+		opacity: 1;
+		text-decoration: none;
+		transition: opacity .15s;
+
+		@media (min-width: 1024px) {
+			opacity: 0;
+		}
+	}
+
+	h2:hover > a::before,
+	h3:hover > a::before {
+		opacity: 1;
+	}
+
+	[id] {
+		scroll-margin: 80px 0 0 0;
+	}
+}
+
+*::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+	color: #fff;
+	text-shadow: none;
+	background-color: rgba(12, 65, 154, .99) !important;
+}
+
+.v-application {
+	.v-btn,
+	.v-tab {
+		font-weight: 600 !important;
+	}
+}
