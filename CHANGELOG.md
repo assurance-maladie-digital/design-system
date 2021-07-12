@@ -31,7 +31,10 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout de la documentation ([#1128](https://github.com/assurance-maladie-digital/design-system/pull/1128))
+  - **global:** Ajout de la documentation ([#1128](https://github.com/assurance-maladie-digital/design-system/pull/1128)) ([2f9607e](https://github.com/assurance-maladie-digital/design-system/commit/2f9607e73a973989e172155c6c055419c09ee141))
+
+- 📝 **Documentation**
+  - **RangeField:** Documentation du champ ([#1245](https://github.com/assurance-maladie-digital/design-system/pull/1245))
 
 ### Interne
 
