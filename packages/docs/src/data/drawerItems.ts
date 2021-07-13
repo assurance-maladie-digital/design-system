@@ -66,6 +66,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/file-upload'
 			},
 			{
+				title: 'FilterModule',
+				to: '/composants/filter-module'
+			},
+			{
 				title: 'FooterWrapper',
 				to: '/composants/footer-wrapper'
 			},
