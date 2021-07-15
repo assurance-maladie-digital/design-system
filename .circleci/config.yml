@@ -69,7 +69,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
           name: Publish packages
-          command: lerna publish --dist-tag test-ci
+          command: yarn publish
 
 workflows:
   lint_test_build:
@@ -87,15 +87,6 @@ workflows:
   lint_test_build_deploy:
     jobs:
       - install
-      - lint:
-          requires:
-            - install
-      - test:
-          requires:
-            - install
-      - build:
-          requires:
-            - install
       - hold_for_deploy:
           type: approval
           requires:
