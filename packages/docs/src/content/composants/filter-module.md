@@ -7,11 +7,11 @@ description: L’élément `FilterModule` est utilisé pour afficher un selecteu
 
 <doc-tab-item label="Utilisation">
 
-<doc-usage name="filter-module"></doc-usage>
+<doc-example file="filter-module/usage"></doc-example>
 
 ### Filtrer un tableau
 
-Il est possible d'ajouter le composant directement dans le pattern `TableToolbar` afin de l'intégrer dans un tableau et récupérer son `$event` pour en filtrer le contenu.
+Vous pouvez ajouter le composant directement dans le pattern `TableToolbar` afin de l'intégrer dans un tableau et d'écouter son `$event` pour en filtrer le contenu.
 
 <doc-example file="filter-module/table-toolbar"></doc-example>
 

@@ -14,7 +14,7 @@
 					<FilterModule
 						class="mr-4"
 						:filters="filters"
-						@filter-list="displayFIlters($event)"
+						@filter-list="displayFIlters"
 					/>
 				</template>
 			</TableToolbar>
@@ -61,8 +61,11 @@
 			}
 		];
 
+		filteredItem = this.items;
+
 		filters: Field[] = [
 			{
+				key: 'lastname',
 				type: 'text',
 				value: null,
 				fieldOptions: {
@@ -73,6 +76,7 @@
 				}
 			},
 			{
+				key: 'firstname',
 				type: 'text',
 				value: null,
 				fieldOptions: {
@@ -86,7 +90,19 @@
 
 		displayFIlters( filtersArray: Field[] ): void {
 			this.$nextTick(() => {
-				console.log(filtersArray);
+				filtersArray.forEach((filter: Field) => {
+					if(filter.value === null) {
+						return;
+					}
+
+					this.items.forEach((element) => {
+						Object.keys(element).forEach((key) => {
+							if(key === filter.key) {
+								console.log(filter.value);
+							}
+						})
+					});
+				})
 			});
 		}
 	}
