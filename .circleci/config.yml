@@ -19,15 +19,9 @@ aliases:
     paths:
       - node_modules/
       - ~/.cache
-  - &run
+  - &install
     name: Install Dependencies
     command: yarn install --frozen-lockfile --non-interactive
-
-workflow_filters: &filters
-  filters:
-    branches:
-      ignore:
-        - docs
 
 jobs:
   install:
@@ -35,7 +29,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore_cache
-      - run: *run
+      - run: *install
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
@@ -65,6 +59,17 @@ jobs:
             NODE_OPTIONS: --max_old_space_size=4096
             CI: 'true'
             CIRCLE_NODE_TOTAL: '4'
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+      - run:
+          name: Publish packages
+          command: lerna publish --dist-tag test-ci
 
 workflows:
   lint_test_build:
@@ -77,6 +82,29 @@ workflows:
           requires:
             - install
       - build:
-          <<: *filters
           requires:
             - install
+  lint_test_build_deploy:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - build:
+          requires:
+            - install
+      - hold_for_deploy:
+          type: approval
+          requires:
+            - lint
+            - test
+            - build
+      - deploy:
+          requires:
+            - hold_for_deploy
+          filters:
+            branches:
+              only: test-ci
