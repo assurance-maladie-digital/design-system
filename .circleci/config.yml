@@ -72,7 +72,7 @@ jobs:
           command: yarn publish
 
 workflows:
-  lint_test_build:
+  lint_test_build_deploy:
     jobs:
       - install
       - lint:
@@ -84,9 +84,9 @@ workflows:
       - build:
           requires:
             - install
-  lint_test_build_deploy:
-    jobs:
-      - install
+          filters:
+            branches:
+              only: test-ci
       - hold_for_deploy:
           type: approval
           requires:
