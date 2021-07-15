@@ -69,7 +69,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
           name: Publish packages
-          command: yarn publish
+          command: yarn publish-packages
 
 workflows:
   lint_test_build_deploy:

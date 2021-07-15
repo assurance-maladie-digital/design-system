@@ -6,7 +6,7 @@
 	"name": "@cnamts/design-system",
 	"scripts": {
 		"postinstall": "lerna run post-install --stream",
-		"publish": "lerna publish --dist-tag test-ci",
+		"publish-packages": "lerna publish --dist-tag test-ci",
 		"prepublishOnly": "lerna run build",
 		"dev": "lerna run dev --stream",
 		"lint": "lerna run lint --stream",
