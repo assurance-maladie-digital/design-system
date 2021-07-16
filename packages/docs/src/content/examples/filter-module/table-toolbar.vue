@@ -1,7 +1,7 @@
 <template>
 	<VDataTable
 		:headers="headers"
-		:items="items"
+		:items="filteredItem"
 		:search="search"
 		hide-default-footer
 	>
@@ -90,6 +90,11 @@
 
 		displayFIlters( filtersArray: Field[] ): void {
 			this.$nextTick(() => {
+				if(filtersArray === null) {
+					this.filteredItem = this.items;
+					return;
+				}
+				this.filteredItem = [];
 				filtersArray.forEach((filter: Field) => {
 					if(filter.value === null) {
 						return;
@@ -98,7 +103,9 @@
 					this.items.forEach((element) => {
 						Object.keys(element).forEach((key) => {
 							if(key === filter.key) {
-								console.log(filter.value);
+								if(filter.value === element[key]) {
+									this.filteredItem.push(element);
+								}
 							}
 						})
 					});
