@@ -120,6 +120,8 @@
 
 			if (this.filtersCount === 0) {
 				this.resetFilters();
+			} else {
+				this.$emit('filter-list', this.appliedFilters);
 			}
 		}
 
@@ -133,6 +135,7 @@
 
 		resetFilters(): void {
 			this.appliedFilters = null;
+			this.$emit('filter-list', this.appliedFilters);
 		}
 	}
 </script>
