@@ -60,7 +60,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          command: yarn build
+          command: yarn build --ignore @cnamts/docs
           environment:
             NODE_OPTIONS: --max_old_space_size=4096
             CI: 'true'

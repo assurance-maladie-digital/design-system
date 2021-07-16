@@ -11,6 +11,7 @@ Object {
     "DialogBox",
     "DownloadBtn",
     "ErrorPage",
+    "ExternalLinks",
     "FileUpload",
     "FilterModule",
     "FooterWrapper",

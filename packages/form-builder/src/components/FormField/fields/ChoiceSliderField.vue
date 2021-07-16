@@ -3,29 +3,16 @@
 		v-bind="options"
 		:value="getIndex(choiceFieldValue)"
 		:thumb-label="thumbLabel"
-		:tick-labels="thickLabels"
+		:tick-labels="tickLabels"
 		:max="items.length - 1"
 		:type="undefined"
+		:class="{ 'thumb-label': isThumbLabel }"
 		color="accent"
 		tick-size="6"
 		track-color="grey lighten-1"
 		class="vd-choice-slider-field vd-form-input-xl"
 		@change="valueUpdated"
 	>
-		<template
-			v-if="isThumbLabel"
-			#prepend
-		>
-			{{ labelMin }}
-		</template>
-
-		<template
-			v-if="isThumbLabel"
-			#append
-		>
-			{{ labelMax }}
-		</template>
-
 		<template
 			v-if="thumbLabel"
 			#thumb-label="{ value }"
@@ -43,8 +30,22 @@
 
 	const MixinsDeclaration = mixins(ChoiceComponent);
 
+	type ThumbLabelValue = boolean | string | undefined;
+
 	/** Choice field type slider */
-	@Component
+	@Component<ChoiceSliderField>({
+		watch: {
+			value: {
+				handler(value: FieldValue): void {
+					// If the value is null, set it to the first item
+					if (value === null) {
+						this.valueUpdated(0);
+					}
+				},
+				immediate: true
+			}
+		}
+	})
 	export default class ChoiceSliderField extends MixinsDeclaration {
 		/**
 		 * Get the index of the selected item by value
@@ -84,12 +85,12 @@
 			return this.labels[this.labels.length - 1];
 		}
 
-		get thumbLabel(): string | boolean {
-			return this.isThumbLabel ? 'always' : false;
+		get thumbLabel(): ThumbLabelValue {
+			return this.options?.thumbLabel as ThumbLabelValue;
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */
-		get thickLabels(): string[] {
+		get tickLabels(): string[] {
 			return this.isThumbLabel ? [] : this.labels;
 		}
 
@@ -128,6 +129,14 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+
+	// Increase min-height when using tick labels with hide-details
+	// to make up for the additional space
+	.vd-choice-slider-field:not(.thumb-label) {
+		&.v-input--hide-details {
+			min-height: 40px;
+		}
+	}
 
 	.vd-choice-slider-field ::v-deep {
 		.v-input__control {

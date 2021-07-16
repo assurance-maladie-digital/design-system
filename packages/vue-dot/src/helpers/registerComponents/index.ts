@@ -1,8 +1,7 @@
+import { IndexedObject } from '../../types';
 import { VueConstructor } from 'vue';
 
-export interface Components {
-	[name: string]: VueConstructor;
-}
+export type Components = IndexedObject<VueConstructor>;
 
 /**
  * Register components in the global Vue instance

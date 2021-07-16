@@ -6,9 +6,9 @@ exports[`TableToolbar renders correctly 1`] = `
     1/2 lignes
   </p>
   <vspacer-stub></vspacer-stub>
-  <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" backgroundcolor="" hidedetails="true" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" singleline="true" type="text" class="vd-form-input flex-grow-0 mr-4"></vtextfield-stub>
-  <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button">
-    <vicon-stub>
+  <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" backgroundcolor="" hidedetails="true" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" singleline="true" type="text" class="vd-form-input flex-grow-0"></vtextfield-stub>
+  <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button" class="ml-6">
+    <vicon-stub class="mr-1">
       M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z
     </vicon-stub>
 
@@ -24,12 +24,12 @@ exports[`TableToolbar renders correctly when loading 1`] = `
       0/1 ligne
     </p>
     <div class="spacer"></div>
-    <div class="v-input v-input--hide-details v-input--is-disabled theme--light v-text-field v-text-field--single-line vd-form-input flex-grow-0 mr-4">
+    <div class="v-input v-input--hide-details v-input--is-disabled theme--light v-text-field v-text-field--single-line vd-form-input flex-grow-0">
       <div class="v-input__control">
         <div class="v-input__slot">
           <div class="v-text-field__slot"><label for="input-8" class="v-label v-label--is-disabled theme--light" style="left: 0px; position: absolute;">Rechercher</label><input disabled="disabled" id="input-8" type="text"></div>
           <div class="v-input__append-inner">
-            <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+            <div></div>
           </div>
           <div class="v-input__append-inner">
             <div class="v-input__icon v-input__icon--append"><span aria-hidden="true" class="v-icon notranslate v-icon--disabled theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg></span></div>
@@ -49,12 +49,12 @@ exports[`TableToolbar renders correctly with content slot 1`] = `
       0/1 ligne
     </p>
     <div class="spacer"></div>
-    <div class="v-input v-input--hide-details theme--light v-text-field v-text-field--single-line vd-form-input flex-grow-0 mr-4">
+    <div class="v-input v-input--hide-details theme--light v-text-field v-text-field--single-line vd-form-input flex-grow-0">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-14" class="v-label theme--light" style="left: 0px; position: absolute;">Rechercher</label><input id="input-14" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-13" class="v-label theme--light" style="left: 0px; position: absolute;">Rechercher</label><input id="input-13" type="text"></div>
           <div class="v-input__append-inner">
-            <div class="v-input__icon v-input__icon--clear"><button disabled="disabled" type="button" aria-label="clear icon" class="v-icon notranslate v-icon--disabled v-icon--link mdi mdi-close theme--light"></button></div>
+            <div></div>
           </div>
           <div class="v-input__append-inner">
             <div class="v-input__icon v-input__icon--append"><span aria-hidden="true" class="v-icon notranslate theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg></span></div>
@@ -71,7 +71,7 @@ exports[`TableToolbar renders correctly with no items 1`] = `
 <vtoolbar-stub color="white" tag="header" extensionheight="48" flat="true" src="">
   <!---->
   <vspacer-stub></vspacer-stub>
-  <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" backgroundcolor="" hidedetails="true" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" singleline="true" type="text" class="vd-form-input flex-grow-0 mr-4"></vtextfield-stub>
+  <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" backgroundcolor="" hidedetails="true" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" singleline="true" type="text" class="vd-form-input flex-grow-0"></vtextfield-stub>
   <!---->
 </vtoolbar-stub>
 `;

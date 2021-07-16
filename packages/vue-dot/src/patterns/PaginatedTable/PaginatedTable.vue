@@ -47,7 +47,7 @@
 			// the tables will share the same saved pagination object
 			suffix: {
 				type: String,
-				default: ''
+				default: undefined
 			}
 		}
 	});
