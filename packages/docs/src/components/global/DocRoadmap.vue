@@ -17,11 +17,11 @@
 			<DocRoadmapItem
 				v-for="(item, roadmapItemIndex) in roadmapSection.items"
 				:key="`${roadmapSectionIndex}-${roadmapItemIndex}`"
-				class="mb-8"
 				:title="item.title"
 				:description="item.description"
 				:label="item.label"
 				:issue="item.issue"
+				class="mb-8"
 			/>
 		</div>
 	</div>
