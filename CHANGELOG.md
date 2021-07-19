@@ -36,6 +36,9 @@
 - 📝 **Documentation**
   - **RangeField:** Documentation du champ ([#1245](https://github.com/assurance-maladie-digital/design-system/pull/1245))
 
+- 📝 **Documentation**
+  - **Glossaire:** Ajout du glossaire ([#1265](https://github.com/assurance-maladie-digital/design-system/pull/1265))
+
 ### Interne
 
 - 📝 **Documentation**
