@@ -30,7 +30,7 @@ export const roadmap: RoadmapSection[] = [
 		items: [
 			{
 				title: 'Header',
-				description: 'Création d’un composant header pour mobile et desktop qui prenne en compte la nouvelle charte graphique Assurance Maladie.',
+				description: 'Création d\'un composant header pour mobile et desktop qui prenne en compte la nouvelle charte graphique Assurance Maladie.',
 				label: 'newComponent',
 				issue: '1087'
 			}
