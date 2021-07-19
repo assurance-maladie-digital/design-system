@@ -43,17 +43,17 @@
 				value: null,
 				fieldOptions: {
 					outlined: true,
-					filterTitle: 'Intervalles'
+					filterTitle: 'Intervalle'
 				}
 			},
 			{
 				type: 'text',
 				value: null,
 				fieldOptions: {
-					label: 'Entrez un nom',
-					hideDetails: true,
 					outlined: true,
-					filterTitle: 'Nom de famille'
+					hideDetails: true,
+					label: 'Nom',
+					filterTitle: 'Nom'
 				}
 			}
 		];

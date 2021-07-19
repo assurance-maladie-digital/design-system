@@ -12,8 +12,8 @@
 			>
 				<template #search-left>
 					<FilterModule
-						class="mr-4"
 						:filters="filters"
+						class="mr-4"
 						@filter-list="displayFIlters"
 					/>
 				</template>
@@ -29,8 +29,14 @@
 	import { DataTableHeader } from 'vuetify';
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
+	interface TableItem {
+		firstname: string;
+		lastname: string;
+		email: string;
+	}
+
 	@Component
-	export default class TableToolbarAddBtn extends Vue {
+	export default class FilterModuleTableToolbar extends Vue {
 		search: string | null = null;
 
 		headers: DataTableHeader[] = [
@@ -65,51 +71,46 @@
 
 		filters: Field[] = [
 			{
-				key: 'lastname',
 				type: 'text',
 				value: null,
 				fieldOptions: {
-					label: 'Entrez un nom',
-					hideDetails: true,
 					outlined: true,
-					filterTitle: 'Nom de famille'
+					hideDetails: true,
+					key: 'lastname',
+					label: 'Nom',
+					filterTitle: 'Nom'
 				}
 			},
 			{
-				key: 'firstname',
 				type: 'text',
 				value: null,
 				fieldOptions: {
-					label: 'Entrez un prénom',
-					hideDetails: true,
 					outlined: true,
+					hideDetails: true,
+					key: 'firstname',
+					label: 'Prénom',
 					filterTitle: 'Prénom'
 				}
 			}
 		];
 
-		displayFIlters( filtersArray: Field[] ): void {
-			this.$nextTick(() => {
-				if(filtersArray === null) {
-					this.filteredItem = this.items;
+		displayFIlters(filters: Field[]): void {
+			if (filters === null) {
+				this.filteredItem = this.items;
+				return;
+			}
+
+			filters.forEach(({ value, fieldOptions }: Field) => {
+				if (value === null || !fieldOptions) {
 					return;
 				}
-				this.filteredItem = [];
-				filtersArray.forEach((filter: Field) => {
-					if(filter.value === null) {
-						return;
-					}
 
-					this.items.forEach((element) => {
-						Object.keys(element).forEach((key) => {
-							if(key === filter.key) {
-								if(filter.value === element[key]) {
-									this.filteredItem.push(element);
-								}
-							}
-						})
-					});
-				})
+				this.filteredItem = this.items.filter(element => {
+					const itemValue = element[fieldOptions.key as string];
+					const filterValue = value as string;
+
+					return itemValue.toLowerCase().match(filterValue.toLowerCase());
+				});
 			});
 		}
 	}

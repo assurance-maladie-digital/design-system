@@ -1,6 +1,6 @@
 ---
 title: FilterModule
-description: L’élément `FilterModule` est utilisé pour afficher un selecteur de filtre et retourner les valeurs sélectionnées sous forme de `Field[]`.
+description: Le pattern `FilterModule` est utilisé pour permettre à l’utilisateur de sélectionner des filtres.
 ---
 
 <doc-tabs>
@@ -11,7 +11,7 @@ description: L’élément `FilterModule` est utilisé pour afficher un selecteu
 
 ### Filtrer un tableau
 
-Vous pouvez ajouter le composant directement dans le pattern `TableToolbar` afin de l'intégrer dans un tableau et d'écouter son `$event` pour en filtrer le contenu.
+Vous pouvez utiliser le composant directement dans le pattern `TableToolbar` afin de l'intégrer dans un tableau pour en filtrer son contenu en utilisant l’événement `filter-list`.
 
 <doc-example file="filter-module/table-toolbar"></doc-example>
 
