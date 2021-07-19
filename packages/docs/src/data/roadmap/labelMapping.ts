@@ -11,6 +11,6 @@ export const labelMapping: RoadmapLabelMapping = {
 	},
 	refonte: {
 		label: 'Refonte',
-		color: 'purple accent-2'
+		color: 'purple accent-1'
 	}
 };
