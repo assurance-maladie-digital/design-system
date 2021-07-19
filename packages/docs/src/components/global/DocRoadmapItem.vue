@@ -23,7 +23,7 @@
 
 		<a
 			v-if="issue && issueLabel"
-			:href="issue"
+			:href="issueHref"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -61,22 +61,16 @@
 
 	@Component
 	export default class DocRoadmapItem extends Props {
-		get issueNumber(): string | undefined {
-			const issueParts = this.issue?.split('/');
-
-			if (issueParts?.length === 1) {
-				return;
-			}
-
-			return issueParts?.pop();
+		get issueHref(): string {
+			return `https://app.zenhub.com/workspaces/design-system-60d49114beeb9300125e9324/issues/assurance-maladie-digital/design-system/${this.issue}`;
 		}
 
 		get issueLabel(): string | undefined {
-			if (!this.issueNumber) {
+			if (!this.issue) {
 				return;
 			}
 
-			return `#${this.issueNumber}`;
+			return `#${this.issue}`;
 		}
 
 		get labelColor(): string {
