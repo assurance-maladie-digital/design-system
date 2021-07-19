@@ -8,13 +8,13 @@ export const roadmap: RoadmapSection[] = [
 				title: 'Item title example 1',
 				description: 'Description example 1',
 				label: 'newComponent',
-				issue: 'https://example/45'
+				issue: '45'
 			},
 			{
 				title: 'Item title example 2',
 				description: 'Description example 2',
 				label: 'newComponent',
-				issue: 'https://example/21'
+				issue: '21'
 			},
 			{
 				title: 'Item title example 3',

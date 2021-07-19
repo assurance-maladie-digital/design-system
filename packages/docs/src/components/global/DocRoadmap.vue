@@ -1,7 +1,7 @@
 <template>
 	<div
 		no-gutters
-		class="w-100"
+		class="doc-roadmap w-100"
 	>
 		<div
 			v-for="(roadmapSection, roadmapSectionIndex) in roadmap"
@@ -17,11 +17,11 @@
 			<DocRoadmapItem
 				v-for="(item, roadmapItemIndex) in roadmapSection.items"
 				:key="`${roadmapSectionIndex}-${roadmapItemIndex}`"
-				class="mb-8"
 				:title="item.title"
 				:description="item.description"
 				:label="item.label"
 				:issue="item.issue"
+				class="mb-8"
 			/>
 		</div>
 	</div>
