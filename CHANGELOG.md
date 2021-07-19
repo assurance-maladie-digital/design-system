@@ -36,6 +36,9 @@
 - 📝 **Documentation**
   - **RangeField:** Documentation du champ ([#1245](https://github.com/assurance-maladie-digital/design-system/pull/1245))
 
+- 📝 **Documentation**
+  - **FilterModule:** Documentation du patern ([#1257](https://github.com/assurance-maladie-digital/design-system/pull/1257))
+
 ### Interne
 
 - 📝 **Documentation**
