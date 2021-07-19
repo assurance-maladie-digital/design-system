@@ -1,7 +1,7 @@
 <template>
 	<div
 		no-gutters
-		class="w-100"
+		class="doc-roadmap w-100"
 	>
 		<div
 			v-for="(roadmapSection, roadmapSectionIndex) in roadmap"
