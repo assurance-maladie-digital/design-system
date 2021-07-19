@@ -17,6 +17,7 @@
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
+				@click="isClicked=true"
 				v-on="on"
 			>
 				<span
@@ -139,11 +140,6 @@
 			fixed: {
 				type: Boolean,
 				default: false
-			},
-			/** Apply to set position's VMenu with 12px: default value of Vuetify */
-			isDefault: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
@@ -155,7 +151,7 @@
 		// Extend $refs
 		$refs!: Refs<{
 			menu: {
-				calculatedLeft: string
+				calculatedLeft: string;
 			};
 		}>;
 
@@ -165,6 +161,9 @@
 
 		menu = false;
 		hover = false;
+		isClicked = false;
+
+		menuClassLeftOrRight = '';
 
 		get computedPosition(): Position {
 			const [ y, x ] = this.position.split(SPACE_CHARACTER);
@@ -193,12 +192,7 @@
 		}
 
 		get menuClass(): string {
-			const positionClass = this.right ? 'right-0' : 'left-0';
-            let contentClass = 'vd-external-links-menu';
-            if(this.isDefault){
-                contentClass = `${contentClass} ${positionClass}`;
-            }
-			return contentClass;
+            return `${this.menuClassLeftOrRight}`;
 		}
 
 		get btnTextSpacing(): string {
@@ -258,6 +252,25 @@
 			};
 
 			return iconMapping[this.computedPosition.x];
+		}
+
+		removeMarginLeftOrRight(): void {
+			const positionClass = this.right ? 'right-0' : 'left-0';
+            const margLeft= this.$refs.menu.calculatedLeft;
+			if(margLeft !== '12px') {
+				this.menuClassLeftOrRight = 'vd-external-links-menu';
+			}else{
+				this.menuClassLeftOrRight = `vd-external-links-menu ${positionClass}`;
+			}
+		}
+
+		updated(): void {
+			if(this.isClicked){
+				setTimeout(() => {
+					this.removeMarginLeftOrRight();
+				});
+				this.isClicked= false;
+			}
 		}
 	}
 </script>
