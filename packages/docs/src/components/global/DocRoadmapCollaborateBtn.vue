@@ -1,9 +1,9 @@
 <template>
 	<VBtn
+		:href="href"
 		outlined
 		color="primary"
 		class="text-none"
-		:href="href"
 	>
 		Soumettre une demande
 	</VBtn>
