@@ -18,6 +18,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
+			},
+			{
+				title: 'Roadmap',
+				to: '/demarrer/roadmap'
 			}
 		]
 	},

@@ -11,3 +11,8 @@ export interface RoadmapLabelMapping {
 		color: string;
 	}
 }
+
+export interface RoadmapSection {
+	label: string;
+	items?: RoadmapItem[];
+}
