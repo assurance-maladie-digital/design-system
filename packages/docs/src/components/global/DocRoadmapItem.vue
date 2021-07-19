@@ -11,7 +11,7 @@
 
 			<VChip
 				:class="labelColor"
-				class="text-caption ml-4 ml-sm-8 mt-2 mt-sm-0 px-3"
+				class="text-caption white--text ml-4 ml-sm-8 mt-2 mt-sm-0 px-3"
 			>
 				{{ labelFromMapping }}
 			</VChip>
