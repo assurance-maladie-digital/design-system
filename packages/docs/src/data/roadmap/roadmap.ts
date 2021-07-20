@@ -49,6 +49,50 @@ export const roadmap: RoadmapSection[] = [
 				title: 'ESLint',
 				description: 'package pour la configuration ESLint.',
 				label: 'documentation'
+			},
+			{
+				title: 'Test des composants',
+				description: 'Refonte des tests des composants',
+				label: 'refonte'
+			},
+			{
+				title: 'Consentement cookies',
+				description: 'Définition des modalités de recueil du consentement des utilisateurs.',
+				label: 'documentation'
+			},
+			{
+				title: 'Guides utilisateur',
+				description: 'Ajouter des guides utilisateur (appels API, affichage d\'une table de données, connexion front etc)',
+				label: 'documentation'
+			},
+			{
+				title: 'Doc accessibilité',
+				description: 'Définition des critères d\'accessibilité et recommandations.',
+				label: 'documentation'
+			},
+			{
+				title: 'Principe de Sécurité',
+				label: 'documentation'
+			},
+			{
+				title: 'Doc présentation DS, histoire équipe etc.',
+				description: 'Présentation de l\'Historique du Design System, compétences et organisation de l\'équipe.',
+				label: 'documentation'
+			},
+			{
+				title: 'Doc eco conception',
+				description: 'Définition des principes d\'eco conception.',
+				label: 'documentation'
+			},
+			{
+				title: 'Rendu côté serveur',
+				description: 'Ajouter une option dans le Starter Kit pour utiliser Nuxt (en interne = merger le travail de DDST)',
+				label: 'unknown'
+			},
+			{
+				title: 'Vue 3',
+				description: 'Passage à Vue 3 (migration à Vuetify 3, Nuxt 3, réécritures des composants)',
+				label: 'unknown'
 			}
 		]
 	}
