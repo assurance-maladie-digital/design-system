@@ -6,7 +6,7 @@
 		<div
 			v-for="(roadmapSection, roadmapSectionIndex) in roadmap"
 			:key="roadmapSectionIndex"
-			class="mt-8"
+			class="mt-16"
 		>
 			<h3 class="font-weight-regular grey--text text--darken-2">
 				{{ roadmapSection.label }}
