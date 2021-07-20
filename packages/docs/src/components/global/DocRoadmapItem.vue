@@ -62,7 +62,7 @@
 	@Component
 	export default class DocRoadmapItem extends Props {
 		get issueHref(): string {
-			return `https://app.zenhub.com/workspaces/design-system-60d49114beeb9300125e9324/issues/assurance-maladie-digital/design-system/${this.issue}`;
+			return `https://github.com/assurance-maladie-digital/design-system/issues/${this.issue}`;
 		}
 
 		get issueLabel(): string | undefined {
