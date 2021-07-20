@@ -6,7 +6,7 @@ export const roadmap: RoadmapSection[] = [
 		items: [
 			{
 				title: 'Illustration empty state',
-				description: 'Création d\'une série d\'illustration indiquant aux utilisateurs un état vide. Exemple : L`\'utilisateur n\'a pas ajouté de données.',
+				description: 'Création d\'une série d\'illustration indiquant aux utilisateurs un état vide. Exemple : L\'utilisateur n\'a pas ajouté de données.',
 				label: 'newComponent'
 			},
 			{
