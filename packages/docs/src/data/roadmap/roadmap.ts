@@ -16,10 +16,6 @@ export const roadmap: RoadmapSection[] = [
 			},
 			{
 				title: 'Espaces et dimensions',
-				label: 'documentation'
-			},
-			{
-				title: 'Espaces et dimensions',
 				label: 'documentation',
 				description: '???'
 			}
