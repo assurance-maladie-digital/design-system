@@ -1,5 +1,6 @@
 <template>
 	<VMenu
+		ref="menu"
 		v-model="menu"
 		v-bind="options.menu"
 		:top="bottom"
@@ -16,6 +17,7 @@
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
+				@click="isClicked=true"
 				v-on="on"
 			>
 				<span
@@ -82,7 +84,7 @@
 	import { PositionEnum } from './PositionEnum';
 
 	import { ExternalLink, Position } from './types';
-	import { IndexedObject } from '../../types';
+	import { IndexedObject, Refs } from '../../types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -146,12 +148,22 @@
 
 	@Component
 	export default class ExternalLinks extends MixinsDeclaration {
+		// Extend $refs
+		$refs!: Refs<{
+			menu: {
+				calculatedLeft: string;
+			};
+		}>;
+
 		locales = locales;
 
 		linkIcon = mdiOpenInNew;
 
 		menu = false;
 		hover = false;
+		isClicked = false;
+
+		menuClassLeftOrRight = '';
 
 		get computedPosition(): Position {
 			const [ y, x ] = this.position.split(SPACE_CHARACTER);
@@ -180,9 +192,7 @@
 		}
 
 		get menuClass(): string {
-			const positionClass = this.right ? 'right-0' : 'left-0';
-
-			return `vd-external-links-menu ${positionClass}`;
+            return `${this.menuClassLeftOrRight}`;
 		}
 
 		get btnTextSpacing(): string {
@@ -242,6 +252,25 @@
 			};
 
 			return iconMapping[this.computedPosition.x];
+		}
+
+		removeMarginLeftOrRight(): void {
+			const positionClass = this.right ? 'right-0' : 'left-0';
+            const margLeft= this.$refs.menu.calculatedLeft;
+			if(margLeft !== '12px') {
+				this.menuClassLeftOrRight = 'vd-external-links-menu';
+			}else{
+				this.menuClassLeftOrRight = `vd-external-links-menu ${positionClass}`;
+			}
+		}
+
+		updated(): void {
+			if(this.isClicked){
+				setTimeout(() => {
+					this.removeMarginLeftOrRight();
+				},100);
+				this.isClicked= false;
+			}
 		}
 	}
 </script>
