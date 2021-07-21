@@ -2,7 +2,7 @@ import { RoadmapSection } from '~/types/roadmap';
 
 export const roadmap: RoadmapSection[] = [
 	{
-		label: 'Prochaine mise en production (xx/xx/xxxx) - version x.xx',
+		label: 'Prochaine mise en production (02/08/2021) - version 2.0.0-beta.12',
 		items: [
 			{
 				title: 'Illustration empty state',
@@ -26,7 +26,7 @@ export const roadmap: RoadmapSection[] = [
 		items: [
 			{
 				title: 'Header',
-				description: 'Création d\'un composant header pour mobile et desktop qui prenne en compte la nouvelle charte graphique Assurance Maladie.',
+				description: 'Création d\'un composant header pour mobile et desktop qui prend en compte la nouvelle charte graphique Assurance Maladie.',
 				label: 'newComponent',
 				issue: '1087'
 			}
@@ -42,7 +42,7 @@ export const roadmap: RoadmapSection[] = [
 			},
 			{
 				title: 'Principes de design',
-				description: 'Définition des principes de Design permettant de garantir la meilleur des expériences.',
+				description: 'Définition des principes de Design permettant de garantir la meilleure expérience.',
 				label: 'documentation'
 			},
 			{
