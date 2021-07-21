@@ -6,7 +6,7 @@ export const roadmap: RoadmapSection[] = [
 		items: [
 			{
 				title: 'Illustration empty state',
-				description: 'Création d\'une série d\'illustration indiquant aux utilisateurs un état vide. Exemple : L\'utilisateur n\'a pas ajouté de données.',
+				description: 'Création d’une série d’illustration indiquant aux utilisateurs un état vide. Exemple : L’utilisateur n’a pas ajouté de données.',
 				label: 'newComponent'
 			},
 			{
@@ -26,7 +26,7 @@ export const roadmap: RoadmapSection[] = [
 		items: [
 			{
 				title: 'Header',
-				description: 'Création d\'un composant header pour mobile et desktop qui prend en compte la nouvelle charte graphique Assurance Maladie.',
+				description: 'Création d’un composant header pour mobile et desktop qui prend en compte la nouvelle charte graphique Assurance Maladie.',
 				label: 'newComponent',
 				issue: '1087'
 			}
@@ -62,12 +62,12 @@ export const roadmap: RoadmapSection[] = [
 			},
 			{
 				title: 'Guides utilisateur',
-				description: 'Ajouter des guides utilisateur (appels API, affichage d\'une table de données, connexion front etc)',
+				description: 'Ajouter des guides utilisateur (appels API, affichage d’une table de données, connexion front etc)',
 				label: 'documentation'
 			},
 			{
 				title: 'Doc accessibilité',
-				description: 'Définition des critères d\'accessibilité et recommandations.',
+				description: 'Définition des critères d’accessibilité et recommandations.',
 				label: 'documentation'
 			},
 			{
@@ -76,12 +76,12 @@ export const roadmap: RoadmapSection[] = [
 			},
 			{
 				title: 'Doc présentation DS, histoire équipe etc.',
-				description: 'Présentation de l\'Historique du Design System, compétences et organisation de l\'équipe.',
+				description: 'Présentation de l’Historique du Design System, compétences et organisation de l’équipe.',
 				label: 'documentation'
 			},
 			{
 				title: 'Doc eco conception',
-				description: 'Définition des principes d\'eco conception.',
+				description: 'Définition des principes d’eco conception.',
 				label: 'documentation'
 			},
 			{
