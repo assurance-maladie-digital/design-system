@@ -54,7 +54,7 @@
 			}
 		];
 
-		items = [
+		items: TableItem[] = [
 			{
 				firstname: 'Virginie',
 				lastname: 'Beauchesne',
@@ -106,7 +106,7 @@
 				}
 
 				this.filteredItem = this.items.filter(element => {
-					const itemValue = element[fieldOptions.key as string];
+					const itemValue = element[fieldOptions.key];
 					const filterValue = value as string;
 
 					return itemValue.toLowerCase().match(filterValue.toLowerCase());
