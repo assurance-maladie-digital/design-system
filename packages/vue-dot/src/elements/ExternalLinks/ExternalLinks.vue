@@ -268,7 +268,7 @@
 			if(this.isClicked){
 				setTimeout(() => {
 					this.removeMarginLeftOrRight();
-				});
+				},100);
 				this.isClicked= false;
 			}
 		}
