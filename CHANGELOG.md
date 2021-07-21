@@ -38,6 +38,9 @@
 
 ### Interne
 
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de `codecov` vers la `v1.2.5` ([#1258](https://github.com/assurance-maladie-digital/design-system/pull/1258))
+
 - 📝 **Documentation**
   - **issues:** Mise à jour des templates ([#1202](https://github.com/assurance-maladie-digital/design-system/pull/1202)) ([9338b22](https://github.com/assurance-maladie-digital/design-system/commit/9338b22b5f0a6202a4a3d1b938bef75dce590e3c))
 
@@ -57,7 +60,7 @@
   - **ts-node:** Mise à jour vers la `v10.1.0` ([#1248](https://github.com/assurance-maladie-digital/design-system/pull/1248)) ([7ce067e](https://github.com/assurance-maladie-digital/design-system/commit/7ce067ee846279dc76711f69bb4b8473d657fde1))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v35.4.3` ([#1249](https://github.com/assurance-maladie-digital/design-system/pull/1249)) ([4e667bd](https://github.com/assurance-maladie-digital/design-system/commit/4e667bdefb8f084b387deae8f9fb18806e1ba37f))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.28.4` ([#1253](https://github.com/assurance-maladie-digital/design-system/pull/1253)) ([16a6d1e](https://github.com/assurance-maladie-digital/design-system/commit/16a6d1e5a09031a2ab8f320ae949901a4ff5c153))
-  - **lint-staged:** Mise à jour vers la `v11.0.1` ([#1254](https://github.com/assurance-maladie-digital/design-system/pull/1254))
+  - **lint-staged:** Mise à jour vers la `v11.0.1` ([#1254](https://github.com/assurance-maladie-digital/design-system/pull/1254)) ([e7c2225](https://github.com/assurance-maladie-digital/design-system/commit/e7c222509b308e031c87a7675bf454d81759cd7c))
 
 ## v2.0.0-beta.11
 
