@@ -30,6 +30,7 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	interface TableItem {
+		[key: string]: string;
 		firstname: string;
 		lastname: string;
 		email: string;
@@ -106,7 +107,7 @@
 				}
 
 				this.filteredItem = this.items.filter(element => {
-					const itemValue = element[fieldOptions.key];
+					const itemValue = element[fieldOptions.key as string];
 					const filterValue = value as string;
 
 					return itemValue.toLowerCase().match(filterValue.toLowerCase());
