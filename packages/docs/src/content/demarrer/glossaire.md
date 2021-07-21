@@ -17,7 +17,7 @@ Le design thinking est une approche de l’innovation et de son management qui s
 
 ## Expérience utilisateur (UX)
 
-### L’expérience vécue, au delà des interfaces agréables à regarder
+### L’expérience vécue, au-delà des interfaces agréables à regarder
 
 Le design d’expérience utilisateur (UX ou *User experience*) s’intéresse à la qualité de l’expérience vécue par l’utilisateur dans toute situation d’interaction lors de l’utilisation d’un produit ou d’un service. Les interactions concernent les interfaces digitales mais aussi tout dispositif physique ou service dépendant des ressources humaines. L’objectif premier de l’UX design est de rendre l’expérience des utilisateurs plus riche en émotions, en affect et en valeurs. Il s’agit d’un processus qui s’entoure de beaucoup de disciplines, telles que : l’ergonomie web, le design émotionnel, le design d’interaction, l’architecture d’information, la psychologie cognitive, etc. afin de comprendre ce qui fonctionne réellement pour les utilisateurs cible.
 
