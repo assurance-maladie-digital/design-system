@@ -3,15 +3,15 @@
 		<VRow
 			no-gutters
 			align="center"
-			class="mb-3"
+			class="mb-3 ml-n4 ml-sm-n8"
 		>
-			<h3 class="font-weight-bold">
+			<h3 class="font-weight-bold flex-grow-0 ml-4 ml-sm-8">
 				{{ title }}
 			</h3>
 
 			<VChip
 				:class="labelColor"
-				class="text-caption ml-4 ml-sm-8 mt-2 mt-sm-0 px-3"
+				class="text-caption white--text mt-2 mt-sm-0 px-3 flex-grow-0 ml-4 ml-sm-8"
 			>
 				{{ labelFromMapping }}
 			</VChip>
@@ -23,7 +23,7 @@
 
 		<a
 			v-if="issue && issueLabel"
-			:href="issue"
+			:href="issueHref"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -61,22 +61,16 @@
 
 	@Component
 	export default class DocRoadmapItem extends Props {
-		get issueNumber(): string | undefined {
-			const issueParts = this.issue?.split('/');
-
-			if (issueParts?.length === 1) {
-				return;
-			}
-
-			return issueParts?.pop();
+		get issueHref(): string {
+			return `https://github.com/assurance-maladie-digital/design-system/issues/${this.issue}`;
 		}
 
 		get issueLabel(): string | undefined {
-			if (!this.issueNumber) {
+			if (!this.issue) {
 				return;
 			}
 
-			return `#${this.issueNumber}`;
+			return `#${this.issue}`;
 		}
 
 		get labelColor(): string {
