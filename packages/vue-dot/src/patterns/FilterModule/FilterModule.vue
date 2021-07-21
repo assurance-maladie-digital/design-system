@@ -120,9 +120,10 @@
 
 			if (this.filtersCount === 0) {
 				this.resetFilters();
-			} else {
-				this.emitFilterListEvent();
+				return;
 			}
+
+			this.emitFilterListEvent();
 		}
 
 		editFilter(index: number): void {
