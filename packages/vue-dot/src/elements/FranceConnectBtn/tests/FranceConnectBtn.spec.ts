@@ -9,7 +9,7 @@ import FranceConnectBtn from '../FranceConnectBtn.vue';
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('FranceConnectBtn.vue', () => {
+describe('FranceConnectBtn', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(FranceConnectBtn);
