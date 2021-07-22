@@ -3,6 +3,7 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
+  - **FranceCOnnectBtn:** Creation du bouton france connect ([#1221]https://github.com/assurance-maladie-digital/design-system/pull/1268)
   - **SubHeader:** Correction de l'événement `click:list-item` ne fonctionnant pas ([#1203](https://github.com/assurance-maladie-digital/design-system/pull/1203)) ([13056bb](https://github.com/assurance-maladie-digital/design-system/commit/13056bb354fc9860c9def9978630414d040b7f62))
   - **styles:** Correction de la position du curseur de redimensionnement dans les champs de formulaires ([#1212](https://github.com/assurance-maladie-digital/design-system/pull/1212)) ([2314b2e](https://github.com/assurance-maladie-digital/design-system/commit/2314b2eded1063ad9e746e46e5a201b72cece285))
   - **TableToolbar:** Correction de l'espacement du bouton *Ajouter* ([#1214](https://github.com/assurance-maladie-digital/design-system/pull/1214)) ([6cb82bc](https://github.com/assurance-maladie-digital/design-system/commit/6cb82bc01dc5ca913d304d4bc85a470f909b6279))
