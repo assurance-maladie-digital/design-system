@@ -3,7 +3,7 @@
 		<VRow
 			no-gutters
 			align="center"
-			class="mb-3 ml-n4 ml-sm-n8"
+			class="mb-1 ml-n4 ml-sm-n8"
 		>
 			<h3 class="font-weight-bold flex-grow-0 ml-4 ml-sm-8">
 				{{ title }}
