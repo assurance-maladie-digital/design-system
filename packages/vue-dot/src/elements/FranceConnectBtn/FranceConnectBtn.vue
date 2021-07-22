@@ -5,11 +5,8 @@
 			viewBox="0 0 230 60"
 			:width="width"
 			:height="height"
-			:fill="iconColor"
-			:style="btnStyle"
+			class="btnStyle"
 			@click="urlConnect"
-			@mouseover="iconColor='#2183f0'"
-			@mouseleave="iconColor='#034ea2'"
 		>
 			<g fill-rule="nonzero">
 				<title>{{ iconText }}</title>
@@ -76,8 +73,6 @@
 
 	import { locales } from './locales';
 
-	import { IndexedObject } from '../../types';
-
 	const Props = Vue.extend({
 		props: {
 			/**
@@ -106,7 +101,7 @@
 			 */
 			href: {
 				type: String,
-				default: 'https://app.franceconnect.gouv.fr/'
+				default: locales.href
 			}
 		}
 	});
@@ -117,25 +112,20 @@
 	export default class FranceConnectBtn extends MixinsDeclaration {
 		locales = locales;
 
-		color = '#034ea2';
-
-		get iconColor(): string {
-			return this.color;
-		}
-
-		set iconColor(color:string){
-            this.color = color;
-		}
-
-		get btnStyle(): IndexedObject{
-			const cursor = 'pointer';
-			return {
-				cursor
-			};
-		}
-
 		urlConnect(): void {
 			window.location.href = this.href;
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+
+	.btnStyle{
+		cursor:pointer;
+		fill: #034ea2
+	}
+
+	.btnStyle:hover{
+		fill: #2183f0;
+	}
+</style>
