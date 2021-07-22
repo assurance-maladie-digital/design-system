@@ -161,7 +161,6 @@
 
 		menu = false;
 		hover = false;
-		isClicked = false;
 
 		menuClassLeftOrRight = '';
 
