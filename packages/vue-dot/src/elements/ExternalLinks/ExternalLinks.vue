@@ -83,7 +83,7 @@
 
 	import { PositionEnum } from './PositionEnum';
 
-	import { ExternalLink, Position } from './types';
+	import { ExternalLink, Position, StylesField } from './types';
 	import { IndexedObject, Refs } from '../../types';
 
 	import { customizable } from '../../mixins/customizable';
@@ -151,7 +151,8 @@
 		// Extend $refs
 		$refs!: Refs<{
 			menu: {
-				calculatedLeft: string;
+				pageWidth: string;
+				styles: StylesField
 			};
 		}>;
 
@@ -188,10 +189,6 @@
 
 		get open(): boolean {
 			return this.menu || this.hover;
-		}
-
-		get menuClass(): string {
-            return `${this.menuClassLeftOrRight}`;
 		}
 
 		get btnTextSpacing(): string {
@@ -256,24 +253,31 @@
 		setMenuClass(): void {
 			const vuetifyThreshold = 12;
 			const position = this.computedPosition.x;
-			const nudge = parseInt(this.$refs.menu.calculatedLeft);
-
+			let nudge = 0;
 			let positionClass = '';
 
-			if (nudge < vuetifyThreshold) {
-				positionClass = ` ${position}-0`;
+			if(position === 'left'){
+				nudge = parseInt(this.$refs.menu.styles.left);
+				if (nudge <= vuetifyThreshold) {
+					positionClass = ` ${position}-0`;
+				}
+			}
+
+			if(position === 'right'){
+				nudge =
+					(parseInt(this.$refs.menu.pageWidth)
+					-parseInt(this.$refs.menu.styles.left)
+					-parseInt(this.$refs.menu.styles.minWidth));
+				if (nudge <= vuetifyThreshold) {
+					positionClass = ` ${position}-0`;
+				}
 			}
 
 			this.menuClass = 'vd-external-links-menu' + positionClass;
 		}
 
-		updated(): void {
-			if(this.isClicked){
-				setTimeout(() => {
-					this.removeMarginLeftOrRight();
-				},100);
-				this.isClicked= false;
-			}
+		setMenuPosition(): void {
+			setTimeout(() => this.setMenuClass());
 		}
 	}
 </script>
