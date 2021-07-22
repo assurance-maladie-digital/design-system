@@ -162,7 +162,7 @@
 		menu = false;
 		hover = false;
 
-		menuClassLeftOrRight = '';
+		menuClass = '';
 
 		get computedPosition(): Position {
 			const [ y, x ] = this.position.split(SPACE_CHARACTER);
