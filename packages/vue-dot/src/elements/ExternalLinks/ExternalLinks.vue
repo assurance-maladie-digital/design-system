@@ -253,14 +253,18 @@
 			return iconMapping[this.computedPosition.x];
 		}
 
-		removeMarginLeftOrRight(): void {
-			const positionClass = this.right ? 'right-0' : 'left-0';
-            const margLeft= this.$refs.menu.calculatedLeft;
-			if(margLeft !== '12px') {
-				this.menuClassLeftOrRight = 'vd-external-links-menu';
-			}else{
-				this.menuClassLeftOrRight = `vd-external-links-menu ${positionClass}`;
+		setMenuClass(): void {
+			const vuetifyThreshold = 12;
+			const position = this.computedPosition.x;
+			const nudge = parseInt(this.$refs.menu.calculatedLeft);
+
+			let positionClass = '';
+
+			if (nudge < vuetifyThreshold) {
+				positionClass = ` ${position}-0`;
 			}
+
+			this.menuClass = 'vd-external-links-menu' + positionClass;
 		}
 
 		updated(): void {
