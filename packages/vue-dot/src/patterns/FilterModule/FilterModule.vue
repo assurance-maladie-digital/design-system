@@ -107,7 +107,7 @@
 			}
 
 			this.$set(this.appliedFilters, this.filterIndex, this.dialogContent);
-			this.$emit('filter-list', this.appliedFilters);
+			this.emitFilterListEvent();
 			this.dialog = false;
 		}
 
@@ -120,7 +120,10 @@
 
 			if (this.filtersCount === 0) {
 				this.resetFilters();
+				return;
 			}
+
+			this.emitFilterListEvent();
 		}
 
 		editFilter(index: number): void {
@@ -131,8 +134,13 @@
 			this.openDialog(index, this.appliedFilters);
 		}
 
+		emitFilterListEvent(): void {
+			this.$emit('filter-list', this.appliedFilters);
+		}
+
 		resetFilters(): void {
 			this.appliedFilters = null;
+			this.emitFilterListEvent();
 		}
 	}
 </script>

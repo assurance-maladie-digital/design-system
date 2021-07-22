@@ -18,7 +18,7 @@ exports[`FormBuilder renders correctly 1`] = `
         <div class="v-input__control">
           <div class="v-input__slot">
             <fieldset aria-hidden="true">
-              <legend style="width: 0px;"><span>​</span></legend>
+              <legend style="width: 0px;"><span class="notranslate">​</span></legend>
             </fieldset>
             <div class="v-text-field__slot"><label for="input-8" class="v-label theme--light" style="left: 0px; position: absolute;">Label du champ</label><input id="input-8" type="text"></div>
           </div>
@@ -39,7 +39,7 @@ exports[`FormBuilder renders correctly 1`] = `
         <div class="v-input__control">
           <div class="v-input__slot">
             <fieldset aria-hidden="true">
-              <legend style="width: 0px;"><span>​</span></legend>
+              <legend style="width: 0px;"><span class="notranslate">​</span></legend>
             </fieldset>
             <div class="v-text-field__slot"><label for="input-13" class="v-label theme--light" style="left: 0px; position: absolute;">Mot de passe</label><input id="input-13" type="password"></div>
             <div class="v-input__append-inner">
@@ -65,7 +65,7 @@ exports[`FormBuilder renders correctly 1`] = `
         <div class="v-input__control">
           <div class="v-input__slot">
             <fieldset aria-hidden="true">
-              <legend style="width: 0px;"><span>​</span></legend>
+              <legend style="width: 0px;"><span class="notranslate">​</span></legend>
             </fieldset>
             <div class="v-text-field__slot"><input mask="###-###" id="input-19" type="text"></div>
           </div>
@@ -86,7 +86,7 @@ exports[`FormBuilder renders correctly 1`] = `
         <div class="v-input__control">
           <div class="v-input__slot">
             <fieldset aria-hidden="true">
-              <legend style="width: 0px;"><span>​</span></legend>
+              <legend style="width: 0px;"><span class="notranslate">​</span></legend>
             </fieldset>
             <div class="v-text-field__slot"><textarea id="input-24" rows="5"></textarea></div>
           </div>
@@ -109,7 +109,7 @@ exports[`FormBuilder renders correctly 1`] = `
           <div class="v-input__control">
             <div class="v-input__slot">
               <fieldset aria-hidden="true">
-                <legend style="width: 0px;"><span>​</span></legend>
+                <legend style="width: 0px;"><span class="notranslate">​</span></legend>
               </fieldset>
               <div class="v-text-field__slot"><label for="input-31" class="v-label theme--light" style="left: 0px; position: absolute;">Date</label><input textfield="[object Object]" id="input-31" type="text"></div>
               <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
@@ -138,7 +138,7 @@ exports[`FormBuilder renders correctly 1`] = `
             <div class="v-input__control">
               <div class="v-input__slot">
                 <fieldset aria-hidden="true">
-                  <legend style="width: 0px;"><span>​</span></legend>
+                  <legend style="width: 0px;"><span class="notranslate">​</span></legend>
                 </fieldset>
                 <div class="v-text-field__slot"><label for="input-42" class="v-label theme--light" style="left: 0px; position: absolute;">Du</label><input textfield="[object Object]" id="input-42" type="text"></div>
                 <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
@@ -160,7 +160,7 @@ exports[`FormBuilder renders correctly 1`] = `
             <div class="v-input__control">
               <div class="v-input__slot">
                 <fieldset aria-hidden="true">
-                  <legend style="width: 0px;"><span>​</span></legend>
+                  <legend style="width: 0px;"><span class="notranslate">​</span></legend>
                 </fieldset>
                 <div class="v-text-field__slot"><label for="input-51" class="v-label theme--light" style="left: 0px; position: absolute;">Au</label><input datepicker="[object Object]" textfield="[object Object]" id="input-51" type="text"></div>
                 <div class="v-input__append-inner"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light v-size--default" aria-label="Ouvrir le calendrier"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="color: rgb(128, 128, 128); caret-color: #808080;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"></path></svg></span></span></button></div>
@@ -188,7 +188,7 @@ exports[`FormBuilder renders correctly 1`] = `
           <div class="v-input__control">
             <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-61" class="v-input__slot">
               <fieldset aria-hidden="true">
-                <legend style="width: 0px;"><span>​</span></legend>
+                <legend style="width: 0px;"><span class="notranslate">​</span></legend>
               </fieldset>
               <div class="v-select__slot"><label for="input-61" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
                 <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-61" readonly="readonly" type="text" aria-readonly="false" autocomplete="off"></div>
@@ -220,7 +220,7 @@ exports[`FormBuilder renders correctly 1`] = `
           <div class="v-input__control">
             <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-70" class="v-input__slot">
               <fieldset aria-hidden="true">
-                <legend style="width: 0px;"><span>​</span></legend>
+                <legend style="width: 0px;"><span class="notranslate">​</span></legend>
               </fieldset>
               <div class="v-select__slot">
                 <div class="v-select__selections"><input id="input-70" readonly="readonly" type="text" aria-readonly="false" autocomplete="off"></div>
@@ -360,7 +360,7 @@ exports[`FormBuilder renders correctly 1`] = `
           <div class="v-input__control">
             <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-108" class="v-input__slot">
               <fieldset aria-hidden="true">
-                <legend style="width: 0px;"><span>​</span></legend>
+                <legend style="width: 0px;"><span class="notranslate">​</span></legend>
               </fieldset>
               <div class="v-select__slot"><label for="input-108" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Votre réponse</label>
                 <div class="v-select__selections"><span tabindex="-1" class="v-chip--select v-chip v-chip--clickable v-chip--no-color theme--light v-size--default"><span class="v-chip__content">9h</span></span><input id="input-108" type="text" autocomplete="off"></div>
@@ -501,7 +501,7 @@ exports[`FormBuilder renders correctly 1`] = `
           <div class="v-input__control">
             <div class="v-input__slot accent">
               <fieldset aria-hidden="true">
-                <legend style="width: 0px;"><span>​</span></legend>
+                <legend style="width: 0px;"><span class="notranslate">​</span></legend>
               </fieldset>
               <div class="v-text-field__slot"><input id="input-157" placeholder="Autre" type="text"></div>
             </div>
@@ -526,7 +526,7 @@ exports[`FormBuilder renders correctly 1`] = `
           <div class="v-input__control">
             <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-163" class="v-input__slot">
               <fieldset aria-hidden="true">
-                <legend style="width: 0px;"><span>​</span></legend>
+                <legend style="width: 0px;"><span class="notranslate">​</span></legend>
               </fieldset>
               <div class="v-select__slot"><label for="input-163" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Classic field</label>
                 <div class="v-select__selections">
@@ -556,7 +556,7 @@ exports[`FormBuilder renders correctly 1`] = `
               <div class="v-input__control">
                 <div class="v-input__slot">
                   <fieldset aria-hidden="true">
-                    <legend style="width: 0px;"><span>​</span></legend>
+                    <legend style="width: 0px;"><span class="notranslate">​</span></legend>
                   </fieldset>
                   <div class="v-text-field__slot"><textarea id="input-169" placeholder="Entrez votre taille" rows="1"></textarea></div>
                 </div>

@@ -18,6 +18,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
+			},
+			{
+				title: 'Glossaire',
+				to: '/demarrer/glossaire'
 			}
 		]
 	},
@@ -64,6 +68,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'FileUpload',
 				to: '/composants/file-upload'
+			},
+			{
+				title: 'FilterModule',
+				to: '/composants/filter-module'
 			},
 			{
 				title: 'FooterWrapper',
