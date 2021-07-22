@@ -17,7 +17,7 @@
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
-				@click="isClicked=true"
+				@click="setMenuPosition"
 				v-on="on"
 			>
 				<span
