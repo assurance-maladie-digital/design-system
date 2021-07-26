@@ -53,12 +53,7 @@ export default {
 		'~/assets/styles/index.scss'
 	],
 	buildModules: [
-		['@nuxt/typescript-build', {
-			typeCheck: {
-				// Fix https://github.com/nuxt/typescript/issues/145
-				typescript: require.resolve('typescript')
-			}
-		}],
+		'@nuxt/typescript-build',
 		'@nuxtjs/vuetify',
 		'@nuxtjs/google-fonts'
 	],
@@ -70,15 +65,7 @@ export default {
 		transpile: [
 			'@cnamts/vue-dot',
 			'@cnamts/form-builder'
-		],
-		// Fix https://github.com/nuxt/nuxt.js/issues/9224
-		babel: {
-			plugins: [
-				['@babel/plugin-proposal-private-methods', {
-					loose: true
-				}]
-			]
-		}
+		]
 	},
 	modules: [
 		'@nuxt/content'
