@@ -38,6 +38,7 @@
   - **RangeField:** Documentation du champ ([#1245](https://github.com/assurance-maladie-digital/design-system/pull/1245)) ([d1a7656](https://github.com/assurance-maladie-digital/design-system/commit/d1a765626dfaafb9a1238fbad1dc5bdeacaf46ea))
   - **FilterModule:** Documentation du composant ([#1257](https://github.com/assurance-maladie-digital/design-system/pull/1257)) ([c5adcc2](https://github.com/assurance-maladie-digital/design-system/commit/c5adcc295beb3e020217b3476e94a3703de6ee2c))
   - **global:** Ajout de la page glossaire ([#1265](https://github.com/assurance-maladie-digital/design-system/pull/1265)) ([d7d427b](https://github.com/assurance-maladie-digital/design-system/commit/d7d427bf7a9f8adc2ecd7488644806572bebedaf))
+  - **global** Ajout de la page variables d’environnement ([#1290](https://github.com/assurance-maladie-digital/design-system/pull/1290)) [7b557f](https://github.com/assurance-maladie-digital/design-system/pull/1290/commits/7b557f90895490a6aa6f4ca547e68c13bfd60d7f)
 
 ### Interne
 
