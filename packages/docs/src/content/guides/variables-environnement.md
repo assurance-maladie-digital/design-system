@@ -13,7 +13,7 @@ Les variables d’environnement sont définies dans le fichier `public/js/config
 window.maVariable = 'Ma valeur'
 ```
 
-Il est est également nécéssaire d’implémenter l’interface globale `Window` dans le fichier `src/global.d.ts`.
+Il est également nécessaire d’implémenter l’interface globale `Window` dans le fichier `src/global.d.ts`.
 
 ```ts
 declare global {
