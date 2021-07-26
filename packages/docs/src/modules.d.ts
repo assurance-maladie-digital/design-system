@@ -2,6 +2,7 @@
 declare module '@cnamts/design-tokens/dist/colors';
 declare module 'vuetify/es5/locale/fr';
 declare module 'vue-input-facade';
+declare module 'languages';
 declare module 'vue-prism-component';
 declare module 'prismjs';
 
