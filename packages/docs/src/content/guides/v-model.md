@@ -5,9 +5,9 @@ description: Création d’un v-model personnalisé.
 
 ## Syntaxe
 
-Il est possible de définir un v-modèle personnalisé.
+Il est possible de définir un v-modèle personnalisé. Il faut utiliser une sytnaxe particulière de [Vue Class Component](https://github.com/vuejs/vue-class-component). 
 
-Il faut ajouter l'attribut `model` dans le décorateur `@Component`, il faut y définir le nom de la prop qui permettra de récupérer la valeur du v-model personnalisé et le nom de l'event.
+Pour cela faut ajouter l'attribut `model` dans le décorateur `@Component`, il faut y définir le nom de la prop qui permettra de récupérer la valeur du v-model personnalisé et le nom de l'event.
 
 ```vue
 <template>
