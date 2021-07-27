@@ -1,6 +1,5 @@
 <template>
 	<VMenu
-		ref="menu"
 		v-model="menu"
 		v-bind="options.menu"
 		:top="bottom"
@@ -83,7 +82,7 @@
 	import { PositionEnum } from './PositionEnum';
 
 	import { ExternalLink, Position } from './types';
-	import { IndexedObject, Refs } from '../../types';
+	import { IndexedObject } from '../../types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -139,11 +138,6 @@
 			fixed: {
 				type: Boolean,
 				default: false
-			},
-			/** Apply to set position's VMenu with 12px: default value of Vuetify */
-			isDefault: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
@@ -152,13 +146,6 @@
 
 	@Component
 	export default class ExternalLinks extends MixinsDeclaration {
-		// Extend $refs
-		$refs!: Refs<{
-			menu: {
-				calculatedLeft: string
-			};
-		}>;
-
 		locales = locales;
 
 		linkIcon = mdiOpenInNew;
@@ -194,11 +181,8 @@
 
 		get menuClass(): string {
 			const positionClass = this.right ? 'right-0' : 'left-0';
-            let contentClass = 'vd-external-links-menu';
-            if(this.isDefault){
-                contentClass = `${contentClass} ${positionClass}`;
-            }
-			return contentClass;
+
+			return `vd-external-links-menu ${positionClass}`;
 		}
 
 		get btnTextSpacing(): string {

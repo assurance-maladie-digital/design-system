@@ -27,13 +27,13 @@ const prompts = [
 	{
 		name: 'cypress',
 		type: 'confirm',
-		message: 'Utiliser Cypress pour les tests d\'interface',
+		message: 'Utiliser Cypress pour les tests d’interface',
 		default: true
 	},
 	{
 		name: 'matomo',
 		type: 'confirm',
-		message: 'Utiliser Matomo pour l\'analyse d\'audience',
+		message: 'Utiliser Matomo pour l’analyse d’audience',
 		default: false
 	},
 	{
