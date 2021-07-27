@@ -259,7 +259,7 @@
 				const nudge = parseInt(this.$refs.menu.styles.left);
 
 				if (nudge <= VUETIFY_THRESHOLD) {
-					positionClass = ` ${position}-0`;
+					positionClass = ' left-0';
 				}
 			}
 
@@ -270,7 +270,7 @@
 				const nudge = pageWidth - left - minWidth;
 
 				if (nudge <= VUETIFY_THRESHOLD) {
-					positionClass = ` ${position}-0`;
+					positionClass = ' right-0';
 				}
 			}
 
