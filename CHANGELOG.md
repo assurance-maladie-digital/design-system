@@ -19,6 +19,11 @@
 - 🔧 **Configuration**
   - **config:** Mise à jour de la taille maximale du build ([#1183](https://github.com/assurance-maladie-digital/design-system/pull/1183)) ([cd82a69](https://github.com/assurance-maladie-digital/design-system/commit/cd82a69f9f284592bdb805aec359ae78080a97db))
 
+### Vue Dash
+
+- ♻️ **Refactoring**
+  - **prompts:** Mise à jour des questions ([#1291](https://github.com/assurance-maladie-digital/design-system/pull/1291))
+
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
