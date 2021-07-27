@@ -3,15 +3,15 @@
 		<VRow
 			no-gutters
 			align="center"
-			class="mb-3"
+			class="mb-1 ml-n4 ml-sm-n8"
 		>
-			<h3 class="font-weight-bold">
+			<h3 class="font-weight-bold flex-grow-0 ml-4 ml-sm-8">
 				{{ title }}
 			</h3>
 
 			<VChip
 				:class="labelColor"
-				class="text-caption ml-4 ml-sm-8 mt-2 mt-sm-0 px-3"
+				class="text-caption white--text mt-2 mt-sm-0 px-3 flex-grow-0 ml-4 ml-sm-8"
 			>
 				{{ labelFromMapping }}
 			</VChip>
