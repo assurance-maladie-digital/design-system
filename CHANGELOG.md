@@ -3,7 +3,6 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-- **ExternalLinks:** Correction de la position du menu ([#1263](https://github.com/assurance-maladie-digital/design-system/pull/1263))([086b76e](https://github.com/assurance-maladie-digital/design-system/pull/1263/commits/086b76e3c280b80fefa8e8ec91e66717cced095c))
   - **SubHeader:** Correction de l'événement `click:list-item` ne fonctionnant pas ([#1203](https://github.com/assurance-maladie-digital/design-system/pull/1203)) ([13056bb](https://github.com/assurance-maladie-digital/design-system/commit/13056bb354fc9860c9def9978630414d040b7f62))
   - **styles:** Correction de la position du curseur de redimensionnement dans les champs de formulaires ([#1212](https://github.com/assurance-maladie-digital/design-system/pull/1212)) ([2314b2e](https://github.com/assurance-maladie-digital/design-system/commit/2314b2eded1063ad9e746e46e5a201b72cece285))
   - **TableToolbar:** Correction de l'espacement du bouton *Ajouter* ([#1214](https://github.com/assurance-maladie-digital/design-system/pull/1214)) ([6cb82bc](https://github.com/assurance-maladie-digital/design-system/commit/6cb82bc01dc5ca913d304d4bc85a470f909b6279))
@@ -11,6 +10,7 @@
   - **ExternalLinks:** Correction de la valeur de la propriété `z-index` du bouton ([#1216](https://github.com/assurance-maladie-digital/design-system/pull/1216)) ([74c7aaf](https://github.com/assurance-maladie-digital/design-system/commit/74c7aaf050806f75e6fd17fefe467756912b033b))
   - **ExternalLinks:** Correction de l'arrondi lorsqu'il n'y a pas de données ([#1217](https://github.com/assurance-maladie-digital/design-system/pull/1217)) ([a49b415](https://github.com/assurance-maladie-digital/design-system/commit/a49b415f4037469c1b718a0f5f6edb210bbba22d))
   - **ExternalLinks:** Correction de l'affichage du bouton en mobile ([#1218](https://github.com/assurance-maladie-digital/design-system/pull/1218)) ([32742b2](https://github.com/assurance-maladie-digital/design-system/commit/32742b28a7fedbdd69b9f885bca415a4fc7a2758))
+- **ExternalLinks:** Correction de la position du menu ([#1263](https://github.com/assurance-maladie-digital/design-system/pull/1263))
 
 - ♻️ **Refactoring**
   - **PaginatedTable:** Modification de la valeur par défaut de la prop `suffix` à `undefined` ([#1205](https://github.com/assurance-maladie-digital/design-system/pull/1205)) ([8df8e55](https://github.com/assurance-maladie-digital/design-system/commit/8df8e55c59fe820e99f0c0722e243f25b5cd9ffc))

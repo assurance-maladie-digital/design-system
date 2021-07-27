@@ -251,24 +251,25 @@
 		}
 
 		setMenuClass(): void {
-			const vuetifyThreshold = 12;
+			const VUETIFY_THRESHOLD = 12;
 			const position = this.computedPosition.x;
-			let nudge = 0;
 			let positionClass = '';
 
-			if(position === 'left'){
-				nudge = parseInt(this.$refs.menu.styles.left);
-				if (nudge <= vuetifyThreshold) {
+			if (position === PositionEnum.LEFT) {
+				const nudge = parseInt(this.$refs.menu.styles.left);
+
+				if (nudge <= VUETIFY_THRESHOLD) {
 					positionClass = ` ${position}-0`;
 				}
 			}
 
-			if(position === 'right'){
-				nudge =
-					(parseInt(this.$refs.menu.pageWidth)
-					-parseInt(this.$refs.menu.styles.left)
-					-parseInt(this.$refs.menu.styles.minWidth));
-				if (nudge <= vuetifyThreshold) {
+			if (position === PositionEnum.RIGHT) {
+				const pageWidth = parseInt(this.$refs.menu.pageWidth, 10);
+				const left = parseInt(this.$refs.menu.styles.left, 10);
+				const minWidth = parseInt(this.$refs.menu.styles.minWidth, 10);
+				const nudge = pageWidth - left - minWidth;
+
+				if (nudge <= VUETIFY_THRESHOLD) {
 					positionClass = ` ${position}-0`;
 				}
 			}
