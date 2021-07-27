@@ -6,7 +6,7 @@
 		<div
 			v-for="(roadmapSection, roadmapSectionIndex) in roadmap"
 			:key="roadmapSectionIndex"
-			class="doc-roadmap-section"
+			class="mt-16"
 		>
 			<h3 class="font-weight-regular grey--text text--darken-2">
 				{{ roadmapSection.label }}
@@ -44,9 +44,3 @@
 		roadmap = roadmap;
 	}
 </script>
-
-<style lang="scss" scoped>
-	.doc-roadmap-section {
-		margin-top: 80px;
-	}
-</style>
