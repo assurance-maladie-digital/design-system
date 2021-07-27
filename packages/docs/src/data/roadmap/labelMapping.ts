@@ -1,20 +1,16 @@
 import { RoadmapLabelMapping } from '~/types/roadmap';
 
 export const labelMapping: RoadmapLabelMapping = {
-	newComponent: {
-		label: 'Nouveau composant',
-		color: 'indigo lighten-2'
+	new: {
+		label: 'Nouveauté',
+		color: 'indigo lighten-1 white--text'
 	},
 	documentation: {
 		label: 'Documentation',
-		color: 'blue lighten-3'
+		color: 'blue white--text'
 	},
-	refonte: {
+	refactoring: {
 		label: 'Refonte',
-		color: 'purple accent-1'
-	},
-	unknown: {
-		label: '??',
-		color: 'grey darken-2'
+		color: 'purple accent-2 white--text'
 	}
 };
