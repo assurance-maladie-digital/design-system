@@ -278,7 +278,8 @@
 		}
 
 		setMenuPosition(): void {
-			setTimeout(() => this.setMenuClass());
+			// Wait until the menu is rendered
+			setTimeout(() => this.setMenuClass(), 100);
 		}
 	}
 </script>
