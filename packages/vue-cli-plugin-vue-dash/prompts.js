@@ -35,12 +35,6 @@ const prompts = [
 		type: 'confirm',
 		message: 'Utiliser Matomo pour l’analyse d’audience',
 		default: false
-	},
-	{
-		name: 'formBuilder',
-		type: 'confirm',
-		message: 'Installer le FormBuilder',
-		default: false
 	}
 ];
 
