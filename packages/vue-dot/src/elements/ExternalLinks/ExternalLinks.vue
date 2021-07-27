@@ -1,5 +1,6 @@
 <template>
 	<VMenu
+		ref="menu"
 		v-model="menu"
 		v-bind="options.menu"
 		:top="bottom"
@@ -16,6 +17,7 @@
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
+				@click="setMenuPosition"
 				v-on="on"
 			>
 				<span
@@ -81,8 +83,8 @@
 
 	import { PositionEnum } from './PositionEnum';
 
-	import { ExternalLink, Position } from './types';
-	import { IndexedObject } from '../../types';
+	import { ExternalLink, Position, StylesField } from './types';
+	import { IndexedObject, Refs } from '../../types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -146,12 +148,22 @@
 
 	@Component
 	export default class ExternalLinks extends MixinsDeclaration {
+		// Extend $refs
+		$refs!: Refs<{
+			menu: {
+				pageWidth: string;
+				styles: StylesField;
+			};
+		}>;
+
 		locales = locales;
 
 		linkIcon = mdiOpenInNew;
 
 		menu = false;
 		hover = false;
+
+		menuClass = '';
 
 		get computedPosition(): Position {
 			const [ y, x ] = this.position.split(SPACE_CHARACTER);
@@ -177,12 +189,6 @@
 
 		get open(): boolean {
 			return this.menu || this.hover;
-		}
-
-		get menuClass(): string {
-			const positionClass = this.right ? 'right-0' : 'left-0';
-
-			return `vd-external-links-menu ${positionClass}`;
 		}
 
 		get btnTextSpacing(): string {
@@ -242,6 +248,38 @@
 			};
 
 			return iconMapping[this.computedPosition.x];
+		}
+
+		setMenuClass(): void {
+			const VUETIFY_THRESHOLD = 12;
+			const position = this.computedPosition.x;
+			let positionClass = '';
+
+			if (position === PositionEnum.LEFT) {
+				const nudge = parseInt(this.$refs.menu.styles.left);
+
+				if (nudge <= VUETIFY_THRESHOLD) {
+					positionClass = ' left-0';
+				}
+			}
+
+			if (position === PositionEnum.RIGHT) {
+				const pageWidth = parseInt(this.$refs.menu.pageWidth, 10);
+				const left = parseInt(this.$refs.menu.styles.left, 10);
+				const minWidth = parseInt(this.$refs.menu.styles.minWidth, 10);
+				const nudge = pageWidth - left - minWidth;
+
+				if (nudge <= VUETIFY_THRESHOLD) {
+					positionClass = ' right-0';
+				}
+			}
+
+			this.menuClass = 'vd-external-links-menu' + positionClass;
+		}
+
+		setMenuPosition(): void {
+			// Wait until the menu is rendered
+			setTimeout(() => this.setMenuClass(), 100);
 		}
 	}
 </script>
