@@ -162,6 +162,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Nouvelle page',
 				to: '/guides/nouvelle-page'
+			},
+			{
+				title: 'v-model personnalisé',
+				to: '/guides/v-model'
 			}
 		]
 	}
