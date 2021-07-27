@@ -24,7 +24,7 @@
 
 - ♻️ **Refactoring**
   - **prompts:** Mise à jour des questions ([#1291](https://github.com/assurance-maladie-digital/design-system/pull/1291)) ([c671596](https://github.com/assurance-maladie-digital/design-system/commit/c671596e77e30a8180f2bb2a197740d09ae549b4))
-
+- **prompts and generator:** Installation du FormBuilder par defaut dans le starterKit([#1298](https://github.com/assurance-maladie-digital/design-system/pull/1298))
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
