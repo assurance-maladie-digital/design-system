@@ -33,13 +33,7 @@
 
 	import { roadmap } from '../../data/roadmap/roadmap';
 
-	import DocRoadmapItem from './DocRoadmapItem.vue';
-
-	@Component({
-		components: {
-			DocRoadmapItem
-		}
-	})
+	@Component
 	export default class DocRoadmap extends Vue {
 		roadmap = roadmap;
 	}

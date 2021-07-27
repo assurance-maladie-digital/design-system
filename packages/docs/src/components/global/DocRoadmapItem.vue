@@ -3,22 +3,26 @@
 		<VRow
 			no-gutters
 			align="center"
-			class="mb-1 ml-n4 ml-sm-n8"
+			class="ma-n1"
 		>
-			<h3 class="font-weight-bold flex-grow-0 ml-4 ml-sm-8">
+			<h3 class="font-weight-bold flex-grow-0 ma-1 mr-2">
 				{{ title }}
 			</h3>
 
 			<VChip
+				v-if="itemLabel"
 				:class="labelColor"
-				class="text-caption white--text mt-2 mt-sm-0 px-3 flex-grow-0 ml-4 ml-sm-8"
+				class="text-caption white--text px-3 flex-grow-0 ma-1"
 			>
-				{{ labelFromMapping }}
+				{{ itemLabel }}
 			</VChip>
 		</VRow>
 
-		<p class="mb-2">
-			{{ description || '…' }}
+		<p
+			v-if="description"
+			class="mt-2 mb-2"
+		>
+			{{ description }}
 		</p>
 
 		<a
@@ -77,7 +81,7 @@
 			return labelMapping[this.label]?.color;
 		}
 
-		get labelFromMapping(): string {
+		get itemLabel(): string | undefined {
 			return labelMapping[this.label]?.label;
 		}
 	}
