@@ -11,6 +11,7 @@
   - **ExternalLinks:** Correction de l'arrondi lorsqu'il n'y a pas de données ([#1217](https://github.com/assurance-maladie-digital/design-system/pull/1217)) ([a49b415](https://github.com/assurance-maladie-digital/design-system/commit/a49b415f4037469c1b718a0f5f6edb210bbba22d))
   - **ExternalLinks:** Correction de l'affichage du bouton en mobile ([#1218](https://github.com/assurance-maladie-digital/design-system/pull/1218)) ([32742b2](https://github.com/assurance-maladie-digital/design-system/commit/32742b28a7fedbdd69b9f885bca415a4fc7a2758))
   - **FilterModule:** Correction des événements manquants ([#1256](https://github.com/assurance-maladie-digital/design-system/pull/1256)) ([195617f](https://github.com/assurance-maladie-digital/design-system/commit/195617fba865fb4900b4291c05a123142c03bddf))
+  - **FranceConnectBtn:** Ajout d'un nouveau composant ([#1268]https://github.com/assurance-maladie-digital/design-system/pull/1268)
 
 - ♻️ **Refactoring**
   - **PaginatedTable:** Modification de la valeur par défaut de la prop `suffix` à `undefined` ([#1205](https://github.com/assurance-maladie-digital/design-system/pull/1205)) ([8df8e55](https://github.com/assurance-maladie-digital/design-system/commit/8df8e55c59fe820e99f0c0722e243f25b5cd9ffc))
