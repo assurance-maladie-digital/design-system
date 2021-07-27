@@ -152,7 +152,7 @@
 		$refs!: Refs<{
 			menu: {
 				pageWidth: string;
-				styles: StylesField
+				styles: StylesField;
 			};
 		}>;
 
