@@ -40,7 +40,7 @@ Pour cela faut ajouter l'attribut `model` dans le décorateur `@Component`, il f
 			event: 'change'
 		}
 	})
-	export default class HelloWorld extends MixinsDeclaration {
+	export default class CustomVModel extends MixinsDeclaration {
 		emitChangeEvent(value: string): void {
 			this.$emit('change', value);
 		}
