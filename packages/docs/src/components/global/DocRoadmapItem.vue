@@ -54,11 +54,11 @@
 			},
 			description: {
 				type: String,
-				default: null
+				default: undefined
 			},
 			issue: {
 				type: String,
-				default: null
+				default: undefined
 			}
 		}
 	});
