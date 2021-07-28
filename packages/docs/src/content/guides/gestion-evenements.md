@@ -15,7 +15,7 @@ Le premier argument de la fonction sera le nom de l’évenement et le second se
 
 ## Récupération depuis le composant parent
 
-Pour attraper un évenement lancé depuis un composant enfant, il faut ajouter une directive du type [`v-on`](https://vuejs.org/v2/api/#v-on) sur le composant enfant. Il est attendu une fonction qui recevra en argument les données émises par le composant enfant dans l’évenement.
+Pour attraper un évenement lancé depuis un composant enfant, il faut ajouter une directive du type [`v-on`](https://vuejs.org/v2/api/#v-on) du nom de l’évenement sur le composant enfant. Il est attendu une fonction qui recevra en argument les données émises par le composant enfant dans l’évenement.
 
 Par exemple, définissons un composant enfant qui contient un formulaire avec un champs de saisie d’un texte, on veut qu’à chaque modification dans la saisie de ce champs, le composant enfant émette un évenement pour envoyer le texte saisi vers le composant parent pour qu’il puisse l’afficher.
 
@@ -42,7 +42,7 @@ Le composant enfant :
     text: string | null = null;
 
     emitChangeEvent(): void {
-      this.$emit('textChange', this.text);
+      this.$emit('text-change', this.text);
     }
   }
 </script>
@@ -53,7 +53,7 @@ Le composant enfant :
 Le nom de l’évenement doit être en kebab-case.
 </doc-alert>
 
-L’évenement s’appelle donc `text-change`, c’est sur cet évenement qu’il faut récupérer dans le composant parent. Pour récupérer l’évenement, on ajoute une directive nommée `textChange`.
+L’évenement s’appelle donc `text-change`, c’est sur cet évenement qu’il faut récupérer dans le composant parent. Pour récupérer l’évenement, on ajoute une directive nommée `text-change`.
 
 Le composant parent :
 
