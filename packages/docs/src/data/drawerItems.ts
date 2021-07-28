@@ -162,6 +162,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Nouvelle page',
 				to: '/guides/nouvelle-page'
+			},
+			{
+				title: 'Store',
+				to: '/guides/store'
 			}
 		]
 	}
