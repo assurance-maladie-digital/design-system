@@ -45,7 +45,7 @@
   - **RangeField:** Documentation du champ ([#1245](https://github.com/assurance-maladie-digital/design-system/pull/1245)) ([d1a7656](https://github.com/assurance-maladie-digital/design-system/commit/d1a765626dfaafb9a1238fbad1dc5bdeacaf46ea))
   - **FilterModule:** Documentation du composant ([#1257](https://github.com/assurance-maladie-digital/design-system/pull/1257)) ([c5adcc2](https://github.com/assurance-maladie-digital/design-system/commit/c5adcc295beb3e020217b3476e94a3703de6ee2c))
   - **global:** Ajout de la page glossaire ([#1265](https://github.com/assurance-maladie-digital/design-system/pull/1265)) ([d7d427b](https://github.com/assurance-maladie-digital/design-system/commit/d7d427bf7a9f8adc2ecd7488644806572bebedaf))
-  - **global:** Ajout de la page gestion des évenements ([#1302](https://github.com/assurance-maladie-digital/design-system/pull/1302)) ([23d09f](https://github.com/assurance-maladie-digital/design-system/commit/23d09fbe9b4fb2d89716c1fc78834371ca540976))
+  - **global:** Ajout de la page gestion des évenements ([#1302](https://github.com/assurance-maladie-digital/design-system/pull/1302)) ([b4ba88](https://github.com/assurance-maladie-digital/design-system/commit/b4ba88d52dfaa7ebf6b1f025f0753f5c13821bba))
 
 ### Interne
 
