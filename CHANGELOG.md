@@ -45,6 +45,7 @@
   - **RangeField:** Documentation du champ ([#1245](https://github.com/assurance-maladie-digital/design-system/pull/1245)) ([d1a7656](https://github.com/assurance-maladie-digital/design-system/commit/d1a765626dfaafb9a1238fbad1dc5bdeacaf46ea))
   - **FilterModule:** Documentation du composant ([#1257](https://github.com/assurance-maladie-digital/design-system/pull/1257)) ([c5adcc2](https://github.com/assurance-maladie-digital/design-system/commit/c5adcc295beb3e020217b3476e94a3703de6ee2c))
   - **global:** Ajout de la page glossaire ([#1265](https://github.com/assurance-maladie-digital/design-system/pull/1265)) ([d7d427b](https://github.com/assurance-maladie-digital/design-system/commit/d7d427bf7a9f8adc2ecd7488644806572bebedaf))
+  - **global:** Ajout de la page roadmap ([#1300](https://github.com/assurance-maladie-digital/design-system/pull/1300))
 
 ### Interne
 
@@ -74,7 +75,7 @@
   - **lint-staged:** Mise à jour vers la `v11.1.1` ([#1289](https://github.com/assurance-maladie-digital/design-system/pull/1289)) ([f36712b](https://github.com/assurance-maladie-digital/design-system/commit/f36712bff984f5ae606a41be285023d693339663))
   - **@types/node:** Mise à jour vers la `v14.17.6` ([#1293](https://github.com/assurance-maladie-digital/design-system/pull/1293)) ([1277b7b](https://github.com/assurance-maladie-digital/design-system/commit/1277b7b3609a28188deaee6a3ed952c5bca9f82d))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.28.5` ([#1296](https://github.com/assurance-maladie-digital/design-system/pull/1296)) ([670a498](https://github.com/assurance-maladie-digital/design-system/commit/670a49821a58a1be6fbadef5ea18dc20d24a121d))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.0.6` ([#1299](https://github.com/assurance-maladie-digital/design-system/pull/1299))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.0.6` ([#1299](https://github.com/assurance-maladie-digital/design-system/pull/1299)) ([ad1da8a](https://github.com/assurance-maladie-digital/design-system/commit/ad1da8a316c94c71a22407ccfb1739f84d2aa95c))
 
 ## v2.0.0-beta.11
 
