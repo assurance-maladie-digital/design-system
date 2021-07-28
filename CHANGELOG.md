@@ -25,6 +25,9 @@
 - ♻️ **Refactoring**
   - **prompts:** Mise à jour des questions ([#1291](https://github.com/assurance-maladie-digital/design-system/pull/1291)) ([c671596](https://github.com/assurance-maladie-digital/design-system/commit/c671596e77e30a8180f2bb2a197740d09ae549b4))
 
+- 🔥 **Suppressions**
+  - **prompts:** Suppression de l'option FormBuilder ([#1298](https://github.com/assurance-maladie-digital/design-system/pull/1298))
+
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
@@ -45,7 +48,7 @@
   - **RangeField:** Documentation du champ ([#1245](https://github.com/assurance-maladie-digital/design-system/pull/1245)) ([d1a7656](https://github.com/assurance-maladie-digital/design-system/commit/d1a765626dfaafb9a1238fbad1dc5bdeacaf46ea))
   - **FilterModule:** Documentation du composant ([#1257](https://github.com/assurance-maladie-digital/design-system/pull/1257)) ([c5adcc2](https://github.com/assurance-maladie-digital/design-system/commit/c5adcc295beb3e020217b3476e94a3703de6ee2c))
   - **global:** Ajout de la page glossaire ([#1265](https://github.com/assurance-maladie-digital/design-system/pull/1265)) ([d7d427b](https://github.com/assurance-maladie-digital/design-system/commit/d7d427bf7a9f8adc2ecd7488644806572bebedaf))
-  - **global:** Ajout de la page roadmap ([#1300](https://github.com/assurance-maladie-digital/design-system/pull/1300))
+  - **global:** Ajout de la page roadmap ([#1300](https://github.com/assurance-maladie-digital/design-system/pull/1300)) ([ae0fd46](https://github.com/assurance-maladie-digital/design-system/commit/ae0fd46d01ef7db9dc559746aa919ddebf0f2dfa))
 
 ### Interne
 
