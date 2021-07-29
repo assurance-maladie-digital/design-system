@@ -49,6 +49,7 @@
   - **FilterModule:** Documentation du composant ([#1257](https://github.com/assurance-maladie-digital/design-system/pull/1257)) ([c5adcc2](https://github.com/assurance-maladie-digital/design-system/commit/c5adcc295beb3e020217b3476e94a3703de6ee2c))
   - **global:** Ajout de la page glossaire ([#1265](https://github.com/assurance-maladie-digital/design-system/pull/1265)) ([d7d427b](https://github.com/assurance-maladie-digital/design-system/commit/d7d427bf7a9f8adc2ecd7488644806572bebedaf))
   - **global:** Ajout de la page roadmap ([#1300](https://github.com/assurance-maladie-digital/design-system/pull/1300)) ([ae0fd46](https://github.com/assurance-maladie-digital/design-system/commit/ae0fd46d01ef7db9dc559746aa919ddebf0f2dfa))
+  - **guides:** Ajout de la page store ([#1301](https://github.com/assurance-maladie-digital/design-system/pull/1301)) ([0108414](https://github.com/assurance-maladie-digital/design-system/commit/0108414868902ee8d3b7519858d26a75830f6492))
 
 ### Interne
 
