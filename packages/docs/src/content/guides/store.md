@@ -17,7 +17,7 @@ Nous allons utiliser la syntaxe TypeScript pour nos exemples, si vous souhaitez 
 
 </doc-alert>
 
-Après avoir [installé Vuex](https://vuex.vuejs.org/fr/installation.html), nous allons créer un store. Commencez par créer, à la racine de votre projet, un fichier `store.ts` ou un dossier `store` qui contiendra un fichier `index.ts`. Dans l'hypothèse de l'sage de modules, nous recommandons l'usage de l'organisation en dossier.
+Après avoir [installé Vuex](https://vuex.vuejs.org/fr/installation.html), nous allons créer un store. Commencez par créer, à la racine de votre projet, un fichier `store.ts` ou un dossier `store` qui contiendra un fichier `index.ts`. Dans l'hypothèse de l'usage de [modules](http://localhost:3000/guides/store#modules), nous recommandons l'usage de l'organisation en dossier.
 
 ```ts
 import Vue from 'vue';
@@ -40,6 +40,8 @@ const store: StoreOptions<RootState> {
 export default New Vuex.store<RootState>(store);
 ```
 
+<br>
+
 Puis dans votre fichier `main.ts`, importez votre store
 
 ```ts
@@ -55,6 +57,8 @@ new Vue({
 	render: (h) => h(App)
 }).$mount('#app');
 ```
+
+<br>
 
 Enfin, dans le fichier `.vue` dans lequel vous souhaitez voir apparaitre la donnée stockée dans le store, ajoutez une propriété `computed` pour consulter le store et retourner la valeur
 
@@ -83,6 +87,10 @@ export default Vue.extend({
 
 ## State
 
+Vuex utilise un arbre d'état unique, c'est-à-dire que cet unique objet contient tout l'état au niveau applicatif et sert de « source de vérité unique ». Cela signifie également que vous n'aurez qu'un seul store pour chaque application. Un arbre d'état unique rend rapide la localisation d'une partie spécifique de l'état et permet de facilement prendre des instantanés de l'état actuel de l'application à des fins de débogage. [voir la documentation `Vuex`](https://vuex.vuejs.org/fr/guide/state.html#state)
+
+
+
 ```ts
 import { RootState } from '@/store/types';
 
@@ -99,6 +107,38 @@ export const state: UserState = {
 } 
 ```
 
+### mapState
+
+```vue
+<template>
+	<div id="app">
+		<h1>{{ username }}</h1>
+	</div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { mapState } from 'vuex';
+
+export default Vue.extend({
+	name: 'App',
+	computed: {
+		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
+		...mapState('user', [ 
+			'username',
+			'email',
+			'lastLogin'
+		]),
+		username: {
+			get(): string {
+				return this.user.username
+			}
+		}
+	}
+});
+</script>
+```
+
 ## Accesseurs
 
 ```ts
@@ -111,6 +151,56 @@ export const getters: GetterTree<UserState, RootState> = {
 		return state;
 	}
 }
+```
+
+<br>
+voici une autre manière de déclarer vos mutations
+
+```ts
+import { GetterTree } from 'vuex';
+import { RootState, UserState } from '@/store/types';
+
+export enum UserGetters {
+	GET_USER_INFOS = 'GET_USER_INFOS'
+}
+
+export const getters: GetterTree<UserState, RootState> = {
+	[UserGetters.GET_USER_INFOS](state): UserState {
+		return state;
+	}
+}
+```
+
+### mapGetters
+
+Voici un exemple d'usage du mapGetters
+
+```vue
+<template>
+	<div id="app">
+		<h1>{{ username }}</h1>
+	</div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { mapGetters } from 'vuex';
+
+export default Vue.extend({
+	name: 'App',
+	computed: {
+		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
+		...mapGetters('user', [ 
+			'getUserInfos'
+		]),
+		username: {
+			get(): string {
+				return this.getUserInfos.username
+			}
+		}
+	}
+});
+</script>
 ```
 
 ## Mutations
@@ -127,6 +217,7 @@ export const mutations: MutationTree<UserState> = {
 }
 ```
 
+<br>
 voici une autre manière de déclarer vos mutations
 
 ```ts
@@ -144,6 +235,43 @@ export const mutations: MutationTree<UserState> = {
 }
 ```
 
+### mapMutations
+
+Voici un exemple d'usage du mapMutations
+
+```vue
+<template>
+	<div id="app">
+		<VBtn
+			oultined
+			@click="editUserName"
+		>
+			Mettre à jour le nom d'utilisateur
+		</VBtn>
+	</div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { mapMutations } from 'vuex';
+
+export default Vue.extend({
+	name: 'App',
+	methods: {
+		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
+		...mapMutations('user', [ 
+			'setUserName'
+		]),
+		editUserName: {
+			set(): void {
+				this.setUserName('nouveau-username');
+			}
+		}
+	}
+});
+</script>
+```
+
 ## Actions
 
 ```ts
@@ -155,15 +283,52 @@ import axios from 'axios';
 
 export const actions: ActionTree<UserState, RootState> = {
 	// Vous pouvez aussi utiliser cette syntaxe: UPDATE_USERNAME pour définir vos setters
-	async updateUserName({ commit }): void {
+	async updateUserName({ commit, userName }): void {
 		try {
-			const res: Promise<object> = await axios.get('your/api/uri');
+			const res: Promise<object> = await axios.get('your/api/uri', userName);
 			commit(UserMutations.SET_USERNAME, res.username as string);
 		} catch(e) {
 			console.log(e)
 		}
 	}
 }
+```
+
+### mapActions
+
+Voici un exemple d'usage du mapActions
+
+```vue
+<template>
+	<div id="app">
+		<VBtn
+			oultined
+			@click="editUserName"
+		>
+			Mettre à jour le nom d'utilisateur
+		</VBtn>
+	</div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { mapActions } from 'vuex';
+
+export default Vue.extend({
+	name: 'App',
+	methods: {
+		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
+		...mapActions('user', [ 
+			'updateUserName'
+		]),
+		editUserName: {
+			set(): void {
+				this.updateUserName('nouveau-username');
+			}
+		}
+	}
+});
+</script>
 ```
 
 ## Modules
@@ -193,7 +358,7 @@ Il vous faudra ensuite importer votre module dans `store/index.ts` pour y avoir 
 
 ```ts
 import Vue from 'vue';
-import Vuex, {StoreOptions} from 'vuex';
+import Vuex, { StoreOptions } from 'vuex';
 
 import { RootState } from '@/store/types';
 import user from '@/store/user';
