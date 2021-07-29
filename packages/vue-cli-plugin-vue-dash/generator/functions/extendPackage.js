@@ -37,6 +37,7 @@ function extendPackage(api, options) {
 		scripts: {},
 		dependencies: {
 			'@cnamts/design-tokens': DesignTokensVersion,
+			'@cnamts/form-builder': FormBuilderVersion,
 			'@cnamts/vue-dot': VueDotVersion,
 			'axios': '^0.21.1',
 			'core-js': '^3.15.0',
@@ -96,10 +97,6 @@ function extendPackage(api, options) {
 
 	if (options.i18n) {
 		newPackageProperties.dependencies['vue-i18n'] = '^8.24.5';
-	}
-
-	if (options.formBuilder) {
-		newPackageProperties.dependencies['@cnamts/form-builder'] = FormBuilderVersion;
 	}
 
 	if (options.vuexPersist) {

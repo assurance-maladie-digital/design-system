@@ -15,6 +15,7 @@ Object {
     "FileUpload",
     "FilterModule",
     "FooterWrapper",
+    "FranceConnectBtn",
     "HeaderLoading",
     "LangBtn",
     "NotificationBar",
