@@ -110,3 +110,9 @@ export { instance as axios };
 ```
 
 Nous avons donc ajouté l’attribut `Authorization`. La valeur du token est précédé du texte `Bearer`, un bearer token est une méthode d’authentification très souvent utilisée.
+
+<doc-alert type="info">
+
+On utilise `store.getter['authentication/getToken']` pour récupérer une valeur du store en dehors d’un composant, pour plus d’informations, consulter l’[utilisation du store](/guides/store).
+
+</doc-alert>
