@@ -84,20 +84,25 @@ export function navigationRedirect(to: Route, from: Route, next: Next): void {
 
 ## Utilisation dans le header d’une requête axios
 
-Il faut maintenant ajouter l’utilisation du token dans l’instance axios qui sera utilisée pour requêter une api `src/plugins/axios.ts` :
+Il faut maintenant ajouter l’utilisation du token dans l’instance axios qui sera utilisée pour requêter une api `src/plugins/axios.ts`. On ajoute un intercepteur qui sur notre instance axios qui va ajouter le token dans les autorisations :
 
 ```typescript
 import axios from 'axios';
 import { store } from '@/store';
 
-const token = store.state.authentication.token;
 
 const instance = axios.create({
 	headers: {
 		'Accept': 'application/json',
 		'Content-Type': 'application/json'
-    Authorization: `Bearer ${token}`
 	}
+});
+
+instance.interceptors.request.use((config: AxiosRequestConfig) => {
+	return {
+		...config.headers,
+		Authorization: `Bearer ${store.getters['authentication/getToken']}`
+	};
 });
 
 export { instance as axios };
