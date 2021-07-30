@@ -16,6 +16,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/installation'
 			},
 			{
+				title: 'Roadmap',
+				to: '/demarrer/roadmap'
+			},
+			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
 			},
