@@ -5,7 +5,7 @@ description:
 
 ## Pour commencer
 
-Le store utilisé dans vue-dot est l'application `Vuex`. Nous reprendrons ici une partie de la documentation de cette aplication, mise en forme pour répondre aux usages de vue-dot. Pour plus d'informations sur `Vuex`, merci de consulter leur [documentation](https://vuex.vuejs.org/fr).
+Le store utilisé dans vue-dot est l’application `Vuex`. Nous reprendrons ici une partie de la documentation de cette aplication, mise en forme pour répondre aux usages de vue-dot. Pour plus d’informations sur `Vuex`, merci de consulter leur [documentation](https://vuex.vuejs.org/fr).
 
 ### Le store le plus simple
 
@@ -13,11 +13,11 @@ Le store utilisé dans vue-dot est l'application `Vuex`. Nous reprendrons ici un
 
 NOTE
 
-Nous allons utiliser la syntaxe TypeScript pour nos exemples, si vous souhaitez en savoir plus sur sur l'usage JavaScript et la syntaxe ES2015, rendez-vous sur la documentation [`Vuex`](https://vuex.vuejs.org/fr/guide/#le-store-le-plus-simple).
+Nous allons utiliser la syntaxe TypeScript pour nos exemples, si vous souhaitez en savoir plus sur sur l’usage JavaScript et la syntaxe ES2015, rendez-vous sur la documentation [`Vuex`](https://vuex.vuejs.org/fr/guide/#le-store-le-plus-simple).
 
 </doc-alert>
 
-Après avoir [installé Vuex](https://vuex.vuejs.org/fr/installation.html), nous allons créer un store. Commencez par créer, à la racine de votre projet, un fichier `store.ts` ou un dossier `store` qui contiendra un fichier `index.ts`. Dans l'hypothèse de l'usage de [modules](http://localhost:3000/guides/store#modules), nous recommandons l'usage de l'organisation en dossier.
+Après avoir [installé Vuex](https://vuex.vuejs.org/fr/installation.html), nous allons créer un store. Commencez par créer, à la racine de votre projet, un fichier `store.ts` ou un dossier `store` qui contiendra un fichier `index.ts`. Dans l’hypothèse de l’usage de [modules](http://localhost:3000/guides/store#modules), nous recommandons l’usage de l’organisation en dossier.
 
 ```ts
 import Vue from 'vue';
@@ -87,7 +87,7 @@ export default Vue.extend({
 
 ## State
 
-Vuex utilise un arbre d'état unique, c'est-à-dire que cet unique objet contient tout l'état au niveau applicatif et sert de « source de vérité unique ». Cela signifie également que vous n'aurez qu'un seul store pour chaque application. Un arbre d'état unique rend rapide la localisation d'une partie spécifique de l'état et permet de facilement prendre des instantanés de l'état actuel de l'application à des fins de débogage. [voir la documentation `Vuex`](https://vuex.vuejs.org/fr/guide/state.html#state)
+Vuex utilise un arbre d’état unique, c’est-à-dire que cet unique objet contient tout l’état au niveau applicatif et sert de « source de vérité unique ». Cela signifie également que vous n’aurez qu’un seul store pour chaque application. Un arbre d’état unique rend rapide la localisation d’une partie spécifique de l’état et permet de facilement prendre des instantanés de l’état actuel de l’application à des fins de débogage. [voir la documentation `Vuex`](https://vuex.vuejs.org/fr/guide/state.html#state)
 
 
 
@@ -173,7 +173,7 @@ export const getters: GetterTree<UserState, RootState> = {
 
 ### mapGetters
 
-Voici un exemple d'usage du mapGetters
+Voici un exemple d’usage du mapGetters
 
 ```vue
 <template>
@@ -237,7 +237,7 @@ export const mutations: MutationTree<UserState> = {
 
 ### mapMutations
 
-Voici un exemple d'usage du mapMutations
+Voici un exemple d’usage du mapMutations
 
 ```vue
 <template>
@@ -246,7 +246,7 @@ Voici un exemple d'usage du mapMutations
 			oultined
 			@click="editUserName"
 		>
-			Mettre à jour le nom d'utilisateur
+			Mettre à jour le nom d’utilisateur
 		</VBtn>
 	</div>
 </template>
@@ -296,7 +296,7 @@ export const actions: ActionTree<UserState, RootState> = {
 
 ### mapActions
 
-Voici un exemple d'usage du mapActions
+Voici un exemple d’usage du mapActions
 
 ```vue
 <template>
@@ -305,7 +305,7 @@ Voici un exemple d'usage du mapActions
 			oultined
 			@click="editUserName"
 		>
-			Mettre à jour le nom d'utilisateur
+			Mettre à jour le nom d’utilisateur
 		</VBtn>
 	</div>
 </template>
