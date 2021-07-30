@@ -166,6 +166,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Nouvelle page',
 				to: '/guides/nouvelle-page'
+			},
+			{
+				title: 'Token d’authentification',
+				to: '/guides/token-authentification'
 			}
 		]
 	}
