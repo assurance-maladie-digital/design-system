@@ -7,7 +7,7 @@ Il est fréquent de devoir utiliser un token d’authentification dans les requ�
 
 ## Récupération du token
 
-Pour commencer il faut récupérer le token d’authentification. Prenons l’exemple que ce token est stocké dans l’URL, l’URL sera alors de la forme :
+Pour commencer il faut récupérer le token d’authentification. Prenons pour exemple que ce token est stocké dans l’URL, celle-ci prendra alors la forme suivante :
 
 ```vue
 https://monsite.fr#access_token=monToken
