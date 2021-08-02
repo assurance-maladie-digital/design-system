@@ -28,6 +28,9 @@
 - 🔥 **Suppressions**
   - **prompts:** Suppression de l'option FormBuilder ([#1298](https://github.com/assurance-maladie-digital/design-system/pull/1298)) ([d759f82](https://github.com/assurance-maladie-digital/design-system/commit/d759f82e4c1d6b0bd3123e1d1b312cfedf2a5bf0))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#1312](https://github.com/assurance-maladie-digital/design-system/pull/1312))
+
 ### FormBuilder
 
 - 🐛 **Corrections de bugs**
@@ -78,7 +81,7 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v7.15.0` ([#1304](https://github.com/assurance-maladie-digital/design-system/pull/1304)) ([8f6fe3e](https://github.com/assurance-maladie-digital/design-system/commit/8f6fe3e08254c8d7082f9168cc2f0173acc52460))
   - **vuetify:** Mise à jour vers la `v2.5.8` ([#1306](https://github.com/assurance-maladie-digital/design-system/pull/1306)) ([cd4a5bd](https://github.com/assurance-maladie-digital/design-system/commit/cd4a5bdb6d4451bf3f29fccf5b566aaeb0a0591f))
   - **eslint:** Mise à jour vers la `v7.32.0` ([#1307](https://github.com/assurance-maladie-digital/design-system/pull/1307)) ([c5f5216](https://github.com/assurance-maladie-digital/design-system/commit/c5f5216edac66ad3fe2ae9749885951aaec7a912))
-  - **@types/node:** Mise à jour vers la `v14.17.7` ([#1309](https://github.com/assurance-maladie-digital/design-system/pull/1309))
+  - **@types/node:** Mise à jour vers la `v14.17.7` ([#1309](https://github.com/assurance-maladie-digital/design-system/pull/1309)) ([f638ade](https://github.com/assurance-maladie-digital/design-system/commit/f638adece272ae11ed95f4d490a7fe468a18d643))
 
 ## v2.0.0-beta.11
 
