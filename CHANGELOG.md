@@ -1,4 +1,8 @@
-## Non publié
+## v2.0.0-beta.12
+
+**Version publiée le 02/08/2021.**
+
+Cette version comporte l'ajout de la documentation et du nouveau composant FranceConnectBtn, ainsi que des correctifs sur Vue Dot et le FormBuilder.
 
 ### Vue Dot
 
@@ -29,7 +33,7 @@
   - **prompts:** Suppression de l'option FormBuilder ([#1298](https://github.com/assurance-maladie-digital/design-system/pull/1298)) ([d759f82](https://github.com/assurance-maladie-digital/design-system/commit/d759f82e4c1d6b0bd3123e1d1b312cfedf2a5bf0))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#1312](https://github.com/assurance-maladie-digital/design-system/pull/1312))
+  - **template:** Mise à jour des dépendances ([#1312](https://github.com/assurance-maladie-digital/design-system/pull/1312)) ([63060ff](https://github.com/assurance-maladie-digital/design-system/commit/63060ffe21f4383be870c5c1d140ed7b452a56d3))
 
 ### FormBuilder
 
@@ -60,6 +64,7 @@
 
 - 📝 **Documentation**
   - **issues:** Mise à jour des templates ([#1202](https://github.com/assurance-maladie-digital/design-system/pull/1202)) ([9338b22](https://github.com/assurance-maladie-digital/design-system/commit/9338b22b5f0a6202a4a3d1b938bef75dce590e3c))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1313](https://github.com/assurance-maladie-digital/design-system/pull/1313))
 
 - ⬆️ **Dépendances**
   - **typescript:** Mise à jour vers la `v4.3.5` ([#1201](https://github.com/assurance-maladie-digital/design-system/pull/1201)) ([c958d51](https://github.com/assurance-maladie-digital/design-system/commit/c958d510657de591daf65ee53936c89d9e7a48cf))
@@ -87,7 +92,7 @@
 
 **Version publiée le 22/06/2021.**
 
-Cette version comporte l'ajout des nouveaux composants `FilterModule` et `ExternalLinks`, ainsi que le nouveau champ de formulaire `RangeField` et plusieurs corrections sur Vue Dot et le FormBuilder.
+Cette version comporte l'ajout des nouveaux composants `FilterModule` et `ExternalLinks`, ainsi que le nouveau champ de formulaire `RangeField` et plusieurs correctifs sur Vue Dot et le FormBuilder.
 
 ### Vue Dot
 
