@@ -27,6 +27,7 @@ Cette version comporte l'ajout de la documentation et du nouveau composant Franc
 ### Vue Dash
 
 - ♻️ **Refactoring**
+ - **prompts:** Mise à jour des questions et ajout des fichiers jenkins file ([#1315](https://github.com/assurance-maladie-digital/design-system/pull/1315))
   - **prompts:** Mise à jour des questions ([#1291](https://github.com/assurance-maladie-digital/design-system/pull/1291)) ([c671596](https://github.com/assurance-maladie-digital/design-system/commit/c671596e77e30a8180f2bb2a197740d09ae549b4))
 
 - 🔥 **Suppressions**
