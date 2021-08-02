@@ -64,6 +64,11 @@ function getResourcesToDelete(options) {
 		},
 		{
 			type: 'folder',
+			path: 'pipeline/',
+			condition: !options.jenkins
+		},
+		{
+			type: 'folder',
 			path: 'public/js/lib',
 			condition: !options.matomo
 		}

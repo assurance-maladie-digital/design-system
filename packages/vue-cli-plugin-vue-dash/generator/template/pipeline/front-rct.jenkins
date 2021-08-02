@@ -1,0 +1,18 @@
+pipeline {
+	agent any
+	options {
+		timeout(time: 1, unit: 'HOURS')
+	}
+	stages {
+		stage('Tag Image to rct') {
+			steps {
+				openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'dev', destStream: "${env.PROJECT}-front", destTag: 'rct', destinationNamespace: "${env.PROJECT}-dev", namespace: "${env.PROJECT}-dev")
+			}
+		}
+		stage('Test Deploy Availability') {
+			steps {
+				openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-rct", namespace: "${env.PROJECT}-dev", waitTime: '10', waitUnit: 'min')
+			}
+		}
+	}
+}
