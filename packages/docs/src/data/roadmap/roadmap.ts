@@ -2,31 +2,13 @@ import { RoadmapSection } from '~/types/roadmap';
 
 export const roadmap: RoadmapSection[] = [
 	{
-		label: 'Prochaine mise en production (02/08/2021) – Version 2.0.0-beta.12',
+		label: 'Prochaine mise en production (30/08/2021) – Version 2.0.0',
 		items: [
-			{
-				title: 'Site de documentation',
-				description: 'Publication de la refonte de la documentation.',
-				label: 'new',
-				issue: '1129'
-			},
 			{
 				title: 'Composant FranceConnectBtn',
 				description: 'Ajout d’un composant permettant de rediriger l’utilisateur vers FranceConnect.',
 				label: 'new',
 				issue: '1221'
-			},
-			{
-				title: 'Page glossaire',
-				description: 'Ajout d’une page pour expliquer la terminologie utilisée dans le Design System.',
-				label: 'documentation',
-				issue: '1235'
-			},
-			{
-				title: 'Documentation du pattern FilterModule',
-				description: 'Ajout de la documentation manquante pour le pattern FilterModule.',
-				label: 'documentation',
-				issue: '1225'
 			},
 			{
 				title: 'Guide sur la gestion des variables d’environnement',
@@ -57,6 +39,18 @@ export const roadmap: RoadmapSection[] = [
 				description: 'Ajout d’un guide expliquant comment récupérer un token JWT et comment l’utiliser.',
 				label: 'documentation',
 				issue: '1281'
+			},
+			{
+				title: 'Principes de design',
+				description: 'Définition des principes de design permettant de garantir la meilleure expérience utilisateur.',
+				label: 'documentation',
+				issue: '1321'
+			},
+			{
+				title: 'Refonte de la page d’accueil',
+				description: 'Suppression de l’ancienne page d’accueil et refonte de la page d’introduction.',
+				label: 'refactoring',
+				issue: '1319'
 			}
 		]
 	},
@@ -117,11 +111,6 @@ export const roadmap: RoadmapSection[] = [
 			{
 				title: 'Visualisation de données',
 				description: 'Définition des différents types de charts.',
-				label: 'documentation'
-			},
-			{
-				title: 'Principes de design',
-				description: 'Définition des principes de design permettant de garantir la meilleure expérience utilisateur.',
 				label: 'documentation'
 			},
 			{
