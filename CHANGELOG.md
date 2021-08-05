@@ -5,6 +5,9 @@
 - 🐛 **Corrections de bugs**
   - **installation:** Correction de l'affichage des `ExpansionPanels` ([#1325](https://github.com/assurance-maladie-digital/design-system/pull/1325)) ([11cfa7c](https://github.com/assurance-maladie-digital/design-system/commit/11cfa7cf7230459e4cffb895a9f8c6a3bc876f20))
 
+- ♻️ **Refactoring**
+  - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330))
+
 - 📝 **Documentation**
   - **roadmap:** Mise à jour de la page ([#1327](https://github.com/assurance-maladie-digital/design-system/pull/1327)) ([853e06b](https://github.com/assurance-maladie-digital/design-system/commit/853e06be8327bee5362681e67911aa0c35a8d76e))
 
@@ -12,7 +15,7 @@
 
 - ⬆️ **Dépendances**
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.29.0` ([#1314](https://github.com/assurance-maladie-digital/design-system/pull/1314)) ([a6bd3e3](https://github.com/assurance-maladie-digital/design-system/commit/a6bd3e3d33f3ee143e61673f81362a6450c3f44e))
-  - **eslint-plugin-vue:** Mise à jour vers la `v7.15.1` ([#1317](https://github.com/assurance-maladie-digital/design-system/pull/1317))
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.15.1` ([#1317](https://github.com/assurance-maladie-digital/design-system/pull/1317)) ([bbb7458](https://github.com/assurance-maladie-digital/design-system/commit/bbb7458a16de66516034ebeaa197738e1d66729d))
 
 ## v2.0.0-beta.12
 

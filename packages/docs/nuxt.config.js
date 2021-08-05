@@ -87,5 +87,8 @@ export default {
 	hooks: {
 		'content:file:beforeParse': transformCodeBlocks,
 		'content:file:beforeInsert': parseMarkdownDescription
+	},
+	router: {
+		middleware: 'homeRedirect'
 	}
 };

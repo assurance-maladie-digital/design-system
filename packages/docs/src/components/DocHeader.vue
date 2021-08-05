@@ -13,19 +13,13 @@
 			@click="emitDrawerEvent"
 		/>
 
-		<RouterLink
-			to="/"
-			nuxt
-			exact
-			aria-label="Accueil"
-			class="doc-header-logo px-2"
-		>
+		<div class="doc-header-logo px-2">
 			<img
 				src="~/assets/logo-am-no-text.svg"
 				alt="l’Assurance Maladie"
 				width="156px"
 			>
-		</RouterLink>
+		</div>
 
 		<VDivider
 			class="d-none d-md-block"
@@ -92,14 +86,6 @@
 		min-width: 172px;
 		display: flex;
 		align-items: center;
-
-		&:not([disabled]):hover {
-			background: #eee;
-		}
-
-		&[disabled] {
-			pointer-events: none;
-		}
 	}
 
 	@media only screen and (max-width: 425px) {
