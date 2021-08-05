@@ -1,3 +1,13 @@
+## Non publié
+
+### Documentation
+
+- 🐛 **Corrections de bugs**
+  - **installation:** Correction de l'affichage des `ExpansionPanels` ([#1325](https://github.com/assurance-maladie-digital/design-system/pull/1325)) ([11cfa7c](https://github.com/assurance-maladie-digital/design-system/commit/11cfa7cf7230459e4cffb895a9f8c6a3bc876f20))
+
+- 📝 **Documentation**
+  - **roadmap:** Mise à jour de la page ([#1327](https://github.com/assurance-maladie-digital/design-system/pull/1327))
+
 ## v2.0.0-beta.12
 
 **Version publiée le 02/08/2021.**
@@ -64,7 +74,7 @@ Cette version comporte l'ajout de la documentation et du nouveau composant Franc
 
 - 📝 **Documentation**
   - **issues:** Mise à jour des templates ([#1202](https://github.com/assurance-maladie-digital/design-system/pull/1202)) ([9338b22](https://github.com/assurance-maladie-digital/design-system/commit/9338b22b5f0a6202a4a3d1b938bef75dce590e3c))
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1313](https://github.com/assurance-maladie-digital/design-system/pull/1313))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1313](https://github.com/assurance-maladie-digital/design-system/pull/1313)) ([d875bfd](https://github.com/assurance-maladie-digital/design-system/commit/d875bfd010fb3b722886d60ddd91f71cd1c51cca))
 
 - ⬆️ **Dépendances**
   - **typescript:** Mise à jour vers la `v4.3.5` ([#1201](https://github.com/assurance-maladie-digital/design-system/pull/1201)) ([c958d51](https://github.com/assurance-maladie-digital/design-system/commit/c958d510657de591daf65ee53936c89d9e7a48cf))
