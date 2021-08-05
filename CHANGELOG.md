@@ -11,7 +11,8 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.29.0` ([#1314](https://github.com/assurance-maladie-digital/design-system/pull/1314))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.29.0` ([#1314](https://github.com/assurance-maladie-digital/design-system/pull/1314)) ([a6bd3e3](https://github.com/assurance-maladie-digital/design-system/commit/a6bd3e3d33f3ee143e61673f81362a6450c3f44e))
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.15.1` ([#1317](https://github.com/assurance-maladie-digital/design-system/pull/1317))
 
 ## v2.0.0-beta.12
 
