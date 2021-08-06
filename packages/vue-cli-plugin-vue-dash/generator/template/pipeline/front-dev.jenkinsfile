@@ -1,0 +1,70 @@
+pipeline {
+    agent any
+    options {
+        timeout(time: 1, unit: 'HOURS')
+    }
+    environment {
+        CLUSTER_ID = 'ge5'
+    }
+
+    stages {
+        stage('Build JS') {
+            steps {
+                echo 'Building...'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                //openshiftBuild(bldCfg: "${env.PROJECT}-front-js-build", showBuildLogs: 'true', namespace: "${env.PROJECT}-dev", waitTime: '30', waitUnit :'min')
+                openshift.withCluster("${env.CLUSTER_ID}") {
+                    openshift.withProject("${env.PROJECT}-dev") {
+                        openshift.startBuild("${env.PROJECT}-front-js-build --wait").logs('-f')
+                    }
+                }
+            }
+        }
+       // stage('Test Build JS Availability') {
+          //  steps {
+                //openshiftVerifyBuild(bldCfg: "${env.PROJECT}-front-js-build", namespace: "${env.PROJECT}-dev")
+       //     }
+        //}
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                // openshiftBuild(bldCfg: "${env.PROJECT}-front-build", showBuildLogs: 'true', namespace: "${env.PROJECT}-dev")
+                openshift.withCluster("${env.CLUSTER_ID}") {
+                    openshift.withProject("${env.PROJECT}-dev") {
+                        openshift.startBuild("${env.PROJECT}-front-build --wait").logs('-f')
+                    }
+                }
+            }
+        }
+        //stage('Test Build Availability') {
+        //    steps {
+        //        openshiftVerifyBuild(bldCfg: "${env.PROJECT}-front-build", namespace: "${env.PROJECT}-dev")
+       //     }
+       // }
+        stage('Deploy Image to dev') {
+            steps {
+                //openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'build', destStream: "${env.PROJECT}-front", destTag: 'dev', destinationNamespace: "${env.PROJECT}-dev", namespace: "${env.PROJECT}-dev")
+                script {
+                    openshift.withCluster("${env.CLUSTER_ID}") {
+                        openshift.tag("${env.PROJECT}-dev/${env.PROJECT}-front:build", "${env.PROJECT}-dev/${env.PROJECT}-front:dev")
+                    }
+                }
+            }
+        }
+        stage('Deploy Availability de dev') {
+            steps {
+                //openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-dev", namespace: "${env.PROJECT}-dev", waitTime: '10', waitUnit: 'min')
+                script {
+                    openshift.withCluster("${env.CLUSTER_ID}") {
+                         openshift.withProject("${env.PROJECT}-dev") {
+                            def dc = openshift.selector('dc', "${env.PROJECT}-front-dev")
+                            // this will wait until the desired replicas are available
+                            dc.rollout().status()
+                         }
+                    }
+                }
+            }
+        }
+    }
+}
