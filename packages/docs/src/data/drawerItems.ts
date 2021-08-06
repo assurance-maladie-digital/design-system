@@ -94,6 +94,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/form-field-list'
 			},
 			{
+				title: 'FranceConnectBtn',
+				to: '/composants/france-connect-btn'
+			},
+			{
 				title: 'HeaderLoading',
 				to: '/composants/header-loading'
 			},
