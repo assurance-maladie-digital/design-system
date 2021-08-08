@@ -11,14 +11,20 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { tokens } from '@cnamts/design-tokens';
 
 	@Component({
 		inheritAttrs: false
 	})
-	export default class FranceConnectBtn extends Vue {
+	export default class FranceConnectBtnUsage extends Vue {
 		defaultProps = {
-			iconText: 'S’identifier avec FranceConnect',
+			iconText: 'S’identifier avec FranceConnect'
+		};
+
+		options = {
+			textFields: [
+				'width',
+				'height'
+			]
 		};
 	}
 </script>
