@@ -3,6 +3,9 @@ pipeline {
 	options {
 		timeout(time: 1, unit: 'HOURS')
 	}
+	environment {
+        CLUSTER_ID = 'ge5'
+    }
 	stages {
 		stage('Build JS') {
 			steps {
