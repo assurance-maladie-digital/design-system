@@ -170,6 +170,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Variables d’environnement',
 				to: '/guides/variables-environnement'
+			},
+			{
+				title: 'v-model personnalisé',
+				to: '/guides/v-model'
 			}
 		]
 	}
