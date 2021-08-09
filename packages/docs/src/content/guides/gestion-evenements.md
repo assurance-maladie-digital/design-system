@@ -1,83 +1,117 @@
 ---
-title: Gestion des évenements
-description: Création et utilisation des évenements entre des composants parent/enfant.
+title: Gestion des événements
+description: Création et utilisation des événements entre des composants parents et enfants.
 ---
 
 ## Création depuis le composant enfant
 
-Il est parfois nécessaire qu’un composant enfant remonte des données au composant parent. Pour cela, on utilise les évenements. On utilise la fonction `this.$emit` depuis le composant enfant pour lancer un évenement.
+Il est parfois nécessaire qu’un composant enfant remonte des données au composant parent. Pour cela, on utilise les événements.
 
-Le premier argument de la fonction sera le nom de l’évenement et le second sera la valeur remontées dan l’évenement (texte, nombre, objet, etc.).
+Pou émettre un événement, vous pouvez utiliser la fonction `this.$emit` depuis le composant enfant :
 
-```vue
-  this.$emit('change', 'value');
+```ts
+this.$emit('change', 'value');
 ```
 
-## Récupération depuis le composant parent
+Le premier argument de la fonction est le nom de l’événement et le second est la valeur remontée dans l’événement (texte, nombre, objet, …).
 
-Pour attraper un évenement lancé depuis un composant enfant, il faut ajouter une directive du type [`v-on`](https://vuejs.org/v2/api/#v-on) du nom de l’évenement sur le composant enfant. Il est attendu une fonction qui recevra en argument les données émises par le composant enfant dans l’évenement.
+## Écoute depuis le composant parent
 
-Par exemple, définissons un composant enfant qui contient un formulaire avec un champs de saisie d’un texte, on veut qu’à chaque modification dans la saisie de ce champs, le composant enfant émette un évenement pour envoyer le texte saisi vers le composant parent pour qu’il puisse l’afficher.
-
-Le composant enfant :
+Pour écouter un événement lancé depuis un composant enfant, vous pouvez utiliser directive [`v-on`](https://vuejs.org/v2/api/#v-on) sur le composant enfant :
 
 ```vue
-<template>
-  <div>
-    <VTextField
-      v-model="value"
-      class="vd-form-input"
-      label="Texte"
-      @change="emitChangeEvent"
-    />
-  </div>
-</template>
-
-<script lang="ts">
-  import Vue from 'vue';
-  import Component from 'vue-class-component';
-
-  @Component
-  export default class ComposantEnfant extends Vue {
-    text: string | null = null;
-
-    emitChangeEvent(): void {
-      this.$emit('text-change', this.text);
-    }
-  }
-</script>
-
+<VTextField @change="emitChangeEvent" />
 ```
 
 <doc-alert type="info">
-Le nom de l’évenement doit être en kebab-case.
+
+Pour améliorer la lisibilité du code, nous utilisons la [syntaxe abrégée](https://fr.vuejs.org/v2/guide/syntax.html#Abreviation-pour-v-on).
+
 </doc-alert>
 
-L’évenement s’appelle donc `text-change`, c’est sur cet évenement qu’il faut récupérer dans le composant parent. Pour récupérer l’évenement, on ajoute une directive nommée `text-change`.
+La valeur de la directive peut être une fonction qui recevra alors en argument la donnée émise par le composant enfant contenue dans l’événement.
 
-Le composant parent :
+Par exemple, vous pouvez définir un composant enfant qui contient un champ de saisie de texte :
 
 ```vue
 <template>
-  <div>
-    <ComposantEnfant @text-change="onTextChange" />
-
-    <p v-if="text">{{ text }}</p>
-  </div>
+	<div>
+		<VTextField
+			v-model="value"
+			label="Nom"
+			class="vd-form-input"
+		/>
+	</div>
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  import Component from 'vue-class-component';
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-  @Component
-  export default class ComposantParent extends Vue {
-    text: string | null = null;
-
-    onTextChange(text: string): void {
-      this.text = text;
-    }
-  }
+	@Component
+	export default class ChildComponent extends Vue {
+		value: string | null = null;
+	}
 </script>
+```
 
+Ensuite, vous pouvez ajouter la fonction `emitChangeEvent` qui va émettre l’événement `change` avec la valeur saisie dans le champ texte :
+
+```vue
+<template>
+	<div>
+		<VTextField
+			v-model="value"
+			label="Nom"
+			class="vd-form-input"
+			@change="emitChangeEvent"
+		/>
+	</div>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	@Component
+	export default class ChildComponent extends Vue {
+		value: string | null = null;
+
+		emitChangeEvent(): void {
+			this.$emit('change', this.value);
+		}
+	}
+</script>
+```
+
+<doc-alert type="info">
+Le nom de l’événement doit être en kebab-case.
+</doc-alert>
+
+L’événement s’appelle `change`, c’est celui-ci qu’il faut écouter dans le composant parent :
+
+```vue
+<template>
+	<div>
+		<ComposantEnfant @change="textUpdated" />
+
+		<p v-if="text">
+			{{ text }}
+		</p>
+	</div>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	@Component
+	export default class ParentComponent extends Vue {
+		text: string | null = null;
+
+		textUpdated(text: string): void {
+			this.text = formatText(text);
+		}
+	}
+</script>
 ```
