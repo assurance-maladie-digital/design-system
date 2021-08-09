@@ -12,7 +12,11 @@ let wrapper: Wrapper<Vue>;
 describe('FranceConnectBtn', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(FranceConnectBtn);
+		wrapper = mountComponent(FranceConnectBtn, {
+			propsData: {
+				href: 'https://app.franceconnect.gouv.fr/'
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
