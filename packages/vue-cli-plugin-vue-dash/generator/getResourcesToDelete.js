@@ -69,7 +69,7 @@ function getResourcesToDelete(options) {
 		},
 		{
 			type: 'folder',
-			path: 'public/js/lib',
+			path: 'public/js/lib/',
 			condition: !options.matomo
 		}
 	];

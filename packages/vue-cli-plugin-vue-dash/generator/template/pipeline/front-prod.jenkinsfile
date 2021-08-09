@@ -4,15 +4,15 @@ pipeline {
 		timeout(time: 1, unit: 'HOURS')
 	}
 	environment {
-        CLUSTER_ID = 'ge5'
-    }
+		CLUSTER_ID = 'ge5'
+	}
 	stages {
-		stage('Deploy Image to prod') {
+		stage('Deploy image to prod') {
 			steps {
 				openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'val', destStream: "${env.PROJECT}-front", destTag: 'prod', destinationNamespace: "${env.PROJECT}-val", namespace: "${env.PROJECT}-val")
 			}
 		}
-		stage('Deploy Availability') {
+		stage('Test deploy availability') {
 			steps {
 				openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-prod", namespace: "${env.PROJECT}-prod", waitTime: '10', waitUnit: 'min')
 			}

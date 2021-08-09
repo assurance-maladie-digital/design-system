@@ -5,6 +5,11 @@
 - ♻️ **Refactoring**
   - **FranceConnectBtn:** Suppression de la valeur par défaut de la prop `href` ([#1333](https://github.com/assurance-maladie-digital/design-system/pull/1333))
 
+### Vue Dash
+
+- ✨ **Nouvelles fonctionnalités**
+  - **prompts:** Ajout de l'option Jenkins files ([#1315](https://github.com/assurance-maladie-digital/design-system/pull/1315)) ([a9f751c](https://github.com/assurance-maladie-digital/design-system/commit/a9f751c7b1e3bdebab5a23394f1557737d876260))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**
@@ -52,7 +57,6 @@ Cette version comporte l'ajout de la documentation et du nouveau composant Franc
 ### Vue Dash
 
 - ♻️ **Refactoring**
- - **prompts:** Mise à jour des questions et ajout des fichiers jenkins file ([#1315](https://github.com/assurance-maladie-digital/design-system/pull/1315))
   - **prompts:** Mise à jour des questions ([#1291](https://github.com/assurance-maladie-digital/design-system/pull/1291)) ([c671596](https://github.com/assurance-maladie-digital/design-system/commit/c671596e77e30a8180f2bb2a197740d09ae549b4))
 
 - 🔥 **Suppressions**

@@ -3,9 +3,9 @@ pipeline {
 	options {
 		timeout(time: 1, unit: 'HOURS')
 	}
-    environment {
-        CLUSTER_ID = 'ge5'
-    }
+	environment {
+		CLUSTER_ID = 'ge5'
+	}
 	stages {
 		stage('Build JS') {
 			steps {
@@ -14,7 +14,7 @@ pipeline {
 				openshiftBuild(bldCfg: "${env.PROJECT}-front-js-build", showBuildLogs: 'true', namespace: "${env.PROJECT}-dev", waitTime: '30', waitUnit: 'min')
 			}
 		}
-		stage('Test JS Build Availability') {
+		stage('Test JS build availability') {
 			steps {
 				openshiftVerifyBuild(bldCfg: "${env.PROJECT}-front-js-build", namespace: "${env.PROJECT}-dev")
 			}
@@ -26,17 +26,17 @@ pipeline {
 				openshiftBuild(bldCfg: "${env.PROJECT}-front-build", showBuildLogs: 'true', namespace: "${env.PROJECT}-dev")
 			}
 		}
-		stage('Test Build Availability') {
+		stage('Test build availability') {
 			steps {
 				openshiftVerifyBuild(bldCfg: "${env.PROJECT}-front-build", namespace: "${env.PROJECT}-dev")
 			}
 		}
-		stage('Deploy Image to dev') {
+		stage('Deploy image to dev') {
 			steps {
 				openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'build', destStream: "${env.PROJECT}-front", destTag: 'dev', destinationNamespace: "${env.PROJECT}-dev", namespace: "${env.PROJECT}-dev")
 			}
 		}
-		stage('Test Deploy Availability') {
+		stage('Test deploy availability') {
 			steps {
 				openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-dev", namespace: "${env.PROJECT}-dev", waitTime: '10', waitUnit: 'min')
 			}
