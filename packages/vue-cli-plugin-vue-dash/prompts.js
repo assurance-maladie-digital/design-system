@@ -15,31 +15,25 @@ const prompts = [
 	{
 		name: 'i18n',
 		type: 'confirm',
-		message: 'Utiliser Vue i18n (pour l\'internationalisation)',
+		message: 'Utiliser Vue i18n pour gérer les textes de l’application',
 		default: true
 	},
 	{
 		name: 'vuexPersist',
 		type: 'confirm',
-		message: 'Utiliser Vuex Persist',
+		message: 'Utiliser Vuex Persist pour persister le store',
 		default: true
 	},
 	{
 		name: 'cypress',
 		type: 'confirm',
-		message: 'Utiliser cypress pour les tests d\'interface',
+		message: 'Utiliser Cypress pour les tests d’interface',
 		default: true
 	},
 	{
 		name: 'matomo',
 		type: 'confirm',
-		message: 'Installer Matomo (pour les analyses d\'audience)',
-		default: false
-	},
-	{
-		name: 'formBuilder',
-		type: 'confirm',
-		message: 'Installer le FormBuilder',
+		message: 'Utiliser Matomo pour l’analyse d’audience',
 		default: false
 	}
 ];

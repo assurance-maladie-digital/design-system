@@ -66,11 +66,6 @@ function getResourcesToDelete(options) {
 			type: 'folder',
 			path: 'public/js/lib',
 			condition: !options.matomo
-		},
-		{
-			type: 'file',
-			path: 'src/plugins/form-builder.ts',
-			condition: !options.formBuilder
 		}
 	];
 }
