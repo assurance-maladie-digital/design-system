@@ -16,6 +16,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/installation'
 			},
 			{
+				title: 'Roadmap',
+				to: '/demarrer/roadmap'
+			},
+			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
 			},
@@ -164,8 +168,16 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/nouvelle-page'
 			},
 			{
-				title: 'Gestion des évenements',
+				title: 'Variables d’environnement',
+				to: '/guides/variables-environnement'
+			},
+			{
+				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
+			},
+			{
+				title: 'v-model personnalisé',
+				to: '/guides/v-model'
 			}
 		]
 	}

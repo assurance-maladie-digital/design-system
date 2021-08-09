@@ -37,26 +37,27 @@ function extendPackage(api, options) {
 		scripts: {},
 		dependencies: {
 			'@cnamts/design-tokens': DesignTokensVersion,
+			'@cnamts/form-builder': FormBuilderVersion,
 			'@cnamts/vue-dot': VueDotVersion,
 			'axios': '^0.21.1',
-			'core-js': '^3.15.0',
+			'core-js': '^3.16.0',
 			'custom-event-polyfill': '^1.0.7',
-			'dayjs': '^1.10.5',
+			'dayjs': '^1.10.6',
 			'languages': '^0.1.3',
 			'vue': '^2.6.14',
 			'vue-input-facade': '^1.3.6',
 			'vue-meta': '^2.4.0',
 			'vue-router': '^3.5.2',
-			'vuetify': '^2.5.4',
+			'vuetify': '^2.5.8',
 			'vuex': '^3.6.2'
 		},
 		devDependencies: {
-			'@babel/core': '^7.14.6',
+			'@babel/core': '^7.14.8',
 			'@mdi/js': '^5.9.55',
-			'@types/jest': '^26.0.23',
-			'@types/webfontloader': '^1.6.32',
-			'@typescript-eslint/eslint-plugin': '^4.28.0',
-			'@typescript-eslint/parser': '^4.28.0',
+			'@types/jest': '^26.0.24',
+			'@types/webfontloader': '^1.6.33',
+			'@typescript-eslint/eslint-plugin': '^4.28.5',
+			'@typescript-eslint/parser': '^4.28.5',
 			'@vue/cli-plugin-babel': '~4.5.13',
 			'@vue/cli-plugin-eslint': '~4.5.13',
 			'@vue/cli-plugin-router': '~4.5.13',
@@ -64,18 +65,18 @@ function extendPackage(api, options) {
 			'@vue/cli-plugin-unit-jest': '~4.5.13',
 			'@vue/cli-plugin-vuex': '~4.5.13',
 			'@vue/cli-service': '~4.5.13',
-			'@vue/eslint-config-standard': '^6.0.0',
+			'@vue/eslint-config-standard': '^6.1.0',
 			'@vue/eslint-config-typescript': '^7.0.0',
-			'@vue/test-utils': '^1.2.1',
-			'eslint': '^7.29.0',
+			'@vue/test-utils': '^1.2.2',
+			'eslint': '^7.32.0',
 			'eslint-plugin-import': '^2.23.4',
 			'eslint-plugin-node': '^11.1.0',
 			'eslint-plugin-promise': '^5.1.0',
-			'eslint-plugin-vue': '^7.11.1',
+			'eslint-plugin-vue': '^7.15.0',
 			'jest-serializer-vue': '^2.0.2',
 			'sass': '1.32.13', // @see https://github.com/vuetifyjs/vuetify/issues/13694
 			'sass-loader': '^10.2.0',
-			'typescript': '~4.3.4',
+			'typescript': '~4.3.5',
 			'vue-class-component': '^7.2.6',
 			'vue-cli-plugin-vuetify': '^2.4.1',
 			'vue-template-compiler': '^2.6.14',
@@ -95,11 +96,7 @@ function extendPackage(api, options) {
 	};
 
 	if (options.i18n) {
-		newPackageProperties.dependencies['vue-i18n'] = '^8.24.5';
-	}
-
-	if (options.formBuilder) {
-		newPackageProperties.dependencies['@cnamts/form-builder'] = FormBuilderVersion;
+		newPackageProperties.dependencies['vue-i18n'] = '^8.25.0';
 	}
 
 	if (options.vuexPersist) {
@@ -116,7 +113,7 @@ function extendPackage(api, options) {
 		newPackageProperties.scripts['test:e2e'] = 'vue-cli-service test:e2e --headless';
 		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e';
 
-		newPackageProperties.resolutions['cypress'] = '^7.5.0';
+		newPackageProperties.resolutions['cypress'] = '^8.1.0';
 	}
 
 	api.extendPackage(newPackageProperties);
