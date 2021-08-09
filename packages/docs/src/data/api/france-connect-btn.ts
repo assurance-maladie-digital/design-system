@@ -4,29 +4,35 @@ export const api: Api = {
 	FranceConnectBtn: {
 		props: [
 			{
-				name: 'iconText',
+				name: 'href',
+				type: 'string',
+				required: true,
+				description: 'L’URL de connexion à FranceConnect.'
+			},
+			{
+				name: 'icon-text',
 				type: 'string',
 				default: `'S’identifier avec FranceConnect'`,
-				description: 'Donner un titre au bouton.',
+				description: 'Le label accessible du bouton.',
 			},
 			{
 				name: 'width',
-				type: '[string, number]',
+				type: [
+					'string',
+					'number'
+				],
 				default: 300,
-				description: 'Définir une largeur du bouton.'
+				description: 'La largeur du bouton.'
 			},
 			{
 				name: 'height',
-				type: '[string, number]',
+				type: [
+					'string',
+					'number'
+				],
 				default: 78,
-				description: 'Définir une hauteur.'
-			},
-			{
-				name: 'href',
-				type: 'string',
-				default: `'https://app.franceconnect.gouv.fr/'`,
-				description: 'Définir le lien d\'accès.'
+				description: 'La hauteur du bouton.'
 			}
-		],
+		]
 	}
 };

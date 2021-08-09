@@ -1,6 +1,6 @@
 ---
 title: FranceConnectBtn
-description: L’élément `FranceConnectBtn` est utilisé pour permettre aux internautes de pouvoir se diriger vers le portail de connexion de FranceConnect.
+description: L’élément `FranceConnectBtn` est utilisé pour afficher un bouton de connexion à FranceConnect.
 ---
 
 <doc-tabs>

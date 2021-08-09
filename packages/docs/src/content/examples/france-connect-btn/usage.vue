@@ -1,7 +1,7 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
 		<FranceConnectBtn
-		    v-bind="$attrs"
+			v-bind="$attrs"
 			v-on="$listeners"
 		/>
 	</div>
@@ -11,17 +11,24 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-
 	@Component({
 		inheritAttrs: false
 	})
 	export default class FranceConnectBtnUsage extends Vue {
 		defaultProps = {
-			iconText: 'S’identifier avec FranceConnect'
+			href: 'https://app.franceconnect.gouv.fr/',
+			width: 300,
+			height: 78
 		};
+
+		propsHiddenByDefault = [
+			'width',
+			'height'
+		];
 
 		options = {
 			textFields: [
+				'href',
 				'width',
 				'height'
 			]
