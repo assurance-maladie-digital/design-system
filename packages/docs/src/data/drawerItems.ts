@@ -170,6 +170,18 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Nouvelle page',
 				to: '/guides/nouvelle-page'
+			},
+			{
+				title: 'Variables d’environnement',
+				to: '/guides/variables-environnement'
+			},
+			{
+				title: 'Gestion des événements',
+				to: '/guides/gestion-evenements'
+			},
+			{
+				title: 'v-model personnalisé',
+				to: '/guides/v-model'
 			}
 		]
 	}
