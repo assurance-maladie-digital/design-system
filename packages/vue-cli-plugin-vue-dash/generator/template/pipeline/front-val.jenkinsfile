@@ -1,0 +1,42 @@
+pipeline {
+	agent any
+	options {
+		timeout(time: 1, unit: 'HOURS')
+	}
+	stages {
+		stage('Build JS') {
+			steps {
+				echo 'Building...'
+				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+				openshiftBuild(bldCfg: "${env.PROJECT}-front-js-build", showBuildLogs: 'true', namespace: "${env.PROJECT}-val", waitTime: '30', waitUnit: 'min')
+			}
+		}
+		stage('Test JS build availability') {
+			steps {
+				openshiftVerifyBuild(bldCfg: "${env.PROJECT}-front-js-build", namespace: "${env.PROJECT}-val")
+			}
+		}
+		stage('Build') {
+			steps {
+				echo 'Building...'
+				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+				openshiftBuild(bldCfg: "${env.PROJECT}-front-build", showBuildLogs: 'true', namespace: "${env.PROJECT}-val")
+			}
+		}
+		stage('Test build availability') {
+			steps {
+				openshiftVerifyBuild(bldCfg: "${env.PROJECT}-front-build", namespace: "${env.PROJECT}-val")
+			}
+		}
+		stage('Deploy image to val') {
+			steps {
+				openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'build', destStream: "${env.PROJECT}-front", destTag: 'val', destinationNamespace: "${env.PROJECT}-val", namespace: "${env.PROJECT}-val")
+			}
+		}
+		stage('Test deploy availability') {
+			steps {
+				openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-val", namespace: "${env.PROJECT}-val", waitTime: '10', waitUnit: 'min')
+			}
+		}
+	}
+}
