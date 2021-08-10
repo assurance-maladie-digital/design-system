@@ -35,13 +35,11 @@ Par exemple, vous pouvez définir un composant enfant qui contient un champ de s
 
 ```vue
 <template>
-	<div>
-		<VTextField
-			v-model="value"
-			label="Nom"
-			class="vd-form-input"
-		/>
-	</div>
+	<VTextField
+		v-model="value"
+		label="Nom"
+		class="vd-form-input"
+	/>
 </template>
 
 <script lang="ts">
@@ -59,14 +57,12 @@ Ensuite, vous pouvez ajouter la fonction `emitChangeEvent` qui va émettre l’�
 
 ```vue
 <template>
-	<div>
-		<VTextField
-			v-model="value"
-			label="Nom"
-			class="vd-form-input"
-			@change="emitChangeEvent"
-		/>
-	</div>
+	<VTextField
+		v-model="value"
+		label="Nom"
+		class="vd-form-input"
+		@change="emitChangeEvent"
+	/>
 </template>
 
 <script lang="ts">
