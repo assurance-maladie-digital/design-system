@@ -182,6 +182,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'v-model personnalisé',
 				to: '/guides/v-model'
+			},
+			{
+				title: 'Authentification avec token',
+				to: '/guides/authentification-token'
 			}
 		]
 	}
