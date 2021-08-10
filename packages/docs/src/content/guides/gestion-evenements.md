@@ -7,7 +7,7 @@ description: Création et utilisation des événements entre des composants pare
 
 Il est parfois nécessaire qu’un composant enfant remonte des données au composant parent. Pour cela, on utilise les événements.
 
-Pou émettre un événement, vous pouvez utiliser la fonction `this.$emit` depuis le composant enfant :
+Pour émettre un événement, vous pouvez utiliser la fonction `this.$emit` depuis le composant enfant :
 
 ```ts
 this.$emit('change', 'value');

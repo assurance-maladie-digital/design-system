@@ -14,7 +14,7 @@ https://example.com#access_token=monToken
 <doc-alert type="info">
 
 L’URL est écrite comme pour des paramètres GET, mais le caractère `?`, indiquant le début des paramètres, est remplacé par le caractère `#`, indiquant une ancre.<br>
-Le navigateur ne transmettra pas le contenu de l’ancre au serveur et n’enverra donc pas le token, ce qui poserait un risque en terme de sécurité.
+Le navigateur ne transmettra pas le contenu de l’ancre au serveur, ce qui permettra de ne pas logger le contenu du token pour éviter un risque en terme de sécurité.
 
 </doc-alert>
 
@@ -52,7 +52,7 @@ Vous devez définir le module `authentication` du store, pour cela vous pouvez c
 
 Cette fonction prend en paramètre les propriétés `to` et `from` de [Vue Router](https://router.vuejs.org/fr/guide/advanced/navigation-guards.html) ainsi que la fonction `next`, qui permet de naviguer vers la prochaine route.
 
-Elle sera appelée pour chaque route depuis le fichier `src/router/navigationRedirectGuard.ts` :
+Elle sera appelée depuis le fichier `src/router/navigationRedirectGuard.ts` lorsque l’on voudra connecter l’utilisateur :
 
 ```ts
 import { Route } from 'vue-router';
@@ -63,7 +63,7 @@ import { MAINTENANCE_ENABLED } from '@/constants';
 
 export function navigationRedirectGuard(to: Route, from: Route, next: Next): void {
 	if (MAINTENANCE_ENABLED) {
-		// Avoid infinite loop
+		// Avoid infinite loop if route name is maintenance
 		if ('maintenance' !== to.name) {
 			next({ name: 'maintenance' });
 		} else {
@@ -81,7 +81,7 @@ export function navigationRedirectGuard(to: Route, from: Route, next: Next): voi
 
 ## Utilisation dans le header d’une requête axios
 
-Pour utiliser le token lors d’appels API, on peut ajouter le header `Authorization` sur l’instance axios, avec comme valeur le token d’authentification. Vous pouvez modifier la fonction `authenticate` :
+Pour utiliser le token lors d’appels API, on peut ajouter le header `Authorization` sur l’instance axios, ce qui ajoutera le header sur tous les appels effectués avec cette instance, avec comme valeur le token d’authentification. Vous pouvez modifier la fonction `authenticate` :
 
 ```ts
 // …
