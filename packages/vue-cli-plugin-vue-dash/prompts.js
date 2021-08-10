@@ -31,6 +31,12 @@ const prompts = [
 		default: true
 	},
 	{
+		name: 'jenkins',
+		type: 'confirm',
+		message: 'Utiliser la configuration Jenkins par défaut',
+		default: true
+	},
+	{
 		name: 'matomo',
 		type: 'confirm',
 		message: 'Utiliser Matomo pour l’analyse d’audience',
