@@ -89,7 +89,12 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Title of the button */
+			/** Link URL */
+			href: {
+				type: String,
+				required: true
+			},
+			/** Label of the button */
 			iconText: {
 				type: String,
 				default: locales.btnText
@@ -103,11 +108,6 @@
 			height: {
 				type: [Number, String],
 				default: 78
-			},
-			/** Link URL */
-			href: {
-				type: String,
-				default: 'https://app.franceconnect.gouv.fr/'
 			}
 		}
 	});
