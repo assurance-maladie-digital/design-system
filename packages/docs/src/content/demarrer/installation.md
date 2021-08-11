@@ -52,6 +52,12 @@ Utilisation de [Cypress](https://www.cypress.io/) pour les tests d’interface (
 
 </doc-expansion-panel>
 
+<doc-expansion-panel label="Utiliser la configuration Jenkins par défaut ?">
+
+Utilisation de [Jenkins](https://www.jenkins.io/) pour le déploiement et l’intégration continue.
+
+</doc-expansion-panel>
+
 <doc-expansion-panel label="Utiliser Matomo pour l’analyse d’audience ?">
 
 Utilisation de [Matomo](https://fr.matomo.org/) pour l’analyse d’audience.
