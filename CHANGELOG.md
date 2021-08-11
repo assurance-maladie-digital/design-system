@@ -18,6 +18,9 @@
 - ♻️ **Refactoring**
   - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330)) ([7ef81d5](https://github.com/assurance-maladie-digital/design-system/commit/7ef81d57c327f3cea2c2cca082e6fe1b592176ea))
 
+- 🔧 **Configuration**
+  - **config:** Ajout de l'option `--fail-on-error` à la commande `yarn generate` ([#1338](https://github.com/assurance-maladie-digital/design-system/pull/1338))
+
 - 📝 **Documentation**
   - **roadmap:** Mise à jour de la page ([#1327](https://github.com/assurance-maladie-digital/design-system/pull/1327)) ([853e06b](https://github.com/assurance-maladie-digital/design-system/commit/853e06be8327bee5362681e67911aa0c35a8d76e))
   - **guides** Ajout du guide sur la gestion des variables d'environnement ([#1290](https://github.com/assurance-maladie-digital/design-system/pull/1290)) ([1d7def8](https://github.com/assurance-maladie-digital/design-system/commit/1d7def8c9a54db3c03faa82a9d85fc6d27e7a951))
@@ -33,7 +36,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.29.0` ([#1314](https://github.com/assurance-maladie-digital/design-system/pull/1314)) ([a6bd3e3](https://github.com/assurance-maladie-digital/design-system/commit/a6bd3e3d33f3ee143e61673f81362a6450c3f44e))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.15.1` ([#1317](https://github.com/assurance-maladie-digital/design-system/pull/1317)) ([bbb7458](https://github.com/assurance-maladie-digital/design-system/commit/bbb7458a16de66516034ebeaa197738e1d66729d))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.2` ([#1323](https://github.com/assurance-maladie-digital/design-system/pull/1323)) ([a4f7c94](https://github.com/assurance-maladie-digital/design-system/commit/a4f7c946a318590a8b8214de56467887feef03c3))
-  - **@types/node:** Mise à jour vers la `v14.17.9` ([#1324](https://github.com/assurance-maladie-digital/design-system/pull/1324))
+  - **@types/node:** Mise à jour vers la `v14.17.9` ([#1324](https://github.com/assurance-maladie-digital/design-system/pull/1324)) ([5c9d7ee](https://github.com/assurance-maladie-digital/design-system/commit/5c9d7eedc248757edb37faae29314b081ff665c2))
 
 ## v2.0.0-beta.12
 
