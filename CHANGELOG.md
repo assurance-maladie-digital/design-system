@@ -15,13 +15,16 @@
 - 🐛 **Corrections de bugs**
   - **installation:** Correction de l'affichage des `ExpansionPanels` ([#1325](https://github.com/assurance-maladie-digital/design-system/pull/1325)) ([11cfa7c](https://github.com/assurance-maladie-digital/design-system/commit/11cfa7cf7230459e4cffb895a9f8c6a3bc876f20))
 
+- ♻️ **Refactoring**
+  - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330))
+
 - 📝 **Documentation**
   - **roadmap:** Mise à jour de la page ([#1327](https://github.com/assurance-maladie-digital/design-system/pull/1327)) ([853e06b](https://github.com/assurance-maladie-digital/design-system/commit/853e06be8327bee5362681e67911aa0c35a8d76e))
   - **guides** Ajout du guide sur la gestion des variables d'environnement ([#1290](https://github.com/assurance-maladie-digital/design-system/pull/1290)) ([1d7def8](https://github.com/assurance-maladie-digital/design-system/commit/1d7def8c9a54db3c03faa82a9d85fc6d27e7a951))
   - **guides:** Ajout du guide sur les `v-model` personnalisés ([#1297](https://github.com/assurance-maladie-digital/design-system/pull/1297)) ([7d53155](https://github.com/assurance-maladie-digital/design-system/commit/7d5315561d525649d46e6d8855d59a8b9573424c))
   - **guides:** Ajout du guide sur la gestion des événements ([#1302](https://github.com/assurance-maladie-digital/design-system/pull/1302)) ([ad28235](https://github.com/assurance-maladie-digital/design-system/commit/ad2823551a9163c1162968352068a85521424ba7))
   - **FranceConnectBtn:** Documentation du composant ([#1329](https://github.com/assurance-maladie-digital/design-system/pull/1329)) ([5766901](https://github.com/assurance-maladie-digital/design-system/commit/576690153394e1920f61a2f29ba8aa204059bbb9))
-  - **guides:** Ajout du guide sur l'authentification avec token ([#1305](https://github.com/assurance-maladie-digital/design-system/pull/1305))
+  - **guides:** Ajout du guide sur l'authentification avec token ([#1305](https://github.com/assurance-maladie-digital/design-system/pull/1305)) ([38d424e](https://github.com/assurance-maladie-digital/design-system/commit/38d424eb4cabc8af21bdc660c73865250a3a03ad))
 
 ### Interne
 
