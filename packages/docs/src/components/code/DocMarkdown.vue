@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Vue, { VNode } from 'vue';
 
-	import remark from 'remark';
+	import { remark } from 'remark';
 	import html from 'remark-html';
 
 	import { VFile } from 'vfile';
@@ -9,7 +9,7 @@
 	const remarkProcessor = remark().use(html);
 
 	function markdownToHtml(content: string): VFile {
-		return remarkProcessor.processSync(content);
+		return remarkProcessor.processSync(content) as unknown as VFile;
 	}
 
 	export default Vue.extend({
