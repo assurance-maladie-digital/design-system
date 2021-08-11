@@ -94,6 +94,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/form-field-list'
 			},
 			{
+				title: 'FranceConnectBtn',
+				to: '/composants/france-connect-btn'
+			},
+			{
 				title: 'HeaderLoading',
 				to: '/composants/header-loading'
 			},
@@ -168,8 +172,24 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/nouvelle-page'
 			},
 			{
-				title: 'Store',
-				to: '/guides/store'
+				title: 'Variables d’environnement',
+				to: '/guides/variables-environnement'
+			},
+			{
+				title: 'Gestion des événements',
+				to: '/guides/gestion-evenements'
+			},
+			{
+				title: 'Utilisation du store',
+				to: '/guides/utilisation-store'
+			},
+			{
+				title: 'v-model personnalisé',
+				to: '/guides/v-model'
+			},
+			{
+				title: 'Authentification avec token',
+				to: '/guides/authentification-token'
 			}
 		]
 	}

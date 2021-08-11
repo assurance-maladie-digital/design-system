@@ -27,71 +27,43 @@ vue create my-project --preset assurance-maladie-digital/vue-cli-preset
 
 Les questions suivantes vous seront posées pour vous permettre d’ajouter les fonctionnalités dont vous avez besoin pour votre projet :
 
-<v-expansion-panels>
-
-<v-expansion-panel>
-<v-expansion-panel-header>
-Description du projet ?
-</v-expansion-panel-header>
-
-<v-expansion-panel-content>
+<doc-expansion-panels>
+<doc-expansion-panel label="Description du projet ?">
 
 Vous pouvez décrire succinctement votre projet. Cette description sera utilisée dans le fichier *README.md* et comme valeur par défaut de la balise meta description.
 
-</v-expansion-panel-content>
-</v-expansion-panel>
+</doc-expansion-panel>
 
-<v-expansion-panel>
-<v-expansion-panel-header>
-Utiliser Vue i18n gérer les textes de l’application ?
-</v-expansion-panel-header>
-
-<v-expansion-panel-content>
+<doc-expansion-panel label="Utiliser Vue i18n gérer les textes de l’application ?">
 
 Utilisation de [Vue i18n](https://kazupon.github.io/vue-i18n/) pour gérer les textes de l’application. Cela permet de séparer les textes des composants et de les rendre plus maintenable mais également de gérer plusieurs langues.
 
-</v-expansion-panel-content>
-</v-expansion-panel>
+</doc-expansion-panel>
 
-<v-expansion-panel>
-<v-expansion-panel-header>
-Utiliser Vuex Persist pour persister le store ?
-</v-expansion-panel-header>
-
-<v-expansion-panel-content>
+<doc-expansion-panel label="Utiliser Vuex Persist pour persister le store ?">
 
 Utilisation de [Vuex Persist](https://championswimmer.in/vuex-persist/) pour persister le store [Vuex](https://vuex.vuejs.org/) dans un stockage persistent comme le *localStorage*.
 
-</v-expansion-panel-content>
-</v-expansion-panel>
+</doc-expansion-panel>
 
-<v-expansion-panel>
-<v-expansion-panel-header>
-Utiliser Cypress pour les tests d’interface ?
-</v-expansion-panel-header>
+<doc-expansion-panel label="Utiliser Cypress pour les tests d’interface ?">
 
-<v-expansion-panel-content>
+Utilisation de [Cypress](https://www.cypress.io/) pour les tests d’interface (ou *end-to-end*).
 
-Utilisation de [Cypress](https://www.cypress.io/) pour les tests d’interface (ou end-to-end).
+</doc-expansion-panel>
 
-</v-expansion-panel-content>
-</v-expansion-panel>
+<doc-expansion-panel label="Utiliser la configuration Jenkins par défaut ?">
 
-<v-expansion-panel>
-<v-expansion-panel-header>
-Utiliser Matomo pour l’analyse d’audience ?
-</v-expansion-panel-header>
+Utilisation de [Jenkins](https://www.jenkins.io/) pour le déploiement et l’intégration continue.
 
-<v-expansion-panel-content>
+</doc-expansion-panel>
+
+<doc-expansion-panel label="Utiliser Matomo pour l’analyse d’audience ?">
 
 Utilisation de [Matomo](https://fr.matomo.org/) pour l’analyse d’audience.
 
-</v-expansion-panel-content>
-</v-expansion-panel>
-
-</v-expansion-panels>
-
-<br>
+</doc-expansion-panel>
+</doc-expansion-panels>
 
 <doc-alert type="info">
 Le projet sera créé dans un nouveau dossier au nom de votre projet.
