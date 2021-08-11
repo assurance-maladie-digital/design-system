@@ -46,7 +46,7 @@ export async function authenticate(to: Route, from: Route, next: Next): Promise<
 
 <doc-alert type="info">
 
-Vous devez définir le module `authentication` du store, pour cela vous pouvez consulter le guide sur l’[utilisation du store](/guides/store).
+Vous devez définir le module `authentication` du store, pour cela vous pouvez consulter [le guide sur l’utilisation du store](/guides/store).
 
 </doc-alert>
 

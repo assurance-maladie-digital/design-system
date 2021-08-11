@@ -29,6 +29,6 @@
 
 	@Component
 	export default class CopyBtnSlots extends Vue {
-		duplicateIcon = mdiContentDuplicate ;
+		duplicateIcon = mdiContentDuplicate;
 	}
 </script>

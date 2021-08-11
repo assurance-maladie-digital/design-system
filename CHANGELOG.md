@@ -16,7 +16,7 @@
   - **installation:** Correction de l'affichage des `ExpansionPanels` ([#1325](https://github.com/assurance-maladie-digital/design-system/pull/1325)) ([11cfa7c](https://github.com/assurance-maladie-digital/design-system/commit/11cfa7cf7230459e4cffb895a9f8c6a3bc876f20))
 
 - ♻️ **Refactoring**
-  - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330))
+  - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330)) ([7ef81d5](https://github.com/assurance-maladie-digital/design-system/commit/7ef81d57c327f3cea2c2cca082e6fe1b592176ea))
 
 - 📝 **Documentation**
   - **roadmap:** Mise à jour de la page ([#1327](https://github.com/assurance-maladie-digital/design-system/pull/1327)) ([853e06b](https://github.com/assurance-maladie-digital/design-system/commit/853e06be8327bee5362681e67911aa0c35a8d76e))
@@ -25,6 +25,7 @@
   - **guides:** Ajout du guide sur la gestion des événements ([#1302](https://github.com/assurance-maladie-digital/design-system/pull/1302)) ([ad28235](https://github.com/assurance-maladie-digital/design-system/commit/ad2823551a9163c1162968352068a85521424ba7))
   - **FranceConnectBtn:** Documentation du composant ([#1329](https://github.com/assurance-maladie-digital/design-system/pull/1329)) ([5766901](https://github.com/assurance-maladie-digital/design-system/commit/576690153394e1920f61a2f29ba8aa204059bbb9))
   - **guides:** Ajout du guide sur l'authentification avec token ([#1305](https://github.com/assurance-maladie-digital/design-system/pull/1305)) ([38d424e](https://github.com/assurance-maladie-digital/design-system/commit/38d424eb4cabc8af21bdc660c73865250a3a03ad))
+  - **guides:** Ajout du guide sur l'utilisation du store ([#1301](https://github.com/assurance-maladie-digital/design-system/pull/1301))
 
 ### Interne
 
@@ -90,7 +91,6 @@ Cette version comporte l'ajout de la documentation et du nouveau composant Franc
   - **FilterModule:** Documentation du composant ([#1257](https://github.com/assurance-maladie-digital/design-system/pull/1257)) ([c5adcc2](https://github.com/assurance-maladie-digital/design-system/commit/c5adcc295beb3e020217b3476e94a3703de6ee2c))
   - **global:** Ajout de la page glossaire ([#1265](https://github.com/assurance-maladie-digital/design-system/pull/1265)) ([d7d427b](https://github.com/assurance-maladie-digital/design-system/commit/d7d427bf7a9f8adc2ecd7488644806572bebedaf))
   - **global:** Ajout de la page roadmap ([#1300](https://github.com/assurance-maladie-digital/design-system/pull/1300)) ([ae0fd46](https://github.com/assurance-maladie-digital/design-system/commit/ae0fd46d01ef7db9dc559746aa919ddebf0f2dfa))
-  - **guides:** Ajout de la page store ([#1301](https://github.com/assurance-maladie-digital/design-system/pull/1301)) ([0108414](https://github.com/assurance-maladie-digital/design-system/commit/0108414868902ee8d3b7519858d26a75830f6492))
 
 ### Interne
 

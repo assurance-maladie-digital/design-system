@@ -1,375 +1,273 @@
 ---
-title: Store
-description: 
+title: Utilisation du store
+description: Quand et comment utiliser le store pour partager des données à travers une application.
 ---
 
 ## Pour commencer
 
-Le store utilisé dans vue-dot est l’application `Vuex`. Nous reprendrons ici une partie de la documentation de cette aplication, mise en forme pour répondre aux usages de vue-dot. Pour plus d’informations sur `Vuex`, merci de consulter leur [documentation](https://vuex.vuejs.org/fr).
+Le store est un espace centralisé, accessible dans toute l’application, avec des règles garantissant que l’état ne peut être muté que de manière prévisible.
 
-### Le store le plus simple
+Nous utilisons la librairie [Vuex](https://vuex.vuejs.org/fr/) pour la gestion du store.
 
-<doc-alert type="info">
+## Quand utiliser le store
 
-NOTE
+Pour savoir si vous devez stocker une donnée dans le store ou plutôt dans un composant, vous pouvez vous demander si cette donnée a besoin d’être accessible dans toute l’application. Si c’est le cas, vous pouvez la stocker dans le store. Sinon, c’est que cette donnée doit être stockée localement.
 
-Nous allons utiliser la syntaxe TypeScript pour nos exemples, si vous souhaitez en savoir plus sur sur l’usage JavaScript et la syntaxe ES2015, rendez-vous sur la documentation [`Vuex`](https://vuex.vuejs.org/fr/guide/#le-store-le-plus-simple).
+Par exemple, les informations de profil d’un utilisateur peuvent être nécessaires pour l’affichage dans l’en-tête de l’application, mais aussi pour afficher ou masquer certaines fonctionnalités en fonction des droits de l’utilisateur. Ces données peuvent être stockées dans le store.
 
-</doc-alert>
+Les informations concernant le détail d’un dossier, remontées par un appel API seront affichées sur une page, dans ce cas ces données doivent être stockées en local, même si celles-ci sont partagées entre plusieurs composants de la page, vous pouvez consulter [le guide sur la gestion des événements](/guides/gestion-evenements).
 
-Après avoir [installé Vuex](https://vuex.vuejs.org/fr/installation.html), nous allons créer un store. Commencez par créer, à la racine de votre projet, un fichier `store.ts` ou un dossier `store` qui contiendra un fichier `index.ts`. Dans l’hypothèse de l’usage de [modules](http://localhost:3000/guides/store#modules), nous recommandons l’usage de l’organisation en dossier.
+## Comment utiliser le store
+
+### Store par défaut
+
+Lors de la création d’un nouveau projet, un fichier `src/store/index.ts` est créé et ressemble à cela&nbsp;:
 
 ```ts
 import Vue from 'vue';
 import Vuex, { StoreOptions } from 'vuex';
+import VuexPersistence from 'vuex-persist';
+
+import { RootState } from './types';
+
+// Use the notification module from Vue Dot
+import { notification } from '@cnamts/vue-dot/src/modules/notification';
+
+/** The store is saved in the browser's session */
+const vuexLocal = new VuexPersistence<RootState>();
 
 Vue.use(Vuex);
 
-// Peut être dans un fichier type.d.ts si vous avez une organisation en dossier
-// Dans ce cas, faire import { RootState } from '@/store/types'
-export interface RootState {
-	helloMessage: string;
-}
+/** See https://vuex.vuejs.org/fr/getting-started.html for help */
+const storeOptions: StoreOptions<RootState> = {
+	strict: true,
+	state: {},
+	// See https://vuex.vuejs.org/guide/modules.html for more info on modules
+	modules: {
+		notification
+	},
+	plugins: [
+		vuexLocal.plugin
+	]
+};
 
-const store: StoreOptions<RootState> {
-	state: {
-		helloMessage: 'Bonjour de vue-dot';
-	}
-}
-
-export default New Vuex.store<RootState>(store);
+export const store = new Vuex.Store<RootState>(storeOptions);
 ```
 
-<br>
+<doc-alert type="info">
 
-Puis dans votre fichier `main.ts`, importez votre store
+Le store est ensuite importé dans le fichier `src/main.ts` et passé en paramètre de l’instance Vue.js de l’application.
+
+</doc-alert>
+
+Le store est composé du `state`, où seront stockées les données, ainsi que de modules qui permettent de découper le store en plusieurs parties.
+Le module notification est utilisé avec le composant [`NotificationBar`](/composants/notification-bar) pour 
+
+Par défaut, le plugin [VuexPersist](https://github.com/championswimmer/vuex-persist) est installé pour persister le store dans le `localStorage`, mais il est possible de le configurer pour utiliser le `sessionStorage` ou de ne persister que certains modules.
+
+### Modules
+
+L’utilisation des modules n’est pas obligatoire mais fortement recommandée afin de garder le store organisé et donc plus maintenable.
+
+Pour créer un module, vous devez créer un fichier du nom de celui-ci dans le dossier `modules` dans `src/store`, par exemple pour ajouter un `userData`, vous pouvez créer le fichier `src/store/modules/userData` avec le contenu suivant&nbsp;:
 
 ```ts
-import Vue from 'vue';
-import store from '@/store';
+import { Module, ActionTree, MutationTree, GetterTree } from 'vuex';
 
-Vue.config.productionTip = false;
+import { RootState } from '../';
 
-import App from './App.vue';
+export interface UserDataState {}
 
-new Vue({
-	store,
-	render: (h) => h(App)
-}).$mount('#app');
+export const state: UserDataState = {};
+
+export const actions: ActionTree<UserDataState, RootState> = {};
+
+export const mutations: MutationTree<UserDataState> = {};
+
+export const getters: GetterTree<UserDataState, RootState> = {};
+
+export const userData: Module<UserDataState, RootState> = {
+	namespaced: true,
+	state,
+	actions,
+	mutations,
+	getters
+};
 ```
 
-<br>
-
-Enfin, dans le fichier `.vue` dans lequel vous souhaitez voir apparaitre la donnée stockée dans le store, ajoutez une propriété `computed` pour consulter le store et retourner la valeur
-
-```vue
-<template>
-	<div id="app">
-		<h1>{{ helloMessage }}</h1>
-	</div>
-</template>
-
-<script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
-	name: 'App',
-	computed: {
-		helloMessage: {
-			get(): string {
-				return this.$store.state.helloMessage
-			}
-		}
-	}
-});
-</script>
-```
-
-## State
-
-Vuex utilise un arbre d’état unique, c’est-à-dire que cet unique objet contient tout l’état au niveau applicatif et sert de « source de vérité unique ». Cela signifie également que vous n’aurez qu’un seul store pour chaque application. Un arbre d’état unique rend rapide la localisation d’une partie spécifique de l’état et permet de facilement prendre des instantanés de l’état actuel de l’application à des fins de débogage. [voir la documentation `Vuex`](https://vuex.vuejs.org/fr/guide/state.html#state)
-
-
+Ensuite, vous devez importer votre module dans le fichier `src/store/index.ts` et l’ajouter dans la liste des modules&nbsp;:
 
 ```ts
-import { RootState } from '@/store/types';
+import { userData } from './modules/userData';
 
-export interface UserState {
-	userName: string;
+// …
+
+const storeOptions: StoreOptions<RootState> = {
+	// …
+	modules: {
+		notification,
+		userData
+	},
+	// …
+};
+```
+
+#### State
+
+Pour ajouter des données dans votre module, vous devez les ajouter dans la constante `state` et compléter l’interface `UserDataState`&nbsp;:
+
+```ts
+export interface UserDataState {
+	username: string;
 	email: string;
 	lastLogin: Date;
 }
 
-export const state: UserState = {
+export const state: UserDataState = {
 	username: 'admin',
-	email: 'admin@my-domain.fr',
-	lastLogin: new Date
-} 
+	email: 'admin@example.com',
+	lastLogin: new Date()
+};
 ```
 
-### mapState
+Afin de récupérer ces données dans un composant, vous pouvez utiliser la fonction `mapState` mise à disposition par Vuex&nbsp;:
 
 ```vue
 <template>
-	<div id="app">
-		<h1>{{ username }}</h1>
+	<p>Bonjour {{ username }}</p>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	import { mapState } from 'vuex';
+
+	@Component({
+		computed: mapState('userData', ['username'])
+	})
+	export default class UserInformations extends Vue {}
+</script>
+```
+
+#### Accesseurs
+
+Les accesseurs sont comparables aux propriétés calculées des composants Vue.js, ils sont utiles pour les calculs sur les données car ils sont également mis en cache. Les getters sont des fonctions définies dans la constante `getters`&nbsp;:
+
+```ts
+export const getters: GetterTree<UserDataState, RootState> = {
+	formattedLastLogin(state): string {
+		return dayjs(state.lastLogin).format(DATE_FORMAT);
+	}
+};
+```
+
+Afin d’utiliser cet accesseur dans un composant, vous pouvez utiliser la fonction `mapGetters` mise à disposition par Vuex&nbsp;:
+
+```vue
+<template>
+	<div>
+		<p>Bonjour {{ username }}</p>
+
+		<p>
+			Dernière connexion le
+
+			<time :datetime="lastLogin">
+				{{ formattedLastLogin }}
+			</time>
+		</p>
 	</div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState } from 'vuex';
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-export default Vue.extend({
-	name: 'App',
-	computed: {
-		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
-		...mapState('user', [ 
-			'username',
-			'email',
-			'lastLogin'
-		]),
-		username: {
-			get(): string {
-				return this.user.username
-			}
+	import { mapState, mapGetters } from 'vuex';
+
+	@Component({
+		computed: {
+			...mapState('userData', [
+				'username',
+				'lastLogin'
+			]),
+			...mapGetters('userData', [
+				'formattedLastLogin'
+			])
 		}
-	}
-});
+	})
+	export default class UserInformations extends Vue {}
 </script>
 ```
 
-## Accesseurs
+#### Actions et mutations
+
+Les mutations sont le seul moyen de mettre à jour le store.<br>
+Les actions sont similaires aux mutations, elles permettent en plus l’exécution de code asynchrone mais doivent appeler des mutations pour mettre à jour le store.
+
+Pour cette raison et par convention, il est recommandé de toujours utiliser des actions dans les composants.
+
+<doc-alert type="info">
+Dans la prochaine version majeure de Vuex (la v5), le concept de mutations sera supprimé pour n’avoir plus que celui des actions.
+</doc-alert>
+
+Les mutations sont des fonctions définies dans la constante du même nom&nbsp;:
 
 ```ts
-import { GetterTree } from 'vuex';
-import { RootState, UserState } from '@/store/types';
-
-export const getters: GetterTree<UserState, RootState> = {
-	// Vous pouvez aussi utiliser cette syntaxe: GET_USER_INFOS pour définir vos getters
-	getUserInfos(state): UserState {
-		return state;
+export const mutations: MutationTree<UserDataState> = {
+	UPDATE_USERNAME(state, username: string) {
+		state.username = username;
 	}
-}
+};
 ```
 
-<br>
-voici une autre manière de déclarer vos mutations
+<doc-alert type="info">
+
+Pour différencier les mutations des actions, le nom des mutations est écrit en majuscules.
+
+</doc-alert>
+
+Les actions sont des fonctions définies dans la constante du même nom&nbsp;:
 
 ```ts
-import { GetterTree } from 'vuex';
-import { RootState, UserState } from '@/store/types';
-
-export enum UserGetters {
-	GET_USER_INFOS = 'GET_USER_INFOS'
-}
-
-export const getters: GetterTree<UserState, RootState> = {
-	[UserGetters.GET_USER_INFOS](state): UserState {
-		return state;
+export const actions: ActionTree<UserDataState, RootState> = {
+	updateUsername({ commit }, username: string) {
+		commit('UPDATE_USERNAME', username);
 	}
-}
+};
 ```
 
-### mapGetters
-
-Voici un exemple d’usage du mapGetters
+Afin d’utiliser cet accesseur dans un composant, vous pouvez utiliser la fonction `mapActions` mise à disposition par Vuex&nbsp;:
 
 ```vue
 <template>
-	<div id="app">
-		<h1>{{ username }}</h1>
-	</div>
-</template>
+	<div>
+		<p>Bonjour {{ username }}</p>
 
-<script lang="ts">
-import Vue from 'vue';
-import { mapGetters } from 'vuex';
-
-export default Vue.extend({
-	name: 'App',
-	computed: {
-		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
-		...mapGetters('user', [ 
-			'getUserInfos'
-		]),
-		username: {
-			get(): string {
-				return this.getUserInfos.username
-			}
-		}
-	}
-});
-</script>
-```
-
-## Mutations
-
-```ts
-import { MutationTree } from 'vuex';
-import { UserState } from '@/store/types';
-
-export const mutations: MutationTree<UserState> = {
-	// Vous pouvez aussi utiliser cette syntaxe: SET_USERNAME pour définir vos setters
-	setUserName(state, payload: string): void {
-		state.userName = payload;
-	}
-}
-```
-
-<br>
-voici une autre manière de déclarer vos mutations
-
-```ts
-import { MutationTree } from 'vuex';
-import { UserState } from '@/store/types';
-
-export enum UserMutations {
-	SET_USERNAME = 'SET_USERNAME'
-}
-
-export const mutations: MutationTree<UserState> = {
-	[UserMutations.SET_USERNAME](state, payload: string): void {
-		state.userName = payload;
-	}
-}
-```
-
-### mapMutations
-
-Voici un exemple d’usage du mapMutations
-
-```vue
-<template>
-	<div id="app">
 		<VBtn
-			oultined
-			@click="editUserName"
+			color="primary"
+			outlined
+			@click="editUsername"
 		>
-			Mettre à jour le nom d’utilisateur
+			Mettre à jour mon nom d’utilisateur
 		</VBtn>
 	</div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapMutations } from 'vuex';
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-export default Vue.extend({
-	name: 'App',
-	methods: {
-		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
-		...mapMutations('user', [ 
-			'setUserName'
-		]),
-		editUserName: {
-			set(): void {
-				this.setUserName('nouveau-username');
-			}
+	import { mapState } from 'vuex';
+
+	@Component({
+		computed: mapState('userData', ['username']),
+		methods: mapActions('userData', ['updateUsername'])
+	})
+	export default class UserInformations extends Vue {
+		editUsername(): void {
+			this.updateUsername('admin-0000');
 		}
 	}
-});
 </script>
-```
-
-## Actions
-
-```ts
-import { ActionTree } from 'vuex';
-import { RootState, UserState } from '@/store/types';
-import { UserMutations } from '@/store/user/mutations';
-
-import axios from 'axios';
-
-export const actions: ActionTree<UserState, RootState> = {
-	// Vous pouvez aussi utiliser cette syntaxe: UPDATE_USERNAME pour définir vos setters
-	async updateUserName({ commit, userName }): void {
-		try {
-			const res: Promise<object> = await axios.get('your/api/uri', userName);
-			commit(UserMutations.SET_USERNAME, res.username as string);
-		} catch(e) {
-			console.log(e)
-		}
-	}
-}
-```
-
-### mapActions
-
-Voici un exemple d’usage du mapActions
-
-```vue
-<template>
-	<div id="app">
-		<VBtn
-			oultined
-			@click="editUserName"
-		>
-			Mettre à jour le nom d’utilisateur
-		</VBtn>
-	</div>
-</template>
-
-<script lang="ts">
-import Vue from 'vue';
-import { mapActions } from 'vuex';
-
-export default Vue.extend({
-	name: 'App',
-	methods: {
-		// ignorez l'argument << namespace >> ('user') si vous n'utilisez pas les fonctionnalités << namespace >> des modules
-		...mapActions('user', [ 
-			'updateUserName'
-		]),
-		editUserName: {
-			set(): void {
-				this.updateUserName('nouveau-username');
-			}
-		}
-	}
-});
-</script>
-```
-
-## Modules
-
-Pour organiser votre store en module, veuillez vous référer dans un premier temps au recommandations du [`store`](/guides/store#le-store-le-plus-simple).
-Pour ajouter un module, commencez par ajouter un sous-dossier au dossier store qui portera le nom de votre module. Dans notre exemple: `store/user/index.ts`.
-
-```ts
-import { Module } from 'vuex';
-import { RootState } from '@/store/types';
-import { UserState } from '@/store/user/types';
-
-import actions from '@/store/user/actions';
-import getters from '@/store/user/getters';
-import mutations from '@/store/user/mutations';
-import state from '@/store/user/state';
-
-export const store: Module<UserState, RootState> {
-	actions,
-	getters,
-	mutations,
-	state
-}
-```
-
-Il vous faudra ensuite importer votre module dans `store/index.ts` pour y avoir accès dans votre projet.
-
-```ts
-import Vue from 'vue';
-import Vuex, { StoreOptions } from 'vuex';
-
-import { RootState } from '@/store/types';
-import user from '@/store/user';
-
-Vue.use(Vuex);
-
-const store: StoreOptions<RootState> {
-	module: {
-		user
-	}
-}
-
-export default New Vuex.store<RootState>(store);
 ```
