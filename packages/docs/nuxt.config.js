@@ -87,5 +87,15 @@ export default {
 	hooks: {
 		'content:file:beforeParse': transformCodeBlocks,
 		'content:file:beforeInsert': parseMarkdownDescription
+	},
+	router: {
+		middleware: 'homeRedirect'
+	},
+	generate: {
+		routes: [
+			// Generate introduction page
+			// (required since we don't have an home page)
+			'/demarrer/introduction'
+		]
 	}
 };
