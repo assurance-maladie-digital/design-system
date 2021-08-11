@@ -1,5 +1,5 @@
-const remark = require('remark');
-const html = require('remark-html');
+import { remark } from 'remark';
+import html from 'remark-html';
 
 const remarkProcessor = remark().use(html);
 
