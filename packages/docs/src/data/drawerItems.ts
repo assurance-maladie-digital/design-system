@@ -180,6 +180,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/gestion-evenements'
 			},
 			{
+				title: 'Utilisation du store',
+				to: '/guides/utilisation-store'
+			},
+			{
 				title: 'v-model personnalisé',
 				to: '/guides/v-model'
 			},
