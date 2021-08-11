@@ -93,6 +93,6 @@
 
 <style lang="scss" scoped>
 	h1 {
-		line-height: 3.75rem !important;
+		line-height: 1.25em !important;
 	}
 </style>
