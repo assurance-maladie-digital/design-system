@@ -12,6 +12,7 @@
 				>
 					<article class="flex-grow-1">
 						<h1
+							v-if="document.title"
 							v-text="document.title"
 							class="text-h4 text-sm-h4 font-weight-bold mb-4"
 						/>
@@ -116,7 +117,7 @@
 				return {};
 			}
 
-			return getPageMeta(this.document.title);
+			return getPageMeta(this.document.title || this.document.metaTitle);
 		}
-	};
+	}
 </script>

@@ -5,5 +5,21 @@
 	"labels": [
 		"dependencies"
 	],
-	"commitMessagePrefix": "⬆️"
+	"commitMessagePrefix": "⬆️",
+	"packageRules": [
+		{
+			"matchPackageNames": [
+				"jest",
+				"ts-jest"
+			],
+			"allowedVersions": "<27"
+		},
+		{
+			"matchPackageNames": [
+				"remark",
+				"remark-html"
+			],
+			"allowedVersions": "<14"
+		}
+	]
 }
