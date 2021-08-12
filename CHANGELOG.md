@@ -19,7 +19,7 @@
   - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330)) ([7ef81d5](https://github.com/assurance-maladie-digital/design-system/commit/7ef81d57c327f3cea2c2cca082e6fe1b592176ea))
 
 - 🔧 **Configuration**
-  - **config:** Ajout de l'option `--fail-on-error` à la commande `yarn generate` ([#1338](https://github.com/assurance-maladie-digital/design-system/pull/1338))
+  - **config:** Ajout de l'option `--fail-on-error` à la commande `yarn generate` ([#1338](https://github.com/assurance-maladie-digital/design-system/pull/1338)) ([fb102ae](https://github.com/assurance-maladie-digital/design-system/commit/fb102ae13b34faa38dab28cfda85f31e9cf52844))
 
 - 📝 **Documentation**
   - **roadmap:** Mise à jour de la page ([#1327](https://github.com/assurance-maladie-digital/design-system/pull/1327)) ([853e06b](https://github.com/assurance-maladie-digital/design-system/commit/853e06be8327bee5362681e67911aa0c35a8d76e))
@@ -28,9 +28,12 @@
   - **guides:** Ajout du guide sur la gestion des événements ([#1302](https://github.com/assurance-maladie-digital/design-system/pull/1302)) ([ad28235](https://github.com/assurance-maladie-digital/design-system/commit/ad2823551a9163c1162968352068a85521424ba7))
   - **FranceConnectBtn:** Documentation du composant ([#1329](https://github.com/assurance-maladie-digital/design-system/pull/1329)) ([5766901](https://github.com/assurance-maladie-digital/design-system/commit/576690153394e1920f61a2f29ba8aa204059bbb9))
   - **guides:** Ajout du guide sur l'authentification avec token ([#1305](https://github.com/assurance-maladie-digital/design-system/pull/1305)) ([38d424e](https://github.com/assurance-maladie-digital/design-system/commit/38d424eb4cabc8af21bdc660c73865250a3a03ad))
-  - **guides:** Ajout du guide sur l'utilisation du store ([#1301](https://github.com/assurance-maladie-digital/design-system/pull/1301))
+  - **guides:** Ajout du guide sur l'utilisation du store ([#1301](https://github.com/assurance-maladie-digital/design-system/pull/1301)) ([bc18d88](https://github.com/assurance-maladie-digital/design-system/commit/bc18d88d2c218e56054c6b582ed55de42295d42a))
 
 ### Interne
+
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de la configuration de renovate ([#1343](https://github.com/assurance-maladie-digital/design-system/pull/1343))
 
 - ⬆️ **Dépendances**
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.29.0` ([#1314](https://github.com/assurance-maladie-digital/design-system/pull/1314)) ([a6bd3e3](https://github.com/assurance-maladie-digital/design-system/commit/a6bd3e3d33f3ee143e61673f81362a6450c3f44e))
