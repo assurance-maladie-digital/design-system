@@ -33,13 +33,14 @@
 ### Interne
 
 - 🔧 **Configuration**
-  - **ci:** Mise à jour de la configuration de renovate ([#1343](https://github.com/assurance-maladie-digital/design-system/pull/1343))
+  - **ci:** Mise à jour de la configuration de renovate ([#1343](https://github.com/assurance-maladie-digital/design-system/pull/1343)) ([2f82e81](https://github.com/assurance-maladie-digital/design-system/commit/2f82e81d02fc6c4adaed6d4d3680fe8180ec0300))
 
 - ⬆️ **Dépendances**
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.29.0` ([#1314](https://github.com/assurance-maladie-digital/design-system/pull/1314)) ([a6bd3e3](https://github.com/assurance-maladie-digital/design-system/commit/a6bd3e3d33f3ee143e61673f81362a6450c3f44e))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.15.1` ([#1317](https://github.com/assurance-maladie-digital/design-system/pull/1317)) ([bbb7458](https://github.com/assurance-maladie-digital/design-system/commit/bbb7458a16de66516034ebeaa197738e1d66729d))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.2` ([#1323](https://github.com/assurance-maladie-digital/design-system/pull/1323)) ([a4f7c94](https://github.com/assurance-maladie-digital/design-system/commit/a4f7c946a318590a8b8214de56467887feef03c3))
   - **@types/node:** Mise à jour vers la `v14.17.9` ([#1324](https://github.com/assurance-maladie-digital/design-system/pull/1324)) ([5c9d7ee](https://github.com/assurance-maladie-digital/design-system/commit/5c9d7eedc248757edb37faae29314b081ff665c2))
+  - **lint-staged:** Mise à jour vers la `v11.1.2` ([#1328](https://github.com/assurance-maladie-digital/design-system/pull/1328))
 
 ## v2.0.0-beta.12
 
