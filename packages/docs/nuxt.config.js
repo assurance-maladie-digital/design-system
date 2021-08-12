@@ -70,7 +70,13 @@ export default {
 	modules: [
 		'@nuxt/content'
 	],
-	components: true,
+	components: [
+		{
+			path: '~/components/global',
+			global: true,
+			isAsync: false
+		}
+	],
 	content: {
 		liveEdit: false
 	},
