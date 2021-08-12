@@ -119,5 +119,5 @@
 
 			return getPageMeta(this.document.title || this.document.metaTitle);
 		}
-	};
+	}
 </script>
