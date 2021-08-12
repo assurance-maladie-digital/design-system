@@ -65,12 +65,14 @@
 	import { getPageMeta } from '../functions/getPageMeta';
 	import { getSurroundDrawerItems } from '../functions/getSurroundDrawerItems';
 
+	import DocHeader from '../components/DocHeader.vue';
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
 	import DocPageInfo from '../components/page/DocPageInfo.vue';
 	import DocPrevNext from '../components/page/DocPrevNext.vue';
 
 	@Component({
 		components: {
+			DocHeader,
 			DocDrawer,
 			DocPageInfo,
 			DocPrevNext
