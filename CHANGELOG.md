@@ -42,7 +42,8 @@
   - **core-js:** Mise à jour vers la `v3.16.1` ([#1331](https://github.com/assurance-maladie-digital/design-system/pull/1331)) ([86750bf](https://github.com/assurance-maladie-digital/design-system/commit/86750bf42a2a20df0124f7f56cc41a6e0d39cf79))
   - **ts-node:** Mise à jour vers la `v10.2.0` ([#1332](https://github.com/assurance-maladie-digital/design-system/pull/1332)) ([27e3bb2](https://github.com/assurance-maladie-digital/design-system/commit/27e3bb2cc881fab5f811d68e36c07c9010167e5c))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.29.1` ([#1334](https://github.com/assurance-maladie-digital/design-system/pull/1334)) ([66ac7b7](https://github.com/assurance-maladie-digital/design-system/commit/66ac7b7083f62f85290c3b1bc6fae48386078a7d))
-  - **eslint-plugin-vue:** Mise à jour vers la `v7.16.0` ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335))
+  - **eslint-plugin-vue:** Mise à jour vers la `v7.16.0` ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([e70a8d7](https://github.com/assurance-maladie-digital/design-system/commit/e70a8d7a7d0f28e2bb4fb0724e99f4fd1bf3cd98))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.0.7` ([#1337](https://github.com/assurance-maladie-digital/design-system/pull/1337))
 
 ## v2.0.0-beta.12
 
