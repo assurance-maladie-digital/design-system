@@ -1,5 +1,8 @@
 <template>
-	<VToolbar v-bind="options.toolbar">
+	<VToolbar
+		v-bind="options.toolbar"
+		class="vd-table-toolbar"
+	>
 		<p
 			v-if="showRowsNumber"
 			class="mb-0 font-weight-bold mr-4"
@@ -17,6 +20,7 @@
 			:disabled="loading"
 			:append-icon="searchIcon"
 			:label="searchLabel"
+			:class="textFieldClasses"
 			@input="$emit('search', $event)"
 		/>
 
@@ -30,7 +34,12 @@
 				{{ addIcon }}
 			</VIcon>
 
-			{{ addBtnLabel }}
+			<span
+				v-show="$vuetify.breakpoint.mdAndUp"
+				v-bind="options.addIconLabel"
+			>
+				{{ addBtnLabel }}
+			</span>
 		</VBtn>
 	</VToolbar>
 </template>
@@ -118,5 +127,17 @@
 
 			return locales.rowText(this.rowText, plural);
 		}
+
+		get textFieldClasses(): string {
+			const fieldClass = this.$vuetify.breakpoint.xs ? 'vd-form-input-s' : 'vd-form-input';
+
+			return `${fieldClass} flex-grow-0`;
+		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-table-toolbar ::v-deep .v-toolbar__content {
+		flex-wrap: wrap;
+	}
+</style>
