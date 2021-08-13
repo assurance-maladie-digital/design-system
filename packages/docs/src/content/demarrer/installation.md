@@ -5,7 +5,11 @@ description: Création d’un nouveau projet ou installation d’un composant du
 
 ## Création d’un nouveau projet
 
+<doc-indent>
+
 Pour créer un nouveau projet, il est recommandé d’utiliser [Vue CLI](https://cli.vuejs.org/guide/installation.html), un outil développé par l’équipe cœur de Vue.js en combinaison avec Vue Dash, un outil interne qui permet de pré-configurer les nouveaux projets avec les règles et les outils de l’Assurance Maladie.
+
+</doc-indent>
 
 ### Pré-requis
 

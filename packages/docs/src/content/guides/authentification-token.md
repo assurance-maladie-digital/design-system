@@ -81,7 +81,11 @@ export function navigationRedirectGuard(to: Route, from: Route, next: Next): voi
 
 ## Utilisation dans le header d’une requête axios
 
+<doc-indent>
+
 Pour utiliser le token lors d’appels API, on peut ajouter le header `Authorization` sur l’instance axios, ce qui ajoutera le header sur tous les appels effectués avec cette instance, avec comme valeur le token d’authentification. Vous pouvez modifier la fonction `authenticate` :
+
+</doc-indent>
 
 ```ts
 // …

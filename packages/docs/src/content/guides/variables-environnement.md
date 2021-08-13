@@ -3,7 +3,11 @@ title: Variables d’environnement
 description: Ajout et utilisation de variables d’environnement.
 ---
 
+<doc-indent>
+
 Par défaut, dans Vue CLI, les variables d’environnement sont [définies en utilisant le système de variables Node.js](https://cli.vuejs.org/guide/mode-and-env.html#environment-variables), mais cela requiert de reconstruire l’application pour chaque environnement et à chaque modification de valeur.
+
+</doc-indent>
 
 Pour répondre à cette problématique, les variables d’environnement sont stockées dans l’objet global `window` et sont définies dans un fichier généré dynamiquement pour chaque environnement.
 
@@ -41,7 +45,11 @@ Vous ne devez pas stocker d’informations sensibles dans les variables d’envi
 
 ## Utilisation d’une variable d’environnement
 
+<doc-indent>
+
 Pour utiliser une variable d’environnement, vous pouvez utiliser l’objet `window` qui est accessible globalement dans votre application :
+
+</doc-indent>
 
 ```ts
 if (window.MA_VARIABLE === 'true') {
