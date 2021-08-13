@@ -61,7 +61,7 @@ Le store est ensuite importé dans le fichier `src/main.ts` et passé en paramè
 </doc-alert>
 
 Le store est composé du `state`, où seront stockées les données, ainsi que de modules qui permettent de découper le store en plusieurs parties.
-Le module notification est utilisé avec le composant [`NotificationBar`](/composants/notification-bar) pour 
+Le module notification est utilisé avec le composant [`NotificationBar`](/composants/notification-bar) pour afficher des notifications aux utilisateurs.
 
 Par défaut, le plugin [VuexPersist](https://github.com/championswimmer/vuex-persist) est installé pour persister le store dans le `localStorage`, mais il est possible de le configurer pour utiliser le `sessionStorage` ou de ne persister que certains modules.
 
