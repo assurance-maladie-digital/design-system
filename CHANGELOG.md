@@ -21,6 +21,9 @@
 
 ### Documentation
 
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout d'un hook pour appliquer des règles typographiques ([#1351](https://github.com/assurance-maladie-digital/design-system/pull/1351))
+
 - 🐛 **Corrections de bugs**
   - **installation:** Correction de l'affichage des `ExpansionPanels` ([#1325](https://github.com/assurance-maladie-digital/design-system/pull/1325)) ([11cfa7c](https://github.com/assurance-maladie-digital/design-system/commit/11cfa7cf7230459e4cffb895a9f8c6a3bc876f20))
 
@@ -39,7 +42,7 @@
   - **guides:** Ajout du guide sur l'authentification avec token ([#1305](https://github.com/assurance-maladie-digital/design-system/pull/1305)) ([38d424e](https://github.com/assurance-maladie-digital/design-system/commit/38d424eb4cabc8af21bdc660c73865250a3a03ad))
   - **guides:** Ajout du guide sur l'utilisation du store ([#1301](https://github.com/assurance-maladie-digital/design-system/pull/1301)) ([bc18d88](https://github.com/assurance-maladie-digital/design-system/commit/bc18d88d2c218e56054c6b582ed55de42295d42a))
   - **guides:** Mise à jour du guide sur la création d'un nouveau composant ([#1348](https://github.com/assurance-maladie-digital/design-system/pull/1348)) ([353d450](https://github.com/assurance-maladie-digital/design-system/commit/353d4509965a9b9c3c1868d7e4d3a5d5eff10478))
-  - **global:** Correction de fautes d'orthographe ([#1350](https://github.com/assurance-maladie-digital/design-system/pull/1350))
+  - **global:** Correction de fautes d'orthographe ([#1350](https://github.com/assurance-maladie-digital/design-system/pull/1350)) ([e73f69a](https://github.com/assurance-maladie-digital/design-system/commit/e73f69a422f89b0ae55167161bac5617ab558ecf))
 
 ### Interne
 
