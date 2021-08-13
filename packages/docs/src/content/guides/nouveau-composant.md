@@ -64,7 +64,7 @@ Les propriétés ajoutées au corps de la classe correspondent aux données du c
 
 <doc-alert type="warning">
 
-Avec Vue Class Component, la valeur par défaut d’ne donnée ne doit pas être `undefined`, auquel cas la donnée ne sera pas réactive.
+Avec Vue Class Component, la valeur par défaut d’une donnée ne doit pas être `undefined`, auquel cas la donnée ne sera pas réactive.
 
 </doc-alert>
 
@@ -126,7 +126,7 @@ export default class HelloWorld extends Vue {
 		return `${this.firstName} ${this.lastName}`;
 	}
 
-	set name(value): void {
+	set name(newValue): void {
 		const names = newValue.split(SPACE_CHARACTER);
 
 		this.firstName = names[0];
@@ -235,7 +235,7 @@ Si vous souhaitez accéder à un membre de la classe (avec le mot clé `this`) d
 
 	@Component<HelloWorld>({
 		watch: {
-			fullName(value: string): void {
+			fullName(newValue: string): void {
 				const names = newValue.split(SPACE_CHARACTER);
 
 				this.firstName = names[0];
