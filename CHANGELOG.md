@@ -22,10 +22,11 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout d'un hook pour appliquer des règles typographiques ([#1351](https://github.com/assurance-maladie-digital/design-system/pull/1351))
+  - **global:** Ajout d'un hook pour appliquer des règles typographiques ([#1351](https://github.com/assurance-maladie-digital/design-system/pull/1351)) ([a6099b6](https://github.com/assurance-maladie-digital/design-system/commit/a6099b6ad7e37e32ed5dc8f10e9c6090f46e61c5))
 
 - 🐛 **Corrections de bugs**
   - **installation:** Correction de l'affichage des `ExpansionPanels` ([#1325](https://github.com/assurance-maladie-digital/design-system/pull/1325)) ([11cfa7c](https://github.com/assurance-maladie-digital/design-system/commit/11cfa7cf7230459e4cffb895a9f8c6a3bc876f20))
+  - **DocGithubLink:** Correction du lien d'édition ([#1352](https://github.com/assurance-maladie-digital/design-system/pull/1352))
 
 - ♻️ **Refactoring**
   - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330)) ([7ef81d5](https://github.com/assurance-maladie-digital/design-system/commit/7ef81d57c327f3cea2c2cca082e6fe1b592176ea))
