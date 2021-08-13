@@ -9,7 +9,7 @@ import App from '@/App.vue';
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('App.vue', () => {
+describe('App', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(App, {
