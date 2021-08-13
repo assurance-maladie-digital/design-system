@@ -1,3 +1,4 @@
+import { applyTypographicRules } from './src/hooks/applyTypographicRules';
 import { parseMarkdownDescription } from './src/hooks/parseMarkdownDescription';
 import { transformCodeBlocks } from './src/hooks/transformCodeBlocks';
 
@@ -91,7 +92,10 @@ export default {
 		display: 'swap'
 	},
 	hooks: {
-		'content:file:beforeParse': transformCodeBlocks,
+		'content:file:beforeParse': (document) => {
+			transformCodeBlocks(document);
+			applyTypographicRules(document);
+		},
 		'content:file:beforeInsert': parseMarkdownDescription
 	},
 	router: {

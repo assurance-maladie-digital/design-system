@@ -21,7 +21,7 @@ Les informations concernant le détail d’un dossier, remontées par un appel A
 
 ### Store par défaut
 
-Lors de la création d’un nouveau projet, un fichier `src/store/index.ts` est créé et ressemble à cela&nbsp;:
+Lors de la création d’un nouveau projet, un fichier `src/store/index.ts` est créé et ressemble à cela :
 
 ```ts
 import Vue from 'vue';
@@ -69,7 +69,7 @@ Par défaut, le plugin [VuexPersist](https://github.com/championswimmer/vuex-per
 
 L’utilisation des modules n’est pas obligatoire mais fortement recommandée afin de garder le store organisé et donc plus maintenable.
 
-Pour créer un module, vous devez créer un fichier du nom de celui-ci dans le dossier `modules` dans `src/store`, par exemple pour ajouter un `userData`, vous pouvez créer le fichier `src/store/modules/userData` avec le contenu suivant&nbsp;:
+Pour créer un module, vous devez créer un fichier du nom de celui-ci dans le dossier `modules` dans `src/store`, par exemple pour ajouter un `userData`, vous pouvez créer le fichier `src/store/modules/userData` avec le contenu suivant :
 
 ```ts
 import { Module, ActionTree, MutationTree, GetterTree } from 'vuex';
@@ -95,7 +95,7 @@ export const userData: Module<UserDataState, RootState> = {
 };
 ```
 
-Ensuite, vous devez importer votre module dans le fichier `src/store/index.ts` et l’ajouter dans la liste des modules&nbsp;:
+Ensuite, vous devez importer votre module dans le fichier `src/store/index.ts` et l’ajouter dans la liste des modules :
 
 ```ts
 import { userData } from './modules/userData';
@@ -114,7 +114,7 @@ const storeOptions: StoreOptions<RootState> = {
 
 #### State
 
-Pour ajouter des données dans votre module, vous devez les ajouter dans la constante `state` et compléter l’interface `UserDataState`&nbsp;:
+Pour ajouter des données dans votre module, vous devez les ajouter dans la constante `state` et compléter l’interface `UserDataState` :
 
 ```ts
 export interface UserDataState {
@@ -130,7 +130,7 @@ export const state: UserDataState = {
 };
 ```
 
-Afin de récupérer ces données dans un composant, vous pouvez utiliser la fonction `mapState` mise à disposition par Vuex&nbsp;:
+Afin de récupérer ces données dans un composant, vous pouvez utiliser la fonction `mapState` mise à disposition par Vuex :
 
 ```vue
 <template>
@@ -152,7 +152,7 @@ Afin de récupérer ces données dans un composant, vous pouvez utiliser la fonc
 
 #### Accesseurs
 
-Les accesseurs sont comparables aux propriétés calculées des composants Vue.js, ils sont utiles pour les calculs sur les données car ils sont également mis en cache. Les getters sont des fonctions définies dans la constante `getters`&nbsp;:
+Les accesseurs sont comparables aux propriétés calculées des composants Vue.js, ils sont utiles pour les calculs sur les données car ils sont également mis en cache. Les getters sont des fonctions définies dans la constante `getters` :
 
 ```ts
 export const getters: GetterTree<UserDataState, RootState> = {
@@ -162,7 +162,7 @@ export const getters: GetterTree<UserDataState, RootState> = {
 };
 ```
 
-Afin d’utiliser cet accesseur dans un composant, vous pouvez utiliser la fonction `mapGetters` mise à disposition par Vuex&nbsp;:
+Afin d’utiliser cet accesseur dans un composant, vous pouvez utiliser la fonction `mapGetters` mise à disposition par Vuex :
 
 ```vue
 <template>
@@ -211,7 +211,7 @@ Pour cette raison et par convention, il est recommandé de toujours utiliser des
 Dans la prochaine version majeure de Vuex (la v5), le concept de mutations sera supprimé pour n’avoir plus que celui des actions.
 </doc-alert>
 
-Les mutations sont des fonctions définies dans la constante du même nom&nbsp;:
+Les mutations sont des fonctions définies dans la constante du même nom :
 
 ```ts
 export const mutations: MutationTree<UserDataState> = {
@@ -227,7 +227,7 @@ Pour différencier les mutations des actions, le nom des mutations est écrit en
 
 </doc-alert>
 
-Les actions sont des fonctions définies dans la constante du même nom&nbsp;:
+Les actions sont des fonctions définies dans la constante du même nom :
 
 ```ts
 export const actions: ActionTree<UserDataState, RootState> = {
@@ -237,7 +237,7 @@ export const actions: ActionTree<UserDataState, RootState> = {
 };
 ```
 
-Afin d’utiliser cet accesseur dans un composant, vous pouvez utiliser la fonction `mapActions` mise à disposition par Vuex&nbsp;:
+Afin d’utiliser cet accesseur dans un composant, vous pouvez utiliser la fonction `mapActions` mise à disposition par Vuex :
 
 ```vue
 <template>
