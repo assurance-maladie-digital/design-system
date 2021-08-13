@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DialogBox.vue renders correctly 1`] = `
+exports[`DialogBox renders correctly 1`] = `
 <vdialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="none" origin="center center" retainfocus="true" transition="dialog-transition" width="800px" class="vd-dialog-box">
   <vcard-stub loaderheight="4" tag="div" class="pa-6">
     <vcardtitle-stub class="d-flex align-start flex-nowrap pa-0 mb-4">

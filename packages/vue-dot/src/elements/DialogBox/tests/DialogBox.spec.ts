@@ -9,7 +9,7 @@ import DialogBox from '../DialogBox.vue';
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('DialogBox.vue', () => {
+describe('DialogBox', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(DialogBox);

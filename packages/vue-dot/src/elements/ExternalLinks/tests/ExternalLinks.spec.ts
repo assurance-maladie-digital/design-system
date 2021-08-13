@@ -9,7 +9,7 @@ import ExternalLinks from '../ExternalLinks.vue';
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('ExternalLinks.vue', () => {
+describe('ExternalLinks', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(ExternalLinks, {
