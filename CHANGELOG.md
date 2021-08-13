@@ -2,6 +2,9 @@
 
 ### Vue Dot
 
+- 🐛 **Corrections de bugs**
+  - **TableToolbar:** Correction de l'affichage du composant en mobile ([#1347](https://github.com/assurance-maladie-digital/design-system/pull/1347))
+
 - ♻️ **Refactoring**
   - **FranceConnectBtn:** Suppression de la valeur par défaut de la prop `href` ([#1333](https://github.com/assurance-maladie-digital/design-system/pull/1333)) ([a9f751c](https://github.com/assurance-maladie-digital/design-system/commit/a9f751c7b1e3bdebab5a23394f1557737d876260))
 
@@ -14,7 +17,7 @@
   - **prompts:** Ajout de l'option Jenkins files ([#1315](https://github.com/assurance-maladie-digital/design-system/pull/1315)) ([de25e11](https://github.com/assurance-maladie-digital/design-system/commit/de25e118bb672007470a3e083f7a372e8153c42c))
 
 - 🎨 **Qualité de code**
-  - **tests:** Mise à jour des labels des blocs `describe` ([#1346](https://github.com/assurance-maladie-digital/design-system/pull/1346))
+  - **tests:** Mise à jour des labels des blocs `describe` ([#1346](https://github.com/assurance-maladie-digital/design-system/pull/1346)) ([c973a62](https://github.com/assurance-maladie-digital/design-system/commit/c973a6230eb0acf4c1cdc78230b856a4a58efcd0))
 
 ### Documentation
 

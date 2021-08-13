@@ -6,15 +6,15 @@ export const config = {
 	addBtn: {
 		outlined: true,
 		color: 'primary',
-		class: 'ml-6'
+		class: 'px-2 px-md-4 ml-6',
+		minWidth: '44px'
 	},
-	addIcon: {
+	addIconLabel: {
 		class: 'mr-1'
 	},
 	textField: {
 		clearable: true,
 		singleLine: true,
-		hideDetails: true,
-		class: 'vd-form-input flex-grow-0'
+		hideDetails: true
 	}
 };
