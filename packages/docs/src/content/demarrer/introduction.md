@@ -1,5 +1,6 @@
 ---
-metaTitle: Introduction
+title: Introduction
+hideTitle: true
 ---
 
 <doc-home-page-header></doc-home-page-header>

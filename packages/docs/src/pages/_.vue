@@ -12,7 +12,7 @@
 				>
 					<article class="flex-grow-1">
 						<h1
-							v-if="document.title"
+							v-if="document.title && !document.hideTitle"
 							v-text="document.title"
 							class="text-h4 text-sm-h4 font-weight-bold mb-4"
 						/>
