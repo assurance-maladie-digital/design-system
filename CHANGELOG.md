@@ -6,12 +6,15 @@
   - **FranceConnectBtn:** Suppression de la valeur par défaut de la prop `href` ([#1333](https://github.com/assurance-maladie-digital/design-system/pull/1333)) ([a9f751c](https://github.com/assurance-maladie-digital/design-system/commit/a9f751c7b1e3bdebab5a23394f1557737d876260))
 
 - 🎨 **Qualité de code**
-  - **tests:** Mise à jour des labels des blocs `describe` ([#1345](https://github.com/assurance-maladie-digital/design-system/pull/1345))
+  - **tests:** Mise à jour des labels des blocs `describe` ([#1345](https://github.com/assurance-maladie-digital/design-system/pull/1345)) ([404a997](https://github.com/assurance-maladie-digital/design-system/commit/404a997610e51b521923888e79ae74d3ea100d2e))
 
 ### Vue Dash
 
 - ✨ **Nouvelles fonctionnalités**
   - **prompts:** Ajout de l'option Jenkins files ([#1315](https://github.com/assurance-maladie-digital/design-system/pull/1315)) ([de25e11](https://github.com/assurance-maladie-digital/design-system/commit/de25e118bb672007470a3e083f7a372e8153c42c))
+
+- 🎨 **Qualité de code**
+  - **tests:** Mise à jour des labels des blocs `describe` ([#1346](https://github.com/assurance-maladie-digital/design-system/pull/1346))
 
 ### Documentation
 
