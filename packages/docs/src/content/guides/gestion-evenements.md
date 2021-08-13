@@ -5,7 +5,11 @@ description: Création et utilisation des événements entre des composants pare
 
 ## Création depuis le composant enfant
 
+<doc-indent>
+
 Il est parfois nécessaire qu’un composant enfant remonte des données au composant parent. Pour cela, on utilise les événements.
+
+</doc-indent>
 
 Pour émettre un événement, vous pouvez utiliser la fonction `this.$emit` depuis le composant enfant :
 
@@ -17,7 +21,11 @@ Le premier argument de la fonction est le nom de l’événement et le second es
 
 ## Écoute depuis le composant parent
 
+<doc-indent>
+
 Pour écouter un événement lancé depuis un composant enfant, vous pouvez utiliser directive [`v-on`](https://vuejs.org/v2/api/#v-on) sur le composant enfant :
+
+</doc-indent>
 
 ```vue
 <VTextField @change="emitChangeEvent" />
