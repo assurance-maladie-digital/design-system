@@ -54,7 +54,7 @@
 
 		get link(): string {
 			const linkArray = [
-				'https://github.com/',
+				'https://github.com',
 				REPO,
 				'edit',
 				DEFAULT_BRANCH,
