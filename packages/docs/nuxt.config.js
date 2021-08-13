@@ -20,7 +20,7 @@ export default {
 			{
 				hid: 'description',
 				name: 'description',
-				content: 'Un Design System pour l’Assurance Maladie'
+				content: 'Un Design System pour l’Assurance Maladie.'
 			}
 		],
 		link: [
@@ -100,7 +100,7 @@ export default {
 	generate: {
 		routes: [
 			// Generate introduction page
-			// (required since we don't have an home page)
+			// (required since we don't have a home page)
 			'/demarrer/introduction'
 		]
 	}

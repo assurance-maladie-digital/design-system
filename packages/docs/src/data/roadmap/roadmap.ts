@@ -135,7 +135,7 @@ export const roadmap: RoadmapSection[] = [
 			},
 			{
 				title: 'Vue.js 3',
-				description: 'Passage à Vue.js 3 (migration à Vuetify 3, Nuxt 3 et réécritures des composants).',
+				description: 'Passage à Vue.js 3 (migration à Vuetify 3, Nuxt 3 et réécriture des composants).',
 				label: 'refactoring'
 			}
 		]
