@@ -16,6 +16,9 @@
 - ✨ **Nouvelles fonctionnalités**
   - **prompts:** Ajout de l'option Jenkins files ([#1315](https://github.com/assurance-maladie-digital/design-system/pull/1315)) ([de25e11](https://github.com/assurance-maladie-digital/design-system/commit/de25e118bb672007470a3e083f7a372e8153c42c))
 
+- 🐛 **Corrections de bugs**
+  - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359))
+
 - 🎨 **Qualité de code**
   - **tests:** Mise à jour des labels des blocs `describe` ([#1346](https://github.com/assurance-maladie-digital/design-system/pull/1346)) ([c973a62](https://github.com/assurance-maladie-digital/design-system/commit/c973a6230eb0acf4c1cdc78230b856a4a58efcd0))
 
