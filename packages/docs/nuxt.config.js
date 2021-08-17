@@ -56,12 +56,12 @@ export default {
 	buildModules: [
 		'@nuxt/typescript-build',
 		'@nuxtjs/vuetify',
-		'@nuxtjs/google-fonts',
-		'@nuxtjs/google-analytics'
+		'@nuxtjs/google-fonts'
 	],
 	plugins: [
 		'~/plugins/vue-dot.ts',
-		'~/plugins/form-builder.ts'
+		'~/plugins/form-builder.ts',
+		'~/plugins/gtag.ts'
 	],
 	build: {
 		transpile: [
@@ -91,9 +91,6 @@ export default {
 			'Open+Sans': [300, 400, 600, 700]
 		},
 		display: 'swap'
-	},
-	googleAnalytics: {
-		id: process.env.GOOGLE_ANALYTICS_ID
 	},
 	hooks: {
 		'content:file:beforeParse': (document) => {
