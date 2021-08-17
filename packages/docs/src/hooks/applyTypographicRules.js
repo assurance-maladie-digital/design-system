@@ -9,7 +9,7 @@ function insertNBSP(document, characters, position = 'before', noSpaceAfter = fa
 		const toMatch = noSpaceAfter ? stringToMatch + '\W' : stringToMatch;
 		const regexp = new RegExp(toMatch, 'gm');
 
-		document.data = document.data.replace(regexp, replaceValue);
+		document.data = document.data.replace(regexp, replaceValue.replace('\\', ''));
 	});
 }
 
