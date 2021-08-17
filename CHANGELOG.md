@@ -23,6 +23,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **global:** Ajout d'un hook pour appliquer des règles typographiques ([#1351](https://github.com/assurance-maladie-digital/design-system/pull/1351)) ([a6099b6](https://github.com/assurance-maladie-digital/design-system/commit/a6099b6ad7e37e32ed5dc8f10e9c6090f46e61c5))
+  - **global:** Ajout de l'analyse d'audience ([#1363](https://github.com/assurance-maladie-digital/design-system/pull/1363))
 
 - 🐛 **Corrections de bugs**
   - **installation:** Correction de l'affichage des `ExpansionPanels` ([#1325](https://github.com/assurance-maladie-digital/design-system/pull/1325)) ([11cfa7c](https://github.com/assurance-maladie-digital/design-system/commit/11cfa7cf7230459e4cffb895a9f8c6a3bc876f20))
@@ -53,7 +54,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de la configuration de renovate ([#1343](https://github.com/assurance-maladie-digital/design-system/pull/1343)) ([2f82e81](https://github.com/assurance-maladie-digital/design-system/commit/2f82e81d02fc6c4adaed6d4d3680fe8180ec0300))
-  - **ci:** Mise à jour de la configuration de renovate ([#1361](https://github.com/assurance-maladie-digital/design-system/pull/1361))
+  - **ci:** Mise à jour de la configuration de renovate ([#1361](https://github.com/assurance-maladie-digital/design-system/pull/1361)) ([99d8b8b](https://github.com/assurance-maladie-digital/design-system/commit/99d8b8bdf53b6b7c985a9729f81a597c379dd05e))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.2` ([#1323](https://github.com/assurance-maladie-digital/design-system/pull/1323)) ([a4f7c94](https://github.com/assurance-maladie-digital/design-system/commit/a4f7c946a318590a8b8214de56467887feef03c3))
