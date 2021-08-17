@@ -20,6 +20,13 @@
 				"remark-html"
 			],
 			"allowedVersions": "<14"
+		},
+		{
+			"matchPackageNames": [
+				"remark",
+				"remark-html"
+			],
+			"allowedVersions": "<1.33"
 		}
 	]
 }
