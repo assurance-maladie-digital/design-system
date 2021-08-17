@@ -20,6 +20,12 @@
 				"remark-html"
 			],
 			"allowedVersions": "<14"
+		},
+		{
+			"matchPackageNames": [
+				"sass"
+			],
+			"allowedVersions": "<1.33"
 		}
 	]
 }
