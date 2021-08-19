@@ -1,5 +1,6 @@
 ## Non publié
 
+<<<<<<< HEAD
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
@@ -18,6 +19,12 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.30.0` ([#1399](https://github.com/assurance-maladie-digital/design-system/pull/1399)) ([edcaab5](https://github.com/assurance-maladie-digital/design-system/commit/edcaab57cd67c119cd742d9c004c8ae467d252db))
   - **@types/node:** Mise à jour vers la `v14.17.14` ([#1400](https://github.com/assurance-maladie-digital/design-system/pull/1400)) ([4900c27](https://github.com/assurance-maladie-digital/design-system/commit/4900c2705e873882b1f20194ab3da75cd77b0723))
   - **core-js:** Mise à jour vers la `v3.17.1` ([#1402](https://github.com/assurance-maladie-digital/design-system/pull/1402))
+=======
+### Documentation
+
+- 📝 **Documentation**
+  - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396))
+>>>>>>> 1283-install-config-cypress
 
 ## v2.0.0
 
@@ -31,6 +38,7 @@ Cette version majeure comporte l'ajout de guides et la complétion de la documen
   - **TableToolbar:** Correction de l'affichage du composant en mobile ([#1347](https://github.com/assurance-maladie-digital/design-system/pull/1347)) ([f78383f](https://github.com/assurance-maladie-digital/design-system/commit/f78383f3b54edea2771ed089df96f77683939f37))
 
 - ♻️ **Refactoring**
+  - **Unit test:** Replace test-utils by test component of cypress ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385)) ([a2dc3a3](https://github.com/assurance-maladie-digital/design-system/pull/1385/commits/a2dc3a341794a8b2db563d848c55bd8fae3c00ba))
   - **FranceConnectBtn:** Suppression de la valeur par défaut de la prop `href` ([#1333](https://github.com/assurance-maladie-digital/design-system/pull/1333)) ([a9f751c](https://github.com/assurance-maladie-digital/design-system/commit/a9f751c7b1e3bdebab5a23394f1557737d876260))
 
 - 🎨 **Qualité de code**

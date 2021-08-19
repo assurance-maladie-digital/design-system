@@ -6,6 +6,9 @@ const config: Config.InitialOptions = {
 		'<rootDir>/src/**/tests/*.spec.ts',
 		'<rootDir>/tests/**/*.spec.ts'
 	],
+	testPathIgnorePatterns: [
+		'.e2e.spec.ts'
+	],
 	moduleNameMapper: {
 		'^@/tests$': '<rootDir>/tests/index.ts',
 		'^@/tests/(.*)$': '<rootDir>/tests/$1',
@@ -24,6 +27,7 @@ const config: Config.InitialOptions = {
 		// for now because the report is incorrect
 		'src/**/*.ts',
 		'!**/node_modules/**',
+		'!**/*.e2e.spec.ts',
 		'!**/*.d.ts',
 		'!**/dev/**',
 		'!**/data/**'

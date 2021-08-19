@@ -22,12 +22,15 @@
 		"dev/**/*.vue",
 		"src/**/*.ts",
 		"src/**/*.vue",
+		"tests/**/*.spec.ts",
 		"tests/**/*.ts",
 		"types/**/*.ts",
 		"scripts/**/*.ts",
 		"*.json"
 	],
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"tests/**/*.e2e.spec.ts",
+		"src/**/*.e2e.spec.ts"
 	]
 }
