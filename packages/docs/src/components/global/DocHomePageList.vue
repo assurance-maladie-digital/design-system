@@ -13,14 +13,12 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import DocMarkdown from '../code/DocMarkdown.vue';
 	import DocTextIcon from './DocTextIcon.vue';
 
 	import { homePageListItems } from '../../data/homePageListItems';
 
 	@Component({
 		components: {
-			DocMarkdown,
 			DocTextIcon: DocTextIcon
 		}
 	})
