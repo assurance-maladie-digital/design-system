@@ -3,6 +3,7 @@
 		<div
 			v-for="(item, index) in designPrinciplesPageItems"
 			:key="index"
+			class="mb-10"
 		>
 			<DocMarkdown class="mb-8">{{ item.title }}</DocMarkdown>
 
@@ -13,7 +14,6 @@
 			<DocTextIcon
 				:icon="item.icon"
 				:content="item.content"
-				class="mb-10"
 			/>
 		</div>
 	</div>

@@ -1,11 +1,10 @@
 <template>
-	<div class="doc-home-page-list">
+	<div class="doc-home-page-list mb-10">
 		<DocTextIcon
 			v-for="(item, index) in homePageListItems"
 			:key="index"
 			:icon="item.icon"
 			:content="item.content"
-			class="mb-10"
 		/>
 	</div>
 </template>
