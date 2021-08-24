@@ -3,13 +3,13 @@ title: Tableau avec pagination
 description: Création d’un tableau paginé qui récupère des données d’une API.
 ---
 
-Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère et affiche des données provenant d’une API. Nous utiliserons le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table).
+Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère et affiche des données provenant d’une API. Nous utiliserons le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table). Ce composant permet d’afficher des données dans un tableau, de les trier et de les paginer.
 
 ## Création de l’API
 
-La première étape consiste à créer l’API qui récuperera les données que l'on souhaite afficher dans notre tableau paginé. Nous allons la définir dans le fichier `src/services/getDataFromApi/api.ts`. 
+La première étape consiste à créer l’API qui récuperera les données que l'on souhaite afficher dans notre tableau paginé. Nous allons définir cette API dans le fichier `src/services/getDataFromApi/api.ts`. 
 
-Dans notre cas, nous n’allons pas appeller un vrai API, mais nous allons simuler la récupération de données via une fonction qui retourne des données. Le jeu de données que nous souhaitons manipuler est le suivant : 
+Dans notre cas, nous n’allons pas appeller une vraie API, mais nous allons simuler la récupération de données via une fonction qui retourne un jeu de données sur lequel nous auront effectué des modifications. Le jeu de données que nous souhaitons manipuler est le suivant : 
 
 ```ts
 function getItems(): User[] {
@@ -103,13 +103,9 @@ export interface User {
 }
 ```
 
-Nous allons donc définir une fonction asynchrone `getDataFromApi` qui a pour but de récupérer les données. Dans notre cas nous allons simuler le comportement d’une API de pagination standard coté serveur. Notre fonction (API) attendra de recevoir des options qui lui permettront de filtrer/trier nos données (dans le cas d’une vrai API, ces options seraient envoyées dans les paramètres de la requête) . L’interface de ces options est `DataOptions` que nous importons depuis vuetify :
+Nous allons donc définir une fonction asynchrone `getDataFromApi` qui a pour but de récupérer les données. Dans notre cas nous allons simuler le comportement d’une API de pagination standard coté serveur. Notre fonction attendra de recevoir des options qui lui permettront d’afficher/trier nos données (dans le cas d’une vraie API, ces options seraient envoyées dans les paramètres de la requête) . L’interface de ces options est `DataOptions` que nous importons de vuetify.
 
-```ts
-import { DataOptions } from 'vuetify';
-```
-
-Dans notre cas, nous utiliserons seulement 4 de ces options :
+Nous utiliserons seulement 4 de ces options :
 
 - `sortBy`: indique sur quels champs les données doivent êtres triées, le type attendu est `string[]`,
 - `sortDesc`: indique si les données doivent être triées de manière ascendante ou descendante, le type attendu est `boolean`,
@@ -125,7 +121,9 @@ L’interface `DataOptions` permet d’autres options, voir l’API du composant
 Voici la définition de notre API :
 
 ```ts
-export async function getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): Promise<PaginatedResult> {
+import { DataOptions } from 'vuetify';
+
+export async function getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): Promise<Result> {
     return new Promise((resolve) => {
         let items: User[] = getItems();
         const total = items.length;
@@ -176,23 +174,25 @@ export async function getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: D
 Cette fonction renvoie des données dont l’interface est définie dans le fichier `src/services/getDataFromApi/types.d.ts` :
 
 ```ts
-export interface PaginatedResult {
+export interface Result {
     items: User[];
     total: number;
 }
 ```
 
-Dans le cas d’une vrai API, la fonction aurait été du type : 
+Dans le cas d’une vraie API, la fonction aurait été du type : 
 
 ```ts
 import { axios, AxiosResponse } from '@/plugins/axios';
 
 import { DataOptions } from 'vuetify';
 
-export function getDataFromApi(options: DataOptions): Promise<AxiosResponse<Response>> {
+import { Result }
+
+export function getDataFromApi(options: DataOptions): Promise<AxiosResponse<Result>> {
 	return axios.get('/mon-api.example', {
 		params: {
-			options
+			...options
 		}
 	});
 }
@@ -200,7 +200,7 @@ export function getDataFromApi(options: DataOptions): Promise<AxiosResponse<Resp
 
 <doc-alert type="info">
 
-L’interface `Response` serait définie dans le fichier `./types.d.ts`;
+L’interface `Result` serait définie dans le fichier `./types.d.ts`;
 
 </doc-alert>
 
@@ -274,10 +274,14 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 </script>
 ```
 
-Les valeurs de l’objet `options` seront mise à jour par le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
+Il faut définir un array d’objet `headers` pour indiquer au tableau quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher. Cette varaible sera ensuite passé dans la props `headers`.
+
+Les valeurs de l’objet `options` seront mises à jour par le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api).
+
+C’est la fonction `fetchData` qui utilisera notre API pour récupérer les données. Elle sera appelée lorsque l’objet `options` sera modifié grâce la directive `@update:options="fetchData"`. Une fois récupérée, nous stockerons les `items` dans la variables `users` et le nombre total d’items `total` dans la variable `totalUsers` pour les passer respectivement au tableau dans les props `items` et `server-items-length`.
 
 <doc-alert type="info">
 
-La fonction `fetchData` sera appelée lorsqu’un des options sera modifiée via la directive `@update:options="fetchData"`.
+ Nous utiliserons l’enum `STATE_ENUM` et la variable `state` pour gérer l’état de chargement du tableau au travers de la props `loading`, qui doit afficher le chargement lorsque la fonction `fetchData` est appelée et tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
 
 </doc-alert>
