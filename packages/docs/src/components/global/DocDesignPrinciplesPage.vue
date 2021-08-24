@@ -1,9 +1,9 @@
 <template>
-	<div class="mt-6">
+	<div class="doc-design-principles-page">
 		<div
 			v-for="(item, index) in designPrinciplesPageItems"
 			:key="index"
-			class="my-10"
+			class="mt-10 mb-10"
 		>
 			<DocMarkdown class="mb-8">{{ item.title }}</DocMarkdown>
 
