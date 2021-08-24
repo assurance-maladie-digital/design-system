@@ -4,10 +4,10 @@
 			v-for="(item, index) in designPrinciplesPageItems"
 			:key="index"
 		>
-			<DocMarkdown>{{ item.title }}</DocMarkdown>
+			<DocMarkdown class="mb-8">{{ item.title }}</DocMarkdown>
 
 			<DocIndent>
-				<DocMarkdown class="mt-8">{{ item.description }}</DocMarkdown>
+				<DocMarkdown>{{ item.description }}</DocMarkdown>
 			</DocIndent>
 
 			<DocTextIcon
