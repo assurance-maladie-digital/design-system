@@ -6,7 +6,9 @@
 		>
 			<DocMarkdown>{{ item.title }}</DocMarkdown>
 
-			<DocMarkdown class="mt-8">{{ item.description }}</DocMarkdown>
+			<DocIndent>
+				<DocMarkdown class="mt-8">{{ item.description }}</DocMarkdown>
+			</DocIndent>
 
 			<DocTextIcon
 				:icon="item.icon"
@@ -21,6 +23,7 @@
 	import Component from 'vue-class-component';
 
 	import DocMarkdown from '../code/DocMarkdown.vue';
+	import DocIndent from './DocIndent.vue';
 	import DocTextIcon from './DocTextIcon.vue';
 
 	import { designPrinciplesPageItems } from '../../data/designPrinciplesPageItems';
@@ -28,6 +31,7 @@
 	@Component({
 		components: {
 			DocMarkdown,
+			DocIndent,
 			DocTextIcon
 		}
 	})
