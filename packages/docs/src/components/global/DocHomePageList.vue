@@ -19,7 +19,7 @@
 
 	@Component({
 		components: {
-			DocTextIcon: DocTextIcon
+			DocTextIcon
 		}
 	})
 	export default class DocHomePageList extends Vue {
