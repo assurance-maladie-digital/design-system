@@ -28,7 +28,7 @@
 	@Component({
 		components: {
 			DocMarkdown,
-			DocTextIcon: DocTextIcon
+			DocTextIcon
 		}
 	})
 	export default class DocDesignPrinciplesPage extends Vue {
