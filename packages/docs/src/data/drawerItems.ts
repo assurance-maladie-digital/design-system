@@ -190,6 +190,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Authentification avec token',
 				to: '/guides/authentification-token'
+			},
+			{
+				title: 'Tableau avec pagination',
+				to: '/guides/tableau-pagination'
 			}
 		]
 	}
