@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-text-icon pl-0 mt-10 w-100 d-flex align-center">
+	<div class="doc-text-icon pl-0 w-100 d-flex align-center">
 		<VIcon
 			:size="iconSize"
 			color="secondary"

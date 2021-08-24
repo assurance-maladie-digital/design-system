@@ -1,5 +1,5 @@
 <template>
-	<div class="doc-home-page-list mb-10">
+	<div class="doc-home-page-list my-10">
 		<DocTextIcon
 			v-for="(item, index) in homePageListItems"
 			:key="index"
