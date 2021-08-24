@@ -35,7 +35,7 @@
   - **home:** Refonte de la page d'accueil ([#1330](https://github.com/assurance-maladie-digital/design-system/pull/1330)) ([7ef81d5](https://github.com/assurance-maladie-digital/design-system/commit/7ef81d57c327f3cea2c2cca082e6fe1b592176ea))
 
 - 🔥 **Suppressions**
-  - **glossaire:** Suppression de la page Glossaire ([#1369](https://github.com/assurance-maladie-digital/design-system/pull/1298)) ([d759f82](https://github.com/assurance-maladie-digital/design-system/commit/d759f82e4c1d6b0bd3123e1d1b312cfedf2a5bf0))
+  - **glossaire:** Suppression de la page Glossaire ([#1369](https://github.com/assurance-maladie-digital/design-system/pull/1370)) ([85196af](https://github.com/assurance-maladie-digital/design-system/commit/85196afed4c5c55044d99d90f6f781c61c8eae93))
 
 - 🔧 **Configuration**
   - **config:** Ajout de l'option `--fail-on-error` à la commande `yarn generate` ([#1338](https://github.com/assurance-maladie-digital/design-system/pull/1338)) ([fb102ae](https://github.com/assurance-maladie-digital/design-system/commit/fb102ae13b34faa38dab28cfda85f31e9cf52844))
