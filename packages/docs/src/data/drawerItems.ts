@@ -12,7 +12,7 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/introduction'
 			},
 			{
-				title: 'Principes du design',
+				title: 'Principes de design',
 				to: '/demarrer/principes-design'
 			},
 			{
