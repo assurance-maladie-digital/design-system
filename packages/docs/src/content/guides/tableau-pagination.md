@@ -114,11 +114,11 @@ Dans notre cas, nous utiliserons seulement 4 de ces options :
 - `sortBy`: indique sur quels champs les données doivent êtres triées, le type attendu est `string[]`,
 - `sortDesc`: indique si les données doivent être triées de manière ascendante ou descendante, le type attendu est `boolean`,
 - `page`: indique la page dont nous souhaitons voir les données, le type attendu est `number`,
-- `itemsPerPage`: indique le nombre d'items par page que nous voulons voir afichés, le type est `number`.
+- `itemsPerPage`: indique le nombre d’items par page que nous voulons voir afichés, le type est `number`.
 
 <doc-alert type="info">
 
-L'interface `DataOptions` permet d'autres options, voir l'API du composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
+L’interface `DataOptions` permet d’autres options, voir l’API du composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
 
 </doc-alert>
 
@@ -274,10 +274,10 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 </script>
 ```
 
-Les valeurs de l'objet `options` seront mise à jour par le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
+Les valeurs de l’objet `options` seront mise à jour par le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
 
 <doc-alert type="info">
 
-La fonction `fetchData` sera appelée lorsqu'un des options sera modifiée via la directive `@update:options="fetchData"`.
+La fonction `fetchData` sera appelée lorsqu’un des options sera modifiée via la directive `@update:options="fetchData"`.
 
 </doc-alert>
