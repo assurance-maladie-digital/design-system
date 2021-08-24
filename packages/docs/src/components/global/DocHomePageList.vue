@@ -5,6 +5,7 @@
 			:key="index"
 			:icon="item.icon"
 			:content="item.content"
+			class="mb-10"
 		/>
 	</div>
 </template>

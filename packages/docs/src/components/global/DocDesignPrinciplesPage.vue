@@ -13,6 +13,7 @@
 			<DocTextIcon
 				:icon="item.icon"
 				:content="item.content"
+				class="mb-10"
 			/>
 		</div>
 	</div>
