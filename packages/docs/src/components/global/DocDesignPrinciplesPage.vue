@@ -7,7 +7,7 @@
 		>
 			<DocMarkdown class="mb-8">{{ item.title }}</DocMarkdown>
 
-			<DocIndent>
+			<DocIndent class="mb-8">
 				<DocMarkdown>{{ item.description }}</DocMarkdown>
 			</DocIndent>
 
