@@ -8,12 +8,18 @@
 			{{ icon }}
 		</VIcon>
 
-		<DocMarkdown>{{ content }}</DocMarkdown>
+		<VRow no-gutters>
+			<DocMarkdown
+				v-for="(item, index) in content"
+				:key="index"
+				:class="index > 0 ? 'mt-8' : ''"
+			>{{ item }}</DocMarkdown>
+		</VRow>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
 	import DocMarkdown from '../code/DocMarkdown.vue';
@@ -27,7 +33,7 @@
 				required: true
 			},
 			content: {
-				type: String,
+				type: Array as PropType<string[]>,
 				required: true
 			}
 		}
