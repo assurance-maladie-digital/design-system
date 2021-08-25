@@ -25,7 +25,7 @@
 
 	import DocMarkdown from '../code/DocMarkdown.vue';
 	import DocIndent from './DocIndent.vue';
-	import DocTextIcon from './DocTextIcon.vue';
+	import DocTextIcon from '../page/DocTextIcon.vue';
 
 	import { designPrinciplesPageItems } from '../../data/designPrinciplesPageItems';
 

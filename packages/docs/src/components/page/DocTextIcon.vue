@@ -13,7 +13,9 @@
 				v-for="(item, index) in content"
 				:key="index"
 				:class="index > 0 ? 'mt-8' : ''"
-			>{{ item }}</DocMarkdown>
+			>
+				{{ item }}
+			</DocMarkdown>
 		</VRow>
 	</div>
 </template>

@@ -14,7 +14,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import DocTextIcon from './DocTextIcon.vue';
+	import DocTextIcon from '../page/DocTextIcon.vue';
 
 	import { homePageListItems } from '../../data/homePageListItems';
 
