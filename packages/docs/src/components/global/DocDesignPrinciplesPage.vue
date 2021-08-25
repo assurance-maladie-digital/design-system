@@ -5,10 +5,14 @@
 			:key="index"
 			class="my-10"
 		>
-			<DocMarkdown class="mb-8">{{ item.title }}</DocMarkdown>
+			<DocMarkdown class="mb-8">
+				{{ item.title }}
+			</DocMarkdown>
 
 			<DocIndent class="mb-8">
-				<DocMarkdown>{{ item.description }}</DocMarkdown>
+				<DocMarkdown>
+					{{ item.description }}
+				</DocMarkdown>
 			</DocIndent>
 
 			<DocTextIcon
