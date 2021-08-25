@@ -7,7 +7,7 @@ export const designPrinciplesPageItems = [
 		icon: mdiHeartPulse,
 		content: [
 			'<u>Nous recommandons</u> pour chaque utilisation de notre Design System de **favoriser l’écoute et l’empathie auprès des utilisateurs finaux** en récoltant dès que le projet le permet un ou plusieurs retours d’expériences. En suivant ce principe, c’est depuis 2017 plus de 20 produits et services numériques qui ont permis d’affiner et de structurer les choix ergonomiques de notre Design System.',
-			'>Afin d’accompagner les équipes de l’Assurance Maladie, **nous pouvons aider à la mise en place de tests utilisateurs, au passage et à l’analyse des résultats**. En cohérence avec les besoins ou les contraintes des projets, nous vous conseillerons sur la typologie de test à adopter afin de répondre avec performance à vos besoins.'
+			'Afin d’accompagner les équipes de l’Assurance Maladie, **nous pouvons aider à la mise en place de tests utilisateurs, au passage et à l’analyse des résultats**. En cohérence avec les besoins ou les contraintes des projets, nous vous conseillerons sur la typologie de test à adopter afin de répondre avec performance à vos besoins.'
 		]
 	},
 	{
