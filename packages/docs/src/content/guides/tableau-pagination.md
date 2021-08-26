@@ -263,9 +263,9 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 			this.state = STATE_ENUM.pending;
 			
 			try {
-			   const res = await getDataFromApi(this.options);
-			   this.users = res.items;
-		           this.totalUsers = res.total;
+			   const { items, total } = await getDataFromApi(this.options);
+			   this.users = items;
+		           this.totalUsers = total;
 				 
 			   this.state = STATE_ENUM.resolved;
 			} catch(err) {
