@@ -258,17 +258,19 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 		users: User[] = [];
 		totalUsers = 0;
 
-		fetchData(): void {
+		async fetchData(): void {
+		
 			this.state = STATE_ENUM.pending;
-
-			getDataFromApi(this.options)
-				.then(({ items, total }) => {
-					this.users = items;
-					this.totalUsers = total;
-
-					this.state = STATE_ENUM.resolved;
-				})
-				.catch(() => this.state = STATE_ENUM.rejected);
+			
+			try {
+			   const res = await getDataFromApi(this.options);
+			   this.users = res.items;
+		           this.totalUsers = res.total;
+				 
+			   this.state = STATE_ENUM.resolved;
+			} catch(err) {
+			   this.state = STATE_ENUM.rejected;
+			}
 		}
 	}
 </script>
