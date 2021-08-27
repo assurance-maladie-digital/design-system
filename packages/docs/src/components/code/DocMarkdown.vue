@@ -38,7 +38,7 @@
 
 				data.domProps = {
 					...data.domProps,
-					innerHTML: markdownToHtml(text)
+					innerHTML: markdownToHtml(text.trim())
 				};
 			}
 
