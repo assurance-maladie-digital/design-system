@@ -9,7 +9,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class DocImage extends Vue {}
+	export default class DocIndent extends Vue {}
 </script>
 
 <style lang="scss" scoped>
