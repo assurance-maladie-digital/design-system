@@ -26,10 +26,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
-			},
-			{
-				title: 'Glossaire',
-				to: '/demarrer/glossaire'
 			}
 		]
 	},
