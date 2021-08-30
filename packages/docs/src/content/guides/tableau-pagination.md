@@ -7,93 +7,9 @@ Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère
 
 ## Création de l’API
 
-La première étape consiste à créer l’API qui récuperera les données que l'on souhaite afficher dans notre tableau paginé. Nous allons définir cette API dans le fichier `src/services/getDataFromApi/api.ts`. 
+La première étape consiste à créer l’API qui récuperera les données que l'on souhaite afficher dans notre tableau paginé. Nous allons définir différents éléments le dossier `src/services/getDataFromApi`. 
 
-Dans notre cas, nous n’allons pas appeller une vraie API, mais nous allons simuler la récupération de données via une fonction qui retourne un jeu de données sur lequel nous auront effectué des modifications. Le jeu de données que nous souhaitons manipuler est le suivant : 
-
-```ts
-function getItems(): User[] {
-    return [
-        {
-            firstname: 'Virginie',
-            lastname: 'Beauchesne',
-            email: 'virginie.beauchesne@example.com'
-        },
-        {
-            firstname: 'Simone',
-            lastname: 'Bellefeuille',
-            email: 'simone.bellefeuille@example.com'
-        },
-        {
-            firstname: 'Étienne',
-            lastname: 'Salois',
-            email: 'etienne.salois@example.com'
-        },
-        {
-            firstname: 'Bernadette',
-            lastname: 'Langelier',
-            email: 'bernadette.langelier@example.com'
-        },
-        {
-            firstname: 'Agate',
-            lastname: 'Roy',
-            email: 'agate.roy@example.com'
-        },
-        {
-            firstname: 'Louis',
-            lastname: 'Denis',
-            email: 'louis.denis@example.com'
-        },
-        {
-            firstname: 'Édith',
-            lastname: 'Cartier',
-            email: 'edith.cartier@example.com'
-        },
-        {
-            firstname: 'Alphonse',
-            lastname: 'Bouvier',
-            email: 'alphonse.bouvier@example.com'
-        },
-        {
-            firstname: 'Eustache',
-            lastname: 'Dubois',
-            email: 'eustache.dubois@example.com'
-        },
-        {
-            firstname: 'Rosemarie',
-            lastname: 'Quessy',
-            email: 'rosemarie.quessy@example.com'
-        },
-        {
-            firstname: 'Serge',
-            lastname: 'Rivard',
-            email: 'serge.rivard@example.com'
-        },
-        {
-            firstname: 'Jacques',
-            lastname: 'Demers',
-            email: 'jacques.demers@example.com'
-        },
-        {
-            firstname: 'Aimée',
-            lastname: 'Josseaume',
-            email: 'aimee.josseaume@example.com'
-        },
-        {
-            firstname: 'Delphine',
-            lastname: 'Robillard',
-            email: 'delphine.robillard@example.com'
-        },
-        {
-            firstname: 'Alexandre',
-            lastname: 'Lazure',
-            email: 'alexandre.lazure@example.com'
-        }
-    ];
-}
-```
-
-Il faut définir l’interface de ces données dans le fichier `src/services/getDataFromApi/types.d.ts` :
+Commençons par définir l’interface des données qui seront retournées, dans le fichier `src/services/getDataFromApi/types.d.ts` :
 
 ```ts
 export interface User {
@@ -101,11 +17,20 @@ export interface User {
     lastname: string;
     email: string;
 }
+
+export interface Result {
+    items: User[];
+    total: number;
+}
 ```
 
-Nous allons donc définir une fonction asynchrone `getDataFromApi` qui a pour but de récupérer les données. Dans notre cas nous allons simuler le comportement d’une API de pagination standard coté serveur. Notre fonction attendra de recevoir des options qui lui permettront d’afficher/trier nos données (dans le cas d’une vraie API, ces options seraient envoyées dans les paramètres de la requête) . L’interface de ces options est `DataOptions` que nous importons de vuetify.
+Nous allons ensuite définir une fonction asynchrone `getDataFromApi` qui a pour but de récupérer les données. Notre fonction attendra de recevoir des options qui lui permettront trier nos données . L’interface de ces options est `DataOptions` que nous importons de vuetify :
 
-Nous utiliserons seulement 4 de ces options :
+```ts
+import { DataOptions } from 'vuetify';
+```
+
+Nous utiliserons plus loin dans ce guide seulement 4 propriétés du l’interface `DataOptions`:
 
 - `sortBy`: indique sur quels champs les données doivent êtres triées, le type attendu est `string[]`,
 - `sortDesc`: indique si les données doivent être triées de manière ascendante ou descendante, le type attendu est `boolean`,
@@ -118,69 +43,33 @@ L’interface `DataOptions` permet d’autres options, voir l’API du composant
 
 </doc-alert>
 
-Voici la définition de notre API :
+Il nous faut maintenant définir l’instance axios que nous allons utiliser, elle doit être définie dans le fichier `@/plugins/axios`:
 
 ```ts
-import { DataOptions } from 'vuetify';
+import axios from 'axios';
 
-export async function getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): Promise<Result> {
-    return new Promise((resolve) => {
-        let items: User[] = getItems();
-        const total = items.length;
+/** Axios instance to request our APIs */
+const instance = axios.create({
+	withCredentials: false,
+	baseURL: WINDOW.API_URL,
+	headers: {
+		'Accept': 'application/json',
+		'Content-Type': 'application/json',
+	}
+});
 
-        // Sorting algorithm
-        if (sortBy) {
-            items = items.sort((a, b) => {
-                const sortA = a[sortBy[0]];
-                const sortB = b[sortBy[0]];
-
-                if (sortDesc) {
-                    if (sortA < sortB) {
-                        return 1;
-                    }
-
-                    if (sortA > sortB) {
-                        return -1;
-                    }
-
-                    return 0;
-                } else {
-                    if (sortA < sortB) {
-                        return -1;
-                    }
-
-                    if (sortA > sortB) {
-                        return 1;
-                    }
-
-                    return 0;
-                }
-            });
-        }
-
-        // Pagination
-        if (itemsPerPage > 0) {
-            items = items.slice((page - 1) * itemsPerPage, page * itemsPerPage);
-        }
-
-        resolve({
-            items,
-            total
-        });
-    });
-}
+export {
+	instance as axios
+};
 ```
 
-Cette fonction renvoie des données dont l’interface est définie dans le fichier `src/services/getDataFromApi/types.d.ts` :
+<doc-alert type="info">
 
-```ts
-export interface Result {
-    items: User[];
-    total: number;
-}
-```
+Nous utilisons une variable d’environement pour spécifier l’URL de base de notre instance axios, voir le guide sur la gestion des [variables d’environnement](https://digital-design-system.netlify.app/guides/variables-environnement).
 
-Dans le cas d’une vraie API, la fonction aurait été du type : 
+</doc-alert>
+
+Nous pouvons maintenant définir notre API, nous utilisons l’instance que nous avons définie précédement, nous définissons notre API dans le fichier `src/services/getDataFromApi/api.ts`:
 
 ```ts
 import { axios, AxiosResponse } from '@/plugins/axios';
@@ -227,11 +116,11 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 
 	import { DataOptions } from 'vuetify';
 
-	import { User } from '@/services/getDataFromApi/types';
+	import { User } from '../../../services/getUsers/types';
 
 	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
-	import { getDataFromApi } from '@/services/getDataFromApi/api';
+	import { getUsersFromApi } from '../../../services/getUsers/api';
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
@@ -258,19 +147,24 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 		users: User[] = [];
 		totalUsers = 0;
 
-		async fetchData(): void {
-		
+		mounted() {
+			this.fetchData();
+		}
+
+		async fetchData(): Promise<void> {
+
 			this.state = STATE_ENUM.pending;
-			
+
 			try {
-			   const { items, total } = await getDataFromApi(this.options);
-               
-			   this.users = items;
-                this.totalUsers = total;
-				 
-			   this.state = STATE_ENUM.resolved;
+				const res = await getUsersFromApi(this.options);
+				const { items, total } = res.data;
+
+				this.users = items;
+				this.totalUsers = total;
+
+				this.state = STATE_ENUM.resolved;
 			} catch(err) {
-			   this.state = STATE_ENUM.rejected;
+				this.state = STATE_ENUM.rejected;
 			}
 		}
 	}
@@ -283,8 +177,10 @@ Les valeurs de l’objet `options` seront mises à jour par le composant [`Pagin
 
 C’est la fonction `fetchData` qui utilisera notre API pour récupérer les données. Elle sera appelée lorsque l’objet `options` sera modifié grâce la directive `@update:options="fetchData"`. Une fois récupérée, nous stockerons les `items` dans la variables `users` et le nombre total d’items `total` dans la variable `totalUsers` pour les passer respectivement au tableau dans les props `items` et `server-items-length`.
 
-<doc-alert type="info">
+Il faut appeler la fonction `fetchData` après l’initialisation du composant, pour récupérer les données une première fois. Nous le faisons dans le hook `mounted`.
 
- Nous utiliserons l’enum `STATE_ENUM` et la variable `state` pour gérer l’état de chargement du tableau au travers de la props `loading`, qui doit afficher le chargement lorsque la fonction `fetchData` est appelée et tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
+Nous utiliserons l’enum `STATE_ENUM` et la variable `state` pour gérer l’état de chargement du tableau au travers de la props `loading`, qui doit afficher le chargement lorsque la fonction `fetchData` est appelée et tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
 
-</doc-alert>
+## Exemple
+
+<doc-example file="paginated-table-guide/usage"></doc-example>
