@@ -9,9 +9,15 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import ContentExplorer from '../content-explorer/ContentExplorer.vue';
+
 	import { contentExplorerItems } from '../../data/contentExplorerItems';
 
-	@Component
+	@Component({
+		components: {
+			ContentExplorer
+		}
+	})
 	export default class DocContentExplorer extends Vue {
 		items = contentExplorerItems;
 	}

@@ -232,6 +232,6 @@ Enfin, vous pouvez [créer une Pull Request](https://github.com/assurance-maladi
 
 <doc-alert type="info">
 
-Comme le projet est dans un cycle de versioning `beta`, vous devez utiliser la branche `dev` comme branche de base.
+Utilisez la branche `dev` comme branche de base.
 
 </doc-alert>

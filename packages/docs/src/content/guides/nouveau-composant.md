@@ -226,7 +226,7 @@ Les autres options comme `components` ou `watch` doivent être passées comme pa
 </script>
 ```
 
-Si vous souhaitez accéder à un membre de la classe (avec le mot clé `this`) dans un `watch`, vous devez augmenter le type du décorateur en passant la classe comme paramètre (`@Component<HelloWorld>`) :
+Si vous souhaitez accéder à un membre de la classe (avec le mot clé `this`) dans un `watch`, vous devez surcharger le type du décorateur en passant la classe comme paramètre (`@Component<HelloWorld>`) :
 
 ```vue
 <template>
