@@ -19,6 +19,11 @@
 - 🎨 **Qualité de code**
   - **tests:** Mise à jour des labels des blocs `describe` ([#1346](https://github.com/assurance-maladie-digital/design-system/pull/1346)) ([c973a62](https://github.com/assurance-maladie-digital/design-system/commit/c973a6230eb0acf4c1cdc78230b856a4a58efcd0))
 
+### CLI Helpers
+
+- 🐛 **Corrections de bugs**
+  - **build:** Correction du dossier `src` non listé dans la liste des ressources à publier ([#1392](https://github.com/assurance-maladie-digital/design-system/pull/1392))
+
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
@@ -53,7 +58,7 @@
   - **global:** Correction de fautes d'orthographe ([#1350](https://github.com/assurance-maladie-digital/design-system/pull/1350)) ([e73f69a](https://github.com/assurance-maladie-digital/design-system/commit/e73f69a422f89b0ae55167161bac5617ab558ecf))
   - **global:** Ajout d'une indentation au début des sections ([#1353](https://github.com/assurance-maladie-digital/design-system/pull/1353)) ([255e38f](https://github.com/assurance-maladie-digital/design-system/commit/255e38ff1ff666bdb7dca7e18d726e3b0de5729d))
   - **global:** Ajout de la page principes de design ([#1368](https://github.com/assurance-maladie-digital/design-system/issues/1368)) ([39ee570](https://github.com/assurance-maladie-digital/design-system/commit/39ee570fd72b920fedff51d63a6418d3827b9a12))
-  - **global:** Correction d'une mauvaise formulation ([#1390](https://github.com/assurance-maladie-digital/design-system/pull/1390))
+  - **global:** Correction d'une mauvaise formulation ([#1390](https://github.com/assurance-maladie-digital/design-system/pull/1390)) ([bfb75f0](https://github.com/assurance-maladie-digital/design-system/commit/bfb75f0bf4255b754727f30d64695d7849f28a43))
 
 ### Interne
 
@@ -1904,7 +1909,7 @@ Cette version comporte un correctif sur la publication du package `@cnamts/cli-h
 ### CLI Helpers
 
 - 🐛 **Corrections de bugs**
-  - **build:** Correction de fichiers non listés dans les fichiers à publier ([d18f672](https://github.com/assurance-maladie-digital/design-system/commit/d18f67266eefc49cd0b973eb25a466b0c1c8efec))
+  - **build:** Correction de fichiers non listés dans les ressources à publier ([d18f672](https://github.com/assurance-maladie-digital/design-system/commit/d18f67266eefc49cd0b973eb25a466b0c1c8efec))
 
 ## v2.0.0-alpha.11
 
