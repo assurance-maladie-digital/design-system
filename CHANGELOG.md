@@ -22,7 +22,8 @@
 ### CLI Helpers
 
 - 🐛 **Corrections de bugs**
-  - **build:** Correction du dossier `src` non listé dans la liste des ressources à publier ([#1392](https://github.com/assurance-maladie-digital/design-system/pull/1392))
+  - **build:** Correction du dossier `src` non listé dans la liste des ressources à publier ([#1392](https://github.com/assurance-maladie-digital/design-system/pull/1392)) ([e6ef1fe](https://github.com/assurance-maladie-digital/design-system/commit/e6ef1fec4094d3bc83b428614528c77e448959d0))
+  - **dependencies:** Correction de la dépendance `@types/figlet` manquante ([#1393](https://github.com/assurance-maladie-digital/design-system/pull/1393))
 
 ### Documentation
 
