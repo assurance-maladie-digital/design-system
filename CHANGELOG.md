@@ -1,8 +1,15 @@
+## Non publié
+
+### Documentation
+
+- 📝 **Documentation**
+  - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396))
+
 ## v2.0.0
 
 **Version publiée le 30/08/2021.**
 
-Cette version comporte l'ajout de guides et la complétion de la documentation, ainsi que des correctifs sur Vue Dot, les CLI Helpers et la documentation.
+Cette version majeure comporte l'ajout de guides et la complétion de la documentation, ainsi que des correctifs sur Vue Dot, les CLI Helpers et la documentation.
 
 ### Vue Dot
 
@@ -75,7 +82,7 @@ Cette version comporte l'ajout de guides et la complétion de la documentation, 
   - **ci:** Mise à jour de la configuration de renovate ([#1361](https://github.com/assurance-maladie-digital/design-system/pull/1361)) ([99d8b8b](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/99d8b8bdf53b6b7c985a9729f81a597c379dd05e))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1395](https://github.com/assurance-maladie-digital/design-system/pull/1395))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1395](https://github.com/assurance-maladie-digital/design-system/pull/1395)) ([c68a01c](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/c68a01c588ffe8e7bc31cd58f7d6d5316573fe2b))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.2` ([#1323](https://github.com/assurance-maladie-digital/design-system/pull/1323)) ([a4f7c94](https://github.com/assurance-maladie-digital/design-system/commit/a4f7c946a318590a8b8214de56467887feef03c3))
