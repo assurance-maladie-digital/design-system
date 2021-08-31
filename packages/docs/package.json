@@ -23,6 +23,7 @@
 		"@cnamts/design-tokens": "2.0.0-beta.10",
 		"@cnamts/form-builder": "^2.0.0-beta.12",
 		"@cnamts/vue-dot": "^2.0.0-beta.12",
+		"@netlify/functions": "^0.7.2",
 		"@octokit/core": "3.5.1",
 		"nuxt": "2.15.8",
 		"vue-prism-component": "1.2.0"

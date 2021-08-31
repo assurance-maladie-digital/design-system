@@ -1,4 +1,4 @@
-import { Handler } from '@netlify/functions';
+import { Handler, HandlerEvent } from '@netlify/functions';
 import { DataOptions } from 'vuetify';
 import { User, UsersResult } from '~/services/getUsers/types';
 
@@ -129,7 +129,7 @@ async function getData({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): P
 	});
 }
 
-const handler: Handler = async (event) => {
+const handler: Handler = async (event: HandlerEvent) => {
 	const options = event.queryStringParameters;
 	const datas = await getData(options as {} as DataOptions);
 

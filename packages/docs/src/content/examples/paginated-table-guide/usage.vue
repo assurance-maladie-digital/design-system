@@ -53,7 +53,6 @@
 
 		async fetchData(): Promise<void> {
 			this.state = STATE_ENUM.pending;
-			console.log(window.API_URL);
 
 			try {
 				const res = await getUsersFromApi(this.options);
