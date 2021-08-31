@@ -7,7 +7,7 @@ Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère
 
 ## Création de l’API
 
-La première étape consiste à créer l’API qui récuperera les données que l'on souhaite afficher dans notre tableau paginé. Nous allons définir différents éléments le dossier `src/services/getDataFromApi`. 
+La première étape consiste à créer l’API qui récuperera les données que l’on souhaite afficher dans notre tableau paginé. Nous allons définir différents éléments le dossier `src/services/getDataFromApi`. 
 
 Commençons par définir l’interface des données qui seront retournées, dans le fichier `src/services/getDataFromApi/types.d.ts` :
 
@@ -24,26 +24,7 @@ export interface Result {
 }
 ```
 
-Nous allons ensuite définir une fonction asynchrone `getDataFromApi` qui a pour but de récupérer les données. Notre fonction attendra de recevoir des options qui lui permettront trier nos données . L’interface de ces options est `DataOptions` que nous importons de vuetify :
-
-```ts
-import { DataOptions } from 'vuetify';
-```
-
-Nous utiliserons plus loin dans ce guide seulement 4 propriétés du l’interface `DataOptions`:
-
-- `sortBy`: indique sur quels champs les données doivent êtres triées, le type attendu est `string[]`,
-- `sortDesc`: indique si les données doivent être triées de manière ascendante ou descendante, le type attendu est `boolean`,
-- `page`: indique la page dont nous souhaitons voir les données, le type attendu est `number`,
-- `itemsPerPage`: indique le nombre d’items par page que nous voulons voir afichés, le type est `number`.
-
-<doc-alert type="info">
-
-L’interface `DataOptions` permet d’autres options, voir l’API du composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
-
-</doc-alert>
-
-Il nous faut maintenant définir l’instance axios que nous allons utiliser, elle doit être définie dans le fichier `@/plugins/axios`:
+Il nous faut maintenant définir l’instance axios que nous allons utiliser pour récupérer les données, elle doit être définie dans le fichier `@/plugins/axios`:
 
 ```ts
 import axios from 'axios';
@@ -69,6 +50,25 @@ Nous utilisons une variable d’environement pour spécifier l’URL de base de 
 
 </doc-alert>
 
+Nous allons ensuite définir une fonction asynchrone `getDataFromApi` qui a pour but de récupérer les données. Notre fonction attendra de recevoir en paramètre un objet qui contient les options dont notre API à besoin qui lui permettront trier nos données. L’interface de ces options est `DataOptions` que nous importons de vuetify :
+
+```ts
+import { DataOptions } from 'vuetify';
+```
+
+Nous utiliserons plus loin dans ce guide seulement 4 propriétés de l’interface `DataOptions`:
+
+- `sortBy`: indique sur quels champs les données doivent êtres triées, le type attendu est `string[]`,
+- `sortDesc`: indique si les données doivent être triées de manière ascendante ou descendante, le type attendu est `boolean`,
+- `page`: indique le numéro de la page dont nous souhaitons voir les données, le type attendu est `number`,
+- `itemsPerPage`: indique le nombre d’items par page que nous voulons voir afichés, le type est `number`.
+
+<doc-alert type="info">
+
+L’interface `DataOptions` permet d’autres options, voir l’API du composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
+
+</doc-alert>
+
 Nous pouvons maintenant définir notre API, nous utilisons l’instance que nous avons définie précédement, nous définissons notre API dans le fichier `src/services/getDataFromApi/api.ts`:
 
 ```ts
@@ -86,12 +86,6 @@ export function getDataFromApi(options: DataOptions): Promise<AxiosResponse<Resu
 	});
 }
 ```
-
-<doc-alert type="info">
-
-L’interface `Result` serait définie dans le fichier `./types.d.ts`;
-
-</doc-alert>
 
 ## Création du composant tableau paginé
 
@@ -116,11 +110,11 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 
 	import { DataOptions } from 'vuetify';
 
-	import { User } from '../../../services/getUsers/types';
+	import { User } from '@/services/getUsers/types';
 
 	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
-	import { getUsersFromApi } from '../../../services/getUsers/api';
+	import { getUsersFromApi } from '@/services/getUsers/api';
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
@@ -171,7 +165,7 @@ Il faut maintenant créer le composant qui contient le tableau paginé :
 </script>
 ```
 
-Il faut définir un array d’objet `headers` pour indiquer au tableau quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher. Cette varaible sera ensuite passé dans la props `headers`.
+Il faut définir un array d’objet `headers` pour indiquer au tableau quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher. Cette varaible sera ensuite passé dans la props `headers` du componsant `PaginatedTable`.
 
 Les valeurs de l’objet `options` seront mises à jour par le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api).
 
