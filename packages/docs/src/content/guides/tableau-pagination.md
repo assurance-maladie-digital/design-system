@@ -7,9 +7,9 @@ Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère
 
 ## Création de l’API
 
-La première étape consiste à créer l’API qui récuperera les données que l’on souhaite afficher dans notre tableau paginé. Nous allons définir différents éléments le dossier `src/services/getDataFromApi`. 
+La première étape consiste à créer l’API qui récuperera les données que l’on souhaite afficher dans notre tableau paginé. Nous allons définir différents éléments le dossier `src/services/getUsersFromApi`. 
 
-Commençons par définir l’interface des données qui seront retournées, dans le fichier `src/services/getDataFromApi/types.d.ts` :
+Commençons par définir l’interface des données qui seront retournées, dans le fichier `src/services/getUsersFromApi/types.d.ts` :
 
 ```ts
 export interface User {
@@ -50,7 +50,7 @@ Nous utilisons une variable d’environement pour spécifier l’URL de base de 
 
 </doc-alert>
 
-Nous allons ensuite définir une fonction asynchrone `getDataFromApi` qui a pour but de récupérer les données. Notre fonction attendra de recevoir en paramètre un objet qui contient les options dont notre API à besoin qui lui permettront trier nos données. L’interface de ces options est `DataOptions` que nous importons de vuetify :
+Nous allons ensuite définir une fonction asynchrone `getUsersFromApi` qui a pour but de récupérer les données. Notre fonction attendra de recevoir en paramètre un objet qui contient les options dont notre API à besoin qui lui permettront trier nos données. L’interface de ces options est `DataOptions` que nous importons de vuetify :
 
 ```ts
 import { DataOptions } from 'vuetify';
@@ -69,7 +69,7 @@ L’interface `DataOptions` permet d’autres options, voir l’API du composant
 
 </doc-alert>
 
-Nous pouvons maintenant définir notre API, nous utilisons l’instance que nous avons définie précédement, nous définissons notre API dans le fichier `src/services/getDataFromApi/api.ts`:
+Nous pouvons maintenant définir notre API, nous utilisons l’instance que nous avons définie précédement, nous définissons notre API dans le fichier `src/services/getUsersFromApi/api.ts`:
 
 ```ts
 import { axios, AxiosResponse } from '@/plugins/axios';
@@ -78,7 +78,7 @@ import { DataOptions } from 'vuetify';
 
 import { Result }
 
-export function getDataFromApi(options: DataOptions): Promise<AxiosResponse<Result>> {
+export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Result>> {
 	return axios.get('/mon-api.example', {
 		params: {
 			...options
