@@ -78,7 +78,7 @@ import { axios, AxiosResponse } from '@/plugins/axios';
 
 import { DataOptions } from 'vuetify';
 
-import { Result }
+import { Result } from '@/services/getUsersFromApi/types';
 
 export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Result>> {
 	return axios.get('/mon-api.example', {
