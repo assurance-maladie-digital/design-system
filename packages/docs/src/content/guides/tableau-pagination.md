@@ -26,7 +26,7 @@ export interface Result {
 }
 ```
 
-Il nous faut maintenant définir l’instance axios que nous allons utiliser pour récupérer les données, elle doit être définie dans le fichier `@/plugins/axios`:
+Maintenant, vous devez définir l’instance axios qui sera utilisée pour récupérer les données, elle doit être définie dans le fichier `@/plugins/axios` :
 
 ```ts
 import axios from 'axios';
