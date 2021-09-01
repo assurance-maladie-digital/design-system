@@ -5,8 +5,6 @@ description: Création d’un tableau paginé qui récupère des données d’un
 
 <doc-indent>
 
-Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère et affiche des données provenant d’une API. Nous utiliserons le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table). Ce composant permet d’afficher des données dans un tableau, de les trier et de les paginer.
-
 </doc-indent>
 
 ## Création de l’API
