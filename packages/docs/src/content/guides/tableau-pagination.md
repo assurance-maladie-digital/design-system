@@ -72,7 +72,7 @@ L’interface `DataOptions` permet d’autres options, vous pouvez consulter [l�
 
 </doc-alert>
 
-Nous pouvons maintenant définir notre API, nous utilisons l’instance que nous avons définie précédement, nous définissons notre API dans le fichier `src/services/getUsersFromApi/api.ts`:
+Enfin, vous devez définir la fonction qui effectuera l'appel API dans le fichier `src/services/getUsersFromApi/api.ts` en utilisant l’instance que vous avez définie précédemment :
 
 ```ts
 import { axios, AxiosResponse } from '@/plugins/axios';
