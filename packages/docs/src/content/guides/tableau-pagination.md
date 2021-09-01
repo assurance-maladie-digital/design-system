@@ -68,7 +68,7 @@ Nous utiliserons plus loin dans ce guide seulement 4 propriétés de l’interfa
 
 <doc-alert type="info">
 
-L’interface `DataOptions` permet d’autres options, voir l’API du composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
+L’interface `DataOptions` permet d’autres options, vous pouvez consulter [l’API du composant `PaginatedTable`](/composants/paginated-table#section/api)
 
 </doc-alert>
 
