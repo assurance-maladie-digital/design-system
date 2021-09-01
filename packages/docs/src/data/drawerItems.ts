@@ -184,16 +184,16 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/utilisation-store'
 			},
 			{
+				title: 'Tableau avec pagination',
+				to: '/guides/tableau-pagination'
+			},
+			{
 				title: 'v-model personnalisé',
 				to: '/guides/v-model'
 			},
 			{
 				title: 'Authentification avec token',
 				to: '/guides/authentification-token'
-			},
-			{
-				title: 'Tableau avec pagination',
-				to: '/guides/tableau-pagination'
 			}
 		]
 	}
