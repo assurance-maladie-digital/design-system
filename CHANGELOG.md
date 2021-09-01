@@ -42,7 +42,7 @@ Cette version majeure comporte l'ajout de guides et la complétion de la documen
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout d'un hook pour appliquer des règles typographiques ([#1351](https://github.com/assurance-maladie-digital/design-system/pull/1368)) ([a6099b6](https://github.com/assurance-maladie-digital/design-system/commit/a6099b6ad7e37e32ed5dc8f10e9c6090f46e61c5))
+  - **global:** Ajout d'un hook pour appliquer des règles typographiques ([#1351](https://github.com/assurance-maladie-digital/design-system/pull/1351)) ([a6099b6](https://github.com/assurance-maladie-digital/design-system/commit/a6099b6ad7e37e32ed5dc8f10e9c6090f46e61c5))
   - **global:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1372](https://github.com/assurance-maladie-digital/design-system/pull/1372))
 
 - 🐛 **Corrections de bugs**

@@ -26,7 +26,7 @@ export interface Result {
 }
 ```
 
-Il nous faut maintenant définir l’instance axios que nous allons utiliser pour récupérer les données, elle doit être définie dans le fichier `@/plugins/axios`:
+Maintenant, vous devez définir l’instance axios qui sera utilisée pour récupérer les données, elle doit être définie dans le fichier `@/plugins/axios` :
 
 ```ts
 import axios from 'axios';
@@ -48,11 +48,12 @@ export {
 
 <doc-alert type="info">
 
-Nous utilisons une variable d’environement pour spécifier l’URL de base de notre instance axios, voir le guide sur la gestion des [variables d’environnement](https://digital-design-system.netlify.app/guides/variables-environnement).
+Nous utilisons une variable d’environement pour spécifier l’URL de base de notre instance axios, vous pouvez consulter le [guide sur la gestion des variables d’environnement](/guides/variables-environnement).
 
 </doc-alert>
 
-Nous allons ensuite définir une fonction asynchrone `getUsersFromApi` qui a pour but de récupérer les données. Notre fonction attendra de recevoir en paramètre un objet qui contient les options dont notre API à besoin qui lui permettront trier nos données. L’interface de ces options est `DataOptions` que nous importons de vuetify :
+Ensuite, vous pouvez définir une fonction asynchrone appelée `getUsersFromApi` qui aura pour but de récupérer les données.<br>
+Notre fonction attendra paramètre un objet qui contiendra les options dont notre API a besoin pour trier nos données. L’interface de ces options est `DataOptions` que nous importons de Vuetify :
 
 ```ts
 import { DataOptions } from 'vuetify';
@@ -67,7 +68,7 @@ Nous utiliserons plus loin dans ce guide seulement 4 propriétés de l’interfa
 
 <doc-alert type="info">
 
-L’interface `DataOptions` permet d’autres options, voir l’API du composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api)
+L’interface `DataOptions` permet d’autres options, vous pouvez consulter [l’API du composant `PaginatedTable`](/composants/paginated-table#section/api)
 
 </doc-alert>
 
