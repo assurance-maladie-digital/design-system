@@ -7,7 +7,7 @@ Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère
 
 ## Création de l’API
 
-La première étape consiste à créer l’API qui récuperera les données que l’on souhaite afficher dans notre tableau paginé. Nous allons définir différents éléments le dossier `src/services/getUsersFromApi`. 
+La première étape consiste à créer l’API qui récupèrera les données que l’on souhaite afficher dans notre tableau paginé. Vous pouvez créer un dossier `src/services/getUsersFromApi` qui contiendra le service permettant d'appeler cette API.
 
 Commençons par définir l’interface des données qui seront retournées, dans le fichier `src/services/getUsersFromApi/types.d.ts` :
 
