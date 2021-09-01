@@ -11,7 +11,7 @@ La première étape consiste à créer l’API qui récupèrera les données que
 
 </doc-indent>
 
-Commençons par définir l’interface des données qui seront retournées, dans le fichier `src/services/getUsersFromApi/types.d.ts` :
+Vous pouvez commencer par définir l’interface décrivant les données qui seront retournées par l'API dans le fichier `src/services/getUsersFromApi/types.d.ts` :
 
 ```ts
 export interface User {
