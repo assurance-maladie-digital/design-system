@@ -60,7 +60,6 @@
 				this.users = items;
 				this.totalUsers = total;
 
-
 				this.state = STATE_ENUM.resolved;
 			} catch(err) {
 				this.state = STATE_ENUM.rejected;
