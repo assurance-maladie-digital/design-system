@@ -3,7 +3,11 @@ title: Tableau avec pagination
 description: Création d’un tableau paginé qui récupère des données d’une API.
 ---
 
+<doc-indent>
+
 Dans ce guide, nous allons voir comment créer un tableau paginé qui récupère et affiche des données provenant d’une API. Nous utiliserons le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table). Ce composant permet d’afficher des données dans un tableau, de les trier et de les paginer.
+
+</doc-indent>
 
 ## Création de l’API
 
@@ -89,7 +93,11 @@ export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Res
 
 ## Affichage du tableau paginé
 
+<doc-indent>
+
 Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`](/composants/paginated-table) :
+
+</doc-indent>
 
 ```vue
 <template>
@@ -163,8 +171,12 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 </script>
 ```
 
+<doc-indent>
+
 Pour afficher le tableau de données, vous devez définir un tableau `headers` pour indiquer quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher.
 Cette variable sera ensuite passée dans la prop `headers` du composant [`PaginatedTable`](/composants/paginated-table#section/api).
+
+</doc-indent>
 
 Les valeurs de l’objet `options` seront mises à jour par le composant `PaginatedTable`.
 
