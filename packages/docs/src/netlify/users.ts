@@ -130,8 +130,8 @@ async function getData({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): P
 }
 
 const handler: Handler = async (event: HandlerEvent) => {
-	const options = event.queryStringParameters;
-	const datas = await getData(options as {} as DataOptions);
+	const options = event.queryStringParameters as unknown as DataOptions;
+	const datas = await getData(options);
 
 	return {
 		headers: {
