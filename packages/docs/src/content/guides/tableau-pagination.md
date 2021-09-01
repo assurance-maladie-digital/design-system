@@ -87,7 +87,7 @@ export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Res
 }
 ```
 
-## Création du composant tableau paginé
+## Affichage du tableau paginé
 
 Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`](/composants/paginated-table) :
 
