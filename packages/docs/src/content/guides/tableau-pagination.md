@@ -164,15 +164,15 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 </script>
 ```
 
-Il faut définir un array d’objet `headers` pour indiquer au tableau quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher. Cette varaible sera ensuite passé dans la props `headers` du componsant `PaginatedTable`.
+Pour afficher le tableau de données, vous devez définir un tableau `headers` pour indiquer quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher.
+Cette variable sera ensuite passée dans la prop `headers` du composant [`PaginatedTable`](/composants/paginated-table#section/api).
 
-Les valeurs de l’objet `options` seront mises à jour par le composant [`PaginatedTable`](https://digital-design-system.netlify.app/composants/paginated-table#section/api).
+Les valeurs de l’objet `options` seront mises à jour par le composant `PaginatedTable`.
 
-C’est la fonction `fetchData` qui utilisera notre API pour récupérer les données. Elle sera appelée lorsque l’objet `options` sera modifié grâce la directive `@update:options="fetchData"`. Une fois récupérée, nous stockerons les `items` dans la variables `users` et le nombre total d’items `total` dans la variable `totalUsers` pour les passer respectivement au tableau dans les props `items` et `server-items-length`.
+C’est la fonction `fetchData` qui utilisera notre API pour récupérer les données. Elle sera appelée lorsque l’objet `options` sera modifié grâce à la directive `@update:options="fetchData"`.<br>
+Une fois récupérés, nous stockerons les `items` dans la variables `users` et le nombre total d’items `total` dans la variable `totalUsers` pour les passer respectivement au tableau dans les props `items` et `server-items-length`.
 
-Il faut appeler la fonction `fetchData` après l’initialisation du composant, pour récupérer les données une première fois. Nous le faisons dans le hook `mounted`.
-
-Nous utiliserons l’enum `STATE_ENUM` et la variable `state` pour gérer l’état de chargement du tableau au travers de la props `loading`, qui doit afficher le chargement lorsque la fonction `fetchData` est appelée et tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
+L’enum `STATE_ENUM` et la variable `state` servent à gérer l’état de chargement du tableau via la prop `loading`, qui active le chargement lorsque la fonction `fetchData` est appelée et ce tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
 
 ## Exemple
 
