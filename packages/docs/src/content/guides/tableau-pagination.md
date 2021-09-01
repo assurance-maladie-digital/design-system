@@ -145,7 +145,6 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 		}
 
 		async fetchData(): Promise<void> {
-
 			this.state = STATE_ENUM.pending;
 
 			try {
