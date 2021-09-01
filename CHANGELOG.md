@@ -4,6 +4,7 @@
 
 - 📝 **Documentation**
   - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396))
+  - **PaginatedTable** Ajout de l'interface DataOptions dans l'api du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401)
 
 ## v2.0.0
 
