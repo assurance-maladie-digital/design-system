@@ -157,7 +157,7 @@ Pour implémenter notre bouton de validation, vous pouvez appeler la méthode `v
 
 <doc-alert type="info">
 
-La déclaration de type `$refs` permet d’augmenter le type par défaut d’une référence, et donc de déclarer les méthodes `validate` et `reset` sur la propriété `form`.
+La déclaration de type `$refs` permet de surcharger le type par défaut d’une référence, et donc de déclarer les méthodes `validate` et `reset` sur la propriété `form`.
 
 </doc-alert>
 

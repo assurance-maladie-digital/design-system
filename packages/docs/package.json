@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "@cnamts/docs",
-	"version": "2.0.0-beta.12",
+	"version": "2.0.0",
 	"description": "Documentation of our Design System",
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
@@ -20,9 +20,9 @@
 		"generate": "nuxt generate --fail-on-error"
 	},
 	"dependencies": {
-		"@cnamts/design-tokens": "2.0.0-beta.10",
-		"@cnamts/form-builder": "^2.0.0-beta.12",
-		"@cnamts/vue-dot": "^2.0.0-beta.12",
+		"@cnamts/design-tokens": "^2.0.0",
+		"@cnamts/form-builder": "^2.0.0",
+		"@cnamts/vue-dot": "^2.0.0",
 		"@netlify/functions": "^0.7.2",
 		"@octokit/core": "3.5.1",
 		"nuxt": "2.15.8",

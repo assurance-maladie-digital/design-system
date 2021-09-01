@@ -40,7 +40,7 @@ function extendPackage(api, options) {
 			'@cnamts/form-builder': FormBuilderVersion,
 			'@cnamts/vue-dot': VueDotVersion,
 			'axios': '^0.21.1',
-			'core-js': '^3.16.0',
+			'core-js': '^3.16.4',
 			'custom-event-polyfill': '^1.0.7',
 			'dayjs': '^1.10.6',
 			'languages': '^0.1.3',
@@ -52,12 +52,12 @@ function extendPackage(api, options) {
 			'vuex': '^3.6.2'
 		},
 		devDependencies: {
-			'@babel/core': '^7.14.8',
+			'@babel/core': '^7.15.0',
 			'@mdi/js': '^5.9.55',
 			'@types/jest': '^26.0.24',
 			'@types/webfontloader': '^1.6.33',
-			'@typescript-eslint/eslint-plugin': '^4.28.5',
-			'@typescript-eslint/parser': '^4.28.5',
+			'@typescript-eslint/eslint-plugin': '^4.29.3',
+			'@typescript-eslint/parser': '^4.29.3',
 			'@vue/cli-plugin-babel': '~4.5.13',
 			'@vue/cli-plugin-eslint': '~4.5.13',
 			'@vue/cli-plugin-router': '~4.5.13',
@@ -69,18 +69,18 @@ function extendPackage(api, options) {
 			'@vue/eslint-config-typescript': '^7.0.0',
 			'@vue/test-utils': '^1.2.2',
 			'eslint': '^7.32.0',
-			'eslint-plugin-import': '^2.23.4',
+			'eslint-plugin-import': '^2.24.2',
 			'eslint-plugin-node': '^11.1.0',
 			'eslint-plugin-promise': '^5.1.0',
-			'eslint-plugin-vue': '^7.15.0',
+			'eslint-plugin-vue': '^7.17.0',
 			'jest-serializer-vue': '^2.0.2',
 			'sass': '1.32.13', // @see https://github.com/vuetifyjs/vuetify/issues/13694
 			'sass-loader': '^10.2.0',
-			'typescript': '~4.3.5',
+			'typescript': '~4.4.2',
 			'vue-class-component': '^7.2.6',
-			'vue-cli-plugin-vuetify': '^2.4.1',
+			'vue-cli-plugin-vuetify': '^2.4.2',
 			'vue-template-compiler': '^2.6.14',
-			'vuetify-loader': '^1.7.2',
+			'vuetify-loader': '^1.7.3',
 			'webfontloader': '^1.6.28',
 			'webpack': '^4.46.0'
 		},
@@ -113,7 +113,7 @@ function extendPackage(api, options) {
 		newPackageProperties.scripts['test:e2e'] = 'vue-cli-service test:e2e --headless';
 		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e';
 
-		newPackageProperties.resolutions['cypress'] = '^8.1.0';
+		newPackageProperties.resolutions['cypress'] = '^8.3.1';
 	}
 
 	api.extendPackage(newPackageProperties);
