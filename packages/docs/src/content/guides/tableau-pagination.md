@@ -111,10 +111,9 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 	import { DataOptions } from 'vuetify';
 
 	import { User } from '@/services/getUsers/types';
+	import { getUsersFromApi } from '@/services/getUsers/api';
 
 	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
-
-	import { getUsersFromApi } from '@/services/getUsers/api';
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
