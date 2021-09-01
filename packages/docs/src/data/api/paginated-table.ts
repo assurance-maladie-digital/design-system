@@ -7,7 +7,17 @@ export const api: Api = {
 				name: 'options',
 				type: 'DataOptions',
 				required: true,
-				description: 'Les `options` de la `VDataTable`, à utiliser avec le modificateur `.sync`.'
+				description: 'Les `options` de la `VDataTable`, à utiliser avec le modificateur `.sync`.',
+				example: `{
+	page: number,
+	itemsPerPage: number,
+	sortBy: string[],
+	sortDesc: boolean[],
+	groupBy: string[],
+	groupDesc: boolean[],
+	multiSort: boolean,
+	mustSort: boolean
+}`
 			},
 			{
 				name: 'suffix',
