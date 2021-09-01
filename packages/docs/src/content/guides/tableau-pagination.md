@@ -89,7 +89,7 @@ export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Res
 
 ## Création du composant tableau paginé
 
-Il faut maintenant créer le composant qui contient le tableau paginé :
+Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`](/composants/paginated-table) :
 
 ```vue
 <template>
