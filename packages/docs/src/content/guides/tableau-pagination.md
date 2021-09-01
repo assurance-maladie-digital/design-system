@@ -147,10 +147,6 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 		users: User[] = [];
 		totalUsers = 0;
 
-		mounted() {
-			this.fetchData();
-		}
-
 		async fetchData(): Promise<void> {
 			this.state = STATE_ENUM.pending;
 
