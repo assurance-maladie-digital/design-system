@@ -16,8 +16,8 @@
 
 	import { DataOptions } from 'vuetify';
 
-	import { User } from '../../../services/getUsers/types';
-	import { getUsersFromApi } from '../../../services/getUsers/api';
+	import { User } from '../../../../services/getUsers/types';
+	import { getUsersFromApi } from '../../../../services/getUsers/api';
 
 	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 

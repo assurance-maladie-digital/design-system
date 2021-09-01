@@ -185,4 +185,4 @@ L’enum `STATE_ENUM` et la variable `state` servent à gérer l’état de char
 
 ## Exemple
 
-<doc-example file="paginated-table-guide/usage"></doc-example>
+<doc-example file="guides/paginated-table/usage"></doc-example>
