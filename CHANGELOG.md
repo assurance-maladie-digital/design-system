@@ -7,7 +7,8 @@
   - **PaginatedTable** Ajout de l'interface DataOptions dans l'api du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401) ([56f831f](https://github.com/assurance-maladie-digital/design-system/commit/56f831f91cb16e75bc6aab9fb98d22421d8c93bd))
 
 - ⬆️ **Dépendances**
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.30.0` ([#1399](https://github.com/assurance-maladie-digital/design-system/pull/1399))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.30.0` ([#1399](https://github.com/assurance-maladie-digital/design-system/pull/1399)) ([edcaab5](https://github.com/assurance-maladie-digital/design-system/commit/edcaab57cd67c119cd742d9c004c8ae467d252db))
+  - **@types/node:** Mise à jour vers la `v14.17.14` ([#1400](https://github.com/assurance-maladie-digital/design-system/pull/1400))
 
 ## v2.0.0
 
