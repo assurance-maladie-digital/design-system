@@ -48,7 +48,7 @@ export {
 
 <doc-alert type="info">
 
-Nous utilisons une variable d’environement pour spécifier l’URL de base de notre instance axios, voir le guide sur la gestion des [variables d’environnement](https://digital-design-system.netlify.app/guides/variables-environnement).
+Nous utilisons une variable d’environement pour spécifier l’URL de base de notre instance axios, vous pouvez consulter le [guide sur la gestion des variables d’environnement](/guides/variables-environnement).
 
 </doc-alert>
 
