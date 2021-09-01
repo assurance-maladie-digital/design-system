@@ -52,7 +52,8 @@ Nous utilisons une variable d’environement pour spécifier l’URL de base de 
 
 </doc-alert>
 
-Nous allons ensuite définir une fonction asynchrone `getUsersFromApi` qui a pour but de récupérer les données. Notre fonction attendra de recevoir en paramètre un objet qui contient les options dont notre API à besoin qui lui permettront trier nos données. L’interface de ces options est `DataOptions` que nous importons de vuetify :
+Ensuite, vous pouvez définir une fonction asynchrone appelée `getUsersFromApi` qui aura pour but de récupérer les données.<br>
+Notre fonction attendra paramètre un objet qui contiendra les options dont notre API a besoin pour trier nos données. L’interface de ces options est `DataOptions` que nous importons de Vuetify :
 
 ```ts
 import { DataOptions } from 'vuetify';
