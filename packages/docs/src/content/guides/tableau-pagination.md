@@ -3,13 +3,13 @@ title: Tableau avec pagination
 description: Création d’un tableau paginé qui récupère des données d’une API.
 ---
 
-<doc-indent>
-
-</doc-indent>
-
 ## Création de l’API
 
+<doc-indent>
+
 La première étape consiste à créer l’API qui récupèrera les données que l’on souhaite afficher dans notre tableau paginé. Vous pouvez créer un dossier `src/services/getUsersFromApi` qui contiendra le service permettant d'appeler cette API.
+
+</doc-indent>
 
 Commençons par définir l’interface des données qui seront retournées, dans le fichier `src/services/getUsersFromApi/types.d.ts` :
 
