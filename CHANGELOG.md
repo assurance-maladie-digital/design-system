@@ -3,7 +3,10 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396))
+  - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396)) ([51b75ca](https://github.com/assurance-maladie-digital/design-system/commit/51b75ca522b176bb54cc0b17a9f3046496de7555))
+
+- ⬆️ **Dépendances**
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.30.0` ([#1399](https://github.com/assurance-maladie-digital/design-system/pull/1399))
 
 ## v2.0.0
 
