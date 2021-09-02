@@ -135,7 +135,7 @@ const handler: Handler = async (event: HandlerEvent) => {
 
 	return {
 		headers: {
-			...JSON.parse(process.env.API_HEADERS as string)
+			'Access-Control-Allow-Origin': process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN as string
 		},
 		statusCode: 200,
 		body: JSON.stringify(datas),
