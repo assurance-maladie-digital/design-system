@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359))
+
 ### Documentation
 
 - 📝 **Documentation**
