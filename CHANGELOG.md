@@ -7,13 +7,16 @@
 
 ### Documentation
 
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1372](https://github.com/assurance-maladie-digital/design-system/pull/1372))
+
 - 📝 **Documentation**
   - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396)) ([51b75ca](https://github.com/assurance-maladie-digital/design-system/commit/51b75ca522b176bb54cc0b17a9f3046496de7555))
   - **PaginatedTable** Ajout de l'interface DataOptions dans l'api du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401) ([56f831f](https://github.com/assurance-maladie-digital/design-system/commit/56f831f91cb16e75bc6aab9fb98d22421d8c93bd))
 
 - ⬆️ **Dépendances**
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.30.0` ([#1399](https://github.com/assurance-maladie-digital/design-system/pull/1399)) ([edcaab5](https://github.com/assurance-maladie-digital/design-system/commit/edcaab57cd67c119cd742d9c004c8ae467d252db))
-  - **@types/node:** Mise à jour vers la `v14.17.14` ([#1400](https://github.com/assurance-maladie-digital/design-system/pull/1400))
+  - **@types/node:** Mise à jour vers la `v14.17.14` ([#1400](https://github.com/assurance-maladie-digital/design-system/pull/1400)) ([4900c27](https://github.com/assurance-maladie-digital/design-system/commit/4900c2705e873882b1f20194ab3da75cd77b0723))
 
 ## v2.0.0
 

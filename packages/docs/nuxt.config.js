@@ -56,7 +56,8 @@ export default {
 	buildModules: [
 		'@nuxt/typescript-build',
 		'@nuxtjs/vuetify',
-		'@nuxtjs/google-fonts'
+		'@nuxtjs/google-fonts',
+		'@nuxtjs/dotenv'
 	],
 	plugins: [
 		'~/plugins/vue-dot.ts',
@@ -107,5 +108,9 @@ export default {
 			// (required since we don't have a home page)
 			'/demarrer/introduction'
 		]
+	},
+	env: {
+		API_URL: (process.env.DEPLOY_PRIME_URL || 'https://digital-design-system.netlify.app') + '/netlify/functions',
+		API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN: process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN || '*'
 	}
 };
