@@ -12,6 +12,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/introduction'
 			},
 			{
+				title: 'Principes de design',
+				to: '/demarrer/principes-design'
+			},
+			{
 				title: 'Installation',
 				to: '/demarrer/installation'
 			},
@@ -22,10 +26,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
-			},
-			{
-				title: 'Glossaire',
-				to: '/demarrer/glossaire'
 			}
 		]
 	},
@@ -182,6 +182,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation du store',
 				to: '/guides/utilisation-store'
+			},
+			{
+				title: 'Tableau avec pagination',
+				to: '/guides/tableau-pagination'
 			},
 			{
 				title: 'v-model personnalisé',
