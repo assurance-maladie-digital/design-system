@@ -8,7 +8,7 @@ La règle `required` permet de rendre un champs de saisie obligatoire.
 
 ## Utilisation par défaut
 
-On importe la règle `required` :
+Vous devez importer la règle `required` :
 
 ```ts
 import { required } from '@cnamts/vue-dot/src/rules/required';
