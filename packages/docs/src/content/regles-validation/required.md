@@ -1,5 +1,5 @@
 ---
-title: Règle de validation `required`
+title: Règle de validation required
 ---
 
 Il est important de lire la section [Validation d’un formulaire](/guides/validation-formulaire#validation-du-formulaire) avant de lire cette page.
