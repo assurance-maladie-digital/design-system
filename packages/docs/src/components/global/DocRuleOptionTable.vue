@@ -69,7 +69,7 @@
 				value: 'description'
 			},
 			{
-				text: 'Default',
+				text: 'Défaut',
 				value: 'default'
 			}
 		];
