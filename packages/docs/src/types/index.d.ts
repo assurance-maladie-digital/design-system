@@ -37,3 +37,9 @@ export type HeaderList = keyof ApiHeaderList;
 export type ApiHeaders = Partial<ApiHeaderList>;
 
 export type Api = IndexedObject<ApiHeaders>;
+
+export type RuleOption = {
+	property?: string;
+	description?: string;
+	default?: string;
+};
