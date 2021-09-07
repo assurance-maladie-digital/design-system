@@ -14,7 +14,7 @@ Vous devez importer la règle `required` :
 import { required } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis on l’utilise dans un tableau que l’on passera au champs concerné via sa props `rules` (cette props attend un tableau de règles de validation) :
+Puis vous devez l’utiliser dans un tableau qui sera utilisé sur un champs de saisie via la props `rules` (cette props attend un tableau de règles de validation) :
 
 ```ts
 rules = [
@@ -22,7 +22,11 @@ rules = [
 ];
 ```
 
-Le message d’erreur par défaut est : `Ce champs est requis`.
+<doc-alert type="info">
+
+Le message d’erreur par défaut est : `Ce champs est requis.`.
+
+</doc-alert>
 
 ## Personnalisation
 
@@ -38,7 +42,7 @@ Cette fonction attend un objet qui contient ses options :
 required = requiredFn(option);
 ```
 
-Il faut maintenant utiliser cette variable `required` de la même manière qu’à la section précédente.
+Vous devez ensuite utiliser cette variable `required` de la même manière qu’à la section précédente.
 
 ## Options
 
