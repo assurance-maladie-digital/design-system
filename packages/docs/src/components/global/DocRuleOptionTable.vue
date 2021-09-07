@@ -11,20 +11,19 @@
 		</thead>
 
 		<tbody>
-			<template v-for="(item, index) in items">
-				<tr :key="index">
-					<td
-						v-for="(header, headerIndex) in headers"
-						:key="headerIndex"
-					>
-						<template>
-							<DocMarkdown v-if="item[header.value]">
-								{{ item[header.value] }}
-							</DocMarkdown>
-						</template>
-					</td>
-				</tr>
-			</template>
+			<tr
+				v-for="(item, index) in items"
+				:key="index"
+			>
+				<td
+					v-for="(header, headerIndex) in headers"
+					:key="headerIndex"
+				>
+					<DocMarkdown v-if="item[header.value]">
+						{{ item[header.value] }}
+					</DocMarkdown>
+				</td>
+			</tr>
 		</tbody>
 	</VSimpleTable>
 </template>
