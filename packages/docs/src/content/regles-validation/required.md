@@ -24,26 +24,24 @@ rules = [
 
 <doc-alert type="info">
 
-Le message d’erreur par défaut est : `Ce champs est requis.`.
+Le message d’erreur par défaut est : `Ce champs est requis.`
 
 </doc-alert>
 
-## Personnalisation
+## Modifier le message d'erreur
 
-Il est possible de personnaliser l’utilisation de cette règle, pour cela vous devez importer la fonction `requiredFn` :
+Il est possible de modifier le message d’erreur, pour cela vous devez importer la fonction `requiredFn` :
 
 ```ts
 import { requiredFn } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Cette fonction attend un objet qui contient ses options :
+Cette fonction attend un objet qui contient l’attribut `default`, qui est un `string` :
 
 ```ts
-required = requiredFn(option);
+required = requiredFn({
+    default: 'erreur'
+});
 ```
 
 Vous devez ensuite utiliser cette variable `required` de la même manière qu’à la section précédente.
-
-## Options
-
-<doc-rule-option-table name="required"></doc-rule-option-table>
