@@ -20,6 +20,8 @@ type ItemEvent = Pick<ApiProp, 'name' | 'description' | 'value'>;
 type ItemFunction = Pick<ApiProp, 'name' | 'signature' | 'description'>;
 type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description' | 'snippet'>;
 type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'description' | 'example' | 'snippet'>;
+type ErrorMessages = Pick<ApiProp, 'name' | 'type' | 'default' | 'description'>;
+
 
 export type Props = ItemValue[];
 
@@ -31,15 +33,10 @@ interface ApiHeaderList {
 	functions: ItemFunction[];
 	modifiers: ItemModifier[];
 	argument: ItemArgument[];
+	errorMessages: ErrorMessages[];
 }
 
 export type HeaderList = keyof ApiHeaderList;
 export type ApiHeaders = Partial<ApiHeaderList>;
 
 export type Api = IndexedObject<ApiHeaders>;
-
-export type RuleOption = {
-	property?: string;
-	description?: string;
-	default?: string;
-};
