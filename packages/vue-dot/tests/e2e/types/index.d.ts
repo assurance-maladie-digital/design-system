@@ -8,5 +8,3 @@ declare namespace Cypress {
 		dataCy(value: string): Chainable<Element>;
 	}
 }
-
-//declare module '@cypress/vue'
