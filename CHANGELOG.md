@@ -16,6 +16,9 @@
 
 ### Interne
 
+- 🔒 **Sécurité**
+  - **remark-html:** Mise à jour vers de la `v13.0.1` vers la `v13.0.2` ([#1421](https://github.com/assurance-maladie-digital/design-system/pull/1421))
+
 - 🔧 **Configuration**
   - **ci:** Mise à jour de `codecov` vers la `v3.0.0` ([#1365](https://github.com/assurance-maladie-digital/design-system/pull/1365)) ([027554d](https://github.com/assurance-maladie-digital/design-system/commit/027554d5f165414d22383ddedeed341e9b0ccaad))
 
@@ -26,7 +29,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v4.31.0` ([#1409](https://github.com/assurance-maladie-digital/design-system/pull/1409)) ([ab5c2de](https://github.com/assurance-maladie-digital/design-system/commit/ab5c2de8a1417ccda000004cd132ab9a0b3ddaba))
   - **@mdi/js:** Mise à jour vers la `v6` ([#1410](https://github.com/assurance-maladie-digital/design-system/pull/1410)) ([cc8523c](https://github.com/assurance-maladie-digital/design-system/commit/cc8523c00ef978157b3f5d9498d9468442b5e38e))
   - **@types/node:** Mise à jour vers la `v14.17.15` ([#1411](https://github.com/assurance-maladie-digital/design-system/pull/1411)) ([93df2222](https://github.com/assurance-maladie-digital/design-system/commit/93df2222e818be4dd4e605eeca657c53b92c934d))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.1.0` ([#1420](https://github.com/assurance-maladie-digital/design-system/pull/1420))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.1.0` ([#1420](https://github.com/assurance-maladie-digital/design-system/pull/1420)) ([9c1bf3a](https://github.com/assurance-maladie-digital/design-system/commit/9c1bf3a9d261d640255b17b263e92d33cd8d7b22))
 
 ## v2.0.0
 
