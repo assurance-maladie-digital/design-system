@@ -12,7 +12,7 @@
 
 - 📝 **Documentation**
   - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396)) ([51b75ca](https://github.com/assurance-maladie-digital/design-system/commit/51b75ca522b176bb54cc0b17a9f3046496de7555))
-  - **PaginatedTable** Ajout de l'interface DataOptions dans l'api du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401) ([56f831f](https://github.com/assurance-maladie-digital/design-system/commit/56f831f91cb16e75bc6aab9fb98d22421d8c93bd))
+  - **PaginatedTable** Ajout de l'interface DataOptions dans l'API du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401) ([56f831f](https://github.com/assurance-maladie-digital/design-system/commit/56f831f91cb16e75bc6aab9fb98d22421d8c93bd))
 
 ### Interne
 
@@ -24,7 +24,7 @@
   - **@types/node:** Mise à jour vers la `v14.17.14` ([#1400](https://github.com/assurance-maladie-digital/design-system/pull/1400)) ([4900c27](https://github.com/assurance-maladie-digital/design-system/commit/4900c2705e873882b1f20194ab3da75cd77b0723))
   - **core-js:** Mise à jour vers la `v3.17.2` ([#1403](https://github.com/assurance-maladie-digital/design-system/pull/1403)) ([e43ad7b](https://github.com/assurance-maladie-digital/design-system/commit/e43ad7b9f7f2ebe251f0776e2cc1bbf078a1bbd5))
   - **@babel/core:** Mise à jour vers la `v7.15.5` ([#1404](https://github.com/assurance-maladie-digital/design-system/pull/1404)) ([dad4f03](https://github.com/assurance-maladie-digital/design-system/commit/dad4f03bcbf5cd2748bcff37f2c9f5ceefbd9263))
-  - **axios:** Mise à jour vers la `v0.21.3` ([#1407](https://github.com/assurance-maladie-digital/design-system/pull/1407))
+  - **axios:** Mise à jour vers la `v0.21.4` ([#1408](https://github.com/assurance-maladie-digital/design-system/pull/1408))
 
 ## v2.0.0
 
