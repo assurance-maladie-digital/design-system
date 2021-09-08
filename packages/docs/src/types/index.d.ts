@@ -19,7 +19,7 @@ type ItemSlot = Pick<ApiProp, 'name' | 'description' | 'props'>;
 type ItemEvent = Pick<ApiProp, 'name' | 'description' | 'value'>;
 type ItemFunction = Pick<ApiProp, 'name' | 'signature' | 'description'>;
 type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description' | 'snippet'>;
-type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'description' | 'example' | 'snippet'>;
+type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'description' | 'example' | 'snippet' | 'required'>;
 type ErrorMessages = Pick<ApiProp, 'name' | 'type' | 'default' | 'description'>;
 
 
@@ -32,7 +32,7 @@ interface ApiHeaderList {
 	events: ItemEvent[];
 	functions: ItemFunction[];
 	modifiers: ItemModifier[];
-	argument: ItemArgument[];
+	arguments: ItemArgument[];
 	errorMessages: ErrorMessages[];
 }
 
