@@ -30,7 +30,7 @@ rules = [
 
 <doc-indent>
 
-Il est possible de modifier les messages d’erreur, pour cela vous devez importer la fonction `requiredFn` :
+Il est possible de modifier les messages d’erreur par défaut, pour cela vous devez importer la fonction `requiredFn` :
 
 </doc-indent>
 
