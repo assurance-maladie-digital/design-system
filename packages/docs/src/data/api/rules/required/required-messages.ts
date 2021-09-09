@@ -6,7 +6,7 @@ export const api: Api = {
 			{
 				name: 'default',
 				type: 'string',
-				description: 'Message lorque la règle n’est pas respectée.',
+				description: 'Message affiché lorsque la règle n’est pas respectée.',
 				default: 'Ce champs est requis.'
 			}
 		]
