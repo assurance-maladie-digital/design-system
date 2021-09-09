@@ -163,6 +163,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ExactLength',
 						to: '/regles-validation/exact-length'
+					},
+					{
+						title: 'MinLength',
+						to: '/regles-validation/min-length'
 					}
 				]
 			}
