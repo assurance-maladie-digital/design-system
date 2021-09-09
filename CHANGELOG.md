@@ -15,6 +15,7 @@
   - **PaginatedTable** Ajout de l'interface DataOptions dans l'api du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401) ([56f831f](https://github.com/assurance-maladie-digital/design-system/commit/56f831f91cb16e75bc6aab9fb98d22421d8c93bd))
   - **Required rule** Ajout de la règle de validation required ([#1412](https://github.com/assurance-maladie-digital/design-system/pull/1412) ([efbdd42](https://github.com/assurance-maladie-digital/design-system/commit/efbdd4264278c5f8266fb146e58b8dc8b26b9737))
   - **ExactLength rule** Ajout de la règle de validation exactLength ([#1422](https://github.com/assurance-maladie-digital/design-system/pull/1422) ([4b45cee](https://github.com/assurance-maladie-digital/design-system/commit/4b45cee468e41cd19a8fb994f18fa8b598c2565e))
+  - **MinLength rule** Ajout de la règle de validation minLength ([#1423](https://github.com/assurance-maladie-digital/design-system/pull/1423) ([90f6d7b](https://github.com/assurance-maladie-digital/design-system/commit/90f6d7b00dc0561bb0d8a7e65524012e57be2d08))
 
 ### Interne
 
