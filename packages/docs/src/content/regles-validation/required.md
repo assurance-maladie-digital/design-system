@@ -1,16 +1,13 @@
 ---
 title: Règle de validation required
+description: La règle `required` permet de rendre un champ de formulaire obligatoire.
 ---
-
-Il est important de lire la section [Validation d’un formulaire](/guides/validation-formulaire#validation-du-formulaire) avant de lire cette page.
-
-La règle `required` permet de rendre un champs de saisie obligatoire.
 
 ## Utilisation
 
 <doc-indent>
 
-Vous devez importer la règle `required` :
+Pour utiliser la règle de validation `required`, vous devez l'importer :
 
 </doc-indent>
 
@@ -18,7 +15,7 @@ Vous devez importer la règle `required` :
 import { required } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis vous devez l’utiliser dans un tableau qui sera utilisé sur un champs de saisie via la props `rules` (cette props attend un tableau de règles de validation) :
+Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
@@ -30,7 +27,7 @@ rules = [
 
 <doc-indent>
 
-Il est possible de modifier les messages d’erreur, pour cela vous devez importer la fonction `requiredFn` :
+Il est possible de modifier les messages d’erreur par défaut, pour cela vous devez importer la fonction `requiredFn` :
 
 </doc-indent>
 
@@ -38,20 +35,10 @@ Il est possible de modifier les messages d’erreur, pour cela vous devez import
 import { requiredFn } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis vous devez lui passer en argument un objet qui contient les messages d’erreur utilisés par cette règle de validation.
-
-```ts
-required = requiredFn(errorMessages);
-```
-
-<doc-api name="rules/required"></doc-api>
-
-<br>Pour modifier le message d’erreur, vous devez donc :
+Ensuite, vous devez lui passer en argument un objet qui contient les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
 required = requiredFn({
     default: 'erreur'
 });
 ```
-
-Vous devez ensuite utiliser cette variable `required` de la même manière qu’à la section précédente.

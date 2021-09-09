@@ -1,23 +1,23 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	ExactLength: {
+	exactLength: {
 		arguments: [
 			{
 				name: 'lengthValue',
 				type: 'number',
-				description: 'La longueur souhaitée'
+				description: 'Longueur requise'
 			},
 			{
 				name: 'ignoreSpaces',
 				type: 'boolean',
-				description: 'Si les espaces sont comptés',
+				description: 'Si les espaces doivent être comptés',
 				default: false
 			},
 			{
 				name: 'errorMessages',
 				type: 'object',
-				description: 'Message d’erreurs'
+				description: 'Message affiché lorsque la règle n’est pas respectée.'
 			}
 		]
 	}
