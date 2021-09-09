@@ -1,10 +1,7 @@
 ---
 title: Règle de validation required
+description: La règle `required` permet de rendre un champ de formulaire obligatoire.
 ---
-
-Il est important de lire la section [Validation d’un formulaire](/guides/validation-formulaire#validation-du-formulaire) avant de lire cette page.
-
-La règle `required` permet de rendre un champs de saisie obligatoire.
 
 ## Utilisation
 
