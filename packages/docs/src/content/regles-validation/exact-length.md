@@ -44,7 +44,7 @@ Il est possible de modifier les messages d’erreur en utilisant l’argument `e
 
 <doc-api name="rules/exact-length/exact-length-messages"></doc-api>
 
-<br>Pour modifier le message d’erreur, vous devez donc :
+<br>Pour modifier le message d’erreur `default`, vous devez donc :
 
 ```ts
 exactLengthRule = exactLength(lengthValue, ignoreSpaces, {
