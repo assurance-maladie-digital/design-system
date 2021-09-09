@@ -26,17 +26,11 @@ rules = [
 ];
 ```
 
-<doc-alert type="info">
-
-Le message d’erreur par défaut est : `Ce champs est requis.`
-
-</doc-alert>
-
 ## Modifier les messages d'erreur
 
 <doc-indent>
 
-Il est possible de modifier le message d’erreur, pour cela vous devez importer la fonction `requiredFn` :
+Il est possible de modifier les messages d’erreur, pour cela vous devez importer la fonction `requiredFn` :
 
 </doc-indent>
 
