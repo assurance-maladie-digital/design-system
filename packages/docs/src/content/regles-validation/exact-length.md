@@ -1,6 +1,6 @@
 ---
 title: Règle de validation exactLength
-description : La règle `required` permet d’imposer la longueur d’une chaîne de caractère.
+description : La règle `exactLength` permet d’imposer la longueur d’une chaîne de caractère.
 ---
 
 ## Utilisation
