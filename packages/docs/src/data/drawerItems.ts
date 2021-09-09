@@ -159,6 +159,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'Required',
 						to: '/regles-validation/required'
+					},
+					{
+						title: 'MaxLength',
+						to: '/regles-validation/max-length'
 					}
 				]
 			}
