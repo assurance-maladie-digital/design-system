@@ -46,7 +46,7 @@ required = requiredFn(errorMessages);
 
 <doc-api name="rules/required"></doc-api>
 
-<br>Pour modifier le message d’erreur, vous devez donc :
+<br>Pour modifier le message d’erreur `default`, vous devez donc :
 
 ```ts
 required = requiredFn({
