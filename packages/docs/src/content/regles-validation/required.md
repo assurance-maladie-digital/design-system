@@ -41,3 +41,4 @@ Ensuite, vous devez lui passer en argument un objet qui contient les messages dâ
 required = requiredFn({
     default: 'erreur'
 });
+```
