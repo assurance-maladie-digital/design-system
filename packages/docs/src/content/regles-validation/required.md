@@ -18,7 +18,7 @@ Vous devez importer la règle `required` :
 import { required } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis vous devez l’utiliser dans un tableau qui sera utilisé sur un champs de saisie via la props `rules` (cette props attend un tableau de règles de validation) :
+Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
