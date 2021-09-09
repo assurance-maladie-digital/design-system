@@ -8,7 +8,11 @@ La règle `exactLength` permet d’imposer la longueur d’une valeur dans un ch
 
 ## Utilisation
 
+<doc-indent>
+
 Vous devez importer la règle `exactLength` :
+
+</doc-indent>
 
 ```ts
 import { exactLength } from '@cnamts/vue-dot/src/rules/exactLength';
@@ -30,17 +34,17 @@ rules = [
 ];
 ```
 
-## Modifier le message d’erreur
+## Modifier les messages d’erreur
 
 <doc-indent>
 
-Il est possible de modifier le message d’erreur en utilisant l’argument `errorMessages` :
+Il est possible de modifier les messages d’erreur en utilisant l’argument `errorMessages`. Il s’agit d’un objet qui contient les différents messages d’erreur utilisé par cette règle de validation :
 
 </doc-indent>
 
 <doc-api name="rules/exact-length/exact-length-messages"></doc-api>
 
-<br>Pour modifier le message d’erreur, vous devez donc utiliser `exactLengthRule` de cette façon :
+<br>Pour modifier le message d’erreur, vous devez donc :
 
 ```ts
 exactLengthRule = exactLength(lengthValue, ignoreSpaces, {
