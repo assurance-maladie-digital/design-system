@@ -10,7 +10,7 @@ La règle `required` permet de rendre un champs de saisie obligatoire.
 
 <doc-indent>
 
-Vous devez importer la règle `required` :
+Pour utiliser la règle de validation `required`, vous devez l'importer :
 
 </doc-indent>
 
