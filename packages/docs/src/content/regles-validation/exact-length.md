@@ -1,16 +1,13 @@
 ---
 title: Règle de validation exactLength
+description : La règle `required` permet d’imposer la longueur d’une chaîne de caractère.
 ---
-
-Il est important de lire la section [Validation d’un formulaire](/guides/validation-formulaire#validation-du-formulaire) avant de lire cette page.
-
-La règle `exactLength` permet d’imposer la longueur d’une valeur dans un champs de saisie.
 
 ## Utilisation
 
 <doc-indent>
 
-Vous devez importer la règle `exactLength` :
+Pour utiliser la règle de validation `exactLength`, vous devez l'importer :
 
 </doc-indent>
 
@@ -24,9 +21,9 @@ Puis vous devez l’appeler avec différents arguments :
 exactLengthRule = exactLength(lengthValue, ignoreSpaces, errorMessages)
 ```
 
-<doc-api name="rules/exact-length/exact-length"></doc-api>
+<doc-api name="rules/exact-length/arguments"></doc-api>
 
-<br>Puis la mettre dans un tableau qui sera utilisé sur un champs de saisie via la props `rules` :
+Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
@@ -38,18 +35,12 @@ rules = [
 
 <doc-indent>
 
-Il est possible de modifier les messages d’erreur en utilisant l’argument `errorMessages`. Il s’agit d’un objet qui contient les différents messages d’erreur utilisé par cette règle de validation :
+Il est possible de modifier les messages d’erreur en utilisant l’argument `errorMessages`. Il s’agit d’un objet qui contient le message d’erreur utilisé par cette règle de validation :
 
 </doc-indent>
-
-<doc-api name="rules/exact-length/exact-length-messages"></doc-api>
-
-<br>Pour modifier le message d’erreur `default`, vous devez donc :
 
 ```ts
 exactLengthRule = exactLength(lengthValue, ignoreSpaces, {
     default: (length: number) => `${length} caractères exactement`
 });
 ```
-
-Vous devez ensuite utiliser cette variable `exactLengthRule` de la même manière qu’à la section précédente.
