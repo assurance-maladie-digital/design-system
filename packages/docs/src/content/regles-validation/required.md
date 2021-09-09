@@ -44,7 +44,7 @@ Puis vous devez lui passer en argument un objet qui contient les messages d’er
 required = requiredFn(errorMessages);
 ```
 
-<doc-api name="rules/required"></doc-api>
+<doc-api name="rules/required/required-messages"></doc-api>
 
 <br>Pour modifier le message d’erreur `default`, vous devez donc :
 
