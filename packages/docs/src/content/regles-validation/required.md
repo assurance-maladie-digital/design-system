@@ -38,20 +38,9 @@ Il est possible de modifier les messages d’erreur par défaut, pour cela vous 
 import { requiredFn } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis vous devez lui passer en argument un objet qui contient les messages d’erreur utilisés par cette règle de validation.
-
-```ts
-required = requiredFn(errorMessages);
-```
-
-<doc-api name="rules/required/required-messages"></doc-api>
-
-<br>Pour modifier le message d’erreur `default`, vous devez donc :
+Ensuite, vous devez lui passer en argument un objet qui contient les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
 required = requiredFn({
     default: 'erreur'
 });
-```
-
-Vous devez ensuite utiliser cette variable `required` de la même manière qu’à la section précédente.
