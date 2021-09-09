@@ -152,6 +152,15 @@ export const drawerItems: DrawerItem[] = [
 						to: '/starter-kit/explorer'
 					}
 				]
+			},
+			{
+				title: 'Règles de validation',
+				items: [
+					{
+						title: 'Required',
+						to: '/regles-validation/required'
+					}
+				]
 			}
 		]
 	},
