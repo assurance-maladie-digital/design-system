@@ -35,6 +35,12 @@ export const API_TABLE_HEADERS: Record<HeaderList, string[]> = {
 	argument: [
 		'type',
 		'description'
+	],
+	errorMessages: [
+		'name',
+		'type',
+		'default',
+		'description'
 	]
 };
 
