@@ -9,7 +9,7 @@ export const api: Api = {
 					'string',
 					'function'
 				],
-				description: 'La longueur souhaitée',
+				description: 'Message lorsque la règle n’est pas respectée',
 				default: 'La longueur du champ doit être de [lengthValue] caractères.'
 			}
 		]
