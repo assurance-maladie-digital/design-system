@@ -30,18 +30,12 @@
 		<VToolbarTitle class="d-none d-md-block text-h6 ml-4">
 			Design System
 		</VToolbarTitle>
-
-		<VSpacer />
-
-		<DocSearchField />
 	</VAppBar>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-
-	import DocSearchField from './DocSearchField.vue';
 
 	const Props = Vue.extend({
 		props: {
@@ -54,11 +48,7 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component({
-		components: {
-			DocSearchField
-		}
-	})
+	@Component
 	export default class DocHeader extends MixinsDeclaration {
 		get drawerActionLabel(): string {
 			const action = this.drawer ? 'Masquer' : 'Afficher';
@@ -86,12 +76,5 @@
 		min-width: 172px;
 		display: flex;
 		align-items: center;
-	}
-
-	@media only screen and (max-width: 425px) {
-		.spacer,
-		.doc-header-logo {
-			display: none !important;
-		}
 	}
 </style>
