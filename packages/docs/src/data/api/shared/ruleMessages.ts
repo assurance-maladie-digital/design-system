@@ -5,7 +5,7 @@ export function ruleMessages(example?: string): Props {
 		{
 			name: 'errorMessages',
 			type: 'ErrorMessages',
-			description: 'Les messages affichés lorsque la règle n’est pas respectée.',
+			description: 'Les messages affichés lorsque la règle n’est pas valide.',
 			default: 'defaultErrorMessages',
 			example
 		}

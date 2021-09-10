@@ -1,6 +1,6 @@
 ---
 title: Règle de validation required
-description: La règle `required` permet de rendre un champ de formulaire obligatoire.
+description: La règle `required` permet de rendre obligatoire un champ de formulaire.
 ---
 
 <doc-tabs>

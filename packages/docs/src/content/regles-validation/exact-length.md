@@ -1,6 +1,6 @@
 ---
 title: Règle de validation exactLength
-description: La règle `exactLength` permet d’imposer la longueur d’une chaîne de caractères.
+description: La règle `exactLength` permet d’imposer la longueur d’un champ de formulaire.
 ---
 
 <doc-tabs>
@@ -27,7 +27,7 @@ Vous pouvez modifier les messages d’erreur par défaut en passant en argument 
 
 ```ts
 exactLengthRule = exactLength(lengthValue, ignoreSpaces, {
-	default: (length: number) => `${length} caractères exactement`
+	default: (length: number) => `La longueur du champ doit être de ${length} caractères.`
 });
 ```
 
