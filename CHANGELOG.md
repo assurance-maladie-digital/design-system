@@ -16,6 +16,7 @@
   - **Required rule** Ajout de la règle de validation required ([#1412](https://github.com/assurance-maladie-digital/design-system/pull/1412) ([efbdd42](https://github.com/assurance-maladie-digital/design-system/commit/efbdd4264278c5f8266fb146e58b8dc8b26b9737))
   - **ExactLength rule** Ajout de la règle de validation exactLength ([#1422](https://github.com/assurance-maladie-digital/design-system/pull/1422) ([4b45cee](https://github.com/assurance-maladie-digital/design-system/commit/4b45cee468e41cd19a8fb994f18fa8b598c2565e))
   - **MinLength rule** Ajout de la règle de validation minLength ([#1423](https://github.com/assurance-maladie-digital/design-system/pull/1423) ([90f6d7b](https://github.com/assurance-maladie-digital/design-system/commit/90f6d7b00dc0561bb0d8a7e65524012e57be2d08))
+  - **Email rule** Ajout de la règle de validation email ([#1432](https://github.com/assurance-maladie-digital/design-system/pull/1432) ([5358cc8](https://github.com/assurance-maladie-digital/design-system/commit/5358cc89aa132976cdd0cb0703c989189df960b3))
 
 ### Interne
 
