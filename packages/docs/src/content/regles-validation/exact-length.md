@@ -1,46 +1,40 @@
 ---
 title: Règle de validation exactLength
-description : La règle `exactLength` permet d’imposer la longueur d’une chaîne de caractère.
+description: La règle `exactLength` permet d’imposer la longueur d’une chaîne de caractères.
 ---
 
-## Utilisation
+<doc-tabs>
 
-<doc-indent>
+<doc-tab-item label="Utilisation">
 
 Pour utiliser la règle de validation `exactLength`, vous devez l'importer :
-
-</doc-indent>
 
 ```ts
 import { exactLength } from '@cnamts/vue-dot/src/rules/exactLength';
 ```
 
-Puis vous devez l’appeler avec différents arguments :
-
-```ts
-exactLengthRule = exactLength(lengthValue, ignoreSpaces, errorMessages)
-```
-
-<doc-api name="rules/exact-length/arguments"></doc-api>
-
-Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
+Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` et passer en argument la longueur exacte que le champ doit avoir :
 
 ```ts
 rules = [
-    exactLengthRule
+	exactLength(lengthValue)
 ];
 ```
 
-## Modifier les messages d’erreur
+## Messages d’erreur
 
-<doc-indent>
-
-Il est possible de modifier les messages d’erreur en utilisant l’argument `errorMessages`. Il s’agit d’un objet qui contient le message d’erreur utilisé par cette règle de validation :
-
-</doc-indent>
+Vous pouvez modifier les messages d’erreur par défaut en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
 exactLengthRule = exactLength(lengthValue, ignoreSpaces, {
-    default: (length: number) => `${length} caractères exactement`
+	default: (length: number) => `${length} caractères exactement`
 });
 ```
+
+</doc-tab-item>
+
+<doc-tab-item label="API">
+<doc-api name="rules/exact-length"></doc-api>
+</doc-tab-item>
+
+</doc-tabs>

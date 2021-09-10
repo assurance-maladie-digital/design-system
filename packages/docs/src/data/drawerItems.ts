@@ -1,6 +1,6 @@
 import { DrawerItem } from '~/types/drawer';
 
-import { mdiSpeedometer, mdiViewDashboard, mdiCogs, mdiTeach } from '@mdi/js';
+import { mdiSpeedometer, mdiViewDashboard, mdiCogs, mdiHumanMaleBoard } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
 	{
@@ -163,10 +163,6 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ExactLength',
 						to: '/regles-validation/exact-length'
-					},
-					{
-						title: 'MinLength',
-						to: '/regles-validation/min-length'
 					}
 				]
 			}
@@ -174,7 +170,7 @@ export const drawerItems: DrawerItem[] = [
 	},
 	{
 		title: 'Guides',
-		icon: mdiTeach,
+		icon: mdiHumanMaleBoard,
 		items: [
 			{
 				title: 'Nouveau composant',
