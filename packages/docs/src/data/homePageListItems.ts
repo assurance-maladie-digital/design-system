@@ -1,4 +1,4 @@
-import { mdiTimerOutline, mdiApplicationCog, mdiAccountCheck } from '@mdi/js';
+import { mdiTimerOutline, mdiApplicationCogOutline, mdiAccountCheck } from '@mdi/js';
 
 export const homePageListItems = [
 	{
@@ -8,7 +8,7 @@ export const homePageListItems = [
 		]
 	},
 	{
-		icon: mdiApplicationCog,
+		icon: mdiApplicationCogOutline,
 		content: [
 			'Notre Design System permet une **harmonisation des applications et une simplification des processus de conception et d’implémentation**. Cette cohérence est bénéfique pour l’industrialisation des applications puisqu’elle favorise l’automatisation des procédés et des méthodes de conception. En suivant cette notion d’automatisation, les composants du Design System respectent le principe de réutilisabilité : un composant pour s’adapter aux besoins des nouveaux projets numériques et non l’inverse. Grâce à cela, le Design System **favorise une excellente collaboration** entre les équipes de design et de développement puisqu’il propose un langage commun à construire puis améliorer ensemble.'
 		]
