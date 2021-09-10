@@ -1,57 +1,46 @@
 ---
 title: Règle de validation email
+description: La règle `email` permet de vérifier la validité du format d'une adresse email.**
 ---
 
-Il est important de lire la section [Validation d’un formulaire](/guides/validation-formulaire#validation-du-formulaire) avant de lire cette page.
+<doc-tabs>
 
-La règle `email` permet de la validité du format d'une adresse courielle.
+<doc-tab-item label="Utilisation">
 
-## Utilisation
-
-<doc-indent>
-
-Vous devez importer la règle `email` :
-
-</doc-indent>
+Pour utiliser la règle de validation `email`, vous devez l'importer :
 
 ```ts
 import { email } from '@cnamts/vue-dot/src/rules/email';
 ```
 
-Puis vous devez l’utiliser dans un tableau qui sera utilisé sur un champs de saisie via la props `rules` (cette props attend un tableau de règles de validation) :
+Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
-    email
+	email
 ];
 ```
 
-## Modifier les messages d'erreur
+## Messages d'erreur
 
-<doc-indent>
-
-Il est possible de modifier les messages d’erreur, pour cela vous devez importer la fonction `requiredFn` :
-
-</doc-indent>
+Vous pouvez modifier les messages d’erreur par défaut en important la fonction `emailFn` :
 
 ```ts
 import { emailFn } from '@cnamts/vue-dot/src/rules/email';
 ```
 
-Puis vous devez lui passer en argument un objet qui contient les messages d’erreur utilisés par cette règle de validation.
+Puis en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
-required = emailFn(errorMessages);
-```
-
-<doc-api name="rules/email"></doc-api>
-
-<br>Pour modifier le message d’erreur, vous devez donc :
-
-```ts
-required = emailFn({
-    default: 'erreur'
+required = requiredFn({
+	default: 'Le format de l’adresse email n’est pas valide.'
 });
 ```
 
-Vous devez ensuite utiliser cette variable `email` de la même manière qu’à la section précédente.
+</doc-tab-item>
+
+<doc-tab-item label="API">
+<doc-api name="rules/email"></doc-api>
+</doc-tab-item>
+
+</doc-tabs>

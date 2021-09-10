@@ -22,7 +22,6 @@ type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description' | 'snippet'>;
 type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'required' | 'description' | 'example' | 'snippet'>;
 type ErrorMessages = Pick<ApiProp, 'name' | 'type' | 'default' | 'description'>;
 
-
 export type Props = ItemValue[];
 
 interface ApiHeaderList {
