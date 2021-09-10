@@ -167,6 +167,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'minLength',
 						to: '/regles-validation/min-length'
+					},
+					{
+						title: 'maxLength',
+						to: '/regles-validation/max-length'
 					}
 				]
 			}
