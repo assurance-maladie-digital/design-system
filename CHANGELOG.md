@@ -25,7 +25,7 @@
   - **rules:** Documentation de la règle de validation exactLength ([#1422](https://github.com/assurance-maladie-digital/design-system/pull/1422)) ([e6f6686](https://github.com/assurance-maladie-digital/design-system/commit/e6f668683b4e00f04d4bcff547c962898cc1f20c))
   - **rules:** Documentation de la règle de validation minLength ([#1423](https://github.com/assurance-maladie-digital/design-system/pull/1423)) ([faff625](https://github.com/assurance-maladie-digital/design-system/commit/faff62515c0c702a4c63edeeb0cfad5a015c681b))
   - **rules:** Documentation de la règle de validation maxLength ([#1431](https://github.com/assurance-maladie-digital/design-system/pull/1431)) ([126aa6e](https://github.com/assurance-maladie-digital/design-system/commit/126aa6eeccc1024e1e304eaa01fc0c38844d29f7))
-  - **rules:** Documentation de la règle de validation email ([#1432](https://github.com/assurance-maladie-digital/design-system/pull/1432))
+  - **rules:** Documentation de la règle de validation email ([#1432](https://github.com/assurance-maladie-digital/design-system/pull/1432)) ([9e3623d](https://github.com/assurance-maladie-digital/design-system/commit/9e3623dacd4d460d5a168711b7c8015911a81652))
 
 ### Interne
 
@@ -43,6 +43,7 @@
   - **@types/node:** Mise à jour vers la `v14.17.15` ([#1411](https://github.com/assurance-maladie-digital/design-system/pull/1411)) ([93df2222](https://github.com/assurance-maladie-digital/design-system/commit/93df2222e818be4dd4e605eeca657c53b92c934d))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.1.0` ([#1420](https://github.com/assurance-maladie-digital/design-system/pull/1420)) ([9c1bf3a](https://github.com/assurance-maladie-digital/design-system/commit/9c1bf3a9d261d640255b17b263e92d33cd8d7b22))
   - **core-js:** Mise à jour vers la `v3.17.3` ([#1429](https://github.com/assurance-maladie-digital/design-system/pull/1429)) ([1034fdd](https://github.com/assurance-maladie-digital/design-system/commit/1034fddbd34d3bb68e09f32eaf1e6fe8ac7727ac))
+  - **dayjs:** Mise à jour vers la `v1.10.7` ([#1436](https://github.com/assurance-maladie-digital/design-system/pull/1436))
 
 ## v2.0.0
 
