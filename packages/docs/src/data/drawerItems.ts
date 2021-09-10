@@ -171,6 +171,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'maxLength',
 						to: '/regles-validation/max-length'
+					},
+					{
+						title: 'email',
+						to: '/regles-validation/email'
 					}
 				]
 			}

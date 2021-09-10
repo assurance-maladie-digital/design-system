@@ -2,7 +2,7 @@ import { Api } from '~/types';
 import { ruleMessages } from '../shared/ruleMessages';
 
 export const api: Api = {
-	minLength: {
+	maxLength: {
 		arguments: [
 			{
 				name: 'max',
