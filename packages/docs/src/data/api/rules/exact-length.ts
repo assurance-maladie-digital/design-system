@@ -7,7 +7,7 @@ export const api: Api = {
 			{
 				name: 'lengthValue',
 				type: 'number',
-				description: 'La longueur exacte de la valeur du champ.',
+				description: 'La longueur exacte du champ.',
 				required: true
 			},
 			{

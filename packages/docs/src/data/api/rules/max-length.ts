@@ -5,13 +5,13 @@ export const api: Api = {
 	minLength: {
 		arguments: [
 			{
-				name: 'min',
+				name: 'max',
 				type: 'number',
-				description: 'La longueur minimale du champ.',
+				description: 'La longueur maximale du champ.',
 				required: true
 			},
 			...ruleMessages(`{
-	default: (length: number) => \`La longueur minimale du champ est \${min} caractères.\`
+	default: (max: number) => \`La longueur maximale du champ est \${max} caractères.\`
 }`)
 		]
 	}
