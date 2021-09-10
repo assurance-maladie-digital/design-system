@@ -1,7 +1,5 @@
 import { Api } from '~/types';
 
-import { widthable } from './mixins/widthable';
-
 export const api: Api = {
 	DataList: {
 		props: [

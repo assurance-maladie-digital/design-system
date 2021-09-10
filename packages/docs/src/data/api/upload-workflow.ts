@@ -1,7 +1,7 @@
 import { Api } from '~/types';
 
-import { widthable } from './mixins/widthable';
-import { customizable } from './mixins/customizable';
+import { widthable } from './shared/mixins/widthable';
+import { customizable } from './shared/mixins/customizable';
 
 export const api: Api = {
 	UploadWorkflow: {

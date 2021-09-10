@@ -157,8 +157,24 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Règles de validation',
 				items: [
 					{
-						title: 'Required',
+						title: 'required',
 						to: '/regles-validation/required'
+					},
+					{
+						title: 'exactLength',
+						to: '/regles-validation/exact-length'
+					},
+					{
+						title: 'minLength',
+						to: '/regles-validation/min-length'
+					},
+					{
+						title: 'maxLength',
+						to: '/regles-validation/max-length'
+					},
+					{
+						title: 'email',
+						to: '/regles-validation/email'
 					}
 				]
 			}
