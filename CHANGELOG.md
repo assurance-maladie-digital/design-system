@@ -8,7 +8,8 @@
 ### Documentation
 
 - 🐛 **Corrections de bugs**
-  - **global:** Correction de l'URL des fonctions et du fichier `.env` manquant ([#1418](https://github.com/assurance-maladie-digital/design-system/pull/1418))
+  - **global:** Correction de l'URL des fonctions et du fichier `.env` manquant ([#1418](https://github.com/assurance-maladie-digital/design-system/pull/1418)) ([9e36413](https://github.com/assurance-maladie-digital/design-system/commit/9e36413fbb10527de33d7485e9d54ea7f6b96407))
+  - **global:** Correction de l'import d'une icône inexistante ([#1433](https://github.com/assurance-maladie-digital/design-system/pull/1433))
 
 - 📝 **Documentation**
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1372](https://github.com/assurance-maladie-digital/design-system/pull/1372)) ([9196706](https://github.com/assurance-maladie-digital/design-system/commit/919670667af005b252898063a64081639930f07f))
@@ -31,7 +32,7 @@
   - **@mdi/js:** Mise à jour vers la `v6` ([#1410](https://github.com/assurance-maladie-digital/design-system/pull/1410)) ([cc8523c](https://github.com/assurance-maladie-digital/design-system/commit/cc8523c00ef978157b3f5d9498d9468442b5e38e))
   - **@types/node:** Mise à jour vers la `v14.17.15` ([#1411](https://github.com/assurance-maladie-digital/design-system/pull/1411)) ([93df2222](https://github.com/assurance-maladie-digital/design-system/commit/93df2222e818be4dd4e605eeca657c53b92c934d))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.1.0` ([#1420](https://github.com/assurance-maladie-digital/design-system/pull/1420)) ([9c1bf3a](https://github.com/assurance-maladie-digital/design-system/commit/9c1bf3a9d261d640255b17b263e92d33cd8d7b22))
-  - **core-js:** Mise à jour vers la `v3.17.3` ([#1429](https://github.com/assurance-maladie-digital/design-system/pull/1429))
+  - **core-js:** Mise à jour vers la `v3.17.3` ([#1429](https://github.com/assurance-maladie-digital/design-system/pull/1429)) ([1034fdd](https://github.com/assurance-maladie-digital/design-system/commit/1034fddbd34d3bb68e09f32eaf1e6fe8ac7727ac))
 
 ## v2.0.0
 
