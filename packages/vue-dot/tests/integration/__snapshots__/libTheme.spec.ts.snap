@@ -16,6 +16,7 @@ Object {
     "FilterModule",
     "FooterWrapper",
     "FranceConnectBtn",
+    "HeaderBar",
     "HeaderLoading",
     "LangBtn",
     "NotificationBar",
