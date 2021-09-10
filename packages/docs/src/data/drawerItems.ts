@@ -161,6 +161,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/regles-validation/required'
 					},
 					{
+						title: 'Email',
+						to: '/regles-validation/email'
+					},
+					{
 						title: 'ExactLength',
 						to: '/regles-validation/exact-length'
 					},
