@@ -1,14 +1,12 @@
 import { Api } from '~/types';
+import { ruleMessages } from '../shared/ruleMessages';
 
 export const api: Api = {
-	Required: {
-		errorMessages: [
-			{
-				name: 'default',
-				type: 'string',
-				description: 'Message lorque la règle n’est pas respectée.',
-				default: 'Ce champs est requis.'
-			}
+	required: {
+		arguments: [
+			...ruleMessages(`{
+	default: 'Le champ est requis.'
+}`)
 		]
 	}
 };

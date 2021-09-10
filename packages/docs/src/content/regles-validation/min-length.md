@@ -1,55 +1,40 @@
 ---
 title: Règle de validation minLength
+description: La règle `minLength` permet d’imposer la longueur minimale d’un champ de formulaire.
 ---
 
-Il est important de lire la section [Validation d’un formulaire](/guides/validation-formulaire#validation-du-formulaire) avant de lire cette page.
+<doc-tabs>
 
-La règle `minLength` permet d’imposer la longueur minimal d’une valeur dans un champs de saisie.
+<doc-tab-item label="Utilisation">
 
-## Utilisation
-
-<doc-indent>
-
-Vous devez importer la règle `minLength` :
-
-</doc-indent>
+Pour utiliser la règle de validation `minLength`, vous devez l'importer :
 
 ```ts
 import { minLength } from '@cnamts/vue-dot/src/rules/minLength';
 ```
 
-Puis vous devez l’appeler avec différents arguments :
-
-```ts
-minLengthRule = minLength(min, errorMessages)
-```
-
-<doc-api name="rules/min-length/min-length"></doc-api>
-
-<br>Puis la mettre dans un tableau qui sera utilisé sur un champs de saisie via la props `rules` :
+Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` et passer en argument la longueur minimale que le champ doit avoir :
 
 ```ts
 rules = [
-    minLengthRule
+	minLength(lengthValue)
 ];
 ```
 
-## Modifier les messages d’erreur
+## Messages d’erreur
 
-<doc-indent>
-
-Il est possible de modifier les messages d’erreur en utilisant l’argument `errorMessages`. Il s’agit d’un objet qui contient les différents messages d’erreur utilisé par cette règle de validation :
-
-</doc-indent>
-
-<doc-api name="rules/min-length/min-length-messages"></doc-api>
-
-<br>Pour modifier le message d’erreur `default`, vous devez donc :
+Vous pouvez modifier les messages d’erreur par défaut en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
-minLengthRule = minLength(lengthValue, ignoreSpaces, {
-    default: (min: number) => `${min} caractères minimum`
+minLengthRule = minLength(lengthValue, {
+	default: (min: number) => `La longueur minimale du champ est de ${min} caractères.`
 });
 ```
 
-Vous devez ensuite utiliser cette variable `minLengthRule` de la même manière qu’à la section précédente.
+</doc-tab-item>
+
+<doc-tab-item label="API">
+<doc-api name="rules/min-length"></doc-api>
+</doc-tab-item>
+
+</doc-tabs>

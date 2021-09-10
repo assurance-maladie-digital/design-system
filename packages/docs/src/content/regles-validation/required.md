@@ -1,57 +1,46 @@
 ---
 title: Règle de validation required
+description: La règle `required` permet de rendre obligatoire un champ de formulaire.
 ---
 
-Il est important de lire la section [Validation d’un formulaire](/guides/validation-formulaire#validation-du-formulaire) avant de lire cette page.
+<doc-tabs>
 
-La règle `required` permet de rendre un champs de saisie obligatoire.
+<doc-tab-item label="Utilisation">
 
-## Utilisation
-
-<doc-indent>
-
-Vous devez importer la règle `required` :
-
-</doc-indent>
+Pour utiliser la règle de validation `required`, vous devez l'importer :
 
 ```ts
 import { required } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis vous devez l’utiliser dans un tableau qui sera utilisé sur un champs de saisie via la props `rules` (cette props attend un tableau de règles de validation) :
+Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
-    required
+	required
 ];
 ```
 
-## Modifier les messages d'erreur
+## Messages d'erreur
 
-<doc-indent>
-
-Il est possible de modifier les messages d’erreur, pour cela vous devez importer la fonction `requiredFn` :
-
-</doc-indent>
+Vous pouvez modifier les messages d’erreur par défaut en important la fonction `requiredFn` :
 
 ```ts
 import { requiredFn } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis vous devez lui passer en argument un objet qui contient les messages d’erreur utilisés par cette règle de validation.
-
-```ts
-required = requiredFn(errorMessages);
-```
-
-<doc-api name="rules/required"></doc-api>
-
-<br>Pour modifier le message d’erreur, vous devez donc :
+Puis en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
 required = requiredFn({
-    default: 'erreur'
+	default: 'Ce champ est requis pour valider le formulaire.'
 });
 ```
 
-Vous devez ensuite utiliser cette variable `required` de la même manière qu’à la section précédente.
+</doc-tab-item>
+
+<doc-tab-item label="API">
+<doc-api name="rules/required"></doc-api>
+</doc-tab-item>
+
+</doc-tabs>
