@@ -1,6 +1,6 @@
 <template>
 	<VApp>
-		<VAppBar
+		<!-- <VAppBar
 			app
 			dark
 			color="primary"
@@ -15,7 +15,8 @@
 			<PageContainer>
 				<Playground />
 			</PageContainer>
-		</VMain>
+		</VMain> -->
+		<Playground />
 	</VApp>
 </template>
 

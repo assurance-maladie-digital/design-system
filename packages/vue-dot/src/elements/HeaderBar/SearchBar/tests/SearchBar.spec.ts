@@ -4,15 +4,15 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import HeaderNavBar from '../';
+import SearchBar from '../';
 
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('HeaderNavBar', () => {
+describe('SearchBar', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(HeaderNavBar);
+		wrapper = mountComponent(SearchBar);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
