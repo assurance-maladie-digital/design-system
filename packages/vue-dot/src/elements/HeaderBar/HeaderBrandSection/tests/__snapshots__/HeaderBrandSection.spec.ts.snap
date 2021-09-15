@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBrandSection renders correctly 1`] = `
+<div class="d-flex"><img src="" alt="Caisse Nationale d'Assurance Maladie">
+  <div class="d-flex"><img src="" alt="Caisse Nationale d'Assurance Maladie"> <img src="" alt="Caisse Nationale d'Assurance Maladie"></div>
+  <!---->
+</div>
+`;
