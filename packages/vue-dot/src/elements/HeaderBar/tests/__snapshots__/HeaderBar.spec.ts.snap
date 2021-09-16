@@ -8,22 +8,23 @@ exports[`HeaderBar renders correctly 1`] = `
       <div class="d-flex ma-6">
         <!---->
         <!---->
-        <div class="d-flex align-center d-md-none">
-          <vappbarnavicon-stub color="#001C6B" icon="true" class="ma-1"></vappbarnavicon-stub>
-        </div>
+        <!---->
       </div>
     </vsheet-stub>
   </vsheet-stub>
   <vnavigationdrawer-stub fixed="true" color="#001C6B" mobilebreakpoint="1264" hideoverlay="true" dark="true" height="100%" minivariantwidth="56" src="" tag="aside" width="305" left="true">
-    <vsheet-stub color="#001C6B" height="55" dark="true" tag="div" class="d-flex align-center justify-space-between text-uppercase">
-      <h4 class="ml-5">
-        menu
-      </h4>
-      <vbtn-stub color="white" tag="button" activeclass="" icon="true" type="button" class="d-flex mr-3">
-        <vicon-stub>
-          M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z
-        </vicon-stub>
-      </vbtn-stub>
+    <vsheet-stub color="#001C6B" height="55" dark="true" tag="div">
+      <div class="d-flex align-center justify-space-between text-uppercase mx-5 my-2">
+        <h4>
+          menu
+        </h4>
+        <vbtn-stub color="white" tag="button" activeclass="" icon="true" type="button" class="d-flex">
+          <vicon-stub>
+            M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z
+          </vicon-stub>
+        </vbtn-stub>
+      </div>
+      <div class="mx-5 my-3"></div>
     </vsheet-stub>
   </vnavigationdrawer-stub>
   <!---->

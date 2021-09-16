@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **HeaderBar:** Ajout du nouveau header ([#1087](https://github.com/assurance-maladie-digital/design-system/pull/1351)) ([80666a0](https://github.com/assurance-maladie-digital/design-system/commit/80666a0810cfca76328b72e4d96720d28aca25fd))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
@@ -26,6 +31,7 @@
   - **rules:** Documentation de la règle de validation minLength ([#1423](https://github.com/assurance-maladie-digital/design-system/pull/1423)) ([faff625](https://github.com/assurance-maladie-digital/design-system/commit/faff62515c0c702a4c63edeeb0cfad5a015c681b))
   - **rules:** Documentation de la règle de validation maxLength ([#1431](https://github.com/assurance-maladie-digital/design-system/pull/1431)) ([126aa6e](https://github.com/assurance-maladie-digital/design-system/commit/126aa6eeccc1024e1e304eaa01fc0c38844d29f7))
   - **rules:** Documentation de la règle de validation email ([#1432](https://github.com/assurance-maladie-digital/design-system/pull/1432)) ([9e3623d](https://github.com/assurance-maladie-digital/design-system/commit/9e3623dacd4d460d5a168711b7c8015911a81652))
+  - **headerBar:** Documentation du nouveau header ([#1087](https://github.com/assurance-maladie-digital/design-system/pull/1351)) ([80666a0](https://github.com/assurance-maladie-digital/design-system/commit/80666a0810cfca76328b72e4d96720d28aca25fd))
 
 ### Interne
 
