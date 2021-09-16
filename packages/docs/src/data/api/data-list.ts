@@ -1,6 +1,6 @@
 import { Api } from '~/types';
 
-import { widthable } from './mixins/widthable';
+import { widthable } from './shared/mixins/widthable';
 
 export const api: Api = {
 	DataList: {

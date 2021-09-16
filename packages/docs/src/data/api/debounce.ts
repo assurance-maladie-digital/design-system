@@ -2,7 +2,7 @@ import { Api } from '~/types';
 
 export const api: Api = {
 	debounce: {
-		argument: [
+		arguments: [
 			{
 				name: 'value',
 				type: 'function',
