@@ -1,9 +1,36 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center w-100">
 		<HeaderBar
-			v-bind="$attrs"
-			v-on="$listeners"
-		/>
+			theme="cnam"
+			responsive-menu-position="sub-header"
+		>
+			<template #navigation>
+				<nav class="d-flex ml-7">
+					<div class="ma-2">
+						Nav Item 1
+					</div>
+					<div class="ma-2">
+						Nav Item 2
+					</div>
+					<div class="ma-2">
+						Nav Item 3
+					</div>
+				</nav>
+			</template>
+			<template #responsive-nav>
+				<nav class="ml-5">
+					<div class="ma-2">
+						Nav Item 1
+					</div>
+					<div class="ma-2">
+						Nav Item 2
+					</div>
+					<div class="ma-2">
+						Nav Item 3
+					</div>
+				</nav>
+			</template>
+		</HeaderBar>
 	</div>
 </template>
 
@@ -14,7 +41,7 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class HeaderBarUsage extends Vue {
+	export default class HeaderNavigationUsage extends Vue {
 		defaultProps = {};
 
 		propsHiddenByDefault = [

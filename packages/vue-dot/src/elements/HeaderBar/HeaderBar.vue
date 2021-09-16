@@ -50,7 +50,7 @@
 						</VBtn>
 					</div>
 					<div
-						v-if="responsiveMenuPosition === 'header'"
+						v-if="responsiveMenuPosition === 'header' && hasResponsiveNavigation"
 						class="d-flex align-center d-md-none"
 					>
 						<VAppBarNavIcon
@@ -74,21 +74,25 @@
 				:color="themeColor"
 				:dark="isSubDarkTheme"
 			>
-				<h4	class="ml-5">
-					{{ menuTitle }}
-				</h4>
+				<div class="d-flex align-center justify-space-between text-uppercase mx-5 my-2">
+					<h4>
+						{{ menuTitle }}
+					</h4>
 
-				<VBtn
-					v-bind="options.closeBtn"
-					:color="isSubDarkTheme ? 'white' : 'black'"
-					@click="drawer = !drawer"
-				>
-					<VIcon>
-						{{ closeMenuIcon }}
-					</VIcon>
-				</VBtn>
+					<VBtn
+						v-bind="options.closeBtn"
+						:color="isSubDarkTheme ? 'white' : 'black'"
+						@click="drawer = !drawer"
+					>
+						<VIcon>
+							{{ closeMenuIcon }}
+						</VIcon>
+					</VBtn>
+				</div>
+				<div class="mx-5 my-3">
+					<slot name="responsive-nav" />
+				</div>
 			</VSheet>
-			<slot name="responsive-nav" />
 		</VNavigationDrawer>
 		<div
 			v-if="hasCustomSubHeaderBar"
@@ -97,7 +101,10 @@
 			<slot name="sub-bar" />
 		</div>
 		<VSheet
-			v-else-if="hasSubHeaderNavBar && !isSearchOpen"
+			v-else-if="(hasSubHeaderNavBar
+				|| (hasNavigationBar && !isMobileScreen)
+				|| (hasResponsiveNavigation && responsiveMenuPosition === 'sub-header'))
+				&& !isSearchOpen"
 			v-bind="options.subHeaderSection"
 			:color="themeColor"
 			:dark="isSubDarkTheme"
@@ -110,7 +117,7 @@
 				:width="containerWidth"
 			>
 				<div
-					v-if="responsiveMenuPosition === 'sub-header'"
+					v-if="responsiveMenuPosition === 'sub-header' && hasResponsiveNavigation"
 					class="d-flex align-center d-md-none"
 				>
 					<VAppBarNavIcon
@@ -119,7 +126,7 @@
 						@click.stop="drawer = !drawer"
 					/>
 				</div>
-				<div v-if="!isMobileScreen">
+				<div v-if="hasSubHeaderNavBar || !isMobileScreen">
 					<slot name="navigation" />
 				</div>
 			</VSheet>
@@ -232,6 +239,14 @@
 
 		get hasCustomSubHeaderBar(): boolean {
 			return Boolean(this.$slots['sub-bar']);
+		}
+
+		get hasNavigationBar(): boolean {
+			return Boolean(this.$slots['navigation']);
+		}
+
+		get hasResponsiveNavigation(): boolean {
+			return Boolean(this.$slots['responsive-nav']);
 		}
 
 		get hasSubHeaderNavBar(): boolean {

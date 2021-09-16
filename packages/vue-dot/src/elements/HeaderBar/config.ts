@@ -4,7 +4,7 @@ export const config = {
 		icon: true
 	},
 	closeBtn: {
-		class: 'd-flex mr-3',
+		class: 'd-flex',
 		icon: true
 	},
 	headerConfig: {
@@ -18,7 +18,6 @@ export const config = {
 		left: true
 	},
 	menuHeader: {
-		class: 'd-flex align-center justify-space-between text-uppercase',
 		height: 55
 	},
 	subHeaderSection: {
