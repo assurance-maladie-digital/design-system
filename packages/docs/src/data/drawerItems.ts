@@ -175,6 +175,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'email',
 						to: '/regles-validation/email'
+					},
+					{
+						title: 'notBeforeToday',
+						to: '/regles-validation/not-before-today'
 					}
 				]
 			}
