@@ -26,7 +26,7 @@ rules = [
 Vous pouvez modifier les messages d’erreur par défaut en important la fonction `notAfterTodayFn` :
 
 ```ts
-import { notAfterTodayFn } from '@cnamts/vue-dot/src/rules/required';
+import { notAfterTodayFn } from '@cnamts/vue-dot/src/rules/notAfterTodayFn';
 ```
 
 Puis en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
