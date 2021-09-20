@@ -33,7 +33,7 @@ Puis en passant en argument un objet contenant les messages d’erreur utilisés
 
 ```ts
 notBeforeTodayRule = notBeforeTodayFn({
-	default: 'Ce champ est requis pour valider le formulaire.'
+	default: 'La date doit être postérieure à aujourd’hui.'
 });
 ```
 
