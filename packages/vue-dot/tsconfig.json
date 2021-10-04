@@ -28,6 +28,8 @@
 		"*.json"
 	],
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"tests/**/*.e2e.spec.ts",
+		"src/**/*.e2e.spec.ts"
 	]
 }
