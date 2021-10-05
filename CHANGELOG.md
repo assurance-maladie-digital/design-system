@@ -34,6 +34,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de `codecov` vers la `v3.1.1` ([#1438](https://github.com/assurance-maladie-digital/design-system/pull/1438)) ([a107e90](https://github.com/assurance-maladie-digital/design-system/commit/a107e90f9b9ae8b37f815576df2586c532967fa6))
+  - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.18` ([#1454](https://github.com/assurance-maladie-digital/design-system/pull/1454))
 
 - ⬆️ **Dépendances**
   - **@babel/core:** Mise à jour vers la `v7.15.5` ([#1404](https://github.com/assurance-maladie-digital/design-system/pull/1404)) ([dad4f03](https://github.com/assurance-maladie-digital/design-system/commit/dad4f03bcbf5cd2748bcff37f2c9f5ceefbd9263))
@@ -47,7 +48,7 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v7.19.0` ([#1445](https://github.com/assurance-maladie-digital/design-system/pull/1445)) ([a44b3fa](https://github.com/assurance-maladie-digital/design-system/commit/a44b3fa81ec2d5ab24f47fd750c3e3bb29159134))
   - **core-js:** Mise à jour vers la `v3.18.1` ([#1446](https://github.com/assurance-maladie-digital/design-system/pull/1446)) ([2c0dcaa2](https://github.com/assurance-maladie-digital/design-system/commit/2c0dcaa2816155b5ca576117c25dfdb95c9d0b40))
   - **@types/fs-extra:** Mise à jour vers la `v9.0.13` ([#1450](https://github.com/assurance-maladie-digital/design-system/pull/1450)) ([39e77c3](https://github.com/assurance-maladie-digital/design-system/commit/39e77c3a6a26e068a76184be71af305bde457953))
-  - **vuetify:** Mise à jour vers la `v2.5.9` ([#1453](https://github.com/assurance-maladie-digital/design-system/pull/1453))
+  - **vuetify:** Mise à jour vers la `v2.5.9` ([#1453](https://github.com/assurance-maladie-digital/design-system/pull/1453)) ([8f297c6](https://github.com/assurance-maladie-digital/design-system/commit/8f297c6c9e70da46058d86841a2fcc1efbb70a87))
 
 ## v2.0.0
 
