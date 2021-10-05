@@ -1,19 +1,19 @@
 ---
 title: Règle de validation notAfterToday
-description: La règle `notAfterToday` permet de vérifier qu’une date est avant la date du jour.
+description: La règle `notAfterToday` permet de vérifier qu’une date est antérieure à la date du jour.
 ---
 
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
-Pour utiliser la règle de validation `notAfterToday`, vous devez l'importer :
+Pour utiliser la règle de validation `notAfterToday`, vous devez l’importer :
 
 ```ts
 import { notAfterToday } from '@cnamts/vue-dot/src/rules/notAfterToday';
 ```
 
-Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
+Puis l’ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
@@ -21,7 +21,7 @@ rules = [
 ];
 ```
 
-## Messages d'erreur
+## Messages d’erreur
 
 Vous pouvez modifier les messages d’erreur par défaut en important la fonction `notAfterTodayFn` :
 

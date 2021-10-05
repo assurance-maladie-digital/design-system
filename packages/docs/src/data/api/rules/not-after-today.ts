@@ -5,7 +5,7 @@ export const api: Api = {
 	notAfterToday: {
 		arguments: [
 			...ruleMessages(`{
-	default: (length: number) => \`La date doit être antérieure à aujourd’hui\`.
+	default: (length: number) => 'La date doit être antérieure à aujourd’hui'.
 }`)
 		]
 	}
