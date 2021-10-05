@@ -7,13 +7,13 @@ description: La règle `required` permet de rendre obligatoire un champ de formu
 
 <doc-tab-item label="Utilisation">
 
-Pour utiliser la règle de validation `required`, vous devez l'importer :
+Pour utiliser la règle de validation `required`, vous devez l’importer :
 
 ```ts
 import { required } from '@cnamts/vue-dot/src/rules/required';
 ```
 
-Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
+Puis l’ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
@@ -21,7 +21,7 @@ rules = [
 ];
 ```
 
-## Messages d'erreur
+## Messages d’erreur
 
 Vous pouvez modifier les messages d’erreur par défaut en important la fonction `requiredFn` :
 

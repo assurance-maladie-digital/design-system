@@ -7,13 +7,13 @@ description: La règle `minLength` permet d’imposer la longueur minimale d’u
 
 <doc-tab-item label="Utilisation">
 
-Pour utiliser la règle de validation `minLength`, vous devez l'importer :
+Pour utiliser la règle de validation `minLength`, vous devez l’importer :
 
 ```ts
 import { minLength } from '@cnamts/vue-dot/src/rules/minLength';
 ```
 
-Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` et passer en argument la longueur minimale que le champ doit avoir :
+Puis l’ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` et passer en argument la longueur minimale que le champ doit avoir :
 
 ```ts
 rules = [

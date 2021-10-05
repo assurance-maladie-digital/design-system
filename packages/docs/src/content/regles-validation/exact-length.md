@@ -7,7 +7,7 @@ description: La règle `exactLength` permet d’imposer la longueur d’un champ
 
 <doc-tab-item label="Utilisation">
 
-Pour utiliser la règle de validation `exactLength`, vous devez l'importer :
+Pour utiliser la règle de validation `exactLength`, vous devez l’importer :
 
 ```ts
 import { exactLength } from '@cnamts/vue-dot/src/rules/exactLength';
