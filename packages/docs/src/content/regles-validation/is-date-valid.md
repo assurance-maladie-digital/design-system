@@ -1,19 +1,19 @@
 ---
 title: Règle de validation isDateValid
-description: La règle `isDateValid` permet de valider une date.
+description: La règle `isDateValid` permet de vérifier la validité d’une date.
 ---
 
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
-Pour utiliser la règle de validation `isDateValid`, vous devez l'importer :
+Pour utiliser la règle de validation `isDateValid`, vous devez l’importer :
 
 ```ts
 import { isDateValid } from '@cnamts/vue-dot/src/rules/isDateValid';
 ```
 
-Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
+Puis l’ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` :
 
 ```ts
 rules = [
@@ -32,11 +32,11 @@ import { isDateValidFn } from '@cnamts/vue-dot/src/rules/isDateValid';
 Puis en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
-isDateValidRule = isDateValidFn(lengthValue, {
-  default: `La date saisie n’est pas valide.`,
-  wrongFormat: `Le format de la date n’est pas valide.`,
-  monthNotMatch: `Le jour saisi dépasse le nombre de jours dans le mois.`,
-  notALeapYear: `Le jour saisi est invalide car ce n’est pas une année bissextile.`
+isDateValidRule = isDateValidFn({
+	default: `La date saisie n’est pas valide.`,
+	wrongFormat: `Le format de la date n’est pas valide.`,
+	monthNotMatch: `Le jour saisi dépasse le nombre de jours dans le mois.`,
+	notALeapYear: `Le jour saisi est invalide car ce n’est pas une année bissextile.`
 });
 ```
 
