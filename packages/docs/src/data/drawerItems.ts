@@ -179,6 +179,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'isDateValid',
 						to: '/regles-validation/is-date-valid'
+					},
+					{
+						title: 'notAfterToday',
+						to: '/regles-validation/not-after-today'
 					}
 				]
 			}
