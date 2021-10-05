@@ -7,13 +7,13 @@ description: La règle `maxLength` permet d’imposer la longueur maximale d’u
 
 <doc-tab-item label="Utilisation">
 
-Pour utiliser la règle de validation `maxLength`, vous devez l'importer :
+Pour utiliser la règle de validation `maxLength`, vous devez l’importer :
 
 ```ts
 import { maxLength } from '@cnamts/vue-dot/src/rules/maxLength';
 ```
 
-Puis l'ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` et passer en argument la longueur maximale que le champ doit avoir :
+Puis l’ajouter dans un tableau qui sera utilisé sur un champ de formulaire via la prop `rules` et passer en argument la longueur maximale que le champ doit avoir :
 
 ```ts
 rules = [
