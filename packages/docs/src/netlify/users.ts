@@ -129,6 +129,6 @@ const handler: Handler = async (event: HandlerEvent) => {
 		statusCode: 200,
 		body: JSON.stringify(datas)
 	};
-}
+};
 
 export { handler };
