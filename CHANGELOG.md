@@ -39,12 +39,12 @@
   - **@babel/core:** Mise à jour vers la `v7.15.5` ([#1404](https://github.com/assurance-maladie-digital/design-system/pull/1404)) ([dad4f03](https://github.com/assurance-maladie-digital/design-system/commit/dad4f03bcbf5cd2748bcff37f2c9f5ceefbd9263))
   - **axios:** Mise à jour vers la `v0.21.4` ([#1408](https://github.com/assurance-maladie-digital/design-system/pull/1408)) ([cb30998](https://github.com/assurance-maladie-digital/design-system/commit/cb309987e2ec591fd03f75472e328583b994bdc4))
   - **@mdi/js:** Mise à jour vers la `v6` ([#1410](https://github.com/assurance-maladie-digital/design-system/pull/1410)) ([cc8523c](https://github.com/assurance-maladie-digital/design-system/commit/cc8523c00ef978157b3f5d9498d9468442b5e38e))
-  - **@types/node:** Mise à jour vers la `v14.17.15` ([#1411](https://github.com/assurance-maladie-digital/design-system/pull/1411)) ([93df2222](https://github.com/assurance-maladie-digital/design-system/commit/93df2222e818be4dd4e605eeca657c53b92c934d))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.1.0` ([#1420](https://github.com/assurance-maladie-digital/design-system/pull/1420)) ([9c1bf3a](https://github.com/assurance-maladie-digital/design-system/commit/9c1bf3a9d261d640255b17b263e92d33cd8d7b22))
   - **core-js:** Mise à jour vers la `v3.17.3` ([#1429](https://github.com/assurance-maladie-digital/design-system/pull/1429)) ([1034fdd](https://github.com/assurance-maladie-digital/design-system/commit/1034fddbd34d3bb68e09f32eaf1e6fe8ac7727ac))
   - **dayjs:** Mise à jour vers la `v1.10.7` ([#1436](https://github.com/assurance-maladie-digital/design-system/pull/1436)) ([a93a139](https://github.com/assurance-maladie-digital/design-system/commit/a93a1390c7a4a42e46a1990186415b319d8b1660))
   - **typescript:** Mise à jour vers la `v4.4.3` ([#1437](https://github.com/assurance-maladie-digital/design-system/pull/1437)) ([081cd7f](https://github.com/assurance-maladie-digital/design-system/commit/081cd7fc7bb9fbd21522511f218277ef2e08c3ee))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.33.0` ([#1439](https://github.com/assurance-maladie-digital/design-system/pull/1439))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v4.33.0` ([#1439](https://github.com/assurance-maladie-digital/design-system/pull/1439)) ([64e0cc8](https://github.com/assurance-maladie-digital/design-system/commit/64e0cc8427cb354900d2898651d19d269d539ec9))
+  - **@types/node:** Mise à jour vers la `v14.17.20` ([#1443](https://github.com/assurance-maladie-digital/design-system/pull/1443))
 
 ## v2.0.0
 
