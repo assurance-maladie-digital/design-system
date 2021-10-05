@@ -1,13 +1,13 @@
 ---
 title: Règle de validation notBeforeToday
-description: La règle `notBeforeToday` permet de vérifier qu’une date est après la date du jour.
+description: La règle `notBeforeToday` permet de vérifier qu’une date est postérieure à la date du jour.
 ---
 
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
-Pour utiliser la règle de validation `notBeforeToday`, vous devez l'importer :
+Pour utiliser la règle de validation `notBeforeToday`, vous devez l’importer :
 
 ```ts
 import { notBeforeToday } from '@cnamts/vue-dot/src/rules/notBeforeToday';
@@ -21,7 +21,7 @@ rules = [
 ];
 ```
 
-## Messages d'erreur
+## Messages d’erreur
 
 Vous pouvez modifier les messages d’erreur par défaut en important la fonction `notBeforeTodayFn` :
 
