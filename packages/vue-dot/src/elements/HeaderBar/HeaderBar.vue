@@ -15,6 +15,7 @@
 				<div v-if="isCustom">
 					<slot name="brand" />
 				</div>
+
 				<HeaderBrandSection
 					v-else
 					:has-daughter-brand="hasDaughterBrand"
@@ -26,6 +27,7 @@
 				>
 					<slot name="daughter-brand" />
 				</HeaderBrandSection>
+
 				<div
 					:class="userBarClasses"
 					class="d-flex"
@@ -36,6 +38,7 @@
 					>
 						<slot name="user-bar" />
 					</div>
+
 					<div
 						v-if="displaySearchBar"
 						class="d-flex justify-center"
@@ -49,6 +52,7 @@
 							</VIcon>
 						</VBtn>
 					</div>
+
 					<div
 						v-if="responsiveMenuPosition === 'header' && hasResponsiveNavigation"
 						class="d-flex align-center d-md-none"
@@ -89,17 +93,20 @@
 						</VIcon>
 					</VBtn>
 				</div>
+
 				<div class="mx-5 my-3">
 					<slot name="responsive-nav" />
 				</div>
 			</VSheet>
 		</VNavigationDrawer>
+
 		<div
 			v-if="hasCustomSubHeaderBar"
 			class="w-100"
 		>
 			<slot name="sub-bar" />
 		</div>
+
 		<VSheet
 			v-else-if="(hasSubHeaderNavBar
 				|| (hasNavigationBar && !isMobileScreen)
@@ -126,11 +133,13 @@
 						@click.stop="drawer = !drawer"
 					/>
 				</div>
+
 				<div v-if="hasSubHeaderNavBar || !isMobileScreen">
 					<slot name="navigation" />
 				</div>
 			</VSheet>
 		</VSheet>
+
 		<VSheet
 			v-if="isSearchOpen"
 			v-bind="options.serchSection"

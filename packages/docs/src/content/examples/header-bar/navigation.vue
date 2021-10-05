@@ -9,9 +9,11 @@
 					<div class="ma-2">
 						Nav Item 1
 					</div>
+
 					<div class="ma-2">
 						Nav Item 2
 					</div>
+
 					<div class="ma-2">
 						Nav Item 3
 					</div>
@@ -22,9 +24,11 @@
 					<div class="ma-2">
 						Nav Item 1
 					</div>
+
 					<div class="ma-2">
 						Nav Item 2
 					</div>
+
 					<div class="ma-2">
 						Nav Item 3
 					</div>

@@ -48,7 +48,7 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class HeaderNavBar extends MixinsDeclaration {
+	export default class SearchBar extends MixinsDeclaration {
 		// Icons
 		searchIcon = mdiMagnify;
 
@@ -66,6 +66,3 @@
 	}
 </script>
 
-<style lang="scss" scoped>
-
-</style>

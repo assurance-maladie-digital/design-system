@@ -1,6 +1,6 @@
 ---
 title: HeaderBar
-description: L’élément `HeaderBar` est un compasant cadre qui a pour but d'harmoniser le développement des projets de la filière digitale. Il peut néanmoins être complètement personnalisé pour convenir à tous les usages et besoins.
+description: L’élément `HeaderBar` est un composant cadre qui a pour but d’harmoniser le développement des projets de la filière digitale. Il peut néanmoins être complètement personnalisé pour convenir à tous les usages et besoins.
 ---
 
 <doc-tabs>
@@ -12,7 +12,7 @@ description: L’élément `HeaderBar` est un compasant cadre qui a pour but d'h
 
 ### SeachBar
 
-Vous pouvez ajouter une `SearchBar` à votre `Header`. Vous pouvez récupérer la valeur du champ de recherche à l'aide de `@search`;
+Vous pouvez ajouter une `SearchBar` à votre `Header`. Vous pouvez récupérer la valeur du champ de recherche à l’aide de `@search`;
 
 <doc-example file="header-bar/search-bar"></doc-example>
 
@@ -46,7 +46,7 @@ Vous pouvez ajouter une marque fille à côté du logo en utilisant ce slot.
 
 ### Slot *user-bar*
 
-Vous pouvez afficher une barre d'outils, un menu contextuel, ou encore ce que bon vous semble dans la zone de droite du header. Cette zone est entièrement personnalisable.
+Vous pouvez afficher une barre d’outils, un menu contextuel, ou encore ce que bon vous semble dans la zone de droite du header. Cette zone est entièrement personnalisable.
 
 <doc-example file="header-bar/user-bar"></doc-example>
 
@@ -56,8 +56,8 @@ Vous pouvez utiliser le sub-header pour afficher un menu de navigation entièrem
 
 <doc-example file="header-bar/navigation"></doc-example>
 
-Vous pouvez également utiliser le sub-header avec le slot `navigation` pour afficher tout autre contenu de votre convenance. Le nom du slot n'impose pas le contenu.
-Pour forcer l'affichage du sub-header en version mobile, vous devez passer la props `nav-bar`.
+Vous pouvez également utiliser le sub-header avec le slot `navigation` pour afficher tout autre contenu de votre convenance. Le nom du slot n’impose pas le contenu.
+Pour forcer l’affichage du sub-header en version mobile, vous devez utiliser la props `nav-bar`.
 
 <doc-example file="header-bar/navigation-alt"></doc-example>
 
@@ -69,7 +69,7 @@ Vous pouvez complètement réécrire le sub header si la configuration actuelle 
 
 ### Slot *brand*
 
-Vous pouvez complètement réécrire le header et la section du logo en assiciant le slot `brand` et la props `theme: custom`.
+Vous pouvez complètement réécrire le header et la section du logo en associant le slot `brand` et la props `theme: custom`.
 
 <doc-example file="header-bar/brand"></doc-example>
 

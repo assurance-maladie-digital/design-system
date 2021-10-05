@@ -4,12 +4,14 @@
 			:src="headerLogo"
 			alt="Caisse Nationale d'Assurance Maladie"
 		>
+
 		<div
 			v-if="hasDaughterBrand"
 			class="d-flex align-center"
 		>
 			<slot />
 		</div>
+
 		<div
 			v-else-if="theme === 'ameli.fr' || theme === 'ameli-pro'"
 			class="d-flex"
@@ -18,11 +20,13 @@
 				:src="dividerModel"
 				alt="Caisse Nationale d'Assurance Maladie"
 			>
+
 			<img
 				:src="daughterBrand"
 				alt="Caisse Nationale d'Assurance Maladie"
 			>
 		</div>
+
 		<div
 			v-if="displayServiceSection"
 			:style="`color: ${themeColor};`"
@@ -32,10 +36,12 @@
 				:src="dividerModel"
 				alt="Caisse Nationale d'Assurance Maladie"
 			>
+
 			<div class="d-flex flex-column">
 				<div class="vd-header-title-main">
 					{{ serviceTitle }}
 				</div>
+
 				<div class="vd-header-title-sub">
 					{{ serviceSubTitle }}
 				</div>
