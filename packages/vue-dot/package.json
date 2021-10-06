@@ -35,7 +35,9 @@
 		"dev": "vue-cli-service serve",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
-		"test": "vue-cli-service test:unit --runInBand"
+		"test": "vue-cli-service test:unit --runInBand",
+		"test:e2e": "cypress run-ct",
+		"test:e2e:gui": "cypress open-ct"
 	},
 	"dependencies": {
 		"content-disposition": "^0.5.3"

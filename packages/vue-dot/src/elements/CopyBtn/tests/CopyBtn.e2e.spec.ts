@@ -1,16 +1,11 @@
-import { mount } from '@cypress/vue';
+import { mountComponent } from '../../../../cypress';
 import CopyBtn from '../';
-// Add Vuetify
-import { vuetify }  from '../../../../dev/vuetify';
 
 describe('CopyBtn', () => {
 	const textToCopy = 'Texte copié !';
 
 	beforeEach(() => {
-		mount(CopyBtn,
-			{
-				vuetify
-			});
+		mountComponent(CopyBtn);
 	});
 
 	it('copies the text to the clipboard', () => {
