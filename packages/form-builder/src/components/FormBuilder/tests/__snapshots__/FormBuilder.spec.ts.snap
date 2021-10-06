@@ -519,7 +519,7 @@ exports[`FormBuilder renders correctly 1`] = `
         <!---->
       </h4>
       <p class="text-body-2 grey--text text--darken-1">
-        Visible quand le choix 'Autre' est sélectionné
+        Visible quand le choix « Autre » est sélectionné
       </p>
       <div>
         <div class="v-input vd-form-input v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-select v-select--is-multi">
