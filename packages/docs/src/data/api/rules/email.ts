@@ -5,7 +5,7 @@ export const api: Api = {
 	email: {
 		arguments: [
 			...ruleMessages(`{
-	default: 'L\\'email saisi est invalide.'
+	default: 'L’email saisi est invalide.'
 }`)
 		]
 	}
