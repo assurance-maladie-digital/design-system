@@ -3,7 +3,10 @@ import { IndexedObject } from '@cnamts/vue-dot/src/types';
 import { EventQueryStringParameters } from '@netlify/functions/src/function/event';
 import { DataOptions } from 'vuetify';
 
-function parseValue(value: string): string | boolean | number {
+type ParsedValue = string | boolean | number;
+type Params = ParsedValue[] | string | boolean | number;
+
+function parseValue(value: string): ParsedValue {
 	try {
 		return JSON.parse(value);
 	} catch (error) {
@@ -12,7 +15,7 @@ function parseValue(value: string): string | boolean | number {
 }
 
 export function getDataOptionsFromQueryString(queryString: EventQueryStringParameters): DataOptions {
-	const params: any = {};
+	const params: IndexedObject<Params> = {};
 
 	Object.entries(queryString).map(([key, value]) => {
 		if (key.match(/\[\]/)) {
@@ -24,5 +27,5 @@ export function getDataOptionsFromQueryString(queryString: EventQueryStringParam
 		}
 	});
 
-	return params as DataOptions;
+	return params as unknown as DataOptions;
 }
