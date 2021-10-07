@@ -28,7 +28,7 @@ export const questionForm: Form = {
 				type: 'text',
 				title: 'Question ?',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide\nSecond texte d\'aide',
+				tooltip: 'Texte d’aide\nSecond texte d’aide',
 				value: null,
 				fieldOptions: {
 					label: 'Label du champ',
@@ -125,7 +125,7 @@ export const questionForm: Form = {
 				type: 'select',
 				title: 'Question select slider',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
+				tooltip: 'Texte d’aide',
 				value: {
 					value: '9.30',
 					other: null
@@ -139,7 +139,7 @@ export const questionForm: Form = {
 				type: 'select',
 				title: 'Question select slider thumb',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
+				tooltip: 'Texte d’aide',
 				value: null,
 				items: defaultItems,
 				fieldOptions: {
@@ -151,7 +151,7 @@ export const questionForm: Form = {
 				type: 'select',
 				title: 'Question select slider thumb with custom label',
 				description: 'Informations supplémentaires',
-				tooltip: 'Texte d\'aide',
+				tooltip: 'Texte d’aide',
 				value: null,
 				items: defaultItems,
 				fieldOptions: {
@@ -289,7 +289,7 @@ export const questionForm: Form = {
 			},
 			questionChoiceOtherSelected: {
 				title: 'Question choix autre conditionnel',
-				description: 'Visible quand le choix \'Autre\' est sélectionné',
+				description: 'Visible quand le choix « Autre » est sélectionné',
 				multiple: true,
 				type: 'select',
 				value: {

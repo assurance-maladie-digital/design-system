@@ -1,5 +1,10 @@
+import { EventQueryStringParameters } from '@netlify/functions/src/function/event';
 import { Handler, HandlerEvent } from '@netlify/functions';
+
 import { DataOptions } from 'vuetify';
+
+import { getDataOptionsFromQueryString } from '~/functions/getDataOptionsFromQueryString';
+
 import { User, UsersResult } from '~/services/getUsers/types';
 
 function getUsers(): User[] {
@@ -93,27 +98,11 @@ async function getData({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): P
 				const sortA = a[sortBy[0]];
 				const sortB = b[sortBy[0]];
 
-				if (sortDesc) {
-					if (sortA < sortB) {
-						return 1;
-					}
-
-					if (sortA > sortB) {
-						return -1;
-					}
-
-					return 0;
-				} else {
-					if (sortA < sortB) {
-						return -1;
-					}
-
-					if (sortA > sortB) {
-						return 1;
-					}
-
-					return 0;
+				if (sortDesc[0]) {
+					return -sortA.localeCompare(sortB);
 				}
+
+				return sortA.localeCompare(sortB);
 			});
 		}
 
@@ -130,7 +119,7 @@ async function getData({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): P
 }
 
 const handler: Handler = async (event: HandlerEvent) => {
-	const options = event.queryStringParameters as unknown as DataOptions;
+	const options = getDataOptionsFromQueryString(event.queryStringParameters as EventQueryStringParameters);
 	const datas = await getData(options);
 
 	return {
@@ -138,7 +127,7 @@ const handler: Handler = async (event: HandlerEvent) => {
 			'Access-Control-Allow-Origin': process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN as string
 		},
 		statusCode: 200,
-		body: JSON.stringify(datas),
+		body: JSON.stringify(datas)
 	};
 };
 
