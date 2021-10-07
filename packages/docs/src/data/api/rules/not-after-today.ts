@@ -2,10 +2,10 @@ import { Api } from '~/types';
 import { ruleMessages } from '../shared/ruleMessages';
 
 export const api: Api = {
-	email: {
+	notAfterToday: {
 		arguments: [
 			...ruleMessages(`{
-	default: 'L’email saisi est invalide.'
+	default: (length: number) => 'La date doit être antérieure à aujourd’hui'.
 }`)
 		]
 	}

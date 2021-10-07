@@ -31,3 +31,7 @@ package-lock.json*
 # Cypress
 /tests/e2e/videos/
 /tests/e2e/screenshots/
+
+# Netlify
+packages/docs/.netlify
+packages/docs/netlify.toml
