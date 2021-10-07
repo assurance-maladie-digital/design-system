@@ -1,3 +1,3 @@
 export const locales = {
-	btnText: 'Retour à l\'accueil'
+	btnText: 'Retour à l’accueil'
 };

@@ -5,11 +5,22 @@
 - 🐛 **Corrections de bugs**
   - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359)) ([d5fc107](https://github.com/assurance-maladie-digital/design-system/commit/d5fc1072719803e85aa35e968fe402cea168d827))
 
+### Vue Dot
+
+- ♻️ **Refactoring**
+  - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
+
+### FormBuilder
+
+- ♻️ **Refactoring**
+  - **tests:** Mise à jour de la formulation dans les tests ([#1468](https://github.com/assurance-maladie-digital/design-system/pull/1468))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**
   - **global:** Correction de l'URL des fonctions et du fichier `.env` manquant ([#1418](https://github.com/assurance-maladie-digital/design-system/pull/1418)) ([9e36413](https://github.com/assurance-maladie-digital/design-system/commit/9e36413fbb10527de33d7485e9d54ea7f6b96407))
   - **global:** Correction de l'import d'une icône inexistante ([#1433](https://github.com/assurance-maladie-digital/design-system/pull/1433)) ([65d9d48](https://github.com/assurance-maladie-digital/design-system/commit/65d9d48431a8e7a680a5a0f2aea39d9556682994))
+  - **global:** Correction du tri de l'API exemple utilisateurs ([#1451](https://github.com/assurance-maladie-digital/design-system/pull/1451)) ([abee612](https://github.com/assurance-maladie-digital/design-system/commit/abee6128f4e2cee556259a1e8419675c667cc86c))
 
 - ♻️ **Refactoring**
   - **introduction:** Mise à jour des icônes ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([c30816b](https://github.com/assurance-maladie-digital/design-system/commit/c30816b2c989cf7a53b3dfcb1cfcbe6047698cdf))
@@ -28,7 +39,7 @@
   - **rules:** Documentation de la règle de validation email ([#1432](https://github.com/assurance-maladie-digital/design-system/pull/1432)) ([9e3623d](https://github.com/assurance-maladie-digital/design-system/commit/9e3623dacd4d460d5a168711b7c8015911a81652))
   - **rules:** Documentation de la règle de validation isDateValid ([#1447](https://github.com/assurance-maladie-digital/design-system/pull/1447)) ([b961227](https://github.com/assurance-maladie-digital/design-system/commit/b9612272fd9506cddee09ce23515bfce9fd9d172))
   - **rules:** Documentation de la règle de validation notAfterToday ([#1448](https://github.com/assurance-maladie-digital/design-system/pull/1448)) ([e2cbe4f](https://github.com/assurance-maladie-digital/design-system/commit/e2cbe4f51787c6d6fd82c2be687b16935d4f790c))
-  - **rules:** Documentation de la règle de validation notBeforeToday ([#1449](https://github.com/assurance-maladie-digital/design-system/pull/1449))
+  - **rules:** Documentation de la règle de validation notBeforeToday ([#1449](https://github.com/assurance-maladie-digital/design-system/pull/1449)) ([73bcce9](https://github.com/assurance-maladie-digital/design-system/commit/73bcce97f02311484f6ca27428795a7b4e7ca042))
 
 ### Interne
 
