@@ -34,9 +34,9 @@ dark?: boolean;
 			{
 				name: 'theme',
 				type: 'string',
-				default: `'ameli.fr'`,
+				default: `'cnam'`,
 				description: 'Permet de permuter entre les configurations par défaut ou de passer en mode `custom`',
-				example: `'cnam' | 'ameli.fr' | 'ameli-pro' | 'risque-pro' | 'custom'`
+				example: `'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro' | 'custom'`
 			},
 			{
 				name: 'responsiveMenuPosition',

@@ -15,7 +15,9 @@
 		inheritAttrs: false
 	})
 	export default class HeaderBarUsage extends Vue {
-		defaultProps = {};
+		defaultProps = {
+			theme: 'cnam'
+		};
 
 		propsHiddenByDefault = [
 			'theme',
@@ -33,7 +35,7 @@
 			],
 			selects: {
 				theme: [
-					'ameli.fr',
+					'ameli',
 					'ameli-pro',
 					'risque-pro',
 					'cnam',

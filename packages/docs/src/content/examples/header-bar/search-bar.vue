@@ -1,7 +1,7 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center w-100">
 		<HeaderBar
-			theme="ameli.fr"
+			theme="ameli"
 			display-search-bar
 			@search="searchFn"
 		/>

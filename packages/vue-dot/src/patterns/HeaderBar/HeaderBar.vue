@@ -2,31 +2,27 @@
 	<div class="vd-header-bar d-flex flex-column justify-center w-100">
 		<VSheet
 			v-bind="options.headerConfig"
-			:color="bgColor"
 			:dark="isDarkTheme"
 			:height="responsiveHeaderHeight"
 		>
 			<VSheet
 				:width="containerWidth"
-				:color="bgColor"
 				:dark="isDarkTheme"
 				class="d-flex justify-space-between align-center"
 			>
-				<div v-if="isCustom">
-					<slot name="brand" />
-				</div>
+				<slot name="brand">
+					<HeaderBrandSection
+						:theme="theme"
+						:service-title="serviceTitle"
+						:service-sub-title="serviceSubTitle"
 
-				<HeaderBrandSection
-					v-else
-					:has-daughter-brand="hasDaughterBrand"
-					:header-config="headerConfig"
-					:theme="theme"
-					:is-mobile-screen="isMobileScreen"
-					:class="responsiveClasses"
-					:theme-color="themeColor"
-				>
-					<slot name="daughter-brand" />
-				</HeaderBrandSection>
+						:has-daughter-brand="hasDaughterBrand"
+						:is-mobile-screen="isMobileScreen"
+						:class="responsiveClasses"
+					>
+						<slot name="daughter-brand" />
+					</HeaderBrandSection>
+				</slot>
 
 				<div
 					:class="userBarClasses"
@@ -80,9 +76,9 @@
 				:dark="isSubDarkTheme"
 			>
 				<div class="d-flex align-center justify-space-between text-uppercase mx-5 my-2">
-					<h4>
+					<h1 class="primary--text">
 						{{ menuTitle }}
-					</h4>
+					</h1>
 
 					<VBtn
 						v-bind="options.closeBtn"
@@ -168,35 +164,31 @@
 
 	import { mdiMagnify, mdiChevronLeft } from '@mdi/js';
 
-	import { HeaderBarConfig, HeaderNavBarConfig } from './types';
-
 	const Props = Vue.extend({
 		props: {
-			displaySearchBar: {
-				type: Boolean,
-				default: false
-			},
-			headerConfig: {
-				type: Object as PropType<HeaderBarConfig>,
-				default: undefined
-			},
-			navBar: {
-				type: Object as PropType<HeaderNavBarConfig>,
-				default: undefined
-			},
 			theme: {
 				type: String,
 				default: 'cnam',
 				validator(value: string): boolean {
-					const isValid = value.match(/^(cnam|ameli.fr|ameli-pro|risque-pro|custom)$/) !== null;
+					const isValid = value.match(/^(cnam|ameli|ameli-pro|risque-pro|custom)$/) !== null;
+
 					if (!isValid) {
 						// eslint-disable-next-line no-console
-						console.error(`Wrong value for the \`type\` prop.
-						Given: "${value}", expected "(cnam|ameli.fr|ameli-pro|risque-pro|custom)".`);
+						console.error(`Wrong value for the \`type\` prop. Given: "${value}", expected "(cnam|ameli|ameli-pro|risque-pro|custom)".`);
 					}
+
 					return true;
 				}
 			},
+			serviceTitle: {
+				type: String,
+				default: undefined
+			},
+			serviceSubTitle: {
+				type: String,
+				default: undefined
+			},
+
 			responsiveMenuPosition: {
 				type: String,
 				default: 'header',
@@ -209,6 +201,10 @@
 					}
 					return true;
 				}
+			},
+			displaySearchBar: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -259,34 +255,12 @@
 			return Boolean(this.$slots['responsive-nav']);
 		}
 
-		get hasSubHeaderNavBar(): boolean {
-			return Boolean(this.navBar);
-		}
-
-		get bgColor(): string {
-			return this.headerConfig?.bgColor ? this.headerConfig.bgColor as string : 'white';
-		}
-
-		get themeColor(): string {
-			if (this.navBar?.bgColor) {
-				return this.navBar.bgColor as string;
-			} else if (this.theme === 'ameli-pro') {
-				return '#00749C';
-			} else if (this.theme === 'risque-pro') {
-				return '#CD545B';
-			} else if (this.theme === 'ameli.fr') {
-				return '#001C6B';
-			}
-
-			return '#001C6B';
-		}
-
 		get containerWidth(): string {
 			if (this.isMobileScreen) {
 				return '100%';
 			}
 
-			return this.headerConfig?.boxSize ? this.headerConfig.boxSize as string : '100%';
+			return '100%';
 		}
 
 		get isCustom(): boolean {
@@ -294,11 +268,7 @@
 		}
 
 		get isDarkTheme(): boolean {
-			return this.headerConfig?.dark ? this.headerConfig.dark as boolean : false;
-		}
-
-		get isSubDarkTheme(): boolean {
-			return this.navBar?.dark === false ? false : true;
+			return false;
 		}
 
 		get isMobileScreen(): boolean {
@@ -337,7 +307,7 @@
 		}
 
 		get menuTitle(): string {
-			return this.headerConfig?.service?.title ? this.headerConfig?.service?.title.text : locales.menu;
+			return locales.menu;
 		}
 
 		openSearchBar(): void {
@@ -350,8 +320,8 @@
 <style lang="scss" scoped>
 	.vd-header {
 		box-shadow:
-			0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-			0px 2px 2px rgba(0, 0, 0, 0.14),
-			0px 1px 5px rgba(0, 0, 0, 0.12);
+			0px 3px 1px -2px rgba(0, 0, 0, .2),
+			0px 2px 2px rgba(0, 0, 0, .14),
+			0px 1px 5px rgba(0, 0, 0, .12);
 	}
 </style>

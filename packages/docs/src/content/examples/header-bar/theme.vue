@@ -19,7 +19,7 @@
 		</h4>
 
 		<HeaderBar
-			theme="ameli.fr"
+			theme="ameli"
 			:nav-bar="navBar"
 		/>
 

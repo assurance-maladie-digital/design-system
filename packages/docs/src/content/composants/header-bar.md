@@ -1,6 +1,6 @@
 ---
 title: HeaderBar
-description: L’élément `HeaderBar` est un composant cadre qui a pour but d’harmoniser le développement des projets de la filière digitale. Il peut néanmoins être complètement personnalisé pour convenir à tous les usages et besoins.
+description: Le pattern `HeaderBar` est utilisé pour afficher l’en-tête d’une page.
 ---
 
 <doc-tabs>
@@ -10,7 +10,7 @@ description: L’élément `HeaderBar` est un composant cadre qui a pour but d�
 
 ## Exemples
 
-### SeachBar
+### SearchBar
 
 Vous pouvez ajouter une `SearchBar` à votre `Header`. Vous pouvez récupérer la valeur du champ de recherche à l’aide de `@search`;
 

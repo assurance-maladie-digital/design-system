@@ -64,7 +64,7 @@
 			],
 			selects: {
 				theme: [
-					'ameli.fr',
+					'ameli',
 					'ameli-pro',
 					'risque-pro',
 					'cnam',
