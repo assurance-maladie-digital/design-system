@@ -24,7 +24,7 @@ export const api: Api = {
 			{
 				name: 'btn-text',
 				type: 'string',
-				default: `'Retour à l\\'accueil'`,
+				default: `'Retour à l’accueil'`,
 				description: 'Le message du bouton d’action.'
 			},
 			{
