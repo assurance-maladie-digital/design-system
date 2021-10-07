@@ -3034,10 +3034,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.12.tgz#fd9c1c2cfab536a2383ed1ef70f94adea743a226"
   integrity sha512-KQZ1al2hKOONAs2MFv+yTQP1LkDWMrRJ9YCVRalXltOfXsBmH5IownLxQaiq0lnAHwAViLnh2aTYqrPcRGEbgg==
 
-"@types/node@14.17.20":
-  version "14.17.20"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.20.tgz#74cc80438fd0467dc4377ee5bbad89a886df3c10"
-  integrity sha512-gI5Sl30tmhXsqkNvopFydP7ASc4c2cLfGNQrVKN3X90ADFWFsPEsotm/8JHSUJQKTHbwowAHtcJPeyVhtKv0TQ==
+"@types/node@14.17.21":
+  version "14.17.21"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.21.tgz#6359d8cf73481e312a43886fa50afc70ce5592c6"
+  integrity sha512-zv8ukKci1mrILYiQOwGSV4FpkZhyxQtuFWGya2GujWg+zVAeRQ4qbaMmWp9vb9889CFA8JECH7lkwCL6Ygg8kA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -6994,10 +6994,10 @@ eslint-plugin-jsdoc@36.1.0:
     semver "^7.3.5"
     spdx-expression-parse "^3.0.1"
 
-eslint-plugin-vue@7.19.0:
-  version "7.19.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.19.0.tgz#4981f31c5df40fc1b2710d4fcb3e5e75fc644a48"
-  integrity sha512-pqsJY1q0cjdQerWSlGHo+NfnWZ8Xuc5tetddljJJ7726auWsnHty7F5qgj/EcjkPgyj8s5Lw4YGuhsFHkzIrkQ==
+eslint-plugin-vue@7.19.1:
+  version "7.19.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.19.1.tgz#435fb2ce712842a9530b28eacb883680e8eaa4f3"
+  integrity sha512-e2pD7nW2sTY04ThH+66BgToNwC4n6dqfNhKE+ypdJFtZgn3Zn+nP8ZEIFPG0PGqCKQ3qxy8dJk1bzUsuQd3ANA==
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"
@@ -11902,13 +11902,13 @@ nth-check@^2.0.0:
   dependencies:
     boolbase "^1.0.0"
 
-null-loader@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/null-loader/-/null-loader-3.0.0.tgz#3e2b6c663c5bda8c73a54357d8fa0708dc61b245"
-  integrity sha512-hf5sNLl8xdRho4UPBOOeoIwT3WhjYcMUQm0zj44EhD6UscMAz72o2udpoDFBgykucdEDGIcd6SXbc/G6zssbzw==
+null-loader@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/null-loader/-/null-loader-4.0.1.tgz#8e63bd3a2dd3c64236a4679428632edd0a6dbc6a"
+  integrity sha512-pxqVbi4U6N26lq+LmgIbB5XATP0VdZKOG25DhHi8btMmJJefGArFyDg1yc4U3hWCJbMqSrw0qyrz1UQX+qYXqg==
   dependencies:
-    loader-utils "^1.2.3"
-    schema-utils "^1.0.0"
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
 
 num2fraction@^1.2.2:
   version "1.2.2"
@@ -16390,12 +16390,12 @@ vue-class-component@7.2.6:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
 
-vue-cli-plugin-vuetify@2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.4.2.tgz#f5c54a853cd5b06633da4a508ff4aa5b6b6275e0"
-  integrity sha512-aJXkzz3CbN/D1/aJ53slsp8hGaruQHhj/mkNjsfpkqhGglLex7UBnvcDwi5+D1tNk+XlddANLgRe9tmCFMorVA==
+vue-cli-plugin-vuetify@2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.4.3.tgz#68a893642b354ed8d534e4a9bc63d0728a8987ac"
+  integrity sha512-dT9KpH1rXT6UWzBDFLMB69sgrNCoWFcxWiIyDDZ4vikv85JDweMHh2dT5n6QaAt7qsGlvL4IMOopjcyUTiPW9g==
   dependencies:
-    null-loader "^3.0.0"
+    null-loader "^4.0.1"
     semver "^7.1.2"
     shelljs "^0.8.3"
 
@@ -16422,10 +16422,10 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-input-facade@1.3.6:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/vue-input-facade/-/vue-input-facade-1.3.6.tgz#4a26641f1503622cc8aad3203ac880e651d39aa8"
-  integrity sha512-6QQcsPcEMDnjXu8Y5trXohCiiZ3SYIyYKzz4QVTrlTokY2uYb96KCVq7IfCpJcrLtYNyFCBKxlpUGL2VQxtwyg==
+vue-input-facade@1.3.7:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/vue-input-facade/-/vue-input-facade-1.3.7.tgz#9606b790f76fdce178b54d4371d16f40d23057a8"
+  integrity sha512-A1DXAAA560j5Q0MaB5YUtdTmMbLbb9d6Vs3zrrAUsL/KlLracbz6+xfLpkrvK/DWFOo9OzxSB10y6g9bm9O3ig==
 
 vue-jest@^3.0.5:
   version "3.0.7"
