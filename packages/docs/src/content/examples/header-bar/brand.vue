@@ -1,12 +1,10 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center w-100">
-		<HeaderBar
-			theme="custom"
-		>
+		<HeaderBar theme="custom">
 			<template #brand>
 				<div class="ma-8">
 					<img
-						src="~/assets/logos/logo-msa.svg"
+						:src="require('~/data/images/logo-msa.svg')"
 						alt="Logo MSA"
 					>
 				</div>

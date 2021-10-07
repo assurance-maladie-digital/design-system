@@ -1,14 +1,14 @@
 <template>
-	<div class="vd-header d-flex flex-column justify-center w-100">
+	<div class="vd-header-bar d-flex flex-column justify-center w-100">
 		<VSheet
 			v-bind="options.headerConfig"
-			:color="bgcColor"
+			:color="bgColor"
 			:dark="isDarkTheme"
 			:height="responsiveHeaderHeight"
 		>
 			<VSheet
 				:width="containerWidth"
-				:color="bgcColor"
+				:color="bgColor"
 				:dark="isDarkTheme"
 				class="d-flex justify-space-between align-center"
 			>
@@ -66,6 +66,7 @@
 				</div>
 			</VSheet>
 		</VSheet>
+
 		<VNavigationDrawer
 			v-model="drawer"
 			v-bind="options.menuConfig"
@@ -115,8 +116,8 @@
 			v-bind="options.subHeaderSection"
 			:color="themeColor"
 			:dark="isSubDarkTheme"
-			class="d-flex align-center justify-center"
 			:class="responsiveClasses"
+			class="d-flex align-center justify-center"
 		>
 			<VSheet
 				:color="themeColor"
@@ -142,7 +143,7 @@
 
 		<VSheet
 			v-if="isSearchOpen"
-			v-bind="options.serchSection"
+			v-bind="options.searchSection"
 		>
 			<SearchBar
 				:theme-color="themeColor"
@@ -185,12 +186,12 @@
 			},
 			theme: {
 				type: String,
-				default: 'ameli.fr',
+				default: 'cnam',
 				validator(value: string): boolean {
 					const isValid = value.match(/^(cnam|ameli.fr|ameli-pro|risque-pro|custom)$/) !== null;
 					if (!isValid) {
 						// eslint-disable-next-line no-console
-						console.error(`Wrong value for the \`type\` prop. 
+						console.error(`Wrong value for the \`type\` prop.
 						Given: "${value}", expected "(cnam|ameli.fr|ameli-pro|risque-pro|custom)".`);
 					}
 					return true;
@@ -203,7 +204,7 @@
 					const isValid = value.match(/^(header|sub-header|hide)$/) !== null;
 					if (!isValid) {
 						// eslint-disable-next-line no-console
-						console.error(`Wrong value for the \`type\` prop. 
+						console.error(`Wrong value for the \`type\` prop.
 						Given: "${value}", expected "(header|sub-header|hide)".`);
 					}
 					return true;
@@ -262,27 +263,29 @@
 			return Boolean(this.navBar);
 		}
 
-		get bgcColor(): string {
-			return this.headerConfig?.bgcColor ? this.headerConfig.bgcColor as string : 'transparent';
+		get bgColor(): string {
+			return this.headerConfig?.bgColor ? this.headerConfig.bgColor as string : 'white';
 		}
 
 		get themeColor(): string {
-			if(this.navBar?.bgcColor) {
-				return this.navBar.bgcColor as string;
-			} else if(this.theme === 'ameli-pro') {
+			if (this.navBar?.bgColor) {
+				return this.navBar.bgColor as string;
+			} else if (this.theme === 'ameli-pro') {
 				return '#00749C';
-			} else if(this.theme === 'risque-pro') {
+			} else if (this.theme === 'risque-pro') {
 				return '#CD545B';
-			} else if(this.theme === 'ameli.fr') {
+			} else if (this.theme === 'ameli.fr') {
 				return '#001C6B';
 			}
+
 			return '#001C6B';
 		}
 
 		get containerWidth(): string {
-			if(this.isMobileScreen) {
+			if (this.isMobileScreen) {
 				return '100%';
 			}
+
 			return this.headerConfig?.boxSize ? this.headerConfig.boxSize as string : '100%';
 		}
 
@@ -305,8 +308,8 @@
 				case 'md': return false;
 				case 'lg': return false;
 				case 'xl': return false;
+				default: return true;
 			}
-			return true;
 		}
 
 		get responsiveClasses(): string {
@@ -314,9 +317,10 @@
 		}
 
 		get userBarClasses(): string {
-			if(this.hasUserSlot) {
+			if (this.hasUserSlot) {
 				return 'ma-0';
 			}
+
 			return this.isMobileScreen ? 'ma-4' : 'ma-6';
 		}
 
@@ -345,8 +349,9 @@
 
 <style lang="scss" scoped>
 	.vd-header {
-		box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-					0px 2px 2px rgba(0, 0, 0, 0.14),
-					0px 1px 5px rgba(0, 0, 0, 0.12);
+		box-shadow:
+			0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+			0px 2px 2px rgba(0, 0, 0, 0.14),
+			0px 1px 5px rgba(0, 0, 0, 0.12);
 	}
 </style>

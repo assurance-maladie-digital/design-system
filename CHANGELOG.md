@@ -3,7 +3,7 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **HeaderBar:** Ajout du nouveau header ([#1087](https://github.com/assurance-maladie-digital/design-system/pull/1351)) ([80666a0](https://github.com/assurance-maladie-digital/design-system/commit/80666a0810cfca76328b72e4d96720d28aca25fd))
+  - **HeaderBar:** Ajout d'un nouveau composant ([#1444](https://github.com/assurance-maladie-digital/design-system/pull/1444))
 
 ### Vue Dash
 

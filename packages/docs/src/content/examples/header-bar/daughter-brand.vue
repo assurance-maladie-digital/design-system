@@ -4,7 +4,7 @@
 			<template #daughter-brand>
 				<div class="ma-4">
 					<img
-						src="~/assets/logos/logo-msa.svg"
+						:src="require('~/data/images/logo-msa.svg')"
 						alt="Logo MSA"
 					>
 				</div>

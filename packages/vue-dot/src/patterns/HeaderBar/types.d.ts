@@ -10,13 +10,13 @@ export interface HeaderTitleSection {
 }
 
 export interface HeaderBarConfig {
-	bgcColor?: string;
+	bgColor?: string;
 	boxSize?: string;
 	dark?: boolean;
 	service?: HeaderTitleSection;
 }
 
 export interface HeaderNavBarConfig {
-	bgcColor?: string;
+	bgColor?: string;
 	dark?: boolean;
 }

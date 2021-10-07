@@ -76,11 +76,13 @@
 				default: 'ameli.fr',
 				validator(value: string): boolean {
 					const isValid = value.match(/^(cnam|ameli.fr|ameli-pro|risque-pro|custom)$/) !== null;
+
 					if (!isValid) {
 						// eslint-disable-next-line no-console
-						console.error(`Wrong value for the \`type\` prop. 
+						console.error(`Wrong value for the \`type\` prop.
 						Given: "${value}", expected "(cnam|ameli.fr|ameli-pro|risque-pro|custom)".`);
 					}
+
 					return true;
 				}
 			},
@@ -111,7 +113,7 @@
 		get daughterBrand(): string {
 			let img :string;
 
-			if(this.theme === 'ameli-pro') {
+			if (this.theme === 'ameli-pro') {
 				img = 'amelipro';
 			} else if(this.theme === 'ameli.fr') {
 				img = 'ameli';
@@ -125,7 +127,7 @@
 		get dividerModel(): string {
 			let img :string;
 
-			if(this.theme === 'ameli-pro') {
+			if (this.theme === 'ameli-pro') {
 				img = 'amelipro';
 			} else {
 				img = 'bleu-am';
@@ -137,7 +139,7 @@
 		get headerLogo(): string {
 			let img :string;
 
-			if(this.theme === 'risque-pro') {
+			if (this.theme === 'risque-pro') {
 				img = 'risquepro';
 			} else {
 				img = 'assurance-maladie';
@@ -147,32 +149,38 @@
 		}
 
 		get displayServiceSection(): boolean {
-			if(this.headerConfig?.service) {
-				if(!this.headerConfig.service.mobileDisplay) {
+			if (this.headerConfig?.service) {
+				if (!this.headerConfig.service.mobileDisplay) {
 					return this.isMobileScreen ? false : true;
 				}
+
 				return true;
 			}
+
 			return false;
 		}
 
 		get displayServiceTitle(): boolean {
-			if(this.headerConfig?.service?.title) {
-				if(!this.headerConfig.service.title.mobileDisplay) {
+			if (this.headerConfig?.service?.title) {
+				if (!this.headerConfig.service.title.mobileDisplay) {
 					return this.isMobileScreen ? false : true;
 				}
+
 				return true;
 			}
+
 			return false;
 		}
 
 		get displayServiceSubTitle(): boolean {
-			if(this.headerConfig?.service?.subTitle) {
-				if(!this.headerConfig.service.subTitle.mobileDisplay) {
+			if (this.headerConfig?.service?.subTitle) {
+				if (!this.headerConfig.service.subTitle.mobileDisplay) {
 					return this.isMobileScreen ? false : true;
 				}
+
 				return true;
 			}
+
 			return false;
 		}
 

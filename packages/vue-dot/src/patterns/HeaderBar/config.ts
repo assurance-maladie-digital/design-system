@@ -24,7 +24,7 @@ export const config = {
 		class: 'd-flex align-center',
 		height: '48px'
 	},
-	serchSection: {
+	searchSection: {
 		color: '#F8F9FC',
 		height: '48px',
 		class: 'vd-header'

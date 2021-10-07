@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderBar renders correctly 1`] = `
-<div class="vd-header d-flex flex-column justify-center w-100">
+<div class="vd-header-bar d-flex flex-column justify-center w-100">
   <vsheet-stub color="transparent" height="120px" tag="header" class="d-flex justify-center w-100">
     <vsheet-stub color="transparent" width="100%" tag="div" class="d-flex justify-space-between align-center">
       <headerbrandsection-stub theme="ameli.fr" themecolor="#001C6B" class="vd-header-brand"></headerbrandsection-stub>

@@ -1,12 +1,12 @@
 <template>
 	<VTextField
-		autofocus
-		height="20px"
 		:color="themeColor"
 		:value="search"
 		:disabled="loading"
 		:label="searchLabel"
 		:class="textFieldClasses"
+		height="20px"
+		autofocus
 		class="w-100 py-2 px-5"
 		@input="searchValue = $event"
 		@keyup.enter="emitSearchEvent"
@@ -65,4 +65,3 @@
 		}
 	}
 </script>
-

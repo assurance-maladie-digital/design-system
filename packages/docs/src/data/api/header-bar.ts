@@ -15,7 +15,7 @@ export const api: Api = {
 				default: `undefined`,
 				description: 'La configuration du header',
 				example: `{
-bgcColor?: string;
+bgColor?: string;
 box-size?: string;
 dark?: boolean;
 service?: HeaderTitleSection;
@@ -27,7 +27,7 @@ service?: HeaderTitleSection;
 				default: `undefined`,
 				description: 'La configuration de la barre de navigation',
 				example: `{
-bgcColor?: string;
+bgColor?: string;
 dark?: boolean;
 }`
 			},

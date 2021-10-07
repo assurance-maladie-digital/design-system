@@ -22,7 +22,7 @@
 	})
 	export default class HeaderNavBarUsage extends Vue {
 		navBar = {
-			bgcColor: '#c1c1c1',
+			bgColor: '#c1c1c1',
 			dark: false
 		}
 	}
