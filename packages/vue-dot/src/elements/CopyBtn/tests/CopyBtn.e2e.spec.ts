@@ -1,4 +1,4 @@
-import { mountComponent } from '../../../../e2e';
+import { mountComponent } from '@e2e/config';
 import CopyBtn from '../';
 
 describe('CopyBtn', () => {

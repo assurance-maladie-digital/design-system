@@ -13,6 +13,9 @@
 			],
 			"@/tests": [
 				"tests/"
+			],
+			"@e2e/*": [
+				"e2e/*"
 			]
 		},
 		"esModuleInterop": true
@@ -28,8 +31,6 @@
 		"*.json"
 	],
 	"exclude": [
-		"node_modules",
-		"tests/**/*.e2e.spec.ts",
-		"src/**/*.e2e.spec.ts"
+		"node_modules"
 	]
 }

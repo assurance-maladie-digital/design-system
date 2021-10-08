@@ -7,7 +7,7 @@ import {
 } from '@cypress/vue';
 
 // Add Vuetify
-import { vuetify }  from '../dev/vuetify';
+import { vuetify }  from '../../dev/vuetify';
 
 type VueComponent = Vue.VueConstructor;
 
