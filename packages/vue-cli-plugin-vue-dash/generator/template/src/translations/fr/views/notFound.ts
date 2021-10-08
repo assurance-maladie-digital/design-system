@@ -5,6 +5,6 @@ export default {
 	},
 	code: '404',
 	error: 'Page non trouvée',
-	message: 'Il semblerait qu\'il y ait eu une erreur !',
-	cta: 'Retour à la page d\'accueil'
+	message: 'Il semblerait qu’il y ait eu une erreur !',
+	cta: 'Retour à la page d’accueil'
 };

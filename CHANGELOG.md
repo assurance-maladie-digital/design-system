@@ -1,14 +1,17 @@
 ## Non publié
 
+### Vue Dot
+
+- ♻️ **Refactoring**
+  - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359)) ([d5fc107](https://github.com/assurance-maladie-digital/design-system/commit/d5fc1072719803e85aa35e968fe402cea168d827))
 
-### Vue Dot
-
 - ♻️ **Refactoring**
-  - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
+  - **global:** Utilisation du caractère apostrophe ([#1472](https://github.com/assurance-maladie-digital/design-system/pull/1472))
 
 ### FormBuilder
 
@@ -65,7 +68,7 @@
   - **vue-input-facade:** Mise à jour vers la `v1.3.7` ([#1464](https://github.com/assurance-maladie-digital/design-system/pull/1464)) ([7877b57](https://github.com/assurance-maladie-digital/design-system/commit/7877b5747032d8f45b495ade36b664d266101f0b))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.19.1` ([#1465](https://github.com/assurance-maladie-digital/design-system/pull/1465)) ([dc1b411](https://github.com/assurance-maladie-digital/design-system/commit/dc1b411f63564838fd2c19700b708545a302b55e))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.3` ([#1469](https://github.com/assurance-maladie-digital/design-system/pull/1469)) ([7ae8f4a](https://github.com/assurance-maladie-digital/design-system/commit/7ae8f4a1f015ac239e5b736257ff5e6601893783))
-  - **@babel/core:** Mise à jour vers la `v7.15.8` ([#1470](https://github.com/assurance-maladie-digital/design-system/pull/1470))
+  - **@babel/core:** Mise à jour vers la `v7.15.8` ([#1470](https://github.com/assurance-maladie-digital/design-system/pull/1470)) ([49a2900](https://github.com/assurance-maladie-digital/design-system/commit/49a2900fe207c07ebac1841fd807f77dbb9df669))
 
 ## v2.0.0
 
