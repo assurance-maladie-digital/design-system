@@ -1,6 +1,10 @@
 {
     "component": {
+      "pluginsFile": "e2e/plugins/index.js",
+      "supportFile": "e2e/support",
+      "screenshotsFolder": "e2e/screenshots",
+      "videosFolder":"e2e/videos",
       "componentFolder": "src",
-      "testFiles": "**/*.e2e.spec.ts"
+      "testFiles": "**/tests/*.e2e.spec.ts"
     }
   }
