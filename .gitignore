@@ -33,5 +33,5 @@ package-lock.json*
 /tests/e2e/screenshots/
 
 # Netlify
-packages/docs/.netlify
-packages/docs/netlify.toml
+.netlify/
+netlify.toml
