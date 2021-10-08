@@ -1,4 +1,4 @@
-import { mountComponent } from '../../../../cypress';
+import { mountComponent } from '../../../../e2e';
 import CopyBtn from '../';
 
 describe('CopyBtn', () => {
