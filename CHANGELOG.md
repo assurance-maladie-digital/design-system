@@ -13,7 +13,7 @@
   - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359)) ([d5fc107](https://github.com/assurance-maladie-digital/design-system/commit/d5fc1072719803e85aa35e968fe402cea168d827))
   - **template:** Correction des commandes manquantes dans le fichier `package.json` ([#1475](https://github.com/assurance-maladie-digital/design-system/pull/1475)) ([9431fd2](https://github.com/assurance-maladie-digital/design-system/commit/9431fd214048c12ff4e2886a16634cbf4740080b))
   - **template:** Correction du rapport de couverture de code ([#1479](https://github.com/assurance-maladie-digital/design-system/pull/1479)) ([de0f728](https://github.com/assurance-maladie-digital/design-system/commit/de0f728b70cd56eb31e85f8686aa4d7e2fc7e79c))
-  - **template:** Correction de l'utilisation du composant `ErrorPage` lorsque i18n n'est pas installé ([#1480](https://github.com/assurance-maladie-digital/design-system/pull/1480))
+  - **template:** Correction de l'utilisation du composant `ErrorPage` lorsque i18n n'est pas installé ([#1480](https://github.com/assurance-maladie-digital/design-system/pull/1480)) ([bfbee3f](https://github.com/assurance-maladie-digital/design-system/commit/bfbee3f645b9c529de954ce29e21afccd9d5e408))
 
 - ♻️ **Refactoring**
   - **template:** Utilisation du caractère apostrophe ([#1472](https://github.com/assurance-maladie-digital/design-system/pull/1472)) ([9ad9f0b](https://github.com/assurance-maladie-digital/design-system/commit/9ad9f0b62ee685b366514adecf1fae360d0ea764))
@@ -62,6 +62,9 @@
   - **ci:** Mise à jour de `codecov` vers la `v3.1.1` ([#1438](https://github.com/assurance-maladie-digital/design-system/pull/1438)) ([a107e90](https://github.com/assurance-maladie-digital/design-system/commit/a107e90f9b9ae8b37f815576df2586c532967fa6))
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.18` ([#1454](https://github.com/assurance-maladie-digital/design-system/pull/1454)) ([38efd29](https://github.com/assurance-maladie-digital/design-system/commit/38efd29992df0eb495af6218be144605895c39ca))
   - **global:** Mise à jour du fichier `.gitignore` ([#1477](https://github.com/assurance-maladie-digital/design-system/pull/1477)) ([50edc9f](https://github.com/assurance-maladie-digital/design-system/commit/50edc9f809eaa196c5afefd275b7f4e69ab2260f))
+
+- 📝 **Documentation**
+  - **rules:** Mise à jour du champ auteur ([#1481](https://github.com/assurance-maladie-digital/design-system/pull/1481))
 
 - ⬆️ **Dépendances**
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.1.0` ([#1420](https://github.com/assurance-maladie-digital/design-system/pull/1420)) ([9c1bf3a](https://github.com/assurance-maladie-digital/design-system/commit/9c1bf3a9d261d640255b17b263e92d33cd8d7b22))

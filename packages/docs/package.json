@@ -6,12 +6,12 @@
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
 		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
-		"email": "me@deraw.dev"
+		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
 	"license": "MIT",
 	"author": {
-		"name": "Dylan Broussard",
-		"email": "me@deraw.dev"
+		"name": "CNAM",
+		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
 	"scripts": {
 		"dev": "nuxt",
