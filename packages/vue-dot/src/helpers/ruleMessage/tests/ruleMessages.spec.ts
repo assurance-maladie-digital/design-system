@@ -2,7 +2,7 @@ import { ruleMessage } from '../';
 
 // Tests
 describe('ruleMessage', () => {
-	it('returns the requested message when it\'s an object', () => {
+	it('returns the requested message when it is an object', () => {
 		const messages = {
 			default: 'test'
 		};
@@ -10,7 +10,7 @@ describe('ruleMessage', () => {
 		expect(ruleMessage(messages, 'default')).toBe('test');
 	});
 
-	it('returns the requested message when it\'s a function', () => {
+	it('returns the requested message when it is a function', () => {
 		const messages = {
 			default: () => 'test'
 		};
@@ -18,7 +18,7 @@ describe('ruleMessage', () => {
 		expect(ruleMessage(messages, 'default')).toBe('test');
 	});
 
-	it('returns the requested message when it\'s a function with parameters', () => {
+	it('returns the requested message when it is a function with parameters', () => {
 		const messages = {
 			default: (value: number) => 'test' + value
 		};

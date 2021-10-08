@@ -8,7 +8,7 @@ describe('isEmailValid', () => {
 		expect(isEmailValid(email)).toBe(true);
 	});
 
-	it('returns false if the email isn\'t valid', () => {
+	it('returns false if the email is not valid', () => {
 		const email = 'not-valid@.fr';
 
 		expect(isEmailValid(email)).toBe(false);

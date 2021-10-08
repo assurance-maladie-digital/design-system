@@ -66,7 +66,7 @@ function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
 
 // Tests
 describe('Birthdate', () => {
-	it('doesn\'t set max & min values when birthdate is false', () => {
+	it('does not set max & min values when birthdate is false', () => {
 		const wrapper = createWrapper(false);
 
 		expect(wrapper.vm.max).toBe(null);

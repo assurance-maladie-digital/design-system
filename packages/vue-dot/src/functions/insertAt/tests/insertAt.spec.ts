@@ -8,7 +8,7 @@ describe('insertAt', () => {
 		expect(insertAt(testStr, 4, '-')).toEqual('test-test');
 	});
 
-	it('doesn\'t fail if the position doesn\'t exists', () => {
+	it('does not fail if the position does not exist', () => {
 		expect(insertAt(testStr, 40, '-')).toEqual(testStr + '-');
 	});
 });
