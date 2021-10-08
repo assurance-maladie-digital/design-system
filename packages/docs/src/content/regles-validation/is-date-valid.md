@@ -33,10 +33,10 @@ Puis en passant en argument un objet contenant les messages d’erreur utilisés
 
 ```ts
 isDateValidRule = isDateValidFn({
-	default: `La date saisie n’est pas valide.`,
-	wrongFormat: `Le format de la date n’est pas valide.`,
-	monthNotMatch: `Le jour saisi dépasse le nombre de jours dans le mois.`,
-	notALeapYear: `Le jour saisi est invalide car ce n’est pas une année bissextile.`
+	default: 'La date saisie n’est pas valide.',
+	wrongFormat: 'Le format de la date n’est pas valide.',
+	monthNotMatch: 'Le jour saisi dépasse le nombre de jours dans le mois correspondant.',
+	notALeapYear: 'Le jour saisi est invalide car l’année correspondante n’est pas une année bissextile.'
 });
 ```
 

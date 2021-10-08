@@ -27,7 +27,7 @@ Vous pouvez modifier les messages d’erreur par défaut en passant en argument 
 
 ```ts
 maxLengthRule = maxLength(lengthValue, {
-	default: (max: number) => `La longueur maximale du champ est de ${max} caractères.`
+	default: (max: number) => `La longueur maximale du champ doit être de ${max} caractères.`
 });
 ```
 
