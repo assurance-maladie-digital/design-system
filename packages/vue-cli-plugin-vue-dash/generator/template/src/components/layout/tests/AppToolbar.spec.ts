@@ -6,7 +6,7 @@ import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import AppToolbar from '../AppToolbar.vue';
 
-let wrapper: Wrapper<Vue>;
+let wrapper: Wrapper<Vue>;<% if (i18n) { %>
 
 const links = [
 	{
@@ -24,7 +24,7 @@ const links = [
 			name: 'test2'
 		}
 	}
-];
+];<% } %>
 
 // Tests
 describe('AppToolbar', () => {

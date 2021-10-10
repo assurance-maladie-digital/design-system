@@ -34,7 +34,12 @@ const FormBuilderVersion = normalizeVersion(devDependencies['@cnamts/form-builde
  */
 function extendPackage(api, options) {
 	const newPackageProperties = {
-		scripts: {},
+		scripts: {
+			'serve': 'vue-cli-service serve',
+			'build': 'vue-cli-service build',
+			'lint': 'vue-cli-service lint',
+			'test:unit': 'vue-cli-service test:unit'
+		},
 		dependencies: {
 			'@cnamts/design-tokens': DesignTokensVersion,
 			'@cnamts/form-builder': FormBuilderVersion,
@@ -109,7 +114,6 @@ function extendPackage(api, options) {
 	if (options.cypress) {
 		newPackageProperties.devDependencies['@vue/cli-plugin-e2e-cypress'] = '~4.5.13';
 
-		newPackageProperties.scripts = {};
 		newPackageProperties.scripts['test:e2e'] = 'vue-cli-service test:e2e --headless';
 		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e';
 

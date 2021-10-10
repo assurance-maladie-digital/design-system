@@ -21,7 +21,7 @@
 			return {
 				title: window.MAINTENANCE_TITLE || <% if (i18n) { %>this.$t('views.maintenance.title') as string<% } else { %>'Maintenance en cours'<% } %>,
 				message: window.MAINTENANCE_MESSAGE ||<% if (i18n) { %> this.$t('views.maintenance.message') as string<% } else { %>
-					'L\'application n\'est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.'<% } %>
+					'L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.'<% } %>
 			};
 		}
 

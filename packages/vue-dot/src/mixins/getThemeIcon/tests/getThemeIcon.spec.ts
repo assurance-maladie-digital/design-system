@@ -39,7 +39,7 @@ describe('GetThemeIcon', () => {
 		expect(typeof wrapper.vm.getThemeIcon('test')).toBe('string');
 	});
 
-	it('returns undefined if the icon doesn\'t exists', () => {
+	it('returns undefined if the icon does not exists', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, mountOptions) as Wrapper<GetThemeIcon>;
@@ -47,7 +47,7 @@ describe('GetThemeIcon', () => {
 		expect(wrapper.vm.getThemeIcon('')).toBeUndefined();
 	});
 
-	it('returns undefined if $vd doesn\'t exists', () => {
+	it('returns undefined if $vd doe not exists', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent) as Wrapper<GetThemeIcon>;
