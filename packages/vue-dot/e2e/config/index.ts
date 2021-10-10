@@ -1,5 +1,3 @@
-// Global test configuration
-import Vue from 'vue';
 
 import {
 	mount,

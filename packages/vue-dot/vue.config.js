@@ -1,5 +1,6 @@
 // Build configuration
 const webpack = require('webpack');
+var path = require('path');
 
 // If LIB_MODE is true, we're building the library
 // else, we're building the dev environment
@@ -75,6 +76,7 @@ const DEV_MODE_CONFIG = {
 
 				return args;
 			});
+		config.resolve.alias.set('@e2e/config', path.resolve(__dirname, './e2e/config/index.ts'));
 	},
 	transpileDependencies: [
 		'vuetify',
