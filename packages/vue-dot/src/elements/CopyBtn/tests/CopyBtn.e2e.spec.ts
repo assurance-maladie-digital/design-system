@@ -1,4 +1,4 @@
-import { mountComponent } from '../../../../tests/e2e';
+import { mountComponent } from '@e2e/config';
 import CopyBtn from '../';
 
 describe('CopyBtn', () => {
@@ -9,7 +9,7 @@ describe('CopyBtn', () => {
 	});
 
 	it('copies the text to the clipboard', () => {
-		cy.dataCy('VBtn').should('exist').click();
+		cy.dataCy('btn').should('exist').click();
 		cy.document().contains(textToCopy);
 	});
 });
