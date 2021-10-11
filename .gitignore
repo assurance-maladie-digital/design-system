@@ -29,14 +29,13 @@ package-lock.json*
 **/tests/**/coverage/
 
 # Cypress
-<<<<<<< HEAD
 **/tests/e2e/videos/
 **/tests/e2e/screenshots/
-=======
+/e2e/videos/
+/e2e/screenshots/
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 
 # Netlify
 .netlify/
 netlify.toml
->>>>>>> dev
