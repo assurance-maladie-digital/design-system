@@ -29,6 +29,7 @@ const config: Config.InitialOptions = {
 		'!**/node_modules/**',
 		'!**/*.e2e.spec.ts',
 		'!**/*.d.ts',
+		'!**/*.e2e.spec.ts',
 		'!**/dev/**',
 		'!**/data/**'
 	],

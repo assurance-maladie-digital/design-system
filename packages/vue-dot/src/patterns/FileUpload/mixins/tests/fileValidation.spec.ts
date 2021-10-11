@@ -61,7 +61,7 @@ describe('FileValidation', () => {
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 
-	it('returns false if the extension isn\'t allowed', () => {
+	it('returns false if the extension is not allowed', () => {
 		const wrapper = mount(component, {
 			propsData: {
 				allowedExtensions: ['pdf']

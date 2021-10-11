@@ -63,7 +63,7 @@
 
 		<% if (i18n) { %>get links(): LinkItem[] {
 			return this.$t('views.about.links') as unknown as LinkItem[];
-		}<% } else { %>links = [
+		}<% } else { %>links: LinkItem[] = [
 			{
 				title: 'CNAM',
 				links: [

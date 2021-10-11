@@ -33,7 +33,7 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
 
-	it('returns userEvents without modification if it\'s not a function', () => {
+	it('returns userEvents without modification if it is not a function', () => {
 		const userEvents = [DATE];
 
 		const testComponent = createTestComponent({
@@ -51,7 +51,7 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(userEvents);
 	});
 
-	it('returns the result of userEvents is it\'s a function', () => {
+	it('returns the result of userEvents is it is a function', () => {
 		const userEvents = (date: string) => 'test ' + date;
 
 		const testComponent = createTestComponent({
@@ -84,7 +84,7 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe('vd-custom-event accent');
 	});
 
-	it('returns false if the the selected date isn\'t in the defined range', () => {
+	it('returns false if the the selected date is not in the defined range', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
@@ -99,7 +99,7 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
 
-	it('returns false when showWeekends is on and the date isn\'t a weekend', () => {
+	it('returns false when showWeekends is on and the date is not a weekend', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
