@@ -9,3 +9,5 @@ declare namespace Cypress {
 		dataCy(value: string): Chainable<Element>;
 	}
 }
+
+declare module "@e2e/config";

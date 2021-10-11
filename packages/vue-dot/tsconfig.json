@@ -13,9 +13,6 @@
 			],
 			"@/tests": [
 				"tests/"
-			],
-			"@e2e/*": [
-				"e2e/*"
 			]
 		},
 		"esModuleInterop": true
