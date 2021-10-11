@@ -1,4 +1,4 @@
-import { rules, rulesFunctions } from '../../src/rules';
+import { rules, rulesFunctions } from '@/rules';
 
 describe('rules', () => {
 	it('should list all rules', () => {

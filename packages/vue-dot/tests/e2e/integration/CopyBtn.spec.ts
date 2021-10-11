@@ -1,5 +1,5 @@
-import { mountComponent } from '@e2e/config';
-import CopyBtn from '../';
+import { mountComponent } from '../';
+import CopyBtn from '@/elements/CopyBtn';
 
 describe('CopyBtn', () => {
 	const textToCopy = 'Texte copié !';
@@ -9,7 +9,7 @@ describe('CopyBtn', () => {
 	});
 
 	it('copies the text to the clipboard', () => {
-		cy.dataCy('btn').should('exist').click();
+		cy.dataCy('v-btn').should('exist').click();
 		cy.document().contains(textToCopy);
 	});
 });

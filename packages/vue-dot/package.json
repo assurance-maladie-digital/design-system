@@ -33,9 +33,10 @@
 		"post-install": "ts-node --project tsconfig.json --files scripts/post-install.ts",
 		"pre-commit": "lint-staged",
 		"dev": "vue-cli-service serve",
-		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
+		"build": "ts-node --project tsconfig.build.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
-		"test": "vue-cli-service test:unit --runInBand",
+		"test": "yarn test:unit && yarn test:e2e",
+		"test:unit": "vue-cli-service test:unit --runInBand",
 		"test:e2e": "cypress run-ct",
 		"test:e2e:gui": "cypress open-ct"
 	},

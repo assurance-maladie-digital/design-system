@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-import { registerAllComponents } from '../../src/registerAllComponents';
+import { registerAllComponents } from '@/registerAllComponents';
 
 import { getComponents } from './utils';
 
