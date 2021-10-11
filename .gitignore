@@ -32,10 +32,13 @@ package-lock.json*
 **/tests/e2e/videos/
 **/tests/e2e/screenshots/
 **/e2e/videos/
+**/e2e/coverage/
 /e2e/videos/
+/e2e/coverage/
 /e2e/screenshots/
 /tests/e2e/videos/
 /tests/e2e/screenshots/
+.nyc_output/
 
 # Netlify
 .netlify/
