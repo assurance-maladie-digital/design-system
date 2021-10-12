@@ -35,9 +35,10 @@
 		"dev": "vue-cli-service serve",
 		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
-		"test": "vue-cli-service test:unit --runInBand",
+		"test": "yarn test:e2e && yarn test:coverage",
 		"test:e2e": "NODE_ENV=test cypress run-ct",
-		"test:e2e:gui": "cypress open-ct"
+		"test:e2e:gui": "cypress open-ct",
+		"test:coverage":"nyc report --check-coverage"
 	},
 	"dependencies": {
 		"content-disposition": "^0.5.3"
