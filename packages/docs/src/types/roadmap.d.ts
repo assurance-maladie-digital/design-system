@@ -13,6 +13,8 @@ export interface RoadmapLabelMapping {
 }
 
 export interface RoadmapSection {
-	label: string;
+	version: string;
+	date: string;
+	description: string;
 	items?: RoadmapItem[];
 }
