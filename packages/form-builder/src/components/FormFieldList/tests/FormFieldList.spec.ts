@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
-import { mountComponent } from '@cnamts/vue-dot/tests';
+import { mountComponent } from '@cnamts/vue-dot/tests/unit';
 import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import FormFieldList from '../';

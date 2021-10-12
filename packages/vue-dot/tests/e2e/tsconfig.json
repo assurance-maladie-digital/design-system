@@ -1,4 +1,4 @@
-{   
+{
 	"compilerOptions": {
 		"strict": true,
 		"target": "es5",
@@ -7,11 +7,17 @@
 			"dom"
 		],
 		"types": [
-			"./types"
-		]
+			"./types",
+			"cypress"
+		],
+		"paths": {
+			"@/*": [
+				"../../src/*"
+			]
+		}
 	},
 	"include": [
 		"**/*.ts",
-		"../src/**/*.e2e.spec.ts"
+		"../node_modules/cypress"
 	]
 }

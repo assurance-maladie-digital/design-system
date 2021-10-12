@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 import FormBuilder from '../../src';
 
-import { getComponents } from '@cnamts/vue-dot/tests/integration/utils';
+import { getComponents } from '@cnamts/vue-dot/tests/unit/integration/utils';
 
 describe('plugin', () => {
 	it('should register components', () => {

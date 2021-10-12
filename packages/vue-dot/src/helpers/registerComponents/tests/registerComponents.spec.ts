@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 import { registerComponents, Components } from '../';
 
-import { getComponents } from '@/tests/integration/utils';
+import { getComponents } from '@/tests/unit/integration/utils';
 
 /** Create basic test component */
 function createTestComponent(name: string) {

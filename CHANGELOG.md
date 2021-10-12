@@ -8,6 +8,9 @@
   - **rules:** Mise à jour des messages d'erreur des règles de validation ([#1476](https://github.com/assurance-maladie-digital/design-system/pull/1476)) ([d0aed49](https://github.com/assurance-maladie-digital/design-system/commit/d0aed492b7c1861c4411757c07fd7a3019c8e1cd))
   - **isEmailValid:** Mise à jour des données de test ([#1483](https://github.com/assurance-maladie-digital/design-system/pull/1483))
 
+- ✅ **Tests**
+  - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
@@ -27,9 +30,6 @@
 
 - ♻️ **Refactoring**
   - **tests:** Mise à jour de la formulation dans les tests ([#1468](https://github.com/assurance-maladie-digital/design-system/pull/1468)) ([bdaf37b](https://github.com/assurance-maladie-digital/design-system/commit/bdaf37b3d19b5bb36873cec43e81fa22fe62efbd))
-
-- ✅ **Tests**
-  - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
 
 ### Documentation
 
