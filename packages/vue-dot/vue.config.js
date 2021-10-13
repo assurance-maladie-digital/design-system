@@ -2,7 +2,6 @@
 const webpack = require('webpack');
 var path = require('path');
 
-
 // If LIB_MODE is true, we're building the library
 // else, we're building the dev environment
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
