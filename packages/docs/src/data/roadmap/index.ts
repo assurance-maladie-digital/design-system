@@ -145,7 +145,7 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 		{
 			version: '3.0.0',
 			date: 'Mars 2022',
-			description: 'Migration vers Vue.js 3 : réécriture des composants avec lAPI de composition et mise à jour du Starter Kit.',
+			description: 'Migration vers Vue.js 3 : réécriture des composants avec l’API de composition et mise à jour du Starter Kit.',
 			items: []
 		}
 	]
