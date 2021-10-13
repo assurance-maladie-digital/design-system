@@ -1,7 +1,7 @@
 <template>
 	<VExpansionPanel>
 		<VExpansionPanelHeader>
-			<span class="d-flex flex-column align-start">
+			<span class="text-subtitle-2 d-flex flex-column align-start">
 				<span class="text-subtitle-1 font-weight-bold mb-1">
 					Version {{ version }} – {{ date }}
 				</span>
@@ -11,7 +11,15 @@
 		</VExpansionPanelHeader>
 
 		<VExpansionPanelContent>
+			<p
+				v-if="items.length === 0"
+				class="text-subtitle-2 mt-4 mb-0"
+			>
+				Pas d’éléments à afficher pour le moment.
+			</p>
+
 			<DocRoadmapItemContent
+				v-else
 				v-for="(item, index) in items"
 				:key="index"
 				:title="item.title"
@@ -54,3 +62,15 @@
 	@Component
 	export default class DocRoadmapItem extends Props {}
 </script>
+
+<style lang="scss" scoped>
+	.v-expansion-panel-header {
+		::v-deep .v-expansion-panel-header__icon {
+			flex: none;
+		}
+	}
+
+	.v-expansion-panel-content {
+		border-top: 1px solid #eee;
+	}
+</style>

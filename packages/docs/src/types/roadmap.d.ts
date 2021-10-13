@@ -1,8 +1,10 @@
+import { LabelMappingEnum } from '~/constants/RoadmapLabelEnum';
+
 export interface RoadmapItem {
 	title: string;
 	description?: string;
-	label: string;
-	issue?: string;
+	label: LabelMappingEnum;
+	issue?: number;
 }
 
 export interface RoadmapLabelMapping {
@@ -16,5 +18,5 @@ export interface RoadmapSection {
 	version: string;
 	date: string;
 	description: string;
-	items?: RoadmapItem[];
+	items: RoadmapItem[];
 }

@@ -1,10 +1,10 @@
 <template>
-	<div class="doc-roadmap my-4 w-100">
+	<div class="doc-roadmap mt-4 w-100">
 		<VExpansionPanels
 			v-for="(section, sectionIndex) in sections"
 			:key="sectionIndex"
 			accordion
-			class="mb-8"
+			class="mb-12"
 		>
 			<h2 class="text-subtitle-1 font-weight-regular grey--text text--darken-2 mb-6 w-100">
 				{{ section.label }}
@@ -47,15 +47,5 @@
 <style lang="scss" scoped>
 	h2 {
 		border-bottom: 1px solid #eee;
-	}
-
-	.v-expansion-panel-header {
-		::v-deep .v-expansion-panel-header__icon {
-			flex: none;
-		}
-	}
-
-	.v-expansion-panel-content {
-		border-top: 1px solid #eee;
 	}
 </style>
