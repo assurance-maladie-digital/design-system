@@ -3,6 +3,7 @@ node_modules/
 
 # Build
 dist/
+.nyc_output/out.json
 
 # Playground
 **/dev/Playground.vue

@@ -7,6 +7,6 @@
 		"videosFolder":"tests/e2e/videos",
 		"fixturesFolder": "tests/e2e/fixtures",
 		"componentFolder": "src",
-		"testFiles": "../tests/e2e/integration/*.e2e.spec.ts"
+		"testFiles": "**/tests/**/*.e2e.spec.ts"
 	}
 }

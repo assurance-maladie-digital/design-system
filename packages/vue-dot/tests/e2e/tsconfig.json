@@ -7,8 +7,7 @@
 			"dom"
 		],
 		"types": [
-			"./types",
-			"cypress"
+			"./types"
 		],
 		"paths": {
 			"@/*": [
@@ -18,6 +17,6 @@
 	},
 	"include": [
 		"**/*.ts",
-		"../node_modules/cypress"
+		"../../src/**/*.e2e.spec.ts"
 	]
 }
