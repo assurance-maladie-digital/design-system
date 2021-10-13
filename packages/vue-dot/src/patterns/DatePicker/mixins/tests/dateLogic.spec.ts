@@ -97,7 +97,7 @@ describe('DateLogic', () => {
 		delete instance.options.components['v-text-field'];
 	});
 
-	it('doesn\'t set the date when the value is empty', () => {
+	it('does not set the date when the value is empty', () => {
 		const wrapper = createWrapper();
 
 		expect(wrapper.vm.date).toBe('');
@@ -179,7 +179,7 @@ describe('DateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t set hasFocused if it\'s undefined', () => {
+	it('does not set hasFocused if it is undefined', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true

@@ -27,7 +27,7 @@ Vous pouvez modifier les messages d’erreur par défaut en passant en argument 
 
 ```ts
 minLengthRule = minLength(lengthValue, {
-	default: (min: number) => `La longueur minimale du champ est de ${min} caractères.`
+	default: (min: number) => `La longueur minimale du champ doit être de ${min} caractères.`
 });
 ```
 

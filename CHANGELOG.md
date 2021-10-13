@@ -1,14 +1,27 @@
 ## Non publié
 
-### Vue Dash
-
-- 🐛 **Corrections de bugs**
-  - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359)) ([d5fc107](https://github.com/assurance-maladie-digital/design-system/commit/d5fc1072719803e85aa35e968fe402cea168d827))
-
 ### Vue Dot
 
 - ♻️ **Refactoring**
   - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
+  - **tests:** Mise à jour de la formulation dans les tests ([#1474](https://github.com/assurance-maladie-digital/design-system/pull/1474)) ([a65e2e8](https://github.com/assurance-maladie-digital/design-system/commit/a65e2e89ac2f9d9a642e875283e18b113297a4a4))
+  - **rules:** Mise à jour des messages d'erreur des règles de validation ([#1476](https://github.com/assurance-maladie-digital/design-system/pull/1476)) ([d0aed49](https://github.com/assurance-maladie-digital/design-system/commit/d0aed492b7c1861c4411757c07fd7a3019c8e1cd))
+  - **isEmailValid:** Mise à jour des données de test ([#1483](https://github.com/assurance-maladie-digital/design-system/pull/1483))
+
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359)) ([d5fc107](https://github.com/assurance-maladie-digital/design-system/commit/d5fc1072719803e85aa35e968fe402cea168d827))
+  - **template:** Correction des commandes manquantes dans le fichier `package.json` ([#1475](https://github.com/assurance-maladie-digital/design-system/pull/1475)) ([9431fd2](https://github.com/assurance-maladie-digital/design-system/commit/9431fd214048c12ff4e2886a16634cbf4740080b))
+  - **template:** Correction du rapport de couverture de code ([#1479](https://github.com/assurance-maladie-digital/design-system/pull/1479)) ([de0f728](https://github.com/assurance-maladie-digital/design-system/commit/de0f728b70cd56eb31e85f8686aa4d7e2fc7e79c))
+  - **template:** Correction de l'utilisation du composant `ErrorPage` lorsque i18n n'est pas installé ([#1480](https://github.com/assurance-maladie-digital/design-system/pull/1480)) ([bfbee3f](https://github.com/assurance-maladie-digital/design-system/commit/bfbee3f645b9c529de954ce29e21afccd9d5e408))
+
+- ♻️ **Refactoring**
+  - **template:** Utilisation du caractère apostrophe ([#1472](https://github.com/assurance-maladie-digital/design-system/pull/1472)) ([9ad9f0b](https://github.com/assurance-maladie-digital/design-system/commit/9ad9f0b62ee685b366514adecf1fae360d0ea764))
+  - **template:** Mise à jour du message par défaut lorsque JavaScript est désactivé ([#1473](https://github.com/assurance-maladie-digital/design-system/pull/1473)) ([a3f8e49](https://github.com/assurance-maladie-digital/design-system/commit/a3f8e4912a5c610a518beb935212960385185b9a))
+
+- 🚨 **Lint**
+  - **template:** Correction des erreurs de lint lorsque i18n n'est pas installé ([#1478](https://github.com/assurance-maladie-digital/design-system/pull/1478)) ([5e50e1e](https://github.com/assurance-maladie-digital/design-system/commit/5e50e1eb53a45007d0d6bdc513fadf4600acc5d6))
 
 ### FormBuilder
 
@@ -49,6 +62,11 @@
 - 🔧 **Configuration**
   - **ci:** Mise à jour de `codecov` vers la `v3.1.1` ([#1438](https://github.com/assurance-maladie-digital/design-system/pull/1438)) ([a107e90](https://github.com/assurance-maladie-digital/design-system/commit/a107e90f9b9ae8b37f815576df2586c532967fa6))
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.18` ([#1454](https://github.com/assurance-maladie-digital/design-system/pull/1454)) ([38efd29](https://github.com/assurance-maladie-digital/design-system/commit/38efd29992df0eb495af6218be144605895c39ca))
+  - **global:** Mise à jour du fichier `.gitignore` ([#1477](https://github.com/assurance-maladie-digital/design-system/pull/1477)) ([50edc9f](https://github.com/assurance-maladie-digital/design-system/commit/50edc9f809eaa196c5afefd275b7f4e69ab2260f))
+
+- 📝 **Documentation**
+  - **global:** Mise à jour du champ auteur ([#1481](https://github.com/assurance-maladie-digital/design-system/pull/1481)) ([02693b3](https://github.com/assurance-maladie-digital/design-system/commit/02693b3df4974a0e6ac5a7a40293bf489e071ba2))
+  - **global:** Mise à jour du code de conduite ([#1482](https://github.com/assurance-maladie-digital/design-system/pull/1482)) ([cee4264](https://github.com/assurance-maladie-digital/design-system/commit/cee426421b6a5171d4b2a4a374038416aa1cad15))
 
 - ⬆️ **Dépendances**
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v36.1.0` ([#1420](https://github.com/assurance-maladie-digital/design-system/pull/1420)) ([9c1bf3a](https://github.com/assurance-maladie-digital/design-system/commit/9c1bf3a9d261d640255b17b263e92d33cd8d7b22))
@@ -65,7 +83,7 @@
   - **vue-input-facade:** Mise à jour vers la `v1.3.7` ([#1464](https://github.com/assurance-maladie-digital/design-system/pull/1464)) ([7877b57](https://github.com/assurance-maladie-digital/design-system/commit/7877b5747032d8f45b495ade36b664d266101f0b))
   - **eslint-plugin-vue:** Mise à jour vers la `v7.19.1` ([#1465](https://github.com/assurance-maladie-digital/design-system/pull/1465)) ([dc1b411](https://github.com/assurance-maladie-digital/design-system/commit/dc1b411f63564838fd2c19700b708545a302b55e))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.3` ([#1469](https://github.com/assurance-maladie-digital/design-system/pull/1469)) ([7ae8f4a](https://github.com/assurance-maladie-digital/design-system/commit/7ae8f4a1f015ac239e5b736257ff5e6601893783))
-  - **@babel/core:** Mise à jour vers la `v7.15.8` ([#1470](https://github.com/assurance-maladie-digital/design-system/pull/1470))
+  - **@babel/core:** Mise à jour vers la `v7.15.8` ([#1470](https://github.com/assurance-maladie-digital/design-system/pull/1470)) ([49a2900](https://github.com/assurance-maladie-digital/design-system/commit/49a2900fe207c07ebac1841fd807f77dbb9df669))
 
 ## v2.0.0
 

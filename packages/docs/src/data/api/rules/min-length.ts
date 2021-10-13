@@ -11,7 +11,7 @@ export const api: Api = {
 				required: true
 			},
 			...ruleMessages(`{
-	default: (length: number) => \`La longueur minimale du champ est \${min} caractères.\`
+	default: (length: number) => \`La longueur minimale du champ doit être de \${min} caractères.\`
 }`)
 		]
 	}

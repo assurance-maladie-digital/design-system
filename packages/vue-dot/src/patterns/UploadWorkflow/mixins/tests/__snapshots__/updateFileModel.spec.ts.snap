@@ -8,7 +8,7 @@ Object {
 }
 `;
 
-exports[`updateFileModel doesn't overwrite existing state 1`] = `
+exports[`updateFileModel does not overwrite existing state 1`] = `
 Array [
   Object {
     "file": Object {},
