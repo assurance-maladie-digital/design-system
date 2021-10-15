@@ -1,15 +1,39 @@
 import { mountComponent } from '@/tests/e2e';
+
 import CopyBtn from '../';
 
 describe('CopyBtn', () => {
+
 	const textToCopy = 'Texte copié !';
 
-	beforeEach(() => {
-		mountComponent(CopyBtn);
+	describe('show tooltip', () => {
+
+		beforeEach(() => {
+			mountComponent(CopyBtn);
+			cy.dataCy('v-btn').as('copyBtn');
+		});
+
+		it('Copy text to clipboard', () => {
+			cy.get('@copyBtn').click();
+			cy.contains(textToCopy).should('be.visible');
+		});
 	});
 
-	it('copies the text to the clipboard', () => {
-		cy.dataCy('v-btn').should('exist').click();
-		cy.document().contains(textToCopy);
+	describe('Tooltip hidden', () => {
+
+		beforeEach(() => {
+			mountComponent(CopyBtn, {
+				propsData: {
+					hideTooltip: true
+				}
+			});
+			cy.dataCy('v-btn').as('copyBtn');
+		});
+
+		it('Hide tooltip', () => {
+			cy.get('@copyBtn').click();
+			cy.document().contains(textToCopy).should('not.exist');
+		});
 	});
+
 });
