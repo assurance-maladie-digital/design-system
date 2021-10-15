@@ -1,39 +1,72 @@
 import { mountComponent } from '@/tests/e2e';
+import {
+	mount,
+	mountCallback
+} from '@cypress/vue';
 
 import CopyBtn from '../';
 
-describe('CopyBtn', () => {
+describe('CopyBtn component', () => {
 
-	const textToCopy = 'Texte copié !';
+ describe(' default render CopyBtn ', () => {
 
-	describe('show tooltip', () => {
+        const textToCopy = 'Texte copié !';
 
-		beforeEach(() => {
-			mountComponent(CopyBtn);
-			cy.dataCy('v-btn').as('copyBtn');
-		});
+        const props = {
+            hideTooltip: false,
+            label: 'test',
+            textToCopy: 'test'
+        };
 
-		it('Copy text to clipboard', () => {
-			cy.get('@copyBtn').click();
-			cy.contains(textToCopy).should('be.visible');
-		});
-	});
+        beforeEach(()=> {
+            mountComponent(CopyBtn, { propsData: props });
+            cy.dataCy('v-btn').as('btn');
+        });
 
-	describe('Tooltip hidden', () => {
+        it('Test if is mount', () => {
+            cy.get('@btn').should('be.visible');
+        });
 
-		beforeEach(() => {
-			mountComponent(CopyBtn, {
-				propsData: {
-					hideTooltip: true
-				}
-			});
-			cy.dataCy('v-btn').as('copyBtn');
-		});
+        it('copies the text to the clipboard', () => {
+            cy.get('@btn').click();
+            cy.contains(textToCopy);
+        });
 
-		it('Hide tooltip', () => {
-			cy.get('@copyBtn').click();
-			cy.document().contains(textToCopy).should('not.exist');
-		});
-	});
+        it('Hide tooltip', () => {
+            Cypress.vue.$props.hideTooltip = true;
+            cy.get('@btn').click();
+            cy.document().contains(textToCopy).should('not.exist');
+        });
+    });
+    /*
+    describe('Test slot ', ()=> {
+        const template = '<div id="app">{{ message }}</div>';
+        const fullMount = true;
 
+        function data() {
+           return { message: 'Hello Vue!'}
+        };
+
+        beforeEach(mountComponent({ template, data }, null, true));
+
+        it('Hide tooltip', () => {
+           cy.contains('Hello Vue!')
+        });
+    });*/
+
+    describe('Test copy method', ()=> {
+
+        beforeEach(() => {
+            mountComponent(CopyBtn);
+        });
+
+        it('click CopyBtn', () => {
+
+           cy.get('button')
+             .click()
+             .then(() => {
+                // expect(spy).to.be.calledOnce
+             });
+        });
+    });
 });
