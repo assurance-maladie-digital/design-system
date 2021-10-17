@@ -8,5 +8,9 @@
 		"fixturesFolder": "tests/e2e/fixtures",
 		"componentFolder": "src",
 		"testFiles": "**/tests/**/*.e2e.spec.ts"
-	}
+	},
+	"ignoreTestFiles": [
+		"**/__snapshots__/*",
+		"**/__image_snapshots__/*"
+	  ]
 }

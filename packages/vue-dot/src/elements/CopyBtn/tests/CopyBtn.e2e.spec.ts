@@ -1,16 +1,25 @@
 import { mountComponent } from '@/tests/e2e';
-import {
-	mount,
-	mountCallback
-} from '@cypress/vue';
+import { mdiContentDuplicate  } from '@mdi/js';
+import { VIcon } from 'vuetify/lib';
 
 import CopyBtn from '../';
 
-describe('CopyBtn component', () => {
+describe('CopyBtn component testing', () => {
 
- describe(' default render CopyBtn ', () => {
+	const textToCopy = 'Texte copié !';
 
-        const textToCopy = 'Texte copié !';
+	it('render correctly ', () => {
+			// Mount component
+		mountComponent(CopyBtn, {
+			props: {
+				label: 'test',
+				textToCopy: 'test'
+			}
+		});
+		cy.document.toMatchSnapshot();
+	});
+
+	context(' CopyBtn mounting ', () => {
 
         const props = {
             hideTooltip: false,
@@ -19,7 +28,7 @@ describe('CopyBtn component', () => {
         };
 
         beforeEach(()=> {
-            mountComponent(CopyBtn, { propsData: props });
+            mountComponent(CopyBtn, { props });
             cy.dataCy('v-btn').as('btn');
         });
 
@@ -32,41 +41,45 @@ describe('CopyBtn component', () => {
             cy.contains(textToCopy);
         });
 
-        it('Hide tooltip', () => {
-            Cypress.vue.$props.hideTooltip = true;
-            cy.get('@btn').click();
-            cy.document().contains(textToCopy).should('not.exist');
-        });
+		it('Hide toolTip ', () => {
+			Cypress.vueWrapper.setProps({ hideTooltip: true });
+			cy.get('@btn').click().contains(textToCopy).should('not.exist');
+		});
     });
-    /*
-    describe('Test slot ', ()=> {
-        const template = '<div id="app">{{ message }}</div>';
-        const fullMount = true;
 
-        function data() {
-           return { message: 'Hello Vue!'}
-        };
+	context('CopyBtn witn callback mounting mode', () => {
 
-        beforeEach(mountComponent({ template, data }, null, true));
+		const template = `
+		<CopyBtn
+			label="Copier le numéro de ticket"
+			text-to-copy="7079114565"
+		>
+			<template #icon>
+				<VIcon>
+					{{ duplicateIcon }}
+				</VIcon>
+			</template>
 
-        it('Hide tooltip', () => {
-           cy.contains('Hello Vue!')
-        });
-    });*/
+			<template #tooltip>
+				Le texte a bien été copié
+			</template>
+		</CopyBtn>
+		`;
+		const components = {
+			CopyBtn,
+			VIcon
+		};
 
-    describe('Test copy method', ()=> {
+        const data = ()=>({ duplicateIcon: mdiContentDuplicate });
 
-        beforeEach(() => {
-            mountComponent(CopyBtn);
-        });
+		beforeEach(mountComponent({ template, data, components }, null, true));
 
-        it('click CopyBtn', () => {
+		it(' check text to clipboard ', () => {
+			Cypress.vueWrapper.setData({ duplicateIcon: mdiContentDuplicate });
+			cy.dataCy('v-btn').as('btn');
+			cy.get('@btn').click();
 
-           cy.get('button')
-             .click()
-             .then(() => {
-                // expect(spy).to.be.calledOnce
-             });
-        });
+			cy.contains('Le texte a bien été copié');
+		});
     });
 });
