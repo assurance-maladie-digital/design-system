@@ -52,6 +52,7 @@
 				meta: [
 					{
 						name: 'description',
+						vmid: 'description', /** Used to avoid duplicated tags @see https://vue-meta.nuxtjs.org/faq/#unique-metadata */
 						content: <% if (i18n) { %>this.$t('common.meta.description') as string<% } else { %>'<%= capitalizeFirstLetter(description) %>.'<% } %>
 					}
 				]
