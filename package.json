@@ -23,7 +23,7 @@
 		"@typescript-eslint/parser": "5.0.0",
 		"@vue/eslint-config-typescript": "7.0.0",
 		"@vue/test-utils": "1.2.2",
-		"axios": "0.22.0",
+		"axios": "0.23.0",
 		"babel-loader": "8.2.2",
 		"copy-webpack-plugin": "6.4.1",
 		"core-js": "3.18.2",
