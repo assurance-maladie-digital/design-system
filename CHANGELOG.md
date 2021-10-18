@@ -39,7 +39,7 @@
   - **global:** Correction de l'URL des fonctions et du fichier `.env` manquant ([#1418](https://github.com/assurance-maladie-digital/design-system/pull/1418)) ([9e36413](https://github.com/assurance-maladie-digital/design-system/commit/9e36413fbb10527de33d7485e9d54ea7f6b96407))
   - **global:** Correction de l'import d'une icône inexistante ([#1433](https://github.com/assurance-maladie-digital/design-system/pull/1433)) ([65d9d48](https://github.com/assurance-maladie-digital/design-system/commit/65d9d48431a8e7a680a5a0f2aea39d9556682994))
   - **global:** Correction du tri de l'API exemple utilisateurs ([#1451](https://github.com/assurance-maladie-digital/design-system/pull/1451)) ([abee612](https://github.com/assurance-maladie-digital/design-system/commit/abee6128f4e2cee556259a1e8419675c667cc86c))
-  - **global:** Correction des erreurs de validation HTML ([#1510](https://github.com/assurance-maladie-digital/design-system/pull/1510))
+  - **global:** Correction des erreurs de validation HTML ([#1510](https://github.com/assurance-maladie-digital/design-system/pull/1510)) ([4201916](https://github.com/assurance-maladie-digital/design-system/commit/42019168b8bed4efd623d489f5ced7f617032562))
 
 - ♻️ **Refactoring**
   - **introduction:** Mise à jour des icônes ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([c30816b](https://github.com/assurance-maladie-digital/design-system/commit/c30816b2c989cf7a53b3dfcb1cfcbe6047698cdf))
@@ -70,6 +70,9 @@
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.18` ([#1454](https://github.com/assurance-maladie-digital/design-system/pull/1454)) ([38efd29](https://github.com/assurance-maladie-digital/design-system/commit/38efd29992df0eb495af6218be144605895c39ca))
   - **global:** Mise à jour du fichier `.gitignore` ([#1477](https://github.com/assurance-maladie-digital/design-system/pull/1477)) ([50edc9f](https://github.com/assurance-maladie-digital/design-system/commit/50edc9f809eaa196c5afefd275b7f4e69ab2260f))
   - **ci:** Mise à jour de `codecov` vers la `v3.2.0` ([#1505](https://github.com/assurance-maladie-digital/design-system/pull/1505)) ([3064c24](https://github.com/assurance-maladie-digital/design-system/commit/3064c244369e5cad9dcadc939243be1ae2c5692a))
+
+- 🔥 **Suppressions**
+  - **issues:** Suppression des templates inutilisés ([#1511](https://github.com/assurance-maladie-digital/design-system/pull/1511))
 
 - 📝 **Documentation**
   - **global:** Mise à jour du champ auteur ([#1481](https://github.com/assurance-maladie-digital/design-system/pull/1481)) ([02693b3](https://github.com/assurance-maladie-digital/design-system/commit/02693b3df4974a0e6ac5a7a40293bf489e071ba2))
@@ -162,7 +165,7 @@ Cette version majeure comporte l'ajout de guides et la complétion de la documen
   - **guides:** Mise à jour du guide sur la création d'un nouveau composant ([#1348](https://github.com/assurance-maladie-digital/design-system/pull/1348)) ([353d450](https://github.com/assurance-maladie-digital/design-system/commit/353d4509965a9b9c3c1868d7e4d3a5d5eff10478))
   - **global:** Correction de fautes d'orthographe ([#1350](https://github.com/assurance-maladie-digital/design-system/pull/1350)) ([e73f69a](https://github.com/assurance-maladie-digital/design-system/commit/e73f69a422f89b0ae55167161bac5617ab558ecf))
   - **global:** Ajout d'une indentation au début des sections ([#1353](https://github.com/assurance-maladie-digital/design-system/pull/1353)) ([255e38f](https://github.com/assurance-maladie-digital/design-system/commit/255e38ff1ff666bdb7dca7e18d726e3b0de5729d))
-  - **global:** Ajout de la page principes de design ([#1368](https://github.com/assurance-maladie-digital/design-system/issues/1368)) ([39ee570](https://github.com/assurance-maladie-digital/design-system/commit/39ee570fd72b920fedff51d63a6418d3827b9a12))
+  - **global:** Ajout de la page principes de design ([#1368](https://github.com/assurance-maladie-digital/design-system/pull/1368)) ([39ee570](https://github.com/assurance-maladie-digital/design-system/commit/39ee570fd72b920fedff51d63a6418d3827b9a12))
   - **global:** Correction d'une mauvaise formulation ([#1390](https://github.com/assurance-maladie-digital/design-system/pull/1390)) ([bfb75f0](https://github.com/assurance-maladie-digital/design-system/commit/bfb75f0bf4255b754727f30d64695d7849f28a43))
 
 ### Interne
