@@ -1,3 +1,10 @@
+/* Center loader on IE */
+body {
+	display: flex;
+	min-height: 100vh;
+	line-height: 1.25;
+}
+
 /* Material Design spinner */
 .spinner-block {
 	margin: auto;
