@@ -9,7 +9,8 @@
   - **isEmailValid:** Mise à jour des données de test ([#1483](https://github.com/assurance-maladie-digital/design-system/pull/1483)) ([acfef7a](https://github.com/assurance-maladie-digital/design-system/commit/acfef7ac369de704d2f795503c7b0ed71500180b))
 
 - ♿️ **Accessibility**
-  - **FranceConnectBtn:** Ajout d'un label sur le bouton et amélioration du style au focus ([#1508](https://github.com/assurance-maladie-digital/design-system/pull/1508))
+  - **FranceConnectBtn:** Ajout d'un label sur le bouton et amélioration du style au focus ([#1508](https://github.com/assurance-maladie-digital/design-system/pull/1508)) ([a6115cb](https://github.com/assurance-maladie-digital/design-system/commit/a6115cb21fb55e7561e11f4755aa65beae8f9b73))
+  - **NotificationBar:** Ajout de l'attribut ARIA `role` ([#1509](https://github.com/assurance-maladie-digital/design-system/pull/1509))
 
 ### Vue Dash
 
