@@ -9,14 +9,16 @@ describe('CopyBtn component testing', () => {
 	const textToCopy = 'Texte copié !';
 
 	it('render correctly ', () => {
+		// const btn = () => import('../CopyBtn.vue');
 			// Mount component
-		mountComponent(CopyBtn, {
+		const wrapper = mountComponent(CopyBtn, {
 			props: {
 				label: 'test',
 				textToCopy: 'test'
 			}
 		});
-		cy.document.toMatchSnapshot();
+		// console.log(' wrapper ', cy.document())
+		//cy.wrap({ vbtn: CopyBtn }).toMatchSnapshot();
 	});
 
 	context(' CopyBtn mounting ', () => {
