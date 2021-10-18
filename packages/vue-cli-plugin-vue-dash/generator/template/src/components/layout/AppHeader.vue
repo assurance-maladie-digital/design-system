@@ -17,7 +17,7 @@
 			<img
 				<% if (i18n) { %>:alt="$t('components.layout.appHeader.logoBtn.alt')"<% } else { %>alt="l'Assurance Maladie"<% } %>
 				src="@/assets/logo.svg"
-				width="155px"
+				width="155"
 			>
 		</RouterLink>
 
