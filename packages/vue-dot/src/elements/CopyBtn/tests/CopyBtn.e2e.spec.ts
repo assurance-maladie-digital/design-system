@@ -49,39 +49,4 @@ describe('CopyBtn component testing', () => {
 		});
     });
 
-	context('CopyBtn witn callback mounting mode', () => {
-
-		const template = `
-		<CopyBtn
-			label="Copier le numéro de ticket"
-			text-to-copy="7079114565"
-		>
-			<template #icon>
-				<VIcon>
-					{{ duplicateIcon }}
-				</VIcon>
-			</template>
-
-			<template #tooltip>
-				Le texte a bien été copié
-			</template>
-		</CopyBtn>
-		`;
-		const components = {
-			CopyBtn,
-			VIcon
-		};
-
-        const data = ()=>({ duplicateIcon: mdiContentDuplicate });
-
-		beforeEach(mountComponent({ template, data, components }, null, true));
-
-		it(' check text to clipboard ', () => {
-			Cypress.vueWrapper.setData({ duplicateIcon: mdiContentDuplicate });
-			cy.dataCy('v-btn').as('btn');
-			cy.get('@btn').click();
-
-			cy.contains('Le texte a bien été copié');
-		});
-    });
 });
