@@ -33,6 +33,7 @@
 				meta: [
 					{
 						name: 'description',
+						vmid: 'description',
 						content: this.pageInfo.message
 					}
 				]
