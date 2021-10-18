@@ -8,6 +8,9 @@
   - **rules:** Mise à jour des messages d'erreur des règles de validation ([#1476](https://github.com/assurance-maladie-digital/design-system/pull/1476)) ([d0aed49](https://github.com/assurance-maladie-digital/design-system/commit/d0aed492b7c1861c4411757c07fd7a3019c8e1cd))
   - **isEmailValid:** Mise à jour des données de test ([#1483](https://github.com/assurance-maladie-digital/design-system/pull/1483)) ([acfef7a](https://github.com/assurance-maladie-digital/design-system/commit/acfef7ac369de704d2f795503c7b0ed71500180b))
 
+- 🐛 **Corrections de bugs**
+  - **dependencies:** Correction de la dépendance `deepmerge` manquante ([#1512](https://github.com/assurance-maladie-digital/design-system/pull/1512))
+
 - ♿️ **Accessibility**
   - **FranceConnectBtn:** Ajout d'un label sur le bouton et amélioration du style au focus ([#1508](https://github.com/assurance-maladie-digital/design-system/pull/1508)) ([a6115cb](https://github.com/assurance-maladie-digital/design-system/commit/a6115cb21fb55e7561e11f4755aa65beae8f9b73))
   - **NotificationBar:** Ajout de l'attribut ARIA `role` ([#1509](https://github.com/assurance-maladie-digital/design-system/pull/1509)) ([56cf6e7](https://github.com/assurance-maladie-digital/design-system/commit/56cf6e790a052c8bf75bc324b0cf9dccc31d40c6))
@@ -72,7 +75,7 @@
   - **ci:** Mise à jour de `codecov` vers la `v3.2.0` ([#1505](https://github.com/assurance-maladie-digital/design-system/pull/1505)) ([3064c24](https://github.com/assurance-maladie-digital/design-system/commit/3064c244369e5cad9dcadc939243be1ae2c5692a))
 
 - 🔥 **Suppressions**
-  - **issues:** Suppression des templates inutilisés ([#1511](https://github.com/assurance-maladie-digital/design-system/pull/1511))
+  - **issues:** Suppression des templates inutilisés ([#1511](https://github.com/assurance-maladie-digital/design-system/pull/1511)) ([93b8280](https://github.com/assurance-maladie-digital/design-system/commit/93b8280beee2ba38643b4576251f067c23e248be))
 
 - 📝 **Documentation**
   - **global:** Mise à jour du champ auteur ([#1481](https://github.com/assurance-maladie-digital/design-system/pull/1481)) ([02693b3](https://github.com/assurance-maladie-digital/design-system/commit/02693b3df4974a0e6ac5a7a40293bf489e071ba2))
