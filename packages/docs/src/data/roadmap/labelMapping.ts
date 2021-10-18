@@ -1,15 +1,16 @@
 import { RoadmapLabelMapping } from '~/types/roadmap';
+import { LabelMappingEnum } from '~/constants/RoadmapLabelEnum';
 
 export const labelMapping: RoadmapLabelMapping = {
-	new: {
+	[LabelMappingEnum.NEW]: {
 		label: 'Nouveauté',
 		color: 'indigo lighten-1'
 	},
-	documentation: {
+	[LabelMappingEnum.DOCUMENTATION]: {
 		label: 'Documentation',
 		color: 'blue'
 	},
-	refactoring: {
+	[LabelMappingEnum.REFACTORING]: {
 		label: 'Refonte',
 		color: 'purple accent-2'
 	}

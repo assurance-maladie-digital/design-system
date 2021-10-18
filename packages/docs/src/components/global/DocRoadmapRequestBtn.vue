@@ -3,7 +3,7 @@
 		:href="href"
 		outlined
 		color="primary"
-		class="text-none mt-8"
+		class="text-none my-8"
 	>
 		Soumettre une demande
 	</VBtn>
