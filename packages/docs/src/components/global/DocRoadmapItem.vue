@@ -1,88 +1,76 @@
 <template>
-	<div>
-		<VRow
-			no-gutters
-			align="center"
-			class="ma-n1"
-		>
-			<h3 class="font-weight-bold flex-grow-0 ma-1 mr-2">
-				{{ title }}
-			</h3>
+	<VExpansionPanel>
+		<VExpansionPanelHeader>
+			<span class="text-subtitle-2 d-flex flex-column align-start">
+				<span class="text-subtitle-1 font-weight-bold mb-1">
+					Version {{ version }} – {{ date }}
+				</span>
 
-			<VChip
-				v-if="itemLabel"
-				:class="labelColor"
-				class="text-caption white--text px-3 flex-grow-0 ma-1"
+				{{ description }}
+			</span>
+		</VExpansionPanelHeader>
+
+		<VExpansionPanelContent>
+			<p
+				v-if="items.length === 0"
+				class="text-subtitle-2 mt-4 mb-0"
 			>
-				{{ itemLabel }}
-			</VChip>
-		</VRow>
+				Pas d’éléments à afficher pour le moment.
+			</p>
 
-		<p
-			v-if="description"
-			class="mt-2 mb-2"
-		>
-			{{ description }}
-		</p>
-
-		<a
-			v-if="issue && issueLabel"
-			:href="issueHref"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			{{ issueLabel }}
-		</a>
-	</div>
+			<DocRoadmapItemContent
+				v-else
+				v-for="(item, index) in items"
+				:key="index"
+				:title="item.title"
+				:description="item.description"
+				:label="item.label"
+				:issue="item.issue"
+				class="mt-5"
+			/>
+		</VExpansionPanelContent>
+	</VExpansionPanel>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 
-	import { labelMapping } from '../../data/roadmap/labelMapping';
+	import { RoadmapSection } from '../../types/roadmap';
 
 	const Props = Vue.extend({
 		props: {
-			title: {
+			version: {
 				type: String,
 				required: true
 			},
-			label: {
+			date: {
 				type: String,
 				required: true
 			},
 			description: {
 				type: String,
-				default: undefined
+				required: true
 			},
-			issue: {
-				type: String,
-				default: undefined
+			items: {
+				type: Array as PropType<RoadmapSection[]>,
+				required: true
 			}
 		}
 	});
 
 	@Component
-	export default class DocRoadmapItem extends Props {
-		get issueHref(): string {
-			return `https://github.com/assurance-maladie-digital/design-system/issues/${this.issue}`;
-		}
+	export default class DocRoadmapItem extends Props {}
+</script>
 
-		get issueLabel(): string | undefined {
-			if (!this.issue) {
-				return;
-			}
-
-			return `#${this.issue}`;
-		}
-
-		get labelColor(): string {
-			return labelMapping[this.label]?.color;
-		}
-
-		get itemLabel(): string | undefined {
-			return labelMapping[this.label]?.label;
+<style lang="scss" scoped>
+	.v-expansion-panel-header {
+		::v-deep .v-expansion-panel-header__icon {
+			flex: none;
 		}
 	}
-</script>
+
+	.v-expansion-panel-content {
+		border-top: 1px solid #eee;
+	}
+</style>
