@@ -9,7 +9,7 @@
   - **isEmailValid:** Mise à jour des données de test ([#1483](https://github.com/assurance-maladie-digital/design-system/pull/1483)) ([acfef7a](https://github.com/assurance-maladie-digital/design-system/commit/acfef7ac369de704d2f795503c7b0ed71500180b))
 
 - 🐛 **Corrections de bugs**
-  - **dependencies:** Correction de la dépendance `deepmerge` manquante ([#1512](https://github.com/assurance-maladie-digital/design-system/pull/1512))
+  - **dependencies:** Correction de la dépendance `deepmerge` manquante ([#1512](https://github.com/assurance-maladie-digital/design-system/pull/1512)) ([1e2dbf0](https://github.com/assurance-maladie-digital/design-system/commit/1e2dbf0b1b393b1520951a30256a646632159c3a))
 
 - ♿️ **Accessibility**
   - **FranceConnectBtn:** Ajout d'un label sur le bouton et amélioration du style au focus ([#1508](https://github.com/assurance-maladie-digital/design-system/pull/1508)) ([a6115cb](https://github.com/assurance-maladie-digital/design-system/commit/a6115cb21fb55e7561e11f4755aa65beae8f9b73))
@@ -27,6 +27,7 @@
 - ♻️ **Refactoring**
   - **template:** Utilisation du caractère apostrophe ([#1472](https://github.com/assurance-maladie-digital/design-system/pull/1472)) ([9ad9f0b](https://github.com/assurance-maladie-digital/design-system/commit/9ad9f0b62ee685b366514adecf1fae360d0ea764))
   - **template:** Mise à jour du message par défaut lorsque JavaScript est désactivé ([#1473](https://github.com/assurance-maladie-digital/design-system/pull/1473)) ([a3f8e49](https://github.com/assurance-maladie-digital/design-system/commit/a3f8e4912a5c610a518beb935212960385185b9a))
+  - **template:** Mise à jour des styles du loader ([#1513](https://github.com/assurance-maladie-digital/design-system/pull/1513))
 
 - 🚨 **Lint**
   - **template:** Correction des erreurs de lint lorsque i18n n'est pas installé ([#1478](https://github.com/assurance-maladie-digital/design-system/pull/1478)) ([5e50e1e](https://github.com/assurance-maladie-digital/design-system/commit/5e50e1eb53a45007d0d6bdc513fadf4600acc5d6))
