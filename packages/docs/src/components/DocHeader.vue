@@ -17,7 +17,7 @@
 			<img
 				src="~/assets/logo-am-no-text.svg"
 				alt="l’Assurance Maladie"
-				width="156px"
+				width="156"
 			>
 		</div>
 
