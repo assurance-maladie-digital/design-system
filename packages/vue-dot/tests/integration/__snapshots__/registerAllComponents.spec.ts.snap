@@ -18,6 +18,7 @@ Array [
   "HeaderBar",
   "HeaderLoading",
   "LangBtn",
+  "Logo",
   "NotificationBar",
   "PageContainer",
   "PaginatedTable",

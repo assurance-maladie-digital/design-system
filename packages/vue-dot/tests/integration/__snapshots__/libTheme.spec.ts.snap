@@ -19,6 +19,7 @@ Object {
     "HeaderBar",
     "HeaderLoading",
     "LangBtn",
+    "Logo",
     "NotificationBar",
     "PageContainer",
     "PaginatedTable",

@@ -4,15 +4,20 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import SearchBar from '../';
+import HeaderNavigationBar from '../';
+import { ThemeEnum } from '../../ThemeEnum';
 
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('SearchBar', () => {
+describe('HeaderNavigationBar', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(SearchBar);
+		wrapper = mountComponent(HeaderNavigationBar, {
+			propsData: {
+				theme: ThemeEnum.DEFAULT
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

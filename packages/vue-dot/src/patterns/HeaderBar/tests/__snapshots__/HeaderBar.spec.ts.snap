@@ -1,33 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderBar renders correctly 1`] = `
-<div class="vd-header-bar d-flex flex-column justify-center w-100">
-  <vsheet-stub color="transparent" height="120px" tag="header" class="d-flex justify-center w-100">
-    <vsheet-stub color="transparent" width="100%" tag="div" class="d-flex justify-space-between align-center">
-      <headerbrandsection-stub theme="ameli.fr" themecolor="#001C6B" class="vd-header-brand"></headerbrandsection-stub>
-      <div class="d-flex ma-6">
-        <!---->
-        <!---->
-        <!---->
-      </div>
-    </vsheet-stub>
+<vsheet-stub tag="header" class="vd-header-bar w-100">
+  <vsheet-stub height="120px" tag="div" class="vd-header-bar-content d-flex align-center px-14 py-7">
+    <headerbrandsection-stub theme="default"></headerbrandsection-stub>
+    <vspacer-stub class="h-100 mr-4 mr-md-16"></vspacer-stub>
   </vsheet-stub>
-  <vnavigationdrawer-stub fixed="true" color="#001C6B" mobilebreakpoint="1264" hideoverlay="true" dark="true" height="100%" minivariantwidth="56" src="" tag="aside" width="305" left="true">
-    <vsheet-stub color="#001C6B" height="55" dark="true" tag="div">
-      <div class="d-flex align-center justify-space-between text-uppercase mx-5 my-2">
-        <h4>
-          menu
-        </h4>
-        <vbtn-stub color="white" tag="button" activeclass="" icon="true" type="button" class="d-flex">
-          <vicon-stub>
-            M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z
-          </vicon-stub>
-        </vbtn-stub>
-      </div>
-      <div class="mx-5 my-3"></div>
-    </vsheet-stub>
-  </vnavigationdrawer-stub>
   <!---->
-  <!---->
-</div>
+</vsheet-stub>
 `;

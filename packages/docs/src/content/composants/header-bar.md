@@ -10,6 +10,16 @@ description: Le pattern `HeaderBar` est utilisé pour afficher l’en-tête d’
 
 ## Exemples
 
+### Marque partenaire
+
+Vous pouvez utiliser le slot `secondary-logo` pour afficher une marque partenaire.
+
+<doc-alert type="info">
+L’utilisation de ce slot va masquer le séparateur vertical après le logo de l’Assurance Maladie et masquer la devise de ce logo.
+</doc-alert>
+
+<doc-example file="header-bar/secondary-logo-slot"></doc-example>
+
 ### SearchBar
 
 Vous pouvez ajouter une `SearchBar` à votre `Header`. Vous pouvez récupérer la valeur du champ de recherche à l’aide de `@search`;
@@ -37,12 +47,6 @@ Vous pouvez utiliser la props `theme` pour appliquer une configuration pré-enre
 <doc-tab-item label="Personnalisation">
 
 ## Slots
-
-### Slot *daughter-brand*
-
-Vous pouvez ajouter une marque fille à côté du logo en utilisant ce slot.
-
-<doc-example file="header-bar/daughter-brand"></doc-example>
 
 ### Slot *user-bar*
 

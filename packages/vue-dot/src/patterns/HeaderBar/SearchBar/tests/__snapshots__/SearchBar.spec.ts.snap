@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`SearchBar renders correctly 1`] = `<vtextfield-stub color="#0c419a" errorcount="1" errormessages="" messages="" rules="" successmessages="" backgroundcolor="" height="20px" label="" loaderheight="2" autofocus="true" clearicon="$clear" type="text" class="w-100 py-2 px-5 vd-form-input flex-grow-0"></vtextfield-stub>`;

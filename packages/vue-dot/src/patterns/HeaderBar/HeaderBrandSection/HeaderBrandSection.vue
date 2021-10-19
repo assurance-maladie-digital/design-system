@@ -1,60 +1,73 @@
 <template>
-	<div class="header-brand-section d-flex">
-		<img
-			:src="headerLogo.src"
-			:alt="headerLogo.alt"
-		>
+	<VSheet
+		:height="height"
+		class="vd-header-brand-section d-flex"
+	>
+		<Logo
+			:hide-signature="hideSignature"
+			:risque-pro="isRisquePro"
+			:size="logoSize"
+		/>
 
-		<template v-if="hasSecondaryLogoSlot || secondaryLogo">
+		<slot>
 			<svg
-				:class="dividerColor"
+				v-if="showDivider"
+				:width="dividerDimensions.width"
+				:height="dividerDimensions.height"
+				:fill="dividerColor"
 				xmlns="http://www.w3.org/2000/svg"
-				width="22"
-				height="64"
 				viewBox="0 0 22 64"
-				fill="currentColor"
 			>
 				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
 			</svg>
 
-			<slot v-if="hasSecondaryLogoSlot" />
-
 			<img
-				v-else-if="secondaryLogo"
+				v-if="secondaryLogo"
 				:src="secondaryLogo.src"
 				:alt="secondaryLogo.alt"
 			>
-		</template>
 
-		<div class="d-flex align-center">
-			<div class="title-group d-flex flex-column primary--text">
-				<h1 class="text-subtitle-1 font-weight-medium">
+			<div
+				v-else-if="serviceTitle || serviceSubTitle"
+				class="d-flex justify-center flex-column primary--text"
+			>
+				<h1
+					v-if="serviceTitle"
+					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
+				>
 					{{ serviceTitle }}
 				</h1>
 
-				<h2 class="text-caption">
+				<h2
+					v-if="serviceSubTitle && !isMobile"
+					class="vd-header-title text-caption"
+				>
 					{{ serviceSubTitle }}
 				</h2>
 			</div>
-		</div>
-	</div>
+		</slot>
+	</VSheet>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { LogoInfo } from './types';
-	import { headerLogoMapping, secondaryLogoMapping } from './headerLogoMapping';
+	import { tokens } from '@cnamts/design-tokens';
 
-	function toCamelCase(str: string): string {
-		return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-	}
+	import { Dimensions } from '../../../types';
+	import { LogoSizeEnum } from '../../../elements/Logo/LogoSizeEnum';
+
+	import { ThemeEnum } from '../ThemeEnum';
+
+	import { LogoInfo } from './types';
+	import { secondaryLogoMapping } from './secondaryLogoMapping';
+	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
 
 	const Props = Vue.extend({
 		props: {
 			theme: {
-				type: String,
+				type: String as PropType<ThemeEnum>,
 				required: true
 			},
 			serviceTitle: {
@@ -68,6 +81,10 @@
 			hasSecondaryLogoSlot: {
 				type: Boolean,
 				default: false
+			},
+			isMobile: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -76,34 +93,79 @@
 
 	@Component
 	export default class HeaderBrandSection extends MixinsDeclaration {
-		get headerLogo(): LogoInfo {
-			const { logoAM, logoRisquePro } = headerLogoMapping;
+		get height(): string {
+			if (this.isMobile && this.hasSecondaryLogo) {
+				return '32px';
+			}
 
-			return this.theme === 'risque-pro' ? logoRisquePro : logoAM;
+			return this.isMobile ? '40px' : '64px';
 		}
 
-		get dividerColor(): string {
-			return this.theme === 'ameli-pro' ? 'secondary--text' : 'primary--text';
+		get isRisquePro(): boolean {
+			return this.theme === ThemeEnum.RISQUE_PRO;
+		}
+
+		get hideSignature(): boolean {
+			return Boolean(this.$slots.default);
 		}
 
 		get secondaryLogo(): LogoInfo | undefined {
-			return secondaryLogoMapping[toCamelCase(this.theme)];
+			return secondaryLogoMapping[this.theme];
+		}
+
+		get hasSecondaryLogo(): boolean {
+			return Boolean(this.$slots.default || this.secondaryLogo);
+		}
+
+		get showDivider(): boolean {
+			return Boolean(this.hasSecondaryLogo || this.serviceTitle);
+		}
+
+		get dividerColor(): string {
+			const cnamTheme = this.theme === ThemeEnum.CNAM;
+			const ameliProTheme = this.theme === ThemeEnum.AMELI_PRO;
+
+			return cnamTheme || ameliProTheme ? tokens.colors.secondary : tokens.colors.primary;
+		}
+
+		get dividerDimensions(): Dimensions {
+			const { xSmall, small, normal } = dividerDimensionsMapping;
+
+			if (this.isMobile && this.hasSecondaryLogo) {
+				return xSmall;
+			}
+
+			if (this.isMobile) {
+				return small;
+			}
+
+			return normal;
+		}
+
+		get logoSize(): LogoSizeEnum {
+			if (this.isMobile && this.hasSecondaryLogo) {
+				return LogoSizeEnum.X_SMALL;
+			}
+
+			if (this.isMobile) {
+				return LogoSizeEnum.SMALL;
+			}
+
+			return LogoSizeEnum.NORMAL;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-bar {
-		.title-group * {
+	.vd-header-brand-section {
+		.vd-header-title {
 			line-height: 1.45 !important;
 		}
 
-		&-brand {
-			padding: 27px;
-
-			&-responsive {
-				padding: 8px;
-			}
+		img,
+		::v-deep img {
+			width: auto;
+			height: 100%;
 		}
 	}
 </style>
