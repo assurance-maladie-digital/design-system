@@ -82,6 +82,7 @@
 		"access": "public"
 	},
 	"nyc": {
-		"report-dir": "tests/e2e/coverage"
+		"report-dir": "tests/e2e/coverage",
+		"include": "src/**/**/*.e2e.spec.ts"
 	}
 }
