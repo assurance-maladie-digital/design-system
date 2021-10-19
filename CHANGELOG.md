@@ -23,11 +23,12 @@
   - **template:** Correction du rapport de couverture de code ([#1479](https://github.com/assurance-maladie-digital/design-system/pull/1479)) ([de0f728](https://github.com/assurance-maladie-digital/design-system/commit/de0f728b70cd56eb31e85f8686aa4d7e2fc7e79c))
   - **template:** Correction de l'utilisation du composant `ErrorPage` lorsque i18n n'est pas installé ([#1480](https://github.com/assurance-maladie-digital/design-system/pull/1480)) ([bfbee3f](https://github.com/assurance-maladie-digital/design-system/commit/bfbee3f645b9c529de954ce29e21afccd9d5e408))
   - **template:** Correction des erreurs de validation HTML ([#1506](https://github.com/assurance-maladie-digital/design-system/pull/1506)) ([ce41668](https://github.com/assurance-maladie-digital/design-system/commit/ce41668c7177bcccb50be2920617f4dc4bfb7ad5))
+  - **template:** Correction de la compatibilité avec npm ([#1514](https://github.com/assurance-maladie-digital/design-system/pull/1514))
 
 - ♻️ **Refactoring**
   - **template:** Utilisation du caractère apostrophe ([#1472](https://github.com/assurance-maladie-digital/design-system/pull/1472)) ([9ad9f0b](https://github.com/assurance-maladie-digital/design-system/commit/9ad9f0b62ee685b366514adecf1fae360d0ea764))
   - **template:** Mise à jour du message par défaut lorsque JavaScript est désactivé ([#1473](https://github.com/assurance-maladie-digital/design-system/pull/1473)) ([a3f8e49](https://github.com/assurance-maladie-digital/design-system/commit/a3f8e4912a5c610a518beb935212960385185b9a))
-  - **template:** Mise à jour des styles du loader ([#1513](https://github.com/assurance-maladie-digital/design-system/pull/1513))
+  - **template:** Mise à jour des styles du loader ([#1513](https://github.com/assurance-maladie-digital/design-system/pull/1513)) ([262b124](https://github.com/assurance-maladie-digital/design-system/commit/262b1241e600078ee9c6f7eec31ca8b928f18cfc))
 
 - 🚨 **Lint**
   - **template:** Correction des erreurs de lint lorsque i18n n'est pas installé ([#1478](https://github.com/assurance-maladie-digital/design-system/pull/1478)) ([5e50e1e](https://github.com/assurance-maladie-digital/design-system/commit/5e50e1eb53a45007d0d6bdc513fadf4600acc5d6))
