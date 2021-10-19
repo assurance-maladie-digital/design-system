@@ -1,73 +1,98 @@
 import { mountComponent } from '@/tests/e2e';
 import { mdiContentDuplicate  } from '@mdi/js';
-import { VIcon } from 'vuetify/lib';
+// import { VIcon } from 'vuetify/lib';
 
 import CopyBtn from '../';
 
 describe('CopyBtn component testing', () => {
 
-	const textToCopy = 'Texte copié !';
+	const TEXT_TO_COPY = 'Texte copié !';
+	const TEXT_TO_COPY_WITH_SLOT = 'Le texte a bien été copié';
 
 	const vuetifyOptions = {
 		menu: {
 			offsetX: false,
 			offsetY: true,
-			nudgeLeft: 50
+			nudgeLeft: 500
 		},
 		btn: {
-			large: true
+			large: false
 		},
 		icon: {
-			color: 'grey darken-3'
+			color: 'red darken-3'
 		}
 	};
 
 	const props = {
-		hideTooltip: false,
 		label: 'test',
-		textToCopy: 'test',
-		tooltipDuration: 250,
-		vuetifyOptions: vuetifyOptions
+		textToCopy: 'test'
 	};
 
 	context(' Visual testing ', () => {
 
 		it('render correctly ', () => {
-			// const btn = () => import('../CopyBtn.vue');
-				// Mount component
 			mountComponent(CopyBtn, { props });
-			// console.log(' wrapper ', cy.document())
 			cy.get('body').toMatchSnapshot();
 		});
 
 	});
 
 	context(' Unit testing ', () => {
+		beforeEach(()=>{
+			mountComponent(CopyBtn, { props });
+		});
 
-        beforeEach(()=> {
-            mountComponent(CopyBtn, { props });
-            cy.dataCy('v-btn').as('btn');
-        });
-
-        it('Test if is mount', () => {
-            cy.get('@btn').should('be.visible');
+        it('verify if button it is visible on screen', () => {
+            cy.dataCy('v-btn').should('be.visible');
         });
 
         it('copies the text to the clipboard', () => {
-            cy.get('@btn').click();
-			//const copy = Cypress.sinon.stub();
-			// expect(copy).to.have.been.calledTwice;
-            cy.contains(textToCopy);
+            cy.dataCy('v-btn').click();
+            cy.contains(TEXT_TO_COPY);
         });
 
-		it('Hide toolTip ', () => {
+		it('verify if test it is not appears to clipboard', () => {
 			Cypress.vueWrapper.setProps({ hideTooltip: true });
-			cy.get('@btn').click().contains(textToCopy).should('not.exist');
+			cy.dataCy('v-btn').click().contains(TEXT_TO_COPY).should('not.exist');
+		});
+    });
+
+	context('Unit test with callback mount', () => {
+
+		const template = `
+			<CopyBtn
+				:vuetify-options="vuetifyOptions"
+				label="Copier le numéro d'utilisateur"
+				text-to-copy="5654119707"
+			>
+				<template #tooltip>
+					Le texte a bien été copié
+				</template>
+			</CopyBtn>
+		`;
+		const components = {
+			CopyBtn
+		};
+
+        const data = ()=>({ vuetifyOptions: vuetifyOptions, duplicateIcon: mdiContentDuplicate });
+
+		beforeEach(mountComponent({ template, data, components }, null, true));
+
+		it('override vuetify options ', () => {
+			cy.dataCy('v-btn').click();
+			cy.contains(TEXT_TO_COPY_WITH_SLOT);
 		});
 
-		it('calls mixin "customizable" method', () => {
-			const customizable = Cypress.sinon.stub();
-			//expect(customizable).to.have.been.calledTwice;
+		it('test behavior copyToClipboard ', () => {
+			cy.dataCy('v-btn').click();
+		});
+    });
+
+	context('Spy and stub method', () => {
+
+		it('override vuetify options ', () => {
+			mountComponent(CopyBtn, { props });
+			cy.dataCy('v-btn').click();
 		});
     });
 });

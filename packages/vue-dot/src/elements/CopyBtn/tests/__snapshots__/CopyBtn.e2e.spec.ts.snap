@@ -1,6 +1,3 @@
-exports[`CopyBtn component testing > render correctly  #0`] =
-{};
-
 exports[`CopyBtn component testing >  Visual testing  > render correctly  #0`] = `
 <body>
   <div id="__cy_root">
