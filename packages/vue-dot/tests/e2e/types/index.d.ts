@@ -6,6 +6,11 @@ declare namespace Cypress {
 		 * @example cy.dataCy('greeting')
 		 */
 		dataCy(value: string): Chainable<Element>;
+		/**
+		 *  command snapshot, additionnal type
+		 */
+		toMatchSnapshot(): Chainable<Element>;
+
 	}
 }
 

@@ -83,6 +83,7 @@
 	},
 	"nyc": {
 		"report-dir": "tests/e2e/coverage",
-		"include": "src/**/**/*.e2e.spec.ts"
+		"include": ["src/**/*.ts"],
+		"exclude": ["src/**/**/*.e2e.spec.ts"]
 	}
 }

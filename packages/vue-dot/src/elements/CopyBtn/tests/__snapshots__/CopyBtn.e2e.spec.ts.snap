@@ -1,29 +1,80 @@
-exports[`CopyBtn component testing >  Visual testing  > render correctly  #0`] = `
-<body>
-  <div id="__cy_root">
-    <div class="vd-copy-btn">
-      <button
-        type="button"
-        class="v-btn v-btn--icon v-btn--round theme--light v-size--default"
-        data-cy="v-btn"
+exports[`CopyBtn component testing >  Visual testing  > render correctly: v-menu #0`] = `
+<button
+  type="button"
+  class="v-btn v-btn--icon v-btn--round theme--light v-size--default"
+  data-cy="v-btn"
+>
+  <span class="v-btn__content"
+    ><span aria-hidden="true" class="v-icon notranslate theme--light"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        role="img"
+        aria-hidden="true"
+        class="v-icon__svg"
       >
-        <span class="v-btn__content"
-          ><span aria-hidden="true" class="v-icon notranslate theme--light"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              role="img"
-              aria-hidden="true"
-              class="v-icon__svg"
-            >
-              <path
-                d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
-              ></path></svg></span
-        ></span>
-      </button>
-      <div class="v-menu"><!----></div>
-    </div>
-  </div>
-  <script type="text/javascript" src="/__cypress/src/main.js"></script>
-</body>
+        <path
+          d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+        ></path></svg></span
+  ></span>
+</button>
+`;
+
+exports[`CopyBtn component testing >  Visual testing  > render correctly: v-btn #0`] = `
+<div class="v-menu"><!----></div>
+`;
+
+exports[`CopyBtn component testing > Testing with mount method > visual: render correctly: v-menu #0`] = `
+<button
+  type="button"
+  class="v-btn v-btn--icon v-btn--round theme--light v-size--default"
+  data-cy="v-btn"
+>
+  <span class="v-btn__content"
+    ><span aria-hidden="true" class="v-icon notranslate theme--light"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        role="img"
+        aria-hidden="true"
+        class="v-icon__svg"
+      >
+        <path
+          d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+        ></path></svg></span
+  ></span>
+</button>
+`;
+
+exports[`CopyBtn component testing > Testing with mount method > visual: render correctly: v-btn #0`] = `
+<div class="v-menu"><!----></div>
+`;
+
+exports[`CopyBtn component testing > Testing with mountCallback method:  > visual: render correctly: v-menu #0`] = `
+<button
+  type="button"
+  class="v-btn v-btn--icon v-btn--round theme--light v-size--default"
+  data-cy="v-btn"
+  aria-label="Copier le numéro d'utilisateur"
+>
+  <span class="v-btn__content"
+    ><span
+      aria-hidden="true"
+      class="v-icon notranslate theme--light red--text text--darken-3"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        role="img"
+        aria-hidden="true"
+        class="v-icon__svg"
+      >
+        <path
+          d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"
+        ></path></svg></span
+  ></span>
+</button>
+`;
+
+exports[`CopyBtn component testing > Testing with mountCallback method:  > visual: render correctly: v-btn #0`] = `
+<div class="v-menu"><!----></div>
 `;
