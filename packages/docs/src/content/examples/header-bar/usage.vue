@@ -11,42 +11,44 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { NavigationItem } from '@cnamts/vue-dot/src/patterns/HeaderBar/types'
+
+	const navigationItems: NavigationItem[] = [
+		{
+			label: 'Accueil'
+		},
+		{
+			label: 'Mes projets'
+		}
+	];
+
 	@Component({
 		inheritAttrs: false
 	})
 	export default class HeaderBarUsage extends Vue {
 		defaultProps = {
-			theme: 'cnam'
+			theme: 'default',
+			navigationItems
 		};
 
 		propsHiddenByDefault = [
-			'theme',
-			'displaySearchBar',
-			'navBar',
-			'responsiveMenuPosition'
+			'theme'
 		];
 
 		options = {
-			booleans: [
-				'displaySearchBar',
-				'navBar'
-			],
-			textFields: [
-			],
 			selects: {
 				theme: [
+					'default',
+					'cnam',
 					'ameli',
 					'ameli-pro',
-					'risque-pro',
-					'cnam',
-					'custom'
-				],
-				responsiveMenuPosition: [
-					'header',
-					'sub-header',
-					'hide'
+					'risque-pro'
 				]
-			}
+			},
+			textFields: [
+				'serviceTitle',
+				'serviceSubTitle'
+			]
 		};
 	}
 </script>

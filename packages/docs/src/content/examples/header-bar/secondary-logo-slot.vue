@@ -17,5 +17,5 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class HeaderSecondaryLogoSlot extends Vue {}
+	export default class HeaderBarSecondaryLogoSlot extends Vue {}
 </script>

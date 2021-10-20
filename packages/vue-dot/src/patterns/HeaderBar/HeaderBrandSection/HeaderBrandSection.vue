@@ -39,7 +39,7 @@
 				</h1>
 
 				<h2
-					v-if="serviceSubTitle && !isMobile"
+					v-if="showServiceSubTitle"
 					class="vd-header-title text-caption"
 				>
 					{{ serviceSubTitle }}
@@ -78,10 +78,6 @@
 				type: String,
 				default: undefined
 			},
-			hasSecondaryLogoSlot: {
-				type: Boolean,
-				default: false
-			},
 			isMobile: {
 				type: Boolean,
 				default: false
@@ -119,6 +115,10 @@
 
 		get showDivider(): boolean {
 			return Boolean(this.hasSecondaryLogo || this.serviceTitle);
+		}
+
+		get showServiceSubTitle(): boolean {
+			return Boolean(this.serviceTitle && this.serviceSubTitle && !this.isMobile);
 		}
 
 		get dividerColor(): string {

@@ -7,7 +7,7 @@
 			v-bind="options.contentSheet"
 			:height="height"
 			:class="spacingClass"
-			class="vd-header-bar-content d-flex align-center justify-center"
+			class="vd-header-bar-content d-flex justify-center"
 		>
 			<VSheet
 				v-bind="options.innerSheet"
@@ -37,9 +37,9 @@
 			:items="navigationItems"
 			:inner-width="innerWidth"
 		>
-			<slot name="navigation-bar" />
+			<slot name="navigation-bar-content" />
 
-			<template #navigation-bar-content>
+			<template #navigation-bar-drawer-content>
 				<slot name="navigation-bar-drawer-content" />
 			</template>
 		</HeaderNavigationBar>
@@ -53,7 +53,7 @@
 	import HeaderBrandSection from './HeaderBrandSection';
 	import HeaderNavigationBar from './HeaderNavigationBar';
 
-	import { NavigationItem } from './HeaderNavigationBar/types';
+	import { NavigationItem } from './types';
 
 	import { ThemeEnum, THEME_ENUM_VALUES } from './ThemeEnum';
 	import { config } from './config';

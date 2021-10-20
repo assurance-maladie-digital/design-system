@@ -60,7 +60,7 @@
 								v-bind="options.closeBtn"
 								@click="toggleDrawer(false)"
 							>
-								<VIcon v-bind="options.clsoeIcon">
+								<VIcon v-bind="options.closeIcon">
 									{{ closeIcon }}
 								</VIcon>
 							</VBtn>
@@ -94,7 +94,7 @@
 
 	import { mdiClose, mdiMenu } from '@mdi/js';
 
-	import { NavigationItem } from './types';
+	import { NavigationItem } from '../types';
 	import { locales } from './locales';
 	import { config } from './config';
 	import { colorMapping } from './colorMapping';

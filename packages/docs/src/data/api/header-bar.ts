@@ -1,83 +1,152 @@
 import { Api } from '~/types';
 
+import { customizable } from './shared/mixins/customizable';
+
+const themeProp = {
+	name: 'theme',
+	type: 'string',
+	required: true,
+	description: 'Le thème de l’en-tête.',
+	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro'`
+};
+
+const isMobileProp = {
+	name: 'is-mobile',
+	type: 'boolean',
+	default: false,
+	description: 'Affiche la version mobile.'
+};
+
+const innerWidthProp = {
+	name: 'inner-width',
+	type: 'string',
+	default: `'100%'`,
+	description: 'La largeur interne du composant.'
+};
+
+const drawerContentSlot = {
+	name: 'navigation-bar-drawer-content',
+	description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
+};
+
+const titleProps = [
+	{
+		name: 'service-title',
+		type: 'string',
+		default: 'undefined',
+		description: 'Le titre du service (titre de niveau 1).'
+	},
+	{
+		name: 'service-sub-title',
+		type: 'string',
+		default: 'undefined',
+		description: 'Le sous-titre du service (titre de niveau 2).'
+	}
+];
+
 export const api: Api = {
 	HeaderBar: {
 		props: [
 			{
-				name: 'displaySearchBar',
-				type: 'Boolean',
-				default: `false`,
-				description: 'Ajoute la fonction `recherche` dans le header'
+				...themeProp,
+				default: `'default'`,
+				required: false
 			},
+			...titleProps,
 			{
-				name: 'headerConfig',
-				type: 'HeaderBarConfig',
-				default: `undefined`,
-				description: 'La configuration du header',
+				name: 'navigation-items',
+				type: 'NavigationItem[]',
+				default: 'undefined',
+				description: 'La liste des liens à afficher dans la barre de navigation.',
 				example: `{
-bgColor?: string;
-box-size?: string;
-dark?: boolean;
-service?: HeaderTitleSection;
-}`
+	label: string;
+	to?: string | Route;
+	href?: string | Route;
+}[]`
+			},
+			innerWidthProp,
+			...customizable(`{
+	sheet: 'VSheet',
+	contentSheet: 'VSheet',
+	innerSheet: 'VSheet',
+	spacer: 'VSpacer'
+}`)
+		],
+		slots: [
+			{
+				name: 'default',
+				description: 'Slot pour afficher du contenu dans la partie droite de l’en-tête.'
 			},
 			{
-				name: 'navBar',
-				type: 'HeaderNavBarConfig',
-				default: `undefined`,
-				description: 'La configuration de la barre de navigation',
-				example: `{
-bgColor?: string;
-dark?: boolean;
-}`
+				name: 'secondary-brand',
+				description: 'Slot pour remplacer le bloc marque secondaire et afficher une marque partenaire.'
 			},
 			{
-				name: 'theme',
-				type: 'string',
-				default: `'cnam'`,
-				description: 'Permet de permuter entre les configurations par défaut ou de passer en mode `custom`',
-				example: `'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro' | 'custom'`
+				name: 'brand',
+				description: 'Slot pour remplacer le bloc marque.'
 			},
 			{
-				name: 'responsiveMenuPosition',
-				type: 'string',
-				default: `'header'`,
-				description: 'Permet de gérer la position du menu en mode responsive ou de le masquer',
-				example: `'header' | 'sub-header' | 'hide'`
+				name: 'navigation-bar-content',
+				description: 'Slot pour remplacer le contenu de la barre de navigation.'
+			},
+			drawerContentSlot
+		]
+	},
+	HeaderBrandSection: {
+		props: [
+			themeProp,
+			...titleProps,
+			{
+				name: 'is-mobile',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche la version mobile.'
 			}
 		],
 		slots: [
 			{
-				name: 'brand',
-				description: 'Slot pour réécrire la section contenant le logo (fonctionne uniquement en mode `custom` sur la `props: theme`).'
-			},
-			{
-				name: 'daughter-brand',
-				description: 'Slot pour afficher un logo de marque fille à côté de la marque `assurance maladie`.'
-			},
-			{
-				name: 'user-bar',
-				description: 'Slot pour afficher un menu contextuel dans la section droite de la `HeaderBar`.'
-			},
-			{
-				name: 'responsive-nav',
-				description: 'Slot pour afficher un menu de navigation en mode responsive.'
-			},
-			{
-				name: 'navigation',
-				description: 'Slot pour afficher un menu de navigation en mode desktop (affiché dans le sub-header).'
-			},
-			{
-				name: 'sub-bar',
-				description: 'Permet de réécrire complètement le sub-header en partant sur un template vierge.'
+				name: 'default',
+				description: 'Slot pour remplacer le contenu et afficher une marque partenaire.'
 			}
+		]
+	},
+	HeaderNavigationBar: {
+		props: [
+			themeProp,
+			{
+				name: 'items',
+				type: 'NavigationItem[]',
+				default: 'undefined',
+				description: 'La liste des liens de navigation à afficher.',
+				example: `{
+	label: string;
+	to?: string | Route;
+	href?: string | Route;
+}[]`
+			},
+			isMobileProp,
+			innerWidthProp,
+			...customizable(`{
+	sheet: 'VSheet',
+	innerSheet: 'VSheet',
+	menuBtn: 'VBtn',
+	menuIcon: 'VIcon',
+	tabs: 'VTabs',
+	tab: 'VTab',
+	navigationDrawer: 'VNavigationDrawer',
+	spacer: 'VSpacer',
+	closeBtn: 'VBtn',
+	closeIcon: 'VIcon',
+	mobileTabs: 'VTabs',
+	mobileTab: 'VTab'
+}`)
 		],
-		events: [
+		slots: [
 			{
-				name: 'search',
-				description: 'Événement émis lorsque la valeur du champ *Recherche* est mise à jour.',
-				value: 'string'
-			}
+				name: 'default',
+				description: 'Slot pour remplacer le contenu.'
+			},
+			drawerContentSlot
 		]
 	}
 };
