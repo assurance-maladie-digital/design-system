@@ -11,6 +11,7 @@ const { capitalizeFirstLetter } = require('../utils');
 
 module.exports = (api, userOptions) => {
 	const projectName = api.rootOptions.projectName;
+	const pm = api.generator.pm.bin;
 
 	// By default, do not render template when invoking
 	// except if --render-template option is provided
@@ -21,7 +22,7 @@ module.exports = (api, userOptions) => {
 			// Custom options
 			name: projectName,
 			footerDate: getFooterDate(),
-			pm: 'yarn',
+			pm,
 			// Functions
 			capitalizeFirstLetter
 		};
@@ -29,7 +30,7 @@ module.exports = (api, userOptions) => {
 		api.render('./template', options);
 
 		// Update package.json
-		extendPackage(api, options);
+		extendPackage(api, options, pm);
 
 		// Delete old ressources and parse public/index.html
 		api.postProcessFiles((resources) => {

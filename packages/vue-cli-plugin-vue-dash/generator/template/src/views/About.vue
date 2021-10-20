@@ -63,7 +63,7 @@
 
 		<% if (i18n) { %>get links(): LinkItem[] {
 			return this.$t('views.about.links') as unknown as LinkItem[];
-		}<% } else { %>links = [
+		}<% } else { %>links: LinkItem[] = [
 			{
 				title: 'CNAM',
 				links: [
@@ -129,6 +129,7 @@
 				meta: [
 					{
 						name: 'description',
+						vmid: 'description',
 						content: <% if (i18n) { %>this.$t('views.about.meta.description') as string<% } else { %>'Informations et liens utiles.'<% } %>
 					}
 				]

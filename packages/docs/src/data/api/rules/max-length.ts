@@ -11,7 +11,7 @@ export const api: Api = {
 				required: true
 			},
 			...ruleMessages(`{
-	default: (max: number) => \`La longueur maximale du champ est \${max} caractères.\`
+	default: (max: number) => \`La longueur maximale du champ doit être de \${max} caractères.\`
 }`)
 		]
 	}

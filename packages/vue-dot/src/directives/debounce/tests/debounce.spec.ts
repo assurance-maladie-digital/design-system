@@ -134,7 +134,7 @@ describe('debounce', () => {
 		timeoutTest(input, wrapper, spy);
 	});
 
-	it('doesn\'t throw an error if there is no input', () => {
+	it('does not throw an error if there is no input', () => {
 		const spy = jest.fn();
 
 		const testComponent = createTestComponent(

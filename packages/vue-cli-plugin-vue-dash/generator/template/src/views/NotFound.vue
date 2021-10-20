@@ -3,7 +3,7 @@
 		<% if (i18n) { %>:code="$t('views.notFound.code')"
 		:page-title="$t('views.notFound.error')"
 		:message="$t('views.notFound.message')"<% } else { %>code="404"
-		title="Page non trouvée"
+		page-title="Page non trouvée"
 		message="Il semblerait qu'il y ait eu une erreur !"<% } if (cypress) { %>
 		data-cy="errorPage"<% } %>
 	/>
@@ -26,6 +26,7 @@
 				meta: [
 					{
 						name: 'description',
+						vmid: 'description',
 						content: <% if (i18n) { %>this.$t('views.notFound.meta.description') as string<% } else { %>'Page non trouvée.'<% } %>
 					}
 				]

@@ -63,6 +63,7 @@
 				meta: [
 					{
 						name: 'description',
+						vmid: 'description',
 						content: <% if (i18n) { %>this.$t('views.home.meta.description') as string<% } else { %>'Votre nouvelle application Vue Dash.'<% } %>
 					}
 				]

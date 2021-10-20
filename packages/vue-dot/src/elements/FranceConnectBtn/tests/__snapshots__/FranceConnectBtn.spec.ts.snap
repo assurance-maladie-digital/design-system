@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FranceConnectBtn renders correctly 1`] = `
-<a href="https://app.franceconnect.gouv.fr/" class="vd-france-connect-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 60" width="300" height="78">
+<a href="https://app.franceconnect.gouv.fr/" aria-label="S’identifier avec FranceConnect" class="vd-france-connect-btn d-inline-flex"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 60" width="300" height="78">
     <g fill-rule="nonzero">
       <title>S’identifier avec FranceConnect</title>
       <path stroke="#034ea2" d="M2.23.5C1.21.5.5 1.4.5 2.67V57.5c0 1.21.67 2 1.73 2h225.45c1.09 0 1.82-.81 1.82-2V2.67c0-1.24-.77-2.17-1.82-2.17H2.23z"></path>

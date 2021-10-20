@@ -32,9 +32,14 @@ const FormBuilderVersion = normalizeVersion(devDependencies['@cnamts/form-builde
  * @param {object} options The plugin options
  * @returns {void}
  */
-function extendPackage(api, options) {
+function extendPackage(api, options, pm) {
 	const newPackageProperties = {
-		scripts: {},
+		scripts: {
+			'serve': 'vue-cli-service serve',
+			'build': 'vue-cli-service build',
+			'lint': 'vue-cli-service lint',
+			'test:unit': 'vue-cli-service test:unit'
+		},
 		dependencies: {
 			'@cnamts/design-tokens': DesignTokensVersion,
 			'@cnamts/form-builder': FormBuilderVersion,
@@ -74,7 +79,7 @@ function extendPackage(api, options) {
 			'eslint-plugin-promise': '^5.1.0',
 			'eslint-plugin-vue': '^7.17.0',
 			'jest-serializer-vue': '^2.0.2',
-			'sass': '1.32.13', // @see https://github.com/vuetifyjs/vuetify/issues/13694
+			'sass': '1.32.13', /** @see https://github.com/vuetifyjs/vuetify/issues/13694 */
 			'sass-loader': '^10.2.0',
 			'typescript': '~4.4.2',
 			'vue-class-component': '^7.2.6',
@@ -90,10 +95,16 @@ function extendPackage(api, options) {
 			'babel-jest': '^26.6.3'
 		},
 		engines: {
-			'node': '^12 || ^14',
-			'yarn': '^1.12'
+			'node': '^12 || ^14'
 		}
 	};
+
+	if (pm === 'npm') {
+		newPackageProperties.devDependencies['deepmerge'] = '^4.2.2'; /** @see https://github.com/assurance-maladie-digital/vue-cli-preset/issues/5 */
+		newPackageProperties.engines['npm'] = '^7.20.6';
+	} else if (pm === 'yarn') {
+		newPackageProperties.engines['yarn'] = '^1.12';
+	}
 
 	if (options.i18n) {
 		newPackageProperties.dependencies['vue-i18n'] = '^8.25.0';
@@ -109,7 +120,6 @@ function extendPackage(api, options) {
 	if (options.cypress) {
 		newPackageProperties.devDependencies['@vue/cli-plugin-e2e-cypress'] = '~4.5.13';
 
-		newPackageProperties.scripts = {};
 		newPackageProperties.scripts['test:e2e'] = 'vue-cli-service test:e2e --headless';
 		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e';
 
