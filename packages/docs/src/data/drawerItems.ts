@@ -106,6 +106,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/lang-btn'
 			},
 			{
+				title: 'Logo',
+				to: '/composants/logo'
+			},
+			{
 				title: 'NotificationBar',
 				to: '/composants/notification-bar'
 			},
