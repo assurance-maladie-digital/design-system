@@ -1,69 +1,69 @@
 import { mountComponent } from '@/tests/e2e';
-import { mdiContentDuplicate  } from '@mdi/js';
 
 import CopyBtn from '../';
 
-const TEXT_TO_COPY = 'Texte copié !';
+const TEXT_TO_COPY_ONE = 'Texte copié !';
 
-const TEXT_TO_COPY_WITH_SLOT = 'Le texte a bien été copié';
+const TEXT_TO_COPY_TWO = 'Le texte a bien été copié';
+
+const props = {
+	label: 'test',
+	textToCopy: 'test'
+};
 
 describe('CopyBtn component testing', () => {
 
 	context('Testing with mount method', () => {
 
-		it('visual: render correctly: v-menu', () => {
-			mountComponent(CopyBtn, { props: {
-				label: 'test',
-				textToCopy: 'test'
-			} });
-			cy.dataCy('v-btn').toMatchSnapshot();
+		beforeEach(()=>{
+			mountComponent(CopyBtn, { props });
+			cy.dataCy('v-btn').as('VBtn');
 		});
 
-		it('visual: render correctly: v-btn', () => {
-			mountComponent(CopyBtn, { props: {
-				label: 'test',
-				textToCopy: 'test'
-			} });
-			cy.get('.v-menu').toMatchSnapshot();
-		});
-
-        it('verify if button it is visible on screen', () => {
-			mountComponent(CopyBtn, { props: {
-				label: 'test',
-				textToCopy: 'test'
-			} });
-            cy.dataCy('v-btn').should('be.visible');
+        it('check the visibility of the click button on the screen', () => {
+            cy.get('@VBtn').should('be.visible');
         });
 
-        it('copies the text to the clipboard', () => {
-			mountComponent(CopyBtn, { props: {
-				label: 'test',
-				textToCopy: 'test'
-			} });
-            cy.dataCy('v-btn').click();
-			cy.contains(TEXT_TO_COPY);
+        it('copies the text to the clipboard then menu content appears: tooltip show', () => {
+            cy.get('@VBtn').click();
+			cy.contains(TEXT_TO_COPY_ONE);
+			cy.get('.v-menu__content');
         });
 
-		it('verify if test it is not appears to clipboard', () => {
-			mountComponent(CopyBtn, { props: {
-				label: 'test',
-				textToCopy: 'test',
-				hideTooltip: true
-			} });
-			cy.dataCy('v-btn').click();
-			cy.contains(TEXT_TO_COPY);//.should('not.exist');
+		it('copies the text to the clipboard but menu content not appears : tooltip not showing', () => {
+			Cypress.vueWrapper.setProps({ hideTooltip: true });
+			cy.get('@VBtn').click();
+			cy.contains(TEXT_TO_COPY_ONE).should('not.exist');
+			cy.get('.v-menu__content').should('not.exist');
 		});
     });
 
-	context('Testing with mountCallback method: ', () => {
-
+	context('Mount with default template', () => {
 		const template = `
 			<CopyBtn
-				:vuetify-options="vuetifyOptions"
 				label="Copier le numéro d'utilisateur"
 				text-to-copy="5654119707"
 			>
-				<template #tooltip>
+		`;
+		const components = {
+			CopyBtn
+		};
+
+		beforeEach(mountComponent({ template, components }, null, true));
+
+		it('Check the label test', () => {
+			cy.dataCy('v-btn').invoke('attr', 'aria-label').should('eq', 'Copier le numéro d\'utilisateur');
+		});
+
+    });
+
+	context('Mount with tooltip slot', () => {
+		const template = `
+			<CopyBtn
+				label="Copier le numéro d'utilisateur"
+				text-to-copy="5654119707"
+			>
+			<template #tooltip>
 					Le texte a bien été copié
 				</template>
 			</CopyBtn>
@@ -72,7 +72,27 @@ describe('CopyBtn component testing', () => {
 			CopyBtn
 		};
 
-        const data = ()=>({
+		beforeEach(mountComponent({ template, components }, null, true));
+		it('check tooltip showing ', () => {
+            cy.dataCy('v-btn').click();
+			cy.contains(TEXT_TO_COPY_TWO);
+			cy.get('.v-menu__content');
+        });
+
+    });
+
+	context('Mount with options', () => {
+		const template = `
+			<CopyBtn
+				:vuetify-options="vuetifyOptions"
+				label="Copier le numéro d'utilisateur"
+				text-to-copy="5654119707"
+			/>
+		`;
+		const components = {
+			CopyBtn
+		};
+		const data = ()=>({
 			vuetifyOptions: {
 				menu: {
 					offsetX: false,
@@ -85,43 +105,14 @@ describe('CopyBtn component testing', () => {
 				icon: {
 					color: 'red darken-3'
 				}
-			},
-			duplicateIcon: mdiContentDuplicate
+			}
 		});
 
 		beforeEach(mountComponent({ template, data, components }, null, true));
 
-		it('visual: render correctly: v-menu', () => {
-			cy.dataCy('v-btn').toMatchSnapshot();
-		});
-
-		it('visual: render correctly: v-btn', () => {
-			cy.get('.v-menu').toMatchSnapshot();
-		});
-
-		it('copies the text to the clipboard ', () => {
-			cy.dataCy('v-btn').click();
-			cy.contains(TEXT_TO_COPY_WITH_SLOT);
-		});
-
-		it('verify if test it is not appears to clipboard ', () => {
-			Cypress.vueWrapper.setProps({ hideTooltip: true });
-			cy.dataCy('v-btn').click();
-			cy.wait(1000);
-			cy.contains(TEXT_TO_COPY_WITH_SLOT).should('not.exist');
-		});
-
-		it('verify label test', () => {
-			cy.dataCy('v-btn').invoke('attr', 'aria-label').should('eq', 'Copier le numéro d\'utilisateur');
-		});
-
-		it('test behavior copyToClipboard ', () => {
-			const copy = cy.spy();
-			// Cypress.vueWrapper.setMethods({ copy: copy });
-			cy.dataCy('v-btn').trigger('click');
-			cy.wait(1000);
-           // expect(copy).to.be.calledOnce;
-		});
+		it('Color of icon set to red darken', () => {
+            cy.get('.red--text').get('.text--darken-3');
+        });
 
     });
 });

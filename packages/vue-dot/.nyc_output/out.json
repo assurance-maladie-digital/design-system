@@ -1,1095 +1,6 @@
 {
-  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\tests\\CopyBtn.e2e.spec.ts": {
-    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\tests\\CopyBtn.e2e.spec.ts",
-    "statementMap": {
-      "0": {
-        "start": {
-          "line": 2,
-          "column": 22
-        },
-        "end": {
-          "line": 4,
-          "column": 1
-        }
-      },
-      "1": {
-        "start": {
-          "line": 3,
-          "column": 4
-        },
-        "end": {
-          "line": 3,
-          "column": 62
-        }
-      },
-      "2": {
-        "start": {
-          "line": 5,
-          "column": 0
-        },
-        "end": {
-          "line": 5,
-          "column": 62
-        }
-      },
-      "3": {
-        "start": {
-          "line": 6,
-          "column": 12
-        },
-        "end": {
-          "line": 6,
-          "column": 34
-        }
-      },
-      "4": {
-        "start": {
-          "line": 7,
-          "column": 11
-        },
-        "end": {
-          "line": 7,
-          "column": 29
-        }
-      },
-      "5": {
-        "start": {
-          "line": 8,
-          "column": 10
-        },
-        "end": {
-          "line": 8,
-          "column": 41
-        }
-      },
-      "6": {
-        "start": {
-          "line": 9,
-          "column": 19
-        },
-        "end": {
-          "line": 9,
-          "column": 34
-        }
-      },
-      "7": {
-        "start": {
-          "line": 10,
-          "column": 29
-        },
-        "end": {
-          "line": 10,
-          "column": 56
-        }
-      },
-      "8": {
-        "start": {
-          "line": 11,
-          "column": 0
-        },
-        "end": {
-          "line": 99,
-          "column": 3
-        }
-      },
-      "9": {
-        "start": {
-          "line": 12,
-          "column": 4
-        },
-        "end": {
-          "line": 49,
-          "column": 7
-        }
-      },
-      "10": {
-        "start": {
-          "line": 13,
-          "column": 8
-        },
-        "end": {
-          "line": 19,
-          "column": 11
-        }
-      },
-      "11": {
-        "start": {
-          "line": 14,
-          "column": 12
-        },
-        "end": {
-          "line": 17,
-          "column": 21
-        }
-      },
-      "12": {
-        "start": {
-          "line": 18,
-          "column": 12
-        },
-        "end": {
-          "line": 18,
-          "column": 49
-        }
-      },
-      "13": {
-        "start": {
-          "line": 20,
-          "column": 8
-        },
-        "end": {
-          "line": 26,
-          "column": 11
-        }
-      },
-      "14": {
-        "start": {
-          "line": 21,
-          "column": 12
-        },
-        "end": {
-          "line": 24,
-          "column": 21
-        }
-      },
-      "15": {
-        "start": {
-          "line": 25,
-          "column": 12
-        },
-        "end": {
-          "line": 25,
-          "column": 48
-        }
-      },
-      "16": {
-        "start": {
-          "line": 27,
-          "column": 8
-        },
-        "end": {
-          "line": 33,
-          "column": 11
-        }
-      },
-      "17": {
-        "start": {
-          "line": 28,
-          "column": 12
-        },
-        "end": {
-          "line": 31,
-          "column": 21
-        }
-      },
-      "18": {
-        "start": {
-          "line": 32,
-          "column": 12
-        },
-        "end": {
-          "line": 32,
-          "column": 52
-        }
-      },
-      "19": {
-        "start": {
-          "line": 34,
-          "column": 8
-        },
-        "end": {
-          "line": 40,
-          "column": 11
-        }
-      },
-      "20": {
-        "start": {
-          "line": 35,
-          "column": 12
-        },
-        "end": {
-          "line": 38,
-          "column": 21
-        }
-      },
-      "21": {
-        "start": {
-          "line": 39,
-          "column": 12
-        },
-        "end": {
-          "line": 39,
-          "column": 62
-        }
-      },
-      "22": {
-        "start": {
-          "line": 41,
-          "column": 8
-        },
-        "end": {
-          "line": 48,
-          "column": 11
-        }
-      },
-      "23": {
-        "start": {
-          "line": 42,
-          "column": 12
-        },
-        "end": {
-          "line": 46,
-          "column": 21
-        }
-      },
-      "24": {
-        "start": {
-          "line": 47,
-          "column": 12
-        },
-        "end": {
-          "line": 47,
-          "column": 82
-        }
-      },
-      "25": {
-        "start": {
-          "line": 50,
-          "column": 4
-        },
-        "end": {
-          "line": 98,
-          "column": 7
-        }
-      },
-      "26": {
-        "start": {
-          "line": 51,
-          "column": 23
-        },
-        "end": {
-          "line": 51,
-          "column": 313
-        }
-      },
-      "27": {
-        "start": {
-          "line": 52,
-          "column": 25
-        },
-        "end": {
-          "line": 54,
-          "column": 9
-        }
-      },
-      "28": {
-        "start": {
-          "line": 55,
-          "column": 19
-        },
-        "end": {
-          "line": 70,
-          "column": 13
-        }
-      },
-      "29": {
-        "start": {
-          "line": 55,
-          "column": 33
-        },
-        "end": {
-          "line": 70,
-          "column": 11
-        }
-      },
-      "30": {
-        "start": {
-          "line": 71,
-          "column": 8
-        },
-        "end": {
-          "line": 71,
-          "column": 118
-        }
-      },
-      "31": {
-        "start": {
-          "line": 72,
-          "column": 8
-        },
-        "end": {
-          "line": 74,
-          "column": 11
-        }
-      },
-      "32": {
-        "start": {
-          "line": 73,
-          "column": 12
-        },
-        "end": {
-          "line": 73,
-          "column": 49
-        }
-      },
-      "33": {
-        "start": {
-          "line": 75,
-          "column": 8
-        },
-        "end": {
-          "line": 77,
-          "column": 11
-        }
-      },
-      "34": {
-        "start": {
-          "line": 76,
-          "column": 12
-        },
-        "end": {
-          "line": 76,
-          "column": 48
-        }
-      },
-      "35": {
-        "start": {
-          "line": 78,
-          "column": 8
-        },
-        "end": {
-          "line": 81,
-          "column": 11
-        }
-      },
-      "36": {
-        "start": {
-          "line": 79,
-          "column": 12
-        },
-        "end": {
-          "line": 79,
-          "column": 39
-        }
-      },
-      "37": {
-        "start": {
-          "line": 80,
-          "column": 12
-        },
-        "end": {
-          "line": 80,
-          "column": 48
-        }
-      },
-      "38": {
-        "start": {
-          "line": 82,
-          "column": 8
-        },
-        "end": {
-          "line": 87,
-          "column": 11
-        }
-      },
-      "39": {
-        "start": {
-          "line": 83,
-          "column": 12
-        },
-        "end": {
-          "line": 83,
-          "column": 63
-        }
-      },
-      "40": {
-        "start": {
-          "line": 84,
-          "column": 12
-        },
-        "end": {
-          "line": 84,
-          "column": 39
-        }
-      },
-      "41": {
-        "start": {
-          "line": 85,
-          "column": 12
-        },
-        "end": {
-          "line": 85,
-          "column": 26
-        }
-      },
-      "42": {
-        "start": {
-          "line": 86,
-          "column": 12
-        },
-        "end": {
-          "line": 86,
-          "column": 68
-        }
-      },
-      "43": {
-        "start": {
-          "line": 88,
-          "column": 8
-        },
-        "end": {
-          "line": 90,
-          "column": 11
-        }
-      },
-      "44": {
-        "start": {
-          "line": 89,
-          "column": 12
-        },
-        "end": {
-          "line": 89,
-          "column": 108
-        }
-      },
-      "45": {
-        "start": {
-          "line": 91,
-          "column": 8
-        },
-        "end": {
-          "line": 97,
-          "column": 11
-        }
-      },
-      "46": {
-        "start": {
-          "line": 92,
-          "column": 23
-        },
-        "end": {
-          "line": 92,
-          "column": 31
-        }
-      },
-      "47": {
-        "start": {
-          "line": 94,
-          "column": 12
-        },
-        "end": {
-          "line": 94,
-          "column": 48
-        }
-      },
-      "48": {
-        "start": {
-          "line": 95,
-          "column": 12
-        },
-        "end": {
-          "line": 95,
-          "column": 26
-        }
-      }
-    },
-    "fnMap": {
-      "0": {
-        "name": "(anonymous_0)",
-        "decl": {
-          "start": {
-            "line": 2,
-            "column": 56
-          },
-          "end": {
-            "line": 2,
-            "column": 57
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 2,
-            "column": 71
-          },
-          "end": {
-            "line": 4,
-            "column": 1
-          }
-        },
-        "line": 2
-      },
-      "1": {
-        "name": "(anonymous_1)",
-        "decl": {
-          "start": {
-            "line": 11,
-            "column": 38
-          },
-          "end": {
-            "line": 11,
-            "column": 39
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 11,
-            "column": 50
-          },
-          "end": {
-            "line": 99,
-            "column": 1
-          }
-        },
-        "line": 11
-      },
-      "2": {
-        "name": "(anonymous_2)",
-        "decl": {
-          "start": {
-            "line": 12,
-            "column": 41
-          },
-          "end": {
-            "line": 12,
-            "column": 42
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 12,
-            "column": 53
-          },
-          "end": {
-            "line": 49,
-            "column": 5
-          }
-        },
-        "line": 12
-      },
-      "3": {
-        "name": "(anonymous_3)",
-        "decl": {
-          "start": {
-            "line": 13,
-            "column": 47
-          },
-          "end": {
-            "line": 13,
-            "column": 48
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 13,
-            "column": 59
-          },
-          "end": {
-            "line": 19,
-            "column": 9
-          }
-        },
-        "line": 13
-      },
-      "4": {
-        "name": "(anonymous_4)",
-        "decl": {
-          "start": {
-            "line": 20,
-            "column": 46
-          },
-          "end": {
-            "line": 20,
-            "column": 47
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 20,
-            "column": 58
-          },
-          "end": {
-            "line": 26,
-            "column": 9
-          }
-        },
-        "line": 20
-      },
-      "5": {
-        "name": "(anonymous_5)",
-        "decl": {
-          "start": {
-            "line": 27,
-            "column": 55
-          },
-          "end": {
-            "line": 27,
-            "column": 56
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 27,
-            "column": 67
-          },
-          "end": {
-            "line": 33,
-            "column": 9
-          }
-        },
-        "line": 27
-      },
-      "6": {
-        "name": "(anonymous_6)",
-        "decl": {
-          "start": {
-            "line": 34,
-            "column": 47
-          },
-          "end": {
-            "line": 34,
-            "column": 48
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 34,
-            "column": 59
-          },
-          "end": {
-            "line": 40,
-            "column": 9
-          }
-        },
-        "line": 34
-      },
-      "7": {
-        "name": "(anonymous_7)",
-        "decl": {
-          "start": {
-            "line": 41,
-            "column": 60
-          },
-          "end": {
-            "line": 41,
-            "column": 61
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 41,
-            "column": 72
-          },
-          "end": {
-            "line": 48,
-            "column": 9
-          }
-        },
-        "line": 41
-      },
-      "8": {
-        "name": "(anonymous_8)",
-        "decl": {
-          "start": {
-            "line": 50,
-            "column": 51
-          },
-          "end": {
-            "line": 50,
-            "column": 52
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 50,
-            "column": 63
-          },
-          "end": {
-            "line": 98,
-            "column": 5
-          }
-        },
-        "line": 50
-      },
-      "9": {
-        "name": "(anonymous_9)",
-        "decl": {
-          "start": {
-            "line": 55,
-            "column": 19
-          },
-          "end": {
-            "line": 55,
-            "column": 20
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 55,
-            "column": 31
-          },
-          "end": {
-            "line": 70,
-            "column": 13
-          }
-        },
-        "line": 55
-      },
-      "10": {
-        "name": "(anonymous_10)",
-        "decl": {
-          "start": {
-            "line": 72,
-            "column": 47
-          },
-          "end": {
-            "line": 72,
-            "column": 48
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 72,
-            "column": 59
-          },
-          "end": {
-            "line": 74,
-            "column": 9
-          }
-        },
-        "line": 72
-      },
-      "11": {
-        "name": "(anonymous_11)",
-        "decl": {
-          "start": {
-            "line": 75,
-            "column": 46
-          },
-          "end": {
-            "line": 75,
-            "column": 47
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 75,
-            "column": 58
-          },
-          "end": {
-            "line": 77,
-            "column": 9
-          }
-        },
-        "line": 75
-      },
-      "12": {
-        "name": "(anonymous_12)",
-        "decl": {
-          "start": {
-            "line": 78,
-            "column": 48
-          },
-          "end": {
-            "line": 78,
-            "column": 49
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 78,
-            "column": 60
-          },
-          "end": {
-            "line": 81,
-            "column": 9
-          }
-        },
-        "line": 78
-      },
-      "13": {
-        "name": "(anonymous_13)",
-        "decl": {
-          "start": {
-            "line": 82,
-            "column": 61
-          },
-          "end": {
-            "line": 82,
-            "column": 62
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 82,
-            "column": 73
-          },
-          "end": {
-            "line": 87,
-            "column": 9
-          }
-        },
-        "line": 82
-      },
-      "14": {
-        "name": "(anonymous_14)",
-        "decl": {
-          "start": {
-            "line": 88,
-            "column": 32
-          },
-          "end": {
-            "line": 88,
-            "column": 33
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 88,
-            "column": 44
-          },
-          "end": {
-            "line": 90,
-            "column": 9
-          }
-        },
-        "line": 88
-      },
-      "15": {
-        "name": "(anonymous_15)",
-        "decl": {
-          "start": {
-            "line": 91,
-            "column": 45
-          },
-          "end": {
-            "line": 91,
-            "column": 46
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 91,
-            "column": 57
-          },
-          "end": {
-            "line": 97,
-            "column": 9
-          }
-        },
-        "line": 91
-      }
-    },
-    "branchMap": {
-      "0": {
-        "loc": {
-          "start": {
-            "line": 2,
-            "column": 22
-          },
-          "end": {
-            "line": 4,
-            "column": 1
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 2,
-              "column": 23
-            },
-            "end": {
-              "line": 2,
-              "column": 27
-            }
-          },
-          {
-            "start": {
-              "line": 2,
-              "column": 31
-            },
-            "end": {
-              "line": 2,
-              "column": 51
-            }
-          },
-          {
-            "start": {
-              "line": 2,
-              "column": 56
-            },
-            "end": {
-              "line": 4,
-              "column": 1
-            }
-          }
-        ],
-        "line": 2
-      },
-      "1": {
-        "loc": {
-          "start": {
-            "line": 3,
-            "column": 11
-          },
-          "end": {
-            "line": 3,
-            "column": 61
-          }
-        },
-        "type": "cond-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 3,
-              "column": 37
-            },
-            "end": {
-              "line": 3,
-              "column": 40
-            }
-          },
-          {
-            "start": {
-              "line": 3,
-              "column": 43
-            },
-            "end": {
-              "line": 3,
-              "column": 61
-            }
-          }
-        ],
-        "line": 3
-      },
-      "2": {
-        "loc": {
-          "start": {
-            "line": 3,
-            "column": 12
-          },
-          "end": {
-            "line": 3,
-            "column": 33
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 3,
-              "column": 12
-            },
-            "end": {
-              "line": 3,
-              "column": 15
-            }
-          },
-          {
-            "start": {
-              "line": 3,
-              "column": 19
-            },
-            "end": {
-              "line": 3,
-              "column": 33
-            }
-          }
-        ],
-        "line": 3
-      }
-    },
-    "s": {
-      "0": 72,
-      "1": 72,
-      "2": 72,
-      "3": 72,
-      "4": 72,
-      "5": 72,
-      "6": 72,
-      "7": 72,
-      "8": 72,
-      "9": 72,
-      "10": 72,
-      "11": 72,
-      "12": 72,
-      "13": 72,
-      "14": 66,
-      "15": 66,
-      "16": 72,
-      "17": 60,
-      "18": 60,
-      "19": 72,
-      "20": 54,
-      "21": 54,
-      "22": 66,
-      "23": 56,
-      "24": 48,
-      "25": 64,
-      "26": 68,
-      "27": 72,
-      "28": 72,
-      "29": 132,
-      "30": 87,
-      "31": 87,
-      "32": 52,
-      "33": 67,
-      "34": 43,
-      "35": 66,
-      "36": 38,
-      "37": 37,
-      "38": 58,
-      "39": 33,
-      "40": 32,
-      "41": 24,
-      "42": 24,
-      "43": 56,
-      "44": 28,
-      "45": 63,
-      "46": 23,
-      "47": 22,
-      "48": 12,
-      "49": 4,
-      "50": 2
-    },
-    "f": {
-      "0": 72,
-      "1": 72,
-      "2": 72,
-      "3": 72,
-      "4": 66,
-      "5": 60,
-      "6": 54,
-      "7": 48,
-      "8": 72,
-      "9": 162,
-      "10": 42,
-      "11": 36,
-      "12": 30,
-      "13": 24,
-      "14": 18,
-      "15": 12
-    },
-    "b": {
-      "0": [
-        72,
-        72,
-        72
-      ],
-      "1": [
-        72,
-        0
-      ],
-      "2": [
-        72,
-        72
-      ]
-    },
-    "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "920785ec3a24c8bfdb8eb11c22763d2abd25c8c0"
-  },
-  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\index.ts": {
-    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\index.ts",
+  "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/index.ts": {
+    "path": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/index.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1289,35 +200,35 @@
       }
     },
     "s": {
-      "0": 72,
-      "1": 72,
-      "2": 72,
-      "3": 72,
-      "4": 72
+      "0": 87,
+      "1": 87,
+      "2": 87,
+      "3": 87,
+      "4": 87
     },
     "f": {
-      "0": 72
+      "0": 87
     },
     "b": {
       "0": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "1": [
-        72,
+        87,
         0
       ],
       "2": [
-        72,
-        72
+        87,
+        87
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f6fac52f2c691e1f7fa13c5e113d4d080e93287d"
+    "hash": "ec8feb4af64e46273f71fa162a5b5a222e394d2d"
   },
-  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\CopyBtn.vue": {
-    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\CopyBtn.vue",
+  "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/CopyBtn.vue": {
+    "path": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/CopyBtn.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -3841,21 +2752,21 @@
       }
     },
     "s": {
-      "0": 72,
-      "1": 72,
-      "2": 72,
+      "0": 87,
+      "1": 87,
+      "2": 87,
       "3": 0,
       "4": 0,
       "5": 0,
       "6": 0,
-      "7": 72,
-      "8": 72,
-      "9": 72,
+      "7": 87,
+      "8": 87,
+      "9": 87,
       "10": 0,
-      "11": 72,
-      "12": 72,
-      "13": 72,
-      "14": 72,
+      "11": 87,
+      "12": 87,
+      "13": 87,
+      "14": 87,
       "15": 0,
       "16": 0,
       "17": 0,
@@ -3863,22 +2774,22 @@
       "19": 0,
       "20": 0,
       "21": 0,
-      "22": 72,
+      "22": 87,
       "23": 0,
       "24": 0,
-      "25": 72,
-      "26": 72,
-      "27": 72,
-      "28": 72,
+      "25": 87,
+      "26": 87,
+      "27": 87,
+      "28": 87,
       "29": 0,
-      "30": 72,
-      "31": 72,
-      "32": 72,
-      "33": 72,
-      "34": 72,
-      "35": 72,
-      "36": 72,
-      "37": 72,
+      "30": 87,
+      "31": 87,
+      "32": 87,
+      "33": 87,
+      "34": 87,
+      "35": 87,
+      "36": 87,
+      "37": 87,
       "38": 0,
       "39": 0,
       "40": 0,
@@ -3886,66 +2797,66 @@
       "42": 0,
       "43": 0,
       "44": 0,
-      "45": 72,
-      "46": 72,
-      "47": 72,
-      "48": 72,
-      "49": 72,
-      "50": 72,
-      "51": 72,
-      "52": 72,
-      "53": 72,
-      "54": 72,
-      "55": 72,
-      "56": 72,
-      "57": 72,
-      "58": 72,
-      "59": 462,
-      "60": 462,
-      "61": 462,
-      "62": 462,
-      "63": 462,
-      "64": 72,
-      "65": 168,
-      "66": 168,
+      "45": 87,
+      "46": 87,
+      "47": 87,
+      "48": 87,
+      "49": 87,
+      "50": 87,
+      "51": 87,
+      "52": 87,
+      "53": 87,
+      "54": 87,
+      "55": 87,
+      "56": 87,
+      "57": 87,
+      "58": 87,
+      "59": 416,
+      "60": 416,
+      "61": 416,
+      "62": 416,
+      "63": 416,
+      "64": 87,
+      "65": 278,
+      "66": 278,
       "67": 0,
-      "68": 168,
-      "69": 168,
-      "70": 168,
-      "71": 168,
-      "72": 132,
-      "73": 72,
-      "74": 72,
-      "75": 72
+      "68": 278,
+      "69": 278,
+      "70": 278,
+      "71": 163,
+      "72": 22,
+      "73": 87,
+      "74": 87,
+      "75": 87
     },
     "f": {
-      "0": 72,
-      "1": 72,
+      "0": 87,
+      "1": 87,
       "2": 0,
       "3": 0,
-      "4": 72,
-      "5": 72,
+      "4": 87,
+      "5": 87,
       "6": 0,
       "7": 0,
       "8": 0,
       "9": 0,
       "10": 0,
-      "11": 72,
-      "12": 72,
-      "13": 72,
-      "14": 72,
-      "15": 462,
-      "16": 168,
-      "17": 132
+      "11": 87,
+      "12": 87,
+      "13": 87,
+      "14": 87,
+      "15": 416,
+      "16": 278,
+      "17": 22
     },
     "b": {
       "0": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "1": [
-        72,
+        87,
         0,
         0,
         0
@@ -3956,23 +2867,23 @@
       ],
       "3": [
         0,
-        72
+        87
       ],
       "4": [
-        72,
+        87,
         0
       ],
       "5": [
         0,
-        72
+        87
       ],
       "6": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "7": [
-        72,
+        87,
         0
       ],
       "8": [
@@ -3984,21 +2895,21 @@
         0
       ],
       "10": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "11": [
-        72,
+        87,
         0
       ],
       "12": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "13": [
-        72,
+        87,
         0
       ],
       "14": [
@@ -4007,22 +2918,22 @@
       ],
       "15": [
         0,
-        72
+        87
       ],
       "16": [
-        72,
-        72
+        87,
+        87
       ],
       "17": [
-        72,
+        87,
         0
       ],
       "18": [
-        72,
+        87,
         0
       ],
       "19": [
-        72,
+        87,
         0
       ],
       "20": [
@@ -4030,22 +2941,22 @@
         0
       ],
       "21": [
-        72,
+        87,
         0,
         0
       ],
       "22": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "23": [
-        72,
+        87,
         0
       ],
       "24": [
-        72,
-        72
+        87,
+        87
       ],
       "25": [
         0,
@@ -4060,37 +2971,37 @@
         0
       ],
       "28": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "29": [
-        72,
+        87,
         0
       ],
       "30": [
-        72,
-        72
+        87,
+        87
       ],
       "31": [
-        462,
-        462,
-        462
+        416,
+        416,
+        416
       ],
       "32": [
         0,
-        168
+        278
       ],
       "33": [
-        168,
-        0
+        163,
+        115
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "0e9088876d78c6049b579d7efc4d64d2affc41cb"
+    "hash": "0ed9f9c438bda9c87bfad9f6b795d129c10afa1e"
   },
-  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\config.ts": {
-    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\config.ts",
+  "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/config.ts": {
+    "path": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/config.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -4126,17 +3037,17 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 72,
-      "1": 72,
-      "2": 72
+      "0": 87,
+      "1": 87,
+      "2": 87
     },
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "af2d5017d294562bdc8836e0b5e20a2d56679e6d"
+    "hash": "687903630ea6c21a028047c21df00607635f1d58"
   },
-  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\locales.ts": {
-    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\locales.ts",
+  "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/locales.ts": {
+    "path": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/elements/CopyBtn/locales.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -4172,17 +3083,17 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 72,
-      "1": 72,
-      "2": 72
+      "0": 87,
+      "1": 87,
+      "2": 87
     },
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "5cde16967b3b7e28e9dd52db0ab4e9473487d25c"
+    "hash": "3e80a6f244177b64a911ac0155a0563ba48bdb24"
   },
-  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\mixins\\customizable\\index.ts": {
-    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\mixins\\customizable\\index.ts",
+  "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/mixins/customizable/index.ts": {
+    "path": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/mixins/customizable/index.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -4526,47 +3437,47 @@
       }
     },
     "s": {
-      "0": 72,
-      "1": 144,
-      "2": 72,
-      "3": 72,
-      "4": 72,
-      "5": 72,
-      "6": 72,
-      "7": 462,
-      "8": 162,
-      "9": 300,
-      "10": 72
+      "0": 87,
+      "1": 174,
+      "2": 87,
+      "3": 87,
+      "4": 87,
+      "5": 87,
+      "6": 87,
+      "7": 416,
+      "8": 20,
+      "9": 396,
+      "10": 87
     },
     "f": {
-      "0": 144,
-      "1": 72,
-      "2": 462
+      "0": 174,
+      "1": 87,
+      "2": 416
     },
     "b": {
       "0": [
-        72,
-        72,
-        72
+        87,
+        87,
+        87
       ],
       "1": [
-        72,
-        72
+        87,
+        87
       ],
       "2": [
-        144,
-        144
+        174,
+        174
       ],
       "3": [
-        162,
-        300
+        20,
+        396
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "2628cd112c0fd847e4722096d80022a468200c5c"
+    "hash": "3fba88e656dc4801254f2c4b9657db95ec2454ac"
   },
-  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\functions\\copyToClipboard\\index.ts": {
-    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\functions\\copyToClipboard\\index.ts",
+  "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/functions/copyToClipboard/index.ts": {
+    "path": "/Users/maryvonmichel/Documents/PROJECTS/PRIVATE/CNAMTS/GITHUB/design-system/packages/vue-dot/src/functions/copyToClipboard/index.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -4932,48 +3843,48 @@
       }
     },
     "s": {
-      "0": 72,
-      "1": 72,
-      "2": 168,
-      "3": 168,
-      "4": 168,
-      "5": 168,
-      "6": 168,
-      "7": 168,
-      "8": 168,
-      "9": 168,
-      "10": 168,
-      "11": 168,
-      "12": 168,
-      "13": 168,
-      "14": 168,
-      "15": 168,
-      "16": 114,
-      "17": 114,
-      "18": 72
+      "0": 87,
+      "1": 87,
+      "2": 278,
+      "3": 278,
+      "4": 278,
+      "5": 278,
+      "6": 278,
+      "7": 278,
+      "8": 278,
+      "9": 278,
+      "10": 278,
+      "11": 278,
+      "12": 278,
+      "13": 278,
+      "14": 278,
+      "15": 278,
+      "16": 193,
+      "17": 193,
+      "18": 87
     },
     "f": {
-      "0": 168
+      "0": 278
     },
     "b": {
       "0": [
-        168,
+        278,
         0
       ],
       "1": [
-        114,
-        54
+        193,
+        85
       ],
       "2": [
-        114,
-        54
+        193,
+        85
       ],
       "3": [
-        168,
-        168
+        278,
+        278
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "5f872d1cb11ba0abbd8049106dd91d551f9a6516"
+    "hash": "82dcf2b0d267dc8273b034795b12291b2a50a925"
   }
 }
