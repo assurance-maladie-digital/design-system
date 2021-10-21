@@ -18,16 +18,14 @@
 					v-bind="options.innerSheet"
 					:width="innerWidth"
 				>
-					<slot name="brand">
-						<HeaderBrandSection
-							:theme="theme"
-							:service-title="serviceTitle"
-							:service-sub-title="serviceSubTitle"
-							:is-mobile="isMobile"
-						>
-							<slot name="secondary-logo" />
-						</HeaderBrandSection>
-					</slot>
+					<HeaderBrandSection
+						:theme="theme"
+						:service-title="serviceTitle"
+						:service-sub-title="serviceSubTitle"
+						:is-mobile="isMobile"
+					>
+						<slot name="secondary-logo" />
+					</HeaderBrandSection>
 
 					<VSpacer v-bind="options.spacer" />
 
@@ -54,7 +52,7 @@
 			:is-mobile="isMobile"
 			:items="navigationItems"
 		>
-			<slot name="navigation-bar-drawer-content" />
+			<slot name="navigation-drawer-content" />
 		</HeaderNavigationDrawer>
 	</div>
 </template>
@@ -147,6 +145,7 @@
 		padding: 0;
 	}
 
+	.vd-header-bar,
 	.vd-header-bar-content {
 		overflow: hidden;
 	}

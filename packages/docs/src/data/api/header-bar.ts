@@ -67,7 +67,7 @@ export const api: Api = {
 			},
 			innerWidthProp,
 			...customizable(`{
-	sheet: 'VSheet',
+	appBar: 'VAppBar',
 	contentSheet: 'VSheet',
 	innerSheet: 'VSheet',
 	spacer: 'VSpacer'
@@ -83,15 +83,11 @@ export const api: Api = {
 				description: 'Slot pour remplacer le bloc marque secondaire et afficher une marque partenaire.'
 			},
 			{
-				name: 'brand',
-				description: 'Slot pour remplacer le bloc marque.'
-			},
-			{
 				name: 'navigation-bar-content',
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
 			},
 			{
-				name: 'navigation-bar-drawer-content',
+				name: 'navigation-drawer-content',
 				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
 			}
 		]
@@ -152,7 +148,7 @@ export const api: Api = {
 				name: 'drawer',
 				type: 'boolean',
 				default: false,
-				description: 'Contrôle la visibilité du drawer.'
+				description: 'Contrôle la visibilité du menu sur les écrans mobiles.'
 			}
 		],
 		slots: [

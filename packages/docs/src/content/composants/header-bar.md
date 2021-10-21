@@ -56,6 +56,24 @@ Vous pouvez utiliser un thème différent en utilisant la prop `theme`.
 
 <doc-tab-item label="Personnalisation">
 
+### Largeur interne
+
+Vous pouvez définir une largeur interne en utilisant la prop `inner-width`.
+
+<doc-example file="header-bar/inner-width"></doc-example>
+
+### Composants Vuetify
+
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Header` en utilisant la prop `vuetify-options`.
+
+<doc-example file="header-bar/options"></doc-example>
+
+### Slots
+
+Vous pouvez utiliser les slots `navigation-bar-content` et `navigation-drawer-content` pour remplacer le contenu de la barre de navigation ainsi que du menu sur les écrans mobiles.
+
+<doc-example file="header-bar/slots"></doc-example>
+
 </doc-tab-item>
 
 </doc-tabs>
