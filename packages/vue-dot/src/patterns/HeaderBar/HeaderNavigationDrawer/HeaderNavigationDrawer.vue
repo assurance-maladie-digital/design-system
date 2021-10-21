@@ -1,54 +1,56 @@
 <template>
-	<VSheet
-		v-bind="options.sheet"
+	<VNavigationDrawer
+		v-if="isMobile"
+		v-bind="options.navigationDrawer"
+		:value="drawer"
 		:color="backgroundColor"
-		:class="spacingClass"
-		class="vd-navigation-bar d-flex align-center justify-center"
 	>
-		<VSheet
-			v-bind="options.innerSheet"
-			:width="innerWidth"
-		>
-			<slot>
+		<slot>
+			<div class="d-flex align-center mb-8">
+				<h2
+					v-if="activeTabLabel"
+					class="text-subtitle-1 white--text"
+				>
+					{{ activeTabLabel }}
+				</h2>
+
+				<VSpacer v-bind="options.spacer" />
+
 				<VBtn
-					v-if="isMobile"
-					v-bind="options.menuBtn"
-					@click="emitDrawerEvent"
+					v-bind="options.closeBtn"
+					@click="emitChangeEvent"
 				>
-					<VIcon v-bind="options.menuIcon">
-						{{ menuIcon }}
+					<VIcon v-bind="options.closeIcon">
+						{{ closeIcon }}
 					</VIcon>
-
-					{{ locales.menu }}
 				</VBtn>
+			</div>
 
-				<VTabs
-					v-else
-					v-bind="options.tabs"
+			<VTabs
+				v-model="mobileTab"
+				v-bind="options.mobileTabs"
+			>
+				<VTab
+					v-for="(item, index) in items"
+					:key="index"
+					v-bind="options.mobileTab"
+					:href="item.href"
+					:to="item.to"
 				>
-					<VTab
-						v-for="(item, index) in items"
-						:key="index"
-						v-bind="options.tab"
-						:href="item.href"
-						:to="item.to"
-					>
-						{{ item.label }}
-					</VTab>
-				</VTabs>
-			</slot>
-		</VSheet>
-	</VSheet>
+					{{ item.label }}
+				</VTab>
+			</VTabs>
+		</slot>
+	</VNavigationDrawer>
 </template>
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiClose, mdiMenu } from '@mdi/js';
+	import { mdiClose } from '@mdi/js';
 
 	import { NavigationItem } from '../types';
-	import { locales } from './locales';
 	import { config } from './config';
 	import { colorMapping } from '../colorMapping';
 
@@ -70,24 +72,25 @@
 				type: Boolean,
 				default: false
 			},
-			innerWidth: {
-				type: String,
-				default: undefined
+			drawer: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component
-	export default class HeaderNavigationBar extends MixinsDeclaration {
-		locales = locales;
-
-		menuIcon = mdiMenu;
+	@Component({
+		model: {
+			prop: 'drawer',
+			event: 'change'
+		}
+	})
+	export default class HeaderNavigationDrawer extends MixinsDeclaration {
 		closeIcon = mdiClose;
 
 		mobileTab: number | null = null;
-		drawer = false;
 
 		get spacingClass(): string {
 			return this.isMobile ? 'px-4' : 'px-14';
@@ -107,18 +110,18 @@
 			return item?.label;
 		}
 
-		toggleDrawer(value: boolean): void {
-			this.drawer = value;
-		}
-
-		emitDrawerEvent(): void {
-			this.$emit('update:drawer');
+		emitChangeEvent(): void {
+			this.$emit('change', !this.drawer);
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-navigation-bar {
-		overflow: hidden;
+	.v-navigation-drawer .v-tab {
+		height: 40px !important;
+
+		&.v-tab--active {
+			background: rgba($color: #fff, $alpha: .1);
+		}
 	}
 </style>

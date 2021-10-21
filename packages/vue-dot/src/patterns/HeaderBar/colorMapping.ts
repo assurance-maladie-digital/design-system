@@ -1,8 +1,8 @@
 import { tokens } from '@cnamts/design-tokens';
 
-import { IndexedObject } from '../../../types';
+import { IndexedObject } from '../../types';
 
-import { ThemeEnum } from '../ThemeEnum';
+import { ThemeEnum } from './ThemeEnum';
 
 const secondary = tokens.colors.secondary;
 const primary = '#0a347b';

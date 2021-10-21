@@ -28,13 +28,19 @@ Vous pouvez afficher un menu de navigation en utilisant la prop `navigation-item
 
 ### Marque partenaire
 
-Vous pouvez utiliser le slot `secondary-logo` pour afficher une marque partenaire.
+Vous pouvez afficher une marque partenaire en utilisant le slot `secondary-logo`.
 
 <doc-alert type="info">
 L’utilisation de ce slot va masquer le séparateur vertical après le logo de l’Assurance Maladie et masquer la signature du logo.
 </doc-alert>
 
 <doc-example file="header-bar/secondary-logo-slot"></doc-example>
+
+### Slot par défaut
+
+Vous pouvez ajouter du contenu dans la partie droite du header en utilisant le slot par défaut.
+
+<doc-example file="header-bar/default-slot"></doc-example>
 
 ### Thème
 

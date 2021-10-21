@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss" scoped>
-	header + header {
+	div + div {
 		margin-top: 16px !important;
 	}
 </style>

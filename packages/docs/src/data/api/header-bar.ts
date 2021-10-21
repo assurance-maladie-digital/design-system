@@ -24,25 +24,31 @@ const innerWidthProp = {
 	description: 'La largeur interne du composant.'
 };
 
-const drawerContentSlot = {
-	name: 'navigation-bar-drawer-content',
-	description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
+const titleProp = {
+	name: 'service-title',
+	type: 'string',
+	default: 'undefined',
+	description: 'Le titre du service (titre de niveau 1).'
 };
 
-const titleProps = [
-	{
-		name: 'service-title',
-		type: 'string',
-		default: 'undefined',
-		description: 'Le titre du service (titre de niveau 1).'
-	},
-	{
-		name: 'service-sub-title',
-		type: 'string',
-		default: 'undefined',
-		description: 'Le sous-titre du service (titre de niveau 2).'
-	}
-];
+const subTitleProp = {
+	name: 'service-sub-title',
+	type: 'string',
+	default: 'undefined',
+	description: 'Le sous-titre du service (titre de niveau 2).'
+};
+
+const itemsProp = {
+	name: 'items',
+	type: 'NavigationItem[]',
+	default: 'undefined',
+	description: 'La liste des liens de navigation à afficher.',
+	example: `{
+	label: string;
+	to?: string | Route;
+	href?: string | Route;
+}[]`
+};
 
 export const api: Api = {
 	HeaderBar: {
@@ -52,17 +58,12 @@ export const api: Api = {
 				default: `'default'`,
 				required: false
 			},
-			...titleProps,
+			titleProp,
+			subTitleProp,
 			{
+				...itemsProp,
 				name: 'navigation-items',
-				type: 'NavigationItem[]',
-				default: 'undefined',
-				description: 'La liste des liens à afficher dans la barre de navigation.',
-				example: `{
-	label: string;
-	to?: string | Route;
-	href?: string | Route;
-}[]`
+				description: 'La liste des liens à afficher dans la barre de navigation.'
 			},
 			innerWidthProp,
 			...customizable(`{
@@ -89,13 +90,17 @@ export const api: Api = {
 				name: 'navigation-bar-content',
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
 			},
-			drawerContentSlot
+			{
+				name: 'navigation-bar-drawer-content',
+				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
+			}
 		]
 	},
 	HeaderBrandSection: {
 		props: [
 			themeProp,
-			...titleProps,
+			titleProp,
+			subTitleProp,
 			{
 				name: 'is-mobile',
 				type: 'boolean',
@@ -113,17 +118,7 @@ export const api: Api = {
 	HeaderNavigationBar: {
 		props: [
 			themeProp,
-			{
-				name: 'items',
-				type: 'NavigationItem[]',
-				default: 'undefined',
-				description: 'La liste des liens de navigation à afficher.',
-				example: `{
-	label: string;
-	to?: string | Route;
-	href?: string | Route;
-}[]`
-			},
+			itemsProp,
 			isMobileProp,
 			innerWidthProp,
 			...customizable(`{
@@ -145,8 +140,26 @@ export const api: Api = {
 			{
 				name: 'default',
 				description: 'Slot pour remplacer le contenu.'
-			},
-			drawerContentSlot
+			}
+		]
+	},
+	HeaderNavigationDrawer: {
+		props: [
+			themeProp,
+			itemsProp,
+			isMobileProp,
+			{
+				name: 'drawer',
+				type: 'boolean',
+				default: false,
+				description: 'Contrôle la visibilité du drawer.'
+			}
+		],
+		slots: [
+			{
+				name: 'default',
+				description: 'Slot pour remplacer le contenu.'
+			}
 		]
 	}
 };

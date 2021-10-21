@@ -1,53 +1,62 @@
 <template>
-	<VAppBar
-		v-bind="{
-			...options.appBar,
-			...$attrs
-		}"
-		:height="height"
-		class="vd-header-bar"
-	>
-		<VSheet
-			v-bind="options.contentSheet"
-			:height="contentSheetHeight"
-			:class="spacingClass"
-			class="vd-header-bar-content d-flex justify-center"
+	<div class="vd-header-bar-container w-100">
+		<VAppBar
+			v-bind="{
+				...options.appBar,
+				...$attrs
+			}"
+			:height="height"
+			class="vd-header-bar"
 		>
 			<VSheet
-				v-bind="options.innerSheet"
-				:width="innerWidth"
+				v-bind="options.contentSheet"
+				:height="contentSheetHeight"
+				:class="spacingClass"
+				class="vd-header-bar-content d-flex justify-center"
 			>
-				<slot name="brand">
-					<HeaderBrandSection
-						:theme="theme"
-						:service-title="serviceTitle"
-						:service-sub-title="serviceSubTitle"
-						:is-mobile="isMobile"
-					>
-						<slot name="secondary-logo" />
-					</HeaderBrandSection>
-				</slot>
+				<VSheet
+					v-bind="options.innerSheet"
+					:width="innerWidth"
+				>
+					<slot name="brand">
+						<HeaderBrandSection
+							:theme="theme"
+							:service-title="serviceTitle"
+							:service-sub-title="serviceSubTitle"
+							:is-mobile="isMobile"
+						>
+							<slot name="secondary-logo" />
+						</HeaderBrandSection>
+					</slot>
 
-				<VSpacer v-bind="options.spacer" />
+					<VSpacer v-bind="options.spacer" />
 
-				<slot />
+					<slot />
+				</VSheet>
 			</VSheet>
-		</VSheet>
 
-		<HeaderNavigationBar
-			v-if="showNavigationBar"
+			<template v-if="showNavigationBar">
+				<HeaderNavigationBar
+					:theme="theme"
+					:is-mobile="isMobile"
+					:items="navigationItems"
+					:inner-width="innerWidth"
+					@update:drawer="drawer = !drawer"
+				>
+					<slot name="navigation-bar-content" />
+				</HeaderNavigationBar>
+			</template>
+		</VAppBar>
+
+		<HeaderNavigationDrawer
+			v-model="drawer"
 			:theme="theme"
 			:is-mobile="isMobile"
 			:items="navigationItems"
-			:inner-width="innerWidth"
 		>
-			<slot name="navigation-bar-content" />
-
-			<template #navigation-bar-drawer-content>
-				<slot name="navigation-bar-drawer-content" />
-			</template>
-		</HeaderNavigationBar>
-	</VAppBar>
+			<slot name="navigation-bar-drawer-content" />
+		</HeaderNavigationDrawer>
+	</div>
 </template>
 
 <script lang="ts">
@@ -56,6 +65,7 @@
 
 	import HeaderBrandSection from './HeaderBrandSection';
 	import HeaderNavigationBar from './HeaderNavigationBar';
+	import HeaderNavigationDrawer from './HeaderNavigationDrawer';
 
 	import { NavigationItem } from './types';
 
@@ -98,10 +108,13 @@
 		inheritAttrs: false,
 		components: {
 			HeaderBrandSection,
-			HeaderNavigationBar
+			HeaderNavigationBar,
+			HeaderNavigationDrawer
 		}
 	})
 	export default class HeaderBar extends MixinsDeclaration {
+		drawer = false;
+
 		get isMobile(): boolean {
 			return this.$vuetify.breakpoint.smAndDown;
 		}

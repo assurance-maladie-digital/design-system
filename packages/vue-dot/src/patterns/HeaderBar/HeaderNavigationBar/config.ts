@@ -9,31 +9,16 @@ export const config = {
 	},
 	menuBtn: {
 		elevation: 0,
+		color: 'transparent',
 		class: 'text-none px-2 mx-n2'
 	},
 	menuIcon: {
 		class: 'mr-4'
 	},
+	tabs: {
+		backgroundColor: 'transparent'
+	},
 	tab: {
 		exact: true
-	},
-	navigationDrawer: {
-		app: true,
-		width: '320px',
-		class: 'pa-4'
-	},
-	closeBtn: {
-		icon: true
-	},
-	closeIcon: {
-		class: 'ml-4'
-	},
-	mobileTabs: {
-		dense: true,
-		vertical: true
-	},
-	mobileTab: {
-		exact: true,
-		class: 'justify-start mb-2'
 	}
 };
