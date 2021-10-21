@@ -11,6 +11,9 @@
 - ✅ **Tests**
   - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
 
+- ✅ **Tests**
+  - **global:** Configurer le coverage de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
