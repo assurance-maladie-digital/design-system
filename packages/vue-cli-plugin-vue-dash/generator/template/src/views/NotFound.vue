@@ -26,6 +26,7 @@
 				meta: [
 					{
 						name: 'description',
+						vmid: 'description',
 						content: <% if (i18n) { %>this.$t('views.notFound.meta.description') as string<% } else { %>'Page non trouvée.'<% } %>
 					}
 				]

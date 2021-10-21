@@ -2,8 +2,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 
 import { store } from '@/store';<% if (i18n) { %>
 
-import common from '@/translations/fr/common';
-<% } %>
+import common from '@/translations/fr/common';<% } %>
 
 /** The axios instance */
 const instance = axios.create({

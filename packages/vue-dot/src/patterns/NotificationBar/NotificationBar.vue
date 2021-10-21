@@ -3,6 +3,7 @@
 		v-bind="options.snackBar"
 		:value="Boolean(notification)"
 		:color="snackbarColor"
+		role="status"
 	>
 		<div
 			v-if="notification"
