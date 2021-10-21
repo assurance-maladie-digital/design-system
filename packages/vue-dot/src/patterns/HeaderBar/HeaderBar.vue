@@ -1,11 +1,15 @@
 <template>
-	<VSheet
-		v-bind="options.sheet"
+	<VAppBar
+		v-bind="{
+			...options.appBar,
+			...$attrs
+		}"
+		:height="height"
 		class="vd-header-bar"
 	>
 		<VSheet
 			v-bind="options.contentSheet"
-			:height="height"
+			:height="contentSheetHeight"
 			:class="spacingClass"
 			class="vd-header-bar-content d-flex justify-center"
 		>
@@ -43,7 +47,7 @@
 				<slot name="navigation-bar-drawer-content" />
 			</template>
 		</HeaderNavigationBar>
-	</VSheet>
+	</VAppBar>
 </template>
 
 <script lang="ts">
@@ -91,6 +95,7 @@
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component({
+		inheritAttrs: false,
 		components: {
 			HeaderBrandSection,
 			HeaderNavigationBar
@@ -105,22 +110,28 @@
 			return this.isMobile ? 'pa-4' : 'px-14 py-7';
 		}
 
-		get height(): string {
-			return this.isMobile ? '72px' : '120px';
+		get contentSheetHeight(): number {
+			return this.isMobile ? 72 : 120;
+		}
+
+		get height(): number {
+			if (this.showNavigationBar) {
+				return this.contentSheetHeight + 48;
+			}
+
+			return this.contentSheetHeight;
 		}
 
 		get showNavigationBar(): boolean {
-			return Boolean(this.navigationItems || this.$slots['navigation-bar']);
+			return Boolean(this.navigationItems || this.$slots['navigation-bar-content']);
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-bar {
-		box-shadow:
-			0px 3px 1px -2px rgba(0, 0, 0, .2),
-			0px 2px 2px rgba(0, 0, 0, .14),
-			0px 1px 5px rgba(0, 0, 0, .12);
+	.vd-header-bar ::v-deep .v-toolbar__content {
+		display: block;
+		padding: 0;
 	}
 
 	.vd-header-bar-content {

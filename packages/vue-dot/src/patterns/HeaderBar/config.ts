@@ -1,6 +1,7 @@
 export const config = {
-	sheet: {
-		tag: 'header',
+	appBar: {
+		color: 'white',
+		height: 'auto',
 		class: 'w-100'
 	},
 	innerSheet: {
