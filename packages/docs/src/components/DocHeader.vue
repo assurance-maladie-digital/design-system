@@ -1,41 +1,35 @@
 <template>
-	<VAppBar
+	<HeaderBar
 		app
 		fixed
-		height="80"
 		clipped-left
-		color="white"
-		class="doc-header flex-grow-0"
+		service-title="Design System"
+		@click="emitDrawerEvent"
 	>
-		<VAppBarNavIcon
-			:aria-label="drawerActionLabel"
-			class="ml-2 ml-sm-3 hidden-lg-and-up"
-			@click="emitDrawerEvent"
-		/>
-
-		<div class="doc-header-logo px-2">
-			<img
-				src="~/assets/logo-am-no-text.svg"
-				alt="l’Assurance Maladie"
-				width="156"
+		<template #navigation-bar-content>
+			<VBtn
+				v-if="!$vuetify.breakpoint.lgAndUp"
+				:aria-label="drawerActionLabel"
+				:elevation="0"
+				color="transparent"
+				class="text-none px-2 mx-n2"
+				@click="emitDrawerEvent"
 			>
-		</div>
+				<VIcon class="mr-4">
+					{{ menuIcon }}
+				</VIcon>
 
-		<VDivider
-			class="d-none d-md-block"
-			vertical
-			inset
-		/>
-
-		<VToolbarTitle class="d-none d-md-block text-h6 ml-4">
-			Design System
-		</VToolbarTitle>
-	</VAppBar>
+				Menu
+			</VBtn>
+		</template>
+	</HeaderBar>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
+	import { mdiMenu } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -44,12 +38,14 @@
 				default: false
 			}
 		}
-	})
+	});
 
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
 	export default class DocHeader extends MixinsDeclaration {
+		menuIcon = mdiMenu;
+
 		get drawerActionLabel(): string {
 			const action = this.drawer ? 'Masquer' : 'Afficher';
 
@@ -61,20 +57,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.doc-header ::v-deep .v-toolbar__content {
-		padding: 0;
-	}
-
-	.doc-header-logo,
-	.doc-header-title {
-		height: 100%;
-	}
-
-	.doc-header-logo {
-		min-width: 172px;
-		display: flex;
-		align-items: center;
-	}
-</style>
