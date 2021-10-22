@@ -7,20 +7,31 @@
 		@click="emitDrawerEvent"
 	>
 		<template #navigation-bar-content>
-			<VBtn
+			<div
 				v-if="!$vuetify.breakpoint.lgAndUp"
-				:aria-label="drawerActionLabel"
-				:elevation="0"
-				color="transparent"
-				class="text-none px-2 mx-n2"
-				@click="emitDrawerEvent"
+				class="d-flex align-center"
 			>
-				<VIcon class="mr-4">
-					{{ menuIcon }}
-				</VIcon>
+				<VBtn
+					:aria-label="menuBtnActionLabel"
+					:elevation="0"
+					width="36px"
+					height="36px"
+					icon
+					class="mx-n2"
+					@click="emitDrawerEvent"
+				>
+					<VIcon>
+						{{ menuIcon }}
+					</VIcon>
+				</VBtn>
 
-				Menu
-			</VBtn>
+				<h2
+					v-if="menuBtnLabel"
+					class="text-body-2 text-sm-subtitle-1 ml-4"
+				>
+					{{ menuBtnLabel }}
+				</h2>
+			</div>
 		</template>
 	</HeaderBar>
 </template>
@@ -36,6 +47,10 @@
 			drawer: {
 				type: Boolean,
 				default: false
+			},
+			menuBtnLabel: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -46,7 +61,7 @@
 	export default class DocHeader extends MixinsDeclaration {
 		menuIcon = mdiMenu;
 
-		get drawerActionLabel(): string {
+		get menuBtnActionLabel(): string {
 			const action = this.drawer ? 'Masquer' : 'Afficher';
 
 			return `${action} le menu`;
