@@ -40,6 +40,7 @@
 
 - 🚨 **Lint**
   - **template:** Correction des erreurs de lint lorsque i18n n'est pas installé ([#1478](https://github.com/assurance-maladie-digital/design-system/pull/1478)) ([5e50e1e](https://github.com/assurance-maladie-digital/design-system/commit/5e50e1eb53a45007d0d6bdc513fadf4600acc5d6))
+  - **global:** Correction des erreurs de lint ([#1534](https://github.com/assurance-maladie-digital/design-system/pull/1534))
 
 ### FormBuilder
 
@@ -56,7 +57,7 @@
 
 - ♻️ **Refactoring**
   - **introduction:** Mise à jour des icônes ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([c30816b](https://github.com/assurance-maladie-digital/design-system/commit/c30816b2c989cf7a53b3dfcb1cfcbe6047698cdf))
-  - **DocHeader:** Utilisation du composant `HeaderBar` ([#1533](https://github.com/assurance-maladie-digital/design-system/pull/1533))
+  - **DocHeader:** Utilisation du composant `HeaderBar` ([#1533](https://github.com/assurance-maladie-digital/design-system/pull/1533)) ([c58a3bd2559e9aeb50309255b9bf1c6bc31d5f9a](https://github.com/assurance-maladie-digital/design-system/commit/c58a3bd2559e9aeb50309255b9bf1c6bc31d5f9a))
 
 - 🔥 **Suppressions**
   - **header:** Suppression de la recherche ne fonctionnant pas ([#1434](https://github.com/assurance-maladie-digital/design-system/pull/1434)) ([d30aa2b](https://github.com/assurance-maladie-digital/design-system/commit/d30aa2b60afccbef78a093612996c08159740bc0))
