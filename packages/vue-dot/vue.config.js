@@ -6,7 +6,7 @@ const webpack = require('webpack');
 const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
 const LIMIT_SIZE = 950_000;
 const CI = Boolean(process.env.CI);
-const CIRCLE_NODE_TOTAL = parseFloat(process.env.CIRCLE_NODE_TOTAL);
+const CIRCLE_NODE_TOTAL = parseInt(process.env.CIRCLE_NODE_TOTAL);
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
