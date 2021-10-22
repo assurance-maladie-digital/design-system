@@ -30,6 +30,7 @@ const FormBuilderVersion = normalizeVersion(devDependencies['@cnamts/form-builde
  *
  * @param {object} api The plugin API
  * @param {object} options The plugin options
+ * @param {string} pm The package manager
  * @returns {void}
  */
 function extendPackage(api, options, pm) {
