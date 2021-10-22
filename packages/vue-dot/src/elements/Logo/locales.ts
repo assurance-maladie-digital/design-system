@@ -1,6 +1,6 @@
 export const locales = {
 	organism: 'Sécurité sociale',
-	assuranceMaladie: 'l’Assurance Maladie',
+	assuranceMaladie: 'L’Assurance Maladie',
 	signature: 'Agir ensemble, protéger chacun',
 	risquePro: 'Risques Professionnels'
 };
