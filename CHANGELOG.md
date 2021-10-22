@@ -44,6 +44,9 @@
 
 ### FormBuilder
 
+- 🐛 **Corrections de bugs**
+  - **ChoiceSliderField:** Correction des étiquettes qui masquent le titre ([#1537](https://github.com/assurance-maladie-digital/design-system/pull/1537))
+
 - ♻️ **Refactoring**
   - **tests:** Mise à jour de la formulation dans les tests ([#1468](https://github.com/assurance-maladie-digital/design-system/pull/1468)) ([bdaf37b](https://github.com/assurance-maladie-digital/design-system/commit/bdaf37b3d19b5bb36873cec43e81fa22fe62efbd))
 
@@ -83,7 +86,7 @@
   - **remark-html:** Mise à jour vers de la `v13.0.1` vers la `v13.0.2` ([#1421](https://github.com/assurance-maladie-digital/design-system/pull/1421)) ([6542b89](https://github.com/assurance-maladie-digital/design-system/commit/6542b89c313a5ec0ae37ae786e5516caeabb265f))
 
 - 🐛 **Corrections de bugs**
-  - **playgrounds:** Correction de fautes d'orthographe ([#1536](https://github.com/assurance-maladie-digital/design-system/pull/1536))
+  - **playgrounds:** Correction de fautes d'orthographe ([#1536](https://github.com/assurance-maladie-digital/design-system/pull/1536)) ([1df5dcb](https://github.com/assurance-maladie-digital/design-system/commit/1df5dcbeb39b613691d6d52549929b50992316fc))
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.18` ([#1454](https://github.com/assurance-maladie-digital/design-system/pull/1454)) ([38efd29](https://github.com/assurance-maladie-digital/design-system/commit/38efd29992df0eb495af6218be144605895c39ca))
