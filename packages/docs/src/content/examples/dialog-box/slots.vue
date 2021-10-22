@@ -15,7 +15,7 @@
 			</template>
 
 			<VCardText class="px-0">
-				Il est possible d’utiliser les slots pour modifier l’affichage par défaut.
+				Vous pouvez modifier l’affichage par défaut en utilisant les slots.
 			</VCardText>
 
 			<template #actions>
