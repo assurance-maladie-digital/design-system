@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBar renders correctly 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" class="vd-header-bar w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <headerbrandsection-stub theme="default"></headerbrandsection-stub>
+        <vspacer-stub class="h-100 mr-4 mr-md-16"></vspacer-stub>
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default"></headernavigationdrawer-stub>
+</div>
+`;

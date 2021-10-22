@@ -5,6 +5,7 @@
 - ✨ **Nouvelles fonctionnalités**
   - **helpers:** Ajout du helper `propValidator` ([#1526](https://github.com/assurance-maladie-digital/design-system/pull/1526)) ([5bc97c3](https://github.com/assurance-maladie-digital/design-system/commit/5bc97c3ed7e8db549f5cd11c2ee561f42c7f885c))
   - **Logo:** Ajout d'un nouveau composant ([#1527](https://github.com/assurance-maladie-digital/design-system/pull/1527)) ([b20e576](https://github.com/assurance-maladie-digital/design-system/commit/b20e576117120a4a5691e23e10c89b1aa6c17352))
+  - **HeaderBar:** Ajout d'un nouveau composant ([#1525](https://github.com/assurance-maladie-digital/design-system/pull/1525)) ([6549933](https://github.com/assurance-maladie-digital/design-system/commit/6549933d558d001ab1e4d5fde40f1ac5662e0b76))
 
 - ♻️ **Refactoring**
   - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
@@ -55,6 +56,7 @@
 
 - ♻️ **Refactoring**
   - **introduction:** Mise à jour des icônes ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([c30816b](https://github.com/assurance-maladie-digital/design-system/commit/c30816b2c989cf7a53b3dfcb1cfcbe6047698cdf))
+  - **DocHeader:** Utilisation du composant `HeaderBar` ([#1533](https://github.com/assurance-maladie-digital/design-system/pull/1533))
 
 - 🔥 **Suppressions**
   - **header:** Suppression de la recherche ne fonctionnant pas ([#1434](https://github.com/assurance-maladie-digital/design-system/pull/1434)) ([d30aa2b](https://github.com/assurance-maladie-digital/design-system/commit/d30aa2b60afccbef78a093612996c08159740bc0))
@@ -72,7 +74,7 @@
   - **rules:** Documentation de la règle de validation notAfterToday ([#1448](https://github.com/assurance-maladie-digital/design-system/pull/1448)) ([e2cbe4f](https://github.com/assurance-maladie-digital/design-system/commit/e2cbe4f51787c6d6fd82c2be687b16935d4f790c))
   - **rules:** Documentation de la règle de validation notBeforeToday ([#1449](https://github.com/assurance-maladie-digital/design-system/pull/1449)) ([73bcce9](https://github.com/assurance-maladie-digital/design-system/commit/73bcce97f02311484f6ca27428795a7b4e7ca042))
   - **roadmap:** Mise à jour de la page ([#1503](https://github.com/assurance-maladie-digital/design-system/pull/1503)) ([abec127](https://github.com/assurance-maladie-digital/design-system/commit/abec127a3c28c5979089ef67c23ec5bc2b762ae5))
-  - **global:** Mise à jour de la formulation dans les exemples ([#1532](https://github.com/assurance-maladie-digital/design-system/pull/1532))
+  - **global:** Mise à jour de la formulation dans les exemples ([#1532](https://github.com/assurance-maladie-digital/design-system/pull/1532)) ([5d35651](https://github.com/assurance-maladie-digital/design-system/commit/5d3565124225933ae9c879e5b8b12890c03ef466))
 
 ### Interne
 
