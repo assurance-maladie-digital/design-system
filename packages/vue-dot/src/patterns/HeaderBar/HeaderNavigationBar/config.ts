@@ -8,12 +8,11 @@ export const config = {
 		color: 'transparent'
 	},
 	menuBtn: {
+		width: 36,
+		height: 36,
+		icon: true,
 		elevation: 0,
-		color: 'transparent',
-		class: 'text-none px-2 mx-n2'
-	},
-	menuIcon: {
-		class: 'mr-4'
+		class: 'mx-n2'
 	},
 	tabs: {
 		backgroundColor: 'transparent'

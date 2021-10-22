@@ -1,7 +1,7 @@
-import { Route } from 'vue-router';
+import { Next } from '../../types';
 
 export interface NavigationItem {
 	label: string;
-	to?: string | Route;
-	href?: string | Route;
+	to?: Next;
+	href?: string;
 }

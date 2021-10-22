@@ -123,13 +123,7 @@ export const api: Api = {
 	menuBtn: 'VBtn',
 	menuIcon: 'VIcon',
 	tabs: 'VTabs',
-	tab: 'VTab',
-	navigationDrawer: 'VNavigationDrawer',
-	spacer: 'VSpacer',
-	closeBtn: 'VBtn',
-	closeIcon: 'VIcon',
-	mobileTabs: 'VTabs',
-	mobileTab: 'VTab'
+	tab: 'VTab'
 }`)
 		],
 		slots: [
@@ -149,7 +143,14 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Contrôle la visibilité du menu sur les écrans mobiles.'
-			}
+			},
+			...customizable(`{
+	navigationDrawer: 'VNavigationDrawer',
+	closeBtn: 'VBtn',
+	closeIcon: 'VIcon',
+	tabs: 'VTabs',
+	tab: 'VTab'
+}`)
 		],
 		slots: [
 			{

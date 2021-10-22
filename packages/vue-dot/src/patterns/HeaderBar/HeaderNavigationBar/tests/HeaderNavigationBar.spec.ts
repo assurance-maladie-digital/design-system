@@ -7,7 +7,11 @@ import { html } from '@/tests/utils/html';
 import HeaderNavigationBar from '../';
 import { ThemeEnum } from '../../ThemeEnum';
 
-let wrapper: Wrapper<Vue>;
+interface TestComponent extends Vue {
+	menuBtnActionLabel: string
+}
+
+let wrapper: Wrapper<TestComponent>;
 
 // Tests
 describe('HeaderNavigationBar', () => {
@@ -17,8 +21,9 @@ describe('HeaderNavigationBar', () => {
 			propsData: {
 				theme: ThemeEnum.DEFAULT
 			}
-		});
+		}) as Wrapper<TestComponent>;
 
+		expect(wrapper.vm.menuBtnActionLabel).toBe('Ouvrir le menu');
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

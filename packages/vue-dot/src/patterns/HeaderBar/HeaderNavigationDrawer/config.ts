@@ -6,17 +6,15 @@ export const config = {
 		class: 'pa-4'
 	},
 	closeBtn: {
-		icon: true
-	},
-	closeIcon: {
+		icon: true,
 		class: 'ml-4'
 	},
-	mobileTabs: {
+	tabs: {
 		dense: true,
 		vertical: true,
 		backgroundColor: 'transparent'
 	},
-	mobileTab: {
+	tab: {
 		exact: true,
 		class: 'justify-start mb-2'
 	}

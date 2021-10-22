@@ -10,21 +10,33 @@
 			:width="innerWidth"
 		>
 			<slot>
-				<VBtn
+				<div
 					v-if="isMobile"
-					v-bind="options.menuBtn"
-					@click="emitDrawerEvent"
+					class="d-flex align-center"
 				>
-					<VIcon v-bind="options.menuIcon">
-						{{ menuIcon }}
-					</VIcon>
+					<VBtn
+						v-bind="options.menuBtn"
+						:aria-label="menuBtnActionLabel"
+						@click="emitDrawerEvent"
+					>
+						<VIcon v-bind="options.menuIcon">
+							{{ menuIcon }}
+						</VIcon>
+					</VBtn>
 
-					{{ locales.menu }}
-				</VBtn>
+					<h2
+						v-if="activeTabLabel"
+						class="text-body-2 text-sm-subtitle-1 ml-4"
+					>
+						{{ activeTabLabel }}
+					</h2>
+				</div>
 
 				<VTabs
 					v-else
 					v-bind="options.tabs"
+					:value="tab"
+					@change="emitTabUpdateEvent"
 				>
 					<VTab
 						v-for="(item, index) in items"
@@ -73,6 +85,14 @@
 			innerWidth: {
 				type: String,
 				default: undefined
+			},
+			drawer: {
+				type: Boolean,
+				default: false
+			},
+			tab: {
+				type: Number,
+				default: null
 			}
 		}
 	});
@@ -86,9 +106,6 @@
 		menuIcon = mdiMenu;
 		closeIcon = mdiClose;
 
-		mobileTab: number | null = null;
-		drawer = false;
-
 		get spacingClass(): string {
 			return this.isMobile ? 'px-4' : 'px-14';
 		}
@@ -98,13 +115,19 @@
 		}
 
 		get activeTabLabel(): string | null {
-			if (this.mobileTab === null) {
+			if (this.tab === null) {
 				return null;
 			}
 
-			const item = this.items[this.mobileTab];
+			const item = this.items[this.tab];
 
 			return item?.label;
+		}
+
+		get menuBtnActionLabel(): string {
+			const action = this.drawer ? locales.close : locales.open;
+
+			return locales.menuBtnLabel(action);
 		}
 
 		toggleDrawer(value: boolean): void {
@@ -112,7 +135,11 @@
 		}
 
 		emitDrawerEvent(): void {
-			this.$emit('update:drawer');
+			this.$emit('update:drawer', !this.drawer);
+		}
+
+		emitTabUpdateEvent(value: number): void {
+			this.$emit('update:tab', value);
 		}
 	}
 </script>

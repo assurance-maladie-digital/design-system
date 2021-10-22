@@ -6,16 +6,7 @@
 		:color="backgroundColor"
 	>
 		<slot>
-			<div class="d-flex align-center mb-8">
-				<h2
-					v-if="activeTabLabel"
-					class="text-subtitle-1 white--text"
-				>
-					{{ activeTabLabel }}
-				</h2>
-
-				<VSpacer v-bind="options.spacer" />
-
+			<div class="d-flex align-center justify-end mb-8">
 				<VBtn
 					v-bind="options.closeBtn"
 					@click="emitChangeEvent"
@@ -27,13 +18,14 @@
 			</div>
 
 			<VTabs
-				v-model="mobileTab"
-				v-bind="options.mobileTabs"
+				v-bind="options.tabs"
+				:value="tab"
+				@change="emitTabUpdateEvent"
 			>
 				<VTab
 					v-for="(item, index) in items"
 					:key="index"
-					v-bind="options.mobileTab"
+					v-bind="options.tab"
 					:href="item.href"
 					:to="item.to"
 				>
@@ -75,6 +67,10 @@
 			drawer: {
 				type: Boolean,
 				default: false
+			},
+			tab: {
+				type: Number,
+				default: null
 			}
 		}
 	});
@@ -90,8 +86,6 @@
 	export default class HeaderNavigationDrawer extends MixinsDeclaration {
 		closeIcon = mdiClose;
 
-		mobileTab: number | null = null;
-
 		get spacingClass(): string {
 			return this.isMobile ? 'px-4' : 'px-14';
 		}
@@ -100,18 +94,12 @@
 			return colorMapping[this.theme];
 		}
 
-		get activeTabLabel(): string | null {
-			if (this.mobileTab === null) {
-				return null;
-			}
-
-			const item = this.items[this.mobileTab];
-
-			return item?.label;
-		}
-
 		emitChangeEvent(): void {
 			this.$emit('change', !this.drawer);
+		}
+
+		emitTabUpdateEvent(value: number): void {
+			this.$emit('update:tab', value);
 		}
 	}
 </script>

@@ -1,3 +1,5 @@
 export const locales = {
-	menu: 'Menu'
+	menuBtnLabel: (action: string): string => `${action} le menu`,
+	open: 'Ouvrir',
+	close: 'Fermer'
 };

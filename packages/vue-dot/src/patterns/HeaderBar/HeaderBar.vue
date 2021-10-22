@@ -35,11 +35,12 @@
 
 			<template v-if="showNavigationBar">
 				<HeaderNavigationBar
+					:tab.sync="tab"
+					:drawer.sync="drawer"
 					:theme="theme"
 					:is-mobile="isMobile"
 					:items="navigationItems"
 					:inner-width="innerWidth"
-					@update:drawer="drawer = !drawer"
 				>
 					<slot name="navigation-bar-content" />
 				</HeaderNavigationBar>
@@ -48,9 +49,10 @@
 
 		<HeaderNavigationDrawer
 			v-model="drawer"
+			:tab.sync="tab"
 			:theme="theme"
-			:is-mobile="isMobile"
 			:items="navigationItems"
+			:is-mobile="isMobile"
 		>
 			<slot name="navigation-drawer-content" />
 		</HeaderNavigationDrawer>
@@ -112,6 +114,7 @@
 	})
 	export default class HeaderBar extends MixinsDeclaration {
 		drawer = false;
+		tab: number | null = null;
 
 		get isMobile(): boolean {
 			return this.$vuetify.breakpoint.smAndDown;
