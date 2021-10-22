@@ -82,12 +82,15 @@
 - 🔒 **Sécurité**
   - **remark-html:** Mise à jour vers de la `v13.0.1` vers la `v13.0.2` ([#1421](https://github.com/assurance-maladie-digital/design-system/pull/1421)) ([6542b89](https://github.com/assurance-maladie-digital/design-system/commit/6542b89c313a5ec0ae37ae786e5516caeabb265f))
 
+- 🐛 **Corrections de bugs**
+  - **playgrounds:** Correction de fautes d'orthographe ([#1536](https://github.com/assurance-maladie-digital/design-system/pull/1536))
+
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.18` ([#1454](https://github.com/assurance-maladie-digital/design-system/pull/1454)) ([38efd29](https://github.com/assurance-maladie-digital/design-system/commit/38efd29992df0eb495af6218be144605895c39ca))
   - **global:** Mise à jour du fichier `.gitignore` ([#1477](https://github.com/assurance-maladie-digital/design-system/pull/1477)) ([50edc9f](https://github.com/assurance-maladie-digital/design-system/commit/50edc9f809eaa196c5afefd275b7f4e69ab2260f))
   - **ci:** Mise à jour de `codecov` vers la `v3.2.0` ([#1505](https://github.com/assurance-maladie-digital/design-system/pull/1505)) ([3064c24](https://github.com/assurance-maladie-digital/design-system/commit/3064c244369e5cad9dcadc939243be1ae2c5692a))
   - **config:** Mise à jour de la taille maximale du build ([#1530](https://github.com/assurance-maladie-digital/design-system/pull/1530)) ([e9a7702](https://github.com/assurance-maladie-digital/design-system/commit/e9a7702fb823b8f030138fb42db556f0d9fcd432))
-  - **config:** Utilisation de `parseInt` à la place de de `parseFloat` dans le fichier `vue.config.js` ([#1535](https://github.com/assurance-maladie-digital/design-system/pull/1535))
+  - **config:** Utilisation de `parseInt` à la place de de `parseFloat` dans le fichier `vue.config.js` ([#1535](https://github.com/assurance-maladie-digital/design-system/pull/1535)) ([94bda6f](https://github.com/assurance-maladie-digital/design-system/commit/94bda6ff84324f858a7a3995df0be5a38f851692))
 
 - 🔥 **Suppressions**
   - **issues:** Suppression des templates inutilisés ([#1511](https://github.com/assurance-maladie-digital/design-system/pull/1511)) ([93b8280](https://github.com/assurance-maladie-digital/design-system/commit/93b8280beee2ba38643b4576251f067c23e248be))
