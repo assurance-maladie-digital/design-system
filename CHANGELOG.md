@@ -73,6 +73,7 @@
   - **rules:** Documentation de la règle de validation notAfterToday ([#1448](https://github.com/assurance-maladie-digital/design-system/pull/1448)) ([e2cbe4f](https://github.com/assurance-maladie-digital/design-system/commit/e2cbe4f51787c6d6fd82c2be687b16935d4f790c))
   - **rules:** Documentation de la règle de validation notBeforeToday ([#1449](https://github.com/assurance-maladie-digital/design-system/pull/1449)) ([73bcce9](https://github.com/assurance-maladie-digital/design-system/commit/73bcce97f02311484f6ca27428795a7b4e7ca042))
   - **roadmap:** Mise à jour de la page ([#1503](https://github.com/assurance-maladie-digital/design-system/pull/1503)) ([abec127](https://github.com/assurance-maladie-digital/design-system/commit/abec127a3c28c5979089ef67c23ec5bc2b762ae5))
+  - **global:** Mise à jour de la formulation dans les exemples ([#1532](https://github.com/assurance-maladie-digital/design-system/pull/1532)) ([5d35651](https://github.com/assurance-maladie-digital/design-system/commit/5d3565124225933ae9c879e5b8b12890c03ef466))
 
 ### Interne
 
@@ -83,6 +84,7 @@
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.18` ([#1454](https://github.com/assurance-maladie-digital/design-system/pull/1454)) ([38efd29](https://github.com/assurance-maladie-digital/design-system/commit/38efd29992df0eb495af6218be144605895c39ca))
   - **global:** Mise à jour du fichier `.gitignore` ([#1477](https://github.com/assurance-maladie-digital/design-system/pull/1477)) ([50edc9f](https://github.com/assurance-maladie-digital/design-system/commit/50edc9f809eaa196c5afefd275b7f4e69ab2260f))
   - **ci:** Mise à jour de `codecov` vers la `v3.2.0` ([#1505](https://github.com/assurance-maladie-digital/design-system/pull/1505)) ([3064c24](https://github.com/assurance-maladie-digital/design-system/commit/3064c244369e5cad9dcadc939243be1ae2c5692a))
+  - **config:** Mise à jour de la taille maximale du build ([#1530](https://github.com/assurance-maladie-digital/design-system/pull/1530)) ([e9a7702](https://github.com/assurance-maladie-digital/design-system/commit/e9a7702fb823b8f030138fb42db556f0d9fcd432))
 
 - 🔥 **Suppressions**
   - **issues:** Suppression des templates inutilisés ([#1511](https://github.com/assurance-maladie-digital/design-system/pull/1511)) ([93b8280](https://github.com/assurance-maladie-digital/design-system/commit/93b8280beee2ba38643b4576251f067c23e248be))
