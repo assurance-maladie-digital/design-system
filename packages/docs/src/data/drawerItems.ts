@@ -98,6 +98,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/france-connect-btn'
 			},
 			{
+				title: 'HeaderBar',
+				to: '/composants/header-bar'
+			},
+			{
 				title: 'HeaderLoading',
 				to: '/composants/header-loading'
 			},

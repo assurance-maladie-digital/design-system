@@ -5,6 +5,7 @@
 - ✨ **Nouvelles fonctionnalités**
   - **helpers:** Ajout du helper `propValidator` ([#1526](https://github.com/assurance-maladie-digital/design-system/pull/1526)) ([5bc97c3](https://github.com/assurance-maladie-digital/design-system/commit/5bc97c3ed7e8db549f5cd11c2ee561f42c7f885c))
   - **Logo:** Ajout d'un nouveau composant ([#1527](https://github.com/assurance-maladie-digital/design-system/pull/1527)) ([b20e576](https://github.com/assurance-maladie-digital/design-system/commit/b20e576117120a4a5691e23e10c89b1aa6c17352))
+  - **HeaderBar:** Ajout d'un nouveau composant ([#1525](https://github.com/assurance-maladie-digital/design-system/pull/1525))
 
 - ♻️ **Refactoring**
   - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
@@ -73,7 +74,7 @@
   - **rules:** Documentation de la règle de validation notAfterToday ([#1448](https://github.com/assurance-maladie-digital/design-system/pull/1448)) ([e2cbe4f](https://github.com/assurance-maladie-digital/design-system/commit/e2cbe4f51787c6d6fd82c2be687b16935d4f790c))
   - **rules:** Documentation de la règle de validation notBeforeToday ([#1449](https://github.com/assurance-maladie-digital/design-system/pull/1449)) ([73bcce9](https://github.com/assurance-maladie-digital/design-system/commit/73bcce97f02311484f6ca27428795a7b4e7ca042))
   - **roadmap:** Mise à jour de la page ([#1503](https://github.com/assurance-maladie-digital/design-system/pull/1503)) ([abec127](https://github.com/assurance-maladie-digital/design-system/commit/abec127a3c28c5979089ef67c23ec5bc2b762ae5))
-  - **global:** Mise à jour de la formulation dans les exemples ([#1532](https://github.com/assurance-maladie-digital/design-system/pull/1532))
+  - **global:** Mise à jour de la formulation dans les exemples ([#1532](https://github.com/assurance-maladie-digital/design-system/pull/1532)) ([5d35651](https://github.com/assurance-maladie-digital/design-system/commit/5d3565124225933ae9c879e5b8b12890c03ef466))
 
 ### Interne
 
