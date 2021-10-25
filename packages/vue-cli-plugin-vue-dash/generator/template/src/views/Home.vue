@@ -7,7 +7,7 @@
 
 			<p><% if (i18n) { %>{{ $t('views.home.description.block1') }}<% } else { %>Vous venez de créer une nouvelle application front-end avec Vue Dash.<% } %></p>
 
-			<p><% if (i18n) { %>{{ $t('views.home.description.block2') }}<% } else { %>Tout est prêt, vous pouvez dès à présent commencer à développer !<% } %></p>
+			<p><% if (i18n) { %>{{ $t('views.home.description.block2') }}<% } else { %>Tout est prêt, vous pouvez commencer à développer&nbsp;!<% } %></p>
 
 			<RouterLink
 				:to=" {
@@ -23,7 +23,9 @@
 			<VBtn
 				color="accent"
 				outlined
-				class="mt-8"<% if (cypress) { %>
+				height="auto"
+				min-height="36px"
+				class="text-wrap mt-8"<% if (cypress) { %>
 				data-cy="sendNotification"<% } %>
 				@click="sendNotification"
 			>
