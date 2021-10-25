@@ -6,6 +6,7 @@ import DownloadBtn from './DownloadBtn';
 import ExternalLinks from './ExternalLinks';
 import FranceConnectBtn from './FranceConnectBtn';
 import HeaderLoading from './HeaderLoading';
+import Logo from './Logo';
 import PageContainer from './PageContainer';
 
 export const elements = {
@@ -17,5 +18,6 @@ export const elements = {
 	ExternalLinks,
 	FranceConnectBtn,
 	HeaderLoading,
+	Logo,
 	PageContainer
 };
