@@ -282,7 +282,7 @@ exports[`FormBuilder renders correctly 1`] = `
         Informations supplémentaires
       </p>
       <div>
-        <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider thumb-label">
+        <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider thumb-label" style="padding-top: 32px;">
           <div class="v-input__control">
             <div class="v-input__slot">
               <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-91" disabled="disabled" readonly="readonly" tabindex="-1">
@@ -318,7 +318,7 @@ exports[`FormBuilder renders correctly 1`] = `
         Informations supplémentaires
       </p>
       <div>
-        <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider thumb-label">
+        <div class="v-input vd-choice-slider-field vd-form-input-xl theme--light v-input__slider thumb-label" style="padding-top: 32px;">
           <div class="v-input__control">
             <div class="v-input__slot">
               <div class="v-slider v-slider--horizontal theme--light"><input value="0" id="input-101" disabled="disabled" readonly="readonly" tabindex="-1" labelmin="min" labelmax="max">

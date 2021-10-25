@@ -96,6 +96,10 @@
 		get thumbSizePlaceholder(): string {
 			let thumbSize = this.options?.thumbSize as number | string;
 
+			if (this.isThumbLabel) {
+				thumbSize = thumbSize || 32;
+			}
+
 			if (typeof thumbSize === 'string') {
 				thumbSize = parseInt(thumbSize);
 			}
