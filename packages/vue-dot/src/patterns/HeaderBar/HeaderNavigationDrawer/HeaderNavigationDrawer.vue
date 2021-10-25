@@ -1,6 +1,10 @@
 <template>
 	<VNavigationDrawer
 		v-if="isMobile"
+		v-click-outside="clickOutside"
+		v-touch="{
+			left: () => emitChangeEvent
+		}"
 		v-bind="options.navigationDrawer"
 		:value="drawer"
 		:color="backgroundColor"
@@ -100,6 +104,19 @@
 
 		emitTabUpdateEvent(value: number): void {
 			this.$emit('update:tab', value);
+		}
+
+		clickOutside(e: MouseEvent): void {
+			if (!e.target) {
+				return;
+			}
+
+			const target = e.target as Element;
+			const targetOverlay = target.className === 'v-overlay__scrim';
+
+			if (targetOverlay) {
+				this.emitChangeEvent();
+			}
 		}
 	}
 </script>
