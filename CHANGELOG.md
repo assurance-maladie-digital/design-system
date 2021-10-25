@@ -56,7 +56,8 @@
   - **ChoiceSliderField:** Correction des étiquettes qui masquent le titre ([#1537](https://github.com/assurance-maladie-digital/design-system/pull/1537)) ([3a18705](https://github.com/assurance-maladie-digital/design-system/commit/3a18705a7cf3e4d217cf780a47a7110333f99298))
   - **setFormErrors:** Correction de la gestion des erreurs ([#1556](https://github.com/assurance-maladie-digital/design-system/pull/1556)) ([8e90760](https://github.com/assurance-maladie-digital/design-system/commit/8e90760bdaa9fa8716d062d1d240152a4416ded4))
   - **ChoiceButtonField:** Correction des styles ([#1558](https://github.com/assurance-maladie-digital/design-system/pull/1558)) ([aaff7a1](https://github.com/assurance-maladie-digital/design-system/commit/aaff7a1a5417506761649a9d09f09c56bd0c625f))
-  - **ChoiceSliderField:** Correction de la taille par défaut des étiquettes ([#1559](https://github.com/assurance-maladie-digital/design-system/pull/1559))
+  - **ChoiceSliderField:** Correction de la taille par défaut des étiquettes ([#1559](https://github.com/assurance-maladie-digital/design-system/pull/1559)) ([26bda12](https://github.com/assurance-maladie-digital/design-system/commit/26bda12b084a964c708973031297b4eb9008e99f))
+  - **ChoiceField:** Correction de la gestion des messages d'erreur ([#1560](https://github.com/assurance-maladie-digital/design-system/pull/1560))
 
 - ♻️ **Refactoring**
   - **tests:** Mise à jour de la formulation dans les tests ([#1468](https://github.com/assurance-maladie-digital/design-system/pull/1468)) ([bdaf37b](https://github.com/assurance-maladie-digital/design-system/commit/bdaf37b3d19b5bb36873cec43e81fa22fe62efbd))
