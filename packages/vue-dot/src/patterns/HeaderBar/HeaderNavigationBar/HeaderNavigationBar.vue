@@ -57,6 +57,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { RawLocation } from 'vue-router';
 	import { mdiClose, mdiMenu } from '@mdi/js';
 
 	import { NavigationItem } from '../types';
@@ -91,7 +92,7 @@
 				default: false
 			},
 			tab: {
-				type: Number,
+				type: [Number, String],
 				default: null
 			}
 		}
@@ -114,12 +115,18 @@
 			return colorMapping[this.theme];
 		}
 
-		get activeTabLabel(): string | null {
+		get activeTabLabel(): string | undefined {
 			if (this.tab === null) {
-				return null;
+				return undefined;
 			}
 
-			const item = this.items[this.tab];
+			let item: NavigationItem | undefined;
+
+			if (typeof this.tab === 'string') {
+				item = this.findItemByPath(this.tab);
+			} else {
+				item = this.items[this.tab];
+			}
 
 			return item?.label;
 		}
@@ -128,6 +135,29 @@
 			const action = this.drawer ? locales.close : locales.open;
 
 			return locales.menuBtnLabel(action);
+		}
+
+		findItemByPath(tab: string): NavigationItem | undefined {
+			return this.items.find((item) => tab === this.getItemPath(item));
+		}
+
+		/**
+		 * Get item by path using Vuetify resolution algorithm
+		 *
+		 * @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VTabs/VTab.ts#L51
+		 */
+		getItemPath(item: NavigationItem): string {
+			let path: string;
+
+			if (item.to && typeof item.to === 'object') {
+				const resolve = this.$router.resolve(item.to as RawLocation, this.$route);
+				path = resolve.href;
+			} else {
+				const itemTo = item.to as unknown as string;
+				path = itemTo || item.href || '';
+			}
+
+			return path.replace('#', '');
 		}
 
 		toggleDrawer(value: boolean): void {

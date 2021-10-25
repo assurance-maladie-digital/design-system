@@ -69,7 +69,7 @@
 				default: false
 			},
 			tab: {
-				type: Number,
+				type: [Number, String],
 				default: null
 			}
 		}
