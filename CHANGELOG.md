@@ -67,6 +67,7 @@
 - ♻️ **Refactoring**
   - **introduction:** Mise à jour des icônes ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([c30816b](https://github.com/assurance-maladie-digital/design-system/commit/c30816b2c989cf7a53b3dfcb1cfcbe6047698cdf))
   - **DocHeader:** Utilisation du composant `HeaderBar` ([#1533](https://github.com/assurance-maladie-digital/design-system/pull/1533)) ([c58a3bd](https://github.com/assurance-maladie-digital/design-system/commit/c58a3bd2559e9aeb50309255b9bf1c6bc31d5f9a))
+  - **DocExample:** Désactivation des fonctionnalités tactiles ([#1548](https://github.com/assurance-maladie-digital/design-system/pull/1548))
 
 - 🔥 **Suppressions**
   - **header:** Suppression de la recherche ne fonctionnant pas ([#1434](https://github.com/assurance-maladie-digital/design-system/pull/1434)) ([d30aa2b](https://github.com/assurance-maladie-digital/design-system/commit/d30aa2b60afccbef78a093612996c08159740bc0))
@@ -86,7 +87,7 @@
   - **roadmap:** Mise à jour de la page ([#1503](https://github.com/assurance-maladie-digital/design-system/pull/1503)) ([abec127](https://github.com/assurance-maladie-digital/design-system/commit/abec127a3c28c5979089ef67c23ec5bc2b762ae5))
   - **global:** Mise à jour de la formulation dans les exemples ([#1532](https://github.com/assurance-maladie-digital/design-system/pull/1532)) ([5d35651](https://github.com/assurance-maladie-digital/design-system/commit/5d3565124225933ae9c879e5b8b12890c03ef466))
   - **Logo:** Mise à jour de l'API du composant ([#1546](https://github.com/assurance-maladie-digital/design-system/pull/1546)) ([cad497b](https://github.com/assurance-maladie-digital/design-system/commit/cad497b93893bfc6c7047bec948a3abf931c50ea))
-  - **HeaderBar:** Mise à jour des exemples d'utilisation ([#1547](https://github.com/assurance-maladie-digital/design-system/pull/1547))
+  - **HeaderBar:** Mise à jour des exemples d'utilisation ([#1547](https://github.com/assurance-maladie-digital/design-system/pull/1547)) ([dc1c156](https://github.com/assurance-maladie-digital/design-system/commit/dc1c1567aadd71319ae509709eb6eab52c87fb6a))
 
 ### Interne
 
