@@ -7,6 +7,7 @@
 		:max="items.length - 1"
 		:type="undefined"
 		:class="{ 'thumb-label': isThumbLabel }"
+		:style="sliderStyles"
 		color="accent"
 		tick-size="6"
 		track-color="grey lighten-1"
@@ -27,6 +28,9 @@
 
 	import { ChoiceComponent } from '../mixins/choiceComponent';
 	import { FieldValue } from '../types';
+
+	import { convertToUnit } from '@cnamts/vue-dot/src/helpers/convertToUnit';
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
 	const MixinsDeclaration = mixins(ChoiceComponent);
 
@@ -87,6 +91,22 @@
 
 		get thumbLabel(): ThumbLabelValue {
 			return this.options?.thumbLabel as ThumbLabelValue;
+		}
+
+		get thumbSizePlaceholder(): string {
+			let thumbSize = this.options?.thumbSize as number | string;
+
+			if (typeof thumbSize === 'string') {
+				thumbSize = parseInt(thumbSize);
+			}
+
+			return convertToUnit(thumbSize) as string;
+		}
+
+		get sliderStyles(): IndexedObject {
+			return {
+				paddingTop: this.thumbSizePlaceholder
+			};
 		}
 
 		/** The ticks labels (when we don't want the thumb label) */

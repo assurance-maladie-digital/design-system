@@ -24,7 +24,7 @@ Vous pouvez consulter [l’issue associée](https://github.com/vuejs/vue/issues/
 
 ### Délai
 
-En utilisant un modificateur, il est possible de modifier le délai d’exécution.
+Vous pouvez modifier le délai d’exécution en utilisant un modificateur.
 
 <doc-example file="debounce/arg"></doc-example>
 
