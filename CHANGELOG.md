@@ -11,6 +11,7 @@
   - **dependencies:** Correction de la dépendance `deepmerge` manquante ([#1512](https://github.com/assurance-maladie-digital/design-system/pull/1512)) ([1e2dbf0](https://github.com/assurance-maladie-digital/design-system/commit/1e2dbf0b1b393b1520951a30256a646632159c3a))
   - **HeaderBar:** Correction de l'affichage du nom de l'onglet courant ([#1543](https://github.com/assurance-maladie-digital/design-system/pull/1543)) ([2119915](https://github.com/assurance-maladie-digital/design-system/commit/211991567bbfeb3b355c49795b22f44a89fd7c95))
   - **HeaderBar:** Correction du comportement du menu de navigation sur les écrans mobiles ([#1544](https://github.com/assurance-maladie-digital/design-system/pull/1544)) ([f9ed7d4](https://github.com/assurance-maladie-digital/design-system/commit/f9ed7d40d751e005b41f65cc94f12ae01a3c2aff))
+  - **HeaderBar:** Correction de l'interface `NavigationItem` ([#1553](https://github.com/assurance-maladie-digital/design-system/pull/1553))
 
 - ♻️ **Refactoring**
   - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
@@ -40,7 +41,7 @@
   - **template:** Mise à jour du message par défaut lorsque JavaScript est désactivé ([#1473](https://github.com/assurance-maladie-digital/design-system/pull/1473)) ([a3f8e49](https://github.com/assurance-maladie-digital/design-system/commit/a3f8e4912a5c610a518beb935212960385185b9a))
   - **template:** Mise à jour des styles du loader ([#1513](https://github.com/assurance-maladie-digital/design-system/pull/1513)) ([262b124](https://github.com/assurance-maladie-digital/design-system/commit/262b1241e600078ee9c6f7eec31ca8b928f18cfc))
   - **config:** Ajout des nouveaux composants pour le tree-shaking de VueDot ([#1545](https://github.com/assurance-maladie-digital/design-system/pull/1545)) ([303a86c](https://github.com/assurance-maladie-digital/design-system/commit/303a86ccd434df5e6b0bad635fd291ff3fa6362f))
-  - **template:** Utilisation du composant `HeaderBar` et mise à jour du template ([#1552](https://github.com/assurance-maladie-digital/design-system/pull/1552))
+  - **template:** Utilisation du composant `HeaderBar` et mise à jour du template ([#1552](https://github.com/assurance-maladie-digital/design-system/pull/1552)) ([8c13acd](https://github.com/assurance-maladie-digital/design-system/commit/8c13acdc77837e3a9cca3c0f7d24a78ce87447bc))
 
 - 🚨 **Lint**
   - **template:** Correction des erreurs de lint lorsque i18n n'est pas installé ([#1478](https://github.com/assurance-maladie-digital/design-system/pull/1478)) ([5e50e1e](https://github.com/assurance-maladie-digital/design-system/commit/5e50e1eb53a45007d0d6bdc513fadf4600acc5d6))
