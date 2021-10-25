@@ -39,10 +39,10 @@
 			selects: {
 				theme: [
 					'default',
+					'risque-pro',
 					'cnam',
 					'ameli',
-					'ameli-pro',
-					'risque-pro'
+					'ameli-pro'
 				]
 			},
 			textFields: [

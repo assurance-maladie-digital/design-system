@@ -1,7 +1,7 @@
 <template>
 	<HeaderBar
-		service-title="Déclaration de maintien à domicile"
-		service-sub-title="Demande d’arrêts de travail"
+		service-title="Design System"
+		service-sub-title="Documentation du Design System"
 	/>
 </template>
 

@@ -11,7 +11,7 @@
 			</span>
 
 			<VIcon
-				size="40px"
+				size="32px"
 				color="grey darken-1"
 				class="ml-0 ml-sm-5"
 			>
