@@ -54,6 +54,7 @@
 
 - 🐛 **Corrections de bugs**
   - **ChoiceSliderField:** Correction des étiquettes qui masquent le titre ([#1537](https://github.com/assurance-maladie-digital/design-system/pull/1537)) ([3a18705](https://github.com/assurance-maladie-digital/design-system/commit/3a18705a7cf3e4d217cf780a47a7110333f99298))
+  - **setFormErrors:** Correction de la gestion des erreurs ([#1556](https://github.com/assurance-maladie-digital/design-system/pull/1556)) ([8e90760](https://github.com/assurance-maladie-digital/design-system/commit/8e90760bdaa9fa8716d062d1d240152a4416ded4))
 
 - ♻️ **Refactoring**
   - **tests:** Mise à jour de la formulation dans les tests ([#1468](https://github.com/assurance-maladie-digital/design-system/pull/1468)) ([bdaf37b](https://github.com/assurance-maladie-digital/design-system/commit/bdaf37b3d19b5bb36873cec43e81fa22fe62efbd))
@@ -137,7 +138,7 @@
   - **lint-staged:** Mise à jour vers la `v11.2.4` ([#1539](https://github.com/assurance-maladie-digital/design-system/pull/1539)) ([2a46083](https://github.com/assurance-maladie-digital/design-system/commit/2a4608305858fa3ea5d5baa84de77bce95f93c4a))
   - **@mdi/js:** Mise à jour vers la `v6.4.95` ([#1540](https://github.com/assurance-maladie-digital/design-system/pull/1540)) ([a74394c](https://github.com/assurance-maladie-digital/design-system/commit/a74394c052bd405658ab57ca6db78971018e410e))
   - **core-js:** Mise à jour vers la `v3.19.0` ([#1542](https://github.com/assurance-maladie-digital/design-system/pull/1542)) ([8d6c97f](https://github.com/assurance-maladie-digital/design-system/commit/8d6c97f2b908b9933b6a75e052b779755b710581))
-  - **@types/node:** Mise à jour vers la `v14.17.30` ([#1551](https://github.com/assurance-maladie-digital/design-system/pull/1551))
+  - **@types/node:** Mise à jour vers la `v14.17.31` ([#1554](https://github.com/assurance-maladie-digital/design-system/pull/1554))
 
 ## v2.0.0
 
