@@ -45,8 +45,8 @@ const itemsProp = {
 	description: 'La liste des liens de navigation à afficher.',
 	example: `{
 	label: string;
-	to?: string | Route;
-	href?: string | Route;
+	to?: string | RawLocation;
+	href?: string | string;
 }[]`
 };
 
