@@ -4,6 +4,7 @@ import FileUpload from './FileUpload';
 import FilterModule from './FilterModule';
 import FooterWrapper from './FooterWrapper';
 import LangBtn from './LangBtn';
+import HeaderBar from './HeaderBar';
 import NotificationBar from './NotificationBar';
 import PaginatedTable from './PaginatedTable';
 import SubHeader from './SubHeader';
@@ -17,6 +18,7 @@ export const patterns = {
 	FilterModule,
 	FooterWrapper,
 	LangBtn,
+	HeaderBar,
 	NotificationBar,
 	PaginatedTable,
 	SubHeader,

@@ -6,6 +6,7 @@
 	>
 		<VTabs
 			v-model="tab"
+			:vertical="mobileVersion"
 			:dark="code"
 			show-arrows
 		>
@@ -13,6 +14,7 @@
 				<VTab
 					v-for="(item) in tabs"
 					:key="item.value"
+					:class="tabClasses"
 					v-text="item.label"
 					@click="setHash(item.value)"
 				/>
@@ -21,7 +23,9 @@
 
 		<VTabsItems
 			v-model="tab"
+			:vertical="mobileVersion"
 			:class="{ 'pt-8': !code }"
+			touchless
 		>
 			<slot
 				v-for="slot in Object.keys($slots)"
@@ -42,6 +46,8 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { VNodeComponentOptions } from 'vue/types/vnode';
+
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
 	import { slugify } from '../../functions/slugify';
 
@@ -110,6 +116,25 @@
 			return this.code ? undefined : this.namespace;
 		}
 
+		get mobileVersion(): boolean {
+			if (this.code) {
+				return false;
+			}
+
+			return this.$vuetify.breakpoint.xs;
+		}
+
+		get tabClasses(): IndexedObject<boolean> {
+			return {
+				'justify-start': this.mobileVersion,
+				'grey lighten-5': this.mobileVersion
+			}
+		}
+
+		get activeClass(): string | undefined {
+			return this.mobileVersion ? 'primary lighten-5': undefined;
+		}
+
 		findTabIndex(value: string): number | undefined {
 			return this.tabs?.findIndex((tab) => tab.value === value);
 		}
@@ -149,6 +174,8 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
 	.doc-tabs ::v-deep {
 		.v-window {
 			overflow: visible;
@@ -170,6 +197,10 @@
 
 			&.theme--dark::after {
 				background: hsla(0, 0%, 100%, .3);
+			}
+
+			&--vertical .v-tab--active {
+				background: rgba($vd-primary, .1) !important;
 			}
 		}
 	}

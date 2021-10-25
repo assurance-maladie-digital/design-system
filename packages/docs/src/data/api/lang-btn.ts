@@ -33,12 +33,12 @@ export const api: Api = {
 				description: 'La langue sélectionnée.'
 			},
 			...customizable(`{
-				menu: 'VMenu',
-				btn: 'VBtn',
-				icon: 'VIcon',
-				list: 'VList',
-				listItem: 'VListItem',
-				listItemTitle: 'VListItemTitle'
+	menu: 'VMenu',
+	btn: 'VBtn',
+	icon: 'VIcon',
+	list: 'VList',
+	listItem: 'VListItem',
+	listItemTitle: 'VListItemTitle'
 }`)
 		],
 		events: [

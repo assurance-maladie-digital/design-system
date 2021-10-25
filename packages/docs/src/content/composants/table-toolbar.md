@@ -31,7 +31,7 @@ Vous pouvez afficher le composant en mode chargement en utilisant la prop `loadi
 
 ### Textes par défaut
 
-Il est possible de modifier le texte du nombre de lignes en utilisant la prop `row-text` (la marque du pluriel est ajoutée automatiquement).
+Vous pouvez modifier le texte du nombre de lignes en utilisant la prop `row-text` (la marque du pluriel est ajoutée automatiquement).
 
 Il est également possible de modifier le texte du champ *Recherche* en utilisant la prop `search-label` ainsi que celui du bouton *Ajouter* en utilisant la prop `add-btn-label`.
 
