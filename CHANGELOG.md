@@ -9,7 +9,8 @@
 
 - 🐛 **Corrections de bugs**
   - **dependencies:** Correction de la dépendance `deepmerge` manquante ([#1512](https://github.com/assurance-maladie-digital/design-system/pull/1512)) ([1e2dbf0](https://github.com/assurance-maladie-digital/design-system/commit/1e2dbf0b1b393b1520951a30256a646632159c3a))
-  - **HeaderBar:** Correction de l'affichage du nom de l'onglet courant ([#1512](https://github.com/assurance-maladie-digital/design-system/pull/1512))
+  - **HeaderBar:** Correction de l'affichage du nom de l'onglet courant ([#1543](https://github.com/assurance-maladie-digital/design-system/pull/1543)) ([63ec5c3](https://github.com/assurance-maladie-digital/design-system/commit/63ec5c39c92958a248a72101fbeae2d5e93a0460))
+  - **HeaderBar:** Correction du comportement du menu de navigation sur les écrans mobiles ([#1544](https://github.com/assurance-maladie-digital/design-system/pull/1544))
 
 - ♻️ **Refactoring**
   - **global:** Utilisation du caractère apostrophe ([#1467](https://github.com/assurance-maladie-digital/design-system/pull/1467)) ([3b12700](https://github.com/assurance-maladie-digital/design-system/commit/3b127009e68426616402ed2ec26efa74bc77403b))
