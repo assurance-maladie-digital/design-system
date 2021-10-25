@@ -2,13 +2,13 @@
 	<div>
 		<HeaderBar theme="default" />
 
+		<HeaderBar theme="risque-pro" />
+
 		<HeaderBar theme="cnam" />
 
 		<HeaderBar theme="ameli" />
 
 		<HeaderBar theme="ameli-pro" />
-
-		<HeaderBar theme="risque-pro" />
 	</div>
 </template>
 
