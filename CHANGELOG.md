@@ -40,13 +40,14 @@
   - **template:** Mise à jour du message par défaut lorsque JavaScript est désactivé ([#1473](https://github.com/assurance-maladie-digital/design-system/pull/1473)) ([a3f8e49](https://github.com/assurance-maladie-digital/design-system/commit/a3f8e4912a5c610a518beb935212960385185b9a))
   - **template:** Mise à jour des styles du loader ([#1513](https://github.com/assurance-maladie-digital/design-system/pull/1513)) ([262b124](https://github.com/assurance-maladie-digital/design-system/commit/262b1241e600078ee9c6f7eec31ca8b928f18cfc))
   - **config:** Ajout des nouveaux composants pour le tree-shaking de VueDot ([#1545](https://github.com/assurance-maladie-digital/design-system/pull/1545)) ([303a86c](https://github.com/assurance-maladie-digital/design-system/commit/303a86ccd434df5e6b0bad635fd291ff3fa6362f))
+  - **template:** Utilisation du composant `HeaderBar` et mise à jour du template ([#1552](https://github.com/assurance-maladie-digital/design-system/pull/1552))
 
 - 🚨 **Lint**
   - **template:** Correction des erreurs de lint lorsque i18n n'est pas installé ([#1478](https://github.com/assurance-maladie-digital/design-system/pull/1478)) ([5e50e1e](https://github.com/assurance-maladie-digital/design-system/commit/5e50e1eb53a45007d0d6bdc513fadf4600acc5d6))
   - **global:** Correction des erreurs de lint ([#1534](https://github.com/assurance-maladie-digital/design-system/pull/1534)) ([b31684f](https://github.com/assurance-maladie-digital/design-system/commit/b31684fadbab0a1e4ae9df71219e617b4ed4962c))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#1550](https://github.com/assurance-maladie-digital/design-system/pull/1550))
+  - **template:** Mise à jour des dépendances ([#1550](https://github.com/assurance-maladie-digital/design-system/pull/1550)) ([f07aeee](https://github.com/assurance-maladie-digital/design-system/commit/f07aeee55a1f1698ea2cda4ebe5ef733191d14d4))
 
 ### FormBuilder
 

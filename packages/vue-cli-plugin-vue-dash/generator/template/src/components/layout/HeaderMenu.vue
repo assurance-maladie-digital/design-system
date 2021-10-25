@@ -8,24 +8,22 @@
 	>
 		<template #activator="{ on }">
 			<VBtn
-				class="text-left text-none px-4 mr-4"
-				text
-				large
+				:elevation="0"
+				:icon="$vuetify.breakpoint.xsOnly"
+				width="auto"
+				height="auto"
+				class="pa-0 px-sm-3 py-sm-2"
 				v-on="on"
 			>
-				<VLayout
-					tag="span"
-					class="text-right"
-					column
-				>
+				<span class="d-none d-sm-inline-flex flex-column justify-start text-right text-none">
 					<b><% if (i18n) { %>{{ $t('components.layout.headerMenu.user') }}<% } else { %>Utilisateur<% } %></b>
 					<% if (i18n) { %>{{ $t('components.layout.headerMenu.role') }}<% } else { %>Développeur<% } %>
-				</VLayout>
+				</span>
 
 				<VIcon
 					size="32px"
 					color="grey darken-1"
-					class="ml-2 pa-1"
+					class="ml-0 ml-sm-5"
 				>
 					{{ userIcon }}
 				</VIcon>
@@ -70,11 +68,11 @@
 
 	import { RawLocation } from 'vue-router';
 
-	import { mdiAccount, mdiLogoutVariant } from '@mdi/js';
+	import { mdiAccountCircle, mdiLogoutVariant } from '@mdi/js';
 
 	interface LinkItem {
 		title: string;
-		disabled: boolean;
+		disabled?: boolean;
 		to?: RawLocation;
 	}
 
@@ -82,7 +80,7 @@
 	@Component
 	export default class HeaderMenu extends Vue {
 		// Icons
-		userIcon = mdiAccount;
+		userIcon = mdiAccountCircle;
 		logoutIcon = mdiLogoutVariant;
 
 		<% if (i18n) { %>get links(): LinkItem[] {
@@ -92,8 +90,7 @@
 				title: 'Accueil',
 				to: {
 					name: 'home'
-				},
-				disabled: false
+				}
 			}
 		];<% } %>
 	}

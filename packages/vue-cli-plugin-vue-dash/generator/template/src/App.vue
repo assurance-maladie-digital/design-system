@@ -3,8 +3,6 @@
 	<VApp v-cloak>
 		<AppHeader />
 
-		<AppToolbar v-if="!$maintenanceEnabled" />
-
 		<NotificationBar<% if (cypress) { %> data-cy="notificationBar"<% } %> />
 
 		<VMain>
@@ -29,13 +27,12 @@
 	import { Meta, MetaInfo } from '@/decorators';
 
 	// Static import for faster rendering
-	import { AppHeader, AppToolbar, AppFooter } from '@/components/layout';
+	import { AppHeader, AppFooter } from '@/components/layout';
 
 	/** App is the main component */
 	@Component({
 		components: {
 			AppHeader,
-			AppToolbar,
 			AppFooter
 		}
 	})

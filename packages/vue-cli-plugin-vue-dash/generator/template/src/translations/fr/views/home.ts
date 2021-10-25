@@ -6,7 +6,7 @@ export default {
 	title: 'Premiers pas',
 	description: {
 		block1: 'Vous venez de créer une nouvelle application front-end avec Vue Dash.',
-		block2: 'Tout est prêt, vous pouvez dès à présent commencer à développer !'
+		block2: 'Tout est prêt, vous pouvez commencer à développer\xa0!'
 	},
 	about: {
 		label: 'À propos'
