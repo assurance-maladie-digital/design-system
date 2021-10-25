@@ -1,8 +1,8 @@
 import { Context } from '@nuxt/types';
-import { contentFunc, IContentDocument } from '@nuxt/content/types/content';
+import { contentFunc, IContentDocumentBase } from '@nuxt/content/types/content';
 
 export type ContentFunction = contentFunc;
-export type ContentDocument = IContentDocument;
+export type ContentDocument = IContentDocumentBase;
 
 export interface AsyncDataParams extends Context {
 	$content: ContentFunction;
