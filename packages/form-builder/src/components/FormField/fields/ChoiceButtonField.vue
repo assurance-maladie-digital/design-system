@@ -1,26 +1,26 @@
 <template>
 	<div
-		class="vd-choice-button-field"
 		:class="{ 'vd-form-input': !isInline }"
+		class="vd-choice-button-field"
 	>
 		<VBtnToggle
 			v-bind="options"
 			:value="choiceFieldValue"
 			:multiple="multiple"
 			:type="undefined"
-			:class="{ 'column': !isInline }"
-			class="vd-choice-button-field-toggle layout wrap accent--text"
+			:class="{ 'flex-column': !isInline }"
+			class="vd-choice-button-field-toggle d-flex flex-wrap accent--text"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"
 				:key="index"
 				:value="item.value"
 				:outlined="!isSelected(item.value)"
-				elevation="0"
+				:elevation="0"
 				height="auto"
-				min-height="40"
+				min-height="40px"
 				active-class="white--text"
-				class="text-none text-wrap py-2 text-left"
+				class="text-none text-wrap text-left py-2"
 				color="accent"
 				@click="toggleItem(item)"
 			>
@@ -31,8 +31,8 @@
 				<VSpacer />
 
 				<VIcon
-					:style="getIconStyle(item)"
-					class="ml-1 white--text flex-shrink-0"
+					:style="getIconStyles(item)"
+					class="white--text flex-shrink-0 ml-1"
 				>
 					{{ checkIcon }}
 				</VIcon>
@@ -43,19 +43,21 @@
 			<p
 				v-for="(errorMessage, index) in errorMessages"
 				:key="index"
-				class="px-3 mt-2 mb-0 v-messages error--text"
 				:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
+				class="v-messages error--text px-3 mt-2 mb-0"
 			>
 				{{ errorMessage }}
 			</p>
 		</template>
 
 		<p
-			v-else-if="showHint"
-			class="px-3 mt-2 mb-0 v-messages"
+			v-else
 			:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
+			class="v-messages px-3 mt-2 mb-0"
 		>
-			{{ options.hint }}
+			<span v-if="showHint">
+				{{ options.hint }}
+			</span>
 		</p>
 	</div>
 </template>
@@ -72,7 +74,6 @@
 
 	const MixinsDeclaration = mixins(ChoiceComponent);
 
-	/** Form field to select a value from a list */
 	@Component
 	export default class ChoiceButtonField extends MixinsDeclaration {
 		checkIcon = mdiCheck;
@@ -116,7 +117,7 @@
 			return null;
 		}
 
-		getIconStyle(item: FieldItem): IndexedObject {
+		getIconStyles(item: FieldItem): IndexedObject {
 			return {
 				visibility: this.isSelected(item.value) ? 'visible' : 'hidden'
 			};
@@ -130,7 +131,7 @@
 	.vd-choice-button-field-toggle {
 		background: none !important;
 
-		&.column .v-btn {
+		&.flex-column .v-btn {
 			border-radius: 4px !important;
 			border-width: 1px !important;
 
@@ -144,6 +145,10 @@
 
 			&.v-btn--active::before {
 				opacity: 0 !important;
+			}
+
+			::v-deep .v-btn__content {
+				flex-shrink: 1 !important;
 			}
 		}
 
