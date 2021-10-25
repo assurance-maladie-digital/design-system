@@ -9,19 +9,19 @@ export const api: Api = {
 				name: 'hide-signature',
 				type: 'boolean',
 				default: false,
-				description: 'Masque la signature « Agir ensemble, protéger chacun ».'
+				description: 'Masque la signature (*Agir ensemble, protéger chacun*).'
 			},
 			{
 				name: 'hide-organism',
 				type: 'boolean',
 				default: false,
-				description: 'Masque l’ombrelle « Sécurité Sociale ».'
+				description: 'Masque l’ombrelle (*Sécurité Sociale*).'
 			},
 			{
 				name: 'risque-pro',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche la version « Risques Professionnels ».'
+				description: 'Affiche la version (*Risques Professionnels)*.'
 			},
 			{
 				name: 'dark',
