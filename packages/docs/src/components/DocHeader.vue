@@ -1,56 +1,67 @@
 <template>
-	<VAppBar
+	<HeaderBar
 		app
 		fixed
-		height="80"
 		clipped-left
-		color="white"
-		class="doc-header flex-grow-0"
+		service-title="Design System"
+		@click="emitDrawerEvent"
 	>
-		<VAppBarNavIcon
-			:aria-label="drawerActionLabel"
-			class="ml-2 ml-sm-3 hidden-lg-and-up"
-			@click="emitDrawerEvent"
-		/>
-
-		<div class="doc-header-logo px-2">
-			<img
-				src="~/assets/logo-am-no-text.svg"
-				alt="l’Assurance Maladie"
-				width="156"
+		<template #navigation-bar-content>
+			<div
+				v-if="!$vuetify.breakpoint.lgAndUp"
+				class="d-flex align-center"
 			>
-		</div>
+				<VBtn
+					:aria-label="menuBtnActionLabel"
+					:elevation="0"
+					width="36px"
+					height="36px"
+					icon
+					class="mx-n2"
+					@click="emitDrawerEvent"
+				>
+					<VIcon>
+						{{ menuIcon }}
+					</VIcon>
+				</VBtn>
 
-		<VDivider
-			class="d-none d-md-block"
-			vertical
-			inset
-		/>
-
-		<VToolbarTitle class="d-none d-md-block text-h6 ml-4">
-			Design System
-		</VToolbarTitle>
-	</VAppBar>
+				<h2
+					v-if="menuBtnLabel"
+					class="text-body-2 text-sm-subtitle-1 ml-4"
+				>
+					{{ menuBtnLabel }}
+				</h2>
+			</div>
+		</template>
+	</HeaderBar>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { mdiMenu } from '@mdi/js';
+
 	const Props = Vue.extend({
 		props: {
 			drawer: {
 				type: Boolean,
 				default: false
+			},
+			menuBtnLabel: {
+				type: String,
+				default: undefined
 			}
 		}
-	})
+	});
 
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
 	export default class DocHeader extends MixinsDeclaration {
-		get drawerActionLabel(): string {
+		menuIcon = mdiMenu;
+
+		get menuBtnActionLabel(): string {
 			const action = this.drawer ? 'Masquer' : 'Afficher';
 
 			return `${action} le menu`;
@@ -61,20 +72,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.doc-header ::v-deep .v-toolbar__content {
-		padding: 0;
-	}
-
-	.doc-header-logo,
-	.doc-header-title {
-		height: 100%;
-	}
-
-	.doc-header-logo {
-		min-width: 172px;
-		display: flex;
-		align-items: center;
-	}
-</style>
