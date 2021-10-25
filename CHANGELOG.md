@@ -56,7 +56,7 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Affichage des onglets vertical sur les écrans mobiles ([#1541](https://github.com/assurance-maladie-digital/design-system/pull/1541)) ([3061254](https://github.com/assurance-maladie-digital/design-system/commit/30612541d8d63ceeb528263f4ce3aa827b40efe4))
+  - **global:** Affichage des onglets en mode vertical sur les écrans mobiles ([#1541](https://github.com/assurance-maladie-digital/design-system/pull/1541)) ([3061254](https://github.com/assurance-maladie-digital/design-system/commit/30612541d8d63ceeb528263f4ce3aa827b40efe4))
 
 - 🐛 **Corrections de bugs**
   - **global:** Correction de l'URL des fonctions et du fichier `.env` manquant ([#1418](https://github.com/assurance-maladie-digital/design-system/pull/1418)) ([9e36413](https://github.com/assurance-maladie-digital/design-system/commit/9e36413fbb10527de33d7485e9d54ea7f6b96407))
@@ -67,7 +67,8 @@
 - ♻️ **Refactoring**
   - **introduction:** Mise à jour des icônes ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([c30816b](https://github.com/assurance-maladie-digital/design-system/commit/c30816b2c989cf7a53b3dfcb1cfcbe6047698cdf))
   - **DocHeader:** Utilisation du composant `HeaderBar` ([#1533](https://github.com/assurance-maladie-digital/design-system/pull/1533)) ([c58a3bd](https://github.com/assurance-maladie-digital/design-system/commit/c58a3bd2559e9aeb50309255b9bf1c6bc31d5f9a))
-  - **DocExample:** Désactivation des fonctionnalités tactiles ([#1548](https://github.com/assurance-maladie-digital/design-system/pull/1548))
+  - **DocExample:** Désactivation des fonctionnalités tactiles ([#1548](https://github.com/assurance-maladie-digital/design-system/pull/1548)) ([9590e83](https://github.com/assurance-maladie-digital/design-system/commit/9590e83e88fe3afcaad8a4a8aade4f1b84cb47a0))
+  - **global:** Désactivation de la transition verticale sur les écrans mobiles ([#1549](https://github.com/assurance-maladie-digital/design-system/pull/1549))
 
 - 🔥 **Suppressions**
   - **header:** Suppression de la recherche ne fonctionnant pas ([#1434](https://github.com/assurance-maladie-digital/design-system/pull/1434)) ([d30aa2b](https://github.com/assurance-maladie-digital/design-system/commit/d30aa2b60afccbef78a093612996c08159740bc0))

@@ -8,7 +8,6 @@
 			v-model="tab"
 			:vertical="mobileVersion"
 			:dark="code"
-			show-arrows
 		>
 			<ClientOnly>
 				<VTab
@@ -23,7 +22,6 @@
 
 		<VTabsItems
 			v-model="tab"
-			:vertical="mobileVersion"
 			:class="{ 'pt-8': !code }"
 			touchless
 		>
