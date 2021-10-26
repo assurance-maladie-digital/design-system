@@ -1,13 +1,10 @@
 <template>
 	<VNavigationDrawer
 		v-if="isMobile"
-		v-click-outside="clickOutside"
-		v-touch="{
-			left: () => emitChangeEvent
-		}"
 		v-bind="options.navigationDrawer"
 		:value="drawer"
 		:color="backgroundColor"
+		@input="drawerUpdated"
 	>
 		<slot>
 			<div class="d-flex align-center justify-end mb-8">
@@ -98,25 +95,19 @@
 			return colorMapping[this.theme];
 		}
 
+		drawerUpdated(value: boolean): void {
+			// Emit change event only when closing the drawer
+			if (value === false) {
+				this.$emit('change', false);
+			}
+		}
+
 		emitChangeEvent(): void {
 			this.$emit('change', !this.drawer);
 		}
 
 		emitTabUpdateEvent(value: number): void {
 			this.$emit('update:tab', value);
-		}
-
-		clickOutside(e: MouseEvent): void {
-			if (!e.target) {
-				return;
-			}
-
-			const target = e.target as Element;
-			const targetOverlay = target.className === 'v-overlay__scrim';
-
-			if (targetOverlay) {
-				this.emitChangeEvent();
-			}
 		}
 	}
 </script>
