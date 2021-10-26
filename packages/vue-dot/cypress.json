@@ -1,0 +1,12 @@
+{
+	"component": {
+		"pluginsFile": "tests/e2e/plugins/index.js",
+		"supportFile": "tests/e2e/support",
+		"downloadsFolder": "tests/e2e/downloads",
+		"screenshotsFolder": "tests/e2e/screenshots",
+		"videosFolder":"tests/e2e/videos",
+		"fixturesFolder": "tests/e2e/fixtures",
+		"componentFolder": "tests/e2e",
+		"testFiles": "integration/*.spec.ts"
+	}
+}

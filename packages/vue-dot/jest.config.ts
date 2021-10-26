@@ -4,7 +4,7 @@ const config: Config.InitialOptions = {
 	preset: '@vue/cli-plugin-unit-jest/presets/typescript',
 	testMatch: [
 		'<rootDir>/src/**/tests/*.spec.ts',
-		'<rootDir>/tests/**/*.spec.ts'
+		'<rootDir>/tests/unit/**/*.spec.ts'
 	],
 	moduleNameMapper: {
 		'^@/tests$': '<rootDir>/tests/index.ts',

@@ -15,6 +15,9 @@
   - **FranceConnectBtn:** Ajout d'un label sur le bouton et amélioration du style au focus ([#1508](https://github.com/assurance-maladie-digital/design-system/pull/1508)) ([a6115cb](https://github.com/assurance-maladie-digital/design-system/commit/a6115cb21fb55e7561e11f4755aa65beae8f9b73))
   - **NotificationBar:** Ajout de l'attribut ARIA `role` ([#1509](https://github.com/assurance-maladie-digital/design-system/pull/1509)) ([56cf6e7](https://github.com/assurance-maladie-digital/design-system/commit/56cf6e790a052c8bf75bc324b0cf9dccc31d40c6))
 
+- ✅ **Tests**
+  - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**

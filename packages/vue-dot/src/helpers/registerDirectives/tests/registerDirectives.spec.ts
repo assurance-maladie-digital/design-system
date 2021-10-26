@@ -2,7 +2,7 @@ import Vue, { DirectiveOptions } from 'vue';
 
 import { registerDirectives, Directives } from '../';
 
-import { getDirectives } from '@/tests/integration/utils';
+import { getDirectives } from '@/tests/unit/integration/utils';
 
 /** Create basic test component */
 function createTestDirective() {

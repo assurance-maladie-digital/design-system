@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"target": "es5",
+		"lib": [
+			"es5",
+			"dom"
+		],
+		"types": [
+			"./types",
+			"cypress"
+		],
+		"paths": {
+			"@/*": [
+				"../../src/*"
+			]
+		}
+	},
+	"include": [
+		"**/*.ts",
+		"../node_modules/cypress"
+	]
+}

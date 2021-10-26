@@ -7,6 +7,7 @@
 		>
 			<template #activator="{ on }">
 				<VBtn
+					data-cy="v-btn"
 					v-bind="options.btn"
 					:aria-label="label"
 					v-on="on"

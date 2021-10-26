@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@3.2.0
+  cypress: cypress-io/cypress@1.29.0
 
 defaults: &defaults
   working_directory: ~/project
@@ -41,6 +42,7 @@ jobs:
           root: ~/
           paths:
             - ./project
+            - ./.cache/Cypress
   lint:
     <<: *defaults
     steps:

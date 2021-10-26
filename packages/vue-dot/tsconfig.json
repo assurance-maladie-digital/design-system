@@ -8,6 +8,9 @@
 			"content-disposition"
 		],
 		"paths": {
+			"@/*": [
+				"./src/*"
+			],
 			"@/tests/*": [
 				"tests/*"
 			],
@@ -22,12 +25,12 @@
 		"dev/**/*.vue",
 		"src/**/*.ts",
 		"src/**/*.vue",
-		"tests/**/*.ts",
 		"types/**/*.ts",
 		"scripts/**/*.ts",
 		"*.json"
 	],
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"tests/e2e"
 	]
 }
