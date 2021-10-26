@@ -6,6 +6,7 @@
 		:multiple="multiple"
 		:search-input.sync="searchInput"
 		:type="undefined"
+		:error-messages="errorMessages"
 		class="vd-form-input"
 		@change="valueUpdated"
 	/>

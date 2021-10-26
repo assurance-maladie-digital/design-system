@@ -103,20 +103,6 @@
 			return Boolean(this.options?.hint);
 		}
 
-		get errorMessages(): string[] | null {
-			const errorMessages = this.options?.errorMessages;
-
-			if (typeof errorMessages === 'string') {
-				return [errorMessages];
-			}
-
-			if (Array.isArray(errorMessages) && errorMessages.length) {
-				return errorMessages;
-			}
-
-			return null;
-		}
-
 		getIconStyles(item: FieldItem): IndexedObject {
 			return {
 				visibility: this.isSelected(item.value) ? 'visible' : 'hidden'
