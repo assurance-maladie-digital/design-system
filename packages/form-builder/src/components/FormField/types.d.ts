@@ -40,7 +40,7 @@ export interface FieldItem {
 }
 
 export interface FieldOptions {
-	errorMessages?: ErrorMessages | PeriodErrorMessages;
+	errorMessages?: ErrorMessages | ChoiceFieldErrorMessages | PeriodErrorMessages;
 	[key: string]: unknown;
 }
 

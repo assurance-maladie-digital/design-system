@@ -8,6 +8,7 @@
 		:type="undefined"
 		:class="{ 'thumb-label': isThumbLabel }"
 		:style="sliderStyles"
+		:error-messages="errorMessages"
 		color="accent"
 		tick-size="6"
 		track-color="grey lighten-1"
