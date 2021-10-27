@@ -16,21 +16,19 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { SizeEnum, SIZE_ENUM_VALUES } from './SizeEnum';
+
 	import { IndexedObject } from '../../types';
+
+	import { propValidator } from '../../helpers/propValidator';
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * The size of the container
-			 *
-			 * @default xl
-			 */
+			/** The size of the container */
 			size: {
 				type: String,
-				default: 'xl',
-				validator(value) {
-					return ['xl', 'l', 'm', 's'].includes(value.toLowerCase());
-				}
+				default: SizeEnum.X_LARGE,
+				validator: (value: string) => propValidator('size', SIZE_ENUM_VALUES, value)
 			},
 			/** Overwrite default spacing */
 			spacing: {
@@ -69,10 +67,10 @@
 
 		get containerSize(): number {
 			const containerWidth: IndexedObject<number> = {
-				xl: 1440,
-				l: 960,
-				m: 800,
-				s: 600
+				[SizeEnum.X_LARGE]: 1440,
+				[SizeEnum.LARGE]: 960,
+				[SizeEnum.MEDIUM]: 800,
+				[SizeEnum.SMALL]: 600
 			};
 
 			return containerWidth[this.size];

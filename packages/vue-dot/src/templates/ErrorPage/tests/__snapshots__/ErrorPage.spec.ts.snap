@@ -11,7 +11,7 @@ exports[`ErrorPage renders correctly 1`] = `
     <div class="d-flex mt-6">
       <vspacer-stub></vspacer-stub>
       <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button">
-        Retour à l'accueil
+        Retour à l’accueil
       </vbtn-stub>
     </div>
   </vcard-stub>

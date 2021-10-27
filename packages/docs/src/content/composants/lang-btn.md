@@ -27,7 +27,7 @@ Vous pouvez modifier les langues disponibles dans la liste en utilisant la prop 
 
 ### Composants Vuetify
 
-Vous pouvez personnaliser les composants Vuetify contenus dans l’élement `LangBtn` en utilisant la prop `vuetify-options`.
+Vous pouvez personnaliser les composants Vuetify contenus dans l’élément `LangBtn` en utilisant la prop `vuetify-options`.
 
 <doc-example file="lang-btn/options"></doc-example>
 

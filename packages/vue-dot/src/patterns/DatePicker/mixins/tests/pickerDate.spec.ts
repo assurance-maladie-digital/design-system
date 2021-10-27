@@ -43,12 +43,14 @@ describe('PickerDate', () => {
 		expect(wrapper.emitted('update:picker-date')).toBeTruthy();
 	});
 
-	it('sets the default value to 1990 on birthdate mode', () => {
+	it('sets the default value to 1990 on birthdate mode', async() => {
 		const wrapper = createWrapper(undefined, true);
 
 		expect(wrapper.vm.internalPickerDate).toBe('1990-01');
 
-		wrapper.vm.pickerDate = '2021-04';
+		await wrapper.setProps({
+			pickerDate: '2021-04'
+		});
 
 		expect(wrapper.vm.internalPickerDate).toBe('2021-04');
 	});

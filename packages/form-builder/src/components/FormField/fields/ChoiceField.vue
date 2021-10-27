@@ -7,6 +7,7 @@
 			:items="field.items"
 			:options="fieldOptions"
 			:multiple="field.multiple"
+			:error-messages="errorMessages.value"
 			@change="choiceUpdated"
 		/>
 
@@ -19,7 +20,7 @@
 				<div v-if="showOtherTextareaField">
 					<h4
 						v-if="otherField.label"
-						class="mb-1 body-1"
+						class="text-body-1 mb-1"
 					>
 						{{ otherField.label }}
 					</h4>
@@ -30,9 +31,10 @@
 						:value="otherFieldValue"
 						:disabled="!otherActive"
 						:rows="1"
-						class="vd-form-input"
+						:error-messages="errorMessages.other"
 						auto-grow
 						outlined
+						class="vd-form-input"
 						@change="otherUpdated"
 					/>
 				</div>
@@ -44,10 +46,11 @@
 				:value="otherFieldValue"
 				:background-color="otherFieldValue ? 'accent' : undefined"
 				:dark="Boolean(otherFieldValue)"
-				class="vd-form-input"
+				:error-messages="errorMessages.other"
 				color="accent"
 				dense
 				outlined
+				class="vd-form-input"
 				@input="setOtherValue"
 				@change="otherUpdated"
 			/>
@@ -64,7 +67,7 @@
 
 	import { IFieldMap } from '../mixins/fieldMap';
 
-	import { ChoiceValue, OtherFieldValue, ChoiceFieldValue, OtherField } from '../types';
+	import { ChoiceValue, OtherFieldValue, ChoiceFieldValue, OtherField, ChoiceFieldErrorMessages } from '../types';
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
@@ -191,6 +194,38 @@
 			const metadataType = this.field.fieldOptions?.type as string || undefined;
 
 			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
+		}
+
+		get errorMessages(): ChoiceFieldErrorMessages {
+			const errorMessages = this.fieldOptions?.errorMessages;
+
+			if (typeof errorMessages === 'string') {
+				return {
+					value: [errorMessages],
+					other: undefined
+				};
+			}
+
+			if (Array.isArray(errorMessages)) {
+				return {
+					value: errorMessages,
+					other: undefined
+				};
+			}
+
+			if (typeof errorMessages === 'object') {
+				let { value, other } = errorMessages as ChoiceFieldErrorMessages;
+
+				value = typeof value === 'string' ? [value] : value;
+				other = typeof other === 'string' ? [other] : other;
+
+				return {
+					value,
+					other
+				};
+			}
+
+			return {};
 		}
 
 		/**

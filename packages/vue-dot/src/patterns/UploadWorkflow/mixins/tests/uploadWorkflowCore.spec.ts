@@ -148,7 +148,7 @@ describe('EventsFileFired', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t closes and resets the dialog form if valid', async() => {
+	it('does not closes and resets the dialog form if valid', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 
 		wrapper.vm.$refs.form.validate = jest.fn().mockReturnValue(false);

@@ -8,8 +8,8 @@ import {
 	MountOptions,
 	ShallowMountOptions,
 	Wrapper,
-	VueClass,
-	config
+	VueClass<% if (i18n) { %>,
+	config<% } %>
 } from '@vue/test-utils';
 
 import { addVApp } from '@cnamts/vue-dot/tests/utils/addVApp';<% if (i18n) { %>

@@ -22,6 +22,7 @@ module.exports = {
 		'!**/node_modules/**',
 		'!**/*.d.ts',
 		'!**/decorators.ts',
+		'!**/constants/**',
 		'!**/router/**',
 		'!**/main.ts',
 		'!**/theme/**',

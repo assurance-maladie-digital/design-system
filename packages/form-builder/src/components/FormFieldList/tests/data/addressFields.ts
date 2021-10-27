@@ -56,7 +56,7 @@ export const addressFields: Fields = {
 		type: 'text',
 		value: null,
 		fieldOptions: {
-			label: 'Complément d\'adresse',
+			label: 'Complément d’adresse',
 			outlined: true
 		}
 	},
