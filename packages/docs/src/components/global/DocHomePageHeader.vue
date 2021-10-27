@@ -28,8 +28,8 @@
 						<img
 							src="https://www.netlify.com/img/global/badges/netlify-light.svg"
 							alt="Déploiement par Netlify"
-							width="93px"
-							height="42px"
+							width="93"
+							height="42"
 						/>
 					</a>
 

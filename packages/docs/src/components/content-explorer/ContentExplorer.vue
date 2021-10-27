@@ -84,10 +84,10 @@
 	} from '@mdi/js';
 
 	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
-	import { IContentDocument } from '@nuxt/content/types/content';
 	import { TreeviewItem } from './types';
 
 	import { Fetch } from '../../decorators';
+	import { Content, ContentDocument } from '../../types/content';
 
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
@@ -98,8 +98,6 @@
 	const ESCAPED_DOT_FILE_CHAR = '_';
 
 	const basePath = '/explorer/';
-
-	type Content = IContentDocument[];
 
 	const Props = Vue.extend({
 		props: {
@@ -141,7 +139,7 @@
 			txt: mdiFileDocumentOutline
 		};
 
-		document: IContentDocument | null = null;
+		document: ContentDocument | null = null;
 
 		tree: IndexedObject[] = [];
 		activeItem: IndexedObject[] = [];

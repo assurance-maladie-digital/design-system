@@ -7,8 +7,7 @@ export default {
 			title: 'Accueil',
 			to: {
 				name: 'home'
-			},
-			disabled: false
+			}
 		}
 	]
 };

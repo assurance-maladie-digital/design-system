@@ -5,6 +5,10 @@ import { ChoiceFieldValue, FieldItem, FieldOptions, FieldItemValue } from '../ty
 
 const Props = Vue.extend({
 	props: {
+		items: {
+			type: Array as PropType<FieldItem[]>,
+			required: true
+		},
 		/** The choice field value */
 		value: {
 			type: [Array, Number, String] as PropType<ChoiceFieldValue>,
@@ -18,9 +22,9 @@ const Props = Vue.extend({
 			type: Boolean,
 			default: false
 		},
-		items: {
-			type: Array as PropType<FieldItem[]>,
-			required: true
+		errorMessages: {
+			type: [String, Array, Object],
+			default: null
 		}
 	}
 });
