@@ -38,6 +38,9 @@
 - ♻️ **Refactoring**
   - **introduction:** Mise à jour des icônes ([#1335](https://github.com/assurance-maladie-digital/design-system/pull/1335)) ([c30816b](https://github.com/assurance-maladie-digital/design-system/commit/c30816b2c989cf7a53b3dfcb1cfcbe6047698cdf))
 
+- 🔧 **Configuration**
+  - **variables d’environnement:** modification de la configuration de dotenv ([#2568](https://github.com/assurance-maladie-digital/design-system/pull/1568)) ([80d752f](https://github.com/assurance-maladie-digital/design-system/commit/80d752f43677a48f3a126dc57d4b572f411e6e38))
+
 - 🔥 **Suppressions**
   - **header:** Suppression de la recherche ne fonctionnant pas ([#1434](https://github.com/assurance-maladie-digital/design-system/pull/1434)) ([d30aa2b](https://github.com/assurance-maladie-digital/design-system/commit/d30aa2b60afccbef78a093612996c08159740bc0))
 
