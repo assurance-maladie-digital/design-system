@@ -3,7 +3,8 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **lint-staged:** Mise à jour vers la `v11.2.6` ([#1565](https://github.com/assurance-maladie-digital/design-system/pull/1565))
+  - **lint-staged:** Mise à jour vers la `v11.2.6` ([#1565](https://github.com/assurance-maladie-digital/design-system/pull/1565)) ([5a8d597](https://github.com/assurance-maladie-digital/design-system/commit/5a8d597d9a7b66477752a0c6da2fec0d43ff76d5))
+  - **vue-router:** Mise à jour vers la `v3.5.3` ([#1566](https://github.com/assurance-maladie-digital/design-system/pull/1566))
 
 ## v2.1.0
 
