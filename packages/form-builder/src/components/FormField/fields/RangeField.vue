@@ -6,10 +6,10 @@
 				sm="6"
 			>
 				<VTextField
-					v-model="rangeValue[1]"
-					:label="maxLabel"
+					:value="rangeValue[0]"
+					:label="minLabel"
 					outlined
-					@change="emitChangeEvent(rangeValue)"
+					@input="updateMinValue"
 				/>
 			</VCol>
 
@@ -18,11 +18,10 @@
 				sm="6"
 			>
 				<VTextField
-					v-model="rangeValue[0]"
-					:label="minLabel"
-					block
+					:value="rangeValue[1]"
+					:label="maxLabel"
 					outlined
-					@change="emitChangeEvent(rangeValue)"
+					@input="updateMaxValue"
 				/>
 			</VCol>
 		</VForm>
@@ -56,6 +55,11 @@
 		maxLabel: 'Valeur max'
 	};
 
+	enum RANGE_ENUM {
+		MIN = 0,
+		MAX = 1
+	}
+
 	const MixinsDeclaration = mixins(FieldComponent);
 
 	@Component<RangeField>({
@@ -63,13 +67,11 @@
 			'field.value': {
 				handler(value: number[] | null): void {
 					if (!value) {
-						this.rangeValue = [
-							this.field.min as number,
-							this.field.max as number
-						];
-					} else {
-						this.rangeValue = value;
+						this.rangeValue = this.defaultValue;
+						return;
 					}
+
+					this.rangeValue = value;
 				},
 				immediate: true,
 				deep: true
@@ -85,6 +87,42 @@
 
 		get maxLabel(): string {
 			return this.field.fieldOptions?.maxFieldLabel as string || locales.maxLabel;
+		}
+
+		get defaultValue(): number[] {
+			const { min, max } = this.field;
+
+			return [
+				min || 0,
+				max || 0
+			];
+		}
+
+		updateMinValue(value: number): void {
+			this.updateRange(RANGE_ENUM.MIN, value);
+		}
+
+		updateMaxValue(value: number): void {
+			this.updateRange(RANGE_ENUM.MAX, value);
+		}
+
+		updateRange(index: RANGE_ENUM, value: number): void {
+			const [ min, max ] = this.rangeValue;
+
+			if (value < min) {
+				this.setRangeValue(RANGE_ENUM.MIN, value);
+			}
+
+			if (value > max) {
+				this.setRangeValue(RANGE_ENUM.MAX, value);
+			}
+
+			this.setRangeValue(index, value);
+			this.emitChangeEvent(this.rangeValue);
+		}
+
+		setRangeValue(index: RANGE_ENUM, value: number): void {
+			this.$set(this.rangeValue, index, value);
 		}
 	}
 </script>

@@ -3,7 +3,12 @@
 ### Vue Dot
 
 - ♿️ **Accessibility**
-  - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574))
+  - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
+
+### FormBuilder
+
+- ♻️ **Refactoring**
+  - **RangeField:** Inversion des champs min et max et amélioration de l'utilisabilité ([#1575](https://github.com/assurance-maladie-digital/design-system/pull/1575))
 
 ### Documentation
 
