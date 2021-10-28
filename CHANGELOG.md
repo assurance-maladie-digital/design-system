@@ -1,4 +1,8 @@
-## Non publié
+## v2.1.0
+
+**Version publiée le 27/10/2021.**
+
+Cette version comporte l'ajout des nouveaux composants `Logo` et `HeaderBar`, la documentation des règles de validation ainsi que des correctifs d'accessibilité et des correctifs sur Vue Dot, Vue Dash et le FormBuilder.
 
 ### Vue Dot
 
@@ -80,6 +84,9 @@
   - **DocExample:** Désactivation des fonctionnalités tactiles ([#1548](https://github.com/assurance-maladie-digital/design-system/pull/1548)) ([9590e83](https://github.com/assurance-maladie-digital/design-system/commit/9590e83e88fe3afcaad8a4a8aade4f1b84cb47a0))
   - **global:** Désactivation de la transition verticale sur les écrans mobiles ([#1549](https://github.com/assurance-maladie-digital/design-system/pull/1549)) ([2a9e407](https://github.com/assurance-maladie-digital/design-system/commit/2a9e4076b56d1a54c83bd9d35ceebd63aaf86313))
 
+- 🔧 **Configuration**
+  - **config:** Modification de la configuration des variables d'environnement ([#1568](https://github.com/assurance-maladie-digital/design-system/pull/1568)) ([d03464c](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/d03464caec32d7c0aceafb17d1fcd3fb88ae30cc))
+
 - 🔥 **Suppressions**
   - **header:** Suppression de la recherche ne fonctionnant pas ([#1434](https://github.com/assurance-maladie-digital/design-system/pull/1434)) ([d30aa2b](https://github.com/assurance-maladie-digital/design-system/commit/d30aa2b60afccbef78a093612996c08159740bc0))
 
@@ -121,6 +128,7 @@
 - 📝 **Documentation**
   - **global:** Mise à jour du champ auteur ([#1481](https://github.com/assurance-maladie-digital/design-system/pull/1481)) ([02693b3](https://github.com/assurance-maladie-digital/design-system/commit/02693b3df4974a0e6ac5a7a40293bf489e071ba2))
   - **global:** Mise à jour du code de conduite ([#1482](https://github.com/assurance-maladie-digital/design-system/pull/1482)) ([cee4264](https://github.com/assurance-maladie-digital/design-system/commit/cee426421b6a5171d4b2a4a374038416aa1cad15))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1570](https://github.com/assurance-maladie-digital/design-system/pull/1570))
 
 - ⬆️ **Dépendances**
   - **dayjs:** Mise à jour vers la `v1.10.7` ([#1436](https://github.com/assurance-maladie-digital/design-system/pull/1436)) ([a93a139](https://github.com/assurance-maladie-digital/design-system/commit/a93a1390c7a4a42e46a1990186415b319d8b1660))
@@ -142,7 +150,7 @@
   - **axios:** Mise à jour vers la `v0.24.0` ([#1555](https://github.com/assurance-maladie-digital/design-system/pull/1555)) ([369e92f](https://github.com/assurance-maladie-digital/design-system/commit/369e92febe02e943786cc30f493040a4ce0c9b48))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.2.0` ([#1557](https://github.com/assurance-maladie-digital/design-system/pull/1557)) ([5cceba4](https://github.com/assurance-maladie-digital/design-system/commit/5cceba4d33cf60e9f0235d039724c9b32f5fc2ec))
   - **@types/node:** Mise à jour vers la `v14.17.32` ([#1561](https://github.com/assurance-maladie-digital/design-system/pull/1561)) ([7fdbd65](https://github.com/assurance-maladie-digital/design-system/commit/7fdbd6550fa46c5f75904381e79f9ebac878ad68))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.0.3` ([#1563](https://github.com/assurance-maladie-digital/design-system/pull/1563))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.0.3` ([#1563](https://github.com/assurance-maladie-digital/design-system/pull/1563)) ([6b0d628](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/6b0d62871020e5d2c10f7bfaad0a25b80d4d328c))
 
 ## v2.0.0
 
@@ -241,7 +249,7 @@ Cette version majeure comporte l'ajout de guides et la complétion de la documen
 
 **Version publiée le 02/08/2021.**
 
-Cette version comporte l'ajout de la documentation et du nouveau composant FranceConnectBtn, ainsi que des correctifs sur Vue Dot et le FormBuilder.
+Cette version comporte l'ajout de la documentation et du nouveau composant `FranceConnectBtn`, ainsi que des correctifs sur Vue Dot et le FormBuilder.
 
 ### Vue Dot
 
