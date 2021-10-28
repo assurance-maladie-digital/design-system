@@ -10,6 +10,7 @@
 			<div class="d-flex align-center justify-end mb-8">
 				<VBtn
 					v-bind="options.closeBtn"
+					:aria-label="locales.closeBtn"
 					@click="emitChangeEvent"
 				>
 					<VIcon v-bind="options.closeIcon">
@@ -43,8 +44,9 @@
 
 	import { mdiClose } from '@mdi/js';
 
-	import { NavigationItem } from '../types';
 	import { config } from './config';
+	import { locales } from './locales';
+	import { NavigationItem } from '../types';
 	import { colorMapping } from '../colorMapping';
 
 	import { ThemeEnum } from '../ThemeEnum';
@@ -85,6 +87,8 @@
 		}
 	})
 	export default class HeaderNavigationDrawer extends MixinsDeclaration {
+		locales = locales;
+
 		closeIcon = mdiClose;
 
 		get spacingClass(): string {

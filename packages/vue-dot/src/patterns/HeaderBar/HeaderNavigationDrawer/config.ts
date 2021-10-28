@@ -6,8 +6,7 @@ export const config = {
 		class: 'pa-4'
 	},
 	closeBtn: {
-		icon: true,
-		class: 'ml-4'
+		icon: true
 	},
 	tabs: {
 		dense: true,

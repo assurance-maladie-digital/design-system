@@ -1,12 +1,17 @@
 ## Non publié
 
+### Vue Dot
+
+- ♿️ **Accessibility**
+  - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**
   - **DocMarkdown:** Correction de la compilation du HTML ([#1572](https://github.com/assurance-maladie-digital/design-system/pull/1572)) ([a22c280](https://github.com/assurance-maladie-digital/design-system/commit/a22c28031b45dc9a79625101126b90ba149f2725))
 
 - 📝 **Documentation**
-  - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573))
+  - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573)) ([adf6e2a](https://github.com/assurance-maladie-digital/design-system/commit/adf6e2ae8c0eed92aa446515826317d0770e2d2f))
 
 ### Interne
 
