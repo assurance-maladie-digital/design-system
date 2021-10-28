@@ -5,7 +5,8 @@
 - ⬆️ **Dépendances**
   - **lint-staged:** Mise à jour vers la `v11.2.6` ([#1565](https://github.com/assurance-maladie-digital/design-system/pull/1565)) ([5a8d597](https://github.com/assurance-maladie-digital/design-system/commit/5a8d597d9a7b66477752a0c6da2fec0d43ff76d5))
   - **vue-router:** Mise à jour vers la `v3.5.3` ([#1566](https://github.com/assurance-maladie-digital/design-system/pull/1566)) ([66b0967](https://github.com/assurance-maladie-digital/design-system/commit/66b09670af3565e278526fb76e47d48b2ffb2fb4))
-  - **@netlify/functions:** Mise à jour vers la `v0.8.0` ([#1567](https://github.com/assurance-maladie-digital/design-system/pull/1567))
+  - **@netlify/functions:** Mise à jour vers la `v0.8.0` ([#1567](https://github.com/assurance-maladie-digital/design-system/pull/1567)) ([eba95e8](https://github.com/assurance-maladie-digital/design-system/commit/eba95e86da59312bfb72964ae795443168047970))
+  - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.15` ([#1571](https://github.com/assurance-maladie-digital/design-system/pull/1571))
 
 ## v2.1.0
 

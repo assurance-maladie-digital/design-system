@@ -1,4 +1,3 @@
-import { EventQueryStringParameters } from '@netlify/functions/src/function/event';
 import { Handler, HandlerEvent } from '@netlify/functions';
 
 import { DataOptions } from 'vuetify';
@@ -119,7 +118,7 @@ async function getData({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): P
 }
 
 const handler: Handler = async (event: HandlerEvent) => {
-	const options = getDataOptionsFromQueryString(event.queryStringParameters as EventQueryStringParameters);
+	const options = getDataOptionsFromQueryString(event.queryStringParameters);
 	const datas = await getData(options);
 
 	return {
