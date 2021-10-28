@@ -3,7 +3,10 @@
 ### Documentation
 
 - 🐛 **Corrections de bugs**
-  - **DocMarkdown:** Correction de la compilation du HTML ([#1572](https://github.com/assurance-maladie-digital/design-system/pull/1572))
+  - **DocMarkdown:** Correction de la compilation du HTML ([#1572](https://github.com/assurance-maladie-digital/design-system/pull/1572)) ([a22c280](https://github.com/assurance-maladie-digital/design-system/commit/a22c28031b45dc9a79625101126b90ba149f2725))
+
+- 📝 **Documentation**
+  - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573))
 
 ### Interne
 
@@ -108,15 +111,15 @@ Cette version comporte l'ajout des nouveaux composants `Logo` et `HeaderBar`, la
 - 📝 **Documentation**
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1372](https://github.com/assurance-maladie-digital/design-system/pull/1372)) ([9196706](https://github.com/assurance-maladie-digital/design-system/commit/919670667af005b252898063a64081639930f07f))
   - **contribution:** Mise à jour de la page ([#1396](https://github.com/assurance-maladie-digital/design-system/pull/1396)) ([51b75ca](https://github.com/assurance-maladie-digital/design-system/commit/51b75ca522b176bb54cc0b17a9f3046496de7555))
-  - **PaginatedTable:** Ajout de l'interface DataOptions dans l'API du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401)) ([56f831f](https://github.com/assurance-maladie-digital/design-system/commit/56f831f91cb16e75bc6aab9fb98d22421d8c93bd))
-  - **rules:** Documentation de la règle de validation required ([#1412](https://github.com/assurance-maladie-digital/design-system/pull/1412)) ([4da4471](https://github.com/assurance-maladie-digital/design-system/commit/4da44715c5e7e8bda7d76d39ec97800efc686465))
-  - **rules:** Documentation de la règle de validation exactLength ([#1422](https://github.com/assurance-maladie-digital/design-system/pull/1422)) ([e6f6686](https://github.com/assurance-maladie-digital/design-system/commit/e6f668683b4e00f04d4bcff547c962898cc1f20c))
-  - **rules:** Documentation de la règle de validation minLength ([#1423](https://github.com/assurance-maladie-digital/design-system/pull/1423)) ([faff625](https://github.com/assurance-maladie-digital/design-system/commit/faff62515c0c702a4c63edeeb0cfad5a015c681b))
-  - **rules:** Documentation de la règle de validation maxLength ([#1431](https://github.com/assurance-maladie-digital/design-system/pull/1431)) ([126aa6e](https://github.com/assurance-maladie-digital/design-system/commit/126aa6eeccc1024e1e304eaa01fc0c38844d29f7))
-  - **rules:** Documentation de la règle de validation email ([#1432](https://github.com/assurance-maladie-digital/design-system/pull/1432)) ([9e3623d](https://github.com/assurance-maladie-digital/design-system/commit/9e3623dacd4d460d5a168711b7c8015911a81652))
-  - **rules:** Documentation de la règle de validation isDateValid ([#1447](https://github.com/assurance-maladie-digital/design-system/pull/1447)) ([b961227](https://github.com/assurance-maladie-digital/design-system/commit/b9612272fd9506cddee09ce23515bfce9fd9d172))
-  - **rules:** Documentation de la règle de validation notAfterToday ([#1448](https://github.com/assurance-maladie-digital/design-system/pull/1448)) ([e2cbe4f](https://github.com/assurance-maladie-digital/design-system/commit/e2cbe4f51787c6d6fd82c2be687b16935d4f790c))
-  - **rules:** Documentation de la règle de validation notBeforeToday ([#1449](https://github.com/assurance-maladie-digital/design-system/pull/1449)) ([73bcce9](https://github.com/assurance-maladie-digital/design-system/commit/73bcce97f02311484f6ca27428795a7b4e7ca042))
+  - **PaginatedTable:** Ajout de l'interface `DataOptions` dans l'API du composant ([#1401](hhttps://github.com/assurance-maladie-digital/design-system/pull/1401)) ([56f831f](https://github.com/assurance-maladie-digital/design-system/commit/56f831f91cb16e75bc6aab9fb98d22421d8c93bd))
+  - **rules:** Documentation de la règle de validation `required` ([#1412](https://github.com/assurance-maladie-digital/design-system/pull/1412)) ([4da4471](https://github.com/assurance-maladie-digital/design-system/commit/4da44715c5e7e8bda7d76d39ec97800efc686465))
+  - **rules:** Documentation de la règle de validation `exactLength` ([#1422](https://github.com/assurance-maladie-digital/design-system/pull/1422)) ([e6f6686](https://github.com/assurance-maladie-digital/design-system/commit/e6f668683b4e00f04d4bcff547c962898cc1f20c))
+  - **rules:** Documentation de la règle de validation `minLength` ([#1423](https://github.com/assurance-maladie-digital/design-system/pull/1423)) ([faff625](https://github.com/assurance-maladie-digital/design-system/commit/faff62515c0c702a4c63edeeb0cfad5a015c681b))
+  - **rules:** Documentation de la règle de validation `maxLength` ([#1431](https://github.com/assurance-maladie-digital/design-system/pull/1431)) ([126aa6e](https://github.com/assurance-maladie-digital/design-system/commit/126aa6eeccc1024e1e304eaa01fc0c38844d29f7))
+  - **rules:** Documentation de la règle de validation `email` ([#1432](https://github.com/assurance-maladie-digital/design-system/pull/1432)) ([9e3623d](https://github.com/assurance-maladie-digital/design-system/commit/9e3623dacd4d460d5a168711b7c8015911a81652))
+  - **rules:** Documentation de la règle de validation `isDateValid` ([#1447](https://github.com/assurance-maladie-digital/design-system/pull/1447)) ([b961227](https://github.com/assurance-maladie-digital/design-system/commit/b9612272fd9506cddee09ce23515bfce9fd9d172))
+  - **rules:** Documentation de la règle de validation `notAfterToday` ([#1448](https://github.com/assurance-maladie-digital/design-system/pull/1448)) ([e2cbe4f](https://github.com/assurance-maladie-digital/design-system/commit/e2cbe4f51787c6d6fd82c2be687b16935d4f790c))
+  - **rules:** Documentation de la règle de validation `notBeforeToday` ([#1449](https://github.com/assurance-maladie-digital/design-system/pull/1449)) ([73bcce9](https://github.com/assurance-maladie-digital/design-system/commit/73bcce97f02311484f6ca27428795a7b4e7ca042))
   - **roadmap:** Mise à jour de la page ([#1503](https://github.com/assurance-maladie-digital/design-system/pull/1503)) ([abec127](https://github.com/assurance-maladie-digital/design-system/commit/abec127a3c28c5979089ef67c23ec5bc2b762ae5))
   - **global:** Mise à jour de la formulation dans les exemples ([#1532](https://github.com/assurance-maladie-digital/design-system/pull/1532)) ([5d35651](https://github.com/assurance-maladie-digital/design-system/commit/5d3565124225933ae9c879e5b8b12890c03ef466))
   - **Logo:** Mise à jour de l'API du composant ([#1546](https://github.com/assurance-maladie-digital/design-system/pull/1546)) ([cad497b](https://github.com/assurance-maladie-digital/design-system/commit/cad497b93893bfc6c7047bec948a3abf931c50ea))
