@@ -13,7 +13,7 @@
 		"build": "lerna run build --stream"
 	},
 	"devDependencies": {
-		"@babel/core": "7.15.8",
+		"@babel/core": "7.16.0",
 		"@mdi/js": "6.4.95",
 		"@types/content-disposition": "0.5.4",
 		"@types/fs-extra": "9.0.13",
