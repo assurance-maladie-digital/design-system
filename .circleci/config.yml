@@ -4,43 +4,7 @@ orbs:
   codecov: codecov/codecov@3.2.0
   jq: circleci/jq@2.2.0
   github-status: assurance-maladie-digital/github-status@1.1.0
-
-commands:
-  netlify-deploy:
-    parameters:
-      prod:
-        type: boolean
-        default: false
-    steps:
-      - run:
-          name: Netlify Deploy
-          command: |
-            PULL_REQUEST_ID=`echo $CIRCLE_PULL_REQUEST | sed 's?.*/??'`
-
-            API=https://api.github.com
-            USER=$CIRCLE_PROJECT_USERNAME
-            REPO=$CIRCLE_PROJECT_REPONAME
-            SHA=$CIRCLE_SHA1
-
-            URL=$API/repos/$USER/$REPO/commits/$SHA
-            ACCEPT='Accept: application/vnd.github.v3+json'
-
-            COMMIT_MESSAGE=$(curl -H "$ACCEPT" $URL | jq -r '.commit.message')
-
-            args=(
-              '--dir=packages/docs/dist'
-              '--json'
-            )
-            [[ $CIRCLE_BRANCH == 'test-ci-documentation' ]] && args+=( '--alias="dev"' )
-            [[ << parameters.prod >> == true ]] && args+=( '--prod' )
-
-            args+=( "--message='$COMMIT_MESSAGE (#$PULL_REQUEST_ID))'" )
-
-            NETLIFY_API_RESPONSE=$(./node_modules/.bin/netlify deploy "${args[@]}")
-            echo $NETLIFY_API_RESPONSE
-
-            NETLIFY_DEPLOY_URL=$(echo $NETLIFY_API_RESPONSE | jq -r '.deploy_url')
-            echo "export TARGET_URL='$NETLIFY_DEPLOY_URL'" >> $BASH_ENV
+  netlify: assurance-maladie-digital/netlify@dev:alpha
 
 defaults: &defaults
   working_directory: ~/project
@@ -124,7 +88,8 @@ jobs:
           description: Deploy Preview in progress
       - attach_workspace:
           at: ~/
-      - netlify-deploy
+      - netlify/deploy:
+          folder: packages/docs/dist
       - github-status/report:
           context: circleci/deploy-preview
           description: Deploy Preview ready!
@@ -136,8 +101,8 @@ jobs:
           description: Deploy in progress
       - attach_workspace:
           at: ~/
-      - netlify-deploy:
-          prod: true
+      - netlify/deploy_to_prod:
+          folder: packages/docs/dist
       - github-status/report:
           context: circleci/deploy
           description: Deploy ready!
