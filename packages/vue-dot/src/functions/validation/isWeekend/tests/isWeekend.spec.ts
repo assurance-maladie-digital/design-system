@@ -8,7 +8,7 @@ describe('isWeekend', () => {
 		expect(isWeekend(date)).toBe(true);
 	});
 
-	it('returns false if the day isn\'t in a weekend', () => {
+	it('returns false if the day is not in a weekend', () => {
 		const date = '2019-10-21'; // Monday
 
 		expect(isWeekend(date)).toBe(false);

@@ -6,7 +6,7 @@ import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import HeaderMenu from '../HeaderMenu.vue';
 
-let wrapper: Wrapper<Vue>;
+let wrapper: Wrapper<Vue>;<% if (i18n) { %>
 
 const links = [
 	{
@@ -16,7 +16,7 @@ const links = [
 			name: 'test1'
 		}
 	}
-];
+];<% } %>
 
 // Tests
 describe('HeaderMenu', () => {

@@ -1,7 +1,17 @@
 export default {
-	logoBtn: {
-		label: 'Accueil',
-		alt: 'l\'Assurance Maladie'
-	},
-	title: 'Projet <%= name %>'
+	title: 'Projet <%= name %>',
+	navigationItems: [
+		{
+			label: 'Accueil',
+			to: {
+				name: 'home'
+			}
+		},
+		{
+			label: 'À propos',
+			to: {
+				name: 'about'
+			}
+		}
+	]
 };

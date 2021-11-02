@@ -72,7 +72,7 @@ function getFileDropEvent({ files, items, kind }: DropEvent): DragEvent {
 // Tests
 describe('FileUploadCore', () => {
 	// inputValueChanged
-	it('doesn\'t emits change event if there is no event target', () => {
+	it('does not emits change event if there is no event target', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const event = {} as HTMLInputEvent;
@@ -100,7 +100,7 @@ describe('FileUploadCore', () => {
 		expect(selfReset).toHaveBeenCalled();
 	});
 
-	it('doesn\'t emits change event if there is no files in event target', () => {
+	it('does not emits change event if there is no files in event target', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const event = {
@@ -112,7 +112,7 @@ describe('FileUploadCore', () => {
 		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
-	it('doesn\'t emits change event if files is an empty array', () => {
+	it('does not emits change event if files is an empty array', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const event = {
@@ -126,7 +126,7 @@ describe('FileUploadCore', () => {
 		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
-	it('doesn\'t emits change event if there are too many files', () => {
+	it('does not emits change event if there are too many files', () => {
 		const wrapper = mount(component, {
 			mocks: {
 				ifTooManyFiles: () => true
@@ -193,7 +193,7 @@ describe('FileUploadCore', () => {
 		expect(event[0][0]).toEqual([file, file]);
 	});
 
-	it('doesn\'t emits change event when there is an error', () => {
+	it('does not emits change event when there is an error', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		wrapper.setData({
@@ -207,7 +207,7 @@ describe('FileUploadCore', () => {
 	});
 
 	// dropHandler
-	it('doesn\'t emits change event when there is no data', async() => {
+	it('does not emits change event when there is no data', async() => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const fileDropEvent = {} as DragEvent;
@@ -229,7 +229,7 @@ describe('FileUploadCore', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t emits change event if there are too many files', async() => {
+	it('does not emits change event if there are too many files', async() => {
 		const wrapper = mount(component, {
 			mocks: {
 				ifTooManyFiles: () => true
@@ -278,7 +278,7 @@ describe('FileUploadCore', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t emits change event if there are items in the event which aren\'t files', () => {
+	it('does not emits change event if there are items in the event which are not files', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
 		const fileDropEvent = getFileDropEvent({

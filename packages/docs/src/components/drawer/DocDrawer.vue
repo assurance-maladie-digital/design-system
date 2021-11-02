@@ -3,7 +3,7 @@
 		:value="drawer"
 		app
 		clipped
-		width="316px"
+		width="320px"
 		@input="$emit('change', $event)"
 	>
 		<KeepAlive>

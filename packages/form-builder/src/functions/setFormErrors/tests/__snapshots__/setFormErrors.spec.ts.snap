@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`setFormErrors doesn't sets an error on unknown fields 1`] = `
+exports[`setFormErrors does not sets an error on unknown fields 1`] = `
 Object {
   "section1": Object {
     "questions": Object {
@@ -15,6 +15,10 @@ Object {
         "fieldOptions": Object {
           "type": "choiceButton",
         },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionChoiceOtherSelected": Object {
         "items": Array [],
         "type": "select",
       },
@@ -63,6 +67,16 @@ Object {
         "items": Array [],
         "type": "select",
       },
+      "questionChoiceOtherSelected": Object {
+        "fieldOptions": Object {
+          "errorMessages": Object {
+            "other": "test",
+            "value": "test",
+          },
+        },
+        "items": Array [],
+        "type": "select",
+      },
       "questionPassword": Object {
         "fieldOptions": Object {
           "errorMessages": "Erreur",
@@ -73,14 +87,14 @@ Object {
         "fieldOptions": Object {
           "from": Object {
             "errorMessages": Array [
-              "Erreur 1",
-              "Erreur 2",
+              "Erreur from 1",
+              "Erreur from 2",
             ],
           },
           "to": Object {
             "errorMessages": Array [
-              "Erreur 1",
-              "Erreur 2",
+              "Erreur to 1",
+              "Erreur to 2",
             ],
           },
         },
@@ -115,6 +129,10 @@ Object {
         "fieldOptions": Object {
           "type": "choiceButton",
         },
+        "items": Array [],
+        "type": "select",
+      },
+      "questionChoiceOtherSelected": Object {
         "items": Array [],
         "type": "select",
       },

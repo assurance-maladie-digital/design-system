@@ -1,6 +1,6 @@
 import { DrawerItem } from '~/types/drawer';
 
-import { mdiSpeedometer, mdiViewDashboard, mdiCogs, mdiTeach } from '@mdi/js';
+import { mdiSpeedometer, mdiViewDashboard, mdiCogs, mdiHumanMaleBoard } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
 	{
@@ -98,12 +98,20 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/france-connect-btn'
 			},
 			{
+				title: 'HeaderBar',
+				to: '/composants/header-bar'
+			},
+			{
 				title: 'HeaderLoading',
 				to: '/composants/header-loading'
 			},
 			{
 				title: 'LangBtn',
 				to: '/composants/lang-btn'
+			},
+			{
+				title: 'Logo',
+				to: '/composants/logo'
 			},
 			{
 				title: 'NotificationBar',
@@ -152,12 +160,49 @@ export const drawerItems: DrawerItem[] = [
 						to: '/starter-kit/explorer'
 					}
 				]
+			},
+			{
+				title: 'Règles de validation',
+				items: [
+					{
+						title: 'required',
+						to: '/regles-validation/required'
+					},
+					{
+						title: 'exactLength',
+						to: '/regles-validation/exact-length'
+					},
+					{
+						title: 'minLength',
+						to: '/regles-validation/min-length'
+					},
+					{
+						title: 'maxLength',
+						to: '/regles-validation/max-length'
+					},
+					{
+						title: 'email',
+						to: '/regles-validation/email'
+					},
+					{
+						title: 'isDateValid',
+						to: '/regles-validation/is-date-valid'
+					},
+					{
+						title: 'notAfterToday',
+						to: '/regles-validation/not-after-today'
+					},
+					{
+						title: 'notBeforeToday',
+						to: '/regles-validation/not-before-today'
+					}
+				]
 			}
 		]
 	},
 	{
 		title: 'Guides',
-		icon: mdiTeach,
+		icon: mdiHumanMaleBoard,
 		items: [
 			{
 				title: 'Nouveau composant',
@@ -182,6 +227,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation du store',
 				to: '/guides/utilisation-store'
+			},
+			{
+				title: 'Tableau avec pagination',
+				to: '/guides/tableau-pagination'
 			},
 			{
 				title: 'v-model personnalisé',

@@ -32,5 +32,6 @@ package-lock.json*
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 
-# Local Netlify folder
-.netlify
+# Netlify
+.netlify/
+netlify.toml

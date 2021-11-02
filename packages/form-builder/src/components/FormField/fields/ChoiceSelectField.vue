@@ -5,6 +5,7 @@
 		:items="items"
 		:multiple="multiple"
 		:type="undefined"
+		:error-messages="errorMessages"
 		class="vd-form-input"
 		@change="emitChangeEvent($event)"
 	/>

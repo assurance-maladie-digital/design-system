@@ -184,7 +184,7 @@ describe('choiceComponent', () => {
 		expect(event[0][0]).toEqual([testField.items[2].value]);
 	});
 
-	it('doesn\'t selects an item with null value in multiple mode', async() => {
+	it('does not selects an item with null value in multiple mode', async() => {
 		const wrapper = createWrapper({
 			...testField,
 			value: [

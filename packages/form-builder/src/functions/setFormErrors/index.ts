@@ -1,6 +1,6 @@
 import { FormErrors } from './types';
 import { Form } from '../../components/FormBuilder/types';
-import { FieldOptions } from '../../components/FormField/types';
+import { ChoiceFieldErrorMessages, FieldOptions } from '../../components/FormField/types';
 
 import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
 
@@ -31,6 +31,15 @@ export function setFormErrors(formErrors: FormErrors, form: Form): Form {
 			} else if (typeof errors === 'object') {
 				// For each sub field in error
 				for (const [subFieldName, subErrors] of Object.entries(errors)) {
+					if (subFieldName === 'value' || subFieldName === 'other') {
+						if (!fieldOptions.errorMessages) {
+							fieldOptions.errorMessages = {};
+						}
+
+						(fieldOptions.errorMessages as ChoiceFieldErrorMessages)[subFieldName] = subErrors;
+						continue;
+					}
+
 					// Get the sub field fieldOptions or create it
 					const subFieldOptions = fieldOptions[subFieldName] || {};
 
