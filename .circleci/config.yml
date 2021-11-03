@@ -37,6 +37,7 @@ jobs:
     <<: *defaults
     steps:
       - run: echo "export TARGET_URL=$CIRCLE_BUILD_URL" >> $BASH_ENV
+      - run: echo "export DEBUG=true" >> $BASH_ENV
       - github-status/pending:
           context: circleci/integration
       - checkout
@@ -89,6 +90,7 @@ jobs:
           at: ~/
       - netlify/deploy:
           folder: packages/docs/dist
+          main_branch: test-ci-documentation
       - github-status/report:
           context: circleci/deploy-preview
           description: Deploy Preview ready!
