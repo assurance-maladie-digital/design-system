@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@3.2.0
   jq: circleci/jq@2.2.0
-  github-status: assurance-maladie-digital/github-status@1.1.0
+  github-status: assurance-maladie-digital/github-status@dev:alpha
   netlify: assurance-maladie-digital/netlify@dev:alpha
 
 defaults: &defaults
@@ -26,17 +26,17 @@ aliases:
     command: yarn install --frozen-lockfile --non-interactive
   - &build
     name: Build Packages
-    command: yarn build && yarn generate && ls -l packages/docs
+    command: yarn build && yarn generate
     environment:
       NODE_OPTIONS: --max_old_space_size=4096
-      CI: 'true'
-      CIRCLE_NODE_TOTAL: '4'
+      CI: true
+      CIRCLE_NODE_TOTAL: 4
 
 jobs:
   install:
     <<: *defaults
     steps:
-      - run: echo "export TARGET_URL='$CIRCLE_BUILD_URL'" >> $BASH_ENV
+      - run: echo "export TARGET_URL=$CIRCLE_BUILD_URL" >> $BASH_ENV
       - github-status/pending:
           context: circleci/integration
       - checkout
@@ -79,7 +79,6 @@ jobs:
   deploy-preview:
     <<: *defaults
     steps:
-      - run: echo "export TARGET_URL='$CIRCLE_BUILD_URL'" >> $BASH_ENV
       - github-status/post_status:
           state: success
           context: circleci/integration
@@ -103,6 +102,7 @@ jobs:
           at: ~/
       - netlify/deploy_to_prod:
           folder: packages/docs/dist
+          main_branch: test-ci-documentation
       - github-status/report:
           context: circleci/deploy
           description: Deploy ready!
