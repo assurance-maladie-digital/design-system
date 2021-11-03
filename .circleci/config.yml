@@ -131,10 +131,10 @@ workflows:
             - deploy-preview
           filters:
             branches:
-              only: main
+              only: test-ci-documentation
       - deploy:
           requires:
             - hold_for_deploy
           filters:
             branches:
-              only: main
+              only: test-ci-documentation
