@@ -14,6 +14,7 @@
 
 - 🐛 **Corrections de bugs**
   - **DocMarkdown:** Correction de la compilation du HTML ([#1572](https://github.com/assurance-maladie-digital/design-system/pull/1572)) ([a22c280](https://github.com/assurance-maladie-digital/design-system/commit/a22c28031b45dc9a79625101126b90ba149f2725))
+  - **global:** Correction des accents dans les ancres HTML ([#1583](https://github.com/assurance-maladie-digital/design-system/pull/1583))
 
 - 📝 **Documentation**
   - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573)) ([adf6e2a](https://github.com/assurance-maladie-digital/design-system/commit/adf6e2ae8c0eed92aa446515826317d0770e2d2f))
@@ -21,7 +22,7 @@
 ### Interne
 
 - 📝 **Documentation**
-  - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582))
+  - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582)) ([853bc97](https://github.com/assurance-maladie-digital/design-system/commit/853bc97835c1e11e8be97e834bb2093631504f90))
 
 - ⬆️ **Dépendances**
   - **lint-staged:** Mise à jour vers la `v11.2.6` ([#1565](https://github.com/assurance-maladie-digital/design-system/pull/1565)) ([5a8d597](https://github.com/assurance-maladie-digital/design-system/commit/5a8d597d9a7b66477752a0c6da2fec0d43ff76d5))
