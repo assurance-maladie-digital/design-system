@@ -17,7 +17,7 @@
 		"@mdi/js": "6.4.95",
 		"@types/content-disposition": "0.5.4",
 		"@types/fs-extra": "9.0.13",
-		"@types/jest": "26.0.24",
+		"@types/jest": "27.0.2",
 		"@types/node": "14.17.32",
 		"@typescript-eslint/eslint-plugin": "5.2.0",
 		"@typescript-eslint/parser": "5.2.0",
