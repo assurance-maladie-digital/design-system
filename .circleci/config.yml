@@ -89,7 +89,6 @@ jobs:
           at: ~/
       - netlify/deploy:
           folder: packages/docs/dist
-          main_branch: test-ci-documentation
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy-preview
@@ -104,7 +103,6 @@ jobs:
           at: ~/
       - netlify/deploy_to_prod:
           folder: packages/docs/dist
-          main_branch: test-ci-documentation
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy
@@ -134,10 +132,10 @@ workflows:
             - deploy-preview
           filters:
             branches:
-              only: test-ci-documentation
+              only: main
       - deploy:
           requires:
             - hold_for_deploy
           filters:
             branches:
-              only: test-ci-documentation
+              only: main
