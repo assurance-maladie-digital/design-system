@@ -20,7 +20,6 @@
 	"files": [
 		"dist/*",
 		"src/*",
-		"tests/*",
 		"types/*"
 	],
 	"main": "./dist/form-builder.common.js",
