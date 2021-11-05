@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@3.2.0
   jq: circleci/jq@2.2.0
-  github-status: assurance-maladie-digital/github-status@dev:alpha
+  github-status: assurance-maladie-digital/github-status@1.2.0
   netlify: assurance-maladie-digital/netlify@dev:alpha
 
 defaults: &defaults
@@ -37,7 +37,6 @@ jobs:
     <<: *defaults
     steps:
       - run: echo "export TARGET_URL=$CIRCLE_BUILD_URL" >> $BASH_ENV
-      - run: echo "export DEBUG=true" >> $BASH_ENV
       - github-status/pending:
           context: circleci/integration
       - checkout
@@ -79,6 +78,8 @@ jobs:
           context: circleci/integration
   deploy-preview:
     <<: *defaults
+    environment:
+      DEBUG: true
     steps:
       - github-status/post_status:
           state: success
@@ -88,6 +89,7 @@ jobs:
           description: Deploy Preview in progress
       - attach_workspace:
           at: ~/
+      - run: echo $BASH_ENV
       - netlify/deploy:
           folder: packages/docs/dist
           main_branch: test-ci-documentation
