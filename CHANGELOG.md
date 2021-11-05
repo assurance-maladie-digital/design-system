@@ -13,7 +13,7 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **DocUsage:** Ajout d'une validation sur le format des propriétés ([#1586](https://github.com/assurance-maladie-digital/design-system/pull/1586))
+  - **DocUsage:** Ajout d'une validation sur le format des propriétés ([#1586](https://github.com/assurance-maladie-digital/design-system/pull/1586)) ([ddd7ea9](https://github.com/assurance-maladie-digital/design-system/commit/ddd7ea99b82d68cad87038fd78c57fed5afd049a))
 
 - 🐛 **Corrections de bugs**
   - **DocMarkdown:** Correction de la compilation du HTML ([#1572](https://github.com/assurance-maladie-digital/design-system/pull/1572)) ([a22c280](https://github.com/assurance-maladie-digital/design-system/commit/a22c28031b45dc9a79625101126b90ba149f2725))
@@ -26,6 +26,9 @@
 
 - 🐛 **Corrections de bugs**
   - **build:** Correction des fichiers de tests et de coverage publiés ([#1584](https://github.com/assurance-maladie-digital/design-system/pull/1584)) ([a10e1f2](https://github.com/assurance-maladie-digital/design-system/commit/a10e1f2c8d5919ec0b6ebdb07cf522dcce677e08))
+
+- 🔧 **Configuration**
+  - **ci:** Ajout du déploiement sur Netlify ([#1363](https://github.com/assurance-maladie-digital/design-system/pull/1363))
 
 - 📝 **Documentation**
   - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582)) ([853bc97](https://github.com/assurance-maladie-digital/design-system/commit/853bc97835c1e11e8be97e834bb2093631504f90))
