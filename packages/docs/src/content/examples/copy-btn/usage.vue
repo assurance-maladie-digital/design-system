@@ -35,7 +35,7 @@
 
 		options = {
 			booleans: [
-				'hide-tooltip'
+				'hideTooltip'
 			],
 			sliders: {
 				tooltipDuration: {

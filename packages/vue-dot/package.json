@@ -22,8 +22,9 @@
 	"files": [
 		"dist/*",
 		"src/*",
-		"tests/*",
-		"public/*",
+		"tests/integration/utils/*",
+		"tests/utils/*",
+		"tests/index.ts",
 		"types/*"
 	],
 	"main": "./dist/vue-dot.common.js",
