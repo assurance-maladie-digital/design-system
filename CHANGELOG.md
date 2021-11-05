@@ -41,7 +41,8 @@
   - **@babel/core:** Mise à jour vers la `v7.15.8` ([#1578](https://github.com/assurance-maladie-digital/design-system/pull/1578)) ([1c3b113](https://github.com/assurance-maladie-digital/design-system/commit/1c3b113d8989e33a29e76e909ceb0b702d9533bd))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.3.0` ([#1579](https://github.com/assurance-maladie-digital/design-system/pull/1579)) ([67a4f89](https://github.com/assurance-maladie-digital/design-system/commit/67a4f89e2289e8f48a3f27e1786cebb1fe4cd1a8))
   - **core-js:** Mise à jour vers la `v3.19.1` ([#1581](https://github.com/assurance-maladie-digital/design-system/pull/1581)) ([8ee92c0](https://github.com/assurance-maladie-digital/design-system/commit/8ee92c002cc27d33166966c6e803ba6aded0f327))
-  - **vuetify:** Mise à jour vers la `v2.5.12` ([#1585](https://github.com/assurance-maladie-digital/design-system/pull/1585))
+  - **vuetify:** Mise à jour vers la `v2.5.12` ([#1585](https://github.com/assurance-maladie-digital/design-system/pull/1585)) ([51b51c3](https://github.com/assurance-maladie-digital/design-system/commit/51b51c3bbe16eb410c93d181b16f6e0eab70df85))
+  - **netlify-cli:** Épinglage de la dépendance à la `v6.14.16` ([#1589](https://github.com/assurance-maladie-digital/design-system/pull/1589))
 
 ## v2.1.0
 
