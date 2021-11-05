@@ -78,8 +78,6 @@ jobs:
           context: circleci/integration
   deploy-preview:
     <<: *defaults
-    environment:
-      DEBUG: true
     steps:
       - github-status/post_status:
           state: success
@@ -89,7 +87,6 @@ jobs:
           description: Deploy Preview in progress
       - attach_workspace:
           at: ~/
-      - run: echo $BASH_ENV
       - netlify/deploy:
           folder: packages/docs/dist
           main_branch: test-ci-documentation
