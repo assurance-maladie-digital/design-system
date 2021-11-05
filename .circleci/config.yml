@@ -3,8 +3,8 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@3.2.0
   jq: circleci/jq@2.2.0
-  github-status: assurance-maladie-digital/github-status@1.2.0
-  netlify: assurance-maladie-digital/netlify@dev:alpha
+  github-status: assurance-maladie-digital/github-status@1.3.0
+  netlify: assurance-maladie-digital/netlify@1.0.0
 
 defaults: &defaults
   working_directory: ~/project
