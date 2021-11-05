@@ -78,6 +78,8 @@ jobs:
           context: circleci/integration
   deploy-preview:
     <<: *defaults
+    environment:
+      DEBUG: true
     steps:
       - github-status/post_status:
           state: success
@@ -90,11 +92,14 @@ jobs:
       - netlify/deploy:
           folder: packages/docs/dist
           main_branch: test-ci-documentation
+      - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy-preview
           description: Deploy Preview ready!
   deploy:
     <<: *defaults
+    environment:
+      DEBUG: true
     steps:
       - github-status/pending:
           context: circleci/deploy
@@ -104,6 +109,7 @@ jobs:
       - netlify/deploy_to_prod:
           folder: packages/docs/dist
           main_branch: test-ci-documentation
+      - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy
           description: Deploy ready!
