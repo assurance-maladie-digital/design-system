@@ -78,8 +78,6 @@ jobs:
           context: circleci/integration
   deploy-preview:
     <<: *defaults
-    environment:
-      DEBUG: true
     steps:
       - github-status/post_status:
           state: success
@@ -98,8 +96,6 @@ jobs:
           description: Deploy Preview ready!
   deploy:
     <<: *defaults
-    environment:
-      DEBUG: true
     steps:
       - github-status/pending:
           context: circleci/deploy
