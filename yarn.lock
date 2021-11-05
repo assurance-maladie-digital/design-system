@@ -10630,10 +10630,10 @@ google-fonts-helper@^1.2.0:
     fs-extra "^9.0.1"
     got "^11.8.1"
 
-got@8.3.1, got@^10.0.0, got@^10.7.0, got@^11.8.1, got@^8.3.1, got@^9.6.0:
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/got/-/got-8.3.1.tgz#093324403d4d955f5a16a7a8d39955d055ae10ed"
-  integrity sha512-tiLX+bnYm5A56T5N/n9Xo89vMaO1mrS9qoDqj3u/anVooqGozvY/HbXzEpDfbNeKsHCBpK40gSbz8wGYSp3i1w==
+got@8.3.2, got@^10.0.0, got@^10.7.0, got@^11.8.1, got@^8.3.1, got@^9.6.0:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/got/-/got-8.3.2.tgz#1d23f64390e97f776cac52e5b936e5f514d2e937"
+  integrity sha512-qjUJ5U/hawxosMryILofZCkm3C84PLJS/0grRIpjAwu+Lkxxj5cxeCU25BG0/3mDSpXKTyZr8oh8wIgLaH0QCw==
   dependencies:
     "@sindresorhus/is" "^0.7.0"
     cacheable-request "^2.1.1"
