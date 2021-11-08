@@ -4,7 +4,7 @@ orbs:
   codecov: codecov/codecov@3.2.0
   jq: circleci/jq@2.2.0
   github-status: assurance-maladie-digital/github-status@1.3.0
-  netlify: assurance-maladie-digital/netlify@1.0.0
+  netlify: assurance-maladie-digital/netlify@dev:alpha
 
 defaults: &defaults
   working_directory: ~/project
@@ -23,7 +23,7 @@ aliases:
       - ~/.cache
   - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli
+    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli && ls -l node_modules/
   - &build
     name: Build Packages
     command: yarn build && yarn generate
@@ -89,6 +89,7 @@ jobs:
           at: ~/
       - netlify/deploy:
           folder: packages/docs/dist
+          command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy-preview
@@ -103,6 +104,7 @@ jobs:
           at: ~/
       - netlify/deploy_to_prod:
           folder: packages/docs/dist
+          command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy
