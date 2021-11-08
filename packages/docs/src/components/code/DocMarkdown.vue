@@ -6,7 +6,11 @@
 
 	import { VFile } from 'vfile';
 
-	const remarkProcessor = remark().use(html);
+	const remarkProcessor = remark().use(html, {
+		// Disable sanitization since we trust the source
+		// and raw HTML in Markdown cannot be sanitized
+		sanitize: false
+	});
 
 	function markdownToHtml(content: string): VFile {
 		return remarkProcessor.processSync(content);

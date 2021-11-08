@@ -57,7 +57,12 @@ export default {
 		'@nuxt/typescript-build',
 		'@nuxtjs/vuetify',
 		'@nuxtjs/google-fonts',
-		'@nuxtjs/dotenv'
+		[
+			'@nuxtjs/dotenv',
+			{
+				path: './'
+			}
+		]
 	],
 	plugins: [
 		'~/plugins/vue-dot.ts',

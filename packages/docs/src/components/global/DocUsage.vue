@@ -252,6 +252,7 @@
 
 	import { getUsageCode } from '../../functions/getUsageCode';
 	import { toKebabCase } from '../../functions/toKebabCase';
+	import { toCamelCase } from '../../functions/toCamelCase';
 
 	interface ImportedComponent extends VueClass<Vue> {
 		options: {
@@ -359,7 +360,11 @@
 			const defaults = this.$data.defaultProps as UsageProps;
 			const propsHiddenByDefault = (this.$data.propsHiddenByDefault || []) as string[];
 
+			this.validateProps(propsHiddenByDefault, 'propsHiddenByDefault');
+
 			if (defaults) {
+				this.validateProps(Object.keys(defaults), 'defaults');
+
 				const filteredDefaults: UsageProps = {};
 
 				Object
@@ -378,7 +383,24 @@
 
 			for (const [key, value] of Object.entries(this.options)) {
 				(this as unknown as IndexedObject<unknown>)[key] = value;
+
+				if (typeof value === 'object') {
+					this.validateProps(Object.keys(value), 'options');
+				}
+
+				if (Array.isArray(value)) {
+					this.validateProps(value, 'options');
+				}
 			}
+		}
+
+		validateProps(props: string[], location: string): void {
+			props.forEach((propName) => {
+				if (propName.match(/[^a-zA-Z0-9]+(.)/g)) {
+					// eslint-disable-next-line no-console
+					console.error(`Wrong format for the "${propName}" property in "${location}" object. Expected "${toCamelCase(propName)}".`);
+				}
+			});
 		}
 
 		toggleRadioProp(props: string[], toggled: string): void {
