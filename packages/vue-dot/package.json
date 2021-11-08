@@ -39,9 +39,11 @@
 		"test": "yarn test:unit && yarn test:e2e",
 		"test:unit": "vue-cli-service test:unit --runInBand",
 		"test:e2e": "cypress run-ct",
-		"test:e2e:gui": "cypress open-ct"
+		"test:e2e:gui": "cypress open-ct",
+		"test:coverage":"nyc cypress run-ct"
 	},
 	"dependencies": {
+		"@cypress/code-coverage": "^3.9.11",
 		"content-disposition": "^0.5.3",
 		"deepmerge": "^4.2.2"
 	},
@@ -59,9 +61,9 @@
 	},
 	"devDependencies": {
 		"@cnamts/cli-helpers": "^2.1.0",
+		"@cypress/code-coverage": "^3.9.11",
 		"@cypress/vue": "^2.2.3",
 		"@cypress/webpack-dev-server": "^1.7.0",
-		"@cypress/code-coverage": "^3.9.11",
 		"@vue/cli-plugin-babel": "4.5.15",
 		"@vue/cli-plugin-eslint": "4.5.15",
 		"@vue/cli-plugin-typescript": "4.5.15",
@@ -82,11 +84,9 @@
 	},
 	"nyc": {
 		"report-dir": "tests/e2e/coverage",
-		"include": [
-			"src/**/*.ts"
-		],
+		"include": ["src/**/*.ts"],
 		"exclude": [
-			"src/**/**/*.e2e.spec.ts"
-		]
+			"src/**/*.spec.ts", 
+			"tests/e2e/**/*.spec.ts"]
 	}
 }

@@ -1,11 +1,15 @@
 const plugins = [];
-if (process.env.NODE_ENV === 'test') {
-  plugins.push([
-    'babel-plugin-istanbul', {
-      extension: ['.ts','.js', '.vue']
-    }
-  ]);
-}
+
+//  instrumenting code
+plugins.push([
+	'babel-plugin-istanbul', {
+		extension: [
+			'.ts',
+			'.js',
+			'.vue'
+		]
+	}
+]);
 
 module.exports = {
 	// For dev environment

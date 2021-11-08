@@ -10,6 +10,10 @@ declare namespace Cypress {
 		 *  command snapshot, additionnal type
 		 */
 		toMatchSnapshot(): Chainable<Element>;
-
 	}
+
+	export interface Cypress{
+		vue: Record<string, unknown>
+	}
+
 }
