@@ -6,11 +6,7 @@
 		"screenshotsFolder": "tests/e2e/screenshots",
 		"videosFolder":"tests/e2e/videos",
 		"fixturesFolder": "tests/e2e/fixtures",
-		"componentFolder": "src",
-		"testFiles": "**/tests/**/*.e2e.spec.ts"
-	},
-	"ignoreTestFiles": [
-		"**/__snapshots__/*",
-		"**/__image_snapshots__/*"
-	  ]
+		"componentFolder": "tests/e2e",
+		"testFiles": "integration/*.spec.ts"
+	}
 }

@@ -23,7 +23,8 @@ export function mountComponent(
 
 	return fn(
 		component, {
-		vuetify,
-		...options
-	});
+			vuetify,
+			...options
+		}
+	);
 }

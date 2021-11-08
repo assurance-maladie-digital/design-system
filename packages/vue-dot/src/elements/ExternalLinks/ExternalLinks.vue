@@ -95,6 +95,7 @@
 	} from '@mdi/js';
 
 	import { convertToUnit } from '../../helpers/convertToUnit';
+	import { propValidator } from '../../helpers/propValidator';
 
 	const SPACE_CHARACTER = ' ';
 
@@ -104,16 +105,17 @@
 			position: {
 				type: String,
 				required: true,
-				validator(value: string): boolean {
-					const isValid = value.match(/^(top|bottom) (left|right)$/) !== null;
+				validator: (value: string) => {
+					const { TOP, BOTTOM, RIGHT, LEFT } = PositionEnum;
 
-					if (!isValid) {
-						// @see https://github.com/vuejs/vue/issues/9467#issuecomment-808924803
-						// eslint-disable-next-line no-console
-						console.error(`Wrong value for the \`position\` prop. Given: "${value}", expected "(top|bottom) (left|right)".`);
-					}
+					const acceptedValues = [
+						[TOP, RIGHT],
+						[TOP, LEFT],
+						[BOTTOM, RIGHT],
+						[BOTTOM, LEFT]
+					].map((item) => item.join(SPACE_CHARACTER));
 
-					return true;
+					return propValidator('position', acceptedValues, value);
 				}
 			},
 			/** Links to display in the list */

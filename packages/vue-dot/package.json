@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Implementation of our Design System for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -22,8 +22,9 @@
 	"files": [
 		"dist/*",
 		"src/*",
-		"tests/*",
-		"public/*",
+		"tests/integration/utils/*",
+		"tests/utils/*",
+		"tests/index.ts",
 		"types/*"
 	],
 	"main": "./dist/vue-dot.common.js",
@@ -35,12 +36,10 @@
 		"dev": "vue-cli-service serve",
 		"build": "ts-node --project tsconfig.build.json --files scripts/build.ts",
 		"lint": "vue-cli-service lint",
-		"test": "yarn test:unit",
-		"coverage": "nyc report --check-coverage",
+		"test": "yarn test:unit && yarn test:e2e",
 		"test:unit": "vue-cli-service test:unit --runInBand",
-		"test:e2e": "NODE_ENV=test cypress run-ct",
-		"test:e2e:gui": "NODE_ENV=test cypress open-ct",
-		"test:coverage": "yarn test:e2e && yarn coverage"
+		"test:e2e": "cypress run-ct",
+		"test:e2e:gui": "cypress open-ct"
 	},
 	"dependencies": {
 		"content-disposition": "^0.5.3",
@@ -50,7 +49,7 @@
 		"@cnamts/design-tokens": "^2.0.0-beta.10",
 		"@cnamts/form-builder": "^2.0.0-beta.10",
 		"@mdi/js": "^5.0.0 || ^6.0.0",
-		"axios": "^0.23.0",
+		"axios": "^0.22.0 || ^0.23.0 || ^0.24.0",
 		"dayjs": "^1.8.0",
 		"languages": "^0.1.3",
 		"vue": "^2.6.11",
@@ -59,17 +58,16 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@cnamts/cli-helpers": "^2.0.0",
-		"@cypress/code-coverage": "^3.9.11",
+		"@cnamts/cli-helpers": "^2.1.0",
 		"@cypress/vue": "^2.2.3",
-		"@cypress/webpack-dev-server": "^1.6.0",
-		"cypress": "^8.5.0",
-		"cypress-plugin-snapshots": "^1.4.4",
-		"@vue/cli-plugin-babel": "4.5.14",
-		"@vue/cli-plugin-eslint": "4.5.14",
-		"@vue/cli-plugin-typescript": "4.5.14",
-		"@vue/cli-plugin-unit-jest": "4.5.14",
-		"@vue/cli-service": "4.5.14",
+		"@cypress/webpack-dev-server": "^1.7.0",
+		"@cypress/code-coverage": "^3.9.11",
+		"@vue/cli-plugin-babel": "4.5.15",
+		"@vue/cli-plugin-eslint": "4.5.15",
+		"@vue/cli-plugin-typescript": "4.5.15",
+		"@vue/cli-plugin-unit-jest": "4.5.15",
+		"@vue/cli-service": "4.5.15",
+		"cypress": "^8.6.0",
 		"vue-cli-plugin-vuetify": "2.4.3",
 		"vuetify-loader": "1.7.3"
 	},
@@ -84,7 +82,11 @@
 	},
 	"nyc": {
 		"report-dir": "tests/e2e/coverage",
-		"include": ["src/**/*.ts"],
-		"exclude": ["src/**/**/*.e2e.spec.ts"]
+		"include": [
+			"src/**/*.ts"
+		],
+		"exclude": [
+			"src/**/**/*.e2e.spec.ts"
+		]
 	}
 }

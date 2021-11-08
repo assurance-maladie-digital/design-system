@@ -4,6 +4,12 @@ export const api: Api = {
 	CopyBtn: {
 		props: [
 			{
+				name: 'icon',
+				type: 'string',
+				default: undefined,
+				description: 'Le nom de l’icône à afficher.<br>Cette prop n’est pas requise lorsque le slot par défaut est utilisé.'
+			},
+			{
 				name: 'color',
 				type: 'string',
 				default: `'currentColor'`,

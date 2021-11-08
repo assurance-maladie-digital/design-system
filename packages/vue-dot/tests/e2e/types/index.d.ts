@@ -13,5 +13,3 @@ declare namespace Cypress {
 
 	}
 }
-
-declare module '@/tests/*';

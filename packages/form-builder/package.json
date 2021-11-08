@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/form-builder",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "FormBuilder for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -20,7 +20,6 @@
 	"files": [
 		"dist/*",
 		"src/*",
-		"tests/*",
 		"types/*"
 	],
 	"main": "./dist/form-builder.common.js",
@@ -40,13 +39,13 @@
 		"vuetify": "^2.3.0"
 	},
 	"devDependencies": {
-		"@cnamts/cli-helpers": "^2.0.0",
-		"@cnamts/vue-dot": "^2.0.0",
-		"@vue/cli-plugin-babel": "4.5.14",
-		"@vue/cli-plugin-eslint": "4.5.14",
-		"@vue/cli-plugin-typescript": "4.5.14",
-		"@vue/cli-plugin-unit-jest": "4.5.14",
-		"@vue/cli-service": "4.5.14",
+		"@cnamts/cli-helpers": "^2.1.0",
+		"@cnamts/vue-dot": "^2.1.0",
+		"@vue/cli-plugin-babel": "4.5.15",
+		"@vue/cli-plugin-eslint": "4.5.15",
+		"@vue/cli-plugin-typescript": "4.5.15",
+		"@vue/cli-plugin-unit-jest": "4.5.15",
+		"@vue/cli-service": "4.5.15",
 		"vue-cli-plugin-vuetify": "2.4.3",
 		"vuetify-loader": "1.7.3"
 	},
