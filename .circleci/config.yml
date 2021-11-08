@@ -23,7 +23,7 @@ aliases:
       - ~/.cache
   - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive
+    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli
   - &build
     name: Build Packages
     command: yarn build && yarn generate
