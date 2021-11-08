@@ -21,9 +21,10 @@ aliases:
     paths:
       - node_modules/
       - ~/.cache
+      - $HOME/.yarn/bin
   - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli && npm install --prefix=$HOME/.local --global netlify && ls -l node_modules/
+    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli && yarn global bin && ls -la ~/
   - &build
     name: Build Packages
     command: yarn build && yarn generate
@@ -42,16 +43,22 @@ jobs:
       - checkout
       - restore_cache: *restore_cache
       - run: *install
+      - run: ls -la / && ls -la ~/ && echo $HOME && ls -la $HOME
+      - run: netlify
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
           paths:
             - ./project
+            - ./.yarn
+            - ./.config
   lint:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/
+      - run: ls -la ~/.yarn
+      - run: netlify
       - run: yarn lint
       - github-status/report_failed_only:
           context: circleci/integration
@@ -71,10 +78,10 @@ jobs:
           at: ~/
       - restore_cache:
           keys:
-            - docs-build-cache-{{ .branch }}
+            - docs-build-cache-{{ .Branch }}
       - run: *build
       - save_cache:
-          key: docs-build-cache-{{ .branch }}
+          key: docs-build-cache-{{ .Branch }}
           paths:
             - ./project/packages/docs/dist
       - persist_to_workspace:
