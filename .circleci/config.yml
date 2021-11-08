@@ -23,7 +23,7 @@ aliases:
       - ~/.cache
   - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli && ls -l node_modules/
+    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli && npm install --prefix=$HOME/.local --global netlify && ls -l node_modules/
   - &build
     name: Build Packages
     command: yarn build && yarn generate
@@ -69,7 +69,14 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+      - restore_cache:
+          keys:
+            - docs-build-cache-{{ .branch }}
       - run: *build
+      - save_cache:
+          key: docs-build-cache-{{ .branch }}
+          paths:
+            - ./project/packages/docs/dist
       - persist_to_workspace:
           root: ~/
           paths:
