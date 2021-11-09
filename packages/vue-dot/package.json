@@ -38,9 +38,8 @@
 		"lint": "vue-cli-service lint",
 		"test": "yarn test:unit && yarn test:e2e",
 		"test:unit": "vue-cli-service test:unit --runInBand",
-		"test:e2e": "cypress run-ct",
-		"test:e2e:gui": "cypress open-ct",
-		"test:coverage":"nyc cypress run-ct"
+		"test:e2e": "nyc cypress run-ct",
+		"test:e2e:gui": "cypress open-ct"
 	},
 	"dependencies": {
 		"@cypress/code-coverage": "^3.9.11",
