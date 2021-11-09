@@ -20,11 +20,12 @@ aliases:
     key: yarn-packages-{{ checksum "yarn.lock" }}
     paths:
       - node_modules/
-      - ~/.cache
-      - $HOME/.yarn/bin
+      - .cache/
+      - .config/yarn/global/
+      - .yarn/
   - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive && yarn global add netlify-cli && yarn global bin && ls -la ~/
+    command: yarn install --frozen-lockfile --non-interactive
   - &build
     name: Build Packages
     command: yarn build && yarn generate
@@ -43,22 +44,20 @@ jobs:
       - checkout
       - restore_cache: *restore_cache
       - run: *install
-      - run: ls -la / && ls -la ~/ && echo $HOME && ls -la $HOME
-      - run: netlify
+      - run: yarn global add netlify-cli
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./project
-            - ./.yarn
-            - ./.config
+            - project/
+            - .cache/
+            - .config/yarn/global/
+            - .yarn/
   lint:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/
-      - run: ls -la ~/.yarn
-      - run: netlify
       - run: yarn lint
       - github-status/report_failed_only:
           context: circleci/integration
