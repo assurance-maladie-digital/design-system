@@ -7,7 +7,7 @@
 	"command": {
 		"publish": {
 			"allowBranch": [
-				"improve-ci",
+				"main",
 				"dev"
 			],
 			"message": "🔖 %s"
