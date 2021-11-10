@@ -25,7 +25,7 @@ aliases:
       - .yarn/
   - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive
+    command: yarn install --frozen-lockfile --non-interactive --ignore-scripts
   - &build
     name: Build Packages
     command: yarn build && yarn generate
@@ -45,6 +45,7 @@ jobs:
       - restore_cache: *restore_cache
       - run: *install
       - run: yarn global add netlify-cli
+      - run: yarn global add lerna
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
@@ -75,7 +76,14 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+      - restore_cache:
+          keys:
+            - docs-build-cache-{{ .Branch }}
       - run: *build
+      - save_cache:
+          key: docs-build-cache-{{ .Branch }}
+          paths:
+            - ./project/packages/docs/dist
       - persist_to_workspace:
           root: ~/
           paths:
@@ -112,6 +120,8 @@ jobs:
           folder: packages/docs/dist
           command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
+      - run: lerna version -y
+      - run: lerna publish -y from-package
       - github-status/report:
           context: circleci/deploy
           description: Deploy ready!
@@ -140,13 +150,13 @@ workflows:
             - deploy-preview
           filters:
             branches:
-              only: main
+              only: improve-ci
       - deploy:
           requires:
             - hold_for_deploy
           filters:
             branches:
-              only: main
+              only: improve-ci
   nightly:
     triggers:
       - schedule:
@@ -154,7 +164,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - improve-ci
     jobs:
       - install
       - build:
@@ -165,4 +175,4 @@ workflows:
             - build
           filters:
             branches:
-              only: main
+              only: improve-ci
