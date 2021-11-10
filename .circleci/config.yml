@@ -44,8 +44,7 @@ jobs:
       - checkout
       - restore_cache: *restore_cache
       - run: *install
-      - run: yarn global add netlify-cli
-      - run: yarn global add lerna
+      - run: yarn global add netlify-cli lerna
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
@@ -120,6 +119,8 @@ jobs:
           folder: packages/docs/dist
           command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
+      - run: mkdir -p ~/.ssh
+      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run: lerna version -y
       - run: lerna publish -y from-package
       - github-status/report:
