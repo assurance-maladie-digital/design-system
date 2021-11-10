@@ -154,3 +154,22 @@ workflows:
           filters:
             branches:
               only: main
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: main
