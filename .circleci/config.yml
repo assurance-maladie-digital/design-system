@@ -4,7 +4,7 @@ orbs:
   codecov: codecov/codecov@3.2.0
   jq: circleci/jq@2.2.0
   github-status: assurance-maladie-digital/github-status@1.3.0
-  netlify: assurance-maladie-digital/netlify@dev:alpha
+  netlify: assurance-maladie-digital/netlify@1.2.0
 
 defaults: &defaults
   working_directory: ~/project
@@ -75,14 +75,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - restore_cache:
-          keys:
-            - docs-build-cache-{{ .Branch }}
       - run: *build
-      - save_cache:
-          key: docs-build-cache-{{ .Branch }}
-          paths:
-            - ./project/packages/docs/dist
       - persist_to_workspace:
           root: ~/
           paths:
@@ -119,10 +112,6 @@ jobs:
           folder: packages/docs/dist
           command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
-      - run: mkdir -p ~/.ssh
-      - run: ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - run: lerna version -y
-      - run: lerna publish -y from-package
       - github-status/report:
           context: circleci/deploy
           description: Deploy ready!
@@ -151,13 +140,13 @@ workflows:
             - deploy-preview
           filters:
             branches:
-              only: improve-ci
+              only: main
       - deploy:
           requires:
             - hold_for_deploy
           filters:
             branches:
-              only: improve-ci
+              only: main
   nightly:
     triggers:
       - schedule:
@@ -165,7 +154,7 @@ workflows:
           filters:
             branches:
               only:
-                - improve-ci
+                - main
     jobs:
       - install
       - build:
@@ -176,4 +165,4 @@ workflows:
             - build
           filters:
             branches:
-              only: improve-ci
+              only: main
