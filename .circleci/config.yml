@@ -75,14 +75,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - restore_cache:
-          keys:
-            - docs-build-cache-{{ .Branch }}
       - run: *build
-      - save_cache:
-          key: docs-build-cache-{{ .Branch }}
-          paths:
-            - ./project/packages/docs/dist
       - persist_to_workspace:
           root: ~/
           paths:
