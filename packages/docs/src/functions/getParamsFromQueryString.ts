@@ -16,6 +16,10 @@ function parseValue(value: string): ParsedValue {
 export function getParamsFromQueryString(queryString: EventQueryStringParameters): IndexedObject<Params> {
 	const params: IndexedObject<Params> = {};
 
+	if (queryString === null) {
+		return params;
+	}
+
 	Object.entries(queryString).map(([key, value]) => {
 		if (key.match(/\[\]/)) {
 			params[key.replace('[]', '')] = (value as string)
