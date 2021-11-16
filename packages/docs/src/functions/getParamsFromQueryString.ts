@@ -12,7 +12,7 @@ function parseValue(value: string): ParsedValue {
 	}
 }
 
-export function getParamsFromQueryString(queryString: QueryStringParameters): IndexedObject<Params> {
+export function getParamsFromQueryString(queryString: QueryStringParameters | null): IndexedObject<Params> {
 	const params: IndexedObject<Params> = {};
 
 	if (queryString === null) {
