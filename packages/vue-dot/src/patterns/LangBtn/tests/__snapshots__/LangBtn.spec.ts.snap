@@ -4,12 +4,12 @@ exports[`LangBtn renders correctly 1`] = `
 <vmenu-stub opendelay="0" closedelay="0" contentclass="vd-lang-menu" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" openonclick="true" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition" class="vd-lang-btn">
   <vlist-stub tag="div">
     <vlistitem-stub activeclass="" tag="div">
-      <vlistitemtitle-stub>
+      <vlistitemtitle-stub tag="div">
         Français
       </vlistitemtitle-stub>
     </vlistitem-stub>
     <vlistitem-stub activeclass="" tag="div">
-      <vlistitemtitle-stub>
+      <vlistitemtitle-stub tag="div">
         English
       </vlistitemtitle-stub>
     </vlistitem-stub>
