@@ -40,11 +40,11 @@
   - **@netlify/functions:** Mise à jour vers la `v0.8.0` ([#1567](https://github.com/assurance-maladie-digital/design-system/pull/1567)) ([eba95e8](https://github.com/assurance-maladie-digital/design-system/commit/eba95e86da59312bfb72964ae795443168047970))
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.15` ([#1571](https://github.com/assurance-maladie-digital/design-system/pull/1571)) ([34ea036](https://github.com/assurance-maladie-digital/design-system/commit/34ea036f07a2d9c048bc49f17fca5d7f53b5884e))
   - **@babel/core:** Mise à jour vers la `v7.15.8` ([#1578](https://github.com/assurance-maladie-digital/design-system/pull/1578)) ([1c3b113](https://github.com/assurance-maladie-digital/design-system/commit/1c3b113d8989e33a29e76e909ceb0b702d9533bd))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.3.0` ([#1579](https://github.com/assurance-maladie-digital/design-system/pull/1579)) ([67a4f89](https://github.com/assurance-maladie-digital/design-system/commit/67a4f89e2289e8f48a3f27e1786cebb1fe4cd1a8))
   - **core-js:** Mise à jour vers la `v3.19.1` ([#1581](https://github.com/assurance-maladie-digital/design-system/pull/1581)) ([8ee92c0](https://github.com/assurance-maladie-digital/design-system/commit/8ee92c002cc27d33166966c6e803ba6aded0f327))
   - **netlify-cli:** Épinglage de la dépendance à la `v6.14.16` ([#1589](https://github.com/assurance-maladie-digital/design-system/pull/1589)) ([5059e97](https://github.com/assurance-maladie-digital/design-system/commit/5059e97998c07cf706f223b17fb901fc45d10578))
   - **slugify:** Mise à jour vers la `v1.6.2` ([#1592](https://github.com/assurance-maladie-digital/design-system/pull/1592)) ([e2020fa](https://github.com/assurance-maladie-digital/design-system/commit/e2020fabcd9f45bb0262003025f0dc4a29e91876))
-  - **vuetify:** Mise à jour vers la `v2.6` ([#1593](https://github.com/assurance-maladie-digital/design-system/pull/1593))
+  - **vuetify:** Mise à jour vers la `v2.6` ([#1593](https://github.com/assurance-maladie-digital/design-system/pull/1593)) ([20bc861](https://github.com/assurance-maladie-digital/design-system/commit/20bc861469d20cf62af77c45713e6a11710727c6))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.4.0` ([#1595](https://github.com/assurance-maladie-digital/design-system/pull/1595))
 
 ## v2.1.0
 
