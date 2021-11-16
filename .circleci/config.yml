@@ -4,7 +4,7 @@ orbs:
   codecov: codecov/codecov@3.2.0
   jq: circleci/jq@2.2.0
   github-status: assurance-maladie-digital/github-status@1.3.0
-  netlify: assurance-maladie-digital/netlify@1.0.0
+  netlify: assurance-maladie-digital/netlify@1.1.0
 
 defaults: &defaults
   working_directory: ~/project
@@ -20,10 +20,12 @@ aliases:
     key: yarn-packages-{{ checksum "yarn.lock" }}
     paths:
       - node_modules/
-      - ~/.cache
+      - .cache/
+      - .config/yarn/global/
+      - .yarn/
   - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive
+    command: yarn install --frozen-lockfile --non-interactive --ignore-scripts
   - &build
     name: Build Packages
     command: yarn build && yarn generate
@@ -42,11 +44,15 @@ jobs:
       - checkout
       - restore_cache: *restore_cache
       - run: *install
+      - run: yarn global add netlify-cli
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./project
+            - project/
+            - .cache/
+            - .config/yarn/global/
+            - .yarn/
   lint:
     <<: *defaults
     steps:
@@ -89,6 +95,7 @@ jobs:
           at: ~/
       - netlify/deploy:
           folder: packages/docs/dist
+          command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy-preview
@@ -103,6 +110,7 @@ jobs:
           at: ~/
       - netlify/deploy_to_prod:
           folder: packages/docs/dist
+          command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy
@@ -136,6 +144,25 @@ workflows:
       - deploy:
           requires:
             - hold_for_deploy
+          filters:
+            branches:
+              only: main
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - build
           filters:
             branches:
               only: main
