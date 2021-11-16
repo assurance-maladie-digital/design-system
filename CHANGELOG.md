@@ -30,6 +30,7 @@
 - 🔧 **Configuration**
   - **ci:** Ajout du déploiement sur Netlify ([#1363](https://github.com/assurance-maladie-digital/design-system/pull/1363)) ([c76790d](https://github.com/assurance-maladie-digital/design-system/commit/c76790d2cc567883389be63a2704aa0791670fec))
   - **ci:** Amélioration de la configuration ([#1602](https://github.com/assurance-maladie-digital/design-system/pull/1602)) ([1d38caa](https://github.com/assurance-maladie-digital/design-system/commit/1d38caad160b50221eb7806074effaad74d1f4b1))
+  - **ci:** Mise à jour de `codecov` vers la `v3.2.2` ([#1603](https://github.com/assurance-maladie-digital/design-system/pull/1603))
 
 - 📝 **Documentation**
   - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582)) ([853bc97](https://github.com/assurance-maladie-digital/design-system/commit/853bc97835c1e11e8be97e834bb2093631504f90))
@@ -45,7 +46,7 @@
   - **slugify:** Mise à jour vers la `v1.6.2` ([#1592](https://github.com/assurance-maladie-digital/design-system/pull/1592)) ([e2020fa](https://github.com/assurance-maladie-digital/design-system/commit/e2020fabcd9f45bb0262003025f0dc4a29e91876))
   - **vuetify:** Mise à jour vers la `v2.6` ([#1593](https://github.com/assurance-maladie-digital/design-system/pull/1593)) ([20bc861](https://github.com/assurance-maladie-digital/design-system/commit/20bc861469d20cf62af77c45713e6a11710727c6))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.4.0` ([#1595](https://github.com/assurance-maladie-digital/design-system/pull/1595)) ([a513fc9](https://github.com/assurance-maladie-digital/design-system/commit/a513fc906fdfad6d81b60f3a79fc376134c30434))
-  - **@types/node:** Mise à jour vers la `v14.17.33` ([#1596](https://github.com/assurance-maladie-digital/design-system/pull/1596))
+  - **@types/node:** Mise à jour vers la `v14.17.33` ([#1596](https://github.com/assurance-maladie-digital/design-system/pull/1596)) ([c068120](https://github.com/assurance-maladie-digital/design-system/commit/c068120c275eb22b5e30373459f073717e2283e2))
 
 ## v2.1.0
 
