@@ -20,6 +20,7 @@
   - **global:** Correction des accents dans les ancres HTML ([#1583](https://github.com/assurance-maladie-digital/design-system/pull/1583)) ([3aa2e09](https://github.com/assurance-maladie-digital/design-system/commit/3aa2e096d4c7abc5e59391ccc0ccb860a76671c4))
 
 - 📝 **Documentation**
+  - **Guide:** Refacto de la fonction netlify `users` ([#1569](hhttps://github.com/assurance-maladie-digital/design-system/pull/1569)) ([570c434](https://github.com/assurance-maladie-digital/design-system/commit/570c43467f338615174c85fe2594a5696deea811))
   - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573)) ([adf6e2a](https://github.com/assurance-maladie-digital/design-system/commit/adf6e2ae8c0eed92aa446515826317d0770e2d2f))
 
 ### Interne
