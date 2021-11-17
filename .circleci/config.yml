@@ -47,6 +47,7 @@ jobs:
       - run: *install
       - run: yarn global add netlify-cli
       - cypress/setup:
+          executor: base-14
           yarn: true
           post-install:
             - run: cypress install
