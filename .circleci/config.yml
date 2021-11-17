@@ -47,6 +47,7 @@ jobs:
       - run: *install
       - run: yarn global add netlify-cli
       - cypress/install:
+          yarn: true
           working_directory: packages/vue-dot
       - save_cache: *save_cache
       - persist_to_workspace:
