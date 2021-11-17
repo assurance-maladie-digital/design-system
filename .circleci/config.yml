@@ -46,10 +46,6 @@ jobs:
       - restore_cache: *restore_cache
       - run: *install
       - run: yarn global add netlify-cli
-      - cypress/setup:
-          executor: cypress/base-14
-          yarn: true
-          working_directory: packages/vue-dot
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
@@ -125,12 +121,16 @@ workflows:
   integration:
     jobs:
       - install
+      - cypress/install:
+          executor: cypress/base-14
+          yarn: true
       - lint:
           requires:
             - install
       - test:
           requires:
             - install
+            - cypress/install
       - build:
           requires:
             - install
