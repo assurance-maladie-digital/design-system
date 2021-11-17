@@ -1,6 +1,6 @@
 {
-  "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/index.ts": {
-    "path": "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/index.ts",
+  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\index.ts": {
+    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\index.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -43,10 +43,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "c7aab1049ce92d77ba77d2b433dfc04c4a092049"
+    "hash": "473c03e65242695199ca4a9337338bc9591a2b32"
   },
-  "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/CopyBtn.vue": {
-    "path": "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/CopyBtn.vue",
+  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\CopyBtn.vue": {
+    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\CopyBtn.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -1744,10 +1744,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "59aacdd915911a3197dd6879f6457d231c7f9b53"
+    "hash": "f6ef501fab2d59b8c2acfe89a8e8498bfa4d2c5e"
   },
-  "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/config.ts": {
-    "path": "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/config.ts",
+  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\config.ts": {
+    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\config.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1790,10 +1790,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9eb8f19c30cb2c41446d70265cb6554d7f47ace3"
+    "hash": "af2d5017d294562bdc8836e0b5e20a2d56679e6d"
   },
-  "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/locales.ts": {
-    "path": "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/elements/CopyBtn/locales.ts",
+  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\locales.ts": {
+    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\elements\\CopyBtn\\locales.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1836,10 +1836,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "d48220a90911f5f0452b3dde7f3cb496941408c2"
+    "hash": "5cde16967b3b7e28e9dd52db0ab4e9473487d25c"
   },
-  "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/mixins/customizable/index.ts": {
-    "path": "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/mixins/customizable/index.ts",
+  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\mixins\\customizable\\index.ts": {
+    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\mixins\\customizable\\index.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -2042,10 +2042,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ba283cfa2ebfa74598910db40fdd6a64bbafebfa"
+    "hash": "cc81d67ecd89cc862b31fd7a3310a570467b62c6"
   },
-  "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/functions/copyToClipboard/index.ts": {
-    "path": "/home/mmaryvon/Documents/projects/cnamts/github/design-system/packages/vue-dot/src/functions/copyToClipboard/index.ts",
+  "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\functions\\copyToClipboard\\index.ts": {
+    "path": "C:\\Users\\m.michel\\Documents\\PROJECTS\\CREATIVE-GROUPE\\CNAMTS\\design-system\\packages\\vue-dot\\src\\functions\\copyToClipboard\\index.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -2453,6 +2453,6 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "398adceabfeb3bd5deabdb0ec6f40e43e9c374af"
+    "hash": "5f872d1cb11ba0abbd8049106dd91d551f9a6516"
   }
 }
