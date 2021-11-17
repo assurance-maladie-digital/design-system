@@ -1,7 +1,5 @@
 import { IndexedObject } from '@cnamts/vue-dot/src/types';
-
-import { EventQueryStringParameters } from '@netlify/functions/src/function/event';
-import { DataOptions } from 'vuetify';
+import { QueryStringParameters } from '~/types/api';
 
 type ParsedValue = string | boolean | number;
 type Params = ParsedValue[] | string | boolean | number;
@@ -14,8 +12,12 @@ function parseValue(value: string): ParsedValue {
 	}
 }
 
-export function getDataOptionsFromQueryString(queryString: EventQueryStringParameters): DataOptions {
+export function getParamsFromQueryString(queryString: QueryStringParameters | null): IndexedObject<Params> {
 	const params: IndexedObject<Params> = {};
+
+	if (queryString === null) {
+		return params;
+	}
 
 	Object.entries(queryString).map(([key, value]) => {
 		if (key.match(/\[\]/)) {
@@ -27,5 +29,5 @@ export function getDataOptionsFromQueryString(queryString: EventQueryStringParam
 		}
 	});
 
-	return params as unknown as DataOptions;
+	return params;
 }

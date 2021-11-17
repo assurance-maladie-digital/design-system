@@ -1,6 +1,9 @@
 <template>
 	<VApp>
-		<DocHeader :drawer.sync="drawer" />
+		<DocHeader
+			:drawer.sync="drawer"
+			:menu-btn-label="document.title"
+		/>
 
 		<DocDrawer v-model="drawer" />
 
@@ -57,6 +60,7 @@
 		Context,
 		Content,
 		ContentDocument,
+		DocumentBody,
 		AsyncDataParams,
 		PageData
 	} from '../types/content';
@@ -64,6 +68,7 @@
 	import { AsyncData, Middleware, Head } from '../decorators';
 	import { getPageMeta } from '../functions/getPageMeta';
 	import { getSurroundDrawerItems } from '../functions/getSurroundDrawerItems';
+	import { slugifyAnchors } from '../functions/slugifyAnchors';
 
 	import DocHeader from '../components/DocHeader.vue';
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
@@ -105,6 +110,11 @@
 			}
 
 			const { prev, next } = await getSurroundDrawerItems($content, path);
+
+			const documentBody = document.body as DocumentBody;
+
+			slugifyAnchors(documentBody?.children);
+			slugifyAnchors(document.toc);
 
 			return {
 				document,

@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "@cnamts/docs",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Documentation of our Design System",
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
@@ -20,16 +20,17 @@
 		"generate": "nuxt generate --fail-on-error"
 	},
 	"dependencies": {
-		"@cnamts/design-tokens": "^2.0.0",
-		"@cnamts/form-builder": "^2.0.0",
-		"@cnamts/vue-dot": "^2.0.0",
-		"@netlify/functions": "0.7.2",
+		"@cnamts/design-tokens": "^2.1.0",
+		"@cnamts/form-builder": "^2.1.0",
+		"@cnamts/vue-dot": "^2.1.0",
+		"@netlify/functions": "0.8.0",
 		"@octokit/core": "3.5.1",
 		"nuxt": "2.15.8",
+		"slugify": "1.6.2",
 		"vue-prism-component": "1.2.0"
 	},
 	"devDependencies": {
-		"@nuxt/content": "1.14.0",
+		"@nuxt/content": "1.15.0",
 		"@nuxt/types": "2.15.8",
 		"@nuxt/typescript-build": "2.1.0",
 		"@nuxtjs/dotenv": "1.4.1",
