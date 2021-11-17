@@ -3,11 +3,16 @@
 		:height="height"
 		class="vd-header-brand-section d-flex"
 	>
-		<Logo
-			:hide-signature="hideSignature"
-			:risque-pro="isRisquePro"
-			:size="logoSize"
-		/>
+		<component
+			:is="logoContainerComponent"
+			:to="homeLink"
+		>
+			<Logo
+				:hide-signature="hideSignature"
+				:risque-pro="isRisquePro"
+				:size="logoSize"
+			/>
+		</component>
 
 		<slot>
 			<svg
@@ -55,7 +60,7 @@
 
 	import { tokens } from '@cnamts/design-tokens';
 
-	import { Dimensions } from '../../../types';
+	import { Dimensions, Next } from '../../../types';
 	import { LogoSizeEnum } from '../../../elements/Logo/LogoSizeEnum';
 
 	import { ThemeEnum } from '../ThemeEnum';
@@ -81,6 +86,10 @@
 			isMobile: {
 				type: Boolean,
 				default: false
+			},
+			homeLink: {
+				type: [String, Boolean, Object] as PropType<Next>,
+				default: '/'
 			}
 		}
 	});
@@ -111,6 +120,10 @@
 
 		get hasSecondaryLogo(): boolean {
 			return Boolean(this.$slots.default || this.secondaryLogo);
+		}
+
+		get logoContainerComponent(): string {
+			return this.homeLink ? 'RouterLink' : 'div';
 		}
 
 		get showDivider(): boolean {
