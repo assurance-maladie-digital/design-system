@@ -54,7 +54,7 @@ const homeLinkProp = {
 	name: 'home-link',
 	type: 'Next',
 	default: `'/'`,
-	description: 'Le lien vers la page d’accueil.'
+	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.'
 };
 
 export const api: Api = {
