@@ -15,7 +15,6 @@ aliases:
   - &restore_cache
     name: Restore Yarn Package Cache
     key: yarn-packages-{{ checksum "yarn.lock" }}
-
   - &save_cache
     name: Save Yarn Package Cache
     key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -39,6 +38,9 @@ jobs:
   install:
     <<: *defaults
     steps:
+      - run: echo "export TARGET_URL=$CIRCLE_BUILD_URL" >> $BASH_ENV
+      - github-status/pending:
+          context: circleci/integration
       - checkout
       - restore_cache: *restore_cache
       - run: *install
@@ -57,6 +59,8 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: yarn lint
+      - github-status/report_failed_only:
+          context: circleci/integration
   test:
     <<: *defaults
     steps:
@@ -64,6 +68,8 @@ jobs:
           at: ~/
       - run: yarn test
       - codecov/upload
+      - github-status/report_failed_only:
+          context: circleci/integration
   build:
     <<: *defaults
     steps:
@@ -111,7 +117,7 @@ jobs:
           description: Deploy ready!
 
 workflows:
-  lint_test_build:
+  integration:
     jobs:
       - install
       - lint:
@@ -121,7 +127,6 @@ workflows:
           requires:
             - install
       - build:
-          <<: *filters
           requires:
             - install
       - deploy-preview:
