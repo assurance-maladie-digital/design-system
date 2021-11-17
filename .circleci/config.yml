@@ -47,6 +47,7 @@ jobs:
       - run: *install
       - run: yarn global add netlify-cli
       - cypress/setup:
+          yarn: true
           post-install:
             - run: cypress install
       - save_cache: *save_cache
