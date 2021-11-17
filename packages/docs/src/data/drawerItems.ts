@@ -1,6 +1,12 @@
 import { DrawerItem } from '~/types/drawer';
 
-import { mdiSpeedometer, mdiViewDashboard, mdiCogs, mdiHumanMaleBoard } from '@mdi/js';
+import {
+	mdiSpeedometer,
+	mdiViewDashboard,
+	mdiCogs,
+	mdiHumanMaleBoard,
+	mdiSecurity
+} from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
 	{
@@ -241,5 +247,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/authentification-token'
 			}
 		]
+	},
+	{
+		title: 'Politique de sécurité',
+		icon: mdiSecurity,
+		href: 'https://assurancemaladiesec.github.io/abuse/reporting/'
 	}
 ];
