@@ -23,6 +23,7 @@
 						:service-title="serviceTitle"
 						:service-sub-title="serviceSubTitle"
 						:is-mobile="isMobile"
+						:home-link="homeLink"
 					>
 						<slot name="secondary-logo" />
 					</HeaderBrandSection>
@@ -75,6 +76,7 @@
 	import { propValidator } from '../../helpers/propValidator';
 
 	import { customizable } from '../../mixins/customizable';
+	import { Next } from '../../types';
 
 	const Props = Vue.extend({
 		props: {
@@ -98,6 +100,10 @@
 			innerWidth: {
 				type: String,
 				default: '100%'
+			},
+			homeLink: {
+				type: [String, Boolean, Object] as PropType<Next>,
+				default: undefined
 			}
 		}
 	});
