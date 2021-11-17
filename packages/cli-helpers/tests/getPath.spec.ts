@@ -8,6 +8,6 @@ describe('getPath', () => {
 	});
 
 	it('should parse the path correctly', () => {
-		expect(getPath('/test')).toBe('mock\\test');
+		expect(getPath('/test')).toBe('mock/test');
 	});
 });
