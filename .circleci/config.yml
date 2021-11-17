@@ -54,7 +54,8 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - project/
+            - project/node_modules
+            - project/packages/*/node_modules
             - .cache/
             - .config/yarn/global/
             - .yarn/
