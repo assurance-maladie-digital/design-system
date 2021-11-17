@@ -122,7 +122,6 @@ workflows:
     jobs:
       - install
       - cypress/install:
-          executor: cypress/base-12
           yarn: true
       - lint:
           requires:
