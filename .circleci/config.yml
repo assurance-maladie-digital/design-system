@@ -1,8 +1,10 @@
 version: 2.1
 
 orbs:
-  codecov: codecov/codecov@3.2.0
-  cypress: cypress-io/cypress@1.29.0
+  codecov: codecov/codecov@3.2.2
+  jq: circleci/jq@2.2.0
+  github-status: assurance-maladie-digital/github-status@1.3.0
+  netlify: assurance-maladie-digital/netlify@1.1.0
 
 defaults: &defaults
   working_directory: ~/project
@@ -19,16 +21,19 @@ aliases:
     key: yarn-packages-{{ checksum "yarn.lock" }}
     paths:
       - node_modules/
-      - ~/.cache
-  - &run
+      - .cache/
+      - .config/yarn/global/
+      - .yarn/
+  - &install
     name: Install Dependencies
-    command: yarn install --frozen-lockfile --non-interactive
-
-workflow_filters: &filters
-  filters:
-    branches:
-      ignore:
-        - docs
+    command: yarn install --frozen-lockfile --non-interactive --ignore-scripts
+  - &build
+    name: Build Packages
+    command: yarn build && yarn generate
+    environment:
+      NODE_OPTIONS: --max_old_space_size=4096
+      CI: true
+      CIRCLE_NODE_TOTAL: 4
 
 jobs:
   install:
@@ -36,13 +41,16 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore_cache
-      - run: *run
+      - run: *install
+      - run: yarn global add netlify-cli
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./project
-            - ./.cache/Cypress
+            - project/
+            - .cache/
+            - .config/yarn/global/
+            - .yarn/
   lint:
     <<: *defaults
     steps:
@@ -61,12 +69,46 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - run:
-          command: yarn build --ignore @cnamts/docs
-          environment:
-            NODE_OPTIONS: --max_old_space_size=4096
-            CI: 'true'
-            CIRCLE_NODE_TOTAL: '4'
+      - run: *build
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./project/packages/docs
+      - github-status/report_failed_only:
+          context: circleci/integration
+  deploy-preview:
+    <<: *defaults
+    steps:
+      - github-status/post_status:
+          state: success
+          context: circleci/integration
+      - github-status/pending:
+          context: circleci/deploy-preview
+          description: Deploy Preview in progress
+      - attach_workspace:
+          at: ~/
+      - netlify/deploy:
+          folder: packages/docs/dist
+          command_path: netlify
+      - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
+      - github-status/report:
+          context: circleci/deploy-preview
+          description: Deploy Preview ready!
+  deploy:
+    <<: *defaults
+    steps:
+      - github-status/pending:
+          context: circleci/deploy
+          description: Deploy in progress
+      - attach_workspace:
+          at: ~/
+      - netlify/deploy_to_prod:
+          folder: packages/docs/dist
+          command_path: netlify
+      - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
+      - github-status/report:
+          context: circleci/deploy
+          description: Deploy ready!
 
 workflows:
   lint_test_build:
@@ -82,3 +124,40 @@ workflows:
           <<: *filters
           requires:
             - install
+      - deploy-preview:
+          requires:
+            - lint
+            - test
+            - build
+      - hold_for_deploy:
+          type: approval
+          requires:
+            - deploy-preview
+          filters:
+            branches:
+              only: main
+      - deploy:
+          requires:
+            - hold_for_deploy
+          filters:
+            branches:
+              only: main
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: main

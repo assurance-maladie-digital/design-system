@@ -37,3 +37,6 @@ package-lock.json*
 # Netlify
 .netlify/
 netlify.toml
+
+# Code Cov
+.nyc_output/
