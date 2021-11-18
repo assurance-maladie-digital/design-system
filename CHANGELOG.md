@@ -27,7 +27,7 @@
 
 - 📝 **Documentation**
   - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573)) ([adf6e2a](https://github.com/assurance-maladie-digital/design-system/commit/adf6e2ae8c0eed92aa446515826317d0770e2d2f))
-  - **global:** Ajout d'un lien vers la politique de signalement de vulnérabilités ([#1614](hhttps://github.com/assurance-maladie-digital/design-system/pull/1614))
+  - **global:** Ajout d'un lien vers la politique de signalement de vulnérabilités ([#1614](hhttps://github.com/assurance-maladie-digital/design-system/pull/1614)) ([a03527a](https://github.com/assurance-maladie-digital/design-system/commit/a03527adce8c337f0b379e327cda96eda71e39b0))
 
 ### Interne
 
@@ -41,6 +41,7 @@
 
 - 📝 **Documentation**
   - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582)) ([853bc97](https://github.com/assurance-maladie-digital/design-system/commit/853bc97835c1e11e8be97e834bb2093631504f90))
+  - **global:** Ajout du fichier `SECURITY.md` ([#1617](https://github.com/assurance-maladie-digital/design-system/pull/1617))
 
 - ⬆️ **Dépendances**
   - **vue-router:** Mise à jour vers la `v3.5.3` ([#1566](https://github.com/assurance-maladie-digital/design-system/pull/1566)) ([66b0967](https://github.com/assurance-maladie-digital/design-system/commit/66b09670af3565e278526fb76e47d48b2ffb2fb4))
