@@ -15,5 +15,4 @@ declare namespace Cypress {
 	export interface Cypress{
 		vue: Record<string, unknown>
 	}
-
 }

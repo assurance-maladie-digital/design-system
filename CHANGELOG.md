@@ -5,6 +5,8 @@
 - ♿️ **Accessibility**
   - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
 
+- ✅ **Tests**
+  - **global:** Ajout de test unitaire dans le composant: CopyBtn ([#1616](https://github.com/assurance-maladie-digital/design-system/pull/1616))
 ### FormBuilder
 
 - ♻️ **Refactoring**
@@ -18,6 +20,9 @@
 - 🐛 **Corrections de bugs**
   - **DocMarkdown:** Correction de la compilation du HTML ([#1572](https://github.com/assurance-maladie-digital/design-system/pull/1572)) ([a22c280](https://github.com/assurance-maladie-digital/design-system/commit/a22c28031b45dc9a79625101126b90ba149f2725))
   - **global:** Correction des accents dans les ancres HTML ([#1583](https://github.com/assurance-maladie-digital/design-system/pull/1583)) ([3aa2e09](https://github.com/assurance-maladie-digital/design-system/commit/3aa2e096d4c7abc5e59391ccc0ccb860a76671c4))
+
+- ♻️ **Refactoring**
+  - **guides:** Refonte de la fonction Netlify `users` ([#1569](https://github.com/assurance-maladie-digital/design-system/pull/1569))
 
 - 📝 **Documentation**
   - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573)) ([adf6e2a](https://github.com/assurance-maladie-digital/design-system/commit/adf6e2ae8c0eed92aa446515826317d0770e2d2f))
@@ -47,7 +52,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.4.0` ([#1595](https://github.com/assurance-maladie-digital/design-system/pull/1595)) ([a513fc9](https://github.com/assurance-maladie-digital/design-system/commit/a513fc906fdfad6d81b60f3a79fc376134c30434))
   - **@types/node:** Mise à jour vers la `v14.17.33` ([#1596](https://github.com/assurance-maladie-digital/design-system/pull/1596)) ([c068120](https://github.com/assurance-maladie-digital/design-system/commit/c068120c275eb22b5e30373459f073717e2283e2))
   - **@mdi/js:** Mise à jour vers la `v6.5.95` ([#1605](https://github.com/assurance-maladie-digital/design-system/pull/1605)) ([e2adede](https://github.com/assurance-maladie-digital/design-system/commit/e2adede0531e517a8f1e56809869708a4aa281d6))
-  - **lint-staged:** Mise à jour vers la `v12` ([#1606](https://github.com/assurance-maladie-digital/design-system/pull/1606))
+  - **lint-staged:** Mise à jour vers la `v12` ([#1606](https://github.com/assurance-maladie-digital/design-system/pull/1606)) ([555dd13](https://github.com/assurance-maladie-digital/design-system/commit/555dd134189737737635885ae75b2f7b4b297eb2))
 
 ## v2.1.0
 
@@ -80,8 +85,8 @@ Cette version comporte l'ajout des nouveaux composants `Logo` et `HeaderBar`, la
   - **NotificationBar:** Ajout de l'attribut ARIA `role` ([#1509](https://github.com/assurance-maladie-digital/design-system/pull/1509)) ([56cf6e7](https://github.com/assurance-maladie-digital/design-system/commit/56cf6e790a052c8bf75bc324b0cf9dccc31d40c6))
 
 - ✅ **Tests**
-  - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
   - **pickerDate:** Correction d'un warning ([#1518](https://github.com/assurance-maladie-digital/design-system/pull/1518)) ([022a68a](https://github.com/assurance-maladie-digital/design-system/commit/022a68a06ef4d777fc978673f63579c32a51d250))
+  
 
 - ✅ **Tests**
   - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
