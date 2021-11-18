@@ -56,7 +56,7 @@ jobs:
           root: ~/
           paths:
             - project/
-            - .cache/
+            - .cache/Cypress
             - .config/yarn/global/
             - .yarn/
   lint:
