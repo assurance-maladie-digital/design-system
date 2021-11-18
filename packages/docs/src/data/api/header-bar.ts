@@ -50,6 +50,13 @@ const itemsProp = {
 }[]`
 };
 
+const homeLinkProp = {
+	name: 'home-link',
+	type: 'Next',
+	default: `'/'`,
+	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.'
+};
+
 export const api: Api = {
 	HeaderBar: {
 		props: [
@@ -66,6 +73,7 @@ export const api: Api = {
 				description: 'La liste des liens à afficher dans la barre de navigation.'
 			},
 			innerWidthProp,
+			homeLinkProp,
 			...customizable(`{
 	appBar: 'VAppBar',
 	contentSheet: 'VSheet',
@@ -102,7 +110,8 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Affiche la version mobile.'
-			}
+			},
+			homeLinkProp
 		],
 		slots: [
 			{
