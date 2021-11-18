@@ -5,6 +5,8 @@
 - ♿️ **Accessibility**
   - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
 
+- ✅ **Tests**
+  - **global:** Ajout de test unitaire dans le composant: CopyBtn ([#1616](https://github.com/assurance-maladie-digital/design-system/pull/1616))
 ### FormBuilder
 
 - ♻️ **Refactoring**
@@ -84,6 +86,7 @@ Cette version comporte l'ajout des nouveaux composants `Logo` et `HeaderBar`, la
 
 - ✅ **Tests**
   - **pickerDate:** Correction d'un warning ([#1518](https://github.com/assurance-maladie-digital/design-system/pull/1518)) ([022a68a](https://github.com/assurance-maladie-digital/design-system/commit/022a68a06ef4d777fc978673f63579c32a51d250))
+  
 
 ### Vue Dash
 
