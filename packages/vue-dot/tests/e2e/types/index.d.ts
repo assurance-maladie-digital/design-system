@@ -7,4 +7,8 @@ declare namespace Cypress {
 		 */
 		dataCy(value: string): Chainable<Element>;
 	}
+
+	export interface Cypress{
+		vue: Record<string, unknown>
+	}
 }

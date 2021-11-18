@@ -6,19 +6,23 @@ import {
 // Add Vuetify
 import { vuetify } from './vuetify';
 
-type VueComponent = Vue.VueConstructor;
+export type VueComponent =  Vue.ComponentOptions<any> | Vue.VueConstructor;
 
-type MountType = ReturnType<typeof mount> | ReturnType<typeof mountCallback>;
+export type MountType = ReturnType<typeof mount> | ReturnType<typeof mountCallback> | any;
+
+export type OptionsType =  Record<string, unknown> | any;
 
 /** Generic mount function */
 export function mountComponent(
-	component: VueComponent,
+	component: VueComponent | Record<string, unknown>,
+	options?: OptionsType,
 	fullMount = false
 ): MountType {
 	// Use mount() instead of mountCallback() when fullMount is true
 	const fn = fullMount ? mountCallback : mount;
-
-	return fn(component, {
-		vuetify
-	});
+	return fn(
+		component, {
+			vuetify,
+			...options
+		});
 }
