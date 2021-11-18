@@ -6,7 +6,6 @@ orbs:
   jq: circleci/jq@2.2.0
   github-status: assurance-maladie-digital/github-status@1.3.0
   netlify: assurance-maladie-digital/netlify@1.1.0
-  cypress: cypress-io/cypress@1
 
 defaults: &defaults
   working_directory: ~/project
