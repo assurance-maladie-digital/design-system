@@ -1,7 +1,7 @@
 import { mountComponent } from '../';
 import CopyBtn from '@/elements/CopyBtn';
 
-const TEXT_TO_COPY_ONE = 'Texte copié!';
+const TEXT_TO_COPY_ONE = 'Texte copié !';
 
 const TEXT_TO_COPY_TWO = 'Le texte a bien été copié';
 
@@ -23,7 +23,7 @@ describe('CopyBtn component testing', () => {
             cy.get('@VBtn').should('be.visible');
         });
 
-        it('copies the text to the clipboard: tooltip show', () => {
+        it('copies the text to the clipboard then menu content appears: tooltip show', () => {
             cy.get('@VBtn').click();
 			cy.contains(TEXT_TO_COPY_ONE);
 			cy.get('.v-menu__content');
