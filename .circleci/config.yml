@@ -45,7 +45,7 @@ jobs:
       - checkout
       - restore_cache: *restore_cache
       - run: *install
-      - cypress/install:
+      - cypress/setup:
           yarn: true
           install-command: npx cypress install
           cache-key: yarn-packages-{{ checksum "yarn.lock" }}
