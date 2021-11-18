@@ -23,7 +23,7 @@ describe('CopyBtn component testing', () => {
             cy.get('@VBtn').should('be.visible');
         });
 
-        it('copies the text to the clipboard then menu content appears: tooltip show', () => {
+        it('copies the text to the clipboard: tooltip show', () => {
             cy.get('@VBtn').click();
 			cy.contains(TEXT_TO_COPY_ONE);
 			cy.get('.v-menu__content');
