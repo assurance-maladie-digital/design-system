@@ -1,7 +1,5 @@
 import { mount, mountCallback } from '@cypress/vue';
 
-import { Wrapper } from '@vue/test-utils';
-
 declare type VueComponent =  Vue.ComponentOptions<any> | Vue.VueConstructor;
 
 declare type MountOptionsArgument = any;
