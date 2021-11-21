@@ -42,9 +42,7 @@
 		"test:e2e:gui": "cypress open-ct"
 	},
 	"dependencies": {
-		"@cypress/code-coverage": "^3.9.11",
-		"content-disposition": "^0.5.3",
-		"cypress-plugin-snapshots": "^1.4.4",
+		"content-disposition": "^0.5.3", 
 		"deepmerge": "^4.2.2"
 	},
 	"peerDependencies": {
@@ -71,7 +69,8 @@
 		"@vue/cli-service": "4.5.15",
 		"cypress": "8.7.0",
 		"vue-cli-plugin-vuetify": "2.4.3",
-		"vuetify-loader": "1.7.3"
+		"vuetify-loader": "1.7.3",
+		"cypress-plugin-snapshots": "^1.4.4"
 	},
 	"lint-staged": {
 		"*.{ts,vue}": [

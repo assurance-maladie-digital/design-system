@@ -1,16 +1,16 @@
 const plugins = [];
-
-//  instrumenting code
-plugins.push([
-	'babel-plugin-istanbul', {
-		extension: [
-			'.ts',
-			'.js',
-			'.vue'
-		]
-	}
-]);
-
+//  instrumenting cod
+if(!process.env.LIB_MODE){
+	plugins.push([
+		'babel-plugin-istanbul', {
+			extension: [
+				'.ts',
+				'.js',
+				'.vue'
+			]
+		}
+	]);
+}
 module.exports = {
 	// For dev environment
 	presets: [
