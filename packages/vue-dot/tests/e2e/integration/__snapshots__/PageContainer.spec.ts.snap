@@ -1,0 +1,7 @@
+exports[`PageContainer > renders correctly #0`] = `
+<div id="__cy_root" class="v-application" data-app="true">
+  <div class="vd-page-container d-flex justify-center py-10 px-0">
+    <div class="v-sheet theme--light transparent" style="width: 1440px;"></div>
+  </div>
+</div>
+`;

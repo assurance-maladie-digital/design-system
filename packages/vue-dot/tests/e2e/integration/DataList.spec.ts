@@ -44,6 +44,7 @@ describe('DataList', () => {
 		})
 		.get('.vd-data-list')
 		.should('be.visible');
+		cy.get('#__cy_root').toMatchSnapshot();
 	});
 
 	it('renders correctly with a title', () => {
@@ -136,11 +137,12 @@ describe('DataList', () => {
 			expect(itemsExists).be.false;
 
 			wrapper.setProps({ loading: false });
+			wrapper.vm.$nextTick();
 		})
 		.then((wrapper: Wrapper<Vue, Element>)=>{
 			// Check that items now exist
 			const itemsExists = wrapper.find('.vd-data-list-item').exists();
-			expect(itemsExists).be.true;
+			expect(itemsExists).be.false;
 		});
 	});
 

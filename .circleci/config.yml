@@ -51,10 +51,6 @@ jobs:
           cache-key: yarn-packages-{{ checksum "yarn.lock" }}
           no-workspace: true
       - run: yarn global add netlify-cli
-      - cypress/setup:
-          yarn: true
-          install-command: npx cypress install
-          cache-key: yarn-packages-{{ checksum "yarn.lock" }}
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/

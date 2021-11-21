@@ -1,0 +1,14 @@
+exports[`HeaderLoading > renders correctly #0`] = `
+<div id="__cy_root" class="v-application" data-app="true">
+  <div
+    data-v-c7043360=""
+    aria-busy="true"
+    aria-live="polite"
+    role="alert"
+    class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--light"
+    style="height: 1rem; width: 100px;"
+  >
+    <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+  </div>
+</div>
+`;

@@ -9,5 +9,6 @@ describe('ExternalLinks', () => {
 				position: 'top left'
 			}
 		});
+		cy.get('#__cy_root').toMatchSnapshot();
 	});
 });

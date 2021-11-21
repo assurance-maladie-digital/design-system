@@ -9,5 +9,6 @@ describe('FranceConnectBtn', () => {
 				href: 'https://app.franceconnect.gouv.fr/'
 			}
 		});
+		cy.get('#__cy_root').toMatchSnapshot();
 	});
 });

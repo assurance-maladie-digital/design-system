@@ -44,6 +44,7 @@
 	"dependencies": {
 		"@cypress/code-coverage": "^3.9.11",
 		"content-disposition": "^0.5.3",
+		"cypress-plugin-snapshots": "^1.4.4",
 		"deepmerge": "^4.2.2"
 	},
 	"peerDependencies": {
@@ -86,6 +87,10 @@
 		"include": [
 			"src/elements/**/*.ts",
 			"src/patterns/**/*.ts"
+		],
+		"exclude": [
+			"**/mixins/**",
+			"**/data/**"
 		]
 	}
 }
