@@ -21,6 +21,7 @@ Array [
   "Logo",
   "NotificationBar",
   "PageContainer",
+  "PageFooter",
   "PaginatedTable",
   "SubHeader",
   "TableToolbar",

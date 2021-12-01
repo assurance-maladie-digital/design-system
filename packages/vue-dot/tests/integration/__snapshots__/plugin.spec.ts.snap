@@ -22,6 +22,7 @@ Object {
     "Logo",
     "NotificationBar",
     "PageContainer",
+    "PageFooter",
     "PaginatedTable",
     "SubHeader",
     "TableToolbar",
