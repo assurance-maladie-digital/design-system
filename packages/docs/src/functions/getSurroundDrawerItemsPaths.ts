@@ -1,8 +1,8 @@
 import { drawerItems } from '~/data/drawerItems';
-import { PageItem, SurroundItemsPaths } from '~/types/drawer';
+import { DrawerItem, SurroundItemsPaths } from '~/types/drawer';
 
-function flattenDrawerItems(items: PageItem[]): PageItem[] {
-	const flat: PageItem[] = [];
+function flattenDrawerItems(items: DrawerItem[]): DrawerItem[] {
+	const flat: DrawerItem[] = [];
 
 	items.forEach((item) => {
 		if (Array.isArray(item.items)) {
