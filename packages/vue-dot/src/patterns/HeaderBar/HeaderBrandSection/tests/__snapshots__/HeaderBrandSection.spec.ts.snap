@@ -2,7 +2,9 @@
 
 exports[`HeaderBrandSection renders correctly 1`] = `
 <vsheet-stub height="64px" tag="div" class="vd-header-brand-section d-flex">
-  <logo-stub size="normal"></logo-stub>
+  <routerlink to="/">
+    <logo-stub size="normal"></logo-stub>
+  </routerlink>
   <!---->
   <!---->
 </vsheet-stub>
