@@ -108,15 +108,6 @@ export const contentExplorerItems: TreeviewItem[] = [
 		path: 'src',
 		children: [
 			{
-				name: 'assets',
-				children: [
-					{
-						name: 'logo.svg',
-						file: 'svg'
-					}
-				]
-			},
-			{
 				name: 'components',
 				children: [
 					{
