@@ -33,7 +33,8 @@
 
 - 🐛 **Corrections de bugs**
   - **build:** Correction des fichiers de tests et de coverage publiés ([#1584](https://github.com/assurance-maladie-digital/design-system/pull/1584)) ([a10e1f2](https://github.com/assurance-maladie-digital/design-system/commit/a10e1f2c8d5919ec0b6ebdb07cf522dcce677e08))
-  - **global:** Correction de fautes d'orthographe dans les composants ([#1636](https://github.com/assurance-maladie-digital/design-system/pull/1636))
+  - **global:** Correction de fautes d'orthographe dans les composants ([#1636](https://github.com/assurance-maladie-digital/design-system/pull/1636)) ([b44998b](https://github.com/assurance-maladie-digital/design-system/commit/b44998bfe80e3199f335f21f01d5534efba7729e))
+  - **global:** Correction des liens externes ([#1637](https://github.com/assurance-maladie-digital/design-system/pull/1637))
 
 - 🔧 **Configuration**
   - **ci:** Ajout du déploiement sur Netlify ([#1363](https://github.com/assurance-maladie-digital/design-system/pull/1363)) ([c76790d](https://github.com/assurance-maladie-digital/design-system/commit/c76790d2cc567883389be63a2704aa0791670fec))
