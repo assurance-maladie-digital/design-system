@@ -24,12 +24,12 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { PageItem } from '../../types/drawer';
+	import { DrawerItem } from '../../types/drawer';
 
 	const Props = Vue.extend({
 		props: {
 			item: {
-				type: Object as PropType<PageItem>,
+				type: Object as PropType<DrawerItem>,
 				default: () => ({})
 			}
 		}

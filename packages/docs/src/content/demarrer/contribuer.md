@@ -5,7 +5,7 @@ description: Fonctionnement des contributions au Design System.
 
 Merci de prendre le temps de contribuer au Design System, c’est de cette manière qu’il va pouvoir évoluer et s’adapter aux différents besoins des équipes et des projets.
 
-## Rapports de bugs
+## Rapport de bug
 
 <doc-indent>
 
@@ -24,7 +24,7 @@ Lors de l’écriture de votre rapport de bug, essayez de donner le plus de dét
 Lorsque vous créez une reproduction minimale, supprimez tous les éléments, propriétés, variables, données et autres qui ne sont pas nécessaires pour reproduire le bug. Cela facilitera le traitement du rapport et le temps qu’il faudra pour identifier puis résoudre le bug.
 </doc-alert>
 
-## Demandes d’évolution
+## Demande d’évolution
 
 <doc-indent>
 
