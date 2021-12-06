@@ -1,9 +1,8 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 
 import { Wrapper } from '@vue/test-utils';
 
-import { mountComponent, localVue } from '@/tests';
+import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import PageFooter from '../';

@@ -128,6 +128,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/page-container'
 			},
 			{
+				title: 'PageFooter',
+				to: '/composants/page-footer'
+			},
+			{
 				title: 'PaginatedTable',
 				to: '/composants/paginated-table'
 			},

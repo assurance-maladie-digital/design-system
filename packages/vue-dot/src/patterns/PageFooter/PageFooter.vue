@@ -4,7 +4,10 @@
 		color="#fff"
 		class="d-flex justify-center"
 	>
-		<slot>
+		<!-- default slot for image's link //-->
+		<slot />
+
+		<slot name="contentLinks">
 			<div
 				v-for="item in items"
 				:key="item.to"
@@ -19,7 +22,7 @@
 		</slot>
 
 		<p class="grey--text text--darken-2 my-2 mx-4">
-			{{ locales.accessibilityLevel }}
+			{{ locales.accessLevelFunc(accessLevel) }}
 		</p>
 
 		<p class="grey--text text--darken-2 my-2 mx-4">
@@ -41,6 +44,13 @@
 			items: {
 				type: Array as PropType<RouterLinkItem[]>,
 				default: undefined
+			},
+			accessLevel: {
+				type: [Number, String] ,
+				default: 0,
+				validator: (value: number) => {
+					return [0, 1, 2].indexOf(value) !== -1;
+				}
 			}
 		}
 	});
