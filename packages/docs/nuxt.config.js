@@ -2,6 +2,7 @@ import { applyTypographicRules } from './src/hooks/applyTypographicRules';
 import { parseMarkdownDescription } from './src/hooks/parseMarkdownDescription';
 import { transformCodeBlocks } from './src/hooks/transformCodeBlocks';
 
+
 export default {
 	target: 'static',
 	srcDir: './src/',
@@ -116,6 +117,7 @@ export default {
 	},
 	env: {
 		API_URL: (process.env.DEPLOY_PRIME_URL || 'https://digital-design-system.netlify.app') + '/.netlify/functions',
-		API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN: process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN || '*'
+		API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN: process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN || '*',
+		VUE_APP_VERSION: require('./package.json').version
 	}
 };

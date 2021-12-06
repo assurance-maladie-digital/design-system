@@ -4,10 +4,16 @@
 		color="#fff"
 		class="d-flex justify-center"
 	>
-		<slot>
-			<div
-				v-for="item in items"
-				:key="item.to"
+		<slot />
+
+		<div
+			v-for="item in items"
+			:key="item.to"
+			class="ml-2"
+		>
+			<slot
+				name="content"
+				:items="item"
 			>
 				<RouterLink
 					:to="item.to"
@@ -15,11 +21,11 @@
 				>
 					{{ item.label }}
 				</RouterLink>
-			</div>
-		</slot>
+			</slot>
+		</div>
 
 		<p class="grey--text text--darken-2 my-2 mx-4">
-			{{ locales.accessibilityLevel }}
+			{{ locales.accessLevelFunc(accessLevel) }}
 		</p>
 
 		<p class="grey--text text--darken-2 my-2 mx-4">
@@ -34,13 +40,20 @@
 
 	import { locales } from './locales';
 
-	import { RouterLinkItem } from './types';
+	import { RouterLinkItem, RouterLinkItemGroup } from './types';
 
 	const Props = Vue.extend({
 		props: {
 			items: {
-				type: Array as PropType<RouterLinkItem[]>,
+				type: Array as PropType<RouterLinkItem[] | RouterLinkItemGroup>,
 				default: undefined
+			},
+			accessLevel: {
+				type: [Number, String] ,
+				default: 0,
+				validator: (value: number) => {
+					return [0, 1, 2].indexOf(value) !== -1;
+				}
 			}
 		}
 	});
