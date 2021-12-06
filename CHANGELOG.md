@@ -5,6 +5,8 @@
 - ✨ **Nouvelles fonctionnalités**
   - **HeaderBar:** Ajout d'un lien vers la page d'accueil sur le logo ([#1612](https://github.com/assurance-maladie-digital/design-system/pull/1612)) ([3f26bbd](https://github.com/assurance-maladie-digital/design-system/commit/3f26bbd928de6c591e72a1b614a633758242bf4b))
 
+  - **PageFooter:** Ajout d'un nouveau composant: PageFooter ([#1612](https://github.com/assurance-maladie-digital/design-system/pull/1640)) ([c02b0cd](https://github.com/assurance-maladie-digital/design-system/pull/1640/commits/e2e3adf2c17b88409772bcbe36913d191c02b0cd))
+
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
 
