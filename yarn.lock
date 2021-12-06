@@ -2011,10 +2011,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/functions@0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-0.8.0.tgz#0c0a3d5a8efdc6aa469f75acb9df556a317cff1f"
-  integrity sha512-Ew4Q2ofSBa5aeVOvrHNNEkfCJNmjTkEIr+WkyveOZrcnKQGH/sTtPqVb6HP51NJHNhczBkd3S3KdXfrCB0q0Ig==
+"@netlify/functions@0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-0.10.0.tgz#3856b609df1c1d1c7c21773650d1e5b4f81cfaf2"
+  integrity sha512-NNFADTPnokuoMY1OUhaXlE/Jrzk5lHOl1uB4L/8pw1UJ/CaectZJACMExijbJnqaKIhOQG0WmbBQUh1lgnK/Qg==
   dependencies:
     is-promise "^4.0.0"
 
@@ -2211,10 +2211,10 @@
     std-env "^2.3.0"
     ufo "^0.7.4"
 
-"@nuxt/content@1.15.0":
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-1.15.0.tgz#5e15d5d0012e95be60e1904f25cbe909b29404f6"
-  integrity sha512-F3znlZUOSKPse6G+qR6eGEIU3vzfXzfc5WnWwA94kfM5+dz7IkP6Hwyj8FTUyW7HfmvQIf6Nc2sNm5obKgNgtA==
+"@nuxt/content@1.15.1":
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/@nuxt/content/-/content-1.15.1.tgz#bd2c7ff9e9523b6a6a3f4edaec78495acc72a41e"
+  integrity sha512-nCTKwNcs59KgwwGQkSW8Z/otoiYX+OKDBjdOLn7tty3WdEfPQYcEkTX6WKP5IVYI976FihZExppRiezkm2N0mQ==
   dependencies:
     "@lokidb/full-text-search" "^2.1.0"
     "@lokidb/loki" "^2.1.0"
@@ -15995,10 +15995,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.4.4:
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
-  integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
+typescript@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
+  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 typescript@~4.2:
   version "4.2.4"
