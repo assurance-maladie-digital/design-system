@@ -10,7 +10,10 @@
 
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
-  - **Logo:** Ajout des attributs `role="img"` et `focusable="false"` ([#1642](https://github.com/assurance-maladie-digital/design-system/pull/1642))
+  - **Logo:** Ajout des attributs `role="img"` et `focusable="false"` ([#1642](https://github.com/assurance-maladie-digital/design-system/pull/1642)) ([631675f](https://github.com/assurance-maladie-digital/design-system/commit/631675f8652355273250835fcd1c225576ca1e11))
+
+- ✅ **Tests**
+  - **HeaderBrandSection:** Correction d'un warning ([#1643](https://github.com/assurance-maladie-digital/design-system/pull/1643))
 
 ### FormBuilder
 
