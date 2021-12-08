@@ -5,7 +5,8 @@
 - ✨ **Nouvelles fonctionnalités**
   - **HeaderBar:** Ajout d'un lien vers la page d'accueil sur le logo ([#1612](https://github.com/assurance-maladie-digital/design-system/pull/1612)) ([3f26bbd](https://github.com/assurance-maladie-digital/design-system/commit/3f26bbd928de6c591e72a1b614a633758242bf4b))
   - **DatePicker:** Ajout de la gestion du copier/coller ([#1647](https://github.com/assurance-maladie-digital/design-system/pull/1647)) ([4174305](https://github.com/assurance-maladie-digital/design-system/commit/417430545c22eeac16c02b84cb2ef986164a9c7c))
-  - **DatePicker:** Ajout de la gestion de l'appui sur la touche *Entrée* ([#1648](https://github.com/assurance-maladie-digital/design-system/pull/1648))
+  - **DatePicker:** Ajout de la gestion de l'appui sur la touche *Entrée* ([#1648](https://github.com/assurance-maladie-digital/design-system/pull/1648)) ([#1647](https://github.com/assurance-maladie-digital/design-system/pull/1647)) ([2704190](https://github.com/assurance-maladie-digital/design-system/commit/2704190ed07d208fffcd33fc5d3ea80ea069c0dd))
+  - **DatePicker:** Transmission des écouteurs d'événements ([#1649](https://github.com/assurance-maladie-digital/design-system/pull/1649))
 
 - 🐛 **Corrections de bugs**
   - **Logo:** Correction du logo Risque Pro ([#1641](https://github.com/assurance-maladie-digital/design-system/pull/1641)) ([c678ffa](https://github.com/assurance-maladie-digital/design-system/commit/c678ffa04fe15cd760055c0887486383cdfba729))
