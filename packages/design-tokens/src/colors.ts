@@ -7,7 +7,7 @@ export const lightTheme = {
 	// State
 	success: '#009688',
 	error: '#b00000',
-	warning: '#ba8b00'
+	warning: '#785912'
 };
 
 export const colors = {
