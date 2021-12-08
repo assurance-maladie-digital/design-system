@@ -21,6 +21,7 @@
 				@blur="textFieldBlur"
 				@click="textFieldClicked"
 				@paste.prevent="saveFromPasted"
+				@keydown.enter.prevent="saveFromTextField"
 			>
 				<template #prepend>
 					<VBtn

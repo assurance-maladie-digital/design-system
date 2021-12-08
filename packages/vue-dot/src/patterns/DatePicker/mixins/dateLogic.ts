@@ -223,6 +223,11 @@ export class DateLogic extends MixinsDeclaration {
 
 		const formatted = this.parseTextFieldDate(this.textFieldDate);
 
+		// Don't clear the value if the date is invalid
+		if (!formatted) {
+			return;
+		}
+
 		// Set the internal date
 		this.date = formatted;
 
