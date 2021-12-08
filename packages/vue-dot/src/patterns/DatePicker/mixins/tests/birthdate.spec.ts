@@ -11,13 +11,7 @@ import { Birthdate } from '../birthdate';
 jest.useFakeTimers();
 
 interface TestComponent extends Vue {
-	// Extend $refs
-	$refs: Refs<{
-		picker: {
-			activePicker: string;
-		};
-	}>;
-
+	activePicker: string | null;
 	birthdate?: string | boolean;
 	max: string | null;
 	min: string | null;
@@ -28,11 +22,6 @@ interface TestComponent extends Vue {
 /** Create fake VDatePicker for refs */
 function createDatePicker() {
 	return Vue.component('VDatePicker', {
-		data() {
-			return {
-				activePicker: ''
-			};
-		},
 		template: '<div />'
 	});
 }
@@ -46,7 +35,7 @@ function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
 		watch: {
 			menu: spy ? spy : () => null
 		},
-		template: '<div><v-date-picker ref="picker" /></div>'
+		template: '<div><v-date-picker /></div>'
 	});
 
 	return mount(component, {
@@ -115,6 +104,6 @@ describe('Birthdate', () => {
 		// Fast-forward time
 		jest.runAllTimers();
 
-		expect(wrapper.vm.$refs.picker.activePicker).toBe('YEAR');
+		expect(wrapper.vm.activePicker).toBe('YEAR');
 	});
 });

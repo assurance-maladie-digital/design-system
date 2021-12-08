@@ -2,8 +2,6 @@ import dayjs from 'dayjs';
 import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import { Refs } from '../../../types';
-
 import { INTERNAL_FORMAT } from './dateLogic';
 
 const Props = Vue.extend({
@@ -21,21 +19,16 @@ const MixinsDeclaration = mixins(Props);
 /** Add birthdate prop: select year, month then day */
 @Component<Birthdate>({
 	watch: {
-		menu(val: boolean): void {
+		menu(value: boolean): void {
 			// If birthdate mode is activated
-			if (this.birthdate && val) {
+			if (this.birthdate && value) {
 				this.setActivePicker();
 			}
 		}
 	}
 })
 export class Birthdate extends MixinsDeclaration {
-	// Extend $refs
-	$refs!: Refs<{
-		picker: {
-			activePicker: string;
-		};
-	}>;
+	activePicker: string | null = null;
 
 	/** If birthdate is enabled, max is the current date */
 	max = this.birthdate ? dayjs().format(INTERNAL_FORMAT) : null;
@@ -50,7 +43,7 @@ export class Birthdate extends MixinsDeclaration {
 	setActivePicker(): void {
 		setTimeout(() => {
 			// Set the active picker to year
-			this.$refs.picker.activePicker = 'YEAR';
+			this.activePicker = 'YEAR';
 		});
 	}
 }

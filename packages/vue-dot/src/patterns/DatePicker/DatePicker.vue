@@ -74,10 +74,10 @@
 		-->
 		<VDatePicker
 			v-if="!noCalendar"
-			ref="picker"
 			v-model="date"
 			v-bind="options.datePicker"
 			type="date"
+			:active-picker.sync="activePicker"
 			:picker-date.sync="internalPickerDate"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
