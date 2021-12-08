@@ -132,14 +132,26 @@ describe('DateLogic', () => {
 		expect(wrapper.vm.date).toBe('2019-10-29');
 	});
 
-	it('emits change event with empty value when the date is invalid', () => {
+	it('emits change event with empty value when saveFromTextField and the date is invalid in initial state', () => {
 		const wrapper = createWrapper({
 			value: '29-10-2019'
 		});
 
 		wrapper.vm.saveFromTextField();
 
-		expect(wrapper.emitted('change')).toEqual([['']]);
+		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	it('does not emit change event when saveFromTextField is called and value is invalid', async() => {
+		const wrapper = createWrapper();
+
+		await wrapper.setData({
+			textFieldDate: '2019/'
+		});
+
+		wrapper.vm.saveFromTextField();
+
+		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
 	// parseTextFieldDate
