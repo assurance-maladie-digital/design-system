@@ -41,10 +41,7 @@ const MixinsDeclaration = mixins(Props);
 			handler(date: string): void {
 				// If the date is cleared
 				if (!date) {
-					// Clear internal models
-					this.date = '';
-					this.textFieldDate = '';
-
+					this.clearInternalModel();
 					return;
 				}
 
@@ -217,10 +214,10 @@ export class DateLogic extends MixinsDeclaration {
 
 	/** Save the date from text field blur */
 	saveFromTextField(): void {
-		// Return if empty/falsy
 		if (!this.textFieldDate) {
 			// Clear v-model
 			this.$emit('change', '');
+			this.clearInternalModel();
 			return;
 		}
 
@@ -230,6 +227,11 @@ export class DateLogic extends MixinsDeclaration {
 		this.date = formatted;
 
 		this.emitChangeEvent();
+	}
+
+	clearInternalModel(): void {
+		this.date = '';
+		this.textFieldDate = '';
 	}
 
 	/** Update v-model */
