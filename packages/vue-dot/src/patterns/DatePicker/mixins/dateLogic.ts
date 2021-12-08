@@ -229,6 +229,28 @@ export class DateLogic extends MixinsDeclaration {
 		this.emitChangeEvent();
 	}
 
+	saveFromPasted(event: ClipboardEvent): void {
+		const value = event.clipboardData?.getData('text/plain');
+
+		if (!value) {
+			return;
+		}
+
+		const parsedWithDisplayFormat = parseDate(value, this.dateFormat);
+
+		if (parsedWithDisplayFormat.isValid()) {
+			this.date = parsedWithDisplayFormat.format(INTERNAL_FORMAT);
+		}
+
+		const parsedWithReturnFormat = parseDate(value, this.dateFormatReturn);
+
+		if (parsedWithReturnFormat.isValid()) {
+			this.date = parsedWithReturnFormat.format(INTERNAL_FORMAT);
+		}
+
+		this.emitChangeEvent();
+	}
+
 	clearInternalModel(): void {
 		this.date = '';
 		this.textFieldDate = '';

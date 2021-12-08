@@ -20,6 +20,7 @@
 				@input="$emit('input', $event)"
 				@blur="textFieldBlur"
 				@click="textFieldClicked"
+				@paste.prevent="saveFromPasted"
 			>
 				<template #prepend>
 					<VBtn
