@@ -15,6 +15,14 @@
 - ✅ **Tests**
   - **HeaderBrandSection:** Correction d'un warning ([#1643](https://github.com/assurance-maladie-digital/design-system/pull/1643)) ([b66cd26](https://github.com/assurance-maladie-digital/design-system/commit/b66cd26cbdd4d02ce7bda574e766e6e46b559feb))
 
+### Vue Dash
+
+- ♻️ **Refactoring**
+  - **template:** Mise à jour de la couleur de fond par défaut ([#1645](https://github.com/assurance-maladie-digital/design-system/pull/1645))
+
+- 🔥 **Suppressions**
+  - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
+
 ### FormBuilder
 
 - ♻️ **Refactoring**
@@ -23,7 +31,7 @@
 ### Design Tokens
 
 - ♻️ **Refactoring**
-  - **colors:** Mise à jour de la couleur de warning ([#1644](https://github.com/assurance-maladie-digital/design-system/pull/1644))
+  - **colors:** Mise à jour de la couleur de warning ([#1644](https://github.com/assurance-maladie-digital/design-system/pull/1644)) ([5bed6d6](https://github.com/assurance-maladie-digital/design-system/commit/5bed6d6c9584ee07fb400dd3454c7aca93209bf0))
 
 ### Documentation
 
@@ -42,11 +50,6 @@
 - 📝 **Documentation**
   - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573)) ([adf6e2a](https://github.com/assurance-maladie-digital/design-system/commit/adf6e2ae8c0eed92aa446515826317d0770e2d2f))
   - **global:** Ajout d'un lien vers la politique de signalement de vulnérabilités ([#1614](hhttps://github.com/assurance-maladie-digital/design-system/pull/1614)) ([a03527a](https://github.com/assurance-maladie-digital/design-system/commit/a03527adce8c337f0b379e327cda96eda71e39b0))
-
-### Vue Dash
-
-- 🔥 **Suppressions**
-  - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
 
 ### Interne
 
