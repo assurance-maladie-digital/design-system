@@ -9,19 +9,20 @@
 			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
-				v-model="dateFormatted"
 				v-facade="maskValue"
 				v-bind="textFieldOptions"
+				:value="dateFormatted"
 				:outlined="outlined"
 				:class="textFieldClasses"
 				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error.sync="internalErrorProp"
 				class="vd-date-picker-text-field"
-				@input="$emit('input', $event)"
 				@blur="textFieldBlur"
 				@click="textFieldClicked"
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
+				@change="dateFormatted = $event"
+				v-on="$listeners"
 			>
 				<template #prepend>
 					<VBtn
