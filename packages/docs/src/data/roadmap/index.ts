@@ -6,21 +6,21 @@ import { RoadmapSection } from '~/types/roadmap';
 export const roadmap: IndexedObject<RoadmapSection[]> = {
 	current: [
 		{
-			version: '2.1.0',
-			date: 'Octobre 2021',
-			description: 'Éléments génériques : header, footer et consentement utilisateur.',
+			version: '2.2.0',
+			date: 'Novembre 2021',
+			description: 'Accessibilité : documentation des bonnes pratiques et passage en revue des composants.',
 			items: [
 				{
-					title: 'Header',
-					description: 'Ajout d’un composant header qui prend en compte la nouvelle charte graphique de l’Assurance Maladie.',
-					label: LabelMappingEnum.NEW,
-					issue: 1087
+					title: 'Documentation accessibilité',
+					description: 'Documentation des bonnes pratique et des critères d’accessibilité pour les développeurs.',
+					label: LabelMappingEnum.DOCUMENTATION,
+					issue: 1625
 				},
 				{
-					title: 'Footer',
-					description: 'Refonte graphique du footer en prenant en compte les retours d’accessibilité.',
-					label: LabelMappingEnum.REFACTORING,
-					issue: 1398
+					title: 'Fichier Figma v1.0',
+					description: 'Faire l’inventaire des composants manquants ainsi que ceux à nettoyer ou à mettre à jour.',
+					label: LabelMappingEnum.DOCUMENTATION,
+					issue: 1627
 				},
 				{
 					title: 'Composant Captcha',
@@ -29,16 +29,10 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 					issue: 1495
 				},
 				{
-					title: 'Consentement cookies',
-					description: 'Définition des modalités de recueil du consentement des utilisateurs.',
-					label: LabelMappingEnum.NEW,
-					issue: 1416
-				},
-				{
-					title: 'Fichier Figma v1.0',
-					description: 'Migration des composants stables dans un fichier Figma en vue d’une version 1.0.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1494
+					title: 'Footer',
+					description: 'Refonte graphique du footer en prenant en compte les retours d’accessibilité.',
+					label: LabelMappingEnum.REFACTORING,
+					issue: 1597
 				},
 				{
 					title: 'Guide sur les appels API',
@@ -47,43 +41,37 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 					issue: 1278
 				},
 				{
-					title: 'Ajout de la recherche',
-					description: 'Ajout de la recherche à la documentation.',
-					label: LabelMappingEnum.NEW,
-					issue: 1278
+					title: 'Documentation des classes utilitaires',
+					description: 'Documentation des classes utilitaires CSS.',
+					label: LabelMappingEnum.DOCUMENTATION,
+					issue: 1523
 				},
 				{
-					title: 'Tests unitaires des composants',
-					description: 'Utiliser Cypress à la place de Vue Test Utils pour les tests unitaires des composants.',
-					label: LabelMappingEnum.REFACTORING,
-					issue: 1283
+					title: 'Revue des composants',
+					description: 'Passage en revue des composants pour vérifier l’accessibilité de ceux-ci.',
+					label: LabelMappingEnum.REFACTORING
 				}
 			]
 		}
 	],
 	next: [
 		{
-			version: '2.2.0',
-			date: 'Novembre 2021',
-			description: 'Accessibilité : documentation des bonnes pratiques et passage en revue des composants.',
-			items: [
-				{
-					title: 'Documentation accessibilité',
-					description: 'Documentation des recommandations et des critères d’accessibilité.',
-					label: LabelMappingEnum.DOCUMENTATION
-				},
-				{
-					title: 'Revue des composants',
-					description: 'Passage en revue des composants pour assurer l’accessibilité.',
-					label: LabelMappingEnum.REFACTORING
-				}
-			]
-		},
-		{
 			version: '2.3.0',
 			date: 'Décembre 2021',
 			description: 'Expérience développeur : configuration des outils de qualité de code, prise en compte des retours des équipes et complétion de la documentation.',
 			items: [
+				{
+					title: 'Consentement cookies',
+					description: 'Intégration du composant pour le recueil du consentement des utilisateurs.',
+					label: LabelMappingEnum.NEW,
+					issue: 1417
+				},
+				{
+					title: 'Ajout de la recherche',
+					description: 'Ajout de la recherche à la documentation.',
+					label: LabelMappingEnum.NEW,
+					issue: 1278
+				},
 				{
 					title: 'Documentation des fonctions',
 					description: 'Documentation des fonctions utilitaires.',
@@ -144,8 +132,8 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 		},
 		{
 			version: '3.0.0',
-			date: 'Mars 2022',
-			description: 'Migration vers Vue.js 3 : réécriture des composants avec l’API de composition et mise à jour du Starter Kit.',
+			date: 'Avril/Mai 2022',
+			description: 'Migration vers Vue.js 3 : réécriture des composants avec l’API de composition, mise à jour du Starter Kit et modifications majeures.',
 			items: []
 		}
 	]

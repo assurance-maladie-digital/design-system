@@ -57,7 +57,7 @@
 				default: undefined
 			},
 			issue: {
-				type: String,
+				type: Number,
 				default: undefined
 			}
 		}
