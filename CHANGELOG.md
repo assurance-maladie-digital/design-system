@@ -7,7 +7,7 @@
   - **DatePicker:** Ajout de la gestion du copier/coller ([#1647](https://github.com/assurance-maladie-digital/design-system/pull/1647)) ([4174305](https://github.com/assurance-maladie-digital/design-system/commit/417430545c22eeac16c02b84cb2ef986164a9c7c))
   - **DatePicker:** Ajout de la gestion de l'appui sur la touche *Entrée* ([#1648](https://github.com/assurance-maladie-digital/design-system/pull/1648)) ([#1647](https://github.com/assurance-maladie-digital/design-system/pull/1647)) ([2704190](https://github.com/assurance-maladie-digital/design-system/commit/2704190ed07d208fffcd33fc5d3ea80ea069c0dd))
   - **DatePicker:** Transmission des écouteurs d'événements ([#1649](https://github.com/assurance-maladie-digital/design-system/pull/1649)) ([1f12f67](https://github.com/assurance-maladie-digital/design-system/commit/1f12f67986a3f81c0b8e964d92278eee8cde4707))
-  - **FooterBar:** Ajout d'un nouveau composant ([#1652](https://github.com/assurance-maladie-digital/design-system/pull/1652))
+  - **FooterBar:** Ajout d'un nouveau composant ([#1652](https://github.com/assurance-maladie-digital/design-system/pull/1652)) ([7c3b521](https://github.com/assurance-maladie-digital/design-system/commit/7c3b5214616f7d2ab61390f322a07c53a2b12126))
 
 - 🐛 **Corrections de bugs**
   - **Logo:** Correction du logo Risque Pro ([#1641](https://github.com/assurance-maladie-digital/design-system/pull/1641)) ([c678ffa](https://github.com/assurance-maladie-digital/design-system/commit/c678ffa04fe15cd760055c0887486383cdfba729))
@@ -25,6 +25,7 @@
 
 - ♻️ **Refactoring**
   - **template:** Mise à jour de la couleur de fond par défaut ([#1645](https://github.com/assurance-maladie-digital/design-system/pull/1645)) ([23389a0](https://github.com/assurance-maladie-digital/design-system/commit/23389a0f66761469a84bdb5654dcb4adc7fa3ffc))
+  - **template:** Mise à jour du favicon ([#1655](https://github.com/assurance-maladie-digital/design-system/pull/1655))
 
 - 🔥 **Suppressions**
   - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
