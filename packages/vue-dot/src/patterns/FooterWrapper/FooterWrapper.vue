@@ -21,6 +21,7 @@
 
 	/**
 	 * FooterWrapper is a component used to display a Footer
+	 *
 	 * @deprecated Use FooterBar instead
 	 */
 	@Component
