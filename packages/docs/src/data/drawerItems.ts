@@ -84,6 +84,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/filter-module'
 			},
 			{
+				title: 'FooterBar',
+				to: '/composants/footer-bar'
+			},
+			{
 				title: 'FooterWrapper',
 				to: '/composants/footer-wrapper'
 			},
