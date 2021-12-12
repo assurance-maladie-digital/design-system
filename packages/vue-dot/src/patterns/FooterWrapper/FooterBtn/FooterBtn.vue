@@ -29,7 +29,10 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	/** FooterBtn is a component used to display a button in Footer */
+	/**
+	 * FooterBtn is a component used to display a button in Footer
+	 * @deprecated Use FooterBar instead
+	 */
 	@Component({
 		inheritAttrs: false
 	})

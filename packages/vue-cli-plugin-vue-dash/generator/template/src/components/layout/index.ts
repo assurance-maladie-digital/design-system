@@ -1,5 +1,5 @@
-import AppFooter from './AppFooter.vue';
-import AppHeader from './AppHeader.vue';
+import AppFooter from './AppFooter';
+import AppHeader from './AppHeader';
 
 export {
 	AppFooter,

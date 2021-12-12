@@ -4,15 +4,15 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests-unit';
 import { html } from '@cnamts/vue-dot/tests/utils/html';
 
-import AppFooter from '../AppFooter.vue';
+import AppHeader from '../';
 
 let wrapper: Wrapper<Vue>;
 
 // Tests
-describe('AppFooter', () => {
+describe('AppHeader', () => {
 	it('renders correctly', () => {
 		// Mount component
-		wrapper = mountComponent(AppFooter);
+		wrapper = mountComponent(AppHeader);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
