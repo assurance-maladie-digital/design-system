@@ -23,6 +23,12 @@ Vous pouvez utiliser le slot par défaut pour afficher une icône SVG totalement
 
 <doc-example file="custom-icon/slot"></doc-example>
 
+### Label accessible
+
+Par défaut, l’icône est masquée pour les lecteurs d’écran, mais vous pouvez ajouter un label accessible en utilisant la prop `label`.
+
+<doc-example file="custom-icon/label"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
