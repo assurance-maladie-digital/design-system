@@ -92,12 +92,12 @@
   - **lint-staged:** Mise à jour vers la `v12.1.2` ([#1619](https://github.com/assurance-maladie-digital/design-system/pull/1619)) ([3760026](https://github.com/assurance-maladie-digital/design-system/commit/376002619fc5604a6e491b5e3e259c80ffbe1a75))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.5` ([#1620](https://github.com/assurance-maladie-digital/design-system/pull/1620)) ([8578dc5](https://github.com/assurance-maladie-digital/design-system/commit/8578dc50b29021ace970702059014aada4dc8557))
   - **slugify:** Mise à jour vers la `v1.6.3` ([#1621](https://github.com/assurance-maladie-digital/design-system/pull/1621)) ([5080dd0](https://github.com/assurance-maladie-digital/design-system/commit/5080dd00045a9acb311bdbd9acf77cc8ee2417d0))
-  - **@nuxtjs/vuetify:** Mise à jour vers la `v1.12.2` ([#1628](https://github.com/assurance-maladie-digital/design-system/pull/1628)) ([985e32f](https://github.com/assurance-maladie-digital/design-system/commit/985e32f3d66b3d25004d18bf8775a085d83ca4a0))
   - **core-js:** Mise à jour vers la `v3.19.3` ([#1629](https://github.com/assurance-maladie-digital/design-system/pull/1629)) ([d969bb9](https://github.com/assurance-maladie-digital/design-system/commit/d969bb9c0453b440d8af6fa49a4203e88b6d735e))
   - **vuetify:** Mise à jour vers la `v2.6.1` ([#1631](https://github.com/assurance-maladie-digital/design-system/pull/1631)) ([b99873d](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/b99873d7abc8d20839bb1e8d0924a1a3973d4a42))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.6.0` ([#1639](https://github.com/assurance-maladie-digital/design-system/pull/1639)) ([8bb7804](https://github.com/assurance-maladie-digital/design-system/commit/8bb78048e68324b2135b362faa0cbb9c8ff77387))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.2.0` ([#1651](https://github.com/assurance-maladie-digital/design-system/pull/1651)) ([737d8fe](https://github.com/assurance-maladie-digital/design-system/commit/737d8fea9f21407e3193f92a390ada0c2f07611e))
-  - **typescript:** Mise à jour vers la `v4.5.3` ([#1654](https://github.com/assurance-maladie-digital/design-system/pull/1654))
+  - **typescript:** Mise à jour vers la `v4.5.3` ([#1654](https://github.com/assurance-maladie-digital/design-system/pull/1654)) ([1929c3f](https://github.com/assurance-maladie-digital/design-system/commit/1929c3f2fff3be816e8c6c497f03de479f57b027))
+  - **@nuxtjs/vuetify:** Mise à jour vers la `v1.12.3` ([#1658](https://github.com/assurance-maladie-digital/design-system/pull/1658))
 
 ## v2.1.0
 
