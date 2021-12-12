@@ -24,7 +24,7 @@ body {
 	width: 100%;
 	display: flex;
 	min-height: 100vh;
-	background: #eee;
+	background: #f8f9fc;
 }
 
 /* Apply default transition to links */

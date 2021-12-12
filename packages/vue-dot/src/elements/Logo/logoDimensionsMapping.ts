@@ -13,7 +13,7 @@ export const logoDimensionsMapping: IndexedObject<LogoDimensions> = {
 		height: '40'
 	},
 	[LogoSizeEnum.NORMAL]: {
-		width: '210',
+		width: '211',
 		height: '64'
 	}
 };
