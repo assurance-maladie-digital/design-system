@@ -6,8 +6,8 @@ import { RoadmapSection } from '~/types/roadmap';
 export const roadmap: IndexedObject<RoadmapSection[]> = {
 	current: [
 		{
-			version: '2.2.0',
-			date: 'Novembre 2021',
+			version: '2.3.0',
+			date: 'Janvier 2022',
 			description: 'Accessibilité : documentation des bonnes pratiques et passage en revue des composants.',
 			items: [
 				{
@@ -21,18 +21,6 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 					description: 'Faire l’inventaire des composants manquants ainsi que ceux à nettoyer ou à mettre à jour.',
 					label: LabelMappingEnum.DOCUMENTATION,
 					issue: 1627
-				},
-				{
-					title: 'Composant Captcha',
-					description: 'Intégration et test du composant captcha.',
-					label: LabelMappingEnum.NEW,
-					issue: 1495
-				},
-				{
-					title: 'Footer',
-					description: 'Refonte graphique du footer en prenant en compte les retours d’accessibilité.',
-					label: LabelMappingEnum.REFACTORING,
-					issue: 1597
 				},
 				{
 					title: 'Guide sur les appels API',
@@ -50,22 +38,22 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 					title: 'Revue des composants',
 					description: 'Passage en revue des composants pour vérifier l’accessibilité de ceux-ci.',
 					label: LabelMappingEnum.REFACTORING
+				},
+				{
+					title: 'Consentement cookies',
+					description: 'Intégration du composant pour le recueil du consentement des utilisateurs.',
+					label: LabelMappingEnum.NEW,
+					issue: 1417
 				}
 			]
 		}
 	],
 	next: [
 		{
-			version: '2.3.0',
-			date: 'Décembre 2021',
+			version: '2.4.0',
+			date: 'Février 2022',
 			description: 'Expérience développeur : configuration des outils de qualité de code, prise en compte des retours des équipes et complétion de la documentation.',
 			items: [
-				{
-					title: 'Consentement cookies',
-					description: 'Intégration du composant pour le recueil du consentement des utilisateurs.',
-					label: LabelMappingEnum.NEW,
-					issue: 1417
-				},
 				{
 					title: 'Ajout de la recherche',
 					description: 'Ajout de la recherche à la documentation.',
@@ -92,19 +80,14 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 			]
 		},
 		{
-			version: '2.4.0',
-			date: 'Janvier 2022',
-			description: 'Starter Kit : découpage des fonctionnalités, ajout du rendu côté serveur et d’un template pour la création de librairies.',
+			version: '2.5.0',
+			date: 'Mars 2022',
+			description: 'Starter Kit : découpage des fonctionnalités et ajout d’un template pour la création de librairies.',
 			items: [
 				{
 					title: 'Découpage du Starter Kit',
-					description: 'Découpage du Starter Kit par fonctionnalités',
+					description: 'Découpage du Starter Kit par fonctionnalités.',
 					label: LabelMappingEnum.REFACTORING
-				},
-				{
-					title: 'Rendu côté serveur',
-					description: 'Ajout d’une option dans le Starter Kit pour utiliser Nuxt.js.',
-					label: LabelMappingEnum.NEW
 				},
 				{
 					title: 'Template de librairie',
@@ -115,7 +98,7 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 		},
 		{
 			version: '2.5.0',
-			date: 'Février 2022',
+			date: 'Avril 2022',
 			description: 'Ajout de nouveaux composants selon les besoins projets.',
 			items: [
 				{
@@ -132,7 +115,7 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 		},
 		{
 			version: '3.0.0',
-			date: 'Avril/Mai 2022',
+			date: 'À partir de mai 2022',
 			description: 'Migration vers Vue.js 3 : réécriture des composants avec l’API de composition, mise à jour du Starter Kit et modifications majeures.',
 			items: []
 		}
