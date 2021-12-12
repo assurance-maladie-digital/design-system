@@ -34,6 +34,9 @@
 - 🏗 **Architecture**
   - **template:** Déplacement des composants layout dans des dossiers dédiés ([#1657](https://github.com/assurance-maladie-digital/design-system/pull/1657)) ([7b4ebb9](https://github.com/assurance-maladie-digital/design-system/commit/7b4ebb931faf6ffa830f160ca417a43dc4ad9ddf))
 
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#1660](https://github.com/assurance-maladie-digital/design-system/pull/1660))
+
 ### FormBuilder
 
 - ♻️ **Refactoring**
@@ -97,7 +100,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.6.0` ([#1639](https://github.com/assurance-maladie-digital/design-system/pull/1639)) ([8bb7804](https://github.com/assurance-maladie-digital/design-system/commit/8bb78048e68324b2135b362faa0cbb9c8ff77387))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.2.0` ([#1651](https://github.com/assurance-maladie-digital/design-system/pull/1651)) ([737d8fe](https://github.com/assurance-maladie-digital/design-system/commit/737d8fea9f21407e3193f92a390ada0c2f07611e))
   - **typescript:** Mise à jour vers la `v4.5.3` ([#1654](https://github.com/assurance-maladie-digital/design-system/pull/1654)) ([1929c3f](https://github.com/assurance-maladie-digital/design-system/commit/1929c3f2fff3be816e8c6c497f03de479f57b027))
-  - **@nuxtjs/vuetify:** Mise à jour vers la `v1.12.3` ([#1658](https://github.com/assurance-maladie-digital/design-system/pull/1658))
+  - **@nuxtjs/vuetify:** Mise à jour vers la `v1.12.3` ([#1658](https://github.com/assurance-maladie-digital/design-system/pull/1658)) ([76d81dc](https://github.com/assurance-maladie-digital/design-system/commit/76d81dc06b83a5e64d9c2293f2e56263e0833da7))
 
 ## v2.1.0
 
