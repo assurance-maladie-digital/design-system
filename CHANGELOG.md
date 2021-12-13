@@ -19,7 +19,7 @@
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
   - **Logo:** Ajout des attributs `role="img"` et `focusable="false"` ([#1642](https://github.com/assurance-maladie-digital/design-system/pull/1642)) ([631675f](https://github.com/assurance-maladie-digital/design-system/commit/631675f8652355273250835fcd1c225576ca1e11))
-  - **HeaderBrandSection:** Ajout des attributs ARIA sur le séparateur vertical ([#1662](https://github.com/assurance-maladie-digital/design-system/pull/1662))
+  - **HeaderBrandSection:** Ajout des attributs ARIA sur le séparateur vertical ([#1662](https://github.com/assurance-maladie-digital/design-system/pull/1662)) ([f48a600](https://github.com/assurance-maladie-digital/design-system/commit/f48a60048c8a269c5e23d9707826e848d0bcc655))
 
 - ✅ **Tests**
   - **HeaderBrandSection:** Correction d'un warning ([#1643](https://github.com/assurance-maladie-digital/design-system/pull/1643)) ([b66cd26](https://github.com/assurance-maladie-digital/design-system/commit/b66cd26cbdd4d02ce7bda574e766e6e46b559feb))
@@ -32,6 +32,9 @@
 
 - 🔥 **Suppressions**
   - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
+
+- ♿️ **Accessibilité**
+  - **template:** Ajout des attributs ARIA sur l'icône de chargement ([#1663](https://github.com/assurance-maladie-digital/design-system/pull/1663))
 
 - 🏗 **Architecture**
   - **template:** Déplacement des composants layout dans des dossiers dédiés ([#1657](https://github.com/assurance-maladie-digital/design-system/pull/1657)) ([7b4ebb9](https://github.com/assurance-maladie-digital/design-system/commit/7b4ebb931faf6ffa830f160ca417a43dc4ad9ddf))
