@@ -9,7 +9,7 @@
   - **DatePicker:** Transmission des écouteurs d'événements ([#1649](https://github.com/assurance-maladie-digital/design-system/pull/1649)) ([1f12f67](https://github.com/assurance-maladie-digital/design-system/commit/1f12f67986a3f81c0b8e964d92278eee8cde4707))
   - **FooterBar:** Ajout d'un nouveau composant ([#1652](https://github.com/assurance-maladie-digital/design-system/pull/1652)) ([7c3b521](https://github.com/assurance-maladie-digital/design-system/commit/7c3b5214616f7d2ab61390f322a07c53a2b12126))
   - **DialogBox:** Ajout de la prop `hide-actions` ([#1656](https://github.com/assurance-maladie-digital/design-system/pull/1656)) ([18972d6](https://github.com/assurance-maladie-digital/design-system/commit/18972d60561a4904d9519a3ab1ba6987805fe055))
-  - **CustomIcon:** Ajout de la prop `label` ([#1661](https://github.com/assurance-maladie-digital/design-system/pull/1661))
+  - **CustomIcon:** Ajout de la prop `label` ([#1661](https://github.com/assurance-maladie-digital/design-system/pull/1661)) ([34c23b2](https://github.com/assurance-maladie-digital/design-system/commit/34c23b2372c89a861862813e10fb0fece0ad7fb3))
 
 - 🐛 **Corrections de bugs**
   - **Logo:** Correction du logo Risque Pro ([#1641](https://github.com/assurance-maladie-digital/design-system/pull/1641)) ([c678ffa](https://github.com/assurance-maladie-digital/design-system/commit/c678ffa04fe15cd760055c0887486383cdfba729))
@@ -19,6 +19,7 @@
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
   - **Logo:** Ajout des attributs `role="img"` et `focusable="false"` ([#1642](https://github.com/assurance-maladie-digital/design-system/pull/1642)) ([631675f](https://github.com/assurance-maladie-digital/design-system/commit/631675f8652355273250835fcd1c225576ca1e11))
+  - **HeaderBrandSection:** Ajout des attributs ARIA sur le séparateur vertical ([#1662](https://github.com/assurance-maladie-digital/design-system/pull/1662))
 
 - ✅ **Tests**
   - **HeaderBrandSection:** Correction d'un warning ([#1643](https://github.com/assurance-maladie-digital/design-system/pull/1643)) ([b66cd26](https://github.com/assurance-maladie-digital/design-system/commit/b66cd26cbdd4d02ce7bda574e766e6e46b559feb))
