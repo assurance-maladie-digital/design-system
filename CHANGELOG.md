@@ -1,4 +1,8 @@
-## Non publié
+## v2.2.0
+
+**Version publiée le 14/12/2021.**
+
+Cette version comporte l'ajout du nouveau composant `FooterBar` et de nouvelles fonctionnalités sur le composant `DatePicker` ainsi que des correctifs d'accessibilité et des correctifs sur Vue Dot et Vue Dash.
 
 ### Vue Dot
 
@@ -32,7 +36,7 @@
 - ♻️ **Refactoring**
   - **template:** Mise à jour de la couleur de fond par défaut ([#1645](https://github.com/assurance-maladie-digital/design-system/pull/1645)) ([23389a0](https://github.com/assurance-maladie-digital/design-system/commit/23389a0f66761469a84bdb5654dcb4adc7fa3ffc))
   - **template:** Mise à jour du favicon ([#1655](https://github.com/assurance-maladie-digital/design-system/pull/1655)) ([956bfaa](https://github.com/assurance-maladie-digital/design-system/commit/956bfaa4b9598eb0f034cfe5f4bc8f48646bf484))
-  - **template:** Utilisation du composant `FooterBar` ([#1670](https://github.com/assurance-maladie-digital/design-system/pull/1670))
+  - **template:** Utilisation du composant `FooterBar` ([#1670](https://github.com/assurance-maladie-digital/design-system/pull/1670)) ([9849ae5](https://github.com/assurance-maladie-digital/design-system/commit/9849ae57f781675ed4646d4e3d18a663081f9e9d))
 
 - 🔥 **Suppressions**
   - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
@@ -89,6 +93,7 @@
 - 📝 **Documentation**
   - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582)) ([853bc97](https://github.com/assurance-maladie-digital/design-system/commit/853bc97835c1e11e8be97e834bb2093631504f90))
   - **global:** Ajout du fichier `SECURITY.md` ([#1617](https://github.com/assurance-maladie-digital/design-system/pull/1617)) ([8520f50](https://github.com/assurance-maladie-digital/design-system/commit/8520f507d50ada1d8f26a24f6bf1bc3a4cf11a7c))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1671](https://github.com/assurance-maladie-digital/design-system/pull/1671))
 
 - ⬆️ **Dépendances**
   - **vue-router:** Mise à jour vers la `v3.5.3` ([#1566](https://github.com/assurance-maladie-digital/design-system/pull/1566)) ([66b0967](https://github.com/assurance-maladie-digital/design-system/commit/66b09670af3565e278526fb76e47d48b2ffb2fb4))
