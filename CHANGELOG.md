@@ -26,6 +26,9 @@
 
 ### Vue Dash
 
+- 🐛 **Corrections de bugs**
+  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#1669](https://github.com/assurance-maladie-digital/design-system/pull/1669))
+
 - ♻️ **Refactoring**
   - **template:** Mise à jour de la couleur de fond par défaut ([#1645](https://github.com/assurance-maladie-digital/design-system/pull/1645)) ([23389a0](https://github.com/assurance-maladie-digital/design-system/commit/23389a0f66761469a84bdb5654dcb4adc7fa3ffc))
   - **template:** Mise à jour du favicon ([#1655](https://github.com/assurance-maladie-digital/design-system/pull/1655)) ([956bfaa](https://github.com/assurance-maladie-digital/design-system/commit/956bfaa4b9598eb0f034cfe5f4bc8f48646bf484))
@@ -34,7 +37,7 @@
   - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
 
 - ♿️ **Accessibilité**
-  - **template:** Ajout des attributs ARIA sur l'icône de chargement ([#1663](https://github.com/assurance-maladie-digital/design-system/pull/1663))
+  - **template:** Ajout des attributs ARIA sur l'icône de chargement ([#1663](https://github.com/assurance-maladie-digital/design-system/pull/1663)) ([df33bad](https://github.com/assurance-maladie-digital/design-system/commit/df33bad8d3bc054a65a13dd2651c44f1f9c39ee2))
 
 - 🏗 **Architecture**
   - **template:** Déplacement des composants layout dans des dossiers dédiés ([#1657](https://github.com/assurance-maladie-digital/design-system/pull/1657)) ([7b4ebb9](https://github.com/assurance-maladie-digital/design-system/commit/7b4ebb931faf6ffa830f160ca417a43dc4ad9ddf))
