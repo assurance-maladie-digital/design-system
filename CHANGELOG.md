@@ -27,11 +27,12 @@
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
-  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#1669](https://github.com/assurance-maladie-digital/design-system/pull/1669))
+  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#1669](https://github.com/assurance-maladie-digital/design-system/pull/1669)) ([26cef1b](https://github.com/assurance-maladie-digital/design-system/commit/26cef1bb271a09a3f6edc8c3126b5bd76e7cfb8d))
 
 - ♻️ **Refactoring**
   - **template:** Mise à jour de la couleur de fond par défaut ([#1645](https://github.com/assurance-maladie-digital/design-system/pull/1645)) ([23389a0](https://github.com/assurance-maladie-digital/design-system/commit/23389a0f66761469a84bdb5654dcb4adc7fa3ffc))
   - **template:** Mise à jour du favicon ([#1655](https://github.com/assurance-maladie-digital/design-system/pull/1655)) ([956bfaa](https://github.com/assurance-maladie-digital/design-system/commit/956bfaa4b9598eb0f034cfe5f4bc8f48646bf484))
+  - **template:** Utilisation du composant `FooterBar` ([#1670](https://github.com/assurance-maladie-digital/design-system/pull/1670))
 
 - 🔥 **Suppressions**
   - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
