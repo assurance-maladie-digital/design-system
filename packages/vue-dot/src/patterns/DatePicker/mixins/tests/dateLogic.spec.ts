@@ -30,6 +30,7 @@ interface TestComponent extends Vue {
 	textFieldDate: string;
 	saveFromTextField: () => void;
 	saveFromCalendar: () => void;
+	saveFromPasted: (event: ClipboardEvent) => void;
 	parseTextFieldDate: (date: string) => string;
 	textFieldBlur: () => void;
 	dateFormatted: string;
@@ -131,14 +132,26 @@ describe('DateLogic', () => {
 		expect(wrapper.vm.date).toBe('2019-10-29');
 	});
 
-	it('emits change event with empty value when the date is invalid', () => {
+	it('emits change event with empty value when saveFromTextField and the date is invalid in initial state', () => {
 		const wrapper = createWrapper({
 			value: '29-10-2019'
 		});
 
 		wrapper.vm.saveFromTextField();
 
-		expect(wrapper.emitted('change')).toEqual([['']]);
+		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	it('does not emit change event when saveFromTextField is called and value is invalid', async() => {
+		const wrapper = createWrapper();
+
+		await wrapper.setData({
+			textFieldDate: '2019/'
+		});
+
+		wrapper.vm.saveFromTextField();
+
+		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
 	// parseTextFieldDate
@@ -191,6 +204,46 @@ describe('DateLogic', () => {
 		wrapper.vm.saveFromCalendar();
 
 		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	// saveFromPasted
+	it('parses the date when pasted with display format', () => {
+		const wrapper = createWrapper();
+		const clipboardEvent = {
+			clipboardData: {
+				getData: () => '01/01/2021'
+			}
+		} as unknown as ClipboardEvent;
+
+		wrapper.vm.saveFromPasted(clipboardEvent);
+
+		const event = wrapper.emitted('change') as string[];
+
+		expect(event[0]).toEqual(['2021-01-01']);
+	});
+
+	it('parses the date when pasted with return format', () => {
+		const wrapper = createWrapper();
+		const clipboardEvent = {
+			clipboardData: {
+				getData: () => '2021-01-01'
+			}
+		} as unknown as ClipboardEvent;
+
+		wrapper.vm.saveFromPasted(clipboardEvent);
+
+		const event = wrapper.emitted('change') as string[];
+
+		expect(event[0]).toEqual(['2021-01-01']);
+	});
+
+	it('does not parses the date when clipboardData is empty', () => {
+		const wrapper = createWrapper();
+		const clipboardEvent = {} as unknown as ClipboardEvent;
+
+		wrapper.vm.saveFromPasted(clipboardEvent);
+
+		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
 	// textFieldBlur

@@ -22,7 +22,7 @@ Vous pouvez afficher le `VTextField` en mode `outlined` en utilisant la prop du 
 Vous pouvez permettre à l’utilisateur de sélectionner une date naissance plus facilement en utilisant la prop `birthdate`.
 
 <doc-alert type="info">
-L’utilisateur sélectionnera l’année en premier, puis le mois et enfin le jour et ne peut pas sélectionner une date future.
+L’utilisateur sélectionnera l’année en premier, puis le mois et enfin le jour et ne pourra pas sélectionner une date future.
 </doc-alert>
 
 <doc-example file="date-picker/birthdate"></doc-example>
@@ -67,15 +67,26 @@ Pour cela, vous pouvez utiliser les règles de validation inclues dans la librai
 - `notAfterToday`
 - `notBeforeToday`
 
-<doc-example file="date-picker/rules" /></doc-example>
+<doc-example file="date-picker/rules"></doc-example>
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VTextField`.
+</doc-alert>
+
 <doc-api name="date-picker"></doc-api>
 </doc-tab-item>
 
 <doc-tab-item label="Personnalisation">
+
+### Événements
+
+Vous pouvez écouter des événements directement sur le composant `VTextField`, pour par exemple ajouter un bouton réinitialiser.
+
+<doc-example file="date-picker/events"></doc-example>
 
 ### Composants Vuetify
 

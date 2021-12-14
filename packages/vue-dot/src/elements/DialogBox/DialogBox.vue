@@ -31,6 +31,7 @@
 			<slot />
 
 			<div
+				v-if="!hideActions"
 				v-bind="options.actionsCtn"
 				class="vd-dialog-box-actions-ctn"
 			>
@@ -96,6 +97,11 @@
 			confirmBtnText: {
 				type: String,
 				default: locales.confirmBtn
+			},
+			/** Hide the action buttons */
+			hideActions: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});

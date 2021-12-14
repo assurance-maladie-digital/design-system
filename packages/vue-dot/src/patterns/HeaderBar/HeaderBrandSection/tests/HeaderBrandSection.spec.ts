@@ -18,6 +18,7 @@ describe('HeaderBrandSection', () => {
 	it('renders correctly', () => {
 		// Mount component
 		wrapper = mountComponent(HeaderBrandSection, {
+			stubs: ['RouterLink'],
 			propsData: {
 				theme: ThemeEnum.DEFAULT
 			}

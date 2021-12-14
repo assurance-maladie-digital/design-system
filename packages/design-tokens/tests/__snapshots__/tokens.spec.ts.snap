@@ -9,7 +9,7 @@ Object {
     "pro": "#ef6c00",
     "secondary": "#007fad",
     "success": "#009688",
-    "warning": "#ba8b00",
+    "warning": "#785912",
   },
   "dialogWidth": Object {
     "dialogMedium": "800px",

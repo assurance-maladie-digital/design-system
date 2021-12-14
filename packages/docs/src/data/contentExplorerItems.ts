@@ -108,48 +108,62 @@ export const contentExplorerItems: TreeviewItem[] = [
 		path: 'src',
 		children: [
 			{
-				name: 'assets',
-				children: [
-					{
-						name: 'logo.svg',
-						file: 'svg'
-					}
-				]
-			},
-			{
 				name: 'components',
 				children: [
 					{
 						name: 'layout',
 						children: [
 							{
-								name: 'tests',
+								name: 'AppFooter',
 								children: [
 									{
-										name: 'AppFooter.spec.ts',
-										file: 'ts'
+										name: 'tests',
+										children: [
+											{
+												name: 'AppFooter.spec.ts',
+												file: 'ts'
+											}
+										]
 									},
 									{
-										name: 'AppHeader.spec.ts',
-										file: 'ts'
+										name: 'AppFooter.vue',
+										file: 'vue'
 									},
 									{
-										name: 'HeaderMenu.spec.ts',
+										name: 'index.ts',
 										file: 'ts'
 									}
 								]
 							},
 							{
-								name: 'AppFooter.vue',
-								file: 'vue'
-							},
-							{
-								name: 'AppHeader.vue',
-								file: 'vue'
-							},
-							{
-								name: 'HeaderMenu.vue',
-								file: 'vue'
+								name: 'AppHeader',
+								children: [
+									{
+										name: 'tests',
+										children: [
+											{
+												name: 'AppHeader.spec.ts',
+												file: 'ts'
+											},
+											{
+												name: 'HeaderMenu.spec.ts',
+												file: 'ts'
+											}
+										]
+									},
+									{
+										name: 'AppHeader.vue',
+										file: 'vue'
+									},
+									{
+										name: 'HeaderMenu.vue',
+										file: 'vue'
+									},
+									{
+										name: 'index.ts',
+										file: 'ts'
+									}
+								]
 							},
 							{
 								name: 'index.ts',

@@ -43,6 +43,9 @@
 `;
 
 		options = {
+			booleans: [
+				'hideActions'
+			],
 			textFields: [
 				'title',
 				'width'

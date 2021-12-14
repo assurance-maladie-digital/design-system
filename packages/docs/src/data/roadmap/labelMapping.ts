@@ -4,14 +4,14 @@ import { LabelMappingEnum } from '~/constants/RoadmapLabelEnum';
 export const labelMapping: RoadmapLabelMapping = {
 	[LabelMappingEnum.NEW]: {
 		label: 'Nouveauté',
-		color: 'indigo lighten-1'
+		color: '#00a5df'
 	},
 	[LabelMappingEnum.DOCUMENTATION]: {
 		label: 'Documentation',
-		color: 'blue'
+		color: '#a05bb6'
 	},
 	[LabelMappingEnum.REFACTORING]: {
 		label: 'Refonte',
-		color: 'purple accent-2'
+		color: '#459b5a'
 	}
 };

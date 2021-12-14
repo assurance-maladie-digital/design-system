@@ -34,6 +34,12 @@ export const api: Api = {
 				description: 'Le texte du bouton *Valider*.'
 			},
 			{
+				name: 'hide-actions',
+				type: 'boolean',
+				default: false,
+				description: 'Masque les boutons d’actions.'
+			},
+			{
 				name: 'vuetify-options',
 				type: 'Options',
 				default: 'undefined',

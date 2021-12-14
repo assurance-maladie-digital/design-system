@@ -40,14 +40,14 @@
 		}
 	});
 
-	const MixinsDeclation = mixins(Props);
+	const MixinsDeclaration = mixins(Props);
 
 	@Component({
 		components: {
 			DocGithubLink
 		}
 	})
-	export default class DocPageInfo extends MixinsDeclation {
+	export default class DocPageInfo extends MixinsDeclaration {
 		get formattedUpdatedAt(): string | null {
 			if (!this.document.updatedAt) {
 				return null;

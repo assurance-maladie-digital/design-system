@@ -17,8 +17,11 @@
 			width: size,
 			height: size
 		}"
+		:aria-hidden="!label"
+		:aria-label="label"
+		role="img"
+		focusable="false"
 		class="vd-custom-icon"
-		aria-hidden="true"
 	>
 		<!--
 			Default slot, this makes the content
@@ -75,6 +78,14 @@
 			 * By default, the size is 1.35em (between small & medium)
 			 */
 			size: {
+				type: String,
+				default: undefined
+			},
+			/**
+			 * The accessible label of the icon
+			 * By default, the icon is hidden from screen readers
+			 */
+			label: {
 				type: String,
 				default: undefined
 			}
