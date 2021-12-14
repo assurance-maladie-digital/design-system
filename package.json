@@ -14,7 +14,7 @@
 		"generate": "lerna run generate --stream"
 	},
 	"devDependencies": {
-		"@babel/core": "7.16.0",
+		"@babel/core": "7.16.5",
 		"@mdi/js": "6.5.95",
 		"@types/content-disposition": "0.5.4",
 		"@types/fs-extra": "9.0.13",
