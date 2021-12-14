@@ -3,7 +3,8 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.7.0` ([#1665](https://github.com/assurance-maladie-digital/design-system/pull/1665))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.7.0` ([#1665](https://github.com/assurance-maladie-digital/design-system/pull/1665)) ([c4fc8e7](https://github.com/assurance-maladie-digital/design-system/commit/c4fc8e7b8d45d27726d8d62f56aa7e77775030b4))
+  - **typescript:** Mise à jour vers la `v4.5.4` ([#1666](https://github.com/assurance-maladie-digital/design-system/pull/1666))
 
 ## v2.2.0
 
