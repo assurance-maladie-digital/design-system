@@ -1,4 +1,3 @@
-const { getFooterDate } = require('./functions/getFooterDate');
 const { extendPackage } = require('./functions/extendPackage');
 const { fixPackageIndentation } = require('./functions/fixPackageIndentation');
 const { parseIndexFile } = require('./functions/parseIndexFile');
@@ -21,7 +20,6 @@ module.exports = (api, userOptions) => {
 			...userOptions,
 			// Custom options
 			name: projectName,
-			footerDate: getFooterDate(),
 			pm,
 			// Functions
 			capitalizeFirstLetter
