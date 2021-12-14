@@ -1,5 +1,17 @@
 ## Non publié
 
+### Interne
+
+- ⬆️ **Dépendances**
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.7.0` ([#1665](https://github.com/assurance-maladie-digital/design-system/pull/1665)) ([c4fc8e7](https://github.com/assurance-maladie-digital/design-system/commit/c4fc8e7b8d45d27726d8d62f56aa7e77775030b4))
+  - **typescript:** Mise à jour vers la `v4.5.4` ([#1666](https://github.com/assurance-maladie-digital/design-system/pull/1666))
+
+## v2.2.0
+
+**Version publiée le 14/12/2021.**
+
+Cette version comporte l'ajout du nouveau composant `FooterBar` et de nouvelles fonctionnalités sur le composant `DatePicker` ainsi que des correctifs d'accessibilité et des correctifs sur Vue Dot et Vue Dash.
+
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
@@ -26,15 +38,19 @@
 
 ### Vue Dash
 
+- 🐛 **Corrections de bugs**
+  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#1669](https://github.com/assurance-maladie-digital/design-system/pull/1669)) ([26cef1b](https://github.com/assurance-maladie-digital/design-system/commit/26cef1bb271a09a3f6edc8c3126b5bd76e7cfb8d))
+
 - ♻️ **Refactoring**
   - **template:** Mise à jour de la couleur de fond par défaut ([#1645](https://github.com/assurance-maladie-digital/design-system/pull/1645)) ([23389a0](https://github.com/assurance-maladie-digital/design-system/commit/23389a0f66761469a84bdb5654dcb4adc7fa3ffc))
   - **template:** Mise à jour du favicon ([#1655](https://github.com/assurance-maladie-digital/design-system/pull/1655)) ([956bfaa](https://github.com/assurance-maladie-digital/design-system/commit/956bfaa4b9598eb0f034cfe5f4bc8f48646bf484))
+  - **template:** Utilisation du composant `FooterBar` ([#1670](https://github.com/assurance-maladie-digital/design-system/pull/1670)) ([9849ae5](https://github.com/assurance-maladie-digital/design-system/commit/9849ae57f781675ed4646d4e3d18a663081f9e9d))
 
 - 🔥 **Suppressions**
   - **template:** Suppression du fichier `logo.svg` non utilisé ([#1638](https://github.com/assurance-maladie-digital/design-system/pull/1638)) ([ce3e0a5](https://github.com/assurance-maladie-digital/design-system/commit/ce3e0a55482c5a48fecc1bbb66882b18e2e9a53e))
 
 - ♿️ **Accessibilité**
-  - **template:** Ajout des attributs ARIA sur l'icône de chargement ([#1663](https://github.com/assurance-maladie-digital/design-system/pull/1663))
+  - **template:** Ajout des attributs ARIA sur l'icône de chargement ([#1663](https://github.com/assurance-maladie-digital/design-system/pull/1663)) ([df33bad](https://github.com/assurance-maladie-digital/design-system/commit/df33bad8d3bc054a65a13dd2651c44f1f9c39ee2))
 
 - 🏗 **Architecture**
   - **template:** Déplacement des composants layout dans des dossiers dédiés ([#1657](https://github.com/assurance-maladie-digital/design-system/pull/1657)) ([7b4ebb9](https://github.com/assurance-maladie-digital/design-system/commit/7b4ebb931faf6ffa830f160ca417a43dc4ad9ddf))
@@ -85,6 +101,7 @@
 - 📝 **Documentation**
   - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582)) ([853bc97](https://github.com/assurance-maladie-digital/design-system/commit/853bc97835c1e11e8be97e834bb2093631504f90))
   - **global:** Ajout du fichier `SECURITY.md` ([#1617](https://github.com/assurance-maladie-digital/design-system/pull/1617)) ([8520f50](https://github.com/assurance-maladie-digital/design-system/commit/8520f507d50ada1d8f26a24f6bf1bc3a4cf11a7c))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1671](https://github.com/assurance-maladie-digital/design-system/pull/1671)) ([8170c6e](https://github.com/assurance-maladie-digital/design-system/commit/8170c6e528d8161283e0f8b4bfc6032e8d000130))
 
 - ⬆️ **Dépendances**
   - **vue-router:** Mise à jour vers la `v3.5.3` ([#1566](https://github.com/assurance-maladie-digital/design-system/pull/1566)) ([66b0967](https://github.com/assurance-maladie-digital/design-system/commit/66b09670af3565e278526fb76e47d48b2ffb2fb4))
