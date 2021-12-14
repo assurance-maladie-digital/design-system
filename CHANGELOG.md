@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.7.0` ([#1665](https://github.com/assurance-maladie-digital/design-system/pull/1665))
+
 ## v2.2.0
 
 **Version publiée le 14/12/2021.**
@@ -93,7 +100,7 @@ Cette version comporte l'ajout du nouveau composant `FooterBar` et de nouvelles 
 - 📝 **Documentation**
   - **README:** Mise à jour du badge npm ([#1582](https://github.com/assurance-maladie-digital/design-system/pull/1582)) ([853bc97](https://github.com/assurance-maladie-digital/design-system/commit/853bc97835c1e11e8be97e834bb2093631504f90))
   - **global:** Ajout du fichier `SECURITY.md` ([#1617](https://github.com/assurance-maladie-digital/design-system/pull/1617)) ([8520f50](https://github.com/assurance-maladie-digital/design-system/commit/8520f507d50ada1d8f26a24f6bf1bc3a4cf11a7c))
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1671](https://github.com/assurance-maladie-digital/design-system/pull/1671))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1671](https://github.com/assurance-maladie-digital/design-system/pull/1671)) ([8170c6e](https://github.com/assurance-maladie-digital/design-system/commit/8170c6e528d8161283e0f8b4bfc6032e8d000130))
 
 - ⬆️ **Dépendances**
   - **vue-router:** Mise à jour vers la `v3.5.3` ([#1566](https://github.com/assurance-maladie-digital/design-system/pull/1566)) ([66b0967](https://github.com/assurance-maladie-digital/design-system/commit/66b09670af3565e278526fb76e47d48b2ffb2fb4))
