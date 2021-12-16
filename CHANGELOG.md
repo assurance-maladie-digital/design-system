@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -7,7 +12,7 @@
   - **typescript:** Mise à jour vers la `v4.5.4` ([#1666](https://github.com/assurance-maladie-digital/design-system/pull/1666)) ([4348a53](https://github.com/assurance-maladie-digital/design-system/commit/4348a538c96f82a0767db953b04dabb110ad0166))
   - **@babel/core:** Mise à jour vers la `v7.16.5` ([#1667](https://github.com/assurance-maladie-digital/design-system/pull/1667)) ([5a4448b](https://github.com/assurance-maladie-digital/design-system/commit/5a4448bd84e5b02929d8265feffd2c314aa2f240))
   - **vue-input-facade:** Mise à jour vers la `v1.3.8` ([#1668](https://github.com/assurance-maladie-digital/design-system/pull/1668)) ([ecea62a](https://github.com/assurance-maladie-digital/design-system/commit/ecea62af4e0ed516d878d95639c874cc2efa1564))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.2.2` ([#1672](https://github.com/assurance-maladie-digital/design-system/pull/1672))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.2.2` ([#1672](https://github.com/assurance-maladie-digital/design-system/pull/1672)) ([8ac8368](https://github.com/assurance-maladie-digital/design-system/commit/8ac8368edcdfc1fc5139469389c634ff45a4041f))
 
 ## v2.2.0
 
@@ -290,7 +295,7 @@ Cette version majeure comporte l'ajout de guides et la complétion de la documen
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-  - **TableToolbar:** Correction de l'affichage du composant sur les écrans mobiles ([#1347](https://github.com/assurance-maladie-digital/design-system/pull/1347)) ([f78383f](https://github.com/assurance-maladie-digital/design-system/commit/f78383f3b54edea2771ed089df96f77683939f37))
+  - **TableToolbar:** Correction de l'affichage sur les écrans mobiles ([#1347](https://github.com/assurance-maladie-digital/design-system/pull/1347)) ([f78383f](https://github.com/assurance-maladie-digital/design-system/commit/f78383f3b54edea2771ed089df96f77683939f37))
 
 - ♻️ **Refactoring**
   - **FranceConnectBtn:** Suppression de la valeur par défaut de la prop `href` ([#1333](https://github.com/assurance-maladie-digital/design-system/pull/1333)) ([a9f751c](https://github.com/assurance-maladie-digital/design-system/commit/a9f751c7b1e3bdebab5a23394f1557737d876260))
