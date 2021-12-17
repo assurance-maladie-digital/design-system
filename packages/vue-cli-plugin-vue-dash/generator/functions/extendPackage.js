@@ -82,6 +82,7 @@ function extendPackage(api, options, pm) {
 			'jest-serializer-vue': '^2.0.2',
 			'sass': '1.32.13', /** @see https://github.com/vuetifyjs/vuetify/issues/13694 */
 			'sass-loader': '^10.2.0',
+			"ts-node": "^10.4.0",
 			'typescript': '~4.5.3',
 			'vue-class-component': '^7.2.6',
 			'vue-cli-plugin-vuetify': '^2.4.5',

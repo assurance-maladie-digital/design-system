@@ -494,9 +494,9 @@ export const contentExplorerItems: TreeviewItem[] = [
 		file: 'json'
 	},
 	{
-		name: 'jest.config.js',
-		path: 'jest.config.js',
-		file: 'js'
+		name: 'jest.config.ts',
+		path: 'jest.config.ts',
+		file: 'ts'
 	},
 	{
 		name: 'package.json',
