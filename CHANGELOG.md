@@ -3,7 +3,8 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-  - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675))
+  - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))
+  - **DatePicker:** Correction de l'affichage du menu avec la prop `text-field-activator` ([#1678](https://github.com/assurance-maladie-digital/design-system/pull/1678))
 
 ### Interne
 
