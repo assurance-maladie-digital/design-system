@@ -18,7 +18,7 @@
 				:error.sync="internalErrorProp"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
-				@click="textFieldClicked"
+				@click.native="textFieldClicked"
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
 				@change="dateFormatted = $event"
