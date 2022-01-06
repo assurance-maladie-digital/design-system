@@ -995,14 +995,14 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@es-joy/jsdoccomment@0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.13.0.tgz#90ffe2006981ff66d3f4fd2f05949487f0fca089"
-  integrity sha512-APVqbVPGOprb4BmjEnwbSzV+V2e/6DVIUnZG3zdW5uWXWkN0DKMCpiIy2TdBauoANKYO7RQpO8cTjIYNVSKwUA==
+"@es-joy/jsdoccomment@0.14.2":
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.14.2.tgz#16f5411679066b277cf6d9e8c94a7e576aca1b55"
+  integrity sha512-812igKXDcLEdkwUbJvnhzMy88dBBiDeaf3mMF1jnQwclIObu5UQB8ow1KAvDRN1FQqpB+IsZnpmRA0jZ6KGt3g==
   dependencies:
     comment-parser "1.3.0"
     esquery "^1.4.0"
-    jsdoc-type-pratt-parser "2.0.0"
+    jsdoc-type-pratt-parser "2.0.2"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -3076,10 +3076,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.12.tgz#fd9c1c2cfab536a2383ed1ef70f94adea743a226"
   integrity sha512-KQZ1al2hKOONAs2MFv+yTQP1LkDWMrRJ9YCVRalXltOfXsBmH5IownLxQaiq0lnAHwAViLnh2aTYqrPcRGEbgg==
 
-"@types/node@14.18.0":
-  version "14.18.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.0.tgz#98df2397f6936bfbff4f089e40e06fa5dd88d32a"
-  integrity sha512-0GeIl2kmVMXEnx8tg1SlG6Gg8vkqirrW752KqolYo1PHevhhZN3bhJ67qHj+bQaINhX0Ra3TlWwRvMCd9iEfNQ==
+"@types/node@14.18.5":
+  version "14.18.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.5.tgz#0dd636fe7b2c6055cbed0d4ca3b7fb540f130a96"
+  integrity sha512-LMy+vDDcQR48EZdEx5wRX1q/sEl6NdGuHXPnfeL8ixkwCOSZ2qnIyIZmcCbdX0MeRqHhAcHmX+haCbrS8Run+A==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -7052,17 +7052,17 @@ eslint-loader@^2.2.1:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
-eslint-plugin-jsdoc@37.2.2:
-  version "37.2.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-37.2.2.tgz#70b487f281ec2d8b25bf5a0a739cf3e708e393fc"
-  integrity sha512-ChNYa4JBfEgyx7Fuy3obZM0w1jxd1DFdkMDk9QVrLfdZubtXCVK5Lvx+GKExeCxKLU33wLnOOBoImUL2/16JWQ==
+eslint-plugin-jsdoc@37.5.1:
+  version "37.5.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-37.5.1.tgz#9ac0c8c4528112a3d1800796326e7f859f6ef1d9"
+  integrity sha512-WMv/Na5QdpMQao1MR3SgYpGFi2PSrhh/JljlErQru9ZYXf1j9oQVIVCELQV7jcyqKQ/svPqCyU8eMhet9dzP+w==
   dependencies:
-    "@es-joy/jsdoccomment" "0.13.0"
+    "@es-joy/jsdoccomment" "0.14.2"
     comment-parser "1.3.0"
     debug "^4.3.3"
     escape-string-regexp "^4.0.0"
     esquery "^1.4.0"
-    jsdoc-type-pratt-parser "^2.0.0"
+    jsdoc-type-pratt-parser "^2.0.2"
     regextras "^0.8.0"
     semver "^7.3.5"
     spdx-expression-parse "^3.0.1"
@@ -10179,12 +10179,7 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
 
-jsdoc-type-pratt-parser@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-2.0.0.tgz#ec739a0868922515fcb179852e990e89b52b9044"
-  integrity sha512-sUuj2j48wxrEpbFjDp1sAesAxPiLT+z0SWVmMafyIINs6Lj5gIPKh3VrkBZu4E/Dv+wHpOot0m6H8zlHQjwqeQ==
-
-jsdoc-type-pratt-parser@^2.0.0:
+jsdoc-type-pratt-parser@2.0.2, jsdoc-type-pratt-parser@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-2.0.2.tgz#5cb2542c6ed6c527b170a43b4f247e2d6237e158"
   integrity sha512-gXN5CxeaI9WtYQYzpOO/CtTRfZppQlKxXRTIm73JuAX6kOGTQ7iZ0e+YB+b2m7Fk+gTYYxRtE1nqje7H6dqv8w==
@@ -14765,10 +14760,10 @@ slide@^1.1.6:
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
   integrity sha1-VusCfWW00tzmyy4tMsTUr8nh1wc=
 
-slugify@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.3.tgz#325aec50871acfb17976f2d3cb09ee1e7ab563be"
-  integrity sha512-1MPyqnIhgiq+/0iDJyqSJHENdnH5MMIlgJIBxmkRMzTNKlS/QsN5dXsB+MdDq4E6w0g9jFA4XOTRkVDjDae/2w==
+slugify@1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.5.tgz#c8f5c072bf2135b80703589b39a3d41451fbe8c8"
+  integrity sha512-8mo9bslnBO3tr5PEVFzMPIWwWnipGS0xVbYf65zxDqfNwmzYn1LpiKNrR6DlClusuvo+hDHd1zKpmfAe83NQSQ==
 
 smart-buffer@^4.1.0:
   version "4.2.0"
