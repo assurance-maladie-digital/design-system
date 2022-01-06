@@ -9,7 +9,7 @@
 			:multiple="multiple"
 			:type="undefined"
 			:class="{ 'flex-column': !isInline }"
-			class="vd-choice-button-field-toggle d-flex flex-wrap accent--text"
+			class="vd-choice-button-field-toggle d-flex flex-wrap primary--text"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"
@@ -21,7 +21,7 @@
 				min-height="40px"
 				active-class="white--text"
 				class="text-none text-wrap text-left py-2"
-				color="accent"
+				color="primary"
 				@click="toggleItem(item)"
 			>
 				<span class="text-body-1">
@@ -145,7 +145,7 @@
 		}
 
 		&:not(.v-btn-toggle--group) .v-btn.v-btn {
-			border-color: $vd-accent !important;
+			border-color: $vd-primary !important;
 		}
 	}
 </style>
