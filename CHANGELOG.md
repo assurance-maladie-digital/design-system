@@ -10,7 +10,7 @@
 ### Vue Dash
 
 - ♻️ **Refactoring**
-  - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#1684](https://github.com/assurance-maladie-digital/design-system/pull/1684))
+  - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#1684](https://github.com/assurance-maladie-digital/design-system/pull/1684)) ([189652b](https://github.com/assurance-maladie-digital/design-system/commit/189652b335249b359d8c50af3b646c5a0cd30a77))
 
 - ✅ **Tests**
   - **template:** Ajout d'un test sur `AppHeader` ([#1683](https://github.com/assurance-maladie-digital/design-system/pull/1683)) ([e18f57c](https://github.com/assurance-maladie-digital/design-system/commit/e18f57cb69c0214fe73ee6dd381a92efd623bbc5))
@@ -21,6 +21,9 @@
   - **RangeField:** Correction de l'affichage sur les écrans mobiles et suppression du `VForm` à l'intérieur du champ ([#1680](https://github.com/assurance-maladie-digital/design-system/pull/1680)) ([923d65c](https://github.com/assurance-maladie-digital/design-system/commit/923d65cc5ff0ff79487aa3a285ccffa60b4c3484))
   - **PeriodField:** Correction de l'affichage sur les écrans mobiles ([#1681](https://github.com/assurance-maladie-digital/design-system/pull/1681)) ([ae36361](https://github.com/assurance-maladie-digital/design-system/commit/ae36361bd4e045184262e97deedb03e8db16135c))
 
+- ♻️ **Refactoring**
+  - **FormField:** Utilisation de la couleur primaire au lieu de la couleur d'accent ([#1691](https://github.com/assurance-maladie-digital/design-system/pull/1691)) ([4c9c89a](https://github.com/assurance-maladie-digital/design-system/commit/4c9c89a106cf2ada43a4e8d9444f99fed2718768))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -29,6 +32,7 @@
   - **@babel/core:** Mise à jour vers la `v7.16.5` ([#1667](https://github.com/assurance-maladie-digital/design-system/pull/1667)) ([5a4448b](https://github.com/assurance-maladie-digital/design-system/commit/5a4448bd84e5b02929d8265feffd2c314aa2f240))
   - **vue-input-facade:** Mise à jour vers la `v1.3.8` ([#1668](https://github.com/assurance-maladie-digital/design-system/pull/1668)) ([ecea62a](https://github.com/assurance-maladie-digital/design-system/commit/ecea62af4e0ed516d878d95639c874cc2efa1564))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.2.2` ([#1672](https://github.com/assurance-maladie-digital/design-system/pull/1672)) ([8ac8368](https://github.com/assurance-maladie-digital/design-system/commit/8ac8368edcdfc1fc5139469389c634ff45a4041f))
+  - **core-js:** Mise à jour vers la `v3.20.2` ([#1673](https://github.com/assurance-maladie-digital/design-system/pull/1673))
 
 ## v2.2.0
 
