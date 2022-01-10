@@ -19,7 +19,7 @@
 		"@types/content-disposition": "0.5.4",
 		"@types/fs-extra": "9.0.13",
 		"@types/jest": "26.0.24",
-		"@types/node": "14.18.5",
+		"@types/node": "16.11.19",
 		"@typescript-eslint/eslint-plugin": "5.9.0",
 		"@typescript-eslint/parser": "5.9.0",
 		"@vue/eslint-config-typescript": "8.0.0",
@@ -61,7 +61,7 @@
 		"vue-server-renderer": "2.6.14"
 	},
 	"engines": {
-		"node": "^12 || ^14",
+		"node": "^12 || ^14 || ^16.0.0",
 		"yarn": "^1.12"
 	},
 	"gitHooks": {
