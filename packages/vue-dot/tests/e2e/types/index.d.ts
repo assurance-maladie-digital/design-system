@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { mount, mountCallback } from '@cypress/vue';
 
 declare type VueComponent =  Vue.ComponentOptions<any> | Vue.VueConstructor;
 
-declare type MountOptionsArgument = any;
-
 declare type OptionsType =  Record<string, unknown> | any;
 
+declare type MountOptionsArgument = any;
 declare type MountType = ReturnType<typeof mount> | ReturnType<typeof mountCallback> | any;
 
 declare global{
@@ -20,13 +20,10 @@ declare global{
 
 			mountComponent: (component: VueComponent | any, optionsOrProps?: MountOptionsArgument, fullMount?: boolean) => MountType;
 
-			/**
-			 *  command snapshot, additionnal type
-			 */
+			/** Command snapshot, additional type */
 			toMatchSnapshot(): Chainable<Element>;
 
-			vue: () => Promise<any>
-
+			vue: () => Promise<any>;
 		}
 	}
 }

@@ -68,10 +68,10 @@
 		}
 	});
 
-	const MixinsDeclation = mixins(Props);
+	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class DocPrevNext extends MixinsDeclation {
+	export default class DocPrevNext extends MixinsDeclaration {
 		get arrows(): Arrows {
 			return {
 				next: '&nbsp;→',

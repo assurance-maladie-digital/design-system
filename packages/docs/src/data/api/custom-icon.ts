@@ -44,6 +44,12 @@ export const api: Api = {
 				type: 'string',
 				default: 'undefined',
 				description: 'Applique une taille CSS personnalisée (largeur / hauteur) à l’icône.<br>Par défaut, la taille est de `1,35em`.'
+			},
+			{
+				name: 'label',
+				type: 'string',
+				default: 'undefined',
+				description: 'Le label accessible de l’icône.<br>Par défaut, l’icône est masquée pour les lecteurs d’écran.'
 			}
 		],
 		slots: [

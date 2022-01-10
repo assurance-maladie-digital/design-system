@@ -10,7 +10,14 @@ export function slugifyAnchors(elements: DocumentElement[] = []): void {
 
 		if (el.props?.href) {
 			const URI = decodeURI(el.props.href);
-			el.props.href = '#' + slugify(URI);
+
+			const httpScheme = URI.startsWith('http://');
+			const httpsScheme = URI.startsWith('https://');
+			const isExternalURI = httpScheme || httpsScheme;
+
+			const href = isExternalURI ? URI : '#' + slugify(URI);
+
+			el.props.href = href;
 		}
 
 		if (el.id) {

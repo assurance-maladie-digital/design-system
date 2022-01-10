@@ -54,7 +54,7 @@
 
 	import DocDrawerListItem from './DocDrawerListItem.vue';
 
-	import { DrawerItem, PageItem } from '../../types/drawer';
+	import { DrawerItem } from '../../types/drawer';
 
 	const ICON_SEPARATOR = ':';
 	const GROUP_ITEM_SEPARATOR = '|';
@@ -81,7 +81,7 @@
 		expand: boolean | null = null;
 
 		get groupNamespace(): string {
-			return this.genGroupNamespace(this.item.items);
+			return this.genGroupNamespace(this.item.items || []);
 		}
 
 		get icon(): string | undefined {
@@ -98,7 +98,7 @@
 			return onIcon || offIcon;
 		}
 
-		genGroupNamespace(items: PageItem[]): string {
+		genGroupNamespace(items: DrawerItem[]): string {
 			const groupItems = items.map((item) => {
 				if (item.items) {
 					return this.genGroupNamespace(item.items);

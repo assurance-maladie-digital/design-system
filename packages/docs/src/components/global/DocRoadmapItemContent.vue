@@ -11,7 +11,7 @@
 
 			<VChip
 				v-if="itemLabel"
-				:class="labelColor"
+				:color="labelColor"
 				class="text-caption white--text px-3 flex-grow-0"
 			>
 				{{ itemLabel }}
@@ -57,7 +57,7 @@
 				default: undefined
 			},
 			issue: {
-				type: String,
+				type: Number,
 				default: undefined
 			}
 		}

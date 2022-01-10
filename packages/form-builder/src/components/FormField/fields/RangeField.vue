@@ -1,37 +1,34 @@
 <template>
 	<div class="vd-filter-range">
-		<VForm class="d-flex">
-			<VCol
-				cols="12"
-				sm="6"
-			>
-				<VTextField
-					:value="rangeValue[0]"
-					:label="minLabel"
-					outlined
-					@input="updateMinValue"
-				/>
-			</VCol>
+		<div
+			:class="{ 'flex-column': isMobile }"
+			class="d-flex flex-wrap max-width-none ma-n3"
+		>
+			<VTextField
+				:value="rangeValue[0]"
+				:label="minLabel"
+				hide-details
+				outlined
+				class="ma-3"
+				@input="updateMinValue"
+			/>
 
-			<VCol
-				cols="12"
-				sm="6"
-			>
-				<VTextField
-					:value="rangeValue[1]"
-					:label="maxLabel"
-					outlined
-					@input="updateMaxValue"
-				/>
-			</VCol>
-		</VForm>
+			<VTextField
+				:value="rangeValue[1]"
+				:label="maxLabel"
+				hide-details
+				outlined
+				class="ma-3"
+				@input="updateMaxValue"
+			/>
+		</div>
 
 		<VRangeSlider
 			v-model="rangeValue"
 			:max="field.max"
 			:min="field.min"
 			hide-details
-			class="align-center mb-6"
+			class="align-center mt-2 mb-6"
 			@change="emitChangeEvent(rangeValue)"
 		>
 			<template #prepend>
@@ -80,6 +77,10 @@
 	})
 	export default class RangeField extends MixinsDeclaration {
 		rangeValue: number[] = [];
+
+		get isMobile(): boolean {
+			return this.$vuetify.breakpoint.xs;
+		}
 
 		get minLabel(): string {
 			return this.field.fieldOptions?.minFieldLabel as string || locales.minLabel;

@@ -10,7 +10,7 @@
 			</span>
 		</VExpansionPanelHeader>
 
-		<VExpansionPanelContent>
+		<VExpansionPanelContent color="#fafbfd">
 			<p
 				v-if="items.length === 0"
 				class="text-subtitle-2 mt-4 mb-0"
@@ -71,6 +71,7 @@
 	}
 
 	.v-expansion-panel-content {
-		border-top: 1px solid #eee;
+		border-top: 1px solid;
+		border-color: #eee !important;
 	}
 </style>

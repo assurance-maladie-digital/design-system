@@ -9,7 +9,7 @@
 		:class="{ 'thumb-label': isThumbLabel }"
 		:style="sliderStyles"
 		:error-messages="errorMessages"
-		color="accent"
+		color="primary"
 		tick-size="6"
 		track-color="grey lighten-1"
 		class="vd-choice-slider-field vd-form-input-xl"
@@ -173,7 +173,7 @@
 			background: #bdbdbd;
 
 			&.v-slider__tick--filled {
-				background: $vd-accent !important;
+				background: $vd-primary !important;
 			}
 		}
 

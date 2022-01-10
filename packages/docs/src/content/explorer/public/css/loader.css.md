@@ -24,6 +24,8 @@ Le code HTML du loader se situe dans le fichier `public/index.html` :
 <div class="spinner-block">
 	<svg
 		class="spinner"
+		role="img"
+		aria-hidden="true"
 		width="65px"
 		height="65px"
 		viewBox="0 0 66 66"

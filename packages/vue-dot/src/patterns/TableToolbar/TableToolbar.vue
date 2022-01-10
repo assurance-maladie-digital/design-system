@@ -129,7 +129,11 @@
 		}
 
 		get textFieldClasses(): string {
-			const fieldClass = this.$vuetify.breakpoint.xs ? 'vd-form-input-s' : 'vd-form-input';
+			let fieldClass = this.$vuetify.breakpoint.xs ? 'vd-form-input-s' : 'vd-form-input';
+
+			if (this.showAddBtn) {
+				fieldClass += ' mr-6';
+			}
 
 			return `${fieldClass} flex-grow-0`;
 		}
@@ -138,6 +142,7 @@
 
 <style lang="scss" scoped>
 	.vd-table-toolbar ::v-deep .v-toolbar__content {
+		width: 100%;
 		flex-wrap: wrap;
 	}
 </style>

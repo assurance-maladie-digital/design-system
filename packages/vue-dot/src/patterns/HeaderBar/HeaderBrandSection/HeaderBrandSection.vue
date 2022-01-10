@@ -20,6 +20,9 @@
 				:width="dividerDimensions.width"
 				:height="dividerDimensions.height"
 				:fill="dividerColor"
+				role="img"
+				focusable="false"
+				aria-hidden="true"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 22 64"
 			>

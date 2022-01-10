@@ -14,7 +14,8 @@ export const api: Api = {
 			...customizable(`{
 	snackBar: 'VSnackbar',
 	icon: 'VIcon',
-	btn: 'VBtn'
+	btn: 'VBtn',
+	closeIcon: 'VIcon'
 }`)
 		]
 	}
