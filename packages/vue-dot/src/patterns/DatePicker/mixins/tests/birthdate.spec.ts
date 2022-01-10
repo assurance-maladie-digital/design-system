@@ -3,8 +3,6 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import dayjs from 'dayjs';
 
-import { Refs } from '../../../../types';
-
 import { Birthdate } from '../birthdate';
 
 // Tell jest to mock all timeout functions
