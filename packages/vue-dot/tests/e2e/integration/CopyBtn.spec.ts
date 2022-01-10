@@ -1,15 +1,38 @@
-import { mountComponent } from '../';
 import CopyBtn from '@/elements/CopyBtn';
 
+const TEXT_TO_COPY_ONE = 'Texte copié !';
+
+const props = {
+	label: 'test',
+	textToCopy: 'test'
+};
+
 describe('CopyBtn', () => {
-	const textToCopy = 'Texte copié !';
 
-	beforeEach(() => {
-		mountComponent(CopyBtn);
-	});
+    it('renders component correctly', ()=> {
+        cy.mountComponent(CopyBtn, { props });
 
-	it('copies the text to the clipboard', () => {
-		cy.dataCy('v-btn').should('exist').click();
-		cy.document().contains(textToCopy);
-	});
+        cy.get('#__cy_root').toMatchSnapshot();
+    });
+
+    it('Text copy to clipboard', () => {
+        cy.mountComponent(CopyBtn, { props });
+
+        cy.dataCy('v-btn').click();
+
+        cy.contains(TEXT_TO_COPY_ONE).should('exist');
+    });
+
+    it('text copy to clipbord with tooltip effet', () => {
+        cy.mountComponent(CopyBtn, { props });
+
+        cy.vue().then((wrapper)=>{
+            wrapper.setProps({ hideTooltip: true });
+        });
+
+        cy.dataCy('v-btn').click();
+
+        cy.contains(TEXT_TO_COPY_ONE).should('not.exist');
+    });
+
 });

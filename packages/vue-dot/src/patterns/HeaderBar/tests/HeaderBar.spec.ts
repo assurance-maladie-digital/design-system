@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
-import { mountComponent } from '@/tests';
+import { mountComponent } from '@/tests/unit';
 import { html } from '@/tests/utils/html';
 
 import HeaderBar from '../';

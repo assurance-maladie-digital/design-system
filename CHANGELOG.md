@@ -2,9 +2,14 @@
 
 ### Vue Dot
 
-- ♿️ **Accessibility**
+- ✨ **Nouvelles fonctionnalités**
+  - **HeaderBar:** Ajout d'un lien vers la page d'accueil sur le logo ([#1612](https://github.com/assurance-maladie-digital/design-system/pull/1612))
+
+- ♿️ **Accessibilité**
   - **HeaderBar:** Ajout d'un label sur le bouton pour fermer le menu de navigation ([#1574](https://github.com/assurance-maladie-digital/design-system/pull/1574)) ([19a0e62](https://github.com/assurance-maladie-digital/design-system/commit/19a0e620a9d940de03be1498a83f24a86752234a))
 
+- ✅ **Tests**
+  - **global:** Ajout de test unitaire dans le composant: CopyBtn ([#1616](https://github.com/assurance-maladie-digital/design-system/pull/1616))
 ### FormBuilder
 
 - ♻️ **Refactoring**
@@ -20,7 +25,7 @@
   - **global:** Correction des accents dans les ancres HTML ([#1583](https://github.com/assurance-maladie-digital/design-system/pull/1583)) ([3aa2e09](https://github.com/assurance-maladie-digital/design-system/commit/3aa2e096d4c7abc5e59391ccc0ccb860a76671c4))
 
 - ♻️ **Refactoring**
-  - **guides:** Refonte de la fonction Netlify `users` ([#1569](https://github.com/assurance-maladie-digital/design-system/pull/1569))
+  - **guides:** Refonte de la fonction Netlify `users` ([#1569](https://github.com/assurance-maladie-digital/design-system/pull/1569)) ([c995707](https://github.com/assurance-maladie-digital/design-system/commit/c995707547207b791beda67ebb24d22b7e305874))
 
 - 📝 **Documentation**
   - **CustomIcon:** Ajout de la prop `icon` dans l'API du composant ([#1573](hhttps://github.com/assurance-maladie-digital/design-system/pull/1573)) ([adf6e2a](https://github.com/assurance-maladie-digital/design-system/commit/adf6e2ae8c0eed92aa446515826317d0770e2d2f))
@@ -51,6 +56,7 @@
   - **@types/node:** Mise à jour vers la `v14.17.33` ([#1596](https://github.com/assurance-maladie-digital/design-system/pull/1596)) ([c068120](https://github.com/assurance-maladie-digital/design-system/commit/c068120c275eb22b5e30373459f073717e2283e2))
   - **@mdi/js:** Mise à jour vers la `v6.5.95` ([#1605](https://github.com/assurance-maladie-digital/design-system/pull/1605)) ([e2adede](https://github.com/assurance-maladie-digital/design-system/commit/e2adede0531e517a8f1e56809869708a4aa281d6))
   - **lint-staged:** Mise à jour vers la `v12` ([#1606](https://github.com/assurance-maladie-digital/design-system/pull/1606)) ([555dd13](https://github.com/assurance-maladie-digital/design-system/commit/555dd134189737737635885ae75b2f7b4b297eb2))
+  - **@vue/test-utils:** Mise à jour vers la `v1.3.0` ([#1609](https://github.com/assurance-maladie-digital/design-system/pull/1609)) ([a6b98d8](https://github.com/assurance-maladie-digital/design-system/commit/a6b98d894819265f4fe265cc680e53fcf5b078da))
 
 ## v2.1.0
 
@@ -78,15 +84,21 @@ Cette version comporte l'ajout des nouveaux composants `Logo` et `HeaderBar`, la
   - **rules:** Mise à jour des messages d'erreur des règles de validation ([#1476](https://github.com/assurance-maladie-digital/design-system/pull/1476)) ([d0aed49](https://github.com/assurance-maladie-digital/design-system/commit/d0aed492b7c1861c4411757c07fd7a3019c8e1cd))
   - **isEmailValid:** Mise à jour des données de test ([#1483](https://github.com/assurance-maladie-digital/design-system/pull/1483)) ([acfef7a](https://github.com/assurance-maladie-digital/design-system/commit/acfef7ac369de704d2f795503c7b0ed71500180b))
 
-- ♿️ **Accessibility**
+- ♿️ **Accessibilité**
   - **FranceConnectBtn:** Ajout d'un label sur le bouton et amélioration du style au focus ([#1508](https://github.com/assurance-maladie-digital/design-system/pull/1508)) ([a6115cb](https://github.com/assurance-maladie-digital/design-system/commit/a6115cb21fb55e7561e11f4755aa65beae8f9b73))
   - **NotificationBar:** Ajout de l'attribut ARIA `role` ([#1509](https://github.com/assurance-maladie-digital/design-system/pull/1509)) ([56cf6e7](https://github.com/assurance-maladie-digital/design-system/commit/56cf6e790a052c8bf75bc324b0cf9dccc31d40c6))
 
 - ✅ **Tests**
   - **pickerDate:** Correction d'un warning ([#1518](https://github.com/assurance-maladie-digital/design-system/pull/1518)) ([022a68a](https://github.com/assurance-maladie-digital/design-system/commit/022a68a06ef4d777fc978673f63579c32a51d250))
+  
+
+- ✅ **Tests**
+  - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
+
+- ✅ **Tests**
+  - **global:** Configurer le coverage de Cypress Component Testing ([#1489](https://github.com/assurance-maladie-digital/design-system/pull/1489))
 
 ### Vue Dash
-
 - 🐛 **Corrections de bugs**
   - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359)) ([d5fc107](https://github.com/assurance-maladie-digital/design-system/commit/d5fc1072719803e85aa35e968fe402cea168d827))
   - **template:** Correction des commandes manquantes dans le fichier `package.json` ([#1475](https://github.com/assurance-maladie-digital/design-system/pull/1475)) ([9431fd2](https://github.com/assurance-maladie-digital/design-system/commit/9431fd214048c12ff4e2886a16634cbf4740080b))
