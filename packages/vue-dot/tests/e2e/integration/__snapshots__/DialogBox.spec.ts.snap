@@ -1,0 +1,65 @@
+exports[`DialogBox > renders correctly #0`] = `
+<div id="__cy_root" class="v-application" data-app="true">
+  <div class="v-overlay theme--dark" style="z-index: 5;">
+    <div
+      class="v-overlay__scrim"
+      style="opacity: 0; background-color: rgb(33, 33, 33); border-color: rgb(33, 33, 33);"
+    ></div>
+  </div>
+  <div role="dialog" class="v-dialog__container vd-dialog-box"></div>
+  <div
+    role="document"
+    tabindex="0"
+    class="v-dialog__content v-dialog__content--active"
+    style="z-index: 202;"
+  >
+    <transition-stub name="dialog-transition" appear="true"
+      ><div
+        class="v-dialog v-dialog--active"
+        style="transform-origin: center center; width: 300px;"
+      >
+        <div class="v-card v-sheet theme--light pa-6">
+          <div class="v-card__title d-flex align-start flex-nowrap pa-0 mb-4">
+            <!---->
+            <div class="spacer"></div>
+            <button
+              type="button"
+              class="v-btn v-btn--icon v-btn--round theme--light v-size--default ml-4"
+            >
+              <span class="v-btn__content"
+                ><span
+                  aria-hidden="true"
+                  class="v-icon notranslate theme--light"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    aria-hidden="true"
+                    class="v-icon__svg"
+                  >
+                    <path
+                      d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+                    ></path></svg></span
+              ></span>
+            </button>
+          </div>
+          <div class="vd-dialog-box-actions-ctn d-flex flex-wrap">
+            <div class="spacer"></div>
+            <button
+              type="button"
+              class="v-btn v-btn--text theme--light v-size--default primary--text text-none"
+            >
+              <span class="v-btn__content"> Annuler </span></button
+            ><button
+              type="button"
+              class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary text-none ml-4"
+            >
+              <span class="v-btn__content"> Valider </span>
+            </button>
+          </div>
+        </div>
+      </div></transition-stub
+    >
+  </div>
+</div>
+`;

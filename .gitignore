@@ -3,6 +3,7 @@ node_modules/
 
 # Build
 dist/
+.nyc_output/
 
 # Playground
 **/dev/Playground.vue
@@ -36,3 +37,6 @@ package-lock.json*
 # Netlify
 .netlify/
 netlify.toml
+
+# Code Cov
+.nyc_output/
