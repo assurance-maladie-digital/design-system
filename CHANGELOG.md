@@ -186,15 +186,9 @@ Cette version comporte l'ajout des nouveaux composants `Logo` et `HeaderBar`, la
 
 - ✅ **Tests**
   - **pickerDate:** Correction d'un warning ([#1518](https://github.com/assurance-maladie-digital/design-system/pull/1518)) ([022a68a](https://github.com/assurance-maladie-digital/design-system/commit/022a68a06ef4d777fc978673f63579c32a51d250))
-  
-
-- ✅ **Tests**
-  - **global:** Installation de Cypress Component Testing ([#1385](https://github.com/assurance-maladie-digital/design-system/pull/1385))
-
-- ✅ **Tests**
-  - **global:** Configurer le coverage de Cypress Component Testing ([#1489](https://github.com/assurance-maladie-digital/design-system/pull/1489))
 
 ### Vue Dash
+
 - 🐛 **Corrections de bugs**
   - **template:** Correction de la police italique non chargée ([#1359](https://github.com/assurance-maladie-digital/design-system/pull/1359)) ([d5fc107](https://github.com/assurance-maladie-digital/design-system/commit/d5fc1072719803e85aa35e968fe402cea168d827))
   - **template:** Correction des commandes manquantes dans le fichier `package.json` ([#1475](https://github.com/assurance-maladie-digital/design-system/pull/1475)) ([9431fd2](https://github.com/assurance-maladie-digital/design-system/commit/9431fd214048c12ff4e2886a16634cbf4740080b))

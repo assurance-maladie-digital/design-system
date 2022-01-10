@@ -24,7 +24,7 @@ const LIB_MODE_CONFIG = {
 			libraryExport: 'default'
 		},
 		performance: {
-			hints: 'warning',
+			hints: 'error',
 			maxEntrypointSize: LIMIT_SIZE,
 			maxAssetSize: LIMIT_SIZE
 		},

@@ -7,20 +7,19 @@ import { vuetify } from '../vuetify';
 const vuetifyFn = () => {
 	const root = document.getElementById('__cy_root');
 
-	// add the v-application class that allows Vuetify styles to work
+	// Add the v-application class that allows Vuetify styles to work
 	if (root !== null && !root.classList.contains('v-application')) {
 		root.classList.add('v-application');
 		root.setAttribute('data-app', 'true');
 	}
 };
 
-// add command to directive # dataCy
+// Add command to directive # dataCy
 Cypress.Commands.add('dataCy', (value) => {
 	return cy.get(`[data-cy=${value}]`);
 });
 
-// add a new command with the name "mount" to run the Vue Test Utils
-// mount and add Vuetify
+// Mount and add Vuetify
 Cypress.Commands.add('mountComponent', ( MountedComponent, options?, fullMount = false ) => {
 	const fn: MountType = !fullMount ? mount: mountCallback;
 
@@ -32,7 +31,7 @@ Cypress.Commands.add('mountComponent', ( MountedComponent, options?, fullMount =
 	});
 });
 
-// wrapper component
+// Wrapper component
 Cypress.Commands.add('vue', () => {
 	return cy.wrap(Cypress.vueWrapper);
 });

@@ -1,6 +1,6 @@
 const plugins = [];
-//  instrumenting cod
-if(!process.env.LIB_MODE){
+
+if (!process.env.LIB_MODE) {
 	plugins.push([
 		'babel-plugin-istanbul', {
 			extension: [
@@ -11,6 +11,7 @@ if(!process.env.LIB_MODE){
 		}
 	]);
 }
+
 module.exports = {
 	// For dev environment
 	presets: [

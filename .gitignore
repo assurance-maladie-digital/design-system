@@ -3,7 +3,6 @@ node_modules/
 
 # Build
 dist/
-.nyc_output/
 
 # Playground
 **/dev/Playground.vue
@@ -28,6 +27,7 @@ package-lock.json*
 
 # Tests coverage
 **/tests/**/coverage/
+.nyc_output/
 
 # Cypress
 **/tests/e2e/videos/
@@ -37,6 +37,3 @@ package-lock.json*
 # Netlify
 .netlify/
 netlify.toml
-
-# Code Cov
-.nyc_output/

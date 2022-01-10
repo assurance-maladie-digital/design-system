@@ -1,38 +1,44 @@
 import CopyBtn from '@/elements/CopyBtn';
 
-const TEXT_TO_COPY_ONE = 'Texte copié !';
+const textToCopy = 'Texte copié !';
 
 const props = {
 	label: 'test',
-	textToCopy: 'test'
+	textToCopy
 };
 
 describe('CopyBtn', () => {
+	it('renders component correctly', () => {
+		cy.mountComponent(CopyBtn, {
+			props
+		});
 
-    it('renders component correctly', ()=> {
-        cy.mountComponent(CopyBtn, { props });
+		cy.get('#__cy_root').toMatchSnapshot();
+	});
 
-        cy.get('#__cy_root').toMatchSnapshot();
-    });
+	it('copies text to clipboard', () => {
+		cy.mountComponent(CopyBtn, {
+			props
+		});
 
-    it('Text copy to clipboard', () => {
-        cy.mountComponent(CopyBtn, { props });
+		cy.dataCy('v-btn').click();
 
-        cy.dataCy('v-btn').click();
+		cy.contains(textToCopy).should('exist');
+	});
 
-        cy.contains(TEXT_TO_COPY_ONE).should('exist');
-    });
+	it('copies text to clipboard without tooltip effet', () => {
+		cy.mountComponent(CopyBtn, {
+			props
+		});
 
-    it('text copy to clipbord with tooltip effet', () => {
-        cy.mountComponent(CopyBtn, { props });
+		cy.vue().then((wrapper)=>{
+			wrapper.setProps({
+				hideTooltip: true
+			});
+		});
 
-        cy.vue().then((wrapper)=>{
-            wrapper.setProps({ hideTooltip: true });
-        });
+		cy.dataCy('v-btn').click();
 
-        cy.dataCy('v-btn').click();
-
-        cy.contains(TEXT_TO_COPY_ONE).should('not.exist');
-    });
-
+		cy.contains(textToCopy).should('not.exist');
+	});
 });
