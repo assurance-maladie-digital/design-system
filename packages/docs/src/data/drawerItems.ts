@@ -22,6 +22,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/principes-design'
 			},
 			{
+				title: 'Accessibilité',
+				to: '/demarrer/accessibilite'
+			},
+			{
 				title: 'Installation',
 				to: '/demarrer/installation'
 			},
