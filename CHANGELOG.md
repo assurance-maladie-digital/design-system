@@ -27,7 +27,7 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **global:** Ajout de la page accessibilité ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1707))
+  - **global:** Ajout de la page accessibilité ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1707)) ([648bccf](https://github.com/assurance-maladie-digital/design-system/commit/648bccfa69d4da8766f5dc53506df94ce881dddd))
 
 ### Interne
 
@@ -41,6 +41,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.9.0` ([#1686](https://github.com/assurance-maladie-digital/design-system/pull/1686)) ([cb60f68](https://github.com/assurance-maladie-digital/design-system/commit/cb60f68b84b677950d3b02e7665505b0d04335aa))
   - **@babel/core:** Mise à jour vers la `v7.16.7` ([#1689](https://github.com/assurance-maladie-digital/design-system/pull/1689)) ([6cb5ae5](https://github.com/assurance-maladie-digital/design-system/commit/6cb5ae5dd4e0b79d5fdda7bb0a2aaf1bc25b21c9))
   - **lint-staged:** Mise à jour vers la `v12.1.6` ([#1693](https://github.com/assurance-maladie-digital/design-system/pull/1693)) ([05646e6](https://github.com/assurance-maladie-digital/design-system/commit/05646e6f670e61b1953e9467354007a660f1b278))
+  - **@vue/eslint-config-typescript:** Mise à jour vers la `v10` ([#1687](https://github.com/assurance-maladie-digital/design-system/pull/1687))
 
 ## v2.2.0
 
