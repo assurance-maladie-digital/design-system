@@ -7,6 +7,7 @@ exports[`ErrorPage renders correctly 1`] = `
     <h2 class="mb-2 font-weight-bold text-h4 mb-4">
       Error
     </h2>
+    <!---->
     <p>Error message</p>
     <div class="d-flex mt-6">
       <vspacer-stub tag="div"></vspacer-stub>
