@@ -42,3 +42,14 @@ a {
 	flex-direction: column;
 	align-items: flex-start;
 }
+
+// Scroll padding
+html {
+	scroll-padding-top: 120px;
+}
+
+@media only screen and (max-width: 960px) {
+	html {
+		scroll-padding-top: 72px;
+	}
+}
