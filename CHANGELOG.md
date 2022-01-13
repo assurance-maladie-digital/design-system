@@ -26,6 +26,9 @@
 
 ### Documentation
 
+- 🐛 **Corrections de bugs**
+  - **global:** Correction du décalage pour les ancres HTML ([#1712](https://github.com/assurance-maladie-digital/design-system/pull/1712))
+
 - 📝 **Documentation**
   - **global:** Ajout de la page accessibilité ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1707)) ([648bccf](https://github.com/assurance-maladie-digital/design-system/commit/648bccfa69d4da8766f5dc53506df94ce881dddd))
 
@@ -42,7 +45,7 @@
   - **@vue/eslint-config-typescript:** Mise à jour vers la `v10` ([#1687](https://github.com/assurance-maladie-digital/design-system/pull/1687)) ([759cda2](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/759cda2daf8a5932bc65cf9c3bd28de8d75951c1))
   - **vuetify:** Mise à jour vers la `v2.6.2` ([#1688](https://github.com/assurance-maladie-digital/design-system/pull/1688)) ([f5d37f2](https://github.com/assurance-maladie-digital/design-system/commit/f5d37f26a9ededdaf1d3ae3dd953477610c094e4))
   - **lint-staged:** Mise à jour vers la `v12.1.7` ([#1694](https://github.com/assurance-maladie-digital/design-system/pull/1694)) ([f71ea22](https://github.com/assurance-maladie-digital/design-system/commit/f71ea220e341ef0ce5687e4c29777c8d4499e1f1))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.6.1` ([#1695](https://github.com/assurance-maladie-digital/design-system/pull/1695))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.6.1` ([#1695](https://github.com/assurance-maladie-digital/design-system/pull/1695)) ([5e475f2](https://github.com/assurance-maladie-digital/design-system/commit/5e475f28316498818cc5b3165ef0e799fa10d472))
 
 ## v2.2.0
 
