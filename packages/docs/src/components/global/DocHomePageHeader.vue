@@ -1,6 +1,6 @@
 <template>
 	<div class="doc-home-page-header w-100">
-		<div class="d-flex flex-column flex-md-row flex-wrap mb-16 w-100">
+		<div class="d-flex flex-column flex-md-row flex-wrap mb-14 w-100">
 			<h1 class="primary--text text-md-h3 text-sm-h4 text-h5 mr-4 mt-n1">
 				Un Design System pour<br>
 				l’Assurance Maladie
