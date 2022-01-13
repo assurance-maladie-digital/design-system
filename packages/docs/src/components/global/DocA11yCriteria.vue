@@ -47,6 +47,7 @@
 			},
 			{
 				text: 'Critère',
+				sortable: false,
 				value: 'description'
 			},
 			{
