@@ -49,7 +49,7 @@ Ce bloc permet de masquer l'application pendant de le chargement de celle-ci afi
 	width: 100%;
 	display: flex;
 	min-height: 100vh;
-	background: #eee;
+	background: #f8f9fc;
 }
 ```
 
