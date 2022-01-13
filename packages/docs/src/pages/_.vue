@@ -8,7 +8,7 @@
 		<DocDrawer v-model="drawer" />
 
 		<VMain>
-			<VContainer class="h-100 pa-5 pa-sm-8">
+			<VContainer class="h-100 pa-6 pa-sm-14">
 				<VSheet
 					max-width="868px"
 					class="mx-auto h-100 d-flex flex-column"
@@ -40,10 +40,7 @@
 						class="mt-8 mb-6"
 					/>
 
-					<DocPageInfo
-						:document="document"
-						class="mb-6"
-					/>
+					<DocPageInfo :document="document" />
 				</VSheet>
 			</VContainer>
 		</VMain>
