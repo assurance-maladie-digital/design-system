@@ -30,10 +30,11 @@
   - **global:** Correction du décalage pour les ancres HTML ([#1712](https://github.com/assurance-maladie-digital/design-system/pull/1712)) ([28fa1a8](https://github.com/assurance-maladie-digital/design-system/commit/28fa1a864c2fe88d39c1a8126440a309c7070adf))
 
 - ♻️ **Refactoring**
-  - **accessibility:** Désactivation du tri sur la colonne "Critère" ([#1713](https://github.com/assurance-maladie-digital/design-system/pull/1713))
+  - **accessibility:** Désactivation du tri sur la colonne "Critère" ([#1713](https://github.com/assurance-maladie-digital/design-system/pull/1713)) ([a943d5e](https://github.com/assurance-maladie-digital/design-system/commit/a943d5eb540c704f2a47564d0dfa810cb3e2354d))
 
 - 📝 **Documentation**
   - **global:** Ajout de la page accessibilité ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1707)) ([648bccf](https://github.com/assurance-maladie-digital/design-system/commit/648bccfa69d4da8766f5dc53506df94ce881dddd))
+  - **explorer:** Mise à jour du content du fichier `base.css` ([#1714](https://github.com/assurance-maladie-digital/design-system/pull/1714))
 
 ### Interne
 
