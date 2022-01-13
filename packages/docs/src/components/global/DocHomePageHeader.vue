@@ -1,15 +1,15 @@
 <template>
 	<div class="doc-home-page-header w-100">
-		<div class="d-flex flex-column flex-md-row flex-wrap mb-14 w-100">
-			<h1 class="primary--text text-md-h3 text-sm-h4 text-h5 mr-4 mt-n1">
+		<div class="d-flex flex-column mb-14 w-100">
+			<h1 class="primary--text text-md-h3 text-sm-h4 text-h5 mb-6 mt-n1">
 				Un Design System pour<br>
 				l’Assurance Maladie
 			</h1>
 
-			<div class="d-flex flex-column flex-grow-1 mt-4 mt-md-0">
+			<div class="d-flex flex-wrap flex-grow-1 justify-space-between ma-n2">
 				<p
 					v-if="state === 'resolved'"
-					class="text-left text-md-right mb-6"
+					class="ma-2"
 				>
 					<span class="text-h6">
 						{{ version }}
@@ -20,10 +20,10 @@
 					</span>
 				</p>
 
-				<div class="d-flex align-center justify-start justify-md-end">
+				<div class="d-flex flex-wrap align-center ma-n1">
 					<a
 						href="https://netlify.com"
-						class="d-flex mr-4"
+						class="d-flex ma-3"
 					>
 						<img
 							src="https://www.netlify.com/img/global/badges/netlify-light.svg"
@@ -38,7 +38,7 @@
 						color="primary"
 						height="42px"
 						outlined
-						class="text-none"
+						class="text-none ma-3"
 					>
 						<VIcon class="mr-2">
 							{{ githubIcon }}
