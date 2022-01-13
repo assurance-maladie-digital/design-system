@@ -8,41 +8,40 @@
 		<DocDrawer v-model="drawer" />
 
 		<VMain>
-			<VContainer class="h-100 pa-6 pa-sm-14">
-				<VSheet
-					max-width="868px"
-					class="mx-auto h-100 d-flex flex-column"
-				>
-					<article class="flex-grow-1">
-						<h1
-							v-if="document.title && !document.hideTitle"
-							v-text="document.title"
-							class="text-h4 text-sm-h4 font-weight-bold mb-4"
-						/>
-
-						<div
-							v-if="document.parsedDescription"
-							v-html="document.parsedDescription"
-							class="description text-h6"
-						/>
-
-						<VDivider
-							v-if="document.divider"
-							class="mt-6 mb-6"
-						/>
-
-						<NuxtContent :document="document" />
-					</article>
-
-					<DocPrevNext
-						:prev="prev"
-						:next="next"
-						class="mt-8 mb-6"
+			<PageContainer
+				class="h-100"
+				spacing="pa-6 pa-sm-14"
+				size="m"
+			>
+				<article class="flex-grow-1">
+					<h1
+						v-if="document.title && !document.hideTitle"
+						v-text="document.title"
+						class="text-h4 text-sm-h4 font-weight-bold mb-4"
 					/>
 
-					<DocPageInfo :document="document" />
-				</VSheet>
-			</VContainer>
+					<div
+						v-if="document.parsedDescription"
+						v-html="document.parsedDescription"
+						class="description text-h6"
+					/>
+
+					<VDivider
+						v-if="document.divider"
+						class="mt-6 mb-6"
+					/>
+
+					<NuxtContent :document="document" />
+				</article>
+
+				<DocPrevNext
+					:prev="prev"
+					:next="next"
+					class="mt-8 mb-6"
+				/>
+
+				<DocPageInfo :document="document" />
+			</PageContainer>
 		</VMain>
 	</VApp>
 </template>
