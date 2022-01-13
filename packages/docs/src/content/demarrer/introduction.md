@@ -13,7 +13,7 @@ Notre Design System est un **référentiel** au service des produits digitaux de
 
 Ce Design System est un **produit vivant**, voué à évoluer. Disponible en ***open source***, il a pour ambition d’être généralisé le plus largement possible à l’ensemble des services de l’Assurance Maladie, afin d’offrir la meilleure **expérience utilisateur** aux assurés, professionnels de santé, employeurs et agents.
 
-### À quoi sert le Design System ?
+## À quoi sert le Design System ?
 
 <doc-indent>
 
@@ -25,7 +25,7 @@ L’intérêt d’utiliser notre Design System répond à trois principaux besoi
 
 En accord avec la démarche centrée sur les utilisateurs, notre Design System est pensé pour répondre continuellement aux besoins des utilisateurs tout en respectant les réalités industrielles et économiques. **Depuis 2017, plus de 20 produits et services numériques ont été développés avec notre Design System faisant de lui une référence en tant que Design System pour répondre aux enjeux du secteur de la santé**.
 
-### Qui peut l’utiliser ?
+## Qui peut l’utiliser ?
 
 <doc-indent>
 

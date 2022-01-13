@@ -49,10 +49,6 @@
 				</div>
 			</div>
 		</div>
-
-		<h2 class="secondary--text text-md-h3 text-sm-h4 text-h5 mb-10">
-			Introduction
-		</h2>
 	</div>
 </template>
 
