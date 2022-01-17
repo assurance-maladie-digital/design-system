@@ -95,6 +95,8 @@
 
 	@Component
 	export default class ErrorPage extends Props {
+		locales = locales;
+
 		/**
 		 * Support ID is a number added by our firewall if a rule is violated
 		 * This should be displayed to the user so it can be used to track down the error
