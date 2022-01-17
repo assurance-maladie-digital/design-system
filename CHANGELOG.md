@@ -2,6 +2,9 @@
 
 ### Vue Dot
 
+- ✨ **Nouvelles fonctionnalités**
+  - **ErrorPage:** Affichage de l'ID de support ([#1724](https://github.com/assurance-maladie-digital/design-system/pull/1724))
+
 - 🐛 **Corrections de bugs**
   - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))
   - **DatePicker:** Correction de l'affichage du menu avec la prop `text-field-activator` ([#1678](https://github.com/assurance-maladie-digital/design-system/pull/1678)) ([f50dad2](https://github.com/assurance-maladie-digital/design-system/commit/f50dad2c031536e2720fdf3d6b8bd3b5ecd5f1db))
@@ -58,7 +61,7 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.6.1` ([#1695](https://github.com/assurance-maladie-digital/design-system/pull/1695)) ([5e475f2](https://github.com/assurance-maladie-digital/design-system/commit/5e475f28316498818cc5b3165ef0e799fa10d472))
   - **sass-loader:** Mise à jour vers la `v10.2.1` ([#1721](https://github.com/assurance-maladie-digital/design-system/pull/1721)) ([b3de137](https://github.com/assurance-maladie-digital/design-system/commit/b3de137294e3ec36e3c44898e0ff511284bda749))
   - **core-js:** Mise à jour vers la `v3.20.3` ([#1722](https://github.com/assurance-maladie-digital/design-system/pull/1722)) ([0aba7b7](https://github.com/assurance-maladie-digital/design-system/commit/0aba7b71bc40fb943da2347a0de9ed4fafbaed9c))
-  - **@types/node:** Mise à jour vers la `v14.18.6` ([#1723](https://github.com/assurance-maladie-digital/design-system/pull/1723))
+  - **@types/node:** Mise à jour vers la `v14.18.6` ([#1723](https://github.com/assurance-maladie-digital/design-system/pull/1723)) ([f9c24c0](https://github.com/assurance-maladie-digital/design-system/commit/f9c24c075eb333d9c2e7aca0cc8b0fb48ca17c2d))
 
 ## v2.2.0
 

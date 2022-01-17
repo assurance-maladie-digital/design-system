@@ -19,6 +19,12 @@
 				{{ pageTitle }}
 			</h2>
 
+			<p v-if="supportId">
+				{{ locales.supportIdMessage }}
+
+				<b>{{ supportId }}</b>
+			</p>
+
 			<p>{{ message }}</p>
 
 			<div
@@ -46,6 +52,11 @@
 	import { RawLocation } from 'vue-router';
 
 	import { locales } from './locales';
+
+	import { insertAt } from '@cnamts/vue-dot/src/functions/insertAt';
+
+	const SUPPORT_ID_PARAM_NAME = 'support_id';
+	const SPACE_CHARACTER = ' ';
 
 	const Props = Vue.extend({
 		props: {
@@ -82,9 +93,31 @@
 		}
 	});
 
-	/** Used to display error pages */
 	@Component
-	export default class ErrorPage extends Props {}
+	export default class ErrorPage extends Props {
+		locales = locales;
+
+		/**
+		 * Support ID is a number added by our firewall if a rule is violated
+		 * This should be displayed to the user so it can be used to track down the error
+		 */
+		get supportId(): string | null {
+			const params = new URLSearchParams(document.location.search);
+			let supportId = params.get(SUPPORT_ID_PARAM_NAME);
+
+			if (!supportId) {
+				return null;
+			}
+
+			const spacePositions = [4, 9, 14, 19];
+
+			spacePositions.forEach((position) => {
+				supportId = insertAt(supportId as string, position, SPACE_CHARACTER);
+			});
+
+			return supportId.trim();
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
