@@ -35,7 +35,7 @@
   - **global:** Mise à jour de l'espacement des pages ([#1717](https://github.com/assurance-maladie-digital/design-system/pull/1717)) ([1d00d07](https://github.com/assurance-maladie-digital/design-system/commit/1d00d07e30c946105dea9377882c1cd482a8fff9))
   - **global:** Utilisation du composant `PageContainer` ([#1718](https://github.com/assurance-maladie-digital/design-system/pull/1718)) ([3ed928b](https://github.com/assurance-maladie-digital/design-system/commit/3ed928b19854c454bb825e9bcf5fc09136a1b70f))
   - **introduction:** Refonte du layout de la page ([#1719](https://github.com/assurance-maladie-digital/design-system/pull/1719)) ([79bcaed](https://github.com/assurance-maladie-digital/design-system/commit/79bcaed6e58e9548a7b27867083ea1c50a7a00db))
-  - **roadmap:** Mise à jour du lien pour créer une nouvelle demande et de la taille du bouton de demande ([#1720](https://github.com/assurance-maladie-digital/design-system/pull/1720))
+  - **roadmap:** Mise à jour du lien pour créer une nouvelle demande et de la taille du bouton de demande ([#1720](https://github.com/assurance-maladie-digital/design-system/pull/1720)) ([07a053d](https://github.com/assurance-maladie-digital/design-system/commit/07a053da2a8c1134fff3651e60fdbc1b9472dd0d))
 
 - 🔥 **Suppressions**
   - **introduction:** Suppression du titre secondaire ([#1716](https://github.com/assurance-maladie-digital/design-system/pull/1716)) ([e35d2c7](https://github.com/assurance-maladie-digital/design-system/commit/e35d2c7b401163ad4c6b7e7f7912d67e68f70825))
@@ -58,6 +58,7 @@
   - **vuetify:** Mise à jour vers la `v2.6.2` ([#1688](https://github.com/assurance-maladie-digital/design-system/pull/1688)) ([f5d37f2](https://github.com/assurance-maladie-digital/design-system/commit/f5d37f26a9ededdaf1d3ae3dd953477610c094e4))
   - **lint-staged:** Mise à jour vers la `v12.1.7` ([#1694](https://github.com/assurance-maladie-digital/design-system/pull/1694)) ([f71ea22](https://github.com/assurance-maladie-digital/design-system/commit/f71ea220e341ef0ce5687e4c29777c8d4499e1f1))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.6.1` ([#1695](https://github.com/assurance-maladie-digital/design-system/pull/1695)) ([5e475f2](https://github.com/assurance-maladie-digital/design-system/commit/5e475f28316498818cc5b3165ef0e799fa10d472))
+  - **sass-loader:** Mise à jour vers la `v10.2.1` ([#1721](https://github.com/assurance-maladie-digital/design-system/pull/1721))
 
 ## v2.2.0
 
