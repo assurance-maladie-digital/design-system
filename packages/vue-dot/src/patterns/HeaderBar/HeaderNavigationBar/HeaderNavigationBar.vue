@@ -10,22 +10,10 @@
 			:width="innerWidth"
 		>
 			<slot>
-				<div
+				<HeaderMenuBtn
 					v-if="isMobile"
-					class="d-flex align-center"
-				>
-					<VBtn
-						v-bind="options.menuBtn"
-						:aria-label="menuBtnActionLabel"
-						@click="emitDrawerEvent"
-					>
-						<VIcon v-bind="options.menuIcon">
-							{{ menuIcon }}
-						</VIcon>
-
-						{{ locales.menu }}
-					</VBtn>
-				</div>
+					@click="emitDrawerEvent"
+				/>
 
 				<VTabs
 					v-else
@@ -52,14 +40,15 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { mdiClose, mdiMenu } from '@mdi/js';
+	import { mdiClose } from '@mdi/js';
 
 	import { NavigationItem } from '../types';
-	import { locales } from './locales';
 	import { config } from './config';
 	import { colorMapping } from '../colorMapping';
 
 	import { ThemeEnum } from '../ThemeEnum';
+
+	import HeaderMenuBtn from '../HeaderMenuBtn';
 
 	import { customizable } from '../../../mixins/customizable';
 
@@ -88,17 +77,22 @@
 			tab: {
 				type: [Number, String],
 				default: null
+			},
+			showMenuBtn: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component
+	@Component({
+		components: {
+			HeaderMenuBtn
+		}
+	})
 	export default class HeaderNavigationBar extends MixinsDeclaration {
-		locales = locales;
-
-		menuIcon = mdiMenu;
 		closeIcon = mdiClose;
 
 		get spacingClass(): string {
@@ -107,16 +101,6 @@
 
 		get backgroundColor(): string {
 			return colorMapping[this.theme];
-		}
-
-		get menuBtnActionLabel(): string {
-			const action = this.drawer ? locales.close : locales.open;
-
-			return locales.menuBtnLabel(action);
-		}
-
-		toggleDrawer(value: boolean): void {
-			this.drawer = value;
 		}
 
 		emitDrawerEvent(): void {

@@ -31,6 +31,17 @@
 					<VSpacer v-bind="options.spacer" />
 
 					<slot />
+
+					<HeaderMenuBtn
+						v-if="showHeaderMenuBtn"
+						color="primary"
+						min-width="0"
+						height="42px"
+						spacing="px-1 mx-n1"
+						text
+						class="text-caption"
+						@click="drawer = !drawer"
+					/>
 				</VSheet>
 			</VSheet>
 
@@ -42,6 +53,7 @@
 					:is-mobile="isMobile"
 					:items="navigationItems"
 					:inner-width="innerWidth"
+					:show-menu-btn="showNavBarMenuBtn"
 				>
 					<slot name="navigation-bar-content" />
 				</HeaderNavigationBar>
@@ -65,6 +77,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import HeaderBrandSection from './HeaderBrandSection';
+	import HeaderMenuBtn from './HeaderMenuBtn';
 	import HeaderNavigationBar from './HeaderNavigationBar';
 	import HeaderNavigationDrawer from './HeaderNavigationDrawer';
 
@@ -104,6 +117,10 @@
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: undefined
+			},
+			showNavBarMenuBtn: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -114,6 +131,7 @@
 		inheritAttrs: false,
 		components: {
 			HeaderBrandSection,
+			HeaderMenuBtn,
 			HeaderNavigationBar,
 			HeaderNavigationDrawer
 		}
@@ -142,8 +160,18 @@
 			return this.contentSheetHeight;
 		}
 
+		get showHeaderMenuBtn(): boolean {
+			return !this.showNavBarMenuBtn && this.isMobile;
+		}
+
 		get showNavigationBar(): boolean {
-			return Boolean(this.navigationItems || this.$slots['navigation-bar-content']);
+			const hasContent = Boolean(this.navigationItems || this.$slots['navigation-bar-content']);
+
+			if (this.showHeaderMenuBtn) {
+				return false;
+			}
+
+			return hasContent;
 		}
 	}
 </script>
@@ -157,5 +185,15 @@
 	.vd-header-bar,
 	.vd-header-bar-content {
 		overflow: hidden;
+	}
+
+	.vd-header-menu-btn ::v-deep {
+		.v-btn__content {
+			flex-direction: column;
+		}
+
+		.v-icon {
+			margin: 0 !important;
+		}
 	}
 </style>
