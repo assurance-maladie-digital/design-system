@@ -14,23 +14,16 @@
 				<VBtn
 					:aria-label="menuBtnActionLabel"
 					:elevation="0"
-					width="36px"
-					height="36px"
-					icon
+					color="transparent"
 					class="mx-n2"
 					@click="emitDrawerEvent"
 				>
-					<VIcon>
+					<VIcon class="mr-2">
 						{{ menuIcon }}
 					</VIcon>
-				</VBtn>
 
-				<h2
-					v-if="menuBtnLabel"
-					class="text-body-2 text-sm-subtitle-1 ml-4"
-				>
-					{{ menuBtnLabel }}
-				</h2>
+					Menu
+				</VBtn>
 			</div>
 		</template>
 	</HeaderBar>
@@ -47,10 +40,6 @@
 			drawer: {
 				type: Boolean,
 				default: false
-			},
-			menuBtnLabel: {
-				type: String,
-				default: undefined
 			}
 		}
 	});

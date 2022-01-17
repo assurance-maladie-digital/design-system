@@ -5,6 +5,9 @@
 - ✨ **Nouvelles fonctionnalités**
   - **ErrorPage:** Affichage de l'ID de support ([#1724](https://github.com/assurance-maladie-digital/design-system/pull/1724)) ([a362e5d](https://github.com/assurance-maladie-digital/design-system/commit/a362e5d28791e7c53608bc7bf7b27cbcc0003594))
 
+- ♻️ **Refactoring**
+  - **HeaderBar:** Refonte du bouton pour activer le menu sur les écrans mobiles ([#1726](https://github.com/assurance-maladie-digital/design-system/pull/1726))
+
 - 🐛 **Corrections de bugs**
   - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))
   - **DatePicker:** Correction de l'affichage du menu avec la prop `text-field-activator` ([#1678](https://github.com/assurance-maladie-digital/design-system/pull/1678)) ([f50dad2](https://github.com/assurance-maladie-digital/design-system/commit/f50dad2c031536e2720fdf3d6b8bd3b5ecd5f1db))
@@ -13,10 +16,10 @@
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
-  - **template:** Correction du hook de qualité manquant ([#1725](https://github.com/assurance-maladie-digital/design-system/pull/1725))
+  - **template:** Correction du hook de qualité manquant ([#1725](https://github.com/assurance-maladie-digital/design-system/pull/1725)) ([d06aca0](https://github.com/assurance-maladie-digital/design-system/commit/d06aca0703cdacf61da6ce5958f168f9615a00f8))
 
 - ♻️ **Refactoring**
-  - **jest:** Utilisation de TypeScript pour la configuration de Jest ([#1684](https://github.com/assurance-maladie-digital/design-system/pull/1684)) ([189652b](https://github.com/assurance-maladie-digital/design-system/commit/189652b335249b359d8c50af3b646c5a0cd30a77))
+  - **template:** Utilisation de TypeScript pour la configuration de Jest ([#1684](https://github.com/assurance-maladie-digital/design-system/pull/1684)) ([189652b](https://github.com/assurance-maladie-digital/design-system/commit/189652b335249b359d8c50af3b646c5a0cd30a77))
 
 - ✅ **Tests**
   - **template:** Ajout d'un test sur `AppHeader` ([#1683](https://github.com/assurance-maladie-digital/design-system/pull/1683)) ([e18f57c](https://github.com/assurance-maladie-digital/design-system/commit/e18f57cb69c0214fe73ee6dd381a92efd623bbc5))

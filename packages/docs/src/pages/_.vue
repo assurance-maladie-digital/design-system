@@ -1,9 +1,6 @@
 <template>
 	<VApp>
-		<DocHeader
-			:drawer.sync="drawer"
-			:menu-btn-label="document.title"
-		/>
+		<DocHeader :drawer.sync="drawer" />
 
 		<DocDrawer v-model="drawer" />
 
