@@ -35,7 +35,7 @@
 					<HeaderMenuBtn
 						v-if="showHeaderMenuBtn"
 						v-bind="options.menuBtn"
-						@click="drawer = !drawer"
+						@click="updateDrawer(!drawer)"
 					/>
 				</VSheet>
 			</VSheet>
@@ -55,15 +55,20 @@
 			</template>
 		</VAppBar>
 
-		<HeaderNavigationDrawer
-			v-model="drawer"
-			:tab.sync="tab"
-			:theme="theme"
-			:items="navigationItems"
-			:is-mobile="isMobile"
+		<slot
+			name="navigation-drawer"
+			v-bind="{ drawer, updateDrawer }"
 		>
-			<slot name="navigation-drawer-content" />
-		</HeaderNavigationDrawer>
+			<HeaderNavigationDrawer
+				v-model="drawer"
+				:tab.sync="tab"
+				:theme="theme"
+				:items="navigationItems"
+				:is-mobile="isMobile"
+			>
+				<slot name="navigation-drawer-content" />
+			</HeaderNavigationDrawer>
+		</slot>
 	</div>
 </template>
 
@@ -116,6 +121,10 @@
 			showNavBarMenuBtn: {
 				type: Boolean,
 				default: false
+			},
+			mobileVersion: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -136,6 +145,10 @@
 		tab: number | null = null;
 
 		get isMobile(): boolean {
+			if (this.mobileVersion) {
+				return true;
+			}
+
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
@@ -167,6 +180,10 @@
 			}
 
 			return hasContent;
+		}
+
+		updateDrawer(value: boolean): void {
+			this.drawer = value;
 		}
 	}
 </script>
