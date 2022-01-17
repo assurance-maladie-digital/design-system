@@ -80,6 +80,7 @@ function extendPackage(api, options, pm) {
 			'eslint-plugin-promise': '^5.2.0',
 			'eslint-plugin-vue': '^7.20.0',
 			'jest-serializer-vue': '^2.0.2',
+			"lint-staged": "^12.1.7",
 			'sass': '1.32.13', /** @see https://github.com/vuetifyjs/vuetify/issues/13694 */
 			'sass-loader': '^10.2.0',
 			'ts-node': '^10.4.0',
@@ -98,6 +99,15 @@ function extendPackage(api, options, pm) {
 		},
 		engines: {
 			'node': '^12 || ^14'
+		},
+		gitHooks: {
+			'pre-commit': 'lint-staged'
+		},
+		'lint-staged': {
+			'*.{ts,vue}': [
+				'vue-cli-service lint',
+				'git add'
+			]
 		}
 	};
 
