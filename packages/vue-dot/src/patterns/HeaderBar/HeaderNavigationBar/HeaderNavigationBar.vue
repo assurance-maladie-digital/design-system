@@ -77,10 +77,6 @@
 			tab: {
 				type: [Number, String],
 				default: null
-			},
-			showMenuBtn: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});

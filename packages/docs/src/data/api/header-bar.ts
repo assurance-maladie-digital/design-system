@@ -57,6 +57,13 @@ const homeLinkProp = {
 	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.'
 };
 
+const drawerProp = {
+	name: 'drawer',
+	type: 'boolean',
+	default: false,
+	description: 'Contrôle la visibilité du menu sur les écrans mobiles.'
+};
+
 export const api: Api = {
 	HeaderBar: {
 		props: [
@@ -74,12 +81,19 @@ export const api: Api = {
 			},
 			innerWidthProp,
 			homeLinkProp,
+			{
+				name: 'show-nav-bar-menu-btn',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles.'
+			},
 			...customizable(`{
 	appBar: 'VAppBar',
 	contentSheet: 'VSheet',
 	innerSheet: 'VSheet',
-	spacer: 'VSpacer'
-}`)
+	spacer: 'VSpacer',
+	menuBtn: 'HeaderMenuBtn'
+}`, 'et `HeaderMenuBtn`')
 		],
 		slots: [
 			{
@@ -120,17 +134,36 @@ export const api: Api = {
 			}
 		]
 	},
+	HeaderMenuBtn: {
+		props: [
+			drawerProp,
+			{
+				name: 'spacing',
+				type: 'string',
+				default: `'px-2 mx-n2'`,
+				description: 'L’espacement du bouton.'
+			}
+		]
+	},
 	HeaderNavigationBar: {
 		props: [
 			themeProp,
 			itemsProp,
 			isMobileProp,
 			innerWidthProp,
+			drawerProp,
+			{
+				name: 'tab',
+				type: [
+					'number',
+					'string'
+				],
+				default: null,
+				description: 'L’onglet sélectionné.'
+			},
 			...customizable(`{
 	sheet: 'VSheet',
 	innerSheet: 'VSheet',
-	menuBtn: 'VBtn',
-	menuIcon: 'VIcon',
 	tabs: 'VTabs',
 	tab: 'VTab'
 }`)
@@ -147,12 +180,7 @@ export const api: Api = {
 			themeProp,
 			itemsProp,
 			isMobileProp,
-			{
-				name: 'drawer',
-				type: 'boolean',
-				default: false,
-				description: 'Contrôle la visibilité du menu sur les écrans mobiles.'
-			},
+			drawerProp,
 			...customizable(`{
 	navigationDrawer: 'VNavigationDrawer',
 	closeBtn: 'VBtn',

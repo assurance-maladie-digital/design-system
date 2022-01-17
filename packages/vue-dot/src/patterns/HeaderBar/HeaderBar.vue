@@ -34,12 +34,7 @@
 
 					<HeaderMenuBtn
 						v-if="showHeaderMenuBtn"
-						color="primary"
-						min-width="0"
-						height="42px"
-						spacing="px-1 mx-n1"
-						text
-						class="text-caption"
+						v-bind="options.menuBtn"
 						@click="drawer = !drawer"
 					/>
 				</VSheet>
