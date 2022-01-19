@@ -43,7 +43,9 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component
+	@Component({
+		inheritAttrs: false
+	})
 	export default class HeaderMenuBtn extends MixinsDeclaration {
 		locales = locales;
 
