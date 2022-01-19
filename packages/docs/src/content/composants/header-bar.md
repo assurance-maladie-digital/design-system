@@ -62,6 +62,12 @@ Vous pouvez définir une largeur interne en utilisant la prop `inner-width`.
 
 <doc-example file="header-bar/inner-width"></doc-example>
 
+### Bouton menu dans la barre de navigation
+
+Vous pouvez afficher le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles en utilisant la prop `show-nav-bar-menu-btn`.
+
+<doc-example file="header-bar/nav-bar-menu-btn"></doc-example>
+
 ### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Header` en utilisant la prop `vuetify-options`.
