@@ -51,6 +51,13 @@ Vous pouvez utiliser un thème différent en utilisant la prop `theme`.
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VAppBar`.
+
+</doc-alert>
+
 <doc-api name="header-bar"></doc-api>
 </doc-tab-item>
 
