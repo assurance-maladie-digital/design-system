@@ -15,7 +15,7 @@
   - **DatePicker:** Correction de l'affichage du menu avec la prop `text-field-activator` ([#1678](https://github.com/assurance-maladie-digital/design-system/pull/1678)) ([f50dad2](https://github.com/assurance-maladie-digital/design-system/commit/f50dad2c031536e2720fdf3d6b8bd3b5ecd5f1db))
   - **TableToolbar:** Correction de l'affichage sur les écrans mobiles ([#1682](https://github.com/assurance-maladie-digital/design-system/pull/1682)) ([4475614](https://github.com/assurance-maladie-digital/design-system/commit/44756148642db190bffd59e93f6c9bd0c808116a))
   - **FooterBar/HeaderBarMenuBtn:** Ajout de l'attribut `inheritAttrs` manquant ([#1735](https://github.com/assurance-maladie-digital/design-system/pull/1735)) ([d535df6](https://github.com/assurance-maladie-digital/design-system/commit/d535df68eb40f6ec3e456af3fe21d69c7ca3af64))
-  - **getThemeIcon:** Correction d'une faute d'orthographe dans un commentaire ([#1736](https://github.com/assurance-maladie-digital/design-system/pull/1736))
+  - **getThemeIcon:** Correction d'une faute d'orthographe dans un commentaire ([#1736](https://github.com/assurance-maladie-digital/design-system/pull/1736)) ([f3576c6](https://github.com/assurance-maladie-digital/design-system/commit/f3576c614b167b52fc9d2aa5f1bfc348a71348e5))
 
 ### Vue Dash
 
@@ -74,6 +74,7 @@
   - **sass-loader:** Mise à jour vers la `v10.2.1` ([#1721](https://github.com/assurance-maladie-digital/design-system/pull/1721)) ([b3de137](https://github.com/assurance-maladie-digital/design-system/commit/b3de137294e3ec36e3c44898e0ff511284bda749))
   - **core-js:** Mise à jour vers la `v3.20.3` ([#1722](https://github.com/assurance-maladie-digital/design-system/pull/1722)) ([0aba7b7](https://github.com/assurance-maladie-digital/design-system/commit/0aba7b71bc40fb943da2347a0de9ed4fafbaed9c))
   - **@types/node:** Mise à jour vers la `v14.18.7` ([#1727](https://github.com/assurance-maladie-digital/design-system/pull/1727)) ([2394ca0](https://github.com/assurance-maladie-digital/design-system/commit/2394ca08cb9c2732ce9bcb78d37f7a712611f7f0))
+  - **axios:** Mise à jour vers la `v0.25.0` ([#1729](https://github.com/assurance-maladie-digital/design-system/pull/1729))
 
 ## v2.2.0
 
