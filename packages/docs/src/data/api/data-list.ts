@@ -146,7 +146,6 @@ export const api: Api = {
 				default: 'undefined',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
 				example: `{
-	layout: 'VLayout',
 	chip: 'VChip',
 	icon: 'VIcon',
 	actionBtn: 'VBtn'
