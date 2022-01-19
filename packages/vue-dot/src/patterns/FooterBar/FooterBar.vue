@@ -1,6 +1,9 @@
 <template>
 	<VFooter
-		v-bind="options.footer"
+		v-bind="{
+			...options.footer,
+			...$attrs
+		}"
 		min-height="40px"
 		class="vd-footer-bar text-center d-flex justify-center pa-0 w-100"
 	>
