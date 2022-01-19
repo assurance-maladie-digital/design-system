@@ -1,10 +1,10 @@
 <template>
 	<VNavigationDrawer
-		:value="drawer"
+		:value="value"
 		app
 		clipped
 		width="320px"
-		@input="$emit('change', $event)"
+		@input="$emit('input', $event)"
 	>
 		<KeepAlive>
 			<DocDrawerList :items="items" />
@@ -22,7 +22,7 @@
 
 	const Props = Vue.extend({
 		props: {
-			drawer: {
+			value: {
 				type: Boolean,
 				default: null
 			}
@@ -36,8 +36,8 @@
 			DocDrawerList
 		},
 		model: {
-			prop: 'drawer',
-			event: 'change'
+			prop: 'value',
+			event: 'input'
 		}
 	})
 	export default class DocDrawer extends MixinsDeclaration {

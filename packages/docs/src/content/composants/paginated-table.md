@@ -26,6 +26,13 @@ Vous pouvez utiliser la prop `suffix` pour dissocier les différentes tables afi
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VDataTable`.
+
+</doc-alert>
+
 <doc-api name="paginated-table"></doc-api>
 </doc-tab-item>
 

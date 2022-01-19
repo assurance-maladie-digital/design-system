@@ -32,6 +32,13 @@ Vous pouvez masquer les boutons d’actions en utilisant la prop `hide-actions`.
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VDialog`.
+
+</doc-alert>
+
 <doc-api name="dialog-box"></doc-api>
 </doc-tab-item>
 

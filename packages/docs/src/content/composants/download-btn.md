@@ -10,6 +10,12 @@ description: L’élément `DownloadBtn` est utilisé pour permettre à l’util
 
 <doc-tab-item label="Utilisation">
 
+<doc-alert type="info">
+
+Ce composant requiert l’utilisation du pattern [`NotificationBar`](/composants/notification-bar) pour afficher les notifications de succès et d’erreur.
+
+</doc-alert>
+
 <doc-usage name="download-btn"></doc-usage>
 
 ## Exemples
@@ -31,6 +37,13 @@ Si cette propriété n’est pas présente, le nom par défaut sera la date du j
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VBtn`.
+
+</doc-alert>
+
 <doc-api name="download-btn"></doc-api>
 </doc-tab-item>
 

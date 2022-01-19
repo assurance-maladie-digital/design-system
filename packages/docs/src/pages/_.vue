@@ -1,13 +1,11 @@
 <template>
 	<VApp>
-		<DocHeader :drawer.sync="drawer" />
-
-		<DocDrawer v-model="drawer" />
+		<DocHeader />
 
 		<VMain>
 			<PageContainer
 				class="h-100"
-				spacing="pa-6 pa-sm-14"
+				spacing="pa-6 pa-lg-14"
 				size="m"
 			>
 				<article class="flex-grow-1">
@@ -64,22 +62,18 @@
 	import { slugifyAnchors } from '../functions/slugifyAnchors';
 
 	import DocHeader from '../components/DocHeader.vue';
-	import DocDrawer from '../components/drawer/DocDrawer.vue';
 	import DocPageInfo from '../components/page/DocPageInfo.vue';
 	import DocPrevNext from '../components/page/DocPrevNext.vue';
 
 	@Component({
 		components: {
 			DocHeader,
-			DocDrawer,
 			DocPageInfo,
 			DocPrevNext
 		}
 	})
 	export default class Slug extends Vue {
 		document?: ContentDocument;
-
-		drawer: boolean | null = null;
 
 		@Middleware
 		middleware({ app, params, redirect }: Context): void {
