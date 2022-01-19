@@ -11,7 +11,7 @@
 			class="d-flex align-center"
 		>
 			<VIcon
-				v-if="!isMobile"
+				v-if="!mobileVersion"
 				v-bind="options.icon"
 				class="vd-notification-icon"
 			>
@@ -27,15 +27,15 @@
 					...attrs,
 					...options.btn
 				}"
-				:icon="isMobile"
+				:icon="mobileVersion"
 				@click="clearNotification"
 			>
-				<span :class="{ 'd-sr-only': isMobile }">
+				<span :class="{ 'd-sr-only': mobileVersion }">
 					{{ closeBtnText }}
 				</span>
 
 				<VIcon
-					v-if="isMobile"
+					v-if="mobileVersion"
 					v-bind="options.closeIcon"
 				>
 					{{ closeIcon }}
@@ -121,7 +121,7 @@
 			return this.notification.icon || this.iconMapping[this.notification.type];
 		}
 
-		get isMobile(): boolean {
+		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.xs;
 		}
 

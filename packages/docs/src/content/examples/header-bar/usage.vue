@@ -36,6 +36,9 @@
 		];
 
 		options = {
+			booleans: [
+				'mobileVersion'
+			],
 			selects: {
 				theme: [
 					'default',
