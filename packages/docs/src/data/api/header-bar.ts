@@ -10,11 +10,11 @@ const themeProp = {
 	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro'`
 };
 
-const isMobileProp = {
-	name: 'is-mobile',
+const mobileVersionProp = {
+	name: 'mobile-version',
 	type: 'boolean',
 	default: false,
-	description: 'Affiche la version mobile.'
+	description: 'Affiche le header en version en version pour les écrans mobiles.<br>Par défaut, ce mode est activé à partir du [breakpoint `sm`](https://vuetifyjs.com/en/features/breakpoints/).'
 };
 
 const innerWidthProp = {
@@ -46,7 +46,7 @@ const itemsProp = {
 	example: `{
 	label: string;
 	to?: string | RawLocation;
-	href?: string | string;
+	href?: string;
 }[]`
 };
 
@@ -87,6 +87,7 @@ export const api: Api = {
 				default: false,
 				description: 'Affiche le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles.'
 			},
+			mobileVersionProp,
 			...customizable(`{
 	appBar: 'VAppBar',
 	contentSheet: 'VSheet',
@@ -109,6 +110,14 @@ export const api: Api = {
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
 			},
 			{
+				name: 'navigation-drawer',
+				description: 'Slot pour remplacer le menu de navigation sur les écrans mobiles.',
+				props: {
+					drawer: 'boolean',
+					updateDrawer: '(value: boolean) => void'
+				}
+			},
+			{
 				name: 'navigation-drawer-content',
 				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
 			}
@@ -119,12 +128,7 @@ export const api: Api = {
 			themeProp,
 			titleProp,
 			subTitleProp,
-			{
-				name: 'is-mobile',
-				type: 'boolean',
-				default: false,
-				description: 'Affiche la version mobile.'
-			},
+			mobileVersionProp,
 			homeLinkProp
 		],
 		slots: [
@@ -149,7 +153,7 @@ export const api: Api = {
 		props: [
 			themeProp,
 			itemsProp,
-			isMobileProp,
+			mobileVersionProp,
 			innerWidthProp,
 			drawerProp,
 			{
@@ -179,7 +183,7 @@ export const api: Api = {
 		props: [
 			themeProp,
 			itemsProp,
-			isMobileProp,
+			mobileVersionProp,
 			drawerProp,
 			...customizable(`{
 	navigationDrawer: 'VNavigationDrawer',

@@ -14,7 +14,7 @@ export const config = {
 		color: 'primary',
 		minWidth: 0,
 		height: '42px',
-		spacing: 'px-1 mx-n1',
+		spacing: 'px-1',
 		text: true,
 		class: 'text-caption'
 	}

@@ -22,7 +22,7 @@
 						:theme="theme"
 						:service-title="serviceTitle"
 						:service-sub-title="serviceSubTitle"
-						:is-mobile="isMobile"
+						:mobile-version="isMobileVersion"
 						:home-link="homeLink"
 					>
 						<slot name="secondary-logo" />
@@ -45,7 +45,7 @@
 					:tab.sync="tab"
 					:drawer.sync="drawer"
 					:theme="theme"
-					:is-mobile="isMobile"
+					:mobile-version="isMobileVersion"
 					:items="navigationItems"
 					:inner-width="innerWidth"
 					:show-menu-btn="showNavBarMenuBtn"
@@ -64,7 +64,7 @@
 				:tab.sync="tab"
 				:theme="theme"
 				:items="navigationItems"
-				:is-mobile="isMobile"
+				:mobile-version="isMobileVersion"
 			>
 				<slot name="navigation-drawer-content" />
 			</HeaderNavigationDrawer>
@@ -141,10 +141,10 @@
 		}
 	})
 	export default class HeaderBar extends MixinsDeclaration {
-		drawer = false;
+		drawer: boolean | null = null;
 		tab: number | null = null;
 
-		get isMobile(): boolean {
+		get isMobileVersion(): boolean {
 			if (this.mobileVersion) {
 				return true;
 			}
@@ -153,11 +153,11 @@
 		}
 
 		get spacingClass(): string {
-			return this.isMobile ? 'pa-4' : 'px-14 py-7';
+			return this.isMobileVersion ? 'pa-4' : 'px-14 py-7';
 		}
 
 		get contentSheetHeight(): number {
-			return this.isMobile ? 72 : 120;
+			return this.isMobileVersion ? 72 : 120;
 		}
 
 		get height(): number {
@@ -169,7 +169,7 @@
 		}
 
 		get showHeaderMenuBtn(): boolean {
-			return !this.showNavBarMenuBtn && this.isMobile;
+			return !this.showNavBarMenuBtn && this.isMobileVersion;
 		}
 
 		get showNavigationBar(): boolean {
