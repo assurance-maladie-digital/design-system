@@ -51,6 +51,13 @@ Vous pouvez utiliser un thème différent en utilisant la prop `theme`.
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VAppBar`.
+
+</doc-alert>
+
 <doc-api name="header-bar"></doc-api>
 </doc-tab-item>
 
@@ -61,6 +68,12 @@ Vous pouvez utiliser un thème différent en utilisant la prop `theme`.
 Vous pouvez définir une largeur interne en utilisant la prop `inner-width`.
 
 <doc-example file="header-bar/inner-width"></doc-example>
+
+### Bouton menu dans la barre de navigation
+
+Vous pouvez afficher le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles en utilisant la prop `show-nav-bar-menu-btn`.
+
+<doc-example file="header-bar/nav-bar-menu-btn"></doc-example>
 
 ### Composants Vuetify
 

@@ -1,6 +1,6 @@
 <template>
 	<VNavigationDrawer
-		v-if="isMobile"
+		v-if="mobileVersion"
 		v-bind="options.navigationDrawer"
 		:value="drawer"
 		:color="backgroundColor"
@@ -63,7 +63,7 @@
 				type: Array as PropType<NavigationItem[]>,
 				default: undefined
 			},
-			isMobile: {
+			mobileVersion: {
 				type: Boolean,
 				default: false
 			},
@@ -92,7 +92,7 @@
 		closeIcon = mdiClose;
 
 		get spacingClass(): string {
-			return this.isMobile ? 'px-4' : 'px-14';
+			return this.mobileVersion ? 'px-4' : 'px-14';
 		}
 
 		get backgroundColor(): string {

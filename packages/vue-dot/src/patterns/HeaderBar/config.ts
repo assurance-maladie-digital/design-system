@@ -9,5 +9,13 @@ export const config = {
 	},
 	spacer: {
 		class: 'h-100 mr-4 mr-md-16'
+	},
+	menuBtn: {
+		color: 'primary',
+		minWidth: 0,
+		height: '42px',
+		spacing: 'px-1',
+		text: true,
+		class: 'text-caption'
 	}
 };
