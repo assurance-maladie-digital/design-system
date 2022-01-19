@@ -98,7 +98,9 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component
+	@Component({
+		inheritAttrs: false
+	})
 	export default class FooterBar extends MixinsDeclaration {
 		locales = locales;
 
