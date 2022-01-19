@@ -15,7 +15,7 @@ export class GetThemeIcon extends Vue {
 			// Find the icon with the name passed in the prop
 			const icon = this.$vd.theme.icons[iconName];
 
-			// If the icon isn't find, it will return undefined
+			// If the icon isn't found, it will return undefined
 			return icon;
 		}
 
