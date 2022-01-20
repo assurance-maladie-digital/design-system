@@ -42,7 +42,7 @@
 - 🐛 **Corrections de bugs**
   - **global:** Correction du décalage pour les ancres HTML ([#1712](https://github.com/assurance-maladie-digital/design-system/pull/1712)) ([28fa1a8](https://github.com/assurance-maladie-digital/design-system/commit/28fa1a864c2fe88d39c1a8126440a309c7070adf))
   - **introduction:** Correction de l'affichage de la date de dernière publication ([#1715](https://github.com/assurance-maladie-digital/design-system/pull/1715)) ([29922af](https://github.com/assurance-maladie-digital/design-system/commit/29922af2786eee6be12c5a17a30637102b408e62))
-  - **DocTabs:** Correction de la largeur des onglets verticaux ([#1739](https://github.com/assurance-maladie-digital/design-system/pull/1739))
+  - **DocTabs:** Correction de la largeur des onglets verticaux ([#1739](https://github.com/assurance-maladie-digital/design-system/pull/1739)) ([01a3f60](https://github.com/assurance-maladie-digital/design-system/commit/01a3f605045de12d2a8702710cd56275b2bcc640))
 
 - ♻️ **Refactoring**
   - **accessibility:** Désactivation du tri sur la colonne "Critère" ([#1713](https://github.com/assurance-maladie-digital/design-system/pull/1713)) ([a943d5e](https://github.com/assurance-maladie-digital/design-system/commit/a943d5eb540c704f2a47564d0dfa810cb3e2354d))
@@ -59,6 +59,7 @@
   - **global:** Ajout de la page accessibilité ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1707)) ([648bccf](https://github.com/assurance-maladie-digital/design-system/commit/648bccfa69d4da8766f5dc53506df94ce881dddd))
   - **explorer:** Mise à jour du content du fichier `base.css` ([#1714](https://github.com/assurance-maladie-digital/design-system/pull/1714)) ([d1ac04b](https://github.com/assurance-maladie-digital/design-system/commit/d1ac04b7c3a3182c301cfcd820c6c8bcd3b49335))
   - **components:** Ajout d'informations sur les propriétés transmises aux composants ([#1734](https://github.com/assurance-maladie-digital/design-system/pull/1734)) ([ce8da80](https://github.com/assurance-maladie-digital/design-system/commit/ce8da807adf8d4d10ddbed25f10c5d11c160ef80))
+  - **UploadWorkflow:** Mise à jour de la description de la prop `customizable` ([#1740](https://github.com/assurance-maladie-digital/design-system/pull/1740))
 
 ### Interne
 
