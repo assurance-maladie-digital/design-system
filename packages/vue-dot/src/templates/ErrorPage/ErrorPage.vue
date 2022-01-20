@@ -47,7 +47,7 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { RawLocation } from 'vue-router';
 
@@ -93,8 +93,10 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props);
+
 	@Component
-	export default class ErrorPage extends Props {
+	export default class ErrorPage extends MixinsDeclaration {
 		locales = locales;
 
 		/**
