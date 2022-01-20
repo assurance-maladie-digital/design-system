@@ -7,6 +7,7 @@ exports[`HeaderBar renders correctly 1`] = `
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
         <headerbrandsection-stub theme="default" homelink="/"></headerbrandsection-stub>
         <vspacer-stub tag="div" class="h-100 mr-4 mr-md-16"></vspacer-stub>
+        <!---->
       </vsheet-stub>
     </vsheet-stub>
     <!---->

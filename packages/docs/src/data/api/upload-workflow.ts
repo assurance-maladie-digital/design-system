@@ -102,7 +102,6 @@ export const api: Api = {
 	listItemTitle: 'VListItemTitle',
 	listItemSubtitle: 'VListItemSubtitle',
 	listItemAction: 'VListItemAction',
-	layout: 'VLayout',
 	retryBtn: 'VBtn',
 	viewFileBtn: 'VBtn',
 	deleteFileBtn: 'VBtn',

@@ -56,9 +56,7 @@ export const api: Api = {
 			},
 			...widthable,
 			...customizable(`{
-	backBtn: 'VBtn',
-	contentLayout: 'VLayout',
-	dataListsLayout: 'VLayout'
+	backBtn: 'VBtn'
 }`)
 		],
 		slots: [
