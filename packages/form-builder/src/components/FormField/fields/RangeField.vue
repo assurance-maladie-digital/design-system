@@ -1,7 +1,7 @@
 <template>
 	<div class="vd-filter-range">
 		<div
-			:class="{ 'flex-column': isMobile }"
+			:class="{ 'flex-column': mobileVersion }"
 			class="d-flex flex-wrap max-width-none ma-n3"
 		>
 			<VTextField
@@ -78,7 +78,7 @@
 	export default class RangeField extends MixinsDeclaration {
 		rangeValue: number[] = [];
 
-		get isMobile(): boolean {
+		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.xs;
 		}
 
