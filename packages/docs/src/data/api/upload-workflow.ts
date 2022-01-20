@@ -32,7 +32,7 @@ export const api: Api = {
 	form: 'VForm',
 	select: 'VSelect',
 	fileList: 'FileList'
-}`)
+}`, 'et `FileList`')
 		],
 		slots: [
 			{
