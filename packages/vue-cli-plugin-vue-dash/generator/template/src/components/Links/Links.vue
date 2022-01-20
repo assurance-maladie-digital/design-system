@@ -22,7 +22,7 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { Link } from '@/types';
 
@@ -39,7 +39,9 @@
 		}
 	});
 
+	const MixinsDeclaration = mixins(Props);
+
 	/** Displays a list of links */
 	@Component
-	export default class Links extends Props {}
+	export default class Links extends MixinsDeclaration {}
 </script>
