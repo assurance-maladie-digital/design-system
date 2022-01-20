@@ -197,6 +197,10 @@
 				background: hsla(0, 0%, 100%, .3);
 			}
 
+			&--vertical .v-tab {
+				max-width: 100%;
+			}
+
 			&--vertical .v-tab--active {
 				background: rgba($vd-primary, .1) !important;
 			}

@@ -42,6 +42,7 @@
 - 🐛 **Corrections de bugs**
   - **global:** Correction du décalage pour les ancres HTML ([#1712](https://github.com/assurance-maladie-digital/design-system/pull/1712)) ([28fa1a8](https://github.com/assurance-maladie-digital/design-system/commit/28fa1a864c2fe88d39c1a8126440a309c7070adf))
   - **introduction:** Correction de l'affichage de la date de dernière publication ([#1715](https://github.com/assurance-maladie-digital/design-system/pull/1715)) ([29922af](https://github.com/assurance-maladie-digital/design-system/commit/29922af2786eee6be12c5a17a30637102b408e62))
+  - **DocTabs:** Correction de la largeur des onglets verticaux ([#1739](https://github.com/assurance-maladie-digital/design-system/pull/1739))
 
 - ♻️ **Refactoring**
   - **accessibility:** Désactivation du tri sur la colonne "Critère" ([#1713](https://github.com/assurance-maladie-digital/design-system/pull/1713)) ([a943d5e](https://github.com/assurance-maladie-digital/design-system/commit/a943d5eb540c704f2a47564d0dfa810cb3e2354d))
@@ -74,7 +75,7 @@
   - **core-js:** Mise à jour vers la `v3.20.3` ([#1722](https://github.com/assurance-maladie-digital/design-system/pull/1722)) ([0aba7b7](https://github.com/assurance-maladie-digital/design-system/commit/0aba7b71bc40fb943da2347a0de9ed4fafbaed9c))
   - **axios:** Mise à jour vers la `v0.25.0` ([#1729](https://github.com/assurance-maladie-digital/design-system/pull/1729)) ([52d1888](https://github.com/assurance-maladie-digital/design-system/commit/52d1888c3754ebc3ce2955bec69961ff2f6882ad))
   - **lint-staged:** Mise à jour vers la `v12.2.1` ([#1730](https://github.com/assurance-maladie-digital/design-system/pull/1730)) ([cc000d3](https://github.com/assurance-maladie-digital/design-system/commit/cc000d37c929d83347f54ae541d542a579b085f2))
-  - **@types/node:** Mise à jour vers la `v14.18.9` ([#1731](https://github.com/assurance-maladie-digital/design-system/pull/1731))
+  - **@types/node:** Mise à jour vers la `v14.18.9` ([#1731](https://github.com/assurance-maladie-digital/design-system/pull/1731)) ([845d067](https://github.com/assurance-maladie-digital/design-system/commit/845d067e46d9007746443e88066020fd9890ebd1))
 
 ## v2.2.0
 
