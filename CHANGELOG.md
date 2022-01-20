@@ -18,7 +18,7 @@
   - **getThemeIcon:** Correction d'une faute d'orthographe dans un commentaire ([#1736](https://github.com/assurance-maladie-digital/design-system/pull/1736)) ([f3576c6](https://github.com/assurance-maladie-digital/design-system/commit/f3576c614b167b52fc9d2aa5f1bfc348a71348e5))
 
 - 🎨 **Qualité de code**
-  - **ErrorPage:** Utilisation d'une constante `MixinsDeclaration` ([#1742](https://github.com/assurance-maladie-digital/design-system/pull/1742))
+  - **ErrorPage:** Utilisation d'une constante `MixinsDeclaration` ([#1742](https://github.com/assurance-maladie-digital/design-system/pull/1742)) ([bc54ed5](https://github.com/assurance-maladie-digital/design-system/commit/bc54ed516262d2b281803249c5085c2b0eb7e9e2))
 
 ### Vue Dash
 
@@ -30,6 +30,9 @@
 
 - ✅ **Tests**
   - **template:** Ajout d'un test sur `AppHeader` ([#1683](https://github.com/assurance-maladie-digital/design-system/pull/1683)) ([e18f57c](https://github.com/assurance-maladie-digital/design-system/commit/e18f57cb69c0214fe73ee6dd381a92efd623bbc5))
+
+- 🎨 **Qualité de code**
+  - **template:** Utilisation d'une constante `MixinsDeclaration` dans le composant `Links` ([#1743](https://github.com/assurance-maladie-digital/design-system/pull/1743))
 
 ### FormBuilder
 
