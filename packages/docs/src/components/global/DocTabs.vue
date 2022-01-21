@@ -125,12 +125,8 @@
 		get tabClasses(): IndexedObject<boolean> {
 			return {
 				'justify-start': this.mobileVersion,
-				'grey lighten-5': this.mobileVersion
+				'frosted-blue lighten-3': this.mobileVersion
 			}
-		}
-
-		get activeClass(): string | undefined {
-			return this.mobileVersion ? 'primary lighten-5': undefined;
 		}
 
 		findTabIndex(value: string): number | undefined {
@@ -188,13 +184,17 @@
 				content: "";
 				width: 100%;
 				height: 2px;
-				background: rgba(0, 0, 0, .12);
+				background: #e7ecf5; // Bleu AM lighten-10
 				position: absolute;
 				bottom: 0;
 			}
 
 			&.theme--dark::after {
-				background: hsla(0, 0%, 100%, .3);
+				background: hsla(0, 0%, 100%, .2);
+			}
+
+			&.theme--dark > .v-tabs-bar {
+				background: #020d1f;
 			}
 
 			&--vertical .v-tab {
@@ -203,6 +203,10 @@
 
 			&--vertical .v-tab--active {
 				background: rgba($vd-primary, .1) !important;
+			}
+
+			.v-slide-group__wrapper {
+				z-index: 1;
 			}
 		}
 	}

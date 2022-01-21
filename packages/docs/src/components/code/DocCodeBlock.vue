@@ -4,7 +4,7 @@
 		:rounded="rounded"
 		:class="{ 'mb-4': !noMargin }"
 		class="doc-code-block overflow-hidden"
-		color="#1f1f1f"
+		color="#020d1f"
 		outlined
 		dark
 	>
