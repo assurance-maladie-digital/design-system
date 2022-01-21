@@ -33,7 +33,7 @@ Puis en passant en argument un objet contenant les messages d’erreur utilisés
 
 ```ts
 notAfterTodayRule = notAfterTodayFn({
-	default: 'La date doit être antérieure à aujourd’hui.'
+	default: 'La date doit être antérieure ou égale à aujourd’hui.'
 });
 ```
 
