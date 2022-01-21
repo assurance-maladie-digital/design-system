@@ -7,7 +7,7 @@ description: Récupération, stockage et utilisation d’un token d’authentifi
 
 Lorsque le token est passé à l’application via une URL de cette forme :
 
-```bash
+```text
 https://example.com#access_token=monToken
 ```
 

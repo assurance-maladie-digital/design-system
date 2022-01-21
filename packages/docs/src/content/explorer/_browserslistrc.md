@@ -10,7 +10,7 @@ Il n’est pas recommandé d’éditer ce fichier.
 
 Par défaut, le fichier contient la configuration suivante :
 
-```bash
+```text
 > 1%
 IE 11
 last 2 versions

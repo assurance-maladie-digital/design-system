@@ -13,7 +13,7 @@ Une page est une *Vue* qui contient des composants et qui sera affichée en alla
 
 Pour cela, vous pouvez créer un nouveau fichier `UserDeclaration.vue` dans le dossier `views` :
 
-```bash
+```text
 views/
 ├── tests/
 ├── About.vue

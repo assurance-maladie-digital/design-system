@@ -183,11 +183,11 @@ Vous pouvez également utiliser [ts-node](https://www.npmjs.com/package/ts-node)
 
 Les messages de commit doivent suivre la convention `<gitmoji> <scope>: <message>`, par exemple :
 
-```bash
+```text
 ✨ vue-dot: Add DatePicker
 ```
 
-```bash
+```text
 🐛 vue-dash: Fix missing data-cy attributes
 ```
 
