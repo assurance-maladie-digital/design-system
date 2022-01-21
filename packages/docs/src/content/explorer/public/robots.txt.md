@@ -8,7 +8,7 @@ Il n’est pas recommandé d’éditer ce fichier.
 
 Par défaut, le fichier contient la configuration suivante :
 
-```bash
+```text
 User-agent: *
 Disallow:
 ```
