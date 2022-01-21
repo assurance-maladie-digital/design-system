@@ -1,7 +1,7 @@
 <template>
 	<VCard
-		class="mx-auto overflow-hidden"
 		min-height="128px"
+		class="mx-auto overflow-hidden"
 	>
 		<ExternalLinks
 			:items="links"

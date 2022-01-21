@@ -19,6 +19,9 @@
 			icon: {
 				color: 'grey darken-2',
 				class: 'mt-0 mr-4'
+			},
+			chip: {
+				color: '#e7ecf5'
 			}
 		};
 

@@ -2,7 +2,7 @@
 	<FooterBar>
 		<template #append>
 			<p class="grey--text text--darken-1 my-3 mx-4">
-				Information partenaires
+				Informations partenaires
 			</p>
 		</template>
 	</FooterBar>
