@@ -157,6 +157,7 @@
 								dense
 								filled
 								hide-details
+								background-color="am-blue lighten-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -171,6 +172,7 @@
 								dense
 								filled
 								hide-details
+								background-color="am-blue lighten-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -183,6 +185,7 @@
 								dense
 								filled
 								hide-details
+								background-color="am-blue lighten-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -338,7 +341,7 @@
 		}
 
 		get color(): string | undefined {
-			return (this.dark || this.theme.isDark) ? undefined : 'grey lighten-5';
+			return (this.dark || this.theme.isDark) ? undefined : 'frosted-blue lighten-3';
 		}
 
 		get usageCode(): string {

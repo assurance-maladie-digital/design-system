@@ -6,6 +6,7 @@
 			hide-details
 			clearable
 			filled
+			background-color="am-blue lighten-3"
 			class="mb-4"
 		>
 			<template #prepend-inner>
