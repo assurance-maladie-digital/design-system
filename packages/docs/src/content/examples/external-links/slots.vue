@@ -1,7 +1,7 @@
 <template>
 	<VCard
-		class="mx-auto overflow-hidden"
 		min-height="200px"
+		class="mx-auto overflow-hidden"
 	>
 		<ExternalLinks
 			:items="links"
@@ -27,7 +27,7 @@
 	@Component
 	export default class ExternalLinksSlots extends Vue {
 		arrowIcon = mdiArrowTopRight;
-		
+
 		links: ExternalLink[] = [
 			{
 				href: 'https://ameli.fr/',

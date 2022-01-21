@@ -10,7 +10,7 @@
 	export default class FooterBarOptions extends Vue {
 		vuetifyOptions = {
 			footer: {
-				color: '#eee'
+				color: '#f8f9fc'
 			}
 		};
 	}

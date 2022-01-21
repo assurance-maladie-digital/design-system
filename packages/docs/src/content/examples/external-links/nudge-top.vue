@@ -1,10 +1,10 @@
 <template>
 	<VCard
-		class="mx-auto overflow-hidden"
 		min-height="274px"
+		class="mx-auto overflow-hidden"
 	>
-		<VAppBar>
-			<VToolbarTitle class="grey--text text--darken-3">
+		<VAppBar color="#f8f9fc">
+			<VToolbarTitle>
 				ExternalLinks
 			</VToolbarTitle>
 		</VAppBar>

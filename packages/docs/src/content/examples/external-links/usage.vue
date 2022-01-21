@@ -1,8 +1,8 @@
 <template>
 	<VCard
-		class="mx-auto overflow-hidden"
-		min-height="200px"
 		width="100%"
+		min-height="200px"
+		class="mx-auto overflow-hidden"
 	>
 		<ExternalLinks
 			v-bind="$attrs"

@@ -1,9 +1,9 @@
 <template>
-	<div class="d-flex flex-wrap w-100">
+	<div class="d-flex flex-wrap max-width-none ma-n2">
 		<DatePicker
 			v-model="startDate"
 			label="Date de début"
-			text-field-class="mr-4"
+			text-field-class="ma-2"
 			outlined
 		/>
 
@@ -11,6 +11,7 @@
 			v-model="endDate"
 			:start-date="startDate"
 			label="Date de fin"
+			text-field-class="ma-2"
 			outlined
 		/>
 	</div>
