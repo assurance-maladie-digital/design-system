@@ -1,6 +1,6 @@
 <template>
 	<VExpansionPanel>
-		<VExpansionPanelHeader>
+		<VExpansionPanelHeader class="text-subtitle-2 font-weight-bold">
 			{{ label }}
 		</VExpansionPanelHeader>
 
