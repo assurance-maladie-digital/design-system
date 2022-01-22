@@ -8,34 +8,36 @@
 				spacing="pa-6 pa-lg-14"
 				size="m"
 			>
-				<article class="flex-grow-1">
-					<h1
-						v-if="document.title && !document.hideTitle"
-						v-text="document.title"
-						class="text-h4 text-sm-h4 font-weight-bold mb-4"
+				<div class="d-flex flex-column h-100">
+					<article class="flex-grow-1">
+						<h1
+							v-if="document.title && !document.hideTitle"
+							v-text="document.title"
+							class="text-h4 text-sm-h4 font-weight-bold mb-4"
+						/>
+
+						<div
+							v-if="document.parsedDescription"
+							v-html="document.parsedDescription"
+							class="description text-h6"
+						/>
+
+						<VDivider
+							v-if="document.divider"
+							class="mt-6 mb-6"
+						/>
+
+						<NuxtContent :document="document" />
+					</article>
+
+					<DocPrevNext
+						:prev="prev"
+						:next="next"
+						class="mt-8 mb-6"
 					/>
 
-					<div
-						v-if="document.parsedDescription"
-						v-html="document.parsedDescription"
-						class="description text-h6"
-					/>
-
-					<VDivider
-						v-if="document.divider"
-						class="mt-6 mb-6"
-					/>
-
-					<NuxtContent :document="document" />
-				</article>
-
-				<DocPrevNext
-					:prev="prev"
-					:next="next"
-					class="mt-8 mb-6"
-				/>
-
-				<DocPageInfo :document="document" />
+					<DocPageInfo :document="document" />
+				</div>
 			</PageContainer>
 		</VMain>
 	</VApp>
