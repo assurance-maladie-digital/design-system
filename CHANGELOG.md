@@ -13,6 +13,7 @@
   - **FooterBar/HeaderBarMenuBtn:** Ajout de l'attribut `inheritAttrs` manquant ([#1735](https://github.com/assurance-maladie-digital/design-system/pull/1735)) ([d535df6](https://github.com/assurance-maladie-digital/design-system/commit/d535df68eb40f6ec3e456af3fe21d69c7ca3af64))
   - **getThemeIcon:** Correction d'une faute d'orthographe dans un commentaire ([#1736](https://github.com/assurance-maladie-digital/design-system/pull/1736)) ([f3576c6](https://github.com/assurance-maladie-digital/design-system/commit/f3576c614b167b52fc9d2aa5f1bfc348a71348e5))
   - **rules:** Correction du message d'erreur par défaut de la règle de validation `notAfterToday` ([#1747](https://github.com/assurance-maladie-digital/design-system/pull/1747)) ([20b96d4](https://github.com/assurance-maladie-digital/design-system/commit/20b96d44e774c255aee6635e062aeb1055644e7f))
+  - **styles:** Correction de la hauteur de ligne dans les champs select ([#1764](https://github.com/assurance-maladie-digital/design-system/pull/1764))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Refonte du bouton pour activer le menu sur les écrans mobiles ([#1726](https://github.com/assurance-maladie-digital/design-system/pull/1726)) ([50e0938](https://github.com/assurance-maladie-digital/design-system/commit/50e09381f38102e42ab321a3915607efbd111ebe))
@@ -49,7 +50,7 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **components:** Affichage du langage dans le composant `DocUsage` ([#1763](https://github.com/assurance-maladie-digital/design-system/pull/1763))
+  - **components:** Affichage du langage dans le composant `DocUsage` ([#1763](https://github.com/assurance-maladie-digital/design-system/pull/1763)) ([f00b4a2](https://github.com/assurance-maladie-digital/design-system/commit/f00b4a226b8c8b4a6a1ee6ebb672660565c91099))
 
 - 🐛 **Corrections de bugs**
   - **global:** Correction du décalage pour les ancres HTML ([#1712](https://github.com/assurance-maladie-digital/design-system/pull/1712)) ([28fa1a8](https://github.com/assurance-maladie-digital/design-system/commit/28fa1a864c2fe88d39c1a8126440a309c7070adf))
