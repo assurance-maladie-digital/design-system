@@ -117,7 +117,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-footer-bar {
+	.vd-footer-bar ::v-deep {
 		a {
 			color: inherit;
 			transition: .15s;
