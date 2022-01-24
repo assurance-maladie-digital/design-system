@@ -63,7 +63,8 @@
   - **components:** Suppression de la couleur de fond au survol des lignes ([#1750](https://github.com/assurance-maladie-digital/design-system/pull/1750)) ([4ed747b](https://github.com/assurance-maladie-digital/design-system/commit/4ed747baee69f72b0838da0479b4743763b4bf57))
   - **global:** Mise à jour des styles du composant `DocExpansionPanels` ([#1751](https://github.com/assurance-maladie-digital/design-system/pull/1751)) ([a784552](https://github.com/assurance-maladie-digital/design-system/commit/a784552e34a6f6ad557efadf4654b97146f1c1f1))
   - **global:** Mise à jour des couleurs de fond ([#1752](https://github.com/assurance-maladie-digital/design-system/pull/1752)) ([51924e7](https://github.com/assurance-maladie-digital/design-system/commit/51924e7770ac9c06572d73e5fd27e24fa1403acc))
-  - **components:** Mise à jour des styles du composant `DocUsage` ([#1761](https://github.com/assurance-maladie-digital/design-system/pull/1761))
+  - **components:** Mise à jour des styles du composant `DocUsage` ([#1761](https://github.com/assurance-maladie-digital/design-system/pull/1761)) ([e29061c](https://github.com/assurance-maladie-digital/design-system/commit/e29061c7cad6e74bba6591a3559b7051a122a937))
+  - **global:** Mise à jour des couleurs du thème pour le code ([#1762](https://github.com/assurance-maladie-digital/design-system/pull/1761))
 
 - 🔥 **Suppressions**
   - **introduction:** Suppression du titre secondaire ([#1716](https://github.com/assurance-maladie-digital/design-system/pull/1716)) ([e35d2c7](https://github.com/assurance-maladie-digital/design-system/commit/e35d2c7b401163ad4c6b7e7f7912d67e68f70825))
