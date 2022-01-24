@@ -14,7 +14,8 @@
   - **getThemeIcon:** Correction d'une faute d'orthographe dans un commentaire ([#1736](https://github.com/assurance-maladie-digital/design-system/pull/1736)) ([f3576c6](https://github.com/assurance-maladie-digital/design-system/commit/f3576c614b167b52fc9d2aa5f1bfc348a71348e5))
   - **rules:** Correction du message d'erreur par défaut de la règle de validation `notAfterToday` ([#1747](https://github.com/assurance-maladie-digital/design-system/pull/1747)) ([20b96d4](https://github.com/assurance-maladie-digital/design-system/commit/20b96d44e774c255aee6635e062aeb1055644e7f))
   - **styles:** Correction de la hauteur de ligne dans les champs select ([#1764](https://github.com/assurance-maladie-digital/design-system/pull/1764)) ([742fbfe](https://github.com/assurance-maladie-digital/design-system/commit/742fbfe0ad39da96e71463e1ef04fac5a75f2925))
-  - **FooterBar:** Correction des styles non appliqués au contenu des slots ([#1765](https://github.com/assurance-maladie-digital/design-system/pull/1765))
+  - **FooterBar:** Correction des styles non appliqués au contenu des slots ([#1765](https://github.com/assurance-maladie-digital/design-system/pull/1765)) ([e58cea2](https://github.com/assurance-maladie-digital/design-system/commit/e58cea231b189e670ad66804faf63a6e859951fa))
+  - **FooterBar:** Correction de l'affichage sur les écrans mobiles ([#1766](https://github.com/assurance-maladie-digital/design-system/pull/1766))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Refonte du bouton pour activer le menu sur les écrans mobiles ([#1726](https://github.com/assurance-maladie-digital/design-system/pull/1726)) ([50e0938](https://github.com/assurance-maladie-digital/design-system/commit/50e09381f38102e42ab321a3915607efbd111ebe))
