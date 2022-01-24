@@ -137,17 +137,14 @@ Pour implémenter notre bouton de validation, vous pouvez appeler la méthode `v
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	// … imports
+	import { Refs, VForm } from '@cnamts/vue-dot/src/types';
 
-	interface FormRef {
-		validate: () => boolean;
-		reset: () => void;
-	}
+	// … autres imports
 
 	@Component
 	export default class UserForm extends Vue {
 		$refs!: Refs<{
-			form: FormRef;
+			form: VForm;
 		}>;
 
 		// … variables et règles
@@ -183,19 +180,14 @@ Vous pouvez maintenant appeler la méthode `validate`, qui va effectuer la valid
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Refs } from '@cnamts/vue-dot/src/types';
+	import { Refs, VForm } from '@cnamts/vue-dot/src/types';
 
 	// … autres imports
-
-	interface FormRef {
-		validate: () => boolean;
-		reset: () => void;
-	}
 
 	@Component
 	export default class UserForm extends Vue {
 		$refs!: Refs<{
-			form: FormRef;
+			form: VForm;
 		}>;
 
 		// … règles de validation
