@@ -1,7 +1,7 @@
 <template>
 	<a
 		:href="href"
-		:aria-label="iconText"
+		:aria-label="label"
 		class="vd-france-connect-btn d-inline-flex"
 	>
 		<svg
@@ -11,7 +11,7 @@
 			:height="height"
 		>
 			<g fill-rule="nonzero">
-				<title>{{ iconText }}</title>
+				<title>{{ label }}</title>
 
 				<path
 					stroke="#034ea2"
@@ -96,7 +96,7 @@
 				required: true
 			},
 			/** Label of the button */
-			iconText: {
+			label: {
 				type: String,
 				default: locales.btnText
 			},
@@ -123,7 +123,7 @@
 
 <style lang="scss" scoped>
 	.vd-france-connect-btn svg {
-		fill: #034ea2
+		fill: #034ea2;
 	}
 
 	.vd-france-connect-btn:hover svg,
