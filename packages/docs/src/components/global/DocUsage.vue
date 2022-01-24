@@ -229,6 +229,7 @@
 						>
 							<DocMarkup
 								:code="usageCode"
+								language="vue"
 								no-margin
 								tile
 							/>
