@@ -1,12 +1,32 @@
-function insertNBSP(document, characters, position = 'before', noSpaceAfter = false) {
-	const SPACE_CHARACTER = ' ';
-	const NBSP_CHARACTER = '&nbsp;';
+const SPACE_CHARACTER = ' ';
+const NBSP_CHARACTER = '&nbsp;';
 
+function insertNBSP(document, characters, position = 'before', matchEndString = false) {
 	characters.forEach(character => {
-		const stringToMatch = position === 'before' ? SPACE_CHARACTER + character : character + SPACE_CHARACTER;
-		const replaceValue = position === 'before' ? NBSP_CHARACTER + character : character + NBSP_CHARACTER;
+		let stringToMatch = '';
+		let replaceValue = '';
 
-		const toMatch = noSpaceAfter ? stringToMatch + '\W' : stringToMatch;
+		switch (position) {
+			case 'after': {
+				stringToMatch = character + SPACE_CHARACTER;
+				replaceValue = character + NBSP_CHARACTER;
+				break;
+			}
+
+			case 'before': {
+				stringToMatch = SPACE_CHARACTER + character;
+				replaceValue = NBSP_CHARACTER + character;
+				break;
+			}
+
+			case 'both': {
+				stringToMatch = SPACE_CHARACTER + character + SPACE_CHARACTER;
+				replaceValue = NBSP_CHARACTER + character + NBSP_CHARACTER;
+				break;
+			}
+		}
+
+		const toMatch = matchEndString ? stringToMatch + '$' : stringToMatch;
 		const regexp = new RegExp(toMatch, 'gm');
 
 		document.data = document.data.replace(regexp, replaceValue.replace('\\', ''));
@@ -20,5 +40,6 @@ export function applyTypographicRules(document) {
 
 	insertNBSP(document, [';', '\\?', '»']);
 	insertNBSP(document, ['«'], 'after');
-	insertNBSP(document, [':'], undefined, true);
+	insertNBSP(document, [':'], 'both');
+	insertNBSP(document, [':'], 'before', true);
 }
