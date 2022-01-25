@@ -11,3 +11,9 @@ export interface NotificationObj {
 export interface NotificationState {
 	notification: NotificationObj | null;
 }
+
+export interface NotificationModule {
+	addNotification: (notification: NotificationObj) => void;
+	clearNotification: () => void;
+	notification: NotificationObj | null;
+}

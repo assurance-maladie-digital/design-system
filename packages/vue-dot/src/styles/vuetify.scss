@@ -23,8 +23,8 @@
 	min-height: 46px;
 }
 
-// Change font
 .v-application {
+	// Change font
 	.text-h1,
 	.text-h2,
 	.text-h3,
@@ -39,12 +39,17 @@
 	.text-overline {
 		font-family: 'Open Sans', sans-serif !important;
 	}
+
+	// Fix line-height in VSelect with our font
+	.v-select__selections {
+		line-height: 20px;
+	}
 }
 
 // Fix color contrast of disabled elements to respect
 // contrast-ratios for accessibility
 .theme--light {
-	&.v-label--is-disabled
+	&.v-label--is-disabled,
 	&.v-input--is-disabled .v-label,
 	&.v-icon.v-icon--disabled,
 	&.v-list .v-list--disabled {

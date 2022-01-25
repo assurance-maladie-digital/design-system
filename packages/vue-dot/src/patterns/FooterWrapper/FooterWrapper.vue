@@ -25,5 +25,10 @@
 	 * @deprecated Use FooterBar instead
 	 */
 	@Component
-	export default class FooterWrapper extends Vue {}
+	export default class FooterWrapper extends Vue {
+		mounted() {
+			// eslint-disable-next-line no-console
+			console.warn('FooterWrapper is deprecated since v2.2.0, use FooterBar instead.');
+		}
+	}
 </script>

@@ -1,4 +1,4 @@
-Le fichier `jest.config.js` contient la configuration de [Jest](https://jestjs.io/).
+Le fichier `jest.config.ts` contient la configuration de [Jest](https://jestjs.io/).
 
 <doc-alert type="warning">
 Il n’est pas recommandé d’éditer ce fichier.

@@ -1,7 +1,8 @@
+import { NotificationModule } from '@cnamts/vue-dot/src/modules/notification/types';
 import { VuexBindings } from './store/types';
 
 declare module 'vue/types/vue' {
-	interface Vue extends VuexBindings {
+	interface Vue extends VuexBindings, NotificationModule {
 		// Here you can add types for plugins
 		// that don't have typings
 		$maintenanceEnabled: boolean;

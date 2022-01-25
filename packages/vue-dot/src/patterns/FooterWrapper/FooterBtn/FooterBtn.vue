@@ -47,6 +47,11 @@
 		get tag(): string | null {
 			return this.inert ? 'div' : null;
 		}
+
+		mounted() {
+			// eslint-disable-next-line no-console
+			console.warn('FooterBtn is deprecated since v2.2.0, use FooterBar instead.');
+		}
 	}
 </script>
 
