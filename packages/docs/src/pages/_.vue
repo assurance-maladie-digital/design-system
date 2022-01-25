@@ -5,39 +5,42 @@
 		<VMain>
 			<PageContainer
 				class="h-100"
-				spacing="pa-6 pa-lg-14"
+				spacing="pa-5 pa-sm-8 pa-md-12 pa-lg-16"
 				size="m"
 			>
-				<div class="d-flex flex-column h-100">
-					<article class="flex-grow-1">
+				<article class="flex-grow-1 pb-8 pb-md-16">
+					<div
+						v-if="document.title && document.parsedDescription"
+						class="doc-heading mb-4 mb-md-8"
+					>
 						<h1
 							v-if="document.title && !document.hideTitle"
 							v-text="document.title"
-							class="text-h4 text-sm-h4 font-weight-bold mb-4"
+							class="text-h5 text-sm-h4 font-weight-bold mb-4"
 						/>
 
 						<div
 							v-if="document.parsedDescription"
 							v-html="document.parsedDescription"
-							class="description text-h6"
+							class="text-h6"
 						/>
+					</div>
 
-						<VDivider
-							v-if="document.divider"
-							class="mt-6 mb-6"
-						/>
-
-						<NuxtContent :document="document" />
-					</article>
-
-					<DocPrevNext
-						:prev="prev"
-						:next="next"
-						class="mt-8 mb-6"
+					<VDivider
+						v-if="document.divider"
+						class="mt-6 mb-6"
 					/>
 
-					<DocPageInfo :document="document" />
-				</div>
+					<NuxtContent :document="document" />
+				</article>
+
+				<DocPrevNext
+					:prev="prev"
+					:next="next"
+					class="mb-6"
+				/>
+
+				<DocPageInfo :document="document" />
 			</PageContainer>
 		</VMain>
 	</VApp>
@@ -122,3 +125,14 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-page-container ::v-deep > .v-sheet {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.doc-heading ::v-deep p {
+		margin-bottom: 0;
+	}
+</style>

@@ -124,6 +124,7 @@
 <style lang="scss" scoped>
 	.vd-france-connect-btn svg {
 		fill: #034ea2;
+		transition: fill .25s;
 	}
 
 	.vd-france-connect-btn:hover svg,

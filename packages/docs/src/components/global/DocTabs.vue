@@ -34,7 +34,7 @@
 
 		<VDivider
 			v-if="bottomDivider"
-			class="mb-6"
+			class="mt-6"
 		/>
 	</div>
 </template>
@@ -125,7 +125,7 @@
 		get tabClasses(): IndexedObject<boolean> {
 			return {
 				'justify-start': this.mobileVersion,
-				'frosted-blue lighten-3': this.mobileVersion
+				'am-blue lighten-3': this.mobileVersion
 			}
 		}
 
@@ -176,9 +176,14 @@
 		}
 
 		> .v-tabs {
+			overflow: hidden;
 			position: relative;
 			border-top-left-radius: 4px;
 			border-top-right-radius: 4px;
+
+			&--vertical {
+				border: 1px solid #e7ecf5; // Bleu AM lighten-95
+			}
 
 			&::after {
 				content: "";
@@ -187,6 +192,10 @@
 				background: #e7ecf5; // Bleu AM lighten-10
 				position: absolute;
 				bottom: 0;
+			}
+
+			&--vertical::after {
+				content: none;
 			}
 
 			&.theme--dark::after {
@@ -201,12 +210,32 @@
 				max-width: 100%;
 			}
 
-			&--vertical .v-tab--active {
-				background: rgba($vd-primary, .1) !important;
-			}
-
 			.v-slide-group__wrapper {
 				z-index: 1;
+			}
+		}
+	}
+
+	.doc-tabs:not(.tabs-code) ::v-deep > .v-tabs {
+		.v-tab {
+			color: #3d67ae !important; // Bleu AM lighten-80
+			text-transform: none;
+
+			&:hover::before {
+				opacity: .06;
+			}
+		}
+
+		.v-tab--active {
+			color: #0a347b !important; // Bleu AM darken-120
+			font-weight: 700 !important;
+
+			&:hover::before {
+				opacity: .08;
+			}
+
+			&:focus::before {
+				opacity: .12;
 			}
 		}
 	}

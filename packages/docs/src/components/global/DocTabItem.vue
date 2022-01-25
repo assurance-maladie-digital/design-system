@@ -31,3 +31,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.doc-tab-item ::v-deep > :last-child {
+		margin-bottom: 0 !important;
+	}
+</style>

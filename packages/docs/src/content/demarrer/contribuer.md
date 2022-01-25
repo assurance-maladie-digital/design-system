@@ -7,11 +7,7 @@ Merci de prendre le temps de contribuer au Design System, c’est de cette mani�
 
 ## Rapport de bug
 
-<doc-indent>
-
 Lorsque vous constatez un bug dans l’un des packages du Design System, vous pouvez créer un rapport de bug pour notifier l’équipe de celui-ci.
-
-</doc-indent>
 
 Avant d’ouvrir un nouveau rapport de bug, vérifiez :
 - Qu’un rapport similaire n’ait pas déjà été ouvert en cherchant dans les [rapports existants](https://github.com/assurance-maladie-digital/design-system/issues)
@@ -26,27 +22,15 @@ Lorsque vous créez une reproduction minimale, supprimez tous les éléments, pr
 
 ## Demande d’évolution
 
-<doc-indent>
-
 Si une fonctionnalité dont vous avez besoin dans l’un des packages du Design System n’est pas présente ou déjà planifiée, vous pouvez [créer une demande de nouvelle fonctionnalité](https://github.com/assurance-maladie-digital/design-system/issues/new?template=feature_request.md).
-
-</doc-indent>
 
 ## Documentation
 
-<doc-indent>
-
 Pour modifier la documentation, vous pouvez simplement suivre le lien « Éditer cette page sur GitHub » présent en bas de page, celui-ci ouvrira l’éditeur en ligne de Github, vous permettant d’éditer directement la documentation, puis de créer une nouvelle branche afin de proposer vos modifications via une [Pull Request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
-
-</doc-indent>
 
 ## Développement
 
-<doc-indent>
-
 Notre Design System est un monorepo utilisant [lerna](https://github.com/lerna/lerna) qui rassemble notre librairie de composants, notre Starter Kit ainsi que notre documentation et les composants plus macros, ce qui permet de réduire le coût de travailler sur plusieurs projets à la fois.
-
-</doc-indent>
 
 ### Configuration de votre environnement
 

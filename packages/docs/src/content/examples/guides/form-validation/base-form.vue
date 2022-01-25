@@ -8,29 +8,26 @@
 			v-model="lastName"
 			label="Nom"
 			outlined
-			class="vd-form-input"
+			class="vd-form-input mb-4"
 		/>
 
 		<VTextField
 			v-model="firstName"
 			label="Prénom"
 			outlined
-			class="vd-form-input mt-4"
+			class="vd-form-input mb-4"
 		/>
 
 		<VTextField
 			v-model="email"
 			label="Email"
 			outlined
-			class="vd-form-input mt-4"
+			class="vd-form-input mb-4"
 		/>
 
 		<VBtn
-			large
-			block
-			height="56px"
 			color="primary"
-			class="mt-8"
+			class="text-none"
 		>
 			Valider
 		</VBtn>
