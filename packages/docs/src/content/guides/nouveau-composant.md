@@ -5,11 +5,7 @@ description: Création d’un nouveau composant dans un projet standard.
 
 ## Syntaxe
 
-<doc-indent>
-
 Pour écrire les composants, il est recommandé d’utiliser la syntaxe de classes via [Vue Class Component](https://github.com/vuejs/vue-class-component), combinée à la syntaxe de [composants monofichiers](https://fr.vuejs.org/v2/guide/single-file-components.html).
-
-</doc-indent>
 
 La syntaxe de composants monofichiers permet d’écrire le template, la logique et les styles d’un composant dans un seul fichier avec l’extension `.vue`. Ces différentes sections sont liées, et les réunir rend le composant plus cohérent et plus facile à maintenir.
 

@@ -5,11 +5,7 @@ description: Création et utilisation d’un v-model personnalisé.
 
 ## Syntaxe
 
-<doc-indent>
-
 Pour définir un `v-model` personnalisé, vous devez ajouter la propriété `model` dans le décorateur `@Component`, définir une prop pour récupérer la valeur du `v-model` ainsi que l’événement pour mettre à jour celle-ci :
-
-</doc-indent>
 
 ```vue
 <template>

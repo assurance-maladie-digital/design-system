@@ -1,12 +1,12 @@
 <template>
-	<div class="doc-roadmap mt-4 w-100">
+	<div class="doc-roadmap w-100">
 		<VExpansionPanels
 			v-for="(section, sectionIndex) in sections"
 			:key="sectionIndex"
+			:class="{ 'mt-12': sectionIndex > 0 }"
 			accordion
-			class="mb-12"
 		>
-			<h2 class="text-subtitle-1 font-weight-regular grey--text text--darken-2 mb-6 w-100">
+			<h2 class="text-subtitle-1 font-weight-regular grey--text text--darken-3 mb-6 w-100">
 				{{ section.label }}
 			</h2>
 
@@ -46,6 +46,6 @@
 
 <style lang="scss" scoped>
 	h2 {
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid rgba(0, 0, 0, .38);
 	}
 </style>

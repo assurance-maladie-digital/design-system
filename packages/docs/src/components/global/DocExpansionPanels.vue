@@ -1,7 +1,7 @@
 <template>
 	<VExpansionPanels
 		accordion
-		class="mb-8"
+		class="mb-4"
 	>
 		<slot
 			v-for="slot in Object.keys($slots)"

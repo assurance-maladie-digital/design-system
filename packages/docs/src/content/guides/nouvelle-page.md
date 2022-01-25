@@ -5,11 +5,7 @@ description: Création d’une nouvelle page dans un projet standard.
 
 ## Création de la page
 
-<doc-indent>
-
 Une page est une *Vue* qui contient des composants et qui sera affichée en allant accédant à une URL spécifique définie grâce à [Vue Router](https://router.vuejs.org/fr/).
-
-</doc-indent>
 
 Pour cela, vous pouvez créer un nouveau fichier `UserDeclaration.vue` dans le dossier `views` :
 
@@ -108,11 +104,7 @@ La méthode `this.$t()` de [Vue i18n](https://kazupon.github.io/vue-i18n/guide/f
 
 ## Ajout de la page au routeur
 
-<doc-indent>
-
 Une fois la page créée, vous devez l’ajouter à la déclaration des routes du routeur dans le fichier `routes.ts` afin de pouvoir y accéder :
-
-</doc-indent>
 
 ```ts
 export const routes = [
