@@ -1,11 +1,11 @@
 <template>
 	<div class="doc-home-page-list">
 		<DocTextIcon
-			v-for="(item, index) in homePageListItems"
+			v-for="(item, index) in items"
 			:key="index"
 			:icon="item.icon"
 			:content="item.content"
-			class="my-10"
+			:class="{ 'mt-6 mt-md-10': index > 0 }"
 		/>
 	</div>
 </template>
@@ -24,6 +24,6 @@
 		}
 	})
 	export default class DocHomePageList extends Vue {
-		homePageListItems = homePageListItems;
+		items = homePageListItems;
 	}
 </script>

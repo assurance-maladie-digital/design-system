@@ -5,11 +5,7 @@ description: Création et validation d’un formulaire dans un projet standard.
 
 ## Création du formulaire
 
-<doc-indent>
-
 Pour créer le formulaire, vous pouvez utiliser le [composant `VForm` de Vuetify](https://vuetifyjs.com/en/components/forms/) et ajouter un titre, des champs textes et un bouton de validation :
-
-</doc-indent>
 
 ```vue
 <template>

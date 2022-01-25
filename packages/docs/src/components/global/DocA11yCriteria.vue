@@ -1,10 +1,10 @@
 <template>
 	<VExpansionPanels
 		accordion
-		class="doc-roadmap my-4 w-100"
+		class="doc-roadmap w-100"
 	>
 		<VExpansionPanel
-			v-for="(item, index) in a11yCriteriaItems"
+			v-for="(item, index) in items"
 			:key="index"
 		>
 			<VExpansionPanelHeader class="text-subtitle-2 font-weight-bold">
@@ -37,7 +37,7 @@
 
 	@Component
 	export default class DocA11yCriteria extends Vue {
-		a11yCriteriaItems = a11yCriteriaItems;
+		items = a11yCriteriaItems;
 
 		headers = [
 			{

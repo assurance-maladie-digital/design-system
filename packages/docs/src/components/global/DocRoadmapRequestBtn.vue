@@ -4,7 +4,7 @@
 		outlined
 		large
 		color="primary"
-		class="text-none my-8"
+		class="text-none"
 	>
 		Soumettre une demande
 	</VBtn>

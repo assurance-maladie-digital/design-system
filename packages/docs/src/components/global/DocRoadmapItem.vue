@@ -72,6 +72,6 @@
 
 	.v-expansion-panel-content {
 		border-top: 1px solid;
-		border-color: #eee !important;
+		border-color: rgba(0, 0, 0, .12) !important;
 	}
 </style>

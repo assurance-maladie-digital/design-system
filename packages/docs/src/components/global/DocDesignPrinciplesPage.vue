@@ -1,19 +1,17 @@
 <template>
 	<div class="doc-design-principles-page">
 		<div
-			v-for="(item, index) in designPrinciplesPageItems"
+			v-for="(item, index) in items"
 			:key="index"
-			class="my-10"
+			class="doc-design-principle mb-8"
 		>
-			<DocMarkdown class="mb-8">
+			<DocMarkdown>
 				{{ item.title }}
 			</DocMarkdown>
 
-			<DocIndent class="mb-8">
-				<DocMarkdown>
-					{{ item.description }}
-				</DocMarkdown>
-			</DocIndent>
+			<DocMarkdown class="mb-8">
+				{{ item.description }}
+			</DocMarkdown>
 
 			<DocTextIcon
 				:icon="item.icon"
@@ -28,7 +26,6 @@
 	import Component from 'vue-class-component';
 
 	import DocMarkdown from '../code/DocMarkdown.vue';
-	import DocIndent from './DocIndent.vue';
 	import DocTextIcon from '../page/DocTextIcon.vue';
 
 	import { designPrinciplesPageItems } from '../../data/designPrinciplesPageItems';
@@ -36,11 +33,16 @@
 	@Component({
 		components: {
 			DocMarkdown,
-			DocIndent,
 			DocTextIcon
 		}
 	})
 	export default class DocDesignPrinciplesPage extends Vue {
-		designPrinciplesPageItems = designPrinciplesPageItems;
+		items = designPrinciplesPageItems;
 	}
 </script>
+
+<style lang="scss" scoped>
+	.doc-design-principle:last-child {
+		margin-bottom: 0 !important;
+	}
+</style>
