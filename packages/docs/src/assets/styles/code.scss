@@ -4,7 +4,7 @@
 	.doc-code-block {
 		pre {
 			padding: 0;
-			background-color: #1f1f1f;
+			background: #020d1f;
 		}
 
 		pre[class*=language] {
@@ -43,5 +43,42 @@
 	span.token {
 		font-family: inherit;
 		background-color: transparent !important;
+	}
+
+	.token.selector,
+	.token.attr-name,
+	.token.string,
+	.token.char,
+	.token.builtin,
+	.token.inserted {
+		color: #008972;
+	}
+
+	.token.atrule,
+	.token.attr-value,
+	.token.keyword {
+		color: #0084b2;
+	}
+
+	.token.operator,
+	.token.entity,
+	.token.url,
+	.language-css .token.string,
+	.style .token.string {
+		color: #906b15;
+	}
+
+	.token.property,
+	.token.tag,
+	.token.boolean,
+	.token.number,
+	.token.constant,
+	.token.symbol,
+	.token.deleted {
+		color: #87104d;
+	}
+
+	.language-css .token.string {
+		color: #c08f1c;
 	}
 }

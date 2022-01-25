@@ -5,7 +5,7 @@
 			...$attrs
 		}"
 		min-height="40px"
-		class="vd-footer-bar text-center d-flex justify-center pa-0 w-100"
+		class="vd-footer-bar text-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100"
 	>
 		<slot name="prepend" />
 
@@ -117,7 +117,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-footer-bar {
+	.vd-footer-bar ::v-deep {
 		a {
 			color: inherit;
 			transition: .15s;

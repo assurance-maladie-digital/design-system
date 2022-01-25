@@ -97,7 +97,7 @@ export const api: Api = {
 				name: 'picker-date',
 				type: 'string',
 				default: 'undefined',
-				description: 'Le mois / l’année affiché, à utiliser avec le modificateur `.sync`.<br>En mode date de naissance, l’année sélectionnée sera `1990` par défaut.'
+				description: 'L’année et le mois sélectionnés au format `YYYY-MM`, à utiliser avec le modificateur `.sync`.<br>En mode date de naissance, l’année sélectionnée sera `1990` par défaut.'
 			},
 			{
 				name: 'error',
