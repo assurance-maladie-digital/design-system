@@ -77,6 +77,7 @@
   - **components:** Mise à jour des styles du composant `DocUsage` ([#1761](https://github.com/assurance-maladie-digital/design-system/pull/1761)) ([e29061c](https://github.com/assurance-maladie-digital/design-system/commit/e29061c7cad6e74bba6591a3559b7051a122a937))
   - **global:** Mise à jour des couleurs du thème pour le code ([#1762](https://github.com/assurance-maladie-digital/design-system/pull/1762)) ([4429fa0](https://github.com/assurance-maladie-digital/design-system/commit/4429fa0cc38e32a2445b94163d77f47c500bac33))
   - **global:** Utilisation de l'interface `NotificationModule` ([#1773](https://github.com/assurance-maladie-digital/design-system/pull/1773)) ([398bcaf](https://github.com/assurance-maladie-digital/design-system/commit/398bcafde1452f4db7c747d985a0778973ad111a))
+  - **global:** Mise à jour des styles et des espacements ([#1776](https://github.com/assurance-maladie-digital/design-system/pull/1776)) ([76f05e5](https://github.com/assurance-maladie-digital/design-system/commit/76f05e57ef29b7fb47c59f10b3651aa4200b1190))
 
 - 🔥 **Suppressions**
   - **introduction:** Suppression du titre secondaire ([#1716](https://github.com/assurance-maladie-digital/design-system/pull/1716)) ([e35d2c7](https://github.com/assurance-maladie-digital/design-system/commit/e35d2c7b401163ad4c6b7e7f7912d67e68f70825))
@@ -109,7 +110,7 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v37.6.3` ([#1748](https://github.com/assurance-maladie-digital/design-system/pull/1748)) ([a2b2532](https://github.com/assurance-maladie-digital/design-system/commit/a2b2532a9409078b1c41d0a7e9811a3b51944a5a))
   - **@netlify/functions:** Mise à jour vers la `v0.11.0` ([#1749](https://github.com/assurance-maladie-digital/design-system/pull/1749)) ([1011879](https://github.com/assurance-maladie-digital/design-system/commit/10118799b65919f921761e40365be3289af6c437))
   - **@babel/core:** Mise à jour vers la `v7.16.12` ([#1757](https://github.com/assurance-maladie-digital/design-system/pull/1757)) ([aa58144](https://github.com/assurance-maladie-digital/design-system/commit/aa5814449003c121cbccfa1aea35c8b8e9ef9fcc))
-  - **lint-staged:** Mise à jour vers la `v12.3.1` ([#1758](https://github.com/assurance-maladie-digital/design-system/pull/1758))
+  - **lint-staged:** Mise à jour vers la `v12.3.1` ([#1758](https://github.com/assurance-maladie-digital/design-system/pull/1758)) ([e31e2fe](https://github.com/assurance-maladie-digital/design-system/commit/e31e2fe8b44736caf3cffadce749f8e1cd357de7))
 
 ## v2.2.0
 

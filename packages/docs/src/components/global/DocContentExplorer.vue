@@ -1,7 +1,7 @@
 <template>
 	<ContentExplorer
 		:items="items"
-		class="w-100 mt-8 mb-12"
+		class="w-100"
 	/>
 </template>
 

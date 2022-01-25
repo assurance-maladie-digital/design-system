@@ -5,24 +5,20 @@ description: Création d’un tableau paginé qui récupère des données d’un
 
 ## Création de l’API
 
-<doc-indent>
-
 La première étape consiste à créer l’API qui récupèrera les données que l’on souhaite afficher dans notre tableau paginé. Vous pouvez créer un dossier `src/services/getUsersFromApi` qui contiendra le service permettant d'appeler cette API.
-
-</doc-indent>
 
 Vous pouvez commencer par définir l’interface décrivant les données qui seront retournées par l'API dans le fichier `src/services/getUsersFromApi/types.d.ts` :
 
 ```ts
 export interface User {
-    firstname: string;
-    lastname: string;
-    email: string;
+	firstname: string;
+	lastname: string;
+	email: string;
 }
 
 export interface Result {
-    items: User[];
-    total: number;
+	items: User[];
+	total: number;
 }
 ```
 
@@ -92,11 +88,7 @@ export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Res
 
 ## Affichage du tableau paginé
 
-<doc-indent>
-
 Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`](/composants/paginated-table) :
-
-</doc-indent>
 
 ```vue
 <template>
@@ -166,12 +158,8 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 </script>
 ```
 
-<doc-indent>
-
 Pour afficher le tableau de données, vous devez définir un tableau `headers` pour indiquer quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher.
 Cette variable sera ensuite passée dans la prop `headers` du composant [`PaginatedTable`](/composants/paginated-table#section/api).
-
-</doc-indent>
 
 Les valeurs de l’objet `options` seront mises à jour par le composant `PaginatedTable`.
 

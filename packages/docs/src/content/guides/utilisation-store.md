@@ -5,21 +5,13 @@ description: Quand et comment utiliser le store pour partager des données à tr
 
 ## Pour commencer
 
-<doc-indent>
-
 Le store est un espace centralisé, accessible dans toute l’application, avec des règles garantissant que l’état ne peut être muté que de manière prévisible.
-
-</doc-indent>
 
 Nous utilisons la librairie [Vuex](https://vuex.vuejs.org/fr/) pour la gestion du store.
 
 ## Quand utiliser le store
 
-<doc-indent>
-
 Pour savoir si vous devez stocker une donnée dans le store ou plutôt dans un composant, vous pouvez vous demander si cette donnée a besoin d’être accessible dans toute l’application. Si c’est le cas, vous pouvez la stocker dans le store. Sinon, c’est que cette donnée doit être stockée localement.
-
-</doc-indent>
 
 Par exemple, les informations de profil d’un utilisateur peuvent être nécessaires pour l’affichage dans l’en-tête de l’application, mais aussi pour afficher ou masquer certaines fonctionnalités en fonction des droits de l’utilisateur. Ces données peuvent être stockées dans le store.
 

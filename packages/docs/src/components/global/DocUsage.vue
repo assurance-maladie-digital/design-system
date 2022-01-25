@@ -1,12 +1,9 @@
 <template>
-	<VLazy
-		min-height="198px"
-		class="doc-usage w-100"
-	>
+	<VLazy class="doc-usage w-100 mb-8">
 		<VSheet
 			rounded
 			outlined
-			class="overflow-hidden mb-12"
+			class="overflow-hidden"
 		>
 			<VRow no-gutters>
 				<VCol
@@ -47,7 +44,6 @@
 
 					<VThemeProvider :dark="dark">
 						<VSheet
-							:color="color"
 							max-height="400px"
 							min-height="100px"
 							class="overflow-y-auto h-100 d-flex justify-center pa-4"
@@ -340,10 +336,6 @@
 			return `${this.name}/usage`;
 		}
 
-		get color(): string | undefined {
-			return (this.dark || this.theme.isDark) ? undefined : 'frosted-blue lighten-3';
-		}
-
 		get usageCode(): string {
 			return getUsageCode(this.name, this.displayProps, this.slotContent);
 		}
@@ -445,6 +437,12 @@
 
 		> :last-child {
 			margin-bottom: 0 !important;
+		}
+	}
+
+	.doc-usage-options ::v-deep {
+		.v-text-field .v-input__slot::before {
+			border-color: rgba(0, 0, 0, .2);
 		}
 	}
 
