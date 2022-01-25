@@ -5,7 +5,7 @@
 			...$attrs
 		}"
 		min-height="40px"
-		class="vd-footer-bar text-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100"
+		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100"
 	>
 		<slot name="prepend" />
 
