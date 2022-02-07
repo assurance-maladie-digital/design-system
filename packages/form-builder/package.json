@@ -35,7 +35,7 @@
 	},
 	"peerDependencies": {
 		"@cnamts/vue-dot": "^2.0.0-alpha.53",
-		"vue": "^2.6.11",
+		"vue": "^2.6.11 || ^3.0.0",
 		"vuetify": "^2.3.0"
 	},
 	"devDependencies": {
