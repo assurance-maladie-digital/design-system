@@ -2023,10 +2023,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/functions@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-0.11.0.tgz#224f3bba53809b364d36377ad0b2d3de594f994d"
-  integrity sha512-+WWX081UCkLZYkfh1Ru+PH5HTujNXugeskATGhZLTyS1U3Cqh2gYLArdG1a/vU8WWopu/wjpxEOdWq8/T5Nw5Q==
+"@netlify/functions@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-1.0.0.tgz#5b6c02fafc567033c93b15a080cc021e5f10f254"
+  integrity sha512-7fnJv3vr8uyyyOYPChwoec6MjzsCw1CoRUO2DhQ1BD6bOyJRlD4DUaOOGlMILB2LCT8P24p5LexEGx8AJb7xdA==
   dependencies:
     is-promise "^4.0.0"
 
