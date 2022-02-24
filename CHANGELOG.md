@@ -100,6 +100,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.19` ([#1783](https://github.com/assurance-maladie-digital/design-system/pull/1783)) ([8ac88d9](https://github.com/assurance-maladie-digital/design-system/commit/8ac88d9c32992bf4b506cac2b0173bd918d76918))
+  - **ci:** Mise à jour de la configuration de renovate ([#1804](https://github.com/assurance-maladie-digital/design-system/pull/1804))
 
 - ⬆️ **Dépendances**
   - **slugify:** Mise à jour vers la `v1.6.5` ([#1674](https://github.com/assurance-maladie-digital/design-system/pull/1674)) ([03bcc4e](https://github.com/assurance-maladie-digital/design-system/commit/03bcc4eb9f36d5f66fd2fde460fbe8cbec43ab07))
@@ -118,7 +119,7 @@
   - **@netlify/functions:** Mise à jour vers la `v1` ([#1800](https://github.com/assurance-maladie-digital/design-system/pull/1800)) ([16c9259](https://github.com/assurance-maladie-digital/design-system/commit/16c9259964c7249ba5caf58f5442896788ce41ee))
   - **@babel/core:** Mise à jour vers la `v7.17.5` ([#1801](https://github.com/assurance-maladie-digital/design-system/pull/1801)) ([ce23cf1](https://github.com/assurance-maladie-digital/design-system/commit/ce23cf1d9a02e3119016c445def19dbddfc38f4a))
   - **fs-extra:** Mise à jour vers la `v10.0.1` ([#1803](https://github.com/assurance-maladie-digital/design-system/pull/1803)) ([5528f7e](https://github.com/assurance-maladie-digital/design-system/commit/5528f7e6ab57a3ae7a20059db64fabb06e56c5b6))
-  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.6` ([#1804](https://github.com/assurance-maladie-digital/design-system/pull/1804))
+  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.6` ([#1804](https://github.com/assurance-maladie-digital/design-system/pull/1804)) ([9f13586](https://github.com/assurance-maladie-digital/design-system/commit/9f13586c05f0a0e935760a6cb73770a4fc146e55))
 
 ## v2.2.0
 
