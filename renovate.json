@@ -26,6 +26,19 @@
 				"sass"
 			],
 			"allowedVersions": "<1.33"
+		},
+		{
+			"matchPackageNames": [
+				"vue"
+			],
+			"allowedVersions": "<3"
+		},
+		{
+			"matchPackageNames": [
+				"vuex",
+				"vue-router"
+			],
+			"allowedVersions": "<4"
 		}
 	]
 }
