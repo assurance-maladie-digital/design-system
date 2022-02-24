@@ -27,6 +27,9 @@
   - **HeaderBar:** Ajout des props `show-nav-bar-menu-btn` et `mobile-version` ([#1728](https://github.com/assurance-maladie-digital/design-system/pull/1728)) ([9997290](https://github.com/assurance-maladie-digital/design-system/commit/999729041137d56a73383195f873ef39c82954f9))
   - **FranceConnectBtn:** Renommage de la prop `icon-text` en `label` ([#1760](https://github.com/assurance-maladie-digital/design-system/pull/1760)) ([db19524](https://github.com/assurance-maladie-digital/design-system/commit/db1952423d4ef2037f9b0fea8a5b309276c0a520))
 
+- ✅ **Tests**
+  - **formatNir:** Correction d'une faute d'orthographe ([#1806](https://github.com/assurance-maladie-digital/design-system/pull/1806))
+
 - 🎨 **Qualité de code**
   - **ErrorPage:** Utilisation d'une constante `MixinsDeclaration` ([#1742](https://github.com/assurance-maladie-digital/design-system/pull/1742)) ([bc54ed5](https://github.com/assurance-maladie-digital/design-system/commit/bc54ed516262d2b281803249c5085c2b0eb7e9e2))
 
@@ -100,7 +103,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.19` ([#1783](https://github.com/assurance-maladie-digital/design-system/pull/1783)) ([8ac88d9](https://github.com/assurance-maladie-digital/design-system/commit/8ac88d9c32992bf4b506cac2b0173bd918d76918))
-  - **ci:** Mise à jour de la configuration de renovate ([#1804](https://github.com/assurance-maladie-digital/design-system/pull/1804))
+  - **ci:** Mise à jour de la configuration de renovate ([#1805](https://github.com/assurance-maladie-digital/design-system/pull/1805)) ([1f5de11](https://github.com/assurance-maladie-digital/design-system/commit/1f5de11ef868e775de23fa548bc4a06d85ddf815))
 
 - ⬆️ **Dépendances**
   - **slugify:** Mise à jour vers la `v1.6.5` ([#1674](https://github.com/assurance-maladie-digital/design-system/pull/1674)) ([03bcc4e](https://github.com/assurance-maladie-digital/design-system/commit/03bcc4eb9f36d5f66fd2fde460fbe8cbec43ab07))
