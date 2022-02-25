@@ -7,7 +7,7 @@ describe('minLength', () => {
 		expect(typeof rule('0')).toBe('string');
 	});
 
-	it('returns true when the value is longer than minimum', () => {
+	it('returns true when the value is longer than the minimum', () => {
 		const rule = minLength(10);
 
 		expect(rule('012345678910')).toBe(true);

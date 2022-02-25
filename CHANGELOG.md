@@ -10,7 +10,8 @@
   - **notification:** Ajout de l'interface `NotificationModule` ([#1771](https://github.com/assurance-maladie-digital/design-system/pull/1771)) ([418732a](https://github.com/assurance-maladie-digital/design-system/commit/418732ab41c44f412eac476405a5c3604264599f))
   - **FranceConnectBtn:** Ajout d'une transition sur la couleur de fond ([#1779](https://github.com/assurance-maladie-digital/design-system/pull/1779)) ([8086b3d](https://github.com/assurance-maladie-digital/design-system/commit/8086b3d21c48746dc0312697aa25bcd28a2bdbd3))
   - **types:** Ajout de la propriété `resetValidation` à l'interface `VForm` ([#1812](https://github.com/assurance-maladie-digital/design-system/pull/1812)) ([ac7ab8f](https://github.com/assurance-maladie-digital/design-system/commit/ac7ab8f83fc2d49e9d9734991f719aea1a4b9df3))
-  - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `minLength` ([#1815](https://github.com/assurance-maladie-digital/design-system/pull/1815))
+  - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `minLength` ([#1815](https://github.com/assurance-maladie-digital/design-system/pull/1815)) ([f8583ba](https://github.com/assurance-maladie-digital/design-system/commit/f8583bacd2503031fd1c66af4a1bf7c81085f004))
+  - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `maxLength` ([#1816](https://github.com/assurance-maladie-digital/design-system/pull/1816))
 
 - 🐛 **Corrections de bugs**
   - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))
