@@ -168,12 +168,14 @@
 			return this.contentSheetHeight;
 		}
 
-		get hasContent(): boolean {
-			return Boolean(this.navigationItems || this.$scopedSlots['navigation-drawer'] || this.$slots['navigation-bar-content']);
+		get hasNavigationItems(): boolean {
+			return Boolean(this.navigationItems || this.$slots['navigation-bar-content']);
 		}
 
 		get showHeaderMenuBtn(): boolean {
-			return !this.showNavBarMenuBtn && this.isMobileVersion && this.hasContent;
+			const hasNavigation = Boolean(this.hasNavigationItems || this.$scopedSlots['navigation-drawer']);
+
+			return !this.showNavBarMenuBtn && this.isMobileVersion && hasNavigation;
 		}
 
 		get showNavigationBar(): boolean {
@@ -181,7 +183,7 @@
 				return false;
 			}
 
-			return this.hasContent;
+			return this.hasNavigationItems;
 		}
 
 		updateDrawer(value: boolean): void {
