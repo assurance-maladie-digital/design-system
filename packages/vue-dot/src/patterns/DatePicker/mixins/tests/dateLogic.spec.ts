@@ -88,7 +88,6 @@ function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('DateLogic', () => {
 	// We need to unregister VTextField between each test
 	// because it may change

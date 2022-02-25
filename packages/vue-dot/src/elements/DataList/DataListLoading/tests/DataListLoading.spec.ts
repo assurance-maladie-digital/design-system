@@ -11,10 +11,8 @@ Vue.component('HeaderLoading', HeaderLoading);
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('DataListLoading', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(DataListLoading, {
 			propsData: {
 				label: 'Test'
@@ -25,7 +23,6 @@ describe('DataListLoading', () => {
 	});
 
 	it('renders correctly with a header', () => {
-		// Mount component
 		wrapper = mountComponent(DataListLoading, {
 			propsData: {
 				heading: true
@@ -36,7 +33,6 @@ describe('DataListLoading', () => {
 	});
 
 	it('renders correctly with more items', () => {
-		// Mount component
 		wrapper = mountComponent(DataListLoading, {
 			propsData: {
 				itemsNumber: 3
@@ -47,7 +43,6 @@ describe('DataListLoading', () => {
 	});
 
 	it('renders correctly in row mode', () => {
-		// Mount component
 		wrapper = mountComponent(DataListLoading, {
 			propsData: {
 				itemsNumber: 3,

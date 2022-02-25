@@ -32,10 +32,8 @@ const filters = [
 	}
 ];
 
-// Tests
 describe('FilterManager', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FilterManager, {
 			propsData: {
 				appliedFilters: filters
@@ -46,7 +44,6 @@ describe('FilterManager', () => {
 	});
 
 	it('renders correctly with a single filter', () => {
-		// Mount component
 		wrapper = mountComponent(FilterManager, {
 			propsData: {
 				appliedFilters: [filters[0]]

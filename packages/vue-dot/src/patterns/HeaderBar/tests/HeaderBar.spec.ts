@@ -8,10 +8,8 @@ import HeaderBar from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('HeaderBar', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(HeaderBar);
 
 		expect(html(wrapper)).toMatchSnapshot();

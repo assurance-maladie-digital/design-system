@@ -13,10 +13,8 @@ Vue.component('Logo', Logo);
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('HeaderBrandSection', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(HeaderBrandSection, {
 			stubs: ['RouterLink'],
 			propsData: {

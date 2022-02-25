@@ -3,7 +3,6 @@ import { propValidator } from '../';
 const PROP_NAME = 'test';
 const ACCEPTED_VALUES = ['value1', 'value2'];
 
-// Tests
 describe('propValidator', () => {
 	let logMock: jest.SpyInstance;
 

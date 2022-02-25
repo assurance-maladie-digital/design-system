@@ -10,10 +10,8 @@ import FilterModule from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FilterModule', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FilterModule, {
 			stubs: {
 				DialogBox

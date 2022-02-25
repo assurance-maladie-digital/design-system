@@ -8,10 +8,8 @@ import FilterSelector from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FilterSelector', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FilterSelector, {
 			propsData: {
 				filters: []

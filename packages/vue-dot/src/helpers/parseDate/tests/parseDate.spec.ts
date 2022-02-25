@@ -4,7 +4,6 @@ import { parseDate } from '../';
 
 const RESULT_DATE_FORMAT = 'YYYY-MM-DD';
 
-// Tests
 describe('parseDate', () => {
 	it('returns a working dayjs instance', () => {
 		const date = dayjs().format('DD/MM/YYYY');

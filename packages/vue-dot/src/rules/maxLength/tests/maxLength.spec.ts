@@ -1,6 +1,5 @@
 import { maxLength } from '../';
 
-// Tests
 describe('maxLength', () => {
 	it('returns an error when the value is longer than maximum', () => {
 		const rule = maxLength(1);

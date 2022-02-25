@@ -29,7 +29,6 @@ function createTestComponent() {
 	});
 }
 
-// Tests
 describe('GetThemeIcon', () => {
 	it('returns the icon', () => {
 		const testComponent = createTestComponent();

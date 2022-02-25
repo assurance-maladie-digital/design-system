@@ -8,10 +8,8 @@ import DataListItem from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('DataListItem', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Test'
@@ -22,7 +20,6 @@ describe('DataListItem', () => {
 	});
 
 	it('renders correctly with a value', () => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Test',
@@ -34,7 +31,6 @@ describe('DataListItem', () => {
 	});
 
 	it('renders correctly a value with HTML as text', () => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Name',
@@ -47,7 +43,6 @@ describe('DataListItem', () => {
 	});
 
 	it('renders correctly a value as plain HTML', () => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Name',
@@ -61,7 +56,6 @@ describe('DataListItem', () => {
 	});
 
 	it('renders correctly value in a chip', () => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Test',
@@ -74,7 +68,6 @@ describe('DataListItem', () => {
 	});
 
 	it('renders correctly with an action', () => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Test',
@@ -86,7 +79,6 @@ describe('DataListItem', () => {
 	});
 
 	it('emits click:action event when the action button is pressed', async() => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Test',
@@ -109,7 +101,6 @@ describe('DataListItem', () => {
 	});
 
 	it('renders correctly in row mode', () => {
-		// Mount component
 		wrapper = mountComponent(DataListItem, {
 			propsData: {
 				label: 'Test',

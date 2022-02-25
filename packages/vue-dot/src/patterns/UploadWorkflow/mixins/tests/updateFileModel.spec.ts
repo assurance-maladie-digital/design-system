@@ -30,7 +30,6 @@ function getFileList(): FileListItem[] {
 	];
 }
 
-// Tests
 describe('updateFileModel', () => {
 	it('inits the file list', () => {
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;

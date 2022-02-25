@@ -8,10 +8,8 @@ import HeaderMenuBtn from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('HeaderMenuBtn', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(HeaderMenuBtn);
 
 		expect(html(wrapper)).toMatchSnapshot();

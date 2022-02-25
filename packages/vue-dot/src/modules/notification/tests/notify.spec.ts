@@ -14,7 +14,6 @@ const notificationObj: NotificationObj = {
 	icon: 'icon'
 };
 
-// Tests
 describe('notify', () => {
 	it('adds a notification', () => {
 		const commit = jest.fn();
