@@ -21,10 +21,8 @@ const links = [
 	}
 ];<% } %>
 
-// Tests
 describe('About', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(About<% if (i18n) { %>, {
 			mocks: {
 				$t: (key: string) => {

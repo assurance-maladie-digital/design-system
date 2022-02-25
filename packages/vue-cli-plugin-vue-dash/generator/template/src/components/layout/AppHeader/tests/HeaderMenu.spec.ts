@@ -18,10 +18,8 @@ const links = [
 	}
 ];<% } %>
 
-// Tests
 describe('HeaderMenu', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(HeaderMenu<% if (i18n) { %>, {
 			mocks: {
 				$t: (key: string) => {

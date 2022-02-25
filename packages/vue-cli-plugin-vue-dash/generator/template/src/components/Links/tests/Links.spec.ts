@@ -16,10 +16,8 @@ const links = [
 	}
 ];
 
-// Tests
 describe('Links', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(Links, {
 			propsData: {
 				links
