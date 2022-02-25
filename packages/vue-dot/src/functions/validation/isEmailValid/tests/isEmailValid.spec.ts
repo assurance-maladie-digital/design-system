@@ -1,6 +1,5 @@
 import { isEmailValid } from '../';
 
-// Tests
 describe('isEmailValid', () => {
 	it('returns true if the email is valid', () => {
 		const email = 'test@example.com';

@@ -13,10 +13,8 @@ import { dataListGroupItems } from './data/subHeader';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('SubHeader', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(SubHeader, {
 			propsData: {
 				titleText: 'Test'
@@ -27,7 +25,6 @@ describe('SubHeader', () => {
 	});
 
 	it('renders loading state correctly', async() => {
-		// Mount component
 		wrapper = mountComponent(SubHeader, {
 			propsData: {
 				titleText: 'Test',

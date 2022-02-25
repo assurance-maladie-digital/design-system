@@ -23,7 +23,6 @@ const file = {
 	name: 'avatar.png'
 } as File;
 
-// Tests
 describe('FileValidation', () => {
 	// computedAccept
 	it('computes the default accept string', () => {

@@ -1,6 +1,5 @@
 import { ruleMessage } from '../';
 
-// Tests
 describe('ruleMessage', () => {
 	it('returns the requested message when it is an object', () => {
 		const messages = {

@@ -31,7 +31,6 @@ function createTestComponent() {
 	});
 }
 
-// Tests
 describe('customizable', () => {
 	it('merges correctly default and custom options into a computed property', () => {
 		const testComponent = createTestComponent();

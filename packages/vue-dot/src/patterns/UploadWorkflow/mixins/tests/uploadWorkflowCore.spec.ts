@@ -71,7 +71,6 @@ function createWrapper(value = fileList) {
 	});
 }
 
-// Tests
 describe('EventsFileFired', () => {
 	afterEach(() => {
 		jest.clearAllMocks();

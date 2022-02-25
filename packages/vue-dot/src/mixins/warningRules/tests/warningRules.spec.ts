@@ -27,7 +27,6 @@ function createWrapper() {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('WarningRules', () => {
 	it('validates the value correctly on error', () => {
 		const wrapper = createWrapper();

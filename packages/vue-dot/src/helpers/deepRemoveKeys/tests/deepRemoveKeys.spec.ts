@@ -18,7 +18,6 @@ const DEEP_ARRAY = [
 	BASE_OBJECT
 ];
 
-// Tests
 describe('deepRemoveKeys', () => {
 	it('deletes a key', () => {
 		const deepObject = deepCopy(DEEP_OBJECT);

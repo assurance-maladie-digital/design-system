@@ -8,10 +8,8 @@ import FooterBtn from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FooterBtn', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FooterBtn);
 
 		expect(html(wrapper)).toMatchSnapshot();

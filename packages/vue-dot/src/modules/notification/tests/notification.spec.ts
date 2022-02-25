@@ -22,7 +22,6 @@ function createStore(state: NotificationState) {
 	return new Vuex.Store({ state, actions, mutations });
 }
 
-// Tests
 describe('notification', () => {
 	it('updates the state when calling `add` action', () => {
 		const state: NotificationState = {

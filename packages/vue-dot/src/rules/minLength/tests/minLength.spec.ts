@@ -1,6 +1,5 @@
 import { minLength } from '../';
 
-// Tests
 describe('minLength', () => {
 	it('returns an error when the value is shorter than minimum', () => {
 		const rule = minLength(10);

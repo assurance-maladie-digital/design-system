@@ -1,6 +1,5 @@
 import { convertToUnit } from '../';
 
-// Tests
 describe('convertToUnit', () => {
 	it('returns undefined when the value is null', () => {
 		expect(convertToUnit(null)).toBeUndefined();

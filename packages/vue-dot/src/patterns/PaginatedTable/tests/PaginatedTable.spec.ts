@@ -8,10 +8,8 @@ import PaginatedTable from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('PaginatedTable', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(PaginatedTable, {
 			propsData: {
 				options: {},

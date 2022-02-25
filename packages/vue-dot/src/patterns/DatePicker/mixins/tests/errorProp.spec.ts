@@ -24,7 +24,6 @@ function createWrapper(error: boolean) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('ErrorProp', () => {
 	it('receives the value correctly from the prop', () => {
 		const wrapper = createWrapper(false);

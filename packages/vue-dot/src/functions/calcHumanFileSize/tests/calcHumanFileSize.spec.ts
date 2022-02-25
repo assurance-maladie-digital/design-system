@@ -10,7 +10,6 @@ const fileSizeUnits = [
 	'TB'
 ];
 
-// Tests
 describe('calcHumanFileSize', () => {
 	it('returns the readable size', () => {
 		expect(calcHumanFileSize(sizeMax, fileSizeUnits)).toEqual('4 MB');

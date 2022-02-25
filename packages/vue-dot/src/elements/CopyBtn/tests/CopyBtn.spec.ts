@@ -8,10 +8,8 @@ import CopyBtn from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('CopyBtn', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(CopyBtn, {
 			propsData: {
 				label: 'test',

@@ -21,7 +21,6 @@ const savedPosition: Position = {
 	y: 1
 };
 
-// Tests
 describe('scrollBehavior', () => {
 	it('returns the default scroll postion', () => {
 		expect(scrollBehavior(defaultRoute, defaultRoute)).toStrictEqual(defaultPosition);

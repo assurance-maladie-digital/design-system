@@ -56,7 +56,6 @@ function timeoutTest(input: HTMLInputElement, wrapper: Wrapper<TestComponent>, s
 	}, 100);
 }
 
-// Tests
 describe('debounce', () => {
 	it('works correctly with a simple input', () => {
 		const spy = jest.fn();

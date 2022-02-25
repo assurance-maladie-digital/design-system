@@ -8,10 +8,8 @@ import FranceConnectBtn from '../FranceConnectBtn.vue';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FranceConnectBtn', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FranceConnectBtn, {
 			propsData: {
 				href: 'https://app.franceconnect.gouv.fr/'

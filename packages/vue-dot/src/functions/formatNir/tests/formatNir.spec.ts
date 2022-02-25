@@ -1,6 +1,5 @@
 import { formatNir } from '../';
 
-// Tests
 describe('formatNir', () => {
 	it('formats a NIR with a key', () => {
 		const nir = '295042531115732';

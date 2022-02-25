@@ -1,6 +1,5 @@
 import { isDateValid } from '../';
 
-// Tests
 describe('isDateValid', () => {
 	it('returns an error when the date is not valid', () => {
 		const date = '99/99/9999';

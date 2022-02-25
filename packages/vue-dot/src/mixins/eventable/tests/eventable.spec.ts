@@ -23,7 +23,6 @@ function createTestComponent(mixinData = {}) {
 	});
 }
 
-// Tests
 describe('Eventable', () => {
 	it('does nothing when no options are defined', () => {
 		const testComponent = createTestComponent();

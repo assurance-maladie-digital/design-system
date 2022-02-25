@@ -22,10 +22,8 @@ const files = [
 	}
 ];
 
-// Tests
 describe('UploadWorkflow', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(UploadWorkflow, {
 			stubs: {
 				FileUpload,
@@ -40,7 +38,6 @@ describe('UploadWorkflow', () => {
 	});
 
 	it('renders correctly with a single file', () => {
-		// Mount component
 		wrapper = mountComponent(UploadWorkflow, {
 			stubs: {
 				FileUpload,
