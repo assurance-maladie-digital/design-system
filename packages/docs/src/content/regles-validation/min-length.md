@@ -26,7 +26,7 @@ rules = [
 Vous pouvez modifier les messages d’erreur par défaut en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
-minLengthRule = minLength(lengthValue, {
+minLengthRule = minLength(lengthValue, ignoreSpaces, {
 	default: (min: number) => `La longueur minimale du champ doit être de ${min} caractères.`
 });
 ```
