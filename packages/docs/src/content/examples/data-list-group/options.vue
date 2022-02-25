@@ -10,12 +10,6 @@
 
 	@Component
 	export default class DataListGroupOptions extends Vue {
-		itemOptions = {
-			chip: {
-				color: '#e7ecf5'
-			}
-		};
-
 		items: DataListGroupItems = [
 			{
 				title: 'Informations patient',
@@ -23,20 +17,17 @@
 					{
 						key: 'Nom',
 						value: 'Dupont',
-						chip: true,
-						options: this.itemOptions
+						chip: true
 					},
 					{
 						key: 'Prénom',
 						value: 'Paul',
-						chip: true,
-						options: this.itemOptions
+						chip: true
 					},
 					{
 						key: 'Date de naissance',
 						value: '24/09/1970',
-						chip: true,
-						options: this.itemOptions
+						chip: true
 					}
 				]
 			},
@@ -46,14 +37,12 @@
 					{
 						key: 'Nom du praticien',
 						value: 'Gérard Leblanc',
-						chip: true,
-						options: this.itemOptions
+						chip: true
 					},
 					{
 						key: 'N° RPPS',
 						value: 'XXXXX',
-						chip: true,
-						options: this.itemOptions
+						chip: true
 					}
 				]
 			},
@@ -63,8 +52,7 @@
 					{
 						key: 'Dernière modification',
 						value: '04/06/2020',
-						chip: true,
-						options: this.itemOptions
+						chip: true
 					}
 				]
 			}

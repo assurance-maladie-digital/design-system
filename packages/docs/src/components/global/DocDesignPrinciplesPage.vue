@@ -5,9 +5,9 @@
 			:key="index"
 			class="doc-design-principle mb-8"
 		>
-			<DocMarkdown>
+			<h2 class="text-h5 font-weight-bold mb-8">
 				{{ item.title }}
-			</DocMarkdown>
+			</h2>
 
 			<DocMarkdown class="mb-8">
 				{{ item.description }}
