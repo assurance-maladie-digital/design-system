@@ -26,7 +26,7 @@ rules = [
 Vous pouvez modifier les messages d’erreur par défaut en passant en argument un objet contenant les messages d’erreur utilisés par cette règle de validation :
 
 ```ts
-maxLengthRule = maxLength(lengthValue, {
+maxLengthRule = maxLength(lengthValue, ignoreSpaces, {
 	default: (max: number) => `La longueur maximale du champ doit être de ${max} caractères.`
 });
 ```

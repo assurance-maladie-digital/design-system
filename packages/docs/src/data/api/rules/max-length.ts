@@ -10,6 +10,12 @@ export const api: Api = {
 				description: 'La longueur maximale du champ.',
 				required: true
 			},
+			{
+				name: 'ignoreSpaces',
+				type: 'boolean',
+				description: 'Ignore les espaces dans le calcul de la longueur.',
+				default: false
+			},
 			...ruleMessages(`{
 	default: (max: number) => \`La longueur maximale du champ doit être de \${max} caractères.\`
 }`)
