@@ -28,7 +28,7 @@
   - **FranceConnectBtn:** Renommage de la prop `icon-text` en `label` ([#1760](https://github.com/assurance-maladie-digital/design-system/pull/1760)) ([db19524](https://github.com/assurance-maladie-digital/design-system/commit/db1952423d4ef2037f9b0fea8a5b309276c0a520))
 
 - ✅ **Tests**
-  - **formatNir:** Correction d'une faute d'orthographe ([#1806](https://github.com/assurance-maladie-digital/design-system/pull/1806))
+  - **formatNir:** Correction d'une faute d'orthographe ([#1806](https://github.com/assurance-maladie-digital/design-system/pull/1806)) ([1efaa07](https://github.com/assurance-maladie-digital/design-system/commit/1efaa072dcc1c608e0782663deff78b365b2b5f4))
 
 - 🎨 **Qualité de code**
   - **ErrorPage:** Utilisation d'une constante `MixinsDeclaration` ([#1742](https://github.com/assurance-maladie-digital/design-system/pull/1742)) ([bc54ed5](https://github.com/assurance-maladie-digital/design-system/commit/bc54ed516262d2b281803249c5085c2b0eb7e9e2))
@@ -37,6 +37,7 @@
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction du hook de qualité manquant ([#1725](https://github.com/assurance-maladie-digital/design-system/pull/1725)) ([d06aca0](https://github.com/assurance-maladie-digital/design-system/commit/d06aca0703cdacf61da6ce5958f168f9615a00f8))
+  - **template:** Correction de l'intervalle de version pour la dépendance `sass` ([#1807](https://github.com/assurance-maladie-digital/design-system/pull/1807))
 
 - ♻️ **Refactoring**
   - **template:** Utilisation de TypeScript pour la configuration de Jest ([#1684](https://github.com/assurance-maladie-digital/design-system/pull/1684)) ([189652b](https://github.com/assurance-maladie-digital/design-system/commit/189652b335249b359d8c50af3b646c5a0cd30a77))
