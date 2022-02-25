@@ -2,7 +2,6 @@ import { form, formWithNullValues } from './data/forms';
 
 import { getFormValues } from '../';
 
-// Tests
 describe('getFormValues', () => {
 	it('returns all values', () => {
 		expect(getFormValues(form)).toMatchSnapshot();

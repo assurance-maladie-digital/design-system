@@ -30,7 +30,6 @@ function createWrapper(field: Field) {
 	}) as Wrapper<FieldComponent>;
 }
 
-// Tests
 describe('fieldComponent', () => {
 	it('emits change event', async() => {
 		const wrapper = createWrapper(testField);

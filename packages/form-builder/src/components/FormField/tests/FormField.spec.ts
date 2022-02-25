@@ -17,10 +17,8 @@ const testField = {
 	}
 };
 
-// Tests
 describe('FormField', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FormField, {
 			propsData: {
 				field: testField
