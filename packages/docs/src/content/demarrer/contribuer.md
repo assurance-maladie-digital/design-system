@@ -77,7 +77,7 @@ yarn build
 
 Une fois ces étapes effectuées, vous êtes prêt à développer !
 
-<doc-tabs namespace="package" bottom-divider>
+<doc-tabs namespace="package" bottom-divider class="mt-6">
 <doc-tab-item label="Documentation">
 
 La documentation se trouve dans le dossier `packages/docs`, elle est construite en utilisant [Nuxt Content](https://content.nuxtjs.org/fr).<br>
