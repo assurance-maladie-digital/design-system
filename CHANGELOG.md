@@ -11,7 +11,7 @@
   - **FranceConnectBtn:** Ajout d'une transition sur la couleur de fond ([#1779](https://github.com/assurance-maladie-digital/design-system/pull/1779)) ([8086b3d](https://github.com/assurance-maladie-digital/design-system/commit/8086b3d21c48746dc0312697aa25bcd28a2bdbd3))
   - **types:** Ajout de la propriété `resetValidation` à l'interface `VForm` ([#1812](https://github.com/assurance-maladie-digital/design-system/pull/1812)) ([ac7ab8f](https://github.com/assurance-maladie-digital/design-system/commit/ac7ab8f83fc2d49e9d9734991f719aea1a4b9df3))
   - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `minLength` ([#1815](https://github.com/assurance-maladie-digital/design-system/pull/1815)) ([f8583ba](https://github.com/assurance-maladie-digital/design-system/commit/f8583bacd2503031fd1c66af4a1bf7c81085f004))
-  - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `maxLength` ([#1816](https://github.com/assurance-maladie-digital/design-system/pull/1816))
+  - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `maxLength` ([#1816](https://github.com/assurance-maladie-digital/design-system/pull/1816)) ([3cc84dd](https://github.com/assurance-maladie-digital/design-system/commit/3cc84dd7f039a3dd86805fe08fd885c9ef9017ba))
 
 - 🐛 **Corrections de bugs**
   - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))
@@ -60,6 +60,9 @@
 
 - 🎨 **Qualité de code**
   - **template:** Utilisation d'une constante `MixinsDeclaration` dans le composant `Links` ([#1743](https://github.com/assurance-maladie-digital/design-system/pull/1743)) ([a69b466](https://github.com/assurance-maladie-digital/design-system/commit/a69b466f060d6acda7011902baf15e7abc3875e6))
+
+- 📝 **Documentation**
+  - **README:** Ajout du tree-shaking de VueDot ([#1817](https://github.com/assurance-maladie-digital/design-system/pull/1817))
 
 ### FormBuilder
 
