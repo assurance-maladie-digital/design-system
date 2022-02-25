@@ -168,18 +168,20 @@
 			return this.contentSheetHeight;
 		}
 
+		get hasContent(): boolean {
+			return Boolean(this.navigationItems || this.$scopedSlots['navigation-drawer'] || this.$slots['navigation-bar-content']);
+		}
+
 		get showHeaderMenuBtn(): boolean {
-			return !this.showNavBarMenuBtn && this.isMobileVersion;
+			return !this.showNavBarMenuBtn && this.isMobileVersion && this.hasContent;
 		}
 
 		get showNavigationBar(): boolean {
-			const hasContent = Boolean(this.navigationItems || this.$slots['navigation-bar-content']);
-
 			if (this.showHeaderMenuBtn) {
 				return false;
 			}
 
-			return hasContent;
+			return this.hasContent;
 		}
 
 		updateDrawer(value: boolean): void {
