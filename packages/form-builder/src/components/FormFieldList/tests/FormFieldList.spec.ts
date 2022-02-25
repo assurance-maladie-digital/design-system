@@ -10,10 +10,8 @@ import { addressFields } from './data/addressFields';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FormFieldList', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FormFieldList, {
 			propsData: {
 				fields: addressFields

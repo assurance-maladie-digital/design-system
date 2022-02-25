@@ -47,7 +47,7 @@
   - **template:** Utilisation de l'interface `NotificationModule` ([#1772](https://github.com/assurance-maladie-digital/design-system/pull/1772)) ([9596934](https://github.com/assurance-maladie-digital/design-system/commit/95969345b2c554809d3a2e49ba609b911e7025da))
 
 - 🔥 **Suppressions**
-  - **tests:** Suppression des commentaires inutiles ([#18089](https://github.com/assurance-maladie-digital/design-system/pull/18089))
+  - **tests:** Suppression des commentaires inutiles ([#1809](https://github.com/assurance-maladie-digital/design-system/pull/1809)) ([4424eb5](https://github.com/assurance-maladie-digital/design-system/commit/4424eb5c5613158b80c15a6b6f7f566884c29f2b))
 
 - ✅ **Tests**
   - **template:** Ajout d'un test sur `AppHeader` ([#1683](https://github.com/assurance-maladie-digital/design-system/pull/1683)) ([e18f57c](https://github.com/assurance-maladie-digital/design-system/commit/e18f57cb69c0214fe73ee6dd381a92efd623bbc5))
@@ -64,6 +64,9 @@
 - ♻️ **Refactoring**
   - **FormField:** Utilisation de la couleur primaire au lieu de la couleur d'accent ([#1691](https://github.com/assurance-maladie-digital/design-system/pull/1691)) ([4c9c89a](https://github.com/assurance-maladie-digital/design-system/commit/4c9c89a106cf2ada43a4e8d9444f99fed2718768))
   - **RangeField:** Renommage de la propriété interne `isMobile` en `mobileVersion` ([#1741](https://github.com/assurance-maladie-digital/design-system/pull/1741)) ([9c6fed0](https://github.com/assurance-maladie-digital/design-system/commit/9c6fed021aefb9952c6923860e959a36a129668c))
+
+- 🔥 **Suppressions**
+  - **tests:** Suppression des commentaires inutiles ([#1810](https://github.com/assurance-maladie-digital/design-system/pull/1810))
 
 ### Documentation
 

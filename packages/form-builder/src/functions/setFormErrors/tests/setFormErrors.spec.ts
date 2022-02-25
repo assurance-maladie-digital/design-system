@@ -2,7 +2,6 @@ import { form, formErrors, formErrorsInvalidValues, formErrorsWrongTypes } from 
 
 import { setFormErrors } from '../';
 
-// Tests
 describe('setFormErrors', () => {
 	it('sets error messages on fields', () => {
 		expect(setFormErrors(formErrors, form)).toMatchSnapshot();

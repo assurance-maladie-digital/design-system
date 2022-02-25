@@ -32,10 +32,8 @@ const testField: Field = {
 	}
 };
 
-// Tests
 describe('ChoiceField', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(ChoiceField, {
 			propsData: {
 				field: {
@@ -51,7 +49,6 @@ describe('ChoiceField', () => {
 	});
 
 	it('renders the other field', () => {
-		// Mount component
 		wrapper = mountComponent(ChoiceField, {
 			propsData: {
 				field: {
@@ -74,7 +71,6 @@ describe('ChoiceField', () => {
 	});
 
 	it('renders the other field when the corresponding choice is selected', () => {
-		// Mount component
 		wrapper = mountComponent(ChoiceField, {
 			propsData: {
 				field: {
@@ -98,7 +94,6 @@ describe('ChoiceField', () => {
 	});
 
 	it('renders with single error message', () => {
-		// Mount component
 		wrapper = mountComponent(
 			ChoiceField,
 			{
@@ -119,7 +114,6 @@ describe('ChoiceField', () => {
 	});
 
 	it('renders with multiple error messages', () => {
-		// Mount component
 		wrapper = mountComponent(
 			ChoiceField,
 			{
