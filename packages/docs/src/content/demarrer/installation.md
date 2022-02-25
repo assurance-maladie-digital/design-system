@@ -199,7 +199,9 @@ vue invoke @cnamts/vue-dash -- --render-template
 
 Par défaut, tous les composants de Vue Dot sont importés et enregistrés de manière globale.
 
-Pour n’importer que les composants que vous utilisez afin de réduire la taille de l’application finale, il est possible d’utiliser le loader `vueDotLoader` en combinaison avec le plugin [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader) :
+Vous pouvez réduire la taille de votre application finale en n’important que les composants que vous utilisez.
+
+Pour cela, vous devez utiliser le loader `vueDotLoader` en combinaison avec le plugin [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader) :
 
 ```js
 // vue.config.js
