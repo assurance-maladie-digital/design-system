@@ -8,10 +8,8 @@ import AppHeader from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('AppHeader', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(AppHeader, {
 			mocks: {
 				$t: (key: string) => {
