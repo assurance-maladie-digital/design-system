@@ -1,6 +1,6 @@
 ---
 title: Règle de validation notAfterToday
-description: La règle `notAfterToday` permet de vérifier qu’une date est antérieure à la date du jour.
+description: La règle `notAfterToday` permet de vérifier qu’une date est antérieure ou égale à la date du jour.
 ---
 
 <doc-tabs>

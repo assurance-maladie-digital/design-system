@@ -12,7 +12,8 @@
   - **types:** Ajout de la propriété `resetValidation` à l'interface `VForm` ([#1812](https://github.com/assurance-maladie-digital/design-system/pull/1812)) ([ac7ab8f](https://github.com/assurance-maladie-digital/design-system/commit/ac7ab8f83fc2d49e9d9734991f719aea1a4b9df3))
   - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `minLength` ([#1815](https://github.com/assurance-maladie-digital/design-system/pull/1815)) ([f8583ba](https://github.com/assurance-maladie-digital/design-system/commit/f8583bacd2503031fd1c66af4a1bf7c81085f004))
   - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `maxLength` ([#1816](https://github.com/assurance-maladie-digital/design-system/pull/1816)) ([3cc84dd](https://github.com/assurance-maladie-digital/design-system/commit/3cc84dd7f039a3dd86805fe08fd885c9ef9017ba))
-  - **rules:** Ajout de la règle de validation `notAfterDate` ([#1823](https://github.com/assurance-maladie-digital/design-system/pull/1823))
+  - **rules:** Ajout de la règle de validation `notAfterDate` ([#1823](https://github.com/assurance-maladie-digital/design-system/pull/1823)) ([60fca18](https://github.com/assurance-maladie-digital/design-system/commit/60fca18c5d49debd27aa51d73e686abb3c7c0e9b)
+  - **rules:** Ajout de la règle de validation `notBeforeDate` ([#18234](https://github.com/assurance-maladie-digital/design-system/pull/18234))
 
 - 🐛 **Corrections de bugs**
   - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))

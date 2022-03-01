@@ -211,6 +211,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/regles-validation/not-after-today'
 					},
 					{
+						title: 'notBeforeDate',
+						to: '/regles-validation/not-before-date'
+					},
+					{
 						title: 'notBeforeToday',
 						to: '/regles-validation/not-before-today'
 					}
