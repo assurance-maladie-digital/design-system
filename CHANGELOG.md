@@ -12,6 +12,7 @@
   - **types:** Ajout de la propriété `resetValidation` à l'interface `VForm` ([#1812](https://github.com/assurance-maladie-digital/design-system/pull/1812)) ([ac7ab8f](https://github.com/assurance-maladie-digital/design-system/commit/ac7ab8f83fc2d49e9d9734991f719aea1a4b9df3))
   - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `minLength` ([#1815](https://github.com/assurance-maladie-digital/design-system/pull/1815)) ([f8583ba](https://github.com/assurance-maladie-digital/design-system/commit/f8583bacd2503031fd1c66af4a1bf7c81085f004))
   - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `maxLength` ([#1816](https://github.com/assurance-maladie-digital/design-system/pull/1816)) ([3cc84dd](https://github.com/assurance-maladie-digital/design-system/commit/3cc84dd7f039a3dd86805fe08fd885c9ef9017ba))
+  - **rules:** Ajout de la règle de validation `notAfterDate` ([#1823](https://github.com/assurance-maladie-digital/design-system/pull/1823))
 
 - 🐛 **Corrections de bugs**
   - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))
@@ -88,7 +89,7 @@
   - **DocTabs:** Correction de la largeur des onglets verticaux ([#1739](https://github.com/assurance-maladie-digital/design-system/pull/1739)) ([01a3f60](https://github.com/assurance-maladie-digital/design-system/commit/01a3f605045de12d2a8702710cd56275b2bcc640))
   - **global:** Correction de la hauteur minimale des pages ([#1755](https://github.com/assurance-maladie-digital/design-system/pull/1755)) ([7381ff6](https://github.com/assurance-maladie-digital/design-system/commit/7381ff698d495e16f1373870de7c5f16ba7b2216))
   - **global:** Correction des règles typographiques ([#1777](https://github.com/assurance-maladie-digital/design-system/pull/1777)) ([8be7413](https://github.com/assurance-maladie-digital/design-system/commit/8be7413e463f9afd4b4c0d6f235d029f659a9ff9))
-  - **global:** Correction des styles et des espacements ([#1818](https://github.com/assurance-maladie-digital/design-system/pull/1818))
+  - **global:** Correction des styles et des espacements ([#1818](https://github.com/assurance-maladie-digital/design-system/pull/1818)) ([47488e3](https://github.com/assurance-maladie-digital/design-system/commit/47488e3db7e078207ab00955b217cafefafa6d23))
 
 - ♻️ **Refactoring**
   - **accessibility:** Désactivation du tri sur la colonne "Critère" ([#1713](https://github.com/assurance-maladie-digital/design-system/pull/1713)) ([a943d5e](https://github.com/assurance-maladie-digital/design-system/commit/a943d5eb540c704f2a47564d0dfa810cb3e2354d))
