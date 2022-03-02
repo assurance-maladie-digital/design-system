@@ -3,7 +3,8 @@ import { ValidationRule, ValidationResult, ErrorMessages, Value } from '../types
 
 import { defaultErrorMessages } from './locales';
 
-import { isDateAfterNow } from './isDateAfterNow';
+import { isDateBeforeValue } from '../../functions/isDateBeforeValue';
+import { TODAY } from '../../constants';
 
 /**
  * Check that the date is not before today (expects ##/##/#### format)
@@ -13,14 +14,11 @@ import { isDateAfterNow } from './isDateAfterNow';
  */
 export function notBeforeTodayFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
 	return (value: Value): ValidationResult => {
-		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;
 		}
 
-		// If the date is after now, it's a future date, it's valid,
-		// else, the date is before today, it's invalid
-		return isDateAfterNow(value) || ruleMessage(errorMessages, 'default');
+		return !isDateBeforeValue(TODAY, value) || ruleMessage(errorMessages, 'default');
 	};
 }
 

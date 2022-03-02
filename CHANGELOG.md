@@ -34,7 +34,8 @@
   - **HeaderBar:** Refonte du bouton pour activer le menu sur les écrans mobiles ([#1726](https://github.com/assurance-maladie-digital/design-system/pull/1726)) ([50e0938](https://github.com/assurance-maladie-digital/design-system/commit/50e09381f38102e42ab321a3915607efbd111ebe))
   - **HeaderBar:** Ajout des props `show-nav-bar-menu-btn` et `mobile-version` ([#1728](https://github.com/assurance-maladie-digital/design-system/pull/1728)) ([9997290](https://github.com/assurance-maladie-digital/design-system/commit/999729041137d56a73383195f873ef39c82954f9))
   - **FranceConnectBtn:** Renommage de la prop `icon-text` en `label` ([#1760](https://github.com/assurance-maladie-digital/design-system/pull/1760)) ([db19524](https://github.com/assurance-maladie-digital/design-system/commit/db1952423d4ef2037f9b0fea8a5b309276c0a520))
-  - **rules:** Utilisation de la fonction `isDateAfterValue` dans la règle de validation `notAfterToday` ([#1823](https://github.com/assurance-maladie-digital/design-system/pull/1823)) ([60fca18](https://github.com/assurance-maladie-digital/design-system/commit/60fca18c5d49debd27aa51d73e686abb3c7c0e9b))
+  - **rules:** Utilisation de la fonction `isDateAfterValue` dans la règle de validation `notAfterToday` ([#1826](https://github.com/assurance-maladie-digital/design-system/pull/1826)) ([ec57ba7](https://github.com/assurance-maladie-digital/design-system/commit/ec57ba7d27e1960146ecf6e4bf656a8cb54a907c))
+  - **rules:** Utilisation de la fonction `isDateBeforeValue` dans la règle de validation `notBeforeToday` ([#1827](https://github.com/assurance-maladie-digital/design-system/pull/1827))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1808](https://github.com/assurance-maladie-digital/design-system/pull/1808)) ([d2031dc](https://github.com/assurance-maladie-digital/design-system/commit/d2031dc218160ce70ccb3161f4bfe724f56abc57))
