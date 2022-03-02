@@ -14,12 +14,10 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The width of the component */
 			width: {
 				type: String,
 				default: '100px'
 			},
-			/** The height of the component */
 			height: {
 				type: String,
 				default: '1rem'

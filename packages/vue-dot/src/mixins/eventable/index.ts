@@ -11,12 +11,10 @@ type EventsFunction = (date: string) => Events;
 
 const Props = Vue.extend({
 	props: {
-		/** Show weekends in calendar */
 		showWeekends: {
 			type: Boolean,
 			default: false
 		},
-		/** The start date of the range */
 		startDate: {
 			type: String,
 			default: ''
@@ -26,19 +24,13 @@ const Props = Vue.extend({
 
 const MixinsDeclaration = mixins(Props);
 
-/** Add event handling: weekends and ranges */
 @Component
 export class Eventable extends MixinsDeclaration {
-	// Mixin computed data
+	// Customizable mixin
 	options!: Options;
-	/** DatePicker.date */
+	// DatePicker mixin
 	date!: string;
 
-	/**
-	 * Function event for VCalendar event prop
-	 *
-	 * @param {string} date Date with YYYY-MM-DD format
-	 */
 	calendarEvents(date: string): Events {
 		/** Events prop from mixin */
 		const userEvents = this.options.datePicker ? this.options.datePicker.events as EventsFunction : undefined;
@@ -65,14 +57,11 @@ export class Eventable extends MixinsDeclaration {
 		}
 
 		if (this.showWeekends) {
-			// Change color depending on theme
 			const weekEndColor = this.$vuetify.theme.dark ? 'grey darken-1' : 'grey lighten-1';
 
-			// Return a string or false (no event)
 			return isWeekend(date) ? `vd-custom-event ${weekEndColor}` : false;
 		}
 
-		// By default, return false
 		return false;
 	}
 }

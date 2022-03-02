@@ -1,5 +1,6 @@
 import { deepRemoveKeys } from '../';
-import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
+
+import { deepCopy } from '../../deepCopy';
 
 const BASE_OBJECT = {
 	b: 'b',

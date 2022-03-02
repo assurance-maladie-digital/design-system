@@ -9,16 +9,7 @@ const DEFAULT_OPTIONS = {
 };
 
 interface HTMLFnOpts {
-	/**
-	 * Predicate to test attribute
-	 *
-	 * @callback AttrIgnoreFunction
-	 * @param {string} name The attribute name
-	 * @param {string} value The attribute name
-	 * @returns {boolean} Return `true` to ignore the element, `false` otherwise
-	 */
 	attrIgnore: (name: string, value: unknown) => boolean;
-
 	functionRemplacement: string;
 }
 
@@ -27,12 +18,7 @@ interface HTMLFnOpts {
  *
  * `functionRemplacement` is used to ensure a deterministic snapshot
  * (workaround of https://github.com/vuejs/vue-test-utils/issues/975)
- *
- * @param {Wrapper} wrapper Default wrapper
- * @param {object} [options] Wrapper options
- * @param {string} options.functionRemplacement Default remplacement is '{[Function]}'
- * @param {AttrIgnoreFunction} options.attrIgnore Default is `undefined`
- * @returns {string} The serialized wrapper
+ * TODO: check if still required
  */
 export function html(wrapper: Wrapper<Vue>, options?: HTMLFnOpts): string {
 	const opts = {

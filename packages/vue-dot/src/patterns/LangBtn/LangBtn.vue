@@ -1,12 +1,10 @@
 <template>
-	<!-- The menu -->
 	<VMenu
 		v-if="Object.keys(languages).length"
 		v-bind="options.menu"
 		class="vd-lang-btn"
 		content-class="vd-lang-menu"
 	>
-		<!-- The activator, the main button -->
 		<template #activator="{ on }">
 			<VBtn
 				v-if="currentLangData"
@@ -14,12 +12,10 @@
 				v-bind="options.btn"
 				v-on="on"
 			>
-				<!-- Current language -->
 				<span :class="currentLangClass">
 					{{ currentLangData.name }}
 				</span>
 
-				<!-- Down arrow -->
 				<VIcon
 					v-if="!hideDownArrow"
 					v-bind="options.icon"
@@ -29,7 +25,6 @@
 			</VBtn>
 		</template>
 
-		<!-- Languages list -->
 		<VList v-bind="options.list">
 			<VListItem
 				v-for="(item, lang) in languages"
@@ -37,7 +32,6 @@
 				v-bind="options.listTile"
 				@click="updateLang(lang)"
 			>
-				<!-- Language name -->
 				<VListItemTitle v-bind="options.listTileTitle">
 					{{ item.nativeName }}
 				</VListItemTitle>
@@ -64,15 +58,14 @@
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * The list of available languages,
-			 * by default it's all (*)
-			 */
 			availableLanguages: {
 				type: [Array, String] as PropType<string[] | AllLanguagesChar>,
 				default: () => ['fr', 'en']
 			},
-			/** Hide the down arrow inside the activator button */
+			value: {
+				type: String,
+				default: 'fr'
+			},
 			hideDownArrow: {
 				type: Boolean,
 				default: false
@@ -80,21 +73,12 @@
 			label: {
 				type: String,
 				default: locales.label
-			},
-			/** The v-model value */
-			value: {
-				type: String,
-				default: 'fr'
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * LangBtn is a component that displays a list of languages
-	 * to choose from when clicking a button
-	 */
 	@Component({
 		model: {
 			prop: 'value',
@@ -102,7 +86,6 @@
 		}
 	})
 	export default class LangBtn extends MixinsDeclaration {
-		// Icon
 		downArrowIcon = mdiChevronDown;
 
 		currentLang = this.value;
@@ -111,7 +94,6 @@
 			return this.hideDownArrow ? undefined : 'ml-1';
 		}
 
-		/** Returns the list of languages to display in the list */
 		get languages(): Languages {
 			let data: Languages = {};
 
@@ -119,7 +101,6 @@
 				const availableLanguages = this.availableLanguages as string[];
 
 				availableLanguages.forEach((lang: string) => {
-					// Get the languages info
 					data[lang] = languages.getLanguageInfo(lang);
 				});
 			} else {
@@ -131,27 +112,22 @@
 			return data;
 		}
 
-		/** Compute data to simplify the template */
 		get currentLangData(): CurrentLangData | null {
 			if (!this.currentLang) {
 				return null;
 			}
 
-			// Current lang data
 			return {
-				/** The native name */
 				name: this.languages[this.currentLang].nativeName,
-				/** The accessible name of the main button */
 				label: `${this.label} ${this.languages[this.currentLang].nativeName}`
 			};
 		}
 
-		/** Returns a formatted object of all the languages */
 		getFormattedLanguages(): Languages {
 			const data: Languages = {};
 
 			languages
-				.getAllLanguageCode() // Returns an array with all the language codes supported
+				.getAllLanguageCode()
 				.forEach((lang: string) => {
 					// languages.getLanguageInfo(langcode) Returns an object:
 					// {
@@ -168,7 +144,6 @@
 			return data;
 		}
 
-		/** Emit an event with the new value and update currentLang */
 		updateLang(lang: string): void {
 			this.currentLang = lang;
 
@@ -178,9 +153,8 @@
 </script>
 
 <style lang="scss" scoped>
-	// Allow scrollbar for the menu,
-	// and limit it's height to 300px
-	// (needed when there is a lot of content)
+	// Allow scrollbar for the menu & limit it's height to 300px
+	// (necessary when there is a lot of content)
 	.vd-lang-menu {
 		overflow: auto;
 		max-height: 300px;

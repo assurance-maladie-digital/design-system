@@ -7,7 +7,7 @@ import { parseDate } from '../../helpers/parseDate';
 import { formatDate } from '../../functions/formatDate';
 import { isDateBeforeValue } from '../../functions/isDateBeforeValue';
 
-/** Check that the date is not after a value (expects ##/##/#### format) */
+/** Check that the value is not after the specified date (DD/MM/YYYY format) */
 export function notBeforeDate(date: string, errorMessages = defaultErrorMessages): ValidationRule {
 	return (value: Value): ValidationResult => {
 		if (!value) {

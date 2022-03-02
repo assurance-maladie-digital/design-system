@@ -17,7 +17,7 @@ function createTestComponent(mixinData = {}) {
 	return Vue.component('Test', {
 		mixins: [
 			Eventable,
-			customizable(mixinData) // Needed because used in eventable
+			customizable(mixinData) // Necessary since used in eventable
 		],
 		template: '<div />'
 	});
@@ -76,7 +76,7 @@ describe('Eventable', () => {
 				startDate: '2019-10-21'
 			},
 			mocks: {
-				date: '2019-10-27' // End date
+				date: '2019-10-27'
 			}
 		}) as Wrapper<TestComponent>;
 
@@ -91,7 +91,7 @@ describe('Eventable', () => {
 				startDate: '2019-10-21'
 			},
 			mocks: {
-				date: '2019-10-22' // End date
+				date: '2019-10-22'
 			}
 		}) as Wrapper<TestComponent>;
 

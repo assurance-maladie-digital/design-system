@@ -3,7 +3,7 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
 .v-application {
-	// Change the main color when a warning is present
+	// WarningRules: Change the main color when a warning is present
 	.vd-warning-rules {
 		&.success--text,
 		.success--text {
@@ -12,7 +12,7 @@
 		}
 	}
 
-	// Make the tooltip menu look like a tooltip
+	// CopyBtn: Make the tooltip menu look like a tooltip
 	.vd-copy-tooltip-menu {
 		padding: 6px 16px;
 		box-shadow: none;

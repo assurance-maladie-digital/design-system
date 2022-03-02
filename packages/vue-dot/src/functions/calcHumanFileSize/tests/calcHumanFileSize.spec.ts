@@ -1,6 +1,6 @@
 import { calcHumanFileSize } from '../';
 
-const sizeMax = 4096 * 1024; // Default 4MB
+const sizeMax = 4096 * 1024; // 4MB
 
 const fileSizeUnits = [
 	'B',

@@ -3,12 +3,6 @@ import Component, { mixins } from 'vue-class-component';
 
 const Props = Vue.extend({
 	props: {
-		/**
-		 * Custom mask string.
-		 * By default it's computed from dateFormat
-		 *
-		 * If false is passed, don't apply a mask
-		 */
 		mask: {
 			type: [String, Boolean],
 			default: undefined
@@ -18,26 +12,17 @@ const Props = Vue.extend({
 
 const MixinsDeclaration = mixins(Props);
 
-/** Provides computed date format mask value */
 @Component
 export class MaskValue extends MixinsDeclaration {
-	/** DatePicker.dateFormat */
+	// DatePicker mixin
 	dateFormat!: string;
 
-	/**
-	 * The mask to apply to the TextField
-	 *
-	 * @example
-	 * '##/##/####' for default dateFormat
-	 */
 	get maskValue(): string | undefined {
-		// If the mask is false, don't apply mask
 		if (this.mask === false) {
-			// Undefined is the default value for mask property
+			return;
 			return undefined;
 		}
 
-		// If a mask is specified by the user, use it
 		if (typeof this.mask === 'string') {
 			return this.mask;
 		}

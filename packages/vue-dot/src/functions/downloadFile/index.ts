@@ -1,18 +1,11 @@
 import { BufferSource } from './types';
 
-/**
- * Download a file
- *
- * @param {BufferSource | Blob | string} content The content to download
- * @param {string} filename The filename to download
- * @param {string} type The file type
- * @param {boolean} utf8Bom Add UTF-8 header for Excel files
- */
+/** Download a file */
 export function downloadFile(
 	content: BufferSource | Blob | string,
 	filename: string,
 	type: string,
-	utf8Bom = false
+	utf8Bom = false // UTF-8 header for Excel files
 ): void {
 	/**
 	 * \ufeff = UTF-8 encoding

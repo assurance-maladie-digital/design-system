@@ -4,7 +4,6 @@
 		class="vd-data-list"
 	>
 		<VFadeTransition mode="out-in">
-			<!-- The DataList loading skeleton -->
 			<DataListLoading
 				v-if="loading"
 				:items-number="itemsNumberLoading"
@@ -64,7 +63,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The items to display */
 			items: {
 				type: Array as PropType<IDataList>,
 				required: true
@@ -73,7 +71,6 @@
 				type: Object as PropType<DataListIcons | undefined>,
 				default: undefined
 			},
-			// Title options
 			listTitle: {
 				type: String,
 				default: undefined
@@ -86,27 +83,22 @@
 				type: Boolean,
 				default: false
 			},
-			/** The text to display as fallback */
 			placeholder: {
 				type: String,
 				default: locales.placeholder
 			},
-			/** Loading mode */
 			loading: {
 				type: Boolean,
 				default: false
 			},
-			/** The number of items to display during loading */
 			itemsNumberLoading: {
 				type: Number,
 				default: 1
 			},
-			/** Display the heading while loading */
 			headingLoading: {
 				type: Boolean,
 				default: false
 			},
-			/** Render the value as plain HTML */
 			renderHtmlValue: {
 				type: Boolean,
 				default: false
@@ -116,10 +108,7 @@
 
 	const MixinsDeclaration = mixins(Props, Widthable);
 
-	/**
-	 * DataList is a component that displays list of
-	 * items containing key/value
-	 */
+	/** DataList is a component that displays list key/value items */
 	@Component({
 		components: {
 			DataListItem,

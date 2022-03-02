@@ -87,14 +87,11 @@ describe('DataListItem', () => {
 			}
 		}, true);
 
-		// Find the button action
 		const actionBtn = wrapper.find('.vd-data-list-item-action-btn');
 		expect(actionBtn.exists()).toBe(true);
 
-		// Click on it
 		actionBtn.trigger('click');
 
-		// Wait until $emits have been handled
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('click:action')).toBeTruthy();

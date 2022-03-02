@@ -9,7 +9,6 @@
 				:key="index"
 				v-bind="options.listItem"
 			>
-				<!-- Icon -->
 				<VListItemAvatar v-bind="options.listItemAvatar">
 					<VIcon
 						v-bind="options.listItemAvatarIcon"
@@ -20,7 +19,6 @@
 				</VListItemAvatar>
 
 				<VListItemContent v-bind="options.listItemContent">
-					<!-- File to upload name -->
 					<VListItemTitle
 						v-bind="options.listItemTitle"
 						:class="[
@@ -38,7 +36,6 @@
 						{{ optionalFileText }}
 					</VListItemSubtitle>
 
-					<!-- Uploaded file name -->
 					<VListItemSubtitle
 						v-if="file.name"
 						v-bind="options.listItemSubtitle"
@@ -47,7 +44,6 @@
 					</VListItemSubtitle>
 				</VListItemContent>
 
-				<!-- Action buttons -->
 				<VListItemAction v-bind="options.listItemAction">
 					<VBtn
 						v-if="file.state === 'initial'"
@@ -139,22 +135,18 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Show the "view file" button */
 			showViewBtn: {
 				type: Boolean,
 				default: false
 			},
-			/** The list of files to display */
 			files: {
 				type: Array as PropType<FileItem[]>,
 				required: true
 			},
-			/** Hide the last divider of the list */
 			hideLastDivider: {
 				type: Boolean,
 				default: false
 			},
-			/** The text to display when a file is optional */
 			optionalFileText: {
 				type: String,
 				default: locales.optional
@@ -164,13 +156,10 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
-	/** FileList is a component that displays a list of files */
 	@Component
 	export default class FileList extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		// Icons
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
 		deleteIcon = mdiDelete;
@@ -202,10 +191,6 @@
 			}
 		}
 
-		/**
-		 * Get the default item color
-		 * depending on theme (light or dark)
-		 */
 		getItemColor(state: string): string {
 			let color = 'grey--text ';
 			// Only the modifier changes

@@ -80,10 +80,8 @@
 
 	@Component
 	export default class FilterManager extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		// Icon
 		closeIcon = mdiCloseCircle;
 		deleteIcon = mdiWindowClose;
 		editIcon = mdiPencil;

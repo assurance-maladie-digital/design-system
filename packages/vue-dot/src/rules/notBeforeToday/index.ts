@@ -5,15 +5,9 @@ import { defaultErrorMessages } from './locales';
 
 import { isDateAfterNow } from './isDateAfterNow';
 
-/**
- * Check that the date is not before today (expects ##/##/#### format)
- *
- * @param {ErrorMessages} [errorMessages] Custom error messages
- * @returns {ValidationRule} Validation result
- */
+/** Check that the value is not before today (DD/MM/YYYY format) */
 export function notBeforeTodayFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
 	return (value: Value): ValidationResult => {
-		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;
 		}
