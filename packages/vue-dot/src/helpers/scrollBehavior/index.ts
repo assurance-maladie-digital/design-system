@@ -1,6 +1,6 @@
 import { Route, Position, PositionResult } from 'vue-router/types/router';
 
-const defaultPosition = { x: 0, y: 0 };
+const DEFAULT_POSITION = { x: 0, y: 0 };
 
 /** Get the scroll position for Vue Router (simulate browser behavior) */
 export function scrollBehavior(to: Route, from: Route, savedPosition: void | Position): PositionResult {
@@ -10,5 +10,5 @@ export function scrollBehavior(to: Route, from: Route, savedPosition: void | Pos
 		};
 	}
 
-	return savedPosition || defaultPosition;
+	return savedPosition || DEFAULT_POSITION;
 }

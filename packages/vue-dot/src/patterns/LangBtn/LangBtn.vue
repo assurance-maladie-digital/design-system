@@ -129,9 +129,7 @@
 			languages
 				.getAllLanguageCode()
 				.forEach((language: string) => {
-					const languageInfo = languages.getLanguageInfo(language) as Language;
-
-					data[language] = languageInfo;
+					data[language] = languages.getLanguageInfo(language) as Language;
 				});
 
 			return data;
