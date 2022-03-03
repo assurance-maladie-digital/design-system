@@ -5,20 +5,12 @@ import { defaultErrorMessages } from './locales';
 
 export type Value = string | string[] | null;
 
-/**
- * Check that the field is non-empty
- *
- * @param {ErrorMessages} [errorMessages] Custom error messages
- * @returns {ValidationRule} Validation result
- */
+/** Check that the value is not empty */
 export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule<Value> {
-	// The value can be an array of string in select with the multiple prop
 	return (value: Value): ValidationResult => {
 		let valid: boolean;
 
-		// If the value is an array
 		if (Array.isArray(value)) {
-			// Check it's length
 			valid = value.length !== 0;
 		} else {
 			// If the value is falsy (empty string),

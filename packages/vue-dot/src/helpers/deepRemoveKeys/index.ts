@@ -1,13 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type UnknownValue = any;
 
-/**
- * Deep remove a list of keys in object or array
- *
- * @param {any} collection The collection to inspect deeply
- * @param {string|string[]} keys The keys to delete
- * @returns {any} The new collection
- */
+/** Deep remove a list of keys in an object or an array */
 export function deepRemoveKeys<T = any>(collection: UnknownValue, keys: string | string[]): T {
 	if (collection instanceof Array) {
 		collection.forEach((item) => {

@@ -19,11 +19,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	/**
-	 * FooterWrapper is a component used to display a Footer
-	 *
-	 * @deprecated Use FooterBar instead
-	 */
+	/** @deprecated Use FooterBar instead */
 	@Component
 	export default class FooterWrapper extends Vue {
 		mounted() {

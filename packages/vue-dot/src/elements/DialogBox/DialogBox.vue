@@ -70,35 +70,26 @@
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * Show dialog or not
-			 * Default value false, dialog not showing
-			 */
 			value: {
 				type: Boolean,
 				default: false
 			},
-			/** The title of the DialogBox */
 			title: {
 				type: String,
 				default: undefined
 			},
-			/** The width of the DialogBox */
 			width: {
 				type: String,
 				default: '800px'
 			},
-			/** The label of the cancel button */
 			cancelBtnText: {
 				type: String,
 				default: locales.cancelBtn
 			},
-			/** The label of the confirm button */
 			confirmBtnText: {
 				type: String,
 				default: locales.confirmBtn
 			},
-			/** Hide the action buttons */
 			hideActions: {
 				type: Boolean,
 				default: false
@@ -110,7 +101,6 @@
 
 	@Component({
 		inheritAttrs: false,
-		// v-model
 		model: {
 			prop: 'value',
 			event: 'change'
@@ -119,7 +109,6 @@
 	export default class DialogBox extends MixinsDeclaration {
 		closeIcon = mdiClose;
 
-		/** Internal value */
 		get dialog(): boolean {
 			return this.value;
 		}
@@ -128,11 +117,6 @@
 			this.$emit('change', value);
 		}
 
-		/**
-		 * Close the dialog
-		 *
-		 * @returns {void}
-		 */
 		close(): void {
 			this.$emit('change', false);
 		}

@@ -1,9 +1,6 @@
 import { ErrorMessages, GenericFnOpt } from '../../rules/types';
 
-/**
- * Generic error messages function
- * Executes a function that returns a string, or returns a string
- */
+/** Get the value of an error message */
 export function ruleMessage<T>(
 	errorMessages: ErrorMessages<T>,
 	key: string,

@@ -78,15 +78,7 @@
 
 		state = STATE_ENUM.idle;
 
-		/**
-		 * Compute the options for the VBtn
-		 * (Merge options and binded attributes)
-		 *
-		 * @returns {Options} Computed options
-		 */
 		get btnOptions(): Options {
-			// Merge btn options (custom or default) with directly binded
-			// attributes (theses attributes will override 'options.btn')
 			return deepMerge<Options>(this.options.btn, this.$attrs);
 		}
 

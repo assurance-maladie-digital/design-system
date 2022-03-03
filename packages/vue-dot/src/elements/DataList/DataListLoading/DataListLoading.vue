@@ -44,12 +44,10 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Number of items */
 			itemsNumber: {
 				type: Number,
 				default: 1
 			},
-			/** Heading Loading option */
 			heading: {
 				type: Boolean,
 				default: false

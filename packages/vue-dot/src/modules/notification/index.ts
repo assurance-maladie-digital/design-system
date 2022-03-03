@@ -25,11 +25,9 @@ export const actions: ActionTree<NotificationState, RootState> = {
 };
 
 export const mutations: MutationTree<NotificationState> = {
-	/** Add or replace with the new notification */
 	ADD(state, notification: NotificationObj) {
 		state.notification = notification;
 	},
-	/** Clear the notification */
 	CLEAR(state) {
 		state.notification = null;
 	}
@@ -37,7 +35,6 @@ export const mutations: MutationTree<NotificationState> = {
 
 export const getters: GetterTree<NotificationState, RootState> = {};
 
-/** The notification module */
 export const notification: Module<NotificationState, RootState> = {
 	namespaced: true,
 	state,

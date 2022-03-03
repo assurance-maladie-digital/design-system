@@ -54,12 +54,6 @@
 
 	@Component
 	export default class DataListGroup extends MixinsDeclaration {
-		/**
-		 * Emit the dataList item object when user clicked on the corresponding action
-		 *
-		 * @param {number} dataListIndex The index of the selected data list
-		 * @param {number} itemIndex The index of the item into the selected data list
-		 */
 		emitItemAction(dataListIndex: number, itemIndex: number): void {
 			const eventValue: DataListActionEvent = {
 				dataListIndex,

@@ -19,7 +19,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Disable the button */
 			inert: {
 				type: Boolean,
 				default: false
@@ -29,21 +28,11 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	/**
-	 * FooterBtn is a component used to display a button in Footer
-	 *
-	 * @deprecated Use FooterBar instead
-	 */
+	/** @deprecated Use FooterBar instead */
 	@Component({
 		inheritAttrs: false
 	})
 	export default class FooterBtn extends MixinsDeclaration {
-		/**
-		 * The tag of the VBtn
-		 * (Null will use Vuetify's default, div is used when inert for better a11y)
-		 *
-		 * @returns {string|null} The tag to render
-		 */
 		get tag(): string | null {
 			return this.inert ? 'div' : null;
 		}

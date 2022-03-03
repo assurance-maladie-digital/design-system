@@ -24,18 +24,15 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The size of the container */
 			size: {
 				type: String,
 				default: SizeEnum.X_LARGE,
 				validator: (value: string) => propValidator('size', SIZE_ENUM_VALUES, value)
 			},
-			/** Overwrite default spacing */
 			spacing: {
 				type: String,
 				default: undefined
 			},
-			/** The background color of the container */
 			color: {
 				type: String,
 				default: 'transparent'

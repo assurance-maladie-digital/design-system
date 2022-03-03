@@ -42,29 +42,18 @@
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * The accessible label of the button
-			 * required because if not present, the button
-			 * will not be properly accessible to screen readers
-			 */
 			label: {
 				type: String,
 				required: true
 			},
-			/**
-			 * The text that will be copied to the clipboard,
-			 * or a function that will return it
-			 */
 			textToCopy: {
 				type: [Function, String] as PropType<() => string | string>,
 				required: true
 			},
-			/** Hide the tooltip */
 			hideTooltip: {
 				type: Boolean,
 				default: false
 			},
-			/** Tooltip display time in milliseconds */
 			tooltipDuration: {
 				type: Number,
 				default: 2500
@@ -74,22 +63,16 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * CopyBtn is a component that copy text to the clipboard and
-	 * shows a tooltip
-	 */
+	/** CopyBtn is a component that copies text to the clipboard & displays a tooltip */
 	@Component
 	export default class CopyBtn extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		// Icon
 		copyIcon = mdiContentCopy;
 
 		/** Tooltip v-model */
 		tooltip = false;
 
-		/** When the copy button is clicked */
 		copy(): void {
 			let toCopy: string;
 

@@ -60,32 +60,26 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The title of the ErrorPage (bigger if code prop isn't present) */
 			pageTitle: {
 				type: String,
 				required: true
 			},
-			/** Displays a message in a paragraph to the user */
 			message: {
 				type: String,
 				required: true
 			},
-			/** The HTTP code to display (optional) */
 			code: {
 				type: String,
 				default: undefined
 			},
-			/** Display a link to 'home' route when a text is passed */
 			btnText: {
 				type: String,
 				default: locales.btnText
 			},
-			/** The route of the button, default to home page */
 			btnRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'home' })
 			},
-			/** Remove the button */
 			noBtn: {
 				type: Boolean,
 				default: false

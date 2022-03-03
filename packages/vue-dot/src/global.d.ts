@@ -8,12 +8,11 @@ import { Framework } from 'vuetify/types';
 type UnknownValue = any;
 
 declare global {
-	// Add window.Vue
 	interface Window {
 		Vue?: VueConstructor;
 	}
 
-	// @see https://github.com/microsoft/TypeScript/issues/45612
+	/** @see https://github.com/microsoft/TypeScript/issues/45612 */
 	interface Navigator {
 		msSaveBlob(blob: UnknownValue, defaultName?: string): boolean;
 		msSaveOrOpenBlob(blob: UnknownValue, defaultName?: string): boolean;
@@ -21,7 +20,6 @@ declare global {
 }
 
 declare module 'vue/types/vue' {
-	// Add this.$vuetify
 	interface Vue {
 		$vd: VueDotOptions;
 		$vuetify: Framework;
