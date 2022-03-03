@@ -16,7 +16,7 @@ const Props = Vue.extend({
 		},
 		fileSizeMax: {
 			type: Number,
-			default: 10_485_760 // Default 10MB
+			default: 10_485_760 // 10MB
 		},
 		fileSizeUnits: {
 			type: Array as PropType<string[]>,

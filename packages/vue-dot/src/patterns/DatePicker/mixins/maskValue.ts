@@ -19,7 +19,6 @@ export class MaskValue extends MixinsDeclaration {
 
 	get maskValue(): string | undefined {
 		if (this.mask === false) {
-			return;
 			return undefined;
 		}
 
