@@ -97,7 +97,7 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 		:headers="headers"
 		:items="users"
 		:server-items-length="totalUsers"
-		:loading="state === STATE_ENUM.pending"
+		:loading="state === StateEnum.PENDING"
 		suffix="api-example"
 		@update:options="fetchData"
 	/>
@@ -112,13 +112,13 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 	import { User } from '@/services/getUsers/types';
 	import { getUsersFromApi } from '@/services/getUsers/api';
 
-	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
+	import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
-		STATE_ENUM = STATE_ENUM;
+		StateEnum = StateEnum;
 
-		state = STATE_ENUM.idle;
+		state = StateEnum.IDLE;
 
 		options = {} as DataOptions;
 		headers = [
@@ -140,7 +140,7 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 		totalUsers = 0;
 
 		async fetchData(): Promise<void> {
-			this.state = STATE_ENUM.pending;
+			this.state = StateEnum.PENDING;
 
 			try {
 				const res = await getUsersFromApi(this.options);
@@ -149,9 +149,9 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 				this.users = items;
 				this.totalUsers = total;
 
-				this.state = STATE_ENUM.resolved;
+				this.state = StateEnum.RESOLVED;
 			} catch(err) {
-				this.state = STATE_ENUM.rejected;
+				this.state = StateEnum.REJECTED;
 			}
 		}
 	}
@@ -166,7 +166,7 @@ Les valeurs de l’objet `options` seront mises à jour par le composant `Pagina
 C’est la fonction `fetchData` qui utilisera notre API pour récupérer les données. Elle sera appelée lorsque l’objet `options` sera modifié grâce à la directive `@update:options="fetchData"`.<br>
 Une fois récupérés, nous stockerons les `items` dans la variables `users` et le nombre total d’items `total` dans la variable `totalUsers` pour les passer respectivement au tableau dans les props `items` et `server-items-length`.
 
-L’enum `STATE_ENUM` et la variable `state` servent à gérer l’état de chargement du tableau via la prop `loading`, qui active le chargement lorsque la fonction `fetchData` est appelée et ce tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
+L’enum `StateEnum` et la variable `state` servent à gérer l’état de chargement du tableau via la prop `loading`, qui active le chargement lorsque la fonction `fetchData` est appelée et ce tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
 
 ## Exemple
 

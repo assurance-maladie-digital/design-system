@@ -4,7 +4,7 @@
 		:items="users"
 		:options.sync="options"
 		:server-items-length="totalUsers"
-		:loading="state === STATE_ENUM.pending"
+		:loading="state === StateEnum.PENDING"
 		suffix="api-example"
 		@update:options="fetchData"
 	/>
@@ -14,7 +14,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
+	import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 	import { DataOptions } from 'vuetify/types';
 
@@ -32,13 +32,13 @@
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
-		STATE_ENUM = STATE_ENUM;
+		StateEnum = StateEnum;
 
 		totalUsers = 0;
 		users: User[] = [];
 		options = {} as DataOptions;
 
-		state = STATE_ENUM.idle;
+		state = StateEnum.IDLE;
 
 		headers = [
 			{
@@ -75,7 +75,7 @@
 		 * It handles sorting and pagination
 		 */
 		async getDataFromApi({ sortBy, sortDesc, page, itemsPerPage }: DataOptions): Promise<DataObj> {
-			this.state = STATE_ENUM.pending;
+			this.state = StateEnum.PENDING;
 
 			await this.wait(1000);
 
@@ -123,7 +123,7 @@
 					total
 				});
 
-				this.state = STATE_ENUM.resolved;
+				this.state = StateEnum.RESOLVED;
 			});
 		}
 

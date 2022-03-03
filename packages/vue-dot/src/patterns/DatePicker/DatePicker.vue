@@ -188,11 +188,9 @@
 			}
 
 			if (this.textFieldClass) {
-				if (typeof this.textFieldClass === 'object') {
-					textFieldClasses.push(this.textFieldClass);
-				} else {
-					textFieldClasses.push([this.textFieldClass]);
-				}
+				const classes = typeof this.textFieldClass === 'object' ? this.textFieldClass : [this.textFieldClass];
+
+				textFieldClasses.push(classes);
 			}
 
 			return textFieldClasses;

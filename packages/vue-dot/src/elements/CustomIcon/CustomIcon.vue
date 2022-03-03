@@ -1,9 +1,4 @@
 <template>
-	<!--
-		By default `aria-hidden` is present, this hides the icon
-		from screen-readers, an accessible label can be
-		provided by the developer if necessary
-	-->
 	<span
 		:class="{
 			'vd-small': small,
@@ -89,10 +84,6 @@
 
 	const MixinsDeclaration = mixins(Props, ThemeIcon);
 
-	/**
-	 * CustomIcon is a component that displays an SVG Icon
-	 * defined in the theme that is passed as an option of the plugin
-	 */
 	@Component
 	export default class CustomIcon extends MixinsDeclaration {}
 </script>

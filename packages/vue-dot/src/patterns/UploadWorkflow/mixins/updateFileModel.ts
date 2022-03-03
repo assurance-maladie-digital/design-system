@@ -30,9 +30,9 @@ export class UpdateFileModel extends Vue {
 
 		if (value === undefined) {
 			this.$delete(this.fileList[index], key);
-		} else {
-			// Else, set it
-			this.$set(this.fileList[index], key, value);
+			return;
 		}
+
+		this.$set(this.fileList[index], key, value);
 	}
 }

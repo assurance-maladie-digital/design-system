@@ -63,35 +63,36 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/** CopyBtn is a component that copies text to the clipboard & displays a tooltip */
 	@Component
 	export default class CopyBtn extends MixinsDeclaration {
 		locales = locales;
 
 		copyIcon = mdiContentCopy;
 
-		/** Tooltip v-model */
 		tooltip = false;
 
 		copy(): void {
-			let toCopy: string;
+			const contentToCopy = typeof this.textToCopy === 'function' ? this.textToCopy() : this.textToCopy;
 
-			// Get text to copy
-			if (typeof this.textToCopy === 'function') {
-				toCopy = this.textToCopy();
-			} else {
-				toCopy = this.textToCopy;
+			copyToClipboard(contentToCopy);
+
+			if (this.hideTooltip) {
+				return;
 			}
 
-			// Copy the text to the clipboard
-			copyToClipboard(toCopy);
-
-			if (!this.hideTooltip) {
-				// Hide tooltip after tooltipDuration delay
-				setTimeout(() => {
-					this.tooltip = false;
-				}, this.tooltipDuration);
-			}
+			setTimeout(() => {
+				this.tooltip = false;
+			}, this.tooltipDuration);
 		}
 	}
 </script>
+
+<style lang="scss">
+	// Make the tooltip menu look like a tooltip
+	.vd-copy-tooltip-menu {
+		padding: 6px 16px;
+		box-shadow: none;
+		margin-top: 2px;
+		background: rgba(97, 97, 97, .9);
+	}
+</style>

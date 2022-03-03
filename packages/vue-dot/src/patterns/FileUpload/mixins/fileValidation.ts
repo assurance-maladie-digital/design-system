@@ -1,9 +1,9 @@
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-import { locales } from '../locales';
-
 import { getFileExtension } from '../../../functions/getFileExtension';
+
+import { locales } from '../locales';
 
 import { ErrorEvent } from '../types';
 import { ErrorCodes } from '../errorCodes';

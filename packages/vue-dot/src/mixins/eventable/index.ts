@@ -32,28 +32,16 @@ export class Eventable extends MixinsDeclaration {
 	date!: string;
 
 	calendarEvents(date: string): Events {
-		/** Events prop from mixin */
-		const userEvents = this.options.datePicker ? this.options.datePicker.events as EventsFunction : undefined;
+		const userEvents = this.options.datePicker?.events as EventsFunction | null;
 
-		// If the user set events, override default behavior
 		if (userEvents) {
-			// If it's a function, execute it with date parameter
-			if (typeof userEvents === 'function') {
-				return userEvents(date);
-			}
-
-			// Else, simply return the value
-			return userEvents;
+			return typeof userEvents === 'function' ? userEvents(date) : userEvents;
 		}
 
-		// If there is a start date & a date is selected,
-		// add events to date in this range
-		if (this.startDate && this.date) {
-			const inRange = isDateInRange(date, this.startDate, this.date);
+		const dateInRange = isDateInRange(date, this.startDate, this.date);
 
-			if (inRange) {
-				return 'vd-custom-event accent';
-			}
+		if (this.startDate && this.date && dateInRange) {
+			return 'vd-custom-event accent';
 		}
 
 		if (this.showWeekends) {

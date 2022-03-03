@@ -19,19 +19,13 @@ export class MaskValue extends MixinsDeclaration {
 
 	get maskValue(): string | undefined {
 		if (this.mask === false) {
-			return undefined;
+			return;
 		}
 
 		if (typeof this.mask === 'string') {
 			return this.mask;
 		}
 
-		// Else, compute the mask from dateFormat
-
-		// Match every letter, case insensitive
-		const regexp = /[a-z]/gmi;
-
-		// Replace every letter by # (in Vuetify masks, # matches any digit)
-		return this.dateFormat.replace(regexp, '#');
+		return this.dateFormat.replace(/[a-z]/gmi, '#');
 	}
 }

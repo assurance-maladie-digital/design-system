@@ -56,7 +56,7 @@
 
 	import { mdiGithub } from '@mdi/js';
 
-	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
+	import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 	import { formatReleaseDate } from '../../functions/formatReleaseDate';
 	import { getLatestRelease } from '../../services/github/api';
@@ -67,18 +67,18 @@
 	export default class DocHomePageHeader extends Vue {
 		githubIcon = mdiGithub;
 
-		state = STATE_ENUM.idle;
+		state = StateEnum.IDLE;
 
 		version: string | null = null;
 		releaseDate: string | null = null;
 
 		@Fetch
 		async fetch(): Promise<void> {
-			this.state = STATE_ENUM.pending;
+			this.state = StateEnum.PENDING;
 
 			const release = await getLatestRelease();
 
-			this.state = STATE_ENUM.resolved;
+			this.state = StateEnum.RESOLVED;
 			this.version = release.version;
 			this.releaseDate = formatReleaseDate(release.date);
 		}

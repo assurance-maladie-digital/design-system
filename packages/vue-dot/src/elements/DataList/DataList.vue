@@ -25,7 +25,7 @@
 
 				<ul
 					v-if="items.length"
-					class="vd-data-list-field pl-0"
+					class="pl-0"
 				>
 					<DataListItem
 						v-for="(item, index) in items"
@@ -108,7 +108,6 @@
 
 	const MixinsDeclaration = mixins(Props, Widthable);
 
-	/** DataList is a component that displays list key/value items */
 	@Component({
 		components: {
 			DataListItem,
@@ -138,7 +137,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-data-list-field {
+	ul {
 		list-style: none;
 	}
 </style>

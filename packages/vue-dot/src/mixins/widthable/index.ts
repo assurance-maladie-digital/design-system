@@ -27,25 +27,15 @@ const MixinsDeclaration = mixins(Props);
 
 @Component
 export class Widthable extends MixinsDeclaration {
-	get widthStyles(): IndexedObject {
-		const styles: IndexedObject = {};
-
+	get widthStyles(): IndexedObject<string | undefined> {
 		const minWidth = convertToUnit(this.minWidth);
 		const maxWidth = convertToUnit(this.maxWidth);
 		const width = convertToUnit(this.width);
 
-		if (minWidth) {
-			styles.minWidth = minWidth;
-		}
-
-		if (maxWidth) {
-			styles.maxWidth = maxWidth;
-		}
-
-		if (width) {
-			styles.width = width;
-		}
-
-		return styles;
+		return {
+			minWidth,
+			maxWidth,
+			width
+		};
 	}
 }

@@ -3,8 +3,8 @@
 		v-bind="$attrs"
 		:width="width"
 		:height="height"
-		class="vd-header-loading"
 		type="heading"
+		class="vd-header-loading"
 	/>
 </template>
 

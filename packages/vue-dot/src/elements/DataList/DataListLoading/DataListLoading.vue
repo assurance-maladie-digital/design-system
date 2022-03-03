@@ -7,9 +7,9 @@
 	>
 		<HeaderLoading
 			v-if="heading"
+			width="100px"
 			height="1.5rem"
 			class="mb-4"
-			width="100"
 		/>
 
 		<ul class="vd-data-list-loading-items pl-0">
@@ -24,14 +24,14 @@
 			>
 				<HeaderLoading
 					v-if="!row"
+					width="60px"
 					height="1rem"
 					class="mb-1"
-					width="60"
 				/>
 
 				<HeaderLoading
+					:width="itemWidth"
 					height="1.5rem"
-					:width="row ? '150' : '90'"
 				/>
 			</li>
 		</ul>
@@ -62,7 +62,11 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class DataListLoading extends MixinsDeclaration {}
+	export default class DataListLoading extends MixinsDeclaration {
+		get itemWidth(): string {
+			return this.row ? '150px' : '90px';
+		}
+	}
 </script>
 
 <style lang="scss" scoped>

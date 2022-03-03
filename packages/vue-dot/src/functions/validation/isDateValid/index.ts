@@ -11,15 +11,15 @@ const DATE_SEPARATORS = /[- /.]/;
 export const DATE_FORMAT_REGEX = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.]\d{4}/;
 
 export enum DateErrorCodes {
-	wrongFormat = 'wrongFormat',
-	monthNotMatch = 'monthNotMatch',
-	notALeapYear = 'notALeapYear'
+	WRONG_FORMAT = 'wrongFormat',
+	MONTH_NOT_MATCH = 'monthNotMatch',
+	NOT_LEAP_YEAR = 'notALeapYear'
 }
 
 /** Check if a date is valid */
 export function isDateValid(date: string): string | true {
 	if (!date.match(DATE_FORMAT_REGEX)) {
-		return DateErrorCodes.wrongFormat;
+		return DateErrorCodes.WRONG_FORMAT;
 	}
 
 	const DAYS_IN_MONTH = [
@@ -44,7 +44,7 @@ export function isDateValid(date: string): string | true {
 
 	if (month !== 2) {
 		if (day > DAYS_IN_MONTH[month - 1]) {
-			return DateErrorCodes.monthNotMatch;
+			return DateErrorCodes.MONTH_NOT_MATCH;
 		} else {
 			return true;
 		}
@@ -53,11 +53,11 @@ export function isDateValid(date: string): string | true {
 		const isLeap = parsed.isLeapYear();
 
 		if (isLeap && day > 29) {
-			return DateErrorCodes.monthNotMatch;
+			return DateErrorCodes.MONTH_NOT_MATCH;
 		}
 
 		if (!isLeap && day >= 29) {
-			return DateErrorCodes.notALeapYear;
+			return DateErrorCodes.NOT_LEAP_YEAR;
 		}
 
 		return true;

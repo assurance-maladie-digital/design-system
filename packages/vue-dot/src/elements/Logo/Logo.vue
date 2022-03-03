@@ -1,7 +1,7 @@
 <template>
 	<svg
 		:fill="fillColor"
-		:aria-label="ariaLabel"
+		:aria-label="label"
 		:width="dimensions.width"
 		:height="dimensions.height"
 		role="img"
@@ -215,7 +215,7 @@
 			return logoDimensionsMapping[this.size];
 		}
 
-		get ariaLabel(): string {
+		get label(): string {
 			const COLON_SEPARATOR = ' : ';
 			const COMMA_SEPARATOR = ', ';
 

@@ -26,13 +26,12 @@ describe('parseDate', () => {
 		const parsedDate = dayjs().format(RESULT_DATE_FORMAT);
 
 		// Mock getTimezoneOffset
-		const getTimezoneOffset = Date.prototype.getTimezoneOffset;
+		const originalGetTimezoneOffset = Date.prototype.getTimezoneOffset;
 		Date.prototype.getTimezoneOffset = () => 160;
 
 		expect(parseDate(date).format(RESULT_DATE_FORMAT)).toBe(parsedDate);
 
-		// Restore getTimezoneOffset to it's original version
-		Date.prototype.getTimezoneOffset = getTimezoneOffset;
+		Date.prototype.getTimezoneOffset = originalGetTimezoneOffset;
 	});
 
 	it('returns a working dayjs instance with a neutral timezone offset', () => {
@@ -40,12 +39,11 @@ describe('parseDate', () => {
 		const parsedDate = dayjs().format(RESULT_DATE_FORMAT);
 
 		// Mock getTimezoneOffset
-		const getTimezoneOffset = Date.prototype.getTimezoneOffset;
+		const originalGetTimezoneOffset = Date.prototype.getTimezoneOffset;
 		Date.prototype.getTimezoneOffset = () => 0;
 
 		expect(parseDate(date).format(RESULT_DATE_FORMAT)).toBe(parsedDate);
 
-		// Restore getTimezoneOffset to it's original version
-		Date.prototype.getTimezoneOffset = getTimezoneOffset;
+		Date.prototype.getTimezoneOffset = originalGetTimezoneOffset;
 	});
 });
