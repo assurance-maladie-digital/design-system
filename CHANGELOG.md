@@ -36,7 +36,8 @@
   - **FranceConnectBtn:** Renommage de la prop `icon-text` en `label` ([#1760](https://github.com/assurance-maladie-digital/design-system/pull/1760)) ([db19524](https://github.com/assurance-maladie-digital/design-system/commit/db1952423d4ef2037f9b0fea8a5b309276c0a520))
   - **rules:** Utilisation de la fonction `isDateAfterValue` dans la règle de validation `notAfterToday` ([#1826](https://github.com/assurance-maladie-digital/design-system/pull/1826)) ([ec57ba7](https://github.com/assurance-maladie-digital/design-system/commit/ec57ba7d27e1960146ecf6e4bf656a8cb54a907c))
   - **rules:** Utilisation de la fonction `isDateBeforeValue` dans la règle de validation `notBeforeToday` ([#1827](https://github.com/assurance-maladie-digital/design-system/pull/1827)) ([35d4fb9](https://github.com/assurance-maladie-digital/design-system/commit/35d4fb90ecf882bb182e77d8894a2a78eac6a603))
-  - **global:** Suppression et mise à jour des commentaires ([#1829](https://github.com/assurance-maladie-digital/design-system/pull/1829))
+  - **global:** Suppression et mise à jour des commentaires ([#1829](https://github.com/assurance-maladie-digital/design-system/pull/1829)) ([976df56](https://github.com/assurance-maladie-digital/design-system/commit/976df56d938c0fb8d8eb5d3b8f02a073c9a17c09))
+  - **directives:** Refonte de la directive `debounce` ([#1830](https://github.com/assurance-maladie-digital/design-system/pull/1830))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1808](https://github.com/assurance-maladie-digital/design-system/pull/1808)) ([d2031dc](https://github.com/assurance-maladie-digital/design-system/commit/d2031dc218160ce70ccb3161f4bfe724f56abc57))

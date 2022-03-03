@@ -132,19 +132,4 @@ describe('debounce', () => {
 
 		timeoutTest(input, wrapper, spy);
 	});
-
-	it('does not throw an error if there is no input', () => {
-		const spy = jest.fn();
-
-		const testComponent = createTestComponent(
-			'<div v-debounce />',
-			spy
-		);
-
-		const wrapper = mount(testComponent);
-
-		const inputExists = wrapper.find('input').exists();
-
-		expect(inputExists).toBe(false);
-	});
 });
