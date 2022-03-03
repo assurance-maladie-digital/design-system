@@ -18,7 +18,6 @@
 					{{ label }}
 				</div>
 
-				<!-- Show value or fallback to placeholder -->
 				<div class="vd-data-list-item-value">
 					<slot
 						name="value"
@@ -108,10 +107,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * DataListItem is a component that displays a
-	 * label associated with a value
-	 */
 	@Component
 	export default class DataListItem extends MixinsDeclaration {
 		get labelColor(): string {

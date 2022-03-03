@@ -94,8 +94,10 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		});
 	}
 
-	dialogConfirm(): void {
-		if (this.$refs.form.validate()) { // TODO: await
+	async dialogConfirm(): Promise<void> {
+		await this.$nextTick();
+
+		if (this.$refs.form.validate()) {
 			this.dialog = false;
 			this.setFileInList();
 			this.$refs.form.reset();
@@ -106,21 +108,20 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		if (this.singleMode) {
 			this.selectedItem = this.selectItems[0].value;
 			this.setFileInList();
-		} else {
-			this.dialog = true;
+			return;
 		}
+
+		this.dialog = true;
 	}
 
-	uploadError(error: ErrorEvent): void {
+	async uploadError(error: ErrorEvent): Promise<void> {
 		this.error = true;
 		this.uploadedFile = null;
 
 		this.setFileInList();
 
-		// Pass the default FileUpload error
-		this.$nextTick(() => {
-			this.$emit('error', error);
-		});
+		await this.$nextTick();
+		this.$emit('error', error);
 
 		this.error = false;
 	}

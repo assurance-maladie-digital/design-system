@@ -1,14 +1,12 @@
-interface Language {
+import { IndexedObject } from '../../types';
+
+export interface Language {
 	direction: string;
 	name: string;
 	nativeName: string;
 }
 
-export interface Languages {
-	// 'key' is the code of the language
-	[key: string]: Language;
-}
-
+export type Languages = IndexedObject<Language>;
 export type AllLanguagesChar = '*';
 
 export interface CurrentLangData {

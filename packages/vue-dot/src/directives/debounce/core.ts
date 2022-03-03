@@ -19,10 +19,10 @@ export function getInputElement(el: HTMLElement): HTMLInputElement {
 
 /** Get the time modifier from the modifiers object */
 export function getTimeModifier(modifiers: Modifiers): number | undefined {
+	const MODIFIER_INDEX = 0;
 	const modifiersArray = Object.keys(modifiers);
-	const modifierIndex = 0;
 
-	return parseInt(modifiersArray[modifierIndex], 10) || undefined;
+	return parseInt(modifiersArray[MODIFIER_INDEX], 10) || undefined;
 }
 
 /** Get the input event handler */

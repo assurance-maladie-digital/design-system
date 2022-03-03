@@ -37,7 +37,7 @@
   - **rules:** Utilisation de la fonction `isDateAfterValue` dans la règle de validation `notAfterToday` ([#1826](https://github.com/assurance-maladie-digital/design-system/pull/1826)) ([ec57ba7](https://github.com/assurance-maladie-digital/design-system/commit/ec57ba7d27e1960146ecf6e4bf656a8cb54a907c))
   - **rules:** Utilisation de la fonction `isDateBeforeValue` dans la règle de validation `notBeforeToday` ([#1827](https://github.com/assurance-maladie-digital/design-system/pull/1827)) ([35d4fb9](https://github.com/assurance-maladie-digital/design-system/commit/35d4fb90ecf882bb182e77d8894a2a78eac6a603))
   - **global:** Suppression et mise à jour des commentaires ([#1829](https://github.com/assurance-maladie-digital/design-system/pull/1829)) ([976df56](https://github.com/assurance-maladie-digital/design-system/commit/976df56d938c0fb8d8eb5d3b8f02a073c9a17c09))
-  - **directives:** Refonte de la directive `debounce` ([#1830](https://github.com/assurance-maladie-digital/design-system/pull/1830))
+  - **directives:** Refonte de la directive `debounce` ([#1830](https://github.com/assurance-maladie-digital/design-system/pull/1830)) ([2358e04](https://github.com/assurance-maladie-digital/design-system/commit/2358e045f6bc51b200b9f287f0267f52c65ec115))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1808](https://github.com/assurance-maladie-digital/design-system/pull/1808)) ([d2031dc](https://github.com/assurance-maladie-digital/design-system/commit/d2031dc218160ce70ccb3161f4bfe724f56abc57))
@@ -47,6 +47,7 @@
 
 - 🎨 **Qualité de code**
   - **ErrorPage:** Utilisation d'une constante `MixinsDeclaration` ([#1742](https://github.com/assurance-maladie-digital/design-system/pull/1742)) ([bc54ed5](https://github.com/assurance-maladie-digital/design-system/commit/bc54ed516262d2b281803249c5085c2b0eb7e9e2))
+  - **global:** Amélioration de la qualité du code ([#1831](https://github.com/assurance-maladie-digital/design-system/pull/1831))
 
 ### Vue Dash
 

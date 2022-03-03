@@ -46,7 +46,7 @@
 
 				<VListItemAction v-bind="options.listItemAction">
 					<VBtn
-						v-if="file.state === 'initial'"
+						v-if="file.state === FileStateEnum.INITIAL"
 						v-bind="options.uploadBtn"
 						:aria-label="locales.uploadFile"
 						@click="$emit('upload', file.id)"
@@ -60,7 +60,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state === 'error'"
+						v-if="file.state === FileStateEnum.ERROR"
 						v-bind="options.retryBtn"
 						:aria-label="locales.uploadFile"
 						@click="$emit('retry', file.id)"
@@ -74,7 +74,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="showViewBtn && file.state === 'success'"
+						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
 						@click="$emit('view-file', file)"
@@ -88,7 +88,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state !== 'initial'"
+						v-if="file.state !== FileStateEnum.INITIAL"
 						v-bind="options.deleteFileBtn"
 						@click="$emit('delete-file', file.id)"
 					>
@@ -119,6 +119,8 @@
 	import { locales } from './locales';
 
 	import { FileItem, IconInfo } from './types';
+
+	import { FileStateEnum } from './FileStateEnum';
 
 	import { customizable } from '../../../mixins/customizable';
 	import { Widthable } from '../../../mixins/widthable';
@@ -159,23 +161,27 @@
 	@Component
 	export default class FileList extends MixinsDeclaration {
 		locales = locales;
+		FileStateEnum = FileStateEnum;
 
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
 		deleteIcon = mdiDelete;
 		uploadIcon = mdiUpload;
 
-		/** Returns the icon name & color depending on state */
-		getIconInfo(state: string): IconInfo {
+		get iconColor(): string {
+			return this.$vuetify.theme.dark ? 'grey lighten-1' : 'grey darken-1';
+		}
+
+		getIconInfo(state: FileStateEnum): IconInfo {
 			switch (state) {
-				case 'error': {
+				case FileStateEnum.ERROR: {
 					return {
 						icon: mdiAlertCircle,
 						color: 'error'
 					};
 				}
 
-				case 'success': {
+				case FileStateEnum.SUCCESS: {
 					return {
 						icon: mdiCheckCircle,
 						color: 'success'
@@ -191,30 +197,20 @@
 			}
 		}
 
-		getItemColor(state: string): string {
-			let color = 'grey--text ';
-			// Only the modifier changes
-			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
+		getItemColor(state: string): string | undefined {
+			if (state === FileStateEnum.SUCCESS) {
+				return;
+			}
 
-			// Let the default color (null) on success
-			return state !== 'success' ? color : '';
+			return 'grey--text ' + this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
 		}
 
-		/** Don't show divider on last item if hideLastDivider is true */
 		showDivider(index: number): boolean {
 			if (this.hideLastDivider) {
 				return index + 1 !== this.files.length;
 			}
 
 			return true;
-		}
-
-		/**
-		 * Get the default icon color
-		 * depending on theme (light or dark)
-		 */
-		get iconColor(): string {
-			return this.$vuetify.theme.dark ? 'grey lighten-1' : 'grey darken-1';
 		}
 	}
 </script>

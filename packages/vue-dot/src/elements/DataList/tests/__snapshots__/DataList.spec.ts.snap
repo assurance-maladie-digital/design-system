@@ -5,7 +5,7 @@ exports[`DataList renders correctly 1`] = `
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0">
+      <ul class="pl-0">
         <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item text-body-1 mb-2"></datalistitem-stub>
         <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item text-body-1 mb-2"></datalistitem-stub>
         <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item text-body-1"></datalistitem-stub>
@@ -20,7 +20,7 @@ exports[`DataList renders correctly with a class 1`] = `
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0">
+      <ul class="pl-0">
         <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item text-body-1 mb-2"></datalistitem-stub>
         <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item text-body-1 mb-2 custom-class"></datalistitem-stub>
         <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item text-body-1"></datalistitem-stub>
@@ -37,7 +37,7 @@ exports[`DataList renders correctly with a title 1`] = `
       <h4 class="text-subtitle-1 font-weight-bold mb-3">
         Informations
       </h4>
-      <ul class="vd-data-list-field pl-0">
+      <ul class="pl-0">
         <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item text-body-1 mb-2"></datalistitem-stub>
         <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item text-body-1 mb-2"></datalistitem-stub>
         <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item text-body-1"></datalistitem-stub>
@@ -52,7 +52,7 @@ exports[`DataList renders correctly with an action 1`] = `
   <transition-stub name="fade-transition" mode="out-in">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0">
+      <ul class="pl-0">
         <li class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1 mb-2">
           <!---->
           <div class="vd-data-list-item-content">
@@ -112,7 +112,7 @@ exports[`DataList renders correctly with an icon 1`] = `
   <transition-stub name="fade-transition" mode="out-in">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0">
+      <ul class="pl-0">
         <li class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1 mb-2">
           <!---->
           <div class="vd-data-list-item-content">
@@ -167,7 +167,7 @@ exports[`DataList renders loading state correctly 2`] = `
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <div>
       <!---->
-      <ul class="vd-data-list-field pl-0">
+      <ul class="pl-0">
         <datalistitem-stub label="Civility" value="" placeholder="…" class="vd-data-list-item text-body-1 mb-2"></datalistitem-stub>
         <datalistitem-stub label="Name" value="Dupont" placeholder="…" class="vd-data-list-item text-body-1 mb-2"></datalistitem-stub>
         <datalistitem-stub label="First name" value="Paul" placeholder="…" class="vd-data-list-item text-body-1"></datalistitem-stub>

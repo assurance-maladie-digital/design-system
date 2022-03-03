@@ -13,16 +13,7 @@ export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages):
 		if (Array.isArray(value)) {
 			valid = value.length !== 0;
 		} else {
-			// If the value is falsy (empty string),
-			// it will return the error message
-
-			// If the value is evaluated to true (non-empty string),
-			// it will return true (success)
-			if (typeof value === 'string') {
-				valid = Boolean(value.trim());
-			} else {
-				valid = Boolean(value);
-			}
+			valid = Boolean(typeof value === 'string' ? value.trim() : value);
 		}
 
 		return valid || ruleMessage(errorMessages, 'default');

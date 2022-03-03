@@ -105,9 +105,9 @@
 				return null;
 			}
 
-			const spacePositions = [4, 9, 14, 19];
+			const SPACE_POSITIONS = [4, 9, 14, 19];
 
-			spacePositions.forEach((position) => {
+			SPACE_POSITIONS.forEach((position) => {
 				supportId = insertAt(supportId as string, position, SPACE_CHARACTER);
 			});
 

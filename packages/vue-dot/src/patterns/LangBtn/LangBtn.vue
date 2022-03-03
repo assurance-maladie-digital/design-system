@@ -47,7 +47,7 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { Languages, AllLanguagesChar, CurrentLangData } from './types';
+	import { Languages, AllLanguagesChar, CurrentLangData, Language } from './types';
 
 	// ISO 639-1 language database in a JSON object
 	import languages from 'languages';
@@ -100,8 +100,8 @@
 			if (this.availableLanguages !== '*') {
 				const availableLanguages = this.availableLanguages as string[];
 
-				availableLanguages.forEach((lang: string) => {
-					data[lang] = languages.getLanguageInfo(lang);
+				availableLanguages.forEach((language: string) => {
+					data[language] = languages.getLanguageInfo(language);
 				});
 			} else {
 				// This method computes all the 138 languages,
@@ -128,17 +128,8 @@
 
 			languages
 				.getAllLanguageCode()
-				.forEach((lang: string) => {
-					// languages.getLanguageInfo(langcode) Returns an object:
-					// {
-					//  'name': 'name of the language in English',
-					//  'nativeName',
-					//  'direction'
-					// }
-					// If langcode isn't supported, it returns {}
-					const obj = languages.getLanguageInfo(lang);
-
-					data[lang] = obj;
+				.forEach((language: string) => {
+					data[language] = languages.getLanguageInfo(language) as Language;
 				});
 
 			return data;
@@ -146,7 +137,6 @@
 
 		updateLang(lang: string): void {
 			this.currentLang = lang;
-
 			this.$emit('change', lang);
 		}
 	}

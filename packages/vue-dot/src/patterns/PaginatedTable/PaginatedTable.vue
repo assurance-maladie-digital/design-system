@@ -89,13 +89,13 @@
 		}
 
 		get storageKey(): string {
-			const prefix = 'pagination';
+			const PREFIX = 'pagination';
 
 			if (this.suffix) {
-				return `${prefix}-${this.suffix}`;
+				return `${PREFIX}-${this.suffix}`;
 			}
 
-			return prefix;
+			return PREFIX;
 		}
 
 		created() {
