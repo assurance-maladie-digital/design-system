@@ -42,11 +42,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * The accessible label of the button
-			 * Required because if not present, the button
-			 * will not be properly accessible to screen readers
-			 */
 			label: {
 				type: String,
 				required: true
