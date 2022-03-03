@@ -22,10 +22,6 @@ export function getTimeModifier(modifiers: Modifiers): number | undefined {
 	const modifiersArray = Object.keys(modifiers);
 	const modifierIndex = 0;
 
-	if (!modifiersArray) {
-		return;
-	}
-
 	return parseInt(modifiersArray[modifierIndex], 10) || undefined;
 }
 
