@@ -47,7 +47,7 @@
 
 - 🎨 **Qualité de code**
   - **ErrorPage:** Utilisation d'une constante `MixinsDeclaration` ([#1742](https://github.com/assurance-maladie-digital/design-system/pull/1742)) ([bc54ed5](https://github.com/assurance-maladie-digital/design-system/commit/bc54ed516262d2b281803249c5085c2b0eb7e9e2))
-  - **global:** Amélioration de la qualité du code ([#1831](https://github.com/assurance-maladie-digital/design-system/pull/1831))
+  - **global:** Amélioration de la qualité du code ([#1831](https://github.com/assurance-maladie-digital/design-system/pull/1831)) ([84f0726](https://github.com/assurance-maladie-digital/design-system/commit/84f0726db072f589e79ecb6a32645d3f40df6452))
 
 ### Vue Dash
 
@@ -83,6 +83,11 @@
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1810](https://github.com/assurance-maladie-digital/design-system/pull/1810)) ([bef7321](https://github.com/assurance-maladie-digital/design-system/commit/bef7321ca310887d2db2851d46b4feeb31a7178b))
+
+### Design Tokens
+
+- ♻️ **Refactoring**
+  - **global:** Suppression et mise à jour des commentaires ([#1832](https://github.com/assurance-maladie-digital/design-system/pull/1832))
 
 ### Documentation
 
