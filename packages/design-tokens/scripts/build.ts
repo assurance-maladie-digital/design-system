@@ -1,3 +1,12 @@
+/**
+ * [Build script]
+ *
+ * Build assets in /dist folder
+ * Generate JSON file
+ * Generate SCSS file
+ * Transpile TypeScript to JavaScript
+ */
+
 import * as fs from 'fs-extra';
 
 import { info, done, log } from '@cnamts/cli-helpers';
@@ -36,20 +45,16 @@ log();
 // Create dist folder if it doesn't exist
 if (!fs.existsSync(DIST_FOLDER)) {
 	info('Creating dist folder');
-
 	fs.mkdirSync(DIST_FOLDER);
 } else {
-	info('Removing dist folder content');
-
 	// Clear the content of dist folder
+	info('Removing dist folder content');
 	fs.emptyDirSync(`./${DIST_FOLDER}`);
 }
 
 info('Generating JSON file');
 
-// Stringify tokens
 const tokensString = JSON.stringify(tokens, null, TAB_CHARACTER);
-// Convert camelCase to kebab-case and append new line
 const jsonFile = toKebabCase(tokensString) + '\n';
 
 fs.writeFileSync(`${DIST_FOLDER}/${tokenList.json}`, jsonFile);
