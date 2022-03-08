@@ -53,7 +53,6 @@
 	import { MetaInfo } from 'vue-meta';
 
 	import {
-		Context,
 		Content,
 		ContentDocument,
 		DocumentBody,
@@ -61,7 +60,7 @@
 		PageData
 	} from '../types/content';
 
-	import { AsyncData, Middleware, Head } from '../decorators';
+	import { AsyncData, Head } from '../decorators';
 	import { getPageMeta } from '../functions/getPageMeta';
 	import { getSurroundDrawerItems } from '../functions/getSurroundDrawerItems';
 	import { slugifyAnchors } from '../functions/slugifyAnchors';
@@ -79,13 +78,6 @@
 	})
 	export default class Slug extends Vue {
 		document?: ContentDocument;
-
-		@Middleware
-		middleware({ app, params, redirect }: Context): void {
-			if (params.pathMatch === 'index') {
-				redirect(app.localePath('/'));
-			}
-		}
 
 		@AsyncData
 		async asyncData({ $content, params, error }: AsyncDataParams): Promise<PageData | void> {

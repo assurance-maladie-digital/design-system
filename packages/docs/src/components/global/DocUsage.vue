@@ -137,8 +137,8 @@
 								:max="item.max"
 								:min="item.min"
 								:step="item.step || 1"
-								class="my-3"
 								hide-details
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -148,11 +148,11 @@
 								:value="usageProps[prop]"
 								:items="items"
 								:label="toKebabCase(prop)"
-								class="my-3"
 								dense
 								filled
 								hide-details
 								background-color="am-blue lighten-3"
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -162,12 +162,12 @@
 								:value="usageProps[prop]"
 								:items="items"
 								:label="toKebabCase(prop)"
-								class="my-3"
 								multiple
 								dense
 								filled
 								hide-details
 								background-color="am-blue lighten-3"
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -176,11 +176,11 @@
 								:key="prop"
 								:value="usageProps[prop]"
 								:label="toKebabCase(prop)"
-								class="my-3"
 								dense
 								filled
 								hide-details
 								background-color="am-blue lighten-3"
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 

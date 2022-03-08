@@ -1,6 +1,5 @@
 import Vue from 'vue';
 
-// Import FormBuilder from src
-import FormBuilder from '@cnamts/form-builder/src/index';
+import FormBuilder from '@cnamts/form-builder/src';
 
 Vue.use(FormBuilder);
