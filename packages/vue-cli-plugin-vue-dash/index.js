@@ -1,6 +1,8 @@
 const { fixEnvFile } = require('./fixEnvFile');
 
 /**
+ * Augment serve command with fixEnvFile
+ *
  * @param {object} api The plugin API
  * @returns {void}
  */
@@ -9,7 +11,6 @@ function augmentServeCommand(api) {
 
 	const serveFn = serve.fn;
 
-	// Augment serve command with fixEnvFile
 	serve.fn = (...args) => {
 		fixEnvFile();
 
