@@ -24,7 +24,7 @@
 				</template>
 
 				<span
-					class="field-tooltip-text"
+					class="vd-form-field-tooltip-text"
 					v-text="field.tooltip"
 				/>
 			</VTooltip>
@@ -103,12 +103,7 @@
 		}
 
 		get descriptionColor(): string {
-			let color = 'grey--text ';
-
-			// Only the modifier changes
-			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
-
-			return color;
+			return 'grey--text ' + this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
 		}
 
 		emitChangeEvent(value: Field): void {
@@ -122,7 +117,7 @@
 		margin-top: 12px;
 	}
 
-	.field-tooltip-text {
+	.vd-form-field-tooltip-text {
 		white-space: pre-wrap;
 	}
 </style>

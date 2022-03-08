@@ -28,13 +28,7 @@ export class FieldComponent extends MixinsDeclaration {
 		return this.field.fieldOptions;
 	}
 
-	/**
-	 * Update the v-model by emitting 'change' event
-	 *
-	 * @param {FieldValue} value The updated field
-	 * @returns {void}
-	 */
-	emitChangeEvent(value: FieldValue): void {
+	async emitChangeEvent(value: FieldValue): Promise<void> {
 		const fieldOptions = this.fieldOptions ? this.clearErrorMessages(deepCopy(this.fieldOptions)) : undefined;
 
 		const updatedField = {
@@ -43,10 +37,9 @@ export class FieldComponent extends MixinsDeclaration {
 			value
 		};
 
-		// Emit in next tick to respect event order
-		this.$nextTick(() => {
-			this.$emit('change', updatedField);
-		});
+		await this.$nextTick(); // Await to respect event order
+
+		this.$emit('change', updatedField);
 	}
 
 	clearErrorMessages(fieldOptions: FieldOptions): FieldOptions {
