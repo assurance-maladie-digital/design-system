@@ -14,7 +14,6 @@
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
-	/** Form field to enter text */
 	@Component
 	export default class TextField extends MixinsDeclaration {}
 </script>

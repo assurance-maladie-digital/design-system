@@ -80,6 +80,7 @@
 - ♻️ **Refactoring**
   - **FormField:** Utilisation de la couleur primaire au lieu de la couleur d'accent ([#1691](https://github.com/assurance-maladie-digital/design-system/pull/1691)) ([4c9c89a](https://github.com/assurance-maladie-digital/design-system/commit/4c9c89a106cf2ada43a4e8d9444f99fed2718768))
   - **RangeField:** Renommage de la propriété interne `isMobile` en `mobileVersion` ([#1741](https://github.com/assurance-maladie-digital/design-system/pull/1741)) ([9c6fed0](https://github.com/assurance-maladie-digital/design-system/commit/9c6fed021aefb9952c6923860e959a36a129668c))
+  - **global:** Suppression et mise à jour des commentaires ([#1837](https://github.com/assurance-maladie-digital/design-system/pull/1837))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1810](https://github.com/assurance-maladie-digital/design-system/pull/1810)) ([bef7321](https://github.com/assurance-maladie-digital/design-system/commit/bef7321ca310887d2db2851d46b4feeb31a7178b))
@@ -121,7 +122,7 @@
   - **components:** Suppression des propriétés `VLayout` non utilisées ([#1732](https://github.com/assurance-maladie-digital/design-system/pull/1732)) ([4bc02b5](https://github.com/assurance-maladie-digital/design-system/commit/4bc02b55462b9b0b601a6503c6c02dd2338b7320))
 
 - 🎨 **Qualité de code**
-  - **global:** Amélioration de la qualité du code ([#1831](https://github.com/assurance-maladie-digital/design-system/pull/1831))
+  - **global:** Amélioration de la qualité du code ([#1831](https://github.com/assurance-maladie-digital/design-system/pull/1831)) ([1bb9e2d](https://github.com/assurance-maladie-digital/design-system/commit/1bb9e2dd61477260b1bf17e249b2944e2f4b8610))
 
 - 📝 **Documentation**
   - **global:** Ajout de la page accessibilité ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1707)) ([648bccf](https://github.com/assurance-maladie-digital/design-system/commit/648bccfa69d4da8766f5dc53506df94ce881dddd))

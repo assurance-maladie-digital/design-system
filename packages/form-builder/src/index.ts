@@ -9,7 +9,6 @@ const FormBuilder: FormBuilderPlugin = {
 	}
 };
 
-// Ignore the next block in unit test
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
 	window.Vue.use(FormBuilder);
