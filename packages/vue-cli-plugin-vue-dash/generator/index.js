@@ -27,10 +27,8 @@ module.exports = (api, userOptions) => {
 
 		api.render('./template', options);
 
-		// Update package.json
 		extendPackage(api, options, pm);
 
-		// Delete old ressources and parse public/index.html
 		api.postProcessFiles((resources) => {
 			const resourcesToDelete = getResourcesToDelete(options);
 			deleteOldResources(resources, resourcesToDelete);
