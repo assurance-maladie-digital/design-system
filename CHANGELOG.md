@@ -76,6 +76,7 @@
 - 🐛 **Corrections de bugs**
   - **RangeField:** Correction de l'affichage sur les écrans mobiles et suppression du `VForm` à l'intérieur du champ ([#1680](https://github.com/assurance-maladie-digital/design-system/pull/1680)) ([923d65c](https://github.com/assurance-maladie-digital/design-system/commit/923d65cc5ff0ff79487aa3a285ccffa60b4c3484))
   - **PeriodField:** Correction de l'affichage sur les écrans mobiles ([#1681](https://github.com/assurance-maladie-digital/design-system/pull/1681)) ([ae36361](https://github.com/assurance-maladie-digital/design-system/commit/ae36361bd4e045184262e97deedb03e8db16135c))
+  - **ChoiceButtonField:** Correction du paragraphe `v-messages` affiché même sans texte informatif ([#1841](https://github.com/assurance-maladie-digital/design-system/pull/1841))
 
 - ♻️ **Refactoring**
   - **FormField:** Utilisation de la couleur primaire au lieu de la couleur d'accent ([#1691](https://github.com/assurance-maladie-digital/design-system/pull/1691)) ([4c9c89a](https://github.com/assurance-maladie-digital/design-system/commit/4c9c89a106cf2ada43a4e8d9444f99fed2718768))
@@ -83,7 +84,7 @@
   - **global:** Suppression et mise à jour des commentaires ([#1837](https://github.com/assurance-maladie-digital/design-system/pull/1837)) ([dcfb95e](https://github.com/assurance-maladie-digital/design-system/commit/dcfb95e309c50a0082192cba662d293fdb7e5cb2))
 
 - ♿️ **Accessibilité**
-  - **ChoiceButtonField:** Ajout des attributs ARIA manquants ([#1840](https://github.com/assurance-maladie-digital/design-system/pull/1840))
+  - **ChoiceButtonField:** Ajout des attributs ARIA manquants ([#1840](https://github.com/assurance-maladie-digital/design-system/pull/1840)) ([29a95e7](https://github.com/assurance-maladie-digital/design-system/commit/29a95e7fea39f1315d39e161aabc26ca02ab2936))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1810](https://github.com/assurance-maladie-digital/design-system/pull/1810)) ([bef7321](https://github.com/assurance-maladie-digital/design-system/commit/bef7321ca310887d2db2851d46b4feeb31a7178b))

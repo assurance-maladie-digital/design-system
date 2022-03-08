@@ -55,7 +55,7 @@
 		</template>
 
 		<p
-			v-else
+			v-else-if="showHint"
 			:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 			class="v-messages px-3 mt-2 mb-0"
 		>
