@@ -33,6 +33,8 @@
 </script>
 
 <style lang="scss" scoped>
+	// From template/public/css/loader.css
+
 	/* Material Design spinner */
 	.spinner-block {
 		margin: 64px auto;

@@ -1,5 +1,5 @@
 .doc-code-block {
-	/** Custom theme based on prism.js tomorrow night eighties by Rose Pritchard */
+	// Custom theme based on prism.js tomorrow night eighties by Rose Pritchard
 	code[class*="language-"],
 	pre[class*="language-"] {
 		color: #ccc;
@@ -16,12 +16,12 @@
 		hyphens: none;
 	}
 
-	/* Code blocks */
+	// Code blocks
 	pre[class*="language-"] {
 		overflow: auto;
 	}
 
-	/* Inline code */
+	// Inline code
 	:not(pre) > code[class*="language-"] {
 		padding: .1em;
 		border-radius: .3em;
