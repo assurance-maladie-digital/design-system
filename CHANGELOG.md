@@ -80,7 +80,7 @@
 - ♻️ **Refactoring**
   - **FormField:** Utilisation de la couleur primaire au lieu de la couleur d'accent ([#1691](https://github.com/assurance-maladie-digital/design-system/pull/1691)) ([4c9c89a](https://github.com/assurance-maladie-digital/design-system/commit/4c9c89a106cf2ada43a4e8d9444f99fed2718768))
   - **RangeField:** Renommage de la propriété interne `isMobile` en `mobileVersion` ([#1741](https://github.com/assurance-maladie-digital/design-system/pull/1741)) ([9c6fed0](https://github.com/assurance-maladie-digital/design-system/commit/9c6fed021aefb9952c6923860e959a36a129668c))
-  - **global:** Suppression et mise à jour des commentaires ([#1837](https://github.com/assurance-maladie-digital/design-system/pull/1837))
+  - **global:** Suppression et mise à jour des commentaires ([#1837](https://github.com/assurance-maladie-digital/design-system/pull/1837)) ([dcfb95e](https://github.com/assurance-maladie-digital/design-system/commit/dcfb95e309c50a0082192cba662d293fdb7e5cb2))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1810](https://github.com/assurance-maladie-digital/design-system/pull/1810)) ([bef7321](https://github.com/assurance-maladie-digital/design-system/commit/bef7321ca310887d2db2851d46b4feeb31a7178b))
@@ -134,6 +134,7 @@
   - **explorer:** Renommage du fichier `jest.config.js` en `jest.config.ts` ([#1759](https://github.com/assurance-maladie-digital/design-system/pull/1759)) ([ee6cb78](https://github.com/assurance-maladie-digital/design-system/commit/ee6cb78eee0fa66a602cc1e5880f6107461fef00))
   - **DatePicker:** Mise à jour de la description de la prop `picker-date` ([#1768](https://github.com/assurance-maladie-digital/design-system/pull/1768)) ([be2dc4a](https://github.com/assurance-maladie-digital/design-system/commit/be2dc4a95a467e50d8d5f7dee71dc987035761a6))
   - **global:** Mise à jour de la page principes de design ([#1770](https://github.com/assurance-maladie-digital/design-system/pull/1770)) ([5f69694](https://github.com/assurance-maladie-digital/design-system/commit/5f69694625d94489d238b5d389f60ccdc2833fad))
+  - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1838](https://github.com/assurance-maladie-digital/design-system/pull/1838))
 
 ### Interne
 
