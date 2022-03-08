@@ -6,7 +6,6 @@ declare module 'languages';
 declare module 'vue-prism-component';
 declare module 'prismjs';
 
-// Make Vue SFC modules
 declare module '*.vue' {
 	import Vue from 'vue';
 	export default Vue;

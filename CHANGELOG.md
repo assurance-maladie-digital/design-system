@@ -87,7 +87,7 @@
 ### Design Tokens
 
 - ♻️ **Refactoring**
-  - **global:** Suppression et mise à jour des commentaires ([#1832](https://github.com/assurance-maladie-digital/design-system/pull/1832))
+  - **global:** Suppression et mise à jour des commentaires ([#1832](https://github.com/assurance-maladie-digital/design-system/pull/1832)) ([8bb38d2](https://github.com/assurance-maladie-digital/design-system/commit/8bb38d2084e320330494290595029ba7a067e210))
 
 ### Documentation
 
@@ -115,6 +115,7 @@
   - **global:** Mise à jour des couleurs du thème pour le code ([#1762](https://github.com/assurance-maladie-digital/design-system/pull/1762)) ([4429fa0](https://github.com/assurance-maladie-digital/design-system/commit/4429fa0cc38e32a2445b94163d77f47c500bac33))
   - **global:** Utilisation de l'interface `NotificationModule` ([#1773](https://github.com/assurance-maladie-digital/design-system/pull/1773)) ([398bcaf](https://github.com/assurance-maladie-digital/design-system/commit/398bcafde1452f4db7c747d985a0778973ad111a))
   - **global:** Mise à jour des styles et des espacements ([#1776](https://github.com/assurance-maladie-digital/design-system/pull/1776)) ([76f05e5](https://github.com/assurance-maladie-digital/design-system/commit/76f05e57ef29b7fb47c59f10b3651aa4200b1190))
+  - **global:** Suppression et mise à jour des commentaires ([#1835](https://github.com/assurance-maladie-digital/design-system/pull/1835))
 
 - 🔥 **Suppressions**
   - **introduction:** Suppression du titre secondaire ([#1716](https://github.com/assurance-maladie-digital/design-system/pull/1716)) ([e35d2c7](https://github.com/assurance-maladie-digital/design-system/commit/e35d2c7b401163ad4c6b7e7f7912d67e68f70825))
