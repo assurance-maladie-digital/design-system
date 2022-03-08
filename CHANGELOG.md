@@ -82,11 +82,14 @@
   - **RangeField:** Renommage de la propriété interne `isMobile` en `mobileVersion` ([#1741](https://github.com/assurance-maladie-digital/design-system/pull/1741)) ([9c6fed0](https://github.com/assurance-maladie-digital/design-system/commit/9c6fed021aefb9952c6923860e959a36a129668c))
   - **global:** Suppression et mise à jour des commentaires ([#1837](https://github.com/assurance-maladie-digital/design-system/pull/1837)) ([dcfb95e](https://github.com/assurance-maladie-digital/design-system/commit/dcfb95e309c50a0082192cba662d293fdb7e5cb2))
 
+- ♿️ **Accessibilité**
+  - **ChoiceButtonField:** Ajout des attributs ARIA manquants ([#1840](https://github.com/assurance-maladie-digital/design-system/pull/1840))
+
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1810](https://github.com/assurance-maladie-digital/design-system/pull/1810)) ([bef7321](https://github.com/assurance-maladie-digital/design-system/commit/bef7321ca310887d2db2851d46b4feeb31a7178b))
 
 - 🎨 **Qualité de code**
-  - **global:** Amélioration de la qualité du code ([#1839](https://github.com/assurance-maladie-digital/design-system/pull/1839))
+  - **global:** Amélioration de la qualité du code ([#1839](https://github.com/assurance-maladie-digital/design-system/pull/1839)) ([151db07](https://github.com/assurance-maladie-digital/design-system/commit/151db07de91ff41bb8755116ca312e2ac8568566))
 
 ### Design Tokens
 
