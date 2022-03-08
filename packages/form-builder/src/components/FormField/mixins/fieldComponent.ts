@@ -8,7 +8,6 @@ import { deepRemoveKeys } from '@cnamts/vue-dot/src/helpers/deepRemoveKeys';
 
 const Props = Vue.extend({
 	props: {
-		/** The field to display */
 		field: {
 			type: Object as PropType<Field>,
 			required: true
@@ -18,7 +17,6 @@ const Props = Vue.extend({
 
 const MixinsDeclaration = mixins(Props);
 
-/** Share code between field components */
 @Component({
 	model: {
 		prop: 'field',
@@ -51,12 +49,6 @@ export class FieldComponent extends MixinsDeclaration {
 		});
 	}
 
-	/**
-	 * Clear all ErrorMessages in fieldOptions
-	 *
-	 * @param {FieldOptions} fieldOptions The field fieldOptions
-	 * @returns {FieldOptions} The new field fieldOptions without errorMessages
-	 */
 	clearErrorMessages(fieldOptions: FieldOptions): FieldOptions {
 		return deepRemoveKeys(fieldOptions, 'errorMessages');
 	}

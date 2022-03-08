@@ -15,7 +15,6 @@
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
-	/** Form field to enter a number (requires a mask) */
 	@Component
 	export default class NumberField extends MixinsDeclaration {
 		get mask(): string {

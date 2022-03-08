@@ -37,12 +37,10 @@
 
 	type ThumbLabelValue = boolean | string | undefined;
 
-	/** Choice field type slider */
 	@Component<ChoiceSliderField>({
 		watch: {
 			value: {
 				handler(value: FieldValue): void {
-					// If the value is null, set it to the first item
 					if (value === null) {
 						this.valueUpdated(0);
 					}
@@ -52,12 +50,6 @@
 		}
 	})
 	export default class ChoiceSliderField extends MixinsDeclaration {
-		/**
-		 * Get the index of the selected item by value
-		 *
-		 * @param {FieldValue} value The current field value
-		 * @returns {number|null} The index of the selected item, null if not found
-		 */
 		getIndex(value: FieldValue): number | null {
 			if (!this.items) {
 				return null;
@@ -114,17 +106,14 @@
 			};
 		}
 
-		/** The ticks labels (when we don't want the thumb label) */
 		get tickLabels(): string[] {
 			return this.isThumbLabel ? [] : this.labels;
 		}
 
-		/**  Are we in thumb label mode */
 		get isThumbLabel(): boolean {
 			return Boolean(this.options?.thumbLabel);
 		}
 
-		/** The ticks labels */
 		get labels(): string[] {
 			if (this.items && this.options) {
 				const labels = this.items.map((item) => item.text);
@@ -135,11 +124,6 @@
 			return [];
 		}
 
-		/**
-		 * Emit the value of the item's index selected
-		 *
-		 * @param {number} index The index of the selected item
-		 */
 		valueUpdated(index: number): void {
 			let fieldValue = null;
 

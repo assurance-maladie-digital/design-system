@@ -27,12 +27,10 @@ renderHeader('Self Build', author.name);
 // Create dist folder if not exists
 if (!fs.existsSync(DIST_FOLDER)) {
 	info('Creating dist folder');
-
 	fs.mkdirSync(DIST_FOLDER);
 } else {
-	info('Removing dist folder content');
-
 	// Clear the content of dist folder
+	info('Removing dist folder content');
 	fs.emptyDirSync(`./${DIST_FOLDER}`);
 }
 

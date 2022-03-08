@@ -78,11 +78,6 @@
 	export default class ChoiceButtonField extends MixinsDeclaration {
 		checkIcon = mdiCheck;
 
-		/**
-		 * Filter items with truthy value only
-		 *
-		 * @returns {FieldItem[]} The filtered items
-		 */
 		get filteredItems(): FieldItem[] {
 			if (!Array.isArray(this.items)) {
 				return [];

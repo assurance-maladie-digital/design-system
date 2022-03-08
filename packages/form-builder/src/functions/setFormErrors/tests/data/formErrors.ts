@@ -1,7 +1,6 @@
 import { Form } from '../../../../components/FormBuilder/types';
 import { FormErrors } from '../../types';
 
-/** FormErrors with invalid values */
 export const formErrorsInvalidValues = {
 	fieldNameNotExist: [
 		'Field name does not exist'
@@ -15,12 +14,10 @@ export const formErrorsInvalidValues = {
 	]
 } as FormErrors;
 
-/** FormErrors with wrong types */
 export const formErrorsWrongTypes = {
 	questionString: 4
 } as FormErrors;
 
-/** FormErrors related to question form */
 export const formErrors: FormErrors = {
 	questionString: [
 		'Erreur 1',
