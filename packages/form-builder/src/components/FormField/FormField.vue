@@ -87,7 +87,7 @@
 		informationIcon = mdiInformationOutline;
 
 		get fieldComponent(): string {
-			let fieldType: string = this.field.type;
+			let fieldType = this.field.type;
 
 			// Handle subtypes that are not in type 'select'
 			if (fieldType !== 'select') {
