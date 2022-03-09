@@ -9,6 +9,7 @@ const componentMap = {
 	HeaderLoading: 'elements',
 	Logo: 'elements',
 	PageContainer: 'elements',
+	UserMenuBtn: 'elements',
 	// Patterns
 	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
