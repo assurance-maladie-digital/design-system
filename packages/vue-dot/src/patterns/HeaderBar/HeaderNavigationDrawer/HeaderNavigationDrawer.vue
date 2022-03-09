@@ -100,7 +100,6 @@
 		}
 
 		drawerUpdated(value: boolean): void {
-			// Emit change event only when closing the drawer
 			if (value === false) {
 				this.$emit('change', false);
 			}

@@ -45,6 +45,7 @@
 	import { getPageMeta } from '../functions/getPageMeta';
 	import { NuxtError } from '@nuxt/types';
 
+	import DocHeader from '../components/DocHeader.vue';
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
 
 	const Props = Vue.extend({
@@ -60,6 +61,7 @@
 
 	@Component({
 		components: {
+			DocHeader,
 			DocDrawer
 		}
 	})

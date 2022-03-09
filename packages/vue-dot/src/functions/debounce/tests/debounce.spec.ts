@@ -1,6 +1,5 @@
 import { debounce } from '../';
 
-// Tell jest to mock all timeout functions
 jest.useFakeTimers();
 
 describe('debounce', () => {
@@ -18,7 +17,6 @@ describe('debounce', () => {
 			debouncedFunc();
 		}
 
-		// Fast-forward time
 		jest.runAllTimers();
 
 		expect(func).toBeCalledTimes(1);
@@ -31,7 +29,6 @@ describe('debounce', () => {
 			debouncedFunc();
 		}
 
-		// Fast-forward time
 		jest.runAllTimers();
 
 		expect(func).toBeCalledTimes(1);

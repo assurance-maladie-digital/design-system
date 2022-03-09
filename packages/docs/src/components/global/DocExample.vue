@@ -1,8 +1,8 @@
 <template>
 	<VSheet
-		class="v-example w-100 mb-9"
 		outlined
 		rounded
+		class="v-example w-100 mb-9"
 	>
 		<VLazy
 			min-height="52px"
@@ -42,8 +42,8 @@
 				<div v-show="expand">
 					<VItemGroup
 						v-model="selected"
-						class="pa-2"
 						mandatory
+						class="pa-2"
 					>
 						<template v-for="(section, index) in sections">
 							<VItem
@@ -53,8 +53,8 @@
 								<template #default="{ active, toggle }">
 									<VBtn
 										:input-value="active"
-										class="mr-2"
 										text
+										class="mr-2"
 										@click="toggle"
 									>
 										{{ section }}
@@ -92,8 +92,8 @@
 
 		<VThemeProvider :dark="dark">
 			<VSheet
-				class="pa-4"
 				rounded="b"
+				class="pa-4"
 			>
 				<VueFile :file="file" />
 			</VSheet>

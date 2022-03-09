@@ -5,7 +5,6 @@ import dayjs from 'dayjs';
 
 import { Birthdate } from '../birthdate';
 
-// Tell jest to mock all timeout functions
 jest.useFakeTimers();
 
 interface TestComponent extends Vue {
@@ -98,7 +97,6 @@ describe('Birthdate', () => {
 
 		wrapper.vm.setActivePicker();
 
-		// Fast-forward time
 		jest.runAllTimers();
 
 		expect(wrapper.vm.activePicker).toBe('YEAR');

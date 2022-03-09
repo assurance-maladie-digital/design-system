@@ -1,8 +1,4 @@
 <template>
-	<!--
-		We bind all attributes and listeners to the VDataTable
-		but we need to bind manually the pagination and the total items
-	-->
 	<VDataTable
 		v-if="$attrs"
 		v-bind="$attrs"
@@ -11,7 +7,7 @@
 	>
 		<!--
 			Pass down the scoped slots
-			see https://github.com/vuejs/vue/pull/7765 for the official discussion
+			@see https://github.com/vuejs/vue/pull/7765 for the official discussion
 			and https://stackoverflow.com/questions/50891858/vue-how-to-pass-down-slots-inside-wrapper-component/52823029#52823029
 			for the source of this solution
 		-->
@@ -37,7 +33,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			// Props from Vuetify
 			options: {
 				type: Object as PropType<DataOptions>,
 				required: true
@@ -54,16 +49,10 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	/**
-	 * PaginatedTable is a wrapper component for the VDataTable
-	 * that stores the pagination in local storage
-	 */
 	@Component<PaginatedTable>({
-		inheritAttrs: false, // see https://vuejs.org/v2/api/#inheritAttrs
+		inheritAttrs: false,
 		watch: {
-			/** When the options object is updated */
 			options(): void {
-				// Save it to local storage
 				this.localStorageUtility.setItem(this.storageKey, this.options);
 			}
 		}
@@ -71,19 +60,8 @@
 	export default class PaginatedTable extends MixinsDeclaration {
 		localStorageUtility = this.newLocalStorageInstance();
 
-		/**
-		 * Local pagination
-		 * This is the pagination from local storage
-		 */
 		localOptions = {} as DataOptions;
 
-		/**
-		 * Create a LocalStorageUtility instance
-		 * with version, expiration & prefix
-		 * from Vue Dot options
-		 *
-		 * @returns {LocalStorageUtility} New instance
-		 */
 		newLocalStorageInstance(): LocalStorageUtility {
 			if (!this.$vd || !this.$vd.localStorageControl) {
 				return new LocalStorageUtility();
@@ -96,18 +74,11 @@
 			);
 		}
 
-		/**
-		 * Returns either the local storage options,
-		 * or the options passed as a prop
-		 */
 		get optionsCalc(): DataOptions {
-			// If localOptions isn't empty
 			if (Object.keys(this.localOptions).length) {
-				// return it
 				return this.localOptions;
 			}
 
-			// Else, return the prop
 			return this.options;
 		}
 
@@ -117,22 +88,16 @@
 			}
 		}
 
-		/** Local storage key */
 		get storageKey(): string {
-			const prefix = 'pagination';
+			const PREFIX = 'pagination';
 
-			// If there is a suffix
 			if (this.suffix) {
-				// Add a dash before it to make the key
-				// more readable in local storage
-				return `${prefix}-${this.suffix}`;
+				return `${PREFIX}-${this.suffix}`;
 			}
 
-			// else, return only the prefix
-			return prefix;
+			return PREFIX;
 		}
 
-		/** Retrieve the options from local storage */
 		created() {
 			this.localOptions = this.localStorageUtility.getItem(this.storageKey) || {} as DataOptions;
 		}

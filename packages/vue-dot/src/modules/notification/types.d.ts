@@ -7,7 +7,6 @@ export interface NotificationObj {
 	ref?: string;
 }
 
-/** The module contains only one notification at the time */
 export interface NotificationState {
 	notification: NotificationObj | null;
 }

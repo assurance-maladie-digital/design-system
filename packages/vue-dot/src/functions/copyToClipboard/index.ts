@@ -1,23 +1,15 @@
-/**
- * copyToClipboard function
- * It will copy text to the clipboard
- *
- * @param {string} textToCopy The text to copy
- */
+/** Copy text to the clipboard */
 export function copyToClipboard(textToCopy: string): void {
-	/** Use a text area, so we can use execCommand */
+	// Use a textarea, so we can use execCommand
 	const el = document.createElement('textarea');
 
-	// Configure the element to be readonly and hidden
 	el.value = textToCopy;
 	el.setAttribute('readonly', '');
 	el.style.position = 'absolute';
 	el.style.left = '-9999px';
 
-	// Append the element
 	document.body.appendChild(el);
 
-	// Document selection
 	const selection = document.getSelection();
 
 	let selected: Range | false = false;
@@ -27,11 +19,8 @@ export function copyToClipboard(textToCopy: string): void {
 		selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 	}
 
-	// Select the text
 	el.select();
-	// Copy it
-	document.execCommand('copy');
-	// Then remove the element from the DOM
+	document.execCommand('copy'); // TODO: Use Clipboard API when supported
 	document.body.removeChild(el);
 
 	// If a selection existed before copying
