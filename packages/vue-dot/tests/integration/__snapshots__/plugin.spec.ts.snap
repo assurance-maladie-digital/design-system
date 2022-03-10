@@ -27,6 +27,7 @@ Object {
     "SubHeader",
     "TableToolbar",
     "UploadWorkflow",
+    "UserMenuBtn",
   ],
   "directives": Array [
     "debounce",

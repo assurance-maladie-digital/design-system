@@ -1,15 +1,24 @@
 export const config = {
 	menu: {
 		offsetY: true,
-		zIndex: 4
+		zIndex: 4,
+		minWidth: '198px',
+		maxWidth: '198px',
+		nudgeRight: 0
 	},
-	btn : {
-		elevation: 0,
-		class: 'pa-0 px-sm-3 py-sm-2'
+	btn: {
+		text: true,
+		height: 'auto'
 	},
 	icon: {
-		size: '32px',
-		color: 'grey darken-1',
+		color: '#007fad',
 		class: 'ml-0 ml-sm-5'
+	},
+	logoutListItem: {
+		class: 'primary--text'
+	},
+	logoutIcon: {
+		color: 'primary',
+		class: 'mr-4'
 	}
 };

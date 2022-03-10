@@ -150,6 +150,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'UploadWorkflow',
 				to: '/composants/upload-workflow'
+			},
+			{
+				title: 'UserMenuBtn',
+				to: '/composants/user-menu-btn'
 			}
 		]
 	},
