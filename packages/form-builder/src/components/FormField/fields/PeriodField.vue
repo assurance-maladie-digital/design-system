@@ -32,13 +32,11 @@
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
-	/** Form period field to enter a period */
 	@Component<PeriodField>({
 		components: {
 			DatePicker
 		},
 		watch: {
-			// Listen the current field value for the component
 			'field.value': {
 				handler(value: PeriodValue | null): void {
 					if (!value) {
@@ -75,7 +73,6 @@
 			return this.field.fieldOptions?.from as unknown as Options;
 		}
 
-		/** Emit the new value when started or ended date change */
 		dateUpdated(): void {
 			const fromGreaterThanTo = (
 				this.periodValue.from &&
@@ -83,7 +80,6 @@
 				new Date(this.periodValue.from) > new Date(this.periodValue.to)
 			);
 
-			// Reset the end date if selected start date greater
 			if (fromGreaterThanTo) {
 				this.periodValue.to = null;
 			}

@@ -98,7 +98,7 @@
 	const DOT_FILE_CHAR = '.';
 	const ESCAPED_DOT_FILE_CHAR = '_';
 
-	const basePath = '/explorer/';
+	const BASE_PATH = '/explorer/';
 
 	const Props = Vue.extend({
 		props: {
@@ -223,7 +223,7 @@
 			const loading = setTimeout(() => this.state = StateEnum.PENDING, 500);
 
 			const [document] = await this.$content({ deep: true })
-				.where({ path: basePath + path })
+				.where({ path: BASE_PATH + path })
 				.fetch<Content>();
 
 			this.state = StateEnum.RESOLVED;

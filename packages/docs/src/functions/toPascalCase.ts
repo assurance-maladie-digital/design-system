@@ -5,5 +5,7 @@ export function toPascalCase(str: string): string {
 		return '';
 	}
 
-	return words.map((word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()).join('');
+	return words
+		.map((word) => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase())
+		.join('');
 }

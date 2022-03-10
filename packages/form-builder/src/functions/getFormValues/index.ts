@@ -2,12 +2,7 @@ import { FormValues } from './types';
 
 import { Form } from '../../components/FormBuilder/types';
 
-/**
- * Return an array with field values
- *
- * @param {Form} form The form object
- * @returns {FormValues} The form values
- */
+/** Return an array with field values */
 export function getFormValues(form: Form): FormValues {
 	const formValues: FormValues = {};
 

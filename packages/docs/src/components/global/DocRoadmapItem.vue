@@ -64,10 +64,8 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-expansion-panel-header {
-		::v-deep .v-expansion-panel-header__icon {
-			flex: none;
-		}
+	.v-expansion-panel-header ::v-deep .v-expansion-panel-header__icon {
+		flex: none;
 	}
 
 	.v-expansion-panel-content {
