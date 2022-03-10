@@ -9,6 +9,8 @@
 			:multiple="multiple"
 			:type="undefined"
 			:class="{ 'flex-column': !isInline }"
+			:aria-label="options.label"
+			role="listbox"
 			class="vd-choice-button-field-toggle d-flex flex-wrap primary--text"
 		>
 			<VBtn
@@ -17,6 +19,8 @@
 				:value="item.value"
 				:outlined="!isSelected(item.value)"
 				:elevation="0"
+				:aria-selected="isSelected(item.value)"
+				role="option"
 				height="auto"
 				min-height="40px"
 				active-class="white--text"
@@ -51,7 +55,7 @@
 		</template>
 
 		<p
-			v-else
+			v-else-if="showHint"
 			:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 			class="v-messages px-3 mt-2 mb-0"
 		>
@@ -78,11 +82,6 @@
 	export default class ChoiceButtonField extends MixinsDeclaration {
 		checkIcon = mdiCheck;
 
-		/**
-		 * Filter items with truthy value only
-		 *
-		 * @returns {FieldItem[]} The filtered items
-		 */
 		get filteredItems(): FieldItem[] {
 			if (!Array.isArray(this.items)) {
 				return [];

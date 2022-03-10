@@ -1,4 +1,4 @@
-import { Props } from "~/types";
+import { Props } from '~/types';
 
 export function customizable(example: string, otherComponents?: string): Props {
 	const descriptionComplement = otherComponents ? ` ${otherComponents}` : '';

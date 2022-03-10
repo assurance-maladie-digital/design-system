@@ -11,7 +11,7 @@ exports[`FormBuilder renders correctly 1`] = `
     </p>
     <div class="vd-form-field">
       <h4 class="text-body-1"><span>Question ?</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 20px; height: 20px; width: 20px;"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div class="v-input vd-form-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
@@ -250,7 +250,7 @@ exports[`FormBuilder renders correctly 1`] = `
     <!---->
     <div class="vd-form-field">
       <h4 class="text-body-1"><span>Question select slider</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 20px; height: 20px; width: 20px;"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div>
@@ -278,7 +278,7 @@ exports[`FormBuilder renders correctly 1`] = `
     </div>
     <div class="vd-form-field">
       <h4 class="text-body-1"><span>Question select slider thumb</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 20px; height: 20px; width: 20px;"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div>
@@ -314,7 +314,7 @@ exports[`FormBuilder renders correctly 1`] = `
     </div>
     <div class="vd-form-field">
       <h4 class="text-body-1"><span>Question select slider thumb with custom label</span> <span class="v-tooltip v-tooltip--right"><!----><button type="button" class="ml-1 v-btn v-btn--icon v-btn--round theme--light v-size--default"><span class="v-btn__content"><span aria-hidden="true" class="v-icon notranslate theme--light" style="font-size: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 20px; height: 20px; width: 20px;"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span></button></span></h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div>
@@ -352,7 +352,7 @@ exports[`FormBuilder renders correctly 1`] = `
       <h4 class="text-body-1 mb-2"><span>Question avec complétion automatique</span>
         <!---->
       </h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div>
@@ -392,20 +392,20 @@ exports[`FormBuilder renders correctly 1`] = `
       <h4 class="text-body-1 mb-2"><span>Question choix bouton inline</span>
         <!---->
       </h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div>
         <div class="vd-choice-button-field">
-          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle" inline="true" hint="Texte informatif"><button type="button" value="0" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle" role="listbox" inline="true" hint="Texte informatif"><button type="button" value="0" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				9h30
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="10" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="10" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				10h
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="11" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="11" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				11h
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
@@ -421,31 +421,29 @@ exports[`FormBuilder renders correctly 1`] = `
       <h4 class="text-body-1 mb-2"><span>Question choix bouton multiple</span>
         <!---->
       </h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle flex-column"><button type="button" value="test1" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle flex-column" role="listbox"><button type="button" value="test1" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				Multiple 1
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="22" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="22" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				Multiple 2
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="33" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="33" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				Seul 1
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="44" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="44" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				Seul 2
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
             </button></div>
-          <p class="v-messages px-3 mt-2 mb-0 theme--light">
-            <!---->
-          </p>
+          <!---->
         </div>
         <!---->
       </div>
@@ -457,18 +455,16 @@ exports[`FormBuilder renders correctly 1`] = `
       <!---->
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle flex-column"><button type="button" value="1" class="text-none text-wrap text-left py-2 v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default primary" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle flex-column" role="listbox"><button type="button" value="1" class="text-none text-wrap text-left py-2 v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default primary" style="height: auto; min-height: 40px;" aria-selected="true" role="option"><span class="v-btn__content"><span class="text-body-1">
 				Texte qui permet de tester sur plusieurs lignes
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="2" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="2" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				Texte 2
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
             </button></div>
-          <p class="v-messages px-3 mt-2 mb-0 theme--light">
-            <!---->
-          </p>
+          <!---->
         </div>
         <!---->
       </div>
@@ -477,31 +473,29 @@ exports[`FormBuilder renders correctly 1`] = `
       <h4 class="text-body-1 mb-2"><span>Question choix autre</span>
         <!---->
       </h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Informations supplémentaires
       </p>
       <div>
         <div class="vd-choice-button-field vd-form-input">
-          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle flex-column" label="Classic field" outlined="true"><button type="button" value="0" class="text-none text-wrap text-left py-2 v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default primary" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+          <div class="vd-choice-button-field-toggle d-flex flex-wrap primary--text v-item-group theme--light v-btn-toggle flex-column" aria-label="Classic field" role="listbox" label="Classic field" outlined="true"><button type="button" value="0" class="text-none text-wrap text-left py-2 v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default primary" style="height: auto; min-height: 40px;" aria-selected="true" role="option"><span class="v-btn__content"><span class="text-body-1">
 				S
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="1" class="text-none text-wrap text-left py-2 v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default primary" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="1" class="text-none text-wrap text-left py-2 v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default primary" style="height: auto; min-height: 40px;" aria-selected="true" role="option"><span class="v-btn__content"><span class="text-body-1">
 				M
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="2" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="2" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				L
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
-            </button><button type="button" value="3" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;"><span class="v-btn__content"><span class="text-body-1">
+            </button><button type="button" value="3" class="text-none text-wrap text-left py-2 v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
 				XL
 			</span>
               <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate white--text flex-shrink-0 ml-1 theme--light" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
             </button></div>
-          <p class="v-messages px-3 mt-2 mb-0 theme--light">
-            <!---->
-          </p>
+          <!---->
         </div>
         <div class="v-input vd-form-input v-input--is-label-active v-input--is-dirty v-input--dense theme--dark v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
           <div class="v-input__control">
@@ -524,7 +518,7 @@ exports[`FormBuilder renders correctly 1`] = `
       <h4 class="text-body-1 mb-2"><span>Question choix autre conditionnel</span>
         <!---->
       </h4>
-      <p class="text-body-2 grey--text text--darken-1">
+      <p class="text-body-2 text--lighten-1">
         Visible quand le choix « Autre » est sélectionné
       </p>
       <div>

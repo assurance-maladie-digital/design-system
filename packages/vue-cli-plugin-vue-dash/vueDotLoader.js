@@ -1,6 +1,3 @@
-// Vue CLI configuration
-// see https://cli.vuejs.org/guide/ for help
-
 const componentMap = {
 	// Elements
 	CopyBtn: 'elements',

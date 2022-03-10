@@ -27,7 +27,7 @@
 		>
 			<!--
 				Pass down the scoped slots
-				see https://github.com/vuejs/vue/pull/7765 for the official discussion
+				@see https://github.com/vuejs/vue/pull/7765 for the official discussion
 				and https://stackoverflow.com/questions/50891858/vue-how-to-pass-down-slots-inside-wrapper-component/52823029#52823029
 				for the source of this solution
 			-->
@@ -72,10 +72,6 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	/**
-	 * FormFieldList is a component that
-	 * displays a group of fields
-	 */
 	@Component({
 		components: {
 			FormField
@@ -86,15 +82,6 @@
 		}
 	})
 	export default class FormFieldList extends MixinsDeclaration {
-		/**
-		 * When a field is updated, emit a
-		 * change event with updated fields
-		 * Also emit 'refresh' event if the field is dynamic
-		 *
-		 * @param {Field} field The updated field with new value
-		 * @param {string} fieldName The name of the field
-		 * @returns {void}
-		 */
 		fieldUpdated(field: Field, fieldName: string): void {
 			const fields = { ...this.fields };
 			fields[fieldName] = field;
@@ -102,9 +89,7 @@
 			this.$nextTick(() => {
 				this.$emit('change', fields);
 
-				// If the field has the `dynamic` property
 				if (field.dynamic) {
-					// Also emit 'refresh' event
 					this.$emit('refresh');
 				}
 			});
