@@ -69,11 +69,6 @@
 			}
 		];
 
-		/**
-		 * Set the new value to the corresponding dataList item
-		 *
-		 * @param {DataListActionEvent} dataListAction The dataListAction object containing dataListIndex and itemIndex
-		 */
 		setItemValue({ dataListIndex, itemIndex }: DataListActionEvent): void {
 			const formattedPosition = `n°${dataListIndex + 1}, ligne n°${itemIndex + 1}.`;
 			console.log(formattedPosition);

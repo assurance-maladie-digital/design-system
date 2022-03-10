@@ -4,11 +4,7 @@ import { registerComponents } from '@cnamts/vue-dot/src/helpers/registerComponen
 
 import { components } from './components';
 
-/**
- * Globally register all components (patterns & elements)
- *
- * @param {VueConstructor} Vue The global Vue instance
- */
+/** Globally register all components */
 export function registerAllComponents(Vue: VueConstructor): void {
 	registerComponents(Vue, components);
 }

@@ -6,6 +6,6 @@ export interface User {
 }
 
 export interface UsersResult {
-    items: User[];
-    total: number;
+	items: User[];
+	total: number;
 }
