@@ -1,19 +1,19 @@
 <template>
-		<VDataTable
-			:headers="headers"
-			:items="items"
-			:search="search"
-			hide-default-footer
-			@current-items="filteredItems = $event"
-		>
-			<template #top>
-				<TableToolbar
-					v-model="search"
-					:nb-total="items.length"
-					:nb-filtered="filteredItems.length"
-				/>
-			</template>
-		</VDataTable>
+	<VDataTable
+		:headers="headers"
+		:items="items"
+		:search="search"
+		hide-default-footer
+		@current-items="filteredItems = $event"
+	>
+		<template #top>
+			<TableToolbar
+				v-model="search"
+				:nb-total="items.length"
+				:nb-filtered="filteredItems.length"
+			/>
+		</template>
+	</VDataTable>
 </template>
 
 <script lang="ts">

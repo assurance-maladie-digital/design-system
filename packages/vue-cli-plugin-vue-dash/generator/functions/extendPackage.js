@@ -11,7 +11,6 @@ function normalizeVersion(version) {
 		return 'next';
 	}
 
-	// If the version is an alpha or a beta
 	if (version.includes('alpha') || version.includes('beta')) {
 		// Remove ^ char to avoid version auto-bump
 		return version.replace('^', '');
@@ -20,7 +19,6 @@ function normalizeVersion(version) {
 	return version;
 }
 
-// Use dev dependencies to get packages versions
 const VueDotVersion = normalizeVersion(devDependencies['@cnamts/vue-dot']);
 const DesignTokensVersion = normalizeVersion(devDependencies['@cnamts/design-tokens']);
 const FormBuilderVersion = normalizeVersion(devDependencies['@cnamts/form-builder']);
@@ -123,9 +121,8 @@ function extendPackage(api, options, pm) {
 	}
 
 	if (options.vuexPersist) {
-		// We need 2.0.1 specifically since in
-		// later version there is a bug with
-		// Internet Explorer
+		// We need 2.0.1 specifically since in later
+		// versions there is a bug with IE 11
 		newPackageProperties.dependencies['vuex-persist'] = '2.0.1';
 	}
 

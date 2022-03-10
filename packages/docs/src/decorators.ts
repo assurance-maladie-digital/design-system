@@ -1,6 +1,6 @@
 import { createDecorator } from 'vue-class-component';
 
-type Property = 'asyncData' | 'middleware' | 'head' | 'fetch';
+type Property = 'asyncData' | 'head' | 'fetch';
 
 function newPropertyDecorator(property: Property) {
 	return createDecorator((options, key) => {
@@ -11,6 +11,5 @@ function newPropertyDecorator(property: Property) {
 }
 
 export const AsyncData = newPropertyDecorator('asyncData');
-export const Middleware = newPropertyDecorator('middleware');
 export const Head = newPropertyDecorator('head');
 export const Fetch = newPropertyDecorator('fetch');

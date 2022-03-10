@@ -2,6 +2,8 @@
 
 exports[`Widthable computes the default styles 1`] = `
 Object {
+  "maxWidth": undefined,
+  "minWidth": undefined,
   "width": "100%",
 }
 `;
@@ -9,15 +11,23 @@ Object {
 exports[`Widthable computes the styles when max-width is defined 1`] = `
 Object {
   "maxWidth": "512px",
+  "minWidth": undefined,
   "width": "100%",
 }
 `;
 
 exports[`Widthable computes the styles when min-width is defined 1`] = `
 Object {
+  "maxWidth": undefined,
   "minWidth": "512px",
   "width": "100%",
 }
 `;
 
-exports[`Widthable computes the styles when width is null 1`] = `Object {}`;
+exports[`Widthable computes the styles when width is null 1`] = `
+Object {
+  "maxWidth": undefined,
+  "minWidth": undefined,
+  "width": undefined,
+}
+`;

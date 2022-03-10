@@ -17,7 +17,6 @@
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
-	/** Form date field to enter a date */
 	@Component({
 		components: {
 			DatePicker

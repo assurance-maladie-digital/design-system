@@ -1,5 +1,3 @@
-// Override some Vuetify styles
-
 // Import visually-hidden mixin
 @import 'vuetify/src/styles/tools/_display.sass';
 
@@ -46,8 +44,7 @@
 	}
 }
 
-// Fix color contrast of disabled elements to respect
-// contrast-ratios for accessibility
+// Fix color contrast of disabled elements
 .theme--light {
 	&.v-label--is-disabled,
 	&.v-input--is-disabled .v-label,

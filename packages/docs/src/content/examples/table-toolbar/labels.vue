@@ -1,22 +1,22 @@
 <template>
-		<VDataTable
-			:headers="headers"
-			:items="items"
-			:search="search"
-			hide-default-footer
-			@current-items="filteredItems = $event"
-		>
-			<template #top>
-				<TableToolbar
-					v-model="search"
-					:nb-total="items.length"
-					show-add-btn
-					row-text="patient"
-					add-btn-label="Ajouter un patient"
-					search-label="Rechercher un patient"
-				/>
-			</template>
-		</VDataTable>
+	<VDataTable
+		:headers="headers"
+		:items="items"
+		:search="search"
+		hide-default-footer
+		@current-items="filteredItems = $event"
+	>
+		<template #top>
+			<TableToolbar
+				v-model="search"
+				:nb-total="items.length"
+				show-add-btn
+				row-text="patient"
+				add-btn-label="Ajouter un patient"
+				search-label="Rechercher un patient"
+			/>
+		</template>
+	</VDataTable>
 </template>
 
 <script lang="ts">

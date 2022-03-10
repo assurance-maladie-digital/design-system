@@ -2,7 +2,6 @@ const shouldRenderTemplate = require('./shouldRenderTemplate');
 
 const Superb = require('superb');
 
-// Make a function, so you can call superb()
 const superb = () => Superb.random();
 
 const prompts = [

@@ -26,12 +26,10 @@ const DIST_FOLDER = './dist';
 // Create dist folder if it doesn't exist
 if (!fs.existsSync(DIST_FOLDER)) {
 	info('Creating dist folder');
-
 	fs.mkdirSync(DIST_FOLDER);
 } else {
-	info('Removing dist folder content');
-
 	// Clear the content of dist folder
+	info('Removing dist folder content');
 	fs.emptyDirSync(`./${DIST_FOLDER}`);
 }
 
@@ -58,8 +56,7 @@ execSync(`tsc -p tsconfig.build.json --outDir ${DIST_FOLDER}`, execOpts);
 // Remove dev folder
 fs.removeSync(`${DIST_FOLDER}/dev`);
 
-// Remove component folders because we don't compile
-// them individually at the moment
+// Remove component folders because we don't compile them individually at the moment
 fs.removeSync(`${DIST_FOLDER}/src/elements`);
 fs.removeSync(`${DIST_FOLDER}/src/patterns`);
 fs.removeSync(`${DIST_FOLDER}/src/registerAllComponents.js`);
