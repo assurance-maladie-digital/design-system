@@ -147,7 +147,7 @@
 ### Interne
 
 - 🔒 **Sécurité**
-  - **url-parse:** Mise à jour vers de la `v1.5.7` vers la `v1.5.10` ([#1819](https://github.com/assurance-maladie-digital/design-system/pull/1819))
+  - **url-parse:** Mise à jour vers de la `v1.5.7` vers la `v1.5.10` ([#1819](https://github.com/assurance-maladie-digital/design-system/pull/1819)) ([2340012](https://github.com/assurance-maladie-digital/design-system/commit/23400128544e8872a050f253502c52723a5cfcdc))
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.19` ([#1783](https://github.com/assurance-maladie-digital/design-system/pull/1783)) ([8ac88d9](https://github.com/assurance-maladie-digital/design-system/commit/8ac88d9c32992bf4b506cac2b0173bd918d76918))
@@ -171,6 +171,7 @@
   - **@babel/core:** Mise à jour vers la `v7.17.5` ([#1801](https://github.com/assurance-maladie-digital/design-system/pull/1801)) ([ce23cf1](https://github.com/assurance-maladie-digital/design-system/commit/ce23cf1d9a02e3119016c445def19dbddfc38f4a))
   - **fs-extra:** Mise à jour vers la `v10.0.1` ([#1803](https://github.com/assurance-maladie-digital/design-system/pull/1803)) ([5528f7e](https://github.com/assurance-maladie-digital/design-system/commit/5528f7e6ab57a3ae7a20059db64fabb06e56c5b6))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.6` ([#1804](https://github.com/assurance-maladie-digital/design-system/pull/1804)) ([9f13586](https://github.com/assurance-maladie-digital/design-system/commit/9f13586c05f0a0e935760a6cb73770a4fc146e55))
+  - **dayjs:** Mise à jour vers la `v1.10.8` ([#1820](https://github.com/assurance-maladie-digital/design-system/pull/1820))
 
 ## v2.2.0
 
