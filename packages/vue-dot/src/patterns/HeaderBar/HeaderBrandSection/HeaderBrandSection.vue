@@ -5,6 +5,8 @@
 	>
 		<component
 			:is="logoContainerComponent"
+			:aria-current-value="null"
+			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 		>
 			<Logo
@@ -69,6 +71,7 @@
 	import { ThemeEnum } from '../ThemeEnum';
 
 	import { LogoInfo } from './types';
+	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
 
@@ -101,6 +104,8 @@
 
 	@Component
 	export default class HeaderBrandSection extends MixinsDeclaration {
+		locales = locales;
+
 		get height(): string {
 			if (this.mobileVersion && this.hasSecondaryLogo) {
 				return '32px';
