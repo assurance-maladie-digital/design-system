@@ -86,6 +86,7 @@
 
 - ♿️ **Accessibilité**
   - **ChoiceButtonField:** Ajout des attributs ARIA manquants ([#1840](https://github.com/assurance-maladie-digital/design-system/pull/1840)) ([29a95e7](https://github.com/assurance-maladie-digital/design-system/commit/29a95e7fea39f1315d39e161aabc26ca02ab2936))
+  - **HeaderBar:** Ajout des attributs ARIA manquants ([#1844](https://github.com/assurance-maladie-digital/design-system/pull/1844))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1810](https://github.com/assurance-maladie-digital/design-system/pull/1810)) ([bef7321](https://github.com/assurance-maladie-digital/design-system/commit/bef7321ca310887d2db2851d46b4feeb31a7178b))
@@ -171,7 +172,7 @@
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.7` ([#1828](https://github.com/assurance-maladie-digital/design-system/pull/1828)) ([4acf60d](https://github.com/assurance-maladie-digital/design-system/commit/4acf60d1fa8b22bbf89588f63de5aa22b534f39c))
   - **lint-staged:** Mise à jour vers la `v12.3.5` ([#1833](https://github.com/assurance-maladie-digital/design-system/pull/1833)) ([36b8416](https://github.com/assurance-maladie-digital/design-system/commit/36b8416cbb300f6b6ad82924e1e962bd2740f8b5))
   - **vuetify:** Mise à jour vers la `v2.6.4` ([#1834](https://github.com/assurance-maladie-digital/design-system/pull/1834)) ([a4fa8b5](https://github.com/assurance-maladie-digital/design-system/commit/a4fa8b565eafdfa6065cb6a1b339ff39bcd1b056))
-  - **axios:** Mise à jour vers la `v0.26.1` ([#1843](https://github.com/assurance-maladie-digital/design-system/pull/1843))
+  - **axios:** Mise à jour vers la `v0.26.1` ([#1843](https://github.com/assurance-maladie-digital/design-system/pull/1843)) ([b8a6cc3](https://github.com/assurance-maladie-digital/design-system/commit/b8a6cc32a22dfe651982463956388e60376e825e))
 
 ## v2.2.0
 
