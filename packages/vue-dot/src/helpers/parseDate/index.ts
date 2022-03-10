@@ -4,7 +4,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 dayjs.extend(customParseFormat);
 
-/** Parse custom format with dayjs */
+/** Parse a date with dayjs */
 export function parseDate(value: string, format = 'DD/MM/YYYY'): dayjs.Dayjs {
 	// Currently dayjs doesn't work well with timezone offsets and parsing
 	// To fix this, we set the hour based on timezone offset

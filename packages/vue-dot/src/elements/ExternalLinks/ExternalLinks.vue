@@ -88,20 +88,19 @@
 
 	import { customizable } from '../../mixins/customizable';
 
+	import { convertToUnit } from '../../helpers/convertToUnit';
+	import { propValidator } from '../../helpers/propValidator';
+
 	import {
 		mdiChevronRight as rightArrowIcon,
 		mdiChevronLeft as leftArrowIcon,
 		mdiOpenInNew
 	} from '@mdi/js';
 
-	import { convertToUnit } from '../../helpers/convertToUnit';
-	import { propValidator } from '../../helpers/propValidator';
-
 	const SPACE_CHARACTER = ' ';
 
 	const Props = Vue.extend({
 		props: {
-			/** Position of the component */
 			position: {
 				type: String,
 				required: true,
@@ -118,27 +117,22 @@
 					return propValidator('position', acceptedValues, value);
 				}
 			},
-			/** Links to display in the list */
 			items: {
 				type: Array as PropType<ExternalLink[]>,
 				default: () => []
 			},
-			/** The label of the button */
 			btnText: {
 				type: String,
 				default: locales.btnText
 			},
-			/** Nudge the component to the top */
 			nudgeTop: {
 				type: [String, Number],
 				default: 0
 			},
-			/** Nudge the component to the bottom */
 			nudgeBottom: {
 				type: [String, Number],
 				default: 0
 			},
-			/** Apply position: fixed */
 			fixed: {
 				type: Boolean,
 				default: false
@@ -150,7 +144,6 @@
 
 	@Component
 	export default class ExternalLinks extends MixinsDeclaration {
-		// Extend $refs
 		$refs!: Refs<{
 			menu: {
 				pageWidth: string;
@@ -308,7 +301,6 @@
 		max-width: none;
 
 		::v-deep .v-btn__content {
-			// Control flex-direction on the parent
 			flex-direction: inherit;
 		}
 	}

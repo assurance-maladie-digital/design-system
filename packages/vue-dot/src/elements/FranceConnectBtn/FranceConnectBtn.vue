@@ -90,22 +90,18 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Link URL */
 			href: {
 				type: String,
 				required: true
 			},
-			/** Label of the button */
 			label: {
 				type: String,
 				default: locales.btnText
 			},
-			/** Width of the icon */
 			width: {
 				type: [Number, String],
 				default: 300
 			},
-			/** Height of the icon */
 			height: {
 				type: [Number, String],
 				default: 78

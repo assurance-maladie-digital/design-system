@@ -114,22 +114,18 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Hide the back button */
 			hideBackBtn: {
 				type: Boolean,
 				default: false
 			},
-			/** Customize the text inside back button */
 			backBtnText: {
 				type: String,
 				default: locales.backBtnText
 			},
-			/** Title of the SubHeader */
 			titleText: {
 				type: String,
 				default: undefined
 			},
-			/** Sub-title of the SubHeader */
 			subTitleText: {
 				type: String,
 				default: undefined
@@ -138,12 +134,10 @@
 				type: Array as PropType<DataListGroupItems | undefined>,
 				default: undefined
 			},
-			/** Loading mode */
 			loading: {
 				type: Boolean,
 				default: false
 			},
-			/** Render the value as plain HTML */
 			renderHtmlValue: {
 				type: Boolean,
 				default: false
@@ -153,10 +147,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
-	/**
-	 * SubHeader is a component that displays
-	 * informations below the main header
-	 */
 	@Component({
 		components: {
 			DataListGroup
@@ -165,7 +155,6 @@
 	export default class SubHeader extends MixinsDeclaration {
 		backArrowIcon = mdiKeyboardBackspace;
 
-		/** Semi-transparent white */
 		get fadeWhite(): string {
 			return 'rgba(255, 255, 255, .7)';
 		}

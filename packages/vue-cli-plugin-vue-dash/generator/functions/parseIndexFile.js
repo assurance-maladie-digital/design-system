@@ -5,7 +5,6 @@
  * @returns {string} The parsed file
  */
 function parseIndexFile(indexFile) {
-	// Replace {BASE_URL} with <%= BASE_URL %>
 	return indexFile.replace(/{BASE_URL}/g, '<%= BASE_URL %>');
 }
 

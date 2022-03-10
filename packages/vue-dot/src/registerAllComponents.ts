@@ -12,11 +12,7 @@ const components: Components[] = [
 	templates
 ];
 
-/**
- * Globally register all components (patterns & elements)
- *
- * @param {VueConstructor} Vue The global Vue instance
- */
+/** Globally register all components (patterns & elements) */
 export function registerAllComponents(Vue: VueConstructor): void {
 	components.forEach((component) => {
 		registerComponents(Vue, component);

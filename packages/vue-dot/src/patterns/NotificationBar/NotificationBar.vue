@@ -69,7 +69,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The text of the close button */
 			closeBtnText: {
 				type: String,
 				default: locales.close
@@ -79,10 +78,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * NotificationBar is a component that displays
-	 * a notification using a Snackbar
-	 */
 	@Component<NotificationBar>({
 		computed: mapState('notification', ['notification']),
 		methods: mapActions('notification', ['clearNotification']),
@@ -126,15 +121,12 @@
 		}
 
 		created() {
-			// Remove notification if present when the
-			// component is loaded the first time
 			if (this.notification) {
 				this.clearNotification();
 			}
 		}
 
 		beforeDestroy() {
-			// Clear notification on lifecycle end
 			this.clearNotification();
 		}
 	}

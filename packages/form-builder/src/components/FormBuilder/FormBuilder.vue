@@ -11,7 +11,7 @@
 		>
 			<!--
 				Pass down the scoped slots
-				see https://github.com/vuejs/vue/pull/7765 for the official discussion
+				@see https://github.com/vuejs/vue/pull/7765 for the official discussion
 				and https://stackoverflow.com/questions/50891858/vue-how-to-pass-down-slots-inside-wrapper-component/52823029#52823029
 				for the source of this solution
 			-->
@@ -37,10 +37,6 @@
 
 	const MixinsDeclaration = mixins(FormBuilderCore);
 
-	/**
-	 * FormBuilder is a component that displays a form
-	 * from a JSON object
-	 */
 	@Component({
 		components: {
 			FormFieldList

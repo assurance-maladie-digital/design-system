@@ -5,15 +5,9 @@ import { isEmailValid } from '../../functions/validation/isEmailValid';
 
 import { defaultErrorMessages } from './locales';
 
-/**
- * Check that the email is valid
- *
- * @param {ErrorMessages} [errorMessages] Custom error messages
- * @returns {ValidationRule} Validation result
- */
+/** Check that the value is a valid email */
 export function emailFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
 	return (value: Value): ValidationResult => {
-		// If the value is empty, return true (valid)
 		if (!value) {
 			return true;
 		}

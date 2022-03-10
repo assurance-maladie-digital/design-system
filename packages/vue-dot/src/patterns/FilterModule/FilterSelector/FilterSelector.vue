@@ -55,10 +55,8 @@
 
 	@Component
 	export default class FilterSelector extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		// Icons
 		filterIcon = mdiFilterVariant;
 
 		emitFilterSelectedEvent(index: number): void {

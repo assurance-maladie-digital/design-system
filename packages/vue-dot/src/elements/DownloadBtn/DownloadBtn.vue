@@ -1,7 +1,7 @@
 <template>
 	<VBtn
 		v-bind="btnOptions"
-		:loading="state === STATE_ENUM.pending"
+		:loading="state === StateEnum.PENDING"
 		class="vd-download-btn"
 		@click.native="download"
 	>
@@ -33,7 +33,7 @@
 	import { customizable, Options } from '../../mixins/customizable';
 	import { NotificationObj } from '../../modules/notification/types';
 
-	import { STATE_ENUM } from '../../constants/enums/StateEnum';
+	import { StateEnum } from '../../constants/enums/StateEnum';
 	import { IndexedObject } from '../../types';
 	import { ContentHeadersEnum } from './ContentHeadersEnum';
 	import { FileInfo } from './types';
@@ -60,10 +60,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * DownloadBtn is a component that allows to
-	 * download a file from a network request
-	 */
 	@Component({
 		inheritAttrs: false,
 		methods: mapActions('notification', ['addNotification'])
@@ -72,21 +68,13 @@
 		addNotification!: (obj: NotificationObj) => void;
 
 		locales = locales;
-		STATE_ENUM = STATE_ENUM;
+		StateEnum = StateEnum;
 
 		downloadIcon = mdiDownload;
 
-		state = STATE_ENUM.idle;
+		state = StateEnum.IDLE;
 
-		/**
-		 * Compute the options for the VBtn
-		 * (Merge options and binded attributes)
-		 *
-		 * @returns {Options} Computed options
-		 */
 		get btnOptions(): Options {
-			// Merge btn options (custom or default) with directly binded
-			// attributes (theses attributes will override 'options.btn')
 			return deepMerge<Options>(this.options.btn, this.$attrs);
 		}
 
@@ -121,7 +109,7 @@
 		}
 
 		async download(): Promise<void> {
-			this.state = STATE_ENUM.pending;
+			this.state = StateEnum.PENDING;
 
 			try {
 				const { data, headers } = await this.filePromise();
@@ -129,14 +117,14 @@
 
 				downloadFile(data, name, type);
 
-				this.state = STATE_ENUM.resolved;
+				this.state = StateEnum.RESOLVED;
 
 				if (this.notification) {
 					this.notifyUser();
 				}
 			} catch (error) {
 				this.$emit('error', error);
-				this.state = STATE_ENUM.rejected;
+				this.state = StateEnum.REJECTED;
 			}
 		}
 	}

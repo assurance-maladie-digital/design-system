@@ -1,6 +1,5 @@
-// Custom utility classes
+@import '@cnamts/design-tokens/dist/tokens';
 
-// Fade <transition>
 .fade-enter-active,
 .fade-leave-active {
 	transition-duration: .15s;
@@ -28,5 +27,21 @@
 
 	.pointer {
 		cursor: pointer;
+	}
+
+	.vd-form-input {
+		width: $vd-input-medium;
+
+		&-s {
+			width: $vd-input-small;
+		}
+
+		&-l {
+			width: $vd-input-large;
+		}
+
+		&-xl {
+			width: $vd-input-x-large;
+		}
 	}
 }

@@ -14,7 +14,6 @@ interface VueInstance extends VueConstructor {
 }
 
 interface TestComponent extends Vue {
-	// Extend $refs
 	$refs: Refs<{
 		input: {
 			hasError: boolean;
@@ -93,7 +92,6 @@ describe('DateLogic', () => {
 	// because it may change
 	afterEach(() => {
 		const instance = Vue as VueInstance;
-
 		delete instance.options.components['v-text-field'];
 	});
 

@@ -1,5 +1,4 @@
 {
-	// Extend root config
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": ".",
