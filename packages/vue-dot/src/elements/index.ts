@@ -8,6 +8,7 @@ import FranceConnectBtn from './FranceConnectBtn';
 import HeaderLoading from './HeaderLoading';
 import Logo from './Logo';
 import PageContainer from './PageContainer';
+import UserMenuBtn from './UserMenuBtn';
 
 export const elements = {
 	CopyBtn,
@@ -19,5 +20,6 @@ export const elements = {
 	FranceConnectBtn,
 	HeaderLoading,
 	Logo,
-	PageContainer
+	PageContainer,
+	UserMenuBtn
 };
