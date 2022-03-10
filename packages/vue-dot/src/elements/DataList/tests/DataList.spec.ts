@@ -159,13 +159,11 @@ describe('DataList', () => {
 		const itemWithAction = wrapper.findAll('.vd-data-list-item').at(2);
 		expect(itemWithAction.exists()).toBe(true);
 
-		// Find the button action in the second item and click on it
 		const actionBtn = itemWithAction.find('.vd-data-list-item-action-btn');
 		expect(actionBtn.exists()).toBe(true);
 
 		actionBtn.trigger('click');
 
-		// Wait until $emits have been handled
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('click:item-action')).toEqual([[2]]);

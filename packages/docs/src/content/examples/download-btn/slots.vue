@@ -65,7 +65,7 @@
 			},
 			btn: {
 				height: 'auto',
-				minHeight: 56
+				minHeight: '56px'
 			}
 		};
 	}

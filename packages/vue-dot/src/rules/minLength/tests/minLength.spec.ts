@@ -19,7 +19,6 @@ describe('minLength', () => {
 		expect(rule('0123456789')).toBe(true);
 	});
 
-
 	it('returns true when the value is longer than the maximum without counting spaces', () => {
 		const rule = minLength(10, true);
 

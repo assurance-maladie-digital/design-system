@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type UnknownValue = any;
 
-/**
- * Deep copy an object or an array without reference
- *
- * @param {any} o The value to copy
- * @returns {any} The copied value (can be typed if needed)
- */
+/** Deep copy an object or an array without reference */
 export function deepCopy<T = any>(o: UnknownValue): T {
 	let copy = o;
 	let k;

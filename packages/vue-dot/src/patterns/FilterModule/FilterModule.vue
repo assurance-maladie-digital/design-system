@@ -68,7 +68,6 @@
 		}
 	})
 	export default class FilterModule extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
 		dialog = false;

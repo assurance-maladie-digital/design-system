@@ -6,8 +6,8 @@
 			outlined
 			clearable
 			hide-details
-			class="vd-form-input"
 			label="Rechercher"
+			class="vd-form-input"
 			@click:clear="search = null"
 		/>
 
