@@ -31,8 +31,7 @@
 	import Component from 'vue-class-component';
 
 	import { FileListItem } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
-	import { ErrorEvent } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
-	import { ErrorCodesType } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
+	import { ErrorEvent, ErrorCodesType } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
 
 	@Component
 	export default class UploadWorkflowEvents extends Vue {

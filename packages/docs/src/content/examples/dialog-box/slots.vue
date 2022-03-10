@@ -26,7 +26,7 @@
 					Retour
 				</VBtn>
 			</template>
-		</Dialogbox>
+		</DialogBox>
 	</div>
 </template>
 

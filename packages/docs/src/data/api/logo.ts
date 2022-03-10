@@ -1,9 +1,7 @@
 import { Api } from '~/types';
 
-import { customizable } from './shared/mixins/customizable';
-
 export const api: Api = {
-	LangBtn: {
+	Logo: {
 		props: [
 			{
 				name: 'hide-signature',

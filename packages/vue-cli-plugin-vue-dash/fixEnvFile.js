@@ -18,11 +18,9 @@ function fixEnvFile() {
 
 	const shouldCopyFile = !fileExists(envFilePath) && fileExists(envFilePathDist);
 
-	// If config.js doesn't exists but config.js.dist does
 	if (shouldCopyFile) {
 		warn('Fix missing config.js file');
 
-		// Copy config.js.dist to config.js
 		fs.copyFileSync(envFilePathDist, envFilePath);
 
 		log(`Copied ${ENV_DIST_PATH} to ${ENV_PATH}`);

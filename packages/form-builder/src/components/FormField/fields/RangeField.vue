@@ -52,7 +52,7 @@
 		maxLabel: 'Valeur max'
 	};
 
-	enum RANGE_ENUM {
+	enum RangeEnum {
 		MIN = 0,
 		MAX = 1
 	}
@@ -100,29 +100,29 @@
 		}
 
 		updateMinValue(value: number): void {
-			this.updateRange(RANGE_ENUM.MIN, value);
+			this.updateRange(RangeEnum.MIN, value);
 		}
 
 		updateMaxValue(value: number): void {
-			this.updateRange(RANGE_ENUM.MAX, value);
+			this.updateRange(RangeEnum.MAX, value);
 		}
 
-		updateRange(index: RANGE_ENUM, value: number): void {
+		updateRange(index: RangeEnum, value: number): void {
 			const [ min, max ] = this.rangeValue;
 
 			if (value < min) {
-				this.setRangeValue(RANGE_ENUM.MIN, value);
+				this.setRangeValue(RangeEnum.MIN, value);
 			}
 
 			if (value > max) {
-				this.setRangeValue(RANGE_ENUM.MAX, value);
+				this.setRangeValue(RangeEnum.MAX, value);
 			}
 
 			this.setRangeValue(index, value);
 			this.emitChangeEvent(this.rangeValue);
 		}
 
-		setRangeValue(index: RANGE_ENUM, value: number): void {
+		setRangeValue(index: RangeEnum, value: number): void {
 			this.$set(this.rangeValue, index, value);
 		}
 	}
