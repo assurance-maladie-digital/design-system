@@ -39,6 +39,7 @@
   - **rules:** Utilisation de la fonction `isDateBeforeValue` dans la règle de validation `notBeforeToday` ([#1827](https://github.com/assurance-maladie-digital/design-system/pull/1827)) ([35d4fb9](https://github.com/assurance-maladie-digital/design-system/commit/35d4fb90ecf882bb182e77d8894a2a78eac6a603))
   - **global:** Suppression et mise à jour des commentaires ([#1829](https://github.com/assurance-maladie-digital/design-system/pull/1829)) ([976df56](https://github.com/assurance-maladie-digital/design-system/commit/976df56d938c0fb8d8eb5d3b8f02a073c9a17c09))
   - **directives:** Refonte de la directive `debounce` ([#1830](https://github.com/assurance-maladie-digital/design-system/pull/1830)) ([2358e04](https://github.com/assurance-maladie-digital/design-system/commit/2358e045f6bc51b200b9f287f0267f52c65ec115))
+  - **functions:** Renommage de la function `isDateAfterValue` en `isDateAfter` ([#1847](https://github.com/assurance-maladie-digital/design-system/pull/1847))
 
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout des attributs ARIA manquants ([#1844](https://github.com/assurance-maladie-digital/design-system/pull/1844)) ([7dbfced](https://github.com/assurance-maladie-digital/design-system/commit/7dbfceda3509cbc20921679be6cbff76a686ecf7))
@@ -147,7 +148,7 @@
   - **DatePicker:** Mise à jour de la description de la prop `picker-date` ([#1768](https://github.com/assurance-maladie-digital/design-system/pull/1768)) ([be2dc4a](https://github.com/assurance-maladie-digital/design-system/commit/be2dc4a95a467e50d8d5f7dee71dc987035761a6))
   - **global:** Mise à jour de la page principes de design ([#1770](https://github.com/assurance-maladie-digital/design-system/pull/1770)) ([5f69694](https://github.com/assurance-maladie-digital/design-system/commit/5f69694625d94489d238b5d389f60ccdc2833fad))
   - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1838](https://github.com/assurance-maladie-digital/design-system/pull/1838)) ([8d921ef](https://github.com/assurance-maladie-digital/design-system/commit/8d921ef047a4553fc2c0026408e20842b748dc89))
-  - **HeaderBar:** Correction du nom du slot `secondary-logo` ([#1846](https://github.com/assurance-maladie-digital/design-system/pull/1846))
+  - **HeaderBar:** Correction du nom du slot `secondary-logo` ([#1846](https://github.com/assurance-maladie-digital/design-system/pull/1846)) ([0319f5f](https://github.com/assurance-maladie-digital/design-system/commit/0319f5f09b06739278a5c539277fae8860fa1ffc))
 
 ### Interne
 

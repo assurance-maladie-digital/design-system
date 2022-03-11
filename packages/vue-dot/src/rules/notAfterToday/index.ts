@@ -3,7 +3,7 @@ import { ValidationRule, ValidationResult, ErrorMessages, Value } from '../types
 
 import { defaultErrorMessages } from './locales';
 
-import { isDateAfterValue } from '../../functions/isDateAfterValue';
+import { isDateAfter } from '../../functions/validation/isDateAfter';
 import { TODAY } from '../../constants';
 
 /*** Check that the value is not after today (DD/MM/YYYY format) */
@@ -13,7 +13,7 @@ export function notAfterTodayFn(errorMessages: ErrorMessages = defaultErrorMessa
 			return true;
 		}
 
-		return !isDateAfterValue(TODAY, value) || ruleMessage(errorMessages, 'default');
+		return !isDateAfter(TODAY, value) || ruleMessage(errorMessages, 'default');
 	};
 }
 
