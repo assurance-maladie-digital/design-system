@@ -5,7 +5,7 @@ import { defaultErrorMessages } from './locales';
 
 import { parseDate } from '../../helpers/parseDate';
 import { formatDate } from '../../functions/formatDate';
-import { isDateBeforeValue } from '../../functions/isDateBeforeValue';
+import { isDateBefore } from '../../functions/validation/isDateBefore';
 
 /** Check that the value is not after the specified date (DD/MM/YYYY format) */
 export function notBeforeDate(date: string, errorMessages = defaultErrorMessages): ValidationRule {
@@ -16,6 +16,6 @@ export function notBeforeDate(date: string, errorMessages = defaultErrorMessages
 
 		const formattedValue = formatDate(parseDate(date));
 
-		return !isDateBeforeValue(date, value) || ruleMessage(errorMessages, 'default', [formattedValue]);
+		return !isDateBefore(date, value) || ruleMessage(errorMessages, 'default', [formattedValue]);
 	};
 }
