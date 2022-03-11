@@ -14,7 +14,7 @@
   - **rules:** Ajout de l'option `ignoreSpaces` à la règle de validation `maxLength` ([#1816](https://github.com/assurance-maladie-digital/design-system/pull/1816)) ([3cc84dd](https://github.com/assurance-maladie-digital/design-system/commit/3cc84dd7f039a3dd86805fe08fd885c9ef9017ba))
   - **rules:** Ajout de la règle de validation `notAfterDate` ([#1823](https://github.com/assurance-maladie-digital/design-system/pull/1823)) ([60fca18](https://github.com/assurance-maladie-digital/design-system/commit/60fca18c5d49debd27aa51d73e686abb3c7c0e9b))
   - **rules:** Ajout de la règle de validation `notBeforeDate` ([#18234](https://github.com/assurance-maladie-digital/design-system/pull/18234)) ([b492d5f](https://github.com/assurance-maladie-digital/design-system/commit/b492d5f73c9bcf92dd4ba6287dac0e36ff767f5e))
-  - **UserMenuBtn:** Ajout d'un nouveau composant ([#1845](https://github.com/assurance-maladie-digital/design-system/pull/1845))
+  - **UserMenuBtn:** Ajout d'un nouveau composant ([#1845](https://github.com/assurance-maladie-digital/design-system/pull/1845)) ([c11696f](https://github.com/assurance-maladie-digital/design-system/commit/c11696faaf9a820c82f084069a1852c26fef7dcf))
 
 - 🐛 **Corrections de bugs**
   - **NotificationBar:** Correction de l'affichage sur les écrans mobiles ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675)) ([b18214c](https://github.com/assurance-maladie-digital/design-system/commit/b18214ce5646382b281adb62fe96896b588f27df))
@@ -147,6 +147,7 @@
   - **DatePicker:** Mise à jour de la description de la prop `picker-date` ([#1768](https://github.com/assurance-maladie-digital/design-system/pull/1768)) ([be2dc4a](https://github.com/assurance-maladie-digital/design-system/commit/be2dc4a95a467e50d8d5f7dee71dc987035761a6))
   - **global:** Mise à jour de la page principes de design ([#1770](https://github.com/assurance-maladie-digital/design-system/pull/1770)) ([5f69694](https://github.com/assurance-maladie-digital/design-system/commit/5f69694625d94489d238b5d389f60ccdc2833fad))
   - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1838](https://github.com/assurance-maladie-digital/design-system/pull/1838)) ([8d921ef](https://github.com/assurance-maladie-digital/design-system/commit/8d921ef047a4553fc2c0026408e20842b748dc89))
+  - **HeaderBar:** Correction du nom du slot `secondary-logo` ([#1846](https://github.com/assurance-maladie-digital/design-system/pull/1846))
 
 ### Interne
 

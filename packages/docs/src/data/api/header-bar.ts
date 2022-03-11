@@ -102,7 +102,7 @@ export const api: Api = {
 				description: 'Slot pour afficher du contenu dans la partie droite de l’en-tête.'
 			},
 			{
-				name: 'secondary-brand',
+				name: 'secondary-logo',
 				description: 'Slot pour remplacer le bloc marque secondaire et afficher une marque partenaire.'
 			},
 			{
