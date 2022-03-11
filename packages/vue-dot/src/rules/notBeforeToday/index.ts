@@ -3,7 +3,7 @@ import { ValidationRule, ValidationResult, ErrorMessages, Value } from '../types
 
 import { defaultErrorMessages } from './locales';
 
-import { isDateBeforeValue } from '../../functions/isDateBeforeValue';
+import { isDateBefore } from '../../functions/validation/isDateBefore';
 import { TODAY } from '../../constants';
 
 /** Check that the value is not before today (DD/MM/YYYY format) */
@@ -13,7 +13,7 @@ export function notBeforeTodayFn(errorMessages: ErrorMessages = defaultErrorMess
 			return true;
 		}
 
-		return !isDateBeforeValue(TODAY, value) || ruleMessage(errorMessages, 'default');
+		return !isDateBefore(TODAY, value) || ruleMessage(errorMessages, 'default');
 	};
 }
 
