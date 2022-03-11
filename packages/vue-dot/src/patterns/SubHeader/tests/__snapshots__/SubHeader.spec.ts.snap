@@ -37,7 +37,7 @@ exports[`SubHeader renders loading state correctly 1`] = `
   <div class="vd-sub-header-content d-flex justify-space-between">
     <div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
       <transition-stub name="fade-transition" mode="out-in">
-        <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 2rem; width: 300px;">
+        <div aria-busy="true" aria-live="polite" role="alert" aria-hidden="true" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 2rem; width: 300px;">
           <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
         </div>
       </transition-stub>

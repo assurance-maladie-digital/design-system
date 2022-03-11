@@ -40,10 +40,11 @@
   - **global:** Suppression et mise à jour des commentaires ([#1829](https://github.com/assurance-maladie-digital/design-system/pull/1829)) ([976df56](https://github.com/assurance-maladie-digital/design-system/commit/976df56d938c0fb8d8eb5d3b8f02a073c9a17c09))
   - **directives:** Refonte de la directive `debounce` ([#1830](https://github.com/assurance-maladie-digital/design-system/pull/1830)) ([2358e04](https://github.com/assurance-maladie-digital/design-system/commit/2358e045f6bc51b200b9f287f0267f52c65ec115))
   - **functions:** Renommage de la function `isDateAfterValue` en `isDateAfter` ([#1847](https://github.com/assurance-maladie-digital/design-system/pull/1847)) ([2beaccb](https://github.com/assurance-maladie-digital/design-system/commit/2beaccbdf047eccbc0b453f6067b2d8254bfd6c2))
-  - **functions:** Renommage de la function `isDateBeforeValue` en `isDateBefore` ([#1848](https://github.com/assurance-maladie-digital/design-system/pull/1848))
+  - **functions:** Renommage de la function `isDateBeforeValue` en `isDateBefore` ([#1848](https://github.com/assurance-maladie-digital/design-system/pull/1848)) ([324828f](https://github.com/assurance-maladie-digital/design-system/commit/324828fd610ff7630071ca421b8133c0a875002c))
 
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout des attributs ARIA manquants ([#1844](https://github.com/assurance-maladie-digital/design-system/pull/1844)) ([7dbfced](https://github.com/assurance-maladie-digital/design-system/commit/7dbfceda3509cbc20921679be6cbff76a686ecf7))
+  - **HeaderLoading:** Ajout de l'attribut `aria-hidden` ([#1850](https://github.com/assurance-maladie-digital/design-system/pull/1850))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1808](https://github.com/assurance-maladie-digital/design-system/pull/1808)) ([d2031dc](https://github.com/assurance-maladie-digital/design-system/commit/d2031dc218160ce70ccb3161f4bfe724f56abc57))

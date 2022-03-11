@@ -4,6 +4,7 @@
 		:width="width"
 		:height="height"
 		type="heading"
+		aria-hidden="true"
 		class="vd-header-loading"
 	/>
 </template>
