@@ -5,7 +5,7 @@ description: Faire des appels API en utilisant axios.
 
 ## Instance axios
 
-Pour effectuer des appels API, le package [axios](https://axios-http.com/docs/intro) est ajouté de base dans le starter kit, la première étape est de créer une instance, c’est ici que l’on pourra préciser différents paramètres sur lesquels les appels API seront basés réalisés.
+Pour effectuer des appels API, le package [axios](https://axios-http.com/docs/intro) est ajouté de base dans le starter kit, la première étape est de créer une [instance axios](https://axios-http.com/docs/instance), elle sera la base des appels API qui seront basés sur elle.
 
 Cette instance est définie dans le fichier `src/plugins/axios.ts`qui est généré dans le starter kit :
 
@@ -66,8 +66,6 @@ Un intercepteur est ajouté sur cette instance axios. Lorsque cette instance ser
 instance.interceptors.response.use(onSuccess, onError);
 ```
 
-Dans l’exemple ci-dessus, la fonction fléchée qui est passé en second argument sera appellée en cas d’erreur de notre API.
-
 </doc-alert>
 
 <doc-alert type="info">
@@ -79,17 +77,13 @@ Nous utilisons une variable d’environement pour spécifier l’URL de base de 
 ## Création d’un appel API
 
 L’étape suivante est de créer une fonction utilisant cette instance pour appeller une API. Par convention, ces fonctions seront créées dans le dossier `src/services`. Chaque appel API néccéssite 2 fichiers :
-- `api.ts`: ce fichier contient la fonction qui appelle l’API,
-- `types.d.ts`: ce fichier contient les types dont notre fonction à besoin. D’une manière générale, il contiendra le typage du payload et le typage des données renvoyées par l’API.
+- `api.ts`: ce fichier contient la fonction qui utilise l’instance axios et appelle l’API,
+- `types.d.ts`: ce fichier contient les types dont notre fonction à besoin. D’une manière générale, il contiendra le typage des données attendues et renvoyées par l’API.
 
-Fichier `src/services/monApi/api.ts`:
+Par exemple, le fichier `src/services/monApi/api.ts`:
 
 ```ts
 import { axios, AxiosResponse } from '@/plugins/axios';
-
-interface Payload {
-	example: string;
-}
 
 export function getData(params: MonApiParams): Promise<AxiosResponse<MonApiResponseGet>> {
 	return axios.get('/api/data', {
@@ -97,8 +91,8 @@ export function getData(params: MonApiParams): Promise<AxiosResponse<MonApiRespo
 	});
 }
 
-export function postData(id: string, payload: MonApiPayload): Promise<AxiosResponse<MonApiResponsePost>> {
-	return axios.post(`/api/${id}`, payload);
+export function postData(payload: MonApiPayload): Promise<AxiosResponse<MonApiResponsePost>> {
+	return axios.post(`/api/data`, payload);
 }
 
 ```

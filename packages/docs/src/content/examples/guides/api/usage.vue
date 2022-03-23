@@ -9,10 +9,7 @@
 			Récupérer les utilisateurs
 		</VBtn>
 
-		<ul
-			v-if="users.length > 0"
-			class="mt-4"
-		>
+		<ul class="mt-4">
 			<li
 				v-for="(user, index) in users"
 				:key="`user-${index}`"
@@ -20,10 +17,6 @@
 				{{ user.firstname }} {{ user.lastname }}
 			</li>
 		</ul>
-
-		<p v-else-if="state === 'resolved'">
-			Pas d’utilisateur
-		</p>
 	</div>
 </template>
 
