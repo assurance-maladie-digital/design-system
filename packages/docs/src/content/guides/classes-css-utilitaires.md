@@ -5,15 +5,15 @@ description: Liste des classes utilitaires css.
 
 ## Vuetify
 
--  [Arrondis](https://vuetifyjs.com/en/styles/border-radius/),
--  [Couleurs](https://vuetifyjs.com/en/styles/colors/),
--  [Types d’affichages](https://vuetifyjs.com/en/styles/display/),
--  [Élévations](https://vuetifyjs.com/en/styles/display/),
--  [Affichages flex](https://vuetifyjs.com/en/styles/flex/),
--  [Affichages float](https://vuetifyjs.com/en/styles/float/),
--  [Débordements](https://vuetifyjs.com/en/styles/overflow/),
 -  [Espacements](https://vuetifyjs.com/en/styles/spacing/),
 -  [Typographies](https://vuetifyjs.com/en/styles/text-and-typography/).
+-  [Couleurs](https://vuetifyjs.com/en/styles/colors/),
+-  [Types d’affichages](https://vuetifyjs.com/en/styles/display/),
+-  [Affichages flex](https://vuetifyjs.com/en/styles/flex/),
+-  [Affichages float](https://vuetifyjs.com/en/styles/float/),
+-  [Arrondis](https://vuetifyjs.com/en/styles/border-radius/),
+-  [Élévations](https://vuetifyjs.com/en/styles/display/),
+-  [Débordements](https://vuetifyjs.com/en/styles/overflow/),
 
 ## Vue-dot
 
