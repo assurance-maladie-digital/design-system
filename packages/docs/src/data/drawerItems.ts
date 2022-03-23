@@ -243,6 +243,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/nouvelle-page'
 			},
 			{
+				title: 'Classes utilitaires css',
+				to: '/guides/classes-css-utilitaires'
+			},
+			{
 				title: 'Variables d’environnement',
 				to: '/guides/variables-environnement'
 			},
