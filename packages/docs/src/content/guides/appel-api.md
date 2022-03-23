@@ -5,7 +5,9 @@ description: Faire des appels API en utilisant axios.
 
 ## Instance axios
 
-Pour effectuer des appels API, le package [axios](https://axios-http.com/docs/intro) est ajouté de base dans le starter kit, la première étape est de créer une instance pour effectuer un appel API. Cette instance est définie dans le fichier `src/plugins/axios.ts`, ce fichier est présent par défaut.
+Pour effectuer des appels API, le package [axios](https://axios-http.com/docs/intro) est ajouté de base dans le starter kit, la première étape est de créer une instance, c’est ici que l’on pourra préciser différents paramètres sur lesquels les appels API seront basés réalisés.
+
+Cette instance est définie dans le fichier `src/plugins/axios.ts`qui est généré dans le starter kit :
 
 ```ts
 import axios, { AxiosError, AxiosResponse } from 'axios';
@@ -58,7 +60,13 @@ export { AxiosResponse };
 
 <doc-alert type="info">
 
-Un intercepteur est ajouté sur cette instance axios. Lorsque cette instance sera utilisée poru effectuer un appel API, l'intercepteur déclenchera une fonction spécifique en fonction de la réponse (succès ou erreur). Dans notre exemple, c'est un intercepteur en cas d'erreur.
+Un intercepteur est ajouté sur cette instance axios. Lorsque cette instance sera utilisée pour effectuer un appel API, l’intercepteur déclenchera une fonction spécifique en fonction du type de réponse (succès ou erreur). 
+
+```ts
+instance.interceptors.response.use(onSuccess, onError);
+```
+
+Dans l’exemple ci-dessus, la fonction fléchée qui est passé en second argument sera appellée en cas d’erreur de notre API.
 
 </doc-alert>
 
