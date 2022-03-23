@@ -17,12 +17,12 @@ description: Liste des classes utilitaires css.
 
 ## Vue-dot
 
-- `fade-enter-active` et `fade-leave-active`: permet d’ajouter un effet de transition.
-- `w-100`: applique une largeur de 100%,
-- `h-100`: applique une hauteur de 100%,
-- `max-width-none`: retire la largeur maximum,
-- `pointer`: change le curseur en `pointer`,
-- `vd-form-input-s`: applique la largeur `$vd-input-small`,
-- `vd-form-input`: applique la largeur `$vd-input-medium`,
-- `vd-form-input-l`: applique la largeur `$vd-input-large`,
-- `vd-form-input-xl`: applique la largeur `$vd-input-x-large`.
+- `fade-enter-active` et `fade-leave-active`: permet d’ajouter un effet de transition
+- `w-100`: applique une largeur de 100%
+- `h-100`: applique une hauteur de 100%
+- `max-width-none`: retire la largeur maximum
+- `pointer`: change le curseur en `pointer`
+- `vd-form-input-s`: applique la largeur `$vd-input-small`
+- `vd-form-input`: applique la largeur `$vd-input-medium`
+- `vd-form-input-l`: applique la largeur `$vd-input-large`
+- `vd-form-input-xl`: applique la largeur `$vd-input-x-large`
