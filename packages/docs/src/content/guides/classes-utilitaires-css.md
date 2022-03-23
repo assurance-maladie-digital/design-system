@@ -1,6 +1,6 @@
 ---
-title: Classes utilitaires css
-description: Liste des classes utilitaires css.
+title: Classes utilitaires CSS
+description: Liste des classes utilitaires CSS.
 ---
 
 ## Vuetify
