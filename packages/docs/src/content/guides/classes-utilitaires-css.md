@@ -15,7 +15,7 @@ description: Liste des classes utilitaires CSS.
 -  [Élévations](https://vuetifyjs.com/en/styles/display/)
 -  [Débordements](https://vuetifyjs.com/en/styles/overflow/)
 
-## Vue-dot
+## Vue Dot
 
 - `fade-enter-active` et `fade-leave-active`: permet d’ajouter un effet de transition
 - `w-100` : applique une largeur de 100%
