@@ -183,7 +183,8 @@
   - **axios:** Mise à jour vers la `v0.26.1` ([#1843](https://github.com/assurance-maladie-digital/design-system/pull/1843)) ([b8a6cc3](https://github.com/assurance-maladie-digital/design-system/commit/b8a6cc32a22dfe651982463956388e60376e825e))
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.17` ([#1854](https://github.com/assurance-maladie-digital/design-system/pull/1854)) ([901f9ef](https://github.com/assurance-maladie-digital/design-system/commit/901f9ef7e1bca33157931e4af1ce4ece58368ac0))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v38` ([#1849](https://github.com/assurance-maladie-digital/design-system/pull/1849)) ([97bf86c](https://github.com/assurance-maladie-digital/design-system/commit/97bf86c5d8f8c1606a9469e41fd3e58b1346e740))
-  - **@octokit/core:** Mise à jour vers la `v3.6.0` ([#1851](https://github.com/assurance-maladie-digital/design-system/pull/1851))
+  - **@octokit/core:** Mise à jour vers la `v3.6.0` ([#1851](https://github.com/assurance-maladie-digital/design-system/pull/1851)) ([c544166](https://github.com/assurance-maladie-digital/design-system/commit/c5441665bc278d1030ab27b44b334b02a453cff2))
+  - **babel:** Mise à jour du monorepo vers la `v7.17.8` ([#1852](https://github.com/assurance-maladie-digital/design-system/pull/1852))
 
 ## v2.2.0
 
