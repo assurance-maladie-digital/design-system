@@ -223,6 +223,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/regles-validation/not-before-today'
 					}
 				]
+			},
+			{
+				title: 'Classes utilitaires CSS',
+				to: '/css/classes-utilitaires'
 			}
 		]
 	},
@@ -241,10 +245,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Nouvelle page',
 				to: '/guides/nouvelle-page'
-			},
-			{
-				title: 'Classes utilitaires CSS',
-				to: '/guides/classes-utilitaires-css'
 			},
 			{
 				title: 'Variables d’environnement',
