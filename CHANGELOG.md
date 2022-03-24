@@ -44,7 +44,7 @@
 
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout des attributs ARIA manquants ([#1844](https://github.com/assurance-maladie-digital/design-system/pull/1844)) ([7dbfced](https://github.com/assurance-maladie-digital/design-system/commit/7dbfceda3509cbc20921679be6cbff76a686ecf7))
-  - **HeaderLoading:** Ajout de l'attribut `aria-hidden` ([#1850](https://github.com/assurance-maladie-digital/design-system/pull/1850))
+  - **HeaderLoading:** Ajout de l'attribut `aria-hidden` ([#1850](https://github.com/assurance-maladie-digital/design-system/pull/1850)) ([e5c144b](https://github.com/assurance-maladie-digital/design-system/commit/e5c144bd8459b607e54a0c0fd3f2931342845c12))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1808](https://github.com/assurance-maladie-digital/design-system/pull/1808)) ([d2031dc](https://github.com/assurance-maladie-digital/design-system/commit/d2031dc218160ce70ccb3161f4bfe724f56abc57))
@@ -151,6 +151,8 @@
   - **global:** Mise à jour de la page principes de design ([#1770](https://github.com/assurance-maladie-digital/design-system/pull/1770)) ([5f69694](https://github.com/assurance-maladie-digital/design-system/commit/5f69694625d94489d238b5d389f60ccdc2833fad))
   - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1838](https://github.com/assurance-maladie-digital/design-system/pull/1838)) ([8d921ef](https://github.com/assurance-maladie-digital/design-system/commit/8d921ef047a4553fc2c0026408e20842b748dc89))
   - **HeaderBar:** Correction du nom du slot `secondary-logo` ([#1846](https://github.com/assurance-maladie-digital/design-system/pull/1846)) ([0319f5f](https://github.com/assurance-maladie-digital/design-system/commit/0319f5f09b06739278a5c539277fae8860fa1ffc))
+  - **roadmap:** Mise à jour de la page ([#1864](https://github.com/assurance-maladie-digital/design-system/pull/1864)) ([b1debdf](https://github.com/assurance-maladie-digital/design-system/commit/b1debdf9538550fc661d8d21098ecf0f371c4022))
+  - **rules:** Documentation des classes utilitaires CSS ([#1861](https://github.com/assurance-maladie-digital/design-system/pull/1861)) ([9f939c4](https://github.com/assurance-maladie-digital/design-system/commit/9f939c434faf0e8a0bd47186666d75cfb3fb97e2))
 
 ### Interne
 
@@ -180,6 +182,7 @@
   - **lint-staged:** Mise à jour vers la `v12.3.5` ([#1833](https://github.com/assurance-maladie-digital/design-system/pull/1833)) ([36b8416](https://github.com/assurance-maladie-digital/design-system/commit/36b8416cbb300f6b6ad82924e1e962bd2740f8b5))
   - **vuetify:** Mise à jour vers la `v2.6.4` ([#1834](https://github.com/assurance-maladie-digital/design-system/pull/1834)) ([a4fa8b5](https://github.com/assurance-maladie-digital/design-system/commit/a4fa8b565eafdfa6065cb6a1b339ff39bcd1b056))
   - **axios:** Mise à jour vers la `v0.26.1` ([#1843](https://github.com/assurance-maladie-digital/design-system/pull/1843)) ([b8a6cc3](https://github.com/assurance-maladie-digital/design-system/commit/b8a6cc32a22dfe651982463956388e60376e825e))
+  - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.17` ([#1854](https://github.com/assurance-maladie-digital/design-system/pull/1854))
 
 ## v2.2.0
 
