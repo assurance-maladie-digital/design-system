@@ -17,7 +17,6 @@ description: Liste des classes utilitaires CSS.
 
 ## Vue Dot
 
-- `fade-enter-active` et `fade-leave-active`: permet d’ajouter un effet de transition
 - `w-100` : applique une largeur de 100%
 - `h-100` : applique une hauteur de 100%
 - `max-width-none` : retire la largeur maximum
@@ -26,3 +25,5 @@ description: Liste des classes utilitaires CSS.
 - `vd-form-input` : applique la largeur `$vd-input-medium`
 - `vd-form-input-l` : applique la largeur `$vd-input-large`
 - `vd-form-input-xl` : applique la largeur `$vd-input-x-large`
+
+Toutes les classes ci-dessus sont définies dans le fichier [src/styles/utilities.scss](https://github.com/assurance-maladie-digital/design-system/blob/dev/packages/vue-dot/src/styles/utilities.scss).
