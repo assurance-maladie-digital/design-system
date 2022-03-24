@@ -2,6 +2,18 @@
 
 @import '@cnamts/design-tokens/dist/tokens';
 
+.fade-enter-active,
+.fade-leave-active {
+	transition-duration: .15s;
+	transition-property: opacity;
+	transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
+
 .v-application {
 	// Warning rules: Change the main color when a warning is present
 	.vd-warning-rules {
