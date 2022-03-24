@@ -152,7 +152,7 @@
   - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1838](https://github.com/assurance-maladie-digital/design-system/pull/1838)) ([8d921ef](https://github.com/assurance-maladie-digital/design-system/commit/8d921ef047a4553fc2c0026408e20842b748dc89))
   - **HeaderBar:** Correction du nom du slot `secondary-logo` ([#1846](https://github.com/assurance-maladie-digital/design-system/pull/1846)) ([0319f5f](https://github.com/assurance-maladie-digital/design-system/commit/0319f5f09b06739278a5c539277fae8860fa1ffc))
   - **roadmap:** Mise à jour de la page ([#1864](https://github.com/assurance-maladie-digital/design-system/pull/1864)) ([b1debdf](https://github.com/assurance-maladie-digital/design-system/commit/b1debdf9538550fc661d8d21098ecf0f371c4022))
-  - **rules:** Documentation des classes utilitaires CSS ([#1861](https://github.com/assurance-maladie-digital/design-system/pull/1861))
+  - **rules:** Documentation des classes utilitaires CSS ([#1861](https://github.com/assurance-maladie-digital/design-system/pull/1861)) ([9f939c4](https://github.com/assurance-maladie-digital/design-system/commit/9f939c434faf0e8a0bd47186666d75cfb3fb97e2))
 
 ### Interne
 
@@ -182,6 +182,7 @@
   - **lint-staged:** Mise à jour vers la `v12.3.5` ([#1833](https://github.com/assurance-maladie-digital/design-system/pull/1833)) ([36b8416](https://github.com/assurance-maladie-digital/design-system/commit/36b8416cbb300f6b6ad82924e1e962bd2740f8b5))
   - **vuetify:** Mise à jour vers la `v2.6.4` ([#1834](https://github.com/assurance-maladie-digital/design-system/pull/1834)) ([a4fa8b5](https://github.com/assurance-maladie-digital/design-system/commit/a4fa8b565eafdfa6065cb6a1b339ff39bcd1b056))
   - **axios:** Mise à jour vers la `v0.26.1` ([#1843](https://github.com/assurance-maladie-digital/design-system/pull/1843)) ([b8a6cc3](https://github.com/assurance-maladie-digital/design-system/commit/b8a6cc32a22dfe651982463956388e60376e825e))
+  - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.17` ([#1854](https://github.com/assurance-maladie-digital/design-system/pull/1854))
 
 ## v2.2.0
 
