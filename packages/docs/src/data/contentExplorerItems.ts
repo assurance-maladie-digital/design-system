@@ -144,19 +144,11 @@ export const contentExplorerItems: TreeviewItem[] = [
 											{
 												name: 'AppHeader.spec.ts',
 												file: 'ts'
-											},
-											{
-												name: 'HeaderMenu.spec.ts',
-												file: 'ts'
 											}
 										]
 									},
 									{
 										name: 'AppHeader.vue',
-										file: 'vue'
-									},
-									{
-										name: 'HeaderMenu.vue',
 										file: 'vue'
 									},
 									{
