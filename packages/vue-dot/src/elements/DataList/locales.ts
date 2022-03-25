@@ -1,3 +1,4 @@
 export const locales = {
-	placeholder: '…'
+	placeholder: '…',
+	loadingLabel: 'Le contenu est en cours de chargement.'
 };
