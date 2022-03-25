@@ -73,7 +73,7 @@
   - **template:** Utilisation de l'interface `NotificationModule` ([#1772](https://github.com/assurance-maladie-digital/design-system/pull/1772)) ([9596934](https://github.com/assurance-maladie-digital/design-system/commit/95969345b2c554809d3a2e49ba609b911e7025da))
   - **global:** Suppression et mise à jour des commentaires ([#1842](https://github.com/assurance-maladie-digital/design-system/pull/1842)) ([138e3d3](https://github.com/assurance-maladie-digital/design-system/commit/138e3d34da4def51b7a89d13b8be242e9647ec7b))
   - **template:** Utilisation du composant `UserMenuBtn` ([#1875](https://github.com/assurance-maladie-digital/design-system/pull/1875)) ([520b794](https://github.com/assurance-maladie-digital/design-system/commit/520b79468f81211ab5f3b50723e43e5acb5c222d))
-  - **template:** Renommage du composant `Links` en `LinksList` ([#1876](https://github.com/assurance-maladie-digital/design-system/pull/1876))
+  - **template:** Renommage du composant `Links` en `LinksList` ([#1876](https://github.com/assurance-maladie-digital/design-system/pull/1876)) ([7f85d87](https://github.com/assurance-maladie-digital/design-system/commit/7f85d871a684b4065049fe744cc4d678eac59130))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1809](https://github.com/assurance-maladie-digital/design-system/pull/1809)) ([4424eb5](https://github.com/assurance-maladie-digital/design-system/commit/4424eb5c5613158b80c15a6b6f7f566884c29f2b))
@@ -86,6 +86,9 @@
 
 - 📝 **Documentation**
   - **README:** Ajout du tree-shaking de VueDot ([#1817](https://github.com/assurance-maladie-digital/design-system/pull/1817)) ([6c9020e](https://github.com/assurance-maladie-digital/design-system/commit/6c9020e57f97bb84c2749f0618f2a64f49ae69ff))
+
+- ⬆️ **Dépendances**
+  - **template:** Mise à jour des dépendances ([#1877](https://github.com/assurance-maladie-digital/design-system/pull/1877))
 
 ### FormBuilder
 
