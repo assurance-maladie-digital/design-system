@@ -132,6 +132,7 @@
   - **global:** Utilisation de l'interface `NotificationModule` ([#1773](https://github.com/assurance-maladie-digital/design-system/pull/1773)) ([398bcaf](https://github.com/assurance-maladie-digital/design-system/commit/398bcafde1452f4db7c747d985a0778973ad111a))
   - **global:** Mise à jour des styles et des espacements ([#1776](https://github.com/assurance-maladie-digital/design-system/pull/1776)) ([76f05e5](https://github.com/assurance-maladie-digital/design-system/commit/76f05e57ef29b7fb47c59f10b3651aa4200b1190))
   - **global:** Suppression et mise à jour des commentaires ([#1835](https://github.com/assurance-maladie-digital/design-system/pull/1835)) ([e0b8767](https://github.com/assurance-maladie-digital/design-system/commit/e0b8767f0e42d1f98e7e090f2f3b74fe471aef1a))
+  - **global:** Utilisation du caractère apostrophe ([#1867](https://github.com/assurance-maladie-digital/design-system/pull/1867))
 
 - 🔥 **Suppressions**
   - **components:** Suppression des propriétés `VLayout` non utilisées ([#1732](https://github.com/assurance-maladie-digital/design-system/pull/1732)) ([4bc02b5](https://github.com/assurance-maladie-digital/design-system/commit/4bc02b55462b9b0b601a6503c6c02dd2338b7320))
@@ -186,7 +187,7 @@
   - **lint-staged:** Mise à jour vers la `v12.3.7` ([#1856](https://github.com/assurance-maladie-digital/design-system/pull/1856)) ([6aa0355](https://github.com/assurance-maladie-digital/design-system/commit/6aa0355f6098173cc9a04f288a7140eca2a5d99b))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.4.8` ([#1858](https://github.com/assurance-maladie-digital/design-system/pull/1858)) ([503e4e7](https://github.com/assurance-maladie-digital/design-system/commit/503e4e700ff90fb9d1006a4147e06d4105ce36c5))
   - **@mdi/js:** Mise à jour vers la `v6.6.95` ([#1859](https://github.com/assurance-maladie-digital/design-system/pull/1859)) ([396ca5d](https://github.com/assurance-maladie-digital/design-system/commit/396ca5d1afce495fcf32696814b5d55e8f59b29f))
-  - **typescript:** Mise à jour vers la `v4.6.3` ([#1866](https://github.com/assurance-maladie-digital/design-system/pull/1866))
+  - **typescript:** Mise à jour vers la `v4.6.3` ([#1866](https://github.com/assurance-maladie-digital/design-system/pull/1866)) ([6dd339c](https://github.com/assurance-maladie-digital/design-system/commit/6dd339cacfd81402bced0c90cd59ad89a1fd9c12))
 
 ## v2.2.0
 
