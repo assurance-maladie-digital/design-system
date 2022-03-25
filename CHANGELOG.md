@@ -30,7 +30,8 @@
   - **HeaderBar:** Correction de l'affichage du bouton pour activer le menu sur les écrans mobiles ([#1811](https://github.com/assurance-maladie-digital/design-system/pull/1811)) ([68ec7ee](https://github.com/assurance-maladie-digital/design-system/commit/68ec7ee6f67b5577bf16948a0ea75445dc29fe2c))
   - **HeaderBar:** Correction de l'affichage du menu avec la prop `mobile-version` ([#1813](https://github.com/assurance-maladie-digital/design-system/pull/1813)) ([d76a825](https://github.com/assurance-maladie-digital/design-system/commit/d76a8254aa8f0efe485e79a83ea9a67527addca0))
   - **HeaderBar:** Correction de l'affichage de la barre de navigation ([#1814](https://github.com/assurance-maladie-digital/design-system/pull/1814)) ([b2fa9ec](https://github.com/assurance-maladie-digital/design-system/commit/b2fa9ec9473dd85fdd39b5d1da6b8e6bc7113892))
-  - **HeaderBar:** Correction de l'affichage du menu et de la barre de navigation avec les slots ([#1868](https://github.com/assurance-maladie-digital/design-system/pull/1868))
+  - **HeaderBar:** Correction de l'affichage du menu et de la barre de navigation avec les slots ([#1868](https://github.com/assurance-maladie-digital/design-system/pull/1868)) ([0714dbf](https://github.com/assurance-maladie-digital/design-system/commit/0714dbf727b515bdbff4d4167b63137b2d2b3c4e))
+  - **HeaderBar:** Correction de l'affichage des menus dans le composant ([#1869](https://github.com/assurance-maladie-digital/design-system/pull/1869))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Refonte du bouton pour activer le menu sur les écrans mobiles ([#1726](https://github.com/assurance-maladie-digital/design-system/pull/1726)) ([50e0938](https://github.com/assurance-maladie-digital/design-system/commit/50e09381f38102e42ab321a3915607efbd111ebe))

@@ -202,11 +202,6 @@
 		padding: 0;
 	}
 
-	.vd-header-bar,
-	.vd-header-bar-content {
-		overflow: hidden;
-	}
-
 	.vd-header-menu-btn ::v-deep {
 		.v-btn__content {
 			flex-direction: column;
