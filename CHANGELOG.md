@@ -31,7 +31,7 @@
   - **HeaderBar:** Correction de l'affichage du menu avec la prop `mobile-version` ([#1813](https://github.com/assurance-maladie-digital/design-system/pull/1813)) ([d76a825](https://github.com/assurance-maladie-digital/design-system/commit/d76a8254aa8f0efe485e79a83ea9a67527addca0))
   - **HeaderBar:** Correction de l'affichage de la barre de navigation ([#1814](https://github.com/assurance-maladie-digital/design-system/pull/1814)) ([b2fa9ec](https://github.com/assurance-maladie-digital/design-system/commit/b2fa9ec9473dd85fdd39b5d1da6b8e6bc7113892))
   - **HeaderBar:** Correction de l'affichage du menu et de la barre de navigation avec les slots ([#1868](https://github.com/assurance-maladie-digital/design-system/pull/1868)) ([0714dbf](https://github.com/assurance-maladie-digital/design-system/commit/0714dbf727b515bdbff4d4167b63137b2d2b3c4e))
-  - **HeaderBar:** Correction de l'affichage des menus dans le composant ([#1869](https://github.com/assurance-maladie-digital/design-system/pull/1869))
+  - **HeaderBar:** Correction de l'affichage des menus dans le composant ([#1869](https://github.com/assurance-maladie-digital/design-system/pull/1869)) ([4051f0f](https://github.com/assurance-maladie-digital/design-system/commit/4051f0faac4e29239ed9406f89a133ae06ff110f))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Refonte du bouton pour activer le menu sur les écrans mobiles ([#1726](https://github.com/assurance-maladie-digital/design-system/pull/1726)) ([50e0938](https://github.com/assurance-maladie-digital/design-system/commit/50e09381f38102e42ab321a3915607efbd111ebe))
@@ -135,6 +135,7 @@
   - **global:** Mise à jour des styles et des espacements ([#1776](https://github.com/assurance-maladie-digital/design-system/pull/1776)) ([76f05e5](https://github.com/assurance-maladie-digital/design-system/commit/76f05e57ef29b7fb47c59f10b3651aa4200b1190))
   - **global:** Suppression et mise à jour des commentaires ([#1835](https://github.com/assurance-maladie-digital/design-system/pull/1835)) ([e0b8767](https://github.com/assurance-maladie-digital/design-system/commit/e0b8767f0e42d1f98e7e090f2f3b74fe471aef1a))
   - **global:** Utilisation du caractère apostrophe ([#1867](https://github.com/assurance-maladie-digital/design-system/pull/1867)) ([3fee197](https://github.com/assurance-maladie-digital/design-system/commit/3fee197c45e87d29461276970c09a3d85f71a51b))
+  - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1870](https://github.com/assurance-maladie-digital/design-system/pull/1870))
 
 - 🔥 **Suppressions**
   - **components:** Suppression des propriétés `VLayout` non utilisées ([#1732](https://github.com/assurance-maladie-digital/design-system/pull/1732)) ([4bc02b5](https://github.com/assurance-maladie-digital/design-system/commit/4bc02b55462b9b0b601a6503c6c02dd2338b7320))
