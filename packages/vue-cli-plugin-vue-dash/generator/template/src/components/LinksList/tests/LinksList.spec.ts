@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests-unit';
 import { html } from '@cnamts/vue-dot/tests/utils/html';
 
-import Links from '../';
+import LinksList from '../';
 
 let wrapper: Wrapper<Vue>;
 
@@ -16,9 +16,9 @@ const links = [
 	}
 ];
 
-describe('Links', () => {
+describe('LinksList', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(Links, {
+		wrapper = mountComponent(LinksList, {
 			propsData: {
 				links
 			}
