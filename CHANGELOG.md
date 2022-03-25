@@ -72,7 +72,8 @@
   - **template:** Utilisation de TypeScript pour la configuration de Jest ([#1684](https://github.com/assurance-maladie-digital/design-system/pull/1684)) ([189652b](https://github.com/assurance-maladie-digital/design-system/commit/189652b335249b359d8c50af3b646c5a0cd30a77))
   - **template:** Utilisation de l'interface `NotificationModule` ([#1772](https://github.com/assurance-maladie-digital/design-system/pull/1772)) ([9596934](https://github.com/assurance-maladie-digital/design-system/commit/95969345b2c554809d3a2e49ba609b911e7025da))
   - **global:** Suppression et mise à jour des commentaires ([#1842](https://github.com/assurance-maladie-digital/design-system/pull/1842)) ([138e3d3](https://github.com/assurance-maladie-digital/design-system/commit/138e3d34da4def51b7a89d13b8be242e9647ec7b))
-  - **template:** Utilisation du composant `UserMenuBtn` ([#1875](https://github.com/assurance-maladie-digital/design-system/pull/1875))
+  - **template:** Utilisation du composant `UserMenuBtn` ([#1875](https://github.com/assurance-maladie-digital/design-system/pull/1875)) ([520b794](https://github.com/assurance-maladie-digital/design-system/commit/520b79468f81211ab5f3b50723e43e5acb5c222d))
+  - **template:** Renommage du composant `Links` en `LinksList` ([#1876](https://github.com/assurance-maladie-digital/design-system/pull/1876))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1809](https://github.com/assurance-maladie-digital/design-system/pull/1809)) ([4424eb5](https://github.com/assurance-maladie-digital/design-system/commit/4424eb5c5613158b80c15a6b6f7f566884c29f2b))
