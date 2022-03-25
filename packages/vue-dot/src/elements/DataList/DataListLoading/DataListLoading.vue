@@ -12,15 +12,12 @@
 			class="mb-4"
 		/>
 
-		<ul class="vd-data-list-loading-items pl-0">
+		<ul class="pl-0">
 			<li
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
 				class="vd-data-list-loading-item"
-				:class="{
-					'vd-row': row,
-					'mb-4': index !== itemsNumber
-				}"
+				:class="{ 'mb-4': index !== itemsNumber }"
 			>
 				<HeaderLoading
 					v-if="!row"
@@ -70,26 +67,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-data-list-loading {
-		.vd-data-list-loading-items {
-			list-style: none;
-		}
-
-		&:not(:last-child) {
-			margin-right: 80px;
-		}
-	}
-
-	.vd-row {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	@media only screen and (max-width: 425px) {
-		.vd-data-list-loading {
-			&:not(:last-child) {
-				margin-right: 0;
-			}
-		}
+	ul {
+		list-style: none;
 	}
 </style>
