@@ -86,7 +86,7 @@
 			},
 			placeholder: {
 				type: String,
-				default: locales.placeholder
+				default: undefined
 			},
 			loading: {
 				type: Boolean,
