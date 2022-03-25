@@ -1,8 +1,6 @@
 <template>
 	<div
-		role="alert"
-		aria-busy="true"
-		aria-live="polite"
+		aria-hidden="true"
 		class="vd-data-list-loading"
 	>
 		<HeaderLoading

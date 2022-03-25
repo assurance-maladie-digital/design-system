@@ -47,10 +47,11 @@
 - ♿️ **Accessibilité**
   - **HeaderBar:** Ajout des attributs ARIA manquants ([#1844](https://github.com/assurance-maladie-digital/design-system/pull/1844)) ([7dbfced](https://github.com/assurance-maladie-digital/design-system/commit/7dbfceda3509cbc20921679be6cbff76a686ecf7))
   - **HeaderLoading:** Ajout de l'attribut `aria-hidden` ([#1850](https://github.com/assurance-maladie-digital/design-system/pull/1850)) ([e5c144b](https://github.com/assurance-maladie-digital/design-system/commit/e5c144bd8459b607e54a0c0fd3f2931342845c12))
+  - **DataListLoading:** Utilisation de l'attribut `aria-hidden` à la place des autres attributs ARIA ([#1872](https://github.com/assurance-maladie-digital/design-system/pull/1872))
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1808](https://github.com/assurance-maladie-digital/design-system/pull/1808)) ([d2031dc](https://github.com/assurance-maladie-digital/design-system/commit/d2031dc218160ce70ccb3161f4bfe724f56abc57))
-  - **DataListLoading:** Suppression des styles inutiles ([#1871](https://github.com/assurance-maladie-digital/design-system/pull/1871))
+  - **DataListLoading:** Suppression des styles inutiles ([#1871](https://github.com/assurance-maladie-digital/design-system/pull/1871)) ([64f6fc8](https://github.com/assurance-maladie-digital/design-system/commit/64f6fc8b8170179c2ad351ec21fa1bd842298f0e))
 
 - ✅ **Tests**
   - **formatNir:** Correction d'une faute d'orthographe ([#1806](https://github.com/assurance-maladie-digital/design-system/pull/1806)) ([1efaa07](https://github.com/assurance-maladie-digital/design-system/commit/1efaa072dcc1c608e0782663deff78b365b2b5f4))
