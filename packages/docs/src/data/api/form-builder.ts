@@ -20,12 +20,12 @@ export const api: Api = {
 		events: [
 			{
 				name: 'change',
-				description: `Événement émis lorsque la valeur d'un champ est mise à jour.`,
+				description: 'Événement émis lorsque la valeur d’un champ est mise à jour.',
 				value: 'Form'
 			},
 			{
 				name: 'refresh',
-				description: `Événement émis lorsque la valeur d'un champ dynamique est mise à jour.`,
+				description: 'Événement émis lorsque la valeur d’un champ dynamique est mise à jour.',
 				value: undefined
 			}
 		]

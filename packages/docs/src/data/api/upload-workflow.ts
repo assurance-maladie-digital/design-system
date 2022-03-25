@@ -52,7 +52,7 @@ export const api: Api = {
 			},
 			{
 				name: 'error',
-				description: `Événement émis lorsque lorsqu'il y a une erreur de validation.`,
+				description: 'Événement émis lorsque lorsqu’il y a une erreur de validation.',
 				value: `{
 	file: File,
 	code: ErrorCodes
