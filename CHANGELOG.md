@@ -50,6 +50,7 @@
 
 - 🔥 **Suppressions**
   - **tests:** Suppression des commentaires inutiles ([#1808](https://github.com/assurance-maladie-digital/design-system/pull/1808)) ([d2031dc](https://github.com/assurance-maladie-digital/design-system/commit/d2031dc218160ce70ccb3161f4bfe724f56abc57))
+  - **DataListLoading:** Suppression des styles inutiles ([#1871](https://github.com/assurance-maladie-digital/design-system/pull/1871))
 
 - ✅ **Tests**
   - **formatNir:** Correction d'une faute d'orthographe ([#1806](https://github.com/assurance-maladie-digital/design-system/pull/1806)) ([1efaa07](https://github.com/assurance-maladie-digital/design-system/commit/1efaa072dcc1c608e0782663deff78b365b2b5f4))
@@ -135,7 +136,7 @@
   - **global:** Mise à jour des styles et des espacements ([#1776](https://github.com/assurance-maladie-digital/design-system/pull/1776)) ([76f05e5](https://github.com/assurance-maladie-digital/design-system/commit/76f05e57ef29b7fb47c59f10b3651aa4200b1190))
   - **global:** Suppression et mise à jour des commentaires ([#1835](https://github.com/assurance-maladie-digital/design-system/pull/1835)) ([e0b8767](https://github.com/assurance-maladie-digital/design-system/commit/e0b8767f0e42d1f98e7e090f2f3b74fe471aef1a))
   - **global:** Utilisation du caractère apostrophe ([#1867](https://github.com/assurance-maladie-digital/design-system/pull/1867)) ([3fee197](https://github.com/assurance-maladie-digital/design-system/commit/3fee197c45e87d29461276970c09a3d85f71a51b))
-  - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1870](https://github.com/assurance-maladie-digital/design-system/pull/1870))
+  - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1870](https://github.com/assurance-maladie-digital/design-system/pull/1870)) ([93e9b5b](https://github.com/assurance-maladie-digital/design-system/commit/93e9b5b7af3bea105c0421da7797aa6723f7209c))
 
 - 🔥 **Suppressions**
   - **components:** Suppression des propriétés `VLayout` non utilisées ([#1732](https://github.com/assurance-maladie-digital/design-system/pull/1732)) ([4bc02b5](https://github.com/assurance-maladie-digital/design-system/commit/4bc02b55462b9b0b601a6503c6c02dd2338b7320))
