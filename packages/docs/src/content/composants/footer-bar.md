@@ -7,11 +7,18 @@ description: Le pattern `FooterBar` est utilisé pour afficher un pied de page.
 
 <doc-tab-item label="Utilisation">
 
-<doc-usage name="footer-bar"></doc-usage>
+<doc-usage name="footer-bar" class="mb-0"></doc-usage>
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VFooter`.
+
+</doc-alert>
+
 <doc-api name="footer-bar"></doc-api>
 </doc-tab-item>
 

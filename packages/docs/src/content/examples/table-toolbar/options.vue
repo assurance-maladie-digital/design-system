@@ -28,7 +28,7 @@
 
 		vuetifyOptions = {
 			toolbar: {
-				color: 'grey lighten-5'
+				color: '#f8f9fc'
 			},
 			textField: {
 				outlined: true,

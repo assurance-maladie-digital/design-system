@@ -9,7 +9,7 @@
 			<RouterLink
 				v-if="prev"
 				:to="prev.path"
-				class="text-decoration-none body-1"
+				class="text-decoration-none text-body-1"
 			>
 				<span
 					aria-hidden="true"
@@ -25,7 +25,7 @@
 			<RouterLink
 				v-if="next"
 				:to="next.path"
-				class="text-decoration-none body-1"
+				class="text-decoration-none text-body-1"
 			>
 				<span v-text="next.title" />
 

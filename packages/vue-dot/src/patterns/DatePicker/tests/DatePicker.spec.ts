@@ -26,10 +26,8 @@ function createTextField() {
 	});
 }
 
-// Tests
 describe('DatePicker', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(DatePicker, {
 			stubs: {
 				textField: createTextField()

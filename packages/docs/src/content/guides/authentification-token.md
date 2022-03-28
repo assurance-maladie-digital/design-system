@@ -7,7 +7,7 @@ description: Récupération, stockage et utilisation d’un token d’authentifi
 
 Lorsque le token est passé à l’application via une URL de cette forme :
 
-```bash
+```text
 https://example.com#access_token=monToken
 ```
 
@@ -81,11 +81,7 @@ export function navigationRedirectGuard(to: Route, from: Route, next: Next): voi
 
 ## Utilisation dans le header d’une requête axios
 
-<doc-indent>
-
 Pour utiliser le token lors d’appels API, on peut ajouter le header `Authorization` sur l’instance axios, ce qui ajoutera le header sur tous les appels effectués avec cette instance, avec comme valeur le token d’authentification. Vous pouvez modifier la fonction `authenticate` :
-
-</doc-indent>
 
 ```ts
 // …

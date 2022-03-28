@@ -5,6 +5,8 @@
 	>
 		<component
 			:is="logoContainerComponent"
+			:aria-current-value="null"
+			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 		>
 			<Logo
@@ -69,6 +71,7 @@
 	import { ThemeEnum } from '../ThemeEnum';
 
 	import { LogoInfo } from './types';
+	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
 
@@ -86,7 +89,7 @@
 				type: String,
 				default: undefined
 			},
-			isMobile: {
+			mobileVersion: {
 				type: Boolean,
 				default: false
 			},
@@ -101,12 +104,14 @@
 
 	@Component
 	export default class HeaderBrandSection extends MixinsDeclaration {
+		locales = locales;
+
 		get height(): string {
-			if (this.isMobile && this.hasSecondaryLogo) {
+			if (this.mobileVersion && this.hasSecondaryLogo) {
 				return '32px';
 			}
 
-			return this.isMobile ? '40px' : '64px';
+			return this.mobileVersion ? '40px' : '64px';
 		}
 
 		get isRisquePro(): boolean {
@@ -134,7 +139,7 @@
 		}
 
 		get showServiceSubTitle(): boolean {
-			return Boolean(this.serviceTitle && this.serviceSubTitle && !this.isMobile);
+			return Boolean(this.serviceTitle && this.serviceSubTitle && !this.mobileVersion);
 		}
 
 		get dividerColor(): string {
@@ -147,11 +152,11 @@
 		get dividerDimensions(): Dimensions {
 			const { xSmall, small, normal } = dividerDimensionsMapping;
 
-			if (this.isMobile && this.hasSecondaryLogo) {
+			if (this.mobileVersion && this.hasSecondaryLogo) {
 				return xSmall;
 			}
 
-			if (this.isMobile) {
+			if (this.mobileVersion) {
 				return small;
 			}
 
@@ -159,11 +164,11 @@
 		}
 
 		get logoSize(): LogoSizeEnum {
-			if (this.isMobile && this.hasSecondaryLogo) {
+			if (this.mobileVersion && this.hasSecondaryLogo) {
 				return LogoSizeEnum.X_SMALL;
 			}
 
-			if (this.isMobile) {
+			if (this.mobileVersion) {
 				return LogoSizeEnum.SMALL;
 			}
 

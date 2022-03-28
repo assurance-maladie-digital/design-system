@@ -2,7 +2,7 @@ import { mdiHeartPulse, mdiAccountGroup, mdiAutoFix } from '@mdi/js';
 
 export const designPrinciplesPageItems = [
 	{
-		title: '## Être au service des usagers de la santé publique',
+		title: 'Être au service des usagers de la santé publique',
 		description: 'En tant que Design System pour l’Assurance Maladie, notre devoir est de **répondre avec efficacité et intelligence aux besoins** de nos différents profils d’utilisateur citoyen.',
 		icon: mdiHeartPulse,
 		content: [
@@ -11,16 +11,16 @@ export const designPrinciplesPageItems = [
 		]
 	},
 	{
-		title: '## Assurer l’accessibilité pour tous',
-		description: '**L’accès aux produits numériques doit être permis à tous**. Pour cela, nous favorisons dans notre démarche de design le respect des critères d’accessibilité définis par la communauté internationale [World Wide Web Consortium](https://www.w3.org/WAI/fundamentals/accessibility-principles/).',
+		title: 'Assurer l’accessibilité pour tous',
+		description: '**L’accès aux produits numériques doit être permis à tous**. Pour cela, nous favorisons dans notre démarche de design le respect des [critères d’accessibilité](/demarrer/accessibilite) définis par le Référentiel Général d’Amélioration de l’Accessibilité.',
 		icon: mdiAccountGroup,
 		content: [
 			'<u>Nous recommandons</u> pour chaque utilisation de notre Design System de ne pas transformer les composants. La conception des composants vise à respecter quatre indices de performance. **Nos composants et leurs contenus informationnels sont perceptibles (1), manipulables (2), compréhensibles (3) et robustes (4) dans l’usage**. En complément, nous recommandons de proposer de la redondance informationnelle par un ou plusieurs moyens alternatifs lorsqu’une information est complexe à comprendre ou à atteindre sur l’interface.',
-			'Afin d’accompagner les équipes de l’Assurance Maladie, **nous pouvons aider à l’élaboration de vos interfaces pour qu’elles respectent les normes d’accessibilité**. Dans le cas où nos composants ne correspondent pas à vos exigeances, nous pouvons collaborer avec vous à leurs adaptations.'
+			'Afin d’accompagner les équipes de l’Assurance Maladie, **nous pouvons aider à l’élaboration de vos interfaces pour qu’elles respectent les normes d’accessibilité**. Dans le cas où nos composants ne correspondent pas à vos exigences, nous pouvons collaborer avec vous à leurs adaptations.'
 		]
 	},
 	{
-		title: '## Rendre évident ce qui est complexe',
+		title: 'Rendre évident ce qui est complexe',
 		description: 'Malgré la complexité des projets, notre Design System doit permettre **la construction d’interfaces fluides et simples d’utilisation** pour assurer aux utilisateurs finaux une bonne expérience numérique.',
 		icon: mdiAutoFix,
 		content: [

@@ -28,7 +28,6 @@ function createWrapper(mask?: string | boolean, dateFormat?: string) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('MaskValue', () => {
 	it('computes a mask from dateFormat if mask prop is empty', () => {
 		const wrapper = createWrapper(undefined, 'YYYY-DD-MM');

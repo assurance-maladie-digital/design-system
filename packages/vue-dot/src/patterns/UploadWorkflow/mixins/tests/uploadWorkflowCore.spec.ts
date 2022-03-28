@@ -71,7 +71,6 @@ function createWrapper(value = fileList) {
 	});
 }
 
-// Tests
 describe('EventsFileFired', () => {
 	afterEach(() => {
 		jest.clearAllMocks();
@@ -142,6 +141,9 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.dialogConfirm();
 
+		// Wait for form validation
+		await wrapper.vm.$nextTick();
+		// Wait for form reset
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.vm.$refs.form.reset).toHaveBeenCalled();

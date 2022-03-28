@@ -1,6 +1,5 @@
 import { required, requiredFn } from '../';
 
-// Tests
 describe('required', () => {
 	it('returns an error when the value is falsy', () => {
 		expect(typeof required('')).toBe('string');

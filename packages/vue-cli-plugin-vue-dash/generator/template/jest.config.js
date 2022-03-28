@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
 	preset: '@vue/cli-plugin-unit-jest/presets/typescript',
 	testMatch: [
 		'<rootDir>/src/**/tests/*.spec.ts',
@@ -48,3 +50,5 @@ module.exports = {
 		}
 	}
 };
+
+export default config;

@@ -15,7 +15,6 @@ function createWrapper() {
 	return mount(component) as Wrapper<FieldMap>;
 }
 
-// Tests
 describe('FieldMap', () => {
 	it('contains the map of fields and their components', () => {
 		const wrapper = createWrapper();

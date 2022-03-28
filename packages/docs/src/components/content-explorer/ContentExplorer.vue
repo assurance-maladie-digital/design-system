@@ -6,6 +6,7 @@
 			hide-details
 			clearable
 			filled
+			background-color="am-blue lighten-3"
 			class="mb-4"
 		>
 			<template #prepend-inner>
@@ -83,7 +84,7 @@
 		mdiMagnify
 	} from '@mdi/js';
 
-	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
+	import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 	import { TreeviewItem } from './types';
 
 	import { Fetch } from '../../decorators';
@@ -97,7 +98,7 @@
 	const DOT_FILE_CHAR = '.';
 	const ESCAPED_DOT_FILE_CHAR = '_';
 
-	const basePath = '/explorer/';
+	const BASE_PATH = '/explorer/';
 
 	const Props = Vue.extend({
 		props: {
@@ -145,7 +146,7 @@
 		activeItem: IndexedObject[] = [];
 		drawer = false;
 		search: string | null = null;
-		state: STATE_ENUM = STATE_ENUM.idle;
+		state: StateEnum = StateEnum.IDLE;
 		treeViewClicked = false;
 
 		@Fetch
@@ -219,13 +220,13 @@
 		}
 
 		async getContent(path: string): Promise<void> {
-			const loading = setTimeout(() => this.state = STATE_ENUM.pending, 500);
+			const loading = setTimeout(() => this.state = StateEnum.PENDING, 500);
 
 			const [document] = await this.$content({ deep: true })
-				.where({ path: basePath + path })
+				.where({ path: BASE_PATH + path })
 				.fetch<Content>();
 
-			this.state = STATE_ENUM.resolved;
+			this.state = StateEnum.RESOLVED;
 			this.document = document;
 			clearTimeout(loading);
 			this.treeViewClicked = false;

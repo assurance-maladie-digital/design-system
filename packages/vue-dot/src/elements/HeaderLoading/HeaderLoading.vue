@@ -3,8 +3,9 @@
 		v-bind="$attrs"
 		:width="width"
 		:height="height"
-		class="vd-header-loading"
 		type="heading"
+		aria-hidden="true"
+		class="vd-header-loading"
 	/>
 </template>
 
@@ -14,12 +15,10 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The width of the component */
 			width: {
 				type: String,
 				default: '100px'
 			},
-			/** The height of the component */
 			height: {
 				type: String,
 				default: '1rem'

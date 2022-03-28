@@ -10,7 +10,7 @@
 			label="Nom"
 			outlined
 			validate-on-blur
-			class="vd-form-input"
+			class="vd-form-input mb-4"
 		/>
 
 		<VTextField
@@ -19,7 +19,7 @@
 			label="Prénom"
 			outlined
 			validate-on-blur
-			class="vd-form-input mt-4"
+			class="vd-form-input mb-4"
 		/>
 
 		<VTextField
@@ -28,15 +28,12 @@
 			label="Email"
 			outlined
 			validate-on-blur
-			class="vd-form-input mt-4"
+			class="vd-form-input mb-4"
 		/>
 
 		<VBtn
-			large
-			block
-			height="56px"
 			color="primary"
-			class="mt-8"
+			class="text-none"
 			@click="submitDeclaration"
 		>
 			Valider
@@ -48,20 +45,15 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { Refs } from '@cnamts/vue-dot/src/types';
+	import { Refs, VForm } from '@cnamts/vue-dot/src/types';
 
 	import { required } from '@cnamts/vue-dot/src/rules/required';
 	import { email } from '@cnamts/vue-dot/src/rules/email';
 
-	interface FormRef {
-		validate: () => boolean;
-		reset: () => void;
-	}
-
 	@Component
 	export default class UserForm extends Vue {
 		$refs!: Refs<{
-			form: FormRef;
+			form: VForm;
 		}>;
 
 		lastName: string | null = null;

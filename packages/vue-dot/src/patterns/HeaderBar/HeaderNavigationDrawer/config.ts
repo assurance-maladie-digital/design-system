@@ -2,6 +2,7 @@ export const config = {
 	navigationDrawer: {
 		app: true,
 		dark: true,
+		temporary: true,
 		width: '320px',
 		class: 'pa-4'
 	},

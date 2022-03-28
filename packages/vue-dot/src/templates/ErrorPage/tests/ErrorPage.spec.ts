@@ -11,10 +11,8 @@ Vue.component('PageContainer', PageContainer);
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('ErrorPage', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(ErrorPage, {
 			propsData: {
 				pageTitle: 'Error',

@@ -27,7 +27,6 @@ function createWrapper(pickerDate?: string, birthdate = false) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('PickerDate', () => {
 	it('receives the value correctly from the prop', () => {
 		const wrapper = createWrapper('2019-10');

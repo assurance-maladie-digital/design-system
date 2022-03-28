@@ -26,5 +26,6 @@ Array [
   "SubHeader",
   "TableToolbar",
   "UploadWorkflow",
+  "UserMenuBtn",
 ]
 `;

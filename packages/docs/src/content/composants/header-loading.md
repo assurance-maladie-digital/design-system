@@ -10,6 +10,13 @@ description: L’élément `HeaderLoading` est une extension du composant [`VSke
 </doc-tab-item>
 
 <doc-tab-item label="API">
+
+<doc-alert type="info">
+
+Les propriétés non définies dans la section API seront reportées directement sur le composant `VSkeletonLoader`.
+
+</doc-alert>
+
 <doc-api name="header-loading"></doc-api>
 </doc-tab-item>
 

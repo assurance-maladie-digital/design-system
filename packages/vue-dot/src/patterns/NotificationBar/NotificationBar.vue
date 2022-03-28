@@ -4,12 +4,14 @@
 		:value="Boolean(notification)"
 		:color="snackbarColor"
 		role="status"
+		class="vd-notification-bar"
 	>
 		<div
 			v-if="notification"
 			class="d-flex align-center"
 		>
 			<VIcon
+				v-if="!mobileVersion"
 				v-bind="options.icon"
 				class="vd-notification-icon"
 			>
@@ -25,9 +27,19 @@
 					...attrs,
 					...options.btn
 				}"
+				:icon="mobileVersion"
 				@click="clearNotification"
 			>
-				{{ closeBtnText }}
+				<span :class="{ 'd-sr-only': mobileVersion }">
+					{{ closeBtnText }}
+				</span>
+
+				<VIcon
+					v-if="mobileVersion"
+					v-bind="options.closeIcon"
+				>
+					{{ closeIcon }}
+				</VIcon>
 			</VBtn>
 		</template>
 	</VSnackbar>
@@ -51,12 +63,12 @@
 		mdiCheck,
 		mdiAlertCircle,
 		mdiInformation,
-		mdiAlert
+		mdiAlert,
+		mdiClose
 	} from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			/** The text of the close button */
 			closeBtnText: {
 				type: String,
 				default: locales.close
@@ -66,10 +78,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * NotificationBar is a component that displays
-	 * a notification using a Snackbar
-	 */
 	@Component<NotificationBar>({
 		computed: mapState('notification', ['notification']),
 		methods: mapActions('notification', ['clearNotification']),
@@ -84,6 +92,8 @@
 		}
 	})
 	export default class NotificationBar extends MixinsDeclaration {
+		closeIcon = mdiClose;
+
 		// We need to declare these types since there is
 		// no Vuex instance when building the library
 		clearNotification!: () => void;
@@ -106,24 +116,29 @@
 			return this.notification.icon || this.iconMapping[this.notification.type];
 		}
 
+		get mobileVersion(): boolean {
+			return this.$vuetify.breakpoint.xs;
+		}
+
 		created() {
-			// Remove notification if present when the
-			// component is loaded the first time
 			if (this.notification) {
 				this.clearNotification();
 			}
 		}
 
 		beforeDestroy() {
-			// Clear notification on lifecycle end
 			this.clearNotification();
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	// Use min-width to avoid shrinking with flexbox
+	.vd-notification-bar ::v-deep .v-snack__wrapper {
+		min-width: 0;
+	}
+
 	.vd-notification-icon {
-		// Use min-width to avoid shrinking with flexbox
 		min-width: 24px;
 	}
 </style>

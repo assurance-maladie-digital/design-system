@@ -2,8 +2,20 @@
 
 @import '@cnamts/design-tokens/dist/tokens';
 
+.fade-enter-active,
+.fade-leave-active {
+	transition-duration: .15s;
+	transition-property: opacity;
+	transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
+
 .v-application {
-	// Change the main color when a warning is present
+	// Warning rules: Change the main color when a warning is present
 	.vd-warning-rules {
 		&.success--text,
 		.success--text {
@@ -12,32 +24,7 @@
 		}
 	}
 
-	// Make the tooltip menu look like a tooltip
-	.vd-copy-tooltip-menu {
-		padding: 6px 16px;
-		box-shadow: none;
-		margin-top: 2px;
-		background: rgba(97, 97, 97, .9);
-	}
-
-	// Form input width
-	.vd-form-input {
-		width: $vd-input-medium;
-
-		&-s {
-			width: $vd-input-small;
-		}
-
-		&-l {
-			width: $vd-input-large;
-		}
-
-		&-xl {
-			width: $vd-input-x-large;
-		}
-	}
-
-	// Custom styles for VDataTable
+	// VDataTable: Custom styles
 	.vd-data-table {
 		border-top: thin solid rgba(0, 0, 0, .12);
 
@@ -52,18 +39,18 @@
 		&.row-clickable table tbody tr {
 			cursor: pointer;
 		}
-	​
+
 		&.fixed-min-height {
 			.v-data-table__wrapper {
 				min-height: 540px;
 			}
 		}
-	​
+
 		&.no-mobile-header {
 			.v-data-table-header-mobile {
 				display: none;
 			}
-	​
+
 			table {
 				border-top: 2px solid #eee;
 			}

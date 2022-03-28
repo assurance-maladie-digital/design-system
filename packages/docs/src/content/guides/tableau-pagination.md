@@ -5,24 +5,20 @@ description: Création d’un tableau paginé qui récupère des données d’un
 
 ## Création de l’API
 
-<doc-indent>
-
 La première étape consiste à créer l’API qui récupèrera les données que l’on souhaite afficher dans notre tableau paginé. Vous pouvez créer un dossier `src/services/getUsersFromApi` qui contiendra le service permettant d'appeler cette API.
-
-</doc-indent>
 
 Vous pouvez commencer par définir l’interface décrivant les données qui seront retournées par l'API dans le fichier `src/services/getUsersFromApi/types.d.ts` :
 
 ```ts
 export interface User {
-    firstname: string;
-    lastname: string;
-    email: string;
+	firstname: string;
+	lastname: string;
+	email: string;
 }
 
 export interface Result {
-    items: User[];
-    total: number;
+	items: User[];
+	total: number;
 }
 ```
 
@@ -92,11 +88,7 @@ export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Res
 
 ## Affichage du tableau paginé
 
-<doc-indent>
-
 Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`](/composants/paginated-table) :
-
-</doc-indent>
 
 ```vue
 <template>
@@ -105,7 +97,7 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 		:headers="headers"
 		:items="users"
 		:server-items-length="totalUsers"
-		:loading="state === STATE_ENUM.pending"
+		:loading="state === StateEnum.PENDING"
 		suffix="api-example"
 		@update:options="fetchData"
 	/>
@@ -120,13 +112,13 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 	import { User } from '@/services/getUsers/types';
 	import { getUsersFromApi } from '@/services/getUsers/api';
 
-	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
+	import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
-		STATE_ENUM = STATE_ENUM;
+		StateEnum = StateEnum;
 
-		state = STATE_ENUM.idle;
+		state = StateEnum.IDLE;
 
 		options = {} as DataOptions;
 		headers = [
@@ -148,7 +140,7 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 		totalUsers = 0;
 
 		async fetchData(): Promise<void> {
-			this.state = STATE_ENUM.pending;
+			this.state = StateEnum.PENDING;
 
 			try {
 				const res = await getUsersFromApi(this.options);
@@ -157,28 +149,24 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 				this.users = items;
 				this.totalUsers = total;
 
-				this.state = STATE_ENUM.resolved;
+				this.state = StateEnum.RESOLVED;
 			} catch(err) {
-				this.state = STATE_ENUM.rejected;
+				this.state = StateEnum.REJECTED;
 			}
 		}
 	}
 </script>
 ```
 
-<doc-indent>
-
 Pour afficher le tableau de données, vous devez définir un tableau `headers` pour indiquer quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher.
 Cette variable sera ensuite passée dans la prop `headers` du composant [`PaginatedTable`](/composants/paginated-table#section/api).
-
-</doc-indent>
 
 Les valeurs de l’objet `options` seront mises à jour par le composant `PaginatedTable`.
 
 C’est la fonction `fetchData` qui utilisera notre API pour récupérer les données. Elle sera appelée lorsque l’objet `options` sera modifié grâce à la directive `@update:options="fetchData"`.<br>
 Une fois récupérés, nous stockerons les `items` dans la variables `users` et le nombre total d’items `total` dans la variable `totalUsers` pour les passer respectivement au tableau dans les props `items` et `server-items-length`.
 
-L’enum `STATE_ENUM` et la variable `state` servent à gérer l’état de chargement du tableau via la prop `loading`, qui active le chargement lorsque la fonction `fetchData` est appelée et ce tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
+L’enum `StateEnum` et la variable `state` servent à gérer l’état de chargement du tableau via la prop `loading`, qui active le chargement lorsque la fonction `fetchData` est appelée et ce tant qu’elle n’a pas reçu de réponse qu’il s’agisse de données ou d’une erreur.
 
 ## Exemple
 

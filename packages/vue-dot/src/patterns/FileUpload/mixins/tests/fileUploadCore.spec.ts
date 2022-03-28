@@ -69,7 +69,6 @@ function getFileDropEvent({ files, items, kind }: DropEvent): DragEvent {
 	} as DragEvent;
 }
 
-// Tests
 describe('FileUploadCore', () => {
 	// inputValueChanged
 	it('does not emits change event if there is no event target', () => {

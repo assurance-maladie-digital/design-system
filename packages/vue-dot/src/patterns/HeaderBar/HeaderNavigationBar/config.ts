@@ -7,13 +7,6 @@ export const config = {
 	innerSheet: {
 		color: 'transparent'
 	},
-	menuBtn: {
-		width: 36,
-		height: 36,
-		icon: true,
-		elevation: 0,
-		class: 'mx-n2'
-	},
 	tabs: {
 		backgroundColor: 'transparent'
 	},

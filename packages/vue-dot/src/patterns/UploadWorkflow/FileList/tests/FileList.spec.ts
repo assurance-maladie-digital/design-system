@@ -14,10 +14,8 @@ const files = [{
 	state: 'success'
 }];
 
-// Tests
 describe('FileList', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FileList, {
 			propsData: {
 				files

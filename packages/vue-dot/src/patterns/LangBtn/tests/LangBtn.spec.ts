@@ -8,10 +8,8 @@ import LangBtn from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('LangBtn', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(LangBtn, {
 			propsData: {
 				availableLanguages: ['fr', 'en']

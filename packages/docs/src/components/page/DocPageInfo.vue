@@ -9,7 +9,7 @@
 
 		<p
 			v-if="formattedUpdatedAt"
-			class="mb-2"
+			class="mb-2 mb-md-0"
 		>
 			Dernière modification le
 

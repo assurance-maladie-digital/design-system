@@ -10,11 +10,11 @@ const themeProp = {
 	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro'`
 };
 
-const isMobileProp = {
-	name: 'is-mobile',
+const mobileVersionProp = {
+	name: 'mobile-version',
 	type: 'boolean',
 	default: false,
-	description: 'Affiche la version mobile.'
+	description: 'Affiche le header en version en version pour les écrans mobiles.<br>Par défaut, ce mode est activé à partir du [breakpoint `sm`](https://vuetifyjs.com/en/features/breakpoints/).'
 };
 
 const innerWidthProp = {
@@ -46,7 +46,7 @@ const itemsProp = {
 	example: `{
 	label: string;
 	to?: string | RawLocation;
-	href?: string | string;
+	href?: string;
 }[]`
 };
 
@@ -55,6 +55,13 @@ const homeLinkProp = {
 	type: 'Next',
 	default: `'/'`,
 	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.'
+};
+
+const drawerProp = {
+	name: 'drawer',
+	type: 'boolean',
+	default: false,
+	description: 'Contrôle la visibilité du menu sur les écrans mobiles.'
 };
 
 export const api: Api = {
@@ -74,12 +81,20 @@ export const api: Api = {
 			},
 			innerWidthProp,
 			homeLinkProp,
+			{
+				name: 'show-nav-bar-menu-btn',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles.'
+			},
+			mobileVersionProp,
 			...customizable(`{
 	appBar: 'VAppBar',
 	contentSheet: 'VSheet',
 	innerSheet: 'VSheet',
-	spacer: 'VSpacer'
-}`)
+	spacer: 'VSpacer',
+	menuBtn: 'HeaderMenuBtn'
+}`, 'et `HeaderMenuBtn`')
 		],
 		slots: [
 			{
@@ -87,12 +102,20 @@ export const api: Api = {
 				description: 'Slot pour afficher du contenu dans la partie droite de l’en-tête.'
 			},
 			{
-				name: 'secondary-brand',
+				name: 'secondary-logo',
 				description: 'Slot pour remplacer le bloc marque secondaire et afficher une marque partenaire.'
 			},
 			{
 				name: 'navigation-bar-content',
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
+			},
+			{
+				name: 'navigation-drawer',
+				description: 'Slot pour remplacer le menu de navigation sur les écrans mobiles.',
+				props: {
+					drawer: 'boolean',
+					updateDrawer: '(value: boolean) => void'
+				}
 			},
 			{
 				name: 'navigation-drawer-content',
@@ -105,12 +128,7 @@ export const api: Api = {
 			themeProp,
 			titleProp,
 			subTitleProp,
-			{
-				name: 'is-mobile',
-				type: 'boolean',
-				default: false,
-				description: 'Affiche la version mobile.'
-			},
+			mobileVersionProp,
 			homeLinkProp
 		],
 		slots: [
@@ -120,17 +138,36 @@ export const api: Api = {
 			}
 		]
 	},
+	HeaderMenuBtn: {
+		props: [
+			drawerProp,
+			{
+				name: 'spacing',
+				type: 'string',
+				default: `'px-2 mx-n2'`,
+				description: 'L’espacement du bouton.'
+			}
+		]
+	},
 	HeaderNavigationBar: {
 		props: [
 			themeProp,
 			itemsProp,
-			isMobileProp,
+			mobileVersionProp,
 			innerWidthProp,
+			drawerProp,
+			{
+				name: 'tab',
+				type: [
+					'number',
+					'string'
+				],
+				default: null,
+				description: 'L’onglet sélectionné.'
+			},
 			...customizable(`{
 	sheet: 'VSheet',
 	innerSheet: 'VSheet',
-	menuBtn: 'VBtn',
-	menuIcon: 'VIcon',
 	tabs: 'VTabs',
 	tab: 'VTab'
 }`)
@@ -146,13 +183,8 @@ export const api: Api = {
 		props: [
 			themeProp,
 			itemsProp,
-			isMobileProp,
-			{
-				name: 'drawer',
-				type: 'boolean',
-				default: false,
-				description: 'Contrôle la visibilité du menu sur les écrans mobiles.'
-			},
+			mobileVersionProp,
+			drawerProp,
 			...customizable(`{
 	navigationDrawer: 'VNavigationDrawer',
 	closeBtn: 'VBtn',

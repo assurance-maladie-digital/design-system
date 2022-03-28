@@ -1,4 +1,3 @@
-// Default, global styles
 * {
 	margin: 0;
 	padding: 0;
@@ -26,7 +25,6 @@ body {
 	display: none;
 }
 
-// Apply default transition to links
 a {
 	transition: .25s;
 }
@@ -42,3 +40,12 @@ a {
 	flex-direction: column;
 	align-items: flex-start;
 }
+
+html {
+	scroll-padding-top: 120px;
+
+	@media only screen and (max-width: 1264px) {
+		scroll-padding-top: 72px;
+	}
+}
+

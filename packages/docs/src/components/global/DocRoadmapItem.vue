@@ -10,7 +10,7 @@
 			</span>
 		</VExpansionPanelHeader>
 
-		<VExpansionPanelContent color="#fafbfd">
+		<VExpansionPanelContent color="frosted-blue lighten-3">
 			<p
 				v-if="items.length === 0"
 				class="text-subtitle-2 mt-4 mb-0"
@@ -64,14 +64,12 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-expansion-panel-header {
-		::v-deep .v-expansion-panel-header__icon {
-			flex: none;
-		}
+	.v-expansion-panel-header ::v-deep .v-expansion-panel-header__icon {
+		flex: none;
 	}
 
 	.v-expansion-panel-content {
 		border-top: 1px solid;
-		border-color: #eee !important;
+		border-color: rgba(0, 0, 0, .12) !important;
 	}
 </style>

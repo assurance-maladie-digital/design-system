@@ -4,8 +4,8 @@
 		v-bind="$attrs"
 		:group="groupNamespace"
 		:prepend-icon="icon"
-		class="v-list-group--default"
 		no-action
+		class="v-list-group--default"
 	>
 		<template #activator>
 			<VListItemContent>
@@ -20,8 +20,8 @@
 			<VSubheader
 				v-if="child.heading"
 				:key="`heading-${index}`"
-				class="text--primary font-weight-black text-uppercase"
 				inset
+				class="text--primary font-weight-black text-uppercase"
 				v-text="child.title"
 			/>
 
@@ -113,14 +113,12 @@
 </script>
 
 <style lang="scss">
-	.v-list-group.v-list-group--default {
-		.v-list-group__header {
-			min-height: 32px;
+	.v-list-group.v-list-group--default .v-list-group__header {
+		min-height: 32px;
 
-			> .v-list-item__icon {
-				margin-bottom: 6px;
-				margin-top: 6px;
-			}
+		> .v-list-item__icon {
+			margin-bottom: 6px;
+			margin-top: 6px;
 		}
 	}
 </style>

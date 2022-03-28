@@ -9,7 +9,9 @@
 			:multiple="multiple"
 			:type="undefined"
 			:class="{ 'flex-column': !isInline }"
-			class="vd-choice-button-field-toggle d-flex flex-wrap accent--text"
+			:aria-label="options.label"
+			role="listbox"
+			class="vd-choice-button-field-toggle d-flex flex-wrap primary--text"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"
@@ -17,11 +19,13 @@
 				:value="item.value"
 				:outlined="!isSelected(item.value)"
 				:elevation="0"
+				:aria-selected="isSelected(item.value)"
+				role="option"
 				height="auto"
 				min-height="40px"
 				active-class="white--text"
 				class="text-none text-wrap text-left py-2"
-				color="accent"
+				color="primary"
 				@click="toggleItem(item)"
 			>
 				<span class="text-body-1">
@@ -51,7 +55,7 @@
 		</template>
 
 		<p
-			v-else
+			v-else-if="showHint"
 			:class="$vuetify.theme.dark ? 'theme--dark' : 'theme--light'"
 			class="v-messages px-3 mt-2 mb-0"
 		>
@@ -78,11 +82,6 @@
 	export default class ChoiceButtonField extends MixinsDeclaration {
 		checkIcon = mdiCheck;
 
-		/**
-		 * Filter items with truthy value only
-		 *
-		 * @returns {FieldItem[]} The filtered items
-		 */
 		get filteredItems(): FieldItem[] {
 			if (!Array.isArray(this.items)) {
 				return [];
@@ -145,7 +144,7 @@
 		}
 
 		&:not(.v-btn-toggle--group) .v-btn.v-btn {
-			border-color: $vd-accent !important;
+			border-color: $vd-primary !important;
 		}
 	}
 </style>

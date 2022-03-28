@@ -11,7 +11,6 @@ function normalizeVersion(version) {
 		return 'next';
 	}
 
-	// If the version is an alpha or a beta
 	if (version.includes('alpha') || version.includes('beta')) {
 		// Remove ^ char to avoid version auto-bump
 		return version.replace('^', '');
@@ -20,7 +19,6 @@ function normalizeVersion(version) {
 	return version;
 }
 
-// Use dev dependencies to get packages versions
 const VueDotVersion = normalizeVersion(devDependencies['@cnamts/vue-dot']);
 const DesignTokensVersion = normalizeVersion(devDependencies['@cnamts/design-tokens']);
 const FormBuilderVersion = normalizeVersion(devDependencies['@cnamts/form-builder']);
@@ -45,46 +43,49 @@ function extendPackage(api, options, pm) {
 			'@cnamts/design-tokens': DesignTokensVersion,
 			'@cnamts/form-builder': FormBuilderVersion,
 			'@cnamts/vue-dot': VueDotVersion,
-			'axios': '^0.24.0',
-			'core-js': '^3.19.3',
+			'axios': '^0.26.1',
+			'core-js': '^3.21.1',
 			'custom-event-polyfill': '^1.0.7',
-			'dayjs': '^1.10.7',
+			'dayjs': '^1.11.0',
 			'languages': '^0.1.3',
 			'vue': '^2.6.14',
-			'vue-input-facade': '^1.3.7',
+			'vue-input-facade': '^2.0.0',
 			'vue-meta': '^2.4.0',
 			'vue-router': '^3.5.3',
-			'vuetify': '^2.6.1',
+			'vuetify': '^2.6.4',
 			'vuex': '^3.6.2'
 		},
 		devDependencies: {
-			'@babel/core': '^7.16.0',
-			'@mdi/js': '^6.5.95',
+			'@babel/core': '^7.17.8',
+			'@mdi/js': '^6.6.95',
+			'@rushstack/eslint-patch': '^1.1.1',
 			'@types/jest': '^26.0.24',
-			'@types/webfontloader': '^1.6.33',
-			'@typescript-eslint/eslint-plugin': '^5.6.0',
-			'@typescript-eslint/parser': '^5.6.0',
-			'@vue/cli-plugin-babel': '~4.5.15',
-			'@vue/cli-plugin-eslint': '~4.5.15',
-			'@vue/cli-plugin-router': '~4.5.15',
-			'@vue/cli-plugin-typescript': '~4.5.15',
-			'@vue/cli-plugin-unit-jest': '~4.5.15',
-			'@vue/cli-plugin-vuex': '~4.5.15',
-			'@vue/cli-service': '~4.5.15',
+			'@types/webfontloader': '^1.6.34',
+			'@typescript-eslint/eslint-plugin': '^5.16.0',
+			'@typescript-eslint/parser': '^5.16.0',
+			'@vue/cli-plugin-babel': '~4.5.17',
+			'@vue/cli-plugin-eslint': '~4.5.17',
+			'@vue/cli-plugin-router': '~4.5.17',
+			'@vue/cli-plugin-typescript': '~4.5.17',
+			'@vue/cli-plugin-unit-jest': '~4.5.17',
+			'@vue/cli-plugin-vuex': '~4.5.17',
+			'@vue/cli-service': '~4.5.17',
 			'@vue/eslint-config-standard': '^6.1.0',
-			'@vue/eslint-config-typescript': '^8.0.0',
+			'@vue/eslint-config-typescript': '^10.0.0',
 			'@vue/test-utils': '^1.3.0',
 			'eslint': '^7.32.0',
-			'eslint-plugin-import': '^2.25.3',
+			'eslint-plugin-import': '^2.25.4',
 			'eslint-plugin-node': '^11.1.0',
-			'eslint-plugin-promise': '^5.2.0',
-			'eslint-plugin-vue': '^7.20.0',
+			'eslint-plugin-promise': '^6.0.0',
+			'eslint-plugin-vue': '^8.5.0',
 			'jest-serializer-vue': '^2.0.2',
-			'sass': '1.32.13', /** @see https://github.com/vuetifyjs/vuetify/issues/13694 */
-			'sass-loader': '^10.2.0',
-			'typescript': '~4.5.3',
+			'lint-staged': '^12.3.7',
+			'sass': '~1.32.13', /** @see https://github.com/vuetifyjs/vuetify/issues/13694 */
+			'sass-loader': '^10.2.1',
+			'ts-node': '^10.7.0',
+			'typescript': '~4.6.3',
 			'vue-class-component': '^7.2.6',
-			'vue-cli-plugin-vuetify': '^2.4.5',
+			'vue-cli-plugin-vuetify': '^2.4.8',
 			'vue-template-compiler': '^2.6.14',
 			'vuetify-loader': '^1.7.3',
 			'webfontloader': '^1.6.28',
@@ -97,6 +98,15 @@ function extendPackage(api, options, pm) {
 		},
 		engines: {
 			'node': '^12 || ^14'
+		},
+		gitHooks: {
+			'pre-commit': 'lint-staged'
+		},
+		'lint-staged': {
+			'*.{ts,vue}': [
+				'vue-cli-service lint',
+				'git add'
+			]
 		}
 	};
 
@@ -108,23 +118,22 @@ function extendPackage(api, options, pm) {
 	}
 
 	if (options.i18n) {
-		newPackageProperties.dependencies['vue-i18n'] = '^8.26.7';
+		newPackageProperties.dependencies['vue-i18n'] = '^8.27.0';
 	}
 
 	if (options.vuexPersist) {
-		// We need 2.0.1 specifically since in
-		// later version there is a bug with
-		// Internet Explorer
+		// We need 2.0.1 specifically since in later
+		// versions there is a bug with IE 11
 		newPackageProperties.dependencies['vuex-persist'] = '2.0.1';
 	}
 
 	if (options.cypress) {
-		newPackageProperties.devDependencies['@vue/cli-plugin-e2e-cypress'] = '~4.5.15';
+		newPackageProperties.devDependencies['@vue/cli-plugin-e2e-cypress'] = '~4.5.17';
 
 		newPackageProperties.scripts['test:e2e'] = 'vue-cli-service test:e2e --headless';
 		newPackageProperties.scripts['test:e2e:gui'] = 'vue-cli-service test:e2e';
 
-		newPackageProperties.resolutions['cypress'] = '^9.1.1';
+		newPackageProperties.resolutions['cypress'] = '^9.5.2';
 	}
 
 	api.extendPackage(newPackageProperties);

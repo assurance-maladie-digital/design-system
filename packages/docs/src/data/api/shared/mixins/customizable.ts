@@ -1,12 +1,14 @@
-import { Props } from "~/types";
+import { Props } from '~/types';
 
-export function customizable(example: string): Props {
+export function customizable(example: string, otherComponents?: string): Props {
+	const descriptionComplement = otherComponents ? ` ${otherComponents}` : '';
+
 	return [
 		{
 			name: 'vuetify-options',
 			type: 'Options',
 			default: 'undefined',
-			description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
+			description: `Personnalisation des composants Vuetify${descriptionComplement} en utilisant la directive \`customizable\`.`,
 			example
 		}
 	];

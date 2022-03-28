@@ -10,6 +10,12 @@ export const api: Api = {
 				description: 'La longueur minimale du champ.',
 				required: true
 			},
+			{
+				name: 'ignoreSpaces',
+				type: 'boolean',
+				description: 'Ignore les espaces dans le calcul de la longueur.',
+				default: false
+			},
 			...ruleMessages(`{
 	default: (length: number) => \`La longueur minimale du champ doit être de \${min} caractères.\`
 }`)

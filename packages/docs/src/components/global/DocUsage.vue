@@ -1,12 +1,9 @@
 <template>
-	<VLazy
-		min-height="198"
-		class="doc-usage w-100"
-	>
+	<VLazy class="doc-usage w-100 mb-8">
 		<VSheet
 			rounded
 			outlined
-			class="overflow-hidden mb-12"
+			class="overflow-hidden"
 		>
 			<VRow no-gutters>
 				<VCol
@@ -16,7 +13,7 @@
 				>
 					<VResponsive
 						class="d-flex"
-						height="44"
+						height="44px"
 					>
 						<VSlideGroup
 							v-if="tabs.length"
@@ -32,7 +29,7 @@
 								<VBtn
 									:input-value="active"
 									depressed
-									height="44"
+									height="44px"
 									text
 									tile
 									@click="toggleOption(toggle, prop, active)"
@@ -47,9 +44,8 @@
 
 					<VThemeProvider :dark="dark">
 						<VSheet
-							:color="color"
-							max-height="400"
-							min-height="100"
+							max-height="400px"
+							min-height="100px"
 							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 						>
 							<VueFile
@@ -66,6 +62,7 @@
 				<VCol
 					cols="12"
 					md="4"
+					class="d-flex flex-column"
 				>
 					<VDivider class="hidden-md-and-up" />
 
@@ -111,7 +108,7 @@
 
 					<VDivider />
 
-					<div class="d-flex doc-usage-options">
+					<div class="doc-usage-options d-flex flex-grow-1">
 						<VDivider
 							vertical
 							class="hidden-sm-and-down"
@@ -123,14 +120,12 @@
 							class="overflow-y-auto pa-3"
 						>
 							<VCheckbox
-								v-for="(prop, index) in booleans"
+								v-for="(prop) in booleans"
 								:key="prop"
 								:value="usageProps[prop]"
-								:class="{ 'mt-0': index === 0 }"
 								:label="toKebabCase(prop)"
 								hide-details
 								dense
-								inset
 								@change="setProp(prop, $event)"
 							/>
 
@@ -142,8 +137,8 @@
 								:max="item.max"
 								:min="item.min"
 								:step="item.step || 1"
-								class="my-2"
 								hide-details
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -153,10 +148,11 @@
 								:value="usageProps[prop]"
 								:items="items"
 								:label="toKebabCase(prop)"
-								class="my-2"
 								dense
 								filled
 								hide-details
+								background-color="am-blue lighten-3"
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -166,11 +162,12 @@
 								:value="usageProps[prop]"
 								:items="items"
 								:label="toKebabCase(prop)"
-								class="my-2"
 								multiple
 								dense
 								filled
 								hide-details
+								background-color="am-blue lighten-3"
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 
@@ -179,17 +176,18 @@
 								:key="prop"
 								:value="usageProps[prop]"
 								:label="toKebabCase(prop)"
-								class="my-2"
 								dense
 								filled
 								hide-details
+								background-color="am-blue lighten-3"
+								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
 
 							<VBtnToggle
 								v-for="(items, prop) in btnToggles"
 								:key="prop"
-								class="my-2"
+								class="my-3"
 							>
 								<VBtn
 									v-for="(item, index) in items"
@@ -227,6 +225,7 @@
 						>
 							<DocMarkup
 								:code="usageCode"
+								language="vue"
 								no-margin
 								tile
 							/>
@@ -337,10 +336,6 @@
 			return `${this.name}/usage`;
 		}
 
-		get color(): string | undefined {
-			return (this.dark || this.theme.isDark) ? undefined : 'grey lighten-5';
-		}
-
 		get usageCode(): string {
 			return getUsageCode(this.name, this.displayProps, this.slotContent);
 		}
@@ -434,11 +429,24 @@
 </script>
 
 <style lang="scss" scoped>
-	.doc-code {
-		border-top: thin solid rgba(0, 0, 0, .12);
+	.doc-usage-options ::v-deep .v-responsive__content {
+		> :first-child {
+			margin-top: 0 !important;
+			padding-top: 0 !important;
+		}
+
+		> :last-child {
+			margin-bottom: 0 !important;
+		}
 	}
 
-	.doc-usage-options {
-		min-height: 100%;
+	.doc-usage-options ::v-deep {
+		.v-text-field .v-input__slot::before {
+			border-color: rgba(0, 0, 0, .2);
+		}
+	}
+
+	.doc-code {
+		border-top: thin solid rgba(0, 0, 0, .12);
 	}
 </style>

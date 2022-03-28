@@ -1,6 +1,6 @@
 ---
 title: Règle de validation notAfterToday
-description: La règle `notAfterToday` permet de vérifier qu’une date est antérieure à la date du jour.
+description: La règle `notAfterToday` permet de vérifier qu’une date est antérieure ou égale à la date du jour.
 ---
 
 <doc-tabs>
@@ -33,7 +33,7 @@ Puis en passant en argument un objet contenant les messages d’erreur utilisés
 
 ```ts
 notAfterTodayRule = notAfterTodayFn({
-	default: 'La date doit être antérieure à aujourd’hui.'
+	default: 'La date doit être antérieure ou égale à aujourd’hui.'
 });
 ```
 

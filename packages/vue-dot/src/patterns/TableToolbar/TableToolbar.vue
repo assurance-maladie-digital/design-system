@@ -57,42 +57,34 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Number of total items */
 			nbTotal: {
 				type: Number,
 				required: true
 			},
-			/** Number of filtered items */
 			nbFiltered: {
 				type: Number,
 				default: undefined
 			},
-			/** Search field value */
 			search: {
 				type: String,
 				default: undefined
 			},
-			/** Label of the search field */
 			searchLabel: {
 				type: String,
 				default: locales.search
 			},
-			/** Text for the number of rows */
 			rowText: {
 				type: String,
 				default: locales.defaultRowText
 			},
-			/** Show the add button */
 			showAddBtn: {
 				type: Boolean,
 				default: false
 			},
-			/** Label of the add button */
 			addBtnLabel: {
 				type: String,
 				default: locales.addBtnLabel
 			},
-			/** Disable interactive elements while loading */
 			loading: {
 				type: Boolean,
 				default: false
@@ -102,7 +94,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/** Toolbar of a DataTable with search & add button */
 	@Component({
 		model: {
 			prop: 'search',
@@ -110,7 +101,6 @@
 		}
 	})
 	export default class TableToolbar extends MixinsDeclaration {
-		// Icons
 		searchIcon = mdiMagnify;
 		addIcon = mdiPlus;
 
@@ -129,7 +119,11 @@
 		}
 
 		get textFieldClasses(): string {
-			const fieldClass = this.$vuetify.breakpoint.xs ? 'vd-form-input-s' : 'vd-form-input';
+			let fieldClass = this.$vuetify.breakpoint.xs ? 'vd-form-input-s' : 'vd-form-input';
+
+			if (this.showAddBtn) {
+				fieldClass += ' mr-6';
+			}
 
 			return `${fieldClass} flex-grow-0`;
 		}
@@ -138,6 +132,7 @@
 
 <style lang="scss" scoped>
 	.vd-table-toolbar ::v-deep .v-toolbar__content {
+		width: 100%;
 		flex-wrap: wrap;
 	}
 </style>

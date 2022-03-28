@@ -34,7 +34,7 @@
 
 		<VDivider
 			v-if="bottomDivider"
-			class="mb-6"
+			class="mt-6"
 		/>
 	</div>
 </template>
@@ -125,12 +125,8 @@
 		get tabClasses(): IndexedObject<boolean> {
 			return {
 				'justify-start': this.mobileVersion,
-				'grey lighten-5': this.mobileVersion
+				'am-blue lighten-3': this.mobileVersion
 			}
-		}
-
-		get activeClass(): string | undefined {
-			return this.mobileVersion ? 'primary lighten-5': undefined;
 		}
 
 		findTabIndex(value: string): number | undefined {
@@ -180,25 +176,66 @@
 		}
 
 		> .v-tabs {
+			overflow: hidden;
 			position: relative;
 			border-top-left-radius: 4px;
 			border-top-right-radius: 4px;
+
+			&--vertical {
+				border: 1px solid #e7ecf5; // Bleu AM lighten-95
+			}
 
 			&::after {
 				content: "";
 				width: 100%;
 				height: 2px;
-				background: rgba(0, 0, 0, .12);
+				background: #e7ecf5; // Bleu AM lighten-10
 				position: absolute;
 				bottom: 0;
 			}
 
-			&.theme--dark::after {
-				background: hsla(0, 0%, 100%, .3);
+			&--vertical::after {
+				content: none;
 			}
 
-			&--vertical .v-tab--active {
-				background: rgba($vd-primary, .1) !important;
+			&.theme--dark::after {
+				background: hsla(0, 0%, 100%, .2);
+			}
+
+			&.theme--dark > .v-tabs-bar {
+				background: #020d1f;
+			}
+
+			&--vertical .v-tab {
+				max-width: 100%;
+			}
+
+			.v-slide-group__wrapper {
+				z-index: 1;
+			}
+		}
+	}
+
+	.doc-tabs:not(.tabs-code) ::v-deep > .v-tabs {
+		.v-tab {
+			color: #3d67ae !important; // Bleu AM lighten-80
+			text-transform: none;
+
+			&:hover::before {
+				opacity: .06;
+			}
+		}
+
+		.v-tab--active {
+			color: #0a347b !important; // Bleu AM darken-120
+			font-weight: 700 !important;
+
+			&:hover::before {
+				opacity: .08;
+			}
+
+			&:focus::before {
+				opacity: .12;
 			}
 		}
 	}

@@ -149,7 +149,7 @@
 			if (this.hasExtraRow(item)) {
 				classes.push('has-extra-row');
 			}
-			
+
 			return classes;
 		}
 
@@ -249,6 +249,7 @@
 			border-bottom: none !important;
 		}
 
+		.regular-row:hover,
 		.extra-row:hover {
 			background: initial !important;
 		}

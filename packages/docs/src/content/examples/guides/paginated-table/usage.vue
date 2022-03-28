@@ -4,7 +4,7 @@
 		:headers="headers"
 		:items="users"
 		:server-items-length="totalUsers"
-		:loading="state === STATE_ENUM.pending"
+		:loading="state === StateEnum.PENDING"
 		suffix="api-example"
 		@update:options="fetchData"
 	/>
@@ -19,13 +19,13 @@
 	import { User } from '../../../../services/getUsers/types';
 	import { getUsersFromApi } from '../../../../services/getUsers/api';
 
-	import { STATE_ENUM } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
+	import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 	@Component
 	export default class PaginatedTableApi extends Vue {
-		STATE_ENUM = STATE_ENUM;
+		StateEnum = StateEnum;
 
-		state = STATE_ENUM.idle;
+		state = StateEnum.IDLE;
 
 		options = {} as DataOptions;
 		headers = [
@@ -47,7 +47,7 @@
 		totalUsers = 0;
 
 		async fetchData(): Promise<void> {
-			this.state = STATE_ENUM.pending;
+			this.state = StateEnum.PENDING;
 
 			try {
 				const res = await getUsersFromApi(this.options);
@@ -56,9 +56,9 @@
 				this.users = items;
 				this.totalUsers = total;
 
-				this.state = STATE_ENUM.resolved;
+				this.state = StateEnum.RESOLVED;
 			} catch(err) {
-				this.state = STATE_ENUM.rejected;
+				this.state = StateEnum.REJECTED;
 			}
 		}
 	}

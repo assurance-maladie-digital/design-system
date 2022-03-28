@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DialogBox renders correctly 1`] = `
-<vdialog-stub opendelay="0" closedelay="0" contentclass="" origin="center center" retainfocus="true" transition="dialog-transition" width="800px" class="vd-dialog-box">
+<vdialog-stub contentclass="" opendelay="0" closedelay="0" openonclick="true" origin="center center" retainfocus="true" transition="dialog-transition" width="800px" class="vd-dialog-box">
   <vcard-stub loaderheight="4" tag="div" class="pa-6">
     <vcardtitle-stub tag="div" class="d-flex align-start flex-nowrap pa-0 mb-4">
       <!---->

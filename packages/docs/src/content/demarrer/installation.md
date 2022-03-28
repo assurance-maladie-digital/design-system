@@ -5,11 +5,7 @@ description: Création d’un nouveau projet ou installation d’un composant du
 
 ## Création d’un nouveau projet
 
-<doc-indent>
-
 Pour créer un nouveau projet, il est recommandé d’utiliser [Vue CLI](https://cli.vuejs.org/guide/installation.html), un outil développé par l’équipe cœur de Vue.js en combinaison avec Vue Dash, un outil interne qui permet de pré-configurer les nouveaux projets avec les règles et les outils de l’Assurance Maladie.
-
-</doc-indent>
 
 ### Pré-requis
 
@@ -31,7 +27,7 @@ vue create my-project --preset assurance-maladie-digital/vue-cli-preset
 
 Les questions suivantes vous seront posées pour vous permettre d’ajouter les fonctionnalités dont vous avez besoin pour votre projet :
 
-<doc-expansion-panels>
+<doc-expansion-panels class="mb-8">
 <doc-expansion-panel label="Description du projet ?">
 
 Vous pouvez décrire succinctement votre projet. Cette description sera utilisée dans le fichier *README.md* et comme valeur par défaut de la balise meta description.
@@ -203,7 +199,9 @@ vue invoke @cnamts/vue-dash -- --render-template
 
 Par défaut, tous les composants de Vue Dot sont importés et enregistrés de manière globale.
 
-Pour n’importer que les composants que vous utilisez afin de réduire la taille de l’application finale, il est possible d’utiliser le loader `vueDotLoader` en combinaison avec le plugin [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader) :
+Vous pouvez réduire la taille de votre application finale en n’important que les composants que vous utilisez.
+
+Pour cela, vous devez utiliser le loader `vueDotLoader` en combinaison avec le plugin [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader) :
 
 ```js
 // vue.config.js

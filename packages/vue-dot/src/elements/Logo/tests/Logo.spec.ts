@@ -8,10 +8,8 @@ import Logo from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('Logo', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(Logo);
 
 		expect(html(wrapper)).toMatchSnapshot();

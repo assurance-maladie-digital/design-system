@@ -1,8 +1,8 @@
 import * as fs from 'fs-extra';
 
-const devTargetFolder = './dev';
-const devTargetFile = `${devTargetFolder}/Playground.vue`;
+const DEV_TARGET_FOLDER = './dev';
+const DEV_TARGET_FILE = `${DEV_TARGET_FOLDER}/Playground.vue`;
 
-if (!fs.existsSync(devTargetFile)) {
-	fs.copySync(`${devTargetFolder}/Playground.template.vue`, devTargetFile);
+if (!fs.existsSync(DEV_TARGET_FILE)) {
+	fs.copySync(`${DEV_TARGET_FOLDER}/Playground.template.vue`, DEV_TARGET_FILE);
 }

@@ -22,6 +22,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/principes-design'
 			},
 			{
+				title: 'Accessibilité',
+				to: '/demarrer/accessibilite'
+			},
+			{
 				title: 'Installation',
 				to: '/demarrer/installation'
 			},
@@ -146,6 +150,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'UploadWorkflow',
 				to: '/composants/upload-workflow'
+			},
+			{
+				title: 'UserMenuBtn',
+				to: '/composants/user-menu-btn'
 			}
 		]
 	},
@@ -199,14 +207,26 @@ export const drawerItems: DrawerItem[] = [
 						to: '/regles-validation/is-date-valid'
 					},
 					{
+						title: 'notAfterDate',
+						to: '/regles-validation/not-after-date'
+					},
+					{
 						title: 'notAfterToday',
 						to: '/regles-validation/not-after-today'
+					},
+					{
+						title: 'notBeforeDate',
+						to: '/regles-validation/not-before-date'
 					},
 					{
 						title: 'notBeforeToday',
 						to: '/regles-validation/not-before-today'
 					}
 				]
+			},
+			{
+				title: 'Classes utilitaires CSS',
+				to: '/css/classes-utilitaires'
 			}
 		]
 	},

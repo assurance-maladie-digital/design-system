@@ -6,7 +6,6 @@ import { notAfterToday, notAfterTodayFn } from './notAfterToday';
 import { notBeforeToday, notBeforeTodayFn } from './notBeforeToday';
 import { required, requiredFn } from './required';
 
-// Export all rules function
 export const rulesFunctions = {
 	emailFn,
 	isDateValidFn,
@@ -17,7 +16,6 @@ export const rulesFunctions = {
 	requiredFn
 };
 
-// Export all rules
 export const rules = {
 	email,
 	isDateValid,

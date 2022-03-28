@@ -3,11 +3,8 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import dayjs from 'dayjs';
 
-import { Refs } from '../../../../types';
-
 import { Birthdate } from '../birthdate';
 
-// Tell jest to mock all timeout functions
 jest.useFakeTimers();
 
 interface TestComponent extends Vue {
@@ -53,7 +50,6 @@ function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('Birthdate', () => {
 	it('does not set max & min values when birthdate is false', () => {
 		const wrapper = createWrapper(false);
@@ -101,7 +97,6 @@ describe('Birthdate', () => {
 
 		wrapper.vm.setActivePicker();
 
-		// Fast-forward time
 		jest.runAllTimers();
 
 		expect(wrapper.vm.activePicker).toBe('YEAR');

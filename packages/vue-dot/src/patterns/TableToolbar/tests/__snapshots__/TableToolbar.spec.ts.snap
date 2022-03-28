@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableToolbar renders correctly 1`] = `
-<vtoolbar-stub color="white" tag="header" extensionheight="48" flat="true" src="" class="vd-table-toolbar">
+<vtoolbar-stub color="white" height="auto" minheight="56px" tag="header" extensionheight="48" flat="true" src="" class="vd-table-toolbar d-flex">
   <p class="mb-0 font-weight-bold mr-4">
     1/2 lignes
   </p>
   <vspacer-stub tag="div"></vspacer-stub>
-  <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" backgroundcolor="" hidedetails="true" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" singleline="true" type="text" class="vd-form-input flex-grow-0"></vtextfield-stub>
-  <vbtn-stub color="primary" minwidth="44px" outlined="true" tag="button" activeclass="" type="button" class="px-2 px-md-4 ml-6">
+  <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" backgroundcolor="" hidedetails="true" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" singleline="true" type="text" class="vd-form-input mr-6 flex-grow-0"></vtextfield-stub>
+  <vbtn-stub color="primary" minwidth="44px" outlined="true" tag="button" activeclass="" type="button" class="my-1 px-2 px-md-4">
     <vicon-stub>
       M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z
     </vicon-stub> <span class="mr-1">
@@ -18,8 +18,8 @@ exports[`TableToolbar renders correctly 1`] = `
 `;
 
 exports[`TableToolbar renders correctly when loading 1`] = `
-<header class="vd-table-toolbar v-sheet theme--light v-toolbar v-toolbar--flat white" style="height: 64px;">
-  <div class="v-toolbar__content" style="height: 64px;">
+<header class="vd-table-toolbar v-sheet theme--light v-toolbar v-toolbar--flat white d-flex" style="min-height: 56px;">
+  <div class="v-toolbar__content">
     <p class="mb-0 font-weight-bold mr-4">
       0/1 ligne
     </p>
@@ -43,8 +43,8 @@ exports[`TableToolbar renders correctly when loading 1`] = `
 `;
 
 exports[`TableToolbar renders correctly with content slot 1`] = `
-<header class="vd-table-toolbar v-sheet theme--light v-toolbar v-toolbar--flat white" style="height: 64px;">
-  <div class="v-toolbar__content" style="height: 64px;">
+<header class="vd-table-toolbar v-sheet theme--light v-toolbar v-toolbar--flat white d-flex" style="min-height: 56px;">
+  <div class="v-toolbar__content">
     <p class="mb-0 font-weight-bold mr-4">
       0/1 ligne
     </p>
@@ -68,7 +68,7 @@ exports[`TableToolbar renders correctly with content slot 1`] = `
 `;
 
 exports[`TableToolbar renders correctly with no items 1`] = `
-<vtoolbar-stub color="white" tag="header" extensionheight="48" flat="true" src="" class="vd-table-toolbar">
+<vtoolbar-stub color="white" height="auto" minheight="56px" tag="header" extensionheight="48" flat="true" src="" class="vd-table-toolbar d-flex">
   <!---->
   <vspacer-stub tag="div"></vspacer-stub>
   <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" backgroundcolor="" hidedetails="true" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" singleline="true" type="text" class="vd-form-input flex-grow-0"></vtextfield-stub>

@@ -14,7 +14,6 @@ interface VueInstance extends VueConstructor {
 }
 
 interface TestComponent extends Vue {
-	// Extend $refs
 	$refs: Refs<{
 		input: {
 			hasError: boolean;
@@ -88,13 +87,11 @@ function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('DateLogic', () => {
 	// We need to unregister VTextField between each test
 	// because it may change
 	afterEach(() => {
 		const instance = Vue as VueInstance;
-
 		delete instance.options.components['v-text-field'];
 	});
 

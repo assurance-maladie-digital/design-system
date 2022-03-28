@@ -13,5 +13,15 @@ export default {
 				name: 'about'
 			}
 		}
-	]
+	],
+	user: 'Utilisateur',
+	role: 'Développeur',
+	userMenuLinks: [
+		{
+			title: 'Accueil',
+			to: {
+				name: 'home'
+			}
+		}
+	],
 };

@@ -1,5 +1,8 @@
 <template>
-	<VExpansionPanels class="mb-8">
+	<VExpansionPanels
+		accordion
+		class="mb-4"
+	>
 		<slot
 			v-for="slot in Object.keys($slots)"
 			:name="slot"

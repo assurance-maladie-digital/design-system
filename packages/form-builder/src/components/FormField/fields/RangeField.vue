@@ -1,37 +1,34 @@
 <template>
 	<div class="vd-filter-range">
-		<VForm class="d-flex">
-			<VCol
-				cols="12"
-				sm="6"
-			>
-				<VTextField
-					:value="rangeValue[0]"
-					:label="minLabel"
-					outlined
-					@input="updateMinValue"
-				/>
-			</VCol>
+		<div
+			:class="{ 'flex-column': mobileVersion }"
+			class="d-flex flex-wrap max-width-none ma-n3"
+		>
+			<VTextField
+				:value="rangeValue[0]"
+				:label="minLabel"
+				hide-details
+				outlined
+				class="ma-3"
+				@input="updateMinValue"
+			/>
 
-			<VCol
-				cols="12"
-				sm="6"
-			>
-				<VTextField
-					:value="rangeValue[1]"
-					:label="maxLabel"
-					outlined
-					@input="updateMaxValue"
-				/>
-			</VCol>
-		</VForm>
+			<VTextField
+				:value="rangeValue[1]"
+				:label="maxLabel"
+				hide-details
+				outlined
+				class="ma-3"
+				@input="updateMaxValue"
+			/>
+		</div>
 
 		<VRangeSlider
 			v-model="rangeValue"
 			:max="field.max"
 			:min="field.min"
 			hide-details
-			class="align-center mb-6"
+			class="align-center mt-2 mb-6"
 			@change="emitChangeEvent(rangeValue)"
 		>
 			<template #prepend>
@@ -55,7 +52,7 @@
 		maxLabel: 'Valeur max'
 	};
 
-	enum RANGE_ENUM {
+	enum RangeEnum {
 		MIN = 0,
 		MAX = 1
 	}
@@ -81,6 +78,10 @@
 	export default class RangeField extends MixinsDeclaration {
 		rangeValue: number[] = [];
 
+		get mobileVersion(): boolean {
+			return this.$vuetify.breakpoint.xs;
+		}
+
 		get minLabel(): string {
 			return this.field.fieldOptions?.minFieldLabel as string || locales.minLabel;
 		}
@@ -99,29 +100,29 @@
 		}
 
 		updateMinValue(value: number): void {
-			this.updateRange(RANGE_ENUM.MIN, value);
+			this.updateRange(RangeEnum.MIN, value);
 		}
 
 		updateMaxValue(value: number): void {
-			this.updateRange(RANGE_ENUM.MAX, value);
+			this.updateRange(RangeEnum.MAX, value);
 		}
 
-		updateRange(index: RANGE_ENUM, value: number): void {
+		updateRange(index: RangeEnum, value: number): void {
 			const [ min, max ] = this.rangeValue;
 
 			if (value < min) {
-				this.setRangeValue(RANGE_ENUM.MIN, value);
+				this.setRangeValue(RangeEnum.MIN, value);
 			}
 
 			if (value > max) {
-				this.setRangeValue(RANGE_ENUM.MAX, value);
+				this.setRangeValue(RangeEnum.MAX, value);
 			}
 
 			this.setRangeValue(index, value);
 			this.emitChangeEvent(this.rangeValue);
 		}
 
-		setRangeValue(index: RANGE_ENUM, value: number): void {
+		setRangeValue(index: RangeEnum, value: number): void {
 			this.$set(this.rangeValue, index, value);
 		}
 	}

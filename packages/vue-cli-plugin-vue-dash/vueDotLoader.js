@@ -1,6 +1,3 @@
-// Vue CLI configuration
-// see https://cli.vuejs.org/guide/ for help
-
 const componentMap = {
 	// Elements
 	CopyBtn: 'elements',
@@ -12,6 +9,7 @@ const componentMap = {
 	HeaderLoading: 'elements',
 	Logo: 'elements',
 	PageContainer: 'elements',
+	UserMenuBtn: 'elements',
 	// Patterns
 	DataListGroup: 'patterns',
 	DatePicker: 'patterns',

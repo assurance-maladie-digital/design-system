@@ -1,9 +1,9 @@
-import Vuex, { ActionTree } from 'vuex';
+import Vuex from 'vuex';
 import { createLocalVue } from '@vue/test-utils';
 
 import { NotificationState, NotificationObj } from '../types';
 
-import { actions as moduleActions, mutations } from '../';
+import { actions, mutations } from '../';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
@@ -16,13 +16,9 @@ const notificationObj: NotificationObj = {
 
 /** Create a new store from notification module */
 function createStore(state: NotificationState) {
-	// Fix actions typings
-	const actions = moduleActions as unknown as ActionTree<NotificationState, NotificationState>;
-
 	return new Vuex.Store({ state, actions, mutations });
 }
 
-// Tests
 describe('notification', () => {
 	it('updates the state when calling `add` action', () => {
 		const state: NotificationState = {

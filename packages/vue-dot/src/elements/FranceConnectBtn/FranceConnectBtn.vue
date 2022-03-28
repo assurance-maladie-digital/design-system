@@ -1,7 +1,7 @@
 <template>
 	<a
 		:href="href"
-		:aria-label="iconText"
+		:aria-label="label"
 		class="vd-france-connect-btn d-inline-flex"
 	>
 		<svg
@@ -11,7 +11,7 @@
 			:height="height"
 		>
 			<g fill-rule="nonzero">
-				<title>{{ iconText }}</title>
+				<title>{{ label }}</title>
 
 				<path
 					stroke="#034ea2"
@@ -90,22 +90,18 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Link URL */
 			href: {
 				type: String,
 				required: true
 			},
-			/** Label of the button */
-			iconText: {
+			label: {
 				type: String,
 				default: locales.btnText
 			},
-			/** Width of the icon */
 			width: {
 				type: [Number, String],
 				default: 300
 			},
-			/** Height of the icon */
 			height: {
 				type: [Number, String],
 				default: 78
@@ -123,7 +119,8 @@
 
 <style lang="scss" scoped>
 	.vd-france-connect-btn svg {
-		fill: #034ea2
+		fill: #034ea2;
+		transition: fill .25s;
 	}
 
 	.vd-france-connect-btn:hover svg,

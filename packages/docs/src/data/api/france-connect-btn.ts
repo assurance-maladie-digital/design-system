@@ -10,7 +10,7 @@ export const api: Api = {
 				description: 'L’URL de connexion à FranceConnect.'
 			},
 			{
-				name: 'icon-text',
+				name: 'label',
 				type: 'string',
 				default: `'S’identifier avec FranceConnect'`,
 				description: 'Le label accessible du bouton.',

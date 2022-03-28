@@ -13,7 +13,7 @@ export function formatReleaseDate(date: string): string {
 	}
 
 	if (days >= 30) {
-		const month = dayjs().diff(lastPublished, 'month');
+		const month = dayjs().diff(lastPublished, 'month') || 1; // Default to one month
 
 		return `il y a ${month} mois`;
 	}

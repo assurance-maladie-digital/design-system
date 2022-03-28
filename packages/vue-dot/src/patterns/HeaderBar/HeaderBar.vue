@@ -22,7 +22,7 @@
 						:theme="theme"
 						:service-title="serviceTitle"
 						:service-sub-title="serviceSubTitle"
-						:is-mobile="isMobile"
+						:mobile-version="isMobileVersion"
 						:home-link="homeLink"
 					>
 						<slot name="secondary-logo" />
@@ -31,6 +31,12 @@
 					<VSpacer v-bind="options.spacer" />
 
 					<slot />
+
+					<HeaderMenuBtn
+						v-if="showHeaderMenuBtn"
+						v-bind="options.menuBtn"
+						@click="updateDrawer(!drawer)"
+					/>
 				</VSheet>
 			</VSheet>
 
@@ -39,24 +45,30 @@
 					:tab.sync="tab"
 					:drawer.sync="drawer"
 					:theme="theme"
-					:is-mobile="isMobile"
+					:mobile-version="isMobileVersion"
 					:items="navigationItems"
 					:inner-width="innerWidth"
+					:show-menu-btn="showNavBarMenuBtn"
 				>
 					<slot name="navigation-bar-content" />
 				</HeaderNavigationBar>
 			</template>
 		</VAppBar>
 
-		<HeaderNavigationDrawer
-			v-model="drawer"
-			:tab.sync="tab"
-			:theme="theme"
-			:items="navigationItems"
-			:is-mobile="isMobile"
+		<slot
+			name="navigation-drawer"
+			v-bind="{ drawer, updateDrawer }"
 		>
-			<slot name="navigation-drawer-content" />
-		</HeaderNavigationDrawer>
+			<HeaderNavigationDrawer
+				v-model="drawer"
+				:tab.sync="tab"
+				:theme="theme"
+				:items="navigationItems"
+				:mobile-version="isMobileVersion"
+			>
+				<slot name="navigation-drawer-content" />
+			</HeaderNavigationDrawer>
+		</slot>
 	</div>
 </template>
 
@@ -65,6 +77,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import HeaderBrandSection from './HeaderBrandSection';
+	import HeaderMenuBtn from './HeaderMenuBtn';
 	import HeaderNavigationBar from './HeaderNavigationBar';
 	import HeaderNavigationDrawer from './HeaderNavigationDrawer';
 
@@ -104,6 +117,14 @@
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: undefined
+			},
+			showNavBarMenuBtn: {
+				type: Boolean,
+				default: false
+			},
+			mobileVersion: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -114,24 +135,29 @@
 		inheritAttrs: false,
 		components: {
 			HeaderBrandSection,
+			HeaderMenuBtn,
 			HeaderNavigationBar,
 			HeaderNavigationDrawer
 		}
 	})
 	export default class HeaderBar extends MixinsDeclaration {
-		drawer = false;
+		drawer: boolean | null = null;
 		tab: number | null = null;
 
-		get isMobile(): boolean {
+		get isMobileVersion(): boolean {
+			if (this.mobileVersion) {
+				return true;
+			}
+
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
 		get spacingClass(): string {
-			return this.isMobile ? 'pa-4' : 'px-14 py-7';
+			return this.isMobileVersion ? 'pa-4' : 'px-14 py-7';
 		}
 
 		get contentSheetHeight(): number {
-			return this.isMobile ? 72 : 120;
+			return this.isMobileVersion ? 72 : 120;
 		}
 
 		get height(): number {
@@ -142,8 +168,30 @@
 			return this.contentSheetHeight;
 		}
 
+		get hasNavigationItems(): boolean {
+			return Boolean(this.navigationItems || this.$slots['navigation-drawer-content']);
+		}
+
+		get showHeaderMenuBtn(): boolean {
+			const hasNavigation = Boolean(this.navigationItems || this.$scopedSlots['navigation-drawer']);
+
+			return !this.showNavBarMenuBtn && this.isMobileVersion && hasNavigation;
+		}
+
 		get showNavigationBar(): boolean {
-			return Boolean(this.navigationItems || this.$slots['navigation-bar-content']);
+			if (this.$slots['navigation-bar-content']) {
+				return true;
+			}
+
+			if (this.showHeaderMenuBtn) {
+				return false;
+			}
+
+			return this.hasNavigationItems;
+		}
+
+		updateDrawer(value: boolean): void {
+			this.drawer = value;
 		}
 	}
 </script>
@@ -154,8 +202,13 @@
 		padding: 0;
 	}
 
-	.vd-header-bar,
-	.vd-header-bar-content {
-		overflow: hidden;
+	.vd-header-menu-btn ::v-deep {
+		.v-btn__content {
+			flex-direction: column;
+		}
+
+		.v-icon {
+			margin: 0 !important;
+		}
 	}
 </style>
