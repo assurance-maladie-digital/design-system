@@ -223,6 +223,15 @@ export const drawerItems: DrawerItem[] = [
 						to: '/regles-validation/not-before-today'
 					}
 				]
+			},
+			{
+				title: 'Fonctions',
+				items: [
+					{
+						title: 'formatDate',
+						to: '/fonctions/formatDate'
+					}
+				]
 			}
 		]
 	},

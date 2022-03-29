@@ -76,7 +76,7 @@
 							:key="`${item.name}-extra`"
 							class="extra-row"
 						>
-							<td />
+							<td v-if="field !== 'response'" />
 
 							<td :colspan="headers.length - 1">
 								<DocMarkup
