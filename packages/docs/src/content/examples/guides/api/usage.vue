@@ -12,7 +12,7 @@
 		<ul class="mt-4">
 			<li
 				v-for="(user, index) in users"
-				:key="`user-${index}`"
+				:key="index"
 			>
 				{{ user.firstname }} {{ user.lastname }}
 			</li>
