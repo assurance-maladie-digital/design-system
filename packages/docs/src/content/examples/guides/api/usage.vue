@@ -34,7 +34,7 @@
 		state: StateEnum = StateEnum.IDLE;
 		users: User[] = [];
 
-		async onClick(): Promise<void> {
+		async fetchUsers(): Promise<void> {
 			this.state = StateEnum.PENDING;
 
 			try {
