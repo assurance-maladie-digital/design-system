@@ -76,10 +76,10 @@ Nous utilisons une variable d’environnement pour spécifier l’URL de base de
 ## Création d’un appel API
 
 L’étape suivante est de créer une fonction utilisant cette instance pour appeler une API. Par convention, ces fonctions sont appelées services et seront créées dans le dossier `src/services`. Chaque appel API nécessite 2 fichiers :
-- `api.ts`: ce fichier contient la fonction qui utilise l’instance axios et appelle l’API,
-- `types.d.ts`: ce fichier contient les types dont notre fonction à besoin. D’une manière générale, il contiendra le typage des données attendues et renvoyées par l’API.
+- `api.ts` : ce fichier contient la fonction qui utilise l’instance axios et appelle l’API,
+- `types.d.ts` : ce fichier contient les types dont notre fonction a besoin. D’une manière générale, il contiendra le typage des données attendues et renvoyées par l’API.
 
-Par exemple, le fichier `src/services/monApi/api.ts`:
+Par exemple, le fichier `src/services/monApi/api.ts` :
 
 ```ts
 import { axios, AxiosResponse } from '@/plugins/axios';
