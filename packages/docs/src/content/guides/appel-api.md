@@ -60,11 +60,7 @@ export { AxiosResponse };
 
 <doc-alert type="info">
 
-Un intercepteur est ajouté sur cette instance axios. Lorsque cette instance sera utilisée pour effectuer un appel API, l’intercepteur déclenchera une fonction spécifique en fonction du type de réponse (succès ou erreur). 
-
-```ts
-instance.interceptors.response.use(onSuccess, onError);
-```
+Un [intercepteur](https://axios-http.com/docs/interceptors) est ajouté sur l'instance axios. Lorsque cette instance sera utilisée pour effectuer un appel API, l’intercepteur déclenchera une fonction spécifique en fonction du type de réponse (succès ou erreur). 
 
 </doc-alert>
 
