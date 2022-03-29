@@ -97,7 +97,7 @@ export function postData(payload: MonApiPayload): Promise<AxiosResponse<MonApiRe
 
 ```
 
-Fichier `src/services/monApi/types.ts`:
+Fichier `src/services/monApi/types.ts` :
 
 ```ts
 export interface MonApiParams {
