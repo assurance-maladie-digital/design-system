@@ -55,7 +55,6 @@ instance.interceptors.response.use(undefined, (error: AxiosError) => {
 
 export { instance as axios };
 export { AxiosResponse };
-
 ```
 
 <doc-alert type="info">
