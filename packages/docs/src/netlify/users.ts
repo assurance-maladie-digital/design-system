@@ -7,7 +7,6 @@ import { getUsers } from '~/functions/getUsers';
 import { getUsersPaginated } from '~/functions/getUsersPaginated';
 
 import { getParamsFromQueryString } from '~/functions/getParamsFromQueryString';
-
 import { pause } from '~/functions/pause';
 
 const handler: Handler = async (event: HandlerEvent) => {
