@@ -159,7 +159,7 @@ Il faut finalement appeler cette fonction dans un composant et exploiter les don
 
 	@Component
 	export default class MonApiComponent extends Vue {
-    state: StateEnum = StateEnum.IDLE;
+		state: StateEnum = StateEnum.IDLE;
 		data: MonApiResponseGet | null = null;
 
 		async getData(): Promise<void> {
