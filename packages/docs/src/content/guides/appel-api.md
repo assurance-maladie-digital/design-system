@@ -5,7 +5,8 @@ description: Faire des appels API en utilisant axios.
 
 ## Instance axios
 
-Pour effectuer des appels API, le package [axios](https://axios-http.com/docs/intro) est ajouté de base dans le starter kit, la première étape est de créer une [instance axios](https://axios-http.com/docs/instance), elle sera la base des appels API qui seront basés sur elle.
+Pour effectuer des appels API, le package [axios](https://axios-http.com/docs/intro) est ajouté par défaut dans le Starter Kit.<br>
+Les appels API seront effectués en utilisant une [instance axios](https://axios-http.com/docs/instance) qui permettra de partager une configuration commune.
 
 Cette instance est définie dans le fichier `src/plugins/axios.ts` :
 
