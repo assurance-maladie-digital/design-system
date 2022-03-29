@@ -93,7 +93,6 @@ export function getData(params: MonApiParams): Promise<AxiosResponse<MonApiRespo
 export function postData(payload: MonApiPayload): Promise<AxiosResponse<MonApiResponsePost>> {
 	return axios.post(`/api/data`, payload);
 }
-
 ```
 
 Fichier `src/services/monApi/types.ts` :
