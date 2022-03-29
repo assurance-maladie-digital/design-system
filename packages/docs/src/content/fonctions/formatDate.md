@@ -9,7 +9,7 @@ description: Description de la fonction formatDate.
 
 La fonction formatDate permet d’appliquer un [format Dayjs](https://day.js.org/docs/en/display/format) à une variable de type Dayjs.
 
-Pour l’utiliser, il faut l’importer :
+Pour l’utiliser, il faut l’importer&nbsp;:
 
 ```typescript
 import { formatDate } from '@cnamts/vue-dot/src/functions/formatDate';

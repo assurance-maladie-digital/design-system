@@ -5,13 +5,13 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'date',
-				description: 'La date a formatter',
+				description: 'La date à formatter',
 				type: 'Dayjs',
 				required: true
 			},
 			{
 				name: 'format',
-				description: 'Le [format dayjs](https://day.js.org/docs/en/display/format) a appliquer',
+				description: 'Le [format dayjs](https://day.js.org/docs/en/display/format) à appliquer',
 				type: 'string',
 				default: 'DD/MM/YYYY'
 			}
