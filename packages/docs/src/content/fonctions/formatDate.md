@@ -7,7 +7,7 @@ description: Description de la fonction formatDate.
 
 <doc-tab-item label="Utilisation">
 
-La fonction formatNir permet d'appliquer un [format Dayjs](https://day.js.org/docs/en/display/format) à une variable de type Dayjs.
+La fonction formatDate permet d'appliquer un [format Dayjs](https://day.js.org/docs/en/display/format) à une variable de type Dayjs.
 
 Pour l’utiliser, il faut l'importer :
 
