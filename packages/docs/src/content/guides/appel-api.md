@@ -70,7 +70,7 @@ Nous utilisons une variable d’environnement pour spécifier l’URL de base de
 
 </doc-alert>
 
-## Création d’un appel API
+## Création d’un service
 
 L’étape suivante est de créer une fonction utilisant cette instance pour appeler une API. Par convention, ces fonctions sont appelées services et seront créées dans le dossier `src/services`. Chaque appel API nécessite 2 fichiers :
 - `api.ts` : ce fichier contient la fonction qui utilise l’instance axios et appelle l’API,
