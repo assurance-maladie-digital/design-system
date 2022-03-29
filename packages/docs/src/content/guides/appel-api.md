@@ -182,7 +182,6 @@ Il faut finalement appeler cette fonction dans un composant et exploiter les don
 		}
 	}
 </script>
-
 ```
 
 ## Exemple
