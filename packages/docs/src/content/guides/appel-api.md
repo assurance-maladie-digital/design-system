@@ -128,16 +128,16 @@ Il faut finalement appeler cette fonction dans un composant et exploiter les don
 ```vue
 <template>
 	<div>
-    <VBtn
-      @click="getData"
-      :loading="state === 'pending'"
-    >
-      Appeler l’API
-    </VBtn>
+	<VBtn
+		:loading="state === 'pending'"
+		@click="getData"
+	>
+		Appeler l’API
+	</VBtn>
 
-    <p v-if="data">
-      {{ data.data1 }} {{ data.data2 }}
-    </p>
+	<p v-if="data">
+		{{ data.data1 }} {{ data.data2 }}
+	</p>
 
 		<p v-else>
 			Pas de données
