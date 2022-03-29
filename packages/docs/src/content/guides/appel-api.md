@@ -213,10 +213,10 @@ export function getUsersFromApi(options: DataOptions | null = null): Promise<Axi
 ```ts
 
 export interface User {
+	[key: string]: string;
 	firstname: string;
 	lastname: string;
 	email: string;
-	[key: string]: string;
 }
 
 export interface UsersResult {
