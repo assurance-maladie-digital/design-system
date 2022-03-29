@@ -210,7 +210,6 @@ export function getUsersFromApi(options: DataOptions | null = null): Promise<Axi
 `types.d.ts` : 
 
 ```ts
-
 export interface User {
 	[key: string]: string;
 	firstname: string;
