@@ -210,7 +210,7 @@ export function getUsersFromApi(options: DataOptions | null = null): Promise<Axi
 }
 ```
 
-`type.d.ts`: 
+`types.d.ts` : 
 
 ```ts
 
