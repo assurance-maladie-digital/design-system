@@ -4,7 +4,7 @@
 			:loading="state === 'pending'"
 			class="text-none"
 			color="primary"
-			@click="onClick"
+			@click="fetchUsers"
 		>
 			Récupérer les utilisateurs
 		</VBtn>
