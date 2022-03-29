@@ -225,6 +225,10 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Classes utilitaires CSS',
+				to: '/css/classes-utilitaires'
+			},
+			{
 				title: 'Fonctions',
 				items: [
 					{

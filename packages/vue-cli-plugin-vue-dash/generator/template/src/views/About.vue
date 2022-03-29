@@ -5,7 +5,7 @@
 				<% if (i18n) { %>{{ $t('views.about.title') }}<% } else { %>À propos<% } %>
 			</h2>
 
-			<Links
+			<LinksList
 				v-for="(data, index) in links"
 				:key="index"
 				:title="data.title"
@@ -52,9 +52,9 @@
 	/** About page */
 	@Component({
 		components: {
-			Links: () => import(
-				/* webpackChunkName: "links" */
-				'@/components/Links'
+			LinksList: () => import(
+				/* webpackChunkName: "links-list" */
+				'@/components/LinksList'
 			)
 		}
 	})

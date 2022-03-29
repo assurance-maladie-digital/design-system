@@ -1,5 +1,6 @@
 <template>
 	<div
+		:aria-label="label"
 		:style="widthStyles"
 		class="vd-data-list"
 	>
@@ -85,7 +86,7 @@
 			},
 			placeholder: {
 				type: String,
-				default: locales.placeholder
+				default: undefined
 			},
 			loading: {
 				type: Boolean,
@@ -115,6 +116,10 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
+		get label(): string | undefined {
+			return this.loading ? locales.loadingLabel : undefined;
+		}
+
 		getIcon(iconName?: string): string | null {
 			if (!iconName || !this.icons) {
 				return null;

@@ -169,16 +169,20 @@
 		}
 
 		get hasNavigationItems(): boolean {
-			return Boolean(this.navigationItems || this.$slots['navigation-bar-content']);
+			return Boolean(this.navigationItems || this.$slots['navigation-drawer-content']);
 		}
 
 		get showHeaderMenuBtn(): boolean {
-			const hasNavigation = Boolean(this.hasNavigationItems || this.$scopedSlots['navigation-drawer']);
+			const hasNavigation = Boolean(this.navigationItems || this.$scopedSlots['navigation-drawer']);
 
 			return !this.showNavBarMenuBtn && this.isMobileVersion && hasNavigation;
 		}
 
 		get showNavigationBar(): boolean {
+			if (this.$slots['navigation-bar-content']) {
+				return true;
+			}
+
 			if (this.showHeaderMenuBtn) {
 				return false;
 			}
@@ -196,11 +200,6 @@
 	.vd-header-bar ::v-deep .v-toolbar__content {
 		display: block;
 		padding: 0;
-	}
-
-	.vd-header-bar,
-	.vd-header-bar-content {
-		overflow: hidden;
 	}
 
 	.vd-header-menu-btn ::v-deep {
