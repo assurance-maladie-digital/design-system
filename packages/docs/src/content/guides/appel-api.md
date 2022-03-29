@@ -81,40 +81,39 @@ Par exemple, le fichier `src/services/monApi/api.ts` :
 ```ts
 import { axios, AxiosResponse } from '@/plugins/axios';
 
-export function getData(params: MonApiParams): Promise<AxiosResponse<MonApiResponseGet>> {
+export function getDataPaginated(params: PaginatedOptions): Promise<AxiosResponse<PaginatedData>> {
 	return axios.get('/api/data', {
 		params
 	});
 }
 
-export function postData(payload: MonApiPayload): Promise<AxiosResponse<MonApiResponsePost>> {
-	return axios.post(`/api/data`, payload);
+export function authenticateUser(credentials: UserCredentials): Promise<AxiosResponse<UserInformation>> {
+	return axios.post(`/api/login`, credentials);
 }
 ```
 
 Fichier `src/services/monApi/types.ts` :
 
 ```ts
-export interface MonApiParams {
-  param1: string;
-  param2: number;
+export interface PaginatedOptions {
+	page: number;
+	itemPerPage: number;
 }
 
-export interface MonApiResponseGet {
-  data1: number;
-  data2: string;
+export interface PaginatedData {
+	items: string[];
+	maxPage: number;
 }
 
-export interface MonApiPayload {
-  field1: number;
-  field2: string;
-  field3: string[];
+export interface UserCredentials {
+	username: string;
+	password: string;
 }
 
-export interface MonApiResponsePost {
-  data1: number;
-  data2: string;
-	}
+export interface UserInformation {
+	firstname: string;
+	lastname: string;
+}
 ```
 
 ## Appel de l’API
@@ -124,16 +123,29 @@ Il faut finalement appeler cette fonction dans un composant et exploiter les don
 ```vue
 <template>
 	<div>
-	<VBtn
-		:loading="state === 'pending'"
-		@click="getData"
-	>
-		Appeler l’API
-	</VBtn>
+		<VTextfield
+			v-model="credentials.username"
+			label="Identifiant"
+		/>
 
-	<p v-if="data">
-		{{ data.data1 }} {{ data.data2 }}
-	</p>
+		<VTextfield
+			v-model="credentials.password"
+			label="Identifiant"
+			type="password"
+      class="mt-4"
+		/>
+
+		<VBtn
+			:loading="state === 'pending'"
+      class="mt-4"
+			@click="login"
+		>
+			Se connecter
+		</VBtn>
+
+		<p v-if="user">
+			{{ user.firstname }} {{ user.lastname }}
+		</p>
 
 		<p v-else>
 			Pas de données
@@ -149,25 +161,26 @@ Il faut finalement appeler cette fonction dans un composant et exploiter les don
 
 	import { getData } from '@/services/monApi/api';
 	import {
-		MonApiParams,
-		MonApiResponseGet
+		UserCredentials,
+		UserInformation
 	} from '@/services/monApi/types';
 
 	@Component
 	export default class MonApiComponent extends Vue {
-		state: StateEnum = StateEnum.IDLE;
-		data: MonApiResponseGet | null = null;
+		credentials: UserCredentials = {
+			username: null,
+			password: null
+		};
 
-		async getData(): Promise<void> {
+		state: StateEnum = StateEnum.IDLE;
+
+		user: UserInformation | null = null;
+
+		async login(): Promise<void> {
 			try {
 				this.state = StateEnum.PENDING;
-				
-				const params: MonApiParams = {
-					param1: '1',
-					param2: 1
-				};
 
-				const { data } = await getData(params);
+				const { data } = await authenticateUser(params);
 
 				this.data = data;
 				this.state = StateEnum.RESOLVED;
