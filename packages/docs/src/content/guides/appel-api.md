@@ -225,5 +225,4 @@ export interface UsersResult {
 	items: User[];
 	total: number;
 }
-
 ```
