@@ -1,6 +1,6 @@
 ---
 title: Appels API
-description: Faire des appels API en utilisant axios.
+description: Appel à une API et exploitation du résultat.
 ---
 
 ## Instance axios
