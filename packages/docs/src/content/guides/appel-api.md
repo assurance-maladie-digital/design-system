@@ -193,7 +193,6 @@ Il faut finalement appeler cette fonction dans un composant et exploiter les don
 `api.ts`: 
 
 ```ts
-
 import { DataOptions } from 'vuetify';
 
 import { UsersResult } from './types';
