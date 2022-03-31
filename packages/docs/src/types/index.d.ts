@@ -21,7 +21,7 @@ type ItemFunction = Pick<ApiProp, 'name' | 'signature' | 'description'>;
 type ItemModifier = Pick<ApiProp, 'name' | 'type' | 'description' | 'snippet'>;
 type ItemArgument = Pick<ApiProp, 'name' | 'type' | 'default' | 'required' | 'description' | 'example' | 'snippet'>;
 type ErrorMessages = Pick<ApiProp, 'name' | 'type' | 'default' | 'description'>;
-type ItemResponse = Pick<ApiProp, 'type' | 'example'>;
+type ReturnValue = Pick<ApiProp, 'type' | 'example'>;
 
 export type Props = ItemValue[];
 
@@ -34,7 +34,7 @@ interface ApiHeaderList {
 	modifiers: ItemModifier[];
 	arguments: ItemArgument[];
 	errorMessages: ErrorMessages[];
-	response: ItemResponse[];
+	returnValue: ReturnValue[];
 }
 
 export type HeaderList = keyof ApiHeaderList;

@@ -11,12 +11,12 @@ export const api: Api = {
 			},
 			{
 				name: 'format',
-				description: 'Le [format dayjs](https://day.js.org/docs/en/display/format) à appliquer',
+				description: 'Le [format Day.js](https://day.js.org/docs/en/display/format) à appliquer',
 				type: 'string',
-				default: 'DD/MM/YYYY'
+				default: `'DD/MM/YYYY'`
 			}
 		],
-		response: [
+		returnValue: [
 			{
 				type: 'string'
 			}

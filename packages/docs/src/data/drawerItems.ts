@@ -225,17 +225,17 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
-				title: 'Classes utilitaires CSS',
-				to: '/css/classes-utilitaires'
-			},
-			{
 				title: 'Fonctions',
 				items: [
 					{
 						title: 'formatDate',
-						to: '/fonctions/formatDate'
+						to: '/fonctions/format-date'
 					}
 				]
+			},
+			{
+				title: 'Classes utilitaires CSS',
+				to: '/css/classes-utilitaires'
 			}
 		]
 	},

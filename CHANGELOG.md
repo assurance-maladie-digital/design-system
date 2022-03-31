@@ -3,7 +3,8 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1372](https://github.com/assurance-maladie-digital/design-system/pull/1372))
+  - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
+  - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883))
 
 ## v2.3.0
 
@@ -164,7 +165,6 @@ Cette version comporte l'ajout du nouveau composant `UserMenuBtn` et des règles
   - **global:** Amélioration de la qualité du code ([#1831](https://github.com/assurance-maladie-digital/design-system/pull/1831)) ([1bb9e2d](https://github.com/assurance-maladie-digital/design-system/commit/1bb9e2dd61477260b1bf17e249b2944e2f4b8610))
 
 - 📝 **Documentation**
-  - **technical components:** Ajout de la documentation de la fonction formatDate ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([d180be3](https://github.com/assurance-maladie-digital/design-system/commit/d180be3d60e737d8a475ee4899439e5f2e49e385))
   - **global:** Ajout de la page accessibilité ([#1707](https://github.com/assurance-maladie-digital/design-system/pull/1707)) ([648bccf](https://github.com/assurance-maladie-digital/design-system/commit/648bccfa69d4da8766f5dc53506df94ce881dddd))
   - **explorer:** Mise à jour du contenu du fichier `base.css` ([#1714](https://github.com/assurance-maladie-digital/design-system/pull/1714)) ([d1ac04b](https://github.com/assurance-maladie-digital/design-system/commit/d1ac04b7c3a3182c301cfcd820c6c8bcd3b49335))
   - **components:** Ajout d'informations sur les propriétés transmises aux composants ([#1734](https://github.com/assurance-maladie-digital/design-system/pull/1734)) ([ce8da80](https://github.com/assurance-maladie-digital/design-system/commit/ce8da807adf8d4d10ddbed25f10c5d11c160ef80))
