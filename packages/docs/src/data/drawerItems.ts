@@ -259,8 +259,8 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/utilisation-store'
 			},
 			{
-				title: 'Appel API',
-				to: '/guides/appel-api'
+				title: 'Appels API',
+				to: '/guides/appels-api'
 			},
 			{
 				title: 'Tableau avec pagination',

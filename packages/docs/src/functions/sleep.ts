@@ -3,5 +3,5 @@ export async function sleep(duration: number): Promise<void> {
 		setTimeout(() => {
 			resolve();
 		}, duration);
-	})
+	});
 }
