@@ -225,6 +225,15 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Fonctions',
+				items: [
+					{
+						title: 'formatDate',
+						to: '/fonctions/format-date'
+					}
+				]
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/css/classes-utilitaires'
 			}
