@@ -20,15 +20,12 @@ dateFormatted = formatDate(date, ?format);
 
 ## Exemple
 
-```typescript
+```ts
 date = dayjs('2020-05-01');
 
-// 01/05/2020
-formatDate(date);
+formatDate(date); // 01/05/2020
 
-// 2/5/2020
-formatDate(date, 'D/M/YYYY');
-
+formatDate(date, 'D/M/YYYY'); // 2/5/2020
 ```
 
 </doc-tab-item>
