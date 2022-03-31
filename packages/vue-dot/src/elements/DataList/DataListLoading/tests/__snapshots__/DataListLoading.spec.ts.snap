@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataListLoading renders correctly 1`] = `
-<div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading" label="Test">
+<div aria-hidden="true" class="vd-data-list-loading" label="Test">
   <!---->
-  <ul class="vd-data-list-loading-items pl-0">
+  <ul class="pl-0">
     <li class="vd-data-list-loading-item">
       <headerloading-stub width="60px" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90px" height="1.5rem"></headerloading-stub>
@@ -13,18 +13,18 @@ exports[`DataListLoading renders correctly 1`] = `
 `;
 
 exports[`DataListLoading renders correctly in row mode 1`] = `
-<div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
+<div aria-hidden="true" class="vd-data-list-loading">
   <!---->
-  <ul class="vd-data-list-loading-items pl-0">
-    <li class="vd-data-list-loading-item vd-row mb-4">
+  <ul class="pl-0">
+    <li class="vd-data-list-loading-item mb-4">
       <!---->
       <headerloading-stub width="150px" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item vd-row mb-4">
+    <li class="vd-data-list-loading-item mb-4">
       <!---->
       <headerloading-stub width="150px" height="1.5rem"></headerloading-stub>
     </li>
-    <li class="vd-data-list-loading-item vd-row">
+    <li class="vd-data-list-loading-item">
       <!---->
       <headerloading-stub width="150px" height="1.5rem"></headerloading-stub>
     </li>
@@ -33,9 +33,9 @@ exports[`DataListLoading renders correctly in row mode 1`] = `
 `;
 
 exports[`DataListLoading renders correctly with a header 1`] = `
-<div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
+<div aria-hidden="true" class="vd-data-list-loading">
   <headerloading-stub width="100px" height="1.5rem" class="mb-4"></headerloading-stub>
-  <ul class="vd-data-list-loading-items pl-0">
+  <ul class="pl-0">
     <li class="vd-data-list-loading-item">
       <headerloading-stub width="60px" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90px" height="1.5rem"></headerloading-stub>
@@ -45,9 +45,9 @@ exports[`DataListLoading renders correctly with a header 1`] = `
 `;
 
 exports[`DataListLoading renders correctly with more items 1`] = `
-<div role="alert" aria-busy="true" aria-live="polite" class="vd-data-list-loading">
+<div aria-hidden="true" class="vd-data-list-loading">
   <!---->
-  <ul class="vd-data-list-loading-items pl-0">
+  <ul class="pl-0">
     <li class="vd-data-list-loading-item mb-4">
       <headerloading-stub width="60px" height="1rem" class="mb-1"></headerloading-stub>
       <headerloading-stub width="90px" height="1.5rem"></headerloading-stub>

@@ -50,9 +50,6 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		const elExists = wrapper.find('.vd-row').exists();
-		expect(elExists).toBe(true);
-
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

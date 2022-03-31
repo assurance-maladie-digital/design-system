@@ -50,8 +50,8 @@ export const api: Api = {
 			{
 				name: 'placeholder',
 				type: 'string',
-				default: `'…'`,
-				description: 'Le texte à afficher lorsqu’il n’y a pas de valeur.'
+				default: undefined,
+				description: 'Le texte à afficher lorsqu’il n’y a pas de valeur.<br>Par défaut, la valeur est celle de la prop du composant `DataListItem`.'
 			},
 			{
 				name: 'loading',

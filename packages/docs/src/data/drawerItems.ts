@@ -223,6 +223,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/regles-validation/not-before-today'
 					}
 				]
+			},
+			{
+				title: 'Classes utilitaires CSS',
+				to: '/css/classes-utilitaires'
 			}
 		]
 	},

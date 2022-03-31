@@ -144,19 +144,11 @@ export const contentExplorerItems: TreeviewItem[] = [
 											{
 												name: 'AppHeader.spec.ts',
 												file: 'ts'
-											},
-											{
-												name: 'HeaderMenu.spec.ts',
-												file: 'ts'
 											}
 										]
 									},
 									{
 										name: 'AppHeader.vue',
-										file: 'vue'
-									},
-									{
-										name: 'HeaderMenu.vue',
 										file: 'vue'
 									},
 									{
@@ -176,13 +168,13 @@ export const contentExplorerItems: TreeviewItem[] = [
 						]
 					},
 					{
-						name: 'Links',
+						name: 'LinksList',
 						children: [
 							{
 								name: 'tests',
 								children: [
 									{
-										name: 'Links.spec.ts',
+										name: 'LinksList.spec.ts',
 										file: 'ts'
 									}
 								]
@@ -192,7 +184,7 @@ export const contentExplorerItems: TreeviewItem[] = [
 								file: 'ts'
 							},
 							{
-								name: 'Links.vue',
+								name: 'LinksList.vue',
 								file: 'vue'
 							}
 						]
