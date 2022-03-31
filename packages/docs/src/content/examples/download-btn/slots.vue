@@ -33,7 +33,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { AxiosResponse } from 'axios';
+	import { AxiosResponse } from '~/plugins/axios';
 
 	import { mdiDownload, mdiFile } from '@mdi/js';
 

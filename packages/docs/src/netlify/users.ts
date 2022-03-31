@@ -7,12 +7,15 @@ import { getUsers } from '~/functions/getUsers';
 import { getUsersPaginated } from '~/functions/getUsersPaginated';
 
 import { getParamsFromQueryString } from '~/functions/getParamsFromQueryString';
+import { sleep } from '~/functions/sleep';
 
 const handler: Handler = async (event: HandlerEvent) => {
 	const options = getParamsFromQueryString(event.queryStringParameters) as unknown as DataOptions;
 
 	const users: User[] = getUsers();
 	const items = getUsersPaginated(users, options);
+
+	await sleep(1000);
 
 	return {
 		headers: {
