@@ -17,7 +17,7 @@ import { formatDate } from '@cnamts/vue-dot/src/functions/formatDate';
 
 Puis l’utiliser&nbsp;:
 
-```typescript
+```ts
 dateFormatted = formatDate(date, ?format);
 ```
 
