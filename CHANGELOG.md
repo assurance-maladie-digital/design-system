@@ -4,7 +4,12 @@
 
 - 📝 **Documentation**
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
-  - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883))
+  - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v38.1.4` ([#1878](https://github.com/assurance-maladie-digital/design-system/pull/1878))
 
 ## v2.3.0
 
