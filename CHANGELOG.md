@@ -9,7 +9,8 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v38.1.4` ([#1878](https://github.com/assurance-maladie-digital/design-system/pull/1878))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v38.1.4` ([#1878](https://github.com/assurance-maladie-digital/design-system/pull/1878)) ([272bf1d](https://github.com/assurance-maladie-digital/design-system/commit/272bf1d5973cb0fd6505be4964eb20864adf4b6e))
+  - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879))
 
 ## v2.3.0
 
