@@ -39,9 +39,8 @@
 		"jest-mock-process": "1.4.1"
 	},
 	"lint-staged": {
-		"*.{ts}": [
-			"eslint **/*.ts --fix",
-			"git add"
+		"*.ts": [
+			"eslint **/*.ts --fix"
 		]
 	},
 	"publishConfig": {

@@ -51,8 +51,7 @@
 	},
 	"lint-staged": {
 		"*.{ts,vue}": [
-			"vue-cli-service lint",
-			"git add"
+			"vue-cli-service lint"
 		]
 	},
 	"publishConfig": {
