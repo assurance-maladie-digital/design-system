@@ -24,8 +24,8 @@
 	},
 	"dependencies": {
 		"@cnamts/cli-helpers": "^2.1.0",
-		"dayjs": "^1.8.34",
-		"fs-extra": "^10.0.0",
+		"dayjs": "^1.11.0",
+		"fs-extra": "^10.0.1",
 		"superb": "^4.0.0"
 	},
 	"devDependencies": {

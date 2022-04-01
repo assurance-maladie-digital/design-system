@@ -34,7 +34,7 @@
 		"test": "vue-cli-service test:unit --runInBand"
 	},
 	"peerDependencies": {
-		"@cnamts/vue-dot": "^2.0.0-alpha.53",
+		"@cnamts/vue-dot": "^2.0.0",
 		"vue": "^2.6.11",
 		"vuetify": "^2.3.0"
 	},

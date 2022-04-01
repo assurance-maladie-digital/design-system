@@ -1,3 +1,4 @@
+const { defineConfig } = require('@vue/cli-service');
 const webpack = require('webpack');
 
 const LIB_MODE = Boolean(process.env.LIB_MODE);
@@ -72,12 +73,9 @@ const DEV_MODE_CONFIG = {
 				return args;
 			});
 	},
-	transpileDependencies: [
-		'vuetify',
-		'vue-input-facade'
-	]
+	transpileDependencies: true
 };
 
 const currentConfig = LIB_MODE ? LIB_MODE_CONFIG : DEV_MODE_CONFIG;
 
-module.exports = currentConfig;
+module.exports = defineConfig(currentConfig);

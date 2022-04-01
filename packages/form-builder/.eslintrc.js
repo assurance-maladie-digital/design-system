@@ -3,13 +3,15 @@ module.exports = {
 	env: {
 		node: true
 	},
-	parser: 'vue-eslint-parser',
 	extends: [
 		'plugin:vue/recommended',
 		'eslint:recommended',
 		'@vue/typescript/recommended',
 		'plugin:jsdoc/recommended'
 	],
+	parserOptions: {
+		ecmaVersion: 2020
+	},
 	rules: {
 		// Allow logs in development but not in production
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
