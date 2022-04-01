@@ -225,6 +225,15 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Fonctions',
+				items: [
+					{
+						title: 'formatDate',
+						to: '/fonctions/format-date'
+					}
+				]
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/css/classes-utilitaires'
 			}
@@ -257,6 +266,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation du store',
 				to: '/guides/utilisation-store'
+			},
+			{
+				title: 'Appels API',
+				to: '/guides/appels-api'
 			},
 			{
 				title: 'Tableau avec pagination',

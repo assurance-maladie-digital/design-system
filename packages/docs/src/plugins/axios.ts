@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 const instance = axios.create({
 	withCredentials: false,
@@ -10,5 +10,6 @@ const instance = axios.create({
 });
 
 export {
-	instance as axios
+	instance as axios,
+	AxiosResponse
 };
