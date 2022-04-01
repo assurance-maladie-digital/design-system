@@ -8,7 +8,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { AxiosResponse } from 'axios';
+	import { AxiosResponse } from '~/plugins/axios';
 
 	const file: AxiosResponse<string> = {
 		data: 'test',

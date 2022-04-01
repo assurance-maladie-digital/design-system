@@ -1,5 +1,22 @@
 ## Non publié
 
+### Documentation
+
+- 📝 **Documentation**
+  - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
+  - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v38.1.4` ([#1878](https://github.com/assurance-maladie-digital/design-system/pull/1878))
+
+## v2.3.0
+
+**Version publiée le 28/03/2022.**
+
+Cette version comporte l'ajout du nouveau composant `UserMenuBtn` et des règles `notAfterDate` et `notBeforeDate` ainsi que des correctifs d'accessibilité et des correctifs sur Vue Dot, Vue Dash et le FormBuilder et la complétion de la documentation.
+
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
@@ -88,7 +105,7 @@
   - **README:** Ajout du tree-shaking de VueDot ([#1817](https://github.com/assurance-maladie-digital/design-system/pull/1817)) ([6c9020e](https://github.com/assurance-maladie-digital/design-system/commit/6c9020e57f97bb84c2749f0618f2a64f49ae69ff))
 
 - ⬆️ **Dépendances**
-  - **template:** Mise à jour des dépendances ([#1877](https://github.com/assurance-maladie-digital/design-system/pull/1877))
+  - **template:** Mise à jour des dépendances ([#1877](https://github.com/assurance-maladie-digital/design-system/pull/1877)) ([398922d](https://github.com/assurance-maladie-digital/design-system/commit/398922df9b31e0adb437e0348dfb29136e338eee))
 
 ### FormBuilder
 
@@ -175,6 +192,9 @@
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v14.19` ([#1783](https://github.com/assurance-maladie-digital/design-system/pull/1783)) ([8ac88d9](https://github.com/assurance-maladie-digital/design-system/commit/8ac88d9c32992bf4b506cac2b0173bd918d76918))
   - **ci:** Mise à jour de la configuration de renovate ([#1805](https://github.com/assurance-maladie-digital/design-system/pull/1805)) ([1f5de11](https://github.com/assurance-maladie-digital/design-system/commit/1f5de11ef868e775de23fa548bc4a06d85ddf815))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1880](https://github.com/assurance-maladie-digital/design-system/pull/1880)) ([ab50b41](https://github.com/assurance-maladie-digital/design-system/commit/ab50b414035ed2992ac2396a49cfe74d7d42171e))
 
 - ⬆️ **Dépendances**
   - **slugify:** Mise à jour vers la `v1.6.5` ([#1674](https://github.com/assurance-maladie-digital/design-system/pull/1674)) ([03bcc4e](https://github.com/assurance-maladie-digital/design-system/commit/03bcc4eb9f36d5f66fd2fde460fbe8cbec43ab07))
