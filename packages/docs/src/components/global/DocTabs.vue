@@ -14,6 +14,7 @@
 					v-for="(item) in tabs"
 					:key="item.value"
 					:class="tabClasses"
+					:href="`#${namespace}/${item.value}`"
 					v-text="item.label"
 					@click="setHash(item.value)"
 				/>
@@ -22,6 +23,7 @@
 
 		<VTabsItems
 			v-model="tab"
+			v-bind="{ namespace }"
 			:class="{ 'pt-8': !code }"
 			touchless
 		>
@@ -88,7 +90,7 @@
 		}
 	})
 	export default class DocTabs extends MixinsDeclaration {
-		tab: number | null = null;
+		tab: string | null = null;
 
 		get tabs(): Tab[] | undefined {
 			if (!this.$slots.default) {
@@ -147,13 +149,11 @@
 				return;
 			}
 
-			const hash = this.$nuxt.$route.hash;
-			const [namespace, tab] = hash.replace(HASH_DELIMITER, '').split(PATH_DELIMITER);
+			const hash = this.$nuxt.$route.hash.replace(HASH_DELIMITER, '');
+			const [namespace] = hash.split(PATH_DELIMITER);
 
-			const tabIndex = this.findTabIndex(tab);
-
-			if (tabIndex) {
-				this.tab = tabIndex;
+			if (hash) {
+				this.tab = hash;
 			}
 
 			if (namespace) {

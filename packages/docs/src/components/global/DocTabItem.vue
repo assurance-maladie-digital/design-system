@@ -1,6 +1,7 @@
 <template>
 	<VTabItem
 		:key="value"
+		:value="`${namespace}/${value}`"
 		class="doc-tab-item nuxt-content"
 	>
 		<slot />
@@ -26,6 +27,10 @@
 
 	@Component
 	export default class DocTabItem extends MixinsDeclaration {
+		get namespace(): string {
+			return this.$parent.$attrs.namespace;
+		}
+
 		get value(): string {
 			return slugify(this.label);
 		}
