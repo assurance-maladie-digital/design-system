@@ -3,7 +3,8 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-  - **ExternalLinks:** Correction de l'affichage du menu ([#1675](https://github.com/assurance-maladie-digital/design-system/pull/1675))
+  - **ExternalLinks:** Correction de l'affichage du menu ([#1889](https://github.com/assurance-maladie-digital/design-system/pull/1889)) ([e6f1b7f](https://github.com/assurance-maladie-digital/design-system/commit/e6f1b7f32b55fcf51cd70b0bd413cb13383ffef9))
+  - **DialogBox:** Correction de l'alignement du titre ([#1890](https://github.com/assurance-maladie-digital/design-system/pull/1890))
 
 ### Documentation
 
