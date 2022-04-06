@@ -3,16 +3,16 @@
 exports[`DialogBox renders correctly 1`] = `
 <vdialog-stub contentclass="" opendelay="0" closedelay="0" openonclick="true" origin="center center" retainfocus="true" transition="dialog-transition" width="800px" class="vd-dialog-box">
   <vcard-stub loaderheight="4" tag="div" class="pa-6">
-    <vcardtitle-stub tag="div" class="d-flex align-start flex-nowrap pa-0 mb-4">
+    <vcardtitle-stub tag="div" class="d-flex align-start flex-nowrap pa-0 mb-6">
       <!---->
       <vspacer-stub tag="div"></vspacer-stub>
-      <vbtn-stub tag="button" activeclass="" icon="true" type="button" class="ml-4">
+      <vbtn-stub height="32px" width="32px" tag="button" activeclass="" icon="true" type="button" aria-label="Fermer la boîte de dialogue" class="mt-n2 mr-n2 ml-4">
         <vicon-stub>
           M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z
         </vicon-stub>
       </vbtn-stub>
     </vcardtitle-stub>
-    <div class="vd-dialog-box-actions-ctn d-flex flex-wrap">
+    <div class="vd-dialog-box-actions-ctn d-flex flex-wrap mt-6">
       <vspacer-stub tag="div"></vspacer-stub>
       <vbtn-stub color="primary" tag="button" activeclass="" text="true" type="button" class="text-none">
         Annuler

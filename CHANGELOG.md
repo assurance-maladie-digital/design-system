@@ -1,5 +1,14 @@
 ## Non publié
 
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **ExternalLinks:** Correction de l'affichage du menu ([#1889](https://github.com/assurance-maladie-digital/design-system/pull/1889)) ([e6f1b7f](https://github.com/assurance-maladie-digital/design-system/commit/e6f1b7f32b55fcf51cd70b0bd413cb13383ffef9))
+  - **DialogBox:** Correction de l'alignement du titre ([#1890](https://github.com/assurance-maladie-digital/design-system/pull/1890)) ([e329f25](https://github.com/assurance-maladie-digital/design-system/commit/e329f252e1314d31effc426d91ef9215ed8a589a))
+
+- ♿️ **Accessibilité**
+  - **DialogBox:** Ajout de l'attribut `aria-label` sur le bouton fermer ([#1892](https://github.com/assurance-maladie-digital/design-system/pull/1892)) ([7d2aa84](https://github.com/assurance-maladie-digital/design-system/commit/7d2aa8457a758979efa50767f2c629dd5b8892a5))
+
 ### Documentation
 
 - 📝 **Documentation**
@@ -9,8 +18,8 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v38.1.4` ([#1878](https://github.com/assurance-maladie-digital/design-system/pull/1878)) ([272bf1d](https://github.com/assurance-maladie-digital/design-system/commit/272bf1d5973cb0fd6505be4964eb20864adf4b6e))
-  - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879))
+  - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v38.1.6` ([#1887](https://github.com/assurance-maladie-digital/design-system/pull/1887))
 
 ## v2.3.0
 
