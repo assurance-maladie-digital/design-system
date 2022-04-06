@@ -197,6 +197,10 @@
 </script>
 
 <style lang="scss" scoped>
+	.vd-header-bar {
+		z-index: 5;
+	}
+
 	.vd-header-bar ::v-deep .v-toolbar__content {
 		display: block;
 		padding: 0;
