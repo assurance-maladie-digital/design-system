@@ -4,7 +4,10 @@
 
 - 🐛 **Corrections de bugs**
   - **ExternalLinks:** Correction de l'affichage du menu ([#1889](https://github.com/assurance-maladie-digital/design-system/pull/1889)) ([e6f1b7f](https://github.com/assurance-maladie-digital/design-system/commit/e6f1b7f32b55fcf51cd70b0bd413cb13383ffef9))
-  - **DialogBox:** Correction de l'alignement du titre ([#1890](https://github.com/assurance-maladie-digital/design-system/pull/1890))
+  - **DialogBox:** Correction de l'alignement du titre ([#1890](https://github.com/assurance-maladie-digital/design-system/pull/1890)) ([e329f25](https://github.com/assurance-maladie-digital/design-system/commit/e329f252e1314d31effc426d91ef9215ed8a589a))
+
+- ♿️ **Accessibilité**
+  - **DialogBox:** Ajout de l'attribut `aria-label` sur le bouton fermer ([#1891](https://github.com/assurance-maladie-digital/design-system/pull/1891))
 
 ### Documentation
 

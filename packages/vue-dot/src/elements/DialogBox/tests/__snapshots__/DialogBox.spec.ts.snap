@@ -6,7 +6,7 @@ exports[`DialogBox renders correctly 1`] = `
     <vcardtitle-stub tag="div" class="d-flex align-start flex-nowrap pa-0 mb-6">
       <!---->
       <vspacer-stub tag="div"></vspacer-stub>
-      <vbtn-stub height="32px" width="32px" tag="button" activeclass="" icon="true" type="button" class="mt-n2 mr-n2 ml-4">
+      <vbtn-stub height="32px" width="32px" tag="button" activeclass="" icon="true" type="button" aria-label="Fermer la boîte de dialogue" class="mt-n2 mr-n2 ml-4">
         <vicon-stub>
           M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z
         </vicon-stub>
