@@ -15,13 +15,16 @@
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
   - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
 
+- ♻️ **Refactoring**
+  - **DocTabItem:** Ajout de la prop `eager` ([#1894](https://github.com/assurance-maladie-digital/design-system/pull/1894))
+
 ### Interne
 
 - ⬆️ **Dépendances**
   - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v38.1.6` ([#1887](https://github.com/assurance-maladie-digital/design-system/pull/1887)) ([f26643a](https://github.com/assurance-maladie-digital/design-system/commit/f26643ace05b0609dbb279297821dd4cccd5c649))
   - **vue-input-facade:** Mise à jour vers la `v2.0.1` ([#1888](https://github.com/assurance-maladie-digital/design-system/pull/1888)) ([0b460c8](https://github.com/assurance-maladie-digital/design-system/commit/0b460c87a29fed9f48df5c656e2b25d73f3ad941))
-  - **@babel/core:** Mise à jour vers la `v7.17.9` ([#1893](https://github.com/assurance-maladie-digital/design-system/pull/1893))
+  - **@babel/core:** Mise à jour vers la `v7.17.9` ([#1893](https://github.com/assurance-maladie-digital/design-system/pull/1893)) ([68931d2](https://github.com/assurance-maladie-digital/design-system/commit/68931d29acc5a57a2b3136cc657b1f25b42facab))
 
 ## v2.3.0
 

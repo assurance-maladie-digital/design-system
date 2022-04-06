@@ -1,6 +1,7 @@
 <template>
 	<VTabItem
 		:key="value"
+		eager
 		class="doc-tab-item nuxt-content"
 	>
 		<slot />
