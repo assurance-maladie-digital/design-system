@@ -20,6 +20,7 @@
 
 				<VBtn
 					v-bind="options.closeBtn"
+					:aria-label="locales.closeBtn"
 					@click="close"
 				>
 					<VIcon v-bind="options.icon">
@@ -107,6 +108,8 @@
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
+		locales = locales;
+
 		closeIcon = mdiClose;
 
 		get dialog(): boolean {
@@ -122,3 +125,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.v-card__title > * {
+		line-height: 1em;
+	}
+</style>

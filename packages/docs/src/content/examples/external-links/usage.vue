@@ -17,7 +17,7 @@
 
 	import { ExternalLink } from '@cnamts/vue-dot/src/elements/ExternalLinks/types';
 
-	const items: ExternalLink[] = [
+	const links: ExternalLink[] = [
 		{
 			href: 'https://ameli.fr/',
 			text: 'Ameli'
@@ -33,7 +33,7 @@
 	})
 	export default class ExternalLinksUsage extends Vue {
 		defaultProps = {
-			items,
+			items: links,
 			position: 'top left',
 			nudgeTop: 0,
 			nudgeBottom: 0
