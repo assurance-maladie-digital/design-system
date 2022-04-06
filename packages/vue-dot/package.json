@@ -39,7 +39,7 @@
 		"test": "vue-cli-service test:unit --runInBand"
 	},
 	"dependencies": {
-		"content-disposition": "^0.5.3",
+		"content-disposition-header": "^0.6.0",
 		"deepmerge": "^4.2.2"
 	},
 	"peerDependencies": {

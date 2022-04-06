@@ -1,6 +1,6 @@
 <template>
 	<VCard
-		min-height="200px"
+		min-height="248px"
 		class="mx-auto overflow-hidden"
 	>
 		<ExternalLinks
