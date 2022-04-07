@@ -18,7 +18,7 @@
 				:class="{ 'mt-6': itemIndex > 0 || showTitle }"
 			>
 				<h3 class="text-h6 mb-4">
-					{{ itemName }}
+					{{ formatItemName(itemName) }}
 				</h3>
 
 				<DocApiTable
@@ -34,6 +34,7 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { API_HEADER_MAPPING } from '../../constants/apiTableHeaders';
 	import { Api } from '../../types';
 
 	const getApi = (name: string) => {
@@ -65,6 +66,10 @@
 			}
 
 			return Object.keys(this.api).length > 1;
+		}
+
+		formatItemName(itemName: string): string {
+			return API_HEADER_MAPPING[itemName];
 		}
 
 		async created() {

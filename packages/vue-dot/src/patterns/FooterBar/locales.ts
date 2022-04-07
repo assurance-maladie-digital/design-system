@@ -1,6 +1,7 @@
 import { A11yComplianceEnum } from './A11yComplianceEnum';
 
 export const locales = {
+	sitemapLabel: 'Plan du site',
 	cguLabel: 'Conditions générales d’utilisation',
 	legalNoticeLabel: 'Mentions légales',
 	versionLabel: 'Version',

@@ -10,6 +10,14 @@
 		<slot name="prepend" />
 
 		<RouterLink
+			v-if="!hideSitemapLink"
+			:to="sitemapRoute"
+			class="my-3 mx-4"
+		>
+			{{ locales.sitemapLabel }}
+		</RouterLink>
+
+		<RouterLink
 			v-if="!hideCguLink"
 			:to="cguRoute"
 			class="my-3 mx-4"
@@ -65,6 +73,10 @@
 				default: A11yComplianceEnum.NON_COMPLIANT,
 				validator: (value: A11yComplianceEnum) => propValidator('a11y-compliance', A11Y_COMPLIANCE_ENUM_VALUES, value)
 			},
+			sitemapRoute: {
+				type: [Array, Object, String] as PropType<RawLocation>,
+				default: () => ({ name: 'sitemap' })
+			},
 			cguRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cgu' })
@@ -76,6 +88,10 @@
 			a11yStatementRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'a11yStatement' })
+			},
+			hideSitemapLink: {
+				type: Boolean,
+				default: false
 			},
 			hideCguLink: {
 				type: Boolean,

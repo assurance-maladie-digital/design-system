@@ -30,7 +30,7 @@
 							v-for="(header, index) in headers"
 							:key="index"
 						>
-							<template v-if="header === 'name'">
+							<template v-if="header === ApiHeadersEnum.NAME">
 								<span class="name-item text-mono d-inline-flex font-weight-bold primary--text">
 									{{ item[header] }}
 
@@ -44,21 +44,21 @@
 								</span>
 							</template>
 
-							<template v-else-if="header === 'type' || header === 'signature'">
+							<template v-else-if="header === ApiHeadersEnum.TYPE || header === ApiHeadersEnum.SIGNATURE">
 								<div
 									class="text-mono"
 									v-html="getType(item[header])"
 								/>
 							</template>
 
-							<template v-else-if="header === 'default'">
+							<template v-else-if="header === ApiHeadersEnum.DEFAULT">
 								<div
 									class="text-mono"
 									v-html="getDefaultValue(item)"
 								/>
 							</template>
 
-							<template v-else-if="header === 'description'">
+							<template v-else-if="header === ApiHeadersEnum.DESCRIPTION">
 								<DocMarkdown
 									v-if="item[header]"
 									class="description"
@@ -76,7 +76,7 @@
 							:key="`${item.name}-extra`"
 							class="extra-row"
 						>
-							<td />
+							<td v-if="field !== ApiHeadersEnum.RETURN_VALUE" />
 
 							<td :colspan="headers.length - 1">
 								<DocMarkup
@@ -100,7 +100,8 @@
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 	import { ApiHeaders, HeaderList, ApiProp } from '../../types';
 
-	import { API_TABLE_HEADERS, API_TABLE_HEADER_MAPPING } from '../../constants';
+	import { API_TABLE_HEADERS, API_TABLE_HEADER_MAPPING } from '../../constants/apiTableHeaders';
+	import { ApiHeadersEnum } from '../../constants/ApiHeadersEnum';
 
 	import DocMarkdown from '../code/DocMarkdown.vue';
 
@@ -135,6 +136,8 @@
 		}
 	})
 	export default class DocApiTable extends MixinsDeclaration {
+		ApiHeadersEnum = ApiHeadersEnum;
+
 		get headers(): string[] {
 			return API_TABLE_HEADERS[this.field];
 		}

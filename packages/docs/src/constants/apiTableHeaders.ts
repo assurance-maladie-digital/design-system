@@ -1,55 +1,73 @@
 import { IndexedObject } from '@cnamts/vue-dot/src/types';
 import { HeaderList } from '~/types';
 
+import { ApiHeadersEnum } from './ApiHeadersEnum';
+import { ApiTableHeadersEnum } from './ApiTableHeadersEnum';
+
 export const API_TABLE_HEADERS: Record<HeaderList, string[]> = {
 	options: [
-		'name',
-		'type',
-		'default',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.TYPE,
+		ApiHeadersEnum.DEFAULT,
+		ApiHeadersEnum.DESCRIPTION
 	],
 	slots: [
-		'name',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.DESCRIPTION
 	],
 	props: [
-		'name',
-		'type',
-		'default',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.TYPE,
+		ApiHeadersEnum.DEFAULT,
+		ApiHeadersEnum.DESCRIPTION
 	],
 	events: [
-		'name',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.DESCRIPTION
 	],
 	functions: [
-		'name',
-		'signature',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.SIGNATURE,
+		ApiHeadersEnum.DESCRIPTION
 	],
 	modifiers: [
-		'name',
-		'type',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.TYPE,
+		ApiHeadersEnum.DESCRIPTION
 	],
 	arguments: [
-		'name',
-		'type',
-		'default',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.TYPE,
+		ApiHeadersEnum.DEFAULT,
+		ApiHeadersEnum.DESCRIPTION
 	],
 	errorMessages: [
-		'name',
-		'type',
-		'default',
-		'description'
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.TYPE,
+		ApiHeadersEnum.DEFAULT,
+		ApiHeadersEnum.DESCRIPTION
+	],
+	returnValue: [
+		ApiHeadersEnum.TYPE
 	]
 };
 
 export const API_TABLE_HEADER_MAPPING: IndexedObject = {
-	name: 'Nom',
-	type: 'Type',
-	default: 'Valeur par défaut',
-	description: 'Description',
-	signature: 'Signature'
+	[ApiHeadersEnum.NAME]: 'Nom',
+	[ApiHeadersEnum.TYPE]: 'Type',
+	[ApiHeadersEnum.DEFAULT]: 'Valeur par défaut',
+	[ApiHeadersEnum.DESCRIPTION]: 'Description',
+	[ApiHeadersEnum.SIGNATURE]: 'Signature'
+};
+
+export const API_HEADER_MAPPING: IndexedObject = {
+	[ApiTableHeadersEnum.OPTIONS]: 'Options',
+	[ApiTableHeadersEnum.SLOTS]: 'Slots',
+	[ApiTableHeadersEnum.PROPS]: 'Props',
+	[ApiTableHeadersEnum.EVENTS]: 'Événements',
+	[ApiTableHeadersEnum.FUNCTIONS]: 'Fonctions',
+	[ApiTableHeadersEnum.MODIFIERS]: 'Modificateurs',
+	[ApiTableHeadersEnum.ARGUMENTS]: 'Arguments',
+	[ApiTableHeadersEnum.ERROR_MESSAGES]: 'Messages d’erreur',
+	[ApiTableHeadersEnum.RETURN_VALUE]: 'Valeur de retour'
 };
