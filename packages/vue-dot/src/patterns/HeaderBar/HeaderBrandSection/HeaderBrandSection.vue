@@ -179,7 +179,7 @@
 			switch (this.theme) {
 				case ThemeEnum.CNAM:
 				case ThemeEnum.AMELI_PRO: {
-					return tokens.colors.secondary
+					return tokens.colors.secondary;
 				}
 
 				case ThemeEnum.COMPTE_ENTREPRISE: {
