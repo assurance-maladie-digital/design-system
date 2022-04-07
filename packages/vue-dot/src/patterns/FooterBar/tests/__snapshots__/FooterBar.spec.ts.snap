@@ -3,6 +3,9 @@
 exports[`FooterBar renders correctly 1`] = `
 <vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100">
   <routerlink-stub to="[object Object]" class="my-3 mx-4">
+    Plan du site
+  </routerlink-stub>
+  <routerlink-stub to="[object Object]" class="my-3 mx-4">
     Conditions générales d’utilisation
   </routerlink-stub>
   <routerlink-stub to="[object Object]" class="my-3 mx-4">

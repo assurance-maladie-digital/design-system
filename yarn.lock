@@ -2895,11 +2895,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/content-disposition@0.5.4":
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@types/content-disposition/-/content-disposition-0.5.4.tgz#de48cf01c79c9f1560bcfd8ae43217ab028657f8"
-  integrity sha512-0mPF08jn9zYI0n0Q/Pnz7C4kThdSt+6LD4amsrYDDpgBfrVWa3TcCOxKX1zkGgYniGagRv8heN2cbh+CAn+uuQ==
-
 "@types/etag@1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@types/etag/-/etag-1.8.0.tgz#37f0b1f3ea46da7ae319bbedb607e375b4c99f7e"
@@ -5766,7 +5761,12 @@ constants-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
   integrity sha1-wguW2MYXdIqvHBYCF2DNJ/y4y3U=
 
-content-disposition@0.5.4, content-disposition@^0.5.3:
+content-disposition-header@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/content-disposition-header/-/content-disposition-header-0.6.0.tgz#6346d1e9311bbe739ec5036dabbd38cdb87681a7"
+  integrity sha512-+PKF6Y7JHgwD2Dld48L5jozC6pGDdnioJHfM7VyfF92pAU6wDF/N8K/cfecoq7b19KnelOnjntkVyN5hMm2F+w==
+
+content-disposition@0.5.4:
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/content-disposition/-/content-disposition-0.5.4.tgz#8b82b4efac82512a02bb0b1dcec9d2c5e8eb5bfe"
   integrity sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==
