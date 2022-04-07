@@ -13,5 +13,6 @@ export const colorMapping: IndexedObject = {
 	[ThemeEnum.CNAM]: PRIMARY,
 	[ThemeEnum.AMELI]: PRIMARY,
 	[ThemeEnum.AMELI_PRO]: SECONDARY,
-	[ThemeEnum.RISQUE_PRO]: BRIQUE
+	[ThemeEnum.RISQUE_PRO]: BRIQUE,
+	[ThemeEnum.COMPTE_ENTREPRISE]: PRIMARY
 };

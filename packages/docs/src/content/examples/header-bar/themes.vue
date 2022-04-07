@@ -9,6 +9,8 @@
 		<HeaderBar theme="ameli" />
 
 		<HeaderBar theme="ameli-pro" />
+
+		<HeaderBar theme="compte-entreprise" />
 	</div>
 </template>
 
