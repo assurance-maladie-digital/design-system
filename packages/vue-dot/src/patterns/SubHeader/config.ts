@@ -3,6 +3,6 @@ export const config = {
 		color: 'transparent',
 		small: true,
 		depressed: true,
-		class: 'text-none font-weight-regular white--text mx-n4'
+		class: 'text-none font-weight-regular white--text px-1'
 	}
 };
