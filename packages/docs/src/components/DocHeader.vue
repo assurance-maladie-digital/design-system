@@ -28,3 +28,9 @@
 	})
 	export default class DocHeader extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+	.vd-header-bar-container {
+		z-index: 6;
+	}
+</style>
