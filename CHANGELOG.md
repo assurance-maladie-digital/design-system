@@ -3,12 +3,16 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **FooterBar:** Ajout du lien *Plan du site* ([#1897](https://github.com/assurance-maladie-digital/design-system/pull/1897))
+  - **FooterBar:** Ajout du lien *Plan du site* ([#1897](https://github.com/assurance-maladie-digital/design-system/pull/1897)) ([805a23d](https://github.com/assurance-maladie-digital/design-system/commit/805a23d9053b42a96b70a04888a3d90f7e199b34))
 
 - 🐛 **Corrections de bugs**
   - **ExternalLinks:** Correction de l'affichage du menu ([#1889](https://github.com/assurance-maladie-digital/design-system/pull/1889)) ([e6f1b7f](https://github.com/assurance-maladie-digital/design-system/commit/e6f1b7f32b55fcf51cd70b0bd413cb13383ffef9))
   - **DialogBox:** Correction de l'alignement du titre ([#1890](https://github.com/assurance-maladie-digital/design-system/pull/1890)) ([e329f25](https://github.com/assurance-maladie-digital/design-system/commit/e329f252e1314d31effc426d91ef9215ed8a589a))
   - **HeaderBar:** Correction de l'affichage des menus dans le composant ([#1896](https://github.com/assurance-maladie-digital/design-system/pull/1896)) ([19938e2](https://github.com/assurance-maladie-digital/design-system/commit/19938e2ea04e055533117673d4344cfacf0bca4c))
+  - **SubHeader:** Correction de l'espacement interne du bouton *Retour* ([#1900](https://github.com/assurance-maladie-digital/design-system/pull/1900)) ([a996103](https://github.com/assurance-maladie-digital/design-system/commit/a99610324223a81399dfb7b41cfe81599391e1ca))
+
+- ♻️ **Refactoring**
+  - **HeaderBar:** Modification de la valeur de la propriété `z-index` ([#1902](https://github.com/assurance-maladie-digital/design-system/pull/1902)) ([bc652ac](https://github.com/assurance-maladie-digital/design-system/commit/bc652aca7653046465994f5c8290a71090f7fdb2))
 
 - ♿️ **Accessibilité**
   - **DialogBox:** Ajout de l'attribut `aria-label` sur le bouton fermer ([#1892](https://github.com/assurance-maladie-digital/design-system/pull/1892)) ([7d2aa84](https://github.com/assurance-maladie-digital/design-system/commit/7d2aa8457a758979efa50767f2c629dd5b8892a5))
@@ -18,12 +22,16 @@
 
 ### Documentation
 
-- 📝 **Documentation**
-  - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
-  - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
+- 🐛 **Corrections de bugs**
+  - **DocHeader:** Correction du chevauchement du composant ([#1899](https://github.com/assurance-maladie-digital/design-system/pull/1899)) ([19be92b](https://github.com/assurance-maladie-digital/design-system/commit/19be92b15884b56745fdb7296e6f168150d32dcc))
+  - **DocHeader:** Correction de l'affichage du menu de navigation ([#1903](https://github.com/assurance-maladie-digital/design-system/pull/1903))
 
 - ♻️ **Refactoring**
   - **DocTabItem:** Ajout de la prop `eager` ([#1894](https://github.com/assurance-maladie-digital/design-system/pull/1894)) ([cf4d05e](https://github.com/assurance-maladie-digital/design-system/commit/cf4d05efd6497b5d6eee328fef783aaf84b3a03b))
+
+- 📝 **Documentation**
+  - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
+  - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
 
 ### Interne
 
