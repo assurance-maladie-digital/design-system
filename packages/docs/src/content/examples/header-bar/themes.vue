@@ -4,13 +4,13 @@
 
 		<HeaderBar theme="risque-pro" />
 
+		<HeaderBar theme="compte-entreprise" />
+
 		<HeaderBar theme="cnam" />
 
 		<HeaderBar theme="ameli" />
 
 		<HeaderBar theme="ameli-pro" />
-
-		<HeaderBar theme="compte-entreprise" />
 	</div>
 </template>
 
