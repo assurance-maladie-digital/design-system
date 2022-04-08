@@ -198,7 +198,7 @@
 
 <style lang="scss" scoped>
 	.vd-header-bar {
-		z-index: 5;
+		z-index: 1;
 	}
 
 	.vd-header-bar ::v-deep .v-toolbar__content {
