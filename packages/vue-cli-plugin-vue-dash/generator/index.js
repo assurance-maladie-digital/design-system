@@ -31,8 +31,7 @@ module.exports = (api, userOptions) => {
 		extendPackage(api, options, pm);
 
 		api.postProcessFiles((resources) => {
-			const resourcesToDelete = getResourcesToDelete(options);
-			deleteOldResources(resources, resourcesToDelete);
+			deleteOldResources(resources, getResourcesToDelete(options));
 
 			const indexPath = 'public/index.html';
 			resources[indexPath] = parseIndexFile(resources[indexPath]);
