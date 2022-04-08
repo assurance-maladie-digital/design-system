@@ -11,7 +11,21 @@ let wrapper: Wrapper<Vue>;
 describe('App', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(App, {
-			router
+			router,
+			mocks: {
+				$maintenanceEnabled: false
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly when maintenance is enabled', () => {
+		wrapper = mountComponent(App, {
+			router,
+			mocks: {
+				$maintenanceEnabled: true
+			}
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
