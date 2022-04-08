@@ -6,14 +6,8 @@
  * @returns {void}
  */
 function deleteOldResources(resources, resourcesToDelete) {
-	for (const resource of resourcesToDelete) {
-		let shouldDeleteFile;
-
-		if (typeof resource.condition === 'undefined') {
-			shouldDeleteFile = true;
-		} else {
-			shouldDeleteFile = resource.condition;
-		}
+	resourcesToDelete.forEach((resource) => {
+		const shouldDeleteFile = typeof resource.condition === 'undefined' ? true : resource.condition;
 
 		if (resource.type === 'file' && shouldDeleteFile) {
 			delete resources[resource.path];
@@ -27,7 +21,7 @@ function deleteOldResources(resources, resourcesToDelete) {
 				}
 			}
 		}
-	}
+	});
 }
 
 module.exports = { deleteOldResources };
