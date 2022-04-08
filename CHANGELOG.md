@@ -11,7 +11,7 @@
   - **DialogBox:** Correction de l'alignement du titre ([#1890](https://github.com/assurance-maladie-digital/design-system/pull/1890)) ([e329f25](https://github.com/assurance-maladie-digital/design-system/commit/e329f252e1314d31effc426d91ef9215ed8a589a))
   - **HeaderBar:** Correction de l'affichage des menus dans le composant ([#1896](https://github.com/assurance-maladie-digital/design-system/pull/1896)) ([19938e2](https://github.com/assurance-maladie-digital/design-system/commit/19938e2ea04e055533117673d4344cfacf0bca4c))
   - **SubHeader:** Correction de l'espacement interne du bouton *Retour* ([#1900](https://github.com/assurance-maladie-digital/design-system/pull/1900)) ([a996103](https://github.com/assurance-maladie-digital/design-system/commit/a99610324223a81399dfb7b41cfe81599391e1ca))
-  - **UserMenuBtn:** Correction de l'espacement interne ([#1904](https://github.com/assurance-maladie-digital/design-system/pull/1904))
+  - **UserMenuBtn:** Correction de l'espacement interne ([#1904](https://github.com/assurance-maladie-digital/design-system/pull/1904)) ([ac45f14](https://github.com/assurance-maladie-digital/design-system/commit/ac45f14002b8e2fb2ddcf0721cee6fb6740b0e36))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Modification de la valeur de la propriété `z-index` ([#1902](https://github.com/assurance-maladie-digital/design-system/pull/1902)) ([bc652ac](https://github.com/assurance-maladie-digital/design-system/commit/bc652aca7653046465994f5c8290a71090f7fdb2))
@@ -21,6 +21,11 @@
 
 - ⬆️ **Dépendances**
   - **DownloadBtn:** Remplacement de la dépendance `content-disposition` par `content-disposition-header` ([#1895](https://github.com/assurance-maladie-digital/design-system/pull/1895)) ([6008bb3](https://github.com/assurance-maladie-digital/design-system/commit/6008bb3b01c0d34c28b545162478da09d4ac625d))
+
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction du fichier `main.js` non supprimé ([#1905](https://github.com/assurance-maladie-digital/design-system/pull/1905))
 
 ### Documentation
 
