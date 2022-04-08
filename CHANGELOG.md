@@ -25,7 +25,8 @@
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
-  - **template:** Correction du fichier `main.js` non supprimé ([#1905](https://github.com/assurance-maladie-digital/design-system/pull/1905))
+  - **template:** Correction du fichier `main.js` non supprimé ([#1905](https://github.com/assurance-maladie-digital/design-system/pull/1905)) ([15eed3b](https://github.com/assurance-maladie-digital/design-system/commit/15eed3bfd1c9c27d889440e25f1964b0cc941ae0))
+  - **template:** Correction des éléments de navigation dans l'en-tête ([#1906](https://github.com/assurance-maladie-digital/design-system/pull/1906))
 
 ### Documentation
 
