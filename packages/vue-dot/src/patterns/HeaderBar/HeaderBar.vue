@@ -28,7 +28,10 @@
 						<slot name="secondary-logo" />
 					</HeaderBrandSection>
 
-					<VSpacer v-bind="options.spacer" />
+					<VSpacer
+						v-if="showSpacer"
+						v-bind="options.spacer"
+					/>
 
 					<slot />
 
@@ -188,6 +191,10 @@
 			}
 
 			return this.hasNavigationItems;
+		}
+
+		get showSpacer(): boolean {
+			return Boolean(this.$slots.default) || this.isMobileVersion;
 		}
 
 		updateDrawer(value: boolean): void {

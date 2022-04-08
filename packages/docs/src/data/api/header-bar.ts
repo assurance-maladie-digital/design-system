@@ -7,7 +7,7 @@ const themeProp = {
 	type: 'string',
 	required: true,
 	description: 'Le thème de l’en-tête.',
-	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro'`
+	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro' | 'compte-entreprise'`
 };
 
 const mobileVersionProp = {
