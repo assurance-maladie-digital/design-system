@@ -1,5 +1,5 @@
 export default {
-	title: 'Projet <%= name %>',
+	title: 'Projet <%= projectName %>',
 	navigationItems: [
 		{
 			label: 'Accueil',

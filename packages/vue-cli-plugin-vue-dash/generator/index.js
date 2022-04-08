@@ -20,7 +20,7 @@ module.exports = (api, userOptions) => {
 		const options = {
 			...userOptions,
 			// Custom options
-			name: projectName,
+			projectName,
 			pm,
 			// Functions
 			capitalizeFirstLetter
