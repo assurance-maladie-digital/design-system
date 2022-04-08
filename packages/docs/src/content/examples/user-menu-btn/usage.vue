@@ -1,10 +1,13 @@
 <template>
-	<div class="d-flex flex-wrap align-center justify-center">
+	<VSheet
+		min-height="156px"
+		class="d-flex flex-wrap align-center justify-center"
+	>
 		<UserMenuBtn
 			v-bind="$attrs"
 			v-on="$listeners"
 		/>
-	</div>
+	</VSheet>
 </template>
 
 <script lang="ts">
