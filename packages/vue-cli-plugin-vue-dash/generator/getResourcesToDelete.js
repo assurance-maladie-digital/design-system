@@ -8,6 +8,10 @@ function getResourcesToDelete(options) {
 	return [
 		{
 			type: 'file',
+			path: 'jsconfig.json'
+		},
+		{
+			type: 'file',
 			path: 'src/assets/logo.png'
 		},
 		{

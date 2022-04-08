@@ -33,10 +33,13 @@
   - **template:** Correction du fichier `package-lock.json` présent dans le fichier `.gitignore` ([#1911](https://github.com/assurance-maladie-digital/design-system/pull/1911)) ([d266b60](https://github.com/assurance-maladie-digital/design-system/commit/d266b600fb503dcff6cfd3adaf0e13c04af150eb))
 
 - ♻️ **Refactoring**
-  - **template:** Modification de la position du bouton *Retour* ([#1912](https://github.com/assurance-maladie-digital/design-system/pull/1912))
+  - **template:** Modification de la position du bouton *Retour* ([#1912](https://github.com/assurance-maladie-digital/design-system/pull/1912)) ([cb0f08f](https://github.com/assurance-maladie-digital/design-system/commit/cb0f08fdb8bc427b7df372830fd0b18c0021b0ab))
 
 - 🎨 **Qualité de code**
   - **global:** Amélioration de la qualité du code ([#1908](https://github.com/assurance-maladie-digital/design-system/pull/1908)) ([7a25f77](https://github.com/assurance-maladie-digital/design-system/commit/7a25f77243e5ea7a0a2a900d1c1ed08628b6d46b))
+
+- ⬆️ **Dépendances**
+  - **@vue/cli:** Mise à jour du monorepo vers la `v5` ([#1913](https://github.com/assurance-maladie-digital/design-system/pull/1913))
 
 ### Documentation
 
