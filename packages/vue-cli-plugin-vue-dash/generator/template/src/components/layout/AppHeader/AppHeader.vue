@@ -1,6 +1,6 @@
 <template>
 	<HeaderBar
-		<% if (i18n) { %>:service-title="$t('components.layout.appHeader.title')"<% } else { %>service-title="Projet <%= name %>"<% } %>
+		<% if (i18n) { %>:service-title="$t('components.layout.appHeader.title')"<% } else { %>service-title="Projet <%= projectName %>"<% } %>
 		:navigation-items="navigationItems"
 	>
 		<UserMenuBtn
