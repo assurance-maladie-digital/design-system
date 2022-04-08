@@ -491,6 +491,11 @@ export const contentExplorerItems: TreeviewItem[] = [
 		file: 'ts'
 	},
 	{
+		name: 'lint-staged.config.js',
+		path: 'lint-staged.config.js',
+		file: 'js'
+	},
+	{
 		name: 'package.json',
 		path: 'package.json',
 		file: 'json'
