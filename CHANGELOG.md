@@ -30,7 +30,10 @@
   - **template:** Correction de la suppression des anciens fichiers ([#1907](https://github.com/assurance-maladie-digital/design-system/pull/1907)) ([fcfa312](https://github.com/assurance-maladie-digital/design-system/commit/fcfa312e71efafe9057ad2541919abd87a52ab63))
   - **template:** Correction de la configuration des tests unitaires ([#1909](https://github.com/assurance-maladie-digital/design-system/pull/1909)) ([8752b50](https://github.com/assurance-maladie-digital/design-system/commit/8752b503ffc677b7966c6277e3e6f1f573795ff4))
   - **template:** Correction des tests unitaires ([#1910](https://github.com/assurance-maladie-digital/design-system/pull/1910)) ([72055d5](https://github.com/assurance-maladie-digital/design-system/commit/72055d59a9e5d1482ab0ebfdf4c879ae1d9a1d83))
-  - **template:** Correction du fichier `package-lock.json` présent dans le fichier `.gitignore` ([#1911](https://github.com/assurance-maladie-digital/design-system/pull/1911))
+  - **template:** Correction du fichier `package-lock.json` présent dans le fichier `.gitignore` ([#1911](https://github.com/assurance-maladie-digital/design-system/pull/1911)) ([d266b60](https://github.com/assurance-maladie-digital/design-system/commit/d266b600fb503dcff6cfd3adaf0e13c04af150eb))
+
+- ♻️ **Refactoring**
+  - **template:** Modification de la position du bouton *Retour* ([#1912](https://github.com/assurance-maladie-digital/design-system/pull/1912))
 
 - 🎨 **Qualité de code**
   - **global:** Amélioration de la qualité du code ([#1908](https://github.com/assurance-maladie-digital/design-system/pull/1908)) ([7a25f77](https://github.com/assurance-maladie-digital/design-system/commit/7a25f77243e5ea7a0a2a900d1c1ed08628b6d46b))
