@@ -28,7 +28,8 @@
   - **template:** Correction du fichier `main.js` non supprimé ([#1905](https://github.com/assurance-maladie-digital/design-system/pull/1905)) ([15eed3b](https://github.com/assurance-maladie-digital/design-system/commit/15eed3bfd1c9c27d889440e25f1964b0cc941ae0))
   - **template:** Correction des éléments de navigation dans l'en-tête ([#1906](https://github.com/assurance-maladie-digital/design-system/pull/1906)) ([723f7e6](https://github.com/assurance-maladie-digital/design-system/commit/723f7e608dc960cb5478365c00fd655e8237c028))
   - **template:** Correction de la suppression des anciens fichiers ([#1907](https://github.com/assurance-maladie-digital/design-system/pull/1907)) ([fcfa312](https://github.com/assurance-maladie-digital/design-system/commit/fcfa312e71efafe9057ad2541919abd87a52ab63))
-  - **template:** Correction de la configuration des tests unitaires ([#1909](https://github.com/assurance-maladie-digital/design-system/pull/1909))
+  - **template:** Correction de la configuration des tests unitaires ([#1909](https://github.com/assurance-maladie-digital/design-system/pull/1909)) ([8752b50](https://github.com/assurance-maladie-digital/design-system/commit/8752b503ffc677b7966c6277e3e6f1f573795ff4))
+  - **template:** Correction des tests unitaires ([#1910](https://github.com/assurance-maladie-digital/design-system/pull/1910))
 
 - 🎨 **Qualité de code**
   - **global:** Amélioration de la qualité du code ([#1908](https://github.com/assurance-maladie-digital/design-system/pull/1908)) ([7a25f77](https://github.com/assurance-maladie-digital/design-system/commit/7a25f77243e5ea7a0a2a900d1c1ed08628b6d46b))
