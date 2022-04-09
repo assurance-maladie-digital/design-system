@@ -12,6 +12,7 @@
   - **HeaderBar:** Correction de l'affichage des menus dans le composant ([#1896](https://github.com/assurance-maladie-digital/design-system/pull/1896)) ([19938e2](https://github.com/assurance-maladie-digital/design-system/commit/19938e2ea04e055533117673d4344cfacf0bca4c))
   - **SubHeader:** Correction de l'espacement interne du bouton *Retour* ([#1900](https://github.com/assurance-maladie-digital/design-system/pull/1900)) ([a996103](https://github.com/assurance-maladie-digital/design-system/commit/a99610324223a81399dfb7b41cfe81599391e1ca))
   - **UserMenuBtn:** Correction de l'espacement interne ([#1904](https://github.com/assurance-maladie-digital/design-system/pull/1904)) ([ac45f14](https://github.com/assurance-maladie-digital/design-system/commit/ac45f14002b8e2fb2ddcf0721cee6fb6740b0e36))
+  - **DatePicker:** Correction de l'affichage de `Invalid Date` dans le champ texte ([#1917](https://github.com/assurance-maladie-digital/design-system/pull/1917))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Modification de la valeur de la propriété `z-index` ([#1902](https://github.com/assurance-maladie-digital/design-system/pull/1902)) ([bc652ac](https://github.com/assurance-maladie-digital/design-system/commit/bc652aca7653046465994f5c8290a71090f7fdb2))
@@ -65,7 +66,7 @@
   - **vue-input-facade:** Mise à jour vers la `v2.0.1` ([#1888](https://github.com/assurance-maladie-digital/design-system/pull/1888)) ([0b460c8](https://github.com/assurance-maladie-digital/design-system/commit/0b460c87a29fed9f48df5c656e2b25d73f3ad941))
   - **@babel/core:** Mise à jour vers la `v7.17.9` ([#1893](https://github.com/assurance-maladie-digital/design-system/pull/1893)) ([68931d2](https://github.com/assurance-maladie-digital/design-system/commit/68931d29acc5a57a2b3136cc657b1f25b42facab))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39` ([#1901](https://github.com/assurance-maladie-digital/design-system/pull/1901)) ([f69cc95](https://github.com/assurance-maladie-digital/design-system/commit/f69cc95152fc8d494fefa4cecbaeb9bca3401ff7))
-  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.1.2` ([#1916](https://github.com/assurance-maladie-digital/design-system/pull/1916))
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.1.2` ([#1916](https://github.com/assurance-maladie-digital/design-system/pull/1916)) ([b903cb4](https://github.com/assurance-maladie-digital/design-system/commit/b903cb42232cd7d36cc69bddc5079ffa4919218e))
 
 ## v2.3.0
 
