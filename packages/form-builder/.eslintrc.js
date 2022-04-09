@@ -3,6 +3,9 @@ module.exports = {
 	env: {
 		node: true
 	},
+	plugins: [
+		'jsdoc'
+	],
 	extends: [
 		'plugin:vue/recommended',
 		'eslint:recommended',
@@ -10,7 +13,8 @@ module.exports = {
 		'plugin:jsdoc/recommended'
 	],
 	parserOptions: {
-		ecmaVersion: 2020
+		ecmaVersion: 2020,
+		parser: '@typescript-eslint/parser'
 	},
 	rules: {
 		// Allow logs in development but not in production
@@ -135,9 +139,5 @@ module.exports = {
 				'vue/one-component-per-file': 'off'
 			}
 		}
-	],
-	parserOptions: {
-		parser: '@typescript-eslint/parser'
-	},
-	plugins: ['jsdoc']
+	]
 };
