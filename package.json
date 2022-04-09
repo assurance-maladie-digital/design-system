@@ -1,8 +1,14 @@
 {
 	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		],
+		"nohoist": [
+			"**/docs",
+			"**/docs/**"
+		]
+	},
 	"name": "@cnamts/design-system",
 	"scripts": {
 		"postinstall": "lerna run post-install --stream",
