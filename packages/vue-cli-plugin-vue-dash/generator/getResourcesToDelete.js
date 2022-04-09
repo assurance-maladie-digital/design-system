@@ -8,6 +8,10 @@ function getResourcesToDelete(options) {
 	return [
 		{
 			type: 'file',
+			path: 'jsconfig.json'
+		},
+		{
+			type: 'file',
 			path: 'src/assets/logo.png'
 		},
 		{
@@ -17,10 +21,6 @@ function getResourcesToDelete(options) {
 		{
 			type: 'file',
 			path: 'src/shims-vue.d.ts'
-		},
-		{
-			type: 'file',
-			path: 'src/main.js'
 		},
 		{
 			type: 'file',

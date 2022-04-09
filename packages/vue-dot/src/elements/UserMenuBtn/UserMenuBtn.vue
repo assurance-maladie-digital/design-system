@@ -120,7 +120,7 @@
 		logoutIcon = mdiLoginVariant;
 
 		get btnPadding(): string {
-			return this.hideUserIcon ? 'pa-0 pa-sm-2' : 'pa-0 pa-sm-3';
+			return this.hideUserIcon ? 'pa-1 pa-sm-2' : 'pa-1 pa-sm-3';
 		}
 
 		get hasListContent(): boolean {

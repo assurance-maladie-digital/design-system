@@ -43,7 +43,6 @@
 
 	import { mapActions } from 'vuex';
 
-	/** Home page */
 	@Component({
 		// Vuex bindings
 		methods: mapActions('notification', ['addNotification'])

@@ -16,7 +16,7 @@
 	"devDependencies": {
 		"@babel/core": "7.17.9",
 		"@mdi/js": "6.6.96",
-		"@rushstack/eslint-patch": "1.1.1",
+		"@rushstack/eslint-patch": "1.1.2",
 		"@types/fs-extra": "9.0.13",
 		"@types/jest": "27.4.1",
 		"@types/node": "14.18.12",
@@ -32,7 +32,7 @@
 		"dayjs": "1.11.0",
 		"deepmerge": "4.2.2",
 		"eslint": "8.12.0",
-		"eslint-plugin-jsdoc": "38.1.6",
+		"eslint-plugin-jsdoc": "39.0.1",
 		"eslint-plugin-vue": "8.5.0",
 		"fs-extra": "10.0.1",
 		"jest": "27.5.1",

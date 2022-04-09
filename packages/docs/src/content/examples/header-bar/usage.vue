@@ -45,7 +45,8 @@
 					'risque-pro',
 					'cnam',
 					'ameli',
-					'ameli-pro'
+					'ameli-pro',
+					'compte-entreprise'
 				]
 			},
 			textFields: [

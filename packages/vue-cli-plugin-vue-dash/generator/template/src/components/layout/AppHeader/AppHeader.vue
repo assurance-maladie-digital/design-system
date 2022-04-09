@@ -1,6 +1,6 @@
 <template>
 	<HeaderBar
-		<% if (i18n) { %>:service-title="$t('components.layout.appHeader.title')"<% } else { %>service-title="Projet <%= name %>"<% } %>
+		<% if (i18n) { %>:service-title="$t('components.layout.appHeader.title')"<% } else { %>service-title="Projet <%= projectName %>"<% } %>
 		:navigation-items="navigationItems"
 	>
 		<UserMenuBtn
@@ -9,13 +9,13 @@
 			<% if (i18n) { %>:additional-information="$t('components.layout.appHeader.role')"<% } else { %>additional-information="Développeur"<% } %>
 		>
 			<VListItem
-				v-for="(item, index) in userMenuLinks"
+				v-for="(item, index) in navigationItems"
 				:key="index"
 				:disabled="item.disabled"
 				:to="item.to ? item.to : null"
 				exact
 			>
-				<VListItemTitle>{{ item.title }}</VListItemTitle>
+				<VListItemTitle>{{ item.label }}</VListItemTitle>
 			</VListItem>
 		</UserMenuBtn>
 	</HeaderBar>
@@ -29,9 +29,9 @@
 
 	@Component
 	export default class AppHeader extends Vue {
-		get navigationItems(): NavigationItem[] | undefined {
+		get navigationItems(): NavigationItem[] | null {
 			if (this.$maintenanceEnabled) {
-				return undefined;
+				return null;
 			}
 
 			<% if (i18n) { %>return this.$t('components.layout.appHeader.navigationItems') as unknown as NavigationItem[];<% } else { %>return [
@@ -49,16 +49,5 @@
 				}
 			];<% } %>
 		}
-
-		<% if (i18n) { %>get userMenuLinks(): LinkItem[] {
-			return this.$t('components.layout.appHeader.userMenuLinks') as unknown as LinkItem[];
-		}<% } else { %>userMenuLinks: LinkItem[] = [
-			{
-				title: 'Accueil',
-				to: {
-					name: 'home'
-				}
-			}
-		];<% } %>
 	}
 </script>

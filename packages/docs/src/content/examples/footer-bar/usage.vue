@@ -37,6 +37,7 @@
 				]
 			},
 			booleans: [
+				'hideSitemapLink',
 				'hideCguLink',
 				'hideLegalNoticeLink',
 				'hideA11yLink'

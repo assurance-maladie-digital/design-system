@@ -15,3 +15,9 @@
 		};
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-header-bar-container ::v-deep .vd-header-bar {
+		overflow: hidden;
+	}
+</style>

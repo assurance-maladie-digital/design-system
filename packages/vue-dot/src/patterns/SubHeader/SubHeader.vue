@@ -20,7 +20,7 @@
 				<VBtn
 					v-else
 					v-bind="options.backBtn"
-					class="mb-1"
+					class="vd-sub-header-back-btn mb-1"
 					@click="$emit('back')"
 				>
 					<slot name="back-btn-icon">
@@ -168,6 +168,10 @@
 <style lang="scss" scoped>
 	.vd-sub-header {
 		overflow-x: auto;
+	}
+
+	.vd-sub-header-back-btn {
+		margin: 0 -6px;
 	}
 
 	.vd-data-list-group,

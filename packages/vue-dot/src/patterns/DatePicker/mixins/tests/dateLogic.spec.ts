@@ -27,6 +27,7 @@ interface TestComponent extends Vue {
 	value: string;
 	date: string;
 	textFieldDate: string;
+	errorMessages: string[];
 	saveFromTextField: () => void;
 	saveFromCalendar: () => void;
 	saveFromPasted: (event: ClipboardEvent) => void;
@@ -160,12 +161,13 @@ describe('DateLogic', () => {
 		expect(parsed).toBe('2019-10-29');
 	});
 
-	it('returns an empty string when parseTextFieldDate is called with an invalid date', () => {
+	it('returns null and sets error messages when parseTextFieldDate is called with an invalid date', () => {
 		const wrapper = createWrapper();
 
 		const parsed = wrapper.vm.parseTextFieldDate('2019/10/29');
 
-		expect(parsed).toBe('');
+		expect(parsed).toBeNull();
+		expect(wrapper.vm.errorMessages.length).toBe(1);
 	});
 
 	// saveFromCalendar

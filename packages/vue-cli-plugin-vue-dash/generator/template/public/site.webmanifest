@@ -1,6 +1,6 @@
 {
-	"name": "<%= name %>",
-	"short_name": "<%= name %>",
+	"name": "<%= projectName %>",
+	"short_name": "<%= projectName %>",
 	"icons": [
 		{
 			"src": "/android-chrome-192x192.png",

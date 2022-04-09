@@ -1,3 +1,4 @@
+const fs = require('fs');
 const { extendPackage } = require('./functions/extendPackage');
 const { fixPackageIndentation } = require('./functions/fixPackageIndentation');
 const { parseIndexFile } = require('./functions/parseIndexFile');
@@ -19,7 +20,7 @@ module.exports = (api, userOptions) => {
 		const options = {
 			...userOptions,
 			// Custom options
-			name: projectName,
+			projectName,
 			pm,
 			// Functions
 			capitalizeFirstLetter
@@ -30,17 +31,17 @@ module.exports = (api, userOptions) => {
 		extendPackage(api, options, pm);
 
 		api.postProcessFiles((resources) => {
-			const resourcesToDelete = getResourcesToDelete(options);
-			deleteOldResources(resources, resourcesToDelete);
+			deleteOldResources(resources, getResourcesToDelete(options));
 
 			const indexPath = 'public/index.html';
 			resources[indexPath] = parseIndexFile(resources[indexPath]);
 		});
 	}
 
-	// Fix package indentation after writing files to the disk
-	// Even if no template is rendered the indentation is modified
+	// Do these operations after writing files to the disk
+	// to be sure they are effective
 	api.onCreateComplete(() => {
 		fixPackageIndentation(api.invoking, projectName);
+		fs.unlinkSync(api.resolve('src/main.js'));
 	});
 };
