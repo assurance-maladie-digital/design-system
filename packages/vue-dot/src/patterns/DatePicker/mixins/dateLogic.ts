@@ -2,13 +2,17 @@ import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 import { parseDate } from '../../../helpers/parseDate';
-import { DATE_FORMAT_REGEX } from '../../../functions/validation/isDateValid';
 
 import { Options } from '../../../mixins/customizable';
 
 import { Refs } from '../../../types';
 
 export const INTERNAL_FORMAT = 'YYYY-MM-DD';
+export const INTERNAL_FORMAT_REGEX = /\d{4}[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])/;
+
+const locales = {
+	invalidDate: 'La date saisie n’est pas valide.'
+};
 
 const Props = Vue.extend({
 	props: {
@@ -82,10 +86,12 @@ export class DateLogic extends MixinsDeclaration {
 	validate!: (value: string) => void;
 
 	/** YYYY-MM-DD format */
-	date = this.value ? this.parseDateForModel(this.value) : '';
+	date = '';
 
 	/** DDMMYYYY format */
 	textFieldDate = '';
+
+	errorMessages: string[] | null = null;
 
 	mounted() {
 		// Watch VTextField 'hasError' computed value
@@ -108,24 +114,26 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	/** Parse a date with dateFormatReturn format to internal format */
-	parseDateForModel(date: string): string {
+	parseDateForModel(date: string): string | null {
 		const parsed = parseDate(date, this.dateFormatReturn);
 
 		if (!parsed.isValid()) {
-			return '';
+			return null;
 		}
 
 		return parsed.format(INTERNAL_FORMAT);
 	}
 
-	parseTextFieldDate(date: string): string {
-		const formatted = parseDate(date, this.dateFormat);
+	parseTextFieldDate(date: string): string | null {
+		const parsed = parseDate(date, this.dateFormat);
+		const formatted = parsed.format(INTERNAL_FORMAT);
 
-		if (!date.match(DATE_FORMAT_REGEX) || !formatted.isValid()) {
-			return '';
+		if (!parsed.isValid() || !formatted.match(INTERNAL_FORMAT_REGEX)) {
+			this.errorMessages = [locales.invalidDate];
+			return null;
 		}
 
-		return formatted.format(INTERNAL_FORMAT);
+		return formatted;
 	}
 
 	setTextFieldModel(): void {
