@@ -4426,7 +4426,7 @@ axios@0.26.1:
   dependencies:
     follow-redirects "^1.14.8"
 
-babel-jest@^27.1.0, babel-jest@^27.5.1:
+babel-jest@27.5.1, babel-jest@^27.1.0, babel-jest@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.5.1.tgz#a1bf8d61928edfefd21da27eb86a695bfd691444"
   integrity sha512-cdQ5dXjGRd0IBRATiQ4mZGlGlRE8kJpjPOixdNRdT+m3UcNqmYWN6rK6nvtXYfY3D76cb8s/O1Ss8ea24PIwcg==

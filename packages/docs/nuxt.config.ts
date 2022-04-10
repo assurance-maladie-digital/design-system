@@ -1,8 +1,10 @@
+import type { NuxtConfig } from '@nuxt/types';
+
 import { applyTypographicRules } from './src/hooks/applyTypographicRules';
 import { parseMarkdownDescription } from './src/hooks/parseMarkdownDescription';
 import { transformCodeBlocks } from './src/hooks/transformCodeBlocks';
 
-export default {
+const config: NuxtConfig = {
 	target: 'static',
 	srcDir: './src/',
 	head: {
@@ -119,3 +121,5 @@ export default {
 		API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN: process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN || '*'
 	}
 };
+
+export default config;
