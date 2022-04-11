@@ -27,7 +27,7 @@ const config = defineConfig({
 	},
 	// Transpile ES6 inside dependencies
 	transpileDependencies: [
-		/node_modules[/\\\\]vuetify[/\\\\]/,
+		'vuetify', // TODO test
 		'vuex-persist',
 		'vue-input-facade'
 	],

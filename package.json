@@ -2,11 +2,7 @@
 	"private": true,
 	"workspaces": {
 		"packages": [
-			"packages/cli-helpers",
-			"packages/design-tokens",
-			"packages/form-builder",
-			"packages/vue-cli-plugin-vue-dash",
-			"packages/vue-dot"
+			"packages/*"
 		],
 		"nohoist": [
 			"**/docs",
