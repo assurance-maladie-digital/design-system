@@ -4,6 +4,7 @@ declare module 'vuetify/es5/locale/fr';
 declare module 'vue-input-facade';
 declare module 'languages';
 declare module 'vue-prism-component';
+declare module 'content-disposition';
 declare module 'prismjs';
 
 declare module '*.vue' {

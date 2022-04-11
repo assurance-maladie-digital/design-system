@@ -5,7 +5,7 @@ type Property = 'asyncData' | 'head' | 'fetch';
 function newPropertyDecorator(property: Property) {
 	return createDecorator((options, key) => {
 		if (options.methods) {
-			options[property] = options.methods[key];
+			(options as any)[property] = options.methods[key];
 		}
 	});
 }
