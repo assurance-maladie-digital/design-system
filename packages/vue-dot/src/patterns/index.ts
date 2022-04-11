@@ -1,3 +1,4 @@
+import CookieBanner from './CookieBanner';
 import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
 import FileUpload from './FileUpload';
@@ -13,6 +14,7 @@ import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
 
 export const patterns = {
+	CookieBanner,
 	DataListGroup,
 	DatePicker,
 	FileUpload,
