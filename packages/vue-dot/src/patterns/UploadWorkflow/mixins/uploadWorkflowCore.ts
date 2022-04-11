@@ -38,6 +38,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	dialog = false;
 	error = false;
+	inlineSelect = false;
 
 	uploadedFile: File | null = null;
 
@@ -108,6 +109,13 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		if (this.singleMode) {
 			this.selectedItem = this.selectItems[0].value;
 			this.setFileInList();
+			return;
+		}
+
+		if (this.inlineSelect) {
+			this.setFileInList();
+			this.inlineSelect = false;
+			this.selectedItem = '';
 			return;
 		}
 

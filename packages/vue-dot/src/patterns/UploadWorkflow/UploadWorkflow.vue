@@ -14,8 +14,8 @@
 			v-bind="options.fileList"
 			:files="fileList"
 			@delete-file="resetFile"
-			@retry="showFileUpload"
-			@upload="showFileUpload"
+			@retry="uploadInline"
+			@upload="uploadInline"
 			@view-file="emitViewFileEvent"
 		/>
 
@@ -23,8 +23,8 @@
 			ref="fileUpload"
 			v-bind="options.fileUpload"
 			v-model="uploadedFile"
-			@change="fileSelected"
 			@error="uploadError"
+			@change="fileSelected"
 		/>
 
 		<DialogBox
@@ -89,6 +89,9 @@
 	export default class UploadWorkflow extends MixinsDeclaration {
 		locales = locales;
 
+		// UploadWorkflowCore mixin
+		inlineSelect!: boolean;
+
 		selectRules = [
 			required
 		];
@@ -101,8 +104,9 @@
 			return locales.title(this.value.length > 1);
 		}
 
-		showFileUpload(id: string): void {
+		uploadInline(id: string): void {
 			this.selectedItem = id;
+			this.inlineSelect = true;
 			this.$refs.fileUpload.retry();
 		}
 	}
