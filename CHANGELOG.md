@@ -17,7 +17,7 @@
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Modification de la valeur de la propriété `z-index` ([#1902](https://github.com/assurance-maladie-digital/design-system/pull/1902)) ([bc652ac](https://github.com/assurance-maladie-digital/design-system/commit/bc652aca7653046465994f5c8290a71090f7fdb2))
-  - **UploadWorkflow:** Sélection automatique du type de fichier lors de l'upload par ligne ([#1919](https://github.com/assurance-maladie-digital/design-system/pull/1919))
+  - **UploadWorkflow:** Sélection automatique du type de fichier lors de l'upload par ligne ([#1919](https://github.com/assurance-maladie-digital/design-system/pull/1919)) ([bd2423d](https://github.com/assurance-maladie-digital/design-system/commit/bd2423deca29c604f4a7cdf8687e7a2e8666ab30))
 
 - ♿️ **Accessibilité**
   - **DialogBox:** Ajout de l'attribut `aria-label` sur le bouton fermer ([#1892](https://github.com/assurance-maladie-digital/design-system/pull/1892)) ([7d2aa84](https://github.com/assurance-maladie-digital/design-system/commit/7d2aa8457a758979efa50767f2c629dd5b8892a5))
@@ -69,7 +69,7 @@
   - **@babel/core:** Mise à jour vers la `v7.17.9` ([#1893](https://github.com/assurance-maladie-digital/design-system/pull/1893)) ([68931d2](https://github.com/assurance-maladie-digital/design-system/commit/68931d29acc5a57a2b3136cc657b1f25b42facab))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39` ([#1901](https://github.com/assurance-maladie-digital/design-system/pull/1901)) ([f69cc95](https://github.com/assurance-maladie-digital/design-system/commit/f69cc95152fc8d494fefa4cecbaeb9bca3401ff7))
   - **@rushstack/eslint-patch:** Mise à jour vers la `v1.1.2` ([#1916](https://github.com/assurance-maladie-digital/design-system/pull/1916)) ([b903cb4](https://github.com/assurance-maladie-digital/design-system/commit/b903cb42232cd7d36cc69bddc5079ffa4919218e))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.1.0` ([#1918](https://github.com/assurance-maladie-digital/design-system/pull/1918)) ([20bce7a](https://github.com/assurance-maladie-digital/design-system/commit/20bce7aff5ae1e7b707fcb6ef8a130e1f00eb9c3))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.1.1` ([#1920](https://github.com/assurance-maladie-digital/design-system/pull/1920)) ([4735961](https://github.com/assurance-maladie-digital/design-system/commit/47359615880fa4bed6e25001a3b9bd8c2cf0663f))
 
 ## v2.3.0
 
