@@ -1,5 +1,6 @@
 <template>
 	<VSheet
+		v-if="active"
 		v-bind="options.sheet"
 		class="vd-cookie-banner"
 	>
@@ -21,29 +22,27 @@
 			</VBtn>
 		</div>
 
-		<p class="mb-6">
-			{{ locales.description }}
-		</p>
+		<slot>
+			<p>
+				{{ locales.description }}
+			</p>
+		</slot>
 
-		<div class="vd-dialog-box-actions-ctn d-flex align-center flex-wrap max-width-none ma-n2">
-			<RouterLink
-				:to="cookiesRoute"
-				class="ma-2"
-			>
-				{{ locales.moreInformationLabel }}
-			</RouterLink>
-
+		<div class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
 			<VSpacer v-bind="options.actionsSpacer" />
 
 			<VBtn
 				v-bind="options.customizeBtn"
+				:width="btnWidth"
 				:to="cookiesRoute"
+				@click="active = false"
 			>
 				{{ locales.customizeBtnText }}
 			</VBtn>
 
 			<VBtn
 				v-bind="options.rejectBtn"
+				:width="btnWidth"
 				@click="reject"
 			>
 				{{ locales.rejectBtnText }}
@@ -51,6 +50,7 @@
 
 			<VBtn
 				v-bind="options.acceptBtn"
+				:width="btnWidth"
 				@click="accept"
 			>
 				{{ locales.acceptBtnText }}
@@ -89,11 +89,19 @@
 
 		closeIcon = mdiClose;
 
+		active = true;
+
+		get btnWidth(): string {
+			return this.$vuetify.breakpoint.smAndDown ? '100%' : 'auto';
+		}
+
 		reject(): void {
+			this.active = false;
 			this.$emit('reject');
 		}
 
 		accept(): void {
+			this.active = false;
 			this.$emit('accept');
 		}
 	}
@@ -102,8 +110,13 @@
 <style lang="scss" scoped>
 	.vd-cookie-banner {
 		position: absolute;
-		bottom: 32px;
+		bottom: 40px;
 		left: 50%;
 		transform: translateX(-50%);
+		z-index: 20;
+	}
+
+	.vd-cookie-banner-action-ctn .v-btn {
+		flex: 1 1 auto;
 	}
 </style>

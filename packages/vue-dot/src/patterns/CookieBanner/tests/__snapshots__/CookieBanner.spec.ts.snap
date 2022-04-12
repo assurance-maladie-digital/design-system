@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CookieBanner renders correctly 1`] = `
+<vsheet-stub elevation="3" maxwidth="100%" width="800px" rounded="true" tag="div" class="vd-cookie-banner pa-8">
+  <div class="d-flex align-start flex-nowrap pa-0 mb-6">
+    <h2 class="text-h5 font-weight-bold">
+      À propos des cookies
+    </h2>
+    <vspacer-stub tag="div"></vspacer-stub>
+    <vbtn-stub height="32px" width="32px" tag="button" activeclass="" icon="true" type="button" aria-label="Continuer sans accepter" class="mt-n2 mr-n2 ml-4">
+      <vicon-stub>
+        M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z
+      </vicon-stub>
+    </vbtn-stub>
+  </div>
+  <p>
+    Ce site utilise des cookies qui nous permettent de vous proposer une expérience en ligne optimale en enregistrant certaines informations lors de votre navigation.
+  </p>
+  <div class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
+    <vspacer-stub tag="div"></vspacer-stub>
+    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" outlined="true" tag="button" activeclass="" to="[object Object]" type="button" class="text-none text-wrap ma-2">
+      Personnaliser mes choix
+    </vbtn-stub>
+    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" tag="button" activeclass="" type="button" class="text-none text-wrap ma-2">
+      Continuer sans accepter
+    </vbtn-stub>
+    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" tag="button" activeclass="" type="button" class="text-none text-wrap ma-2">
+      Tout accepter
+    </vbtn-stub>
+  </div>
+</vsheet-stub>
+`;

@@ -1,3 +1,10 @@
+const commonBtnConfig = {
+	color: 'primary',
+	height: 'auto',
+	minHeight: '44px',
+	class: 'text-none text-wrap ma-2'
+};
+
 export const config = {
 	sheet: {
 		width: '800px',
@@ -13,16 +20,13 @@ export const config = {
 		class: 'mt-n2 mr-n2 ml-4'
 	},
 	customizeBtn: {
-		color: 'primary',
-		class: 'text-none ma-2',
+		...commonBtnConfig,
 		outlined: true
 	},
 	rejectBtn: {
-		color: 'primary',
-		class: 'text-none ma-2'
+		...commonBtnConfig
 	},
 	acceptBtn: {
-		color: 'primary',
-		class: 'text-none ma-2'
+		...commonBtnConfig
 	}
 };
