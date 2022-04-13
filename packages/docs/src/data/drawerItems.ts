@@ -44,6 +44,10 @@ export const drawerItems: DrawerItem[] = [
 		icon: mdiViewDashboard,
 		items: [
 			{
+				title: 'CookieBanner',
+				to: '/composants/cookie-banner'
+			},
+			{
 				title: 'CopyBtn',
 				to: '/composants/copy-btn'
 			},

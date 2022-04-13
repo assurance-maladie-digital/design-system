@@ -5,6 +5,7 @@
 - ✨ **Nouvelles fonctionnalités**
   - **FooterBar:** Ajout du lien *Plan du site* ([#1897](https://github.com/assurance-maladie-digital/design-system/pull/1897)) ([805a23d](https://github.com/assurance-maladie-digital/design-system/commit/805a23d9053b42a96b70a04888a3d90f7e199b34))
   - **HeaderBar:** Ajout du thème *Compte entreprise* ([#1898](https://github.com/assurance-maladie-digital/design-system/pull/1898)) ([c05b914](https://github.com/assurance-maladie-digital/design-system/commit/c05b9141519de7c0dbf2a03163db2d07b20521e3))
+  - **CookieBanner:** Ajout d'un nouveau composant ([#1922](https://github.com/assurance-maladie-digital/design-system/pull/1922))
 
 - 🐛 **Corrections de bugs**
   - **ExternalLinks:** Correction de l'affichage du menu ([#1889](https://github.com/assurance-maladie-digital/design-system/pull/1889)) ([e6f1b7f](https://github.com/assurance-maladie-digital/design-system/commit/e6f1b7f32b55fcf51cd70b0bd413cb13383ffef9))
@@ -68,7 +69,7 @@
   - **@babel/core:** Mise à jour vers la `v7.17.9` ([#1893](https://github.com/assurance-maladie-digital/design-system/pull/1893)) ([68931d2](https://github.com/assurance-maladie-digital/design-system/commit/68931d29acc5a57a2b3136cc657b1f25b42facab))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39` ([#1901](https://github.com/assurance-maladie-digital/design-system/pull/1901)) ([f69cc95](https://github.com/assurance-maladie-digital/design-system/commit/f69cc95152fc8d494fefa4cecbaeb9bca3401ff7))
   - **@rushstack/eslint-patch:** Mise à jour vers la `v1.1.2` ([#1916](https://github.com/assurance-maladie-digital/design-system/pull/1916)) ([b903cb4](https://github.com/assurance-maladie-digital/design-system/commit/b903cb42232cd7d36cc69bddc5079ffa4919218e))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.1.1` ([#1920](https://github.com/assurance-maladie-digital/design-system/pull/1920))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.1.1` ([#1920](https://github.com/assurance-maladie-digital/design-system/pull/1920)) ([4735961](https://github.com/assurance-maladie-digital/design-system/commit/47359615880fa4bed6e25001a3b9bd8c2cf0663f))
 
 ## v2.3.0
 
