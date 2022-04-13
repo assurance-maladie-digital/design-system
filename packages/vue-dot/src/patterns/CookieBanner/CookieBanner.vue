@@ -2,6 +2,8 @@
 	<VSheet
 		v-if="active"
 		v-bind="options.sheet"
+		:aria-label="locales.label"
+		role="region"
 		class="vd-cookie-banner"
 	>
 		<div class="d-flex align-start flex-nowrap pa-0 mb-6">

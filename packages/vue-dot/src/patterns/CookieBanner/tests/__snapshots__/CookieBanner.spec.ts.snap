@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CookieBanner renders correctly 1`] = `
-<vsheet-stub elevation="3" maxwidth="100%" width="800px" rounded="true" tag="div" class="vd-cookie-banner pa-8">
+<vsheet-stub elevation="3" maxwidth="100%" width="800px" rounded="true" tag="div" aria-label="Gestion des cookies" role="region" class="vd-cookie-banner pa-8">
   <div class="d-flex align-start flex-nowrap pa-0 mb-6">
     <h2 class="text-h5 font-weight-bold">
       À propos des cookies
