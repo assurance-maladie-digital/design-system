@@ -48,6 +48,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/composants/cookie-banner'
 			},
 			{
+				title: 'CookiesPage',
+				to: '/composants/cookies-page'
+			},
+			{
 				title: 'CopyBtn',
 				to: '/composants/copy-btn'
 			},

@@ -17,8 +17,8 @@
 				</VIcon>
 			</summary>
 
-			<CookieTable
-				:items="cookies"
+			<CookiesTable
+				:items="tableItems"
 				class="mb-2"
 			/>
 		</details>
@@ -57,8 +57,8 @@
 	import { TypeEnum, TYPE_ENUM_VALUES } from './TypeEnum';
 	import { RadioValuesEnum } from './RadioValuesEnum';
 
-	import CookieTable from '../CookieTable';
-	import { CookiesList } from '../CookieTable/types';
+	import CookiesTable from '../CookiesTable';
+	import { CookiesList } from '../CookiesTable/types';
 
 	import { propValidator } from '../../../helpers/propValidator';
 
@@ -73,7 +73,7 @@
 				required: true,
 				validator: (value: string) => propValidator('type', TYPE_ENUM_VALUES, value)
 			},
-			cookies: {
+			tableItems: {
 				type: Array as PropType<CookiesList[]>,
 				required: true
 			},
@@ -88,7 +88,7 @@
 
 	@Component({
 		components: {
-			CookieTable
+			CookiesTable
 		},
 		model: {
 			prop: 'value',

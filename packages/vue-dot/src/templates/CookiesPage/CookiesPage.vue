@@ -42,7 +42,7 @@
 					:key="key"
 					v-model="preferences[key]"
 					:type="key"
-					:cookies="cookies"
+					:table-items="cookies"
 					class="mb-6"
 				/>
 
