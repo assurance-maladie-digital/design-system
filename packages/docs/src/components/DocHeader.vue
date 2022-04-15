@@ -12,6 +12,8 @@
 				@input="updateDrawer"
 			/>
 		</template>
+
+		<DocSearch />
 	</HeaderBar>
 </template>
 
@@ -20,10 +22,12 @@
 	import Component from 'vue-class-component';
 
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
+	import DocSearch from './search/DocSearch.vue';
 
 	@Component({
 		components: {
-			DocDrawer
+			DocDrawer,
+			DocSearch
 		}
 	})
 	export default class DocHeader extends Vue {}
