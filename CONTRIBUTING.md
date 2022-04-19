@@ -84,7 +84,7 @@ $ yarn build
 To run a command in a specific package, add the `:lerna` suffix to the command name, then use the `--scope` option:
 
 ```bash
-$ yarn lint:lerna --scope @cnamts/cli-helpers
+$ yarn lint:lerna --scope @cnamts/vue-dot
 ```
 
 ##### Windows

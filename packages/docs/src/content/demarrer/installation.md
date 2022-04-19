@@ -245,33 +245,4 @@ console.log(tokens.pageWidth); // 1440px
 ```
 
 </doc-tab-item>
-
-<doc-tab-item label="CLI Helpers">
-
-Les CLI Helpers sont des fonctions utilitaires pour construire des outils en ligne de commande en node.js.
-
-Pour les utiliser, vous devez les installer :
-
-<doc-tabs code>
-<doc-tab-item label="Yarn">
-```bash
-yarn add -D @cnamts/cli-helpers
-```
-</doc-tab-item>
-
-<doc-tab-item label="npm">
-```bash
-npm install -D @cnamts/cli-helpers
-```
-</doc-tab-item>
-</doc-tabs>
-
-Ensuite, vous pouvez importer les fonctions dont vous avez besoin :
-
-```js
-import { log, done, getPath } from '@cnamts/cli-helpers';
-```
-
-</doc-tab-item>
-
 </doc-tabs>
