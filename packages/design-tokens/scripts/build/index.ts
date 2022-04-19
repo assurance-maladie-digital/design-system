@@ -1,6 +1,6 @@
 import consola from 'consola';
 
-import { setupDistFolder } from './setupDistFolder';
+import { setupDistFolder } from '@cnamts/shared/scripts/setupDistFolder';
 import { generateJsonFile } from './generateJsonFile';
 import { generateScssFile } from './generateScssFile';
 import { generateJsFile } from './generateJsFile';
