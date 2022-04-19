@@ -48,6 +48,11 @@
 - ⬆️ **Dépendances**
   - **@vue/cli:** Mise à jour du monorepo vers la `v5` ([#1913](https://github.com/assurance-maladie-digital/design-system/pull/1913)) ([91918c3](https://github.com/assurance-maladie-digital/design-system/commit/91918c357b6a8e29543d8548e5dd8672201366be))
 
+## FormBuilder
+
+- 🔧 **Configuration**
+  - **scripts:** Refonte des scripts `build` et `post-install` ([#1934](https://github.com/assurance-maladie-digital/design-system/pull/1934))
+
 ## Design Tokens
 
 - 🔧 **Configuration**
@@ -70,7 +75,7 @@
 ### Interne
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout du package `@cnamts/shared` ([#1933](https://github.com/assurance-maladie-digital/design-system/pull/1933))
+  - **global:** Ajout du package `@cnamts/shared` ([#1933](https://github.com/assurance-maladie-digital/design-system/pull/1933)) ([beba62d](https://github.com/assurance-maladie-digital/design-system/commit/beba62d17f7d14d5c6b697c922bd6167aa6cfb85))
 
 - ⬆️ **Dépendances**
   - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))

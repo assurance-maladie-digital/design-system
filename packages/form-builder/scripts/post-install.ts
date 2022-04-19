@@ -1,8 +1,3 @@
-import * as fs from 'fs-extra';
+import { createPlayground } from '@cnamts/shared/scripts/createPlayground';
 
-const devTargetFolder = './dev';
-const devTargetFile = `${devTargetFolder}/Playground.vue`;
-
-if (!fs.existsSync(devTargetFile)) {
-	fs.copySync(`${devTargetFolder}/Playground.template.vue`, devTargetFile);
-}
+createPlayground();
