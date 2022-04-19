@@ -25,7 +25,7 @@
 		"axios": "0.26.1",
 		"babel-loader": "8.2.4",
 		"copy-webpack-plugin": "6.4.1",
-		"core-js": "3.21.1",
+		"core-js": "3.22.0",
 		"cross-env": "7.0.3",
 		"custom-event-polyfill": "1.0.7",
 		"dayjs": "1.11.1",
