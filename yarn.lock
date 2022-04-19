@@ -985,10 +985,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@es-joy/jsdoccomment@~0.22.1":
-  version "0.22.2"
-  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.22.2.tgz#1c972f56a265ada7facbd0770a6caea6a391f5c8"
-  integrity sha512-pM6WQKcuAtdYoqCsXSvVSu3Ij8K0HY50L8tIheOKHDl0wH1uA4zbP88etY8SIeP16NVCMCTFU+Q2DahSKheGGQ==
+"@es-joy/jsdoccomment@~0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.25.0.tgz#c4535dc31880302cb3564eb6bb147c077b386177"
+  integrity sha512-qK+cS+ikkF1D86uUGDDprgmBAd7cjr6xftCXsA+0WbT+nlrzo5sAqnkL15GuIaJtZ57O/oDXLSem+wcmFEyxug==
   dependencies:
     comment-parser "1.3.1"
     esquery "^1.4.0"
@@ -7118,17 +7118,17 @@ eslint-loader@^2.2.1:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
-eslint-plugin-jsdoc@39.2.1:
-  version "39.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-39.2.1.tgz#39c85a7b36fd49b2799d0e8652108f1e8e85fc64"
-  integrity sha512-bNNAJPhFUKVBHJMKU7zAQ1LvlVWoDbxAA/Ty9hwSI2hy+AVpc9wq16W6YHXd0PuMhXlv4FgYtjizHMu8Mnc4GA==
+eslint-plugin-jsdoc@39.2.3:
+  version "39.2.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-39.2.3.tgz#9b2ccc379f78209241bf5989b4e693c17b81bb69"
+  integrity sha512-kYB0Sxq51cfZGVkKoI9wjhR/01/z/IUwhfHd7DzP3dKT/GGk2heBGwYyxE8kaptTDXQRpS99H/h4SW3Rj8faCA==
   dependencies:
-    "@es-joy/jsdoccomment" "~0.22.1"
+    "@es-joy/jsdoccomment" "~0.25.0"
     comment-parser "1.3.1"
     debug "^4.3.4"
     escape-string-regexp "^4.0.0"
     esquery "^1.4.0"
-    semver "^7.3.6"
+    semver "^7.3.7"
     spdx-expression-parse "^3.0.1"
 
 eslint-plugin-vue@7.20.0:
@@ -14583,7 +14583,7 @@ semver@7.0.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.0.0.tgz#5f3ca35761e47e05b206c6daff2cf814f0316b8e"
   integrity sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
 
-semver@7.x, semver@^7.1.1, semver@^7.1.2, semver@^7.1.3, semver@^7.2.1, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5, semver@^7.3.6:
+semver@7.x, semver@^7.1.1, semver@^7.1.2, semver@^7.1.3, semver@^7.2.1, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7:
   version "7.3.7"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.7.tgz#12c5b649afdbf9049707796e22a4028814ce523f"
   integrity sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==
