@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CookiesInformation renders correctly 1`] = `
+<div class="vd-cookies-information">
+  <h2 class="text-subtitle-1 font-weight-bold mb-2">
+    Cookies fonctionnels
+  </h2>
+  <p>
+    Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.
+  </p>
+  <details>
+    <summary class="mb-1">
+      Afficher les cookies
+
+      <vicon-stub class="mr-2">
+        M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z
+      </vicon-stub>
+    </summary>
+    <cookiestable-stub items="[object Object],[object Object]" class="mb-2"></cookiestable-stub>
+  </details>
+  <vradiogroup-stub valuecomparator="[Function]" activeclass="v-item--active" tag="div" errorcount="1" errormessages="" messages="" rules="[Function]" successmessages="" backgroundcolor="" height="auto" hidedetails="auto" column="true" row="true" class="mt-0">
+    <vspacer-stub tag="div"></vspacer-stub>
+    <vradio-stub ripple="true" label="Refuser" officon="$radioOff" onicon="$radioOn" value="reject"></vradio-stub>
+    <vradio-stub ripple="true" label="Accepter" officon="$radioOff" onicon="$radioOn" value="accept" class="mr-0"></vradio-stub>
+  </vradiogroup-stub>
+</div>
+`;

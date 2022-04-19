@@ -12,9 +12,7 @@
 		</VAppBar>
 
 		<VMain>
-			<PageContainer>
-				<Playground />
-			</PageContainer>
+			<Playground />
 		</VMain>
 	</VApp>
 </template>
@@ -32,3 +30,41 @@
 	})
 	export default class App extends Vue {}
 </script>
+
+<style lang="scss">
+	@import '../src/styles/index.scss';
+
+	/* Default, global styles */
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		max-width: 100%;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	html,
+	body {
+		/* Font size defined by the browser */
+		font-size: 100%;
+	}
+
+	/* Hide the application while Vue.js is loading */
+	[v-cloak] {
+		display: none;
+	}
+
+	#app {
+		width: 100%;
+		display: flex;
+		min-height: 100vh;
+		background: #f8f9fc;
+	}
+
+	/* Apply default transition to links */
+	a {
+		transition: .25s;
+	}
+</style>
