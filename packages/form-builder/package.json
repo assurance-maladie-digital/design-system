@@ -26,10 +26,10 @@
 	"module": "./src/index.ts",
 	"types": "./types/index.d.ts",
 	"scripts": {
-		"post-install": "ts-node --project tsconfig.json --files scripts/post-install.ts",
+		"post-install": "ts-node --project tsconfig.json --files scripts/post-install",
 		"pre-commit": "lint-staged",
 		"dev": "vue-cli-service serve",
-		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
+		"build": "ts-node --project tsconfig.json --files scripts/build",
 		"lint": "vue-cli-service lint",
 		"test": "vue-cli-service test:unit --runInBand"
 	},
@@ -39,8 +39,8 @@
 		"vuetify": "^2.3.0"
 	},
 	"devDependencies": {
-		"@cnamts/cli-helpers": "^2.1.0",
 		"@cnamts/vue-dot": "^2.3.0",
+		"@cnamts/shared": "^2.3.0",
 		"@vue/cli-plugin-babel": "4.5.17",
 		"@vue/cli-plugin-eslint": "4.5.17",
 		"@vue/cli-plugin-typescript": "4.5.17",
