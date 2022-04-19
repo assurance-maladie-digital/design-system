@@ -26,6 +26,7 @@ const componentMap = {
 	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
 	// Templates
+	CookiesPage: 'templates',
 	ErrorPage: 'templates'
 };
 
