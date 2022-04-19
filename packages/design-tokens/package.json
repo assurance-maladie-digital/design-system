@@ -26,11 +26,12 @@
 	"module": "./src/tokens.ts",
 	"scripts": {
 		"pre-commit": "lint-staged",
-		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
+		"build": "ts-node --project tsconfig.json --files scripts/build",
 		"lint": "eslint **/*.ts --fix",
 		"test": "jest"
 	},
 	"devDependencies": {
+		"@cnamts/shared": "^2.3.0",
 		"json-to-scss": "1.6.2"
 	},
 	"lint-staged": {

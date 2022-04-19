@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 
-const { getPath } = require('@cnamts/cli-helpers');
+const { getPath } = require('../../utils');
 
 const TAB_CHARACTER = '	';
 const SPACE_REGEX = / {2}/gm;
@@ -13,13 +13,7 @@ const SPACE_REGEX = / {2}/gm;
  * @returns {void}
  */
 function fixPackageIndentation(invoking, projectName) {
-	let packagePath;
-
-	if (invoking) {
-		packagePath = getPath('package.json');
-	} else {
-		packagePath = getPath(projectName + '/package.json');
-	}
+	const packagePath = getPath(invoking ? 'package.json' : projectName + '/package.json');
 
 	const package = fs.readFileSync(packagePath).toString();
 

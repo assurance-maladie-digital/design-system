@@ -1,4 +1,4 @@
-const fs = require('fs');
+const path = require('path');
 
 /**
  * Capitalize the first letter of a string
@@ -11,16 +11,16 @@ function capitalizeFirstLetter(string) {
 }
 
 /**
- * Checks if the file exists (sync)
+ * Get path relative to current working directory
  *
- * @param {string} path The path of the file
- * @returns {boolean} If the file exists
+ * @param {string} value The path to join
+ * @returns {string} The normalized path
  */
-function fileExists(path) {
-	return fs.existsSync(path);
+function getPath(value) {
+	return path.join(process.cwd(), value);
 }
 
 module.exports = {
 	capitalizeFirstLetter,
-	fileExists
+	getPath
 };
