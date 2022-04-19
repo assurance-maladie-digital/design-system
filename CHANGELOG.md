@@ -26,6 +26,9 @@
 - 🚨 **Lint**
   - **global:** Correction des erreurs de lint ([#1915](https://github.com/assurance-maladie-digital/design-system/pull/1915)) ([42c4644](https://github.com/assurance-maladie-digital/design-system/commit/42c4644cde3cc9bd1925edb6a55e02dab58680a8))
 
+- 🎨 **Qualité de code**
+  - **CookiesPage:** Amélioration de la qualité du code ([#1940](https://github.com/assurance-maladie-digital/design-system/pull/1940))
+
 - 🔧 **Configuration**
   - **scripts:** Refonte des scripts `build` et `post-install` ([#1935](https://github.com/assurance-maladie-digital/design-system/pull/1935)) ([3ead4d7](https://github.com/assurance-maladie-digital/design-system/commit/3ead4d7e1697a9445fbc2b59d362c599d2db4a52))
 
@@ -80,7 +83,7 @@
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
   - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
   - **HeaderBar:** Mise à jour des exemples ([#1914](https://github.com/assurance-maladie-digital/design-system/pull/1914)) ([5af9c8e](https://github.com/assurance-maladie-digital/design-system/commit/5af9c8e4ec973c185cd9363b3ae3e897a9e3927b))
-  - **CookiesPage:** Mise à jour de l'exemple d'utilisation ([#1939](https://github.com/assurance-maladie-digital/design-system/pull/1939))
+  - **CookiesPage:** Mise à jour de l'exemple d'utilisation ([#1939](https://github.com/assurance-maladie-digital/design-system/pull/1939)) ([a7e291e](https://github.com/assurance-maladie-digital/design-system/commit/a7e291e6afb0988ea617fd6b4f741d1ab443b325))
 
 ### Interne
 

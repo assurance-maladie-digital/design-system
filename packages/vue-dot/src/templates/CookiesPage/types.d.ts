@@ -10,7 +10,3 @@ export type Preferences = {
 	[TypeEnum.FUNCTIONAL]: boolean | null;
 	[TypeEnum.ANALYTICS]: boolean | null;
 };
-
-export {
-	CookiesList
-};

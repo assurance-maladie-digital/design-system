@@ -131,7 +131,7 @@
 		}
 
 		emitChangeEvent(value: string): void {
-			const parsedValue = value === RadioValuesEnum.ACCEPT;
+			const parsedValue = Boolean(value === RadioValuesEnum.ACCEPT);
 			this.$emit('change', parsedValue);
 		}
 	}
