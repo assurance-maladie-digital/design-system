@@ -65,7 +65,7 @@
 ### CLI Helpers
 
 - 🔥 **Suppressions**
-  - **global:** Suppression du package ([#1938](https://github.com/assurance-maladie-digital/design-system/pull/1938))
+  - **global:** Suppression du package ([#1938](https://github.com/assurance-maladie-digital/design-system/pull/1938)) ([a43f71f](https://github.com/assurance-maladie-digital/design-system/commit/a43f71f58990100a4ba6a6d4436752d531703f1e))
 
 ### Documentation
 
@@ -80,6 +80,7 @@
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
   - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
   - **HeaderBar:** Mise à jour des exemples ([#1914](https://github.com/assurance-maladie-digital/design-system/pull/1914)) ([5af9c8e](https://github.com/assurance-maladie-digital/design-system/commit/5af9c8e4ec973c185cd9363b3ae3e897a9e3927b))
+  - **CookiesPage:** Mise à jour de l'exemple d'utilisation ([#1939](https://github.com/assurance-maladie-digital/design-system/pull/1939))
 
 ### Interne
 
