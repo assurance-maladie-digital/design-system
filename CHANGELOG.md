@@ -26,6 +26,9 @@
 - 🚨 **Lint**
   - **global:** Correction des erreurs de lint ([#1915](https://github.com/assurance-maladie-digital/design-system/pull/1915)) ([42c4644](https://github.com/assurance-maladie-digital/design-system/commit/42c4644cde3cc9bd1925edb6a55e02dab58680a8))
 
+- 🔧 **Configuration**
+  - **scripts:** Refonte des scripts `build` et `post-install` ([#1935](https://github.com/assurance-maladie-digital/design-system/pull/1935))
+
 - ⬆️ **Dépendances**
   - **DownloadBtn:** Remplacement de la dépendance `content-disposition` par `content-disposition-header` ([#1895](https://github.com/assurance-maladie-digital/design-system/pull/1895)) ([6008bb3](https://github.com/assurance-maladie-digital/design-system/commit/6008bb3b01c0d34c28b545162478da09d4ac625d))
 
@@ -51,7 +54,7 @@
 ## FormBuilder
 
 - 🔧 **Configuration**
-  - **scripts:** Refonte des scripts `build` et `post-install` ([#1934](https://github.com/assurance-maladie-digital/design-system/pull/1934))
+  - **scripts:** Refonte des scripts `build` et `post-install` ([#1934](https://github.com/assurance-maladie-digital/design-system/pull/1934)) ([b7e464b](https://github.com/assurance-maladie-digital/design-system/commit/b7e464b05d74d9aa06a0446ad975122ce72c1f54))
 
 ## Design Tokens
 
