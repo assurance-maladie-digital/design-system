@@ -48,6 +48,11 @@
 - ⬆️ **Dépendances**
   - **@vue/cli:** Mise à jour du monorepo vers la `v5` ([#1913](https://github.com/assurance-maladie-digital/design-system/pull/1913)) ([91918c3](https://github.com/assurance-maladie-digital/design-system/commit/91918c357b6a8e29543d8548e5dd8672201366be))
 
+## Design Tokens
+
+- 🔧 **Configuration**
+  - **build:** Refonte du script de build ([#1932](https://github.com/assurance-maladie-digital/design-system/pull/1932))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**
@@ -74,7 +79,7 @@
   - **@rushstack/eslint-patch:** Mise à jour vers la `v1.1.3` ([#1925](https://github.com/assurance-maladie-digital/design-system/pull/1925)) ([466d261](https://github.com/assurance-maladie-digital/design-system/commit/466d261f6f946e6df9711457b2e9645b9ae5899f))
   - **dayjs:** Mise à jour vers la `v1.11.1` ([#1926](https://github.com/assurance-maladie-digital/design-system/pull/1926)) ([bfe1f03](https://github.com/assurance-maladie-digital/design-system/commit/bfe1f034b2fa3e1ef00953aa2dbe5bd975cb9658))
   - **core-js:** Mise à jour vers la `v3.22.0` ([#1927](//github.com/assurance-maladie-digital/design-system/pull/1927)) ([0b39105](https://github.com/assurance-maladie-digital/design-system/commit/0b39105aac246f0fd68fb0e50258ee2db972eea3))
-  - **lint-staged:** Mise à jour vers la `v12.3.8` ([#1928](https://github.com/assurance-maladie-digital/design-system/pull/1928))
+  - **lint-staged:** Mise à jour vers la `v12.3.8` ([#1928](https://github.com/assurance-maladie-digital/design-system/pull/1928)) ([1370878](https://github.com/assurance-maladie-digital/design-system/commit/1370878c56a1906a0b3345e24ceb6f549001cd16))
 
 ## v2.3.0
 
