@@ -62,6 +62,11 @@
 - 🔧 **Configuration**
   - **build:** Refonte du script de build ([#1932](https://github.com/assurance-maladie-digital/design-system/pull/1932)) ([513e439](https://github.com/assurance-maladie-digital/design-system/commit/513e43934aee00bc9f75d552020727e5a526395c))
 
+### CLI Helpers
+
+- 🔥 **Suppressions**
+  - **global:** Suppression du package ([#1938](https://github.com/assurance-maladie-digital/design-system/pull/1938))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**

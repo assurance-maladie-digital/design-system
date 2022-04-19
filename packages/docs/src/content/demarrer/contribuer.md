@@ -151,16 +151,6 @@ vue invoke @cnamts/vue-dash -- --render-template
 ```
 
 </doc-tab-item>
-
-<doc-tab-item label="CLI Helpers">
-
-La bibliothèque de fonctions d’aide pour la construction d’interfaces en ligne de commande se trouve dans le dossier `packages/cli-helpers`. Les fonctions sont écrites en TypeScript et construites pour être utilisées dans un environnement [node.js](https://nodejs.org/).
-
-Pour tester une fonction, vous pouvez transpiler la bibliothèque en exécutant la commande `yarn build` depuis le dossier `cli-helpers`, puis importer votre fonction depuis le package.
-
-Vous pouvez également utiliser [ts-node](https://www.npmjs.com/package/ts-node) pour écrire votre script de test en TypeScript.
-
-</doc-tab-item>
 </doc-tabs>
 
 ### Commits
