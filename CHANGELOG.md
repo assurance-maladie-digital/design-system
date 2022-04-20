@@ -31,6 +31,7 @@
 
 - 🔧 **Configuration**
   - **scripts:** Refonte des scripts `build` et `post-install` ([#1935](https://github.com/assurance-maladie-digital/design-system/pull/1935)) ([3ead4d7](https://github.com/assurance-maladie-digital/design-system/commit/3ead4d7e1697a9445fbc2b59d362c599d2db4a52))
+ - **config:** Mise à jour de la taille maximale du build ([#1945](https://github.com/assurance-maladie-digital/design-system/pull/1945))
 
 - ⬆️ **Dépendances**
   - **DownloadBtn:** Remplacement de la dépendance `content-disposition` par `content-disposition-header` ([#1895](https://github.com/assurance-maladie-digital/design-system/pull/1895)) ([6008bb3](https://github.com/assurance-maladie-digital/design-system/commit/6008bb3b01c0d34c28b545162478da09d4ac625d))
