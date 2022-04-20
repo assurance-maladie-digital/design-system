@@ -99,10 +99,10 @@
   - **dayjs:** Mise à jour vers la `v1.11.1` ([#1926](https://github.com/assurance-maladie-digital/design-system/pull/1926)) ([bfe1f03](https://github.com/assurance-maladie-digital/design-system/commit/bfe1f034b2fa3e1ef00953aa2dbe5bd975cb9658))
   - **lint-staged:** Mise à jour vers la `v12.3.8` ([#1928](https://github.com/assurance-maladie-digital/design-system/pull/1928)) ([1370878](https://github.com/assurance-maladie-digital/design-system/commit/1370878c56a1906a0b3345e24ceb6f549001cd16))
   - **fs-extra:** Mise à jour vers la `v10.1.0` ([#1929](https://github.com/assurance-maladie-digital/design-system/pull/1929)) ([dc1d1e9](https://github.com/assurance-maladie-digital/design-system/commit/dc1d1e908e0b28d5e63424f21f08863fb89f2db2))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.2.3` ([#1930](https://github.com/assurance-maladie-digital/design-system/pull/1930)) ([5059e97](https://github.com/assurance-maladie-digital/design-system/commit/5059e97998c07cf706f223b17fb901fc45d10578))
   - **consola:** Épinglage de la dépendance à la `v2.15.3` ([#1937](https://github.com/assurance-maladie-digital/design-system/pull/1937)) ([b7e9a6e](https://github.com/assurance-maladie-digital/design-system/commit/b7e9a6e4ffaad40bf15214c85e5ae6ff1469940b))
   - **babel-loader:** Mise à jour vers la `v8.2.5` ([#1941](https://github.com/assurance-maladie-digital/design-system/pull/1941)) ([619cd06](https://github.com/assurance-maladie-digital/design-system/commit/619cd06be7850b528e227c5d7ef187a9a199ab5b))
-  - **core-js:** Mise à jour vers la `v3.22.1` ([#1942](//github.com/assurance-maladie-digital/design-system/pull/1942))
+  - **core-js:** Mise à jour vers la `v3.22.1` ([#1942](//github.com/assurance-maladie-digital/design-system/pull/1942)) ([31e31cf](https://github.com/assurance-maladie-digital/design-system/commit/31e31cf91f429f7475c6471306e8f450204f4dca))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.2.5` ([#1943](https://github.com/assurance-maladie-digital/design-system/pull/1943))
 
 ## v2.3.0
 
