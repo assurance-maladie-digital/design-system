@@ -3,9 +3,8 @@ import { isDateValid, isDateValidFn } from '../';
 const validDate = '14/09/2019';
 const invalidDate = '99/99/9999';
 
-// Tests
 describe('isDateValid', () => {
-	it('returns an error when the date isn\'t valid', () => {
+	it('returns an error when the date is not valid', () => {
 		expect(typeof isDateValid(invalidDate)).toBe('string');
 	});
 

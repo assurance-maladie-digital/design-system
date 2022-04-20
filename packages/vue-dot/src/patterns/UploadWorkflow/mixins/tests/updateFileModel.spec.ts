@@ -30,7 +30,6 @@ function getFileList(): FileListItem[] {
 	];
 }
 
-// Tests
 describe('updateFileModel', () => {
 	it('inits the file list', () => {
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
@@ -40,7 +39,7 @@ describe('updateFileModel', () => {
 		expect(wrapper.vm.fileList).toMatchSnapshot();
 	});
 
-	it('doesn\'t overwrite existing state', () => {
+	it('does not overwrite existing state', () => {
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
 		const fileListState = getFileList();
@@ -51,7 +50,7 @@ describe('updateFileModel', () => {
 		expect(wrapper.vm.fileList).toMatchSnapshot();
 	});
 
-	it('returns undefined if the file doesn\'t exists', () => {
+	it('returns undefined if the file does not exists', () => {
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
 		wrapper.vm.fileList = getFileList();

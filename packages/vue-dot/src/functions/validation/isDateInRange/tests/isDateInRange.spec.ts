@@ -5,7 +5,6 @@ const end = '2019-10-27';
 
 const date = '2019-10-23';
 
-// Tests
 describe('isDateInRange', () => {
 	it('returns true if the date is in the range', () => {
 		expect(isDateInRange(date, start, end)).toBe(true);

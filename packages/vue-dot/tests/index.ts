@@ -1,4 +1,3 @@
-// Global test configuration
 import Vue from 'vue';
 
 import {
@@ -13,10 +12,8 @@ import {
 
 import { addVApp } from './utils/addVApp';
 
-// Create localVue
 const localVue = createLocalVue();
 
-// Add Vuetify
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
 
@@ -27,20 +24,12 @@ Vue.use(InputFacade);
 
 addVApp();
 
-/**
- * Generic mount function
- *
- * @param {VueClass} component The component to mount
- * @param {ShallowMountOptions|MountOptions} [options={}] The mount function options
- * @param {boolean} [fullMount=false] Use mount instead of shallowMount
- * @returns {Wrapper} The wrapper instance
- */
+/** Generic mount function */
 export function mountComponent(
 	component: VueClass<Vue>,
 	options: ShallowMountOptions<Vue> | MountOptions<Vue> = {},
 	fullMount = false
 ): Wrapper<Vue> {
-	// Use mount() instead of shallowMount() when fullMount is true
 	const fn = fullMount ? mount : shallowMount;
 
 	return fn(component, {

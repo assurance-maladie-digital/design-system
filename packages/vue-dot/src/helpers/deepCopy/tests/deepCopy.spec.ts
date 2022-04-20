@@ -1,6 +1,5 @@
 import { deepCopy } from '../';
 
-// Tests
 describe('deepCopy', () => {
 	it('should copy an object without reference', () => {
 		const objToCopy = {

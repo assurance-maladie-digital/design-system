@@ -23,6 +23,11 @@ export type FieldValue = string | number | null | undefined | PeriodValue | Choi
 
 export type ErrorMessages = string | string[];
 
+export interface ChoiceFieldErrorMessages {
+	value?: ErrorMessages;
+	other?: ErrorMessages;
+}
+
 export interface PeriodErrorMessages {
 	from?: ErrorMessages;
 	to?: ErrorMessages;
@@ -35,7 +40,7 @@ export interface FieldItem {
 }
 
 export interface FieldOptions {
-	errorMessages?: ErrorMessages | PeriodErrorMessages;
+	errorMessages?: ErrorMessages | ChoiceFieldErrorMessages | PeriodErrorMessages;
 	[key: string]: unknown;
 }
 

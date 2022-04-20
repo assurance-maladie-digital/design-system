@@ -34,3 +34,23 @@ When cloning the project, you have two files: `config.js.env` and `config.js`. T
 
 This plugin augments the default `vue-cli-service serve` command by copying `config.js.dist` to `config.js` if the file doesn't exists.
 This way you have no setup to do when cloning a project!
+
+### Vue Dot tree-shaking
+
+By default, when importing the Vue Dot library, all components are registered globally.
+
+You can reduce the final size of your application by importing only the components that you use.
+
+For this, the `vueDotLoader` is used in combinaison with the [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader) plugin:
+
+```js
+// vue.config.js
+const { vueDotLoader } = require('@cnamts/vue-cli-plugin-vue-dash/vueDotLoader');
+
+module.exports = {
+	chainWebpack: config => {
+		// Auto-load Vue Dot components
+		config.plugin('VuetifyLoaderPlugin').tap(vueDotLoader);
+	}
+};
+```

@@ -7,11 +7,11 @@
 	"command": {
 		"publish": {
 			"allowBranch": [
-				"master",
+				"main",
 				"dev"
 			],
 			"message": "🔖 %s"
 		}
 	},
-	"version": "2.0.0-beta.10"
+	"version": "2.3.0"
 }

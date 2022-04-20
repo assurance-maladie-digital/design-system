@@ -14,17 +14,16 @@
 			v-bind="options.fileList"
 			:files="fileList"
 			@delete-file="resetFile"
-			@retry="showFileUpload"
-			@upload="showFileUpload"
+			@retry="uploadInline"
+			@upload="uploadInline"
 			@view-file="emitViewFileEvent"
 		/>
 
 		<FileUpload
 			ref="fileUpload"
 			v-model="uploadedFile"
-			v-bind="options.fileUpload"
-			@change="fileSelected"
 			@error="uploadError"
+			@change="fileSelected"
 		/>
 
 		<DialogBox
@@ -68,7 +67,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The main title */
 			sectionTitle: {
 				type: String,
 				default: undefined
@@ -78,10 +76,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config), UploadWorkflowCore, Widthable);
 
-	/**
-	 * UploadWorkflow is a component that let the user select files
-	 * and define a type for them in a pre-defined list
-	 */
 	@Component<UploadWorkflow>({
 		components: {
 			FileList
@@ -92,10 +86,11 @@
 		}
 	})
 	export default class UploadWorkflow extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		/** The rules for the select in the dialog */
+		// UploadWorkflowCore mixin
+		inlineSelect!: boolean;
+
 		selectRules = [
 			required
 		];
@@ -103,17 +98,14 @@
 		get computedTitle(): string {
 			if (this.sectionTitle) {
 				return this.sectionTitle;
-			} else {
-				const plural = this.value.length > 1;
-
-				return locales.title(plural);
 			}
+
+			return locales.title(this.value.length > 1);
 		}
 
-		/** Prefill the select and click on FileUpload */
-		showFileUpload(id: string): void {
-			// Prefill the select
+		uploadInline(id: string): void {
 			this.selectedItem = id;
+			this.inlineSelect = true;
 			this.$refs.fileUpload.retry();
 		}
 	}

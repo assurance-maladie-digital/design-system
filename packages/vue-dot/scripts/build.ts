@@ -1,68 +1,19 @@
-/**
- * [Build script]
- *
- * Build assets in /dist folder
- * Use vue-cli-service in lib mode to build Vue Dot
- * Transpile TypeScript to JavaScript
- * Remove demo.html and empty folders
- */
+import consola from 'consola';
 
-import * as fs from 'fs-extra';
+import { setupDistFolder } from '@cnamts/shared/scripts/setupDistFolder';
+import { buildLibrary } from '@cnamts/shared/scripts/buildLibrary';
+import { transpileSource } from '@cnamts/shared/scripts/transpileSource';
+import { cleanUpArtifacts } from '@cnamts/shared/scripts/cleanUpArtifacts';
 
-import { renderHeader, info, done, log } from '@cnamts/cli-helpers';
+const SRC_PATH = './src';
+const DIST_PATH = './dist';
+const LIB_NAME = 'vue-dot';
 
-import { author } from '../package.json';
+consola.info('Building full bundle');
 
-renderHeader('Self Build', author.name);
+setupDistFolder(DIST_PATH);
+transpileSource(DIST_PATH);
+buildLibrary(LIB_NAME, SRC_PATH);
+cleanUpArtifacts(DIST_PATH);
 
-import { execSync, StdioOptions } from 'child_process';
-
-const execOpts = {
-	stdio: 'inherit' as StdioOptions
-};
-
-const DIST_FOLDER = './dist';
-
-// Create dist folder if it doesn't exist
-if (!fs.existsSync(DIST_FOLDER)) {
-	info('Creating dist folder');
-
-	fs.mkdirSync(DIST_FOLDER);
-} else {
-	info('Removing dist folder content');
-
-	// Clear the content of dist folder
-	fs.emptyDirSync(`./${DIST_FOLDER}`);
-}
-
-const vueCliServicePath = './node_modules/.bin/vue-cli-service';
-
-log();
-info('Building full bundle');
-
-// Build the full bundle
-execSync(
-	`cross-env LIB_MODE=true ${vueCliServicePath} build --target lib --name vue-dot ./src/index.ts`,
-	execOpts
-);
-
-log();
-info('Transpiling TypeScript');
-
-// Remove demo.html file
-fs.removeSync(`${DIST_FOLDER}/demo.html`);
-
-// Transpile TypeScript
-execSync(`tsc -p tsconfig.build.json --outDir ${DIST_FOLDER}`, execOpts);
-
-// Remove dev folder
-fs.removeSync(`${DIST_FOLDER}/dev`);
-
-// Remove component folders because we don't compile
-// them individually at the moment
-fs.removeSync(`${DIST_FOLDER}/src/elements`);
-fs.removeSync(`${DIST_FOLDER}/src/patterns`);
-fs.removeSync(`${DIST_FOLDER}/src/registerAllComponents.js`);
-
-log();
-done('Build completed');
+consola.success('Build completed');

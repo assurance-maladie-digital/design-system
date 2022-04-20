@@ -14,3 +14,14 @@ export interface IndexedObject<T = string> {
 }
 
 export type Next = NavigationGuardNext<Vue>;
+
+export interface Dimensions {
+	width: string;
+	height: string;
+}
+
+export interface VForm {
+	validate: () => boolean;
+	reset: () => void;
+	resetValidation: () => void;
+}

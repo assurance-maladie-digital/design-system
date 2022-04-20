@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CookiesPage renders correctly 1`] = `
+<pagecontainer-stub size="m" color="transparent" class="vd-cookies-page">
+  <vcard-stub loaderheight="4" tag="div" class="pa-4 pa-md-8">
+    <vform-stub>
+      <h2 class="text-h5 font-weight-bold mb-6">
+        Gestion des cookies
+      </h2>
+      <p>
+        Définissez vos préférences de collecte et de traitement de vos données sur ce site.
+      </p>
+      <p>
+        Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette ou mobile) lors de la visite d’un site ou lors de la consultation d’une publicité. Il contient plusieurs données&nbsp;: le nom du service qui l’a déposé, un identifiant sous forme de numéro unique, une valeur et éventuellement une date d’expiration.
+      </p>
+      <div class="d-flex flex-wrap justify-end mx-n2 mt-n2 mb-6">
+        <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button" class="text-none ma-2">
+          Tout refuser
+        </vbtn-stub>
+        <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button" class="text-none ma-2">
+          Tout accepter
+        </vbtn-stub>
+      </div>
+      <cookiesinformation-stub type="essentials" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
+      <cookiesinformation-stub type="{[Function]}" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
+      <cookiesinformation-stub type="analytics" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
+      <div class="d-flex mt-16">
+        <vspacer-stub tag="div"></vspacer-stub>
+        <vbtn-stub color="primary" tag="button" activeclass="" type="button" class="text-none">
+          Enregistrer mes choix
+        </vbtn-stub>
+      </div>
+    </vform-stub>
+  </vcard-stub>
+</pagecontainer-stub>
+`;

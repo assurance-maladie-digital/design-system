@@ -3,6 +3,8 @@
 exports[`lib should register components & directives when passing a theme 1`] = `
 Object {
   "components": Array [
+    "CookieBanner",
+    "CookiesPage",
     "CopyBtn",
     "CustomIcon",
     "DataList",
@@ -11,17 +13,23 @@ Object {
     "DialogBox",
     "DownloadBtn",
     "ErrorPage",
+    "ExternalLinks",
     "FileUpload",
     "FilterModule",
+    "FooterBar",
     "FooterWrapper",
+    "FranceConnectBtn",
+    "HeaderBar",
     "HeaderLoading",
     "LangBtn",
+    "Logo",
     "NotificationBar",
     "PageContainer",
     "PaginatedTable",
     "SubHeader",
     "TableToolbar",
     "UploadWorkflow",
+    "UserMenuBtn",
   ],
   "directives": Array [
     "debounce",

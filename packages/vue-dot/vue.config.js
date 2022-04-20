@@ -1,12 +1,9 @@
-// Build configuration
 const webpack = require('webpack');
 
-// If LIB_MODE is true, we're building the library
-// else, we're building the dev environment
-const LIB_MODE = Boolean(process.env.LIB_MODE); // Use Boolean() to convert undefined to false
-const LIMIT_SIZE = 825_000;
+const LIB_MODE = Boolean(process.env.LIB_MODE);
+const LIMIT_SIZE = 1_500_000;
 const CI = Boolean(process.env.CI);
-const CIRCLE_NODE_TOTAL = parseFloat(process.env.CIRCLE_NODE_TOTAL);
+const CIRCLE_NODE_TOTAL = parseInt(process.env.CIRCLE_NODE_TOTAL);
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
@@ -37,7 +34,7 @@ const LIB_MODE_CONFIG = {
 				maxChunks: 1
 			})
 		],
-		// see https://github.com/vuetifyjs/vuetify/issues/4068#issuecomment-394890573
+		/** @see https://github.com/vuetifyjs/vuetify/issues/4068#issuecomment-394890573 */
 		externals: [
 			{
 				'vue': {
@@ -67,7 +64,6 @@ const DEV_MODE_CONFIG = {
 		entry: './dev/main.ts'
 	},
 	chainWebpack: (config) => {
-		// Use index.html in dev folder
 		config
 			.plugin('html')
 			.tap(args => {

@@ -17,7 +17,6 @@ function createTestComponent() {
 	});
 }
 
-// Tests
 describe('Widthable', () => {
 	it('computes the default styles', () => {
 		const testComponent = createTestComponent();

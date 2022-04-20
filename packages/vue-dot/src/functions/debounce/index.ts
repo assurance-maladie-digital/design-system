@@ -1,9 +1,4 @@
-/**
- * Debounce function
- *
- * @param {Function} callback The function called after debounce
- * @param {number} [time=500] The interval of the debounce in milliseconds
- */
+/** Debounce a callback function */
 export function debounce(callback: () => void, time = 500): () => void {
 	let interval: number | null;
 

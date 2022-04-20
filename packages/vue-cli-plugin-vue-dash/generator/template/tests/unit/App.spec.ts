@@ -8,12 +8,24 @@ import App from '@/App.vue';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
-describe('App.vue', () => {
+describe('App', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(App, {
-			router
+			router,
+			mocks: {
+				$maintenanceEnabled: false
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly when maintenance is enabled', () => {
+		wrapper = mountComponent(App, {
+			router,
+			mocks: {
+				$maintenanceEnabled: true
+			}
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();

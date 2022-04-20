@@ -20,6 +20,7 @@ interface TestComponent extends Vue {
 	fileList: FileListItem[];
 	error: boolean;
 	dialog: boolean;
+	inlineSelect: boolean;
 	selectedItem: string;
 	singleMode(): boolean;
 	fileSelected(): void;
@@ -71,7 +72,6 @@ function createWrapper(value = fileList) {
 	});
 }
 
-// Tests
 describe('EventsFileFired', () => {
 	afterEach(() => {
 		jest.clearAllMocks();
@@ -142,13 +142,16 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.dialogConfirm();
 
+		// Wait for form validation
+		await wrapper.vm.$nextTick();
+		// Wait for form reset
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.vm.$refs.form.reset).toHaveBeenCalled();
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t closes and resets the dialog form if valid', async() => {
+	it('does not closes and resets the dialog form if valid', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 
 		wrapper.vm.$refs.form.validate = jest.fn().mockReturnValue(false);
@@ -180,7 +183,7 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.fileSelected();
 
-		expect(wrapper.vm.dialog).toBe(false);
+		expect(wrapper.vm.dialog).toBeFalsy();
 		expect(wrapper.vm.selectedItem).toEqual(fileListItem.id);
 	});
 
@@ -190,7 +193,18 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.fileSelected();
 
-		expect(wrapper.vm.dialog).toBe(true);
+		expect(wrapper.vm.dialog).toBeTruthy();
+	});
+
+	it('skips the dialog in inline upload mode', () => {
+		const value = [fileListItem, fileListItem];
+		const wrapper = createWrapper(value) as Wrapper<TestComponent>;
+
+		wrapper.setData({ inlineSelect: true });
+		wrapper.vm.fileSelected();
+
+		expect(wrapper.vm.selectedItem).toBe('');
+		expect(wrapper.vm.inlineSelect).toBeFalsy();
 	});
 
 	// uploadError
@@ -203,7 +217,7 @@ describe('EventsFileFired', () => {
 
 		await wrapper.vm.$nextTick();
 
-		expect(wrapper.vm.uploadedFile).toBe(null);
+		expect(wrapper.vm.uploadedFile).toBeNull();
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 

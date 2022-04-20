@@ -42,29 +42,18 @@
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * The accessible label of the button
-			 * required because if not present, the button
-			 * will not be properly accessible to screen readers
-			 */
 			label: {
 				type: String,
 				required: true
 			},
-			/**
-			 * The text that will be copied to the clipboard,
-			 * or a function that will return it
-			 */
 			textToCopy: {
 				type: [Function, String] as PropType<() => string | string>,
 				required: true
 			},
-			/** Hide the tooltip */
 			hideTooltip: {
 				type: Boolean,
 				default: false
 			},
-			/** Tooltip display time in milliseconds */
 			tooltipDuration: {
 				type: Number,
 				default: 2500
@@ -74,41 +63,36 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * CopyBtn is a component that copy text to the clipboard and
-	 * shows a tooltip
-	 */
 	@Component
 	export default class CopyBtn extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		// Icon
 		copyIcon = mdiContentCopy;
 
-		/** Tooltip v-model */
 		tooltip = false;
 
-		/** When the copy button is clicked */
 		copy(): void {
-			let toCopy: string;
+			const contentToCopy = typeof this.textToCopy === 'function' ? this.textToCopy() : this.textToCopy;
 
-			// Get text to copy
-			if (typeof this.textToCopy === 'function') {
-				toCopy = this.textToCopy();
-			} else {
-				toCopy = this.textToCopy;
+			copyToClipboard(contentToCopy);
+
+			if (this.hideTooltip) {
+				return;
 			}
 
-			// Copy the text to the clipboard
-			copyToClipboard(toCopy);
-
-			if (!this.hideTooltip) {
-				// Hide tooltip after tooltipDuration delay
-				setTimeout(() => {
-					this.tooltip = false;
-				}, this.tooltipDuration);
-			}
+			setTimeout(() => {
+				this.tooltip = false;
+			}, this.tooltipDuration);
 		}
 	}
 </script>
+
+<style lang="scss">
+	// Make the tooltip menu look like a tooltip
+	.vd-copy-tooltip-menu {
+		padding: 6px 16px;
+		box-shadow: none;
+		margin-top: 2px;
+		background: rgba(97, 97, 97, .9);
+	}
+</style>

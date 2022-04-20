@@ -15,12 +15,6 @@ body {
 	font-size: 100%;
 }
 
-body {
-	display: flex;
-	min-height: 100vh;
-	line-height: 1.25;
-}
-
 /* Hide the application while Vue.js is loading */
 [v-cloak] {
 	display: none;
@@ -30,7 +24,7 @@ body {
 	width: 100%;
 	display: flex;
 	min-height: 100vh;
-	background: #eee;
+	background: #f8f9fc;
 }
 
 /* Apply default transition to links */

@@ -18,10 +18,10 @@
 		<meta name="msapplication-TileColor" content="#0c419a">
 		<meta name="theme-color" content="#ffffff">
 
-		<meta name="apple-mobile-web-app-title" content="<%= name %>">
-		<meta name="application-name" content="<%= name %>">
+		<meta name="apple-mobile-web-app-title" content="<%= projectName %>">
+		<meta name="application-name" content="<%= projectName %>">
 
-		<title>CNAM</title>
+		<title><%= projectName %> | CNAM</title>
 
 		<noscript>
 			<style>
@@ -39,7 +39,7 @@
 					display: flex;
 				}
 
-				main {
+				div {
 					margin: auto;
 				}
 
@@ -57,18 +57,23 @@
 
 	<body>
 		<noscript>
-			<main>
+			<div>
 				<h1>Activation de JavaScript</h1>
 
-				<p>Nous sommes désolés, mais il faut que JavaScript soit activé pour utiliser ce site.<br>
-				Nous travaillons activement sur une amélioration où vous pourrez utiliser ce site sans avoir cette erreur.</p>
-			</main>
+				<p>
+					Vous devez activer JavaScript pour utiliser ce site.<br>
+					Nous travaillons sur une amélioration où vous pourrez utiliser ce site sans avoir cette erreur.
+					<!-- Here you can add informations or a link to an alternative when JavaScript is disabled. -->
+				</p>
+			</div>
 		</noscript>
 
 		<div id="app">
 			<div class="spinner-block">
 				<svg
 					class="spinner"
+					role="img"
+					aria-hidden="true"
 					width="65px"
 					height="65px"
 					viewBox="0 0 66 66"

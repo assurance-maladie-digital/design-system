@@ -1,25 +1,28 @@
 <template>
-	<!-- DatePicker -->
 	<VMenu
 		ref="menu"
 		v-model="menu"
 		v-bind="menuOptions"
 	>
 		<template #activator="{}">
-			<!-- TextField to enter date by hand -->
 			<VTextField
 				ref="input"
-				v-model="dateFormatted"
 				v-facade="maskValue"
 				v-bind="textFieldOptions"
+				:value="dateFormatted"
 				:outlined="outlined"
 				:class="textFieldClasses"
 				:success-messages="textFieldOptions.successMessages || successMessages"
+				:error-messages="textFieldOptions.errorMessages || errorMessages"
 				:error.sync="internalErrorProp"
 				class="vd-date-picker-text-field"
-				@input="$emit('input', $event)"
 				@blur="textFieldBlur"
-				@click="textFieldClicked"
+				@click.native="textFieldClicked"
+				@paste.prevent="saveFromPasted"
+				@keydown.enter.prevent="saveFromTextField"
+				@input="errorMessages = null"
+				@change="dateFormatted = $event"
+				v-on="$listeners"
 			>
 				<template #prepend>
 					<VBtn
@@ -63,18 +66,12 @@
 			</VTextField>
 		</template>
 
-		<!--
-			Calendar
-
-			We bind max & min properties manually
-			since we set them when using birthdate mode
-		-->
 		<VDatePicker
 			v-if="!noCalendar"
-			ref="picker"
 			v-model="date"
 			v-bind="options.datePicker"
 			type="date"
+			:active-picker.sync="activePicker"
 			:picker-date.sync="internalPickerDate"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
@@ -107,39 +104,26 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Disable the calendar */
 			noCalendar: {
 				type: Boolean,
 				default: false
 			},
-			/** Disable the prepend icon */
 			noPrependIcon: {
 				type: Boolean,
 				default: false
 			},
-			/**
-			 * Put VTextField in outlined mode,
-			 * default to append icon and adjust VMenu
-			 */
 			outlined: {
 				type: Boolean,
 				default: false
 			},
-			/** Use append icon instead of prepend */
 			appendIcon: {
 				type: Boolean,
 				default: false
 			},
-			/** Open calendar menu when the text field is clicked */
 			textFieldActivator: {
 				type: Boolean,
 				default: false
 			},
-			/**
-			 * Provide classes to the VTextField
-			 * This is needed because classes are
-			 * not contained in $attrs
-			 */
 			textFieldClass: {
 				type: [String, Array] as PropType<string | string[]>,
 				default: undefined
@@ -159,10 +143,6 @@
 		ErrorProp
 	);
 
-	/**
-	 * DatePicker is a component that makes the date picker
-	 * from Vuetify simpler to use
-	 */
 	@Component<DatePicker>({
 		inheritAttrs: false,
 		model: {
@@ -171,13 +151,10 @@
 		}
 	})
 	export default class DatePicker extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		// Icon
 		calendarIcon = mdiCalendar;
 
-		/** The v-model of VMenu */
 		menu = false;
 
 		get showPrependIcon(): boolean {
@@ -197,25 +174,10 @@
 			return deepMerge<Options>(position, this.options.menu);
 		}
 
-		/**
-		 * Compute the options for the VTextField
-		 * (Merge options and binded attributes)
-		 *
-		 * @returns {Options} Computed options
-		 */
 		get textFieldOptions(): Options {
-			// Merge textField options (custom or default) with
-			// directly binded attributes (theses attributes
-			// will override 'options.textField')
 			return deepMerge<Options>(this.options.textField, this.$attrs);
 		}
 
-		/**
-		 * Compute the classes for the VTextField
-		 * (Merge user classes and fixed behavior)
-		 *
-		 * @returns {string|string[]} Computed classes
-		 */
 		get textFieldClasses(): (string | string[])[] {
 			const textFieldClasses = [];
 
@@ -228,21 +190,14 @@
 			}
 
 			if (this.textFieldClass) {
-				if (typeof this.textFieldClass === 'object') {
-					textFieldClasses.push(this.textFieldClass);
-				} else {
-					textFieldClasses.push([this.textFieldClass]);
-				}
+				const classes = typeof this.textFieldClass === 'object' ? this.textFieldClass : [this.textFieldClass];
+
+				textFieldClasses.push(classes);
 			}
 
 			return textFieldClasses;
 		}
 
-		/**
-		 * Open calendar menu if textFieldActivator is true
-		 *
-		 * @returns {void}
-		 */
 		textFieldClicked(): void {
 			if (this.textFieldActivator) {
 				this.menu = true;
@@ -252,8 +207,8 @@
 </script>
 
 <style lang="scss" scoped>
-	// Hide scrollbar in VMenu
 	.vd-date-picker-menu {
+		// Hide scrollbar in VMenu
 		overflow: hidden;
 
 		// Custom events

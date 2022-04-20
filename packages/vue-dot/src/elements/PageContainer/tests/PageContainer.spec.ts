@@ -8,10 +8,8 @@ import PageContainer from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('PageContainer', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(PageContainer);
 
 		expect(html(wrapper)).toMatchSnapshot();

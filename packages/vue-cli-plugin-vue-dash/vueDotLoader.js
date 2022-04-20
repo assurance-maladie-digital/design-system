@@ -1,6 +1,3 @@
-// Vue CLI configuration
-// see https://cli.vuejs.org/guide/ for help
-
 const componentMap = {
 	// Elements
 	CopyBtn: 'elements',
@@ -8,13 +5,20 @@ const componentMap = {
 	DataList: 'elements',
 	DialogBox: 'elements',
 	DownloadBtn: 'elements',
+	ExternalLinks: 'elements',
 	HeaderLoading: 'elements',
+	Logo: 'elements',
 	PageContainer: 'elements',
+	UserMenuBtn: 'elements',
 	// Patterns
+	CookieBanner: 'patterns',
 	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
 	FileUpload: 'patterns',
+	FilterModule: 'patterns',
+	FooterBar: 'patterns',
 	FooterWrapper: 'patterns',
+	HeaderBar: 'patterns',
 	LangBtn: 'patterns',
 	NotificationBar: 'patterns',
 	PaginatedTable: 'patterns',
@@ -22,6 +26,7 @@ const componentMap = {
 	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
 	// Templates
+	CookiesPage: 'templates',
 	ErrorPage: 'templates'
 };
 

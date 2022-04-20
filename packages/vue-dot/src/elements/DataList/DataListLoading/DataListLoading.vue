@@ -1,37 +1,32 @@
 <template>
 	<div
-		role="alert"
-		aria-busy="true"
-		aria-live="polite"
+		aria-hidden="true"
 		class="vd-data-list-loading"
 	>
 		<HeaderLoading
 			v-if="heading"
+			width="100px"
 			height="1.5rem"
 			class="mb-4"
-			width="100"
 		/>
 
-		<ul class="vd-data-list-loading-items pl-0">
+		<ul class="pl-0">
 			<li
 				v-for="index in itemsNumber"
 				:key="index + '-loading-item'"
 				class="vd-data-list-loading-item"
-				:class="{
-					'vd-row': row,
-					'mb-4': index !== itemsNumber
-				}"
+				:class="{ 'mb-4': index !== itemsNumber }"
 			>
 				<HeaderLoading
 					v-if="!row"
+					width="60px"
 					height="1rem"
 					class="mb-1"
-					width="60"
 				/>
 
 				<HeaderLoading
+					:width="itemWidth"
 					height="1.5rem"
-					:width="row ? '150' : '90'"
 				/>
 			</li>
 		</ul>
@@ -44,12 +39,10 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Number of items */
 			itemsNumber: {
 				type: Number,
 				default: 1
 			},
-			/** Heading Loading option */
 			heading: {
 				type: Boolean,
 				default: false
@@ -64,30 +57,15 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class DataListLoading extends MixinsDeclaration {}
+	export default class DataListLoading extends MixinsDeclaration {
+		get itemWidth(): string {
+			return this.row ? '150px' : '90px';
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-data-list-loading {
-		.vd-data-list-loading-items {
-			list-style: none;
-		}
-
-		&:not(:last-child) {
-			margin-right: 80px;
-		}
-	}
-
-	.vd-row {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	@media only screen and (max-width: 425px) {
-		.vd-data-list-loading {
-			&:not(:last-child) {
-				margin-right: 0;
-			}
-		}
+	ul {
+		list-style: none;
 	}
 </style>

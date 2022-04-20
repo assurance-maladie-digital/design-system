@@ -1,8 +1,7 @@
 import { formatNir } from '../';
 
-// Tests
 describe('formatNir', () => {
-	it('formats a NIR wit a key', () => {
+	it('formats a NIR with a key', () => {
 		const nir = '295042531115732';
 
 		expect(formatNir(nir)).toEqual('2 95 04 25 311 157 32');

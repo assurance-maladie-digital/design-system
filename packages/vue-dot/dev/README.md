@@ -1,3 +1,3 @@
 # Playground
 
-Le fichier Playground est un « salle blanche » utilisée pour le développement et est le moyen recommandé d'itérer sur les modifications apportée la bibliothèque.
+Le Playground est un environnement utilisé pour le développement. Vous pouvez modifier le fichier `Playground.vue` en local afin d'itérer sur les modifications apportées à la bibliothèque.

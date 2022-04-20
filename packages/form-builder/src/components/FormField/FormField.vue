@@ -24,7 +24,7 @@
 				</template>
 
 				<span
-					class="field-tooltip-text"
+					class="vd-form-field-tooltip-text"
 					v-text="field.tooltip"
 				/>
 			</VTooltip>
@@ -38,7 +38,6 @@
 			{{ field.description }}
 		</p>
 
-		<!-- Render field -->
 		<component
 			:is="fieldComponent"
 			v-if="isDefinedField"
@@ -46,7 +45,6 @@
 			@change="emitChangeEvent"
 		/>
 
-		<!-- Render custom field -->
 		<slot
 			v-else
 			:name="field.type"
@@ -70,7 +68,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** v-model value */
 			field: {
 				type: Object as PropType<Field>,
 				required: true
@@ -80,10 +77,6 @@
 
 	const MixinsDeclaration = mixins(Props, FieldMap);
 
-	/**
-	 * FormField is a component used to display a field
-	 * with a description and/or a tooltip
-	 */
 	@Component({
 		model: {
 			prop: 'field',
@@ -93,13 +86,8 @@
 	export default class FormField extends MixinsDeclaration {
 		informationIcon = mdiInformationOutline;
 
-		/**
-		 * Get the field type from fieldOptions or default type
-		 *
-		 * @returns {string} The field type
-		 */
 		get fieldComponent(): string {
-			let fieldType: string = this.field.type;
+			let fieldType = this.field.type;
 
 			// Handle subtypes that are not in type 'select'
 			if (fieldType !== 'select') {
@@ -114,25 +102,10 @@
 			return this.fieldExists(this.field.type);
 		}
 
-		/**
-		 * Color of the description text (changes in light/dark mode)
-		 *
-		 * @returns {string} The color class
-		 */
 		get descriptionColor(): string {
-			let color = 'grey--text ';
-
-			// Only the modifier changes
-			color += this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
-
-			return color;
+			return 'grey--text ' + this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
 		}
 
-		/**
-		 * Emit change event
-		 *
-		 * @param {Field} value The updated field
-		 */
 		emitChangeEvent(value: Field): void {
 			this.$emit('change', value);
 		}
@@ -144,7 +117,7 @@
 		margin-top: 12px;
 	}
 
-	.field-tooltip-text {
+	.vd-form-field-tooltip-text {
 		white-space: pre-wrap;
 	}
 </style>

@@ -30,16 +30,16 @@ about: Créez un rapport de bug pour nous aider à améliorer notre Design Syste
 
 ## Environnement
 
-- OS: <!-- Android, … -->
-- Navigateur: <!-- IE 11, Firefox, Safari, … -->
+- OS : <!-- Android, … -->
+- Navigateur : <!-- IE 11, Firefox, Safari, … -->
 
 ## Priorisation
 
 <!-- Sélectionnez le niveau de priorité que vous estimez en fonction de l'impact sur votre projet. -->
 
-- [ ] Peu prioritaire 
-- [ ] Prioritaire
-- [ ] Très prioritaire
+- Peu prioritaire 
+- Prioritaire
+- Très prioritaire
 
 ## Projet
 

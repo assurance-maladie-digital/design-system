@@ -8,6 +8,10 @@ function getResourcesToDelete(options) {
 	return [
 		{
 			type: 'file',
+			path: 'jsconfig.json'
+		},
+		{
+			type: 'file',
 			path: 'src/assets/logo.png'
 		},
 		{
@@ -17,10 +21,6 @@ function getResourcesToDelete(options) {
 		{
 			type: 'file',
 			path: 'src/shims-vue.d.ts'
-		},
-		{
-			type: 'file',
-			path: 'src/main.js'
 		},
 		{
 			type: 'file',
@@ -64,13 +64,13 @@ function getResourcesToDelete(options) {
 		},
 		{
 			type: 'folder',
-			path: 'public/js/lib',
-			condition: !options.matomo
+			path: 'pipeline/',
+			condition: !options.jenkins
 		},
 		{
-			type: 'file',
-			path: 'src/plugins/form-builder.ts',
-			condition: !options.formBuilder
+			type: 'folder',
+			path: 'public/js/lib/',
+			condition: !options.matomo
 		}
 	];
 }

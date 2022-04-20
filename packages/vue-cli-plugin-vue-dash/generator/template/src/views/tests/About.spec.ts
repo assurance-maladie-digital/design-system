@@ -6,7 +6,7 @@ import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import About from '../About.vue';
 
-let wrapper: Wrapper<Vue>;
+let wrapper: Wrapper<Vue>;<% if (i18n) { %>
 
 const links = [
 	{
@@ -19,12 +19,10 @@ const links = [
 			}
 		]
 	}
-];
+];<% } %>
 
-// Tests
 describe('About', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(About<% if (i18n) { %>, {
 			mocks: {
 				$t: (key: string) => {

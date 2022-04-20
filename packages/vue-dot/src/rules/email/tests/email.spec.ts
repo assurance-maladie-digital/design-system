@@ -1,6 +1,5 @@
 import { email, emailFn } from '../';
 
-// Tests
 describe('email', () => {
 	it('returns an error when the email is invalid', () => {
 		expect(typeof email('test')).toBe('string');

@@ -3,8 +3,6 @@
 	<VApp v-cloak>
 		<AppHeader />
 
-		<AppToolbar v-if="!$maintenanceEnabled" />
-
 		<NotificationBar<% if (cypress) { %> data-cy="notificationBar"<% } %> />
 
 		<VMain>
@@ -29,13 +27,12 @@
 	import { Meta, MetaInfo } from '@/decorators';
 
 	// Static import for faster rendering
-	import { AppHeader, AppToolbar, AppFooter } from '@/components/layout';
+	import { AppHeader, AppFooter } from '@/components/layout';
 
 	/** App is the main component */
 	@Component({
 		components: {
 			AppHeader,
-			AppToolbar,
 			AppFooter
 		}
 	})
@@ -46,13 +43,14 @@
 		metaInfo(): MetaInfo {
 			return {
 				// If no sub-components specify a metaInfo.title, this title will be used
-				title: <% if (i18n) { %>this.$t('common.meta.title') as string<% } else { %>'<%= capitalizeFirstLetter(name) %>'<% } %>,
+				title: <% if (i18n) { %>this.$t('common.meta.title') as string<% } else { %>'<%= capitalizeFirstLetter(projectName) %>'<% } %>,
 				// All titles will be injected into this template
 				titleTemplate: <% if (i18n) { %>this.$t('common.meta.titleTemplate') as string<% } else { %>'%s | CNAM'<% } %>,
 				meta: [
 					{
 						name: 'description',
-						content: <% if (i18n) { %>this.$t('common.meta.description') as string<% } else { %>'<%= capitalizeFirstLetter(description) %>.'<% } %>
+						vmid: 'description', /** Used to avoid duplicated tags @see https://vue-meta.nuxtjs.org/faq/#unique-metadata */
+						content: <% if (i18n) { %>this.$t('common.meta.description') as string<% } else { %>'<%= capitalizeFirstLetter(projectDescription) %>.'<% } %>
 					}
 				]
 			};

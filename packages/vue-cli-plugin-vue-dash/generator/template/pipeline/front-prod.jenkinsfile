@@ -1,0 +1,18 @@
+pipeline {
+	agent any
+	options {
+		timeout(time: 1, unit: 'HOURS')
+	}
+	stages {
+		stage('Deploy image to prod') {
+			steps {
+				openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'val', destStream: "${env.PROJECT}-front", destTag: 'prod', destinationNamespace: "${env.PROJECT}-val", namespace: "${env.PROJECT}-val")
+			}
+		}
+		stage('Test deploy availability') {
+			steps {
+				openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-prod", namespace: "${env.PROJECT}-prod", waitTime: '10', waitUnit: 'min')
+			}
+		}
+	}
+}

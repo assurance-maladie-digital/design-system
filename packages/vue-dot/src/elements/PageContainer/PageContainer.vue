@@ -16,28 +16,23 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { SizeEnum, SIZE_ENUM_VALUES } from './SizeEnum';
+
 	import { IndexedObject } from '../../types';
+
+	import { propValidator } from '../../helpers/propValidator';
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * The size of the container
-			 *
-			 * @default xl
-			 */
 			size: {
 				type: String,
-				default: 'xl',
-				validator(value) {
-					return ['xl', 'l', 'm', 's'].includes(value.toLowerCase());
-				}
+				default: SizeEnum.X_LARGE,
+				validator: (value: string) => propValidator('size', SIZE_ENUM_VALUES, value)
 			},
-			/** Overwrite default spacing */
 			spacing: {
 				type: String,
 				default: undefined
 			},
-			/** The background color of the container */
 			color: {
 				type: String,
 				default: 'transparent'
@@ -54,7 +49,7 @@
 				return this.spacing;
 			}
 
-			const containerMargin: IndexedObject<string> = {
+			const spacingMapping: IndexedObject<string> = {
 				xs: 'px-0',
 				sm: 'px-4',
 				md: 'px-8',
@@ -62,20 +57,20 @@
 				xl: 'px-8'
 			};
 
-			const margin = containerMargin[this.$vuetify.breakpoint.name];
+			const spacing = spacingMapping[this.$vuetify.breakpoint.name];
 
-			return `py-10 ${margin}`;
+			return `py-10 ${spacing}`;
 		}
 
 		get containerSize(): number {
-			const containerWidth: IndexedObject<number> = {
-				xl: 1440,
-				l: 960,
-				m: 800,
-				s: 600
+			const sizeMapping: IndexedObject<number> = {
+				[SizeEnum.X_LARGE]: 1440,
+				[SizeEnum.LARGE]: 960,
+				[SizeEnum.MEDIUM]: 800,
+				[SizeEnum.SMALL]: 600
 			};
 
-			return containerWidth[this.size];
+			return sizeMapping[this.size];
 		}
 	}
 </script>

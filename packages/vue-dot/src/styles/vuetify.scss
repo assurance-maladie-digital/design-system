@@ -1,5 +1,3 @@
-// Override some Vuetify styles
-
 // Import visually-hidden mixin
 @import 'vuetify/src/styles/tools/_display.sass';
 
@@ -9,6 +7,7 @@
 .v-ripple__container *,
 .v-tabs__container,
 .v-input--selection-controls__ripple,
+.v-textarea.v-text-field--enclosed .v-text-field__slot,
 .v-simple-checkbox svg,
 .v-slide-group__content,
 .v-slider__tick-label,
@@ -16,8 +15,14 @@
 	max-width: none;
 }
 
-// Change font
+// Fix resize cursor position in textarea fields
+.v-textarea.v-text-field--enclosed .v-text-field__slot textarea {
+	margin-top: 10px;
+	min-height: 46px;
+}
+
 .v-application {
+	// Change font
 	.text-h1,
 	.text-h2,
 	.text-h3,
@@ -32,12 +37,16 @@
 	.text-overline {
 		font-family: 'Open Sans', sans-serif !important;
 	}
+
+	// Fix line-height in VSelect with our font
+	.v-select__selections {
+		line-height: 20px;
+	}
 }
 
-// Fix color contrast of disabled elements to respect
-// contrast-ratios for accessibility
+// Fix color contrast of disabled elements
 .theme--light {
-	&.v-label--is-disabled
+	&.v-label--is-disabled,
 	&.v-input--is-disabled .v-label,
 	&.v-icon.v-icon--disabled,
 	&.v-list .v-list--disabled {

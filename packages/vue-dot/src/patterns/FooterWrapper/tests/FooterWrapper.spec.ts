@@ -8,10 +8,8 @@ import FooterWrapper from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FooterWrapper', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FooterWrapper);
 
 		expect(html(wrapper)).toMatchSnapshot();

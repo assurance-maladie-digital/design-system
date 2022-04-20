@@ -1,9 +1,17 @@
 module.exports = {
+	root: true,
+	env: {
+		node: true
+	},
 	extends: [
 		'plugin:vue/recommended',
 		'eslint:recommended',
 		'@vue/typescript/recommended'
 	],
+	parserOptions: {
+		ecmaVersion: 2020,
+		parser: '@typescript-eslint/parser'
+	},
 	rules: {
 		// Allow logs in development but not in production
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
@@ -127,8 +135,5 @@ module.exports = {
 	ignorePatterns: [
 		'tests/unit/coverage',
 		'dist/'
-	],
-	parserOptions: {
-		parser: '@typescript-eslint/parser'
-	}
+	]
 };

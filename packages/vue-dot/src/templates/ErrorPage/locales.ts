@@ -1,3 +1,4 @@
 export const locales = {
-	btnText: 'Retour à l\'accueil'
+	supportIdMessage: 'Votre identifiant de support\xa0:',
+	btnText: 'Retour à l’accueil'
 };

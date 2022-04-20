@@ -2,6 +2,8 @@
 
 exports[`registerAllComponents should register all components 1`] = `
 Array [
+  "CookieBanner",
+  "CookiesPage",
   "CopyBtn",
   "CustomIcon",
   "DataList",
@@ -10,16 +12,22 @@ Array [
   "DialogBox",
   "DownloadBtn",
   "ErrorPage",
+  "ExternalLinks",
   "FileUpload",
   "FilterModule",
+  "FooterBar",
   "FooterWrapper",
+  "FranceConnectBtn",
+  "HeaderBar",
   "HeaderLoading",
   "LangBtn",
+  "Logo",
   "NotificationBar",
   "PageContainer",
   "PaginatedTable",
   "SubHeader",
   "TableToolbar",
   "UploadWorkflow",
+  "UserMenuBtn",
 ]
 `;

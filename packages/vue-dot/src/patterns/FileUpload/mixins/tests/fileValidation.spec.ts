@@ -23,7 +23,6 @@ const file = {
 	name: 'avatar.png'
 } as File;
 
-// Tests
 describe('FileValidation', () => {
 	// computedAccept
 	it('computes the default accept string', () => {
@@ -61,7 +60,7 @@ describe('FileValidation', () => {
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 
-	it('returns false if the extension isn\'t allowed', () => {
+	it('returns false if the extension is not allowed', () => {
 		const wrapper = mount(component, {
 			propsData: {
 				allowedExtensions: ['pdf']
