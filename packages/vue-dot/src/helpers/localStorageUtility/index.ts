@@ -82,6 +82,7 @@ export class LocalStorageUtility {
 		}
 
 		this.setControlItem();
+
 		return this.get(this.prefix + key);
 	}
 

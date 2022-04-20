@@ -13,6 +13,9 @@
 		"name": "CNAM",
 		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
+	"scripts": {
+		"lint": "eslint . --fix"
+	},
 	"files": [
 		"*.ts"
 	]

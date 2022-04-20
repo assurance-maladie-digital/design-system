@@ -1,20 +1,30 @@
-#### An ESLint [Shareable Config](http://eslint.org/docs/developer-guide/shareable-configs) for [JavaScript style guide, linter, and formatter](http://standardjs.com)
+# ESLint Config
+
+ESLint configurations for JavaScript and TypeScript used across our projects.
+
+## Installation
+
+To install the package, you need to use yarn or npm:
+
+```sh
+yarn add @cnamts/eslint-config
+# OR
+npm install @cnamts/eslint-config
+```
 
 ## Usage
 
-Shareable configs are designed to work with the `extends` feature of `.eslintrc` files.
+To use the ESLint configuration, you need to create a `.eslintrc.js` file and use the `extends` property to reference `@cnamts/eslint-config`:
 
-**If you want to set up an config**, follow these steps in your project directory:
-
-Add this to your `.eslintrc` file,
-
-```
+```js
 module.exports = {
 	extends: '@cnamts/eslint-config'
 };
+```
 
-OR
+To use the TypeScript configuration, you need to reference `@cnamts/eslint-config`:
 
+```js
 module.exports = {
 	extends: '@cnamts/eslint-config/typescript'
 };

@@ -1,7 +1,7 @@
 module.exports = {
 	root: true,
 	parserOptions: {
-		ecmaVersion: 2018
+		ecmaVersion: 2020
 	},
 	env: {
 		node: true,
@@ -12,7 +12,13 @@ module.exports = {
 		'eslint:recommended'
 	],
 	rules: {
-		'indent': ['error', 'tab'],
+		// Allow logs in development but not in production
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+
+		'indent': ['error', 'tab', {
+			SwitchCase: 1
+		}],
 
 		// Force semi
 		'semi': ['error', 'always'],
@@ -51,5 +57,9 @@ module.exports = {
 
 		// No var
 		'no-var': 'error'
-	}
+	},
+	ignorePatterns: [
+		'tests/unit/coverage',
+		'dist/'
+	]
 };

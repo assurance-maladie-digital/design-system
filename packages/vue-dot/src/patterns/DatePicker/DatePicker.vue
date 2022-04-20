@@ -1,8 +1,8 @@
 <template>
 	<VMenu
 		ref="menu"
-		v-model="menu"
 		v-bind="menuOptions"
+		v-model="menu"
 	>
 		<template #activator="{}">
 			<VTextField

@@ -1,12 +1,11 @@
-
 import { ESLint } from 'eslint';
 
 import { code } from './fixtures/code';
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const baseConfig = require('../typescript.js');
+const baseConfig = require('../javascript');
 
-describe('TypeScript configuration', () => {
+describe('JavaScript configuration', () => {
 	const eslint = new ESLint({
 		useEslintrc: false,
 		baseConfig
@@ -15,7 +14,7 @@ describe('TypeScript configuration', () => {
 	it('lints the code correctly', async() => {
 		const results = await eslint.lintText(code);
 
-		expect(results[0].errorCount).toEqual(7);
+		expect(results[0].errorCount).toEqual(6);
 	});
 
 	it('applies the correct rules', async() => {

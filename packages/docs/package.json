@@ -14,6 +14,7 @@
 		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
 	"scripts": {
+		"lint": "eslint . --fix",
 		"dev": "nuxt",
 		"build": "nuxt build",
 		"start": "nuxt start",

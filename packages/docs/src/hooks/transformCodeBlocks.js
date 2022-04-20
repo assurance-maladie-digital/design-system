@@ -10,7 +10,7 @@ function markdownToCodeBlock(match) {
 		.replace(/"/g, '&quot;') // double quotes
 		.replace(/\n/g, '\\n') // new lines
 		.replace(/`/g, '\\`') // backticks
-		.replace(/\${/g, '\\$\\{') // string templates opening
+		.replace(/\${/g, '\\$\\{'); // string templates opening
 
 	// Wrap code in backtick chars to avoid issues with quotes (eg: :code="` myVar=""; `")
 	const code = '`' + escapedBlocContent + '`';

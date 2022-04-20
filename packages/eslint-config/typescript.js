@@ -1,19 +1,26 @@
 module.exports = {
 	root: true,
+	parserOptions: {
+		ecmaVersion: 2020,
+		parser: '@typescript-eslint/parser'
+	},
 	env: {
 		node: true,
 		es6: true,
 		jest: true
 	},
-	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		ecmaVersion: 2018
-	},
+	plugins: [
+		'@typescript-eslint'
+	],
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended'
 	],
 	rules: {
+		// Allow logs in development but not in production
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+
 		'indent': ['off'],
 		'@typescript-eslint/indent': ['error', 'tab'],
 
@@ -87,12 +94,17 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ['*.js'],
+			files: [
+				'*.js'
+			],
 			rules: {
 				// Allow require() in JS files
 				'@typescript-eslint/no-var-requires': 'off'
 			}
 		}
 	],
-	plugins: ['@typescript-eslint']
+	ignorePatterns: [
+		'tests/unit/coverage',
+		'dist/'
+	]
 };

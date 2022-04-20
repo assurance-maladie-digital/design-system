@@ -1,18 +1,10 @@
-export const codeFn = `
-   var foo = 1
-   var bar = function () {}
-   bar(foo)
-`;
-
-export const HtmlCodeTemplate = `
+export const code = `
 <template>
   <App>
      <Hello/>
    </App>
 </template>
-`;
 
-export const tsCodeTemplate= `
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";

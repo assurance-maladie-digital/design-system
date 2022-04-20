@@ -34,12 +34,6 @@
 		"@cnamts/shared": "^2.3.0",
 		"json-to-scss": "1.6.2"
 	},
-	"lint-staged": {
-		"*.{ts}": [
-			"eslint **/*.ts --fix",
-			"git add"
-		]
-	},
 	"publishConfig": {
 		"access": "public"
 	}

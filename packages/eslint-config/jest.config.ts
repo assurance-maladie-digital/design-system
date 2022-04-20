@@ -1,7 +1,7 @@
 import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
-	moduleFileExtensions: ['ts', 'js'],
+	moduleFileExtensions: ['js', 'ts'],
 	transform: {
 		'^.+\\.ts$': require.resolve('ts-jest')
 	},

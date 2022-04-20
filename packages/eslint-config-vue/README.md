@@ -1,15 +1,23 @@
-#### An ESLint [Shareable Config](http://eslint.org/docs/developer-guide/shareable-configs) for [JavaScript style guide, linter, and formatter](http://standardjs.com)
+# ESLint Config
+
+ESLint configurations used across our Vue.js projects.
+
+## Installation
+
+To install the package, you need to use yarn or npm:
+
+```sh
+yarn add @cnamts/eslint-config-vue
+# OR
+npm install @cnamts/eslint-config-vue
+```
 
 ## Usage
 
-Shareable configs are designed to work with the `extends` feature of `.eslintrc` files.
+To use the ESLint configuration, you need to create a `.eslintrc.js` file and use the `extends` property to reference `@cnamts/eslint-config-vue`:
 
-**If you want to set up an config**, follow these steps in your project directory:
-
-Add this to your `.eslintrc` file,
-
-```
+```js
 module.exports = {
-	extends: '@cnamts/eslint-config/vue'
+	extends: '@cnamts/eslint-config-vue'
 };
 ```

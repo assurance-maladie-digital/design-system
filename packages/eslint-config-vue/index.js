@@ -3,19 +3,20 @@ module.exports = {
 	env: {
 		node: true
 	},
-	parser: 'vue-eslint-parser',
 	extends: [
 		'@cnamts/eslint-config/typescript',
 		'plugin:vue/recommended',
 		'@vue/typescript/recommended'
 	],
+	parser: 'vue-eslint-parser',
+	parserOptions: {
+		ecmaVersion: 2020,
+		parser: '@typescript-eslint/parser'
+	},
 	rules: {
-		// Allow logs in development but not in production
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
-
 		// Tab indent in templates
 		'vue/html-indent': ['error', 'tab'],
+		'@typescript-eslint/indent': ['off'],
 
 		// Disallow spaces around equal in HTML attributes
 		// eg. attr= "value" is invalid
@@ -67,27 +68,13 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ['*.js'],
-			rules: {
-				// Allow require() in JS files
-				'@typescript-eslint/no-var-requires': 'off'
-			}
-		},
-		{
-			files: ['*.spec.ts'],
+			files: [
+				'*.spec.ts'
+			],
 			rules: {
 				// Sometimes in tests we mock more than one component
 				'vue/one-component-per-file': 'off'
 			}
-		},
-		{
-			files: ['*.vue'],
-			rules: {
-				'@typescript-eslint/indent': ['off']
-			}
 		}
-	],
-	parserOptions: {
-		parser: '@typescript-eslint/parser'
-	}
+	]
 };

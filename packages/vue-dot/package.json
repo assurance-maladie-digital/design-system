@@ -64,12 +64,6 @@
 		"vue-cli-plugin-vuetify": "2.4.8",
 		"vuetify-loader": "1.7.3"
 	},
-	"lint-staged": {
-		"*.{ts,vue}": [
-			"vue-cli-service lint",
-			"git add"
-		]
-	},
 	"publishConfig": {
 		"access": "public"
 	}
