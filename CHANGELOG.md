@@ -19,6 +19,7 @@
 - ♻️ **Refactoring**
   - **HeaderBar:** Modification de la valeur de la propriété `z-index` ([#1902](https://github.com/assurance-maladie-digital/design-system/pull/1902)) ([bc652ac](https://github.com/assurance-maladie-digital/design-system/commit/bc652aca7653046465994f5c8290a71090f7fdb2))
   - **UploadWorkflow:** Sélection automatique du type de fichier lors de l'upload par ligne ([#1919](https://github.com/assurance-maladie-digital/design-system/pull/1919)) ([bd2423d](https://github.com/assurance-maladie-digital/design-system/commit/bd2423deca29c604f4a7cdf8687e7a2e8666ab30))
+  - **FooterWrapper/FooterBtn:** Utilisation de `consola` pour les logs de dépréciation ([#1944](https://github.com/assurance-maladie-digital/design-system/pull/1944))
 
 - ♿️ **Accessibilité**
   - **DialogBox:** Ajout de l'attribut `aria-label` sur le bouton fermer ([#1892](https://github.com/assurance-maladie-digital/design-system/pull/1892)) ([7d2aa84](https://github.com/assurance-maladie-digital/design-system/commit/7d2aa8457a758979efa50767f2c629dd5b8892a5))
@@ -103,7 +104,7 @@
   - **consola:** Épinglage de la dépendance à la `v2.15.3` ([#1937](https://github.com/assurance-maladie-digital/design-system/pull/1937)) ([b7e9a6e](https://github.com/assurance-maladie-digital/design-system/commit/b7e9a6e4ffaad40bf15214c85e5ae6ff1469940b))
   - **babel-loader:** Mise à jour vers la `v8.2.5` ([#1941](https://github.com/assurance-maladie-digital/design-system/pull/1941)) ([619cd06](https://github.com/assurance-maladie-digital/design-system/commit/619cd06be7850b528e227c5d7ef187a9a199ab5b))
   - **core-js:** Mise à jour vers la `v3.22.1` ([#1942](//github.com/assurance-maladie-digital/design-system/pull/1942)) ([31e31cf](https://github.com/assurance-maladie-digital/design-system/commit/31e31cf91f429f7475c6471306e8f450204f4dca))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.2.5` ([#1943](https://github.com/assurance-maladie-digital/design-system/pull/1943))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.2.5` ([#1943](https://github.com/assurance-maladie-digital/design-system/pull/1943)) ([a9b0bfd](https://github.com/assurance-maladie-digital/design-system/commit/a9b0bfd7243417075e55b9c568cdfbf5e338e5cc))
 
 ## v2.3.0
 

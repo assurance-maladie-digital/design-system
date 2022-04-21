@@ -17,6 +17,8 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import consola from 'consola';
+
 	const Props = Vue.extend({
 		props: {
 			inert: {
@@ -39,7 +41,7 @@
 
 		mounted() {
 			// eslint-disable-next-line no-console
-			console.warn('FooterBtn is deprecated since v2.2.0, use FooterBar instead.');
+			consola.warn('FooterBtn is deprecated since v2.2.0, use FooterBar instead.');
 		}
 	}
 </script>
