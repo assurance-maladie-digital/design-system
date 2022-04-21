@@ -31,6 +31,7 @@
 		"test": "jest"
 	},
 	"devDependencies": {
+		"@cnamts/eslint-config": "^2.3.0",
 		"@cnamts/shared": "^2.3.0",
 		"json-to-scss": "1.6.2"
 	},

@@ -245,4 +245,72 @@ console.log(tokens.pageWidth); // 1440px
 ```
 
 </doc-tab-item>
+
+<doc-tab-item label="ESLint Config">
+
+Le package ESLint Config contient des configurations pour la qualité de code pour les projets JavaScript et TypeScript.
+
+Pour utiliser une des configurations, vous devez installer le package :
+
+<doc-tabs code>
+<doc-tab-item label="Yarn">
+```bash
+yarn add -D @cnamts/eslint-config
+```
+</doc-tab-item>
+
+<doc-tab-item label="npm">
+```bash
+npm install -D @cnamts/eslint-config
+```
+</doc-tab-item>
+</doc-tabs>
+
+Ensuite, vous pouvez utiliser la configuration dont vous avez besoin en créant un fichier `.eslintrc.js` :
+
+```js
+module.exports = {
+	extends: '@cnamts/eslint-config'
+};
+```
+
+Pour la configuration TypeScript :
+
+```js
+module.exports = {
+	extends: '@cnamts/eslint-config/typescript'
+};
+```
+
+</doc-tab-item>
+
+<doc-tab-item label="ESLint Config Vue">
+
+Le package ESLint Config Vue contient des configurations pour la qualité de code pour les projets Vue.js.
+
+Pour utiliser la configuration, vous devez installer le package :
+
+<doc-tabs code>
+<doc-tab-item label="Yarn">
+```bash
+yarn add -D @cnamts/eslint-config-vue
+```
+</doc-tab-item>
+
+<doc-tab-item label="npm">
+```bash
+npm install -D @cnamts/eslint-config-vue
+```
+</doc-tab-item>
+</doc-tabs>
+
+Ensuite, vous pouvez utiliser la configuration en créant un fichier `.eslintrc.js` :
+
+```js
+module.exports = {
+	extends: '@cnamts/eslint-config-vue'
+};
+```
+
+</doc-tab-item>
 </doc-tabs>

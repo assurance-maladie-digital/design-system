@@ -22,6 +22,7 @@
 	},
 	"dependencies": {
 		"@cnamts/design-tokens": "^2.3.0",
+		"@cnamts/eslint-config": "^2.3.0",
 		"@cnamts/form-builder": "^2.3.0",
 		"@cnamts/vue-dot": "^2.3.0",
 		"@netlify/functions": "1.0.0",
