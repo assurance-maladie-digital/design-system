@@ -250,18 +250,18 @@ console.log(tokens.pageWidth); // 1440px
 
 Le package ESLint Config contient des configurations pour la qualité de code pour les projets JavaScript et TypeScript.
 
-Pour utiliser une des configurations, vous devez installer le package :
+Pour utiliser une des configurations, vous devez installer le package ainsi qu’ESLint :
 
 <doc-tabs code>
 <doc-tab-item label="Yarn">
 ```bash
-yarn add -D @cnamts/eslint-config
+yarn add -D eslint @cnamts/eslint-config
 ```
 </doc-tab-item>
 
 <doc-tab-item label="npm">
 ```bash
-npm install -D @cnamts/eslint-config
+npm install -D eslint @cnamts/eslint-config
 ```
 </doc-tab-item>
 </doc-tabs>
@@ -288,18 +288,18 @@ module.exports = {
 
 Le package ESLint Config Vue contient des configurations pour la qualité de code pour les projets Vue.js.
 
-Pour utiliser la configuration, vous devez installer le package :
+Pour utiliser la configuration, vous devez installer le package ainsi qu’ESLint et le plugin ESLint Vue :
 
 <doc-tabs code>
 <doc-tab-item label="Yarn">
 ```bash
-yarn add -D @cnamts/eslint-config-vue
+yarn add -D eslint eslint-plugin-vue @cnamts/eslint-config-vue
 ```
 </doc-tab-item>
 
 <doc-tab-item label="npm">
 ```bash
-npm install -D @cnamts/eslint-config-vue
+npm install -D eslint eslint-plugin-vue @cnamts/eslint-config-vue
 ```
 </doc-tab-item>
 </doc-tabs>
@@ -309,6 +309,15 @@ Ensuite, vous pouvez utiliser la configuration en créant un fichier `.eslintrc.
 ```js
 module.exports = {
 	extends: '@cnamts/eslint-config-vue'
+};
+```
+
+Si vous utilisez la version 7 d’ESLint, vous devez configurer le parser pour utiliser `vue-eslint-parser` :
+
+```js
+module.exports = {
+	extends: '@cnamts/eslint-config-vue',
+	parser: 'vue-eslint-parser'
 };
 ```
 
