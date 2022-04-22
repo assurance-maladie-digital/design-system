@@ -74,6 +74,22 @@ The goal of our Design System is to unify our work, which allows teams to share 
        Design Tokens of our Design System
       </td>
     </tr>
+    <tr>
+      <td>
+        <a href="/packages/eslint-config">ESLint Config</a>
+      </td>
+      <td>
+       ESLint configurations used across our projects
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/packages/eslint-config-vue">ESLint Config Vue</a>
+      </td>
+      <td>
+       ESLint configuration used across our Vue.js projects
+      </td>
+    </tr>
   </tbody>
 </table>
 

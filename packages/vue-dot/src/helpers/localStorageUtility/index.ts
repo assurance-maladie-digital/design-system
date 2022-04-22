@@ -15,7 +15,7 @@ function isStorageAvailable(): boolean {
 		localStorage.removeItem(item);
 
 		return true;
-	} catch(e) {
+	} catch (e) {
 		return false;
 	}
 }
@@ -82,6 +82,7 @@ export class LocalStorageUtility {
 		}
 
 		this.setControlItem();
+
 		return this.get(this.prefix + key);
 	}
 

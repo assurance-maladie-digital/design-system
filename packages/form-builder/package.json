@@ -39,6 +39,7 @@
 		"vuetify": "^2.3.0"
 	},
 	"devDependencies": {
+		"@cnamts/eslint-config-vue": "^2.3.0",
 		"@cnamts/shared": "^2.3.0",
 		"@cnamts/vue-dot": "^2.3.0",
 		"@vue/cli-plugin-babel": "4.5.17",
@@ -48,12 +49,6 @@
 		"@vue/cli-service": "4.5.17",
 		"vue-cli-plugin-vuetify": "2.4.8",
 		"vuetify-loader": "1.7.3"
-	},
-	"lint-staged": {
-		"*.{ts,vue}": [
-			"vue-cli-service lint",
-			"git add"
-		]
 	},
 	"publishConfig": {
 		"access": "public"

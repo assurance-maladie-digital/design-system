@@ -1,10 +1,13 @@
 {
-	"name": "@cnamts/design-tokens",
+	"name": "@cnamts/eslint-config",
 	"version": "2.3.0",
-	"description": "Design Tokens for the French Health Insurance",
+	"description": "ESLint configurations for JavaScript and TypeScript used across our projects",
 	"keywords": [
 		"cnam",
-		"design-tokens"
+		"lint",
+		"eslint",
+		"javascript",
+		"typescript"
 	],
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
@@ -17,23 +20,20 @@
 		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
 	"files": [
-		"dist/*",
-		"src/*",
-		"*.ts",
-		"*.scss"
+		"*.js",
+		"*.ts"
 	],
-	"main": "./dist/tokens.js",
-	"module": "./src/tokens.ts",
+	"main": "javascript.js",
 	"scripts": {
-		"pre-commit": "lint-staged",
-		"build": "ts-node --project tsconfig.json --files scripts/build",
-		"lint": "eslint **/*.ts --fix",
+		"lint": "eslint . --fix",
 		"test": "jest"
 	},
-	"devDependencies": {
-		"@cnamts/eslint-config": "^2.3.0",
-		"@cnamts/shared": "^2.3.0",
-		"json-to-scss": "1.6.2"
+	"peerDependencies": {
+		"eslint": ">=7"
+	},
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "5.20.0",
+		"@typescript-eslint/parser": "5.20.0"
 	},
 	"publishConfig": {
 		"access": "public"

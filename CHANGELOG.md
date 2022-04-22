@@ -57,15 +57,20 @@
 - ⬆️ **Dépendances**
   - **@vue/cli:** Mise à jour du monorepo vers la `v5` ([#1913](https://github.com/assurance-maladie-digital/design-system/pull/1913)) ([91918c3](https://github.com/assurance-maladie-digital/design-system/commit/91918c357b6a8e29543d8548e5dd8672201366be))
 
-## FormBuilder
+### FormBuilder
 
 - 🔧 **Configuration**
   - **scripts:** Refonte des scripts `build` et `post-install` ([#1934](https://github.com/assurance-maladie-digital/design-system/pull/1934)) ([b7e464b](https://github.com/assurance-maladie-digital/design-system/commit/b7e464b05d74d9aa06a0446ad975122ce72c1f54))
 
-## Design Tokens
+### Design Tokens
 
 - 🔧 **Configuration**
   - **build:** Refonte du script de build ([#1932](https://github.com/assurance-maladie-digital/design-system/pull/1932)) ([513e439](https://github.com/assurance-maladie-digital/design-system/commit/513e43934aee00bc9f75d552020727e5a526395c))
+
+### ESLint Config
+
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout des packages `@cnamts/eslint-config` et `@cnamts/eslint-config-vue` ([#1950](https://github.com/assurance-maladie-digital/design-system/pull/1950))
 
 ### CLI Helpers
 
@@ -104,7 +109,7 @@
   - **babel-loader:** Mise à jour vers la `v8.2.5` ([#1941](https://github.com/assurance-maladie-digital/design-system/pull/1941)) ([619cd06](https://github.com/assurance-maladie-digital/design-system/commit/619cd06be7850b528e227c5d7ef187a9a199ab5b))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.2.7` ([#1948](https://github.com/assurance-maladie-digital/design-system/pull/1948)) ([7577b78](https://github.com/assurance-maladie-digital/design-system/commit/7577b78ae7b4a8bbb6e665ad31557fc07ec62be9))
   - **lint-staged:** Mise à jour vers la `v12.4.0` ([#1946](https://github.com/assurance-maladie-digital/design-system/pull/1946)) ([e07f539](https://github.com/assurance-maladie-digital/design-system/commit/e07f539b30d30b5627cb451f0855bed18e3851d1))
-  - **core-js:** Mise à jour vers la `v3.22.2` ([#1949](//github.com/assurance-maladie-digital/design-system/pull/1949))
+  - **core-js:** Mise à jour vers la `v3.22.2` ([#1949](//github.com/assurance-maladie-digital/design-system/pull/1949)) ([5f43416](https://github.com/assurance-maladie-digital/design-system/commit/5f43416ccca589b5799ea497bc45e78ea90979a3))
 
 ## v2.3.0
 

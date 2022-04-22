@@ -15,5 +15,11 @@
 	},
 	"files": [
 		"*.ts"
-	]
+	],
+	"scripts": {
+		"lint": "eslint . --fix"
+	},
+	"devDependencies": {
+		"@cnamts/eslint-config": "^2.3.0"
+	}
 }

@@ -1,12 +1,13 @@
 {
-	"name": "@cnamts/vue-cli-plugin-vue-dash",
+	"name": "@cnamts/eslint-config-vue",
 	"version": "2.3.0",
-	"description": "Vue CLI plugin to scaffold front-end projects",
+	"description": "ESLint configuration used across our Vue.js projects",
 	"keywords": [
 		"cnam",
+		"lint",
+		"eslint",
 		"vue",
-		"vue-cli",
-		"scaffolding"
+		"typescript"
 	],
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
@@ -18,21 +19,24 @@
 		"name": "CNAM",
 		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
+	"files": [
+		"*.js",
+		"*.ts"
+	],
 	"main": "index.js",
 	"scripts": {
-		"lint": "eslint . --fix"
+		"lint": "eslint . --fix",
+		"test": "jest"
+	},
+	"peerDependencies": {
+		"eslint": ">=7",
+		"eslint-plugin-vue": ">=7"
 	},
 	"dependencies": {
-		"consola": "^2.15.3",
-		"dayjs": "^1.8.34",
-		"fs-extra": "^10.0.0",
-		"superb": "^4.0.0"
-	},
-	"devDependencies": {
-		"@cnamts/design-tokens": "^2.3.0",
 		"@cnamts/eslint-config": "^2.3.0",
-		"@cnamts/form-builder": "^2.3.0",
-		"@cnamts/vue-dot": "^2.3.0"
+		"@rushstack/eslint-patch": "^1.1.3",
+		"@vue/eslint-config-standard": "^6.1.0",
+		"@vue/eslint-config-typescript": "^10.0.0"
 	},
 	"publishConfig": {
 		"access": "public"
