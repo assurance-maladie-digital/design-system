@@ -1,6 +1,6 @@
 @import './mixins.scss';
 
-.nuxt-content {
+@mixin headings {
 	> h1,
 	> h2,
 	> h3,
@@ -59,4 +59,8 @@
 			}
 		}
 	}
+}
+
+.nuxt-content {
+	@include headings;
 }

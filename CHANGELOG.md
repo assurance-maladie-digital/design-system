@@ -70,7 +70,7 @@
 ### ESLint Config
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout des packages `@cnamts/eslint-config` et `@cnamts/eslint-config-vue` ([#1950](https://github.com/assurance-maladie-digital/design-system/pull/1950))
+  - **global:** Ajout des packages `@cnamts/eslint-config` et `@cnamts/eslint-config-vue` ([#1950](https://github.com/assurance-maladie-digital/design-system/pull/1950)) ([c7dfc99](https://github.com/assurance-maladie-digital/design-system/commit/c7dfc99d633f124e43bdad9351d80279bb695619))
 
 ### CLI Helpers
 
@@ -91,6 +91,7 @@
   - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
   - **HeaderBar:** Mise à jour des exemples ([#1914](https://github.com/assurance-maladie-digital/design-system/pull/1914)) ([5af9c8e](https://github.com/assurance-maladie-digital/design-system/commit/5af9c8e4ec973c185cd9363b3ae3e897a9e3927b))
   - **CookiesPage:** Mise à jour de l'exemple d'utilisation ([#1939](https://github.com/assurance-maladie-digital/design-system/pull/1939)) ([a7e291e](https://github.com/assurance-maladie-digital/design-system/commit/a7e291e6afb0988ea617fd6b4f741d1ab443b325))
+  - **global:** Ajout de la page notes de version ([#1957](https://github.com/assurance-maladie-digital/design-system/pull/1957))
 
 ### Interne
 

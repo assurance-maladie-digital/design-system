@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<VBtn
-			:loading="state === 'pending'"
+			:loading="state === StateEnum.PENDING"
 			class="text-none"
 			color="primary"
 			@click="fetchUsers"
@@ -31,6 +31,8 @@
 
 	@Component
 	export default class UserList extends Vue {
+		StateEnum = StateEnum;
+
 		state: StateEnum = StateEnum.IDLE;
 		users: User[] = [];
 
