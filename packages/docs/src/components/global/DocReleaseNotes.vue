@@ -176,10 +176,28 @@
 	.doc-releases ::v-deep .v-markdown {
 		@include headings;
 
-		> p,
-		> ul > li,
-		> ul > li p {
+		p,
+		pre,
+		> ul > li {
 			margin-bottom: 16px !important;
+		}
+
+		> :last-child,
+		> :last-child > li:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		pre {
+			padding: 12px 16px;
+			background: #020d1f;
+			border-radius: 4px;
+
+			code {
+				padding: 0;
+				background: none;
+				text-shadow: none;
+				color: #ccc;
+			}
 		}
 	}
 </style>

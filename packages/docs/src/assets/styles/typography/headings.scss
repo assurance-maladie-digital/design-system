@@ -1,15 +1,6 @@
 @import './mixins.scss';
 
 @mixin headings {
-	> h1,
-	> h2,
-	> h3,
-	> h4,
-	> h5,
-	> h6 {
-		display: inline-block;
-	}
-
 	> h2 {
 		@include text-h5;
 		font-weight: 700;
@@ -62,5 +53,14 @@
 }
 
 .nuxt-content {
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		display: inline-block;
+	}
+
 	@include headings;
 }
