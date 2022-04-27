@@ -238,6 +238,34 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'formatDate',
 						to: '/fonctions/format-date'
+					},
+					{
+						title: 'formatNir',
+						to: '/fonctions/format-nir'
+					},
+					{
+						title: 'insertAt',
+						to: '/fonctions/insert-at'
+					},
+					{
+						title: 'copyToClipboard',
+						to: '/fonctions/copy-to-clipboard'
+					},
+					{
+						title: 'calcToHumanFileSize',
+						to: '/fonctions/calc-human-file-size'
+					},
+					{
+						title: 'getFileExtension',
+						to: '/fonctions/get-file-extension'
+					},
+					{
+						title: 'downloadFile',
+						to: '/fonctions/download-file'
+					},
+					{
+						title: 'debounce',
+						to: '/fonctions/debounce'
 					}
 				]
 			},
