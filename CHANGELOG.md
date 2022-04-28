@@ -84,7 +84,7 @@
   - **DocHeader:** Correction de l'affichage du menu de navigation ([#1903](https://github.com/assurance-maladie-digital/design-system/pull/1903)) ([2c15fca](https://github.com/assurance-maladie-digital/design-system/commit/2c15fca7a6eb601ea63a4fbddba93b5a3570474d))
 
 - ♻️ **Refactoring**
-  - **DocApi:** Utilisation de h2 s'il n'y a pas de titre ([#1964](https://github.com/assurance-maladie-digital/design-system/pull/1964)) ([9116bdc](https://github.com/assurance-maladie-digital/design-system/commit/9116bdc3a5db91b6931aba142f797cfbcc9fc8cc))
+  - **DocApi:** Utilisation de h2 s'il n'y a pas de noms de composants ([#1964](https://github.com/assurance-maladie-digital/design-system/pull/1964))
   - **DocTabItem:** Ajout de la prop `eager` ([#1894](https://github.com/assurance-maladie-digital/design-system/pull/1894)) ([cf4d05e](https://github.com/assurance-maladie-digital/design-system/commit/cf4d05efd6497b5d6eee328fef783aaf84b3a03b))
 
 - 📝 **Documentation**
