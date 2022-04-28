@@ -87,7 +87,7 @@
   - **DocTabItem:** Ajout de la prop `eager` ([#1894](https://github.com/assurance-maladie-digital/design-system/pull/1894)) ([cf4d05e](https://github.com/assurance-maladie-digital/design-system/commit/cf4d05efd6497b5d6eee328fef783aaf84b3a03b))
 
 - 📝 **Documentation**
-  - **fonctions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962)) ([3cc1f7f](https://github.com/assurance-maladie-digital/design-system/commit/3cc1f7f19b6d6d5e5f3993f6718cc253ce7198cf))
+  - **fonctions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962)) ([08622f8](https://github.com/assurance-maladie-digital/design-system/commit/08622f87859e70a387c080040ac4d24e3a96e5cc))
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
   - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
   - **HeaderBar:** Mise à jour des exemples ([#1914](https://github.com/assurance-maladie-digital/design-system/pull/1914)) ([5af9c8e](https://github.com/assurance-maladie-digital/design-system/commit/5af9c8e4ec973c185cd9363b3ae3e897a9e3927b))
