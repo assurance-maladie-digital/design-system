@@ -17,19 +17,12 @@
 				:key="`${componentName}-${itemName}`"
 				:class="{ 'mt-6': itemIndex > 0 || showTitle }"
 			>
-				<h3
-					v-if="showTitle"
+				<component
+					:is="component"
 					class="text-h6 mb-4"
 				>
 					{{ formatItemName(itemName) }}
-				</h3>
-
-				<h2
-					v-else
-					class="text-h6 mb-4"
-				>
-					{{ formatItemName(itemName) }}
-				</h2>
+				</component>
 
 				<DocApiTable
 					:field="itemName"
@@ -76,6 +69,10 @@
 			}
 
 			return Object.keys(this.api).length > 1;
+		}
+
+		get component(): string {
+			return this.showTitle ? 'h2' : 'h3';
 		}
 
 		formatItemName(itemName: string): string {
