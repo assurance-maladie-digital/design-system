@@ -17,9 +17,19 @@
 				:key="`${componentName}-${itemName}`"
 				:class="{ 'mt-6': itemIndex > 0 || showTitle }"
 			>
-				<h3 class="text-h6 mb-4">
+				<h3
+					v-if="showTitle"
+					class="text-h6 mb-4"
+				>
 					{{ formatItemName(itemName) }}
 				</h3>
+
+				<h2
+					v-else
+					class="text-h6 mb-4"
+				>
+					{{ formatItemName(itemName) }}
+				</h2>
 
 				<DocApiTable
 					:field="itemName"
