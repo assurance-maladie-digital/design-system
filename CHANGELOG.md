@@ -70,7 +70,7 @@
 ### ESLint Config
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout des packages `@cnamts/eslint-config` et `@cnamts/eslint-config-vue` ([#1950](https://github.com/assurance-maladie-digital/design-system/pull/1950))
+  - **global:** Ajout des packages `@cnamts/eslint-config` et `@cnamts/eslint-config-vue` ([#1950](https://github.com/assurance-maladie-digital/design-system/pull/1950)) ([c7dfc99](https://github.com/assurance-maladie-digital/design-system/commit/c7dfc99d633f124e43bdad9351d80279bb695619))
 
 ### CLI Helpers
 
@@ -91,6 +91,7 @@
   - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
   - **HeaderBar:** Mise à jour des exemples ([#1914](https://github.com/assurance-maladie-digital/design-system/pull/1914)) ([5af9c8e](https://github.com/assurance-maladie-digital/design-system/commit/5af9c8e4ec973c185cd9363b3ae3e897a9e3927b))
   - **CookiesPage:** Mise à jour de l'exemple d'utilisation ([#1939](https://github.com/assurance-maladie-digital/design-system/pull/1939)) ([a7e291e](https://github.com/assurance-maladie-digital/design-system/commit/a7e291e6afb0988ea617fd6b4f741d1ab443b325))
+  - **global:** Ajout de la page notes de version ([#1957](https://github.com/assurance-maladie-digital/design-system/pull/1957)) ([3291fc2](https://github.com/assurance-maladie-digital/design-system/commit/3291fc2011127932881672af574e1ba9fab1bc69))
 
 ### Interne
 
@@ -110,6 +111,7 @@
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.2.7` ([#1948](https://github.com/assurance-maladie-digital/design-system/pull/1948)) ([7577b78](https://github.com/assurance-maladie-digital/design-system/commit/7577b78ae7b4a8bbb6e665ad31557fc07ec62be9))
   - **lint-staged:** Mise à jour vers la `v12.4.0` ([#1946](https://github.com/assurance-maladie-digital/design-system/pull/1946)) ([e07f539](https://github.com/assurance-maladie-digital/design-system/commit/e07f539b30d30b5627cb451f0855bed18e3851d1))
   - **core-js:** Mise à jour vers la `v3.22.2` ([#1949](//github.com/assurance-maladie-digital/design-system/pull/1949)) ([5f43416](https://github.com/assurance-maladie-digital/design-system/commit/5f43416ccca589b5799ea497bc45e78ea90979a3))
+  - **@types/eslint:** Épinglage de la dépendance à la `v8.4.1` ([#1951](https://github.com/assurance-maladie-digital/design-system/pull/1951))
 
 ## v2.3.0
 

@@ -2,6 +2,7 @@ import { DrawerItem } from '~/types/drawer';
 
 import {
 	mdiSpeedometer,
+	mdiScriptTextOutline,
 	mdiViewDashboard,
 	mdiCogs,
 	mdiHumanMaleBoard,
@@ -18,14 +19,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/introduction'
 			},
 			{
-				title: 'Principes de design',
-				to: '/demarrer/principes-design'
-			},
-			{
-				title: 'Accessibilité',
-				to: '/demarrer/accessibilite'
-			},
-			{
 				title: 'Installation',
 				to: '/demarrer/installation'
 			},
@@ -34,8 +27,26 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/roadmap'
 			},
 			{
+				title: 'Notes de version',
+				to: '/demarrer/notes-de-version'
+			},
+			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
+			}
+		]
+	},
+	{
+		title: 'Fondamentaux',
+		icon: mdiScriptTextOutline,
+		items: [
+			{
+				title: 'Principes de design',
+				to: '/demarrer/principes-design'
+			},
+			{
+				title: 'Accessibilité',
+				to: '/demarrer/accessibilite'
 			}
 		]
 	},
