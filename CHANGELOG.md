@@ -84,8 +84,8 @@
   - **DocHeader:** Correction de l'affichage du menu de navigation ([#1903](https://github.com/assurance-maladie-digital/design-system/pull/1903)) ([2c15fca](https://github.com/assurance-maladie-digital/design-system/commit/2c15fca7a6eb601ea63a4fbddba93b5a3570474d))
 
 - ♻️ **Refactoring**
-  - **DocApi:** Utilisation de h2 s'il n'y a pas de noms de composants ([#1964](https://github.com/assurance-maladie-digital/design-system/pull/1964))
   - **DocTabItem:** Ajout de la prop `eager` ([#1894](https://github.com/assurance-maladie-digital/design-system/pull/1894)) ([cf4d05e](https://github.com/assurance-maladie-digital/design-system/commit/cf4d05efd6497b5d6eee328fef783aaf84b3a03b))
+  - **DocApi:** Utilisation de `h2` s'il n'y a pas de noms de composants ([#1964](https://github.com/assurance-maladie-digital/design-system/pull/1964)) ([5d492d7](https://github.com/assurance-maladie-digital/design-system/commit/5d492d7ff1b1def327f4524983cff9fa526fdc32))
 
 - 📝 **Documentation**
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
@@ -108,13 +108,13 @@
   - **fs-extra:** Mise à jour vers la `v10.1.0` ([#1929](https://github.com/assurance-maladie-digital/design-system/pull/1929)) ([dc1d1e9](https://github.com/assurance-maladie-digital/design-system/commit/dc1d1e908e0b28d5e63424f21f08863fb89f2db2))
   - **consola:** Épinglage de la dépendance à la `v2.15.3` ([#1937](https://github.com/assurance-maladie-digital/design-system/pull/1937)) ([b7e9a6e](https://github.com/assurance-maladie-digital/design-system/commit/b7e9a6e4ffaad40bf15214c85e5ae6ff1469940b))
   - **babel-loader:** Mise à jour vers la `v8.2.5` ([#1941](https://github.com/assurance-maladie-digital/design-system/pull/1941)) ([619cd06](https://github.com/assurance-maladie-digital/design-system/commit/619cd06be7850b528e227c5d7ef187a9a199ab5b))
-  - **core-js:** Mise à jour vers la `v3.22.2` ([#1949](//github.com/assurance-maladie-digital/design-system/pull/1949)) ([5f43416](https://github.com/assurance-maladie-digital/design-system/commit/5f43416ccca589b5799ea497bc45e78ea90979a3))
   - **@types/eslint:** Épinglage de la dépendance à la `v8.4.1` ([#1951](https://github.com/assurance-maladie-digital/design-system/pull/1951)) ([6cae147](https://github.com/assurance-maladie-digital/design-system/commit/6cae1472b6ca5748d8635e77776748542ddddd08))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.2.9` ([#1956](https://github.com/assurance-maladie-digital/design-system/pull/1956)) ([36e2eeb](https://github.com/assurance-maladie-digital/design-system/commit/36e2eebb2d2b27573e7b84811478bd7960ab948f))
   - **@types/node:** Mise à jour vers la `v14.18.16` ([#1958](https://github.com/asurance-maladie-digital/design-system/pull/1958)) ([a8a4cfb](https://github.com/assurance-maladie-digital/design-system/commit/a8a4cfb32905c66f28221320d7cb2704c49a1529))
   - **axios:** Mise à jour vers la `v0.27.2` ([#1959](https://github.com/assurance-maladie-digital/design-system/pull/1959)) ([f1dca35](https://github.com/assurance-maladie-digital/design-system/commit/f1dca35625a6364b04b9b730ade5a4bcbe68bcc6))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.21.0` ([#1960](https://github.com/assurance-maladie-digital/design-system/pull/1960)) ([aa8c84f](https://github.com/assurance-maladie-digital/design-system/commit/aa8c84f5a704267357940b0ca7f301cd8eb3e794))
-  - **lint-staged:** Mise à jour vers la `v12.4.1` ([#1961](https://github.com/assurance-maladie-digital/design-system/pull/1961))
+  - **lint-staged:** Mise à jour vers la `v12.4.1` ([#1961](https://github.com/assurance-maladie-digital/design-system/pull/1961)) ([b6ccb50](https://github.com/assurance-maladie-digital/design-system/commit/b6ccb501c024415cdef9f85ffb44a8f358724d90))
+  - **core-js:** Mise à jour vers la `v3.22.3` ([#1963](//github.com/assurance-maladie-digital/design-system/pull/1963))
 
 ## v2.3.0
 
