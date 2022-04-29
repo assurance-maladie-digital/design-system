@@ -8,6 +8,7 @@
 			:aria-current-value="null"
 			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
+			:href="homeHref"
 			class="vd-header-home-link"
 		>
 			<Logo
@@ -105,6 +106,10 @@
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: '/'
+			},
+			homeHref: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -164,6 +169,10 @@
 		}
 
 		get logoContainerComponent(): string {
+			if (this.homeHref) {
+				return 'a';
+			}
+
 			return this.homeLink ? 'RouterLink' : 'div';
 		}
 

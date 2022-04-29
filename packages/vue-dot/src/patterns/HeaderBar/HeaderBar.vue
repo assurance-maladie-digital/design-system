@@ -24,6 +24,7 @@
 						:service-sub-title="serviceSubTitle"
 						:mobile-version="isMobileVersion"
 						:home-link="homeLink"
+						:home-href="homeHref"
 					>
 						<slot name="secondary-logo" />
 					</HeaderBrandSection>
@@ -119,6 +120,10 @@
 			},
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
+				default: undefined
+			},
+			homeHref: {
+				type: String,
 				default: undefined
 			},
 			showNavBarMenuBtn: {
