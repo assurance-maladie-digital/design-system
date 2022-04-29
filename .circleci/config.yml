@@ -6,7 +6,8 @@ orbs:
   github-status: assurance-maladie-digital/github-status@1.3.0
   netlify: assurance-maladie-digital/netlify@1.1.0
 
-defaults: &defaults
+defaults:
+  &defaults
   working_directory: ~/project
   docker:
     - image: cimg/node:14.19-browsers
@@ -82,6 +83,8 @@ jobs:
             - ./project/packages/docs
       - github-status/report_failed_only:
           context: circleci/integration
+    # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
+    resource_class: large
   deploy-preview:
     <<: *defaults
     steps:
