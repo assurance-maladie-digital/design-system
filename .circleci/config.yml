@@ -85,7 +85,7 @@ jobs:
             - ./project/packages/docs
       - github-status/report_failed_only:
           context: circleci/integration
-    resource_class: xlarge
+    resource_class: large
   deploy-preview:
     <<: *defaults
     steps:
