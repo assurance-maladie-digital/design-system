@@ -33,11 +33,20 @@
 				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
 			</svg>
 
-			<img
+			<component
+				:is="secondaryLogoCtnComponent"
 				v-if="secondaryLogo"
-				:src="secondaryLogo.src"
-				:alt="secondaryLogo.alt"
+				:aria-current-value="null"
+				:aria-label="secondaryLogoLabel"
+				:to="homeLink"
+				:href="homeHref"
+				class="vd-header-home-link"
 			>
+				<img
+					:src="secondaryLogo.src"
+					:alt="secondaryLogo.alt"
+				>
+			</component>
 
 			<div
 				v-else-if="service.title || service.subTitle"
@@ -168,12 +177,32 @@
 			return Boolean(this.$slots.default || this.secondaryLogo);
 		}
 
+		get hasSecondaryLogoLink(): boolean {
+			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
+		}
+
 		get logoContainerComponent(): string {
 			if (this.homeHref) {
 				return 'a';
 			}
 
 			return this.homeLink ? 'RouterLink' : 'div';
+		}
+
+		get secondaryLogoCtnComponent(): string {
+			if (this.hasSecondaryLogoLink) {
+				return this.logoContainerComponent;
+			}
+
+			return 'div';
+		}
+
+		get secondaryLogoLabel(): string | null {
+			if (this.hasSecondaryLogoLink && this.secondaryLogo) {
+				return `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}`;
+			}
+
+			return null;
 		}
 
 		get showDivider(): boolean {
