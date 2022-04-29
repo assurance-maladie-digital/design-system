@@ -54,6 +54,7 @@ jobs:
             - .cache/
             - .config/yarn/global/
             - .yarn/
+    resource_class: large
   lint:
     <<: *defaults
     steps:
@@ -71,6 +72,7 @@ jobs:
       - codecov/upload
       - github-status/report_failed_only:
           context: circleci/integration
+    resource_class: large
   build:
     <<: *defaults
     steps:
@@ -83,8 +85,7 @@ jobs:
             - ./project/packages/docs
       - github-status/report_failed_only:
           context: circleci/integration
-    # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
-    resource_class: large
+    resource_class: xlarge
   deploy-preview:
     <<: *defaults
     steps:
