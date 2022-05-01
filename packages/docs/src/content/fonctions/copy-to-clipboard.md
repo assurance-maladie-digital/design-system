@@ -1,6 +1,6 @@
 ---
 title: Fonction copyToClipboard
-description: La fonction `copyToClipboard` de copier du texte dans le presse papier.
+description: La fonction `copyToClipboard` de copier du texte dans le presse-papier.
 ---
 
 <doc-tabs>

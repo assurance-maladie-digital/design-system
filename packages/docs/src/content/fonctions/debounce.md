@@ -17,12 +17,12 @@ const sayHello = () => {
 let sayHelloDebounced = debounce(sayHello);
 sayHelloDebounced();
 sayHelloDebounced();
-// console.log('Hello!') only one time, after 500ms
+// console.log('Hello!') seulement une fois, après 500ms
 
 sayHelloDebounced = debounce(sayHello, 2000);
 sayHelloDebounced();
 sayHelloDebounced();
-// console.log('Hello!') only one time, after 2s
+// console.log('Hello!') seulement une fois, après 2s
 ```
 
 <doc-alert type="info">

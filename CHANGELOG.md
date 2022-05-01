@@ -96,16 +96,16 @@
   - **DocApi:** Utilisation de `h2` s'il n'y a pas de noms de composants ([#1964](https://github.com/assurance-maladie-digital/design-system/pull/1964)) ([5d492d7](https://github.com/assurance-maladie-digital/design-system/commit/5d492d7ff1b1def327f4524983cff9fa526fdc32))
 
 - 🎨 **Qualité de code**
-  - **global:** Utilisation des enums dans le template des composants ([#1977](https://github.com/assurance-maladie-digital/design-system/pull/1977))
+  - **global:** Utilisation des enums dans le template des composants ([#1977](https://github.com/assurance-maladie-digital/design-system/pull/1977)) ([b35b281](https://github.com/assurance-maladie-digital/design-system/commit/b35b281ca623a5fef76ec0d3a5d687f829ba0b53))
 
 - 📝 **Documentation**
-  - **fonctions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962)) ([08622f8](https://github.com/assurance-maladie-digital/design-system/commit/08622f87859e70a387c080040ac4d24e3a96e5cc))
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
   - **functions:** Documentation de la fonction `formatDate` ([#1883](https://github.com/assurance-maladie-digital/design-system/pull/1883)) ([4cff971](https://github.com/assurance-maladie-digital/design-system/commit/4cff9719de724662cfee642f606b46b2b52da449))
   - **HeaderBar:** Mise à jour des exemples ([#1914](https://github.com/assurance-maladie-digital/design-system/pull/1914)) ([5af9c8e](https://github.com/assurance-maladie-digital/design-system/commit/5af9c8e4ec973c185cd9363b3ae3e897a9e3927b))
   - **CookiesPage:** Mise à jour de l'exemple d'utilisation ([#1939](https://github.com/assurance-maladie-digital/design-system/pull/1939)) ([a7e291e](https://github.com/assurance-maladie-digital/design-system/commit/a7e291e6afb0988ea617fd6b4f741d1ab443b325))
   - **global:** Ajout de la page notes de version ([#1957](https://github.com/assurance-maladie-digital/design-system/pull/1957)) ([3291fc2](https://github.com/assurance-maladie-digital/design-system/commit/3291fc2011127932881672af574e1ba9fab1bc69))
   - **release-notes:** Ajout d'un lien vers les notes de version antérieures ([#1974](https://github.com/assurance-maladie-digital/design-system/pull/1974)) ([d528934](https://github.com/assurance-maladie-digital/design-system/commit/d52893420266cd489c7e3cc4c58e293c84064b37))
+  - **functions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962))
 
 ### Interne
 
@@ -305,7 +305,7 @@ Cette version comporte l'ajout du nouveau composant `UserMenuBtn` et des règles
   - **HeaderBar:** Mise à jour de l'exemple d'utilisation du slot par défaut ([#1838](https://github.com/assurance-maladie-digital/design-system/pull/1838)) ([8d921ef](https://github.com/assurance-maladie-digital/design-system/commit/8d921ef047a4553fc2c0026408e20842b748dc89))
   - **HeaderBar:** Correction du nom du slot `secondary-logo` ([#1846](https://github.com/assurance-maladie-digital/design-system/pull/1846)) ([0319f5f](https://github.com/assurance-maladie-digital/design-system/commit/0319f5f09b06739278a5c539277fae8860fa1ffc))
   - **roadmap:** Mise à jour de la page ([#1864](https://github.com/assurance-maladie-digital/design-system/pull/1864)) ([b1debdf](https://github.com/assurance-maladie-digital/design-system/commit/b1debdf9538550fc661d8d21098ecf0f371c4022))
-  - **rules:** Documentation des classes utilitaires CSS ([#1861](https://github.com/assurance-maladie-digital/design-system/pull/1861)) ([9f939c4](https://github.com/assurance-maladie-digital/design-system/commit/9f939c434faf0e8a0bd47186666d75cfb3fb97e2))
+  - **styles:** Documentation des classes utilitaires CSS ([#1861](https://github.com/assurance-maladie-digital/design-system/pull/1861)) ([9f939c4](https://github.com/assurance-maladie-digital/design-system/commit/9f939c434faf0e8a0bd47186666d75cfb3fb97e2))
 
 ### Interne
 
