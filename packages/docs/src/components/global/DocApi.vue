@@ -18,7 +18,7 @@
 				:class="{ 'mt-6': itemIndex > 0 || showTitle }"
 			>
 				<component
-					:is="component"
+					:is="subHeaderElement"
 					class="text-h6 mb-4"
 				>
 					{{ formatItemName(itemName) }}
@@ -71,7 +71,7 @@
 			return Object.keys(this.api).length > 1;
 		}
 
-		get component(): string {
+		get subHeaderElement(): string {
 			return this.showTitle ? 'h2' : 'h3';
 		}
 
