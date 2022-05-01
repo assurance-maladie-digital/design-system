@@ -81,6 +81,9 @@
 
 ### Documentation
 
+- ✨ **Nouvelles fonctionnalités**
+  - **DocHeader:** Ajout d'un menu avec des informations sur les versions ([#1970](https://github.com/assurance-maladie-digital/design-system/pull/1970))
+
 - 🐛 **Corrections de bugs**
   - **DocHeader:** Correction du chevauchement du composant ([#1899](https://github.com/assurance-maladie-digital/design-system/pull/1899)) ([19be92b](https://github.com/assurance-maladie-digital/design-system/commit/19be92b15884b56745fdb7296e6f168150d32dcc))
   - **DocHeader:** Correction de l'affichage du menu de navigation ([#1903](https://github.com/assurance-maladie-digital/design-system/pull/1903)) ([2c15fca](https://github.com/assurance-maladie-digital/design-system/commit/2c15fca7a6eb601ea63a4fbddba93b5a3570474d))
@@ -102,7 +105,7 @@
   - **global:** Ajout du package `@cnamts/shared` ([#1933](https://github.com/assurance-maladie-digital/design-system/pull/1933)) ([beba62d](https://github.com/assurance-maladie-digital/design-system/commit/beba62d17f7d14d5c6b697c922bd6167aa6cfb85))
 
 - 🔧 **Configuration**
-  - **ci:** Ajout des `resource_class` à dans la configuration de CircleCI ([#1979](https://github.com/assurance-maladie-digital/design-system/pull/1979))
+  - **ci:** Ajout des `resource_class` à dans la configuration de CircleCI ([#1979](https://github.com/assurance-maladie-digital/design-system/pull/1979)) ([fddf9ff](https://github.com/assurance-maladie-digital/design-system/commit/fddf9fff36cd027f03f6299293cd8c38509a7912))
 
 - ⬆️ **Dépendances**
   - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))
