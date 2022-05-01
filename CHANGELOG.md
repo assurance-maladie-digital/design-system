@@ -82,7 +82,8 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **DocHeader:** Ajout d'un menu avec des informations sur les versions ([#1970](https://github.com/assurance-maladie-digital/design-system/pull/1970))
+  - **DocHeader:** Ajout d'un menu avec des informations sur les versions ([#1971](https://github.com/assurance-maladie-digital/design-system/pull/1971)) ([14bdd0f](https://github.com/assurance-maladie-digital/design-system/commit/14bdd0f74741f3e6fad8d88e35e5e56628721685))
+  - **DocHeader:** Ajout d'un lien vers GitHub ([#1972](https://github.com/assurance-maladie-digital/design-system/pull/1972))
 
 - 🐛 **Corrections de bugs**
   - **DocHeader:** Correction du chevauchement du composant ([#1899](https://github.com/assurance-maladie-digital/design-system/pull/1899)) ([19be92b](https://github.com/assurance-maladie-digital/design-system/commit/19be92b15884b56745fdb7296e6f168150d32dcc))

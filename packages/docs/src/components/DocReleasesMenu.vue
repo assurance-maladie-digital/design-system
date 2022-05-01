@@ -14,7 +14,7 @@
 				v-bind="attrs"
 				v-on="on"
 				text
-				class="text-none px-2 mr-4 mr-lg-0"
+				class="text-none px-2"
 			>
 				v{{ version }}
 
