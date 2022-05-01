@@ -44,7 +44,7 @@
 					<VDivider
 						v-else-if="item.type === ItemTypeEnum.DIVIDER"
 						:key="index"
-						class="mb-1"
+						class="mt-2 mb-2"
 					/>
 
 					<VListItem
@@ -106,7 +106,7 @@
 			},
 			{
 				type: ItemTypeEnum.TITLE,
-				label: 'Version'
+				label: 'Versions'
 			},
 			{
 				type: ItemTypeEnum.ITEM,
