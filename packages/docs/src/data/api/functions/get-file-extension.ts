@@ -4,8 +4,8 @@ export const api: Api = {
 	getFileExtension: {
 		arguments: [
 			{
-				name: 'fileName',
-				description: 'Le nom du fichier',
+				name: 'filename',
+				description: 'Le nom du fichier.',
 				type: 'string',
 				required: true
 			}

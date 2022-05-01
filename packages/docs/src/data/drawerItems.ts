@@ -236,6 +236,22 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Fonctions',
 				items: [
 					{
+						title: 'calcHumanFileSize',
+						to: '/fonctions/calc-human-file-size'
+					},
+					{
+						title: 'copyToClipboard',
+						to: '/fonctions/copy-to-clipboard'
+					},
+					{
+						title: 'debounce',
+						to: '/fonctions/debounce'
+					},
+					{
+						title: 'downloadFile',
+						to: '/fonctions/download-file'
+					},
+					{
 						title: 'formatDate',
 						to: '/fonctions/format-date'
 					},
@@ -244,28 +260,12 @@ export const drawerItems: DrawerItem[] = [
 						to: '/fonctions/format-nir'
 					},
 					{
-						title: 'insertAt',
-						to: '/fonctions/insert-at'
-					},
-					{
-						title: 'copyToClipboard',
-						to: '/fonctions/copy-to-clipboard'
-					},
-					{
-						title: 'calcToHumanFileSize',
-						to: '/fonctions/calc-human-file-size'
-					},
-					{
 						title: 'getFileExtension',
 						to: '/fonctions/get-file-extension'
 					},
 					{
-						title: 'downloadFile',
-						to: '/fonctions/download-file'
-					},
-					{
-						title: 'debounce',
-						to: '/fonctions/debounce'
+						title: 'insertAt',
+						to: '/fonctions/insert-at'
 					}
 				]
 			},

@@ -5,7 +5,7 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'nir',
-				description: 'Le NIR à formatter',
+				description: 'Le NIR à formatter.',
 				type: 'string',
 				required: true
 			}

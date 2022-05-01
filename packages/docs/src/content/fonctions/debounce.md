@@ -1,6 +1,6 @@
 ---
 title: Fonction debounce
-description: La fonction `debounce` permet d'empaquetter une fonction dans une autre qui rettardera son execution.
+description: La fonction `debounce` permet de n’exécuter une fonction qu’une seule fois, après un délai depuis le dernier appel à la fonction.
 ---
 
 <doc-tabs>
@@ -8,18 +8,26 @@ description: La fonction `debounce` permet d'empaquetter une fonction dans une a
 <doc-tab-item label="Utilisation">
 
 ```ts
-import { debounce } from '@cnamts/vue-dot/src/functions/formatDate';
+import { debounce } from '@cnamts/vue-dot/src/functions/debounce';
 
 const sayHello = () => {
-  console.log('Hello !');
-}
+	console.log('Hello!');
+};
 
-sayHelloDebounced = debounce(sayHello);
-sayHelloDebounced(); // console.log('Hello !') after 500 ms
+let sayHelloDebounced = debounce(sayHello);
+sayHelloDebounced();
+sayHelloDebounced();
+// console.log('Hello!') only one time, after 500ms
 
 sayHelloDebounced = debounce(sayHello, 2000);
-sayHelloDebounced(); // console.log('Hello !') after 2000 ms
+sayHelloDebounced();
+sayHelloDebounced();
+// console.log('Hello!') only one time, after 2s
 ```
+
+<doc-alert type="info">
+Cette fonction permet d’améliorer les performances en réduisant le nombre d’appels à une fonction.
+</doc-alert>
 
 </doc-tab-item>
 

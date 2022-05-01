@@ -1,6 +1,6 @@
 ---
 title: Fonction formatDate
-description: La fonction `formatDate` permet d’appliquer un [format Day.js](https://day.js.org/docs/en/display/format) à une variable de type Dayjs.
+description: La fonction `formatDate` permet d’appliquer un [format](https://day.js.org/docs/en/display/format) à une variable de type [Day.js](https://day.js.org/en/).
 ---
 
 <doc-tabs>
@@ -10,10 +10,9 @@ description: La fonction `formatDate` permet d’appliquer un [format Day.js](ht
 ```ts
 import { formatDate } from '@cnamts/vue-dot/src/functions/formatDate';
 
-date = dayjs('2020-05-01');
+const date = dayjs('2020-05-01');
 
 formatDate(date); // 01/05/2020
-
 formatDate(date, 'D/M/YYYY'); // 2/5/2020
 ```
 

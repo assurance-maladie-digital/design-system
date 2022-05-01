@@ -1,6 +1,6 @@
 ---
 title: Fonction formatNir
-description: La fonction `formatNir` permet de formatter une chaîne de caractères assimillée à un NIR.
+description: La fonction `formatNir` permet de formatter une chaîne de caractères assimilée à un Numéro de sécurité sociale (NIR).
 ---
 
 <doc-tabs>
@@ -10,7 +10,8 @@ description: La fonction `formatNir` permet de formatter une chaîne de caractè
 ```ts
 import { formatNir } from '@cnamts/vue-dot/src/functions/formatNir';
 
-formatNir('012345678901234'); // '0 12 34 56 789 012 34' 
+formatNir('2690549588157'); // '2 69 05 49 588 157'
+formatNir('269054958815780'); // '2 69 05 49 588 157 80'
 ```
 
 </doc-tab-item>

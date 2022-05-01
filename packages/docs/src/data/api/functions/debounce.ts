@@ -5,13 +5,13 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'callback',
-				description: 'La fonction à executer',
+				description: 'La fonction à exécuter.',
 				type: '() => void',
 				required: true
 			},
 			{
 				name: 'time',
-				description: 'Le temps à attendre en ms',
+				description: 'Le délai d’attente en millisecondes.',
 				type: 'number',
 				default: 500
 			}

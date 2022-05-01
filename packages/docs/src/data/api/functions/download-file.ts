@@ -5,25 +5,25 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'content',
-				description: 'Le fichier à mettre en téléchargement',
+				description: 'Le fichier à télécharger.',
 				type: 'ArrayBufferView | ArrayBuffer | Blob | string',
 				required: true
 			},
 			{
 				name: 'fileName',
-				description: 'Le nom que le fichier doit prendre',
+				description: 'Le nom du fichier.',
 				type: 'string',
 				required: true
 			},
 			{
 				name: 'type',
-				description: 'Le type du fichier',
+				description: 'Le type du fichier.',
 				type: 'string',
 				required: true
 			},
 			{
 				name: 'utf8Bom',
-				description: 'UTF-8 header pour les fichiers Excel',
+				description: 'Ajoute une en-tête UTF-8 pour les fichiers Excel.',
 				type: 'boolean',
 				default: false
 			}

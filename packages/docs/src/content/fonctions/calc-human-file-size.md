@@ -1,6 +1,6 @@
 ---
 title: Fonction calcHumanFileSize
-description: La fonction `calcHumanFileSize` permet de convertir un nombre de byte en unité lisible.
+description: La fonction `calcHumanFileSize` permet de convertir un nombre de bytes en nombre plus lisible avec une unité.
 ---
 
 <doc-tabs>
@@ -8,14 +8,12 @@ description: La fonction `calcHumanFileSize` permet de convertir un nombre de by
 <doc-tab-item label="Utilisation">
 
 ```ts
-import { calcHumanFileSize } from '@cnamts/vue-dot/src/functions/calcHumanFileSize';
+const SPACE_CHARACTER = ' ';
+const fileSizeUnits = [ 'o', 'Ko', 'Mo', 'Go'];
 
-fileSizeUnits = [ 'o', 'ko', 'mo', 'go'];
-separator = ' ';
-
-calcHumanFileSize(1024, fileSizeUnits, seprator); // '1 ko' 
-calcHumanFileSize(1048576, fileSizeUnits, seprator); // '1 mo' 
-calcHumanFileSize(1073741824, fileSizeUnits, seprator); // '1 go' 
+calcHumanFileSize(1024, fileSizeUnits, SPACE_CHARACTER); // '1 Ko'
+calcHumanFileSize(1_048_576, fileSizeUnits, SPACE_CHARACTER); // '1 Mo'
+calcHumanFileSize(1_073_741_824, fileSizeUnits, SPACE_CHARACTER); // '1 Go'
 ```
 
 </doc-tab-item>

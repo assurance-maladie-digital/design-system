@@ -10,7 +10,7 @@ description: La fonction `copyToClipboard` de copier du texte dans le presse pap
 ```ts
 import { copyToClipboard } from '@cnamts/vue-dot/src/functions/copyToClipboard';
 
-copyToClipboard('text to copy');
+copyToClipboard('Texte à copier');
 ```
 
 </doc-tab-item>

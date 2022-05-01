@@ -5,7 +5,7 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'textToCopy',
-				description: 'Le texte à copier dans le presse papier',
+				description: 'Le texte à copier dans le presse papier.',
 				type: 'string',
 				required: true
 			}

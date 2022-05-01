@@ -1,6 +1,6 @@
 ---
 title: Fonction getFileExtension
-description: La fonction `getFileExtension` permet de récupérer l’extension du nom d’un fichier.
+description: La fonction `getFileExtension` permet de récupérer l’extension à partir du nom d’un fichier.
 ---
 
 <doc-tabs>
@@ -10,8 +10,8 @@ description: La fonction `getFileExtension` permet de récupérer l’extension 
 ```ts
 import { getFileExtension } from '@cnamts/vue-dot/src/functions/getFileExtension';
 
-getFileExtension('image.jpeg'); // '.jpeg'
-getFileExtension('text.txt'); // '.txt'
+getFileExtension('exemple.jpeg'); // 'jpeg'
+getFileExtension('exemple.txt'); // 'txt'
 ```
 
 </doc-tab-item>

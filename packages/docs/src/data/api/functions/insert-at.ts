@@ -5,19 +5,19 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'source',
-				description: 'Le texte à modifier',
+				description: 'La chaîne de caractères à modifier.',
 				type: 'string',
 				required: true
 			},
 			{
 				name: 'index',
-				description: 'La position où insérer le texte',
+				description: 'La position à laquelle insérer le texte.',
 				type: 'number',
 				required: true
 			},
 			{
 				name: 'replacement',
-				description: 'Le texte à insérer',
+				description: 'Le texte à insérer.',
 				type: 'string',
 				required: true
 			}
