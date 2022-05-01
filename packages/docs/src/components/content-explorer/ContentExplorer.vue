@@ -48,7 +48,7 @@
 
 			<div class="content flex-grow-1 ma-4">
 				<VProgressLinear
-					v-show="state === 'pending'"
+					v-show="state === StateEnum.PENDING"
 					indeterminate
 					absolute
 				/>
@@ -121,6 +121,8 @@
 		}
 	})
 	export default class ContentExplorer extends MixinsDeclaration {
+		StateEnum = StateEnum;
+
 		searchIcon = mdiMagnify;
 		openFolderIcon = mdiFolderOpen;
 		folderIcon = mdiFolder;

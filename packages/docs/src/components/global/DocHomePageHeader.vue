@@ -7,7 +7,7 @@
 
 		<div class="d-flex flex-wrap flex-grow-1 justify-space-between max-width-none ma-n2">
 			<p
-				v-if="state === 'resolved'"
+				v-if="state === StateEnum.RESOLVED"
 				class="ma-2"
 			>
 				<span class="text-h6">
@@ -65,6 +65,8 @@
 
 	@Component
 	export default class DocHomePageHeader extends Vue {
+		StateEnum = StateEnum;
+
 		githubIcon = mdiGithub;
 
 		state = StateEnum.IDLE;
@@ -79,7 +81,7 @@
 			const release = await getLatestRelease();
 
 			this.state = StateEnum.RESOLVED;
-			this.version = release.version;
+			this.version = release.name;
 			this.releaseDate = formatReleaseDate(release.date);
 		}
 	}

@@ -6,10 +6,11 @@ orbs:
   github-status: assurance-maladie-digital/github-status@1.3.0
   netlify: assurance-maladie-digital/netlify@1.1.0
 
-defaults: &defaults
+defaults:
+  &defaults
   working_directory: ~/project
   docker:
-    - image: cimg/node:14.19-browsers
+    - image: cimg/node:16.15-browsers
 
 aliases:
   - &restore_cache
@@ -53,6 +54,7 @@ jobs:
             - .cache/
             - .config/yarn/global/
             - .yarn/
+    resource_class: large
   lint:
     <<: *defaults
     steps:
@@ -70,6 +72,7 @@ jobs:
       - codecov/upload
       - github-status/report_failed_only:
           context: circleci/integration
+    resource_class: large
   build:
     <<: *defaults
     steps:
@@ -82,6 +85,7 @@ jobs:
             - ./project/packages/docs
       - github-status/report_failed_only:
           context: circleci/integration
+    resource_class: large
   deploy-preview:
     <<: *defaults
     steps:
