@@ -6,6 +6,10 @@
 		clipped-left
 		service-title="Design System"
 	>
+		<template #default>
+			<DocReleasesMenu />
+		</template>
+
 		<template #navigation-drawer="{ drawer, updateDrawer }">
 			<DocDrawer
 				:value="drawer"
@@ -22,10 +26,12 @@
 
 	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
+	import DocReleasesMenu from './DocReleasesMenu.vue';
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
 
 	@Component({
 		components: {
+			DocReleasesMenu,
 			DocDrawer
 		}
 	})
