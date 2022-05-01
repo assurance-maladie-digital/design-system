@@ -89,11 +89,14 @@
   - **DocHeader:** Correction du chevauchement du composant ([#1899](https://github.com/assurance-maladie-digital/design-system/pull/1899)) ([19be92b](https://github.com/assurance-maladie-digital/design-system/commit/19be92b15884b56745fdb7296e6f168150d32dcc))
   - **DocHeader:** Correction de l'affichage du menu de navigation ([#1903](https://github.com/assurance-maladie-digital/design-system/pull/1903)) ([2c15fca](https://github.com/assurance-maladie-digital/design-system/commit/2c15fca7a6eb601ea63a4fbddba93b5a3570474d))
   - **DocApi:** Correction d'un bug d'affichage ([#1975](https://github.com/assurance-maladie-digital/design-system/pull/1975)) ([6f55342](https://github.com/assurance-maladie-digital/design-system/commit/6f5534203270aec4d2d80ff41aa024dab286e26a))
-  - **DocExample:** Correction de la gestion des erreurs ([#1976](https://github.com/assurance-maladie-digital/design-system/pull/1976))
+  - **DocExample:** Correction de la gestion des erreurs ([#1976](https://github.com/assurance-maladie-digital/design-system/pull/1976)) ([e7bf0f0](https://github.com/assurance-maladie-digital/design-system/commit/e7bf0f0320fcf6624db06254ef40cc3b35a85bb5))
 
 - ♻️ **Refactoring**
   - **DocTabItem:** Ajout de la prop `eager` ([#1894](https://github.com/assurance-maladie-digital/design-system/pull/1894)) ([cf4d05e](https://github.com/assurance-maladie-digital/design-system/commit/cf4d05efd6497b5d6eee328fef783aaf84b3a03b))
   - **DocApi:** Utilisation de `h2` s'il n'y a pas de noms de composants ([#1964](https://github.com/assurance-maladie-digital/design-system/pull/1964)) ([5d492d7](https://github.com/assurance-maladie-digital/design-system/commit/5d492d7ff1b1def327f4524983cff9fa526fdc32))
+
+- 🎨 **Qualité de code**
+  - **global:** Utilisation des enums dans le template des composants ([#1977](https://github.com/assurance-maladie-digital/design-system/pull/1977))
 
 - 📝 **Documentation**
   - **guides:** Ajout d'un guide pour récupérer des données et les afficher dans un tableau paginé ([#1860](https://github.com/assurance-maladie-digital/design-system/pull/1860)) ([76c1aa9](https://github.com/assurance-maladie-digital/design-system/commit/76c1aa97fd041a1938b16bdaa7efcd18cf427972))
