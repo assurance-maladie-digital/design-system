@@ -17,7 +17,7 @@
   - **SubHeader:** Correction de l'espacement interne du bouton *Retour* ([#1900](https://github.com/assurance-maladie-digital/design-system/pull/1900)) ([a996103](https://github.com/assurance-maladie-digital/design-system/commit/a99610324223a81399dfb7b41cfe81599391e1ca))
   - **UserMenuBtn:** Correction de l'espacement interne ([#1904](https://github.com/assurance-maladie-digital/design-system/pull/1904)) ([ac45f14](https://github.com/assurance-maladie-digital/design-system/commit/ac45f14002b8e2fb2ddcf0721cee6fb6740b0e36))
   - **DatePicker:** Correction de l'affichage de `Invalid Date` dans le champ texte ([#1917](https://github.com/assurance-maladie-digital/design-system/pull/1917)) ([b8f1b75](https://github.com/assurance-maladie-digital/design-system/commit/b8f1b754161c7b8c95d95640ca6b18437f394cfe))
-  - **getFileExtension:** Correction d'une faute d'orthographe ([#1982](https://github.com/assurance-maladie-digital/design-system/pull/1982))
+  - **getFileExtension:** Correction d'une faute d'orthographe ([#1982](https://github.com/assurance-maladie-digital/design-system/pull/1982)) ([e41afa8](https://github.com/assurance-maladie-digital/design-system/commit/e41afa8538f4309af76140315f391aaaa9d37668))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Modification de la valeur de la propriété `z-index` ([#1902](https://github.com/assurance-maladie-digital/design-system/pull/1902)) ([bc652ac](https://github.com/assurance-maladie-digital/design-system/commit/bc652aca7653046465994f5c8290a71090f7fdb2))
@@ -135,6 +135,7 @@
   - **@babel/core:** Mise à jour vers la `v7.17.10` ([#1968](https://github.com/assurance-maladie-digital/design-system/pull/1968)) ([40d9ad0](https://github.com/assurance-maladie-digital/design-system/commit/40d9ad0d5595766185a2baa96ef28a25f3a28c5d))
   - **node.js:** Mise à jour de vers la `v16` ([#1952](https://github.com/assurance-maladie-digital/design-system/pull/1952)) ([f2fa55b](https://github.com/assurance-maladie-digital/design-system/commit/f2fa55b508d6af3783a65cb406dd84e539a616a3))
   - **@types/node:** Mise à jour vers la `v16.11.33` ([#1973](https://github.com/asurance-maladie-digital/design-system/pull/1973)) ([83a3f96](https://github.com/assurance-maladie-digital/design-system/commit/83a3f964c50d002c09adf1891bc0deee4d8bab7e))
+  - **vuetify:** Mise à jour vers la `v2.6.5` ([#1978](https://github.com/assurance-maladie-digital/design-system/pull/1978))
 
 ## v2.3.0
 
