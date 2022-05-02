@@ -53,7 +53,7 @@
 - ♻️ **Refactoring**
   - **template:** Modification de la position du bouton *Retour* ([#1912](https://github.com/assurance-maladie-digital/design-system/pull/1912)) ([cb0f08f](https://github.com/assurance-maladie-digital/design-system/commit/cb0f08fdb8bc427b7df372830fd0b18c0021b0ab))
   - **global:** Utilisation de `consola` à la place de `@cnamts/cli-helpers` ([#1936](https://github.com/assurance-maladie-digital/design-system/pull/1936)) ([5528f7e](https://github.com/assurance-maladie-digital/design-system/commit/5528f7e6ab57a3ae7a20059db64fabb06e56c5b6))
-  - **template:** Utilisation du package `@cnamts/eslint-config-vue` pour la configuration du lint ([#1983](https://github.com/assurance-maladie-digital/design-system/pull/1983))
+  - **template:** Utilisation du package `@cnamts/eslint-config-vue` pour la configuration du lint ([#1983](https://github.com/assurance-maladie-digital/design-system/pull/1983)) ([a1807dd](https://github.com/assurance-maladie-digital/design-system/commit/a1807dd114e24a047b46cf91d7a059f9bab72819))
 
 - 🎨 **Qualité de code**
   - **global:** Amélioration de la qualité du code ([#1908](https://github.com/assurance-maladie-digital/design-system/pull/1908)) ([7a25f77](https://github.com/assurance-maladie-digital/design-system/commit/7a25f77243e5ea7a0a2a900d1c1ed08628b6d46b))
@@ -109,6 +109,7 @@
   - **release-notes:** Ajout d'un lien vers les notes de version antérieures ([#1974](https://github.com/assurance-maladie-digital/design-system/pull/1974)) ([d528934](https://github.com/assurance-maladie-digital/design-system/commit/d52893420266cd489c7e3cc4c58e293c84064b37))
   - **functions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962)) ([80bcc90](https://github.com/assurance-maladie-digital/design-system/commit/80bcc90341e2128a2f66e285e7678b944cdd528d))
  - **roadmap:** Mise à jour de la page ([#1981](https://github.com/assurance-maladie-digital/design-system/pull/1981)) ([bbaf486](https://github.com/assurance-maladie-digital/design-system/commit/bbaf4868e57a398a2fc6600f81b3ba0999287b23))
+  - **release-notes:** Ajout d'une information sur les notifications ([#1984](https://github.com/assurance-maladie-digital/design-system/pull/1984))
 
 ### Interne
 
