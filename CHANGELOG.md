@@ -53,6 +53,7 @@
 - ♻️ **Refactoring**
   - **template:** Modification de la position du bouton *Retour* ([#1912](https://github.com/assurance-maladie-digital/design-system/pull/1912)) ([cb0f08f](https://github.com/assurance-maladie-digital/design-system/commit/cb0f08fdb8bc427b7df372830fd0b18c0021b0ab))
   - **global:** Utilisation de `consola` à la place de `@cnamts/cli-helpers` ([#1936](https://github.com/assurance-maladie-digital/design-system/pull/1936)) ([5528f7e](https://github.com/assurance-maladie-digital/design-system/commit/5528f7e6ab57a3ae7a20059db64fabb06e56c5b6))
+  - **template:** Utilisation du package `@cnamts/eslint-config-vue` pour la configuration du lint ([#1983](https://github.com/assurance-maladie-digital/design-system/pull/1983))
 
 - 🎨 **Qualité de code**
   - **global:** Amélioration de la qualité du code ([#1908](https://github.com/assurance-maladie-digital/design-system/pull/1908)) ([7a25f77](https://github.com/assurance-maladie-digital/design-system/commit/7a25f77243e5ea7a0a2a900d1c1ed08628b6d46b))
@@ -135,7 +136,7 @@
   - **@types/node:** Mise à jour vers la `v16.11.33` ([#1973](https://github.com/asurance-maladie-digital/design-system/pull/1973)) ([83a3f96](https://github.com/assurance-maladie-digital/design-system/commit/83a3f964c50d002c09adf1891bc0deee4d8bab7e))
   - **vuetify:** Mise à jour vers la `v2.6.5` ([#1978](https://github.com/assurance-maladie-digital/design-system/pull/1978)) ([fa192a5](https://github.com/assurance-maladie-digital/design-system/commit/fa192a58f334a90517a58835cf633a26cda15487))
   - **core-js:** Mise à jour vers la `v3.22.4` ([#1979](//github.com/assurance-maladie-digital/design-system/pull/1979)) ([f41461c](https://github.com/assurance-maladie-digital/design-system/commit/f41461cf41dd1a218c67d3b82aacd3e4bce8d965))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.22.0` ([#1980](https://github.com/assurance-maladie-digital/design-system/pull/1980))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.22.0` ([#1980](https://github.com/assurance-maladie-digital/design-system/pull/1980)) ([1954345](https://github.com/assurance-maladie-digital/design-system/commit/1954345bd60d2432e2233f0cca64f56831d41f97))
 
 ## v2.3.0
 
