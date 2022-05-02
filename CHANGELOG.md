@@ -17,6 +17,7 @@
   - **SubHeader:** Correction de l'espacement interne du bouton *Retour* ([#1900](https://github.com/assurance-maladie-digital/design-system/pull/1900)) ([a996103](https://github.com/assurance-maladie-digital/design-system/commit/a99610324223a81399dfb7b41cfe81599391e1ca))
   - **UserMenuBtn:** Correction de l'espacement interne ([#1904](https://github.com/assurance-maladie-digital/design-system/pull/1904)) ([ac45f14](https://github.com/assurance-maladie-digital/design-system/commit/ac45f14002b8e2fb2ddcf0721cee6fb6740b0e36))
   - **DatePicker:** Correction de l'affichage de `Invalid Date` dans le champ texte ([#1917](https://github.com/assurance-maladie-digital/design-system/pull/1917)) ([b8f1b75](https://github.com/assurance-maladie-digital/design-system/commit/b8f1b754161c7b8c95d95640ca6b18437f394cfe))
+  - **getFileExtension:** Correction d'une faute d'orthographe ([#1982](https://github.com/assurance-maladie-digital/design-system/pull/1982)) ([e41afa8](https://github.com/assurance-maladie-digital/design-system/commit/e41afa8538f4309af76140315f391aaaa9d37668))
 
 - ♻️ **Refactoring**
   - **HeaderBar:** Modification de la valeur de la propriété `z-index` ([#1902](https://github.com/assurance-maladie-digital/design-system/pull/1902)) ([bc652ac](https://github.com/assurance-maladie-digital/design-system/commit/bc652aca7653046465994f5c8290a71090f7fdb2))
@@ -105,7 +106,8 @@
   - **CookiesPage:** Mise à jour de l'exemple d'utilisation ([#1939](https://github.com/assurance-maladie-digital/design-system/pull/1939)) ([a7e291e](https://github.com/assurance-maladie-digital/design-system/commit/a7e291e6afb0988ea617fd6b4f741d1ab443b325))
   - **global:** Ajout de la page notes de version ([#1957](https://github.com/assurance-maladie-digital/design-system/pull/1957)) ([3291fc2](https://github.com/assurance-maladie-digital/design-system/commit/3291fc2011127932881672af574e1ba9fab1bc69))
   - **release-notes:** Ajout d'un lien vers les notes de version antérieures ([#1974](https://github.com/assurance-maladie-digital/design-system/pull/1974)) ([d528934](https://github.com/assurance-maladie-digital/design-system/commit/d52893420266cd489c7e3cc4c58e293c84064b37))
-  - **functions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962))
+  - **functions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962)) ([80bcc90](https://github.com/assurance-maladie-digital/design-system/commit/80bcc90341e2128a2f66e285e7678b944cdd528d))
+ - **roadmap:** Mise à jour de la page ([#1981](https://github.com/assurance-maladie-digital/design-system/pull/1981)) ([bbaf486](https://github.com/assurance-maladie-digital/design-system/commit/bbaf4868e57a398a2fc6600f81b3ba0999287b23))
 
 ### Interne
 
@@ -128,11 +130,12 @@
   - **axios:** Mise à jour vers la `v0.27.2` ([#1959](https://github.com/assurance-maladie-digital/design-system/pull/1959)) ([f1dca35](https://github.com/assurance-maladie-digital/design-system/commit/f1dca35625a6364b04b9b730ade5a4bcbe68bcc6))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.21.0` ([#1960](https://github.com/assurance-maladie-digital/design-system/pull/1960)) ([aa8c84f](https://github.com/assurance-maladie-digital/design-system/commit/aa8c84f5a704267357940b0ca7f301cd8eb3e794))
   - **lint-staged:** Mise à jour vers la `v12.4.1` ([#1961](https://github.com/assurance-maladie-digital/design-system/pull/1961)) ([b6ccb50](https://github.com/assurance-maladie-digital/design-system/commit/b6ccb501c024415cdef9f85ffb44a8f358724d90))
-  - **core-js:** Mise à jour vers la `v3.22.3` ([#1963](//github.com/assurance-maladie-digital/design-system/pull/1963)) ([5827bd1](https://github.com/assurance-maladie-digital/design-system/commit/5827bd149923f5e7c366b4f8df85112c06df1f03))
   - **typescript:** Mise à jour vers la `v4.6.4` ([#1965](https://github.com/assurance-maladie-digital/design-system/pull/1965)) ([ab68d54](https://github.com/assurance-maladie-digital/design-system/commit/ab68d543b2912cfdcd280a7ee65523c1fc435df0))
   - **@babel/core:** Mise à jour vers la `v7.17.10` ([#1968](https://github.com/assurance-maladie-digital/design-system/pull/1968)) ([40d9ad0](https://github.com/assurance-maladie-digital/design-system/commit/40d9ad0d5595766185a2baa96ef28a25f3a28c5d))
   - **node.js:** Mise à jour de vers la `v16` ([#1952](https://github.com/assurance-maladie-digital/design-system/pull/1952)) ([f2fa55b](https://github.com/assurance-maladie-digital/design-system/commit/f2fa55b508d6af3783a65cb406dd84e539a616a3))
   - **@types/node:** Mise à jour vers la `v16.11.33` ([#1973](https://github.com/asurance-maladie-digital/design-system/pull/1973)) ([83a3f96](https://github.com/assurance-maladie-digital/design-system/commit/83a3f964c50d002c09adf1891bc0deee4d8bab7e))
+  - **vuetify:** Mise à jour vers la `v2.6.5` ([#1978](https://github.com/assurance-maladie-digital/design-system/pull/1978)) ([fa192a5](https://github.com/assurance-maladie-digital/design-system/commit/fa192a58f334a90517a58835cf633a26cda15487))
+  - **core-js:** Mise à jour vers la `v3.22.4` ([#1979](//github.com/assurance-maladie-digital/design-system/pull/1979))
 
 ## v2.3.0
 
