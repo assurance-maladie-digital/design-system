@@ -22,6 +22,7 @@ function normalizeVersion(version) {
 const VueDotVersion = normalizeVersion(devDependencies['@cnamts/vue-dot']);
 const DesignTokensVersion = normalizeVersion(devDependencies['@cnamts/design-tokens']);
 const FormBuilderVersion = normalizeVersion(devDependencies['@cnamts/form-builder']);
+const EslintConfigVueVersion = normalizeVersion(devDependencies['@cnamts/eslint-config-vue']);
 
 /**
  * Extend package.json
@@ -40,6 +41,7 @@ function extendPackage(api, options, pm) {
 			'test:unit': 'vue-cli-service test:unit'
 		},
 		dependencies: {
+			'@cnamts/eslint-config-vue': EslintConfigVueVersion,
 			'@cnamts/design-tokens': DesignTokensVersion,
 			'@cnamts/form-builder': FormBuilderVersion,
 			'@cnamts/vue-dot': VueDotVersion,
@@ -96,7 +98,7 @@ function extendPackage(api, options, pm) {
 			'webpack': '^5.72.0'
 		},
 		engines: {
-			'node': '^12 || ^14'
+			'node': '^14 || ^16'
 		},
 		gitHooks: {
 			'pre-commit': 'lint-staged'
