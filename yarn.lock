@@ -3742,14 +3742,14 @@
   optionalDependencies:
     prettier "^1.18.2 || ^2.0.0"
 
-"@vue/eslint-config-standard@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@vue/eslint-config-standard/-/eslint-config-standard-6.1.0.tgz#b362ba67c86caa4e7b44481c2303c9dccc2dc037"
-  integrity sha512-9+hrEyflDzsGdlBDl9jPV5DIYUx1TOU5OSQqRDKCrNumrxRj5HRWKuk+ocXWnha6uoNRtLC24mY7d/MwqvBCNw==
+"@vue/eslint-config-standard@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@vue/eslint-config-standard/-/eslint-config-standard-7.0.0.tgz#0610a423d55f30b5e8b25d6d332069efb7710061"
+  integrity sha512-1enxlDr6tfnINmmSz7YNcqdY0ywhwp8yzwvdMESnI3x/IjfWKXWjdglrCtyn48aTadZJAv5vVOk8bISnQPoFxQ==
   dependencies:
-    eslint-config-standard "^16.0.3"
-    eslint-import-resolver-node "^0.3.4"
-    eslint-import-resolver-webpack "^0.13.1"
+    eslint-config-standard "^17.0.0"
+    eslint-import-resolver-node "^0.3.6"
+    eslint-import-resolver-webpack "^0.13.2"
 
 "@vue/eslint-config-typescript@10.0.0", "@vue/eslint-config-typescript@^10.0.0":
   version "10.0.0"
@@ -7150,12 +7150,12 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-standard@^16.0.3:
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-16.0.3.tgz#6c8761e544e96c531ff92642eeb87842b8488516"
-  integrity sha512-x4fmJL5hGqNJKGHSjnLdgA6U6h1YW/G2dW9fA+cyVur4SK6lyue8+UgNKWlZtUDTXvgKDD/Oa3GQjmB5kjtVvg==
+eslint-config-standard@^17.0.0:
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-17.0.0.tgz#fd5b6cf1dcf6ba8d29f200c461de2e19069888cf"
+  integrity sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==
 
-eslint-import-resolver-node@^0.3.4:
+eslint-import-resolver-node@^0.3.6:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.6.tgz#4048b958395da89668252001dbd9eca6b83bacbd"
   integrity sha512-0En0w03NRVMn9Uiyn8YRPDKvWjxCWkslUEhGNTdGx15RvPJYQ+lbOlqrlNI2vEAs4pDYK4f/HN2TbDmk5TP0iw==
@@ -7163,7 +7163,7 @@ eslint-import-resolver-node@^0.3.4:
     debug "^3.2.7"
     resolve "^1.20.0"
 
-eslint-import-resolver-webpack@^0.13.1:
+eslint-import-resolver-webpack@^0.13.2:
   version "0.13.2"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-webpack/-/eslint-import-resolver-webpack-0.13.2.tgz#fc813df0d08b9265cc7072d22393bda5198bdc1e"
   integrity sha512-XodIPyg1OgE2h5BDErz3WJoK7lawxKTJNhgPNafRST6csC/MZC+L5P6kKqsZGRInpbgc02s/WZMrb4uGJzcuRg==
