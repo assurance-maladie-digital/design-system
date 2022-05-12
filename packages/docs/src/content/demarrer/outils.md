@@ -40,7 +40,7 @@ Il faut disposer d’un compte.
 </doc-alert>
 
 <doc-alert type="info">
-En plus des principaux navigateurs, il est aussi important de vérifier la compatibilité sur <b>Internet Explorer</b> (bien qu’il soit en fin de vie).
+En plus des principaux navigateurs, il est toujours bon de vérifier la compatibilité sur <b>Internet Explorer</b> (bien qu’il soit en fin de vie).
 </doc-alert>
 
 
