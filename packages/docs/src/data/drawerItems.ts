@@ -23,6 +23,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/installation'
 			},
 			{
+				title: 'Outils',
+				to: '/demarrer/outils'
+			},
+			{
 				title: 'Roadmap',
 				to: '/demarrer/roadmap'
 			},
