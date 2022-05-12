@@ -18,6 +18,7 @@ Parmi les extensions disponibles, voici celles qui sont importantes :
 Et celles qui sont optionnelles :
 
 - **French Language pack** : change le langage de l’IDE pour le français,
+- **Auto Close Tag** : permet d'ajouter/modifier automatiquement les balises fermantes HTML,
 - **Material Icon theme** : change l’apparence des icons dans VS Code.
 
 ## Navigateur
