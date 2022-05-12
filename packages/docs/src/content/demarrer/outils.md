@@ -11,7 +11,8 @@ En plus de VS Code, nous recommandons l’ajout d’extensions qui permettent un
 
 Parmi les extensions disponibles, voici celles qui sont importantes :
 
-- **Vetur** : ajoute un grand nombre de fonctionnalité liées à vue.js (autocomplétion, formattage, highlighting, etc.),
+- **Vue** : ajoute des fonctionnalités liées à vue.js,
+- **Vetur** : ajoute des fonctionnalités liées à vue.js,
 - **ESLint** : intègre ESLint.
 
 Et celles qui sont optionnelles :
