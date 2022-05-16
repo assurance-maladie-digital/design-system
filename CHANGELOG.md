@@ -1,4 +1,8 @@
-## Non publié
+## v2.4.0
+
+**Version publiée le 16/05/2022.**
+
+Cette version comporte l'ajout des nouveaux packages ESLint Config et des nouveaux composants `CookieBanner` et `CookiesPage`, ainsi que des correctifs sur l'ensemble des packages et la complétion de la documentation.
 
 ### Vue Dot
 
@@ -60,6 +64,7 @@
 
 - ⬆️ **Dépendances**
   - **@vue/cli:** Mise à jour du monorepo vers la `v5` ([#1913](https://github.com/assurance-maladie-digital/design-system/pull/1913)) ([91918c3](https://github.com/assurance-maladie-digital/design-system/commit/91918c357b6a8e29543d8548e5dd8672201366be))
+  - **template:** Mise à jour des dépendances ([#1994](https://github.com/assurance-maladie-digital/design-system/pull/1994)) ([a8d3200](https://github.com/assurance-maladie-digital/design-system/commit/a8d320076638061f25d65a472e73d18a10628ecd))
 
 ### FormBuilder
 
@@ -118,7 +123,10 @@
 
 - 🔧 **Configuration**
   - **ci:** Ajout des `resource_class` à dans la configuration de CircleCI ([#1979](https://github.com/assurance-maladie-digital/design-system/pull/1979)) ([fddf9ff](https://github.com/assurance-maladie-digital/design-system/commit/fddf9fff36cd027f03f6299293cd8c38509a7912))
-  - **ci:** Installation de netlify-cli en local ([#1992](https://github.com/assurance-maladie-digital/design-system/pull/1992))
+  - **ci:** Installation de netlify-cli en local ([#1992](https://github.com/assurance-maladie-digital/design-system/pull/1992)) ([301c833](https://github.com/assurance-maladie-digital/design-system/commit/301c83329b62b93a2cf40b2f39561b7f3a323a52))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1995](https://github.com/assurance-maladie-digital/design-system/pull/1995))
 
 - ⬆️ **Dépendances**
   - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))
@@ -139,6 +147,7 @@
   - **vuetify:** Mise à jour vers la `v2.6.5` ([#1978](https://github.com/assurance-maladie-digital/design-system/pull/1978)) ([fa192a5](https://github.com/assurance-maladie-digital/design-system/commit/fa192a58f334a90517a58835cf633a26cda15487))
   - **core-js:** Mise à jour vers la `v3.22.4` ([#1979](//github.com/assurance-maladie-digital/design-system/pull/1979)) ([f41461c](https://github.com/assurance-maladie-digital/design-system/commit/f41461cf41dd1a218c67d3b82aacd3e4bce8d965))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.22.0` ([#1980](https://github.com/assurance-maladie-digital/design-system/pull/1980)) ([1954345](https://github.com/assurance-maladie-digital/design-system/commit/1954345bd60d2432e2233f0cca64f56831d41f97))
+  - **netlify-cli:** Épinglage de la dépendance à la `v10.3.1` ([#1993](https://github.com/assurance-maladie-digital/design-system/pull/1993)) ([4007591](https://github.com/assurance-maladie-digital/design-system/commit/4007591df3b72b5d88126bb8cfedae13d65fbec4))
 
 ## v2.3.0
 
