@@ -60,6 +60,7 @@
 
 - ⬆️ **Dépendances**
   - **@vue/cli:** Mise à jour du monorepo vers la `v5` ([#1913](https://github.com/assurance-maladie-digital/design-system/pull/1913)) ([91918c3](https://github.com/assurance-maladie-digital/design-system/commit/91918c357b6a8e29543d8548e5dd8672201366be))
+  - **template:** Mise à jour des dépendances ([#1993](https://github.com/assurance-maladie-digital/design-system/pull/1993))
 
 ### FormBuilder
 
@@ -118,7 +119,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Ajout des `resource_class` à dans la configuration de CircleCI ([#1979](https://github.com/assurance-maladie-digital/design-system/pull/1979)) ([fddf9ff](https://github.com/assurance-maladie-digital/design-system/commit/fddf9fff36cd027f03f6299293cd8c38509a7912))
-  - **ci:** Installation de netlify-cli en local ([#1992](https://github.com/assurance-maladie-digital/design-system/pull/1992))
+  - **ci:** Installation de netlify-cli en local ([#1992](https://github.com/assurance-maladie-digital/design-system/pull/1992)) ([301c833](https://github.com/assurance-maladie-digital/design-system/commit/301c83329b62b93a2cf40b2f39561b7f3a323a52))
 
 - ⬆️ **Dépendances**
   - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))
