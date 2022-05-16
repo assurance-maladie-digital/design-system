@@ -109,7 +109,7 @@
   - **release-notes:** Ajout d'un lien vers les notes de version antérieures ([#1974](https://github.com/assurance-maladie-digital/design-system/pull/1974)) ([d528934](https://github.com/assurance-maladie-digital/design-system/commit/d52893420266cd489c7e3cc4c58e293c84064b37))
   - **functions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962)) ([80bcc90](https://github.com/assurance-maladie-digital/design-system/commit/80bcc90341e2128a2f66e285e7678b944cdd528d))
  - **roadmap:** Mise à jour de la page ([#1981](https://github.com/assurance-maladie-digital/design-system/pull/1981)) ([bbaf486](https://github.com/assurance-maladie-digital/design-system/commit/bbaf4868e57a398a2fc6600f81b3ba0999287b23))
-  - **release-notes:** Ajout d'une information sur les notifications ([#1984](https://github.com/assurance-maladie-digital/design-system/pull/1984))
+  - **release-notes:** Ajout d'une information sur les notifications ([#1984](https://github.com/assurance-maladie-digital/design-system/pull/1984)) ([574be87](https://github.com/assurance-maladie-digital/design-system/commit/574be87f59d79edb28726db42aa75dad742c08ea))
 
 ### Interne
 
@@ -118,6 +118,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Ajout des `resource_class` à dans la configuration de CircleCI ([#1979](https://github.com/assurance-maladie-digital/design-system/pull/1979)) ([fddf9ff](https://github.com/assurance-maladie-digital/design-system/commit/fddf9fff36cd027f03f6299293cd8c38509a7912))
+  - **ci:** Installation de netlify-cli en local ([#1992](https://github.com/assurance-maladie-digital/design-system/pull/1992))
 
 - ⬆️ **Dépendances**
   - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))
