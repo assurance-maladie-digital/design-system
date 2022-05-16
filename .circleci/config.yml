@@ -45,14 +45,12 @@ jobs:
       - checkout
       - restore_cache: *restore_cache
       - run: *install
-      - run: yarn global add netlify-cli
       - save_cache: *save_cache
       - persist_to_workspace:
           root: ~/
           paths:
             - project/
             - .cache/
-            - .config/yarn/global/
             - .yarn/
     resource_class: large
   lint:
@@ -99,7 +97,6 @@ jobs:
           at: ~/
       - netlify/deploy:
           folder: packages/docs/dist
-          command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy-preview
@@ -114,7 +111,6 @@ jobs:
           at: ~/
       - netlify/deploy_to_prod:
           folder: packages/docs/dist
-          command_path: netlify
       - run: echo "export TARGET_URL=$NETLIFY_DEPLOY_URL" >> $BASH_ENV
       - github-status/report:
           context: circleci/deploy
