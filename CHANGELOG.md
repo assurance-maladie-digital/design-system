@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **dayjs:** Mise à jour vers la `v1.11.2` ([#1985](https://github.com/assurance-maladie-digital/design-system/pull/1985))
+
 ## v2.4.0
 
 **Version publiée le 16/05/2022.**
@@ -39,7 +46,7 @@ Cette version comporte l'ajout des nouveaux packages ESLint Config et des nouvea
 
 - 🔧 **Configuration**
   - **scripts:** Refonte des scripts `build` et `post-install` ([#1935](https://github.com/assurance-maladie-digital/design-system/pull/1935)) ([3ead4d7](https://github.com/assurance-maladie-digital/design-system/commit/3ead4d7e1697a9445fbc2b59d362c599d2db4a52))
- - **config:** Mise à jour de la taille maximale du build ([#1945](https://github.com/assurance-maladie-digital/design-system/pull/1945)) ([3d5f8e3](https://github.com/assurance-maladie-digital/design-system/commit/3d5f8e3b25c6d8ad872c87bcb7f9eb0932cbdc7a))
+  - **config:** Mise à jour de la taille maximale du build ([#1945](https://github.com/assurance-maladie-digital/design-system/pull/1945)) ([3d5f8e3](https://github.com/assurance-maladie-digital/design-system/commit/3d5f8e3b25c6d8ad872c87bcb7f9eb0932cbdc7a))
 
 - ⬆️ **Dépendances**
   - **DownloadBtn:** Remplacement de la dépendance `content-disposition` par `content-disposition-header` ([#1895](https://github.com/assurance-maladie-digital/design-system/pull/1895)) ([6008bb3](https://github.com/assurance-maladie-digital/design-system/commit/6008bb3b01c0d34c28b545162478da09d4ac625d))
@@ -113,7 +120,7 @@ Cette version comporte l'ajout des nouveaux packages ESLint Config et des nouvea
   - **global:** Ajout de la page notes de version ([#1957](https://github.com/assurance-maladie-digital/design-system/pull/1957)) ([3291fc2](https://github.com/assurance-maladie-digital/design-system/commit/3291fc2011127932881672af574e1ba9fab1bc69))
   - **release-notes:** Ajout d'un lien vers les notes de version antérieures ([#1974](https://github.com/assurance-maladie-digital/design-system/pull/1974)) ([d528934](https://github.com/assurance-maladie-digital/design-system/commit/d52893420266cd489c7e3cc4c58e293c84064b37))
   - **functions:** Documentation des fonctions ([#1962](https://github.com/assurance-maladie-digital/design-system/pull/1962)) ([80bcc90](https://github.com/assurance-maladie-digital/design-system/commit/80bcc90341e2128a2f66e285e7678b944cdd528d))
- - **roadmap:** Mise à jour de la page ([#1981](https://github.com/assurance-maladie-digital/design-system/pull/1981)) ([bbaf486](https://github.com/assurance-maladie-digital/design-system/commit/bbaf4868e57a398a2fc6600f81b3ba0999287b23))
+  - **roadmap:** Mise à jour de la page ([#1981](https://github.com/assurance-maladie-digital/design-system/pull/1981)) ([bbaf486](https://github.com/assurance-maladie-digital/design-system/commit/bbaf4868e57a398a2fc6600f81b3ba0999287b23))
   - **release-notes:** Ajout d'une information sur les notifications ([#1984](https://github.com/assurance-maladie-digital/design-system/pull/1984)) ([574be87](https://github.com/assurance-maladie-digital/design-system/commit/574be87f59d79edb28726db42aa75dad742c08ea))
 
 ### Interne
@@ -126,7 +133,7 @@ Cette version comporte l'ajout des nouveaux packages ESLint Config et des nouvea
   - **ci:** Installation de netlify-cli en local ([#1992](https://github.com/assurance-maladie-digital/design-system/pull/1992)) ([301c833](https://github.com/assurance-maladie-digital/design-system/commit/301c83329b62b93a2cf40b2f39561b7f3a323a52))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1995](https://github.com/assurance-maladie-digital/design-system/pull/1995))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#1995](https://github.com/assurance-maladie-digital/design-system/pull/1995)) ([4837468](https://github.com/assurance-maladie-digital/design-system/commit/4837468128563d312fead4b663390e242ea365e6))
 
 - ⬆️ **Dépendances**
   - **@mdi/js:** Mise à jour vers la `v6.6.96` ([#1879](https://github.com/assurance-maladie-digital/design-system/pull/1879)) ([c0664dd](https://github.com/assurance-maladie-digital/design-system/commit/c0664ddd88f5bf6e62dad269f32fc6158ece1ed5))
