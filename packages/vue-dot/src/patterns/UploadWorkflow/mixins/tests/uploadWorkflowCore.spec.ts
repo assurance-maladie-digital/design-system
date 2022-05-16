@@ -20,6 +20,7 @@ interface TestComponent extends Vue {
 	fileList: FileListItem[];
 	error: boolean;
 	dialog: boolean;
+	inlineSelect: boolean;
 	selectedItem: string;
 	singleMode(): boolean;
 	fileSelected(): void;
@@ -182,7 +183,7 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.fileSelected();
 
-		expect(wrapper.vm.dialog).toBe(false);
+		expect(wrapper.vm.dialog).toBeFalsy();
 		expect(wrapper.vm.selectedItem).toEqual(fileListItem.id);
 	});
 
@@ -192,7 +193,18 @@ describe('EventsFileFired', () => {
 
 		wrapper.vm.fileSelected();
 
-		expect(wrapper.vm.dialog).toBe(true);
+		expect(wrapper.vm.dialog).toBeTruthy();
+	});
+
+	it('skips the dialog in inline upload mode', () => {
+		const value = [fileListItem, fileListItem];
+		const wrapper = createWrapper(value) as Wrapper<TestComponent>;
+
+		wrapper.setData({ inlineSelect: true });
+		wrapper.vm.fileSelected();
+
+		expect(wrapper.vm.selectedItem).toBe('');
+		expect(wrapper.vm.inlineSelect).toBeFalsy();
 	});
 
 	// uploadError
@@ -205,7 +217,7 @@ describe('EventsFileFired', () => {
 
 		await wrapper.vm.$nextTick();
 
-		expect(wrapper.vm.uploadedFile).toBe(null);
+		expect(wrapper.vm.uploadedFile).toBeNull();
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 

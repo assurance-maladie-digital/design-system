@@ -8,6 +8,8 @@
 			:aria-current-value="null"
 			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
+			:href="homeHref"
+			class="vd-header-home-link"
 		>
 			<Logo
 				:hide-signature="hideSignature"
@@ -31,28 +33,45 @@
 				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
 			</svg>
 
-			<img
+			<component
+				:is="secondaryLogoCtnComponent"
 				v-if="secondaryLogo"
-				:src="secondaryLogo.src"
-				:alt="secondaryLogo.alt"
+				:aria-current-value="null"
+				:aria-label="secondaryLogoLabel"
+				:to="homeLink"
+				:href="homeHref"
+				class="vd-header-home-link"
 			>
+				<img
+					:src="secondaryLogo.src"
+					:alt="secondaryLogo.alt"
+				>
+			</component>
 
 			<div
-				v-else-if="serviceTitle || serviceSubTitle"
+				v-else-if="service.title || service.subTitle"
 				class="d-flex justify-center flex-column primary--text"
 			>
 				<h1
-					v-if="serviceTitle"
+					v-if="service.title"
+					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
 					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
 				>
-					{{ serviceTitle }}
+					<template v-if="isCompteEntreprise">
+						{{ service.title.text }}
+						<span>{{ service.title.highlight }}</span>
+					</template>
+
+					<template v-else>
+						{{ service.title }}
+					</template>
 				</h1>
 
 				<h2
 					v-if="showServiceSubTitle"
 					class="vd-header-title text-caption"
 				>
-					{{ serviceSubTitle }}
+					{{ service.subTitle }}
 				</h2>
 			</div>
 		</slot>
@@ -70,7 +89,7 @@
 
 	import { ThemeEnum } from '../ThemeEnum';
 
-	import { LogoInfo } from './types';
+	import { LogoInfo, Service } from './types';
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
@@ -96,6 +115,10 @@
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: '/'
+			},
+			homeHref: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -105,6 +128,22 @@
 	@Component
 	export default class HeaderBrandSection extends MixinsDeclaration {
 		locales = locales;
+
+		get service(): Service {
+			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
+				const { title, subTitle } = locales.compteEntreprise;
+
+				return {
+					title,
+					subTitle
+				};
+			}
+
+			return {
+				title: this.serviceTitle,
+				subTitle: this.serviceSubTitle
+			};
+		}
 
 		get height(): string {
 			if (this.mobileVersion && this.hasSecondaryLogo) {
@@ -118,7 +157,15 @@
 			return this.theme === ThemeEnum.RISQUE_PRO;
 		}
 
+		get isCompteEntreprise(): boolean {
+			return this.theme === ThemeEnum.COMPTE_ENTREPRISE;
+		}
+
 		get hideSignature(): boolean {
+			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
+				return true;
+			}
+
 			return Boolean(this.$slots.default);
 		}
 
@@ -130,23 +177,57 @@
 			return Boolean(this.$slots.default || this.secondaryLogo);
 		}
 
+		get hasSecondaryLogoLink(): boolean {
+			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
+		}
+
 		get logoContainerComponent(): string {
+			if (this.homeHref) {
+				return 'a';
+			}
+
 			return this.homeLink ? 'RouterLink' : 'div';
 		}
 
+		get secondaryLogoCtnComponent(): string {
+			if (this.hasSecondaryLogoLink) {
+				return this.logoContainerComponent;
+			}
+
+			return 'div';
+		}
+
+		get secondaryLogoLabel(): string | null {
+			if (this.hasSecondaryLogoLink && this.secondaryLogo) {
+				return `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}`;
+			}
+
+			return null;
+		}
+
 		get showDivider(): boolean {
-			return Boolean(this.hasSecondaryLogo || this.serviceTitle);
+			return Boolean(this.hasSecondaryLogo || this.service.title);
 		}
 
 		get showServiceSubTitle(): boolean {
-			return Boolean(this.serviceTitle && this.serviceSubTitle && !this.mobileVersion);
+			return Boolean(this.service.title && this.service.subTitle && !this.mobileVersion);
 		}
 
 		get dividerColor(): string {
-			const cnamTheme = this.theme === ThemeEnum.CNAM;
-			const ameliProTheme = this.theme === ThemeEnum.AMELI_PRO;
+			switch (this.theme) {
+				case ThemeEnum.CNAM:
+				case ThemeEnum.AMELI_PRO: {
+					return tokens.colors.secondary;
+				}
 
-			return cnamTheme || ameliProTheme ? tokens.colors.secondary : tokens.colors.primary;
+				case ThemeEnum.COMPTE_ENTREPRISE: {
+					return '#cd545b'; // Brique 100 color
+				}
+
+				default: {
+					return tokens.colors.primary;
+				}
+			}
 		}
 
 		get dividerDimensions(): Dimensions {
@@ -179,8 +260,18 @@
 
 <style lang="scss" scoped>
 	.vd-header-brand-section {
+		overflow: hidden;
+
 		.vd-header-title {
 			line-height: 1.45 !important;
+		}
+
+		.vd-compte-entreprise-title {
+			font-weight: 700 !important;
+
+			span {
+				color: #cd545b;
+			}
 		}
 
 		img,
@@ -190,7 +281,8 @@
 			flex: none;
 		}
 
-		svg {
+		svg,
+		.vd-header-home-link {
 			flex: none;
 		}
 	}

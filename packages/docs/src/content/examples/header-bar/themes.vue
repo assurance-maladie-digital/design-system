@@ -4,6 +4,8 @@
 
 		<HeaderBar theme="risque-pro" />
 
+		<HeaderBar theme="compte-entreprise" />
+
 		<HeaderBar theme="cnam" />
 
 		<HeaderBar theme="ameli" />

@@ -76,10 +76,18 @@ The goal of our Design System is to unify our work, which allows teams to share 
     </tr>
     <tr>
       <td>
-        <a href="/packages/cli-helpers">CLI Helpers</a>
+        <a href="/packages/eslint-config">ESLint Config</a>
       </td>
       <td>
-       Helper functions to build CLI tools
+       ESLint configurations used across our projects
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/packages/eslint-config-vue">ESLint Config Vue</a>
+      </td>
+      <td>
+       ESLint configuration used across our Vue.js projects
       </td>
     </tr>
   </tbody>

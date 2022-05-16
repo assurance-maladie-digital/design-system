@@ -12,7 +12,7 @@ export const config = {
 	},
 	icon: {
 		color: '#007fad',
-		class: 'ml-0 ml-sm-5'
+		class: 'ml-2 ml-sm-5'
 	},
 	logoutListItem: {
 		class: 'primary--text'

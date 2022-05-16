@@ -7,7 +7,7 @@ const themeProp = {
 	type: 'string',
 	required: true,
 	description: 'Le thème de l’en-tête.',
-	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro'`
+	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro' | 'compte-entreprise'`
 };
 
 const mobileVersionProp = {
@@ -57,6 +57,13 @@ const homeLinkProp = {
 	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.'
 };
 
+const homeHrefProp = {
+	name: 'home-href',
+	type: 'String',
+	default: 'undefined',
+	description: 'Un lien externe à l’application vers la page d’accueil.'
+};
+
 const drawerProp = {
 	name: 'drawer',
 	type: 'boolean',
@@ -81,6 +88,7 @@ export const api: Api = {
 			},
 			innerWidthProp,
 			homeLinkProp,
+			homeHrefProp,
 			{
 				name: 'show-nav-bar-menu-btn',
 				type: 'boolean',
@@ -129,7 +137,8 @@ export const api: Api = {
 			titleProp,
 			subTitleProp,
 			mobileVersionProp,
-			homeLinkProp
+			homeLinkProp,
+			homeHrefProp
 		],
 		slots: [
 			{

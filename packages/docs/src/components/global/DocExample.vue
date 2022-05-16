@@ -165,6 +165,7 @@
 
 				this.boot(component.default);
 			} catch(error) {
+				this.hasError = true;
 				this.$emit('error', error);
 			}
 		}

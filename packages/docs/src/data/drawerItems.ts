@@ -2,6 +2,7 @@ import { DrawerItem } from '~/types/drawer';
 
 import {
 	mdiSpeedometer,
+	mdiScriptTextOutline,
 	mdiViewDashboard,
 	mdiCogs,
 	mdiHumanMaleBoard,
@@ -18,14 +19,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/introduction'
 			},
 			{
-				title: 'Principes de design',
-				to: '/demarrer/principes-design'
-			},
-			{
-				title: 'Accessibilité',
-				to: '/demarrer/accessibilite'
-			},
-			{
 				title: 'Installation',
 				to: '/demarrer/installation'
 			},
@@ -34,8 +27,26 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/roadmap'
 			},
 			{
+				title: 'Notes de version',
+				to: '/demarrer/notes-de-version'
+			},
+			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
+			}
+		]
+	},
+	{
+		title: 'Fondamentaux',
+		icon: mdiScriptTextOutline,
+		items: [
+			{
+				title: 'Principes de design',
+				to: '/demarrer/principes-design'
+			},
+			{
+				title: 'Accessibilité',
+				to: '/demarrer/accessibilite'
 			}
 		]
 	},
@@ -43,6 +54,14 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Composants',
 		icon: mdiViewDashboard,
 		items: [
+			{
+				title: 'CookieBanner',
+				to: '/composants/cookie-banner'
+			},
+			{
+				title: 'CookiesPage',
+				to: '/composants/cookies-page'
+			},
 			{
 				title: 'CopyBtn',
 				to: '/composants/copy-btn'
@@ -228,8 +247,36 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Fonctions',
 				items: [
 					{
+						title: 'calcHumanFileSize',
+						to: '/fonctions/calc-human-file-size'
+					},
+					{
+						title: 'copyToClipboard',
+						to: '/fonctions/copy-to-clipboard'
+					},
+					{
+						title: 'debounce',
+						to: '/fonctions/debounce'
+					},
+					{
+						title: 'downloadFile',
+						to: '/fonctions/download-file'
+					},
+					{
 						title: 'formatDate',
 						to: '/fonctions/format-date'
+					},
+					{
+						title: 'formatNir',
+						to: '/fonctions/format-nir'
+					},
+					{
+						title: 'getFileExtension',
+						to: '/fonctions/get-file-extension'
+					},
+					{
+						title: 'insertAt',
+						to: '/fonctions/insert-at'
 					}
 				]
 			},

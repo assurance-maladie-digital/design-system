@@ -23,13 +23,15 @@
 		"lint": "eslint . --fix"
 	},
 	"dependencies": {
-		"@cnamts/cli-helpers": "^2.1.0",
+		"consola": "^2.15.3",
 		"dayjs": "^1.8.34",
 		"fs-extra": "^10.0.0",
 		"superb": "^4.0.0"
 	},
 	"devDependencies": {
 		"@cnamts/design-tokens": "^2.3.0",
+		"@cnamts/eslint-config": "^2.3.0",
+		"@cnamts/eslint-config-vue": "^2.3.0",
 		"@cnamts/form-builder": "^2.3.0",
 		"@cnamts/vue-dot": "^2.3.0"
 	},

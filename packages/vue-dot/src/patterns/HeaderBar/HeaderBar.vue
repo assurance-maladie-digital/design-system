@@ -24,11 +24,15 @@
 						:service-sub-title="serviceSubTitle"
 						:mobile-version="isMobileVersion"
 						:home-link="homeLink"
+						:home-href="homeHref"
 					>
 						<slot name="secondary-logo" />
 					</HeaderBrandSection>
 
-					<VSpacer v-bind="options.spacer" />
+					<VSpacer
+						v-if="showSpacer"
+						v-bind="options.spacer"
+					/>
 
 					<slot />
 
@@ -118,6 +122,10 @@
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: undefined
 			},
+			homeHref: {
+				type: String,
+				default: undefined
+			},
 			showNavBarMenuBtn: {
 				type: Boolean,
 				default: false
@@ -188,6 +196,10 @@
 			}
 
 			return this.hasNavigationItems;
+		}
+
+		get showSpacer(): boolean {
+			return Boolean(this.$slots.default) || this.isMobileVersion;
 		}
 
 		updateDrawer(value: boolean): void {

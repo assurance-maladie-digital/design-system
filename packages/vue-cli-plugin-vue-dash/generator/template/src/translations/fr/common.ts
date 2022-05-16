@@ -1,8 +1,8 @@
 export default {
 	meta: {
-		title: '<%= capitalizeFirstLetter(name) %>',
+		title: '<%= capitalizeFirstLetter(projectName) %>',
 		titleTemplate: '%s | CNAM',
-		description: '<%= description %>.'
+		description: '<%= projectDescription %>.'
 	},
 	defaultErrorMessage: 'Une erreur inconnue est survenue'
 };

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 const LIB_MODE = Boolean(process.env.LIB_MODE);
-const LIMIT_SIZE = 1_000_000;
+const LIMIT_SIZE = 1_500_000;
 const CI = Boolean(process.env.CI);
 const CIRCLE_NODE_TOTAL = parseInt(process.env.CIRCLE_NODE_TOTAL);
 

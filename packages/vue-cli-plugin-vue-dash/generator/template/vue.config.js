@@ -3,9 +3,10 @@
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
+const { defineConfig } = require('@vue/cli-service');
 const { vueDotLoader } = require('@cnamts/vue-cli-plugin-vue-dash/vueDotLoader');
 
-module.exports = {
+const config = defineConfig({
 	chainWebpack: config => {
 		// Auto-load VueDot components
 		config.plugin('VuetifyLoaderPlugin').tap(vueDotLoader);
@@ -32,4 +33,6 @@ module.exports = {
 	],
 	// Disable parallel build on the platform
 	parallel: process.env.NODE_ENV !== 'production'
-};
+});
+
+module.exports = config;

@@ -6,7 +6,7 @@ const superb = () => Superb.random();
 
 const prompts = [
 	{
-		name: 'description',
+		name: 'projectDescription',
 		type: 'text',
 		message: 'Description du projet',
 		default: `My ${superb()} project`

@@ -46,7 +46,7 @@
 		"@cnamts/design-tokens": "^2.0.0-beta.10",
 		"@cnamts/form-builder": "^2.0.0-beta.10",
 		"@mdi/js": "^5.0.0 || ^6.0.0",
-		"axios": "^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0 || ^0.26.0",
+		"axios": "^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0",
 		"dayjs": "^1.8.0",
 		"languages": "^0.1.3",
 		"vue": "^2.6.11",
@@ -55,7 +55,8 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@cnamts/cli-helpers": "^2.1.0",
+		"@cnamts/eslint-config-vue": "^2.3.0",
+		"@cnamts/shared": "^2.3.0",
 		"@vue/cli-plugin-babel": "4.5.17",
 		"@vue/cli-plugin-eslint": "4.5.17",
 		"@vue/cli-plugin-typescript": "4.5.17",
@@ -63,12 +64,6 @@
 		"@vue/cli-service": "4.5.17",
 		"vue-cli-plugin-vuetify": "2.4.8",
 		"vuetify-loader": "1.7.3"
-	},
-	"lint-staged": {
-		"*.{ts,vue}": [
-			"vue-cli-service lint",
-			"git add"
-		]
 	},
 	"publishConfig": {
 		"access": "public"

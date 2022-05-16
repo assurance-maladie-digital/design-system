@@ -6,7 +6,7 @@ Il n’est pas recommandé d’éditer ce fichier.
 
 ## Configuration par défaut
 
-Par défaut, le fichier contient la configuration commune à tous les projets.
+Par défaut, le fichier contient [la configuration commune à tous les projets](https://github.com/assurance-maladie-digital/design-system/blob/dev/packages/eslint-config-vue/index.js).
 
 ## Plus d’informations
 

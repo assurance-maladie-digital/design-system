@@ -129,7 +129,7 @@ Ensuite, vous pouvez appeler cette fonction dans un composant et exploiter les d
 		/>
 
 		<VBtn
-			:loading="state === 'pending'"
+			:loading="state === StateEnum.PENDING"
 			class="mt-4"
 			@click="login"
 		>
@@ -157,6 +157,8 @@ Ensuite, vous pouvez appeler cette fonction dans un composant et exploiter les d
 
 	@Component
 	export default class MonApiComponent extends Vue {
+		StateEnum = StateEnum;
+
 		credentials: UserCredentials = {
 			username: null,
 			password: null
