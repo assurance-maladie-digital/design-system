@@ -11,7 +11,7 @@ Pour créer un nouveau projet, il est recommandé d’utiliser [Vue CLI](https:/
 
 Pour créer un nouveau projet, vous devez installer les outils suivants :
 
-- [Node.js](https://nodejs.org/) LTS
+- [Node.js](https://nodejs.org/) LTS (v16)
 - [Yarn](https://classic.yarnpkg.com/)
 - [Vue CLI](https://cli.vuejs.org/guide/installation.html)
 

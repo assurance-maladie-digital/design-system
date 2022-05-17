@@ -1,5 +1,10 @@
 ## Non publié
 
+### Documentation
+
+- 📝 **Documentation**
+  - **installation:** Ajout de la version de Node.js requise ([#2000](https://github.com/assurance-maladie-digital/design-system/pull/2000))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -10,7 +15,7 @@
   - **vue-router:** Mise à jour vers la `v3.5.4` ([#1996](https://github.com/assurance-maladie-digital/design-system/pull/1996)) ([72b616b](https://github.com/assurance-maladie-digital/design-system/commit/72b616b5b5f7e59f69119d6512f8c7f756c4ccfc))
   - **@babel/core:** Mise à jour vers la `v7.17.12` ([#1997](https://github.com/assurance-maladie-digital/design-system/pull/1997)) ([cafb35c](https://github.com/assurance-maladie-digital/design-system/commit/cafb35c45c0de3c13b6e23bdc452d75e39e89501))
   - **@types/node:** Mise à jour vers la `v16.11.36` ([#1998](https://github.com/asurance-maladie-digital/design-system/pull/1998)) ([9d6b15a](https://github.com/assurance-maladie-digital/design-system/commit/9d6b15a32d61ac8746fefc582a2a58b8220cc3b9))
-  - **@mdi/js:** Mise à jour vers la `v6.7.96` ([#1999](https://github.com/assurance-maladie-digital/design-system/pull/1999))
+  - **@mdi/js:** Mise à jour vers la `v6.7.96` ([#1999](https://github.com/assurance-maladie-digital/design-system/pull/1999)) ([ed3f45d](https://github.com/assurance-maladie-digital/design-system/commit/ed3f45d05c2e472c99e4237d85929f264a04a6ad))
 
 ## v2.4.0
 
