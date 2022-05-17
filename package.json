@@ -26,7 +26,7 @@
 		"axios": "0.27.2",
 		"babel-loader": "8.2.5",
 		"consola": "2.15.3",
-		"copy-webpack-plugin": "6.4.1",
+		"copy-webpack-plugin": "11.0.0",
 		"core-js": "3.22.5",
 		"cross-env": "7.0.3",
 		"custom-event-polyfill": "1.0.7",
