@@ -55,7 +55,7 @@ const testFile = {
 
 /** Create the wrapper */
 function createWrapper(value = fileList) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			UploadWorkflowCore
 		],
