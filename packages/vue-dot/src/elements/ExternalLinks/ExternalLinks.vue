@@ -47,10 +47,9 @@
 				v-bind="options.listItem"
 			>
 				<VListItemContent v-bind="options.listItemContent">
-					<VListItemTitle
-						v-bind="options.listItemTitle"
-						v-text="item.text"
-					/>
+					<VListItemTitle v-bind="options.listItemTitle">
+						{{ item.text }}
+					</VListItemTitle>
 				</VListItemContent>
 
 				<VListItemIcon v-bind="options.listItemIcon">
