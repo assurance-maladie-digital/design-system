@@ -25,7 +25,7 @@ function createDatePicker() {
 
 /** Create the wrapper */
 function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			Birthdate
 		],
