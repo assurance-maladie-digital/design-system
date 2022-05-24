@@ -28,7 +28,7 @@ interface DropEvent {
 	kind?: string;
 }
 
-const component = Vue.component('Test', {
+const component = Vue.component('TestComponent', {
 	mixins: [
 		FileUploadCore
 	],
