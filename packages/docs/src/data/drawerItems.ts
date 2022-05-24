@@ -6,7 +6,8 @@ import {
 	mdiViewDashboard,
 	mdiCogs,
 	mdiHumanMaleBoard,
-	mdiSecurity
+	mdiSecurity,
+	mdiBookOpenPageVariantOutline
 } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
@@ -47,6 +48,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Accessibilité',
 				to: '/demarrer/accessibilite'
+			},
+			{
+				title: 'Logo',
+				to: '/composants/logo'
 			}
 		]
 	},
@@ -55,124 +60,162 @@ export const drawerItems: DrawerItem[] = [
 		icon: mdiViewDashboard,
 		items: [
 			{
-				title: 'CookieBanner',
-				to: '/composants/cookie-banner'
+				title: 'Structure',
+				items: [
+					{
+						title: 'HeaderBar',
+						to: '/composants/header-bar'
+					},
+					{
+						title: 'SubHeader',
+						to: '/composants/sub-header'
+					},
+					{
+						title: 'FooterBar',
+						to: '/composants/footer-bar'
+					},
+					{
+						title: 'FooterWrapper',
+						to: '/composants/footer-wrapper'
+					}
+				]
 			},
+			{
+				title: 'Layout',
+				items: [
+					{
+						title: 'PageContainer',
+						to: '/composants/page-container'
+					}
+				]
+			},
+			{
+				title: 'Navigation',
+				items: [
+					{
+						title: 'ExternalLinks',
+						to: '/composants/external-links'
+					}
+				]
+			},
+			{
+				title: 'Boutons',
+				items: [
+					{
+						title: 'CopyBtn',
+						to: '/composants/copy-btn'
+					},
+					{
+						title: 'LangBtn',
+						to: '/composants/lang-btn'
+					},
+					{
+						title: 'DownloadBtn',
+						to: '/composants/download-btn'
+					},
+					{
+						title: 'FranceConnectBtn',
+						to: '/composants/france-connect-btn'
+					},
+					{
+						title: 'UserMenuBtn',
+						to: '/composants/user-menu-btn'
+					}
+				]
+			},
+			{
+				title: 'Formulaires',
+				items: [
+					{
+						title: 'DatePicker',
+						to: '/composants/date-picker'
+					},
+					{
+						title: 'FormBuilder',
+						to: '/composants/form-builder'
+					},
+					{
+						title: 'FormField',
+						to: '/composants/form-field'
+					},
+					{
+						title: 'FormFieldList',
+						to: '/composants/form-field-list'
+					},
+					{
+						title: 'FileUpload',
+						to: '/composants/file-upload'
+					},
+					{
+						title: 'UploadWorkflow',
+						to: '/composants/upload-workflow'
+					}
+				]
+			},
+			{
+				title: 'Tableaux',
+				items: [
+					{
+						title: 'PaginatedTable',
+						to: '/composants/paginated-table'
+					},
+					{
+						title: 'FilterModule',
+						to: '/composants/filter-module'
+					},
+					{
+						title: 'TableToolbar',
+						to: '/composants/table-toolbar'
+					}
+				]
+			},
+			{
+				title: 'Affichage de données',
+				items: [
+					{
+						title: 'DataList',
+						to: '/composants/data-list'
+					},
+					{
+						title: 'DataListGroup',
+						to: '/composants/data-list-group'
+					}
+				]
+			},
+			{
+				title: 'Feedback',
+				items: [
+					{
+						title: 'DialogBox',
+						to: '/composants/dialog-box'
+					},
+					{
+						title: 'NotificationBar',
+						to: '/composants/notification-bar'
+					},
+					{
+						title: 'CookieBanner',
+						to: '/composants/cookie-banner'
+					},
+					{
+						title: 'HeaderLoading',
+						to: '/composants/header-loading'
+					}
+				]
+			}
+		]
+	},
+	{
+		title: 'Templates',
+		icon: mdiBookOpenPageVariantOutline,
+		items: [
 			{
 				title: 'CookiesPage',
 				to: '/composants/cookies-page'
 			},
 			{
-				title: 'CopyBtn',
-				to: '/composants/copy-btn'
-			},
-			{
-				title: 'CustomIcon',
-				to: '/composants/custom-icon'
-			},
-			{
-				title: 'DataList',
-				to: '/composants/data-list'
-			},
-			{
-				title: 'DataListGroup',
-				to: '/composants/data-list-group'
-			},
-			{
-				title: 'DatePicker',
-				to: '/composants/date-picker'
-			},
-			{
-				title: 'DialogBox',
-				to: '/composants/dialog-box'
-			},
-			{
-				title: 'DownloadBtn',
-				to: '/composants/download-btn'
-			},
-			{
 				title: 'ErrorPage',
 				to: '/composants/error-page'
-			},
-			{
-				title: 'ExternalLinks',
-				to: '/composants/external-links'
-			},
-			{
-				title: 'FileUpload',
-				to: '/composants/file-upload'
-			},
-			{
-				title: 'FilterModule',
-				to: '/composants/filter-module'
-			},
-			{
-				title: 'FooterBar',
-				to: '/composants/footer-bar'
-			},
-			{
-				title: 'FooterWrapper',
-				to: '/composants/footer-wrapper'
-			},
-			{
-				title: 'FormBuilder',
-				to: '/composants/form-builder'
-			},
-			{
-				title: 'FormField',
-				to: '/composants/form-field'
-			},
-			{
-				title: 'FormFieldList',
-				to: '/composants/form-field-list'
-			},
-			{
-				title: 'FranceConnectBtn',
-				to: '/composants/france-connect-btn'
-			},
-			{
-				title: 'HeaderBar',
-				to: '/composants/header-bar'
-			},
-			{
-				title: 'HeaderLoading',
-				to: '/composants/header-loading'
-			},
-			{
-				title: 'LangBtn',
-				to: '/composants/lang-btn'
-			},
-			{
-				title: 'Logo',
-				to: '/composants/logo'
-			},
-			{
-				title: 'NotificationBar',
-				to: '/composants/notification-bar'
-			},
-			{
-				title: 'PageContainer',
-				to: '/composants/page-container'
-			},
-			{
-				title: 'PaginatedTable',
-				to: '/composants/paginated-table'
-			},
-			{
-				title: 'SubHeader',
-				to: '/composants/sub-header'
-			},
-			{
-				title: 'TableToolbar',
-				to: '/composants/table-toolbar'
-			},
-			{
-				title: 'UploadWorkflow',
-				to: '/composants/upload-workflow'
-			},
-			{
-				title: 'UserMenuBtn',
-				to: '/composants/user-menu-btn'
 			}
 		]
 	},
@@ -283,6 +326,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Classes utilitaires CSS',
 				to: '/css/classes-utilitaires'
+			},
+			{
+				title: 'CustomIcon',
+				to: '/composants/custom-icon'
 			}
 		]
 	},
