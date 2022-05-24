@@ -10,7 +10,7 @@ interface TestComponent extends Vue {
 
 /** Create the wrapper */
 function createWrapper(pickerDate?: string, birthdate = false) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			PickerDate
 		],
