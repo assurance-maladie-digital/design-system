@@ -70,7 +70,7 @@
 				>
 					<slot
 						name="info-text"
-						:maxSize="maxSizeReadable"
+						:max-size="maxSizeReadable"
 						:extensions="extensions"
 					>
 						{{ locales.infoText(maxSizeReadable, extensions) }}

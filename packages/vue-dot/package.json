@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/vue-dot",
-	"version": "2.3.0",
+	"version": "2.4.0",
 	"description": "Implementation of our Design System for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -55,14 +55,14 @@
 		"vuex": "^3.5.0"
 	},
 	"devDependencies": {
-		"@cnamts/eslint-config-vue": "^2.3.0",
-		"@cnamts/shared": "^2.3.0",
+		"@cnamts/eslint-config-vue": "^2.4.0",
+		"@cnamts/shared": "^2.4.0",
 		"@vue/cli-plugin-babel": "4.5.17",
 		"@vue/cli-plugin-eslint": "4.5.17",
 		"@vue/cli-plugin-typescript": "4.5.17",
 		"@vue/cli-plugin-unit-jest": "4.5.17",
 		"@vue/cli-service": "4.5.17",
-		"vue-cli-plugin-vuetify": "2.4.8",
+		"vue-cli-plugin-vuetify": "2.5.0",
 		"vuetify-loader": "1.7.3"
 	},
 	"publishConfig": {

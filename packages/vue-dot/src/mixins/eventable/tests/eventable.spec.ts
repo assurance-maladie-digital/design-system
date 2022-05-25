@@ -14,7 +14,7 @@ interface TestComponent extends Vue {
 
 /** Create the test component */
 function createTestComponent(mixinData = {}) {
-	return Vue.component('Test', {
+	return Vue.component('TestComponent', {
 		mixins: [
 			Eventable,
 			customizable(mixinData) // Necessary since used in eventable

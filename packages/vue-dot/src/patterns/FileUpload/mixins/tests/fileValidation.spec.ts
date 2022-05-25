@@ -10,7 +10,7 @@ interface TestComponent extends Vue {
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
 }
 
-const component = Vue.component('Test', {
+const component = Vue.component('TestComponent', {
 	mixins: [
 		FileValidation
 	],

@@ -5,7 +5,7 @@ import { FieldMap } from '../fieldMap';
 
 /** Create the wrapper */
 function createWrapper() {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			FieldMap
 		],
