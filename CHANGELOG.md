@@ -2,6 +2,9 @@
 
 ### Documentation
 
+- ♻️ **Refactoring**
+  - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012))
+
 - 📝 **Documentation**
   - **installation:** Ajout de la version de Node.js requise ([#1990](https://github.com/assurance-maladie-digital/design-system/pull/1990)) ([df0b649](https://github.com/assurance-maladie-digital/design-system/commit/df0b6494ba5f382c7d7fa0a9f2b8b07c4323e4ab))
 
@@ -22,7 +25,7 @@
   - **lint-staged:** Mise à jour vers la `v12.4.2` ([#2013](https://github.com/assurance-maladie-digital/design-system/pull/2013)) ([3986284](https://github.com/assurance-maladie-digital/design-system/commit/39862841e5974da48ba6baf30bca57cdbcb7b068))
   - **eslint-plugin-jsdoc:** Roll back vers la `v39.3.1` ([#2016](https://github.com/assurance-maladie-digital/design-system/pull/2016)) ([f83a4f1](https://github.com/assurance-maladie-digital/design-system/commit/f83a4f10bdb060986c10d8085bd820cb508bdd5b))
   - **@babel/core:** Mise à jour vers la `v7.18.2` ([#2017](https://github.com/assurance-maladie-digital/design-system/pull/2017))) ([36f79cc](https://github.com/assurance-maladie-digital/design-system/commit/36f79cc6e84d61c487c68aca462b0256c014d9ed))
-  - **lerna:** Mise à jour vers la `v5` ([#2018](https://github.com/assurance-maladie-digital/design-system/pull/2018))
+  - **lerna:** Mise à jour vers la `v5` ([#2018](https://github.com/assurance-maladie-digital/design-system/pull/2018)) ([735789e](https://github.com/assurance-maladie-digital/design-system/commit/735789e39051b087a4bced81b97a4ff38cf2f93e))
 
 ## v2.4.0
 
