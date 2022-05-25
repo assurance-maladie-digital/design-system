@@ -68,7 +68,7 @@ function createTextField() {
 
 /** Create the wrapper */
 function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			DateLogic,
 			customizable(mixinData)
