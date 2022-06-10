@@ -2645,10 +2645,10 @@
     unixify "^1.0.0"
     yargs "^16.0.0"
 
-"@netlify/zip-it-and-ship-it@^5.10.0":
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.10.0.tgz#ec97d92da788318a42499e147d19c2707b7856cd"
-  integrity sha512-A8CyBm5fvrSObAMOfu62+ycfYlxhdrG/Gf9OF9bg2eWXY+BtQWG7OUnmg/QPykhU3uVNXFrX7psQ5kBa04/x5w==
+"@netlify/zip-it-and-ship-it@^5.10.1":
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-5.10.1.tgz#6a9ef4b53f06804ff2c4fb1c17ab483dbaa103f2"
+  integrity sha512-pZSSo1hv32sBUoBPrsWVdd774amYGDc0EhDQlA7OBJsGKexWvH/jNnsQmqtVPNaujNlH12S/v1Z1qMlZlX3PAQ==
   dependencies:
     "@babel/parser" "7.16.8"
     "@netlify/esbuild" "0.14.25"
@@ -14607,10 +14607,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@10.5.0:
-  version "10.5.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-10.5.0.tgz#f18300e4f7823589cfe032de259a0b2bc82ed943"
-  integrity sha512-MMM/1RWUExl07bMGqVRhEURMhHu1WO8XrkzfIirSSf78vZHallSr5HdcwZvrizieTeumn8WSOnuwajFMji0Ptw==
+netlify-cli@10.5.1:
+  version "10.5.1"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-10.5.1.tgz#a882c295654cc11b31f160efd764512886665beb"
+  integrity sha512-4WCcWDPXt2BEWm0kxelUSZhjixAQj9QUff6GamgtLwb/JSoD5blvVYddhaZfPGGz/K0ddIpf1n6fNTJuQhADcg==
   dependencies:
     "@netlify/build" "^27.1.3"
     "@netlify/config" "^18.0.1"
@@ -14618,7 +14618,7 @@ netlify-cli@10.5.0:
     "@netlify/framework-info" "^9.0.2"
     "@netlify/local-functions-proxy" "^1.1.1"
     "@netlify/plugins-list" "^6.27.0"
-    "@netlify/zip-it-and-ship-it" "^5.10.0"
+    "@netlify/zip-it-and-ship-it" "^5.10.1"
     "@octokit/rest" "^18.0.0"
     "@sindresorhus/slugify" "^1.1.0"
     ansi-escapes "^5.0.0"
