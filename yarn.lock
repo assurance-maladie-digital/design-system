@@ -3913,12 +3913,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.12.tgz#fd9c1c2cfab536a2383ed1ef70f94adea743a226"
   integrity sha512-KQZ1al2hKOONAs2MFv+yTQP1LkDWMrRJ9YCVRalXltOfXsBmH5IownLxQaiq0lnAHwAViLnh2aTYqrPcRGEbgg==
 
-"@types/node@16.11.36":
-  version "16.11.36"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.36.tgz#9ab9f8276987132ed2b225cace2218ba794fc751"
-  integrity sha512-FR5QJe+TaoZ2GsMHkjuwoNabr+UrJNRr2HNOo+r/7vhcuntM6Ee/pRPOnRhhL2XE9OOvX9VLEq+BcXl3VjNoWA==
-
-"@types/node@^16.0.0":
+"@types/node@16.11.39", "@types/node@^16.0.0":
   version "16.11.39"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.39.tgz#07223cd2bc332ad9d92135e3a522eebdee3b060e"
   integrity sha512-K0MsdV42vPwm9L6UwhIxMAOmcvH/1OoVkZyCgEtVu4Wx7sElGloy/W7kMBNe/oJ7V/jW9BVt1F6RahH6e7tPXw==
@@ -7287,20 +7282,15 @@ core-js-compat@^3.12.1, core-js-compat@^3.21.0, core-js-compat@^3.22.1, core-js-
     browserslist "^4.20.3"
     semver "7.0.0"
 
-core-js@3.22.7:
-  version "3.22.7"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.7.tgz#8d6c37f630f6139b8732d10f2c114c3f1d00024f"
-  integrity sha512-Jt8SReuDKVNZnZEzyEQT5eK6T2RRCXkfTq7Lo09kpm+fHjgGewSbNjV+Wt4yZMhPDdzz2x1ulI5z/w4nxpBseg==
+core-js@3.22.8, core-js@^3.6.5:
+  version "3.22.8"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.8.tgz#23f860b1fe60797cc4f704d76c93fea8a2f60631"
+  integrity sha512-UoGQ/cfzGYIuiq6Z7vWL1HfkE9U9IZ4Ub+0XSiJTCzvbZzgPA69oDF2f+lgJ6dFFLEdjW5O6svvoKzXX23xFkA==
 
 core-js@^2.4.0, core-js@^2.6.5:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
-
-core-js@^3.6.5:
-  version "3.22.8"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.8.tgz#23f860b1fe60797cc4f704d76c93fea8a2f60631"
-  integrity sha512-UoGQ/cfzGYIuiq6Z7vWL1HfkE9U9IZ4Ub+0XSiJTCzvbZzgPA69oDF2f+lgJ6dFFLEdjW5O6svvoKzXX23xFkA==
 
 core-util-is@1.0.2:
   version "1.0.2"
@@ -8861,10 +8851,10 @@ eslint-plugin-jsdoc@39.3.1:
     semver "^7.3.7"
     spdx-expression-parse "^3.0.1"
 
-eslint-plugin-vue@9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.0.1.tgz#66ba4a6e4085a26a724adcde06eaf72b178285c9"
-  integrity sha512-/w/9/vzz+4bSYtp5UqXgJ0CfycXTMtpp6lkz7/fMp0CcJxPWyRP6Pr88ihhrsNEcVt2ZweMupWRNYa+5Md41LQ==
+eslint-plugin-vue@9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.1.0.tgz#b528941325e26a24bc5d5c5030c0a8996c36659c"
+  integrity sha512-EPCeInPicQ/YyfOWJDr1yfEeSNoFCMzUus107lZyYi37xejdOolNzS5MXGXp8+9bkoKZMdv/1AcZzQebME6r+g==
   dependencies:
     eslint-utils "^3.0.0"
     natural-compare "^1.4.0"
@@ -19952,10 +19942,10 @@ ts-node@10.4.0:
     make-error "^1.1.1"
     yn "3.1.1"
 
-ts-node@10.8.0:
-  version "10.8.0"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.8.0.tgz#3ceb5ac3e67ae8025c1950626aafbdecb55d82ce"
-  integrity sha512-/fNd5Qh+zTt8Vt1KbYZjRHCE9sI5i7nqfD/dzBBRDeVXZXS6kToW6R7tTU6Nd4XavFs0mAVCg29Q//ML7WsZYA==
+ts-node@10.8.1:
+  version "10.8.1"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.8.1.tgz#ea2bd3459011b52699d7e88daa55a45a1af4f066"
+  integrity sha512-Wwsnao4DQoJsN034wePSg5nZiw4YKXf56mPIAeD6wVmiv+RytNSWqc2f3fKvcUoV+Yn2+yocD71VOfQHbmVX4g==
   dependencies:
     "@cspotcode/source-map-support" "^0.8.0"
     "@tsconfig/node10" "^1.0.7"
@@ -20660,10 +20650,10 @@ vue-class-component@7.2.6:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
 
-vue-cli-plugin-vuetify@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.5.0.tgz#2d51b81c6d7da9e1393a0eab5d6baa107fbe1578"
-  integrity sha512-wc8/dTJp+C5ik+xi9DdakOT4n14sRPb4Xb+L8ukpsb4r7K6lzgPriLF7JrnIi9cYJwqU29UaT0f7xx5ixDdUdg==
+vue-cli-plugin-vuetify@2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.5.1.tgz#6a3ee80c6e8d09b634ec7705422573f2ee0bc7e7"
+  integrity sha512-OcZ8/bqf84yTbQN+PyRf+8Wvr8czg+u5J4JGVx+Lq5ytsBxTgIUIZ/oMO7j+bd9WCjiKid2l9gZbQYjZABw2+g==
   dependencies:
     null-loader "^4.0.1"
     semver "^7.1.2"
