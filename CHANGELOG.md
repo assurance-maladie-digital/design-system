@@ -11,7 +11,6 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **dayjs:** Mise à jour vers la `v1.11.2` ([#1985](https://github.com/assurance-maladie-digital/design-system/pull/1985)) ([6184442](https://github.com/assurance-maladie-digital/design-system/commit/618444239564e5ca340c512834973457d034334f))
   - **@vue/eslint-config-standard:** Mise à jour vers la `v7` ([#1991](https://github.com/asurance-maladie-digital/design-system/pull/1991)) ([716fb0b](https://github.com/assurance-maladie-digital/design-system/commit/716fb0b5c9cfce81a2512e959ccb4d903a1cf32e))
   - **vue-router:** Mise à jour vers la `v3.5.4` ([#1996](https://github.com/assurance-maladie-digital/design-system/pull/1996)) ([72b616b](https://github.com/assurance-maladie-digital/design-system/commit/72b616b5b5f7e59f69119d6512f8c7f756c4ccfc))
   - **@mdi/js:** Mise à jour vers la `v6.7.96` ([#1999](https://github.com/assurance-maladie-digital/design-system/pull/1999)) ([ed3f45d](https://github.com/assurance-maladie-digital/design-system/commit/ed3f45d05c2e472c99e4237d85929f264a04a6ad))
@@ -26,7 +25,8 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v9.1.0` ([#2023](https://github.com/assurance-maladie-digital/design-system/pull/2023)) ([5aceaa4](https://github.com/assurance-maladie-digital/design-system/commit/5aceaa45e0e4a9a339677e34ef204b9992d30241))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.1` ([#2025](https://github.com/assurance-maladie-digital/design-system/pull/2025)) ([f6f794b](https://github.com/assurance-maladie-digital/design-system/commit/f6f794b8618181b75d49d5ef37951567d6bd099d))
   - **core-js:** Mise à jour vers la `v3.22.8` ([#2026](//github.com/assurance-maladie-digital/design-system/pull/2026)) ([fb416b8](https://github.com/assurance-maladie-digital/design-system/commit/fb416b81db4fc68beb9dcf4df89431935c6b4397))
-  - **ts-node:** Mise à jour vers la `v10.8.1` ([#2028](https://github.com/assurance-maladie-digital/design-system/pull/2028))
+  - **ts-node:** Mise à jour vers la `v10.8.1` ([#2028](https://github.com/assurance-maladie-digital/design-system/pull/2028)) ([8cb34f5](https://github.com/assurance-maladie-digital/design-system/commit/8cb34f5450c98b6d6bbd25f028c7d56689d2d568))
+  - **dayjs:** Mise à jour vers la `v1.11.3` ([#2032](https://github.com/assurance-maladie-digital/design-system/pull/2032))
 
 ## v2.4.0
 
