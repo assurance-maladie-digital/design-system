@@ -11,6 +11,7 @@
 		</slot>
 
 		<FileList
+			v-if="value.length"
 			v-bind="options.fileList"
 			:files="fileList"
 			@delete-file="resetFile"

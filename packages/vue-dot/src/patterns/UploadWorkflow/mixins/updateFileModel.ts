@@ -8,7 +8,9 @@ export class UpdateFileModel extends Vue {
 	fileList: FileListItem[] = [];
 
 	initFileList(value: FileListItem[]): void {
-		this.fileList = [];
+		if (!this.fileList) {
+			this.fileList = [];
+		}
 
 		value.forEach((propFile: FileListItem) => {
 			const file = propFile;
@@ -21,13 +23,7 @@ export class UpdateFileModel extends Vue {
 		});
 	}
 
-	updateFileModel<T>(id: string, key: string, value: T): void {
-		const index = this.fileList.findIndex((file) => file.id === id);
-
-		if (index === -1) {
-			return;
-		}
-
+	updateFileModel<T>(index: number, key: string, value: T): void {
 		if (value === undefined) {
 			this.$delete(this.fileList[index], key);
 			return;

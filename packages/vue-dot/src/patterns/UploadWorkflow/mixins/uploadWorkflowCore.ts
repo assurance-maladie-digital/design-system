@@ -4,15 +4,19 @@ import Component, { mixins } from 'vue-class-component';
 import { UpdateFileModel } from './updateFileModel';
 
 import { Refs } from '../../../types';
-import { FileListItem, SelectItem } from '../types';
+import { FileListItem, SelectItem, FileItem } from '../types';
 
 import FileUpload from '../../FileUpload';
 
 const Props = Vue.extend({
 	props: {
 		value: {
+			type: Array as PropType<FileItem[]>,
+			default: () => ([])
+		},
+		fileListItems: {
 			type: Array as PropType<FileListItem[]>,
-			required: true
+			default: () => ([])
 		}
 	}
 });
@@ -23,7 +27,7 @@ const MixinsDeclaration = mixins(Props, UpdateFileModel);
 	watch: {
 		value: {
 			handler(): void {
-				this.initFileList(this.value);
+				this.initFileList(this.fileListItems);
 			},
 			immediate: true,
 			deep: true
@@ -51,7 +55,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	get selectItems(): SelectItem[] {
 		const items: SelectItem[] = [];
 
-		this.value.forEach((file: FileListItem) => {
+		this.value.forEach((file) => {
 			items.push({
 				text: file.title,
 				value: file.id
@@ -62,11 +66,23 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	setFileInList(): void {
-		this.updateFileModel(this.selectedItem, 'state', this.error ? 'error' : 'success');
+		let index: number;
+		if (this.fileListItems) {
+			index = this.fileList.findIndex((file) => file.id === this.selectedItem);
+
+			if (index === -1) {
+				return;
+			}
+		} else {
+			this.fileList.push({});
+			index = this.fileList.length;
+		}
+
+		this.updateFileModel(index, 'state', this.error ? 'error' : 'success');
 
 		if (this.uploadedFile) {
-			this.updateFileModel(this.selectedItem, 'name', this.uploadedFile.name);
-			this.updateFileModel(this.selectedItem, 'file', this.uploadedFile);
+			this.updateFileModel(index, 'name', this.uploadedFile.name);
+			this.updateFileModel(index, 'file', this.uploadedFile);
 		}
 
 		this.error = false;
@@ -75,10 +91,14 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	/** Reset a file from the list */
-	resetFile(id: string): void {
-		this.updateFileModel(id, 'state', 'initial');
-		this.updateFileModel(id, 'name', undefined);
-		this.updateFileModel(id, 'file', undefined);
+	resetFile(index: number): void {
+		if (this.fileListItems) {
+			this.$delete(this.fileList, index);
+		} else {
+			this.updateFileModel(index, 'state', 'initial');
+			this.updateFileModel(index, 'name', undefined);
+			this.updateFileModel(index, 'file', undefined);
+		}
 
 		this.emitChangeEvent();
 	}
@@ -106,6 +126,12 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	fileSelected(): void {
+		if (!this.fileListItems.length && this.uploadedFile) {
+			this.fileList.push(this.uploadedFile);
+			this.emitChangeEvent();
+			return;
+		}
+
 		if (this.singleMode) {
 			this.selectedItem = this.selectItems[0].value;
 			this.setFileInList();
