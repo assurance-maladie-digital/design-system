@@ -26,12 +26,12 @@
   - **core-js:** Mise à jour vers la `v3.22.8` ([#2026](//github.com/assurance-maladie-digital/design-system/pull/2026)) ([fb416b8](https://github.com/assurance-maladie-digital/design-system/commit/fb416b81db4fc68beb9dcf4df89431935c6b4397))
   - **ts-node:** Mise à jour vers la `v10.8.1` ([#2028](https://github.com/assurance-maladie-digital/design-system/pull/2028)) ([8cb34f5](https://github.com/assurance-maladie-digital/design-system/commit/8cb34f5450c98b6d6bbd25f028c7d56689d2d568))
   - **dayjs:** Mise à jour vers la `v1.11.3` ([#2032](https://github.com/assurance-maladie-digital/design-system/pull/2032)) ([735789e](https://github.com/assurance-maladie-digital/design-system/commit/735789e39051b087a4bced81b97a4ff38cf2f93e))
-  - **lerna:** Mise à jour vers la `v5.1.1` ([#2034](https://github.com/assurance-maladie-digital/design-system/pull/2034)) ([4121c4f](https://github.com/assurance-maladie-digital/design-system/commit/4121c4fe489c92b6d9b62c9548e1d43e1b8edeb1))
   - **@nuxtjs/google-font:** Mise à jour vers la `v2` ([#2036](https://github.com/assurance-maladie-digital/design-system/pull/2036)) ([60d2aaa](https://github.com/assurance-maladie-digital/design-system/commit/60d2aaa70a4b4febfbf9f0e4da2c99792d527bed))
   - **netlify-cli:** Mise à jour vers la `v10.5.1` ([#2037](https://github.com/assurance-maladie-digital/design-system/pull/2037)) ([7104f3a](https://github.com/assurance-maladie-digital/design-system/commit/7104f3a90792790bc1762daafd9f01db485e0b7c))
   - **eslint-plugin-vue:** Mise à jour vers la `v9.1.1` ([#2038](https://github.com/assurance-maladie-digital/design-system/pull/2038)) ([a76b727](https://github.com/assurance-maladie-digital/design-system/commit/a76b727dd2f7b2c69565b6d46f93d741d621b75a))
   - **@babel/core:** Mise à jour vers la `v7.18.5` ([#2039](https://github.com/assurance-maladie-digital/design-system/pull/2039)) ([82ec485](https://github.com/assurance-maladie-digital/design-system/commit/82ec4850f16a5c23e156cf39e6ac3211882bcb6b))
-  - **@vue/eslint-config-typescript:** Mise à jour vers la `v11` ([#2040](https://github.com/assurance-maladie-digital/design-system/pull/2040))
+  - **@vue/eslint-config-typescript:** Mise à jour vers la `v11` ([#2040](https://github.com/assurance-maladie-digital/design-system/pull/2040)) ([511afda](https://github.com/assurance-maladie-digital/design-system/commit/511afdab772c0045263fa2363984b6e103eabb6b))
+  - **lerna:** Mise à jour vers la `v5.1.2` ([#2041](https://github.com/assurance-maladie-digital/design-system/pull/2041))
 
 ## v2.4.0
 
