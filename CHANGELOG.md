@@ -28,10 +28,10 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v9.1.1` ([#2038](https://github.com/assurance-maladie-digital/design-system/pull/2038)) ([a76b727](https://github.com/assurance-maladie-digital/design-system/commit/a76b727dd2f7b2c69565b6d46f93d741d621b75a))
   - **@babel/core:** Mise à jour vers la `v7.18.5` ([#2039](https://github.com/assurance-maladie-digital/design-system/pull/2039)) ([82ec485](https://github.com/assurance-maladie-digital/design-system/commit/82ec4850f16a5c23e156cf39e6ac3211882bcb6b))
   - **@vue/eslint-config-typescript:** Mise à jour vers la `v11` ([#2040](https://github.com/assurance-maladie-digital/design-system/pull/2040)) ([511afda](https://github.com/assurance-maladie-digital/design-system/commit/511afdab772c0045263fa2363984b6e103eabb6b))
-  - **lerna:** Mise à jour vers la `v5.1.2` ([#2041](https://github.com/assurance-maladie-digital/design-system/pull/2041)) ([d7855fe](https://github.com/assurance-maladie-digital/design-system/commit/d7855fe23a69b3895897298c6db0ef3653bcf47d))
   - **core-js:** Mise à jour vers la `v3.23.1` ([#2042](//github.com/assurance-maladie-digital/design-system/pull/2042)) ([902d675](https://github.com/assurance-maladie-digital/design-system/commit/902d6757552573b72b692fba91e7386a4aec0881))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.28.0` ([#2043](https://github.com/assurance-maladie-digital/design-system/pull/2043)) ([10aab9c](https://github.com/assurance-maladie-digital/design-system/commit/10aab9c5aff53e0eab4d3214bfe4bdad4fd93264))
-  - **@types/node:** Mise à jour vers la `v16.11.41` ([#2058](https://github.com/asurance-maladie-digital/design-system/pull/2058))
+  - **@types/node:** Mise à jour vers la `v16.11.41` ([#2058](https://github.com/asurance-maladie-digital/design-system/pull/2058)) ([94e3a87](https://github.com/assurance-maladie-digital/design-system/commit/94e3a87d8a4217615729aefd0717f277c6d4ede6))
+  - **lerna:** Mise à jour vers la `v5.1.3` ([#2059](https://github.com/assurance-maladie-digital/design-system/pull/2059))
 
 ## v2.4.0
 
