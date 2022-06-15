@@ -30,7 +30,8 @@
   - **@nuxtjs/google-font:** Mise à jour vers la `v2` ([#2036](https://github.com/assurance-maladie-digital/design-system/pull/2036)) ([60d2aaa](https://github.com/assurance-maladie-digital/design-system/commit/60d2aaa70a4b4febfbf9f0e4da2c99792d527bed))
   - **netlify-cli:** Mise à jour vers la `v10.5.1` ([#2037](https://github.com/assurance-maladie-digital/design-system/pull/2037)) ([7104f3a](https://github.com/assurance-maladie-digital/design-system/commit/7104f3a90792790bc1762daafd9f01db485e0b7c))
   - **eslint-plugin-vue:** Mise à jour vers la `v9.1.1` ([#2038](https://github.com/assurance-maladie-digital/design-system/pull/2038)) ([a76b727](https://github.com/assurance-maladie-digital/design-system/commit/a76b727dd2f7b2c69565b6d46f93d741d621b75a))
-  - **@babel/core:** Mise à jour vers la `v7.18.5` ([#2039](https://github.com/assurance-maladie-digital/design-system/pull/2039))
+  - **@babel/core:** Mise à jour vers la `v7.18.5` ([#2039](https://github.com/assurance-maladie-digital/design-system/pull/2039)) ([82ec485](https://github.com/assurance-maladie-digital/design-system/commit/82ec4850f16a5c23e156cf39e6ac3211882bcb6b))
+  - **@vue/eslint-config-typescript:** Mise à jour vers la `v11` ([#2040](https://github.com/assurance-maladie-digital/design-system/pull/2040))
 
 ## v2.4.0
 
