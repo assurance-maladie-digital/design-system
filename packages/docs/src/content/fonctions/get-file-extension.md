@@ -1,5 +1,5 @@
 ---
-title: Fonction getFileExtension
+title: getFileExtension
 description: La fonction `getFileExtension` permet de récupérer l’extension à partir du nom d’un fichier.
 ---
 
