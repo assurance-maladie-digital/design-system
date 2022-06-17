@@ -57,11 +57,11 @@
 	"devDependencies": {
 		"@cnamts/eslint-config-vue": "^2.4.0",
 		"@cnamts/shared": "^2.4.0",
-		"@vue/cli-plugin-babel": "4.5.17",
-		"@vue/cli-plugin-eslint": "4.5.17",
-		"@vue/cli-plugin-typescript": "4.5.17",
-		"@vue/cli-plugin-unit-jest": "4.5.17",
-		"@vue/cli-service": "4.5.17",
+		"@vue/cli-plugin-babel": "4.5.18",
+		"@vue/cli-plugin-eslint": "4.5.18",
+		"@vue/cli-plugin-typescript": "4.5.18",
+		"@vue/cli-plugin-unit-jest": "4.5.18",
+		"@vue/cli-service": "4.5.18",
 		"vue-cli-plugin-vuetify": "2.5.1",
 		"vuetify-loader": "1.7.3"
 	},
