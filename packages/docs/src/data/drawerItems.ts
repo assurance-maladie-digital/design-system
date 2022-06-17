@@ -7,7 +7,8 @@ import {
 	mdiCogs,
 	mdiHumanMaleBoard,
 	mdiSecurity,
-	mdiBookOpenPageVariantOutline
+	mdiBookOpenPageVariantOutline,
+	mdiHammerWrench
 } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
@@ -380,6 +381,20 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Authentification avec token',
 				to: '/guides/authentification-token'
+			}
+		]
+	},
+	{
+		title: 'Outils de développement',
+		icon: mdiHammerWrench,
+		items: [
+			{
+				title: 'Environnement de développement',
+				to: '/outils-developpement/ide'
+			},
+			{
+				title: 'Navigateur',
+				to: '/outils-developpement/navigateur'
 			}
 		]
 	},
