@@ -9,15 +9,15 @@ description: Le pattern `DatePicker` est un composant utilisé pour permettre à
 
 <doc-usage name="date-picker"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Outlined
+#### Outlined
 
 Vous pouvez afficher le `VTextField` en mode `outlined` en utilisant la prop du même nom, l’icône passera alors en mode `append` et la position du menu sera également modifiée.
 
 <doc-example file="date-picker/outlined"></doc-example>
 
-### Date de naissance
+#### Date de naissance
 
 Vous pouvez permettre à l’utilisateur de sélectionner une date naissance plus facilement en utilisant la prop `birthdate`.
 
@@ -27,13 +27,13 @@ L’utilisateur sélectionnera l’année en premier, puis le mois et enfin le j
 
 <doc-example file="date-picker/birthdate"></doc-example>
 
-### Weekends
+#### Weekends
 
 Vous pouvez afficher les weekends dans le calendrier en utilisant la prop `show-weekends`.
 
 <doc-example file="date-picker/weekends"></doc-example>
 
-### Période
+#### Période
 
 Vous pouvez créer une période en fournissant une date de début via la prop `start-date`. Lorsque l’utilisateur aura sélectionné une date date le calendrier, la période sera alors affichée dans le calendrier.
 
@@ -43,7 +43,7 @@ Lorsque que la date de début est située avant la date sélectionnée (période
 
 <doc-example file="date-picker/range"></doc-example>
 
-### Format
+#### Format
 
 Vous pouvez modifier le format de la date affichée dans le `VTextField` en utilisant la prop `date-format` ainsi que le format utilisé avec le `v-model` en utilisant la prop `date-format-return`.
 
@@ -55,7 +55,7 @@ Par défaut un masque limitant les caractères pouvant être saisis dans le `VTe
 
 <doc-example file="date-picker/format"></doc-example>
 
-### Règles de validation
+#### Règles de validation
 
 Vous pouvez appliquer des [règles de validation Vuetify](https://vuetifyjs.com/fr-FR/components/inputs/#rules) au `VTextField` contenu dans le composant en utilisant la prop `rules`.
 

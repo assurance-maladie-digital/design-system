@@ -9,9 +9,9 @@ description: L’élément `UserMenuBtn` est utilisé pour afficher un bouton ac
 
 <doc-usage name="user-menu-btn"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Slot par défaut
+#### Slot par défaut
 
 Vous pouvez ajouter du contenu dans le menu en utilisant le slot par défaut.
 

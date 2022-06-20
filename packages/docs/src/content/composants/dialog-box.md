@@ -9,21 +9,21 @@ description: L’élément `DialogBox` est utilisé pour afficher une boîte de 
 
 <doc-usage name="dialog-box"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Largeur
+#### Largeur
 
 Vous pouvez modifier la largeur de la boîte de dialogue en utilisant la prop `width`.
 
 <doc-example file="dialog-box/width"></doc-example>
 
-### Textes des boutons
+#### Textes des boutons
 
 Vous pouvez modifier les textes par défaut des boutons d’actions en utilisant les props `cancel-btn-text` et `confirm-btn-text`.
 
 <doc-example file="dialog-box/btn-text"></doc-example>
 
-### Boutons d’actions masqués
+#### Boutons d’actions masqués
 
 Vous pouvez masquer les boutons d’actions en utilisant la prop `hide-actions`.
 

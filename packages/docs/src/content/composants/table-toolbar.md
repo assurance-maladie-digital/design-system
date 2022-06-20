@@ -9,27 +9,27 @@ description: Le pattern `TableToolbar` est utilisé pour afficher une barre au-d
 
 <doc-usage name="table-toolbar"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Bouton *Ajouter*
+#### Bouton *Ajouter*
 
 Vous pouvez afficher un bouton permettant une action d’ajout en utilisant la prop `show-add-btn`.
 
 <doc-example file="table-toolbar/add-btn"></doc-example>
 
-### Nombre de lignes filtrées
+#### Nombre de lignes filtrées
 
 Vous pouvez afficher le nombre de lignes filtrées par rapport au nombre total en utilisant la prop `nb-filtered`.
 
 <doc-example file="table-toolbar/nb-filtered"></doc-example>
 
-### Mode chargement
+#### Mode chargement
 
 Vous pouvez afficher le composant en mode chargement en utilisant la prop `loading`, cela va désactiver les éléments interactifs.
 
 <doc-example file="table-toolbar/loading"></doc-example>
 
-### Textes par défaut
+#### Textes par défaut
 
 Vous pouvez modifier le texte du nombre de lignes en utilisant la prop `row-text` (la marque du pluriel est ajoutée automatiquement).
 
