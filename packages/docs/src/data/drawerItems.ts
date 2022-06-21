@@ -25,10 +25,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/installation'
 			},
 			{
-				title: 'Outils',
-				to: '/demarrer/outils'
-			},
-			{
 				title: 'Roadmap',
 				to: '/demarrer/roadmap'
 			},
@@ -390,7 +386,7 @@ export const drawerItems: DrawerItem[] = [
 		items: [
 			{
 				title: 'Environnement de développement',
-				to: '/outils-developpement/ide'
+				to: '/outils-developpement/environnement-developpement'
 			},
 			{
 				title: 'Navigateur',
