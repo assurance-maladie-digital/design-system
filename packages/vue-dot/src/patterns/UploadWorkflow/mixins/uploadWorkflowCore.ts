@@ -16,7 +16,7 @@ const Props = Vue.extend({
 		},
 		fileListItems: {
 			type: Array as PropType<FileListItem[]>,
-			default: () => ([])
+			default: null
 		}
 	}
 });
@@ -27,7 +27,9 @@ const MixinsDeclaration = mixins(Props, UpdateFileModel);
 	watch: {
 		value: {
 			handler(): void {
-				this.initFileList(this.fileListItems);
+				if (this.internalFileListItems.length) {
+					this.initFileList(this.internalFileListItems);
+				}
 			},
 			immediate: true,
 			deep: true
@@ -48,6 +50,8 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	selectedItem = '';
 
+	internalFileListItems = this.fileListItems || this.value;
+
 	get singleMode(): boolean {
 		return this.fileList.length === 1;
 	}
@@ -67,8 +71,9 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	setFileInList(): void {
 		let index: number;
-		if (this.fileListItems) {
-			index = this.fileList.findIndex((file) => file.id === this.selectedItem);
+
+		if (this.internalFileListItems) {
+			index = this.internalFileListItems.findIndex((file) => file.id === this.selectedItem);
 
 			if (index === -1) {
 				return;
@@ -92,7 +97,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	/** Reset a file from the list */
 	resetFile(index: number): void {
-		if (this.fileListItems) {
+		if (!this.internalFileListItems.length) {
 			this.$delete(this.fileList, index);
 		} else {
 			this.updateFileModel(index, 'state', 'initial');
@@ -126,7 +131,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	fileSelected(): void {
-		if (!this.fileListItems.length && this.uploadedFile) {
+		if (!this.internalFileListItems.length && this.uploadedFile) {
 			this.fileList.push(this.uploadedFile);
 			this.emitChangeEvent();
 			return;

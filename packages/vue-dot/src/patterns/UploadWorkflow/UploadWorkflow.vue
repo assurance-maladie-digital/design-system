@@ -102,7 +102,9 @@
 				return this.sectionTitle;
 			}
 
-			return locales.title(this.value.length > 1);
+			const plural = this.internalFileListItems.length ? this.value.length > 1 : true;
+
+			return locales.title(plural);
 		}
 
 		uploadInline(id: string): void {

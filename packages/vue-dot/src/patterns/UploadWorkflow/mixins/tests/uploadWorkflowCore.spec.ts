@@ -14,7 +14,7 @@ interface TestComponent extends Vue {
 	updateFileModel<T>(id: string, key: string, value: T): void;
 
 	setFileInList: () => void;
-	resetFile: (id: string) => void;
+	resetFile: (index: number) => void;
 	dialogConfirm: () => void;
 	uploadedFile: File | null;
 	fileList: FileListItem[];
@@ -37,7 +37,7 @@ function createVForm() {
 }
 
 const fileListItem: FileListItem = {
-	id: '1',
+	id: 'file1',
 	title: 'UploadWorkflow',
 	name: 'avatar.png',
 	file: {} as File
@@ -80,7 +80,7 @@ describe('EventsFileFired', () => {
 	// setFileInList
 	it('sets list item state to success and emits change event', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
-		wrapper.vm.selectedItem = '1';
+		wrapper.vm.selectedItem = 'file1';
 
 		wrapper.vm.setFileInList();
 
@@ -92,7 +92,7 @@ describe('EventsFileFired', () => {
 
 	it('sets list item state to error and emits change event', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
-		wrapper.vm.selectedItem = '1';
+		wrapper.vm.selectedItem = 'file1';
 
 		wrapper.vm.error = true;
 
@@ -106,7 +106,7 @@ describe('EventsFileFired', () => {
 
 	it('sets list item name and file and emits change event', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
-		wrapper.vm.selectedItem = '1';
+		wrapper.vm.selectedItem = 'file1';
 
 		wrapper.vm.uploadedFile = testFile;
 
@@ -123,10 +123,10 @@ describe('EventsFileFired', () => {
 	it('resets the list item', () => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 
-		wrapper.vm.resetFile('1');
+		wrapper.vm.resetFile(0);
 
 		expect(wrapper.vm.fileList[0]).toEqual({
-			id: '1',
+			id: 'file1',
 			title: 'UploadWorkflow',
 			state: 'initial'
 		});
@@ -140,6 +140,7 @@ describe('EventsFileFired', () => {
 		wrapper.vm.$refs.form.validate = jest.fn().mockReturnValue(true);
 		wrapper.vm.$refs.form.reset = jest.fn();
 
+		wrapper.vm.selectedItem = 'file1';
 		wrapper.vm.dialogConfirm();
 
 		// Wait for form validation
