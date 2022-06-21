@@ -48,7 +48,7 @@
 		"@vue/cli-plugin-unit-jest": "4.5.18",
 		"@vue/cli-service": "4.5.18",
 		"vue-cli-plugin-vuetify": "2.5.1",
-		"vuetify-loader": "1.7.3"
+		"vuetify-loader": "1.8.0"
 	},
 	"publishConfig": {
 		"access": "public"
