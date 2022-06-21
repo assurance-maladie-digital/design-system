@@ -6,6 +6,8 @@
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
 
 - 📝 **Documentation**
+  - **FilterModule**: Ajout des évènement dans la partie API ([#2069](https://github.com/assurance-maladie-digital/design-system/pull/2069)) ([21871a4](https://github.com/assurance-maladie-digital/design-system/commit/21871a4fd89e91e059d2daea63d27fac21082142))
+
   - **installation:** Ajout de la version de Node.js requise ([#1990](https://github.com/assurance-maladie-digital/design-system/pull/1990)) ([df0b649](https://github.com/assurance-maladie-digital/design-system/commit/df0b6494ba5f382c7d7fa0a9f2b8b07c4323e4ab))
 
 ### Interne
