@@ -1,5 +1,5 @@
 ---
-title: Fonction downloadFile
+title: downloadFile
 description: La fonction `downloadFile` permet de télécharger un fichier.
 ---
 

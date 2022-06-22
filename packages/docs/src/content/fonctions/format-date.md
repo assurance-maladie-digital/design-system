@@ -1,5 +1,5 @@
 ---
-title: Fonction formatDate
+title: formatDate
 description: La fonction `formatDate` permet d’appliquer un [format](https://day.js.org/docs/en/display/format) à une variable de type [Day.js](https://day.js.org/en/).
 ---
 

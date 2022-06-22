@@ -1,5 +1,5 @@
 ---
-title: Fonction debounce
+title: debounce
 description: La fonction `debounce` permet de n’exécuter une fonction qu’une seule fois, après un délai depuis le dernier appel à la fonction.
 ---
 
