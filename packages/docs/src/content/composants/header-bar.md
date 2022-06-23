@@ -8,9 +8,9 @@ description: Le pattern `HeaderBar` est utilisé pour afficher l’en-tête d’
 <doc-tab-item label="Utilisation">
 <doc-usage name="header-bar"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Titre et sous-titre
+#### Titre et sous-titre
 
 Vous pouvez afficher un titre et un sous-titre en utilisant les props `service-title` et `service-sub-title`.
 
@@ -20,13 +20,13 @@ Le sous-titre sera automatiquement masqué sur les écrans mobiles.
 
 <doc-example file="header-bar/title-sub-title"></doc-example>
 
-### Menu de navigation
+#### Menu de navigation
 
 Vous pouvez afficher un menu de navigation en utilisant la prop `navigation-items`.
 
 <doc-example file="header-bar/navigation-bar"></doc-example>
 
-### Marque partenaire
+#### Marque partenaire
 
 Vous pouvez afficher une marque partenaire en utilisant le slot `secondary-logo`.
 
@@ -36,13 +36,13 @@ L’utilisation de ce slot va masquer le séparateur vertical après le logo de 
 
 <doc-example file="header-bar/secondary-logo-slot"></doc-example>
 
-### Slot par défaut
+#### Slot par défaut
 
 Vous pouvez ajouter du contenu dans la partie droite du header en utilisant le slot par défaut.
 
 <doc-example file="header-bar/default-slot"></doc-example>
 
-### Thème
+#### Thème
 
 Vous pouvez utiliser un thème différent en utilisant la prop `theme`.
 

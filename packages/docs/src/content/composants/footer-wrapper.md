@@ -15,15 +15,15 @@ Ce composant est déprécié en faveur du composant [`FooterBar`](/composants/fo
 
 <doc-example file="footer-wrapper/usage"></doc-example>
 
-## Exemples
+### Exemples
 
-### Bouton inactif
+#### Bouton inactif
 
 Vous pouvez rendre un bouton inactif en utilisant la prop `inert`. Celui-ci sera alors désactivé et l’élément généré sera une `div`.
 
 <doc-example file="footer-wrapper/inert"></doc-example>
 
-### Slot par défaut
+#### Slot par défaut
 
 Vous pouvez utiliser le slot par défaut pour ajouter du contenu.
 

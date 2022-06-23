@@ -9,9 +9,9 @@ description: L’élément `PageContainer` est un conteneur transparent utilisé
 
 <doc-usage name="page-container"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Carte
+#### Carte
 
 Vous pouvez utiliser le composant `VCard` pour afficher une carte dans la page.
 
