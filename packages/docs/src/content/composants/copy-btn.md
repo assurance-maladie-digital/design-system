@@ -9,9 +9,9 @@ description: L’élément `CopyBtn` est utilisé pour afficher un bouton permet
 
 <doc-usage name="copy-btn"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Tooltip masqué
+#### Tooltip masqué
 
 Vous pouvez masquer le tooltip en utilisant la prop `hide-tooltip`.
 

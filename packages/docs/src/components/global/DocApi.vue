@@ -4,13 +4,13 @@
 			v-for="(component, componentName, index) in api"
 			:key="componentName"
 		>
-			<h2
+			<h3
 				v-if="showTitle"
 				class="text-h5 font-weight-bold my-0"
 				:class="{ 'mt-14': index > 0 }"
 			>
 				{{ componentName }}
-			</h2>
+			</h3>
 
 			<div
 				v-for="(items, itemName, itemIndex) in component"
@@ -72,7 +72,7 @@
 		}
 
 		get subHeaderElement(): string {
-			return this.showTitle ? 'h2' : 'h3';
+			return this.showTitle ? 'h4' : 'h3';
 		}
 
 		formatItemName(itemName: string): string {
