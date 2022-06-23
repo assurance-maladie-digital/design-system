@@ -147,6 +147,7 @@ describe('EventsFileFired', () => {
 		wrapper.vm.selectedItem = 'file1';
 
 		wrapper.vm.setFileInList();
+		wrapper.vm.internalFileListItems = fileList;
 
 		await wrapper.vm.$nextTick();
 
