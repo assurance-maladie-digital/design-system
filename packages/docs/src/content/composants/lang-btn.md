@@ -9,9 +9,9 @@ description: L’élément `LangBtn` est utilisé pour permettre à l’utilisat
 
 <doc-usage name="lang-btn"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Langues disponibles
+#### Langues disponibles
 
 Vous pouvez modifier les langues disponibles dans la liste en utilisant la prop `available-languages`.
 

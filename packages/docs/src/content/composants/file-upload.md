@@ -9,9 +9,9 @@ description: Le pattern `FileUpload` est utilisé pour permettre à l’utilisat
 
 <doc-usage name="file-upload"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Règles de validation
+#### Règles de validation
 
 Vous pouvez modifier taille maximale d’un fichier ainsi que les extensions autorisées avec les props `file-size-max` et `allowed-extensions`.
 

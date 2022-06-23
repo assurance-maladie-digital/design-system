@@ -15,15 +15,15 @@ Ce composant requiert l’installation de la librairie [FormBuilder](/demarrer/i
 
 <doc-example file="form-field-list/usage"></doc-example>
 
-## Exemples
+### Exemples
 
-### Titre et description
+#### Titre et description
 
 Vous pouvez ajouter un titre et une description en utilisant les props `list-title` et `description`.
 
 <doc-example file="form-field-list/props"></doc-example>
 
-### Événements
+#### Événements
 
 Vous pouvez écouter la mise à jour de la valeur d’un champ du formulaire en utilisant l’événement `change`, ainsi que la mise à jour de la valeur d’un champ dynamique (avec l’attribut `dynamic`) en utilisant l’événement `refresh`.
 

@@ -4,9 +4,12 @@
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
+  - **global:** Modification des niveaux des titres ([#2066](https://github.com/assurance-maladie-digital/design-system/pull/2066))
 
 - 📝 **Documentation**
   - **installation:** Ajout de la version de Node.js requise ([#1990](https://github.com/assurance-maladie-digital/design-system/pull/1990)) ([df0b649](https://github.com/assurance-maladie-digital/design-system/commit/df0b6494ba5f382c7d7fa0a9f2b8b07c4323e4ab))
+  - **FilterModule**: Ajout des évènement dans la partie API ([#2069](https://github.com/assurance-maladie-digital/design-system/pull/2069)) ([7e9b670](https://github.com/assurance-maladie-digital/design-system/commit/7e9b670b403923663c2f4e1e4710a9b29ec7b538))
+  - **functions:** Modification des titres des pages de documentation des fonctions ([#2062](https://github.com/assurance-maladie-digital/design-system/pull/1990)) ([24851b0](https://github.com/assurance-maladie-digital/design-system/commit/24851b0d504d251a8ac11d07d46ace6799e3bcaf))
 
 ### Interne
 
@@ -32,7 +35,7 @@
   - **@types/node:** Mise à jour vers la `v16.11.41` ([#2058](https://github.com/asurance-maladie-digital/design-system/pull/2058)) ([94e3a87](https://github.com/assurance-maladie-digital/design-system/commit/94e3a87d8a4217615729aefd0717f277c6d4ede6))
   - **lerna:** Mise à jour vers la `v5.1.4` ([#2059](https://github.com/assurance-maladie-digital/design-system/pull/2059)) ([e2d72bd](https://github.com/assurance-maladie-digital/design-system/commit/e2d72bd2ba4dacc825ed7e3712f46c5d85046c30))
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.18` ([#2061](https://github.com/assurance-maladie-digital/design-system/pull/2061)) ([724c4a6](https://github.com/assurance-maladie-digital/design-system/commit/724c4a652d5c41a947dd9a85cbf3e4d32aab000b))
-  - **lint-staged:** Mise à jour vers la `v13.0.2` ([#2063](https://github.com/assurance-maladie-digital/design-system/pull/2063))
+  - **lint-staged:** Mise à jour vers la `v13.0.2` ([#2063](https://github.com/assurance-maladie-digital/design-system/pull/2063)) ([f158dec](https://github.com/assurance-maladie-digital/design-system/commit/f158dec0290c78e69d5a27cce425c38a83643052))
 
 ## v2.4.0
 

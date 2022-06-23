@@ -24,6 +24,13 @@ export const api: Api = {
 	dynamic?: boolean;
 }[]`
 			}
+		],
+		events: [
+			{
+				name: 'filter-list',
+				description: 'Événement émis lorsque qu’un filtre est modifié.',
+				value: `Field[] | null`
+			}
 		]
 	}
 };

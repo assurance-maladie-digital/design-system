@@ -4,6 +4,13 @@
 		eager
 		class="doc-tab-item nuxt-content"
 	>
+		<h2
+			v-if="showTitle"
+			class="d-none"
+		>
+			{{ label }}
+		</h2>
+
 		<slot />
 	</VTabItem>
 </template>
@@ -29,6 +36,14 @@
 	export default class DocTabItem extends MixinsDeclaration {
 		get value(): string {
 			return slugify(this.label);
+		}
+
+		get showTitle(): boolean {
+			return [
+				'utilisation',
+				'api',
+				'personnalisation'
+			].some(value => this.value === value);
 		}
 	}
 </script>

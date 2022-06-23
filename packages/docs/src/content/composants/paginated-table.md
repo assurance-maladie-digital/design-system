@@ -9,9 +9,9 @@ description: Le pattern `PaginatedTable` est utilisé pour afficher une [`VDataT
 
 <doc-example file="paginated-table/usage"></doc-example>
 
-## Exemples
+### Exemples
 
-### Pagination et tri côté serveur
+#### Pagination et tri côté serveur
 
 Vous pouvez sauvegarder la pagination et le tri même si ceux-ci sont gérés côté serveur.
 

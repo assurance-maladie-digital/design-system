@@ -15,9 +15,9 @@ Ce composant requiert l’installation de la librairie [FormBuilder](/demarrer/i
 
 <doc-example file="form-field/usage"></doc-example>
 
-## Exemples
+### Exemples
 
-### Titre, description et texte d’aide
+#### Titre, description et texte d’aide
 
 Vous pouvez un titre, une description ainsi qu’un texte d’aide sur le champ en utilisant les attributs `title`, `description` et `tooltip`.
 
@@ -29,19 +29,19 @@ Le titre ne doit pas remplacer le label, qui identifie le champ pour les utilisa
 
 <doc-example file="form-field/question"></doc-example>
 
-### Types de champs
+#### Types de champs
 
 Vous retrouvez ci-dessous un exemple de chaque type de champ et leurs spécificités.
 
-#### Champ texte
+##### Champ texte
 
 <doc-example file="form-field/text"></doc-example>
 
-#### Champ zone de texte
+##### Champ zone de texte
 
 <doc-example file="form-field/textarea"></doc-example>
 
-#### Champ nombre
+##### Champ nombre
 
 <doc-alert type="info">
 
@@ -51,33 +51,33 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 
 <doc-example file="form-field/number"></doc-example>
 
-#### Champ mot de passe
+##### Champ mot de passe
 
 <doc-example file="form-field/password"></doc-example>
 
-#### Champ date
+##### Champ date
 
 <doc-example file="form-field/date"></doc-example>
 
-#### Champ période
+##### Champ période
 
 <doc-example file="form-field/period"></doc-example>
 
-#### Champ intervalle
+##### Champ intervalle
 
 <doc-example file="form-field/range"></doc-example>
 
-#### Champ select
+##### Champ select
 
 <doc-example file="form-field/select"></doc-example>
 
-#### Champ select slider
+##### Champ select slider
 
 <doc-example file="form-field/select-slider"></doc-example>
 
 <doc-example file="form-field/select-slider-thumb"></doc-example>
 
-#### Champ select bouton
+##### Champ select bouton
 
 <doc-example file="form-field/select-button"></doc-example>
 

@@ -9,9 +9,9 @@ description: Le pattern `DataListGroup` est utilisé pour afficher une liste de 
 
 <doc-usage name="data-list-group"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Icônes
+#### Icônes
 
 Vous pouvez spécifier une icône à afficher pour chaque item de la `DataList` en utilisant la prop `icons` afin de définir la liste des icônes disponibles.
 Si une icône est spécifiée mais qu’elle n’est pas trouvée dans la liste, rien ne sera affiché.
@@ -22,13 +22,13 @@ Il est nécessaire de lister manuellement toutes les icônes afin de n’importe
 
 <doc-example file="data-list-group/icons"></doc-example>
 
-### Bouton d’action
+#### Bouton d’action
 
 Vous pouvez ajouter un bouton d’action à un item en utilisant la propriété `action` sur celui-ci.
 
 <doc-example file="data-list-group/action"></doc-example>
 
-### Valeurs HTML
+#### Valeurs HTML
 
 Vous pouvez afficher les valeurs via la directive `v-html` en utilisant la prop `render-html-value`.
 
