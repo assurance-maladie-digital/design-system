@@ -1,4 +1,4 @@
-Le fichier `matomo.js` contient le script d’éxécution de [Matomo](https://fr.matomo.org/).
+Le fichier `matomo.js` contient le script d’exécution de [Matomo](https://fr.matomo.org/).
 
 <doc-alert type="info">
 Ce fichier est présent uniquement si vous avez choisi d’installer Matomo lors de la création du projet.
