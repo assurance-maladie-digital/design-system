@@ -7,48 +7,74 @@
 		min-height="40px"
 		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100"
 	>
-		<slot name="prepend" />
+		<slot name="top">
+			<v-col
+				cols="12"
+				class="d-flex justify-space-between"
+			>
+				<Logo />
+				<div>
+					<CustomIcon
+						icon="digital"
+						label="Logo de la filière Digital"
+						color="#000"
+					/>
+				</div>
+			</v-col>
+		</slot>
 
-		<RouterLink
-			v-if="!hideSitemapLink"
-			:to="sitemapRoute"
-			class="my-3 mx-4"
-		>
-			{{ locales.sitemapLabel }}
-		</RouterLink>
+		<VDivider />
 
-		<RouterLink
-			v-if="!hideCguLink"
-			:to="cguRoute"
-			class="my-3 mx-4"
-		>
-			{{ locales.cguLabel }}
-		</RouterLink>
+		<slot name="center">
+			<v-col cols="12">
+				<div class="background-color: ">
+					ez
+				</div>
+			</v-col>
+		</slot>
 
-		<RouterLink
-			v-if="!hideLegalNoticeLink"
-			:to="legalNoticeRoute"
-			class="my-3 mx-4"
-		>
-			{{ locales.legalNoticeLabel }}
-		</RouterLink>
+		<VDivider />
 
-		<RouterLink
-			v-if="!hideA11yLink && a11yComplianceLabel"
-			:to="a11yStatementRoute"
-			class="my-3 mx-4"
-		>
-			{{ a11yComplianceLabel }}
-		</RouterLink>
+		<div>
+			<RouterLink
+				v-if="!hideSitemapLink"
+				:to="sitemapRoute"
+				class="my-3 mx-4"
+			>
+				{{ locales.sitemapLabel }}
+			</RouterLink>
 
-		<p
-			v-if="version"
-			class="grey--text text--darken-1 my-3 mx-4"
-		>
-			{{ locales.versionLabel }} {{ version }}
-		</p>
+			<RouterLink
+				v-if="!hideCguLink"
+				:to="cguRoute"
+				class="my-3 mx-4"
+			>
+				{{ locales.cguLabel }}
+			</RouterLink>
 
-		<slot name="append" />
+			<RouterLink
+				v-if="!hideLegalNoticeLink"
+				:to="legalNoticeRoute"
+				class="my-3 mx-4"
+			>
+				{{ locales.legalNoticeLabel }}
+			</RouterLink>
+
+			<RouterLink
+				v-if="!hideA11yLink && a11yComplianceLabel"
+				:to="a11yStatementRoute"
+				class="my-3 mx-4"
+			>
+				{{ a11yComplianceLabel }}
+			</RouterLink>
+
+			<p
+				v-if="version"
+				class="grey--text text--darken-1 my-3 mx-4"
+			>
+				{{ locales.versionLabel }} {{ version }}
+			</p>
+		</div>
 	</VFooter>
 </template>
 
