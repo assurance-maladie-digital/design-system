@@ -29,12 +29,17 @@ Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
 
 <doc-example file="upload-workflow/optional"></doc-example>
 
-### Bouton *Afficher le fichier*
+### Bouton _Afficher le fichier_
 
 Vous pouvez afficher un bouton permettant de visualiser un fichier sélectionné en utilisant l’option `showViewBtn` du composant `FileList`.
 
 <doc-example file="upload-workflow/view-file"></doc-example>
 
+### Laisser libre le type et le nombre de fichier
+
+Vous pouvez laisser libre le nombre et le type de fichier en passant un tableau vide dans le v-model de `UploadWorkflow`.
+
+<doc-example file="upload-workflow/free-files"></doc-example>
 </doc-tab-item>
 
 <doc-tab-item label="API">
