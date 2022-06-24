@@ -383,16 +383,7 @@ export const drawerItems: DrawerItem[] = [
 	{
 		title: 'Outils de développement',
 		icon: mdiHammerWrench,
-		items: [
-			{
-				title: 'Environnement de développement',
-				to: '/outils-developpement/environnement-developpement'
-			},
-			{
-				title: 'Navigateur',
-				to: '/outils-developpement/navigateur'
-			}
-		]
+		to: '/outils-de-developpement'
 	},
 	{
 		title: 'Politique de sécurité',
