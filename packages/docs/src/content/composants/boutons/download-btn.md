@@ -12,7 +12,7 @@ description: L’élément `DownloadBtn` est utilisé pour permettre à l’util
 
 <doc-alert type="info">
 
-Ce composant requiert l’utilisation du pattern [`NotificationBar`](/composants/notification-bar) pour afficher les notifications de succès et d’erreur.
+Ce composant requiert l’utilisation du pattern [`NotificationBar`](/composants/feedback/notification-bar) pour afficher les notifications de succès et d’erreur.
 
 </doc-alert>
 

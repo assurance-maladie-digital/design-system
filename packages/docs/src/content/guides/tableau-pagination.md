@@ -5,7 +5,7 @@ description: Création d’un tableau paginé qui récupère des données d’un
 
 ## Création de l’API
 
-La première étape consiste à créer l’API qui récupèrera les données que l’on souhaite afficher dans notre tableau paginé. Vous pouvez créer un dossier `src/services/getUsersFromApi` qui contiendra le service permettant d'appeler cette API.
+La première étape consiste à créer l’API qui récupérera les données que l’on souhaite afficher dans notre tableau paginé. Vous pouvez créer un dossier `src/services/getUsersFromApi` qui contiendra le service permettant d'appeler cette API.
 
 Vous pouvez commencer par définir l’interface décrivant les données qui seront retournées par l'API dans le fichier `src/services/getUsersFromApi/types.d.ts` :
 
@@ -44,7 +44,7 @@ export {
 
 <doc-alert type="info">
 
-Nous utilisons une variable d’environement pour spécifier l’URL de base de notre instance axios, vous pouvez consulter le [guide sur la gestion des variables d’environnement](/guides/variables-environnement).
+Nous utilisons une variable d’environnement pour spécifier l’URL de base de notre instance axios, vous pouvez consulter le [guide sur la gestion des variables d’environnement](/guides/variables-environnement).
 
 </doc-alert>
 
@@ -60,11 +60,11 @@ Nous utiliserons plus loin dans ce guide seulement 4 propriétés de l’interfa
 - `sortBy`: indique sur quels champs les données doivent êtres triées, le type attendu est `string[]`,
 - `sortDesc`: indique si les données doivent être triées de manière ascendante ou descendante, le type attendu est `boolean`,
 - `page`: indique le numéro de la page dont nous souhaitons voir les données, le type attendu est `number`,
-- `itemsPerPage`: indique le nombre d’items par page que nous voulons voir afichés, le type est `number`.
+- `itemsPerPage`: indique le nombre d’items par page que nous voulons voir affichés, le type est `number`.
 
 <doc-alert type="info">
 
-L’interface `DataOptions` permet d’autres options, vous pouvez consulter [l’API du composant `PaginatedTable`](/composants/paginated-table#section/api)
+L’interface `DataOptions` permet d’autres options, vous pouvez consulter [l’API du composant `PaginatedTable`](/composants/tableaux/paginated-table#section/api)
 
 </doc-alert>
 
@@ -88,7 +88,7 @@ export function getUsersFromApi(options: DataOptions): Promise<AxiosResponse<Res
 
 ## Affichage du tableau paginé
 
-Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`](/composants/paginated-table) :
+Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`](/composants/tableaux/paginated-table) :
 
 ```vue
 <template>
@@ -159,7 +159,7 @@ Pour afficher les données, vous pouvez utiliser le [composant `PaginatedTable`]
 ```
 
 Pour afficher le tableau de données, vous devez définir un tableau `headers` pour indiquer quelles sont les différentes colonnes que nous voulons afficher et quelles données afficher.
-Cette variable sera ensuite passée dans la prop `headers` du composant [`PaginatedTable`](/composants/paginated-table#section/api).
+Cette variable sera ensuite passée dans la prop `headers` du composant [`PaginatedTable`](/composants/tableaux/paginated-table#section/api).
 
 Les valeurs de l’objet `options` seront mises à jour par le composant `PaginatedTable`.
 
