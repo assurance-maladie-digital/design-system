@@ -9,9 +9,9 @@ description: Le pattern `SubHeader` est utilisé pour afficher un bloc d’infor
 
 <doc-usage name="sub-header"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Listes de données
+#### Listes de données
 
 Vous pouvez afficher des listes de données en utilisant la prop `data-list-group-items`.
 
@@ -29,19 +29,19 @@ Attention, l’utilisation de la directive `v-html` peut être dangereuse car ce
 
 <doc-example file="sub-header/data-list-group"></doc-example>
 
-### Boutons d’actions
+#### Boutons d’actions
 
 Vous pouvez ajouter des boutons d’actions dans les listes de données en utilisant la propriété `action` sur les items.
 
 <doc-example file="sub-header/action"></doc-example>
 
-### Informations complémentaires
+#### Informations complémentaires
 
 Vous pouvez afficher des informations complémentaires en utilisant le slot `additional-informations`.
 
 <doc-example file="sub-header/additional-infos"></doc-example>
 
-### Mode chargement
+#### Mode chargement
 
 Vous pouvez afficher le composant en mode chargement en utilisant la prop `loading`.
 

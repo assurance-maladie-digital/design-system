@@ -16,9 +16,9 @@ Cependant, il est possible d’ajouter un identifiant sur les notifications et d
 
 </doc-alert>
 
-## Exemples
+### Exemples
 
-### Types de notification
+#### Types de notification
 
 Vous pouvez envoyer des notifications de types *succès*, *erreur*, *avertissement* ou *information*.
 
@@ -32,13 +32,13 @@ Vous pouvez envoyer des notifications de types *succès*, *erreur*, *avertisseme
 
 <doc-tab-item label="Personnalisation">
 
-### Texte du bouton
+#### Texte du bouton
 
 Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la prop `close-btn-text`.
 
 <doc-example file="notification-bar/label"></doc-example>
 
-### Composants Vuetify
+#### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `NotificationBar` en utilisant la prop `vuetify-options`.
 

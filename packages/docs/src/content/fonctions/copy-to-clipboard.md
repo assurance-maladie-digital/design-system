@@ -1,5 +1,5 @@
 ---
-title: Fonction copyToClipboard
+title: copyToClipboard
 description: La fonction `copyToClipboard` de copier du texte dans le presse-papier.
 ---
 

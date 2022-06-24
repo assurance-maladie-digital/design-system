@@ -9,9 +9,9 @@ description: L’élément `DataList` est utilisé pour afficher une liste d’i
 
 <doc-usage name="data-list"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Icônes
+#### Icônes
 
 Vous pouvez spécifier une icône à afficher pour chaque item de la liste en utilisant la prop `icons` afin de définir la liste des icônes disponibles.
 Si une icône est spécifiée mais qu’elle n’est pas trouvée dans la liste, rien ne sera affiché.
@@ -22,19 +22,19 @@ Il est nécessaire de lister manuellement toutes les icônes possible afin de n�
 
 <doc-example file="data-list/icons"></doc-example>
 
-### Bouton d’action
+#### Bouton d’action
 
 Vous pouvez ajouter un bouton d’action à un item en utilisant la propriété `action` sur celui-ci.
 
 <doc-example file="data-list/action"></doc-example>
 
-### Étiquette
+#### Étiquette
 
 Vous pouvez afficher certains items de la liste dans une `VChip` et modifier l’affichage de celle-ci en utilisant la propriété `options` sur l’item.
 
 <doc-example file="data-list/chip"></doc-example>
 
-### Valeurs HTML
+#### Valeurs HTML
 
 Vous pouvez afficher les valeurs via la directive `v-html` en utilisant la prop `render-html-value`.
 

@@ -18,15 +18,15 @@ Ce composant requiert l’utilisation du pattern [`NotificationBar`](/composants
 
 <doc-usage name="download-btn"></doc-usage>
 
-## Exemples
+### Exemples
 
-### Nom et type du document
+#### Nom et type du document
 
 Le nom et le type du document sont récupérés des headers HTTP `Content-Disposition` et `Content-Type`.
 
 <doc-example file="download-btn/name-type"></doc-example>
 
-### Nom par défaut
+#### Nom par défaut
 
 Vous pouvez utiliser la prop `fallback-filename` pour définir un nom de fichier par défaut s’il n’est pas présent dans le header `Content-Disposition`.
 

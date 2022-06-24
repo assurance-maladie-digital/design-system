@@ -1,5 +1,5 @@
 ---
-title: Fonction insertAt
+title: insertAt
 description: La fonction `insertAt` permet d’insérer une chaîne de caractères à l’intérieur d’une autre à une position donnée.
 ---
 

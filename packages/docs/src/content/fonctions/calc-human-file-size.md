@@ -1,5 +1,5 @@
 ---
-title: Fonction calcHumanFileSize
+title: calcHumanFileSize
 description: La fonction `calcHumanFileSize` permet de convertir un nombre de bytes en nombre plus lisible avec une unité.
 ---
 

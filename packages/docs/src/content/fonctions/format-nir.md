@@ -1,5 +1,5 @@
 ---
-title: Fonction formatNir
+title: formatNir
 description: La fonction `formatNir` permet de formatter une chaîne de caractères assimilée à un Numéro de sécurité sociale (NIR).
 ---
 
