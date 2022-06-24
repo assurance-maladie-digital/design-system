@@ -12,6 +12,9 @@
   - **functions:** Modification des titres des pages de documentation des fonctions ([#2062](https://github.com/assurance-maladie-digital/design-system/pull/1990)) ([24851b0](https://github.com/assurance-maladie-digital/design-system/commit/24851b0d504d251a8ac11d07d46ace6799e3bcaf))
   - **dev-tools:** Ajout de la page outils de développement ([#1989](https://github.com/assurance-maladie-digital/design-system/pull/1989)) ([d9c155b](https://github.com/assurance-maladie-digital/design-system/commit/d9c155b7b170c328a3704f0693e3ebc3adf006bb))
 
+- 🔧 **Configuration**
+  - **config:** Mise à jour de la configuration du chargement des polices ([#2074](https://github.com/assurance-maladie-digital/design-system/pull/2074))
+
 ### Interne
 
 - 🔧 **Configuration**
@@ -36,7 +39,7 @@
   - **core-js:** Mise à jour vers la `v3.23.2` ([#2067](//github.com/assurance-maladie-digital/design-system/pull/2067)) ([dce2e28](https://github.com/assurance-maladie-digital/design-system/commit/dce2e287b14758a9b9f0c1a15543153c7fa4d9a2))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.29.0` ([#2068](https://github.com/assurance-maladie-digital/design-system/pull/2068)) ([e1b8f39](https://github.com/assurance-maladie-digital/design-system/commit/e1b8f39af0c39aa01ed99ee32f64dca4b7e8d360))
   - **netlify-cli:** Mise à jour vers la `v10.6.2` ([#2071](https://github.com/assurance-maladie-digital/design-system/pull/2071)) ([273fd3e](https://github.com/assurance-maladie-digital/design-system/commit/273fd3ecdd01cb62d5a15b8fe55a155d2236b642))
-  - **lerna:** Mise à jour vers la `v5.1.5` ([#2072](https://github.com/assurance-maladie-digital/design-system/pull/2072))
+  - **lerna:** Mise à jour vers la `v5.1.5` ([#2072](https://github.com/assurance-maladie-digital/design-system/pull/2072)) ([636492b](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/636492b5e4b028e30cca8981f48094262d983494))
 
 ## v2.4.0
 
