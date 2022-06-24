@@ -7,7 +7,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class UploadWorkflowOptional extends Vue {
-		files = [];
+	export default class UploadWorkflowUnrestricted extends Vue {
+		files: File[] = [];
 	}
 </script>

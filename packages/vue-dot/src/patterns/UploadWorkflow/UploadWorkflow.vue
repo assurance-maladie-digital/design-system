@@ -1,7 +1,7 @@
 <template>
 	<div
 		:style="widthStyles"
-		class="vd-upload-workflow"
+		class="vd-upload-workflow white"
 	>
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
@@ -11,7 +11,7 @@
 		</slot>
 
 		<FileList
-			v-if="value.length"
+			v-if="showFileList"
 			v-bind="options.fileList"
 			:files="fileList"
 			@delete-file="resetFile"
@@ -102,9 +102,15 @@
 				return this.sectionTitle;
 			}
 
-			const plural = this.internalFileListItems.length ? this.value.length > 1 : true;
+			if (!this.internalFileListItems.length) {
+				return locales.importTitle;
+			}
 
-			return locales.title(plural);
+			return locales.title(this.internalFileListItems.length > 1);
+		}
+
+		get showFileList(): boolean {
+			return this.value.length > 0 || this.fileListItems?.length > 0;
 		}
 
 		uploadInline(id: string): void {

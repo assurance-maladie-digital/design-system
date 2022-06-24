@@ -3,9 +3,11 @@ import Component from 'vue-class-component';
 
 import { FileListItem } from '../types';
 
+type FileList = Partial<FileListItem>;
+
 @Component
 export class UpdateFileModel extends Vue {
-	fileList: FileListItem[] = [];
+	fileList: FileList[] = [];
 
 	initFileList(value: FileListItem[]): void {
 		this.fileList = [];

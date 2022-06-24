@@ -7,6 +7,12 @@ description: Le pattern `UploadWorkflow` est utilisé pour permettre à l’util
 
 <doc-tab-item label="Utilisation">
 
+<doc-alert type="info">
+
+Nous avons mis à jour l’API du composant pour permettre une [sélection libre](#mode-sélection-libre), mais il est toujours possible d’utiliser [l’ancienne API](#mode-retrocompatible).
+
+</doc-alert>
+
 <doc-example file="upload-workflow/usage"></doc-example>
 
 ### Exemples
@@ -35,11 +41,21 @@ Vous pouvez afficher un bouton permettant de visualiser un fichier sélectionné
 
 <doc-example file="upload-workflow/view-file"></doc-example>
 
-#### Laisser libre le type et le nombre de fichier
+#### Mode sélection libre
 
-Vous pouvez laisser libre le nombre et le type de fichier en passant un tableau vide dans le v-model de `UploadWorkflow`.
+Vous pouvez laisser l’utilisateur sélectionner le nombre de fichiers qu’il souhaite en ne spécifiant pas de liste de fichiers à sélectionner.
 
-<doc-example file="upload-workflow/free-files"></doc-example>
+<doc-example file="upload-workflow/unrestricted"></doc-example>
+
+#### Mode rétrocompatible
+
+Vous pouvez toujours spécifier la liste des fichiers à sélectionner en utilisant le `v-model`.
+
+<doc-alert type="warning">
+Ce mode de fonctionnement est déprécié depuis la [version 2.5.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/v2.5.0) et sera supprimé dans la prochaine version majeure.
+</doc-alert>
+
+<doc-example file="upload-workflow/backward-compatible"></doc-example>
 </doc-tab-item>
 
 <doc-tab-item label="API">

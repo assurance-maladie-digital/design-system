@@ -55,7 +55,7 @@ const testFile = {
 } as File;
 
 /** Create the wrapper */
-function createWrapper(value = fileList) {
+function createWrapper(fileListItems = fileList) {
 	const component = Vue.component('TestComponent', {
 		mixins: [
 			UploadWorkflowCore
@@ -68,22 +68,7 @@ function createWrapper(value = fileList) {
 			form: createVForm()
 		},
 		propsData: {
-			value
-		}
-	});
-}
-/** Create the wrapper */
-function createWrapperWithEmptyValue() {
-	const component = Vue.component('TestComponent', {
-		mixins: [
-			UploadWorkflowCore
-		],
-		template: '<v-form ref="form" />'
-	});
-
-	return mount(component, {
-		stubs: {
-			form: createVForm()
+			fileListItems
 		}
 	});
 }
@@ -93,9 +78,22 @@ describe('EventsFileFired', () => {
 		jest.clearAllMocks();
 	});
 
-	it('sets list item state to success and emits change event', async() => {
-		const wrapper = createWrapperWithEmptyValue() as Wrapper<TestComponent>;
-		expect(wrapper.vm.$props.value).toEqual([]);
+	// watch
+	it('resets internal model when switching to unrestricted mode', async() => {
+		const wrapper = createWrapper() as Wrapper<TestComponent>;
+
+		expect(wrapper.vm.fileList).toEqual(fileList);
+		expect(wrapper.vm.internalFileListItems ).toEqual(fileList);
+
+		wrapper.setProps({
+			fileListItems: null,
+			value: []
+		});
+
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.vm.fileList).toEqual([]);
+		expect(wrapper.vm.internalFileListItems).toEqual([]);
 	});
 
 	// setFileInList
@@ -140,21 +138,6 @@ describe('EventsFileFired', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('add empty object in filelist if there is not internalFileListItems', async() => {
-		const wrapper = createWrapper() as Wrapper<TestComponent>;
-		wrapper.vm.internalFileListItems = null;
-		wrapper.vm.uploadedFile = testFile;
-		wrapper.vm.selectedItem = 'file1';
-
-		wrapper.vm.setFileInList();
-		wrapper.vm.internalFileListItems = fileList;
-
-		await wrapper.vm.$nextTick();
-
-		expect(wrapper.vm.fileList[0].state).toBe('success');
-		expect(wrapper.emitted('change')).toBeTruthy();
-	});
-
 	// resetFile
 	it('resets the list item', () => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
@@ -168,9 +151,8 @@ describe('EventsFileFired', () => {
 		});
 	});
 
-	it('delete an item in the list', () => {
-		const wrapper = createWrapper() as Wrapper<TestComponent>;
-		wrapper.vm.internalFileListItems = [];
+	it('deletes an item from the list in unrestricted mode', () => {
+		const wrapper = createWrapper([]) as Wrapper<TestComponent>;
 		wrapper.vm.resetFile(0);
 
 		expect(wrapper.vm.fileList).toEqual([]);
@@ -252,14 +234,14 @@ describe('EventsFileFired', () => {
 		expect(wrapper.vm.inlineSelect).toBeFalsy();
 	});
 
-	it('skip dialog and add upload file in list in unrestricted mode', () => {
-		const wrapper = createWrapper() as Wrapper<TestComponent>;
-		wrapper.vm.internalFileListItems = [];
+	it('skips the dialog and add the file in the list in unrestricted mode', () => {
+		const wrapper = createWrapper([]) as Wrapper<TestComponent>;
 		wrapper.vm.uploadedFile = testFile;
 		wrapper.vm.fileSelected();
 
+		expect(wrapper.vm.selectItems).toEqual([]);
 		expect(wrapper.vm.dialog).toBeFalsy();
-		expect(wrapper.vm.fileList[1]).toEqual(testFile);
+		expect(wrapper.vm.fileList[0]).toEqual(testFile);
 	});
 
 	// uploadError
@@ -273,6 +255,16 @@ describe('EventsFileFired', () => {
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.vm.uploadedFile).toBeNull();
+		expect(wrapper.emitted('error')).toBeTruthy();
+	});
+
+	it('emits error event in unrestricted mode', async() => {
+		const wrapper = createWrapper([]) as Wrapper<TestComponent>;
+
+		wrapper.vm.uploadError('error');
+
+		await wrapper.vm.$nextTick();
+
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 
