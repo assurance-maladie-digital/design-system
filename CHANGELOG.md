@@ -1,11 +1,16 @@
 ## Non publié
 
+### Vue Dot
+
+- ♿️ **Accessibilité**
+  - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073))
+
 ### Documentation
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
   - **global:** Modification des niveaux des titres ([#2066](https://github.com/assurance-maladie-digital/design-system/pull/2066)) ([5cf7f4d](https://github.com/assurance-maladie-digital/design-system/commit/5cf7f4dd7829cbbd6b0382cbed956f42d1b51cc9))
-  - **global:** Mise à jour de la structure de la documentation ([#2075](https://github.com/assurance-maladie-digital/design-system/pull/2075))
+  - **global:** Mise à jour de la structure de la documentation ([#2075](https://github.com/assurance-maladie-digital/design-system/pull/2075)) ([c7bcd04](https://github.com/assurance-maladie-digital/design-system/commit/c7bcd04aa0e9bdde710a7b9dd14a81e65068aec7))
 
 - 📝 **Documentation**
   - **installation:** Ajout de la version de Node.js requise ([#1990](https://github.com/assurance-maladie-digital/design-system/pull/1990)) ([df0b649](https://github.com/assurance-maladie-digital/design-system/commit/df0b6494ba5f382c7d7fa0a9f2b8b07c4323e4ab))
