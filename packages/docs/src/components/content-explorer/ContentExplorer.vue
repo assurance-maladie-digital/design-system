@@ -98,7 +98,7 @@
 	const DOT_FILE_CHAR = '.';
 	const ESCAPED_DOT_FILE_CHAR = '_';
 
-	const BASE_PATH = '/explorer/';
+	const BASE_PATH = '/composants-techniques/starter-kit/explorer/';
 
 	const Props = Vue.extend({
 		props: {

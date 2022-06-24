@@ -71,7 +71,7 @@ Le projet sera créé dans un nouveau dossier au nom de votre projet.
 
 <doc-alert type="info">
 
-Vous pouvez retrouver le détail des dossiers et fichiers créés dans le [Starter Kit Explorer](/starter-kit/explorer).
+Vous pouvez retrouver le détail des dossiers et fichiers créés dans le [Starter Kit Explorer](/composants-techniques/starter-kit/explorer).
 
 </doc-alert>
 

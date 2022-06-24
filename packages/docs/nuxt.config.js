@@ -95,7 +95,7 @@ export default {
 		families: {
 			'Open+Sans': [300, 400, 600, 700]
 		},
-		display: 'swap'
+		download: false
 	},
 	hooks: {
 		'content:file:beforeParse': (document) => {

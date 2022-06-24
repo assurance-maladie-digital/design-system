@@ -7,7 +7,8 @@ import {
 	mdiCogs,
 	mdiHumanMaleBoard,
 	mdiSecurity,
-	mdiBookOpenPageVariantOutline
+	mdiBookOpenPageVariantOutline,
+	mdiHammerWrench
 } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
@@ -43,15 +44,15 @@ export const drawerItems: DrawerItem[] = [
 		items: [
 			{
 				title: 'Principes de design',
-				to: '/demarrer/principes-design'
+				to: '/fondamentaux/principes-de-design'
 			},
 			{
 				title: 'Accessibilité',
-				to: '/demarrer/accessibilite'
+				to: '/fondamentaux/accessibilite'
 			},
 			{
 				title: 'Logo',
-				to: '/composants/logo'
+				to: '/fondamentaux/logo'
 			}
 		]
 	},
@@ -64,19 +65,19 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'HeaderBar',
-						to: '/composants/header-bar'
+						to: '/composants/structure/header-bar'
 					},
 					{
 						title: 'SubHeader',
-						to: '/composants/sub-header'
+						to: '/composants/structure/sub-header'
 					},
 					{
 						title: 'FooterBar',
-						to: '/composants/footer-bar'
+						to: '/composants/structure/footer-bar'
 					},
 					{
 						title: 'FooterWrapper',
-						to: '/composants/footer-wrapper'
+						to: '/composants/structure/footer-wrapper'
 					}
 				]
 			},
@@ -85,7 +86,7 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'PageContainer',
-						to: '/composants/page-container'
+						to: '/composants/layout/page-container'
 					}
 				]
 			},
@@ -94,7 +95,7 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'ExternalLinks',
-						to: '/composants/external-links'
+						to: '/composants/navigation/external-links'
 					}
 				]
 			},
@@ -103,23 +104,23 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'CopyBtn',
-						to: '/composants/copy-btn'
+						to: '/composants/boutons/copy-btn'
 					},
 					{
 						title: 'LangBtn',
-						to: '/composants/lang-btn'
+						to: '/composants/boutons/lang-btn'
 					},
 					{
 						title: 'DownloadBtn',
-						to: '/composants/download-btn'
+						to: '/composants/boutons/download-btn'
 					},
 					{
 						title: 'FranceConnectBtn',
-						to: '/composants/france-connect-btn'
+						to: '/composants/boutons/france-connect-btn'
 					},
 					{
 						title: 'UserMenuBtn',
-						to: '/composants/user-menu-btn'
+						to: '/composants/boutons/user-menu-btn'
 					}
 				]
 			},
@@ -128,27 +129,27 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'DatePicker',
-						to: '/composants/date-picker'
+						to: '/composants/formulaires/date-picker'
 					},
 					{
 						title: 'FormBuilder',
-						to: '/composants/form-builder'
+						to: '/composants/formulaires/form-builder'
 					},
 					{
 						title: 'FormField',
-						to: '/composants/form-field'
+						to: '/composants/formulaires/form-field'
 					},
 					{
 						title: 'FormFieldList',
-						to: '/composants/form-field-list'
+						to: '/composants/formulaires/form-field-list'
 					},
 					{
 						title: 'FileUpload',
-						to: '/composants/file-upload'
+						to: '/composants/formulaires/file-upload'
 					},
 					{
 						title: 'UploadWorkflow',
-						to: '/composants/upload-workflow'
+						to: '/composants/formulaires/upload-workflow'
 					}
 				]
 			},
@@ -157,28 +158,28 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'PaginatedTable',
-						to: '/composants/paginated-table'
+						to: '/composants/tableaux/paginated-table'
 					},
 					{
 						title: 'FilterModule',
-						to: '/composants/filter-module'
+						to: '/composants/tableaux/filter-module'
 					},
 					{
 						title: 'TableToolbar',
-						to: '/composants/table-toolbar'
+						to: '/composants/tableaux/table-toolbar'
 					}
 				]
 			},
 			{
-				title: 'Affichage de données',
+				title: 'Données',
 				items: [
 					{
 						title: 'DataList',
-						to: '/composants/data-list'
+						to: '/composants/donnees/data-list'
 					},
 					{
 						title: 'DataListGroup',
-						to: '/composants/data-list-group'
+						to: '/composants/donnees/data-list-group'
 					}
 				]
 			},
@@ -187,19 +188,19 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'DialogBox',
-						to: '/composants/dialog-box'
+						to: '/composants/feedback/dialog-box'
 					},
 					{
 						title: 'NotificationBar',
-						to: '/composants/notification-bar'
+						to: '/composants/feedback/notification-bar'
 					},
 					{
 						title: 'CookieBanner',
-						to: '/composants/cookie-banner'
+						to: '/composants/feedback/cookie-banner'
 					},
 					{
 						title: 'HeaderLoading',
-						to: '/composants/header-loading'
+						to: '/composants/feedback/header-loading'
 					}
 				]
 			}
@@ -211,11 +212,11 @@ export const drawerItems: DrawerItem[] = [
 		items: [
 			{
 				title: 'CookiesPage',
-				to: '/composants/cookies-page'
+				to: '/templates/cookies-page'
 			},
 			{
 				title: 'ErrorPage',
-				to: '/composants/error-page'
+				to: '/templates/error-page'
 			}
 		]
 	},
@@ -228,7 +229,7 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'Debounce',
-						to: '/directives/debounce'
+						to: '/composants-techniques/directives/debounce'
 					}
 				]
 			},
@@ -237,7 +238,7 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'Explorer',
-						to: '/starter-kit/explorer'
+						to: '/composants-techniques/starter-kit/explorer'
 					}
 				]
 			},
@@ -246,43 +247,43 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'required',
-						to: '/regles-validation/required'
+						to: '/composants-techniques/regles-de-validation/required'
 					},
 					{
 						title: 'exactLength',
-						to: '/regles-validation/exact-length'
+						to: '/composants-techniques/regles-de-validation/exact-length'
 					},
 					{
 						title: 'minLength',
-						to: '/regles-validation/min-length'
+						to: '/composants-techniques/regles-de-validation/min-length'
 					},
 					{
 						title: 'maxLength',
-						to: '/regles-validation/max-length'
+						to: '/composants-techniques/regles-de-validation/max-length'
 					},
 					{
 						title: 'email',
-						to: '/regles-validation/email'
+						to: '/composants-techniques/regles-de-validation/email'
 					},
 					{
 						title: 'isDateValid',
-						to: '/regles-validation/is-date-valid'
+						to: '/composants-techniques/regles-de-validation/is-date-valid'
 					},
 					{
 						title: 'notAfterDate',
-						to: '/regles-validation/not-after-date'
+						to: '/composants-techniques/regles-de-validation/not-after-date'
 					},
 					{
 						title: 'notAfterToday',
-						to: '/regles-validation/not-after-today'
+						to: '/composants-techniques/regles-de-validation/not-after-today'
 					},
 					{
 						title: 'notBeforeDate',
-						to: '/regles-validation/not-before-date'
+						to: '/composants-techniques/regles-de-validation/not-before-date'
 					},
 					{
 						title: 'notBeforeToday',
-						to: '/regles-validation/not-before-today'
+						to: '/composants-techniques/regles-de-validation/not-before-today'
 					}
 				]
 			},
@@ -291,45 +292,45 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'calcHumanFileSize',
-						to: '/fonctions/calc-human-file-size'
+						to: '/composants-techniques/fonctions/calc-human-file-size'
 					},
 					{
 						title: 'copyToClipboard',
-						to: '/fonctions/copy-to-clipboard'
+						to: '/composants-techniques/fonctions/copy-to-clipboard'
 					},
 					{
 						title: 'debounce',
-						to: '/fonctions/debounce'
+						to: '/composants-techniques/fonctions/debounce'
 					},
 					{
 						title: 'downloadFile',
-						to: '/fonctions/download-file'
+						to: '/composants-techniques/fonctions/download-file'
 					},
 					{
 						title: 'formatDate',
-						to: '/fonctions/format-date'
+						to: '/composants-techniques/fonctions/format-date'
 					},
 					{
 						title: 'formatNir',
-						to: '/fonctions/format-nir'
+						to: '/composants-techniques/fonctions/format-nir'
 					},
 					{
 						title: 'getFileExtension',
-						to: '/fonctions/get-file-extension'
+						to: '/composants-techniques/fonctions/get-file-extension'
 					},
 					{
 						title: 'insertAt',
-						to: '/fonctions/insert-at'
+						to: '/composants-techniques/fonctions/insert-at'
 					}
 				]
 			},
 			{
 				title: 'Classes utilitaires CSS',
-				to: '/css/classes-utilitaires'
+				to: '/composants-techniques/classes-utilitaires-css'
 			},
 			{
 				title: 'CustomIcon',
-				to: '/composants/custom-icon'
+				to: '/composants-techniques/custom-icon'
 			}
 		]
 	},
@@ -378,6 +379,11 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/authentification-token'
 			}
 		]
+	},
+	{
+		title: 'Outils de développement',
+		icon: mdiHammerWrench,
+		to: '/outils-de-developpement'
 	},
 	{
 		title: 'Politique de sécurité',

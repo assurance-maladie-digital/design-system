@@ -160,7 +160,7 @@
 				const component = await import(
 					/* webpackChunkName: "examples-source" */
 					/* webpackMode: "lazy-once" */
-					`!raw-loader!../../content/examples/${file}.vue`
+					`!raw-loader!../../data/examples/${file}.vue`
 				);
 
 				this.boot(component.default);
