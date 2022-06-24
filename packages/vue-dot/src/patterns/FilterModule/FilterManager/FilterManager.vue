@@ -1,5 +1,8 @@
 <template>
-	<VMenu v-bind="options.menu">
+	<VMenu
+		v-bind="options.menu"
+		attach
+	>
 		<template #activator="{ on, attrs }">
 			<VBtn
 				v-bind="{

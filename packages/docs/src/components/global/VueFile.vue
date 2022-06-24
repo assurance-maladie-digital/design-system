@@ -41,7 +41,7 @@
 				const component = await import(
 					/* webpackChunkName: "examples" */
 					/* webpackMode: "lazy-once" */
-					`../../content/examples/${file}.vue`
+					`../../data/examples/${file}.vue`
 				);
 
 				this.component = component.default;
