@@ -1,6 +1,7 @@
 <template>
 	<UploadWorkflow
-		v-model="files"
+		v-model="selectedFiles"
+		:file-list-items="fileListItems"
 		:vuetify-options="vuetifyOptions"
 	/>
 </template>
@@ -9,9 +10,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { FileListItem, SelectedFile } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
+
 	@Component
 	export default class UploadWorkflowOptions extends Vue {
-		files = [
+		selectedFiles: SelectedFile[] = [];
+
+		fileListItems: FileListItem[] = [
 			{
 				id: 'rib',
 				title: 'RIB'
