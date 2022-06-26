@@ -2,8 +2,11 @@
 
 ### Vue Dot
 
+- ✨ **Nouvelles fonctionnalités**
+  - **UploadWorkflow:** Ajout du mode sélection libre ([#2057](https://github.com/assurance-maladie-digital/design-system/pull/2057))
+
 - ♿️ **Accessibilité**
-  - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073))
+  - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073)) ([658f95d](https://github.com/assurance-maladie-digital/design-system/commit/658f95d98db3e43df16b16667a093796448a0876))
 
 ### Documentation
 
