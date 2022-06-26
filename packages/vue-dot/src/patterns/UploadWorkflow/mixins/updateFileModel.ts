@@ -3,9 +3,11 @@ import Component from 'vue-class-component';
 
 import { FileListItem } from '../types';
 
+type FileList = Partial<FileListItem>;
+
 @Component
 export class UpdateFileModel extends Vue {
-	fileList: FileListItem[] = [];
+	fileList: FileList[] = [];
 
 	initFileList(value: FileListItem[]): void {
 		this.fileList = [];
@@ -21,10 +23,8 @@ export class UpdateFileModel extends Vue {
 		});
 	}
 
-	updateFileModel<T>(id: string, key: string, value: T): void {
-		const index = this.fileList.findIndex((file) => file.id === id);
-
-		if (index === -1) {
+	updateFileModel<T>(index: number, key: string, value: T): void {
+		if (!this.fileList[index]) {
 			return;
 		}
 

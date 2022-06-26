@@ -6,7 +6,7 @@ import { FileListItem } from '../../types';
 import { UpdateFileModel } from '../updateFileModel';
 
 interface TestComponent extends Vue {
-	updateFileModel<T>(id: string, key: string, value: T): void;
+	updateFileModel<T>(index: number, key: string, value: T): void;
 	fileList: FileListItem[];
 	initFileList(value: FileListItem[]): void;
 }
@@ -22,7 +22,7 @@ const testComponent = Vue.component('TestComponent', {
 function getFileList(): FileListItem[] {
 	return [
 		{
-			id: '1',
+			id: 'file1',
 			title: 'UploadWorkflow',
 			name: 'avatar.png',
 			file: {} as File
@@ -55,7 +55,7 @@ describe('updateFileModel', () => {
 
 		wrapper.vm.fileList = getFileList();
 
-		expect(wrapper.vm.updateFileModel('2', 'state', 'initial')).toBeUndefined();
+		expect(wrapper.vm.updateFileModel(1, 'state', 'initial')).toBeUndefined();
 	});
 
 	it('deletes the key if the value is undefined', () => {
@@ -63,7 +63,7 @@ describe('updateFileModel', () => {
 
 		wrapper.vm.fileList = getFileList();
 
-		wrapper.vm.updateFileModel('1', 'name', undefined);
+		wrapper.vm.updateFileModel(0, 'name', undefined);
 
 		expect(wrapper.vm.fileList[0]).toMatchSnapshot();
 	});
@@ -73,7 +73,7 @@ describe('updateFileModel', () => {
 
 		wrapper.vm.fileList = getFileList();
 
-		wrapper.vm.updateFileModel('1', 'state', 'updated');
+		wrapper.vm.updateFileModel(0, 'state', 'updated');
 
 		expect(wrapper.vm.fileList[0].state).toBe('updated');
 	});
