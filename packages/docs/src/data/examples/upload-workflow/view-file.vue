@@ -1,17 +1,19 @@
 <template>
 	<div>
 		<UploadWorkflow
-			v-model="files"
+			v-model="selectedFiles"
+			:file-list-items="fileListItems"
 			:vuetify-options="vuetifyOptions"
 			@view-file="showFileInfo"
 		/>
 
 		<DialogBox
+			v-if="displayedFile"
 			v-model="dialog"
-			:title="fileInfo.title"
+			:title="displayedFile.title"
 		>
 			<template #default>
-				Vous avez sélectionné le fichier <b>{{ fileInfo.name }}</b>.
+				Vous avez sélectionné le fichier <b>{{ displayedFile.name }}</b>.
 			</template>
 
 			<template #actions>
@@ -30,20 +32,16 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FileListItem } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
-
-	interface FileInfo {
-		title: string;
-		name?: string;
-	}
+	import { FileListItem, SelectedFile } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
 
 	@Component
 	export default class UploadWorkflowViewFile extends Vue {
+		selectedFiles: SelectedFile[] = [];
+
 		dialog = false;
+		displayedFile: SelectedFile | null = null;
 
-		fileInfo = {} as FileInfo;
-
-		files = [
+		fileListItems: FileListItem[] = [
 			{
 				id: 'rib',
 				title: 'RIB'
@@ -64,12 +62,8 @@
 			}
 		};
 
-		showFileInfo({ title, name }: FileListItem): void {
-			this.fileInfo = {
-				title,
-				name
-			};
-
+		showFileInfo(file: SelectedFile): void {
+			this.displayedFile = file;
 			this.dialog = true;
 		}
 	}

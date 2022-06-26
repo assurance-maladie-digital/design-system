@@ -6,7 +6,10 @@ export interface FileListItem {
 	state?: FileState;
 	name?: string;
 	file?: File;
+	optional?: boolean;
 }
+
+export type SelectedFile = Required<FileListItem>;
 
 export interface SelectItem {
 	text: string;
