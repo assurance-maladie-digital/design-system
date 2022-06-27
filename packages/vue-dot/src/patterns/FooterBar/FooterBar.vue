@@ -5,76 +5,146 @@
 			...$attrs
 		}"
 		min-height="40px"
-		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100"
+		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center w-100"
 	>
-		<slot name="top">
-			<v-col
-				cols="12"
-				class="d-flex justify-space-between"
+		<v-container>
+			<v-row
+				no-gutters
+				class="mb-2"
 			>
-				<Logo />
-				<div>
-					<CustomIcon
-						icon="digital"
-						label="Logo de la filière Digital"
-						color="#000"
-					/>
-				</div>
-			</v-col>
-		</slot>
+				<v-col
+					cols="12"
+					class="d-flex justify-space-between"
+				>
+					<slot
+						name="logo"
+					>
+						<Logo />
+					</slot>
+					<v-col
+						cols="4"
+						style="padding: 0"
+					>
+						<v-row
+							no-gutters
+						>
+							<v-col
+								cols="10"
+							>
+								<v-col
+									cols="12"
+									class="d-flex justify-end"
+									style="padding: 0"
+									no-gutters
+								>
+									<span
+										class="caption"
+									>
+										Suivez-nous
+									</span>
+								</v-col>
+								<v-col
+									cols="12"
+									class="d-flex justify-end"
+									style="padding: 0; margin-top: 6px"
+								>
+									<VIcon class="mr-2">
+										{{ linkedinIcon }}
+									</VIcon>
+									<VIcon class="mr-2">
+										{{ facebookIcon }}
+									</VIcon>
+									<VIcon class="mr-2">
+										{{ instagramIcon }}
+									</VIcon>
+									<VIcon>
+										{{ googleIcon }}
+									</VIcon>
+								</v-col>
+							</v-col>
+							<v-col
+								cols="2"
+								class="d-flex align-center justify-end
+"
+							>
+								<VIcon small>
+									{{ arrowTopIcon }}
+								</VIcon>
+							</v-col>
+							<v-row />
+						</v-row>
+					</v-col>
+				</v-col>
+			</v-row>
 
-		<VDivider />
+			<VDivider />
 
-		<slot name="center">
-			<v-col cols="12">
-				<div class="background-color: ">
-					ez
-				</div>
-			</v-col>
-		</slot>
-
-		<VDivider />
-
-		<div>
-			<RouterLink
-				v-if="!hideSitemapLink"
-				:to="sitemapRoute"
-				class="my-3 mx-4"
+			<v-row
+				class="mb-5 mt-5"
+				no-gutters
 			>
-				{{ locales.sitemapLabel }}
-			</RouterLink>
+				<v-col
+					v-for="n in centerSlotsNumber"
+					:key="n"
+				>
+					<div
+						class="m-2"
+					>
+						<slot
+							:name="`center-slot-${n}`"
+						>
+							{{ n }}
+						</slot>
+					</div>
+				</v-col>
+			</v-row>
 
-			<RouterLink
-				v-if="!hideCguLink"
-				:to="cguRoute"
-				class="my-3 mx-4"
-			>
-				{{ locales.cguLabel }}
-			</RouterLink>
+			<VDivider />
 
-			<RouterLink
-				v-if="!hideLegalNoticeLink"
-				:to="legalNoticeRoute"
-				class="my-3 mx-4"
+			<v-row
+				class="mt-2"
+				justify="center"
 			>
-				{{ locales.legalNoticeLabel }}
-			</RouterLink>
+				<RouterLink
+					v-if="!hideSitemapLink"
+					:to="sitemapRoute"
+					class="my-3 mx-4"
+				>
+					{{ locales.sitemapLabel }}
+				</RouterLink>
 
-			<RouterLink
-				v-if="!hideA11yLink && a11yComplianceLabel"
-				:to="a11yStatementRoute"
-				class="my-3 mx-4"
-			>
-				{{ a11yComplianceLabel }}
-			</RouterLink>
+				<RouterLink
+					v-if="!hideCguLink"
+					:to="cguRoute"
+					class="my-3 mx-4"
+				>
+					{{ locales.cguLabel }}
+				</RouterLink>
 
-			<p
-				v-if="version"
-				class="grey--text text--darken-1 my-3 mx-4"
-			>
-				{{ locales.versionLabel }} {{ version }}
-			</p>
-		</div>
+				<RouterLink
+					v-if="!hideLegalNoticeLink"
+					:to="legalNoticeRoute"
+					class="my-3 mx-4"
+				>
+					{{ locales.legalNoticeLabel }}
+				</RouterLink>
+
+				<RouterLink
+					v-if="!hideA11yLink && a11yComplianceLabel"
+					:to="a11yStatementRoute"
+					class="my-3 mx-4"
+				>
+					{{ a11yComplianceLabel }}
+				</RouterLink>
+
+				<p
+					v-if="version"
+					class="grey--text text--darken-1 my-3 mx-4"
+				>
+					{{ locales.versionLabel }} {{ version }}
+				</p>
+			</v-row>
+		</v-container>
 	</VFooter>
 </template>
 
@@ -87,6 +157,7 @@
 	import { config } from './config';
 	import { locales } from './locales';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
+	import { mdiArrowUp, mdiFacebook, mdiGoogle, mdiLinkedin, mdiInstagram } from '@mdi/js';
 
 	import { propValidator } from '../../helpers/propValidator';
 
@@ -134,6 +205,10 @@
 			version: {
 				type: String,
 				default: undefined
+			},
+			centerSlotsNumber: {
+				type: Number,
+				default: 5
 			}
 		}
 	});
@@ -144,6 +219,13 @@
 		inheritAttrs: false
 	})
 	export default class FooterBar extends MixinsDeclaration {
+		arrowTopIcon = mdiArrowUp;
+
+		facebookIcon = mdiFacebook;
+		instagramIcon = mdiInstagram;
+		linkedinIcon = mdiLinkedin;
+		googleIcon = mdiGoogle;
+
 		locales = locales;
 
 		get a11yComplianceLabel(): string | null {
