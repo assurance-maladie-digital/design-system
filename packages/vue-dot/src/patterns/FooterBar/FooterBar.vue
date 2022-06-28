@@ -9,6 +9,7 @@
 	>
 		<v-container>
 			<v-row
+				v-if="!simpleMode"
 				no-gutters
 				class="mb-2"
 			>
@@ -19,7 +20,12 @@
 					<slot
 						name="logo"
 					>
-						<Logo />
+						<Logo
+							class="default-logo"
+							:hide-organism="logoHideOrganism"
+							:hide-signature="logoHideSignature"
+							:risque-pro="logoRisquePro"
+						/>
 					</slot>
 					<v-col
 						cols="4"
@@ -38,7 +44,7 @@
 									no-gutters
 								>
 									<span
-										class="caption"
+										class="follow-us-text mr-3"
 									>
 										Suivez-nous
 									</span>
@@ -46,28 +52,31 @@
 								<v-col
 									cols="12"
 									class="d-flex justify-end"
-									style="padding: 0; margin-top: 6px"
+									style="padding: 0; margin-top: 2px"
 								>
-									<VIcon class="mr-2">
-										{{ linkedinIcon }}
-									</VIcon>
-									<VIcon class="mr-2">
-										{{ facebookIcon }}
-									</VIcon>
-									<VIcon class="mr-2">
-										{{ instagramIcon }}
-									</VIcon>
-									<VIcon>
-										{{ googleIcon }}
-									</VIcon>
+									<VBtn
+										v-for="icon in socialsIconsList"
+										:key="icon"
+										text
+										icon
+										color="grey darken-2"
+									>
+										<VIcon>
+											{{ icon }}
+										</VIcon>
+									</VBtn>
 								</v-col>
 							</v-col>
 							<v-col
 								cols="2"
-								class="d-flex align-center justify-end
-"
+								class="d-flex align-center justify-end"
+								color="#0c4199"
 							>
-								<VIcon small>
+								<VIcon
+									class="go-top"
+									small
+									@click="goTop"
+								>
 									{{ arrowTopIcon }}
 								</VIcon>
 							</v-col>
@@ -77,9 +86,10 @@
 				</v-col>
 			</v-row>
 
-			<VDivider />
+			<VDivider v-if="!simpleMode" />
 
 			<v-row
+				v-if="!simpleMode && centerSlotsNumber"
 				class="mb-5 mt-5"
 				no-gutters
 			>
@@ -99,10 +109,10 @@
 				</v-col>
 			</v-row>
 
-			<VDivider />
+			<VDivider v-if="!simpleMode && centerSlotsNumber" />
 
 			<v-row
-				class="mt-2"
+				:class="{ 'mt-2 caption': !simpleMode }"
 				justify="center"
 			>
 				<RouterLink
@@ -208,7 +218,23 @@
 			},
 			centerSlotsNumber: {
 				type: Number,
-				default: 5
+				default: 0
+			},
+			simpleMode: {
+				type: Boolean,
+				default: false
+			},
+			logoHideSignature: {
+				type: Boolean,
+				default: false
+			},
+			logoHideOrganism: {
+				type: Boolean,
+				default: false
+			},
+			logoRisquePro: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -219,12 +245,9 @@
 		inheritAttrs: false
 	})
 	export default class FooterBar extends MixinsDeclaration {
+		// icon list
 		arrowTopIcon = mdiArrowUp;
-
-		facebookIcon = mdiFacebook;
-		instagramIcon = mdiInstagram;
-		linkedinIcon = mdiLinkedin;
-		googleIcon = mdiGoogle;
+		socialsIconsList = [mdiInstagram, mdiLinkedin, mdiFacebook, mdiGoogle];
 
 		locales = locales;
 
@@ -236,6 +259,9 @@
 			}
 
 			return locales.a11yLabel(complianceLabel);
+		}
+		goTop(): void {
+			console.log('top');
 		}
 	}
 </script>
@@ -257,6 +283,18 @@
 
 		p {
 			padding: 1px 0;
+		}
+		.follow-us-text {
+			color: #0c4199;
+			font-size: 11px;
+			font-weight: 550;
+		}
+		.go-top:hover {
+			color: #0c4199;
+		}
+		.default-logo {
+			padding: 5px 0 10px 0;
+			margin-left: -25px;
 		}
 	}
 </style>
