@@ -59,7 +59,7 @@
 
 		get drawerStyles(): IndexedObject {
 			return {
-				zIndex: this.mobileVersion ? '4' : '2'
+				zIndex: this.mobileVersion ? '7' : '5'
 			};
 		}
 	}
@@ -67,6 +67,6 @@
 
 <style lang="scss" scoped>
 	.vd-header-bar-container ::v-deep .vd-header-bar {
-		z-index: 3;
+		z-index: 6;
 	}
 </style>
