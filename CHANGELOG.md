@@ -20,10 +20,18 @@
 - 🐛 **Corrections de bugs**
   - **template:** Correction d'une mauvaise formulation dans le fichier `App.vue` ([#2099](https://github.com/assurance-maladie-digital/design-system/pull/2099)) ([9167e6d](https://github.com/assurance-maladie-digital/design-system/commit/9167e6d914761bf1340760404ee565d923597871))
 
+- ♻️ **Refactoring**
+  - **global:** Mise à jour des commentaires ([#2103](https://github.com/assurance-maladie-digital/design-system/pull/2103)) ([2f1e95b](https://github.com/assurance-maladie-digital/design-system/commit/2f1e95b80a283e391aadb826da1f3b509af6fd0f))
+
+### Form Builder
+
+- ✅ **Tests**
+  - **global:** Mise à jour des données de tests ([#2104](https://github.com/assurance-maladie-digital/design-system/pull/2104))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**
-  - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102))
+  - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))

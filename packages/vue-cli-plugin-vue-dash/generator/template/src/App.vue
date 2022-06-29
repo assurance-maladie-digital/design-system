@@ -1,5 +1,5 @@
 <template>
-	<!-- VApp is an element which is required to use Vuetify. See https://vuetifyjs.com/en/ for help -->
+	<!-- VApp is an element which is required to use Vuetify. @see https://vuetifyjs.com/en/ for help -->
 	<VApp v-cloak>
 		<AppHeader />
 
