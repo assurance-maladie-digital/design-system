@@ -12,7 +12,7 @@
   - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073)) ([658f95d](https://github.com/assurance-maladie-digital/design-system/commit/658f95d98db3e43df16b16667a093796448a0876))
 
 - ✅ **Tests**
-  - **DataLitGroup:** Ajout de tests ([#2101](https://github.com/assurance-maladie-digital/design-system/pull/2101))
+  - **DataListGroup:** Ajout de tests ([#2101](https://github.com/assurance-maladie-digital/design-system/pull/2101)) ([ce2d536](https://github.com/assurance-maladie-digital/design-system/commit/ce2d536b720aab48cc1b0d182d678650be24353e))
 
 ### Vue Dash
 
@@ -20,6 +20,9 @@
   - **template:** Correction d'une mauvaise formulation dans le fichier `App.vue` ([#2099](https://github.com/assurance-maladie-digital/design-system/pull/2099)) ([9167e6d](https://github.com/assurance-maladie-digital/design-system/commit/9167e6d914761bf1340760404ee565d923597871))
 
 ### Documentation
+
+- 🐛 **Corrections de bugs**
+  - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
