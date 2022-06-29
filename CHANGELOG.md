@@ -11,6 +11,9 @@
 - ♿️ **Accessibilité**
   - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073)) ([658f95d](https://github.com/assurance-maladie-digital/design-system/commit/658f95d98db3e43df16b16667a093796448a0876))
 
+- ✅ **Tests**
+  - **DataLitGroup:** Ajout de tests ([#2101](https://github.com/assurance-maladie-digital/design-system/pull/2101))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
@@ -36,7 +39,7 @@
 ### Interne
 
 - ♻️ **Refactoring**
-  - **global:** Mise à jour des champs `lib` dans les fichiers `tsconfig.json` ([#2100](https://github.com/assurance-maladie-digital/design-system/pull/2100))
+  - **global:** Mise à jour des champs `lib` dans les fichiers `tsconfig.json` ([#2100](https://github.com/assurance-maladie-digital/design-system/pull/2100)) ([49ec897](https://github.com/assurance-maladie-digital/design-system/commit/49ec89794231b3ee85975151efa8ed7c053148cb))
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de `codecov` vers la `v3.2.3` ([#2031](https://github.com/assurance-maladie-digital/design-system/pull/2031)) ([a90d693](https://github.com/assurance-maladie-digital/design-system/commit/a90d6939541858228b6db175342bf03d7b909309))
