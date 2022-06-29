@@ -3,21 +3,12 @@ import { mount, Wrapper } from '@vue/test-utils';
 
 import dayjs from 'dayjs';
 
-import { Refs } from '../../../../types';
-
 import { Birthdate } from '../birthdate';
 
-// Tell jest to mock all timeout functions
 jest.useFakeTimers();
 
 interface TestComponent extends Vue {
-	// Extend $refs
-	$refs: Refs<{
-		picker: {
-			activePicker: string;
-		};
-	}>;
-
+	activePicker: string | null;
 	birthdate?: string | boolean;
 	max: string | null;
 	min: string | null;
@@ -28,25 +19,20 @@ interface TestComponent extends Vue {
 /** Create fake VDatePicker for refs */
 function createDatePicker() {
 	return Vue.component('VDatePicker', {
-		data() {
-			return {
-				activePicker: ''
-			};
-		},
 		template: '<div />'
 	});
 }
 
 /** Create the wrapper */
 function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			Birthdate
 		],
 		watch: {
 			menu: spy ? spy : () => null
 		},
-		template: '<div><v-date-picker ref="picker" /></div>'
+		template: '<div><v-date-picker /></div>'
 	});
 
 	return mount(component, {
@@ -64,9 +50,8 @@ function createWrapper(birthdateValue: boolean, spy?: jest.Mock, menu = true) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('Birthdate', () => {
-	it('doesn\'t set max & min values when birthdate is false', () => {
+	it('does not set max & min values when birthdate is false', () => {
 		const wrapper = createWrapper(false);
 
 		expect(wrapper.vm.max).toBe(null);
@@ -112,9 +97,8 @@ describe('Birthdate', () => {
 
 		wrapper.vm.setActivePicker();
 
-		// Fast-forward time
 		jest.runAllTimers();
 
-		expect(wrapper.vm.$refs.picker.activePicker).toBe('YEAR');
+		expect(wrapper.vm.activePicker).toBe('YEAR');
 	});
 });

@@ -8,10 +8,8 @@ import Home from '../Home.vue';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('Home', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(Home);
 
 		expect(html(wrapper)).toMatchSnapshot();

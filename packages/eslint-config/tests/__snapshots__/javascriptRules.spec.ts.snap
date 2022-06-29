@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JavaScript configuration applies the correct rules 1`] = `
+Array [
+  Object {
+    "column": 1,
+    "endColumn": 12,
+    "endLine": 1,
+    "fix": Object {
+      "range": Array [
+        0,
+        3,
+      ],
+      "text": "let",
+    },
+    "line": 1,
+    "message": "Unexpected var, use let or const instead.",
+    "messageId": "unexpectedVar",
+    "nodeType": "VariableDeclaration",
+    "ruleId": "no-var",
+    "severity": 2,
+  },
+  Object {
+    "column": 12,
+    "endColumn": 1,
+    "endLine": 2,
+    "fix": Object {
+      "range": Array [
+        11,
+        11,
+      ],
+      "text": ";",
+    },
+    "line": 1,
+    "message": "Missing semicolon.",
+    "messageId": "missingSemi",
+    "nodeType": "VariableDeclaration",
+    "ruleId": "semi",
+    "severity": 2,
+  },
+  Object {
+    "column": 1,
+    "endColumn": 25,
+    "endLine": 2,
+    "fix": Object {
+      "range": Array [
+        12,
+        15,
+      ],
+      "text": "let",
+    },
+    "line": 2,
+    "message": "Unexpected var, use let or const instead.",
+    "messageId": "unexpectedVar",
+    "nodeType": "VariableDeclaration",
+    "ruleId": "no-var",
+    "severity": 2,
+  },
+  Object {
+    "column": 19,
+    "endColumn": 20,
+    "endLine": 2,
+    "fix": Object {
+      "range": Array [
+        30,
+        31,
+      ],
+      "text": "",
+    },
+    "line": 2,
+    "message": "Unexpected space before function parentheses.",
+    "messageId": "unexpectedSpace",
+    "nodeType": "FunctionExpression",
+    "ruleId": "space-before-function-paren",
+    "severity": 2,
+  },
+  Object {
+    "column": 25,
+    "endColumn": 1,
+    "endLine": 3,
+    "fix": Object {
+      "range": Array [
+        36,
+        36,
+      ],
+      "text": ";",
+    },
+    "line": 2,
+    "message": "Missing semicolon.",
+    "messageId": "missingSemi",
+    "nodeType": "VariableDeclaration",
+    "ruleId": "semi",
+    "severity": 2,
+  },
+  Object {
+    "column": 9,
+    "endColumn": 1,
+    "endLine": 4,
+    "fix": Object {
+      "range": Array [
+        45,
+        45,
+      ],
+      "text": ";",
+    },
+    "line": 3,
+    "message": "Missing semicolon.",
+    "messageId": "missingSemi",
+    "nodeType": "ExpressionStatement",
+    "ruleId": "semi",
+    "severity": 2,
+  },
+]
+`;

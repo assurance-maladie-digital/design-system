@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
+import consola from 'consola';
+
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
@@ -8,12 +10,17 @@ import FooterBtn from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FooterBtn', () => {
+	const spy = jest.fn();
+
+	beforeEach(() => {
+		consola.mockTypes(() => spy);
+	});
+
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FooterBtn);
 
 		expect(html(wrapper)).toMatchSnapshot();
+		expect(spy).toHaveBeenCalledWith('FooterBtn is deprecated since v2.2.0, use FooterBar instead.');
 	});
 });

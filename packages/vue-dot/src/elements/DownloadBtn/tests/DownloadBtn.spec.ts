@@ -14,10 +14,8 @@ interface TestComponent extends Vue {
 	download: () => void;
 }
 
-// Tests
 describe('DownloadBtn', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
 				filePromise
@@ -31,7 +29,6 @@ describe('DownloadBtn', () => {
 	});
 
 	it('calls download function when pressed', async() => {
-		// Mount component
 		wrapper = mountComponent(DownloadBtn, {
 			propsData: {
 				filePromise

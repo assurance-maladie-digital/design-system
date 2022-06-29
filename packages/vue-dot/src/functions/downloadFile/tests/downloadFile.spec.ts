@@ -6,7 +6,6 @@ const file = new File(
 	{ type: 'text/plain' }
 );
 
-// Tests
 describe('downloadFile', () => {
 	let link: HTMLAnchorElement;
 	let appendChildSpy: jest.SpyInstance;

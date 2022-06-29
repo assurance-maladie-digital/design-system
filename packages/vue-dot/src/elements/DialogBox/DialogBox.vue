@@ -20,6 +20,7 @@
 
 				<VBtn
 					v-bind="options.closeBtn"
+					:aria-label="locales.closeBtn"
 					@click="close"
 				>
 					<VIcon v-bind="options.icon">
@@ -30,7 +31,11 @@
 
 			<slot />
 
-			<VCardActions v-bind="options.cardActions">
+			<div
+				v-if="!hideActions"
+				v-bind="options.actionsCtn"
+				class="vd-dialog-box-actions-ctn"
+			>
 				<VSpacer v-bind="options.actionsSpacer" />
 
 				<slot name="actions">
@@ -48,7 +53,7 @@
 						{{ confirmBtnText }}
 					</VBtn>
 				</slot>
-			</VCardActions>
+			</div>
 		</VCard>
 	</VDialog>
 </template>
@@ -66,33 +71,29 @@
 
 	const Props = Vue.extend({
 		props: {
-			/**
-			 * Show dialog or not
-			 * Default value false, dialog not showing
-			 */
 			value: {
 				type: Boolean,
 				default: false
 			},
-			/** The title of the DialogBox */
 			title: {
 				type: String,
 				default: undefined
 			},
-			/** The width of the DialogBox */
 			width: {
 				type: String,
 				default: '800px'
 			},
-			/** The label of the cancel button*/
 			cancelBtnText: {
 				type: String,
 				default: locales.cancelBtn
 			},
-			/** The label of the confirm button */
 			confirmBtnText: {
 				type: String,
 				default: locales.confirmBtn
+			},
+			hideActions: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -101,16 +102,16 @@
 
 	@Component({
 		inheritAttrs: false,
-		// v-model
 		model: {
 			prop: 'value',
 			event: 'change'
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
+		locales = locales;
+
 		closeIcon = mdiClose;
 
-		/** Internal value */
 		get dialog(): boolean {
 			return this.value;
 		}
@@ -119,13 +120,14 @@
 			this.$emit('change', value);
 		}
 
-		/**
-		 * Close the dialog
-		 *
-		 * @returns {void}
-		 */
 		close(): void {
 			this.$emit('change', false);
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.v-card__title > * {
+		line-height: 1em;
+	}
+</style>

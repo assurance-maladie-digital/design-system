@@ -1,5 +1,6 @@
 import { deepRemoveKeys } from '../';
-import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
+
+import { deepCopy } from '../../deepCopy';
 
 const BASE_OBJECT = {
 	b: 'b',
@@ -18,7 +19,6 @@ const DEEP_ARRAY = [
 	BASE_OBJECT
 ];
 
-// Tests
 describe('deepRemoveKeys', () => {
 	it('deletes a key', () => {
 		const deepObject = deepCopy(DEEP_OBJECT);

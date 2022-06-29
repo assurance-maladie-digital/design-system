@@ -7,7 +7,6 @@ const DATE_FORMAT = 'DD/MM/YYYY';
 const futureDate = dayjs().add(1, 'year').format(DATE_FORMAT);
 const pastDate = dayjs().subtract(1, 'year').format(DATE_FORMAT);
 
-// Tests
 describe('notAfterToday', () => {
 	it('returns an error when the date is future', () => {
 		expect(typeof notAfterToday(futureDate)).toBe('string');

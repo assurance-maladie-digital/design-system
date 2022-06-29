@@ -19,13 +19,8 @@
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
-	/**
-	 * Form field to enter a password.
-	 * Adds a button to show/hide the password
-	 */
 	@Component
 	export default class PasswordField extends MixinsDeclaration {
-		// Icons
 		eyeIcon = mdiEye;
 		eyeOffIcon = mdiEyeOff;
 

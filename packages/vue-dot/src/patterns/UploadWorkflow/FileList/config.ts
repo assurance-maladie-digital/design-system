@@ -1,12 +1,19 @@
 export const config = {
+	listItem: {
+		twoLine: true,
+		class: 'flex-wrap'
+	},
+	listItemAvatar: {
+		class: 'my-2'
+	},
 	listItemAvatarIcon: {
 		size: 24
 	},
 	listItemTitle: {
 		class: 'text-wrap'
 	},
-	layout: {
-		justifyEnd: true
+	listItemAction: {
+		class: 'flex-row'
 	},
 	divider: {
 		inset: true

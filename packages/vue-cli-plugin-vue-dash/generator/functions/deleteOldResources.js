@@ -6,38 +6,22 @@
  * @returns {void}
  */
 function deleteOldResources(resources, resourcesToDelete) {
-	for (const resource of resourcesToDelete) {
-		let shouldDeleteFile;
+	resourcesToDelete.forEach((resource) => {
+		const shouldDeleteFile = typeof resource.condition === 'undefined' ? true : resource.condition;
 
-		// If there is no condition, delete the resource,
-		// Else, test the condition
-		if (typeof resource.condition === 'undefined') {
-			shouldDeleteFile = true;
-		} else {
-			shouldDeleteFile = resource.condition;
+		if (resource.type === 'file' && shouldDeleteFile) {
+			delete resources[resource.path];
+			return;
 		}
 
-		// If the ressource is a file
-		if (resource.type === 'file') {
-			if (shouldDeleteFile) {
-				// Delete it
-				delete resources[resource.path];
-			}
-		}
-
-		// Else, if it's a folder
 		if (resource.type === 'folder') {
-			// Loop in all files
 			for (const resourceFile in resources) {
-				// If the path of the ressource matches a file
-				// and we should delete the file
 				if (resourceFile.match(resource.path) && shouldDeleteFile) {
-					// Delete it
 					delete resources[resourceFile];
 				}
 			}
 		}
-	}
+	});
 }
 
 module.exports = { deleteOldResources };

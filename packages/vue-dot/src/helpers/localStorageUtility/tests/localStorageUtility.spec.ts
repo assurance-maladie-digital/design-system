@@ -25,7 +25,7 @@ describe('LocalStorageUtility', () => {
 		expect(getControlItem()).toBe(normalizedObject);
 	});
 
-	it('should clear all previous objects when instantiated and control item doesn\'t exists', () => {
+	it('should clear all previous objects when instantiated and control item does not exists', () => {
 		localStorage.setItem('vd-test', normalizedString);
 
 		new LocalStorageUtility();
@@ -97,7 +97,7 @@ describe('LocalStorageUtility', () => {
 		localStorage.setItem('vd-test-2', normalizedString);
 
 		localStorageUtility.removeItem('test-1');
-		// Try to remove non existing item
+		// Try to remove a non existing item
 		localStorageUtility.removeItem('test');
 
 		expect(localStorage.getItem('vd-test-1')).toBe(null);
@@ -127,7 +127,7 @@ describe('LocalStorageUtility', () => {
 		expect(localStorageUtility.key(1)).toEqual('vd-test-2');
 	});
 
-	it('should return null when an item doesn\'t exists', () => {
+	it('should return null when an item does not exists', () => {
 		const localStorageUtility = new LocalStorageUtility();
 
 		expect(localStorageUtility.getItem('test')).toBe(null);
@@ -162,7 +162,7 @@ describe('LocalStorageUtility', () => {
 		expect(localStorage.getItem('vd-test-1')).toBe(null);
 	});
 
-	it('shouldn\'t fail when localStorage isn\'t available', () => {
+	it('should not fail when localStorage is not available', () => {
 		Object.defineProperty(window, 'localStorage', {
 			value: undefined
 		});

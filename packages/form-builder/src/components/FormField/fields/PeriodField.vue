@@ -1,14 +1,10 @@
 <template>
-	<VLayout
-		wrap
-		row
-		class="mx-n3"
-	>
+	<div class="vd-period-field d-flex flex-wrap max-width-none mx-n3">
 		<DatePicker
 			v-model="periodValue.from"
 			v-bind="fieldOptionsFrom"
 			:vuetify-options="fieldOptionsFrom"
-			text-field-class="mx-3 vd-form-input no-flex"
+			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
 			@change="dateUpdated"
 		/>
 
@@ -17,10 +13,10 @@
 			v-bind="fieldOptionsTo"
 			:vuetify-options="fieldOptionsTo"
 			:start-date="periodValue.from"
-			text-field-class="mx-3 vd-form-input no-flex"
+			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
 			@change="dateUpdated"
 		/>
-	</VLayout>
+	</div>
 </template>
 
 <script lang="ts">
@@ -36,16 +32,19 @@
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
-	/** Form period field to enter a period */
 	@Component<PeriodField>({
 		components: {
 			DatePicker
 		},
 		watch: {
-			// Listen the current field value for the component
 			'field.value': {
 				handler(value: PeriodValue | null): void {
-					if (value) {
+					if (!value) {
+						this.periodValue = {
+							from: null,
+							to: null
+						};
+					} else {
 						this.periodValue = value;
 					}
 				},
@@ -55,10 +54,7 @@
 		}
 	})
 	export default class PeriodField extends MixinsDeclaration {
-		periodValue: PeriodValue = {
-			from: null,
-			to: null
-		};
+		periodValue = {} as PeriodValue;
 
 		get fieldOptionsTo(): Options {
 			const datePicker = {
@@ -77,7 +73,6 @@
 			return this.field.fieldOptions?.from as unknown as Options;
 		}
 
-		/** Emit the new value when started or ended date change */
 		dateUpdated(): void {
 			const fromGreaterThanTo = (
 				this.periodValue.from &&
@@ -85,7 +80,6 @@
 				new Date(this.periodValue.from) > new Date(this.periodValue.to)
 			);
 
-			// Reset the end date if selected start date greater
 			if (fromGreaterThanTo) {
 				this.periodValue.to = null;
 			}
@@ -96,3 +90,11 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
+	.vd-period-field ::v-deep .vd-period-field-picker {
+		max-width: $vd-input-medium;
+	}
+</style>

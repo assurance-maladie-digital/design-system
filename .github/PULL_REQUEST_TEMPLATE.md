@@ -5,6 +5,18 @@
   Expliquez également le contexte si cela est pertinent.
 -->
 
+## Playground
+
+<!-- Copiez-collez votre playground pour tester vos changements -->
+
+<details>
+
+```vue
+// Copiez-collez le contenu de votre Playground.vue entier ici
+```
+
+</details>
+
 ## Type de changement
 
 <!-- Supprimez les options non pertinentes. -->

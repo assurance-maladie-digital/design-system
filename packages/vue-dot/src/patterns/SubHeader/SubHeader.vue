@@ -13,12 +13,14 @@
 					height="28"
 					type="button"
 					width="100"
+					class="mb-1"
 					dark
 				/>
 
 				<VBtn
 					v-else
 					v-bind="options.backBtn"
+					class="vd-sub-header-back-btn mb-1"
 					@click="$emit('back')"
 				>
 					<slot name="back-btn-icon">
@@ -32,14 +34,8 @@
 			</VFadeTransition>
 		</slot>
 
-		<VLayout
-			v-bind="options.contentLayout"
-			class="vd-sub-header-content"
-		>
-			<VLayout
-				class="vd-sub-header-informations mt-1"
-				column
-			>
+		<div class="vd-sub-header-content d-flex justify-space-between">
+			<div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
 				<slot name="title">
 					<VFadeTransition mode="out-in">
 						<HeaderLoading
@@ -82,32 +78,22 @@
 				</slot>
 
 				<slot name="additional-informations" />
-			</VLayout>
+			</div>
 
 			<slot name="right-content">
 				<VThemeProvider dark>
-					<VLayout
-						v-if="dataLists"
-						v-bind="options.dataListsLayout"
-						class="vd-sub-header-data-list"
-					>
-						<DataList
-							v-for="(dataList, index) in dataLists"
-							:key="'vd-sub-header-data-list' + index"
-							:loading="loading"
-							:render-html-value="renderHtmlValue"
-							:list-title="dataList.title"
-							:items="dataList.items"
-							:items-number-loading="dataList.itemsNumberLoading"
-							:heading-loading="dataList.headingLoading"
-							item-width="auto"
-							title-class="text-subtitle-1 font-weight-bold mb-2 mt-2"
-							@click:item-action="dataListItemAction(index, $event)"
-						/>
-					</VLayout>
+					<DataListGroup
+						v-if="dataListGroupItems"
+						:items="dataListGroupItems"
+						:loading="loading"
+						:render-html-value="renderHtmlValue"
+						item-width="auto"
+						class="flex-nowrap flex-shrink-0"
+						@click:list-item="emitItemAction"
+					/>
 				</VThemeProvider>
 			</slot>
-		</VLayout>
+		</div>
 	</div>
 </template>
 
@@ -117,48 +103,41 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { IDataListAction, DataListsItem } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 	import { Widthable } from '../../mixins/widthable';
 
-	import DataList from '../../elements/DataList';
+	import DataListGroup from '../../patterns/DataListGroup';
+	import { DataListActionEvent, DataListGroupItems } from '../DataListGroup/types';
 
 	import { mdiKeyboardBackspace } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			/** Hide the back button */
 			hideBackBtn: {
 				type: Boolean,
 				default: false
 			},
-			/** Customize the text inside back button */
 			backBtnText: {
 				type: String,
 				default: locales.backBtnText
 			},
-			/** Title of the SubHeader */
 			titleText: {
 				type: String,
 				default: undefined
 			},
-			/** Sub-title of the SubHeader */
 			subTitleText: {
 				type: String,
 				default: undefined
 			},
-			/** List of DataList components in column mode */
-			dataLists: {
-				type: Array as PropType<DataListsItem[]>,
+			dataListGroupItems: {
+				type: Array as PropType<DataListGroupItems | undefined>,
 				default: undefined
 			},
-			/** Loading mode */
 			loading: {
 				type: Boolean,
 				default: false
 			},
-			/** Render the value as plain HTML */
 			renderHtmlValue: {
 				type: Boolean,
 				default: false
@@ -168,31 +147,20 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
-	/**
-	 * SubHeader is a component that displays
-	 * informations below the main header
-	 */
 	@Component({
 		components: {
-			DataList
+			DataListGroup
 		}
 	})
 	export default class SubHeader extends MixinsDeclaration {
 		backArrowIcon = mdiKeyboardBackspace;
 
-		/** Semi-transparent white */
 		get fadeWhite(): string {
 			return 'rgba(255, 255, 255, .7)';
 		}
 
-		/**
-		 * Emit the dataList item object when user clicked on the corresponding action
-		 *
-		 * @param {number} dataListIndex The index of the selected data list
-		 * @param {number} itemIndex The index of the item into the selected data list
-		 */
-		dataListItemAction(dataListIndex: number, itemIndex: number): void {
-			this.$emit('click:list-item', { dataListIndex, itemIndex } as IDataListAction);
+		emitItemAction(eventValue: DataListActionEvent): void {
+			this.$emit('click:list-item', eventValue);
 		}
 	}
 </script>
@@ -200,31 +168,25 @@
 <style lang="scss" scoped>
 	.vd-sub-header {
 		overflow-x: auto;
-
-		::v-deep {
-			.v-skeleton-loader__heading {
-				width: 100%;
-				height: 100%;
-				border-radius: 20px;
-			}
-		}
 	}
 
-	.vd-sub-header-data-list,
+	.vd-sub-header-back-btn {
+		margin: 0 -6px;
+	}
+
+	.vd-data-list-group,
 	.vd-sub-header-informations {
 		// Don't take all available space
-		flex: none;
 		max-width: none;
 	}
 
-	.vd-sub-header-data-list ::v-deep .vd-data-list {
+	.vd-data-list-group ::v-deep .vd-data-list {
 		max-width: 200px;
-		margin-left: 8px;
 
 		// Apply margin right to avoid empty
 		// space on smaller screens
 		&:not(:last-child) {
-			margin-right: 80px;
+			margin-right: 80px !important;
 		}
 
 		.vd-key {
@@ -233,7 +195,10 @@
 		}
 
 		.vd-data-list-item-label {
-			opacity: .8;
+			color: rgba(255, 255, 255, .7) !important;
+		}
+
+		.vd-data-list-item-action-btn {
 			color: #fff !important;
 		}
 	}

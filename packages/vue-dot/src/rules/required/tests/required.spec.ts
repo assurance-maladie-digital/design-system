@@ -1,6 +1,5 @@
 import { required, requiredFn } from '../';
 
-// Tests
 describe('required', () => {
 	it('returns an error when the value is falsy', () => {
 		expect(typeof required('')).toBe('string');
@@ -10,8 +9,20 @@ describe('required', () => {
 		expect(typeof required([])).toBe('string');
 	});
 
-	it('returns true when the value is filled', () => {
+	it('returns an error when the value is filled with spaces', () => {
+		expect(typeof required('  ')).toBe('string');
+	});
+
+	it('returns an error when the value is null', () => {
+		expect(typeof required(null)).toBe('string');
+	});
+
+	it('returns true when the value is filled with a string', () => {
 		expect(required('test')).toBe(true);
+	});
+
+	it('returns true when the value is filled with an array of string', () => {
+		expect(required(['test'])).toBe(true);
 	});
 
 	it('works with custom error messages', () => {

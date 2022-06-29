@@ -1,6 +1,5 @@
 import { exactLength } from '../';
 
-// Tests
 describe('exactLength', () => {
 	it('returns an error when the value is longer than the exact length', () => {
 		const rule = exactLength(2);

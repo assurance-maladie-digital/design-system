@@ -14,8 +14,6 @@ export type Customizable = ExtendedVue<Vue, unknown, unknown, {
 /**
  * Mixin that merge default options with options passed as props
  *
- * @param {object} defaultOptions The options to apply by default
- *
  * @example
  * Usage in your component:
  * mixins: [ customizable({ btn: { color: 'primary' } }) ]
@@ -28,7 +26,6 @@ export type Customizable = ExtendedVue<Vue, unknown, unknown, {
 export function customizable(defaultOptions: Options): Customizable {
 	return Vue.extend({
 		props: {
-			/** User options */
 			vuetifyOptions: {
 				type: Object as PropType<Options>,
 				default: undefined
@@ -36,14 +33,10 @@ export function customizable(defaultOptions: Options): Customizable {
 		},
 		computed: {
 			options(): Options {
-				// If we have custom options
 				if (this.vuetifyOptions) {
-					// Merge default options with props
-					// Default first to allow override
 					return deepMerge<Options>(defaultOptions, this.vuetifyOptions);
 				}
 
-				// Else return default options
 				return defaultOptions;
 			}
 		}

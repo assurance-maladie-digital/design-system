@@ -8,10 +8,8 @@ import TableToolbar from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('TableToolbar', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(TableToolbar, {
 			propsData: {
 				nbFiltered: 1,
@@ -24,7 +22,6 @@ describe('TableToolbar', () => {
 	});
 
 	it('renders correctly when loading', () => {
-		// Mount component
 		wrapper = mountComponent(TableToolbar, {
 			propsData: {
 				loading: true,
@@ -37,7 +34,6 @@ describe('TableToolbar', () => {
 	});
 
 	it('renders correctly with content slot', () => {
-		// Mount component
 		wrapper = mountComponent(TableToolbar, {
 			propsData: {
 				nbFiltered: 0,
@@ -52,7 +48,6 @@ describe('TableToolbar', () => {
 	});
 
 	it('renders correctly with no items', () => {
-		// Mount component
 		wrapper = mountComponent(TableToolbar, {
 			propsData: {
 				nbFiltered: 0,

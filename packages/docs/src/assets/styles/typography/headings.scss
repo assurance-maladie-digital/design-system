@@ -1,0 +1,71 @@
+@import './mixins.scss';
+
+@mixin headings {
+	> h2 {
+		@include text-h5;
+		font-weight: 700;
+		margin-bottom: 32px;
+
+		&:not(:first-child) {
+			margin-top: 16px;
+		}
+	}
+
+	> h3 {
+		@include text-h6;
+		font-weight: 700;
+		margin-bottom: 12px;
+
+		&:not(:first-child) {
+			margin-top: 12px;
+		}
+	}
+
+	> h2 + h3:not(:first-child) {
+		margin-top: 0;
+	}
+
+	> h4 {
+		@include text-subtitle-1;
+		font-weight: 700;
+		margin-bottom: 8px;
+	}
+
+	> h5 {
+		@include text-subtitle-2;
+		margin-bottom: 8px;
+	}
+
+	@media only screen and (max-width: 599px) {
+		> h2 {
+			@include text-h6;
+			margin-bottom: 24px;
+
+			&:not(:first-child) {
+				margin-top: 12px;
+			}
+		}
+
+		> h3 {
+			@include text-subtitle-1;
+			margin-bottom: 10px;
+
+			&:not(:first-child) {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+.nuxt-content {
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		display: inline-block;
+	}
+
+	@include headings;
+}

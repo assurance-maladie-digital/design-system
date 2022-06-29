@@ -1,15 +1,16 @@
 <template>
-	<div class="vd-data-list">
+	<div
+		:aria-label="label"
+		:style="widthStyles"
+		class="vd-data-list"
+	>
 		<VFadeTransition mode="out-in">
-			<!-- The DataList loading skeleton -->
 			<DataListLoading
 				v-if="loading"
 				:items-number="itemsNumberLoading"
 				:heading="headingLoading"
 				:title-class="titleClass"
-				:flex="flex"
 				:row="row"
-				:item-width="itemWidth"
 			/>
 
 			<div v-else>
@@ -25,9 +26,7 @@
 
 				<ul
 					v-if="items.length"
-					class="vd-data-list-field pl-0 d-flex"
-					:class="listClass"
-					:style="{ minWidth }"
+					class="pl-0"
 				>
 					<DataListItem
 						v-for="(item, index) in items"
@@ -41,9 +40,8 @@
 						:icon="getIcon(item.icon)"
 						:placeholder="placeholder"
 						:vuetify-options="item.options"
-						:style="{ width: itemWidth }"
-						:class="item.class"
-						class="vd-data-list-item text-body-1 mb-2"
+						:class="getItemClass(index, item.class)"
+						class="vd-data-list-item text-body-1"
 						@click:action="$emit('click:item-action', index)"
 					/>
 				</ul>
@@ -57,14 +55,15 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { DataListIcons, DataList as IDataList } from './types';
+	import { DataListIcons, DataList as IDataList, ItemClass } from './types';
 
 	import DataListItem from './DataListItem';
 	import DataListLoading from './DataListLoading';
 
+	import { Widthable } from '../../mixins/widthable';
+
 	const Props = Vue.extend({
 		props: {
-			/** The items to display */
 			items: {
 				type: Array as PropType<IDataList>,
 				required: true
@@ -73,54 +72,34 @@
 				type: Object as PropType<DataListIcons | undefined>,
 				default: undefined
 			},
-			// Title options
 			listTitle: {
 				type: String,
 				default: undefined
 			},
 			titleClass: {
 				type: String,
-				default: 'mb-3 text-h5'
+				default: 'text-subtitle-1 font-weight-bold mb-3'
 			},
 			row: {
 				type: Boolean,
 				default: false
 			},
-			flex: {
-				type: Boolean,
-				default: false
-			},
-			/** The text to display as fallback */
 			placeholder: {
-				type: String,
-				default: locales.placeholder
-			},
-			/** The list min-width */
-			minWidth: {
 				type: String,
 				default: undefined
 			},
-			/** The item width */
-			itemWidth: {
-				type: String,
-				default: '200px'
-			},
-			/** Loading mode */
 			loading: {
 				type: Boolean,
 				default: false
 			},
-			/** The number of items to display during loading */
 			itemsNumberLoading: {
 				type: Number,
 				default: 1
 			},
-			/** Display the heading while loading */
 			headingLoading: {
 				type: Boolean,
 				default: false
 			},
-			/** Render the value as plain HTML */
 			renderHtmlValue: {
 				type: Boolean,
 				default: false
@@ -128,12 +107,8 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, Widthable);
 
-	/**
-	 * DataList is a component that displays list of
-	 * items containing key/value
-	 */
 	@Component({
 		components: {
 			DataListItem,
@@ -141,8 +116,8 @@
 		}
 	})
 	export default class DataList extends MixinsDeclaration {
-		get listClass(): string {
-			return this.flex ? 'flex-wrap' : 'flex-column';
+		get label(): string | undefined {
+			return this.loading ? locales.loadingLabel : undefined;
 		}
 
 		getIcon(iconName?: string): string | null {
@@ -152,11 +127,22 @@
 
 			return this.icons[iconName];
 		}
+
+		getItemClass(index: number, itemClass?: string): ItemClass {
+			const margin = {
+				'mb-2': index !== this.items.length - 1
+			};
+
+			return [
+				margin,
+				itemClass
+			];
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-data-list-field {
+	ul {
 		list-style: none;
 	}
 </style>

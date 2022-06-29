@@ -1,0 +1,24 @@
+.nuxt-content {
+	h2 > a::before,
+	h3 > a::before {
+		content: "#";
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 1.55em;
+		margin-left: -1rem;
+		padding-right: 0.35rem;
+		position: absolute;
+		opacity: 1;
+		text-decoration: none;
+		transition: opacity .15s;
+
+		@media (min-width: 1024px) {
+			opacity: 0;
+		}
+	}
+
+	h2:hover > a::before,
+	h3:hover > a::before {
+		opacity: 1;
+	}
+}

@@ -1,9 +1,5 @@
-/**
- * Returns the extension of a file (without the dot)
- *
- * @param {string} fileName The name of the file (with extension)
- */
-export function getFileExtension(fileName: string): string {
+/** Get the extension of a file */
+export function getFileExtension(filename: string): string {
 	// lastIndexOf returns '.xxx', add 1 to slice the dot
-	return fileName.slice(fileName.lastIndexOf('.') + 1);
+	return filename.slice(filename.lastIndexOf('.') + 1);
 }

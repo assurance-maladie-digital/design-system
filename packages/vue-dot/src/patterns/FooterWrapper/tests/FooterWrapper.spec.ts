@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
+import consola from 'consola';
+
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
@@ -8,12 +10,17 @@ import FooterWrapper from '../';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FooterWrapper', () => {
+	const spy = jest.fn();
+
+	beforeEach(() => {
+		consola.mockTypes(() => spy);
+	});
+
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FooterWrapper);
 
 		expect(html(wrapper)).toMatchSnapshot();
+		expect(spy).toHaveBeenCalledWith('FooterWrapper is deprecated since v2.2.0, use FooterBar instead.');
 	});
 });

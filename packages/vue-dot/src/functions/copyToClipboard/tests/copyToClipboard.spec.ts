@@ -27,7 +27,6 @@ function mockDocument(options: TSelection) {
 
 const txt = 'test';
 
-// Tests
 describe('copyToClipboard', () => {
 	it('is called correctly', () => {
 		mockDocument({

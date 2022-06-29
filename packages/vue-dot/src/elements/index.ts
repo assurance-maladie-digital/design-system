@@ -3,8 +3,12 @@ import CustomIcon from './CustomIcon';
 import DataList from './DataList';
 import DialogBox from './DialogBox';
 import DownloadBtn from './DownloadBtn';
+import ExternalLinks from './ExternalLinks';
+import FranceConnectBtn from './FranceConnectBtn';
 import HeaderLoading from './HeaderLoading';
-import PageCard from './PageCard';
+import Logo from './Logo';
+import PageContainer from './PageContainer';
+import UserMenuBtn from './UserMenuBtn';
 
 export const elements = {
 	CopyBtn,
@@ -12,6 +16,10 @@ export const elements = {
 	DataList,
 	DialogBox,
 	DownloadBtn,
+	ExternalLinks,
+	FranceConnectBtn,
 	HeaderLoading,
-	PageCard
+	Logo,
+	PageContainer,
+	UserMenuBtn
 };

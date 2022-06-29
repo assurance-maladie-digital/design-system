@@ -10,10 +10,8 @@ import { questionForm } from './data/questionForm';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('FormBuilder', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(FormBuilder, {
 			propsData: {
 				form: questionForm

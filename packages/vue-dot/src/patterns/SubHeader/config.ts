@@ -3,12 +3,6 @@ export const config = {
 		color: 'transparent',
 		small: true,
 		depressed: true,
-		class: 'text-none font-weight-regular white--text mx-n4'
-	},
-	contentLayout: {
-		class: 'justify-space-between'
-	},
-	dataListsLayout: {
-		class: 'pl-10 pr-8'
+		class: 'text-none font-weight-regular white--text px-1'
 	}
 };

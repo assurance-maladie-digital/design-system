@@ -10,7 +10,7 @@ interface TestComponent extends Vue {
 
 /** Create the wrapper */
 function createWrapper(error: boolean) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			ErrorProp
 		],
@@ -24,7 +24,6 @@ function createWrapper(error: boolean) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('ErrorProp', () => {
 	it('receives the value correctly from the prop', () => {
 		const wrapper = createWrapper(false);

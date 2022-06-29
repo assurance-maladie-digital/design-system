@@ -38,7 +38,7 @@ const updatedField = updatedTestForm.section1.questions;
 
 /** Create the wrapper */
 function createWrapper(form: Form) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			FormBuilderCore
 		],
@@ -52,7 +52,6 @@ function createWrapper(form: Form) {
 	}) as Wrapper<FormBuilderCore>;
 }
 
-// Tests
 describe('formBuilderCore', () => {
 	it('emits change event', async() => {
 		const wrapper = createWrapper(testForm);

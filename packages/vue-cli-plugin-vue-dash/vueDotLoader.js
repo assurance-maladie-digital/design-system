@@ -1,24 +1,32 @@
-// Vue CLI configuration
-// see https://cli.vuejs.org/guide/ for help
-
 const componentMap = {
 	// Elements
 	CopyBtn: 'elements',
 	CustomIcon: 'elements',
 	DataList: 'elements',
-	HeaderLoading: 'elements',
-	PageCard: 'elements',
 	DialogBox: 'elements',
+	DownloadBtn: 'elements',
+	ExternalLinks: 'elements',
+	HeaderLoading: 'elements',
+	Logo: 'elements',
+	PageContainer: 'elements',
+	UserMenuBtn: 'elements',
 	// Patterns
+	CookieBanner: 'patterns',
+	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
 	FileUpload: 'patterns',
+	FilterModule: 'patterns',
+	FooterBar: 'patterns',
 	FooterWrapper: 'patterns',
+	HeaderBar: 'patterns',
 	LangBtn: 'patterns',
 	NotificationBar: 'patterns',
 	PaginatedTable: 'patterns',
 	SubHeader: 'patterns',
+	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
 	// Templates
+	CookiesPage: 'templates',
 	ErrorPage: 'templates'
 };
 
@@ -48,7 +56,6 @@ function getVueDotComponent(componentName) {
  * components array, the second should be a corresponding import
  *
  * @see https://github.com/vuetifyjs/vuetify-loader#automatic-imports
- *
  * @param {string} _ The tag as it was originally used in the template
  * @param {object} options The options of the component
  * @param {string} options.camelTag The tag normalized to PascalCase

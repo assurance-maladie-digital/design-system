@@ -1,22 +1,26 @@
 export const config = {
 	card: {
-		class: 'py-4 px-6'
+		class: 'pa-6'
 	},
 	cardTitle: {
-		class: 'pa-0 mb-4'
+		class: 'd-flex align-start flex-nowrap pa-0 mb-6'
 	},
 	closeBtn: {
-		icon: true
+		icon: true,
+		width: '32px',
+		height: '32px',
+		class: 'mt-n2 mr-n2 ml-4'
 	},
-	cardActions: {
-		class: 'pa-0'
+	actionsCtn: {
+		class: 'd-flex flex-wrap mt-6'
 	},
 	cancelBtn: {
 		color: 'primary',
+		class: 'text-none',
 		text: true
 	},
 	confirmBtn: {
 		color: 'primary',
-		class: 'ml-6'
+		class: 'text-none ml-4'
 	}
 };

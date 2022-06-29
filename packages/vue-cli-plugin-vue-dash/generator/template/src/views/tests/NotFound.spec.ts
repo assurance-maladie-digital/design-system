@@ -8,10 +8,8 @@ import NotFound from '../NotFound.vue';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('NotFound', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(NotFound);
 
 		expect(html(wrapper)).toMatchSnapshot();

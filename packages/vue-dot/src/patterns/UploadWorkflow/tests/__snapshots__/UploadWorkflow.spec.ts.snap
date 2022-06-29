@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UploadWorkflow renders correctly 1`] = `
-<div class="vd-upload-workflow" style="width: 100%;">
+<div class="vd-upload-workflow white" style="width: 100%;">
   <h4 class="text-h6 mb-2">
     Documents à nous transmettre
   </h4>
@@ -14,14 +14,14 @@ exports[`UploadWorkflow renders correctly 1`] = `
 				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text text--darken-1">
 					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <div role="dialog" class="v-dialog__container vd-dialog-box">
+  <div class="v-dialog__container vd-dialog-box">
     <!---->
   </div>
 </div>
 `;
 
 exports[`UploadWorkflow renders correctly with a single file 1`] = `
-<div class="vd-upload-workflow" style="width: 100%;">
+<div class="vd-upload-workflow white" style="width: 100%;">
   <h4 class="text-h6 mb-2">
     Document à nous transmettre
   </h4>
@@ -34,7 +34,7 @@ exports[`UploadWorkflow renders correctly with a single file 1`] = `
 				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text text--darken-1">
 					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <div role="dialog" class="v-dialog__container vd-dialog-box">
+  <div class="v-dialog__container vd-dialog-box">
     <!---->
   </div>
 </div>

@@ -20,10 +20,8 @@ const mocks = {
 	$vd: VD_OPTIONS
 };
 
-// Tests
 describe('CustomIcon', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(CustomIcon, {
 			mocks,
 			propsData: {
@@ -35,7 +33,6 @@ describe('CustomIcon', () => {
 	});
 
 	it('renders correctly with a custom size', () => {
-		// Mount component
 		wrapper = mountComponent(CustomIcon, {
 			mocks,
 			propsData: {

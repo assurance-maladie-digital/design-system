@@ -10,7 +10,7 @@ interface TestComponent extends Vue {
 
 /** Create the wrapper */
 function createWrapper() {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			WarningRules
 		],
@@ -27,25 +27,20 @@ function createWrapper() {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('WarningRules', () => {
 	it('validates the value correctly on error', () => {
 		const wrapper = createWrapper();
 
-		// Empty value
 		wrapper.vm.validate('');
 
-		// Error
 		expect(wrapper.vm.successMessages[0]).toBe('error');
 	});
 
 	it('validates the value correctly on success', () => {
 		const wrapper = createWrapper();
 
-		// Filled value
 		wrapper.vm.validate('test');
 
-		// No error
 		expect(wrapper.vm.successMessages[0]).toBeUndefined();
 	});
 });

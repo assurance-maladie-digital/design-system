@@ -1,9 +1,5 @@
 <template>
-	<VLayout
-		v-bind="options.layout"
-		class="vd-data-list-item flex-grow-0"
-		tag="li"
-	>
+	<li class="vd-data-list-item d-flex flex-wrap">
 		<slot name="icon">
 			<VIcon
 				v-if="icon"
@@ -22,7 +18,6 @@
 					{{ label }}
 				</div>
 
-				<!-- Show value or fallback to placeholder -->
 				<div class="vd-data-list-item-value">
 					<slot
 						name="value"
@@ -61,7 +56,7 @@
 				</VBtn>
 			</slot>
 		</div>
-	</VLayout>
+	</li>
 </template>
 
 <script lang="ts">
@@ -75,42 +70,34 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** Label of the value */
 			label: {
 				type: String,
 				required: true
 			},
-			/** Value to display */
 			value: {
 				type: [String, Number],
 				default: undefined
 			},
-			/** Action to display */
 			action: {
 				type: String,
 				default: undefined
 			},
-			/** Text to display as fallback of value */
 			placeholder: {
 				type: String,
 				default: locales.placeholder
 			},
-			/** Display the value in a VChip */
 			chip: {
 				type: Boolean,
 				default: false
 			},
-			/** SVG icon to display */
 			icon: {
 				type: String,
 				default: undefined
 			},
-			/** Display label & value on a single line */
 			row: {
 				type: Boolean,
 				default: false
 			},
-			/** Render the value as plain HTML */
 			renderHtmlValue: {
 				type: Boolean,
 				default: false
@@ -120,10 +107,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	/**
-	 * DataListItem is a component that displays a
-	 * label associated with a value
-	 */
 	@Component
 	export default class DataListItem extends MixinsDeclaration {
 		get labelColor(): string {

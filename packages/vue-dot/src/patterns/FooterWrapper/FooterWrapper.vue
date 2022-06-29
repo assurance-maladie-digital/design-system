@@ -19,7 +19,14 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	/** FooterWrapper is a component used to display a Footer */
+	import consola from 'consola';
+
+	/** @deprecated Use FooterBar instead */
 	@Component
-	export default class FooterWrapper extends Vue {}
+	export default class FooterWrapper extends Vue {
+		mounted() {
+			// eslint-disable-next-line no-console
+			consola.warn('FooterWrapper is deprecated since v2.2.0, use FooterBar instead.');
+		}
+	}
 </script>

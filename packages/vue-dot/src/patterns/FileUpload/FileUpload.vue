@@ -1,8 +1,4 @@
 <template>
-	<!--
-		Wrap everything in a label, so when you click it,
-		it will trigger the <input>
-	-->
 	<label
 		v-ripple="!noRipple"
 		class="vd-file-upload d-block pa-4"
@@ -18,7 +14,6 @@
 		@dragleave="dragover = false"
 		@drop.prevent="dropHandler"
 	>
-		<!-- The actual <input>, masked with CSS -->
 		<input
 			ref="vdInputEl"
 			type="file"
@@ -29,10 +24,6 @@
 			@change="inputValueChanged"
 		>
 
-		<!--
-			The placeholder is what will be shown as the FileUpload.
-			Every part is in a slot so it can be translated by the developer
-		-->
 		<slot name="placeholder">
 			<span class="vd-file-upload-placeholder">
 				<slot name="icon">
@@ -62,10 +53,6 @@
 					</slot>
 				</span>
 
-				<!--
-					mouseover & mouseleave are used to apply
-					a specific Vuetify class in hover state
-				-->
 				<span
 					class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2"
 					:class="{ 'primary lighten-1': hover }"
@@ -83,7 +70,7 @@
 				>
 					<slot
 						name="info-text"
-						:maxSize="maxSizeReadable"
+						:max-size="maxSizeReadable"
 						:extensions="extensions"
 					>
 						{{ locales.infoText(maxSizeReadable, extensions) }}
@@ -114,15 +101,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The v-model value */
 			value: {
-				// File is not a valid prop type, use
-				// null to allow any type and
-				// provide custom validation
+				// File is not a valid prop type,
+				// use null to allow any type & provide custom validation
 				type: null as unknown as PropType<File | File[] | null>,
 				default: null,
 				/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
-				validator: (val): boolean => {
+				validator(val): boolean {
 					if (val === null) {
 						return true;
 					}
@@ -133,17 +118,14 @@
 					return isValid;
 				}
 			},
-			/** Allow multiple files */
 			multiple: {
 				type: Boolean,
 				default: false
 			},
-			/** Disable v-ripple on the component */
 			noRipple: {
 				type: Boolean,
 				default: false
 			},
-			/** Disable the component */
 			disabled: {
 				type: Boolean,
 				default: false
@@ -153,10 +135,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config), FileUploadCore, Widthable);
 
-	/**
-	 * FileUpload is a component that enhance the default HTML
-	 * file input element
-	 */
 	@Component({
 		model: {
 			prop: 'value',
@@ -164,19 +142,12 @@
 		}
 	})
 	export default class FileUpload extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		// Icons
 		uploadIcon = mdiCloudUpload;
 
-		/** For specific styles on hover */
 		hover = false;
 
-		/**
-		 * Get the different colors
-		 * depending on theme (light or dark)
-		 */
 		get colors(): IndexedObject {
 			const dark = this.$vuetify.theme.dark;
 
@@ -187,17 +158,14 @@
 			};
 		}
 
-		/** Compute maximum size to human readable */
 		get maxSizeReadable(): string {
 			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
 		}
 
-		/** Computed extensions for display */
 		get extensions(): string {
 			return this.allowedExtensions.join(', ').toUpperCase();
 		}
 
-		/** Expose retry function which clicks on the input */
 		public retry(): void {
 			this.$refs.vdInputEl.click();
 		}

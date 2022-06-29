@@ -39,12 +39,10 @@ function createStore(notification: NotificationObj = defaultNotification) {
 	});
 }
 
-// Tests
 describe('NotificationBar', () => {
 	it('renders correctly', () => {
 		const store = createStore();
 
-		// Mount component
 		wrapper = mountComponent(NotificationBar, {
 			store
 		});
@@ -59,7 +57,6 @@ describe('NotificationBar', () => {
 			icon: 'test-icon'
 		});
 
-		// Mount component
 		wrapper = mountComponent(NotificationBar, {
 			store
 		});

@@ -14,16 +14,15 @@ interface TestComponent extends Vue {
 
 /** Create the test component */
 function createTestComponent(mixinData = {}) {
-	return Vue.component('Test', {
+	return Vue.component('TestComponent', {
 		mixins: [
 			Eventable,
-			customizable(mixinData) // Needed because used in eventable
+			customizable(mixinData) // Necessary since used in eventable
 		],
 		template: '<div />'
 	});
 }
 
-// Tests
 describe('Eventable', () => {
 	it('does nothing when no options are defined', () => {
 		const testComponent = createTestComponent();
@@ -33,7 +32,7 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
 
-	it('returns userEvents without modification if it\'s not a function', () => {
+	it('returns userEvents without modification if it is not a function', () => {
 		const userEvents = [DATE];
 
 		const testComponent = createTestComponent({
@@ -51,7 +50,7 @@ describe('Eventable', () => {
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(userEvents);
 	});
 
-	it('returns the result of userEvents is it\'s a function', () => {
+	it('returns the result of userEvents is it is a function', () => {
 		const userEvents = (date: string) => 'test ' + date;
 
 		const testComponent = createTestComponent({
@@ -77,14 +76,14 @@ describe('Eventable', () => {
 				startDate: '2019-10-21'
 			},
 			mocks: {
-				date: '2019-10-27' // End date
+				date: '2019-10-27'
 			}
 		}) as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE)).toBe('vd-custom-event accent');
 	});
 
-	it('returns false if the the selected date isn\'t in the defined range', () => {
+	it('returns false if the the selected date is not in the defined range', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
@@ -92,14 +91,14 @@ describe('Eventable', () => {
 				startDate: '2019-10-21'
 			},
 			mocks: {
-				date: '2019-10-22' // End date
+				date: '2019-10-22'
 			}
 		}) as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
 
-	it('returns false when showWeekends is on and the date isn\'t a weekend', () => {
+	it('returns false when showWeekends is on and the date is not a weekend', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {

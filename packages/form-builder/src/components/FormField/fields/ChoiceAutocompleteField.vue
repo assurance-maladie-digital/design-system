@@ -6,6 +6,7 @@
 		:multiple="multiple"
 		:search-input.sync="searchInput"
 		:type="undefined"
+		:error-messages="errorMessages"
 		class="vd-form-input"
 		@change="valueUpdated"
 	/>
@@ -20,18 +21,14 @@
 
 	const MixinsDeclaration = mixins(ChoiceComponent);
 
-	/** Form field to select a value with autocomplete */
 	@Component
 	export default class ChoiceAutocompleteField extends MixinsDeclaration {
 		searchInput: string | null = null;
 
 		/**
 		 * Clear the search input
-		 * See https://github.com/vuetifyjs/vuetify/issues/5926
-		 * for more informations
 		 *
-		 * @param {ChoiceFieldValue} value The updated value
-		 * @returns {void} Nothing
+		 * @see https://github.com/vuetifyjs/vuetify/issues/5926
 		 */
 		valueUpdated(value: ChoiceFieldValue): void {
 			this.searchInput = '';

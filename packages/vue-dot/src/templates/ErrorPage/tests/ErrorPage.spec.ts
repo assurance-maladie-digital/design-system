@@ -5,16 +5,14 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import ErrorPage from '../';
-import PageCard from '../../../elements/PageCard';
+import PageContainer from '../../../elements/PageContainer';
 
-Vue.component('PageCard', PageCard);
+Vue.component('PageContainer', PageContainer);
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('ErrorPage', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(ErrorPage, {
 			propsData: {
 				pageTitle: 'Error',

@@ -1,4 +1,5 @@
 import { Options } from '../../mixins/customizable';
+import { IndexedObject } from '../../types';
 
 export interface DataListItem {
 	key: string;
@@ -15,3 +16,5 @@ export type DataList = DataListItem[];
 export interface DataListIcons {
 	[iconName: string]: string;
 }
+
+export type ItemClass = (string | undefined | IndexedObject<boolean>)[];

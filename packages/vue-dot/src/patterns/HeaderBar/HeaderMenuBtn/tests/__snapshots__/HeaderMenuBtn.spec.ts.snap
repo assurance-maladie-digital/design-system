@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderMenuBtn renders correctly 1`] = `
+<vbtn-stub color="transparent" elevation="0" tag="button" activeclass="" type="button" aria-label="Ouvrir le menu" class="vd-header-menu-btn px-2 mx-n2">
+  <vicon-stub class="mr-2">
+    M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z
+  </vicon-stub>
+
+  Menu
+</vbtn-stub>
+`;

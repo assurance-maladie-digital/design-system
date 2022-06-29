@@ -14,7 +14,6 @@ interface VueInstance extends VueConstructor {
 }
 
 interface TestComponent extends Vue {
-	// Extend $refs
 	$refs: Refs<{
 		input: {
 			hasError: boolean;
@@ -28,8 +27,10 @@ interface TestComponent extends Vue {
 	value: string;
 	date: string;
 	textFieldDate: string;
+	errorMessages: string[];
 	saveFromTextField: () => void;
 	saveFromCalendar: () => void;
+	saveFromPasted: (event: ClipboardEvent) => void;
 	parseTextFieldDate: (date: string) => string;
 	textFieldBlur: () => void;
 	dateFormatted: string;
@@ -67,7 +68,7 @@ function createTextField() {
 
 /** Create the wrapper */
 function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			DateLogic,
 			customizable(mixinData)
@@ -87,17 +88,15 @@ function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('DateLogic', () => {
 	// We need to unregister VTextField between each test
 	// because it may change
 	afterEach(() => {
 		const instance = Vue as VueInstance;
-
 		delete instance.options.components['v-text-field'];
 	});
 
-	it('doesn\'t set the date when the value is empty', () => {
+	it('does not set the date when the value is empty', () => {
 		const wrapper = createWrapper();
 
 		expect(wrapper.vm.date).toBe('');
@@ -131,14 +130,26 @@ describe('DateLogic', () => {
 		expect(wrapper.vm.date).toBe('2019-10-29');
 	});
 
-	it('emits change event with empty value when the date is invalid', () => {
+	it('emits change event with empty value when saveFromTextField and the date is invalid in initial state', () => {
 		const wrapper = createWrapper({
 			value: '29-10-2019'
 		});
 
 		wrapper.vm.saveFromTextField();
 
-		expect(wrapper.emitted('change')).toEqual([['']]);
+		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	it('does not emit change event when saveFromTextField is called and value is invalid', async() => {
+		const wrapper = createWrapper();
+
+		await wrapper.setData({
+			textFieldDate: '2019/'
+		});
+
+		wrapper.vm.saveFromTextField();
+
+		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
 	// parseTextFieldDate
@@ -150,12 +161,13 @@ describe('DateLogic', () => {
 		expect(parsed).toBe('2019-10-29');
 	});
 
-	it('returns an empty string when parseTextFieldDate is called with an invalid date', () => {
+	it('returns null and sets error messages when parseTextFieldDate is called with an invalid date', () => {
 		const wrapper = createWrapper();
 
 		const parsed = wrapper.vm.parseTextFieldDate('2019/10/29');
 
-		expect(parsed).toBe('');
+		expect(parsed).toBeNull();
+		expect(wrapper.vm.errorMessages.length).toBe(1);
 	});
 
 	// saveFromCalendar
@@ -179,7 +191,7 @@ describe('DateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('doesn\'t set hasFocused if it\'s undefined', () => {
+	it('does not set hasFocused if it is undefined', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
@@ -191,6 +203,46 @@ describe('DateLogic', () => {
 		wrapper.vm.saveFromCalendar();
 
 		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	// saveFromPasted
+	it('parses the date when pasted with display format', () => {
+		const wrapper = createWrapper();
+		const clipboardEvent = {
+			clipboardData: {
+				getData: () => '01/01/2021'
+			}
+		} as unknown as ClipboardEvent;
+
+		wrapper.vm.saveFromPasted(clipboardEvent);
+
+		const event = wrapper.emitted('change') as string[];
+
+		expect(event[0]).toEqual(['2021-01-01']);
+	});
+
+	it('parses the date when pasted with return format', () => {
+		const wrapper = createWrapper();
+		const clipboardEvent = {
+			clipboardData: {
+				getData: () => '2021-01-01'
+			}
+		} as unknown as ClipboardEvent;
+
+		wrapper.vm.saveFromPasted(clipboardEvent);
+
+		const event = wrapper.emitted('change') as string[];
+
+		expect(event[0]).toEqual(['2021-01-01']);
+	});
+
+	it('does not parses the date when clipboardData is empty', () => {
+		const wrapper = createWrapper();
+		const clipboardEvent = {} as unknown as ClipboardEvent;
+
+		wrapper.vm.saveFromPasted(clipboardEvent);
+
+		expect(wrapper.emitted('change')).toBeFalsy();
 	});
 
 	// textFieldBlur

@@ -1,0 +1,26 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"types": [
+			"@nuxt/types",
+			"@nuxt/vue-app",
+			"@nuxtjs/vuetify"
+		],
+		"paths": {
+			"~/*": [
+				"./src/*"
+			],
+			"@/*": [
+				"./src/*"
+			]
+		}
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.vue"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

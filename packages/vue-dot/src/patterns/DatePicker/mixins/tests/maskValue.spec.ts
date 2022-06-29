@@ -11,7 +11,7 @@ interface TestComponent extends Vue {
 
 /** Create the wrapper */
 function createWrapper(mask?: string | boolean, dateFormat?: string) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			MaskValue
 		],
@@ -28,7 +28,6 @@ function createWrapper(mask?: string | boolean, dateFormat?: string) {
 	}) as Wrapper<TestComponent>;
 }
 
-// Tests
 describe('MaskValue', () => {
 	it('computes a mask from dateFormat if mask prop is empty', () => {
 		const wrapper = createWrapper(undefined, 'YYYY-DD-MM');
@@ -36,7 +35,7 @@ describe('MaskValue', () => {
 		expect(wrapper.vm.maskValue).toBe('####-##-##');
 	});
 
-	it('doesn\'t compute a mask if mask prop is false', () => {
+	it('does not compute a mask if mask prop is false', () => {
 		const wrapper = createWrapper(false);
 
 		expect(wrapper.vm.maskValue).toBeUndefined();

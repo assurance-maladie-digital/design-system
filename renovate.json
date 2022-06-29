@@ -1,5 +1,44 @@
 {
-  "extends": [
-    "config:base"
-  ]
+	"extends": [
+		"config:base"
+	],
+	"labels": [
+		"dependencies"
+	],
+	"commitMessagePrefix": "⬆️",
+	"packageRules": [
+		{
+			"matchPackageNames": [
+				"jest",
+				"ts-jest"
+			],
+			"allowedVersions": "<27"
+		},
+		{
+			"matchPackageNames": [
+				"remark",
+				"remark-html"
+			],
+			"allowedVersions": "<14"
+		},
+		{
+			"matchPackageNames": [
+				"sass"
+			],
+			"allowedVersions": "<1.33"
+		},
+		{
+			"matchPackageNames": [
+				"vue"
+			],
+			"allowedVersions": "<3"
+		},
+		{
+			"matchPackageNames": [
+				"vuex",
+				"vue-router"
+			],
+			"allowedVersions": "<4"
+		}
+	]
 }

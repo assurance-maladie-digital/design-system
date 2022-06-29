@@ -4,16 +4,20 @@ import Component, { mixins } from 'vue-class-component';
 import { UpdateFileModel } from './updateFileModel';
 
 import { Refs } from '../../../types';
-import { FileListItem, SelectItem } from '../types';
+import { FileListItem, SelectedFile, SelectItem } from '../types';
 
 import FileUpload from '../../FileUpload';
+import { ErrorEvent } from '../../FileUpload/types';
 
 const Props = Vue.extend({
 	props: {
-		/** The v-model value (the list of files) */
 		value: {
+			type: Array as PropType<File[] | SelectedFile[]>,
+			default: () => ([])
+		},
+		fileListItems: {
 			type: Array as PropType<FileListItem[]>,
-			required: true
+			default: null
 		}
 	}
 });
@@ -24,7 +28,13 @@ const MixinsDeclaration = mixins(Props, UpdateFileModel);
 	watch: {
 		value: {
 			handler(): void {
-				this.initFileList(this.value);
+				if (this.fileListItems === null && !this.value.length) {
+					this.resetInternalModel();
+				}
+
+				if (this.internalFileListItems.length) {
+					this.initFileList(this.internalFileListItems);
+				}
 			},
 			immediate: true,
 			deep: true
@@ -32,124 +42,132 @@ const MixinsDeclaration = mixins(Props, UpdateFileModel);
 	}
 })
 export class UploadWorkflowCore extends MixinsDeclaration {
-	// Props.value
-	value!: FileListItem[];
-
-	// Extend $refs
 	$refs!: Refs<{
 		fileUpload: FileUpload;
 		form: HTMLFormElement;
 	}>;
 
-	/** The VDialog v-model */
 	dialog = false;
-
 	error = false;
+	inlineSelect = false;
 
-	/** The FileUpload v-model */
 	uploadedFile: File | null = null;
 
-	/** The VSelect v-model */
 	selectedItem = '';
 
-	/** If there is only one file in the list, we're in single mode */
+	internalFileListItems = this.fileListItems ?? this.value;
+
 	get singleMode(): boolean {
 		return this.fileList.length === 1;
 	}
 
-	/** The list of items for the VSelect */
 	get selectItems(): SelectItem[] {
-		const items: SelectItem[] = [];
+		if (!this.internalFileListItems.length) {
+			return [];
+		}
 
-		this.value.forEach((file: FileListItem) => {
-			items.push({
+		const items: SelectItem[] = this.internalFileListItems.map((file) => {
+			return {
 				text: file.title,
 				value: file.id
-			});
+			};
 		});
 
 		return items;
 	}
 
-	/**
-	 * Set the file and it's properties in
-	 * the list and emit change event
-	 */
 	setFileInList(): void {
-		// Set the state of the file
-		this.updateFileModel(this.selectedItem, 'state', this.error ? 'error' : 'success');
-
-		// Only set name & file when no error (when uploadedFile is not null)
-		if (this.uploadedFile) {
-			this.updateFileModel(this.selectedItem, 'name', this.uploadedFile.name);
-			this.updateFileModel(this.selectedItem, 'file', this.uploadedFile);
+		if (!this.internalFileListItems.length) {
+			return;
 		}
 
-		// Reset error
+		const index = this.internalFileListItems.findIndex((file) => file.id === this.selectedItem);
+
+		if (index === -1) {
+			return;
+		}
+
+		this.updateFileModel(index, 'state', this.error ? 'error' : 'success');
+
+		if (this.uploadedFile) {
+			this.updateFileModel(index, 'name', this.uploadedFile.name);
+			this.updateFileModel(index, 'file', this.uploadedFile);
+		}
+
 		this.error = false;
 
 		this.emitChangeEvent();
 	}
 
-	/** Reset a file from the list */
-	resetFile(id: string): void {
-		// Reset the state
-		this.updateFileModel(id, 'state', 'initial');
-		// Clear name and file
-		this.updateFileModel(id, 'name', undefined);
-		this.updateFileModel(id, 'file', undefined);
+	resetFile(index: number): void {
+		if (!this.internalFileListItems.length) {
+			this.$delete(this.fileList, index);
+		} else {
+			this.updateFileModel(index, 'state', 'initial');
+			this.updateFileModel(index, 'name', undefined);
+			this.updateFileModel(index, 'file', undefined);
+		}
 
 		this.emitChangeEvent();
 	}
 
-	/** Update v-model */
+	resetInternalModel(): void {
+		this.fileList = [];
+		this.internalFileListItems = [];
+	}
+
 	emitChangeEvent(): void {
-		// Emit in next tick to respect event order
 		this.$nextTick(() => {
 			this.$emit('change', this.fileList);
 		});
 	}
 
-	/** Validate the form and call setFileInList */
-	dialogConfirm(): void {
-		// Validate the form in the dialog
+	emitViewFileEvent(file: FileListItem): void {
+		this.$nextTick(() => {
+			this.$emit('view-file', file);
+		});
+	}
+
+	async dialogConfirm(): Promise<void> {
+		await this.$nextTick();
+
 		if (this.$refs.form.validate()) {
-			// Close the dialog
 			this.dialog = false;
-
 			this.setFileInList();
-
-			// Reset the form
 			this.$refs.form.reset();
 		}
 	}
 
-	/** Open the dialog or call setFileInList */
 	fileSelected(): void {
-		// If in single mode
+		if (!this.internalFileListItems.length && this.uploadedFile) {
+			this.fileList.push(this.uploadedFile);
+			this.emitChangeEvent();
+			return;
+		}
+
 		if (this.singleMode) {
-			// Set the select v-model to the first item
 			this.selectedItem = this.selectItems[0].value;
 			this.setFileInList();
-		} else {
-			// Else, open dialog to let the user choose the type of the file
-			this.dialog = true;
+			return;
 		}
+
+		if (this.inlineSelect) {
+			this.setFileInList();
+			this.inlineSelect = false;
+			this.selectedItem = '';
+			return;
+		}
+
+		this.dialog = true;
 	}
 
-	/** Emit error event */
-	uploadError(error: ErrorEvent): void {
+	async uploadError(error: ErrorEvent): Promise<void> {
 		this.error = true;
-		// Reset file (if previously selected)
 		this.uploadedFile = null;
 
 		this.setFileInList();
 
-		// Pass the default FileUpload error
-		this.$nextTick(() => {
-			this.$emit('error', error);
-		});
-
-		this.error = false;
+		await this.$nextTick();
+		this.$emit('error', error);
 	}
 }

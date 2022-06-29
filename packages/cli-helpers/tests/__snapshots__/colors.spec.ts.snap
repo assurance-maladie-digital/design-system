@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`colors object should contains all colors 1`] = `
-Object {
-  "lightGrey": "#909090",
-  "primary": "#01579b",
-}
-`;

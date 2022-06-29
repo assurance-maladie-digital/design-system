@@ -4,7 +4,7 @@
 // Directly import Home view for faster rendering of first page
 import Home from '@/views/Home.vue';
 
-/** See https://router.vuejs.org/fr/essentials/navigation.html for help */
+/** @see https://router.vuejs.org/fr/essentials/navigation.html for help */
 export const routes = [
 	{
 		path: '/',

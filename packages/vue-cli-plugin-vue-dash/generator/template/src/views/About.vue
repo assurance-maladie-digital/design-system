@@ -1,35 +1,37 @@
 <template>
-	<PageCard card-class="py-4 px-5">
-		<h2 class="text-h6 font-weight-bold primary--text">
-			<% if (i18n) { %>{{ $t('views.about.title') }}<% } else { %>À propos<% } %>
-		</h2>
+	<PageContainer>
+		<VCard class="pa-8">
+			<VBtn
+				:to="{
+					name: 'home'
+				}"
+				color="accent"
+				class="mb-8"
+				outlined
+				exact<% if (cypress) { %>
+				data-cy="backBtn"<% } %>
+			>
+				<VIcon class="mr-2">
+					{{ backArrowIcon }}
+				</VIcon>
 
-		<Links
-			v-for="(data, index) in links"
-			:key="index"
-			:title="data.title"
-			:links="data.links"
-			class="mt-4"<% if (cypress) { %>
-			data-cy="links"<% } %>
-		/>
+				<% if (i18n) { %>{{ $t('views.about.backBtn.label') }}<% } else { %>Retour<% } %>
+			</VBtn>
 
-		<VBtn
-			:to="{
-				name: 'home'
-			}"
-			color="accent"
-			class="mt-8"
-			outlined
-			exact<% if (cypress) { %>
-			data-cy="backBtn"<% } %>
-		>
-			<VIcon class="mr-2">
-				{{ backArrowIcon }}
-			</VIcon>
+			<h2 class="text-h6 font-weight-bold primary--text">
+				<% if (i18n) { %>{{ $t('views.about.title') }}<% } else { %>À propos<% } %>
+			</h2>
 
-			<% if (i18n) { %>{{ $t('views.about.backBtn.label') }}<% } else { %>Retour<% } %>
-		</VBtn>
-	</PageCard>
+			<LinksList
+				v-for="(data, index) in links"
+				:key="index"
+				:title="data.title"
+				:links="data.links"
+				class="mt-4"<% if (cypress) { %>
+				data-cy="links"<% } %>
+			/>
+		</VCard>
+	</PageContainer>
 </template>
 
 <script lang="ts">
@@ -47,12 +49,11 @@
 		links: Link[];
 	}
 
-	/** About page */
 	@Component({
 		components: {
-			Links: () => import(
-				/* webpackChunkName: "links" */
-				'@/components/Links'
+			LinksList: () => import(
+				/* webpackChunkName: "links-list" */
+				'@/components/LinksList'
 			)
 		}
 	})
@@ -61,7 +62,7 @@
 
 		<% if (i18n) { %>get links(): LinkItem[] {
 			return this.$t('views.about.links') as unknown as LinkItem[];
-		}<% } else { %>links = [
+		}<% } else { %>links: LinkItem[] = [
 			{
 				title: 'CNAM',
 				links: [
@@ -127,6 +128,7 @@
 				meta: [
 					{
 						name: 'description',
+						vmid: 'description',
 						content: <% if (i18n) { %>this.$t('views.about.meta.description') as string<% } else { %>'Informations et liens utiles.'<% } %>
 					}
 				]

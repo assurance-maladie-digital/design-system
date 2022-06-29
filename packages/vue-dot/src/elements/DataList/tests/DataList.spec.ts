@@ -9,10 +9,8 @@ import { getDataList } from './data/dataList';
 
 let wrapper: Wrapper<Vue>;
 
-// Tests
 describe('DataList', () => {
 	it('renders correctly', () => {
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: getDataList()
@@ -33,7 +31,6 @@ describe('DataList', () => {
 	});
 
 	it('renders correctly with a title', () => {
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: getDataList(),
@@ -47,23 +44,7 @@ describe('DataList', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly in flex mode', () => {
-		// Mount component
-		wrapper = mountComponent(DataList, {
-			propsData: {
-				items: getDataList(),
-				flex: true
-			}
-		});
-
-		const elExists = wrapper.find('.flex-wrap').exists();
-		expect(elExists).toBe(true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
 	it('renders correctly with an empty list', () => {
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: []
@@ -83,7 +64,6 @@ describe('DataList', () => {
 		// Add an action to the second item
 		listWithIcon[1].icon = 'mdiTest';
 
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: listWithIcon,
@@ -106,7 +86,6 @@ describe('DataList', () => {
 		// Add a class to the second item
 		listWithClass[1].class = 'custom-class';
 
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: listWithClass
@@ -121,7 +100,6 @@ describe('DataList', () => {
 	});
 
 	it('renders loading state correctly', async() => {
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: getDataList(),
@@ -154,7 +132,6 @@ describe('DataList', () => {
 		// Add an action to the second item
 		listWithAction[1].action = 'Edit';
 
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: listWithAction,
@@ -171,7 +148,6 @@ describe('DataList', () => {
 		// Add an action to the second item
 		listWithAction[2].action = 'Edit';
 
-		// Mount component
 		wrapper = mountComponent(DataList, {
 			propsData: {
 				items: listWithAction,
@@ -183,13 +159,11 @@ describe('DataList', () => {
 		const itemWithAction = wrapper.findAll('.vd-data-list-item').at(2);
 		expect(itemWithAction.exists()).toBe(true);
 
-		// Find the button action in the second item and click on it
 		const actionBtn = itemWithAction.find('.vd-data-list-item-action-btn');
 		expect(actionBtn.exists()).toBe(true);
 
 		actionBtn.trigger('click');
 
-		// Wait until $emits have been handled
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('click:item-action')).toEqual([[2]]);

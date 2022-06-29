@@ -1,7 +1,7 @@
 <template>
 	<div
 		:style="widthStyles"
-		class="vd-upload-workflow"
+		class="vd-upload-workflow white"
 	>
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
@@ -11,35 +11,30 @@
 		</slot>
 
 		<FileList
+			v-if="showFileList"
 			v-bind="options.fileList"
 			:files="fileList"
 			@delete-file="resetFile"
-			@retry="showFileUpload"
-			@upload="showFileUpload"
+			@retry="uploadInline"
+			@upload="uploadInline"
+			@view-file="emitViewFileEvent"
 		/>
 
 		<FileUpload
 			ref="fileUpload"
 			v-bind="options.fileUpload"
 			v-model="uploadedFile"
-			@change="fileSelected"
 			@error="uploadError"
+			@change="fileSelected"
 		/>
 
 		<DialogBox
 			v-model="dialog"
 			v-bind="options.dialog"
+			:title="locales.modalTitle"
 			@cancel="dialog = false"
 			@confirm="dialogConfirm"
 		>
-			<template #title>
-				<slot name="modal-title">
-					<h4 class="mb-4">
-						{{ locales.modalTitle }}
-					</h4>
-				</slot>
-			</template>
-
 			<VForm
 				ref="form"
 				v-bind="options.form"
@@ -74,7 +69,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			/** The main title */
 			sectionTitle: {
 				type: String,
 				default: undefined
@@ -84,10 +78,6 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config), UploadWorkflowCore, Widthable);
 
-	/**
-	 * UploadWorkflow is a component that let the user select files
-	 * and define a type for them in a pre-defined list
-	 */
 	@Component<UploadWorkflow>({
 		components: {
 			FileList
@@ -98,10 +88,11 @@
 		}
 	})
 	export default class UploadWorkflow extends MixinsDeclaration {
-		// Locales
 		locales = locales;
 
-		/** The rules for the select in the dialog */
+		// UploadWorkflowCore mixin
+		inlineSelect!: boolean;
+
 		selectRules = [
 			required
 		];
@@ -109,17 +100,22 @@
 		get computedTitle(): string {
 			if (this.sectionTitle) {
 				return this.sectionTitle;
-			} else {
-				const plural = this.value.length > 1;
-
-				return locales.title(plural);
 			}
+
+			if (!this.internalFileListItems.length) {
+				return locales.importTitle;
+			}
+
+			return locales.title(this.internalFileListItems.length > 1);
 		}
 
-		/** Prefill the select and click on FileUpload */
-		showFileUpload(id: string): void {
-			// Prefill the select
+		get showFileList(): boolean {
+			return this.value.length > 0 || this.fileListItems?.length > 0;
+		}
+
+		uploadInline(id: string): void {
 			this.selectedItem = id;
+			this.inlineSelect = true;
 			this.$refs.fileUpload.retry();
 		}
 	}

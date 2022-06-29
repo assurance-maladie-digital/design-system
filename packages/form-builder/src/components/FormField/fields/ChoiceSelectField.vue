@@ -5,6 +5,7 @@
 		:items="items"
 		:multiple="multiple"
 		:type="undefined"
+		:error-messages="errorMessages"
 		class="vd-form-input"
 		@change="emitChangeEvent($event)"
 	/>
@@ -17,7 +18,6 @@
 
 	const MixinsDeclaration = mixins(ChoiceComponent);
 
-	/** Form field to select a value from a list */
 	@Component
 	export default class ChoiceSelectField extends MixinsDeclaration {}
 </script>

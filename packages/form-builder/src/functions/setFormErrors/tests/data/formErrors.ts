@@ -1,7 +1,6 @@
 import { Form } from '../../../../components/FormBuilder/types';
 import { FormErrors } from '../../types';
 
-/** FormErrors with invalid values */
 export const formErrorsInvalidValues = {
 	fieldNameNotExist: [
 		'Field name does not exist'
@@ -15,12 +14,10 @@ export const formErrorsInvalidValues = {
 	]
 } as FormErrors;
 
-/** FormErrors with wrong types */
 export const formErrorsWrongTypes = {
 	questionString: 4
 } as FormErrors;
 
-/** FormErrors related to question form */
 export const formErrors: FormErrors = {
 	questionString: [
 		'Erreur 1',
@@ -29,19 +26,23 @@ export const formErrors: FormErrors = {
 	questionPassword: 'Erreur',
 	questionPeriod: {
 		from: [
-			'Erreur 1',
-			'Erreur 2'
+			'Erreur from 1',
+			'Erreur from 2'
 		],
 		to: [
-			'Erreur 1',
-			'Erreur 2'
+			'Erreur to 1',
+			'Erreur to 2'
 		]
 	},
 	questionChoiceButton: [
 		'Erreur 1',
 		'Erreur 2'
 	],
-	questionChoiceButtonMultiple: 'Erreur'
+	questionChoiceButtonMultiple: 'Erreur',
+	questionChoiceOtherSelected: {
+		value: 'test',
+		other: 'test'
+	}
 };
 
 export const form: Form = {
@@ -69,6 +70,10 @@ export const form: Form = {
 				fieldOptions: {
 					type: 'choiceButton'
 				}
+			},
+			questionChoiceOtherSelected: {
+				type: 'select',
+				items: []
 			}
 		}
 	}

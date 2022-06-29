@@ -1,9 +1,4 @@
 <template>
-	<!--
-		`aria-hidden` is present, this hides the icon
-		from screen-readers, an accessible label should be
-		provided by the context/the user
-	-->
 	<span
 		:class="{
 			'vd-small': small,
@@ -17,15 +12,13 @@
 			width: size,
 			height: size
 		}"
+		:aria-hidden="!label"
+		:aria-label="label"
+		role="img"
+		focusable="false"
 		class="vd-custom-icon"
-		aria-hidden="true"
 	>
-		<!--
-			Default slot, this makes the content
-			of the icon totally customizable
-		-->
 		<slot>
-			<!-- v-html is needed to render the SVG -->
 			<span
 				v-if="themeIcon"
 				v-html="themeIcon"
@@ -43,8 +36,8 @@
 	const Props = Vue.extend({
 		props: {
 			/**
-			 * Change the color of the icon (any CSS value)
-			 * By default it's inherited from CSS color property
+			 * The color of the icon (any CSS value)
+			 * By default it's inherited from the text color
 			 */
 			color: {
 				type: String,
@@ -71,10 +64,18 @@
 				default: false
 			},
 			/**
-			 * Apply a custom CSS size (width/height) to the icon
+			 * The CSS size of the icon (width/height)
 			 * By default, the size is 1.35em (between small & medium)
 			 */
 			size: {
+				type: String,
+				default: undefined
+			},
+			/**
+			 * The accessible label of the icon
+			 * By default, the icon is hidden from screen readers
+			 */
+			label: {
 				type: String,
 				default: undefined
 			}
@@ -83,10 +84,6 @@
 
 	const MixinsDeclaration = mixins(Props, ThemeIcon);
 
-	/**
-	 * CustomIcon is a component that displays an SVG Icon
-	 * defined in the theme that is passed as an option of the plugin
-	 */
 	@Component
 	export default class CustomIcon extends MixinsDeclaration {}
 </script>
@@ -100,7 +97,6 @@
 	$xLarge: 2.25em;
 
 	.vd-custom-icon {
-		// Icon dimensions
 		width: $default;
 		height: $default;
 
@@ -120,7 +116,7 @@
 			height: 100%;
 			position: absolute;
 
-			// Transition when color is updating
+			// Transition when color is updated
 			transition: fill .15s;
 		}
 
@@ -130,7 +126,6 @@
 			fill: currentColor;
 		}
 
-		// Sizes
 		&.vd-small {
 			width: $small;
 			height: $small;

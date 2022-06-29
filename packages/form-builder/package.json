@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/form-builder",
-	"version": "2.0.0-beta.6",
+	"version": "2.4.0",
 	"description": "FormBuilder for the French Health Insurance",
 	"keywords": [
 		"cnam",
@@ -10,27 +10,26 @@
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
 		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
-		"email": "me@deraw.dev"
+		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
 	"license": "MIT",
 	"author": {
-		"name": "Dylan Broussard",
-		"email": "me@deraw.dev"
+		"name": "CNAM",
+		"email": "digital_TL.cnam@assurance-maladie.fr"
 	},
 	"files": [
 		"dist/*",
 		"src/*",
-		"tests/*",
 		"types/*"
 	],
 	"main": "./dist/form-builder.common.js",
 	"module": "./src/index.ts",
 	"types": "./types/index.d.ts",
 	"scripts": {
+		"post-install": "ts-node --project tsconfig.json --files scripts/post-install",
 		"pre-commit": "lint-staged",
-		"playground": "vue-cli-service serve",
-		"playground:build": "vue-cli-service build",
-		"build": "ts-node --project tsconfig.json --files scripts/build.ts",
+		"dev": "vue-cli-service serve",
+		"build": "ts-node --project tsconfig.json --files scripts/build",
 		"lint": "vue-cli-service lint",
 		"test": "vue-cli-service test:unit --runInBand"
 	},
@@ -40,23 +39,18 @@
 		"vuetify": "^2.3.0"
 	},
 	"devDependencies": {
-		"@cnamts/cli-helpers": "^2.0.0-beta.4",
-		"@cnamts/vue-dot": "^2.0.0-beta.6",
-		"@vue/cli-plugin-eslint": "4.5.11",
-		"@vue/cli-plugin-typescript": "4.5.11",
-		"@vue/cli-plugin-unit-jest": "4.5.11",
-		"@vue/cli-service": "4.5.11",
-		"vue-cli-plugin-vuetify": "2.2.2",
-		"vuetify-loader": "1.7.2"
-	},
-	"lint-staged": {
-		"*.{ts,vue}": [
-			"vue-cli-service lint",
-			"git add"
-		]
+		"@cnamts/eslint-config-vue": "^2.4.0",
+		"@cnamts/shared": "^2.4.0",
+		"@cnamts/vue-dot": "^2.4.0",
+		"@vue/cli-plugin-babel": "4.5.19",
+		"@vue/cli-plugin-eslint": "4.5.19",
+		"@vue/cli-plugin-typescript": "4.5.19",
+		"@vue/cli-plugin-unit-jest": "4.5.19",
+		"@vue/cli-service": "4.5.19",
+		"vue-cli-plugin-vuetify": "2.5.1",
+		"vuetify-loader": "1.7.3"
 	},
 	"publishConfig": {
 		"access": "public"
-	},
-	"gitHead": "8665a0d4d9d9fcbff61a3b89c8e368c2dfe4d101"
+	}
 }

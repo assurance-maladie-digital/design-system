@@ -1,0 +1,24 @@
+@mixin text-h5 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	letter-spacing: normal;
+}
+
+@mixin text-h6 {
+	font-size: 1.25rem;
+	line-height: 2rem;
+	letter-spacing: .0125em;
+}
+
+@mixin text-subtitle-1 {
+	font-size: 1.15rem;
+	line-height: 1.75rem;
+	letter-spacing: .009375em;
+}
+
+@mixin text-subtitle-2 {
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.375rem;
+	letter-spacing: .0071428571em;
+}
