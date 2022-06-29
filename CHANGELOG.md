@@ -11,6 +11,11 @@
 - ♿️ **Accessibilité**
   - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073)) ([658f95d](https://github.com/assurance-maladie-digital/design-system/commit/658f95d98db3e43df16b16667a093796448a0876))
 
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction d'une mauvaise formulation dans le fichier `App.vue` ([#2099](https://github.com/assurance-maladie-digital/design-system/pull/2099))
+
 ### Documentation
 
 - ♻️ **Refactoring**
@@ -54,7 +59,7 @@
   - **@rushstack/eslint-patch:** Mise à jour vers la `v1.1.4` ([#2090](https://github.com/assurance-maladie-digital/design-system/pull/2090)) ([846a95a](https://github.com/assurance-maladie-digital/design-system/commit/846a95aaf8ae1cfa505d940f3c16a394a0c0f809))
   - **@vue/cli:** Mise à jour du monorepo vers la `v4.5.19` ([#2092](https://github.com/assurance-maladie-digital/design-system/pull/2092)) ([178e496](https://github.com/assurance-maladie-digital/design-system/commit/178e496515f76d3d457b922b19cf1885394b57d2))
   - **@mdi/js:** Mise à jour vers la `v6.8.96` ([#2096](https://github.com/assurance-maladie-digital/design-system/pull/2096)) ([34e0b8b](https://github.com/assurance-maladie-digital/design-system/commit/34e0b8bc286665476a52158951e0c474bfbfc3ff))
-  - **vuetify:** Mise à jour vers la `v2.6.7` ([#2098](https://github.com/assurance-maladie-digital/design-system/pull/2098))
+  - **vuetify:** Mise à jour vers la `v2.6.7` ([#2098](https://github.com/assurance-maladie-digital/design-system/pull/2098)) ([62dfd90](https://github.com/assurance-maladie-digital/design-system/commit/62dfd9099fd037967f7c575967b43f301b8b968f))
 
 ## v2.4.0
 
@@ -2021,8 +2026,8 @@ yarn add @cnamts/design-tokens
 Puis importer ceux-ci depuis le package :
 
 ```diff
--import tokens from '@cnamts/vue-dot/src/tokens;
-+import { tokens } from '@cnamts/design-tokens;
+-import tokens from '@cnamts/vue-dot/src/tokens';
++import { tokens } from '@cnamts/design-tokens';
 ```
 
 De même, la constante `vuetifyTheme` a changé d'emplacement et est maintenant appelée `lightTheme` :
