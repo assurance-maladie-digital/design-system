@@ -14,7 +14,7 @@
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
-  - **template:** Correction d'une mauvaise formulation dans le fichier `App.vue` ([#2099](https://github.com/assurance-maladie-digital/design-system/pull/2099))
+  - **template:** Correction d'une mauvaise formulation dans le fichier `App.vue` ([#2099](https://github.com/assurance-maladie-digital/design-system/pull/2099)) ([9167e6d](https://github.com/assurance-maladie-digital/design-system/commit/9167e6d914761bf1340760404ee565d923597871))
 
 ### Documentation
 
@@ -34,6 +34,9 @@
   - **config:** Mise à jour de la configuration du chargement des polices ([#2074](https://github.com/assurance-maladie-digital/design-system/pull/2074)) ([20999ba](https://github.com/assurance-maladie-digital/design-system/commit/20999babeac330d7df9f9e52f2db25e9ee0ff458))
 
 ### Interne
+
+- ♻️ **Refactoring**
+  - **global:** Mise à jour des champs `lib` dans les fichiers `tsconfig.json` ([#2100](https://github.com/assurance-maladie-digital/design-system/pull/2100))
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de `codecov` vers la `v3.2.3` ([#2031](https://github.com/assurance-maladie-digital/design-system/pull/2031)) ([a90d693](https://github.com/assurance-maladie-digital/design-system/commit/a90d6939541858228b6db175342bf03d7b909309))
