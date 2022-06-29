@@ -4,6 +4,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **UploadWorkflow:** Ajout du mode sélection libre ([#2057](https://github.com/assurance-maladie-digital/design-system/pull/2057)) ([f5a5cf7](https://github.com/assurance-maladie-digital/design-system/commit/f5a5cf74b53a71ed85aaa5407ec142a97fcda67d))
+  - **HeaderBar:** Ajout d'options de personnalisation ([#2005](https://github.com/assurance-maladie-digital/design-system/pull/2005))
 
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du parsing de la date ([#2095](https://github.com/assurance-maladie-digital/design-system/pull/2095)) ([28d713c](https://github.com/assurance-maladie-digital/design-system/commit/28d713c139f80c2998ec5d605244837870146786))
