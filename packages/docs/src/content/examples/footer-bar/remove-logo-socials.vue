@@ -1,10 +1,9 @@
 <template>
-	<FooterBar complex-mode>
-		<template #default>
-			<p class="grey--text text--darken-1 my-3 mx-4">
-				Slot par défaut
-			</p>
-		</template>
+	<FooterBar 
+		complex-mode
+		:centerSlotsNumber="0"
+		hide-socials
+		>
 	</FooterBar>
 </template>
 

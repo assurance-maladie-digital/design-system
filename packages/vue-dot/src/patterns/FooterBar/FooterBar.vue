@@ -8,19 +8,27 @@
 		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center w-100"
 	>
 		<v-container>
+			<VIcon
+				class="go-top"
+				small
+				color="#0c4199"
+				@click="goTop"
+			>
+				{{ arrowTopIcon }}
+			</VIcon>
 			<v-row
-				v-if="!simpleMode"
+				v-if="complexMode"
 				no-gutters
 				class="mb-2"
 			>
 				<v-col
-					cols="12"
-					class="d-flex justify-space-between"
+					class="d-sm-flex justify-space-between"
 				>
 					<slot
 						name="logo"
 					>
 						<Logo
+							v-if="!hideLogo"
 							class="default-logo"
 							:hide-organism="logoHideOrganism"
 							:hide-signature="logoHideSignature"
@@ -28,91 +36,47 @@
 						/>
 					</slot>
 					<v-col
-						cols="4"
-						style="padding: 0"
+						class="pr-4"
 					>
-						<v-row
-							no-gutters
-						>
-							<v-col
-								cols="10"
-							>
-								<v-col
-									cols="12"
-									class="d-flex justify-end"
-									style="padding: 0"
-									no-gutters
-								>
-									<span
-										class="follow-us-text mr-3"
-									>
-										Suivez-nous
-									</span>
-								</v-col>
-								<v-col
-									cols="12"
-									class="d-flex justify-end"
-									style="padding: 0; margin-top: 2px"
-								>
-									<VBtn
-										v-for="icon in socialsIconsList"
-										:key="icon"
-										text
-										icon
-										color="grey darken-2"
-									>
-										<VIcon>
-											{{ icon }}
-										</VIcon>
-									</VBtn>
-								</v-col>
-							</v-col>
-							<v-col
-								cols="2"
-								class="d-flex align-center justify-end"
-								color="#0c4199"
-							>
-								<VIcon
-									class="go-top"
-									small
-									@click="goTop"
-								>
-									{{ arrowTopIcon }}
-								</VIcon>
-							</v-col>
-							<v-row />
-						</v-row>
+						<slot name="socials">
+							<SocialsButtons
+								v-if="!hideSocials"
+								:custom-socials-list="customSocialsList"
+							/>
+						</slot>
 					</v-col>
 				</v-col>
 			</v-row>
 
-			<VDivider v-if="!simpleMode" />
+			<VDivider v-if="complexMode" />
 
 			<v-row
-				v-if="!simpleMode && centerSlotsNumber"
+				v-if="complexMode && centerSlotsNumber"
 				class="mb-5 mt-5"
 				no-gutters
 			>
 				<v-col
-					v-for="n in centerSlotsNumber"
+					v-for="n in limitedSlotsNumber"
 					:key="n"
 				>
 					<div
 						class="m-2"
 					>
 						<slot
+							v-if="limitedSlotsNumber > 1"
 							:name="`center-slot-${n}`"
 						>
 							{{ n }}
 						</slot>
+						<slot />
 					</div>
 				</v-col>
 			</v-row>
 
-			<VDivider v-if="!simpleMode && centerSlotsNumber" />
+			<VDivider v-if="complexMode && centerSlotsNumber" />
 
 			<v-row
-				:class="{ 'mt-2 caption': !simpleMode }"
+				:class="{ 'mt-2 caption': complexMode }"
 				justify="center"
 			>
 				<RouterLink
@@ -161,13 +125,14 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+	import SocialsButtons from './SocialsButtons';
 
 	import { RawLocation } from 'vue-router';
 
 	import { config } from './config';
 	import { locales } from './locales';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
-	import { mdiArrowUp, mdiFacebook, mdiGoogle, mdiLinkedin, mdiInstagram } from '@mdi/js';
+	import { mdiArrowUp, mdiTwitter, mdiLinkedin } from '@mdi/js';
 
 	import { propValidator } from '../../helpers/propValidator';
 
@@ -218,9 +183,9 @@
 			},
 			centerSlotsNumber: {
 				type: Number,
-				default: 0
+				default: 1
 			},
-			simpleMode: {
+			complexMode: {
 				type: Boolean,
 				default: false
 			},
@@ -235,19 +200,36 @@
 			logoRisquePro: {
 				type: Boolean,
 				default: false
+			},
+			hideSocials: {
+				type: Boolean,
+				default: false
+			},
+			hideLogo: {
+				type: Boolean,
+				default: false
+			},
+			customSocialsList: {
+				type: Array,
+				default: () => [
+					{ icon: mdiLinkedin, href: 'https://www.linkedin.com/company/assurance-maladie/' },
+					{ icon: mdiTwitter, href: 'https://twitter.com/Assur_Maladie' }
+				]
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component({
-		inheritAttrs: false
+	@Component<FooterBar>({
+		inheritAttrs: false,
+		components: {
+			SocialsButtons
+		}
 	})
 	export default class FooterBar extends MixinsDeclaration {
 		// icon list
 		arrowTopIcon = mdiArrowUp;
-		socialsIconsList = [mdiInstagram, mdiLinkedin, mdiFacebook, mdiGoogle];
 
 		locales = locales;
 
@@ -260,8 +242,18 @@
 
 			return locales.a11yLabel(complianceLabel);
 		}
+
+		get limitedSlotsNumber(): number {
+			let number = this.centerSlotsNumber;
+
+			if (number > 5) {
+				number = 5;
+			}
+
+			return number;
+		}
 		goTop(): void {
-			console.log('top');
+			window.scrollTo(0, 0);
 		}
 	}
 </script>
@@ -289,8 +281,12 @@
 			font-size: 11px;
 			font-weight: 550;
 		}
-		.go-top:hover {
-			color: #0c4199;
+		.go-top{
+			position: absolute;
+			top: 30px; right: 30px;
+			&:hover {
+				color: #0c4199;
+			}
 		}
 		.default-logo {
 			padding: 5px 0 10px 0;

@@ -35,6 +35,18 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers la *Déclaration d’accessibilité*.'
 			},
 			{
+				name: 'complex-mode',
+				type: 'boolean',
+				default: false,
+				description: 'Active le mode complexe du footer.'
+			},
+			{
+				name: 'center-slots-number',
+				type: 'number',
+				default: 1,
+				description: 'Divise le slot principal du footer en plusieurs slots.'
+			},
+			{
 				name: 'hide-sitemap-link',
 				type: 'boolean',
 				default: false,
@@ -59,6 +71,36 @@ export const api: Api = {
 				description: 'Masque le lien vers la *Déclaration d’accessibilité*.'
 			},
 			{
+				name: 'hide-logo',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le logo.'
+			},
+			{
+				name: 'hide-socials',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le bloc des réseaux sociaux.'
+			},
+			{
+				name: 'logo-hide-signature',
+				type: 'boolean',
+				default: false,
+				description: 'Masque la signature du logo.'
+			},
+			{
+				name: 'logo-hide-organism',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le nom de l\'organisme.'
+			},
+			{
+				name: 'logo-risque-pro',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche le sous titre "risque pro" du logo.'
+			},
+			{
 				name: 'version',
 				type: 'string',
 				default: 'undefined',
@@ -72,16 +114,37 @@ export const api: Api = {
 				example: `{
 	footer: 'VFooter'
 }`
+			},
+			{
+				name: 'custom-socials-list',
+				type: 'Array',
+				description: 'Personnalisation des icones et des liens des réseaux sociaux`.',
+				default: `[
+					{ icon: mdiLinkedin, href: 'https://www.linkedin.com/company/assurance-maladie/' },
+					{ icon: mdiTwitter, href: 'https://twitter.com/Assur_Maladie' }
+				]`,
+				example: `[
+					{ icon: mdiInstagram, link: 'https://insta.com' },
+					{ icon: mdiYoutube, link: 'https://insta.com' }
+				]`
 			}
 		],
 		slots: [
 			{
-				name: 'prepend',
-				description: 'Slot pour ajouter du contenu avant les liens du pied de page.'
+				name: 'logo',
+				description: 'Slot pour ajouter du contenu à la place du logo.'
 			},
 			{
-				name: 'append',
-				description: 'Slot pour ajouter du contenu après les liens du pied de page.'
+				name: 'socials',
+				description: 'Slot pour ajouter du contenu à la place des réseaux sociaux.'
+			},
+			{
+				name: 'default',
+				description: 'Slot pour ajouter du contenu dans la partie centrale du footer.'
+			},
+			{
+				name: 'center-slot-1',
+				description: 'Premier slot de la partie centrale du footer. Utiliser center-slot-2 pour le deuxieme slot etc.'
 			}
 		]
 	}
