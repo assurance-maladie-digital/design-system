@@ -59,6 +59,9 @@
 					:show-menu-btn="showNavBarMenuBtn"
 				>
 					<slot name="navigation-bar-content" />
+					<template #secondary-navigation-bar-content>
+						<slot name="secondary-navigation-bar-content" />
+					</template>
 				</HeaderNavigationBar>
 			</template>
 		</VAppBar>
