@@ -8,6 +8,7 @@
 		<VSheet
 			v-bind="options.innerSheet"
 			:width="innerWidth"
+			class="d-flex"
 		>
 			<slot>
 				<HeaderMenuBtn
