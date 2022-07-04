@@ -24,5 +24,5 @@ export function parseDate(value: string, format = 'DD/MM/YYYY'): dayjs.Dayjs {
 	const dateWithTime = `${value} ${offset}:00:00`;
 	const formatWithTime = `${format} HH:mm:ss`;
 
-	return dayjs(dateWithTime, formatWithTime);
+	return dayjs(dateWithTime, formatWithTime, true);
 }

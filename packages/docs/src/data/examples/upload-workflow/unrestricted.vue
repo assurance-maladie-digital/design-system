@@ -7,12 +7,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class UploadWorkflowSingleFile extends Vue {
-		files = [
-			{
-				id: 'rib',
-				title: 'RIB'
-			}
-		];
+	export default class UploadWorkflowUnrestricted extends Vue {
+		files: File[] = [];
 	}
 </script>

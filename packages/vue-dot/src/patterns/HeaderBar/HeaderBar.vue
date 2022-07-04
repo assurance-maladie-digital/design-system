@@ -18,16 +18,19 @@
 					v-bind="options.innerSheet"
 					:width="innerWidth"
 				>
-					<HeaderBrandSection
-						:theme="theme"
-						:service-title="serviceTitle"
-						:service-sub-title="serviceSubTitle"
-						:mobile-version="isMobileVersion"
-						:home-link="homeLink"
-						:home-href="homeHref"
-					>
-						<slot name="secondary-logo" />
-					</HeaderBrandSection>
+					<slot name="logo">
+						<HeaderBrandSection
+							v-bind="options.brandSection"
+							:theme="theme"
+							:service-title="serviceTitle"
+							:service-sub-title="serviceSubTitle"
+							:mobile-version="isMobileVersion"
+							:home-link="homeLink"
+							:home-href="homeHref"
+						>
+							<slot name="secondary-logo" />
+						</HeaderBrandSection>
+					</slot>
 
 					<VSpacer
 						v-if="showSpacer"
@@ -46,6 +49,7 @@
 
 			<template v-if="showNavigationBar">
 				<HeaderNavigationBar
+					v-bind="options.navigationBar"
 					:tab.sync="tab"
 					:drawer.sync="drawer"
 					:theme="theme"
@@ -65,6 +69,7 @@
 		>
 			<HeaderNavigationDrawer
 				v-model="drawer"
+				v-bind="options.navigationDrawer"
 				:tab.sync="tab"
 				:theme="theme"
 				:items="navigationItems"

@@ -8,8 +8,21 @@ export const api: Api = {
 		props: [
 			{
 				name: 'value',
+				type: 'File[] | SelectedFile[]',
+				default: `'[]'`,
+				description: 'La liste des fichiers que l’utilisateur a sélectionné.',
+				example: `File[] | {
+	id: string;
+	title: string;
+	state?: FileState;
+	name?: string;
+	file?: File;
+}[]`
+			},
+			{
+				name: 'file-list-items',
 				type: 'FileListItem[]',
-				required: true,
+				default: null,
 				description: 'La liste des fichiers que l’utilisateur doit sélectionner.',
 				example: `{
 	id: string;

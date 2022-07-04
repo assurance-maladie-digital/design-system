@@ -5,7 +5,7 @@ description: Le pattern `FooterWrapper` est utilisé avec le composant `FooterBt
 
 <doc-alert type="warning">
 
-Ce composant est déprécié en faveur du composant [`FooterBar`](/composants/footer-bar) depuis la [version 2.2.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/v2.2.0) et sera supprimé dans la prochaine version majeure.
+Ce composant est déprécié en faveur du composant [`FooterBar`](/composants/structure/footer-bar) depuis la [version 2.2.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/v2.2.0) et sera supprimé dans la prochaine version majeure.
 
 </doc-alert>
 

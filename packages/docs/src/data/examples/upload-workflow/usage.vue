@@ -1,14 +1,21 @@
 <template>
-	<UploadWorkflow v-model="files" />
+	<UploadWorkflow
+		v-model="selectedFiles"
+		:file-list-items="fileListItems"
+	/>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { FileListItem, SelectedFile } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
+
 	@Component
 	export default class UploadWorkflowUsage extends Vue {
-		files = [
+		selectedFiles: SelectedFile[] = [];
+
+		fileListItems: FileListItem[] = [
 			{
 				id: 'rib',
 				title: 'RIB'

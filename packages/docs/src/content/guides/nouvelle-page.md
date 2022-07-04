@@ -49,7 +49,7 @@ Vous pouvez maintenant importer les composants que vous souhaitez afficher dans 
 
 <doc-alert type="info">
 
-Le [composant `PageContainer`](/composants/page-container) est utilisé pour afficher une page avec une largeur standard.
+Le [composant `PageContainer`](/composants/layout/page-container) est utilisé pour afficher une page avec une largeur standard.
 
 </doc-alert>
 

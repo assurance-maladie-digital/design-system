@@ -12,7 +12,7 @@ export const designPrinciplesPageItems = [
 	},
 	{
 		title: 'Assurer l’accessibilité pour tous',
-		description: '**L’accès aux produits numériques doit être permis à tous**. Pour cela, nous favorisons dans notre démarche de design le respect des [critères d’accessibilité](/demarrer/accessibilite) définis par le Référentiel Général d’Amélioration de l’Accessibilité.',
+		description: '**L’accès aux produits numériques doit être permis à tous**. Pour cela, nous favorisons dans notre démarche de design le respect des [critères d’accessibilité](/fondamentaux/accessibilite) définis par le Référentiel Général d’Amélioration de l’Accessibilité.',
 		icon: mdiAccountGroup,
 		content: [
 			'<u>Nous recommandons</u> pour chaque utilisation de notre Design System de ne pas transformer les composants. La conception des composants vise à respecter quatre indices de performance. **Nos composants et leurs contenus informationnels sont perceptibles (1), manipulables (2), compréhensibles (3) et robustes (4) dans l’usage**. En complément, nous recommandons de proposer de la redondance informationnelle par un ou plusieurs moyens alternatifs lorsqu’une information est complexe à comprendre ou à atteindre sur l’interface.',

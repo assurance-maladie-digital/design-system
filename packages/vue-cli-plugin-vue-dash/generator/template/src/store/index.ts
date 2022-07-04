@@ -12,11 +12,11 @@ const vuexLocal = new VuexPersistence<RootState>();<% } %>
 
 Vue.use(Vuex);
 
-/** See https://vuex.vuejs.org/fr/getting-started.html for help */
+/** @see https://vuex.vuejs.org/fr/getting-started.html for help */
 const storeOptions: StoreOptions<RootState> = {
 	strict: true,
 	state: {},
-	// See https://vuex.vuejs.org/guide/modules.html for more info on modules
+	/** @see https://vuex.vuejs.org/guide/modules.html for more informations on modules */
 	modules: {
 		notification
 	}<% if (vuexPersist) { %>,

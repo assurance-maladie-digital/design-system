@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<UploadWorkflow
-			v-model="files"
+			v-model="selectedFiles"
+			:file-list-items="fileListItems"
 			:vuetify-options="vuetifyOptions"
 			@change="valueUpdated"
 			@error="showError"
@@ -30,7 +31,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { FileListItem } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
+	import { FileListItem, SelectedFile } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
 	import { ErrorEvent, ErrorCodesType } from '@cnamts/vue-dot/src/patterns/FileUpload/types';
 
 	@Component
@@ -39,7 +40,9 @@
 		snackbarText: string | null = null;
 		snackbarColor = 'success';
 
-		files = [
+		selectedFiles: SelectedFile[] = [];
+
+		fileListItems: FileListItem[] = [
 			{
 				id: 'rib',
 				title: 'RIB'
@@ -72,7 +75,7 @@
 			this.snackbar = true;
 		}
 
-		valueUpdated(fileList: FileListItem[]): void {
+		valueUpdated(fileList: SelectedFile[]): void {
 			const { file } = fileList[fileList.length - 1];
 
 			if (!file) {
