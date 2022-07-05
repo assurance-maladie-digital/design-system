@@ -29,7 +29,7 @@ Pour afficher une icône, on utilise le composant [`VIcon`](https://vuetifyjs.co
 
 ## CustomIcon
 
-Le composant [CustomIcon](/composants-techniques/custom-icon) permet d’ajouter des SVG en tant qu’icône pour pouvoir les utiliser facilement dans toute votre application.
+Le composant [CustomIcon](/composants-techniques/custom-icon) permet d’ajouter des SVG en tant qu’icônes pour pouvoir les utiliser facilement dans toute votre application.
 
 ### Création
 
