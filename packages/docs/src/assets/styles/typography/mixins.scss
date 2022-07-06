@@ -11,7 +11,14 @@
 }
 
 @mixin text-subtitle-1 {
-	font-size: 1rem;
+	font-size: 1.15rem;
 	line-height: 1.75rem;
 	letter-spacing: .009375em;
+}
+
+@mixin text-subtitle-2 {
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.375rem;
+	letter-spacing: .0071428571em;
 }

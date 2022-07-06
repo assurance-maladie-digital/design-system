@@ -2,11 +2,6 @@
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"lib": [
-			"es2018",
-			"es2015",
-			"scripthost"
-		],
 		"types": [
 			"node",
 			"jest"

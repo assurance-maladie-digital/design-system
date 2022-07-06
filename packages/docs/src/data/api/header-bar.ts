@@ -101,13 +101,20 @@ export const api: Api = {
 	contentSheet: 'VSheet',
 	innerSheet: 'VSheet',
 	spacer: 'VSpacer',
-	menuBtn: 'HeaderMenuBtn'
-}`, 'et `HeaderMenuBtn`')
+	brandSection: 'HeaderBrandSection',
+	menuBtn: 'HeaderMenuBtn',
+	navigationBar: 'HeaderNavigationBar',
+	navigationDrawer: 'HeaderNavigationDrawer',
+}`, ', ainsi que des composants `HeaderBrandSection`, `HeaderMenuBtn`, `HeaderNavigationBar` et `HeaderNavigationDrawer`')
 		],
 		slots: [
 			{
 				name: 'default',
 				description: 'Slot pour afficher du contenu dans la partie droite de l’en-tête.'
+			},
+			{
+				name: 'logo',
+				description: 'Slot pour remplacer le logo.'
 			},
 			{
 				name: 'secondary-logo',

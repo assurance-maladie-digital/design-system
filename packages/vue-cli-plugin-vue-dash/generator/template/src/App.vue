@@ -1,5 +1,5 @@
 <template>
-	<!-- VApp is an element which is required to use Vuetify. See https://vuetifyjs.com/en/ for help -->
+	<!-- VApp is an element which is required to use Vuetify. @see https://vuetifyjs.com/en/ for help -->
 	<VApp v-cloak>
 		<AppHeader />
 
@@ -42,7 +42,7 @@
 		@Meta
 		metaInfo(): MetaInfo {
 			return {
-				// If no sub-components specify a metaInfo.title, this title will be used
+				// If a sub-components does not specifies metaInfo.title, this title will be used
 				title: <% if (i18n) { %>this.$t('common.meta.title') as string<% } else { %>'<%= capitalizeFirstLetter(projectName) %>'<% } %>,
 				// All titles will be injected into this template
 				titleTemplate: <% if (i18n) { %>this.$t('common.meta.titleTemplate') as string<% } else { %>'%s | CNAM'<% } %>,

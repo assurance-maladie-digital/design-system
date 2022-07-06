@@ -11,7 +11,7 @@ interface TestComponent extends Vue {
 
 /** Create the wrapper */
 function createWrapper(mask?: string | boolean, dateFormat?: string) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			MaskValue
 		],

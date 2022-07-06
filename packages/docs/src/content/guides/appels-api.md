@@ -116,12 +116,12 @@ Ensuite, vous pouvez appeler cette fonction dans un composant et exploiter les d
 ```vue
 <template>
 	<div>
-		<VTextfield
+		<VTextField
 			v-model="credentials.username"
 			label="Identifiant"
 		/>
 
-		<VTextfield
+		<VTextField
 			v-model="credentials.password"
 			label="Mot de passe"
 			type="password"
