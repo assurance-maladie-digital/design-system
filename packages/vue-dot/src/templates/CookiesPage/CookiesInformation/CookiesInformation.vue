@@ -149,7 +149,7 @@
 		}
 	}
 
-	.v-input--radio-group ::v-deep .v-messages {
+	.v-input--radio-group :deep(.v-messages) {
 		text-align: right;
 	}
 </style>

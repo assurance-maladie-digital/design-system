@@ -180,7 +180,7 @@
 		max-width: none;
 	}
 
-	.vd-data-list-group ::v-deep .vd-data-list {
+	.vd-data-list-group :deep(.vd-data-list) {
 		max-width: 200px;
 
 		// Apply margin right to avoid empty

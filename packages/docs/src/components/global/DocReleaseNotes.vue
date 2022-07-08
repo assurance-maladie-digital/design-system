@@ -173,7 +173,7 @@
 <style lang="scss" scoped>
 	@import '~/assets/styles/typography/headings.scss';
 
-	.doc-releases ::v-deep .v-markdown {
+	.doc-releases :deep(.v-markdown) {
 		@include headings;
 
 		p,

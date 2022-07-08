@@ -170,7 +170,7 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.doc-tabs ::v-deep {
+	.doc-tabs :deep() {
 		.v-window {
 			overflow: visible;
 		}
@@ -216,7 +216,7 @@
 		}
 	}
 
-	.doc-tabs:not(.tabs-code) ::v-deep > .v-tabs {
+	.doc-tabs:not(.tabs-code) > :deep(.v-tabs) {
 		.v-tab {
 			color: #3d67ae !important; // Bleu AM lighten-80
 			text-transform: none;
@@ -240,7 +240,7 @@
 		}
 	}
 
-	.doc-tabs.tabs-code ::v-deep {
+	.doc-tabs.tabs-code :deep() {
 		.doc-code-block {
 			border: none;
 			margin-bottom: 0 !important;

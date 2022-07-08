@@ -134,7 +134,7 @@
 
 <style lang="scss" scoped>
 	// Use min-width to avoid shrinking with flexbox
-	.vd-notification-bar ::v-deep .v-snack__wrapper {
+	.vd-notification-bar :deep(.v-snack__wrapper) {
 		min-width: 0;
 	}
 

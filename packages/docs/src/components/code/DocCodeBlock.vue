@@ -78,7 +78,7 @@
 		position: relative;
 		padding: 12px 52px 12px 16px;
 
-		::v-deep {
+		:deep() {
 			pre[class*="language-"] {
 				margin: 0;
 			}
