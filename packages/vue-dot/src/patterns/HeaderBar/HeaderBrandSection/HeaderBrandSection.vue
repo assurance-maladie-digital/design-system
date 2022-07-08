@@ -274,8 +274,7 @@
 			}
 		}
 
-		img,
-		::v-deep img {
+		:deep(img) {
 			width: auto;
 			height: 100%;
 			flex: none;

@@ -147,7 +147,7 @@
 		}
 	}
 
-	.vd-choice-slider-field ::v-deep {
+	.vd-choice-slider-field :deep() {
 		.v-input__control {
 			width: auto;
 		}
