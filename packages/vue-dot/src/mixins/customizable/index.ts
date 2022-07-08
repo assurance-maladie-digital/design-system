@@ -1,15 +1,8 @@
 import Vue, { PropType } from 'vue';
-import { ExtendedVue } from 'vue/types/vue';
 
 import deepMerge from 'deepmerge';
 
-import { IndexedObject } from '../../types';
-
-export type Customizable = ExtendedVue<Vue, unknown, unknown, {
-	options: Options;
-}, {
-	vuetifyOptions: Options;
-}>;
+import { Customizable, Options } from './types';
 
 /**
  * Mixin that merge default options with options passed as props
@@ -43,5 +36,4 @@ export function customizable(defaultOptions: Options): Customizable {
 	});
 }
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export type Options = IndexedObject<any>;
+export type { Options };
