@@ -5,7 +5,8 @@ export const config = {
 		dark: true
 	},
 	innerSheet: {
-		color: 'transparent'
+		color: 'transparent',
+		class: 'd-flex'
 	},
 	tabs: {
 		backgroundColor: 'transparent'
