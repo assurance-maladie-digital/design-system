@@ -2,7 +2,7 @@ import Vue, { PropType } from 'vue';
 
 import deepMerge from 'deepmerge';
 
-import { Customizable, Options } from './types';
+import type { Customizable, Options } from './types';
 
 /**
  * Mixin that merge default options with options passed as props
