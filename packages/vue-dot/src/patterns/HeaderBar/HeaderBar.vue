@@ -59,8 +59,9 @@
 					:show-menu-btn="showNavBarMenuBtn"
 				>
 					<slot name="navigation-bar-content" />
-					<template #secondary-navigation-bar-content>
-						<slot name="secondary-navigation-bar-content" />
+
+					<template #navigation-bar-secondary-content>
+						<slot name="navigation-bar-secondary-content" />
 					</template>
 				</HeaderNavigationBar>
 			</template>

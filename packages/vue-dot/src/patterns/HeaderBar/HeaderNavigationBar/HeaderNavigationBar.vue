@@ -8,7 +8,6 @@
 		<VSheet
 			v-bind="options.innerSheet"
 			:width="innerWidth"
-			class="d-flex"
 		>
 			<slot>
 				<HeaderMenuBtn
@@ -33,7 +32,8 @@
 					</VTab>
 				</VTabs>
 			</slot>
-			<slot name="secondary-navigation-bar-content" />
+
+			<slot name="navigation-bar-secondary-content" />
 		</VSheet>
 	</VSheet>
 </template>

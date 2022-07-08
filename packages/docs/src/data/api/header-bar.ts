@@ -125,6 +125,10 @@ export const api: Api = {
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
 			},
 			{
+				name: 'navigation-bar-secondary-content',
+				description: 'Slot pour ajouter du contenu sur la partie droite de la barre de navigation.'
+			},
+			{
 				name: 'navigation-drawer',
 				description: 'Slot pour remplacer le menu de navigation sur les écrans mobiles.',
 				props: {
@@ -135,10 +139,6 @@ export const api: Api = {
 			{
 				name: 'navigation-drawer-content',
 				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
-			},
-			{
-				name: 'secondary-navigation-bar-content',
-				description: 'Slot pour ajouter du contenu sur la partie droite de la barre de navigation.'
 			}
 		]
 	},
