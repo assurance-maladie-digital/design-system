@@ -3,7 +3,7 @@
 		min-height="274px"
 		class="mx-auto overflow-hidden"
 	>
-		<VAppBar color="#f8f9fc">
+		<VAppBar :color="appBarColor">
 			<VToolbarTitle>
 				ExternalLinks
 			</VToolbarTitle>
@@ -21,10 +21,14 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { tokens } from '@cnamts/design-tokens';
+
 	import { ExternalLink } from '@cnamts/vue-dot/src/elements/ExternalLinks/types';
 
 	@Component
 	export default class ExternalLinksNudgeTop extends Vue {
+		appBarColor = tokens.colors.amBlue.lighten97;
+
 		links: ExternalLink[] = [
 			{
 				href: 'https://ameli.fr/',

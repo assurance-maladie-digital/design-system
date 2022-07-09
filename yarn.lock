@@ -12889,19 +12889,6 @@ json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==
 
-json-to-scss@1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/json-to-scss/-/json-to-scss-1.6.2.tgz#8efbd21bb3d655e7ef0e3680f04e3c3d883c402a"
-  integrity sha512-ha9o8xiQVb0f/ErOYmmAtnz2jox0W5qJz8O6mfIM4+kMVikule/wUD0kuQ5B2HKYLqcDtVJqMRxl12tFEWzfkw==
-  dependencies:
-    chalk "^2.4.2"
-    glob "^7.1.4"
-    lodash.isinteger "^4.0.4"
-    lodash.isplainobject "^4.0.6"
-    node-emoji "^1.10.0"
-    terminal-overwrite "^2.0.1"
-    yargs "^13.3.2"
-
 json5@2.x, json5@^2.1.2, json5@^2.2.0, json5@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
@@ -14800,13 +14787,6 @@ node-domexception@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/node-domexception/-/node-domexception-1.0.0.tgz#6888db46a1f71c0b76b3f7555016b63fe64766e5"
   integrity sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==
-
-node-emoji@^1.10.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.11.0.tgz#69a0150e6946e2f115e9d7ea4df7971e2628301c"
-  integrity sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==
-  dependencies:
-    lodash "^4.17.21"
 
 node-fetch@^2.3.0, node-fetch@^2.6.0, node-fetch@^2.6.1, node-fetch@^2.6.7:
   version "2.6.7"
@@ -19045,7 +19025,7 @@ string-width@^1.0.1:
     is-fullwidth-code-point "^3.0.0"
     strip-ansi "^6.0.1"
 
-string-width@^2.0.0, string-width@^2.1.0, string-width@^2.1.1:
+string-width@^2.1.0, string-width@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-2.1.1.tgz#ab93f27a8dc13d28cac815c462143a6d9012ae9e"
   integrity sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==
@@ -19454,14 +19434,6 @@ terminal-link@^2.0.0, terminal-link@^2.1.1:
   dependencies:
     ansi-escapes "^4.2.1"
     supports-hyperlinks "^2.0.0"
-
-terminal-overwrite@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/terminal-overwrite/-/terminal-overwrite-2.0.1.tgz#c732aefeba38900667bf088b4f1b12edbee62841"
-  integrity sha512-CP8KtcHQjSlKtaXIZTJt4I4II8oEdXyGJtx54gXVVys9plYIaK4ahiXPD6XxZ2efrqayH1B7uR/5Wr7N2cTgFA==
-  dependencies:
-    cli-cursor "^2.0.0"
-    string-width "^2.0.0"
 
 terser-webpack-plugin@^1.4.3, terser-webpack-plugin@^1.4.4:
   version "1.4.5"

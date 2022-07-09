@@ -2,6 +2,8 @@ import { applyTypographicRules } from './src/hooks/applyTypographicRules';
 import { parseMarkdownDescription } from './src/hooks/parseMarkdownDescription';
 import { transformCodeBlocks } from './src/hooks/transformCodeBlocks';
 
+import { tokens } from '@cnamts/design-tokens';
+
 export default {
 	target: 'static',
 	srcDir: './src/',
@@ -45,7 +47,7 @@ export default {
 			{
 				rel: 'mask-icon',
 				href: '/safari-pinned-tab.svg',
-				color: '#0c419a'
+				color: tokens.colors.primary
 			}
 		]
 	},

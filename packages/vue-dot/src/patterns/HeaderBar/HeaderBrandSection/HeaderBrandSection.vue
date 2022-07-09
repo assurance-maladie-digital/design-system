@@ -221,7 +221,7 @@
 				}
 
 				case ThemeEnum.COMPTE_ENTREPRISE: {
-					return '#cd545b'; // Brique 100 color
+					return tokens.colors.brick.base;
 				}
 
 				default: {

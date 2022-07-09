@@ -1,17 +1,19 @@
 import { RoadmapLabelMapping } from '~/types/roadmap';
 import { LabelMappingEnum } from '~/constants/RoadmapLabelEnum';
 
+import { tokens } from '@cnamts/design-tokens';
+
 export const labelMapping: RoadmapLabelMapping = {
 	[LabelMappingEnum.NEW]: {
 		label: 'Nouveauté',
-		color: '#00a5df'
+		color: tokens.colors.cyan.base
 	},
 	[LabelMappingEnum.DOCUMENTATION]: {
 		label: 'Documentation',
-		color: '#a05bb6'
+		color: tokens.colors.mauve.base
 	},
 	[LabelMappingEnum.REFACTORING]: {
 		label: 'Refonte',
-		color: '#459b5a'
+		color: tokens.colors.green.darken20
 	}
 };

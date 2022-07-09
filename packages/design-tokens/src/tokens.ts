@@ -1,7 +1,8 @@
+import { Tokens } from './types';
+
 import { colors } from './colors';
 
-export const tokens = {
-	colors,
+export const tokens: Tokens = {
 	dialogWidth: {
 		dialogSmall: '560px',
 		dialogMedium: '800px'
@@ -12,5 +13,6 @@ export const tokens = {
 		inputMedium: '328px',
 		inputLarge: '384px',
 		inputXLarge: '536px'
-	}
+	},
+	colors
 };

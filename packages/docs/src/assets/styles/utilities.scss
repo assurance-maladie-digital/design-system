@@ -1,7 +1,9 @@
+@import '@cnamts/design-tokens/dist/tokens';
+
 .frosted-blue.lighten-3 {
-	background: #fafdfd !important;
+	background: $vd-frosted-blue-lighten-97 !important;
 }
 
 .am-blue.lighten-3 {
-	background: #f8f9fc !important;
+	background: $vd-am-blue-lighten-97 !important;
 }
