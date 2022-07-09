@@ -1,5 +1,5 @@
 export function toKebabCase(value: string): string {
-	return value.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+	return value.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
 }
 
 export function partition<T = any>(array: T[], callback: (element: T) => boolean): [T[], T[]] {

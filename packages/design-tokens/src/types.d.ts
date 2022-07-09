@@ -13,6 +13,10 @@ export interface Theme {
 	risquePro: string;
 }
 
+export interface VuetifyTheme extends Theme {
+	[key: string]: string;
+}
+
 export interface Color {
 	darken80: string;
 	darken60: string;

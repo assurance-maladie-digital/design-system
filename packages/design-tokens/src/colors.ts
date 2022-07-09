@@ -1,4 +1,4 @@
-import { Palette, Theme, Colors } from './types';
+import { Palette, VuetifyTheme, Colors } from './types';
 
 export const palette: Palette = {
 	amBlue: {
@@ -159,7 +159,7 @@ export const palette: Palette = {
 	}
 };
 
-export const lightTheme: Theme = {
+export const lightTheme: VuetifyTheme = {
 	primary: palette.amBlue.base,
 	secondary: palette.cyan.darken20,
 	accent: palette.cyan.base,
