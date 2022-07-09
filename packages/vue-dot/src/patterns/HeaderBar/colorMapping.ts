@@ -4,15 +4,11 @@ import { IndexedObject } from '../../types';
 
 import { ThemeEnum } from './ThemeEnum';
 
-const SECONDARY = tokens.colors.secondary;
-const PRIMARY = '#0a347b';
-const BRIQUE = '#a44349';
-
 export const colorMapping: IndexedObject = {
-	[ThemeEnum.DEFAULT]: PRIMARY,
-	[ThemeEnum.CNAM]: PRIMARY,
-	[ThemeEnum.AMELI]: PRIMARY,
-	[ThemeEnum.AMELI_PRO]: SECONDARY,
-	[ThemeEnum.RISQUE_PRO]: BRIQUE,
-	[ThemeEnum.COMPTE_ENTREPRISE]: PRIMARY
+	[ThemeEnum.DEFAULT]: tokens.colors.primary,
+	[ThemeEnum.CNAM]: tokens.colors.primary,
+	[ThemeEnum.AMELI]: tokens.colors.primary,
+	[ThemeEnum.AMELI_PRO]: tokens.colors.secondary,
+	[ThemeEnum.RISQUE_PRO]: tokens.colors.risquePro,
+	[ThemeEnum.COMPTE_ENTREPRISE]: tokens.colors.primary
 };

@@ -2,9 +2,9 @@
 	<VSheet
 		:tile="tile"
 		:rounded="rounded"
+		:color="sheetColor"
 		:class="{ 'mb-4': !noMargin }"
 		class="doc-code-block overflow-hidden"
-		color="#020d1f"
 		outlined
 		dark
 	>
@@ -24,6 +24,8 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { mdiContentCopy } from '@mdi/js';
+
+	import { tokens } from '@cnamts/design-tokens';
 
 	import '~/assets/styles/code-block-theme.scss';
 
@@ -59,6 +61,8 @@
 				color: 'grey lighten-1'
 			}
 		};
+
+		sheetColor = tokens.colors.amBlue.darken80;
 
 		getSlotContent(): string {
 			const markup = this.$el.querySelector('pre');
