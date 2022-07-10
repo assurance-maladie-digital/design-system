@@ -1,13 +1,15 @@
 ---
 title: Utilisation des icônes
-description: Utilisation des composants `VIcon` et `CustomIcon`.
+description: Utilisation des composants `VIcon` et `CustomIcon` pour afficher des icônes.
 ---
 
 ## VIcon
 
-Pour afficher une icône, on utilise le composant [`VIcon`](https://vuetifyjs.com/en/components/icons/) de Vuetify. Ce composant permet d’afficher les icônes [`Material Design Icons`](https://materialdesignicons.com).
+Le composant [`VIcon`](https://vuetifyjs.com/en/components/icons/) de Vuetify est utilisé pour afficher les icônes. Par défaut, nous le configurons pour utiliser les icônes SVG Material.
 
-```ts
+Vous pouvez retrouver la liste des icônes sur [`Material Design Icons`](https://materialdesignicons.com).
+
+```vue
 <template>
 	<VIcon>
 		{{ userIcon }}
@@ -21,7 +23,7 @@ Pour afficher une icône, on utilise le composant [`VIcon`](https://vuetifyjs.co
 	import { mdiAccountCircleOutline } from '@mdi/js';
 
 	@Component
-	export default class IconExample extends Vue {
+	export default class VIconExample extends Vue {
 		userIcon = mdiAccountCircleOutline;
 	}
 </script>
@@ -29,36 +31,11 @@ Pour afficher une icône, on utilise le composant [`VIcon`](https://vuetifyjs.co
 
 ## CustomIcon
 
-Le composant [CustomIcon](/composants-techniques/custom-icon) permet d’ajouter des SVG en tant qu’icônes pour pouvoir les utiliser facilement dans toute votre application.
+Le composant [CustomIcon](/composants-techniques/custom-icon) permet d’ajouter des icônes SVG personnalisées afin de les utiliser dans votre application.
 
 ### Création
 
-L'ajout des icônes customisées est fait dans le fichier `src/plugins/vue-dot.ts` :
-
-```ts
-import Vue from 'vue';
-
-// Import VueDot styles
-import '@cnamts/vue-dot/dist/vue-dot.css';
-
-// Import dayjs locale
-import 'dayjs/locale/fr';
-
-// Register v-facade directive
-import InputFacade from 'vue-input-facade';
-Vue.use(InputFacade);
-
-import { icons } from '@/assets/icons';
-
-import VueDot from '@cnamts/vue-dot';
-Vue.use(VueDot, {
-	theme: {
-		icons
-	}
-});
-```
-
-Les icônes sont définies dans le fichier `src/assets/icons.ts`: 
+Vous devez définir la liste de vos icônes personnalisées dans le fichier `src/assets/icons.ts` en utilisant la syntaxe suivante :
 
 ```ts
 export const icons = {
@@ -66,11 +43,27 @@ export const icons = {
 };
 ```
 
-### Utilisation
-
-Il ne reste plus qu’à afficher l’icône `digital` grâce au composant `CustomIcon` :
+Ensuite, vous devez importer cette liste et l’utiliser dans le fichier `src/plugins/vue-dot.ts` :
 
 ```ts
+import Vue from 'vue';
+
+import { icons } from '@/assets/icons';
+
+import VueDot from '@cnamts/vue-dot';
+
+Vue.use(VueDot, {
+	theme: {
+		icons
+	}
+});
+```
+
+### Utilisation
+
+Vous pouvez maintenant afficher vos icônes personnalisées grâce au composant `CustomIcon` :
+
+```vue
 <template>
 	<CustomIcon icon="digital" />
 </template>

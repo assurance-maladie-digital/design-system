@@ -50,7 +50,7 @@
   - **functions:** Modification des titres des pages de documentation des fonctions ([#2062](https://github.com/assurance-maladie-digital/design-system/pull/1990)) ([24851b0](https://github.com/assurance-maladie-digital/design-system/commit/24851b0d504d251a8ac11d07d46ace6799e3bcaf))
   - **dev-tools:** Ajout de la page outils de développement ([#1989](https://github.com/assurance-maladie-digital/design-system/pull/1989)) ([d9c155b](https://github.com/assurance-maladie-digital/design-system/commit/d9c155b7b170c328a3704f0693e3ebc3adf006bb))
   - **roadmap:** Mise à jour de la page ([#2097](https://github.com/assurance-maladie-digital/design-system/pull/2097)) ([5e5c3e2](https://github.com/assurance-maladie-digital/design-system/commit/5e5c3e2c0a20395c744dd38f8b95cfeaa4364e6e))
-  - **guides:** Ajout du guide sur l'utilisation des icônes ([#2114](https://github.com/assurance-maladie-digital/design-system/pull/2114))
+  - **guides:** Ajout d'un guide sur l'utilisation des icônes ([#2114](https://github.com/assurance-maladie-digital/design-system/pull/2114))
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la configuration du chargement des polices ([#2074](https://github.com/assurance-maladie-digital/design-system/pull/2074)) ([20999ba](https://github.com/assurance-maladie-digital/design-system/commit/20999babeac330d7df9f9e52f2db25e9ee0ff458))
@@ -87,7 +87,7 @@
   - **sass-loader:** Mise à jour vers la `v10.3.1` ([#2119](https://github.com/assurance-maladie-digital/design-system/pull/2119)) ([da873a5](https://github.com/assurance-maladie-digital/design-system/commit/da873a5b39a2f169d46d009b10ee4b89fdd5a5ff))
   - **@octokit/core:** Mise à jour vers la `v4` ([#2120](https://github.com/assurance-maladie-digital/design-system/pull/2120)) ([e03fac5](https://github.com/assurance-maladie-digital/design-system/commit/e03fac5adeaffbb9df260aac979e3e8a06461949))
   - **vue:** Mise à jour vers la `v2.7.4` ([#2109](https://github.com/assurance-maladie-digital/design-system/pull/2109)) ([5d74462](https://github.com/assurance-maladie-digital/design-system/commit/5d744623df96eebeccdc307cdeb1144fd24f699e))
-  - **core-js:** Mise à jour vers la `v3.23.4` ([#2122](//github.com/assurance-maladie-digital/design-system/pull/2122))
+  - **core-js:** Mise à jour vers la `v3.23.4` ([#2122](//github.com/assurance-maladie-digital/design-system/pull/2122)) ([4b7675b](https://github.com/assurance-maladie-digital/design-system/commit/4b7675b6e265fbba3b5a13cf65929fd936abd530))
 
 ## v2.4.0
 
