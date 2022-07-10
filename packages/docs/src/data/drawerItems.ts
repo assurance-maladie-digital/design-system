@@ -377,6 +377,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Authentification avec token',
 				to: '/guides/authentification-token'
+			},
+			{
+				title: 'Utilisation des icônes',
+				to: '/guides/utilisation-icones'
 			}
 		]
 	},
