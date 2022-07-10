@@ -171,6 +171,7 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
 	@import '~/assets/styles/typography/headings.scss';
 
 	.doc-releases :deep(.v-markdown) {
@@ -189,7 +190,7 @@
 
 		pre {
 			padding: 12px 16px;
-			background: #020d1f;
+			background: $vd-am-blue-darken-80;
 			border-radius: 4px;
 
 			code {

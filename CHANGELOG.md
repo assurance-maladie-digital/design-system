@@ -29,6 +29,11 @@
 - ✅ **Tests**
   - **global:** Mise à jour des données de tests ([#2104](https://github.com/assurance-maladie-digital/design-system/pull/2104)) ([7395f2f](https://github.com/assurance-maladie-digital/design-system/commit/7395f2fc1d6ab5ff37bb98c4fd04f1816372b904))
 
+### Design Tokens
+
+- ✨ **Nouvelles fonctionnalités**
+  - **colors:** Ajout de la nouvelle palette de couleurs ([#2123](https://github.com/assurance-maladie-digital/design-system/pull/2123))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**
@@ -81,7 +86,7 @@
   - **lerna:** Mise à jour vers la `v5.1.8` ([#2118](https://github.com/assurance-maladie-digital/design-system/pull/2118)) ([aec1b94](https://github.com/assurance-maladie-digital/design-system/commit/aec1b94567edfa5d9e0e46fff9ebdec14b4bf2aa))
   - **sass-loader:** Mise à jour vers la `v10.3.1` ([#2119](https://github.com/assurance-maladie-digital/design-system/pull/2119)) ([da873a5](https://github.com/assurance-maladie-digital/design-system/commit/da873a5b39a2f169d46d009b10ee4b89fdd5a5ff))
   - **@octokit/core:** Mise à jour vers la `v4` ([#2120](https://github.com/assurance-maladie-digital/design-system/pull/2120)) ([e03fac5](https://github.com/assurance-maladie-digital/design-system/commit/e03fac5adeaffbb9df260aac979e3e8a06461949))
-  - **vue:** Mise à jour vers la `v2.7.4` ([#2109](https://github.com/assurance-maladie-digital/design-system/pull/2109))
+  - **vue:** Mise à jour vers la `v2.7.4` ([#2109](https://github.com/assurance-maladie-digital/design-system/pull/2109)) ([5d74462](https://github.com/assurance-maladie-digital/design-system/commit/5d744623df96eebeccdc307cdeb1144fd24f699e))
 
 ## v2.4.0
 

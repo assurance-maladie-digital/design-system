@@ -157,7 +157,7 @@
 	.vd-user-icon {
 		width: 40px;
 		height: 40px;
-		background: #ededed;
+		background: $vd-grey-lighten-90;
 		border-radius: 50%;
 	}
 </style>

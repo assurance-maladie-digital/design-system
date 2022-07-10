@@ -1,3 +1,5 @@
+import { tokens } from '@cnamts/design-tokens';
+
 export const config = {
 	menu: {
 		offsetY: true,
@@ -8,7 +10,7 @@ export const config = {
 		tile: true,
 		minHeight: '48px',
 		width: '328px',
-		color: '#5e74b8',
+		color: tokens.colors.parme.base,
 		class: 'd-flex px-3'
 	},
 	btnIcon: {
