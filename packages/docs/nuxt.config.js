@@ -68,13 +68,13 @@ export default {
 	],
 	plugins: [
 		'~/plugins/vue-dot.ts',
-		'~/plugins/form-builder.ts',
-		'~/plugins/instant-search.js'
+		'~/plugins/form-builder.ts'
 	],
 	build: {
 		transpile: [
 			'@cnamts/vue-dot',
-			'@cnamts/form-builder'
+			'@cnamts/form-builder',
+			'@docsearch/css'
 		]
 	},
 	modules: [
@@ -122,11 +122,6 @@ export default {
 		API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN: process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN || '*',
 		SEARCH_API_KEY: process.env.SEARCH_API_KEY || '',
 		SEARCH_APP_ID: process.env.SEARCH_APP_ID || '',
-		SEARCH_INDEX: process.env.SEARCH_INDEX || '',
-		SEARCH_DEFAULT_SUFFIX: process.env.SEARCH_DEFAULT_SUFFIX || ' | Design System Digital',
-		SEARCH_MAX_LENGTH_BEFORE_HIT: process.env.SEARCH_MAX_LENGTH_BEFORE_HIT || '50',
-		SEARCH_MAX_LENGTH_AFTER_HIT: process.env.SEARCH_MAX_LENGTH_AFTER_HIT || '50',
-		SEARCH_HIGHLIGHT_TAG: process.env.SEARCH_HIGHLIGHT_TAG || 'mark',
-		SEARCH_MIN_LENGTH: process.env.SEARCH_MIN_LENGTH || '2'
-}
+		SEARCH_INDEX_NAME: process.env.SEARCH_INDEX || ''
+	}
 };

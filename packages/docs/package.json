@@ -25,6 +25,7 @@
 		"@cnamts/eslint-config": "^2.4.0",
 		"@cnamts/form-builder": "^2.4.0",
 		"@cnamts/vue-dot": "^2.4.0",
+		"@docsearch/js": "3.1.1",
 		"@netlify/functions": "1.0.0",
 		"@octokit/core": "4.0.4",
 		"nuxt": "2.15.8",
@@ -40,11 +41,6 @@
 		"@nuxtjs/dotenv": "1.4.1",
 		"@nuxtjs/google-fonts": "2.0.0",
 		"@nuxtjs/vuetify": "1.12.3",
-		"@docsearch/js": "3",
-		"@algolia/client-search": "^4.13.0",
-		"algoliasearch": "^4.13.0",
-		"algolia": "^0.0.0",
-		"vue-instantsearch": "^4.3.3",
 		"raw-loader": "4.0.2"
 	}
 }

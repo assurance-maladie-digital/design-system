@@ -43,7 +43,7 @@
 
 	import DocReleasesMenu from './DocReleasesMenu.vue';
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
-	import DocSearch from './search/DocSearch.vue';
+	import DocSearch from './DocSearch.vue';
 
 	import { mdiGithub } from '@mdi/js';
 
