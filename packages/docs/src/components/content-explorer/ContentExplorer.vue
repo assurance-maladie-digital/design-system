@@ -48,7 +48,7 @@
 
 			<div class="content flex-grow-1 ma-4">
 				<VProgressLinear
-					v-show="state === 'pending'"
+					v-show="state === StateEnum.PENDING"
 					indeterminate
 					absolute
 				/>
@@ -98,7 +98,7 @@
 	const DOT_FILE_CHAR = '.';
 	const ESCAPED_DOT_FILE_CHAR = '_';
 
-	const BASE_PATH = '/explorer/';
+	const BASE_PATH = '/composants-techniques/starter-kit/explorer/';
 
 	const Props = Vue.extend({
 		props: {
@@ -121,6 +121,8 @@
 		}
 	})
 	export default class ContentExplorer extends MixinsDeclaration {
+		StateEnum = StateEnum;
+
 		searchIcon = mdiMagnify;
 		openFolderIcon = mdiFolderOpen;
 		folderIcon = mdiFolder;
@@ -245,7 +247,7 @@
 		width: 100%;
 		overflow-x: auto;
 
-		::v-deep {
+		:deep() {
 			.v-treeview-node {
 				cursor: pointer;
 			}

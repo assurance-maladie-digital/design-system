@@ -4,8 +4,7 @@
 		"baseUrl": ".",
 		"types": [
 			"node",
-			"jest",
-			"content-disposition"
+			"jest"
 		],
 		"paths": {
 			"@/tests/*": [
@@ -29,5 +28,8 @@
 	],
 	"exclude": [
 		"node_modules"
-	]
+	],
+	"vueCompilerOptions": {
+		"target": 2.7
+	}
 }

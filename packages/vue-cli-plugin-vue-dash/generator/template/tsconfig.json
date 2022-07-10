@@ -31,11 +31,7 @@
 		},
 		"lib": [
 			"esnext",
-			"es2017",
-			"es2015",
-			"dom",
-			"dom.iterable",
-			"scripthost"
+			"dom"
 		]
 	},
 	"include": [

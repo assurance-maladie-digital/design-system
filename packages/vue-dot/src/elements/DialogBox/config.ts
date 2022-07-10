@@ -3,14 +3,16 @@ export const config = {
 		class: 'pa-6'
 	},
 	cardTitle: {
-		class: 'd-flex align-start flex-nowrap pa-0 mb-4'
+		class: 'd-flex align-start flex-nowrap pa-0 mb-6'
 	},
 	closeBtn: {
 		icon: true,
-		class: 'ml-4'
+		width: '32px',
+		height: '32px',
+		class: 'mt-n2 mr-n2 ml-4'
 	},
 	actionsCtn: {
-		class: 'd-flex flex-wrap'
+		class: 'd-flex flex-wrap mt-6'
 	},
 	cancelBtn: {
 		color: 'primary',

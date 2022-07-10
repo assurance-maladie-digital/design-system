@@ -11,6 +11,12 @@ export const api: Api = {
 				example: `'non-compliant' | 'partially-compliant' | 'fully-compliant'`
 			},
 			{
+				name: 'sitemap-route',
+				type: 'RawLocation',
+				default: `{ name: 'sitemap' }`,
+				description: 'La valeur de la prop `to` du lien vers le *Plan du site*.'
+			},
+			{
 				name: 'cgu-route',
 				type: 'RawLocation',
 				default: `{ name: 'cgu' }`,
@@ -27,6 +33,12 @@ export const api: Api = {
 				type: 'RawLocation',
 				default: `{ name: 'a11yStatement' }`,
 				description: 'La valeur de la prop `to` du lien vers la *Déclaration d’accessibilité*.'
+			},
+			{
+				name: 'hide-sitemap-link',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le lien vers le *Plan du site*.'
 			},
 			{
 				name: 'hide-cgu-link',

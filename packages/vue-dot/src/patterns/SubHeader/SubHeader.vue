@@ -20,7 +20,7 @@
 				<VBtn
 					v-else
 					v-bind="options.backBtn"
-					class="mb-1"
+					class="vd-sub-header-back-btn mb-1"
 					@click="$emit('back')"
 				>
 					<slot name="back-btn-icon">
@@ -170,13 +170,17 @@
 		overflow-x: auto;
 	}
 
+	.vd-sub-header-back-btn {
+		margin: 0 -6px;
+	}
+
 	.vd-data-list-group,
 	.vd-sub-header-informations {
 		// Don't take all available space
 		max-width: none;
 	}
 
-	.vd-data-list-group ::v-deep .vd-data-list {
+	.vd-data-list-group :deep(.vd-data-list) {
 		max-width: 200px;
 
 		// Apply margin right to avoid empty

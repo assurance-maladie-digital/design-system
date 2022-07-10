@@ -70,7 +70,7 @@
 				>
 					<slot
 						name="info-text"
-						:maxSize="maxSizeReadable"
+						:max-size="maxSizeReadable"
 						:extensions="extensions"
 					>
 						{{ locales.infoText(maxSizeReadable, extensions) }}
@@ -173,6 +173,8 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
 	.vd-file-upload {
 		cursor: pointer;
 		position: relative;
@@ -182,7 +184,7 @@
 		&:hover,
 		&:focus-within,
 		&.dragover {
-			background: #f5f5f5;
+			background: $vd-parme-lighten-90;
 		}
 
 		&.dark-mode {

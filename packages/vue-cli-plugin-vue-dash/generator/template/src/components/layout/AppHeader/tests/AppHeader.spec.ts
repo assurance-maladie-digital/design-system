@@ -12,6 +12,7 @@ describe('AppHeader', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(AppHeader, {
 			mocks: {
+				$maintenanceEnabled: false,
 				$t: (key: string) => {
 					return key === 'components.layout.appHeader.navigationItems' ? [] : key;
 				}

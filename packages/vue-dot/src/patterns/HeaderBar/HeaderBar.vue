@@ -18,17 +18,24 @@
 					v-bind="options.innerSheet"
 					:width="innerWidth"
 				>
-					<HeaderBrandSection
-						:theme="theme"
-						:service-title="serviceTitle"
-						:service-sub-title="serviceSubTitle"
-						:mobile-version="isMobileVersion"
-						:home-link="homeLink"
-					>
-						<slot name="secondary-logo" />
-					</HeaderBrandSection>
+					<slot name="logo">
+						<HeaderBrandSection
+							v-bind="options.brandSection"
+							:theme="theme"
+							:service-title="serviceTitle"
+							:service-sub-title="serviceSubTitle"
+							:mobile-version="isMobileVersion"
+							:home-link="homeLink"
+							:home-href="homeHref"
+						>
+							<slot name="secondary-logo" />
+						</HeaderBrandSection>
+					</slot>
 
-					<VSpacer v-bind="options.spacer" />
+					<VSpacer
+						v-if="showSpacer"
+						v-bind="options.spacer"
+					/>
 
 					<slot />
 
@@ -42,6 +49,7 @@
 
 			<template v-if="showNavigationBar">
 				<HeaderNavigationBar
+					v-bind="options.navigationBar"
 					:tab.sync="tab"
 					:drawer.sync="drawer"
 					:theme="theme"
@@ -51,6 +59,10 @@
 					:show-menu-btn="showNavBarMenuBtn"
 				>
 					<slot name="navigation-bar-content" />
+
+					<template #navigation-bar-secondary-content>
+						<slot name="navigation-bar-secondary-content" />
+					</template>
 				</HeaderNavigationBar>
 			</template>
 		</VAppBar>
@@ -61,6 +73,7 @@
 		>
 			<HeaderNavigationDrawer
 				v-model="drawer"
+				v-bind="options.navigationDrawer"
 				:tab.sync="tab"
 				:theme="theme"
 				:items="navigationItems"
@@ -116,6 +129,10 @@
 			},
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
+				default: undefined
+			},
+			homeHref: {
+				type: String,
 				default: undefined
 			},
 			showNavBarMenuBtn: {
@@ -190,6 +207,10 @@
 			return this.hasNavigationItems;
 		}
 
+		get showSpacer(): boolean {
+			return Boolean(this.$slots.default) || this.isMobileVersion;
+		}
+
 		updateDrawer(value: boolean): void {
 			this.drawer = value;
 		}
@@ -197,12 +218,16 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-bar ::v-deep .v-toolbar__content {
+	.vd-header-bar {
+		z-index: 1;
+	}
+
+	.vd-header-bar :deep(.v-toolbar__content) {
 		display: block;
 		padding: 0;
 	}
 
-	.vd-header-menu-btn ::v-deep {
+	.vd-header-menu-btn :deep() {
 		.v-btn__content {
 			flex-direction: column;
 		}

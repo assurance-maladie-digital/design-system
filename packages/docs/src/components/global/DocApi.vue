@@ -4,22 +4,25 @@
 			v-for="(component, componentName, index) in api"
 			:key="componentName"
 		>
-			<h2
+			<h3
 				v-if="showTitle"
 				class="text-h5 font-weight-bold my-0"
 				:class="{ 'mt-14': index > 0 }"
 			>
 				{{ componentName }}
-			</h2>
+			</h3>
 
 			<div
 				v-for="(items, itemName, itemIndex) in component"
 				:key="`${componentName}-${itemName}`"
 				:class="{ 'mt-6': itemIndex > 0 || showTitle }"
 			>
-				<h3 class="text-h6 mb-4">
+				<component
+					:is="subHeaderElement"
+					class="text-h6 mb-4"
+				>
 					{{ formatItemName(itemName) }}
-				</h3>
+				</component>
 
 				<DocApiTable
 					:field="itemName"
@@ -66,6 +69,10 @@
 			}
 
 			return Object.keys(this.api).length > 1;
+		}
+
+		get subHeaderElement(): string {
+			return this.showTitle ? 'h4' : 'h3';
 		}
 
 		formatItemName(itemName: string): string {

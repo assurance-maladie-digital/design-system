@@ -32,6 +32,8 @@
 					</VTab>
 				</VTabs>
 			</slot>
+
+			<slot name="navigation-bar-secondary-content" />
 		</VSheet>
 	</VSheet>
 </template>
@@ -96,6 +98,10 @@
 		}
 
 		get backgroundColor(): string {
+			if (this.options.color) {
+				return this.options.color;
+			}
+
 			return colorMapping[this.theme];
 		}
 

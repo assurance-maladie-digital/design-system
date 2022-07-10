@@ -71,7 +71,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-expansion-panel ::v-deep {
+	.v-expansion-panel :deep() {
 		.v-expansion-panel-content__wrap {
 			padding: 0;
 		}

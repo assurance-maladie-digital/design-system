@@ -11,7 +11,7 @@ Pour créer un nouveau projet, il est recommandé d’utiliser [Vue CLI](https:/
 
 Pour créer un nouveau projet, vous devez installer les outils suivants :
 
-- [Node.js](https://nodejs.org/) LTS
+- [Node.js](https://nodejs.org/) LTS (v16)
 - [Yarn](https://classic.yarnpkg.com/)
 - [Vue CLI](https://cli.vuejs.org/guide/installation.html)
 
@@ -71,7 +71,7 @@ Le projet sera créé dans un nouveau dossier au nom de votre projet.
 
 <doc-alert type="info">
 
-Vous pouvez retrouver le détail des dossiers et fichiers créés dans le [Starter Kit Explorer](/starter-kit/explorer).
+Vous pouvez retrouver le détail des dossiers et fichiers créés dans le [Starter Kit Explorer](/composants-techniques/starter-kit/explorer).
 
 </doc-alert>
 
@@ -246,32 +246,80 @@ console.log(tokens.pageWidth); // 1440px
 
 </doc-tab-item>
 
-<doc-tab-item label="CLI Helpers">
+<doc-tab-item label="ESLint Config">
 
-Les CLI Helpers sont des fonctions utilitaires pour construire des outils en ligne de commande en node.js.
+Le package ESLint Config contient des configurations pour la qualité de code pour les projets JavaScript et TypeScript.
 
-Pour les utiliser, vous devez les installer :
+Pour utiliser une des configurations, vous devez installer le package ainsi qu’ESLint :
 
 <doc-tabs code>
 <doc-tab-item label="Yarn">
 ```bash
-yarn add -D @cnamts/cli-helpers
+yarn add -D eslint @cnamts/eslint-config
 ```
 </doc-tab-item>
 
 <doc-tab-item label="npm">
 ```bash
-npm install -D @cnamts/cli-helpers
+npm install -D eslint @cnamts/eslint-config
 ```
 </doc-tab-item>
 </doc-tabs>
 
-Ensuite, vous pouvez importer les fonctions dont vous avez besoin :
+Ensuite, vous pouvez utiliser la configuration dont vous avez besoin en créant un fichier `.eslintrc.js` :
 
 ```js
-import { log, done, getPath } from '@cnamts/cli-helpers';
+module.exports = {
+	extends: '@cnamts/eslint-config'
+};
+```
+
+Pour la configuration TypeScript :
+
+```js
+module.exports = {
+	extends: '@cnamts/eslint-config/typescript'
+};
 ```
 
 </doc-tab-item>
 
+<doc-tab-item label="ESLint Config Vue">
+
+Le package ESLint Config Vue contient des configurations pour la qualité de code pour les projets Vue.js.
+
+Pour utiliser la configuration, vous devez installer le package ainsi qu’ESLint et le plugin ESLint Vue :
+
+<doc-tabs code>
+<doc-tab-item label="Yarn">
+```bash
+yarn add -D eslint eslint-plugin-vue @cnamts/eslint-config-vue
+```
+</doc-tab-item>
+
+<doc-tab-item label="npm">
+```bash
+npm install -D eslint eslint-plugin-vue @cnamts/eslint-config-vue
+```
+</doc-tab-item>
+</doc-tabs>
+
+Ensuite, vous pouvez utiliser la configuration en créant un fichier `.eslintrc.js` :
+
+```js
+module.exports = {
+	extends: '@cnamts/eslint-config-vue'
+};
+```
+
+Si vous utilisez la version 7 d’ESLint, vous devez configurer le parser pour utiliser `vue-eslint-parser` :
+
+```js
+module.exports = {
+	extends: '@cnamts/eslint-config-vue',
+	parser: 'vue-eslint-parser'
+};
+```
+
+</doc-tab-item>
 </doc-tabs>

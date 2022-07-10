@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataListGroup renders correctly 1`] = `<div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4"><datalist list-title="Catégorie 1" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="200px" class="ma-4"></datalist><datalist list-title="Catégorie 2" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="200px" class="ma-4"></datalist></div>`;
+
+exports[`DataListGroup renders loading state correctly 1`] = `<div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4"><datalist loading="true" list-title="Catégorie 1" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="200px" class="ma-4"></datalist><datalist loading="true" list-title="Catégorie 2" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="200px" class="ma-4"></datalist></div>`;

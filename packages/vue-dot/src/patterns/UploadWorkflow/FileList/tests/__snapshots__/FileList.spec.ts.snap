@@ -2,8 +2,8 @@
 
 exports[`FileList renders correctly 1`] = `
 <vlist-stub tag="div" class="vd-file-list" style="width: 100%;">
-  <vlistitem-stub activeclass="" tag="div" class="flex-wrap">
-    <vlistitemavatar-stub size="40">
+  <vlistitem-stub activeclass="" tag="div" twoline="true" class="flex-wrap">
+    <vlistitemavatar-stub size="40" class="my-2">
       <vicon-stub color="success" size="24">
         M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z
       </vicon-stub>

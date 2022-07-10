@@ -1,6 +1,23 @@
 <template>
 	<PageContainer>
 		<VCard class="pa-8">
+			<VBtn
+				:to="{
+					name: 'home'
+				}"
+				color="accent"
+				class="mb-8"
+				outlined
+				exact<% if (cypress) { %>
+				data-cy="backBtn"<% } %>
+			>
+				<VIcon class="mr-2">
+					{{ backArrowIcon }}
+				</VIcon>
+
+				<% if (i18n) { %>{{ $t('views.about.backBtn.label') }}<% } else { %>Retour<% } %>
+			</VBtn>
+
 			<h2 class="text-h6 font-weight-bold primary--text">
 				<% if (i18n) { %>{{ $t('views.about.title') }}<% } else { %>À propos<% } %>
 			</h2>
@@ -13,23 +30,6 @@
 				class="mt-4"<% if (cypress) { %>
 				data-cy="links"<% } %>
 			/>
-
-			<VBtn
-				:to="{
-					name: 'home'
-				}"
-				color="accent"
-				class="mt-8"
-				outlined
-				exact<% if (cypress) { %>
-				data-cy="backBtn"<% } %>
-			>
-				<VIcon class="mr-2">
-					{{ backArrowIcon }}
-				</VIcon>
-
-				<% if (i18n) { %>{{ $t('views.about.backBtn.label') }}<% } else { %>Retour<% } %>
-			</VBtn>
 		</VCard>
 	</PageContainer>
 </template>
@@ -49,7 +49,6 @@
 		links: Link[];
 	}
 
-	/** About page */
 	@Component({
 		components: {
 			LinksList: () => import(

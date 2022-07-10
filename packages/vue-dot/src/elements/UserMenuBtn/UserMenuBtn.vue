@@ -120,7 +120,7 @@
 		logoutIcon = mdiLoginVariant;
 
 		get btnPadding(): string {
-			return this.hideUserIcon ? 'pa-0 pa-sm-2' : 'pa-0 pa-sm-3';
+			return this.hideUserIcon ? 'pa-1 pa-sm-2' : 'pa-1 pa-sm-3';
 		}
 
 		get hasListContent(): boolean {
@@ -157,7 +157,7 @@
 	.vd-user-icon {
 		width: 40px;
 		height: 40px;
-		background: #ededed;
+		background: $vd-grey-lighten-90;
 		border-radius: 50%;
 	}
 </style>

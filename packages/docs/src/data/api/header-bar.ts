@@ -7,7 +7,7 @@ const themeProp = {
 	type: 'string',
 	required: true,
 	description: 'Le thème de l’en-tête.',
-	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro'`
+	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro' | 'compte-entreprise'`
 };
 
 const mobileVersionProp = {
@@ -57,6 +57,13 @@ const homeLinkProp = {
 	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.'
 };
 
+const homeHrefProp = {
+	name: 'home-href',
+	type: 'String',
+	default: 'undefined',
+	description: 'Un lien externe à l’application vers la page d’accueil.'
+};
+
 const drawerProp = {
 	name: 'drawer',
 	type: 'boolean',
@@ -81,6 +88,7 @@ export const api: Api = {
 			},
 			innerWidthProp,
 			homeLinkProp,
+			homeHrefProp,
 			{
 				name: 'show-nav-bar-menu-btn',
 				type: 'boolean',
@@ -93,13 +101,20 @@ export const api: Api = {
 	contentSheet: 'VSheet',
 	innerSheet: 'VSheet',
 	spacer: 'VSpacer',
-	menuBtn: 'HeaderMenuBtn'
-}`, 'et `HeaderMenuBtn`')
+	brandSection: 'HeaderBrandSection',
+	menuBtn: 'HeaderMenuBtn',
+	navigationBar: 'HeaderNavigationBar',
+	navigationDrawer: 'HeaderNavigationDrawer',
+}`, ', ainsi que des composants `HeaderBrandSection`, `HeaderMenuBtn`, `HeaderNavigationBar` et `HeaderNavigationDrawer`')
 		],
 		slots: [
 			{
 				name: 'default',
 				description: 'Slot pour afficher du contenu dans la partie droite de l’en-tête.'
+			},
+			{
+				name: 'logo',
+				description: 'Slot pour remplacer le logo.'
 			},
 			{
 				name: 'secondary-logo',
@@ -108,6 +123,10 @@ export const api: Api = {
 			{
 				name: 'navigation-bar-content',
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
+			},
+			{
+				name: 'navigation-bar-secondary-content',
+				description: 'Slot pour ajouter du contenu sur la partie droite de la barre de navigation.'
 			},
 			{
 				name: 'navigation-drawer',
@@ -129,7 +148,8 @@ export const api: Api = {
 			titleProp,
 			subTitleProp,
 			mobileVersionProp,
-			homeLinkProp
+			homeLinkProp,
+			homeHrefProp
 		],
 		slots: [
 			{

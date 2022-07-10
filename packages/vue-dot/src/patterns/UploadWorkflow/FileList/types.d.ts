@@ -1,8 +1,8 @@
 export type FileState = 'initial' | 'success' | 'error';
 
 export interface FileItem {
-	id: string;
-	title: string;
+	id?: string;
+	title?: string;
 	state: FileState;
 	name?: string;
 	optional?: boolean;

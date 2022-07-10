@@ -11,6 +11,7 @@ const componentMap = {
 	PageContainer: 'elements',
 	UserMenuBtn: 'elements',
 	// Patterns
+	CookieBanner: 'patterns',
 	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
 	FileUpload: 'patterns',
@@ -25,6 +26,7 @@ const componentMap = {
 	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
 	// Templates
+	CookiesPage: 'templates',
 	ErrorPage: 'templates'
 };
 

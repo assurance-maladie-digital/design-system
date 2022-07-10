@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<PageContainer>
 		<!-- Commencez à développer ici -->
-	</div>
+	</PageContainer>
 </template>
 
 <script lang="ts">

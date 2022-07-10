@@ -138,7 +138,7 @@
 			this.value = '';
 			this.menuModel = false;
 		}
-  	}
+	}
 </script>
 
 <style lang="scss" scoped>

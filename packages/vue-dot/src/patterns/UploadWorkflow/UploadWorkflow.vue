@@ -1,7 +1,7 @@
 <template>
 	<div
 		:style="widthStyles"
-		class="vd-upload-workflow"
+		class="vd-upload-workflow white"
 	>
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
@@ -11,11 +11,12 @@
 		</slot>
 
 		<FileList
+			v-if="showFileList"
 			v-bind="options.fileList"
 			:files="fileList"
 			@delete-file="resetFile"
-			@retry="showFileUpload"
-			@upload="showFileUpload"
+			@retry="uploadInline"
+			@upload="uploadInline"
 			@view-file="emitViewFileEvent"
 		/>
 
@@ -23,8 +24,8 @@
 			ref="fileUpload"
 			v-bind="options.fileUpload"
 			v-model="uploadedFile"
-			@change="fileSelected"
 			@error="uploadError"
+			@change="fileSelected"
 		/>
 
 		<DialogBox
@@ -89,6 +90,9 @@
 	export default class UploadWorkflow extends MixinsDeclaration {
 		locales = locales;
 
+		// UploadWorkflowCore mixin
+		inlineSelect!: boolean;
+
 		selectRules = [
 			required
 		];
@@ -98,11 +102,20 @@
 				return this.sectionTitle;
 			}
 
-			return locales.title(this.value.length > 1);
+			if (!this.internalFileListItems.length) {
+				return locales.importTitle;
+			}
+
+			return locales.title(this.internalFileListItems.length > 1);
 		}
 
-		showFileUpload(id: string): void {
+		get showFileList(): boolean {
+			return this.value.length > 0 || this.fileListItems?.length > 0;
+		}
+
+		uploadInline(id: string): void {
 			this.selectedItem = id;
+			this.inlineSelect = true;
 			this.$refs.fileUpload.retry();
 		}
 	}

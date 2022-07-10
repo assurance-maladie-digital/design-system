@@ -20,6 +20,7 @@
 
 				<VListItemContent v-bind="options.listItemContent">
 					<VListItemTitle
+						v-if="file.title"
 						v-bind="options.listItemTitle"
 						:class="[
 							options.listItemTitle.class,
@@ -63,7 +64,7 @@
 						v-if="file.state === FileStateEnum.ERROR"
 						v-bind="options.retryBtn"
 						:aria-label="locales.uploadFile"
-						@click="$emit('retry', file.id)"
+						@click="$emit('retry', index)"
 					>
 						<VIcon
 							v-bind="options.icon"
@@ -90,7 +91,7 @@
 					<VBtn
 						v-if="file.state !== FileStateEnum.INITIAL"
 						v-bind="options.deleteFileBtn"
-						@click="$emit('delete-file', file.id)"
+						@click="$emit('delete-file', index)"
 					>
 						<VIcon
 							v-bind="options.icon"

@@ -27,6 +27,7 @@ interface TestComponent extends Vue {
 	value: string;
 	date: string;
 	textFieldDate: string;
+	errorMessages: string[];
 	saveFromTextField: () => void;
 	saveFromCalendar: () => void;
 	saveFromPasted: (event: ClipboardEvent) => void;
@@ -67,7 +68,7 @@ function createTextField() {
 
 /** Create the wrapper */
 function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
-	const component = Vue.component('Test', {
+	const component = Vue.component('TestComponent', {
 		mixins: [
 			DateLogic,
 			customizable(mixinData)
@@ -160,12 +161,13 @@ describe('DateLogic', () => {
 		expect(parsed).toBe('2019-10-29');
 	});
 
-	it('returns an empty string when parseTextFieldDate is called with an invalid date', () => {
+	it('returns null and sets error messages when parseTextFieldDate is called with an invalid date', () => {
 		const wrapper = createWrapper();
 
 		const parsed = wrapper.vm.parseTextFieldDate('2019/10/29');
 
-		expect(parsed).toBe('');
+		expect(parsed).toBeNull();
+		expect(wrapper.vm.errorMessages.length).toBe(1);
 	});
 
 	// saveFromCalendar

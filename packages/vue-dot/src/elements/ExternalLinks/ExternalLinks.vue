@@ -4,7 +4,7 @@
 		v-model="menu"
 		v-bind="options.menu"
 		:top="bottom"
-		:content-class="menuClass"
+		attach
 		class="vd-external-links"
 	>
 		<template #activator="{ on, attrs }">
@@ -13,11 +13,11 @@
 					...attrs,
 					...options.btn
 				}"
+				ref="btn"
 				:style="btnStyle"
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
-				@click="setMenuPosition"
 				v-on="on"
 			>
 				<span
@@ -47,10 +47,9 @@
 				v-bind="options.listItem"
 			>
 				<VListItemContent v-bind="options.listItemContent">
-					<VListItemTitle
-						v-bind="options.listItemTitle"
-						v-text="item.text"
-					/>
+					<VListItemTitle v-bind="options.listItemTitle">
+						{{ item.text }}
+					</VListItemTitle>
 				</VListItemContent>
 
 				<VListItemIcon v-bind="options.listItemIcon">
@@ -83,8 +82,8 @@
 
 	import { PositionEnum } from './PositionEnum';
 
-	import { ExternalLink, Position, StylesField } from './types';
-	import { IndexedObject, Refs } from '../../types';
+	import { ExternalLink, Position } from './types';
+	import { IndexedObject } from '../../types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -144,13 +143,6 @@
 
 	@Component
 	export default class ExternalLinks extends MixinsDeclaration {
-		$refs!: Refs<{
-			menu: {
-				pageWidth: string;
-				styles: StylesField;
-			};
-		}>;
-
 		locales = locales;
 
 		linkIcon = mdiOpenInNew;
@@ -244,54 +236,8 @@
 
 			return iconMapping[this.computedPosition.x];
 		}
-
-		setMenuClass(): void {
-			const VUETIFY_THRESHOLD = 12;
-			const position = this.computedPosition.x;
-			let positionClass = '';
-
-			if (position === PositionEnum.LEFT) {
-				const nudge = parseInt(this.$refs.menu.styles.left);
-
-				if (nudge <= VUETIFY_THRESHOLD) {
-					positionClass = ' left-0';
-				}
-			}
-
-			if (position === PositionEnum.RIGHT) {
-				const pageWidth = parseInt(this.$refs.menu.pageWidth, 10);
-				const left = parseInt(this.$refs.menu.styles.left, 10);
-				const minWidth = parseInt(this.$refs.menu.styles.minWidth, 10);
-				const nudge = pageWidth - left - minWidth;
-
-				if (nudge <= VUETIFY_THRESHOLD) {
-					positionClass = ' right-0';
-				}
-			}
-
-			this.menuClass = 'vd-external-links-menu' + positionClass;
-		}
-
-		setMenuPosition(): void {
-			// Wait until the menu is rendered
-			setTimeout(() => this.setMenuClass(), 100);
-		}
 	}
 </script>
-
-<style lang="scss">
-	.vd-external-links-menu {
-		// Use CSS since Vuetify forces a 12px minimum spacing
-		&.left-0 {
-			left: 0 !important;
-		}
-
-		&.right-0 {
-			left: auto !important; // Override Vuetify computation
-			right: 0 !important;
-		}
-	}
-</style>
 
 <style lang="scss" scoped>
 	$list-max-height: 248px;
@@ -300,7 +246,7 @@
 		// Allow overgrow on mobile
 		max-width: none;
 
-		::v-deep .v-btn__content {
+		:deep(.v-btn__content) {
 			flex-direction: inherit;
 		}
 	}

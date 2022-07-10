@@ -2,10 +2,13 @@ import { DrawerItem } from '~/types/drawer';
 
 import {
 	mdiSpeedometer,
+	mdiScriptTextOutline,
 	mdiViewDashboard,
 	mdiCogs,
 	mdiHumanMaleBoard,
-	mdiSecurity
+	mdiSecurity,
+	mdiBookOpenPageVariantOutline,
+	mdiHammerWrench
 } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
@@ -18,14 +21,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/introduction'
 			},
 			{
-				title: 'Principes de design',
-				to: '/demarrer/principes-design'
-			},
-			{
-				title: 'Accessibilité',
-				to: '/demarrer/accessibilite'
-			},
-			{
 				title: 'Installation',
 				to: '/demarrer/installation'
 			},
@@ -34,8 +29,30 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/roadmap'
 			},
 			{
+				title: 'Notes de version',
+				to: '/demarrer/notes-de-version'
+			},
+			{
 				title: 'Contribuer',
 				to: '/demarrer/contribuer'
+			}
+		]
+	},
+	{
+		title: 'Fondamentaux',
+		icon: mdiScriptTextOutline,
+		items: [
+			{
+				title: 'Principes de design',
+				to: '/fondamentaux/principes-de-design'
+			},
+			{
+				title: 'Accessibilité',
+				to: '/fondamentaux/accessibilite'
+			},
+			{
+				title: 'Logo',
+				to: '/fondamentaux/logo'
 			}
 		]
 	},
@@ -44,116 +61,162 @@ export const drawerItems: DrawerItem[] = [
 		icon: mdiViewDashboard,
 		items: [
 			{
-				title: 'CopyBtn',
-				to: '/composants/copy-btn'
+				title: 'Structure',
+				items: [
+					{
+						title: 'HeaderBar',
+						to: '/composants/structure/header-bar'
+					},
+					{
+						title: 'SubHeader',
+						to: '/composants/structure/sub-header'
+					},
+					{
+						title: 'FooterBar',
+						to: '/composants/structure/footer-bar'
+					},
+					{
+						title: 'FooterWrapper',
+						to: '/composants/structure/footer-wrapper'
+					}
+				]
 			},
 			{
-				title: 'CustomIcon',
-				to: '/composants/custom-icon'
+				title: 'Layout',
+				items: [
+					{
+						title: 'PageContainer',
+						to: '/composants/layout/page-container'
+					}
+				]
 			},
 			{
-				title: 'DataList',
-				to: '/composants/data-list'
+				title: 'Navigation',
+				items: [
+					{
+						title: 'ExternalLinks',
+						to: '/composants/navigation/external-links'
+					}
+				]
 			},
 			{
-				title: 'DataListGroup',
-				to: '/composants/data-list-group'
+				title: 'Boutons',
+				items: [
+					{
+						title: 'CopyBtn',
+						to: '/composants/boutons/copy-btn'
+					},
+					{
+						title: 'LangBtn',
+						to: '/composants/boutons/lang-btn'
+					},
+					{
+						title: 'DownloadBtn',
+						to: '/composants/boutons/download-btn'
+					},
+					{
+						title: 'FranceConnectBtn',
+						to: '/composants/boutons/france-connect-btn'
+					},
+					{
+						title: 'UserMenuBtn',
+						to: '/composants/boutons/user-menu-btn'
+					}
+				]
 			},
 			{
-				title: 'DatePicker',
-				to: '/composants/date-picker'
+				title: 'Formulaires',
+				items: [
+					{
+						title: 'DatePicker',
+						to: '/composants/formulaires/date-picker'
+					},
+					{
+						title: 'FormBuilder',
+						to: '/composants/formulaires/form-builder'
+					},
+					{
+						title: 'FormField',
+						to: '/composants/formulaires/form-field'
+					},
+					{
+						title: 'FormFieldList',
+						to: '/composants/formulaires/form-field-list'
+					},
+					{
+						title: 'FileUpload',
+						to: '/composants/formulaires/file-upload'
+					},
+					{
+						title: 'UploadWorkflow',
+						to: '/composants/formulaires/upload-workflow'
+					}
+				]
 			},
 			{
-				title: 'DialogBox',
-				to: '/composants/dialog-box'
+				title: 'Tableaux',
+				items: [
+					{
+						title: 'PaginatedTable',
+						to: '/composants/tableaux/paginated-table'
+					},
+					{
+						title: 'FilterModule',
+						to: '/composants/tableaux/filter-module'
+					},
+					{
+						title: 'TableToolbar',
+						to: '/composants/tableaux/table-toolbar'
+					}
+				]
 			},
 			{
-				title: 'DownloadBtn',
-				to: '/composants/download-btn'
+				title: 'Données',
+				items: [
+					{
+						title: 'DataList',
+						to: '/composants/donnees/data-list'
+					},
+					{
+						title: 'DataListGroup',
+						to: '/composants/donnees/data-list-group'
+					}
+				]
+			},
+			{
+				title: 'Feedback',
+				items: [
+					{
+						title: 'DialogBox',
+						to: '/composants/feedback/dialog-box'
+					},
+					{
+						title: 'NotificationBar',
+						to: '/composants/feedback/notification-bar'
+					},
+					{
+						title: 'CookieBanner',
+						to: '/composants/feedback/cookie-banner'
+					},
+					{
+						title: 'HeaderLoading',
+						to: '/composants/feedback/header-loading'
+					}
+				]
+			}
+		]
+	},
+	{
+		title: 'Templates',
+		icon: mdiBookOpenPageVariantOutline,
+		items: [
+			{
+				title: 'CookiesPage',
+				to: '/templates/cookies-page'
 			},
 			{
 				title: 'ErrorPage',
-				to: '/composants/error-page'
-			},
-			{
-				title: 'ExternalLinks',
-				to: '/composants/external-links'
-			},
-			{
-				title: 'FileUpload',
-				to: '/composants/file-upload'
-			},
-			{
-				title: 'FilterModule',
-				to: '/composants/filter-module'
-			},
-			{
-				title: 'FooterBar',
-				to: '/composants/footer-bar'
-			},
-			{
-				title: 'FooterWrapper',
-				to: '/composants/footer-wrapper'
-			},
-			{
-				title: 'FormBuilder',
-				to: '/composants/form-builder'
-			},
-			{
-				title: 'FormField',
-				to: '/composants/form-field'
-			},
-			{
-				title: 'FormFieldList',
-				to: '/composants/form-field-list'
-			},
-			{
-				title: 'FranceConnectBtn',
-				to: '/composants/france-connect-btn'
-			},
-			{
-				title: 'HeaderBar',
-				to: '/composants/header-bar'
-			},
-			{
-				title: 'HeaderLoading',
-				to: '/composants/header-loading'
-			},
-			{
-				title: 'LangBtn',
-				to: '/composants/lang-btn'
-			},
-			{
-				title: 'Logo',
-				to: '/composants/logo'
-			},
-			{
-				title: 'NotificationBar',
-				to: '/composants/notification-bar'
-			},
-			{
-				title: 'PageContainer',
-				to: '/composants/page-container'
-			},
-			{
-				title: 'PaginatedTable',
-				to: '/composants/paginated-table'
-			},
-			{
-				title: 'SubHeader',
-				to: '/composants/sub-header'
-			},
-			{
-				title: 'TableToolbar',
-				to: '/composants/table-toolbar'
-			},
-			{
-				title: 'UploadWorkflow',
-				to: '/composants/upload-workflow'
-			},
-			{
-				title: 'UserMenuBtn',
-				to: '/composants/user-menu-btn'
+				to: '/templates/error-page'
 			}
 		]
 	},
@@ -166,7 +229,7 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'Debounce',
-						to: '/directives/debounce'
+						to: '/composants-techniques/directives/debounce'
 					}
 				]
 			},
@@ -175,7 +238,7 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'Explorer',
-						to: '/starter-kit/explorer'
+						to: '/composants-techniques/starter-kit/explorer'
 					}
 				]
 			},
@@ -184,43 +247,43 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'required',
-						to: '/regles-validation/required'
+						to: '/composants-techniques/regles-de-validation/required'
 					},
 					{
 						title: 'exactLength',
-						to: '/regles-validation/exact-length'
+						to: '/composants-techniques/regles-de-validation/exact-length'
 					},
 					{
 						title: 'minLength',
-						to: '/regles-validation/min-length'
+						to: '/composants-techniques/regles-de-validation/min-length'
 					},
 					{
 						title: 'maxLength',
-						to: '/regles-validation/max-length'
+						to: '/composants-techniques/regles-de-validation/max-length'
 					},
 					{
 						title: 'email',
-						to: '/regles-validation/email'
+						to: '/composants-techniques/regles-de-validation/email'
 					},
 					{
 						title: 'isDateValid',
-						to: '/regles-validation/is-date-valid'
+						to: '/composants-techniques/regles-de-validation/is-date-valid'
 					},
 					{
 						title: 'notAfterDate',
-						to: '/regles-validation/not-after-date'
+						to: '/composants-techniques/regles-de-validation/not-after-date'
 					},
 					{
 						title: 'notAfterToday',
-						to: '/regles-validation/not-after-today'
+						to: '/composants-techniques/regles-de-validation/not-after-today'
 					},
 					{
 						title: 'notBeforeDate',
-						to: '/regles-validation/not-before-date'
+						to: '/composants-techniques/regles-de-validation/not-before-date'
 					},
 					{
 						title: 'notBeforeToday',
-						to: '/regles-validation/not-before-today'
+						to: '/composants-techniques/regles-de-validation/not-before-today'
 					}
 				]
 			},
@@ -228,14 +291,46 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Fonctions',
 				items: [
 					{
+						title: 'calcHumanFileSize',
+						to: '/composants-techniques/fonctions/calc-human-file-size'
+					},
+					{
+						title: 'copyToClipboard',
+						to: '/composants-techniques/fonctions/copy-to-clipboard'
+					},
+					{
+						title: 'debounce',
+						to: '/composants-techniques/fonctions/debounce'
+					},
+					{
+						title: 'downloadFile',
+						to: '/composants-techniques/fonctions/download-file'
+					},
+					{
 						title: 'formatDate',
-						to: '/fonctions/format-date'
+						to: '/composants-techniques/fonctions/format-date'
+					},
+					{
+						title: 'formatNir',
+						to: '/composants-techniques/fonctions/format-nir'
+					},
+					{
+						title: 'getFileExtension',
+						to: '/composants-techniques/fonctions/get-file-extension'
+					},
+					{
+						title: 'insertAt',
+						to: '/composants-techniques/fonctions/insert-at'
 					}
 				]
 			},
 			{
 				title: 'Classes utilitaires CSS',
-				to: '/css/classes-utilitaires'
+				to: '/composants-techniques/classes-utilitaires-css'
+			},
+			{
+				title: 'CustomIcon',
+				to: '/composants-techniques/custom-icon'
 			}
 		]
 	},
@@ -282,8 +377,17 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Authentification avec token',
 				to: '/guides/authentification-token'
+			},
+			{
+				title: 'Utilisation des icônes',
+				to: '/guides/utilisation-icones'
 			}
 		]
+	},
+	{
+		title: 'Outils de développement',
+		icon: mdiHammerWrench,
+		to: '/outils-de-developpement'
 	},
 	{
 		title: 'Politique de sécurité',

@@ -24,7 +24,7 @@
 	import { mapActions } from 'vuex';
 
 	import { AxiosResponse } from 'axios';
-	import contentDisposition from 'content-disposition';
+	import { parse } from 'content-disposition-header';
 
 	import { mdiDownload } from '@mdi/js';
 
@@ -88,7 +88,7 @@
 			let filename: string | null = null;
 
 			try {
-				filename = contentDisposition.parse(contentDispositionHeader).parameters.filename;
+				filename = parse(contentDispositionHeader).parameters.filename;
 			} catch {
 				filename = this.fallbackFilename || this.getTimestampFilename();
 			}
@@ -131,7 +131,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-download-btn ::v-deep {
+	.vd-download-btn :deep() {
 		.v-btn__content {
 			flex-wrap: wrap;
 		}

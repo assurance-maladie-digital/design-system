@@ -1,3 +1,5 @@
+import { tokens } from '@cnamts/design-tokens';
+
 export const config = {
 	menu: {
 		offsetY: true,
@@ -11,8 +13,8 @@ export const config = {
 		height: 'auto'
 	},
 	icon: {
-		color: '#007fad',
-		class: 'ml-0 ml-sm-5'
+		color: tokens.colors.cyan.darken20,
+		class: 'ml-2 ml-sm-5'
 	},
 	logoutListItem: {
 		class: 'primary--text'

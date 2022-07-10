@@ -1,6 +1,10 @@
 export const config = {
 	listItem: {
+		twoLine: true,
 		class: 'flex-wrap'
+	},
+	listItemAvatar: {
+		class: 'my-2'
 	},
 	listItemAvatarIcon: {
 		size: 24

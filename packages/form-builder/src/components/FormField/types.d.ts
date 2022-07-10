@@ -34,7 +34,7 @@ export interface PeriodErrorMessages {
 }
 
 export interface FieldItem {
-	text: string,
+	text: string;
 	value: FieldItemValue;
 	alone?: boolean;
 }
