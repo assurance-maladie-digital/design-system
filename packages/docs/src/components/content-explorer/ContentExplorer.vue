@@ -247,7 +247,7 @@
 		width: 100%;
 		overflow-x: auto;
 
-		::v-deep {
+		:deep() {
 			.v-treeview-node {
 				cursor: pointer;
 			}

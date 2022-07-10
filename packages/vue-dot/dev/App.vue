@@ -32,6 +32,7 @@
 </script>
 
 <style lang="scss">
+	@import '@cnamts/design-tokens/dist/tokens';
 	@import '../src/styles/index.scss';
 
 	/* Default, global styles */
@@ -60,7 +61,7 @@
 		width: 100%;
 		display: flex;
 		min-height: 100vh;
-		background: #f8f9fc;
+		background: $vd-am-blue-lighten-97;
 	}
 
 	/* Apply default transition to links */

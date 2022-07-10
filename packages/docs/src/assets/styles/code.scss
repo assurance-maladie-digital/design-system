@@ -1,17 +1,19 @@
+@import '@cnamts/design-tokens/dist/tokens';
+
 // Reset Vuetify styles & tweak theme
 .v-application {
 	.nuxt-content-highlight,
 	.doc-code-block {
 		pre {
 			padding: 0;
-			background: #020d1f;
+			background: $vd-am-blue-darken-80;
 		}
 
 		pre[class*=language] {
 			&::after {
 				content: attr(data-lang);
 				bottom: .75rem;
-				color: #bdbdbd;
+				color: $vd-grey-lighten-60;
 				font-family: inherit;
 				font-size: .7rem;
 				font-weight: 700;
@@ -51,13 +53,13 @@
 	.token.char,
 	.token.builtin,
 	.token.inserted {
-		color: #008972;
+		color: $vd-turquoise-darken-20;
 	}
 
 	.token.atrule,
 	.token.attr-value,
 	.token.keyword {
-		color: #0084b2;
+		color: $vd-cyan-darken-20;
 	}
 
 	.token.operator,
@@ -65,7 +67,7 @@
 	.token.url,
 	.language-css .token.string,
 	.style .token.string {
-		color: #906b15;
+		color: $vd-yellow-darken-40;
 	}
 
 	.token.property,
@@ -75,10 +77,10 @@
 	.token.constant,
 	.token.symbol,
 	.token.deleted {
-		color: #87104d;
+		color: $vd-pink-darken-40;
 	}
 
 	.language-css .token.string {
-		color: #c08f1c;
+		color: $vd-yellow-darken-20;
 	}
 }

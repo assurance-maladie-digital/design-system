@@ -246,7 +246,7 @@
 		// Allow overgrow on mobile
 		max-width: none;
 
-		::v-deep .v-btn__content {
+		:deep(.v-btn__content) {
 			flex-direction: inherit;
 		}
 	}

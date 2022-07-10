@@ -132,7 +132,7 @@
 				opacity: 0 !important;
 			}
 
-			::v-deep .v-btn__content {
+			:deep(.v-btn__content) {
 				flex-shrink: 1 !important;
 			}
 		}

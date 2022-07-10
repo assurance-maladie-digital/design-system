@@ -39,7 +39,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-loading ::v-deep {
+	.vd-header-loading :deep() {
 		.v-skeleton-loader__heading {
 			width: 100%;
 			height: 100%;
@@ -48,7 +48,7 @@
 	}
 
 	// Remove border radius when tile option is activated
-	.vd-header-loading.v-skeleton-loader--tile ::v-deep	{
+	.vd-header-loading.v-skeleton-loader--tile :deep()	{
 		.v-skeleton-loader__heading {
 			border-radius: 0;
 		}
