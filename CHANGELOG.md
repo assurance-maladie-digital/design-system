@@ -41,7 +41,6 @@
 
 - 🐛 **Corrections de bugs**
   - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
-  - **config:** Suppression du fichier `.env` ([#2127](https://github.com/assurance-maladie-digital/design-system/pull/2127))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
@@ -58,6 +57,7 @@
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la configuration du chargement des polices ([#2074](https://github.com/assurance-maladie-digital/design-system/pull/2074)) ([20999ba](https://github.com/assurance-maladie-digital/design-system/commit/20999babeac330d7df9f9e52f2db25e9ee0ff458))
+  - **config:** Mise à jour des variables d'environnement ([#2127](https://github.com/assurance-maladie-digital/design-system/pull/2127))
 
 ### Interne
 
