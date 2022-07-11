@@ -53,6 +53,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Logo',
 				to: '/fondamentaux/logo'
+			},
+			{
+				title: 'Couleurs',
+				to: '/fondamentaux/colors'
 			}
 		]
 	},
