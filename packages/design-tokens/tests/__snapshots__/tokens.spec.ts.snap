@@ -153,7 +153,7 @@ Object {
       "lighten90": "#e5f7f4",
       "lighten97": "#f7fcfc",
     },
-    "warning": "#f0b323",
+    "warning": "#906b15",
     "yellow": Object {
       "base": "#f0b323",
       "darken20": "#c08f1c",

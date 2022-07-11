@@ -166,7 +166,7 @@ export const lightTheme: VuetifyTheme = {
 	error: palette.orange.darken20,
 	info: palette.amBlue.base,
 	success: palette.turquoise.darken20,
-	warning: palette.yellow.base,
+	warning: palette.yellow.darken40,
 	risquePro: palette.brick.base
 };
 
