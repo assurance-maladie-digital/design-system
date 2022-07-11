@@ -25,6 +25,7 @@
 		"@cnamts/eslint-config": "^2.4.0",
 		"@cnamts/form-builder": "^2.4.0",
 		"@cnamts/vue-dot": "^2.4.0",
+		"@docsearch/js": "3.1.1",
 		"@netlify/functions": "1.0.0",
 		"@octokit/core": "4.0.4",
 		"nuxt": "2.15.8",
