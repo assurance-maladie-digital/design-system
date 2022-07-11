@@ -37,10 +37,11 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout de la recherche ([#2126](https://github.com/assurance-maladie-digital/design-system/pull/2126))
+  - **global:** Ajout de la recherche ([#2126](https://github.com/assurance-maladie-digital/design-system/pull/2126)) ([c34e2d3](https://github.com/assurance-maladie-digital/design-system/commit/c34e2d3a67a903613142969f4681b3e0067808a6))
 
 - 🐛 **Corrections de bugs**
   - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
+  - **config:** Suppression du fichier `.env` ([#2127](https://github.com/assurance-maladie-digital/design-system/pull/2127))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
