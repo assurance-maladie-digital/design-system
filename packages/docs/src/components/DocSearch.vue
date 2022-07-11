@@ -57,6 +57,12 @@
 	@Component
 	export default class DocSearch extends Vue {
 		mounted() {
+			console.log(
+				process.env.SEARCH_APP_ID,
+				process.env.SEARCH_INDEX_NAME,
+				process.env.SEARCH_API_KEY
+			);
+
 			docsearch({
 				container: '.docsearch',
 				appId: process.env.SEARCH_APP_ID as string,
