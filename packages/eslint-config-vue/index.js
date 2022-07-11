@@ -52,6 +52,10 @@ module.exports = {
 		// Allow v-html
 		'vue/no-v-html': ['off'],
 
+		'vue/valid-v-slot': ['error', {
+			allowModifiers: true
+		}],
+
 		'@typescript-eslint/explicit-module-boundary-types': ['error', {
 			allowedNames: [
 				'beforeCreate',
