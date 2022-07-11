@@ -6,11 +6,13 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { tokens } from '@cnamts/design-tokens';
+
 	@Component
 	export default class FooterBarOptions extends Vue {
 		vuetifyOptions = {
 			footer: {
-				color: '#f8f9fc'
+				color: tokens.colors.amBlue.lighten97
 			}
 		};
 	}

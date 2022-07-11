@@ -32,8 +32,7 @@
 	},
 	"devDependencies": {
 		"@cnamts/eslint-config": "^2.4.0",
-		"@cnamts/shared": "^2.4.0",
-		"json-to-scss": "1.6.2"
+		"@cnamts/shared": "^2.4.0"
 	},
 	"publishConfig": {
 		"access": "public"

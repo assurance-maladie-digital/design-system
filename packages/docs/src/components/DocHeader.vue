@@ -7,6 +7,8 @@
 		service-title="Design System"
 	>
 		<template #default>
+			<DocSearch />
+
 			<DocReleasesMenu />
 
 			<VBtn
@@ -41,13 +43,15 @@
 
 	import DocReleasesMenu from './DocReleasesMenu.vue';
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
+	import DocSearch from './DocSearch.vue';
 
 	import { mdiGithub } from '@mdi/js';
 
 	@Component({
 		components: {
 			DocReleasesMenu,
-			DocDrawer
+			DocDrawer,
+			DocSearch
 		}
 	})
 	export default class DocHeader extends Vue {
@@ -66,7 +70,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-bar-container ::v-deep .vd-header-bar {
+	.vd-header-bar-container :deep(.vd-header-bar) {
 		z-index: 6;
 	}
 </style>

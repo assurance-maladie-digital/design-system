@@ -107,7 +107,7 @@
 		// the child will be positioned absolutely
 		position: relative;
 
-		::v-deep svg {
+		:deep(svg) {
 			// Make the SVG element take all space
 			// in the parent, with position absolute
 			left: 0;
