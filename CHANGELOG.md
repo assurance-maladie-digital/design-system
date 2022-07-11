@@ -34,13 +34,18 @@
 - ✨ **Nouvelles fonctionnalités**
   - **colors:** Ajout de la nouvelle palette de couleurs ([#2123](https://github.com/assurance-maladie-digital/design-system/pull/2123)) ([98e9a5f](https://github.com/assurance-maladie-digital/design-system/commit/98e9a5f7f1e7822d9702f706bc9afbf69f3ceeaf))
 
+- ♻️ **Refactoring**
+  - **colors:** Mise à jour de la couleur de warning ([#2130](https://github.com/assurance-maladie-digital/design-system/pull/2130)) ([e487eb7](https://github.com/assurance-maladie-digital/design-system/commit/e487eb7ddaf09e46d34d6fa445598823a88719ab))
+
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **global:** Ajout de la recherche ([#2126](https://github.com/assurance-maladie-digital/design-system/pull/2126))
+  - **global:** Ajout de la recherche ([#2126](https://github.com/assurance-maladie-digital/design-system/pull/2126)) ([c34e2d3](https://github.com/assurance-maladie-digital/design-system/commit/c34e2d3a67a903613142969f4681b3e0067808a6))
 
 - 🐛 **Corrections de bugs**
   - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
+  - **UploadWorkflow:** Correction de l'affichage du message de dépréciation ([#2131](https://github.com/assurance-maladie-digital/design-system/pull/2131)) ([c672527](https://github.com/assurance-maladie-digital/design-system/commit/c672527b06aad8c34bf998c74c4d670f6a429b93))
+  - **DocAlert:** Correction de l'espacement du dernier paragraphe ([#2132](https://github.com/assurance-maladie-digital/design-system/pull/2132))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
@@ -57,6 +62,7 @@
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la configuration du chargement des polices ([#2074](https://github.com/assurance-maladie-digital/design-system/pull/2074)) ([20999ba](https://github.com/assurance-maladie-digital/design-system/commit/20999babeac330d7df9f9e52f2db25e9ee0ff458))
+  - **config:** Mise à jour des variables d'environnement ([#2127](https://github.com/assurance-maladie-digital/design-system/pull/2127)) ([0ae612d](https://github.com/assurance-maladie-digital/design-system/commit/0ae612d43fcdf9cda59267b307d6866c086d7fbb))
 
 ### Interne
 

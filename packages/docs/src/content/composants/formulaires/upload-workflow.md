@@ -52,7 +52,9 @@ Vous pouvez laisser l’utilisateur sélectionner le nombre de fichiers qu’il 
 Vous pouvez toujours spécifier la liste des fichiers à sélectionner en utilisant le `v-model`.
 
 <doc-alert type="warning">
+
 Ce mode de fonctionnement est déprécié depuis la [version 2.5.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/v2.5.0) et sera supprimé dans la prochaine version majeure.
+
 </doc-alert>
 
 <doc-example file="upload-workflow/backward-compatible"></doc-example>
