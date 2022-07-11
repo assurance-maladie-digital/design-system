@@ -44,7 +44,8 @@
 
 - 🐛 **Corrections de bugs**
   - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
-  - **UploadWorkflow:** Correction de l'affichage du message de dépréciation ([#2131](https://github.com/assurance-maladie-digital/design-system/pull/2131))
+  - **UploadWorkflow:** Correction de l'affichage du message de dépréciation ([#2131](https://github.com/assurance-maladie-digital/design-system/pull/2131)) ([c672527](https://github.com/assurance-maladie-digital/design-system/commit/c672527b06aad8c34bf998c74c4d670f6a429b93))
+  - **DocAlert:** Correction de l'espacement du dernier paragraphe ([#2132](https://github.com/assurance-maladie-digital/design-system/pull/2132))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
