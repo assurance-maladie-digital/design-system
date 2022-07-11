@@ -34,6 +34,9 @@
 - ✨ **Nouvelles fonctionnalités**
   - **colors:** Ajout de la nouvelle palette de couleurs ([#2123](https://github.com/assurance-maladie-digital/design-system/pull/2123)) ([98e9a5f](https://github.com/assurance-maladie-digital/design-system/commit/98e9a5f7f1e7822d9702f706bc9afbf69f3ceeaf))
 
+- ♻️ **Refactoring**
+  - **colors:** Mise à jour de la couleur de warning ([#2130](https://github.com/assurance-maladie-digital/design-system/pull/2130))
+
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
@@ -57,7 +60,7 @@
 
 - 🔧 **Configuration**
   - **config:** Mise à jour de la configuration du chargement des polices ([#2074](https://github.com/assurance-maladie-digital/design-system/pull/2074)) ([20999ba](https://github.com/assurance-maladie-digital/design-system/commit/20999babeac330d7df9f9e52f2db25e9ee0ff458))
-  - **config:** Mise à jour des variables d'environnement ([#2127](https://github.com/assurance-maladie-digital/design-system/pull/2127))
+  - **config:** Mise à jour des variables d'environnement ([#2127](https://github.com/assurance-maladie-digital/design-system/pull/2127)) ([0ae612d](https://github.com/assurance-maladie-digital/design-system/commit/0ae612d43fcdf9cda59267b307d6866c086d7fbb))
 
 ### Interne
 
