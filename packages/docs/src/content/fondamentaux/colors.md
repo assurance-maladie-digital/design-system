@@ -7,7 +7,7 @@ La palette comprend des couleurs primaires, secondaires et une gamme étendue. P
 Palette - ensemble des couleurs disponibles (nom unique, valeur) chaque teinte est déclinée en plusieurs niveaux de luminosité intensité et thèmes - attributions des couleurs à un usage...
 Pour l’ensemble des règles relatives à l’utilisation de la marque, veuillez vous fier à la charte-graphique.
 
-<doc-colors>
+<doc-colors></doc-colors>
 
 Il est recommandé d’utiliser les déclinaisons présentes ci-dessus. Si nécessaire, des déclinaisons supplémentaires peuvent être ajoutées selon le principe suivant :
 Les déclinaisons claires (lighten-x) sont obtenues en faisant varier l’opacité de la teinte principale (100).
