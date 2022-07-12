@@ -46,6 +46,7 @@
   - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
   - **UploadWorkflow:** Correction de l'affichage du message de dépréciation ([#2131](https://github.com/assurance-maladie-digital/design-system/pull/2131)) ([c672527](https://github.com/assurance-maladie-digital/design-system/commit/c672527b06aad8c34bf998c74c4d670f6a429b93))
   - **DocAlert:** Correction de l'espacement du dernier paragraphe ([#2132](https://github.com/assurance-maladie-digital/design-system/pull/2132)) ([f4d342a](https://github.com/assurance-maladie-digital/design-system/commit/f4d342af8612debf53ea63dfeb105d2c03eaf610))
+  - **CookieBanner:** Correction des liens dans les exemples ([#2147](https://github.com/assurance-maladie-digital/design-system/pull/2147))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
@@ -71,7 +72,7 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de `codecov` vers la `v3.2.3` ([#2031](https://github.com/assurance-maladie-digital/design-system/pull/2031)) ([a90d693](https://github.com/assurance-maladie-digital/design-system/commit/a90d6939541858228b6db175342bf03d7b909309))
-  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.16` ([#2134](https://github.com/assurance-maladie-digital/design-system/pull/2134))
+  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.16` ([#2134](https://github.com/assurance-maladie-digital/design-system/pull/2134)) ([8195d2f](https://github.com/assurance-maladie-digital/design-system/commit/8195d2f6044f97ed7457e0bc0954d2ca5793e2d3))
 
 - ⬆️ **Dépendances**
   - **@vue/eslint-config-standard:** Mise à jour vers la `v7` ([#1991](https://github.com/asurance-maladie-digital/design-system/pull/1991)) ([716fb0b](https://github.com/assurance-maladie-digital/design-system/commit/716fb0b5c9cfce81a2512e959ccb4d903a1cf32e))
