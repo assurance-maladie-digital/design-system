@@ -1,7 +1,7 @@
 <template>
 	<v-container class="container">
 		<v-row
-        		cols="12">
+        	cols="12">
 			<v-col 
         		cols="4"
 				v-for="color in palette" 
@@ -634,9 +634,6 @@
 				]
 			}
 		]
-
-		mounted() {
-		}
 	}
 </script>
 
