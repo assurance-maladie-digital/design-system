@@ -2,7 +2,7 @@
 	<div class="d-flex flex-wrap align-center justify-center">
 		<CookieBanner
 			v-if="active"
-			cookies-route="/composants/cookies-page"
+			cookies-route="/templates/cookies-page"
 			@reject="active = false"
 			@accept="active = false"
 		>
