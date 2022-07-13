@@ -7,6 +7,7 @@ import FooterBar from './FooterBar';
 import FooterWrapper from './FooterWrapper';
 import LangBtn from './LangBtn';
 import HeaderBar from './HeaderBar';
+import NirField from './NirField';
 import NotificationBar from './NotificationBar';
 import PaginatedTable from './PaginatedTable';
 import SubHeader from './SubHeader';
@@ -23,6 +24,7 @@ export const patterns = {
 	FooterWrapper,
 	LangBtn,
 	HeaderBar,
+	NirField,
 	NotificationBar,
 	PaginatedTable,
 	SubHeader,

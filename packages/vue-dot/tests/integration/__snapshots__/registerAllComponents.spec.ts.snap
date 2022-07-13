@@ -22,6 +22,7 @@ Array [
   "HeaderLoading",
   "LangBtn",
   "Logo",
+  "NirField",
   "NotificationBar",
   "PageContainer",
   "PaginatedTable",

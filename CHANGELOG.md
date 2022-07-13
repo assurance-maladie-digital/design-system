@@ -6,6 +6,7 @@
   - **UploadWorkflow:** Ajout du mode sélection libre ([#2057](https://github.com/assurance-maladie-digital/design-system/pull/2057)) ([f5a5cf7](https://github.com/assurance-maladie-digital/design-system/commit/f5a5cf74b53a71ed85aaa5407ec142a97fcda67d))
   - **HeaderBar:** Ajout d'options de personnalisation ([#2105](https://github.com/assurance-maladie-digital/design-system/pull/2105)) ([64d37aa](https://github.com/assurance-maladie-digital/design-system/commit/64d37aa0072b8a96e22fb1a4d91f5c8b6cbdbae9))
   - **HeaderBar:** Ajout du slot `navigation-bar-secondary-content` ([#2113](https://github.com/assurance-maladie-digital/design-system/pull/2113)) ([441906f](https://github.com/assurance-maladie-digital/design-system/commit/441906fd63f7066278cbca592da5cf10c068f125))
+  - **NirField:** Ajout d'un nouveau composant ([#2151](https://github.com/assurance-maladie-digital/design-system/pull/2151))
 
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du parsing de la date ([#2095](https://github.com/assurance-maladie-digital/design-system/pull/2095)) ([28d713c](https://github.com/assurance-maladie-digital/design-system/commit/28d713c139f80c2998ec5d605244837870146786))
@@ -46,7 +47,7 @@
   - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
   - **UploadWorkflow:** Correction de l'affichage du message de dépréciation ([#2131](https://github.com/assurance-maladie-digital/design-system/pull/2131)) ([c672527](https://github.com/assurance-maladie-digital/design-system/commit/c672527b06aad8c34bf998c74c4d670f6a429b93))
   - **DocAlert:** Correction de l'espacement du dernier paragraphe ([#2132](https://github.com/assurance-maladie-digital/design-system/pull/2132)) ([f4d342a](https://github.com/assurance-maladie-digital/design-system/commit/f4d342af8612debf53ea63dfeb105d2c03eaf610))
-  - **CookieBanner:** Correction des liens dans les exemples ([#2147](https://github.com/assurance-maladie-digital/design-system/pull/2147))
+  - **CookieBanner:** Correction des liens dans les exemples ([#2147](https://github.com/assurance-maladie-digital/design-system/pull/2147)) ([ae77e56](https://github.com/assurance-maladie-digital/design-system/commit/ae77e561945cee36a32a2735836c6c191f2a4174))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
