@@ -8,8 +8,3 @@ Palette - ensemble des couleurs disponibles (nom unique, valeur) chaque teinte e
 Pour l’ensemble des règles relatives à l’utilisation de la marque, veuillez vous fier à la charte-graphique.
 
 <doc-colors></doc-colors>
-
-Il est recommandé d’utiliser les déclinaisons présentes ci-dessus. Si nécessaire, des déclinaisons supplémentaires peuvent être ajoutées selon le principe suivant :
-Les déclinaisons claires (lighten-x) sont obtenues en faisant varier l’opacité de la teinte principale (100).
-Les déclinaisons foncées (darken-x) sont obtenues en ajoutant un calque noir avec une opacité variable (ex. Darken-110 = teinte principale + calque noir 10% opacité).
-Pour une utilisation sur un fond autre que blanc, convertir les couleurs (grâce à l’outil pipette) afin d’obtenir une couleur opaque indiquée par un code hexadécimal.
