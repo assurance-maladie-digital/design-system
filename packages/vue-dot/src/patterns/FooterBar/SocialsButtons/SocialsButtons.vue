@@ -7,7 +7,7 @@
 			no-gutters
 		>
 			<span
-				class="follow-us-text mr-3"
+				class="mr-3 subtitle-2 primary--text"
 			>
 				Suivez-nous
 			</span>
@@ -38,16 +38,12 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { Socials } from './types';
-	import { mdiTwitter, mdiLinkedin } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
 			customSocialsList: {
 				type: Array as PropType<Socials[]>,
-				default: () => [
-					{ icon: mdiLinkedin, href: 'https://www.linkedin.com/company/assurance-maladie/' },
-					{ icon: mdiTwitter, href: 'https://twitter.com/Assur_Maladie' }
-				]
+				default: null
 			}
 		}
 	});

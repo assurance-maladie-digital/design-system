@@ -15,8 +15,7 @@ Par défaut le footer est en mode simplifié.
 
 #### Mode complexe
 
-Activer le mode complexe en ajoutant l'option `complex-mode`.
-Par default un slot le mode complexe propose un slot unique dans sa partie centrale.
+Le mode complexe du footer est actif lorsque le slot par défaut est utilisé.
 
 <doc-example file="footer-bar/slots"></doc-example>
 
@@ -27,17 +26,9 @@ Il faut pour cela transmettre au composant un tableau d'objets composés d'une i
 
 <doc-example file="footer-bar/socials"></doc-example>
 
-#### Personnalisation du logo par défaut
-
-Les option du composant logo sont accessible depuis le footer.
-Il est dont possible d'utiliser `logo-hide-signature`, `logo-hide-organism` et `logo-risque-pro` pour personnaliser le logo de l'assurance maladie.
-
-<doc-example file="footer-bar/logo"></doc-example>
-
-#### Masquer ou remplacer une partie
+#### Masquer une partie
 
 Le logo et les réseaux sociaux peuvent être supprimer en utilisant les options `hide-logo` ou `hide-socials`.
-La partie centrale peut être masquée en mettant `0` au nombre de slot de cette manière : `:centerSlotsNumber="0"`.
 
 <doc-example file="footer-bar/remove-logo-socials"></doc-example>
 
@@ -62,18 +53,11 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Foote
 
 <doc-example file="footer-bar/options"></doc-example>
 
-### Slots
+### Slot par défaut
 
 Vous pouvez utiliser le slot `default` pour ajouter du contenu dans la partie centrale du footer.
 
 <doc-example file="footer-bar/slots"></doc-example>
-
-#### Slots multiples
-
-Vous pouvez séparer le slot principal en plusieurs slots grâce à l'option `centerSlotsNumber`.
-Les templates sont accessibles en ajoutant leur numéro au préfixe `#center-slot-`.
-
-<doc-example file="footer-bar/multiple-slots"></doc-example>
 
 #### Slots logo et réseaux sociaux
 

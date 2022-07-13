@@ -1,7 +1,5 @@
 <template>
 	<FooterBar 
-		complex-mode 
-		:centerSlotsNumber="0"
 		:custom-socials-list="socialsList">
 		<template #default>
 			<p class="grey--text text--darken-1 my-3 mx-4">

@@ -35,18 +35,6 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers la *Déclaration d’accessibilité*.'
 			},
 			{
-				name: 'complex-mode',
-				type: 'boolean',
-				default: false,
-				description: 'Active le mode complexe du footer.'
-			},
-			{
-				name: 'center-slots-number',
-				type: 'number',
-				default: 1,
-				description: 'Divise le slot principal du footer en plusieurs slots.'
-			},
-			{
 				name: 'hide-sitemap-link',
 				type: 'boolean',
 				default: false,
@@ -81,24 +69,6 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Masque le bloc des réseaux sociaux.'
-			},
-			{
-				name: 'logo-hide-signature',
-				type: 'boolean',
-				default: false,
-				description: 'Masque la signature du logo.'
-			},
-			{
-				name: 'logo-hide-organism',
-				type: 'boolean',
-				default: false,
-				description: 'Masque le nom de l\'organisme.'
-			},
-			{
-				name: 'logo-risque-pro',
-				type: 'boolean',
-				default: false,
-				description: 'Affiche le sous titre "risque pro" du logo.'
 			},
 			{
 				name: 'version',
@@ -142,10 +112,6 @@ export const api: Api = {
 				name: 'default',
 				description: 'Slot pour ajouter du contenu dans la partie centrale du footer.'
 			},
-			{
-				name: 'center-slot-1',
-				description: 'Premier slot de la partie centrale du footer. Utiliser center-slot-2 pour le deuxieme slot etc.'
-			}
 		]
 	}
 };

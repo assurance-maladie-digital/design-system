@@ -9,10 +9,11 @@
 	>
 		<v-container>
 			<VIcon
+				v-if="complexMode"
 				class="go-top"
 				small
-				color="#0c4199"
-				@click="goTop"
+				color="primary"
+				@click="$vuetify.goTo(0, 0)"
 			>
 				{{ arrowTopIcon }}
 			</VIcon>
@@ -29,10 +30,7 @@
 					>
 						<Logo
 							v-if="!hideLogo"
-							class="default-logo"
-							:hide-organism="logoHideOrganism"
-							:hide-signature="logoHideSignature"
-							:risque-pro="logoRisquePro"
+							class="default-logo pt-3 ml-n5"
 						/>
 					</slot>
 					<v-col
@@ -50,30 +48,14 @@
 
 			<VDivider v-if="complexMode" />
 
-			<v-row
-				v-if="complexMode && centerSlotsNumber"
+			<div
 				class="mb-5 mt-5"
 				no-gutters
 			>
-				<v-col
-					v-for="n in limitedSlotsNumber"
-					:key="n"
-				>
-					<div
-						class="m-2"
-					>
-						<slot
-							v-if="limitedSlotsNumber > 1"
-							:name="`center-slot-${n}`"
-						>
-							{{ n }}
-						</slot>
-						<slot />
-					</div>
-				</v-col>
-			</v-row>
+				<slot />
+			</div>
 
-			<VDivider v-if="complexMode && centerSlotsNumber" />
+			<VDivider v-if="complexMode" />
 
 			<v-row
 				:class="{ 'mt-2 caption': complexMode }"
@@ -181,26 +163,6 @@
 				type: String,
 				default: undefined
 			},
-			centerSlotsNumber: {
-				type: Number,
-				default: 1
-			},
-			complexMode: {
-				type: Boolean,
-				default: false
-			},
-			logoHideSignature: {
-				type: Boolean,
-				default: false
-			},
-			logoHideOrganism: {
-				type: Boolean,
-				default: false
-			},
-			logoRisquePro: {
-				type: Boolean,
-				default: false
-			},
 			hideSocials: {
 				type: Boolean,
 				default: false
@@ -221,7 +183,7 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component<FooterBar>({
+	@Component({
 		inheritAttrs: false,
 		components: {
 			SocialsButtons
@@ -243,54 +205,33 @@
 			return locales.a11yLabel(complianceLabel);
 		}
 
-		get limitedSlotsNumber(): number {
-			let number = this.centerSlotsNumber;
-
-			if (number > 5) {
-				number = 5;
-			}
-
-			return number;
-		}
-		goTop(): void {
-			window.scrollTo(0, 0);
+		get complexMode(): boolean {
+			return this.$slots.default ? true : false;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-footer-bar ::v-deep {
-		a {
-			color: inherit;
-			transition: .15s;
-			text-decoration: none;
-			padding-top: 1px; // Add top padding to account for bottom border
-			border-bottom: 1px solid transparent;
+@import '@cnamts/design-tokens/dist/tokens';
 
-			&:hover,
-			&:focus {
-				border-color: currentColor;
-			}
-		}
+.vd-footer-bar ::v-deep {
+	a {
+		transition: .15s;
+		text-decoration: none;
+		padding-top: 1px; // Add top padding to account for bottom border
+		border-bottom: 1px solid transparent;
 
-		p {
-			padding: 1px 0;
-		}
-		.follow-us-text {
-			color: #0c4199;
-			font-size: 11px;
-			font-weight: 550;
-		}
-		.go-top{
-			position: absolute;
-			top: 30px; right: 30px;
-			&:hover {
-				color: #0c4199;
-			}
-		}
-		.default-logo {
-			padding: 5px 0 10px 0;
-			margin-left: -25px;
+		&:hover,
+		&:focus {
+			border-color: currentColor;
 		}
 	}
+	.go-top {
+		position: absolute;
+		top: 30px; right: 30px;
+		&:hover {
+			color: $vd-primary;
+		}
+	}
+}
 </style>

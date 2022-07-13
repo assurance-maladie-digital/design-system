@@ -1,7 +1,5 @@
 <template>
 	<FooterBar 
-		complex-mode
-		:centerSlotsNumber="0"
 		hide-socials
 		>
 	</FooterBar>
