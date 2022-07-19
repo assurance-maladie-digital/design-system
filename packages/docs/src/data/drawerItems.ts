@@ -25,6 +25,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/installation'
 			},
 			{
+				title: 'Tests unitaires',
+				to: '/demarrer/tests-unitaires'
+			},
+			{
 				title: 'Roadmap',
 				to: '/demarrer/roadmap'
 			},
