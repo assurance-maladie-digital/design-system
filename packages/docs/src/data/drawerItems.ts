@@ -56,7 +56,7 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'Couleurs',
-				to: '/fondamentaux/colors'
+				to: '/fondamentaux/couleurs'
 			}
 		]
 	},
