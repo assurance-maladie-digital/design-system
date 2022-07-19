@@ -29,7 +29,7 @@ export const api: Api = {
 			{
 				name: 'filter-list',
 				description: 'Événement émis lorsque qu’un filtre est modifié.',
-				value: `Field[] | null`
+				value: `Field[] | null`
 			}
 		]
 	}

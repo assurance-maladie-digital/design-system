@@ -3,7 +3,7 @@
 		<CookieBanner
 			v-if="active"
 			:vuetify-options="vuetifyOptions"
-			cookies-route="/composants/cookies-page"
+			cookies-route="/templates/cookies-page"
 			@reject="active = false"
 			@accept="active = false"
 		/>
