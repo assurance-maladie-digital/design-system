@@ -58,9 +58,6 @@
 
 		locales = locales;
 
-		openLink(link: string): void {
-			window.open(link, '_blank');
-		}
 		get isMobile(): boolean {
 			return this.$vuetify.breakpoint.smAndDown;
 		}

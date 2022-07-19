@@ -58,7 +58,7 @@
 			<VDivider v-if="complexMode" />
 
 			<VRow
-				class="links"
+				class="vd-links"
 				:class="{ 'mt-2 caption': complexMode }"
 				justify="center"
 			>
@@ -222,7 +222,7 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
 .vd-footer-bar ::v-deep {
-	.links {
+	.vd-links {
 		a {
 			transition: .15s;
 			text-decoration: none;

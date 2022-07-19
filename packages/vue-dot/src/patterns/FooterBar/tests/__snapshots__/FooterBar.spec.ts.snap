@@ -2,15 +2,13 @@
 
 exports[`FooterBar renders correctly 1`] = `
 <vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center w-100">
-  <v-container-stub tag="div">
-    <vicon-stub small="" color="#0c4199" class="go-top">
-      M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z
-    </vicon-stub>
+  <vcontainer-stub tag="div">
     <!---->
     <!---->
     <!---->
+    <div no-gutters="" class="mb-5 mt-5"></div>
     <!---->
-    <v-row-stub tag="div" justify="center" class="">
+    <vrow-stub tag="div" justify="center" class="vd-links">
       <routerlink-stub to="[object Object]" class="my-3 mx-4">
         Plan du site
       </routerlink-stub>
@@ -24,7 +22,7 @@ exports[`FooterBar renders correctly 1`] = `
         Accessibilité&nbsp;: non conforme
       </routerlink-stub>
       <!---->
-    </v-row-stub>
-  </v-container-stub>
+    </vrow-stub>
+  </vcontainer-stub>
 </vfooter-stub>
 `;
