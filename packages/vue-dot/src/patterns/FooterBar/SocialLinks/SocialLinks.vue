@@ -1,48 +1,51 @@
 <template>
-	<div name="socials">
-		<v-col
-			cols="12"
-			:class="isMobile ? '' : 'd-flex justify-end'"
-			style="padding: 0"
+	<div name="vd-social-links">
+		<VCol
+			cols="12 pa-0"
+			:class="{
+				'd-flex justify-end': isMobile
+			}"
 			no-gutters
 		>
 			<span
 				class="mr-3 subtitle-2 primary--text"
 			>
-				Suivez-nous
+				{{ locales.followUs }}
 			</span>
-		</v-col>
-		<v-col
+		</VCol>
+		<VCol
 			cols="12"
 			:class="isMobile ? '' : 'd-flex justify-end'"
 			style="padding: 0; margin-top: 2px"
 		>
 			<VBtn
-				v-for="social in customSocialsList"
+				v-for="social in links"
 				:key="social.index"
 				text
 				icon
 				color="grey darken-2"
-				@click="openLink(social.link)"
+				:href="social.href"
+				target="_blank"
 			>
 				<VIcon>
 					{{ social.icon }}
 				</VIcon>
 			</VBtn>
-		</v-col>
+		</VCol>
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
+	import { locales } from '../locales';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { Socials } from './types';
+	import { SocialLink } from './types';
 
 	const Props = Vue.extend({
 		props: {
-			customSocialsList: {
-				type: Array as PropType<Socials[]>,
+			links: {
+				type: Array as PropType<SocialLink[]>,
 				default: null
 			}
 		}
@@ -51,7 +54,9 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class FooterBar extends MixinsDeclaration {
+	export default class SocialLinks extends MixinsDeclaration {
+
+		locales = locales;
 
 		openLink(link: string): void {
 			window.open(link, '_blank');

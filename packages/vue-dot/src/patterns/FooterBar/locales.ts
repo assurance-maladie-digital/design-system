@@ -5,6 +5,7 @@ export const locales = {
 	cguLabel: 'Conditions générales d’utilisation',
 	legalNoticeLabel: 'Mentions légales',
 	versionLabel: 'Version',
+	followUs: 'Suivez-nous',
 	[A11yComplianceEnum.NON_COMPLIANT]: 'non conforme',
 	[A11yComplianceEnum.PARTIALLY_COMPLIANT]: 'partiellement conforme',
 	[A11yComplianceEnum.FULLY_COMPLIANT]: 'totalement conforme',

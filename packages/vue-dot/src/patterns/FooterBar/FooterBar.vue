@@ -7,7 +7,7 @@
 		min-height="40px"
 		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center w-100"
 	>
-		<v-container>
+		<VContainer>
 			<VIcon
 				v-if="complexMode"
 				class="go-top"
@@ -17,12 +17,12 @@
 			>
 				{{ arrowTopIcon }}
 			</VIcon>
-			<v-row
+			<VRow
 				v-if="complexMode"
 				no-gutters
 				class="mb-2"
 			>
-				<v-col
+				<VCol
 					class="d-sm-flex justify-space-between"
 				>
 					<slot
@@ -33,18 +33,18 @@
 							class="default-logo pt-3 ml-n5"
 						/>
 					</slot>
-					<v-col
+					<VCol
 						class="pr-4"
 					>
 						<slot name="socials">
-							<SocialsButtons
+							<SocialLinks
 								v-if="!hideSocials"
-								:custom-socials-list="customSocialsList"
+								:links="links"
 							/>
 						</slot>
-					</v-col>
-				</v-col>
-			</v-row>
+					</VCol>
+				</VCol>
+			</VRow>
 
 			<VDivider v-if="complexMode" />
 
@@ -57,7 +57,8 @@
 
 			<VDivider v-if="complexMode" />
 
-			<v-row
+			<VRow
+				class="links"
 				:class="{ 'mt-2 caption': complexMode }"
 				justify="center"
 			>
@@ -99,15 +100,15 @@
 				>
 					{{ locales.versionLabel }} {{ version }}
 				</p>
-			</v-row>
-		</v-container>
+			</VRow>
+		</VContainer>
 	</VFooter>
 </template>
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import SocialsButtons from './SocialsButtons';
+	import SocialLinks from './SocialLinks';
 
 	import { RawLocation } from 'vue-router';
 
@@ -171,11 +172,17 @@
 				type: Boolean,
 				default: false
 			},
-			customSocialsList: {
+			links: {
 				type: Array,
 				default: () => [
-					{ icon: mdiLinkedin, href: 'https://www.linkedin.com/company/assurance-maladie/' },
-					{ icon: mdiTwitter, href: 'https://twitter.com/Assur_Maladie' }
+					{
+						icon: mdiLinkedin,
+						href: 'https://www.linkedin.com/company/assurance-maladie/'
+					},
+					{
+						icon: mdiTwitter,
+						href: 'https://twitter.com/Assur_Maladie'
+					}
 				]
 			}
 		}
@@ -186,7 +193,7 @@
 	@Component({
 		inheritAttrs: false,
 		components: {
-			SocialsButtons
+			SocialLinks
 		}
 	})
 	export default class FooterBar extends MixinsDeclaration {
@@ -215,15 +222,17 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
 .vd-footer-bar ::v-deep {
-	a {
-		transition: .15s;
-		text-decoration: none;
-		padding-top: 1px; // Add top padding to account for bottom border
-		border-bottom: 1px solid transparent;
+	.links {
+		a {
+			transition: .15s;
+			text-decoration: none;
+			padding-top: 1px; // Add top padding to account for bottom border
+			border-bottom: 1px solid transparent;
 
-		&:hover,
-		&:focus {
-			border-color: currentColor;
+			&:hover,
+			&:focus {
+				border-color: currentColor;
+			}
 		}
 	}
 	.go-top {

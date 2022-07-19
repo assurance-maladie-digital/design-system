@@ -1,4 +1,4 @@
-export interface Socials {
+export interface SocialLink {
 	icon: string;
 	href: string;
 }
