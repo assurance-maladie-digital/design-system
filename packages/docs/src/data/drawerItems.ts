@@ -360,7 +360,7 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'Tests unitaires',
-				to: '/demarrer/tests-unitaires'
+				to: '/guides/tests-unitaires'
 			},
 			{
 				title: 'Gestion des événements',
