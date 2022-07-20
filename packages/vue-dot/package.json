@@ -45,7 +45,7 @@
 	"peerDependencies": {
 		"@cnamts/design-tokens": "^2.0.0-beta.10",
 		"@cnamts/form-builder": "^2.0.0-beta.10",
-		"@mdi/js": "^5.0.0 || ^6.0.0",
+		"@mdi/js": "^5.0.0 || ^6.0.0 || ^7.0.0",
 		"axios": "^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0",
 		"dayjs": "^1.8.0",
 		"languages": "^0.1.3",
