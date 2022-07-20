@@ -375,6 +375,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
+				title: 'Tests e2e',
+				to: '/guides/tests-e2e'
+			},
+			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
 			},
