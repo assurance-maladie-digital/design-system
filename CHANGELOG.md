@@ -42,7 +42,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **global:** Ajout de la recherche ([#2126](https://github.com/assurance-maladie-digital/design-system/pull/2126)) ([c34e2d3](https://github.com/assurance-maladie-digital/design-system/commit/c34e2d3a67a903613142969f4681b3e0067808a6))
-  - **global:** Ajout de la page *Couleurs* ([#2135](https://github.com/assurance-maladie-digital/design-system/pull/2135))
+  - **global:** Ajout de la page *Couleurs* ([#2135](https://github.com/assurance-maladie-digital/design-system/pull/2135)) ([ef6b6c5](https://github.com/assurance-maladie-digital/design-system/commit/ef6b6c5250305eee8415f921ec2cc7f28ffaaf95))
 
 - 🐛 **Corrections de bugs**
   - **DocHeader:** Correction de la valeur de la propriété `z-index` ([#2102](https://github.com/assurance-maladie-digital/design-system/pull/2102)) ([38fd08c](https://github.com/assurance-maladie-digital/design-system/commit/38fd08ce264254fbaf91dca308b5e1dc79d3648c))
@@ -100,7 +100,7 @@
   - **vue:** Mise à jour vers la `v2.7.4` ([#2109](https://github.com/assurance-maladie-digital/design-system/pull/2109)) ([5d74462](https://github.com/assurance-maladie-digital/design-system/commit/5d744623df96eebeccdc307cdeb1144fd24f699e))
   - **core-js:** Mise à jour vers la `v3.23.4` ([#2122](//github.com/assurance-maladie-digital/design-system/pull/2122)) ([4b7675b](https://github.com/assurance-maladie-digital/design-system/commit/4b7675b6e265fbba3b5a13cf65929fd936abd530))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.30.6` ([#2128](https://github.com/assurance-maladie-digital/design-system/pull/2128)) ([d45e03e](https://github.com/assurance-maladie-digital/design-system/commit/d45e03e50778b44ff55de2a70810459b1b9ce9b3))
-  - **netlify-cli:** Mise à jour vers la `v10.8.0` ([#2129](https://github.com/assurance-maladie-digital/design-system/pull/2129)) ([51360fe](https://github.com/assurance-maladie-digital/design-system/commit/51360feb51d19b2422faf13f6e9bb0a3333a79bf))
+  - **netlify-cli:** Mise à jour vers la `v10.10.2` ([#2149](https://github.com/assurance-maladie-digital/design-system/pull/2149))
 
 ## v2.4.0
 
