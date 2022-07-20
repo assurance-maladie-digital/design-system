@@ -25,10 +25,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/demarrer/installation'
 			},
 			{
-				title: 'Tests unitaires',
-				to: '/demarrer/tests-unitaires'
-			},
-			{
 				title: 'Roadmap',
 				to: '/demarrer/roadmap'
 			},
@@ -361,6 +357,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Variables d’environnement',
 				to: '/guides/variables-environnement'
+			},
+			{
+				title: 'Tests unitaires',
+				to: '/demarrer/tests-unitaires'
 			},
 			{
 				title: 'Gestion des événements',
