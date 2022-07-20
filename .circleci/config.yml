@@ -32,8 +32,8 @@ aliases:
     command: yarn build && yarn generate
     environment:
       NODE_OPTIONS: --max_old_space_size=4096
-      CI: true
-      CIRCLE_NODE_TOTAL: 4
+      CI: "true"
+      CIRCLE_NODE_TOTAL: 0
 
 jobs:
   install:
