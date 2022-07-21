@@ -59,6 +59,10 @@
 					:show-menu-btn="showNavBarMenuBtn"
 				>
 					<slot name="navigation-bar-content" />
+
+					<template #navigation-bar-secondary-content>
+						<slot name="navigation-bar-secondary-content" />
+					</template>
 				</HeaderNavigationBar>
 			</template>
 		</VAppBar>
@@ -218,12 +222,12 @@
 		z-index: 1;
 	}
 
-	.vd-header-bar ::v-deep .v-toolbar__content {
+	.vd-header-bar :deep(.v-toolbar__content) {
 		display: block;
 		padding: 0;
 	}
 
-	.vd-header-menu-btn ::v-deep {
+	.vd-header-menu-btn :deep() {
 		.v-btn__content {
 			flex-direction: column;
 		}

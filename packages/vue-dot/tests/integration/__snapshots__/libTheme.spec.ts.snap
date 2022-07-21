@@ -23,6 +23,7 @@ Object {
     "HeaderLoading",
     "LangBtn",
     "Logo",
+    "NirField",
     "NotificationBar",
     "PageContainer",
     "PaginatedTable",

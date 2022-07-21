@@ -20,6 +20,8 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	import { tokens } from '@cnamts/design-tokens';
+
 	import { DataTableHeader } from 'vuetify';
 
 	@Component
@@ -28,7 +30,7 @@
 
 		vuetifyOptions = {
 			toolbar: {
-				color: '#f8f9fc'
+				color: tokens.colors.amBlue.lighten97
 			},
 			textField: {
 				outlined: true,

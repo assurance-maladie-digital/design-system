@@ -1,21 +1,24 @@
 <template>
 	<HeaderBar
+		:service-title="serviceTitle"
 		:mobile-version="mobileVersion"
 		app
 		fixed
 		clipped-left
-		service-title="Design System"
 	>
 		<template #default>
+			<DocSearch class="mr-2 mr-md-6" />
+
 			<DocReleasesMenu />
 
 			<VBtn
+				v-if="!$vuetify.breakpoint.xs"
 				icon
 				aria-label="GitHub"
 				href="https://github.com/assurance-maladie-digital/design-system"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text--primary ml-2 mr-4 mr-lg-0"
+				class="text--primary mr-2 mr-lg-0"
 			>
 				<VIcon>
 					{{ githubIcon }}
@@ -41,17 +44,23 @@
 
 	import DocReleasesMenu from './DocReleasesMenu.vue';
 	import DocDrawer from '../components/drawer/DocDrawer.vue';
+	import DocSearch from './DocSearch.vue';
 
 	import { mdiGithub } from '@mdi/js';
 
 	@Component({
 		components: {
 			DocReleasesMenu,
-			DocDrawer
+			DocDrawer,
+			DocSearch
 		}
 	})
 	export default class DocHeader extends Vue {
 		githubIcon = mdiGithub;
+
+		get serviceTitle(): string | undefined {
+			return this.$vuetify.breakpoint.xs ? undefined : 'Design System';
+		}
 
 		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.mdAndDown;
@@ -66,7 +75,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-bar-container ::v-deep .vd-header-bar {
+	.vd-header-bar-container :deep(.vd-header-bar) {
 		z-index: 6;
 	}
 </style>

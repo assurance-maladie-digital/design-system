@@ -221,8 +221,7 @@
 <style lang="scss" scoped>
 @import '@cnamts/design-tokens/dist/tokens';
 
-.vd-footer-bar ::v-deep {
-	.vd-links {
+	.vd-footer-bar :deep() {
 		a {
 			transition: .15s;
 			text-decoration: none;
@@ -242,5 +241,4 @@
 			color: $vd-primary;
 		}
 	}
-}
 </style>

@@ -94,7 +94,7 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.vd-period-field ::v-deep .vd-period-field-picker {
+	.vd-period-field :deep(.vd-period-field-picker) {
 		max-width: $vd-input-medium;
 	}
 </style>

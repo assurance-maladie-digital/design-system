@@ -131,7 +131,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-download-btn ::v-deep {
+	.vd-download-btn :deep() {
 		.v-btn__content {
 			flex-wrap: wrap;
 		}

@@ -54,7 +54,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-markdown ::v-deep p {
+	.v-markdown :deep(p) {
 		margin-bottom: 0 !important;
 	}
 </style>

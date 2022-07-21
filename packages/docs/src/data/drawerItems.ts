@@ -53,6 +53,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Logo',
 				to: '/fondamentaux/logo'
+			},
+			{
+				title: 'Couleurs',
+				to: '/fondamentaux/couleurs'
 			}
 		]
 	},
@@ -146,6 +150,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'FileUpload',
 						to: '/composants/formulaires/file-upload'
+					},
+					{
+						title: 'NirField',
+						to: '/composants/formulaires/nir-field'
 					},
 					{
 						title: 'UploadWorkflow',
@@ -377,6 +385,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Authentification avec token',
 				to: '/guides/authentification-token'
+			},
+			{
+				title: 'Utilisation des icônes',
+				to: '/guides/utilisation-icones'
 			}
 		]
 	},

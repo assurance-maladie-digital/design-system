@@ -119,12 +119,12 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-page-container ::v-deep > .v-sheet {
+	.vd-page-container > :deep(.v-sheet) {
 		display: flex;
 		flex-direction: column;
 	}
 
-	.doc-heading ::v-deep p {
+	.doc-heading :deep(p) {
 		margin-bottom: 0;
 	}
 </style>
