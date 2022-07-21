@@ -4,122 +4,110 @@
 			...options.footer,
 			...$attrs
 		}"
+		:class="{ 'py-7 px-14': complexMode }"
 		min-height="40px"
-		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center w-100"
+		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
-		<VContainer>
-			<VIcon
+		<div
+			v-if="complexMode"
+			class="d-flex align-center mb-6"
+		>
+			<slot name="logo">
+				<Logo v-if="!hideLogo" />
+			</slot>
+
+			<VSpacer />
+
+			<slot name="socials">
+				<SocialLinks
+					v-if="!hideSocials"
+					:links="links"
+					class="mr-8"
+				/>
+			</slot>
+
+			<VBtn
 				v-if="complexMode"
-				class="go-top"
 				small
+				icon
 				color="primary"
 				@click="$vuetify.goTo(0, 0)"
 			>
-				{{ arrowTopIcon }}
-			</VIcon>
-			<VRow
-				v-if="complexMode"
-				no-gutters
-				class="mb-2"
+				<VIcon>
+					{{ arrowTopIcon }}
+				</VIcon>
+			</VBtn>
+		</div>
+
+		<VDivider v-if="complexMode" />
+
+		<slot />
+
+		<VDivider
+			v-if="complexMode"
+			class="mb-6"
+		/>
+
+		<div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n4">
+			<RouterLink
+				v-if="!hideSitemapLink"
+				v-bind="options.routerLink"
+				:to="sitemapRoute"
 			>
-				<VCol
-					class="d-sm-flex justify-space-between"
-				>
-					<slot
-						name="logo"
-					>
-						<Logo
-							v-if="!hideLogo"
-							class="default-logo pt-3 ml-n5"
-						/>
-					</slot>
-					<VCol
-						class="pr-4"
-					>
-						<slot name="socials">
-							<SocialLinks
-								v-if="!hideSocials"
-								:links="links"
-							/>
-						</slot>
-					</VCol>
-				</VCol>
-			</VRow>
+				{{ locales.sitemapLabel }}
+			</RouterLink>
 
-			<VDivider v-if="complexMode" />
-
-			<div
-				class="mb-5 mt-5"
-				no-gutters
+			<RouterLink
+				v-if="!hideCguLink"
+				v-bind="options.routerLink"
+				:to="cguRoute"
 			>
-				<slot />
-			</div>
+				{{ locales.cguLabel }}
+			</RouterLink>
 
-			<VDivider v-if="complexMode" />
-
-			<VRow
-				class="vd-links"
-				:class="{ 'mt-2 caption': complexMode }"
-				justify="center"
+			<RouterLink
+				v-if="!hideLegalNoticeLink"
+				v-bind="options.routerLink"
+				:to="legalNoticeRoute"
 			>
-				<RouterLink
-					v-if="!hideSitemapLink"
-					:to="sitemapRoute"
-					class="my-3 mx-4"
-				>
-					{{ locales.sitemapLabel }}
-				</RouterLink>
+				{{ locales.legalNoticeLabel }}
+			</RouterLink>
 
-				<RouterLink
-					v-if="!hideCguLink"
-					:to="cguRoute"
-					class="my-3 mx-4"
-				>
-					{{ locales.cguLabel }}
-				</RouterLink>
+			<RouterLink
+				v-if="!hideA11yLink && a11yComplianceLabel"
+				v-bind="options.routerLink"
+				:to="a11yStatementRoute"
+			>
+				{{ a11yComplianceLabel }}
+			</RouterLink>
 
-				<RouterLink
-					v-if="!hideLegalNoticeLink"
-					:to="legalNoticeRoute"
-					class="my-3 mx-4"
-				>
-					{{ locales.legalNoticeLabel }}
-				</RouterLink>
-
-				<RouterLink
-					v-if="!hideA11yLink && a11yComplianceLabel"
-					:to="a11yStatementRoute"
-					class="my-3 mx-4"
-				>
-					{{ a11yComplianceLabel }}
-				</RouterLink>
-
-				<p
-					v-if="version"
-					class="grey--text text--darken-1 my-3 mx-4"
-				>
-					{{ locales.versionLabel }} {{ version }}
-				</p>
-			</VRow>
-		</VContainer>
+			<p
+				v-if="version"
+				class="text--secondary my-3 mx-4"
+			>
+				{{ locales.versionLabel }} {{ version }}
+			</p>
+		</div>
 	</VFooter>
 </template>
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import SocialLinks from './SocialLinks';
 
 	import { RawLocation } from 'vue-router';
+
+	import SocialLinks from './SocialLinks';
 
 	import { config } from './config';
 	import { locales } from './locales';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
-	import { mdiArrowUp, mdiTwitter, mdiLinkedin } from '@mdi/js';
 
 	import { propValidator } from '../../helpers/propValidator';
 
 	import { customizable } from '../../mixins/customizable';
+
+	import { mdiArrowUp, mdiTwitter, mdiLinkedin } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -197,10 +185,9 @@
 		}
 	})
 	export default class FooterBar extends MixinsDeclaration {
-		// icon list
-		arrowTopIcon = mdiArrowUp;
-
 		locales = locales;
+
+		arrowTopIcon = mdiArrowUp;
 
 		get a11yComplianceLabel(): string | null {
 			const complianceLabel = locales[this.a11yCompliance];
@@ -219,9 +206,10 @@
 </script>
 
 <style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
-	.vd-footer-bar :deep() {
+	// Use deep selector to style user content as well
+	.vd-footer-bar-links :deep() {
 		a {
 			transition: .15s;
 			text-decoration: none;
@@ -232,13 +220,6 @@
 			&:focus {
 				border-color: currentColor;
 			}
-		}
-	}
-	.go-top {
-		position: absolute;
-		top: 30px; right: 30px;
-		&:hover {
-			color: $vd-primary;
 		}
 	}
 </style>

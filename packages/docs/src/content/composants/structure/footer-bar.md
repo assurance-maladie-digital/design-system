@@ -7,11 +7,7 @@ description: Le pattern `FooterBar` est utilisé pour afficher un pied de page.
 
 <doc-tab-item label="Utilisation">
 
-#### Mode simplifié
-
-Par défaut le footer est en mode simplifié.
-
-<doc-usage name="footer-bar" class="mb-0"></doc-usage>
+<doc-usage name="footer-bar"></doc-usage>
 
 #### Mode complexe
 
