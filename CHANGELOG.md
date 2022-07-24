@@ -49,7 +49,7 @@
   - **UploadWorkflow:** Correction de l'affichage du message de dépréciation ([#2131](https://github.com/assurance-maladie-digital/design-system/pull/2131)) ([c672527](https://github.com/assurance-maladie-digital/design-system/commit/c672527b06aad8c34bf998c74c4d670f6a429b93))
   - **DocAlert:** Correction de l'espacement du dernier paragraphe ([#2132](https://github.com/assurance-maladie-digital/design-system/pull/2132)) ([f4d342a](https://github.com/assurance-maladie-digital/design-system/commit/f4d342af8612debf53ea63dfeb105d2c03eaf610))
   - **CookieBanner:** Correction des liens dans les exemples ([#2147](https://github.com/assurance-maladie-digital/design-system/pull/2147)) ([ae77e56](https://github.com/assurance-maladie-digital/design-system/commit/ae77e561945cee36a32a2735836c6c191f2a4174))
-  - **DocHeader:** Correction de l'affichage sur les écrans mobiles ([#2161](https://github.com/assurance-maladie-digital/design-system/pull/2161))
+  - **DocHeader:** Correction de l'affichage sur les écrans mobiles ([#2161](https://github.com/assurance-maladie-digital/design-system/pull/2161)) ([7f60350](https://github.com/assurance-maladie-digital/design-system/commit/7f603509fa5f2c3cd1f05cfa02cf10707f4a3621))
 
 - ♻️ **Refactoring**
   - **global:** Mise à jour des éléments du menu de navigation ([#2012](https://github.com/assurance-maladie-digital/design-system/pull/2012)) ([999a7af](https://github.com/assurance-maladie-digital/design-system/commit/999a7af93ccb033cb0bc54f9070f5054659d7831))
@@ -95,7 +95,6 @@
   - **sass-loader:** Mise à jour vers la `v10.3.1` ([#2119](https://github.com/assurance-maladie-digital/design-system/pull/2119)) ([da873a5](https://github.com/assurance-maladie-digital/design-system/commit/da873a5b39a2f169d46d009b10ee4b89fdd5a5ff))
   - **@octokit/core:** Mise à jour vers la `v4` ([#2120](https://github.com/assurance-maladie-digital/design-system/pull/2120)) ([e03fac5](https://github.com/assurance-maladie-digital/design-system/commit/e03fac5adeaffbb9df260aac979e3e8a06461949))
   - **netlify-cli:** Mise à jour vers la `v10.10.2` ([#2149](https://github.com/assurance-maladie-digital/design-system/pull/2149)) ([9c5419f](https://github.com/assurance-maladie-digital/design-system/commit/9c5419f410cb671d88586e9b34620eaf01b46525))
-  - **vue:** Mise à jour vers la `v2.7.7` ([#2150](https://github.com/assurance-maladie-digital/design-system/pull/2150)) ([efdfd7a](https://github.com/assurance-maladie-digital/design-system/commit/efdfd7a903d392dbf6da75ec2eeb1022307cd1d2))
   - **@types/node:** Mise à jour vers la `v16.11.45` ([#2151](https://github.com/asurance-maladie-digital/design-system/pull/2151)) ([5c90fcf](https://github.com/assurance-maladie-digital/design-system/commit/5c90fcf475f862d26ecede5decf1b44fcfc1c012))
   - **ts-node:** Mise à jour vers la `v10.9.1` ([#2152](https://github.com/assurance-maladie-digital/design-system/pull/2152)) ([e94343c](https://github.com/assurance-maladie-digital/design-system/commit/e94343c4d1d0a321f574cf7fa51a2b509bb9b87b))
   - **core-js:** Mise à jour vers la `v3.23.5` ([#2153](//github.com/assurance-maladie-digital/design-system/pull/2153)) ([d4e4c72](https://github.com/assurance-maladie-digital/design-system/commit/d4e4c7214ff61512ce07957c905449c94ef40a70))
@@ -103,6 +102,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.30.7` ([#2155](https://github.com/assurance-maladie-digital/design-system/pull/2155)) ([57e20cd](https://github.com/assurance-maladie-digital/design-system/commit/57e20cdd11cbbf96ab9f483e6c56274e1469f205))
   - **dayjs:** Mise à jour vers la `v1.11.4` ([#2156](https://github.com/assurance-maladie-digital/design-system/pull/2156)) ([bbcb062](https://github.com/assurance-maladie-digital/design-system/commit/bbcb062311e32bf61fe218a50d9e3ced0350f3ca))
   - **@mdi/js:** Mise à jour vers la `v7` ([#2157](https://github.com/assurance-maladie-digital/design-system/pull/2157)) ([aab6341](https://github.com/assurance-maladie-digital/design-system/commit/aab634116d50e4584e2aa2ab07585443e702b593))
+  - **vue:** Mise à jour vers la `v2.7.8` ([#2165](https://github.com/assurance-maladie-digital/design-system/pull/2165))
 
 ## v2.4.0
 
