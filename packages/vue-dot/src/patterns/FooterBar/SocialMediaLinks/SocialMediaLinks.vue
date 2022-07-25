@@ -1,10 +1,10 @@
 <template>
-	<div name="vd-social-links">
+	<div class="vd-social-media-links">
 		<span class="text-body-2 primary--text">
 			{{ locales.followUs }}
 		</span>
 
-		<div class="d-flex justify-end max-width-none mx-n1 mr-n2">
+		<div class="d-flex justify-start justify-sm-end max-width-none mx-n2">
 			<VBtn
 				v-for="social in links"
 				:key="social.index"
@@ -29,12 +29,12 @@
 
 	import { locales } from '../locales';
 
-	import { SocialLink } from './types';
+	import { SocialMediaLink } from './types';
 
 	const Props = Vue.extend({
 		props: {
 			links: {
-				type: Array as PropType<SocialLink[]>,
+				type: Array as PropType<SocialMediaLink[]>,
 				default: null
 			}
 		}
@@ -43,7 +43,7 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class SocialLinks extends MixinsDeclaration {
+	export default class SocialMediaLinks extends MixinsDeclaration {
 		locales = locales;
 
 		get isMobile(): boolean {

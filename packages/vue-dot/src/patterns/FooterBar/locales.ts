@@ -1,6 +1,7 @@
 import { A11yComplianceEnum } from './A11yComplianceEnum';
 
 export const locales = {
+	goTopBtnLabel: 'Retour en haut de la page',
 	sitemapLabel: 'Plan du site',
 	cguLabel: 'Conditions générales d’utilisation',
 	legalNoticeLabel: 'Mentions légales',

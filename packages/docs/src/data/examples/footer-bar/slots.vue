@@ -1,8 +1,31 @@
 <template>
-	<FooterBar complex-mode>
+	<FooterBar v-bind="docProps">
+		<template #logo>
+			<HeaderBrandSection theme="ameli" />
+		</template>
+
+		<template #social-media-links>
+			<VBtn
+				icon
+				aria-label="Suivez-nous sur Twitter"
+				href="https://twitter.com/Assur_Maladie"
+				class="mr-4"
+			>
+				<VIcon>
+					{{ twitterIcon }}
+				</VIcon>
+			</VBtn>
+		</template>
+
 		<template #default>
-			<p class="grey--text text--darken-1 my-3 mx-4">
-				Slot par défaut
+			<p class="text--secondary my-3">
+				Contenu supplémentaire.
+			</p>
+		</template>
+
+		<template #append>
+			<p class="text--secondary my-3 mx-4">
+				Informations partenaires
 			</p>
 		</template>
 	</FooterBar>
@@ -12,6 +35,23 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	@Component
-	export default class FooterBarSlots extends Vue {}
+	import HeaderBrandSection from '@cnamts/vue-dot/src/patterns/HeaderBar/HeaderBrandSection';
+
+	import { mdiTwitter } from '@mdi/js';
+
+	@Component({
+		components: {
+			HeaderBrandSection
+		}
+	})
+	export default class FooterBarSlots extends Vue {
+		docProps = {
+			sitemapRoute: '/',
+			cguRoute: '/',
+			legalNoticeRoute: '/',
+			a11yStatementRoute: '/'
+		};
+
+		twitterIcon = mdiTwitter;
+	}
 </script>

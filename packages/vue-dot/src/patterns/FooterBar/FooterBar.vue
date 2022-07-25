@@ -4,51 +4,63 @@
 			...options.footer,
 			...$attrs
 		}"
-		:class="{ 'py-7 px-14': complexMode }"
-		min-height="40px"
+		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
 		<div
-			v-if="complexMode"
+			v-if="extendedMode"
 			class="d-flex align-center mb-6"
 		>
-			<slot name="logo">
-				<Logo v-if="!hideLogo" />
-			</slot>
+			<div class="d-flex flex-grow-1 flex-column flex-sm-row">
+				<slot name="logo">
+					<Logo
+						v-if="!hideLogo"
+						:size="logoSize"
+						class="mb-2 mb-sm-0"
+					/>
+				</slot>
 
-			<VSpacer />
+				<VSpacer v-bind="options.spacer" />
 
-			<slot name="socials">
-				<SocialLinks
-					v-if="!hideSocials"
-					:links="links"
-					class="mr-8"
-				/>
-			</slot>
+				<slot name="social-media-links">
+					<SocialMediaLinks
+						v-if="!hideSocialMediaLinks"
+						:links="socialMediaLinks"
+						class="mr-8"
+					/>
+				</slot>
+			</div>
 
 			<VBtn
-				v-if="complexMode"
-				small
-				icon
-				color="primary"
+				v-bind="options.goTopBtn"
+				:aria-label="locales.goTopBtn"
 				@click="$vuetify.goTo(0, 0)"
 			>
-				<VIcon>
+				<VIcon v-bind="options.goTopBtnIcon">
 					{{ arrowTopIcon }}
 				</VIcon>
 			</VBtn>
 		</div>
 
-		<VDivider v-if="complexMode" />
+		<VDivider
+			v-if="extendedMode"
+			v-bind="options.divider"
+		/>
 
 		<slot />
 
 		<VDivider
-			v-if="complexMode"
+			v-if="extendedMode"
+			v-bind="options.divider"
 			class="mb-6"
 		/>
 
-		<div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n4">
+		<div
+			:class="{ 'py-2 py-sm-0': !extendedMode }"
+			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n4"
+		>
+			<slot name="prepend" />
+
 			<RouterLink
 				v-if="!hideSitemapLink"
 				v-bind="options.routerLink"
@@ -87,6 +99,8 @@
 			>
 				{{ locales.versionLabel }} {{ version }}
 			</p>
+
+			<slot name="append" />
 		</div>
 	</VFooter>
 </template>
@@ -97,17 +111,21 @@
 
 	import { RawLocation } from 'vue-router';
 
-	import SocialLinks from './SocialLinks';
+	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
+
+	import SocialMediaLinks from './SocialMediaLinks';
+	import { SocialMediaLink } from './SocialMediaLinks/types';
 
 	import { config } from './config';
 	import { locales } from './locales';
+	import { socialMediaLinks } from './socialMediaLinks';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
 
 	import { propValidator } from '../../helpers/propValidator';
 
 	import { customizable } from '../../mixins/customizable';
 
-	import { mdiArrowUp, mdiTwitter, mdiLinkedin } from '@mdi/js';
+	import { mdiArrowUp } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -152,26 +170,17 @@
 				type: String,
 				default: undefined
 			},
-			hideSocials: {
-				type: Boolean,
-				default: false
-			},
 			hideLogo: {
 				type: Boolean,
 				default: false
 			},
-			links: {
-				type: Array,
-				default: () => [
-					{
-						icon: mdiLinkedin,
-						href: 'https://www.linkedin.com/company/assurance-maladie/'
-					},
-					{
-						icon: mdiTwitter,
-						href: 'https://twitter.com/Assur_Maladie'
-					}
-				]
+			hideSocialMediaLinks: {
+				type: Boolean,
+				default: false
+			},
+			socialMediaLinks: {
+				type: Array as PropType<SocialMediaLink[]>,
+				default: () => socialMediaLinks
 			}
 		}
 	});
@@ -181,7 +190,7 @@
 	@Component({
 		inheritAttrs: false,
 		components: {
-			SocialLinks
+			SocialMediaLinks
 		}
 	})
 	export default class FooterBar extends MixinsDeclaration {
@@ -199,8 +208,12 @@
 			return locales.a11yLabel(complianceLabel);
 		}
 
-		get complexMode(): boolean {
-			return this.$slots.default ? true : false;
+		get extendedMode(): boolean {
+			return Boolean(this.$slots.default);
+		}
+
+		get logoSize(): LogoSizeEnum {
+			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
 		}
 	}
 </script>
@@ -220,6 +233,10 @@
 			&:focus {
 				border-color: currentColor;
 			}
+		}
+
+		p {
+			padding: 1px 0;
 		}
 	}
 </style>

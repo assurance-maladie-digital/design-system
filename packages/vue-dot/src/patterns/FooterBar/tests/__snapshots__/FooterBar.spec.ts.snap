@@ -1,28 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FooterBar renders correctly 1`] = `
-<vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center w-100">
-  <vcontainer-stub tag="div">
+<vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" class="vd-footer-bar flex-column align-stretch pa-3 w-100">
+  <!---->
+  <!---->
+  <!---->
+  <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n4 py-2 py-sm-0">
+    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+      Plan du site
+    </routerlink-stub>
+    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+      Conditions générales d’utilisation
+    </routerlink-stub>
+    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+      Mentions légales
+    </routerlink-stub>
+    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+      Accessibilité&nbsp;: non conforme
+    </routerlink-stub>
     <!---->
-    <!---->
-    <!---->
-    <div no-gutters="" class="mb-5 mt-5"></div>
-    <!---->
-    <vrow-stub tag="div" justify="center" class="vd-links">
-      <routerlink-stub to="[object Object]" class="my-3 mx-4">
-        Plan du site
-      </routerlink-stub>
-      <routerlink-stub to="[object Object]" class="my-3 mx-4">
-        Conditions générales d’utilisation
-      </routerlink-stub>
-      <routerlink-stub to="[object Object]" class="my-3 mx-4">
-        Mentions légales
-      </routerlink-stub>
-      <routerlink-stub to="[object Object]" class="my-3 mx-4">
-        Accessibilité&nbsp;: non conforme
-      </routerlink-stub>
-      <!---->
-    </vrow-stub>
-  </vcontainer-stub>
+  </div>
 </vfooter-stub>
 `;
