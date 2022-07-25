@@ -21020,10 +21020,10 @@ vue@2.7.8, vue@^2.6.12:
     "@vue/compiler-sfc" "2.7.8"
     csstype "^3.1.0"
 
-vuetify-loader@1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/vuetify-loader/-/vuetify-loader-1.9.0.tgz#958ff51a13a024a2b98618a77e4ae16b9af34c09"
-  integrity sha512-qJGm35Ds7wgycdZxAUJPlwekNJ50OeO3/OL2fi1AtRwD94F00uXud7PIT0E/Svh6l8uP0JWiC01INS1N7vde+w==
+vuetify-loader@1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/vuetify-loader/-/vuetify-loader-1.9.2.tgz#adcadac71c6d9b24bde42a5b81dfda1871f73f81"
+  integrity sha512-8PP2w7aAs/rjA+Izec6qY7sHVb75MNrGQrDOTZJ5IEnvl+NiFhVpU2iWdRDZ3eMS842cWxSWStvkr+KJJKy+Iw==
   dependencies:
     acorn "^8.4.1"
     acorn-walk "^8.2.0"
