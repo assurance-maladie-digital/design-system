@@ -7,6 +7,7 @@
   - **HeaderBar:** Ajout d'options de personnalisation ([#2105](https://github.com/assurance-maladie-digital/design-system/pull/2105)) ([64d37aa](https://github.com/assurance-maladie-digital/design-system/commit/64d37aa0072b8a96e22fb1a4d91f5c8b6cbdbae9))
   - **HeaderBar:** Ajout du slot `navigation-bar-secondary-content` ([#2113](https://github.com/assurance-maladie-digital/design-system/pull/2113)) ([441906f](https://github.com/assurance-maladie-digital/design-system/commit/441906fd63f7066278cbca592da5cf10c068f125))
   - **NirField:** Ajout d'un nouveau composant ([#2151](https://github.com/assurance-maladie-digital/design-system/pull/2151)) ([2668adc](https://github.com/assurance-maladie-digital/design-system/commit/2668adc146870e1aeddb0934ba4a973c58ecb7d3))
+  - **FooterBar:** Ajout du mode étendu ([#2110](https://github.com/assurance-maladie-digital/design-system/pull/2110))
 
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du parsing de la date ([#2095](https://github.com/assurance-maladie-digital/design-system/pull/2095)) ([28d713c](https://github.com/assurance-maladie-digital/design-system/commit/28d713c139f80c2998ec5d605244837870146786))
@@ -102,7 +103,7 @@
   - **@mdi/js:** Mise à jour vers la `v7` ([#2157](https://github.com/assurance-maladie-digital/design-system/pull/2157)) ([aab6341](https://github.com/assurance-maladie-digital/design-system/commit/aab634116d50e4584e2aa2ab07585443e702b593))
   - **vue:** Mise à jour vers la `v2.7.8` ([#2165](https://github.com/assurance-maladie-digital/design-system/pull/2165)) ([9d1148a](https://github.com/assurance-maladie-digital/design-system/commit/9d1148a55a90d60246548f82eefa52eeccf8671c))
   - **netlify-cli:** Mise à jour vers la `v10.11.1` ([#2167](https://github.com/assurance-maladie-digital/design-system/pull/2167)) ([467b3a6](https://github.com/assurance-maladie-digital/design-system/commit/467b3a68e4adf11486c9bf52701f0830ece59643))
-  - **lerna:** Mise à jour vers la `v5.2.0` ([#2169](https://github.com/assurance-maladie-digital/design-system/pull/2169))
+  - **lerna:** Mise à jour vers la `v5.2.0` ([#2169](https://github.com/assurance-maladie-digital/design-system/pull/2169)) ([fe1d33b](https://github.com/assurance-maladie-digital/design-system/commit/fe1d33bbc1123f1a86b680ed35f06c341b358250))
 
 ## v2.4.0
 
