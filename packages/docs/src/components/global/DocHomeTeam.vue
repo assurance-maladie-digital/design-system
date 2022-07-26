@@ -43,7 +43,6 @@
 				img_url: 'aubin_m.png'
 			}
 		]
-
 	}
 </script>
 
