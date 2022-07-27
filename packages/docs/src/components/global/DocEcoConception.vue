@@ -1,5 +1,7 @@
 <template>
-	<VExpansionPanels class="mt-8 mb-8">
+	<VExpansionPanels 
+		accordion
+		class="mt-8 mb-8">
 		<VExpansionPanel
 			v-for="(item, index) in items"
 			:key="index">
@@ -27,3 +29,4 @@ export default class DocA11yCriteria extends Vue {
 
 }
 </script>
+
