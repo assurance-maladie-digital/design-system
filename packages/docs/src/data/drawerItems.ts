@@ -385,6 +385,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation des icônes',
 				to: '/guides/utilisation-icones'
+			},
+			{
+				title: 'Éco-conception',
+				to: '/guides/eco-conception'
 			}
 		]
 	},
