@@ -40,6 +40,12 @@ export const api: Api = {
 				description: 'Masque les boutons d’actions.'
 			},
 			{
+				name: 'persistent',
+				type: 'boolean',
+				default: false,
+				description: 'Désactive la fermeture de la boîte de dialogue lors de l’appui sur la touche *Échap* ou du clic en-dehors de l’élément.'
+			},
+			{
 				name: 'vuetify-options',
 				type: 'Options',
 				default: 'undefined',
