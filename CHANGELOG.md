@@ -11,7 +11,8 @@
 
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du parsing de la date ([#2095](https://github.com/assurance-maladie-digital/design-system/pull/2095)) ([28d713c](https://github.com/assurance-maladie-digital/design-system/commit/28d713c139f80c2998ec5d605244837870146786))
-  - **FilterModule:** Correction de l'ordre du contenu ([#2184](https://github.com/assurance-maladie-digital/design-system/pull/2184))
+  - **FilterModule:** Correction de l'ordre du contenu ([#2184](https://github.com/assurance-maladie-digital/design-system/pull/2184)) ([111c771](https://github.com/assurance-maladie-digital/design-system/commit/111c7715070922a25dcff86384a73c3537293b75))
+  - **DialogBox:** Correction de l'affichage du bouton *Fermer* en mode persistant ([#2185](https://github.com/assurance-maladie-digital/design-system/pull/2185))
 
 - ♿️ **Accessibilité**
   - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073)) ([658f95d](https://github.com/assurance-maladie-digital/design-system/commit/658f95d98db3e43df16b16667a093796448a0876))
