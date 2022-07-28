@@ -8,4 +8,4 @@ La suite suivante énumère les points auquel vous devrez faire attention durant
 
 ### Evaluer son projet
 
-Pour évaluer la concetpion, vous pouvez utiliser Ecoindex (http://www.ecoindex.fr/) ou Ecometer (http://www.ecometer.org/)
+Pour évaluer la conception, vous pouvez utiliser Ecoindex (http://www.ecoindex.fr/) ou Ecometer (http://www.ecometer.org/)
