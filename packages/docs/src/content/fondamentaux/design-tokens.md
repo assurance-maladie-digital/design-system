@@ -1,23 +1,32 @@
 ---
 title: Design Tokens
-description: Les Design Tokens sont des listes de valeur, disponibles en TypeScript, JavaScript et SCSS.
+description: Les Design Tokens sont un ensemble de variables qui représentent les décisions de Design et remplacent les valeurs statiques dans le code.
 ---
 
-<doc-tabs>
-<doc-tab-item label="Liste">
+## Couleurs
 
-## Les couleurs
+### Thème clair
 
-**lightTheme** - _Thème clair_
+Le thème clair est utilisé pour configurer le [thème](https://vuetifyjs.com/en/features/theme/) de Vuetify :
 
-- `primaire` : <span style="color: #0c419a">#0c419a</span>
-- `secondaire` : <span style="color: #007fad">#007fad</span>
-- `accent` : <span style="color: #2576cd">#2576cd</span>
-- `succès` : <span style="color: #009688">#009688</span>
-- `erreur` : <span style="color: #b00000">#b00000</span>
-- `avertissement` : <span style="color: #785912">#785912</span>
+```js
+primary: palette.amBlue.base
+secondary: palette.cyan.darken20
+accent: palette.cyan.base
+error: palette.orange.darken20
+info: palette.amBlue.base
+success: palette.turquoise.darken20
+warning: palette.yellow.darken40
+risquePro: palette.brick.base
+```
 
-## Les mesures
+### Palette
+
+Pour voir la palette de couleurs, consultez la page [Couleurs](/fondamentaux/couleurs).
+
+## Mesures
+
+<doc-design-tokens-width></doc-design-tokens-width>
 
 **dialogWidth** - _Pour les modales_
 
@@ -35,81 +44,39 @@ description: Les Design Tokens sont des listes de valeur, disponibles en TypeScr
 - `inputLarge` : 384px
 - `inputXLarge` : 536px
 
-</doc-tab-item>
-
-<doc-tab-item label="Installation">
-
 ## Installation
 
-Pour installer les tokens, vous devez utiliser npm ou yarn
+Pour installer les Design Tokens, consultez les [instructions d'installation](/installation#composants/design-tokens).
 
-```bash
-yarn add @cnamts/design-tokens
-```
+## Utilisation
 
-Ou
+### TypeScript
 
-```bash
-npm install @cnamts/design-tokens
-```
-
-</doc-tab-item>
-
-<doc-tab-item label="Utilisation">
-
-Seul les tokens personnalisés sont contenus dans ce package. Pour ceux par défaut, comme les tailles de typographie, nous utilisons les classes de Vuetify (https://vuetifyjs.com/en/styles/text-and-typography/)
-
-## TypeScript
-
-En TypeScript, les noms des Design Tokens sont formatés en `camelCase`.
-
-```bash
+```ts
 import { tokens } from '@cnamts/design-tokens';
-console.log(tokens.pageWidth); // 1440px
+console.log(tokens.pageWidth);
 ```
 
-Vous pouvez également n'importer que le thème de couleur
+### JavaScript
 
-```bash
-import { lightTheme } from '@cnamts/design-tokens/src/colors';
-```
-
-## JavaScript
-
-En JavaScript, les noms des Design Tokens sont formatés en `camelCase`.
-
-```bash
+```js
 const { tokens } = require('@cnamts/design-tokens');
-console.log(tokens.pageWidth); // 1440px
+console.log(tokens.pageWidth);
 ```
 
-Vous pouvez aussi utiliser la syntaxe `import`.
+### SCSS
 
-```bash
-import { tokens } from '@cnamts/design-tokens';
-```
-
-## Sass
-
-En Sass, les noms des Design Tokens sont formatés en `kebab-case`.
-
-```bash
+```scss
 @import '@cnamts/design-tokens/dist/tokens';
 
 .pro {
-	color: $vd-pro; // #ef6c00
+	color: $vd-page-width;
 }
 ```
 
-## JSON
+### JSON
 
-En JSON, les noms des Design Tokens sont formatés en `kebab-case`.
-
-```bash
+```js
 const { tokens } = require('@cnamts/design-tokens');
-console.log(tokens['page-width']); // 1440px
+console.log(tokens['page-width']);
 ```
-
-</doc-tab-item>
-
-</doc-tabs>
