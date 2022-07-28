@@ -4,51 +4,104 @@
 			...options.footer,
 			...$attrs
 		}"
-		min-height="40px"
-		class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100"
+		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
-		<slot name="prepend" />
-
-		<RouterLink
-			v-if="!hideSitemapLink"
-			:to="sitemapRoute"
-			class="my-3 mx-4"
+		<div
+			v-if="extendedMode"
+			class="d-flex align-center mb-6"
 		>
-			{{ locales.sitemapLabel }}
-		</RouterLink>
+			<div class="d-flex flex-grow-1 flex-column flex-sm-row">
+				<slot name="logo">
+					<Logo
+						v-if="!hideLogo"
+						:size="logoSize"
+						class="mb-2 mb-sm-0"
+					/>
+				</slot>
 
-		<RouterLink
-			v-if="!hideCguLink"
-			:to="cguRoute"
-			class="my-3 mx-4"
+				<VSpacer v-bind="options.spacer" />
+
+				<slot name="social-media-links">
+					<SocialMediaLinks
+						v-if="!hideSocialMediaLinks"
+						:links="socialMediaLinks"
+						class="mr-8"
+					/>
+				</slot>
+			</div>
+
+			<VBtn
+				v-bind="options.goTopBtn"
+				:aria-label="locales.goTopBtn"
+				@click="$vuetify.goTo(0, 0)"
+			>
+				<VIcon v-bind="options.goTopBtnIcon">
+					{{ arrowTopIcon }}
+				</VIcon>
+			</VBtn>
+		</div>
+
+		<VDivider
+			v-if="extendedMode"
+			v-bind="options.divider"
+		/>
+
+		<slot />
+
+		<VDivider
+			v-if="extendedMode"
+			v-bind="options.divider"
+			class="mb-6"
+		/>
+
+		<div
+			:class="{ 'py-2 py-sm-0': !extendedMode }"
+			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n4"
 		>
-			{{ locales.cguLabel }}
-		</RouterLink>
+			<slot name="prepend" />
 
-		<RouterLink
-			v-if="!hideLegalNoticeLink"
-			:to="legalNoticeRoute"
-			class="my-3 mx-4"
-		>
-			{{ locales.legalNoticeLabel }}
-		</RouterLink>
+			<RouterLink
+				v-if="!hideSitemapLink"
+				v-bind="options.routerLink"
+				:to="sitemapRoute"
+			>
+				{{ locales.sitemapLabel }}
+			</RouterLink>
 
-		<RouterLink
-			v-if="!hideA11yLink && a11yComplianceLabel"
-			:to="a11yStatementRoute"
-			class="my-3 mx-4"
-		>
-			{{ a11yComplianceLabel }}
-		</RouterLink>
+			<RouterLink
+				v-if="!hideCguLink"
+				v-bind="options.routerLink"
+				:to="cguRoute"
+			>
+				{{ locales.cguLabel }}
+			</RouterLink>
 
-		<p
-			v-if="version"
-			class="grey--text text--darken-1 my-3 mx-4"
-		>
-			{{ locales.versionLabel }} {{ version }}
-		</p>
+			<RouterLink
+				v-if="!hideLegalNoticeLink"
+				v-bind="options.routerLink"
+				:to="legalNoticeRoute"
+			>
+				{{ locales.legalNoticeLabel }}
+			</RouterLink>
 
-		<slot name="append" />
+			<RouterLink
+				v-if="!hideA11yLink && a11yComplianceLabel"
+				v-bind="options.routerLink"
+				:to="a11yStatementRoute"
+			>
+				{{ a11yComplianceLabel }}
+			</RouterLink>
+
+			<p
+				v-if="version"
+				class="text--secondary my-3 mx-4"
+			>
+				{{ locales.versionLabel }} {{ version }}
+			</p>
+
+			<slot name="append" />
+		</div>
 	</VFooter>
 </template>
 
@@ -58,13 +111,21 @@
 
 	import { RawLocation } from 'vue-router';
 
+	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
+
+	import SocialMediaLinks from './SocialMediaLinks';
+	import { SocialMediaLink } from './SocialMediaLinks/types';
+
 	import { config } from './config';
 	import { locales } from './locales';
+	import { socialMediaLinks } from './socialMediaLinks';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
 
 	import { propValidator } from '../../helpers/propValidator';
 
 	import { customizable } from '../../mixins/customizable';
+
+	import { mdiArrowUp } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -108,6 +169,18 @@
 			version: {
 				type: String,
 				default: undefined
+			},
+			hideLogo: {
+				type: Boolean,
+				default: false
+			},
+			hideSocialMediaLinks: {
+				type: Boolean,
+				default: false
+			},
+			socialMediaLinks: {
+				type: Array as PropType<SocialMediaLink[]>,
+				default: () => socialMediaLinks
 			}
 		}
 	});
@@ -115,10 +188,15 @@
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component({
-		inheritAttrs: false
+		inheritAttrs: false,
+		components: {
+			SocialMediaLinks
+		}
 	})
 	export default class FooterBar extends MixinsDeclaration {
 		locales = locales;
+
+		arrowTopIcon = mdiArrowUp;
 
 		get a11yComplianceLabel(): string | null {
 			const complianceLabel = locales[this.a11yCompliance];
@@ -129,13 +207,23 @@
 
 			return locales.a11yLabel(complianceLabel);
 		}
+
+		get extendedMode(): boolean {
+			return Boolean(this.$slots.default);
+		}
+
+		get logoSize(): LogoSizeEnum {
+			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.vd-footer-bar :deep() {
+	@import '@cnamts/design-tokens/dist/tokens';
+
+	// Use deep selector to style user content as well
+	.vd-footer-bar-links :deep() {
 		a {
-			color: inherit;
 			transition: .15s;
 			text-decoration: none;
 			padding-top: 1px; // Add top padding to account for bottom border
