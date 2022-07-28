@@ -64,7 +64,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-expansion-panel-header ::v-deep .v-expansion-panel-header__icon {
+	.v-expansion-panel-header :deep(.v-expansion-panel-header__icon) {
 		flex: none;
 	}
 

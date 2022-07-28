@@ -266,7 +266,7 @@
 			font-family: monospace;
 		}
 
-		::v-deep .description {
+		:deep(.description) {
 			min-width: 248px;
 		}
 	}

@@ -3,6 +3,7 @@
 		v-model="dialog"
 		v-bind="$attrs"
 		:width="width"
+		:persistent="persistent"
 		class="vd-dialog-box"
 	>
 		<VCard v-bind="options.card">
@@ -19,6 +20,7 @@
 				<VSpacer v-bind="options.spacer" />
 
 				<VBtn
+					v-if="!persistent"
 					v-bind="options.closeBtn"
 					:aria-label="locales.closeBtn"
 					@click="close"
@@ -92,6 +94,10 @@
 				default: locales.confirmBtn
 			},
 			hideActions: {
+				type: Boolean,
+				default: false
+			},
+			persistent: {
 				type: Boolean,
 				default: false
 			}

@@ -20,7 +20,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-expansion-panels ::v-deep p:last-child {
+	.v-expansion-panels :deep(p:last-child) {
 		margin-bottom: 0;
 	}
 </style>

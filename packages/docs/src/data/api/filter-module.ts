@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { customizable } from './shared/mixins/customizable';
+
 export const api: Api = {
 	FilterModule: {
 		props: [
@@ -23,13 +25,18 @@ export const api: Api = {
 	mask?: string;
 	dynamic?: boolean;
 }[]`
-			}
+			},
+			...customizable(`{
+	dialog: 'VDialog',
+	spacer: 'VSpacer',
+	validateBtn: 'VBtn'
+}`)
 		],
 		events: [
 			{
 				name: 'filter-list',
 				description: 'Événement émis lorsque qu’un filtre est modifié.',
-				value: `Field[] | null`
+				value: `Field[] | null`
 			}
 		]
 	}
