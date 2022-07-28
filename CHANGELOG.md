@@ -7,10 +7,11 @@
   - **HeaderBar:** Ajout d'options de personnalisation ([#2105](https://github.com/assurance-maladie-digital/design-system/pull/2105)) ([64d37aa](https://github.com/assurance-maladie-digital/design-system/commit/64d37aa0072b8a96e22fb1a4d91f5c8b6cbdbae9))
   - **HeaderBar:** Ajout du slot `navigation-bar-secondary-content` ([#2113](https://github.com/assurance-maladie-digital/design-system/pull/2113)) ([441906f](https://github.com/assurance-maladie-digital/design-system/commit/441906fd63f7066278cbca592da5cf10c068f125))
   - **NirField:** Ajout d'un nouveau composant ([#2151](https://github.com/assurance-maladie-digital/design-system/pull/2151)) ([2668adc](https://github.com/assurance-maladie-digital/design-system/commit/2668adc146870e1aeddb0934ba4a973c58ecb7d3))
-  - **FooterBar:** Ajout du mode étendu ([#2110](https://github.com/assurance-maladie-digital/design-system/pull/2110))
+  - **FooterBar:** Ajout du mode étendu ([#2110](https://github.com/assurance-maladie-digital/design-system/pull/2110)) ([f826aa7](https://github.com/assurance-maladie-digital/design-system/commit/f826aa7c4a4bd70d9c47be1457762372fbaac908))
 
 - 🐛 **Corrections de bugs**
   - **DatePicker:** Correction du parsing de la date ([#2095](https://github.com/assurance-maladie-digital/design-system/pull/2095)) ([28d713c](https://github.com/assurance-maladie-digital/design-system/commit/28d713c139f80c2998ec5d605244837870146786))
+  - **FilterModule:** Correction de l'ordre du contenu ([#2184](https://github.com/assurance-maladie-digital/design-system/pull/2184))
 
 - ♿️ **Accessibilité**
   - **FilterModule:** Ajout de la propriété `attach` sur le menu ([#2073](https://github.com/assurance-maladie-digital/design-system/pull/2073)) ([658f95d](https://github.com/assurance-maladie-digital/design-system/commit/658f95d98db3e43df16b16667a093796448a0876))
