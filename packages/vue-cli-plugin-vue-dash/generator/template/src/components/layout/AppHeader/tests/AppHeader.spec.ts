@@ -1,21 +1,35 @@
 import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify/lib';
 
-import { mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import {
+	Wrapper,
+	html,
+	mount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins,
+	mockTranslation
+} from '@/tests-unit/utils';
 
 import AppHeader from '../';
 
-let wrapper: Wrapper<Vue>;
-
 describe('AppHeader', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
 	it('renders correctly', () => {
-		wrapper = mountComponent(AppHeader, {
+		wrapper = mount(AppHeader, {
 			mocks: {
-				$maintenanceEnabled: false,
-				$t: (key: string) => {
-					return key === 'components.layout.appHeader.navigationItems' ? [] : key;
-				}
+				...mockTranslation<string[]>('components.layout.appHeader.navigationItems', []),
+				$maintenanceEnabled: false
 			}
 		});
 
@@ -23,7 +37,7 @@ describe('AppHeader', () => {
 	});
 
 	it('renders correctly when maintenance is enabled', () => {
-		wrapper = mountComponent(AppHeader, {
+		wrapper = mount(AppHeader, {
 			mocks: {
 				$maintenanceEnabled: true
 			}

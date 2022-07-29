@@ -1,17 +1,33 @@
 import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify/lib';
 
-import { router, mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import {
+	Wrapper,
+	html,
+	mount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins,
+	installRouter
+} from '@/tests-unit/utils';
 
 import App from '@/App.vue';
 
-let wrapper: Wrapper<Vue>;
-
 describe('App', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+	installRouter(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
 	it('renders correctly', () => {
-		wrapper = mountComponent(App, {
-			router,
+		wrapper = mount(App, {
 			mocks: {
 				$maintenanceEnabled: false
 			}
@@ -21,8 +37,7 @@ describe('App', () => {
 	});
 
 	it('renders correctly when maintenance is enabled', () => {
-		wrapper = mountComponent(App, {
-			router,
+		wrapper = mount(App, {
 			mocks: {
 				$maintenanceEnabled: true
 			}

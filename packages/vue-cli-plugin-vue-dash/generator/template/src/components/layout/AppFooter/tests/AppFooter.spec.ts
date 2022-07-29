@@ -1,16 +1,31 @@
 import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify/lib';
 
-import { mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import {
+	Wrapper,
+	html,
+	mount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins
+} from '@/tests-unit/utils';
 
 import AppFooter from '../';
 
-let wrapper: Wrapper<Vue>;
-
 describe('AppFooter', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
 	it('renders correctly', () => {
-		wrapper = mountComponent(AppFooter);
+		wrapper = mount(AppFooter);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
