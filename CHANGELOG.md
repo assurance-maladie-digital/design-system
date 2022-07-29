@@ -26,6 +26,7 @@
   - **template:** Correction d'une mauvaise formulation dans le fichier `App.vue` ([#2099](https://github.com/assurance-maladie-digital/design-system/pull/2099)) ([9167e6d](https://github.com/assurance-maladie-digital/design-system/commit/9167e6d914761bf1340760404ee565d923597871))
 
 - ♻️ **Refactoring**
+  - **template:** Mise à jour du setup des tests unitaires ([#2187](https://github.com/assurance-maladie-digital/design-system/pull/2187))
   - **global:** Mise à jour des commentaires ([#2103](https://github.com/assurance-maladie-digital/design-system/pull/2103)) ([2f1e95b](https://github.com/assurance-maladie-digital/design-system/commit/2f1e95b80a283e391aadb826da1f3b509af6fd0f))
 
 ### Form Builder
