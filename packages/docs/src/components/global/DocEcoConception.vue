@@ -1,32 +1,31 @@
 <template>
 	<VExpansionPanels 
 		accordion
-		class="mt-8 mb-8">
+		class="my-8">
 		<VExpansionPanel
 			v-for="(item, index) in items"
-			:key="index">
+			:key="index"
+		>
 			<VExpansionPanelHeader class="text-subtitle-2 font-weight-bold">
-				{{ item.title }}
+				{{ item.title }} - {{ index }}
 			</VExpansionPanelHeader>
 
 			<VExpansionPanelContent>
-				<div v-html="item.description"></div>
+				<div v-html="item.description"/>
 			</VExpansionPanelContent>
 		</VExpansionPanel>
 	</VExpansionPanels>	
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
 
-import { ecoConception } from '../../data/ecoConception';
+	import { ecoConception } from '../../data/ecoConception';
 
-
-@Component
-export default class DocA11yCriteria extends Vue {
-	items = ecoConception;	
-
-}
+	@Component
+	export default class DocA11yCriteria extends Vue {
+		items = ecoConception;	
+	}
 </script>
 
