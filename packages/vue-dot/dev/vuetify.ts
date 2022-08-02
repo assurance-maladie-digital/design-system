@@ -13,7 +13,7 @@ const colorsClasses: IndexedObject = {};
 Object.entries(palette).forEach(color => {
 	Object.entries(color[1]).forEach(subColor => {
 		const colorName = subColor[0] === 'base' ? 'base' : subColor[0].substring(-20, subColor[0].length - 2) + '-' + subColor[0].substring(subColor[0].length - 2);
-		const name = color[0].toLowerCase() + '-' + colorName;
+		const name = color[0].replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() + '-' + colorName;
 		colorsClasses[name] = subColor[1] as string;
 	});
 });
