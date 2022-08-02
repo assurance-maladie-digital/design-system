@@ -1,4 +1,8 @@
-## Non publié
+## v2.5.0
+
+**Version publiée le 02/08/2022.**
+
+Cette version comporte l'ajout du nouveau composant `NirField`, du mode de sélection libre au composant `UploadWorkflow` et du mode étendu au composant `FooterBar`, ainsi que l'intégration de la nouvelle palette de couleurs et des correctifs sur l'ensemble des packages et la complétion de la documentation.
 
 ### Vue Dot
 
@@ -81,6 +85,9 @@
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.16` ([#2134](https://github.com/assurance-maladie-digital/design-system/pull/2134)) ([8195d2f](https://github.com/assurance-maladie-digital/design-system/commit/8195d2f6044f97ed7457e0bc0954d2ca5793e2d3))
   - **ci:** Mise à jour des variables d'environnement du build dans la configuration de CircleCI ([#2160](https://github.com/assurance-maladie-digital/design-system/pull/2160)) ([d5d1ed5](https://github.com/assurance-maladie-digital/design-system/commit/d5d1ed52006e8601f9506914e5467a3e362a84d5))
 
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2193](https://github.com/assurance-maladie-digital/design-system/pull/2193))
+
 - ⬆️ **Dépendances**
   - **@vue/eslint-config-standard:** Mise à jour vers la `v7` ([#1991](https://github.com/asurance-maladie-digital/design-system/pull/1991)) ([716fb0b](https://github.com/assurance-maladie-digital/design-system/commit/716fb0b5c9cfce81a2512e959ccb4d903a1cf32e))
   - **vue-router:** Mise à jour vers la `v3.5.4` ([#1996](https://github.com/assurance-maladie-digital/design-system/pull/1996)) ([72b616b](https://github.com/assurance-maladie-digital/design-system/commit/72b616b5b5f7e59f69119d6512f8c7f756c4ccfc))
@@ -105,7 +112,7 @@
   - **netlify-cli:** Mise à jour vers la `v10.11.1` ([#2167](https://github.com/assurance-maladie-digital/design-system/pull/2167)) ([467b3a6](https://github.com/assurance-maladie-digital/design-system/commit/467b3a68e4adf11486c9bf52701f0830ece59643))
   - **lerna:** Mise à jour vers la `v5.2.0` ([#2169](https://github.com/assurance-maladie-digital/design-system/pull/2169)) ([fe1d33b](https://github.com/assurance-maladie-digital/design-system/commit/fe1d33bbc1123f1a86b680ed35f06c341b358250))
   - **core-js:** Mise à jour vers la `v3.24.0` ([#2171](//github.com/assurance-maladie-digital/design-system/pull/2171)) ([6f0c43c](https://github.com/assurance-maladie-digital/design-system/commit/6f0c43cacf53046a9c10e25aed9f87f30c03445b))
-  - **eslint-plugin-vue:** Mise à jour vers la `v9.3.0` ([#2172](https://github.com/assurance-maladie-digital/design-system/pull/2172))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.3.0` ([#2172](https://github.com/assurance-maladie-digital/design-system/pull/2172)) ([6847c18](https://github.com/assurance-maladie-digital/design-system/commit/6847c1836993dab3d978482c3bb5c3fc03d5a972))
 
 ## v2.4.0
 
