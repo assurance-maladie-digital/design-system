@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **vuetify-loader:** Mise à jour vers la `v1.9.2` ([#2173](https://github.com/assurance-maladie-digital/design-system/pull/2173))
+
 ## v2.5.0
 
 **Version publiée le 02/08/2022.**
@@ -86,7 +93,7 @@ Cette version comporte l'ajout du nouveau composant `NirField`, du mode de séle
   - **ci:** Mise à jour des variables d'environnement du build dans la configuration de CircleCI ([#2160](https://github.com/assurance-maladie-digital/design-system/pull/2160)) ([d5d1ed5](https://github.com/assurance-maladie-digital/design-system/commit/d5d1ed52006e8601f9506914e5467a3e362a84d5))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2193](https://github.com/assurance-maladie-digital/design-system/pull/2193))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2193](https://github.com/assurance-maladie-digital/design-system/pull/2193)) ([879a437](https://github.com/assurance-maladie-digital/design-system/commit/879a437c2e74068ceb441d163bafadb1cb1d0064))
 
 - ⬆️ **Dépendances**
   - **@vue/eslint-config-standard:** Mise à jour vers la `v7` ([#1991](https://github.com/asurance-maladie-digital/design-system/pull/1991)) ([716fb0b](https://github.com/assurance-maladie-digital/design-system/commit/716fb0b5c9cfce81a2512e959ccb4d903a1cf32e))
