@@ -7,7 +7,7 @@
 			:key="index"
 		>
 			<VExpansionPanelHeader class="text-subtitle-2 font-weight-bold">
-				{{ item.title }} - {{ index }}
+				{{ item.title }}
 			</VExpansionPanelHeader>
 
 			<VExpansionPanelContent>
@@ -24,7 +24,7 @@
 	import { ecoConception } from '../../data/ecoConception';
 
 	@Component
-	export default class DocA11yCriteria extends Vue {
+	export default class DocEcoConception extends Vue {
 		items = ecoConception;	
 	}
 </script>

@@ -53,6 +53,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Logo',
 				to: '/fondamentaux/logo'
+			},
+			{
+				title: 'Éco-conception',
+				to: '/fondamentaux/eco-conception'
 			}
 		]
 	},
@@ -385,10 +389,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation des icônes',
 				to: '/guides/utilisation-icones'
-			},
-			{
-				title: 'Éco-conception',
-				to: '/guides/eco-conception'
 			}
 		]
 	},
