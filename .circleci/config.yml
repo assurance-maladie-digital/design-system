@@ -10,7 +10,7 @@ defaults:
   &defaults
   working_directory: ~/project
   docker:
-    - image: cimg/node:16.15-browsers
+    - image: cimg/node:16.16-browsers
 
 aliases:
   - &restore_cache
@@ -32,8 +32,8 @@ aliases:
     command: yarn build && yarn generate
     environment:
       NODE_OPTIONS: --max_old_space_size=4096
-      CI: true
-      CIRCLE_NODE_TOTAL: 4
+      CI: "true"
+      CIRCLE_NODE_TOTAL: 0
 
 jobs:
   install:

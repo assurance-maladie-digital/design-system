@@ -65,16 +65,55 @@ export const api: Api = {
 				description: 'Le numéro de version de l’application.'
 			},
 			{
+				name: 'hide-logo',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le logo.'
+			},
+			{
+				name: 'hide-social-media-links',
+				type: 'boolean',
+				default: false,
+				description: 'Masque la liste des réseaux sociaux.'
+			},
+			{
+				name: 'social-media-links',
+				type: 'SocialMediaLink[]',
+				description: 'Personnalisation de la liste des réseaux sociaux.',
+				default: 'Voir dans le code source',
+				example: `{
+	icon: string;
+	href: string;
+}[]`
+			},
+			{
 				name: 'vuetify-options',
 				type: 'Options',
 				description: 'Personnalisation des composants Vuetify en utilisant la directive `customizable`.',
 				default: 'undefined',
 				example: `{
-	footer: 'VFooter'
+	footer: 'VFooter',
+	spacer: 'VSpacer',
+	goTopBtn: 'VBtn',
+	goTopBtnIcon: 'VIcon',
+	divider: 'VDivider',
+	routerLink: 'RouterLink'
 }`
 			}
 		],
 		slots: [
+			{
+				name: 'default',
+				description: 'Slot pour ajouter du contenu dans la partie centrale du pied de page.'
+			},
+			{
+				name: 'logo',
+				description: 'Slot pour remplacer le logo.'
+			},
+			{
+				name: 'social-media-links',
+				description: 'Slot pour remplacer la liste des réseaux sociaux.'
+			},
 			{
 				name: 'prepend',
 				description: 'Slot pour ajouter du contenu avant les liens du pied de page.'
@@ -82,6 +121,20 @@ export const api: Api = {
 			{
 				name: 'append',
 				description: 'Slot pour ajouter du contenu après les liens du pied de page.'
+			}
+		]
+	},
+	SocialMediaLinks: {
+		props: [
+			{
+				name: 'links',
+				type: 'SocialMediaLink[]',
+				description: 'Liste des réseaux sociaux.',
+				default: null,
+				example: `{
+	icon: string;
+	href: string;
+}[]`
 			}
 		]
 	}

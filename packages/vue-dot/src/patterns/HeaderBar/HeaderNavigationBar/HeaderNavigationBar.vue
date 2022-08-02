@@ -32,6 +32,8 @@
 					</VTab>
 				</VTabs>
 			</slot>
+
+			<slot name="navigation-bar-secondary-content" />
 		</VSheet>
 	</VSheet>
 </template>

@@ -52,7 +52,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-cookie-table ::v-deep table {
+	.vd-cookie-table :deep(table) {
 		table-layout: fixed;
 	}
 </style>

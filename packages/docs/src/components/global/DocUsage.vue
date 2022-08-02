@@ -429,7 +429,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.doc-usage-options ::v-deep .v-responsive__content {
+	.doc-usage-options :deep(.v-responsive__content) {
 		> :first-child {
 			margin-top: 0 !important;
 			padding-top: 0 !important;
@@ -440,7 +440,7 @@
 		}
 	}
 
-	.doc-usage-options ::v-deep {
+	.doc-usage-options :deep() {
 		.v-text-field .v-input__slot::before {
 			border-color: rgba(0, 0, 0, .2);
 		}

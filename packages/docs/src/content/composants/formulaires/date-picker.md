@@ -74,7 +74,9 @@ Pour cela, vous pouvez utiliser les règles de validation inclues dans la librai
 <doc-tab-item label="API">
 
 <doc-alert type="info">
+
 Les propriétés non définies dans la section API seront reportées directement sur le composant `VTextField`.
+
 </doc-alert>
 
 <doc-api name="date-picker"></doc-api>
