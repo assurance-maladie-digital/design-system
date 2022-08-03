@@ -9,16 +9,14 @@ description: Les Design Tokens sont un ensemble de variables qui représentent l
 
 Le thème clair est utilisé pour configurer le [thème](https://vuetifyjs.com/en/features/theme/) de Vuetify :
 
-```js
-primary: palette.amBlue.base
-secondary: palette.cyan.darken20
-accent: palette.cyan.base
-error: palette.orange.darken20
-info: palette.amBlue.base
-success: palette.turquoise.darken20
-warning: palette.yellow.darken40
-risquePro: palette.brick.base
-```
+- primary : `palette.amBlue.base`
+- secondary : `palette.cyan.darken20`
+- accent : `palette.cyan.base`
+- error : `palette.orange.darken20`
+- info : `palette.amBlue.base`
+- success : `palette.turquoise.darken20`
+- warning : `palette.yellow.darken40`
+- risque-pro : `palette.brick.base`
 
 ### Palette
 
@@ -26,27 +24,25 @@ Pour voir la palette de couleurs, consultez la page [Couleurs](/fondamentaux/cou
 
 ## Mesures
 
-<doc-design-tokens-width></doc-design-tokens-width>
+### Boîtes de dialogue
 
-**dialogWidth** - _Pour les modales_
+- dialog-small : `560px`
+- dialog-medium : `800px`
 
-- `dialogSmall` : 560px
-- `dialogMedium` : 800px
+### Pages
 
-**pageWidth** - _Pour les pages_
+- page-width : `1440px`
 
-- `pageWidth` : 1440px
+### Champs de formulaires
 
-**inputWidth** - _Pour les inputs_
-
-- `inputSmall` : 128px
-- `inputMedium` : 328px
-- `inputLarge` : 384px
-- `inputXLarge` : 536px
+- input-small : `128px`
+- input-medium : `328px`
+- input-large : `384px`
+- input-x-large : `536px`
 
 ## Installation
 
-Pour installer les Design Tokens, consultez les [instructions d'installation](/installation#composants/design-tokens).
+Pour installer les Design Tokens, consultez les [instructions d'installation](/demarrer/installation#composants/design-tokens).
 
 ## Utilisation
 
