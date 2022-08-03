@@ -57,6 +57,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Couleurs',
 				to: '/fondamentaux/couleurs'
+			},
+			{
+				title: 'Design Tokens',
+				to: '/fondamentaux/design-tokens'
 			}
 		]
 	},

@@ -1,5 +1,10 @@
 ## Non publié
 
+### Documentation
+
+- 📝 **Documentation**
+  - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -11,7 +16,7 @@
   - **vuetify:** Mise à jour vers la `v2.6.8` ([#2189](https://github.com/assurance-maladie-digital/design-system/pull/2189)) ([60bef30](https://github.com/assurance-maladie-digital/design-system/commit/60bef307bcbe06de4739fdf83e2a55702b066919))
   - **core-js:** Mise à jour vers la `v3.24.1` ([#2190](//github.com/assurance-maladie-digital/design-system/pull/2190)) ([550356f](https://github.com/assurance-maladie-digital/design-system/commit/550356fcb18f838808b172fb94e281e2b9fb86bf))
   - **@babel/core:** Mise à jour vers la `v7.18.10` ([#2192](https://github.com/assurance-maladie-digital/design-system/pull/2192)) ([13ef17f](https://github.com/assurance-maladie-digital/design-system/commit/13ef17f8f0f1db0947f6556c90c27bfeb1f36c88))
-  - **@docsearch/js:** Mise à jour vers la `v3.2.0` ([#2194](https://github.com/assurance-maladie-digital/design-system/pull/2194))
+  - **@docsearch/js:** Mise à jour vers la `v3.2.0` ([#2194](https://github.com/assurance-maladie-digital/design-system/pull/2194)) ([67a5cb1](https://github.com/assurance-maladie-digital/design-system/commit/67a5cb15c7364800cb6d3fae9c954b7f2db0578f))
 
 ## v2.5.0
 
