@@ -8,7 +8,7 @@ export interface Link {
 }
 
 export interface FormRef {
-	validate: () => isValid,
-	resetValidation: () => undefined,
-	reset: () => undefined
+	validate: () => boolean;
+	resetValidation: () => void;
+	reset: () => void;
 }
