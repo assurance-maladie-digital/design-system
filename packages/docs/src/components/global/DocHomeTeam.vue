@@ -1,7 +1,7 @@
 <template>
 	<div class="mb-5">
 		<VRow>
-			<VCol v-for="member in team" v-bind:key="member.name" cols="4">
+			<VCol v-for="member in team" v-bind:key="member.name" cols="6" md="4">
 				<img class="ds-img-team" :src="require('../../assets/img/team/' + member.img_url)">
 				<div class="subtitle-2 text-uppercase font-weight-bold">{{member.name}}</div>
 				<div class="caption">{{member.role}}</div>

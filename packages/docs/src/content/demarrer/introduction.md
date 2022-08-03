@@ -27,8 +27,4 @@ En tant que système **_open source_**, notre Design System est **disponible gra
 
 ## Anciens membres de l'équipe principale
 
-<doc-home-olds-members></doc-home-olds-members>
-
-## Contributeurs
-
 <doc-home-contributors></doc-home-contributors>
