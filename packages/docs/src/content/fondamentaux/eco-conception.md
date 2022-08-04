@@ -1,11 +1,12 @@
-## Éco-conception
+---
+title: Éco-conception
+description: L’éco-conception est une approche méthodique qui prend en considération les aspects environnementaux du processus de conception et de développement dans le but de réduire les impacts environnementaux négatifs.
+---
 
-L'éco conception est une approche méthodique qui prend en considération les aspects environnementaux du processus de conception et développement dans le but de réduire les impacts environnementaux négatifs.
+La liste suivante énumère les points auxquels vous devez faire attention pendant la conception ainsi que le développement de votre application.
 
-La suite suivante énumère les points auquel vous devrez faire attention durant la conception et le développement.
+<doc-eco-design class="mb-8"></doc-eco-design>
 
-<doc-eco-conception></doc-eco-conception>
+### Évaluer son projet
 
-### Evaluer son projet
-
-Pour évaluer la conception, vous pouvez utiliser [Ecoindex](http://www.ecoindex.fr/) ou [Ecometer](http://www.ecometer.org/)
+Pour évaluer l’éco-conception de votre projet, vous pouvez utiliser [Ecoindex](http://www.ecoindex.fr/) ou [Ecometer](http://www.ecometer.org/).
