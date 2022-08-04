@@ -1,5 +1,9 @@
 ## Non publié
 
+### Vue Dot
+
+- ✨ **Refactoring**: renommage du fichier socialMediaLinks.ts en link.ts pour éviter les conflits lors des imports ([#2196](https://github.com/assurance-maladie-digital/design-system/pull/2196))
+
 ### Documentation
 
 - 📝 **Documentation**
