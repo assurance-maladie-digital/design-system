@@ -45,7 +45,7 @@ export function installRouter(localVue: VueConstructor<Vue>): void {
 }
 
 import VueRouter, { RouterOptions } from 'vue-router';
-import { FormRef } from '@cnamts/vue-dot/src/types';
+import { VForm } from '@cnamts/vue-dot/src/types';
 import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
 /** Function to create router */
@@ -64,7 +64,7 @@ export function createVuetifyInstance(preset?: Partial<UserVuetifyPreset>): Vuet
 }
 
 /** Function to mock VFormRef */
-export function mockVFormRef(isValid: boolean): FormRef {
+export function mockVFormRef(isValid: boolean): VForm {
 	return {
 		validate: () => isValid,
 		resetValidation: () => undefined,
