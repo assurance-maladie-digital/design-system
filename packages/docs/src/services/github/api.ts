@@ -36,5 +36,6 @@ export async function getContributors(): Promise<Contributor[]> {
 	const octokit = new Octokit();
 
 	const { data: contributors } = await octokit.request(`GET /repos/${REPO}/contributors`);
+
 	return contributors;
 }
