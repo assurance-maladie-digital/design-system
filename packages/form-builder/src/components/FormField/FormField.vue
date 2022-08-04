@@ -103,7 +103,7 @@
 		}
 
 		get descriptionColor(): string {
-			return 'grey--text ' + this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
+			return 'grey-' + this.$vuetify.theme.dark ? 'lighten-60' : 'base' + '--text';
 		}
 
 		emitChangeEvent(value: Field): void {

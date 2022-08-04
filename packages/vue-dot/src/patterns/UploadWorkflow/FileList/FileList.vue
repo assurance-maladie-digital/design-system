@@ -170,7 +170,7 @@
 		uploadIcon = mdiUpload;
 
 		get iconColor(): string {
-			return this.$vuetify.theme.dark ? 'grey lighten-1' : 'grey darken-1';
+			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey-base';
 		}
 
 		getIconInfo(state: FileStateEnum): IconInfo {
@@ -203,7 +203,7 @@
 				return;
 			}
 
-			return 'grey--text ' + this.$vuetify.theme.dark ? 'text--lighten-1' : 'text--darken-1';
+			return 'grey- ' + this.$vuetify.theme.dark ? 'lighten-60' : 'base' + '--text';
 		}
 
 		showDivider(index: number): boolean {

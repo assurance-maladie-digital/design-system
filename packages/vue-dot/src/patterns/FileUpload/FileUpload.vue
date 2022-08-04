@@ -154,7 +154,7 @@
 			return {
 				label: dark ? 'white--text' : 'primary--text',
 				multiple: dark ? 'white--text' : 'black--text',
-				info: 'grey--text ' + (dark ? 'text--lighten-1' : 'text--darken-1')
+				info: 'grey-' + (dark ? 'lighten-60--text' : 'base--text')
 			};
 		}
 
