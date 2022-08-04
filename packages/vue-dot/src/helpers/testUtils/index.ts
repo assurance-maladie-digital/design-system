@@ -72,10 +72,10 @@ export function mockVFormRef(isValid: boolean): VForm {
 	};
 }
 
-/** Function to mock VFormRef */
-export function mockTranslation<T>(keyToMock: string, data: T): IndexedObject<(key: string) => T | string> {
+/** Function to mock translation */
+export function mockTranslation<T>(translations: IndexedObject<T>): IndexedObject<(key: string) => T | string> {
 	return {
-		$t: (key: string) => key === keyToMock ? data : key
+		$t: (key: string) => translations[key] ?? key
 	};
 }
 

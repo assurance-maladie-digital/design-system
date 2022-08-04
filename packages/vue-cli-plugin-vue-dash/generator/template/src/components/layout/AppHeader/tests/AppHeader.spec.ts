@@ -28,7 +28,9 @@ describe('AppHeader', () => {
 	it('renders correctly', () => {
 		wrapper = mount(AppHeader, {
 			mocks: {
-				...mockTranslation<string[]>('components.layout.appHeader.navigationItems', []),
+				...mockTranslation<string[]>({
+					'components.layout.appHeader.navigationItems': []
+				}),
 				$maintenanceEnabled: false
 			}
 		});

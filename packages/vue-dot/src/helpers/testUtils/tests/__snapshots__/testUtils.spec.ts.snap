@@ -1084,3 +1084,10 @@ Vuetify {
 exports[`utils should install global plugins 1`] = `[Function]`;
 
 exports[`utils should install router 1`] = `[Function]`;
+
+exports[`utils should mock translation 1`] = `
+Array [
+  "translation1",
+  "translation2",
+]
+`;

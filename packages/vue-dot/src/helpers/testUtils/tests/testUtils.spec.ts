@@ -124,9 +124,16 @@ describe('utils', () => {
 	});
 
 	it('should mock translation', () => {
-		const { $t } = mockTranslation<string>('path.to.translation', 'translation');
+		const { $t } = mockTranslation<string | string[]>({
+			'path.to.translation': 'translation',
+			'path.to.translations': [
+				'translation1',
+				'translation2'
+			]
+		});
 
 		expect($t('path.to.translation')).toBe('translation');
+		expect($t('path.to.translations')).toMatchSnapshot();
 		expect($t('path.to.other.translation')).toBe('path.to.other.translation');
 	});
 });
