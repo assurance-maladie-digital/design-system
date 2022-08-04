@@ -3,7 +3,8 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117))
+  - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117)) ([51e8952](https://github.com/assurance-maladie-digital/design-system/commit/51e8952f4958d3799e4fc10b417fa63d21fd6188))
+  - **introduction:** Ajout de la section Équipe ([#2181](https://github.com/assurance-maladie-digital/design-system/pull/2181))
 
 ### Interne
 
