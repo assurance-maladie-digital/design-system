@@ -44,7 +44,8 @@
 
 		options = {
 			booleans: [
-				'hideActions'
+				'hideActions',
+				'persistent'
 			],
 			textFields: [
 				'title',

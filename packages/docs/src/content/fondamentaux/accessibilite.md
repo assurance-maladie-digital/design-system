@@ -25,7 +25,6 @@ La conduite d’une évaluation pour attester de la conformité du produit numé
 - **Conformité partielle :** si au moins 50 % des critères de contrôle du RGAA sont respectés
 - **Non-conformité :** s’il n’existe aucun résultat d’audit en cours de validité permettant de mesurer le respect des critères ou si moins de 50 % des critères de contrôle du RGAA sont respectés
 
-
 Vous garantissant d’un respect de ces critères, l’usage sans modification de notre Design System vous assure d’abord un gain de temps dans le développement mais surtout une augmentation du pourcentage de succès dans l’évaluation de votre produit.
 
 [Faire son auto-évaluation](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/kit/#contenu)

@@ -18,16 +18,20 @@
 			v-bind="options.dialog"
 			:title="filterTitle"
 		>
-			<FormField v-model="dialogContent" />
+			<div class="vd-filter-module-dialog-content d-flex flex-column-reverse">
+				<FormField v-model="dialogContent" />
 
-			<template #actions>
-				<VBtn
-					v-bind="options.validateBtn"
-					@click="applyFilter"
-				>
-					{{ locales.apply }}
-				</VBtn>
-			</template>
+				<div class="vd-filter-module-dialog-actions d-flex mb-10">
+					<VSpacer v-bind="options.spacer" />
+
+					<VBtn
+						v-bind="options.validateBtn"
+						@click="applyFilter"
+					>
+						{{ locales.apply }}
+					</VBtn>
+				</div>
+			</div>
 		</DialogBox>
 	</div>
 </template>
