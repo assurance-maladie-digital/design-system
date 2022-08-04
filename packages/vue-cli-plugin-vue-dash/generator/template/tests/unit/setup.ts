@@ -1,3 +1,3 @@
-import { applyGlobalConfig } from './utils';
+import { applyGlobalConfig } from '@cnamts/vue-dot/src/helpers/testUtils';
 
 applyGlobalConfig();

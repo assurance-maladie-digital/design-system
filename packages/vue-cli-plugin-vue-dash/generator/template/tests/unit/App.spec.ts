@@ -3,13 +3,13 @@ import Vuetify from 'vuetify/lib';
 
 import {
 	Wrapper,
-	html,
 	mount,
 	createLocalVue,
 	createVuetifyInstance,
 	installGlobalPlugins,
 	installRouter
-} from '@/tests-unit/utils';
+} from '@cnamts/vue-dot/src/helpers/testUtils';
+import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import App from '@/App.vue';
 

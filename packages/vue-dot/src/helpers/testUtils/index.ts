@@ -4,7 +4,9 @@ import { config } from '@vue/test-utils';
 
 import { addVApp } from '@cnamts/vue-dot/tests/utils/addVApp';
 
+/** Function to apply global config */
 export function applyGlobalConfig(): void {
+	/** Function to init mocks */
 	function setMocks(): void {
 		// If mocks is undefined, init it
 		if (!config.mocks) {
@@ -27,6 +29,7 @@ import Vuex, { Store, StoreOptions } from 'vuex';
 
 import Vuetify, { UserVuetifyPreset } from 'vuetify';
 
+/** Function to install global plugins */
 export function installGlobalPlugins(localVue: VueConstructor<Vue>): void {
 	localVue.use(InputFacade);
 	localVue.use(Meta);
@@ -36,26 +39,31 @@ export function installGlobalPlugins(localVue: VueConstructor<Vue>): void {
 	Vue.use(Vuetify);
 }
 
+/** Function to install router */
 export function installRouter(localVue: VueConstructor<Vue>): void {
 	localVue.use(VueRouter);
 }
 
 import VueRouter, { RouterOptions } from 'vue-router';
-import { FormRef } from '@/types';
+import { FormRef } from '@cnamts/vue-dot/src/types';
 import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
+/** Function to create router */
 export function createRouter(options?: RouterOptions): VueRouter {
 	return new VueRouter(options);
 }
 
+/** Function to create store */
 export function createStore<T = unknown>(options: StoreOptions<T>): Store<T> {
 	return new Vuex.Store(options);
 }
 
+/** Function to create vuetify instance */
 export function createVuetifyInstance(preset?: Partial<UserVuetifyPreset>): Vuetify {
 	return new Vuetify(preset);
 }
 
+/** Function to mock VFormRef */
 export function mockVFormRef(isValid: boolean): FormRef {
 	return {
 		validate: () => isValid,
@@ -64,8 +72,8 @@ export function mockVFormRef(isValid: boolean): FormRef {
 	};
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-export function mockTranslation<T = any>(keyToMock: string, data: T): IndexedObject<(key: string) => T | string> {
+/** Function to mock VFormRef */
+export function mockTranslation<T>(keyToMock: string, data: T): IndexedObject<(key: string) => T | string> {
 	return {
 		$t: (key: string) => key === keyToMock ? data : key
 	};
@@ -73,6 +81,3 @@ export function mockTranslation<T = any>(keyToMock: string, data: T): IndexedObj
 
 // Re-export elements from Vue Test Utils to simplify imports
 export * from '@vue/test-utils';
-
-// Re-export html util (this won't be necessary once this file is included in Vue Dot)
-export { html } from '@cnamts/vue-dot/tests/utils/html';
