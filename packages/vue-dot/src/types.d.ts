@@ -20,7 +20,7 @@ export interface Dimensions {
 	height: string;
 }
 
-export interface VForm {
+export interface FormRef {
 	validate: () => boolean;
 	reset: () => void;
 	resetValidation: () => void;

@@ -6,9 +6,3 @@ export interface Link {
 	url: string;
 	name: string;
 }
-
-export interface FormRef {
-	validate: () => boolean;
-	resetValidation: () => void;
-	reset: () => void;
-}
