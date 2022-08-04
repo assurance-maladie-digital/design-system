@@ -6,6 +6,9 @@ const config: Config.InitialOptions = {
 		'<rootDir>/src/**/tests/*.spec.ts',
 		'<rootDir>/tests/unit/**/*.spec.ts'
 	],
+	setupFiles: [
+		'<rootDir>/tests/unit/setup.ts'
+	],
 	moduleNameMapper: {
 		'^@/tests-unit$': '<rootDir>/tests/unit/index.ts',
 		'^@/tests-unit/(.*)$': '<rootDir>/tests/unit/$1',
