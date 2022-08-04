@@ -1,6 +1,6 @@
 <template>
 	<div class="doc-homepage-team">
-		<VRow class="mb-5">
+		<VRow class="mb-8">
 			<VCol
 				v-for="(member, index) in team"
 				:key="index"
@@ -16,22 +16,22 @@
 
 				<p
 					:aria-describedby="index"
-					class="text--subtitle-2 text-uppercase font-weight-bold mb-1"
+					class="text-subtitle-1 text-uppercase font-weight-bold mb-1"
 				>
 					{{ member.name }}
 				</p>
 
 				<p
 					:id="index"
-					class="text--caption mb-0"
+					class="text-subtitle-2 mb-0"
 				>
 					{{ member.role }}
 				</p>
 			</VCol>
 		</VRow>
 
-		<h3 class="text--h4 mb-6">
-			Anciens membres de l'équipe principale
+		<h3 class="text-h6 font-weight-bold mb-6">
+			Anciens membres de l’équipe principale
 		</h3>
 
 		<ul class="pl-0">
@@ -41,7 +41,7 @@
 			>
 				<a
 					:href="contributor.html_url"
-					class="text--subtitle-2 font-weight-bold"
+					class="text-body-1 font-weight-bold"
 				>
 					{{ contributor.login }}
 				</a>
@@ -64,13 +64,18 @@
 	export default class DocHomePageTeam extends Vue {
 		team = [
 			{
+				name: 'Julien Baylac',
+				role: 'Développeur Front',
+				img: 'julien_b.png'
+			},
+			{
 				name: 'Dr Valentin Becquet',
 				role: 'UX/UI Designer',
 				img: 'valentin_b.png'
 			},
 			{
 				name: 'Dylan Broussard',
-				role: 'Tech Lead, Développeur Front',
+				role: 'Tech Lead Front',
 				img: 'dylan_b.png'
 			},
 			{
