@@ -23,7 +23,7 @@ En tant que système **_open source_**, notre Design System est **disponible gra
 
 ## Équipe principale
 
-<doc-home-page-team class="mb-5"></doc-home-page-team>
+<doc-home-page-team class="mb-6"></doc-home-page-team>
 
 ## Contributeurs
 

@@ -6,7 +6,7 @@
 		>
 			<a
 				:href="contributor.html_url"
-				class="text--subtitle-2 font-weight-bold"
+				class="text-body-1 font-weight-bold"
 			>
 				{{ contributor.login }}
 			</a>
