@@ -333,6 +333,19 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Tests unitaires',
+				items: [
+					{
+						title: 'mockVFormRef',
+						to: '/composants-techniques/tests-unitaires/mock-v-form-ref'
+					},
+					{
+						title: 'mockTranslation',
+						to: '/composants-techniques/tests-unitaires/mock-translation'
+					}
+				]
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
 			},
