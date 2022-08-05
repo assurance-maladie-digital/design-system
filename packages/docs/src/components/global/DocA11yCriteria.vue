@@ -1,7 +1,7 @@
 <template>
 	<VExpansionPanels
 		accordion
-		class="doc-roadmap w-100"
+		class="doc-a11y-criteria w-100"
 	>
 		<VExpansionPanel
 			v-for="(item, index) in items"

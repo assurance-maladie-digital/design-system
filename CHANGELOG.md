@@ -4,7 +4,8 @@
 
 - 🐛 **Corrections de bugs**
   - **introduction:** Correction du contenu de la section *Équipe* ([#2197](https://github.com/assurance-maladie-digital/design-system/pull/2197)) ([2e5fda8](https://github.com/assurance-maladie-digital/design-system/commit/2e5fda8311f334f92f0e16ee35097f2eba4b6cce))
-  - **NotificationBar:** Correction de l'exemple `options` ([#2198](https://github.com/assurance-maladie-digital/design-system/pull/2198)) ([610ffba](https://github.com/assurance-maladie-digital/design-system/commit/610ffba23898b2391c9086f43aab522c1979fd4f))
+  - **NotificationBar:** Correction de l'exemple `options` ([#2198](https://github.com/assurance-maladie-digital/design-system/pull/2198)) ([90b7dc0](https://github.com/assurance-maladie-digital/design-system/commit/90b7dc0c2e46358f631a9a3f1b7ff7e2c545d47b))
+  - **DocA11yCriteria:** Correction du nom de la classe de l'élément principal ([#2200](https://github.com/assurance-maladie-digital/design-system/pull/2200)) ([610ffba](https://github.com/assurance-maladie-digital/design-system/commit/610ffba23898b2391c9086f43aab522c1979fd4f))
 
 - 📝 **Documentation**
   - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117)) ([51e8952](https://github.com/assurance-maladie-digital/design-system/commit/51e8952f4958d3799e4fc10b417fa63d21fd6188))
