@@ -1,11 +1,11 @@
 import { Octokit } from '@octokit/core';
 
 import { REPO } from '~/constants';
-import { Release, ReleaseDescription } from './types';
+import { Release, ReleaseDescription, Contributor } from './types';
 
 export async function getAllReleases(): Promise<Release[]> {
 	const octokit = new Octokit();
-	const releases: Release[] = [];;
+	const releases: Release[] = [];
 
 	const { data } = await octokit.request(`GET /repos/${REPO}/releases?per_page=100`);
 
@@ -30,4 +30,12 @@ export async function getLatestRelease(): Promise<ReleaseDescription> {
 		name: release.name,
 		date: release.created_at
 	};
+}
+
+export async function getContributors(): Promise<Contributor[]> {
+	const octokit = new Octokit();
+
+	const { data: contributors } = await octokit.request(`GET /repos/${REPO}/contributors`);
+
+	return contributors;
 }
