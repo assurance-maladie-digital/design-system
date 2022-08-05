@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **FooterBar:** Correction d'un conflit sur le nom du fichier `socialMediaLinks.ts` sur Windows ([#2196](https://github.com/assurance-maladie-digital/design-system/pull/2196))
+
 ### Documentation
 
 - 🐛 **Corrections de bugs**
@@ -23,7 +28,7 @@
   - **core-js:** Mise à jour vers la `v3.24.1` ([#2190](//github.com/assurance-maladie-digital/design-system/pull/2190)) ([550356f](https://github.com/assurance-maladie-digital/design-system/commit/550356fcb18f838808b172fb94e281e2b9fb86bf))
   - **@babel/core:** Mise à jour vers la `v7.18.10` ([#2192](https://github.com/assurance-maladie-digital/design-system/pull/2192)) ([13ef17f](https://github.com/assurance-maladie-digital/design-system/commit/13ef17f8f0f1db0947f6556c90c27bfeb1f36c88))
   - **@docsearch/js:** Mise à jour vers la `v3.2.0` ([#2194](https://github.com/assurance-maladie-digital/design-system/pull/2194)) ([67a5cb1](https://github.com/assurance-maladie-digital/design-system/commit/67a5cb15c7364800cb6d3fae9c954b7f2db0578f))
-  - **netlify-cli:** Mise à jour vers la `v10.15.0` ([#2199](https://github.com/assurance-maladie-digital/design-system/pull/2199))
+  - **netlify-cli:** Mise à jour vers la `v10.15.0` ([#2199](https://github.com/assurance-maladie-digital/design-system/pull/2199)) ([fc314b9](https://github.com/assurance-maladie-digital/design-system/commit/fc314b9c154ded37b8c1b10646d3e4dcd1fe7374))
 
 ## v2.5.0
 
