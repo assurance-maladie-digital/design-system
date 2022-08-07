@@ -7,14 +7,14 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 	current: [
 		{
 			version: '2.6.0',
-			date: 'Juillet 2022',
+			date: 'Août 2022',
 			description: 'Mise à jour de composants et complétion de la documentation.',
 			items: [
 				{
-					title: 'Ajout de la recherche',
-					description: 'Ajout de la recherche à la documentation.',
+					title: 'Ajout du composant PhoneField',
+					description: 'Ajout d’un composant permettant la saisie d’un numéro de téléphone.',
 					label: LabelMappingEnum.NEW,
-					issue: 1278
+					issue: 2178
 				},
 				{
 					title: 'Mise à jour de la typographie',
@@ -23,10 +23,22 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 					issue: 1794
 				},
 				{
-					title: 'Utilisation des icônes',
-					description: 'Documentation de l’utilisation des icônes.',
+					title: 'Guide sur les tests unitaires',
+					description: 'Ajour d’un guide sur la rédaction des tests unitaires.',
 					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1367
+					issue: 2136
+				},
+				{
+					title: 'Guide sur les tests e2e',
+					description: 'Ajour d’un guide sur la rédaction des tests d’interface.',
+					label: LabelMappingEnum.DOCUMENTATION,
+					issue: 2137
+				},
+				{
+					title: 'Documentation du module de notification',
+					description: 'Documentation du module Vuex de notification.',
+					label: LabelMappingEnum.DOCUMENTATION,
+					issue: 2052
 				},
 				{
 					title: 'Visualisation de données',
@@ -35,55 +47,31 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 					issue: 1863
 				},
 				{
-					title: 'Design Tokens',
-					description: 'Intégration de la nouvelle palette de couleurs aux Design Tokens.',
+					title: 'Connexion',
+					description: 'Ajout d’un template de connexion.',
 					label: LabelMappingEnum.NEW,
-					issue: 1397
-				},
-				{
-					title: 'Footer version complexe',
-					description: 'Ajout de la version complexe du footer.',
-					label: LabelMappingEnum.NEW,
-					issue: 1624
+					issue: 2052
 				}
 			]
 		}
 	],
 	next: [
 		{
-			version: '2.6.0',
-			date: 'Août 2022',
-			description: 'Ajout de nouveaux composants et mise à jour des Design Tokens.',
-			items: [
-				{
-					title: 'Documentation éco-conception',
-					description: 'Définition des principes d’éco-conception.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1862
-				},
-				{
-					title: 'Connexion',
-					description: 'Ajout d’un template de connexion.',
-					label: LabelMappingEnum.NEW
-				},
-				{
-					title: 'Mot de passe oublié',
-					description: 'Ajout d’un template de réinitialisation de mot de passe.',
-					label: LabelMappingEnum.NEW
-				},
-				{
-					title: 'Nouveau mot de passe',
-					description: 'Ajout d’un template pour définir un nouveau mot de passe.',
-					label: LabelMappingEnum.NEW,
-					issue: 1608
-				}
-			]
-		},
-		{
 			version: '3.0.0',
 			date: 'À partir de septembre 2022',
 			description: 'Migration vers Vue.js 3 : réécriture des composants avec l’API de composition, mise à jour du Starter Kit et modifications majeures.',
-			items: []
+			items: [
+				{
+					title: 'Étude sur le nouveau Starter Kit',
+					description: 'Étude sur les nouveautés et modifications comprises dans le nouveau Starter Kit.',
+					label: LabelMappingEnum.NEW
+				},
+				{
+					title: 'Nouveau Starter Kit',
+					description: 'Création du nouveau Starter Kit.',
+					label: LabelMappingEnum.NEW
+				}
+			]
 		}
 	]
 };

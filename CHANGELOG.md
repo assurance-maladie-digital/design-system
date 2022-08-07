@@ -3,7 +3,7 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-  - **FooterBar:** Correction d'un conflit sur le nom du fichier `socialMediaLinks.ts` sur Windows ([#2196](https://github.com/assurance-maladie-digital/design-system/pull/2196))
+  - **FooterBar:** Correction d'un conflit sur le nom du fichier `socialMediaLinks.ts` sur Windows ([#2196](https://github.com/assurance-maladie-digital/design-system/pull/2196)) ([bc581b2](https://github.com/assurance-maladie-digital/design-system/commit/bc581b29af6f7231fdb7e7fdf92413a3d477f0b9))
 
 ### Documentation
 
@@ -16,6 +16,7 @@
   - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117)) ([51e8952](https://github.com/assurance-maladie-digital/design-system/commit/51e8952f4958d3799e4fc10b417fa63d21fd6188))
   - **introduction:** Ajout de la section *Équipe* ([#2181](https://github.com/assurance-maladie-digital/design-system/pull/2181)) ([85fe14e](https://github.com/assurance-maladie-digital/design-system/commit/85fe14e1573a537640083665ad74a53246bc204e))
   - **global:** Ajout de la page *Éco-conception* ([#2186](https://github.com/assurance-maladie-digital/design-system/pull/2186)) ([70c4192](https://github.com/assurance-maladie-digital/design-system/commit/70c4192d86f9b67b9055ebd55378a034233e4d3c))
+  - **roadmap:** Mise à jour de la page ([#2201](https://github.com/assurance-maladie-digital/design-system/pull/2201))
 
 ### Interne
 
