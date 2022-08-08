@@ -10,6 +10,7 @@ import HeaderBar from './HeaderBar';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
 import PaginatedTable from './PaginatedTable';
+import PhoneField from './PhoneField';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
@@ -27,6 +28,7 @@ export const patterns = {
 	NirField,
 	NotificationBar,
 	PaginatedTable,
+	PhoneField,
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow
