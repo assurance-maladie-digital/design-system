@@ -1,6 +1,6 @@
 ## v2.5.1
 
-**Version publiée le 02/08/2022.**
+**Version publiée le 08/08/2022.**
 
 Cette version comporte un correctif pour Windows et la complétion de la documentation.
 
