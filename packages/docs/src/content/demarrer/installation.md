@@ -219,7 +219,7 @@ module.exports = {
 
 <doc-tab-item label="Design Tokens">
 
-Les Design Tokens sont un ensemble de variables représentant des valeurs utilisées dans notre Design System, et disponibles sous plusieurs formats.
+Les Design Tokens sont un ensemble de variables qui représentent les décisions de Design et remplacent les valeurs statiques dans le code.
 
 Pour les utiliser, vous devez les installer :
 
