@@ -1,4 +1,8 @@
-## Non publié
+## v2.5.1
+
+**Version publiée le 02/08/2022.**
+
+Cette version comporte un correctif pour Windows et la complétion de la documentation.
 
 ### Vue Dot
 
@@ -16,9 +20,12 @@
   - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117)) ([51e8952](https://github.com/assurance-maladie-digital/design-system/commit/51e8952f4958d3799e4fc10b417fa63d21fd6188))
   - **introduction:** Ajout de la section *Équipe* ([#2181](https://github.com/assurance-maladie-digital/design-system/pull/2181)) ([85fe14e](https://github.com/assurance-maladie-digital/design-system/commit/85fe14e1573a537640083665ad74a53246bc204e))
   - **global:** Ajout de la page *Éco-conception* ([#2186](https://github.com/assurance-maladie-digital/design-system/pull/2186)) ([70c4192](https://github.com/assurance-maladie-digital/design-system/commit/70c4192d86f9b67b9055ebd55378a034233e4d3c))
-  - **roadmap:** Mise à jour de la page ([#2201](https://github.com/assurance-maladie-digital/design-system/pull/2201))
+  - **roadmap:** Mise à jour de la page ([#2201](https://github.com/assurance-maladie-digital/design-system/pull/2201)) ([8c710d0](https://github.com/assurance-maladie-digital/design-system/commit/8c710d05d2e6329740db8f3ffd6e4ed9ab0bb207))
 
 ### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2202](https://github.com/assurance-maladie-digital/design-system/pull/2202))
 
 - ⬆️ **Dépendances**
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.32.0` ([#2175](https://github.com/assurance-maladie-digital/design-system/pull/2175)) ([2f5a516](https://github.com/assurance-maladie-digital/design-system/commit/2f5a516968ce57b75047c668bf1c5288499412b1))
