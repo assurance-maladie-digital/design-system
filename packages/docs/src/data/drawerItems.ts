@@ -164,6 +164,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/nir-field'
 					},
 					{
+						title: 'PhoneField',
+						to: '/composants/formulaires/phone-field'
+					},
+					{
 						title: 'UploadWorkflow',
 						to: '/composants/formulaires/upload-workflow'
 					}

@@ -1,3 +1,10 @@
+## Non publié
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **NirField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204))
+
 ## v2.5.1
 
 **Version publiée le 08/08/2022.**
@@ -25,7 +32,7 @@ Cette version comporte un correctif pour Windows et la complétion de la documen
 ### Interne
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2202](https://github.com/assurance-maladie-digital/design-system/pull/2202))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2202](https://github.com/assurance-maladie-digital/design-system/pull/2202)) ([fba0432](https://github.com/assurance-maladie-digital/design-system/commit/fba0432aa31e8e8e65a24cef6fbd0493d211b634))
 
 - ⬆️ **Dépendances**
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.32.0` ([#2175](https://github.com/assurance-maladie-digital/design-system/pull/2175)) ([2f5a516](https://github.com/assurance-maladie-digital/design-system/commit/2f5a516968ce57b75047c668bf1c5288499412b1))

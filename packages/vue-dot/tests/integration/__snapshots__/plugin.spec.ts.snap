@@ -27,6 +27,7 @@ Object {
     "NotificationBar",
     "PageContainer",
     "PaginatedTable",
+    "PhoneField",
     "SubHeader",
     "TableToolbar",
     "UploadWorkflow",
