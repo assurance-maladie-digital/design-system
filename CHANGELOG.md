@@ -3,7 +3,12 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **NirField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204))
+  - **NirField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **lerna:** Mise à jour vers la `v5.4.0` ([#2205](https://github.com/assurance-maladie-digital/design-system/pull/2205))
 
 ## v2.5.1
 
