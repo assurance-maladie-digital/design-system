@@ -2,7 +2,7 @@ import Vue, { VueConstructor } from 'vue';
 
 import { config } from '@vue/test-utils';
 
-import { addVApp } from '@cnamts/vue-dot/tests/utils/addVApp';
+import { addVApp } from '../../../tests/utils/addVApp';
 
 /** Function to apply global config */
 export function applyGlobalConfig(): void {
@@ -24,7 +24,7 @@ export function applyGlobalConfig(): void {
 
 import InputFacade from 'vue-input-facade';
 import Meta from 'vue-meta';
-import VueDot from '@cnamts/vue-dot';
+import VueDot from '../../../src';
 import Vuex, { Store, StoreOptions } from 'vuex';
 
 import Vuetify, { UserVuetifyPreset } from 'vuetify';
@@ -45,8 +45,7 @@ export function installRouter(localVue: VueConstructor<Vue>): void {
 }
 
 import VueRouter, { RouterOptions } from 'vue-router';
-import { VForm } from '@cnamts/vue-dot/src/types';
-import { IndexedObject } from '@cnamts/vue-dot/src/types';
+import { IndexedObject, VForm } from '../../types';
 
 /** Function to create router */
 export function createRouter(options?: RouterOptions): VueRouter {
