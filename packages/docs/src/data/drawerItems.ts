@@ -61,6 +61,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Design Tokens',
 				to: '/fondamentaux/design-tokens'
+			},
+			{
+				title: 'Éco-conception',
+				to: '/fondamentaux/eco-conception'
 			}
 		]
 	},
@@ -158,6 +162,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'NirField',
 						to: '/composants/formulaires/nir-field'
+					},
+					{
+						title: 'PhoneField',
+						to: '/composants/formulaires/phone-field'
 					},
 					{
 						title: 'UploadWorkflow',
