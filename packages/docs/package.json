@@ -26,7 +26,7 @@
 		"@cnamts/form-builder": "^2.5.1",
 		"@cnamts/vue-dot": "^2.5.1",
 		"@docsearch/js": "3.2.0",
-		"@netlify/functions": "1.0.0",
+		"@netlify/functions": "1.2.0",
 		"@octokit/core": "4.0.4",
 		"nuxt": "2.15.8",
 		"remark": "13.0.0",
