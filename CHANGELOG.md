@@ -13,9 +13,9 @@
   - **vuetify:** Mise à jour vers la `v2.6.9` ([#2216](https://github.com/assurance-maladie-digital/design-system/pull/2216)) ([ad81266](https://github.com/assurance-maladie-digital/design-system/commit/ad8126683df32936d78b4c539375e6bdb8f0b082))
   - **@types/node:** Mise à jour vers la `v16.11.48` ([#2221](https://github.com/asurance-maladie-digital/design-system/pull/2221)) ([08e4f86](https://github.com/assurance-maladie-digital/design-system/commit/08e4f868f355fd1a1f72ecdb7846cd18b68f9018))
   - **dayjs:** Mise à jour vers la `v1.11.5` ([#2222](https://github.com/assurance-maladie-digital/design-system/pull/2222)) ([d13f9b3](https://github.com/assurance-maladie-digital/design-system/commit/d13f9b3b088cd0d090daa7b74ec3589be44b0da2))
-  - **lerna:** Mise à jour vers la `v5.4.1` ([#2223](https://github.com/assurance-maladie-digital/design-system/pull/2223)) ([83edb2e](https://github.com/assurance-maladie-digital/design-system/commit/83edb2e14d9f76018dd7496a50ebdf6a6437e741))
   - **netlify-cli:** Mise à jour vers la `v10.17.8` ([#2231](https://github.com/assurance-maladie-digital/design-system/pull/2231)) ([dc66910](https://github.com/assurance-maladie-digital/design-system/commit/dc66910d2d2d64a0d69715053872ce9f65069ba7))
-  - **@netlify/functions:** Mise à jour vers la `v1.2.0` ([#2225](https://github.com/assurance-maladie-digital/design-system/pull/2225))
+  - **@netlify/functions:** Mise à jour vers la `v1.2.0` ([#2225](https://github.com/assurance-maladie-digital/design-system/pull/2225)) ([1224411](https://github.com/assurance-maladie-digital/design-system/commit/12244114ccf0b557e9d6d05e1b5a7789d25eba15))
+  - **lerna:** Mise à jour vers la `v5.4.2` ([#2226](https://github.com/assurance-maladie-digital/design-system/pull/2226))
 
 ## v2.5.1
 
