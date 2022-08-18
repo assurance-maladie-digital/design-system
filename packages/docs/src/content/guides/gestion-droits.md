@@ -445,3 +445,151 @@ acl.can(user, 'purgeInactive', GlobalRule, additionalParameter);
 ```
 
 Remarque : lors de la définition de la règle, vous pouvez l'omettre, mais elle est obligatoire pour `can`.
+
+### LCA
+
+Vous ajoutez des règles en fournissant un verbe, un objet verb et un test facultatif (qui sinon est vrai par défaut).
+
+Si le test est une fonction, il sera évalué avec les paramètres : user, verb object et verbObjectName. La valeur de test est finalement évaluée pour sa véracité.
+
+Exemples:
+
+```js
+acl.rule('create', Post);
+acl.rule('edit', Post, (user, post) => post.userId === user.id);
+acl.rule(
+	'edit',
+	Post,
+	(user, post, verb, additionalParameter, secondAdditionalParameter) => true
+);
+acl.rule('delete', Post, false); // deleting disabled
+acl.rule('purgeInactive', (user) => user.isAdmin); // global rule
+```
+
+#### Can
+
+Effectue un test si un utilisateur peut effectuer une action sur l'objet verbe.
+
+L'action est un verbe et l'objet verb peut être tout ce que verbObjectMapper peut mapper à un nom d'objet verb.
+
+Par exemple, si vous pouvez tester si un utilisateur peut supprimer un message, vous passerez le message réel. Là où, comme si vous nous testiez, un utilisateur peut créer un message, vous passeriez la fonction de classe ou une chaîne.
+
+```js
+acl.can(user, 'create', Post);
+acl.can(user, 'edit', post);
+acl.can(user, 'edit', post, additionalParameter, secondAdditionalParameter);
+```
+
+Notez que ceux-ci sont également disponibles sur l'utilisateur si vous avez utilisé le mixin :
+
+```js
+user.can('create', Post);
+user.can('edit', post);
+```
+
+Paramètres :
+
+`user` : **Objet**<br/>
+`verb` : **Chaîne de caractères**<br/>
+`verbObject` : ( **Fonction** | **Objet** | **Chaîne de caractères** )<br/>
+`args` : Tout autre paramètre est passé dans la règle
+
+Renvoie n'importe quel booléen
+
+#### Some
+
+Comme can mais verb object est un tableau où seuls certains doivent être vrais pour que la règle corresponde.
+
+Notez que les objets verbaux n'ont pas besoin d'être du même genre.
+
+Paramètres :
+
+`user` : **Objet**<br/>
+`verb`<br/>
+`verbObjects` : **Tableau** <( **Fonction** | **Objet** | **chaîne** )><br/>
+`args` : Tout autre paramètre est passé dans la règle
+
+#### Every
+
+Comme can mais verb object est un tableau où tout doit être vrai pour que la règle corresponde.
+
+Notez que les objets verbaux n'ont pas besoin d'être du même genre.
+
+Paramètres :
+
+`user` **Objet**<br/>
+`verb`<br/>
+`verbObjects` **Tableau** <( **Fonction** | **Objet** | **chaîne** )><br/>
+`args` : Tout autre paramètre est passé dans la règle
+
+Renvoie n'importe quel booléen
+
+Mixin :
+
+La Mixin augmente votre classe d'utilisateurs avec un `can` objet de fonction. Ceci est facultatif et vous pouvez toujours appeler `can` directement votre instance **Acl**.
+
+```js
+user.can();
+user.can.some();
+user.can.every();
+```
+
+Paramètres :
+
+`User` **Fonction** Une classe d'utilisateurs ou une fonction de constructeur
+
+#### verbObjectMapper
+
+Les règles sont regroupées par objets-verbes et ce mappeur par défaut tente de mapper toute entrée non fausse à un nom d'objet verbe.
+
+Ceci est important lorsque vous voulez essayer un verbe sur une règle passant dans une instance d'une classe.
+
+- les chaînes deviennent des objets verbaux<br/>
+- les noms de fonction sont utilisés pour l'objet verb<br/>
+- le nom du constructeur de l'objet est utilisé pour l'objet verbe<br/>
+
+Remplacez cette fonction si vos modèles ne correspondent pas à cette approche.
+
+Par exemple, supposons que vous utilisez des objets de données simples avec une propriété type pour indiquer le type de l'objet.
+
+```js
+acl.verbObjectMapper = (s) => (typeof s === 'string' ? s : s.type);
+```
+
+`can` utilisera désormais cette fonction lorsque vous transmettez vos objets.
+
+```js
+acl.rule('edit', 'book', (user, book) => user.id === book.authorId);
+const thing = { title: 'The Silmarillion', authorId: 1, type: 'book' };
+acl.can(user, 'edit', thing);
+```
+
+Paramètres :
+
+`verbObject` ( **Fonction** | **Objet** | **chaîne de caractères** )
+Renvoie un objet verbe **Chaîne de caractères**.
+
+#### reset
+
+Supprime toutes les règles, politiques et inscriptions
+
+#### removeRules
+
+Supprimer les règles pour l'objet verbal
+
+Limitez éventuellement à un seul verbe.
+
+Paramètres :
+
+`verbObject` ( **Fonction** | **Objet** | **chaîne de caractères** )
+`verb` **chaîne de caractères?** un verbe optionnel (optionnel, par défaut `null`)
+
+Returns **Acl**
+
+#### removeAll
+
+Méthode pratique pour supprimer toutes les règles et politiques d'un objet verbe
+
+Paramètres :
+
+`verbObject` ( **Fonction** | **Objet** | **chaîne de caractères** )
