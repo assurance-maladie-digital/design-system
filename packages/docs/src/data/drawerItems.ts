@@ -401,6 +401,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation des icônes',
 				to: '/guides/utilisation-icones'
+			},
+			{
+				title: 'Gestion des droits',
+				to: '/guides/gestion-droits'
 			}
 		]
 	},
