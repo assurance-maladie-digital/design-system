@@ -170,7 +170,7 @@
 		uploadIcon = mdiUpload;
 
 		get iconColor(): string {
-			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey-base';
+			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';
 		}
 
 		getIconInfo(state: FileStateEnum): IconInfo {

@@ -1,4 +1,5 @@
 import { Palette, VuetifyTheme, Colors } from './types';
+import { IndexedObject } from 'src/types';
 
 export const palette: Palette = {
 	amBlue: {
@@ -169,6 +170,16 @@ export const lightTheme: VuetifyTheme = {
 	warning: palette.yellow.darken40,
 	risquePro: palette.brick.base
 };
+
+export const colorsClasses: IndexedObject = {};
+
+Object.entries(palette).forEach(color => {
+	Object.entries(color[1]).forEach(subColor => {
+		const colorName = subColor[0] === 'base' ? '' : subColor[0].substring(-20, subColor[0].length - 2) + '-' + subColor[0].substring(subColor[0].length - 2);
+		const name = color[0].replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() + (colorName === '' ? '' : '-' + colorName);
+		colorsClasses[name] = subColor[1] as string;
+	});
+});
 
 export const colors: Colors = {
 	...palette,

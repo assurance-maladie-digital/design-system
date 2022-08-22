@@ -11,7 +11,7 @@
 		:error-messages="errorMessages"
 		color="primary"
 		tick-size="6"
-		track-color="grey-base"
+		track-color="grey"
 		class="vd-choice-slider-field vd-form-input-xl"
 		@change="valueUpdated"
 	>

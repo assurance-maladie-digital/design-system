@@ -3,7 +3,7 @@
 		<template #icon>
 			<VIcon
 				size="32px"
-				color="grey-base"
+				color="grey"
 				class="ml-0 ml-sm-4"
 			>
 				{{ userIcon }}
