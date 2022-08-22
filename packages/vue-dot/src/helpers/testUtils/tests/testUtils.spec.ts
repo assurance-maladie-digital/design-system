@@ -9,7 +9,7 @@ import {
 	mockVFormRef
 } from '../';
 
-import { lightTheme } from '../../../../../design-tokens';
+import { lightTheme } from '@cnamts/design-tokens';
 
 import {
 	config,
