@@ -215,6 +215,7 @@ Store {
       "_provided": Object {},
       "_renderProxy": [Circular],
       "_scope": EffectScope {
+        "_vm": true,
         "active": true,
         "cleanups": Array [],
         "effects": Array [],
@@ -226,6 +227,7 @@ Store {
       "_watcher": null,
     },
     "_scope": EffectScope {
+      "_vm": true,
       "active": true,
       "cleanups": Array [],
       "effects": Array [],
@@ -334,6 +336,7 @@ Store {
       "_provided": Object {},
       "_renderProxy": [Circular],
       "_scope": EffectScope {
+        "_vm": true,
         "active": true,
         "cleanups": Array [],
         "effects": Array [],
@@ -345,6 +348,7 @@ Store {
       "_watcher": null,
     },
     "_scope": EffectScope {
+      "_vm": true,
       "active": true,
       "cleanups": Array [],
       "effects": Array [],
