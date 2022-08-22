@@ -85,7 +85,7 @@ function createWrapper(propsData?: Record<string, unknown>, mixinData = {}) {
 			menu: createMenu(),
 			textField: createTextField()
 		}
-	}) as Wrapper<TestComponent>;
+	}) as unknown as Wrapper<TestComponent>;
 }
 
 describe('DateLogic', () => {

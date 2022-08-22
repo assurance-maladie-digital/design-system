@@ -78,7 +78,7 @@ describe('Eventable', () => {
 			mocks: {
 				date: '2019-10-27'
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE)).toBe('vd-custom-event accent');
 	});
@@ -93,7 +93,7 @@ describe('Eventable', () => {
 			mocks: {
 				date: '2019-10-22'
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
@@ -112,7 +112,7 @@ describe('Eventable', () => {
 					}
 				}
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE)).toBe(false);
 	});
@@ -131,7 +131,7 @@ describe('Eventable', () => {
 					}
 				}
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE_WEEK_END)).toBe('vd-custom-event grey lighten-1');
 	});
@@ -150,7 +150,7 @@ describe('Eventable', () => {
 					}
 				}
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		expect(wrapper.vm.calendarEvents(DATE_WEEK_END)).toBe('vd-custom-event grey darken-1');
 	});
