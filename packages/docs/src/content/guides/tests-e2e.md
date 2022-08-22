@@ -6,6 +6,9 @@ description: Présentation des tests End to End.
 Les tests End to End sont des tests qui permettent de tester l'interface.
 Ils sont réalisés grâce au framework Cypress (https://docs.cypress.io/).
 
+<doc-tabs>
+
+<doc-tab-item label="Utilisation">
 ### Mise en place
 
 Les tests peuvent être créés en ajoutant un fichier `.spec.ts` dans le dossier `tests/e2e/specs`.
@@ -83,3 +86,9 @@ En cas d'échec, la raison vous sera donnée dans la console de cette manière.
 ### les captures d'écran
 
 Dans le cas ou un test échoue, une capture d'écran est prise et est stockée dans le dossier `screenshots` qui se trouve à la racine du dossier `e2e`. Cela vous aidera à investiguer pour trouver les causes de l'erreur.
+
+</doc-tab-item>
+
+<doc-tab-item label="API">
+<doc-api name="file-upload"></doc-api>
+</doc-tab-item>
