@@ -24,7 +24,7 @@
 		</template>
 
 		<template #append>
-			<p class="grey--text my-3 mx-4">
+			<p class="text--secondary my-3 mx-4">
 				Informations partenaires
 			</p>
 		</template>

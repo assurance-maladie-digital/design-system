@@ -1,5 +1,4 @@
-import { Palette, VuetifyTheme, Colors } from './types';
-import { IndexedObject } from 'src/types';
+import { Palette, VuetifyTheme, Colors, IndexedObject } from './types';
 
 export const palette: Palette = {
 	amBlue: {
