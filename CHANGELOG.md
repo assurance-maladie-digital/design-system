@@ -5,6 +5,11 @@
 - ✨ **Nouvelles fonctionnalités**
   - **NirField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
 
+### Documentation
+
+- 📝 **Documentation**
+  - **tests:** Ajout des pages liées aux fonctions de tests ([#2195](https://github.com/assurance-maladie-digital/design-system/pull/2195))
+
 ### Interne
 
 - ⬆️ **Dépendances**
