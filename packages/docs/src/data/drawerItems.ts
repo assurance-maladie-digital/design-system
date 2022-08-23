@@ -336,11 +336,31 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Tests unitaires',
 				items: [
 					{
+						title: 'installGlobalPlugins',
+						to: '/composants-techniques/tests-unitaires/install-global-plugins'
+					},
+					{
+						title: 'installRouter',
+						to: '/composants-techniques/tests-unitaires/install-router'
+					},
+					{
+						title: 'createRouter',
+						to: '/composants-techniques/tests-unitaires/create-router'
+					},
+					{
+						title: 'createStore',
+						to: '/composants-techniques/tests-unitaires/create-store'
+					},
+					{
+						title: 'createVuetifyInstance',
+						to: '/composants-techniques/tests-unitaires/create-vuetify-instance'
+					},
+					{
 						title: 'mockVFormRef',
 						to: '/composants-techniques/tests-unitaires/mock-v-form-ref'
 					},
 					{
-						title: 'mockTranslation',
+						title: 'mockTranslations',
 						to: '/composants-techniques/tests-unitaires/mock-translation'
 					}
 				]

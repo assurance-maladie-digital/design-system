@@ -5,7 +5,7 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'isValid',
-				description: 'La validité du formulaire.',
+				description: 'L’état de validité du formulaire.',
 				type: 'boolean',
 				required: true
 			}

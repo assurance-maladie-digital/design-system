@@ -1,6 +1,6 @@
 ---
 title: mockTranslation
-description: La fonction `mockTranslation` permet de créer le mock d’une traduction spécifique.
+description: La fonction `mockTranslation` permet de créer le mock de traductions spécifiques.
 ---
 
 <doc-tabs>
@@ -9,7 +9,6 @@ description: La fonction `mockTranslation` permet de créer le mock d’une trad
 
 ```ts
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
 
 import {
 	Wrapper,
@@ -17,7 +16,7 @@ import {
 	createLocalVue,
 	installGlobalPlugins,
 	mockTranslation
-} from '@/tests-unit/utils';
+} from '@cnamts/vue-dot/src/helpers/testUtils';
 
 describe('Testing', () => {
 	const localVue = createLocalVue();
@@ -25,8 +24,15 @@ describe('Testing', () => {
 	let wrapper: Wrapper<Vue>;
 
 	const mocks = {
-		...mockTranslation<string[]>('path.to.translation1', ['translation1']),
-		...mockTranslation<string[]>('path.to.translation2', ['translation2'])
+		...mockTranslation<string | string[]>({
+			'path.to.title': 'Title',
+			'path.to.label': 'Label',
+			'path.to.items': [
+				'Item 1',
+				'Item 2',
+				'Item 3'
+			]
+		})
 	};
 
 	installGlobalPlugins(localVue);

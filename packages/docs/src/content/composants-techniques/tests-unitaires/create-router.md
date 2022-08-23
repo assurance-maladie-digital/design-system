@@ -1,6 +1,6 @@
 ---
-title: mockVFormRef
-description: La fonction `mockVFormRef` permet de créer un mock d’un VForm.
+title: createRouter
+description: La fonction `createRouter` permet de créer une instance du router.
 ---
 
 <doc-tabs>
@@ -10,42 +10,51 @@ description: La fonction `mockVFormRef` permet de créer un mock d’un VForm.
 ```ts
 import Vue from 'vue';
 
+import Component from '../';
+
 import {
 	Wrapper,
+	html,
 	mount,
 	createLocalVue,
-	installGlobalPlugins,
-	mockVFormRef
+	createRouter,
+	installRouter,
+	installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
 describe('Testing', () => {
 	const localVue = createLocalVue();
 
 	let wrapper: Wrapper<Vue>;
+	let router: VueRouter;
+
+	const routes = [
+		{
+			name: 'home',
+			path: '/home'
+		}
+	];
+
 
 	installGlobalPlugins(localVue);
+	installRouter(localVue);
 
-	it('submit form', () => {
-		const mocks = {
-			$refs: {
-				form: mockVFormRef(true)
-			}
-		};
-
+	it('renders correctly', () => {
 		wrapper = mount(Component, {
 			localVue,
-			mocks
+			router
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
+
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/mock-v-form-ref"></doc-api>
+<doc-api name="tests-unitaires/create-router"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

@@ -1,6 +1,6 @@
 ---
-title: mockVFormRef
-description: La fonction `mockVFormRef` permet de créer un mock d’un VForm.
+title: createVuetifyInstance
+description: La fonction `createVuetifyInstance` permet de créer une instance de vuetify.
 ---
 
 <doc-tabs>
@@ -9,43 +9,47 @@ description: La fonction `mockVFormRef` permet de créer un mock d’un VForm.
 
 ```ts
 import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
+
+import Component from '../';
 
 import {
 	Wrapper,
+	html,
 	mount,
 	createLocalVue,
-	installGlobalPlugins,
-	mockVFormRef
+	createVuetifyInstance,
+	installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
 describe('Testing', () => {
 	const localVue = createLocalVue();
 
 	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
 
 	installGlobalPlugins(localVue);
 
-	it('submit form', () => {
-		const mocks = {
-			$refs: {
-				form: mockVFormRef(true)
-			}
-		};
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
 
+	it('renders correctly', () => {
 		wrapper = mount(Component, {
 			localVue,
-			mocks
+			vuetify
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
+
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/mock-v-form-ref"></doc-api>
+<doc-api name="tests-unitaires/create-vuetify-instance"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>
