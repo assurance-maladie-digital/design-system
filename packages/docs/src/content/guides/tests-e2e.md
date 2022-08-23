@@ -6,9 +6,6 @@ description: Présentation des tests End to End.
 Les tests End to End sont des tests qui permettent de tester l'interface.
 Ils sont réalisés grâce au framework Cypress (https://docs.cypress.io/).
 
-<doc-tabs>
-
-<doc-tab-item label="Utilisation">
 ### Mise en place
 
 Les tests peuvent être créés en ajoutant un fichier `.spec.ts` dans le dossier `tests/e2e/specs`.
@@ -87,8 +84,46 @@ En cas d'échec, la raison vous sera donnée dans la console de cette manière.
 
 Dans le cas ou un test échoue, une capture d'écran est prise et est stockée dans le dossier `screenshots` qui se trouve à la racine du dossier `e2e`. Cela vous aidera à investiguer pour trouver les causes de l'erreur.
 
-</doc-tab-item>
+### Mock d'API
 
-<doc-tab-item label="API">
-<doc-api name="file-upload"></doc-api>
-</doc-tab-item>
+Pour intercepter des requetes, vous pouvez utiliser la fonction `cy.intercept()` de cette manière :
+
+```js
+let dynamicStatusCodeStub = 404;
+
+cy.intercept(‘POST’, ‘/your-backend-api’, (req) => {
+	req.reply({
+	statusCode: dynamicStatusCodeStub
+	});
+}).as(‘backendAPI’);
+```
+
+Placé au début du test, cette ligne intercepte les `post` de `/your-backend-api` et lui propose une réponse.
+Dans ce cas la, cela permet de tester ce qu'il se passe dans le cas où la réponse est une `erreur 404`.
+
+### Fonctions personnalisées
+
+Le projet est généré avec une fonction personnalisée : `cy.dataCy()`.
+Elle permet de cibler précisement à la manière du `get()` mais si l'élément cible comporte `data-cy="targetExemple"`, il suffira d'utiliser `cy.dataCy('targetExemple')` pour le tester.
+
+```js
+<VBtn
+	data-cy="sendNotification"
+	@click="sendNotification"
+>
+Click here
+</VBtn>
+```
+
+```js
+cy.dataCy('sendNotification').click();
+```
+
+Vous pouvez créer vos propres fonctions dans le même fichier que `dataCy()` : `tests/e2e/support/commands.js`.
+Vous pouvez ajouter votre nouvelle fonction à la liste des commandes de la même manière que `dataCy()`.
+
+```js
+Cypress.Commands.add('dataCy', (value) => {
+	return cy.get(`[data-cy=${value}]`);
+});
+```
