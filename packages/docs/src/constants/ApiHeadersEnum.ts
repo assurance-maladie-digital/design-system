@@ -1,8 +1,8 @@
 export enum ApiHeadersEnum {
 	NAME = 'name',
-	TYPE_ARGUMENT = 'typeArgument',
 	TYPE = 'type',
+	TYPE_ARGUMENT = 'typeArgument',
 	DEFAULT = 'default',
 	DESCRIPTION = 'description',
-	SIGNATURE = 'signature',
+	SIGNATURE = 'signature'
 }
