@@ -55,6 +55,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/fondamentaux/logo'
 			},
 			{
+				title: 'Éco-conception',
+				to: '/fondamentaux/eco-conception'
+			},
+			{
 				title: 'Couleurs',
 				to: '/fondamentaux/couleurs'
 			},
@@ -385,6 +389,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Appels API',
 				to: '/guides/appels-api'
+			},
+			{
+				title: 'Getion des textes',
+				to: '/guides/gestion-texte'
 			},
 			{
 				title: 'Tableau avec pagination',
