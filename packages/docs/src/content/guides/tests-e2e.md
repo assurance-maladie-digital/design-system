@@ -80,7 +80,7 @@ En cas d'échec, la raison vous sera donnée dans la console de cette manière.
   ✖  1 of 1 failed (100%)                     00:25        1        0        1        -        -
 ```
 
-### les captures d'écran
+### Les captures d'écran
 
 Dans le cas ou un test échoue, une capture d'écran est prise et est stockée dans le dossier `screenshots` qui se trouve à la racine du dossier `e2e`. Cela vous aidera à investiguer pour trouver les causes de l'erreur.
 
