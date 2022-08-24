@@ -1,6 +1,6 @@
 ---
 title: Tests e2e
-description: Rédaction de tests End to End.
+description: Rédaction des tests End to End.
 ---
 
 Les tests End to End sont des tests qui permettent de tester l’interface de votre application.
