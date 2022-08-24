@@ -8,9 +8,12 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180))
+  - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180)) ([6e7eba8](https://github.com/assurance-maladie-digital/design-system/commit/6e7eba8378feb47a91d7a6080fc0ec410a8e9bde))
 
 ### Interne
+
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.17` ([#2238](https://github.com/assurance-maladie-digital/design-system/pull/2238)) ([556802b](https://github.com/assurance-maladie-digital/design-system/commit/556802bd2e290fa76a0d6d99b79fa6abe281ed82))
 
 - ⬆️ **Dépendances**
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.3.6` ([#2207](https://github.com/assurance-maladie-digital/design-system/pull/2207)) ([d59c5b7](https://github.com/assurance-maladie-digital/design-system/commit/d59c5b799e3fe278f9d4801887749a8a578f6566))
@@ -25,9 +28,7 @@
   - **netlify-cli:** Mise à jour vers la `v11` ([#2235](https://github.com/assurance-maladie-digital/design-system/pull/2235)) ([583285c](https://github.com/assurance-maladie-digital/design-system/commit/583285c6192f80c0a39e842f8d73975c25a17f64))
   - **vue:** Mise à jour vers la `v2.7.9` ([#2239](https://github.com/assurance-maladie-digital/design-system/pull/2239)) ([613c14e](https://github.com/assurance-maladie-digital/design-system/commit/613c14e9c3424502475a56e365ff824dfd010aa2))
   - **@types/node:** Mise à jour vers la `v16.11.52` ([#2240](https://github.com/asurance-maladie-digital/design-system/pull/2240)) ([b4bba20](https://github.com/assurance-maladie-digital/design-system/commit/b4bba202af9443e1ddf840982b8d58aec2aeb1cf))
-
-- 🔧 **Configuration**
-  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.17` ([#2238](https://github.com/assurance-maladie-digital/design-system/pull/2238)) ([556802b](https://github.com/assurance-maladie-digital/design-system/commit/556802bd2e290fa76a0d6d99b79fa6abe281ed82))
+  - **@babel/core:** Mise à jour vers la `v7.18.13` ([#2241](https://github.com/assurance-maladie-digital/design-system/pull/2241))
 
 ## v2.5.1
 
