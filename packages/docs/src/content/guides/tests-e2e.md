@@ -123,7 +123,7 @@ Cypress.Commands.add('clickLink', (label) => {
 });
 ```
 
-Dans le fichier `index.d.ts` du dossier `type`, vous pourrez ajouter votre fonction :
+Dans le fichier `types/index.d.ts`, vous pourrez ajouter votre fonction :
 
 ```ts
 declare namespace Cypress {
@@ -133,6 +133,10 @@ declare namespace Cypress {
 		 * @example cy.dataCy('greeting')
 		 */
 		dataCy(value: string): Chainable<Element>;
+		/**
+		 * Custom command to click a link with a specified label
+		 * @example cy.clickLink('greeting')
+		 */
 		clickLink(value: string): Chainable<Element>;
 	}
 }
