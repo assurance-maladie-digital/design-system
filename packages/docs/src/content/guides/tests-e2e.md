@@ -1,61 +1,71 @@
 ---
 title: Tests e2e
-description: Présentation des tests End to End.
+description: Rédaction de tests End to End.
 ---
 
-Les tests End to End sont des tests qui permettent de tester l'interface.
-Ils sont réalisés grâce au framework Cypress (https://docs.cypress.io/).
+Les tests End to End sont des tests qui permettent de tester l’interface de votre application.
+Ils sont réalisés en utilisant l’outil Cypress (https://docs.cypress.io/).
 
-### Mise en place
+## Mise en place
 
-Les tests peuvent être créés en ajoutant un fichier `.spec.ts` dans le dossier `tests/e2e/specs`.
-Nommer le fichier de la meme manière que la view que vous voulez tester.
-Si vous voulez tester la page `Home`, nommer le fichier de test : `Home.specs.ts`.
+Pour créer un test d’interface, vous devez ajouter un fichier `MaPage.spec.ts` dans le dossier `tests/e2e/specs`, en le nommant de la même manière que la page que vous souhaitez tester.
+Par exemple, si vous voulez tester la page `Home`, vous devez nommer le fichier de test `Home.spec.ts`.
 
-### Rédaction des tests
+## Rédaction des tests
 
-Les tests doivent être construit selon ce modèle
+Les tests sont construits en utilisant la syntaxe suivante :
 
-```js
-// Nom de la page dans la partie "describe".
-describe('Home page', () => {
-	// Avant chaque test, cypress se rend sur la page que nous voulons tester
-	// Ici l'url /home
+```ts
+// Nom de la page testée dans le bloc "describe"
+describe('About page', () => {
+	// Avant chaque test, il faut naviguer sur l'URL de la page que vous souhaitez tester, ici /a-propos
 	beforeEach(() => {
 		cy.visit('/home');
 	});
 
-	// Utiliser la command dataCy() pour cibler des éléments, ici les liens
-	// Parmis les liens, cibler les éléments "ul"
-	// Comparer le resultat des élements ciblés au résultat attendu
-	it('contains link list', () => {
-		cy.dataCy('links').find('ul').should('have.length', 4);
+	// La commande dataCy() permet de sélectionner un élément avec l'attribut data-cy="", ici la liste des liens
+	// Puis on recherche toutes les balises <li>, et on compare le nombre de résultats à celui attendu
+	it('contains all links', () => {
+		cy.dataCy('links').find('li').should('have.length', 4);
 	});
 });
 ```
 
-```js
+```ts
 describe('Home page', () => {
 	beforeEach(() => {
 		cy.visit('/');
 	});
+
 	it('displays a notification when send notification button is pressed', () => {
-		// selectionne un bouton et clique dessus
+		// selectionne le bouton et clique dessus
 		cy.dataCy('sendNotification').click();
 
-		// verifie que la notification bar a bien la classe "active"
+		// Vérifie que la barre de notification a bien la classe "active"
 		cy.dataCy('notificationBar').should('have.class', 'active');
 	});
 });
 ```
 
-### Lancer les tests
+## Lancer les tests
 
+Pour lancer les tests, vous devez utiliser la commande suivante :
+
+<doc-tabs code>
+<doc-tab-item label="Yarn">
+```bash
+yarn test:e2e
+```
+</doc-tab-item>
+
+<doc-tab-item label="npm">
 ```bash
 npm run test:e2e
 ```
+</doc-tab-item>
+</doc-tabs>
 
-Si le test est passé, vous devriez avoir dans la console un tableau comme celui ci.
+Si les tests sont passés, vous devriez avoir dans la console un tableau comme celui-ci :
 
 ```bash
        Spec                                              Tests  Passing  Failing  Pending  Skipped
@@ -64,7 +74,7 @@ Si le test est passé, vous devriez avoir dans la console un tableau comme celui
   ✔  All specs passed!                        00:18        1        1        -        -        -
 ```
 
-En cas d'échec, la raison vous sera donnée dans la console de cette manière.
+En cas d'échec, la raison vous sera donnée dans la console :
 
 ```bash
   Home page
@@ -80,50 +90,57 @@ En cas d'échec, la raison vous sera donnée dans la console de cette manière.
   ✖  1 of 1 failed (100%)                     00:25        1        0        1        -        -
 ```
 
-### Les captures d'écran
+## Les captures d'écran
 
-Dans le cas ou un test échoue, une capture d'écran est prise et est stockée dans le dossier `screenshots` qui se trouve à la racine du dossier `e2e`. Cela vous aidera à investiguer pour trouver les causes de l'erreur.
+Dans le cas ou un test échoue, une capture d’écran est effectuée et est sauvegardée dans le dossier `screenshots` qui se trouve à la racine du dossier `e2e`. Cela pourra vous aider dans dans votre investigation pour trouver les causes de l’erreur.
 
-### Mock d'API
+## Mock d’API
 
-Pour intercepter des requetes, vous pouvez utiliser la fonction `cy.intercept()` de cette manière :
+Pour intercepter des requêtes, vous pouvez utiliser la fonction `cy.intercept()` :
 
-```js
-let dynamicStatusCodeStub = 404;
+```ts
+const dynamicStatusCodeStub = 404;
 
-cy.intercept(‘POST’, ‘/your-backend-api’, (req) => {
+cy.intercept('POST', '/api-route', (req) => {
 	req.reply({
-	statusCode: dynamicStatusCodeStub
+		statusCode: dynamicStatusCodeStub
 	});
-}).as(‘backendAPI’);
+}).as('backendAPI');
 ```
 
-Placé au début du test, cette ligne intercepte les `post` de `/your-backend-api` et lui propose une réponse.
-Dans ce cas la, cela permet de tester ce qu'il se passe dans le cas où la réponse est une `erreur 404`.
+Placé au début du test, cette ligne intercepte les requêtes `POST` sur la route `/api-route` et lui renvoie une réponse.
+Dans ce cas exemple, cela permet de tester ce qu'il se passe dans le cas où la réponse est une erreur 404.
 
-### Fonctions personnalisées
+## Fonctions personnalisées
 
-Le projet est généré avec une fonction personnalisée : `cy.dataCy()`.
-Elle permet de cibler précisement à la manière du `get()` mais si l'élément cible comporte `data-cy="targetExemple"`, il suffira d'utiliser `cy.dataCy('targetExemple')` pour le tester.
-
-```js
-<VBtn
-	data-cy="sendNotification"
-	@click="sendNotification"
->
-Click here
-</VBtn>
-```
-
-```js
-cy.dataCy('sendNotification').click();
-```
-
-Vous pouvez créer vos propres fonctions dans le même fichier que `dataCy()` : `tests/e2e/support/commands.js`.
+Vous pouvez créer vos propres fonctions dans le même fichier que `dataCy()` : `tests/e2e/support/commandes.js`.
 Vous pouvez ajouter votre nouvelle fonction à la liste des commandes de la même manière que `dataCy()`.
 
+Par exemple, `clickLink()`cliquera sur les balises `a` avec le label défini en paramêtre :
+
 ```js
-Cypress.Commands.add('dataCy', (value) => {
-	return cy.get(`[data-cy=${value}]`);
+Cypress.Commands.add('clickLink', (label) => {
+	cy.get('a').contains(label).click();
 });
+```
+
+Dans le fichier `index.d.ts` du dossier `type`, vous pourrez ajouter votre fonction :
+
+```ts
+declare namespace Cypress {
+	export interface Chainable {
+		/**
+		 * Custom command to select DOM element using data-cy attribute
+		 * @example cy.dataCy('greeting')
+		 */
+		dataCy(value: string): Chainable<Element>;
+		clickLink(value: string): Chainable<Element>;
+	}
+}
+```
+
+Enfin, vous pourrez l'utiliser dans un test :
+
+```js
+cy.clickLink('nom-du-label');
 ```
