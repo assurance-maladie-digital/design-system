@@ -4,7 +4,7 @@ description: Rédaction de tests End to End.
 ---
 
 Les tests End to End sont des tests qui permettent de tester l’interface de votre application.
-Ils sont réalisés en utilisant l’outil Cypress (https://docs.cypress.io/).
+Ils sont réalisés en utilisant [Cypress](https://docs.cypress.io/).
 
 ## Mise en place
 
@@ -20,7 +20,7 @@ Les tests sont construits en utilisant la syntaxe suivante :
 describe('About page', () => {
 	// Avant chaque test, il faut naviguer sur l'URL de la page que vous souhaitez tester, ici /a-propos
 	beforeEach(() => {
-		cy.visit('/home');
+		cy.visit('/a-propos');
 	});
 
 	// La commande dataCy() permet de sélectionner un élément avec l'attribut data-cy="", ici la liste des liens
@@ -111,12 +111,11 @@ cy.intercept('POST', '/api-route', (req) => {
 Placé au début du test, cette ligne intercepte les requêtes `POST` sur la route `/api-route` et lui renvoie une réponse.
 Dans ce cas exemple, cela permet de tester ce qu'il se passe dans le cas où la réponse est une erreur 404.
 
-## Fonctions personnalisées
+## Commandes personnalisées
 
-Vous pouvez créer vos propres fonctions dans le même fichier que `dataCy()` : `tests/e2e/support/commandes.js`.
-Vous pouvez ajouter votre nouvelle fonction à la liste des commandes de la même manière que `dataCy()`.
+Vous pouvez créer vos propres commandes dans le fichier `tests/e2e/support/commands.js`.
 
-Par exemple, `clickLink()`cliquera sur les balises `a` avec le label défini en paramêtre :
+Par exemple, la commande `clickLink()` cliquera sur les balises `a` avec le label défini en paramètre :
 
 ```js
 Cypress.Commands.add('clickLink', (label) => {
@@ -139,7 +138,7 @@ declare namespace Cypress {
 }
 ```
 
-Enfin, vous pourrez l'utiliser dans un test :
+Enfin, vous pouvez l'utiliser dans vos tests :
 
 ```js
 cy.clickLink('nom-du-label');
