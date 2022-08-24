@@ -5,6 +5,11 @@
 - ✨ **Nouvelles fonctionnalités**
   - **PhoneField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
 
+### Documentation
+
+- 📝 **Documentation**
+  - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180))
+
 ### Interne
 
 - ⬆️ **Dépendances**
@@ -22,7 +27,7 @@
   - **@types/node:** Mise à jour vers la `v16.11.52` ([#2240](https://github.com/asurance-maladie-digital/design-system/pull/2240)) ([b4bba20](https://github.com/assurance-maladie-digital/design-system/commit/b4bba202af9443e1ddf840982b8d58aec2aeb1cf))
 
 - 🔧 **Configuration**
-  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.17` ([#2238](https://github.com/assurance-maladie-digital/design-system/pull/2238))
+  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.17` ([#2238](https://github.com/assurance-maladie-digital/design-system/pull/2238)) ([556802b](https://github.com/assurance-maladie-digital/design-system/commit/556802bd2e290fa76a0d6d99b79fa6abe281ed82))
 
 ## v2.5.1
 
