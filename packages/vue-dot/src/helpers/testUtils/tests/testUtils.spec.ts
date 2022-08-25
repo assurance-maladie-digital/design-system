@@ -5,7 +5,7 @@ import {
 	createVuetifyInstance,
 	installGlobalPlugins,
 	installRouter,
-	mockTranslation,
+	mockTranslations,
 	mockVFormRef
 } from '../';
 
@@ -151,13 +151,13 @@ describe('testUtils', () => {
 		expect(reset()).toBeUndefined();
 	});
 
-	it('mocks a translation', () => {
+	it('mocks translations', () => {
 		const translationsArrayMock = [
 			'translation1',
 			'translation2'
 		];
 
-		const { $t } = mockTranslation<string | string[]>({
+		const { $t } = mockTranslations<string | string[]>({
 			'path.to.translation': 'translation',
 			'path.to.translations': translationsArrayMock
 		});

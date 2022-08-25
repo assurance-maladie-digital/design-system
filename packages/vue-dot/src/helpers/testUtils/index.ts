@@ -29,7 +29,7 @@ import Vuex, { Store, StoreOptions } from 'vuex';
 
 import Vuetify, { UserVuetifyPreset } from 'vuetify';
 
-/** Function to install global plugins */
+/** Install global plugins on localVue */
 export function installGlobalPlugins(localVue: VueConstructor<Vue>): void {
 	localVue.use(InputFacade);
 	localVue.use(Meta);
@@ -39,7 +39,7 @@ export function installGlobalPlugins(localVue: VueConstructor<Vue>): void {
 	Vue.use(Vuetify);
 }
 
-/** Function to install router */
+/** Install router on localVue */
 export function installRouter(localVue: VueConstructor<Vue>): void {
 	localVue.use(VueRouter);
 }
@@ -47,22 +47,22 @@ export function installRouter(localVue: VueConstructor<Vue>): void {
 import VueRouter, { RouterOptions } from 'vue-router';
 import { IndexedObject, VForm } from '../../types';
 
-/** Function to create router */
+/** Create a router */
 export function createRouter(options?: RouterOptions): VueRouter {
 	return new VueRouter(options);
 }
 
-/** Function to create store */
+/** Create a store */
 export function createStore<T = unknown>(options: StoreOptions<T>): Store<T> {
 	return new Vuex.Store(options);
 }
 
-/** Function to create vuetify instance */
+/** Create a Vuetify instance */
 export function createVuetifyInstance(preset?: Partial<UserVuetifyPreset>): Vuetify {
 	return new Vuetify(preset);
 }
 
-/** Function to mock VFormRef */
+/** Mock a VForm ref */
 export function mockVFormRef(isValid: boolean): VForm {
 	return {
 		validate: () => isValid,
@@ -71,8 +71,8 @@ export function mockVFormRef(isValid: boolean): VForm {
 	};
 }
 
-/** Function to mock translation */
-export function mockTranslation<T>(translations: IndexedObject<T>): IndexedObject<(key: string) => T | string> {
+/** Mock translations */
+export function mockTranslations<T>(translations: IndexedObject<T>): IndexedObject<(key: string) => T | string> {
 	return {
 		$t: (key: string) => translations[key] ?? key
 	};
