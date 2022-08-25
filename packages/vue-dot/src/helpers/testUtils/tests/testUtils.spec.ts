@@ -16,12 +16,28 @@ import {
 	createLocalVue
 } from '@vue/test-utils';
 
-import { RouterOptions } from 'vue-router';
-import { StoreOptions } from 'vuex';
-import { UserVuetifyPreset } from 'vuetify';
+import Vue, { VueConstructor } from 'vue';
 
-describe('utils', () => {
-	it('should apply global config', () => {
+import InputFacade from 'vue-input-facade';
+import VueRouter, { RouterOptions } from 'vue-router';
+import Meta from 'vue-meta';
+import VueDot from '../../../../src';
+import Vuex, { StoreOptions } from 'vuex';
+import Vuetify, { UserVuetifyPreset } from 'vuetify';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+interface VueInstance extends Vue {
+	_installedPlugins: any[];
+}
+
+/** Returns the value of _installedPlugins on a Vue instance */
+function getPlugins(localVue: VueConstructor): any[] {
+	return (localVue as unknown as VueInstance)._installedPlugins;
+}
+
+describe('testUtils', () => {
+	it('applies the global config', () => {
 		applyGlobalConfig();
 
 		const { $t, $tc } = config.mocks;
@@ -30,7 +46,7 @@ describe('utils', () => {
 		expect($tc('path.to.translation')).toBe('path.to.translation');
 	});
 
-	it('should apply global config when mocks are not initialized', () => {
+	it('applies the global config when mocks are not initialized', () => {
 		/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 		config.mocks = undefined as unknown as Record<string, any>;
 
@@ -42,29 +58,41 @@ describe('utils', () => {
 		expect($tc('path.to.translation')).toBe('path.to.translation');
 	});
 
-	it ('should install global plugins', () => {
+	it('installs the global plugins', () => {
 		const localVue = createLocalVue();
 
 		installGlobalPlugins(localVue);
 
-		expect(localVue).toMatchSnapshot();
+		const installedPlugins = getPlugins(localVue);
+		const installedRootPlugins = getPlugins(Vue);
+
+		expect(installedPlugins).toStrictEqual([
+			InputFacade,
+			Meta,
+			VueDot,
+			Vuex
+		]);
+
+		expect(installedRootPlugins).toStrictEqual([Vuetify]);
 	});
 
-	it ('should install router', () => {
+	it('installs the router', () => {
 		const localVue = createLocalVue();
 
 		installRouter(localVue);
 
-		expect(localVue).toMatchSnapshot();
+		const installedPlugins = getPlugins(localVue);
+
+		expect(installedPlugins).toStrictEqual([VueRouter]);
 	});
 
-	it ('should create router', () => {
+	it('creates a router', () => {
 		const router = createRouter();
 
-		expect(router).toMatchSnapshot();
+		expect(router instanceof VueRouter).toBeTruthy();
 	});
 
-	it ('should create router with options', () => {
+	it('creates a router with options', () => {
 		const options: RouterOptions = {
 			mode: 'history',
 			routes: []
@@ -72,10 +100,10 @@ describe('utils', () => {
 
 		const router = createRouter(options);
 
-		expect(router).toMatchSnapshot();
+		expect(router instanceof VueRouter).toBeTruthy();
 	});
 
-	it ('should create store', () => {
+	it('creates a store', () => {
 		const options: StoreOptions<unknown> = {
 			actions: {},
 			mutations: {},
@@ -84,16 +112,16 @@ describe('utils', () => {
 
 		const store = createStore(options);
 
-		expect(store).toMatchSnapshot();
+		expect(store instanceof Vuex.Store).toBeTruthy();
 	});
 
-	it ('should create vuetify instance', () => {
+	it('creates a Vuetify instance', () => {
 		const vuetify = createVuetifyInstance();
 
-		expect(vuetify).toMatchSnapshot();
+		expect(vuetify instanceof Vuetify).toBeTruthy();
 	});
 
-	it ('should create vuetify instance with preset', () => {
+	it('creates a Vuetify instance with preset', () => {
 		const preset: Partial<UserVuetifyPreset> = {
 			theme: {
 				themes: {
@@ -104,36 +132,38 @@ describe('utils', () => {
 
 		const vuetify = createVuetifyInstance(preset);
 
-		expect(vuetify).toMatchSnapshot();
+		expect(vuetify instanceof Vuetify).toBeTruthy();
 	});
 
-	it ('should mock VFormRef valid', () => {
+	it('mocks a valid VForm ref', () => {
 		const { validate, reset, resetValidation } = mockVFormRef(true);
 
-		expect(validate()).toBe(true);
-		expect(resetValidation()).toBe(undefined);
-		expect(reset()).toBe(undefined);
+		expect(validate()).toBeTruthy();
+		expect(resetValidation()).toBeUndefined();
+		expect(reset()).toBeUndefined();
 	});
 
-	it ('should mock VFormRef invalid', () => {
+	it('mocks an invalid VForm ref', () => {
 		const { validate, reset, resetValidation } = mockVFormRef(false);
 
-		expect(validate()).toBe(false);
-		expect(resetValidation()).toBe(undefined);
-		expect(reset()).toBe(undefined);
+		expect(validate()).toBeFalsy();
+		expect(resetValidation()).toBeUndefined();
+		expect(reset()).toBeUndefined();
 	});
 
-	it('should mock translation', () => {
+	it('mocks a translation', () => {
+		const translationsArrayMock = [
+			'translation1',
+			'translation2'
+		];
+
 		const { $t } = mockTranslation<string | string[]>({
 			'path.to.translation': 'translation',
-			'path.to.translations': [
-				'translation1',
-				'translation2'
-			]
+			'path.to.translations': translationsArrayMock
 		});
 
 		expect($t('path.to.translation')).toBe('translation');
-		expect($t('path.to.translations')).toMatchSnapshot();
+		expect($t('path.to.translations')).toBe(translationsArrayMock);
 		expect($t('path.to.other.translation')).toBe('path.to.other.translation');
 	});
 });
