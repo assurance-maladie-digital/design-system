@@ -5,7 +5,7 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'localVue',
-				description: 'L’instance de vue à laquelle ajouter les différents plugins.',
+				description: 'L’instance de Vue à laquelle ajouter les différents plugins.',
 				type: 'VueConstructor<Vue>',
 				required: true
 			}

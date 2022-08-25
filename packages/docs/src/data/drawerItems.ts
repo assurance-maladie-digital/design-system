@@ -373,7 +373,7 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'mockTranslations',
-						to: '/composants-techniques/tests-unitaires/mock-translation'
+						to: '/composants-techniques/tests-unitaires/mock-translations'
 					}
 				]
 			},

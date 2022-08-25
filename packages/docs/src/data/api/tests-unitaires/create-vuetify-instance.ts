@@ -1,11 +1,11 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	mockTranslation: {
+	createVuetifyInstance: {
 		arguments: [
 			{
 				name: 'preset',
-				description: 'Les options de vuetify.',
+				description: 'Les options de l’instance Vuetify.',
 				type: 'Partial<UserVuetifyPreset>',
 				required: false
 			}

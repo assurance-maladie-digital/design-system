@@ -5,7 +5,7 @@ export const api: Api = {
 		typeArguments: [
 			{
 				name: 'T',
-				description: 'Le type du state.',
+				description: 'Le type décrivant la variable `state` du store.',
 				default: 'unknown'
 			}
 		],

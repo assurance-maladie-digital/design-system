@@ -12,7 +12,7 @@ export const api: Api = {
 		],
 		returnValue: [
 			{
-				type: 'FormRef'
+				type: 'VForm'
 			}
 		]
 	}

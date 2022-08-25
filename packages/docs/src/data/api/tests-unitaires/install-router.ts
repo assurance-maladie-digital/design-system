@@ -5,7 +5,7 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'localVue',
-				description: 'L’instance de vue à laquelle ajouter le router.',
+				description: 'L’instance de Vue à laquelle ajouter le router.',
 				type: 'VueConstructor<Vue>',
 				required: true
 			}

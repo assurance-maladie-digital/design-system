@@ -1,18 +1,18 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	mockTranslation: {
+	mockTranslations: {
 		typeArguments: [
 			{
 				name: 'T',
-				description: 'Le type des données qui peuvent êtres renvoyées pour les traductions',
+				description: 'Le type des données qui peuvent êtres renvoyées pour les traductions.',
 				required: true
 			}
 		],
 		arguments: [
 			{
 				name: 'traductions',
-				description: 'La traduction a mock.',
+				description: 'La liste des traductions à mocker.',
 				type: 'IndexedObject<T>',
 				required: true
 			}

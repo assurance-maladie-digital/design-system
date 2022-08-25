@@ -7,7 +7,7 @@ export const api: Api = {
 				name: 'options',
 				description: 'Les options du router.',
 				type: 'RouterOptions',
-				required: false
+				default: undefined
 			}
 		],
 		returnValue: [
