@@ -1,14 +1,14 @@
 ## Non publié
 
-### Vue Dash
-
-- ♻️ **Refactoring**
-  - **template:** Mise à jour de la configuration des tests unitaires ([#2187](https://github.com/assurance-maladie-digital/design-system/pull/2187))
-
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
   - **PhoneField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
+
+### Vue Dash
+
+- ♻️ **Refactoring**
+  - **template:** Mise à jour de la configuration des tests unitaires ([#2187](https://github.com/assurance-maladie-digital/design-system/pull/2187))
 
 ### Documentation
 
