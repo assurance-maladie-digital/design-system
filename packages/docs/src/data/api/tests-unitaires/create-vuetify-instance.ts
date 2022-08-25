@@ -7,7 +7,7 @@ export const api: Api = {
 				name: 'preset',
 				description: 'Les options de l’instance Vuetify.',
 				type: 'Partial<UserVuetifyPreset>',
-				required: false
+				default: undefined
 			}
 		],
 		returnValue: [
