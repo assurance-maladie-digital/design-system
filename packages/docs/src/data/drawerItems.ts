@@ -387,6 +387,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/appels-api'
 			},
 			{
+				title: 'Tests e2e',
+				to: '/guides/tests-e2e'
+			},
+			{
 				title: 'Tableau avec pagination',
 				to: '/guides/tableau-pagination'
 			},
