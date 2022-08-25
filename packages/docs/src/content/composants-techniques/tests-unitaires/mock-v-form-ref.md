@@ -1,6 +1,6 @@
 ---
 title: mockVFormRef
-description: La fonction `mockVFormRef` permet de créer un mock d’un VForm.
+description: La fonction `mockVFormRef` permet de mocker une référence à un composant `VForm`.
 ---
 
 <doc-tabs>
@@ -18,14 +18,14 @@ import {
 	mockVFormRef
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
-describe('Testing', () => {
+describe('Component', () => {
 	const localVue = createLocalVue();
 
 	let wrapper: Wrapper<Vue>;
 
 	installGlobalPlugins(localVue);
 
-	it('submit form', () => {
+	it('submits form', () => {
 		const mocks = {
 			$refs: {
 				form: mockVFormRef(true)

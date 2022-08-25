@@ -20,7 +20,7 @@ import {
 	installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
-describe('Testing', () => {
+describe('Component', () => {
 	const localVue = createLocalVue();
 
 	let wrapper: Wrapper<Vue>;

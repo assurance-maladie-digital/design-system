@@ -1,6 +1,6 @@
 ---
 title: mockTranslation
-description: La fonction `mockTranslation` permet de créer le mock de traductions spécifiques.
+description: La fonction `mockTranslation` permet de mocker des traductions spécifiques.
 ---
 
 <doc-tabs>
@@ -18,7 +18,7 @@ import {
 	mockTranslation
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
-describe('Testing', () => {
+describe('Component', () => {
 	const localVue = createLocalVue();
 
 	let wrapper: Wrapper<Vue>;

@@ -1,6 +1,6 @@
 ---
 title: createStore
-description: La fonction `createStore` permet de créer une instance de vuex pour simuler le store.
+description: La fonction `createStore` permet de créer une instance de Vuex pour mocker le store.
 ---
 
 <doc-tabs>
@@ -25,7 +25,7 @@ import {
 	installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
-describe('Testing', () => {
+describe('Component', () => {
 	const localVue = createLocalVue();
 
 	let wrapper: Wrapper<Vue>;
@@ -38,7 +38,7 @@ describe('Testing', () => {
 	beforeEach(() => {
 		state = {
 			firstname: 'Nom',
-			lastname: 'prenom'
+			lastname: 'Prénom'
 		};
 
 		store = createStore({

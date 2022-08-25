@@ -1,6 +1,6 @@
 ---
 title: createVuetifyInstance
-description: La fonction `createVuetifyInstance` permet de créer une instance de vuetify.
+description: La fonction `createVuetifyInstance` permet de créer une instance de Vuetify.
 ---
 
 <doc-tabs>
@@ -22,7 +22,7 @@ import {
 	installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
-describe('Testing', () => {
+describe('Component', () => {
 	const localVue = createLocalVue();
 
 	let wrapper: Wrapper<Vue>;

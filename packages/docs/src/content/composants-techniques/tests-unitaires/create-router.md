@@ -1,6 +1,6 @@
 ---
 title: createRouter
-description: La fonction `createRouter` permet de créer une instance du router.
+description: La fonction `createRouter` permet de créer une instance pour mocker le router.
 ---
 
 <doc-tabs>
