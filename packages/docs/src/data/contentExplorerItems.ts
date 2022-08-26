@@ -448,7 +448,7 @@ export const contentExplorerItems: TreeviewItem[] = [
 						file: 'ts'
 					},
 					{
-						name: 'index.ts',
+						name: 'setup.ts',
 						file: 'ts'
 					}
 				]

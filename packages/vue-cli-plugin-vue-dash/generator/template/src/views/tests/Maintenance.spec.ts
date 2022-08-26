@@ -1,16 +1,34 @@
 import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify';
 
-import { mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import {
+	Wrapper,
+	html,
+	shallowMount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins
+} from '@cnamts/vue-dot/src/helpers/testUtils';
 
 import Maintenance from '../Maintenance.vue';
 
-let wrapper: Wrapper<Vue>;
-
 describe('Maintenance', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
 	it('renders correctly', () => {
-		wrapper = mountComponent(Maintenance);
+		wrapper = shallowMount(Maintenance, {
+			localVue,
+			vuetify
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
