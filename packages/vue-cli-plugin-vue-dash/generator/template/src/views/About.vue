@@ -40,14 +40,9 @@
 
 	import { Meta, MetaInfo } from '@/decorators';
 
-	import { Link } from '@/types';
+	import { LinkItem } from '@/types';
 
 	import { mdiArrowLeft } from '@mdi/js';
-
-	interface LinkItem {
-		title: string;
-		links: Link[];
-	}
 
 	@Component({
 		components: {
