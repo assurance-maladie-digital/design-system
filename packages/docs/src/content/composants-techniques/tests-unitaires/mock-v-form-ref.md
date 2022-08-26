@@ -12,7 +12,8 @@ import Vue from 'vue';
 
 import {
 	Wrapper,
-	mount,
+  html,
+	shallowMount,
 	createLocalVue,
 	installGlobalPlugins,
 	mockVFormRef
@@ -32,7 +33,7 @@ describe('Component', () => {
 			}
 		};
 
-		wrapper = mount(Component, {
+		wrapper = shallowMount(Component, {
 			localVue,
 			mocks
 		});
@@ -45,7 +46,7 @@ describe('Component', () => {
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/mock-v-form-ref"></doc-api>
+<doc-api name="unit-tests/mock-v-form-ref"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

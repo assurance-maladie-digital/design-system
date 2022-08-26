@@ -1,11 +1,11 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	installRouter: {
+	installGlobalPlugins: {
 		arguments: [
 			{
 				name: 'localVue',
-				description: 'L’instance de Vue à laquelle ajouter le router.',
+				description: 'L’instance Vue à laquelle ajouter les différents plugins.',
 				type: 'VueConstructor<Vue>',
 				required: true
 			}

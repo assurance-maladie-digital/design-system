@@ -1,6 +1,6 @@
 ---
 title: installGlobalPlugins
-description: La fonction `installGlobalPlugins` permet d’ajouter les plugins `InputFacade`, `Meta`, `Vuex`, `VueDot` et `Vuetify` à une instance de Vue.
+description: La fonction `installGlobalPlugins` permet d’ajouter les plugins `InputFacade`, `Meta`, `Vuex`, `VueDot` et `Vuetify` à une instance Vue.
 ---
 
 <doc-tabs>
@@ -15,7 +15,7 @@ import Component from '../';
 import {
 	Wrapper,
 	html,
-	mount,
+	shallowMount,
 	createLocalVue,
 	installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
@@ -28,20 +28,19 @@ describe('Component', () => {
 	installGlobalPlugins(localVue);
 
 	it('renders correctly', () => {
-		wrapper = mount(Component, {
+		wrapper = shallowMount(Component, {
 			localVue
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
-
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/install-global-plugins"></doc-api>
+<doc-api name="unit-tests/install-global-plugins"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

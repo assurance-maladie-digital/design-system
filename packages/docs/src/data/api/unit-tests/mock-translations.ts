@@ -5,7 +5,7 @@ export const api: Api = {
 		typeArguments: [
 			{
 				name: 'T',
-				description: 'Le type des données qui peuvent êtres renvoyées pour les traductions.',
+				description: 'Le type des données qui peuvent êtres renvoyées par les traductions.',
 				required: true
 			}
 		],

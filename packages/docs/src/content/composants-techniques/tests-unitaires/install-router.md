@@ -1,6 +1,6 @@
 ---
 title: installRouter
-description: La fonction `installRouter` permet d’ajouter une instance du router à une instance de Vue.
+description: La fonction `installRouter` permet d’ajouter une instance du router à une instance Vue.
 ---
 
 <doc-tabs>
@@ -15,7 +15,7 @@ import Component from '../';
 import {
 	Wrapper,
 	html,
-	mount,
+	shallowMount,
 	createLocalVue,
 	installRouter,
 	installGlobalPlugins
@@ -30,20 +30,19 @@ describe('Component', () => {
 	installRouter(localVue);
 
 	it('renders correctly', () => {
-		wrapper = mount(Component, {
+		wrapper = shallowMount(Component, {
 			localVue
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
-
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/install-router"></doc-api>
+<doc-api name="unit-tests/install-router"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

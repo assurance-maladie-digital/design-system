@@ -1,6 +1,6 @@
 ---
-title: mockTranslation
-description: La fonction `mockTranslation` permet de mocker des traductions spécifiques.
+title: mockTranslations
+description: La fonction `mockTranslations` permet de mocker des traductions spécifiques.
 ---
 
 <doc-tabs>
@@ -12,10 +12,11 @@ import Vue from 'vue';
 
 import {
 	Wrapper,
-	mount,
+  html,
+	shallowMount,
 	createLocalVue,
 	installGlobalPlugins,
-	mockTranslation
+	mockTranslations
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
 describe('Component', () => {
@@ -24,7 +25,7 @@ describe('Component', () => {
 	let wrapper: Wrapper<Vue>;
 
 	const mocks = {
-		...mockTranslation<string | string[]>({
+		...mockTranslations<string | string[]>({
 			'path.to.title': 'Title',
 			'path.to.label': 'Label',
 			'path.to.items': [
@@ -38,7 +39,7 @@ describe('Component', () => {
 	installGlobalPlugins(localVue);
 
 	it('renders correctly', () => {
-		wrapper = mount(Component, {
+		wrapper = shallowMount(Component, {
 			localVue,
 			mocks
 		});
@@ -46,13 +47,12 @@ describe('Component', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
-
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/mock-translation"></doc-api>
+<doc-api name="unit-tests/mock-translations"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

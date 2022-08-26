@@ -1,6 +1,6 @@
 ---
 title: createStore
-description: La fonction `createStore` permet de créer une instance de Vuex pour mocker le store.
+description: La fonction `createStore` permet de créer une instance Vuex pour mocker le store.
 ---
 
 <doc-tabs>
@@ -19,7 +19,7 @@ import Component from '../';
 import {
 	Wrapper,
 	html,
-	mount,
+	shallowMount,
 	createLocalVue,
 	createStore,
 	installGlobalPlugins
@@ -31,7 +31,6 @@ describe('Component', () => {
 	let wrapper: Wrapper<Vue>;
 	let store: Store<Record<string, never>>;
 	let state: Partial<UserState>;
-
 
 	installGlobalPlugins(localVue);
 
@@ -53,7 +52,7 @@ describe('Component', () => {
 	});
 
 	it('renders correctly', () => {
-		wrapper = mount(Component, {
+		wrapper = shallowMount(Component, {
 			localVue,
 			store
 		});
@@ -61,13 +60,12 @@ describe('Component', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
-
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/create-store"></doc-api>
+<doc-api name="unit-tests/create-store"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

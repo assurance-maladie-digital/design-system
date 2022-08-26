@@ -1,6 +1,6 @@
 ---
 title: createVuetifyInstance
-description: La fonction `createVuetifyInstance` permet de créer une instance de Vuetify.
+description: La fonction `createVuetifyInstance` permet de créer une instance Vuetify.
 ---
 
 <doc-tabs>
@@ -16,7 +16,7 @@ import Component from '../';
 import {
 	Wrapper,
 	html,
-	mount,
+	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
 	installGlobalPlugins
@@ -35,7 +35,7 @@ describe('Component', () => {
 	});
 
 	it('renders correctly', () => {
-		wrapper = mount(Component, {
+		wrapper = shallowMount(Component, {
 			localVue,
 			vuetify
 		});
@@ -43,13 +43,12 @@ describe('Component', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
-
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/create-vuetify-instance"></doc-api>
+<doc-api name="unit-tests/create-vuetify-instance"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>

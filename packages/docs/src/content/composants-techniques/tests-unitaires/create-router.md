@@ -15,7 +15,7 @@ import Component from '../';
 import {
 	Wrapper,
 	html,
-	mount,
+	shallowMount,
 	createLocalVue,
 	createRouter,
 	installRouter,
@@ -40,7 +40,7 @@ describe('Component', () => {
 	installRouter(localVue);
 
 	it('renders correctly', () => {
-		wrapper = mount(Component, {
+		wrapper = shallowMount(Component, {
 			localVue,
 			router
 		});
@@ -48,13 +48,12 @@ describe('Component', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
-
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="tests-unitaires/create-router"></doc-api>
+<doc-api name="unit-tests/create-router"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>
