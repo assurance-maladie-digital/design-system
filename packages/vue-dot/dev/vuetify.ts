@@ -4,14 +4,17 @@ import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
 
 // Import theme colors
-import { colorsClasses } from '@cnamts/design-tokens/src/colors';
+import { colorClasses, lightTheme } from '@cnamts/design-tokens/src/colors';
 
 Vue.use(Vuetify);
 
 export const vuetify = new Vuetify({
 	theme: {
 		themes: {
-			light: colorsClasses
+			light: {
+				...lightTheme,
+				...colorClasses
+			}
 		}
 	},
 	icons: {

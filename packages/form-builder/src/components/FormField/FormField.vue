@@ -32,8 +32,7 @@
 
 		<p
 			v-if="field.description"
-			:class="descriptionColor"
-			class="text-body-2"
+			class="text-body-2 grey--text"
 		>
 			{{ field.description }}
 		</p>
@@ -100,10 +99,6 @@
 
 		get isDefinedField(): boolean {
 			return this.fieldExists(this.field.type);
-		}
-
-		get descriptionColor(): string {
-			return 'grey-' + this.$vuetify.theme.dark ? 'lighten-60' : 'base' + '--text';
 		}
 
 		emitChangeEvent(value: Field): void {

@@ -149,12 +149,10 @@
 		hover = false;
 
 		get colors(): IndexedObject {
-			const dark = this.$vuetify.theme.dark;
-
 			return {
-				label: dark ? 'white--text' : 'primary--text',
-				multiple: dark ? 'white--text' : 'black--text',
-				info: 'grey-' + (dark ? 'lighten-60--text' : '--text')
+				label: 'primary--text',
+				multiple: 'black--text',
+				info: 'grey--text'
 			};
 		}
 

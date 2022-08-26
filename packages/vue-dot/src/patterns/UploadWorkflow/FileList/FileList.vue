@@ -203,7 +203,7 @@
 				return;
 			}
 
-			return 'grey- ' + this.$vuetify.theme.dark ? 'lighten-60' : 'base' + '--text';
+			return 'grey--text';
 		}
 
 		showDivider(index: number): boolean {
