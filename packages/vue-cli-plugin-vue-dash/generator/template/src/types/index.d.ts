@@ -6,3 +6,8 @@ export interface Link {
 	url: string;
 	name: string;
 }
+
+export interface LinkItem {
+	title: string;
+	links: Link[];
+}

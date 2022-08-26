@@ -1,15 +1,15 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vuetify from 'vuetify';
 
 import {
 	Wrapper,
-	mount,
+	html,
+	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
 	installGlobalPlugins,
 	installRouter
 } from '@cnamts/vue-dot/src/helpers/testUtils';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import App from '@/App.vue';
 
@@ -27,7 +27,9 @@ describe('App', () => {
 	});
 
 	it('renders correctly', () => {
-		wrapper = mount(App, {
+		wrapper = shallowMount(App, {
+			localVue,
+			vuetify,
 			mocks: {
 				$maintenanceEnabled: false
 			}
@@ -37,7 +39,9 @@ describe('App', () => {
 	});
 
 	it('renders correctly when maintenance is enabled', () => {
-		wrapper = mount(App, {
+		wrapper = shallowMount(App, {
+			localVue,
+			vuetify,
 			mocks: {
 				$maintenanceEnabled: true
 			}

@@ -1,14 +1,15 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vuetify from 'vuetify';
 
 import {
 	Wrapper,
-	mount,
+	html,
+	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
-	installGlobalPlugins
+	installGlobalPlugins,
+	installRouter
 } from '@cnamts/vue-dot/src/helpers/testUtils';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import LinksList from '../';
 
@@ -27,13 +28,16 @@ describe('LinksList', () => {
 	let vuetify: Vuetify;
 
 	installGlobalPlugins(localVue);
+	installRouter(localVue);
 
 	beforeEach(() => {
 		vuetify = createVuetifyInstance();
 	});
 
 	it('renders correctly', () => {
-		wrapper = mount(LinksList, {
+		wrapper = shallowMount(LinksList, {
+			localVue,
+			vuetify,
 			propsData: {
 				links
 			}

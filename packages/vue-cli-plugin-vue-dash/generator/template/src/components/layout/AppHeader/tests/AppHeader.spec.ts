@@ -1,15 +1,15 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vuetify from 'vuetify';
 
 import {
 	Wrapper,
-	mount,
+	html,
+	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
 	installGlobalPlugins,
-	mockTranslation
+	mockTranslations
 } from '@cnamts/vue-dot/src/helpers/testUtils';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import AppHeader from '../';
 
@@ -26,9 +26,11 @@ describe('AppHeader', () => {
 	});
 
 	it('renders correctly', () => {
-		wrapper = mount(AppHeader, {
+		wrapper = shallowMount(AppHeader, {
+			localVue,
+			vuetify,
 			mocks: {
-				...mockTranslation<string[]>({
+				...mockTranslations<string[]>({
 					'components.layout.appHeader.navigationItems': []
 				}),
 				$maintenanceEnabled: false
@@ -39,7 +41,9 @@ describe('AppHeader', () => {
 	});
 
 	it('renders correctly when maintenance is enabled', () => {
-		wrapper = mount(AppHeader, {
+		wrapper = shallowMount(AppHeader, {
+			localVue,
+			vuetify,
 			mocks: {
 				$maintenanceEnabled: true
 			}

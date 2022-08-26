@@ -3,6 +3,7 @@ import Vue, { VueConstructor } from 'vue';
 import { config } from '@vue/test-utils';
 
 import { addVApp } from '../../../tests/utils/addVApp';
+import { html } from '../../../tests/utils/html';
 
 /** Function to apply global config */
 export function applyGlobalConfig(): void {
@@ -80,3 +81,4 @@ export function mockTranslations<T>(translations: IndexedObject<T>): IndexedObje
 
 // Re-export elements from Vue Test Utils to simplify imports
 export * from '@vue/test-utils';
+export { html };

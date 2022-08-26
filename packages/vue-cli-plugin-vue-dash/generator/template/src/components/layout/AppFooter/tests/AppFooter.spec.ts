@@ -1,14 +1,14 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vuetify from 'vuetify';
 
 import {
 	Wrapper,
-	mount,
+	html,
+	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
 	installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import AppFooter from '../';
 
@@ -25,7 +25,10 @@ describe('AppFooter', () => {
 	});
 
 	it('renders correctly', () => {
-		wrapper = mount(AppFooter);
+		wrapper = shallowMount(AppFooter, {
+			localVue,
+			vuetify
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

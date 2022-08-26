@@ -39,7 +39,7 @@ const config: Config.InitialOptions = {
 		'!**/translations/**'
 	],
 	transformIgnorePatterns: [
-		'./node_modules/(?!vuetify|@cnamts/vue-dot)'
+		'./node_modules/(?!vuetify|@cnamts/vue-dot|@cnamts/form-builder)'
 	],
 	globals: {
 		API_URL: 'http://localhost:8080',
