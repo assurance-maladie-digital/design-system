@@ -5,12 +5,12 @@ description: Externalisation et internationalisation des textes.
 
 ### Externalisation des textes
 
-Le texte ne doit jamais être écris en dur. Il est géré depuis un fichier à part et injecté dans les composants à l'aide de l'outil d'internationalisation : `Vue i18n`.
+Les textes ne doivent pas être écrit directement dans les composants et dans les views. Ils sont externalisés dans une architecture similaire à l'organisation des composants et des views et injectés dans ceux-ci à l'aide du package `Vue i18n`.
 Celui ci permet de gérer plusieurs langues pour faciliter la traduction dynamique d'un site ou d'une application.
 
-Dans le dossier `traduction`, vous trouverez un dossier `fr`. À l'interieur, la liste des fichiers de traduction seront référencés dans l'`index.ts`
+Dans le dossier `traductions`, vous trouverez un dossier `fr` qui correspond à la traduction pour la langue française. À l'intérieur, la liste des fichiers de traduction seront référencés dans le fichier `src/traductions/index.ts`.
 
-Chaque fichier de traduction listera les textes d'un composant de cette manière :
+Chaque fichier de traduction listera les textes d'un composant ou d'une view de cette manière :
 
 ```js
 export default {
@@ -22,18 +22,36 @@ export default {
 };
 ```
 
+Les traductions peuvent par la suite être appelées grâce aux fonctions `$t` et `$tc`.
+
 Le fichier `home.ts`, ci dessus, se trouve dans le dossier `fr/views`.
 Dans le composant, la portion de texte `block2` pourra être appelé de cette manière :
 
 ```js
 <template>
-	<p>
-		{{ $t('views.home.description.block2') }}
-	</p>
-</template>
-```
+	<div>
+		<p>
+			{{ $t('views.traductionExample.description.block1') }}
+		</p>
 
-Cela affichera dont le texte : `Le deuxième bloc de discussion qui est tout aussi important.`.
+		<p>
+			{{ description }}
+		</p>
+	</div>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
+	@Component
+	export default class TraductionExample extend Vue {
+		get description(): string {
+			return this.$t('views.traductionExample.description.block2') as string;
+		}
+	}
+</script>
+```
 
 ### internationalisation
 
@@ -42,7 +60,7 @@ Il est possible d'ajouter des langues en créant un nouveau dossier et en reprod
 
 Par exemple, nous pouvons créer le fichier `es` pour ajouter la langue espagnol.
 
-Il faudra ensuite ajouter la langue à la liste des langues supportées.
+Il faudra ensuite ajouter la langue à la liste des langues supportées dans le fichier `src/traductions/index.ts`.
 
 ```js
 export const supportedLanguages = ['fr', 'es'];
@@ -60,7 +78,7 @@ export default {
 };
 ```
 
-Il ne restera plus qu'à changer la langue du module `i18n` en passant `locale` en `es`.
+Il ne restera plus qu'à changer la langue du module `i18n` en passant `locale` en `es` dans le fichier `src/i18n.ts`.
 
 ```js
 export const i18n = new VueI18n({
