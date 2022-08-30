@@ -184,3 +184,8 @@ export const colors: Colors = {
 	...palette,
 	...lightTheme
 };
+
+export const colorTheme: VuetifyTheme = {
+	...colorClasses,
+	...lightTheme
+};
