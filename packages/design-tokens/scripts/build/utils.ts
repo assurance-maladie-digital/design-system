@@ -1,6 +1,4 @@
-export function toKebabCase(value: string): string {
-	return value.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
-}
+import { toKebabCase } from '../../src/utils';
 
 export function partition<T = any>(array: T[], callback: (element: T) => boolean): [T[], T[]] {
 	const matches: T[] = [];
@@ -20,3 +18,5 @@ export function getColorToken(colorName: string, variationName: string, colorVal
 
 	return getToken(`${colorName}-${variation}`, colorValue);
 }
+
+export { toKebabCase };

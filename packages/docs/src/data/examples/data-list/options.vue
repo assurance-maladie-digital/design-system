@@ -17,7 +17,7 @@
 	export default class DataListOptions extends Vue {
 		itemOptions = {
 			icon: {
-				color: 'grey darken-2',
+				color: 'grey-darken-20',
 				class: 'mt-0 mr-4'
 			}
 		};

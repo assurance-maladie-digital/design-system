@@ -9,7 +9,7 @@ import {
 	mockVFormRef
 } from '../';
 
-import { lightTheme } from '@cnamts/design-tokens';
+import { colorTheme } from '@cnamts/design-tokens';
 
 import {
 	config,
@@ -125,7 +125,7 @@ describe('testUtils', () => {
 		const preset: Partial<UserVuetifyPreset> = {
 			theme: {
 				themes: {
-					light: lightTheme
+					light: colorTheme
 				}
 			}
 		};
