@@ -3,7 +3,6 @@ import Vue from 'vue';
 // Import vuetify/lib to use vuetify-loader
 import Vuetify from 'vuetify/lib';
 
-// Import theme colors
 import { colorTheme } from '@cnamts/design-tokens/src/colors';
 
 Vue.use(Vuetify);

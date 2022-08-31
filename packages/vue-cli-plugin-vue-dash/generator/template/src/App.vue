@@ -59,7 +59,7 @@
 </script>
 
 <style lang="scss">
-$color-pack: false;
+	$color-pack: false;
 
-@import '~vuetify/src/styles/main.sass';
+	@import '~vuetify/src/styles/main.sass';
 </style>

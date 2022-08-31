@@ -5,7 +5,6 @@ import Vuetify from 'vuetify/lib';
 
 import fr from 'vuetify/src/locale/fr';
 
-// Import theme colors
 import { colorTheme } from '@cnamts/design-tokens/src/colors';
 
 Vue.use(Vuetify);

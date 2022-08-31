@@ -1,3 +1,4 @@
+import { toKebabCase } from './utils';
 import { Palette, VuetifyTheme, Colors, IndexedObject } from './types';
 
 export const palette: Palette = {
@@ -172,11 +173,14 @@ export const lightTheme: VuetifyTheme = {
 
 export const colorClasses: IndexedObject = {};
 
-Object.entries(palette).forEach(color => {
-	Object.entries(color[1]).forEach(subColor => {
-		const colorName = subColor[0] === 'base' ? '' : subColor[0].substring(0, subColor[0].length - 2) + '-' + subColor[0].substring(subColor[0].length - 2);
-		const name = color[0].replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() + (colorName === '' ? '' : '-' + colorName);
-		colorClasses[name] = subColor[1] as string;
+Object.entries(palette).forEach(([colorName, colorValues]) => {
+	Object.entries(colorValues).forEach(([variationName, colorValue]) => {
+		const colorClass = toKebabCase(`${colorName}-${variationName}`
+			.replace(/\d+/, '-$&')
+			.replace('-base', '')
+		);
+
+		colorClasses[colorClass] = colorValue as string;
 	});
 });
 
