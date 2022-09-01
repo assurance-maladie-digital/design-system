@@ -1,4 +1,5 @@
-import { Palette, VuetifyTheme, Colors } from './types';
+import { toKebabCase } from './utils';
+import { Palette, VuetifyTheme, Colors, IndexedObject } from './types';
 
 export const palette: Palette = {
 	amBlue: {
@@ -170,7 +171,25 @@ export const lightTheme: VuetifyTheme = {
 	risquePro: palette.brick.base
 };
 
+export const colorClasses: IndexedObject = {};
+
+Object.entries(palette).forEach(([colorName, colorValues]) => {
+	Object.entries(colorValues).forEach(([variationName, colorValue]) => {
+		const colorClass = toKebabCase(`${colorName}-${variationName}`
+			.replace(/\d+/, '-$&')
+			.replace('-base', '')
+		);
+
+		colorClasses[colorClass] = colorValue as string;
+	});
+});
+
 export const colors: Colors = {
 	...palette,
+	...lightTheme
+};
+
+export const colorTheme: VuetifyTheme = {
+	...colorClasses,
 	...lightTheme
 };

@@ -27,10 +27,10 @@ import { tokens } from '@cnamts/design-tokens';
 console.log(tokens.pageWidth); // 1440px
 ```
 
-You can also import only the color themes:
+You can also import only the color theme:
 
 ```ts
-import { lightTheme } from '@cnamts/design-tokens/src/colors';
+import { colorTheme } from '@cnamts/design-tokens/src/colors';
 ```
 
 ### JavaScript

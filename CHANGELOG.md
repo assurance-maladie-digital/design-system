@@ -10,11 +10,16 @@
 - ♻️ **Refactoring**
   - **template:** Mise à jour de la configuration des tests unitaires ([#2187](https://github.com/assurance-maladie-digital/design-system/pull/2187)) ([d47863c](https://github.com/assurance-maladie-digital/design-system/commit/d47863c7af7170c6273221c4444e101596262a4a))
 
+### Design Tokens
+
+- ✨ **Nouvelles fonctionnalités**
+  - **colors:** Ajout des classes de couleurs pour Vuetify ([#2191](https://github.com/assurance-maladie-digital/design-system/pull/2191))
+
 ### Documentation
 
 - 📝 **Documentation**
   - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180)) ([6e7eba8](https://github.com/assurance-maladie-digital/design-system/commit/6e7eba8378feb47a91d7a6080fc0ec410a8e9bde))
-  - **tests:** Ajout des pages liées aux fonctions de tests ([#2195](https://github.com/assurance-maladie-digital/design-system/pull/2195))
+  - **tests:** Ajout des pages liées aux fonctions de tests ([#2195](https://github.com/assurance-maladie-digital/design-system/pull/2195)) ([71a4003](https://github.com/assurance-maladie-digital/design-system/commit/71a4003199bff0f28998b278bb30aaaf2cb4966a))
 
 ### Interne
 
