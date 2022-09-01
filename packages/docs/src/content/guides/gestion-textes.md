@@ -1,6 +1,6 @@
 ---
 title: Gestion des textes
-description: Externalisation et internationalisation des textes.
+description: Externalisation des textes et internationalisation.
 ---
 
 ### Externalisation des textes
@@ -12,7 +12,7 @@ Dans le dossier `traductions`, vous trouverez un dossier `fr` qui correspond à 
 
 Chaque fichier de traduction listera les textes d'un composant ou d'une view de cette manière :
 
-```js
+```ts
 export default {
 	title: 'Le titre',
 	description: {
@@ -27,11 +27,11 @@ Les traductions peuvent par la suite être appelées grâce aux fonctions `$t` e
 Le fichier `home.ts`, ci dessus, se trouve dans le dossier `fr/views`.
 Dans le composant, la portion de texte `block2` pourra être appelé de cette manière :
 
-```js
+```vue
 <template>
 	<div>
 		<p>
-			{{ $t('views.traductionExample.description.block1') }}
+			{{ $t('views.userDeclaration.description.block1') }}
 		</p>
 
 		<p>
@@ -45,15 +45,15 @@ Dans le composant, la portion de texte `block2` pourra être appelé de cette ma
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class TraductionExample extend Vue {
+	export default class UserDeclaration extends Vue {
 		get description(): string {
-			return this.$t('views.traductionExample.description.block2') as string;
+			return this.$t('views.userDeclaration.description.block2') as string;
 		}
 	}
 </script>
 ```
 
-### internationalisation
+### Internationalisation
 
 Le dossier `fr` ne sert qu'à externaliser les textes de sorte à pouvoir les modifier plus facilement.
 Il est possible d'ajouter des langues en créant un nouveau dossier et en reproduisant la même structure.
@@ -62,13 +62,13 @@ Par exemple, nous pouvons créer le fichier `es` pour ajouter la langue espagnol
 
 Il faudra ensuite ajouter la langue à la liste des langues supportées dans le fichier `src/traductions/index.ts`.
 
-```js
+```ts
 export const supportedLanguages = ['fr', 'es'];
 ```
 
 Puis traduire les textes en espagnol. Pour notre fichier `home.ts` du dossier `es`, cela donnerait quelque chose comme ca.
 
-```js
+```ts
 export default {
 	title: 'El título',
 	description: {
@@ -80,7 +80,7 @@ export default {
 
 Il ne restera plus qu'à changer la langue du module `i18n` en passant `locale` en `es` dans le fichier `src/i18n.ts`.
 
-```js
+```ts
 export const i18n = new VueI18n({
 	locale: 'es'
 });

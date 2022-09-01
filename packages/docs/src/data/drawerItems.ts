@@ -413,7 +413,7 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'Gestion des textes',
-				to: '/guides/gestion-texte'
+				to: '/guides/gestion-textes'
 			},
 			{
 				title: 'Gestion des événements',
