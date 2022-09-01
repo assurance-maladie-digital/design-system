@@ -3,7 +3,7 @@
 		v-bind="$attrs"
 		:disabled="inert"
 		:tag="tag"
-		class="vd-footer-btn overflow-hidden text-none text-subtitle-2 grey lighten-3 mx-4 my-2"
+		class="vd-footer-btn overflow-hidden text-none text-subtitle-2 grey-lighten-80 mx-4 my-2"
 		width="180"
 		height="32"
 		tile

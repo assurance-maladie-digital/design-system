@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FooterBtn renders correctly 1`] = `<vbtn-stub height="32" width="180" tile="true" activeclass="" text="true" type="button" class="vd-footer-btn overflow-hidden text-none text-subtitle-2 grey lighten-3 mx-4 my-2"></vbtn-stub>`;
+exports[`FooterBtn renders correctly 1`] = `<vbtn-stub height="32" width="180" tile="true" activeclass="" text="true" type="button" class="vd-footer-btn overflow-hidden text-none text-subtitle-2 grey-lighten-80 mx-4 my-2"></vbtn-stub>`;

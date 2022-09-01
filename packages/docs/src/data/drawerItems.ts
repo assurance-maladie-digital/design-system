@@ -349,6 +349,39 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Tests unitaires',
+				items: [
+					{
+						title: 'installGlobalPlugins',
+						to: '/composants-techniques/tests-unitaires/install-global-plugins'
+					},
+					{
+						title: 'installRouter',
+						to: '/composants-techniques/tests-unitaires/install-router'
+					},
+					{
+						title: 'createRouter',
+						to: '/composants-techniques/tests-unitaires/create-router'
+					},
+					{
+						title: 'createStore',
+						to: '/composants-techniques/tests-unitaires/create-store'
+					},
+					{
+						title: 'createVuetifyInstance',
+						to: '/composants-techniques/tests-unitaires/create-vuetify-instance'
+					},
+					{
+						title: 'mockVFormRef',
+						to: '/composants-techniques/tests-unitaires/mock-v-form-ref'
+					},
+					{
+						title: 'mockTranslations',
+						to: '/composants-techniques/tests-unitaires/mock-translations'
+					}
+				]
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
 			},
@@ -379,6 +412,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
+				title: 'Gestion des textes',
+				to: '/guides/gestion-texte'
+			},
+			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
 			},
@@ -391,8 +428,8 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/appels-api'
 			},
 			{
-				title: 'Getion des textes',
-				to: '/guides/gestion-texte'
+				title: 'Tests e2e',
+				to: '/guides/tests-e2e'
 			},
 			{
 				title: 'Tableau avec pagination',

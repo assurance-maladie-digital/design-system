@@ -69,7 +69,7 @@
 					<VWindow
 						v-model="selected"
 						touchless
-						class="grey lighten-5"
+						class="grey-lighten-97"
 					>
 						<template v-for="(section, index) in sections">
 							<VWindowItem
