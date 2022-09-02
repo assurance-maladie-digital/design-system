@@ -151,7 +151,7 @@
 								dense
 								filled
 								hide-details
-								background-color="am-blue lighten-3"
+								background-color="am-blue-lighten-97"
 								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
@@ -166,7 +166,7 @@
 								dense
 								filled
 								hide-details
-								background-color="am-blue lighten-3"
+								background-color="am-blue-lighten-97"
 								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
@@ -179,7 +179,7 @@
 								dense
 								filled
 								hide-details
-								background-color="am-blue lighten-3"
+								background-color="am-blue-lighten-97"
 								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
