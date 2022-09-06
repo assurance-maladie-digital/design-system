@@ -90,11 +90,11 @@ Ce qui donnera :
 ```
 
 Attention de bien utiliser `$tc` et pas `$t` car sinon c'est directement la chaine de caractère `'no apples | one apple | {count} apples'` qui s'affichera.
-Si vous ne précisez pas le nombre, c'est la valeur au singulier qui sera importée par défaut.
+Si vous ne précisez pas le nombre, c'est la valeur au singulier qui sera utilisée par défaut.
 
 ### Inclure une valeur
 
-Pour ajouter une valeur, vous pouvez ajouter votre variable entre crochet à la chaine de caractère dans le fichier de traduction.
+Il est possible d’ajouter une valeur dynamique à une traduction. Pour cela on définit un ou plusieurs emplacements dans la traduction, ils sont écrits entre accolades.
 
 ```ts
 message: {
@@ -102,13 +102,13 @@ message: {
 }
 ```
 
-En plus de récupérer la chaine de caractère, vous pouvez lui passer une valeur pour la variable ajouté plus haut, ici `{msg}`.
+Puis il suffit de fournir à la fonction de traduction `$t` un objet qui contient toutes les valeurs que l'on souhaite afficher, les noms des clés de l'objet détermineront quels emplacements seront remplacés par quelles valeurs.
 
 ```vue
 <p>{{ $t('message.hello', { msg: 'hello' }) }}</p>
 ```
 
-Le résultat attendu est donc celui-ci.
+Le résultat attendu est donc le suivant :
 
 ```html
 <p>hello world</p>
@@ -123,7 +123,7 @@ presentation: 'Bonjour, je m’appelle {firstname} {lastname}, j’ai {age} ans.
 Puis l'appeler dans le template
 
 ```vue
-<p>{{ $t('views.about.presentation', {'firstname': 'John','lastname': 'Doe','age': '30'}) }}</p>
+<p>{{ $t('views.about.presentation', {firstname: 'John',lastname: 'Doe',age: 30}) }}</p>
 ```
 
 Le résultat attendu est celui-ci.
@@ -134,7 +134,9 @@ Bonjour, je m’appelle John Doe, j’ai 30 ans.
 
 ### la balise <i18>
 
-Si, par exemple, nous avons un besoin de mettre un lien milieu d'une phrase, nous pouvons utiliser la balise i18n.
+Il est possible d’insérer du contenu HTML dans une traduction, pour cela il faut utiliser la balise `i18n`. Les emplacements définis dans la traduction seront remplacés par le contenue HTML des slots qui portent le même nom.
+
+Par exemple, nous avons un besoin de mettre un lien milieu d'une phrase :
 
 ```vue
 //dans le path, indiquer le chemin vers la traduction.
@@ -142,14 +144,14 @@ Si, par exemple, nous avons un besoin de mettre un lien milieu d'une phrase, nou
 	//utiliser le template #link, pour acceder à la partie {link} à l'interieur de la traduction
 	<template #link>
 		//on utilise l'url et le text présent dans l'objet 'link' du fichier de traduction
-		<a
-			:href="$t('components.about.linkDetails.url')"
-		>{{ $t('components.about.linkDetails.text') }}</a>
+		<a :href="$t('components.about.linkDetails.url')">
+			{{ $t('components.about.linkDetails.text') }}
+		</a>
 	</template>
 </i18n>
 ```
 
-Dans le fichier de traduction, nous retrouvons le label, et le link que nous avons utilisé plus haut.
+Dans le fichier de traduction, nous retrouvons le label, et le lien que nous avons utilisé plus haut.
 
 ```ts
 export default {
