@@ -18,11 +18,12 @@
 ### Documentation
 
 - ♻️ **Refactoring**
-  - **global:** Utilisation des classes de couleurs ([#2263](https://github.com/assurance-maladie-digital/design-system/pull/2263))
+  - **global:** Utilisation des classes de couleurs ([#2263](https://github.com/assurance-maladie-digital/design-system/pull/2263)) ([0bc945a](https://github.com/assurance-maladie-digital/design-system/commit/0bc945a145f712b5846d33be161bbc1eb71f746b))
 
 - 📝 **Documentation**
   - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180)) ([6e7eba8](https://github.com/assurance-maladie-digital/design-system/commit/6e7eba8378feb47a91d7a6080fc0ec410a8e9bde))
   - **tests:** Ajout des pages liées aux fonctions de tests ([#2195](https://github.com/assurance-maladie-digital/design-system/pull/2195)) ([71a4003](https://github.com/assurance-maladie-digital/design-system/commit/71a4003199bff0f28998b278bb30aaaf2cb4966a))
+  - **types:** Ajout de la page *Types utilitaires* ([#2272](https://github.com/assurance-maladie-digital/design-system/pull/2272))
 
 ### Interne
 
