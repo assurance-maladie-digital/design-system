@@ -41,16 +41,125 @@ Dans le composant, la portion de texte `block2` pourra être appelé de cette ma
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-	@Component
-	export default class UserDeclaration extends Vue {
-		get description(): string {
-			return this.$t('views.userDeclaration.description.block2') as string;
-		}
+@Component
+export default class UserDeclaration extends Vue {
+	get description(): string {
+		return this.$t('views.userDeclaration.description.block2') as string;
 	}
+}
 </script>
+```
+
+### Gestion du pluriel
+
+Si vous voulez accorder en nombre un mot, vous pouvez utiliser cette syntaxe :
+
+Dans le fichier de traduction :
+
+```ts
+//Quand il y a deux éléments, le premier correspond au singulier, le deuxieme au pluriel.
+car: 'car | cars',
+
+//Quand il y a trois éléments, le premier correspond à l'absence d'élément, le deuxieme au singulier et le troisième au plusieurs.
+apple: 'no apples | one apple | {count} apples'
+```
+
+Dans le template de vue :
+
+```vue
+<p>{{ $tc('car', 1) }}</p>
+<p>{{ $tc('car', 2) }}</p>
+
+<p>{{ $tc('apple', 0) }}</p>
+<p>{{ $tc('apple', 1) }}</p>
+<p>{{ $tc('apple', 10, { count: 10 }) }}</p>
+```
+
+Ce qui donnera :
+
+```html
+<p>car</p>
+<p>cars</p>
+
+<p>no apples</p>
+<p>one apple</p>
+<p>10 apples</p>
+```
+
+Attention de bien utiliser `$tc` et pas `$t` car sinon c'est directement la chaine de caractère `'no apples | one apple | {count} apples'` qui s'affichera.
+Si vous ne précisez pas le nombre, c'est la valeur au singulier qui sera importée par défaut.
+
+### Inclure une valeur
+
+Pour ajouter une valeur, vous pouvez ajouter votre variable entre crochet à la chaine de caractère dans le fichier de traduction.
+
+```ts
+message: {
+	hello: '{msg} world';
+}
+```
+
+En plus de récupérer la chaine de caractère, vous pouvez lui passer une valeur pour la variable ajouté plus haut, ici `{msg}`.
+
+```vue
+<p>{{ $t('message.hello', { msg: 'hello' }) }}</p>
+```
+
+Le résultat attendu est donc celui-ci.
+
+```html
+<p>hello world</p>
+```
+
+Pour ajouter plusieurs valeurs, vous pouvez utiliser cette syntaxe dans le fichier de traduction
+
+```ts
+presentation: 'Bonjour, je m’appelle {firstname} {lastname}, j’ai {age} ans.',
+```
+
+Puis l'appeler dans le template
+
+```vue
+<p>{{ $t('views.about.presentation', {'firstname': 'John','lastname': 'Doe','age': '30'}) }}</p>
+```
+
+Le résultat attendu est celui-ci.
+
+```html
+Bonjour, je m’appelle John Doe, j’ai 30 ans.
+```
+
+### la balise <i18>
+
+Si, par exemple, nous avons un besoin de mettre un lien milieu d'une phrase, nous pouvons utiliser la balise i18n.
+
+```vue
+//dans le path, indiquer le chemin vers la traduction.
+<i18n path="components.about.label" tag="div">
+	//utiliser le template #link, pour acceder à la partie {link} à l'interieur de la traduction
+	<template #link>
+		//on utilise l'url et le text présent dans l'objet 'link' du fichier de traduction
+		<a
+			:href="$t('components.about.linkDetails.url')"
+		>{{ $t('components.about.linkDetails.text') }}</a>
+	</template>
+</i18n>
+```
+
+Dans le fichier de traduction, nous retrouvons le label, et le link que nous avons utilisé plus haut.
+
+```ts
+export default {
+	label:
+		"Je certifie sur l'honneur l'exactitude de ma déclaration conformément aux {link}.",
+	linkDetails: {
+		text: "Conditions Générales d'Utilisation du téléservice",
+		url: '/cgu'
+	}
+};
 ```
 
 ### Internationalisation
