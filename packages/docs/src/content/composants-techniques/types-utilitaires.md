@@ -9,39 +9,55 @@ description: Liste des types utilitaires et des enums.
 
 Vous pouvez typer les références que vous avez créé sur vos composants en utilisant le type `Refs`.
 
-Par exemple, pour typer une référence à un formulaire `ref="form"` :
+Par exemple, pour typer une référence à un formulaire :
 
-```ts
-import { Refs } from '@cnamts/vue-dot/src/types';
+```vue
+<template>
+	<form ref="form">
+		…
+	</form>
+</template>
 
-@Component
-export default class UserForm extends Vue {
-	$refs!: Refs<{
-		form: HTMLFormElement;
-	}>;
-}
+<script lang="ts">
+	import { Refs } from '@cnamts/vue-dot/src/types';
+
+	@Component
+	export default class UserForm extends Vue {
+		$refs!: Refs<{
+			form: HTMLFormElement;
+		}>;
+	}
+</script>
 ```
 
 ### Formulaires Vuetify
 
 Vous pouvez utiliser l’interface `VForm` pour typer une référence à ce composant :
 
-```ts
-import { Refs, VForm } from '@cnamts/vue-dot/src/types';
+```vue
+<template>
+	<VForm ref="form">
+		…
+	</VForm>
+</template>
 
-@Component
-export default class UserForm extends Vue {
-	$refs!: Refs<{
-		form: VForm;
-	}>;
-}
+<script lang="ts">
+	import { Refs, VForm } from '@cnamts/vue-dot/src/types';
+
+	@Component
+	export default class UserForm extends Vue {
+		$refs!: Refs<{
+			form: VForm;
+		}>;
+	}
+</script>
 ```
 
-Cette interface défini les méthodes `validate`, `reset` et `resetValidation` du composant `VForm`.
+Cette interface défini les méthodes `validate`, `reset` et `resetValidation` du composant [`VForm`](https://vuetifyjs.com/en/components/forms/).
 
 ### Vue Input Facade
 
-Vous pouvez utiliser l’interface `InputFacadeEvent` pour typer un événement émit par cette librairie :
+Vous pouvez utiliser l’interface `InputFacadeEvent` pour typer un événement émit en utilisant [la directive](https://github.com/RonaldJerez/vue-input-facade) :
 
 ```vue
 <template>
@@ -53,12 +69,12 @@ Vous pouvez utiliser l’interface `InputFacadeEvent` pour typer un événement 
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
+	import Component from 'vue-class-component';
 
 	import { InputFacadeEvent } from '@cnamts/vue-dot/src/types';
 
 	@Component
-	export default class CustomField extends MixinsDeclaration {
+	export default class CustomField extends Vue {
 		internalValue: string | null = null;
 
 		setInternalValue(event: InputFacadeEvent): void {
@@ -68,9 +84,15 @@ Vous pouvez utiliser l’interface `InputFacadeEvent` pour typer un événement 
 </script>
 ```
 
+<doc-alert type="info">
+
+Le [modificateur `native`](https://v2.vuejs.org/v2/guide/components-custom-events.html#Binding-Native-Events-to-Components) permet de récupérer l’événement natif émit, qui contient la propriété `unmaskedValue`.
+
+</doc-alert>
+
 ### Objet avec un type d’index
 
-Vous pouvez utiliser le type `IndexObject` pour définir le type de clé d’un objet.
+Vous pouvez utiliser le type `IndexedObject` pour typer un objet et définir le type de sa clé.
 
 Par exemple, avec l’objet suivant :
 
@@ -104,6 +126,22 @@ const selectedColor: string = 'white';
 const color = colorMapping[selectedColor]; // Pas d'erreur
 ```
 
+#### Argument typé
+
+Vous pouvez également modifier le type de clé en le spécifiant en paramètre :
+
+```ts
+import { IndexedObject } from '@cnamts/vue-dot/src/types';
+
+const colorMapping: IndexedObject<number> = {
+	0: '#fff',
+	1: '#000'
+};
+
+const selectedColor: number = '0';
+const color = colorMapping[selectedColor]; // Pas d'erreur
+```
+
 ## Enums
 
 ### Gestion d’état
@@ -115,11 +153,14 @@ import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
 
 const state: StateEnum = StateEnum.IDLE;
 
-async function sendForm(): void {
+async function sendForm(): Promise<void> {
 	state = StateEnum.PENDING;
 
 	try {
-		await postForm(data);
+		await postForm({
+			// …
+		});
+	
 		state = StateEnum.RESOLVED;
 	} catch {
 		state = StateEnum.REJECTED;
@@ -129,13 +170,4 @@ async function sendForm(): void {
 
 #### Ancienne syntaxe
 
-L’ancienne syntaxe de l’enum est toujours disponible, mais est dépréciée :
-
-```ts
-export enum STATE_ENUM {
-	idle = 'idle',
-	pending = 'pending',
-	rejected = 'rejected',
-	resolved = 'resolved'
-}
-```
+[L’ancienne syntaxe de l’enum](https://github.com/assurance-maladie-digital/design-system/blob/dev/packages/vue-dot/src/constants/enums/StateEnum.ts#L9) est toujours disponible, mais est dépréciée.
