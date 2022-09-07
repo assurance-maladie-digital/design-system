@@ -19,6 +19,9 @@ Par exemple, pour typer une référence à un formulaire :
 </template>
 
 <script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
 	import { Refs } from '@cnamts/vue-dot/src/types';
 
 	@Component
@@ -42,6 +45,9 @@ Vous pouvez utiliser l’interface `VForm` pour typer une référence à ce comp
 </template>
 
 <script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+
 	import { Refs, VForm } from '@cnamts/vue-dot/src/types';
 
 	@Component
@@ -128,7 +134,7 @@ const color = colorMapping[selectedColor]; // Pas d'erreur
 
 #### Argument typé
 
-Vous pouvez également modifier le type de clé en le spécifiant en paramètre :
+Vous pouvez également modifier le type de valeur en le spécifiant en paramètre :
 
 ```ts
 import { IndexedObject } from '@cnamts/vue-dot/src/types';
@@ -150,6 +156,8 @@ Vous pouvez utiliser l’enum `StateEnum` pour créer une variable de gestion d�
 
 ```ts
 import { StateEnum } from '@cnamts/vue-dot/src/constants/enums/StateEnum';
+
+import { postForm } from '@/services/postForm/api';
 
 const state: StateEnum = StateEnum.IDLE;
 
