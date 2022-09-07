@@ -4,6 +4,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **PhoneField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
+  - **IndexedObject:** Modification du type de la clé ([#2274](https://github.com/assurance-maladie-digital/design-system/pull/2274))
 
 ### Vue Dash
 
