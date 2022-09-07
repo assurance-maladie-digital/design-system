@@ -10,7 +10,7 @@ import { NavigationGuardNext } from 'vue-router';
 export type Refs<T extends Record<string, unknown>> = Vue['$refs'] & T;
 
 export interface IndexedObject<T = string> {
-	[key: string]: T;
+	[key: string | number]: T;
 }
 
 export type Next = NavigationGuardNext<Vue>;
