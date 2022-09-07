@@ -1,5 +1,5 @@
 import { toKebabCase } from './utils';
-import { Palette, VuetifyTheme, Colors, IndexedObject } from './types';
+import { Palette, VuetifyTheme, Colors } from './types';
 
 export const palette: Palette = {
 	amBlue: {
@@ -170,6 +170,10 @@ export const lightTheme: VuetifyTheme = {
 	warning: palette.yellow.darken40,
 	risquePro: palette.brick.base
 };
+
+interface IndexedObject<T = string> {
+	[key: string | number]: T;
+}
 
 export const colorClasses: IndexedObject = {};
 

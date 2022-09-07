@@ -1,7 +1,3 @@
-export interface IndexedObject<T = string> {
-	[key: string]: T;
-}
-
 export interface Theme {
 	primary: string;
 	secondary: string;
