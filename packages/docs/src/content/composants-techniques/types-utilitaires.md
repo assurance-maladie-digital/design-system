@@ -139,13 +139,13 @@ Vous pouvez également modifier le type de valeur en le spécifiant en paramètr
 ```ts
 import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
-const colorMapping: IndexedObject<number> = {
-	0: '#fff',
-	1: '#000'
+const sizeMapping: IndexedObject<number> = {
+	small: 96,
+	large: 1024
 };
 
-const selectedColor: number = '0';
-const color = colorMapping[selectedColor]; // Pas d'erreur
+const selectedSize: string = 'small';
+const size = sizeMapping[selectedSize]; // Pas d'erreur
 ```
 
 ## Enums
