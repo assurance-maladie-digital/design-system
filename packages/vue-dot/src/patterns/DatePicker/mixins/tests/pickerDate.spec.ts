@@ -24,7 +24,7 @@ function createWrapper(pickerDate?: string, birthdate = false) {
 		mocks: {
 			birthdate
 		}
-	}) as Wrapper<TestComponent>;
+	}) as unknown as Wrapper<TestComponent>;
 }
 
 describe('PickerDate', () => {

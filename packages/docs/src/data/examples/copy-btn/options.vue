@@ -28,7 +28,7 @@
 				large: true
 			},
 			icon: {
-				color: 'grey darken-3'
+				color: 'grey-darken-60'
 			}
 		};
 	}
