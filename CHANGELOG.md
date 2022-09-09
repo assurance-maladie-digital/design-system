@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **netlify-cli:** Mise à jour vers la `v11.7.1` ([#2282](https://github.com/assurance-maladie-digital/design-system/pull/2282))
+
 ## v2.6.0
 
 **Version publiée le 09/09/2022.**
@@ -36,7 +43,7 @@ Cette version comporte l'ajout du nouveau composant `PhoneField` et des classes 
   - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180)) ([6e7eba8](https://github.com/assurance-maladie-digital/design-system/commit/6e7eba8378feb47a91d7a6080fc0ec410a8e9bde))
   - **tests:** Ajout des pages liées aux fonctions de tests ([#2195](https://github.com/assurance-maladie-digital/design-system/pull/2195)) ([71a4003](https://github.com/assurance-maladie-digital/design-system/commit/71a4003199bff0f28998b278bb30aaaf2cb4966a))
   - **types:** Ajout de la page *Types utilitaires* ([#2272](https://github.com/assurance-maladie-digital/design-system/pull/2272)) ([052db76](https://github.com/assurance-maladie-digital/design-system/commit/052db76a1ab6a7740e3f329598b7917459f0bebe))
-  - **roadmap:** Mise à jour de la page ([#2281](https://github.com/assurance-maladie-digital/design-system/pull/2281))
+  - **roadmap:** Mise à jour de la page ([#2281](https://github.com/assurance-maladie-digital/design-system/pull/2281)) ([c1f1b18](https://github.com/assurance-maladie-digital/design-system/commit/c1f1b18af98cf5a953adeff12995f4701ba4d401))
 
 ### Interne
 
