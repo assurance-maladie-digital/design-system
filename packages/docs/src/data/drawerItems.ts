@@ -378,6 +378,10 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Types utilitaires',
+				to: '/composants-techniques/types-utilitaires'
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
 			},
