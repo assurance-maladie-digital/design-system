@@ -6,16 +6,10 @@ import { RoadmapSection } from '~/types/roadmap';
 export const roadmap: IndexedObject<RoadmapSection[]> = {
 	current: [
 		{
-			version: '2.6.0',
-			date: 'Août 2022',
+			version: '2.7.0',
+			date: 'Septembre 2022',
 			description: 'Mise à jour de composants et complétion de la documentation.',
 			items: [
-				{
-					title: 'Ajout du composant PhoneField',
-					description: 'Ajout d’un composant permettant la saisie d’un numéro de téléphone.',
-					label: LabelMappingEnum.NEW,
-					issue: 2178
-				},
 				{
 					title: 'Mise à jour de la typographie',
 					description: 'Mise à jour des règles typographiques et des typographies utilisées.',
@@ -23,33 +17,27 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 					issue: 1794
 				},
 				{
-					title: 'Guide sur les tests unitaires',
-					description: 'Ajour d’un guide sur la rédaction des tests unitaires.',
+					title: 'Guide sur Vue i18n',
+					description: 'Ajout d’un guide sur la gestion des textes avec Vue i18n.',
 					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 2136
+					issue: 2209
 				},
 				{
-					title: 'Guide sur les tests e2e',
-					description: 'Ajour d’un guide sur la rédaction des tests d’interface.',
+					title: 'Guide sur la gestion des droits',
+					description: 'Ajout d’un guide sur la gestion des droits avec Vue Browser Acl.',
 					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 2137
+					issue: 1690
+				},
+				{
+					title: 'Guide sur les tests unitaires',
+					description: 'Ajout d’un guide sur la rédaction des tests unitaires.',
+					label: LabelMappingEnum.DOCUMENTATION,
+					issue: 2136
 				},
 				{
 					title: 'Documentation du module de notification',
 					description: 'Documentation du module Vuex de notification.',
 					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 2052
-				},
-				{
-					title: 'Visualisation de données',
-					description: 'Définition des différents types de graphiques.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1863
-				},
-				{
-					title: 'Connexion',
-					description: 'Ajout d’un template de connexion.',
-					label: LabelMappingEnum.NEW,
 					issue: 2052
 				}
 			]

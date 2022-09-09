@@ -36,6 +36,7 @@ Cette version comporte l'ajout du nouveau composant `PhoneField` et des classes 
   - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180)) ([6e7eba8](https://github.com/assurance-maladie-digital/design-system/commit/6e7eba8378feb47a91d7a6080fc0ec410a8e9bde))
   - **tests:** Ajout des pages liées aux fonctions de tests ([#2195](https://github.com/assurance-maladie-digital/design-system/pull/2195)) ([71a4003](https://github.com/assurance-maladie-digital/design-system/commit/71a4003199bff0f28998b278bb30aaaf2cb4966a))
   - **types:** Ajout de la page *Types utilitaires* ([#2272](https://github.com/assurance-maladie-digital/design-system/pull/2272)) ([052db76](https://github.com/assurance-maladie-digital/design-system/commit/052db76a1ab6a7740e3f329598b7917459f0bebe))
+  - **roadmap:** Mise à jour de la page ([#2281](https://github.com/assurance-maladie-digital/design-system/pull/2281))
 
 ### Interne
 
@@ -43,7 +44,7 @@ Cette version comporte l'ajout du nouveau composant `PhoneField` et des classes 
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.17` ([#2238](https://github.com/assurance-maladie-digital/design-system/pull/2238)) ([556802b](https://github.com/assurance-maladie-digital/design-system/commit/556802bd2e290fa76a0d6d99b79fa6abe281ed82))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2280](https://github.com/assurance-maladie-digital/design-system/pull/2280))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2280](https://github.com/assurance-maladie-digital/design-system/pull/2280)) ([1a707f9](https://github.com/assurance-maladie-digital/design-system/commit/1a707f9f4f7340a8bbcbadba7afb1f3ba17603a9))
 
 - ⬆️ **Dépendances**
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.3.6` ([#2207](https://github.com/assurance-maladie-digital/design-system/pull/2207)) ([d59c5b7](https://github.com/assurance-maladie-digital/design-system/commit/d59c5b799e3fe278f9d4801887749a8a578f6566))
