@@ -6,12 +6,17 @@
   - **PhoneField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
 
 - ⬆️ **Dépendances**
-  - **peerDependencies:** Mise à jour des dépendances ([#2278](https://github.com/assurance-maladie-digital/design-system/pull/2278))
+  - **peerDependencies:** Mise à jour des dépendances ([#2278](https://github.com/assurance-maladie-digital/design-system/pull/2278)) ([b995a18](https://github.com/assurance-maladie-digital/design-system/commit/b995a180c3859daa1a536880f9085166866a1ca3))
 
 ### Vue Dash
 
 - ♻️ **Refactoring**
   - **template:** Mise à jour de la configuration des tests unitaires ([#2187](https://github.com/assurance-maladie-digital/design-system/pull/2187)) ([d47863c](https://github.com/assurance-maladie-digital/design-system/commit/d47863c7af7170c6273221c4444e101596262a4a))
+
+### Form Builder
+
+- ⬆️ **Dépendances**
+  - **peerDependencies:** Mise à jour des dépendances ([#2279](https://github.com/assurance-maladie-digital/design-system/pull/2279))
 
 ### Design Tokens
 
