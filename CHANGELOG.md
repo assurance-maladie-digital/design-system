@@ -1,4 +1,8 @@
-## Non publié
+## v2.6.0
+
+**Version publiée le 09/09/2022.**
+
+Cette version comporte l'ajout du nouveau composant `PhoneField` et des classes de couleurs pour Vuetify, ainsi que la mise à jour de la configuration des tests unitaires et la complétion de la documentation.
 
 ### Vue Dot
 
@@ -16,7 +20,7 @@
 ### Form Builder
 
 - ⬆️ **Dépendances**
-  - **peerDependencies:** Mise à jour des dépendances ([#2279](https://github.com/assurance-maladie-digital/design-system/pull/2279))
+  - **peerDependencies:** Mise à jour des dépendances ([#2279](https://github.com/assurance-maladie-digital/design-system/pull/2279)) ([c53e72f](https://github.com/assurance-maladie-digital/design-system/commit/c53e72f96fd9478b39948f222256bd768c704b6b))
 
 ### Design Tokens
 
@@ -37,6 +41,9 @@
 
 - 🔧 **Configuration**
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.17` ([#2238](https://github.com/assurance-maladie-digital/design-system/pull/2238)) ([556802b](https://github.com/assurance-maladie-digital/design-system/commit/556802bd2e290fa76a0d6d99b79fa6abe281ed82))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2280](https://github.com/assurance-maladie-digital/design-system/pull/2280))
 
 - ⬆️ **Dépendances**
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.3.6` ([#2207](https://github.com/assurance-maladie-digital/design-system/pull/2207)) ([d59c5b7](https://github.com/assurance-maladie-digital/design-system/commit/d59c5b799e3fe278f9d4801887749a8a578f6566))
