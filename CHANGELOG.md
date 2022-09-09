@@ -5,6 +5,9 @@
 - ✨ **Nouvelles fonctionnalités**
   - **PhoneField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
 
+- ⬆️ **Dépendances**
+  - **peerDependencies:** Mise à jour des dépendances ([#2278](https://github.com/assurance-maladie-digital/design-system/pull/2278))
+
 ### Vue Dash
 
 - ♻️ **Refactoring**
@@ -49,7 +52,7 @@
   - **@vue/eslint-config-typescript:** Mise à jour vers la `v11.0.1` ([#2273](https://github.com/assurance-maladie-digital/design-system/pull/2273)) ([4274811](https://github.com/assurance-maladie-digital/design-system/commit/4274811825c6b1186013a3abed50c02536464aa5))
   - **core-js:** Mise à jour vers la `v3.25.1` ([#2275](https://github.com/assurance-maladie-digital/design-system/pull/2275)) ([8889f52](https://github.com/assurance-maladie-digital/design-system/commit/8889f524f9ebc6d3bd9346eba4c4d752d036414e))
   - **typescript:** Mise à jour vers la `v4.8.3` ([#2276](https://github.com/assurance-maladie-digital/design-system/pull/2276)) ([b95011d](https://github.com/assurance-maladie-digital/design-system/commit/b95011d19bb01300a7958747126dcf557caabcba))
-  - **netlify-cli:** Mise à jour vers la `v11.7.0` ([#2277](https://github.com/assurance-maladie-digital/design-system/pull/2277))
+  - **netlify-cli:** Mise à jour vers la `v11.7.0` ([#2277](https://github.com/assurance-maladie-digital/design-system/pull/2277)) ([55ed480](https://github.com/assurance-maladie-digital/design-system/commit/55ed480dd4bbc3f62ea383d3f11afb712c0923f3))
 
 ## v2.5.1
 
