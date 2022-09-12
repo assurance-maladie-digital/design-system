@@ -337,20 +337,6 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
-				title: 'Classes utilitaires CSS',
-				to: '/composants-techniques/classes-utilitaires-css'
-			},
-			{
-				title: 'CustomIcon',
-				to: '/composants-techniques/custom-icon'
-			}
-		]
-	},
-	{
-		title: 'Guides',
-		icon: mdiHumanMaleBoard,
-		items: [
-			{
 				title: 'Store',
 				items: [
 					{
@@ -364,6 +350,20 @@ export const drawerItems: DrawerItem[] = [
 
 				]
 			},
+			{
+				title: 'Classes utilitaires CSS',
+				to: '/composants-techniques/classes-utilitaires-css'
+			},
+			{
+				title: 'CustomIcon',
+				to: '/composants-techniques/custom-icon'
+			}
+		]
+	},
+	{
+		title: 'Guides',
+		icon: mdiHumanMaleBoard,
+		items: [
 			{
 				title: 'Nouveau composant',
 				to: '/guides/nouveau-composant'

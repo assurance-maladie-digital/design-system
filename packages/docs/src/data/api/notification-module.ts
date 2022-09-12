@@ -16,12 +16,10 @@ export const api: Api = {
 				description: 'Les options de la notifcation.',
 				type: 'NotificationObj',
 				required: true,
-				example: `
-type: 'success' | 'error' | 'info' | 'warning';
+				example: `type: 'success' | 'error' | 'info' | 'warning';
 message: string;
 icon?: string;
-ref?: string;
-				`
+ref?: string;`
 			}
 		],
 		returnValue: [

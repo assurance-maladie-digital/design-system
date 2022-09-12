@@ -1,9 +1,7 @@
 ---
-title: Notifications
-description: Module de notification
+title: Module de notification
+description: Module Vuex pour afficher des notifications en utilisant le composant [NotificationBar](/composants/feedback/notification-bar).
 ---
-
-Le module de notification sert à gérer les notifications depuis l'ensemble des composants du design system.
 
 <doc-tabs>
 
@@ -11,68 +9,69 @@ Le module de notification sert à gérer les notifications depuis l'ensemble des
 
 ### Import
 
-Le module de notification est déjà importé dans `src/store/index.ts` à la création du projet
+Lorsque vous créez un nouveau projet, le module de notification est déjà importé dans le fichier `src/store/index.ts` :
 
-```js
+```ts
 import { notification } from '@cnamts/vue-dot/src/modules/notification';
 ```
 
-Pour commencer, il faut importer `NotificationObj` et `NotificationTypes` qui nous servira pour appeler la notification.
+### Affichage d’une notification
 
-```js
-import { NotificationObj } from '../../modules/notification/types';
-import { NotificationTypes } from '@cnamts/vue-dot/src/modules/notification/types';
-```
+Vous pouvez utiliser la fonction `addNotification()` pour afficher une notification :
 
-### Emettre une notification
+```vue
+<template>
+	<VBtn @click="sendNotification()"></VBtn>
+</template>
 
-Pour émettre une notification, vous pouvez utiliser la fonction `addNotification()` de cette manière :
-
-```ts
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-	import { mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
-	@Component({
-		methods: mapActions('notification', ['addNotification'])
-	})
-	export default class Home extends Vue {
-		sendNotification(): void {
-			this.addNotification({
-				type: 'success',
-				message: 'Exemple de notification'
-			});
-		}
+@Component({
+	methods: mapActions('notification', ['addNotification'])
+})
+export default class HomePage extends Vue {
+	sendNotification(): void {
+		this.addNotification({
+			type: 'success',
+			message: 'Exemple de notification'
+		});
 	}
+}
 </script>
 ```
 
-### Supprimer une notification
+### Suppression d’une notification
 
-Pour supprimer une notification, vous pouvez utiliser la fonction `clearNotification()` de cette manière :
+Vous pouvez utiliser la fonction `clearNotification()` pour supprimer la notification affichée :
 
-```js
+```vue
+<template>
+	<VBtn @click="deleteNotification()"></VBtn>
+</template>
+
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from 'vue-class-component';
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-	import { mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
-	@Component({
-		methods: mapActions('notification', ['clearNotification'])
-	})
-	export default class Home extends Vue {
-		deleteNotification(): void {
-			this.clearNotification();
-		}
+@Component({
+	methods: mapActions('notification', ['clearNotification'])
+})
+export default class HomePage extends Vue {
+	deleteNotification(): void {
+		this.clearNotification();
 	}
+}
 </script>
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="notifications"></doc-api>
+<doc-api name="notification-module"></doc-api>
 </doc-tab-item>
