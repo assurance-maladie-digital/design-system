@@ -1,4 +1,3 @@
-
 import { ESLint } from 'eslint';
 
 import { code } from './fixtures/code';
