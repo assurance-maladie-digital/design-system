@@ -7,7 +7,8 @@
   - **lerna:** Mise à jour vers la `v5.5.2` ([#2283](https://github.com/assurance-maladie-digital/design-system/pull/2283)) ([32a6ca2](https://github.com/assurance-maladie-digital/design-system/commit/32a6ca25b15cd1016ff5060af1ad95e53bea2257))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.38.0` ([#2286](https://github.com/assurance-maladie-digital/design-system/pull/2286)) ([dc3d712](https://github.com/assurance-maladie-digital/design-system/commit/dc3d712074874c4101f63634a1e76fa1143ce000))
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.8` ([#2288](https://github.com/assurance-maladie-digital/design-system/pull/2288)) ([d8d2f4e](https://github.com/assurance-maladie-digital/design-system/commit/d8d2f4e78a9b15e1c19338b7e4dcb94b0219b601))
-  - **@types/node:** Mise à jour vers la `v16.11.59` ([#2289](https://github.com/asurance-maladie-digital/design-system/pull/2289))
+  - **@types/node:** Mise à jour vers la `v16.11.59` ([#2289](https://github.com/asurance-maladie-digital/design-system/pull/2289)) ([a7d4b9a](https://github.com/assurance-maladie-digital/design-system/commit/a7d4b9ac042e777d563de6545b1fcf72b9d28fe9))
+  - **@babel/core:** Mise à jour vers la `v7.19.1` ([#2290](https://github.com/assurance-maladie-digital/design-system/pull/2290))
 
 ## v2.6.0
 
