@@ -3,6 +3,7 @@ import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
 import FileUpload from './FileUpload';
 import FilterModule from './FilterModule';
+import NewFilter from './NewFilter';
 import FooterBar from './FooterBar';
 import FooterWrapper from './FooterWrapper';
 import LangBtn from './LangBtn';
@@ -21,6 +22,7 @@ export const patterns = {
 	DatePicker,
 	FileUpload,
 	FilterModule,
+	NewFilter,
 	FooterBar,
 	FooterWrapper,
 	LangBtn,
