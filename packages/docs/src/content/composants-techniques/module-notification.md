@@ -17,7 +17,7 @@ import { notification } from '@cnamts/vue-dot/src/modules/notification';
 
 ### Affichage d’une notification
 
-Vous pouvez utiliser la fonction `addNotification()` pour afficher une notification :
+Pour émettre une notification, vous pouvez utiliser la fonction `addNotification()` de cette manière :
 
 ```vue
 <template>
