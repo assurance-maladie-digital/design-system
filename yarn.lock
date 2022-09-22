@@ -161,28 +161,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.19.1.tgz#72d647b4ff6a4f82878d184613353af1dd0290f9"
   integrity sha512-72a9ghR0gnESIa7jBN53U32FOVCEoztyIlKaNoU05zRhEecduGK9L9c3ww7Mp06JiR+0ls0GBPFJQwwtjn9ksg==
 
-"@babel/core@7.19.0":
-  version "7.19.0"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.19.0.tgz#d2f5f4f2033c00de8096be3c9f45772563e150c3"
-  integrity sha512-reM4+U7B9ss148rh2n1Qs9ASS+w94irYXga7c2jaQv9RVzpS7Mv1a9rnYYwuDa45G+DkORt9g6An2k/V4d9LbQ==
-  dependencies:
-    "@ampproject/remapping" "^2.1.0"
-    "@babel/code-frame" "^7.18.6"
-    "@babel/generator" "^7.19.0"
-    "@babel/helper-compilation-targets" "^7.19.0"
-    "@babel/helper-module-transforms" "^7.19.0"
-    "@babel/helpers" "^7.19.0"
-    "@babel/parser" "^7.19.0"
-    "@babel/template" "^7.18.10"
-    "@babel/traverse" "^7.19.0"
-    "@babel/types" "^7.19.0"
-    convert-source-map "^1.7.0"
-    debug "^4.1.0"
-    gensync "^1.0.0-beta.2"
-    json5 "^2.2.1"
-    semver "^6.3.0"
-
-"@babel/core@^7.1.0", "@babel/core@^7.11.0", "@babel/core@^7.12.3", "@babel/core@^7.14.0", "@babel/core@^7.7.5":
+"@babel/core@7.19.1", "@babel/core@^7.1.0", "@babel/core@^7.11.0", "@babel/core@^7.12.3", "@babel/core@^7.14.0", "@babel/core@^7.7.5":
   version "7.19.1"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.19.1.tgz#c8fa615c5e88e272564ace3d42fbc8b17bfeb22b"
   integrity sha512-1H8VgqXme4UXCRv7/Wa1bq7RVymKOzC7znjyFM8KiEzwFqcKUKYNoQef4GhdklgNvoBXyW4gYhuBNCM5o1zImw==
@@ -427,7 +406,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.16.8.tgz#61c243a3875f7d0b0962b0543a33ece6ff2f1f17"
   integrity sha512-i7jDUfrVBWc+7OKcBzEe5n7fbv3i2fWtxKzzCvOjnzSxMfWMigAhtfJ7qzZNGFNMsCCd67+uz553dYKWXPvCKw==
 
-"@babel/parser@^7.0.0", "@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.18.10", "@babel/parser@^7.18.4", "@babel/parser@^7.19.0", "@babel/parser@^7.19.1", "@babel/parser@^7.4.3":
+"@babel/parser@^7.0.0", "@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.18.10", "@babel/parser@^7.18.4", "@babel/parser@^7.19.1", "@babel/parser@^7.4.3":
   version "7.19.1"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.19.1.tgz#6f6d6c2e621aad19a92544cc217ed13f1aac5b4c"
   integrity sha512-h7RCSorm1DdTVGJf3P2Mhj3kdnkmF/EiysUkzS2TdgAYqyjFdMQJbVuXOBej2SBJaXan/lIVtT6KkGbyyq753A==
@@ -3674,12 +3653,7 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@rushstack/eslint-patch@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.4.tgz#0c8b74c50f29ee44f423f7416829c0bf8bb5eb27"
-  integrity sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==
-
-"@rushstack/eslint-patch@^1.1.3":
+"@rushstack/eslint-patch@1.2.0", "@rushstack/eslint-patch@^1.1.3":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
@@ -4187,12 +4161,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.12.tgz#fd9c1c2cfab536a2383ed1ef70f94adea743a226"
   integrity sha512-KQZ1al2hKOONAs2MFv+yTQP1LkDWMrRJ9YCVRalXltOfXsBmH5IownLxQaiq0lnAHwAViLnh2aTYqrPcRGEbgg==
 
-"@types/node@16.11.58":
-  version "16.11.58"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.58.tgz#0a3698dee3492617a8d5fe7998d18d7520b63026"
-  integrity sha512-uMVxJ111wpHzkx/vshZFb6Qni3BOMnlWLq7q9jrwej7Yw/KvjsEbpxCCxw+hLKxexFMc8YmpG8J9tnEe/rKsIg==
-
-"@types/node@^16.0.0":
+"@types/node@16.11.59", "@types/node@^16.0.0":
   version "16.11.59"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.59.tgz#823f238b9063ccc3b3b7f13186f143a57926c4f6"
   integrity sha512-6u+36Dj3aDzhfBVUf/mfmc92OEdzQ2kx2jcXGdigfl70E/neV21ZHE6UCz4MDzTRcVqGAM27fk+DLXvyDsn3Jw==
@@ -7599,20 +7568,15 @@ core-js-compat@^3.12.1, core-js-compat@^3.25.1, core-js-compat@^3.6.5:
   dependencies:
     browserslist "^4.21.4"
 
-core-js@3.25.1:
-  version "3.25.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.1.tgz#5818e09de0db8956e16bf10e2a7141e931b7c69c"
-  integrity sha512-sr0FY4lnO1hkQ4gLDr24K0DGnweGO1QwSj5BpfQjpSJPdqWalja4cTps29Y/PJVG/P7FYlPDkH3hO+Tr0CvDgQ==
+core-js@3.25.2, core-js@^3.6.5:
+  version "3.25.2"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.2.tgz#2d3670c1455432b53fa780300a6fc1bd8304932c"
+  integrity sha512-YB4IAT1bjEfxTJ1XYy11hJAKskO+qmhuDBM8/guIfMz4JvdsAQAqvyb97zXX7JgSrfPLG5mRGFWJwJD39ruq2A==
 
 core-js@^2.4.0, core-js@^2.6.5:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
-
-core-js@^3.6.5:
-  version "3.25.2"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.2.tgz#2d3670c1455432b53fa780300a6fc1bd8304932c"
-  integrity sha512-YB4IAT1bjEfxTJ1XYy11hJAKskO+qmhuDBM8/guIfMz4JvdsAQAqvyb97zXX7JgSrfPLG5mRGFWJwJD39ruq2A==
 
 core-util-is@1.0.2:
   version "1.0.2"
@@ -20879,10 +20843,10 @@ vue-class-component@7.2.6:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
 
-vue-cli-plugin-vuetify@2.5.5:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.5.5.tgz#30e0b4807451e800a94fb3222a401061de910b16"
-  integrity sha512-nV7g2wC5SBJe7UidLwnJKAasoc+XR1r5bKDOG6mhuUB17Y4kJlOCKpLDiIY/giHhGfjmsBh+DPC9fbQWNCN9mA==
+vue-cli-plugin-vuetify@2.5.8:
+  version "2.5.8"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.5.8.tgz#a67ef81375fb2cd9f4f912e665e5190de105f2f6"
+  integrity sha512-uqi0/URJETJBbWlQHD1l0pnY7JN8Ytu+AL1fw50HFlGByPa8/xx+mq19GkFXA9FcwFT01IqEc/TkxMPugchomg==
   dependencies:
     null-loader "^4.0.1"
     semver "^7.1.2"
