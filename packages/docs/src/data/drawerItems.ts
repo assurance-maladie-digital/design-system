@@ -55,10 +55,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/fondamentaux/logo'
 			},
 			{
-				title: 'Éco-conception',
-				to: '/fondamentaux/eco-conception'
-			},
-			{
 				title: 'Couleurs',
 				to: '/fondamentaux/couleurs'
 			},

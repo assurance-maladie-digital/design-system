@@ -55,9 +55,7 @@ export default class UserDeclaration extends Vue {
 
 ### Gestion du pluriel
 
-Si vous voulez accorder en nombre un mot, vous pouvez utiliser cette syntaxe :
-
-Dans le fichier de traduction :
+Si vous voulez accorder en nombre un mot, vous devez utiliser la fonction `$tc` et utiliser cette syntaxe dans un fichier de traduction :
 
 ```ts
 //Quand il y a deux éléments, le premier correspond au singulier, le deuxieme au pluriel.
@@ -123,7 +121,7 @@ presentation: 'Bonjour, je m’appelle {firstname} {lastname}, j’ai {age} ans.
 Puis l'appeler dans le template
 
 ```vue
-<p>{{ $t('views.about.presentation', {firstname: 'John',lastname: 'Doe',age: 30}) }}</p>
+<p>{{ $t('views.about.presentation', { firstname: 'John',lastname: 'Doe', age: 30 }) }}</p>
 ```
 
 Le résultat attendu est celui-ci.
