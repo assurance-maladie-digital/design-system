@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FiltersInline renders correctly 1`] = `
+<div class="vd-filters-inline d-flex flex-wrap max-width-none ma-n2">
+  <vmenu-stub opendelay="0" closedelay="0" openonclick="true" contentclass="" maxwidth="400px" minwidth="300px" nudgebottom="10px" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" closeonclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition" contentprops="[object Object]">
+    <vsheet-stub tag="div" background="white" class="pa-4">
+      <chiplist-stub items="" overflowlimit="4" class="mb-5"></chiplist-stub>
+    </vsheet-stub>
+  </vmenu-stub>
+</div>
+`;
+
+exports[`FiltersInline renders correctly with an active filter 1`] = `
+<div class="vd-filters-inline d-flex flex-wrap max-width-none ma-n2">
+  <div class="v-menu"><button type="button" class="ma-2 v-btn v-btn--has-bg v-btn--rounded theme--light v-size--default secondary vd-filter-name"><span class="v-btn__content"><span class="v-badge ml-n1 mr-1 v-badge--inline theme--light"><span class="v-badge__wrapper"><transition-stub name="scale-rotate-transition"><span aria-atomic="true" aria-label="1 filtre" aria-live="polite" role="status" class="v-badge__badge white">1</span></transition-stub></span></span>
+
+
+
+      <span aria-hidden="true" class="v-icon notranslate ml-1 theme--light" style="font-size: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 16px; height: 16px; width: 16px;"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg></span></span></button>
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`FiltersInline renders correctly with multiple active filters 1`] = `
+<div class="vd-filters-inline d-flex flex-wrap max-width-none ma-n2">
+  <div class="v-menu"><button type="button" class="ma-2 v-btn v-btn--has-bg v-btn--rounded theme--light v-size--default secondary vd-filter-name"><span class="v-btn__content"><span class="v-badge ml-n1 mr-1 v-badge--inline theme--light"><span class="v-badge__wrapper"><transition-stub name="scale-rotate-transition"><span aria-atomic="true" aria-label="1 filtre" aria-live="polite" role="status" class="v-badge__badge white">1</span></transition-stub></span></span>
+
+
+
+      <span aria-hidden="true" class="v-icon notranslate ml-1 theme--light" style="font-size: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 16px; height: 16px; width: 16px;"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg></span></span></button>
+    <!---->
+  </div>
+  <div class="v-menu"><button type="button" class="ma-2 v-btn v-btn--has-bg v-btn--rounded theme--light v-size--default secondary vd-filter-profession"><span class="v-btn__content"><span class="v-badge ml-n1 mr-1 v-badge--inline theme--light"><span class="v-badge__wrapper"><transition-stub name="scale-rotate-transition"><span aria-atomic="true" aria-label="2 filtres" aria-live="polite" role="status" class="v-badge__badge white">2</span></transition-stub></span></span>
+
+
+
+      <span aria-hidden="true" class="v-icon notranslate ml-1 theme--light" style="font-size: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 16px; height: 16px; width: 16px;"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path></svg></span></span></button>
+    <!---->
+  </div>
+</div>
+`;

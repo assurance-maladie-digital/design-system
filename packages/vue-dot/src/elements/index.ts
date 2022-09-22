@@ -1,5 +1,6 @@
 import BackBtn from './BackBtn';
 import BackToTopBtn from './BackToTopBtn';
+import ChipList from './ChipList';
 import CopyBtn from './CopyBtn';
 import CustomIcon from './CustomIcon';
 import DataList from './DataList';
@@ -19,6 +20,7 @@ import UserMenuBtn from './UserMenuBtn';
 export const elements = {
 	BackBtn,
 	BackToTopBtn,
+	ChipList,
 	CopyBtn,
 	CustomIcon,
 	DataList,
