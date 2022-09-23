@@ -5,7 +5,7 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'notification',
-				description: 'La notification a afficher.',
+				description: 'La notification à afficher.',
 				type: 'NotificationObj',
 				required: true,
 				example: `type: 'success' | 'error' | 'info' | 'warning';

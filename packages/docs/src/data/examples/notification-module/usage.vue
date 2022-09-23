@@ -1,19 +1,22 @@
 <template>
-	<div>
-		<NotificationBar v-show="showNotificationBar" />
+	<div class="d-flex flex-wrap align-center justify-center ma-n2">
+		<NotificationBar />
 
 		<VBtn
 			color="primary"
+			class="ma-2"
 			@click="createNotification"
 		>
 			Envoyer une notification
 		</VBtn>
 
 		<VBtn
-			color="secondary"
+			color="primary"
+			outlined
+			class="ma-2"
 			@click="removeNotification"
 		>
-			Supprimer une notification
+			Supprimer la notification
 		</VBtn>
 	</div>
 </template>
@@ -22,27 +25,19 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { mapActions, mapState } from 'vuex';
-
-	const EXAMPLE_REF = 'usage-example';
+	import { mapActions } from 'vuex';
 
 	@Component({
-		computed: mapState('notification', ['notification']),
 		methods: mapActions('notification', ['addNotification', 'clearNotification'])
 	})
 	export default class NotificationBarUsage extends Vue {
-		get showNotificationBar(): boolean {
-			return this.notification?.ref === EXAMPLE_REF;
-		}
-
 		createNotification(): void {
 			this.addNotification({
-				ref: EXAMPLE_REF,
 				type: 'info',
 				message: 'Exemple de notification.'
 			});
 		}
-		
+
 		removeNotification(): void {
 			this.clearNotification();
 		}

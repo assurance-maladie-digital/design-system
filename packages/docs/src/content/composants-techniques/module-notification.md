@@ -15,11 +15,11 @@ Lorsque vous créez un nouveau projet, le module de notification est déjà impo
 import { notification } from '@cnamts/vue-dot/src/modules/notification';
 ```
 
-### Affichage d’une notification
+### Afficher et masquer une notification
 
-Pour émettre une notification, vous pouvez utiliser la fonction `addNotification()` et la fonction `clearNotification()` pour supprimer la notification affichée.
+Pour émettre une notification, vous pouvez utiliser la fonction `addNotification()`, et pour la supprimer vous pouvez utiliser la fonction `clearNotification()`.
 
-<doc-example file="module-notification/usage"></doc-example>
+<doc-example file="notification-module/usage"></doc-example>
 
 </doc-tab-item>
 
