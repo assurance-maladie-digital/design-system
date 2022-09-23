@@ -1,5 +1,10 @@
 ## Non publié
 
+### Documentation
+
+- 📝 **Documentation**
+  - **types:** Ajout de la page *Module de notification* ([#2237](https://github.com/assurance-maladie-digital/design-system/pull/2237)) ([f41e886](https://github.com/assurance-maladie-digital/design-system/commit/f41e886398437d85d4f3b1707069b79c4647c6ee))
+
 ### Interne
 
 - ⬆️ **Dépendances**
