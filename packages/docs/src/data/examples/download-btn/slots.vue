@@ -9,7 +9,7 @@
 		class="text--primary"
 	>
 		<VIcon
-			color="grey darken-1"
+			color="grey"
 			class="flex-shrink-0 mr-2"
 			:class="{ 'd-none': $vuetify.breakpoint.xs }"
 		>

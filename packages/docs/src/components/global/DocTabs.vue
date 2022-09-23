@@ -125,7 +125,7 @@
 		get tabClasses(): IndexedObject<boolean> {
 			return {
 				'justify-start': this.mobileVersion,
-				'am-blue lighten-3': this.mobileVersion
+				'am-blue-lighten-97': this.mobileVersion
 			}
 		}
 

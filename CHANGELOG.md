@@ -1,22 +1,125 @@
 ## Non publié
 
-### Documentation
-
-- 📝 **Documentation**
-  - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117))
-
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **netlify-cli:** Mise à jour vers la `v10.14.0` ([#2174](https://github.com/assurance-maladie-digital/design-system/pull/2174)) ([b2ad8af](https://github.com/assurance-maladie-digital/design-system/commit/b2ad8af70718d3f6b9bd69da3c8fbf5aa12fb2c3))
+  - **lerna:** Mise à jour vers la `v5.5.2` ([#2283](https://github.com/assurance-maladie-digital/design-system/pull/2283)) ([32a6ca2](https://github.com/assurance-maladie-digital/design-system/commit/32a6ca25b15cd1016ff5060af1ad95e53bea2257))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.38.0` ([#2286](https://github.com/assurance-maladie-digital/design-system/pull/2286)) ([dc3d712](https://github.com/assurance-maladie-digital/design-system/commit/dc3d712074874c4101f63634a1e76fa1143ce000))
+  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.8` ([#2288](https://github.com/assurance-maladie-digital/design-system/pull/2288)) ([d8d2f4e](https://github.com/assurance-maladie-digital/design-system/commit/d8d2f4e78a9b15e1c19338b7e4dcb94b0219b601))
+  - **@types/node:** Mise à jour vers la `v16.11.59` ([#2289](https://github.com/asurance-maladie-digital/design-system/pull/2289)) ([b645b39](https://github.com/assurance-maladie-digital/design-system/commit/b645b39cbbc9f6444baddb1c357191c06bb0e275))
+  - **core-js:** Mise à jour vers la `v3.25.2` ([#2294](https://github.com/assurance-maladie-digital/design-system/pull/2294)) ([16d2143](https://github.com/assurance-maladie-digital/design-system/commit/16d21439264e1f4c08fd7abaab228e10551a042a))
+  - **@babel/core:** Mise à jour vers la `v7.19.1` ([#2290](https://github.com/assurance-maladie-digital/design-system/pull/2290)) ([951413b](https://github.com/assurance-maladie-digital/design-system/commit/951413bed1df8d259ba9f742f1c8f7f28a7e8f37))
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.2.0` ([#2291](https://github.com/assurance-maladie-digital/design-system/pull/2291)) ([e43d502](https://github.com/assurance-maladie-digital/design-system/commit/e43d502b0644a9d7ef82fc91ae6a1bd5307290f4))
+  - **netlify-cli:** Mise à jour vers la `v11.8.2` ([#2292](https://github.com/assurance-maladie-digital/design-system/pull/2292))
+
+## v2.6.0
+
+**Version publiée le 09/09/2022.**
+
+Cette version comporte l'ajout du nouveau composant `PhoneField` et des classes de couleurs pour Vuetify, ainsi que la mise à jour de la configuration des tests unitaires et la complétion de la documentation.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **PhoneField:** Ajout d'un nouveau composant ([#2204](https://github.com/assurance-maladie-digital/design-system/pull/2204)) ([cd9d4be](https://github.com/assurance-maladie-digital/design-system/commit/cd9d4be341cf021b1343963947793488cefa56dd))
+
+- ⬆️ **Dépendances**
+  - **peerDependencies:** Mise à jour des dépendances ([#2278](https://github.com/assurance-maladie-digital/design-system/pull/2278)) ([b995a18](https://github.com/assurance-maladie-digital/design-system/commit/b995a180c3859daa1a536880f9085166866a1ca3))
+
+### Vue Dash
+
+- ♻️ **Refactoring**
+  - **template:** Mise à jour de la configuration des tests unitaires ([#2187](https://github.com/assurance-maladie-digital/design-system/pull/2187)) ([d47863c](https://github.com/assurance-maladie-digital/design-system/commit/d47863c7af7170c6273221c4444e101596262a4a))
+
+### Form Builder
+
+- ⬆️ **Dépendances**
+  - **peerDependencies:** Mise à jour des dépendances ([#2279](https://github.com/assurance-maladie-digital/design-system/pull/2279)) ([c53e72f](https://github.com/assurance-maladie-digital/design-system/commit/c53e72f96fd9478b39948f222256bd768c704b6b))
+
+### Design Tokens
+
+- ✨ **Nouvelles fonctionnalités**
+  - **colors:** Ajout des classes de couleurs pour Vuetify ([#2191](https://github.com/assurance-maladie-digital/design-system/pull/2191)) ([cb2dcc7](https://github.com/assurance-maladie-digital/design-system/commit/cb2dcc737462df0db483cc6306983727738122ae))
+
+### Documentation
+
+- ♻️ **Refactoring**
+  - **global:** Utilisation des classes de couleurs ([#2263](https://github.com/assurance-maladie-digital/design-system/pull/2263)) ([0bc945a](https://github.com/assurance-maladie-digital/design-system/commit/0bc945a145f712b5846d33be161bbc1eb71f746b))
+
+- 📝 **Documentation**
+  - **guides:** Ajout d'un guide sur les tests e2e ([#2180](https://github.com/assurance-maladie-digital/design-system/pull/2180)) ([6e7eba8](https://github.com/assurance-maladie-digital/design-system/commit/6e7eba8378feb47a91d7a6080fc0ec410a8e9bde))
+  - **tests:** Ajout des pages liées aux fonctions de tests ([#2195](https://github.com/assurance-maladie-digital/design-system/pull/2195)) ([71a4003](https://github.com/assurance-maladie-digital/design-system/commit/71a4003199bff0f28998b278bb30aaaf2cb4966a))
+  - **types:** Ajout de la page *Types utilitaires* ([#2272](https://github.com/assurance-maladie-digital/design-system/pull/2272)) ([052db76](https://github.com/assurance-maladie-digital/design-system/commit/052db76a1ab6a7740e3f329598b7917459f0bebe))
+  - **roadmap:** Mise à jour de la page ([#2281](https://github.com/assurance-maladie-digital/design-system/pull/2281)) ([c1f1b18](https://github.com/assurance-maladie-digital/design-system/commit/c1f1b18af98cf5a953adeff12995f4701ba4d401))
+
+### Interne
+
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.17` ([#2238](https://github.com/assurance-maladie-digital/design-system/pull/2238)) ([556802b](https://github.com/assurance-maladie-digital/design-system/commit/556802bd2e290fa76a0d6d99b79fa6abe281ed82))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2280](https://github.com/assurance-maladie-digital/design-system/pull/2280)) ([1a707f9](https://github.com/assurance-maladie-digital/design-system/commit/1a707f9f4f7340a8bbcbadba7afb1f3ba17603a9))
+
+- ⬆️ **Dépendances**
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.3.6` ([#2207](https://github.com/assurance-maladie-digital/design-system/pull/2207)) ([d59c5b7](https://github.com/assurance-maladie-digital/design-system/commit/d59c5b799e3fe278f9d4801887749a8a578f6566))
+  - **vuetify:** Mise à jour vers la `v2.6.9` ([#2216](https://github.com/assurance-maladie-digital/design-system/pull/2216)) ([ad81266](https://github.com/assurance-maladie-digital/design-system/commit/ad8126683df32936d78b4c539375e6bdb8f0b082))
+  - **dayjs:** Mise à jour vers la `v1.11.5` ([#2222](https://github.com/assurance-maladie-digital/design-system/pull/2222)) ([d13f9b3](https://github.com/assurance-maladie-digital/design-system/commit/d13f9b3b088cd0d090daa7b74ec3589be44b0da2))
+  - **@netlify/functions:** Mise à jour vers la `v1.2.0` ([#2225](https://github.com/assurance-maladie-digital/design-system/pull/2225)) ([1224411](https://github.com/assurance-maladie-digital/design-system/commit/12244114ccf0b557e9d6d05e1b5a7789d25eba15))
+  - **@octokit/core:** Mise à jour vers la `v4.0.5` ([#2227](https://github.com/assurance-maladie-digital/design-system/pull/2227)) ([02df0a5](https://github.com/assurance-maladie-digital/design-system/commit/02df0a544681dcd6d0eb01120aa837f377434486))
+  - **@docsearch/js:** Mise à jour vers la `v3.2.1` ([#2230](https://github.com/assurance-maladie-digital/design-system/pull/2230)) ([7bfc08f](https://github.com/assurance-maladie-digital/design-system/commit/7bfc08fc07f877dc99cb1a5f71bc9363242701a2))
+  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.4` ([#2233](https://github.com/assurance-maladie-digital/design-system/pull/2233)) ([3479c2b](https://github.com/assurance-maladie-digital/design-system/commit/3479c2b5c6988229919d1ad097695988946b673e))
+  - **vue:** Mise à jour vers la `v2.7.10` ([#2246](https://github.com/assurance-maladie-digital/design-system/pull/2246)) ([d4464db](https://github.com/assurance-maladie-digital/design-system/commit/d4464dbe62f03022da58ee5d0e678d46c555e159))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.4.0` ([#2248](https://github.com/assurance-maladie-digital/design-system/pull/2248)) ([c62db11](https://github.com/assurance-maladie-digital/design-system/commit/c62db11c09c94e32a8eb37fa5f7b94c5d8eef8b3))
+  - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.5` ([#2253](https://github.com/assurance-maladie-digital/design-system/pull/2253)) ([18762e1](https://github.com/assurance-maladie-digital/design-system/commit/18762e1db09edb3f573cbcf50f1c13a0f76681ef))
+  - **lerna:** Mise à jour vers la `v5.5.0` ([#2260](https://github.com/assurance-maladie-digital/design-system/pull/2260)) ([b8733d0](https://github.com/assurance-maladie-digital/design-system/commit/b8733d0b1ba7528dbd98f556e6dce52ccb908980))
+  - **@types/node:** Mise à jour vers la `v16.11.58` ([#2264](https://github.com/asurance-maladie-digital/design-system/pull/2264)) ([3017e1d](https://github.com/assurance-maladie-digital/design-system/commit/3017e1d08524c28b39cba3e8f556745e8b7362ad))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.36.2` ([#2265](https://github.com/assurance-maladie-digital/design-system/pull/2265)) ([508c9e9](https://github.com/assurance-maladie-digital/design-system/commit/508c9e97dcfdbda5025e2561b76804f3b25f63a4))
+  - **@babel/core:** Mise à jour vers la `v7.19.0` ([#2266](https://github.com/assurance-maladie-digital/design-system/pull/2266)) ([a7d4b9a](https://github.com/assurance-maladie-digital/design-system/commit/a7d4b9ac042e777d563de6545b1fcf72b9d28fe9))
+  - **vue-router:** Mise à jour vers la `v3.6.5` ([#2268](https://github.com/assurance-maladie-digital/design-system/pull/2268)) ([aaba282](https://github.com/assurance-maladie-digital/design-system/commit/aaba282587c62f6cf61b71ff5386f34144d3ce34))
+  - **@vue/eslint-config-typescript:** Mise à jour vers la `v11.0.1` ([#2273](https://github.com/assurance-maladie-digital/design-system/pull/2273)) ([4274811](https://github.com/assurance-maladie-digital/design-system/commit/4274811825c6b1186013a3abed50c02536464aa5))
+  - **core-js:** Mise à jour vers la `v3.25.1` ([#2275](https://github.com/assurance-maladie-digital/design-system/pull/2275)) ([8889f52](https://github.com/assurance-maladie-digital/design-system/commit/8889f524f9ebc6d3bd9346eba4c4d752d036414e))
+  - **typescript:** Mise à jour vers la `v4.8.3` ([#2276](https://github.com/assurance-maladie-digital/design-system/pull/2276)) ([b95011d](https://github.com/assurance-maladie-digital/design-system/commit/b95011d19bb01300a7958747126dcf557caabcba))
+  - **netlify-cli:** Mise à jour vers la `v11.7.0` ([#2277](https://github.com/assurance-maladie-digital/design-system/pull/2277)) ([55ed480](https://github.com/assurance-maladie-digital/design-system/commit/55ed480dd4bbc3f62ea383d3f11afb712c0923f3))
+
+## v2.5.1
+
+**Version publiée le 08/08/2022.**
+
+Cette version comporte un correctif pour Windows et la complétion de la documentation.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **FooterBar:** Correction d'un conflit sur le nom du fichier `socialMediaLinks.ts` sur Windows ([#2196](https://github.com/assurance-maladie-digital/design-system/pull/2196)) ([bc581b2](https://github.com/assurance-maladie-digital/design-system/commit/bc581b29af6f7231fdb7e7fdf92413a3d477f0b9))
+
+### Documentation
+
+- 🐛 **Corrections de bugs**
+  - **introduction:** Correction du contenu de la section *Équipe* ([#2197](https://github.com/assurance-maladie-digital/design-system/pull/2197)) ([2e5fda8](https://github.com/assurance-maladie-digital/design-system/commit/2e5fda8311f334f92f0e16ee35097f2eba4b6cce))
+  - **NotificationBar:** Correction de l'exemple `options` ([#2198](https://github.com/assurance-maladie-digital/design-system/pull/2198)) ([90b7dc0](https://github.com/assurance-maladie-digital/design-system/commit/90b7dc0c2e46358f631a9a3f1b7ff7e2c545d47b))
+  - **DocA11yCriteria:** Correction du nom de la classe de l'élément principal ([#2200](https://github.com/assurance-maladie-digital/design-system/pull/2200)) ([610ffba](https://github.com/assurance-maladie-digital/design-system/commit/610ffba23898b2391c9086f43aab522c1979fd4f))
+
+- 📝 **Documentation**
+  - **global:** Ajout de la page *Design Tokens* ([#2117](https://github.com/assurance-maladie-digital/design-system/pull/2117)) ([51e8952](https://github.com/assurance-maladie-digital/design-system/commit/51e8952f4958d3799e4fc10b417fa63d21fd6188))
+  - **introduction:** Ajout de la section *Équipe* ([#2181](https://github.com/assurance-maladie-digital/design-system/pull/2181)) ([85fe14e](https://github.com/assurance-maladie-digital/design-system/commit/85fe14e1573a537640083665ad74a53246bc204e))
+  - **global:** Ajout de la page *Éco-conception* ([#2186](https://github.com/assurance-maladie-digital/design-system/pull/2186)) ([70c4192](https://github.com/assurance-maladie-digital/design-system/commit/70c4192d86f9b67b9055ebd55378a034233e4d3c))
+  - **roadmap:** Mise à jour de la page ([#2201](https://github.com/assurance-maladie-digital/design-system/pull/2201)) ([8c710d0](https://github.com/assurance-maladie-digital/design-system/commit/8c710d05d2e6329740db8f3ffd6e4ed9ab0bb207))
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2202](https://github.com/assurance-maladie-digital/design-system/pull/2202)) ([fba0432](https://github.com/assurance-maladie-digital/design-system/commit/fba0432aa31e8e8e65a24cef6fbd0493d211b634))
+
+- ⬆️ **Dépendances**
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.32.0` ([#2175](https://github.com/assurance-maladie-digital/design-system/pull/2175)) ([2f5a516](https://github.com/assurance-maladie-digital/design-system/commit/2f5a516968ce57b75047c668bf1c5288499412b1))
   - **lerna:** Mise à jour vers la `v5.3.0` ([#2182](https://github.com/assurance-maladie-digital/design-system/pull/2182)) ([4d66193](https://github.com/assurance-maladie-digital/design-system/commit/4d66193b0eef321d3f4474bf2ef276d246bd81e8))
   - **@types/node:** Mise à jour vers la `v16.11.47` ([#2183](https://github.com/asurance-maladie-digital/design-system/pull/2183)) ([ea2f104](https://github.com/assurance-maladie-digital/design-system/commit/ea2f104e12dd5067386ef63e02b9463ace5f1fc8))
   - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.3.4` ([#2188](https://github.com/assurance-maladie-digital/design-system/pull/2188)) ([97ebd2b](https://github.com/assurance-maladie-digital/design-system/commit/97ebd2b5333f9a6aecfd44865d2db0fb7bf526e8))
   - **vuetify:** Mise à jour vers la `v2.6.8` ([#2189](https://github.com/assurance-maladie-digital/design-system/pull/2189)) ([60bef30](https://github.com/assurance-maladie-digital/design-system/commit/60bef307bcbe06de4739fdf83e2a55702b066919))
-  - **core-js:** Mise à jour vers la `v3.24.1` ([#2190](//github.com/assurance-maladie-digital/design-system/pull/2190)) ([550356f](https://github.com/assurance-maladie-digital/design-system/commit/550356fcb18f838808b172fb94e281e2b9fb86bf))
+  - **core-js:** Mise à jour vers la `v3.24.1` ([#2190](https://github.com/assurance-maladie-digital/design-system/pull/2190)) ([550356f](https://github.com/assurance-maladie-digital/design-system/commit/550356fcb18f838808b172fb94e281e2b9fb86bf))
   - **@babel/core:** Mise à jour vers la `v7.18.10` ([#2192](https://github.com/assurance-maladie-digital/design-system/pull/2192)) ([13ef17f](https://github.com/assurance-maladie-digital/design-system/commit/13ef17f8f0f1db0947f6556c90c27bfeb1f36c88))
   - **@docsearch/js:** Mise à jour vers la `v3.2.0` ([#2194](https://github.com/assurance-maladie-digital/design-system/pull/2194)) ([67a5cb1](https://github.com/assurance-maladie-digital/design-system/commit/67a5cb15c7364800cb6d3fae9c954b7f2db0578f))
+  - **netlify-cli:** Mise à jour vers la `v10.15.0` ([#2199](https://github.com/assurance-maladie-digital/design-system/pull/2199)) ([fc314b9](https://github.com/assurance-maladie-digital/design-system/commit/fc314b9c154ded37b8c1b10646d3e4dcd1fe7374))
 
 ## v2.5.0
 
@@ -131,7 +234,7 @@ Cette version comporte l'ajout du nouveau composant `NirField`, du mode de séle
   - **vue:** Mise à jour vers la `v2.7.8` ([#2165](https://github.com/assurance-maladie-digital/design-system/pull/2165)) ([9d1148a](https://github.com/assurance-maladie-digital/design-system/commit/9d1148a55a90d60246548f82eefa52eeccf8671c))
   - **netlify-cli:** Mise à jour vers la `v10.11.1` ([#2167](https://github.com/assurance-maladie-digital/design-system/pull/2167)) ([467b3a6](https://github.com/assurance-maladie-digital/design-system/commit/467b3a68e4adf11486c9bf52701f0830ece59643))
   - **lerna:** Mise à jour vers la `v5.2.0` ([#2169](https://github.com/assurance-maladie-digital/design-system/pull/2169)) ([fe1d33b](https://github.com/assurance-maladie-digital/design-system/commit/fe1d33bbc1123f1a86b680ed35f06c341b358250))
-  - **core-js:** Mise à jour vers la `v3.24.0` ([#2171](//github.com/assurance-maladie-digital/design-system/pull/2171)) ([6f0c43c](https://github.com/assurance-maladie-digital/design-system/commit/6f0c43cacf53046a9c10e25aed9f87f30c03445b))
+  - **core-js:** Mise à jour vers la `v3.24.0` ([#2171](https://github.com/assurance-maladie-digital/design-system/pull/2171)) ([6f0c43c](https://github.com/assurance-maladie-digital/design-system/commit/6f0c43cacf53046a9c10e25aed9f87f30c03445b))
   - **eslint-plugin-vue:** Mise à jour vers la `v9.3.0` ([#2172](https://github.com/assurance-maladie-digital/design-system/pull/2172)) ([6847c18](https://github.com/assurance-maladie-digital/design-system/commit/6847c1836993dab3d978482c3bb5c3fc03d5a972))
 
 ## v2.4.0
@@ -281,7 +384,7 @@ Cette version comporte l'ajout des nouveaux packages ESLint Config et des nouvea
   - **node.js:** Mise à jour de vers la `v16` ([#1952](https://github.com/assurance-maladie-digital/design-system/pull/1952)) ([f2fa55b](https://github.com/assurance-maladie-digital/design-system/commit/f2fa55b508d6af3783a65cb406dd84e539a616a3))
   - **@types/node:** Mise à jour vers la `v16.11.33` ([#1973](https://github.com/asurance-maladie-digital/design-system/pull/1973)) ([83a3f96](https://github.com/assurance-maladie-digital/design-system/commit/83a3f964c50d002c09adf1891bc0deee4d8bab7e))
   - **vuetify:** Mise à jour vers la `v2.6.5` ([#1978](https://github.com/assurance-maladie-digital/design-system/pull/1978)) ([fa192a5](https://github.com/assurance-maladie-digital/design-system/commit/fa192a58f334a90517a58835cf633a26cda15487))
-  - **core-js:** Mise à jour vers la `v3.22.4` ([#1979](//github.com/assurance-maladie-digital/design-system/pull/1979)) ([f41461c](https://github.com/assurance-maladie-digital/design-system/commit/f41461cf41dd1a218c67d3b82aacd3e4bce8d965))
+  - **core-js:** Mise à jour vers la `v3.22.4` ([#1979](https://github.com/assurance-maladie-digital/design-system/pull/1979)) ([f41461c](https://github.com/assurance-maladie-digital/design-system/commit/f41461cf41dd1a218c67d3b82aacd3e4bce8d965))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.22.0` ([#1980](https://github.com/assurance-maladie-digital/design-system/pull/1980)) ([1954345](https://github.com/assurance-maladie-digital/design-system/commit/1954345bd60d2432e2233f0cca64f56831d41f97))
   - **netlify-cli:** Épinglage de la dépendance à la `v10.3.1` ([#1993](https://github.com/assurance-maladie-digital/design-system/pull/1993)) ([4007591](https://github.com/assurance-maladie-digital/design-system/commit/4007591df3b72b5d88126bb8cfedae13d65fbec4))
 
@@ -475,7 +578,7 @@ Cette version comporte l'ajout du nouveau composant `UserMenuBtn` et des règles
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.9.0` ([#1686](https://github.com/assurance-maladie-digital/design-system/pull/1686)) ([cb60f68](https://github.com/assurance-maladie-digital/design-system/commit/cb60f68b84b677950d3b02e7665505b0d04335aa))
   - **@vue/eslint-config-typescript:** Mise à jour vers la `v10` ([#1687](https://github.com/assurance-maladie-digital/design-system/pull/1687)) ([759cda2](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/759cda2daf8a5932bc65cf9c3bd28de8d75951c1))
   - **sass-loader:** Mise à jour vers la `v10.2.1` ([#1721](https://github.com/assurance-maladie-digital/design-system/pull/1721)) ([b3de137](https://github.com/assurance-maladie-digital/design-system/commit/b3de137294e3ec36e3c44898e0ff511284bda749))
-  - **core-js:** Mise à jour vers la `v3.21.1` ([#1784](//github.com/assurance-maladie-digital/design-system/pull/1784)) ([82dcd02](https://github.com/assurance-maladie-digital/design-system/commit/82dcd02ba84e7e774a4899378b959cb3241d361d))
+  - **core-js:** Mise à jour vers la `v3.21.1` ([#1784](https://github.com/assurance-maladie-digital/design-system/pull/1784)) ([82dcd02](https://github.com/assurance-maladie-digital/design-system/commit/82dcd02ba84e7e774a4899378b959cb3241d361d))
   - **@types/node:** Mise à jour vers la `v14.18.12` ([#1791](https://github.com/asurance-maladie-digital/design-system/pull/1791)) ([614b96f](https://github.com/assurance-maladie-digital/design-system/commit/614b96f89404e0a536fb0ee2787ab6106a4eb6d7))
   - **vue-input-facade:** Mise à jour vers la `v2` ([#1797](https://github.com/assurance-maladie-digital/design-system/pull/1797)) ([bd7f9e6](https://github.com/assurance-maladie-digital/design-system/commit/bd7f9e648aae0437e951fdaedc256469fd65ac80))
   - **@netlify/functions:** Mise à jour vers la `v1` ([#1800](https://github.com/assurance-maladie-digital/design-system/pull/1800)) ([16c9259](https://github.com/assurance-maladie-digital/design-system/commit/16c9259964c7249ba5caf58f5442896788ce41ee))

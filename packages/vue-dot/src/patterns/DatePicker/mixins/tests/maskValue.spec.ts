@@ -25,7 +25,7 @@ function createWrapper(mask?: string | boolean, dateFormat?: string) {
 		mocks: {
 			dateFormat
 		}
-	}) as Wrapper<TestComponent>;
+	}) as unknown as Wrapper<TestComponent>;
 }
 
 describe('MaskValue', () => {

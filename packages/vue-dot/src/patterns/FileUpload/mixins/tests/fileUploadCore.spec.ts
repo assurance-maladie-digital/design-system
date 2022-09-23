@@ -86,7 +86,7 @@ describe('FileUploadCore', () => {
 			mocks: {
 				selfReset: jest.fn()
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		const event = {
 			target: {}
@@ -130,7 +130,7 @@ describe('FileUploadCore', () => {
 			mocks: {
 				ifTooManyFiles: () => true
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		const event = {
 			target: {
@@ -233,7 +233,7 @@ describe('FileUploadCore', () => {
 			mocks: {
 				ifTooManyFiles: () => true
 			}
-		}) as Wrapper<TestComponent>;
+		}) as unknown as Wrapper<TestComponent>;
 
 		const fileDropEvent = getFileDropEvent({
 			files: [file, file]

@@ -118,7 +118,7 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { socialMediaLinks } from './socialMediaLinks';
+	import { links } from './links';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
 
 	import { propValidator } from '../../helpers/propValidator';
@@ -180,7 +180,7 @@
 			},
 			socialMediaLinks: {
 				type: Array as PropType<SocialMediaLink[]>,
-				default: () => socialMediaLinks
+				default: () => links
 			}
 		}
 	});

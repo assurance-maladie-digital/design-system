@@ -1,14 +1,21 @@
 import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify';
 
-import { mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import {
+	Wrapper,
+	html,
+	shallowMount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins,
+	mockTranslations
+} from '@cnamts/vue-dot/src/helpers/testUtils';
 
-import About from '../About.vue';
+import About from '../About.vue';<% if (i18n) { %>
 
-let wrapper: Wrapper<Vue>;<% if (i18n) { %>
+import { LinkItem } from '@/types';
 
-const links = [
+const links: LinkItem[] = [
 	{
 		title: 'Test',
 		links: [
@@ -22,14 +29,25 @@ const links = [
 ];<% } %>
 
 describe('About', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
 	it('renders correctly', () => {
-		wrapper = mountComponent(About<% if (i18n) { %>, {
-			mocks: {
-				$t: (key: string) => {
-					return key === 'views.about.links' ? links : key;
-				}
-			}
-		}<% } %>);
+		wrapper = shallowMount(About, {
+			localVue,
+			vuetify<% if (i18n) { %>,
+			mocks: mockTranslations<LinkItem[]>({
+				'views.about.links': links
+			})<% } %>
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
