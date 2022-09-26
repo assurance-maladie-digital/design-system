@@ -3,7 +3,7 @@
 ### ESLint Config
 
 - 🐛 **Corrections de bugs**
-  - **typescript:** Correction de règles de qualité manquantes ([#2295](https://github.com/assurance-maladie-digital/design-system/pull/2295))
+  - **typescript:** Correction de règles de qualité manquantes ([#2295](https://github.com/assurance-maladie-digital/design-system/pull/2295)) ([c5c99c2](https://github.com/assurance-maladie-digital/design-system/commit/c5c99c2be0dc33a2a3215ca33ab071ac1f81f398))
 
 ### Documentation
 
@@ -22,6 +22,7 @@
   - **@rushstack/eslint-patch:** Mise à jour vers la `v1.2.0` ([#2291](https://github.com/assurance-maladie-digital/design-system/pull/2291)) ([e43d502](https://github.com/assurance-maladie-digital/design-system/commit/e43d502b0644a9d7ef82fc91ae6a1bd5307290f4))
   - **netlify-cli:** Mise à jour vers la `v11.8.2` ([#2292](https://github.com/assurance-maladie-digital/design-system/pull/2292)) ([73dbddb](https://github.com/assurance-maladie-digital/design-system/commit/73dbddb147ae462157b733cd84224b750e58f2c0))
   - **eslint-plugin-vue:** Mise à jour vers la `v9.5.1` ([#2293](https://github.com/assurance-maladie-digital/design-system/pull/2293)) ([22b4a7b](https://github.com/assurance-maladie-digital/design-system/commit/22b4a7bd70a9ab65a647f9a0a78a77c04f7fbda9))
+  - **@vue/eslint-config-typescript:** Mise à jour vers la `v11.0.2` ([#2298](https://github.com/assurance-maladie-digital/design-system/pull/2298))
 
 ## v2.6.0
 
