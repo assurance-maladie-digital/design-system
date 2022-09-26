@@ -48,9 +48,23 @@ module.exports = {
 		// Remove space in functions, eg. function()
 		'space-before-function-paren': ['error', 'never'],
 
+		// Sparing around type annotations
+		'@typescript-eslint/type-annotation-spacing': 'error',
+
+		// Spacing between keys and values in objects
+		'key-spacing': ['error', {
+			'beforeColon': false,
+			'mode': 'strict'
+		}],
+
+		// Spacing around infix operators
+		'space-infix-ops': 'error',
+
 		// Maximum 1 empty line
 		'no-multiple-empty-lines': ['error', {
-			max: 1
+			max: 1,
+			maxEOF: 0,
+			maxBOF: 0
 		}],
 
 		// Remove trailing coma

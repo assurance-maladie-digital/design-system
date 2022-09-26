@@ -388,6 +388,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'CustomIcon',
 				to: '/composants-techniques/custom-icon'
+			},
+			{
+				title: 'Module de notification',
+				to: '/composants-techniques/module-notification'
 			}
 		]
 	},
@@ -414,10 +418,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
-			},
-			{
-				title: 'Utilisation du store',
-				to: '/guides/utilisation-store'
 			},
 			{
 				title: 'Appels API',
