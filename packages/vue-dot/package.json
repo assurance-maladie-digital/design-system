@@ -63,7 +63,7 @@
 		"@vue/cli-plugin-unit-jest": "4.5.19",
 		"@vue/cli-service": "4.5.19",
 		"vue-cli-plugin-vuetify": "2.5.8",
-		"vuetify-loader": "1.9.0"
+		"vuetify-loader": "1.9.2"
 	},
 	"publishConfig": {
 		"access": "public"
