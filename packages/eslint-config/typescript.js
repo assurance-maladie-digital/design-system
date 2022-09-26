@@ -48,14 +48,18 @@ module.exports = {
 		// Remove space in functions, eg. function()
 		'space-before-function-paren': ['error', 'never'],
 
-		// annotation type
+		// Sparing around type annotations
 		'@typescript-eslint/type-annotation-spacing': 'error',
-		// space fix
+
+		// Spacing between keys and values in objects
 		'key-spacing': ['error', {
 			'beforeColon': false,
 			'mode': 'strict'
 		}],
-		'space-infix-ops': ['error', { int32Hint: false  }],
+
+		// Spacing around infix operators
+		'space-infix-ops': 'error',
+
 		// Maximum 1 empty line
 		'no-multiple-empty-lines': ['error', {
 			max: 1,
