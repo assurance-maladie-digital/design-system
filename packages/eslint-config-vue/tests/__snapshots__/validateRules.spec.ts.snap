@@ -3,6 +3,24 @@
 exports[`Vue.js configuration applies the correct rules 1`] = `
 Array [
   Object {
+    "column": 1,
+    "endColumn": 1,
+    "endLine": 2,
+    "fix": Object {
+      "range": Array [
+        0,
+        1,
+      ],
+      "text": "",
+    },
+    "line": 1,
+    "message": "Too many blank lines at the beginning of file. Max of 0 allowed.",
+    "messageId": "blankBeginningOfFile",
+    "nodeType": "Program",
+    "ruleId": "no-multiple-empty-lines",
+    "severity": 2,
+  },
+  Object {
     "column": 12,
     "endColumn": 14,
     "endLine": 4,
