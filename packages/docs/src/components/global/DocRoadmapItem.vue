@@ -10,7 +10,7 @@
 			</span>
 		</VExpansionPanelHeader>
 
-		<VExpansionPanelContent color="frosted-blue lighten-3">
+		<VExpansionPanelContent color="frosted-blue-lighten-97">
 			<p
 				v-if="items.length === 0"
 				class="text-subtitle-2 mt-4 mb-0"
