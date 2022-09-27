@@ -14,7 +14,7 @@
 					{{ version }}
 				</span>
 
-				<span class="d-block grey--text text--darken-1">
+				<span class="d-block grey--text">
 					Dernière publication {{ releaseDate }}
 				</span>
 			</p>

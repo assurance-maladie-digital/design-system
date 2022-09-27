@@ -345,12 +345,53 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Tests unitaires',
+				items: [
+					{
+						title: 'installGlobalPlugins',
+						to: '/composants-techniques/tests-unitaires/install-global-plugins'
+					},
+					{
+						title: 'installRouter',
+						to: '/composants-techniques/tests-unitaires/install-router'
+					},
+					{
+						title: 'createRouter',
+						to: '/composants-techniques/tests-unitaires/create-router'
+					},
+					{
+						title: 'createStore',
+						to: '/composants-techniques/tests-unitaires/create-store'
+					},
+					{
+						title: 'createVuetifyInstance',
+						to: '/composants-techniques/tests-unitaires/create-vuetify-instance'
+					},
+					{
+						title: 'mockVFormRef',
+						to: '/composants-techniques/tests-unitaires/mock-v-form-ref'
+					},
+					{
+						title: 'mockTranslations',
+						to: '/composants-techniques/tests-unitaires/mock-translations'
+					}
+				]
+			},
+			{
+				title: 'Types utilitaires',
+				to: '/composants-techniques/types-utilitaires'
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
 			},
 			{
 				title: 'CustomIcon',
 				to: '/composants-techniques/custom-icon'
+			},
+			{
+				title: 'Module de notification',
+				to: '/composants-techniques/module-notification'
 			}
 		]
 	},
@@ -379,12 +420,12 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/gestion-evenements'
 			},
 			{
-				title: 'Utilisation du store',
-				to: '/guides/utilisation-store'
-			},
-			{
 				title: 'Appels API',
 				to: '/guides/appels-api'
+			},
+			{
+				title: 'Tests e2e',
+				to: '/guides/tests-e2e'
 			},
 			{
 				title: 'Tableau avec pagination',

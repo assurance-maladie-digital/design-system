@@ -14,7 +14,7 @@ describe('Vue.js configuration', () => {
 	it('lints the code correctly', async() => {
 		const results = await eslint.lintText(code);
 
-		expect(results[0].errorCount).toEqual(23);
+		expect(results[0].errorCount).toEqual(24);
 	});
 
 	it('applies the correct rules', async() => {

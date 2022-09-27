@@ -35,6 +35,11 @@ export const API_TABLE_HEADERS: Record<HeaderList, string[]> = {
 		ApiHeadersEnum.TYPE,
 		ApiHeadersEnum.DESCRIPTION
 	],
+	typeArguments: [
+		ApiHeadersEnum.NAME,
+		ApiHeadersEnum.DEFAULT,
+		ApiHeadersEnum.DESCRIPTION
+	],
 	arguments: [
 		ApiHeadersEnum.NAME,
 		ApiHeadersEnum.TYPE,
@@ -67,6 +72,7 @@ export const API_HEADER_MAPPING: IndexedObject = {
 	[ApiTableHeadersEnum.EVENTS]: 'Événements',
 	[ApiTableHeadersEnum.FUNCTIONS]: 'Fonctions',
 	[ApiTableHeadersEnum.MODIFIERS]: 'Modificateurs',
+	[ApiTableHeadersEnum.TYPE_ARGUMENTS]: 'Arguments typés',
 	[ApiTableHeadersEnum.ARGUMENTS]: 'Arguments',
 	[ApiTableHeadersEnum.ERROR_MESSAGES]: 'Messages d’erreur',
 	[ApiTableHeadersEnum.RETURN_VALUE]: 'Valeur de retour'
