@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "@cnamts/shared",
-	"version": "2.4.0",
+	"version": "2.6.0",
 	"description": "Shared elements across our packages",
 	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
 	"bugs": {
@@ -20,6 +20,6 @@
 		"lint": "eslint . --fix"
 	},
 	"devDependencies": {
-		"@cnamts/eslint-config": "^2.4.0"
+		"@cnamts/eslint-config": "^2.6.0"
 	}
 }

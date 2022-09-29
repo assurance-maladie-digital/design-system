@@ -19,7 +19,7 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { InputFacadeEvent } from './types';
+	import { InputFacadeEvent } from '../../types';
 
 	import { Options } from '../../mixins/customizable';
 
@@ -102,11 +102,7 @@
 		}
 
 		noSpacesCounter(value?: string | undefined): number {
-			if (!value) {
-				return 0;
-			}
-
-			return value.replace(/\s/g, '').length;
+			return value?.replace(/\s/g, '').length || 0;
 		}
 
 		setInternalValue(event: InputFacadeEvent): void {

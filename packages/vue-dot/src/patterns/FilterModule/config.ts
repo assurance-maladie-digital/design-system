@@ -1,9 +1,9 @@
 export const config = {
 	dialog: {
-		width: '380px'
+		width: '380px',
+		hideActions: true
 	},
 	validateBtn: {
-		class: 'mt-4',
 		color: 'primary'
 	}
 };

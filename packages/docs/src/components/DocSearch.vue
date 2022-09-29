@@ -1,5 +1,5 @@
 <template>
-	<div class="docsearch mr-2" />
+	<div class="docsearch" />
 </template>
 
 <script lang="ts">
@@ -65,7 +65,7 @@
 				getMissingResultsUrl({ query }) {
 					return `https://github.com/${REPO}/issues/new?template=bug_report.md&title=${query}`;
 				},
-				placeholder: 'Rechercher dans la documentation',
+				placeholder: 'Rechercher',
 				translations
 			});
 		}
@@ -82,11 +82,17 @@
 
 	.docsearch {
 		.DocSearch-Button {
+			margin: 0;
 			transition: .15s;
 			padding-right: 12px;
 
 			@media (max-width: 750px) {
 				padding-right: 8px;
+			}
+
+			@media (max-width: 600px) {
+				padding: 0;
+				background: transparent;
 			}
 		}
 
@@ -104,6 +110,11 @@
 
 		.DocSearch-Search-Icon {
 			color: $vd-grey-darken-20;
+
+			@media (max-width: 600px) {
+				width: 16px;
+				height: 16px;
+			}
 		}
 	}
 

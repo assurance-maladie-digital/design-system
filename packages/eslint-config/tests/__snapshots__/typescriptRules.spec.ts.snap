@@ -40,7 +40,7 @@ Array [
   },
   Object {
     "column": 1,
-    "endColumn": 25,
+    "endColumn": 30,
     "endLine": 2,
     "fix": Object {
       "range": Array [
@@ -55,17 +55,6 @@ Array [
     "nodeType": "VariableDeclaration",
     "ruleId": "no-var",
     "severity": 2,
-  },
-  Object {
-    "column": 11,
-    "endColumn": 22,
-    "endLine": 2,
-    "line": 2,
-    "message": "Missing return type on function.",
-    "messageId": "missingReturnType",
-    "nodeType": "FunctionExpression",
-    "ruleId": "@typescript-eslint/explicit-function-return-type",
-    "severity": 1,
   },
   Object {
     "column": 19,
@@ -86,8 +75,26 @@ Array [
     "severity": 2,
   },
   Object {
-    "column": 23,
-    "endColumn": 25,
+    "column": 22,
+    "endColumn": 23,
+    "endLine": 2,
+    "fix": Object {
+      "range": Array [
+        34,
+        34,
+      ],
+      "text": " ",
+    },
+    "line": 2,
+    "message": "Expected a space after the ':'.",
+    "messageId": "expectedSpaceAfter",
+    "nodeType": "Punctuator",
+    "ruleId": "@typescript-eslint/type-annotation-spacing",
+    "severity": 2,
+  },
+  Object {
+    "column": 28,
+    "endColumn": 30,
     "endLine": 2,
     "line": 2,
     "message": "Unexpected empty function.",
@@ -97,13 +104,13 @@ Array [
     "severity": 2,
   },
   Object {
-    "column": 25,
+    "column": 30,
     "endColumn": 1,
     "endLine": 3,
     "fix": Object {
       "range": Array [
-        36,
-        36,
+        41,
+        41,
       ],
       "text": ";",
     },
@@ -120,8 +127,8 @@ Array [
     "endLine": 4,
     "fix": Object {
       "range": Array [
-        45,
-        45,
+        50,
+        50,
       ],
       "text": ";",
     },

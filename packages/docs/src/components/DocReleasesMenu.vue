@@ -13,12 +13,14 @@
 			<VBtn
 				v-bind="attrs"
 				v-on="on"
+				:small="mobileVersion"
 				text
-				class="text-none px-2"
+				class="text-none px-0 px-sm-2 mr-2"
 			>
 				v{{ version }}
 
 				<VIcon
+					v-if="!mobileVersion"
 					small
 					class="ml-1"
 				>
@@ -119,6 +121,10 @@
 				href: 'https://github.com/assurance-maladie-digital/design-system/releases'
 			}
 		];
+
+		get mobileVersion(): boolean {
+			return this.$vuetify.breakpoint.xs;
+		}
 	}
 </script>
 

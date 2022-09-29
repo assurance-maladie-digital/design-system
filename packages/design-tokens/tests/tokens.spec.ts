@@ -1,7 +1,11 @@
-import { tokens } from '../src';
+import { tokens, colorTheme } from '../src';
 
 describe('tokens', () => {
-	it('should register all tokens', () => {
+	it('registers all tokens', () => {
 		expect(tokens).toMatchSnapshot();
+	});
+
+	it('creates color theme', () => {
+		expect(colorTheme).toMatchSnapshot();
 	});
 });
