@@ -24,10 +24,10 @@
   - **core-js:** Mise à jour vers la `v3.25.3` ([#2301](https://github.com/assurance-maladie-digital/design-system/pull/2301)) ([0d47670](https://github.com/assurance-maladie-digital/design-system/commit/0d476706924637ef0e55084b1e129f019b7a54f9))
   - **@types/node:** Mise à jour vers la `v16.11.62` ([#2304](https://github.com/asurance-maladie-digital/design-system/pull/2304)) ([6273141](https://github.com/assurance-maladie-digital/design-system/commit/627314113b7eed46cd59af5d28b44ed579de44e8))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.38.1` ([#2305](https://github.com/assurance-maladie-digital/design-system/pull/2305)) ([9cdd551](https://github.com/assurance-maladie-digital/design-system/commit/9cdd55108d53013537881bb2a8175789b9ebc6b3))
-  - **netlify-cli:** Mise à jour vers la `v12` ([#2308](https://github.com/assurance-maladie-digital/design-system/pull/2308)) ([4a4c5bb](https://github.com/assurance-maladie-digital/design-system/commit/4a4c5bbb0b82239489ceef91af641a9efdecaad0))
   - **@babel/core:** Mise à jour vers la `v7.19.3` ([#2309](https://github.com/assurance-maladie-digital/design-system/pull/2309)) ([5194503](https://github.com/assurance-maladie-digital/design-system/commit/5194503acf359bc1e48fbc1567bcdd133c7735c1))
   - **typescript:** Mise à jour vers la `v4.8.4` ([#2310](https://github.com/assurance-maladie-digital/design-system/pull/2310)) ([dba2b43](https://github.com/assurance-maladie-digital/design-system/commit/dba2b43cf402ade29bbac1296f576a8e7747b4b7))
-  - **lerna:** Mise à jour vers la `v5.5.4` ([#2311](https://github.com/assurance-maladie-digital/design-system/pull/2311))
+  - **lerna:** Mise à jour vers la `v5.5.4` ([#2311](https://github.com/assurance-maladie-digital/design-system/pull/2311)) ([b6218c6](https://github.com/assurance-maladie-digital/design-system/commit/b6218c6ec4da30ba9ec72245f0065465f5f493be))
+  - **netlify-cli:** Mise à jour vers la `v12.0.1` ([#2312](https://github.com/assurance-maladie-digital/design-system/pull/2312))
 
 ## v2.6.0
 
