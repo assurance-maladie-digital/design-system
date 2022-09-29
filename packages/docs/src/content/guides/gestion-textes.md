@@ -9,7 +9,7 @@ Afin de simplifier le template des composants et l’édition des textes, nous v
 
 Ces fichiers dédiés sont organisés dans une architecture similaire à l’organisation des composants et des views, et sont utilisés dans ceux-ci à l’aide de [Vue i18n](https://kazupon.github.io/vue-i18n/).
 
-Dans le dossier `translations`, vous trouverez un dossier `fr` qui correspond aux textes pour la langue française. À l’intérieur, la liste des fichiers de traduction doivent être référencés dans le fichier `src/translations/index.ts`.
+Dans le dossier `translations`, vous trouverez un dossier `fr` qui correspond aux textes pour la langue française. À l’intérieur, la liste des fichiers de traduction doit être référencée dans le fichier `src/translations/index.ts`.
 
 Chaque fichier de traduction contient les textes d’un composant ou d’une page :
 
@@ -147,6 +147,12 @@ export default {
 	}
 };
 ```
+
+<doc-alert type="info">
+
+Lorsque vous ajoutez des sous-dossiers, pensez à ajouter un fichier `index.ts` qui exporte les fichiers de traduction du sous-dossier.
+
+</doc-alert>
 
 ### Changement de la langue
 
