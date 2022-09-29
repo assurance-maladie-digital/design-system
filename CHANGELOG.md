@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **HeaderBar:** Correction des options de personnalisation ([#2314](https://github.com/assurance-maladie-digital/design-system/pull/2314))
+
 ### ESLint Config
 
 - 🐛 **Corrections de bugs**
@@ -8,7 +13,7 @@
 ### Documentation
 
 - ♻️ **Refactoring**
-  - **guides:** Mise à jour du guide sur la gestion des textes ([#2313](https://github.com/assurance-maladie-digital/design-system/pull/2313))
+  - **guides:** Mise à jour du guide sur la gestion des textes ([#2313](https://github.com/assurance-maladie-digital/design-system/pull/2313)) ([22db191](https://github.com/assurance-maladie-digital/design-system/commit/22db19123a3390f41549593c345cd34650bcdc74))
 
 - 📝 **Documentation**
   - **global:** Ajout de la page *Module de notification* ([#2237](https://github.com/assurance-maladie-digital/design-system/pull/2237)) ([f41e886](https://github.com/assurance-maladie-digital/design-system/commit/f41e886398437d85d4f3b1707069b79c4647c6ee))
