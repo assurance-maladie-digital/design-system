@@ -12,7 +12,7 @@ import Vue from 'vue';
 
 import {
 	Wrapper,
-  html,
+	html,
 	shallowMount,
 	createLocalVue,
 	installGlobalPlugins,

@@ -1,6 +1,6 @@
 ---
 title: mockVFormRef
-description: La fonction `mockVFormRef` permet de mocker une référence à un composant `VForm`.
+description: La fonction `mockVFormRef` permet de mocker une référence à un composant [`VForm`](https://vuetifyjs.com/en/components/forms/).
 ---
 
 <doc-tabs>
@@ -12,7 +12,7 @@ import Vue from 'vue';
 
 import {
 	Wrapper,
-  html,
+	html,
 	shallowMount,
 	createLocalVue,
 	installGlobalPlugins,

@@ -432,6 +432,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/tests-e2e'
 			},
 			{
+				title: 'Tests unitaires',
+				to: '/guides/tests-unitaires'
+			},
+			{
 				title: 'Tableau avec pagination',
 				to: '/guides/tableau-pagination'
 			},
