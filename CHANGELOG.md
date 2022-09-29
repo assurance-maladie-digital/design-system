@@ -9,11 +9,12 @@
 
 - 📝 **Documentation**
   - **types:** Ajout de la page *Module de notification* ([#2237](https://github.com/assurance-maladie-digital/design-system/pull/2237)) ([f41e886](https://github.com/assurance-maladie-digital/design-system/commit/f41e886398437d85d4f3b1707069b79c4647c6ee))
+  - **guides:** Ajout d'un guide sur la gestion des textes ([#2249](https://github.com/assurance-maladie-digital/design-system/pull/2249))
 
 ### Interne
 
 - 🔒 **Sécurité**
-  - **vuetify:** Mise à jour vers la `v2.6.10` ([#2297](https://github.com/assurance-maladie-digital/design-system/pull/2297))
+  - **vuetify:** Mise à jour vers la `v2.6.10` ([#2297](https://github.com/assurance-maladie-digital/design-system/pull/2297)) ([14b0e8d](https://github.com/assurance-maladie-digital/design-system/commit/14b0e8dc97b67504dcf3ef05dc8f8178d285bd80))
 
 - ⬆️ **Dépendances**
   - **lerna:** Mise à jour vers la `v5.5.2` ([#2283](https://github.com/assurance-maladie-digital/design-system/pull/2283)) ([32a6ca2](https://github.com/assurance-maladie-digital/design-system/commit/32a6ca25b15cd1016ff5060af1ad95e53bea2257))
