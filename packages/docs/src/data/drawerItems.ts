@@ -416,6 +416,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
+				title: 'Gestion des textes',
+				to: '/guides/gestion-textes'
+			},
+			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
 			},
