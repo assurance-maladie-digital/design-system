@@ -83,9 +83,7 @@ Vous pouvez définir des emplacements avec des valeurs dynamiques :
 fileLabel: 'Fichier {filename}'
 ```
 
-Puis il suffit de fournir à la fonction de traduction `$t` un objet qui contient toutes les valeurs que l'on souhaite afficher, les noms des clés de l'objet détermineront quels emplacements seront remplacés par quelles valeurs.
-
-Pour spécifier la valeur, vous devez utiliser le second argument de la fonction `$t` :
+Ensuite, vous devez fournir à la fonction de traduction `$t` un objet qui contient toutes les valeurs que à afficher. Les noms des clés de l’objet détermineront quels emplacements seront remplacés par quelles valeurs :
 
 ```vue
 <p>{{ $t('fileLabel', { filename: 'image.png' }) }}</p>
@@ -134,9 +132,9 @@ export default {
 
 ## Internationalisation
 
-Vous pouvez ajouter d'autres langues en créant un nouveau dossier dans `translations` et en ajoutant la langue à la liste des langues supportées dans le fichier `src/translations/index.ts`.
+Vous pouvez ajouter d’autres langues en créant un nouveau dossier dans `translations` et en ajoutant la langue à la liste des langues supportées dans le fichier `src/translations/index.ts`.
 
-Par exemple, vous pouvez créer le fichier `translations/es/home.ts` pour ajouter l'Espagnol :
+Par exemple, vous pouvez créer le fichier `translations/es/home.ts` pour ajouter l’Espagnol :
 
 ```ts
 export default {
@@ -156,10 +154,10 @@ Lorsque vous ajoutez des sous-dossiers, pensez à ajouter un fichier `index.ts` 
 
 ### Changement de la langue
 
-Pour changer la langue de l'application, vous pouvez utiliser la fonction `loadLanguageAsync` définie dans le fichier `src/i18n.ts` :
+Pour changer la langue de l’application, vous pouvez utiliser la fonction `loadLanguageAsync` définie dans le fichier `src/i18n.ts` :
 
 ```ts
 loadLanguageAsync('es');
 ```
 
-Cette fonction va charger les traductions de manière asynchrone, modifier la langue utilisée par Vue i18n et définir le header `Accept-Language` via [axios](https://axios-http.com/) ainsi que l'attribut `lang` sur la balise `<html>`.
+Cette fonction va charger les traductions de manière asynchrone, modifier la langue utilisée par Vue i18n et définir le header `Accept-Language` via [axios](https://axios-http.com/) ainsi que l’attribut `lang` sur la balise `<html>`.
