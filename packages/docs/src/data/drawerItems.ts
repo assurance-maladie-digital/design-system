@@ -416,10 +416,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
-				title: 'Tests unitaires',
-				to: '/guides/tests-unitaires'
-			},
-			{
 				title: 'Gestion des textes',
 				to: '/guides/gestion-textes'
 			},
@@ -434,6 +430,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Tests e2e',
 				to: '/guides/tests-e2e'
+			},
+			{
+				title: 'Tests unitaires',
+				to: '/guides/tests-unitaires'
 			},
 			{
 				title: 'Tableau avec pagination',
