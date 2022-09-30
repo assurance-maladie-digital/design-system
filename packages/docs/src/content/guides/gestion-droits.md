@@ -5,6 +5,8 @@ description: Utilisation de [vue-browser-acl](https://github.com/mblarsen/vue-br
 
 ## Installation
 
+Pour l’ajouter dans votre projet, vous devez l’installer :
+
 <doc-tabs code>
 <doc-tab-item label="Yarn">
 ```bash
@@ -19,85 +21,173 @@ npm install vue-browser-acl
 </doc-tab-item>
 </doc-tabs>
 
-Créer un fichier `vue-browser-acl.ts` dans le dossier `src/plugins` et y ajouter le code suivant :
+Ensuite, vous devez créer un fichier `vue-browser-acl.ts` dans le dossier `src/plugins` et y ajouter le code suivant :
 
 ```ts
 import Vue from 'vue';
-import Acl from 'vue-browser-acl';
+import Acl from 'browser-acl';
+import VueAcl from 'vue-browser-acl';
 
-// Récupérer l'utilisateur
-const user = window.__INITIAL_STATE__.user;
+function getPermissions(acl: Acl) {
+	// Gestion des permissions
+}
 
-// Liste des règles
-Vue.use(Acl, user, (acl) => {
-	acl.rule('view', Post);
-	acl.rule(['edit', 'delete'], Post, (user, post) => post.userId === user.id);
-	acl.rule('moderate', Post, (user) => user.isModerator());
-});
+Vue.use(VueAcl, user, (acl: Acl) => getPermissions(acl));
 ```
 
-Si l'utilisateur doit être récupérer depuis le back de manière asynchrone, vous pouvez utiliser une fonction de cette facon :
+Finalement, vous devez importer le fichier plugin dans le fichier `main.ts` :
 
 ```ts
-const user = () => store.auth.user;
-```
-
-Dans le fichier main.ts, ajouter `vue-browser-acl` à la liste des plugins pré-installés.
-
-```ts
-// Import plugins
-import { vuetify } from './plugins/vuetify';
-import './plugins/vue-dot';
-import './plugins/form-builder';
-import './plugins/webfontloader';
-
-// Vue Browser ACL
 import './plugins/vue-browser-acl';
 ```
 
-### Utiliser les règles
+## Configuration
 
-Les règles sont utilisable grâce à la directive `v-can` comme dans les exemples suivants :
+### Récupération de l’utilisateur
 
-```vue
-<VBtn v-can:review>Review</VBtn>
+Pour récupérer l’utilisateur, vous pouvez le stocker dans le [store](/guides/utilisation-store), et le récupérer de manière asynchrone :
+
+```ts
+// vue-browser-acl.ts
+const user = () => store.state.auth.user as User;
 ```
 
-```vue
-<VBtn v-can:create="'Post'">New</VBtn>
+### Définition des règles
+
+Pour définir les différentes règles, vous devez utiliser la fonction [`acl.rule()`](https://github.com/mblarsen/browser-acl#rule) :
+
+```ts
+// vue-browser-acl.ts
+interface User {
+	firstname: string;
+	lastname: string;
+	roles: string[];
+	folderPermissions: string[];
+}
+
+// Utilisation d'une énumération afin de faciliter la maintenance
+enum RolesEnum {
+	AGENT = 'AGENT',
+	ADMIN = 'ADMIN'
+}
+
+const user = () => store.state.auth.user as User;
+
+// Création d'une fonction que l'on peut extraire du fichier
+function getPermissions(acl: Acl): void {
+	// Fonctions utilitaires pour simplifier l'écriture des tests
+	const checkIfAgent = (user: User) => user.roles.includes(RolesEnum.AGENT);
+	const checkIfAdmin = (user: User) => user.roles.includes(RolesEnum.ADMIN);
+
+	// Les règles sont nommées avec des verbes
+	// Par exemple "can see home" ou "can administrate"
+	acl.rule('see-home', (user?: User) => Boolean(user));
+
+	acl.rule('see-folder', (user?: User) => {
+		return user && (checkIfAgent(user) || checkIfAdmin(user));
+	});
+
+	acl.rule('administrate', (user?: User) => {
+		return user && checkIfAdmin(user);
+	});
+}
+
+Vue.use(VueAcl, user, (acl: Acl) => getPermissions(acl));
 ```
 
-```vue
-<VBtn v-can:edit="'post'">Edit</VBtn>
+### Sujet
 
-// OU
+Vous pouvez spécifier un sujet qui vous permettra de passer une valeur supplémentaire en paramètre à la règle, comme par exemple l’identifiant d’un dossier :
 
-<VBtn v-can:edit="post">Edit</VBtn>
+```ts
+function getPermissions(acl: Acl): void {
+	const checkIfAgent = (user: User) => user.roles.includes(RolesEnum.AGENT);
+	const checkRolesForFolder = (user: User, folderId: string) => user.folderPermissions.includes(folderId);
+
+	acl.rule('see-folder', 'folderId', (user?: User, folderId: string) => {
+		return user && (checkIfAgent(user) || checkRolesForFolder(user, folderId));
+	});
+}
 ```
 
+## Utilisation des règles
+
+### Directive
+
+Vous pouvez afficher des éléments de manière conditionnelle en utilisant la directive `v-can` :
+
 ```vue
-<VBtn v-can:delete="[comment, post]">Delete</VBtn>
-```
-
-Il est possible d'utiliser la syntaxe de **chaine de caractères** et de **tableau**.
-
-```vue
-<VBtn v-can="'transfer repo'">Transfer repo instance</VBtn>
-<VBtn v-can="'create Repo'">Transfer based on class</VBtn>
-
-// OU
-
-<VBtn
-  v-can="['transfer', repo, otherArgs]"
->
-Transfer with extra argument
+<VBtn v-can:administrate>
+	Éditer
 </VBtn>
 ```
 
-### Masquer un élément
+Vous pouvez également utiliser des modificateurs comme `.not`, qui permet d’inverser la condition.
 
-Le modificateur de masquage `v-can.hide` surprime le composant du DOM dans le cas ou l'utilisateur n'a pas la bonne permission.
+Si votre règle contient un sujet, vous pouvez passer la valeur en paramètre de la directive :
 
 ```vue
-<VBtn v-can.hide="'delete post'">Delete</VBtn>
+<VBtn v-can:administrate="folderId">
+	Éditer le dossier {{ folderId }}
+</VBtn>
 ```
+
+Pour plus d’informations sur les modificateurs, vous pouvez consulter la [documentation de vue-browser-acl](https://github.com/mblarsen/vue-browser-acl#usage).
+
+### Fonction utilitaire
+
+Pour vérifier les permissions de l’utilisateur en dehors du template d’un composant, vous pouvez utiliser la fonction utilitaire `$can` :
+
+```ts
+if (this.$can('see-folder')) {
+	this.getFolder();
+}
+```
+
+### Vue Router
+
+Vous pouvez spécifier les permissions nécessaires pour afficher une page en utilisant la propriété `can` dans la configuration de vos routes :
+
+```ts
+{
+	path: '/dossier/:id',
+	name: 'folder',
+	component: () => import(
+		/* webpackChunkName: "folder" */
+		'@/views/FolderPage.vue'
+	),
+	meta: {
+		can: 'see-folder',
+		fail: '/unauthorized'
+	}
+}
+```
+
+#### Redirection en cas d’erreur
+
+Vous pouvez spécifier la page sur laquelle l’utilisateur sera redirigé s’il n’a pas les bonnes permissions en utilisant la propriété `failRoute` :
+
+```ts
+Vue.use(Acl, user, (acl: Acl) => getPermissions(acl), {
+	router,
+	failRoute: {
+		name: 'unauthorized',
+		replace: true
+	}
+});
+```
+
+Vous pouvez également configurer une page de redirection spécifique pour certaines routes :
+
+```ts
+meta: {
+	can: 'see-folder',
+	fail: '/unauthorized'
+}
+```
+
+<doc-alert type="info">
+
+Vous pouvez utiliser la valeur `$from` pour rediriger l’utilisateur sur la page dont il venait.
+
+</doc-alert>
