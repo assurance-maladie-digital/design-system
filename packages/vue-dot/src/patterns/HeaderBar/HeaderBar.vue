@@ -41,7 +41,7 @@
 
 					<HeaderMenuBtn
 						v-if="showHeaderMenuBtn"
-						v-bind="options.menuBtn"
+						:vuetify-options="options.menuBtn"
 						@click="updateDrawer(!drawer)"
 					/>
 				</VSheet>
@@ -49,7 +49,6 @@
 
 			<template v-if="showNavigationBar">
 				<HeaderNavigationBar
-					v-bind="options.navigationBar"
 					:tab.sync="tab"
 					:drawer.sync="drawer"
 					:theme="theme"
@@ -57,6 +56,7 @@
 					:items="navigationItems"
 					:inner-width="innerWidth"
 					:show-menu-btn="showNavBarMenuBtn"
+					:vuetify-options="options.navigationBar"
 				>
 					<slot name="navigation-bar-content" />
 
@@ -73,11 +73,11 @@
 		>
 			<HeaderNavigationDrawer
 				v-model="drawer"
-				v-bind="options.navigationDrawer"
 				:tab.sync="tab"
 				:theme="theme"
 				:items="navigationItems"
 				:mobile-version="isMobileVersion"
+				:vuetify-options="options.navigationDrawer"
 			>
 				<slot name="navigation-drawer-content" />
 			</HeaderNavigationDrawer>

@@ -416,6 +416,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
+				title: 'Gestion des textes',
+				to: '/guides/gestion-textes'
+			},
+			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
 			},
@@ -426,6 +430,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Tests e2e',
 				to: '/guides/tests-e2e'
+			},
+			{
+				title: 'Tests unitaires',
+				to: '/guides/tests-unitaires'
 			},
 			{
 				title: 'Tableau avec pagination',

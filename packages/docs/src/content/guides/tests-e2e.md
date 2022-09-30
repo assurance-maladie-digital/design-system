@@ -3,12 +3,12 @@ title: Tests e2e
 description: Rédaction des tests End to End.
 ---
 
-Les tests End to End sont des tests qui permettent de tester l’interface de votre application.
+Les tests End to End sont des tests qui permettent de vérifier le bon fonctionnement de l’interface de votre application.
 Ils sont réalisés en utilisant [Cypress](https://docs.cypress.io/).
 
 ## Mise en place
 
-Pour créer un test d’interface, vous devez ajouter un fichier `MaPage.spec.ts` dans le dossier `tests/e2e/specs`, en le nommant de la même manière que la page que vous souhaitez tester.
+Pour créer un test d’interface, vous devez ajouter un fichier avec l’extension `.spec.ts` dans le dossier `tests/e2e/specs`, en le nommant de la même manière que la page que vous souhaitez tester.
 Par exemple, si vous voulez tester la page `Home`, vous devez nommer le fichier de test `Home.spec.ts`.
 
 ## Rédaction des tests
@@ -23,26 +23,10 @@ describe('About page', () => {
 		cy.visit('/a-propos');
 	});
 
-	// La commande dataCy() permet de sélectionner un élément avec l'attribut data-cy="", ici la liste des liens
-	// Puis on recherche toutes les balises <li>, et on compare le nombre de résultats à celui attendu
 	it('contains all links', () => {
+		// La commande dataCy() permet de sélectionner un élément avec l'attribut data-cy="", ici la liste des liens
+		// Puis on recherche toutes les balises <li>, et on compare le nombre de résultats à celui attendu
 		cy.dataCy('links').find('li').should('have.length', 4);
-	});
-});
-```
-
-```ts
-describe('Home page', () => {
-	beforeEach(() => {
-		cy.visit('/');
-	});
-
-	it('displays a notification when send notification button is pressed', () => {
-		// selectionne le bouton et clique dessus
-		cy.dataCy('sendNotification').click();
-
-		// Vérifie que la barre de notification a bien la classe "active"
-		cy.dataCy('notificationBar').should('have.class', 'active');
 	});
 });
 ```
