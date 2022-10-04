@@ -424,6 +424,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/gestion-evenements'
 			},
 			{
+				title: 'Utilisation du store',
+				to: '/guides/utilisation-store'
+			},
+			{
 				title: 'Appels API',
 				to: '/guides/appels-api'
 			},
@@ -450,6 +454,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation des icônes',
 				to: '/guides/utilisation-icones'
+			},
+			{
+				title: 'Gestion des droits',
+				to: '/guides/gestion-droits'
 			}
 		]
 	},
