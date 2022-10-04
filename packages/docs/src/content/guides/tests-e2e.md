@@ -1,10 +1,7 @@
 ---
 title: Tests e2e
-description: Rédaction des tests End to End.
+description: Les tests End to End sont des tests qui permettent de vérifier le bon fonctionnement de l’interface de votre application. Ils sont réalisés en utilisant [Cypress](https://docs.cypress.io/).
 ---
-
-Les tests End to End sont des tests qui permettent de vérifier le bon fonctionnement de l’interface de votre application.
-Ils sont réalisés en utilisant [Cypress](https://docs.cypress.io/).
 
 ## Mise en place
 

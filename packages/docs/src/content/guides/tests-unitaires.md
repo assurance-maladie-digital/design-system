@@ -1,9 +1,7 @@
 ---
 title: Tests unitaires
-description: Rédaction des tests unitaires.
+description: Les tests unitaires sont des tests qui permettent de vérifier le bon fonctionnement d’un module de votre application. Ils sont réalisés en utilisant [Jest](https://jestjs.io/fr/).
 ---
-
-Les tests unitaires sont des tests qui permettent de vérifier le bon fonctionnement d’une d’module de votre application. Ils sont réalisés en utilisant [Jest](https://jestjs.io/fr/).
 
 ## Mise en place
 
@@ -13,7 +11,7 @@ Pour créer un test unitaire, vous devez ajouter un sous-dossier `tests` dans le
 
 ### Test d’une fonction
 
-Pour tester une fonction, la syntaxe d’un test est la suivante :
+Pour tester une fonction, la syntaxe est la suivante :
 
 ```ts
 // Import de la fonction
