@@ -40,7 +40,7 @@
   - **@babel/core:** Mise à jour vers la `v7.19.3` ([#2309](https://github.com/assurance-maladie-digital/design-system/pull/2309)) ([5194503](https://github.com/assurance-maladie-digital/design-system/commit/5194503acf359bc1e48fbc1567bcdd133c7735c1))
   - **typescript:** Mise à jour vers la `v4.8.4` ([#2310](https://github.com/assurance-maladie-digital/design-system/pull/2310)) ([dba2b43](https://github.com/assurance-maladie-digital/design-system/commit/dba2b43cf402ade29bbac1296f576a8e7747b4b7))
   - **lerna:** Mise à jour vers la `v5.5.4` ([#2311](https://github.com/assurance-maladie-digital/design-system/pull/2311)) ([b6218c6](https://github.com/assurance-maladie-digital/design-system/commit/b6218c6ec4da30ba9ec72245f0065465f5f493be))
-  - **netlify-cli:** Mise à jour vers la `v12.0.4` ([#2318](https://github.com/assurance-maladie-digital/design-system/pull/2318))
+  - **netlify-cli:** Mise à jour vers la `v12.0.5` ([#2318](https://github.com/assurance-maladie-digital/design-system/pull/2318))
 
 ## v2.6.0
 
