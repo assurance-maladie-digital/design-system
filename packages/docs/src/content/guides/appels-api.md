@@ -75,7 +75,7 @@ import {
 	UserInformation
 } from '@/services/monApi/types';
 
-export function getDataPaginated(params: PaginatedOptions): Promise<AxiosResponse<PaginatedData>> {
+export function getPaginatedData(params: PaginatedOptions): Promise<AxiosResponse<PaginatedData>> {
 	return axios.get('/api/data', {
 		params
 	});
