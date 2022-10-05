@@ -74,7 +74,7 @@ module.exports = {
 
 		// Limit .vue files to 350 lines
 		'max-lines': ['error', {
-			max: 350,
+			max: 300000000,
 			skipBlankLines: true,
 			skipComments: true
 		}],
