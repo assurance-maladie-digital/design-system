@@ -4,6 +4,7 @@
 
 - 🐛 **Corrections de bugs**
   - **HeaderBar:** Correction des options de personnalisation ([#2314](https://github.com/assurance-maladie-digital/design-system/pull/2314)) ([aa4696b](https://github.com/assurance-maladie-digital/design-system/commit/aa4696bdb47cb8e4fa9630d6002893b0a6543fe3))
+  - **DatePicker:** Correction de l'état désactivé ([#2334](https://github.com/assurance-maladie-digital/design-system/pull/2334))
 
 - ✅ **Tests**
   - **testUtils:** Ajout d'un test sur la fonction `html` ([#2315](https://github.com/assurance-maladie-digital/design-system/pull/2315)) ([f99e68c](https://github.com/assurance-maladie-digital/design-system/commit/f99e68ca682932357ab94b23e247ef5222c3565d))
@@ -42,7 +43,7 @@
   - **eslint-plugin-vue:** Mise à jour vers la `v9.6.0` ([#2323](https://github.com/assurance-maladie-digital/design-system/pull/2323)) ([d06be48](https://github.com/assurance-maladie-digital/design-system/commit/d06be4842724ef0b0e717a41cb2756eedb89a25b))
   - **vuetify:** Mise à jour vers la `v2.6.11` ([#2333](https://github.com/assurance-maladie-digital/design-system/pull/2333)) ([3b80b32](https://github.com/assurance-maladie-digital/design-system/commit/3b80b32236e7bf29a9bc8db6addeb22bdbb46600))
   - **netlify-cli:** Mise à jour vers la `v12.0.6` ([#2331](https://github.com/assurance-maladie-digital/design-system/pull/2331)) ([a23e2de](https://github.com/assurance-maladie-digital/design-system/commit/a23e2de144f109a74573647f3084860fd9d50cf6))
-  - **@netlify/functions:** Mise à jour vers la `v1.3.0` ([#2332](https://github.com/assurance-maladie-digital/design-system/pull/2332))
+  - **@netlify/functions:** Mise à jour vers la `v1.3.0` ([#2332](https://github.com/assurance-maladie-digital/design-system/pull/2332)) ([bf66330](https://github.com/assurance-maladie-digital/design-system/commit/bf663308b645322ab73e4da1ac04921eb1c7d659))
 
 ## v2.6.0
 
