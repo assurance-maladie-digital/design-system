@@ -8,6 +8,9 @@
 - ✅ **Tests**
   - **testUtils:** Ajout d'un test sur la fonction `html` ([#2315](https://github.com/assurance-maladie-digital/design-system/pull/2315))
 
+- ✨ **Nouvelles fonctionnalités**
+  - **UploadWorkflow:** Ajout de la possibilité de prévisualiser les fichiers avant validation ([#2336](https://github.com/assurance-maladie-digital/design-system/pull/2336))
+
 ### ESLint Config
 
 - 🐛 **Corrections de bugs**

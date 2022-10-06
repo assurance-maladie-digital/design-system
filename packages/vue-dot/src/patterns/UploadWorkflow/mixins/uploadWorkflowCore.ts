@@ -18,6 +18,10 @@ const Props = Vue.extend({
 		fileListItems: {
 			type: Array as PropType<FileListItem[]>,
 			default: null
+		},
+		showFilePreview: {
+			type: Boolean,
+			default: false
 		}
 	}
 });
@@ -139,6 +143,15 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	fileSelected(): void {
+		// If we show file preview, we have to open dialog and not add the file yet
+		if (this.showFilePreview) {
+			if (this.singleMode) {
+				this.selectedItem = this.selectItems[0].value;
+			}
+			this.dialog = true;
+			return;
+		}
+
 		if (!this.internalFileListItems.length && this.uploadedFile) {
 			this.fileList.push(this.uploadedFile);
 			this.emitChangeEvent();

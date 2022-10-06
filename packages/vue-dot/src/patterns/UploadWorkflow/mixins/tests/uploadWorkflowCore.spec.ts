@@ -55,7 +55,7 @@ const testFile = {
 } as File;
 
 /** Create the wrapper */
-function createWrapper(fileListItems = fileList) {
+function createWrapper(fileListItems = fileList, showFilePreview = false) {
 	const component = Vue.component('TestComponent', {
 		mixins: [
 			UploadWorkflowCore
@@ -68,7 +68,8 @@ function createWrapper(fileListItems = fileList) {
 			form: createVForm()
 		},
 		propsData: {
-			fileListItems
+			fileListItems,
+			showFilePreview
 		}
 	});
 }
@@ -242,6 +243,16 @@ describe('EventsFileFired', () => {
 		expect(wrapper.vm.selectItems).toEqual([]);
 		expect(wrapper.vm.dialog).toBeFalsy();
 		expect(wrapper.vm.fileList[0]).toEqual(testFile);
+	});
+
+	it('open the dialog in single mode with preview', () => {
+		const wrapper = createWrapper(fileList, true) as Wrapper<TestComponent>;
+
+		wrapper.vm.uploadedFile = testFile;
+		wrapper.vm.fileSelected();
+
+		expect(wrapper.vm.dialog).toBeTruthy();
+		expect(wrapper.vm.selectedItem).toEqual(fileListItem.id);
 	});
 
 	// uploadError

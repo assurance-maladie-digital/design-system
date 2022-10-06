@@ -35,11 +35,14 @@
 			@cancel="dialog = false"
 			@confirm="dialogConfirm"
 		>
+			<slot name="modal-description" />
+
 			<VForm
 				ref="form"
 				v-bind="options.form"
 			>
 				<VSelect
+					v-if="internalFileListItems"
 					v-model="selectedItem"
 					v-bind="options.select"
 					:items="selectItems"
@@ -47,6 +50,22 @@
 					:color="$vuetify.theme.dark ? 'accent' : null"
 				/>
 			</VForm>
+
+			<template
+				v-if="showFilePreview"
+			>
+				<iframe
+					v-if="isUploadedFileThisType(/^application\/pdf$/)"
+					:src="uploadedFileSrc"
+					type="application/pdf"
+					width="100%"
+					height="556"
+				/>
+				<img
+					v-else-if="isUploadedFileThisType(/^image\/.*$/)"
+					:src="uploadedFileSrc"
+				>
+			</template>
 		</DialogBox>
 	</div>
 </template>
@@ -113,10 +132,26 @@
 			return this.value.length > 0 || this.fileListItems?.length > 0;
 		}
 
+		get uploadedFileSrc(): string {
+			if (this.uploadedFile) {
+				return URL.createObjectURL(this.uploadedFile);
+			}
+
+			return '';
+		}
+
 		uploadInline(id: string): void {
+			this.$refs.fileUpload.retry();
 			this.selectedItem = id;
 			this.inlineSelect = true;
-			this.$refs.fileUpload.retry();
+		}
+
+		isUploadedFileThisType(regex: RegExp): boolean {
+			if (this.uploadedFile) {
+				return regex.test(this.uploadedFile.type);
+			}
+
+			return false;
 		}
 	}
 </script>

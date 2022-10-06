@@ -58,6 +58,12 @@ Ce mode de fonctionnement est déprécié depuis la [version 2.5.0](https://gith
 </doc-alert>
 
 <doc-example file="upload-workflow/backward-compatible"></doc-example>
+
+#### Prévisualisation des fichiers
+
+Vous pouvez prévisualiser le fichier qui vient d'être sélectionné par l'utilisateur en utilisant la prop `show-file-preview`. Seulement les fichiers de type PDF et les images peuvent être prévisualisés.
+
+<doc-example file="upload-workflow/file-preview"></doc-example>
 </doc-tab-item>
 
 <doc-tab-item label="API">
@@ -75,6 +81,8 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Uploa
 ### Slots
 
 Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
+
+Vous pouvez également utiliser le slot `modal-description` pour ajouter un texte d'explication ou d'information dans la modale de sélection du fichier.
 
 <doc-example file="upload-workflow/slots"></doc-example>
 

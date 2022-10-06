@@ -38,6 +38,12 @@ export const api: Api = {
 				default: `'Document(s) à nous transmettre.'`,
 				description: 'Le titre de la section.'
 			},
+			{
+				name: 'show-file-preview',
+				type: 'boolean',
+				default: `false`,
+				description: 'Affiche la prévisualisation du fichier avant validation.'
+			},
 			...widthable,
 			...customizable(`{
 	fileUpload: 'FileUpload',
@@ -54,6 +60,10 @@ export const api: Api = {
 			},
 			{
 				name: 'modal-title',
+				description: 'Slot pour remplacer le titre de la boîte de dialogue.'
+			},
+			{
+				name: 'modal-description',
 				description: 'Slot pour remplacer le titre de la boîte de dialogue.'
 			}
 		],
