@@ -7,11 +7,20 @@
 			class="sidebar-filter-button"
 			@click="showSideBar = !showSideBar"
 		>
-			<span class="mr-2">{{ filtersCount }}</span>
+			<span
+				v-if="filtersCount"
+				class="mr-2"
+			>
+				{{ filtersCount }}
+			</span>
+			<span
+				class="mr-2"
+			>
+				Filtres
+			</span>
 			<VIcon>
 				{{ filterIcon }}
 			</VIcon>
-			<span>Filtres</span>
 		</VBtn>
 
 		<!-- simple mode buttons -->
@@ -51,6 +60,7 @@
 					<div
 						class="mt-2 px-4"
 					>
+						<span class="description-text-filter mb-2">{{ filter.description }}</span>
 						<v-chip-group
 							v-if="filterSelection[index]"
 							column
@@ -84,6 +94,7 @@
 								</VIcon>
 							</v-chip>
 							<v-btn
+								v-if="filterSelection[index].selection.length"
 								class="text-none align-self-center mt-2"
 								x-small
 								text
@@ -94,7 +105,10 @@
 								Réinitialiser
 							</v-btn>
 						</v-chip-group>
-						<VDivider class="mt-2 mb-4" />
+						<VDivider
+							v-if="filterSelection[index].selection.length"
+							class="mt-2 mb-4"
+						/>
 						<slot
 							:on="{
 								change: (event) => addChips(event, removeAccents(filter.name))
@@ -111,12 +125,11 @@
 				permanent
 				absolute
 				right
-				:class="isMobile ? 'pl-4 pr-4' : 'pl-8 pr-8'"
+				class="pt-2"
 			>
 				<v-expansion-panels
 					accordion
 					flat
-					class="mt-5"
 				>
 					<v-expansion-panel
 						v-for="(filter, index) in filters"
@@ -124,17 +137,11 @@
 					>
 						<v-expansion-panel-header class="d-block">
 							<div
-								class="header-title d-flex justify-space-between"
+								class="header-title d-flex justify-space-between mt-3 mx-4"
 							>
-								<span>{{ filter.name }} ({{ filterSelection[index].selection.length }})</span>
+								<span>{{ filter.name }} <span v-if="filterSelection[index].selection.length">({{ filterSelection[index].selection.length }})</span></span>
 
 								<div>
-									<VIcon
-										class="header-title"
-										@click="resetFilter(index)"
-									>
-										{{ deleteIcon }}
-									</VIcon>
 									<VIcon
 										id="up-icon"
 										class="header-title"
@@ -151,6 +158,7 @@
 							</div>
 							<v-chip-group
 								v-if="filterSelection[index]"
+								class="mx-3"
 								column
 							>
 								<v-chip
@@ -181,11 +189,21 @@
 										{{ upIcon }}
 									</VIcon>
 								</v-chip>
+								<v-btn
+									v-if="filterSelection[index].selection.length"
+									class="text-none align-self-center mt-2"
+									x-small
+									text
+									cla
+									color="primary"
+									@click="resetFilter(index)"
+								>
+									Réinitialiser
+								</v-btn>
 							</v-chip-group>
-							<VDivider class="my-2" />
 						</v-expansion-panel-header>
 						<v-expansion-panel-content>
-							<span class="description-text mb-2">{{ filter.description }}</span>
+							<span class="description-text-filter mb-2">{{ filter.description }}</span>
 							<div class="mt-4">
 								<slot
 									:on="{
@@ -195,6 +213,7 @@
 								/>
 							</div>
 						</v-expansion-panel-content>
+						<VDivider />
 					</v-expansion-panel>
 				</v-expansion-panels>
 
@@ -221,6 +240,7 @@
 							outlined
 							small
 							color="indigo"
+							@click="resetAllFilters"
 						>
 							Réinitialiser
 						</v-btn>
@@ -229,6 +249,7 @@
 							:block="isMobile"
 							small
 							color="primary"
+							@click="emitFilter"
 						>
 							Appliquer
 						</v-btn>
@@ -296,7 +317,7 @@
 
 			this.filterSelection.forEach(filter => {
 				if (filter?.selection?.length) {
-					count++;
+					count = count + filter.selection.length;
 				}
 			});
 			return count;
@@ -372,6 +393,16 @@
 			return !currentFilter.showAll && (currentFilter.selection.length > this.chipsLimit);
 		}
 
+		resetAllFilters(): void {
+			for (let index = 0; index < this.filters.length; index++) {
+				this.$set(this.filterSelection[index], 'selection', []);
+			}
+		}
+
+		emitFilter(): void {
+			console.log(this.filterSelection);
+		}
+
 		mounted() {
 			this.filterSelection = this.filters.map(filter => ({
 				name: filter.name,
@@ -393,10 +424,7 @@
 	}
 	.v-expansion-panel-header {
 		min-height: 0 !important;
-		padding: 8px 24px;
-	}
-	.description-text {
-		font-size: 11px;
+		padding: 2px;
 	}
 	.v-expansion-panel-header__icon {
 		display: none !important;
@@ -408,13 +436,12 @@
 		display: none;
 	}
 	.v-expansion-panel--active {
-		background-color: $vd-am-blue-lighten-97 !important;
 		border-radius: 8px !important;
 
-		#up-icon {
+		.open {
 			display: none;
 		}
-		#down-icon {
+		.closed {
 			display: inline;
 		}
 
@@ -436,5 +463,10 @@
 		border-radius: 20px;
 		text-transform: capitalize;
 	}
+
+}
+.description-text-filter {
+	color: $vd-grey-lighten-20;
+	font-size: 14px !important;
 }
 </style>
