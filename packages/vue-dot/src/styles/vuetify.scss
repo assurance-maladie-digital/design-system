@@ -128,7 +128,8 @@
 	}
 }
 
-// Fonts
+
+// headings without classes
 h1 {
 	font-weight: bold;
 	font-size: 4.5rem;
@@ -160,41 +161,17 @@ h6 {
 	font-size: 1.25rem;
 	letter-spacing: .15px;
 }
-.subtitle-1 {
-	font-weight: bold !important;
-	font-size: 1.125rem;
-	letter-spacing: .15px;
-}
-.subtitle-2 {
-	font-weight: bold !important;
-	font-size: 1rem;
-	letter-spacing: .1px;
-}
-.body-1 {
-	font-weight: normal;
-	font-size: 1.125rem;
-	letter-spacing: .5px;
-}
-.body-2 {
-	font-weight: normal;
+
+// these classes doesn't exist in vuetify
+.button-2 {
+	font-weight: 600;
 	font-size: 1rem;
 	letter-spacing: .25px;
 }
-.button {
+.button-3 {
 	font-weight: 600;
-	font-size: 1rem;
-	letter-spacing: .5px;
-}
-.caption {
-	font-weight: normal;
-	font-size: 0.875rem;
-	letter-spacing: .4px;
-}
-.overline {
-	font-weight: normal;
 	font-size: 0.75rem;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
+	letter-spacing: .4px;
 }
 .mono-1 {
 	font-weight: normal;
@@ -216,16 +193,3 @@ h6 {
 	font-size: 1rem;
 	letter-spacing: .25px;
 }
-.button-2 {
-	font-weight: 600;
-	font-size: 1rem;
-	letter-spacing: .25px;
-}
-.button-3 {
-	font-weight: 600;
-	font-size: 0.75rem;
-	letter-spacing: .4px;
-}
-
-
-
