@@ -54,9 +54,9 @@
 			<template
 				v-if="showFilePreview"
 			>
-				<iframe
+				<object
 					v-if="isUploadedFileThisType(/^application\/pdf$/)"
-					:src="uploadedFileSrc"
+					:data="uploadedFileSrc"
 					type="application/pdf"
 					width="100%"
 					height="556"
