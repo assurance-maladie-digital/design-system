@@ -40,6 +40,7 @@
 			<VForm
 				ref="form"
 				v-bind="options.form"
+				class="mb-2"
 			>
 				<VSelect
 					v-if="internalFileListItems"
@@ -51,21 +52,11 @@
 				/>
 			</VForm>
 
-			<template
+			<FilePreview
 				v-if="showFilePreview"
-			>
-				<object
-					v-if="isUploadedFileThisType(/^application\/pdf$/)"
-					:data="uploadedFileSrc"
-					type="application/pdf"
-					width="100%"
-					height="556"
-				/>
-				<img
-					v-else-if="isUploadedFileThisType(/^image\/.*$/)"
-					:src="uploadedFileSrc"
-				>
-			</template>
+				v-bind="options.filePreview"
+				:file="uploadedFile"
+			/>
 		</DialogBox>
 	</div>
 </template>
@@ -85,6 +76,7 @@
 	import { UploadWorkflowCore } from './mixins/uploadWorkflowCore';
 
 	import FileList from './FileList';
+	import FilePreview from '../FilePreview';
 
 	const Props = Vue.extend({
 		props: {
@@ -99,7 +91,8 @@
 
 	@Component<UploadWorkflow>({
 		components: {
-			FileList
+			FileList,
+			FilePreview
 		},
 		model: {
 			prop: 'value',
@@ -132,26 +125,10 @@
 			return this.value.length > 0 || this.fileListItems?.length > 0;
 		}
 
-		get uploadedFileSrc(): string {
-			if (this.uploadedFile) {
-				return URL.createObjectURL(this.uploadedFile);
-			}
-
-			return '';
-		}
-
 		uploadInline(id: string): void {
 			this.$refs.fileUpload.retry();
 			this.selectedItem = id;
 			this.inlineSelect = true;
-		}
-
-		isUploadedFileThisType(regex: RegExp): boolean {
-			if (this.uploadedFile) {
-				return regex.test(this.uploadedFile.type);
-			}
-
-			return false;
 		}
 	}
 </script>

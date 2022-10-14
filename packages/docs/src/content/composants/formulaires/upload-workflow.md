@@ -47,6 +47,12 @@ Vous pouvez laisser l’utilisateur sélectionner le nombre de fichiers qu’il 
 
 <doc-example file="upload-workflow/unrestricted"></doc-example>
 
+#### Prévisualisation des fichiers
+
+Vous pouvez prévisualiser le fichier qui vient d'être sélectionné par l'utilisateur en utilisant la prop `show-file-preview`. Seulement les fichiers de type PDF et les images peuvent être prévisualisés.
+
+<doc-example file="upload-workflow/file-preview"></doc-example>
+
 #### Mode rétrocompatible
 
 Vous pouvez toujours spécifier la liste des fichiers à sélectionner en utilisant le `v-model`.
@@ -58,12 +64,6 @@ Ce mode de fonctionnement est déprécié depuis la [version 2.5.0](https://gith
 </doc-alert>
 
 <doc-example file="upload-workflow/backward-compatible"></doc-example>
-
-#### Prévisualisation des fichiers
-
-Vous pouvez prévisualiser le fichier qui vient d'être sélectionné par l'utilisateur en utilisant la prop `show-file-preview`. Seulement les fichiers de type PDF et les images peuvent être prévisualisés.
-
-<doc-example file="upload-workflow/file-preview"></doc-example>
 </doc-tab-item>
 
 <doc-tab-item label="API">
