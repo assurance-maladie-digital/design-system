@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
@@ -25,7 +25,7 @@
 	const Props = Vue.extend({
 		props: {
 			file: {
-				type: File,
+				type: null as unknown as PropType<File>,
 				default: undefined
 			}
 		}
