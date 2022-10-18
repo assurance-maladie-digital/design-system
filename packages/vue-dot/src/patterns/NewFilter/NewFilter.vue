@@ -47,7 +47,7 @@
 						>
 							<v-chip
 								v-for="(chip, chipIndex) in limitChips(filterSelection[index])"
-								:key="chip"
+								:key="chipIndex"
 								small
 								close
 								class="mt-2"
@@ -185,7 +185,7 @@
 								>
 									<v-chip
 										v-for="(chip, chipIndex) in limitChips(filterSelection[index])"
-										:key="chip"
+										:key="chipIndex"
 										small
 										close
 										class="mt-2"
@@ -251,7 +251,7 @@
 					<!-- buttons -->
 					<div
 						class="px-5 mb-6 mt-10"
-						:class="isMobile ? '' : 'd-flex'"
+						:class="isMobile ? '' : 'd-flex justify-center'"
 					>
 						<v-btn
 							:class="isMobile ? '' : 'mb-2 mr-4'"
@@ -345,17 +345,17 @@
 		addChips(event: unknown, value: unknown): void {
 			for (let i = 0; i < this.filters.length; i++) {
 				if (this.removeAccents(this.filterSelection[i].name) === value) {
-					if (this.filterSelection[i].limited) {
-						this.filterSelection[i].selection = [];
-						if (event !== '') {
-							this.filterSelection[i].selection.push(event);
-						}
+					// test if the chip already exist or if it is empty
+					if (this.filterSelection[i].selection.includes(event) || event === '') {
+						return;
 					} else {
-						if (event !== '') {
+						if (this.filterSelection[i].limited) {
+							this.filterSelection[i].selection = [];
+							this.filterSelection[i].selection.push(event);
+						} else {
 							this.filterSelection[i].selection.push(event);
 						}
 					}
-
 				}
 			}
 		}
@@ -396,10 +396,14 @@
 		}
 
 		parseChips(chip: string): string {
-			const FRENCH_DATE_FORMAT = 'DD/MM/YYYY';
-			dayjs(chip).format(FRENCH_DATE_FORMAT);
-
-			return chip;
+			let newChip = chip;
+			if (dayjs(chip, 'YYYY-MM-DD').isValid()) {
+				const FRENCH_DATE_FORMAT = 'DD/MM/YYYY';
+				newChip = dayjs(chip).format(FRENCH_DATE_FORMAT);
+			} else if (Array.isArray(chip)) {
+				newChip = chip.join(' - ');
+			}
+			return newChip;
 		}
 
 		mounted() {
