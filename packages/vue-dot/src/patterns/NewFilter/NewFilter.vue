@@ -19,17 +19,20 @@
 							class="simple-mode-filters mr-4"
 							color="secondary"
 							depressed
-							:outlined="!filterSelection[index]?.selection.length"
+							:outlined="!filters[index]?.chips.length"
 							v-on="on"
 						>
-							<VChip
-								v-if="filterSelection[index]?.selection.length"
+							<v-chip
+								v-if="filters[index]?.chips.length"
 								class="ml-n2 mr-2"
 								color="white"
 								small
 							>
-								{{ filterSelection[index]?.selection.length }}
-							</VChip>
+								{{ filters[index]?.chips[0].value }}
+								<span v-if="filters[index]?.chips.length > 1">
+									(+ {{ filters[index]?.chips.length - 1 }})
+								</span>
+							</v-chip>
 							<span>{{ filter.label }}</span>
 							<VIcon>
 								{{ downIcon }}
@@ -41,12 +44,12 @@
 					>
 						<span class="description-text-filter mb-2">{{ filter.description }}</span>
 						<v-chip-group
-							v-if="filterSelection[index]"
+							v-if="filters[index]"
 							class="mb-4"
 							column
 						>
 							<v-chip
-								v-for="(chip, chipIndex) in limitChips(filterSelection[index])"
+								v-for="(chip, chipIndex) in limitChips(filters[index])"
 								:key="chipIndex"
 								small
 								close
@@ -56,7 +59,7 @@
 								text-color="white"
 								@click:close="removeChip(index, chipIndex)"
 							>
-								{{ chip }}
+								{{ chip.text ?? chip.value ?? chip }}
 							</v-chip>
 							<v-chip
 								v-if="showExpandChip(index)"
@@ -67,23 +70,23 @@
 								class="mt-2 bg-cyan"
 								@click.stop="displayHiddenChips(index)"
 							>
-								{{ `+${filterSelection[index].selection.length - chipsLimit}` }}
+								{{ `+${filters[index].chips.length - chipsLimit}` }}
 							</v-chip>
 							<v-chip
-								v-if="filterSelection[index].showAll"
+								v-if="filters[index].showAll"
 								small
 								outlined
 								color="cyan-lighten-60"
 								text-color="cyan-darken-40"
 								class="mt-2 bg-cyan"
-								@click.stop="filterSelection[index].showAll = false"
+								@click.stop="() => onHideAll(index)"
 							>
 								<VIcon>
 									{{ upIcon }}
 								</VIcon>
 							</v-chip>
 							<v-btn
-								v-if="filterSelection[index].selection.length"
+								v-if="filters[index].chips.length"
 								class="text-none align-self-center mt-2"
 								x-small
 								text
@@ -95,7 +98,10 @@
 						</v-chip-group>
 						<slot
 							:on="{
-								change: (event) => addChips(event, removeAccents(filter.name))
+								change: event => onChange(event, filter, index)
+							}"
+							:attrs="{
+								value: filter.value
 							}"
 							:name="`filter-${removeAccents(filter.name)}`"
 						/>
@@ -159,8 +165,8 @@
 								>
 									<span>
 										{{ filter.label }}
-										<span v-if="filterSelection[index].selection.length">
-											({{ filterSelection[index].selection.length }})
+										<span v-if="filters[index].chips.length">
+											({{ filters[index].chips.length }})
 										</span>
 									</span>
 									<div>
@@ -179,12 +185,12 @@
 									</div>
 								</div>
 								<v-chip-group
-									v-if="filterSelection[index]"
+									v-if="filters[index]"
 									class="mx-3"
 									column
 								>
 									<v-chip
-										v-for="(chip, chipIndex) in limitChips(filterSelection[index])"
+										v-for="(chip, chipIndex) in limitChips(filters[index])"
 										:key="chipIndex"
 										small
 										close
@@ -194,7 +200,7 @@
 										text-color="white"
 										@click:close="removeChip(index, chipIndex)"
 									>
-										{{ parseChips(chip) }}
+										{{ chip.text ?? chip.value ?? chip }}
 									</v-chip>
 									<v-chip
 										v-if="showExpandChip(index)"
@@ -205,23 +211,23 @@
 										class="mt-2 bg-cyan"
 										@click.stop="displayHiddenChips(index)"
 									>
-										{{ `+${filterSelection[index].selection.length - chipsLimit}` }}
+										{{ `+${filters[index].chips.length - chipsLimit}` }}
 									</v-chip>
 									<v-chip
-										v-if="showExpandChip(index) && filterSelection[index].showAll"
+										v-if="showExpandChip(index) && filters[index].showAll"
 										small
 										outlined
 										color="cyan-lighten-60"
 										text-color="cyan-darken-40"
 										class="mt-2 bg-cyan"
-										@click.stop="filterSelection[index].showAll = false"
+										@click.stop="() => onHideAll(index)"
 									>
 										<VIcon>
 											{{ upIcon }}
 										</VIcon>
 									</v-chip>
 									<v-btn
-										v-if="filterSelection[index].selection.length"
+										v-if="filters[index].chips.length"
 										class="text-none align-self-center mt-2"
 										x-small
 										text
@@ -238,7 +244,10 @@
 								<div class="mt-4">
 									<slot
 										:on="{
-											change: (event) => addChips(event, removeAccents(filter.name))
+											change: event => onChange(event, filter, index)
+										}"
+										:attrs="{
+											value: filter.value
 										}"
 										:name="`filter-${removeAccents(filter.name)}`"
 									/>
@@ -254,7 +263,7 @@
 						:class="isMobile ? '' : 'd-flex justify-center'"
 					>
 						<v-btn
-							:class="isMobile ? '' : 'mb-2 mr-4'"
+							:class="isMobile ? '' : 'mb-2 mr-4 button-complex-mode'"
 							:outlined="isMobile"
 							:text="!isMobile"
 							:block="isMobile"
@@ -265,7 +274,7 @@
 							Fermer
 						</v-btn>
 						<v-btn
-							:class="isMobile ? 'mb-2 mt-2' : ''"
+							:class="isMobile ? 'mb-2 mt-2' : 'button-complex-mode'"
 							:block="isMobile"
 							outlined
 							small
@@ -285,7 +294,6 @@
 	//	eslint-disable max-lines
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import dayjs from 'dayjs';
 	import { FilterItem } from './types';
 
 	import { locales } from './locales';
@@ -294,10 +302,6 @@
 
 	const Props = Vue.extend({
 		props: {
-			filters: {
-				type: Array as PropType<FilterItem[]>,
-				required: true
-			},
 			simpleMode: {
 				type: Boolean,
 				default: false
@@ -305,13 +309,27 @@
 			chipsLimit: {
 				type: Number,
 				default: 4
+			},
+			value: {
+				type: Array as PropType<FilterItem[]>,
+				default: () => []
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component({})
+	@Component<NewFilter>({
+		model: {
+			prop: 'value',
+			event: 'update:value'
+		},
+		watch: {
+			value(newValue: FilterItem[]) {
+				this.filters = newValue;
+			}
+		}
+	})
 	export default class NewFilter extends MixinsDeclaration {
 		locales = locales;
 		deleteIcon = mdiWindowClose;
@@ -319,13 +337,14 @@
 		upIcon = mdiChevronUp;
 		downIcon = mdiChevronDown;
 
+		filters: FilterItem[] = this.value;
+
 		showSideBar = false;
-		filterSelection: FilterItem[] = [];
 
 		get filtersCount(): number {
 			let count = 0;
 
-			this.filterSelection.forEach(filter => {
+			this.filters.forEach(filter => {
 				if (filter?.selection?.length) {
 					count = count + filter.selection.length;
 				}
@@ -342,79 +361,73 @@
 			return newString;
 		}
 
-		addChips(event: unknown, value: unknown): void {
-			for (let i = 0; i < this.filters.length; i++) {
-				if (this.removeAccents(this.filterSelection[i].name) === value) {
-					// test if the chip already exist or if it is empty
-					if (this.filterSelection[i].selection.includes(event) || event === '') {
-						return;
-					} else {
-						if (this.filterSelection[i].limited) {
-							this.filterSelection[i].selection = [];
-							this.filterSelection[i].selection.push(event);
-						} else {
-							this.filterSelection[i].selection.push(event);
-						}
-					}
-				}
-			}
-		}
-
 		limitChips(filterItem: FilterItem): unknown[] {
 			if (filterItem.showAll) {
-				return filterItem.selection;
+				return filterItem.chips;
 			}
 
-			return filterItem.selection.slice(0, this.chipsLimit);
+			return filterItem.chips.slice(0, this.chipsLimit);
 		}
 
 		resetFilter(index: number): void {
-			this.$set(this.filterSelection[index], 'selection', []);
+			this.$set(this.filters[index], 'chips', []);
+			this.$emit('update:value', this.filters);
 		}
 
 		removeChip(filterIndex: number, chipIndex: number): void {
-			this.filterSelection[filterIndex].selection.splice(chipIndex, 1);
+			const chips = this.filters[filterIndex].chips.filter((chip, index) => index !== chipIndex);
+			this.$set(this.filters[filterIndex], 'chips', chips);
+			this.$emit('update:value', this.filters);
 		}
 
 		displayHiddenChips(index: number): void {
-			this.$set(this.filterSelection[index], 'showAll', true);
+			this.$set(this.filters[index], 'showAll', true);
+			this.$emit('update:value', this.filters);
 		}
 
 		showExpandChip(index: number): boolean {
-			const currentFilter = this.filterSelection[index];
-			return !currentFilter.showAll && (currentFilter.selection.length > this.chipsLimit);
+			const currentFilter = this.filters[index];
+			return !currentFilter.showAll && (currentFilter.chips.length > this.chipsLimit);
 		}
 
 		resetAllFilters(): void {
 			for (let index = 0; index < this.filters.length; index++) {
-				this.$set(this.filterSelection[index], 'selection', []);
+				this.$set(this.filters[index], 'chips', []);
 			}
+			this.$emit('update:value', this.filters);
 		}
 
 		closeSidebar(): void {
 			this.showSideBar = false;
 		}
 
-		parseChips(chip: string): string {
-			let newChip = chip;
-			if (dayjs(chip, 'YYYY-MM-DD').isValid()) {
-				const FRENCH_DATE_FORMAT = 'DD/MM/YYYY';
-				newChip = dayjs(chip).format(FRENCH_DATE_FORMAT);
-			} else if (Array.isArray(chip)) {
-				newChip = chip.join(' - ');
+		onChange(event: unknown, filter: FilterItem, index: number): void {
+			const newChip = {
+				text: filter.miseEnForm ? filter.miseEnForm(event) : event,
+				value: event
+			};
+			let chips = [];
+
+			if (filter.limited) {
+				chips = [
+					newChip
+				];
+			} else {
+				chips = [
+					...filter.chips,
+					newChip
+				];
 			}
-			return newChip;
+
+			this.$set(this.filters[index], 'chips', chips);
+			this.$set(this.filters[index], 'value', event);
+
+			this.$emit('update:value', this.filters);
 		}
 
-		mounted() {
-			this.filterSelection = this.filters.map(filter => ({
-				name: filter.name,
-				label: filter.label,
-				description: filter.description ?? '',
-				limited: filter.limited ?? false,
-				selection: filter.selection ?? [],
-				showAll: false
-			}));
+		onHideAll(index: number): void {
+			this.$set(this.filters[index], 'showAll', !this.filters[index].showAll);
+			this.$emit('update:value', this.filters);
 		}
 	}
 </script>
@@ -469,6 +482,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+	.button-complex-mode {
+		width: 49%;
 	}
 }
 .description-text-filter {
