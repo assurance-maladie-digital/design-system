@@ -14,7 +14,7 @@
 		"generate": "lerna run generate --stream"
 	},
 	"devDependencies": {
-		"@babel/core": "7.19.3",
+		"@babel/core": "7.19.6",
 		"@mdi/js": "7.0.96",
 		"@rushstack/eslint-patch": "1.2.0",
 		"@types/eslint": "8.4.1",
@@ -30,10 +30,10 @@
 		"core-js": "3.26.0",
 		"cross-env": "7.0.3",
 		"custom-event-polyfill": "1.0.7",
-		"dayjs": "1.11.5",
+		"dayjs": "1.11.6",
 		"deepmerge": "4.2.2",
 		"eslint": "7.32.0",
-		"eslint-plugin-jsdoc": "39.3.6",
+		"eslint-plugin-jsdoc": "39.3.25",
 		"eslint-plugin-vue": "9.6.0",
 		"fs-extra": "10.1.0",
 		"jest": "26.6.3",
@@ -46,12 +46,12 @@
 		"ts-jest": "26.5.6",
 		"ts-node": "10.9.1",
 		"typescript": "4.8.4",
-		"vue": "2.7.10",
+		"vue": "2.7.13",
 		"vue-class-component": "7.2.6",
 		"vue-input-facade": "2.0.1",
 		"vue-router": "3.6.5",
-		"vue-template-compiler": "2.7.10",
-		"vuetify": "2.6.11",
+		"vue-template-compiler": "2.7.13",
+		"vuetify": "2.6.12",
 		"vuex": "3.6.2",
 		"webpack": "4.46.0"
 	},
@@ -59,8 +59,8 @@
 		"css-loader": "4.3.0",
 		"jest": "26.6.3",
 		"ts-jest": "26.5.6",
-		"vue-server-renderer": "2.7.10",
-		"vue-template-compiler": "2.7.10"
+		"vue-server-renderer": "2.7.13",
+		"vue-template-compiler": "2.7.13"
 	},
 	"engines": {
 		"node": "^14 || ^16",
