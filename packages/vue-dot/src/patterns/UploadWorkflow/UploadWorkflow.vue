@@ -38,12 +38,12 @@
 			<slot name="modal-description" />
 
 			<VForm
+				v-if="showFileList"
 				ref="form"
 				v-bind="options.form"
 				class="mb-2"
 			>
 				<VSelect
-					v-if="internalFileListItems"
 					v-model="selectedItem"
 					v-bind="options.select"
 					:items="selectItems"
@@ -76,7 +76,7 @@
 	import { UploadWorkflowCore } from './mixins/uploadWorkflowCore';
 
 	import FileList from './FileList';
-	import FilePreview from '../FilePreview';
+	import FilePreview from '../../elements/FilePreview';
 
 	const Props = Vue.extend({
 		props: {

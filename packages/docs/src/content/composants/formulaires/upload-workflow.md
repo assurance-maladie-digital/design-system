@@ -49,7 +49,11 @@ Vous pouvez laisser l’utilisateur sélectionner le nombre de fichiers qu’il 
 
 #### Prévisualisation des fichiers
 
-Vous pouvez prévisualiser le fichier qui vient d'être sélectionné par l'utilisateur en utilisant la prop `show-file-preview`. Seulement les fichiers de type PDF et les images peuvent être prévisualisés.
+Vous pouvez permettre à l’utilisateur de prévisualiser le fichier qu’il vient de sélectionner avant de valider en utilisant la prop `show-file-preview`.
+
+<doc-alert type="info">
+Seuls les fichiers de type PDF et les images peuvent être prévisualisés.
+</doc-alert>
 
 <doc-example file="upload-workflow/file-preview"></doc-example>
 
@@ -80,9 +84,7 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Uploa
 
 ### Slots
 
-Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
-
-Vous pouvez également utiliser le slot `modal-description` pour ajouter un texte d'explication ou d'information dans la modale de sélection du fichier.
+Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier, ainsi que le slot `modal-description` pour ajouter un texte supplémentaire dans la modale de sélection du fichier.
 
 <doc-example file="upload-workflow/slots"></doc-example>
 

@@ -245,7 +245,24 @@ describe('EventsFileFired', () => {
 		expect(wrapper.vm.fileList[0]).toEqual(testFile);
 	});
 
-	it('open the dialog in single mode with preview', () => {
+	it('open the dialog in unrestricted mode for preview file', async() => {
+		const wrapper = createWrapper([], true) as Wrapper<TestComponent>;
+
+		wrapper.vm.uploadedFile = testFile;
+		wrapper.vm.fileSelected();
+
+		expect(wrapper.vm.selectItems).toEqual([]);
+		expect(wrapper.vm.dialog).toBeTruthy();
+
+		wrapper.vm.dialogConfirm();
+
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.vm.fileList[0]).toEqual(testFile);
+		expect(wrapper.emitted('change')).toBeFalsy();
+	});
+
+	it('open the dialog in single mode for preview file', () => {
 		const wrapper = createWrapper(fileList, true) as Wrapper<TestComponent>;
 
 		wrapper.vm.uploadedFile = testFile;

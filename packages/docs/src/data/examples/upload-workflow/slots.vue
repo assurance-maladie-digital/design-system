@@ -2,7 +2,7 @@
 	<UploadWorkflow
 		v-model="selectedFiles"
 		:file-list-items="fileListItems"
-		:show-file-preview="true"
+		show-file-preview
 	>
 		<template #title>
 			<h4 class="title font-weight-bold">
@@ -17,7 +17,7 @@
 		</template>
 
 		<template #modal-description>
-			<p class="text-justify">
+			<p>
 				Veuillez vérifier que le document correspond bien à l'assuré concerné
 			</p>
 		</template>

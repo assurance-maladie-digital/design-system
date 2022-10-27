@@ -25,14 +25,5 @@ export const config = {
 	},
 	confirmBtn: {
 		color: 'accent'
-	},
-	filePreview: {
-		pdf: {
-			height: '556px',
-			width: '100%'
-		},
-		image: {
-			width: '100%'
-		}
 	}
 };

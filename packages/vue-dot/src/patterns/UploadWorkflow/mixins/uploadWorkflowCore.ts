@@ -62,7 +62,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	internalFileListItems = this.fileListItems ?? this.value;
 
 	get singleMode(): boolean {
-		return this.fileList.length === 1;
+		return this.internalFileListItems.length === 1;
 	}
 
 	get selectItems(): SelectItem[] {
@@ -135,6 +135,13 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	async dialogConfirm(): Promise<void> {
 		await this.$nextTick();
 
+		if (this.showFilePreview && !this.internalFileListItems.length && this.uploadedFile) {
+			this.fileList.push(this.uploadedFile);
+			this.emitChangeEvent();
+			this.dialog = false;
+			return;
+		}
+
 		if (this.$refs.form.validate()) {
 			this.dialog = false;
 			this.setFileInList();
@@ -143,11 +150,11 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	fileSelected(): void {
-		// If we show file preview, we have to open dialog and not add the file yet
 		if (this.showFilePreview) {
 			if (this.singleMode) {
 				this.selectedItem = this.selectItems[0].value;
 			}
+
 			this.dialog = true;
 			return;
 		}

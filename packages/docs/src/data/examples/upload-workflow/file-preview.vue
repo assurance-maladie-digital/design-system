@@ -2,7 +2,7 @@
 	<UploadWorkflow
 		v-model="selectedFiles"
 		:file-list-items="fileListItems"
-		:show-file-preview="true"
+		show-file-preview
 	/>
 </template>
 
@@ -13,7 +13,7 @@
 	import { FileListItem, SelectedFile } from '@cnamts/vue-dot/src/patterns/UploadWorkflow/types';
 
 	@Component
-	export default class UploadWorkflowSingleFile extends Vue {
+	export default class UploadWorkflowFilePreview extends Vue {
 		selectedFiles: SelectedFile[] = [];
 
 		fileListItems: FileListItem[] = [

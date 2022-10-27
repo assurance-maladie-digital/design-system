@@ -41,8 +41,8 @@ export const api: Api = {
 			{
 				name: 'show-file-preview',
 				type: 'boolean',
-				default: `false`,
-				description: 'Affiche la prévisualisation du fichier avant validation.'
+				default: false,
+				description: 'Active la prévisualisation du fichier avant validation.'
 			},
 			...widthable,
 			...customizable(`{
@@ -50,7 +50,8 @@ export const api: Api = {
 	dialog: 'DialogBox',
 	form: 'VForm',
 	select: 'VSelect',
-	fileList: 'FileList'
+	fileList: 'FileList',
+	filePreview: 'FilePreview'
 }`, 'et `FileList`')
 		],
 		slots: [
@@ -64,7 +65,7 @@ export const api: Api = {
 			},
 			{
 				name: 'modal-description',
-				description: 'Slot pour remplacer le titre de la boîte de dialogue.'
+				description: 'Slot pour ajouter un texte supplémentaire après le titre dans la boîte de dialogue.'
 			}
 		],
 		events: [
