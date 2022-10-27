@@ -1,4 +1,5 @@
 export interface FilterItem {
+	clearAfterValidate: boolean;
 	limited: boolean;
 	label: string;
 	name: string;
@@ -9,5 +10,7 @@ export interface FilterItem {
 		value: unknown;
 		text: string;
 	}[];
+	value: any;
+	defaultValue: any;
 	miseEnForm?: (value: unknown) => string;
 }

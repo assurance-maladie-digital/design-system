@@ -28,8 +28,14 @@
 								color="white"
 								small
 							>
-								{{ filters[index]?.chips[0].value }}
-								<span v-if="filters[index]?.chips.length > 1">
+								<span
+									:class="!filters[index]?.chips.length === 0 ?? 'mb-2'"
+								>
+									{{ filters[index]?.chips[0].value }}
+								</span>
+								<span
+									v-if="filters[index]?.chips.length > 1"
+								>
 									(+ {{ filters[index]?.chips.length - 1 }})
 								</span>
 							</v-chip>
@@ -40,65 +46,18 @@
 						</VBtn>
 					</template>
 					<div
-						class="mt-2 px-4"
+						class="mt-2 px-4 white"
 					>
 						<span class="description-text-filter mb-2">{{ filter.description }}</span>
-						<v-chip-group
-							v-if="filters[index]"
-							class="mb-4"
-							column
-						>
-							<v-chip
-								v-for="(chip, chipIndex) in limitChips(filters[index])"
-								:key="chipIndex"
-								small
-								close
-								class="mt-2"
-								:close-icon="deleteIcon"
-								color="cyan-darken-40"
-								text-color="white"
-								@click:close="removeChip(index, chipIndex)"
-							>
-								{{ chip.text ?? chip.value ?? chip }}
-							</v-chip>
-							<v-chip
-								v-if="showExpandChip(index)"
-								small
-								outlined
-								color="cyan-lighten-60"
-								text-color="cyan-darken-40"
-								class="mt-2 bg-cyan"
-								@click.stop="displayHiddenChips(index)"
-							>
-								{{ `+${filters[index].chips.length - chipsLimit}` }}
-							</v-chip>
-							<v-chip
-								v-if="filters[index].showAll"
-								small
-								outlined
-								color="cyan-lighten-60"
-								text-color="cyan-darken-40"
-								class="mt-2 bg-cyan"
-								@click.stop="() => onHideAll(index)"
-							>
-								<VIcon>
-									{{ upIcon }}
-								</VIcon>
-							</v-chip>
-							<v-btn
-								v-if="filters[index].chips.length"
-								class="text-none align-self-center mt-2"
-								x-small
-								text
-								color="primary"
-								@click.stop="resetFilter(index)"
-							>
-								Réinitialiser
-							</v-btn>
-						</v-chip-group>
+						<ChipsList
+							v-if="filters[index].chips.length"
+							:chips-limit="chipsLimit"
+							:filter="filters[index]"
+						/>
 						<slot
 							:on="{
-								change: event => onChange(event, filter, index)
+								change: event => onChange(event, filter),
+								input: event => $set(filter, 'value', event)
 							}"
 							:attrs="{
 								value: filter.value
@@ -138,7 +97,6 @@
 				</VIcon>
 			</VBtn>
 
-			<!-- sidebar v-click-outside="closeSidebar" -->
 			<v-scroll-x-transition>
 				<VNavigationDrawer
 					v-if="showSideBar && !simpleMode"
@@ -162,6 +120,9 @@
 							>
 								<div
 									class="header-title d-flex justify-space-between mt-3 mx-4"
+									:class="{
+										'mb-2' : !filters[index].chips.length
+									}"
 								>
 									<span>
 										{{ filter.label }}
@@ -184,67 +145,21 @@
 										</VIcon>
 									</div>
 								</div>
-								<v-chip-group
-									v-if="filters[index]"
-									class="mx-3"
-									column
-								>
-									<v-chip
-										v-for="(chip, chipIndex) in limitChips(filters[index])"
-										:key="chipIndex"
-										small
-										close
-										class="mt-2"
-										:close-icon="deleteIcon"
-										color="cyan-darken-40"
-										text-color="white"
-										@click:close="removeChip(index, chipIndex)"
-									>
-										{{ chip.text ?? chip.value ?? chip }}
-									</v-chip>
-									<v-chip
-										v-if="showExpandChip(index)"
-										small
-										outlined
-										color="cyan-lighten-60"
-										text-color="cyan-darken-40"
-										class="mt-2 bg-cyan"
-										@click.stop="displayHiddenChips(index)"
-									>
-										{{ `+${filters[index].chips.length - chipsLimit}` }}
-									</v-chip>
-									<v-chip
-										v-if="showExpandChip(index) && filters[index].showAll"
-										small
-										outlined
-										color="cyan-lighten-60"
-										text-color="cyan-darken-40"
-										class="mt-2 bg-cyan"
-										@click.stop="() => onHideAll(index)"
-									>
-										<VIcon>
-											{{ upIcon }}
-										</VIcon>
-									</v-chip>
-									<v-btn
-										v-if="filters[index].chips.length"
-										class="text-none align-self-center mt-2"
-										x-small
-										text
-										cla
-										color="primary"
-										@click.stop="resetFilter(index)"
-									>
-										Réinitialiser
-									</v-btn>
-								</v-chip-group>
+
+								<ChipsList
+									v-if="filters[index].chips.length"
+									class="ml-4"
+									:chips-limit="chipsLimit"
+									:filter="filters[index]"
+								/>
 							</v-expansion-panel-header>
 							<v-expansion-panel-content>
 								<span class="description-text-filter mb-2">{{ filter.description }}</span>
 								<div class="mt-4">
 									<slot
 										:on="{
-											change: event => onChange(event, filter, index)
+											change: event => onChange(event, filter),
+											input: event => $set(filter, 'value', event)
 										}"
 										:attrs="{
 											value: filter.value
@@ -294,11 +209,11 @@
 	//	eslint-disable max-lines
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+	import ChipsList from './ChipsList';
+
 	import { FilterItem } from './types';
-
 	import { locales } from './locales';
-
-	import { mdiChevronUp, mdiChevronDown, mdiWindowClose, mdiFilterVariant } from '@mdi/js';
+	import { mdiChevronUp, mdiChevronDown, mdiFilterVariant } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -328,11 +243,13 @@
 			value(newValue: FilterItem[]) {
 				this.filters = newValue;
 			}
+		},
+		components: {
+			ChipsList
 		}
 	})
 	export default class NewFilter extends MixinsDeclaration {
 		locales = locales;
-		deleteIcon = mdiWindowClose;
 		filterIcon = mdiFilterVariant;
 		upIcon = mdiChevronUp;
 		downIcon = mdiChevronDown;
@@ -361,35 +278,6 @@
 			return newString;
 		}
 
-		limitChips(filterItem: FilterItem): unknown[] {
-			if (filterItem.showAll) {
-				return filterItem.chips;
-			}
-
-			return filterItem.chips.slice(0, this.chipsLimit);
-		}
-
-		resetFilter(index: number): void {
-			this.$set(this.filters[index], 'chips', []);
-			this.$emit('update:value', this.filters);
-		}
-
-		removeChip(filterIndex: number, chipIndex: number): void {
-			const chips = this.filters[filterIndex].chips.filter((chip, index) => index !== chipIndex);
-			this.$set(this.filters[filterIndex], 'chips', chips);
-			this.$emit('update:value', this.filters);
-		}
-
-		displayHiddenChips(index: number): void {
-			this.$set(this.filters[index], 'showAll', true);
-			this.$emit('update:value', this.filters);
-		}
-
-		showExpandChip(index: number): boolean {
-			const currentFilter = this.filters[index];
-			return !currentFilter.showAll && (currentFilter.chips.length > this.chipsLimit);
-		}
-
 		resetAllFilters(): void {
 			for (let index = 0; index < this.filters.length; index++) {
 				this.$set(this.filters[index], 'chips', []);
@@ -401,12 +289,22 @@
 			this.showSideBar = false;
 		}
 
-		onChange(event: unknown, filter: FilterItem, index: number): void {
+		onChange(event: unknown, filter: FilterItem): void {
+			if (!event) {
+				return;
+			}
+
 			const newChip = {
 				text: filter.miseEnForm ? filter.miseEnForm(event) : event,
 				value: event
 			};
-			let chips = [];
+			let chips: any[] = [];
+
+			const chipExist = filter.chips.some(chip => chip.value === newChip.value);
+
+			if (chipExist) {
+				return;
+			}
 
 			if (filter.limited) {
 				chips = [
@@ -419,14 +317,10 @@
 				];
 			}
 
-			this.$set(this.filters[index], 'chips', chips);
-			this.$set(this.filters[index], 'value', event);
-
-			this.$emit('update:value', this.filters);
-		}
-
-		onHideAll(index: number): void {
-			this.$set(this.filters[index], 'showAll', !this.filters[index].showAll);
+			this.$set(filter, 'chips', chips);
+			if (filter.clearAfterValidate) {
+				this.$set(filter, 'value', filter.defaultValue ?? null);
+			}
 			this.$emit('update:value', this.filters);
 		}
 	}
@@ -494,5 +388,4 @@
 .bg-cyan.v-chip.v-chip--outlined.v-chip.v-chip {
 	background-color: $vd-cyan-lighten-90 !important;
 }
-
 </style>
