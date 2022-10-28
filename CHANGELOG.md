@@ -7,7 +7,7 @@
   - **DatePicker:** Correction de l'état désactivé ([#2334](https://github.com/assurance-maladie-digital/design-system/pull/2334)) ([0e59844](https://github.com/assurance-maladie-digital/design-system/commit/0e59844e575002278db6575c7a0183eb9bb943e2))
 
 - ♻️ **Refactoring**
-  - **ErrorPage**: Suppression de la police serif sur le code ([#2348](https://github.com/assurance-maladie-digital/design-system/pull/2348))
+  - **ErrorPage**: Suppression de la police serif sur le code ([#2348](https://github.com/assurance-maladie-digital/design-system/pull/2348)) ([213bcc7](https://github.com/assurance-maladie-digital/design-system/commit/213bcc7891d032c77924a3d61e51c81d59b3a5cc))
 
 - ✅ **Tests**
   - **test-utils:** Ajout d'un test sur la fonction `html` ([#2315](https://github.com/assurance-maladie-digital/design-system/pull/2315)) ([f99e68c](https://github.com/assurance-maladie-digital/design-system/commit/f99e68ca682932357ab94b23e247ef5222c3565d))
@@ -51,7 +51,7 @@
   - **dayjs:** Mise à jour vers la `v1.11.6` ([#2349](https://github.com/assurance-maladie-digital/design-system/pull/2349)) ([0733058](https://github.com/assurance-maladie-digital/design-system/commit/07330588a66a8e7196d3c5953aba315c18260823))
   - **vuetify:** Mise à jour vers la `v2.6.12` ([#2350](https://github.com/assurance-maladie-digital/design-system/pull/2350)) ([e4682a9](https://github.com/assurance-maladie-digital/design-system/commit/e4682a97c4df7a94da5a624068b3502c5d98baad))
   - **core-js:** Mise à jour vers la `v3.26.0` ([#2351](https://github.com/assurance-maladie-digital/design-system/pull/2351)) ([42e6b26](https://github.com/assurance-maladie-digital/design-system/commit/42e6b26c49ec3aa277a15f270e050033e8ef3133))
-  - **@types/node:** Mise à jour vers la `v16.18.1` ([#2354](https://github.com/asurance-maladie-digital/design-system/pull/2354))
+  - **@types/node:** Mise à jour vers la `v16.18.2` ([2355](https://github.com/asurance-maladie-digital/design-system/pull/2355))
 
 ## v2.6.0
 
