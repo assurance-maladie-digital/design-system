@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="vd-file-preview">
 		<object
 			v-if="isPdf"
 			:data="fileURL"
