@@ -35,9 +35,13 @@
 			@cancel="dialog = false"
 			@confirm="dialogConfirm"
 		>
+			<slot name="modal-description" />
+
 			<VForm
+				v-if="showFileList"
 				ref="form"
 				v-bind="options.form"
+				class="mb-2"
 			>
 				<VSelect
 					v-model="selectedItem"
@@ -47,6 +51,12 @@
 					:color="$vuetify.theme.dark ? 'accent' : null"
 				/>
 			</VForm>
+
+			<FilePreview
+				v-if="showFilePreview"
+				v-bind="options.filePreview"
+				:file="uploadedFile"
+			/>
 		</DialogBox>
 	</div>
 </template>
@@ -66,6 +76,7 @@
 	import { UploadWorkflowCore } from './mixins/uploadWorkflowCore';
 
 	import FileList from './FileList';
+	import FilePreview from '../../elements/FilePreview';
 
 	const Props = Vue.extend({
 		props: {
@@ -80,7 +91,8 @@
 
 	@Component<UploadWorkflow>({
 		components: {
-			FileList
+			FileList,
+			FilePreview
 		},
 		model: {
 			prop: 'value',
@@ -114,9 +126,9 @@
 		}
 
 		uploadInline(id: string): void {
+			this.$refs.fileUpload.retry();
 			this.selectedItem = id;
 			this.inlineSelect = true;
-			this.$refs.fileUpload.retry();
 		}
 	}
 </script>
