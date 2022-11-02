@@ -3,7 +3,7 @@
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **UploadWorkflow:** Ajout de la prévisualisation des fichiers avant validation ([#2336](https://github.com/assurance-maladie-digital/design-system/pull/2336))
+  - **UploadWorkflow:** Ajout de la prévisualisation des fichiers avant validation ([#2336](https://github.com/assurance-maladie-digital/design-system/pull/2336)) ([7d03eff](https://github.com/assurance-maladie-digital/design-system/commit/7d03effb65088a5d6f2e8c06bf9cde9714b3c9f6))
 
 - 🐛 **Corrections de bugs**
   - **HeaderBar:** Correction des options de personnalisation ([#2314](https://github.com/assurance-maladie-digital/design-system/pull/2314)) ([aa4696b](https://github.com/assurance-maladie-digital/design-system/commit/aa4696bdb47cb8e4fa9630d6002893b0a6543fe3))
@@ -14,6 +14,11 @@
 
 - ✅ **Tests**
   - **test-utils:** Ajout d'un test sur la fonction `html` ([#2315](https://github.com/assurance-maladie-digital/design-system/pull/2315)) ([f99e68c](https://github.com/assurance-maladie-digital/design-system/commit/f99e68ca682932357ab94b23e247ef5222c3565d))
+
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#2362](https://github.com/assurance-maladie-digital/design-system/pull/2362))
 
 ### ESLint Config
 
@@ -54,7 +59,7 @@
   - **dayjs:** Mise à jour vers la `v1.11.6` ([#2349](https://github.com/assurance-maladie-digital/design-system/pull/2349)) ([0733058](https://github.com/assurance-maladie-digital/design-system/commit/07330588a66a8e7196d3c5953aba315c18260823))
   - **vuetify:** Mise à jour vers la `v2.6.12` ([#2350](https://github.com/assurance-maladie-digital/design-system/pull/2350)) ([e4682a9](https://github.com/assurance-maladie-digital/design-system/commit/e4682a97c4df7a94da5a624068b3502c5d98baad))
   - **core-js:** Mise à jour vers la `v3.26.0` ([#2351](https://github.com/assurance-maladie-digital/design-system/pull/2351)) ([42e6b26](https://github.com/assurance-maladie-digital/design-system/commit/42e6b26c49ec3aa277a15f270e050033e8ef3133))
-  - **@types/node:** Mise à jour vers la `v16.18.2` ([2355](https://github.com/asurance-maladie-digital/design-system/pull/2355))
+  - **@types/node:** Mise à jour vers la `v16.18.2` ([2355](https://github.com/asurance-maladie-digital/design-system/pull/2355)) ([d794a2d](https://github.com/assurance-maladie-digital/design-system/commit/d794a2d3a42a2df1199c76ee73bd5bc82f3478f8))
 
 ## v2.6.0
 
