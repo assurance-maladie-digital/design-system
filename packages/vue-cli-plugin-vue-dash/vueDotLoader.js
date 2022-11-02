@@ -6,6 +6,7 @@ const componentMap = {
 	DialogBox: 'elements',
 	DownloadBtn: 'elements',
 	ExternalLinks: 'elements',
+	FilePreview: 'elements',
 	HeaderLoading: 'elements',
 	Logo: 'elements',
 	PageContainer: 'elements',

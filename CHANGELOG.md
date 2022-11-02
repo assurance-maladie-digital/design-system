@@ -2,6 +2,9 @@
 
 ### Vue Dot
 
+- ✨ **Nouvelles fonctionnalités**
+  - **UploadWorkflow:** Ajout de la prévisualisation des fichiers avant validation ([#2336](https://github.com/assurance-maladie-digital/design-system/pull/2336))
+
 - 🐛 **Corrections de bugs**
   - **HeaderBar:** Correction des options de personnalisation ([#2314](https://github.com/assurance-maladie-digital/design-system/pull/2314)) ([aa4696b](https://github.com/assurance-maladie-digital/design-system/commit/aa4696bdb47cb8e4fa9630d6002893b0a6543fe3))
   - **DatePicker:** Correction de l'état désactivé ([#2334](https://github.com/assurance-maladie-digital/design-system/pull/2334)) ([0e59844](https://github.com/assurance-maladie-digital/design-system/commit/0e59844e575002278db6575c7a0183eb9bb943e2))
