@@ -18,7 +18,7 @@
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
-  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#2362](https://github.com/assurance-maladie-digital/design-system/pull/2362))
+  - **config:** Ajout des composants manquants pour le tree-shaking de VueDot ([#2362](https://github.com/assurance-maladie-digital/design-system/pull/2362)) ([24a65eb](https://github.com/assurance-maladie-digital/design-system/commit/24a65eb350179c19bee6be7f8c8d4e05f267bbeb))
 
 ### ESLint Config
 
@@ -40,6 +40,9 @@
 
 - 🔒 **Sécurité**
   - **vuetify:** Mise à jour vers la `v2.6.10` ([#2297](https://github.com/assurance-maladie-digital/design-system/pull/2297)) ([14b0e8d](https://github.com/assurance-maladie-digital/design-system/commit/14b0e8dc97b67504dcf3ef05dc8f8178d285bd80))
+
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de `codecov` vers la `v3.2.4` ([#2342](https://github.com/assurance-maladie-digital/design-system/pull/2342))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.8` ([#2288](https://github.com/assurance-maladie-digital/design-system/pull/2288)) ([d8d2f4e](https://github.com/assurance-maladie-digital/design-system/commit/d8d2f4e78a9b15e1c19338b7e4dcb94b0219b601))
