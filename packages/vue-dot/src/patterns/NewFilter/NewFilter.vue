@@ -19,6 +19,7 @@
 							class="simple-mode-filters mr-4"
 							color="secondary"
 							depressed
+							:style="filters[index]?.style"
 							:outlined="!filters[index]?.chips.length"
 							v-on="on"
 						>
@@ -31,17 +32,15 @@
 								<span
 									:class="!filters[index]?.chips.length === 0 ?? 'mb-2'"
 								>
-									{{ filters[index]?.chips[0].value }}
-								</span>
-								<span
-									v-if="filters[index]?.chips.length > 1"
-								>
-									(+ {{ filters[index]?.chips.length - 1 }})
+									{{ filters[index]?.chips.length }}
 								</span>
 							</v-chip>
 							<span>{{ filter.label }}</span>
-							<VIcon>
-								{{ downIcon }}
+							<VIcon
+								:dense="filters[index].icon"
+								:class="{ 'ml-1' : filters[index].icon}"
+							>
+								{{ filters[index].icon ? filters[index].icon : downIcon }}
 							</VIcon>
 						</VBtn>
 					</template>
@@ -66,6 +65,14 @@
 						/>
 					</div>
 				</VMenu>
+				<v-btn
+					text
+					small
+					color="indigo"
+					@click.stop="resetAllFilters"
+				>
+					Réinitialiser
+				</v-btn>
 			</div>
 
 			<!-- mode with sidebar -->
@@ -295,7 +302,7 @@
 			}
 
 			const newChip = {
-				text: filter.miseEnForm ? filter.miseEnForm(event) : event,
+				text: filter.formatting ? filter.formatting(event) : event,
 				value: event
 			};
 			let chips: any[] = [];
