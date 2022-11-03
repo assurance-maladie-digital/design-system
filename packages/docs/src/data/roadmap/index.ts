@@ -6,53 +6,52 @@ import { RoadmapSection } from '~/types/roadmap';
 export const roadmap: IndexedObject<RoadmapSection[]> = {
 	current: [
 		{
-			version: '2.7.0',
-			date: 'Septembre 2022',
+			version: '2.8.0',
+			date: 'Novembre 2022',
 			description: 'Mise à jour de composants et complétion de la documentation.',
 			items: [
 				{
 					title: 'Mise à jour de la typographie',
-					description: 'Mise à jour des règles typographiques et des typographies utilisées.',
-					label: LabelMappingEnum.REFACTORING,
-					issue: 1794
+					description: 'Intégration des nouveaux styles typographiques.',
+					label: LabelMappingEnum.NEW,
+					issue: 2125
 				},
 				{
-					title: 'Guide sur Vue i18n',
-					description: 'Ajout d’un guide sur la gestion des textes avec Vue i18n.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 2209
+					title: 'Nouveau composant filtre',
+					description: 'Ajout du nouveau composant filtre.',
+					label: LabelMappingEnum.NEW,
+					issue: 2287
 				},
 				{
-					title: 'Guide sur la gestion des droits',
-					description: 'Ajout d’un guide sur la gestion des droits avec Vue Browser Acl.',
+					title: 'Classes de couleur',
+					description: 'Documentation de l’utilisation des classes de couleur.',
 					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1690
-				},
-				{
-					title: 'Guide sur les tests unitaires',
-					description: 'Ajout d’un guide sur la rédaction des tests unitaires.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 2136
-				},
-				{
-					title: 'Documentation du module de notification',
-					description: 'Documentation du module Vuex de notification.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 2052
+					issue: 2261
 				}
 			]
-		}
-	],
-	next: [
+		},
 		{
 			version: '3.0.0',
-			date: 'À partir de septembre 2022',
+			date: 'À partir de novembre 2022',
 			description: 'Migration vers Vue.js 3 : réécriture des composants avec l’API de composition, mise à jour du Starter Kit et modifications majeures.',
 			items: [
 				{
-					title: 'Étude sur le nouveau Starter Kit',
-					description: 'Étude sur les nouveautés et modifications comprises dans le nouveau Starter Kit.',
-					label: LabelMappingEnum.NEW
+					title: 'RFC Nuxt',
+					description: 'Étude sur l’utilisation de Nuxt pour le Starter Kit.',
+					label: LabelMappingEnum.NEW,
+					issue: 2269
+				},
+				{
+					title: 'RFC sur la syntaxe des composants',
+					description: 'Étude sur la nouvelle syntaxe des composants.',
+					label: LabelMappingEnum.NEW,
+					issue: 2270
+				},
+				{
+					title: 'RFC sur Vue i18n',
+					description: 'Étude sur l’utilisation de Vue i18n.',
+					label: LabelMappingEnum.NEW,
+					issue: 2271
 				},
 				{
 					title: 'Nouveau Starter Kit',

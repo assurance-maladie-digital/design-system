@@ -37,6 +37,7 @@
   - **guides:** Ajout d'un guide sur la gestion des textes ([#2249](https://github.com/assurance-maladie-digital/design-system/pull/2249)) ([aa68e83](https://github.com/assurance-maladie-digital/design-system/commit/aa68e83496706fe3b2a929fc240099ebc4c89970))
   - **guides:** Ajout d'un guide sur les tests unitaires ([#2179](https://github.com/assurance-maladie-digital/design-system/pull/2179)) ([dc583a4](https://github.com/assurance-maladie-digital/design-system/commit/dc583a47cda1f576e88b621018f41226ecce63ff))
   - **guides:** Ajout d'un guide sur la gestion des droits ([#2236](https://github.com/assurance-maladie-digital/design-system/pull/2236)) ([cb86a8a](https://github.com/assurance-maladie-digital/design-system/commit/cb86a8a8c6f365d79b60c2031fdb293e2f081201))
+  - **roadmap:** Mise à jour de la page ([#2366](https://github.com/assurance-maladie-digital/design-system/pull/2366))
 
 ### Interne
 
@@ -67,7 +68,7 @@
   - **@vue/test-utils:** Mise à jour vers la `v1.3.2` ([#2359](https://github.com/assurance-maladie-digital/design-system/pull/2359)) ([26fcb13](https://github.com/assurance-maladie-digital/design-system/commit/26fcb138fbf46361d0f30962ead3d881a190b98c))
   - **eslint-plugin-vue:** Mise à jour vers la `v9.7.0` ([#2360](https://github.com/assurance-maladie-digital/design-system/pull/2360)) ([fa369d0](https://github.com/assurance-maladie-digital/design-system/commit/fa369d023cff1b32b173cb9fd7a5de49e3605710))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.42.0` ([#2361](https://github.com/assurance-maladie-digital/design-system/pull/2361)) ([c5e263d](https://github.com/assurance-maladie-digital/design-system/commit/c5e263df09511c62ace6d832ae6e3e6450e41602))
-  - **babel-loader:** Mise à jour vers la `v8.3.0` ([#2364](https://github.com/assurance-maladie-digital/design-system/pull/2364))
+  - **babel-loader:** Mise à jour vers la `v8.3.0` ([#2364](https://github.com/assurance-maladie-digital/design-system/pull/2364)) ([a1b9328](https://github.com/assurance-maladie-digital/design-system/commit/a1b932899b326068bc5eddfdb467faa91a3ddcce))
 
 ## v2.6.0
 
