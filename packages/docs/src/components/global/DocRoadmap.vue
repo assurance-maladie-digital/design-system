@@ -30,7 +30,7 @@
 		get sections() {
 			const { current, next } = roadmap;
 
-			return [
+			const sections = [
 				{
 					label: 'En cours',
 					items: current
@@ -40,6 +40,8 @@
 					items: next
 				}
 			];
+
+			return sections.filter((section) => Boolean(section.items));
 		}
 	}
 </script>
