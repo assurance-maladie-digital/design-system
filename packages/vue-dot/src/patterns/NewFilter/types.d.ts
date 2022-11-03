@@ -12,5 +12,6 @@ export interface FilterItem {
 	}[];
 	value: any;
 	defaultValue: any;
-	miseEnForm?: (value: unknown) => string;
+	formatting?: (value: unknown) => string;
+	style: string;
 }
