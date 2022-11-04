@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **@vue/test-utils:** Mise à jour vers la `v1.3.3` ([#2367](https://github.com/assurance-maladie-digital/design-system/pull/2367))
+
 ## v2.7.0
 
 **Version publiée le 04/11/2022.**
@@ -54,7 +61,7 @@ Cette version comporte l'ajout de la prévisualisation des fichiers avant valida
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.18` ([#2344](https://github.com/assurance-maladie-digital/design-system/pull/2344)) ([ef51873](https://github.com/assurance-maladie-digital/design-system/commit/ef51873bead18367e7bef6a07856b74d3944287a))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2369](https://github.com/assurance-maladie-digital/design-system/pull/2369))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2369](https://github.com/assurance-maladie-digital/design-system/pull/2369)) ([e874945](https://github.com/assurance-maladie-digital/design-system/commit/e874945a437e502cbd59aace13cc179b8f889ef2))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.8` ([#2288](https://github.com/assurance-maladie-digital/design-system/pull/2288)) ([d8d2f4e](https://github.com/assurance-maladie-digital/design-system/commit/d8d2f4e78a9b15e1c19338b7e4dcb94b0219b601))
