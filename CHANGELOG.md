@@ -1,4 +1,8 @@
-## Non publié
+## v2.7.0
+
+**Version publiée le 04/11/2022.**
+
+Cette version comporte l'ajout de la prévisualisation des fichiers avant validation dans le composant `UploadWorkflow`, des correctifs sur l'ensemble des packages et la complétion de la documentation.
 
 ### Vue Dot
 
@@ -31,7 +35,7 @@
 
 - ♻️ **Refactoring**
   - **guides:** Mise à jour du guide sur la gestion des textes ([#2313](https://github.com/assurance-maladie-digital/design-system/pull/2313)) ([22db191](https://github.com/assurance-maladie-digital/design-system/commit/22db19123a3390f41549593c345cd34650bcdc74))
-  - **introduction:** Mise à jour de l'équipe ([#2368](https://github.com/assurance-maladie-digital/design-system/pull/2368))
+  - **introduction:** Mise à jour de l'équipe ([#2368](https://github.com/assurance-maladie-digital/design-system/pull/2368)) ([e85d470](https://github.com/assurance-maladie-digital/design-system/commit/e85d470e551981162352f770ec72be37f3f49efe))
 
 - 📝 **Documentation**
   - **global:** Ajout de la page *Module de notification* ([#2237](https://github.com/assurance-maladie-digital/design-system/pull/2237)) ([f41e886](https://github.com/assurance-maladie-digital/design-system/commit/f41e886398437d85d4f3b1707069b79c4647c6ee))
@@ -48,6 +52,9 @@
 - 🔧 **Configuration**
   - **ci:** Mise à jour de `codecov` vers la `v3.2.4` ([#2342](https://github.com/assurance-maladie-digital/design-system/pull/2342)) ([cb9dd9c](https://github.com/assurance-maladie-digital/design-system/commit/cb9dd9c0d63b4e986539f6281152de04712e4a62))
   - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.18` ([#2344](https://github.com/assurance-maladie-digital/design-system/pull/2344)) ([ef51873](https://github.com/assurance-maladie-digital/design-system/commit/ef51873bead18367e7bef6a07856b74d3944287a))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2369](https://github.com/assurance-maladie-digital/design-system/pull/2369))
 
 - ⬆️ **Dépendances**
   - **vue-cli-plugin-vuetify:** Mise à jour vers la `v2.5.8` ([#2288](https://github.com/assurance-maladie-digital/design-system/pull/2288)) ([d8d2f4e](https://github.com/assurance-maladie-digital/design-system/commit/d8d2f4e78a9b15e1c19338b7e4dcb94b0219b601))
