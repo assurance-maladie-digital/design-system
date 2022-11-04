@@ -1,40 +1,40 @@
 {
-	"name": "@cnamts/design-tokens",
-	"version": "2.6.0",
-	"description": "Design Tokens for the French Health Insurance",
-	"keywords": [
-		"cnam",
-		"design-tokens"
-	],
-	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
-	"bugs": {
-		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"license": "MIT",
-	"author": {
-		"name": "CNAM",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"files": [
-		"dist/*",
-		"src/*",
-		"*.ts",
-		"*.scss"
-	],
-	"main": "./dist/tokens.js",
-	"module": "./src/tokens.ts",
-	"scripts": {
-		"pre-commit": "lint-staged",
-		"build": "ts-node --project tsconfig.json --files scripts/build",
-		"lint": "eslint **/*.ts --fix",
-		"test": "jest"
-	},
-	"devDependencies": {
-		"@cnamts/eslint-config": "^2.6.0",
-		"@cnamts/shared": "^2.6.0"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@cnamts/design-tokens",
+  "version": "2.7.0",
+  "description": "Design Tokens for the French Health Insurance",
+  "keywords": [
+    "cnam",
+    "design-tokens"
+  ],
+  "homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+  "bugs": {
+    "url": "https://github.com/assurance-maladie-digital/design-system/issues",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "CNAM",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.ts",
+    "*.scss"
+  ],
+  "main": "./dist/tokens.js",
+  "module": "./src/tokens.ts",
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "build": "ts-node --project tsconfig.json --files scripts/build",
+    "lint": "eslint **/*.ts --fix",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@cnamts/eslint-config": "^2.7.0",
+    "@cnamts/shared": "^2.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

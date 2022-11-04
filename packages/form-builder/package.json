@@ -1,56 +1,56 @@
 {
-	"name": "@cnamts/form-builder",
-	"version": "2.6.0",
-	"description": "FormBuilder for the French Health Insurance",
-	"keywords": [
-		"cnam",
-		"vue",
-		"form-builder"
-	],
-	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
-	"bugs": {
-		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"license": "MIT",
-	"author": {
-		"name": "CNAM",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"files": [
-		"dist/*",
-		"src/*",
-		"types/*"
-	],
-	"main": "./dist/form-builder.common.js",
-	"module": "./src/index.ts",
-	"types": "./types/index.d.ts",
-	"scripts": {
-		"post-install": "ts-node --project tsconfig.json --files scripts/post-install",
-		"pre-commit": "lint-staged",
-		"dev": "vue-cli-service serve",
-		"build": "ts-node --project tsconfig.json --files scripts/build",
-		"lint": "vue-cli-service lint",
-		"test": "vue-cli-service test:unit --runInBand"
-	},
-	"peerDependencies": {
-		"@cnamts/vue-dot": "^2.5.0",
-		"vue": "^2.7.0",
-		"vuetify": "^2.3.0"
-	},
-	"devDependencies": {
-		"@cnamts/eslint-config-vue": "^2.6.0",
-		"@cnamts/shared": "^2.6.0",
-		"@cnamts/vue-dot": "^2.6.0",
-		"@vue/cli-plugin-babel": "4.5.19",
-		"@vue/cli-plugin-eslint": "4.5.19",
-		"@vue/cli-plugin-typescript": "4.5.19",
-		"@vue/cli-plugin-unit-jest": "4.5.19",
-		"@vue/cli-service": "4.5.19",
-		"vue-cli-plugin-vuetify": "2.5.8",
-		"vuetify-loader": "1.9.0"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@cnamts/form-builder",
+  "version": "2.7.0",
+  "description": "FormBuilder for the French Health Insurance",
+  "keywords": [
+    "cnam",
+    "vue",
+    "form-builder"
+  ],
+  "homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+  "bugs": {
+    "url": "https://github.com/assurance-maladie-digital/design-system/issues",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "CNAM",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "types/*"
+  ],
+  "main": "./dist/form-builder.common.js",
+  "module": "./src/index.ts",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "post-install": "ts-node --project tsconfig.json --files scripts/post-install",
+    "pre-commit": "lint-staged",
+    "dev": "vue-cli-service serve",
+    "build": "ts-node --project tsconfig.json --files scripts/build",
+    "lint": "vue-cli-service lint",
+    "test": "vue-cli-service test:unit --runInBand"
+  },
+  "peerDependencies": {
+    "@cnamts/vue-dot": "^2.5.0",
+    "vue": "^2.7.0",
+    "vuetify": "^2.3.0"
+  },
+  "devDependencies": {
+    "@cnamts/eslint-config-vue": "^2.7.0",
+    "@cnamts/shared": "^2.7.0",
+    "@cnamts/vue-dot": "^2.7.0",
+    "@vue/cli-plugin-babel": "4.5.19",
+    "@vue/cli-plugin-eslint": "4.5.19",
+    "@vue/cli-plugin-typescript": "4.5.19",
+    "@vue/cli-plugin-unit-jest": "4.5.19",
+    "@vue/cli-service": "4.5.19",
+    "vue-cli-plugin-vuetify": "2.5.8",
+    "vuetify-loader": "1.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
