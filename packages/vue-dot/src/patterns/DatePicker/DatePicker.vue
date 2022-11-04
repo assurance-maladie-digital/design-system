@@ -15,6 +15,7 @@
 				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error-messages="textFieldOptions.errorMessages || errorMessages"
 				:error.sync="internalErrorProp"
+				:disabled="disabled"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
 				@click.native="textFieldClicked"
@@ -29,6 +30,7 @@
 						v-show="showPrependIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
+						:disabled="disabled"
 						@click="menu = true"
 					>
 						<slot name="prepend-icon">
@@ -44,6 +46,7 @@
 						v-show="showAppendIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
+						:disabled="disabled"
 						@click="menu = true"
 					>
 						<slot name="append-icon">
@@ -121,6 +124,10 @@
 				default: false
 			},
 			textFieldActivator: {
+				type: Boolean,
+				default: false
+			},
+			disabled: {
 				type: Boolean,
 				default: false
 			},

@@ -6,7 +6,8 @@ import {
 	installGlobalPlugins,
 	installRouter,
 	mockTranslations,
-	mockVFormRef
+	mockVFormRef,
+	html
 } from '../';
 
 import { colorTheme } from '@cnamts/design-tokens';
@@ -165,5 +166,9 @@ describe('testUtils', () => {
 		expect($t('path.to.translation')).toBe('translation');
 		expect($t('path.to.translations')).toBe(translationsArrayMock);
 		expect($t('path.to.other.translation')).toBe('path.to.other.translation');
+	});
+
+	it('exposes the html function', () => {
+		expect(html).toBeDefined();
 	});
 });

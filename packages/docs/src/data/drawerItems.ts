@@ -388,6 +388,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'CustomIcon',
 				to: '/composants-techniques/custom-icon'
+			},
+			{
+				title: 'Module de notification',
+				to: '/composants-techniques/module-notification'
 			}
 		]
 	},
@@ -412,6 +416,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
+				title: 'Gestion des textes',
+				to: '/guides/gestion-textes'
+			},
+			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
 			},
@@ -428,6 +436,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/tests-e2e'
 			},
 			{
+				title: 'Tests unitaires',
+				to: '/guides/tests-unitaires'
+			},
+			{
 				title: 'Tableau avec pagination',
 				to: '/guides/tableau-pagination'
 			},
@@ -442,6 +454,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation des icônes',
 				to: '/guides/utilisation-icones'
+			},
+			{
+				title: 'Gestion des droits',
+				to: '/guides/gestion-droits'
 			}
 		]
 	},

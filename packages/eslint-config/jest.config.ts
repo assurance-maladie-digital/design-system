@@ -22,6 +22,7 @@ const config: Config.InitialOptions = {
 	collectCoverageFrom: [
 		'*.js',
 		'!.eslintrc.js',
+		'!lint-staged.config.js',
 		'!**/node_modules/**',
 		'!**/*.d.ts'
 	]
