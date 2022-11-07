@@ -3,12 +3,13 @@
 ### Vue Dot
 
 - 🐛 **Corrections de bugs**
-  - **UploadWorkflow:** Correction de la mise à jour différée de la liste des fichiers ([#2372](https://github.com/assurance-maladie-digital/design-system/pull/2372))
+  - **UploadWorkflow:** Correction de la mise à jour différée de la liste des fichiers ([#2372](https://github.com/assurance-maladie-digital/design-system/pull/2372)) ([c253090](https://github.com/assurance-maladie-digital/design-system/commit/c253090bf7343cdfc88c8d369125053fb99d64a4))
 
 ### Interne
 
 - ⬆️ **Dépendances**
   - **@vue/test-utils:** Mise à jour vers la `v1.3.3` ([#2367](https://github.com/assurance-maladie-digital/design-system/pull/2367)) ([a907027](https://github.com/assurance-maladie-digital/design-system/commit/a9070273d05f06725689c1bd16ddeb43b0c467c5))
+  - **@babel/core:** Mise à jour vers la `v7.20.2` ([#2370](https://github.com/assurance-maladie-digital/design-system/pull/2370))
 
 ## v2.7.0
 
