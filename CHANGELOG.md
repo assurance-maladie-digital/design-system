@@ -1,4 +1,8 @@
-## Non publié
+## v2.7.1
+
+**Version publiée le 07/11/2022.**
+
+Cette version comporte un correctif sur le composant `UploadWorkflow`.
 
 ### Vue Dot
 
@@ -10,7 +14,7 @@
 - ⬆️ **Dépendances**
   - **@vue/test-utils:** Mise à jour vers la `v1.3.3` ([#2367](https://github.com/assurance-maladie-digital/design-system/pull/2367)) ([a907027](https://github.com/assurance-maladie-digital/design-system/commit/a9070273d05f06725689c1bd16ddeb43b0c467c5))
   - **@babel/core:** Mise à jour vers la `v7.20.2` ([#2370](https://github.com/assurance-maladie-digital/design-system/pull/2370)) ([554b20f](https://github.com/assurance-maladie-digital/design-system/commit/554b20fbaff4e4d65dd7709eb5f82bcfb829aa7e))
-  - **netlify-cli:** Mise à jour vers la `v12.1.0` ([#2371](https://github.com/assurance-maladie-digital/design-system/pull/2371))
+  - **netlify-cli:** Mise à jour vers la `v12.1.0` ([#2371](https://github.com/assurance-maladie-digital/design-system/pull/2371)) ([798244b](https://github.com/assurance-maladie-digital/design-system/commit/798244be38ce33e680d3c5ce9381fa58ed053c4f))
 
 ## v2.7.0
 
