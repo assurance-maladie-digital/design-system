@@ -32,16 +32,15 @@ const MixinsDeclaration = mixins(Props, UpdateFileModel);
 	watch: {
 		value: {
 			handler(): void {
-				if (this.fileListItems === null && !this.value.length) {
-					this.resetInternalModel();
-				}
-
-				if (this.internalFileListItems.length) {
-					this.initFileList(this.internalFileListItems);
-				}
+				this.setInternalModel();
 			},
 			immediate: true,
 			deep: true
+		},
+		fileListItems: {
+			handler(): void {
+				this.setInternalModel();
+			}
 		}
 	}
 })
@@ -59,7 +58,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	selectedItem = '';
 
-	internalFileListItems = this.fileListItems ?? this.value;
+	internalFileListItems = [] as FileListItem[];
 
 	get singleMode(): boolean {
 		return this.internalFileListItems.length === 1;
@@ -78,6 +77,18 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		});
 
 		return items;
+	}
+
+	setInternalModel(): void {
+		this.internalFileListItems = this.fileListItems ?? this.value;
+
+		if (this.fileListItems === null && !this.value.length) {
+			this.resetInternalModel();
+		}
+
+		if (this.internalFileListItems.length) {
+			this.initFileList(this.internalFileListItems);
+		}
 	}
 
 	setFileInList(): void {
