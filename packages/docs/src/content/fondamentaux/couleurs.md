@@ -4,12 +4,20 @@ description: Les couleurs contribuent à l’identification de nos applications 
 ---
 
 ## Utilisation
-Chaque palette de couleur est composée de 10 nuances de couleurs. Les nuances de couleurs sont nommées en fonction de leur luminosité. Les nuances de couleurs les plus claires sont nommées `lighten` et les nuances de couleurs les plus foncées sont nommées `darken`. Les nuances de couleurs intermédiaires sont nommées `base` et `darken20`.
+
+Chaque couleur `base` comporte 10 nuances qui sont nommées en fonction de leur luminosité. 
+Les nuances de couleurs les plus claires sont nommées `lighten` et les nuances de couleurs les plus foncées sont nommées `darken`.
 
 ```html
-<div class="am-blue text-center">
-  <span class="am-blue-lighten-97--text">Contenu</span>
+<div class="am-blue">
+  <p class="am-blue-lighten-97--text">
+    Contenu
+  </p>
 </div>
 ```
-## Palettes de couleur
+
+Dans le code ci-dessus la classe `am-blue` définit la couleur de fond de la `<div>` et la classe `am-blue-lighten-97--text` la couleur du texte pour l'élément `<p>`.
+
+## Palette de couleur
+
 <doc-color-palette></doc-color-palette>
