@@ -1,3 +1,10 @@
+## Non publié
+
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction du hook de qualité ne bloquant pas les warnings ([#2376](https://github.com/assurance-maladie-digital/design-system/pull/2376))
+
 ## v2.7.1
 
 **Version publiée le 07/11/2022.**
