@@ -10,13 +10,18 @@ Les nuances de couleurs les plus claires sont nommées `lighten` et les nuances 
 
 ```html
 <div class="am-blue">
-  <p class="am-blue-lighten-97--text">
-    Contenu
-  </p>
+	<p class="am-blue-lighten-97--text">
+		Contenu
+	</p>
 </div>
 ```
 
-Dans le code ci-dessus la classe `am-blue` définit la couleur de fond de la `<div>` et la classe `am-blue-lighten-97--text` la couleur du texte pour l'élément `<p>`.
+<doc-alert type="info">
+
+Dans le code ci-dessus la classe `am-blue` définit la couleur de fond de la `<div>` et la classe `am-blue-lighten-97--
+text` la couleur du texte pour l'élément `<p>`.
+
+</doc-alert>
 
 ## Palette de couleur
 
