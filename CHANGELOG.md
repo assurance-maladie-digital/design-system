@@ -13,7 +13,8 @@
 ### Interne
 
 - ⬆️ **Dépendances**
-  - **lerna:** Mise à jour vers la `v6.0.3` ([#2374](https://github.com/assurance-maladie-digital/design-system/pull/2374))
+  - **lerna:** Mise à jour vers la `v6.0.3` ([#2374](https://github.com/assurance-maladie-digital/design-system/pull/2374)) ([c22fc27](https://github.com/assurance-maladie-digital/design-system/commit/c22fc279ac00d4660112f4330f561b0bc43d95fb))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.42.1` ([#2375](https://github.com/assurance-maladie-digital/design-system/pull/2375))
 
 ## v2.7.1
 
