@@ -5,6 +5,7 @@
 		:width="width"
 		:persistent="persistent"
 		class="vd-dialog-box"
+		aria-modal="true"
 	>
 		<VCard v-bind="options.card">
 			<VCardTitle v-bind="options.cardTitle">
@@ -106,11 +107,18 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component({
+	@Component<DialogBox>({
 		inheritAttrs: false,
 		model: {
 			prop: 'value',
 			event: 'change'
+		},
+		watch: {
+			dialog(value: boolean) {
+				if (value) {
+					this.setFocus();
+				}
+			}
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
@@ -128,6 +136,30 @@
 
 		close(): void {
 			this.$emit('change', false);
+		}
+
+		setFocus(): void {
+			this.$nextTick(() => {
+				// to make NodeList works
+				// eslint-disable-next-line no-undef
+				const focusable = this.$el.querySelectorAll('button, input, select, textarea') as NodeListOf<HTMLElement>;
+
+				if (focusable.length) {
+					for (let i = 0; i < focusable.length; i++) {
+						// if we use Tab key, we can focus on targeted elements
+						focusable[i].addEventListener('keydown', (e: KeyboardEvent) => {
+							if (e.key === 'Tab') {
+								e.preventDefault();
+								if (i === focusable.length - 1) {
+									focusable[0].focus();
+								} else {
+									focusable[i + 1].focus();
+								}
+							}
+						});
+					}
+				}
+			});
 		}
 	}
 </script>
