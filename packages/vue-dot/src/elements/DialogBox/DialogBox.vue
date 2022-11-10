@@ -146,14 +146,22 @@
 
 				if (focusable.length) {
 					for (let i = 0; i < focusable.length; i++) {
-						// if we use Tab key, we can focus on targeted elements
 						focusable[i].addEventListener('keydown', (e: KeyboardEvent) => {
-							if (e.key === 'Tab') {
+							// if we use Tab key, we can focus on next element
+							if (e.key === 'Tab' && !e.shiftKey) {
 								e.preventDefault();
 								if (i === focusable.length - 1) {
 									focusable[0].focus();
 								} else {
 									focusable[i + 1].focus();
+								}
+							// if we use Tab key + shift, we can focus on previous element
+							} else if (e.key === 'Tab' && e.shiftKey) {
+								e.preventDefault();
+								if (i === 0) {
+									focusable[focusable.length - 1].focus();
+								} else {
+									focusable[i - 1].focus();
 								}
 							}
 						});
