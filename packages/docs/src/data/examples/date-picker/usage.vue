@@ -23,7 +23,8 @@
 				'appendIcon',
 				'textFieldActivator',
 				'showWeekends',
-				'birthdate'
+				'birthdate',
+				'disabled'
 			]
 		};
 

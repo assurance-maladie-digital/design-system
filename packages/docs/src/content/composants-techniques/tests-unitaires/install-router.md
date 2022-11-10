@@ -1,6 +1,6 @@
 ---
 title: installRouter
-description: La fonction `installRouter` permet d’ajouter une instance du router à une instance Vue.
+description: La fonction `installRouter` permet de configurer Vue Router sur une instance Vue.
 ---
 
 <doc-tabs>
