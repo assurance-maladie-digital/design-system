@@ -181,6 +181,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/tableaux/paginated-table'
 					},
 					{
+						title: 'NewFilter',
+						to: '/composants/tableaux/new-filter'
+					},
+					{
 						title: 'FilterModule',
 						to: '/composants/tableaux/filter-module'
 					},
