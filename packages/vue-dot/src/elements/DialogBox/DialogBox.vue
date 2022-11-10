@@ -45,7 +45,6 @@
 				<slot name="actions">
 					<VBtn
 						v-bind="options.cancelBtn"
-						:aria-label="locales.cancelBtn"
 						@click="$emit('cancel')"
 					>
 						{{ cancelBtnText }}
@@ -53,7 +52,6 @@
 
 					<VBtn
 						v-bind="options.confirmBtn"
-						:aria-label="locales.confirmBtn"
 						@click="$emit('confirm')"
 					>
 						{{ confirmBtnText }}
@@ -119,7 +117,7 @@
 		watch: {
 			dialog(value: boolean) {
 				if (value) {
-					this.setFocus();
+					this.getDialogListeners();
 				}
 			}
 		}
@@ -141,36 +139,42 @@
 			this.$emit('change', false);
 		}
 
-		setFocus(): void {
+		getDialogListeners(): void {
 			this.$nextTick(() => {
-				// to make NodeList works
 				// eslint-disable-next-line no-undef
-				const focusable = this.$el.querySelectorAll('button, input, select, textarea') as NodeListOf<HTMLElement>;
+				const elements = this.$el.querySelectorAll('a[href], button, input, textarea, select, details') as NodeListOf<HTMLElement>;
 
-				if (focusable.length) {
-					for (let i = 0; i < focusable.length; i++) {
-						focusable[i].addEventListener('keydown', (e: KeyboardEvent) => {
-							// if we use Tab key, we can focus on next element
-							if (e.key === 'Tab' && !e.shiftKey) {
-								e.preventDefault();
-								if (i === focusable.length - 1) {
-									focusable[0].focus();
-								} else {
-									focusable[i + 1].focus();
-								}
-							// if we use Tab key + shift, we can focus on previous element
-							} else if (e.key === 'Tab' && e.shiftKey) {
-								e.preventDefault();
-								if (i === 0) {
-									focusable[focusable.length - 1].focus();
-								} else {
-									focusable[i - 1].focus();
-								}
-							}
-						});
-					}
+				if (!elements.length) {
+					return;
 				}
+
+				this.setFocus(elements);
 			});
+		}
+
+		// eslint-disable-next-line no-undef
+		setFocus(els: NodeListOf<HTMLElement>): void {
+			for (let i = 0; i < els.length; i++) {
+				els[i].addEventListener('keydown', (e: KeyboardEvent) => {
+					// if we use Tab key, we can focus on next element
+					if (e.key === 'Tab' && !e.shiftKey) {
+						e.preventDefault();
+						if (i === els.length - 1) {
+							els[0].focus();
+						} else {
+							els[i + 1].focus();
+						}
+					// if we use Tab key + shift, we can focus on previous element
+					} else if (e.key === 'Tab' && e.shiftKey) {
+						e.preventDefault();
+						if (i === 0) {
+							els[els.length - 1].focus();
+						} else {
+							els[i - 1].focus();
+						}
+					}
+				});
+			}
 		}
 	}
 </script>
