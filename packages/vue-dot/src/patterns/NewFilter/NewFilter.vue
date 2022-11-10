@@ -37,7 +37,7 @@
 							</v-chip>
 							<span>{{ filter.label }}</span>
 							<VIcon
-								:dense="filters[index].icon"
+								:dense="filters[index].icon ? true : false"
 								:class="{ 'ml-1' : filters[index].icon}"
 							>
 								{{ filters[index].icon ? filters[index].icon : downIcon }}
@@ -45,9 +45,9 @@
 						</VBtn>
 					</template>
 					<div
-						class="mt-2 px-4 white"
+						class="px-4 white pt-3"
 					>
-						<span class="description-text-filter mb-2">{{ filter.description }}</span>
+						<span class="description-text-filter mb-2 mt-4">{{ filter.description }}</span>
 						<ChipsList
 							v-if="filters[index].chips.length"
 							:chips-limit="chipsLimit"
@@ -65,14 +65,15 @@
 						/>
 					</div>
 				</VMenu>
-				<v-btn
+				<VBtn
+					v-if="!hideReset"
 					text
 					small
 					color="indigo"
 					@click.stop="resetAllFilters"
 				>
 					Réinitialiser
-				</v-btn>
+				</VBtn>
 			</div>
 
 			<!-- mode with sidebar -->
@@ -225,6 +226,10 @@
 	const Props = Vue.extend({
 		props: {
 			simpleMode: {
+				type: Boolean,
+				default: false
+			},
+			hideReset: {
 				type: Boolean,
 				default: false
 			},
