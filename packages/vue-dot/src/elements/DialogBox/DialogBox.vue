@@ -13,6 +13,7 @@
 					<h2
 						v-if="title"
 						class="text-h6 font-weight-bold"
+						:aria-label="title"
 					>
 						{{ title }}
 					</h2>
@@ -44,6 +45,7 @@
 				<slot name="actions">
 					<VBtn
 						v-bind="options.cancelBtn"
+						:aria-label="locales.cancelBtn"
 						@click="$emit('cancel')"
 					>
 						{{ cancelBtnText }}
@@ -51,6 +53,7 @@
 
 					<VBtn
 						v-bind="options.confirmBtn"
+						:aria-label="locales.confirmBtn"
 						@click="$emit('confirm')"
 					>
 						{{ confirmBtnText }}
