@@ -1,5 +1,5 @@
 <template>
-	<div class="new-filter">
+	<div class="vd-new-filter">
 		<!-- simple mode -->
 		<div>
 			<div
@@ -72,7 +72,7 @@
 					color="indigo"
 					@click.stop="resetAllFilters"
 				>
-					Réinitialiser
+					{{ locales.reset }}
 				</VBtn>
 			</div>
 
@@ -194,7 +194,7 @@
 							color="indigo"
 							@click="closeSidebar"
 						>
-							Fermer
+							{{ locales.close }}
 						</v-btn>
 						<v-btn
 							:class="isMobile ? 'mb-2 mt-2' : 'button-complex-mode'"
@@ -204,7 +204,7 @@
 							color="indigo"
 							@click.stop="resetAllFilters"
 						>
-							Réinitialiser
+							{{ locales.reset }}
 						</v-btn>
 					</div>
 				</VNavigationDrawer>

@@ -4,6 +4,7 @@ export interface FilterItem {
 	label: string;
 	name: string;
 	description: string;
+	showAll: boolean;
 	selection: unknown[];
 	chips: {
 		value: unknown;
