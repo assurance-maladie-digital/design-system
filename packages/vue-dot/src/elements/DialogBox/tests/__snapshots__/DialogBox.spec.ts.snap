@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DialogBox renders correctly 1`] = `
-<vdialog-stub contentclass="" opendelay="0" closedelay="0" openonclick="true" origin="center center" retainfocus="true" transition="dialog-transition" width="800px" class="vd-dialog-box">
+<vdialog-stub contentclass="" opendelay="0" closedelay="0" openonclick="true" origin="center center" retainfocus="true" transition="dialog-transition" width="800px" aria-modal="true" class="vd-dialog-box">
   <vcard-stub loaderheight="4" tag="div" class="pa-6">
     <vcardtitle-stub tag="div" class="d-flex align-start flex-nowrap pa-0 mb-6">
       <!---->
@@ -14,10 +14,10 @@ exports[`DialogBox renders correctly 1`] = `
     </vcardtitle-stub>
     <div class="vd-dialog-box-actions-ctn d-flex flex-wrap mt-6">
       <vspacer-stub tag="div"></vspacer-stub>
-      <vbtn-stub color="primary" tag="button" activeclass="" text="true" type="button" class="text-none">
+      <vbtn-stub color="primary" tag="button" activeclass="" text="true" type="button" aria-label="Annuler" class="text-none">
         Annuler
       </vbtn-stub>
-      <vbtn-stub color="primary" tag="button" activeclass="" type="button" class="text-none ml-4">
+      <vbtn-stub color="primary" tag="button" activeclass="" type="button" aria-label="Valider" class="text-none ml-4">
         Valider
       </vbtn-stub>
     </div>
