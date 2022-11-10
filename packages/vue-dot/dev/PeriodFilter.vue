@@ -32,14 +32,14 @@
 		}
 	});
 
-	@Component<RangeFilter>({
+	@Component<PeriodFilter>({
 		watch: {
 			value(newValue: InternalValue) {
 				this.internalValue = newValue;
 			}
 		}
 	})
-	export default class RangeFilter extends Props {
+	export default class PeriodFilter extends Props {
 		internalValue: InternalValue = this.value;
 
 		emitChangeEvent(): void {
