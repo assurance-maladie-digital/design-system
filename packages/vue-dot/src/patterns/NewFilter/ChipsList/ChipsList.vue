@@ -1,6 +1,6 @@
 <template>
 	<v-chip-group
-		class="mb-4"
+		class="vd-chips-list mb-4"
 		column
 	>
 		<v-chip
@@ -48,7 +48,7 @@
 			color="primary"
 			@click.stop="resetFilter"
 		>
-			Réinitialiser
+			{{ locales.reset }}
 		</v-btn>
 	</v-chip-group>
 </template>
@@ -56,6 +56,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+	import { locales } from '../locales';
 	import { PropType } from 'vue/types/v3-component-props';
 	import { FilterItem } from '../types';
 	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
@@ -77,6 +78,7 @@
 
 	})
 	export default class ChipsList extends Props {
+		locales = locales;
 		deleteIcon = mdiWindowClose;
 		upIcon = mdiChevronUp;
 		downIcon = mdiChevronDown;

@@ -4,18 +4,22 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import NewFilter from '..';
+import ChipsList from '..';
 
 let wrapper: Wrapper<Vue>;
 
-describe('FilterModule', () => {
+describe('NewFilter', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(NewFilter, {
+		wrapper = mountComponent(ChipsList, {
 			propsData: {
-				filters: []
+				chipsLimit: 4,
+				filter: {
+					name: 'nom',
+					label: 'Nom',
+					chips: []
+				}
 			}
 		});
-
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
