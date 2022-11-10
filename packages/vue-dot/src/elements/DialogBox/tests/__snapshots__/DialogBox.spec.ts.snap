@@ -14,10 +14,10 @@ exports[`DialogBox renders correctly 1`] = `
     </vcardtitle-stub>
     <div class="vd-dialog-box-actions-ctn d-flex flex-wrap mt-6">
       <vspacer-stub tag="div"></vspacer-stub>
-      <vbtn-stub color="primary" tag="button" activeclass="" text="true" type="button" aria-label="Annuler" class="text-none">
+      <vbtn-stub color="primary" tag="button" activeclass="" text="true" type="button" class="text-none">
         Annuler
       </vbtn-stub>
-      <vbtn-stub color="primary" tag="button" activeclass="" type="button" aria-label="Valider" class="text-none ml-4">
+      <vbtn-stub color="primary" tag="button" activeclass="" type="button" class="text-none ml-4">
         Valider
       </vbtn-stub>
     </div>
