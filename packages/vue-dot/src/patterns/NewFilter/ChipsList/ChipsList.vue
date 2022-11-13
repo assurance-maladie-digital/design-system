@@ -74,9 +74,7 @@
 		}
 	});
 
-	@Component<ChipsList>({
-
-	})
+	@Component
 	export default class ChipsList extends Props {
 		locales = locales;
 		deleteIcon = mdiWindowClose;
