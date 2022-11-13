@@ -205,4 +205,9 @@
 .button-complex-mode {
 	width: 49%;
 }
+.v-navigation-drawer__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 </style>

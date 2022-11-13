@@ -262,11 +262,6 @@
 	.v-navigation-drawer {
 		box-shadow: -3px 3px 5px #0000001f;
 	}
-	.v-navigation-drawer__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
 }
 .description-text-filter {
 	color: $vd-grey-lighten-20;
