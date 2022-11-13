@@ -1,0 +1,208 @@
+<template>
+	<div class="vd-filters-side-bar">
+		<v-scroll-x-transition>
+			<VNavigationDrawer
+				permanent
+				absolute
+				right
+				:elevation="6"
+				class="pt-2 d-flex flex-column justify-space-between"
+			>
+				<v-expansion-panels
+					accordion
+					flat
+					class="expansion-panels"
+				>
+					<v-expansion-panel
+						v-for="(filter, index) in filters"
+						:key="index"
+					>
+						<v-expansion-panel-header
+							class="d-block"
+						>
+							<div
+								class="header-title d-flex justify-space-between mt-3 mx-4"
+								:class="{
+									'mb-2' : !filters[index].chips.length
+								}"
+							>
+								<span>
+									{{ filter.label }}
+									<span v-if="filters[index].chips.length">
+										({{ filters[index].chips.length }})
+									</span>
+								</span>
+								<div>
+									<VIcon
+										id="up-icon"
+										class="header-title"
+									>
+										{{ upIcon }}
+									</VIcon>
+									<VIcon
+										id="down-icon"
+										class="header-title"
+									>
+										{{ downIcon }}
+									</VIcon>
+								</div>
+							</div>
+
+							<ChipsList
+								v-if="filters[index].chips.length"
+								class="ml-4"
+								:chips-limit="chipsLimit"
+								:filter="filters[index]"
+							/>
+						</v-expansion-panel-header>
+						<v-expansion-panel-content>
+							<span class="description-text-filter mb-2">{{ filter.description }}</span>
+							<div class="mt-4">
+								<slot
+									:on="{
+										change: event => onChange(event, filter),
+										input: event => $set(filter, 'value', event)
+									}"
+									:attrs="{
+										value: filter.value
+									}"
+									:name="`filter-${removeAccents(filter.name)}`"
+								/>
+							</div>
+						</v-expansion-panel-content>
+						<VDivider />
+					</v-expansion-panel>
+				</v-expansion-panels>
+
+				<!-- buttons -->
+				<div
+					class="px-5 mb-6 mt-10"
+					:class="isMobile ? '' : 'd-flex justify-center'"
+				>
+					<v-btn
+						:class="isMobile ? '' : 'mb-2 mr-4 button-complex-mode'"
+						:outlined="isMobile"
+						:text="!isMobile"
+						:block="isMobile"
+						small
+						color="indigo"
+						@click="closeSidebar"
+					>
+						{{ locales.close }}
+					</v-btn>
+					<v-btn
+						:class="isMobile ? 'mb-2 mt-2' : 'button-complex-mode'"
+						:block="isMobile"
+						outlined
+						small
+						color="indigo"
+						@click.stop="resetAllFilters"
+					>
+						{{ locales.reset }}
+					</v-btn>
+				</div>
+			</VNavigationDrawer>
+		</v-scroll-x-transition>
+	</div>
+</template>
+
+<script lang="ts">
+	import Vue from 'vue';
+	import Component from 'vue-class-component';
+	import ChipsList from '../ChipsList';
+
+	import { locales } from '../locales';
+	import { PropType } from 'vue/types/v3-component-props';
+	import { FilterItem } from '../types';
+	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
+
+	const Props = Vue.extend({
+		props: {
+			filters: {
+				type: Array as PropType<FilterItem[]>,
+				required: true
+			},
+			chipsLimit: {
+				type: Number,
+				required: true
+			}
+		}
+	});
+
+	@Component<FiltersSideBar>({
+		components: {
+			ChipsList,
+			FiltersSideBar
+		}
+	})
+	export default class FiltersSideBar extends Props {
+		locales = locales;
+		deleteIcon = mdiWindowClose;
+		upIcon = mdiChevronUp;
+		downIcon = mdiChevronDown;
+
+		get isMobile(): boolean {
+			return this.$vuetify.breakpoint.smAndDown;
+		}
+
+		removeAccents(str: string): string | undefined {
+			const newString = str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+			return newString;
+		}
+
+		closeSidebar(): void {
+			this.$emit('close-sidebar');
+		}
+
+		resetAllFilters(): void {
+			for (let index = 0; index < this.filters.length; index++) {
+				this.$set(this.filters[index], 'chips', []);
+			}
+			this.$emit('update:value', this.filters);
+		}
+
+	}
+</script>
+
+<style lang="scss">
+@import '@cnamts/design-tokens/dist/tokens';
+
+.v-navigation-drawer {
+	width: 480px !important;
+}
+.v-expansion-panel-header {
+	min-height: 0 !important;
+	padding: 2px;
+}
+.v-expansion-panel-header__icon {
+	display: none !important;
+}
+#up-icon {
+	display: inline;
+}
+#down-icon {
+	display: none;
+}
+.v-expansion-panel-header--active {
+	#up-icon {
+		display: none !important;
+	}
+	#down-icon {
+		display: inline !important;
+	}
+}
+.header-title {
+	font-weight: 500;
+	font-size: 16px;
+}
+.description-text-filter {
+	color: $vd-grey-lighten-20;
+	font-size: 14px !important;
+}
+.expansion-panels {
+	margin-left: 1px;
+}
+.button-complex-mode {
+	width: 49%;
+}
+</style>

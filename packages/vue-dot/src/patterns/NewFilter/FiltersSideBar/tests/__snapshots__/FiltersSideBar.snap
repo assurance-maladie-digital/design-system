@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginatedTable renders correctly 1`] = `<vdatatable-stub mobilebreakpoint="600" items="" options="[object Object]" customsort="[Function]" page="1" itemsperpage="10" groupby="" groupdesc="" customgroup="[Function]" locale="en-US" customfilter="[Function]" serveritemslength="0" itemkey="id" value="" expanded="" noresultstext="$vuetify.dataIterator.noResultsText" nodatatext="$vuetify.noDataText" loadingtext="$vuetify.dataIterator.loadingText" selectablekey="isSelectable" loaderheight="4" headers="" expandicon="$expand" itemclass=""></vdatatable-stub>`;
