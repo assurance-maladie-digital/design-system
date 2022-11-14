@@ -117,7 +117,7 @@
 		watch: {
 			dialog(value: boolean) {
 				if (value) {
-					this.getDialogListeners();
+					this.getDialogElements();
 				}
 			}
 		}
@@ -139,7 +139,7 @@
 			this.$emit('change', false);
 		}
 
-		getDialogListeners(): void {
+		getDialogElements(): void {
 			this.$nextTick(() => {
 				// eslint-disable-next-line no-undef
 				const elements = this.$el.querySelectorAll('a[href], button, input, textarea, select, details') as NodeListOf<HTMLElement>;
@@ -147,7 +147,6 @@
 				if (!elements.length) {
 					return;
 				}
-
 				this.setFocus(elements);
 			});
 		}
