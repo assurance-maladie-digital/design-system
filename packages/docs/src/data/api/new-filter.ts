@@ -16,6 +16,7 @@ export const api: Api = {
 	label: string;
 	name: string;
 	description: string;
+	icon: string;
 	selection: unknown[];
 	showAll: boolean;
 	chips: {

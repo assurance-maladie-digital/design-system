@@ -1,6 +1,6 @@
 <template>
 	<div class="vd-filters-side-bar">
-		<v-scroll-x-transition>
+		<VScrollXTransition>
 			<VNavigationDrawer
 				permanent
 				absolute
@@ -8,16 +8,16 @@
 				:elevation="6"
 				class="pt-2 d-flex flex-column justify-space-between"
 			>
-				<v-expansion-panels
+				<VExpansionPanels
 					accordion
 					flat
 					class="expansion-panels"
 				>
-					<v-expansion-panel
+					<VExpansionPanel
 						v-for="(filter, index) in filters"
 						:key="index"
 					>
-						<v-expansion-panel-header
+						<VExpansionPanelHeader
 							class="d-block"
 						>
 							<div
@@ -54,32 +54,25 @@
 								:chips-limit="chipsLimit"
 								:filter="filters[index]"
 							/>
-						</v-expansion-panel-header>
-						<v-expansion-panel-content>
+						</VExpansionPanelHeader>
+						<VExpansionPanelContent>
 							<span class="description-text-filter mb-2">{{ filter.description }}</span>
 							<div class="mt-4">
 								<slot
-									:on="{
-										change: event => onChange(event, filter),
-										input: event => $set(filter, 'value', event)
-									}"
-									:attrs="{
-										value: filter.value
-									}"
 									:name="`filter-${removeAccents(filter.name)}`"
 								/>
 							</div>
-						</v-expansion-panel-content>
+						</VExpansionPanelContent>
 						<VDivider />
-					</v-expansion-panel>
-				</v-expansion-panels>
+					</VExpansionPanel>
+				</VExpansionPanels>
 
 				<!-- buttons -->
 				<div
 					class="px-5 mb-6 mt-10"
 					:class="isMobile ? '' : 'd-flex justify-center'"
 				>
-					<v-btn
+					<VBtn
 						:class="isMobile ? '' : 'mb-2 mr-4 button-complex-mode'"
 						:outlined="isMobile"
 						:text="!isMobile"
@@ -89,8 +82,8 @@
 						@click="closeSidebar"
 					>
 						{{ locales.close }}
-					</v-btn>
-					<v-btn
+					</VBtn>
+					<VBtn
 						:class="isMobile ? 'mb-2 mt-2' : 'button-complex-mode'"
 						:block="isMobile"
 						outlined
@@ -99,20 +92,18 @@
 						@click.stop="resetAllFilters"
 					>
 						{{ locales.reset }}
-					</v-btn>
+					</VBtn>
 				</div>
 			</VNavigationDrawer>
-		</v-scroll-x-transition>
+		</VScrollXTransition>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 	import ChipsList from '../ChipsList';
-
 	import { locales } from '../locales';
-	import { PropType } from 'vue/types/v3-component-props';
 	import { FilterItem } from '../types';
 	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
 
