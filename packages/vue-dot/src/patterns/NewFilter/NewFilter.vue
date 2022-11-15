@@ -24,18 +24,18 @@
 							:outlined="!filters[index]?.chips.length"
 							v-on="on"
 						>
-							<v-chip
+							<VChip
 								v-if="filters[index]?.chips.length"
 								class="ml-n2 mr-2"
 								color="white"
 								small
 							>
 								<span
-									:class="!filters[index]?.chips.length === 0 ?? 'mb-2'"
+									:class="filters[index]?.chips.length !== 0 ?? 'mb-2'"
 								>
 									{{ filters[index]?.chips.length }}
 								</span>
-							</v-chip>
+							</VChip>
 							<span>{{ filter.label }}</span>
 							<VIcon
 								:dense="filters[index].icon ? true : false"
@@ -85,7 +85,7 @@
 				color="transparent"
 				@click="showSideBar = !showSideBar"
 			>
-				<v-chip
+				<VChip
 					v-if="filtersCount"
 					class="mr-2"
 					color="cyan-darken-40"
@@ -93,7 +93,7 @@
 					small
 				>
 					{{ filtersCount }}
-				</v-chip>
+				</VChip>
 				<span
 					class="mr-2 primary--text"
 				>
@@ -134,12 +134,10 @@
 </template>
 
 <script lang="ts">
-	//	eslint-disable max-lines
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 	import ChipsList from './ChipsList';
 	import FiltersSideBar from './FiltersSideBar';
-
 	import { FilterItem } from './types';
 	import { locales } from './locales';
 	import { mdiChevronUp, mdiChevronDown, mdiFilterVariant } from '@mdi/js';
@@ -212,6 +210,13 @@
 			this.showSideBar = false;
 		}
 
+		resetAllFilters(): void {
+			for (let index = 0; index < this.filters.length; index++) {
+				this.$set(this.filters[index], 'chips', []);
+			}
+			this.$emit('update:value', this.filters);
+		}
+
 		onChange(event: unknown, filter: FilterItem): void {
 			if (!event) {
 				return;
@@ -221,7 +226,7 @@
 				text: filter.formatting ? filter.formatting(event) : event,
 				value: event
 			};
-			let chips: any[] = [];
+			let chips: unknown[] = [];
 
 			const chipExist = filter.chips.some(chip => chip.value === newChip.value);
 

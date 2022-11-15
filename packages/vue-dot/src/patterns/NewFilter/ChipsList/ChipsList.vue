@@ -1,9 +1,9 @@
 <template>
-	<v-chip-group
+	<VChipGroup
 		class="vd-chips-list mb-4"
 		column
 	>
-		<v-chip
+		<VChip
 			v-for="(chip, chipIndex) in limitChips(filter)"
 			:key="chipIndex"
 			small
@@ -15,8 +15,8 @@
 			@click:close="removeChip(chipIndex)"
 		>
 			{{ chip.text ?? chip.value ?? chip }}
-		</v-chip>
-		<v-chip
+		</VChip>
+		<VChip
 			v-if="showExpandChip"
 			small
 			outlined
@@ -26,8 +26,8 @@
 			@click.stop="displayHiddenChips"
 		>
 			{{ `+${filter.chips.length - chipsLimit}` }}
-		</v-chip>
-		<v-chip
+		</VChip>
+		<VChip
 			v-if="filter.showAll"
 			small
 			outlined
@@ -39,8 +39,8 @@
 			<VIcon>
 				{{ upIcon }}
 			</VIcon>
-		</v-chip>
-		<v-btn
+		</VChip>
+		<VChip
 			v-if="filter.chips.length"
 			class="text-none align-self-center mt-2"
 			x-small
@@ -49,15 +49,14 @@
 			@click.stop="resetFilter"
 		>
 			{{ locales.reset }}
-		</v-btn>
-	</v-chip-group>
+		</VChip>
+	</VChipGroup>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
 	import { locales } from '../locales';
-	import { PropType } from 'vue/types/v3-component-props';
 	import { FilterItem } from '../types';
 	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
 
