@@ -12,6 +12,7 @@ import NirField from './NirField';
 import NotificationBar from './NotificationBar';
 import RatingPicker from './RatingPicker';
 import PaginatedTable from './PaginatedTable';
+import PeriodField from './PeriodField';
 import PhoneField from './PhoneField';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
@@ -31,6 +32,7 @@ export const patterns = {
 	NirField,
 	NotificationBar,
 	PaginatedTable,
+	PeriodField,
 	PhoneField,
 	SubHeader,
 	TableToolbar,

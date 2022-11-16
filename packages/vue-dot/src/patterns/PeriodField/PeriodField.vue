@@ -13,10 +13,10 @@
 		/>
 	</div>
 </template>
+
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
-	import { PropType } from 'vue/types/v3-component-props';
 
 	interface InternalValue {
 		startDate: string;
@@ -32,14 +32,14 @@
 		}
 	});
 
-	@Component<PeriodFilter>({
+	@Component<PeriodField>({
 		watch: {
 			value(newValue: InternalValue) {
 				this.internalValue = newValue;
 			}
 		}
 	})
-	export default class PeriodFilter extends Props {
+	export default class PeriodField extends Props {
 		internalValue: InternalValue = this.value;
 
 		emitChangeEvent(): void {

@@ -4,11 +4,11 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import NewFilter from '..';
+import NewFilter from '../';
 
 let wrapper: Wrapper<Vue>;
 
-describe('Check NewFilter component', () => {
+describe('NewFilter', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(NewFilter, {
 			propsData: {
