@@ -2,10 +2,10 @@
 	<div class="vd-filters-side-bar">
 		<VScrollXTransition>
 			<VNavigationDrawer
+				:elevation="6"
 				permanent
 				absolute
 				right
-				:elevation="6"
 				class="pt-2 d-flex flex-column justify-space-between"
 			>
 				<VExpansionPanels
@@ -17,21 +17,21 @@
 						v-for="(filter, index) in filters"
 						:key="index"
 					>
-						<VExpansionPanelHeader
-							class="d-block"
-						>
+						<VExpansionPanelHeader class="d-block">
 							<div
 								class="header-title d-flex justify-space-between mt-3 mx-4"
 								:class="{
-									'mb-2' : !filters[index].chips.length
+									'mb-2': !filters[index].chips.length
 								}"
 							>
 								<span>
 									{{ filter.label }}
+
 									<span v-if="filters[index].chips.length">
 										({{ filters[index].chips.length }})
 									</span>
 								</span>
+
 								<div>
 									<VIcon
 										id="up-icon"
@@ -39,6 +39,7 @@
 									>
 										{{ upIcon }}
 									</VIcon>
+
 									<VIcon
 										id="down-icon"
 										class="header-title"
@@ -55,19 +56,21 @@
 								:filter="filters[index]"
 							/>
 						</VExpansionPanelHeader>
+
 						<VExpansionPanelContent>
-							<span class="description-text-filter mb-2">{{ filter.description }}</span>
+							<span class="description-text-filter mb-2">
+								{{ filter.description }}
+							</span>
+
 							<div class="mt-4">
-								<slot
-									:name="`filter-${removeAccents(filter.name)}`"
-								/>
+								<slot :name="`filter-${removeAccents(filter.name)}`" />
 							</div>
 						</VExpansionPanelContent>
+
 						<VDivider />
 					</VExpansionPanel>
 				</VExpansionPanels>
 
-				<!-- buttons -->
 				<div
 					class="px-5 mb-6 mt-10"
 					:class="isMobile ? '' : 'd-flex justify-center'"
@@ -83,6 +86,7 @@
 					>
 						{{ locales.close }}
 					</VBtn>
+
 					<VBtn
 						:class="isMobile ? 'mb-2 mt-2' : 'button-complex-mode'"
 						:block="isMobile"
@@ -102,9 +106,13 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
+
 	import ChipsList from '../ChipsList';
+
 	import { locales } from '../locales';
+
 	import { FilterItem } from '../types';
+
 	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -137,8 +145,7 @@
 		}
 
 		removeAccents(str: string): string | undefined {
-			const newString = str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-			return newString;
+			return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 		}
 
 		closeSidebar(): void {
@@ -149,6 +156,7 @@
 			for (let index = 0; index < this.filters.length; index++) {
 				this.$set(this.filters[index], 'chips', []);
 			}
+
 			this.$emit('update:value', this.filters);
 		}
 
@@ -156,49 +164,60 @@
 </script>
 
 <style lang="scss">
-@import '@cnamts/design-tokens/dist/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
-.v-navigation-drawer {
-	width: 480px !important;
-}
-.v-expansion-panel-header {
-	min-height: 0 !important;
-	padding: 2px;
-}
-.v-expansion-panel-header__icon {
-	display: none !important;
-}
-#up-icon {
-	display: inline;
-}
-#down-icon {
-	display: none;
-}
-.v-expansion-panel-header--active {
-	#up-icon {
+	.v-navigation-drawer {
+		width: 480px !important;
+	}
+
+	.v-expansion-panel-header {
+		min-height: 0 !important;
+		padding: 2px;
+	}
+
+	.v-expansion-panel-header__icon {
 		display: none !important;
 	}
-	#down-icon {
-		display: inline !important;
+
+	#up-icon {
+		display: inline;
 	}
-}
-.header-title {
-	font-weight: 500;
-	font-size: 16px;
-}
-.description-text-filter {
-	color: $vd-grey-lighten-20;
-	font-size: 14px !important;
-}
-.expansion-panels {
-	margin-left: 1px;
-}
-.button-complex-mode {
-	width: 49%;
-}
-.v-navigation-drawer__content {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
+
+	#down-icon {
+		display: none;
+	}
+
+	.v-expansion-panel-header--active {
+		#up-icon {
+			display: none !important;
+		}
+
+		#down-icon {
+			display: inline !important;
+		}
+	}
+
+	.header-title {
+		font-weight: 500;
+		font-size: 16px;
+	}
+
+	.description-text-filter {
+		color: $vd-grey-lighten-20;
+		font-size: 14px !important;
+	}
+
+	.expansion-panels {
+		margin-left: 1px;
+	}
+
+	.button-complex-mode {
+		width: 49%;
+	}
+
+	.v-navigation-drawer__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 </style>
