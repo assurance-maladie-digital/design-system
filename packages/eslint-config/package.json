@@ -32,8 +32,8 @@
     "eslint": ">=7"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "5.42.1",
-    "@typescript-eslint/parser": "5.42.1"
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "@typescript-eslint/parser": "5.43.0"
   },
   "publishConfig": {
     "access": "public"

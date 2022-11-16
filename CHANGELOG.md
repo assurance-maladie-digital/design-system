@@ -14,10 +14,11 @@
 
 - ⬆️ **Dépendances**
   - **lerna:** Mise à jour vers la `v6.0.3` ([#2374](https://github.com/assurance-maladie-digital/design-system/pull/2374)) ([c22fc27](https://github.com/assurance-maladie-digital/design-system/commit/c22fc279ac00d4660112f4330f561b0bc43d95fb))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.42.1` ([#2375](https://github.com/assurance-maladie-digital/design-system/pull/2375)) ([4afc315](https://github.com/assurance-maladie-digital/design-system/commit/4afc315b50bb14a581e4960b08f41a778e2b271d))
-  - **netlify-cli:** Mise à jour vers la `v12.1.1` ([#2377](https://github.com/assurance-maladie-digital/design-system/pull/2377)) ([f20c215](https://github.com/assurance-maladie-digital/design-system/commit/f20c215b9e32152127f586a88cc83458392f87ea))
   - **vue:** Mise à jour vers la `v2.7.14` ([#2378](https://github.com/assurance-maladie-digital/design-system/pull/2378)) ([60ee749](https://github.com/assurance-maladie-digital/design-system/commit/60ee749a9f84f8f911f6539db2687adae7f2638b))
-  - **core-js:** Mise à jour vers la `v3.26.1` ([#2380](https://github.com/assurance-maladie-digital/design-system/pull/2380))
+  - **core-js:** Mise à jour vers la `v3.26.1` ([#2380](https://github.com/assurance-maladie-digital/design-system/pull/2380)) ([58231c7](https://github.com/assurance-maladie-digital/design-system/commit/58231c72ef721605b824dacbb5f5bcc46f629fb4))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.43.0` ([#2383](https://github.com/assurance-maladie-digital/design-system/pull/2383)) ([b3c3d58](https://github.com/assurance-maladie-digital/design-system/commit/b3c3d58ecb78b80111f8c8cf01b568b3e4d9769f))
+  - **netlify-cli:** Mise à jour vers la `v12.2.0` ([#2387](https://github.com/assurance-maladie-digital/design-system/pull/2387)) ([7314786](https://github.com/assurance-maladie-digital/design-system/commit/73147864ad224288f3f53abbd8673b29713e2c0e))
+  - **sass-loader:** Mise à jour vers la `v10.4.1` ([#2388](https://github.com/assurance-maladie-digital/design-system/pull/2388))
 
 ## v2.7.1
 
