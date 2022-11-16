@@ -6,16 +6,17 @@
 		<VChip
 			v-for="(chip, chipIndex) in limitChips(filter)"
 			:key="chipIndex"
+			:close-icon="deleteIcon"
 			small
 			close
-			class="mt-2"
-			:close-icon="deleteIcon"
 			color="cyan-darken-40"
 			text-color="white"
+			class="mt-2"
 			@click:close="removeChip(chipIndex)"
 		>
-			{{ chip.text ?? chip.value ?? chip }}
+			<!-- TODO: {{ chip.text ?? chip.value ?? chip }} -->
 		</VChip>
+
 		<VChip
 			v-if="showExpandChip"
 			small
@@ -27,6 +28,7 @@
 		>
 			{{ `+${filter.chips.length - chipsLimit}` }}
 		</VChip>
+
 		<VChip
 			v-if="filter.showAll"
 			small
@@ -40,12 +42,13 @@
 				{{ upIcon }}
 			</VIcon>
 		</VChip>
+
 		<VChip
 			v-if="filter.chips.length"
-			class="text-none align-self-center mt-2"
 			x-small
 			text
 			color="primary"
+			class="text-none align-self-center mt-2"
 			@click.stop="resetFilter"
 		>
 			{{ locales.reset }}
@@ -56,8 +59,11 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component from 'vue-class-component';
+
 	import { locales } from '../locales';
+
 	import { FilterItem } from '../types';
+
 	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
 
 	const Props = Vue.extend({

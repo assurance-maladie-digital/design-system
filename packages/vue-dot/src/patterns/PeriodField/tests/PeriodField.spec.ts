@@ -4,22 +4,24 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import PeriodFilter from '..';
+import PeriodField from '../';
+import DatePicker from '../../DatePicker';
+
+Vue.component('DatePicker', DatePicker);
 
 let wrapper: Wrapper<Vue>;
 
-describe('PeriodFilter', () => {
+describe('PeriodField', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(PeriodFilter, {
+		wrapper = mountComponent(PeriodField, {
 			propsData: {
-				chipsLimit: 4,
-				filter: {
-					name: 'nom',
-					label: 'Nom',
-					chips: []
+				value: {
+					startDate: null,
+					endDate: null
 				}
 			}
 		});
+
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
