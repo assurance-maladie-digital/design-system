@@ -235,7 +235,12 @@
 				return;
 			}
 
-			if (filter.limited) {
+			if (filter.splited) {
+				chips = [
+					newChip
+				];
+				console.log(filter.chips);
+			} else if (filter.limited) {
 				chips = [
 					newChip
 				];
