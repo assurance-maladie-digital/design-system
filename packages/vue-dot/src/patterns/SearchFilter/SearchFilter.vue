@@ -32,26 +32,13 @@
 				</VRow>
 			</div>
 		</VCol>
-		selectedItems : {{ selectedItems }}
-		internalValue : {{ internalValue }}
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import { PropType } from 'vue/types/v3-component-props';
 	import { mdiMagnify } from '@mdi/js';
-
-	const Props = Vue.extend({
-		props: {
-			value: {
-				type: Array as PropType<string[]>,
-				default: () => [],
-				required: true
-			}
-		}
-	});
 
 	@Component<SearchFilter>({
 		watch: {
@@ -61,7 +48,7 @@
 		}
 	})
 
-	export default class SearchFilter extends Props {
+	export default class SearchFilter extends Vue {
 		searchIcon = mdiMagnify;
 		filterSearch = '';
 		tempListSearch: string[] = [];
@@ -71,7 +58,7 @@
 			'baz'
 		];
 		selectedItems: string[] = [];
-		internalValue: string[] = this.value;
+		internalValue: string[] = [];
 
 		mounted() {
 			this.tempListSearch = this.listSearch;
@@ -90,9 +77,7 @@
 
 		emitChangeEvent(): void {
 			this.internalValue = this.selectedItems;
-			if (this.internalValue.length > 0) {
-				this.$emit('change', this.internalValue);
-			}
+			this.$emit('change', this.internalValue);
 		}
 	}
 </script>
