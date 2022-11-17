@@ -67,6 +67,7 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
+	import { NodeListOf } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -147,7 +148,6 @@
 			return this.addEventListerners(elements);
 		}
 
-		// eslint-disable-next-line no-undef
 		addEventListerners(els: NodeListOf<HTMLElement>): void {
 			for (let i = 0; i < els.length; i++) {
 				els[i].addEventListener('keydown', (e: KeyboardEvent) => {
