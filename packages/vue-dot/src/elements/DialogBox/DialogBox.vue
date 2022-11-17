@@ -13,7 +13,6 @@
 					<h2
 						v-if="title"
 						class="text-h6 font-weight-bold"
-						:aria-label="title"
 					>
 						{{ title }}
 					</h2>
@@ -117,7 +116,7 @@
 		watch: {
 			dialog(value: boolean) {
 				if (value) {
-					this.selectDialogElements();
+					this.getSelectableElements();
 				}
 			}
 		}
@@ -139,18 +138,18 @@
 			this.$emit('change', false);
 		}
 
-		async selectDialogElements(): Promise<void> {
+		async getSelectableElements(): Promise<void> {
 			await this.$nextTick();
 			// eslint-disable-next-line no-undef
 			const elements = document.querySelectorAll('a[href], button, input, textarea, select, details') as NodeListOf<HTMLElement>;
 			if (!elements.length) {
 				return;
 			}
-			return this.focusElements(elements);
+			return this.addEventListerners(elements);
 		}
 
 		// eslint-disable-next-line no-undef
-		focusElements(els: NodeListOf<HTMLElement>): void {
+		addEventListerners(els: NodeListOf<HTMLElement>): void {
 			for (let i = 0; i < els.length; i++) {
 				els[i].addEventListener('keydown', (e: KeyboardEvent) => {
 					// if we use Tab key, we can focus on next element
