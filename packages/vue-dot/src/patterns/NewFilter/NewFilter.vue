@@ -233,13 +233,15 @@
 
 			if (chipExist) {
 				return;
-			}
-
-			if (filter.splited) {
-				chips = [
-					newChip
-				];
-				console.log(filter.chips);
+			} else if (filter.splited) {
+				if (Object.values(event).length) {
+					chips = Object.values(event).map((value: unknown) => ({
+						text: filter.formatting ? filter.formatting(value) : value,
+						value
+					}));
+				} else {
+					chips = [];
+				}
 			} else if (filter.limited) {
 				chips = [
 					newChip
