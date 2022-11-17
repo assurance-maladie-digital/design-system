@@ -1,6 +1,7 @@
 export interface FilterItem {
 	clearAfterValidate: boolean;
 	limited: boolean;
+	splited: boolean;
 	label: string;
 	name: string;
 	description: string;
