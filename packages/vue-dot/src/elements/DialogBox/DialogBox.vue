@@ -140,28 +140,32 @@
 
 		async getSelectableElements(): Promise<void> {
 			await this.$nextTick();
-			// eslint-disable-next-line no-undef
-			const elements = document.querySelectorAll('a[href], button, input, textarea, select, details') as NodeListOf<HTMLElement>;
+			const elements = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
 			if (!elements.length) {
 				return;
 			}
-			for (let i = 0; i < elements.length; i++) {
-				elements[i].addEventListener('keydown', (e: KeyboardEvent) => {
+			return this.addEventListerners(elements);
+		}
+
+		// eslint-disable-next-line no-undef
+		addEventListerners(els: NodeListOf<HTMLElement>): void {
+			for (let i = 0; i < els.length; i++) {
+				els[i].addEventListener('keydown', (e: KeyboardEvent) => {
 					// if we use Tab key, we can focus on next element
 					if (e.key === 'Tab' && !e.shiftKey) {
 						e.preventDefault();
-						if (i === elements.length - 1) {
-							elements[0].focus();
+						if (i === els.length - 1) {
+							els[0].focus();
 						} else {
-							elements[i + 1].focus();
+							els[i + 1].focus();
 						}
-					// if we use Tab key + shift, we can focus on previous element
+						// if we use Tab key + shift, we can focus on previous element
 					} else if (e.key === 'Tab' && e.shiftKey) {
 						e.preventDefault();
 						if (i === 1) {
-							elements[elements.length - 1].focus();
+							els[els.length - 1].focus();
 						} else {
-							elements[i - 1].focus();
+							els[i - 1].focus();
 						}
 					}
 				});
