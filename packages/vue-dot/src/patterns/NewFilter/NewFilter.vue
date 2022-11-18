@@ -55,7 +55,7 @@
 							v-if="filters[index].chips.length"
 							:chips-limit="chipsLimit"
 							:filter="filters[index]"
-							@remove="removeSelection"
+							@remove-chip="removeChip($event)"
 						/>
 						<slot
 							:on="{
@@ -82,26 +82,18 @@
 
 						<span>{{ filter.label }}</span>
 
-						<VIcon
-							:dense="filters[index].icon"
-							:class="{ 'ml-1': filters[index].icon }"
-						>
-							{{ filters[index].icon ? filters[index].icon : downIcon }}
-						</VIcon>
-					</VBtn>
-				</template> -->
-
-				<div class="px-4 white pt-3">
-					<span class="description-text-filter mb-2 mt-4">
-						{{ filter.description }}
-					</span>
-
-					<ChipsList
-						v-if="filters[index].chips.length"
-						:chips-limit="chipsLimit"
-						:filter="filters[index]"
-					/>
-
+			<!-- sidebar -->
+			<FiltersSideBar
+				v-if="showSideBar && !simpleMode"
+				:filters="filters"
+				:chips-limit="chipsLimit"
+				@close-sidebar="closeSidebar"
+				@remove-chip="removeChip($event)"
+			>
+				<template
+					v-for="filter in filters"
+					:slot="'filter-' + filter.name"
+				>
 					<slot
 						:on="{
 							change: event => onChange(event, filter),
@@ -266,6 +258,10 @@
 			this.$emit('update:value', this.filters);
 		}
 
+		removeChip(event: object): void {
+			this.$emit('remove-chip', event);
+		}
+
 		onChange(event: unknown, filter: FilterItem): void {
 			if (!event) {
 				return;
@@ -309,10 +305,6 @@
 			}
 
 			this.$emit('update:value', this.filters);
-		}
-
-		removeSelection(): void {
-			console.log('selection removed');
 		}
 	}
 </script>
