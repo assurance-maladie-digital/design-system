@@ -11,8 +11,7 @@
 			close
 			color="cyan-darken-40"
 			text-color="white"
-			class="mt-2"
-			@click:close="removeChip(chipIndex)"
+			@click:close="removeChip(chip, chipIndex)"
 		>
 			<!-- TODO: {{ chip.text ?? chip.value ?? chip }} -->
 		</VChip>
@@ -99,10 +98,10 @@
 			return filterItem.chips.slice(0, this.chipsLimit);
 		}
 
-		removeChip(chipIndex: number): void {
+		removeChip(chip: object, chipIndex: number): void {
 			const chips = this.filter.chips.filter((chip, index) => index !== chipIndex);
 			this.$set(this.filter, 'chips', chips);
-			this.$emit('remove');
+			this.$emit('remove-chip', chip);
 		}
 
 		displayHiddenChips(): void {
