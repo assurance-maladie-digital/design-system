@@ -26,10 +26,59 @@
 							color="white"
 							small
 						>
-							<span :class="filters[index]?.chips.length !== 0 ?? 'mb-2'">
-								{{ filters[index]?.chips.length }}
-							</span>
-						</VChip>
+							<VChip
+								v-if="filters[index]?.chips.length"
+								class="ml-n2 mr-2"
+								color="white"
+								small
+							>
+								<span
+									:class="filters[index]?.chips.length !== 0 ?? 'mb-2'"
+								>
+									{{ filters[index]?.chips.length }}
+								</span>
+							</VChip>
+							<span>{{ filter.label }}</span>
+							<VIcon
+								:dense="filters[index].icon ? true : false"
+								:class="{ 'ml-1' : filters[index].icon}"
+							>
+								{{ filters[index].icon ? filters[index].icon : downIcon }}
+							</VIcon>
+						</VBtn>
+					</template>
+					<div
+						class="px-4 white pt-3"
+					>
+						<span class="description-text-filter mb-2 mt-4">{{ filter.description }}</span>
+						<ChipsList
+							v-if="filters[index].chips.length"
+							:chips-limit="chipsLimit"
+							:filter="filters[index]"
+							@remove="removeSelection"
+						/>
+						<slot
+							:on="{
+								change: event => onChange(event, filter),
+								input: event => $set(filter, 'value', event)
+							}"
+							:attrs="{
+								value: filter.value
+							}"
+							:name="`filter-${removeAccents(filter.name)}`"
+						/>
+					</div>
+				</VMenu>
+				<VBtn
+					v-if="!hideReset"
+					text
+					small
+					color="indigo"
+					@click.stop="resetAllFilters"
+				>
+					{{ locales.reset }}
+				</VBtn>
+			</div>
 
 						<span>{{ filter.label }}</span>
 
@@ -234,8 +283,8 @@
 			if (chipExist) {
 				return;
 			} else if (filter.splited) {
-				if (Object.values(event).length) {
-					chips = Object.values(event).map((value: unknown) => ({
+				if (Object.values(event as object).length) {
+					chips = Object.values(event as object).map((value: unknown) => ({
 						text: filter.formatting ? filter.formatting(value) : value,
 						value
 					}));
@@ -260,6 +309,10 @@
 			}
 
 			this.$emit('update:value', this.filters);
+		}
+
+		removeSelection(): void {
+			console.log('selection removed');
 		}
 	}
 </script>
