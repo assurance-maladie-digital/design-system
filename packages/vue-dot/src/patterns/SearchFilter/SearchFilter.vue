@@ -34,7 +34,7 @@
 			</div>
 		</VCol>
 		selectedItems : {{ selectedItems }}
-		chip : {{ chip }}
+		chip removed : {{ chip }}
 	</div>
 </template>
 
