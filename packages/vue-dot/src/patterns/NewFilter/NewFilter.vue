@@ -53,7 +53,7 @@
 							v-if="filters[index].chips.length"
 							:chips-limit="chipsLimit"
 							:filter="filters[index]"
-							@remove="removeSelection"
+							@remove-chip="removeChip($event)"
 						/>
 						<slot
 							:on="{
@@ -113,6 +113,7 @@
 				:filters="filters"
 				:chips-limit="chipsLimit"
 				@close-sidebar="closeSidebar"
+				@remove-chip="removeChip($event)"
 			>
 				<template
 					v-for="filter in filters"
@@ -218,6 +219,10 @@
 			this.$emit('update:value', this.filters);
 		}
 
+		removeChip(event: object): void {
+			this.$emit('remove-chip', event);
+		}
+
 		onChange(event: unknown, filter: FilterItem): void {
 			if (!event) {
 				return;
@@ -258,10 +263,6 @@
 				this.$set(filter, 'value', filter.defaultValue ?? null);
 			}
 			this.$emit('update:value', this.filters);
-		}
-
-		removeSelection(): void {
-			console.log('selection removed');
 		}
 	}
 </script>

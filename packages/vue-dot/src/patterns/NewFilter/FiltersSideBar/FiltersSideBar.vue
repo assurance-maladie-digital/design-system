@@ -53,6 +53,7 @@
 								class="ml-4"
 								:chips-limit="chipsLimit"
 								:filter="filters[index]"
+								@remove-chip="removeChip($event)"
 							/>
 						</VExpansionPanelHeader>
 						<VExpansionPanelContent>
@@ -150,6 +151,10 @@
 				this.$set(this.filters[index], 'chips', []);
 			}
 			this.$emit('update:value', this.filters);
+		}
+
+		removeChip(event: object): void {
+			this.$emit('remove-chip', event);
 		}
 
 	}

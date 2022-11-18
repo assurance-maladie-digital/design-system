@@ -24,6 +24,7 @@
 						v-model="selectedItems"
 						height="10"
 						:value="item"
+						:false-value="selectedItems.includes(item === chip)"
 						@change="emitChangeEvent()"
 					/>
 					<VCol class="d-flex align-center">
@@ -32,23 +33,39 @@
 				</VRow>
 			</div>
 		</VCol>
+		selectedItems : {{ selectedItems }}
+		chip : {{ chip }}
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 	import { mdiMagnify } from '@mdi/js';
+
+	const Props = Vue.extend({
+		props: {
+			chip: {
+				type: String,
+				default: ''
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props);
 
 	@Component<SearchFilter>({
 		watch: {
 			value(newValue: string[]) {
 				this.internalValue = newValue;
+			},
+			removedChip(value: string) {
+				this.chip = value;
 			}
 		}
 	})
 
-	export default class SearchFilter extends Vue {
+	export default class SearchFilter extends MixinsDeclaration {
 		searchIcon = mdiMagnify;
 		filterSearch = '';
 		tempListSearch: string[] = [];
@@ -62,6 +79,7 @@
 
 		mounted() {
 			this.tempListSearch = this.listSearch;
+			// this.selectedItems = this.selectedItems.filter((item) => item !== this.chip);
 		}
 
 		filterResults(): void {
