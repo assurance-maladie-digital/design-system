@@ -34,17 +34,15 @@
 
 								<div>
 									<VIcon
-										id="up-icon"
-										class="header-title"
+										class="header-title down-icon"
 									>
-										{{ upIcon }}
+										{{ downIcon }}
 									</VIcon>
 
 									<VIcon
-										id="down-icon"
-										class="header-title"
+										class="header-title up-icon"
 									>
-										{{ downIcon }}
+										{{ upIcon }}
 									</VIcon>
 								</div>
 							</div>
@@ -169,6 +167,7 @@
 </script>
 
 <style lang="scss">
+<<<<<<< Updated upstream
 	@import '@cnamts/design-tokens/dist/tokens';
 
 	.v-navigation-drawer {
@@ -224,5 +223,31 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+=======
+@import '@cnamts/design-tokens/dist/tokens';
+
+.v-navigation-drawer {
+	width: 480px !important;
+}
+.v-expansion-panel-header {
+	min-height: 0 !important;
+	padding: 2px;
+}
+.v-expansion-panel-header__icon {
+	display: none !important;
+}
+.up-icon {
+	display: inline;
+}
+.down-icon {
+	display: none;
+}
+.v-expansion-panel-header--active {
+	.up-icon {
+		display: none !important;
+	}
+	.down-icon {
+		display: inline !important;
+>>>>>>> Stashed changes
 	}
 </style>
