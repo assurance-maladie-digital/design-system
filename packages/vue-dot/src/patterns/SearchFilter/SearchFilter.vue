@@ -24,7 +24,6 @@
 						v-model="selectedItems"
 						height="10"
 						:value="item"
-						:false-value="selectedItems.includes(item === chip)"
 						@change="emitChangeEvent()"
 					/>
 					<VCol class="d-flex align-center">
@@ -33,8 +32,6 @@
 				</VRow>
 			</div>
 		</VCol>
-		selectedItems : {{ selectedItems }}
-		chip removed : {{ chip }}
 	</div>
 </template>
 
@@ -59,8 +56,10 @@
 			value(newValue: string[]) {
 				this.internalValue = newValue;
 			},
-			removedChip(value: string) {
-				this.chip = value;
+			chip(value: string) {
+				if (value && value !== '') {
+					this.selectedItems = this.selectedItems.filter((item: string) => item !== value);
+				}
 			}
 		}
 	})
@@ -79,7 +78,6 @@
 
 		mounted() {
 			this.tempListSearch = this.listSearch;
-			// this.selectedItems = this.selectedItems.filter((item) => item !== this.chip);
 		}
 
 		filterResults(): void {
@@ -96,6 +94,10 @@
 		emitChangeEvent(): void {
 			this.internalValue = this.selectedItems;
 			this.$emit('change', this.internalValue);
+		}
+
+		uncheckItem(chip: string): void {
+			this.selectedItems = this.selectedItems.filter((item) => item !== chip);
 		}
 	}
 </script>
