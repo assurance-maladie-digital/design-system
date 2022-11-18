@@ -96,6 +96,7 @@
 		removeChip(chipIndex: number): void {
 			const chips = this.filter.chips.filter((chip, index) => index !== chipIndex);
 			this.$set(this.filter, 'chips', chips);
+			this.$emit('remove');
 		}
 
 		displayHiddenChips(): void {

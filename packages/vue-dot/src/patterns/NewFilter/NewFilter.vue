@@ -53,6 +53,7 @@
 							v-if="filters[index].chips.length"
 							:chips-limit="chipsLimit"
 							:filter="filters[index]"
+							@remove="removeSelection"
 						/>
 						<slot
 							:on="{
@@ -233,8 +234,8 @@
 			if (chipExist) {
 				return;
 			} else if (filter.splited) {
-				if (Object.values(event).length) {
-					chips = Object.values(event).map((value: unknown) => ({
+				if (Object.values(event as object).length) {
+					chips = Object.values(event as object).map((value: unknown) => ({
 						text: filter.formatting ? filter.formatting(value) : value,
 						value
 					}));
@@ -257,6 +258,10 @@
 				this.$set(filter, 'value', filter.defaultValue ?? null);
 			}
 			this.$emit('update:value', this.filters);
+		}
+
+		removeSelection(): void {
+			console.log('selection removed');
 		}
 	}
 </script>
