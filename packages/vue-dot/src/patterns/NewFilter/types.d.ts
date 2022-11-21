@@ -16,3 +16,7 @@ export interface FilterItem {
 	formatting?: (value: unknown) => string;
 	style: string;
 }
+export interface ChipItem {
+	text: string;
+	value: unknown;
+}

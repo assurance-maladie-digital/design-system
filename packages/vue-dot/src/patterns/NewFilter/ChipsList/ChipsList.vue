@@ -14,7 +14,7 @@
 			class="mt-2"
 			@click:close="removeChip(chipIndex)"
 		>
-			<!-- TODO: {{ chip.text ?? chip.value ?? chip }} -->
+			{{ chip.text ?? chip.value ?? chip }}
 		</VChip>
 
 		<VChip
@@ -43,7 +43,7 @@
 			</VIcon>
 		</VChip>
 
-		<VChip
+		<VBtn
 			v-if="filter.chips.length"
 			x-small
 			text
@@ -52,7 +52,7 @@
 			@click.stop="resetFilter"
 		>
 			{{ locales.reset }}
-		</VChip>
+		</VBtn>
 	</VChipGroup>
 </template>
 
@@ -61,9 +61,7 @@
 	import Component from 'vue-class-component';
 
 	import { locales } from '../locales';
-
 	import { FilterItem } from '../types';
-
 	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -98,6 +96,10 @@
 
 			return filterItem.chips.slice(0, this.chipsLimit);
 		}
+
+		//getChip(chip: ChipItem): unknown {
+		//	return chip.text ?? chip.value ?? chip;
+		//}
 
 		removeChip(chipIndex: number): void {
 			const chips = this.filter.chips.filter((chip, index) => index !== chipIndex);

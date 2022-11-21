@@ -1,4 +1,5 @@
 export const locales = {
 	reset: 'Réinitialiser',
-	close: 'Fermer'
+	close: 'Fermer',
+	apply: 'Appliquer'
 };

@@ -71,30 +71,51 @@
 
 				<div
 					class="px-5 mb-6 mt-10"
-					:class="isMobile ? '' : 'd-flex justify-center'"
 				>
 					<VBtn
-						:class="isMobile ? '' : 'mb-2 mr-4 button-complex-mode'"
-						:outlined="isMobile"
-						:text="!isMobile"
-						:block="isMobile"
-						small
-						color="indigo"
-						@click="closeSidebar"
+						v-if="applyButton"
+						:block="isMobile || applyButton"
+						depressed
+						color="primary"
+						@click.stop="applyFunction"
 					>
-						{{ locales.close }}
+						{{ locales.apply }}
 					</VBtn>
-
-					<VBtn
-						:class="isMobile ? 'mb-2 mt-2' : 'button-complex-mode'"
-						:block="isMobile"
-						outlined
-						small
-						color="indigo"
-						@click.stop="resetAllFilters"
+					<div
+						class="mt-3"
+						:class="(isMobile || applyButton) ? '' : 'd-flex justify-center'"
 					>
-						{{ locales.reset }}
-					</VBtn>
+						<VBtn
+							v-if="isMobile || applyButton"
+							:class="isMobile ? '' : 'mb-3 mr-4 button-complex-mode'"
+							:block="isMobile || applyButton"
+							outlined
+							color="indigo"
+							@click.stop="resetAllFilters"
+						>
+							{{ locales.reset }}
+						</VBtn>
+						<VBtn
+							:class="isMobile ? 'mb-2 mt-Z' : 'button-complex-mode'"
+							:outlined="isMobile"
+							:text="!isMobile"
+							:block="isMobile || applyButton"
+							color="indigo"
+							@click="closeSidebar"
+						>
+							{{ locales.close }}
+						</VBtn>
+						<VBtn
+							v-if="!(isMobile || applyButton)"
+							:class="isMobile ? '' : 'mb-3 ml-4 button-complex-mode'"
+							:block="isMobile || applyButton"
+							outlined
+							color="indigo"
+							@click.stop="resetAllFilters"
+						>
+							{{ locales.reset }}
+						</VBtn>
+					</div>
 				</div>
 			</VNavigationDrawer>
 		</VScrollXTransition>
@@ -121,6 +142,14 @@
 			},
 			chipsLimit: {
 				type: Number,
+				required: true
+			},
+			applyButton: {
+				type: Boolean,
+				required: true
+			},
+			applyFunction: {
+				type: Function,
 				required: true
 			}
 		}
@@ -162,7 +191,6 @@
 </script>
 
 <style lang="scss">
-<<<<<<< Updated upstream
 	@import '@cnamts/design-tokens/dist/tokens';
 
 	.v-navigation-drawer {
@@ -178,21 +206,21 @@
 		display: none !important;
 	}
 
-	#up-icon {
-		display: inline;
+	.up-icon {
+		display: none !important;
 	}
 
-	#down-icon {
-		display: none;
+	.down-icon {
+		display: inline !important;
 	}
 
 	.v-expansion-panel-header--active {
-		#up-icon {
-			display: none !important;
+		.up-icon {
+			display: inline !important;
 		}
 
-		#down-icon {
-			display: inline !important;
+		.down-icon {
+			display: none !important;
 		}
 	}
 
@@ -218,31 +246,5 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-=======
-@import '@cnamts/design-tokens/dist/tokens';
-
-.v-navigation-drawer {
-	width: 480px !important;
-}
-.v-expansion-panel-header {
-	min-height: 0 !important;
-	padding: 2px;
-}
-.v-expansion-panel-header__icon {
-	display: none !important;
-}
-.up-icon {
-	display: inline;
-}
-.down-icon {
-	display: none;
-}
-.v-expansion-panel-header--active {
-	.up-icon {
-		display: none !important;
-	}
-	.down-icon {
-		display: inline !important;
->>>>>>> Stashed changes
 	}
 </style>

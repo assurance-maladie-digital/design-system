@@ -1,88 +1,38 @@
 <template>
 	<div class="vd-new-filter">
-		<template v-if="simpleMode">
-			<VMenu
-				v-for="(filter, index) in filters"
-				:key="index"
-				:close-on-content-click="false"
-				min-width="300px"
-				max-width="400px"
-				offset-y
-				nudge-bottom="10px"
+		<InlineFilters
+			v-if="simpleMode"
+			:filters="filters"
+			:apply-button="applyButton"
+			:chips-limit="chipsLimit"
+			:side-bar-button="sideBarButton"
+			:apply-function="applyFunction"
+			:hide-reset="hideReset"
+			@open-close-sidebar="openCloseSidebar"
+		>
+			<template
+				v-for="filter in filters"
+				:slot="'filter-' + filter.name"
 			>
-				<!-- TODO: <template #activator="{ on }">
-					<VBtn
-						color="secondary"
-						:style="filters[index]?.style"
-						:outlined="!filters[index]?.chips.length"
-						depressed
-						rounded
-						class="simple-mode-filters mr-4"
-						v-on="on"
-					>
-						<VChip
-							v-if="filters[index]?.chips.length"
-							class="ml-n2 mr-2"
-							color="white"
-							small
-						>
-							<span :class="filters[index]?.chips.length !== 0 ?? 'mb-2'">
-								{{ filters[index]?.chips.length }}
-							</span>
-						</VChip>
-
-						<span>{{ filter.label }}</span>
-
-						<VIcon
-							:dense="filters[index].icon"
-							:class="{ 'ml-1': filters[index].icon }"
-						>
-							{{ filters[index].icon ? filters[index].icon : downIcon }}
-						</VIcon>
-					</VBtn>
-				</template> -->
-
-				<div class="px-4 white pt-3">
-					<span class="description-text-filter mb-2 mt-4">
-						{{ filter.description }}
-					</span>
-
-					<ChipsList
-						v-if="filters[index].chips.length"
-						:chips-limit="chipsLimit"
-						:filter="filters[index]"
-					/>
-
-					<slot
-						:on="{
-							change: event => onChange(event, filter),
-							input: event => $set(filter, 'value', event)
-						}"
-						:attrs="{
-							value: filter.value
-						}"
-						:name="`filter-${removeAccents(filter.name)}`"
-					/>
-				</div>
-			</VMenu>
-
-			<VBtn
-				v-if="!hideReset"
-				text
-				small
-				color="indigo"
-				@click.stop="resetAllFilters"
-			>
-				{{ locales.reset }}
-			</VBtn>
-		</template>
+				<slot
+					:on="{
+						change: event => onChange(event, filter),
+						input: event => $set(filter, 'value', event)
+					}"
+					:attrs="{
+						value: filter.value
+					}"
+					:name="`filter-${removeAccents(filter.name)}`"
+				/>
+			</template>
+		</InlineFilters>
 
 		<VBtn
 			v-else
 			depressed
 			rounded
 			color="transparent"
-			@click="showSideBar = !showSideBar"
+			@click="openCloseSidebar"
 		>
 			<VChip
 				v-if="filtersCount"
@@ -104,9 +54,11 @@
 		</VBtn>
 
 		<FiltersSideBar
-			v-if="showSideBar && !simpleMode"
+			v-if="showSideBar"
 			:filters="filters"
+			:apply-button="applyButton"
 			:chips-limit="chipsLimit"
+			:apply-function="applyFunction"
 			@close-sidebar="closeSidebar"
 		>
 			<template
@@ -134,16 +86,23 @@
 
 	import ChipsList from './ChipsList';
 	import FiltersSideBar from './FiltersSideBar';
+	import InlineFilters from './InlineFilters';
 
 	import { FilterItem } from './types';
-
 	import { locales } from './locales';
-
 	import { mdiChevronUp, mdiChevronDown, mdiFilterVariant } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
 			simpleMode: {
+				type: Boolean,
+				default: false
+			},
+			sideBarButton: {
+				type: Boolean,
+				default: false
+			},
+			applyButton: {
 				type: Boolean,
 				default: false
 			},
@@ -158,6 +117,12 @@
 			value: {
 				type: Array as PropType<FilterItem[]>,
 				default: () => []
+			},
+			applyFunction: {
+				type: Function,
+				default: () => {
+					console.log('Ajoutez la fonction dans la props applyFunction');
+				}
 			}
 		}
 	});
@@ -176,7 +141,8 @@
 		},
 		components: {
 			ChipsList,
-			FiltersSideBar
+			FiltersSideBar,
+			InlineFilters
 		}
 	})
 	export default class NewFilter extends MixinsDeclaration {
@@ -189,20 +155,12 @@
 
 		showSideBar = false;
 
-		get filtersCount(): number {
-			let count = 0;
-
-			this.filters.forEach(filter => {
-				if (filter?.selection?.length) {
-					count = count + filter.selection.length;
-				}
-			});
-
-			return count;
-		}
-
 		removeAccents(str: string): string | undefined {
 			return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+		}
+
+		openCloseSidebar(): void {
+			this.showSideBar = !this.showSideBar;
 		}
 
 		closeSidebar(): void {
