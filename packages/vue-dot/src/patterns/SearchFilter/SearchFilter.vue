@@ -45,6 +45,10 @@
 			chip: {
 				type: String,
 				default: ''
+			},
+			reset: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -59,6 +63,11 @@
 			chip(value: string) {
 				if (value && value !== '') {
 					this.selectedItems = this.selectedItems.filter((item: string) => item !== value);
+				}
+			},
+			resetValue(value: boolean) {
+				if (value) {
+					this.selectedItems = [];
 				}
 			}
 		}
@@ -80,6 +89,10 @@
 			this.tempListSearch = this.listSearch;
 		}
 
+		get resetValue(): boolean {
+			return this.reset;
+		}
+
 		filterResults(): void {
 			this.tempListSearch = this.listSearch.filter((item) => item.includes(this.filterSearch));
 			if (this.filterSearch === '' || this.filterSearch === null || this.filterSearch === undefined) {
@@ -94,10 +107,6 @@
 		emitChangeEvent(): void {
 			this.internalValue = this.selectedItems;
 			this.$emit('change', this.internalValue);
-		}
-
-		uncheckItem(chip: string): void {
-			this.selectedItems = this.selectedItems.filter((item) => item !== chip);
 		}
 	}
 </script>
