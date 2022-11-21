@@ -110,6 +110,7 @@
 
 		resetFilter(): void {
 			this.$set(this.filter, 'chips', []);
+			this.$emit('reset-filter');
 		}
 
 		onHideAll(): void {
