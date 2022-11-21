@@ -54,6 +54,7 @@
 							:chips-limit="chipsLimit"
 							:filter="filters[index]"
 							@remove-chip="removeChip($event)"
+							@reset-filter="resetFilter"
 						/>
 						<slot
 							:on="{
@@ -114,6 +115,7 @@
 				:chips-limit="chipsLimit"
 				@close-sidebar="closeSidebar"
 				@remove-chip="removeChip($event)"
+				@reset-filter="resetFilter"
 			>
 				<template
 					v-for="filter in filters"
@@ -221,6 +223,10 @@
 
 		removeChip(event: object): void {
 			this.$emit('remove-chip', event);
+		}
+
+		resetFilter(): void {
+			this.$emit('reset-filter');
 		}
 
 		onChange(event: unknown, filter: FilterItem): void {
