@@ -125,6 +125,7 @@
 	export default class DialogBox extends MixinsDeclaration {
 		locales = locales;
 		closeIcon = mdiClose;
+		dialogClosed = false;
 
 		get dialog(): boolean {
 			return this.value;
@@ -136,7 +137,7 @@
 
 		close(): void {
 			this.$emit('change', false);
-			this.resetListeners();
+			this.dialogClosed = true;
 		}
 
 		async getSelectableElements(): Promise<NodeListOf<HTMLElement> | undefined> {
@@ -179,22 +180,32 @@
 							}
 						}
 					});
+
+					if (this.dialogClosed) {
+						elements[i].removeEventListener('keydown', (e: KeyboardEvent) => {
+							if (e.key !== 'Tab') {
+								return;
+							}
+
+							e.preventDefault();
+
+							if (!e.shiftKey) {
+								if (i === elements.length - 1) {
+									elements[0].focus();
+								} else {
+									elements[i + 1].focus();
+								}
+							} else {
+								if (i === 1) {
+									elements[elements.length - 1].focus();
+								} else {
+									elements[i - 1].focus();
+								}
+							}
+						});
+					}
 				}
 			});
-		}
-
-		resetListeners(): void {
-			const els = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
-
-			if (!els.length) {
-				return;
-			}
-
-			for (let i = 0; i < els.length; i++) {
-				els[i].removeEventListener('keydown', () => {
-					return;
-				});
-			}
 		}
 	}
 </script>
