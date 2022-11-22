@@ -158,34 +158,33 @@
 				}
 
 				for (let i = 0; i < elements.length; i++) {
-					elements[i].addEventListener('keydown', (e: KeyboardEvent) => {
-						const listenKeys = () => {
-							if (e.key !== 'Tab') {
-								return;
-							}
-
-							e.preventDefault();
-
-							if (!e.shiftKey) {
-								if (i === elements.length - 1) {
-									elements[0].focus();
-								} else {
-									elements[i + 1].focus();
-								}
-							} else {
-								if (i === 1) {
-									elements[elements.length - 1].focus();
-								} else {
-									elements[i - 1].focus();
-								}
-							}
-						};
-						listenKeys();
-
-						if (this.dialog) {
-							removeEventListener('keydown', listenKeys);
+					const listenKeys = (e: KeyboardEvent) => {
+						if (e.key !== 'Tab') {
+							return;
 						}
-					});
+
+						e.preventDefault();
+
+						if (!e.shiftKey) {
+							if (i === elements.length - 1) {
+								elements[0].focus();
+							} else {
+								elements[i + 1].focus();
+							}
+						} else {
+							if (i === 1) {
+								elements[elements.length - 1].focus();
+							} else {
+								elements[i - 1].focus();
+							}
+						}
+					};
+
+					elements[i].addEventListener('keydown', listenKeys);
+
+					if (this.dialog) {
+						removeEventListener('keydown', listenKeys);
+					}
 				}
 			});
 		}
