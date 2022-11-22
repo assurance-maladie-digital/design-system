@@ -136,7 +136,7 @@
 
 		close(): void {
 			this.$emit('change', false);
-			this.removeEventListeners();
+			this.resetListeners();
 		}
 
 		async getSelectableElements(): Promise<NodeListOf<HTMLElement> | undefined> {
@@ -183,7 +183,7 @@
 			});
 		}
 
-		removeEventListeners(): void {
+		resetListeners(): void {
 			const els = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
 
 			if (!els.length) {
