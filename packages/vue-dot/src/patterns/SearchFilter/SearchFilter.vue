@@ -14,7 +14,10 @@
 				</VIcon>
 			</template>
 		</VTextField>
-		<VScrollXTransition>
+		<div
+			v-if="tempListSearch.length"
+			:style="filterHeight"
+		>
 			<VCol class="px-0 pt-0">
 				<div
 					v-for="item in tempListSearch"
@@ -54,7 +57,7 @@
 					</VRow>
 				</div>
 			</VCol>
-		</VScrollXTransition>
+		</div>
 	</div>
 </template>
 
@@ -65,6 +68,10 @@
 
 	const Props = Vue.extend({
 		props: {
+			height: {
+				type: String,
+				default: 'auto'
+			},
 			chip: {
 				type: String,
 				default: ''
@@ -119,6 +126,14 @@
 
 		mounted() {
 			this.tempListSearch = this.listSearch;
+		}
+
+		get filterHeight(): string {
+			if (this.height === 'auto') {
+				return 'height: auto';
+			} else {
+				return `height: ${Number(this.height)}px; overflow-y: auto;`;
+			}
 		}
 
 		get resetValue(): boolean {
