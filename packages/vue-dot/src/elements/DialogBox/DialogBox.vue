@@ -4,8 +4,8 @@
 		v-bind="$attrs"
 		:width="width"
 		:persistent="persistent"
-		class="vd-dialog-box"
 		aria-modal="true"
+		class="vd-dialog-box"
 	>
 		<VCard v-bind="options.card">
 			<VCardTitle v-bind="options.cardTitle">
@@ -117,7 +117,7 @@
 		watch: {
 			dialog(value: boolean) {
 				if (value) {
-					this.getSelectableElements();
+					this.setEventListeners();
 				}
 			}
 		}
@@ -139,29 +139,40 @@
 			this.$emit('change', false);
 		}
 
-		async getSelectableElements(): Promise<void> {
+		async getSelectableElements(): Promise<NodeListOf<HTMLElement> | undefined> {
 			await this.$nextTick();
+
 			const elements = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
+
 			if (!elements.length) {
 				return;
 			}
-			return this.addEventListerners(elements);
+
+			return elements;
 		}
 
-		addEventListerners(els: NodeListOf<HTMLElement>): void {
+		async setEventListeners(): Promise<void> {
+			const els = await this.getSelectableElements();
+
+			if (!els) {
+				return;
+			}
+
 			for (let i = 0; i < els.length; i++) {
 				els[i].addEventListener('keydown', (e: KeyboardEvent) => {
-					// if we use Tab key, we can focus on next element
-					if (e.key === 'Tab' && !e.shiftKey) {
-						e.preventDefault();
+					if (e.key !== 'Tab') {
+						return;
+					}
+
+					e.preventDefault();
+
+					if (!e.shiftKey) {
 						if (i === els.length - 1) {
 							els[0].focus();
 						} else {
 							els[i + 1].focus();
 						}
-						// if we use Tab key + shift, we can focus on previous element
-					} else if (e.key === 'Tab' && e.shiftKey) {
-						e.preventDefault();
+					} else {
 						if (i === 1) {
 							els[els.length - 1].focus();
 						} else {

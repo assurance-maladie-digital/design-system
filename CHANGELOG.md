@@ -1,5 +1,10 @@
 ## Non publié
 
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **DialogBox:** Correction de la navigation au clavier ([#2379](https://github.com/assurance-maladie-digital/design-system/pull/2379))
+
 ### Vue Dash
 
 - 🐛 **Corrections de bugs**
@@ -19,7 +24,7 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.43.0` ([#2383](https://github.com/assurance-maladie-digital/design-system/pull/2383)) ([b3c3d58](https://github.com/assurance-maladie-digital/design-system/commit/b3c3d58ecb78b80111f8c8cf01b568b3e4d9769f))
   - **netlify-cli:** Mise à jour vers la `v12.2.0` ([#2387](https://github.com/assurance-maladie-digital/design-system/pull/2387)) ([7314786](https://github.com/assurance-maladie-digital/design-system/commit/73147864ad224288f3f53abbd8673b29713e2c0e))
   - **sass-loader:** Mise à jour vers la `v10.4.1` ([#2388](https://github.com/assurance-maladie-digital/design-system/pull/2388)) ([c0f9de6](https://github.com/assurance-maladie-digital/design-system/commit/c0f9de6963e2df4e73a6b2f4f494c0f07b11f051))
-  - **typescript:** Mise à jour vers la `v4.9.3` ([#2389](https://github.com/assurance-maladie-digital/design-system/pull/2389))
+  - **typescript:** Mise à jour vers la `v4.9.3` ([#2389](https://github.com/assurance-maladie-digital/design-system/pull/2389)) ([ae1b3e4](https://github.com/assurance-maladie-digital/design-system/commit/ae1b3e423964aede8a900ef0daad4d758dd1e9af))
 
 ## v2.7.1
 
