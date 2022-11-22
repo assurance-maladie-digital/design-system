@@ -181,6 +181,15 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/tableaux/paginated-table'
 					},
 					{
+						title: 'TableToolbar',
+						to: '/composants/tableaux/table-toolbar'
+					}
+				]
+			},
+			{
+				title: 'Filtres',
+				items: [
+					{
 						title: 'NewFilter',
 						to: '/composants/tableaux/new-filter'
 					},
@@ -188,9 +197,14 @@ export const drawerItems: DrawerItem[] = [
 						title: 'FilterModule',
 						to: '/composants/tableaux/filter-module'
 					},
+				]
+			},
+			{
+				title: 'Sous composant de filtre',
+				items: [
 					{
-						title: 'TableToolbar',
-						to: '/composants/tableaux/table-toolbar'
+						title: 'PeriodFilter',
+						to: '/composants/tableaux/new-filter'
 					}
 				]
 			},

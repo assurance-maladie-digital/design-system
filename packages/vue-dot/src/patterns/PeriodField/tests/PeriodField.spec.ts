@@ -4,16 +4,21 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import FilterSideBar from '../';
+import PeriodField from '../';
+import DatePicker from '../../DatePicker';
+
+Vue.component('DatePicker', DatePicker);
 
 let wrapper: Wrapper<Vue>;
 
-describe('FilterSideBar', () => {
+describe('PeriodField', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(FilterSideBar, {
+		wrapper = mountComponent(PeriodField, {
 			propsData: {
-				filters: [],
-				chipsLimit: 4
+				value: {
+					startDate: null,
+					endDate: null
+				}
 			}
 		});
 

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterSideBar renders correctly 1`] = `
+<div class="vd-filters-side-bar">
+  <vscrollxtransition-stub origin="top center 0">
+    <vnavigationdrawer-stub absolute="true" mobilebreakpoint="1264" height="100%" minivariantwidth="56" permanent="true" right="true" src="" tag="aside" width="256" elevation="6" class="pt-2 d-flex flex-column justify-space-between">
+      <vexpansionpanels-stub valuecomparator="[Function]" activeclass="v-item--active" tag="div" accordion="true" flat="true" class="expansion-panels"></vexpansionpanels-stub>
+      <div class="px-5 mb-6 mt-10 d-flex justify-center">
+        <vbtn-stub color="indigo" tag="button" activeclass="" small="true" text="true" type="button" class="mb-2 mr-4 button-complex-mode">
+          Fermer
+        </vbtn-stub>
+        <vbtn-stub color="indigo" outlined="true" tag="button" activeclass="" small="true" type="button" class="button-complex-mode">
+          Réinitialiser
+        </vbtn-stub>
+      </div>
+    </vnavigationdrawer-stub>
+  </vscrollxtransition-stub>
+</div>
+`;
