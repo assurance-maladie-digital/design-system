@@ -124,7 +124,6 @@
 	})
 	export default class DialogBox extends MixinsDeclaration {
 		locales = locales;
-
 		closeIcon = mdiClose;
 
 		get dialog(): boolean {
@@ -137,6 +136,7 @@
 
 		close(): void {
 			this.$emit('change', false);
+			this.removeEventListeners();
 		}
 
 		async getSelectableElements(): Promise<NodeListOf<HTMLElement> | undefined> {
@@ -179,6 +179,20 @@
 							els[i - 1].focus();
 						}
 					}
+				});
+			}
+		}
+
+		removeEventListeners(): void {
+			const els = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
+
+			if (!els.length) {
+				return;
+			}
+
+			for (let i = 0; i < els.length; i++) {
+				els[i].removeEventListener('keydown', () => {
+					return;
 				});
 			}
 		}
