@@ -151,36 +151,36 @@
 			return elements;
 		}
 
-		async setEventListeners(): Promise<void> {
-			const els = await this.getSelectableElements();
+		setEventListeners(): void {
+			this.getSelectableElements().then((elements) => {
+				if (!elements) {
+					return;
+				}
 
-			if (!els) {
-				return;
-			}
-
-			for (let i = 0; i < els.length; i++) {
-				els[i].addEventListener('keydown', (e: KeyboardEvent) => {
-					if (e.key !== 'Tab') {
-						return;
-					}
-
-					e.preventDefault();
-
-					if (!e.shiftKey) {
-						if (i === els.length - 1) {
-							els[0].focus();
-						} else {
-							els[i + 1].focus();
+				for (let i = 0; i < elements.length; i++) {
+					elements[i].addEventListener('keydown', (e: KeyboardEvent) => {
+						if (e.key !== 'Tab') {
+							return;
 						}
-					} else {
-						if (i === 1) {
-							els[els.length - 1].focus();
+
+						e.preventDefault();
+
+						if (!e.shiftKey) {
+							if (i === elements.length - 1) {
+								elements[0].focus();
+							} else {
+								elements[i + 1].focus();
+							}
 						} else {
-							els[i - 1].focus();
+							if (i === 1) {
+								elements[elements.length - 1].focus();
+							} else {
+								elements[i - 1].focus();
+							}
 						}
-					}
-				});
-			}
+					});
+				}
+			});
 		}
 
 		removeEventListeners(): void {
