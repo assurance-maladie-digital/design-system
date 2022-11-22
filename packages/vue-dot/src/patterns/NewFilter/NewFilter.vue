@@ -121,7 +121,7 @@
 			applyFunction: {
 				type: Function,
 				default: () => {
-					console.log('Ajoutez la fonction dans la props applyFunction');
+					return;
 				}
 			}
 		}
