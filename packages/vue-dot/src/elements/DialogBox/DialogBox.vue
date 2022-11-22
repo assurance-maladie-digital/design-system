@@ -137,7 +137,6 @@
 
 		close(): void {
 			this.$emit('change', false);
-			this.dialogClosed = true;
 		}
 
 		async getSelectableElements(): Promise<NodeListOf<HTMLElement> | undefined> {
@@ -152,37 +151,15 @@
 			return elements;
 		}
 
-		setEventListeners(): void {
-			this.getSelectableElements().then((elements) => {
+		async setEventListeners(): Promise<void> {
+			await this.getSelectableElements().then((elements) => {
 				if (!elements) {
 					return;
 				}
 
 				for (let i = 0; i < elements.length; i++) {
 					elements[i].addEventListener('keydown', (e: KeyboardEvent) => {
-						if (e.key !== 'Tab') {
-							return;
-						}
-
-						e.preventDefault();
-
-						if (!e.shiftKey) {
-							if (i === elements.length - 1) {
-								elements[0].focus();
-							} else {
-								elements[i + 1].focus();
-							}
-						} else {
-							if (i === 1) {
-								elements[elements.length - 1].focus();
-							} else {
-								elements[i - 1].focus();
-							}
-						}
-					});
-
-					if (this.dialogClosed) {
-						elements[i].removeEventListener('keydown', (e: KeyboardEvent) => {
+						const listenKeys = () => {
 							if (e.key !== 'Tab') {
 								return;
 							}
@@ -202,8 +179,13 @@
 									elements[i - 1].focus();
 								}
 							}
-						});
-					}
+						};
+						listenKeys();
+
+						if (this.dialog) {
+							removeEventListener('keydown', listenKeys);
+						}
+					});
 				}
 			});
 		}
