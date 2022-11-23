@@ -57,7 +57,7 @@
 
 		<div
 			:class="{ 'py-2 py-sm-0': !extendedMode }"
-			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n4"
+			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3"
 		>
 			<slot name="prepend" />
 
