@@ -14,7 +14,7 @@ exports[`UploadWorkflow renders correctly 1`] = `
 				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text">
 					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <div class="v-dialog__container vd-dialog-box">
+  <div class="v-dialog__container vd-dialog-box" aria-modal="true">
     <!---->
   </div>
 </div>
@@ -34,7 +34,7 @@ exports[`UploadWorkflow renders correctly with a single file 1`] = `
 				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text">
 					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
-  <div class="v-dialog__container vd-dialog-box">
+  <div class="v-dialog__container vd-dialog-box" aria-modal="true">
     <!---->
   </div>
 </div>
