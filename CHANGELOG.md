@@ -22,10 +22,10 @@
   - **lerna:** Mise à jour vers la `v6.0.3` ([#2374](https://github.com/assurance-maladie-digital/design-system/pull/2374)) ([c22fc27](https://github.com/assurance-maladie-digital/design-system/commit/c22fc279ac00d4660112f4330f561b0bc43d95fb))
   - **vue:** Mise à jour vers la `v2.7.14` ([#2378](https://github.com/assurance-maladie-digital/design-system/pull/2378)) ([60ee749](https://github.com/assurance-maladie-digital/design-system/commit/60ee749a9f84f8f911f6539db2687adae7f2638b))
   - **core-js:** Mise à jour vers la `v3.26.1` ([#2380](https://github.com/assurance-maladie-digital/design-system/pull/2380)) ([58231c7](https://github.com/assurance-maladie-digital/design-system/commit/58231c72ef721605b824dacbb5f5bcc46f629fb4))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.43.0` ([#2383](https://github.com/assurance-maladie-digital/design-system/pull/2383)) ([b3c3d58](https://github.com/assurance-maladie-digital/design-system/commit/b3c3d58ecb78b80111f8c8cf01b568b3e4d9769f))
   - **sass-loader:** Mise à jour vers la `v10.4.1` ([#2388](https://github.com/assurance-maladie-digital/design-system/pull/2388)) ([c0f9de6](https://github.com/assurance-maladie-digital/design-system/commit/c0f9de6963e2df4e73a6b2f4f494c0f07b11f051))
   - **typescript:** Mise à jour vers la `v4.9.3` ([#2389](https://github.com/assurance-maladie-digital/design-system/pull/2389)) ([ae1b3e4](https://github.com/assurance-maladie-digital/design-system/commit/ae1b3e423964aede8a900ef0daad4d758dd1e9af))
-  - **netlify-cli:** Mise à jour vers la `v12.2.6` ([#2391](https://github.com/assurance-maladie-digital/design-system/pull/2391))
+  - **netlify-cli:** Mise à jour vers la `v12.2.6` ([#2391](https://github.com/assurance-maladie-digital/design-system/pull/2391)) ([8322ebf](https://github.com/assurance-maladie-digital/design-system/commit/8322ebf51cac52ed072e6bd7e071330f713ecfaa))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.44.0` ([#2396](https://github.com/assurance-maladie-digital/design-system/pull/2396))
 
 ## v2.7.1
 
