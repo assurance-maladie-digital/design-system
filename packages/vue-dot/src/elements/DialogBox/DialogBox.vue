@@ -67,7 +67,7 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { NodeListOf } from './types';
+	import { SelectableElements } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -115,17 +115,15 @@
 			event: 'change'
 		},
 		watch: {
-			dialog(value: boolean) {
-				if (value) {
-					this.setEventListeners();
-				}
+			dialog() {
+				this.setEventListeners();
 			}
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
 		locales = locales;
+
 		closeIcon = mdiClose;
-		dialogClosed = false;
 
 		get dialog(): boolean {
 			return this.value;
@@ -139,7 +137,7 @@
 			this.$emit('change', false);
 		}
 
-		async getSelectableElements(): Promise<NodeListOf<HTMLElement> | undefined> {
+		async getSelectableElements(): Promise<SelectableElements | undefined> {
 			await this.$nextTick();
 
 			const elements = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
@@ -159,7 +157,7 @@
 			}
 
 			for (let i = 0; i < elements.length; i++) {
-				const listenKeys = (e: KeyboardEvent) => {
+				const setFocus = (e: KeyboardEvent) => {
 					if (e.key !== 'Tab') {
 						return;
 					}
@@ -181,11 +179,12 @@
 					}
 				};
 
-				elements[i].addEventListener('keydown', listenKeys);
-
-				if (this.dialog) {
-					removeEventListener('keydown', listenKeys);
+				if (!this.dialog) {
+					removeEventListener('keydown', setFocus);
+					return;
 				}
+
+				elements[i].addEventListener('keydown', setFocus);
 			}
 		}
 	}
