@@ -5,6 +5,7 @@
 - 🐛 **Corrections de bugs**
   - **FooterBar:** Correction de l'espacement vertical ([#2398](https://github.com/assurance-maladie-digital/design-system/pull/2398)) ([5f8fb1e](https://github.com/assurance-maladie-digital/design-system/commit/5f8fb1e5e04d4be84b8170de2f2556d5c17401fd))
   - **DialogBox:** Correction de la navigation au clavier ([#2379](https://github.com/assurance-maladie-digital/design-system/pull/2379)) ([6029caf](https://github.com/assurance-maladie-digital/design-system/commit/6029caf9a6597b90626c3b4567010602eb01034b))
+  - **PaginatedTable:** Correction de la transmission des slots sans portée ([#2399](https://github.com/assurance-maladie-digital/design-system/pull/2399))
 
 ### Vue Dash
 
@@ -25,7 +26,7 @@
   - **sass-loader:** Mise à jour vers la `v10.4.1` ([#2388](https://github.com/assurance-maladie-digital/design-system/pull/2388)) ([c0f9de6](https://github.com/assurance-maladie-digital/design-system/commit/c0f9de6963e2df4e73a6b2f4f494c0f07b11f051))
   - **typescript:** Mise à jour vers la `v4.9.3` ([#2389](https://github.com/assurance-maladie-digital/design-system/pull/2389)) ([ae1b3e4](https://github.com/assurance-maladie-digital/design-system/commit/ae1b3e423964aede8a900ef0daad4d758dd1e9af))
   - **netlify-cli:** Mise à jour vers la `v12.2.6` ([#2391](https://github.com/assurance-maladie-digital/design-system/pull/2391)) ([8322ebf](https://github.com/assurance-maladie-digital/design-system/commit/8322ebf51cac52ed072e6bd7e071330f713ecfaa))
-  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.44.0` ([#2396](https://github.com/assurance-maladie-digital/design-system/pull/2396))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.44.0` ([#2396](https://github.com/assurance-maladie-digital/design-system/pull/2396)) ([8e5878f](https://github.com/assurance-maladie-digital/design-system/commit/8e5878f1611bceb810bb2169ef7f9bebc9f678ea))
 
 ## v2.7.1
 
