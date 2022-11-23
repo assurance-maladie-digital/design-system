@@ -42,9 +42,9 @@
 					class="d-flex align-center justify-center"
 				>
 					<VImg
-						:src="image"
+						:src="selectedImage"
 						:alt="pageTitle"
-						max-width="100%"
+						max-width="90%"
 						max-height="100%"
 					/>
 				</VCol>
@@ -81,8 +81,8 @@
 				default: undefined
 			},
 			image: {
-				type: String,
-				default: undefined
+				type: Boolean,
+				default: false
 			},
 			btnText: {
 				type: String,
@@ -100,6 +100,15 @@
 	@Component
 	export default class NotFoundPage extends MixinsDeclaration {
 		locales = locales;
+		images = [
+			'error1',
+			'error2'
+		];
+		selectedImage = '';
+
+		mounted() {
+			this.selectedImage = this.randomItem(this.images);
+		}
 
 		/**
 		 * Support ID is a number added by our firewall if a rule is violated
@@ -120,6 +129,10 @@
 			});
 
 			return supportId.trim();
+		}
+
+		randomItem(items: string[]): string {
+			return require(`@cnamts/vue-dot/src/assets/images/${items[Math.floor(Math.random() * items.length)]}.svg`);
 		}
 	}
 
