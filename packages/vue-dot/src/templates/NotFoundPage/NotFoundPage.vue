@@ -5,7 +5,7 @@
 				<VCol
 					cols="12"
 					:md="image ? 6 : 12"
-					class="order-last order-md-first -mt-4 md:mt-0 text-center text-md-left"
+					class="order-last order-md-first -mt-4 mt-md-0 text-center text-md-left"
 				>
 					<span
 						v-if="code"
@@ -46,6 +46,7 @@
 						:alt="pageTitle"
 						max-width="90%"
 						max-height="100%"
+						class="mx-12 mx-md-0"
 					/>
 				</VCol>
 			</VRow>
