@@ -5,7 +5,7 @@
 				<VCol
 					cols="12"
 					:md="image ? 6 : 12"
-					class="order-last order-md-first -mt-4 mt-md-0 text-center text-md-left"
+					class="order-last order-md-first text-center text-md-left"
 				>
 					<span
 						v-if="code"
