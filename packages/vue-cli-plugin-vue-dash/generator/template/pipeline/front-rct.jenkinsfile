@@ -3,18 +3,29 @@ pipeline {
 	options {
 		timeout(time: 1, unit: 'HOURS')
 	}
-	environment {
-		CLUSTER_ID = 'ge5'
-	}
 	stages {
-		stage('Deploy image to rct') {
+		stage('deploy image') {
 			steps {
-				openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'dev', destStream: "${env.PROJECT}-front", destTag: 'rct', destinationNamespace: "${env.PROJECT}-dev", namespace: "${env.PROJECT}-dev")
+				script {
+					openshift.withCluster('ge4') {
+						openshift.withProject("g4-${env.PROJECT}-dev") {
+							openshift.tag("g4-${env.PROJECT}-dev/${env.PROJECT}-ihm-js-runtime:dev", "g4-${env.PROJECT}-dev/${env.PROJECT}-ihm-js-runtime:rct")
+						}
+					}
+				}
 			}
 		}
-		stage('Test deploy availability') {
+		stage('deploy availability') {
 			steps {
-				openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-rct", namespace: "${env.PROJECT}-dev", waitTime: '10', waitUnit: 'min')
+				script {
+					openshift.withCluster('ge4') {
+						openshift.withProject("g4-${env.PROJECT}-dev") {
+							def dc = openshift.selector('dc', "${env.PROJECT}-ihm-rct")
+							// Wait until the desired replicas are available
+							dc.rollout().status()
+						}
+					}
+				}
 			}
 		}
 	}
