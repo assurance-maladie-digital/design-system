@@ -235,6 +235,14 @@ export const drawerItems: DrawerItem[] = [
 				to: '/templates/cookies-page'
 			},
 			{
+				title: 'NotFoundPage',
+				to: '/templates/notfound-page'
+			},
+			{
+				title: 'MaintenancePage',
+				to: '/templates/maintenance-page'
+			},
+			{
 				title: 'ErrorPage',
 				to: '/templates/error-page'
 			}

@@ -70,8 +70,8 @@
 				required: true
 			},
 			image: {
-				type: String,
-				default: undefined
+				type: Boolean,
+				default: false
 			},
 			btnText: {
 				type: String,
@@ -89,14 +89,10 @@
 	@Component
 	export default class MaintenancePage extends MixinsDeclaration {
 		locales = locales;
-		images = [
-			'error1',
-			'error2'
-		];
 		selectedImage = '';
 
 		mounted() {
-			this.selectedImage = this.randomItem(this.images);
+			this.selectedImage = require('@cnamts/vue-dot/src/assets/images/maintenance.svg');
 		}
 
 		/**
@@ -118,10 +114,6 @@
 			});
 
 			return supportId.trim();
-		}
-
-		randomItem(items: string[]): string {
-			return require(`@cnamts/vue-dot/src/assets/images/${items[Math.floor(Math.random() * items.length)]}.svg`);
 		}
 	}
 
