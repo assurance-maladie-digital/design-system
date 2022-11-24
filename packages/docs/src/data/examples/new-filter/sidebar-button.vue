@@ -3,9 +3,9 @@
 		<NewFilter
 			v-model="filters"
 			:simple-mode="true"
-			:chips-limit="8"
-			v-bind="$attrs"
-			v-on="$listeners"
+			side-bar-button
+			:limited-inline-filter="limitedInlineFilter"
+			hide-reset
 		>
 			<template #filter-firstname="{ on, attrs }">
 				<VTextField
@@ -19,8 +19,17 @@
 			<template #filter-lastname="{ on, attrs }">
 				<VTextField
 					label="Nom"
-					outlined
 					class="mt-4"
+					outlined
+					v-bind="attrs"
+					v-on="on"
+				/>
+			</template>
+			<template #filter-nickname="{ on, attrs }">
+				<VTextField
+					label="Surnom"
+					class="mt-4"
+					outlined
 					v-bind="attrs"
 					v-on="on"
 				/>
@@ -33,24 +42,32 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
+	@Component
+	export default class NewFilterApplyButton extends Vue {
+		limitedInlineFilter=['firstname', 'lastname']
 
-	@Component({
-		inheritAttrs: false
-	})
-	export default class FilterModuleUsage extends Vue {
 		filters = [
 			{
 				name: 'firstname',
 				label: 'Prénom',
-				description: 'Entrez ici le prénom du patient que vous recherchez',
-				chips: []
+				chips: [],
+				descrption: 'Entrer le prénom d\'un utilisateur',
+				clearAfterValidate: true
 			},
 			{
 				name: 'lastname',
 				label: 'Nom',
-				description: 'Entrez ici le nom du patient que vous recherchez',
-				chips: []
+				chips: [],
+				descrption: 'Entrer le nom d\'un utilisateur',
+				clearAfterValidate: true
 			},
+			{
+				name: 'nickname',
+				label: 'Surnom',
+				chips: [],
+				descrption: 'Entrer le surnom d\'un utilisateur',
+				clearAfterValidate: true
+			}
 		];
 	}
 </script>

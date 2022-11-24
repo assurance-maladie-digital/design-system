@@ -66,12 +66,6 @@
 				chips: []
 			},
 			{
-				name: 'date',
-				label: 'Date',
-				description: 'Entrer ici la date du RDV que vous recherchez',
-				chips: []
-			},
-			{
 				name: 'age',
 				label: 'Age',
 				description: 'Selectionner l\'age',

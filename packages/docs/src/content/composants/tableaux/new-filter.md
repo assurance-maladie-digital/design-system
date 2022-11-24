@@ -68,9 +68,21 @@ Pour retirer le bouton reinitialiser en `mode simple`, vous pouvez utiliser `:hi
 
 ### Ajouter du style
 
-Pour ajouter du style dans filtre, vous pouvez utiliser `style` dans l'objet.
+dans filtre, vous pouvez utiliser `style` dans l'objet.
 
 <doc-example file="new-filter/add-style"></doc-example>
+
+### Afficher le filtre complexe en mode simple
+
+Vous pouvez afficher le filtre de la barre latérale en ajoutant un bouton avec `sidebar-button`, vous pouvez aussi masquer une partie des filtre dans le mode simple. Vous les retrouverez dans la barre latérale en cliquant sur le bouton.
+
+<doc-example file="new-filter/sidebar-button"></doc-example>
+
+### Ajouter un bouton Appliquer
+
+Vous pouvez afficher un bouton **Appliquer** en utilisant `apply-button` et utiliser la props `apply-function` pour faire passer la fonction qui sera utiliser par le bouton.
+
+<doc-example file="new-filter/apply-button"></doc-example>
 
 </doc-tab-item>
 

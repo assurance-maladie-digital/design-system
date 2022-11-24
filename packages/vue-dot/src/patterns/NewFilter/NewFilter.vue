@@ -8,6 +8,7 @@
 			:side-bar-button="sideBarButton"
 			:apply-function="applyFunction"
 			:hide-reset="hideReset"
+			:limited-inline-filter="limitedInlineFilter"
 			@open-close-sidebar="openCloseSidebar"
 		>
 			<template
@@ -116,6 +117,10 @@
 			},
 			value: {
 				type: Array as PropType<FilterItem[]>,
+				default: () => []
+			},
+			limitedInlineFilter: {
+				type: Array as PropType<string[]>,
 				default: () => []
 			},
 			applyFunction: {
