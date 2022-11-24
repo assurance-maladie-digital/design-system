@@ -3,9 +3,10 @@
 		<NewFilter
 			v-model="filters"
 			:simple-mode="true"
-			:hide-reset="true"
-			v-bind="$attrs"
-			v-on="$listeners"
+			side-bar-button
+			apply-button
+			hide-reset
+			:apply-function="applyFunction"
 		>
 			<template #filter-firstname="{ on, attrs }">
 				<VTextField
@@ -25,19 +26,11 @@
 					v-on="on"
 				/>
 			</template>
-			<template #filter-date="{ on, attrs }">
-				<DatePicker
-					label="Date"
+			<template #filter-nickname="{ on, attrs }">
+				<VTextField
+					label="Surnom"
 					class="mt-4"
 					outlined
-					v-bind="attrs"
-					v-on="on"
-				/>
-			</template>
-			<template #filter-age="{ on, attrs }">
-				<VRangeSlider
-					max="100"
-					min="1"
 					v-bind="attrs"
 					v-on="on"
 				/>
@@ -51,30 +44,33 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class FilterModuleUsage extends Vue {
+	export default class NewFilterApplyButton extends Vue {
 		filters = [
 			{
 				name: 'firstname',
 				label: 'Prénom',
-				description: 'Entrez ici le prénom du patient que vous recherchez',
-				chips: []
+				chips: [],
+				descrption: 'Entrer le prénom d\'un utilisateur',
+				clearAfterValidate: true
 			},
 			{
 				name: 'lastname',
 				label: 'Nom',
-				description: 'Entrez ici le nom du patient que vous recherchez',
-				chips: []
+				chips: [],
+				descrption: 'Entrer le nom d\'un utilisateur',
+				clearAfterValidate: true
 			},
 			{
-				name: 'age',
-				label: 'Age',
-				description: 'Selectionner l\'age',
-				limited: true,
+				name: 'nickname',
+				label: 'Surnom',
 				chips: [],
-				value: [0,0],
-				defaultValue: [50,50],
-				style: 'margin-left: 40px;'
-			},
+				descrption: 'Entrer le surnom d\'un utilisateur',
+				clearAfterValidate: true
+			}
 		];
+
+		applyFunction() {
+			console.log('Ajouter la fonction ici')
+		}
 	}
 </script>

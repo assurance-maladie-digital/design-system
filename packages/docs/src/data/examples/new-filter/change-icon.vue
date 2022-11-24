@@ -5,9 +5,11 @@
 			:simple-mode="true"
 			:chips-limit="8"
 		>
-			<template #filter-date="{ on, attrs }">
-				<DatePicker
+			<template #filter-firstname="{ on, attrs }">
+				<VTextField
+					label="Nom"
 					outlined
+					class="mt-4"
 					v-bind="attrs"
 					v-on="on"
 				/>
@@ -19,20 +21,20 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import { mdiCalendar } from '@mdi/js';
+	import { mdiAccount } from '@mdi/js';
 
 	@Component
 	export default class FilterModuleUsage extends Vue {
-		calendarIcon = mdiCalendar;
+		userIcon = mdiAccount;
 
 		filters = [
 			{
-				name: 'date',
-				label: 'Date',
-				description: 'Selectionnez une date',
+				name: 'firstname',
+				label: 'Prénom',
+				description: 'Entrez ici le prénom du patient que vous recherchez',
 				chips: [],
-				icon: this.calendarIcon
-			},
+				icon: this.userIcon
+			}
 		];
 	}
 </script>

@@ -1,7 +1,7 @@
 <template>
 	<div class="vd-inline-filters">
 		<VMenu
-			v-for="(filter, index) in filters"
+			v-for="(filter, index) in filterList"
 			:key="index"
 			:close-on-content-click="false"
 			min-width="300px"
@@ -67,7 +67,6 @@
 		<VBtn
 			v-if="sideBarButton"
 			text
-			small
 			color="indigo"
 			@click="openCloseSidebar"
 		>
@@ -88,7 +87,6 @@
 		<VBtn
 			v-if="applyButton"
 			depressed
-			small
 			class="ml-4 mr-2"
 			color="primary"
 			@click.stop="applyFunction"
@@ -98,7 +96,6 @@
 		<VBtn
 			v-if="!hideReset"
 			text
-			small
 			color="indigo"
 			@click.stop="resetAllFilters"
 		>
@@ -142,6 +139,10 @@
 			hideReset: {
 				type: Boolean,
 				required: true
+			},
+			limitedInlineFilter: {
+				type: Array as PropType<string[]>,
+				required: true
 			}
 		}
 	});
@@ -171,6 +172,20 @@
 			});
 
 			return count;
+		}
+
+		get filterList(): unknown {
+			const filteredList: FilterItem[] = [];
+			if (this.limitedInlineFilter.length) {
+				this.filters.forEach(filter => {
+					if (this.limitedInlineFilter.includes(filter.name)) {
+						filteredList.push(filter);
+					}
+				});
+				return filteredList;
+			} else {
+				return this.filters;
+			}
 		}
 
 		removeAccents(str: string): string | undefined {
