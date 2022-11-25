@@ -11,6 +11,7 @@
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction du hook de qualité ne bloquant pas les warnings ([#2376](https://github.com/assurance-maladie-digital/design-system/pull/2376)) ([304f38b](https://github.com/assurance-maladie-digital/design-system/commit/304f38b85f2ba60ef338299a4830e39b9988b627))
+  - **template:** Correction de la configuration des Jenkins files ([#2404](https://github.com/assurance-maladie-digital/design-system/pull/2404))
 
 ### Documentation
 
@@ -26,7 +27,7 @@
   - **sass-loader:** Mise à jour vers la `v10.4.1` ([#2388](https://github.com/assurance-maladie-digital/design-system/pull/2388)) ([c0f9de6](https://github.com/assurance-maladie-digital/design-system/commit/c0f9de6963e2df4e73a6b2f4f494c0f07b11f051))
   - **typescript:** Mise à jour vers la `v4.9.3` ([#2389](https://github.com/assurance-maladie-digital/design-system/pull/2389)) ([ae1b3e4](https://github.com/assurance-maladie-digital/design-system/commit/ae1b3e423964aede8a900ef0daad4d758dd1e9af))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.44.0` ([#2396](https://github.com/assurance-maladie-digital/design-system/pull/2396)) ([8e5878f](https://github.com/assurance-maladie-digital/design-system/commit/8e5878f1611bceb810bb2169ef7f9bebc9f678ea))
-  - **netlify-cli:** Mise à jour vers la `v12.2.7` ([#2400](https://github.com/assurance-maladie-digital/design-system/pull/2400))
+  - **netlify-cli:** Mise à jour vers la `v12.2.7` ([#2400](https://github.com/assurance-maladie-digital/design-system/pull/2400)) ([4e11900](https://github.com/assurance-maladie-digital/design-system/commit/4e119006ccf6e957e8ad5d1ccdd6c9672c034c73))
 
 ## v2.7.1
 
