@@ -4,7 +4,7 @@ exports[`MaintenancePage renders correctly 1`] = `
 <pagecontainer-stub size="s" color="transparent">
   <vcard-stub loaderheight="4" tag="div" class="pa-8">
     <vrow-stub tag="div" class="mx-0">
-      <vcol-stub cols="12" md="12" tag="div" class="order-last order-md-first -mt-4 md:mt-0 text-center text-md-left">
+      <vcol-stub cols="12" md="12" tag="div" class="order-last order-md-first text-center text-md-left">
         <h2 class="mb-2 font-weight-bold text-h mb-4">
           Error
         </h2>
