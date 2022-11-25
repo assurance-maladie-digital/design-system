@@ -39,7 +39,7 @@
 							class="d-flex align-center justify-space-between pl-2 pr-0"
 						>
 							<v-chip
-								v-if="labelType === 'chip'"
+								v-if="labelChip"
 								:color="item.color"
 								outlined
 								small
@@ -80,7 +80,7 @@
 							class="d-flex align-center justify-space-between pl-2 pr-0"
 						>
 							<v-chip
-								v-if="labelType === 'chip'"
+								v-if="labelChip"
 								:color="item.color"
 								outlined
 								small
@@ -139,9 +139,9 @@
 				type: Boolean,
 				default: false
 			},
-			labelType: {
-				type: String,
-				default: ''
+			labelChip: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
