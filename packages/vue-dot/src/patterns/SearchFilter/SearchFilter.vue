@@ -24,16 +24,51 @@
 					:key="item.id"
 				>
 					<VRow
-						class="mx-0 px-3 my-0"
+						v-if="checkboxes"
+						class="mx-0 my-0 px-3"
 						:class="{ 'bg-blue': selectedItems.includes(item.name) }"
 					>
 						<VCheckbox
+							v-if="checkboxes"
 							v-model="selectedItems"
 							height="9"
 							:value="item.name"
 							@change="emitChangeEvent()"
 						/>
-						<VCol class="d-flex align-center justify-space-between pl-2 pr-0">
+						<VCol
+							class="d-flex align-center justify-space-between pl-2 pr-0"
+						>
+							{{ item.name }}
+							<VTooltip
+								v-if="item.info !== ''"
+								top
+							>
+								<template #activator="{ on, attrs }">
+									<VBtn
+										icon
+										height="9"
+										v-bind="attrs"
+										v-on="on"
+									>
+										<VIcon color="grey lighten-3">
+											{{ infoIcon }}
+										</VIcon>
+									</VBtn>
+								</template>
+								{{ item.info }}
+							</VTooltip>
+						</VCol>
+					</VRow>
+					<VRow
+						v-else
+						class="mx-0 my-0 px-2"
+						:class="{ 'bg-blue': selectedItems.includes(item.name) }"
+						style="cursor: pointer"
+						@click="selectItem(item.name)"
+					>
+						<VCol
+							class="d-flex align-center justify-space-between pl-2 pr-0"
+						>
 							{{ item.name }}
 							<VTooltip
 								v-if="item.info !== ''"
@@ -77,6 +112,10 @@
 				default: ''
 			},
 			reset: {
+				type: Boolean,
+				default: false
+			},
+			checkboxes: {
 				type: Boolean,
 				default: false
 			}
@@ -156,6 +195,15 @@
 		emitChangeEvent(): void {
 			this.internalValue = this.selectedItems;
 			this.$emit('change', this.internalValue);
+		}
+
+		selectItem(item: string): void {
+			if (this.selectedItems.includes(item)) {
+				this.selectedItems = this.selectedItems.filter((selectedItem: string) => selectedItem !== item);
+			} else {
+				this.selectedItems.push(item);
+			}
+			this.emitChangeEvent();
 		}
 	}
 </script>
