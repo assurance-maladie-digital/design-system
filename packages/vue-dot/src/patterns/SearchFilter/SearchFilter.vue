@@ -38,7 +38,17 @@
 						<VCol
 							class="d-flex align-center justify-space-between pl-2 pr-0"
 						>
-							{{ item.name }}
+							<v-chip
+								v-if="labelType === 'chip'"
+								:color="item.color"
+								outlined
+								small
+							>
+								{{ item.name }}
+							</v-chip>
+							<span v-else>
+								{{ item.name }}
+							</span>
 							<VTooltip
 								v-if="item.info !== ''"
 								top
@@ -69,7 +79,17 @@
 						<VCol
 							class="d-flex align-center justify-space-between pl-2 pr-0"
 						>
-							{{ item.name }}
+							<v-chip
+								v-if="labelType === 'chip'"
+								:color="item.color"
+								outlined
+								small
+							>
+								{{ item.name }}
+							</v-chip>
+							<span v-else>
+								{{ item.name }}
+							</span>
 							<VTooltip
 								v-if="item.info !== ''"
 								top
@@ -118,6 +138,10 @@
 			multiple: {
 				type: Boolean,
 				default: false
+			},
+			labelType: {
+				type: String,
+				default: ''
 			}
 		}
 	});
@@ -128,6 +152,7 @@
 		id: number;
 		name: string;
 		info: string;
+		color: string;
 	}
 
 	@Component<SearchFilter>({
@@ -154,11 +179,11 @@
 		filterSearch = '';
 		tempListSearch: Item[] = [];
 		listSearch:  Item[] = [
-			{ id: 1, name: 'foo', info: 'foo info' },
-			{ id: 2, name: 'bar', info: '' },
-			{ id: 3, name: 'baz', info: '' },
-			{ id: 4, name: 'qux', info: 'qux info' },
-			{ id: 5, name: 'quux', info: '' }
+			{ id: 1, name: 'foo', info: 'foo info', color: 'am-blue' },
+			{ id: 2, name: 'bar', info: '', color: 'cyan' },
+			{ id: 3, name: 'baz', info: '', color: 'frosted-blue' },
+			{ id: 4, name: 'qux', info: 'qux info', color: 'mauve' },
+			{ id: 5, name: 'quux', info: '', color: 'orange' }
 		];
 		selectedItems: Array<string> = [];
 		internalValue: Array<string> = [];
