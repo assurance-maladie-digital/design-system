@@ -1,9 +1,8 @@
 <template>
-	<div class="d-flex justify-center">
+	<div class="complex-mode-exemple d-flex justify-center">
 		<NewFilter
 			v-model="filters"
 			:simple-mode="false"
-			:chips-limit="8"
 			v-bind="$attrs"
 			v-on="$listeners"
 		>
@@ -78,3 +77,9 @@
 		];
 	}
 </script>
+
+<style lang="scss">
+.complex-mode-exemple  {
+
+}
+</style>
