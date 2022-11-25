@@ -46,7 +46,7 @@
 						:alt="pageTitle"
 						max-width="90%"
 						max-height="100%"
-						class="mx-12 mx-sm-20 mx-md-0"
+						class="mx-12 mx-sm-16 mx-md-0"
 					/>
 				</VCol>
 			</VRow>
