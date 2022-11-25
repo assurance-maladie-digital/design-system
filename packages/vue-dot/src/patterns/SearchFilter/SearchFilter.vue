@@ -24,12 +24,12 @@
 					:key="item.id"
 				>
 					<VRow
-						v-if="checkboxes"
+						v-if="multiple"
 						class="mx-0 my-0 px-3"
 						:class="{ 'bg-blue': selectedItems.includes(item.name) }"
 					>
 						<VCheckbox
-							v-if="checkboxes"
+							v-if="multiple"
 							v-model="selectedItems"
 							height="9"
 							:value="item.name"
@@ -115,7 +115,7 @@
 				type: Boolean,
 				default: false
 			},
-			checkboxes: {
+			multiple: {
 				type: Boolean,
 				default: false
 			}
@@ -199,9 +199,9 @@
 
 		selectItem(item: string): void {
 			if (this.selectedItems.includes(item)) {
-				this.selectedItems = this.selectedItems.filter((selectedItem: string) => selectedItem !== item);
+				this.selectedItems = [];
 			} else {
-				this.selectedItems.push(item);
+				this.selectedItems = [item];
 			}
 			this.emitChangeEvent();
 		}
