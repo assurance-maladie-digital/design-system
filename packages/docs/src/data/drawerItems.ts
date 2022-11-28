@@ -205,6 +205,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'PeriodFilter',
 						to: '/composants/tableaux/new-filter'
+					},
+					{
+						title: 'SearchFilter',
+						to: '/composants/tableaux/search-filter'
 					}
 				]
 			},
