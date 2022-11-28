@@ -4,12 +4,10 @@
 			v-model="filters"
 			:simple-mode="true"
 			:chips-limit="8"
-			@remove-chip="removeChip($event)"
-			@reset-filter="reset"
 			v-bind="$attrs"
 			v-on="$listeners"
 		>
-			<template #filter-name="{ on, attrs }">
+			<template #filter-search="{ on, attrs }">
 				<SearchFilter
 					splited="true"
 					height="200"
@@ -24,15 +22,15 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-
+	import SearchFilter from '@cnamts/vue-dot/src/patterns/SearchFilter';
 
 	@Component({
-		inheritAttrs: false
+		inheritAttrs: false,
+		components: {
+			SearchFilter
+		}
 	})
 	export default class FilterModuleUsage extends Vue {
-		removedChip = '';
-		resetFilter = false;
-		
 		filters = [
 			{
 				name: 'search',
@@ -47,31 +45,8 @@
 		options = {
 			booleans: [
 				'simpleMode',
-				'hideReset',
-				'multiple',
-				'labelChip'
-			],
-			textFields: [
-				'height'
+				'hideReset'
 			]
-		};
-
-		get resetStatus(): boolean {
-			return this.resetFilter;
-		}
-
-		removeChip(chip: string): void {
-			if (chip) {
-				this.removedChip = Object.values(chip)[0];
-			}
-		}
-
-		reset(): void {
-			this.resetFilter = true;
-		}
-
-		change(): void {
-			this.resetFilter = false;
 		}
 	}
 </script>
