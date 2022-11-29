@@ -14,25 +14,7 @@ export const api: Api = {
 				type: "string",
 				required: true,
 				description: "Le message d’erreur à afficher à l’utilisateur.",
-			},
-			{
-				name: "btn-text",
-				type: "string",
-				default: `'Retour à l’accueil'`,
-				description: "Le message du bouton d’action.",
-			},
-			{
-				name: "btn-route",
-				type: "RawLocation",
-				default: `{ name: 'home' }`,
-				description: "La valeur de la prop `to` du bouton d’action.",
-			},
-			{
-				name: "image",
-				type: "boolean",
-				default: false,
-				description: "Affiche une image d'illustration.",
-			},
+			}
 		],
 	},
 };

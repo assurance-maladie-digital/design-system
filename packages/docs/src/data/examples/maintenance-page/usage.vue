@@ -3,7 +3,6 @@
 		<MaintenancePage
 			v-bind="$attrs"
 			v-on="$listeners"
-			btn-route="/"
 		/>
 	</div>
 </template>
@@ -19,18 +18,13 @@
 		defaultProps = {
 			pageTitle: 'Maintenance en cours',
 			message: 'L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.',
-			btnText: 'Retour à l’accueil',
 			image: false
 		};
 
 		options = {
-			booleans: [
-				'image'
-			],
 			textFields: [
 				'pageTitle',
-				'message',
-				'btnText'
+				'message'
 			]
 		};
 	}
