@@ -13,7 +13,7 @@
 	import Component from 'vue-class-component';
 
 	@Component({
-		inheritAttrs: false
+		inheritAttrs: false,
 	})
 	export default class ErrorPageUsage extends Vue {
 		defaultProps = {

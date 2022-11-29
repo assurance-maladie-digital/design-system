@@ -215,6 +215,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/feedback/notification-bar'
 					},
 					{
+						title: 'AccessibilityBanner',
+						to: '/composants/feedback/accessibility-banner'
+					},
+					{
 						title: 'CookieBanner',
 						to: '/composants/feedback/cookie-banner'
 					},
