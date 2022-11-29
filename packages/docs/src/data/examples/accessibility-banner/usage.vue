@@ -3,17 +3,20 @@
 		<AccessibilityBanner
 			v-if="active"
 			accessibility-route="#section/utilisation"
-			@accept="active = false;"
+			@accept="active = false; removeTabKey()"
 		/>
 
 		<VBtn
 			v-if="!active"
 			color="primary"
 			class="text-none"
-			@click="active = true;"
+			@click="active = true; info = true; checkTabKey()"
 		>
 			Réinitialiser
 		</VBtn>
+		<div v-if="info">
+			Cliquez sur la touche Tab
+		</div>
 	</div>
 </template>
 
@@ -30,5 +33,23 @@
 	})
 	export default class AccessibilityBannerUsage extends Vue {
 		active = true;
+		info = true;
+
+		mounted() {
+			this.checkTabKey();
+		}
+
+		checkTabKey(): void {
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Tab') {
+					this.info = false;
+				} else {
+					return;
+				}
+			});
+		}
+		removeTabKey(): void {
+			document.removeEventListener('keydown', this.checkTabKey);
+		}
 	}
 </script>
