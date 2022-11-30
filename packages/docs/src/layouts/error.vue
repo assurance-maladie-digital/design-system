@@ -2,8 +2,6 @@
 	<VApp>
 		<DocHeader :drawer.sync="drawer" />
 
-		<DocDrawer v-model="drawer" />
-
 		<VMain>
 			<div class="h-100 d-flex align-center justify-center flex-column text-center ma-auto pa-4">
 				<span
