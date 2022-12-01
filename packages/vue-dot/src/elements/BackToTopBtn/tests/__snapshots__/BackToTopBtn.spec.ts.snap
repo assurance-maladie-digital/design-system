@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackToTopBtn renders correctly 1`] = `
+<div style="display: none;">
+  <vbtn-stub color="primary" height="auto" minheight="36px" outlined="true" tag="button" activeclass="" small="true" type="button" class="vd-top-btn text-none text-wrap"><span class="d-none d-sm-block">
+
+		</span>
+    <vicon-stub color="primary" size="16px" class="ml-0 ml-sm-1">
+      M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z
+    </vicon-stub>
+  </vbtn-stub>
+</div>
+`;
