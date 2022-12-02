@@ -15,7 +15,7 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **colors:** Ajout d'information sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))
+  - **colors:** Ajout d'informations sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))
 
 ### Interne
 
@@ -26,7 +26,8 @@
   - **sass-loader:** Mise à jour vers la `v10.4.1` ([#2388](https://github.com/assurance-maladie-digital/design-system/pull/2388)) ([c0f9de6](https://github.com/assurance-maladie-digital/design-system/commit/c0f9de6963e2df4e73a6b2f4f494c0f07b11f051))
   - **typescript:** Mise à jour vers la `v4.9.3` ([#2389](https://github.com/assurance-maladie-digital/design-system/pull/2389)) ([ae1b3e4](https://github.com/assurance-maladie-digital/design-system/commit/ae1b3e423964aede8a900ef0daad4d758dd1e9af))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.44.0` ([#2396](https://github.com/assurance-maladie-digital/design-system/pull/2396)) ([8e5878f](https://github.com/assurance-maladie-digital/design-system/commit/8e5878f1611bceb810bb2169ef7f9bebc9f678ea))
-  - **netlify-cli:** Mise à jour vers la `v12.2.7` ([#2400](https://github.com/assurance-maladie-digital/design-system/pull/2400))
+  - **netlify-cli:** Mise à jour vers la `v12.2.7` ([#2400](https://github.com/assurance-maladie-digital/design-system/pull/2400)) ([0d99200](https://github.com/assurance-maladie-digital/design-system/commit/0d99200087f4a1cd06cc617922af5e7c04787fdf))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.6.4` ([#2405](https://github.com/assurance-maladie-digital/design-system/pull/2405))
 
 ## v2.7.1
 
