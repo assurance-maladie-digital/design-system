@@ -11,9 +11,12 @@
 
 - 🐛 **Corrections de bugs**
   - **template:** Correction du hook de qualité ne bloquant pas les warnings ([#2376](https://github.com/assurance-maladie-digital/design-system/pull/2376)) ([304f38b](https://github.com/assurance-maladie-digital/design-system/commit/304f38b85f2ba60ef338299a4830e39b9988b627))
-  - **template:** Correction de la configuration des Jenkins files ([#2404](https://github.com/assurance-maladie-digital/design-system/pull/2404))
+  - **template:** Correction de la configuration des Jenkins files ([#2404](https://github.com/assurance-maladie-digital/design-system/pull/2404)) ([9511afa](https://github.com/assurance-maladie-digital/design-system/commit/9511afac73b82ff5543d978d15f12b294c455c58))
 
 ### Documentation
+
+- 🐛 **Corrections de bugs**
+  - **global:** Correction de la gestion des erreurs lors des chargements asynchrones ([#2438](https://github.com/assurance-maladie-digital/design-system/pull/2438))
 
 - 📝 **Documentation**
   - **colors:** Ajout d'information sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))

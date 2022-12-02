@@ -1,6 +1,15 @@
 <template>
 	<div class="doc-api w-100">
+		<DocAlert
+			v-if="error"
+			type="error"
+			class="mb-0"
+		>
+			Une erreur est survenue lors du chargement de l’API.
+		</DocAlert>
+
 		<div
+			v-else
 			v-for="(component, componentName, index) in api"
 			:key="componentName"
 		>
@@ -40,14 +49,6 @@
 	import { API_HEADER_MAPPING } from '../../constants/apiTableHeaders';
 	import { Api } from '../../types';
 
-	const getApi = (name: string) => {
-		return import(
-			/* webpackChunkName: "api-data" */
-			/* webpackMode: "eager" */
-			`../../data/api/${name}.ts`
-		);
-	};
-
 	const Props = Vue.extend({
 		props: {
 			name: {
@@ -61,7 +62,8 @@
 
 	@Component
 	export default class DocApi extends MixinsDeclaration {
-		api: Api | null = null;
+		api = {} as Api;
+		error = false;
 
 		get showTitle(): boolean {
 			if (!this.api) {
@@ -79,8 +81,22 @@
 			return API_HEADER_MAPPING[itemName];
 		}
 
+		async getApi(componentName: string): Promise<Api | undefined> {
+			try {
+				const data = await import(
+					/* webpackChunkName: "api-data" */
+					/* webpackMode: "eager" */
+					`!raw-loader!../../data/api/${componentName}.ts`
+				);
+
+				return data.default.api;
+			} catch(error) {
+				this.error = true;
+			}
+		}
+
 		async created() {
-			this.api = (await getApi(this.name)).api;
+			this.api = await this.getApi(this.name) || {};
 		}
 	}
 </script>
