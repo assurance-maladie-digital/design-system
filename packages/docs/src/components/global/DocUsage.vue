@@ -49,11 +49,10 @@
 							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 						>
 							<VueFile
-								v-if="file"
 								:file="file"
 								v-bind="usageProps"
 								@loaded="setContents"
-								@error="hasError = true"
+								@error="error = true"
 							/>
 						</VSheet>
 					</VThemeProvider>
@@ -81,7 +80,7 @@
 
 						<div class="ms-auto pa-1">
 							<DocTooltipBtn
-								:disabled="hasError"
+								:disabled="error"
 								label="Inverser les couleurs"
 								@click="dark = !dark"
 							>
@@ -93,7 +92,7 @@
 							</DocTooltipBtn>
 
 							<DocTooltipBtn
-								:disabled="hasError"
+								:disabled="error"
 								label="Voir la source"
 								@click="expand = !expand"
 							>
@@ -327,7 +326,7 @@
 
 		dark = false;
 		expand = false;
-		hasError = false;
+		error = false;
 
 		tab = null;
 		tabs: string[] = [];
