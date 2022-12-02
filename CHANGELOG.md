@@ -19,7 +19,7 @@
   - **global:** Correction de la gestion des erreurs lors des chargements asynchrones ([#2438](https://github.com/assurance-maladie-digital/design-system/pull/2438)) ([278cb8b](https://github.com/assurance-maladie-digital/design-system/commit/278cb8b2ef68b48353fffcd7f4356561533effba))
 
 - 📝 **Documentation**
-  - **colors:** Ajout d'information sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))
+  - **colors:** Ajout d'informations sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))
 
 ### Interne
 
@@ -30,7 +30,8 @@
   - **sass-loader:** Mise à jour vers la `v10.4.1` ([#2388](https://github.com/assurance-maladie-digital/design-system/pull/2388)) ([c0f9de6](https://github.com/assurance-maladie-digital/design-system/commit/c0f9de6963e2df4e73a6b2f4f494c0f07b11f051))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.44.0` ([#2396](https://github.com/assurance-maladie-digital/design-system/pull/2396)) ([8e5878f](https://github.com/assurance-maladie-digital/design-system/commit/8e5878f1611bceb810bb2169ef7f9bebc9f678ea))
   - **netlify-cli:** Mise à jour vers la `v12.2.7` ([#2400](https://github.com/assurance-maladie-digital/design-system/pull/2400)) ([4e11900](https://github.com/assurance-maladie-digital/design-system/commit/4e119006ccf6e957e8ad5d1ccdd6c9672c034c73))
-  - **eslint-plugin-vue:** Mise à jour vers la `v9.8.0` ([#2401](https://github.com/assurance-maladie-digital/design-system/pull/2401))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.8.0` ([#2401](https://github.com/assurance-maladie-digital/design-system/pull/2401)) ([4e11900](https://github.com/assurance-maladie-digital/design-system/commit/4e119006ccf6e957e8ad5d1ccdd6c9672c034c73))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.6.4` ([#2405](https://github.com/assurance-maladie-digital/design-system/pull/2405))
 
 ## v2.7.1
 
