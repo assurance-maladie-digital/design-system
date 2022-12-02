@@ -31,7 +31,8 @@
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.44.0` ([#2396](https://github.com/assurance-maladie-digital/design-system/pull/2396)) ([8e5878f](https://github.com/assurance-maladie-digital/design-system/commit/8e5878f1611bceb810bb2169ef7f9bebc9f678ea))
   - **netlify-cli:** Mise à jour vers la `v12.2.7` ([#2400](https://github.com/assurance-maladie-digital/design-system/pull/2400)) ([4e11900](https://github.com/assurance-maladie-digital/design-system/commit/4e119006ccf6e957e8ad5d1ccdd6c9672c034c73))
   - **eslint-plugin-vue:** Mise à jour vers la `v9.8.0` ([#2401](https://github.com/assurance-maladie-digital/design-system/pull/2401)) ([4e11900](https://github.com/assurance-maladie-digital/design-system/commit/4e119006ccf6e957e8ad5d1ccdd6c9672c034c73))
-  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.6.4` ([#2405](https://github.com/assurance-maladie-digital/design-system/pull/2405))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v39.6.4` ([#2405](https://github.com/assurance-maladie-digital/design-system/pull/2405)) ([719b058](https://github.com/assurance-maladie-digital/design-system/pull/1368/commits/719b05850859f78cafb094d658a43eb16394ec81))
+  - **lint-staged:** Mise à jour vers la `v13.0.4` ([#2406](https://github.com/assurance-maladie-digital/design-system/pull/2406))
 
 ## v2.7.1
 
