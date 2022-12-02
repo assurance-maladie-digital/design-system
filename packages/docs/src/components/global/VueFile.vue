@@ -43,10 +43,11 @@
 			let component = {} as DynamicImport;
 
 			try {
+				const file = this.file;
 				component = await import(
 					/* webpackChunkName: "examples" */
 					/* webpackMode: "lazy-once" */
-					`../../data/examples/${this.file}.vue`
+					`../../data/examples/${file}.vue`
 				);
 
 				this.$emit('loaded', component.default);

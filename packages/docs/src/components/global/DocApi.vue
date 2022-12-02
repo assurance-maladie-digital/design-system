@@ -9,7 +9,7 @@
 		</DocAlert>
 
 		<div
-			v-else
+			v-else-if="api"
 			v-for="(component, componentName, index) in api"
 			:key="componentName"
 		>
@@ -62,7 +62,7 @@
 
 	@Component
 	export default class DocApi extends MixinsDeclaration {
-		api = {} as Api;
+		api: Api | null = null;
 		error = false;
 
 		get showTitle(): boolean {
@@ -86,17 +86,17 @@
 				const data = await import(
 					/* webpackChunkName: "api-data" */
 					/* webpackMode: "eager" */
-					`!raw-loader!../../data/api/${componentName}.ts`
+					`../../data/api/${componentName}.ts`
 				);
 
-				return data.default.api;
+				return data.api;
 			} catch(error) {
 				this.error = true;
 			}
 		}
 
 		async created() {
-			this.api = await this.getApi(this.name) || {};
+			this.api = await this.getApi(this.name) || null;
 		}
 	}
 </script>
