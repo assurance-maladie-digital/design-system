@@ -53,9 +53,13 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Table
 
 ### Slots
 
-Vous pouvez utiliser le slot `search-left` pour ajouter du contenu à gauche du champ *Recherche*.
+Vous pouvez utiliser les slot `search-left` pour ajouter du contenu à gauche du champ *Recherche* .
 
-<doc-example file="table-toolbar/slots"></doc-example>
+<doc-example file="table-toolbar/slot-left"></doc-example>
+
+Vous pouvez utiliser les slot `search-right` pour ajouter du contenu à droite du champ _Recherche_ .
+
+<doc-example file="table-toolbar/slot-right"></doc-example>
 
 </doc-tab-item>
 
