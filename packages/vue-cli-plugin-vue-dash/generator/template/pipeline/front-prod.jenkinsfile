@@ -4,14 +4,28 @@ pipeline {
 		timeout(time: 1, unit: 'HOURS')
 	}
 	stages {
-		stage('Deploy image to prod') {
+		stage('deploy image') {
 			steps {
-				openshiftTag(srcStream: "${env.PROJECT}-front", srcTag: 'val', destStream: "${env.PROJECT}-front", destTag: 'prod', destinationNamespace: "${env.PROJECT}-val", namespace: "${env.PROJECT}-val")
+				script {
+					openshift.withCluster() {
+						openshift.withProject("${env.PROJECT}-val") {
+							openshift.tag("${env.PROJECT}-val/${env.PROJECT}-ihm:val", "${env.PROJECT}-val/${env.PROJECT}-ihm:prod")
+						}
+					}
+				}
 			}
 		}
-		stage('Test deploy availability') {
+		stage('deploy availability') {
 			steps {
-				openshiftVerifyDeployment(depCfg: "${env.PROJECT}-front-prod", namespace: "${env.PROJECT}-prod", waitTime: '10', waitUnit: 'min')
+				script {
+					openshift.withCluster() {
+						openshift.withProject("${env.PROJECT}-prod") {
+							def dc = openshift.selector('dc', "${env.PROJECT}-ihm-prod")
+							// Wait until the desired replicas are available
+							dc.rollout().status()
+						}
+					}
+				}
 			}
 		}
 	}
