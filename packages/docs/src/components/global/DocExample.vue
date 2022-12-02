@@ -159,10 +159,11 @@
 
 		async importTemplate(): Promise<void> {
 			try {
+				const file = this.file;
 				const component = await import(
 					/* webpackChunkName: "examples-source" */
 					/* webpackMode: "lazy-once" */
-					`!raw-loader!../../data/examples/${this.file}.vue`
+					`!raw-loader!../../data/examples/${file}.vue`
 				);
 
 				this.boot(component.default);
