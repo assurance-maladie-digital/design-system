@@ -37,6 +37,12 @@ Il est également possible de modifier le texte du champ *Recherche* en utilisan
 
 <doc-example file="table-toolbar/labels"></doc-example>
 
+#### Slots
+
+Vous pouvez utiliser les slots `search-left` ou `search-right` pour ajouter du contenu à gauche ou à droite du champ *Recherche*.
+
+<doc-example file="table-toolbar/slots"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
@@ -50,12 +56,6 @@ Il est également possible de modifier le texte du champ *Recherche* en utilisan
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `TableToolbar` en utilisant la prop `vuetify-options`.
 
 <doc-example file="table-toolbar/options"></doc-example>
-
-### Slots
-
-Vous pouvez utiliser le slot `search-left` pour ajouter du contenu à gauche du champ *Recherche*.
-
-<doc-example file="table-toolbar/slots"></doc-example>
 
 </doc-tab-item>
 

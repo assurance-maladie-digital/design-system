@@ -64,6 +64,10 @@ export const api: Api = {
 			{
 				name: 'search-left',
 				description: 'Slot pour afficher du contenu à gauche du champ *Recherche*.'
+			},
+			{
+				name: 'search-right',
+				description: 'Slot pour afficher du contenu à droite du champ *Recherche*.'
 			}
 		],
 		events: [

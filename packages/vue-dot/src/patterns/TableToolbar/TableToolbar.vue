@@ -41,6 +41,8 @@
 				{{ addBtnLabel }}
 			</span>
 		</VBtn>
+
+		<slot name="search-right" />
 	</VToolbar>
 </template>
 
