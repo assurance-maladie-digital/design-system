@@ -1,14 +1,14 @@
 <template>
 	<div class="d-flex flex-wrap align-center justify-center">
 		<VCard
-		elevation="2"
-		height="2000"
-	>
-		<BackToTopBtn
-			v-bind="$attrs"
-			v-on="$listeners"
-		/>
-	</VCard>
+			elevation="2"
+			height="2000"
+		>
+			<BackToTopBtn
+				v-bind="$attrs"
+				v-on="$listeners"
+			/>
+		</VCard>
 	</div>
 </template>
 

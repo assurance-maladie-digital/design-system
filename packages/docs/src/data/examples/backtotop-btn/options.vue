@@ -1,10 +1,15 @@
 <template>
 	<div class="d-flex align-center">
-		<BackToTopBtn
-			:vuetify-options="vuetifyOptions"
-			label="Retour en haut"
-			:top="20"
-		/>
+		<VCard
+			elevation="2"
+			height="500"
+		>
+			<BackToTopBtn
+				:vuetify-options="vuetifyOptions"
+				label="Retour en haut"
+				:top="20"
+			/>
+		</VCard>
 	</div>
 </template>
 
@@ -27,7 +32,7 @@
 				rounded: false
 			},
 			icon: {
-				color: 'grey-darken-60',
+				color: 'white',
 				size: '16px'
 			}
 		};
