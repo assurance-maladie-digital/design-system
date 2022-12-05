@@ -34,9 +34,9 @@
 			>
 				<div
 					:style="getColorStyle(colorValues.base)"
-					class="text-subtitle-1 pa-4 mb-1"
+					class="text-subtitle-1 text-code pa-4 mb-1"
 				>
-					{{ formatColorName(colorName) }}
+					<span class="text-code">{{ formatColorName(colorName) }}</span>
 				</div>
 
 				<div
@@ -45,8 +45,8 @@
 					:style="getColorStyle(colorValue)"
 					class="d-flex justify-space-between caption pa-4"
 				>
-					<span>{{ formatColorName(variationName) }}</span>
-					<span>{{ colorValue }}</span>
+					<span class="text-code">{{ formatColorName(variationName) }}</span>
+					<span class="text-code">{{ colorValue }}</span>
 				</div>
 			</VCol>
 		</VRow>
@@ -122,9 +122,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	.v-application .text-subtitle-1, .v-application .caption > span {
-		font-family: 'Source Code Pro', monospace !important;
-	}
-</style>
