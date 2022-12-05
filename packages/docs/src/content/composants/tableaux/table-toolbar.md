@@ -39,10 +39,9 @@ Il est également possible de modifier le texte du champ *Recherche* en utilisan
 
 #### Slots
 
-Vous pouvez utiliser le slot `search-left` ou `search-right` pour ajouter du contenu à gauche ou à droite du champ _Recherche_ .
+Vous pouvez utiliser les slots `search-left` ou `search-right` pour ajouter du contenu à gauche ou à droite du champ *Recherche*.
 
 <doc-example file="table-toolbar/slots"></doc-example>
-
 
 </doc-tab-item>
 
