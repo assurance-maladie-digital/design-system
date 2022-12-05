@@ -14,6 +14,10 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	interface DynamicImport {
+		default: Vue;
+	}
+
 	const Props = Vue.extend({
 		props: {
 			file: {
@@ -36,19 +40,24 @@
 		}
 
 		async load(): Promise<void> {
+			let component = {} as DynamicImport;
+
 			try {
 				const file = this.file;
-				const component = await import(
+				component = await import(
 					/* webpackChunkName: "examples" */
 					/* webpackMode: "lazy-once" */
 					`../../data/examples/${file}.vue`
 				);
 
-				this.component = component.default;
 				this.$emit('loaded', component.default);
 			} catch(error) {
+				component = await import('./ExampleError.vue') as unknown as DynamicImport;
+
 				this.$emit('error', error);
 			}
+
+			this.component = component.default;
 		}
 	}
 </script>
