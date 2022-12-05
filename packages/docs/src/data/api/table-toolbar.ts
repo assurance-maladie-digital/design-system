@@ -54,11 +54,11 @@ export const api: Api = {
 				description: 'Désactive les éléments interactifs.'
 			},
 			...customizable(`{
-				toolbar: 'VToolbar',
-				textField: 'VTextField',
-				addBtn: 'VBtn',
-				addIcon: 'VIcon'
-			}`)
+	toolbar: 'VToolbar',
+	textField: 'VTextField',
+	addBtn: 'VBtn',
+	addIcon: 'VIcon'
+}`)
 		],
 		slots: [
 			{
