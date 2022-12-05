@@ -122,3 +122,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.v-application .text-subtitle-1, .v-application .caption > span {
+		font-family: 'Source Code Pro', monospace !important;
+	}
+</style>
