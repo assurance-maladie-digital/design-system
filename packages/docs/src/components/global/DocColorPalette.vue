@@ -98,6 +98,11 @@
 
 		search: string | null = null;
 
+		warningColors: string[] = [
+			'#008972',
+			'#76797a'
+		];
+
 		get computedColors(): Partial<Palette> {
 			if (!this.search) {
 				return palette;
@@ -115,13 +120,6 @@
 			});
 
 			return colors;
-		}
-
-		get warningColors(): string[] {
-			return [
-				'#008972',
-				'#76797a'
-			];
 		}
 
 		get noSearchResult(): boolean {
