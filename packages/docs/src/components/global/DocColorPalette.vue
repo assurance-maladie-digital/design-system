@@ -47,16 +47,30 @@
 					:style="getColorStyle(colorValue)"
 					class="d-flex justify-space-between caption pa-4"
 				>
+					<span class="text-code">{{ formatColorName(variationName) }}</span>
 					<span class="text-code">
-						{{ formatColorName(variationName) }}
-					</span>
-
-					<span class="text-code">
+						<VIcon
+							v-if="warningColors.includes(colorValue)"
+							:style="getColorStyle(colorValue)"
+							class="mr-2"
+							small
+						>
+							{{ alertIcon }}
+						</VIcon>
 						{{ colorValue }}
 					</span>
 				</div>
 			</VCol>
 		</VRow>
+		<div class="d-flex align-center caption mt-4">
+			<VIcon
+				class="mr-4 mr-sm-2"
+				:small="$vuetify.breakpoint.smAndUp"
+			>
+				{{ alertIcon }}
+			</VIcon>
+			Le niveau de contraste pour ces couleurs n’est pas suffisant. Leur usage est réservé à des éléments graphiques non signifiants.
+		</div>
 	</div>
 </template>
 
@@ -71,6 +85,7 @@
 	import { toKebabCase } from '../../functions/toKebabCase';
 
 	import { mdiMagnify } from '@mdi/js';
+	import { mdiAlert } from '@mdi/js';
 
 	interface Palette extends BasePalette {
 		[key: string]: Color;
@@ -79,6 +94,7 @@
 	@Component
 	export default class DocColorPalette extends Vue {
 		searchIcon = mdiMagnify;
+		alertIcon = mdiAlert;
 
 		search: string | null = null;
 
@@ -99,6 +115,13 @@
 			});
 
 			return colors;
+		}
+
+		get warningColors(): string[] {
+			return [
+				'#008972',
+				'#76797a'
+			];
 		}
 
 		get noSearchResult(): boolean {
