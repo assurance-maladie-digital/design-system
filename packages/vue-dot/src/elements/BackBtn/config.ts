@@ -2,12 +2,12 @@ export const config = {
 	btn: {
 		text: true,
 		color: 'primary',
-		class: 'text-none text-wrap',
 		minHeight: '36px',
-		height: 'auto'
+		height: 'auto',
+		class: 'text-none text-wrap lowercase'
 	},
 	icon: {
 		color: 'primary',
-		class: 'mr-3'
+		class: 'mr-0 mr-sm-2'
 	}
 };
