@@ -34,7 +34,7 @@
 			>
 				<div
 					:style="getColorStyle(colorValues.base)"
-					class="text-subtitle-1 text-code pa-4 mb-1"
+					class="text-subtitle-1 pa-4 mb-1"
 				>
 					<span class="text-code">{{ formatColorName(colorName) }}</span>
 				</div>
