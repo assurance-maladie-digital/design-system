@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackBtn renders correctly 1`] = `
+<vbtn-stub color="primary" height="auto" minheight="36px" tag="button" activeclass="" text="true" type="button" class="vd-back-btn pa-1 pa-sm-2">
+  <!---->
+  test
+</vbtn-stub>
+`;
