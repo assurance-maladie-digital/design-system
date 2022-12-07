@@ -9,15 +9,13 @@
 			:vertical="mobileVersion"
 			:dark="code"
 		>
-			<ClientOnly>
-				<VTab
-					v-for="(item) in tabs"
-					:key="item.value"
-					:class="tabClasses"
-					v-text="item.label"
-					@click="setHash(item.value)"
-				/>
-			</ClientOnly>
+			<VTab
+				v-for="(item) in tabs"
+				:key="item.value"
+				:class="tabClasses"
+				v-text="item.label"
+				@click="setHash(item.value)"
+			/>
 		</VTabs>
 
 		<VTabsItems
