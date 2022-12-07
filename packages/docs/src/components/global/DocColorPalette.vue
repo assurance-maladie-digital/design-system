@@ -59,6 +59,7 @@
 						>
 							{{ alertIcon }}
 						</VIcon>
+
 						{{ colorValue }}
 					</span>
 				</div>
@@ -71,7 +72,7 @@
 			>
 				{{ alertIcon }}
 			</VIcon>
-			
+
 			Le niveau de contraste pour ces couleurs n’est pas suffisant. Leur usage est réservé à des éléments graphiques non signifiants.
 		</p>
 	</div>
