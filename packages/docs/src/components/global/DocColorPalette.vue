@@ -62,15 +62,15 @@
 				</div>
 			</VCol>
 		</VRow>
-		<div class="d-flex align-center caption mt-4">
+		<p class="d-sm-flex align-center caption mt-4">
 			<VIcon
-				class="mr-4 mr-sm-2"
-				:small="$vuetify.breakpoint.smAndUp"
+				class="mr-2"
+				small
 			>
 				{{ alertIcon }}
 			</VIcon>
 			Le niveau de contraste pour ces couleurs n’est pas suffisant. Leur usage est réservé à des éléments graphiques non signifiants.
-		</div>
+		</p>
 	</div>
 </template>
 
