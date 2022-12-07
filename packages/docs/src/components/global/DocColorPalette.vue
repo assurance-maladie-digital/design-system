@@ -52,11 +52,31 @@
 					</span>
 
 					<span class="text-code">
+						<VIcon
+							v-if="warningColors.includes(colorValue)"
+							:style="getColorStyle(colorValue)"
+							class="mr-1"
+							small
+						>
+							{{ alertIcon }}
+						</VIcon>
+
 						{{ colorValue }}
 					</span>
 				</div>
 			</VCol>
 		</VRow>
+
+		<p class="d-sm-flex align-center caption mt-4">
+			<VIcon
+				class="mr-2"
+				small
+			>
+				{{ alertIcon }}
+			</VIcon>
+
+			Le niveau de contraste pour ces couleurs n’est pas suffisant. Leur usage est réservé à des éléments graphiques non signifiants.
+		</p>
 	</div>
 </template>
 
@@ -67,10 +87,13 @@
 	import { palette } from '@cnamts/design-tokens/dist/colors';
 	import { Palette as BasePalette, Color } from '@cnamts/design-tokens/src/types';
 
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
+
 	import { hexToRgb } from '../../functions/hexToRgb';
 	import { toKebabCase } from '../../functions/toKebabCase';
 
 	import { mdiMagnify } from '@mdi/js';
+	import { mdiAlert } from '@mdi/js';
 
 	interface Palette extends BasePalette {
 		[key: string]: Color;
@@ -79,8 +102,14 @@
 	@Component
 	export default class DocColorPalette extends Vue {
 		searchIcon = mdiMagnify;
+		alertIcon = mdiAlert;
 
 		search: string | null = null;
+
+		warningColors: string[] = [
+			'#008972',
+			'#76797a'
+		];
 
 		get computedColors(): Partial<Palette> {
 			if (!this.search) {
@@ -121,7 +150,7 @@
 			return brightness > 125 ? '#000' : '#fff';
 		}
 
-		getColorStyle(color: string): object {
+		getColorStyle(color: string): IndexedObject {
 			return {
 				backgroundColor: color,
 				color: this.getTextColor(color)
@@ -129,3 +158,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.v-icon {
+		flex: none;
+	}
+</style>
