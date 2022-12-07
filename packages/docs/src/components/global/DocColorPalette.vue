@@ -47,12 +47,14 @@
 					:style="getColorStyle(colorValue)"
 					class="d-flex justify-space-between caption pa-4"
 				>
-					<span class="text-code">{{ formatColorName(variationName) }}</span>
+					<span class="text-code">
+						{{ formatColorName(variationName) }}
+					</span>
 					<span class="text-code">
 						<VIcon
 							v-if="warningColors.includes(colorValue)"
 							:style="getColorStyle(colorValue)"
-							class="mr-2"
+							class="mr-1"
 							small
 						>
 							{{ alertIcon }}
@@ -69,6 +71,7 @@
 			>
 				{{ alertIcon }}
 			</VIcon>
+			
 			Le niveau de contraste pour ces couleurs n’est pas suffisant. Leur usage est réservé à des éléments graphiques non signifiants.
 		</p>
 	</div>
