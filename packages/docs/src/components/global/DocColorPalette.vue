@@ -50,6 +50,7 @@
 					<span class="text-code">
 						{{ formatColorName(variationName) }}
 					</span>
+
 					<span class="text-code">
 						<VIcon
 							v-if="warningColors.includes(colorValue)"
@@ -65,6 +66,7 @@
 				</div>
 			</VCol>
 		</VRow>
+
 		<p class="d-sm-flex align-center caption mt-4">
 			<VIcon
 				class="mr-2"
@@ -84,6 +86,8 @@
 
 	import { palette } from '@cnamts/design-tokens/dist/colors';
 	import { Palette as BasePalette, Color } from '@cnamts/design-tokens/src/types';
+
+	import { IndexedObject } from '@cnamts/vue-dot/src/types';
 
 	import { hexToRgb } from '../../functions/hexToRgb';
 	import { toKebabCase } from '../../functions/toKebabCase';
@@ -146,7 +150,7 @@
 			return brightness > 125 ? '#000' : '#fff';
 		}
 
-		getColorStyle(color: string): object {
+		getColorStyle(color: string): IndexedObject {
 			return {
 				backgroundColor: color,
 				color: this.getTextColor(color)
@@ -154,3 +158,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.v-icon {
+		flex: none;
+	}
+</style>
