@@ -22,7 +22,8 @@
 		vuetifyOptions = {
 			btn: {
 				outlined: false,
-				text: false
+				text: false,
+				elevation: 2
 			},
 			icon: {
 				color: 'white'
