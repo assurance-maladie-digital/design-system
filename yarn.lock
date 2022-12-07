@@ -2508,7 +2508,7 @@
     tmp-promise "^3.0.3"
     uuid "^9.0.0"
 
-"@netlify/edge-bundler@^5.0.0":
+"@netlify/edge-bundler@^5.3.1":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@netlify/edge-bundler/-/edge-bundler-5.3.2.tgz#ca31cd89cf065067428c94393eabb006595a9983"
   integrity sha512-CrRvIAoSfzbgLsNXOtF7s6eTBhCnbapIcTvnEy2M9/kGBYF9go3XNothQuHsh8raJa1STIs01Autw+Pt2rnOJg==
@@ -4170,10 +4170,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.12.tgz#fd9c1c2cfab536a2383ed1ef70f94adea743a226"
   integrity sha512-KQZ1al2hKOONAs2MFv+yTQP1LkDWMrRJ9YCVRalXltOfXsBmH5IownLxQaiq0lnAHwAViLnh2aTYqrPcRGEbgg==
 
-"@types/node@16.18.4":
-  version "16.18.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.4.tgz#712ba61b4caf091fc6490301b1888356638c17bd"
-  integrity sha512-9qGjJ5GyShZjUfx2ArBIGM+xExdfLvvaCyQR0t6yRXKPcWCVYF/WemtX/uIU3r7FYECXRXkIiw2Vnhn6y8d+pw==
+"@types/node@16.18.6":
+  version "16.18.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.6.tgz#87846192fd51b693368fad3e99123169225621d4"
+  integrity sha512-vmYJF0REqDyyU0gviezF/KHq/fYaUbFhkcNbQCuPGFQj6VTbXuHZoxs/Y7mutWe73C8AC6l9fFu8mSYiBAqkGA==
 
 "@types/normalize-package-data@^2.4.0", "@types/normalize-package-data@^2.4.1":
   version "2.4.1"
@@ -8178,12 +8178,7 @@ dateformat@^3.0.0:
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
 
-dayjs@1.11.6:
-  version "1.11.6"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.6.tgz#2e79a226314ec3ec904e3ee1dd5a4f5e5b1c7afb"
-  integrity sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==
-
-dayjs@^1.8.34:
+dayjs@1.11.7, dayjs@^1.8.34:
   version "1.11.7"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
   integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
@@ -15079,14 +15074,14 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0, nested-error-stacks@^2.1
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@12.2.8:
-  version "12.2.8"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-12.2.8.tgz#c65dddf0cb919d426649dafdd0e7ee49bbfd8e4d"
-  integrity sha512-OmZoqPazXLv6cofp01cvTKPq0DB13X1XgCL520pOLcpg6a/QwUqpe/4nM43sU+KPV3l9OHlPjS0hHrwA0ka28w==
+netlify-cli@12.2.9:
+  version "12.2.9"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-12.2.9.tgz#221cd7e93313ca89ae7a3326974252cdd2062ba3"
+  integrity sha512-Y9WjkLql2gTdNHK2Bo7omqI1Er5inxTYFIi0+1vSvWzypmH/PjsNGXpYu2L0AfYoSbVNUFtIjjo7r7mnB6qFvA==
   dependencies:
     "@netlify/build" "^28.4.5"
     "@netlify/config" "^20.0.2"
-    "@netlify/edge-bundler" "^5.0.0"
+    "@netlify/edge-bundler" "^5.3.1"
     "@netlify/framework-info" "^9.5.2"
     "@netlify/local-functions-proxy" "^1.1.1"
     "@netlify/zip-it-and-ship-it" "^8.1.0"
