@@ -4,7 +4,7 @@ export const config = {
 		color: 'primary',
 		minHeight: '36px',
 		height: 'auto',
-		class: 'text-none text-wrap lowercase'
+		class: 'pa-1 pa-sm-2'
 	},
 	icon: {
 		color: 'primary',

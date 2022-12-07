@@ -127,6 +127,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/boutons/download-btn'
 					},
 					{
+						title: 'BackBtn',
+						to: '/composants/boutons/back-btn'
+					},
+					{
 						title: 'FranceConnectBtn',
 						to: '/composants/boutons/france-connect-btn'
 					},

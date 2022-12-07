@@ -1,7 +1,7 @@
 <template>
 	<VBtn
-		:class="btnPadding"
 		v-bind="options.btn"
+		class="vd-back-btn"
 		@click="$emit('click')"
 	>
 		<VIcon
@@ -44,9 +44,18 @@
 	export default class BackBtn extends MixinsDeclaration {
 		locales = locales;
 		backIcon = mdiArrowLeft;
-
-		get btnPadding(): string {
-			return this.hideBackIcon ? 'pa-1 pa-sm-2' : 'pa-1 pa-sm-3';
-		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-back-btn :deep() {
+		.v-btn__content {
+			flex-wrap: wrap;
+			text-transform: none;
+		}
+
+		.v-icon {
+			flex: none;
+		}
+	}
+</style>
