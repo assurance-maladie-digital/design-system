@@ -44,7 +44,8 @@
   - **lint-staged:** Mise à jour vers la `v13.1.0` ([#2441](https://github.com/assurance-maladie-digital/design-system/pull/2441)) ([73777c3](https://github.com/assurance-maladie-digital/design-system/commit/73777c390ca2072d3524d1d5cf2ad5c001fb0bf8))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.45.1` ([#2444](https://github.com/assurance-maladie-digital/design-system/pull/2444)) ([4e11900](https://github.com/assurance-maladie-digital/design-system/commit/4e119006ccf6e957e8ad5d1ccdd6c9672c034c73))
   - **@types/node:** Mise à jour vers la `v16.18.6` ([#2445](https://github.com/asurance-maladie-digital/design-system/pull/2445)) ([1a965b8](https://github.com/assurance-maladie-digital/design-system/commit/1a965b8b63c10c9ec69ca7939c68e8320448d4d7))
-  - **dayjs:** Mise à jour vers la `v1.11.7` ([#2447](https://github.com/assurance-maladie-digital/design-system/pull/2447))
+  - **dayjs:** Mise à jour vers la `v1.11.7` ([#2447](https://github.com/assurance-maladie-digital/design-system/pull/2447)) ([ff984bd](https://github.com/assurance-maladie-digital/design-system/commit/ff984bd0c767307fbd63279a596daa0c72c0d0e6))
+  - **netlify-cli:** Mise à jour vers la `v12.2.9` ([#2449](https://github.com/assurance-maladie-digital/design-system/pull/2449))
 
 ## v2.7.1
 
