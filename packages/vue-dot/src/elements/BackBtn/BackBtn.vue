@@ -60,4 +60,10 @@
 			flex: none;
 		}
 	}
+	.v-btn {
+		border: 2px solid;
+		&:focus {
+			border: 2px solid $vd-primary !important;
+		}
+	}
 </style>
