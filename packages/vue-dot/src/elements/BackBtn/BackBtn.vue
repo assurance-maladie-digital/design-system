@@ -10,7 +10,9 @@
 		>
 			{{ backIcon }}
 		</VIcon>
-		{{ label }}
+		<span :class="options.label.color + '--text'">
+			{{ label }}
+		</span>
 	</VBtn>
 </template>
 
@@ -48,12 +50,12 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
 	.vd-back-btn :deep() {
 		.v-btn__content {
 			flex-wrap: wrap;
 			text-transform: none;
 		}
-
 		.v-icon {
 			flex: none;
 		}

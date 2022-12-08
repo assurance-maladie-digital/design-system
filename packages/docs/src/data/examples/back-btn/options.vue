@@ -21,9 +21,13 @@
 	export default class BackBtnOptions extends Vue {
 		vuetifyOptions = {
 			btn: {
-				outlined: false,
 				text: false,
-				elevation: 2
+				elevation: 2,
+				color: 'primary',
+				class: 'pa-2'
+			},
+			label: {
+				color: 'white'
 			},
 			icon: {
 				color: 'white'

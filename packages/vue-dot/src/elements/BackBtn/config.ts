@@ -1,10 +1,13 @@
 export const config = {
 	btn: {
 		text: true,
-		color: 'primary',
+		color: 'white',
 		minHeight: '36px',
 		height: 'auto',
-		class: 'pa-1 pa-sm-2'
+		class: 'pa-0'
+	},
+	label: {
+		color: 'primary'
 	},
 	icon: {
 		color: 'primary',
