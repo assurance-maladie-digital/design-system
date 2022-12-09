@@ -28,14 +28,17 @@
 	.text-h3,
 	.text-h4,
 	.text-h5,
-	.text-h6,
+	.text-h6 {
+		font-family: 'Mic 32 New', 'Source Sans Pro', 'Open Sans', sans-serif !important;
+	}
+
 	.text-subtitle-1,
 	.text-subtitle-2,
 	.text-body-1,
 	.text-body-2,
 	.text-caption,
 	.text-overline {
-		font-family: 'Open Sans', sans-serif !important;
+		font-family: 'Source Sans Pro', 'Open Sans', sans-serif !important;
 	}
 
 	// Fix line-height in VSelect with our font
@@ -131,33 +134,33 @@
 
 // headings without classes
 h1 {
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 4.5rem;
 	letter-spacing: -1.5px;
 }
 h2 {
-	font-weight: medium;
+	font-weight: 500;
 	font-size: 3rem;
 	letter-spacing: 1.5px;
 }
 h3 {
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 2.125rem;
-	letter-spacing: .5px;
+	letter-spacing: .25px;
 	text-transform: uppercase;
 }
 h4 {
-	font-weight: medium;
+	font-weight: 500;
 	font-size: 1.5rem;
 	letter-spacing: 0;
 }
 h5 {
-	font-weight: light;
+	font-weight: 300;
 	font-size: 1.5rem;
 	letter-spacing: 1px;
 }
 h6 {
-	font-weight: bold;
+	font-weight: 500;
 	font-size: 1.25rem;
 	letter-spacing: .15px;
 }
@@ -174,22 +177,22 @@ h6 {
 	letter-spacing: .4px;
 }
 .mono-1 {
-	font-weight: normal;
+	font-weight: 400;
 	font-size: 1.125rem;
 	letter-spacing: .5px;
 }
 .mono-2 {
-	font-weight: normal;
+	font-weight: 400;
 	font-size: 1rem;
 	letter-spacing: .25px;
 }
 .link-body-1 {
-	font-weight: normal;
+	font-weight: 400;
 	font-size: 1.125rem;
 	letter-spacing: .5px;
 }
 .link-body-2 {
-	font-weight: normal;
+	font-weight: 400;
 	font-size: 1rem;
 	letter-spacing: .25px;
 }

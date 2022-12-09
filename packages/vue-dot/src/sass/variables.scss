@@ -1,41 +1,43 @@
+//globale
+$body-font-family: 'source-sans-pro', sans-serif;
 
 //headings with classes
 $headings: (
 	'h1': (
 	  'size': 4.5rem,
 	  'letter-spacing': -1.5px,
-	  'weight': bold,
+	  'weight': 700
 	),
 	'h2': (
 	  'size': 3rem,
 	  'letter-spacing': 1.5px,
-	  'weight': medium
+	  'weight': 500
 	),
 	'h3': (
 	  'size': 2.125rem,
-	  'letter-spacing': .5px,
+	  'letter-spacing': .25px,
 	  'text-transform': uppercase,
-	  'weight': bold
+	  'weight': 700
 	),
 	'h4': (
 	  'size': 1.5rem,
 	  'letter-spacing': 0rem,
-	  'weight': medium
+	  'weight': 500
 	),
 	'h5': (
 	  'size': 1.5rem,
 	  'letter-spacing': 1px,
-	  'weight': light
+	  'weight': 300
 	),
 	'subtitle-1': (
 	  'size': 1.125rem,
 	  'letter-spacing': .15px,
-	  'weight': bold
+	  'weight': 600
 	),
 	'subtitle-2': (
 	  'size': 1rem,
 	  'letter-spacing': .1px,
-	  'weight': bold
+	  'weight': 600
 	),
 	'button': (
 	  'size': 1rem,
@@ -45,21 +47,21 @@ $headings: (
 	'body-1': (
 		'size': 1.125rem,
 		'letter-spacing': .5px,
-		'weight': normal
+		'weight': 400
 	),
 	'body-2': (
 		'size': 1rem,
 		'letter-spacing': .25px,
-		'weight': normal
+		'weight': 400
 	),
 	'caption': (
 		'size': 0.875rem,
 		'letter-spacing': .4px,
-		'weight': normal
+		'weight': 400
 	),
 	'overline': (
 		'size': 0.75rem,
 		'letter-spacing': 1.5px,
-		'weight': normal,
+		'weight': 400,
 	)
   );
