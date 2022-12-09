@@ -4,6 +4,7 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **TableToolbar:** Ajout du slot `search-right` ([#2437](https://github.com/assurance-maladie-digital/design-system/pull/2437)) ([0174f39](https://github.com/assurance-maladie-digital/design-system/commit/0174f39ecef0c23732f3f56bf0e399136aec35c2))
+  - **BackBtn:** Ajout d'un nouveau composant ([#2448](https://github.com/assurance-maladie-digital/design-system/pull/2448))
 
 - 🐛 **Corrections de bugs**
   - **FooterBar:** Correction de l'espacement vertical ([#2398](https://github.com/assurance-maladie-digital/design-system/pull/2398)) ([5f8fb1e](https://github.com/assurance-maladie-digital/design-system/commit/5f8fb1e5e04d4be84b8170de2f2556d5c17401fd))
@@ -19,7 +20,7 @@
 ### Documentation
 
 - ✨ **Nouvelles fonctionnalités**
-  - **colors:** Ajout d'une information pour les couleurs non accessibles ([#2442](https://github.com/assurance-maladie-digital/design-system/pull/2442))
+  - **colors:** Ajout d'une information pour les couleurs non accessibles ([#2442](https://github.com/assurance-maladie-digital/design-system/pull/2442)) ([2c78db6](https://github.com/assurance-maladie-digital/design-system/commit/2c78db6e8c67381c38877fe54244488b12b5fd92))
 
 - 🐛 **Corrections de bugs**
   - **global:** Correction de la gestion des erreurs lors des chargements asynchrones ([#2438](https://github.com/assurance-maladie-digital/design-system/pull/2438)) ([278cb8b](https://github.com/assurance-maladie-digital/design-system/commit/278cb8b2ef68b48353fffcd7f4356561533effba))

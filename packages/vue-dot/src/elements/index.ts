@@ -1,3 +1,4 @@
+import BackBtn from './BackBtn';
 import CopyBtn from './CopyBtn';
 import CustomIcon from './CustomIcon';
 import DataList from './DataList';
@@ -11,6 +12,7 @@ import PageContainer from './PageContainer';
 import UserMenuBtn from './UserMenuBtn';
 
 export const elements = {
+	BackBtn,
 	CopyBtn,
 	CustomIcon,
 	DataList,

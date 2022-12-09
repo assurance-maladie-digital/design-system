@@ -1,18 +1,25 @@
 <template>
 	<VBtn
-		v-bind="options.btn"
-		class="vd-back-btn"
-		@click="$emit('click')"
+		v-bind="$attrs"
+		:class="{ 'pr-1': !hideBackIcon }"
+		text
+		color="primary"
+		class="vd-back-btn text-none px-0"
+		v-on="$listeners"
 	>
-		<VIcon
-			v-if="!hideBackIcon"
-			v-bind="options.icon"
-		>
-			{{ backIcon }}
-		</VIcon>
-		<span :class="options.label.color + '--text'">
-			{{ label }}
-		</span>
+		<slot name="icon">
+			<VIcon
+				v-if="!hideBackIcon"
+				color="primary"
+				class="mr-1"
+			>
+				{{ backIcon }}
+			</VIcon>
+		</slot>
+
+		<slot>
+			{{ locales.label }}
+		</slot>
 	</VBtn>
 </template>
 
@@ -22,17 +29,10 @@
 
 	import { mdiArrowLeft } from '@mdi/js';
 
-	import { customizable } from '../../mixins/customizable';
-
-	import { config } from './config';
 	import { locales } from './locales';
 
 	const Props = Vue.extend({
 		props: {
-			label: {
-				type: String,
-				default: locales.label
-			},
 			hideBackIcon: {
 				type: Boolean,
 				default: false
@@ -40,30 +40,29 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props);
 
 	@Component
 	export default class BackBtn extends MixinsDeclaration {
 		locales = locales;
+
 		backIcon = mdiArrowLeft;
 	}
 </script>
 
 <style lang="scss" scoped>
-	@import '@cnamts/design-tokens/dist/tokens';
-	.vd-back-btn :deep() {
-		.v-btn__content {
-			flex-wrap: wrap;
-			text-transform: none;
+	.v-btn {
+		// Disable hover state
+		&::before {
+			content: none;
 		}
+
+		&:focus-visible {
+			outline: 2px solid;
+		}
+
 		.v-icon {
 			flex: none;
-		}
-	}
-	.v-btn {
-		border: 2px solid;
-		&:focus {
-			border: 2px solid $vd-primary !important;
 		}
 	}
 </style>

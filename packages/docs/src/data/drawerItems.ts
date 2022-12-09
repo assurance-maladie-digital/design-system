@@ -115,6 +115,10 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Boutons',
 				items: [
 					{
+						title: 'BackBtn',
+						to: '/composants/boutons/back-btn'
+					},
+					{
 						title: 'CopyBtn',
 						to: '/composants/boutons/copy-btn'
 					},
@@ -125,10 +129,6 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'DownloadBtn',
 						to: '/composants/boutons/download-btn'
-					},
-					{
-						title: 'BackBtn',
-						to: '/composants/boutons/back-btn'
 					},
 					{
 						title: 'FranceConnectBtn',
