@@ -1,14 +1,13 @@
 export const config = {
 	btn: {
+		fixed: true,
 		outlined: true,
 		color: 'primary',
-		class: 'text-none text-wrap',
-		minHeight: '36px',
-		height: 'auto'
+		class: 'text-none text-wrap px-0 px-md-4'
 	},
 	icon: {
 		color: 'primary',
-		size: '16px',
-		class: 'ml-0 ml-sm-1'
+		small: true,
+		class: 'ml-0 ml-md-1'
 	}
 };

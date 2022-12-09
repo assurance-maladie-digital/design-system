@@ -1,25 +1,31 @@
 <template>
-	<div
-		v-show="showBtn"
-		v-scroll="onScroll"
-	>
+	<VFadeTransition>
 		<VBtn
-			v-bind="btnOptions"
-			:aria-label="label"
-			class="vd-top-btn"
-			:small="$vuetify.breakpoint.mobile"
-			@click="toTop"
+			v-show="showBtn"
+			v-scroll:[targetSelector]="onScroll"
+			v-bind="{
+				...options.btn,
+				...$attrs
+			}"
+			:style="btnStyle"
+			:min-width="minWidth"
+			class="vd-back-to-top-btn"
+			@click="scrollToTop"
+			v-on="$listeners"
 		>
-			<span class="d-none d-sm-block">
-				{{ label }}
+			<span :class="labelClasses">
+				<slot>
+					{{ locales.label }}
+				</slot>
 			</span>
+
 			<slot name="icon">
 				<VIcon v-bind="options.icon">
 					{{ topIcon }}
 				</VIcon>
 			</slot>
 		</VBtn>
-	</div>
+	</VFadeTransition>
 </template>
 
 <script lang="ts">
@@ -29,20 +35,30 @@
 	import { config } from './config';
 	import { locales } from './locales';
 
-	import { customizable, Options } from '../../mixins/customizable';
-	import deepMerge from 'deepmerge';
+	import { customizable } from '../../mixins/customizable';
+	import { convertToUnit } from '../../helpers/convertToUnit';
+
+	import { IndexedObject } from '../../types';
 
 	import { mdiArrowUp } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			label: {
-				type: String,
-				required: true
-			},
-			top: {
+			threshold: {
 				type: Number,
-				default: 20
+				default: 120
+			},
+			nudgeRight: {
+				type: [String, Number],
+				default: '16px'
+			},
+			nudgeBottom: {
+				type: [String, Number],
+				default: '16px'
+			},
+			target: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -52,28 +68,55 @@
 	@Component
 	export default class BackToTopBtn extends MixinsDeclaration {
 		locales = locales;
+
 		topIcon = mdiArrowUp;
+
 		showBtn = false;
 
-		get btnOptions(): Options {
-			return deepMerge<Options>(this.options.btn, this.$attrs);
+		get targetSelector(): string | null {
+			if (!this.target) {
+				return null;
+			}
+
+			return `#${this.target}`;
 		}
 
-		onScroll(): void {
-			this.showBtn = window.scrollY > this.top;
+		get isMobile(): boolean {
+			return this.$vuetify.breakpoint.smAndDown;
 		}
 
-		toTop(): void {
-			window.scrollTo(0, 0);
+		get btnStyle(): IndexedObject {
+			const right = convertToUnit(this.nudgeRight) || '0';
+			const bottom = convertToUnit(this.nudgeBottom) || '0';
+
+			return {
+				bottom,
+				right
+			};
+		}
+
+		get minWidth(): string | null {
+			return this.isMobile ? '36px' : null;
+		}
+
+		get labelClasses(): IndexedObject<boolean> {
+			return { 'd-sr-only': this.isMobile };
+		}
+
+		onScroll(e: MouseEvent): void {
+			const target = e.currentTarget as HTMLElement;
+			this.showBtn = target.scrollTop > this.threshold;
+		}
+
+		scrollToTop(): void {
+			const target = document.getElementById(this.target) || window;
+			target.scrollTo(0, 0);
 		}
 	}
 </script>
 
 <style lang="scss">
-	.vd-top-btn.v-btn {
-		position: fixed;
-		bottom: 1rem;
-		right: 1rem;
+	.vd-back-to-top-btn {
 		z-index: 1;
 	}
 </style>

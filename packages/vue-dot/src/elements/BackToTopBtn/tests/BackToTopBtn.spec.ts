@@ -10,11 +10,7 @@ let wrapper: Wrapper<Vue>;
 
 describe('BackToTopBtn', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(BackToTopBtn, {
-			propsData: {
-				label: 'test'
-			}
-		});
+		wrapper = mountComponent(BackToTopBtn);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

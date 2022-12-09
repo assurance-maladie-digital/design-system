@@ -1,3 +1,3 @@
 export const locales = {
-	tooltip: 'Retour en haut'
+	label: 'Retour en haut'
 };
