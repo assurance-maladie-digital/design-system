@@ -115,6 +115,10 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Boutons',
 				items: [
 					{
+						title: 'BackBtn',
+						to: '/composants/boutons/back-btn'
+					},
+					{
 						title: 'CopyBtn',
 						to: '/composants/boutons/copy-btn'
 					},
