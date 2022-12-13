@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`SocialMediaLinks renders correctly 1`] = `
-<div class="vd-social-media-links"><span class="text-body-2 primary--text">
-		Suivez-nous
-	</span>
-  <div class="d-flex justify-start justify-sm-end max-width-none mx-n2"></div>
-</div>
-`;

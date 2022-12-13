@@ -84,4 +84,7 @@
 .title {
 	font-weight: 600 !important;
 }
+.theme--light.v-expansion-panels .v-expansion-panel {
+	background-color: transparent !important;
+}
 </style>

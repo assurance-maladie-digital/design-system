@@ -5,13 +5,13 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import SocialMediaLinks from '../';
+import CollapseList from '..';
 
 let wrapper: Wrapper<Vue>;
 
-describe('SocialMediaLinks', () => {
+describe('CollapseList', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(SocialMediaLinks);
+		wrapper = mountComponent(CollapseList);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
