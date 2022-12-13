@@ -84,12 +84,11 @@
 
 	import { tokens } from '@cnamts/design-tokens';
 
-	import { Dimensions, Next } from '../../../types';
-	import { LogoSizeEnum } from '../../../elements/Logo/LogoSizeEnum';
+	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
 
-	import { ThemeEnum } from '../ThemeEnum';
+	import { ThemeEnum } from './ThemeEnum';
 
-	import { LogoInfo, Service } from './types';
+	import { LogoInfo, Service, Dimensions, Next } from './types';
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
