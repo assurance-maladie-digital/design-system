@@ -19,7 +19,7 @@
 					:width="innerWidth"
 				>
 					<slot name="logo">
-						<HeaderBrandSection
+						<LogoBrandSection
 							v-bind="options.brandSection"
 							:theme="theme"
 							:service-title="serviceTitle"
@@ -29,7 +29,7 @@
 							:home-href="homeHref"
 						>
 							<slot name="secondary-logo" />
-						</HeaderBrandSection>
+						</LogoBrandSection>
 					</slot>
 
 					<VSpacer
@@ -89,7 +89,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import HeaderBrandSection from './HeaderBrandSection';
+	import LogoBrandSection from '../LogoBrandSection';
 	import HeaderMenuBtn from './HeaderMenuBtn';
 	import HeaderNavigationBar from './HeaderNavigationBar';
 	import HeaderNavigationDrawer from './HeaderNavigationDrawer';
@@ -151,7 +151,7 @@
 	@Component({
 		inheritAttrs: false,
 		components: {
-			HeaderBrandSection,
+			LogoBrandSection,
 			HeaderMenuBtn,
 			HeaderNavigationBar,
 			HeaderNavigationDrawer
