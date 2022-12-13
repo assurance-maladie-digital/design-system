@@ -35,7 +35,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import HeaderBrandSection from '@cnamts/vue-dot/src/patterns/HeaderBar/HeaderBrandSection';
+	import HeaderBrandSection from '@cnamts/vue-dot/src/patterns/LogoBrandSection';
 
 	import { mdiTwitter } from '@mdi/js';
 
