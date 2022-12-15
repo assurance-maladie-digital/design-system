@@ -1,67 +1,74 @@
-//globale
-$body-font-family: 'source-sans-pro', sans-serif;
+// @see https://vuetifyjs.com/en/features/sass-variables/
+$body-font-family: 'Source Sans Pro', sans-serif;
+$heading-font-family: 'Source Sans Pro', sans-serif;
 
-//headings with classes
+$bold: 700;
+$semi-bold: 600;
+$medium: 500;
+$regular: 400px;
+$light: 300px;
+
 $headings: (
 	'h1': (
 	  'size': 4.5rem,
-	  'letter-spacing': -1.5px,
-	  'weight': 700
+	  'letter-spacing': -0.094rem,
+	  'weight': $bold
 	),
 	'h2': (
 	  'size': 3rem,
-	  'letter-spacing': 1.5px,
-	  'weight': 500
+	  'letter-spacing': .094rem,
+	  'weight': $medium
 	),
 	'h3': (
 	  'size': 2.125rem,
-	  'letter-spacing': .25px,
+	  'letter-spacing': .0.016rem,
 	  'text-transform': uppercase,
-	  'weight': 700
+	  'weight': $bold
 	),
 	'h4': (
 	  'size': 1.5rem,
-	  'letter-spacing': 0rem,
-	  'weight': 500
+	  'letter-spacing': normal,
+	  'weight': $medium
 	),
 	'h5': (
 	  'size': 1.5rem,
-	  'letter-spacing': 1px,
-	  'weight': 300
+	  'letter-spacing': 0.063rem,
+	  'weight': $light
 	),
 	'subtitle-1': (
 	  'size': 1.125rem,
-	  'letter-spacing': .15px,
-	  'weight': 600
+	  'letter-spacing': .0.009rem,
+	  'weight': $semi-bold
 	),
 	'subtitle-2': (
 	  'size': 1rem,
-	  'letter-spacing': .1px,
-	  'weight': 600
+	  'letter-spacing': .0.006rem,
+	  'weight': $semi-bold
 	),
 	'button': (
 	  'size': 1rem,
-	  'letter-spacing': .5px,
-	  'weight': 600
+	  'letter-spacing': .0.031rem,
+	  'weight': $semi-bold,
+	  'text-transform': false
 	),
 	'body-1': (
 		'size': 1.125rem,
-		'letter-spacing': .5px,
-		'weight': 400
+		'letter-spacing': .0.031rem,
+		'weight': $regular
 	),
 	'body-2': (
 		'size': 1rem,
-		'letter-spacing': .25px,
-		'weight': 400
+		'letter-spacing': .0.016rem,
+		'weight': $regular
 	),
 	'caption': (
 		'size': 0.875rem,
-		'letter-spacing': .4px,
-		'weight': 400
+		'letter-spacing': .0.025rem,
+		'weight': $regular
 	),
 	'overline': (
 		'size': 0.75rem,
-		'letter-spacing': 1.5px,
-		'weight': 400,
+		'letter-spacing': 0.094rem,
+		'weight': $regular
 	)
   );
