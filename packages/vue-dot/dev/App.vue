@@ -43,7 +43,7 @@
 		max-width: 100%;
 		box-sizing: border-box;
 		scroll-behavior: smooth;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
 	}
 
 	html,

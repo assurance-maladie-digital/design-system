@@ -4,7 +4,8 @@
 
 - ✨ **Nouvelles fonctionnalités**
   - **TableToolbar:** Ajout du slot `search-right` ([#2437](https://github.com/assurance-maladie-digital/design-system/pull/2437)) ([0174f39](https://github.com/assurance-maladie-digital/design-system/commit/0174f39ecef0c23732f3f56bf0e399136aec35c2))
-  - **BackBtn:** Ajout d'un nouveau composant ([#2448](https://github.com/assurance-maladie-digital/design-system/pull/2448))
+  - **BackBtn:** Ajout d'un nouveau composant ([#2448](https://github.com/assurance-maladie-digital/design-system/pull/2448)) ([8820627](https://github.com/assurance-maladie-digital/design-system/commit/88206272a7870f81034e9d9608ca69aad9ef815e))
+  - **styles:** Ajout des nouveaux styles typographiques ([#2463](https://github.com/assurance-maladie-digital/design-system/pull/2463))
 
 - 🐛 **Corrections de bugs**
   - **FooterBar:** Correction de l'espacement vertical ([#2398](https://github.com/assurance-maladie-digital/design-system/pull/2398)) ([5f8fb1e](https://github.com/assurance-maladie-digital/design-system/commit/5f8fb1e5e04d4be84b8170de2f2556d5c17401fd))
