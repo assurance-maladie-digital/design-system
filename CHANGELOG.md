@@ -1,3 +1,10 @@
+## Non publié
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.46.1` ([#2451](https://github.com/assurance-maladie-digital/design-system/pull/2451))
+
 ## v2.8.0
 
 **Version publiée le 16/12/2022.**
@@ -43,7 +50,7 @@ Cette version comporte l'ajout des nouveaux styles typographiques et du nouveau 
 ### Interne
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2467](https://github.com/assurance-maladie-digital/design-system/pull/2467))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2467](https://github.com/assurance-maladie-digital/design-system/pull/2467)) ([8e57f06](https://github.com/assurance-maladie-digital/design-system/commit/8e57f0626716a889b380488b5743ad806a282b4b))
 
 - ⬆️ **Dépendances**
   - **vue:** Mise à jour vers la `v2.7.14` ([#2378](https://github.com/assurance-maladie-digital/design-system/pull/2378)) ([60ee749](https://github.com/assurance-maladie-digital/design-system/commit/60ee749a9f84f8f911f6539db2687adae7f2638b))
