@@ -1,12 +1,17 @@
 {
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
     "publish": {
-      "allowBranch": ["main", "dev"],
+      "allowBranch": [
+        "main",
+        "dev"
+      ],
       "message": "🔖 %s"
     }
   },
-  "version": "2.7.1"
+  "version": "2.8.0"
 }
