@@ -30,10 +30,11 @@
 
 - ♻️ **Refactoring**
   - **DocTabs:** Suppression de l'utilisation du composant `ClientOnly` ([#2443](https://github.com/assurance-maladie-digital/design-system/pull/2443)) ([3694f70](https://github.com/assurance-maladie-digital/design-system/commit/3694f7098c21d2d16256b50de6f00831c37083a8))
+  - **introduction:** Mise à jour de l'équipe ([#2466](https://github.com/assurance-maladie-digital/design-system/pull/2466))
 
 - 📝 **Documentation**
   - **colors:** Ajout d'informations sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))
-  - **roadmap:** Mise à jour de la page ([#2465](https://github.com/assurance-maladie-digital/design-system/pull/2465))
+  - **roadmap:** Mise à jour de la page ([#2465](https://github.com/assurance-maladie-digital/design-system/pull/2465)) ([dd2db3c](https://github.com/assurance-maladie-digital/design-system/commit/dd2db3ce7324e5b150183d9cfea386a00f5a08ed))
 
 ### Interne
 
