@@ -1,10 +1,22 @@
 ## Non publié
 
+### Interne
+
+- ⬆️ **Dépendances**
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.46.1` ([#2451](https://github.com/assurance-maladie-digital/design-system/pull/2451))
+
+## v2.8.0
+
+**Version publiée le 16/12/2022.**
+
+Cette version comporte l'ajout des nouveaux styles typographiques et du nouveau composant `BackBtn`, ainsi que des correctifs sur l'ensemble des packages et la complétion de la documentation.
+
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
   - **TableToolbar:** Ajout du slot `search-right` ([#2437](https://github.com/assurance-maladie-digital/design-system/pull/2437)) ([0174f39](https://github.com/assurance-maladie-digital/design-system/commit/0174f39ecef0c23732f3f56bf0e399136aec35c2))
-  - **BackBtn:** Ajout d'un nouveau composant ([#2448](https://github.com/assurance-maladie-digital/design-system/pull/2448))
+  - **BackBtn:** Ajout d'un nouveau composant ([#2448](https://github.com/assurance-maladie-digital/design-system/pull/2448)) ([8820627](https://github.com/assurance-maladie-digital/design-system/commit/88206272a7870f81034e9d9608ca69aad9ef815e))
+  - **styles:** Ajout des nouveaux styles typographiques ([#2463](https://github.com/assurance-maladie-digital/design-system/pull/2463)) ([e184f11](https://github.com/assurance-maladie-digital/design-system/commit/e184f111417ed202b81ee35402a8e016cda476da))
 
 - 🐛 **Corrections de bugs**
   - **FooterBar:** Correction de l'espacement vertical ([#2398](https://github.com/assurance-maladie-digital/design-system/pull/2398)) ([5f8fb1e](https://github.com/assurance-maladie-digital/design-system/commit/5f8fb1e5e04d4be84b8170de2f2556d5c17401fd))
@@ -29,11 +41,16 @@
 
 - ♻️ **Refactoring**
   - **DocTabs:** Suppression de l'utilisation du composant `ClientOnly` ([#2443](https://github.com/assurance-maladie-digital/design-system/pull/2443)) ([3694f70](https://github.com/assurance-maladie-digital/design-system/commit/3694f7098c21d2d16256b50de6f00831c37083a8))
+  - **introduction:** Mise à jour de l'équipe ([#2466](https://github.com/assurance-maladie-digital/design-system/pull/2466)) ([31ce807](https://github.com/assurance-maladie-digital/design-system/commit/31ce807029cdda4a2d72549fa2ee89545dd0480d))
 
 - 📝 **Documentation**
   - **colors:** Ajout d'informations sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))
+  - **roadmap:** Mise à jour de la page ([#2465](https://github.com/assurance-maladie-digital/design-system/pull/2465)) ([dd2db3c](https://github.com/assurance-maladie-digital/design-system/commit/dd2db3ce7324e5b150183d9cfea386a00f5a08ed))
 
 ### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2467](https://github.com/assurance-maladie-digital/design-system/pull/2467)) ([8e57f06](https://github.com/assurance-maladie-digital/design-system/commit/8e57f0626716a889b380488b5743ad806a282b4b))
 
 - ⬆️ **Dépendances**
   - **vue:** Mise à jour vers la `v2.7.14` ([#2378](https://github.com/assurance-maladie-digital/design-system/pull/2378)) ([60ee749](https://github.com/assurance-maladie-digital/design-system/commit/60ee749a9f84f8f911f6539db2687adae7f2638b))
