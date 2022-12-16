@@ -2,45 +2,12 @@
 	<div class="vd-rating-picker">
 		<!--first step-->
 		<div class="first-step">
-			<div class="d-flex justify-center">
-				<H6
-					class="mt-4"
-				>
-					Cette page à t'elle ete utile ?
-				</H6>
-			</div>
-			<div class="ma-6 d-flex justify-space-between">
-				<div
-					class="icon-button"
-				>
-					<VIcon x-large>
-						{{ sadIcon }}
-					</VIcon>
-					<div class="d-flex justify-center text-subtitle-2">
-						Pas du tout
-					</div>
-				</div>
-				<div
-					class="icon-button"
-				>
-					<VIcon x-large>
-						{{ neurtralIcon }}
-					</VIcon>
-					<div class="d-flex justify-center text-subtitle-2">
-						Moyen
-					</div>
-				</div>
-				<div
-					class="icon-button"
-				>
-					<VIcon x-large>
-						{{ happyIcon }}
-					</VIcon>
-					<div class="d-flex justify-center text-subtitle-2">
-						Parfait !
-					</div>
-				</div>
-			</div>
+			<EmotionPicker
+				class="ma-6"
+				step-name="firstStep"
+				:question-datas="questionDatas"
+				@update-emotion="updateFirstStep"
+			/>
 			<div class="d-flex justify-end">
 				<VBtn
 					class="mr-2 mt-5 close-button"
@@ -51,6 +18,31 @@
 				</VBtn>
 			</div>
 		</div>
+
+		<!--first step-->
+		<div class="first-step mt-2">
+			<EmotionPicker
+				class="ma-6"
+				:question-datas="questionDatas"
+				@update-emotion="updateFirstStep"
+			/>
+			<div class="d-flex justify-space-between">
+				<VBtn
+					class="mr-2 mt-5 close-button"
+					color="primary"
+					text
+				>
+					Fermer
+				</VBtn>
+				<VBtn
+					class="mr-2 mt-5 close-button"
+					color="primary"
+					depressed
+				>
+					Valider
+				</VBtn>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -58,17 +50,24 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	//icons
-	import { mdiEmoticonSadOutline, mdiEmoticonNeutralOutline, mdiEmoticonHappyOutline } from '@mdi/js';
+	import EmotionPicker from './EmotionPicker';
 
-	@Component
-	export default class FooterWrapper extends Vue {
+	@Component({
+		components: {
+			EmotionPicker
+		}
+	})
+	export default class RatingPicker extends Vue {
+		firstStep: string | number | null = null;
 
-		//icons
-		sadIcon = mdiEmoticonSadOutline;
-		neurtralIcon = mdiEmoticonNeutralOutline;
-		happyIcon = mdiEmoticonHappyOutline;
+		questionDatas={
+			name: 'first-step',
+			question: 'la premiere question ?'
+		};
 
+		updateFirstStep(result: object): void {
+			console.log(result);
+		}
 	}
 </script>
 
@@ -76,26 +75,14 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
 .first-step {
-	border: 1px solid grey;
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.123);
 	max-width: 450px !important;
 	padding: 16px;
 	border-radius: 8px;
 
-	h6 {
-		font-size: 20px
-	}
 	.close-button {
 		text-transform: none;
 	}
 }
-.icon-button {
-	height: 88px;
-	width: 88px;
-	border-radius: 8px;
-}
-.icon-button:hover {
-	cursor: pointer;
-	background-color: $vd-orange-lighten-90;
-	//border: 1px solid $vd-orange-darken-20;
-}
+
 </style>
