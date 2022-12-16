@@ -2,6 +2,7 @@
 	<UploadWorkflow
 		v-model="selectedFiles"
 		:file-list-items="fileListItems"
+		show-file-preview
 	>
 		<template #title>
 			<h4 class="title font-weight-bold">
@@ -13,6 +14,12 @@
 			<h4 class="title font-weight-bold">
 				Sélectionnez le type du fichier
 			</h4>
+		</template>
+
+		<template #modal-description>
+			<p>
+				Veuillez vérifier que le document correspond bien à l'assuré concerné
+			</p>
 		</template>
 	</UploadWorkflow>
 </template>

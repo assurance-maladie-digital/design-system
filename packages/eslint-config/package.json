@@ -1,41 +1,41 @@
 {
-	"name": "@cnamts/eslint-config",
-	"version": "2.5.1",
-	"description": "ESLint configurations for JavaScript and TypeScript used across our projects",
-	"keywords": [
-		"cnam",
-		"lint",
-		"eslint",
-		"javascript",
-		"typescript"
-	],
-	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
-	"bugs": {
-		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"license": "MIT",
-	"author": {
-		"name": "CNAM",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"files": [
-		"*.js",
-		"*.ts"
-	],
-	"main": "javascript.js",
-	"scripts": {
-		"lint": "eslint . --fix",
-		"test": "jest"
-	},
-	"peerDependencies": {
-		"eslint": ">=7"
-	},
-	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "5.36.1",
-		"@typescript-eslint/parser": "5.36.1"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@cnamts/eslint-config",
+  "version": "2.7.0",
+  "description": "ESLint configurations for JavaScript and TypeScript used across our projects",
+  "keywords": [
+    "cnam",
+    "lint",
+    "eslint",
+    "javascript",
+    "typescript"
+  ],
+  "homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+  "bugs": {
+    "url": "https://github.com/assurance-maladie-digital/design-system/issues",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "CNAM",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "files": [
+    "*.js",
+    "*.ts"
+  ],
+  "main": "javascript.js",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "eslint": ">=7"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "5.45.1",
+    "@typescript-eslint/parser": "5.45.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

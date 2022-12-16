@@ -18,7 +18,7 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { OLD_TEAM_MEMBER_IDS } from '../../constants';
+	import { TEAM_MEMBER_IDS, OLD_TEAM_MEMBER_IDS } from '../../constants';
 
 	import { Fetch } from '../../decorators';
 	import { getContributors } from '../../services/github/api';
@@ -28,19 +28,13 @@
 	export default class DocHomePageContributors extends Vue {
 		contributors: Contributor[] = [];
 
-		teamIds = [
-			'10298932',
-			'56488255',
-			'43619846'
-		];
-
 		@Fetch
 		async fetch(): Promise<void> {
 			const contributors = await getContributors();
 
 			contributors.forEach((el) => {
 				const isBot = el.login.includes('[bot]');
-				const isMember = this.teamIds.includes(el.id.toString());
+				const isMember = TEAM_MEMBER_IDS.includes(el.id.toString());
 				const isOldMember = OLD_TEAM_MEMBER_IDS.includes(el.id.toString());
 
 				if (isBot || isMember || isOldMember) {

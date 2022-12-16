@@ -51,16 +51,16 @@ export const drawerItems: DrawerItem[] = [
 				to: '/fondamentaux/accessibilite'
 			},
 			{
-				title: 'Logo',
-				to: '/fondamentaux/logo'
-			},
-			{
 				title: 'Couleurs',
 				to: '/fondamentaux/couleurs'
 			},
 			{
 				title: 'Design Tokens',
 				to: '/fondamentaux/design-tokens'
+			},
+			{
+				title: 'Logo',
+				to: '/fondamentaux/logo'
 			},
 			{
 				title: 'Éco-conception',
@@ -114,6 +114,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Boutons',
 				items: [
+					{
+						title: 'BackBtn',
+						to: '/composants/boutons/back-btn'
+					},
 					{
 						title: 'CopyBtn',
 						to: '/composants/boutons/copy-btn'
@@ -378,12 +382,20 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Types utilitaires',
+				to: '/composants-techniques/types-utilitaires'
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
 			},
 			{
 				title: 'CustomIcon',
 				to: '/composants-techniques/custom-icon'
+			},
+			{
+				title: 'Module de notification',
+				to: '/composants-techniques/module-notification'
 			}
 		]
 	},
@@ -408,6 +420,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
+				title: 'Gestion des textes',
+				to: '/guides/gestion-textes'
+			},
+			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
 			},
@@ -424,6 +440,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/tests-e2e'
 			},
 			{
+				title: 'Tests unitaires',
+				to: '/guides/tests-unitaires'
+			},
+			{
 				title: 'Tableau avec pagination',
 				to: '/guides/tableau-pagination'
 			},
@@ -438,6 +458,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation des icônes',
 				to: '/guides/utilisation-icones'
+			},
+			{
+				title: 'Gestion des droits',
+				to: '/guides/gestion-droits'
 			}
 		]
 	},

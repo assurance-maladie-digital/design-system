@@ -66,27 +66,27 @@
 			{
 				name: 'Julien Baylac',
 				role: 'Développeur Front',
-				img: 'julien_b.png'
+				img: 'julien_b.jpg'
 			},
 			{
 				name: 'Dr Valentin Becquet',
 				role: 'UX/UI Designer',
-				img: 'valentin_b.png'
+				img: 'valentin_b.jpg'
 			},
 			{
 				name: 'Dylan Broussard',
 				role: 'Tech Lead Front',
-				img: 'dylan_b.png'
+				img: 'dylan_b.jpg'
 			},
 			{
 				name: 'François Coué',
-				role: 'UX/UI Designer',
-				img: 'francois_c.png'
+				role: 'Product Designer',
+				img: 'francois_c.jpg'
 			},
 			{
-				name: 'Aubin Mottier',
-				role: 'Développeur Front',
-				img: 'aubin_m.png'
+				name: 'Edouard Le Gall',
+				role: 'UX/UI Designer',
+				img: 'person.svg'
 			}
 		];
 

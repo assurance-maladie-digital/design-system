@@ -5,7 +5,7 @@ exports[`FooterBar renders correctly 1`] = `
   <!---->
   <!---->
   <!---->
-  <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n4 py-2 py-sm-0">
+  <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 py-2 py-sm-0">
     <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
       Plan du site
     </routerlink-stub>
