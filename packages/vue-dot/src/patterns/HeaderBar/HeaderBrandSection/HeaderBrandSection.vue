@@ -49,21 +49,21 @@
 			</component>
 
 			<div
-				v-else-if="service.title || service.subTitle"
+				v-else-if="service.mainTitle || service.subTitle"
 				class="d-flex justify-center flex-column primary--text"
 			>
 				<h1
-					v-if="service.title"
+					v-if="service.mainTitle"
 					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
 					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
 				>
 					<template v-if="isCompteEntreprise">
-						{{ service.title.text }}
-						<span>{{ service.title.highlight }}</span>
+						{{ service.mainTitle }}
+						<span>{{ service.highlight }}</span>
 					</template>
 
 					<template v-else>
-						{{ service.title }}
+						{{ service.mainTitle }}
 					</template>
 				</h1>
 
@@ -100,7 +100,11 @@
 				type: String as PropType<ThemeEnum>,
 				required: true
 			},
-			serviceTitle: {
+			serviceMainTitle: {
+				type: String,
+				default: undefined
+			},
+			serviceHightLight: {
 				type: String,
 				default: undefined
 			},
@@ -132,15 +136,19 @@
 		get service(): Service {
 			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
 				const { title, subTitle } = locales.compteEntreprise;
+				const mainTitle = title.text;
+				const highlight = title.highlight;
 
 				return {
-					title,
+					mainTitle,
+					highlight,
 					subTitle
 				};
 			}
 
 			return {
-				title: this.serviceTitle,
+				mainTitle: this.serviceMainTitle,
+				highlight: this.serviceHightLight,
 				subTitle: this.serviceSubTitle
 			};
 		}
@@ -206,11 +214,11 @@
 		}
 
 		get showDivider(): boolean {
-			return Boolean(this.hasSecondaryLogo || this.service.title);
+			return Boolean(this.hasSecondaryLogo || this.service.mainTitle);
 		}
 
 		get showServiceSubTitle(): boolean {
-			return Boolean(this.service.title && this.service.subTitle && !this.mobileVersion);
+			return Boolean(this.service.mainTitle && this.service.subTitle && !this.mobileVersion);
 		}
 
 		get dividerColor(): string {

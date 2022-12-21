@@ -3,12 +3,8 @@ export interface LogoInfo {
 	alt: string;
 }
 
-interface HighlightedTitle {
-	text: string;
-	highlight: string;
-}
-
 export interface Service {
-	title: string | HighlightedTitle;
+	mainTitle: string;
+	highlight: string;
 	subTitle: string;
 }
