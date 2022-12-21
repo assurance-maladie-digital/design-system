@@ -33,8 +33,8 @@
 
 			<VBtn
 				v-bind="options.goTopBtn"
-				:aria-label="locales.goTopBtn"
-				@click="$vuetify.goTo(0, 0)"
+				:aria-label="locales.goTopBtnLabel"
+				@click="$vuetify.goTo(0, {duration: 0, offset: 0})"
 			>
 				<VIcon v-bind="options.goTopBtnIcon">
 					{{ arrowTopIcon }}
