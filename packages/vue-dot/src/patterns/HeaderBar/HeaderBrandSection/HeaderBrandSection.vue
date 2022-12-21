@@ -100,7 +100,7 @@
 				type: String as PropType<ThemeEnum>,
 				required: true
 			},
-			serviceMainTitle: {
+			serviceTitle: {
 				type: String,
 				default: undefined
 			},
@@ -147,7 +147,7 @@
 			}
 
 			return {
-				mainTitle: this.serviceMainTitle,
+				mainTitle: this.serviceTitle,
 				highlight: this.serviceHightLight,
 				subTitle: this.serviceSubTitle
 			};
