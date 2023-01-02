@@ -7,76 +7,39 @@
 				{{ questionDatas.question }}
 			</H6>
 		</div>
-		<div class="d-flex justify-space-between">
+		<div
+			class="d-flex"
+			:class="selectedEmotion && mainQuestion ? 'justify-center' : 'justify-space-between'"
+		>
 			<div
-				class="sad"
-				@click="selectEmotion('sad')"
+				v-for="emotion in filterEmotions"
+				:key="emotion.title"
 			>
 				<div
-					:class="{ active: isActive('sad') }"
-					class="icon-button"
+					:class="emotion.title"
+					@click="selectEmotion(emotion.title)"
 				>
-					<div class="d-flex justify-center">
-						<VIcon
-							x-large
-							class="mt-2"
-							color="orange-darken-20"
-						>
-							{{ sadIcon }}
-						</VIcon>
-					</div>
-					<div class="mt-1 d-flex justify-center">
-						<span>
-							Pas du tout
-						</span>
-					</div>
-				</div>
-			</div>
-			<div
-				class="neutral"
-				@click="selectEmotion('neutral')"
-			>
-				<div
-					:class="{ active: isActive('neutral') }"
-					class="icon-button"
-				>
-					<div class="d-flex justify-center">
-						<VIcon
-							x-large
-							class="mt-2"
-							color="yellow-darken-20"
-						>
-							{{ neurtralIcon }}
-						</VIcon>
-					</div>
-					<div class="mt-1 d-flex justify-center">
-						<span>
-							Moyen
-						</span>
-					</div>
-				</div>
-			</div>
-			<div
-				class="happy"
-				@click="selectEmotion('happy')"
-			>
-				<div
-					:class="{ active: isActive('happy') }"
-					class="icon-button"
-				>
-					<div class="d-flex justify-center">
-						<VIcon
-							x-large
-							class="mt-2"
-							color="turquoise-darken-20"
-						>
-							{{ happyIcon }}
-						</VIcon>
-					</div>
-					<div class="mt-1 d-flex justify-center">
-						<span>
-							Parfait !
-						</span>
+					<div
+						:class="{ active: isActive(emotion.title) }"
+						class="icon-button"
+					>
+						<div class="d-flex justify-center">
+							<VIcon
+								x-large
+								class="mt-3"
+								:color="emotion.color"
+							>
+								{{ emotion.icon }}
+							</VIcon>
+						</div>
+						<div class="mt-1 d-flex justify-center">
+							<span
+								class="description"
+								:class="{ 'font-weight-bold text--am-blue lighten-60': isActive(emotion.title) }"
+							>
+								{{ emotion.description }}
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -88,7 +51,8 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	//icons
+	import { EmotionItem } from './types';
+
 	import { mdiEmoticonSadOutline, mdiEmoticonNeutralOutline, mdiEmoticonHappyOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -96,6 +60,10 @@
 			questionDatas: {
 				type: Object,
 				required: true
+			},
+			mainQuestion: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -112,15 +80,44 @@
 
 		selectedEmotion = '';
 
+		emotionList = [
+			{
+				title: 'sad',
+				icon: this.sadIcon,
+				color: 'orange-darken-20',
+				description: 'Pas du tout'
+			},
+			{
+				title: 'neutral',
+				icon: this.neurtralIcon,
+				color: 'yellow-darken-20',
+				description: 'Moyen'
+			},
+			{
+				title: 'happy',
+				icon: this.happyIcon,
+				color: 'turquoise-darken-20',
+				description: 'Parfait !'
+			}
+		];
+
 		selectEmotion(emotion: string): void {
 			this.selectedEmotion = emotion;
 			this.$emit(
-				'update-emotion',
+				'update-result',
 				{
 					step: this.questionDatas.name,
 					result: emotion
 				}
 			);
+		}
+
+		get filterEmotions(): EmotionItem[] {
+			if (this.selectedEmotion && this.mainQuestion) {
+				return this.emotionList.filter(emotion => emotion.title === this.selectedEmotion);
+			} else {
+				return this.emotionList;
+			}
 		}
 
 		isActive(emotion: string): boolean {
@@ -134,6 +131,9 @@
 
 h6 {
 	font-size: 16px
+}
+.description {
+	font-size: 12px;
 }
 .icon-button {
 	height: 88px;
