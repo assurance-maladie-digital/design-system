@@ -41,10 +41,10 @@
 		</div>
 		<div class="mt-3 d-flex justify-space-between rate-meaning">
 			<span v-if="!selectedRating">
-				label 0
+				{{ questionDatas.labels[0] }}
 			</span>
 			<span v-if="!selectedRating">
-				label 10
+				{{ questionDatas.labels[1] }}
 			</span>
 		</div>
 	</div>

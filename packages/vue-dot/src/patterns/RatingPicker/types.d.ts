@@ -1,6 +1,7 @@
 export interface QuestionItem {
 	name: string;
 	type: string;
+	labels?: string[];
 	question: string;
 }
 

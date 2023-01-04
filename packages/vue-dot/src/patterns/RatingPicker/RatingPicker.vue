@@ -48,7 +48,7 @@
 					text
 					@click="onClose()"
 				>
-					Plus tard
+					{{ locales.later }}
 				</VBtn>
 			</div>
 			<div class="d-flex justify-end">
@@ -59,7 +59,7 @@
 					text
 					@click="onClose()"
 				>
-					Fermer
+					{{ locales.close }}
 				</VBtn>
 			</div>
 		</div>
@@ -123,7 +123,7 @@
 					text
 					@click="onClose()"
 				>
-					Fermer
+					{{ locales.close }}
 				</VBtn>
 				<VBtn
 					v-if="!validated"
@@ -142,6 +142,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+	import { locales } from './locales';
 
 	import { StepItem } from './types';
 
@@ -155,6 +156,10 @@
 	const Props = Vue.extend({
 		props: {
 			shadowBox: {
+				type: Boolean,
+				required: false
+			},
+			hideCloseButtons: {
 				type: Boolean,
 				required: false
 			},
@@ -206,6 +211,7 @@
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
+		locales = locales;
 		checkIcon = mdiCheckCircleOutline;
 
 		firstStep: StepItem = {
@@ -272,7 +278,7 @@
 	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.123);
 }
 .green-background {
-	background-color: $vd-turquoise-lighten-97;
+	background-color: $vd-turquoise-lighten-90;
 }
 
 </style>

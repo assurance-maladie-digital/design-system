@@ -50,6 +50,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+	import { locales } from '../locales';
 
 	import { EmotionItem } from './types';
 
@@ -73,6 +74,8 @@
 	@Component
 	export default class EmotionPicker extends MixinsDeclaration {
 
+		locales = locales;
+
 		//icons
 		sadIcon = mdiEmoticonSadOutline;
 		neurtralIcon = mdiEmoticonNeutralOutline;
@@ -85,19 +88,19 @@
 				title: 'sad',
 				icon: this.sadIcon,
 				color: 'orange-darken-20',
-				description: 'Pas du tout'
+				description: this.locales.not
 			},
 			{
 				title: 'neutral',
 				icon: this.neurtralIcon,
 				color: 'yellow-darken-20',
-				description: 'Moyen'
+				description: this.locales.medium
 			},
 			{
 				title: 'happy',
 				icon: this.happyIcon,
 				color: 'turquoise-darken-20',
-				description: 'Parfait !'
+				description: this.locales.perfect
 			}
 		];
 
