@@ -1,7 +1,10 @@
 <template>
 	<div class="vd-rating-picker">
 		<!--first step-->
-		<div class="first-step">
+		<div
+			class="step"
+			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowBox}"
+		>
 			<EmotionPicker
 				v-if="mainQuestion.type === 'emotions'"
 				class="ma-6"
@@ -26,8 +29,9 @@
 			/>
 			<div class="d-flex justify-end">
 				<div
-					v-if="checkFirstStep"
-					class="border-green w-100 d-flex justify-center align-center py-3 px-4 mx-4 mt-1"
+					v-if="firstStep.result !== null"
+					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
+					:class="afterValidate[0].messsageBorder ? 'border-green' : ''"
 				>
 					<VIcon
 						color="success"
@@ -35,15 +39,27 @@
 					>
 						{{ checkIcon }}
 					</VIcon>
-					<span class="turquoise-darken-60--text">{{ mainQuestion.messsage }}</span>
+					<span class="turquoise-darken-60--text">{{ afterValidate[0].messsage }}</span>
 				</div>
 				<VBtn
-					v-if="!checkFirstStep"
+					v-if="firstStep.result === null"
 					class="mr-2 mt-5 close-button"
 					color="primary"
 					text
+					@click="onClose()"
 				>
 					Plus tard
+				</VBtn>
+			</div>
+			<div class="d-flex justify-end">
+				<VBtn
+					v-if="!checkFirstStep && firstStep.result !== null"
+					class="mr-2 mt-5 close-button"
+					color="primary"
+					text
+					@click="onClose()"
+				>
+					Fermer
 				</VBtn>
 			</div>
 		</div>
@@ -51,7 +67,8 @@
 		<!--second step-->
 		<div
 			v-if="checkFirstStep"
-			class="first-step mt-2"
+			class="step mt-2"
+			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowBox}"
 		>
 			<div
 				v-for="(question, index) in questionsList"
@@ -82,22 +99,40 @@
 				</div>
 			</div>
 
-			<div class="d-flex justify-space-between">
+			<div
+				v-if="validated"
+				class="d-flex justify-center align-center py-3 mx-6"
+				:class="afterValidate[1].messsageBorder ? 'border-green' : ''"
+			>
+				<VIcon
+					color="success"
+					class="mr-4"
+				>
+					{{ checkIcon }}
+				</VIcon>
+				<span class="turquoise-darken-60--text">{{ afterValidate[1].messsage }}</span>
+			</div>
+
+			<div
+				class="mx-4 d-flex"
+				:class="validated ? 'justify-end' : 'justify-space-between'"
+			>
 				<VBtn
 					class="mr-2 mt-5 close-button"
 					color="primary"
 					text
+					@click="onClose()"
 				>
 					Fermer
 				</VBtn>
 				<VBtn
+					v-if="!validated"
 					class="mr-2 mt-5 close-button"
 					color="primary"
 					depressed
-					:disabled="!canValidate"
 					@click="validateSecondStep"
 				>
-					Valider
+					{{ validateTextButton }}
 				</VBtn>
 			</div>
 		</div>
@@ -119,12 +154,41 @@
 
 	const Props = Vue.extend({
 		props: {
+			shadowBox: {
+				type: Boolean,
+				required: false
+			},
 			mainQuestion: {
 				type: Object,
 				required: true
 			},
 			questionsList: {
 				type: Array,
+				required: true
+			},
+			validateTextButton: {
+				type: String,
+				required: true
+			},
+			onValidate: {
+				type: Function,
+				required: true
+			},
+			afterValidate: {
+				type: Array,
+				default: () => [
+					{
+						messsage: 'Merci pour votre réponse',
+						messsageBorder: false
+					},
+					{
+						messsage: 'Merci pour vos remarques utiles à l\'amélioration du site.',
+						messsageBorder: true
+					}
+				]
+			},
+			onClose: {
+				type: Function,
 				required: true
 			}
 		}
@@ -149,6 +213,20 @@
 			result: null
 		};
 		secondStep: StepItem[] = [];
+		validated = false;
+
+		get checkFirstStep(): boolean {
+			if (this.firstStep.result !== null) {
+				if (this.mainQuestion.type === 'emotions') {
+					return this.firstStep.result === 'sad' || this.firstStep.result === 'neutral' ? true : false;
+				} else if (this.mainQuestion.type === 'stars') {
+					return this.firstStep.result < 4 ? true : false;
+				} else if (this.mainQuestion.type === 'numbers') {
+					return this.firstStep.result < 7 ? true : false;
+				}
+			}
+			return false;
+		}
 
 		updateFirstStep(result: StepItem): void {
 			this.firstStep = result;
@@ -163,25 +241,13 @@
 			}
 		}
 
-		get canValidate(): boolean {
-			return this.secondStep.length === this.questionsList.length ? true : false;
-		}
-
-		get checkFirstStep(): boolean {
-			if (this.firstStep !== null) {
-				if (this.mainQuestion.type === 'emotions') {
-					return this.firstStep.result ? true : false;
-				} else if (this.mainQuestion.type === 'stars') {
-					return this.firstStep.result ? true : false;
-				} else if (this.mainQuestion.type === 'numbers') {
-					return this.firstStep.result ? true : false;
-				}
-			}
-			return false;
+		checkBackgroundGreen(number: number): boolean {
+			return this.afterValidate[number].greenBackground && this.validated ? true : false;
 		}
 
 		validateSecondStep(): void {
-			console.log(this.secondStep);
+			this.onValidate();
+			this.validated = true;
 		}
 	}
 </script>
@@ -189,8 +255,7 @@
 <style lang="scss" scoped>
 @import '@cnamts/design-tokens/dist/tokens';
 
-.first-step {
-	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.123);
+.step {
 	max-width: 450px !important;
 	padding: 16px;
 	border-radius: 8px;
@@ -199,9 +264,15 @@
 		text-transform: none;
 	}
 	.border-green {
-		border: 1px green solid;
+		border: 1px solid $vd-turquoise-darken-40;
 		border-radius: 4px;
 	}
+}
+.shadow-box {
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.123);
+}
+.green-background {
+	background-color: $vd-turquoise-lighten-97;
 }
 
 </style>

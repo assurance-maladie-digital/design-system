@@ -6,5 +6,5 @@ export interface QuestionItem {
 
 export interface StepItem {
 	step: string;
-	result: unknown;
+	result: string | number | null;
 }

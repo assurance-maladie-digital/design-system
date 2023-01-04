@@ -35,7 +35,7 @@
 						<div class="mt-1 d-flex justify-center">
 							<span
 								class="description"
-								:class="{ 'font-weight-bold text--am-blue lighten-60': isActive(emotion.title) }"
+								:class="emotionDescriptionClasses(emotion)"
 							>
 								{{ emotion.description }}
 							</span>
@@ -101,6 +101,14 @@
 			}
 		];
 
+		get filterEmotions(): EmotionItem[] {
+			if (this.selectedEmotion && this.mainQuestion) {
+				return this.emotionList.filter(emotion => emotion.title === this.selectedEmotion);
+			} else {
+				return this.emotionList;
+			}
+		}
+
 		selectEmotion(emotion: string): void {
 			this.selectedEmotion = emotion;
 			this.$emit(
@@ -112,16 +120,12 @@
 			);
 		}
 
-		get filterEmotions(): EmotionItem[] {
-			if (this.selectedEmotion && this.mainQuestion) {
-				return this.emotionList.filter(emotion => emotion.title === this.selectedEmotion);
-			} else {
-				return this.emotionList;
-			}
-		}
-
 		isActive(emotion: string): boolean {
 			return this.selectedEmotion === emotion ? true : false;
+		}
+
+		emotionDescriptionClasses(emotion: EmotionItem): string {
+			return this.isActive(emotion.title) ? `font-weight-bold ${emotion.color}--text` : '';
 		}
 	}
 </script>

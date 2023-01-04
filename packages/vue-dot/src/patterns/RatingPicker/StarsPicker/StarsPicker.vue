@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-emotion-picker">
+	<div class="vd-stars-picker">
 		<div class="d-flex justify-center">
 			<H6
 				class="mb-6"
@@ -42,7 +42,7 @@
 		</div>
 		<div class="mt-3 d-flex justify-center rate-meaning">
 			<span
-				:class="selectedRating ? 'primary--text font-weight-bold' : 'text--disabled'"
+				:class="selectedRating ? 'primary--text font-weight-bold' : ''"
 			>
 				{{ selectedRating ? rateMeaning(selectedRating) : rateMeaning(isHoverRating) }}
 			</span>

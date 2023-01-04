@@ -15,7 +15,8 @@
 				outlined
 				large
 				class="answer-button w-100 mb-2 justify-space-between"
-				color="primary"
+				:color="selectedAnswerIndex === index ? 'white' : 'primary'"
+				:class="{ 'active': selectedAnswerIndex === index }"
 				@click="selectAnswer(index)"
 			>
 				<span>
@@ -76,6 +77,14 @@
 			}
 		}
 
+		get answerList(): string[] {
+			if (this.questionDatas.otherAnswer) {
+				return [...this.questionDatas.answers, 'Autre'];
+			} else {
+				return this.questionDatas.answers;
+			}
+		}
+
 		selectAnswer(answer: number): void {
 			this.selectedAnswerIndex = answer;
 			this.emitResult();
@@ -86,15 +95,6 @@
 				'update-result',
 				this.result
 			);
-		}
-
-		get answerList(): string[] {
-			if (this.questionDatas.otherAnswer) {
-				return [...this.questionDatas.answers, 'Autre'];
-			} else {
-				return this.questionDatas.answers;
-			}
-
 		}
 	}
 </script>
@@ -108,5 +108,8 @@ h6 {
 .answer-button {
 	text-transform: none !important;
 	border-color: $vd-primary !important;
+}
+.active {
+	background-color: $vd-primary !important;
 }
 </style>
