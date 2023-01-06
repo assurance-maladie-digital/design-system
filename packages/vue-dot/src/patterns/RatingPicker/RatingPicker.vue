@@ -3,7 +3,7 @@
 		<!--first step-->
 		<div
 			class="step"
-			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowBox}"
+			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': modalMode}"
 		>
 			<EmotionPicker
 				v-if="mainQuestion.type === 'emotions'"
@@ -31,7 +31,7 @@
 				<div
 					v-if="firstStep.result !== null"
 					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
-					:class="afterValidate[0].messsageBorder ? 'border-green' : ''"
+					:class="!modalMode ? 'border-green' : ''"
 				>
 					<VIcon
 						color="success"
@@ -42,7 +42,7 @@
 					<span class="turquoise-darken-60--text">{{ afterValidate[0].messsage }}</span>
 				</div>
 				<VBtn
-					v-if="firstStep.result === null"
+					v-if="firstStep.result === null && !hideCloseButtons"
 					class="mr-2 mt-5 close-button"
 					color="primary"
 					text
@@ -53,7 +53,7 @@
 			</div>
 			<div class="d-flex justify-end">
 				<VBtn
-					v-if="!checkFirstStep && firstStep.result !== null"
+					v-if="!checkFirstStep && firstStep.result !== null && !hideCloseButtons"
 					class="mr-2 mt-5 close-button"
 					color="primary"
 					text
@@ -68,8 +68,13 @@
 		<div
 			v-if="checkFirstStep"
 			class="step mt-2"
-			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowBox}"
+			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': modalMode}"
 		>
+			<H6
+				class="mb-7 ml-4 mt-3"
+			>
+				Pouvez vous nous en dire plus ?
+			</H6>
 			<div
 				v-for="(question, index) in questionsList"
 				:key="index"
@@ -101,8 +106,7 @@
 
 			<div
 				v-if="validated"
-				class="d-flex justify-center align-center py-3 mx-6"
-				:class="afterValidate[1].messsageBorder ? 'border-green' : ''"
+				class="d-flex justify-center align-center border-green py-3 mx-6"
 			>
 				<VIcon
 					color="success"
@@ -114,10 +118,11 @@
 			</div>
 
 			<div
-				class="mx-4 d-flex"
-				:class="validated ? 'justify-end' : 'justify-space-between'"
+				class="mx-4 pb-3 d-flex"
+				:class="validated || hideCloseButtons ? 'justify-end' : 'justify-space-between'"
 			>
 				<VBtn
+					v-if="!hideCloseButtons"
 					class="mr-2 mt-5 close-button"
 					color="primary"
 					text
@@ -155,7 +160,7 @@
 
 	const Props = Vue.extend({
 		props: {
-			shadowBox: {
+			modalMode: {
 				type: Boolean,
 				required: false
 			},
@@ -184,11 +189,11 @@
 				default: () => [
 					{
 						messsage: 'Merci pour votre réponse',
-						messsageBorder: false
+						greenBackground: false
 					},
 					{
 						messsage: 'Merci pour vos remarques utiles à l\'amélioration du site.',
-						messsageBorder: true
+						greenBackground: false
 					}
 				]
 			},
@@ -261,6 +266,9 @@
 <style lang="scss" scoped>
 @import '@cnamts/design-tokens/dist/tokens';
 
+h6 {
+	font-size: 16px;
+}
 .step {
 	max-width: 450px !important;
 	padding: 16px;
@@ -280,5 +288,4 @@
 .green-background {
 	background-color: $vd-turquoise-lighten-90;
 }
-
 </style>

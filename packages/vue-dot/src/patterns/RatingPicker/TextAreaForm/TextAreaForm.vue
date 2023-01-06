@@ -1,11 +1,11 @@
 <template>
 	<div class="vd-text-area-form">
 		<div class="d-flex justify-center">
-			<H6
-				class="mb-6"
+			<span
+				class="mb-6 text-subtitle-2"
 			>
 				{{ questionDatas.question }}
-			</H6>
+			</span>
 		</div>
 		<div>
 			<VTextarea
@@ -53,6 +53,6 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
 h6 {
-	font-size: 16px
+	font-size: 16px;
 }
 </style>

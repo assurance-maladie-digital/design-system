@@ -2,10 +2,17 @@
 	<div class="vd-emotion-picker">
 		<div class="d-flex justify-center">
 			<H6
+				v-if="mainQuestion"
 				class="mb-6"
 			>
 				{{ questionDatas.question }}
 			</H6>
+			<span
+				v-else
+				class="mb-6 text-subtitle-2"
+			>
+				{{ questionDatas.question }}
+			</span>
 		</div>
 		<div
 			class="d-flex"
@@ -137,7 +144,7 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
 h6 {
-	font-size: 16px
+	font-size: 16px;
 }
 .description {
 	font-size: 12px;

@@ -87,7 +87,7 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
 h6 {
-	font-size: 16px
+	font-size: 16px;
 }
 .rating-button {
 	border-color: $vd-primary !important;
