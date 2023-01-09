@@ -1,7 +1,6 @@
 <template>
 	<div class="vd-rating-picker">
 		<!--first step-->
-		{{ firstStep }} {{ secondStep }}
 		<div
 			class="step"
 			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': modalMode}"
@@ -261,7 +260,7 @@
 
 		updateFirstStep(result: StepItem): void {
 			this.firstStep = result;
-			this.$emit('change', [result.result]);
+			this.$emit('change', [this.firstStep]);
 		}
 
 		updateSecondStep(result: StepItem): void {
@@ -271,7 +270,7 @@
 			} else {
 				this.secondStep.push(result);
 			}
-			this.$emit('change', [this.firstStep.result, ...this.secondStep.map(el => el.result)]);
+			this.$emit('change', [this.firstStep, ...this.secondStep]);
 		}
 
 		checkBackgroundGreen(number: number): boolean {
