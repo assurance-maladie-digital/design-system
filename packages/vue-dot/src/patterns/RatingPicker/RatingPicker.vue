@@ -40,7 +40,7 @@
 					>
 						{{ checkIcon }}
 					</VIcon>
-					<span class="turquoise-darken-60--text">{{ afterValidate[0].messsage }}</span>
+					<span class="turquoise-darken-60--text">{{ afterValidate[0].message }}</span>
 				</div>
 				<VBtn
 					v-if="firstStep.result === null && !hideCloseButtons"
@@ -115,7 +115,7 @@
 				>
 					{{ checkIcon }}
 				</VIcon>
-				<span class="turquoise-darken-60--text">{{ afterValidate[1].messsage }}</span>
+				<span class="turquoise-darken-60--text">{{ afterValidate[1].message }}</span>
 			</div>
 
 			<div
@@ -151,6 +151,7 @@
 	import { locales } from './locales';
 
 	import { StepItem } from './types';
+	import { AfterValidateItem } from './types';
 
 	import EmotionPicker from './EmotionPicker';
 	import StarsPicker from './StarsPicker';
@@ -190,14 +191,14 @@
 				required: true
 			},
 			afterValidate: {
-				type: Array,
+				type: Array<AfterValidateItem>,
 				default: () => [
 					{
-						messsage: 'Merci pour votre réponse',
+						message: 'Merci pour votre réponse',
 						greenBackground: false
 					},
 					{
-						messsage: 'Merci pour vos remarques utiles à l\'amélioration du site.',
+						message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
 						greenBackground: false
 					}
 				]
@@ -227,6 +228,10 @@
 	export default class RatingPicker extends MixinsDeclaration {
 		locales = locales;
 		checkIcon = mdiCheckCircleOutline;
+		question = {
+			type: '',
+			answers: []
+		};
 
 		firstStep: StepItem = {
 			step: '',
@@ -235,6 +240,11 @@
 		secondStep: StepItem[] = [];
 
 		validated = false;
+
+		afterValidateItem: AfterValidateItem = {
+			message: '',
+			greenBackground: false
+		};
 
 		get checkFirstStep(): boolean {
 			if (this.firstStep.result !== null) {
