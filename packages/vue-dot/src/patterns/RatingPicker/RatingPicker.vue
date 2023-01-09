@@ -71,11 +71,11 @@
 			class="step mt-2"
 			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': modalMode}"
 		>
-			<H6
+			<h6
 				class="mb-7 ml-4 mt-3"
 			>
 				{{ locales.more }}
-			</H6>
+			</h6>
 			<div
 				v-for="(question, index) in questionsList"
 				:key="index"
@@ -261,6 +261,7 @@
 
 		updateFirstStep(result: StepItem): void {
 			this.firstStep = result;
+			this.$emit('change', [result.result]);
 		}
 
 		updateSecondStep(result: StepItem): void {
@@ -270,6 +271,7 @@
 			} else {
 				this.secondStep.push(result);
 			}
+			this.$emit('change', [this.firstStep.result, ...this.secondStep.map(el => el.result)]);
 		}
 
 		checkBackgroundGreen(number: number): boolean {
