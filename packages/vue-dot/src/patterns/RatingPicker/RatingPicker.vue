@@ -1,6 +1,7 @@
 <template>
 	<div class="vd-rating-picker">
 		<!--first step-->
+		{{ firstStep }} {{ secondStep }}
 		<div
 			class="step"
 			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': modalMode}"
@@ -73,7 +74,7 @@
 			<H6
 				class="mb-7 ml-4 mt-3"
 			>
-				Pouvez vous nous en dire plus ?
+				{{ locales.more }}
 			</H6>
 			<div
 				v-for="(question, index) in questionsList"
@@ -168,6 +169,10 @@
 				type: Boolean,
 				required: false
 			},
+			value: {
+				type: Array,
+				required: true
+			},
 			mainQuestion: {
 				type: Object,
 				required: true
@@ -213,6 +218,10 @@
 			NumberPicker,
 			MultipleAnswers,
 			TextAreaForm
+		},
+		model: {
+			prop: 'value',
+			event: 'change'
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
@@ -224,6 +233,7 @@
 			result: null
 		};
 		secondStep: StepItem[] = [];
+
 		validated = false;
 
 		get checkFirstStep(): boolean {
@@ -259,6 +269,7 @@
 		validateSecondStep(): void {
 			this.onValidate();
 			this.validated = true;
+			this.value = ['bnosoir'];
 		}
 	}
 </script>

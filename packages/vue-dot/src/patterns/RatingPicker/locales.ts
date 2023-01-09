@@ -3,5 +3,6 @@ export const locales = {
 	later: 'Plus tard',
 	not: 'Pas du tout',
 	medium: 'Moyen',
-	perfect: 'Parfait !'
+	perfect: 'Parfait !',
+	more: 'Pouvez vous nous en dire plus ?'
 };
