@@ -42,6 +42,8 @@
 
 	import { mdiArrowUp } from '@mdi/js';
 
+	import { Scroll } from 'vuetify/lib/directives';
+
 	const Props = Vue.extend({
 		props: {
 			threshold: {
@@ -65,7 +67,11 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component
+	@Component({
+		directives: {
+			Scroll
+		}
+	})
 	export default class BackToTopBtn extends MixinsDeclaration {
 		locales = locales;
 
@@ -104,8 +110,10 @@
 		}
 
 		onScroll(e: MouseEvent): void {
-			const target = e.currentTarget as HTMLElement;
-			this.showBtn = target.scrollTop > this.threshold;
+			const target = e.currentTarget as HTMLElement | Window;
+			const scroll = target === window ? target.scrollY : (target as HTMLElement).scrollTop;
+
+			this.showBtn = scroll > this.threshold;
 		}
 
 		scrollToTop(): void {
