@@ -39,11 +39,14 @@
 				{{ i }}
 			</VBtn>
 		</div>
-		<div class="mt-3 d-flex justify-space-between rate-meaning">
-			<span v-if="!selectedRating">
+		<div
+			v-if="!selectedRating"
+			class="mt-3 d-flex justify-space-between rate-meaning"
+		>
+			<span>
 				{{ questionDatas.labels[0] }}
 			</span>
-			<span v-if="!selectedRating">
+			<span>
 				{{ questionDatas.labels[1] }}
 			</span>
 		</div>

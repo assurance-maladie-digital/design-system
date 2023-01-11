@@ -260,7 +260,7 @@
 
 		updateFirstStep(result: StepItem): void {
 			this.firstStep = result;
-			this.$emit('change', [this.firstStep]);
+			this.$emit('change', result);
 		}
 
 		updateSecondStep(result: StepItem): void {
