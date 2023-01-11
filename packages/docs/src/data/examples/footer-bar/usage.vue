@@ -21,6 +21,7 @@
 			a11yCompliance: A11yComplianceEnum.NON_COMPLIANT,
 			sitemapRoute: '/',
 			cguRoute: '/',
+			cookiesRoute: '/',
 			legalNoticeRoute: '/',
 			a11yStatementRoute: '/'
 		};
@@ -29,6 +30,7 @@
 			'sitemapRoute',
 			'a11yCompliance',
 			'cguRoute',
+			'cookiesRoute',
 			'legalNoticeRoute',
 			'a11yStatementRoute'
 		];
@@ -44,6 +46,7 @@
 			booleans: [
 				'hideSitemapLink',
 				'hideCguLink',
+				'hideCookiesLink',
 				'hideLegalNoticeLink',
 				'hideA11yLink'
 			],

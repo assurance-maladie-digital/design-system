@@ -23,6 +23,12 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers les *Conditions générales d’utilisation*.'
 			},
 			{
+				name: 'cookies-route',
+				type: 'RawLocation',
+				default: `{ name: 'cookies' }`,
+				description: 'La valeur de la prop `to` du lien vers la *Gestion des cookies*.'
+			},
+			{
 				name: 'legal-notice-route',
 				type: 'RawLocation',
 				default: `{ name: 'legalNotice' }`,
@@ -45,6 +51,12 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Masque le lien vers les *Conditions générales d’utilisation*.'
+			},
+			{
+				name: 'hide-cookies-link',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le lien vers la *Gestion des cookies*.'
 			},
 			{
 				name: 'hide-legal-notice-link',
