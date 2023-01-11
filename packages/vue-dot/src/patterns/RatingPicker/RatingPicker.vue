@@ -260,7 +260,7 @@
 
 		updateFirstStep(result: StepItem): void {
 			this.firstStep = result;
-			this.$emit('change', result);
+			this.$emit('change', [this.firstStep]);
 		}
 
 		updateSecondStep(result: StepItem): void {
@@ -280,7 +280,6 @@
 		validateSecondStep(): void {
 			this.onValidate();
 			this.validated = true;
-			this.value = ['bnosoir'];
 		}
 	}
 </script>
