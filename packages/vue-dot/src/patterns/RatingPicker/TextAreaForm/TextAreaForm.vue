@@ -26,6 +26,10 @@
 			questionDatas: {
 				type: Object,
 				required: true
+			},
+			isValidated: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -38,13 +42,17 @@
 		reasonValue = '';
 
 		emitResult(): void {
-			this.$emit(
-				'update-result',
-				{
-					step: this.questionDatas.name,
-					result: this.reasonValue
-				}
-			);
+			if (this.isValidated) {
+				return;
+			} else {
+				this.$emit(
+					'update-result',
+					{
+						step: this.questionDatas.name,
+						result: this.reasonValue
+					}
+				);
+			}
 		}
 	}
 </script>

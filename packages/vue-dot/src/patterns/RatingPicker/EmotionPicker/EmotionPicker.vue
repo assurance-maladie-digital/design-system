@@ -72,6 +72,10 @@
 			mainQuestion: {
 				type: Boolean,
 				default: false
+			},
+			isValidated: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -120,14 +124,18 @@
 		}
 
 		selectEmotion(emotion: string): void {
-			this.selectedEmotion = emotion;
-			this.$emit(
-				'update-result',
-				{
-					step: this.questionDatas.name,
-					result: emotion
-				}
-			);
+			if (this.isValidated) {
+				return;
+			} else {
+				this.selectedEmotion = emotion;
+				this.$emit(
+					'update-result',
+					{
+						step: this.questionDatas.name,
+						result: emotion
+					}
+				);
+			}
 		}
 
 		isActive(emotion: string): boolean {

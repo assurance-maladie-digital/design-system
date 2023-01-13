@@ -61,6 +61,10 @@
 			questionDatas: {
 				type: Object,
 				required: true
+			},
+			isValidated: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -77,14 +81,18 @@
 		isHoverRating = 0;
 
 		selectStar(rating: number): void {
-			this.selectedRating = rating;
-			this.$emit(
-				'update-result',
-				{
-					step: this.questionDatas.name,
-					result: this.selectedRating
-				}
-			);
+			if (this.isValidated) {
+				return;
+			} else {
+				this.selectedRating = rating;
+				this.$emit(
+					'update-result',
+					{
+						step: this.questionDatas.name,
+						result: this.selectedRating
+					}
+				);
+			}
 		}
 
 		isHover(rating: number): boolean {

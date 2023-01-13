@@ -49,6 +49,10 @@
 			questionDatas: {
 				type: Object,
 				required: true
+			},
+			isValidated: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -86,15 +90,23 @@
 		}
 
 		selectAnswer(answer: number): void {
-			this.selectedAnswerIndex = answer;
-			this.emitResult();
+			if (this.isValidated) {
+				return;
+			} else {
+				this.selectedAnswerIndex = answer;
+				this.emitResult();
+			}
 		}
 
 		emitResult(): void {
-			this.$emit(
-				'update-result',
-				this.result
-			);
+			if (this.isValidated) {
+				return;
+			} else {
+				this.$emit(
+					'update-result',
+					this.result
+				);
+			}
 		}
 	}
 </script>

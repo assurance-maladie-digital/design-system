@@ -85,6 +85,7 @@
 						class="ma-6"
 						step-name="secondStep"
 						:question-datas="question"
+						:is-validated="validated"
 						@update-result="updateSecondStep"
 					/>
 					<MultipleAnswers
@@ -92,6 +93,7 @@
 						class="ma-6"
 						step-name="thirtStep"
 						:question-datas="question"
+						:is-validated="validated"
 						@update-result="updateSecondStep"
 					/>
 					<TextAreaForm
@@ -99,6 +101,7 @@
 						class="ma-6"
 						step-name="thirtStep"
 						:question-datas="question"
+						:is-validated="validated"
 						@update-result="updateSecondStep"
 					/>
 				</div>
@@ -208,6 +211,10 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component({
+		model: {
+			prop: 'datas',
+			event: 'change'
+		},
 		components: {
 			EmotionPicker,
 			StarsPicker,
