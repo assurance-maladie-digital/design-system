@@ -166,6 +166,54 @@
                 </v-card>
             </nuxt-link>
         </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="formulaires/nir-field">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/NirField.svg" width="234"></doc-image>
+                    <v-card-title>NirField</v-card-title>
+                    <v-card-text>Utilisé pour permettre à l’utilisateur de saisir un numéro de Sécurité sociale (NIR).</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="formulaires/phone-field">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/PhoneField.svg" width="234"></doc-image>
+                    <v-card-title>PhoneField</v-card-title>
+                    <v-card-text>Utilisé pour permettre à l’utilisateur de saisir un numéro de téléphone.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="formulaires/upload-workflow">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/UploadWorkflow.svg" width="234"></doc-image>
+                    <v-card-title>UploadWorkflow</v-card-title>
+                    <v-card-text>Utilisé pour permettre à l’utilisateur de sélectionner une liste de fichiers.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+    </v-row>
+    <h2 class="mt-8 mb-4">Tableaux</h2>
+    <v-row>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="formulaires/paginated-table">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/PaginatedTable.svg" width="234"></doc-image>
+                    <v-card-title>PaginatedTable</v-card-title>
+                    <v-card-text>Utilisé pour afficher une VDataTable de Vuetify avec une pagination persistante.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="formulaires/filter-module">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/FilterModule.svg" width="234"></doc-image>
+                    <v-card-title>FilterModule</v-card-title>
+                    <v-card-text>Utilisé pour permettre à l’utilisateur de sélectionner des filtres.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
     </v-row>
 </v-container>
 
