@@ -9,6 +9,7 @@ import LangBtn from './LangBtn';
 import HeaderBar from './HeaderBar';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
+import RatingPicker from './RatingPicker';
 import PaginatedTable from './PaginatedTable';
 import PhoneField from './PhoneField';
 import SubHeader from './SubHeader';
@@ -31,5 +32,6 @@ export const patterns = {
 	PhoneField,
 	SubHeader,
 	TableToolbar,
-	UploadWorkflow
+	UploadWorkflow,
+	RatingPicker
 };

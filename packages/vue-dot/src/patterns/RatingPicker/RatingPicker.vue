@@ -169,10 +169,6 @@
 				type: Boolean,
 				required: false
 			},
-			value: {
-				type: Array,
-				required: true
-			},
 			mainQuestion: {
 				type: Object,
 				required: true
@@ -183,7 +179,7 @@
 			},
 			validateTextButton: {
 				type: String,
-				required: true
+				default: 'Valider'
 			},
 			onValidate: {
 				type: Function,
@@ -218,10 +214,6 @@
 			NumberPicker,
 			MultipleAnswers,
 			TextAreaForm
-		},
-		model: {
-			prop: 'value',
-			event: 'change'
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
