@@ -66,7 +66,7 @@
 
 		<!--second step-->
 		<div
-			v-if="checkFirstStep"
+			v-if="questionsList.length && checkFirstStep"
 			class="step mt-2"
 			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': modalMode}"
 		>
@@ -148,7 +148,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 	import { locales } from './locales';
 
@@ -178,18 +178,14 @@
 			},
 			questionsList: {
 				type: Array,
-				required: true
+				default: () => []
 			},
 			validateTextButton: {
 				type: String,
 				default: 'Valider'
 			},
-			onValidate: {
-				type: Function,
-				required: true
-			},
 			afterValidate: {
-				type: Array<AfterValidateItem>,
+				type: Array as PropType<AfterValidateItem[]>,
 				default: () => [
 					{
 						message: 'Merci pour votre réponse',
@@ -200,6 +196,10 @@
 						greenBackground: false
 					}
 				]
+			},
+			onValidate: {
+				type: Function,
+				required: true
 			},
 			onClose: {
 				type: Function,
