@@ -17,9 +17,7 @@ describe('RatingPicker', () => {
 						type: 'stars',
 						question: 'Avez vous lu la première question ?'
 				},
-				onValidate: () => {
-					console.log('Validate !');
-				}
+				onValidate: () => {}
 			}
 		});
 		expect(html(wrapper)).toMatchSnapshot();
