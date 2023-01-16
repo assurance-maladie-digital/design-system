@@ -29,6 +29,7 @@ Object {
     "PageContainer",
     "PaginatedTable",
     "PhoneField",
+    "RatingPicker",
     "SubHeader",
     "TableToolbar",
     "UploadWorkflow",
