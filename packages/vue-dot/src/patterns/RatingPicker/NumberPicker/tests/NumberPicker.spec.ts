@@ -10,7 +10,16 @@ let wrapper: Wrapper<Vue>;
 
 describe('NumberPicker', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(NumberPicker);
+		wrapper = mountComponent(NumberPicker,{
+			propsData: {
+				questionDatas: {
+						name: 'first-step',
+						type: 'numbers',
+						labels: ['debut', 'apres'],
+						question: 'la premiere question ?'
+					}
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

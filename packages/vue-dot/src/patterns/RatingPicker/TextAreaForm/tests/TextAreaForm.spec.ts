@@ -10,7 +10,15 @@ let wrapper: Wrapper<Vue>;
 
 describe('TextAreaForm', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(TextAreaForm);
+		wrapper = mountComponent(TextAreaForm,{
+			propsData: {
+				questionDatas: {
+						name: 'first-question',
+						type: 'emotions',
+						question: 'la deuxieme question ?'
+					}
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

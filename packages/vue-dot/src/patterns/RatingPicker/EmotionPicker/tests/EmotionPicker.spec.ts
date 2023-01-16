@@ -10,7 +10,15 @@ let wrapper: Wrapper<Vue>;
 
 describe('EmotionPicker', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(EmotionPicker);
+		wrapper = mountComponent(EmotionPicker,{
+			propsData: {
+				questionDatas: {
+						name: 'first-question',
+						type: 'stars',
+						question: 'la deuxieme question ?'
+					}
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

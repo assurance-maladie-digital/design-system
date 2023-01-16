@@ -10,7 +10,15 @@ let wrapper: Wrapper<Vue>;
 
 describe('StarsPicker', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(StarsPicker);
+		wrapper = mountComponent(StarsPicker,{
+			propsData: {
+				questionDatas: {
+						name: 'first-question',
+						type: 'stars',
+						question: 'la deuxieme question ?'
+					}
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

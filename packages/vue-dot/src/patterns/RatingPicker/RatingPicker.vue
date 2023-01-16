@@ -203,7 +203,9 @@
 			},
 			onClose: {
 				type: Function,
-				required: true
+				default: () => {
+					console.log('fermer');
+				}
 			}
 		}
 	});

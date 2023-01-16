@@ -10,8 +10,17 @@ let wrapper: Wrapper<Vue>;
 
 describe('RatingPicker', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(RatingPicker);
-
+		wrapper = mountComponent(RatingPicker,{
+			propsData: {
+				mainQuestion: [
+					{
+						name: 'first-question',
+						type: 'stars',
+						question: 'Avez vous lu la première question ?'
+					}
+				]
+			}
+		});
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
