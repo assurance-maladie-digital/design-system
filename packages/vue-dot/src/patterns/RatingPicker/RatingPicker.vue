@@ -202,8 +202,8 @@
 				required: true
 			},
 			onClose: {
-				type: Function,
-				default: () => {}
+				type: Function || null,
+				default: () => null
 			}
 		}
 	});
