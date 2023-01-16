@@ -28,6 +28,7 @@ Array [
   "PageContainer",
   "PaginatedTable",
   "PhoneField",
+  "RatingPicker",
   "SubHeader",
   "TableToolbar",
   "UploadWorkflow",

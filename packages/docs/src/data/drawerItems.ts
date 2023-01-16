@@ -225,6 +225,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'HeaderLoading',
 						to: '/composants/feedback/header-loading'
+					},
+					{
+						title: 'RatingPicker',
+						to: '/composants/feedback/rating-picker'
 					}
 				]
 			}
