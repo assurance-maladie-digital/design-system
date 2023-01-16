@@ -12,13 +12,14 @@ describe('RatingPicker', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(RatingPicker,{
 			propsData: {
-				mainQuestion: [
-					{
+				mainQuestion: {
 						name: 'first-question',
 						type: 'stars',
 						question: 'Avez vous lu la première question ?'
-					}
-				]
+				},
+				onValidate: () => {
+					console.log('Validate !');
+				}
 			}
 		});
 		expect(html(wrapper)).toMatchSnapshot();

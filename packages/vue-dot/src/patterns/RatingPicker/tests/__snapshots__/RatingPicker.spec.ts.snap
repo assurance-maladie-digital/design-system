@@ -4,7 +4,7 @@ exports[`RatingPicker renders correctly 1`] = `
 <div class="vd-rating-picker">
   <div class="step">
     <!---->
-    <!---->
+    <starspicker-stub questiondatas="[object Object]" step-name="mainQuestion" class="ma-6"></starspicker-stub>
     <!---->
     <div class="d-flex justify-end">
       <!---->
