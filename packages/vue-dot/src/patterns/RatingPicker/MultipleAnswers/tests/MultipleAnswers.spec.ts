@@ -4,13 +4,13 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import StarsPicker from '..';
+import MultipleAnswers from '..';
 
 let wrapper: Wrapper<Vue>;
 
-describe('StarsPicker', () => {
+describe('MultipleAnswers', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(StarsPicker);
+		wrapper = mountComponent(MultipleAnswers);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
