@@ -197,7 +197,7 @@
     <h2 class="mt-8 mb-4">Tableaux</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/paginated-table">
+            <nuxt-link to="tableaux/paginated-table">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/PaginatedTable.svg" width="234"></doc-image>
                     <v-card-title>PaginatedTable</v-card-title>
@@ -206,11 +206,62 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/filter-module">
+            <nuxt-link to="tableaux/filter-module">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FilterModule.svg" width="234"></doc-image>
                     <v-card-title>FilterModule</v-card-title>
                     <v-card-text>Utilisé pour permettre à l’utilisateur de sélectionner des filtres.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="tableaux/table-toolbar">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/TableToolbar.svg" width="234"></doc-image>
+                    <v-card-title>TableToolbar</v-card-title>
+                    <v-card-text>Utilisé pour afficher une barre au-dessus des tableaux.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+    </v-row>
+    <h2 class="mt-8 mb-4">Données</h2>
+    <v-row>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="donnees/data-list">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/DataList.svg" width="234"></doc-image>
+                    <v-card-title>DataList</v-card-title>
+                    <v-card-text>Utilisé pour afficher une liste d’informations.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="donnees/data-list-group">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/DataListGroup.svg" width="234"></doc-image>
+                    <v-card-title>DataListGroup</v-card-title>
+                    <v-card-text>Utilisé pour afficher une liste de DataList.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+    </v-row>
+    <h2 class="mt-8 mb-4">Feedback</h2>
+    <v-row>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="donnees/dialog-box">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/DialogBox.svg" width="234"></doc-image>
+                    <v-card-title>DialogBox</v-card-title>
+                    <v-card-text>Utilisé pour afficher une boîte de dialogue avec des boutons d’actions.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="donnees/notification-bar">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/NotificationBar.svg" width="234"></doc-image>
+                    <v-card-title>NotificationBar</v-card-title>
+                    <v-card-text>Utilisé avec le module Vuex notification pour afficher des notifications à l’utilisateur.</v-card-text>
                 </v-card>
             </nuxt-link>
         </v-col>
