@@ -248,7 +248,7 @@
     <h2 class="mt-8 mb-4">Feedback</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="donnees/dialog-box">
+            <nuxt-link to="feedback/dialog-box">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/DialogBox.svg" width="234"></doc-image>
                     <v-card-title>DialogBox</v-card-title>
@@ -257,11 +257,29 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="donnees/notification-bar">
+            <nuxt-link to="feedback/notification-bar">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/NotificationBar.svg" width="234"></doc-image>
                     <v-card-title>NotificationBar</v-card-title>
                     <v-card-text>Utilisé avec le module Vuex notification pour afficher des notifications à l’utilisateur.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="feedback/cookie-banner">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/CookieBanner.svg" width="234"></doc-image>
+                    <v-card-title>CookieBanner</v-card-title>
+                    <v-card-text>Utilisé pour permettre à l’utilisateur d’accepter ou non les cookies.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="feedback/header-loading">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/HeaderLoading.svg" width="234"></doc-image>
+                    <v-card-title>HeaderLoading</v-card-title>
+                    <v-card-text>Utilisé pour afficher un élément de chargement avec des dimensions personnalisées.</v-card-text>
                 </v-card>
             </nuxt-link>
         </v-col>
