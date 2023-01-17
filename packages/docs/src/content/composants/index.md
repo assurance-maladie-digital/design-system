@@ -283,6 +283,15 @@
                 </v-card>
             </nuxt-link>
         </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="feedback/rating-picker">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/RatingPicker.svg" width="234"></doc-image>
+                    <v-card-title>RatingPicker</v-card-title>
+                    <v-card-text>Permet de receuillir l'avis d'un utilisateur.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
     </v-row>
 </v-container>
 
