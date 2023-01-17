@@ -5,8 +5,8 @@ description: Le template `ErrorPage` est utilisé pour afficher une page d’err
 
 <doc-alert type="warning">
 
-Ce composant est déprécié en faveur des composants [`MaintenancePage`](/composants/templates/maintenance-page)
- et [`NotFoundPage`](/composants/templates/notfound-page) depuis la [version 2.9.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/2.9.0).
+Ce composant est déprécié en faveur des composants [`MaintenancePage`](/templates/maintenance-page)
+ et [`NotFoundPage`](/templates/notfound-page) depuis la [version 2.9.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/2.9.0).
 
 </doc-alert>
 
