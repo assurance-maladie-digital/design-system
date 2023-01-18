@@ -239,17 +239,21 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/feedback/header-loading'
 					},
 					{
-						title: 'RatingPicker',
-						to: '/composants/feedback/rating-picker'
-					}
-				]
-			}
-		]
+						title: "RatingPicker",
+						to: "/composants/feedback/rating-picker",
+					},
+				],
+			},
+		],
 	},
 	{
 		title: "Templates",
 		icon: mdiBookOpenPageVariantOutline,
 		items: [
+			{
+				title: "Vue d'ensemble",
+				to: "/templates/index",
+			},
 			{
 				title: "CookiesPage",
 				to: "/templates/cookies-page",
