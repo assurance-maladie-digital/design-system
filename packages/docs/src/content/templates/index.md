@@ -13,6 +13,7 @@
             <nuxt-link to="notfound-page">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="templates/NotFoundPage.svg" width="234"></doc-image>
+                    <v-chip outlined color="green" x-small>Nouveau</v-chip>
                     <v-card-title>NotFoundPage</v-card-title>
                     <v-card-text>Utilisé pour afficher une page d'erreur.</v-card-text>
                 </v-card>
@@ -22,6 +23,7 @@
             <nuxt-link to="maintenance-page">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="templates/MaintenancePage.svg" width="234"></doc-image>
+                    <v-chip outlined color="green" x-small>Nouveau</v-chip>
                     <v-card-title>MaintenancePage</v-card-title>
                     <v-card-text>Utilisé pour afficher une page de maintenance.</v-card-text>
                 </v-card>
