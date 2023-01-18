@@ -1,7 +1,9 @@
 <template>
 	<NotFoundPage
-		page-title="Page non trouvée"
-		message="Il semblerait qu’il y ait eu une erreur !"
-		code="404"
+		page-title="Erreur serveur"
+		message="La page ne fonctionne pas correctement."
+		btn-text="Actualiser la page"
+		btn-route=""
+		code="500"
 	/>
 </template>
