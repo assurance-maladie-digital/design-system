@@ -31,6 +31,7 @@
             <nuxt-link to="error-page">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="templates/ErrorPage.svg" width="234"></doc-image>
+                    <v-chip outlined color="red" x-small>Déprécié</v-chip>
                     <v-card-title>ErrorPage</v-card-title>
                     <v-card-text>Utilisé pour afficher une page d’erreur.</v-card-text>
                 </v-card>
@@ -53,5 +54,12 @@
         width: 100%;
         height: auto;
         background-color: #E7ECF5;
+    }
+    .v-chip {
+        position: absolute;
+        top: 156px;
+        right: 0;
+        margin: 8px;
+        padding: 0 5px;
     }
 </style>

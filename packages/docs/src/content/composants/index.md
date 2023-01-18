@@ -28,6 +28,16 @@
                 </v-card>
             </nuxt-link>
         </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="structure/footer-wrapper">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="components/FooterWrapper.svg"></doc-image>
+                    <v-chip outlined color="red" x-small>Déprécié</v-chip>
+                    <v-card-title>FooterWrapper</v-card-title>
+                    <v-card-text>Utilisé avec le composant FooterBtn pour afficher un pied de page.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
     </v-row>
     <h2 class="mt-8 mb-4">Layout</h2>
     <v-row>
@@ -287,6 +297,7 @@
             <nuxt-link to="feedback/rating-picker">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/RatingPicker.svg" width="234"></doc-image>
+                    <v-chip outlined color="green" x-small>Nouveau</v-chip>
                     <v-card-title>RatingPicker</v-card-title>
                     <v-card-text>Permet de receuillir l'avis d'un utilisateur.</v-card-text>
                 </v-card>
@@ -309,5 +320,12 @@
         width: 100%;
         height: auto;
         background-color: #E7ECF5;
+    }
+    .v-chip {
+        position: absolute;
+        top: 156px;
+        right: 0;
+        margin: 8px;
+        padding: 0 5px;
     }
 </style>
