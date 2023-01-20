@@ -36,3 +36,5 @@ Vous pouvez utiliser le slot par défaut pour ajouter du contenu.
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

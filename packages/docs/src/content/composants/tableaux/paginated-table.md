@@ -37,3 +37,5 @@ Les propriétés non définies dans la section API seront reportées directement
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

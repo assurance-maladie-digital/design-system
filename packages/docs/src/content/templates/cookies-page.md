@@ -16,3 +16,5 @@ description: Le template `CookiesPage` est utilisé pour permettre à l’utilis
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

@@ -1,8 +1,16 @@
-<v-container>
+---
+title: Vue d'ensemble
+description: Liste des [composants](#composants) et [templates](#templates) disponibles.
+---
+
+# Composants
+<v-divider></v-divider>
+
+<v-container class="mb-10">
     <h2 class="mb-4">Structure</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="structure/header-bar">
+            <nuxt-link to="../composants/structure/header-bar">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/Header.svg" width="234"></doc-image>
                     <v-card-title>HeaderBar</v-card-title>
@@ -11,7 +19,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="structure/sub-header">
+            <nuxt-link to="../composants/structure/sub-header">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/SubHeader.svg"></doc-image>
                     <v-card-title>SubHeader</v-card-title>
@@ -20,7 +28,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="structure/footer-bar">
+            <nuxt-link to="../composants/structure/footer-bar">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FooterBar.svg"></doc-image>
                     <v-card-title>FooterBar</v-card-title>
@@ -29,7 +37,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="structure/footer-wrapper">
+            <nuxt-link to="../composants/structure/footer-wrapper">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FooterWrapper.svg"></doc-image>
                     <v-chip outlined color="red" x-small>Déprécié</v-chip>
@@ -42,7 +50,7 @@
     <h2 class="mt-8 mb-4">Layout</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="layout/page-container">
+            <nuxt-link to="../composants/layout/page-container">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/PageContainer.svg"></doc-image>
                     <v-card-title>PageContainer</v-card-title>
@@ -54,7 +62,7 @@
     <h2 class="mt-8 mb-4">Navigation</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="navigation/external-links">
+            <nuxt-link to="../composants/navigation/external-links">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/ExternalsLinks.svg"></doc-image>
                     <v-card-title>ExternalsLinks</v-card-title>
@@ -66,7 +74,7 @@
     <h2 class="mt-8 mb-4">Boutons</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="boutons/back-btn">
+            <nuxt-link to="../composants/boutons/back-btn">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/BackBtn.svg"></doc-image>
                     <v-card-title>BackBtn</v-card-title>
@@ -75,7 +83,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="boutons/copy-btn">
+            <nuxt-link to="../composants/boutons/copy-btn">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/CopyBtn.svg"></doc-image>
                     <v-card-title>CopyBtn</v-card-title>
@@ -84,7 +92,7 @@
             </nuxt-link>
         </v-col>
         <!-- <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="boutons/back-to-top-btn">
+            <nuxt-link to="../composants/boutons/back-to-top-btn">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/BackToTopBtn.svg"></doc-image>
                     <v-card-title>BackToTopBtn</v-card-title>
@@ -93,7 +101,7 @@
             </nuxt-link>
         </v-col> -->
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="boutons/lang-btn">
+            <nuxt-link to="../composants/boutons/lang-btn">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/LangBtn.svg"></doc-image>
                     <v-card-title>LangBtn</v-card-title>
@@ -102,7 +110,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="boutons/download-btn">
+            <nuxt-link to="../composants/boutons/download-btn">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/DownloadBtn.svg"></doc-image>
                     <v-card-title>DownloadBtn</v-card-title>
@@ -111,7 +119,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="boutons/france-connect-btn">
+            <nuxt-link to="../composants/boutons/france-connect-btn">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FranceConnectBtn.svg"></doc-image>
                     <v-card-title>FranceConnectBtn</v-card-title>
@@ -120,7 +128,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="boutons/user-menu-btn">
+            <nuxt-link to="../composants/boutons/user-menu-btn">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/UserMenuBtn.svg"></doc-image>
                     <v-card-title>UserMenuBtn</v-card-title>
@@ -132,7 +140,7 @@
     <h2 class="mt-8 mb-4">Formulaires</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/date-picker">
+            <nuxt-link to="../composants/formulaires/date-picker">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/DatePicker.svg" width="234"></doc-image>
                     <v-card-title>DatePicker</v-card-title>
@@ -141,7 +149,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/form-builder">
+            <nuxt-link to="../composants/formulaires/form-builder">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FormBuilder.svg" width="234"></doc-image>
                     <v-card-title>FormBuilder</v-card-title>
@@ -150,7 +158,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/form-field">
+            <nuxt-link to="../composants/formulaires/form-field">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FormField.svg" width="234"></doc-image>
                     <v-card-title>FormField</v-card-title>
@@ -159,7 +167,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/form-field-list">
+            <nuxt-link to="../composants/formulaires/form-field-list">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FormFieldList.svg" width="234"></doc-image>
                     <v-card-title>FormFieldList</v-card-title>
@@ -168,7 +176,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/file-upload">
+            <nuxt-link to="../composants/formulaires/file-upload">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FileUpload.svg" width="234"></doc-image>
                     <v-card-title>FileUpload</v-card-title>
@@ -177,7 +185,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/nir-field">
+            <nuxt-link to="../composants/formulaires/nir-field">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/NirField.svg" width="234"></doc-image>
                     <v-card-title>NirField</v-card-title>
@@ -186,7 +194,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/phone-field">
+            <nuxt-link to="../composants/formulaires/phone-field">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/PhoneField.svg" width="234"></doc-image>
                     <v-card-title>PhoneField</v-card-title>
@@ -195,7 +203,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="formulaires/upload-workflow">
+            <nuxt-link to="../composants/formulaires/upload-workflow">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/UploadWorkflow.svg" width="234"></doc-image>
                     <v-card-title>UploadWorkflow</v-card-title>
@@ -207,7 +215,7 @@
     <h2 class="mt-8 mb-4">Tableaux</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="tableaux/paginated-table">
+            <nuxt-link to="../composants/tableaux/paginated-table">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/PaginatedTable.svg" width="234"></doc-image>
                     <v-card-title>PaginatedTable</v-card-title>
@@ -216,7 +224,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="tableaux/filter-module">
+            <nuxt-link to="../composants/tableaux/filter-module">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/FilterModule.svg" width="234"></doc-image>
                     <v-card-title>FilterModule</v-card-title>
@@ -225,7 +233,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="tableaux/table-toolbar">
+            <nuxt-link to="../composants/tableaux/table-toolbar">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/TableToolbar.svg" width="234"></doc-image>
                     <v-card-title>TableToolbar</v-card-title>
@@ -237,7 +245,7 @@
     <h2 class="mt-8 mb-4">Données</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="donnees/data-list">
+            <nuxt-link to="../composants/donnees/data-list">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/DataList.svg" width="234"></doc-image>
                     <v-card-title>DataList</v-card-title>
@@ -246,7 +254,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="donnees/data-list-group">
+            <nuxt-link to="../composants/donnees/data-list-group">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/DataListGroup.svg" width="234"></doc-image>
                     <v-card-title>DataListGroup</v-card-title>
@@ -258,7 +266,7 @@
     <h2 class="mt-8 mb-4">Feedback</h2>
     <v-row>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="feedback/dialog-box">
+            <nuxt-link to="../composants/feedback/dialog-box">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/DialogBox.svg" width="234"></doc-image>
                     <v-card-title>DialogBox</v-card-title>
@@ -267,7 +275,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="feedback/notification-bar">
+            <nuxt-link to="../composants/feedback/notification-bar">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/NotificationBar.svg" width="234"></doc-image>
                     <v-card-title>NotificationBar</v-card-title>
@@ -276,7 +284,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="feedback/cookie-banner">
+            <nuxt-link to="../composants/feedback/cookie-banner">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/CookieBanner.svg" width="234"></doc-image>
                     <v-card-title>CookieBanner</v-card-title>
@@ -285,7 +293,7 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="feedback/header-loading">
+            <nuxt-link to="../composants/feedback/header-loading">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/HeaderLoading.svg" width="234"></doc-image>
                     <v-card-title>HeaderLoading</v-card-title>
@@ -294,12 +302,59 @@
             </nuxt-link>
         </v-col>
         <v-col cols="12" sm="6" md="4">
-            <nuxt-link to="feedback/rating-picker">
+            <nuxt-link to="../composants/feedback/rating-picker">
                 <v-card class="fill-height" max-width="234">
                     <doc-image src="components/RatingPicker.svg" width="234"></doc-image>
                     <v-chip outlined color="green" x-small>Nouveau</v-chip>
                     <v-card-title>RatingPicker</v-card-title>
                     <v-card-text>Permet de receuillir l'avis d'un utilisateur.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+    </v-row>
+</v-container>
+
+# Templates
+<v-divider></v-divider>
+
+<v-container>
+    <v-row>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="../templates/cookies-page">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="templates/CookiesPage.svg" width="234"></doc-image>
+                    <v-card-title>CookiesPage</v-card-title>
+                    <v-card-text>Utilisé pour permettre à l’utilisateur de gérer ses préférences de cookies.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="../templates/notfound-page">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="templates/NotFoundPage.svg" width="234"></doc-image>
+                    <v-chip outlined color="green" x-small>Nouveau</v-chip>
+                    <v-card-title>NotFoundPage</v-card-title>
+                    <v-card-text>Utilisé pour afficher une page d'erreur.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="../templates/maintenance-page">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="templates/MaintenancePage.svg" width="234"></doc-image>
+                    <v-chip outlined color="green" x-small>Nouveau</v-chip>
+                    <v-card-title>MaintenancePage</v-card-title>
+                    <v-card-text>Utilisé pour afficher une page de maintenance.</v-card-text>
+                </v-card>
+            </nuxt-link>
+        </v-col>
+        <v-col cols="12" sm="6" md="4">
+            <nuxt-link to="../templates/error-page">
+                <v-card class="fill-height" max-width="234">
+                    <doc-image src="templates/ErrorPage.svg" width="234"></doc-image>
+                    <v-chip outlined color="red" x-small>Déprécié</v-chip>
+                    <v-card-title>ErrorPage</v-card-title>
+                    <v-card-text>Utilisé pour afficher une page d’erreur.</v-card-text>
                 </v-card>
             </nuxt-link>
         </v-col>
@@ -327,5 +382,13 @@
         right: 0;
         margin: 8px;
         padding: 0 5px;
+    }
+    .v-divider {
+      height: 0.5px;
+      max-height: 0.5px;
+      border-width: 0.5px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
 </style>

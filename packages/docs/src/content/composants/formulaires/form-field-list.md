@@ -36,3 +36,5 @@ Vous pouvez écouter la mise à jour de la valeur d’un champ du formulaire en 
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

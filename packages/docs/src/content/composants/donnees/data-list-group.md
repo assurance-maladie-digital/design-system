@@ -57,3 +57,5 @@ Vous pouvez personnaliser les composants Vuetify contenus dans l'élément `Data
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

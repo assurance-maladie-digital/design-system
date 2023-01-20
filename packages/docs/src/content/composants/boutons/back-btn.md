@@ -40,3 +40,5 @@ Vous pouvez utiliser le slot par défaut pour remplacer le texte du bouton et le
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

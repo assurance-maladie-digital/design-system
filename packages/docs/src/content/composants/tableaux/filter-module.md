@@ -22,3 +22,5 @@ Vous pouvez utiliser le composant directement dans le pattern `TableToolbar` afi
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

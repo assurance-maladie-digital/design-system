@@ -46,3 +46,5 @@ Cette utilisation du composant est dépréciée en faveur du composant [`NotFoun
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

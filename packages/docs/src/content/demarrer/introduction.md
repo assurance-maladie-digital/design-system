@@ -28,3 +28,5 @@ En tant que système **_open source_**, notre Design System est **disponible gra
 ## Contributeurs
 
 <doc-home-page-contributors></doc-home-page-contributors>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="vue-ensemble" :hidden="false"></doc-sticky-button>

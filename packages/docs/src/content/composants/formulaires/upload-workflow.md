@@ -91,3 +91,5 @@ Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre 
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

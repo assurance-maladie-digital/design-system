@@ -24,3 +24,5 @@ Vous pouvez utiliser le composant `VCard` pour afficher une carte dans la page.
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>

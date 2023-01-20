@@ -21,6 +21,10 @@ export const drawerItems: DrawerItem[] = [
 				to: "/demarrer/introduction",
 			},
 			{
+				title: "Vue d'ensemble",
+				to: "/demarrer/vue-ensemble",
+			},
+			{
 				title: "Installation",
 				to: "/demarrer/installation",
 			},
@@ -72,10 +76,6 @@ export const drawerItems: DrawerItem[] = [
 		title: "Composants",
 		icon: mdiViewDashboard,
 		items: [
-			{
-				title: "Vue d'ensemble",
-				to: "/composants/index",
-			},
 			{
 				title: "Structure",
 				items: [
@@ -250,10 +250,6 @@ export const drawerItems: DrawerItem[] = [
 		title: "Templates",
 		icon: mdiBookOpenPageVariantOutline,
 		items: [
-			{
-				title: "Vue d'ensemble",
-				to: "/templates/index",
-			},
 			{
 				title: "CookiesPage",
 				to: "/templates/cookies-page",

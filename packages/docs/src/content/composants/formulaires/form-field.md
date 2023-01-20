@@ -88,3 +88,5 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 </doc-tab-item>
 
 </doc-tabs>
+
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>
