@@ -77,4 +77,4 @@ Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour e
 
 </doc-tabs>
 
-<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>

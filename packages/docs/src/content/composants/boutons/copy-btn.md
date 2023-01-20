@@ -41,4 +41,4 @@ Vous pouvez utiliser les slots `icon` et `tooltip` pour personnaliser l’icône
 
 </doc-tabs>
 
-<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble" :hidden="false"></doc-sticky-button>
+<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>
