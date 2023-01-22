@@ -4,13 +4,13 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import FilterSideBar from '../';
+import InlineFilters from '..';
 
 let wrapper: Wrapper<Vue>;
 
-describe('FilterSideBar', () => {
+describe('InlineFilters', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(FilterSideBar, {
+		wrapper = mountComponent(InlineFilters, {
 			propsData: {
 				filters: [],
 				chipsLimit: 4

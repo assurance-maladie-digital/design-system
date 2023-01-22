@@ -4,15 +4,15 @@
 			v-model="startDate"
 			label="Date de début"
 			text-field-class="ma-2"
-			outlined
+
 		/>
 
 		<DatePicker
 			v-model="endDate"
 			:start-date="startDate"
-			label="Date de fin"
+			label="Date de début"
 			text-field-class="ma-2"
-			outlined
+
 		/>
 	</div>
 </template>

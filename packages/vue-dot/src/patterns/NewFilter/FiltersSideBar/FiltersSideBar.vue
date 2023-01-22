@@ -74,50 +74,42 @@
 				<div
 					class="px-5 mb-6 mt-10"
 				>
-					<VBtn
-						v-if="applyButton"
-						:block="isMobile || applyButton"
-						depressed
-						color="primary"
-						@click.stop="applyFunction"
-					>
-						{{ locales.apply }}
-					</VBtn>
 					<div
 						class="mt-3"
-						:class="(isMobile || applyButton) ? '' : 'd-flex justify-center'"
+						:class="(isMobile || applyButton) ? '' : 'd-flex justify-space-between'"
 					>
 						<VBtn
-							v-if="isMobile || applyButton"
-							:class="isMobile ? '' : 'mb-3 mr-4 button-complex-mode'"
+							:class="isMobile ? 'mb-4 mt-4 text-capitalize' : 'mb-4 button-complex-mode text-capitalize'"
+							:outlined="isMobile || applyButton"
+							:text="!isMobile && !applyButton"
+							large
 							:block="isMobile || applyButton"
-							outlined
-							color="indigo"
-							@click.stop="resetAllFilters"
-						>
-							{{ locales.reset }}
-						</VBtn>
-						<VBtn
-							:class="isMobile ? 'mb-2 mt-Z' : 'button-complex-mode'"
-							:outlined="isMobile"
-							:text="!isMobile"
-							:block="isMobile || applyButton"
-							color="indigo"
+							color="primary"
 							@click="closeSidebar"
 						>
 							{{ locales.close }}
 						</VBtn>
 						<VBtn
-							v-if="!(isMobile || applyButton)"
-							:class="isMobile ? '' : 'mb-3 ml-4 button-complex-mode'"
+							:class="isMobile ? 'mb-4 text-capitalize' : 'mb-4 button-complex-mode text-capitalize'"
 							:block="isMobile || applyButton"
 							outlined
-							color="indigo"
+							large
+							color="primary"
 							@click.stop="resetAllFilters"
 						>
 							{{ locales.reset }}
 						</VBtn>
 					</div>
+					<VBtn
+						v-if="applyButton"
+						:block="isMobile || applyButton"
+						depressed
+						large
+						color="primary text-capitalize"
+						@click.stop="applyFunction"
+					>
+						{{ locales.apply }}
+					</VBtn>
 				</div>
 			</VNavigationDrawer>
 		</VScrollXTransition>
@@ -249,7 +241,7 @@
 	}
 
 	.button-complex-mode {
-		width: 49%;
+		width: 48%;
 	}
 
 	.v-navigation-drawer__content {

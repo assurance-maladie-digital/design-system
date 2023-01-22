@@ -1,14 +1,17 @@
 <template>
-	<div>
+	<div class="vd-period-filter">
 		<DatePicker
 			v-model="internalValue.startDate"
-			label="date début"
+			label="Date de début"
+			class="mt-4"
+			outlined
 			@change="emitChangeEvent"
 		/>
 
 		<DatePicker
 			v-model="internalValue.endDate"
-			label="date fin"
+			label="Date de fin"
+			outlined
 			@change="emitChangeEvent"
 		/>
 	</div>
@@ -49,3 +52,11 @@
 		}
 	}
 </script>
+
+<style lang="scss">
+.vd-period-filter {
+	.v-text-field__details {
+		display: none !important;
+	}
+}
+</style>

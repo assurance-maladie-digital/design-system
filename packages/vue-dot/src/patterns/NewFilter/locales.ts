@@ -1,5 +1,6 @@
 export const locales = {
 	reset: 'Réinitialiser',
 	close: 'Fermer',
-	apply: 'Appliquer'
+	apply: 'Appliquer',
+	more: 'Plus de fitres'
 };

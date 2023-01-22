@@ -22,7 +22,7 @@
 			outlined
 			color="cyan-lighten-60"
 			text-color="cyan-darken-40"
-			class="mt-2 bg-cyan"
+			class="bg-cyan"
 			@click.stop="displayHiddenChips"
 		>
 			{{ `+${filter.chips.length - chipsLimit}` }}
@@ -30,16 +30,14 @@
 
 		<VChip
 			v-if="filter.showAll"
-			small
 			outlined
+			small
 			color="cyan-lighten-60"
 			text-color="cyan-darken-40"
-			class="mt-2 bg-cyan"
+			class="bg-cyan"
 			@click.stop="() => onHideAll()"
 		>
-			<VIcon>
-				{{ upIcon }}
-			</VIcon>
+			Réduire
 		</VChip>
 
 		<VBtn
@@ -47,7 +45,7 @@
 			x-small
 			text
 			color="primary"
-			class="text-none align-self-center mt-2"
+			class="text-none align-self-center"
 			@click.stop="resetFilter"
 		>
 			{{ locales.reset }}

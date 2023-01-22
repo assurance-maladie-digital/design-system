@@ -8,6 +8,7 @@
 			:side-bar-button="sideBarButton"
 			:apply-function="applyFunction"
 			:hide-reset="hideReset"
+			:hide-inline-message="hideInlineMessage"
 			@open-close-sidebar="openCloseSidebar"
 			@reset-filter="resetFilter"
 		>
@@ -117,6 +118,10 @@
 				type: Number,
 				default: 4
 			},
+			hideInlineMessage: {
+				type: Boolean,
+				default: false
+			},
 			value: {
 				type: Array as PropType<FilterItem[]>,
 				default: () => []
@@ -162,8 +167,8 @@
 			let count = 0;
 
 			this.filters.forEach(filter => {
-				if (filter?.selection?.length) {
-					count = count + filter.selection.length;
+				if (filter?.chips?.length) {
+					count = count + filter.chips.length;
 				}
 			});
 

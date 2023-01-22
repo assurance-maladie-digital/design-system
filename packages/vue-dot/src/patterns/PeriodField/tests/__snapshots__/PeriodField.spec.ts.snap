@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PeriodField renders correctly 1`] = `
-<div>
-  <datepicker-stub startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" label="date début"></datepicker-stub>
-  <datepicker-stub startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" label="date fin"></datepicker-stub>
+<div class="vd-period-filter">
+  <datepicker-stub outlined="true" startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" label="Date de début" class="mt-4"></datepicker-stub>
+  <datepicker-stub outlined="true" startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" label="Date de fin"></datepicker-stub>
 </div>
 `;

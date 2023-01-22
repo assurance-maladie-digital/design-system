@@ -1,5 +1,9 @@
 <template>
 	<div class="vd-inline-filters">
+		<span
+			v-if="!hideInlineMessage"
+			class="mr-3"
+		>Filter par :</span>
 		<VMenu
 			v-for="(filter, index) in filters"
 			:key="index"
@@ -30,7 +34,7 @@
 						</span>
 					</VChip>
 
-					<span>{{ filter.label }}</span>
+					<span class="text-none">{{ filter.label }}</span>
 
 					<VIcon
 						:dense="filters[index].icon ? true : false"
@@ -66,9 +70,7 @@
 			</div>
 		</VMenu>
 		<VBtn
-			v-if="sideBarButton"
 			text
-			small
 			color="indigo"
 			@click="openCloseSidebar"
 		>
@@ -81,16 +83,18 @@
 			>
 				{{ filtersCount }}
 			</VChip>
-
-			<VIcon color="primary">
+			<span class="text-none">{{ locales.more }}</span>
+			<VIcon
+				color="primary"
+				class="ml-2"
+			>
 				{{ filterIcon }}
 			</VIcon>
 		</VBtn>
 		<VBtn
 			v-if="applyButton"
 			depressed
-			small
-			class="ml-4 mr-2"
+			class="ml-4 mr-2 text-capitalize"
 			color="primary"
 			@click.stop="applyFunction"
 		>
@@ -99,7 +103,7 @@
 		<VBtn
 			v-if="!hideReset"
 			text
-			small
+			class="text-capitalize"
 			color="indigo"
 			@click.stop="resetAllFilters"
 		>
@@ -130,7 +134,7 @@
 			},
 			sideBarButton: {
 				type: Boolean,
-				default: false
+				default: true
 			},
 			applyButton: {
 				type: Boolean,
@@ -141,6 +145,10 @@
 				required: true
 			},
 			hideReset: {
+				type: Boolean,
+				required: true
+			},
+			hideInlineMessage: {
 				type: Boolean,
 				required: true
 			}
