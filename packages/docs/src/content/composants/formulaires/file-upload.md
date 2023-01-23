@@ -49,4 +49,4 @@ Vous pouvez utiliser le slot `placeholder` pour remplacer le contenu par défaut
 
 </doc-tabs>
 
-<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>
+<doc-sticky-button icon="view-dashboard" title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>

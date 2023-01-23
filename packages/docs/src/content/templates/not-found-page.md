@@ -39,4 +39,4 @@ Vous pouvez utiliser le slot `illustration` pour modifier l’image d’illustra
 
 </doc-tabs>
 
-<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>
+<doc-sticky-button icon="view-dashboard" title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>

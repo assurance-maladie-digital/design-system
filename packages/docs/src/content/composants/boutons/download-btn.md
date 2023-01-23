@@ -65,4 +65,4 @@ Vous pouvez utiliser le slot par défaut pour afficher du contenu, mais aussi le
 
 </doc-tabs>
 
-<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>
+<doc-sticky-button icon="view-dashboard" title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>

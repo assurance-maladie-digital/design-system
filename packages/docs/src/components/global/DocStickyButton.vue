@@ -12,8 +12,8 @@
 				:min-width="minWidth"
 				:style="btnStyle"
 			>
-				<VIcon v-if="icon" class="mr-2">
-					{{ btnIcon }}
+				<VIcon v-if="icon === 'view-dashboard'" class="mr-2">
+					{{ dashboadIcon }}
 				</VIcon>
 				{{ title }}
 			</VBtn>
@@ -34,8 +34,8 @@
 				default: 'Action'
 			},
 			icon : {
-				type: Boolean,
-				default: false
+				type: String,
+				default: ''
 			},
 			target: {
 				type: String,
@@ -53,10 +53,6 @@
 				type: [String, Number],
 				default: '40px'
 			},
-			showBtn: {
-				type: Boolean,
-				default: false
-			},
 			hidden: {
 				type: Boolean,
 				default: false
@@ -68,7 +64,8 @@
 
 	@Component
 	export default class DocStickyButton extends MixinsDeclaration {
-		btnIcon = mdiViewDashboard;
+		showBtn: boolean = false;
+		dashboadIcon = mdiViewDashboard;
 
 		get isMobile(): boolean {
 			return this.$vuetify.breakpoint.smAndDown;

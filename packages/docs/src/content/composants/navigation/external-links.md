@@ -51,4 +51,4 @@ Vous pouvez utiliser le slot `link-icon` pour remplacer l’icône dans les lien
 
 </doc-tabs>
 
-<doc-sticky-button icon title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>
+<doc-sticky-button icon="view-dashboard" title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>
