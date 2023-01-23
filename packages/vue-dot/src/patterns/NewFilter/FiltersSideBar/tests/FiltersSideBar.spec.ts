@@ -13,7 +13,9 @@ describe('FilterSideBar', () => {
 		wrapper = mountComponent(FilterSideBar, {
 			propsData: {
 				filters: [],
-				chipsLimit: 4
+				chipsLimit: 4,
+				applyButton: true,
+				applyFunction: () => null
 			}
 		});
 

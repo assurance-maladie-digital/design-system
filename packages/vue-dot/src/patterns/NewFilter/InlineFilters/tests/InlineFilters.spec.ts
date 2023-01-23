@@ -13,7 +13,12 @@ describe('InlineFilters', () => {
 		wrapper = mountComponent(InlineFilters, {
 			propsData: {
 				filters: [],
-				chipsLimit: 4
+				chipsLimit: 4,
+				sideBarButton: false,
+				applyButton: false,
+				hideReset: false,
+				hideInlineMessage: false,
+				applyFunction: () => null
 			}
 		});
 
