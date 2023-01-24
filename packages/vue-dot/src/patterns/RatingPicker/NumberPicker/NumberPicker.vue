@@ -23,22 +23,25 @@
 				/ 10
 			</span>
 		</div>
-		<div
+		<VRow
 			v-else
-			class="d-flex justify-space-between"
+			class="d-flex justify-space-around"
 		>
-			<VBtn
+			<VCol
 				v-for="i in 10"
 				:key="i"
-				class="rating-button"
-				color="primary"
-				outlined
-				text
-				@click="selectRating(i)"
 			>
-				{{ i }}
-			</VBtn>
-		</div>
+				<VBtn
+					class="rating-button"
+					color="primary"
+					outlined
+					text
+					@click="selectRating(i)"
+				>
+					{{ i }}
+				</VBtn>
+			</VCol>
+		</VRow>
 		<div
 			v-if="!selectedRating"
 			class="mt-3 d-flex justify-space-between rate-meaning"
@@ -108,5 +111,13 @@ h6 {
 }
 .text-selected-rating {
 	margin-top: 6px;
+}
+.v-col, .col {
+	padding: 0 !important;
+	flex-grow: 0 !important;
+	margin: 1px;
+}
+.row {
+	margin: 0 !important;
 }
 </style>
