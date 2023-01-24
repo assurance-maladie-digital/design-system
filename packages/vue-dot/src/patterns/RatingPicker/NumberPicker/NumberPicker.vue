@@ -25,7 +25,7 @@
 		</div>
 		<VRow
 			v-else
-			class="d-flex justify-space-around"
+			class="grid justify-center"
 		>
 			<VCol
 				v-for="i in 10"
