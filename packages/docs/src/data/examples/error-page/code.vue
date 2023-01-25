@@ -1,8 +1,7 @@
 <template>
 	<ErrorPage
-		page-title="Page non trouvée"
-		message="Il semblerait qu’il y ait eu une erreur !"
 		code="404"
-		no-btn
+		page-title="Page non trouvée"
+		message="Cette page n’existe pas ou a été déplacée."
 	/>
 </template>

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberPicker renders correctly 1`] = `
+<div class="vd-emotion-picker">
+  <div class="d-flex justify-center">
+    <h6 class="mb-6">
+      la premiere question ?
+    </h6>
+  </div>
+  <vrow-stub tag="div" class="grid justify-center">
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        1
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        2
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        3
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        4
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        5
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        6
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        7
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        8
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        9
+      </vbtn-stub>
+    </vcol-stub>
+    <vcol-stub tag="div">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
+        10
+      </vbtn-stub>
+    </vcol-stub>
+  </vrow-stub>
+  <div class="mt-3 d-flex justify-space-between rate-meaning"><span>
+			debut
+		</span> <span>
+			apres
+		</span></div>
+</div>
+`;

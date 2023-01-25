@@ -14,11 +14,11 @@
 				{{ questionDatas.question }}
 			</span>
 		</div>
-		<div
-			class="d-flex"
-			:class="selectedEmotion && mainQuestion ? 'justify-center' : 'justify-space-between'"
+		<VRow
+			class="grid"
+			:class="selectedEmotion && mainQuestion ? 'justify-center' : 'justify-sm-space-between justify-center'"
 		>
-			<div
+			<VCol
 				v-for="emotion in filterEmotions"
 				:key="emotion.title"
 			>
@@ -49,8 +49,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</VCol>
+		</VRow>
 	</div>
 </template>
 
@@ -191,5 +191,13 @@ h6 {
 		border: 1px solid $vd-turquoise-darken-20;
 		background-color: $vd-turquoise-lighten-90;
 	}
+}
+.v-col, .col {
+	padding: 0 !important;
+	flex-grow: 0 !important;
+	margin: 1px;
+}
+.row {
+	margin: 0 !important;
 }
 </style>
