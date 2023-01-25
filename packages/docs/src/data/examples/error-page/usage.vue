@@ -3,7 +3,7 @@
 		<ErrorPage
 			v-bind="$attrs"
 			v-on="$listeners"
-			btn-route="/"
+			btn-route="/templates/error-page"
 		/>
 	</div>
 </template>
@@ -17,8 +17,10 @@
 	})
 	export default class ErrorPageUsage extends Vue {
 		defaultProps = {
-			pageTitle: 'Page non trouvée',
-			message: 'Il semblerait qu’il y ait eu une erreur !'
+			pageTitle: 'Erreur serveur',
+			message: 'La page ne fonctionne pas correctement.',
+			code: '500',
+			btnText: 'Actualiser la page'
 		};
 
 		options = {
@@ -28,7 +30,8 @@
 			textFields: [
 				'pageTitle',
 				'message',
-				'code'
+				'code',
+				'btnText'
 			]
 		};
 	}
