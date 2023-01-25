@@ -7,7 +7,7 @@ exports[`NumberPicker renders correctly 1`] = `
       la premiere question ?
     </h6>
   </div>
-  <vrow-stub tag="div" class="d-flex justify-space-around">
+  <vrow-stub tag="div" class="grid justify-center">
     <vcol-stub tag="div">
       <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" class="rating-button">
         1

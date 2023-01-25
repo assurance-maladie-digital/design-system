@@ -5,8 +5,8 @@ exports[`EmotionPicker renders correctly 1`] = `
   <div class="d-flex justify-center"><span class="mb-6 text-subtitle-2">
 			la deuxieme question ?
 		</span></div>
-  <div class="d-flex justify-space-between">
-    <div>
+  <vrow-stub tag="div" class="grid justify-sm-space-between justify-center">
+    <vcol-stub tag="div">
       <div class="sad">
         <div class="icon-button">
           <div class="d-flex justify-center">
@@ -19,8 +19,8 @@ exports[`EmotionPicker renders correctly 1`] = `
 						</span></div>
         </div>
       </div>
-    </div>
-    <div>
+    </vcol-stub>
+    <vcol-stub tag="div">
       <div class="neutral">
         <div class="icon-button">
           <div class="d-flex justify-center">
@@ -33,8 +33,8 @@ exports[`EmotionPicker renders correctly 1`] = `
 						</span></div>
         </div>
       </div>
-    </div>
-    <div>
+    </vcol-stub>
+    <vcol-stub tag="div">
       <div class="happy">
         <div class="icon-button">
           <div class="d-flex justify-center">
@@ -47,7 +47,7 @@ exports[`EmotionPicker renders correctly 1`] = `
 						</span></div>
         </div>
       </div>
-    </div>
-  </div>
+    </vcol-stub>
+  </vrow-stub>
 </div>
 `;
