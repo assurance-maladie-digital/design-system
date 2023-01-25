@@ -87,6 +87,21 @@
 				name: 'Edouard Le Gall',
 				role: 'UX/UI Designer',
 				img: 'person.svg'
+			},
+			{
+				name: 'Christophe Gaon',
+				role: 'Tech Lead',
+				img: 'person.svg'
+			},
+			{
+				name: 'David Fyon',
+				role: 'Développeur Front',
+				img: 'person.svg'
+			},
+			{
+				name: 'Melissa Rolas',
+				role: 'UX/UI Designer',
+				img: 'person.svg'
 			}
 		];
 

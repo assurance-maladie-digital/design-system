@@ -1,10 +1,26 @@
 ## Non publié
 
+### Interne
+
+- ⬆️ **Dépendances**
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.46.1` ([#2451](https://github.com/assurance-maladie-digital/design-system/pull/2451)) ([57bc80b](https://github.com/assurance-maladie-digital/design-system/commit/57bc80b2635b661c9e3a4bbc5a788668dd53263a))
+  - **@types/node:** Mise à jour vers la `v16.18.6` ([#2445](https://github.com/asurance-maladie-digital/design-system/pull/2445)) ([8891d56](https://github.com/assurance-maladie-digital/design-system/commit/8891d5647dc44c56c262288916da73d2bd5ce55e))
+  - **netlify-cli:** Mise à jour vers la `v12.4.0` ([#2457](https://github.com/assurance-maladie-digital/design-system/pull/2457)) ([34a8534](https://github.com/assurance-maladie-digital/design-system/commit/34a8534f6f416838ba410804bd009c8983513537))
+  - **vuetify:** Mise à jour vers la `v2.6.13` ([#2464](https://github.com/assurance-maladie-digital/design-system/pull/2464)) ([fcfbd38](https://github.com/assurance-maladie-digital/design-system/commit/fcfbd385292131176ebeabe676b6338ce9ebdee0))
+  - **@mdi/js:** Mise à jour vers la `v7.1.96` ([#2456](https://github.com/assurance-maladie-digital/design-system/pull/2456))
+
+## v2.8.0
+
+**Version publiée le 16/12/2022.**
+
+Cette version comporte l'ajout des nouveaux styles typographiques et du nouveau composant `BackBtn`, ainsi que des correctifs sur l'ensemble des packages et la complétion de la documentation.
+
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
   - **TableToolbar:** Ajout du slot `search-right` ([#2437](https://github.com/assurance-maladie-digital/design-system/pull/2437)) ([0174f39](https://github.com/assurance-maladie-digital/design-system/commit/0174f39ecef0c23732f3f56bf0e399136aec35c2))
-  - **BackBtn:** Ajout d'un nouveau composant ([#2448](https://github.com/assurance-maladie-digital/design-system/pull/2448))
+  - **BackBtn:** Ajout d'un nouveau composant ([#2448](https://github.com/assurance-maladie-digital/design-system/pull/2448)) ([8820627](https://github.com/assurance-maladie-digital/design-system/commit/88206272a7870f81034e9d9608ca69aad9ef815e))
+  - **styles:** Ajout des nouveaux styles typographiques ([#2463](https://github.com/assurance-maladie-digital/design-system/pull/2463)) ([e184f11](https://github.com/assurance-maladie-digital/design-system/commit/e184f111417ed202b81ee35402a8e016cda476da))
 
 - 🐛 **Corrections de bugs**
   - **FooterBar:** Correction de l'espacement vertical ([#2398](https://github.com/assurance-maladie-digital/design-system/pull/2398)) ([5f8fb1e](https://github.com/assurance-maladie-digital/design-system/commit/5f8fb1e5e04d4be84b8170de2f2556d5c17401fd))
@@ -29,11 +45,16 @@
 
 - ♻️ **Refactoring**
   - **DocTabs:** Suppression de l'utilisation du composant `ClientOnly` ([#2443](https://github.com/assurance-maladie-digital/design-system/pull/2443)) ([3694f70](https://github.com/assurance-maladie-digital/design-system/commit/3694f7098c21d2d16256b50de6f00831c37083a8))
+  - **introduction:** Mise à jour de l'équipe ([#2466](https://github.com/assurance-maladie-digital/design-system/pull/2466)) ([31ce807](https://github.com/assurance-maladie-digital/design-system/commit/31ce807029cdda4a2d72549fa2ee89545dd0480d))
 
 - 📝 **Documentation**
   - **colors:** Ajout d'informations sur l'utilisation des classes de couleur ([#2373](https://github.com/assurance-maladie-digital/design-system/pull/2373)) ([e15379a](https://github.com/assurance-maladie-digital/design-system/commit/e15379a86ee80aabafb0d6ac1188efc2b7267c3d))
+  - **roadmap:** Mise à jour de la page ([#2465](https://github.com/assurance-maladie-digital/design-system/pull/2465)) ([dd2db3c](https://github.com/assurance-maladie-digital/design-system/commit/dd2db3ce7324e5b150183d9cfea386a00f5a08ed))
 
 ### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2467](https://github.com/assurance-maladie-digital/design-system/pull/2467)) ([8e57f06](https://github.com/assurance-maladie-digital/design-system/commit/8e57f0626716a889b380488b5743ad806a282b4b))
 
 - ⬆️ **Dépendances**
   - **vue:** Mise à jour vers la `v2.7.14` ([#2378](https://github.com/assurance-maladie-digital/design-system/pull/2378)) ([60ee749](https://github.com/assurance-maladie-digital/design-system/commit/60ee749a9f84f8f911f6539db2687adae7f2638b))
@@ -44,7 +65,6 @@
   - **@babel/core:** Mise à jour vers la `v7.20.5` ([#2407](https://github.com/assurance-maladie-digital/design-system/pull/2407)) ([b028cb0](https://github.com/assurance-maladie-digital/design-system/commit/b028cb09d2abbd998947ce2d32129ac315e32dff))
   - **fs-extra:** Mise à jour vers la `v11` ([#2410](https://github.com/assurance-maladie-digital/design-system/pull/2410)) ([6523f25](https://github.com/assurance-maladie-digital/design-system/commit/6523f256baab2cae359f215638a04c175f39db21))
   - **lerna:** Mise à jour vers la `v6.1.0` ([#2421](https://github.com/assurance-maladie-digital/design-system/pull/2421)) ([b24ca87](https://github.com/assurance-maladie-digital/design-system/commit/b24ca8725ab63ab0ea96611a3ff2ae352627c6d4)))
-  - **netlify-cli:** Mise à jour vers la `v12.2.8` ([#2434](https://github.com/assurance-maladie-digital/design-system/pull/2434)) ([cb2e442](https://github.com/assurance-maladie-digital/design-system/commit/cb2e442e56f503135262f243dff7100eabbf67d2))
   - **lint-staged:** Mise à jour vers la `v13.1.0` ([#2441](https://github.com/assurance-maladie-digital/design-system/pull/2441)) ([73777c3](https://github.com/assurance-maladie-digital/design-system/commit/73777c390ca2072d3524d1d5cf2ad5c001fb0bf8))
   - **typescript-eslint:** Mise à jour du monorepo vers la `v5.45.1` ([#2444](https://github.com/assurance-maladie-digital/design-system/pull/2444)) ([4e11900](https://github.com/assurance-maladie-digital/design-system/commit/4e119006ccf6e957e8ad5d1ccdd6c9672c034c73))
   - **@types/node:** Mise à jour vers la `v16.18.6` ([#2445](https://github.com/asurance-maladie-digital/design-system/pull/2445)) ([1a965b8](https://github.com/assurance-maladie-digital/design-system/commit/1a965b8b63c10c9ec69ca7939c68e8320448d4d7))

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage renders correctly 1`] = `
+<pagecontainer-stub size="s" color="transparent">
+  <vcard-stub loaderheight="4" tag="div" class="pa-8">
+    <vrow-stub tag="div" class="mx-0">
+      <vcol-stub cols="12" md="12" tag="div" class="order-last order-md-first text-center text-md-left">
+        <!---->
+        <h2 class="mb-2 font-weight-bold text-h mb-4">
+          Error
+        </h2>
+        <!---->
+        <p>Error message</p>
+        <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button" class="mt-2">
+          Retour à l’accueil
+        </vbtn-stub>
+      </vcol-stub>
+      <!---->
+    </vrow-stub>
+  </vcard-stub>
+</pagecontainer-stub>
+`;
