@@ -1,36 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NirField renders correctly 1`] = `
-<div class="v-input theme--light v-text-field">
-  <div class="v-input__control">
-    <div class="v-input__slot">
-      <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input id="input-2" type="text"></div>
-    </div>
-    <div class="v-text-field__details">
-      <div class="v-messages theme--light">
-        <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-          <div class="v-messages__message">15 caractères </div>
-        </transition-group-stub>
+<div class="row row--dense">
+  <div class="col-md-8 col-xl-9 col-7">
+    <div class="v-input theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input id="input-2" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+              <div class="v-messages__message">13 caractères</div>
+            </transition-group-stub>
+          </div>
+          <div class="v-counter theme--light">0 / 13</div>
+        </div>
       </div>
-      <div class="v-counter theme--light">0 / 15</div>
+    </div>
+  </div>
+  <div class="col-md-4 col-xl-3 col-5">
+    <div class="v-input theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-5" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input id="input-5" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+              <div class="v-messages__message">2 chiffres</div>
+            </transition-group-stub>
+          </div>
+          <div class="v-counter theme--light">0 / 2</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`NirField renders correctly with 13 characters NIR 1`] = `
-<div class="v-input theme--light v-text-field">
-  <div class="v-input__control">
-    <div class="v-input__slot">
-      <div class="v-text-field__slot"><label for="input-7" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input id="input-7" type="text"></div>
-    </div>
-    <div class="v-text-field__details">
-      <div class="v-messages theme--light">
-        <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-          <div class="v-messages__message">13 caractères (sans clé)</div>
-        </transition-group-stub>
+exports[`NirField renders correctly with 15 characters 1`] = `
+<div class="row row--dense">
+  <div class="col-md-8 col-xl-9 col-7">
+    <div class="v-input theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input id="input-10" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+              <div class="v-messages__message">13 caractères</div>
+            </transition-group-stub>
+          </div>
+          <div class="v-counter theme--light">0 / 13</div>
+        </div>
       </div>
-      <div class="v-counter theme--light">0 / 13</div>
+    </div>
+  </div>
+  <div class="col-md-4 col-xl-3 col-5">
+    <div class="v-input theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-13" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input id="input-13" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+              <div class="v-messages__message">2 chiffres</div>
+            </transition-group-stub>
+          </div>
+          <div class="v-counter theme--light">0 / 2</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

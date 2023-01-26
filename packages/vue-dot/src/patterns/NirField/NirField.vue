@@ -14,13 +14,13 @@
 				:counter-value="noSpacesCounter"
 				:label="locales.label1"
 				:hint="hint1"
-				:success="internalValue1?.length === nirLength1"
+				:success="internalValue1 && internalValue1.length === nirLength1"
 				@input.native="setInternalValue1"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="internalValue1?.length === nirLength1"
+						v-if="internalValue1 && internalValue1.length === nirLength1"
 						color="success"
 					>
 						{{ checkIcon }}
@@ -43,13 +43,13 @@
 				:counter-value="noSpacesCounter"
 				:label="locales.label2"
 				:hint="hint2"
-				:success="internalValue2?.length === nirLength2"
+				:success="internalValue2 && internalValue2.length === nirLength2"
 				@input.native="setInternalValue2"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="internalValue2?.length === nirLength2"
+						v-if="internalValue2 && internalValue2.length === nirLength2"
 						color="success"
 					>
 						{{ checkIcon }}
