@@ -2,7 +2,8 @@
 	<VRow dense>
 		<VCol
 			cols="7"
-			md="9"
+			md="8"
+			xl="9"
 		>
 			<VTextField
 				v-facade="mask1"
@@ -29,7 +30,8 @@
 		</VCol>
 		<VCol
 			cols="5"
-			md="3"
+			md="4"
+			xl="3"
 		>
 			<VTextField
 				ref="keyField"
