@@ -7,7 +7,7 @@ description: Le pattern `NirField` est utilisé pour permettre à l’utilisateu
 
 <doc-tab-item label="Utilisation">
 
-Le champ `NirField` est composé d’un [`VTextField`](https://vuetifyjs.com/en/components/text-fields/) et applique un masque limitant les caractères pouvant être saisis, ainsi qu’une validation sur la longueur du champ.
+Le champ `NirField` est composé de deux [`VTextField`](https://vuetifyjs.com/en/components/text-fields/) et applique un masque limitant les caractères pouvant être saisis, ainsi qu’une validation sur la longueur des champs.
 
 <doc-usage name="nir-field"></doc-usage>
 
