@@ -1,4 +1,6 @@
 export const locales = {
-	label: 'Numéro de sécurité sociale',
-	hint: (nirLength: number): string => `${nirLength} caractères ${nirLength === 13 ? ' (sans clé)' : ''}`
+	label1: 'Numéro de sécurité sociale',
+	label2: 'Clé',
+	hint1: (nirLength1: number): string => `${nirLength1} caractères`,
+	hint2: (nirLength2: number): string => `${nirLength2} chiffres`
 };

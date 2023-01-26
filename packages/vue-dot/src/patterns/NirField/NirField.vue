@@ -1,16 +1,61 @@
 <template>
-	<VTextField
-		v-facade="mask"
-		v-bind="textFieldOptions"
-		:value="computedValue"
-		:rules="rules"
-		:counter="counter"
-		:counter-value="noSpacesCounter"
-		:label="locales.label"
-		:hint="hint"
-		@input.native="setInternalValue"
-		@change="emitChangeEvent"
-	/>
+	<VRow dense>
+		<VCol
+			cols="7"
+			md="9"
+		>
+			<VTextField
+				v-facade="mask1"
+				v-bind="textFieldOptions"
+				:value="computedValue"
+				:rules="rules1"
+				:counter="counter1"
+				:counter-value="noSpacesCounter"
+				:label="locales.label1"
+				:hint="hint1"
+				:success="internalValue1?.length === nirLength1"
+				@input.native="setInternalValue1"
+				@change="emitChangeEvent"
+			>
+				<template #append>
+					<VIcon
+						v-if="internalValue1?.length === nirLength1"
+						color="success"
+					>
+						{{ checkIcon }}
+					</VIcon>
+				</template>
+			</VTextField>
+		</VCol>
+		<VCol
+			cols="5"
+			md="3"
+		>
+			<VTextField
+				ref="keyField"
+				v-facade="mask2"
+				v-bind="textFieldOptions"
+				:value="computedValue"
+				:rules="rules2"
+				:counter="counter2"
+				:counter-value="noSpacesCounter"
+				:label="locales.label2"
+				:hint="hint2"
+				:success="internalValue2?.length === nirLength2"
+				@input.native="setInternalValue2"
+				@change="emitChangeEvent"
+			>
+				<template #append>
+					<VIcon
+						v-if="internalValue2?.length === nirLength2"
+						color="success"
+					>
+						{{ checkIcon }}
+					</VIcon>
+				</template>
+			</VTextField>
+		</VCol>
+	</VRow>
 </template>
 
 <script lang="ts">
@@ -29,6 +74,8 @@
 
 	import { formatNir } from '../../functions/formatNir';
 
+	import { mdiCheck } from '@mdi/js';
+
 	import deepMerge from 'deepmerge';
 
 	const Props = Vue.extend({
@@ -37,11 +84,18 @@
 				type: String,
 				default: null
 			},
-			nirLength: {
+			nirLength1: {
 				type: Number,
-				default: 15,
+				default: 13,
 				validator(value): boolean {
-					return value === 15 || value === 13;
+					return value === 13;
+				}
+			},
+			nirLength2: {
+				type: Number,
+				default: 2,
+				validator(value): boolean {
+					return value === 2;
 				}
 			},
 			required: {
@@ -62,55 +116,115 @@
 	})
 	export default class NirField extends MixinsDeclaration {
 		locales = locales;
+		checkIcon = mdiCheck;
 
-		internalValue: string | null = null;
+		internalValue1: string | null = null;
+		internalValue2: string | null = null;
 
-		counter = this.nirLength;
+		counter1 = this.nirLength1;
+		counter2 = this.nirLength2;
 
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
 
-		get mask(): string {
-			const mask = '# ## ## #X ### ### ##';
+		get mask1(): string {
+			const mask1 = '# ## ## #X ### ###';
 
-			if (this.nirLength === 13) {
-				return mask.slice(0, -3);
+			if (this.nirLength1 === 13) {
+				return mask1;
 			}
 
-			return mask;
+			return mask1;
 		}
 
-		get rules(): ValidationRule[] {
-			const rules = [];
+		get mask2(): string {
+			const mask2 = '##';
 
-			if (this.required) {
-				rules.push(required);
+			if (this.nirLength2 === 2) {
+				return mask2;
 			}
 
-			rules.push(exactLength(this.nirLength, true));
+			return mask2;
+		}
 
-			return rules;
+		get rules1(): ValidationRule[] {
+			const rules1 = [];
+
+			if (this.required) {
+				rules1.push(required);
+			}
+
+			rules1.push(exactLength(this.nirLength1, true));
+
+			return rules1;
+		}
+
+		get rules2(): ValidationRule[] {
+			const rules2 = [];
+
+			if (this.required) {
+				rules2.push(required);
+			}
+
+			rules2.push(exactLength(this.nirLength2, true));
+
+			return rules2;
 		}
 
 		get computedValue(): string | null {
 			return this.value ? formatNir(this.value) : null;
 		}
 
-		get hint(): string {
-			return locales.hint(this.nirLength);
+		get hint1(): string {
+			return locales.hint1(this.nirLength1);
+		}
+
+		get hint2(): string {
+			return locales.hint2(this.nirLength2);
+		}
+
+		get computedInternalValue(): string | null {
+			if (this.internalValue1?.length === this.nirLength1 && this.internalValue2?.length === this.nirLength2) {
+				return this.internalValue1 + this.internalValue2;
+			}
+
+			return null;
 		}
 
 		noSpacesCounter(value?: string | undefined): number {
 			return value?.replace(/\s/g, '').length || 0;
 		}
 
-		setInternalValue(event: InputFacadeEvent): void {
-			this.internalValue = event.target?.unmaskedValue ?? null;
+		setInternalValue1(event: InputFacadeEvent): void {
+			this.internalValue1 = event.target?.unmaskedValue ?? null;
+			this.setFocus();
+		}
+
+		setInternalValue2(event: InputFacadeEvent): void {
+			this.internalValue2 = event.target?.unmaskedValue ?? null;
+		}
+
+		setFocus(): void {
+			if (this.internalValue1?.length === this.nirLength1) {
+				const keyFieldRef = this.$refs.keyField as HTMLInputElement;
+				keyFieldRef.focus();
+			}
 		}
 
 		emitChangeEvent(): void {
-			this.$emit('change', this.internalValue);
+			if (this.computedInternalValue) {
+				this.$emit('change', this.computedInternalValue);
+			}
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.row {
+		margin: 0;
+	}
+	.v-icon {
+		min-width: 24px;
+	}
+</style>
