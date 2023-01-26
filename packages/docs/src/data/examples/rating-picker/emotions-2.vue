@@ -15,24 +15,14 @@
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',
+			simpleMode: true,
 			question: 'Pourriez vous donner une note ? '
 		};
 
-		questionsList = [
-			{
-				name: 'first-question',
-				type: 'emotions',
-				question: 'Avez vous aimé notre première question ?'
-			}
-		];
 
 		afterValidate = [
 			{
 				message: 'Merci !',
-				greenBackground: false
-			},
-			{
-				message: 'Merci d\'avoir donné plus d\'information',
 				greenBackground: true
 			}
 		];

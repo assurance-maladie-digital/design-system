@@ -15,7 +15,6 @@
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',
-			labels: ['Mauvais', 'Génial !'],
 			question: 'Pourriez vous donner une note ? '
 		};
 
@@ -23,10 +22,6 @@
 		afterValidate = [
 			{
 				message: 'Merci !',
-				greenBackground: true
-			},
-			{
-				message: 'Merci d\'avoir donné plus d\'information',
 				greenBackground: true
 			}
 		];

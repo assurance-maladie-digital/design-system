@@ -33,6 +33,10 @@ Les questions secondaires s'afficheront si la note est de `medium` ou moins.
 
 <doc-example file="rating-picker/emotions"></doc-example>
 
+Il est possible de n'afficher que deux choix en utilisant le `simpleMode`.
+
+<doc-example file="rating-picker/emotions-2"></doc-example>
+
 ## Les questions secondaires
 
 Les questions secondaires apparaissent les unes après les autres à mesure que l'utilisateur y répond.

@@ -16,7 +16,7 @@
 		</div>
 		<VRow
 			class="grid"
-			:class="selectedEmotion && mainQuestion ? 'justify-center' : 'justify-sm-space-between justify-center'"
+			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-center' : 'justify-sm-space-between justify-center'"
 		>
 			<VCol
 				v-for="emotion in filterEmotions"
@@ -76,6 +76,10 @@
 			isValidated: {
 				type: Boolean,
 				default: false
+			},
+			simpleMode: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -94,7 +98,7 @@
 
 		selectedEmotion = '';
 
-		emotionList = [
+		emotions = [
 			{
 				title: 'sad',
 				icon: this.sadIcon,
@@ -114,6 +118,14 @@
 				description: this.locales.perfect
 			}
 		];
+
+		get emotionList(): EmotionItem[] {
+			if (this.simpleMode) {
+				return [this.emotions[0],this.emotions[2]];
+			} else {
+				return this.emotions;
+			}
+		}
 
 		get filterEmotions(): EmotionItem[] {
 			if (this.selectedEmotion && this.mainQuestion) {

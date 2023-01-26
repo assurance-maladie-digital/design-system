@@ -40,7 +40,10 @@
 				{{ starIcon }}
 			</VIcon>
 		</div>
-		<div class="mt-3 d-flex justify-center rate-meaning">
+		<div
+			v-if="!isMobile"
+			class="mt-3 d-flex justify-center rate-meaning"
+		>
 			<span
 				:class="selectedRating ? 'primary--text font-weight-bold' : ''"
 			>
@@ -79,6 +82,10 @@
 		starIcon = mdiStar;
 		selectedRating = 0;
 		isHoverRating = 0;
+
+		get isMobile(): boolean {
+			return this.$vuetify.breakpoint.smAndDown;
+		}
 
 		selectStar(rating: number): void {
 			if (this.isValidated) {

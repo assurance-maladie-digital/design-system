@@ -23,10 +23,6 @@
 			{
 				message: 'Merci !',
 				greenBackground: true
-			},
-			{
-				message: 'Merci d\'avoir donné plus d\'information',
-				greenBackground: true
 			}
 		];
 

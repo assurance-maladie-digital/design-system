@@ -10,6 +10,7 @@
 				class="ma-6"
 				step-name="mainQuestion"
 				main-question
+				:simple-mode="mainQuestion.simpleMode"
 				:question-datas="mainQuestion"
 				@update-result="updateFirstStep"
 			/>
@@ -273,7 +274,12 @@
 		}
 
 		checkBackgroundGreen(number: number): boolean {
-			return this.afterValidate[number].greenBackground && this.validated ? true : false;
+			if (number) {
+				return this.afterValidate[number].greenBackground && this.validated ? true : false;
+			} else {
+				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
+			}
+
 		}
 
 		validateSecondStep(): void {
