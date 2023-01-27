@@ -1,11 +1,9 @@
 <template>
-	<div class="d-flex flex-wrap align-center justify-center">
-		<NirField
-			v-bind="$attrs"
-			v-on="$listeners"
-			class="vd-form-input"
-		/>
-	</div>
+	<NirField
+		v-bind="$attrs"
+		v-on="$listeners"
+		class="vd-form-input"
+	/>
 </template>
 
 <script lang="ts">
@@ -19,6 +17,9 @@
 		options = {
 			booleans: [
 				'required'
+			],
+			textFields: [
+				'tooltip'
 			]
 		};
 
