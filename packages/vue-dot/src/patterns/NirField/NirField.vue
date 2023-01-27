@@ -29,9 +29,9 @@
 			</VTextField>
 		</VCol>
 		<VCol
-			cols="5"
-			md="4"
-			xl="3"
+			:cols="tooltip ? 4 : 5"
+			:md="tooltip ? 3 : 4"
+			:xl="tooltip ? 2 : 3"
 		>
 			<VTextField
 				ref="keyField"
@@ -57,6 +57,23 @@
 				</template>
 			</VTextField>
 		</VCol>
+		<VCol
+			v-if="tooltip !== ''"
+			cols="1"
+			class="d-flex align-start justify-center pt-5"
+		>
+			<VTooltip bottom>
+				<template #activator="{ on, attrs }">
+					<VIcon
+						v-bind="attrs"
+						v-on="on"
+					>
+						{{ infoIcon }}
+					</VIcon>
+				</template>
+				<span>{{ tooltip }}</span>
+			</VTooltip>
+		</VCol>
 	</VRow>
 </template>
 
@@ -77,6 +94,7 @@
 	import { formatNir } from '../../functions/formatNir';
 
 	import { mdiCheck } from '@mdi/js';
+	import { mdiInformation } from '@mdi/js';
 
 	import deepMerge from 'deepmerge';
 
@@ -103,6 +121,14 @@
 			required: {
 				type: Boolean,
 				default: false
+			},
+			tooltip: {
+				type: String,
+				default: ''
+			},
+			tooltipDuration: {
+				type: Number,
+				default: 2500
 			}
 		}
 	});
@@ -119,6 +145,7 @@
 	export default class NirField extends MixinsDeclaration {
 		locales = locales;
 		checkIcon = mdiCheck;
+		infoIcon = mdiInformation;
 
 		internalValue1: string | null = null;
 		internalValue2: string | null = null;
