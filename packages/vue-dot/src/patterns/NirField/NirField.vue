@@ -2,25 +2,25 @@
 	<VRow dense>
 		<VCol
 			cols="7"
-			md="8"
-			xl="9"
+			:sm="tooltip ? 8 : 9"
+			:md="tooltip ? 8 : 9"
 		>
 			<VTextField
-				v-facade="mask1"
+				v-facade="maskNumber"
 				v-bind="textFieldOptions"
 				:value="computedValue"
-				:rules="rules1"
-				:counter="counter1"
+				:rules="rulesNumber"
+				:counter="counterNumber"
 				:counter-value="noSpacesCounter"
-				:label="locales.label1"
-				:hint="hint1"
-				:success="internalValue1 && internalValue1.length === nirLength1"
-				@input.native="setInternalValue1"
+				:label="locales.labelNumber"
+				:hint="hintNumber"
+				:success="internalValueNumber && internalValueNumber.length === nirNumber"
+				@input.native="setinternalValueNumber"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="internalValue1 && internalValue1.length === nirLength1"
+						v-if="internalValueNumber && internalValueNumber.length === nirNumber"
 						color="success"
 					>
 						{{ checkIcon }}
@@ -30,26 +30,26 @@
 		</VCol>
 		<VCol
 			:cols="tooltip ? 4 : 5"
-			:md="tooltip ? 3 : 4"
-			:xl="tooltip ? 2 : 3"
+			sm="3"
+			md="3"
 		>
 			<VTextField
 				ref="keyField"
-				v-facade="mask2"
+				v-facade="maskKey"
 				v-bind="textFieldOptions"
 				:value="computedValue"
-				:rules="rules2"
-				:counter="counter2"
+				:rules="rulesKey"
+				:counter="counterKey"
 				:counter-value="noSpacesCounter"
-				:label="locales.label2"
-				:hint="hint2"
-				:success="internalValue2 && internalValue2.length === nirLength2"
-				@input.native="setInternalValue2"
+				:label="locales.labelKey"
+				:hint="hintKey"
+				:success="internalValueKey && internalValueKey.length === nirKey"
+				@input.native="setinternalValueKey"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="internalValue2 && internalValue2.length === nirLength2"
+						v-if="internalValueKey && internalValueKey.length === nirKey"
 						color="success"
 					>
 						{{ checkIcon }}
@@ -104,14 +104,14 @@
 				type: String,
 				default: null
 			},
-			nirLength1: {
+			nirNumber: {
 				type: Number,
 				default: 13,
 				validator(value): boolean {
 					return value === 13;
 				}
 			},
-			nirLength2: {
+			nirKey: {
 				type: Number,
 				default: 2,
 				validator(value): boolean {
@@ -143,75 +143,75 @@
 		checkIcon = mdiCheck;
 		infoIcon = mdiInformation;
 
-		internalValue1: string | null = null;
-		internalValue2: string | null = null;
+		internalValueNumber: string | null = null;
+		internalValueKey: string | null = null;
 
-		counter1 = this.nirLength1;
-		counter2 = this.nirLength2;
+		counterNumber = this.nirNumber;
+		counterKey = this.nirKey;
 
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
 
-		get mask1(): string {
-			const mask1 = '# ## ## #X ### ###';
+		get maskNumber(): string {
+			const maskNumber = '# ## ## #X ### ###';
 
-			if (this.nirLength1 === 13) {
-				return mask1;
+			if (this.nirNumber === 13) {
+				return maskNumber;
 			}
 
-			return mask1;
+			return maskNumber;
 		}
 
-		get mask2(): string {
-			const mask2 = '##';
+		get maskKey(): string {
+			const maskKey = '##';
 
-			if (this.nirLength2 === 2) {
-				return mask2;
+			if (this.nirKey === 2) {
+				return maskKey;
 			}
 
-			return mask2;
+			return maskKey;
 		}
 
-		get rules1(): ValidationRule[] {
-			const rules1 = [];
+		get rulesNumber(): ValidationRule[] {
+			const rulesNumber = [];
 
 			if (this.required) {
-				rules1.push(required);
+				rulesNumber.push(required);
 			}
 
-			rules1.push(exactLength(this.nirLength1, true));
+			rulesNumber.push(exactLength(this.nirNumber, true));
 
-			return rules1;
+			return rulesNumber;
 		}
 
-		get rules2(): ValidationRule[] {
-			const rules2 = [];
+		get rulesKey(): ValidationRule[] {
+			const rulesKey = [];
 
 			if (this.required) {
-				rules2.push(required);
+				rulesKey.push(required);
 			}
 
-			rules2.push(exactLength(this.nirLength2, true));
+			rulesKey.push(exactLength(this.nirKey, true));
 
-			return rules2;
+			return rulesKey;
 		}
 
 		get computedValue(): string | null {
 			return this.value ? formatNir(this.value) : null;
 		}
 
-		get hint1(): string {
-			return locales.hint1(this.nirLength1);
+		get hintNumber(): string {
+			return locales.hintNumber(this.nirNumber);
 		}
 
-		get hint2(): string {
-			return locales.hint2(this.nirLength2);
+		get hintKey(): string {
+			return locales.hintKey(this.nirKey);
 		}
 
 		get computedInternalValue(): string | null {
-			if (this.internalValue1?.length === this.nirLength1 && this.internalValue2?.length === this.nirLength2) {
-				return this.internalValue1 + this.internalValue2;
+			if (this.internalValueNumber?.length === this.nirNumber && this.internalValueKey?.length === this.nirKey) {
+				return this.internalValueNumber + this.internalValueKey;
 			}
 
 			return null;
@@ -221,17 +221,17 @@
 			return value?.replace(/\s/g, '').length || 0;
 		}
 
-		setInternalValue1(event: InputFacadeEvent): void {
-			this.internalValue1 = event.target?.unmaskedValue ?? null;
+		setinternalValueNumber(event: InputFacadeEvent): void {
+			this.internalValueNumber = event.target?.unmaskedValue ?? null;
 			this.setFocus();
 		}
 
-		setInternalValue2(event: InputFacadeEvent): void {
-			this.internalValue2 = event.target?.unmaskedValue ?? null;
+		setinternalValueKey(event: InputFacadeEvent): void {
+			this.internalValueKey = event.target?.unmaskedValue ?? null;
 		}
 
 		setFocus(): void {
-			if (this.internalValue1?.length === this.nirLength1) {
+			if (this.internalValueNumber?.length === this.nirNumber) {
 				const keyFieldRef = this.$refs.keyField as HTMLInputElement;
 				keyFieldRef.focus();
 			}

@@ -20,8 +20,8 @@ describe('NirField', () => {
 			NirField,
 			{
 				propsData: {
-					nirLength1: 13,
-					nirLength2: 2
+					nirNumber: 13,
+					nirKey: 2
 				}
 			},
 			true
