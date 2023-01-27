@@ -36,6 +36,7 @@ exports[`NirField renders correctly 1`] = `
       </div>
     </div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -75,5 +76,6 @@ exports[`NirField renders correctly with 15 characters 1`] = `
       </div>
     </div>
   </div>
+  <!---->
 </div>
 `;
