@@ -62,7 +62,7 @@
 			cols="1"
 			class="d-flex align-start justify-center pt-5"
 		>
-			<VTooltip bottom>
+			<VTooltip top>
 				<template #activator="{ on, attrs }">
 					<VIcon
 						v-bind="attrs"
@@ -125,10 +125,6 @@
 			tooltip: {
 				type: String,
 				default: ''
-			},
-			tooltipDuration: {
-				type: Number,
-				default: 2500
 			}
 		}
 	});
