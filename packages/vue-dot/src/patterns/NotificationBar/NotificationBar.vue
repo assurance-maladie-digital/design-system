@@ -137,7 +137,17 @@
 	.vd-notification-bar :deep(.v-snack__wrapper) {
 		min-width: 0;
 	}
-
+	.vd-notification-bar :deep(.warning) {
+		background-color: var(--v-yellow-base) !important;
+		border-color: var(--v-yellow-base) !important;
+		color: var(--v-black) !important;
+		.v-icon__svg {
+			fill: var(--v-black) !important;
+		}
+		.v-btn {
+			color: var(--v-black) !important;
+		}
+	}
 	.vd-notification-icon {
 		min-width: 24px;
 	}

@@ -11,6 +11,9 @@ export const vuetify = new Vuetify({
 	theme: {
 		themes: {
 			light: colorTheme
+		},
+		options: {
+			customProperties: true
 		}
 	},
 	icons: {
