@@ -35,7 +35,7 @@
 					:class="!modalMode ? 'border-green' : ''"
 				>
 					<VIcon
-						color="success"
+						color="turquoise-darken-40"
 						class="mr-4"
 					>
 						{{ checkIcon }}
@@ -113,7 +113,7 @@
 				class="d-flex justify-center align-center border-green py-3 mx-6"
 			>
 				<VIcon
-					color="success"
+					color="turquoise-darken-40"
 					class="mr-4"
 				>
 					{{ checkIcon }}
@@ -183,7 +183,7 @@
 			},
 			validateTextButton: {
 				type: String,
-				default: 'Valider'
+				default: 'Transmettre mon avis'
 			},
 			afterValidate: {
 				type: Array as PropType<AfterValidateItem[]>,

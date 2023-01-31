@@ -104,19 +104,19 @@
 				title: 'sad',
 				icon: this.sadIcon,
 				color: 'orange-darken-20',
-				description: this.locales.not
+				description: this.questionDatas.labels?.sad ?? this.locales.not
 			},
 			{
 				title: 'neutral',
 				icon: this.neurtralIcon,
 				color: 'yellow-darken-20',
-				description: this.locales.medium
+				description: this.questionDatas.labels?.neutral ?? this.locales.medium
 			},
 			{
 				title: 'happy',
 				icon: this.happyIcon,
 				color: 'turquoise-darken-20',
-				description: this.locales.perfect
+				description: this.questionDatas.labels?.happy ?? this.locales.perfect
 			}
 		];
 

@@ -37,6 +37,10 @@ Il est possible de n'afficher que deux choix en utilisant le `simpleMode`.
 
 <doc-example file="rating-picker/emotions-2"></doc-example>
 
+Il est possible de changer les labels des émotions.
+
+<doc-example file="rating-picker/emotions-labels"></doc-example>
+
 ## Les questions secondaires
 
 Les questions secondaires apparaissent les unes après les autres à mesure que l'utilisateur y répond.
