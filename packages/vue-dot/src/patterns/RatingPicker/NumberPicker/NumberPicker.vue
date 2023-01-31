@@ -25,11 +25,12 @@
 		</div>
 		<VRow
 			v-else
-			class="grid justify-center"
+			class="grid justify-center ma-0"
 		>
 			<VCol
 				v-for="i in 10"
 				:key="i"
+				class="pa-0 numbers flex-grow-0"
 			>
 				<VBtn
 					class="rating-button"
@@ -47,10 +48,10 @@
 			class="mt-3 d-flex justify-space-between rate-meaning"
 		>
 			<span>
-				{{ questionDatas.labels[0] }}
+				{{ getLabel(0) }}
 			</span>
 			<span>
-				{{ questionDatas.labels[1] }}
+				{{ getLabel(1) }}
 			</span>
 		</div>
 	</div>
@@ -86,6 +87,9 @@
 				}
 			);
 		}
+		getLabel(number: number): string {
+			return this.questionDatas.label ? this.questionDatas.labels[number] : '';
+		}
 	}
 </script>
 
@@ -112,12 +116,7 @@ h6 {
 .text-selected-rating {
 	margin-top: 6px;
 }
-.v-col, .col {
-	padding: 0 !important;
-	flex-grow: 0 !important;
-	margin: 1px;
-}
-.row {
-	margin: 0 !important;
+.numbers {
+	margin: 1px !important;
 }
 </style>

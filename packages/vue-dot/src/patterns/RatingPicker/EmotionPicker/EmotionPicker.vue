@@ -15,12 +15,13 @@
 			</span>
 		</div>
 		<VRow
-			class="grid"
-			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-center' : 'justify-sm-space-between justify-center'"
+			class="grid justify-center ma-0"
+			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-sm-space-around' : 'justify-sm-space-between'"
 		>
 			<VCol
 				v-for="emotion in filterEmotions"
 				:key="emotion.title"
+				class="pa-0 flex-grow-0 emotions"
 			>
 				<div
 					:class="emotion.title"
@@ -204,12 +205,7 @@ h6 {
 		background-color: $vd-turquoise-lighten-90;
 	}
 }
-.v-col, .col {
-	padding: 0 !important;
-	flex-grow: 0 !important;
-	margin: 1px;
-}
-.row {
-	margin: 0 !important;
+.emotions {
+	margin: 1px !important;
 }
 </style>

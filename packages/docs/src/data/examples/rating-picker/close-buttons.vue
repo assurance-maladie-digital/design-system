@@ -45,5 +45,9 @@
 		onValidate(): void {
 			console.log('Validation');
 		}
+
+		onClose(): void {
+			console.log('Fermeture');
+		}
 	}
 </script>
