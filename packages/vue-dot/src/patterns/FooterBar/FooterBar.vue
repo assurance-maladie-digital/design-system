@@ -61,40 +61,64 @@
 		>
 			<slot name="prepend" />
 
+			<a
+				v-if="!hideSitemapLink && sitemapExternalLink"
+				v-bind="options.routerLink"
+				:href="sitemapExternalLink"
+				target="_blank"
+			>
+				{{ locales.sitemapLabel }}
+			</a>
 			<RouterLink
-				v-if="!hideSitemapLink"
+				v-if="!hideSitemapLink && !sitemapExternalLink"
 				v-bind="options.routerLink"
 				:to="sitemapRoute"
 			>
 				{{ locales.sitemapLabel }}
 			</RouterLink>
 
+			<a
+				v-if="!hideCguLink && cguExternalLink"
+				v-bind="options.routerLink"
+				:href="cguExternalLink"
+				target="_blank"
+			>
+				{{ locales.cguLabel }}
+			</a>
 			<RouterLink
-				v-if="!hideCguLink"
+				v-if="!hideCguLink && !cguExternalLink"
 				v-bind="options.routerLink"
 				:to="cguRoute"
 			>
 				{{ locales.cguLabel }}
 			</RouterLink>
 
-			<RouterLink
-				v-if="!hideCookiesLink"
+			<a
+				v-if="!hideLegalNoticeLink && legalNoticeExternalLink"
 				v-bind="options.routerLink"
-				:to="cookiesRoute"
+				:href="legalNoticeExternalLink"
+				target="_blank"
 			>
-				{{ locales.cookiesLabel }}
-			</RouterLink>
-
+				{{ locales.legalNoticeLabel }}
+			</a>
 			<RouterLink
-				v-if="!hideLegalNoticeLink"
+				v-if="!hideLegalNoticeLink && !legalNoticeExternalLink"
 				v-bind="options.routerLink"
 				:to="legalNoticeRoute"
 			>
 				{{ locales.legalNoticeLabel }}
 			</RouterLink>
 
+			<a
+				v-if="!hideA11yLink && a11yComplianceLabel && a11yStatementExternalLink"
+				v-bind="options.routerLink"
+				:href="a11yStatementExternalLink"
+				target="_blank"
+			>
+				{{ a11yComplianceLabel }}
+			</a>
 			<RouterLink
-				v-if="!hideA11yLink && a11yComplianceLabel"
+				v-if="!hideA11yLink && a11yComplianceLabel && !a11yStatementExternalLink"
 				v-bind="options.routerLink"
 				:to="a11yStatementRoute"
 			>
@@ -146,21 +170,33 @@
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'sitemap' })
 			},
+			sitemapExternalLink: {
+				type: String as PropType<string>,
+				default: null
+			},
 			cguRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cgu' })
 			},
-			cookiesRoute: {
-				type: [Array, Object, String] as PropType<RawLocation>,
-				default: () => ({ name: 'cookies' })
+			cguExternalLink: {
+				type: String as PropType<string>,
+				default: null
 			},
 			legalNoticeRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'legalNotice' })
 			},
+			legalNoticeExternalLink: {
+				type: String as PropType<string>,
+				default: null
+			},
 			a11yStatementRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'a11yStatement' })
+			},
+			a11yStatementExternalLink: {
+				type: String as PropType<string>,
+				default: null
 			},
 			hideSitemapLink: {
 				type: Boolean,
