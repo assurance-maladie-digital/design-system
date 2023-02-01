@@ -61,69 +61,41 @@
 		>
 			<slot name="prepend" />
 
-			<a
-				v-if="!hideSitemapLink && sitemapExternalLink"
-				v-bind="options.routerLink"
-				:href="sitemapExternalLink"
-				target="_blank"
+			<FooterLink
+				v-if="!hideSitemapLink"
+				:sitemap-external-link="sitemapExternalLink"
+				:sitemap-route="sitemapRoute"
+				:options="options.routerLink"
 			>
 				{{ locales.sitemapLabel }}
-			</a>
-			<RouterLink
-				v-if="!hideSitemapLink && !sitemapExternalLink"
-				v-bind="options.routerLink"
-				:to="sitemapRoute"
-			>
-				{{ locales.sitemapLabel }}
-			</RouterLink>
+			</FooterLink>
 
-			<a
-				v-if="!hideCguLink && cguExternalLink"
-				v-bind="options.routerLink"
-				:href="cguExternalLink"
-				target="_blank"
+			<FooterLink
+				v-if="!hideCguLink"
+				:cgu-external-link="cguExternalLink"
+				:cgu-route="cguRoute"
+				:options="options.routerLink"
 			>
 				{{ locales.cguLabel }}
-			</a>
-			<RouterLink
-				v-if="!hideCguLink && !cguExternalLink"
-				v-bind="options.routerLink"
-				:to="cguRoute"
+			</FooterLink>
+
+			<FooterLink
+				v-if="!hideLegalNoticeLink"
+				:cgu-external-link="legalNoticeExternalLink"
+				:cgu-route="legalNoticeRoute"
+				:options="options.routerLink"
 			>
 				{{ locales.cguLabel }}
-			</RouterLink>
+			</FooterLink>
 
-			<a
-				v-if="!hideLegalNoticeLink && legalNoticeExternalLink"
-				v-bind="options.routerLink"
-				:href="legalNoticeExternalLink"
-				target="_blank"
-			>
-				{{ locales.legalNoticeLabel }}
-			</a>
-			<RouterLink
-				v-if="!hideLegalNoticeLink && !legalNoticeExternalLink"
-				v-bind="options.routerLink"
-				:to="legalNoticeRoute"
-			>
-				{{ locales.legalNoticeLabel }}
-			</RouterLink>
-
-			<a
-				v-if="!hideA11yLink && a11yComplianceLabel && a11yStatementExternalLink"
-				v-bind="options.routerLink"
-				:href="a11yStatementExternalLink"
-				target="_blank"
+			<FooterLink
+				v-if="!hideA11yLink"
+				:cgu-external-link="a11yStatementExternalLink"
+				:cgu-route="a11yStatementRoute"
+				:options="options.routerLink"
 			>
 				{{ a11yComplianceLabel }}
-			</a>
-			<RouterLink
-				v-if="!hideA11yLink && a11yComplianceLabel && !a11yStatementExternalLink"
-				v-bind="options.routerLink"
-				:to="a11yStatementRoute"
-			>
-				{{ a11yComplianceLabel }}
-			</RouterLink>
+			</FooterLink>
 
 			<p
 				v-if="version"
@@ -147,6 +119,7 @@
 
 	import SocialMediaLinks from './SocialMediaLinks';
 	import { SocialMediaLink } from './SocialMediaLinks/types';
+	import FooterLink from './FooterLink';
 
 	import { config } from './config';
 	import { locales } from './locales';
@@ -242,6 +215,8 @@
 	@Component({
 		inheritAttrs: false,
 		components: {
+			FooterBar,
+			FooterLink,
 			SocialMediaLinks
 		}
 	})
