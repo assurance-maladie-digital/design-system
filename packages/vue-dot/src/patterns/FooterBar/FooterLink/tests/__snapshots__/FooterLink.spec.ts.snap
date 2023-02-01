@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterLink renders correctly 1`] = `
+<div class="d-flex">
+  <routerlink to="[object Object]"></routerlink>
+</div>
+`;

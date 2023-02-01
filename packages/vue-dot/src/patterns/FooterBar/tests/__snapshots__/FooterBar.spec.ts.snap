@@ -6,25 +6,18 @@ exports[`FooterBar renders correctly 1`] = `
   <!---->
   <!---->
   <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 py-2 py-sm-0">
-    <!---->
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    <footerlink-stub options="[object Object]" sitemaproute="[object Object]" cguroute="[object Object]" legalnoticeroute="[object Object]" a11ystatementroute="[object Object]">
       Plan du site
-    </routerlink-stub>
-    <!---->
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" sitemaproute="[object Object]" cguroute="[object Object]" legalnoticeroute="[object Object]" a11ystatementroute="[object Object]">
       Conditions générales d’utilisation
-    </routerlink-stub>
-    <!---->
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
-      Gestion des cookies
-    </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
-      Mentions légales
-    </routerlink-stub>
-    <!---->
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" sitemaproute="[object Object]" cguroute="[object Object]" legalnoticeroute="[object Object]" a11ystatementroute="[object Object]">
+      Conditions générales d’utilisation
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" sitemaproute="[object Object]" cguroute="[object Object]" legalnoticeroute="[object Object]" a11ystatementroute="[object Object]">
       Accessibilité&nbsp;: non conforme
-    </routerlink-stub>
+    </footerlink-stub>
     <!---->
   </div>
 </vfooter-stub>
