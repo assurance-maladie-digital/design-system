@@ -87,10 +87,10 @@ Les propriétés non définies dans la section API seront reportées directement
 
 <doc-tab-item label="Personnalisation">
 
-Le mode modale n'est pas actif par defaut.
-Pour l'activer, il faut utiliser la props `modal-mode`.
+Le mode avec ombre n'est pas actif par defaut.
+Pour l'activer, il faut utiliser la props `shadow-mode`.
 
-<doc-example file="rating-picker/modal-mode"></doc-example>
+<doc-example file="rating-picker/shadow-mode"></doc-example>
 
 Le fond vert après validation n'est pas actif par defaut.
 Pour l'activer, il faut ajouter `true` dans les objets `afterValidate`.

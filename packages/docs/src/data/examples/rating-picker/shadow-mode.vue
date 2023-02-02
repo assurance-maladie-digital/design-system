@@ -4,7 +4,7 @@
 			:main-question="firstQuestion"
 			:on-validate="onValidate"
 			:on-close="onClose"
-			modal-mode
+			shadow-mode
 			:after-validate="afterValidate"
 		/>
 	</div>

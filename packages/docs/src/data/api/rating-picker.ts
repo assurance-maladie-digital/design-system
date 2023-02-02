@@ -29,7 +29,7 @@ export const api: Api = {
 				default: `[]`,
 			},
 			{
-				name: 'modal-mode',
+				name: 'shadow-mode',
 				type: 'boolean',
 				description: 'Ajoute une ombre au composant et retire la  bordure de la première question',
 				default: false

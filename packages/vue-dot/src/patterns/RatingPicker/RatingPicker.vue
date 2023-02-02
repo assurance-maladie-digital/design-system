@@ -3,7 +3,7 @@
 		<!--first step-->
 		<div
 			class="step"
-			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': modalMode}"
+			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowMode}"
 		>
 			<EmotionPicker
 				v-if="mainQuestion.type === 'emotions'"
@@ -32,7 +32,7 @@
 				<div
 					v-if="firstStep.result !== null"
 					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
-					:class="!modalMode ? 'border-green' : ''"
+					:class="!shadowMode ? 'border-green' : ''"
 				>
 					<VIcon
 						color="turquoise-darken-40"
@@ -69,7 +69,7 @@
 		<div
 			v-if="questionsList.length && checkFirstStep"
 			class="step mt-2"
-			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': modalMode}"
+			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowMode}"
 		>
 			<h6
 				class="mb-7 ml-4 mt-3"
@@ -165,7 +165,7 @@
 
 	const Props = Vue.extend({
 		props: {
-			modalMode: {
+			shadowMode: {
 				type: Boolean,
 				required: false
 			},
@@ -312,6 +312,6 @@ h6 {
 	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.123);
 }
 .green-background {
-	background-color: $vd-turquoise-lighten-90;
+	background-color: $vd-turquoise-lighten-97;
 }
 </style>
