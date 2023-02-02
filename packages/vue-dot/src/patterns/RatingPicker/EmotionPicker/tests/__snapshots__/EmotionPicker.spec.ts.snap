@@ -5,9 +5,8 @@ exports[`EmotionPicker renders correctly 1`] = `
   <div class="d-flex justify-center"><span class="mb-6 text-subtitle-2">
 			la deuxieme question ?
 		</span></div>
-  <vrow-stub tag="div" class="grid justify-sm-space-between justify-center">
-    <vcol-stub tag="div">
-      <div class="sad">
+  <vrow-stub tag="div" class="grid justify-center ma-0 justify-sm-space-between">
+    <vcol-stub tag="div" class="pa-0 flex-grow-0 emotions"><button class="emotion sad">
         <div class="icon-button">
           <div class="d-flex justify-center">
             <vicon-stub xlarge="" color="orange-darken-20" x-large="" class="mt-3">
@@ -18,10 +17,8 @@ exports[`EmotionPicker renders correctly 1`] = `
 							Pas du tout
 						</span></div>
         </div>
-      </div>
-    </vcol-stub>
-    <vcol-stub tag="div">
-      <div class="neutral">
+      </button></vcol-stub>
+    <vcol-stub tag="div" class="pa-0 flex-grow-0 emotions"><button class="emotion neutral">
         <div class="icon-button">
           <div class="d-flex justify-center">
             <vicon-stub xlarge="" color="yellow-darken-20" x-large="" class="mt-3">
@@ -32,10 +29,8 @@ exports[`EmotionPicker renders correctly 1`] = `
 							Moyen
 						</span></div>
         </div>
-      </div>
-    </vcol-stub>
-    <vcol-stub tag="div">
-      <div class="happy">
+      </button></vcol-stub>
+    <vcol-stub tag="div" class="pa-0 flex-grow-0 emotions"><button class="emotion happy">
         <div class="icon-button">
           <div class="d-flex justify-center">
             <vicon-stub xlarge="" color="turquoise-darken-20" x-large="" class="mt-3">
@@ -46,8 +41,7 @@ exports[`EmotionPicker renders correctly 1`] = `
 							Parfait !
 						</span></div>
         </div>
-      </div>
-    </vcol-stub>
+      </button></vcol-stub>
   </vrow-stub>
 </div>
 `;
