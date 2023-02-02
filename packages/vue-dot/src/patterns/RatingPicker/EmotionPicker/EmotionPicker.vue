@@ -23,10 +23,9 @@
 				:key="emotion.title"
 				class="pa-0 flex-grow-0 emotions"
 			>
-				<div
+				<button
 					class="emotion"
 					:class="emotion.title"
-					:tabindex="emotion.id"
 					@click="selectEmotion(emotion.title)"
 					@keyup.enter="selectEmotion(emotion.title)"
 				>
@@ -52,7 +51,7 @@
 							</span>
 						</div>
 					</div>
-				</div>
+				</button>
 			</VCol>
 		</VRow>
 	</div>
@@ -104,21 +103,18 @@
 
 		emotions = [
 			{
-				id: 1,
 				title: 'sad',
 				icon: this.sadIcon,
 				color: 'orange-darken-20',
 				description: this.questionDatas.labels?.sad ?? this.locales.not
 			},
 			{
-				id: 2,
 				title: 'neutral',
 				icon: this.neurtralIcon,
 				color: 'yellow-darken-20',
 				description: this.questionDatas.labels?.neutral ?? this.locales.medium
 			},
 			{
-				id: 3,
 				title: 'happy',
 				icon: this.happyIcon,
 				color: 'turquoise-darken-20',
