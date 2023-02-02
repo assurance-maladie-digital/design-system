@@ -24,8 +24,11 @@
 				class="pa-0 flex-grow-0 emotions"
 			>
 				<div
+					class="emotion"
 					:class="emotion.title"
+					:tabindex="emotion.id"
 					@click="selectEmotion(emotion.title)"
+					@keyup.enter="selectEmotion(emotion.title)"
 				>
 					<div
 						:class="{ active: isActive(emotion.title) }"
@@ -101,18 +104,21 @@
 
 		emotions = [
 			{
+				id: 1,
 				title: 'sad',
 				icon: this.sadIcon,
 				color: 'orange-darken-20',
 				description: this.questionDatas.labels?.sad ?? this.locales.not
 			},
 			{
+				id: 2,
 				title: 'neutral',
 				icon: this.neurtralIcon,
 				color: 'yellow-darken-20',
 				description: this.questionDatas.labels?.neutral ?? this.locales.medium
 			},
 			{
+				id: 3,
 				title: 'happy',
 				icon: this.happyIcon,
 				color: 'turquoise-darken-20',
@@ -203,6 +209,12 @@ h6 {
 	.active {
 		border: 1px solid $vd-turquoise-darken-20;
 		background-color: $vd-turquoise-lighten-90;
+	}
+}
+.emotion {
+	&:focus {
+		outline: solid 1px $vd-turquoise-darken-20;
+		border-radius: 8px;
 	}
 }
 .emotions {
