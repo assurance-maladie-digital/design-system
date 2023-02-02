@@ -14,7 +14,7 @@
 				text
 				outlined
 				large
-				class="answer-button w-100 mb-2 justify-space-between text-wrap"
+				class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"
 				:color="selectedAnswerIndex === index ? 'white' : 'primary'"
 				:class="{ 'active': selectedAnswerIndex === index }"
 				@click="selectAnswer(index)"
@@ -126,5 +126,11 @@ h6 {
 }
 .azae {
 	overflow-wrap: break-word;
+}
+.v-btn {
+	height: auto !important;
+	min-height: 44px;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
 }
 </style>
