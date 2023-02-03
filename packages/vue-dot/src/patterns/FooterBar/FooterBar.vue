@@ -85,7 +85,7 @@
 				:route="legalNoticeRoute"
 				:options="options.routerLink"
 			>
-				{{ locales.cguLabel }}
+				{{ locales.legalNoticeLabel }}
 			</FooterLink>
 
 			<FooterLink
