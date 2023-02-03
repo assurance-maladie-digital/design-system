@@ -13,7 +13,10 @@ exports[`FooterBar renders correctly 1`] = `
       Conditions générales d’utilisation
     </footerlink-stub>
     <footerlink-stub options="[object Object]" route="[object Object]">
-      Conditions générales d’utilisation
+      Gestion des cookies
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" route="[object Object]">
+      Mentions légales
     </footerlink-stub>
     <footerlink-stub options="[object Object]" route="[object Object]">
       Accessibilité&nbsp;: non conforme
