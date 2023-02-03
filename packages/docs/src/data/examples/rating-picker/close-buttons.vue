@@ -1,7 +1,6 @@
 <template>
 	<RatingPicker
 		:main-question="firstQuestion"
-		:questions-list="questionsList"
 		:on-validate="onValidate"
 		hide-close-buttons
 		:after-validate="afterValidate"
@@ -11,21 +10,13 @@
 <script lang="ts">
 	import Vue from 'vue';
 
-	export default class CookieBannerOptions extends Vue {
+	export default class RatingPickerCloseButtons extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',
 			labels: ['Mauvais', 'Génial !'],
 			question: 'Pourriez vous donner une note ? '
 		};
-
-		questionsList = [
-			{
-				name: 'first-question',
-				type: 'emotions',
-				question: 'Avez vous aimé notre première question ?'
-			}
-		];
 
 		afterValidate = [
 			{
