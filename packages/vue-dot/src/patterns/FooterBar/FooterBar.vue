@@ -80,6 +80,15 @@
 			</FooterLink>
 
 			<FooterLink
+				v-if="!hideCookiesLink"
+				:external-link="cookiesExternalLink"
+				:route="cookiesRoute"
+				:options="options.routerLink"
+			>
+				{{ locales.cookiesLabel }}
+			</FooterLink>
+
+			<FooterLink
 				v-if="!hideLegalNoticeLink"
 				:external-link="legalNoticeExternalLink"
 				:route="legalNoticeRoute"
@@ -152,6 +161,14 @@
 				default: () => ({ name: 'cgu' })
 			},
 			cguExternalLink: {
+				type: String as PropType<string>,
+				default: null
+			},
+			cookiesRoute: {
+				type: [Array, Object, String] as PropType<RawLocation>,
+				default: () => ({ name: 'cookies' })
+			},
+			cookiesExternalLink: {
 				type: String as PropType<string>,
 				default: null
 			},
