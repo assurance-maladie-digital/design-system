@@ -35,7 +35,7 @@
 					:class="!shadowMode ? 'border-green' : ''"
 				>
 					<VIcon
-						color="turquoise-darken-40"
+						color="success"
 						class="mr-4"
 					>
 						{{ checkIcon }}
@@ -113,7 +113,7 @@
 				class="d-flex justify-center align-center border-green py-3 mx-6"
 			>
 				<VIcon
-					color="turquoise-darken-40"
+					color="success"
 					class="mr-4"
 				>
 					{{ checkIcon }}
