@@ -2,6 +2,6 @@
 
 exports[`FooterLink renders correctly 1`] = `
 <div class="d-flex">
-  <routerlink to="[object Object]"></routerlink>
+  <router-link to="[object Object]"></router-link>
 </div>
 `;
