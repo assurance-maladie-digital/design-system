@@ -63,8 +63,8 @@
 
 			<FooterLink
 				v-if="!hideSitemapLink"
-				:sitemap-external-link="sitemapExternalLink"
-				:sitemap-route="sitemapRoute"
+				:external-link="sitemapExternalLink"
+				:route="sitemapRoute"
 				:options="options.routerLink"
 			>
 				{{ locales.sitemapLabel }}
@@ -72,8 +72,8 @@
 
 			<FooterLink
 				v-if="!hideCguLink"
-				:cgu-external-link="cguExternalLink"
-				:cgu-route="cguRoute"
+				:external-link="cguExternalLink"
+				:route="cguRoute"
 				:options="options.routerLink"
 			>
 				{{ locales.cguLabel }}
@@ -81,8 +81,8 @@
 
 			<FooterLink
 				v-if="!hideLegalNoticeLink"
-				:cgu-external-link="legalNoticeExternalLink"
-				:cgu-route="legalNoticeRoute"
+				:external-link="legalNoticeExternalLink"
+				:route="legalNoticeRoute"
 				:options="options.routerLink"
 			>
 				{{ locales.cguLabel }}
@@ -90,8 +90,8 @@
 
 			<FooterLink
 				v-if="!hideA11yLink"
-				:cgu-external-link="a11yStatementExternalLink"
-				:cgu-route="a11yStatementRoute"
+				:external-link="a11yStatementExternalLink"
+				:route="a11yStatementRoute"
 				:options="options.routerLink"
 			>
 				{{ a11yComplianceLabel }}

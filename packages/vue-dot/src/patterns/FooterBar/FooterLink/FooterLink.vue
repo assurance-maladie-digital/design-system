@@ -1,9 +1,9 @@
 <template>
 	<div class="d-flex">
 		<a
-			v-if="sitemapExternalLink || cguExternalLink || a11yStatementExternalLink || legalNoticeExternalLink"
+			v-if="externalLink"
 			v-bind="options"
-			:href="sitemapExternalLink || cguExternalLink || a11yStatementExternalLink || legalNoticeExternalLink"
+			:href="externalLink"
 			target="_blank"
 		>
 			<slot />
@@ -11,7 +11,7 @@
 		<RouterLink
 			v-else
 			v-bind="options"
-			:to="sitemapRoute || cguRoute || a11yStatementRoute || legalNoticeRoute"
+			:to="route"
 		>
 			<slot />
 		</RouterLink>
@@ -30,35 +30,11 @@
 				type: Object as PropType<Record<string, unknown>>,
 				default: () => ({})
 			},
-			sitemapRoute: {
+			route: {
 				type: [Array, Object, String] as PropType<RawLocation>,
-				default: () => ({ name: 'sitemap' })
+				default: () => ({ name: '' })
 			},
-			sitemapExternalLink: {
-				type: String as PropType<string>,
-				default: null
-			},
-			cguRoute: {
-				type: [Array, Object, String] as PropType<RawLocation>,
-				default: () => ({ name: 'cgu' })
-			},
-			cguExternalLink: {
-				type: String as PropType<string>,
-				default: null
-			},
-			legalNoticeRoute: {
-				type: [Array, Object, String] as PropType<RawLocation>,
-				default: () => ({ name: 'legalNotice' })
-			},
-			legalNoticeExternalLink: {
-				type: String as PropType<string>,
-				default: null
-			},
-			a11yStatementRoute: {
-				type: [Array, Object, String] as PropType<RawLocation>,
-				default: () => ({ name: 'a11yStatement' })
-			},
-			a11yStatementExternalLink: {
+			externalLink: {
 				type: String as PropType<string>,
 				default: null
 			}
