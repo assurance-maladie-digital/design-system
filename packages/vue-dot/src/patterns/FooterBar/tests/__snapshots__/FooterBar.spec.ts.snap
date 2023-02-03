@@ -13,6 +13,9 @@ exports[`FooterBar renders correctly 1`] = `
       Conditions générales d’utilisation
     </routerlink-stub>
     <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+      Gestion des cookies
+    </routerlink-stub>
+    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
       Mentions légales
     </routerlink-stub>
     <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">

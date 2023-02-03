@@ -4,6 +4,7 @@ export const locales = {
 	goTopBtnLabel: 'Retour en haut de la page',
 	sitemapLabel: 'Plan du site',
 	cguLabel: 'Conditions générales d’utilisation',
+	cookiesLabel: 'Gestion des cookies',
 	legalNoticeLabel: 'Mentions légales',
 	versionLabel: 'Version',
 	followUs: 'Suivez-nous',

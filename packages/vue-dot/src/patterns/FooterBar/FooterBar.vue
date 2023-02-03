@@ -78,6 +78,14 @@
 			</RouterLink>
 
 			<RouterLink
+				v-if="!hideCookiesLink"
+				v-bind="options.routerLink"
+				:to="cookiesRoute"
+			>
+				{{ locales.cookiesLabel }}
+			</RouterLink>
+
+			<RouterLink
 				v-if="!hideLegalNoticeLink"
 				v-bind="options.routerLink"
 				:to="legalNoticeRoute"
@@ -142,6 +150,10 @@
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cgu' })
 			},
+			cookiesRoute: {
+				type: [Array, Object, String] as PropType<RawLocation>,
+				default: () => ({ name: 'cookies' })
+			},
 			legalNoticeRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'legalNotice' })
@@ -155,6 +167,10 @@
 				default: false
 			},
 			hideCguLink: {
+				type: Boolean,
+				default: false
+			},
+			hideCookiesLink: {
 				type: Boolean,
 				default: false
 			},

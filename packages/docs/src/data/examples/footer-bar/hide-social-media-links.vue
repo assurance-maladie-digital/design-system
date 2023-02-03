@@ -18,6 +18,7 @@
 		docProps = {
 			sitemapRoute: '/',
 			cguRoute: '/',
+			cookiesRoute: '/',
 			legalNoticeRoute: '/',
 			a11yStatementRoute: '/'
 		};
