@@ -29,16 +29,22 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers les *Conditions générales d’utilisation*.'
 			},
 			{
+				name: 'cgu-external-link',
+				type: 'string',
+				default: null,
+				description: 'L’URL du lien vers les *Conditions générales d’utilisation* si celui-ci est externe à l’application.'
+			},
+			{
 				name: 'cookies-route',
 				type: 'RawLocation',
 				default: `{ name: 'cookies' }`,
 				description: 'La valeur de la prop `to` du lien vers la *Gestion des cookies*.'
 			},
 			{
-				name: 'cgu-external-link',
+				name: 'cookies-external-link',
 				type: 'string',
 				default: null,
-				description: 'L’URL du lien vers les *Conditions générales d’utilisation* si celui-ci est externe à l’application.'
+				description: 'L’URL du lien vers la *Gestion des cookies* si celui-ci est externe à l’application.'
 			},
 			{
 				name: 'legal-notice-route',

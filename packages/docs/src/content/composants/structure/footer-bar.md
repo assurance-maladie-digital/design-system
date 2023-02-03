@@ -46,7 +46,7 @@ Vous pouvez personnaliser la liste des réseaux sociaux en utilisant la prop `so
 
 #### Liens externes
 
-Vous pouvez changer les liens par défaut par des liens externes en utilisant les props `sitemap-external-link`, `cgu-external-link`, `legal-notice-external-link` et  `a11y-statement-external-link`.
+Vous pouvez changer les liens par défaut par des liens externes en utilisant les props `sitemap-external-link`, `cgu-external-link`, `cookies-external-link`, `legal-notice-external-link` et  `a11y-statement-external-link`.
 
 <doc-example file="footer-bar/externalsLinks"></doc-example>
 
