@@ -197,14 +197,6 @@
 						greenBackground: false
 					}
 				]
-			},
-			onValidate: {
-				type: Function,
-				required: true
-			},
-			onClose: {
-				type: Function || null,
-				default: () => null
 			}
 		}
 	});
@@ -283,8 +275,12 @@
 		}
 
 		validateSecondStep(): void {
-			this.onValidate();
+			this.$emit('on-validate');
 			this.validated = true;
+		}
+
+		onClose(): void {
+			this.$emit('on-close');
 		}
 	}
 </script>
