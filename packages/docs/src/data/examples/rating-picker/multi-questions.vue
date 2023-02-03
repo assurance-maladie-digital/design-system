@@ -35,7 +35,7 @@
 				name: 'question-3',
 				type: 'multi',
 				question: 'Avez vous aimé notre troisième question ?',
-				answers: ['bonsoiazeazer', 'bonsoir', 'bonsoir1', 'bonsoir !', 'azeazeazeazea'],
+				answers: ['Réponse 1', 'Réponse 2', 'Réponse 3', 'Réponse 4', 'Réponse 5'],
 				otherAnswer: true
 			},
 			{
