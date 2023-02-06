@@ -61,45 +61,50 @@
 		>
 			<slot name="prepend" />
 
-			<RouterLink
+			<FooterLink
 				v-if="!hideSitemapLink"
-				v-bind="options.routerLink"
-				:to="sitemapRoute"
+				:external-link="sitemapExternalLink"
+				:route="sitemapRoute"
+				:options="options.routerLink"
 			>
 				{{ locales.sitemapLabel }}
-			</RouterLink>
+			</FooterLink>
 
-			<RouterLink
+			<FooterLink
 				v-if="!hideCguLink"
-				v-bind="options.routerLink"
-				:to="cguRoute"
+				:external-link="cguExternalLink"
+				:route="cguRoute"
+				:options="options.routerLink"
 			>
 				{{ locales.cguLabel }}
-			</RouterLink>
+			</FooterLink>
 
-			<RouterLink
+			<FooterLink
 				v-if="!hideCookiesLink"
-				v-bind="options.routerLink"
-				:to="cookiesRoute"
+				:external-link="cookiesExternalLink"
+				:route="cookiesRoute"
+				:options="options.routerLink"
 			>
 				{{ locales.cookiesLabel }}
-			</RouterLink>
+			</FooterLink>
 
-			<RouterLink
+			<FooterLink
 				v-if="!hideLegalNoticeLink"
-				v-bind="options.routerLink"
-				:to="legalNoticeRoute"
+				:external-link="legalNoticeExternalLink"
+				:route="legalNoticeRoute"
+				:options="options.routerLink"
 			>
 				{{ locales.legalNoticeLabel }}
-			</RouterLink>
+			</FooterLink>
 
-			<RouterLink
-				v-if="!hideA11yLink && a11yComplianceLabel"
-				v-bind="options.routerLink"
-				:to="a11yStatementRoute"
+			<FooterLink
+				v-if="!hideA11yLink"
+				:external-link="a11yStatementExternalLink"
+				:route="a11yStatementRoute"
+				:options="options.routerLink"
 			>
 				{{ a11yComplianceLabel }}
-			</RouterLink>
+			</FooterLink>
 
 			<p
 				v-if="version"
@@ -123,6 +128,7 @@
 
 	import SocialMediaLinks from './SocialMediaLinks';
 	import { SocialMediaLink } from './SocialMediaLinks/types';
+	import FooterLink from './FooterLink';
 
 	import { config } from './config';
 	import { locales } from './locales';
@@ -146,21 +152,41 @@
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'sitemap' })
 			},
+			sitemapExternalLink: {
+				type: String as PropType<string>,
+				default: null
+			},
 			cguRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cgu' })
+			},
+			cguExternalLink: {
+				type: String as PropType<string>,
+				default: null
 			},
 			cookiesRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cookies' })
 			},
+			cookiesExternalLink: {
+				type: String as PropType<string>,
+				default: null
+			},
 			legalNoticeRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'legalNotice' })
 			},
+			legalNoticeExternalLink: {
+				type: String as PropType<string>,
+				default: null
+			},
 			a11yStatementRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'a11yStatement' })
+			},
+			a11yStatementExternalLink: {
+				type: String as PropType<string>,
+				default: null
 			},
 			hideSitemapLink: {
 				type: Boolean,
@@ -206,6 +232,8 @@
 	@Component({
 		inheritAttrs: false,
 		components: {
+			FooterBar,
+			FooterLink,
 			SocialMediaLinks
 		}
 	})
