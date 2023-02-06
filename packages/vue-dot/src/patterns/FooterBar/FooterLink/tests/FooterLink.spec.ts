@@ -5,14 +5,15 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import FooterBar from '../';
+import FooterLink from '../';
+import FooterBar from '../../index';
 
 let wrapper: Wrapper<Vue>;
 
-describe('FooterBar', () => {
+describe('FooterLink', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(FooterBar, {
-			stubs: ['FooterLink']
+		wrapper = mountComponent(FooterLink, {
+			stubs: ['RouterLink']
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
