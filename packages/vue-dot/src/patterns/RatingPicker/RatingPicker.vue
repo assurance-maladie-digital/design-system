@@ -310,4 +310,7 @@ h6 {
 .green-background {
 	background-color: $vd-turquoise-lighten-97;
 }
+.v-icon {
+	min-width: 24px;
+}
 </style>

@@ -11,7 +11,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 
-	export default class RatingPickerMultiAnswersOthers extends Vue {
+	export default class RatingPickerMultiAnswerOther extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',

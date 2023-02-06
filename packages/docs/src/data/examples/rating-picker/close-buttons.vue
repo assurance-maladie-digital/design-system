@@ -1,7 +1,6 @@
 <template>
 	<RatingPicker
 		:main-question="firstQuestion"
-		:questions-list="questionsList"
 		:on-validate="onValidate"
 		hide-close-buttons
 		:after-validate="afterValidate"
@@ -18,14 +17,6 @@
 			labels: ['Mauvais', 'Génial !'],
 			question: 'Pourriez vous donner une note ? '
 		};
-
-		questionsList = [
-			{
-				name: 'first-question',
-				type: 'emotions',
-				question: 'Avez vous aimé notre première question ?'
-			}
-		];
 
 		afterValidate = [
 			{
