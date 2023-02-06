@@ -11,7 +11,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 
-	export default class CookieBannerOptions extends Vue {
+	export default class RatingPickerSecondStep extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',
