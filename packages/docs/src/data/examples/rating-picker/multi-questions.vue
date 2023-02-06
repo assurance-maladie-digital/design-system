@@ -10,8 +10,12 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
-	export default class CookieBannerOptions extends Vue {
+	@Component({
+		inheritAttrs: false
+	})
+	export default class RatingPickerMultiQuestions extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',
@@ -35,7 +39,7 @@
 				name: 'question-3',
 				type: 'multi',
 				question: 'Avez vous aimé notre troisième question ?',
-				answers: ['bonsoiazeazer', 'bonsoir', 'bonsoir1', 'bonsoir !', 'azeazeazeazea'],
+				answers: ['Réponse 1', 'Réponse 2', 'Réponse 3', 'Réponse 4', 'Réponse 5'],
 				otherAnswer: true
 			},
 			{

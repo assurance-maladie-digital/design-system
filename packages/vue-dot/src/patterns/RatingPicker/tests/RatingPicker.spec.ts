@@ -16,9 +16,6 @@ describe('RatingPicker', () => {
 						name: 'first-question',
 						type: 'stars',
 						question: 'Avez vous lu la première question ?'
-				},
-				onValidate: () => {
-					console.log('valider');
 				}
 			}
 		});

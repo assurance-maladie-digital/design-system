@@ -10,8 +10,12 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
-	export default class CookieBannerOptions extends Vue {
+	@Component({
+		inheritAttrs: false
+	})
+	export default class RatingPickerCloseButtons extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',
@@ -44,10 +48,6 @@
 
 		onValidate(): void {
 			console.log('Validation');
-		}
-
-		onClose(): void {
-			console.log('Fermeture');
 		}
 	}
 </script>

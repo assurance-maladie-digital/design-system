@@ -4,7 +4,7 @@
 			:main-question="firstQuestion"
 			:on-validate="onValidate"
 			:on-close="onClose"
-			modal-mode
+			shadow-mode
 			:after-validate="afterValidate"
 		/>
 	</div>
@@ -12,8 +12,12 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
-	export default class CookieBannerOptions extends Vue {
+	@Component({
+		inheritAttrs: false
+	})
+	export default class RatingPickerShadowMode extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'stars',
