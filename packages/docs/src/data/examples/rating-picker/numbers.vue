@@ -1,7 +1,6 @@
 <template>
 	<RatingPicker
 		:main-question="firstQuestion"
-		:questions-list="questionsList"
 		:on-validate="onValidate"
 		:on-close="onClose"
 		:after-validate="afterValidate"
@@ -10,8 +9,12 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
-	export default class CookieBannerOptions extends Vue {
+	@Component({
+		inheritAttrs: false
+	})
+	export default class RatingPickerNumbers extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'numbers',
@@ -22,10 +25,6 @@
 		afterValidate = [
 			{
 				message: 'Merci !',
-				greenBackground: true
-			},
-			{
-				message: 'Merci d\'avoir donné plus d\'information',
 				greenBackground: true
 			}
 		];

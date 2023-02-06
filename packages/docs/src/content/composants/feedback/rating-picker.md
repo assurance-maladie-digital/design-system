@@ -33,6 +33,14 @@ Les questions secondaires s'afficheront si la note est de `medium` ou moins.
 
 <doc-example file="rating-picker/emotions"></doc-example>
 
+Il est possible de n'afficher que deux choix en utilisant le `simpleMode`.
+
+<doc-example file="rating-picker/emotions-2"></doc-example>
+
+Il est possible de changer les labels des émotions.
+
+<doc-example file="rating-picker/emotions-labels"></doc-example>
+
 ## Les questions secondaires
 
 Les questions secondaires apparaissent les unes après les autres à mesure que l'utilisateur y répond.
@@ -79,10 +87,10 @@ Les propriétés non définies dans la section API seront reportées directement
 
 <doc-tab-item label="Personnalisation">
 
-Le mode modale n'est pas actif par defaut.
-Pour l'activer, il faut utiliser la props `modal-mode`.
+Le mode avec ombre n'est pas actif par defaut.
+Pour l'activer, il faut utiliser la props `shadow-mode`.
 
-<doc-example file="rating-picker/modal-mode"></doc-example>
+<doc-example file="rating-picker/shadow-mode"></doc-example>
 
 Le fond vert après validation n'est pas actif par defaut.
 Pour l'activer, il faut ajouter `true` dans les objets `afterValidate`.

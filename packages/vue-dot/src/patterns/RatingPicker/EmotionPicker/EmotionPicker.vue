@@ -14,17 +14,20 @@
 				{{ questionDatas.question }}
 			</span>
 		</div>
-		<div
-			class="d-flex"
-			:class="selectedEmotion && mainQuestion ? 'justify-center' : 'justify-space-between'"
+		<VRow
+			class="grid justify-center ma-0"
+			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-sm-space-around' : 'justify-sm-space-between'"
 		>
-			<div
+			<VCol
 				v-for="emotion in filterEmotions"
 				:key="emotion.title"
+				class="pa-0 flex-grow-0 emotions"
 			>
-				<div
+				<button
+					class="emotion"
 					:class="emotion.title"
 					@click="selectEmotion(emotion.title)"
+					@keyup.enter="selectEmotion(emotion.title)"
 				>
 					<div
 						:class="{ active: isActive(emotion.title) }"
@@ -48,9 +51,9 @@
 							</span>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+				</button>
+			</VCol>
+		</VRow>
 	</div>
 </template>
 
@@ -76,6 +79,10 @@
 			isValidated: {
 				type: Boolean,
 				default: false
+			},
+			simpleMode: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -94,26 +101,34 @@
 
 		selectedEmotion = '';
 
-		emotionList = [
+		emotions = [
 			{
 				title: 'sad',
 				icon: this.sadIcon,
 				color: 'orange-darken-20',
-				description: this.locales.not
+				description: this.questionDatas.labels?.sad ?? this.locales.not
 			},
 			{
 				title: 'neutral',
 				icon: this.neurtralIcon,
 				color: 'yellow-darken-20',
-				description: this.locales.medium
+				description: this.questionDatas.labels?.neutral ?? this.locales.medium
 			},
 			{
 				title: 'happy',
 				icon: this.happyIcon,
 				color: 'turquoise-darken-20',
-				description: this.locales.perfect
+				description: this.questionDatas.labels?.happy ?? this.locales.perfect
 			}
 		];
+
+		get emotionList(): EmotionItem[] {
+			if (this.simpleMode) {
+				return [this.emotions[0],this.emotions[2]];
+			} else {
+				return this.emotions;
+			}
+		}
 
 		get filterEmotions(): EmotionItem[] {
 			if (this.selectedEmotion && this.mainQuestion) {
@@ -191,5 +206,14 @@ h6 {
 		border: 1px solid $vd-turquoise-darken-20;
 		background-color: $vd-turquoise-lighten-90;
 	}
+}
+.emotion {
+	&:focus {
+		outline: solid 1px $vd-turquoise-darken-20;
+		border-radius: 8px;
+	}
+}
+.emotions {
+	margin: 1px !important;
 }
 </style>

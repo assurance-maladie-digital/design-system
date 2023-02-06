@@ -23,31 +23,35 @@
 				/ 10
 			</span>
 		</div>
-		<div
+		<VRow
 			v-else
-			class="d-flex justify-space-between"
+			class="grid justify-center ma-0"
 		>
-			<VBtn
+			<VCol
 				v-for="i in 10"
 				:key="i"
-				class="rating-button"
-				color="primary"
-				outlined
-				text
-				@click="selectRating(i)"
+				class="pa-0 numbers flex-grow-0"
 			>
-				{{ i }}
-			</VBtn>
-		</div>
+				<VBtn
+					class="rating-button"
+					color="primary"
+					outlined
+					text
+					@click="selectRating(i)"
+				>
+					{{ i }}
+				</VBtn>
+			</VCol>
+		</VRow>
 		<div
 			v-if="!selectedRating"
 			class="mt-3 d-flex justify-space-between rate-meaning"
 		>
 			<span>
-				{{ questionDatas.labels[0] }}
+				{{ getLabel(0) }}
 			</span>
 			<span>
-				{{ questionDatas.labels[1] }}
+				{{ getLabel(1) }}
 			</span>
 		</div>
 	</div>
@@ -83,6 +87,9 @@
 				}
 			);
 		}
+		getLabel(number: number): string {
+			return this.questionDatas.label ? this.questionDatas.labels[number] : '';
+		}
 	}
 </script>
 
@@ -108,5 +115,8 @@ h6 {
 }
 .text-selected-rating {
 	margin-top: 6px;
+}
+.numbers {
+	margin: 1px !important;
 }
 </style>

@@ -29,7 +29,7 @@ export const api: Api = {
 				default: `[]`,
 			},
 			{
-				name: 'modal-mode',
+				name: 'shadow-mode',
 				type: 'boolean',
 				description: 'Ajoute une ombre au composant et retire la  bordure de la première question',
 				default: false
@@ -47,24 +47,6 @@ export const api: Api = {
 				default: 'Valider'
 			},
 			{
-				name: 'on-validate',
-				type: 'function',
-				description: 'Définit la fonction de validation',
-				example: `onValidate(): void {
-	console.log('Validation');
-}`,
-				required: true,
-			},
-			{
-				name: 'on-close',
-				type: 'function',
-				description: 'Définit la fonction de fermeture',
-				example: `onValidate(): void {
-	console.log('Fermeture');
-}`,
-				required: true,
-			},
-			{
 				name: 'after-validate',
 				type: 'Array',
 				description: 'Définit le message et le fond du RatingPicker après la validation',
@@ -78,6 +60,18 @@ export const api: Api = {
 		greenBackground: false
 	}
 ]`
+			}
+		],
+		events: [
+			{
+				name: 'on-validate',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton "Transmettre mon avis"',
+				value: `void`
+			},
+			{
+				name: 'on-close',
+				description: 'Événement émis lorsque l’utilisateur clique sur les boutons de fermeture',
+				value: `void`
 			}
 		]
 	}

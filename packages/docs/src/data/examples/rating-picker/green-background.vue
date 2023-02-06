@@ -10,8 +10,12 @@
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
-	export default class CookieBannerOptions extends Vue {
+	@Component({
+		inheritAttrs: false
+	})
+	export default class RatingPickerGreenBackground extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',
@@ -29,7 +33,7 @@
 		afterValidate = [
 			{
 				message: 'Merci !',
-				greenBackground: true
+				greenBackground: false
 			},
 			{
 				message: 'Merci d\'avoir donné plus d\'information',
