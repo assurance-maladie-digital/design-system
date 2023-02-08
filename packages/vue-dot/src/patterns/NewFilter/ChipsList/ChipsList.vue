@@ -96,11 +96,7 @@
 			return filterItem.chips.slice(0, this.chipsLimit);
 		}
 
-		//getChip(chip: ChipItem): unknown {
-		//	return chip.text ?? chip.value ?? chip;
-		//}
-
-		removeChip(chipIndex: number): void {
+		removeChip(chip: string, chipIndex: number): void {
 			const chips = this.filter.chips.filter((chip, index) => index !== chipIndex);
 			this.$set(this.filter, 'chips', chips);
 			this.$emit('remove-chip', chip);
