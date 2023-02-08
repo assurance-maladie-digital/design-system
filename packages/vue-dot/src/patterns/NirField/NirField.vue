@@ -1,9 +1,8 @@
 <template>
 	<VRow dense>
 		<VCol
-			cols="7"
-			:sm="tooltip ? 8 : 9"
-			:md="tooltip ? 8 : 9"
+			:sm="tooltip && keyRequired ? 8 : tooltip ? 11 : keyRequired ? 9 : 12"
+			:md="tooltip && keyRequired ? 8 : tooltip ? 11 : keyRequired ? 9 : 12"
 		>
 			<VTextField
 				v-facade="maskNumber"
@@ -13,6 +12,8 @@
 				:counter="counterNumber"
 				:counter-value="noSpacesCounter"
 				:label="locales.labelNumber"
+				:aria-labelledby="locales.labelNumber"
+				:aria-describedby="hintNumber"
 				:hint="hintNumber"
 				:success="internalValueNumber && internalValueNumber.length === nirNumber"
 				@input.native="setinternalValueNumber"
@@ -29,7 +30,7 @@
 			</VTextField>
 		</VCol>
 		<VCol
-			:cols="tooltip ? 4 : 5"
+			v-if="keyRequired"
 			sm="3"
 			md="3"
 		>
@@ -42,6 +43,8 @@
 				:counter="counterKey"
 				:counter-value="noSpacesCounter"
 				:label="locales.labelKey"
+				:aria-labelledby="locales.labelKey"
+				:aria-describedby="hintKey"
 				:hint="hintKey"
 				:success="internalValueKey && internalValueKey.length === nirKey"
 				@input.native="setinternalValueKey"
@@ -117,6 +120,10 @@
 				validator(value): boolean {
 					return value === 2;
 				}
+			},
+			keyRequired: {
+				type: Boolean,
+				default: false
 			},
 			required: {
 				type: Boolean,
@@ -210,11 +217,19 @@
 		}
 
 		get computedInternalValue(): string | null {
-			if (this.internalValueNumber?.length === this.nirNumber && this.internalValueKey?.length === this.nirKey) {
-				return this.internalValueNumber + this.internalValueKey;
-			}
+			if (this.keyRequired) {
+				if (this.internalValueNumber?.length === this.nirNumber && this.internalValueKey?.length === this.nirKey) {
+					return this.internalValueNumber + this.internalValueKey;
+				}
 
-			return null;
+				return null;
+			} else {
+				if (this.internalValueNumber?.length === this.nirNumber) {
+					return this.internalValueNumber;
+				}
+
+				return null;
+			}
 		}
 
 		noSpacesCounter(value?: string | undefined): number {
