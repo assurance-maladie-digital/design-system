@@ -1,7 +1,6 @@
 <template>
 	<NirField
 		key-required
-		outlined
 		class="vd-form-input"
 	/>
 </template>

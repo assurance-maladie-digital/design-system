@@ -1,6 +1,5 @@
 <template>
 	<NirField
-		outlined
 		v-bind="$attrs"
 		v-on="$listeners"
 		class="vd-form-input"
