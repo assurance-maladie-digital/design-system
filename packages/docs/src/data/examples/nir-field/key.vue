@@ -1,6 +1,6 @@
 <template>
 	<NirField
-		required
+		key-required
 		outlined
 		class="vd-form-input"
 	/>
@@ -11,7 +11,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class NirFieldRequired extends Vue {}
+	export default class NirFieldKey extends Vue {}
 </script>
 
 <style lang="scss" scoped>

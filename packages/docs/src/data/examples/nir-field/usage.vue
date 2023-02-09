@@ -1,5 +1,6 @@
 <template>
 	<NirField
+		outlined
 		v-bind="$attrs"
 		v-on="$listeners"
 		class="vd-form-input"
@@ -16,15 +17,12 @@
 	export default class NirFieldUsage extends Vue {
 		options = {
 			booleans: [
-				'required'
+				'required',
+				'keyRequired'
 			],
 			textFields: [
 				'tooltip'
 			]
 		};
-
-		tabs = [
-			'outlined'
-		];
 	}
 </script>

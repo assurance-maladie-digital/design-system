@@ -25,7 +25,13 @@ export const api: Api = {
 				name: 'required',
 				type: 'boolean',
 				default: false,
-				description: 'Rends le champ obligatoire en utilisant la règle de validation [`required`](/composants-techniques/regles-de-validation/required).'
+				description: 'Rends le ou les champ(s) obligatoire(s) en utilisant la règle de validation [`required`](/composants-techniques/regles-de-validation/required).'
+			},
+			{
+				name: 'key-required',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche le champs clé.'
 			},
 			{
 				name: 'tooltip',
