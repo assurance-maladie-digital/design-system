@@ -9,18 +9,26 @@ import NirField from '../';
 let wrapper: Wrapper<Vue>;
 
 describe('NirField', () => {
-	it('renders correctly', () => {
-		wrapper = mountComponent(NirField, undefined, true);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
 	it('renders correctly with 13 characters', () => {
 		wrapper = mountComponent(
 			NirField,
 			{
 				propsData: {
 					nirNumber: 13
+				}
+			},
+			true
+		);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with 2 characters', () => {
+		wrapper = mountComponent(
+			NirField,
+			{
+				propsData: {
+					nirKey: 2
 				}
 			},
 			true
