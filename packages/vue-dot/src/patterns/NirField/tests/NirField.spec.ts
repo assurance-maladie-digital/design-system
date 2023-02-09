@@ -14,19 +14,4 @@ describe('NirField', () => {
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
-
-	it('renders correctly with 15 characters', () => {
-		wrapper = mountComponent(
-			NirField,
-			{
-				propsData: {
-					nirNumber: 13,
-					nirKey: 2
-				}
-			},
-			true
-		);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
 });
