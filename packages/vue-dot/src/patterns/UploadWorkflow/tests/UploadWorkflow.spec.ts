@@ -25,10 +25,7 @@ const files = [
 describe('UploadWorkflow', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(UploadWorkflow, {
-			stubs: {
-				FileUpload,
-				DialogBox
-			},
+			stubs: ['FileUpload', 'DialogBox'],
 			propsData: {
 				value: files
 			}
