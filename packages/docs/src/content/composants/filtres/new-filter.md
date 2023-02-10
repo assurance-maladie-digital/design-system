@@ -37,7 +37,7 @@ Dans l'exemple ci dessous, le dernier filtre a été isolé des autres par un `m
 
 Pour avoir plusieurs champs dans un seul filtre, il faut creer un composant.
 
-<doc-example file="new-filter/period"></doc-example>
+<doc-example file="period-filter/period"></doc-example>
 
 ### Changer l'icone
 
