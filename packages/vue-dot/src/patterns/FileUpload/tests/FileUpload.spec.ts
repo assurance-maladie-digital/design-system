@@ -18,7 +18,6 @@ const files = [
 describe('FileUpload', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(FileUpload, {
-			stubs: ['Input'],
 			propsData: {
 				value: files
 			}
