@@ -10,7 +10,9 @@ let wrapper: Wrapper<Vue>;
 
 describe('FileUpload', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(FileUpload);
+		wrapper = mountComponent(FileUpload, {
+			stubs: ['VFileInput', 'VFileInputFile', 'VFileInputFileList']
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

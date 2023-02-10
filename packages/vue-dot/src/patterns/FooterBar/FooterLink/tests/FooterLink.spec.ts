@@ -6,7 +6,6 @@ import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
 import FooterLink from '../';
-import FooterBar from '../../index';
 
 let wrapper: Wrapper<Vue>;
 
