@@ -8,20 +8,10 @@ import FileUpload from '../';
 
 let wrapper: Wrapper<Vue>;
 
-const files = [
-	{
-		id: '1',
-		title: 'test'
-	}
-];
-
 describe('FileUpload', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(FileUpload, {
-			stubs: ['VFileInput'],
-			propsData: {
-				value: files
-			}
+			stubs: ['VFileInput']
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();
