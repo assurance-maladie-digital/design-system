@@ -195,11 +195,11 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'NewFilter',
-						to: '/composants/tableaux/new-filter'
+						to: '/composants/filtres/new-filter'
 					},
 					{
 						title: 'FilterModule',
-						to: '/composants/tableaux/filter-module'
+						to: '/composants/filtres/filter-module'
 					},
 				]
 			},
@@ -208,7 +208,11 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'PeriodFilter',
-						to: '/composants/tableaux/new-filter'
+						to: '/composants/filtres/period-filter'
+					},
+					{
+						title: 'SearchFilter',
+						to: '/composants/filtres/search-filter'
 					}
 				]
 			},

@@ -14,6 +14,7 @@
 				</VIcon>
 			</template>
 		</VTextField>
+		{{ filterSearch }}
 		<div
 			v-if="tempListSearch.length"
 			:style="filterHeight"

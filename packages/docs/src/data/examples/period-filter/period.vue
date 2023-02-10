@@ -6,7 +6,7 @@
 			:chips-limit="8"
 		>
 			<template #filter-dates="{ on, attrs }">
-				<PeriodFilter
+				<PeriodField
 					v-bind="attrs"
 					class="mb-5 mr-2 mt-2"
 					v-on="on"
@@ -19,16 +19,12 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import PeriodFilter from './PeriodFilter.vue';
 
 	interface IndexedObject<T = string> {
 		[key: string]: T;
 	};
 
 	@Component({
-		components : {
-			PeriodFilter
-		}
 	})
 	export default class FilterModuleUsage extends Vue {
 
