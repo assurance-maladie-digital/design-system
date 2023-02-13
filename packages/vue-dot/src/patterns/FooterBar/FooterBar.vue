@@ -4,7 +4,7 @@
 			...options.footer,
 			...$attrs
 		}"
-		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode, 'dark-mode': $vuetify.theme.dark }"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
 		<div
@@ -281,6 +281,17 @@
 
 		p {
 			padding: 1px 0;
+		}
+	}
+	.vd-footer-bar.theme--dark :deep() {
+		background-color: $vd-grey-darken-60 !important;
+		.vd-footer-bar-links {
+			a {
+				color: rgb(255, 255, 255) !important;
+			}
+		}
+		p {
+			color: rgba(255, 255, 255, 0.6) !important;
 		}
 	}
 </style>
