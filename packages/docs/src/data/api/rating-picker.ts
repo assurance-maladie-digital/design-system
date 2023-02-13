@@ -72,6 +72,11 @@ export const api: Api = {
 				name: 'on-close',
 				description: 'Événement émis lorsque l’utilisateur clique sur les boutons de fermeture',
 				value: `void`
+			},
+			{
+				name: 'after-first-question',
+				description: 'Événement émis lorsque l’utilisateur valide la première question',
+				value: `void`
 			}
 		]
 	}
