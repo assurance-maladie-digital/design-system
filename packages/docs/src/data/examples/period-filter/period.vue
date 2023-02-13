@@ -19,27 +19,25 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+	import { mdiCalendar } from '@mdi/js';
 
 	interface IndexedObject<T = string> {
 		[key: string]: T;
 	};
 
-	@Component({
-	})
-	export default class FilterModuleUsage extends Vue {
+	@Component
+	export default class Period extends Vue {
+		calendarIcon = mdiCalendar;
 
 		filters = [
 			{
 				name: 'dates',
 				label: 'Période',
-								description: 'Selectionnez une periode',
-
-				formatting: (value: IndexedObject): string => value.startDate + ' && ' + value.endDate,
-				value: {
-					startDate: '',
-					endDate: ''
-				},
-				chips: []
+				formatting: (value: IndexedObject): string => 'Entre ' + value[0] + ' et ' + value[1],
+				value: [],
+				chips: [],
+				limited: true,
+				icon: this.calendarIcon
 			}
 		];
 	}

@@ -12,7 +12,6 @@ import HeaderBar from './HeaderBar';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
 import RatingPicker from './RatingPicker';
-import SearchFilter from './SearchFilter';
 import PaginatedTable from './PaginatedTable';
 import PhoneField from './PhoneField';
 import SubHeader from './SubHeader';
@@ -36,7 +35,6 @@ export const patterns = {
 	PaginatedTable,
 	PhoneField,
 	SubHeader,
-	SearchFilter,
 	TableToolbar,
 	UploadWorkflow,
 	RatingPicker

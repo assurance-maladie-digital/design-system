@@ -4,13 +4,13 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import SearchFilter from '../';
+import PeriodField from '../';
 
 let wrapper: Wrapper<Vue>;
 
-describe('PeriodFilter', () => {
+describe('PeriodField', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(SearchFilter, {
+		wrapper = mountComponent(PeriodField, {
 			propsData: {
 				//
 			}

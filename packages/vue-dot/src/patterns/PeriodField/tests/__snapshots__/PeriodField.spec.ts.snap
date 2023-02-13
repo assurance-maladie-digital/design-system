@@ -2,7 +2,11 @@
 
 exports[`PeriodField renders correctly 1`] = `
 <div>
-  <datepicker-stub startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" label="date début"></datepicker-stub>
-  <datepicker-stub startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" label="date fin"></datepicker-stub>
+  <div>
+    <datepicker-stub outlined="true" startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" value="" label="Date de début"></datepicker-stub>
+  </div>
+  <div class="mt-2">
+    <datepicker-stub outlined="true" startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" value="" label="Date de fin" class="mt-8"></datepicker-stub>
+  </div>
 </div>
 `;

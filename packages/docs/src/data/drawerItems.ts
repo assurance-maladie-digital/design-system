@@ -207,12 +207,8 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Sous composant de filtre',
 				items: [
 					{
-						title: 'PeriodFilter',
-						to: '/composants/filtres/period-filter'
-					},
-					{
-						title: 'SearchFilter',
-						to: '/composants/filtres/search-filter'
+						title: 'PeriodField',
+						to: '/composants/filtres/period-field'
 					}
 				]
 			},

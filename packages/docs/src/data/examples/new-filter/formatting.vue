@@ -21,18 +21,13 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import PeriodFilter from './PeriodFilter.vue';
 
 	interface IndexedObject<T = string> {
 		[key: string]: T;
 	};
 
-	@Component({
-		components : {
-			PeriodFilter
-		}
-	})
-	export default class FilterModuleUsage extends Vue {
+	@Component
+	export default class Formating extends Vue {
 
 		filters = [
 			{
