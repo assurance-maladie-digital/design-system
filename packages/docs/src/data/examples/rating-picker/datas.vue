@@ -1,11 +1,17 @@
 <template>
-	<RatingPicker
-		:main-question="firstQuestion"
-		:questions-list="questionsList"
-		:after-validate="afterValidate"
-		@on-validate="onValidate"
-		@on-close="onClose"
-	/>
+	<div>
+		Données récupérées :
+		<br/>
+		{{ datas }}
+		<RatingPicker
+			v-model="datas"
+			:main-question="firstQuestion"
+			:questions-list="questionsList"
+			:after-validate="afterValidate"
+			@on-validate="onValidate"
+			@on-close="onClose"
+		/>
+	</div>
 </template>
 
 <script lang="ts">
@@ -16,6 +22,8 @@
 		inheritAttrs: false
 	})
 	export default class RatingPickerMultiAnswer extends Vue {
+		datas = [];
+
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',

@@ -1,9 +1,9 @@
 <template>
 	<RatingPicker
 		:main-question="firstQuestion"
-		:on-validate="onValidate"
-		:on-close="onClose"
 		:after-validate="afterValidate"
+		@on-validate="onValidate"
+		@on-close="onClose"
 	/>
 </template>
 

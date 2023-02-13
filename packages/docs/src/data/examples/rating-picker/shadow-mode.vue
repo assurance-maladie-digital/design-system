@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<RatingPicker
-			:main-question="firstQuestion"
-			:on-validate="onValidate"
-			:on-close="onClose"
 			shadow-mode
+			:main-question="firstQuestion"
 			:after-validate="afterValidate"
+			@on-validate="onValidate"
+			@on-close="onClose"
 		/>
 	</div>
 </template>
