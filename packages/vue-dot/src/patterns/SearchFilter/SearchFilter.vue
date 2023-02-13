@@ -14,7 +14,7 @@
 				</VIcon>
 			</template>
 		</VTextField>
-		{{ filterSearch }}
+		{{ value }}
 		<div
 			v-if="tempListSearch.length"
 			:style="filterHeight"
@@ -72,14 +72,6 @@
 			height: {
 				type: String,
 				default: 'auto'
-			},
-			chip: {
-				type: String,
-				default: ''
-			},
-			reset: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
@@ -87,9 +79,8 @@
 	const MixinsDeclaration = mixins(Props);
 
 	interface Item {
-		id: number;
 		name: string;
-		info: string;
+		info?: string;
 	}
 
 	@Component<SearchFilter>({
@@ -115,13 +106,6 @@
 		infoIcon = mdiInformation;
 		filterSearch = '';
 		tempListSearch: Item[] = [];
-		listSearch:  Item[] = [
-			{ id: 1, name: 'foo', info: 'foo info' },
-			{ id: 2, name: 'bar', info: '' },
-			{ id: 3, name: 'baz', info: '' },
-			{ id: 4, name: 'qux', info: 'qux info' },
-			{ id: 5, name: 'quux', info: '' }
-		];
 		selectedItems: Array<string> = [];
 		internalValue: Array<string> = [];
 
@@ -135,10 +119,6 @@
 			} else {
 				return `height: ${Number(this.height)}px; overflow-y: auto;`;
 			}
-		}
-
-		get resetValue(): boolean {
-			return this.reset;
 		}
 
 		filterResults(): void {
