@@ -71,11 +71,11 @@
 			class="step mt-2"
 			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowMode}"
 		>
-			<h6
-				class="mb-7 ml-4 mt-3"
+			<p
+				class="mb-7 ml-4 mt-3 font-weight-bold"
 			>
 				{{ locales.more }}
-			</h6>
+			</p>
 			<div
 				v-for="(question, index) in questionsList"
 				:key="index"
@@ -138,6 +138,7 @@
 					v-if="!validated"
 					class="mr-2 mt-5 close-button"
 					color="primary"
+					:disabled="secondStep.length == 0"
 					depressed
 					@click="validateSecondStep"
 				>
@@ -206,7 +207,7 @@
 	@Component({
 		model: {
 			prop: 'datas',
-			event: 'change'
+			event: 'on-validate'
 		},
 		components: {
 			EmotionPicker,
@@ -253,6 +254,8 @@
 		updateFirstStep(result: StepItem): void {
 			this.firstStep = result;
 			this.$emit('change', [this.firstStep]);
+			this.afterFirstQuestion();
+			this.validateFirstStep();
 		}
 
 		updateSecondStep(result: StepItem): void {
@@ -262,7 +265,6 @@
 			} else {
 				this.secondStep.push(result);
 			}
-			this.$emit('change', [this.firstStep, ...this.secondStep]);
 		}
 
 		checkBackgroundGreen(number: number): boolean {
@@ -271,16 +273,23 @@
 			} else {
 				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
 			}
+		}
 
+		validateFirstStep(): void {
+			this.$emit('on-validate', [this.firstStep]);
 		}
 
 		validateSecondStep(): void {
-			this.$emit('on-validate');
+			this.$emit('on-validate', [this.firstStep, ...this.secondStep]);
 			this.validated = true;
 		}
 
 		onClose(): void {
 			this.$emit('on-close');
+		}
+
+		afterFirstQuestion(): void {
+			this.$emit('after-first-question');
 		}
 	}
 </script>
@@ -288,7 +297,7 @@
 <style lang="scss" scoped>
 @import '@cnamts/design-tokens/dist/tokens';
 
-h6 {
+p {
 	font-size: 16px;
 }
 .step {

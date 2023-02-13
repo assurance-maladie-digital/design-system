@@ -71,6 +71,12 @@ Il est possible d'ajouter plusieurs question secondaire en les ajoutants dans le
 
 <doc-example file="rating-picker/multi-questions"></doc-example>
 
+## Récupération des données
+
+Les données peuvent être récupérées par l'intermédiaire d'un v-model, `datas` dans cet exemple.
+
+<doc-example file="rating-picker/datas"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">

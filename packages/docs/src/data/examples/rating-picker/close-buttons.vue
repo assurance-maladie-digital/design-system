@@ -1,10 +1,10 @@
 <template>
 	<RatingPicker
+		hide-close-buttons
 		:main-question="firstQuestion"
 		:questions-list="questionsList"
-		:on-validate="onValidate"
-		hide-close-buttons
 		:after-validate="afterValidate"
+		@on-validate="onValidate"
 	/>
 </template>
 
