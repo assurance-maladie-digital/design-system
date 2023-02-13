@@ -254,6 +254,7 @@
 			this.firstStep = result;
 			this.$emit('change', [this.firstStep]);
 			this.afterFirstQuestion();
+			this.validateFirstStep();
 		}
 
 		updateSecondStep(result: StepItem): void {
@@ -263,7 +264,6 @@
 			} else {
 				this.secondStep.push(result);
 			}
-			this.$emit('change', [this.firstStep, ...this.secondStep]);
 		}
 
 		checkBackgroundGreen(number: number): boolean {
@@ -272,6 +272,10 @@
 			} else {
 				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
 			}
+		}
+
+		validateFirstStep(): void {
+			this.$emit('on-validate', [this.firstStep]);
 		}
 
 		validateSecondStep(): void {

@@ -1,8 +1,7 @@
 <template>
 	<div>
 		Données récupérées :
-		<br/>
-		{{ datas }}
+		<pre>{{ datas }}</pre>
 		<RatingPicker
 			v-model="datas"
 			:main-question="firstQuestion"
