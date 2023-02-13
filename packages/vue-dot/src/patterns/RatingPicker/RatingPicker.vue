@@ -138,6 +138,7 @@
 					v-if="!validated"
 					class="mr-2 mt-5 close-button"
 					color="primary"
+					:disabled="secondStep.length == 0"
 					depressed
 					@click="validateSecondStep"
 				>
