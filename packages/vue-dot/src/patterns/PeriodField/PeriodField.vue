@@ -1,32 +1,37 @@
 <template>
 	<div>
-		<DatePicker
-			v-model="internalValue.startDate"
-			label="date début"
-			@change="emitChangeEvent"
-		/>
+		<div>
+			<DatePicker
+				v-model="internalValue[0]"
+				label="Date de début"
+				outlined
+				@change="emitChangeEvent(internalValue)"
+			/>
+		</div>
 
-		<DatePicker
-			v-model="internalValue.endDate"
-			label="date fin"
-			@change="emitChangeEvent"
-		/>
+		<div class="mt-2">
+			<DatePicker
+				v-model="internalValue[1]"
+				label="Date de fin"
+				outlined
+				class="mt-8"
+				@change="emitChangeEvent(internalValue)"
+			/>
+		</div>
 	</div>
 </template>
-
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component from 'vue-class-component';
+	import { PropType } from 'vue/types/v3-component-props';
 
-	interface InternalValue {
-		startDate: string;
-		endDate: string;
-	}
+	import dayjs from 'dayjs';
+	const DATE_FORMAT = 'DD/MM/YYYY';
 
 	const Props = Vue.extend({
 		props: {
 			value: {
-				type: Object as PropType<InternalValue>,
+				type: Array as PropType<string[]>,
 				required: true
 			}
 		}
@@ -34,17 +39,17 @@
 
 	@Component<PeriodField>({
 		watch: {
-			value(newValue: InternalValue) {
+			value(newValue: string[]) {
 				this.internalValue = newValue;
 			}
 		}
 	})
 	export default class PeriodField extends Props {
-		internalValue: InternalValue = this.value;
+		internalValue: string[] = this.value;
 
-		emitChangeEvent(): void {
-			if (this.internalValue.startDate && this.internalValue.endDate) {
-				this.$emit('change', this.internalValue);
+		emitChangeEvent(internalValue: string[]): void {
+			if (internalValue[0] && internalValue[1]) {
+				this.$emit('change', [dayjs(internalValue[0]).format(DATE_FORMAT), internalValue[1]]);
 			}
 		}
 	}
