@@ -1,23 +1,30 @@
 ---
 title: SearchFilter
-description: Le sous-composant `SearchFilter` est utilisé pour permettre à l’utilisateur de sélectionner des filtres.
+description: Le sous-composant `SearchFilter` est utilisé avec le pattern `NewFilter` pour permettre à l’utilisateur de filtrer des données.
 ---
 
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
-### Mode simple ou mode complexe
+<doc-example file="search-filter/usage"></doc-example>
 
-Vous pouvez utiliser le composant en **mode simple** si vous avez peu de filtres à ajouter en utilisant `:simple-mode="true"`.
-Si vous avez beaucoup de filtres, il vaudra mieux utiliser le **mode complexe** en passant `simple-mode` à `false`.
+### Mode multiple
 
-</doc-usage><doc-example file="search-filter/search-filter"></doc-example>
+Vous pouvez activer le mode multiple en passant la prop `multiple` à true.
+
+<doc-example file="search-filter/multiple"></doc-example>
+
+### Customisation des labels
+
+Vous pouvez afficher les options sous forme de chip de couleur en passant la prop `label-chip` à true.
+
+<doc-example file="search-filter/label"></doc-example>
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="new-filter"></doc-api>
+<doc-api name="search-filter"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>
