@@ -11,7 +11,7 @@ let wrapper: Wrapper<Vue>;
 const file = [
 	{
 		id: '1',
-		title: 'test'
+		title: 'file1'
 	}
 ];
 
