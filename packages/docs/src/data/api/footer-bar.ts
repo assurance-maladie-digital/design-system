@@ -141,7 +141,13 @@ export const api: Api = {
 	divider: 'VDivider',
 	routerLink: 'RouterLink'
 }`
-			}
+			},
+			{
+				name: 'dark',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche le mode sombre.'
+			},
 		],
 		slots: [
 			{
