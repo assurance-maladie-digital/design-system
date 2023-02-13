@@ -293,5 +293,11 @@
 		p {
 			color: rgba(255, 255, 255, 0.6) !important;
 		}
+		.primary--text {
+			color: rgba(255, 255, 255, 0.6) !important;
+		}
+		svg {
+			fill: rgba(255, 255, 255) !important;
+		}
 	}
 </style>
