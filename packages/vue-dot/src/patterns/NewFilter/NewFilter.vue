@@ -153,8 +153,6 @@
 	export default class NewFilter extends MixinsDeclaration {
 		locales = locales;
 		filterIcon = mdiFilterVariant;
-		upIcon = mdiChevronUp;
-		downIcon = mdiChevronDown;
 		filtersCount = 0;
 
 		filters: FilterItem[] = this.value;
@@ -171,22 +169,6 @@
 
 		closeSidebar(): void {
 			this.showSideBar = false;
-		}
-
-		resetAllFilters(): void {
-			for (let index = 0; index < this.filters.length; index++) {
-				this.$set(this.filters[index], 'chips', []);
-			}
-
-			this.$emit('update:value', this.filters);
-		}
-
-		removeChip(event: object): void {
-			this.$emit('remove-chip', event);
-		}
-
-		resetFilter(): void {
-			this.$emit('reset-filter');
 		}
 
 		onChange(event: unknown, filter: FilterItem): void {

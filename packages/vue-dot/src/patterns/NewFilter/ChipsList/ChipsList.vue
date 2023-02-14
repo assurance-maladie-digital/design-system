@@ -81,7 +81,6 @@
 		locales = locales;
 		deleteIcon = mdiWindowClose;
 		upIcon = mdiChevronUp;
-		downIcon = mdiChevronDown;
 
 		get showExpandChip(): boolean {
 			const currentFilter = this.filter;
