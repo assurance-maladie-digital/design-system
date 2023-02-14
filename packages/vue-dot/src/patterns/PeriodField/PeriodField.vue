@@ -49,7 +49,7 @@
 
 		emitChangeEvent(internalValue: string[]): void {
 			if (internalValue[0] && internalValue[1]) {
-				this.$emit('change', [dayjs(internalValue[0]).format(DATE_FORMAT), internalValue[1]]);
+				this.$emit('change', [dayjs(internalValue[0]).format(DATE_FORMAT), dayjs(internalValue[1]).format(DATE_FORMAT)]);
 			}
 		}
 	}
