@@ -12,7 +12,14 @@ describe('FilterSideBar', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(FilterSideBar, {
 			propsData: {
-				filters: [],
+				filters: [
+					{
+						name: 'nom',
+						label: 'Nom',
+						value: 'test',
+						chips: []
+					}
+				],
 				chipsLimit: 4
 			}
 		});

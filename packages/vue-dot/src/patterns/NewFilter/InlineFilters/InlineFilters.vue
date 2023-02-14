@@ -25,7 +25,7 @@
 						color="white"
 						small
 					>
-						<span :class="filters[index]?.chips.length !== 0 ?? 'mb-2'">
+						<span :class="filters[index]?.chips.length !== 0 ? '' : 'mb-2'">
 							{{ filters[index]?.chips.length }}
 						</span>
 					</VChip>
