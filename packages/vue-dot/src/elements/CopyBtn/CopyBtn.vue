@@ -9,6 +9,7 @@
 				<VBtn
 					v-bind="options.btn"
 					:aria-label="label"
+					role="button"
 					v-on="on"
 					@click="copy"
 				>

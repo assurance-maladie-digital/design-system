@@ -5,6 +5,7 @@
 		text
 		color="primary"
 		class="vd-back-btn text-none px-0"
+		role="button"
 		v-on="$listeners"
 	>
 		<slot name="icon">
