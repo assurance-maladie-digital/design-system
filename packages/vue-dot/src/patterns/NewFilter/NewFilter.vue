@@ -155,6 +155,7 @@
 		filterIcon = mdiFilterVariant;
 		upIcon = mdiChevronUp;
 		downIcon = mdiChevronDown;
+		filtersCount = 0;
 
 		filters: FilterItem[] = this.value;
 
