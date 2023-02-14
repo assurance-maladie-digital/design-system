@@ -162,21 +162,11 @@
 
 		get maskNumber(): string {
 			const maskNumber = '# ## ## #X ### ###';
-
-			if (this.nirNumber === 13) {
-				return maskNumber;
-			}
-
 			return maskNumber;
 		}
 
 		get maskKey(): string {
 			const maskKey = '##';
-
-			if (this.nirKey === 2) {
-				return maskKey;
-			}
-
 			return maskKey;
 		}
 
