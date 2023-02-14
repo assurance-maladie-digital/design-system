@@ -6,7 +6,7 @@
 				permanent
 				absolute
 				right
-				class="pt-2 d-flex flex-column justify-space-between"
+				class="d-flex flex-column justify-space-between"
 			>
 				<VExpansionPanels
 					accordion
@@ -19,7 +19,7 @@
 					>
 						<VExpansionPanelHeader class="d-block">
 							<div
-								class="header-title d-flex justify-space-between mt-3 mx-4"
+								class="header-title d-flex justify-space-between mt-4 mx-4"
 								:class="{
 									'mb-2': !filters[index].chips.length
 								}"

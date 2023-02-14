@@ -55,7 +55,7 @@
 		</VBtn>
 
 		<FiltersSideBar
-			v-if="showSideBar"
+			v-if="showSideBar && !simpleMode"
 			:filters="filters"
 			:apply-button="applyButton"
 			:chips-limit="chipsLimit"
