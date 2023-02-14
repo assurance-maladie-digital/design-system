@@ -15,10 +15,10 @@ describe('PeriodField', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(PeriodField, {
 			propsData: {
-				value: {
-					startDate: null,
-					endDate: null
-				}
+				value: [
+					'2020-01-01',
+					'2020-01-31'
+				]
 			}
 		});
 
