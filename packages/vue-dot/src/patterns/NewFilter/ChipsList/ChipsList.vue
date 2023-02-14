@@ -61,7 +61,7 @@
 
 	import { locales } from '../locales';
 	import { FilterItem } from '../types';
-	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
+	import { mdiChevronUp, mdiWindowClose } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {

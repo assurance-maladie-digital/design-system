@@ -91,7 +91,7 @@
 
 	import { FilterItem } from './types';
 	import { locales } from './locales';
-	import { mdiChevronUp, mdiChevronDown, mdiFilterVariant } from '@mdi/js';
+	import { mdiFilterVariant } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
