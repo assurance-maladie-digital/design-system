@@ -30,7 +30,7 @@
 			/>
 			<div class="d-flex justify-end">
 				<div
-					v-if="firstStep.result !== null"
+					v-if="firstStep.result !== null && !showError"
 					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
 					:class="!shadowMode ? 'border-green' : ''"
 				>
@@ -41,6 +41,18 @@
 						{{ checkIcon }}
 					</VIcon>
 					<span class="turquoise-darken-60--text">{{ afterValidate[0].message }}</span>
+				</div>
+				<div
+					v-if="firstStep.result !== null && showError"
+					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
+				>
+					<VIcon
+						color="error"
+						class="mr-4"
+					>
+						{{ warningIcon }}
+					</VIcon>
+					<span class="error--text">{{ errorText }}</span>
 				</div>
 				<VBtn
 					v-if="firstStep.result === null && !hideCloseButtons"
@@ -108,6 +120,7 @@
 				</div>
 			</div>
 
+			<!-- validated -->
 			<div
 				v-if="validated"
 				class="d-flex justify-center align-center border-green py-3 mx-6"
@@ -119,6 +132,20 @@
 					{{ checkIcon }}
 				</VIcon>
 				<span class="turquoise-darken-60--text">{{ afterValidate[1].message }}</span>
+			</div>
+
+			<!-- error -->
+			<div
+				v-if="showError"
+				class="d-flex justify-center align-center border-red py-3 mx-6"
+			>
+				<VIcon
+					color="error"
+					class="mr-4"
+				>
+					{{ warningIcon }}
+				</VIcon>
+				<span class="error--text">{{ errorText }}</span>
 			</div>
 
 			<div
@@ -154,15 +181,16 @@
 	import Component, { mixins } from 'vue-class-component';
 	import { locales } from './locales';
 
-	import { StepItem } from './types';
-	import { AfterValidateItem } from './types';
+	import { StepItem, AfterValidateItem } from './types';
 
 	import EmotionPicker from './EmotionPicker';
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
 	import MultipleAnswers from './MultipleAnswers';
 	import TextAreaForm from './TextAreaForm';
+
 	import { mdiCheckCircleOutline } from '@mdi/js';
+	import { mdiAlertCircleOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -198,6 +226,14 @@
 						greenBackground: false
 					}
 				]
+			},
+			errorValidate: {
+				type: Function,
+				default: () => undefined
+			},
+			errorText: {
+				type: String,
+				default: 'Une erreur est survenue, désolé pour la gêne occasionnée.'
 			}
 		}
 	});
@@ -220,6 +256,7 @@
 	export default class RatingPicker extends MixinsDeclaration {
 		locales = locales;
 		checkIcon = mdiCheckCircleOutline;
+		warningIcon = mdiAlertCircleOutline;
 		question = {
 			type: '',
 			answers: []
@@ -232,11 +269,18 @@
 		secondStep: StepItem[] = [];
 
 		validated = false;
+		showError = false;
 
 		afterValidateItem: AfterValidateItem = {
 			message: '',
 			greenBackground: false
 		};
+
+		mounted() {
+			if (this.errorValidate) {
+				this.showError = true;
+			}
+		}
 
 		get checkFirstStep(): boolean {
 			if (this.firstStep.result !== null) {
@@ -310,6 +354,10 @@ p {
 	}
 	.border-green {
 		border: 1px solid $vd-turquoise-darken-40;
+		border-radius: 4px;
+	}
+	.border-red {
+		border: 1px solid $vd-error;
 		border-radius: 4px;
 	}
 }
