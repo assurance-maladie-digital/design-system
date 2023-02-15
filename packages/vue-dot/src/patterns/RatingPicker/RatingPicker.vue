@@ -122,8 +122,8 @@
 
 			<!-- validated -->
 			<div
-				v-if="validated"
-				class="d-flex justify-center align-center border-green py-3 mx-6"
+				v-if="validated && !showError"
+				class="d-flex justify-center align-center border-green px-3 py-3 mx-6"
 			>
 				<VIcon
 					color="success"
@@ -136,8 +136,8 @@
 
 			<!-- error -->
 			<div
-				v-if="showError"
-				class="d-flex justify-center align-center border-red py-3 mx-6"
+				v-if="validated && showError"
+				class="d-flex justify-center align-center border-red px-3 py-3 mx-6"
 			>
 				<VIcon
 					color="error"
