@@ -33,7 +33,7 @@
 					>
 						{{ warningIcon }}
 					</VIcon>
-					<span class="error--text">{{ errorMessage }}</span>
+					<span class="error--text">{{ afterValidate[0].error }}</span>
 				</div>
 				<VBtn
 					v-if="firstStep.result === null && !hideCloseButtons"
@@ -100,7 +100,7 @@
 				>
 					{{ warningIcon }}
 				</VIcon>
-				<span class="error--text">{{ errorMessage }}</span>
+				<span class="error--text">{{ afterValidate[1].error }}</span>
 			</div>
 
 			<div
@@ -181,16 +181,16 @@
 					{
 						message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
 						greenBackground: false
+					},
+					{
+						message: 'Erreur lors de la validation de votre avis.',
+						redBackground: false
 					}
 				]
 			},
 			errorValidate: {
 				type: Boolean,
 				default: false
-			},
-			errorMessage: {
-				type: String,
-				default: 'Une erreur est survenue, désolé pour la gêne occasionnée.'
 			}
 		}
 	});
@@ -229,7 +229,8 @@
 		showError = false;
 		afterValidateItem: AfterValidateItem = {
 			message: '',
-			greenBackground: false
+			greenBackground: false,
+			redBackground: false
 		};
 
 		mounted() {
@@ -265,16 +266,16 @@
 		}
 		checkBackgroundGreen(number: number): boolean {
 			if (number) {
-				return this.validated !== false && !this.showError ? true : false;
+				return this.validated !== false && this.afterValidate[number].greenBackground ? true : false;
 			} else {
-				return this.firstStep.result !== null && !this.showError ? true : false;
+				return this.firstStep.result !== null && this.afterValidate[number].greenBackground ? true : false;
 			}
 		}
 		checkBackgroundRed(number: number): boolean {
 			if (number) {
-				return this.validated !== false && this.showError ? true : false;
+				return this.validated !== false && this.showError && this.afterValidate[number].redBackground ? true : false;
 			} else {
-				return this.firstStep.result !== null && this.showError ? true : false;
+				return this.firstStep.result !== null && this.showError && this.afterValidate[number].redBackground ? true : false;
 			}
 		}
 		validateFirstStep(): void {

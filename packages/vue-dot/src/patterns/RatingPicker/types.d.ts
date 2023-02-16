@@ -5,5 +5,7 @@ export interface StepItem {
 
 export interface AfterValidateItem {
 	message: string;
+	error: string;
 	greenBackground: boolean;
+	redBackground: boolean;
 }

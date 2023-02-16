@@ -33,11 +33,15 @@
 		afterValidate = [
 			{
 				message: 'Merci !',
-				greenBackground: false
+				error: 'Nous rencontrons un problème sur l\'enregistrement de votre avis.',
+				greenBackground: false,
+				redBackground: false
 			},
 			{
 				message: 'Merci d\'avoir donné plus d\'information',
-				greenBackground: true
+				error: 'Nous rencontrons un problème sur l\'enregistrement de votre avis.',
+				greenBackground: true,
+				redBackground: true
 			}
 		];
 
