@@ -33,7 +33,7 @@
 					>
 						{{ warningIcon }}
 					</VIcon>
-					<span class="error--text">{{ errorText }}</span>
+					<span class="error--text">{{ errorMessage }}</span>
 				</div>
 				<VBtn
 					v-if="firstStep.result === null && !hideCloseButtons"
@@ -100,7 +100,7 @@
 				>
 					{{ warningIcon }}
 				</VIcon>
-				<span class="error--text">{{ errorText }}</span>
+				<span class="error--text">{{ errorMessage }}</span>
 			</div>
 
 			<div
@@ -188,7 +188,7 @@
 				type: Boolean,
 				default: false
 			},
-			errorText: {
+			errorMessage: {
 				type: String,
 				default: 'Une erreur est survenue, désolé pour la gêne occasionnée.'
 			}
