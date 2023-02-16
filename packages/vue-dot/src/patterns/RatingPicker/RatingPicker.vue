@@ -26,6 +26,7 @@
 				<div
 					v-if="firstStep.result !== null && showError"
 					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
+					:class="!shadowMode ? 'border-red' : ''"
 				>
 					<VIcon
 						color="error"
@@ -80,7 +81,8 @@
 			</div>
 			<div
 				v-if="validated && !showError"
-				class="d-flex justify-center align-center border-green px-3 py-3 mx-6"
+				class="d-flex justify-center align-center px-3 py-3 mx-6"
+				:class="!shadowMode ? 'border-green' : ''"
 			>
 				<VIcon
 					color="success"
@@ -92,7 +94,8 @@
 			</div>
 			<div
 				v-if="validated && showError"
-				class="d-flex justify-center align-center border-red px-3 py-3 mx-6"
+				class="d-flex justify-center align-center px-3 py-3 mx-6"
+				:class="!shadowMode ? 'border-red' : ''"
 			>
 				<VIcon
 					color="error"
