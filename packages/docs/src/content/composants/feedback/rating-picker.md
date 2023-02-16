@@ -109,6 +109,11 @@ Pour l'activer, il faut utiliser la props `hide-close-buttons`.
 
 <doc-example file="rating-picker/close-buttons"></doc-example>
 
+Il est possible d'afficher un message d'erreur si la récupération des informations ne fonctionne plus.
+Pour l'activer, il faut utiliser la props `error-validate`. Le message d'erreur peux être personnalisé via la props `error-message`.
+
+<doc-example file="rating-picker/error"></doc-example>
+
 </doc-tab-item>
 
 </doc-tabs>

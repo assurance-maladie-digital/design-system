@@ -3,6 +3,8 @@
 		:main-question="firstQuestion"
 		:questions-list="questionsList"
 		:after-validate="afterValidate"
+		:error-validate="errorValidate()"
+		error-message="Nous rencontrons un problème sur l'enregistrement de votre avis. Nous vous excusons pour la gêne occasionnée."
 		@on-validate="onValidate"
 		@on-close="onClose"
 	/>
@@ -49,9 +51,11 @@
 		onValidate(): void {
 			console.log('Validation');
 		}
-
 		onClose(): void {
 			console.log('Fermeture');
+		}
+		errorValidate(): boolean {
+			return true;
 		}
 	}
 </script>

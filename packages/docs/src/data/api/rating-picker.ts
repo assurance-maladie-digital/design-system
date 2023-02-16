@@ -60,6 +60,17 @@ export const api: Api = {
 		greenBackground: false
 	}
 ]`
+			},
+			{
+				name: 'error-validate',
+				type: 'Function',
+				description: 'Définit un message et un fond rouge après une erreur de validation',
+				default: `() => return false;`
+			},
+			{
+				name: 'error-message',
+				type: 'string',
+				description: 'Définit le texte du message d’erreur',
 			}
 		],
 		events: [
