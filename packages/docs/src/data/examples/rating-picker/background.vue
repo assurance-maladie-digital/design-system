@@ -15,7 +15,7 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class RatingPickerGreenBackground extends Vue {
+	export default class RatingPickerBackground extends Vue {
 		firstQuestion = {
 			name: 'first-step',
 			type: 'emotions',

@@ -4,7 +4,6 @@
 		:questions-list="questionsList"
 		:after-validate="afterValidate"
 		:error-validate="errorValidate()"
-		error-message="Nous rencontrons un problème sur l'enregistrement de votre avis. Nous vous excusons pour la gêne occasionnée."
 		@on-validate="onValidate"
 		@on-close="onClose"
 	/>
@@ -36,11 +35,15 @@
 		afterValidate = [
 			{
 				message: 'Merci !',
-				greenBackground: false
+				error: 'Nous rencontrons un problème sur l\'enregistrement de votre avis.',
+				greenBackground: true,
+				redBackground: true
 			},
 			{
 				message: 'Merci d\'avoir donné plus d\'information',
-				greenBackground: false
+				error: 'Nous rencontrons un problème sur l\'enregistrement de votre avis.',
+				greenBackground: true,
+				redBackground: true
 			}
 		];
 

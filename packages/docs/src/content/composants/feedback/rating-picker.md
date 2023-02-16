@@ -98,11 +98,12 @@ Pour l'activer, il faut utiliser la props `shadow-mode`.
 
 <doc-example file="rating-picker/shadow-mode"></doc-example>
 
-Le fond vert après validation n'est pas actif par defaut.
+Le fond de couleur après validation n'est pas actif par défaut.
 Pour l'activer, il faut ajouter `true` dans les objets `afterValidate`.
-Les deux parties peuvent avoir un fond différent.
+Les deux parties peuvent avoir un fond différent. 
+Le fond peux être vert lors de la validation et rouge s'il y a une erreur.
 
-<doc-example file="rating-picker/green-background"></doc-example>
+<doc-example file="rating-picker/background"></doc-example>
 
 Il est possible de masquer les boutons de fermeture.
 Pour l'activer, il faut utiliser la props `hide-close-buttons`.

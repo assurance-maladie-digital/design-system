@@ -53,24 +53,23 @@ export const api: Api = {
 				default: `[
 	{
 		message: 'Merci pour votre réponse',
-		greenBackground: false
+		error: 'Nous rencontrons un problème sur l\'enregistrement de votre avis.',
+		greenBackground: false,
+		redBackground: false
 	},
 	{
 		message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
-		greenBackground: false
+		error: 'Nous rencontrons un problème sur l\'enregistrement de votre avis.',
+		greenBackground: false,
+		redBackground: false
 	}
 ]`
 			},
 			{
 				name: 'error-validate',
 				type: 'Function',
-				description: 'Définit un message et un fond rouge après une erreur de validation',
+				description: 'Affiche un message d\'erreur et un fond rouge après une erreur de validation',
 				default: `() => return false;`
-			},
-			{
-				name: 'error-message',
-				type: 'string',
-				description: 'Définit le texte du message d’erreur',
 			}
 		],
 		events: [

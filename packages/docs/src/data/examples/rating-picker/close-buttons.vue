@@ -34,11 +34,11 @@
 		afterValidate = [
 			{
 				message: 'Merci !',
-				greenBackground: true
+				greenBackground: false
 			},
 			{
 				message: 'Merci d\'avoir donné plus d\'information',
-				greenBackground: true
+				greenBackground: false
 			}
 		];
 
