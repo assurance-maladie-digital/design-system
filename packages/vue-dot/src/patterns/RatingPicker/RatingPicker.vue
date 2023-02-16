@@ -1,32 +1,13 @@
 <template>
 	<div class="vd-rating-picker">
-		<!--first step-->
+		<!-- Step 1 -->
 		<div
 			class="step"
-			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowMode}"
+			:class="{ 'green-background': checkBackgroundGreen(0), 'red-background': checkBackgroundRed(0), 'shadow-box': shadowMode }"
 		>
-			<EmotionPicker
-				v-if="mainQuestion.type === 'emotions'"
-				class="ma-6"
-				step-name="mainQuestion"
-				main-question
-				:simple-mode="mainQuestion.simpleMode"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<StarsPicker
-				v-if="mainQuestion.type === 'stars'"
-				class="ma-6"
-				step-name="mainQuestion"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<NumberPicker
-				v-if="mainQuestion.type === 'numbers'"
-				class="ma-6"
-				step-name="mainQuestion"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
+			<RatingPickerStep1
+				:main-question="mainQuestion"
+				@update-first-step="updateFirstStep"
 			/>
 			<div class="d-flex justify-end">
 				<div
@@ -76,51 +57,27 @@
 				</VBtn>
 			</div>
 		</div>
-
-		<!--second step-->
+		<!-- Step 2 -->
 		<div
 			v-if="questionsList.length && checkFirstStep"
 			class="step mt-2"
-			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowMode}"
+			:class="{ 'green-background': checkBackgroundGreen(1), 'red-background': checkBackgroundRed(1), 'shadow-box': shadowMode }"
 		>
-			<p
-				class="mb-7 ml-4 mt-3 font-weight-bold"
-			>
+			<p class="mb-7 ml-4 mt-3 font-weight-bold">
 				{{ locales.more }}
 			</p>
 			<div
 				v-for="(question, index) in questionsList"
 				:key="index"
 			>
-				<div v-if="index <= secondStep.length">
-					<EmotionPicker
-						v-if="question.type === 'emotions'"
-						class="ma-6"
-						step-name="secondStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-					<MultipleAnswers
-						v-if="question.type === 'multi'"
-						class="ma-6"
-						step-name="thirtStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-					<TextAreaForm
-						v-if="question.type === 'text-area'"
-						class="ma-6"
-						step-name="thirtStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-				</div>
+				<RatingPickerStep2
+					v-if="index <= secondStep.length"
+					:question="question"
+					:index="index"
+					:validated="validated"
+					@update-second-step="updateSecondStep"
+				/>
 			</div>
-
-			<!-- validated -->
 			<div
 				v-if="validated && !showError"
 				class="d-flex justify-center align-center border-green px-3 py-3 mx-6"
@@ -133,8 +90,6 @@
 				</VIcon>
 				<span class="turquoise-darken-60--text">{{ afterValidate[1].message }}</span>
 			</div>
-
-			<!-- error -->
 			<div
 				v-if="validated && showError"
 				class="d-flex justify-center align-center border-red px-3 py-3 mx-6"
@@ -179,10 +134,9 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
 	import { locales } from './locales';
-
 	import { StepItem, AfterValidateItem } from './types';
-
 	import EmotionPicker from './EmotionPicker';
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
@@ -191,6 +145,9 @@
 
 	import { mdiCheckCircleOutline } from '@mdi/js';
 	import { mdiAlertCircleOutline } from '@mdi/js';
+
+	import RatingPickerStep1 from './RatingPickerStep1.vue';
+	import RatingPickerStep2 from './RatingPickerStep2.vue';
 
 	const Props = Vue.extend({
 		props: {
@@ -228,8 +185,8 @@
 				]
 			},
 			errorValidate: {
-				type: Function,
-				default: () => undefined
+				type: Boolean,
+				default: false
 			},
 			errorText: {
 				type: String,
@@ -246,6 +203,8 @@
 			event: 'on-validate'
 		},
 		components: {
+			RatingPickerStep2,
+			RatingPickerStep1,
 			EmotionPicker,
 			StarsPicker,
 			NumberPicker,
@@ -261,16 +220,13 @@
 			type: '',
 			answers: []
 		};
-
 		firstStep: StepItem = {
 			step: '',
 			result: null
 		};
 		secondStep: StepItem[] = [];
-
 		validated = false;
 		showError = false;
-
 		afterValidateItem: AfterValidateItem = {
 			message: '',
 			greenBackground: false
@@ -281,7 +237,6 @@
 				this.showError = true;
 			}
 		}
-
 		get checkFirstStep(): boolean {
 			if (this.firstStep.result !== null) {
 				if (this.mainQuestion.type === 'emotions') {
@@ -294,14 +249,12 @@
 			}
 			return false;
 		}
-
 		updateFirstStep(result: StepItem): void {
 			this.firstStep = result;
 			this.$emit('change', [this.firstStep]);
 			this.afterFirstQuestion();
 			this.validateFirstStep();
 		}
-
 		updateSecondStep(result: StepItem): void {
 			const alreadyExist = this.secondStep.find(el => el.step === result.step);
 			if (alreadyExist) {
@@ -310,28 +263,38 @@
 				this.secondStep.push(result);
 			}
 		}
-
 		checkBackgroundGreen(number: number): boolean {
 			if (number) {
-				return this.afterValidate[number].greenBackground && this.validated ? true : false;
+				return this.validated !== false && !this.showError ? true : false;
 			} else {
-				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
+				return this.firstStep.result !== null && !this.showError ? true : false;
 			}
 		}
-
+		checkBackgroundRed(number: number): boolean {
+			if (number) {
+				return this.validated !== false && this.showError ? true : false;
+			} else {
+				return this.firstStep.result !== null && this.showError ? true : false;
+			}
+		}
 		validateFirstStep(): void {
-			this.$emit('on-validate', [this.firstStep]);
+			if (this.showError === false) {
+				this.$emit('on-validate', [this.firstStep]);
+				return;
+			}
+			return;
 		}
-
 		validateSecondStep(): void {
-			this.$emit('on-validate', [this.firstStep, ...this.secondStep]);
 			this.validated = true;
+			if (this.showError === false) {
+				this.$emit('on-validate', [this.firstStep, ...this.secondStep]);
+				return;
+			}
+			return;
 		}
-
 		onClose(): void {
 			this.$emit('on-close');
 		}
-
 		afterFirstQuestion(): void {
 			this.$emit('after-first-question');
 		}
@@ -340,7 +303,6 @@
 
 <style lang="scss" scoped>
 @import '@cnamts/design-tokens/dist/tokens';
-
 p {
 	font-size: 16px;
 }
@@ -348,7 +310,6 @@ p {
 	max-width: 450px !important;
 	padding: 16px;
 	border-radius: 8px;
-
 	.close-button {
 		text-transform: none;
 	}
@@ -366,6 +327,9 @@ p {
 }
 .green-background {
 	background-color: $vd-turquoise-lighten-97;
+}
+.red-background {
+	background-color: rgba($vd-error, 0.05);
 }
 .v-icon {
 	min-width: 24px;
