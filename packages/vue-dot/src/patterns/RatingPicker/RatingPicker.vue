@@ -232,6 +232,7 @@
 		showError = false;
 		afterValidateItem: AfterValidateItem = {
 			message: '',
+			error: '',
 			greenBackground: false,
 			redBackground: false
 		};
