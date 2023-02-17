@@ -23,6 +23,13 @@ Vous pouvez masquer les réseaux sociaux ou le logo de l’Assurance Maladie en 
 
 <doc-example file="footer-bar/hide-social-media-links"></doc-example>
 
+#### Sous composant - liste adaptative
+
+Vous pouvez utiliser le sous composant `CollapseList` pour afficher des listes d'élément dans le `footer-bar`.
+Cette liste affiche tout le contenu sur les grands écrans et une liste accordéon sur mobile.
+
+<doc-example file="footer-bar/collapse-list"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
