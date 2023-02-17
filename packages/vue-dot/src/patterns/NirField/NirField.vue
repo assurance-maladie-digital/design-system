@@ -236,7 +236,7 @@
 		}
 
 		setFocus(): void {
-			if (this.internalValueNumber?.length === this.nirNumber) {
+			if (this.internalValueNumber?.length === this.nirNumber && this.keyRequired) {
 				const keyFieldRef = this.$refs.keyField as HTMLInputElement;
 				keyFieldRef.focus();
 			}
