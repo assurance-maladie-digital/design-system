@@ -1,4 +1,5 @@
 export const config = {
 	persistentHint: true,
-	validateOnBlur: true
+	validateOnBlur: true,
+	outlined: true
 };
