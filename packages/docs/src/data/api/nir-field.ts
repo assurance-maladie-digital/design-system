@@ -13,7 +13,7 @@ export const api: Api = {
 				name: 'nir-number',
 				type: 'number',
 				default: 15,
-				description: 'La longueur du NIR à saisir (13 caractères).'
+				description: 'La longueur du NIR à saisir (13 ou 15 caractères).'
 			},
 			{
 				name: 'nir-key',
