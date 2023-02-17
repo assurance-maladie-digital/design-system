@@ -51,16 +51,16 @@ export const drawerItems: DrawerItem[] = [
 				to: '/fondamentaux/accessibilite'
 			},
 			{
-				title: 'Couleurs',
-				to: '/fondamentaux/couleurs'
+				title: "Logo",
+				to: "/fondamentaux/logo",
 			},
 			{
 				title: 'Design Tokens',
 				to: '/fondamentaux/design-tokens'
 			},
 			{
-				title: 'Logo',
-				to: '/fondamentaux/logo'
+				title: "Éco-conception",
+				to: "/fondamentaux/eco-conception",
 			},
 			{
 				title: 'Éco-conception',
@@ -115,8 +115,12 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Boutons',
 				items: [
 					{
-						title: 'BackBtn',
-						to: '/composants/boutons/back-btn'
+						title: "CopyBtn",
+						to: "/composants/boutons/copy-btn",
+					},
+					{
+						title: 'BackToTopBtn',
+						to: '/composants/boutons/back-to-top-btn'
 					},
 					{
 						title: 'CopyBtn',
@@ -225,10 +229,6 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'HeaderLoading',
 						to: '/composants/feedback/header-loading'
-					},
-					{
-						title: 'RatingPicker',
-						to: '/composants/feedback/rating-picker'
 					}
 				]
 			}
@@ -241,14 +241,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'CookiesPage',
 				to: '/templates/cookies-page'
-			},
-			{
-				title: 'NotFoundPage',
-				to: '/templates/notfound-page'
-			},
-			{
-				title: 'MaintenancePage',
-				to: '/templates/maintenance-page'
 			},
 			{
 				title: 'ErrorPage',

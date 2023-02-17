@@ -12,7 +12,7 @@ description: Le pattern `NotificationBar` est utilisé avec le module Vuex `noti
 <doc-alert type="info">
 
 Il est conseillé de n’avoir qu’un seul composant `NotificationBar` par page, car leur affichage est contrôlé par le module `notification`.<br>
-Cependant, il est possible d’ajouter un identifiant sur les notifications et de n’afficher que la notification de l’instance correspondante, c’est ce qui est fait dans les exemples ci-dessous.
+Cependant, il est possible d’ajouter un identifiant sur les notifications et de n’afficher que la notification de l’instance correspondante, c’est ce qui est fait dans les exemples de cette page.
 
 </doc-alert>
 
