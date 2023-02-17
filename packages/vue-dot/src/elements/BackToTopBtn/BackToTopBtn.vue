@@ -111,9 +111,12 @@
 
 		onScroll(e: MouseEvent): void {
 			const target = e.currentTarget as HTMLElement | Window;
-			const scroll = target === window ? target.scrollY : (target as HTMLElement).scrollTop;
 
-			this.showBtn = scroll > this.threshold;
+			if (target === window) {
+				this.showBtn = window.scrollY > this.threshold;
+			} else {
+				this.showBtn = (target as HTMLElement).scrollTop > this.threshold;
+			}
 		}
 
 		scrollToTop(): void {
@@ -122,9 +125,3 @@
 		}
 	}
 </script>
-
-<style lang="scss">
-	.vd-back-to-top-btn {
-		z-index: 1;
-	}
-</style>
