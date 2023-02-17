@@ -9,19 +9,19 @@
 				v-bind="textFieldOptions"
 				:value="computedValue"
 				:rules="rulesNumber"
-				:counter="counterNumber"
+				:counter="computedCounterNumber"
 				:counter-value="noSpacesCounter"
 				:label="required ? locales.labelNumber + ' *' : locales.labelNumber"
 				:aria-labelledby="locales.labelNumber"
 				:aria-describedby="hintNumber"
 				:hint="hintNumber"
-				:success="internalValueNumber && internalValueNumber.length === nirNumber"
+				:success="internalValueNumber && internalValueNumber.length === checkNumber"
 				@input.native="setinternalValueNumber"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="internalValueNumber && internalValueNumber.length === nirNumber"
+						v-if="internalValueNumber && internalValueNumber.length === checkNumber"
 						color="success"
 					>
 						{{ checkIcon }}
@@ -109,9 +109,9 @@
 			},
 			nirNumber: {
 				type: Number,
-				default: 13,
+				default: 15,
 				validator(value): boolean {
-					return value === 13;
+					return value === 13 || value === 15;
 				}
 			},
 			nirKey: {
@@ -153,16 +153,24 @@
 		internalValueNumber: string | null = null;
 		internalValueKey: string | null = null;
 
-		counterNumber = this.nirNumber;
 		counterKey = this.nirKey;
 
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
 
+		get computedCounterNumber(): number {
+			return this.checkNumber;
+		}
+
 		get maskNumber(): string {
-			const maskNumber = '# ## ## #X ### ###';
-			return maskNumber;
+			if (this.keyRequired) {
+				const maskNumber = '# ## ## #X ### ###';
+				return maskNumber;
+			} else {
+				const maskNumber = '# ## ## #X ### ### ##';
+				return maskNumber;
+			}
 		}
 
 		get maskKey(): string {
@@ -177,7 +185,7 @@
 				rulesNumber.push(required);
 			}
 
-			rulesNumber.push(exactLength(this.nirNumber, true));
+			rulesNumber.push(exactLength(this.checkNumber, true));
 
 			return rulesNumber;
 		}
@@ -199,7 +207,7 @@
 		}
 
 		get hintNumber(): string {
-			return locales.hintNumber(this.nirNumber);
+			return locales.hintNumber(this.checkNumber);
 		}
 
 		get hintKey(): string {
@@ -208,17 +216,25 @@
 
 		get computedInternalValue(): string | null {
 			if (this.keyRequired) {
-				if (this.internalValueNumber?.length === this.nirNumber && this.internalValueKey?.length === this.nirKey) {
+				if (this.internalValueNumber?.length === this.checkNumber && this.internalValueKey?.length === this.nirKey) {
 					return this.internalValueNumber + this.internalValueKey;
 				}
 
 				return null;
 			} else {
-				if (this.internalValueNumber?.length === this.nirNumber) {
+				if (this.internalValueNumber?.length === this.checkNumber) {
 					return this.internalValueNumber;
 				}
 
 				return null;
+			}
+		}
+
+		get checkNumber(): number {
+			if (this.keyRequired) {
+				return this.nirNumber - this.nirKey;
+			} else {
+				return this.nirNumber;
 			}
 		}
 
@@ -236,7 +252,7 @@
 		}
 
 		setFocus(): void {
-			if (this.internalValueNumber?.length === this.nirNumber && this.keyRequired) {
+			if (this.internalValueNumber?.length === this.checkNumber && this.keyRequired) {
 				const keyFieldRef = this.$refs.keyField as HTMLInputElement;
 				keyFieldRef.focus();
 			}
