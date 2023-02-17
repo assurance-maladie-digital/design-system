@@ -4,6 +4,7 @@ exports[`lib should register components & directives when passing a theme 1`] = 
 Object {
   "components": Array [
     "BackBtn",
+    "CollapseList",
     "CookieBanner",
     "CookiesPage",
     "CopyBtn",

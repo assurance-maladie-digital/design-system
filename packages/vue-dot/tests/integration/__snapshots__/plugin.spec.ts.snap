@@ -4,6 +4,7 @@ exports[`plugin should register components & directives 1`] = `
 Object {
   "components": Array [
     "BackBtn",
+    "CollapseList",
     "CookieBanner",
     "CookiesPage",
     "CopyBtn",

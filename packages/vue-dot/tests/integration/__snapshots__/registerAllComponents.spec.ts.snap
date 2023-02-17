@@ -3,6 +3,7 @@
 exports[`registerAllComponents should register all components 1`] = `
 Array [
   "BackBtn",
+  "CollapseList",
   "CookieBanner",
   "CookiesPage",
   "CopyBtn",
