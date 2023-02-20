@@ -16,6 +16,7 @@
 				:error-messages="textFieldOptions.errorMessages || errorMessages"
 				:error.sync="internalErrorProp"
 				:disabled="disabled"
+				aria-labelledby="Date"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
 				@click.native="textFieldClicked"
