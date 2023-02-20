@@ -8,7 +8,7 @@
 		<template #activator="{ on }">
 			<VBtn
 				v-if="currentLangData"
-				:aria-label="currentLangData.label"
+				:aria-labellby="currentLangData.label"
 				v-bind="options.btn"
 				v-on="on"
 			>
@@ -25,7 +25,10 @@
 			</VBtn>
 		</template>
 
-		<VList v-bind="options.list">
+		<VList
+			v-bind="options.list"
+			role="list"
+		>
 			<VListItem
 				v-for="(item, lang) in languages"
 				:key="lang"

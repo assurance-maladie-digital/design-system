@@ -17,6 +17,7 @@
 				class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"
 				:color="selectedAnswerIndex === index ? 'white' : 'primary'"
 				:class="{ 'active': selectedAnswerIndex === index }"
+				:aria-labelledby="answer"
 				@click="selectAnswer(index)"
 			>
 				<span>

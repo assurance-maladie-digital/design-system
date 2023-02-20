@@ -20,6 +20,7 @@
 			:disabled="loading"
 			:append-icon="searchIcon"
 			:label="searchLabel"
+			:aria-label="searchLabel"
 			:class="textFieldClasses"
 			@input="$emit('search', $event)"
 		/>

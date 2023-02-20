@@ -14,6 +14,7 @@
 			<VBtn
 				class="rating-button"
 				color="primary"
+				:aria-labelledby="selectedRating"
 				outlined
 				text
 			>
@@ -35,6 +36,7 @@
 				<VBtn
 					class="rating-button"
 					color="primary"
+					:aria-labelledby="i"
 					outlined
 					text
 					@click="selectRating(i)"

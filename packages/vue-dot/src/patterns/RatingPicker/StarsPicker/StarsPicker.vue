@@ -17,6 +17,7 @@
 				x-large
 				class="mt-2"
 				:color="isHover(i) ? 'am-blue-lighten-60' : 'am-blue-darken-20'"
+				:aria-label="i"
 				@click="selectStar(i)"
 				@mouseover="isHoverRating = i"
 				@mouseout="isHoverRating = 0"
@@ -36,6 +37,7 @@
 				color="primary"
 				class="mt-2"
 				:class="selectedRating < 5 ? 'star-icon' : ''"
+				:aria-label="i"
 			>
 				{{ starIcon }}
 			</VIcon>
