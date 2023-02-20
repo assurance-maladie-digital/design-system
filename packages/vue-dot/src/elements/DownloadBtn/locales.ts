@@ -1,3 +1,4 @@
 export const locales = {
-	downloadSuccess: 'Document téléchargé avec succès.'
+	downloadSuccess: 'Document téléchargé avec succès.',
+	download: 'Télécharger'
 };

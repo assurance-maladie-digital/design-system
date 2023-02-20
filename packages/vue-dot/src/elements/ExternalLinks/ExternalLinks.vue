@@ -15,6 +15,7 @@
 				}"
 				ref="btn"
 				:style="btnStyle"
+				:aria-labelledby="btnText"
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
@@ -38,6 +39,7 @@
 		<VList
 			v-if="items.length"
 			v-bind="options.list"
+			role="list"
 			class="vd-external-links-list"
 		>
 			<VListItem

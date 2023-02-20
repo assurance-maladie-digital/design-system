@@ -45,6 +45,7 @@
 				<VList
 					v-if="hasListContent"
 					v-bind="options.list"
+					role="list"
 				>
 					<slot />
 

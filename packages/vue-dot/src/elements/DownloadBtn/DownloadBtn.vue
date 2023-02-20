@@ -2,6 +2,7 @@
 	<VBtn
 		v-bind="btnOptions"
 		:loading="state === StateEnum.PENDING"
+		:arial-labelledby="locales.download"
 		class="vd-download-btn"
 		@click.native="download"
 	>
