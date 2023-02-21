@@ -17,7 +17,7 @@
 				:error.sync="internalErrorProp"
 				:disabled="disabled"
 				class="vd-date-picker-text-field"
-				aria-labelledby="date"
+				aria-label="date"
 				@blur="textFieldBlur"
 				@click.native="textFieldClicked"
 				@paste.prevent="saveFromPasted"
