@@ -6,19 +6,19 @@ exports[`FooterBar renders correctly 1`] = `
   <!---->
   <!---->
   <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 py-2 py-sm-0">
-    <footerlink-stub options="[object Object]" route="[object Object]">
+    <footerlink-stub options="[object Object]" route="[object Object]" aria-labelledby="Plan du site">
       Plan du site
     </footerlink-stub>
-    <footerlink-stub options="[object Object]" route="[object Object]">
+    <footerlink-stub options="[object Object]" route="[object Object]" aria-labelledby="Conditions générales d’utilisation">
       Conditions générales d’utilisation
     </footerlink-stub>
-    <footerlink-stub options="[object Object]" route="[object Object]">
+    <footerlink-stub options="[object Object]" route="[object Object]" aria-labelledby="Gestion des cookies">
       Gestion des cookies
     </footerlink-stub>
-    <footerlink-stub options="[object Object]" route="[object Object]">
+    <footerlink-stub options="[object Object]" route="[object Object]" aria-labelledby="Mentions légales">
       Mentions légales
     </footerlink-stub>
-    <footerlink-stub options="[object Object]" route="[object Object]">
+    <footerlink-stub options="[object Object]" route="[object Object]" aria-labelledby="Accessibilité&nbsp;: non conforme">
       Accessibilité&nbsp;: non conforme
     </footerlink-stub>
     <!---->

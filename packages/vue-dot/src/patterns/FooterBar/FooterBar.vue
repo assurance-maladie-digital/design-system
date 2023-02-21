@@ -66,6 +66,7 @@
 				:external-link="sitemapExternalLink"
 				:route="sitemapRoute"
 				:options="options.routerLink"
+				:aria-labelledby="locales.sitemapLabel"
 			>
 				{{ locales.sitemapLabel }}
 			</FooterLink>
@@ -75,6 +76,7 @@
 				:external-link="cguExternalLink"
 				:route="cguRoute"
 				:options="options.routerLink"
+				:aria-labelledby="locales.cguLabel"
 			>
 				{{ locales.cguLabel }}
 			</FooterLink>
@@ -84,6 +86,7 @@
 				:external-link="cookiesExternalLink"
 				:route="cookiesRoute"
 				:options="options.routerLink"
+				:aria-labelledby="locales.cookiesLabel"
 			>
 				{{ locales.cookiesLabel }}
 			</FooterLink>
@@ -93,6 +96,7 @@
 				:external-link="legalNoticeExternalLink"
 				:route="legalNoticeRoute"
 				:options="options.routerLink"
+				:aria-labelledby="locales.legalNoticeLabel"
 			>
 				{{ locales.legalNoticeLabel }}
 			</FooterLink>
@@ -102,6 +106,7 @@
 				:external-link="a11yStatementExternalLink"
 				:route="a11yStatementRoute"
 				:options="options.routerLink"
+				:aria-labelledby="a11yComplianceLabel"
 			>
 				{{ a11yComplianceLabel }}
 			</FooterLink>
@@ -109,6 +114,7 @@
 			<p
 				v-if="version"
 				class="text--secondary my-3 mx-4"
+				:aria-labelledby="locales.versionLabel + ' ' + version"
 			>
 				{{ locales.versionLabel }} {{ version }}
 			</p>
