@@ -7,6 +7,7 @@
 		:counter="counter"
 		:counter-value="noSpacesCounter"
 		:label="locales.label"
+		:aria-label="locales.label"
 		@input.native="setInternalValue"
 		@change="emitChangeEvent"
 	>

@@ -25,7 +25,10 @@
 			</VBtn>
 		</template>
 
-		<VList v-bind="options.list">
+		<VList
+			v-bind="options.list"
+			role="list"
+		>
 			<VListItem
 				v-for="(item, lang) in languages"
 				:key="lang"
