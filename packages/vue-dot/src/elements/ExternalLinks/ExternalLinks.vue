@@ -39,7 +39,6 @@
 		<VList
 			v-if="items.length"
 			v-bind="options.list"
-			role="list"
 			class="vd-external-links-list"
 		>
 			<VListItem
