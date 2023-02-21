@@ -10,6 +10,7 @@
 			colors.label
 		]"
 		class="vd-file-upload d-block pa-4"
+		:aria-label="locales.chooseFile"
 		@dragover.prevent="dragover = true"
 		@dragleave="dragover = false"
 		@drop.prevent="dropHandler"
