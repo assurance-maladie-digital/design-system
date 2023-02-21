@@ -2,6 +2,7 @@
 	<VTextarea
 		v-bind="field.fieldOptions"
 		:value="field.value"
+		:aria-labelledby="field.value"
 		class="vd-form-input-xl"
 		@change="emitChangeEvent"
 	/>

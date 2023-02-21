@@ -7,6 +7,7 @@
 			<VTextField
 				:value="rangeValue[0]"
 				:label="minLabel"
+				:aria-label="minLabel"
 				hide-details
 				outlined
 				class="ma-3"
@@ -16,6 +17,7 @@
 			<VTextField
 				:value="rangeValue[1]"
 				:label="maxLabel"
+				:aria-label="maxLabel"
 				hide-details
 				outlined
 				class="ma-3"
