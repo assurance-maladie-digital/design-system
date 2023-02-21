@@ -3,6 +3,7 @@
 		v-bind="btnOptions"
 		:loading="state === StateEnum.PENDING"
 		class="vd-download-btn"
+		:arial-labelledby="locales.download"
 		@click.native="download"
 	>
 		<slot name="icon">

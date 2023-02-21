@@ -4,7 +4,8 @@
 		:class="{ 'pr-1': !hideBackIcon }"
 		text
 		color="primary"
-		class="vd-back-btn px-0"
+		class="vd-back-btn text-none px-0"
+		:aria-labelledby="locales.label"
 		v-on="$listeners"
 	>
 		<slot name="icon">
