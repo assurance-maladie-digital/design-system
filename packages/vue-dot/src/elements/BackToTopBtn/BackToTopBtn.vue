@@ -10,6 +10,7 @@
 			:style="btnStyle"
 			:min-width="minWidth"
 			class="vd-back-to-top-btn"
+			:aria-labelledby="locales.label"
 			@click="scrollToTop"
 			v-on="$listeners"
 		>
