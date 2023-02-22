@@ -30,7 +30,6 @@
 						:disabled="!otherActive"
 						:rows="1"
 						:error-messages="errorMessages.other"
-						role="textbox"
 						auto-grow
 						outlined
 						class="vd-form-input"

@@ -3,7 +3,6 @@
 		v-bind="field.fieldOptions"
 		:value="field.value"
 		:aria-label="field.value"
-		role="textbox"
 		class="vd-form-input-xl"
 		@change="emitChangeEvent"
 	/>
