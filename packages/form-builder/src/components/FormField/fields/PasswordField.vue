@@ -2,6 +2,7 @@
 	<VTextField
 		v-bind="field.fieldOptions"
 		:value="field.value"
+		:aria-label="field.value"
 		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"
 		class="vd-form-input"
