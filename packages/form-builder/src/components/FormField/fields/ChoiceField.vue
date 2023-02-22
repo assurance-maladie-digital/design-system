@@ -30,6 +30,8 @@
 						:disabled="!otherActive"
 						:rows="1"
 						:error-messages="errorMessages.other"
+						role="textbox"
+						aria-multiline="true"
 						auto-grow
 						outlined
 						class="vd-form-input"
