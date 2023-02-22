@@ -131,3 +131,33 @@
 		min-width: 38px;
 	}
 }
+
+// Fix colors transparency
+.theme--light {
+	.v-sheet, .v-input, .v-text-field, .v-textarea, .v-label {
+		color: #040404;
+	}
+	.v-input {
+		input, textarea {
+			color: #040404;
+		}
+	}
+	.v-data-table {
+		th, tr {
+			border-bottom: thin solid #1A1A1A;
+		}
+	}
+}
+.theme--dark {
+	.v-sheet, .v-input, .v-text-field, .v-textarea, .v-label {
+		color: #ffffff;
+	}
+	.v-input {
+		input, textarea {
+			color: #ffffff;
+		}
+	}
+}
+.theme--dark.v-toolbar {
+	color: #ffffff;
+}
