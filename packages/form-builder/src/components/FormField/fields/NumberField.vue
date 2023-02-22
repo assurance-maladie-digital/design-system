@@ -3,6 +3,7 @@
 		v-facade="mask"
 		v-bind="field.fieldOptions"
 		:value="field.value"
+		:aria-label="field.value"
 		class="vd-form-input"
 		@change="emitChangeEvent"
 	/>

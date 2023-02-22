@@ -20,6 +20,7 @@
 				:outlined="!isSelected(item.value)"
 				:elevation="0"
 				:aria-selected="isSelected(item.value)"
+				:aria-labelledby="item.value"
 				role="option"
 				height="auto"
 				min-height="40px"
