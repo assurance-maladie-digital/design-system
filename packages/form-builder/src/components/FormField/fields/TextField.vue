@@ -2,7 +2,7 @@
 	<VTextField
 		v-bind="field.fieldOptions"
 		:value="field.value"
-		:aria-labelledby="field.value"
+		:aria-label="field.value"
 		class="vd-form-input"
 		@change="emitChangeEvent"
 	/>
