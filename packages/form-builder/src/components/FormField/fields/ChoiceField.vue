@@ -42,6 +42,7 @@
 				v-else
 				v-bind="otherField.fieldOptions"
 				:value="otherFieldValue"
+				:aria-label="otherFieldValue"
 				:background-color="otherFieldValue ? 'accent' : undefined"
 				:dark="Boolean(otherFieldValue)"
 				:error-messages="errorMessages.other"
