@@ -284,7 +284,7 @@
 		}
 	}
 	.vd-footer-bar.theme--dark :deep() {
-		background-color: $vd-grey-darken-60 !important;
+		background-color: $vd-grey-darken-20 !important;
 		.vd-footer-bar-links {
 			a {
 				color: rgb(255, 255, 255) !important;
