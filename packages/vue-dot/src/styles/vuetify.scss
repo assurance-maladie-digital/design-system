@@ -158,6 +158,18 @@
 		}
 	}
 }
+.theme--light.v-application .text--primary {
+	color: #040404 !important;
+}
+.theme--light.v-application .text--secondary {
+	color: #757575 !important;
+}
+.theme--dark.v-application .text--primary {
+	color: #ffffff !important;
+}
+.theme--dark.v-application .text--secondary {
+	color: #bbbbbb !important;
+}
 .theme--dark.v-toolbar {
 	color: #ffffff;
 }
