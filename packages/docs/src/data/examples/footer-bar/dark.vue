@@ -1,7 +1,7 @@
 <template>
 	<FooterBar
 		v-bind="docProps"
-		hide-social-media-links
+		dark
 	>
 		<p class="text--secondary my-3">
 			Contenu supplémentaire.
@@ -14,7 +14,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class FooterBarHideSocialMediaLinks extends Vue {
+	export default class FooterBarDark extends Vue {
 		docProps = {
 			sitemapRoute: '/',
 			cguRoute: '/',
