@@ -141,14 +141,14 @@
 		input, textarea {
 			color: #040404;
 		}
-		.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state) > .v-input__control > .v-input__slot fieldset {
-			color: #a8a8a8;
-		}
 	}
 	.v-data-table {
 		th, tr {
 			border-bottom: thin solid #1A1A1A;
 		}
+	}
+	.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state) > .v-input__control > .v-input__slot fieldset {
+		color: #a8a8a8;
 	}
 }
 .theme--dark {
