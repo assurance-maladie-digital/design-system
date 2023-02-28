@@ -1,18 +1,20 @@
 <template>
 	<div class="vd-header-bar-container w-100">
 		<VAppBar
+			v-scroll="onScroll"
 			v-bind="{
 				...options.appBar,
 				...$attrs
 			}"
 			:height="height"
-			class="vd-header-bar"
+			:fixed="isSticky"
+			class="vd-header-bar transition-ease-in-out duration-100"
 		>
 			<VSheet
 				v-bind="options.contentSheet"
 				:height="contentSheetHeight"
 				:class="spacingClass"
-				class="vd-header-bar-content d-flex justify-center"
+				class="vd-header-bar-content d-flex justify-center transition-ease-in-out duration-100"
 			>
 				<VSheet
 					v-bind="options.innerSheet"
@@ -103,6 +105,7 @@
 
 	import { customizable } from '../../mixins/customizable';
 	import { Next } from '../../types';
+	import { Scroll } from 'vuetify/lib/directives';
 
 	const Props = Vue.extend({
 		props: {
@@ -142,6 +145,10 @@
 			mobileVersion: {
 				type: Boolean,
 				default: false
+			},
+			sticky: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -150,6 +157,9 @@
 
 	@Component({
 		inheritAttrs: false,
+		directives: {
+			Scroll
+		},
 		components: {
 			LogoBrandSection,
 			HeaderMenuBtn,
@@ -160,6 +170,7 @@
 	export default class HeaderBar extends MixinsDeclaration {
 		drawer: boolean | null = null;
 		tab: number | null = null;
+		isScrolled: boolean | null = null;
 
 		get isMobileVersion(): boolean {
 			if (this.mobileVersion) {
@@ -169,12 +180,24 @@
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
+		get isSticky(): boolean {
+			if (this.sticky) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
 		get spacingClass(): string {
 			return this.isMobileVersion ? 'pa-4' : 'px-14 py-7';
 		}
 
 		get contentSheetHeight(): number {
-			return this.isMobileVersion ? 72 : 120;
+			if (this.isScrolled) {
+				return this.isMobileVersion ? 56 : 96;
+			} else {
+				return this.isMobileVersion ? 72 : 120;
+			}
 		}
 
 		get height(): number {
@@ -213,6 +236,18 @@
 
 		updateDrawer(value: boolean): void {
 			this.drawer = value;
+		}
+
+		onScroll(): void {
+			const header = document.querySelector('.vd-header-bar');
+			const headerHeight = header ? header.clientHeight : 0;
+			const scrollPosition = window.scrollY;
+
+			if (scrollPosition > headerHeight) {
+				this.isScrolled = true;
+			} else {
+				this.isScrolled = false;
+			}
 		}
 	}
 </script>
