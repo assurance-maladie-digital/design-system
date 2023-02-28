@@ -61,10 +61,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: "Éco-conception",
 				to: "/fondamentaux/eco-conception",
-			},
-			{
-				title: 'Éco-conception',
-				to: '/fondamentaux/eco-conception'
 			}
 		]
 	},
@@ -114,10 +110,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Boutons',
 				items: [
-					{
-						title: "CopyBtn",
-						to: "/composants/boutons/copy-btn",
-					},
 					{
 						title: 'BackBtn',
 						to: '/composants/boutons/back-btn'
