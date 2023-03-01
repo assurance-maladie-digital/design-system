@@ -111,6 +111,10 @@
 				type: Boolean,
 				default: false
 			},
+			sticky: {
+				type: Boolean,
+				default: false
+			},
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: '/'

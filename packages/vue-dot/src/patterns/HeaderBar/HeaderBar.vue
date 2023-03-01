@@ -8,7 +8,7 @@
 			}"
 			:height="height"
 			:fixed="isSticky"
-			class="vd-header-bar transition-ease-in-out duration-100"
+			class="vd-header-bar header transition-ease-in-out duration-100"
 		>
 			<VSheet
 				v-bind="options.contentSheet"
@@ -27,6 +27,7 @@
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
 							:mobile-version="isMobileVersion"
+							:sticky="isSticky"
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
@@ -194,7 +195,7 @@
 
 		get contentSheetHeight(): number {
 			if (this.isScrolled) {
-				return this.isMobileVersion ? 56 : 96;
+				return this.isMobileVersion ? 52 : 72;
 			} else {
 				return this.isMobileVersion ? 72 : 120;
 			}
@@ -239,11 +240,11 @@
 		}
 
 		onScroll(): void {
-			const header = document.querySelector('.vd-header-bar');
+			const header = document.querySelector('.vd-header-bar.header');
 			const headerHeight = header ? header.clientHeight : 0;
 			const scrollPosition = window.scrollY;
 
-			if (scrollPosition > headerHeight) {
+			if (this.isSticky && scrollPosition > headerHeight) {
 				this.isScrolled = true;
 			} else {
 				this.isScrolled = false;
