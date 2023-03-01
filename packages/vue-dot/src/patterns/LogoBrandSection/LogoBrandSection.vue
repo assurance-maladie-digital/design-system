@@ -54,7 +54,7 @@
 			>
 				<h1
 					v-if="service.title"
-					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
+					:class="{ 'vd-compte-title': isCompteEntreprise }"
 					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
 				>
 					<template v-if="isCompteEntreprise">
@@ -181,7 +181,7 @@
 		}
 
 		get hasSecondaryLogoLink(): boolean {
-			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
+			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI || this.theme === ThemeEnum.COMPTE_AMELI;
 		}
 
 		get logoContainerComponent(): string {
@@ -219,7 +219,8 @@
 		get dividerColor(): string {
 			switch (this.theme) {
 				case ThemeEnum.CNAM:
-				case ThemeEnum.AMELI_PRO: {
+				case ThemeEnum.AMELI_PRO:
+				case ThemeEnum.COMPTE_AMELI: {
 					return tokens.colors.secondary;
 				}
 
