@@ -19,7 +19,8 @@ Vous pouvez afficher un code d’erreur HTTP en utilisant la prop `code`.
 
 #### Illustration
 
-Vous pouvez afficher une image d'illustration en utilisant mettant prop `image` à `true`.
+Vous pouvez afficher une image d'illustration en utilisant mettant prop `image` à `true`.<br/>
+L'image peux être personnalisée en utilisant la prop `imageSrc` pour spécifier l'URL de l'image.
 
 <doc-example file="notfound-page/image"></doc-example>
 
