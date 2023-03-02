@@ -27,7 +27,8 @@
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
 							:mobile-version="isMobileVersion"
-							:sticky="isSticky"
+							:header-sticky="isSticky"
+							:header-scrolled="isScrolled"
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
