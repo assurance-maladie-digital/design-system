@@ -1,5 +1,5 @@
 <template>
-	<div class="d-flex flex-wrap align-center justify-center w-100">
+	<div class="d-flex flex-wrap align-center justify-center w-100 wrapper">
 		<HeaderBar
 			v-bind="$attrs"
 			v-on="$listeners"
@@ -37,7 +37,8 @@
 
 		options = {
 			booleans: [
-				'mobileVersion'
+				'mobileVersion',
+				'sticky'
 			],
 			selects: {
 				theme: [
@@ -46,6 +47,7 @@
 					'cnam',
 					'ameli',
 					'ameli-pro',
+					'compte-ameli',
 					'compte-entreprise'
 				]
 			},
@@ -56,3 +58,11 @@
 		};
 	}
 </script>
+
+<style lang="scss">
+.wrapper {
+	.vd-header-bar {
+		z-index: 15 !important;
+	}
+}
+</style>
