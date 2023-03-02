@@ -42,7 +42,7 @@
 					class="d-flex align-center justify-center"
 				>
 					<VImg
-						:src="selectedImage"
+						:src="imageSrc"
 						:alt="pageTitle"
 						max-width="90%"
 						max-height="100%"
@@ -85,6 +85,10 @@
 				type: Boolean,
 				default: false
 			},
+			imageUrl: {
+				type: String,
+				default: undefined
+			},
 			btnText: {
 				type: String,
 				default: locales.btnText
@@ -101,10 +105,10 @@
 	@Component
 	export default class NotFoundPage extends MixinsDeclaration {
 		locales = locales;
-		selectedImage = '';
+		defaultImage = '';
 
 		mounted() {
-			this.selectedImage = require('@cnamts/vue-dot/src/assets/images/notfound.svg');
+			this.defaultImage = require('@cnamts/vue-dot/src/assets/images/notfound.svg');
 		}
 
 		/**
@@ -126,6 +130,10 @@
 			});
 
 			return supportId.trim();
+		}
+
+		get imageSrc(): string {
+			return this.imageUrl || this.defaultImage;
 		}
 	}
 
