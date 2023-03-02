@@ -75,6 +75,12 @@ Vous pouvez afficher le bouton pour activer le menu dans la barre de navigation 
 
 <doc-example file="header-bar/nav-bar-menu-btn"></doc-example>
 
+### Sticky
+
+Vous pouvez rendre la barre de navigation toujours visible en utilisant la prop `sticky`.
+
+<doc-example file="header-bar/sticky"></doc-example>
+
 ### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Header` en utilisant la prop `vuetify-options`.
