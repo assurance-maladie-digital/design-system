@@ -1,14 +1,14 @@
 <template>
 	<div class="vd-header-bar-container w-100">
 		<VAppBar
-			v-scroll="onScroll"
+			v-scroll:[targetSelector]="onScroll"
 			v-bind="{
 				...options.appBar,
 				...$attrs
 			}"
 			:height="height"
 			:fixed="isSticky"
-			class="vd-header-bar header transition-ease-in-out duration-100"
+			class="vd-header-bar vd-header-bar-sticky transition-ease-in-out duration-100"
 		>
 			<VSheet
 				v-bind="options.contentSheet"
@@ -151,6 +151,10 @@
 			sticky: {
 				type: Boolean,
 				default: false
+			},
+			target: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -188,6 +192,14 @@
 			} else {
 				return false;
 			}
+		}
+
+		get targetSelector(): string | null {
+			if (!this.target) {
+				return null;
+			}
+
+			return `#${this.target}`;
 		}
 
 		get spacingClass(): string {
@@ -240,10 +252,12 @@
 			this.drawer = value;
 		}
 
-		onScroll(): void {
-			const header = document.querySelector('.vd-header-bar.header');
+		onScroll(e: MouseEvent): void {
+			const target = e.currentTarget as HTMLElement | Window;
+			const header = document.querySelector('.vd-header-bar-sticky');
 			const headerHeight = header ? header.clientHeight : 0;
-			const scrollPosition = window.scrollY;
+			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
+
 			if (this.isSticky && scrollPosition > headerHeight) {
 				this.isScrolled = true;
 			} else {
