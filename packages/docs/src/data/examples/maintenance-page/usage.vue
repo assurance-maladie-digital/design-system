@@ -22,7 +22,11 @@
 		};
 
 		options = {
+			booleans: [
+				'image'
+			],
 			textFields: [
+				'imageUrl',
 				'pageTitle',
 				'message'
 			]
