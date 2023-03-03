@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-emotion-picker">
+	<div
+		class="vd-emotion-picker"
+		:class="isValidated && !selectedEmotion ? 'd-none' : ''"
+	>
 		<div class="d-flex justify-center">
 			<H6
 				v-if="mainQuestion"
@@ -16,12 +19,13 @@
 		</div>
 		<VRow
 			class="grid justify-center ma-0"
-			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-sm-space-around' : 'justify-sm-space-between'"
+			:class="selectedEmotion && mainQuestion || simpleMode || isValidated ? 'justify-sm-space-around' : 'justify-sm-space-between'"
 		>
 			<VCol
 				v-for="emotion in filterEmotions"
 				:key="emotion.title"
 				class="pa-0 flex-grow-0 emotions"
+				:class="{ 'd-none': isValidated && !isActive(emotion.title) }"
 			>
 				<button
 					class="emotion"

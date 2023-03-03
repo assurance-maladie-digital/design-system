@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-text-area-form">
+	<div
+		class="vd-text-area-form"
+		:class="isValidated && reasonValue === '' ? 'd-none' : ''"
+	>
 		<div class="d-flex justify-center">
 			<span
 				class="mb-6 text-subtitle-2"

@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-multiple-answers">
+	<div
+		class="vd-multiple-answers"
+		:class="isValidated && selectedAnswerIndex === -1 ? 'd-none' : ''"
+	>
 		<div class="d-flex justify-center">
 			<span
 				class="mb-6 text-subtitle-2"
@@ -16,7 +19,10 @@
 				large
 				class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"
 				:color="selectedAnswerIndex === index ? 'white' : 'primary'"
-				:class="{ 'active': selectedAnswerIndex === index }"
+				:class="{
+					'active': selectedAnswerIndex === index,
+					'd-none': isValidated && selectedAnswerIndex !== -1 && selectedAnswerIndex !== index
+				}"
 				@click="selectAnswer(index)"
 			>
 				<span>
