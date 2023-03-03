@@ -2,8 +2,9 @@
 	<RatingPicker
 		:main-question="firstQuestion"
 		:questions-list="questionsList"
-		:on-validate="onValidate"
-		:on-close="onClose"
+		@first-validation="firstValidation"
+		@second-validation="secondValidation"
+		@on-close="onClose"
 		:after-validate="afterValidate"
 	/>
 </template>
@@ -37,11 +38,11 @@
 			}
 		];
 
-		afterFirstQuestion(): void {
+		firstValidation(): void {
 			console.log('Validation de la première question');
 		}
 
-		onValidate(): void {
+		secondValidation(): void {
 			console.log('Validation');
 		}
 

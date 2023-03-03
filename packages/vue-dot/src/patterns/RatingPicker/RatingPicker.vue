@@ -271,11 +271,10 @@
 			} else {
 				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
 			}
-
 		}
 
 		validateSecondStep(): void {
-			this.$emit('on-validate');
+			this.$emit('second-validation');
 			this.validated = true;
 		}
 

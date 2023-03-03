@@ -2,8 +2,8 @@
 	<div>
 		<RatingPicker
 			:main-question="firstQuestion"
-			:on-validate="onValidate"
-			:on-close="onClose"
+			@first-validation="firstValidation"
+			@on-close="onClose"
 			shadow-mode
 			:after-validate="afterValidate"
 		/>
@@ -32,11 +32,7 @@
 			}
 		];
 
-		afterFirstQuestion(): void {
-			console.log('Validation de la première question');
-		}
-
-		onValidate(): void {
+		firstValidation(): void {
 			console.log('Validation');
 		}
 
