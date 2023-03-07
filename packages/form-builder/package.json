@@ -1,6 +1,6 @@
 {
   "name": "@cnamts/form-builder",
-  "version": "2.9.0-alpha.1",
+  "version": "2.9.0-alpha.2",
   "description": "FormBuilder for the French Health Insurance",
   "keywords": [
     "cnam",
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@cnamts/eslint-config-vue": "^2.9.0-alpha.0",
     "@cnamts/shared": "^2.9.0-alpha.0",
-    "@cnamts/vue-dot": "^2.9.0-alpha.1",
+    "@cnamts/vue-dot": "^2.9.0-alpha.2",
     "@vue/cli-plugin-babel": "4.5.19",
     "@vue/cli-plugin-eslint": "4.5.19",
     "@vue/cli-plugin-typescript": "4.5.19",

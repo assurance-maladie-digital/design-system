@@ -1,6 +1,7 @@
 const componentMap = {
 	// Elements
 	BackBtn: 'elements',
+	BackToTopBtn: 'elements',
 	CopyBtn: 'elements',
 	CustomIcon: 'elements',
 	DataList: 'elements',
