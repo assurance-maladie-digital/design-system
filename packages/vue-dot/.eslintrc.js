@@ -1,10 +1,12 @@
 module.exports = {
 	plugins: [
-		'jsdoc'
+		'jsdoc',
+		'vuejs-accessibility'
 	],
 	extends: [
 		'@cnamts/eslint-config-vue',
-		'plugin:jsdoc/recommended'
+		'plugin:jsdoc/recommended',
+		'plugin:vuejs-accessibility/recommended'
 	],
 	parser: 'vue-eslint-parser',
 	rules: {
@@ -20,6 +22,8 @@ module.exports = {
 		}],
 		// Don't force all params & return
 		'jsdoc/require-param': 0,
-		'jsdoc/require-returns': 0
+		'jsdoc/require-returns': 0,
+		'vuejs-accessibility/require-param': 0,
+		'vuejs-accessibility/require-returns': 0
 	}
 };
