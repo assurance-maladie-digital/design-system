@@ -22,6 +22,7 @@
 			<VTabs
 				v-bind="options.tabs"
 				:value="tab"
+				:optional="true"
 				@change="emitTabUpdateEvent"
 			>
 				<VTab
