@@ -33,15 +33,11 @@
 								</span>
 
 								<div>
-									<VIcon
-										class="header-title down-icon"
-									>
+									<VIcon class="header-title down-icon">
 										{{ downIcon }}
 									</VIcon>
 
-									<VIcon
-										class="header-title up-icon"
-									>
+									<VIcon class="header-title up-icon">
 										{{ upIcon }}
 									</VIcon>
 								</div>
@@ -83,9 +79,10 @@
 					>
 						{{ locales.apply }}
 					</VBtn>
+
 					<div
-						class="mt-3"
 						:class="(isMobile || applyButton) ? '' : 'd-flex justify-center'"
+						class="mt-3"
 					>
 						<VBtn
 							v-if="isMobile || applyButton"
@@ -97,6 +94,7 @@
 						>
 							{{ locales.reset }}
 						</VBtn>
+
 						<VBtn
 							:class="isMobile ? 'mb-2 mt-Z' : 'button-complex-mode'"
 							:outlined="isMobile"
@@ -107,6 +105,7 @@
 						>
 							{{ locales.close }}
 						</VBtn>
+
 						<VBtn
 							v-if="!(isMobile || applyButton)"
 							:class="isMobile ? '' : 'mb-3 ml-4 button-complex-mode'"
@@ -157,7 +156,7 @@
 		}
 	});
 
-	@Component<FiltersSideBar>({
+	@Component({
 		components: {
 			ChipsList,
 			FiltersSideBar

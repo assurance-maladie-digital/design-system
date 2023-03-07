@@ -13,7 +13,7 @@
 			text-color="white"
 			@click:close="removeChip(chip, chipIndex)"
 		>
-			{{ chip.text ?? chip.value ?? chip }}
+			{{ getChipText(chip) }}
 		</VChip>
 
 		<VChip
@@ -60,7 +60,7 @@
 	import Component from 'vue-class-component';
 
 	import { locales } from '../locales';
-	import { FilterItem } from '../types';
+	import { ChipItem, FilterItem } from '../types';
 	import { mdiChevronUp, mdiWindowClose } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -96,7 +96,7 @@
 		}
 
 		removeChip(chip: string, chipIndex: number): void {
-			const chips = this.filter.chips.filter((chip, index) => index !== chipIndex);
+			const chips = this.filter.chips.filter((_, index) => index !== chipIndex);
 			this.$set(this.filter, 'chips', chips);
 			this.$emit('remove-chip', chip);
 		}
@@ -112,6 +112,10 @@
 
 		onHideAll(): void {
 			this.$set(this.filter, 'showAll', !this.filter.showAll);
+		}
+
+		getChipText(chip: ChipItem): string {
+			return chip.text ?? chip.value ?? chip;
 		}
 	}
 </script>

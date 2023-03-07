@@ -8,10 +8,7 @@ export interface FilterItem {
 	showAll: boolean;
 	icon: string;
 	selection: unknown[];
-	chips: {
-		value: unknown;
-		text: string;
-	}[];
+	chips: ChipItem[];
 	value: unknown;
 	defaultValue: unknown;
 	formatting?: (value: unknown) => string;

@@ -11,29 +11,30 @@
 		>
 			<template #activator="{ on }">
 				<VBtn
+					v-if="filters[index]"
 					color="secondary"
-					:style="filters[index]?.style"
-					:outlined="!filters[index]?.chips.length"
+					:style="filters[index].style"
+					:outlined="!filters[index].chips.length"
 					depressed
 					rounded
 					class="simple-mode-filters mr-4"
 					v-on="on"
 				>
 					<VChip
-						v-if="filters[index]?.chips.length"
+						v-if="filters[index].chips.length"
 						class="ml-n2 mr-2"
 						color="white"
 						small
 					>
-						<span :class="filters[index]?.chips.length !== 0 ? '' : 'mb-2'">
-							{{ filters[index]?.chips.length }}
+						<span :class="filters[index].chips.length !== 0 ? '' : 'mb-2'">
+							{{ filters[index].chips.length }}
 						</span>
 					</VChip>
 
 					<span>{{ filter.label }}</span>
 
 					<VIcon
-						:dense="filters[index].icon ? true : false"
+						:dense="filters[index].icon"
 						:class="{ 'ml-1': filters[index].icon }"
 					>
 						{{ filters[index].icon ? filters[index].icon : downIcon }}
@@ -64,6 +65,7 @@
 				/>
 			</div>
 		</VMenu>
+
 		<VBtn
 			v-if="sideBarButton"
 			text
@@ -84,6 +86,7 @@
 				{{ filterIcon }}
 			</VIcon>
 		</VBtn>
+
 		<VBtn
 			v-if="applyButton"
 			depressed
@@ -93,6 +96,7 @@
 		>
 			{{ locales.apply }}
 		</VBtn>
+
 		<VBtn
 			v-if="!hideReset"
 			text
@@ -147,7 +151,7 @@
 		}
 	});
 
-	@Component<InlineFilters>({
+	@Component({
 		components: {
 			ChipsList
 		}
@@ -176,12 +180,14 @@
 
 		get filterList(): unknown {
 			const filteredList: FilterItem[] = [];
+
 			if (this.limitedInlineFilter.length) {
 				this.filters.forEach(filter => {
 					if (this.limitedInlineFilter.includes(filter.name)) {
 						filteredList.push(filter);
 					}
 				});
+
 				return filteredList;
 			} else {
 				return this.filters;
@@ -203,11 +209,5 @@
 
 			this.$emit('update:value', this.filters);
 		}
-
 	}
 </script>
-
-<style lang="scss">
-	@import '@cnamts/design-tokens/dist/tokens';
-
-</style>

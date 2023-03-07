@@ -20,7 +20,9 @@ describe('FilterSideBar', () => {
 						chips: []
 					}
 				],
-				chipsLimit: 4
+				chipsLimit: 4,
+				applyButton: false,
+				applyFunction: () => undefined
 			}
 		});
 
