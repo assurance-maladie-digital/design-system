@@ -9,6 +9,7 @@ import LangBtn from './LangBtn';
 import HeaderBar from './HeaderBar';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
+import ContextualMenu from './ContextualMenu';
 import RatingPicker from './RatingPicker';
 import PaginatedTable from './PaginatedTable';
 import PhoneField from './PhoneField';
@@ -23,6 +24,7 @@ export const patterns = {
 	FileUpload,
 	FilterModule,
 	FooterBar,
+	ContextualMenu,
 	FooterWrapper,
 	LangBtn,
 	HeaderBar,
