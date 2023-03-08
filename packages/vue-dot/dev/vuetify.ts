@@ -10,7 +10,8 @@ Vue.use(Vuetify);
 export const vuetify = new Vuetify({
 	theme: {
 		themes: {
-			light: colorTheme
+			light: colorTheme,
+			dark: colorTheme
 		},
 		options: {
 			customProperties: true

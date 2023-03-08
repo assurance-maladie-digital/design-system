@@ -139,9 +139,8 @@
 	.vd-notification-bar :deep(.v-snack__wrapper) {
 		min-width: 0;
 	}
-	.vd-notification-bar :deep(.warning) {
-		background-color: $vd-yellow-base !important;
-		border-color: $vd-yellow-base !important;
+	.vd-notification-bar :deep(.warning),
+	.vd-notification-bar :deep(.success) {
 		color: $vd-grey-darken-80 !important;
 		.v-icon__svg {
 			fill: $vd-grey-darken-80 !important;
