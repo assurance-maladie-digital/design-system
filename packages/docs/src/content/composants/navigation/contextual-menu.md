@@ -1,6 +1,6 @@
 ---
 title: ContextualMenu
-description: L’élément `ContextualMenu` est utilisé pour afficher un menu avec une liste qui .
+description: L’élément `ContextualMenu` est utilisé pour afficher un menu avec une liste d'onglet de navigation.
 ---
 
 <doc-tabs>
