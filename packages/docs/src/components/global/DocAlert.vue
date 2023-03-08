@@ -20,7 +20,7 @@
 	export default class DocAlert extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.doc-alert :deep(p:last-child) {
 		margin-bottom: 0 !important;
 	}
