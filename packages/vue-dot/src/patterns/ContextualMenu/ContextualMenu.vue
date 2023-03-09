@@ -75,7 +75,7 @@
 }
 .tab {
 	height: 39px;
-	border-left: 2px solid #27272799;
+	border-left: 2px solid grey;
 }
 .active {
 	border-left: 4px solid $vd-primary;
