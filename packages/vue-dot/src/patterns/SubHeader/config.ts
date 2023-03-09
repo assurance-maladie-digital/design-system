@@ -1,4 +1,7 @@
 export const config = {
+	background: {
+		color: 'secondary'
+	},
 	backBtn: {
 		color: 'transparent',
 		small: true,
