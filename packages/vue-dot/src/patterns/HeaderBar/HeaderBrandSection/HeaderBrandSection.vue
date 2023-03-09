@@ -5,7 +5,6 @@
 	>
 		<component
 			:is="logoContainerComponent"
-			:aria-current-value="null"
 			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 			:href="homeHref"
@@ -36,7 +35,6 @@
 			<component
 				:is="secondaryLogoCtnComponent"
 				v-if="secondaryLogo"
-				:aria-current-value="null"
 				:aria-label="secondaryLogoLabel"
 				:to="homeLink"
 				:href="homeHref"
