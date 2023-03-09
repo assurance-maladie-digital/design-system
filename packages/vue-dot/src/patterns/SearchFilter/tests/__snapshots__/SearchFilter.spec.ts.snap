@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PeriodField renders correctly 1`] = `
+<div>
+  <vtextfield-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="" backgroundcolor="" label="Rechercher" loaderheight="2" clearable="true" clearicon="$clear" outlined="true" type="text"></vtextfield-stub>
+
+
+
+  <!---->
+</div>
+`;

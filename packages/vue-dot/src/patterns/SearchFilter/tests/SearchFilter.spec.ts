@@ -10,11 +10,8 @@ let wrapper: Wrapper<Vue>;
 
 describe('PeriodField', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(PeriodField, {
-			propsData: {
-				//
-			}
-		});
+		wrapper = mountComponent(PeriodField);
+
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });

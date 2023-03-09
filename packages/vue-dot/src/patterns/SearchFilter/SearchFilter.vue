@@ -14,7 +14,9 @@
 				</VIcon>
 			</template>
 		</VTextField>
+
 		{{ value }}
+
 		<div
 			v-if="tempListSearch.length"
 			:style="filterHeight"
@@ -34,8 +36,10 @@
 							:value="item.name"
 							@change="emitChangeEvent()"
 						/>
+
 						<VCol class="d-flex align-center justify-space-between pl-2 pr-0">
 							{{ item.name }}
+
 							<VTooltip
 								v-if="item.info !== ''"
 								top
@@ -52,6 +56,7 @@
 										</VIcon>
 									</VBtn>
 								</template>
+
 								{{ item.info }}
 							</VTooltip>
 						</VCol>
@@ -65,6 +70,7 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
 	import { mdiMagnify, mdiInformation } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -100,14 +106,16 @@
 			}
 		}
 	})
-
 	export default class SearchFilter extends MixinsDeclaration {
 		searchIcon = mdiMagnify;
 		infoIcon = mdiInformation;
+
 		filterSearch = '';
 		tempListSearch: Item[] = [];
-		selectedItems: Array<string> = [];
-		internalValue: Array<string> = [];
+		selectedItems: string[] = [];
+		internalValue: string[] = [];
+
+		listSearch = []; // TODO
 
 		mounted() {
 			this.tempListSearch = this.listSearch;
@@ -125,6 +133,7 @@
 			this.tempListSearch = this.listSearch.filter((item: Item) => {
 				return item.name.toLowerCase().includes(this.filterSearch.toLowerCase());
 			});
+
 			if (this.filterSearch === '' || this.filterSearch === null || this.filterSearch === undefined) {
 				this.clearResults();
 			}
@@ -143,6 +152,7 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+
 	.bg-blue {
 		background-color: $vd-am-blue-lighten-90 !important;
 	}
