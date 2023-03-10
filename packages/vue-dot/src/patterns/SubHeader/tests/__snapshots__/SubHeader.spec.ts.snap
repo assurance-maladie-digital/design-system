@@ -1,53 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SubHeader renders correctly 1`] = `
-<div class="vd-sub-header">
-  <vsheet-stub color="secondary" tag="div" class="white--text py-6 px-8">
-    <vfadetransition-stub mode="out-in" origin="top center 0">
-      <vbtn-stub color="transparent" tag="button" activeclass="" small="true" depressed="true" type="button" class="vd-sub-header-back-btn mb-1 text-none font-weight-regular white--text px-1">
-        <vicon-stub class="mr-2">
-          M21,11H6.83L10.41,7.41L9,6L3,12L9,18L10.41,16.58L6.83,13H21V11Z
-        </vicon-stub>
+<vsheet-stub color="secondary" tag="div" class="vd-sub-header white--text py-6 px-8" style="width: 100%;">
+  <vfadetransition-stub mode="out-in" origin="top center 0">
+    <vbtn-stub color="transparent" tag="button" activeclass="" small="true" depressed="true" type="button" class="vd-sub-header-back-btn mb-1 text-none font-weight-regular white--text px-1">
+      <vicon-stub class="mr-2">
+        M21,11H6.83L10.41,7.41L9,6L3,12L9,18L10.41,16.58L6.83,13H21V11Z
+      </vicon-stub>
 
-        Retour
-      </vbtn-stub>
-    </vfadetransition-stub>
-    <div class="vd-sub-header-content d-flex justify-space-between">
-      <div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
-        <vfadetransition-stub mode="out-in" origin="top center 0">
-          <h2 class="text-h5 font-weight-bold">
-            Test
-          </h2>
-        </vfadetransition-stub>
-        <!---->
-      </div>
-      <vthemeprovider-stub dark="true">
-        <!---->
-      </vthemeprovider-stub>
+      Retour
+    </vbtn-stub>
+  </vfadetransition-stub>
+  <div class="vd-sub-header-content d-flex justify-space-between">
+    <div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
+      <vfadetransition-stub mode="out-in" origin="top center 0">
+        <h2 class="text-h5 font-weight-bold">
+          Test
+        </h2>
+      </vfadetransition-stub>
+      <!---->
     </div>
-  </vsheet-stub>
-</div>
+    <vthemeprovider-stub dark="true">
+      <!---->
+    </vthemeprovider-stub>
+  </div>
+</vsheet-stub>
 `;
 
 exports[`SubHeader renders loading state correctly 1`] = `
-<div class="vd-sub-header">
-  <div class="white--text py-6 px-8 v-sheet theme--light secondary">
-    <transition-stub name="fade-transition" mode="out-in">
-      <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 28px; width: 100px;">
-        <div class="v-skeleton-loader__button v-skeleton-loader__bone"></div>
-      </div>
-    </transition-stub>
-    <div class="vd-sub-header-content d-flex justify-space-between">
-      <div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
-        <transition-stub name="fade-transition" mode="out-in">
-          <div aria-busy="true" aria-live="polite" role="alert" aria-hidden="true" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 2rem; width: 300px;">
-            <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
-          </div>
-        </transition-stub>
-        <!---->
-      </div>
-      <div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4 flex-nowrap flex-shrink-0"><datalist loading="true" list-title="Catégorie 1" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="auto" class="ma-4"></datalist><datalist loading="true" list-title="Catégorie 2" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="auto" class="ma-4"></datalist></div>
+<div class="vd-sub-header white--text py-6 px-8 v-sheet theme--light secondary" style="width: 100%;">
+  <transition-stub name="fade-transition" mode="out-in">
+    <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 28px; width: 100px;">
+      <div class="v-skeleton-loader__button v-skeleton-loader__bone"></div>
     </div>
+  </transition-stub>
+  <div class="vd-sub-header-content d-flex justify-space-between">
+    <div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
+      <transition-stub name="fade-transition" mode="out-in">
+        <div aria-busy="true" aria-live="polite" role="alert" aria-hidden="true" class="v-skeleton-loader vd-header-loading v-skeleton-loader--is-loading theme--dark" style="height: 2rem; width: 300px;">
+          <div class="v-skeleton-loader__heading v-skeleton-loader__bone"></div>
+        </div>
+      </transition-stub>
+      <!---->
+    </div>
+    <div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4 flex-nowrap flex-shrink-0"><datalist loading="true" list-title="Catégorie 1" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="auto" class="ma-4"></datalist><datalist loading="true" list-title="Catégorie 2" items="[object Object],[object Object]" items-number-loading="2" heading-loading="true" width="auto" class="ma-4"></datalist></div>
   </div>
 </div>
 `;
