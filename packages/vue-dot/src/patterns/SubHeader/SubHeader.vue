@@ -1,8 +1,8 @@
 <template>
 	<VSheet
 		v-bind="options.sheet"
-		class="vd-sub-header white--text py-6 px-8"
 		:style="widthStyles"
+		class="vd-sub-header white--text py-6 px-8"
 	>
 		<slot name="back-btn">
 			<VFadeTransition
