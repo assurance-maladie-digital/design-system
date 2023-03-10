@@ -265,7 +265,26 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
+	$white: #fff;
+
 	// Use deep selector to style user content as well
+	.vd-footer-bar.theme--dark :deep() {
+		background-color: $vd-grey-darken-20 !important;
+
+		.vd-footer-bar-links a {
+			color: $white !important;
+		}
+
+		p,
+		.primary--text {
+			color: rgba($white, .6) !important;
+		}
+
+		svg {
+			fill: $white !important;
+		}
+	}
+
 	.vd-footer-bar-links :deep() {
 		a {
 			transition: .15s;
