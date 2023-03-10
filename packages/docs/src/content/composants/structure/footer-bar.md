@@ -23,6 +23,12 @@ Vous pouvez masquer les réseaux sociaux ou le logo de l’Assurance Maladie en 
 
 <doc-example file="footer-bar/hide-social-media-links"></doc-example>
 
+#### Mode sombre
+
+Vous pouvez afficher le footer en mode sombre en utilisant la prop `dark`.
+
+<doc-example file="footer-bar/dark"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
@@ -50,18 +56,11 @@ Vous pouvez changer les liens par défaut par des liens externes en utilisant le
 
 <doc-example file="footer-bar/externalsLinks"></doc-example>
 
-
 #### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `FooterBar` en utilisant la prop `vuetify-options`.
 
 <doc-example file="footer-bar/options"></doc-example>
-
-#### Dark mode
-
-Vous pouvez afficher un footer sombre en utilisant la prop `dark`.
-
-<doc-example file="footer-bar/dark"></doc-example>
 
 #### Slots
 

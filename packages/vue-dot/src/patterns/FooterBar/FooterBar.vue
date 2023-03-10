@@ -266,6 +266,21 @@
 	@import '@cnamts/design-tokens/dist/tokens';
 
 	// Use deep selector to style user content as well
+	.vd-footer-bar.theme--dark :deep() {
+		background-color: $vd-grey-darken-20 !important;
+		.vd-footer-bar-links {
+			a {
+				color: rgb(255, 255, 255) !important;
+			}
+		}
+		p,
+		.primary--text {
+			color: rgba(255, 255, 255, .6) !important;
+		}
+		svg {
+			fill: rgba(255, 255, 255) !important;
+		}
+	}
 	.vd-footer-bar-links :deep() {
 		a {
 			transition: .15s;
@@ -278,26 +293,8 @@
 				border-color: currentColor;
 			}
 		}
-
 		p {
 			padding: 1px 0;
-		}
-	}
-	.vd-footer-bar.theme--dark :deep() {
-		background-color: $vd-grey-darken-20 !important;
-		.vd-footer-bar-links {
-			a {
-				color: rgb(255, 255, 255) !important;
-			}
-		}
-		p {
-			color: rgba(255, 255, 255, 0.6) !important;
-		}
-		.primary--text {
-			color: rgba(255, 255, 255, 0.6) !important;
-		}
-		svg {
-			fill: rgba(255, 255, 255) !important;
 		}
 	}
 </style>

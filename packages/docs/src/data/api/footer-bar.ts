@@ -146,8 +146,8 @@ export const api: Api = {
 				name: 'dark',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche le mode sombre.'
-			},
+				description: 'Active le mode sombre.'
+			}
 		],
 		slots: [
 			{
