@@ -4,7 +4,7 @@
 			...options.footer,
 			...$attrs
 		}"
-		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode, 'dark-mode': $vuetify.theme.dark }"
+		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
 		<div
@@ -264,21 +264,22 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+	$white: rgb(255, 255, 255);
 
 	// Use deep selector to style user content as well
 	.vd-footer-bar.theme--dark :deep() {
 		background-color: $vd-grey-darken-20 !important;
 		.vd-footer-bar-links {
 			a {
-				color: rgb(255, 255, 255) !important;
+				color: $white !important;
 			}
 		}
 		p,
 		.primary--text {
-			color: rgba(255, 255, 255, .6) !important;
+			color: rgba($white, .6) !important;
 		}
 		svg {
-			fill: rgba(255, 255, 255) !important;
+			fill: $white !important;
 		}
 	}
 	.vd-footer-bar-links :deep() {
