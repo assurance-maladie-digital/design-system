@@ -3,9 +3,6 @@
 		<FooterBar
 			v-bind="$attrs"
 			v-on="$listeners"
-			cgu-route="/"
-			legal-notice-route="/"
-			a11y-statement-route="/"
 		/>
 	</div>
 </template>
@@ -21,11 +18,21 @@
 	})
 	export default class FooterBarUsage extends Vue {
 		defaultProps = {
-			a11yCompliance: A11yComplianceEnum.NON_COMPLIANT
+			a11yCompliance: A11yComplianceEnum.NON_COMPLIANT,
+			sitemapRoute: '/',
+			cguRoute: '/',
+			cookiesRoute: '/',
+			legalNoticeRoute: '/',
+			a11yStatementRoute: '/'
 		};
 
 		propsHiddenByDefault = [
-			'a11yCompliance'
+			'sitemapRoute',
+			'a11yCompliance',
+			'cguRoute',
+			'cookiesRoute',
+			'legalNoticeRoute',
+			'a11yStatementRoute'
 		];
 
 		options = {
@@ -39,6 +46,7 @@
 			booleans: [
 				'hideSitemapLink',
 				'hideCguLink',
+				'hideCookiesLink',
 				'hideLegalNoticeLink',
 				'hideA11yLink'
 			],

@@ -41,7 +41,7 @@
 
 					<HeaderMenuBtn
 						v-if="showHeaderMenuBtn"
-						v-bind="options.menuBtn"
+						:vuetify-options="options.menuBtn"
 						@click="updateDrawer(!drawer)"
 					/>
 				</VSheet>
@@ -49,7 +49,6 @@
 
 			<template v-if="showNavigationBar">
 				<HeaderNavigationBar
-					v-bind="options.navigationBar"
 					:tab.sync="tab"
 					:drawer.sync="drawer"
 					:theme="theme"
@@ -57,8 +56,13 @@
 					:items="navigationItems"
 					:inner-width="innerWidth"
 					:show-menu-btn="showNavBarMenuBtn"
+					:vuetify-options="options.navigationBar"
 				>
 					<slot name="navigation-bar-content" />
+
+					<template #navigation-bar-secondary-content>
+						<slot name="navigation-bar-secondary-content" />
+					</template>
 				</HeaderNavigationBar>
 			</template>
 		</VAppBar>
@@ -69,11 +73,11 @@
 		>
 			<HeaderNavigationDrawer
 				v-model="drawer"
-				v-bind="options.navigationDrawer"
 				:tab.sync="tab"
 				:theme="theme"
 				:items="navigationItems"
 				:mobile-version="isMobileVersion"
+				:vuetify-options="options.navigationDrawer"
 			>
 				<slot name="navigation-drawer-content" />
 			</HeaderNavigationDrawer>
@@ -218,12 +222,12 @@
 		z-index: 1;
 	}
 
-	.vd-header-bar ::v-deep .v-toolbar__content {
+	.vd-header-bar :deep(.v-toolbar__content) {
 		display: block;
 		padding: 0;
 	}
 
-	.vd-header-menu-btn ::v-deep {
+	.vd-header-menu-btn :deep() {
 		.v-btn__content {
 			flex-direction: column;
 		}

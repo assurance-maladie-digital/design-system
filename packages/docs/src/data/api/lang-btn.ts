@@ -6,6 +6,12 @@ export const api: Api = {
 	LangBtn: {
 		props: [
 			{
+				name: 'value',
+				type: 'string',
+				default: `'fr'`,
+				description: 'La langue sélectionnée.'
+			},
+			{
 				name: 'available-languages',
 				type: [
 					'string[]',
@@ -25,12 +31,6 @@ export const api: Api = {
 				type: 'string',
 				default: `'Choix de la langue. Actuellement'`,
 				description: 'Le label du bouton pour les lecteurs d’écran.'
-			},
-			{
-				name: 'value',
-				type: 'string',
-				default: `'fr'`,
-				description: 'La langue sélectionnée.'
 			},
 			...customizable(`{
 	menu: 'VMenu',

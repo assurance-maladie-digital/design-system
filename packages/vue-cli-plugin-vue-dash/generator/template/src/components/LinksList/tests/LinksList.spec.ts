@@ -1,12 +1,17 @@
 import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify';
 
-import { mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import {
+	Wrapper,
+	html,
+	shallowMount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins,
+	installRouter
+} from '@cnamts/vue-dot/src/helpers/testUtils';
 
 import LinksList from '../';
-
-let wrapper: Wrapper<Vue>;
 
 const links = [
 	{
@@ -17,8 +22,22 @@ const links = [
 ];
 
 describe('LinksList', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+	installRouter(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
 	it('renders correctly', () => {
-		wrapper = mountComponent(LinksList, {
+		wrapper = shallowMount(LinksList, {
+			localVue,
+			vuetify,
 			propsData: {
 				links
 			}

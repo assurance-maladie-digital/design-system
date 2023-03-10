@@ -5,15 +5,15 @@ Array [
   Object {
     "column": 1,
     "endColumn": 12,
-    "endLine": 1,
+    "endLine": 2,
     "fix": Object {
       "range": Array [
-        0,
-        3,
+        1,
+        4,
       ],
       "text": "let",
     },
-    "line": 1,
+    "line": 2,
     "message": "Unexpected var, use let or const instead.",
     "messageId": "unexpectedVar",
     "nodeType": "VariableDeclaration",
@@ -23,15 +23,15 @@ Array [
   Object {
     "column": 12,
     "endColumn": 1,
-    "endLine": 2,
+    "endLine": 3,
     "fix": Object {
       "range": Array [
-        11,
-        11,
+        12,
+        12,
       ],
       "text": ";",
     },
-    "line": 1,
+    "line": 2,
     "message": "Missing semicolon.",
     "messageId": "missingSemi",
     "nodeType": "VariableDeclaration",
@@ -40,16 +40,16 @@ Array [
   },
   Object {
     "column": 1,
-    "endColumn": 25,
-    "endLine": 2,
+    "endColumn": 24,
+    "endLine": 3,
     "fix": Object {
       "range": Array [
-        12,
-        15,
+        13,
+        16,
       ],
       "text": "let",
     },
-    "line": 2,
+    "line": 3,
     "message": "Unexpected var, use let or const instead.",
     "messageId": "unexpectedVar",
     "nodeType": "VariableDeclaration",
@@ -57,9 +57,9 @@ Array [
     "severity": 2,
   },
   Object {
-    "column": 19,
-    "endColumn": 20,
-    "endLine": 2,
+    "column": 18,
+    "endColumn": 19,
+    "endLine": 3,
     "fix": Object {
       "range": Array [
         30,
@@ -67,7 +67,7 @@ Array [
       ],
       "text": "",
     },
-    "line": 2,
+    "line": 3,
     "message": "Unexpected space before function parentheses.",
     "messageId": "unexpectedSpace",
     "nodeType": "FunctionExpression",
@@ -75,9 +75,9 @@ Array [
     "severity": 2,
   },
   Object {
-    "column": 25,
+    "column": 24,
     "endColumn": 1,
-    "endLine": 3,
+    "endLine": 4,
     "fix": Object {
       "range": Array [
         36,
@@ -85,7 +85,7 @@ Array [
       ],
       "text": ";",
     },
-    "line": 2,
+    "line": 3,
     "message": "Missing semicolon.",
     "messageId": "missingSemi",
     "nodeType": "VariableDeclaration",
@@ -95,7 +95,7 @@ Array [
   Object {
     "column": 9,
     "endColumn": 1,
-    "endLine": 4,
+    "endLine": 5,
     "fix": Object {
       "range": Array [
         45,
@@ -103,7 +103,7 @@ Array [
       ],
       "text": ";",
     },
-    "line": 3,
+    "line": 4,
     "message": "Missing semicolon.",
     "messageId": "missingSemi",
     "nodeType": "ExpressionStatement",

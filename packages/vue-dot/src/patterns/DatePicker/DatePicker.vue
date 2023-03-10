@@ -15,6 +15,7 @@
 				:success-messages="textFieldOptions.successMessages || successMessages"
 				:error-messages="textFieldOptions.errorMessages || errorMessages"
 				:error.sync="internalErrorProp"
+				:disabled="disabled"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
 				@click.native="textFieldClicked"
@@ -29,6 +30,7 @@
 						v-show="showPrependIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
+						:disabled="disabled"
 						@click="menu = true"
 					>
 						<slot name="prepend-icon">
@@ -44,6 +46,7 @@
 						v-show="showAppendIcon"
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
+						:disabled="disabled"
 						@click="menu = true"
 					>
 						<slot name="append-icon">
@@ -121,6 +124,10 @@
 				default: false
 			},
 			textFieldActivator: {
+				type: Boolean,
+				default: false
+			},
+			disabled: {
 				type: Boolean,
 				default: false
 			},
@@ -213,7 +220,7 @@
 
 		// Custom events
 		// Disabled when the btn is active
-		::v-deep {
+		:deep() {
 			.v-btn:not(.v-btn--active) {
 				.v-date-picker-table__events {
 					// Make the container take full space
@@ -254,7 +261,7 @@
 
 	// Fix margin-top on enclosed text field
 	// since we're using a slot with a button
-	.vd-date-picker-text-field.v-text-field--enclosed ::v-deep {
+	.vd-date-picker-text-field.v-text-field--enclosed :deep() {
 		.v-input__prepend-outer,
 		.v-input__prepend-inner,
 		.v-input__append-inner,
@@ -267,7 +274,7 @@
 
 	// Remove spacing on prepend slot since we're using v-show
 	// @see https://github.com/assurance-maladie-digital/design-system/issues/907
-	.vd-no-prepend-icon ::v-deep .v-input__prepend-outer {
+	.vd-no-prepend-icon :deep() .v-input__prepend-outer {
 		margin: 0 !important;
 	}
 </style>

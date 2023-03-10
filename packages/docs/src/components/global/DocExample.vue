@@ -10,7 +10,7 @@
 		>
 			<div class="text-right pa-2">
 				<DocTooltipBtn
-					:disabled="hasError"
+					:disabled="error"
 					label="Inverser les couleurs"
 					@click="dark = !dark"
 				>
@@ -22,7 +22,7 @@
 				</DocTooltipBtn>
 
 				<DocTooltipBtn
-					:disabled="hasError"
+					:disabled="error"
 					label="Voir la source"
 					@click="expand = !expand"
 				>
@@ -69,7 +69,7 @@
 					<VWindow
 						v-model="selected"
 						touchless
-						class="grey lighten-5"
+						class="grey-lighten-97"
 					>
 						<template v-for="(section, index) in sections">
 							<VWindowItem
@@ -95,7 +95,10 @@
 				rounded="b"
 				class="pa-4"
 			>
-				<VueFile :file="file" />
+				<VueFile
+					:file="file"
+					@error="error = true"
+				/>
 			</VSheet>
 		</VThemeProvider>
 	</VSheet>
@@ -140,7 +143,7 @@
 
 		dark = false;
 		expand = false;
-		hasError = false;
+		error = false;
 		selected = 'template';
 		parsed: Parsed | null = null;
 
@@ -165,8 +168,7 @@
 
 				this.boot(component.default);
 			} catch(error) {
-				this.hasError = true;
-				this.$emit('error', error);
+				this.error = true;
 			}
 		}
 

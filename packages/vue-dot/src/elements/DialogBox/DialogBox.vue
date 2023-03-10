@@ -3,6 +3,8 @@
 		v-model="dialog"
 		v-bind="$attrs"
 		:width="width"
+		:persistent="persistent"
+		aria-modal="true"
 		class="vd-dialog-box"
 	>
 		<VCard v-bind="options.card">
@@ -19,6 +21,7 @@
 				<VSpacer v-bind="options.spacer" />
 
 				<VBtn
+					v-if="!persistent"
 					v-bind="options.closeBtn"
 					:aria-label="locales.closeBtn"
 					@click="close"
@@ -64,6 +67,7 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
+	import { SelectableElements } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -94,17 +98,26 @@
 			hideActions: {
 				type: Boolean,
 				default: false
+			},
+			persistent: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component({
+	@Component<DialogBox>({
 		inheritAttrs: false,
 		model: {
 			prop: 'value',
 			event: 'change'
+		},
+		watch: {
+			dialog() {
+				this.setEventListeners();
+			}
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
@@ -122,6 +135,57 @@
 
 		close(): void {
 			this.$emit('change', false);
+		}
+
+		async getSelectableElements(): Promise<SelectableElements | undefined> {
+			await this.$nextTick();
+
+			const elements = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
+
+			if (!elements.length) {
+				return;
+			}
+
+			return elements;
+		}
+
+		async setEventListeners(): Promise<void> {
+			const elements = await this.getSelectableElements();
+
+			if (!elements) {
+				return;
+			}
+
+			for (let i = 0; i < elements.length; i++) {
+				const setFocus = (e: KeyboardEvent) => {
+					if (e.key !== 'Tab') {
+						return;
+					}
+
+					e.preventDefault();
+
+					if (!e.shiftKey) {
+						if (i === elements.length - 1) {
+							elements[0].focus();
+						} else {
+							elements[i + 1].focus();
+						}
+					} else {
+						if (i === 1) {
+							elements[elements.length - 1].focus();
+						} else {
+							elements[i - 1].focus();
+						}
+					}
+				};
+
+				if (!this.dialog) {
+					removeEventListener('keydown', setFocus);
+					return;
+				}
+
+				elements[i].addEventListener('keydown', setFocus);
+			}
 		}
 	}
 </script>

@@ -149,12 +149,10 @@
 		hover = false;
 
 		get colors(): IndexedObject {
-			const dark = this.$vuetify.theme.dark;
-
 			return {
-				label: dark ? 'white--text' : 'primary--text',
-				multiple: dark ? 'white--text' : 'black--text',
-				info: 'grey--text ' + (dark ? 'text--lighten-1' : 'text--darken-1')
+				label: 'primary--text',
+				multiple: 'black--text',
+				info: 'grey--text'
 			};
 		}
 
@@ -173,6 +171,8 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
 	.vd-file-upload {
 		cursor: pointer;
 		position: relative;
@@ -182,7 +182,7 @@
 		&:hover,
 		&:focus-within,
 		&.dragover {
-			background: #f5f5f5;
+			background: $vd-parme-lighten-90;
 		}
 
 		&.dark-mode {

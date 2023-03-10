@@ -51,8 +51,16 @@ export const drawerItems: DrawerItem[] = [
 				to: '/fondamentaux/accessibilite'
 			},
 			{
-				title: 'Logo',
-				to: '/fondamentaux/logo'
+				title: "Logo",
+				to: "/fondamentaux/logo",
+			},
+			{
+				title: 'Design Tokens',
+				to: '/fondamentaux/design-tokens'
+			},
+			{
+				title: "Éco-conception",
+				to: "/fondamentaux/eco-conception",
 			}
 		]
 	},
@@ -103,6 +111,14 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Boutons',
 				items: [
 					{
+						title: 'BackBtn',
+						to: '/composants/boutons/back-btn'
+					},
+					{
+						title: 'BackToTopBtn',
+						to: '/composants/boutons/back-to-top-btn'
+					},
+					{
 						title: 'CopyBtn',
 						to: '/composants/boutons/copy-btn'
 					},
@@ -146,6 +162,14 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'FileUpload',
 						to: '/composants/formulaires/file-upload'
+					},
+					{
+						title: 'NirField',
+						to: '/composants/formulaires/nir-field'
+					},
+					{
+						title: 'PhoneField',
+						to: '/composants/formulaires/phone-field'
 					},
 					{
 						title: 'UploadWorkflow',
@@ -195,12 +219,20 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/feedback/notification-bar'
 					},
 					{
+						title: 'AccessibilityBanner',
+						to: '/composants/feedback/accessibility-banner'
+					},
+					{
 						title: 'CookieBanner',
 						to: '/composants/feedback/cookie-banner'
 					},
 					{
 						title: 'HeaderLoading',
 						to: '/composants/feedback/header-loading'
+					},
+					{
+						title: 'RatingPicker',
+						to: '/composants/feedback/rating-picker'
 					}
 				]
 			}
@@ -217,6 +249,14 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'ErrorPage',
 				to: '/templates/error-page'
+			},
+			{
+				title: 'NotFoundPage',
+				to: '/templates/notfound-page'
+			},
+			{
+				title: 'MaintenancePage',
+				to: '/templates/maintenance-page'
 			}
 		]
 	},
@@ -325,12 +365,53 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Tests unitaires',
+				items: [
+					{
+						title: 'installGlobalPlugins',
+						to: '/composants-techniques/tests-unitaires/install-global-plugins'
+					},
+					{
+						title: 'installRouter',
+						to: '/composants-techniques/tests-unitaires/install-router'
+					},
+					{
+						title: 'createRouter',
+						to: '/composants-techniques/tests-unitaires/create-router'
+					},
+					{
+						title: 'createStore',
+						to: '/composants-techniques/tests-unitaires/create-store'
+					},
+					{
+						title: 'createVuetifyInstance',
+						to: '/composants-techniques/tests-unitaires/create-vuetify-instance'
+					},
+					{
+						title: 'mockVFormRef',
+						to: '/composants-techniques/tests-unitaires/mock-v-form-ref'
+					},
+					{
+						title: 'mockTranslations',
+						to: '/composants-techniques/tests-unitaires/mock-translations'
+					}
+				]
+			},
+			{
+				title: 'Types utilitaires',
+				to: '/composants-techniques/types-utilitaires'
+			},
+			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
 			},
 			{
 				title: 'CustomIcon',
 				to: '/composants-techniques/custom-icon'
+			},
+			{
+				title: 'Module de notification',
+				to: '/composants-techniques/module-notification'
 			}
 		]
 	},
@@ -355,6 +436,10 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/variables-environnement'
 			},
 			{
+				title: 'Gestion des textes',
+				to: '/guides/gestion-textes'
+			},
+			{
 				title: 'Gestion des événements',
 				to: '/guides/gestion-evenements'
 			},
@@ -367,6 +452,14 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/appels-api'
 			},
 			{
+				title: 'Tests e2e',
+				to: '/guides/tests-e2e'
+			},
+			{
+				title: 'Tests unitaires',
+				to: '/guides/tests-unitaires'
+			},
+			{
 				title: 'Tableau avec pagination',
 				to: '/guides/tableau-pagination'
 			},
@@ -377,6 +470,14 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Authentification avec token',
 				to: '/guides/authentification-token'
+			},
+			{
+				title: 'Utilisation des icônes',
+				to: '/guides/utilisation-icones'
+			},
+			{
+				title: 'Gestion des droits',
+				to: '/guides/gestion-droits'
 			}
 		]
 	},

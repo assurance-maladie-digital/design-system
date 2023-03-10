@@ -11,7 +11,7 @@
 		:error-messages="errorMessages"
 		color="primary"
 		tick-size="6"
-		track-color="grey lighten-1"
+		track-color="grey"
 		class="vd-choice-slider-field vd-form-input-xl"
 		@change="valueUpdated"
 	>
@@ -147,7 +147,7 @@
 		}
 	}
 
-	.vd-choice-slider-field ::v-deep {
+	.vd-choice-slider-field :deep() {
 		.v-input__control {
 			width: auto;
 		}

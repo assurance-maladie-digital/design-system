@@ -1,7 +1,8 @@
 <template>
-	<div
+	<VSheet
+		v-bind="options.sheet"
 		:style="widthStyles"
-		class="vd-sub-header secondary white--text py-6 px-8"
+		class="vd-sub-header white--text py-6 px-8"
 	>
 		<slot name="back-btn">
 			<VFadeTransition
@@ -94,7 +95,7 @@
 				</VThemeProvider>
 			</slot>
 		</div>
-	</div>
+	</VSheet>
 </template>
 
 <script lang="ts">
@@ -180,7 +181,7 @@
 		max-width: none;
 	}
 
-	.vd-data-list-group ::v-deep .vd-data-list {
+	.vd-data-list-group :deep(.vd-data-list) {
 		max-width: 200px;
 
 		// Apply margin right to avoid empty

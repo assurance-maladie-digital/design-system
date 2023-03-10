@@ -133,11 +133,23 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
 	// Use min-width to avoid shrinking with flexbox
-	.vd-notification-bar ::v-deep .v-snack__wrapper {
+	.vd-notification-bar :deep(.v-snack__wrapper) {
 		min-width: 0;
 	}
-
+	.vd-notification-bar :deep(.warning) {
+		background-color: $vd-yellow-base !important;
+		border-color: $vd-yellow-base !important;
+		color: $vd-grey-darken-80 !important;
+		.v-icon__svg {
+			fill: $vd-grey-darken-80 !important;
+		}
+		.v-btn {
+			color: $vd-grey-darken-80 !important;
+		}
+	}
 	.vd-notification-icon {
 		min-width: 24px;
 	}

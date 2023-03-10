@@ -5,6 +5,7 @@ export enum ApiTableHeadersEnum {
 	EVENTS = 'events',
 	FUNCTIONS = 'functions',
 	MODIFIERS = 'modifiers',
+	TYPE_ARGUMENTS = 'typeArguments',
 	ARGUMENTS = 'arguments',
 	ERROR_MESSAGES = 'errorMessages',
 	RETURN_VALUE = 'returnValue'

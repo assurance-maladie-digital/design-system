@@ -6,84 +6,77 @@ import { RoadmapSection } from '~/types/roadmap';
 export const roadmap: IndexedObject<RoadmapSection[]> = {
 	current: [
 		{
-			version: '2.6.0',
-			date: 'Juillet 2022',
+			version: '2.9.0',
+			date: 'Janvier 2022',
 			description: 'Mise à jour de composants et complétion de la documentation.',
 			items: [
 				{
-					title: 'Ajout de la recherche',
-					description: 'Ajout de la recherche à la documentation.',
+					title: 'Nouveau composant filtre',
+					description: 'Ajout du nouveau composant filtre.',
 					label: LabelMappingEnum.NEW,
-					issue: 1278
+					issue: 2287
 				},
 				{
-					title: 'Mise à jour de la typographie',
-					description: 'Mise à jour des règles typographiques et des typographies utilisées.',
-					label: LabelMappingEnum.REFACTORING,
-					issue: 1794
-				},
-				{
-					title: 'Utilisation des icônes',
-					description: 'Documentation de l’utilisation des icônes.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1367
-				},
-				{
-					title: 'Visualisation de données',
-					description: 'Définition des différents types de graphiques.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1863
-				},
-				{
-					title: 'Design Tokens',
-					description: 'Intégration de la nouvelle palette de couleurs aux Design Tokens.',
+					title: 'Nouveau composant BackToTopBtn',
+					description: 'Ajout du nouveau composant BackToTopBtn.',
 					label: LabelMappingEnum.NEW,
-					issue: 1397
+					issue: 2425
 				},
 				{
-					title: 'Footer version complexe',
-					description: 'Ajout de la version complexe du footer.',
+					title: 'Nouveaux templates d’erreur',
+					description: 'Ajout des templates MaintenancePage et NotFoundPage.',
 					label: LabelMappingEnum.NEW,
-					issue: 1624
-				}
-			]
-		}
-	],
-	next: [
-		{
-			version: '2.6.0',
-			date: 'Août 2022',
-			description: 'Ajout de nouveaux composants et mise à jour des Design Tokens.',
-			items: [
-				{
-					title: 'Documentation éco-conception',
-					description: 'Définition des principes d’éco-conception.',
-					label: LabelMappingEnum.DOCUMENTATION,
-					issue: 1862
+					issue: 2384
 				},
 				{
-					title: 'Connexion',
-					description: 'Ajout d’un template de connexion.',
-					label: LabelMappingEnum.NEW
-				},
-				{
-					title: 'Mot de passe oublié',
-					description: 'Ajout d’un template de réinitialisation de mot de passe.',
-					label: LabelMappingEnum.NEW
-				},
-				{
-					title: 'Nouveau mot de passe',
-					description: 'Ajout d’un template pour définir un nouveau mot de passe.',
+					title: 'Nouveau composant lien d’évitement',
+					description: 'Ajout du nouveau composant A11yBanner.',
 					label: LabelMappingEnum.NEW,
-					issue: 1608
+					issue: 2267
+				},
+				{
+					title: 'Nouveau composant liste réductible',
+					description: 'Ajout du nouveau composant CollapseList.',
+					label: LabelMappingEnum.NEW,
+					issue: 2454
+				},
+				{
+					title: 'Nouveau composant logo et identité de marque',
+					description: 'Ajout du nouveau composant LogoBrandSection.',
+					label: LabelMappingEnum.NEW,
+					issue: 2455
 				}
 			]
 		},
 		{
 			version: '3.0.0',
-			date: 'À partir de septembre 2022',
+			date: 'Depuis fin 2022',
 			description: 'Migration vers Vue.js 3 : réécriture des composants avec l’API de composition, mise à jour du Starter Kit et modifications majeures.',
-			items: []
+			items: [
+				{
+					title: 'RFC Nuxt',
+					description: 'Étude sur l’utilisation de Nuxt pour le Starter Kit.',
+					label: LabelMappingEnum.NEW,
+					issue: 2269
+				},
+				{
+					title: 'RFC sur la syntaxe des composants',
+					description: 'Étude sur la nouvelle syntaxe des composants.',
+					label: LabelMappingEnum.NEW,
+					issue: 2270
+				},
+				{
+					title: 'RFC sur Vue i18n',
+					description: 'Étude sur l’utilisation de Vue i18n.',
+					label: LabelMappingEnum.NEW,
+					issue: 2271
+				},
+				{
+					title: 'Nouveau Starter Kit',
+					description: 'Création du nouveau Starter Kit.',
+					label: LabelMappingEnum.NEW
+				}
+			]
 		}
 	]
 };

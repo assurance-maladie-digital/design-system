@@ -6,7 +6,7 @@
 			hide-details
 			clearable
 			filled
-			background-color="am-blue lighten-3"
+			background-color="am-blue-lighten-97"
 			class="mb-4"
 		>
 			<template #prepend-inner>
@@ -247,7 +247,7 @@
 		width: 100%;
 		overflow-x: auto;
 
-		::v-deep {
+		:deep() {
 			.v-treeview-node {
 				cursor: pointer;
 			}

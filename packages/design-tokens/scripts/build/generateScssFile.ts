@@ -1,52 +1,58 @@
 import fs from 'fs-extra';
 import consola from 'consola';
 
-import { toKebabCase } from './utils';
+import { getToken, getColorToken, partition, toKebabCase } from './utils';
 
-import { Tokens } from '../../src/types';
+import { Color, Tokens, Colors } from '../../src/types';
 
-/** @see https://github.com/rlapoele/json-to-scss/blob/master/lib/jsValueToSassString.js */
-import jsValueToSassString from 'json-to-scss/lib/jsValueToSassString';
+function getColors(colors: Colors): string {
+	let content = '';
 
-const TAB_CHARACTER = '	';
+	const [theme, palette] = partition(Object.entries(colors), ([_, value]) => typeof value === 'string');
+
+	content += '// theme\n';
+
+	(theme as [string, string][]).forEach(([name, value]) => {
+		content += getToken(name, value);
+	});
+
+	content += '\n// colors';
+
+	(palette as [string, Color][]).forEach(([colorName, colorValues]) => {
+		content += `\n// ${toKebabCase(colorName)}\n`;
+
+		Object.entries(colorValues).forEach(([variationName, colorValue]) => {
+			content += getColorToken(colorName, variationName, colorValue);
+		});
+	});
+
+	return content;
+}
 
 export function generateScssFile(tokens: Tokens, distPath: string): void {
 	consola.info('Generating SCSS file');
 
-	// Generate default SCSS exports from tokens to avoid using deep-get
-	const tokenArray = Object.keys(tokens);
+	let content = '';
 
-	const linesToAppend: string[] = [];
-
-	tokenArray.forEach((tokenName) => {
-		// eg. $vd-colors: map-get($vd-tokens, colors);
-		const line = `\n$vd-${tokenName}: map-get($vd-tokens, ${tokenName});\n`;
-
-		linesToAppend.push(line);
-
-		// Generate var for each value
-		const tokenContent = (tokens as Tokens)[tokenName];
-
-		if (typeof tokenContent !== 'object') {
+	Object.entries(tokens).forEach(([tokenName, tokenValue]) => {
+		if (tokenName === 'colors') {
+			content += getColors(tokenValue);
 			return;
 		}
 
-		linesToAppend.push('\n');
+		content += `// ${toKebabCase(tokenName)}\n`;
 
-		const tokenContentArray = Object.keys(tokenContent);
+		if (typeof tokenValue === 'string') {
+			content += getToken(tokenName, tokenValue) + '\n';
+			return;
+		}
 
-		tokenContentArray.forEach((key) => {
-			// eg. $vd-accent: map-get($vd-colors, accent);
-			const line = `$vd-${key}: map-get($vd-${tokenName}, ${key});\n`;
-
-			linesToAppend.push(line);
+		Object.entries(tokenValue).forEach(([name, value]) => {
+			content += getToken(name, value as string);
 		});
+
+		content += '\n';
 	});
 
-	// Generate sass string using json-to-scss
-	const sassString = jsValueToSassString(tokens, TAB_CHARACTER, 1);
-
-	const scssFile = toKebabCase(`$vd-tokens: ${sassString};\n${linesToAppend.join('')}`);
-
-	fs.writeFileSync(`${distPath}/tokens.scss`, scssFile);
+	fs.writeFileSync(`${distPath}/tokens.scss`, content);
 }

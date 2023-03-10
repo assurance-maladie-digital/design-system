@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.doc-alert ::v-deep p:last-child {
+	.doc-alert :deep(p:last-child) {
 		margin-bottom: 0 !important;
 	}
 </style>

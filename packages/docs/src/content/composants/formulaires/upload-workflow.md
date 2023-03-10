@@ -47,12 +47,24 @@ Vous pouvez laisser l’utilisateur sélectionner le nombre de fichiers qu’il 
 
 <doc-example file="upload-workflow/unrestricted"></doc-example>
 
+#### Prévisualisation des fichiers
+
+Vous pouvez permettre à l’utilisateur de prévisualiser le fichier qu’il vient de sélectionner avant de valider en utilisant la prop `show-file-preview`.
+
+<doc-alert type="info">
+Seuls les fichiers de type PDF et les images peuvent être prévisualisés.
+</doc-alert>
+
+<doc-example file="upload-workflow/file-preview"></doc-example>
+
 #### Mode rétrocompatible
 
 Vous pouvez toujours spécifier la liste des fichiers à sélectionner en utilisant le `v-model`.
 
 <doc-alert type="warning">
+
 Ce mode de fonctionnement est déprécié depuis la [version 2.5.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/v2.5.0) et sera supprimé dans la prochaine version majeure.
+
 </doc-alert>
 
 <doc-example file="upload-workflow/backward-compatible"></doc-example>
@@ -72,7 +84,7 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Uploa
 
 ### Slots
 
-Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier.
+Vous pouvez utiliser les slots `title` et `modal-title` pour remplacer le titre de la section et le titre de la modale de sélection du fichier, ainsi que le slot `modal-description` pour ajouter un texte supplémentaire dans la modale de sélection du fichier.
 
 <doc-example file="upload-workflow/slots"></doc-example>
 

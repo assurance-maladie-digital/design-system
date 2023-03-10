@@ -19,6 +19,7 @@
 					v-else
 					v-bind="options.tabs"
 					:value="tab"
+					optional
 					@change="emitTabUpdateEvent"
 				>
 					<VTab
@@ -32,6 +33,8 @@
 					</VTab>
 				</VTabs>
 			</slot>
+
+			<slot name="navigation-bar-secondary-content" />
 		</VSheet>
 	</VSheet>
 </template>

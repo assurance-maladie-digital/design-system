@@ -27,10 +27,10 @@ import { tokens } from '@cnamts/design-tokens';
 console.log(tokens.pageWidth); // 1440px
 ```
 
-You can also import only the color themes:
+You can also import only the color theme:
 
 ```ts
-import { lightTheme } from '@cnamts/design-tokens/src/colors';
+import { colorTheme } from '@cnamts/design-tokens/src/colors';
 ```
 
 ### JavaScript
@@ -56,7 +56,7 @@ In Sass, Design Tokens names are formatted in `kebab-case`.
 @import '@cnamts/design-tokens/dist/tokens';
 
 .pro {
-	color: $vd-pro; // #ef6c00
+	color: $vd-risque-pro; // #ef6c00
 }
 ```
 

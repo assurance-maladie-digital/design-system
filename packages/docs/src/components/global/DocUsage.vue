@@ -49,11 +49,10 @@
 							class="overflow-y-auto h-100 d-flex justify-center pa-4"
 						>
 							<VueFile
-								v-if="file"
 								:file="file"
 								v-bind="usageProps"
 								@loaded="setContents"
-								@error="hasError = true"
+								@error="error = true"
 							/>
 						</VSheet>
 					</VThemeProvider>
@@ -81,7 +80,7 @@
 
 						<div class="ms-auto pa-1">
 							<DocTooltipBtn
-								:disabled="hasError"
+								:disabled="error"
 								label="Inverser les couleurs"
 								@click="dark = !dark"
 							>
@@ -93,7 +92,7 @@
 							</DocTooltipBtn>
 
 							<DocTooltipBtn
-								:disabled="hasError"
+								:disabled="error"
 								label="Voir la source"
 								@click="expand = !expand"
 							>
@@ -151,7 +150,7 @@
 								dense
 								filled
 								hide-details
-								background-color="am-blue lighten-3"
+								background-color="am-blue-lighten-97"
 								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
@@ -166,7 +165,7 @@
 								dense
 								filled
 								hide-details
-								background-color="am-blue lighten-3"
+								background-color="am-blue-lighten-97"
 								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
@@ -179,7 +178,7 @@
 								dense
 								filled
 								hide-details
-								background-color="am-blue lighten-3"
+								background-color="am-blue-lighten-97"
 								class="my-3"
 								@input="setProp(prop, $event)"
 							/>
@@ -327,7 +326,7 @@
 
 		dark = false;
 		expand = false;
-		hasError = false;
+		error = false;
 
 		tab = null;
 		tabs: string[] = [];
@@ -429,7 +428,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.doc-usage-options ::v-deep .v-responsive__content {
+	.doc-usage-options :deep(.v-responsive__content) {
 		> :first-child {
 			margin-top: 0 !important;
 			padding-top: 0 !important;
@@ -440,7 +439,7 @@
 		}
 	}
 
-	.doc-usage-options ::v-deep {
+	.doc-usage-options :deep() {
 		.v-text-field .v-input__slot::before {
 			border-color: rgba(0, 0, 0, .2);
 		}

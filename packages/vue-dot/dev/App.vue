@@ -32,6 +32,7 @@
 </script>
 
 <style lang="scss">
+	@import '@cnamts/design-tokens/dist/tokens';
 	@import '../src/styles/index.scss';
 
 	/* Default, global styles */
@@ -42,7 +43,7 @@
 		max-width: 100%;
 		box-sizing: border-box;
 		scroll-behavior: smooth;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
 	}
 
 	html,
@@ -60,7 +61,7 @@
 		width: 100%;
 		display: flex;
 		min-height: 100vh;
-		background: #f8f9fc;
+		background: $vd-am-blue-lighten-97;
 	}
 
 	/* Apply default transition to links */

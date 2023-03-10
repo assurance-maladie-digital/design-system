@@ -1,19 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FooterBar renders correctly 1`] = `
-<vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" class="vd-footer-bar text-sm-center d-flex flex-column flex-sm-row align-start justify-center pa-0 w-100">
-  <routerlink-stub to="[object Object]" class="my-3 mx-4">
-    Plan du site
-  </routerlink-stub>
-  <routerlink-stub to="[object Object]" class="my-3 mx-4">
-    Conditions générales d’utilisation
-  </routerlink-stub>
-  <routerlink-stub to="[object Object]" class="my-3 mx-4">
-    Mentions légales
-  </routerlink-stub>
-  <routerlink-stub to="[object Object]" class="my-3 mx-4">
-    Accessibilité&nbsp;: non conforme
-  </routerlink-stub>
+<vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" class="vd-footer-bar flex-column align-stretch pa-3 w-100">
   <!---->
+  <!---->
+  <!---->
+  <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 py-2 py-sm-0">
+    <footerlink-stub options="[object Object]" route="[object Object]">
+      Plan du site
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" route="[object Object]">
+      Conditions générales d’utilisation
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" route="[object Object]">
+      Gestion des cookies
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" route="[object Object]">
+      Mentions légales
+    </footerlink-stub>
+    <footerlink-stub options="[object Object]" route="[object Object]">
+      Accessibilité&nbsp;: non conforme
+    </footerlink-stub>
+    <!---->
+  </div>
 </vfooter-stub>
 `;

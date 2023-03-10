@@ -1,14 +1,15 @@
 import fr from 'vuetify/es5/locale/fr';
 
-import { lightTheme } from '@cnamts/design-tokens/dist/colors';
+import { colorTheme } from '@cnamts/design-tokens/dist/colors';
 
 export default {
 	theme: {
 		themes: {
-			light: lightTheme
+			light: colorTheme
 		},
 		options: {
-			variations: false
+			variations: false,
+			customProperties: true
 		}
 	},
 	icons: {

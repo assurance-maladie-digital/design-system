@@ -1,7 +1,7 @@
 <template>
 	<VExpansionPanels
 		accordion
-		class="doc-roadmap w-100"
+		class="doc-a11y-criteria w-100"
 	>
 		<VExpansionPanel
 			v-for="(item, index) in items"
@@ -71,7 +71,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-expansion-panel ::v-deep {
+	.v-expansion-panel :deep() {
 		.v-expansion-panel-content__wrap {
 			padding: 0;
 		}

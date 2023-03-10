@@ -1,16 +1,36 @@
 import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify';
 
-import { mountComponent } from '@/tests-unit';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
+import {
+	Wrapper,
+	html,
+	shallowMount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins,
+	installRouter
+} from '@cnamts/vue-dot/src/helpers/testUtils';
 
 import Home from '../Home.vue';
 
-let wrapper: Wrapper<Vue>;
-
 describe('Home', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+	installRouter(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
 	it('renders correctly', () => {
-		wrapper = mountComponent(Home);
+		wrapper = shallowMount(Home, {
+			localVue,
+			vuetify
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

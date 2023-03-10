@@ -41,6 +41,8 @@
 				{{ addBtnLabel }}
 			</span>
 		</VBtn>
+
+		<slot name="search-right" />
 	</VToolbar>
 </template>
 
@@ -131,7 +133,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-table-toolbar ::v-deep .v-toolbar__content {
+	.vd-table-toolbar :deep(.v-toolbar__content) {
 		width: 100%;
 		flex-wrap: wrap;
 	}

@@ -18,6 +18,10 @@ const Props = Vue.extend({
 		fileListItems: {
 			type: Array as PropType<FileListItem[]>,
 			default: null
+		},
+		showFilePreview: {
+			type: Boolean,
+			default: false
 		}
 	}
 });
@@ -28,16 +32,15 @@ const MixinsDeclaration = mixins(Props, UpdateFileModel);
 	watch: {
 		value: {
 			handler(): void {
-				if (this.fileListItems === null && !this.value.length) {
-					this.resetInternalModel();
-				}
-
-				if (this.internalFileListItems.length) {
-					this.initFileList(this.internalFileListItems);
-				}
+				this.setInternalModel();
 			},
 			immediate: true,
 			deep: true
+		},
+		fileListItems: {
+			handler(): void {
+				this.setInternalModel();
+			}
 		}
 	}
 })
@@ -55,10 +58,10 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	selectedItem = '';
 
-	internalFileListItems = this.fileListItems ?? this.value;
+	internalFileListItems = [] as FileListItem[];
 
 	get singleMode(): boolean {
-		return this.fileList.length === 1;
+		return this.internalFileListItems.length === 1;
 	}
 
 	get selectItems(): SelectItem[] {
@@ -74,6 +77,18 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		});
 
 		return items;
+	}
+
+	setInternalModel(): void {
+		this.internalFileListItems = this.fileListItems ?? this.value;
+
+		if (this.fileListItems === null && !this.value.length) {
+			this.resetInternalModel();
+		}
+
+		if (this.internalFileListItems.length) {
+			this.initFileList(this.internalFileListItems);
+		}
 	}
 
 	setFileInList(): void {
@@ -131,6 +146,13 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	async dialogConfirm(): Promise<void> {
 		await this.$nextTick();
 
+		if (this.showFilePreview && !this.internalFileListItems.length && this.uploadedFile) {
+			this.fileList.push(this.uploadedFile);
+			this.emitChangeEvent();
+			this.dialog = false;
+			return;
+		}
+
 		if (this.$refs.form.validate()) {
 			this.dialog = false;
 			this.setFileInList();
@@ -139,6 +161,15 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	fileSelected(): void {
+		if (this.showFilePreview) {
+			if (this.singleMode) {
+				this.selectedItem = this.selectItems[0].value;
+			}
+
+			this.dialog = true;
+			return;
+		}
+
 		if (!this.internalFileListItems.length && this.uploadedFile) {
 			this.fileList.push(this.uploadedFile);
 			this.emitChangeEvent();

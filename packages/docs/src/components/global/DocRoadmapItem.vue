@@ -10,7 +10,7 @@
 			</span>
 		</VExpansionPanelHeader>
 
-		<VExpansionPanelContent color="frosted-blue lighten-3">
+		<VExpansionPanelContent color="frosted-blue-lighten-97">
 			<p
 				v-if="items.length === 0"
 				class="text-subtitle-2 mt-4 mb-0"
@@ -64,7 +64,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-expansion-panel-header ::v-deep .v-expansion-panel-header__icon {
+	.v-expansion-panel-header :deep(.v-expansion-panel-header__icon) {
 		flex: none;
 	}
 

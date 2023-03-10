@@ -2,6 +2,8 @@ import { applyTypographicRules } from './src/hooks/applyTypographicRules';
 import { parseMarkdownDescription } from './src/hooks/parseMarkdownDescription';
 import { transformCodeBlocks } from './src/hooks/transformCodeBlocks';
 
+import { tokens } from '@cnamts/design-tokens';
+
 export default {
 	target: 'static',
 	srcDir: './src/',
@@ -45,7 +47,7 @@ export default {
 			{
 				rel: 'mask-icon',
 				href: '/safari-pinned-tab.svg',
-				color: '#0c419a'
+				color: tokens.colors.primary
 			}
 		]
 	},
@@ -71,7 +73,8 @@ export default {
 	build: {
 		transpile: [
 			'@cnamts/vue-dot',
-			'@cnamts/form-builder'
+			'@cnamts/form-builder',
+			'@docsearch/css'
 		]
 	},
 	modules: [
@@ -89,7 +92,10 @@ export default {
 	},
 	vuetify: {
 		optionsPath: '~/vuetify.options.ts',
-		defaultAssets: false
+		defaultAssets: false,
+		treeShake: {
+			directives: ['Scroll']
+		}
 	},
 	googleFonts: {
 		families: {
@@ -116,6 +122,8 @@ export default {
 	},
 	env: {
 		API_URL: (process.env.DEPLOY_PRIME_URL || 'https://digital-design-system.netlify.app') + '/.netlify/functions',
-		API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN: process.env.API_HEADERS_ACCESS_CONTROL_ALLOW_ORIGIN || '*'
+		SEARCH_API_KEY: process.env.SEARCH_API_KEY || '',
+		SEARCH_APP_ID: process.env.SEARCH_APP_ID || '',
+		SEARCH_INDEX_NAME: process.env.SEARCH_INDEX_NAME || ''
 	}
 };

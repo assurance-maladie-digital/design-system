@@ -1,41 +1,41 @@
 {
-	"name": "@cnamts/vue-cli-plugin-vue-dash",
-	"version": "2.4.0",
-	"description": "Vue CLI plugin to scaffold front-end projects",
-	"keywords": [
-		"cnam",
-		"vue",
-		"vue-cli",
-		"scaffolding"
-	],
-	"homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
-	"bugs": {
-		"url": "https://github.com/assurance-maladie-digital/design-system/issues",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"license": "MIT",
-	"author": {
-		"name": "CNAM",
-		"email": "digital_TL.cnam@assurance-maladie.fr"
-	},
-	"main": "index.js",
-	"scripts": {
-		"lint": "eslint . --fix"
-	},
-	"dependencies": {
-		"consola": "^2.15.3",
-		"dayjs": "^1.8.34",
-		"fs-extra": "^10.0.0",
-		"superb": "^4.0.0"
-	},
-	"devDependencies": {
-		"@cnamts/design-tokens": "^2.4.0",
-		"@cnamts/eslint-config": "^2.4.0",
-		"@cnamts/eslint-config-vue": "^2.4.0",
-		"@cnamts/form-builder": "^2.4.0",
-		"@cnamts/vue-dot": "^2.4.0"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@cnamts/vue-cli-plugin-vue-dash",
+  "version": "2.9.0-beta.0",
+  "description": "Vue CLI plugin to scaffold front-end projects",
+  "keywords": [
+    "cnam",
+    "vue",
+    "vue-cli",
+    "scaffolding"
+  ],
+  "homepage": "https://github.com/assurance-maladie-digital/design-system#readme",
+  "bugs": {
+    "url": "https://github.com/assurance-maladie-digital/design-system/issues",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "CNAM",
+    "email": "digital_TL.cnam@assurance-maladie.fr"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "consola": "^2.15.3",
+    "dayjs": "^1.8.34",
+    "fs-extra": "^11.0.0",
+    "superb": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cnamts/design-tokens": "^2.9.0-alpha.0",
+    "@cnamts/eslint-config": "^2.9.0-alpha.0",
+    "@cnamts/eslint-config-vue": "^2.9.0-alpha.0",
+    "@cnamts/form-builder": "^2.9.0-beta.0",
+    "@cnamts/vue-dot": "^2.9.0-beta.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
