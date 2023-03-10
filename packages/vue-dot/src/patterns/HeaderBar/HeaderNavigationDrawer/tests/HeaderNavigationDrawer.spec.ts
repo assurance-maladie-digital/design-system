@@ -13,7 +13,8 @@ describe('HeaderNavigationDrawer', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(HeaderNavigationDrawer, {
 			propsData: {
-				theme: ThemeEnum.DEFAULT
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: true
 			}
 		});
 

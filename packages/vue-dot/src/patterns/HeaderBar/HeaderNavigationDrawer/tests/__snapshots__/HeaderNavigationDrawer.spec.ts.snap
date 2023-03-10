@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderNavigationDrawer renders correctly 1`] = `""`;
+exports[`HeaderNavigationDrawer renders correctly 1`] = `
+<vnavigationdrawer-stub app="true" color="#0a347b" mobilebreakpoint="1264" dark="true" height="100vh" minivariantwidth="56" src="" tag="nav" temporary="true" width="320px" class="pa-4">
+  <div class="d-flex align-center justify-end mb-8">
+    <vbtn-stub tag="button" activeclass="" icon="true" type="button" aria-label="Fermer le menu">
+      <vicon-stub>
+        M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z
+      </vicon-stub>
+    </vbtn-stub>
+  </div>
+  <vtabs-stub activeclass="" backgroundcolor="transparent" nexticon="$next" optional="true" previcon="$prev" slidersize="2" vertical="true" dense="true"></vtabs-stub>
+</vnavigationdrawer-stub>
+`;
