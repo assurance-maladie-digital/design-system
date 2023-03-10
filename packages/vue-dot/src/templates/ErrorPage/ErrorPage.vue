@@ -36,6 +36,7 @@
 				<VBtn
 					:to="btnRoute"
 					color="primary"
+					class="text-none"
 					exact
 				>
 					{{ btnText }}

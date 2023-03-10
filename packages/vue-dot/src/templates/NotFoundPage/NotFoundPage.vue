@@ -29,7 +29,7 @@
 					<VBtn
 						:to="btnRoute"
 						color="primary"
-						class="mt-2"
+						class="mt-2 text-none"
 						exact
 					>
 						{{ btnText }}
