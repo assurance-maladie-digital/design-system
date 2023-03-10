@@ -8,10 +8,12 @@
 			<div
 				v-for="tab in tabs"
 				:key="tab.name"
-				:class="tab === activeTab ? 'active' : ''"
 				class="tab pointer d-flex align-center"
 				@click="changeTab(tab)"
 			>
+				<div
+					:class="tab === activeTab ? 'active-tab' : ''"
+				/>
 				<span
 					class="ml-4 text-body-1"
 					:class="tab === activeTab ? 'active-text primary--text mr-2' : ''"
@@ -63,24 +65,33 @@
 	border-radius: 4px;
 	max-width: 307px;
 }
+
 .contextual-menu-dark {
 	background-color: $vd-grey-darken-40;
 	border: 1px solid $vd-grey-darken-60;
 	border-radius: 4px;
 	max-width: 307px;
 }
+
 .title {
 	font-size: 18px;
 	font-weight: 600;
 }
+
 .tab {
 	height: 39px;
 	border-left: 2px solid grey;
 }
-.active {
-	border-left: 4px solid $vd-primary;
-	.active-text {
-		margin-left: 14px !important;
-	}
+
+.active-text {
+	margin-left: 14px !important;
+}
+
+.active-tab {
+		width: 4px;
+		border-radius: 0 2px 2px 0;
+		background-color: $vd-primary;
+		height: 39px;
+		margin-left: -2px
 }
 </style>
