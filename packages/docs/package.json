@@ -28,7 +28,7 @@
     "@docsearch/js": "3.3.3",
     "@netlify/functions": "1.4.0",
     "@octokit/core": "4.2.0",
-    "nuxt": "2.15.8",
+    "nuxt": "2.16.2",
     "remark": "13.0.0",
     "remark-html": "13.0.2",
     "slugify": "1.6.5",
