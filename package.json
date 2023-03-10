@@ -18,7 +18,7 @@
 		"@mdi/js": "7.1.96",
 		"@rushstack/eslint-patch": "1.2.0",
 		"@types/eslint": "8.4.1",
-		"@types/fs-extra": "9.0.13",
+		"@types/fs-extra": "11.0.1",
 		"@types/jest": "26.0.24",
 		"@types/node": "16.18.14",
 		"@vue/eslint-config-typescript": "11.0.2",
