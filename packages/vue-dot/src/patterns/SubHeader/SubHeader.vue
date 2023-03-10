@@ -1,102 +1,101 @@
 <template>
-	<div class="vd-sub-header">
-		<VSheet
-			v-bind="options.background"
-			class="white--text py-6 px-8"
-		>
-			<slot name="back-btn">
-				<VFadeTransition
-					v-if="!hideBackBtn"
-					mode="out-in"
+	<VSheet
+		v-bind="options.sheet"
+		class="vd-sub-header white--text py-6 px-8"
+		:style="widthStyles"
+	>
+		<slot name="back-btn">
+			<VFadeTransition
+				v-if="!hideBackBtn"
+				mode="out-in"
+			>
+				<VSkeletonLoader
+					v-if="loading"
+					height="28"
+					type="button"
+					width="100"
+					class="mb-1"
+					dark
+				/>
+
+				<VBtn
+					v-else
+					v-bind="options.backBtn"
+					class="vd-sub-header-back-btn mb-1"
+					@click="$emit('back')"
 				>
-					<VSkeletonLoader
-						v-if="loading"
-						height="28"
-						type="button"
-						width="100"
-						class="mb-1"
-						dark
-					/>
-
-					<VBtn
-						v-else
-						v-bind="options.backBtn"
-						class="vd-sub-header-back-btn mb-1"
-						@click="$emit('back')"
-					>
-						<slot name="back-btn-icon">
-							<VIcon class="mr-2">
-								{{ backArrowIcon }}
-							</VIcon>
-						</slot>
-
-						{{ backBtnText }}
-					</VBtn>
-				</VFadeTransition>
-			</slot>
-
-			<div class="vd-sub-header-content d-flex justify-space-between">
-				<div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
-					<slot name="title">
-						<VFadeTransition mode="out-in">
-							<HeaderLoading
-								v-if="loading"
-								width="300"
-								height="2rem"
-								dark
-							/>
-
-							<h2
-								v-else-if="titleText"
-								class="text-h5 font-weight-bold"
-							>
-								{{ titleText }}
-							</h2>
-						</VFadeTransition>
+					<slot name="back-btn-icon">
+						<VIcon class="mr-2">
+							{{ backArrowIcon }}
+						</VIcon>
 					</slot>
 
-					<slot name="sub-title">
-						<VFadeTransition
-							v-if="subTitleText"
-							mode="out-in"
-						>
-							<HeaderLoading
-								v-if="loading"
-								class="mt-1"
-								width="250"
-								height="2rem"
-								dark
-							/>
+					{{ backBtnText }}
+				</VBtn>
+			</VFadeTransition>
+		</slot>
 
-							<p
-								v-else
-								class="text-h6 font-weight-bold mt-1 mb-0"
-								:style="{ color: fadeWhite }"
-							>
-								{{ subTitleText }}
-							</p>
-						</VFadeTransition>
-					</slot>
-
-					<slot name="additional-informations" />
-				</div>
-
-				<slot name="right-content">
-					<VThemeProvider dark>
-						<DataListGroup
-							v-if="dataListGroupItems"
-							:items="dataListGroupItems"
-							:loading="loading"
-							:render-html-value="renderHtmlValue"
-							item-width="auto"
-							class="flex-nowrap flex-shrink-0"
-							@click:list-item="emitItemAction"
+		<div class="vd-sub-header-content d-flex justify-space-between">
+			<div class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10">
+				<slot name="title">
+					<VFadeTransition mode="out-in">
+						<HeaderLoading
+							v-if="loading"
+							width="300"
+							height="2rem"
+							dark
 						/>
-					</VThemeProvider>
+
+						<h2
+							v-else-if="titleText"
+							class="text-h5 font-weight-bold"
+						>
+							{{ titleText }}
+						</h2>
+					</VFadeTransition>
 				</slot>
+
+				<slot name="sub-title">
+					<VFadeTransition
+						v-if="subTitleText"
+						mode="out-in"
+					>
+						<HeaderLoading
+							v-if="loading"
+							class="mt-1"
+							width="250"
+							height="2rem"
+							dark
+						/>
+
+						<p
+							v-else
+							class="text-h6 font-weight-bold mt-1 mb-0"
+							:style="{ color: fadeWhite }"
+						>
+							{{ subTitleText }}
+						</p>
+					</VFadeTransition>
+				</slot>
+
+				<slot name="additional-informations" />
 			</div>
-		</VSheet>
-	</div>
+
+			<slot name="right-content">
+				<VThemeProvider dark>
+					<DataListGroup
+						v-if="dataListGroupItems"
+						:items="dataListGroupItems"
+						:loading="loading"
+						:render-html-value="renderHtmlValue"
+						item-width="auto"
+						class="flex-nowrap flex-shrink-0"
+						@click:list-item="emitItemAction"
+					/>
+				</VThemeProvider>
+			</slot>
+		</div>
+	</VSheet>
 </template>
 
 <script lang="ts">

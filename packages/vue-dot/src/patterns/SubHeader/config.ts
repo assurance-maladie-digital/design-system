@@ -1,5 +1,5 @@
 export const config = {
-	background: {
+	sheet: {
 		color: 'secondary'
 	},
 	backBtn: {
