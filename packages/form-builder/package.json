@@ -36,7 +36,7 @@
   "peerDependencies": {
     "@cnamts/vue-dot": "^2.5.0",
     "vue": "^2.7.0",
-    "vuetify": "^2.3.0"
+    "vuetify": "^2.3.0 || ^3.0.0"
   },
   "devDependencies": {
     "@cnamts/eslint-config-vue": "^2.9.0-alpha.0",
