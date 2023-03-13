@@ -88,6 +88,20 @@
 			}
 		}
 	}
+
+	// Fix alerts color
+	.v-alert {
+		&.warning {
+			background-color: #c08f1c !important;
+		}
+		&.warning--text {
+			color: #c08f1c !important;
+			caret-color: #c08f1c !important;
+			svg {
+				fill: #c08f1c !important;
+			}
+		}
+	}
 }
 
 // Fix font size (default for these elements is 16px)

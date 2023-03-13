@@ -152,18 +152,4 @@
 	.vd-notification-icon {
 		min-width: 24px;
 	}
-
-	// Fix warning alerts color
-	.v-alert {
-		&.warning {
-			background-color: $vd-yellow-darken-20 !important;
-		}
-		&.warning--text {
-			color: $vd-yellow-darken-20 !important;
-			caret-color: $vd-yellow-darken-20 !important;
-			svg {
-				fill: $vd-yellow-darken-20 !important;
-			}
-		}
-	}
 </style>
