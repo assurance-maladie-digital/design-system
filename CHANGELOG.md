@@ -1,3 +1,24 @@
+## v2.9.0-beta.0
+
+**Version publiée le 10/03/2023.**
+
+Cette version comporte l'ajout du mode sombre au composant `FooterBar` et d'options de personnalisation au composant `SubHeader`, ainsi que des correctifs sur Vue Dot et la documentation.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **FooterBar:** Ajout du mode sombre ([#2525](https://github.com/assurance-maladie-digital/design-system/pull/2525)) ([a39bb20](https://github.com/assurance-maladie-digital/design-system/commit/a39bb2038342833e7a8a02bfeb4869ba89c5d534))
+  - **SubHeader:** Ajout d'options de personnalisation ([#2570](https://github.com/assurance-maladie-digital/design-system/pull/2570)) ([e239d3b](https://github.com/assurance-maladie-digital/design-system/commit/e239d3b91048b8e9331a270d688a3c91c794e6d8))
+
+- 🐛 **Corrections de bugs**
+  - **styles:** Correction des espacements des styles typographiques ([#2546](https://github.com/assurance-maladie-digital/design-system/pull/2546)) ([58c237f](https://github.com/assurance-maladie-digital/design-system/commit/58c237f195236f6c8564947425bd9f8807b9d1bf))
+  - **HeaderBar:** Correction de l'état actif dans le menu de navigation ([#2565](https://github.com/assurance-maladie-digital/design-system/pull/2565)) ([72ee1ce](https://github.com/assurance-maladie-digital/design-system/commit/72ee1ce12cf3b3c26425f676426896f62d5d0b88))
+
+### Documentation
+
+- 🐛 **Corrections de bugs**
+  - **global:** Correction du menu de navigation ([#2549](https://github.com/assurance-maladie-digital/design-system/pull/2549)) ([d1162eb](https://github.com/assurance-maladie-digital/design-system/commit/d1162eb0ff369d083215b04594a0d8f36c6ae687))
+
 ## v2.9.0-alpha.2
 
 **Version publiée le 17/02/2023.**
