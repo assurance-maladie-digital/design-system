@@ -94,13 +94,13 @@
 	// Fix alerts color
 	.v-alert {
 		&.warning {
-			background-color: $vd-yellow-darken-20 !important;
+			background-color: $vd-yellow-darken-40 !important;
 		}
 		&.warning--text {
-			color: $vd-yellow-darken-20 !important;
-			caret-color: $vd-yellow-darken-20 !important;
+			color: $vd-yellow-darken-40 !important;
+			caret-color: $vd-yellow-darken-40 !important;
 			svg {
-				fill: $vd-yellow-darken-20 !important;
+				fill: $vd-yellow-darken-40 !important;
 			}
 		}
 	}
