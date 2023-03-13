@@ -4,7 +4,7 @@
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
-					:md="image ? 6 : 12"
+					:md="image || $slots['maintenance-page-content'] ? 6 : 12"
 					class="order-last order-md-first text-center text-md-left"
 				>
 					<h2 class="mb-2 font-weight-bold text-h mb-4">
@@ -14,7 +14,7 @@
 					<p>{{ message }}</p>
 				</VCol>
 				<VCol
-					v-if="image"
+					v-if="image || $slots['maintenance-page-content']"
 					cols="12"
 					md="6"
 					class="d-flex align-center justify-center"

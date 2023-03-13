@@ -4,7 +4,7 @@
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
-					:md="image ? 6 : 12"
+					:md="image || $slots['notfound-page-content'] ? 6 : 12"
 					class="order-last order-md-first text-center text-md-left"
 				>
 					<span
@@ -36,7 +36,7 @@
 					</VBtn>
 				</VCol>
 				<VCol
-					v-if="image"
+					v-if="image || $slots['notfound-page-content']"
 					cols="12"
 					md="6"
 					class="d-flex align-center justify-center"
