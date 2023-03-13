@@ -171,17 +171,6 @@ export const lightTheme: VuetifyTheme = {
 	risquePro: palette.brick.base
 };
 
-export const darkTheme: VuetifyTheme = {
-	primary: palette.amBlue.base,
-	secondary: palette.cyan.darken40,
-	accent: palette.cyan.base,
-	error: palette.orange.darken20,
-	info: palette.amBlue.base,
-	success: palette.green.base,
-	warning: palette.yellow.base,
-	risquePro: palette.brick.base
-};
-
 export const colorClasses: IndexedObject = {};
 
 Object.entries(palette).forEach(([colorName, colorValues]) => {
@@ -197,12 +186,10 @@ Object.entries(palette).forEach(([colorName, colorValues]) => {
 
 export const colors: Colors = {
 	...palette,
-	...lightTheme,
-	...darkTheme
+	...lightTheme
 };
 
 export const colorTheme: VuetifyTheme = {
 	...colorClasses,
-	...lightTheme,
-	...darkTheme
+	...lightTheme
 };
