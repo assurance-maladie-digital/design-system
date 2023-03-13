@@ -20,12 +20,6 @@ export const api: Api = {
 				type: "boolean",
 				default: false,
 				description: "Affiche une image d'illustration.",
-			},
-			{
-				name: "image-src",
-				type: "string",
-				default: "undefined",
-				description: "L’URL de l’image d’illustration.",
 			}
 		],
 	},

@@ -29,7 +29,6 @@
 				'image'
 			],
 			textFields: [
-				'imageUrl',
 				'code',
 				'pageTitle',
 				'message',

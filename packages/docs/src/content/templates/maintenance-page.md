@@ -13,8 +13,7 @@ description: Le template `MaintenancePage` est utilisé pour afficher une page d
 
 #### Illustration
 
-Vous pouvez afficher une image d'illustration en utilisant mettant prop `image` à `true`.<br/>
-L'image peux être personnalisée en utilisant la prop `imageSrc` pour spécifier l'URL de l'image.
+Vous pouvez afficher une image d'illustration en utilisant mettant prop `image` à `true`.
 
 <doc-example file="maintenance-page/image"></doc-example>
 
@@ -22,6 +21,16 @@ L'image peux être personnalisée en utilisant la prop `imageSrc` pour spécifie
 
 <doc-tab-item label="API">
 <doc-api name="maintenance-page"></doc-api>
+</doc-tab-item>
+
+<doc-tab-item label="Personnalisation">
+
+### Slots
+
+Vous pouvez utiliser le slot `maintenance-page-content` pour ajouter votre propre contenu sur la partie de droite.
+
+<doc-example file="maintenance-page/slots"></doc-example>
+
 </doc-tab-item>
 
 </doc-tabs>

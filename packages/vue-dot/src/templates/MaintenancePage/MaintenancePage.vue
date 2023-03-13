@@ -4,7 +4,7 @@
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
-					:md="image ? 6 : 12"
+					:md="image || !!$slots.maintenance-page-content ? 6 : 12"
 					class="order-last order-md-first text-center text-md-left"
 				>
 					<h2 class="mb-2 font-weight-bold text-h mb-4">
@@ -19,13 +19,15 @@
 					md="6"
 					class="d-flex align-center justify-center"
 				>
-					<VImg
-						:src="imageSrc"
-						:alt="pageTitle"
-						max-width="90%"
-						max-height="100%"
-						class="mx-12 mx-sm-16 mx-md-0"
-					/>
+					<slot name="maintenance-page-content">
+						<VImg
+							:src="defaultImage"
+							:alt="pageTitle"
+							max-width="90%"
+							max-height="100%"
+							class="mx-12 mx-sm-16 mx-md-0"
+						/>
+					</slot>
 				</VCol>
 			</VRow>
 		</VCard>
@@ -48,7 +50,7 @@
 			},
 			image: {
 				type: Boolean,
-				default: true
+				default: false
 			},
 			imageUrl: {
 				type: String,
@@ -65,10 +67,6 @@
 
 		mounted() {
 			this.defaultImage = require('@cnamts/vue-dot/src/assets/images/maintenance.svg');
-		}
-
-		get imageSrc(): string {
-			return this.imageUrl || this.defaultImage;
 		}
 	}
 

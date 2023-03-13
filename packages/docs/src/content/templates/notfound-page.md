@@ -19,8 +19,7 @@ Vous pouvez afficher un code d’erreur HTTP en utilisant la prop `code`.
 
 #### Illustration
 
-Vous pouvez afficher une image d'illustration en utilisant mettant prop `image` à `true`.<br/>
-L'image peux être personnalisée en utilisant la prop `imageSrc` pour spécifier l'URL de l'image.
+Vous pouvez afficher une image d'illustration en utilisant mettant prop `image` à `true`.
 
 <doc-example file="notfound-page/image"></doc-example>
 
@@ -38,6 +37,16 @@ Cet identifiant de support est ajouté automatiquement par notre pare-feu, il a 
 
 <doc-tab-item label="API">
 <doc-api name="notfound-page"></doc-api>
+</doc-tab-item>
+
+<doc-tab-item label="Personnalisation">
+
+### Slots
+
+Vous pouvez utiliser le slot `notfound-page-content` pour ajouter votre propre contenu sur la partie de droite.
+
+<doc-example file="notfound-page/slots"></doc-example>
+
 </doc-tab-item>
 
 </doc-tabs>
