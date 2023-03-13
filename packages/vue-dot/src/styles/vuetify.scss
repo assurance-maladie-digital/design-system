@@ -1,5 +1,7 @@
 // Import visually-hidden mixin
 @import 'vuetify/src/styles/tools/_display.sass';
+// Import design tokens
+@import '@cnamts/design-tokens/dist/tokens';
 
 // Reset max-width for some elements to make them work properly
 // (due to `max-width: 100%` applied to `*` in base.css)
@@ -92,13 +94,13 @@
 	// Fix alerts color
 	.v-alert {
 		&.warning {
-			background-color: #c08f1c !important;
+			background-color: $vd-yellow-darken-20 !important;
 		}
 		&.warning--text {
-			color: #c08f1c !important;
-			caret-color: #c08f1c !important;
+			color: $vd-yellow-darken-20 !important;
+			caret-color: $vd-yellow-darken-20 !important;
 			svg {
-				fill: #c08f1c !important;
+				fill: $vd-yellow-darken-20 !important;
 			}
 		}
 	}
