@@ -27,7 +27,7 @@
 		"babel-loader": "8.3.0",
 		"consola": "2.15.3",
 		"copy-webpack-plugin": "6.4.1",
-		"core-js": "3.29.0",
+		"core-js": "3.29.1",
 		"cross-env": "7.0.3",
 		"custom-event-polyfill": "1.0.7",
 		"dayjs": "1.11.7",
