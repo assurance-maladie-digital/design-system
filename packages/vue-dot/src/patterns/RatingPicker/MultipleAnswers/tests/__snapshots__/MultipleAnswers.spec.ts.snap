@@ -6,22 +6,22 @@ exports[`MultipleAnswers renders correctly 1`] = `
 			la deuxieme question ?
 		</span></div>
   <div>
-    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-labelledby="reponse 1" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-label="reponse 1" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
 				reponse 1
 			</span>
       <!---->
     </vbtn-stub>
-    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-labelledby="reponse 2" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-label="reponse 2" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
 				reponse 2
 			</span>
       <!---->
     </vbtn-stub>
-    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-labelledby="reponse 3" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-label="reponse 3" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
 				reponse 3
 			</span>
       <!---->
     </vbtn-stub>
-    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-labelledby="reponse 4" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" aria-label="reponse 4" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
 				reponse 4
 			</span>
       <!---->

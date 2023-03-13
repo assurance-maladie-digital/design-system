@@ -9,7 +9,7 @@ exports[`NirField renders correctly with 2 characters 1`] = `
           <fieldset aria-hidden="true">
             <legend style="width: 0px;"><span class="notranslate">​</span></legend>
           </fieldset>
-          <div class="v-text-field__slot"><label for="input-7" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input aria-labelledby="Numéro de sécurité sociale" aria-describedby="13 caractères" id="input-7" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-7" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input aria-label="Numéro de sécurité sociale" aria-describedby="13 caractères" id="input-7" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -29,7 +29,7 @@ exports[`NirField renders correctly with 2 characters 1`] = `
           <fieldset aria-hidden="true">
             <legend style="width: 0px;"><span class="notranslate">​</span></legend>
           </fieldset>
-          <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input aria-labelledby="Clé" aria-describedby="2 chiffres" id="input-10" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input aria-label="Clé" aria-describedby="2 chiffres" id="input-10" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -55,7 +55,7 @@ exports[`NirField renders correctly with 13 characters 1`] = `
           <fieldset aria-hidden="true">
             <legend style="width: 0px;"><span class="notranslate">​</span></legend>
           </fieldset>
-          <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input aria-labelledby="Numéro de sécurité sociale" aria-describedby="13 caractères" id="input-2" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input aria-label="Numéro de sécurité sociale" aria-describedby="13 caractères" id="input-2" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">

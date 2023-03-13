@@ -8,7 +8,7 @@
 		<template #activator="{ on }">
 			<VBtn
 				v-if="currentLangData"
-				:aria-labellby="currentLangData.label"
+				:aria-label="currentLangData.label"
 				v-bind="options.btn"
 				v-on="on"
 			>

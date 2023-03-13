@@ -16,7 +16,7 @@
 				ref="btn"
 				:style="btnStyle"
 				class="vd-external-links-btn"
-				:aria-labelledby="btnText"
+				:aria-label="btnText"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
 				@focusin="hover = true"

@@ -9,52 +9,52 @@ exports[`NumberPicker renders correctly 1`] = `
   </div>
   <vrow-stub tag="div" class="grid justify-center ma-0">
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="1" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="1" class="rating-button">
         1
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="2" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="2" class="rating-button">
         2
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="3" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="3" class="rating-button">
         3
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="4" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="4" class="rating-button">
         4
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="5" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="5" class="rating-button">
         5
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="6" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="6" class="rating-button">
         6
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="7" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="7" class="rating-button">
         7
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="8" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="8" class="rating-button">
         8
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="9" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="9" class="rating-button">
         9
       </vbtn-stub>
     </vcol-stub>
     <vcol-stub tag="div" class="pa-0 numbers flex-grow-0">
-      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-labelledby="10" class="rating-button">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" text="true" type="button" aria-label="10" class="rating-button">
         10
       </vbtn-stub>
     </vcol-stub>

@@ -5,7 +5,7 @@
 		text
 		color="primary"
 		class="vd-back-btn text-none px-0"
-		:aria-labelledby="locales.label"
+		:aria-label="locales.label"
 		v-on="$listeners"
 	>
 		<slot name="icon">

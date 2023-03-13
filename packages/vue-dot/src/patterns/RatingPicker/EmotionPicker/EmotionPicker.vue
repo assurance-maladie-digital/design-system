@@ -26,7 +26,7 @@
 				<button
 					class="emotion"
 					:class="emotion.title"
-					:aria-labellby="emotion.title"
+					:aria-label="emotion.title"
 					@click="selectEmotion(emotion.title)"
 					@keyup.enter="selectEmotion(emotion.title)"
 				>
