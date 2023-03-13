@@ -5,7 +5,7 @@
 		message="Cette page n’existe pas ou a été déplacée."
 	>
 		<template #notfound-page-content>
-			Content
+			Custom content
 		</template>
 	</NotFoundPage>
 </template>

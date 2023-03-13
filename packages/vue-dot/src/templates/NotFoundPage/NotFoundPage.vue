@@ -4,7 +4,7 @@
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
-					:md="image || !!$slots.notfound-page-content ? 6 : 12"
+					:md="image ? 6 : 12"
 					class="order-last order-md-first text-center text-md-left"
 				>
 					<span
@@ -41,24 +41,16 @@
 					md="6"
 					class="d-flex align-center justify-center"
 				>
-					<VImg
-						:src="defaultImage"
-						:alt="pageTitle"
-						max-width="90%"
-						max-height="100%"
-						class="mx-12 mx-sm-16 mx-md-0"
-					/>
+					<slot name="notfound-page-content">
+						<VImg
+							:src="defaultImage"
+							:alt="pageTitle"
+							max-width="90%"
+							max-height="100%"
+							class="mx-12 mx-sm-16 mx-md-0"
+						/>
+					</slot>
 				</VCol>
-				<template #notfound-page-content>
-					<VCol
-						v-if="!image"
-						cols="12"
-						md="6"
-						class="d-flex align-center justify-center"
-					>
-						<slot name="notfound-page-content" />
-					</VCol>
-				</template>
 			</VRow>
 		</VCard>
 	</PageContainer>
