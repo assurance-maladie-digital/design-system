@@ -4,15 +4,13 @@ exports[`MaintenancePage renders correctly 1`] = `
 <pagecontainer-stub size="s" color="transparent">
   <vcard-stub loaderheight="4" tag="div" class="pa-8">
     <vrow-stub tag="div" class="mx-0">
-      <vcol-stub cols="12" md="6" tag="div" class="order-last order-md-first text-center text-md-left">
+      <vcol-stub cols="12" md="12" tag="div" class="order-last order-md-first text-center text-md-left">
         <h2 class="mb-2 font-weight-bold text-h mb-4">
           Error
         </h2>
         <p>Error message</p>
       </vcol-stub>
-      <vcol-stub cols="12" md="6" tag="div" class="d-flex align-center justify-center">
-        <vimg-stub maxheight="100%" maxwidth="90%" alt="Error" options="[object Object]" position="center center" src="" transition="fade-transition" class="mx-12 mx-sm-16 mx-md-0"></vimg-stub>
-      </vcol-stub>
+      <!---->
     </vrow-stub>
   </vcard-stub>
 </pagecontainer-stub>
