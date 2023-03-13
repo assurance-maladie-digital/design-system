@@ -5,8 +5,7 @@ import { colorTheme } from '@cnamts/design-tokens/dist/colors';
 export default {
 	theme: {
 		themes: {
-			light: colorTheme,
-			dark: colorTheme
+			light: colorTheme
 		},
 		options: {
 			variations: false,
