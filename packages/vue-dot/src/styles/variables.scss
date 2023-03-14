@@ -5,17 +5,17 @@ $heading-font-family: 'Mic 32 New', 'Source Sans Pro', sans-serif;
 $headings: (
 	'h1': (
 		'size': 4.5rem,
-		'letter-spacing': -.094rem,
+		'letter-spacing': -1.5rem,
 		'weight': 700
 	),
 	'h2': (
 		'size': 3rem,
-		'letter-spacing': .094rem,
+		'letter-spacing': 1.5rem,
 		'weight': 500
 	),
 	'h3': (
 		'size': 2.125rem,
-		'letter-spacing': .016rem,
+		'letter-spacing': .25rem,
 		'text-transform': uppercase,
 		'weight': 700
 	),
@@ -26,43 +26,43 @@ $headings: (
 	),
 	'h5': (
 		'size': 1.5rem,
-		'letter-spacing': .063rem,
+		'letter-spacing': 1rem,
 		'weight': 300
 	),
 	'subtitle-1': (
 		'size': 1.125rem,
-		'letter-spacing': .009rem,
+		'letter-spacing': .15rem,
 		'weight': 600
 	),
 	'subtitle-2': (
 		'size': 1rem,
-		'letter-spacing': .006rem,
+		'letter-spacing': .1rem,
 		'weight': 600
 	),
 	'body-1': (
 		'size': 1.125rem,
-		'letter-spacing': .031rem,
+		'letter-spacing': .5rem,
 		'weight': 400
 	),
 	'body-2': (
 		'size': 1rem,
-		'letter-spacing': .016rem,
+		'letter-spacing': .25rem,
 		'weight': 400
 	),
 	'button': (
 		'size': 1rem,
-		'letter-spacing': .031rem,
+		'letter-spacing': .5rem,
 		'weight': 600,
 		'text-transform': false
 	),
 	'caption': (
 		'size': .875rem,
-		'letter-spacing': .025rem,
+		'letter-spacing': .4rem,
 		'weight': 400
 	),
 	'overline': (
 		'size': .75rem,
-		'letter-spacing': .094rem,
+		'letter-spacing': 1.5rem,
 		'weight': 400
 	)
 );

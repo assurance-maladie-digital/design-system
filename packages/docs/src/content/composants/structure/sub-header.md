@@ -61,6 +61,12 @@ Vous pouvez utiliser les props `items-number-loading` et `heading-loading` sur c
 
 <doc-tab-item label="Personnalisation">
 
+#### Composants Vuetify
+
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `SubHeader` en utilisant la prop `vuetify-options`.
+
+<doc-example file="sub-header/options"></doc-example>
+
 ### Slots
 
 Vous pouvez utiliser les slots pour remplacer les contenus par défaut ou pour en ajouter.
