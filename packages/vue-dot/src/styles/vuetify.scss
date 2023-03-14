@@ -1,6 +1,5 @@
 // Import visually-hidden mixin
 @import 'vuetify/src/styles/tools/_display.sass';
-// Import design tokens
 @import '@cnamts/design-tokens/dist/tokens';
 
 // Reset max-width for some elements to make them work properly
@@ -96,9 +95,11 @@
 		&.warning {
 			background-color: $vd-yellow-darken-40 !important;
 		}
+
 		&.warning--text {
 			color: $vd-yellow-darken-40 !important;
 			caret-color: $vd-yellow-darken-40 !important;
+
 			svg {
 				fill: $vd-yellow-darken-40 !important;
 			}
