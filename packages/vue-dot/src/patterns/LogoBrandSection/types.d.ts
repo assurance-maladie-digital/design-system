@@ -21,7 +21,3 @@ export interface Dimensions {
 }
 
 export type Next = NavigationGuardNext<Vue>;
-
-export interface IndexedObject<T = string> {
-	[key: string]: T;
-}

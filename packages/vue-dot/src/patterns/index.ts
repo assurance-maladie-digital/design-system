@@ -15,6 +15,7 @@ import PhoneField from './PhoneField';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
+import LogoBrandSection from './LogoBrandSection';
 
 export const patterns = {
 	CookieBanner,
@@ -33,5 +34,6 @@ export const patterns = {
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow,
-	RatingPicker
+	RatingPicker,
+	LogoBrandSection
 };
