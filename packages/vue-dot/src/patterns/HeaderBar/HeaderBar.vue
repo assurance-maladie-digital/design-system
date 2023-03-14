@@ -89,7 +89,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import LogoBrandSection from '../LogoBrandSection';
+	import LogoBrandSection from '../../elements/LogoBrandSection';
 	import HeaderMenuBtn from './HeaderMenuBtn';
 	import HeaderNavigationBar from './HeaderNavigationBar';
 	import HeaderNavigationDrawer from './HeaderNavigationDrawer';

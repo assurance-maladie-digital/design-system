@@ -55,10 +55,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/fondamentaux/couleurs'
 			},
 			{
-				title: "LogoBrandSection",
-				to: "/fondamentaux/logo-brand-section",
-			},
-			{
 				title: 'Design Tokens',
 				to: '/fondamentaux/design-tokens'
 			},

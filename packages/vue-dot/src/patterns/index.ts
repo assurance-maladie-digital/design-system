@@ -16,7 +16,6 @@ import RatingPicker from './RatingPicker';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
-import LogoBrandSection from './LogoBrandSection';
 
 export const patterns = {
 	AccessibilityBanner,

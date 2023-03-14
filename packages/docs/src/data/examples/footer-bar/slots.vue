@@ -35,15 +35,9 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import HeaderBrandSection from '@cnamts/vue-dot/src/patterns/LogoBrandSection';
-
 	import { mdiTwitter } from '@mdi/js';
 
-	@Component({
-		components: {
-			HeaderBrandSection
-		}
-	})
+	@Component
 	export default class FooterBarSlots extends Vue {
 		docProps = {
 			sitemapRoute: '/',
