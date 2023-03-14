@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SubHeader renders correctly 1`] = `
-<div class="vd-sub-header secondary white--text py-6 px-8" style="width: 100%;">
+<vsheet-stub color="secondary" tag="div" class="vd-sub-header white--text py-6 px-8" style="width: 100%;">
   <vfadetransition-stub mode="out-in" origin="top center 0">
     <vbtn-stub color="transparent" tag="button" activeclass="" small="true" depressed="true" type="button" class="vd-sub-header-back-btn mb-1 text-none font-weight-regular white--text px-1">
       <vicon-stub class="mr-2">
@@ -24,11 +24,11 @@ exports[`SubHeader renders correctly 1`] = `
       <!---->
     </vthemeprovider-stub>
   </div>
-</div>
+</vsheet-stub>
 `;
 
 exports[`SubHeader renders loading state correctly 1`] = `
-<div class="vd-sub-header secondary white--text py-6 px-8" style="width: 100%;">
+<div class="vd-sub-header white--text py-6 px-8 v-sheet theme--light secondary" style="width: 100%;">
   <transition-stub name="fade-transition" mode="out-in">
     <div aria-busy="true" aria-live="polite" role="alert" class="v-skeleton-loader mb-1 v-skeleton-loader--is-loading theme--dark" style="height: 28px; width: 100px;">
       <div class="v-skeleton-loader__button v-skeleton-loader__bone"></div>
