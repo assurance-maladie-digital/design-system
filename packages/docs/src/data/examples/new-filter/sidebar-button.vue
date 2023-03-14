@@ -1,6 +1,6 @@
 <template>
 	<div class="d-flex justify-center">
-		<NewFilter
+		<FilterMenu
 			v-model="filters"
 			:simple-mode="true"
 			side-bar-button
@@ -34,7 +34,7 @@
 					v-on="on"
 				/>
 			</template>
-		</NewFilter>
+		</FilterMenu>
 	</div>
 </template>
 
@@ -43,7 +43,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class NewFilterApplyButton extends Vue {
+	export default class FilterMenuApplyButton extends Vue {
 		limitedInlineFilter=['firstname', 'lastname']
 
 		filters = [

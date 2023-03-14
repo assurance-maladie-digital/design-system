@@ -34,7 +34,7 @@
 					<span>{{ filter.label }}</span>
 
 					<VIcon
-						:dense="filters[index].icon"
+						:dense="Boolean(filters[index].icon)"
 						:class="{ 'ml-1': filters[index].icon }"
 					>
 						{{ filters[index].icon ? filters[index].icon : downIcon }}

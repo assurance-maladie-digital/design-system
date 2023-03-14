@@ -1,6 +1,6 @@
 <template>
 	<div class="d-flex justify-center">
-		<NewFilter
+		<FilterMenu
 			v-model="filters"
 			:simple-mode="true"
 			:chips-limit="6"
@@ -14,7 +14,7 @@
 					v-on="on"
 				/>
 			</template>
-		</NewFilter>
+		</FilterMenu>
 	</div>
 </template>
 

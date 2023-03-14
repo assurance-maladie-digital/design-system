@@ -1,6 +1,6 @@
 <template>
 	<div class="complex-mode-exemple d-flex justify-center">
-		<NewFilter
+		<FilterMenu
 			v-model="filters"
 			:simple-mode="false"
 			v-bind="$attrs"
@@ -41,7 +41,7 @@
 					v-on="on"
 				/>
 			</template>
-		</NewFilter>
+		</FilterMenu>
 	</div>
 </template>
 

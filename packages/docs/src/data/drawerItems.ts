@@ -194,8 +194,8 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Filtres',
 				items: [
 					{
-						title: 'NewFilter',
-						to: '/composants/filtres/new-filter'
+						title: 'FilterMenu',
+						to: '/composants/filtres/filter-menu'
 					},
 					{
 						title: 'FilterModule',

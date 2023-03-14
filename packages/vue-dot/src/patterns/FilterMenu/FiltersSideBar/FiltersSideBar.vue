@@ -67,9 +67,7 @@
 					</VExpansionPanel>
 				</VExpansionPanels>
 
-				<div
-					class="px-5 mb-6 mt-10"
-				>
+				<div class="px-5 mb-6 mt-10">
 					<VBtn
 						v-if="applyButton"
 						:block="isMobile || applyButton"

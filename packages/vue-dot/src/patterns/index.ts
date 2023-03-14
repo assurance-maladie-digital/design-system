@@ -3,7 +3,7 @@ import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
 import FileUpload from './FileUpload';
 import FilterModule from './FilterModule';
-import NewFilter from './NewFilter';
+import FilterMenu from './FilterMenu';
 import PeriodField from './PeriodField';
 import FooterBar from './FooterBar';
 import FooterWrapper from './FooterWrapper';
@@ -24,7 +24,7 @@ export const patterns = {
 	DatePicker,
 	FileUpload,
 	FilterModule,
-	NewFilter,
+	FilterMenu,
 	PeriodField,
 	FooterBar,
 	FooterWrapper,

@@ -1,6 +1,6 @@
 ---
-title: NewFilter
-description: Le pattern `NewFilter` est utilisé pour permettre à l’utilisateur de sélectionner des filtres.
+title: FilterMenu
+description: Le pattern `FilterMenu` est utilisé pour permettre à l’utilisateur de sélectionner des filtres.
 ---
 
 <doc-tabs>
@@ -22,7 +22,7 @@ Chaque filtre est composé d'un `name` qui sera utilisé dans le nom du slot, d'
 
 <doc-example file="new-filter/create"></doc-example>
 
-Il est possible de rajouter une description avec `description`, de précharger une valeur avec `value` ou de vider le champ aprés validation avec `clearAfterValidate`.
+Il est possible de rajouter une description avec `description`, de précharger une valeur avec `value` ou de vider le champ après validation avec `clearAfterValidate`.
 
 <doc-example file="new-filter/more-details"></doc-example>
 
@@ -39,16 +39,16 @@ Pour avoir plusieurs champs dans un seul filtre, il faut creer un composant.
 
 <doc-example file="period-filter/period"></doc-example>
 
-### Changer l'icone
+### Changer l’icône
 
-Pour changer l'icone il suffit d'utiliser `icon` dans l'objet filtre.
+Pour changer l’icône il suffit d'utiliser `icon` dans l'objet filtre.
 
 <doc-example file="new-filter/change-icon"></doc-example>
 
 ### Limite d'affichage des chips
 
-Il peut être interessant de limiter le nombre de chips affichés. Pour cela, il faudra utiliser la props `chips-limit`. Si aucune limite n'est préciser, elle sera par defaut bloquée à `4`.
-S'il y a plus de chips que la limite, un bouton affichera le nombre de chips restantes. En cliquant sur ce bouton, l'integralité des chips seront visibles.
+Il peut être intéressant de limiter le nombre de chips affichés. Pour cela, il faudra utiliser la props `chips-limit`. Si aucune limite n'est préciser, elle sera par défaut bloquée à `4`.
+S'il y a plus de chips que la limite, un bouton affichera le nombre de chips restantes. En cliquant sur ce bouton, l’intégralité des chips seront visibles.
 
 <doc-example file="new-filter/limit-chips"></doc-example>
 
@@ -60,9 +60,9 @@ Pour cela, il faudra ajouter à l'object `limited: true`.
 
 <doc-example file="new-filter/limited"></doc-example>
 
-### Retirer le bouton reinitialiser en Mode simple
+### Retirer le bouton réinitialiser en Mode simple
 
-Pour retirer le bouton reinitialiser en `mode simple`, vous pouvez utiliser `:hideReset="true"`.
+Pour retirer le bouton réinitialiser en `mode simple`, vous pouvez utiliser `:hideReset="true"`.
 
 <doc-example file="new-filter/hide-reset"></doc-example>
 
