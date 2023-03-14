@@ -17,6 +17,7 @@ Object {
     "DownloadBtn",
     "ErrorPage",
     "ExternalLinks",
+    "FilePreview",
     "FileUpload",
     "FilterModule",
     "FooterBar",
