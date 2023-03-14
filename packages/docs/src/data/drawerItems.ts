@@ -65,10 +65,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: "Éco-conception",
 				to: "/fondamentaux/eco-conception",
-			},
-			{
-				title: 'Éco-conception',
-				to: '/fondamentaux/eco-conception'
 			}
 		]
 	},
