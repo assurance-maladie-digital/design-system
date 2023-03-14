@@ -59,12 +59,12 @@ export const drawerItems: DrawerItem[] = [
 				to: '/fondamentaux/design-tokens'
 			},
 			{
-				title: "Logo",
-				to: "/fondamentaux/logo",
+				title: 'Logo',
+				to: '/fondamentaux/logo',
 			},
 			{
-				title: "Éco-conception",
-				to: "/fondamentaux/eco-conception",
+				title: 'Éco-conception',
+				to: '/fondamentaux/eco-conception',
 			}
 		]
 	},
