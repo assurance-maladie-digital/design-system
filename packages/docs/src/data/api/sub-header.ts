@@ -56,6 +56,7 @@ export const api: Api = {
 			},
 			...widthable,
 			...customizable(`{
+	sheet: 'VSheet',
 	backBtn: 'VBtn'
 }`)
 		],
