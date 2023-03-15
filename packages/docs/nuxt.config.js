@@ -95,7 +95,8 @@ export default {
 		defaultAssets: false,
 		treeShake: {
 			directives: ['Scroll']
-		}
+		},
+		customVariables: ['~/assets/styles/variables.scss']
 	},
 	googleFonts: {
 		families: {
