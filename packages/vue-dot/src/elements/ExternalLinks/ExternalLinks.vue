@@ -22,7 +22,7 @@
 			>
 				<span
 					:class="btnTextSpacing"
-					class="vd-external-links-btn-text white--text text-none"
+					class="vd-external-links-btn-text white--text"
 				>
 					{{ btnText }}
 				</span>

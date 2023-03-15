@@ -24,7 +24,7 @@
 				height="auto"
 				min-height="40px"
 				active-class="white--text"
-				class="text-none text-wrap text-left py-2"
+				class="text-wrap text-left py-2"
 				color="primary"
 				@click="toggleItem(item)"
 			>
