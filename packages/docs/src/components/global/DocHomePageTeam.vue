@@ -4,8 +4,8 @@
 			<VCol
 				v-for="(member, index) in team"
 				:key="index"
-				cols="12"
-				sm="6"
+				cols="auto"
+				sm="4"
 				md="4"
 				class="d-flex flex-column"
 			>
