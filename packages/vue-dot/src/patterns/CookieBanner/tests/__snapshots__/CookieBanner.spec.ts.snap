@@ -18,13 +18,13 @@ exports[`CookieBanner renders correctly 1`] = `
   </p>
   <div class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
     <vspacer-stub tag="div"></vspacer-stub>
-    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" outlined="true" tag="button" activeclass="" to="[object Object]" type="button" class="text-none text-wrap ma-2">
+    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" outlined="true" tag="button" activeclass="" to="[object Object]" type="button" class="text-wrap ma-2">
       Personnaliser mes choix
     </vbtn-stub>
-    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" tag="button" activeclass="" type="button" class="text-none text-wrap ma-2">
+    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" tag="button" activeclass="" type="button" class="text-wrap ma-2">
       Continuer sans accepter
     </vbtn-stub>
-    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" tag="button" activeclass="" type="button" class="text-none text-wrap ma-2">
+    <vbtn-stub color="primary" height="auto" minheight="44px" width="auto" tag="button" activeclass="" type="button" class="text-wrap ma-2">
       Tout accepter
     </vbtn-stub>
   </div>

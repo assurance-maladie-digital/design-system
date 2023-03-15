@@ -21,7 +21,7 @@
 					<VBtn
 						color="primary"
 						outlined
-						class="text-none ma-2"
+						class="ma-2"
 						@click="setGlobalPreferences(false)"
 					>
 						{{ locales.rejectAll }}
@@ -30,7 +30,7 @@
 					<VBtn
 						color="primary"
 						outlined
-						class="text-none ma-2"
+						class="ma-2"
 						@click="setGlobalPreferences(true)"
 					>
 						{{ locales.acceptAll }}
@@ -51,7 +51,6 @@
 
 					<VBtn
 						color="primary"
-						class="text-none"
 						@click="submit"
 					>
 						{{ locales.saveBtn }}

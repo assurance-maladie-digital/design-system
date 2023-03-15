@@ -2,7 +2,7 @@
 
 exports[`BackToTopBtn renders correctly 1`] = `
 <vfadetransition-stub origin="top center 0">
-  <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" fixed="true" type="button" class="vd-back-to-top-btn text-none text-wrap px-0 px-md-4" style="bottom: 16px; right: 16px; display: none;"><span class="">
+  <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" fixed="true" type="button" class="vd-back-to-top-btn text-wrap px-0 px-md-4" style="bottom: 16px; right: 16px; display: none;"><span class="">
 				Retour en haut
 			</span>
     <vicon-stub color="primary" small="true" class="ml-0 ml-md-1">

@@ -14,10 +14,10 @@ exports[`CookiesPage renders correctly 1`] = `
         Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette ou mobile) lors de la visite d’un site ou lors de la consultation d’une publicité. Il contient plusieurs données&nbsp;: le nom du service qui l’a déposé, un identifiant sous forme de numéro unique, une valeur et éventuellement une date d’expiration.
       </p>
       <div class="d-flex flex-wrap justify-end mx-n2 mt-n2 mb-6">
-        <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button" class="text-none ma-2">
+        <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button" class="ma-2">
           Tout refuser
         </vbtn-stub>
-        <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button" class="text-none ma-2">
+        <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" type="button" class="ma-2">
           Tout accepter
         </vbtn-stub>
       </div>
@@ -26,7 +26,7 @@ exports[`CookiesPage renders correctly 1`] = `
       <cookiesinformation-stub type="analytics" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
       <div class="d-flex mt-16">
         <vspacer-stub tag="div"></vspacer-stub>
-        <vbtn-stub color="primary" tag="button" activeclass="" type="button" class="text-none">
+        <vbtn-stub color="primary" tag="button" activeclass="" type="button">
           Enregistrer mes choix
         </vbtn-stub>
       </div>

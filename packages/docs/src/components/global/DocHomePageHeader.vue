@@ -37,7 +37,7 @@
 					color="primary"
 					height="42px"
 					outlined
-					class="text-none ma-3"
+					class="ma-3"
 				>
 					<VIcon class="mr-2">
 						{{ githubIcon }}
