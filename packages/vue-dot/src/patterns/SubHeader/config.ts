@@ -1,4 +1,7 @@
 export const config = {
+	sheet: {
+		color: 'secondary'
+	},
 	backBtn: {
 		color: 'transparent',
 		small: true,

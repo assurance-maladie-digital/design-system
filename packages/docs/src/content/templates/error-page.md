@@ -17,7 +17,7 @@ Vous pouvez masquer le bouton d’action en utilisant la prop `no-btn`.
 
 <doc-alert type="warning">
 
-Ce composant est déprécié en faveur du composant [`MaintenancePage`](/templates/maintenance-page)
+Cette utilisation du composant est dépréciée en faveur du composant [`MaintenancePage`](/templates/maintenance-page)
 et depuis la [version 2.9.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/2.9.0).
 
 </doc-alert>
@@ -34,7 +34,7 @@ Cet identifiant de support est ajouté automatiquement par notre pare-feu, il a 
 
 <doc-alert type="warning">
 
-Ce composant est déprécié en faveur du composant [`NotFoundPage`](/templates/notfound-page) depuis la [version 2.9.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/2.9.0).
+Cette utilisation du composant est dépréciée en faveur du composant [`NotFoundPage`](/templates/notfound-page) depuis la [version 2.9.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/2.9.0).
 
 </doc-alert>
 
