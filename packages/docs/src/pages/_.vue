@@ -16,7 +16,7 @@
 						<h1
 							v-if="document.title && !document.hideTitle"
 							v-text="document.title"
-							class="text-h5 text-sm-h4 font-weight-bold mb-4"
+							class="text-h4 text-sm-h3 font-weight-bold mb-4"
 						/>
 
 						<div
@@ -28,7 +28,7 @@
 
 					<VDivider
 						v-if="document.divider"
-						class="mt-6 mb-6"
+						class="my-6"
 					/>
 
 					<NuxtContent :document="document" />
