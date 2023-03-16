@@ -8,8 +8,7 @@ export default {
 			light: colorTheme
 		},
 		options: {
-			variations: false,
-			customProperties: true
+			variations: false
 		}
 	},
 	icons: {

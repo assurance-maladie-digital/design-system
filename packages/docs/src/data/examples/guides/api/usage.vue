@@ -2,7 +2,6 @@
 	<div>
 		<VBtn
 			:loading="state === StateEnum.PENDING"
-			class="text-none"
 			color="primary"
 			@click="fetchUsers"
 		>

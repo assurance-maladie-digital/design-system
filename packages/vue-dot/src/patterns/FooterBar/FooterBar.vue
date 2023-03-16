@@ -33,8 +33,8 @@
 
 			<VBtn
 				v-bind="options.goTopBtn"
-				:aria-label="locales.goTopBtn"
-				@click="$vuetify.goTo(0, 0)"
+				:aria-label="locales.goTopBtnLabel"
+				@click="scrollToTop"
 			>
 				<VIcon v-bind="options.goTopBtnIcon">
 					{{ arrowTopIcon }}
@@ -259,13 +259,39 @@
 		get logoSize(): LogoSizeEnum {
 			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
 		}
+
+		scrollToTop(): void {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
+	$white: #fff;
+
 	// Use deep selector to style user content as well
+	.vd-footer-bar.theme--dark :deep() {
+		background-color: $vd-grey-darken-20 !important;
+
+		.vd-footer-bar-links a {
+			color: $white !important;
+		}
+
+		p,
+		.primary--text {
+			color: rgba($white, .6) !important;
+		}
+
+		svg {
+			fill: $white !important;
+		}
+	}
+
 	.vd-footer-bar-links :deep() {
 		a {
 			transition: .15s;

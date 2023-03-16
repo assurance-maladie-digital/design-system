@@ -23,6 +23,12 @@ Vous pouvez masquer les réseaux sociaux ou le logo de l’Assurance Maladie en 
 
 <doc-example file="footer-bar/hide-social-media-links"></doc-example>
 
+#### Mode sombre
+
+Vous pouvez afficher le footer en mode sombre en utilisant la prop `dark`.
+
+<doc-example file="footer-bar/dark"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
