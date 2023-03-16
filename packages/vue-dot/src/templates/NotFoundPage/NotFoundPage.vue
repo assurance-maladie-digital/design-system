@@ -29,7 +29,7 @@
 					<VBtn
 						:to="btnRoute"
 						color="primary"
-						class="mt-2 text-none"
+						class="mt-2"
 						exact
 					>
 						{{ btnText }}
@@ -110,7 +110,7 @@
 		defaultImage = '';
 
 		mounted() {
-			this.defaultImage = require('@cnamts/vue-dot/src/assets/images/notfound.svg');
+			this.defaultImage = require('@cnamts/vue-dot/src/assets/images/not-found.svg');
 		}
 
 		/**

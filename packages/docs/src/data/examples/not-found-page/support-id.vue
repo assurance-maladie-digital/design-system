@@ -1,9 +1,10 @@
 <template>
 	<div>
-		<MaintenancePage
+		<NotFoundPage
 			:key="$route.fullPath"
-			page-title="Maintenance en cours"
-			message="L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée"
+			code="404"
+			page-title="Page non trouvée"
+			message="Cette page n’existe pas ou a été déplacée."
 		/>
 
 		<PageContainer
@@ -12,7 +13,6 @@
 		>
 			<VBtn
 				color="primary"
-				class="text-none"
 				@click="setSupportId"
 			>
 				Afficher l’identifiant de support
@@ -26,7 +26,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class MaintenancePageSupportId extends Vue {
+	export default class NotFoundPageSupportId extends Vue {
 		setSupportId(): void {
 			this.$router.push({
 				path: this.$route.path,

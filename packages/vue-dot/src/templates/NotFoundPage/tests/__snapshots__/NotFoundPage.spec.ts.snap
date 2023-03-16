@@ -11,7 +11,7 @@ exports[`NotFoundPage renders correctly 1`] = `
         </h2>
         <!---->
         <p>Error message</p>
-        <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button" class="mt-2 text-none">
+        <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button" class="mt-2">
           Retour à l’accueil
         </vbtn-stub>
       </vcol-stub>

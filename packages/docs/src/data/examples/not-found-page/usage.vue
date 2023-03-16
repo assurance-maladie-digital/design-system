@@ -20,8 +20,7 @@
 			code: '',
 			pageTitle: 'Page non trouvée',
 			message: 'Cette page n’existe pas ou a été déplacée.',
-			btnText: 'Retour à l’accueil',
-			image: false
+			btnText: 'Retour à l’accueil'
 		};
 
 		options = {

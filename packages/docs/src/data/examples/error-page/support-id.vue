@@ -14,7 +14,6 @@
 		>
 			<VBtn
 				color="primary"
-				class="text-none"
 				@click="setSupportId"
 			>
 				Afficher l’identifiant de support

@@ -36,7 +36,6 @@
 				<VBtn
 					:to="btnRoute"
 					color="primary"
-					class="text-none"
 					exact
 				>
 					{{ btnText }}
@@ -121,5 +120,9 @@
 	.vd-code {
 		font-size: 6rem;
 		line-height: 6rem;
+	}
+
+	.v-btn--active::before {
+		opacity: 0;
 	}
 </style>

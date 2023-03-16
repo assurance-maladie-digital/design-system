@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MaintenancePage renders correctly 1`] = `
-<pagecontainer-stub size="s" color="transparent">
-  <vcard-stub loaderheight="4" tag="div" class="pa-8">
+<pagecontainer-stub size="m" color="transparent">
+  <vcard-stub loaderheight="4" tag="div" class="pa-4 pa-sm-16">
     <vrow-stub tag="div" class="mx-0">
-      <vcol-stub cols="12" md="12" tag="div" class="order-last order-md-first text-center text-md-left">
+      <vcol-stub cols="12" sm="6" tag="div" class="order-last order-sm-first text-center text-sm-left">
         <h2 class="mb-2 font-weight-bold text-h mb-4">
-          Error
+          Maintenance en cours
         </h2>
-        <p>Error message</p>
+        <p>L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.</p>
       </vcol-stub>
-      <!---->
+      <vcol-stub cols="12" sm="6" tag="div" class="d-flex align-center justify-center"><img src="" alt=""></vcol-stub>
     </vrow-stub>
   </vcard-stub>
 </pagecontainer-stub>
