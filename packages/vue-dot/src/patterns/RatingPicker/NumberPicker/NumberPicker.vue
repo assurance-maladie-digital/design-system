@@ -82,7 +82,7 @@
 			this.$emit(
 				'update-result',
 				{
-					step: this.questionDatas.name,
+					step: this.questionDatas.step,
 					result: this.selectedRating
 				}
 			);

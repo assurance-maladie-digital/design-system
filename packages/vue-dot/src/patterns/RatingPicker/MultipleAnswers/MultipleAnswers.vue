@@ -69,13 +69,13 @@
 		get result(): resultItem {
 			if (this.selectedAnswerIndex === this.questionDatas.answers.length) {
 				return {
-					step: this.questionDatas.name,
+					step: this.questionDatas.step,
 					result: 'other',
 					reason: this.otherReasonValue
 				};
 			} else {
 				return {
-					step: this.questionDatas.name,
+					step: this.questionDatas.step,
 					result: this.questionDatas.answers[this.selectedAnswerIndex]
 				};
 			}

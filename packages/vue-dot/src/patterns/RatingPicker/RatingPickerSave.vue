@@ -3,12 +3,31 @@
 		<!--first step-->
 		<div
 			class="step"
-			:class="{'green-background': checkBackgroundGreen(), 'shadow-box': shadowMode}"
+			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowMode}"
 		>
-			<slot name="number-picker-step1" />
-			<slot name="stars-picker-step1" />
-			<slot name="emotions-picker-step1" />
-
+			<EmotionPicker
+				v-if="mainQuestion.type === 'emotions'"
+				class="ma-6"
+				step-name="mainQuestion"
+				main-question
+				:simple-mode="mainQuestion.simpleMode"
+				:question-datas="mainQuestion"
+				@update-result="updateFirstStep"
+			/>
+			<StarsPicker
+				v-if="mainQuestion.type === 'stars'"
+				class="ma-6"
+				step-name="mainQuestion"
+				:question-datas="mainQuestion"
+				@update-result="updateFirstStep"
+			/>
+			<NumberPicker
+				v-if="mainQuestion.type === 'numbers'"
+				class="ma-6"
+				step-name="mainQuestion"
+				:question-datas="mainQuestion"
+				@update-result="updateFirstStep"
+			/>
 			<div class="d-flex justify-end">
 				<div
 					v-if="firstStep.result !== null"
@@ -21,7 +40,7 @@
 					>
 						{{ checkIcon }}
 					</VIcon>
-					<span class="turquoise-darken-60--text">{{ mainQuestion.message }}</span>
+					<span class="turquoise-darken-60--text">{{ afterValidate[0].message }}</span>
 				</div>
 				<VBtn
 					v-if="firstStep.result === null && !hideCloseButtons"
@@ -48,19 +67,46 @@
 
 		<!--second step-->
 		<div
-			v-if="checkFirstStep"
+			v-if="questionsList.length && checkFirstStep"
 			class="step mt-2"
-			:class="{'green-background': checkBackgroundGreen(), 'shadow-box': shadowMode}"
+			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowMode}"
 		>
 			<p
 				class="mb-7 ml-4 mt-3 font-weight-bold"
 			>
 				{{ locales.more }}
 			</p>
-
-			<slot name="emotions-picker-step2" />
-			<slot name="multiple-answers-step2" />
-			<slot name="text-area-form-step2" />
+			<div
+				v-for="(question, index) in questionsList"
+				:key="index"
+			>
+				<div v-if="index <= secondStep.length">
+					<EmotionPicker
+						v-if="question.type === 'emotions'"
+						class="ma-6"
+						step-name="secondStep"
+						:question-datas="question"
+						:is-validated="validated"
+						@update-result="updateSecondStep"
+					/>
+					<MultipleAnswers
+						v-if="question.type === 'multi'"
+						class="ma-6"
+						step-name="thirtStep"
+						:question-datas="question"
+						:is-validated="validated"
+						@update-result="updateSecondStep"
+					/>
+					<TextAreaForm
+						v-if="question.type === 'text-area'"
+						class="ma-6"
+						step-name="thirtStep"
+						:question-datas="question"
+						:is-validated="validated"
+						@update-result="updateSecondStep"
+					/>
+				</div>
+			</div>
 
 			<div
 				v-if="validated"
@@ -104,12 +150,19 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 	import { locales } from './locales';
-	import { mdiCheckCircleOutline } from '@mdi/js';
 
-	import { AfterValidateItem, StepItem } from './types';
+	import { StepItem } from './types';
+	import { AfterValidateItem } from './types';
+
+	import EmotionPicker from './EmotionPicker';
+	import StarsPicker from './StarsPicker';
+	import NumberPicker from './NumberPicker';
+	import MultipleAnswers from './MultipleAnswers';
+	import TextAreaForm from './TextAreaForm';
+	import { mdiCheckCircleOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -125,17 +178,26 @@
 				type: Object,
 				required: true
 			},
-			firstStep: {
-				type: Object,
-				required: true
-			},
-			secondStep: {
+			questionsList: {
 				type: Array,
-				required: true
+				default: () => []
 			},
 			validateTextButton: {
 				type: String,
 				default: 'Transmettre mon avis'
+			},
+			afterValidate: {
+				type: Array as PropType<AfterValidateItem[]>,
+				default: () => [
+					{
+						message: 'Merci pour votre réponse',
+						greenBackground: false
+					},
+					{
+						message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
+						greenBackground: false
+					}
+				]
 			}
 		}
 	});
@@ -146,13 +208,35 @@
 		model: {
 			prop: 'datas',
 			event: 'on-validate'
+		},
+		components: {
+			EmotionPicker,
+			StarsPicker,
+			NumberPicker,
+			MultipleAnswers,
+			TextAreaForm
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
 		locales = locales;
 		checkIcon = mdiCheckCircleOutline;
+		question = {
+			type: '',
+			answers: []
+		};
+
+		firstStep: StepItem = {
+			step: '',
+			result: null
+		};
+		secondStep: StepItem[] = [];
 
 		validated = false;
+
+		afterValidateItem: AfterValidateItem = {
+			message: '',
+			greenBackground: false
+		};
 
 		get checkFirstStep(): boolean {
 			if (this.firstStep.result !== null) {
@@ -163,10 +247,34 @@
 				} else if (this.mainQuestion.type === 'numbers') {
 					return this.firstStep.result < 7 ? true : false;
 				}
-				this.validateFirstStep();
 			}
 			return false;
 		}
+
+		updateFirstStep(result: StepItem): void {
+			this.firstStep = result;
+			this.$emit('change', [this.firstStep]);
+			this.afterFirstQuestion();
+			this.validateFirstStep();
+		}
+
+		updateSecondStep(result: StepItem): void {
+			const alreadyExist = this.secondStep.find(el => el.step === result.step);
+			if (alreadyExist) {
+				this.secondStep.splice(this.secondStep.indexOf(alreadyExist), 1, result);
+			} else {
+				this.secondStep.push(result);
+			}
+		}
+
+		checkBackgroundGreen(number: number): boolean {
+			if (number) {
+				return this.afterValidate[number].greenBackground && this.validated ? true : false;
+			} else {
+				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
+			}
+		}
+
 		validateFirstStep(): void {
 			this.$emit('on-validate', [this.firstStep]);
 		}
@@ -176,12 +284,12 @@
 			this.validated = true;
 		}
 
-		checkBackgroundGreen(): boolean {
-			return this.mainQuestion.greenBackground && this.firstStep.result ? true : false;
-		}
-
 		onClose(): void {
 			this.$emit('on-close');
+		}
+
+		afterFirstQuestion(): void {
+			this.$emit('after-first-question');
 		}
 	}
 </script>
