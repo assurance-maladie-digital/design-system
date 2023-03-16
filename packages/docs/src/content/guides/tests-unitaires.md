@@ -137,7 +137,7 @@ describe('Home', () => {
 	it('renders correctly', () => {
 		wrapper = shallowMount(Home, {
 			localVue,
-			vuetify
+			vuetify,
 			router // Utilisation du routeur
 		});
 

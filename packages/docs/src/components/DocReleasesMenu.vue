@@ -15,7 +15,7 @@
 				v-on="on"
 				:small="mobileVersion"
 				text
-				class="text-none px-0 px-sm-2 mr-2"
+				class="px-0 px-sm-2 mr-2"
 			>
 				v{{ version }}
 
