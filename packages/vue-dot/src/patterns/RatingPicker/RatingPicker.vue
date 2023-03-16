@@ -183,20 +183,20 @@
 
 		get checkFirstStep(): boolean {
 			if (this.firstStep.result !== null) {
-				if (this.mainQuestion.type === 'emotions') {
+				if (this.type === 'emotions') {
 					return this.firstStep.result === 'sad' || this.firstStep.result === 'neutral' ? true : false;
-				} else if (this.mainQuestion.type === 'stars') {
+				} else if (this.type === 'stars') {
 					return this.firstStep.result < 4 ? true : false;
-				} else if (this.mainQuestion.type === 'numbers') {
+				} else if (this.type === 'numbers') {
 					return this.firstStep.result < 7 ? true : false;
 				}
-				this.validateFirstStep();
 			}
 			return false;
 		}
 
 		updateFirstStep(result: StepItem): void {
 			this.$emit('change', result);
+			this.validateFirstStep();
 		}
 
 		validateFirstStep(): void {
