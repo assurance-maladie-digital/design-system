@@ -2936,8 +2936,8 @@ Cette version comporte l'ajout des composants `SubHeader`, `HeaderLoading` et `D
   - **prompts:** Ajout de l'option Cypress ([#567](https://github.com/assurance-maladie-digital/design-system/pull/567)) ([7555363](https://github.com/assurance-maladie-digital/design-system/commit/7555363bae9b65feed20faa3360aadbcc41d3efc))
 
 - 🐛 **Corrections de bugs**
-  - **template:** Épinglage de la version de Vue Dot ([f825415](https://github.com/assurance-maladie-digital/design-system/commit/f82541542625a8c9f8e22950087100a26a1977f2)
-  - **template:** Correction de l'import du fichier `package.json` dans le code compilé ([#93](https://github.com/assurance-maladie-digital/design-system/pull/93)) ([ad5baf4](https://github.com/assurance-maladie-digital/design-system/commit/ad5baf48c5f3deecfae30ee36a635c4b14151f41)
+  - **template:** Épinglage de la version de Vue Dot ([f825415](https://github.com/assurance-maladie-digital/design-system/commit/f82541542625a8c9f8e22950087100a26a1977f2))
+  - **template:** Correction de l'import du fichier `package.json` dans le code compilé ([#93](https://github.com/assurance-maladie-digital/design-system/pull/93)) ([ad5baf4](https://github.com/assurance-maladie-digital/design-system/commit/ad5baf48c5f3deecfae30ee36a635c4b14151f41))
 
 - ♻️ **Refactoring**
   - **template:** Ajout de l'option `--render-template` pour ne pas copier le template lors de l'invocation ([#77](https://github.com/assurance-maladie-digital/design-system/pull/77)) ([5fe21d3](https://github.com/assurance-maladie-digital/design-system/commit/5fe21d3a2a95e4236540ddbb686ba3a63e431acd))
@@ -2955,6 +2955,156 @@ Cette version comporte l'ajout des composants `SubHeader`, `HeaderLoading` et `D
 - ⬆️ **Dépendances**
   - **@vue/test-utils:** Mise à jour vers la `v1.0.0-beta.31` ([#74](https://github.com/assurance-maladie-digital/design-system/pull/74)) ([aaa695a](https://github.com/assurance-maladie-digital/design-system/commit/aaa695a8b38c91e3f5a0668f9f1f89a48996749c))
   - **global:** Mise à jour des dépendances ([0d0360b](https://github.com/assurance-maladie-digital/design-system/commit/0d0360b38e336e7e441d86c6d52301a76abe463d))
+
+## v2.0.0-alpha.29
+
+**Version publiée le 30/08/2019.**
+
+Cette version comporte un correctif sur la règle de validation `isDateValid`.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **rules:** Correction de la validation de l'année dans la règle de validation `isDateValid` ([37cc935](https://github.com/assurance-maladie-digital/design-system/commit/37cc93549b44ace03961167c110061c9004f6b36))
+
+## v2.0.0-alpha.29
+
+**Version publiée le 28/08/2019.**
+
+Cette version comporte la refonte du composant `CustomIcon` ainsi qu'un correctif sur le composant `CopyBtn`.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **CopyBtn:** Correction de la prop `small` activée par défaut ([424d76e](https://github.com/assurance-maladie-digital/design-system/commit/424d76e5c490a1ccee798f978ba960099dfe9643))
+
+- ♻️ **Refactoring**
+  - **CustomIcon:** Refonte du composant ([aa0f941](https://github.com/assurance-maladie-digital/design-system/commit/aa0f941c47935d714874c68bf9fa24c41a84ca5a))
+
+- ⬆️ **Dépendances**
+  - **vuetify:** Mise à jour de la `v2.0.10` vers la `v2.0.11` ([20bf25e](https://github.com/assurance-maladie-digital/design-system/commit/20bf25ef45c0aa31ff86cc38e8f895a7502cd752))
+
+## v2.0.0-alpha.28
+
+**Version publiée le 27/08/2019.**
+
+Cette version comporte l'ajout de la personnalisation des messages d'erreur des règles de validation..
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **rules:** Ajout de l'export des fonctions ([7150dd3](https://github.com/assurance-maladie-digital/design-system/commit/7150dd3f56ad0746aa32c339ddb085743e8556c3))
+  - **rules:** Ajout de la personnalisation des messages d'erreur ([#10](https://github.com/assurance-maladie-digital/design-system/pull/10)) ([c4ce196](https://github.com/assurance-maladie-digital/design-system/commit/c4ce196d7a5a8842ea102e54cd029c814af4bd8b))
+
+- 🔥 **Suppressions**
+  - **global:** Suppression des imports non utilisés ([1d2adef](https://github.com/assurance-maladie-digital/design-system/commit/1d2adef1f6d1c3c1fa019f5ccacaa3687bbb454b))
+
+- 🔧 **Configuration**
+  - **config:** Refonte du fichier `vue.config.js` ([b05d237](https://github.com/assurance-maladie-digital/design-system/commit/b05d23701af3c0890bfa54496da86a0fac2c029e))
+
+### Interne
+
+- 🔧 **Configuration**
+  - **config:** Ajout du build des packages au prepublish ([5ae2df7](https://github.com/assurance-maladie-digital/design-system/commit/5ae2df71a447b4692d98f5d749ed2f5d7e24134d))
+
+## v2.0.0-alpha.27
+
+**Version publiée le 23/08/2019.**
+
+Cette version comporte un correctif sur le typage du plugin Vue Dot.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **types:** Correction du typage du plugin ([83d8943](https://github.com/assurance-maladie-digital/design-system/commit/83d89435ce2005650f44fa9174e420e75cc4aa88))
+
+## v2.0.0-alpha.26
+
+**Version publiée le 22/08/2019.**
+
+Cette version comporte un correctif sur la validation avec le calendrier dans le composant `DatePicker`.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **DatePicker:** Correction de la validation avec le calendrier ([8147cd8](https://github.com/assurance-maladie-digital/design-system/commit/8147cd8e96b58a7a18e7c9268a16e51b58f9b486))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **global:** Mise à jour des dépendances ([1a28533](https://github.com/assurance-maladie-digital/design-system/commit/1a285339758a46735e97c2ce31dc3f5f2ac634a5))
+
+## v2.0.0-alpha.25
+
+**Version publiée le 21/08/2019.**
+
+Cette version comporte un correctif sur le formatage de la date dans le composant `DatePicker`.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **DatePicker:** Correction du formatage de la date ([f8ac321](https://github.com/assurance-maladie-digital/design-system/commit/f8ac3215fa473263e32cf8bb931d6a239e044096))
+
+- ♻️ **Refactoring**
+  - **DatePicker:** Mise à jour de la configuration du composant `VBtn` ([a93b13a](https://github.com/assurance-maladie-digital/design-system/commit/a93b13ab9afea007889b47dd51e7cd6a20d7d488))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **vuetify:** Mise à jour de la `2.0.7` vers la `v2.0.9` ([8c6717a](https://github.com/assurance-maladie-digital/design-system/commit/8c6717a0267f6cdb4c32a7925149a6f32ddb9f3a))
+
+## v2.0.0-alpha.24
+
+**Version publiée le 20/08/2019.**
+
+Cette version comporte l'ajout d'un masque pour limiter la saisie des caractères dans le composant `DatePicker`.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **DatePicker:** Ajout de `v-mask` ([846be9c](https://github.com/assurance-maladie-digital/design-system/commit/846be9c8e15617f4a78802b42f96533445babd98))
+
+### Interne
+
+- 🔧 **Configuration**
+  - **config:** Mise à jour de la configuration de Jest ([46eb5f2](https://github.com/assurance-maladie-digital/design-system/commit/46eb5f2b9d1e1c080d39f11551fa7d0a5fed9188))
+
+- ⬆️ **Dépendances**
+  - **global:** Mise à jour des dépendances ([be6756b](https://github.com/assurance-maladie-digital/design-system/commit/be6756bee9956851650a416049c3d071c89c904b))
+
+## v2.0.0-alpha.23
+
+**Version publiée le 14/08/2019.**
+
+Cette version comporte la mise à jour de Vuetify vers la `2.0.7`.
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **vuetify:** Mise à jour de la `v2.0.5` vers la `v2.0.7` ([86ccb56](https://github.com/assurance-maladie-digital/design-system/commit/86ccb5600630751a79b8d71d893fd5f4c3898d8e))
+
+## v2.0.0-alpha.22
+
+**Version publiée le 14/08/2019.**
+
+Cette version comporte la refonte du composant `DatePicker` ainsi qu'ajout de la méthode `retry` sur le composant `FileUpload` et un correctif sur les règles de validation.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **rules:** Correction des règles de validation lorsqu'il n'y a pas de valeur ([f305db4](https://github.com/assurance-maladie-digital/design-system/commit/f305db41d1e868cc7effe94774ac0f7963e22a12))
+  - **DatePicker:** Correction des périodes négatives ([2705719](https://github.com/assurance-maladie-digital/design-system/commit/2705719e674b1f95a045a511c7525de80bb8613c))
+
+- ♻️ **Refactoring**
+  - **DatePicker:** Refonte du composant ([#9](https://github.com/assurance-maladie-digital/design-system/pull/9)) ([4365ee8](https://github.com/assurance-maladie-digital/design-system/commit/4365ee8887a03efb68e0c978b40306a2f1b74ad0))
+  - **global:** Extraction de la fonction `calcHumanFileSize` et ajout de types ([0e9d06f](https://github.com/assurance-maladie-digital/design-system/commit/0e9d06fe5bda5fe16a0ea61609da5e5fdb964e8c))
+  - **FileUpload:** Remplacement de la prop `ref` par une méthode publique ([10e87f5](https://github.com/assurance-maladie-digital/design-system/commit/10e87f568d0c30a7a4f1dc0362a749b7b570f1c2))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **vuetify:** Mise à jour de la `v2.0.2` vers la `v2.0.5` ([231f79c](https://github.com/assurance-maladie-digital/design-system/commit/231f79c37da4ec3e631972721285bb20ea533cdf))
+  - **global:** Mise à jour des dépendances ([a5f6953](https://github.com/assurance-maladie-digital/design-system/commit/a5f6953c12a1c898489ae00248918d4219c13a8a))
 
 ## v2.0.0-alpha.21
 
