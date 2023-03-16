@@ -5,9 +5,28 @@
 			class="step"
 			:class="{'green-background': checkBackgroundGreen(), 'shadow-box': shadowMode}"
 		>
-			<slot name="number-picker-step1" />
-			<slot name="stars-picker-step1" />
-			<slot name="emotions-picker-step1" />
+			<EmotionPicker
+				v-if="type === 'emotions'"
+				class="ma-6"
+				step-name="mainQuestion"
+				:simple-mode="mainQuestion.simpleMode"
+				:question-datas="mainQuestion"
+				@update-result="updateFirstStep"
+			/>
+			<StarsPicker
+				v-if="type === 'stars'"
+				class="ma-6"
+				step-name="mainQuestion"
+				:question-datas="mainQuestion"
+				@update-result="updateFirstStep"
+			/>
+			<NumberPicker
+				v-if="type === 'numbers'"
+				class="ma-6"
+				step-name="mainQuestion"
+				:question-datas="mainQuestion"
+				@update-result="updateFirstStep"
+			/>
 
 			<div class="d-flex justify-end">
 				<div
@@ -58,9 +77,7 @@
 				{{ locales.more }}
 			</p>
 
-			<slot name="emotions-picker-step2" />
-			<slot name="multiple-answers-step2" />
-			<slot name="text-area-form-step2" />
+			<slot />
 
 			<div
 				v-if="validated"
@@ -109,10 +126,16 @@
 	import { locales } from './locales';
 	import { mdiCheckCircleOutline } from '@mdi/js';
 
-	import { AfterValidateItem, StepItem } from './types';
+	import EmotionPicker from './EmotionPicker';
+	import StarsPicker from './StarsPicker';
+	import NumberPicker from './NumberPicker';
 
 	const Props = Vue.extend({
 		props: {
+			type: {
+				type: String,
+				required: true
+			},
 			shadowMode: {
 				type: Boolean,
 				required: false
@@ -146,6 +169,11 @@
 		model: {
 			prop: 'datas',
 			event: 'on-validate'
+		},
+		components: {
+			EmotionPicker,
+			StarsPicker,
+			NumberPicker
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
@@ -167,6 +195,11 @@
 			}
 			return false;
 		}
+
+		updateFirstStep(value: string): void {
+			this.$emit('update', value);
+		}
+
 		validateFirstStep(): void {
 			this.$emit('on-validate', [this.firstStep]);
 		}
