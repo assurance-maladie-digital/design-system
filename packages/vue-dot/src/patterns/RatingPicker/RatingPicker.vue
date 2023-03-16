@@ -8,7 +8,6 @@
 			<EmotionPicker
 				v-if="type === 'emotions'"
 				class="ma-6"
-				step-name="mainQuestion"
 				:simple-mode="mainQuestion.simpleMode"
 				:question-datas="mainQuestion"
 				@update-result="updateFirstStep"
@@ -16,14 +15,12 @@
 			<StarsPicker
 				v-if="type === 'stars'"
 				class="ma-6"
-				step-name="mainQuestion"
 				:question-datas="mainQuestion"
 				@update-result="updateFirstStep"
 			/>
 			<NumberPicker
 				v-if="type === 'numbers'"
 				class="ma-6"
-				step-name="mainQuestion"
 				:question-datas="mainQuestion"
 				@update-result="updateFirstStep"
 			/>
@@ -130,6 +127,8 @@
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
 
+	import { StepItem } from './types';
+
 	const Props = Vue.extend({
 		props: {
 			type: {
@@ -196,8 +195,8 @@
 			return false;
 		}
 
-		updateFirstStep(value: string): void {
-			this.$emit('update', value);
+		updateFirstStep(result: StepItem): void {
+			this.$emit('change', result);
 		}
 
 		validateFirstStep(): void {

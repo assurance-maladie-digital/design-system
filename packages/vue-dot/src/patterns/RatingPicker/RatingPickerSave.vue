@@ -8,7 +8,6 @@
 			<EmotionPicker
 				v-if="mainQuestion.type === 'emotions'"
 				class="ma-6"
-				step-name="mainQuestion"
 				main-question
 				:simple-mode="mainQuestion.simpleMode"
 				:question-datas="mainQuestion"
@@ -17,14 +16,12 @@
 			<StarsPicker
 				v-if="mainQuestion.type === 'stars'"
 				class="ma-6"
-				step-name="mainQuestion"
 				:question-datas="mainQuestion"
 				@update-result="updateFirstStep"
 			/>
 			<NumberPicker
 				v-if="mainQuestion.type === 'numbers'"
 				class="ma-6"
-				step-name="mainQuestion"
 				:question-datas="mainQuestion"
 				@update-result="updateFirstStep"
 			/>
