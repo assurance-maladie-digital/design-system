@@ -18,6 +18,8 @@
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
+				@focusin="hover = true"
+				@focusout="hover = false"
 				v-on="on"
 			>
 				<span
