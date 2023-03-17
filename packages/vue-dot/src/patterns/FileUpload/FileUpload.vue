@@ -3,8 +3,6 @@
 		<label
 			v-ripple="!noRipple"
 			for="fileUpload"
-			role="button"
-			tabindex="0"
 			class="vd-file-upload d-block pa-4"
 			:class="[
 				{

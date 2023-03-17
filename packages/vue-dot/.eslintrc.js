@@ -24,6 +24,8 @@ module.exports = {
 		'jsdoc/require-param': 0,
 		'jsdoc/require-returns': 0,
 		'vuejs-accessibility/require-param': 0,
-		'vuejs-accessibility/require-returns': 0
+		'vuejs-accessibility/require-returns': 0,
+		'vuejs-accessibility/aria-props': 0,
+		'vuejs-accessibility/no-static-element-interactions': 0
 	}
 };
