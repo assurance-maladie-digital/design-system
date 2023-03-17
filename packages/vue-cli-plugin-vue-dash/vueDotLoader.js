@@ -12,6 +12,7 @@ const componentMap = {
 	FranceConnectBtn: 'elements',
 	HeaderLoading: 'elements',
 	Logo: 'elements',
+	LogoBrandSection: 'elements',
 	PageContainer: 'elements',
 	UserMenuBtn: 'elements',
 	// Patterns
