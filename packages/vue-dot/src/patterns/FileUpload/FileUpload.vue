@@ -1,84 +1,82 @@
 <template>
-	<div>
-		<label
-			v-ripple="!noRipple"
-			class="vd-file-upload d-block pa-4"
-			:class="[
-				{
-					'dragover': dragover,
-					'dark-mode': $vuetify.theme.dark
-				},
-				colors.label
-			]"
-			:style="widthStyles"
-			@dragover.prevent="dragover = true"
-			@dragleave="dragover = false"
-			@drop.prevent="dropHandler"
+	<label
+		v-ripple="!noRipple"
+		class="vd-file-upload d-block pa-4"
+		:class="[
+			{
+				'dragover': dragover,
+				'dark-mode': $vuetify.theme.dark
+			},
+			colors.label
+		]"
+		:style="widthStyles"
+		@dragover.prevent="dragover = true"
+		@dragleave="dragover = false"
+		@drop.prevent="dropHandler"
+	>
+		<input
+			ref="vdInputEl"
+			type="file"
+			:disabled="disabled"
+			:multiple="multiple"
+			:accept="computedAccept"
+			class="vd-file-upload-input"
+			@change="inputValueChanged"
 		>
-			<input
-				ref="vdInputEl"
-				type="file"
-				:disabled="disabled"
-				:multiple="multiple"
-				:accept="computedAccept"
-				class="vd-file-upload-input"
-				@change="inputValueChanged"
-			>
 
-			<slot name="placeholder">
-				<span class="vd-file-upload-placeholder">
-					<slot name="icon">
-						<VIcon v-bind="options.icon">
-							{{ uploadIcon }}
-						</VIcon>
+		<slot name="placeholder">
+			<span class="vd-file-upload-placeholder">
+				<slot name="icon">
+					<VIcon v-bind="options.icon">
+						{{ uploadIcon }}
+					</VIcon>
+				</slot>
+
+				<span
+					class="mt-1 font-weight-medium"
+					:class="colors.multiple"
+				>
+					<slot
+						name="action-text"
+						:multiple="multiple"
+					>
+						{{ multiple ? 'Placez vos fichiers ici' : 'Placez votre fichier ici' }}
 					</slot>
-
-					<span
-						class="mt-1 font-weight-medium"
-						:class="colors.multiple"
-					>
-						<slot
-							name="action-text"
-							:multiple="multiple"
-						>
-							{{ multiple ? 'Placez vos fichiers ici' : 'Placez votre fichier ici' }}
-						</slot>
-					</span>
-
-					<span
-						class="mb-2"
-						:class="colors.info"
-					>
-						<slot name="or">
-							{{ locales.or }}
-						</slot>
-					</span>
-
-					<span
-						class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2"
-						:class="{ 'primary lighten-1': hover }"
-					>
-						<slot name="button-text">
-							{{ locales.chooseFile }}
-						</slot>
-					</span>
-
-					<span
-						:class="colors.info"
-						class="mt-4 text-body-2 font-weight-regular"
-					>
-						<slot
-							name="info-text"
-							:max-size="maxSizeReadable"
-							:extensions="extensions"
-						>
-							{{ locales.infoText(maxSizeReadable, extensions) }}
-						</slot>
-					</span>
 				</span>
-			</slot>
-		</label>
-	</div>
+
+				<span
+					class="mb-2"
+					:class="colors.info"
+				>
+					<slot name="or">
+						{{ locales.or }}
+					</slot>
+				</span>
+
+				<span
+					class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2"
+					:class="{ 'primary lighten-1': hover }"
+				>
+					<slot name="button-text">
+						{{ locales.chooseFile }}
+					</slot>
+				</span>
+
+				<span
+					:class="colors.info"
+					class="mt-4 text-body-2 font-weight-regular"
+				>
+					<slot
+						name="info-text"
+						:max-size="maxSizeReadable"
+						:extensions="extensions"
+					>
+						{{ locales.infoText(maxSizeReadable, extensions) }}
+					</slot>
+				</span>
+			</span>
+		</slot>
+	</label>
 </template>
 
 <script lang="ts">
