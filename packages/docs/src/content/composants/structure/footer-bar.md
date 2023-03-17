@@ -11,6 +11,12 @@ description: Le pattern `FooterBar` est utilisé pour afficher un pied de page.
 
 ### Exemples
 
+#### Ajouter une partie
+
+Vous pouvez ajouter une partie au début ou à la fin du pied de page en utilisant les slots `prepend` et `append`.
+
+<doc-example file="footer-bar/content-slot"></doc-example>
+
 #### Mode étendu
 
 Vous pouvez ajouter du contenu dans le slot par défaut, cela activera le mode étendu qui affiche le logo de l’Assurance Maladie ainsi que la liste de ses réseaux sociaux.
