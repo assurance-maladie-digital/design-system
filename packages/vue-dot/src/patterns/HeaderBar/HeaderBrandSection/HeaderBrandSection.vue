@@ -5,6 +5,7 @@
 	>
 		<component
 			:is="logoContainerComponent"
+			:aria-current="false"
 			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 			:href="homeHref"
