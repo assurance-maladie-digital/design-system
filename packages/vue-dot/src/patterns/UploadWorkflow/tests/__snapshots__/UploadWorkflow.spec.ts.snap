@@ -6,15 +6,15 @@ exports[`UploadWorkflow renders correctly 1`] = `
     Documents à nous transmettre
   </h4>
   <filelist-stub files="[object Object],[object Object]" optionalfiletext="Document facultatif" width="100%"></filelist-stub>
-  <div class="mt-6"><label role="button" tabindex="-1" for="fileUpload" class="vd-file-upload d-block pa-4 primary--text" style="width: 100%;"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="vd-file-upload-input"> <span class="vd-file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 40px; height: 40px; width: 40px;"><path d="M11 20H6.5Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20H13V12.85L14.6 14.4L16 13L12 9L8 13L9.4 14.4L11 12.85Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
+  <div class="mt-6"><label for="fileUpload" role="button" tabindex="0" class="vd-file-upload d-block pa-4 primary--text" style="width: 100%;"><input id="fileUpload" type="file" accept=".pdf,.jpg,.jpeg,.png" class="vd-file-upload-input"> <span class="vd-file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 40px; height: 40px; width: 40px;"><path d="M11 20H6.5Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20H13V12.85L14.6 14.4L16 13L12 9L8 13L9.4 14.4L11 12.85Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
 						Placez votre fichier ici
 					</span> <span class="mb-2 grey--text">
 						Ou
-					</span> <span role="button" tabindex="0" class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
+					</span> <span class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 						Choisir un fichier
 					</span> <span class="mt-4 text-body-2 font-weight-regular grey--text">
 						Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
-					</span></span></label> <input id="fileUpload" type="file" class="d-none"></div>
+					</span></span></label></div>
   <div class="v-dialog__container vd-dialog-box" aria-modal="true">
     <!---->
   </div>
@@ -27,15 +27,15 @@ exports[`UploadWorkflow renders correctly with a single file 1`] = `
     Document à nous transmettre
   </h4>
   <filelist-stub files="[object Object]" optionalfiletext="Document facultatif" width="100%"></filelist-stub>
-  <div class="mt-6"><label role="button" tabindex="-1" for="fileUpload" class="vd-file-upload d-block pa-4 primary--text" style="width: 100%;"><input type="file" accept=".pdf,.jpg,.jpeg,.png" class="vd-file-upload-input"> <span class="vd-file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 40px; height: 40px; width: 40px;"><path d="M11 20H6.5Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20H13V12.85L14.6 14.4L16 13L12 9L8 13L9.4 14.4L11 12.85Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
+  <div class="mt-6"><label for="fileUpload" role="button" tabindex="0" class="vd-file-upload d-block pa-4 primary--text" style="width: 100%;"><input id="fileUpload" type="file" accept=".pdf,.jpg,.jpeg,.png" class="vd-file-upload-input"> <span class="vd-file-upload-placeholder"><span aria-hidden="true" class="v-icon notranslate theme--light primary--text" style="font-size: 40px; height: 40px; width: 40px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 40px; height: 40px; width: 40px;"><path d="M11 20H6.5Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20H13V12.85L14.6 14.4L16 13L12 9L8 13L9.4 14.4L11 12.85Z"></path></svg></span> <span class="mt-1 font-weight-medium black--text">
 						Placez votre fichier ici
 					</span> <span class="mb-2 grey--text">
 						Ou
-					</span> <span role="button" tabindex="0" class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
+					</span> <span class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 						Choisir un fichier
 					</span> <span class="mt-4 text-body-2 font-weight-regular grey--text">
 						Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
-					</span></span></label> <input id="fileUpload" type="file" class="d-none"></div>
+					</span></span></label></div>
   <div class="v-dialog__container vd-dialog-box" aria-modal="true">
     <!---->
   </div>
