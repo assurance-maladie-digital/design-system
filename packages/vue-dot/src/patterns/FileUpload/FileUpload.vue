@@ -2,9 +2,9 @@
 	<div>
 		<label
 			v-ripple="!noRipple"
-			role="button"
-			tabIndex="-1"
 			for="fileUpload"
+			role="button"
+			tabindex="0"
 			class="vd-file-upload d-block pa-4"
 			:class="[
 				{
@@ -19,6 +19,7 @@
 			@drop.prevent="dropHandler"
 		>
 			<input
+				id="fileUpload"
 				ref="vdInputEl"
 				type="file"
 				:disabled="disabled"
@@ -60,12 +61,6 @@
 					<span
 						class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2"
 						:class="{ 'primary lighten-1': hover }"
-						role="button"
-						tabIndex="0"
-						@mouseover="hover = true"
-						@mouseleave="hover = false"
-						@focusin="hover = true"
-						@focusout="hover = false"
 					>
 						<slot name="button-text">
 							{{ locales.chooseFile }}
@@ -87,11 +82,6 @@
 				</span>
 			</slot>
 		</label>
-		<input
-			id="fileUpload"
-			type="file"
-			class="d-none"
-		>
 	</div>
 </template>
 
