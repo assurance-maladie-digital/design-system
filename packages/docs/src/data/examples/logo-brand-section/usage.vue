@@ -16,8 +16,12 @@
 	})
 	export default class LogoUsage extends Vue {
 		defaultProps = {
-			theme: 'default'
+			theme: 'default',
+			serviceTitle: 'Design System',
+			serviceSubTitle: 'Documentation du Design System'
 		};
+
+		propsHiddenByDefault = ['theme'];
 
 		options = {
 			booleans: [
@@ -32,7 +36,11 @@
 					'risque-pro',
 					'compte-entreprise'
 				]
-			}
+			},
+			textFields: [
+				'serviceTitle',
+				'serviceSubTitle'
+			]
 		};
 	}
 </script>

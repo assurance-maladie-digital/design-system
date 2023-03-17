@@ -1,7 +1,7 @@
 <template>
 	<FooterBar v-bind="docProps">
 		<template #logo>
-			<HeaderBrandSection theme="ameli" />
+			<LogoBrandSection theme="ameli" />
 		</template>
 
 		<template #social-media-links>

@@ -86,9 +86,10 @@
 
 	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
 
-	import { ThemeEnum } from './ThemeEnum';
+	import { ThemeEnum } from '../../constants/enums/ThemeEnum';
+	import { Dimensions, Next } from '../../types';
 
-	import { LogoInfo, Service, Dimensions, Next } from './types';
+	import { LogoInfo, Service } from './types';
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
@@ -125,7 +126,7 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class HeaderBrandSection extends MixinsDeclaration {
+	export default class LogoBrandSection extends MixinsDeclaration {
 		locales = locales;
 
 		get service(): Service {

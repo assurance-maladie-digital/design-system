@@ -1,6 +1,6 @@
 import { IndexedObject } from '../../types';
 
-import { ThemeEnum } from './ThemeEnum';
+import { ThemeEnum } from '../../constants/enums/ThemeEnum';
 
 import { locales } from './locales';
 import { LogoInfo } from './types';
