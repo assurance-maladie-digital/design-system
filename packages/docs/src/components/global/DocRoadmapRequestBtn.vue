@@ -4,7 +4,6 @@
 		outlined
 		large
 		color="primary"
-		class="text-none"
 	>
 		Soumettre une demande
 	</VBtn>

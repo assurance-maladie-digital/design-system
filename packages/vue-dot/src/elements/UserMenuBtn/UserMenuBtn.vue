@@ -12,7 +12,7 @@
 						...options.btn
 					}"
 					:class="btnPadding"
-					class="vd-user-menu-btn text-none"
+					class="vd-user-menu-btn"
 					v-on="on"
 				>
 					<span class="d-sr-only">
