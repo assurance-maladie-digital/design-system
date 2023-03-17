@@ -14,7 +14,7 @@ const mobileVersionProp = {
 	name: 'mobile-version',
 	type: 'boolean',
 	default: false,
-	description: 'Affiche le header en version en version pour les écrans mobiles.<br>Par défaut, ce mode est activé à partir du [breakpoint `sm`](https://vuetifyjs.com/en/features/breakpoints/).'
+	description: 'Affiche le header en version pour les écrans mobiles.<br>Par défaut, ce mode est activé à partir du [breakpoint `sm`](https://vuetifyjs.com/en/features/breakpoints/).'
 };
 
 const innerWidthProp = {
@@ -59,7 +59,7 @@ const homeLinkProp = {
 
 const homeHrefProp = {
 	name: 'home-href',
-	type: 'String',
+	type: 'string',
 	default: 'undefined',
 	description: 'Un lien externe à l’application vers la page d’accueil.'
 };
@@ -101,11 +101,11 @@ export const api: Api = {
 	contentSheet: 'VSheet',
 	innerSheet: 'VSheet',
 	spacer: 'VSpacer',
-	brandSection: 'HeaderBrandSection',
+	brandSection: 'LogoBrandSection',
 	menuBtn: 'HeaderMenuBtn',
 	navigationBar: 'HeaderNavigationBar',
 	navigationDrawer: 'HeaderNavigationDrawer',
-}`, ', ainsi que des composants `HeaderBrandSection`, `HeaderMenuBtn`, `HeaderNavigationBar` et `HeaderNavigationDrawer`')
+}`, ', ainsi que des composants `LogoBrandSection`, `HeaderMenuBtn`, `HeaderNavigationBar` et `HeaderNavigationDrawer`')
 		],
 		slots: [
 			{
@@ -139,22 +139,6 @@ export const api: Api = {
 			{
 				name: 'navigation-drawer-content',
 				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
-			}
-		]
-	},
-	HeaderBrandSection: {
-		props: [
-			themeProp,
-			titleProp,
-			subTitleProp,
-			mobileVersionProp,
-			homeLinkProp,
-			homeHrefProp
-		],
-		slots: [
-			{
-				name: 'default',
-				description: 'Slot pour remplacer le contenu et afficher une marque partenaire.'
 			}
 		]
 	},
