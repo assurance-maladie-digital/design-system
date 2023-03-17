@@ -17,9 +17,13 @@
 	export default class MaintenancePageUsage extends Vue {
 		defaultProps = {
 			pageTitle: 'Maintenance en cours',
-			message: 'L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.',
-			image: false
+			message: 'L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.'
 		};
+
+		propsHiddenByDefault = [
+			'pageTitle',
+			'message'
+		];
 
 		options = {
 			textFields: [
@@ -29,3 +33,14 @@
 		};
 	}
 </script>
+
+<style lang="scss" scoped>
+	// Update padding to give more space to the component for documentation
+	.vd-page-container {
+		padding: 0 !important;
+
+		:deep(.v-card) {
+			padding: 24px !important;
+		}
+	}
+</style>
