@@ -26,6 +26,7 @@ module.exports = {
 		'vuejs-accessibility/require-param': 0,
 		'vuejs-accessibility/require-returns': 0,
 		'vuejs-accessibility/aria-props': 0,
-		'vuejs-accessibility/no-static-element-interactions': 0
+		'vuejs-accessibility/no-static-element-interactions': 0,
+		'vuejs-accessibility/label-has-for': 0
 	}
 };

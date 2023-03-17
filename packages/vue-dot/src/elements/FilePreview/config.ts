@@ -4,7 +4,6 @@ export const config = {
 		width: '100%'
 	},
 	image: {
-		width: '100%',
-		alt: 'Preview'
+		width: '100%'
 	}
 };

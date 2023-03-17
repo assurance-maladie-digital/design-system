@@ -2,7 +2,6 @@
 	<div>
 		<label
 			v-ripple="!noRipple"
-			for="fileUpload"
 			class="vd-file-upload d-block pa-4"
 			:class="[
 				{
@@ -17,7 +16,6 @@
 			@drop.prevent="dropHandler"
 		>
 			<input
-				id="fileUpload"
 				ref="vdInputEl"
 				type="file"
 				:disabled="disabled"
