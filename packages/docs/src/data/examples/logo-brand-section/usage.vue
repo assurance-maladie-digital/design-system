@@ -21,7 +21,9 @@
 			serviceSubTitle: 'Documentation du Design System'
 		};
 
-		propsHiddenByDefault = ['theme'];
+		propsHiddenByDefault = [
+			'theme'
+		];
 
 		options = {
 			booleans: [

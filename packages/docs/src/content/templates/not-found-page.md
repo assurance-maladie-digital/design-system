@@ -1,6 +1,6 @@
 ---
 title: NotFoundPage
-description: Le template `NotFoundPage` est utilisé pour afficher une page d’erreur.
+description: Le template `NotFoundPage` est utilisé pour afficher une page d’erreur lors d’une erreur 404.
 ---
 
 <doc-tabs>
@@ -10,18 +10,6 @@ description: Le template `NotFoundPage` est utilisé pour afficher une page d’
 <doc-usage name="not-found-page"></doc-usage>
 
 ### Exemples
-
-#### Code d’erreur
-
-Vous pouvez afficher un code d’erreur HTTP en utilisant la prop `code`.
-
-<doc-example file="not-found-page/code"></doc-example>
-
-#### Illustration
-
-Vous pouvez afficher une image d’illustration en utilisant mettant prop `image` à `true`.
-
-<doc-example file="not-found-page/image"></doc-example>
 
 #### ID de support
 
@@ -43,7 +31,7 @@ Cet identifiant de support est ajouté automatiquement par notre pare-feu, il a 
 
 ### Slots
 
-Vous pouvez utiliser le slot `not<-found-page-content` pour ajouter votre propre contenu sur la partie de droite.
+Vous pouvez utiliser le slot `illustration` pour modifier l’image d’illustration par défaut.
 
 <doc-example file="not-found-page/slots"></doc-example>
 

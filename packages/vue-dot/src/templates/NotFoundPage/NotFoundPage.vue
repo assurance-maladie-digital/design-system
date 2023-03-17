@@ -1,18 +1,18 @@
 <template>
-	<PageContainer size="s">
-		<VCard class="pa-8">
+	<PageContainer size="m">
+		<VCard class="pa-6 pa-sm-16">
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
-					:md="image || $slots['notfound-page-content'] ? 6 : 12"
+					md="6"
 					class="order-last order-md-first text-center text-md-left"
 				>
-					<span
-						v-if="code"
-						class="font-weight-thin primary--text vd-code"
+					<div
+						aria-hidden="true"
+						class="vd-code font-weight-thin primary--text mb-4"
 					>
-						{{ code }}
-					</span>
+						{{ locales.code }}
+					</div>
 
 					<h2 class="mb-2 font-weight-bold text-h mb-4">
 						{{ pageTitle }}
@@ -21,34 +21,32 @@
 					<p v-if="supportId">
 						{{ locales.supportIdMessage }}
 
-						<b>{{ supportId }}</b>
+						<b>{{ supportId }}</b>.
 					</p>
 
-					<p>{{ message }}</p>
+					<p class="mb-10">
+						{{ message }}
+					</p>
 
 					<VBtn
 						:to="btnRoute"
 						color="primary"
-						class="mt-2"
 						exact
 					>
 						{{ btnText }}
 					</VBtn>
 				</VCol>
+
 				<VCol
-					v-if="image || $slots['notfound-page-content']"
 					cols="12"
 					md="6"
 					class="d-flex align-center justify-center"
 				>
-					<slot name="notfound-page-content">
-						<VImg
-							:src="defaultImage"
-							:alt="pageTitle"
-							max-width="90%"
-							max-height="100%"
-							class="mx-12 mx-sm-16 mx-md-0"
-						/>
+					<slot name="illustration">
+						<img
+							:src="require('../../assets/images/not-found.svg')"
+							alt=""
+						>
 					</slot>
 				</VCol>
 			</VRow>
@@ -73,23 +71,11 @@
 		props: {
 			pageTitle: {
 				type: String,
-				required: true
+				default: locales.pageTitle
 			},
 			message: {
 				type: String,
-				required: true
-			},
-			code: {
-				type: String,
-				default: undefined
-			},
-			image: {
-				type: Boolean,
-				default: false
-			},
-			imageUrl: {
-				type: String,
-				default: undefined
+				default: locales.message
 			},
 			btnText: {
 				type: String,
@@ -107,11 +93,6 @@
 	@Component
 	export default class NotFoundPage extends MixinsDeclaration {
 		locales = locales;
-		defaultImage = '';
-
-		mounted() {
-			this.defaultImage = require('@cnamts/vue-dot/src/assets/images/not-found.svg');
-		}
 
 		/**
 		 * Support ID is a number added by our firewall if a rule is violated
@@ -134,7 +115,6 @@
 			return supportId.trim();
 		}
 	}
-
 </script>
 
 <style lang="scss" scoped>

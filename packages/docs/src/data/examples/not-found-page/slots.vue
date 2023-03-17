@@ -9,3 +9,10 @@
 		</template>
 	</NotFoundPage>
 </template>
+
+<style lang="scss" scoped>
+	// Update padding to give more space to the component for documentation
+	.vd-page-container {
+		padding: 0 !important;
+	}
+</style>

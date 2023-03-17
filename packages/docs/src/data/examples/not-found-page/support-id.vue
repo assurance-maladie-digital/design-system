@@ -2,13 +2,11 @@
 	<div>
 		<NotFoundPage
 			:key="$route.fullPath"
-			code="404"
-			page-title="Page non trouvée"
-			message="Cette page n’existe pas ou a été déplacée."
+			class="mb-6"
 		/>
 
 		<PageContainer
-			size="s"
+			size="m"
 			spacing="pa-0 pb-8"
 		>
 			<VBtn
@@ -37,3 +35,10 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	// Update padding to give more space to the component for documentation
+	.vd-page-container {
+		padding: 0 !important;
+	}
+</style>

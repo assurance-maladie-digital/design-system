@@ -6,13 +6,13 @@ export const api: Api = {
 			{
 				name: 'page-title',
 				type: 'string',
-				required: true,
+				default: `'Page non trouvée'`,
 				description: 'Le titre de la page.',
 			},
 			{
 				name: 'message',
 				type: 'string',
-				required: true,
+				default: `'Cette page n’existe pas ou a été déplacée.'`,
 				description: 'Le message d’erreur à afficher à l’utilisateur.',
 			},
 			{

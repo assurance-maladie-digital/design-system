@@ -2,13 +2,15 @@
 
 exports[`MaintenancePage renders correctly 1`] = `
 <pagecontainer-stub size="m" color="transparent">
-  <vcard-stub loaderheight="4" tag="div" class="pa-4 pa-sm-16">
+  <vcard-stub loaderheight="4" tag="div" class="pa-6 pa-sm-16">
     <vrow-stub tag="div" class="mx-0">
       <vcol-stub cols="12" sm="6" tag="div" class="order-last order-sm-first text-center text-sm-left">
         <h2 class="mb-2 font-weight-bold text-h mb-4">
           Maintenance en cours
         </h2>
-        <p>L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.</p>
+        <p class="mb-0">
+          L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.
+        </p>
       </vcol-stub>
       <vcol-stub cols="12" sm="6" tag="div" class="d-flex align-center justify-center"><img src="" alt=""></vcol-stub>
     </vrow-stub>
