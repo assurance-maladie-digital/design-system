@@ -10,6 +10,7 @@ import FilePreview from './FilePreview';
 import FranceConnectBtn from './FranceConnectBtn';
 import HeaderLoading from './HeaderLoading';
 import Logo from './Logo';
+import LogoBrandSection from './LogoBrandSection';
 import PageContainer from './PageContainer';
 import UserMenuBtn from './UserMenuBtn';
 
@@ -26,6 +27,7 @@ export const elements = {
 	FranceConnectBtn,
 	HeaderLoading,
 	Logo,
+	LogoBrandSection,
 	PageContainer,
 	UserMenuBtn
 };

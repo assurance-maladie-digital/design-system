@@ -1,4 +1,4 @@
-import { Dimensions, IndexedObject } from '../../../types';
+import { Dimensions, IndexedObject } from '../../types';
 
 export const dividerDimensionsMapping: IndexedObject<Dimensions> = {
 	xSmall: {

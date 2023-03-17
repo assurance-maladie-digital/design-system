@@ -27,6 +27,7 @@ Object {
     "HeaderLoading",
     "LangBtn",
     "Logo",
+    "LogoBrandSection",
     "MaintenancePage",
     "NirField",
     "NotFoundPage",

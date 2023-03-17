@@ -31,7 +31,7 @@
 		"cross-env": "7.0.3",
 		"custom-event-polyfill": "1.0.7",
 		"dayjs": "1.11.7",
-		"deepmerge": "4.3.0",
+		"deepmerge": "4.3.1",
 		"eslint": "7.32.0",
 		"eslint-plugin-jsdoc": "40.0.3",
 		"eslint-plugin-vue": "9.9.0",
