@@ -15,7 +15,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.21.3",
-		"@mdi/js": "7.1.96",
+		"@mdi/js": "7.2.96",
 		"@rushstack/eslint-patch": "1.2.0",
 		"@types/eslint": "8.4.1",
 		"@types/fs-extra": "11.0.1",
