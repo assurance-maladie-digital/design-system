@@ -37,7 +37,7 @@
   "devDependencies": {
     "@nuxt/content": "1.15.1",
     "@nuxt/types": "2.16.0",
-    "@nuxt/typescript-build": "2.1.0",
+    "@nuxt/typescript-build": "3.0.0",
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/google-fonts": "2.0.0",
     "@nuxtjs/vuetify": "1.12.3",
