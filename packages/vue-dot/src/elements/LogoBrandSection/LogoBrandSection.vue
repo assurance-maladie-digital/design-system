@@ -15,6 +15,8 @@
 				:hide-signature="hideSignature"
 				:risque-pro="isRisquePro"
 				:size="logoSize"
+				:header-sticky="headerSticky"
+				:header-scrolled="headerScrolled"
 			/>
 		</component>
 
@@ -29,6 +31,7 @@
 				aria-hidden="true"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 22 64"
+				class="transition-ease-in-out duration-100"
 			>
 				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
 			</svg>
@@ -109,6 +112,14 @@
 				default: undefined
 			},
 			mobileVersion: {
+				type: Boolean,
+				default: false
+			},
+			headerSticky: {
+				type: Boolean,
+				default: false
+			},
+			headerScrolled: {
 				type: Boolean,
 				default: false
 			},
@@ -206,6 +217,9 @@
 		}
 
 		get showDivider(): boolean {
+			if (this.headerSticky && this.headerScrolled) {
+				return false;
+			}
 			return Boolean(this.hasSecondaryLogo || this.service.title);
 		}
 
