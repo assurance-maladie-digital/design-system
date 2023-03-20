@@ -11,21 +11,21 @@
 				class="ma-6"
 				step-name="mainQuestion"
 				main-question
-				:label="label"
+				:question="question"
 				@update-result="updateFirstStep"
 			/>
 			<StarsPicker
 				v-if="type === 'stars'"
 				class="ma-6"
 				step-name="mainQuestion"
-				:label="label"
+				:question="question"
 				@update-result="updateFirstStep"
 			/>
 			<NumberPicker
 				v-if="type === 'numbers'"
 				class="ma-6"
 				step-name="mainQuestion"
-				:label="label"
+				:question="question"
 				@update-result="updateFirstStep"
 			/>
 			<div class="d-flex justify-end">
@@ -40,7 +40,7 @@
 					>
 						{{ checkIcon }}
 					</VIcon>
-					<span class="turquoise-darken-60--text">{{ afterValidate[0].message }}</span>
+					<span class="turquoise-darken-60--text">{{ message }}</span>
 				</div>
 				<VBtn
 					v-if="firstStep.result === null && !hideCloseButtons"
@@ -80,19 +80,6 @@
 			<slot />
 
 			<div
-				v-if="validated"
-				class="d-flex justify-center align-center border-green py-3 mx-6"
-			>
-				<VIcon
-					color="success"
-					class="mr-4"
-				>
-					{{ checkIcon }}
-				</VIcon>
-				<span class="turquoise-darken-60--text">{{ afterValidate[1].message }}</span>
-			</div>
-
-			<div
 				class="mx-4 pb-3 d-flex"
 				:class="validated || hideCloseButtons ? 'justify-end' : 'justify-space-between'"
 			>
@@ -120,12 +107,11 @@
 </template>
 
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
+	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 	import { locales } from './locales';
 
 	import { StepItem } from './types';
-	import { AfterValidateItem } from './types';
 
 	import EmotionPicker from './EmotionPicker';
 	import StarsPicker from './StarsPicker';
@@ -138,17 +124,25 @@
 				type: Boolean,
 				required: false
 			},
+			greenBackground: {
+				type: Boolean,
+				required: false
+			},
 			hideCloseButtons: {
 				type: Boolean,
 				required: false
 			},
-			label: {
+			question: {
 				type: String,
 				required: true
 			},
 			type: {
 				type: String,
 				required: true
+			},
+			message: {
+				type: String,
+				default: 'validé'
 			},
 			questionsList: {
 				type: Array,
@@ -177,10 +171,6 @@
 	export default class RatingPicker extends MixinsDeclaration {
 		locales = locales;
 		checkIcon = mdiCheckCircleOutline;
-		question = {
-			type: '',
-			answers: []
-		};
 
 		firstStep: StepItem = {
 			step: '',
@@ -189,11 +179,6 @@
 		secondStep: StepItem[] = [];
 
 		validated = false;
-
-		afterValidateItem: AfterValidateItem = {
-			message: '',
-			greenBackground: false
-		};
 
 		get checkFirstStep(): boolean {
 			if (this.firstStep.result !== null) {
@@ -225,9 +210,9 @@
 
 		checkBackgroundGreen(number: number): boolean {
 			if (number) {
-				return this.afterValidate[number].greenBackground && this.validated ? true : false;
+				return this.greenBackground && this.validated ? true : false;
 			} else {
-				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
+				return this.greenBackground && this.firstStep.result ? true : false;
 			}
 		}
 

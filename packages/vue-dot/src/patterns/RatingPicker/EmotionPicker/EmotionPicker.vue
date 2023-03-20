@@ -5,13 +5,13 @@
 				v-if="mainQuestion"
 				class="mb-6"
 			>
-				{{ label }}
+				{{ question }}
 			</H6>
 			<span
 				v-else
 				class="mb-6 text-subtitle-2"
 			>
-				{{ label }}
+				{{ question }}
 			</span>
 		</div>
 		<VRow
@@ -68,13 +68,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			label: {
+			question: {
 				type: String,
 				required: true
 			},
 			mainQuestion: {
 				type: Boolean,
-				required: true
+				default: true
 			},
 			isValidated: {
 				type: Boolean,
@@ -146,7 +146,7 @@
 				this.$emit(
 					'update-result',
 					{
-						step: this.label,
+						step: this.question,
 						result: emotion
 					}
 				);

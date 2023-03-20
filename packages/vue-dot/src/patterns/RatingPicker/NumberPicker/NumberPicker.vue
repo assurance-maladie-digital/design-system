@@ -4,7 +4,7 @@
 			<H6
 				class="mb-6"
 			>
-				{{ questionDatas.question }}
+				{{ question }}
 			</H6>
 		</div>
 		<div
@@ -48,10 +48,10 @@
 			class="mt-3 d-flex justify-space-between rate-meaning"
 		>
 			<span>
-				{{ getLabel(0) }}
+				{{ labels[0] }}
 			</span>
 			<span>
-				{{ getLabel(1) }}
+				{{ labels[1] }}
 			</span>
 		</div>
 	</div>
@@ -63,9 +63,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			questionDatas: {
-				type: Object,
+			question: {
+				type: String,
 				required: true
+			},
+			labels: {
+				type: Array,
+				default: () => ['Mauvais', 'super']
 			}
 		}
 	});
@@ -82,13 +86,10 @@
 			this.$emit(
 				'update-result',
 				{
-					step: this.questionDatas.name,
+					step: this.question,
 					result: this.selectedRating
 				}
 			);
-		}
-		getLabel(number: number): string {
-			return this.questionDatas.label ? this.questionDatas.labels[number] : '';
 		}
 	}
 </script>
