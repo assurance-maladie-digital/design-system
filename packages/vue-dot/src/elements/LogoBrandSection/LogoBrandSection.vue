@@ -17,6 +17,9 @@
 				:size="logoSize"
 				:header-sticky="headerSticky"
 				:header-scrolled="headerScrolled"
+				:secondary-logo="hasSecondaryLogo"
+				:service="service"
+				:compte-entreprise="isCompteEntreprise"
 			/>
 		</component>
 
@@ -217,7 +220,7 @@
 		}
 
 		get showDivider(): boolean {
-			if (this.headerSticky && this.headerScrolled) {
+			if (this.headerSticky && this.headerScrolled && !this.service.title) {
 				return false;
 			}
 			return Boolean(this.hasSecondaryLogo || this.service.title);
