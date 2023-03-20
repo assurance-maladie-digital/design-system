@@ -5,18 +5,18 @@
 				v-if="mainQuestion"
 				class="mb-6"
 			>
-				{{ questionDatas.question }}
+				{{ label }}
 			</H6>
 			<span
 				v-else
 				class="mb-6 text-subtitle-2"
 			>
-				{{ questionDatas.question }}
+				{{ label }}
 			</span>
 		</div>
 		<VRow
 			class="grid justify-center ma-0"
-			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-sm-space-around' : 'justify-sm-space-between'"
+			:class="selectedEmotion || simpleMode ? 'justify-sm-space-around' : 'justify-sm-space-between'"
 		>
 			<VCol
 				v-for="emotion in filterEmotions"
@@ -68,13 +68,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			questionDatas: {
-				type: Object,
+			label: {
+				type: String,
 				required: true
 			},
 			mainQuestion: {
 				type: Boolean,
-				default: false
+				required: true
 			},
 			isValidated: {
 				type: Boolean,
@@ -106,19 +106,19 @@
 				title: 'sad',
 				icon: this.sadIcon,
 				color: 'orange-darken-20',
-				description: this.questionDatas.labels?.sad ?? this.locales.not
+				description: this.locales.not
 			},
 			{
 				title: 'neutral',
 				icon: this.neurtralIcon,
 				color: 'yellow-darken-20',
-				description: this.questionDatas.labels?.neutral ?? this.locales.medium
+				description: this.locales.medium
 			},
 			{
 				title: 'happy',
 				icon: this.happyIcon,
 				color: 'turquoise-darken-20',
-				description: this.questionDatas.labels?.happy ?? this.locales.perfect
+				description: this.locales.perfect
 			}
 		];
 
@@ -131,7 +131,7 @@
 		}
 
 		get filterEmotions(): EmotionItem[] {
-			if (this.selectedEmotion && this.mainQuestion) {
+			if (this.selectedEmotion) {
 				return this.emotionList.filter(emotion => emotion.title === this.selectedEmotion);
 			} else {
 				return this.emotionList;
@@ -146,7 +146,7 @@
 				this.$emit(
 					'update-result',
 					{
-						step: this.questionDatas.name,
+						step: this.label,
 						result: emotion
 					}
 				);

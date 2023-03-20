@@ -5,27 +5,27 @@
 			class="step"
 			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowMode}"
 		>
+			<!--:simple-mode="simpleMode"-->
 			<EmotionPicker
-				v-if="mainQuestion.type === 'emotions'"
+				v-if="type === 'emotions'"
 				class="ma-6"
 				step-name="mainQuestion"
 				main-question
-				:simple-mode="mainQuestion.simpleMode"
-				:question-datas="mainQuestion"
+				:label="label"
 				@update-result="updateFirstStep"
 			/>
 			<StarsPicker
-				v-if="mainQuestion.type === 'stars'"
+				v-if="type === 'stars'"
 				class="ma-6"
 				step-name="mainQuestion"
-				:question-datas="mainQuestion"
+				:label="label"
 				@update-result="updateFirstStep"
 			/>
 			<NumberPicker
-				v-if="mainQuestion.type === 'numbers'"
+				v-if="type === 'numbers'"
 				class="ma-6"
 				step-name="mainQuestion"
-				:question-datas="mainQuestion"
+				:label="label"
 				@update-result="updateFirstStep"
 			/>
 			<div class="d-flex justify-end">
@@ -67,7 +67,7 @@
 
 		<!--second step-->
 		<div
-			v-if="questionsList.length && checkFirstStep"
+			v-if="checkFirstStep"
 			class="step mt-2"
 			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowMode}"
 		>
@@ -76,37 +76,8 @@
 			>
 				{{ locales.more }}
 			</h6>
-			<div
-				v-for="(question, index) in questionsList"
-				:key="index"
-			>
-				<div v-if="index <= secondStep.length">
-					<EmotionPicker
-						v-if="question.type === 'emotions'"
-						class="ma-6"
-						step-name="secondStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-					<MultipleAnswers
-						v-if="question.type === 'multi'"
-						class="ma-6"
-						step-name="thirtStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-					<TextAreaForm
-						v-if="question.type === 'text-area'"
-						class="ma-6"
-						step-name="thirtStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-				</div>
-			</div>
+
+			<slot />
 
 			<div
 				v-if="validated"
@@ -159,8 +130,6 @@
 	import EmotionPicker from './EmotionPicker';
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
-	import MultipleAnswers from './MultipleAnswers';
-	import TextAreaForm from './TextAreaForm';
 	import { mdiCheckCircleOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -173,8 +142,12 @@
 				type: Boolean,
 				required: false
 			},
-			mainQuestion: {
-				type: Object,
+			label: {
+				type: String,
+				required: true
+			},
+			type: {
+				type: String,
 				required: true
 			},
 			questionsList: {
@@ -184,19 +157,6 @@
 			validateTextButton: {
 				type: String,
 				default: 'Transmettre mon avis'
-			},
-			afterValidate: {
-				type: Array as PropType<AfterValidateItem[]>,
-				default: () => [
-					{
-						message: 'Merci pour votre réponse',
-						greenBackground: false
-					},
-					{
-						message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
-						greenBackground: false
-					}
-				]
 			}
 		}
 	});
@@ -211,9 +171,7 @@
 		components: {
 			EmotionPicker,
 			StarsPicker,
-			NumberPicker,
-			MultipleAnswers,
-			TextAreaForm
+			NumberPicker
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
@@ -239,11 +197,11 @@
 
 		get checkFirstStep(): boolean {
 			if (this.firstStep.result !== null) {
-				if (this.mainQuestion.type === 'emotions') {
+				if (this.type === 'emotions') {
 					return this.firstStep.result === 'sad' || this.firstStep.result === 'neutral' ? true : false;
-				} else if (this.mainQuestion.type === 'stars') {
+				} else if (this.type === 'stars') {
 					return this.firstStep.result < 4 ? true : false;
-				} else if (this.mainQuestion.type === 'numbers') {
+				} else if (this.type === 'numbers') {
 					return this.firstStep.result < 7 ? true : false;
 				}
 			}

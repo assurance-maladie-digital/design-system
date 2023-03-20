@@ -4,7 +4,7 @@
 			<H6
 				class="mb-6"
 			>
-				{{ questionDatas.question }}
+				{{ label }}
 			</H6>
 		</div>
 		<div
@@ -61,8 +61,8 @@
 
 	const Props = Vue.extend({
 		props: {
-			questionDatas: {
-				type: Object,
+			label: {
+				type: String,
 				required: true
 			},
 			isValidated: {
@@ -95,7 +95,7 @@
 				this.$emit(
 					'update-result',
 					{
-						step: this.questionDatas.name,
+						step: this.label,
 						result: this.selectedRating
 					}
 				);

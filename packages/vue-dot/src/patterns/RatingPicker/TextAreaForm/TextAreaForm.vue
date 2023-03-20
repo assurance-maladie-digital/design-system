@@ -4,7 +4,7 @@
 			<span
 				class="mb-6 text-subtitle-2"
 			>
-				{{ questionDatas.question }}
+				{{ label }}
 			</span>
 		</div>
 		<div>
@@ -23,8 +23,8 @@
 
 	const Props = Vue.extend({
 		props: {
-			questionDatas: {
-				type: Object,
+			label: {
+				type: String,
 				required: true
 			},
 			isValidated: {
@@ -48,7 +48,7 @@
 				this.$emit(
 					'update-result',
 					{
-						step: this.questionDatas.name,
+						step: this.label,
 						result: this.reasonValue
 					}
 				);
