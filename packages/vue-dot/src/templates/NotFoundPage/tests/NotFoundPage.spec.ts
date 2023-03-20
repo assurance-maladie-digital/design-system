@@ -13,12 +13,7 @@ let wrapper: Wrapper<Vue>;
 
 describe('NotFoundPage', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(NotFoundPage, {
-			propsData: {
-				pageTitle: 'Error',
-				message: 'Error message'
-			}
-		});
+		wrapper = mountComponent(NotFoundPage);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

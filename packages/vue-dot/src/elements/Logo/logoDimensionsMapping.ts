@@ -1,9 +1,9 @@
 import { IndexedObject } from '../../types';
 
-import { LogoDimensions } from './types';
+import { Dimensions } from '../../types';
 import { LogoSizeEnum } from './LogoSizeEnum';
 
-export const logoDimensionsMapping: IndexedObject<LogoDimensions> = {
+export const logoDimensionsMapping: IndexedObject<Dimensions> = {
 	[LogoSizeEnum.X_SMALL]: {
 		width: '105',
 		height: '32'

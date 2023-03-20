@@ -256,7 +256,7 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'NotFoundPage',
-				to: '/templates/notfound-page'
+				to: '/templates/not-found-page'
 			},
 			{
 				title: 'MaintenancePage',
