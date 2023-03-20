@@ -11,11 +11,11 @@ description: Le pattern `FooterBar` est utilisé pour afficher un pied de page.
 
 ### Exemples
 
-#### Ajouter une partie
+#### Contenu supplémentaire
 
-Vous pouvez ajouter une partie au début ou à la fin du pied de page en utilisant les slots `prepend` et `append`.
+Vous pouvez ajouter du contenu au début ou à la fin du pied de page en utilisant les slots `prepend` et `append`.
 
-<doc-example file="footer-bar/content-slot"></doc-example>
+<doc-example file="footer-bar/content-slots"></doc-example>
 
 #### Mode étendu
 
@@ -23,9 +23,9 @@ Vous pouvez ajouter du contenu dans le slot par défaut, cela activera le mode �
 
 <doc-example file="footer-bar/default-slot"></doc-example>
 
-#### Masquer une partie
+#### Masquer une section
 
-Vous pouvez masquer les réseaux sociaux ou le logo de l’Assurance Maladie en utilisant les props `hide-logo` ou `hide-social-media-links`.
+Vous pouvez masquer les réseaux sociaux ou le logo de l’Assurance Maladie en utilisant les props `hide-logo` et `hide-social-media-links`.
 
 <doc-example file="footer-bar/hide-social-media-links"></doc-example>
 

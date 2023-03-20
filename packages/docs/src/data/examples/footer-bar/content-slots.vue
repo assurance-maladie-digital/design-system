@@ -1,15 +1,21 @@
 <template>
 	<FooterBar v-bind="docProps">
 		<template #prepend>
-			<a href="/" class="text--primary my-3 mx-4">
+			<a
+				href="/"
+				class="text--primary my-3 mx-4"
+			>
 				Accueil
 			</a>
 		</template>
-		<template #append>
 
-			<p class="text--secondary my-3 ml-3">
-				Copyright © {{ new Date().getFullYear() }}
-			</p>
+		<template #append>
+			<a
+				href="https://ameli.fr/assure/aide"
+				class="text--primary my-3 mx-4"
+			>
+				Aide
+			</a>
 		</template>
 	</FooterBar>
 </template>
@@ -19,7 +25,7 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class FooterBarLinkSlot extends Vue {
+	export default class FooterBarContentSlots extends Vue {
 		docProps = {
 			sitemapRoute: '/',
 			cguRoute: '/',
