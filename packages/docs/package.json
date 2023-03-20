@@ -27,6 +27,7 @@
     "@cnamts/vue-dot": "^2.9.0-beta.1",
     "@docsearch/js": "3.3.3",
     "@netlify/functions": "1.4.0",
+	"@nuxt/postcss8": "1.1.3",
     "@octokit/core": "4.2.0",
     "nuxt": "2.16.3",
     "remark": "13.0.0",
