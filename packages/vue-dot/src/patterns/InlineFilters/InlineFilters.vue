@@ -110,61 +110,50 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 	import ChipsList from '../ChipsList';
 
-	import { locales } from '../locales';
-	import { FilterItem } from '../types';
-	import { mdiWindowClose, mdiChevronDown, mdiFilterVariant } from '@mdi/js';
+	import { FilterMixin } from '../../mixins/FilterMixin';
+	import { FilterItem } from './types';
+	import { locales } from './locales';
 
 	const Props = Vue.extend({
 		props: {
-			filters: {
+			value: {
 				type: Array as PropType<FilterItem[]>,
-				required: true
-			},
-			chipsLimit: {
-				type: Number,
-				required: true
+				default: () => []
 			},
 			sideBarButton: {
 				type: Boolean,
 				default: false
-			},
-			applyButton: {
-				type: Boolean,
-				required: true
-			},
-			applyFunction: {
-				type: Function,
-				required: true
-			},
-			hideReset: {
-				type: Boolean,
-				required: true
-			},
-			limitedInlineFilter: {
-				type: Array as PropType<string[]>,
-				required: true
 			}
 		}
 	});
 
-	@Component({
+	const MixinsDeclaration = mixins(
+		Props,
+		FilterMixin
+	);
+
+	@Component<InlineFilters>({
+		model: {
+			prop: 'value',
+			event: 'update:value'
+		},
+		watch: {
+			value(newValue: FilterItem[]) {
+				this.filters = newValue;
+			}
+		},
 		components: {
 			ChipsList
 		}
 	})
-	export default class InlineFilters extends Props {
-		locales = locales;
-		downIcon = mdiChevronDown;
-		deleteIcon = mdiWindowClose;
-		filterIcon = mdiFilterVariant;
+	export default class InlineFilters extends MixinsDeclaration {
 
-		get isMobile(): boolean {
-			return this.$vuetify.breakpoint.smAndDown;
-		}
+		locales = locales;
+
+		filters: FilterItem[] = this.value;
 
 		get filtersCount(): number {
 			let count = 0;
@@ -194,10 +183,6 @@
 			}
 		}
 
-		removeAccents(str: string): string | undefined {
-			return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-		}
-
 		openCloseSidebar(): void {
 			this.$emit('open-close-sidebar');
 		}
@@ -206,8 +191,6 @@
 			for (let index = 0; index < this.filters.length; index++) {
 				this.$set(this.filters[index], 'chips', []);
 			}
-
-			this.$emit('update:value', this.filters);
 		}
 	}
 </script>

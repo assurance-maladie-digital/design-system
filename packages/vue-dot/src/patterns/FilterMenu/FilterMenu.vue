@@ -27,57 +27,6 @@
 				/>
 			</template>
 		</InlineFilters>
-
-		<VBtn
-			v-else
-			depressed
-			rounded
-			color="transparent"
-			@click="openCloseSidebar"
-		>
-			<VChip
-				v-if="filtersCount"
-				color="cyan-darken-40"
-				text-color="white"
-				small
-				class="mr-2"
-			>
-				{{ filtersCount }}
-			</VChip>
-
-			<span class="mr-2 primary--text">
-				{{ filters.length > 1 ? 'Filtres' : 'Filtre' }}
-			</span>
-
-			<VIcon color="primary">
-				{{ filterIcon }}
-			</VIcon>
-		</VBtn>
-
-		<FiltersSideBar
-			v-if="showSideBar && !simpleMode"
-			:filters="filters"
-			:apply-button="applyButton"
-			:chips-limit="chipsLimit"
-			:apply-function="applyFunction"
-			@close-sidebar="closeSidebar"
-		>
-			<template
-				v-for="filter in filters"
-				:slot="'filter-' + filter.name"
-			>
-				<slot
-					:on="{
-						change: event => onChange(event, filter),
-						input: event => $set(filter, 'value', event)
-					}"
-					:attrs="{
-						value: filter.value
-					}"
-					:name="`filter-${removeAccents(filter.name)}`"
-				/>
-			</template>
-		</FiltersSideBar>
 	</div>
 </template>
 
@@ -85,24 +34,12 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import ChipsList from './ChipsList';
-	import FiltersSideBar from './FiltersSideBar';
-	import InlineFilters from './InlineFilters';
-
 	import { FilterItem } from './types';
 	import { locales } from './locales';
 	import { mdiFilterVariant } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			simpleMode: {
-				type: Boolean,
-				default: false
-			},
-			sideBarButton: {
-				type: Boolean,
-				default: false
-			},
 			applyButton: {
 				type: Boolean,
 				default: false
@@ -118,16 +55,6 @@
 			value: {
 				type: Array as PropType<FilterItem[]>,
 				default: () => []
-			},
-			limitedInlineFilter: {
-				type: Array as PropType<string[]>,
-				default: () => []
-			},
-			applyFunction: {
-				type: Function,
-				default: () => {
-					return;
-				}
 			}
 		}
 	});
@@ -143,11 +70,6 @@
 			value(newValue: FilterItem[]) {
 				this.filters = newValue;
 			}
-		},
-		components: {
-			ChipsList,
-			FiltersSideBar,
-			InlineFilters
 		}
 	})
 	export default class NewFilter extends MixinsDeclaration {
@@ -155,9 +77,8 @@
 		filterIcon = mdiFilterVariant;
 		filtersCount = 0;
 
-		filters: FilterItem[] = this.value;
-
 		showSideBar = false;
+		filters: FilterItem[] = this.value;
 
 		removeAccents(str: string): string | undefined {
 			return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -169,51 +90,6 @@
 
 		closeSidebar(): void {
 			this.showSideBar = false;
-		}
-
-		onChange(event: unknown, filter: FilterItem): void {
-			if (!event) {
-				return;
-			}
-
-			const newChip = {
-				text: filter.formatting ? filter.formatting(event) : event,
-				value: event
-			};
-
-			let chips: unknown[] = [];
-
-			const chipExist = filter.chips.some(chip => chip.value === newChip.value);
-
-			if (chipExist) {
-				return;
-			} else if (filter.splited) {
-				if (Object.values(event as object).length) {
-					chips = Object.values(event as object).map((value: unknown) => ({
-						text: filter.formatting ? filter.formatting(value) : value,
-						value
-					}));
-				} else {
-					chips = [];
-				}
-			} else if (filter.limited) {
-				chips = [
-					newChip
-				];
-			} else {
-				chips = [
-					...filter.chips,
-					newChip
-				];
-			}
-
-			this.$set(filter, 'chips', chips);
-
-			if (filter.clearAfterValidate) {
-				this.$set(filter, 'value', filter.defaultValue ?? null);
-			}
-
-			this.$emit('update:value', this.filters);
 		}
 	}
 </script>

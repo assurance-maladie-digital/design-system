@@ -123,56 +123,49 @@
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
-	import Component from 'vue-class-component';
-
+	import Component, { mixins } from 'vue-class-component';
 	import ChipsList from '../ChipsList';
 
-	import { locales } from '../locales';
-
-	import { FilterItem } from '../types';
-
-	import { mdiChevronUp, mdiChevronDown, mdiWindowClose } from '@mdi/js';
+	import { FilterMixin } from '../../mixins/FilterMixin';
+	import { FilterItem } from './types';
+	import { locales } from './locales';
+	import { mdiChevronUp  } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			filters: {
+			value: {
 				type: Array as PropType<FilterItem[]>,
-				required: true
-			},
-			chipsLimit: {
-				type: Number,
-				required: true
-			},
-			applyButton: {
-				type: Boolean,
-				required: true
-			},
-			applyFunction: {
-				type: Function,
-				required: true
+				default: () => []
 			}
 		}
 	});
 
-	@Component({
+	const MixinsDeclaration = mixins(
+		Props,
+		FilterMixin
+	);
+
+	@Component<FiltersSideBar>({
+		model: {
+			prop: 'value',
+			event: 'update:value'
+		},
+		watch: {
+			value(newValue: FilterItem[]) {
+				this.filters = newValue;
+			}
+		},
 		components: {
-			ChipsList,
-			FiltersSideBar
+			ChipsList
 		}
 	})
-	export default class FiltersSideBar extends Props {
+
+	export default class FiltersSideBar extends MixinsDeclaration {
+
 		locales = locales;
-		deleteIcon = mdiWindowClose;
 		upIcon = mdiChevronUp;
-		downIcon = mdiChevronDown;
 
-		get isMobile(): boolean {
-			return this.$vuetify.breakpoint.smAndDown;
-		}
-
-		removeAccents(str: string): string | undefined {
-			return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-		}
+		filters: FilterItem[] = this.value;
 
 		closeSidebar(): void {
 			this.$emit('close-sidebar');
