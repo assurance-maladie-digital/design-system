@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipleAnswers renders correctly 1`] = `
+<div class="vd-multiple-answers">
+  <div class="d-flex justify-center"><span class="mb-6 text-subtitle-2">
+			la deuxieme question ?
+		</span></div>
+  <div>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+				reponse 1
+			</span>
+      <!---->
+    </vbtn-stub>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+				reponse 2
+			</span>
+      <!---->
+    </vbtn-stub>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+				reponse 3
+			</span>
+      <!---->
+    </vbtn-stub>
+    <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" text="true" type="button" class="answer-button w-100 mb-2 justify-space-between text-wrap text-left"><span>
+				reponse 4
+			</span>
+      <!---->
+    </vbtn-stub>
+    <!---->
+  </div>
+</div>
+`;

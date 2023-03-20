@@ -17,10 +17,34 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers le *Plan du site*.'
 			},
 			{
+				name: 'sitemap-external-link',
+				type: 'string',
+				default: null,
+				description: 'L’URL du lien vers le *Plan du site* si celui-ci est externe à l’application.'
+			},
+			{
 				name: 'cgu-route',
 				type: 'RawLocation',
 				default: `{ name: 'cgu' }`,
 				description: 'La valeur de la prop `to` du lien vers les *Conditions générales d’utilisation*.'
+			},
+			{
+				name: 'cgu-external-link',
+				type: 'string',
+				default: null,
+				description: 'L’URL du lien vers les *Conditions générales d’utilisation* si celui-ci est externe à l’application.'
+			},
+			{
+				name: 'cookies-route',
+				type: 'RawLocation',
+				default: `{ name: 'cookies' }`,
+				description: 'La valeur de la prop `to` du lien vers la *Gestion des cookies*.'
+			},
+			{
+				name: 'cookies-external-link',
+				type: 'string',
+				default: null,
+				description: 'L’URL du lien vers la *Gestion des cookies* si celui-ci est externe à l’application.'
 			},
 			{
 				name: 'legal-notice-route',
@@ -29,10 +53,22 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers les *Mentions légales*.'
 			},
 			{
+				name: 'legal-notice-external-link',
+				type: 'string',
+				default: null,
+				description: 'L’URL du lien vers les *Mentions légales* si celui-ci est externe à l’application.'
+			},
+			{
 				name: 'a11y-statement-route',
 				type: 'RawLocation',
 				default: `{ name: 'a11yStatement' }`,
 				description: 'La valeur de la prop `to` du lien vers la *Déclaration d’accessibilité*.'
+			},
+			{
+				name: 'a11y-statement-external-link',
+				type: 'string',
+				default: null,
+				description: 'L’URL du lien vers la *Déclaration d’accessibilité* si celui-ci est externe à l’application.'
 			},
 			{
 				name: 'hide-sitemap-link',
@@ -45,6 +81,12 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Masque le lien vers les *Conditions générales d’utilisation*.'
+			},
+			{
+				name: 'hide-cookies-link',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le lien vers la *Gestion des cookies*.'
 			},
 			{
 				name: 'hide-legal-notice-link',
@@ -99,6 +141,12 @@ export const api: Api = {
 	divider: 'VDivider',
 	routerLink: 'RouterLink'
 }`
+			},
+			{
+				name: 'dark',
+				type: 'boolean',
+				default: false,
+				description: 'Active le mode sombre.'
 			}
 		],
 		slots: [

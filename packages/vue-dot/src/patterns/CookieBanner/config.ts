@@ -2,7 +2,7 @@ const commonBtnConfig = {
 	color: 'primary',
 	height: 'auto',
 	minHeight: '44px',
-	class: 'text-none text-wrap ma-2'
+	class: 'text-wrap ma-2'
 };
 
 export const config = {

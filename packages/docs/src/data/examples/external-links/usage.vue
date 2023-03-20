@@ -56,13 +56,13 @@
 			sliders: {
 				nudgeTop: {
 					min: 0,
-					max: 50,
-					step: 10
+					max: 56,
+					step: 4
 				},
 				nudgeBottom: {
 					min: 0,
-					max: 50,
-					step: 10
+					max: 56,
+					step: 4
 				}
 			}
 		};

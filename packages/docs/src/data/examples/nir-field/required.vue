@@ -1,8 +1,6 @@
 <template>
 	<NirField
-		v-model="nir"
 		required
-		outlined
 		class="vd-form-input"
 	/>
 </template>
@@ -12,7 +10,14 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class NirFieldRequired extends Vue {
-		nir: string | null = null;
-	}
+	export default class NirFieldRequired extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+	.vd-form-input {
+		width: 65% !important;
+		@media only screen and (max-width: 600px) {
+			width: 100% !important;
+		}
+	}
+</style>

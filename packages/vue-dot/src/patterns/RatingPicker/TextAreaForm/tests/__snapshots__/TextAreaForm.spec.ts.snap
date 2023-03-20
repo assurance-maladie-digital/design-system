@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextAreaForm renders correctly 1`] = `
+<div class="vd-text-area-form">
+  <div class="d-flex justify-center"><span class="mb-6 text-subtitle-2">
+			la deuxieme question ?
+		</span></div>
+  <div>
+    <vtextarea-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="" backgroundcolor="" loaderheight="2" clearicon="$clear" outlined="true" type="text" rowheight="24" rows="5"></vtextarea-stub>
+  </div>
+</div>
+`;

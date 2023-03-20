@@ -1,6 +1,7 @@
 const componentMap = {
 	// Elements
 	BackBtn: 'elements',
+	BackToTopBtn: 'elements',
 	CopyBtn: 'elements',
 	CustomIcon: 'elements',
 	DataList: 'elements',
@@ -11,9 +12,11 @@ const componentMap = {
 	FranceConnectBtn: 'elements',
 	HeaderLoading: 'elements',
 	Logo: 'elements',
+	LogoBrandSection: 'elements',
 	PageContainer: 'elements',
 	UserMenuBtn: 'elements',
 	// Patterns
+	AccessibilityBanner: 'patterns',
 	CookieBanner: 'patterns',
 	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
@@ -27,12 +30,15 @@ const componentMap = {
 	NotificationBar: 'patterns',
 	PaginatedTable: 'patterns',
 	PhoneField: 'patterns',
+	RatingPicker: 'patterns',
 	SubHeader: 'patterns',
 	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
 	// Templates
 	CookiesPage: 'templates',
-	ErrorPage: 'templates'
+	ErrorPage: 'templates',
+	NotFoundPage: 'templates',
+	MaintenancePage: 'templates',
 };
 
 /**

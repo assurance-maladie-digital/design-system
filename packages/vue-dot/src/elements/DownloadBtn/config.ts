@@ -2,7 +2,7 @@ export const config = {
 	btn: {
 		outlined: true,
 		color: 'primary',
-		class: 'text-none text-wrap',
+		class: 'text-wrap',
 		minHeight: '36px',
 		height: 'auto'
 	},

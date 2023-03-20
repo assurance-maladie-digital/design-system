@@ -23,12 +23,11 @@ Vous pouvez masquer les réseaux sociaux ou le logo de l’Assurance Maladie en 
 
 <doc-example file="footer-bar/hide-social-media-links"></doc-example>
 
-#### Sous composant - liste adaptative
+#### Mode sombre
 
-Vous pouvez utiliser le sous composant `CollapseList` pour afficher des listes d'élément dans le `footer-bar`.
-Cette liste affiche tout le contenu sur les grands écrans et une liste accordéon sur mobile.
+Vous pouvez afficher le footer en mode sombre en utilisant la prop `dark`.
 
-<doc-example file="footer-bar/collapse-list"></doc-example>
+<doc-example file="footer-bar/dark"></doc-example>
 
 </doc-tab-item>
 
@@ -50,6 +49,12 @@ Les propriétés non définies dans la section API seront reportées directement
 Vous pouvez personnaliser la liste des réseaux sociaux en utilisant la prop `social-media-links`.
 
 <doc-example file="footer-bar/socialMediaLinks"></doc-example>
+
+#### Liens externes
+
+Vous pouvez changer les liens par défaut par des liens externes en utilisant les props `sitemap-external-link`, `cgu-external-link`, `cookies-external-link`, `legal-notice-external-link` et  `a11y-statement-external-link`.
+
+<doc-example file="footer-bar/externalsLinks"></doc-example>
 
 #### Composants Vuetify
 

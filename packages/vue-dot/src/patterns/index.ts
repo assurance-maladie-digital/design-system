@@ -1,3 +1,4 @@
+import AccessibilityBanner from './AccessibilityBanner';
 import CookieBanner from './CookieBanner';
 import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
@@ -6,17 +7,19 @@ import FilterModule from './FilterModule';
 import FooterBar from './FooterBar';
 import CollapseList from './FooterBar/CollapseList';
 import FooterWrapper from './FooterWrapper';
-import LangBtn from './LangBtn';
 import HeaderBar from './HeaderBar';
+import LangBtn from './LangBtn';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
 import PaginatedTable from './PaginatedTable';
 import PhoneField from './PhoneField';
+import RatingPicker from './RatingPicker';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
 
 export const patterns = {
+	AccessibilityBanner,
 	CookieBanner,
 	DataListGroup,
 	DatePicker,
@@ -24,12 +27,13 @@ export const patterns = {
 	FilterModule,
 	FooterBar,
 	FooterWrapper,
-	LangBtn,
 	HeaderBar,
+	LangBtn,
 	NirField,
 	NotificationBar,
 	PaginatedTable,
 	PhoneField,
+	RatingPicker,
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow,
