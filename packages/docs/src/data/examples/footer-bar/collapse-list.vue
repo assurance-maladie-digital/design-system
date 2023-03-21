@@ -22,7 +22,7 @@
 		};
 
 		listItems = {
-			title: 'Plan du site',
+			title: 'Rubrique',
 			list: [
 				{
 					name: 'Page 1',

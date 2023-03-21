@@ -56,6 +56,13 @@ Vous pouvez changer les liens par défaut par des liens externes en utilisant le
 
 <doc-example file="footer-bar/externalsLinks"></doc-example>
 
+#### Liste adaptative
+
+Vous pouvez utiliser le sous composant `CollapseList` pour afficher des listes d'élément dans le `footer-bar`.
+Cette liste affiche tout le contenu sur les grands écrans et une liste accordéon sur mobile.
+
+<doc-example file="footer-bar/collapse-list"></doc-example>
+
 #### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `FooterBar` en utilisant la prop `vuetify-options`.
