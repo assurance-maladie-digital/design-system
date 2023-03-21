@@ -9,7 +9,10 @@
 				v-for="tab in tabs"
 				:key="tab.name"
 				class="tab pointer d-flex align-center"
+				role="tab"
+				tabindex="0"
 				@click="changeTab(tab)"
+				@keydown="checkTabKey(tab)"
 			>
 				<div
 					:class="tab === activeTab ? 'active-tab' : ''"
@@ -45,12 +48,34 @@
 
 		activeTab = this.tabs.length ? this.tabs[0] : { route: '' };
 
-		changeTab(tab: tabItem): void {
-			this.activeTab = tab;
+		mounted() {
 			this.$emit('current-tab', this.activeTab.route);
 		}
 
-		mounted() {
+		checkTabKey(tab: tabItem): void {
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Tab') {
+					this.nextTab(tab);
+				} else {
+					return;
+				}
+			});
+		}
+
+		nextTab(tab: tabItem): void {
+			const index = this.tabs.indexOf(tab);
+			if (index < this.tabs.length - 1) {
+				this.activeTab = this.tabs[index + 1];
+				this.$emit('current-tab', this.activeTab.route);
+			}
+			if (index === this.tabs.length - 1) {
+				this.activeTab = this.tabs[0];
+				this.$emit('current-tab', this.activeTab.route);
+			}
+		}
+
+		changeTab(tab: tabItem): void {
+			this.activeTab = tab;
 			this.$emit('current-tab', this.activeTab.route);
 		}
 	}
