@@ -92,7 +92,11 @@ export default {
 	},
 	vuetify: {
 		optionsPath: '~/vuetify.options.ts',
-		defaultAssets: false
+		defaultAssets: false,
+		treeShake: {
+			directives: ['Scroll']
+		},
+		customVariables: ['~/assets/styles/variables.scss']
 	},
 	googleFonts: {
 		families: {

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-
+  
 	export default class RatingPickerLabels extends Vue {
 		firstQuestion = {
 			name: 'first-step',

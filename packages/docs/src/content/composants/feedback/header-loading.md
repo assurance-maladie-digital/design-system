@@ -7,7 +7,7 @@ description: L’élément `HeaderLoading` est une extension du composant [`VSke
 
 <doc-tab-item label="Utilisation">
 
-<doc-example file="cookie-banner/usage"></doc-example>
+<doc-usage name="header-loading"></doc-usage>
 
 </doc-tab-item>
 

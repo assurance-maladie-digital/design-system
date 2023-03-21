@@ -4,11 +4,14 @@
 		@first-validation="firstValidation"
 		@on-close="onClose"
 		:after-validate="afterValidate"
+		@on-validate="onValidate"
+		@on-close="onClose"
 	/>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
 	export default class RatingPickerNumbers extends Vue {
 		firstQuestion = {

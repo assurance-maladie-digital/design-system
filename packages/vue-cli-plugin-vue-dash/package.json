@@ -1,6 +1,6 @@
 {
   "name": "@cnamts/vue-cli-plugin-vue-dash",
-  "version": "2.8.0",
+  "version": "2.9.0-beta.1",
   "description": "Vue CLI plugin to scaffold front-end projects",
   "keywords": [
     "cnam",
@@ -29,11 +29,11 @@
     "superb": "^4.0.0"
   },
   "devDependencies": {
-    "@cnamts/design-tokens": "^2.8.0",
-    "@cnamts/eslint-config": "^2.8.0",
-    "@cnamts/eslint-config-vue": "^2.8.0",
-    "@cnamts/form-builder": "^2.8.0",
-    "@cnamts/vue-dot": "^2.8.0"
+    "@cnamts/design-tokens": "^2.9.0-beta.1",
+    "@cnamts/eslint-config": "^2.9.0-beta.1",
+    "@cnamts/eslint-config-vue": "^2.9.0-beta.1",
+    "@cnamts/form-builder": "^2.9.0-beta.1",
+    "@cnamts/vue-dot": "^2.9.0-beta.1"
   },
   "publishConfig": {
     "access": "public"

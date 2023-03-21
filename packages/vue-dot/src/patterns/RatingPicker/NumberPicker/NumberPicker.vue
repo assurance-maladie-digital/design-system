@@ -91,6 +91,9 @@
 				}
 			);
 		}
+		getLabel(number: number): string {
+			return this.questionDatas.label ? this.questionDatas.labels[number] : '';
+		}
 	}
 </script>
 

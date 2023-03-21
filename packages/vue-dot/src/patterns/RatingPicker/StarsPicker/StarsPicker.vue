@@ -20,6 +20,8 @@
 				@click="selectStar(i)"
 				@mouseover="isHoverRating = i"
 				@mouseout="isHoverRating = 0"
+				@focusin="isHoverRating = i"
+				@focusout="isHoverRating = 0"
 			>
 				{{ outlineStarIcon }}
 			</VIcon>

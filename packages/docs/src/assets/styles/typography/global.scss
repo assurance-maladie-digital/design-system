@@ -1,17 +1,12 @@
-.nuxt-content {
-	> ul {
-		margin-bottom: 16px;
-	}
-}
-
 .v-application {
-	.v-btn,
-	.v-tab {
-		font-weight: 600 !important;
-	}
+	.nuxt-content {
+		> ul {
+			margin-bottom: 16px;
+		}
 
-	.nuxt-content > :last-child {
-		margin-bottom: 0 !important;
+		> :last-child {
+			margin-bottom: 0 !important;
+		}
 	}
 }
 

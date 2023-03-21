@@ -6,11 +6,14 @@
 		@second-validation="secondValidation"
 		@on-close="onClose"
 		:after-validate="afterValidate"
+		@on-validate="onValidate"
+		@on-close="onClose"
 	/>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
 	export default class RatingPickerMultiAnswerOther extends Vue {
 		firstQuestion = {

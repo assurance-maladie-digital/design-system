@@ -9,7 +9,6 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-
 	export default class RatingPickerEmotions2 extends Vue {
 		firstQuestion = {
 			name: 'first-step',

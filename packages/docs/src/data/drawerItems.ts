@@ -60,11 +60,11 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'Logo',
-				to: '/fondamentaux/logo'
+				to: '/fondamentaux/logo',
 			},
 			{
 				title: 'Éco-conception',
-				to: '/fondamentaux/eco-conception'
+				to: '/fondamentaux/eco-conception',
 			}
 		]
 	},
@@ -117,6 +117,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'BackBtn',
 						to: '/composants/boutons/back-btn'
+					},
+					{
+						title: 'BackToTopBtn',
+						to: '/composants/boutons/back-to-top-btn'
 					},
 					{
 						title: 'CopyBtn',
@@ -219,6 +223,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/feedback/notification-bar'
 					},
 					{
+						title: 'AccessibilityBanner',
+						to: '/composants/feedback/accessibility-banner'
+					},
+					{
 						title: 'CookieBanner',
 						to: '/composants/feedback/cookie-banner'
 					},
@@ -243,16 +251,16 @@ export const drawerItems: DrawerItem[] = [
 				to: '/templates/cookies-page'
 			},
 			{
+				title: 'ErrorPage',
+				to: '/templates/error-page'
+			},
+			{
 				title: 'NotFoundPage',
-				to: '/templates/notfound-page'
+				to: '/templates/not-found-page'
 			},
 			{
 				title: 'MaintenancePage',
 				to: '/templates/maintenance-page'
-			},
-			{
-				title: 'ErrorPage',
-				to: '/templates/error-page'
 			}
 		]
 	},

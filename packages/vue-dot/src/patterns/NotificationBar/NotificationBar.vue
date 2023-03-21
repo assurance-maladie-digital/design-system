@@ -3,6 +3,7 @@
 		v-bind="options.snackBar"
 		:value="Boolean(notification)"
 		:color="snackbarColor"
+		:class="textColor + '--text'"
 		role="status"
 		class="vd-notification-bar"
 	>
@@ -13,6 +14,7 @@
 			<VIcon
 				v-if="!mobileVersion"
 				v-bind="options.icon"
+				:color="textColor"
 				class="vd-notification-icon"
 			>
 				{{ icon }}
@@ -27,6 +29,7 @@
 					...attrs,
 					...options.btn
 				}"
+				:color="textColor"
 				:icon="mobileVersion"
 				@click="clearNotification"
 			>
@@ -116,6 +119,17 @@
 			return this.notification.icon || this.iconMapping[this.notification.type];
 		}
 
+		get textColor(): string {
+			const isSuccess = this.notification?.type === 'success';
+			const isWarning = this.notification?.type === 'warning';
+
+			if (isSuccess || isWarning) {
+				return 'grey-darken-80';
+			}
+
+			return 'white';
+		}
+
 		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.xs;
 		}
@@ -133,9 +147,12 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
 	// Use min-width to avoid shrinking with flexbox
 	.vd-notification-bar :deep(.v-snack__wrapper) {
 		min-width: 0;
+		color: currentColor;
 	}
 
 	.vd-notification-icon {

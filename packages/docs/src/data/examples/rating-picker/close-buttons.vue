@@ -1,14 +1,17 @@
 <template>
 	<RatingPicker
+		hide-close-buttons
 		:main-question="firstQuestion"
 		@first-validation="firstValidation"
 		hide-close-buttons
 		:after-validate="afterValidate"
+		@on-validate="onValidate"
 	/>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
+	import Component from "vue-class-component";
 
 	export default class RatingPickerCloseButtons extends Vue {
 		firstQuestion = {
@@ -31,10 +34,6 @@
 
 		firstValidation(): void {
 			console.log('Validation');
-		}
-
-		onClose(): void {
-			console.log('Fermeture');
 		}
 	}
 </script>
