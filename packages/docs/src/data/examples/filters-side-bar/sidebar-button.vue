@@ -1,12 +1,10 @@
 <template>
 	<div class="d-flex justify-center">
-		<FilterMenu
+		<FiltersSideBar
 			v-model="filters"
-			:simple-mode="true"
 			side-bar-button
-			apply-button
+			:limited-inline-filter="limitedInlineFilter"
 			hide-reset
-			:apply-function="applyFunction"
 		>
 			<template #filter-firstname="{ on, attrs }">
 				<VTextField
@@ -35,7 +33,7 @@
 					v-on="on"
 				/>
 			</template>
-		</FilterMenu>
+		</FiltersSideBar>
 	</div>
 </template>
 
@@ -45,6 +43,8 @@
 
 	@Component
 	export default class FilterMenuApplyButton extends Vue {
+		limitedInlineFilter=['firstname', 'lastname']
+
 		filters = [
 			{
 				name: 'firstname',
@@ -68,9 +68,5 @@
 				clearAfterValidate: true
 			}
 		];
-
-		applyFunction() {
-			console.log('Ajouter la fonction ici')
-		}
 	}
 </script>

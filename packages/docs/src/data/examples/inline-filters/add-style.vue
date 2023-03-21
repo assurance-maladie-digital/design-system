@@ -1,8 +1,8 @@
 <template>
-	<div class="complex-mode-exemple d-flex justify-center">
-		<FilterMenu
+	<div class="d-flex justify-center">
+		<InlineFilters
 			v-model="filters"
-			:simple-mode="false"
+			:hide-reset="true"
 			v-bind="$attrs"
 			v-on="$listeners"
 		>
@@ -41,7 +41,7 @@
 					v-on="on"
 				/>
 			</template>
-		</FilterMenu>
+		</InlineFilters>
 	</div>
 </template>
 
@@ -68,18 +68,12 @@
 				name: 'age',
 				label: 'Age',
 				description: 'Selectionner l\'age',
-				formatting: (values: number[]): string => 'De ' + values[0] + ' à ' + values[1] + 'ans',
 				limited: true,
 				chips: [],
 				value: [0,0],
-				defaultValue: [50,50]
+				defaultValue: [50,50],
+				style: 'margin-left: 40px;'
 			},
 		];
 	}
 </script>
-
-<style lang="scss">
-.complex-mode-exemple  {
-
-}
-</style>

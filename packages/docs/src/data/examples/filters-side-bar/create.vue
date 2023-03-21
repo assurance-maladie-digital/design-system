@@ -1,20 +1,19 @@
 <template>
 	<div class="d-flex justify-center">
-		<FilterMenu
+		<FiltersSideBar
 			v-model="filters"
-			:simple-mode="true"
 			:chips-limit="8"
 		>
-			<template #filter-nom="{ on, attrs }">
+			<template #filter-name="{ on, attrs }">
 				<VTextField
 					label="Nom"
+					class="mt-4"
 					outlined
-					class="mt-3"
 					v-bind="attrs"
 					v-on="on"
 				/>
 			</template>
-		</FilterMenu>
+		</FiltersSideBar>
 	</div>
 </template>
 
@@ -22,21 +21,14 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	interface IndexedObject<T = string> {
-		[key: string]: T;
-	};
-
 	@Component
-	export default class Formating extends Vue {
-
+	export default class FilterModuleUsage extends Vue {
 		filters = [
 			{
-				name: 'nom',
+				name: 'name',
 				label: 'Nom',
-				description: "Quel est le nom du patient ?",
-				formatting: (value: string): string => `Le nom du patient est ${value}`,
 				chips: []
-			},
+			}
 		];
 	}
 </script>

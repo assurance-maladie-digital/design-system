@@ -1,8 +1,7 @@
 <template>
 	<div class="d-flex justify-center">
-		<FilterMenu
+		<InlineFilters
 			v-model="filters"
-			:simple-mode="true"
 			side-bar-button
 			:limited-inline-filter="limitedInlineFilter"
 			hide-reset
@@ -34,7 +33,7 @@
 					v-on="on"
 				/>
 			</template>
-		</FilterMenu>
+		</InlineFilters>
 	</div>
 </template>
 

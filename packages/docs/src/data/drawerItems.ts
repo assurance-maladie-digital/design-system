@@ -194,8 +194,12 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Filtres',
 				items: [
 					{
-						title: 'FilterMenu',
-						to: '/composants/filtres/filter-menu'
+						title: 'InlineFilters',
+						to: '/composants/filtres/inline-filters'
+					},
+					{
+						title: 'FiltersSideBar',
+						to: '/composants/filtres/filters-side-bar'
 					},
 					{
 						title: 'FilterModule',

@@ -1,8 +1,7 @@
 <template>
 	<div class="d-flex justify-center">
-		<FilterMenu
+		<FiltersSideBar
 			v-model="filters"
-			:simple-mode="true"
 			:chips-limit="8"
 		>
 			<template #filter-age="{ on, attrs }">
@@ -13,7 +12,7 @@
 					v-on="on"
 				/>
 			</template>
-		</FilterMenu>
+		</FiltersSideBar>
 	</div>
 </template>
 

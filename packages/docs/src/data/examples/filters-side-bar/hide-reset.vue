@@ -1,39 +1,36 @@
 <template>
 	<div class="d-flex justify-center">
-		<FilterMenu
+		<FiltersSideBar
 			v-model="filters"
-			:simple-mode="true"
-			:chips-limit="8"
+			:hideReset="true"
 		>
-			<template #filter-firstname="{ on, attrs }">
+			<template #filter-name="{ on, attrs }">
 				<VTextField
 					label="Nom"
-					outlined
 					class="mt-4"
+					outlined
 					v-bind="attrs"
 					v-on="on"
 				/>
 			</template>
-		</FilterMenu>
+		</FiltersSideBar>
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
-	import { mdiAccount } from '@mdi/js';
 
 	@Component
 	export default class FilterModuleUsage extends Vue {
-		userIcon = mdiAccount;
-
 		filters = [
 			{
-				name: 'firstname',
-				label: 'Prénom',
-				description: 'Entrez ici le prénom du patient que vous recherchez',
+				name: 'name',
+				label: 'Nom',
 				chips: [],
-				icon: this.userIcon
+				descrption: 'Entrer le nom d\'un utilisateur',
+				clearAfterValidate: true,
+				value: 'John',
 			}
 		];
 	}

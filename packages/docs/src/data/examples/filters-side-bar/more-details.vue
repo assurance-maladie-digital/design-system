@@ -1,9 +1,8 @@
 <template>
 	<div class="d-flex justify-center">
-		<FilterMenu
+		<FiltersSideBar
 			v-model="filters"
-			:simple-mode="true"
-			:chips-limit="6"
+			:chips-limit="8"
 		>
 			<template #filter-name="{ on, attrs }">
 				<VTextField
@@ -14,7 +13,7 @@
 					v-on="on"
 				/>
 			</template>
-		</FilterMenu>
+		</FiltersSideBar>
 	</div>
 </template>
 
@@ -28,8 +27,10 @@
 			{
 				name: 'name',
 				label: 'Nom',
-				description: 'Entrez un nom',
-				chips: []
+				chips: [],
+				description: 'Entrer le nom d\'un utilisateur',
+				clearAfterValidate: true,
+				value: 'John',
 			}
 		];
 	}
