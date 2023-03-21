@@ -310,10 +310,6 @@
 	export default class Logo extends MixinsDeclaration {
 		risqueProColor = tokens.colors.risquePro;
 
-		mounted() {
-			console.log(this.secondaryLogo, this.service, this.compteEntreprise);
-		}
-
 		get fillColor(): string {
 			if (this.dark) {
 				return '#fff';
