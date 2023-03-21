@@ -90,5 +90,16 @@ export class FilterMixin extends MixinsDeclaration {
 	removeAccents(str: string): string | undefined {
 		return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 	}
+	closeSidebar(): void {
+		this.$emit('close-sidebar');
+	}
+
+	removeChip(event: object): void {
+		this.$emit('remove-chip', event);
+	}
+
+	resetFilter(): void {
+		this.$emit('reset-filter');
+	}
 
 }

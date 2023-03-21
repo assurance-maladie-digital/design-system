@@ -1,7 +1,33 @@
 <template>
 	<div class="vd-filters-side-bar">
+		<VBtn
+			depressed
+			rounded
+			color="transparent"
+			@click="openCloseSidebar"
+		>
+			<VChip
+				v-if="filtersCount"
+				color="cyan-darken-40"
+				text-color="white"
+				small
+				class="mr-2"
+			>
+				{{ filtersCount }}
+			</VChip>
+
+			<span class="mr-2 primary--text">
+				{{ filters.length > 1 ? 'Filtres' : 'Filtre' }}
+			</span>
+
+			<VIcon color="primary">
+				{{ filterIcon }}
+			</VIcon>
+		</VBtn>
+
 		<VScrollXTransition>
 			<VNavigationDrawer
+				v-if="showSideBar"
 				:elevation="6"
 				permanent
 				absolute
@@ -59,7 +85,16 @@
 							</span>
 
 							<div class="mt-4">
-								<slot :name="`filter-${removeAccents(filter.name)}`" />
+								<slot
+									:on="{
+										change: event => onChange(event, filter),
+										input: event => $set(filter, 'value', event)
+									}"
+									:attrs="{
+										value: filter.value
+									}"
+									:name="`filter-${removeAccents(filter.name)}`"
+								/>
 							</div>
 						</VExpansionPanelContent>
 
@@ -165,28 +200,35 @@
 		locales = locales;
 		upIcon = mdiChevronUp;
 
+		showSideBar = false;
+
 		filters: FilterItem[] = this.value;
 
+		get filtersCount(): number {
+			let count = 0;
+
+			this.filters.forEach(filter => {
+				if (filter?.chips?.length) {
+					count++;
+				}
+			});
+
+			return count;
+		}
+
+		openCloseSidebar(): void {
+			this.showSideBar = !this.showSideBar;
+		}
+
 		closeSidebar(): void {
-			this.$emit('close-sidebar');
+			this.showSideBar = false;
 		}
 
 		resetAllFilters(): void {
 			for (let index = 0; index < this.filters.length; index++) {
 				this.$set(this.filters[index], 'chips', []);
 			}
-
-			this.$emit('update:value', this.filters);
 		}
-
-		removeChip(event: object): void {
-			this.$emit('remove-chip', event);
-		}
-
-		resetFilter(): void {
-			this.$emit('reset-filter');
-		}
-
 	}
 </script>
 

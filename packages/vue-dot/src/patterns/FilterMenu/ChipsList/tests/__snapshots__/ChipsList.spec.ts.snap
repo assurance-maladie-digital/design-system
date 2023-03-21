@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ChipsList renders correctly 1`] = `
-<vchipgroup-stub valuecomparator="[Function]" activeclass="v-slide-item--active" tag="div" mobilebreakpoint="1264" nexticon="$next" previcon="$prev" column="true" class="vd-chips-list mb-4">
-  <!---->
-  <!---->
-  <!---->
-</vchipgroup-stub>
-`;
