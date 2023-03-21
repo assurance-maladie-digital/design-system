@@ -6,6 +6,7 @@ Object {
     "AccessibilityBanner",
     "BackBtn",
     "BackToTopBtn",
+    "CollapseList",
     "CookieBanner",
     "CookiesPage",
     "CopyBtn",
