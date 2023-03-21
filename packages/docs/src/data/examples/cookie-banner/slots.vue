@@ -12,7 +12,6 @@
 		<VBtn
 			v-if="!active"
 			color="primary"
-			class="text-none"
 			@click="active = true"
 		>
 			Réinitialiser

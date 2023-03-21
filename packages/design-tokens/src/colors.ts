@@ -162,12 +162,12 @@ export const palette: Palette = {
 
 export const lightTheme: VuetifyTheme = {
 	primary: palette.amBlue.base,
-	secondary: palette.cyan.darken20,
+	secondary: palette.cyan.darken40,
 	accent: palette.cyan.base,
 	error: palette.orange.darken20,
 	info: palette.amBlue.base,
-	success: palette.turquoise.darken20,
-	warning: palette.yellow.darken40,
+	success: palette.green.base,
+	warning: palette.yellow.base,
 	risquePro: palette.brick.base
 };
 

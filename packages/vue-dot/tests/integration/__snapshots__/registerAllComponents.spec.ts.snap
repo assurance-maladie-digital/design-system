@@ -2,6 +2,7 @@
 
 exports[`registerAllComponents should register all components 1`] = `
 Array [
+  "AccessibilityBanner",
   "BackBtn",
   "BackToTopBtn",
   "ContextualMenu",
@@ -16,6 +17,7 @@ Array [
   "DownloadBtn",
   "ErrorPage",
   "ExternalLinks",
+  "FilePreview",
   "FileUpload",
   "FilterModule",
   "FooterBar",
@@ -25,6 +27,7 @@ Array [
   "HeaderLoading",
   "LangBtn",
   "Logo",
+  "LogoBrandSection",
   "MaintenancePage",
   "NirField",
   "NotFoundPage",

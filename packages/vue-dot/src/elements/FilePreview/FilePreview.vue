@@ -13,6 +13,7 @@
 		<img
 			v-else-if="isImage"
 			:src="fileURL"
+			:alt="filePreviewOptions.image.alt || ''"
 			v-bind="filePreviewOptions.image"
 			@load="revokeFileURL"
 		>

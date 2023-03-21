@@ -59,7 +59,7 @@ Vous pouvez utiliser l’interface `VForm` pour typer une référence à ce comp
 </script>
 ```
 
-Cette interface défini les méthodes `validate`, `reset` et `resetValidation` du composant [`VForm`](https://vuetifyjs.com/en/components/forms/).
+Cette interface définit les méthodes `validate`, `reset` et `resetValidation` du composant [`VForm`](https://vuetifyjs.com/en/components/forms/).
 
 ### Vue Input Facade
 

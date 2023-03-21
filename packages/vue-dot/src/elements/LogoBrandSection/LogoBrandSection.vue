@@ -84,10 +84,10 @@
 
 	import { tokens } from '@cnamts/design-tokens';
 
-	import { Dimensions, Next } from '../../../types';
-	import { LogoSizeEnum } from '../../../elements/Logo/LogoSizeEnum';
+	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
 
-	import { ThemeEnum } from '../ThemeEnum';
+	import { ThemeEnum } from '../../constants/enums/ThemeEnum';
+	import { Dimensions, Next } from '../../types';
 
 	import { LogoInfo, Service } from './types';
 	import { locales } from './locales';
@@ -126,7 +126,7 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class HeaderBrandSection extends MixinsDeclaration {
+	export default class LogoBrandSection extends MixinsDeclaration {
 		locales = locales;
 
 		get service(): Service {
