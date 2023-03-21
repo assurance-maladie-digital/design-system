@@ -14,6 +14,15 @@
 					</nuxt-link>
 				</v-col>
 				<v-col cols="12" sm="6" md="4">
+					<nuxt-link to="../templates/error-page">
+						<v-card class="fill-height" max-width="234">
+							<doc-image src="templates/ErrorPage.svg" width="234"></doc-image>
+							<v-card-title>ErrorPage</v-card-title>
+							<v-card-text>Utilisé pour afficher une page d’erreur.</v-card-text>
+						</v-card>
+					</nuxt-link>
+				</v-col>
+				<v-col cols="12" sm="6" md="4">
 					<nuxt-link to="../templates/notfound-page">
 						<v-card class="fill-height" max-width="234">
 							<doc-image src="templates/NotFoundPage.svg" width="234"></doc-image>
@@ -30,16 +39,6 @@
 							<v-chip outlined color="green" x-small>Nouveau</v-chip>
 							<v-card-title>MaintenancePage</v-card-title>
 							<v-card-text>Utilisé pour afficher une page de maintenance.</v-card-text>
-						</v-card>
-					</nuxt-link>
-				</v-col>
-				<v-col cols="12" sm="6" md="4">
-					<nuxt-link to="../templates/error-page">
-						<v-card class="fill-height" max-width="234">
-							<doc-image src="templates/ErrorPage.svg" width="234"></doc-image>
-							<v-chip outlined color="red" x-small>Déprécié</v-chip>
-							<v-card-title>ErrorPage</v-card-title>
-							<v-card-text>Utilisé pour afficher une page d’erreur.</v-card-text>
 						</v-card>
 					</nuxt-link>
 				</v-col>

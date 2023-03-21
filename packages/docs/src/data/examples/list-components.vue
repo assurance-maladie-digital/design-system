@@ -79,6 +79,15 @@
 					</nuxt-link>
 				</v-col>
 				<v-col cols="12" sm="6" md="4">
+					<nuxt-link to="../composants/boutons/back-to-top-btn">
+						<v-card class="fill-height" max-width="234">
+							<doc-image src="components/BackToTopBtn.svg"></doc-image>
+							<v-card-title>BackToTopBtn</v-card-title>
+							<v-card-text>Utilisé pour afficher un bouton permettant à l’utilisateur de remonter en haut d'une page.</v-card-text>
+						</v-card>
+					</nuxt-link>
+				</v-col>
+				<v-col cols="12" sm="6" md="4">
 					<nuxt-link to="../composants/boutons/copy-btn">
 						<v-card class="fill-height" max-width="234">
 							<doc-image src="components/CopyBtn.svg"></doc-image>
@@ -87,15 +96,6 @@
 						</v-card>
 					</nuxt-link>
 				</v-col>
-				<!-- <v-col cols="12" sm="6" md="4">
-					<nuxt-link to="../composants/boutons/back-to-top-btn">
-						<v-card class="fill-height" max-width="234">
-							<doc-image src="components/BackToTopBtn.svg"></doc-image>
-							<v-card-title>BackToTopBtn</v-card-title>
-							<v-card-text>Utilisé pour afficher un bouton permettant à l’utilisateur de remonter en haut d'une page.</v-card-text>
-						</v-card>
-					</nuxt-link>
-				</v-col> -->
 				<v-col cols="12" sm="6" md="4">
 					<nuxt-link to="../composants/boutons/lang-btn">
 						<v-card class="fill-height" max-width="234">
@@ -276,6 +276,15 @@
 							<doc-image src="components/NotificationBar.svg" width="234"></doc-image>
 							<v-card-title>NotificationBar</v-card-title>
 							<v-card-text>Utilisé avec le module Vuex notification pour afficher des notifications à l’utilisateur.</v-card-text>
+						</v-card>
+					</nuxt-link>
+				</v-col>
+				<v-col cols="12" sm="6" md="4">
+					<nuxt-link to="../composants/feedback/accessibility-banner">
+						<v-card class="fill-height" max-width="234">
+							<doc-image src="components/AccessibilityBanner.svg" width="234"></doc-image>
+							<v-card-title>AccessibilityBanner</v-card-title>
+							<v-card-text>Utilisé pour permettre à l’utilisateur d'accéder plus facilement au contenu principal.</v-card-text>
 						</v-card>
 					</nuxt-link>
 				</v-col>
