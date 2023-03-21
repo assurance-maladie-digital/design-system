@@ -11,7 +11,6 @@ import LangBtn from './LangBtn';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
 import ContextualMenu from './ContextualMenu';
-import RatingPicker from './RatingPicker';
 import PaginatedTable from './PaginatedTable';
 import PhoneField from './PhoneField';
 import RatingPicker from './RatingPicker';
