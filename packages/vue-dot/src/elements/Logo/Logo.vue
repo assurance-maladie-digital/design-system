@@ -7,7 +7,7 @@
 		role="img"
 		focusable="false"
 		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 211 64"
+		:viewBox="viewBox"
 	>
 		<path
 			v-if="risquePro && !hideRisquePro"
@@ -171,6 +171,7 @@
 
 	import { LogoSizeEnum, LOGO_SIZE_ENUM_VALUES } from './LogoSizeEnum';
 	import { logoDimensionsMapping } from './logoDimensionsMapping';
+	import { logoDimensionsScrollMapping } from './logoDimensionsScrollMapping';
 
 	import { propValidator } from '../../helpers/propValidator';
 	import { Dimensions } from '../../types';
@@ -214,6 +215,11 @@
 	export default class Logo extends MixinsDeclaration {
 		risqueProColor = tokens.colors.risquePro;
 
+		get viewBox(): string {
+			const { width, height } = this.dimensions;
+			return `0 0 ${width} ${height}`;
+		}
+
 		get fillColor(): string {
 			if (this.dark) {
 				return '#fff';
@@ -223,6 +229,9 @@
 		}
 
 		get dimensions(): Dimensions {
+			if (this.hideName && this.hideSignature && this.hideOrganism) {
+				return logoDimensionsScrollMapping[this.size];
+			}
 			return logoDimensionsMapping[this.size];
 		}
 
