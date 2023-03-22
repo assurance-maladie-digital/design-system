@@ -27,6 +27,7 @@
 			booleans: [
 				'hideSignature',
 				'hideOrganism',
+				'hideName',
 				'risquePro'
 			],
 			selects: {
