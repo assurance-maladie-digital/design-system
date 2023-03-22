@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FilterSideBar renders correctly 1`] = `
-<div class="vd-filters-side-bar" filters="[object Object]">
+<div class="vd-filters-side-bar" filters="[object Object]" applyfunction="{[Function]}">
   <vbtn-stub color="transparent" rounded="true" tag="button" activeclass="" depressed="true" type="button">
     <!----> <span class="mr-2 primary--text">
 			Filtre
