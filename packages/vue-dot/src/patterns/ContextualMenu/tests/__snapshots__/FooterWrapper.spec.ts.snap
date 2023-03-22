@@ -3,10 +3,10 @@
 exports[`ContextualMenu renders correctly 1`] = `
 <div class="pa-5 contextual-menu"><span class="title">Contenu</span>
   <div class="tabs mt-5">
-    <div class="tab pointer d-flex align-center">
+    <div role="tab" tabindex="0" class="tab pointer d-flex align-center">
       <div class="active-tab"></div> <span class="ml-4 text-body-1 active-text primary--text mr-2">Onglet 1</span>
     </div>
-    <div class="tab pointer d-flex align-center">
+    <div role="tab" tabindex="0" class="tab pointer d-flex align-center">
       <div class=""></div> <span class="ml-4 text-body-1">Onglet 2</span>
     </div>
   </div>
