@@ -16,6 +16,12 @@ export const api: Api = {
 				description: 'Masque l’ombrelle (*Sécurité Sociale*).'
 			},
 			{
+				name: 'hide-name',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le nom de l’organisme (*L’Assurance Maladie*).'
+			},
+			{
 				name: 'risque-pro',
 				type: 'boolean',
 				default: false,
