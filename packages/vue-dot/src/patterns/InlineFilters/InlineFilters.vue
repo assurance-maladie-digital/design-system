@@ -170,9 +170,9 @@
 		get filterList(): unknown {
 			const filteredList: FilterItem[] = [];
 
-			if (this.limitedInlineFilter.length) {
+			if (this.limitedFilters.length) {
 				this.filters.forEach(filter => {
-					if (this.limitedInlineFilter.includes(filter.name)) {
+					if (this.limitedFilters.includes(filter.name)) {
 						filteredList.push(filter);
 					}
 				});

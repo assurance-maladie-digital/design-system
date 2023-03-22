@@ -1,7 +1,5 @@
 import { Api } from '~/types';
 
-import { customizable } from './shared/mixins/customizable';
-
 export const api: Api = {
 	FilterModule: {
 		props: [
@@ -30,25 +28,30 @@ export const api: Api = {
 }[]`
 			},
 			{
-				name: 'simpleMode',
-				type: 'Boolean',
-				required: false,
-				default: false,
-				description: 'Choisir entre le mode simple si vous avez peu de filtre ou le mode complexe quand '
-			},
-			{
 				name: 'chipsLimit',
 				type: 'Number',
 				required: false,
 				default: 4,
 				description: 'Choisir entre le mode simple si vous avez peu de filtre ou le mode complexe quand '
-			}
+			},
+			{
+				name: 'applyButton',
+				type: 'Boolean',
+				required: false,
+				default: false,
+				description: 'Affiche le bouton "Appliquer"'
+			},
 		],
 		events: [
 			{
-				name: 'filters',
-				description: 'Événement émis lorsque qu’un filtre est modifié.',
-				value: `FilterItem[] | null`
+				name: 'applyFunction',
+				description: 'Événement émis lorsque que l’utilisateur clique sur le bouton "appliquer".',
+				value: 'Void'
+			},
+			{
+				name: 'onchangeFilters',
+				description: 'Événement émis lorsque qu’un champ est modifié',
+				value: 'Void'
 			}
 		]
 	}

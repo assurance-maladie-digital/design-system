@@ -14,17 +14,11 @@ const Props = Vue.extend({
 			type: Boolean,
 			default: false
 		},
-		applyFunction: {
-			type: Function,
-			default: () => {
-				return;
-			}
-		},
 		hideReset: {
 			type: Boolean,
 			default: false
 		},
-		limitedInlineFilter: {
+		limitedFilters: {
 			type: Array as PropType<string[]>,
 			default: () => []
 		}
@@ -81,6 +75,7 @@ export class FilterMixin extends MixinsDeclaration {
 		if (filter.clearAfterValidate) {
 			this.$set(filter, 'value', filter.defaultValue ?? null);
 		}
+		this.$emit('onchange-filters');
 	}
 
 	get isMobile(): boolean {
@@ -90,6 +85,7 @@ export class FilterMixin extends MixinsDeclaration {
 	removeAccents(str: string): string | undefined {
 		return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 	}
+
 	closeSidebar(): void {
 		this.$emit('close-sidebar');
 	}
@@ -100,6 +96,10 @@ export class FilterMixin extends MixinsDeclaration {
 
 	resetFilter(): void {
 		this.$emit('reset-filter');
+	}
+
+	applyFunction(): void {
+		this.$emit('apply-function');
 	}
 
 }
