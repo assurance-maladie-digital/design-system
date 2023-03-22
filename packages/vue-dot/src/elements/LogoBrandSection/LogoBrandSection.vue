@@ -13,7 +13,10 @@
 		>
 			<Logo
 				:hide-signature="hideSignature"
+				:hide-organism="hideOrganism"
+				:hide-name="hideName"
 				:risque-pro="isRisquePro"
+				:hide-risque-pro="hideRisquePro"
 				:size="logoSize"
 				:header-sticky="headerSticky"
 				:header-scrolled="headerScrolled"
@@ -175,8 +178,32 @@
 			return this.theme === ThemeEnum.COMPTE_ENTREPRISE;
 		}
 
+		get hideName(): boolean {
+			if (this.headerSticky && this.headerScrolled && (this.theme !== ThemeEnum.DEFAULT && this.theme !== ThemeEnum.RISQUE_PRO)) {
+				return true;
+			}
+
+			return Boolean(this.$slots.default);
+		}
+
 		get hideSignature(): boolean {
-			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
+			if (this.headerSticky && this.headerScrolled || this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
+				return true;
+			}
+
+			return Boolean(this.$slots.default);
+		}
+
+		get hideOrganism(): boolean {
+			if (this.headerSticky && this.headerScrolled) {
+				return true;
+			}
+
+			return Boolean(this.$slots.default);
+		}
+
+		get hideRisquePro(): boolean {
+			if (this.headerSticky && this.headerScrolled) {
 				return true;
 			}
 
