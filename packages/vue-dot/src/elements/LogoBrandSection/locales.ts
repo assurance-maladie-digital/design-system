@@ -4,7 +4,6 @@ export const locales = {
 	logoCnam: 'Caisse nationale',
 	logoAmeli: 'ameli.fr',
 	logoAmeliPro: 'AmeliPro',
-	logoCompteAmeli: 'Compte ameli',
 	compteEntreprise: {
 		title: {
 			text: 'Compte',

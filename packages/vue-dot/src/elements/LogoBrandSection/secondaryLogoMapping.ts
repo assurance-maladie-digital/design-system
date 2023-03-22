@@ -17,9 +17,5 @@ export const secondaryLogoMapping: IndexedObject<LogoInfo> = {
 	[ThemeEnum.AMELI_PRO]: {
 		src: require('../../assets/images/ameli-pro.svg'),
 		alt: locales.logoAmeliPro
-	},
-	[ThemeEnum.COMPTE_AMELI]: {
-		src: require('../../assets/images/compte-ameli.svg'),
-		alt: locales.logoAmeli
 	}
 };
