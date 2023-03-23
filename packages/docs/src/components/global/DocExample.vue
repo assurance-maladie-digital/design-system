@@ -198,8 +198,8 @@
 	}
 </script>
 
-<style lang="scss">
-	.v-example {
+<style lang="scss" scoped>
+	.v-example :deep() {
 		code[class*="language-"],
 		pre[class*="language-"] {
 			text-shadow: none;
