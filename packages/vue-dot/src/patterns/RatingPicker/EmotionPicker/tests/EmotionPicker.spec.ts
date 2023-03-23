@@ -12,11 +12,8 @@ describe('EmotionPicker', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(EmotionPicker,{
 			propsData: {
-				questionDatas: {
-						name: 'first-question',
-						type: 'stars',
-						question: 'la deuxieme question ?'
-					}
+				length: 5,
+				label: 'Label'
 			}
 		});
 

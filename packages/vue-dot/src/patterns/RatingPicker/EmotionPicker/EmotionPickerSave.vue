@@ -1,29 +1,33 @@
 <template>
-	<div>
-		<h6 class="mb-6">
-			{{ label }}
-		</h6>
-		<v-rating
-			:color="props.isFilled ? genColor(props.index) : 'primary lighten-4'"
-			:length="length"
-			:readonly="haveAnswer"
-			large
-			hover
+	<div class="vd-emotion-picker">
+		<div class="d-flex justify-center">
+			<H6
+				v-if="mainQuestion"
+				class="mb-6"
+			>
+				{{ questionDatas.question }}
+			</H6>
+			<span
+				v-else
+				class="mb-6 text-subtitle-2"
+			>
+				{{ questionDatas.question }}
+			</span>
+		</div>
+		<VRow
+			class="grid justify-center ma-0"
+			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-sm-space-around' : 'justify-sm-space-between'"
 		>
-			<template #item="props">
-				<v-icon
-					:color="props.hover ? 'primary' : 'primary lighten-4'"
-					@click="onValidate(props.index)"
-				>
-					{{ props.isFilled ? 'happyIcon' : 'happyIconOutline' }}
-				</v-icon>
-
-				<!--<button
-					v-for="emotion in emotionsData"
-					:key="emotion.title"
+			<VCol
+				v-for="emotion in filterEmotions"
+				:key="emotion.title"
+				class="pa-0 flex-grow-0 emotions"
+			>
+				<button
 					class="emotion"
 					:class="emotion.title"
-					@click="onValidate(emotion.index)"
+					@click="selectEmotion(emotion.title)"
+					@keyup.enter="selectEmotion(emotion.title)"
 				>
 					<div
 						:class="{ active: isActive(emotion.title) }"
@@ -47,35 +51,36 @@
 							</span>
 						</div>
 					</div>
-				</button>-->
-			</template>
-		</v-rating>
+				</button>
+			</VCol>
+		</VRow>
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-
 	import { locales } from '../locales';
-	import { mdiEmoticonHappy, mdiEmoticonHappyOutline } from '@mdi/js';
-	// import { EmotionItem } from './types';
+
+	import { EmotionItem } from './types';
+
+	import { mdiEmoticonSadOutline, mdiEmoticonNeutralOutline, mdiEmoticonHappyOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			label: {
-				type: String,
+			questionDatas: {
+				type: Object,
 				required: true
 			},
-			length: {
-				type: Number,
-				default: 5
+			mainQuestion: {
+				type: Boolean,
+				default: false
 			},
-			/*emotions: {
-				type: Array,
-				default: () => []
-			},*/
-			readonly: {
+			isValidated: {
+				type: Boolean,
+				default: false
+			},
+			simpleMode: {
 				type: Boolean,
 				default: false
 			}
@@ -86,51 +91,65 @@
 
 	@Component
 	export default class EmotionPicker extends MixinsDeclaration {
-		haveAnswer = false;
+
 		locales = locales;
-		colors = ['green', 'purple', 'orange', 'indigo', 'red'];
 
-		/*sadIcon = mdiEmoticonSadOutline;
-		neurtralIcon = mdiEmoticonNeutralOutline;*/
-		happyIcon = mdiEmoticonHappy;
-		happyIconOutline = mdiEmoticonHappyOutline;
+		//icons
+		sadIcon = mdiEmoticonSadOutline;
+		neurtralIcon = mdiEmoticonNeutralOutline;
+		happyIcon = mdiEmoticonHappyOutline;
 
-		/* selectedEmotion = '';
+		selectedEmotion = '';
 
-		get emotionsData(): EmotionItem[] {
-			return this.emotions.map((emotion: any = {}, index: number) => ({
-				...emotion,
-				title: emotion.title,
-				description: emotion.description,
-				icon: this.getIcon(emotion.title),
-				color: this.getColor(emotion.title),
-				index: index + 1
-			}));
-		}
+		emotions = [
+			{
+				title: 'sad',
+				icon: this.sadIcon,
+				color: 'orange-darken-20',
+				description: this.questionDatas.labels?.sad ?? this.locales.not
+			},
+			{
+				title: 'neutral',
+				icon: this.neurtralIcon,
+				color: 'yellow-darken-20',
+				description: this.questionDatas.labels?.neutral ?? this.locales.medium
+			},
+			{
+				title: 'happy',
+				icon: this.happyIcon,
+				color: 'turquoise-darken-20',
+				description: this.questionDatas.labels?.happy ?? this.locales.perfect
+			}
+		];
 
-		getIcon(emotion: string): string {
-			switch (emotion) {
-				case 'sad':
-					return this.sadIcon;
-				case 'neutral':
-					return this.neurtralIcon;
-				case 'happy':
-					return this.happyIcon;
-				default:
-					return '';
+		get emotionList(): EmotionItem[] {
+			if (this.simpleMode) {
+				return [this.emotions[0],this.emotions[2]];
+			} else {
+				return this.emotions;
 			}
 		}
 
-		getColor(emotion: string): string {
-			switch (emotion) {
-				case 'sad':
-					return 'red';
-				case 'neutral':
-					return 'orange';
-				case 'happy':
-					return 'green';
-				default:
-					return '';
+		get filterEmotions(): EmotionItem[] {
+			if (this.selectedEmotion && this.mainQuestion) {
+				return this.emotionList.filter(emotion => emotion.title === this.selectedEmotion);
+			} else {
+				return this.emotionList;
+			}
+		}
+
+		selectEmotion(emotion: string): void {
+			if (this.isValidated) {
+				return;
+			} else {
+				this.selectedEmotion = emotion;
+				this.$emit(
+					'update-result',
+					{
+						step: this.questionDatas.name,
+						result: emotion
+					}
+				);
 			}
 		}
 
@@ -140,16 +159,6 @@
 
 		emotionDescriptionClasses(emotion: EmotionItem): string {
 			return this.isActive(emotion.title) ? `font-weight-bold ${emotion.color}--text` : '';
-		}*/
-
-		genColor(i: number): string {
-			return this.colors[i];
-		}
-
-		onValidate(event: Event): void {
-			console.log(event);
-			/*this.haveAnswer = true;*/
-			this.length = Number(event);
 		}
 	}
 </script>
@@ -209,5 +218,8 @@ h6 {
 		outline: solid 1px $vd-turquoise-darken-20;
 		border-radius: 8px;
 	}
+}
+.emotions {
+	margin: 1px !important;
 }
 </style>
