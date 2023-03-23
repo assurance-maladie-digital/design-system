@@ -13,7 +13,6 @@
 		>
 			<Logo
 				:hide-signature="hideSignature"
-				:hide-organism="hideOrganism"
 				:risque-pro="isRisquePro"
 				:size="logoSize"
 			/>
@@ -114,14 +113,6 @@
 				type: Boolean,
 				default: false
 			},
-			headerSticky: {
-				type: Boolean,
-				default: false
-			},
-			headerScrolled: {
-				type: Boolean,
-				default: false
-			},
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: '/'
@@ -171,36 +162,8 @@
 			return this.theme === ThemeEnum.COMPTE_ENTREPRISE;
 		}
 
-		get hideName(): boolean {
-			if (this.headerSticky && this.headerScrolled) {
-				if (this.theme === ThemeEnum.DEFAULT || this.theme === ThemeEnum.RISQUE_PRO) {
-					return Boolean(this.$slots.default);
-				}
-
-				return true;
-			}
-
-			return Boolean(this.$slots.default);
-		}
-
 		get hideSignature(): boolean {
-			if (this.headerSticky && this.headerScrolled || this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
-				return true;
-			}
-
-			return Boolean(this.$slots.default);
-		}
-
-		get hideOrganism(): boolean {
-			if (this.headerSticky && this.headerScrolled) {
-				return true;
-			}
-
-			return Boolean(this.$slots.default);
-		}
-
-		get hideRisquePro(): boolean {
-			if (this.headerSticky && this.headerScrolled) {
+			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
 				return true;
 			}
 
@@ -244,9 +207,6 @@
 		}
 
 		get showDivider(): boolean {
-			if (this.headerSticky && this.headerScrolled && !this.service.title) {
-				return false;
-			}
 			return Boolean(this.hasSecondaryLogo || this.service.title);
 		}
 
