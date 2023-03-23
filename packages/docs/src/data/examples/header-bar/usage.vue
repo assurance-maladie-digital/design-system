@@ -1,10 +1,22 @@
 <template>
-	<div class="d-flex flex-wrap align-center justify-center w-100 wrapper">
+	<VCard
+		:id="target"
+		width="100%"
+		max-height="300px"
+		class="overflow-y-auto"
+	>
 		<HeaderBar
 			v-bind="$attrs"
+			:target="target"
+			:class="{ 'sticky-header-example': $attrs.sticky }"
 			v-on="$listeners"
 		/>
-	</div>
+
+		<VSheet
+			height="600px"
+			class="d-flex flex-column align-center"
+		/>
+	</VCard>
 </template>
 
 <script lang="ts">
@@ -12,6 +24,8 @@
 	import Component from 'vue-class-component';
 
 	import { NavigationItem } from '@cnamts/vue-dot/src/patterns/HeaderBar/types'
+
+	const EXAMPLE_TARGET = 'header-bar-usage';
 
 	const navigationItems: NavigationItem[] = [
 		{
@@ -26,6 +40,8 @@
 		inheritAttrs: false
 	})
 	export default class HeaderBarUsage extends Vue {
+		target = EXAMPLE_TARGET;
+
 		defaultProps = {
 			theme: 'default',
 			navigationItems
@@ -59,10 +75,13 @@
 	}
 </script>
 
-<style lang="scss">
-.wrapper {
-	.v-app-bar--fixed {
-		z-index: 15;
+<style lang="scss" scoped>
+	.sticky-header-example {
+		position: sticky !important;
+		top: 0;
+
+		:deep(.vd-header-bar) {
+			position: static !important;
+		}
 	}
-}
 </style>

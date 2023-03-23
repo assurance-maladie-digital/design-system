@@ -1,20 +1,21 @@
 <template>
 	<div class="vd-header-bar-container w-100">
 		<VAppBar
-			v-scroll:[targetSelector]="onScroll"
 			v-bind="{
 				...options.appBar,
 				...$attrs
 			}"
+			ref="appBar"
+			v-scroll:[targetSelector]="onScroll"
 			:height="height"
-			:fixed="isSticky"
-			class="vd-header-bar vd-header-bar-sticky transition-ease-in-out duration-100"
+			:fixed="sticky"
+			class="vd-header-bar transition-ease-in-out"
 		>
 			<VSheet
 				v-bind="options.contentSheet"
 				:height="contentSheetHeight"
 				:class="spacingClass"
-				class="vd-header-bar-content d-flex justify-center transition-ease-in-out duration-100"
+				class="vd-header-bar-content d-flex justify-center transition-ease-in-out"
 			>
 				<VSheet
 					v-bind="options.innerSheet"
@@ -27,8 +28,7 @@
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
 							:mobile-version="isMobileVersion"
-							:header-sticky="isSticky"
-							:header-scrolled="isScrolled"
+							:reduce-logo="sticky && scrolled"
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
@@ -106,7 +106,7 @@
 	import { propValidator } from '../../helpers/propValidator';
 
 	import { customizable } from '../../mixins/customizable';
-	import { Next } from '../../types';
+	import { Next, Refs } from '../../types';
 	import { Scroll } from 'vuetify/lib/directives';
 
 	const Props = Vue.extend({
@@ -174,9 +174,13 @@
 		}
 	})
 	export default class HeaderBar extends MixinsDeclaration {
+		$refs!: Refs<{
+			appBar: Vue;
+		}>;
+
 		drawer: boolean | null = null;
 		tab: number | null = null;
-		isScrolled: boolean | null = null;
+		scrolled = false;
 
 		get isMobileVersion(): boolean {
 			if (this.mobileVersion) {
@@ -186,31 +190,28 @@
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
-		get isSticky(): boolean {
-			if (this.sticky) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
 		get targetSelector(): string | null {
 			if (!this.target) {
 				return null;
 			}
+
 			return `#${this.target}`;
 		}
 
 		get spacingClass(): string {
+			if (this.sticky && this.scrolled) {
+				return 'pa-1';
+			}
+
 			return this.isMobileVersion ? 'pa-4' : 'px-14 py-7';
 		}
 
 		get contentSheetHeight(): number {
-			if (this.isScrolled) {
+			if (this.scrolled) {
 				return this.isMobileVersion ? 52 : 72;
-			} else {
-				return this.isMobileVersion ? 72 : 120;
 			}
+
+			return this.isMobileVersion ? 72 : 120;
 		}
 
 		get height(): number {
@@ -252,15 +253,16 @@
 		}
 
 		onScroll(e: MouseEvent): void {
-			const target = e.currentTarget as HTMLElement | Window;
-			const header = document.querySelector('.vd-header-bar-sticky');
-			const headerHeight = header ? header.clientHeight : 0;
-			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
-			if (this.isSticky && scrollPosition > headerHeight) {
-				this.isScrolled = true;
-			} else {
-				this.isScrolled = false;
+			if (!this.sticky) {
+				return;
 			}
+
+			const target = e.currentTarget as HTMLElement | Window;
+			const header = this.$refs.appBar.$el;
+			const headerHeight = header?.clientHeight || 0;
+			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
+
+			this.scrolled = this.sticky && scrollPosition > headerHeight;
 		}
 	}
 </script>
