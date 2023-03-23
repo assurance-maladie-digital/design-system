@@ -14,7 +14,9 @@
 			<Logo
 				:hide-signature="hideSignature"
 				:risque-pro="isRisquePro"
+				:avatar="avatar"
 				:size="logoSize"
+				:class="{ 'mr-2': avatar }"
 			/>
 		</component>
 
@@ -29,7 +31,6 @@
 				aria-hidden="true"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 22 64"
-				class="transition-ease-in-out duration-100"
 			>
 				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
 			</svg>
@@ -113,6 +114,10 @@
 				type: Boolean,
 				default: false
 			},
+			reduceLogo: {
+				type: Boolean,
+				default: false
+			},
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: '/'
@@ -155,6 +160,10 @@
 		}
 
 		get isRisquePro(): boolean {
+			if (this.reduceLogo) {
+				return false;
+			}
+
 			return this.theme === ThemeEnum.RISQUE_PRO;
 		}
 
@@ -163,7 +172,7 @@
 		}
 
 		get hideSignature(): boolean {
-			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
+			if (this.reduceLogo || this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
 				return true;
 			}
 
@@ -206,7 +215,19 @@
 			return null;
 		}
 
+		get avatar(): boolean {
+			if (this.reduceLogo) {
+				return this.hasSecondaryLogo;
+			}
+
+			return false;
+		}
+
 		get showDivider(): boolean {
+			if (this.reduceLogo) {
+				return false;
+			}
+
 			return Boolean(this.hasSecondaryLogo || this.service.title);
 		}
 

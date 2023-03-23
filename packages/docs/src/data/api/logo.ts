@@ -68,6 +68,12 @@ export const api: Api = {
 				description: 'Affiche la version mobile.'
 			},
 			{
+				name: 'reduce-logo',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche la version *Avatar* du logo de l’Assurance Maladie s’il y a une marque secondaire. Sinon, masque la signature.'
+			},
+			{
 				name: 'home-link',
 				type: 'Next',
 				default: `'/'`,
