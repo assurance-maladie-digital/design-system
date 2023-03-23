@@ -14,16 +14,8 @@
 			<Logo
 				:hide-signature="hideSignature"
 				:hide-organism="hideOrganism"
-				:hide-name="hideName"
 				:risque-pro="isRisquePro"
-				:hide-risque-pro="hideRisquePro"
 				:size="logoSize"
-				:theme="theme"
-				:header-sticky="headerSticky"
-				:header-scrolled="headerScrolled"
-				:secondary-logo="hasSecondaryLogo"
-				:service="service"
-				:compte-entreprise="isCompteEntreprise"
 			/>
 		</component>
 
