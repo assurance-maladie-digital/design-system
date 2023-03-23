@@ -12,11 +12,8 @@ describe('StarsPicker', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(StarsPicker,{
 			propsData: {
-				questionDatas: {
-						name: 'first-question',
-						type: 'stars',
-						question: 'la deuxieme question ?'
-					}
+				length: 3,
+				label: 'la deuxieme question ?'
 			}
 		});
 
