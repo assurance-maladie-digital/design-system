@@ -179,7 +179,10 @@
 		}
 
 		get hideName(): boolean {
-			if (this.headerSticky && this.headerScrolled && (this.theme !== ThemeEnum.DEFAULT && this.theme !== ThemeEnum.RISQUE_PRO)) {
+			if (this.headerSticky && this.headerScrolled) {
+				if (this.theme === ThemeEnum.DEFAULT || this.theme === ThemeEnum.RISQUE_PRO) {
+					return Boolean(this.$slots.default);
+				}
 				return true;
 			}
 
