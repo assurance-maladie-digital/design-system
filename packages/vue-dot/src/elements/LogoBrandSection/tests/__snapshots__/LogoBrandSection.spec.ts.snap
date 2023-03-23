@@ -3,7 +3,7 @@
 exports[`LogoBrandSection renders correctly 1`] = `
 <vsheet-stub height="64px" tag="div" class="vd-header-brand-section d-flex">
   <routerlink-stub aria-label="Accueil, l’Assurance Maladie" to="/" class="vd-header-home-link">
-    <logo-stub size="normal" service="[object Object]"></logo-stub>
+    <logo-stub size="normal"></logo-stub>
   </routerlink-stub>
   <!---->
   <!---->

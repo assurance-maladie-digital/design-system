@@ -27,8 +27,8 @@
 			booleans: [
 				'hideSignature',
 				'hideOrganism',
-				'hideName',
-				'risquePro'
+				'risquePro',
+				'avatar'
 			],
 			selects: {
 				size: [
