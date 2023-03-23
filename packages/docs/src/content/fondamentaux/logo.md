@@ -19,6 +19,16 @@ Vous pouvez afficher de logo de l’Assurance Maladie accompagné de la marque s
 
 <doc-usage name="logo-brand-section"></doc-usage>
 
+#### Marque partenaire
+
+Vous pouvez afficher une marque partenaire en utilisant le slot `secondary-logo`.
+
+<doc-alert type="info">
+L’utilisation de ce slot va masquer le séparateur vertical après le logo de l’Assurance Maladie et masquer la signature du logo.
+</doc-alert>
+
+<doc-example file="logo-brand-section/slot"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
