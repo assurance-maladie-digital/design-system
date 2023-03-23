@@ -18,6 +18,7 @@
 				:risque-pro="isRisquePro"
 				:hide-risque-pro="hideRisquePro"
 				:size="logoSize"
+				:theme="theme"
 				:header-sticky="headerSticky"
 				:header-scrolled="headerScrolled"
 				:secondary-logo="hasSecondaryLogo"
@@ -183,6 +184,7 @@
 				if (this.theme === ThemeEnum.DEFAULT || this.theme === ThemeEnum.RISQUE_PRO) {
 					return Boolean(this.$slots.default);
 				}
+
 				return true;
 			}
 

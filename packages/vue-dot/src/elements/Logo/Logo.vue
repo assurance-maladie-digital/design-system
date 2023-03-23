@@ -162,7 +162,7 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { tokens } from '@cnamts/design-tokens';
@@ -175,8 +175,14 @@
 
 	import { propValidator } from '../../helpers/propValidator';
 	import { Dimensions } from '../../types';
+	import { ThemeEnum } from '../../constants/enums/ThemeEnum';
+
 	const Props = Vue.extend({
 		props: {
+			theme: {
+				type: String as PropType<ThemeEnum>,
+				required: true
+			},
 			hideSignature: {
 				type: Boolean,
 				default: false
@@ -233,7 +239,11 @@
 
 		get dimensions(): Dimensions {
 			if (this.headerSticky && this.headerScrolled) {
-				return logoDimensionsScrollMapping[this.size];
+				if (this.theme !== ThemeEnum.DEFAULT && this.theme !== ThemeEnum.RISQUE_PRO) {
+					return logoDimensionsScrollMapping[this.size];
+				}
+
+				return logoDimensionsMapping[this.size];
 			}
 			return logoDimensionsMapping[this.size];
 		}
@@ -255,10 +265,6 @@
 
 			if (!this.hideSignature) {
 				label = label.concat(COLON_SEPARATOR, locales.signature);
-			}
-
-			if (!this.hideName) {
-				label = label.concat(COLON_SEPARATOR, locales.assuranceMaladie);
 			}
 
 			if (this.risquePro) {
