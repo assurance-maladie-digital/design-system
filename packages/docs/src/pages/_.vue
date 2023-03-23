@@ -52,6 +52,8 @@
 
 	import { MetaInfo } from 'vue-meta';
 
+	import { NuxtError } from '@nuxt/types';
+
 	import {
 		Content,
 		ContentDocument,
@@ -80,7 +82,7 @@
 		document?: ContentDocument;
 
 		@AsyncData
-		async asyncData({ $content, params, error }: AsyncDataParams): Promise<PageData | void> {
+		async asyncData({ $content, params, error }: AsyncDataParams): Promise<PageData | NuxtError> {
 			const path =`/${params.pathMatch || 'index'}`;
 			const [document] = await $content({ deep: true })
 				.where({ path })

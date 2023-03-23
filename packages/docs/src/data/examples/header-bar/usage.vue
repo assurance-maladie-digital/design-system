@@ -47,6 +47,7 @@
 					'cnam',
 					'ameli',
 					'ameli-pro',
+					'compte-ameli',
 					'compte-entreprise'
 				]
 			},
