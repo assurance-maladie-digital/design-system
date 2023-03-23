@@ -18,6 +18,8 @@
 				:risque-pro="isRisquePro"
 				:hide-risque-pro="hideRisquePro"
 				:size="logoSize"
+				:header-sticky="headerSticky"
+				:header-scrolled="headerScrolled"
 				:secondary-logo="hasSecondaryLogo"
 				:service="service"
 				:compte-entreprise="isCompteEntreprise"

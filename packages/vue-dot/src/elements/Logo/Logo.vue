@@ -7,7 +7,7 @@
 		role="img"
 		focusable="false"
 		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 211 64"
+		:viewBox="viewBox"
 	>
 		<path
 			v-if="risquePro && !hideRisquePro"
@@ -205,6 +205,14 @@
 				type: String,
 				default: LogoSizeEnum.NORMAL,
 				validator: (value: string) => propValidator('size', LOGO_SIZE_ENUM_VALUES, value)
+			},
+			headerSticky: {
+				type: Boolean,
+				default: false
+			},
+			headerScrolled: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -224,7 +232,15 @@
 		}
 
 		get dimensions(): Dimensions {
+			if (this.headerSticky && this.headerScrolled) {
+				return logoDimensionsScrollMapping[this.size];
+			}
 			return logoDimensionsMapping[this.size];
+		}
+
+		get viewBox(): string {
+			const { width, height } = this.dimensions;
+			return `0 0 ${width} ${height}`;
 		}
 
 		get label(): string {
