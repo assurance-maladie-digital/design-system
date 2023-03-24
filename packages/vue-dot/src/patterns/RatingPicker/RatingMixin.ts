@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
+export enum RatingEnum{
+	NUMBER='NumberPicker',
+	STAR='StarsPicker',
+}
 const Props = Vue.extend({
 	props: {
 		label: {

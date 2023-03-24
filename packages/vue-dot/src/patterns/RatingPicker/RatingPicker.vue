@@ -1,306 +1,72 @@
 <template>
-	<div class="vd-rating-picker">
-		<!--first step-->
-		<div
-			class="step"
-			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowMode}"
+	<div>
+		<component
+			:is="type"
+			:label="label"
+			:length="length_internal"
+			@input="onFirstValidation"
+		/>
+
+		<v-alert
+			v-if="read_only_internal"
+			outlined
+			type="success"
 		>
-			<EmotionPicker
-				v-if="mainQuestion.type === 'emotions'"
-				class="ma-6"
-				step-name="mainQuestion"
-				main-question
-				:simple-mode="mainQuestion.simpleMode"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<StarsPicker
-				v-if="mainQuestion.type === 'stars'"
-				class="ma-6"
-				step-name="mainQuestion"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<NumberPicker
-				v-if="mainQuestion.type === 'numbers'"
-				class="ma-6"
-				step-name="mainQuestion"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<div class="d-flex justify-end">
-				<div
-					v-if="firstStep.result !== null"
-					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
-					:class="!shadowMode ? 'border-green' : ''"
-				>
-					<VIcon
-						color="success"
-						class="mr-4"
-					>
-						{{ checkIcon }}
-					</VIcon>
-					<span class="turquoise-darken-60--text">{{ afterValidate[0].message }}</span>
-				</div>
-				<VBtn
-					v-if="firstStep.result === null && !hideCloseButtons"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					text
-					@click="onClose()"
-				>
-					{{ locales.later }}
-				</VBtn>
-			</div>
-			<div class="d-flex justify-end">
-				<VBtn
-					v-if="!checkFirstStep && firstStep.result !== null && !hideCloseButtons"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					text
-					@click="onClose()"
-				>
-					{{ locales.close }}
-				</VBtn>
-			</div>
-		</div>
-
-		<!--second step-->
-		<div
-			v-if="questionsList.length && checkFirstStep"
-			class="step mt-2"
-			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowMode}"
-		>
-			<p
-				class="mb-7 ml-4 mt-3 font-weight-bold"
+			ca va
+		</v-alert>
+		<slot />
+		<div class="mr-2 mt-5 d-flex justify-space-between ">
+			<v-btn
+				text
+				color="primary"
 			>
-				{{ locales.more }}
-			</p>
-			<div
-				v-for="(question, index) in questionsList"
-				:key="index"
+				Fermer
+			</v-btn>
+			<v-btn
+				color="primary"
+				depressed
 			>
-				<div v-if="index <= secondStep.length">
-					<EmotionPicker
-						v-if="question.type === 'emotions'"
-						class="ma-6"
-						step-name="secondStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-				</div>
-			</div>
-
-			<div
-				v-if="validated"
-				class="d-flex justify-center align-center border-green py-3 mx-6"
-			>
-				<VIcon
-					color="success"
-					class="mr-4"
-				>
-					{{ checkIcon }}
-				</VIcon>
-				<span class="turquoise-darken-60--text">{{ afterValidate[1].message }}</span>
-			</div>
-
-			<div
-				class="mx-4 pb-3 d-flex"
-				:class="validated || hideCloseButtons ? 'justify-end' : 'justify-space-between'"
-			>
-				<VBtn
-					v-if="!hideCloseButtons"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					text
-					@click="onClose()"
-				>
-					{{ locales.close }}
-				</VBtn>
-				<VBtn
-					v-if="!validated"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					:disabled="secondStep.length == 0"
-					depressed
-					@click="validateSecondStep"
-				>
-					{{ validateTextButton }}
-				</VBtn>
-			</div>
+				Transmettre mon avis
+			</v-btn>
 		</div>
 	</div>
 </template>
-
 <script lang="ts">
-	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import { locales } from './locales';
 
-	import { StepItem } from './types';
-	import { AfterValidateItem } from './types';
-
-	import EmotionPicker from './EmotionPicker';
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
-
-	import { mdiCheckCircleOutline } from '@mdi/js';
+	import { RatingEnum, RatingMixin } from './RatingMixin';
+	import Vue, { PropType } from 'vue';
+	import { propValidator } from '../../helpers/propValidator';
 
 	const Props = Vue.extend({
 		props: {
-			shadowMode: {
-				type: Boolean,
-				required: false
-			},
-			hideCloseButtons: {
-				type: Boolean,
-				required: false
-			},
-			mainQuestion: {
-				type: Object,
-				required: true
-			},
-			questionsList: {
-				type: Array,
-				default: () => []
-			},
-			validateTextButton: {
-				type: String,
-				default: 'Transmettre mon avis'
-			},
-			afterValidate: {
-				type: Array as PropType<AfterValidateItem[]>,
-				default: () => [
-					{
-						message: 'Merci pour votre réponse',
-						greenBackground: false
-					},
-					{
-						message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
-						greenBackground: false
-					}
-				]
+			type: {
+				type: String as PropType<RatingEnum>,
+				required: true,
+				validator: (value: string) => propValidator('type', Object.values(RatingEnum), value)
 			}
 		}
 	});
-
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props,RatingMixin);
 
 	@Component({
-		model: {
-			prop: 'datas',
-			event: 'on-validate'
-		},
 		components: {
-			EmotionPicker,
 			StarsPicker,
 			NumberPicker
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
-		locales = locales;
-		checkIcon = mdiCheckCircleOutline;
-		question = {
-			type: '',
-			answers: []
-		};
 
-		firstStep: StepItem = {
-			step: '',
-			result: null
-		};
-		secondStep: StepItem[] = [];
-
-		validated = false;
-
-		afterValidateItem: AfterValidateItem = {
-			message: '',
-			greenBackground: false
-		};
-
-		get checkFirstStep(): boolean {
-			if (this.firstStep.result !== null) {
-				if (this.mainQuestion.type === 'emotions') {
-					return this.firstStep.result === 'sad' || this.firstStep.result === 'neutral' ? true : false;
-				} else if (this.mainQuestion.type === 'stars') {
-					return this.firstStep.result < 4 ? true : false;
-				} else if (this.mainQuestion.type === 'numbers') {
-					return this.firstStep.result < 7 ? true : false;
-				}
-			}
-			return false;
-		}
-
-		updateFirstStep(result: StepItem): void {
-			this.firstStep = result;
-			this.$emit('change', [this.firstStep]);
-			this.afterFirstQuestion();
-			this.validateFirstStep();
-		}
-
-		updateSecondStep(result: StepItem): void {
-			const alreadyExist = this.secondStep.find(el => el.step === result.step);
-			if (alreadyExist) {
-				this.secondStep.splice(this.secondStep.indexOf(alreadyExist), 1, result);
-			} else {
-				this.secondStep.push(result);
-			}
-		}
-
-		checkBackgroundGreen(number: number): boolean {
-			if (number) {
-				return this.afterValidate[number].greenBackground && this.validated ? true : false;
-			} else {
-				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
-			}
-		}
-
-		validateFirstStep(): void {
-			this.$emit('on-validate', [this.firstStep]);
-		}
-
-		validateSecondStep(): void {
-			this.$emit('on-validate', [this.firstStep, ...this.secondStep]);
-			this.validated = true;
-		}
-
-		onClose(): void {
-			this.$emit('on-close');
-		}
-
-		afterFirstQuestion(): void {
-			this.$emit('after-first-question');
+		currentPicker: string=this.type;
+		onFirstValidation(event: RatingMixin, value: number): void {
+			this.read_only_internal = true;
+			event.blockon(value);
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
 
-p {
-	font-size: 16px;
-}
-.step {
-	max-width: 450px !important;
-	padding: 16px;
-	border-radius: 8px;
-
-	.close-button {
-		text-transform: none;
-	}
-	.border-green {
-		border: 1px solid $vd-turquoise-darken-40;
-		border-radius: 4px;
-	}
-}
-.shadow-box {
-	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.123);
-}
-.green-background {
-	background-color: $vd-turquoise-lighten-97;
-}
-.v-icon {
-	min-width: 24px;
-}
 </style>
