@@ -7,6 +7,7 @@
 			background-color="primary lighten-4"
 			hover
 			:readonly="read_only_internal"
+			class="d-flex flex-wrap"
 			@input="onValidate"
 		/>
 	</div>

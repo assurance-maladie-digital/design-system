@@ -8,6 +8,7 @@
 			background-color="primary lighten-4"
 			hover
 			:readonly="read_only_internal"
+			class="d-flex flex-wrap"
 		>
 			<template #item="props">
 				<v-btn
@@ -42,8 +43,6 @@
 
 	@Component
 	export default class NumberPicker extends RatingMixin {
-
-		length_internal = 10;
 	}
 </script>
 
