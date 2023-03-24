@@ -5,7 +5,7 @@
 		</h6>
 		<v-rating
 			:length="length"
-			:readonly="haveAnswer"
+			:readonly="readonly"
 			large
 			hover
 		>
@@ -14,13 +14,14 @@
 					:class="[
 						'icon-button',
 						{
-							'active': props.isActive,
 							'sad': props.index === 0,
 							'neutral': props.index === 1,
 							'happy': props.index === 2
+						},
+						{
+							'active': props.index === emotionSelected
 						}
 					]"
-					:tabindex="props.index"
 					@click="onValidate(props.index)"
 					@keyup.enter="onValidate(props.index)"
 				>
@@ -32,6 +33,9 @@
 							>
 								{{ sadIcon }}
 							</VIcon>
+							<span class="description mt-1">
+								{{ labels.sad }}
+							</span>
 						</slot>
 					</template>
 					<template v-else-if="props.index === 1">
@@ -42,6 +46,9 @@
 							>
 								{{ neurtralIcon }}
 							</VIcon>
+							<span class="description mt-1">
+								{{ labels.neutral }}
+							</span>
 						</slot>
 					</template>
 					<template v-else-if="props.index === 2">
@@ -52,6 +59,9 @@
 							>
 								{{ happyIcon }}
 							</VIcon>
+							<span class="description mt-1">
+								{{ labels.happy }}
+							</span>
 						</slot>
 					</template>
 				</div>
@@ -77,13 +87,13 @@
 				type: Number,
 				default: 3
 			},
-			emotions: {
-				type: Array,
-				default: () => []
-			},
 			readonly: {
 				type: Boolean,
 				default: false
+			},
+			labels: {
+				type: Object,
+				default: () => ({})
 			}
 		}
 	});
@@ -92,22 +102,22 @@
 
 	@Component
 	export default class EmotionPicker extends MixinsDeclaration {
-		haveAnswer = false;
 		locales = locales;
-		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-lighten-20'];
+		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-darken-20'];
 
 		sadIcon = mdiEmoticonSadOutline;
 		neurtralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
 
+		emotionSelected = -1;
+
 		genColor(index: number): string {
 			return this.colors[index];
 		}
 
-		onValidate(event: Event): void {
-			console.log(event);
-			/*this.haveAnswer = true;*/
-			this.length = Number(event);
+		onValidate(index: number): void {
+			this.emotionSelected = index;
+			this.$emit('input', index);
 		}
 	}
 </script>
@@ -124,6 +134,7 @@ h6 {
 .v-rating {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	div {
 		display: flex;
 		flex-direction: column;
@@ -138,6 +149,9 @@ h6 {
 	height: 88px;
 	width: 88px;
 	border-radius: 8px;
+	&:last-child {
+		margin-right: 0;
+	}
 	&:hover {
 		cursor: pointer;
 	}
@@ -145,38 +159,37 @@ h6 {
 		&:hover {
 			background-color: $vd-orange-lighten-90;
 		}
-		&:active {
-			border: 1px solid $vd-orange-darken-20;
-			background-color: $vd-orange-lighten-90;
-		}
 		&:focus {
 			outline: solid 1px $vd-orange-darken-20;
+		}
+		&.active {
+			border: 1px solid $vd-orange-darken-20;
+			background-color: $vd-orange-lighten-90;
 		}
 	}
 	&.neutral {
 		&:hover {
 			background-color: $vd-yellow-lighten-90;
 		}
-		&:active {
-			border: 1px solid $vd-yellow-darken-20;
-			background-color: $vd-yellow-lighten-90;
-		}
 		&:focus {
 			outline: solid 1px $vd-yellow-darken-20;
+		}
+		&.active {
+			border: 1px solid $vd-yellow-darken-20;
+			background-color: $vd-yellow-lighten-90;
 		}
 	}
 	&.happy {
 		&:hover {
 			background-color: $vd-turquoise-lighten-90;
 		}
-		&:active {
-			border: 1px solid $vd-turquoise-darken-20;
-			background-color: $vd-turquoise-lighten-90;
-		}
 		&:focus {
 			outline: solid 1px $vd-turquoise-darken-20;
 		}
+		&.active {
+			border: 1px solid $vd-turquoise-darken-20;
+			background-color: $vd-turquoise-lighten-90;
+		}
 	}
 }
-
 </style>
