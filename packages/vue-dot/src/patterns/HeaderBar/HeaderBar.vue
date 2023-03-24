@@ -200,7 +200,7 @@
 
 		get spacingClass(): string {
 			if (this.sticky && this.scrolled) {
-				return 'pa-1';
+				return this.isMobileVersion ? 'px-4 py-1' : 'px-14 py-1';
 			}
 
 			return this.isMobileVersion ? 'pa-4' : 'px-14 py-7';
