@@ -8,6 +8,7 @@
 			:readonly="readonly"
 			large
 			hover
+			class="d-flex flex-wrap"
 		>
 			<template #item="props">
 				<div
