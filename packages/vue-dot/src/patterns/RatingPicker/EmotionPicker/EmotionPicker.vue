@@ -22,6 +22,7 @@
 							'active': props.index === emotionSelected
 						}
 					]"
+					:tabindex="props.index + 1"
 					@click="onValidate(props.index)"
 					@keyup.enter="onValidate(props.index)"
 				>
