@@ -6,47 +6,55 @@
 		<v-rating
 			:length="length"
 			:readonly="haveAnswer"
-			:item-labels="emotionsData.map(emotion => emotion.title)"
 			large
 			hover
 		>
 			<template #item="props">
-				{{ props }}
-				{{ props.index }}
-				<!--<v-icon>
-					{{ this.getIcon(props) }}
-				</v-icon>-->
-
-				<!--<button
-					v-for="emotion in emotionsData"
-					:key="emotion.title"
-					class="emotion"
-					:class="emotion.title"
-					@click="onValidate(emotion.index)"
+				<div
+					:class="[
+						'icon-button',
+						{
+							'active': props.isActive,
+							'sad': props.index === 0,
+							'neutral': props.index === 1,
+							'happy': props.index === 2
+						}
+					]"
+					:tabindex="props.index"
+					@click="onValidate(props.index)"
+					@keyup.enter="onValidate(props.index)"
 				>
-					<div
-						:class="{ active: isActive(emotion.title) }"
-						class="icon-button"
-					>
-						<div class="d-flex justify-center">
+					<template v-if="props.index === 0">
+						<slot name="sad">
 							<VIcon
 								x-large
-								class="mt-3"
-								:color="emotion.color"
+								:color="genColor(props.index)"
 							>
-								{{ emotion.icon }}
+								{{ sadIcon }}
 							</VIcon>
-						</div>
-						<div class="mt-1 d-flex justify-center">
-							<span
-								class="description"
-								:class="emotionDescriptionClasses(emotion)"
+						</slot>
+					</template>
+					<template v-else-if="props.index === 1">
+						<slot name="neutral">
+							<VIcon
+								x-large
+								:color="genColor(props.index)"
 							>
-								{{ emotion.description }}
-							</span>
-						</div>
-					</div>
-				</button>-->
+								{{ neurtralIcon }}
+							</VIcon>
+						</slot>
+					</template>
+					<template v-else-if="props.index === 2">
+						<slot name="happy">
+							<VIcon
+								x-large
+								:color="genColor(props.index)"
+							>
+								{{ happyIcon }}
+							</VIcon>
+						</slot>
+					</template>
+				</div>
 			</template>
 		</v-rating>
 	</div>
@@ -58,7 +66,6 @@
 
 	import { locales } from '../locales';
 	import { mdiEmoticonHappyOutline, mdiEmoticonSadOutline, mdiEmoticonNeutralOutline } from '@mdi/js';
-	// import { EmotionItem } from './types';
 
 	const Props = Vue.extend({
 		props: {
@@ -68,7 +75,7 @@
 			},
 			length: {
 				type: Number,
-				default: 5
+				default: 3
 			},
 			emotions: {
 				type: Array,
@@ -87,74 +94,14 @@
 	export default class EmotionPicker extends MixinsDeclaration {
 		haveAnswer = false;
 		locales = locales;
-		colors = ['green', 'purple', 'orange', 'indigo', 'red'];
+		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-lighten-20'];
 
 		sadIcon = mdiEmoticonSadOutline;
 		neurtralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
 
-		/*getIcon(props: Array): string {
-			switch (props.index) {
-				case 1:
-					return this.happyIcon;
-				case 2:
-					return this.happyIcon;
-				case 3:
-					return this.happyIcon;
-				case 4:
-					return '';
-			}
-		}*/
-
-		/* selectedEmotion = '';
-
-		get emotionsData(): EmotionItem[] {
-			return this.emotions.map((emotion: any = {}, index: number) => ({
-				...emotion,
-				title: emotion.title,
-				description: emotion.description,
-				icon: this.getIcon(emotion.title),
-				color: this.getColor(emotion.title),
-				index: index + 1
-			}));
-		}
-
-		getIcon(emotion: string): string {
-			switch (emotion) {
-				case 'sad':
-					return this.sadIcon;
-				case 'neutral':
-					return this.neurtralIcon;
-				case 'happy':
-					return this.happyIcon;
-				default:
-					return '';
-			}
-		}
-
-		getColor(emotion: string): string {
-			switch (emotion) {
-				case 'sad':
-					return 'red';
-				case 'neutral':
-					return 'orange';
-				case 'happy':
-					return 'green';
-				default:
-					return '';
-			}
-		}
-
-		isActive(emotion: string): boolean {
-			return this.selectedEmotion === emotion ? true : false;
-		}
-
-		emotionDescriptionClasses(emotion: EmotionItem): string {
-			return this.isActive(emotion.title) ? `font-weight-bold ${emotion.color}--text` : '';
-		}*/
-
-		genColor(i: number): string {
-			return this.colors[i];
+		genColor(index: number): string {
+			return this.colors[index];
 		}
 
 		onValidate(event: Event): void {
@@ -174,51 +121,62 @@ h6 {
 .description {
 	font-size: 12px;
 }
+.v-rating {
+	display: flex;
+	flex-direction: row;
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.v-icon {
+		padding: 0;
+	}
+}
 .icon-button {
 	height: 88px;
 	width: 88px;
 	border-radius: 8px;
-}
-.icon-button:hover {
-	cursor: pointer;
-}
-.sad {
-	.icon-button:hover {
-		background-color: $vd-orange-lighten-90;
+	&:hover {
+		cursor: pointer;
 	}
-	.active {
-		border: 1px solid $vd-orange-darken-20;
-		background-color: $vd-orange-lighten-90;
+	&.sad {
+		&:hover {
+			background-color: $vd-orange-lighten-90;
+		}
+		&:active {
+			border: 1px solid $vd-orange-darken-20;
+			background-color: $vd-orange-lighten-90;
+		}
+		&:focus {
+			outline: solid 1px $vd-orange-darken-20;
+		}
 	}
-	&:focus {
-		outline: solid 1px $vd-orange-darken-20;
-		border-radius: 8px;
+	&.neutral {
+		&:hover {
+			background-color: $vd-yellow-lighten-90;
+		}
+		&:active {
+			border: 1px solid $vd-yellow-darken-20;
+			background-color: $vd-yellow-lighten-90;
+		}
+		&:focus {
+			outline: solid 1px $vd-yellow-darken-20;
+		}
 	}
-}
-.neutral {
-	.icon-button:hover {
-		background-color: $vd-yellow-lighten-90;
-	}
-	.active {
-		border: 1px solid $vd-yellow-darken-20;
-		background-color: $vd-yellow-lighten-90;
-	}
-	&:focus {
-		outline: solid 1px $vd-yellow-darken-20;
-		border-radius: 8px;
-	}
-}
-.happy {
-	.icon-button:hover {
-		background-color: $vd-turquoise-lighten-90;
-	}
-	.active {
-		border: 1px solid $vd-turquoise-darken-20;
-		background-color: $vd-turquoise-lighten-90;
-	}
-	&:focus {
-		outline: solid 1px $vd-turquoise-darken-20;
-		border-radius: 8px;
+	&.happy {
+		&:hover {
+			background-color: $vd-turquoise-lighten-90;
+		}
+		&:active {
+			border: 1px solid $vd-turquoise-darken-20;
+			background-color: $vd-turquoise-lighten-90;
+		}
+		&:focus {
+			outline: solid 1px $vd-turquoise-darken-20;
+		}
 	}
 }
+
 </style>
