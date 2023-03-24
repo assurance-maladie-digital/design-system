@@ -4,19 +4,18 @@
 			{{ label }}
 		</h6>
 		<v-rating
-			:color="props.isFilled ? genColor(props.index) : 'primary lighten-4'"
 			:length="length"
 			:readonly="haveAnswer"
+			:item-labels="emotionsData.map(emotion => emotion.title)"
 			large
 			hover
 		>
 			<template #item="props">
-				<v-icon
-					:color="props.hover ? 'primary' : 'primary lighten-4'"
-					@click="onValidate(props.index)"
-				>
-					{{ props.isFilled ? 'happyIcon' : 'happyIconOutline' }}
-				</v-icon>
+				{{ props }}
+				{{ props.index }}
+				<!--<v-icon>
+					{{ this.getIcon(props) }}
+				</v-icon>-->
 
 				<!--<button
 					v-for="emotion in emotionsData"
@@ -58,7 +57,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from '../locales';
-	import { mdiEmoticonHappy, mdiEmoticonHappyOutline } from '@mdi/js';
+	import { mdiEmoticonHappyOutline, mdiEmoticonSadOutline, mdiEmoticonNeutralOutline } from '@mdi/js';
 	// import { EmotionItem } from './types';
 
 	const Props = Vue.extend({
@@ -71,10 +70,10 @@
 				type: Number,
 				default: 5
 			},
-			/*emotions: {
+			emotions: {
 				type: Array,
 				default: () => []
-			},*/
+			},
 			readonly: {
 				type: Boolean,
 				default: false
@@ -90,10 +89,22 @@
 		locales = locales;
 		colors = ['green', 'purple', 'orange', 'indigo', 'red'];
 
-		/*sadIcon = mdiEmoticonSadOutline;
-		neurtralIcon = mdiEmoticonNeutralOutline;*/
-		happyIcon = mdiEmoticonHappy;
-		happyIconOutline = mdiEmoticonHappyOutline;
+		sadIcon = mdiEmoticonSadOutline;
+		neurtralIcon = mdiEmoticonNeutralOutline;
+		happyIcon = mdiEmoticonHappyOutline;
+
+		/*getIcon(props: Array): string {
+			switch (props.index) {
+				case 1:
+					return this.happyIcon;
+				case 2:
+					return this.happyIcon;
+				case 3:
+					return this.happyIcon;
+				case 4:
+					return '';
+			}
+		}*/
 
 		/* selectedEmotion = '';
 
