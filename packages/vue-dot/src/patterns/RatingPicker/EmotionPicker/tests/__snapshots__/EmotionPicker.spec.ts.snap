@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmotionPicker renders correctly 1`] = `
+exports['EmotionPicker renders correctly 1'] = `
 <div class="vd-emotion-picker">
   <div class="d-flex justify-center"><span class="mb-6 text-subtitle-2">
 			la deuxieme question ?
