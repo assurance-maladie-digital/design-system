@@ -1,18 +1,26 @@
 <template>
 	<VCard
 		:id="target"
+		:class="{
+			'd-flex flex-wrap align-center justify-center': !$attrs.sticky,
+			'overflow-y-auto': $attrs.sticky
+		}"
+		:elevation="$attrs.sticky ? undefined : 0"
 		width="100%"
-		max-height="300px"
-		class="overflow-y-auto"
+		max-height="250px"
 	>
 		<HeaderBar
 			v-bind="$attrs"
 			:target="target"
-			:class="{ 'sticky-header-example': $attrs.sticky }"
+			:class="{
+				'sticky-header-example': $attrs.sticky,
+				'hide-secondary-title-overflow': $attrs.theme === ThemeEnum.COMPTE_ENTREPRISE
+			}"
 			v-on="$listeners"
 		/>
 
 		<VSheet
+			v-if="$attrs.sticky"
 			height="600px"
 			class="d-flex flex-column align-center"
 		/>
@@ -23,7 +31,8 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { NavigationItem } from '@cnamts/vue-dot/src/patterns/HeaderBar/types'
+	import { NavigationItem } from '@cnamts/vue-dot/src/patterns/HeaderBar/types';
+	import { ThemeEnum } from '@cnamts/vue-dot/src/constants/enums/ThemeEnum';
 
 	const EXAMPLE_TARGET = 'header-bar-usage';
 
@@ -40,6 +49,7 @@
 		inheritAttrs: false
 	})
 	export default class HeaderBarUsage extends Vue {
+		ThemeEnum = ThemeEnum;
 		target = EXAMPLE_TARGET;
 
 		defaultProps = {
@@ -82,6 +92,11 @@
 
 		:deep(.vd-header-bar) {
 			position: static !important;
+		}
+
+		&.hide-secondary-title-overflow :deep(.vd-header-brand-section) {
+			overflow: hidden;
+			white-space: nowrap;
 		}
 	}
 </style>
