@@ -12,8 +12,13 @@ describe('EmotionPicker', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(EmotionPicker,{
 			propsData: {
-				length: 5,
-				label: 'Label'
+				length: 3,
+				label: 'Question',
+				labels: {
+					sad: 'Pas du tout',
+					neutral: 'Peut-être',
+					happy: 'Oui'
+				}
 			}
 		});
 
