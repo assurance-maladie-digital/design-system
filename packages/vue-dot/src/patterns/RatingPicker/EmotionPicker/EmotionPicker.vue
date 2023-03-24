@@ -15,8 +15,8 @@
 						'icon-button',
 						{
 							'sad': props.index === 0,
-							'neutral': props.index === 1,
-							'happy': props.index === 2
+							'neutral': props.index === 1 && length === 3,
+							'happy': props.index === 2 && length === 3 || props.index === 1 && length === 2
 						},
 						{
 							'active': props.index === emotionSelected
@@ -40,7 +40,10 @@
 						</slot>
 					</template>
 					<template v-else-if="props.index === 1">
-						<slot name="neutral">
+						<slot
+							v-if="length === 3"
+							name="neutral"
+						>
 							<VIcon
 								x-large
 								:color="genColor(props.index)"
@@ -51,8 +54,22 @@
 								{{ labels.neutral }}
 							</span>
 						</slot>
+						<slot
+							v-else
+							name="happy"
+						>
+							<VIcon
+								x-large
+								:color="genColor(props.index)"
+							>
+								{{ happyIcon }}
+							</VIcon>
+							<span class="description mt-1">
+								{{ labels.happy }}
+							</span>
+						</slot>
 					</template>
-					<template v-else-if="props.index === 2">
+					<template v-else-if="props.index === 2 && length === 3">
 						<slot name="happy">
 							<VIcon
 								x-large
@@ -76,7 +93,11 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from '../locales';
-	import { mdiEmoticonHappyOutline, mdiEmoticonSadOutline, mdiEmoticonNeutralOutline } from '@mdi/js';
+	import {
+		mdiEmoticonHappyOutline,
+		mdiEmoticonSadOutline,
+		mdiEmoticonNeutralOutline
+	} from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -86,7 +107,8 @@
 			},
 			length: {
 				type: Number,
-				default: 3
+				default: 3,
+				validator: (value: number) => value == 3 || value == 2
 			},
 			readonly: {
 				type: Boolean,
@@ -105,6 +127,7 @@
 	export default class EmotionPicker extends MixinsDeclaration {
 		locales = locales;
 		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-darken-20'];
+		colorsSimple = ['orange-darken-20', 'turquoise-darken-20'];
 
 		sadIcon = mdiEmoticonSadOutline;
 		neurtralIcon = mdiEmoticonNeutralOutline;
@@ -113,6 +136,9 @@
 		emotionSelected = -1;
 
 		genColor(index: number): string {
+			if (this.length === 2) {
+				return this.colorsSimple[index];
+			}
 			return this.colors[index];
 		}
 
