@@ -13,40 +13,13 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
-	const Props = Vue.extend({
-		props: {
-			label: {
-				type: String,
-				required: true
-			},
-			length: {
-				type: Number,
-				default: 5
-			},
-			readonly: {
-				type: Boolean,
-				default: false
-			}
-		}
-	});
-
-	const MixinsDeclaration = mixins(Props);
-
+	import { RatingMixin } from '../RatingMixin';
+	import Component from 'vue-class-component';
 	@Component
-	export default class StarsPicker extends MixinsDeclaration {
-
-		length_internal = this.length;
-		read_only_internal = false;
-		set_length(val: number): void {
+	export default class StarsPicker extends RatingMixin {
+		blockon(val: number): void {
+			this.read_only_internal = true;
 			this.length_internal = val;
-		}
-		set_read_only(val: boolean): void {
-			this.read_only_internal = val;
-		}
-		onValidate(event: Event): void {
-			this.$emit('input',this,event);
 		}
 	}
 </script>

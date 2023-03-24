@@ -2,11 +2,12 @@
 	<div>
 		<h6>{{ label }}</h6>
 		<v-rating
-			:length="length"
+			v-if="!read_only_internal"
+			:length="length_internal"
 			color="primary"
 			background-color="primary lighten-4"
 			hover
-			:readonly="haveAnswer"
+			:readonly="read_only_internal"
 		>
 			<template #item="props">
 				<v-btn
@@ -20,38 +21,29 @@
 				</v-btn>
 			</template>
 		</v-rating>
+		<div v-else>
+			<v-btn
+				class="mx-1 my-2 pa-0 rating-height-button"
+				color="primary"
+				outlined
+				x-small
+				disabled
+			>
+				{{ val_internal }}
+			</v-btn>
+			/ {{ length_internal }}
+		</div>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
-	const Props = Vue.extend({
-		props: {
-			label: {
-				type: String,
-				required: true
-			},
-			length: {
-				type: Number,
-				default: 5
-			}
-		}
-	});
-
-	const MixinsDeclaration = mixins(Props);
+	import { RatingMixin } from '../RatingMixin';
+	import Component from 'vue-class-component';
 
 	@Component
-	export default class NumberPicker extends MixinsDeclaration {
+	export default class NumberPicker extends RatingMixin {
 
-		haveAnswer =false;
-
-		onValidate(event: Event): void {
-			console.log(event);
-			this.haveAnswer = true;
-			this.length = Number(event);
-		}
-
+		length_internal = 10;
 	}
 </script>
 

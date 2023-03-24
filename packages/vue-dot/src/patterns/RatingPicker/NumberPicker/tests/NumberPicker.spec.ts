@@ -4,21 +4,19 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import RatingPicker from '..';
+import NumberPicker from '..';
 
 let wrapper: Wrapper<Vue>;
 
-describe('RatingPicker', () => {
+describe('NumberPicker', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(RatingPicker,{
+		wrapper = mountComponent(NumberPicker,{
 			propsData: {
-				mainQuestion: {
-						name: 'first-question',
-						type: 'stars',
-						question: 'Avez vous lu la première question ?'
-				}
+				length: 3,
+				label: 'la deuxieme question ?'
 			}
 		});
+
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 });
