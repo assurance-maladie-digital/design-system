@@ -9,7 +9,6 @@
 		<VBtn
 			v-if="!active"
 			color="primary"
-			class="text-none"
 			@click="active = true; info = true; checkTabKey()"
 		>
 			Réinitialiser

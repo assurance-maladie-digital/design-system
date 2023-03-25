@@ -31,10 +31,7 @@
 			class="vd-form-input mb-4"
 		/>
 
-		<VBtn
-			color="primary"
-			class="text-none"
-		>
+		<VBtn color="primary">
 			Valider
 		</VBtn>
 	</VForm>

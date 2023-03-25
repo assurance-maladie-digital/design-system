@@ -13,12 +13,7 @@ let wrapper: Wrapper<Vue>;
 
 describe('MaintenancePage', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(MaintenancePage, {
-			propsData: {
-				pageTitle: 'Error',
-				message: 'Error message'
-			}
-		});
+		wrapper = mountComponent(MaintenancePage);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});

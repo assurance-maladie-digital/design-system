@@ -14,7 +14,9 @@
 			<Logo
 				:hide-signature="hideSignature"
 				:risque-pro="isRisquePro"
+				:avatar="avatar"
 				:size="logoSize"
+				:class="{ 'mr-2': avatar }"
 			/>
 		</component>
 
@@ -84,10 +86,10 @@
 
 	import { tokens } from '@cnamts/design-tokens';
 
-	import { Dimensions, Next } from '../../../types';
-	import { LogoSizeEnum } from '../../../elements/Logo/LogoSizeEnum';
+	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
 
-	import { ThemeEnum } from '../ThemeEnum';
+	import { ThemeEnum } from '../../constants/enums/ThemeEnum';
+	import { Dimensions, Next } from '../../types';
 
 	import { LogoInfo, Service } from './types';
 	import { locales } from './locales';
@@ -112,6 +114,10 @@
 				type: Boolean,
 				default: false
 			},
+			reduceLogo: {
+				type: Boolean,
+				default: false
+			},
 			homeLink: {
 				type: [String, Boolean, Object] as PropType<Next>,
 				default: '/'
@@ -126,7 +132,7 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class HeaderBrandSection extends MixinsDeclaration {
+	export default class LogoBrandSection extends MixinsDeclaration {
 		locales = locales;
 
 		get service(): Service {
@@ -154,6 +160,10 @@
 		}
 
 		get isRisquePro(): boolean {
+			if (this.reduceLogo) {
+				return false;
+			}
+
 			return this.theme === ThemeEnum.RISQUE_PRO;
 		}
 
@@ -162,7 +172,7 @@
 		}
 
 		get hideSignature(): boolean {
-			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
+			if (this.reduceLogo || this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
 				return true;
 			}
 
@@ -205,7 +215,19 @@
 			return null;
 		}
 
+		get avatar(): boolean {
+			if (this.reduceLogo) {
+				return this.hasSecondaryLogo;
+			}
+
+			return false;
+		}
+
 		get showDivider(): boolean {
+			if (this.reduceLogo) {
+				return false;
+			}
+
 			return Boolean(this.hasSecondaryLogo || this.service.title);
 		}
 

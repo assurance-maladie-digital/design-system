@@ -24,7 +24,7 @@ export const api: Api = {
 			{
 				name: 'target',
 				type: 'string',
-				description: 'L’id de l’élément à sélectionner pour la gestion du défilement<br>Par défaut, l’élément `window` est utilisé.',
+				description: 'L’id de l’élément à sélectionner pour la gestion du défilement.<br>Par défaut, l’élément `window` est utilisé.',
 				default: 'undefined'
 			},
 			{

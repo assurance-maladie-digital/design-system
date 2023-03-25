@@ -10,12 +10,12 @@ description: Les Design Tokens sont un ensemble de variables qui représentent l
 Le thème clair est utilisé pour configurer le [thème](https://vuetifyjs.com/en/features/theme/) de Vuetify :
 
 - primary : `palette.amBlue.base`
-- secondary : `palette.cyan.darken20`
+- secondary : `palette.cyan.darken40`
 - accent : `palette.cyan.base`
 - error : `palette.orange.darken20`
 - info : `palette.amBlue.base`
-- success : `palette.turquoise.darken20`
-- warning : `palette.yellow.darken40`
+- success : `palette.green.base`
+- warning : `palette.yellow.base`
 - risque-pro : `palette.brick.base`
 
 ### Palette
