@@ -4,8 +4,8 @@
 			{{ label }}
 		</h6>
 		<v-rating
-			:length="length"
-			:readonly="readonly"
+			:length="emotions"
+			:readonly="read_only_internal"
 			large
 			hover
 			class="d-flex flex-wrap"
@@ -16,16 +16,16 @@
 						'icon-button',
 						{
 							'sad': props.index === 0,
-							'neutral': props.index === 1 && length === 3,
-							'happy': props.index === 2 && length === 3 || props.index === 1 && length === 2
+							'neutral': props.index === 1 && emotions === 3,
+							'happy': props.index === 2 && emotions === 3 || props.index === 1 && emotions === 2
 						},
 						{
 							'active': props.index === emotionSelected
 						}
 					]"
 					:tabindex="props.index + 1"
-					@click="onValidate(props.index)"
-					@keyup.enter="onValidate(props.index)"
+					@click="selectEmotion(props.index)"
+					@keyup.enter="selectEmotion(props.index)"
 				>
 					<template v-if="props.index === 0">
 						<slot name="sad">
@@ -42,7 +42,7 @@
 					</template>
 					<template v-else-if="props.index === 1">
 						<slot
-							v-if="length === 3"
+							v-if="emotions === 3"
 							name="neutral"
 						>
 							<VIcon
@@ -70,7 +70,7 @@
 							</span>
 						</slot>
 					</template>
-					<template v-else-if="props.index === 2 && length === 3">
+					<template v-else-if="props.index === 2 && emotions === 3">
 						<slot name="happy">
 							<VIcon
 								x-large
@@ -90,8 +90,8 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
+	import { RatingMixin } from '../RatingMixin';
+	import Component from 'vue-class-component';
 
 	import { locales } from '../locales';
 	import {
@@ -100,32 +100,8 @@
 		mdiEmoticonNeutralOutline
 	} from '@mdi/js';
 
-	const Props = Vue.extend({
-		props: {
-			label: {
-				type: String,
-				required: true
-			},
-			length: {
-				type: Number,
-				default: 3,
-				validator: (value: number) => value == 3 || value == 2
-			},
-			readonly: {
-				type: Boolean,
-				default: false
-			},
-			labels: {
-				type: Object,
-				default: () => ({})
-			}
-		}
-	});
-
-	const MixinsDeclaration = mixins(Props);
-
 	@Component
-	export default class EmotionPicker extends MixinsDeclaration {
+	export default class EmotionPicker extends RatingMixin {
 		locales = locales;
 		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-darken-20'];
 		colorsSimple = ['orange-darken-20', 'turquoise-darken-20'];
@@ -137,13 +113,18 @@
 		emotionSelected = -1;
 
 		genColor(index: number): string {
-			if (this.length === 2) {
+			if (this.emotions === 2) {
 				return this.colorsSimple[index];
 			}
 			return this.colors[index];
 		}
 
-		onValidate(index: number): void {
+		blockon(index: number): void {
+			this.read_only_internal = true;
+			this.emotions = index;
+		}
+
+		selectEmotion(index: number): void {
 			this.emotionSelected = index;
 			this.$emit('input', index);
 		}
