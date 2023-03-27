@@ -119,11 +119,6 @@
 			return this.colors[index];
 		}
 
-		blockon(index: number): void {
-			this.read_only_internal = true;
-			this.emotions = index;
-		}
-
 		selectEmotion(index: number): void {
 			this.emotionSelected = index;
 			this.$emit('input', index);

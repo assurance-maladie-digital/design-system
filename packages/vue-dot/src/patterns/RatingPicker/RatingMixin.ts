@@ -9,7 +9,8 @@ const Props = Vue.extend({
 		},
 		length: {
 			type: Number,
-			default: 5
+			default: 5,
+			required: false
 		},
 		readonly: {
 			type: Boolean,
