@@ -1,5 +1,8 @@
 <template>
-	<div class="d-flex justify-center">
+	<VCard
+		min-height="300px"
+		style="box-shadow: none"
+	>
 		<FiltersSideBar
 			v-model="filters"
 			side-bar-button
@@ -34,7 +37,7 @@
 				/>
 			</template>
 		</FiltersSideBar>
-	</div>
+	</VCard>
 </template>
 
 <script lang="ts">
