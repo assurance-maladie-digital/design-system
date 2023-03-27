@@ -4,7 +4,7 @@
 			{{ label }}
 		</h6>
 		<v-rating
-			:length="emotions"
+			:length="length"
 			:readonly="read_only_internal"
 			large
 			hover
@@ -16,8 +16,8 @@
 						'icon-button',
 						{
 							'sad': props.index === 0,
-							'neutral': props.index === 1 && emotions === 3,
-							'happy': props.index === 2 && emotions === 3 || props.index === 1 && emotions === 2
+							'neutral': props.index === 1 && length === 3,
+							'happy': props.index === 2 && length === 3 || props.index === 1 && length === 2
 						},
 						{
 							'active': props.index === emotionSelected
@@ -36,13 +36,13 @@
 								{{ sadIcon }}
 							</VIcon>
 							<span class="description mt-1">
-								{{ labels.sad }}
+								{{ itemLabels.sad }}
 							</span>
 						</slot>
 					</template>
 					<template v-else-if="props.index === 1">
 						<slot
-							v-if="emotions === 3"
+							v-if="length === 3"
 							name="neutral"
 						>
 							<VIcon
@@ -52,7 +52,7 @@
 								{{ neurtralIcon }}
 							</VIcon>
 							<span class="description mt-1">
-								{{ labels.neutral }}
+								{{ itemLabels.neutral }}
 							</span>
 						</slot>
 						<slot
@@ -66,11 +66,11 @@
 								{{ happyIcon }}
 							</VIcon>
 							<span class="description mt-1">
-								{{ labels.happy }}
+								{{ itemLabels.happy }}
 							</span>
 						</slot>
 					</template>
-					<template v-else-if="props.index === 2 && emotions === 3">
+					<template v-else-if="props.index === 2 && length === 3">
 						<slot name="happy">
 							<VIcon
 								x-large
@@ -79,7 +79,7 @@
 								{{ happyIcon }}
 							</VIcon>
 							<span class="description mt-1">
-								{{ labels.happy }}
+								{{ itemLabels.happy }}
 							</span>
 						</slot>
 					</template>
@@ -90,8 +90,9 @@
 </template>
 
 <script lang="ts">
+	import Vue from 'vue';
 	import { RatingMixin } from '../RatingMixin';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from '../locales';
 	import {
@@ -100,8 +101,24 @@
 		mdiEmoticonNeutralOutline
 	} from '@mdi/js';
 
+	const Props = Vue.extend({
+		props: {
+			length: {
+				type: Number,
+				default: 3,
+				validator: (value: number) => value == 3 || value == 2
+			},
+			itemLabels: {
+				type: Object,
+				default: () => ({})
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props, RatingMixin);
+
 	@Component
-	export default class EmotionPicker extends RatingMixin {
+	export default class EmotionPicker extends MixinsDeclaration {
 		locales = locales;
 		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-darken-20'];
 		colorsSimple = ['orange-darken-20', 'turquoise-darken-20'];
@@ -112,8 +129,13 @@
 
 		emotionSelected = -1;
 
+		blockon(index: number): void {
+			this.read_only_internal = true;
+			this.length = index;
+		}
+
 		genColor(index: number): string {
-			if (this.emotions === 2) {
+			if (this.length === 2) {
 				return this.colorsSimple[index];
 			}
 			return this.colors[index];
