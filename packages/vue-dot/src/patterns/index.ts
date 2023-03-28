@@ -3,9 +3,6 @@ import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
 import FileUpload from './FileUpload';
 import FilterModule from './FilterModule';
-import InlineFilters from './InlineFilters';
-import FiltersSideBar from './FiltersSideBar';
-import ChipsList from './ChipsList';
 import PeriodField from './PeriodField';
 import FooterBar from './FooterBar';
 import FooterWrapper from './FooterWrapper';
@@ -19,6 +16,8 @@ import PhoneField from './PhoneField';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
+import InlineFilters from './Filters/InlineFilters';
+import FiltersSideBar from './Filters/FiltersSideBar';
 
 export const patterns = {
 	CookieBanner,
@@ -26,9 +25,6 @@ export const patterns = {
 	DatePicker,
 	FileUpload,
 	FilterModule,
-	InlineFilters,
-	FiltersSideBar,
-	ChipsList,
 	PeriodField,
 	FooterBar,
 	FooterWrapper,
@@ -41,5 +37,7 @@ export const patterns = {
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow,
-	RatingPicker
+	RatingPicker,
+	InlineFilters,
+	FiltersSideBar
 };

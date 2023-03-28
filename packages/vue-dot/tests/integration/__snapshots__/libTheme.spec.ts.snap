@@ -5,7 +5,6 @@ Object {
   "components": Array [
     "BackBtn",
     "BackToTopBtn",
-    "ChipsList",
     "CookieBanner",
     "CookiesPage",
     "CopyBtn",

@@ -113,7 +113,7 @@
 	import Component, { mixins } from 'vue-class-component';
 	import ChipsList from '../ChipsList';
 
-	import { FilterMixin } from '../../mixins/FilterMixin';
+	import { FilterMixin } from '../../../mixins/filters';
 	import { FilterItem } from './types';
 	import { locales } from './locales';
 
