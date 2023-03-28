@@ -1,38 +1,40 @@
 <template>
 	<div>
 		<h6>{{ label }}</h6>
-		<v-rating
-			v-if="!read_only_internal"
-			:length="length_internal"
+		<VRating
+			v-if="!readonlyInternal"
+			:length="lengthInternal"
 			color="primary"
 			background-color="primary lighten-4"
 			hover
-			:readonly="read_only_internal"
+			:readonly="readonlyInternal"
 			class="d-flex flex-wrap"
 		>
-			<template #item="props">
-				<v-btn
-					class="mx-1 my-2 pa-0 rating-height-button"
+			<template #item="{index}">
+				<VBtn
+					class="mx-1 my-2 pa-0"
 					color="primary"
+					min-height="36px"
 					outlined
 					x-small
-					@click="onDispatchValue(props.index)"
+					@click="onDispatchValue(index)"
 				>
-					{{ props.index }}
-				</v-btn>
+					{{ index }}
+				</VBtn>
 			</template>
-		</v-rating>
+		</VRating>
 		<div v-else>
-			<v-btn
-				class="mx-1 my-2 pa-0 rating-height-button"
+			<VBtn
+				class="mx-1 my-2 pa-0"
 				color="primary"
 				outlined
 				x-small
 				disabled
+				min-height="36px"
 			>
-				{{ val_internal }}
-			</v-btn>
-			/ {{ length_internal }}
+				{{ valueInternal }}
+			</VBtn>
+			/ {{ lengthInternal }}
 		</div>
 	</div>
 </template>
@@ -45,14 +47,3 @@
 	export default class NumberPicker extends RatingMixin {
 	}
 </script>
-
-<style lang="scss" scoped>
-
-.rating-height-button {
-	min-height: 36px;
-}
-h6 {
-	font-size: 16px
-}
-
-</style>

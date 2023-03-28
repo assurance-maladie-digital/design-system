@@ -26,14 +26,10 @@ const MixinsDeclaration = mixins(Props);
 @Component
 export class RatingMixin extends MixinsDeclaration {
 
-	val_internal= this.value;
-	length_internal = this.length;
-	read_only_internal = false;
-	blockon(val: number): void {
-		this.val_internal = val;
-		this.read_only_internal = true;
-	}
+	valueInternal= this.value;
+	lengthInternal = this.length;
+	readonlyInternal = false;
 	onDispatchValue(event: number): void {
-		this.$emit('input',event,this);
+		this.$emit('input',event);
 	}
 }

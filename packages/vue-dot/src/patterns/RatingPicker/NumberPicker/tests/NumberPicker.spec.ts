@@ -12,8 +12,7 @@ describe('NumberPicker', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(NumberPicker,{
 			propsData: {
-				length: 3,
-				label: 'la deuxieme question ?'
+				label: 'Pourriez-vous donner une note ?'
 			}
 		});
 

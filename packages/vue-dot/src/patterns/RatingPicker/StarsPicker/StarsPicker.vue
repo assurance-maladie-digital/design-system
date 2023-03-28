@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<h6>{{ label }}</h6>
-		<v-rating
-			:length="length_internal"
+		<VRating
+			:length="lengthInternal"
 			color="primary"
 			background-color="primary lighten-4"
 			hover
-			:readonly="read_only_internal"
+			:readonly="readonlyInternal"
 			class="d-flex flex-wrap"
 			@input="onDispatchValue"
 		/>
@@ -18,18 +18,5 @@
 	import Component from 'vue-class-component';
 	@Component
 	export default class StarsPicker extends RatingMixin {
-		blockon(val: number): void {
-			this.read_only_internal = true;
-			this.length_internal = val;
-			this.val_internal = val;
-		}
 	}
 </script>
-
-<style lang="scss" scoped>
-
-h6 {
-	font-size: 16px
-}
-
-</style>

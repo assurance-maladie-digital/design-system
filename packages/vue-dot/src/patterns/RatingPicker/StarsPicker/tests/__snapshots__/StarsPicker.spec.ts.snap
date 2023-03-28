@@ -2,7 +2,7 @@
 
 exports[`StarsPicker renders correctly 1`] = `
 <div>
-  <h6>la deuxieme question ?</h6>
-  <v-rating-stub color="primary" opendelay="0" closedelay="0" ripple="true" backgroundcolor="primary lighten-4" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" hover="true" length="3" value="0" iconlabel="$vuetify.rating.ariaLabel.icon" class="d-flex flex-wrap"></v-rating-stub>
+  <h6>Pourriez-vous donner une note ?</h6>
+  <vrating-stub color="primary" opendelay="0" closedelay="0" ripple="true" backgroundcolor="primary lighten-4" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" hover="true" length="5" value="0" iconlabel="$vuetify.rating.ariaLabel.icon" class="d-flex flex-wrap"></vrating-stub>
 </div>
 `;

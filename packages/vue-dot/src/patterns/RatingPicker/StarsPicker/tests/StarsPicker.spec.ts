@@ -12,8 +12,7 @@ describe('StarsPicker', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(StarsPicker,{
 			propsData: {
-				length: 3,
-				label: 'la deuxieme question ?'
+				label: 'Pourriez-vous donner une note ?'
 			}
 		});
 
