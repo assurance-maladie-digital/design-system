@@ -140,13 +140,20 @@
 		async getSelectableElements(): Promise<SelectableElements | undefined> {
 			await this.$nextTick();
 
-			const elements = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
+			const elements = document.querySelectorAll<any>('a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])');
 
 			if (!elements.length) {
 				return;
 			}
 
-			return elements;
+			const filteredElements: any = [];
+			elements.forEach(element => {
+				if (!element.disabled && !element.ariaHidden) {
+					filteredElements.push(element);
+				}
+			});
+
+			return filteredElements;
 		}
 
 		async setEventListeners(): Promise<void> {
