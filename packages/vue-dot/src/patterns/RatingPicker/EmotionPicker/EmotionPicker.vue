@@ -8,13 +8,14 @@
 			:readonly="readonly"
 			large
 			hover
-			class="d-flex flex-wrap"
+			class="d-flex flex-wrap flex-row justify-space-between"
 			:class="{
 				'justify-center': readonly && emotionSelected !== -1
 			}"
 		>
 			<template #item="props">
 				<div
+					class="d-flex flex-column align-center justify-center"
 					:class="iconButtonClasses(props.index)"
 					:tabindex="props.index + 1"
 					@click="selectEmotion(props.index)"
@@ -24,6 +25,7 @@
 						<slot :name="slotName(props.index)">
 							<VIcon
 								x-large
+								class="pa-0"
 								:color="genColor(props.index)"
 							>
 								{{ getIcon(props.index) }}
@@ -137,20 +139,6 @@ h6 {
 }
 .description {
 	font-size: 12px;
-}
-.v-rating {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	div {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-	.v-icon {
-		padding: 0;
-	}
 }
 .icon-button {
 	height: 88px;
