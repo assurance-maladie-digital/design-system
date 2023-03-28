@@ -5,10 +5,13 @@
 		</h6>
 		<v-rating
 			:length="length"
-			:readonly="read_only_internal"
+			:readonly="readonly"
 			large
 			hover
 			class="d-flex flex-wrap"
+			:class="{
+				'justify-center': readonly && emotionSelected !== -1
+			}"
 		>
 			<template #item="props">
 				<div
@@ -83,7 +86,8 @@
 				'sad': el === 0,
 				'neutral': el === 1 && this.length === 3,
 				'happy': (el === 2 && this.length === 3) || (el === 1 && this.length === 2),
-				'active': el === this.emotionSelected
+				'active': el === this.emotionSelected,
+				'd-none': this.readonly && this.emotionSelected !== -1 && el !== this.emotionSelected
 			};
 		}
 
