@@ -2,9 +2,12 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import { FilterMixin } from '../';
+import { ChipItem } from '../types';
 
 interface TestComponent extends Vue {
 	filters: Record<string, string>;
+	onChange(filters: Record<string, string>): string;
+	removeAccents(str: string): string;
 }
 
 const filtersExemple = [
@@ -63,14 +66,27 @@ describe('filters', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.onChange(filtersExemple)).toBe('elephant');
+		expect(wrapper.vm.onChange(
+			{
+				limited: 'true',
+				splited: 'false',
+				label: 'Nom',
+				name: 'nom',
+				description: '',
+				showAll: 'false',
+				icon: '',
+				selection: 'Elephant',
+				value: 'elephant',
+				style: ''
+			}
+		)).toBe('elephant');
 	});
 
 	it('removeAccents', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		expect(wrapper.removeAccents('éléphant')).toBe('elephant');
+		expect(wrapper.vm.removeAccents('éléphant')).toBe('elephant');
 	});
 
 });
