@@ -76,20 +76,16 @@
 		sadIcon = mdiEmoticonSadOutline;
 		neurtralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
-
-		el = {
-			index: Number
-		};
 		emotionSelected = -1;
 
-		iconButtonClasses(el: number): object {
+		iconButtonClasses(index: number): object {
 			return {
 				'icon-button': true,
-				'sad': el === 0,
-				'neutral': el === 1 && this.length === 3,
-				'happy': (el === 2 && this.length === 3) || (el === 1 && this.length === 2),
-				'active': el === this.emotionSelected,
-				'd-none': this.readonly && this.emotionSelected !== -1 && el !== this.emotionSelected
+				'sad': index === 0,
+				'neutral': index === 1 && this.length === 3,
+				'happy': (index === 2 && this.length === 3) || (index === 1 && this.length === 2),
+				'active': index === this.emotionSelected,
+				'd-none': this.readonly && this.emotionSelected !== -1 && index !== this.emotionSelected
 			};
 		}
 
