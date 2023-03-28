@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CollapseList renders correctly 1`] = `
+exports[`CollapsibleList renders correctly 1`] = `
 <div class="vd-collapse-list my-4">
   <div>
     <div class="mb-2"><span class="text-subtitle-1 font-weight-bold">
