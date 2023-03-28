@@ -1,6 +1,6 @@
 {
   "name": "@cnamts/eslint-config",
-  "version": "2.9.0-beta.1",
+  "version": "2.9.0-beta.2",
   "description": "ESLint configurations for JavaScript and TypeScript used across our projects",
   "keywords": [
     "cnam",
