@@ -12,74 +12,21 @@
 		>
 			<template #item="props">
 				<div
-					:class="[
-						'icon-button',
-						{
-							'sad': props.index === 0,
-							'neutral': props.index === 1 && length === 3,
-							'happy': props.index === 2 && length === 3 || props.index === 1 && length === 2
-						},
-						{
-							'active': props.index === emotionSelected
-						}
-					]"
+					:class="iconButtonClasses(props.index)"
 					:tabindex="props.index + 1"
 					@click="selectEmotion(props.index)"
 					@keyup.enter="selectEmotion(props.index)"
 				>
-					<template v-if="props.index === 0">
-						<slot name="sad">
+					<template>
+						<slot :name="slotName(props.index)">
 							<VIcon
 								x-large
 								:color="genColor(props.index)"
 							>
-								{{ sadIcon }}
+								{{ getIcon(props.index) }}
 							</VIcon>
 							<span class="description mt-1">
-								{{ itemLabels.sad }}
-							</span>
-						</slot>
-					</template>
-					<template v-else-if="props.index === 1">
-						<slot
-							v-if="length === 3"
-							name="neutral"
-						>
-							<VIcon
-								x-large
-								:color="genColor(props.index)"
-							>
-								{{ neurtralIcon }}
-							</VIcon>
-							<span class="description mt-1">
-								{{ itemLabels.neutral }}
-							</span>
-						</slot>
-						<slot
-							v-else
-							name="happy"
-						>
-							<VIcon
-								x-large
-								:color="genColor(props.index)"
-							>
-								{{ happyIcon }}
-							</VIcon>
-							<span class="description mt-1">
-								{{ itemLabels.happy }}
-							</span>
-						</slot>
-					</template>
-					<template v-else-if="props.index === 2 && length === 3">
-						<slot name="happy">
-							<VIcon
-								x-large
-								:color="genColor(props.index)"
-							>
-								{{ happyIcon }}
-							</VIcon>
-							<span class="description mt-1">
-								{{ itemLabels.happy }}
+								{{ itemLabels[slotName(props.index)] }}
 							</span>
 						</slot>
 					</template>
@@ -94,7 +41,6 @@
 	import { RatingMixin } from '../RatingMixin';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { locales } from '../locales';
 	import {
 		mdiEmoticonHappyOutline,
 		mdiEmoticonSadOutline,
@@ -119,7 +65,6 @@
 
 	@Component
 	export default class EmotionPicker extends MixinsDeclaration {
-		locales = locales;
 		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-darken-20'];
 		colorsSimple = ['orange-darken-20', 'turquoise-darken-20'];
 
@@ -127,11 +72,43 @@
 		neurtralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
 
+		el = {
+			index: Number
+		};
 		emotionSelected = -1;
 
-		blockon(index: number): void {
-			this.read_only_internal = true;
-			this.length = index;
+		iconButtonClasses(el: number): object {
+			return {
+				'icon-button': true,
+				'sad': el === 0,
+				'neutral': el === 1 && this.length === 3,
+				'happy': (el === 2 && this.length === 3) || (el === 1 && this.length === 2),
+				'active': el === this.emotionSelected
+			};
+		}
+
+		slotName(index: number): string {
+			if (index === 0) {
+				return 'sad';
+			} else if (index === 1 && this.length === 3) {
+				return 'neutral';
+			} else if (index === 1 && this.length === 2) {
+				return 'happy';
+			} else {
+				return 'happy';
+			}
+		}
+
+		getIcon(index: number): string {
+			if (index === 0) {
+				return this.sadIcon;
+			} else if (index === 1 && this.length === 3) {
+				return this.neurtralIcon;
+			} else if (index === 1 && this.length === 2) {
+				return this.happyIcon;
+			} else {
+				return this.happyIcon;
+			}
 		}
 
 		genColor(index: number): string {

@@ -5,12 +5,11 @@ const Props = Vue.extend({
 	props: {
 		label: {
 			type: String,
-			required: true
+			default: ''
 		},
 		length: {
 			type: Number,
-			default: 5,
-			required: false
+			default: 5
 		},
 		readonly: {
 			type: Boolean,
