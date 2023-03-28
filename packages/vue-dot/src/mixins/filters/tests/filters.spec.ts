@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { filters } from '../';
+import { FilterMixin } from '../';
 
 interface TestComponent extends Vue {
 	filters: Record<string, string>;
@@ -45,7 +45,7 @@ const filtersExemple = [
 function createTestComponent() {
 	return Vue.component('TestComponent', {
 		mixins: [
-			filters
+			FilterMixin
 		],
 		template: '<div />'
 	});
@@ -63,14 +63,14 @@ describe('filters', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.onChange('éléphant')).toBe('elephant');
+		expect(wrapper.vm.onChange(filtersExemple)).toBe('elephant');
 	});
 
 	it('removeAccents', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.removeAccents(filtersExemple)).toBe('elephant');
+		expect(wrapper.removeAccents('éléphant')).toBe('elephant');
 	});
 
 });

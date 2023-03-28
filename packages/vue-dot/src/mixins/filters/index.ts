@@ -28,7 +28,7 @@ const Props = Vue.extend({
 const MixinsDeclaration = mixins(Props);
 
 @Component
-export class filters extends MixinsDeclaration {
+export class FilterMixin extends MixinsDeclaration {
 
 	downIcon = mdiChevronDown;
 	deleteIcon = mdiWindowClose;
