@@ -41,7 +41,6 @@
 						>
 							<a
 								:href="item.route"
-								target="_blank"
 								class="text-body-2 text-decoration-none black--text"
 							>
 								{{ item.name }}
@@ -58,7 +57,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { listItem } from '../CollapseList/types';
+	import { listItem } from './types';
 
 	const Props = Vue.extend({
 		props: {
@@ -72,19 +71,10 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class CollapseList extends MixinsDeclaration {
+	export default class CollapsibleList extends MixinsDeclaration {
 
 		get isMobile(): boolean {
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-.title {
-	font-weight: 600 !important;
-}
-.theme--light.v-expansion-panels .v-expansion-panel {
-	background-color: transparent !important;
-}
-</style>

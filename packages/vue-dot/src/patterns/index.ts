@@ -5,7 +5,7 @@ import DatePicker from './DatePicker';
 import FileUpload from './FileUpload';
 import FilterModule from './FilterModule';
 import FooterBar from './FooterBar';
-import CollapseList from './FooterBar/CollapseList';
+import CollapsibleList from './FooterBar/CollapsibleList';
 import FooterWrapper from './FooterWrapper';
 import HeaderBar from './HeaderBar';
 import LangBtn from './LangBtn';
@@ -37,5 +37,5 @@ export const patterns = {
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow,
-	CollapseList
+	CollapsibleList
 };

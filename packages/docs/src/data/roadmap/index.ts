@@ -36,7 +36,7 @@ export const roadmap: IndexedObject<RoadmapSection[]> = {
 				},
 				{
 					title: 'Nouveau composant liste réductible',
-					description: 'Ajout du nouveau composant CollapseList.',
+					description: 'Ajout du nouveau composant CollapsibleList.',
 					label: LabelMappingEnum.NEW,
 					issue: 2454
 				},

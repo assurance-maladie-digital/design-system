@@ -5,13 +5,13 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import CollapseList from '..';
+import CollapsibleList from '../';
 
 let wrapper: Wrapper<Vue>;
 
-describe('CollapseList', () => {
+describe('CollapsibleList', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(CollapseList);
+		wrapper = mountComponent(CollapsibleList);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
