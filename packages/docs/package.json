@@ -32,7 +32,7 @@
     "nuxt": "2.16.3",
     "remark": "13.0.0",
     "remark-html": "13.0.2",
-    "slugify": "1.6.5",
+    "slugify": "1.6.6",
     "vue-prism-component": "1.2.0"
   },
   "devDependencies": {
