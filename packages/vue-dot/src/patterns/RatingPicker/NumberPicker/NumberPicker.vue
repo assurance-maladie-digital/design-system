@@ -16,7 +16,7 @@
 					color="primary"
 					outlined
 					x-small
-					@click="onValidate(props.index)"
+					@click="onDispatchValue(props.index)"
 				>
 					{{ props.index }}
 				</v-btn>

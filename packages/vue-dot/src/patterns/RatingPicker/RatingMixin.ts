@@ -14,22 +14,26 @@ const Props = Vue.extend({
 		readonly: {
 			type: Boolean,
 			default: false
+		},
+		value: {
+			type: Number,
+			default: 0
 		}
 	}
 });
 const MixinsDeclaration = mixins(Props);
-// You can declare mixins as the same style as components.
+// tout les ratings utilise ce mixin pour gerer length,read_only, event
 @Component
 export class RatingMixin extends MixinsDeclaration {
 
+	val_internal= this.value;
 	length_internal = this.length;
 	read_only_internal = false;
-	val_internal = 0;
 	blockon(val: number): void {
-		this.read_only_internal = true;
 		this.val_internal = val;
+		this.read_only_internal = true;
 	}
-	onValidate(event: Event): void {
-		this.$emit('input',this,event);
+	onDispatchValue(event: number): void {
+		this.$emit('input',event,this);
 	}
 }

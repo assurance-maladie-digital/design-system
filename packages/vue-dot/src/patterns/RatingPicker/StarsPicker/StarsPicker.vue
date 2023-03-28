@@ -8,7 +8,7 @@
 			hover
 			:readonly="read_only_internal"
 			class="d-flex flex-wrap"
-			@input="onValidate"
+			@input="onDispatchValue"
 		/>
 	</div>
 </template>
@@ -21,6 +21,7 @@
 		blockon(val: number): void {
 			this.read_only_internal = true;
 			this.length_internal = val;
+			this.val_internal = val;
 		}
 	}
 </script>
