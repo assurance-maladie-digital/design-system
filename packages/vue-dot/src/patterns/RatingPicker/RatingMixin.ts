@@ -5,6 +5,7 @@ export enum RatingEnum{
 	NUMBER='NumberPicker',
 	STAR='StarsPicker',
 }
+
 const Props = Vue.extend({
 	props: {
 		label: {
@@ -36,5 +37,9 @@ export class RatingMixin extends MixinsDeclaration {
 
 	onDispatchValue(event: number): void {
 		this.$emit('input', event);
+	}
+	blockon(value: number): void {
+		this.readonlyInternal = true;
+		this.valueInternal = value;
 	}
 }

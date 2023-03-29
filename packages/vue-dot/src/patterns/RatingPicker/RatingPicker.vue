@@ -2,19 +2,21 @@
 	<div>
 		<component
 			:is="type"
+			ref="firstRating"
 			:label="label"
-			:length="length_internal"
-			@input="onFirstValidation"
+			:length="length"
+			:readonly="readonlyInternal"
+			@input="onUpdate"
 		/>
-
-		<v-alert
-			v-if="read_only_internal"
-			outlined
-			type="success"
-		>
-			ca va
-		</v-alert>
-		<slot />
+		<div v-if="readonlyInternal">
+			<v-alert
+				outlined
+				type="success"
+			>
+				ca va
+			</v-alert>
+			<slot />
+		</div>
 		<div class="mr-2 mt-5 d-flex justify-space-between ">
 			<v-btn
 				text
@@ -33,7 +35,6 @@
 </template>
 <script lang="ts">
 	import Component, { mixins } from 'vue-class-component';
-
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
 	import { RatingEnum, RatingMixin } from './RatingMixin';
@@ -46,10 +47,18 @@
 				type: String as PropType<RatingEnum>,
 				required: true,
 				validator: (value: string) => propValidator('type', Object.values(RatingEnum), value)
+			},
+			label: {
+				type: String,
+				required: true
+			},
+			readonly: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
-	const MixinsDeclaration = mixins(Props,RatingMixin);
+	const MixinsDeclaration = mixins(Props);
 
 	@Component({
 		components: {
@@ -58,15 +67,23 @@
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
+		$refs!: {
+			firstRating: RatingMixin;
+		};
 
-		currentPicker: string=this.type;
-		onFirstValidation(event: RatingMixin, value: number): void {
-			this.read_only_internal = true;
-			event.blockon(value);
+		readonlyInternal = this.readonly;
+
+		get length(): number {
+			switch (this.type) {
+				case RatingEnum.NUMBER: return 10;
+				case RatingEnum.STAR: return 5;
+			}
+			return 3;
+		}
+		onUpdate( value: number): void {
+			this.readonlyInternal = true;
+			// on laisse a chaque rating le soin de decider comment il se bloque
+			this.$refs.firstRating.blockon(value);
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
