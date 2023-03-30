@@ -21,15 +21,16 @@ const Props = Vue.extend({
 		}
 	}
 });
+
 const MixinsDeclaration = mixins(Props);
-// tout les ratings utilise ce mixin pour gerer length,read_only, event
+
 @Component
 export class RatingMixin extends MixinsDeclaration {
-
 	valueInternal= this.value;
 	lengthInternal = this.length;
 	readonlyInternal = false;
+
 	onDispatchValue(event: number): void {
-		this.$emit('input',event);
+		this.$emit('input', event);
 	}
 }

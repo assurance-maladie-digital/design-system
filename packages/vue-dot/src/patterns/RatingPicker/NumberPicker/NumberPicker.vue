@@ -1,49 +1,52 @@
 <template>
 	<div>
 		<h6>{{ label }}</h6>
+
 		<VRating
 			v-if="!readonlyInternal"
 			:length="lengthInternal"
+			:readonly="readonlyInternal"
+			hover
 			color="primary"
 			background-color="primary lighten-4"
-			hover
-			:readonly="readonlyInternal"
 			class="d-flex flex-wrap"
 		>
-			<template #item="{index}">
+			<template #item="{ index }">
 				<VBtn
-					class="mx-1 my-2 pa-0"
+					x-small
+					outlined
 					color="primary"
 					min-height="36px"
-					outlined
-					x-small
+					class="mx-1 my-2 pa-0"
 					@click="onDispatchValue(index)"
 				>
 					{{ index }}
 				</VBtn>
 			</template>
 		</VRating>
+
 		<div v-else>
 			<VBtn
-				class="mx-1 my-2 pa-0"
-				color="primary"
 				outlined
 				x-small
 				disabled
+				color="primary"
 				min-height="36px"
+				class="mx-1 my-2 pa-0"
 			>
 				{{ valueInternal }}
 			</VBtn>
+
 			/ {{ lengthInternal }}
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
-	import { RatingMixin } from '../RatingMixin';
 	import Component from 'vue-class-component';
 
+	import { RatingMixin } from '../RatingMixin';
+
 	@Component
-	export default class NumberPicker extends RatingMixin {
-	}
+	export default class NumberPicker extends RatingMixin {}
 </script>
