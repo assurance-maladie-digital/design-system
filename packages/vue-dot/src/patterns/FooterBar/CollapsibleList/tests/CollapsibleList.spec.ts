@@ -11,7 +11,20 @@ let wrapper: Wrapper<Vue>;
 
 describe('CollapsibleList', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(CollapsibleList);
+		wrapper = mountComponent(CollapsibleList, {
+			propsData: {
+				items: [
+					{
+						text: 'Item 1',
+						route: '/item1'
+					},
+					{
+						text: 'Item 2',
+						route: '/item2'
+					}
+				]
+			}
+		});
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
