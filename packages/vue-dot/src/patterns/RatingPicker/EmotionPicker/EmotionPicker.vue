@@ -78,6 +78,16 @@
 		happyIcon = mdiEmoticonHappyOutline;
 		emotionSelected = -1;
 
+		mounted(): void {
+			this.checkLength();
+		}
+
+		checkLength(): void {
+			if (this.length !== 2 && this.length !== 3) {
+				console.error('length must be 2 or 3');
+			}
+		}
+
 		iconButtonClasses(index: number): object {
 			return {
 				'icon-button': true,
