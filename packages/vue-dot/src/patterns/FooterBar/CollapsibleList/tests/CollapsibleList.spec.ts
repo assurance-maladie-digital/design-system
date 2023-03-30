@@ -13,6 +13,7 @@ describe('CollapsibleList', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(CollapsibleList, {
 			propsData: {
+				title: 'Title',
 				items: [
 					{
 						text: 'Item 1',
