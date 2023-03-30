@@ -84,6 +84,7 @@
 
 		checkLength(): void {
 			if (this.length !== 2 && this.length !== 3) {
+				// eslint-disable-next-line no-console
 				console.error('length must be 2 or 3');
 			}
 		}
