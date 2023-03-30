@@ -3,7 +3,7 @@
 exports[`CollapsibleList renders correctly 1`] = `
 <vlistitem-stub activeclass="" tag="div" title="Title" content="[object Object],[object Object]">
   <vlistitemcontent-stub tag="div">
-    <vlistitemtitle-stub tag="div" class="mb-2 text-subtitle-1 font-weight-bold">
+    <vlistitemtitle-stub tag="div" class="mb-3 text-subtitle-1 font-weight-bold">
 
     </vlistitemtitle-stub>
   </vlistitemcontent-stub>
