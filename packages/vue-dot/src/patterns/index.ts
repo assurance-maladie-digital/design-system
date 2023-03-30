@@ -5,7 +5,6 @@ import DatePicker from './DatePicker';
 import FileUpload from './FileUpload';
 import FilterModule from './FilterModule';
 import FooterBar from './FooterBar';
-import CollapsibleList from './FooterBar/CollapsibleList';
 import FooterWrapper from './FooterWrapper';
 import HeaderBar from './HeaderBar';
 import LangBtn from './LangBtn';
@@ -36,6 +35,5 @@ export const patterns = {
 	RatingPicker,
 	SubHeader,
 	TableToolbar,
-	UploadWorkflow,
-	CollapsibleList
+	UploadWorkflow
 };

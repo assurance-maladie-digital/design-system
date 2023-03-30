@@ -1,54 +1,49 @@
 <template>
-	<div class="vd-collapse-list my-4">
-		<div v-if="!isMobile">
-			<div
-				class="mb-2"
-			>
-				<span class="text-subtitle-1 font-weight-bold">
-					{{ listItems.title }}
-				</span>
-			</div>
-			<div
-				v-for="item in listItems.list"
-				:key="item.name"
-				class="mb-2"
-			>
-				<a
-					:href="item.route"
-					target="_blank"
-					class="text-body-2 text-decoration-none black--text"
-				>
-					{{ item.name }}
-				</a>
-			</div>
-		</div>
-		<div v-else>
-			<v-expansion-panels
+	<div class="vd-collapse-list">
+		<div v-if="isMobile">
+			<VExpansionPanels
 				accordion
 				flat
 			>
-				<v-expansion-panel>
-					<v-expansion-panel-header>
-						<span class="font-weight-bold">
+				<VExpansionPanel>
+					<VExpansionPanelHeader>
+						<h4 class="font-weight-bold">
 							{{ listItems.title }}
-						</span>
-					</v-expansion-panel-header>
-					<v-expansion-panel-content>
+						</h4>
+					</VExpansionPanelHeader>
+					<VExpansionPanelContent>
 						<div
-							v-for="item in listItems.list"
+							v-for="item in listItems.content"
 							:key="item.name"
 							class="mb-2"
 						>
 							<a
-								:href="item.route"
+								:href="item.url"
 								class="text-body-2 text-decoration-none black--text"
 							>
 								{{ item.name }}
 							</a>
 						</div>
-					</v-expansion-panel-content>
-				</v-expansion-panel>
-			</v-expansion-panels>
+					</VExpansionPanelContent>
+				</VExpansionPanel>
+			</VExpansionPanels>
+		</div>
+		<div v-else>
+			<h4 class="mb-2 text-subtitle-1 font-weight-bold">
+				{{ listItems.title }}
+			</h4>
+			<div
+				v-for="item in listItems.content"
+				:key="item.name"
+				class="mb-2"
+			>
+				<a
+					:href="item.url"
+					class="text-body-2 text-decoration-none black--text"
+				>
+					{{ item.name }}
+				</a>
+			</div>
 		</div>
 	</div>
 </template>
@@ -57,12 +52,12 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import { listItem } from './types';
+	import { ListItem } from './types';
 
 	const Props = Vue.extend({
 		props: {
 			listItems: {
-				type: Object as PropType<listItem>,
+				type: Object as PropType<ListItem>,
 				default: () => ({})
 			}
 		}
@@ -72,7 +67,6 @@
 
 	@Component
 	export default class CollapsibleList extends MixinsDeclaration {
-
 		get isMobile(): boolean {
 			return this.$vuetify.breakpoint.smAndDown;
 		}

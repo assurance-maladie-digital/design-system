@@ -1,4 +1,4 @@
-export interface listItem {
+export interface ListItem {
 	title: string;
-	list: [];
+	content: object[];
 }
