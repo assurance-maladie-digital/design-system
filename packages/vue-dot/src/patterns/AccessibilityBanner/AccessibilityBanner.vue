@@ -11,7 +11,7 @@
 				:width="btnWidth"
 				:to="accessibilityRoute"
 				@click="accept"
-				@focusout="onFocusOut"
+				@focusout="accept"
 			>
 				{{ locales.label }}
 			</VBtn>
@@ -68,10 +68,6 @@
 					return;
 				}
 			});
-		}
-
-		onFocusOut(): void {
-			this.accept();
 		}
 	}
 </script>
