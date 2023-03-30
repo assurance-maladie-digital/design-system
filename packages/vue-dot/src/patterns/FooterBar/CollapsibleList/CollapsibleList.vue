@@ -1,15 +1,18 @@
 <template>
-	<div class="vd-collapse-list">
-		<div v-if="isMobile">
+	<VListItem
+		v-if="isMobile"
+		class="vd-collapse-list"
+	>
+		<VListItemContent>
 			<VExpansionPanels
 				accordion
 				flat
 			>
 				<VExpansionPanel>
 					<VExpansionPanelHeader>
-						<h4 class="font-weight-bold">
+						<VListItemTitle class="font-weight-bold">
 							{{ listItems.title }}
-						</h4>
+						</VListItemTitle>
 					</VExpansionPanelHeader>
 					<VExpansionPanelContent>
 						<div
@@ -27,11 +30,13 @@
 					</VExpansionPanelContent>
 				</VExpansionPanel>
 			</VExpansionPanels>
-		</div>
-		<div v-else>
-			<h4 class="mb-2 text-subtitle-1 font-weight-bold">
+		</VListItemContent>
+	</VListItem>
+	<VListItem v-else>
+		<VListItemContent>
+			<VListItemTitle class="mb-3 text-subtitle-1 font-weight-bold">
 				{{ listItems.title }}
-			</h4>
+			</VListItemTitle>
 			<div
 				v-for="item in listItems.content"
 				:key="item.name"
@@ -44,8 +49,8 @@
 					{{ item.name }}
 				</a>
 			</div>
-		</div>
-	</div>
+		</VListItemContent>
+	</VListItem>
 </template>
 
 <script lang="ts">

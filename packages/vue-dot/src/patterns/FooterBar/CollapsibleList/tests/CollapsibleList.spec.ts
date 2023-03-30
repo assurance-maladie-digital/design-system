@@ -14,14 +14,14 @@ describe('CollapsibleList', () => {
 		wrapper = mountComponent(CollapsibleList, {
 			propsData: {
 				title: 'Title',
-				items: [
+				content: [
 					{
 						text: 'Item 1',
-						route: '/item1'
+						url: '/item1'
 					},
 					{
 						text: 'Item 2',
-						route: '/item2'
+						url: '/item2'
 					}
 				]
 			}

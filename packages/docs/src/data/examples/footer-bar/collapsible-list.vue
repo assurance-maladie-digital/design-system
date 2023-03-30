@@ -7,9 +7,14 @@
 <script lang="ts">
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
+	import CollapsibleList from "@cnamts/vue-dot/src/patterns/FooterBar/CollapsibleList";
 
-	@Component
-	export default class FooterBarCollapseList extends Vue {
+	@Component ({
+		components: {
+			CollapsibleList
+		}
+	})
+	export default class FooterBarCollapsibleList extends Vue {
 		docProps = {
 			sitemapRoute: '/',
 			cguRoute: '/',
@@ -19,22 +24,22 @@
 
 		listItems = {
 			title: 'Santé',
-			list: [
+			content: [
 				{
 					name: 'Mon espace santé',
-					route: 'https://www.ameli.fr/rhone/assure/sante/mon-espace-sante'
+					url: 'https://www.ameli.fr/rhone/assure/sante/mon-espace-sante'
 				},
 				{
 					name: 'Accomplir les bons gestes',
-					route: 'https://www.ameli.fr/rhone/assure/sante/bons-gestes'
+					url: 'https://www.ameli.fr/rhone/assure/sante/bons-gestes'
 				},
 				{
 					name: 'Réagir en cas d\'urgence',
-					route: 'https://www.ameli.fr/rhone/assure/sante/urgence'
+					url: 'https://www.ameli.fr/rhone/assure/sante/urgence'
 				},
 				{
 					name: 'Télésanté',
-					route: 'https://www.ameli.fr/rhone/assure/sante/telesante'
+					url: 'https://www.ameli.fr/rhone/assure/sante/telesante'
 				}
 			]
 		};

@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CollapsibleList renders correctly 1`] = `
-<div class="vd-collapse-list my-4" title="Title" items="[object Object],[object Object]">
-  <div>
-    <div class="mb-2"><span class="text-subtitle-1 font-weight-bold">
+<vlistitem-stub activeclass="" tag="div" title="Title" content="[object Object],[object Object]">
+  <vlistitemcontent-stub tag="div">
+    <vlistitemtitle-stub tag="div" class="mb-2 text-subtitle-1 font-weight-bold">
 
-			</span></div>
-  </div>
-</div>
+    </vlistitemtitle-stub>
+  </vlistitemcontent-stub>
+</vlistitem-stub>
 `;
