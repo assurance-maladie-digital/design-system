@@ -1,12 +1,13 @@
 <template>
 	<div>
 		<h6>{{ label }}</h6>
+
 		<VRating
 			:length="lengthInternal"
+			:readonly="readonlyInternal"
+			hover
 			color="primary"
 			background-color="primary lighten-4"
-			hover
-			:readonly="readonlyInternal"
 			class="d-flex flex-wrap"
 			@input="onDispatchValue"
 		/>
@@ -14,9 +15,10 @@
 </template>
 
 <script lang="ts">
-	import { RatingMixin } from '../RatingMixin';
 	import Component from 'vue-class-component';
+
+	import { RatingMixin } from '../RatingMixin';
+
 	@Component
-	export default class StarsPicker extends RatingMixin {
-	}
+	export default class StarsPicker extends RatingMixin {}
 </script>
