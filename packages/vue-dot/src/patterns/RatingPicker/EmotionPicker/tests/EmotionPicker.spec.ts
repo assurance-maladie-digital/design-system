@@ -4,7 +4,7 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import EmotionPicker from '..';
+import EmotionPicker from '../';
 
 let wrapper: Wrapper<Vue>;
 
@@ -13,10 +13,10 @@ describe('EmotionPicker', () => {
 		wrapper = mountComponent(EmotionPicker,{
 			propsData: {
 				questionDatas: {
-						name: 'first-question',
-						type: 'stars',
-						question: 'la deuxieme question ?'
-					}
+					name: 'first-question',
+					type: 'stars',
+					question: 'Pourriez-vous donner une note ?'
+				}
 			}
 		});
 
