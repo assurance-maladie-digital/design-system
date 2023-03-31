@@ -4,6 +4,7 @@ import Component, { mixins } from 'vue-class-component';
 export enum RatingEnum{
 	NUMBER='NumberPicker',
 	STAR='StarsPicker',
+	EMOTION='EmotionPicker',
 }
 
 const Props = Vue.extend({

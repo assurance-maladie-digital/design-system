@@ -5,7 +5,6 @@ import { html } from '@/tests/utils/html';
 
 import RatingPicker from '..';
 import Vue from 'vue';
-import { RatingMixin } from '../RatingMixin';
 let wrapper: Wrapper<TestComponent>;
 
 interface TestComponent extends Vue {

@@ -8,33 +8,31 @@
 			:readonly="readonly"
 			large
 			hover
-			class="d-flex flex-wrap flex-row justify-space-between"
+			class="d-flex flex-wrap flex-row justify-space-between ma-4"
 			:class="{
 				'justify-center': readonly && emotionSelected !== -1
 			}"
 		>
-			<template #item="props">
+			<template #item="{ index }">
 				<div
 					class="d-flex flex-column align-center justify-center"
-					:class="iconButtonClasses(props.index)"
-					:tabindex="props.index + 1"
-					@click="selectEmotion(props.index)"
-					@keyup.enter="selectEmotion(props.index)"
+					:class="iconButtonClasses(index)"
+					:tabindex="index + 1"
+					@click="selectEmotion(index)"
+					@keyup.enter="selectEmotion(index)"
 				>
-					<template>
-						<slot :name="slotName(props.index)">
-							<VIcon
-								x-large
-								class="pa-0"
-								:color="genColor(props.index)"
-							>
-								{{ getIcon(props.index) }}
-							</VIcon>
-							<span class="description mt-1">
-								{{ itemLabels[slotName(props.index)] }}
-							</span>
-						</slot>
-					</template>
+					<slot :name="slotName(index)">
+						<VIcon
+							x-large
+							class="pa-0"
+							:color="genColor(index)"
+						>
+							{{ getIcon(index) }}
+						</VIcon>
+						<span class="description mt-1">
+							{{ itemLabels[slotName(index)] }}
+						</span>
+					</slot>
 				</div>
 			</template>
 		</v-rating>

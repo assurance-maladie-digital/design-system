@@ -40,6 +40,7 @@
 	import { RatingEnum, RatingMixin } from './RatingMixin';
 	import Vue, { PropType } from 'vue';
 	import { propValidator } from '../../helpers/propValidator';
+	import EmotionPicker from './EmotionPicker/EmotionPicker.vue';
 
 	const Props = Vue.extend({
 		props: {
@@ -63,6 +64,7 @@
 	@Component({
 		components: {
 			StarsPicker,
+			EmotionPicker,
 			NumberPicker
 		}
 	})

@@ -8,7 +8,7 @@
 			hover
 			color="primary"
 			background-color="primary lighten-4"
-			class="d-flex flex-wrap"
+			class="d-flex flex-wrap  ma-4"
 			@input="onDispatchValue"
 		/>
 	</div>
