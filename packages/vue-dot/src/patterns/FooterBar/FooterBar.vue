@@ -33,8 +33,8 @@
 
 			<VBtn
 				v-bind="options.goTopBtn"
-				:aria-label="locales.goTopBtn"
-				@click="$vuetify.goTo(0, 0)"
+				:aria-label="locales.goTopBtnLabel"
+				@click="scrollToTop"
 			>
 				<VIcon v-bind="options.goTopBtnIcon">
 					{{ arrowTopIcon }}
@@ -258,6 +258,13 @@
 
 		get logoSize(): LogoSizeEnum {
 			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
+		}
+
+		scrollToTop(): void {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
 		}
 	}
 </script>

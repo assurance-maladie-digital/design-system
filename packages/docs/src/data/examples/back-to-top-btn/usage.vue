@@ -88,9 +88,9 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.vd-back-to-top-btn {
-		left: 100%;
 		position: sticky !important;
+		left: 100%;
 	}
 </style>

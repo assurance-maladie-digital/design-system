@@ -3,7 +3,7 @@ export const config = {
 		fixed: true,
 		outlined: true,
 		color: 'primary',
-		class: 'text-none text-wrap px-0 px-md-4'
+		class: 'text-wrap px-0 px-md-4'
 	},
 	icon: {
 		color: 'primary',

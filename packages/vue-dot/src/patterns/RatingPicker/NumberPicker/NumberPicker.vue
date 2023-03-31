@@ -1,122 +1,52 @@
 <template>
-	<div class="vd-emotion-picker">
-		<div class="d-flex justify-center">
-			<H6
-				class="mb-6"
-			>
-				{{ questionDatas.question }}
-			</H6>
-		</div>
-		<div
-			v-if="selectedRating"
-			class="d-flex justify-center rate-meaning"
+	<div>
+		<h6>{{ label }}</h6>
+
+		<VRating
+			v-if="!readonlyInternal"
+			:length="lengthInternal"
+			:readonly="readonlyInternal"
+			hover
+			color="primary"
+			background-color="primary lighten-4"
+			class="d-flex flex-wrap"
 		>
-			<VBtn
-				class="rating-button"
-				color="primary"
-				outlined
-				text
-			>
-				{{ selectedRating }}
-			</VBtn>
-			<span class="ml-1 text-selected-rating">
-				/ 10
-			</span>
-		</div>
-		<VRow
-			v-else
-			class="grid justify-center ma-0"
-		>
-			<VCol
-				v-for="i in 10"
-				:key="i"
-				class="pa-0 numbers flex-grow-0"
-			>
+			<template #item="{ index }">
 				<VBtn
-					class="rating-button"
-					color="primary"
+					x-small
 					outlined
-					text
-					@click="selectRating(i)"
+					color="primary"
+					min-height="36px"
+					class="mx-1 my-2 pa-0"
+					@click="onDispatchValue(index)"
 				>
-					{{ i }}
+					{{ index }}
 				</VBtn>
-			</VCol>
-		</VRow>
-		<div
-			v-if="!selectedRating"
-			class="mt-3 d-flex justify-space-between rate-meaning"
-		>
-			<span>
-				{{ getLabel(0) }}
-			</span>
-			<span>
-				{{ getLabel(1) }}
-			</span>
+			</template>
+		</VRating>
+
+		<div v-else>
+			<VBtn
+				outlined
+				x-small
+				disabled
+				color="primary"
+				min-height="36px"
+				class="mx-1 my-2 pa-0"
+			>
+				{{ valueInternal }}
+			</VBtn>
+
+			/ {{ lengthInternal }}
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component, { mixins } from 'vue-class-component';
+	import Component from 'vue-class-component';
 
-	const Props = Vue.extend({
-		props: {
-			questionDatas: {
-				type: Object,
-				required: true
-			}
-		}
-	});
-
-	const MixinsDeclaration = mixins(Props);
+	import { RatingMixin } from '../RatingMixin';
 
 	@Component
-	export default class NumberPicker extends MixinsDeclaration {
-
-		selectedRating = 0;
-
-		selectRating(rating: number): void {
-			this.selectedRating = rating;
-			this.$emit(
-				'update-result',
-				{
-					step: this.questionDatas.name,
-					result: this.selectedRating
-				}
-			);
-		}
-		getLabel(number: number): string {
-			return this.questionDatas.label ? this.questionDatas.labels[number] : '';
-		}
-	}
+	export default class NumberPicker extends RatingMixin {}
 </script>
-
-<style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
-
-h6 {
-	font-size: 16px;
-}
-.rating-button {
-	border-color: $vd-primary !important;
-	min-width: 0 !important;
-	width: 20px !important;
-}
-.selected-rating {
-	border: 1px solid $vd-primary;
-	padding: 1px 10px;
-	border-radius: 3px;
-	margin-top: -1px;
-}
-.rate-meaning {
-	min-height: 25px;
-}
-.text-selected-rating {
-	margin-top: 6px;
-}
-.numbers {
-	margin: 1px !important;
-}
-</style>

@@ -9,10 +9,9 @@
 	>
 		<template #activator>
 			<VListItemContent>
-				<VListItemTitle
-					v-if="item.title"
-					v-text="item.title"
-				/>
+				<VListItemTitle v-if="item.title">
+					{{ item.title }}
+				</VListItemTitle>
 			</VListItemContent>
 		</template>
 
@@ -22,8 +21,9 @@
 				:key="`heading-${index}`"
 				inset
 				class="text--primary font-weight-black text-uppercase"
-				v-text="child.title"
-			/>
+			>
+				{{ child.title }}
+			</VSubheader>
 
 			<VDivider
 				v-else-if="child.divider"
@@ -112,8 +112,8 @@
 	}
 </script>
 
-<style lang="scss">
-	.v-list-group.v-list-group--default .v-list-group__header {
+<style lang="scss" scoped>
+	.v-list-group.v-list-group--default :deep(.v-list-group__header) {
 		min-height: 32px;
 
 		> .v-list-item__icon {
