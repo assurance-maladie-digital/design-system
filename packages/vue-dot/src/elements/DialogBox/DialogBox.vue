@@ -67,7 +67,6 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { SelectableElements } from './types';
 
 	import { customizable } from '../../mixins/customizable';
 
@@ -137,23 +136,22 @@
 			this.$emit('change', false);
 		}
 
-		async getSelectableElements(): Promise<SelectableElements | undefined> {
+		async getSelectableElements(): Promise<HTMLElement[] | undefined> {
 			await this.$nextTick();
 
-			const elements = document.querySelectorAll<any>('a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])');
+			const elements = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])');
 
 			if (!elements.length) {
 				return;
 			}
 
-			const filteredElements: any = [];
+			const filteredElements: HTMLElement[] = [];
 			elements.forEach(element => {
-				if (!element.disabled && !element.ariaHidden) {
-					filteredElements.push(element);
+				if (element.hasAttribute('disabled') || element.getAttribute('aria-hidden')) {
+					return;
 				}
+				filteredElements.push(element);
 			});
-
-			return filteredElements;
 		}
 
 		async setEventListeners(): Promise<void> {
