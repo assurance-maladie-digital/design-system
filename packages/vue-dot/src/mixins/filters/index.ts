@@ -86,11 +86,11 @@ export class FilterMixin extends MixinsDeclaration {
 	getChipValue(event: unknown): unknown {
 		if (typeof event === 'string') {
 			return event;
+		} else if (typeof event === 'object') {
+			const value = Object.values(event as object)[0];
+
+			return value;
 		}
-
-		const value = Object.values(event as object)[0];
-
-		return value;
 	}
 
 	removeAccents(str: string): string | undefined {

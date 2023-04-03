@@ -102,13 +102,18 @@ describe('filters', () => {
 		expect(wrapper.vm.filters[0].chips).toHaveLength(1);
 	});
 
-	it('should get the value of the chip when getChipValue is called', () => {
+	it('should return a string value when onChange is called with a string argument', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		wrapper.vm.onChange('example', filterExemple);
+		expect(wrapper.vm.getChipValue('example')).toBe('example');
+	});
 
-		expect(wrapper.vm.getChipValue(chipItemEvent)).toBe('example');
+	it('should return an object value when onChange is called with an object argument', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		expect(wrapper.vm.getChipValue({ foo: 'bar' })).toBe('bar');
 	});
 
 	it('should clear the value of the filter when clearAfterValidate is true', () => {
