@@ -2,13 +2,12 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import { FileUploadCore } from '../fileUploadCore';
-
+import { locales } from '../../locales';
 import { Refs } from '../../../../types';
 import { HTMLInputEvent } from '../../types';
 
 interface TestComponent extends Vue {
-	locales: any;
-	infoText(arg0: string, arg1: string, arg2: number): string;
+	infoText: (max: string, ext: string, length: number) => string;
 	$refs: Refs<{
 		vdInputEl: HTMLInputElement;
 	}>;
@@ -307,12 +306,5 @@ describe('FileUploadCore', () => {
 		expect(wrapper.vm.dragover).toBe(false);
 		expect(wrapper.vm.files).toStrictEqual([]);
 		expect(wrapper.vm.error).toBe(false);
-	});
-
-	it('reeaze', () => {
-		const wrapper = mount(component) as Wrapper<TestComponent>;
-
-		expect(wrapper.vm.locales.infoText('4 Mo', 'PDF, JPG, PNG', 3)).toBe('Taille max. 4 Mo : PDF, Formats acceptés : JPG, PNG.');
-
 	});
 });

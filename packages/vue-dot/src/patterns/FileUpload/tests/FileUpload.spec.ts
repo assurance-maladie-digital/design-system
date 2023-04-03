@@ -14,4 +14,14 @@ describe('FileUpload', () => {
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
+
+	it('renders correctly', () => {
+		wrapper = mountComponent(FileUpload, {
+			propsData: {
+				allowedExtensions: ['PDF']
+			}
+		});
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
 });
