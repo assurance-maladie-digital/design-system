@@ -35,7 +35,7 @@
 					url: 'https://www.ameli.fr/assure/sante/bons-gestes'
 				},
 				{
-					name: 'Réagir en cas d\'urgence',
+					name: 'Réagir en cas d’urgence',
 					url: 'https://www.ameli.fr/assure/sante/urgence'
 				},
 				{
