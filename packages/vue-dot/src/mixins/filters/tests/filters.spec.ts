@@ -114,16 +114,16 @@ describe('filters', () => {
 		expect(wrapper.vm.filters[0].value).toBeNull();
 	});
 
-	// TO FIX
-	/*it('should emit the onchange-filters event when onChange is called', () => {
+	it('should emit the onchange-filters event when onChange is called', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
+		wrapper.vm.$emit('onchange-filters', 'example');
+
 		wrapper.vm.$nextTick(() => {
 			expect(wrapper.emitted('onchange-filters')).toBeTruthy();
 		});
-	});*/
+	});
 
 	it('should add a new chip to the filter when limited is true', () => {
 		const testComponent = createTestComponent();
