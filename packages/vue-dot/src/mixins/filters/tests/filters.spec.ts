@@ -151,22 +151,21 @@ describe('filters', () => {
 		]);
 	});
 
-	// TO FIX
-	/*it('should return true if the screen is mobile', () => {
+	it('should return true if the screen is mobile', () => {
 		const testComponent = createTestComponent();
-		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-
-		// set the computed property `isMobile` to true
-		wrapper.setData({
-			$vuetify: {
-				breakpoint: {
-					smAndDown: true,
-				},
-			},
+		const wrapper = mount(testComponent, {
+			mocks: {
+				$vuetify: {
+					breakpoint: {
+						smAndDown: true
+					}
+				}
+			}
 		});
 
-		expect(wrapper.vm.isMobile).toBeTruthy();
-	});*/
+		// Assertion
+		expect(wrapper.vm.isMobile).toBe(true);
+	});
 
 	it('should remove accents from a string', () => {
 		const testComponent = createTestComponent();
