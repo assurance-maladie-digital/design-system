@@ -13,6 +13,7 @@ interface TestComponent extends Vue {
 	filters: FilterItem[];
 	onChange(event: unknown, filters: FilterItem): void;
 	removeAccents(str: string): string;
+	getChipValue(event: unknown): unknown;
 }
 
 const filterExemple: FilterItem = {
@@ -39,7 +40,7 @@ const splitedFilterExemple: FilterItem = {
 	splited: true
 };
 const chipItemEvent: ChipItem = {
-	text: 'nom',
+	text: 'example',
 	value: 'event'
 };
 
@@ -99,6 +100,15 @@ describe('filters', () => {
 		wrapper.vm.onChange('example', filterExemple);
 
 		expect(wrapper.vm.filters[0].chips).toHaveLength(1);
+	});
+
+	it('should get the value of the chip when getChipValue is called', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.onChange('example', filterExemple);
+
+		expect(wrapper.vm.getChipValue(chipItemEvent)).toBe('example');
 	});
 
 	it('should clear the value of the filter when clearAfterValidate is true', () => {
