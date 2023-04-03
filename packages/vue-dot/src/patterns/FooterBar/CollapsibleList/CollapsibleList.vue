@@ -1,57 +1,56 @@
 <template>
-	<VListItem
+	<ul
 		v-if="isMobile"
-		class="vd-collapse-list"
+		class="vd-collapse-list pa-0"
 	>
-		<VListItemContent>
-			<VExpansionPanels
-				accordion
-				flat
-			>
-				<VExpansionPanel>
-					<VExpansionPanelHeader>
-						<VListItemTitle class="font-weight-bold">
-							{{ listItems.title }}
-						</VListItemTitle>
-					</VExpansionPanelHeader>
-					<VExpansionPanelContent>
-						<div
-							v-for="item in listItems.content"
-							:key="item.name"
-							class="mb-2"
+		<VExpansionPanels
+			accordion
+			flat
+		>
+			<VExpansionPanel>
+				<VExpansionPanelHeader>
+					<h4 class="font-weight-bold">
+						{{ listItems.title }}
+					</h4>
+				</VExpansionPanelHeader>
+				<VExpansionPanelContent>
+					<li
+						v-for="item in listItems.content"
+						:key="item.name"
+						class="mb-2"
+					>
+						<a
+							:href="item.url"
+							class="text-body-2 text-decoration-none black--text"
 						>
-							<a
-								:href="item.url"
-								class="text-body-2 text-decoration-none black--text"
-							>
-								{{ item.name }}
-							</a>
-						</div>
-					</VExpansionPanelContent>
-				</VExpansionPanel>
-			</VExpansionPanels>
-		</VListItemContent>
-	</VListItem>
+							{{ item.name }}
+						</a>
+					</li>
+				</VExpansionPanelContent>
+			</VExpansionPanel>
+		</VExpansionPanels>
+	</ul>
 
-	<VListItem v-else>
-		<VListItemContent>
-			<VListItemTitle class="mb-3 text-subtitle-1 font-weight-bold">
-				{{ listItems.title }}
-			</VListItemTitle>
-			<div
-				v-for="item in listItems.content"
-				:key="item.name"
-				class="mb-2"
+	<ul
+		v-else
+		class="pa-0"
+	>
+		<h4 class="mb-3 text-subtitle-1 font-weight-bold">
+			{{ listItems.title }}
+		</h4>
+		<li
+			v-for="item in listItems.content"
+			:key="item.name"
+			class="mb-2"
+		>
+			<a
+				:href="item.url"
+				class="text-body-2 text-decoration-none black--text"
 			>
-				<a
-					:href="item.url"
-					class="text-body-2 text-decoration-none black--text"
-				>
-					{{ item.name }}
-				</a>
-			</div>
-		</VListItemContent>
-	</VListItem>
+				{{ item.name }}
+			</a>
+		</li>
+	</ul>
 </template>
 
 <script lang="ts">
@@ -78,3 +77,9 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	li {
+		list-style: none;
+	}
+</style>

@@ -1,4 +1,4 @@
 export interface ListItem {
 	title: string;
-	content: object[];
+	content: { name: string; url: string }[];
 }
