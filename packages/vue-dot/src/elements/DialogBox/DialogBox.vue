@@ -7,7 +7,10 @@
 		aria-modal="true"
 		class="vd-dialog-box"
 	>
-		<VCard v-bind="options.card">
+		<VCard
+			v-bind="options.card"
+			ref="dialogContent"
+		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
 					<h2
@@ -24,7 +27,7 @@
 					v-if="!persistent"
 					v-bind="options.closeBtn"
 					:aria-label="locales.closeBtn"
-					@click="close"
+					@click="dialog = false"
 				>
 					<VIcon v-bind="options.icon">
 						{{ closeIcon }}
@@ -67,9 +70,9 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { SelectableElements } from './types';
 
 	import { customizable } from '../../mixins/customizable';
+	import { Refs } from '../../types';
 
 	import { mdiClose } from '@mdi/js';
 
@@ -121,6 +124,10 @@
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
+		$refs!: Refs<{
+			dialogContent: Vue;
+		}>;
+
 		locales = locales;
 
 		closeIcon = mdiClose;
@@ -133,26 +140,30 @@
 			this.$emit('change', value);
 		}
 
-		close(): void {
-			this.$emit('change', false);
-		}
-
-		async getSelectableElements(): Promise<SelectableElements | undefined> {
+		async getSelectableElements(): Promise<HTMLElement[]> {
 			await this.$nextTick();
 
-			const elements = document.querySelectorAll<HTMLElement>('a[href], button, input, textarea, select, details');
+			const elements = this.$refs.dialogContent.$el.querySelectorAll<HTMLElement>(
+				'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+			);
 
-			if (!elements.length) {
-				return;
-			}
+			const filteredElements: HTMLElement[] = [];
 
-			return elements;
+			elements.forEach(element => {
+				if (element.hasAttribute('disabled') || element.getAttribute('aria-hidden')) {
+					return;
+				}
+
+				filteredElements.push(element);
+			});
+
+			return filteredElements;
 		}
 
 		async setEventListeners(): Promise<void> {
 			const elements = await this.getSelectableElements();
 
-			if (!elements) {
+			if (!elements.length) {
 				return;
 			}
 
@@ -171,7 +182,7 @@
 							elements[i + 1].focus();
 						}
 					} else {
-						if (i === 1) {
+						if (i === 0) {
 							elements[elements.length - 1].focus();
 						} else {
 							elements[i - 1].focus();
