@@ -18,7 +18,7 @@ describe('EmotionPicker', () => {
 					neutral: 'Peut-être',
 					happy: 'Oui super'
 				},
-				emotions: 3,
+				length: 3,
 				readonly: true
 			}
 		});
