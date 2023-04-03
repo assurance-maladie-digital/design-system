@@ -1,5 +1,5 @@
 <template>
-	<ul
+	<div
 		v-if="isMobile"
 		class="vd-collapse-list pa-0"
 	>
@@ -15,43 +15,47 @@
 				</VExpansionPanelHeader>
 
 				<VExpansionPanelContent>
-					<li
-						v-for="item in listItems.content"
-						:key="item.name"
-						class="mb-2"
-					>
-						<a
-							:href="item.url"
-							class="text-body-2 text-decoration-none black--text"
+					<ul class="pa-0">
+						<li
+							v-for="item in listItems.content"
+							:key="item.name"
+							class="mb-2"
 						>
-							{{ item.name }}
-						</a>
-					</li>
+							<a
+								:href="item.url"
+								class="text-body-2 text-decoration-none black--text"
+							>
+								{{ item.name }}
+							</a>
+						</li>
+					</ul>
 				</VExpansionPanelContent>
 			</VExpansionPanel>
 		</VExpansionPanels>
-	</ul>
+	</div>
 
-	<ul
+	<div
 		v-else
 		class="pa-0"
 	>
 		<h4 class="mb-3 text-subtitle-1 font-weight-bold">
 			{{ listItems.title }}
 		</h4>
-		<li
-			v-for="item in listItems.content"
-			:key="item.name"
-			class="mb-2"
-		>
-			<a
-				:href="item.url"
-				class="text-body-2 text-decoration-none black--text"
+		<ul class="pa-0">
+			<li
+				v-for="item in listItems.content"
+				:key="item.name"
+				class="mb-2"
 			>
-				{{ item.name }}
-			</a>
-		</li>
-	</ul>
+				<a
+					:href="item.url"
+					class="text-body-2 text-decoration-none black--text"
+				>
+					{{ item.name }}
+				</a>
+			</li>
+		</ul>
+	</div>
 </template>
 
 <script lang="ts">
