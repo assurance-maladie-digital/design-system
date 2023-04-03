@@ -11,5 +11,8 @@ exports[`FileUpload renders correctly 1`] = `
 					Choisir un fichier
 				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text">
 					Taille max. PDF, JPG, JPEG, PNG : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
+					10 Mo |
+					PDF, JPG, JPEG, PNG |
+					4
 				</span></span></label>
 `;
