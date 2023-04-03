@@ -146,12 +146,16 @@
 			}
 
 			const filteredElements: HTMLElement[] = [];
+
 			elements.forEach(element => {
 				if (element.hasAttribute('disabled') || element.getAttribute('aria-hidden')) {
 					return;
 				}
+
 				filteredElements.push(element);
 			});
+
+			return filteredElements;
 		}
 
 		async setEventListeners(): Promise<void> {
