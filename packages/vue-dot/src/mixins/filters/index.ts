@@ -35,7 +35,7 @@ export class FilterMixin extends MixinsDeclaration {
 	filterIcon = mdiFilterVariant;
 
 	onChange(event: unknown, filter: FilterItem): void {
-		if (!event || !filter) {
+		if (!event || typeof event === undefined) {
 			return;
 		}
 
@@ -81,6 +81,16 @@ export class FilterMixin extends MixinsDeclaration {
 
 	get isMobile(): boolean {
 		return this.$vuetify.breakpoint.smAndDown;
+	}
+
+	getChipValue(event: unknown): unknown {
+		if (typeof event === 'string') {
+			return event;
+		}
+
+		const value = Object.values(event as object)[0];
+
+		return value;
 	}
 
 	removeAccents(str: string): string | undefined {
