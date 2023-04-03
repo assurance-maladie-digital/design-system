@@ -14,6 +14,7 @@ interface TestComponent extends Vue {
 	onChange(event: unknown, filters: FilterItem): void;
 	removeAccents(str: string): string;
 	getChipValue(event: unknown): unknown;
+	formatting(event: unknown): string;
 }
 
 const filterExemple: FilterItem = {
@@ -167,6 +168,20 @@ describe('filters', () => {
 		wrapper.vm.onChange('example', wrapper.vm.filters[2]);
 
 		expect(wrapper.vm.filters[2].chips).toStrictEqual([]);
+	});
+
+	it('should split the value into chips when splited is true and the value of the object use formatting function', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		// formatting to uppercase
+		wrapper.vm.formatting = (event: ChipItem) => event.text.toUpperCase();
+		wrapper.vm.onChange({ firstName: 'Alice', lastName: 'Smith' }, wrapper.vm.filters[2]);
+
+		expect(wrapper.vm.filters[2].chips).not.toStrictEqual([
+			{ text: 'ALICE', value: 'ALICE' },
+			{ text: 'SMITH', value: 'SMITH' }
+		]);
 	});
 
 	it('should return true if the screen is mobile', () => {
