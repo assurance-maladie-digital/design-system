@@ -1,3 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`filters test filter mixin 1`] = `undefined`;
+exports[`filters test filter mixin 1`] = `
+Array [
+  Object {
+    "chips": Array [],
+    "clearAfterValidate": true,
+    "defaultValue": undefined,
+    "description": "",
+    "icon": "",
+    "label": "Prénom",
+    "limited": false,
+    "name": "prenom",
+    "selection": Array [],
+    "showAll": false,
+    "splited": false,
+    "style": "",
+    "value": "",
+  },
+  Object {
+    "chips": Array [],
+    "clearAfterValidate": true,
+    "defaultValue": undefined,
+    "description": "",
+    "icon": "",
+    "label": "Prénom",
+    "limited": true,
+    "name": "prenom",
+    "selection": Array [],
+    "showAll": false,
+    "splited": false,
+    "style": "",
+    "value": "",
+  },
+  Object {
+    "chips": Array [],
+    "clearAfterValidate": true,
+    "defaultValue": undefined,
+    "description": "",
+    "icon": "",
+    "label": "Prénom",
+    "limited": false,
+    "name": "prenom",
+    "selection": Array [],
+    "showAll": false,
+    "splited": true,
+    "style": "",
+    "value": "",
+  },
+]
+`;

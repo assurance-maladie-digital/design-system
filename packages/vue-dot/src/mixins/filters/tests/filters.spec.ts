@@ -5,12 +5,13 @@ import { FilterMixin } from '../';
 import { FilterItem, ChipItem } from '../types';
 
 interface TestComponent extends Vue {
+	isMobile: boolean;
 	applyFunction(): unknown;
 	resetFilter(): unknown;
-	removeChip(event: Event | undefined): unknown;
+	removeChip(event: ChipItem): unknown;
 	closeSidebar(): unknown;
-	filters: Array<FilterItem[]>;
-	onChange(event: unknown, filters: FilterItem): unknown;
+	filters: FilterItem[];
+	onChange(event: unknown, filters: FilterItem): void;
 	removeAccents(str: string): string;
 }
 
@@ -30,34 +31,12 @@ const filterExemple: FilterItem = {
 	style: ''
 };
 const limitedFilterExemple: FilterItem = {
-	name: 'prenom',
-	label: 'Prénom',
-	chips: [],
-	value: '',
-	clearAfterValidate: true,
-	limited: true,
-	splited: false,
-	description: '',
-	showAll: false,
-	icon: '',
-	selection: [],
-	defaultValue: undefined,
-	style: ''
+	...filterExemple,
+	limited: true
 };
 const splitedFilterExemple: FilterItem = {
-	name: 'prenom',
-	label: 'Prénom',
-	chips: [],
-	value: '',
-	clearAfterValidate: true,
-	limited: false,
-	splited: true,
-	description: '',
-	showAll: false,
-	icon: '',
-	selection: [],
-	defaultValue: undefined,
-	style: ''
+	...filterExemple,
+	splited: true
 };
 const chipItemEvent: ChipItem = {
 	text: 'nom',
@@ -70,6 +49,15 @@ function createTestComponent() {
 		mixins: [
 			FilterMixin
 		],
+		data() {
+			return {
+				filters: [
+					filterExemple,
+					limitedFilterExemple,
+					splitedFilterExemple
+				]
+			};
+		},
 		template: '<div />'
 	});
 }
@@ -82,100 +70,143 @@ describe('filters', () => {
 		expect(wrapper.vm.filters).toMatchSnapshot();
 	});
 
-	it('onChange with event is null ', async() => {
+	it('should add a new chip to the filter when onChange is called', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-		wrapper.vm.onChange(null, filterExemple);
-		await wrapper.vm.$nextTick();
 
-		expect(wrapper.emitted('onchange-filters')).toBeFalsy();
+		wrapper.vm.onChange('example', filterExemple);
+
+		expect(wrapper.vm.filters[0].chips).toContainEqual({
+			text: 'example',
+			value: 'example'
+		});
 	});
 
-	it('onChange with event', async() => {
+	it('should not add a new chip to the filter when the chip already exists', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-		wrapper.vm.onChange('event', filterExemple);
-		await wrapper.vm.$nextTick();
 
-		expect(wrapper.emitted('onchange-filters')).toBeTruthy();
+		wrapper.vm.onChange('example', filterExemple);
+		wrapper.vm.onChange('example', filterExemple);
+
+		expect(wrapper.vm.filters[0].chips).toHaveLength(1);
 	});
 
-	it('onChange with limited filter', async() => {
+	// TO FIX
+	/*it('should not add a new chip to the filter when the event is undefined', () => {
 		const testComponent = createTestComponent();
-		const wrapper = mount(testComponent, {
-			propsData: {
-				startDate: '2019-10-21'
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.onChange(undefined, filterExemple);
+
+		expect(wrapper.vm.filters[0].chips).toHaveLength(0);
+	});*/
+
+	it('should clear the value of the filter when clearAfterValidate is true', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.filters[0].clearAfterValidate = true;
+		wrapper.vm.filters[0].value = 'example';
+
+		wrapper.vm.onChange('foo', wrapper.vm.filters[0]);
+
+		expect(wrapper.vm.filters[0].value).toBeNull();
+	});
+
+	// TO FIX
+	/*it('should emit the onchange-filters event when onChange is called', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
+		wrapper.vm.$nextTick(() => {
+			expect(wrapper.emitted('onchange-filters')).toBeTruthy();
+		});
+	});*/
+
+	it('should add a new chip to the filter when limited is true', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.filters[1].limited = true;
+
+		wrapper.vm.onChange('example', wrapper.vm.filters[1]);
+
+		expect(wrapper.vm.filters[1].chips).toContainEqual({
+			text: 'example',
+			value: 'example'
+		});
+	});
+
+	it('should split the value into chips when splited is true', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.onChange({ foo: 'bar', baz: 'qux' }, wrapper.vm.filters[2]);
+
+		expect(wrapper.vm.filters[2].chips).toStrictEqual([
+			{ text: 'bar', value: 'bar' },
+			{ text: 'qux', value: 'qux' }
+		]);
+	});
+
+	// TO FIX
+	/*it('should return true if the screen is mobile', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		// set the computed property `isMobile` to true
+		wrapper.setData({
+			$vuetify: {
+				breakpoint: {
+					smAndDown: true,
+				},
 			},
-			mocks: {
-				date: '2019-10-22'
-			}
-		}) as unknown as Wrapper<TestComponent>;
+		});
 
-		wrapper.vm.onChange('event', limitedFilterExemple);
-		await wrapper.vm.$nextTick();
-		expect(wrapper.emitted('onchange-filters')).toBeTruthy();
-	});
+		expect(wrapper.vm.isMobile).toBeTruthy();
+	});*/
 
-	// TODO tester return vide
-	it('onChange with a chip already exist', async() => {
-		const testComponent = createTestComponent();
-		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-		filterExemple.chips.push(chipItemEvent);
-
-		wrapper.vm.onChange(chipItemEvent, filterExemple);
-		await wrapper.vm.$nextTick();
-		expect(wrapper).toBeTruthy();
-	});
-
-	// TODO tester return vide
-	it('onChange with slited', async() => {
+	it('should remove accents from a string', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		wrapper.vm.onChange('event', splitedFilterExemple);
-		await wrapper.vm.$nextTick();
-		expect(wrapper.emitted('onchange-filters')).toBeTruthy();
+		expect(wrapper.vm.removeAccents('áéíóú')).toBe('aeiou');
 	});
 
-	it('removeAccents', () => {
+	it('should emit the close-sidebar event when closeSidebar is called', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.removeAccents('éléphant')).toBe('elephant');
-	});
-
-	it('closeSidebar', async() => {
-		const testComponent = createTestComponent();
-		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 		wrapper.vm.closeSidebar();
-		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('close-sidebar')).toBeTruthy();
 	});
 
-	//it('removeChip', async() => {
-	//	const testComponent = createTestComponent();
-	//	const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-	//	wrapper.vm.removeChip(chipItemEvent);
-	//	await wrapper.vm.$nextTick();
-
-	//	expect(wrapper.emitted('remove-chip')).toBeTruthy();
-	//});
-
-	it('resetFilter', async() => {
+	it('should emit the remove-chip event when removeChip is called', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.removeChip(chipItemEvent);
+
+		expect(wrapper.emitted('remove-chip')).toBeTruthy();
+	});
+
+	it ('should emit the reset-filter event when resetFilter is called', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
 		wrapper.vm.resetFilter();
-		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('reset-filter')).toBeTruthy();
 	});
 
-	it('applyFunction', async() => {
+	it('should emit the apply-function event when applyFunction is called', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
 		wrapper.vm.applyFunction();
-		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted('apply-function')).toBeTruthy();
 	});

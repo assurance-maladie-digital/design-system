@@ -35,7 +35,7 @@ export class FilterMixin extends MixinsDeclaration {
 	filterIcon = mdiFilterVariant;
 
 	onChange(event: unknown, filter: FilterItem): void {
-		if (!event) {
+		if (!event || !filter) {
 			return;
 		}
 
@@ -44,7 +44,7 @@ export class FilterMixin extends MixinsDeclaration {
 			value: event
 		};
 
-		let chips: unknown[] = [];
+		let chips: { text: unknown; value: unknown }[] = [];
 
 		const chipExist = filter.chips.some(chip => chip.value === newChip.value);
 
@@ -75,6 +75,7 @@ export class FilterMixin extends MixinsDeclaration {
 		if (filter.clearAfterValidate) {
 			this.$set(filter, 'value', filter.defaultValue ?? null);
 		}
+
 		this.$emit('onchange-filters');
 	}
 
@@ -101,5 +102,4 @@ export class FilterMixin extends MixinsDeclaration {
 	applyFunction(): void {
 		this.$emit('apply-function');
 	}
-
 }
