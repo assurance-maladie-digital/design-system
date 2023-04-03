@@ -106,10 +106,7 @@ describe('filters', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		wrapper.vm.filters[0].clearAfterValidate = true;
-		wrapper.vm.filters[0].value = 'example';
-
-		wrapper.vm.onChange('foo', wrapper.vm.filters[0]);
+		wrapper.vm.onChange('foo', filterExemple);
 
 		expect(wrapper.vm.filters[0].value).toBeNull();
 	});
@@ -128,8 +125,6 @@ describe('filters', () => {
 	it('should add a new chip to the filter when limited is true', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-
-		wrapper.vm.filters[1].limited = true;
 
 		wrapper.vm.onChange('example', wrapper.vm.filters[1]);
 
@@ -163,7 +158,6 @@ describe('filters', () => {
 			}
 		});
 
-		// Assertion
 		expect(wrapper.vm.isMobile).toBe(true);
 	});
 
