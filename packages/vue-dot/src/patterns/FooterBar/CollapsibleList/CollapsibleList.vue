@@ -41,6 +41,7 @@
 		<h4 class="mb-3 text-subtitle-1 font-weight-bold">
 			{{ listItems.title }}
 		</h4>
+
 		<ul class="pa-0">
 			<li
 				v-for="item in listItems.content"
