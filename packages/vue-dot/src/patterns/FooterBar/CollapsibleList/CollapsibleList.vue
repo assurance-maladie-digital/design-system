@@ -13,6 +13,7 @@
 						{{ listItems.title }}
 					</h4>
 				</VExpansionPanelHeader>
+
 				<VExpansionPanelContent>
 					<li
 						v-for="item in listItems.content"
