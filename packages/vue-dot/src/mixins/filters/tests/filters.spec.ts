@@ -155,6 +155,15 @@ describe('filters', () => {
 		]);
 	});
 
+	it('should not split the value into chips when splited is true and the value is not an object', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.onChange('example', wrapper.vm.filters[2]);
+
+		expect(wrapper.vm.filters[2].chips).toStrictEqual([]);
+	});
+
 	it('should return true if the screen is mobile', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent, {

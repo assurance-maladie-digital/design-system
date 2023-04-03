@@ -51,7 +51,7 @@ export class FilterMixin extends MixinsDeclaration {
 		if (chipExist) {
 			return;
 		} else if (filter.splited) {
-			if (Object.values(event as object).length) {
+			if (typeof event === 'object' && Object.values(event as object).length) {
 				chips = Object.values(event as object).map((value: unknown) => ({
 					text: filter.formatting ? filter.formatting(value) : value,
 					value
