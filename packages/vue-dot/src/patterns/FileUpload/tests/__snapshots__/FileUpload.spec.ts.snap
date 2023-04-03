@@ -10,6 +10,6 @@ exports[`FileUpload renders correctly 1`] = `
 				</span> <span class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 					Choisir un fichier
 				</span> <span class="mt-4 text-body-2 font-weight-regular grey--text">
-					Taille max. : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
+					Taille max. PDF, JPG, JPEG, PNG : 10 Mo. Formats acceptés : PDF, JPG, JPEG, PNG
 				</span></span></label>
 `;
