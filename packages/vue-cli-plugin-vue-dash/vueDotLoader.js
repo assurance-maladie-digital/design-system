@@ -18,7 +18,6 @@ const componentMap = {
 	// Patterns
 	AccessibilityBanner: 'patterns',
 	CookieBanner: 'patterns',
-	CollapsibleList: 'patterns',
 	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
 	FileUpload: 'patterns',

@@ -32,6 +32,7 @@
 			</VExpansionPanels>
 		</VListItemContent>
 	</VListItem>
+
 	<VListItem v-else>
 		<VListItemContent>
 			<VListItemTitle class="mb-3 text-subtitle-1 font-weight-bold">
