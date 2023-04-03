@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CollapsibleList renders correctly 1`] = `
-<ul class="pa-0" title="Title" content="[object Object],[object Object]">
+<div class="pa-0" title="Title" content="[object Object],[object Object]">
   <h4 class="mb-3 text-subtitle-1 font-weight-bold">
 
   </h4>
-</ul>
+  <ul class="pa-0"></ul>
+</div>
 `;
