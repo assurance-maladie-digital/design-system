@@ -35,7 +35,7 @@
     "pre-commit": "lint-staged",
     "dev": "vue-cli-service serve",
     "build": "ts-node --project tsconfig.json --files scripts/build.ts",
-    "lint": "vue-cli-service lint",
+    "lint": "vue-cli-service lint . --ext .js,.ts,.vue ",
     "test": "vue-cli-service test:unit --runInBand"
   },
   "dependencies": {
