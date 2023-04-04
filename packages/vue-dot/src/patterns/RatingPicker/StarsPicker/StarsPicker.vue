@@ -9,7 +9,6 @@
 				hover
 				color="primary"
 				background-color="primary lighten-4"
-				:item-labels="['salut','dgdg']"
 				@input="onDispatchValue"
 			/>
 			<div class="caption">
