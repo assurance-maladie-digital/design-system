@@ -80,4 +80,13 @@ describe('FileValidation', () => {
 		expect(wrapper.vm.ifTooManyFiles(files)).toBe(false);
 		expect(wrapper.emitted('error')).toBeFalsy();
 	});
+
+	it('returns true if there is more than one file', () => {
+		const wrapper = mount(component) as Wrapper<TestComponent>;
+
+		const files = [file, file] as unknown as FileList;
+
+		expect(wrapper.vm.ifTooManyFiles(files)).toBe(true);
+		expect(wrapper.emitted('error')).toBeTruthy();
+	});
 });
