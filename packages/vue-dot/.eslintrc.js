@@ -8,6 +8,7 @@ module.exports = {
 		'plugin:jsdoc/recommended',
 		'plugin:vuejs-accessibility/recommended'
 	],
+	ignorePatterns: ['tests/coverage/**/*.*','**/*.md','**/*.html','src/**/*.scss','src/**/*.svg', 'src/**/*.spec.ts.snap'],
 	parser: 'vue-eslint-parser',
 	rules: {
 		'vue/multi-word-component-names': ['error', {
