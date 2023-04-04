@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import { FileUploadCore } from '../fileUploadCore';
+
 import { Refs } from '../../../../types';
 import { HTMLInputEvent } from '../../types';
 

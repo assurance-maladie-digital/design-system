@@ -15,10 +15,10 @@ describe('FileUpload', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly', () => {
+	it('renders correctly with only one extension allowed', () => {
 		wrapper = mountComponent(FileUpload, {
 			propsData: {
-				allowedExtensions: ['PDF']
+				allowedExtensions: ['pdf']
 			}
 		});
 
