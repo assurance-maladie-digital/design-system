@@ -14,7 +14,7 @@ interface TestComponent extends Vue {
 	onChange(event: unknown, filters: FilterItem): void;
 	removeAccents(str: string): string;
 	getChipValue(event: unknown): unknown;
-	formatting(value: unknown): string | undefined;
+	formatting(value: unknown): string | null;
 }
 
 const filterExemple: FilterItem = {
@@ -46,7 +46,7 @@ const defaultValueExemple: FilterItem = {
 };
 const formatingValueExemple: FilterItem = {
 	...filterExemple,
-	formatting: (value: unknown): undefined => undefined
+	formatting: (value: unknown): null => null
 };
 const chipItemEvent: ChipItem = {
 	text: 'example',

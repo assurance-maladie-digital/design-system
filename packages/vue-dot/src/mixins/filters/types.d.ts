@@ -11,7 +11,7 @@ export interface FilterItem {
 	chips: ChipItem[];
 	value: unknown;
 	defaultValue: unknown;
-	formatting?: (value: unknown) => string | undefined;
+	formatting?: (value: unknown) => string | undefined | null;
 	style: string;
 }
 export interface ChipItem {
