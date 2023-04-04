@@ -6,6 +6,7 @@
 			:label="label"
 			:length="length"
 			:readonly="readonlyInternal"
+			:item-labels="itemLabels"
 			@input="onUpdate"
 		/>
 		<div v-if="readonlyInternal">
@@ -22,13 +23,13 @@
 				text
 				color="primary"
 			>
-				Fermer
+				{{ locales.later }}
 			</v-btn>
 			<v-btn
 				color="primary"
 				depressed
 			>
-				Transmettre mon avis
+				{{ locales.more }}
 			</v-btn>
 		</div>
 	</div>
@@ -41,6 +42,7 @@
 	import Vue, { PropType } from 'vue';
 	import { propValidator } from '../../helpers/propValidator';
 	import EmotionPicker from './EmotionPicker/EmotionPicker.vue';
+	import { locales } from './locales';
 
 	const Props = Vue.extend({
 		props: {
@@ -56,6 +58,10 @@
 			readonly: {
 				type: Boolean,
 				default: false
+			},
+			itemLabels: {
+				type: Array<string>,
+				default: null
 			}
 		}
 	});
@@ -72,7 +78,7 @@
 		$refs!: {
 			firstRating: RatingMixin;
 		};
-
+		locales = locales;
 		readonlyInternal = this.readonly;
 
 		get length(): number {

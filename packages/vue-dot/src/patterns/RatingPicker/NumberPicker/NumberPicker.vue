@@ -12,16 +12,23 @@
 			class="d-flex flex-wrap"
 		>
 			<template #item="{ index }">
-				<VBtn
-					x-small
-					outlined
-					color="primary"
-					min-height="36px"
-					class="mx-1 my-2 pa-0"
-					@click="onDispatchValue(index)"
-				>
-					{{ index }}
-				</VBtn>
+				<div class="d-flex flex-column ">
+					<VBtn
+						x-small
+						outlined
+						color="primary"
+						min-height="36px"
+						class="mx-1 my-2 pa-0"
+						@click="onDispatchValue(index)"
+					>
+						{{ index }}
+					</VBtn>
+					<span
+						v-if="displayLabel(index)"
+						class="caption align-self-sm-center "
+					>{{ getitemLabel(index) }}</span>
+					<div />
+				</div>
 			</template>
 		</VRating>
 
@@ -48,5 +55,17 @@
 	import { RatingMixin } from '../RatingMixin';
 
 	@Component
-	export default class NumberPicker extends RatingMixin {}
+	export default class NumberPicker extends RatingMixin {
+
+		displayLabel(val: number): boolean {
+			return (val === 0 || val === this.length - 1);
+		}
+
+		getitemLabel(value: number): string {
+			if (this.itemLabels === null || value === -1) {
+				return '';
+			}
+			return value === 0 ? this.itemLabels[0] : this.itemLabels[1];
+		}
+	}
 </script>

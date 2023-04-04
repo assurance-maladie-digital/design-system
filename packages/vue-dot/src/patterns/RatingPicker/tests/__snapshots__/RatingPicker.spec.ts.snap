@@ -2,15 +2,20 @@
 
 exports[`RatingPicker renders correctly 1`] = `
 <div>
-  <div>
+  <div class="mx-2">
     <h6>test</h6>
-    <div class="v-rating d-flex flex-wrap ma-4"><button type="button" aria-label="Rating 1 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 2 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 3 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 4 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 5 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button></div>
+    <div class="my-0 d-flex d-inline-flex flex-column align-sm-center">
+      <div class="v-rating" item-labels="salut,dgdg"><button type="button" aria-label="Rating 1 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 2 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 3 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 4 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 5 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button></div>
+      <div class="caption">
+
+      </div>
+    </div>
   </div>
   <!---->
   <div class="mr-2 mt-5 d-flex justify-space-between"><button type="button" class="v-btn v-btn--text theme--light v-size--default primary--text"><span class="v-btn__content">
-			Fermer
+			Plus tard
 		</span></button> <button type="button" class="v-btn v-btn--has-bg theme--light v-size--default primary"><span class="v-btn__content">
-			Transmettre mon avis
+			Pouvez-vous nous en dire plus ?
 		</span></button></div>
 </div>
 `;

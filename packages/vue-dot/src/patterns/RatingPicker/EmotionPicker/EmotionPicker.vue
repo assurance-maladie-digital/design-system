@@ -30,7 +30,7 @@
 							{{ getIcon(index) }}
 						</VIcon>
 						<span class="description mt-1">
-							{{ itemLabels[slotName(index)] }}
+							{{ getitemLabel(index) }}
 						</span>
 					</slot>
 				</div>
@@ -56,10 +56,6 @@
 				type: Number,
 				default: 3,
 				validator: (value: number) => value == 3 || value == 2
-			},
-			itemLabels: {
-				type: Object,
-				default: () => ({})
 			}
 		}
 	});

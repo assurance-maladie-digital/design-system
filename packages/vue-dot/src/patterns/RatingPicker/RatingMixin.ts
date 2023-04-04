@@ -9,6 +9,10 @@ export enum RatingEnum{
 
 const Props = Vue.extend({
 	props: {
+		itemLabels: {
+			type: Array<string>,
+			default: null
+		},
 		label: {
 			type: String,
 			required: true
@@ -32,10 +36,17 @@ const MixinsDeclaration = mixins(Props);
 
 @Component
 export class RatingMixin extends MixinsDeclaration {
+
 	valueInternal= this.value;
 	lengthInternal = this.length;
 	readonlyInternal = false;
 
+	getitemLabel(value: number): string {
+		if (this.itemLabels === null || value === -1) {
+			return '';
+		}
+		return this.itemLabels[value];
+	}
 	onDispatchValue(event: number): void {
 		this.$emit('input', event);
 	}
