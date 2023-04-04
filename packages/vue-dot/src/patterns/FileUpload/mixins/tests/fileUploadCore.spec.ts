@@ -2,12 +2,10 @@ import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
 import { FileUploadCore } from '../fileUploadCore';
-import { locales } from '../../locales';
 import { Refs } from '../../../../types';
 import { HTMLInputEvent } from '../../types';
 
 interface TestComponent extends Vue {
-	infoText: (max: string, ext: string, length: number) => string;
 	$refs: Refs<{
 		vdInputEl: HTMLInputElement;
 	}>;
