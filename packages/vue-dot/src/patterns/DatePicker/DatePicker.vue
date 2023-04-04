@@ -22,7 +22,6 @@
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
 				@input="errorMessages = null"
-				@change="dateFormatted = $event"
 				v-on="$listeners"
 			>
 				<template #prepend>
