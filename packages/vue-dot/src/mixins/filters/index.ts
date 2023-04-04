@@ -40,7 +40,7 @@ export class FilterMixin extends MixinsDeclaration {
 		}
 
 		const newChip = {
-			text: filter.formatting ? filter.formatting(event) : event,
+			text: filter.formatting == undefined ? event : filter.formatting(event),
 			value: event
 		};
 
@@ -53,7 +53,7 @@ export class FilterMixin extends MixinsDeclaration {
 		} else if (filter.splited) {
 			if (typeof event === 'object' && Object.values(event as object).length) {
 				chips = Object.values(event as object).map((value: unknown) => ({
-					text: filter.formatting ? filter.formatting(value) : value,
+					text: filter.formatting == undefined ? value : filter.formatting(value),
 					value
 				}));
 			} else {

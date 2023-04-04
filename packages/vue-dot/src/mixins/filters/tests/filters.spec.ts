@@ -14,7 +14,7 @@ interface TestComponent extends Vue {
 	onChange(event: unknown, filters: FilterItem): void;
 	removeAccents(str: string): string;
 	getChipValue(event: unknown): unknown;
-	formatting(event: unknown): string;
+	formatting(value: unknown): string | undefined;
 }
 
 const filterExemple: FilterItem = {
@@ -44,6 +44,10 @@ const defaultValueExemple: FilterItem = {
 	...filterExemple,
 	defaultValue: 'defaultValue'
 };
+const formatingValueExemple: FilterItem = {
+	...filterExemple,
+	formatting: (value: unknown): undefined => undefined
+};
 const chipItemEvent: ChipItem = {
 	text: 'example',
 	value: 'event'
@@ -61,7 +65,8 @@ function createTestComponent() {
 					filterExemple,
 					limitedFilterExemple,
 					splitedFilterExemple,
-					defaultValueExemple
+					defaultValueExemple,
+					formatingValueExemple
 				]
 			};
 		},
@@ -126,9 +131,9 @@ describe('filters', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		wrapper.vm.onChange('foo', filterExemple);
+		wrapper.vm.formatting('foo');
 
-		expect(wrapper.vm.filters[0].value).toBeNull();
+		expect(wrapper.vm.filters[4].value).toBe(undefined);
 	});
 
 	it('should not clear the value of the filter when clearAfterValidate is true and defaultValue is defined', () => {
@@ -192,6 +197,15 @@ describe('filters', () => {
 		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
 
 		expect(wrapper.vm.formatting(chipItemEvent)).toBe('EXAMPLE');
+	});
+
+	it('should return the chip value when formatting function is null', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.onChange('example', wrapper.vm.filters[4]);
+
+		expect(wrapper.vm.formatting(chipItemEvent)).toBeNull();
 	});
 
 	it('should split the value into chips when splited is true and the value of the object use formatting function', () => {
