@@ -40,6 +40,10 @@ const splitedFilterExemple: FilterItem = {
 	...filterExemple,
 	splited: true
 };
+const defaultValueExemple: FilterItem = {
+	...filterExemple,
+	defaultValue: 'defaultValue'
+};
 const chipItemEvent: ChipItem = {
 	text: 'example',
 	value: 'event'
@@ -56,7 +60,8 @@ function createTestComponent() {
 				filters: [
 					filterExemple,
 					limitedFilterExemple,
-					splitedFilterExemple
+					splitedFilterExemple,
+					defaultValueExemple
 				]
 			};
 		},
@@ -126,6 +131,15 @@ describe('filters', () => {
 		expect(wrapper.vm.filters[0].value).toBeNull();
 	});
 
+	it('should not clear the value of the filter when clearAfterValidate is true and defaultValue is defined', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.onChange('foo', defaultValueExemple);
+
+		expect(wrapper.vm.filters[3].value).toBe('defaultValue');
+	});
+
 	it('should emit the onchange-filters event when onChange is called', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
@@ -174,7 +188,6 @@ describe('filters', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		// formatting to uppercase
 		wrapper.vm.formatting = (event: ChipItem) => event.text.toUpperCase();
 		wrapper.vm.onChange({ firstName: 'Alice', lastName: 'Smith' }, wrapper.vm.filters[2]);
 
