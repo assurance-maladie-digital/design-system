@@ -21,10 +21,6 @@ export const drawerItems: DrawerItem[] = [
 				to: "/demarrer/introduction",
 			},
 			{
-				title: "Vue d'ensemble",
-				to: "/demarrer/vue-ensemble",
-			},
-			{
 				title: "Installation",
 				to: "/demarrer/installation",
 			},
@@ -63,12 +59,12 @@ export const drawerItems: DrawerItem[] = [
 				to: "/fondamentaux/design-tokens",
 			},
 			{
-				title: 'Logo',
-				to: '/fondamentaux/logo',
+				title: "Logo",
+				to: "/fondamentaux/logo",
 			},
 			{
-				title: 'Éco-conception',
-				to: '/fondamentaux/eco-conception',
+				title: "Éco-conception",
+				to: "/fondamentaux/eco-conception",
 			}
 		]
 	},
@@ -76,6 +72,10 @@ export const drawerItems: DrawerItem[] = [
 		title: "Composants",
 		icon: mdiViewDashboard,
 		items: [
+			{
+				title: "Vue d'ensemble",
+				to: "/composants/vue-ensemble",
+			},
 			{
 				title: "Structure",
 				items: [
@@ -255,16 +255,16 @@ export const drawerItems: DrawerItem[] = [
 				to: "/templates/cookies-page",
 			},
 			{
-				title: 'ErrorPage',
-				to: '/templates/error-page'
+				title: "ErrorPage",
+				to: "/templates/error-page"
 			},
 			{
-				title: 'NotFoundPage',
-				to: '/templates/not-found-page'
+				title: "NotFoundPage",
+				to: "/templates/not-found-page"
 			},
 			{
-				title: 'MaintenancePage',
-				to: '/templates/maintenance-page'
+				title: "MaintenancePage",
+				to: "/templates/maintenance-page"
 			}
 		]
 	},

@@ -14,5 +14,3 @@ description: L’élément `FranceConnectBtn` est utilisé pour afficher un bout
 </doc-tab-item>
 
 </doc-tabs>
-
-<doc-sticky-button icon="view-dashboard" title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>

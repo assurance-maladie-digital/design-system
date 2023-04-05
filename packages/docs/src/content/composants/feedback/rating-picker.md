@@ -112,5 +112,3 @@ Pour l'activer, il faut utiliser la props `hide-close-buttons`.
 </doc-tab-item>
 
 </doc-tabs>
-
-<doc-sticky-button icon="view-dashboard" title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>

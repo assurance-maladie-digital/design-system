@@ -47,5 +47,3 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Notif
 </doc-tab-item>
 
 </doc-tabs>
-
-<doc-sticky-button icon="view-dashboard" title="Vue d'ensemble" target="../../demarrer/vue-ensemble"></doc-sticky-button>
