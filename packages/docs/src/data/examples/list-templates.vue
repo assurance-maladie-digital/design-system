@@ -2,7 +2,7 @@
 	<div>
 		<VDivider class="w-100 mt-3 mb-6"></VDivider>
 
-		<VContainer>
+		<VContainer class="pa-0">
 			<VRow>
 				<VCol cols="12" sm="6" md="4">
 					<NuxtLink to="../templates/cookies-page" class="text-decoration-none">

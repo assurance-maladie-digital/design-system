@@ -2,7 +2,7 @@
 	<div>
 		<VDivider class="w-100 mt-3 mb-6"></VDivider>
 
-		<VContainer class="mb-10">
+		<VContainer class="mb-10 pa-0">
 			<h2 class="mb-4">Structure</h2>
 			<VRow>
 				<VCol cols="12" sm="6" md="4">
