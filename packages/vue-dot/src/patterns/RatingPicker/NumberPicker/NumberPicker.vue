@@ -12,7 +12,7 @@
 			class="d-flex flex-wrap"
 		>
 			<template #item="{ index }">
-				<div class="d-flex flex-column ">
+				<div class="d-flex flex-column">
 					<VBtn
 						x-small
 						outlined
