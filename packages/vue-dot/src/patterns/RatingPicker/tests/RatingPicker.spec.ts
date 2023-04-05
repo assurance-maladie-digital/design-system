@@ -17,7 +17,7 @@ interface TestComponent extends Vue {
 function createTestComponent(): Wrapper<TestComponent> {
 	return mountComponent(RatingPicker, {
 		propsData: {
-			label: 'test',
+			label: 'Pouvez-vous nous en dire plus ?',
 			type: 'StarsPicker'
 		}
 	}, true) as Wrapper<TestComponent>;
