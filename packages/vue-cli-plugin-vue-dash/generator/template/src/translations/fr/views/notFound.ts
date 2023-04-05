@@ -1,10 +1,7 @@
 export default {
-	meta: {
-		title: 'Erreur 404',
-		description: 'Page non trouvée.'
-	},
 	code: '404',
-	error: 'Page non trouvée',
-	message: 'Il semblerait qu’il y ait eu une erreur !',
-	cta: 'Retour à la page d’accueil'
+	pageTitle: 'Page non trouvée',
+	message: 'Cette page n’existe pas ou a été déplacée.',
+	supportIdMessage: 'Votre identifiant de support est',
+	btnText: 'Retour à l’accueil'
 };

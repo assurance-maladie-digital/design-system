@@ -1,43 +1,60 @@
 <template>
-	<ErrorPage
-		:page-title="pageInfo.title"
-		:message="pageInfo.message"
-		no-btn
-	/>
+	<PageContainer size="m">
+		<VCard class="pa-6 pa-sm-16">
+			<VRow class="mx-0">
+				<VCol
+					cols="12"
+					sm="6"
+					class="order-last order-sm-first text-center text-sm-left"
+				>
+					<h2 class="mb-2 font-weight-bold text-h mb-4">
+						{{ pageTitle }}
+					</h2>
+
+					<p class="mb-0">
+						{{ message }}
+					</p>
+				</VCol>
+
+				<VCol
+					cols="12"
+					sm="6"
+					class="d-flex align-center justify-center"
+				>
+					<slot name="illustration">
+						<img
+							:src="require('../../public/maintenance.svg')"
+							alt=""
+						>
+					</slot>
+				</VCol>
+			</VRow>
+		</VCard>
+	</PageContainer>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from 'vue-class-component';
+	import Component, { mixins } from 'vue-class-component';
 
-	import { Meta, MetaInfo } from '@/decorators';
+	import locales from '../translations/fr/views/notFound';
 
-	import { IndexedObject } from '@cnamts/vue-dot/src/types';
+
+	const Props = Vue.extend({
+		props: {
+			pageTitle: {
+				type: String,
+				default: locales.pageTitle
+			},
+			message: {
+				type: String,
+				default: locales.message
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class Maintenance extends Vue {
-		get pageInfo(): IndexedObject {
-			// Use env var and default text
-			return {
-				title: window.MAINTENANCE_TITLE || <% if (i18n) { %>this.$t('views.maintenance.title') as string<% } else { %>'Maintenance en cours'<% } %>,
-				message: window.MAINTENANCE_MESSAGE ||<% if (i18n) { %> this.$t('views.maintenance.message') as string<% } else { %>
-					'L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.'<% } %>
-			};
-		}
-
-		/* istanbul ignore next */
-		@Meta
-		metaInfo(): MetaInfo {
-			return {
-				title: this.pageInfo.title,
-				meta: [
-					{
-						name: 'description',
-						vmid: 'description',
-						content: this.pageInfo.message
-					}
-				]
-			};
-		}
-	}
+	export default class MaintenancePage extends MixinsDeclaration {}
 </script>
