@@ -39,9 +39,13 @@ export class FilterMixin extends MixinsDeclaration {
 			return;
 		}
 
+		if (filter.formatting) {
+			event = filter.formatting(event);
+		}
+
 		const newChip = {
-			text: !filter.formatting ? event : filter.formatting(event),
-			value: this.getChipValue(event)
+			text: event,
+			value: event
 		};
 
 		let chips: { text: unknown; value: unknown }[] = [];
@@ -53,8 +57,8 @@ export class FilterMixin extends MixinsDeclaration {
 		} else if (filter.splited) {
 			if (typeof event === 'object' && Object.values(event as object).length) {
 				chips = Object.values(event as object).map((value: unknown) => ({
-					text: !filter.formatting ? value : filter.formatting(value),
-					value: value
+					text: value,
+					value
 				}));
 			} else {
 				chips = [];

@@ -194,26 +194,6 @@ describe('filters', () => {
 		expect(wrapper.vm.formatting(chipItemEvent)).toBe('EXAMPLE');
 	});
 
-	it('should return the chip value when formatting function is null', () => {
-		const testComponent = createTestComponent();
-		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-
-		wrapper.vm.formatting = (event: ChipItem) => null;
-		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
-
-		expect(wrapper.vm.formatting(chipItemEvent)).toBeNull();
-	});
-
-	it('should return the chip value when formatting function is undefined', () => {
-		const testComponent = createTestComponent();
-		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
-
-		wrapper.vm.formatting = (event: ChipItem) => undefined;
-		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
-
-		expect(wrapper.vm.formatting(chipItemEvent)).toBeUndefined();
-	});
-
 	it('should split the value into chips when splited is true and the value of the object use formatting function', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
