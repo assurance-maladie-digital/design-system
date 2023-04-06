@@ -1,15 +1,27 @@
 module.exports = {
 	plugins: [
 		'jsdoc',
-		'vuejs-accessibility'
+		'vuejs-accessibility',
+		'jest-formatting'
 	],
 	extends: [
 		'@cnamts/eslint-config-vue',
 		'plugin:jsdoc/recommended',
-		'plugin:vuejs-accessibility/recommended'
+		'plugin:vuejs-accessibility/recommended',
+		'plugin:jest-formatting/recommended'
 	],
 	parser: 'vue-eslint-parser',
 	rules: {
+		'vue/singleline-html-element-content-newline': ['error', {
+			'ignoreWhenNoAttributes': false,
+			'ignoreWhenEmpty': false,
+			'ignores': ['h6']
+		}],
+		'padding-line-between-statements': ['error',
+			{blankLine: 'always', prev: '*', next: 'return'}
+		],
+		'no-multi-spaces': 'error',
+		'vue/padding-line-between-blocks': ['error', 'always'],
 		'vue/multi-word-component-names': ['error', {
 			ignores: [
 				'Logo'
