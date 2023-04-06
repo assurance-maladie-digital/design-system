@@ -205,6 +205,13 @@
 			return textFieldClasses;
 		}
 
+		/* eslint-disable @typescript-eslint/ban-types */
+		get listeners(): Record<string, Function | Function[]> {
+			// Remove 'change' event to avoid event duplication
+			delete this.$listeners.change;
+			return this.$listeners;
+		}
+
 		textFieldClicked(): void {
 			if (this.textFieldActivator) {
 				this.menu = true;

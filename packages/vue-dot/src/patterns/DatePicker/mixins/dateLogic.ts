@@ -155,9 +155,6 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	saveFromCalendar(): void {
-		if (!this.$refs.menu) {
-			return;
-		}
 		this.$refs.menu.save(this.date);
 
 		this.setTextFieldModel();
