@@ -22,12 +22,11 @@ function createTestComponent(): Wrapper<TestComponent> {
 		}
 	}, true) as Wrapper<TestComponent>;
 }
+
 describe('RatingPicker', () => {
 	it('renders correctly', () => {
 		wrapper = createTestComponent();
-
 		expect(html(wrapper)).toMatchSnapshot();
-
 	});
 
 	it('on update', () => {
@@ -35,7 +34,6 @@ describe('RatingPicker', () => {
 		expect(wrapper.vm.$data.readonlyInternal).toBeFalsy();
 		wrapper.vm.onUpdate(0);
 		expect(wrapper.vm.$data.readonlyInternal).toBeTruthy();
-
 	});
 
 });

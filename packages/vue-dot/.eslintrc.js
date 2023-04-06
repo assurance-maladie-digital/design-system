@@ -1,12 +1,14 @@
 module.exports = {
 	plugins: [
 		'jsdoc',
-		'vuejs-accessibility'
+		'vuejs-accessibility',
+		'jest-formatting'
 	],
 	extends: [
 		'@cnamts/eslint-config-vue',
 		'plugin:jsdoc/recommended',
-		'plugin:vuejs-accessibility/recommended'
+		'plugin:vuejs-accessibility/recommended',
+		'plugin:jest-formatting/recommended'
 	],
 	parser: 'vue-eslint-parser',
 	rules: {
