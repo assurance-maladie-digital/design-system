@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage renders correctly 1`] = `
+<pagecontainer-stub size="m" color="transparent">
+  <vcard-stub loaderheight="4" tag="div" class="pa-6 pa-sm-16">
+    <vrow-stub tag="div" class="mx-0">
+      <vcol-stub cols="12" md="6" tag="div" class="order-last order-md-first text-center text-md-left">
+        <div aria-hidden="true" class="vd-code font-weight-thin primary--text mb-4">
+          404
+        </div>
+        <h2 class="mb-2 font-weight-bold text-h mb-4">
+          Page non trouvée
+        </h2>
+        <!---->
+        <p class="mb-10">
+          Cette page n’existe pas ou a été déplacée.
+        </p>
+        <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button">
+          Retour à l’accueil
+        </vbtn-stub>
+      </vcol-stub>
+      <vcol-stub cols="12" md="6" tag="div" class="d-flex align-center justify-center"><img src="" alt=""></vcol-stub>
+    </vrow-stub>
+  </vcard-stub>
+</pagecontainer-stub>
+`;
