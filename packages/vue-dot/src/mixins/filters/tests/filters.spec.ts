@@ -14,7 +14,7 @@ interface TestComponent extends Vue {
 	onChange(event: unknown, filters: FilterItem): void;
 	removeAccents(str: string): string;
 	getChipValue(event: unknown): unknown;
-	formatting(value: unknown): string | null;
+	formatting(value: unknown): string | null | undefined;
 }
 
 const filterExemple: FilterItem = {
@@ -44,10 +44,6 @@ const defaultValueExemple: FilterItem = {
 	...filterExemple,
 	defaultValue: 'defaultValue'
 };
-const formatingValueExemple: FilterItem = {
-	...filterExemple,
-	formatting: (value: unknown): null => null
-};
 const chipItemEvent: ChipItem = {
 	text: 'example',
 	value: 'event'
@@ -65,8 +61,7 @@ function createTestComponent() {
 					filterExemple,
 					limitedFilterExemple,
 					splitedFilterExemple,
-					defaultValueExemple,
-					formatingValueExemple
+					defaultValueExemple
 				]
 			};
 		},
@@ -199,15 +194,25 @@ describe('filters', () => {
 		expect(wrapper.vm.formatting(chipItemEvent)).toBe('EXAMPLE');
 	});
 
-	// TO FIX
-	/*it('should return the chip value when formatting function is null', () => {
+	it('should return the chip value when formatting function is null', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
-		wrapper.vm.onChange('example', wrapper.vm.filters[4]);
+		wrapper.vm.formatting = (event: ChipItem) => null;
+		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
 
 		expect(wrapper.vm.formatting(chipItemEvent)).toBeNull();
-	});*/
+	});
+
+	it('should return the chip value when formatting function is undefined', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.formatting = (event: ChipItem) => undefined;
+		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
+
+		expect(wrapper.vm.formatting(chipItemEvent)).toBeUndefined();
+	});
 
 	it('should split the value into chips when splited is true and the value of the object use formatting function', () => {
 		const testComponent = createTestComponent();

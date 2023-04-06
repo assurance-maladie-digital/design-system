@@ -35,13 +35,13 @@ export class FilterMixin extends MixinsDeclaration {
 	filterIcon = mdiFilterVariant;
 
 	onChange(event: unknown, filter: FilterItem): void {
-		if (!event || typeof event === undefined) {
+		if (!event) {
 			return;
 		}
 
 		const newChip = {
-			text: filter.formatting == undefined || filter.formatting == null ? event : filter.formatting(event),
-			value: event
+			text: !filter.formatting ? event : filter.formatting(event),
+			value: this.getChipValue(event)
 		};
 
 		let chips: { text: unknown; value: unknown }[] = [];
@@ -53,8 +53,8 @@ export class FilterMixin extends MixinsDeclaration {
 		} else if (filter.splited) {
 			if (typeof event === 'object' && Object.values(event as object).length) {
 				chips = Object.values(event as object).map((value: unknown) => ({
-					text: filter.formatting == undefined || filter.formatting == null ? value : filter.formatting(value),
-					value
+					text: !filter.formatting ? value : filter.formatting(value),
+					value: value
 				}));
 			} else {
 				chips = [];

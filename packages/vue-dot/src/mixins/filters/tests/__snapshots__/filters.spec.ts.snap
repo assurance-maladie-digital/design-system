@@ -62,21 +62,5 @@ Array [
     "style": "",
     "value": "",
   },
-  Object {
-    "chips": Array [],
-    "clearAfterValidate": true,
-    "defaultValue": undefined,
-    "description": "",
-    "formatting": [Function],
-    "icon": "",
-    "label": "Prénom",
-    "limited": false,
-    "name": "prenom",
-    "selection": Array [],
-    "showAll": false,
-    "splited": false,
-    "style": "",
-    "value": "",
-  },
 ]
 `;
