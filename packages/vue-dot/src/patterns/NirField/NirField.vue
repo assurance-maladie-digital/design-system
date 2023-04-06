@@ -1,67 +1,65 @@
 <template>
 	<VRow dense>
-		<VCol
-			:sm="tooltip && keyRequired ? 8 : tooltip ? 11 : keyRequired ? 9 : 12"
-			:md="tooltip && keyRequired ? 8 : tooltip ? 11 : keyRequired ? 9 : 12"
-		>
+		<VCol>
 			<VTextField
-				v-facade="maskNumber"
+				ref="number"
+				v-facade="numberMask"
 				v-bind="textFieldOptions"
 				:value="computedValue"
-				:rules="rulesNumber"
-				:counter="computedCounterNumber"
+				:label="locales.numberLabel"
+				:hint="numberHint"
+				:rules="numberRules"
+				:counter="13"
 				:counter-value="noSpacesCounter"
-				:label="required ? locales.labelNumber + ' *' : locales.labelNumber"
-				:aria-labelledby="locales.labelNumber"
-				:aria-describedby="hintNumber"
-				:hint="hintNumber"
-				:success="internalValueNumber && internalValueNumber.length === checkNumber"
-				@input.native="setinternalValueNumber"
+				:success="isNumberLengthValid"
+				@keyup="setFocus"
+				@input.native="setNumberValue"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="internalValueNumber && internalValueNumber.length === checkNumber"
-						color="success"
+						v-if="isNumberLengthValid"
+						v-bind="options.icon"
 					>
 						{{ checkIcon }}
 					</VIcon>
 				</template>
 			</VTextField>
 		</VCol>
+
 		<VCol
-			v-if="keyRequired"
+			v-if="nirLength === 15"
 			sm="3"
 			md="3"
 		>
 			<VTextField
-				ref="keyField"
-				v-facade="maskKey"
+				ref="key"
+				v-facade="keyMask"
 				v-bind="textFieldOptions"
 				:value="computedValue"
-				:rules="rulesKey"
-				:counter="counterKey"
+				:label="locales.keyLabel"
+				:hint="locales.keyHint"
+				:rules="keyRules"
+				:counter="2"
 				:counter-value="noSpacesCounter"
-				:label="required ? locales.labelKey + ' *' : locales.labelKey"
-				:aria-labelledby="locales.labelKey"
-				:aria-describedby="hintKey"
-				:hint="hintKey"
-				:success="internalValueKey && internalValueKey.length === nirKey"
-				@input.native="setinternalValueKey"
+				:success="isKeyLengthValid"
+				@keyup.delete="resetFocus"
+				@input.native="setKeyValue"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="internalValueKey && internalValueKey.length === nirKey"
-						color="success"
+						v-if="isKeyLengthValid"
+						v-bind="options.icon"
 					>
 						{{ checkIcon }}
 					</VIcon>
 				</template>
 			</VTextField>
 		</VCol>
+
 		<VCol
-			v-if="tooltip !== ''"
+			v-if="tooltip"
 			cols="1"
 			class="d-flex align-start justify-center pt-5"
 		>
@@ -74,6 +72,7 @@
 						{{ infoIcon }}
 					</VIcon>
 				</template>
+
 				<span>{{ tooltip }}</span>
 			</VTooltip>
 		</VCol>
@@ -81,14 +80,14 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { InputFacadeEvent } from '../../types';
+	import { InputFacadeEvent, Refs } from '../../types';
 
-	import { Options } from '../../mixins/customizable';
+	import { customizable, Options } from '../../mixins/customizable';
 
 	import { required } from '../../rules/required';
 	import { exactLength } from '../../rules/exactLength';
@@ -96,10 +95,11 @@
 
 	import { formatNir } from '../../functions/formatNir';
 
-	import { mdiCheck } from '@mdi/js';
-	import { mdiInformation } from '@mdi/js';
+	import { mdiCheck, mdiInformation } from '@mdi/js';
 
 	import deepMerge from 'deepmerge';
+
+	// Largeur du champ à revoir avec UX, ne respecte pas les Design Tokens
 
 	const Props = Vue.extend({
 		props: {
@@ -107,23 +107,12 @@
 				type: String,
 				default: null
 			},
-			nirNumber: {
-				type: Number,
+			nirLength: {
+				type: Number as PropType<15 | 13>,
 				default: 15,
 				validator(value): boolean {
 					return value === 13 || value === 15;
 				}
-			},
-			nirKey: {
-				type: Number,
-				default: 2,
-				validator(value): boolean {
-					return value === 2;
-				}
-			},
-			keyRequired: {
-				type: Boolean,
-				default: false
 			},
 			required: {
 				type: Boolean,
@@ -131,12 +120,12 @@
 			},
 			tooltip: {
 				type: String,
-				default: ''
+				default: undefined
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component({
 		model: {
@@ -146,122 +135,136 @@
 		inheritAttrs: false
 	})
 	export default class NirField extends MixinsDeclaration {
+		$refs!: Refs<{
+			number: HTMLElement;
+			key: HTMLElement;
+		}>;
+
 		locales = locales;
+
 		checkIcon = mdiCheck;
 		infoIcon = mdiInformation;
 
-		internalValueNumber: string | null = null;
-		internalValueKey: string | null = null;
+		numberValue: string | null = null;
+		keyValue: string | null = null;
 
-		counterKey = this.nirKey;
+		numberMask = '# ## ## #X ### ###';
+		keyMask = '##';
 
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
 
-		get computedCounterNumber(): number {
-			return this.checkNumber;
+		get numberHint(): string {
+			return locales.numberHint(13);
 		}
 
-		get maskNumber(): string {
-			if (this.keyRequired) {
-				const maskNumber = '# ## ## #X ### ###';
-				return maskNumber;
-			} else {
-				const maskNumber = '# ## ## #X ### ### ##';
-				return maskNumber;
-			}
+		get isNumberLengthValid(): boolean {
+			return this.numberValue?.length === 13;
 		}
 
-		get maskKey(): string {
-			const maskKey = '##';
-			return maskKey;
-		}
-
-		get rulesNumber(): ValidationRule[] {
+		get numberRules(): ValidationRule[] {
 			const rulesNumber = [];
 
 			if (this.required) {
 				rulesNumber.push(required);
 			}
 
-			rulesNumber.push(exactLength(this.checkNumber, true));
+			rulesNumber.push(exactLength(13, true));
 
 			return rulesNumber;
 		}
 
-		get rulesKey(): ValidationRule[] {
+		setNumberValue(event: InputFacadeEvent): void {
+			this.numberValue = event.target?.unmaskedValue ?? null;
+		}
+
+		get isKeyLengthValid(): boolean {
+			return this.keyValue?.length === 2;
+		}
+
+		get keyRules(): ValidationRule[] {
 			const rulesKey = [];
 
 			if (this.required) {
 				rulesKey.push(required);
 			}
 
-			rulesKey.push(exactLength(this.nirKey, true));
+			rulesKey.push(exactLength(2, true));
 
 			return rulesKey;
-		}
-
-		get computedValue(): string | null {
-			return this.value ? formatNir(this.value) : null;
-		}
-
-		get hintNumber(): string {
-			return locales.hintNumber(this.checkNumber);
-		}
-
-		get hintKey(): string {
-			return locales.hintKey(this.nirKey);
-		}
-
-		get computedInternalValue(): string | null {
-			if (this.keyRequired) {
-				if (this.internalValueNumber?.length === this.checkNumber && this.internalValueKey?.length === this.nirKey) {
-					return this.internalValueNumber + this.internalValueKey;
-				}
-
-				return null;
-			} else {
-				if (this.internalValueNumber?.length === this.checkNumber) {
-					return this.internalValueNumber;
-				}
-
-				return null;
-			}
-		}
-
-		get checkNumber(): number {
-			if (this.keyRequired) {
-				return this.nirNumber - this.nirKey;
-			} else {
-				return this.nirNumber;
-			}
 		}
 
 		noSpacesCounter(value?: string | undefined): number {
 			return value?.replace(/\s/g, '').length || 0;
 		}
 
-		setinternalValueNumber(event: InputFacadeEvent): void {
-			this.internalValueNumber = event.target?.unmaskedValue ?? null;
-			this.setFocus();
+		setKeyValue(event: InputFacadeEvent): void {
+			this.keyValue = event.target?.unmaskedValue ?? null;
+			this.resetFocus();
 		}
 
-		setinternalValueKey(event: InputFacadeEvent): void {
-			this.internalValueKey = event.target?.unmaskedValue ?? null;
+
+
+
+
+
+
+		get computedValue(): string | null {
+			return this.value ? formatNir(this.value) : null; // Ne fonctionne pas
 		}
 
-		setFocus(): void {
-			if (this.internalValueNumber?.length === this.checkNumber && this.keyRequired) {
-				const keyFieldRef = this.$refs.keyField as HTMLInputElement;
-				keyFieldRef.focus();
+		get internalValue(): string | null {
+			return null;
+			// if (this.keyRequired) {
+			// 	if (this.internalValueNumber?.length === this.checkNumber && this.internalValueKey?.length === 2) {
+			// 		return this.internalValueNumber + this.internalValueKey;
+			// 	}
+
+			// 	return null;
+			// } else {
+			// 	if (this.internalValueNumber?.length === this.checkNumber) {
+			// 		return this.internalValueNumber;
+			// 	}
+
+			// 	return null;
+			// }
+		}
+
+		get isSingleField(): boolean {
+			return this.nirLength === 13;
+		}
+
+		// Revoir la gestion du focus
+		async setFocus(event: KeyboardEvent) {
+			await this.$nextTick();
+
+			if (this.isSingleField || !this.isNumberLengthValid) {
+				return;
 			}
+
+			// TODO inverser le fonctionnement
+			if (event.key === 'Backspace' || event.key === 'Delete') {
+				return
+			}
+
+			this.$refs.key.focus();
+		}
+
+		resetFocus() {
+			if (this.isSingleField || this.keyValue?.length !== 0) {
+				return;
+			}
+
+			this.$refs.number.focus();
 		}
 
 		emitChangeEvent(): void {
-			if (this.computedInternalValue) {
-				this.$emit('change', this.computedInternalValue);
+			if (!this.internalValue) {
+				return;
 			}
+
+			this.$emit('change', this.internalValue);
 		}
 	}
 </script>
