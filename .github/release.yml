@@ -1,29 +1,29 @@
-# .github/release.yml
-
 changelog:
   exclude:
     labels:
       - ignore-for-release
-    authors:
-      - octocat
   categories:
-    - title: 🛠 Changement cassant
+    - title: 💥 Changements majeurs
       labels:
-        - Semver-Major
         - breaking-change
     - title: ✨ Nouvelles fonctionnalités
       labels:
-        - Semver-Minor
         - enhancement
     - title: ⬆️ Dépendances
       labels:
         - dependencies
     - title: 🐛 Corrections de bugs
       labels:
-        - Bug
+        - bug
     - title: ♻️ Refactoring
       labels:
-        - Refactoring
+        - refactoring
     - title: 📝 Documentation
       labels:
-        - Documentation
+        - documentation
+    - title: ♿️ Accessibilité
+      labels:
+        - a11y
+    - title: 🔧 Configuration
+      labels:
+        - configuration
