@@ -9,21 +9,21 @@ changelog:
     - title: ✨ Nouvelles fonctionnalités
       labels:
         - enhancement
-    - title: ⬆️ Dépendances
-      labels:
-        - dependencies
     - title: 🐛 Corrections de bugs
       labels:
         - bug
     - title: ♻️ Refactoring
       labels:
         - refactoring
-    - title: 📝 Documentation
-      labels:
-        - documentation
     - title: ♿️ Accessibilité
       labels:
         - a11y
+    - title: 📝 Documentation
+      labels:
+        - documentation
     - title: 🔧 Configuration
       labels:
         - configuration
+    - title: ⬆️ Dépendances
+      labels:
+        - dependencies
