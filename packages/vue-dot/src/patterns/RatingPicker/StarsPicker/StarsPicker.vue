@@ -27,7 +27,7 @@
 	@Component
 	export default class StarsPicker extends RatingMixin {
 		$refs!: {
-			rating:  InstanceType<typeof VRating>;
+			rating: InstanceType<typeof VRating>;
 		};
 
 		itemvalue = -1;

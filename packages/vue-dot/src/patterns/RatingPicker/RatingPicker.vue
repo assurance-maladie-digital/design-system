@@ -10,30 +10,31 @@
 			@input="onUpdate"
 		/>
 		<div v-if="readonlyInternal">
-			<v-alert
+			<VAlert
 				outlined
 				type="success"
 			>
 				ca va
-			</v-alert>
+			</VAlert>
 			<slot />
 		</div>
 		<div class="mr-2 mt-5 d-flex justify-space-between ">
-			<v-btn
+			<VBtn
 				text
 				color="primary"
 			>
 				{{ locales.later }}
-			</v-btn>
-			<v-btn
+			</VBtn>
+			<VBtn
 				color="primary"
 				depressed
 			>
 				{{ locales.more }}
-			</v-btn>
+			</VBtn>
 		</div>
 	</div>
 </template>
+
 <script lang="ts">
 	import Component, { mixins } from 'vue-class-component';
 	import StarsPicker from './StarsPicker';
@@ -65,6 +66,7 @@
 			}
 		}
 	});
+
 	const MixinsDeclaration = mixins(Props);
 
 	@Component({
@@ -86,6 +88,7 @@
 				case RatingEnum.NUMBER: return 10;
 				case RatingEnum.STAR: return 5;
 			}
+
 			return 3;
 		}
 		onUpdate( value: number): void {

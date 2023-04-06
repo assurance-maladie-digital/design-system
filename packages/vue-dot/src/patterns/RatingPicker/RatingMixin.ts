@@ -45,6 +45,7 @@ export class RatingMixin extends MixinsDeclaration {
 		if (this.itemLabels === null || value === -1) {
 			return '';
 		}
+
 		return this.itemLabels[value];
 	}
 	onDispatchValue(event: number): void {

@@ -3,7 +3,7 @@
 		<h6 class="mb-6">
 			{{ label }}
 		</h6>
-		<v-rating
+		<VRating
 			:length="length"
 			:readonly="readonly"
 			large
@@ -35,7 +35,7 @@
 					</slot>
 				</div>
 			</template>
-		</v-rating>
+		</VRating>
 	</div>
 </template>
 
@@ -122,6 +122,7 @@
 			if (this.length === 2) {
 				return this.colorsSimple[index];
 			}
+
 			return this.colors[index];
 		}
 

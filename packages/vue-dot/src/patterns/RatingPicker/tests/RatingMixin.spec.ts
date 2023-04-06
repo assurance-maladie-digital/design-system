@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import  { RatingMixin }  from '../RatingMixin';
+import { RatingMixin } from '../RatingMixin';
 
 interface TestComponent extends Vue {
 	onDispatchValue(event: number): void;
@@ -23,6 +23,7 @@ describe('RatingMixin', () => {
 
 	it('verify props', () => {
 		const testComponent = createTestComponent();
+
 		const wrapper = mount(testComponent, {
 			propsData: {
 				label: 'titre de la question',
@@ -39,6 +40,7 @@ describe('RatingMixin', () => {
 
 	it('verify itemLabels', () => {
 		const testComponent = createTestComponent();
+
 		const wrapper = mount(testComponent, {
 			propsData: {
 				label: 'titre de la question',
@@ -55,8 +57,9 @@ describe('RatingMixin', () => {
 		expect(wrapper.vm.getitemLabel(-1)).toBe('');
 	});
 
-	it('dipatch event', async() =>  {
+	it('dipatch event', async() => {
 		const testComponent = createTestComponent();
+
 		const wrapper = mount(testComponent, {
 			propsData: {
 				label: 'titre de la question',
@@ -69,8 +72,9 @@ describe('RatingMixin', () => {
 		expect(wrapper.emitted('input')?.pop()).toEqual([3]);
 	});
 
-	it('block on', async() =>  {
+	it('block on', async() => {
 		const testComponent = createTestComponent();
+
 		const wrapper = mount(testComponent, {
 			propsData: {
 				label: 'titre de la question',
