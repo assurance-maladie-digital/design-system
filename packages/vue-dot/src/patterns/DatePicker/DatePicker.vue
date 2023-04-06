@@ -23,7 +23,7 @@
 				@keydown.enter.prevent="saveFromTextField"
 				@input="errorMessages = null"
 				@change="dateFormatted = $event"
-				v-on="$listeners"
+				v-on="listeners"
 			>
 				<template #prepend>
 					<VBtn
