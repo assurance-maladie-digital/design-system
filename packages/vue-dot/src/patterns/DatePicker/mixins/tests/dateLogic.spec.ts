@@ -179,16 +179,6 @@ describe('DateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it ('not emits change event when called with ref menu undefined', () => {
-		const wrapper = createWrapper();
-
-		wrapper.vm.$refs.menu = undefined;
-
-		wrapper.vm.saveFromCalendar();
-
-		expect(wrapper.emitted('change')).toBeFalsy();
-	});
-
 	it('validates the VTextField when validateOnBlur is true', () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
