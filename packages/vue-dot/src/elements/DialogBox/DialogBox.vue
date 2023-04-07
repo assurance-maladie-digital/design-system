@@ -192,6 +192,7 @@
 
 				if (!this.dialog) {
 					removeEventListener('keydown', setFocus);
+
 					return;
 				}
 

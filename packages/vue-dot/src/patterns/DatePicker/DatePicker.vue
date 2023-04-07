@@ -209,6 +209,7 @@
 		get listeners(): Record<string, Function | Function[]> {
 			// Remove 'change' event to avoid event duplication
 			delete this.$listeners.change;
+
 			return this.$listeners;
 		}
 

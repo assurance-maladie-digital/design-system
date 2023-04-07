@@ -43,9 +43,6 @@ const config: Config.InitialOptions = {
 	],
 	globals: {
 		API_URL: 'http://localhost:8080',
-		MAINTENANCE: 'false',
-		MAINTENANCE_TITLE: '',
-		MAINTENANCE_MESSAGE: '',
 		/**
 		 * Workaround of error "TypeError: Unable to require `.d.ts` file."
 		 * @see https://github.com/kulshekhar/ts-jest/issues/805#issuecomment-456055213
