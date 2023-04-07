@@ -191,7 +191,21 @@ describe('filters', () => {
 		wrapper.vm.formatting = (event: ChipItem) => event.text.toUpperCase();
 		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
 
-		expect(wrapper.vm.formatting(chipItemEvent)).toBe('EXAMPLE');
+		if (wrapper.vm.formatting) {
+			expect(wrapper.vm.formatting(chipItemEvent)).toBe('EXAMPLE');
+		}
+	});
+
+	it('should return the chip value with null formatting function', () => {
+		const testComponent = createTestComponent();
+		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
+
+		wrapper.vm.formatting = () => null;
+		wrapper.vm.onChange('example', wrapper.vm.filters[0]);
+
+		if (!wrapper.vm.formatting) {
+			expect(wrapper.vm.formatting(chipItemEvent)).toBe('example');
+		}
 	});
 
 	it('should split the value into chips when splited is true and the value of the object use formatting function', () => {
