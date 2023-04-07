@@ -1,8 +1,7 @@
 <template>
-	<ErrorPage
+	<MaintenancePage
 		:page-title="pageInfo.title"
 		:message="pageInfo.message"
-		no-btn
 	/>
 </template>
 
@@ -19,9 +18,10 @@
 		get pageInfo(): IndexedObject {
 			// Use env var and default text
 			return {
-				title: window.MAINTENANCE_TITLE || <% if (i18n) { %>this.$t('views.maintenance.title') as string<% } else { %>'Maintenance en cours'<% } %>,
-				message: window.MAINTENANCE_MESSAGE ||<% if (i18n) { %> this.$t('views.maintenance.message') as string<% } else { %>
-					'L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.'<% } %>
+				title: window.MAINTENANCE_TITLE || <% if (i18n) { %>this.$t('views.maintenance.meta.title') as string<% } else { %>'Maintenance en cours'<% } %>,
+				message:
+					window.MAINTENANCE_MESSAGE ||
+					<% if (i18n) { %>this.$t('views.maintenance.meta.description') as string<% } else { %>'L’application n’est pas disponible pour le moment, veuillez nous excuser pour la gêne occasionnée.'<% } %>
 			};
 		}
 
