@@ -5,8 +5,8 @@ description: Liste des [composants](#composants) et [templates](#templates) disp
 
 ## Composants
 
-<doc-components></doc-components>
+<doc-list-components></doc-list-components>
 
 ## Templates
 
-<doc-templates></doc-templates>
+<doc-list-templates></doc-list-templates>
