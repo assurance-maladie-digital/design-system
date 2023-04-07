@@ -5,20 +5,20 @@
 				ref="number"
 				v-facade="numberMask"
 				v-bind="textFieldOptions"
-				:value="computedValue"
+				:value="computedNumberValue"
 				:label="locales.numberLabel"
-				:hint="numberHint"
+				:hint="locales.numberHint"
 				:rules="numberRules"
-				:counter="13"
+				:counter="numberCounter"
 				:counter-value="noSpacesCounter"
-				:success="isNumberLengthValid"
-				@keyup="setFocus"
+				:success="numberFilled"
+				@keydown="focusKeyField"
 				@input.native="setNumberValue"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="isNumberLengthValid"
+						v-if="numberFilled"
 						v-bind="options.icon"
 					>
 						{{ checkIcon }}
@@ -28,7 +28,7 @@
 		</VCol>
 
 		<VCol
-			v-if="nirLength === 15"
+			v-if="!isSingleField"
 			sm="3"
 			md="3"
 		>
@@ -36,20 +36,20 @@
 				ref="key"
 				v-facade="keyMask"
 				v-bind="textFieldOptions"
-				:value="computedValue"
+				:value="computedKeyValue"
 				:label="locales.keyLabel"
 				:hint="locales.keyHint"
 				:rules="keyRules"
-				:counter="2"
+				:counter="keyCounter"
 				:counter-value="noSpacesCounter"
-				:success="isKeyLengthValid"
-				@keyup.delete="resetFocus"
+				:success="keyFilled"
+				@keyup.delete="focusNumberField"
 				@input.native="setKeyValue"
 				@change="emitChangeEvent"
 			>
 				<template #append>
 					<VIcon
-						v-if="isKeyLengthValid"
+						v-if="keyFilled"
 						v-bind="options.icon"
 					>
 						{{ checkIcon }}
@@ -99,7 +99,14 @@
 
 	import deepMerge from 'deepmerge';
 
-	// Largeur du champ à revoir avec UX, ne respecte pas les Design Tokens
+	enum FieldTypesEnum {
+		SINGLE = 13,
+		DOUBLE = 15
+	}
+
+	const NUMBER_LENGTH = 13;
+	const KEY_LENGTH = 2;
+	const SPACE_CHARACTER = ' ';
 
 	const Props = Vue.extend({
 		props: {
@@ -108,10 +115,10 @@
 				default: null
 			},
 			nirLength: {
-				type: Number as PropType<15 | 13>,
-				default: 15,
+				type: Number as PropType<FieldTypesEnum>,
+				default: FieldTypesEnum.DOUBLE,
 				validator(value): boolean {
-					return value === 13 || value === 15;
+					return value === FieldTypesEnum.SINGLE || value === FieldTypesEnum.DOUBLE;
 				}
 			},
 			required: {
@@ -127,12 +134,31 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component({
+	@Component<NirField>({
+		inheritAttrs: false,
 		model: {
 			prop: 'value',
 			event: 'change'
 		},
-		inheritAttrs: false
+		watch: {
+			value: {
+				handler(value: string | null) {
+					if (!value) {
+						return;
+					}
+
+					if (this.value.length >= FieldTypesEnum.SINGLE) {
+						this.numberValue = value;
+					}
+
+					if (this.value.length === FieldTypesEnum.DOUBLE) {
+						this.numberValue = value.slice(0, -KEY_LENGTH);
+						this.keyValue = value.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH);
+					}
+				},
+				immediate: true
+			}
+		}
 	})
 	export default class NirField extends MixinsDeclaration {
 		$refs!: Refs<{
@@ -149,18 +175,17 @@
 		keyValue: string | null = null;
 
 		numberMask = '# ## ## #X ### ###';
+		numberCounter = NUMBER_LENGTH;
+
 		keyMask = '##';
+		keyCounter = KEY_LENGTH;
 
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
 
-		get numberHint(): string {
-			return locales.numberHint(13);
-		}
-
-		get isNumberLengthValid(): boolean {
-			return this.numberValue?.length === 13;
+		get numberFilled(): boolean {
+			return this.numberValue?.length === NUMBER_LENGTH;
 		}
 
 		get numberRules(): ValidationRule[] {
@@ -170,7 +195,7 @@
 				rulesNumber.push(required);
 			}
 
-			rulesNumber.push(exactLength(13, true));
+			rulesNumber.push(exactLength(NUMBER_LENGTH, true));
 
 			return rulesNumber;
 		}
@@ -179,8 +204,8 @@
 			this.numberValue = event.target?.unmaskedValue ?? null;
 		}
 
-		get isKeyLengthValid(): boolean {
-			return this.keyValue?.length === 2;
+		get keyFilled(): boolean {
+			return this.keyValue?.length === KEY_LENGTH;
 		}
 
 		get keyRules(): ValidationRule[] {
@@ -190,73 +215,68 @@
 				rulesKey.push(required);
 			}
 
-			rulesKey.push(exactLength(2, true));
+			rulesKey.push(exactLength(KEY_LENGTH, true));
 
 			return rulesKey;
 		}
 
-		noSpacesCounter(value?: string | undefined): number {
-			return value?.replace(/\s/g, '').length || 0;
-		}
-
 		setKeyValue(event: InputFacadeEvent): void {
 			this.keyValue = event.target?.unmaskedValue ?? null;
-			this.resetFocus();
 		}
 
+		get computedNumberValue(): string | null {
+			return this.numberValue ? formatNir(this.numberValue) : null;
+		}
 
-
-
-
-
-
-		get computedValue(): string | null {
-			return this.value ? formatNir(this.value) : null; // Ne fonctionne pas
+		get computedKeyValue(): string | null {
+			return this.keyValue ? this.keyValue.split('').join(SPACE_CHARACTER) : null;
 		}
 
 		get internalValue(): string | null {
-			return null;
-			// if (this.keyRequired) {
-			// 	if (this.internalValueNumber?.length === this.checkNumber && this.internalValueKey?.length === 2) {
-			// 		return this.internalValueNumber + this.internalValueKey;
-			// 	}
+			if (this.isSingleField && this.numberFilled) {
+				return this.numberValue;
+			}
 
-			// 	return null;
-			// } else {
-			// 	if (this.internalValueNumber?.length === this.checkNumber) {
-			// 		return this.internalValueNumber;
-			// 	}
+			if (!this.numberFilled || !this.keyFilled) {
+				return null;
+			}
 
-			// 	return null;
-			// }
+			return this.numberValue as string + this.keyValue as string;
 		}
 
 		get isSingleField(): boolean {
-			return this.nirLength === 13;
+			return this.nirLength === FieldTypesEnum.SINGLE;
 		}
 
-		// Revoir la gestion du focus
-		async setFocus(event: KeyboardEvent) {
-			await this.$nextTick();
+		focusKeyField({ key, altKey, ctrlKey, metaKey, shiftKey }: KeyboardEvent): void {
+			const isSingleField = this.isSingleField;
+			const notFilled = !this.numberFilled;
+			// Don't move focus for combo (eg. Ctrl + A)
+			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey;
+			// Don't move focus for other keys (eg. ArrowRight)
+			const isNotSingleAlphaNumChar = !/^[a-zA-Z0-9| ]$/.test(key);
+			// Don't move focus is content is selected to allow overwrite
+			const isContentSelected = document.getSelection()?.toString() === this.computedNumberValue;
 
-			if (this.isSingleField || !this.isNumberLengthValid) {
+			const shouldNotFocus = isSingleField || notFilled || keyHasModifier || isNotSingleAlphaNumChar || isContentSelected;
+
+			if (shouldNotFocus) {
 				return;
-			}
-
-			// TODO inverser le fonctionnement
-			if (event.key === 'Backspace' || event.key === 'Delete') {
-				return
 			}
 
 			this.$refs.key.focus();
 		}
 
-		resetFocus() {
-			if (this.isSingleField || this.keyValue?.length !== 0) {
+		focusNumberField(): void {
+			if (this.keyValue?.length !== 0) {
 				return;
 			}
 
 			this.$refs.number.focus();
+		}
+
+		noSpacesCounter(value?: string | undefined): number {
+			return value?.replace(/\s/g, '').length || 0;
 		}
 
 		emitChangeEvent(): void {
@@ -270,9 +290,11 @@
 </script>
 
 <style lang="scss" scoped>
+	// TODO: Largeur du champ à revoir avec UX, ne respecte pas les Design Tokens
 	.row {
 		margin: 0;
 	}
+
 	.v-icon {
 		min-width: 24px;
 	}

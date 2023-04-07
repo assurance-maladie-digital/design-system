@@ -1,15 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NirField renders correctly with 2 characters 1`] = `
+exports[`NirField renders correctly 1`] = `
 <div class="row row--dense">
-  <div class="col-sm-9 col-md-9 col">
-    <div class="v-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+  <div class="col">
+    <div class="v-input theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <fieldset aria-hidden="true">
-            <legend style="width: 0px;"><span class="notranslate">​</span></legend>
-          </fieldset>
-          <div class="v-text-field__slot"><label for="input-7" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input aria-labelledby="Numéro de sécurité sociale" aria-describedby="13 caractères" id="input-7" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" id="input-2" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -23,13 +20,10 @@ exports[`NirField renders correctly with 2 characters 1`] = `
     </div>
   </div>
   <div class="col-sm-3 col-md-3 col">
-    <div class="v-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+    <div class="v-input theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <fieldset aria-hidden="true">
-            <legend style="width: 0px;"><span class="notranslate">​</span></legend>
-          </fieldset>
-          <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input aria-labelledby="Clé" aria-describedby="2 chiffres" id="input-10" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-5" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" id="input-5" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -48,14 +42,11 @@ exports[`NirField renders correctly with 2 characters 1`] = `
 
 exports[`NirField renders correctly with 13 characters 1`] = `
 <div class="row row--dense">
-  <div class="col-sm-12 col-md-12 col">
-    <div class="v-input theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
+  <div class="col">
+    <div class="v-input theme--light v-text-field">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <fieldset aria-hidden="true">
-            <legend style="width: 0px;"><span class="notranslate">​</span></legend>
-          </fieldset>
-          <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input aria-labelledby="Numéro de sécurité sociale" aria-describedby="13 caractères" id="input-2" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" id="input-10" type="text"></div>
         </div>
         <div class="v-text-field__details">
           <div class="v-messages theme--light">
@@ -70,5 +61,45 @@ exports[`NirField renders correctly with 13 characters 1`] = `
   </div>
   <!---->
   <!---->
+</div>
+`;
+
+exports[`NirField renders correctly with a tooltip 1`] = `
+<div class="row row--dense">
+  <div class="col">
+    <div class="v-input theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-15" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" id="input-15" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+              <div class="v-messages__message">13 caractères</div>
+            </transition-group-stub>
+          </div>
+          <div class="v-counter theme--light">0 / 13</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 col-md-3 col">
+    <div class="v-input theme--light v-text-field">
+      <div class="v-input__control">
+        <div class="v-input__slot">
+          <div class="v-text-field__slot"><label for="input-18" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" id="input-18" type="text"></div>
+        </div>
+        <div class="v-text-field__details">
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+              <div class="v-messages__message">2 chiffres</div>
+            </transition-group-stub>
+          </div>
+          <div class="v-counter theme--light">0 / 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex align-start justify-center pt-5 col col-1"><span class="v-tooltip v-tooltip--top"><!----><span aria-hidden="true" aria-haspopup="true" aria-expanded="false" class="v-icon notranslate theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></span></span></div>
 </div>
 `;
