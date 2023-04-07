@@ -8,9 +8,7 @@ exports[`ErrorPage renders correctly 1`] = `
       Error
     </h2>
     <!---->
-    <p>
-      Error message
-    </p>
+    <p>Error message</p>
     <div class="d-flex mt-6">
       <vspacer-stub tag="div"></vspacer-stub>
       <vbtn-stub color="primary" tag="button" activeclass="" exact="true" to="[object Object]" type="button">

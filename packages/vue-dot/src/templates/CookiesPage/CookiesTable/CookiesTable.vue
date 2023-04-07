@@ -18,15 +18,9 @@
 				v-for="(cookie, index) in items"
 				:key="index"
 			>
-				<td>
-					{{ cookie.name }}
-				</td>
-				<td>
-					{{ cookie.description }}
-				</td>
-				<td>
-					{{ cookie.conservation }}
-				</td>
+				<td>{{ cookie.name }}</td>
+				<td>{{ cookie.description }}</td>
+				<td>{{ cookie.conservation }}</td>
 			</tr>
 		</tbody>
 	</VSimpleTable>

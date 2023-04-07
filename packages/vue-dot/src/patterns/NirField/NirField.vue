@@ -74,9 +74,7 @@
 						{{ infoIcon }}
 					</VIcon>
 				</template>
-				<span>
-					{{ tooltip }}
-				</span>
+				<span>{{ tooltip }}</span>
 			</VTooltip>
 		</VCol>
 	</VRow>

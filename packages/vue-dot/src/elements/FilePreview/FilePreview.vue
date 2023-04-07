@@ -7,9 +7,7 @@
 			type="application/pdf"
 			@load="revokeFileURL"
 		>
-			<p>
-				{{ locales.previewNotAvailable }}
-			</p>
+			<p>{{ locales.previewNotAvailable }}</p>
 		</object>
 
 		<img
@@ -21,9 +19,7 @@
 		>
 
 		<slot v-else>
-			<p>
-				{{ locales.previewTypeNotAvailable }}
-			</p>
+			<p>{{ locales.previewTypeNotAvailable }}</p>
 		</slot>
 	</div>
 </template>

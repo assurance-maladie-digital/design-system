@@ -22,14 +22,10 @@
 			<p v-if="supportId">
 				{{ locales.supportIdMessage }}
 
-				<b>
-					{{ supportId }}
-				</b>
+				<b>{{ supportId }}</b>
 			</p>
 
-			<p>
-				{{ message }}
-			</p>
+			<p>{{ message }}</p>
 
 			<div
 				v-if="!noBtn && btnText && btnRoute"

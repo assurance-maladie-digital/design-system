@@ -40,9 +40,7 @@
 					>
 						{{ checkIcon }}
 					</VIcon>
-					<span class="turquoise-darken-60--text">
-						{{ afterValidate[0].message }}
-					</span>
+					<span class="turquoise-darken-60--text">{{ afterValidate[0].message }}</span>
 				</div>
 				<VBtn
 					v-if="firstStep.result === null && !hideCloseButtons"
@@ -104,9 +102,7 @@
 				>
 					{{ checkIcon }}
 				</VIcon>
-				<span class="turquoise-darken-60--text">
-					{{ afterValidate[1].message }}
-				</span>
+				<span class="turquoise-darken-60--text">{{ afterValidate[1].message }}</span>
 			</div>
 
 			<div

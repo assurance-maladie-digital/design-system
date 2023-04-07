@@ -17,26 +17,14 @@ exports[`CookiesTable renders correctly 1`] = `
   </thead>
   <tbody>
     <tr>
-      <td>
-        lorem-ipsum
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </td>
-      <td>
-        XX mois
-      </td>
+      <td>lorem-ipsum</td>
+      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+      <td>XX mois</td>
     </tr>
     <tr>
-      <td>
-        lorem-ipsum
-      </td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </td>
-      <td>
-        XX mois
-      </td>
+      <td>lorem-ipsum</td>
+      <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+      <td>XX mois</td>
     </tr>
   </tbody>
 </vsimpletable-stub>
