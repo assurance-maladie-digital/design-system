@@ -3,7 +3,7 @@
 exports[`StarsPicker renders correctly 1`] = `
 <div class="mx-2">
   <h6>Pourriez-vous donner une note ?</h6>
-  <div class="my-0 d-flex d-inline-flex flex-column align-sm-center">
+  <div class="d-flex d-inline-flex flex-column align-sm-center my-0">
     <vrating-stub color="primary" opendelay="0" closedelay="0" ripple="true" backgroundcolor="primary lighten-4" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" hover="true" length="5" value="0" iconlabel="$vuetify.rating.ariaLabel.icon"></vrating-stub>
     <div class="caption">
 
