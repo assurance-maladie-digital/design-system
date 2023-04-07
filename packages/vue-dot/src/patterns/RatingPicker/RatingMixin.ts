@@ -35,13 +35,13 @@ const Props = Vue.extend({
 const MixinsDeclaration = mixins(Props);
 
 @Component
-export class RatingMixin extends MixinsDeclaration {
+export class RatingMixin extends MixinsDeclaration implements RatingMixinInterface {
 
 	valueInternal= this.value;
 	lengthInternal = this.length;
 	readonlyInternal = false;
 
-	getitemLabel(value: number): string {
+	getItemLabel(value: number): string {
 		if (this.itemLabels === null || value === -1) {
 			return '';
 		}
@@ -51,8 +51,14 @@ export class RatingMixin extends MixinsDeclaration {
 	onDispatchValue(event: number): void {
 		this.$emit('input', event);
 	}
-	blockon(value: number): void {
+	lockField(value: number): void {
 		this.readonlyInternal = true;
 		this.valueInternal = value;
 	}
+}
+
+export interface RatingMixinInterface extends Vue {
+	onDispatchValue(event: number): void;
+	lockField(event: number): void;
+	getItemLabel(value: number): string;
 }

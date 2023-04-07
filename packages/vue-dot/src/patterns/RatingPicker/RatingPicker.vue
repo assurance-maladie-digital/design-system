@@ -94,7 +94,7 @@
 		onUpdate( value: number): void {
 			this.readonlyInternal = true;
 			// on laisse a chaque rating le soin de decider comment il se bloque
-			this.$refs.firstRating.blockon(value);
+			this.$refs.firstRating.lockField(value);
 		}
 	}
 </script>

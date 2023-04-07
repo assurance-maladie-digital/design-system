@@ -26,7 +26,7 @@
 					<span
 						v-if="displayLabel(index)"
 						class="caption align-self-sm-center "
-					>{{ getitemLabel(index) }}</span>
+					>{{ getItemLabel(index) }}</span>
 					<div />
 				</div>
 			</template>
@@ -61,7 +61,7 @@
 			return (val === 0 || val === this.length - 1);
 		}
 
-		getitemLabel(value: number): string {
+		getItemLabel(value: number): string {
 			if (this.itemLabels === null || value === -1) {
 				return '';
 			}

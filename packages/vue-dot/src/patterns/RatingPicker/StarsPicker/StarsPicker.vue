@@ -12,7 +12,7 @@
 				@input="onDispatchValue"
 			/>
 			<div class="caption">
-				{{ getitemLabel(itemvalue) }}
+				{{ getItemLabel(itemvalue) }}
 			</div>
 		</div>
 	</div>
