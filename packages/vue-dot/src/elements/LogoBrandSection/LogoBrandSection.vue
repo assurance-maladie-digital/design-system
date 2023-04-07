@@ -61,7 +61,9 @@
 				>
 					<template v-if="isCompteEntreprise">
 						{{ service.title.text }}
-						<span>{{ service.title.highlight }}</span>
+						<span>
+							{{ service.title.highlight }}
+						</span>
 					</template>
 
 					<template v-else>

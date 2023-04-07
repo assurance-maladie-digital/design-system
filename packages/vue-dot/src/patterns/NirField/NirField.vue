@@ -74,7 +74,9 @@
 						{{ infoIcon }}
 					</VIcon>
 				</template>
-				<span>{{ tooltip }}</span>
+				<span>
+					{{ tooltip }}
+				</span>
 			</VTooltip>
 		</VCol>
 	</VRow>
@@ -166,15 +168,18 @@
 		get maskNumber(): string {
 			if (this.keyRequired) {
 				const maskNumber = '# ## ## #X ### ###';
+
 				return maskNumber;
 			} else {
 				const maskNumber = '# ## ## #X ### ### ##';
+
 				return maskNumber;
 			}
 		}
 
 		get maskKey(): string {
 			const maskKey = '##';
+
 			return maskKey;
 		}
 

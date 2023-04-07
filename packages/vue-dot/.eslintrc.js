@@ -18,7 +18,7 @@ module.exports = {
 			'ignores': ['h6']
 		}],
 		'padding-line-between-statements': ['error',
-			{blankLine: 'always', prev: '*', next: 'return'}
+			{ blankLine: 'always', prev: '*', next: 'return' }
 		],
 		'no-multi-spaces': 'error',
 		'vue/padding-line-between-blocks': ['error', 'always'],

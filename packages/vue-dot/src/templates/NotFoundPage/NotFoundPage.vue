@@ -21,7 +21,9 @@
 					<p v-if="supportId">
 						{{ locales.supportIdMessage }}
 
-						<b>{{ supportId }}</b>.
+						<b>
+							{{ supportId }}
+						</b>.
 					</p>
 
 					<p class="mb-10">

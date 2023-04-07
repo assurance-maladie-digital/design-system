@@ -150,6 +150,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			this.fileList.push(this.uploadedFile);
 			this.emitChangeEvent();
 			this.dialog = false;
+
 			return;
 		}
 
@@ -167,18 +168,21 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			}
 
 			this.dialog = true;
+
 			return;
 		}
 
 		if (!this.internalFileListItems.length && this.uploadedFile) {
 			this.fileList.push(this.uploadedFile);
 			this.emitChangeEvent();
+
 			return;
 		}
 
 		if (this.singleMode) {
 			this.selectedItem = this.selectItems[0].value;
 			this.setFileInList();
+
 			return;
 		}
 
@@ -186,6 +190,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			this.setFileInList();
 			this.inlineSelect = false;
 			this.selectedItem = '';
+
 			return;
 		}
 

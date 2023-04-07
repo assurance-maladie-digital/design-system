@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { RatingMixin }  from '../RatingMixin';
+import { RatingMixin } from '../RatingMixin';
 
 interface TestComponent extends Vue {
 	onDispatchValue(event: number): void;
@@ -34,7 +34,7 @@ describe('RatingMixin', () => {
 		expect(wrapper.props().readonly).toBeFalsy();
 	});
 
-	it('dispatch input event', async() =>  {
+	it('dispatch input event', async() => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {

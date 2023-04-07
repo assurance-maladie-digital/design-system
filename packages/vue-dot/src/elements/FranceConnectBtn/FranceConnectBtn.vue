@@ -11,7 +11,9 @@
 			:height="height"
 		>
 			<g fill-rule="nonzero">
-				<title>{{ label }}</title>
+				<title>
+					{{ label }}
+				</title>
 
 				<path
 					stroke="#034ea2"
