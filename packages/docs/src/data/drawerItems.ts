@@ -227,16 +227,16 @@ export const drawerItems: DrawerItem[] = [
 						to: "/composants/feedback/notification-bar",
 					},
 					{
-						title: 'AccessibilityBanner',
-						to: '/composants/feedback/accessibility-banner'
+						title: "AccessibilityBanner",
+						to: "/composants/feedback/accessibility-banner"
 					},
 					{
-						title: 'CookieBanner',
-						to: '/composants/feedback/cookie-banner'
+						title: "CookieBanner",
+						to: "/composants/feedback/cookie-banner"
 					},
 					{
-						title: 'HeaderLoading',
-						to: '/composants/feedback/header-loading'
+						title: "HeaderLoading",
+						to: "/composants/feedback/header-loading"
 					},
 					{
 						title: "RatingPicker",
