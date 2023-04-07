@@ -61,7 +61,7 @@ function getFileDropEvent({ files, items, kind }: DropEvent): DragEvent {
 					}
 				]
 			}
-		}  as unknown as DragEvent;
+		} as unknown as DragEvent;
 	}
 
 	return {

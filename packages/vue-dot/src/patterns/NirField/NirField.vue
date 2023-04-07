@@ -166,15 +166,18 @@
 		get maskNumber(): string {
 			if (this.keyRequired) {
 				const maskNumber = '# ## ## #X ### ###';
+
 				return maskNumber;
 			} else {
 				const maskNumber = '# ## ## #X ### ### ##';
+
 				return maskNumber;
 			}
 		}
 
 		get maskKey(): string {
 			const maskKey = '##';
+
 			return maskKey;
 		}
 

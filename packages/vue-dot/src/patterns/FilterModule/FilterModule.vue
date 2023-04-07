@@ -123,6 +123,7 @@
 
 			if (this.filtersCount === 0) {
 				this.resetFilters();
+
 				return;
 			}
 

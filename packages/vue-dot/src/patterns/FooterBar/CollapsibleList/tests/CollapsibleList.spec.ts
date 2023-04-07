@@ -1,24 +1,29 @@
 import Vue from 'vue';
+
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import FileUpload from '../';
+import CollapsibleList from '../';
 
 let wrapper: Wrapper<Vue>;
 
-describe('FileUpload', () => {
+describe('CollapsibleList', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(FileUpload);
-
-		expect(html(wrapper)).toMatchSnapshot();
-	});
-
-	it('renders correctly with only one extension allowed', () => {
-		wrapper = mountComponent(FileUpload, {
+		wrapper = mountComponent(CollapsibleList, {
 			propsData: {
-				allowedExtensions: ['pdf']
+				title: 'Title',
+				content: [
+					{
+						text: 'Item 1',
+						url: '/item1'
+					},
+					{
+						text: 'Item 2',
+						url: '/item2'
+					}
+				]
 			}
 		});
 

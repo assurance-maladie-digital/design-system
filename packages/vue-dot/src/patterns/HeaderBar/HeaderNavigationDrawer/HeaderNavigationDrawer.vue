@@ -1,7 +1,7 @@
 <template>
 	<VNavigationDrawer
-		v-if="mobileVersion"
-		v-bind="options.navigationDrawer"
+		v-if="mobileVersion && items"
+		v-bind="options"
 		:value="drawer"
 		:color="backgroundColor"
 		@input="drawerUpdated"

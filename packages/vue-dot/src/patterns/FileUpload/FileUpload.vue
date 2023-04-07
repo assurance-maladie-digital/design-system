@@ -68,7 +68,7 @@
 						:max-size="maxSizeReadable"
 						:extensions="extensions"
 					>
-						{{ locales.infoText(maxSizeReadable, extensions) }}
+						{{ locales.infoText(maxSizeReadable, extensions, allowedExtensions.length) }}
 					</slot>
 				</span>
 			</span>

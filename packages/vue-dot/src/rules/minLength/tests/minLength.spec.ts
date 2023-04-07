@@ -24,6 +24,7 @@ describe('minLength', () => {
 
 		expect(rule('0 1 2 3 4 5 6 7 8 9 10')).toBe(true);
 	});
+
 	it('returns true if the value is falsy', () => {
 		const rule = minLength(10);
 

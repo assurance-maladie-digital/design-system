@@ -16,6 +16,7 @@
 				'sticky-header-example': $attrs.sticky,
 				'hide-secondary-title-overflow': $attrs.theme === ThemeEnum.COMPTE_ENTREPRISE
 			}"
+			:vuetify-options="vuetifyOptions"
 			v-on="$listeners"
 		/>
 
@@ -33,6 +34,7 @@
 
 	import { NavigationItem } from '@cnamts/vue-dot/src/patterns/HeaderBar/types';
 	import { ThemeEnum } from '@cnamts/vue-dot/src/constants/enums/ThemeEnum';
+	import { Options } from '@cnamts/vue-dot/src/mixins/customizable';
 
 	const EXAMPLE_TARGET = 'header-bar-usage';
 
@@ -82,6 +84,14 @@
 				'serviceSubTitle'
 			]
 		};
+
+		get vuetifyOptions(): Options {
+			return {
+				navigationDrawer: {
+					hideOverlay: Boolean(this.$attrs.sticky && this.$attrs.mobileVersion)
+				}
+			};
+		};
 	}
 </script>
 
@@ -92,6 +102,10 @@
 
 		:deep(.vd-header-bar) {
 			position: static !important;
+		}
+
+		:deep(.v-navigation-drawer--fixed) {
+			position: absolute;
 		}
 
 		&.hide-secondary-title-overflow :deep(.vd-header-brand-section) {
