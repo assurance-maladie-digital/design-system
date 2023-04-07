@@ -19,8 +19,7 @@ describe('RatingMixin', () => {
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				label: 'Pouvez-vous nous en dire plus ?',
-				length: undefined
+				label: 'Pouvez-vous nous en dire plus ?'
 			}
 		}) as Wrapper<RatingMixinInterface>;
 

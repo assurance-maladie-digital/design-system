@@ -68,7 +68,7 @@
 				default: false
 			},
 			itemLabels: {
-				type: Array<string>,
+				type: Array as PropType<string[]>,
 				default: null
 			}
 		}
@@ -103,7 +103,6 @@
 
 		onUpdate(value: number): void {
 			this.readonlyInternal = true;
-			// on laisse a chaque rating le soin de decider comment il se bloque
 			this.$refs.firstRating.lockField(value);
 		}
 	}

@@ -12,7 +12,7 @@ describe('EmotionPicker', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(EmotionPicker,{
 			propsData: {
-				label: 'Label test',
+				label: 'Pourriez-vous donner une note ?',
 				labels: {
 					sad: 'Pas du tout',
 					neutral: 'Peut-être',

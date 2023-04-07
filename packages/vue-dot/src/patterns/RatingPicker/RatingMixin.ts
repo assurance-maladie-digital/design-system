@@ -10,7 +10,7 @@ export enum RatingEnum {
 const Props = Vue.extend({
 	props: {
 		itemLabels: {
-			type: Array<string>,
+			type: Array as PropType<string[]>,
 			default: null
 		},
 		label: {
