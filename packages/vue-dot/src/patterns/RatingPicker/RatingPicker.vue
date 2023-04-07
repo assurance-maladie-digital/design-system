@@ -229,6 +229,7 @@
 					return this.firstStep.result < 7 ? true : false;
 				}
 			}
+
 			return false;
 		}
 

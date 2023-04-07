@@ -39,6 +39,7 @@ const MixinsDeclaration = mixins(Props);
 			handler(date: string): void {
 				if (!date) {
 					this.clearInternalModel();
+
 					return;
 				}
 
@@ -130,6 +131,7 @@ export class DateLogic extends MixinsDeclaration {
 
 		if (!parsed.isValid() || !formatted.match(INTERNAL_FORMAT_REGEX)) {
 			this.errorMessages = [locales.invalidDate];
+
 			return null;
 		}
 
@@ -175,6 +177,7 @@ export class DateLogic extends MixinsDeclaration {
 		if (!this.textFieldDate) {
 			this.$emit('change', '');
 			this.clearInternalModel();
+
 			return;
 		}
 
