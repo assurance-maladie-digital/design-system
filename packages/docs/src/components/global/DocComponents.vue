@@ -363,17 +363,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.v-card:hover {
-		box-shadow: 0 0 0 2px #3f51b5 !important;
-	}
-	.v-chip {
-		position: absolute;
-		top: 155px;
-		right: 0;
-	}
-	.v-divider {
-		height: 0.5px;
-		max-height: 0.5px;
-		border-width: 0.5px;
-	}
+.v-card:hover {
+	box-shadow: 0 0 0 2px #3f51b5 !important;
+}
+.v-chip {
+	position: absolute;
+	top: 155px;
+	right: 0;
+}
+.v-divider {
+	height: 0.5px;
+	max-height: 0.5px;
+	border-width: 0.5px;
+}
 </style>

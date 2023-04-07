@@ -5,8 +5,8 @@ description: Liste des [composants](#composants) et [templates](#templates) disp
 
 ## Composants
 
-<vue-file file="list-components"></vue-file>
+<doc-components></doc-components>
 
 ## Templates
 
-<vue-file file="list-templates"></vue-file>
+<doc-templates></doc-templates>
