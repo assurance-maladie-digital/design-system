@@ -1,7 +1,7 @@
 <template>
 	<div class="mx-2">
 		<h6>{{ label }}</h6>
-		<div class="my-0 d-flex d-inline-flex flex-column align-sm-center">
+		<div class="d-flex d-inline-flex flex-column align-sm-center my-0">
 			<VRating
 				ref="rating"
 				:length="lengthInternal"

@@ -18,7 +18,8 @@
 			</VAlert>
 			<slot />
 		</div>
-		<div class="mr-2 mt-5 d-flex justify-space-between ">
+
+		<div class="d-flex justify-space-between mt-5 mr-2">
 			<VBtn
 				text
 				color="primary"

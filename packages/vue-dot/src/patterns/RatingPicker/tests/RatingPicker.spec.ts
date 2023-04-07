@@ -29,7 +29,7 @@ describe('RatingPicker', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('on update', () => {
+	it('sets readonly interval value on update', () => {
 		wrapper = wrapper = createTestComponent();
 		expect(wrapper.vm.$data.readonlyInternal).toBeFalsy();
 		wrapper.vm.onUpdate(0);

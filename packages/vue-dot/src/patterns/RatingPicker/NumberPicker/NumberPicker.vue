@@ -57,14 +57,15 @@
 	@Component
 	export default class NumberPicker extends RatingMixin {
 
-		displayLabel(val: number): boolean {
-			return (val === 0 || val === this.length - 1);
+		displayLabel(value: number): boolean {
+			return !value || value === this.length - 1;
 		}
 
 		getItemLabel(value: number): string {
 			if (this.itemLabels === null || value === -1) {
 				return '';
 			}
+
 
 			return value === 0 ? this.itemLabels[0] : this.itemLabels[1];
 		}

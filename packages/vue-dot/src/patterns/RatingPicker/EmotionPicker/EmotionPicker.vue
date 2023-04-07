@@ -23,13 +23,14 @@
 				>
 					<slot :name="slotName(index)">
 						<VIcon
+							:color="genColor(index)"
 							x-large
 							class="pa-0"
-							:color="genColor(index)"
 						>
 							{{ getIcon(index) }}
 						</VIcon>
-						<span class="description mt-1">
+
+						<span class="mt-1">
 							{{ getitemLabel(index) }}
 						</span>
 					</slot>

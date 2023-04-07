@@ -36,7 +36,6 @@ const MixinsDeclaration = mixins(Props);
 
 @Component
 export class RatingMixin extends MixinsDeclaration implements RatingMixinInterface {
-
 	valueInternal= this.value;
 	lengthInternal = this.length;
 	readonlyInternal = false;
