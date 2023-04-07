@@ -78,6 +78,7 @@ export class LocalStorageUtility {
 
 		if (hasExpired) {
 			this.clear();
+
 			return null;
 		}
 

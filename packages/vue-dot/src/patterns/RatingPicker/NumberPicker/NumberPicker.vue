@@ -66,7 +66,6 @@
 				return '';
 			}
 
-
 			return value === 0 ? this.itemLabels[0] : this.itemLabels[1];
 		}
 	}

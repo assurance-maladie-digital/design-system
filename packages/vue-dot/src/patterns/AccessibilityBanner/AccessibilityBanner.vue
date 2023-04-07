@@ -11,6 +11,7 @@
 				:width="btnWidth"
 				:to="accessibilityRoute"
 				@click="accept"
+				@focusout="onFocusOut"
 			>
 				{{ locales.label }}
 			</VBtn>
@@ -67,6 +68,11 @@
 					return;
 				}
 			});
+		}
+
+		onFocusOut(): void {
+			this.active = false;
+			document.removeEventListener('keydown', this.checkTabKey);
 		}
 	}
 </script>

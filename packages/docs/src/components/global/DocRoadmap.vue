@@ -1,21 +1,75 @@
 <template>
 	<div class="doc-roadmap w-100">
-		<VExpansionPanels
-			v-for="(section, sectionIndex) in sections"
-			:key="sectionIndex"
-			:class="{ 'mt-12': sectionIndex > 0 }"
-			accordion
+		<VSheet
+			outlined
+			rounded
+			class="mb-8"
 		>
-			<h2 class="text-subtitle-1 font-weight-regular grey--text text--darken-3 mb-6 w-100">
-				{{ section.label }}
-			</h2>
+			<VListItem
+				href="https://github.com/orgs/assurance-maladie-digital/projects/2/views/5"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="px-4"
+			>
+				<VListItemAvatar class="d-none d-sm-inline-flex">
+					<VIcon
+						color="primary"
+						x-large
+					>
+						{{ tagIcon }}
+					</VIcon>
+				</VListItemAvatar>
 
-			<DocRoadmapItem
-				v-for="(item, index) in section.items"
-				:key="index"
-				v-bind="item"
-			/>
-		</VExpansionPanels>
+				<VListItemContent>
+					<VListItemTitle class="mb-1">
+						Version 2.x
+					</VListItemTitle>
+
+					<VListItemSubtitle>
+						La version 2 du Design System est en cours de finalisation, les demandes d'ajout de composants ou de fonctionnalités ne sont plus acceptées, mais nous continuerons les corrections de bugs jusqu'à fin 2023.
+					</VListItemSubtitle>
+				</VListItemContent>
+
+				<VIcon class="ml-4">
+					{{ newTabIcon }}
+				</VIcon>
+			</VListItem>
+		</VSheet>
+
+		<VSheet
+			outlined
+			rounded
+		>
+			<VListItem
+				href="https://github.com/orgs/assurance-maladie-digital/projects/4/views/2"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="px-4"
+			>
+				<VListItemAvatar class="d-none d-sm-inline-flex">
+					<VIcon
+						color="primary"
+						x-large
+					>
+						{{ tagHiddenIcon }}
+					</VIcon>
+				</VListItemAvatar>
+
+				<VListItemContent>
+					<VListItemTitle>
+						Version 3.0
+					</VListItemTitle>
+
+					<VListItemSubtitle>
+						La version 3 du Design System est en cours de conception et son développement commencera en Juin 2023.
+					</VListItemSubtitle>
+				</VListItemContent>
+
+				<VIcon class="ml-4">
+					{{ newTabIcon }}
+				</VIcon>
+			</VListItem>
+		</VSheet>
 	</div>
 </template>
 
@@ -23,31 +77,18 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import { roadmap } from '../../data/roadmap';
+	import { mdiOpenInNew, mdiTagOutline, mdiTagHidden } from '@mdi/js';
 
 	@Component
 	export default class DocRoadmap extends Vue {
-		get sections() {
-			const { current, next } = roadmap;
-
-			const sections = [
-				{
-					label: 'En cours',
-					items: current
-				},
-				{
-					label: 'À venir',
-					items: next
-				}
-			];
-
-			return sections.filter((section) => Boolean(section.items));
-		}
+		newTabIcon = mdiOpenInNew;
+		tagIcon = mdiTagOutline;
+		tagHiddenIcon = mdiTagHidden;
 	}
 </script>
 
 <style lang="scss" scoped>
-	h2 {
-		border-bottom: 1px solid rgba(0, 0, 0, .38);
+	.v-list-item__subtitle {
+		white-space: normal;
 	}
 </style>

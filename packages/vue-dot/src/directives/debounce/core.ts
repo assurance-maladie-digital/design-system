@@ -31,6 +31,7 @@ export function getInputHandler(inputElement: HTMLInputElement, value: Directive
 		// When used with custom inputs, the value is a function
 		if (typeof value === 'function') {
 			value(inputElement.value);
+
 			return;
 		}
 

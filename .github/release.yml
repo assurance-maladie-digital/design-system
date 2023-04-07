@@ -1,0 +1,29 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+  categories:
+    - title: 💥 Changements majeurs
+      labels:
+        - breaking-change
+    - title: ✨ Nouvelles fonctionnalités
+      labels:
+        - enhancement
+    - title: 🐛 Corrections de bugs
+      labels:
+        - bug
+    - title: ♻️ Refactoring
+      labels:
+        - refactoring
+    - title: ♿️ Accessibilité
+      labels:
+        - a11y
+    - title: 📝 Documentation
+      labels:
+        - documentation
+    - title: 🔧 Configuration
+      labels:
+        - configuration
+    - title: ⬆️ Dépendances
+      labels:
+        - dependencies

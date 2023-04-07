@@ -12,15 +12,12 @@ module.exports = {
 	],
 	parser: 'vue-eslint-parser',
 	rules: {
-		'vue/singleline-html-element-content-newline': ['error', {
-			'ignoreWhenNoAttributes': false,
-			'ignoreWhenEmpty': false,
-			'ignores': ['h6']
+		'vue/singleline-html-element-content-newline': ['error'],
+		'padding-line-between-statements': ['error', {
+			blankLine: 'always',
+			prev: '*',
+			next: 'return'
 		}],
-		'padding-line-between-statements': ['error',
-			{blankLine: 'always', prev: '*', next: 'return'},
-			{blankLine: 'always', prev: '*', next: 'const'}
-		],
 		'no-multi-spaces': 'error',
 		'vue/padding-line-between-blocks': ['error', 'always'],
 		'vue/multi-word-component-names': ['error', {
