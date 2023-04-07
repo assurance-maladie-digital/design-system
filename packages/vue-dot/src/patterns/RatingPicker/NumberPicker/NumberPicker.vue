@@ -23,10 +23,13 @@
 					>
 						{{ index }}
 					</VBtn>
+
 					<span
 						v-if="displayLabel(index)"
-						class="caption align-self-sm-center "
-					>{{ getItemLabel(index) }}</span>
+						class="caption align-self-sm-center"
+						v-text="getItemLabel(index)"
+					/>
+
 					<div />
 				</div>
 			</template>
@@ -56,7 +59,6 @@
 
 	@Component
 	export default class NumberPicker extends RatingMixin {
-
 		displayLabel(value: number): boolean {
 			return !value || value === this.length - 1;
 		}

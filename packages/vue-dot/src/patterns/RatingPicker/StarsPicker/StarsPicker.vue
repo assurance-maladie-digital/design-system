@@ -1,6 +1,7 @@
 <template>
 	<div class="mx-2">
 		<h6>{{ label }}</h6>
+
 		<div class="d-flex d-inline-flex flex-column align-sm-center my-0">
 			<VRating
 				ref="rating"
@@ -11,8 +12,9 @@
 				background-color="primary lighten-4"
 				@input="onDispatchValue"
 			/>
+
 			<div class="caption">
-				{{ getItemLabel(itemvalue) }}
+				{{ getItemLabel(itemValue) }}
 			</div>
 		</div>
 	</div>
@@ -30,12 +32,13 @@
 			rating: InstanceType<typeof VRating>;
 		};
 
-		itemvalue = -1;
+		itemValue = -1;
+
 		mounted() {
 			this.$watch(
 				'$refs.rating.hoverIndex',
-				(new_value) => {
-					this.itemvalue = new_value - 1;
+				(newValue) => {
+					this.itemValue = newValue - 1;
 				}
 			);
 		}

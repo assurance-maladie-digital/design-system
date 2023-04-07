@@ -9,6 +9,7 @@
 			:item-labels="itemLabels"
 			@input="onUpdate"
 		/>
+
 		<div v-if="readonlyInternal">
 			<VAlert
 				outlined
@@ -16,6 +17,7 @@
 			>
 				ca va
 			</VAlert>
+
 			<slot />
 		</div>
 
@@ -26,6 +28,7 @@
 			>
 				{{ locales.later }}
 			</VBtn>
+
 			<VBtn
 				color="primary"
 				depressed
@@ -37,13 +40,16 @@
 </template>
 
 <script lang="ts">
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
+	import EmotionPicker from './EmotionPicker';
 	import { RatingEnum, RatingMixin } from './RatingMixin';
-	import Vue, { PropType } from 'vue';
+
 	import { propValidator } from '../../helpers/propValidator';
-	import EmotionPicker from './EmotionPicker/EmotionPicker.vue';
+
 	import { locales } from './locales';
 
 	const Props = Vue.extend({
@@ -81,7 +87,9 @@
 		$refs!: {
 			firstRating: RatingMixin;
 		};
+
 		locales = locales;
+
 		readonlyInternal = this.readonly;
 
 		get length(): number {
@@ -92,7 +100,8 @@
 
 			return 3;
 		}
-		onUpdate( value: number): void {
+
+		onUpdate(value: number): void {
 			this.readonlyInternal = true;
 			// on laisse a chaque rating le soin de decider comment il se bloque
 			this.$refs.firstRating.lockField(value);

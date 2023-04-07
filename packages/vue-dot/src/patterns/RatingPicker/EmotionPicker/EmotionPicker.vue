@@ -3,15 +3,16 @@
 		<h6 class="mb-6">
 			{{ label }}
 		</h6>
+
 		<VRating
 			:length="length"
 			:readonly="readonly"
-			large
-			hover
-			class="d-flex flex-wrap flex-row justify-space-between ma-4"
 			:class="{
 				'justify-center': readonly && emotionSelected !== -1
 			}"
+			large
+			hover
+			class="d-flex flex-wrap flex-row justify-space-between ma-4"
 		>
 			<template #item="{ index }">
 				<div
@@ -31,7 +32,7 @@
 						</VIcon>
 
 						<span class="mt-1">
-							{{ getitemLabel(index) }}
+							{{ getItemLabel(index) }}
 						</span>
 					</slot>
 				</div>
@@ -42,8 +43,9 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-	import { RatingMixin } from '../RatingMixin';
 	import Component, { mixins } from 'vue-class-component';
+
+	import { RatingMixin } from '../RatingMixin';
 
 	import {
 		mdiEmoticonHappyOutline,
@@ -56,7 +58,7 @@
 			length: {
 				type: Number,
 				default: 3,
-				validator: (value: number) => value == 3 || value == 2
+				validator: (value: number) => value === 3 || value === 2
 			}
 		}
 	});
@@ -65,12 +67,21 @@
 
 	@Component
 	export default class EmotionPicker extends MixinsDeclaration {
-		colors = ['orange-darken-20', 'yellow-darken-20', 'turquoise-darken-20'];
-		colorsSimple = ['orange-darken-20', 'turquoise-darken-20'];
-
 		sadIcon = mdiEmoticonSadOutline;
-		neurtralIcon = mdiEmoticonNeutralOutline;
+		neutralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
+
+		colors = [
+			'orange-darken-20',
+			'yellow-darken-20',
+			'turquoise-darken-20'
+		];
+
+		colorsSimple = [
+			'orange-darken-20',
+			'turquoise-darken-20'
+		];
+
 		emotionSelected = -1;
 
 		mounted(): void {
@@ -111,7 +122,7 @@
 			if (index === 0) {
 				return this.sadIcon;
 			} else if (index === 1 && this.length === 3) {
-				return this.neurtralIcon;
+				return this.neutralIcon;
 			} else if (index === 1 && this.length === 2) {
 				return this.happyIcon;
 			} else {
@@ -135,59 +146,64 @@
 </script>
 
 <style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
-h6 {
-	font-size: 16px;
-}
-.description {
-	font-size: 12px;
-}
-.icon-button {
-	height: 88px;
-	width: 88px;
-	border-radius: 8px;
-	&:last-child {
-		margin-right: 0;
-	}
-	&:hover {
-		cursor: pointer;
-	}
-	&.sad {
+	.icon-button {
+		height: 88px;
+		width: 88px;
+		border-radius: 8px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
 		&:hover {
-			background-color: $vd-orange-lighten-90;
+			cursor: pointer;
 		}
-		&:focus {
-			outline: solid 1px $vd-orange-darken-20;
+
+		&.sad {
+			&:hover {
+				background-color: $vd-orange-lighten-90;
+			}
+
+			&:focus {
+				outline: solid 1px $vd-orange-darken-20;
+			}
+
+			&.active {
+				border: 1px solid $vd-orange-darken-20;
+				background-color: $vd-orange-lighten-90;
+			}
 		}
-		&.active {
-			border: 1px solid $vd-orange-darken-20;
-			background-color: $vd-orange-lighten-90;
+
+		&.neutral {
+			&:hover {
+				background-color: $vd-yellow-lighten-90;
+			}
+
+			&:focus {
+				outline: solid 1px $vd-yellow-darken-20;
+			}
+
+			&.active {
+				border: 1px solid $vd-yellow-darken-20;
+				background-color: $vd-yellow-lighten-90;
+			}
+		}
+
+		&.happy {
+			&:hover {
+				background-color: $vd-turquoise-lighten-90;
+			}
+
+			&:focus {
+				outline: solid 1px $vd-turquoise-darken-20;
+			}
+
+			&.active {
+				border: 1px solid $vd-turquoise-darken-20;
+				background-color: $vd-turquoise-lighten-90;
+			}
 		}
 	}
-	&.neutral {
-		&:hover {
-			background-color: $vd-yellow-lighten-90;
-		}
-		&:focus {
-			outline: solid 1px $vd-yellow-darken-20;
-		}
-		&.active {
-			border: 1px solid $vd-yellow-darken-20;
-			background-color: $vd-yellow-lighten-90;
-		}
-	}
-	&.happy {
-		&:hover {
-			background-color: $vd-turquoise-lighten-90;
-		}
-		&:focus {
-			outline: solid 1px $vd-turquoise-darken-20;
-		}
-		&.active {
-			border: 1px solid $vd-turquoise-darken-20;
-			background-color: $vd-turquoise-lighten-90;
-		}
-	}
-}
 </style>

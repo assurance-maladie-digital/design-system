@@ -1,8 +1,8 @@
 export interface QuestionItem {
 	name: string;
 	type: string;
-	labels?: string[];
 	question: string;
+	labels?: string[];
 }
 
 export interface StepItem {

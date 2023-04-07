@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
-export enum RatingEnum{
-	NUMBER='NumberPicker',
-	STAR='StarsPicker',
-	EMOTION='EmotionPicker',
+export enum RatingEnum {
+	NUMBER = 'NumberPicker',
+	STAR = 'StarsPicker',
+	EMOTION = 'EmotionPicker'
 }
 
 const Props = Vue.extend({
@@ -47,9 +47,11 @@ export class RatingMixin extends MixinsDeclaration implements RatingMixinInterfa
 
 		return this.itemLabels[value];
 	}
+
 	onDispatchValue(event: number): void {
 		this.$emit('input', event);
 	}
+
 	lockField(value: number): void {
 		this.readonlyInternal = true;
 		this.valueInternal = value;
