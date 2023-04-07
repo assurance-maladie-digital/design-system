@@ -11,6 +11,7 @@
 						cols="12"
 						sm="6"
 						md="4"
+						class="d-flex justify-center"
 					>
 
 						<NuxtLink
@@ -81,7 +82,7 @@ export default {
 					{
 						name: 'NotFoundPage',
 						description: 'Utilisé pour afficher une page d\'erreur.',
-						href: '/templates/notfound-page',
+						href: '/templates/not-found-page',
 						image: 'templates/not-found-page.svg',
 						new: true,
 						deprecated: false
