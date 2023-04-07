@@ -1,5 +1,4 @@
-export interface tabItem {
-	name: string;
+export interface TabItem {
 	label: string;
 	route: string;
 }

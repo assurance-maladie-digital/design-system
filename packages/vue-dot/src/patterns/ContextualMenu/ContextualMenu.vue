@@ -1,18 +1,15 @@
 <template>
 	<div
-		class="pa-5"
-		:class="$vuetify.theme.dark ? 'contextual-menu-dark' : 'contextual-menu'"
+		class="pa-5 contextual-menu"
 	>
-		<span class="title">{{ locales.content }}</span>
 		<div class="tabs mt-5">
 			<div
 				v-for="tab in tabs"
-				:key="tab.name"
+				:key="tab.label"
 				class="tab pointer d-flex align-center"
 				role="tab"
 				tabindex="0"
 				@click="changeTab(tab)"
-				@keydown="checkTabKey(tab)"
 			>
 				<div
 					:class="tab === activeTab ? 'active-tab' : ''"
@@ -29,22 +26,22 @@
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import { locales } from './locales';
-	import { tabItem } from './types';
+
+	import { TabItem } from './types';
 
 	const Props = Vue.extend({
 		props: {
 			tabs: {
-				type: Array as PropType<tabItem[]>,
-				required: true
+				type: Array as PropType<TabItem[]>,
+				default: () => []
 			}
 		}
 	});
+
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class RatingPicker extends MixinsDeclaration {
-		locales = locales;
+	export default class ContextualMenu extends MixinsDeclaration {
 
 		activeTab = this.tabs.length ? this.tabs[0] : { route: '' };
 
@@ -52,29 +49,7 @@
 			this.$emit('current-tab', this.activeTab.route);
 		}
 
-		checkTabKey(tab: tabItem): void {
-			document.addEventListener('keydown', (e) => {
-				if (e.key === 'Tab') {
-					this.nextTab(tab);
-				} else {
-					return;
-				}
-			});
-		}
-
-		nextTab(tab: tabItem): void {
-			const index = this.tabs.indexOf(tab);
-			if (index < this.tabs.length - 1) {
-				this.activeTab = this.tabs[index + 1];
-				this.$emit('current-tab', this.activeTab.route);
-			}
-			if (index === this.tabs.length - 1) {
-				this.activeTab = this.tabs[0];
-				this.$emit('current-tab', this.activeTab.route);
-			}
-		}
-
-		changeTab(tab: tabItem): void {
+		changeTab(tab: TabItem): void {
 			this.activeTab = tab;
 			this.$emit('current-tab', this.activeTab.route);
 		}
@@ -89,18 +64,6 @@
 	border: 1px solid $vd-am-blue-lighten-90;
 	border-radius: 4px;
 	max-width: 307px;
-}
-
-.contextual-menu-dark {
-	background-color: $vd-grey-darken-40;
-	border: 1px solid $vd-grey-darken-60;
-	border-radius: 4px;
-	max-width: 307px;
-}
-
-.title {
-	font-size: 18px;
-	font-weight: 600;
 }
 
 .tab {
