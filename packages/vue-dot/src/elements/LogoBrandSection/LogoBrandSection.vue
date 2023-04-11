@@ -25,7 +25,7 @@
 				v-if="showDivider"
 				:width="dividerDimensions.width"
 				:height="dividerDimensions.height"
-				:fill="dividerColor"
+				:fill="options.dividerColor ? options.dividerColor : dividerColor"
 				role="img"
 				focusable="false"
 				aria-hidden="true"
@@ -58,6 +58,12 @@
 					v-if="service.title"
 					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
 					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
+					:style="{
+						color: options.title.color,
+						fontWeight: options.title.fontWeight,
+						fontSize: options.title.fontSize,
+						lineHeight: options.title.lineHeight
+					}"
 				>
 					<template v-if="isCompteEntreprise">
 						{{ service.title.text }}
@@ -72,6 +78,12 @@
 				<h2
 					v-if="showServiceSubTitle"
 					class="vd-header-title text-caption"
+					:style="{
+						color: options.subTitle.color,
+						fontWeight: options.subTitle.fontWeight,
+						fontSize: options.subTitle.fontSize,
+						lineHeight: options.subTitle.lineHeight
+					}"
 				>
 					{{ service.subTitle }}
 				</h2>
@@ -85,6 +97,7 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { tokens } from '@cnamts/design-tokens';
+	import { config } from './config';
 
 	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
 
@@ -95,6 +108,7 @@
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
+	import { customizable } from '../../mixins/customizable';
 
 	/** Define a local interface since Nuxt isn't a dependency */
 	interface MaybeNuxtInstance extends Vue {
@@ -135,7 +149,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component
 	export default class LogoBrandSection extends MixinsDeclaration {
@@ -301,11 +315,11 @@
 		}
 
 		.vd-header-title {
-			line-height: 1.45 !important;
+			line-height: 1.45;
 		}
 
 		.vd-compte-entreprise-title {
-			font-weight: 700 !important;
+			font-weight: 700;
 
 			span {
 				color: #cd545b;
