@@ -10,11 +10,6 @@ export const config = {
 	spacer: {
 		class: 'h-100 mr-4 mr-md-16'
 	},
-	brandSection: {
-		dividerColor: {
-			color: 'green'
-		}
-	},
 	menuBtn: {
 		color: 'primary',
 		minWidth: 0,

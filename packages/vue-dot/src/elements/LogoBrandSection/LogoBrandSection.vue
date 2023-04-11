@@ -25,7 +25,7 @@
 				v-if="showDivider"
 				:width="dividerDimensions.width"
 				:height="dividerDimensions.height"
-				:fill="options.dividerColor ? options.dividerColor : dividerColor"
+				:fill="options.brandSection.dividerColor ? options.brandSection.dividerColor : dividerColor"
 				role="img"
 				focusable="false"
 				aria-hidden="true"
@@ -59,10 +59,10 @@
 					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
 					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
 					:style="{
-						color: options.title.color,
-						fontWeight: options.title.fontWeight,
-						fontSize: options.title.fontSize,
-						lineHeight: options.title.lineHeight
+						color: options.brandSection.title.color,
+						fontWeight: options.brandSection.title.fontWeight,
+						fontSize: options.brandSection.title.fontSize,
+						lineHeight: options.brandSection.title.lineHeight
 					}"
 				>
 					<template v-if="isCompteEntreprise">
@@ -79,10 +79,10 @@
 					v-if="showServiceSubTitle"
 					class="vd-header-title text-caption"
 					:style="{
-						color: options.subTitle.color,
-						fontWeight: options.subTitle.fontWeight,
-						fontSize: options.subTitle.fontSize,
-						lineHeight: options.subTitle.lineHeight
+						color: options.brandSection.subTitle.color,
+						fontWeight: options.brandSection.subTitle.fontWeight,
+						fontSize: options.brandSection.subTitle.fontSize,
+						lineHeight: options.brandSection.subTitle.lineHeight
 					}"
 				>
 					{{ service.subTitle }}
@@ -97,18 +97,19 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { tokens } from '@cnamts/design-tokens';
-	import { config } from './config';
 
 	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
 
 	import { ThemeEnum } from '../../constants/enums/ThemeEnum';
 	import { Dimensions, Next } from '../../types';
 
+	import { customizable } from '../../mixins/customizable';
+
 	import { LogoInfo, Service } from './types';
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
-	import { customizable } from '../../mixins/customizable';
+	import { config } from './config';
 
 	/** Define a local interface since Nuxt isn't a dependency */
 	interface MaybeNuxtInstance extends Vue {

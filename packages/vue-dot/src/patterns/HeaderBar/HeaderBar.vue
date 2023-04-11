@@ -24,7 +24,10 @@
 				>
 					<slot name="logo">
 						<LogoBrandSection
-							v-bind="options.brandSection"
+							v-bind="{
+								...options.brandSection,
+								...$attrs
+							}"
 							:theme="theme"
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
