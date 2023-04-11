@@ -5313,6 +5313,11 @@ archy@^1.0.0:
   resolved "https://registry.yarnpkg.com/archy/-/archy-1.0.0.tgz#f9c8c13757cc1dd7bc379ac77b2c62a5c2868c40"
   integrity sha512-Xg+9RwCg/0p32teKdGMPTPnVXKD0w3DfHnFTficozsAgsvq2XenPJq/MYpzzQ/v8zrOyJn6Ds39VA4JIDwFfqw==
 
+are-docs-informative@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/are-docs-informative/-/are-docs-informative-0.0.1.tgz#1102b35026f73e0564b4e291bfeaa8b7a304cefe"
+  integrity sha512-iBN6NxFQTEH0au0K8EOz6BoXXs9Pz6bGOPOgQpstabUHlX7fFx72TXB/wy7hSGZ8QcMI+XalPeM3p8IG5ncGIA==
+
 are-we-there-yet@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/are-we-there-yet/-/are-we-there-yet-2.0.0.tgz#372e0e7bd279d8e94c653aaa1f67200884bf3e1c"
@@ -9331,12 +9336,13 @@ eslint-plugin-jest-formatting@3.1.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest-formatting/-/eslint-plugin-jest-formatting-3.1.0.tgz#b26dd5a40f432b642dcc880021a771bb1c93dcd2"
   integrity sha512-XyysraZ1JSgGbLSDxjj5HzKKh0glgWf+7CkqxbTqb7zEhW7X2WHo5SBQ8cGhnszKN+2Lj3/oevBlHNbHezoc/A==
 
-eslint-plugin-jsdoc@41.0.0:
-  version "41.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-41.0.0.tgz#67e5fc5768f70631bd6969b28e67f42ed98e457f"
-  integrity sha512-1diUsqS881pGCksfcZNs9L5fboYtUJTsvlfc/01MH5Qk6Otpw9u5ngN7HlaPykBKxYpG8WI+SoCPbNBNbkZM8g==
+eslint-plugin-jsdoc@41.1.0:
+  version "41.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-41.1.0.tgz#8891f79dcddca67e813e6b5ed1183f214492b41f"
+  integrity sha512-7nE0soOQfVhRNeV0pXTUz9IhdpBiAFNbRgs1W7TcPIOx+c4Qvy3vgI4848O9UmHrbrVUaYwpVHZvaXDeP0SBeg==
   dependencies:
     "@es-joy/jsdoccomment" "~0.37.0"
+    are-docs-informative "^0.0.1"
     comment-parser "1.3.1"
     debug "^4.3.4"
     escape-string-regexp "^4.0.0"
