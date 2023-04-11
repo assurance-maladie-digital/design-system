@@ -3,13 +3,13 @@ export const config = {
 	title: {
 		color: 'primary',
 		fontWeight: 'bold',
-		fontSize: '1.125rem',
-		lineHeight: '1.125rem'
+		fontSize: '',
+		lineHeight: ''
 	},
 	subTitle: {
 		color: 'primary',
 		fontWeight: 'normal',
-		fontSize: '0.875rem',
-		lineHeight: '1.125rem'
+		fontSize: '',
+		lineHeight: ''
 	}
 };

@@ -35,4 +35,14 @@ L’utilisation de ce slot va masquer le séparateur vertical après le logo de 
 <doc-api name="logo"></doc-api>
 </doc-tab-item>
 
+<doc-tab-item label="Personnalisation">
+
+### Composants Vuetify
+
+Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `LogoBrandSection` en utilisant la prop `vuetify-options`.
+
+<doc-example file="logo-brand-section/options"></doc-example>
+
+</doc-tab-item>
+
 </doc-tabs>
