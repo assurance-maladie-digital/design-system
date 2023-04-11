@@ -23,7 +23,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "consola": "^2.15.3",
+    "consola": "^3.0.0",
     "dayjs": "^1.8.34",
     "fs-extra": "^11.0.0",
     "superb": "^4.0.0"
