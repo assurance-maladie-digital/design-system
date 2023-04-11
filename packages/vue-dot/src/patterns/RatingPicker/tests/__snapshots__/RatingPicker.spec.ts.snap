@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RatingPicker renders correctly 1`] = `
-<div>
-  <div class="mx-2">
+<div class="mx-2">
+  <div>
     <h6>Pouvez-vous nous en dire plus ?</h6>
     <div class="d-flex d-inline-flex flex-column align-sm-center my-0">
       <div class="v-rating"><button type="button" aria-label="Rating 1 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 2 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 3 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 4 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 5 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button></div>

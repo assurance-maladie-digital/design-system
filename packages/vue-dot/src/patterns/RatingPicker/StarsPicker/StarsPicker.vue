@@ -1,5 +1,5 @@
 <template>
-	<div class="mx-2">
+	<div>
 		<h6>{{ label }}</h6>
 
 		<div class="d-flex d-inline-flex flex-column align-sm-center my-0">

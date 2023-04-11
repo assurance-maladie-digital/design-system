@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="mx-2">
 		<component
 			:is="type"
 			ref="firstRating"
@@ -15,7 +15,7 @@
 				outlined
 				type="success"
 			>
-				ca va
+				{{ locales.thanks }}
 			</VAlert>
 
 			<slot />
@@ -46,7 +46,7 @@
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
 	import EmotionPicker from './EmotionPicker';
-	import { RatingEnum, RatingMixin } from './RatingMixin';
+	import { RATING_ENUM_VALUES, RatingEnum, RatingMixin } from './RatingMixin';
 
 	import { propValidator } from '../../helpers/propValidator';
 
@@ -57,7 +57,7 @@
 			type: {
 				type: String as PropType<RatingEnum>,
 				required: true,
-				validator: (value: string) => propValidator('type', Object.values(RatingEnum), value)
+				validator: (value: string) => propValidator('type', RATING_ENUM_VALUES, value)
 			},
 			label: {
 				type: String,

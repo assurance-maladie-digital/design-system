@@ -25,12 +25,10 @@
 					</VBtn>
 
 					<span
-						v-if="displayLabel(index)"
+						v-if="displayLabels(index)"
 						class="caption align-self-sm-center"
 						v-text="getItemLabel(index)"
 					/>
-
-					<div />
 				</div>
 			</template>
 		</VRating>
@@ -59,8 +57,8 @@
 
 	@Component
 	export default class NumberPicker extends RatingMixin {
-		displayLabel(value: number): boolean {
-			return !value || value === this.length - 1;
+		displayLabels(index: number): boolean {
+			return index === 0 || index === this.length - 1;
 		}
 
 		getItemLabel(value: number): string {

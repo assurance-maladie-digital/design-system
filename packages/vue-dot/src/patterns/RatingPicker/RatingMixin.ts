@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 export enum RatingEnum {
@@ -6,6 +6,8 @@ export enum RatingEnum {
 	STAR = 'StarsPicker',
 	EMOTION = 'EmotionPicker'
 }
+
+export const RATING_ENUM_VALUES = Object.values(RatingEnum);
 
 const Props = Vue.extend({
 	props: {

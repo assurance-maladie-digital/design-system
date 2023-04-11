@@ -13,17 +13,20 @@ function createTestComponent() {
 	});
 }
 
+const labelQuestion = 'Pouvez-vous nous en dire plus ?';
+const itemLabels = ['non je dis rien','faut voir','je dirais tout ce que vous voulez'];
+
 describe('RatingMixin', () => {
 	it('verify props', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				label: 'Pouvez-vous nous en dire plus ?'
+				label: labelQuestion
 			}
 		}) as Wrapper<RatingMixinInterface>;
 
-		expect(wrapper.props().label).toBe('Pouvez-vous nous en dire plus ?');
+		expect(wrapper.props().label).toBe(labelQuestion);
 		expect(wrapper.props().length).toBe(5);
 		expect(wrapper.props().readonly).toBeFalsy();
 
@@ -36,19 +39,19 @@ describe('RatingMixin', () => {
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				label: 'Pouvez-vous nous en dire plus ?',
+				label: labelQuestion,
 				length: 3,
-				itemLabels: ['label1','label2','label3']
+				itemLabels
 			}
 		}) as Wrapper<RatingMixinInterface>;
 
-		expect(wrapper.props().label).toBe('Pouvez-vous nous en dire plus ?');
+		expect(wrapper.props().label).toBe(labelQuestion);
 		expect(wrapper.props().length).toBe(3);
 		expect(wrapper.props().readonly).toBeFalsy();
 
-		expect(wrapper.vm.getItemLabel(0)).toBe('label1');
-		expect(wrapper.vm.getItemLabel(1)).toBe('label2');
-		expect(wrapper.vm.getItemLabel(2)).toBe('label3');
+		expect(wrapper.vm.getItemLabel(0)).toBe(itemLabels[0]);
+		expect(wrapper.vm.getItemLabel(1)).toBe(itemLabels[1]);
+		expect(wrapper.vm.getItemLabel(2)).toBe(itemLabels[2]);
 		expect(wrapper.vm.getItemLabel(-1)).toBe('');
 	});
 
@@ -57,7 +60,7 @@ describe('RatingMixin', () => {
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				label: 'Pouvez-vous nous en dire plus ?',
+				label: labelQuestion,
 				length: 10
 			}
 		}) as Wrapper<RatingMixinInterface>;
@@ -70,12 +73,12 @@ describe('RatingMixin', () => {
 		expect(wrapper.emitted('input')?.pop()).toEqual([3]);
 	});
 
-	it('block on', async() => {
+	it('lockField on', async() => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
 			propsData: {
-				label: 'Pouvez-vous nous en dire plus ?',
+				label: labelQuestion,
 				length: 10
 			}
 		}) as Wrapper<RatingMixinInterface>;
