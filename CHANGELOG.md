@@ -1,3 +1,60 @@
+## v2.9.0-beta.3
+
+**Version publiée le 11/04/2023.**
+
+Cette version comporte l'ajout du composant `CollapsibleList`, le début de la refonte du composant `RatingPicker` ainsi que des correctifs et la mise à jour du Starter Kit.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **CollapsibleList:** Ajout d'un nouveau composant ([#2458](https://github.com/assurance-maladie-digital/design-system/pull/2458))
+
+- 🐛 **Corrections de bugs**
+  - **DialogBox:** Correction de la sélection des éléments interactifs ([#2666](https://github.com/assurance-maladie-digital/design-system/pull/2666))
+  - **FileUpload:** Correction de la marque du pluriel présente même avec une seule extension ([#2676](https://github.com/assurance-maladie-digital/design-system/pull/2676))
+  - **HeaderBar:** Correction du menu de navigation présent dans le DOM en mobile sans contenu ([#2679](https://github.com/assurance-maladie-digital/design-system/pull/2679))
+  - **AccessibilityBanner:** Correction du composant restant visible à la perte de focus ([#2672](https://github.com/assurance-maladie-digital/design-system/pull/2672))
+  - **MaintenancePage/NotFoundPage:** Correction des styles typographiques des titres ([#2690](https://github.com/assurance-maladie-digital/design-system/pull/2690))
+  - **DatePicker:** Correction de l'événement `change` dupliqué ([#2680](https://github.com/assurance-maladie-digital/design-system/pull/2680))
+
+- ♻️ **Refactoring**
+  - **RatingPicker:** Utilisation du composant `VRating` ([#2653](https://github.com/assurance-maladie-digital/design-system/pull/2653))
+  - **HeaderNavigationDrawer:** Suppression de la propriété `navigationDrawer` dans les options Vuetify ([#2688](https://github.com/assurance-maladie-digital/design-system/pull/2688))
+
+- 🔧 **Configuration**
+  - **lint:** Mise à jour de la configuration du lint ([#2684](https://github.com/assurance-maladie-digital/design-system/pull/2684))
+  - **lint:** Mise à jour de la configuration du lint ([#2692](https://github.com/assurance-maladie-digital/design-system/pull/2692))
+
+### Vue Dash
+
+- ♻️ **Refactoring**
+  - **template:** Utilisation des templates `MaintenancePage` et `NotFoundPage` ([#2687](https://github.com/assurance-maladie-digital/design-system/pull/2687))
+
+### Documentation
+
+- 🐛 **Corrections de bugs**
+  - **HeaderBar:** Correction de l'exemple sticky en version mobile ([#2689](https://github.com/assurance-maladie-digital/design-system/pull/2689))
+
+- ♻️ **Refactoring**
+  - **roadmap:** Mise à jour de la page ([#2691](https://github.com/assurance-maladie-digital/design-system/pull/2691))
+
+### Interne
+
+- 🔧 **Configuration**
+  - **release:** Configuration de notes de version GitHub ([#2685](https://github.com/assurance-maladie-digital/design-system/pull/2685))
+  - **ci:** Mise à jour de l'image `cimg/node` vers la `v16.20` ([#2675](https://github.com/assurance-maladie-digital/design-system/pull/2675))
+
+- ⬆️ **Dépendances**
+  - **@types/node:** Mise à jour vers la `v16.18.23` ([#2670](https://github.com/assurance-maladie-digital/design-system/pull/2670))
+  - **@babel/core:** Mise à jour vers la `v7.21.4` ([#2673](https://github.com/assurance-maladie-digital/design-system/pull/2673))
+  - **@nuxt/typescript-build:** Mise à jour vers la `v3.0.1` ([#2668](https://github.com/assurance-maladie-digital/design-system/pull/2668))
+  - **netlify-cli:** Mise à jour vers la `v13.2.2` ([#2669](https://github.com/assurance-maladie-digital/design-system/pull/2669))
+  - **core-js:** Mise à jour vers la `v3.30.0` ([#2678](https://github.com/assurance-maladie-digital/design-system/pull/2678))
+  - **lint-staged:** Mise à jour vers la `v13.2.1` ([#2693](https://github.com/assurance-maladie-digital/design-system/pull/2693))
+  - **typescript-eslint:** Mise à jour vers la `v5.58.0` ([#2695](https://github.com/assurance-maladie-digital/design-system/pull/2695))
+  - **@vue/test-utils:** Mise à jour vers la `v1.3.5` ([#2696](https://github.com/assurance-maladie-digital/design-system/pull/2696))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v41` ([#2699](https://github.com/assurance-maladie-digital/design-system/pull/2699))
+
 ## v2.9.0-beta.2
 
 **Version publiée le 28/03/2023.**
