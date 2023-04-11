@@ -29,4 +29,4 @@ En tant que système **_open source_**, notre Design System est **disponible gra
 
 <doc-home-page-contributors></doc-home-page-contributors>
 
-<doc-sticky-button icon="view-dashboard" title="Composants" target="../composants/vue-ensemble"></doc-sticky-button>
+<doc-components-button></doc-components-button>

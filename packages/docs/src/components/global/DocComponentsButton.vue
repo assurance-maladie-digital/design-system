@@ -12,7 +12,7 @@
 				:min-width="minWidth"
 				:style="btnStyle"
 			>
-				<VIcon v-if="icon === 'view-dashboard'" class="mr-2">
+				<VIcon class="mr-2">
 					{{ dashboadIcon }}
 				</VIcon>
 				{{ title }}
@@ -31,15 +31,11 @@
 		props: {
 			title: {
 				type: String,
-				default: 'Action'
-			},
-			icon : {
-				type: String,
-				default: ''
+				default: 'Composants'
 			},
 			target: {
 				type: String,
-				default: ''
+				default: '../composants/vue-ensemble'
 			},
 			threshold: {
 				type: Number,
