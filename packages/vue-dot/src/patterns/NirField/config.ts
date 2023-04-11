@@ -3,5 +3,8 @@ export const config = {
 	validateOnBlur: true,
 	icon: {
 		color: 'success'
+	},
+	tooltip: {
+		top: true
 	}
 };

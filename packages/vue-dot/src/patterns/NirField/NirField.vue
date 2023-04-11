@@ -1,82 +1,74 @@
 <template>
-	<VRow dense>
-		<VCol>
-			<VTextField
-				ref="number"
-				v-facade="numberMask"
-				v-bind="textFieldOptions"
-				:value="computedNumberValue"
-				:label="locales.numberLabel"
-				:hint="locales.numberHint"
-				:rules="numberRules"
-				:counter="numberCounter"
-				:counter-value="noSpacesCounter"
-				:success="numberFilled"
-				@keydown="focusKeyField"
-				@input.native="setNumberValue"
-				@change="emitChangeEvent"
-			>
-				<template #append>
-					<VIcon
-						v-if="numberFilled"
-						v-bind="options.icon"
-					>
-						{{ checkIcon }}
-					</VIcon>
-				</template>
-			</VTextField>
-		</VCol>
+	<div class="vd-nir-field d-flex">
+		<VTextField
+			ref="number"
+			v-facade="numberMask"
+			v-bind="textFieldOptions"
+			:value="computedNumberValue"
+			:label="locales.numberLabel"
+			:hint="locales.numberHint"
+			:rules="numberRules"
+			:counter="numberCounter"
+			:counter-value="noSpacesCounter"
+			:success="numberFilled"
+			class="vd-number-field flex-grow-0"
+			@keydown="focusKeyField"
+			@input.native="setNumberValue"
+			@change="emitChangeEvent"
+		>
+			<template #append>
+				<VIcon
+					v-if="numberFilled"
+					v-bind="options.icon"
+				>
+					{{ checkIcon }}
+				</VIcon>
+			</template>
+		</VTextField>
 
-		<VCol
+		<VTextField
 			v-if="!isSingleField"
-			sm="3"
-			md="3"
+			ref="key"
+			v-facade="keyMask"
+			v-bind="textFieldOptions"
+			:value="keyValue"
+			:label="locales.keyLabel"
+			:hint="locales.keyHint"
+			:rules="keyRules"
+			:counter="keyCounter"
+			:counter-value="noSpacesCounter"
+			:success="keyFilled"
+			class="vd-key-field flex-grow-0 ml-4"
+			@keyup.delete="focusNumberField"
+			@input.native="setKeyValue"
+			@change="emitChangeEvent"
 		>
-			<VTextField
-				ref="key"
-				v-facade="keyMask"
-				v-bind="textFieldOptions"
-				:value="computedKeyValue"
-				:label="locales.keyLabel"
-				:hint="locales.keyHint"
-				:rules="keyRules"
-				:counter="keyCounter"
-				:counter-value="noSpacesCounter"
-				:success="keyFilled"
-				@keyup.delete="focusNumberField"
-				@input.native="setKeyValue"
-				@change="emitChangeEvent"
-			>
-				<template #append>
-					<VIcon
-						v-if="keyFilled"
-						v-bind="options.icon"
-					>
-						{{ checkIcon }}
-					</VIcon>
-				</template>
-			</VTextField>
-		</VCol>
+			<template #append>
+				<VIcon
+					v-if="keyFilled"
+					v-bind="options.icon"
+				>
+					{{ checkIcon }}
+				</VIcon>
+			</template>
+		</VTextField>
 
-		<VCol
+		<VTooltip
 			v-if="tooltip"
-			cols="1"
-			class="d-flex align-start justify-center pt-5"
+			v-bind="options.tooltip"
 		>
-			<VTooltip top>
-				<template #activator="{ on, attrs }">
-					<VIcon
-						v-bind="attrs"
-						v-on="on"
-					>
-						{{ infoIcon }}
-					</VIcon>
-				</template>
+			<template #activator="{ on, attrs }">
+				<VIcon
+					v-bind="attrs"
+					v-on="on"
+				>
+					{{ infoIcon }}
+				</VIcon>
+			</template>
 
-				<span>{{ tooltip }}</span>
-			</VTooltip>
-		</VCol>
-	</VRow>
+			<span>{{ tooltip }}</span>
+		</VTooltip>
+	</div>
 </template>
 
 <script lang="ts">
@@ -106,7 +98,6 @@
 
 	const NUMBER_LENGTH = 13;
 	const KEY_LENGTH = 2;
-	const SPACE_CHARACTER = ' ';
 
 	const Props = Vue.extend({
 		props: {
@@ -228,10 +219,6 @@
 			return this.numberValue ? formatNir(this.numberValue) : null;
 		}
 
-		get computedKeyValue(): string | null {
-			return this.keyValue ? this.keyValue.split('').join(SPACE_CHARACTER) : null;
-		}
-
 		get internalValue(): string | null {
 			if (this.isSingleField && this.numberFilled) {
 				return this.numberValue;
@@ -290,12 +277,15 @@
 </script>
 
 <style lang="scss" scoped>
-	// TODO: Largeur du champ à revoir avec UX, ne respecte pas les Design Tokens
-	.row {
-		margin: 0;
+	.vd-nir-field :deep(.v-input__append-inner) {
+		flex: none;
 	}
 
-	.v-icon {
-		min-width: 24px;
+	.vd-number-field {
+		width: 248px;
+	}
+
+	.vd-key-field {
+		width: 82px;
 	}
 </style>
