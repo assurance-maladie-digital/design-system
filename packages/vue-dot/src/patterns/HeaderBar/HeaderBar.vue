@@ -24,10 +24,7 @@
 				>
 					<slot name="logo">
 						<LogoBrandSection
-							v-bind="{
-								...options.brandSection,
-								...$attrs
-							}"
+							:vuetify-options="vuetifyOptions"
 							:theme="theme"
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"

@@ -80,6 +80,7 @@ Vous pouvez afficher le bouton pour activer le menu dans la barre de navigation 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Header` en utilisant la prop `vuetify-options`.
 
 <doc-example file="header-bar/options"></doc-example>
+<doc-example file="header-bar/options-brand-section"></doc-example>
 
 ### Slots
 

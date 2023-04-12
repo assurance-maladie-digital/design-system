@@ -20,7 +20,12 @@
 			/>
 		</component>
 
-		<slot>
+		<slot
+			v-bind="{
+				...options.brandSection,
+				...$attrs
+			}"
+		>
 			<svg
 				v-if="showDivider"
 				:width="dividerDimensions.width"
@@ -109,7 +114,7 @@
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
-	import { config } from './config';
+	import { config } from '../../patterns/HeaderBar/config';
 
 	/** Define a local interface since Nuxt isn't a dependency */
 	interface MaybeNuxtInstance extends Vue {
