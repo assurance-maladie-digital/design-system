@@ -17,7 +17,7 @@
 				dividerColor: '#459b5a',
 				title: {
 					color: '#459b5a',
-					fontWeight: 'bold',
+					fontWeight: 'bold !important',
 					fontSize: '1.125rem',
 					lineHeight: '1.125rem'
 				},
