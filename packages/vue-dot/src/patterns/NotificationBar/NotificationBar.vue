@@ -21,29 +21,32 @@
 			</VIcon>
 
 			{{ notification.message }}
+
+			<slot name="divider" />
 		</div>
 
 		<template #action="{ attrs }">
-			<VBtn
-				v-bind="{
-					...attrs,
-					...options.btn
-				}"
-				:color="textColor"
-				:icon="mobileVersion"
-				@click="clearNotification"
-			>
-				<span :class="{ 'd-sr-only': mobileVersion }">
-					{{ closeBtnText }}
-				</span>
-
-				<VIcon
-					v-if="mobileVersion"
-					v-bind="options.closeIcon"
+			<slot name="actions">
+				<VBtn
+					v-bind="{
+						...attrs,
+						...options.btn
+					}"
+					:color="textColor"
+					:icon="mobileVersion"
+					@click="clearNotification"
 				>
-					{{ closeIcon }}
-				</VIcon>
-			</VBtn>
+					<span :class="{ 'd-sr-only': mobileVersion }">
+						{{ closeBtnText }}
+					</span>
+					<VIcon
+						v-if="mobileVersion"
+						v-bind="options.closeIcon"
+					>
+						{{ closeIcon }}
+					</VIcon>
+				</VBtn>
+			</slot>
 		</template>
 	</VSnackbar>
 </template>
