@@ -54,7 +54,7 @@
 									<VBtn
 										:input-value="active"
 										text
-										class="mr-2"
+										class="text-uppercase mr-2"
 										@click="toggle"
 									>
 										{{ section }}
@@ -198,8 +198,8 @@
 	}
 </script>
 
-<style lang="scss">
-	.v-example {
+<style lang="scss" scoped>
+	.v-example :deep() {
 		code[class*="language-"],
 		pre[class*="language-"] {
 			text-shadow: none;

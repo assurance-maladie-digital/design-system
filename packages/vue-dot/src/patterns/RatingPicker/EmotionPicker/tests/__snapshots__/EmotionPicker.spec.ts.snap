@@ -3,7 +3,7 @@
 exports[`EmotionPicker renders correctly 1`] = `
 <div class="vd-emotion-picker">
   <div class="d-flex justify-center"><span class="mb-6 text-subtitle-2">
-			la deuxieme question ?
+			Pourriez-vous donner une note ?
 		</span></div>
   <vrow-stub tag="div" class="grid justify-center ma-0 justify-sm-space-between">
     <vcol-stub tag="div" class="pa-0 flex-grow-0 emotions"><button class="emotion sad">

@@ -11,6 +11,8 @@
 		<HeaderBar theme="ameli" />
 
 		<HeaderBar theme="ameli-pro" />
+
+		<HeaderBar theme="compte-ameli" />
 	</div>
 </template>
 
