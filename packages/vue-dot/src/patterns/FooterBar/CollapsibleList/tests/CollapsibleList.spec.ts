@@ -1,22 +1,29 @@
 import Vue from 'vue';
+
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
 import { html } from '@/tests/utils/html';
 
-import TextAreaForm from '..';
+import CollapsibleList from '../';
 
 let wrapper: Wrapper<Vue>;
 
-describe('TextAreaForm', () => {
+describe('CollapsibleList', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(TextAreaForm,{
+		wrapper = mountComponent(CollapsibleList, {
 			propsData: {
-				questionDatas: {
-						name: 'first-question',
-						type: 'emotions',
-						question: 'la deuxieme question ?'
+				title: 'Title',
+				content: [
+					{
+						text: 'Item 1',
+						url: '/item1'
+					},
+					{
+						text: 'Item 2',
+						url: '/item2'
 					}
+				]
 			}
 		});
 

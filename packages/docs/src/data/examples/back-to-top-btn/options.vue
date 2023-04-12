@@ -58,7 +58,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	// Display inside component
 	.vd-back-to-top-btn {
 		left: 100%;

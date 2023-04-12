@@ -7,7 +7,7 @@ const themeProp = {
 	type: 'string',
 	required: true,
 	description: 'Le thème de l’en-tête.',
-	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro' | 'compte-entreprise'`
+	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'compte-ameli' | 'risque-pro' | 'compte-entreprise'`
 };
 
 const mobileVersionProp = {
@@ -96,6 +96,18 @@ export const api: Api = {
 				description: 'Affiche le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles.'
 			},
 			mobileVersionProp,
+			{
+				name: 'sticky',
+				type: 'boolean',
+				default: false,
+				description: 'Fixe le header en haut de la page et réduit sa hauteur lors du défilement.'
+			},
+			{
+				name: 'target',
+				type: 'string',
+				default: 'undefined',
+				description: 'L’id de l’élément à sélectionner pour la gestion du défilement en mode *sticky*.<br>Par défaut, l’élément `window` est utilisé.'
+			},
 			...customizable(`{
 	appBar: 'VAppBar',
 	contentSheet: 'VSheet',

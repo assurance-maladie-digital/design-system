@@ -14,7 +14,7 @@
 						{{ locales.code }}
 					</div>
 
-					<h2 class="mb-2 font-weight-bold text-h mb-4">
+					<h2 class="mb-2 font-weight-bold text-h5 mb-4">
 						{{ pageTitle }}
 					</h2>
 

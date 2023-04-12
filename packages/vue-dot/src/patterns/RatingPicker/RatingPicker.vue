@@ -89,22 +89,6 @@
 						:is-validated="validated"
 						@update-result="updateSecondStep"
 					/>
-					<MultipleAnswers
-						v-if="question.type === 'multi'"
-						class="ma-6"
-						step-name="thirtStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-					<TextAreaForm
-						v-if="question.type === 'text-area'"
-						class="ma-6"
-						step-name="thirtStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
 				</div>
 			</div>
 
@@ -160,8 +144,7 @@
 	import EmotionPicker from './EmotionPicker';
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
-	import MultipleAnswers from './MultipleAnswers';
-	import TextAreaForm from './TextAreaForm';
+
 	import { mdiCheckCircleOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -212,9 +195,7 @@
 		components: {
 			EmotionPicker,
 			StarsPicker,
-			NumberPicker,
-			MultipleAnswers,
-			TextAreaForm
+			NumberPicker
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
@@ -248,6 +229,7 @@
 					return this.firstStep.result < 7 ? true : false;
 				}
 			}
+
 			return false;
 		}
 

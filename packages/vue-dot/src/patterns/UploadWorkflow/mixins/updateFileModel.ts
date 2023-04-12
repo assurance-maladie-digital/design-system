@@ -30,6 +30,7 @@ export class UpdateFileModel extends Vue {
 
 		if (value === undefined) {
 			this.$delete(this.fileList[index], key);
+
 			return;
 		}
 

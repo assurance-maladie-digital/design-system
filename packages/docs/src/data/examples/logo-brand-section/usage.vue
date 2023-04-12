@@ -27,15 +27,17 @@
 
 		options = {
 			booleans: [
-				'mobileVersion'
+				'mobileVersion',
+				'reduce-logo'
 			],
 			selects: {
 				theme: [
 					'default',
+					'risque-pro',
 					'cnam',
 					'ameli',
 					'ameli-pro',
-					'risque-pro',
+					'compte-ameli',
 					'compte-entreprise'
 				]
 			},
