@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NirField renders correctly 1`] = `
-<div class="vd-nir-field d-flex align-start">
-  <div class="v-input vd-number-field flex-grow-0 theme--light v-text-field">
+<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
+  <div class="v-input vd-number-field flex-grow-0 mx-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-2" type="text"></div>
@@ -16,7 +16,7 @@ exports[`NirField renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="v-input vd-key-field flex-grow-0 ml-2 theme--light v-text-field">
+  <div class="v-input vd-key-field flex-grow-0 mx-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-5" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-5" type="text"></div>
@@ -35,8 +35,8 @@ exports[`NirField renders correctly 1`] = `
 `;
 
 exports[`NirField renders correctly with 13 characters 1`] = `
-<div class="vd-nir-field d-flex align-start">
-  <div class="v-input vd-number-field flex-grow-0 theme--light v-text-field">
+<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
+  <div class="v-input vd-number-field flex-grow-0 mx-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-10" type="text"></div>
@@ -56,8 +56,8 @@ exports[`NirField renders correctly with 13 characters 1`] = `
 `;
 
 exports[`NirField renders correctly with a tooltip 1`] = `
-<div class="vd-nir-field d-flex align-start">
-  <div class="v-input vd-number-field flex-grow-0 theme--light v-text-field">
+<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
+  <div class="v-input vd-number-field flex-grow-0 mx-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-15" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-15" type="text"></div>
@@ -71,7 +71,7 @@ exports[`NirField renders correctly with a tooltip 1`] = `
       </div>
     </div>
   </div>
-  <div class="v-input vd-key-field flex-grow-0 ml-2 theme--light v-text-field">
+  <div class="v-input vd-key-field flex-grow-0 mx-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-18" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-18" type="text"></div>
