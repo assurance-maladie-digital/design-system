@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-nir-field d-flex align-start">
+	<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
 		<VTextField
 			ref="number"
 			v-facade="numberMask"
@@ -9,7 +9,7 @@
 			:hint="locales.numberHint"
 			:rules="numberRules"
 			:success="numberFilled"
-			class="vd-number-field flex-grow-0"
+			class="vd-number-field flex-grow-0 mx-2"
 			@keydown="focusKeyField"
 			@input.native="setNumberValue"
 			@change="emitChangeEvent"
@@ -34,7 +34,7 @@
 			:hint="locales.keyHint"
 			:rules="keyRules"
 			:success="keyFilled"
-			class="vd-key-field flex-grow-0 ml-2"
+			class="vd-key-field flex-grow-0 mx-2"
 			@keyup.delete="focusNumberField"
 			@input.native="setKeyValue"
 			@change="emitChangeEvent"
