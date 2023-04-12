@@ -34,6 +34,7 @@ const componentMap = {
 	SubHeader: 'patterns',
 	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
+	ContextualMenu: 'patterns',
 	// Templates
 	CookiesPage: 'templates',
 	ErrorPage: 'templates',

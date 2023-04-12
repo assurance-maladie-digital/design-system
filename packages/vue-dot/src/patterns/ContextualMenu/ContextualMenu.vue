@@ -2,24 +2,23 @@
 	<div
 		class="pa-5 contextual-menu"
 	>
-		<div class="tabs mt-5">
-			<div
-				v-for="tab in tabs"
-				:key="tab.label"
-				class="tab pointer d-flex align-center"
-				role="tab"
-				tabindex="0"
-				@click="changeTab(tab)"
+		<a
+			v-for="tab in tabs"
+			:key="tab.label"
+			class="tab d-flex align-center"
+			role="tab"
+			tabindex="0"
+			:class="tab.label === activeTab ? 'active-tab' : ''"
+			@click="changeTab(tab)"
+			@keyup.tab="changeTab(tab)"
+		>
+			<span
+				class="ml-4 text-body-1"
+				:class="tab.label === activeTab ? 'active-text primary--text mr-2' : ''"
 			>
-				<div
-					:class="tab === activeTab ? 'active-tab' : ''"
-				/>
-				<span
-					class="ml-4 text-body-1"
-					:class="tab === activeTab ? 'active-text primary--text mr-2' : ''"
-				>{{ tab.label }}</span>
-			</div>
-		</div>
+				{{ tab.label }}
+			</span>
+		</a>
 	</div>
 </template>
 
@@ -31,6 +30,10 @@
 
 	const Props = Vue.extend({
 		props: {
+			value: {
+				type: String,
+				default: null
+			},
 			tabs: {
 				type: Array as PropType<TabItem[]>,
 				default: () => []
@@ -40,18 +43,19 @@
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component
+	@Component({
+		model: {
+			prop: 'value',
+			event: 'change'
+		}
+	})
 	export default class ContextualMenu extends MixinsDeclaration {
 
-		activeTab = this.tabs.length ? this.tabs[0] : { route: '' };
-
-		mounted() {
-			this.$emit('current-tab', this.activeTab.route);
-		}
+		activeTab = this.value;
 
 		changeTab(tab: TabItem): void {
-			this.activeTab = tab;
-			this.$emit('current-tab', this.activeTab.route);
+			this.activeTab = tab.label;
+			this.$emit('change', this.activeTab);
 		}
 	}
 </script>
@@ -75,7 +79,8 @@
 	margin-left: 14px !important;
 }
 
-.active-tab {
+.active-tab:before {
+    content: "";
 		width: 4px;
 		border-radius: 0 2px 2px 0;
 		background-color: $vd-primary;
