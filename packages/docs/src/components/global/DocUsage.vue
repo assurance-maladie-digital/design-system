@@ -32,6 +32,7 @@
 									height="44px"
 									text
 									tile
+									class="text-capitalize"
 									@click="toggleOption(toggle, prop, active)"
 								>
 									{{ prop }}

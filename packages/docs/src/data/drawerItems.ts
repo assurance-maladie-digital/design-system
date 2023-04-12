@@ -60,11 +60,11 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'Logo',
-				to: '/fondamentaux/logo',
+				to: '/fondamentaux/logo'
 			},
 			{
 				title: 'Éco-conception',
-				to: '/fondamentaux/eco-conception',
+				to: '/fondamentaux/eco-conception'
 			}
 		]
 	},
@@ -72,6 +72,13 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Composants',
 		icon: mdiViewDashboard,
 		items: [
+			{
+				title: 'Vue d’ensemble',
+				to: '/composants/vue-ensemble'
+			},
+			{
+				divider: true
+			},
 			{
 				title: 'Structure',
 				items: [
@@ -105,6 +112,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Navigation',
 				items: [
+					{
+						title: 'AccessibilityBanner',
+						to: '/composants/navigation/accessibility-banner'
+					},
 					{
 						title: 'ExternalLinks',
 						to: '/composants/navigation/external-links'
@@ -223,10 +234,6 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/feedback/notification-bar'
 					},
 					{
-						title: 'AccessibilityBanner',
-						to: '/composants/feedback/accessibility-banner'
-					},
-					{
 						title: 'CookieBanner',
 						to: '/composants/feedback/cookie-banner'
 					},
@@ -246,6 +253,13 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Templates',
 		icon: mdiBookOpenPageVariantOutline,
 		items: [
+			{
+				title: 'Vue d’ensemble',
+				to: '/templates/vue-ensemble'
+			},
+			{
+				divider: true
+			},
 			{
 				title: 'CookiesPage',
 				to: '/templates/cookies-page'
