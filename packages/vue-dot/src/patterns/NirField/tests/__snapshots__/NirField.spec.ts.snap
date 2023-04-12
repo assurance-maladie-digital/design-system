@@ -1,37 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NirField renders correctly 1`] = `
-<div class="row row--dense">
-  <div class="col">
-    <div class="v-input theme--light v-text-field">
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" id="input-2" type="text"></div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-              <div class="v-messages__message">13 caractères</div>
-            </transition-group-stub>
-          </div>
-          <div class="v-counter theme--light">0 / 13</div>
+<div class="vd-nir-field d-flex align-start">
+  <div class="v-input vd-number-field flex-grow-0 theme--light v-text-field">
+    <div class="v-input__control">
+      <div class="v-input__slot">
+        <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-2" type="text"></div>
+      </div>
+      <div class="v-text-field__details">
+        <div class="v-messages theme--light">
+          <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+            <div class="v-messages__message">13 caractères</div>
+          </transition-group-stub>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-3 col-md-3 col">
-    <div class="v-input theme--light v-text-field">
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-5" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" id="input-5" type="text"></div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-              <div class="v-messages__message">2 chiffres</div>
-            </transition-group-stub>
-          </div>
-          <div class="v-counter theme--light">0 / 2</div>
+  <div class="v-input vd-key-field flex-grow-0 ml-2 theme--light v-text-field">
+    <div class="v-input__control">
+      <div class="v-input__slot">
+        <div class="v-text-field__slot"><label for="input-5" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-5" type="text"></div>
+      </div>
+      <div class="v-text-field__details">
+        <div class="v-messages theme--light">
+          <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+            <div class="v-messages__message">2 chiffres</div>
+          </transition-group-stub>
         </div>
       </div>
     </div>
@@ -41,20 +35,17 @@ exports[`NirField renders correctly 1`] = `
 `;
 
 exports[`NirField renders correctly with 13 characters 1`] = `
-<div class="row row--dense">
-  <div class="col">
-    <div class="v-input theme--light v-text-field">
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" id="input-10" type="text"></div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-              <div class="v-messages__message">13 caractères</div>
-            </transition-group-stub>
-          </div>
-          <div class="v-counter theme--light">0 / 13</div>
+<div class="vd-nir-field d-flex align-start">
+  <div class="v-input vd-number-field flex-grow-0 theme--light v-text-field">
+    <div class="v-input__control">
+      <div class="v-input__slot">
+        <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-10" type="text"></div>
+      </div>
+      <div class="v-text-field__details">
+        <div class="v-messages theme--light">
+          <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+            <div class="v-messages__message">13 caractères</div>
+          </transition-group-stub>
         </div>
       </div>
     </div>
@@ -65,41 +56,34 @@ exports[`NirField renders correctly with 13 characters 1`] = `
 `;
 
 exports[`NirField renders correctly with a tooltip 1`] = `
-<div class="row row--dense">
-  <div class="col">
-    <div class="v-input theme--light v-text-field">
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-15" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" id="input-15" type="text"></div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-              <div class="v-messages__message">13 caractères</div>
-            </transition-group-stub>
-          </div>
-          <div class="v-counter theme--light">0 / 13</div>
+<div class="vd-nir-field d-flex align-start">
+  <div class="v-input vd-number-field flex-grow-0 theme--light v-text-field">
+    <div class="v-input__control">
+      <div class="v-input__slot">
+        <div class="v-text-field__slot"><label for="input-15" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-15" type="text"></div>
+      </div>
+      <div class="v-text-field__details">
+        <div class="v-messages theme--light">
+          <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+            <div class="v-messages__message">13 caractères</div>
+          </transition-group-stub>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-3 col-md-3 col">
-    <div class="v-input theme--light v-text-field">
-      <div class="v-input__control">
-        <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-18" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" id="input-18" type="text"></div>
-        </div>
-        <div class="v-text-field__details">
-          <div class="v-messages theme--light">
-            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-              <div class="v-messages__message">2 chiffres</div>
-            </transition-group-stub>
-          </div>
-          <div class="v-counter theme--light">0 / 2</div>
+  <div class="v-input vd-key-field flex-grow-0 ml-2 theme--light v-text-field">
+    <div class="v-input__control">
+      <div class="v-input__slot">
+        <div class="v-text-field__slot"><label for="input-18" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-18" type="text"></div>
+      </div>
+      <div class="v-text-field__details">
+        <div class="v-messages theme--light">
+          <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+            <div class="v-messages__message">2 chiffres</div>
+          </transition-group-stub>
         </div>
       </div>
     </div>
-  </div>
-  <div class="d-flex align-start justify-center pt-5 col col-1"><span class="v-tooltip v-tooltip--top"><!----><span aria-hidden="true" aria-haspopup="true" aria-expanded="false" class="v-icon notranslate theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg></span></span></div>
+  </div> <span class="v-tooltip v-tooltip--top"><!----><span aria-hidden="true" aria-haspopup="true" aria-expanded="false" class="v-icon notranslate mt-4 ml-3 theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span>
 </div>
 `;

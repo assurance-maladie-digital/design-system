@@ -29,6 +29,12 @@ export const api: Api = {
 				description: 'Affiche un tooltip à côté du champ.'
 			}
 		],
+		slots: [
+			{
+				name: 'tooltip',
+				description: 'Slot pour remplacer le contenu du tooltip.'
+			}
+		],
 		events: [
 			{
 				name: 'change',

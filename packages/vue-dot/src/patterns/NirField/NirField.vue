@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-nir-field d-flex">
+	<div class="vd-nir-field d-flex align-start">
 		<VTextField
 			ref="number"
 			v-facade="numberMask"
@@ -8,8 +8,6 @@
 			:label="locales.numberLabel"
 			:hint="locales.numberHint"
 			:rules="numberRules"
-			:counter="numberCounter"
-			:counter-value="noSpacesCounter"
 			:success="numberFilled"
 			class="vd-number-field flex-grow-0"
 			@keydown="focusKeyField"
@@ -35,10 +33,8 @@
 			:label="locales.keyLabel"
 			:hint="locales.keyHint"
 			:rules="keyRules"
-			:counter="keyCounter"
-			:counter-value="noSpacesCounter"
 			:success="keyFilled"
-			class="vd-key-field flex-grow-0 ml-4"
+			class="vd-key-field flex-grow-0 ml-2"
 			@keyup.delete="focusNumberField"
 			@input.native="setKeyValue"
 			@change="emitChangeEvent"
@@ -60,13 +56,16 @@
 			<template #activator="{ on, attrs }">
 				<VIcon
 					v-bind="attrs"
+					class="mt-4 ml-3"
 					v-on="on"
 				>
 					{{ infoIcon }}
 				</VIcon>
 			</template>
 
-			<span>{{ tooltip }}</span>
+			<slot name="tooltip">
+				<span>{{ tooltip }}</span>
+			</slot>
 		</VTooltip>
 	</div>
 </template>
@@ -87,7 +86,7 @@
 
 	import { formatNir } from '../../functions/formatNir';
 
-	import { mdiCheck, mdiInformation } from '@mdi/js';
+	import { mdiCheck, mdiInformationOutline } from '@mdi/js';
 
 	import deepMerge from 'deepmerge';
 
@@ -160,16 +159,13 @@
 		locales = locales;
 
 		checkIcon = mdiCheck;
-		infoIcon = mdiInformation;
+		infoIcon = mdiInformationOutline;
 
 		numberValue: string | null = null;
 		keyValue: string | null = null;
 
 		numberMask = '# ## ## #X ### ###';
-		numberCounter = NUMBER_LENGTH;
-
 		keyMask = '##';
-		keyCounter = KEY_LENGTH;
 
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
@@ -262,10 +258,6 @@
 			this.$refs.number.focus();
 		}
 
-		noSpacesCounter(value?: string | undefined): number {
-			return value?.replace(/\s/g, '').length || 0;
-		}
-
 		emitChangeEvent(): void {
 			if (!this.internalValue) {
 				return;
@@ -282,10 +274,10 @@
 	}
 
 	.vd-number-field {
-		width: 248px;
+		width: 296px;
 	}
 
 	.vd-key-field {
-		width: 82px;
+		width: 84px;
 	}
 </style>
