@@ -1,12 +1,6 @@
 ---
-title: Vue d'ensemble
-description: Liste des [composants](#composants) et [templates](#templates) disponibles.
+title: Vue d’ensemble
+description: Liste des composants disponibles.
 ---
 
-## Composants
-
-<doc-list-components></doc-list-components>
-
-## Templates
-
-<doc-list-templates></doc-list-templates>
+<doc-component-overview></doc-component-overview>

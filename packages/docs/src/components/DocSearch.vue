@@ -125,4 +125,8 @@
 	.DocSearch-Help a {
 		display: inline-block;
 	}
+
+	html:has(> .DocSearch--active) {
+		overflow: hidden;
+	}
 </style>

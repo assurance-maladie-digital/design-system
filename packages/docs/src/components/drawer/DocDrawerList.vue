@@ -9,8 +9,9 @@
 				v-if="item.heading"
 				:key="`heading-${index}`"
 				class="text--primary font-weight-black text-uppercase"
-				v-text="item.heading"
-			/>
+			>
+				{{ item.heading }}
+			</VSubheader>
 
 			<VDivider
 				v-else-if="item.divider"
