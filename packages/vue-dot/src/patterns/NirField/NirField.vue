@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
+	<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
 		<VTextField
 			ref="number"
 			v-facade="numberMask"
@@ -9,7 +9,7 @@
 			:hint="locales.numberHint"
 			:rules="numberRules"
 			:success="numberFilled"
-			class="vd-number-field flex-grow-0 mx-2"
+			class="vd-number-field flex-grow-0 mx-1 mx-sm-2"
 			@keydown="focusKeyField"
 			@input.native="setNumberValue"
 			@change="emitChangeEvent"
@@ -34,7 +34,7 @@
 			:hint="locales.keyHint"
 			:rules="keyRules"
 			:success="keyFilled"
-			class="vd-key-field flex-grow-0 mx-2"
+			class="vd-key-field flex-grow-0 mx-1 mx-sm-2"
 			@keyup.delete="focusNumberField"
 			@input.native="setKeyValue"
 			@change="emitChangeEvent"
@@ -56,7 +56,7 @@
 			<template #activator="{ on, attrs }">
 				<VIcon
 					v-bind="attrs"
-					class="mt-4 ml-3"
+					class="vd-tooltip-icon mt-4 ml-0 ml-sm-2"
 					v-on="on"
 				>
 					{{ infoIcon }}
@@ -64,7 +64,7 @@
 			</template>
 
 			<slot name="tooltip">
-				<span>{{ tooltip }}</span>
+				{{ tooltip }}
 			</slot>
 		</VTooltip>
 	</div>
@@ -269,15 +269,18 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-nir-field :deep(.v-input__append-inner) {
-		flex: none;
-	}
-
 	.vd-number-field {
 		width: 296px;
 	}
 
 	.vd-key-field {
 		width: 84px;
+	}
+
+	// Don't allow resize for these elements
+	.vd-nir-field :deep(.v-input__append-inner),
+	.vd-key-field,
+	.vd-tooltip-icon {
+		flex: none;
 	}
 </style>

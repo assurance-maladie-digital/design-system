@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NirField renders correctly 1`] = `
-<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
-  <div class="v-input vd-number-field flex-grow-0 mx-2 theme--light v-text-field">
+<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
+  <div class="v-input vd-number-field flex-grow-0 mx-1 mx-sm-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-2" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-2" type="text"></div>
@@ -16,7 +16,7 @@ exports[`NirField renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div class="v-input vd-key-field flex-grow-0 mx-2 theme--light v-text-field">
+  <div class="v-input vd-key-field flex-grow-0 mx-1 mx-sm-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-5" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-5" type="text"></div>
@@ -35,8 +35,8 @@ exports[`NirField renders correctly 1`] = `
 `;
 
 exports[`NirField renders correctly with 13 characters 1`] = `
-<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
-  <div class="v-input vd-number-field flex-grow-0 mx-2 theme--light v-text-field">
+<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
+  <div class="v-input vd-number-field flex-grow-0 mx-1 mx-sm-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-10" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-10" type="text"></div>
@@ -56,8 +56,8 @@ exports[`NirField renders correctly with 13 characters 1`] = `
 `;
 
 exports[`NirField renders correctly with a tooltip 1`] = `
-<div class="vd-nir-field d-flex flex-wrap align-start mx-n2">
-  <div class="v-input vd-number-field flex-grow-0 mx-2 theme--light v-text-field">
+<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
+  <div class="v-input vd-number-field flex-grow-0 mx-1 mx-sm-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-15" class="v-label theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-15" type="text"></div>
@@ -71,7 +71,7 @@ exports[`NirField renders correctly with a tooltip 1`] = `
       </div>
     </div>
   </div>
-  <div class="v-input vd-key-field flex-grow-0 mx-2 theme--light v-text-field">
+  <div class="v-input vd-key-field flex-grow-0 mx-1 mx-sm-2 theme--light v-text-field">
     <div class="v-input__control">
       <div class="v-input__slot">
         <div class="v-text-field__slot"><label for="input-18" class="v-label theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-18" type="text"></div>
@@ -84,6 +84,6 @@ exports[`NirField renders correctly with a tooltip 1`] = `
         </div>
       </div>
     </div>
-  </div> <span class="v-tooltip v-tooltip--top"><!----><span aria-hidden="true" aria-haspopup="true" aria-expanded="false" class="v-icon notranslate mt-4 ml-3 theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span>
+  </div> <span class="v-tooltip v-tooltip--top"><!----><span aria-hidden="true" aria-haspopup="true" aria-expanded="false" class="v-icon notranslate vd-tooltip-icon mt-4 ml-0 ml-sm-2 theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span>
 </div>
 `;
