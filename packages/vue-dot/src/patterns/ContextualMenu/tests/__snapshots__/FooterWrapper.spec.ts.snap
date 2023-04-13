@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ContextualMenu renders correctly 1`] = `
-<div class="pa-5 contextual-menu"><a role="tab" tabindex="0" class="tab d-flex align-center"><span class="ml-4 text-body-1">
-			Onglet 1
-		</span></a><a role="tab" tabindex="0" class="tab d-flex align-center"><span class="ml-4 text-body-1">
-			Onglet 2
-		</span></a></div>
-`;

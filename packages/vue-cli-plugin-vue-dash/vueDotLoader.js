@@ -17,6 +17,7 @@ const componentMap = {
 	UserMenuBtn: 'elements',
 	// Patterns
 	AccessibilityBanner: 'patterns',
+	ContextualMenu: 'patterns',
 	CookieBanner: 'patterns',
 	DataListGroup: 'patterns',
 	DatePicker: 'patterns',
@@ -34,7 +35,6 @@ const componentMap = {
 	SubHeader: 'patterns',
 	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',
-	ContextualMenu: 'patterns',
 	// Templates
 	CookiesPage: 'templates',
 	ErrorPage: 'templates',

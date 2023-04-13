@@ -4,14 +4,27 @@ export const api: Api = {
 	ContextualMenu: {
 		props: [
 			{
-				name: 'tabs',
-				type: '[]',
-				required: true,
-				description: 'Liste des onglets du menu contextuel',
+				name: 'value',
+				type: 'String',
+				default: null,
+				description: 'L’élément actuellement affiché.'
+			},
+			{
+				name: 'items',
+				type: 'MenuItem[]',
+				default: '[]',
+				description: 'La liste des éléments du menu contextuel',
 				example: `{
-	label: 'Onglet 1',
-	route: '#onglet-1'
-}`
+	label: string;
+	anchor: string;
+}[]`
+			}
+		],
+		events: [
+			{
+				name: 'change',
+				description: 'Événement émis lorsque la valeur est mise à jour.',
+				value: 'string'
 			}
 		]
 	}

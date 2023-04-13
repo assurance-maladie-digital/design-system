@@ -13,9 +13,10 @@
 				v-for="(item) in tabs"
 				:key="item.value"
 				:class="tabClasses"
-				v-text="item.label"
 				@click="setHash(item.value)"
-			/>
+			>
+				{{ item.label }}
+			</VTab>
 		</VTabs>
 
 		<VTabsItems
@@ -81,7 +82,7 @@
 	@Component<DocTabs>({
 		watch: {
 			$route(): void {
-				this.setTab();
+				this.setTab(false);
 			}
 		}
 	})
@@ -127,8 +128,8 @@
 			}
 		}
 
-		findTabIndex(value: string): number | undefined {
-			return this.tabs?.findIndex((tab) => tab.value === value);
+		findTabIndex(value: string): number {
+			return this.tabs?.findIndex((tab) => tab.value === value) || -1;
 		}
 
 		setHash(hash: string): void {
@@ -140,7 +141,7 @@
 			window.location.hash = `${this.namespace}/${hash}`;
 		}
 
-		setTab(): void {
+		setTab(scrollToAnchor: boolean): void {
 			if (this.code) {
 				return;
 			}
@@ -150,17 +151,21 @@
 
 			const tabIndex = this.findTabIndex(tab);
 
-			if (tabIndex) {
-				this.tab = tabIndex;
+			if (!namespace || tabIndex === -1) {
+				return;
 			}
 
-			if (namespace) {
-				this.$vuetify.goTo(HASH_DELIMITER + namespace);
+			this.tab = tabIndex;
+
+			if (scrollToAnchor) {
+				this.$vuetify.goTo(HASH_DELIMITER + namespace, {
+					offset: -72
+				});
 			}
 		}
 
 		mounted() {
-			this.setTab();
+			this.setTab(true);
 		}
 	}
 </script>

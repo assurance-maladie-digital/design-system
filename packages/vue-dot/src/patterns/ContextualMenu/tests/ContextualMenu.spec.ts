@@ -12,16 +12,21 @@ describe('ContextualMenu', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(ContextualMenu,{
 			propsData: {
-				tabs: [
+				items: [
 					{
-						label: 'Onglet 1',
-						route: '#onglet-1'
+						text: 'Titre 1',
+						hash: '#example-1'
 					},
 					{
-						label: 'Onglet 2',
-						route: '#onglet-2'
+						text: 'Titre 2',
+						hash: '#example-2'
 					}
 				]
+			},
+			mocks: {
+				$route: {
+					hash: ''
+				}
 			}
 		});
 

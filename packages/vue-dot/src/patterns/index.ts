@@ -1,4 +1,5 @@
 import AccessibilityBanner from './AccessibilityBanner';
+import ContextualMenu from './ContextualMenu';
 import CookieBanner from './CookieBanner';
 import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
@@ -10,7 +11,6 @@ import HeaderBar from './HeaderBar';
 import LangBtn from './LangBtn';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
-import ContextualMenu from './ContextualMenu';
 import PaginatedTable from './PaginatedTable';
 import PhoneField from './PhoneField';
 import RatingPicker from './RatingPicker';
@@ -20,13 +20,13 @@ import UploadWorkflow from './UploadWorkflow';
 
 export const patterns = {
 	AccessibilityBanner,
+	ContextualMenu,
 	CookieBanner,
 	DataListGroup,
 	DatePicker,
 	FileUpload,
 	FilterModule,
 	FooterBar,
-	ContextualMenu,
 	FooterWrapper,
 	HeaderBar,
 	LangBtn,
