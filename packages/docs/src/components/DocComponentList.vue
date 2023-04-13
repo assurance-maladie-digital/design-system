@@ -94,4 +94,8 @@
 	.v-card:hover {
 		box-shadow: 0 0 0 2px $vd-primary !important;
 	}
+
+	img {
+		object-fit: cover;
+	}
 </style>

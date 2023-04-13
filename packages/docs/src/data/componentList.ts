@@ -51,18 +51,25 @@ export const componentList: ComponentSection[] = [
 		title: 'Navigation',
 		components: [
 			{
-				name: 'AccessibilityBanner',
-				description: 'Utilisé pour permettre à l’utilisateur d’accéder plus facilement au contenu principal',
-				href: '/composants/navigation/accessibility-banner',
-				image: 'components/accessibility-banner.svg',
-				status: ComponentStatusEnum.READY
-			},
-			{
 				name: 'ExternalLinks',
 				description: 'Utilisé pour afficher un menu avec une liste vers des liens externes.',
 				href: '/composants/navigation/external-links',
 				image: 'components/external-links.svg',
 				status: ComponentStatusEnum.READY
+			},
+			{
+				name: 'ContextualMenu',
+				description: 'Utilisé pour pour afficher un menu avec une liste d’ancres pour la navigation.',
+				href: '/composants/navigation/contextual-menu',
+				image: 'placeholder.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'SkipLink',
+				description: 'Utilisé pour permettre à l’utilisateur d’accéder plus facilement au contenu principal.',
+				href: '/composants/navigation/skip-link',
+				image: 'placeholder.svg',
+				status: ComponentStatusEnum.NEW
 			}
 		]
 	},
