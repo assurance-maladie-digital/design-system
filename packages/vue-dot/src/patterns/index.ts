@@ -1,4 +1,5 @@
 import AccessibilityBanner from './AccessibilityBanner';
+import ContextualMenu from './ContextualMenu';
 import CookieBanner from './CookieBanner';
 import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
@@ -19,6 +20,7 @@ import UploadWorkflow from './UploadWorkflow';
 
 export const patterns = {
 	AccessibilityBanner,
+	ContextualMenu,
 	CookieBanner,
 	DataListGroup,
 	DatePicker,

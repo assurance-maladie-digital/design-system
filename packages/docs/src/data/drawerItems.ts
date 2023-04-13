@@ -119,6 +119,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ExternalLinks',
 						to: '/composants/navigation/external-links'
+					},
+					{
+						title: 'ContextualMenu',
+						to: '/composants/navigation/contextual-menu'
 					}
 				]
 			},
