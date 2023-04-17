@@ -3,16 +3,15 @@
 		v-bind="options.snackBar"
 		:value="Boolean(notification)"
 		:color="snackbarColor"
-		:class="textColor + '--text'"
 		role="status"
 		class="vd-notification-bar"
+		:class="textColor + '--text'"
 	>
 		<div
 			v-if="notification"
 			class="d-flex align-center"
 		>
 			<VIcon
-				v-if="!mobileVersion"
 				v-bind="options.icon"
 				:color="textColor"
 				class="vd-notification-icon"
@@ -22,9 +21,23 @@
 
 			{{ notification.message }}
 
-			<slot name="divider" />
+			<svg
+				v-if="divider && !mobileVersion"
+				width="1"
+				height="36"
+				role="img"
+				focusable="false"
+				aria-hidden="true"
+				class="ml-3"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 1 36"
+			>
+				<path
+					:stroke="textColor"
+					d="M.5 36V0"
+				/>
+			</svg>
 		</div>
-
 		<template #action="{ attrs }">
 			<slot name="actions">
 				<VBtn
@@ -78,6 +91,10 @@
 			closeBtnText: {
 				type: String,
 				default: locales.close
+			},
+			divider: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -151,11 +168,24 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+	$breakpoint-xs: 600px;
 
 	// Use min-width to avoid shrinking with flexbox
 	.vd-notification-bar :deep(.v-snack__wrapper) {
 		min-width: 0;
 		color: currentColor;
+		display: flex;
+		@media (max-width: $breakpoint-xs) {
+			flex-direction: column;
+		}
+	}
+
+	.vd-notification-bar :deep(.v-snack__action) {
+		@media (max-width: $breakpoint-xs) {
+			padding: 14px 16px;
+			margin: 0;
+			border-top: 1px solid currentColor;
+		}
 	}
 
 	.vd-notification-icon {
