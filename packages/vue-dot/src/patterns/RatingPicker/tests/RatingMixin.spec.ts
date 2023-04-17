@@ -17,7 +17,7 @@ const labelQuestion = 'Pouvez-vous nous en dire plus ?';
 const itemLabels = ['non je dis rien','faut voir','je dirais tout ce que vous voulez'];
 
 describe('RatingMixin', () => {
-	it('verify props', () => {
+	it('verifies props', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
@@ -34,7 +34,7 @@ describe('RatingMixin', () => {
 		expect(wrapper.vm.getItemLabel(-1)).toBe('');
 	});
 
-	it('verify itemLabels', () => {
+	it('verifies item labels', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
@@ -55,7 +55,7 @@ describe('RatingMixin', () => {
 		expect(wrapper.vm.getItemLabel(-1)).toBe('');
 	});
 
-	it('dispatch event', async() => {
+	it('dispatch input event', async() => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
@@ -73,7 +73,7 @@ describe('RatingMixin', () => {
 		expect(wrapper.emitted('input')?.pop()).toEqual([3]);
 	});
 
-	it('lockField on', async() => {
+	it('locks field', async() => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
