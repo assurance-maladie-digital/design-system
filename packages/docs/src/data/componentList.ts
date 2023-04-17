@@ -61,14 +61,14 @@ export const componentList: ComponentSection[] = [
 				name: 'ContextualMenu',
 				description: 'Utilisé pour pour afficher un menu avec une liste d’ancres pour la navigation.',
 				href: '/composants/navigation/contextual-menu',
-				image: 'placeholder.svg',
+				image: 'components/contextual-menu.svg',
 				status: ComponentStatusEnum.NEW
 			},
 			{
 				name: 'SkipLink',
 				description: 'Utilisé pour permettre à l’utilisateur d’accéder plus facilement au contenu principal.',
 				href: '/composants/navigation/skip-link',
-				image: 'placeholder.svg',
+				image: 'components/skip-link.svg',
 				status: ComponentStatusEnum.NEW
 			}
 		]
