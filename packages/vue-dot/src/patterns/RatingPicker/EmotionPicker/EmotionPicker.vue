@@ -6,36 +6,37 @@
 
 		<VRating
 			:length="length"
-			:readonly="readonly"
+			:readonly="readonlyInternal"
 			:class="{
-				'justify-center': readonly && emotionSelected !== -1
+				'justify-center': readonly && valueInternal !== -1
 			}"
 			large
 			hover
 			class="d-flex flex-wrap flex-row justify-space-between ma-4"
+			@input="onDispatchValue"
 		>
-			<template #item="{ index }">
-				<div
-					class="d-flex flex-column align-center justify-center"
-					:class="iconButtonClasses(index)"
-					:tabindex="index + 1"
-					@click="selectEmotion(index)"
-					@keyup.enter="selectEmotion(index)"
+			<template #item="props">
+				<VBtn
+					text
+					:disabled="isDisabled(props.index)"
+					:color="genColor(props.index)"
+					min-height="88px"
+					min-width="88px"
+					:class="iconButtonClasses(props.index)"
+					@click="props.click"
 				>
-					<slot :name="slotName(index)">
+					<div class="d-flex flex-column align-center justify-center">
 						<VIcon
-							:color="genColor(index)"
 							x-large
 							class="pa-0"
 						>
-							{{ getIcon(index) }}
+							{{ getIcon(props.index) }}
 						</VIcon>
-
 						<span class="mt-1">
-							{{ getItemLabel(index) }}
+							{{ getItemLabel(props.index) }}
 						</span>
-					</slot>
-				</div>
+					</div>
+				</VBtn>
 			</template>
 		</VRating>
 	</div>
@@ -52,13 +53,14 @@
 		mdiEmoticonSadOutline,
 		mdiEmoticonNeutralOutline
 	} from '@mdi/js';
+	import { propValidator } from '../../../helpers/propValidator';
 
 	const Props = Vue.extend({
 		props: {
 			length: {
 				type: Number,
 				default: 3,
-				validator: (value: number) => value === 3 || value === 2
+				validator: (value: number) => propValidator('length', ['2','3'], value.toString())
 			}
 		}
 	});
@@ -82,42 +84,16 @@
 			'turquoise-darken-20'
 		];
 
-		emotionSelected = -1;
-
-		mounted(): void {
-			this.checkLength();
-		}
-
-		checkLength(): void {
-			if (this.length !== 2 && this.length !== 3) {
-				// eslint-disable-next-line no-console
-				console.error('length must be 2 or 3');
-			}
-		}
-
 		iconButtonClasses(index: number): object {
 			return {
 				'icon-button': true,
-				'sad': index === 0,
-				'neutral': index === 1 && this.length === 3,
-				'happy': (index === 2 && this.length === 3) || (index === 1 && this.length === 2),
-				'active': index === this.emotionSelected,
-				'd-none': this.readonly && this.emotionSelected !== -1 && index !== this.emotionSelected
+				'active': index === (this.valueInternal - 1)
 			};
 		}
 
-		slotName(index: number): string {
-			if (index === 0) {
-				return 'sad';
-			} else if (index === 1 && this.length === 3) {
-				return 'neutral';
-			} else if (index === 1 && this.length === 2) {
-				return 'happy';
-			} else {
-				return 'happy';
-			}
+		isDisabled(index: number): boolean {
+			return this.valueInternal >= 0 && index !== (this.valueInternal - 1);
 		}
-
 		getIcon(index: number): string {
 			if (index === 0) {
 				return this.sadIcon;
@@ -137,11 +113,6 @@
 
 			return this.colors[index];
 		}
-
-		selectEmotion(index: number): void {
-			this.emotionSelected = index;
-			this.$emit('input', index);
-		}
 	}
 </script>
 
@@ -149,61 +120,17 @@
 	@import '@cnamts/design-tokens/dist/tokens';
 
 	.icon-button {
-		height: 88px;
-		width: 88px;
 		border-radius: 8px;
-
-		&:last-child {
-			margin-right: 0;
+		&:focus, &:hover {
+			outline: solid 1px;
+		}
+	}
+	.active {
+		outline: solid 1px;
+		&:before {
+			background-color: currentColor;
+			opacity: 0.08;
 		}
 
-		&:hover {
-			cursor: pointer;
-		}
-
-		&.sad {
-			&:hover {
-				background-color: $vd-orange-lighten-90;
-			}
-
-			&:focus {
-				outline: solid 1px $vd-orange-darken-20;
-			}
-
-			&.active {
-				border: 1px solid $vd-orange-darken-20;
-				background-color: $vd-orange-lighten-90;
-			}
-		}
-
-		&.neutral {
-			&:hover {
-				background-color: $vd-yellow-lighten-90;
-			}
-
-			&:focus {
-				outline: solid 1px $vd-yellow-darken-20;
-			}
-
-			&.active {
-				border: 1px solid $vd-yellow-darken-20;
-				background-color: $vd-yellow-lighten-90;
-			}
-		}
-
-		&.happy {
-			&:hover {
-				background-color: $vd-turquoise-lighten-90;
-			}
-
-			&:focus {
-				outline: solid 1px $vd-turquoise-darken-20;
-			}
-
-			&.active {
-				border: 1px solid $vd-turquoise-darken-20;
-				background-color: $vd-turquoise-lighten-90;
-			}
-		}
 	}
 </style>

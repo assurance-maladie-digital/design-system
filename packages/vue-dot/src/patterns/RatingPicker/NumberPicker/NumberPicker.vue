@@ -10,8 +10,9 @@
 			color="primary"
 			background-color="primary lighten-4"
 			class="d-flex flex-wrap"
+			@input="onDispatchValue"
 		>
-			<template #item="{ index }">
+			<template #item="{ index, click }">
 				<div class="d-flex flex-column">
 					<VBtn
 						x-small
@@ -19,7 +20,7 @@
 						color="primary"
 						min-height="36px"
 						class="mx-1 my-2 pa-0"
-						@click="onDispatchValue(index)"
+						@click="click"
 					>
 						{{ index }}
 					</VBtn>

@@ -13,10 +13,10 @@ function createTestComponent() {
 	});
 }
 
-const labelQuestion = 'Pouvez-vous nous en dire plus ?';
-const itemLabels = ['non je dis rien','faut voir','je dirais tout ce que vous voulez'];
-
 describe('RatingMixin', () => {
+	const labelQuestion = 'Pouvez-vous nous en dire plus ?';
+	const itemLabels = ['non je dis rien','faut voir','je dirais tout ce que vous voulez'];
+
 	it('verifies props', () => {
 		const testComponent = createTestComponent();
 

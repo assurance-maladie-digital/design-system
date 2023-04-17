@@ -4,7 +4,7 @@
 			:is="type"
 			ref="firstRating"
 			:label="label"
-			:length="length"
+			:length="lengthInternal"
 			:readonly="readonlyInternal"
 			:item-labels="itemLabels"
 			@input="onUpdate"
@@ -70,6 +70,11 @@
 			itemLabels: {
 				type: Array as PropType<string[]>,
 				default: null
+			},
+			length: {
+				type: Number,
+				default: 3,
+				validator: (value: number) => propValidator('length', ['2','3'], value.toString())
 			}
 		}
 	});
@@ -92,13 +97,14 @@
 
 		readonlyInternal = this.readonly;
 
-		get length(): number {
+		get lengthInternal(): number {
 			switch (this.type) {
 				case RatingEnum.NUMBER: return 10;
 				case RatingEnum.STAR: return 5;
 			}
+			// dans le cas du EmotionPicker , on peut choisir 2 ou 3 avec la prop length
 
-			return 3;
+			return this.length;
 		}
 
 		onUpdate(value: number): void {

@@ -29,7 +29,7 @@ const Props = Vue.extend({
 		},
 		value: {
 			type: Number,
-			default: 0
+			default: -1
 		}
 	}
 });
@@ -51,12 +51,13 @@ export class RatingMixin extends MixinsDeclaration implements RatingMixinInterfa
 	}
 
 	onDispatchValue(event: number): void {
+		this.valueInternal = event ;
 		this.$emit('input', event);
 	}
 
 	lockField(value: number): void {
 		this.readonlyInternal = true;
-		this.valueInternal = value;
+		this.valueInternal = value ;
 	}
 }
 

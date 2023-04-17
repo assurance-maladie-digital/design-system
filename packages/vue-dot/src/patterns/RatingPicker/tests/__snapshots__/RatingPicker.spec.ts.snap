@@ -5,10 +5,20 @@ exports[`RatingPicker renders correctly 1`] = `
   <div>
     <h6>Pouvez-vous nous en dire plus ?</h6>
     <div class="d-flex d-inline-flex flex-column align-sm-center my-0">
-      <div class="v-rating"><button type="button" aria-label="Rating 1 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 2 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 3 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 4 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button><button type="button" aria-label="Rating 5 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light primary--text text--lighten-4"></button></div>
-      <div class="caption">
+      <div class="v-rating"><button type="button" outlined="" min-height="36px" class="v-icon notranslate mx-1 my-2 pa-0 v-icon--link theme--light primary--text" style="font-size: 36px; height: 36px; width: 36px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 36px; height: 36px; width: 36px;">
+            <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+          </svg></button><button type="button" outlined="" min-height="36px" class="v-icon notranslate mx-1 my-2 pa-0 v-icon--link theme--light primary--text" style="font-size: 36px; height: 36px; width: 36px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 36px; height: 36px; width: 36px;">
+            <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+          </svg></button><button type="button" outlined="" min-height="36px" class="v-icon notranslate mx-1 my-2 pa-0 v-icon--link theme--light primary--text" style="font-size: 36px; height: 36px; width: 36px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 36px; height: 36px; width: 36px;">
+            <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+          </svg></button><button type="button" outlined="" min-height="36px" class="v-icon notranslate mx-1 my-2 pa-0 v-icon--link theme--light primary--text" style="font-size: 36px; height: 36px; width: 36px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 36px; height: 36px; width: 36px;">
+            <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+          </svg></button><button type="button" outlined="" min-height="36px" class="v-icon notranslate mx-1 my-2 pa-0 v-icon--link theme--light primary--text" style="font-size: 36px; height: 36px; width: 36px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 36px; height: 36px; width: 36px;">
+            <path d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z"></path>
+          </svg></button></div>
+      <p class="text-caption mb-0">
 
-      </div>
+      </p>
     </div>
   </div>
   <!---->
