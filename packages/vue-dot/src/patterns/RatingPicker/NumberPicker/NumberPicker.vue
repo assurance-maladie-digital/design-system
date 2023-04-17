@@ -22,7 +22,7 @@
 						class="mx-1 my-2 pa-0"
 						@click="click"
 					>
-						{{ index }}
+						{{ index + 1 }}
 					</VBtn>
 
 					<span

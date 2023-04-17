@@ -10,7 +10,7 @@
 			@input="onUpdate"
 		/>
 
-		<div v-if="readonlyInternal">
+		<div v-if="haveAnswered">
 			<VAlert
 				outlined
 				type="success"
@@ -18,7 +18,7 @@
 				{{ locales.thanks }}
 			</VAlert>
 
-			<slot />
+			<slot v-if="readonlyInternal" />
 		</div>
 
 		<div class="d-flex justify-space-between mt-5 mr-2">
@@ -96,7 +96,7 @@
 		locales = locales;
 
 		readonlyInternal = this.readonly;
-
+		haveAnswered=false;
 		get lengthInternal(): number {
 			switch (this.type) {
 				case RatingEnum.NUMBER: return 10;
@@ -108,8 +108,22 @@
 		}
 
 		onUpdate(value: number): void {
-			this.readonlyInternal = true;
-			this.$refs.firstRating.lockField(value);
+			this.haveAnswered = true;
+			switch (this.type) {
+				case RatingEnum.NUMBER:
+					this.readonlyInternal = value <= 7;
+					break;
+				case RatingEnum.STAR:
+				case RatingEnum.EMOTION:
+					// on prend la moitié de la longueur, ca determine le mecontentement
+					// en dessous on bloque et on lui demande des questions supplementaires
+					this.readonlyInternal = value <= Math.ceil(this.lengthInternal / 2);
+					break;
+			}
+			if (this.readonlyInternal) {
+				this.$refs.firstRating.lockField(value);
+			}
+
 		}
 	}
 </script>

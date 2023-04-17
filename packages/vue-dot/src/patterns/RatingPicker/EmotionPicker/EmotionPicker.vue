@@ -92,7 +92,7 @@
 		}
 
 		isDisabled(index: number): boolean {
-			return this.valueInternal >= 0 && index !== (this.valueInternal - 1);
+			return this.readonlyInternal && index !== (this.valueInternal - 1);
 		}
 		getIcon(index: number): string {
 			if (index === 0) {
