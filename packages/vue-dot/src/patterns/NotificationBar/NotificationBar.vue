@@ -188,6 +188,11 @@
 		min-width: 0;
 		color: currentColor;
 	}
+	.vd-notification-bar :deep(.rounded-pill) {
+		@media screen and (max-width: $breakpoint-xs) {
+			border-radius: 30px !important;
+		}
+	}
 
 	.vd-notification-bar :deep(.v-snack__content) {
 		position: relative;
