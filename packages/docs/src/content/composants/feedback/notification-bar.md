@@ -44,7 +44,13 @@ Vous pouvez ajouter un divider entre le contenu de la notification et les bouton
 
 <doc-example file="notification-bar/divider"></doc-example>
 
-### Slot
+#### Inline
+
+Vous pouvez forcer l'affichage de la notification sur une ligne en mobile en utilisant la prop `inline-mobile`.
+
+<doc-example file="notification-bar/inline-mobile"></doc-example>
+
+#### Slot
 
 Vous pouvez utiliser le slot `actions` pour remplacer le bouton d’action par défaut ou en ajouter d'autres.
 

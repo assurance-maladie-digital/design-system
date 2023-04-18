@@ -53,7 +53,7 @@
 		computed: mapState('notification', ['notification']),
 		methods: mapActions('notification', ['addNotification', 'clearNotification'])
 	})
-	export default class NotificationBarLabel extends Vue {
+	export default class NotificationBarSlot extends Vue {
 		clearNotification!: () => void;
 
 		get showNotificationBar(): boolean {

@@ -2,7 +2,7 @@
 	<div>
 		<NotificationBar
 			v-show="showNotificationBar"
-			divider
+			inline-mobile
 		/>
 
 		<VBtn
@@ -20,13 +20,13 @@
 
 	import { mapActions, mapState } from 'vuex';
 
-	const EXAMPLE_REF = 'divider-example';
+	const EXAMPLE_REF = 'inline-example';
 
 	@Component({
 		computed: mapState('notification', ['notification']),
 		methods: mapActions('notification', ['addNotification'])
 	})
-	export default class NotificationBarDivider extends Vue {
+	export default class NotificationBarInline extends Vue {
 		get showNotificationBar(): boolean {
 			return this.notification?.ref === EXAMPLE_REF;
 		}

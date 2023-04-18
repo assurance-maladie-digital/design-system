@@ -6,13 +6,14 @@
 		role="status"
 		class="vd-notification-bar"
 		:class="textColor + '--text'"
-		:vertical="mobileVersion"
+		:vertical="mobileVersion && !inlineMobile"
 	>
 		<div
 			v-if="notification"
 			class="d-flex align-center"
 		>
 			<VIcon
+				v-if="!mobileVersion"
 				v-bind="options.icon"
 				:color="textColor"
 				class="vd-notification-icon"
@@ -38,13 +39,14 @@
 					d="M.5 36V0"
 				/>
 			</svg>
+
+			<VDivider
+				v-if="divider && mobileVersion && !inlineMobile"
+				:color="textColor"
+			/>
 		</div>
 
 		<template #action="{ attrs }">
-			<VDivider
-				v-if="divider && mobileVersion"
-				:color="textColor"
-			/>
 			<slot name="actions">
 				<VBtn
 					v-bind="{
@@ -53,7 +55,7 @@
 					}"
 					:color="textColor"
 					:icon="mobileVersion"
-					:x-large="mobileVersion"
+					:class="'ma-0' ? mobileVersion : ''"
 					@click="clearNotification"
 				>
 					<span :class="{ 'd-sr-only': mobileVersion }">
@@ -100,6 +102,10 @@
 				default: locales.close
 			},
 			divider: {
+				type: Boolean,
+				default: false
+			},
+			inlineMobile: {
 				type: Boolean,
 				default: false
 			}
@@ -175,7 +181,7 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
-	$beakpoint-xs: 600px;
+	$breakpoint-xs: 600px;
 
 	// Use min-width to avoid shrinking with flexbox
 	.vd-notification-bar :deep(.v-snack__wrapper) {
@@ -183,11 +189,16 @@
 		color: currentColor;
 	}
 
-	.vd-notification-bar :deep(.v-snack__action) {
+	.vd-notification-bar :deep(.v-snack__content) {
 		position: relative;
-		@media (max-width: $beakpoint-xs) {
-			margin: 0;
+		width: 100%;
+	}
+
+	.vd-notification-bar :deep(.v-snack__action) {
+		margin-bottom: 0;
+		@media screen and (max-width: $breakpoint-xs) {
 			padding: 14px 16px;
+			margin-right: 0;
 		}
 	}
 
@@ -197,7 +208,7 @@
 
 	.v-divider {
 		position: absolute;
-		top: 0;
+		bottom: 0;
 		left: 0;
 		margin-left: 16px;
 		margin-right: 16px;
