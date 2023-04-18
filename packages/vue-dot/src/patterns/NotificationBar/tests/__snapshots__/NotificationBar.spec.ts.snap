@@ -9,6 +9,7 @@ exports[`NotificationBar renders correctly 1`] = `
 
     test
 
+    <!---->
   </div>
 </vsnackbar-stub>
 `;
@@ -22,6 +23,7 @@ exports[`NotificationBar renders correctly with a custom icon 1`] = `
 
     test
 
+    <!---->
   </div>
 </vsnackbar-stub>
 `;
