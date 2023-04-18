@@ -22,6 +22,12 @@
 			</VIcon>
 
 			{{ notification.message }}
+
+			<VDivider
+				v-if="divider && mobileVersion && !inlineMobile"
+				:color="textColor"
+				class="h-line"
+			/>
 		</div>
 
 		<template #action="{ attrs }">
@@ -31,11 +37,6 @@
 				height="36"
 				vertical
 				class="mr-3"
-			/>
-			<VDivider
-				v-if="divider && mobileVersion && !inlineMobile"
-				:color="textColor"
-				class="h-line"
 			/>
 			<slot name="actions">
 				<VBtn
@@ -186,11 +187,11 @@
 
 	.vd-notification-bar :deep(.v-snack__content) {
 		width: 100%;
+		position: relative;
 	}
 
 	.vd-notification-bar :deep(.v-snack__action) {
 		margin-bottom: 0;
-		position: relative;
 		@media screen and (max-width: $breakpoint-xs) {
 			padding: 14px 16px;
 			margin-right: 0;
@@ -203,7 +204,7 @@
 
 	.v-divider.h-line {
 		position: absolute;
-		top: 0;
+		bottom: 0;
 		left: 0;
 		margin-left: 16px;
 		margin-right: 16px;
