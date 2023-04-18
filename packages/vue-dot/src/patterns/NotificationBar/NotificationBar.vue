@@ -44,7 +44,6 @@
 			<VDivider
 				v-if="divider && mobileVersion"
 				:color="textColor"
-				class="w-100"
 			/>
 			<slot name="actions">
 				<VBtn
@@ -200,5 +199,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		margin-left: 16px;
+		margin-right: 16px;
+		width: calc(100% - 32px);
 	}
 </style>
