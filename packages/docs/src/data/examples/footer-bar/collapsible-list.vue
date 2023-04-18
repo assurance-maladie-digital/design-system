@@ -10,7 +10,7 @@
 
 	import CollapsibleList from '@cnamts/vue-dot/src/patterns/FooterBar/CollapsibleList';
 
-	@Component ({
+	@Component({
 		components: {
 			CollapsibleList
 		}
@@ -19,6 +19,7 @@
 		docProps = {
 			sitemapRoute: '/',
 			cguRoute: '/',
+			cookiesRoute: '/',
 			legalNoticeRoute: '/',
 			a11yStatementRoute: '/'
 		};
