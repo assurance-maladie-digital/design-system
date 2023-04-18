@@ -38,6 +38,18 @@ Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la pro
 
 <doc-example file="notification-bar/label"></doc-example>
 
+#### Divider
+
+Vous pouvez ajouter un divider entre le contenu de la notification et les boutons en utilisant la prop `divider`.
+
+<doc-example file="notification-bar/divider"></doc-example>
+
+### Slot
+
+Vous pouvez utiliser le slot `actions` pour remplacer le bouton d’action par défaut ou en ajouter d'autres.
+
+<doc-example file="notification-bar/slot"></doc-example>
+
 #### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `NotificationBar` en utilisant la prop `vuetify-options`.

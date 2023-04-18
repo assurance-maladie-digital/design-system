@@ -2,7 +2,7 @@
 	<div>
 		<NotificationBar
 			v-show="showNotificationBar"
-			close-btn-text="Masquer"
+			divider
 		/>
 
 		<VBtn
@@ -20,7 +20,7 @@
 
 	import { mapActions, mapState } from 'vuex';
 
-	const EXAMPLE_REF = 'label-example';
+	const EXAMPLE_REF = 'divider-example';
 
 	@Component({
 		computed: mapState('notification', ['notification']),
