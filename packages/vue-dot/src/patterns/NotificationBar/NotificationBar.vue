@@ -23,30 +23,21 @@
 
 			{{ notification.message }}
 
-			<svg
-				v-if="divider && !mobileVersion"
-				width="1"
-				height="36"
-				role="img"
-				focusable="false"
-				aria-hidden="true"
-				class="ml-3"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 1 36"
-			>
-				<path
-					:stroke="textColor"
-					d="M.5 36V0"
-				/>
-			</svg>
-
 			<VDivider
 				v-if="divider && mobileVersion && !inlineMobile"
 				:color="textColor"
+				class="h-line"
 			/>
 		</div>
 
 		<template #action="{ attrs }">
+			<VDivider
+				v-if="divider && !mobileVersion"
+				:color="textColor"
+				height="36"
+				vertical
+				class="mr-3"
+			/>
 			<slot name="actions">
 				<VBtn
 					v-bind="{
@@ -211,7 +202,7 @@
 		min-width: 24px;
 	}
 
-	.v-divider {
+	.v-divider.h-line {
 		position: absolute;
 		bottom: 0;
 		left: 0;
