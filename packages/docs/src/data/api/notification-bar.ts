@@ -11,6 +11,18 @@ export const api: Api = {
 				default: `'Fermer'`,
 				description: 'Le texte du bouton *Fermer*.'
 			},
+			{
+				name: 'divider',
+				type: 'boolean',
+				default: `false`,
+				description: 'Affiche une ligne de séparation entre le contenu et le(s) bouton(s).'
+			},
+			{
+				name: 'inline-mobile',
+				type: 'boolean',
+				default: `false`,
+				description: 'Force l\'affichage de la barre de notification en ligne sur les écrans mobiles.'
+			},
 			...customizable(`{
 	snackBar: 'VSnackbar',
 	icon: 'VIcon',
