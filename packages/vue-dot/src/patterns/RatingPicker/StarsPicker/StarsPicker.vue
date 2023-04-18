@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<h6>{{ label }}</h6>
+		<div class="text-h6">
+			{{ label }}
+		</div>
 
 		<div class="d-flex d-inline-flex flex-column align-sm-center my-0">
 			<VRating

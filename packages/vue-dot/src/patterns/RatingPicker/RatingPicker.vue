@@ -18,7 +18,12 @@
 				{{ locales.thanks }}
 			</VAlert>
 
-			<slot v-if="readonlyInternal" />
+			<div v-if="showMore()">
+				<div class="text-h6">
+					{{ locales.more }}
+				</div>
+				<slot />
+			</div>
 		</div>
 
 		<div class="d-flex justify-space-between mt-5 mr-2">
@@ -26,14 +31,14 @@
 				text
 				color="primary"
 			>
-				{{ locales.later }}
+				{{ locales.close }}
 			</VBtn>
 
 			<VBtn
 				color="primary"
 				depressed
 			>
-				{{ locales.more }}
+				{{ locales.later }}
 			</VBtn>
 		</div>
 	</div>
@@ -107,6 +112,9 @@
 			return this.length;
 		}
 
+		showMore(): boolean {
+			return this.readonlyInternal && this.$slots.default !== undefined;
+		}
 		onUpdate(value: number): void {
 			this.haveAnswered = true;
 			switch (this.type) {

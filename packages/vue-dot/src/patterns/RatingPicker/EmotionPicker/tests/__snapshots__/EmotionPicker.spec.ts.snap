@@ -2,9 +2,9 @@
 
 exports[`EmotionPicker renders correctly 1`] = `
 <div labels="[object Object]">
-  <h6 class="mb-6">
+  <div class="text-h6">
     Pourriez-vous donner une note ?
-  </h6>
+  </div>
   <vrating-stub color="primary" opendelay="0" closedelay="0" ripple="true" large="true" backgroundcolor="accent" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" hover="true" length="3" value="0" iconlabel="$vuetify.rating.ariaLabel.icon" class="d-flex flex-wrap flex-row justify-space-between ma-4"></vrating-stub>
 </div>
 `;

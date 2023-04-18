@@ -1,9 +1,8 @@
 <template>
 	<div>
-		<h6 class="mb-6">
+		<div class="text-h6">
 			{{ label }}
-		</h6>
-
+		</div>
 		<VRating
 			:length="length"
 			:readonly="readonlyInternal"

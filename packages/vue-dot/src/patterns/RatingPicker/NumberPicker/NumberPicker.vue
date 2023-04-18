@@ -1,39 +1,45 @@
 <template>
 	<div>
-		<h6>{{ label }}</h6>
-
-		<VRating
+		<div class="text-h6">
+			{{ label }}
+		</div>
+		<div
 			v-if="!readonlyInternal"
-			:length="lengthInternal"
-			:readonly="readonlyInternal"
-			hover
-			color="primary"
-			background-color="primary lighten-4"
-			class="d-flex flex-wrap"
-			@input="onDispatchValue"
+			class="my-2 d-inline-block"
 		>
-			<template #item="{ index, click }">
-				<div class="d-flex flex-column">
+			<VRating
+				:length="lengthInternal"
+				:readonly="readonlyInternal"
+				hover
+				color="primary"
+				background-color="primary lighten-4"
+				class="d-flex flex-wrap"
+				@input="onDispatchValue"
+			>
+				<template #item="{ index, click }">
 					<VBtn
 						x-small
 						outlined
 						color="primary"
 						min-height="36px"
-						class="mx-1 my-2 pa-0"
+						class="mx-1 pa-0"
 						@click="click"
 					>
 						{{ index + 1 }}
 					</VBtn>
-
-					<span
-						v-if="displayLabels(index)"
-						class="caption align-self-sm-center"
-						v-text="getItemLabel(index)"
-					/>
-				</div>
-			</template>
-		</VRating>
-
+				</template>
+			</VRating>
+			<div class="d-flex justify-space-between mx-1">
+				<span
+					class="caption"
+					v-text="getItemLabel(0)"
+				/>
+				<span
+					class="caption "
+					v-text="getItemLabel(lengthInternal)"
+				/>
+			</div>
+		</div>
 		<div v-else>
 			<VBtn
 				outlined
