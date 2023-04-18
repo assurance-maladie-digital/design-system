@@ -5,7 +5,7 @@ export const api: Api = {
 		props: [
 			{
 				name: 'value',
-				type: 'String',
+				type: 'string',
 				default: null,
 				description: 'L’élément actuellement affiché.'
 			},

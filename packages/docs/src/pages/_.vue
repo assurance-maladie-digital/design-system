@@ -1,8 +1,10 @@
 <template>
 	<VApp>
+		<SkipLink />
+
 		<DocHeader />
 
-		<VMain>
+		<VMain id="main">
 			<PageContainer
 				class="h-100"
 				spacing="pa-5 pa-sm-8 pa-md-12 pa-lg-16"

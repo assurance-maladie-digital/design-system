@@ -2,7 +2,6 @@
 
 exports[`registerAllComponents should register all components 1`] = `
 Array [
-  "AccessibilityBanner",
   "BackBtn",
   "BackToTopBtn",
   "ContextualMenu",
@@ -36,6 +35,7 @@ Array [
   "PaginatedTable",
   "PhoneField",
   "RatingPicker",
+  "SkipLink",
   "SubHeader",
   "TableToolbar",
   "UploadWorkflow",

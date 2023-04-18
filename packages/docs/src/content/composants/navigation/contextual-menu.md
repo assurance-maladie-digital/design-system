@@ -9,6 +9,12 @@ description: L’élément `ContextualMenu` est utilisé pour afficher un menu a
 
 <doc-example file="contextual-menu/usage"></doc-example>
 
+### Exemples
+
+#### Titres de niveaux différents
+
+Vous pouvez afficher des titres de niveaux différents en ajoutant la propriété `level` sur les items.
+
 <doc-example file="contextual-menu/levels"></doc-example>
 
 </doc-tab-item>
