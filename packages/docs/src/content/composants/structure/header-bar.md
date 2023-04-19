@@ -83,9 +83,13 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Heade
 
 ### Slots
 
-Vous pouvez utiliser les slots `navigation-bar-content` et `navigation-drawer-content` pour remplacer le contenu de la barre de navigation ainsi que du menu sur les écrans mobiles.
+Vous pouvez utiliser le slot `navigation-bar-content` pour remplacer le contenu de la barre de navigation.
 
-<doc-example file="header-bar/slots"></doc-example>
+<doc-example file="header-bar/slot-bar"></doc-example>
+
+Vous pouvez utiliser également le slot `navigation-drawer-content` pour remplacer le contenu de la barre de navigation sur les écrans mobiles.
+
+<doc-example file="header-bar/slot-drawer"></doc-example>
 
 </doc-tab-item>
 

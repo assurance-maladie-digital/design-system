@@ -84,6 +84,10 @@
 				:vuetify-options="options.navigationDrawer"
 			>
 				<slot name="navigation-drawer-content" />
+
+				<template #navigation-drawer-secondary-content>
+					<slot name="navigation-drawer-secondary-content" />
+				</template>
 			</HeaderNavigationDrawer>
 		</slot>
 	</div>

@@ -19,22 +19,26 @@
 				</VBtn>
 			</div>
 
-			<VTabs
-				v-bind="options.tabs"
-				:value="tab"
-				optional
-				@change="emitTabUpdateEvent"
-			>
-				<VTab
-					v-for="(item, index) in items"
-					:key="index"
-					v-bind="options.tab"
-					:href="item.href"
-					:to="item.to"
+			<div class="nav d-flex flex-column justify-between">
+				<VTabs
+					v-bind="options.tabs"
+					:value="tab"
+					optional
+					@change="emitTabUpdateEvent"
 				>
-					{{ item.label }}
-				</VTab>
-			</VTabs>
+					<VTab
+						v-for="(item, index) in items"
+						:key="index"
+						v-bind="options.tab"
+						:href="item.href"
+						:to="item.to"
+					>
+						{{ item.label }}
+					</VTab>
+				</VTabs>
+
+				<slot name="navigation-drawer-secondary-content" />
+			</div>
 		</slot>
 	</VNavigationDrawer>
 </template>
@@ -123,5 +127,8 @@
 		&.v-tab--active {
 			background: rgba($color: #fff, $alpha: .1);
 		}
+	}
+	.nav {
+		height: calc(100% - 68px);
 	}
 </style>
