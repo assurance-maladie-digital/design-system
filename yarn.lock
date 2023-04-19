@@ -1133,7 +1133,7 @@
   resolved "https://registry.yarnpkg.com/@bugsnag/cuid/-/cuid-3.0.2.tgz#544f8e6e7e3768c8cb618ca5c5fb1eea6aacbb7e"
   integrity sha512-cIwzC93r3PQ/INeuwtZwkZIG2K8WWN0rRLZQhu+mr48Ay+i6sEki4GYfTsflse7hZ1BeDWrNb/Q9vgY3B31xHQ==
 
-"@bugsnag/js@^7.0.0":
+"@bugsnag/js@^7.0.0", "@bugsnag/js@^7.20.0":
   version "7.20.0"
   resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-7.20.0.tgz#a526d074e2d2719d290ebb3479ec4b9e26dbd164"
   integrity sha512-lhUUSOveE8fP10RagAINqBmuH+eoOpyUOiTN1WRkjHUevWG0LZjRRUWEGN3AA+ZyTphmC6ljd2qE3/64qfOSGQ==
@@ -15471,11 +15471,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0, nested-error-stacks@^2.1
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-14.0.0.tgz#f9408f2d5d300f10926e2f6843ddf0666569217a"
-  integrity sha512-BVu8THExyFwMtuW9NvVPzJhCO5nt1f0vfOAXQwe2kk/g4J7VOLg7w5AYcETpWK8zLZz0o9lE3TUlkOj5jD1j6Q==
+netlify-cli@14.1.0:
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-14.1.0.tgz#54d6be24978a6cb9a5f133f51a8338ff55fdda14"
+  integrity sha512-3005RKoEbLnYOmrk5iVbc79StcIMDKJAVNsiGzHvx8z0P0gJW5nvfPOiLnTqD2z5zdW5X5JRzVmoITkgVhZKBg==
   dependencies:
+    "@bugsnag/js" "^7.20.0"
     "@fastify/static" "^6.6.0"
     "@netlify/build" "^29.9.2"
     "@netlify/config" "^20.3.7"
