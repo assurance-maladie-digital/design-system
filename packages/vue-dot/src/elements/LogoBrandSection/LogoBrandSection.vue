@@ -96,6 +96,8 @@
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
 
+	import { NuxtApp } from '@nuxt/types/app';
+
 	const Props = Vue.extend({
 		props: {
 			theme: {
@@ -191,12 +193,20 @@
 			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
 		}
 
+		get isNuxt(): boolean {
+			return (this as unknown as NuxtApp).$nuxt !== undefined;
+		}
+
 		get logoContainerComponent(): string {
 			if (this.homeHref) {
 				return 'a';
 			}
 
-			return this.homeLink ? 'RouterLink' : 'div';
+			if (!this.homeLink) {
+				return 'div';
+			}
+
+			return this.isNuxt ? 'NuxtLink' : 'RouterLink';
 		}
 
 		get secondaryLogoCtnComponent(): string {
