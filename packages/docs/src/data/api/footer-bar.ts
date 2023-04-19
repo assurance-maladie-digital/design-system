@@ -172,13 +172,33 @@ export const api: Api = {
 			}
 		]
 	},
+	CollapsibleList: {
+		props: [
+			{
+				name: 'list-title',
+				type: 'string',
+				default: null,
+				description: 'Le titre de la liste.'
+			},
+			{
+				name: 'items',
+				type: 'ListItem[]',
+				default: null,
+				description: 'Les éléments de la liste.',
+				example: `{
+	text: string;
+	href: string;
+}[]`
+			}
+		]
+	},
 	SocialMediaLinks: {
 		props: [
 			{
 				name: 'links',
 				type: 'SocialMediaLink[]',
-				description: 'Liste des réseaux sociaux.',
 				default: null,
+				description: 'Liste des réseaux sociaux.',
 				example: `{
 	icon: string;
 	href: string;
