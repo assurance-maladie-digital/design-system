@@ -119,8 +119,7 @@ export const api: Api = {
 	spacer: 'VSpacer',
 	goTopBtn: 'VBtn',
 	goTopBtnIcon: 'VIcon',
-	divider: 'VDivider',
-	routerLink: 'RouterLink'
+	divider: 'VDivider'
 }`
 			},
 			{
