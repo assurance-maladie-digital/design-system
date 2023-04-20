@@ -100,7 +100,7 @@
 		props: {
 			theme: {
 				type: String as PropType<ThemeEnum>,
-				required: true
+				default: ThemeEnum.DEFAULT
 			},
 			serviceTitle: {
 				type: String,
