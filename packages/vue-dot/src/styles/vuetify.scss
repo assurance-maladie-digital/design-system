@@ -259,4 +259,43 @@
 			background-color: inherit !important;
 		}
 	}
+
+	// VInput
+	.dark.v-input {
+		&.success {
+			&--text {
+				color: $vd-turquoise-darken-60 !important;
+				.v-label {
+					&.success {
+						&--text {
+							color: $vd-turquoise-darken-60 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	.dark {
+		.v-input {
+			&.success {
+				&--text {
+					color: $vd-turquoise-darken-60 !important;
+					.v-label {
+						&.success {
+							&--text {
+								color: $vd-turquoise-darken-60 !important;
+							}
+						}
+					}
+					&.success {
+						&--text {
+							&.v-icon, svg {
+								color: $vd-turquoise-darken-60 !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
