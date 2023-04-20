@@ -3,7 +3,7 @@
 		v-bind="$attrs"
 		v-on="$listeners"
 		border="left"
-		class="doc-alert w-100"
+		class="doc-alert w-100 dark"
 		text
 	>
 		<slot />
