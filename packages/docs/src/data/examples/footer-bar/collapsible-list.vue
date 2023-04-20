@@ -34,7 +34,7 @@
 	import CollapsibleList from '@cnamts/vue-dot/src/patterns/FooterBar/CollapsibleList';
 	import { ListItem } from '@cnamts/vue-dot/src/patterns/FooterBar/CollapsibleList/types';
 
-	@Component ({
+	@Component({
 		components: {
 			CollapsibleList
 		}
@@ -43,6 +43,7 @@
 		docProps = {
 			sitemapRoute: '/',
 			cguRoute: '/',
+			cookiesRoute: '/',
 			legalNoticeRoute: '/',
 			a11yStatementRoute: '/'
 		};
