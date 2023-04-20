@@ -180,6 +180,24 @@
 		&.success, &.warning {
 			color: white !important;
 		}
+		&.v-alert--border {
+			&.success {
+				&--text {
+					color: $vd-turquoise-darken-60 !important;
+					&.v-icon, svg {
+						color: $vd-turquoise-darken-60 !important;
+					}
+				}
+			}
+			&.warning {
+				&--text {
+					color: $vd-yellow-darken-60 !important;
+					&.v-icon, svg {
+						color: $vd-yellow-darken-60 !important;
+					}
+				}
+			}
+		}
 	}
 	.v-sheet--outlined {
 		&.success, &.warning {
