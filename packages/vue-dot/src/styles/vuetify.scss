@@ -274,6 +274,18 @@
 				}
 			}
 		}
+		&.warning {
+			&--text {
+				color: $vd-yellow-darken-60 !important;
+				.v-label {
+					&.warning {
+						&--text {
+							color: $vd-yellow-darken-60 !important;
+						}
+					}
+				}
+			}
+		}
 	}
 	.dark {
 		.v-input {
@@ -291,6 +303,25 @@
 						&--text {
 							&.v-icon, svg {
 								color: $vd-turquoise-darken-60 !important;
+							}
+						}
+					}
+				}
+			}
+			&.warning {
+				&--text {
+					color: $vd-yellow-darken-60 !important;
+					.v-label {
+						&.warning {
+							&--text {
+								color: $vd-yellow-darken-60 !important;
+							}
+						}
+					}
+					&.warning {
+						&--text {
+							&.v-icon, svg {
+								color: $vd-yellow-darken-60 !important;
 							}
 						}
 					}
