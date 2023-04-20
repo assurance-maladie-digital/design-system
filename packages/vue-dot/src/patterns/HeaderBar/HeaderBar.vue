@@ -62,10 +62,14 @@
 					:show-menu-btn="showNavBarMenuBtn"
 					:vuetify-options="options.navigationBar"
 				>
+					<template #navigation-bar-content-prepend>
+						<slot name="navigation-bar-content-prepend" />
+					</template>
+
 					<slot name="navigation-bar-content" />
 
-					<template #navigation-bar-secondary-content>
-						<slot name="navigation-bar-secondary-content" />
+					<template #navigation-bar-content-append>
+						<slot name="navigation-bar-content-append" />
 					</template>
 				</HeaderNavigationBar>
 			</template>
@@ -83,10 +87,14 @@
 				:mobile-version="isMobileVersion"
 				:vuetify-options="options.navigationDrawer"
 			>
+				<template #navigation-drawer-content-prepend>
+					<slot name="navigation-drawer-content-prepend" />
+				</template>
+
 				<slot name="navigation-drawer-content" />
 
-				<template #navigation-drawer-secondary-content>
-					<slot name="navigation-drawer-secondary-content" />
+				<template #navigation-drawer-content-append>
+					<slot name="navigation-drawer-content-append" />
 				</template>
 			</HeaderNavigationDrawer>
 		</slot>

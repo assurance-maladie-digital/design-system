@@ -20,6 +20,8 @@
 			</div>
 
 			<div class="nav d-flex flex-column justify-between">
+				<slot name="navigation-drawer-content-prepend" />
+
 				<VTabs
 					v-bind="options.tabs"
 					:value="tab"
@@ -37,7 +39,7 @@
 					</VTab>
 				</VTabs>
 
-				<slot name="navigation-drawer-secondary-content" />
+				<slot name="navigation-drawer-content-append" />
 			</div>
 		</slot>
 	</VNavigationDrawer>

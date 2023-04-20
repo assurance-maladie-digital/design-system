@@ -9,6 +9,8 @@
 			v-bind="options.innerSheet"
 			:width="innerWidth"
 		>
+			<slot name="navigation-bar-content-prepend" />
+
 			<slot>
 				<HeaderMenuBtn
 					v-if="mobileVersion"
@@ -34,7 +36,7 @@
 				</VTabs>
 			</slot>
 
-			<slot name="navigation-bar-secondary-content" />
+			<slot name="navigation-bar-content-append" />
 		</VSheet>
 	</VSheet>
 </template>

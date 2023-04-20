@@ -137,8 +137,12 @@ export const api: Api = {
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
 			},
 			{
-				name: 'navigation-bar-secondary-content',
-				description: 'Slot pour ajouter du contenu sur la partie droite de la barre de navigation.'
+				name: 'navigation-bar-content-prepend',
+				description: 'Slot pour ajouter du contenu avant le contenu de la barre de navigation.'
+			},
+			{
+				name: 'navigation-bar-content-append',
+				description: 'Slot pour ajouter du contenu après le contenu de la barre de navigation.'
 			},
 			{
 				name: 'navigation-drawer',
@@ -151,6 +155,14 @@ export const api: Api = {
 			{
 				name: 'navigation-drawer-content',
 				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
+			},
+			{
+				name: 'navigation-drawer-content-prepend',
+				description: 'Slot pour ajouter du contenu avant le contenu du menu de navigation sur les écrans mobiles.'
+			},
+			{
+				name: 'navigation-drawer-content-append',
+				description: 'Slot pour ajouter du contenu après le contenu du menu de navigation sur les écrans mobiles.'
 			}
 		]
 	},

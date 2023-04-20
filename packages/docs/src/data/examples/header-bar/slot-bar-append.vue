@@ -1,25 +1,8 @@
 <template>
-	<HeaderBar
-		:navigation-items="navigationItems"
-		:show-nav-bar-menu-btn="false"
-	>
-		<template #navigation-drawer-content-prepend>
+	<HeaderBar :navigation-items="navigationItems">
+		<template #navigation-bar-content-append>
 			<div class="d-flex align-center justify-center">
-				<VBtn
-					color="primary"
-					block
-					class="mb-4"
-				>
-					Se connecter
-				</VBtn>
-			</div>
-		</template>
-		<template #navigation-drawer-content-append>
-			<div class="d-flex align-center justify-center">
-				<VBtn
-					color="primary"
-					block
-				>
+				<VBtn color="primary">
 					Se connecter
 				</VBtn>
 			</div>
@@ -34,7 +17,7 @@ import Component from 'vue-class-component';
 import { NavigationItem } from '@cnamts/vue-dot/src/patterns/HeaderBar/types';
 
 @Component
-export default class HeaderBarNavigationBar extends Vue {
+export default class HeaderBarNavigationBarAppend extends Vue {
 	navigationItems: NavigationItem[] = [
 		{
 			label: 'Accueil'
