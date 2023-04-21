@@ -1,46 +1,27 @@
 <template>
 	<div class="vd-rating-picker">
 		<component
-			:is="type"
-			ref="rating"
+			:is="ratingComponent"
 			:label="label"
-			:length="lengthInternal"
-			:readonly="readonlyInternal"
-			:item-labels="itemLabels"
-			@input="onUpdate"
+			:length="length"
+			:readonly="hasAnswered || readonly"
+			:item-labels="itemLabels || undefined"
+			:value="internalValue"
+			@input="setValue"
 		/>
 
-		<div v-if="hasAnswered">
+		<template v-if="hasAnswered">
 			<VAlert
+				:class="{ 'mb-0': !displayAdditionalContent }"
 				outlined
 				type="success"
+				class="mt-4"
 			>
 				{{ locales.thanks }}
 			</VAlert>
 
-			<slot />
-		</div>
-
-		<div
-			v-if="!hideCloseButtons"
-			class="d-flex justify-space-between mt-5 mr-2"
-		>
-			<VBtn
-				text
-				color="primary"
-				@click="$emit('close')"
-			>
-				{{ locales.close }}
-			</VBtn>
-
-			<VBtn
-				color="primary"
-				depressed
-				@click="onValidate"
-			>
-				{{ locales.later }}
-			</VBtn>
-		</div>
+			<slot v-if="displayAdditionalContent" />
+		</template>
 	</div>
 </template>
 
@@ -48,11 +29,11 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import StarsPicker from './StarsPicker';
-	import NumberPicker from './NumberPicker';
 	import EmotionPicker from './EmotionPicker';
+	import NumberPicker from './NumberPicker';
+	import StarsPicker from './StarsPicker';
 
-	import { RATING_ENUM_VALUES, RatingEnum, RatingMixin } from './RatingMixin';
+	import { RATING_ENUM_VALUES, RatingEnum } from './RatingMixin';
 
 	import { propValidator } from '../../helpers/propValidator';
 
@@ -77,71 +58,84 @@
 				type: Array as PropType<string[]>,
 				default: null
 			},
-			length: {
-				type: Number,
-				default: 3,
-				validator: (value: number) => propValidator('length', ['2','3'], value.toString())
-			},
-			hideCloseButtons: {
+			twoEmotions: {
 				type: Boolean,
 				default: false
+			},
+			value: {
+				type: Number,
+				default: -1
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component({
+	@Component<RatingPicker>({
 		components: {
-			StarsPicker,
 			EmotionPicker,
-			NumberPicker
+			NumberPicker,
+			StarsPicker
+		},
+		model: {
+			prop: 'value',
+			event: 'change'
+		},
+		watch: {
+			value: {
+				handler(value: number): void {
+					this.internalValue = value;
+					this.hasAnswered = value !== -1;
+				},
+				immediate: true
+			}
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
-		$refs!: {
-			rating: RatingMixin;
-		};
-
 		locales = locales;
 
-		readonlyInternal = this.readonly;
+		internalValue = -1;
 		hasAnswered = false;
+		displayAdditionalContent = false;
 
-		get lengthInternal(): number {
-			switch (this.type) {
-				case RatingEnum.NUMBER: return 10;
-				case RatingEnum.STAR: return 5;
-			}
-			// dans le cas du EmotionPicker , on peut choisir 2 ou 3 avec la prop length
+		ratingComponentMapping = {
+			[RatingEnum.EMOTION]: 'EmotionPicker',
+			[RatingEnum.STARS]: 'StarsPicker',
+			[RatingEnum.NUMBER]: 'NumberPicker'
+		};
 
-			return this.length;
+		get ratingComponent(): string {
+			return this.ratingComponentMapping[this.type];
 		}
 
-		onUpdate(value: number): void {
+		get length(): number | undefined {
+			if (this.type === RatingEnum.EMOTION) {
+				return this.twoEmotions ? 2 : 3;
+			}
+
+			return undefined;
+		}
+
+		showAdditionalContent(value: number): void {
+			const starsUnsatisfied = this.type === RatingEnum.STARS && value <= 3;
+			const numberUnsatisfied = this.type === RatingEnum.NUMBER && value <= 7;
+
+			const isEmotion = this.type === RatingEnum.EMOTION;
+			const isEmotionLow = this.twoEmotions ? value < 2 : value < 3;
+			const emotionUnsatisfied = isEmotion && isEmotionLow;
+
+			if (starsUnsatisfied || numberUnsatisfied || emotionUnsatisfied) {
+				this.displayAdditionalContent = true;
+			}
+		}
+
+		setValue(value: number): void {
+			this.internalValue = value;
 			this.hasAnswered = true;
 
-			switch (this.type) {
-				case RatingEnum.NUMBER:
-					this.readonlyInternal = value <= 7;
-					break;
-				case RatingEnum.STAR:
-				case RatingEnum.EMOTION:
-					// on prend la moitié de la longueur, ca determine le mecontentement
-					// en dessous on bloque et on lui demande des questions supplementaires
-					this.readonlyInternal = value <= Math.ceil(this.lengthInternal / 2);
-					break;
-			}
+			this.showAdditionalContent(value);
 
-			if (this.readonlyInternal) {
-				this.$refs.rating.lockField(value);
-			}
-
-			this.$emit('input', value);
-		}
-
-		onValidate(): void {
-			this.$emit('validate', this.$refs.rating.valueInternal); // TODO: replace with v-model
+			this.$emit('change', value);
 		}
 	}
 </script>

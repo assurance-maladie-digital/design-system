@@ -1,92 +1,63 @@
 ---
 title: RatingPicker
-description: Fortement inspiré du composant [VRating](https://v2.vuetifyjs.com/en/components/ratings), l’élément `RatingPicker` permet de receuillir l'avis d'un utilisateur.
+description: L’élément `RatingPicker` permet de recueillir l’avis d’un utilisateur.
 ---
 
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
-## Type de Question possible
+<doc-usage name="rating-picker"></doc-usage>
 
-Selon le type, la question se presente soit :
-- `EmotionPicker` avec 2 ou 3 icones resumant l'état d'esprit
-- `StarPicker` avec 5 étoiles pour resumer sa satisfaction
-- `NumberPicker` avec des chiffres de 1 à 10 pour resumer sa satisfaction
+### Exemples
 
+#### Note sur 5 étoiles
 
-#### `StarPicker` - une note sur 5 étoiles.
+Vous pouvez demander une note sur 5 étoiles en utilisant le type `stars`.
 
-Le label s'affiche sous les étoiles au rollover.
-
-Les questions secondaires s'afficheront si la note est de `3` ou moins.
+<doc-alert type="info">
+Les questions secondaires passées dans le slot par défaut s’afficheront si la note est inférieure ou égale à trois.
+</doc-alert>
 
 <doc-example file="rating-picker/stars"></doc-example>
 
-#### `NumberPicker` - Une note de 1 à 10.
+#### Note de 1 à 10
 
-Les label indiquent à quoi correspond les deux notes 1 et 10 via des labels.
+Vous pouvez demander une note sur 10 en utilisant le type `number`.
 
-Les questions secondaires s'afficheront si la note est de `7` ou moins.
+<doc-alert type="info">
 
-<doc-example file="rating-picker/numbers"></doc-example>
+Les questions secondaires passées dans le slot par défaut s’afficheront si la note est inférieure ou égale à sept.<br>
+En mobile, le composant affichera un `VSelect` pour faciliter la saisie.
 
-#### `EmotionPicker` - Une évaluation par émotion
+</doc-alert>
 
-Le nombre de choix utilise la prop `length` qui n'accepte que 2 ou 3.
+<doc-example file="rating-picker/number"></doc-example>
 
-Il est possible de changer les labels des émotions avec la prop `item-labels`.
+#### Note par émotions
 
-Les questions secondaires s'afficheront si la note n'est pas maximale.
+Vous pouvez demander une note par émotions en utilisant le type `emotion`.
 
-<doc-example file="rating-picker/emotions"></doc-example>
+<doc-alert type="info">
 
+Les questions secondaires passées dans le slot par défaut s’afficheront si la note n’est pas maximale.<br>
+Vous pouvez utiliser la prop `item-labels` pour adapter les labels à la question posée.
 
-## Les questions secondaires
+</doc-alert>
 
-Les question secondaires n'apparaissent que si le retour de l'utilisateur n'est pas amplement saistfait.
-Voici quelques exemples  :
+<doc-example file="rating-picker/emotion"></doc-example>
 
-#### Un `EmotionPicker` pour preciser l'état d'esprit
+#### Note par émotion en question secondaire
 
-<doc-example file="rating-picker/emotions-second-step"></doc-example>
+Vous pouvez utiliser le composant `EmotionPicker` en tant que question secondaire.
 
-#### Un `FormBuilder` pour faire une question à choix multiple
-
-<doc-example file="rating-picker/multi-answer"></doc-example>
-
-
-#### Un `FormBuilder` pour afficher une zone de texte
-
-<doc-example file="rating-picker/text-area"></doc-example>
-
-
-## Récupération des données
-
-Les données peuvent être récupérées par l'intermédiaire d'un event input, `@input` comme le VRating.
-
-<doc-example file="rating-picker/datas"></doc-example>
+<doc-example file="rating-picker/emotion-question"></doc-example>
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
 
-<doc-alert type="info">
-
-Les propriétés de la section API sont directement inspiré du composant [`VRating`](https://v2.vuetifyjs.com/en/api/v-rating/).
-
-</doc-alert>
-
 <doc-api name="rating-picker"></doc-api>
-
-</doc-tab-item>
-
-<doc-tab-item label="Personnalisation">
-
-Il est possible de masquer les boutons de fermeture.
-Pour l'activer, il faut utiliser la props `hide-close-buttons`.
-
-<doc-example file="rating-picker/close-buttons"></doc-example>
 
 </doc-tab-item>
 

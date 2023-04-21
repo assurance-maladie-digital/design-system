@@ -1,86 +1,149 @@
 <template>
 	<div class="vd-number-picker">
-		<div
-			v-if="label"
-			class="text-h6"
-		>
-			{{ label }}
-		</div>
+		<VSelect
+			v-if="$vuetify.breakpoint.xs"
+			:value="value"
+			:label="label"
+			:disabled="readonlyInternal"
+			:items="selectItems"
+			hide-details
+			outlined
+			class="vd-form-input"
+			@change="setValue"
+		/>
 
-		<div
-			v-if="!readonlyInternal"
-			class="d-inline-block my-2"
-		>
-			<VRating
-				:length="lengthInternal"
-				:readonly="readonlyInternal"
-				hover
-				color="primary"
-				background-color="primary lighten-4"
-				class="d-flex flex-wrap"
-				@input="onDispatchValue"
-			>
-				<template #item="{ index, click }">
-					<VBtn
-						x-small
-						outlined
-						color="primary"
-						min-height="36px"
-						class="mx-1 pa-0"
-						@click="click"
-					>
-						{{ index + 1 }}
-					</VBtn>
-				</template>
-			</VRating>
-
-			<div class="d-flex justify-space-between mx-1">
-				<span
-					class="text-caption"
-					v-text="getItemLabel(0)"
-				/>
-
-				<span
-					class="text-caption"
-					v-text="getItemLabel(lengthInternal)"
-				/>
+		<template v-else>
+			<div class="text-h6 mb-6">
+				{{ label }}
 			</div>
-		</div>
 
-		<div v-else>
-			<VBtn
-				outlined
-				x-small
-				disabled
-				color="primary"
-				min-height="36px"
-				class="mx-1 my-2 pa-0"
+			<div
+				v-if="!readonlyInternal"
+				class="d-inline-block"
 			>
-				{{ valueInternal }}
-			</VBtn>
+				<VRating
+					:value="value"
+					:length="length"
+					:readonly="readonlyInternal"
+					color="primary"
+					background-color="primary lighten-4"
+					class="d-flex flex-wrap mx-n1 max-width-none"
+					@input="setValue"
+				>
+					<template #item="{ index, click }">
+						<VBtn
+							:aria-label="locales.ariaLabel(index + 1, length)"
+							x-small
+							outlined
+							color="primary"
+							height="36px"
+							class="text-body-2 mx-1 pa-0"
+							@click="click"
+						>
+							{{ index + 1 }}
+						</VBtn>
+					</template>
+				</VRating>
 
-			/ {{ lengthInternal }}
-		</div>
+				<div
+					v-if="shouldDisplayLabels"
+					class="d-flex justify-space-between mt-1"
+				>
+					<span
+						class="text-caption"
+						v-text="itemLabels[0]"
+					/>
+
+					<span
+						class="text-caption"
+						v-text="itemLabels[1]"
+					/>
+				</div>
+			</div>
+
+			<div v-else>
+				<VBtn
+					outlined
+					x-small
+					disabled
+					color="primary"
+					min-height="36px"
+					class="text-body-2 mr-1 pa-0"
+				>
+					{{ value }}
+				</VBtn>
+
+				/ {{ length }}
+			</div>
+		</template>
 	</div>
 </template>
 
 <script lang="ts">
-	import Component from 'vue-class-component';
+	import Vue, { PropType } from 'vue';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { RatingMixin } from '../RatingMixin';
 
-	@Component
-	export default class NumberPicker extends RatingMixin {
-		displayLabels(index: number): boolean {
-			return index === 0 || index === this.length - 1;
+	import { locales } from './locales';
+
+	interface SelectItem {
+		text: string;
+		value: number;
+	}
+
+	const Props = Vue.extend({
+		props: {
+			length: {
+				type: Number,
+				default: 10
+			},
+			itemLabels: {
+				type: Array as PropType<string[]>,
+				default: () => []
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props, RatingMixin);
+
+	@Component<NumberPicker>({
+		watch: {
+			readonly: {
+				handler(value: boolean): void {
+					this.readonlyInternal = value;
+				},
+				immediate: true
+			}
+		}
+	})
+	export default class NumberPicker extends MixinsDeclaration {
+		locales = locales;
+
+		readonlyInternal = false;
+
+		get selectItems(): SelectItem[] {
+			return [...Array(this.length)].map((_, index) => ({
+				text: `${index + 1}`,
+				value: index + 1
+			}));
 		}
 
-		getItemLabel(value: number): string {
-			if (this.itemLabels === null || value === -1) {
-				return '';
-			}
+		get shouldDisplayLabels(): boolean {
+			return this.itemLabels.length === 2;
+		}
 
-			return value === 0 ? this.itemLabels[0] : this.itemLabels[1];
+		setValue(value: number): void {
+			this.readonlyInternal = true;
+			this.emitInputEvent(value);
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
+	.theme--light.v-btn.v-btn--disabled {
+		color: $vd-primary !important;
+	}
+</style>

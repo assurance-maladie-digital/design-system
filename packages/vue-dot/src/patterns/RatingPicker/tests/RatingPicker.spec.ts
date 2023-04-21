@@ -9,15 +9,15 @@ import RatingPicker from '../';
 let wrapper: Wrapper<TestComponent>;
 
 interface TestComponent extends Vue {
-	onUpdate: (value: number) => void;
+	setValue: (value: number) => void;
 }
 
 /** Create the test component */
 function createTestComponent(): Wrapper<TestComponent> {
 	return mountComponent(RatingPicker, {
 		propsData: {
-			label: 'Pouvez-vous nous en dire plus ?',
-			type: 'StarsPicker'
+			type: 'stars',
+			label: 'Pouvez-vous nous en dire plus ?'
 		}
 	}, true) as Wrapper<TestComponent>;
 }
@@ -29,13 +29,13 @@ describe('RatingPicker', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('sets readonly interval value on update', () => {
+	it('sets readonly internal value on update', () => {
 		wrapper = wrapper = createTestComponent();
 
-		expect(wrapper.vm.$data.readonlyInternal).toBeFalsy();
+		expect(wrapper.vm.$data.hasAnswered).toBeFalsy();
 
-		wrapper.vm.onUpdate(0);
+		wrapper.vm.setValue(0);
 
-		expect(wrapper.vm.$data.readonlyInternal).toBeTruthy();
+		expect(wrapper.vm.$data.hasAnswered).toBeTruthy();
 	});
 });

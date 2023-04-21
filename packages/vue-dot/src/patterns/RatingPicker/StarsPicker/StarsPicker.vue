@@ -1,65 +1,48 @@
 <template>
 	<div class="vd-stars-picker">
-		<div
-			v-if="label"
-			class="text-h6"
-		>
+		<div class="text-h6 mb-6">
 			{{ label }}
 		</div>
 
-		<div class="d-flex d-inline-flex flex-column align-sm-center my-0">
-			<VRating
-				:length="lengthInternal"
-				:readonly="readonlyInternal"
-				background-color="primary lighten-4"
-				@input="onDispatchValue"
-			>
-				<template #item="{ index, click, isFilled }">
-					<VIcon
-						:color="genColor(index)"
-						outlined
-						large
-						min-height="36px"
-						class="mx-1 my-2 pa-0"
-						@mouseover="onIconHover(index)"
-						@focus="onIconHover(index)"
-						@click="click"
-					>
-						{{ isFilled ? starIcon: starIconOutline }}
-					</VIcon>
-				</template>
-			</VRating>
-
-			<p class="text-caption mb-0">
-				{{ getItemLabel(hoverItemIndex) }}
-			</p>
-		</div>
+		<VRating
+			:value="value"
+			:length="length"
+			:readonly="readonly"
+			:ripple="false"
+			background-color="am-blue-lighten-60"
+			size="36px"
+			hover
+			class="max-width-none mx-n3"
+			@input="emitInputEvent"
+		/>
 	</div>
 </template>
 
 <script lang="ts">
-	import Component from 'vue-class-component';
+	import Vue from 'vue';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { RatingMixin } from '../RatingMixin';
-	import { mdiStarOutline, mdiStar } from '@mdi/js';
+
+	const Props = Vue.extend({
+		props: {
+			length: {
+				type: Number,
+				default: 5
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props, RatingMixin);
 
 	@Component
-	export default class StarsPicker extends RatingMixin {
-		starIconOutline = mdiStarOutline;
-		starIcon = mdiStar;
-
-		hoverItemIndex = -1;
-
-		onIconHover(index: number): void {
-			this.hoverItemIndex = index;
-		}
-
-		genColor(index: number): string { // TODO: Use Design Tokens
-			if (this.valueInternal === -1) {
-				return index <= this.hoverItemIndex ? '#9eb3d7' : 'primary';
-			}
-
-			return 'primary';
-		}
-	}
+	export default class StarsPicker extends MixinsDeclaration {}
 </script>
+
+<style lang="scss" scoped>
+	.v-rating :deep(button) {
+		height: auto !important;
+		width: auto !important;
+		padding: 0 8px;
+	}
+</style>

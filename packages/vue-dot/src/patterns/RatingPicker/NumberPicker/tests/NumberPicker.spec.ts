@@ -14,7 +14,7 @@ describe('NumberPicker', () => {
 			propsData: {
 				label: 'Pourriez-vous donner une note ?'
 			}
-		});
+		}, true);
 
 		expect(html(wrapper)).toMatchSnapshot();
 	});
