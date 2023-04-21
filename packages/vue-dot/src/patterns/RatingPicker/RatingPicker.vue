@@ -1,8 +1,8 @@
 <template>
-	<div class="mx-2">
+	<div class="vd-rating-picker">
 		<component
 			:is="type"
-			ref="firstRating"
+			ref="rating"
 			:label="label"
 			:length="lengthInternal"
 			:readonly="readonlyInternal"
@@ -10,7 +10,7 @@
 			@input="onUpdate"
 		/>
 
-		<div v-if="haveAnswered">
+		<div v-if="hasAnswered">
 			<VAlert
 				outlined
 				type="success"
@@ -51,6 +51,7 @@
 	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
 	import EmotionPicker from './EmotionPicker';
+
 	import { RATING_ENUM_VALUES, RatingEnum, RatingMixin } from './RatingMixin';
 
 	import { propValidator } from '../../helpers/propValidator';
@@ -99,13 +100,14 @@
 	})
 	export default class RatingPicker extends MixinsDeclaration {
 		$refs!: {
-			firstRating: RatingMixin;
+			rating: RatingMixin;
 		};
 
 		locales = locales;
 
 		readonlyInternal = this.readonly;
-		haveAnswered=false;
+		hasAnswered = false;
+
 		get lengthInternal(): number {
 			switch (this.type) {
 				case RatingEnum.NUMBER: return 10;
@@ -117,7 +119,8 @@
 		}
 
 		onUpdate(value: number): void {
-			this.haveAnswered = true;
+			this.hasAnswered = true;
+
 			switch (this.type) {
 				case RatingEnum.NUMBER:
 					this.readonlyInternal = value <= 7;
@@ -129,14 +132,16 @@
 					this.readonlyInternal = value <= Math.ceil(this.lengthInternal / 2);
 					break;
 			}
+
 			if (this.readonlyInternal) {
-				this.$refs.firstRating.lockField(value);
+				this.$refs.rating.lockField(value);
 			}
+
 			this.$emit('input', value);
 		}
 
 		onValidate(): void {
-			this.$emit('validate', this.$refs.firstRating.valueInternal);
+			this.$emit('validate', this.$refs.rating.valueInternal); // TODO: replace with v-model
 		}
 	}
 </script>

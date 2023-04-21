@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RatingPicker renders correctly 1`] = `
-<div class="mx-2">
-  <div>
+<div class="vd-rating-picker">
+  <div class="vd-stars-picker">
     <div class="text-h6">
       Pouvez-vous nous en dire plus ?
     </div>
