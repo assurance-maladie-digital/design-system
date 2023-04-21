@@ -1,12 +1,8 @@
 <template>
-	<div>
-		<FileUpload
-			v-model="file"
-			:class="{ 'mb-8': file !== null }"
-		/>
-
-		<FilePreview :file="file" />
-	</div>
+	<FilePreview
+		v-if="file"
+		:file="file"
+	/>
 </template>
 
 <script lang="ts">
@@ -15,6 +11,6 @@
 
 	@Component
 	export default class FilePreviewUsage extends Vue {
-		file: File | null = null;
+		file = new File(['exemple'], 'example.txt');
 	}
 </script>
