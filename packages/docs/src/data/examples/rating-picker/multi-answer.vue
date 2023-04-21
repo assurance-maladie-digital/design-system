@@ -1,57 +1,49 @@
 <template>
-	<RatingPicker
-		:main-question="firstQuestion"
-		:questions-list="questionsList"
-		:after-validate="afterValidate"
-		@on-validate="onValidate"
-		@on-close="onClose"
-	/>
+	<rating-picker
+		label="Comment allez-vous ?"
+		type="EmotionPicker"
+		:length="3"
+		:item-labels="['sad', 'medium', 'happy']"
+	>
+		<FormField v-model="field" />
+	</rating-picker>
+
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from "vue-class-component";
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import RatingPicker from '@cnamts/vue-dot/src/patterns/RatingPicker/RatingPicker.vue';
+import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
-	@Component({
-		inheritAttrs: false
-	})
-	export default class RatingPickerMultiAnswer extends Vue {
-		firstQuestion = {
-			name: 'first-step',
-			type: 'emotions',
-			question: 'Pourriez vous donner une note ? '
-		};
-
-		questionsList = [
+@Component({
+	components: { RatingPicker }
+})
+export default class MultiAnswer extends Vue {
+	field: Field = {
+		type: 'select',
+		title: 'ca veut dire quoi chatGPT ?',
+		items: [
 			{
-				name: 'question-secondaire',
-				type: 'multi',
-				question: 'Avez vous aimé notre première question ?',
-				answers: ['Réponse 1', 'Réponse 2', 'Réponse 3', 'Réponse 4']
-			},
-		];
-
-		afterValidate = [
-			{
-				message: 'Merci !',
-				greenBackground: false
+				text: 'un chat qui a lu wikipedia ?',
+				value: 'wikipedia'
 			},
 			{
-				message: 'Merci d\'avoir donné plus d\'information',
-				greenBackground: false
+				text: 'avoir un animal et des problème de transit',
+				value: 'transit'
+			},
+			{
+				text: 'la reponse D',
+				value: 'reponseD'
 			}
-		];
-
-		afterFirstQuestion(): void {
-			console.log('Validation de la première question');
+		],
+		value: null,
+		fieldOptions: {
+			type: 'choiceButton',
+			label: 'Moyen de contact',
+			hideDetails: true,
+			outlined: true
 		}
-
-		onValidate(): void {
-			console.log('Validation');
-		}
-
-		onClose(): void {
-			console.log('Fermeture');
-		}
-	}
+	};
+}
 </script>

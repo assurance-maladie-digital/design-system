@@ -1,53 +1,24 @@
 <template>
-	<RatingPicker
-		hide-close-buttons
-		:main-question="firstQuestion"
-		:questions-list="questionsList"
-		:after-validate="afterValidate"
-		@on-validate="onValidate"
-	/>
+	<rating-picker
+		label="Comment vous senter vous ?"
+		type="EmotionPicker"
+		:length=2
+		:item-labels="['plutôt mal', 'plutôt bien']"
+		:hideCloseButtons="true"
+	>
+	</rating-picker>
+
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from "vue-class-component";
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import RatingPicker from '@cnamts/vue-dot/src/patterns/RatingPicker/RatingPicker.vue';
 
-	@Component({
-		inheritAttrs: false
-	})
-	export default class RatingPickerCloseButtons extends Vue {
-		firstQuestion = {
-			name: 'first-step',
-			type: 'emotions',
-			labels: ['Mauvais', 'Génial !'],
-			question: 'Pourriez vous donner une note ? '
-		};
+@Component({
+	components: { RatingPicker }
+})
+export default class Emotions extends Vue {
 
-		questionsList = [
-			{
-				name: 'first-question',
-				type: 'emotions',
-				question: 'Avez vous aimé notre première question ?'
-			}
-		];
-
-		afterValidate = [
-			{
-				message: 'Merci !',
-				greenBackground: true
-			},
-			{
-				message: 'Merci d\'avoir donné plus d\'information',
-				greenBackground: true
-			}
-		];
-
-		afterFirstQuestion(): void {
-			console.log('Validation de la première question');
-		}
-
-		onValidate(): void {
-			console.log('Validation');
-		}
-	}
+}
 </script>

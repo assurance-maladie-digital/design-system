@@ -1,44 +1,22 @@
 <template>
-	<RatingPicker
-		:main-question="firstQuestion"
-		:after-validate="afterValidate"
-		@on-validate="onValidate"
-		@on-close="onClose"
-	/>
+	<rating-picker
+		label="Quel note mettez-vous à ce service ?"
+		type="NumberPicker"
+		:item-labels="['plutôt inutile', 'très utile']"
+	>
+	</rating-picker>
+
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	import Component from "vue-class-component";
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import RatingPicker from '@cnamts/vue-dot/src/patterns/RatingPicker/RatingPicker.vue';
 
-	@Component({
-		inheritAttrs: false
-	})
-	export default class RatingPickerNumbers extends Vue {
-		firstQuestion = {
-			name: 'first-step',
-			type: 'numbers',
-			labels: ['Mauvais', 'Génial !'],
-			question: 'Pourriez vous donner une note ? '
-		};
+@Component({
+	components: { RatingPicker }
+})
+export default class NumbersSample extends Vue {
 
-		afterValidate = [
-			{
-				message: 'Merci !',
-				greenBackground: true
-			}
-		];
-
-		afterFirstQuestion(): void {
-			console.log('Validation de la première question');
-		}
-
-		onValidate(): void {
-			console.log('Validation');
-		}
-
-		onClose(): void {
-			console.log('Fermeture');
-		}
-	}
+}
 </script>

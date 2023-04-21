@@ -1,38 +1,27 @@
 import { Api } from '~/types';
 
+
+
 export const api: Api = {
 	RatingPicker: {
 		props: [
 			{
-				name: 'main-question',
-				type: 'object',
-				required: true,
-				example: `{
-	name: 'first-step',
-	type: 'emotions',
-	question: 'Pourriez vous donner une note ? '
-}`,
-				description: 'Définit le nom, le type d’affichage et le texte de la première question.',
+				name: 'type',
+				type: 'string',
+				description: 'un des 3 type parmis, NumberPicker, StarsPicker, EmotionPicker',
+				required: true
 			},
 			{
-				name: 'questions-list',
-				type: 'object[]',
-				description: 'Définit le nom, le type d’affichage et le texte des questions secondaires.',
-				example: `[
-	{
-		name: 'question-secondaire',
-		type: 'multi',
-		question: 'Avez vous aimé notre première question ?',
-		answers: ['Réponse 1', 'Réponse 2', 'Réponse 3', 'Réponse 4']
-	},
-]`,
-				default: `[]`,
+				name: 'label',
+				type: 'string',
+				description: 'un titre affiché pour le rating',
+				required: true
 			},
 			{
-				name: 'shadow-mode',
-				type: 'boolean',
-				description: 'Ajoute une ombre au composant et retire la  bordure de la première question',
-				default: false
+				name: 'length',
+				type: 'number',
+				description: 'taille du rating pour un emotionRation, 3 par defaut',
+				default: 3
 			},
 			{
 				name: 'hide-close-buttons',
@@ -41,25 +30,15 @@ export const api: Api = {
 				default: false
 			},
 			{
-				name: 'validate-text-button',
-				type: 'string',
-				description: 'Change le texte du bouton de validation',
-				default: 'Valider'
+				name: 'readonly',
+				type: 'boolean',
+				description: 'en mode lecture seule',
+				default: false
 			},
 			{
-				name: 'after-validate',
-				type: 'Array',
-				description: 'Définit le message et le fond du RatingPicker après la validation',
-				default: `[
-	{
-		message: 'Merci pour votre réponse',
-		greenBackground: false
-	},
-	{
-		message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
-		greenBackground: false
-	}
-]`
+				name: 'itemLabels',
+				type: 'string[]',
+				description: 'liste des labels des items des ratings'
 			}
 		],
 		events: [
@@ -74,7 +53,7 @@ export const api: Api = {
 				value: `void`
 			},
 			{
-				name: 'after-first-question',
+				name: 'input',
 				description: 'Événement émis lorsque l’utilisateur valide la première question',
 				value: `void`
 			}
