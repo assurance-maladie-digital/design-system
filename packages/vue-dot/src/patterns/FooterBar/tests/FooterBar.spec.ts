@@ -12,7 +12,7 @@ let wrapper: Wrapper<Vue>;
 describe('FooterBar', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(FooterBar, {
-			stubs: ['FooterLink']
+			stubs: ['RouterLink']
 		});
 
 		expect(html(wrapper)).toMatchSnapshot();

@@ -1,6 +1,6 @@
 {
   "name": "@cnamts/design-tokens",
-  "version": "2.9.0-beta.2",
+  "version": "2.9.0-beta.3",
   "description": "Design Tokens for the French Health Insurance",
   "keywords": [
     "cnam",
@@ -31,8 +31,8 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@cnamts/eslint-config": "^2.9.0-beta.2",
-    "@cnamts/shared": "^2.9.0-beta.2"
+    "@cnamts/eslint-config": "^2.9.0-beta.3",
+    "@cnamts/shared": "^2.9.0-beta.3"
   },
   "publishConfig": {
     "access": "public"

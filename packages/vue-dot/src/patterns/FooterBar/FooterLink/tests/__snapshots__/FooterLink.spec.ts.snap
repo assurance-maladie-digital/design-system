@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FooterLink renders correctly 1`] = `
-<div class="d-flex">
-  <routerlink-stub to="[object Object]"></routerlink-stub>
-</div>
-`;

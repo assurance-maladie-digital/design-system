@@ -1,5 +1,10 @@
 export const config = {
 	persistentHint: true,
 	validateOnBlur: true,
-	outlined: true
+	icon: {
+		color: 'success'
+	},
+	tooltip: {
+		top: true
+	}
 };

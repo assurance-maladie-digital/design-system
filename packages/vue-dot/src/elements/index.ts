@@ -12,6 +12,7 @@ import HeaderLoading from './HeaderLoading';
 import Logo from './Logo';
 import LogoBrandSection from './LogoBrandSection';
 import PageContainer from './PageContainer';
+import SkipLink from './SkipLink';
 import UserMenuBtn from './UserMenuBtn';
 
 export const elements = {
@@ -29,5 +30,6 @@ export const elements = {
 	Logo,
 	LogoBrandSection,
 	PageContainer,
+	SkipLink,
 	UserMenuBtn
 };
