@@ -9,19 +9,21 @@ description: L’élément `ExternalLinks` est utilisé pour afficher un menu av
 
 <doc-usage name="external-links"></doc-usage>
 
-### Décalage
+### Exemples
+
+#### Décalage
 
 Vous pouvez décaler le composant vers le haut ou vers le bas en utilisant les props `nudge-top` et `nude-bottom`.
 
 <doc-example file="external-links/nudge-top"></doc-example>
 
-### Pas de données
+#### Pas de données
 
 Lorsqu’il n’y a pas de données, un message par défaut est affiché.
 
 <doc-example file="external-links/no-data"></doc-example>
 
-### Texte du bouton
+#### Texte du bouton
 
 Vous pouvez modifier le texte par défaut du bouton en utilisant la prop `btn-text`.
 

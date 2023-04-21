@@ -1,5 +1,8 @@
 module.exports = {
 	extends: '@cnamts/eslint-config',
+	env: {
+		browser: true
+	},
 	overrides: [
 		{
 			files: [

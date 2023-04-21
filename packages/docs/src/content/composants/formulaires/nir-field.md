@@ -7,17 +7,13 @@ description: Le pattern `NirField` est utilisé pour permettre à l’utilisateu
 
 <doc-tab-item label="Utilisation">
 
-Le champ `NirField` est composé d'un ou de deux [`VTextField`](https://vuetifyjs.com/en/components/text-fields/) et applique un masque limitant les caractères pouvant être saisis, ainsi qu’une validation sur la longueur des champs.
+Le champ `NirField` est composé d’un ou de deux [`VTextField`](https://vuetifyjs.com/en/components/text-fields/) et applique un masque limitant les caractères pouvant être saisis, ainsi qu’une validation sur la longueur des champs.
 
 <doc-usage name="nir-field"></doc-usage>
 
-### Champ clé
+### Exemples
 
-Vous pouvez ajouter un champ clé en utilisant la prop `key-required` :
-
-<doc-example file="nir-field/key"></doc-example>
-
-### Obligatoire
+#### Obligatoire
 
 Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required` :
 
@@ -29,7 +25,7 @@ Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `re
 
 <doc-alert type="info">
 
-Les propriétés non définies dans la section API seront reportées directement sur le composant `VTextField`.
+Les propriétés non définies dans la section API seront reportées directement sur les composants `VTextField`.
 
 </doc-alert>
 

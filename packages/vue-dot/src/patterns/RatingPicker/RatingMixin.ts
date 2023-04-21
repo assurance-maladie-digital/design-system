@@ -1,6 +1,12 @@
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
+export interface RatingMixinInterface extends Vue {
+	onDispatchValue(event: number): void;
+	lockField(event: number): void;
+	getItemLabel(value: number): string;
+}
+
 export enum RatingEnum {
 	NUMBER = 'NumberPicker',
 	STAR = 'StarsPicker',
@@ -38,8 +44,8 @@ const MixinsDeclaration = mixins(Props);
 
 @Component
 export class RatingMixin extends MixinsDeclaration implements RatingMixinInterface {
-	valueInternal= this.value;
-	lengthInternal = this.length;
+	valueInternal = this.value; // TODO: Check repeated updates
+	lengthInternal = this.length; // TODO: Idem
 	readonlyInternal = false;
 
 	getItemLabel(value: number): string {
@@ -51,7 +57,7 @@ export class RatingMixin extends MixinsDeclaration implements RatingMixinInterfa
 	}
 
 	onDispatchValue(event: number): void {
-		this.valueInternal = event ;
+		this.valueInternal = event;
 		this.$emit('input', event);
 	}
 
@@ -59,10 +65,4 @@ export class RatingMixin extends MixinsDeclaration implements RatingMixinInterfa
 		this.readonlyInternal = true;
 		this.valueInternal = value ;
 	}
-}
-
-export interface RatingMixinInterface extends Vue {
-	onDispatchValue(event: number): void;
-	lockField(event: number): void;
-	getItemLabel(value: number): string;
 }

@@ -1,11 +1,12 @@
 <template>
-	<div>
+	<div class="vd-emotion-picker">
 		<div
-			v-if="label !== null"
+			v-if="label"
 			class="text-h6"
 		>
 			{{ label }}
 		</div>
+
 		<VRating
 			:length="length"
 			:readonly="readonlyInternal"
@@ -17,25 +18,26 @@
 			class="d-flex flex-wrap flex-row justify-space-between ma-4"
 			@input="onDispatchValue"
 		>
-			<template #item="props">
+			<template #item="{ index, click }">
 				<VBtn
-					text
-					:disabled="isDisabled(props.index)"
-					:color="genColor(props.index)"
+					:disabled="isDisabled(index)"
+					:color="getColor(index)"
+					:class="{ 'active': index === valueInternal - 1 }"
 					min-height="88px"
 					min-width="88px"
-					:class="iconButtonClasses(props.index)"
-					@click="props.click"
+					text
+					@click="click"
 				>
 					<div class="d-flex flex-column align-center justify-center">
 						<VIcon
 							x-large
 							class="pa-0"
 						>
-							{{ getIcon(props.index) }}
+							{{ getIcon(index) }}
 						</VIcon>
+
 						<span class="mt-1">
-							{{ getItemLabel(props.index) }}
+							{{ getItemLabel(index) }}
 						</span>
 					</div>
 				</VBtn>
@@ -50,12 +52,13 @@
 
 	import { RatingMixin } from '../RatingMixin';
 
+	import { propValidator } from '../../../helpers/propValidator';
+
 	import {
 		mdiEmoticonHappyOutline,
 		mdiEmoticonSadOutline,
 		mdiEmoticonNeutralOutline
 	} from '@mdi/js';
-	import { propValidator } from '../../../helpers/propValidator';
 
 	const Props = Vue.extend({
 		props: {
@@ -86,29 +89,23 @@
 			'turquoise-darken-20'
 		];
 
-		iconButtonClasses(index: number): object {
-			return {
-				'icon-button': true,
-				'active': index === (this.valueInternal - 1)
-			};
-		}
-
 		isDisabled(index: number): boolean {
 			return this.readonlyInternal && index !== (this.valueInternal - 1);
 		}
+
 		getIcon(index: number): string {
 			if (index === 0) {
 				return this.sadIcon;
-			} else if (index === 1 && this.length === 3) {
-				return this.neutralIcon;
-			} else if (index === 1 && this.length === 2) {
-				return this.happyIcon;
-			} else {
-				return this.happyIcon;
 			}
+
+			if (index === 1 && this.length === 3) {
+				return this.neutralIcon;
+			}
+
+			return this.happyIcon;
 		}
 
-		genColor(index: number): string {
+		getColor(index: number): string {
 			if (this.length === 2) {
 				return this.colorsSimple[index];
 			}
@@ -121,18 +118,21 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.icon-button {
+	.v-btn {
 		border-radius: 8px;
-		&:focus, &:hover {
+
+		&:focus,
+		&:hover {
 			outline: solid 1px;
 		}
-	}
-	.active {
-		outline: solid 1px;
-		&:before {
-			background-color: currentColor;
-			opacity: 0.08;
-		}
 
+		&.active {
+			outline: solid 1px;
+
+			&::before {
+				background-color: currentColor;
+				opacity: 0.08;
+			}
+		}
 	}
 </style>

@@ -1,14 +1,15 @@
 <template>
-	<div>
+	<div class="vd-number-picker">
 		<div
-			v-if="label !== null"
+			v-if="label"
 			class="text-h6"
 		>
 			{{ label }}
 		</div>
+
 		<div
 			v-if="!readonlyInternal"
-			class="my-2 d-inline-block"
+			class="d-inline-block my-2"
 		>
 			<VRating
 				:length="lengthInternal"
@@ -32,17 +33,20 @@
 					</VBtn>
 				</template>
 			</VRating>
+
 			<div class="d-flex justify-space-between mx-1">
 				<span
-					class="caption"
+					class="text-caption"
 					v-text="getItemLabel(0)"
 				/>
+
 				<span
-					class="caption "
+					class="text-caption"
 					v-text="getItemLabel(lengthInternal)"
 				/>
 			</div>
 		</div>
+
 		<div v-else>
 			<VBtn
 				outlined

@@ -1,9 +1,12 @@
 export interface DrawerItem {
-	title: string;
+	title?: string;
 	icon?: string;
+	heading?: string;
 	href?: string;
 	to?: string;
 	items?: DrawerItem[];
+	item?: boolean;
+	divider?: boolean;
 }
 
 export interface SurroundItemsPaths {

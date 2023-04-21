@@ -15,7 +15,11 @@ function createTestComponent() {
 
 describe('RatingMixin', () => {
 	const labelQuestion = 'Pouvez-vous nous en dire plus ?';
-	const itemLabels = ['non je dis rien','faut voir','je dirais tout ce que vous voulez'];
+	const itemLabels = [
+		'non je dis rien',
+		'faut voir',
+		'je dirais tout ce que vous voulez'
+	];
 
 	it('verifies props', () => {
 		const testComponent = createTestComponent();
@@ -73,7 +77,7 @@ describe('RatingMixin', () => {
 		expect(wrapper.emitted('input')?.pop()).toEqual([3]);
 	});
 
-	it('locks field', async() => {
+	it('locks field', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {

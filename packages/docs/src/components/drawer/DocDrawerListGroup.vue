@@ -99,7 +99,8 @@
 		}
 
 		genGroupNamespace(items: DrawerItem[]): string {
-			const groupItems = items.map((item) => {
+			const filteredItems = items.filter((item) => item.items || item.to);
+			const groupItems = filteredItems.map((item) => {
 				if (item.items) {
 					return this.genGroupNamespace(item.items);
 				}

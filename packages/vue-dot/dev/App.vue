@@ -11,7 +11,7 @@
 			</h1>
 		</VAppBar>
 
-		<VMain>
+		<VMain id="main">
 			<Playground />
 		</VMain>
 	</VApp>

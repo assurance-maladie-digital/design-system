@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="vd-stars-picker">
 		<div
-			v-if="label !== null"
+			v-if="label"
 			class="text-h6"
 		>
 			{{ label }}
@@ -16,22 +16,22 @@
 			>
 				<template #item="{ index, click, isFilled }">
 					<VIcon
+						:color="genColor(index)"
 						outlined
 						large
-						:color="genColor(index)"
 						min-height="36px"
 						class="mx-1 my-2 pa-0"
-						@mouseover="onIconOver(index)"
-						@focus="onIconOver(index)"
+						@mouseover="onIconHover(index)"
+						@focus="onIconHover(index)"
 						@click="click"
 					>
-						{{ isFilled ? mdiStar: mdiStarOutline }}
+						{{ isFilled ? starIcon: starIconOutline }}
 					</VIcon>
 				</template>
 			</VRating>
 
 			<p class="text-caption mb-0">
-				{{ getItemLabel(overItemIndex) }}
+				{{ getItemLabel(hoverItemIndex) }}
 			</p>
 		</div>
 	</div>
@@ -45,18 +45,18 @@
 
 	@Component
 	export default class StarsPicker extends RatingMixin {
+		starIconOutline = mdiStarOutline;
+		starIcon = mdiStar;
 
-		mdiStarOutline = mdiStarOutline;
-		mdiStar = mdiStar;
-		overItemIndex = -1;
+		hoverItemIndex = -1;
 
-		onIconOver(index: number): void {
-			this.overItemIndex = index;
+		onIconHover(index: number): void {
+			this.hoverItemIndex = index;
 		}
 
-		genColor(index: number): string {
-			if ( this.valueInternal === -1) {
-				return index <= this.overItemIndex ? '#9EB3D7' : 'primary';
+		genColor(index: number): string { // TODO: Use Design Tokens
+			if (this.valueInternal === -1) {
+				return index <= this.hoverItemIndex ? '#9eb3d7' : 'primary';
 			}
 
 			return 'primary';
