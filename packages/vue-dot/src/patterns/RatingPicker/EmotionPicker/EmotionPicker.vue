@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<div class="text-h6">
+		<div
+			v-if="label !== null"
+			class="text-h6"
+		>
 			{{ label }}
 		</div>
 		<VRating

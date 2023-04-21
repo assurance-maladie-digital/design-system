@@ -17,7 +17,7 @@ const Props = Vue.extend({
 		},
 		label: {
 			type: String,
-			required: true
+			default: null
 		},
 		length: {
 			type: Number,

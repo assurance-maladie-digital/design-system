@@ -18,18 +18,17 @@
 				{{ locales.thanks }}
 			</VAlert>
 
-			<div v-if="showMore()">
-				<div class="text-h6">
-					{{ locales.more }}
-				</div>
-				<slot />
-			</div>
+			<slot />
 		</div>
 
-		<div class="d-flex justify-space-between mt-5 mr-2">
+		<div
+			v-if="!hideCloseButtons"
+			class="d-flex justify-space-between mt-5 mr-2"
+		>
 			<VBtn
 				text
 				color="primary"
+				@click="$emit('close')"
 			>
 				{{ locales.close }}
 			</VBtn>
@@ -37,6 +36,7 @@
 			<VBtn
 				color="primary"
 				depressed
+				@click="onValidate"
 			>
 				{{ locales.later }}
 			</VBtn>
@@ -80,6 +80,10 @@
 				type: Number,
 				default: 3,
 				validator: (value: number) => propValidator('length', ['2','3'], value.toString())
+			},
+			hideCloseButtons: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -112,9 +116,6 @@
 			return this.length;
 		}
 
-		showMore(): boolean {
-			return this.readonlyInternal && this.$slots.default !== undefined;
-		}
 		onUpdate(value: number): void {
 			this.haveAnswered = true;
 			switch (this.type) {
@@ -131,7 +132,11 @@
 			if (this.readonlyInternal) {
 				this.$refs.firstRating.lockField(value);
 			}
+			this.$emit('input', value);
+		}
 
+		onValidate(): void {
+			this.$emit('validate', this.$refs.firstRating.valueInternal);
 		}
 	}
 </script>
