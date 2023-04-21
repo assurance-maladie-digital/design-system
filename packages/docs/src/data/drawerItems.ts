@@ -113,16 +113,16 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Navigation',
 				items: [
 					{
-						title: 'AccessibilityBanner',
-						to: '/composants/navigation/accessibility-banner'
-					},
-					{
 						title: 'ExternalLinks',
 						to: '/composants/navigation/external-links'
 					},
 					{
 						title: 'ContextualMenu',
 						to: '/composants/navigation/contextual-menu'
+					},
+					{
+						title: 'SkipLink',
+						to: '/composants/navigation/skip-link'
 					}
 				]
 			},

@@ -52,7 +52,7 @@
 
 			<div
 				v-else-if="service.title || service.subTitle"
-				class="d-flex justify-center flex-column primary--text"
+				class="vd-header-title-container d-flex justify-center flex-column primary--text"
 			>
 				<h1
 					v-if="service.title"
@@ -96,11 +96,13 @@
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
 
+	import { NuxtApp } from '@nuxt/types/app';
+
 	const Props = Vue.extend({
 		props: {
 			theme: {
 				type: String as PropType<ThemeEnum>,
-				required: true
+				default: ThemeEnum.DEFAULT
 			},
 			serviceTitle: {
 				type: String,
@@ -191,12 +193,20 @@
 			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
 		}
 
+		get isNuxt(): boolean {
+			return (this as unknown as NuxtApp).$nuxt !== undefined;
+		}
+
 		get logoContainerComponent(): string {
 			if (this.homeHref) {
 				return 'a';
 			}
 
-			return this.homeLink ? 'RouterLink' : 'div';
+			if (!this.homeLink) {
+				return 'div';
+			}
+
+			return this.isNuxt ? 'NuxtLink' : 'RouterLink';
 		}
 
 		get secondaryLogoCtnComponent(): string {
@@ -282,7 +292,9 @@
 
 <style lang="scss" scoped>
 	.vd-header-brand-section {
-		overflow: hidden;
+		.vd-header-title-container {
+			overflow: hidden;
+		}
 
 		.vd-header-title {
 			line-height: 1.45 !important;

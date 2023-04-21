@@ -14,6 +14,7 @@ const componentMap = {
 	Logo: 'elements',
 	LogoBrandSection: 'elements',
 	PageContainer: 'elements',
+	SkipLink: 'elements',
 	UserMenuBtn: 'elements',
 	// Patterns
 	AccessibilityBanner: 'patterns',
