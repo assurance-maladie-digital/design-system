@@ -1,10 +1,5 @@
 <template>
 	<div>
-		<FileUpload
-		v-if="!file"
-			v-model="file"
-		/>
-
 		<FilePreview
 		v-if="file"
 			:file="file"
@@ -17,7 +12,20 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class FilePreviewWithUpload extends Vue {
+	export default class FilePreviewUsage extends Vue {
 		file: File | null = null;
+		myImage = new Image
+
+		mounted() {
+			fetch( 'https://picsum.photos/700')
+			.then((res) => res.blob())
+			.then((myBlob) => {
+				const myFile = new File([myBlob], 'image.jpeg', {
+					type: myBlob.type,
+				});
+				this.file = myFile
+			});
+		}
 	}
+
 </script>
