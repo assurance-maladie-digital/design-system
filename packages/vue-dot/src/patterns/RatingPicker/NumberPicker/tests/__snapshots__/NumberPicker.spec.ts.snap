@@ -1,8 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NumberPicker renders correctly 1`] = `
-<div>
-  <h6>Pourriez-vous donner une note ?</h6>
-  <vrating-stub color="primary" opendelay="0" closedelay="0" ripple="true" backgroundcolor="primary lighten-4" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" hover="true" length="5" value="0" iconlabel="$vuetify.rating.ariaLabel.icon" class="d-flex flex-wrap"></vrating-stub>
+<div class="vd-number-picker">
+  <div class="text-h6 mb-6">
+    Pourriez-vous donner une note ?
+  </div>
+  <div class="d-inline-block">
+    <div class="v-rating d-flex flex-wrap mx-n1 max-width-none"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 1 sur 10"><span class="v-btn__content">
+						1
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 2 sur 10"><span class="v-btn__content">
+						2
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 3 sur 10"><span class="v-btn__content">
+						3
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 4 sur 10"><span class="v-btn__content">
+						4
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 5 sur 10"><span class="v-btn__content">
+						5
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 6 sur 10"><span class="v-btn__content">
+						6
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 7 sur 10"><span class="v-btn__content">
+						7
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 8 sur 10"><span class="v-btn__content">
+						8
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 9 sur 10"><span class="v-btn__content">
+						9
+					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 10 sur 10"><span class="v-btn__content">
+						10
+					</span></button></div>
+    <!---->
+  </div>
 </div>
 `;

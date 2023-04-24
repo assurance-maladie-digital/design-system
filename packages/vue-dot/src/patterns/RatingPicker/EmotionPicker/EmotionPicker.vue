@@ -1,225 +1,193 @@
 <template>
 	<div class="vd-emotion-picker">
-		<div class="d-flex justify-center">
-			<H6
-				v-if="mainQuestion"
-				class="mb-6"
-			>
-				{{ questionDatas.question }}
-			</H6>
-			<span
-				v-else
-				class="mb-6 text-subtitle-2"
-			>
-				{{ questionDatas.question }}
-			</span>
+		<div class="text-h6 mb-6">
+			{{ label }}
 		</div>
-		<VRow
-			class="grid justify-center ma-0"
-			:class="selectedEmotion && mainQuestion || simpleMode ? 'justify-sm-space-around' : 'justify-sm-space-between'"
+
+		<VRating
+			:value="value"
+			:length="length"
+			:readonly="readonly"
+			:class="{ 'justify-center': readonly && value !== -1 }"
+			large
+			class="max-width-none mx-n1 mx-sm-n2"
+			@input="emitInputEvent"
 		>
-			<VCol
-				v-for="emotion in filterEmotions"
-				:key="emotion.title"
-				class="pa-0 flex-grow-0 emotions"
-			>
-				<button
-					class="emotion"
-					:class="emotion.title"
-					@click="selectEmotion(emotion.title)"
-					@keyup.enter="selectEmotion(emotion.title)"
+			<template #item="{ index, click }">
+				<VBtn
+					:disabled="readonly"
+					:class="[
+						getColor(index),
+						{ 'v-btn--active': isActive(index) }
+					]"
+					:min-height="btnSize"
+					:min-width="btnSize"
+					text
+					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
+					@click="click"
 				>
-					<div
-						:class="{ active: isActive(emotion.title) }"
-						class="icon-button"
+					<VIcon
+						x-large
+						color="currentColor"
+						class="pa-0"
 					>
-						<div class="d-flex justify-center">
-							<VIcon
-								x-large
-								class="mt-3"
-								:color="emotion.color"
-							>
-								{{ emotion.icon }}
-							</VIcon>
-						</div>
-						<div class="mt-1 d-flex justify-center">
-							<span
-								class="description"
-								:class="emotionDescriptionClasses(emotion)"
-							>
-								{{ emotion.description }}
-							</span>
-						</div>
-					</div>
-				</button>
-			</VCol>
-		</VRow>
+						{{ getIcon(index) }}
+					</VIcon>
+
+					<span
+						v-if="getEmotionLabel(index)"
+						:class="{ 'text--secondary': !isActive(index) }"
+						class="text-subtitle-2 mt-1"
+					>
+						{{ getEmotionLabel(index) }}
+					</span>
+				</VBtn>
+			</template>
+		</VRating>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import { locales } from '../locales';
 
-	import { EmotionItem } from './types';
+	import { RatingMixin } from '../RatingMixin';
+	import { locales } from './locales';
 
-	import { mdiEmoticonSadOutline, mdiEmoticonNeutralOutline, mdiEmoticonHappyOutline } from '@mdi/js';
+	import { propValidator } from '../../../helpers/propValidator';
+
+	import {
+		mdiEmoticonHappyOutline,
+		mdiEmoticonSadOutline,
+		mdiEmoticonNeutralOutline
+	} from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			questionDatas: {
-				type: Object,
-				required: true
+			length: {
+				type: Number,
+				default: 3,
+				validator: (value: number) => propValidator('length', ['2', '3'], value.toString())
 			},
-			mainQuestion: {
-				type: Boolean,
-				default: false
-			},
-			isValidated: {
-				type: Boolean,
-				default: false
-			},
-			simpleMode: {
-				type: Boolean,
-				default: false
+			itemLabels: {
+				type: Array as PropType<string[]>,
+				default: () => locales.defaultEmotionLabels
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, RatingMixin);
 
 	@Component
 	export default class EmotionPicker extends MixinsDeclaration {
-
-		locales = locales;
-
-		//icons
 		sadIcon = mdiEmoticonSadOutline;
-		neurtralIcon = mdiEmoticonNeutralOutline;
+		neutralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
 
-		selectedEmotion = '';
-
-		emotions = [
-			{
-				title: 'sad',
-				icon: this.sadIcon,
-				color: 'orange-darken-20',
-				description: this.questionDatas.labels?.sad ?? this.locales.not
-			},
-			{
-				title: 'neutral',
-				icon: this.neurtralIcon,
-				color: 'yellow-darken-20',
-				description: this.questionDatas.labels?.neutral ?? this.locales.medium
-			},
-			{
-				title: 'happy',
-				icon: this.happyIcon,
-				color: 'turquoise-darken-20',
-				description: this.questionDatas.labels?.happy ?? this.locales.perfect
-			}
-		];
-
-		get emotionList(): EmotionItem[] {
-			if (this.simpleMode) {
-				return [this.emotions[0],this.emotions[2]];
-			} else {
-				return this.emotions;
-			}
+		get btnSize(): string {
+			return this.$vuetify.breakpoint.xs ? '70px' : '88px';
 		}
 
-		get filterEmotions(): EmotionItem[] {
-			if (this.selectedEmotion && this.mainQuestion) {
-				return this.emotionList.filter(emotion => emotion.title === this.selectedEmotion);
-			} else {
-				return this.emotionList;
+		isActive(index: number): boolean {
+			return index === this.value - 1;
+		}
+
+		getIcon(index: number): string {
+			if (index === 0) {
+				return this.sadIcon;
 			}
-		}
 
-		selectEmotion(emotion: string): void {
-			if (this.isValidated) {
-				return;
-			} else {
-				this.selectedEmotion = emotion;
-				this.$emit(
-					'update-result',
-					{
-						step: this.questionDatas.name,
-						result: emotion
-					}
-				);
+			if (index === 1 && this.length === 3) {
+				return this.neutralIcon;
 			}
+
+			return this.happyIcon;
 		}
 
-		isActive(emotion: string): boolean {
-			return this.selectedEmotion === emotion ? true : false;
+		getColor(index: number): string {
+			const colors = [
+				'sad',
+				'neutral',
+				'happy'
+			];
+
+			if (this.length === 2) {
+				const filteredColors = colors.filter((item) => item !== 'neutral');
+
+				return filteredColors[index];
+			}
+
+			return colors[index];
 		}
 
-		emotionDescriptionClasses(emotion: EmotionItem): string {
-			return this.isActive(emotion.title) ? `font-weight-bold ${emotion.color}--text` : '';
+		getEmotionLabel(value: number): string {
+			if (value === -1) {
+				return '';
+			}
+
+			if (this.length === 2) {
+				const filteredLabels = this.itemLabels.filter((_, index) => index !== 1);
+
+				return filteredLabels[value];
+			}
+
+			return this.itemLabels[value];
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
+	@import '@cnamts/design-tokens/dist/tokens';
 
-h6 {
-	font-size: 16px;
-}
-.description {
-	font-size: 12px;
-}
-.icon-button {
-	height: 88px;
-	width: 88px;
-	border-radius: 8px;
-}
-.icon-button:hover {
-	cursor: pointer;
-}
-.sad {
-	.icon-button:hover {
-		background-color: $vd-orange-lighten-90;
+	.v-rating .v-btn {
+		transition: 0.2s;
+		border: 1px solid transparent;
+
+		:deep(.v-btn__content) {
+			flex-direction: column;
+		}
+
+		&.sad {
+			color: $vd-orange-darken-20 !important;
+		}
+
+		&.neutral {
+			color: $vd-yellow-darken-20 !important;
+		}
+
+		&.happy {
+			color: $vd-turquoise-darken-20 !important;
+		}
+
+		&::before {
+			opacity: 1;
+			transition: 0.2s;
+			background: transparent;
+		}
+
+		&--active.v-btn--disabled .v-icon {
+			color: currentColor !important;
+		}
+
+		&:focus,
+		&--active {
+			border-color: currentColor !important;
+		}
+
+		&:hover,
+		&:focus,
+		&--active {
+			&.sad::before {
+				background: $vd-orange-lighten-90;
+			}
+
+			&.neutral::before {
+				background: $vd-yellow-lighten-90;
+			}
+
+			&.happy::before {
+				background: $vd-turquoise-lighten-90;
+			}
+		}
 	}
-	.active {
-		border: 1px solid $vd-orange-darken-20;
-		background-color: $vd-orange-lighten-90;
-	}
-	&:focus {
-		outline: solid 1px $vd-orange-darken-20;
-		border-radius: 8px;
-	}
-}
-.neutral {
-	.icon-button:hover {
-		background-color: $vd-yellow-lighten-90;
-	}
-	.active {
-		border: 1px solid $vd-yellow-darken-20;
-		background-color: $vd-yellow-lighten-90;
-	}
-	&:focus {
-		outline: solid 1px $vd-yellow-darken-20;
-		border-radius: 8px;
-	}
-}
-.happy {
-	.icon-button:hover {
-		background-color: $vd-turquoise-lighten-90;
-	}
-	.active {
-		border: 1px solid $vd-turquoise-darken-20;
-		background-color: $vd-turquoise-lighten-90;
-	}
-	&:focus {
-		outline: solid 1px $vd-turquoise-darken-20;
-		border-radius: 8px;
-	}
-}
-.emotions {
-	margin: 1px !important;
-}
 </style>
