@@ -1,5 +1,9 @@
 <template>
-	<HeaderBar :vuetify-options="vuetifyOptions" />
+	<HeaderBar
+		service-title="Design System"
+		service-sub-title="Documentation du Design System"
+		:vuetify-options="vuetifyOptions"
+	/>
 </template>
 
 <script lang="ts">

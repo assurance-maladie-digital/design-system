@@ -20,17 +20,12 @@
 			/>
 		</component>
 
-		<slot
-			v-bind="{
-				...options.brandSection,
-				...$attrs
-			}"
-		>
+		<slot>
 			<svg
 				v-if="showDivider"
 				:width="dividerDimensions.width"
 				:height="dividerDimensions.height"
-				:fill="options.brandSection.dividerColor ? options.brandSection.dividerColor : dividerColor"
+				:fill="dividerColor"
 				role="img"
 				focusable="false"
 				aria-hidden="true"
@@ -63,12 +58,6 @@
 					v-if="service.title"
 					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
 					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
-					:style="{
-						color: options.brandSection.title.color,
-						fontWeight: options.brandSection.title.fontWeight,
-						fontSize: options.brandSection.title.fontSize,
-						lineHeight: options.brandSection.title.lineHeight
-					}"
 				>
 					<template v-if="isCompteEntreprise">
 						{{ service.title.text }}
@@ -83,16 +72,12 @@
 				<h2
 					v-if="showServiceSubTitle"
 					class="vd-header-title text-caption"
-					:style="{
-						color: options.brandSection.subTitle.color,
-						fontWeight: options.brandSection.subTitle.fontWeight,
-						fontSize: options.brandSection.subTitle.fontSize,
-						lineHeight: options.brandSection.subTitle.lineHeight
-					}"
 				>
 					{{ service.subTitle }}
 				</h2>
 			</div>
+
+			<slot name="custom-brand-content" />
 		</slot>
 	</VSheet>
 </template>
@@ -108,13 +93,10 @@
 	import { ThemeEnum } from '../../constants/enums/ThemeEnum';
 	import { Dimensions, Next } from '../../types';
 
-	import { customizable } from '../../mixins/customizable';
-
 	import { LogoInfo, Service } from './types';
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
-	import { config } from '../../patterns/HeaderBar/config';
 
 	/** Define a local interface since Nuxt isn't a dependency */
 	interface MaybeNuxtInstance extends Vue {
@@ -155,7 +137,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props, customizable(config));
+	const MixinsDeclaration = mixins(Props);
 
 	@Component
 	export default class LogoBrandSection extends MixinsDeclaration {
@@ -262,7 +244,7 @@
 				return false;
 			}
 
-			return Boolean(this.hasSecondaryLogo || this.service.title);
+			return Boolean(this.hasSecondaryLogo || this.service.title || this.$slots['custom-brand-content']);
 		}
 
 		get showServiceSubTitle(): boolean {
@@ -321,11 +303,11 @@
 		}
 
 		.vd-header-title {
-			line-height: 1.45;
+			line-height: 1.45 !important;
 		}
 
 		.vd-compte-entreprise-title {
-			font-weight: 700;
+			font-weight: 700 !important;
 
 			span {
 				color: #cd545b;

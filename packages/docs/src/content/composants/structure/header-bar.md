@@ -75,12 +75,17 @@ Vous pouvez afficher le bouton pour activer le menu dans la barre de navigation 
 
 <doc-example file="header-bar/nav-bar-menu-btn"></doc-example>
 
+### Contenus personnalisés
+
+Vous pouvez personnaliser le contenu de la marque (titres, sous-titres...) en utilisant le slot `custom-brand-content`.
+
+<doc-example file="header-bar/custom-brand-content"></doc-example>
+
 ### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Header` en utilisant la prop `vuetify-options`.
 
 <doc-example file="header-bar/options"></doc-example>
-<doc-example file="header-bar/options-brand-section"></doc-example>
 
 ### Slots
 

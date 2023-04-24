@@ -24,7 +24,7 @@
 				>
 					<slot name="logo">
 						<LogoBrandSection
-							:vuetify-options="vuetifyOptions"
+							v-bind="options.brandSection"
 							:theme="theme"
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
@@ -33,6 +33,10 @@
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
+							<template #custom-brand-content>
+								<slot name="custom-brand-content" />
+							</template>
+
 							<slot name="secondary-logo" />
 						</LogoBrandSection>
 					</slot>

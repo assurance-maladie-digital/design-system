@@ -17,20 +17,5 @@ export const config = {
 		spacing: 'px-1',
 		text: true,
 		class: 'text-caption'
-	},
-	brandSection: {
-		dividerColor: 'primary',
-		title: {
-			color: 'primary',
-			fontWeight: 'bold',
-			fontSize: '',
-			lineHeight: ''
-		},
-		subTitle: {
-			color: 'primary',
-			fontWeight: 'normal',
-			fontSize: '',
-			lineHeight: ''
-		}
 	}
 };
