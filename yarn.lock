@@ -9265,10 +9265,10 @@ eslint-plugin-jest-formatting@3.1.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest-formatting/-/eslint-plugin-jest-formatting-3.1.0.tgz#b26dd5a40f432b642dcc880021a771bb1c93dcd2"
   integrity sha512-XyysraZ1JSgGbLSDxjj5HzKKh0glgWf+7CkqxbTqb7zEhW7X2WHo5SBQ8cGhnszKN+2Lj3/oevBlHNbHezoc/A==
 
-eslint-plugin-jsdoc@43.0.7:
-  version "43.0.7"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-43.0.7.tgz#e15acd04d702e089867c78391ae172e34bac8364"
-  integrity sha512-32Sx5I9VzO/bqbtslCu3L1GHIPo+QEliwqwjWq+qzbUv76wrkH6ifUEE0EbkuNEn+cHlSIOrg/IJ1PGNN72QZA==
+eslint-plugin-jsdoc@43.1.0:
+  version "43.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-43.1.0.tgz#e4e685eef66b17d0b99221e5933c9f179cb2fe94"
+  integrity sha512-TIeaVIW3nu9/dCrx/W5+IUUyNHyYP/dzEd4JKjxfhCFjEA6D1KmNFr00ykLxHcTeHsZs02TbT3CEA8Coen3u8A==
   dependencies:
     "@es-joy/jsdoccomment" "~0.37.1"
     are-docs-informative "^0.0.2"
