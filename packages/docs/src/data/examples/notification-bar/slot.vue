@@ -1,33 +1,14 @@
 <template>
 	<div>
-		<NotificationBar
-			v-show="showNotificationBar"
-		>
+		<NotificationBar v-show="showNotificationBar">
 			<template #actions>
 				<VBtn
 					color="white"
 					class="mr-3"
 					elevation="0"
 					outlined
-					@click="hideNotificationBar"
 				>
-					Bouton 1
-				</VBtn>
-				<VBtn
-					color="white"
-					class="mr-3"
-					elevation="0"
-					text
-					@click="hideNotificationBar"
-				>
-					Bouton 2
-				</VBtn>
-				<VBtn
-					color="primary"
-					elevation="3"
-					@click="hideNotificationBar"
-				>
-					Fermer
+					Bouton
 				</VBtn>
 			</template>
 		</NotificationBar>
@@ -51,11 +32,9 @@
 
 	@Component({
 		computed: mapState('notification', ['notification']),
-		methods: mapActions('notification', ['addNotification', 'clearNotification'])
+		methods: mapActions('notification', ['addNotification'])
 	})
 	export default class NotificationBarSlot extends Vue {
-		clearNotification!: () => void;
-
 		get showNotificationBar(): boolean {
 			return this.notification?.ref === EXAMPLE_REF;
 		}
@@ -66,10 +45,6 @@
 				type: 'info',
 				message: 'Exemple de notification.'
 			});
-		}
-
-		hideNotificationBar(): void {
-			this.clearNotification();
 		}
 	}
 </script>

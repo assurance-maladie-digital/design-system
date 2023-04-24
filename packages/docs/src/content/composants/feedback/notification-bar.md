@@ -38,21 +38,9 @@ Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la pro
 
 <doc-example file="notification-bar/label"></doc-example>
 
-#### Divider
-
-Vous pouvez ajouter un divider entre le contenu de la notification et les boutons en utilisant la prop `divider`.
-
-<doc-example file="notification-bar/divider"></doc-example>
-
-#### Inline
-
-Vous pouvez forcer l'affichage de la notification sur une ligne en mobile en utilisant la prop `inline-mobile`.
-
-<doc-example file="notification-bar/inline-mobile"></doc-example>
-
 #### Slot
 
-Vous pouvez utiliser le slot `actions` pour remplacer le bouton d’action par défaut ou en ajouter d'autres.
+Vous pouvez utiliser le slot `actions` pour ajouter d'autres boutons d'action.
 
 <doc-example file="notification-bar/slot"></doc-example>
 

@@ -6,7 +6,7 @@
 		role="status"
 		class="vd-notification-bar"
 		:class="textColor + '--text'"
-		:vertical="mobileVersion && !inlineMobile"
+		:vertical="mobileVersion && ($slots.actions || longText)"
 	>
 		<div
 			v-if="notification"
@@ -24,42 +24,40 @@
 			{{ notification.message }}
 
 			<VDivider
-				v-if="divider && mobileVersion && !inlineMobile"
+				v-if="mobileVersion && $slots.actions"
 				:color="textColor"
 				class="h-line"
+			/>
+			<VDivider
+				v-if="!mobileVersion && $slots.actions"
+				:color="textColor"
+				vertical
+				class="ml-3 v-line"
 			/>
 		</div>
 
 		<template #action="{ attrs }">
-			<VDivider
-				v-if="divider && !mobileVersion"
+			<slot name="actions" />
+			<VBtn
+				v-bind="{
+					...attrs,
+					...options.btn
+				}"
 				:color="textColor"
-				height="36"
-				vertical
-				class="mr-3"
-			/>
-			<slot name="actions">
-				<VBtn
-					v-bind="{
-						...attrs,
-						...options.btn
-					}"
-					:color="textColor"
-					:icon="mobileVersion"
-					:class="'ma-0' ? mobileVersion : ''"
-					@click="clearNotification"
+				:icon="mobileVersion && !longText && !$slots.actions"
+				:class="'ma-0' ? mobileVersion && !longText && !$slots.actions : ''"
+				@click="clearNotification"
+			>
+				<span :class="{ 'd-sr-only': mobileVersion && !longText && !$slots.actions }">
+					{{ closeBtnText }}
+				</span>
+				<VIcon
+					v-if="mobileVersion && !longText && !$slots.actions"
+					v-bind="options.closeIcon"
 				>
-					<span :class="{ 'd-sr-only': mobileVersion }">
-						{{ closeBtnText }}
-					</span>
-					<VIcon
-						v-if="mobileVersion"
-						v-bind="options.closeIcon"
-					>
-						{{ closeIcon }}
-					</VIcon>
-				</VBtn>
-			</slot>
+					{{ closeIcon }}
+				</VIcon>
+			</VBtn>
 		</template>
 	</VSnackbar>
 </template>
@@ -91,14 +89,6 @@
 			closeBtnText: {
 				type: String,
 				default: locales.close
-			},
-			divider: {
-				type: Boolean,
-				default: false
-			},
-			inlineMobile: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
@@ -154,6 +144,10 @@
 			return 'white';
 		}
 
+		get longText(): boolean {
+			return this.notification ? this.notification.message.length > 50 : false;
+		}
+
 		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.xs;
 		}
@@ -202,6 +196,9 @@
 		min-width: 24px;
 	}
 
+	.v-divider.v-line {
+		min-height: 36px;
+	}
 	.v-divider.h-line {
 		position: absolute;
 		bottom: 0;
