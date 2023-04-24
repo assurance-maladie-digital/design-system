@@ -1,8 +1,5 @@
 <template>
-	<FilePreview
-		v-if="file"
-		:file="file"
-	/>
+	<FilePreview :file="file" />
 </template>
 
 <script lang="ts">
