@@ -9,7 +9,7 @@
 			v-bind="options.innerSheet"
 			:width="innerWidth"
 		>
-			<slot name="navigation-bar-content-prepend" />
+			<slot name="navigation-bar-prepend" />
 
 			<slot>
 				<HeaderMenuBtn

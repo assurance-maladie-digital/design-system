@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="nav d-flex flex-column justify-between">
-				<slot name="prepend" />
+				<slot name="navigation-drawer-prepend" />
 
 				<VTabs
 					v-bind="options.tabs"
@@ -39,7 +39,7 @@
 					</VTab>
 				</VTabs>
 
-				<slot name="append" />
+				<slot name="navigation-drawer-append" />
 			</div>
 		</slot>
 	</VNavigationDrawer>

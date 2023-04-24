@@ -137,7 +137,7 @@ export const api: Api = {
 				description: 'Slot pour remplacer le contenu par défaut de la barre de navigation.'
 			},
 			{
-				name: 'navigation-bar-content-prepend',
+				name: 'navigation-bar-prepend',
 				description: 'Slot pour ajouter du contenu avant le contenu par défaut de la barre de navigation.'
 			},
 			{
@@ -157,11 +157,11 @@ export const api: Api = {
 				description: 'Slot pour remplacer le contenu par défaut du menu de navigation sur les écrans mobiles.'
 			},
 			{
-				name: 'prepend',
+				name: 'navigation-drawer-prepend',
 				description: 'Slot pour ajouter du contenu avant le contenu par défaut du menu de navigation sur les écrans mobiles.'
 			},
 			{
-				name: 'append',
+				name: 'navigation-drawer-append',
 				description: 'Slot pour ajouter du contenu après le contenu par défaut du menu de navigation sur les écrans mobiles.'
 			}
 		]
