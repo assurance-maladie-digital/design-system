@@ -87,11 +87,11 @@ Vous pouvez utiliser les slots `navigation-bar-content` et `navigation-drawer-co
 
 <doc-example file="header-bar/slot-bar"></doc-example>
 
-Vous pouvez utiliser les slots `navigation-bar-content-prepend` et `navigation-bar-content-append` pour ajouter du contenu avant ou après le contenu de la barre de navigation.
+Vous pouvez utiliser les slots `navigation-bar-content-prepend` et `navigation-bar-secondary-content` pour ajouter du contenu avant ou après le contenu de la barre de navigation.
 
-<doc-example file="header-bar/slot-bar-append"></doc-example>
+<doc-example file="header-bar/slot-bar-secondary"></doc-example>
 
-Vous pouvez utiliser les slots `navigation-drawer-content-prepend` et `navigation-drawer-content-append` pour ajouter du contenu avant ou après le contenu du menu sur mobile.
+Vous pouvez utiliser les slots `prepend` et `append` pour ajouter du contenu avant ou après le contenu du menu sur mobile.
 
 <doc-example file="header-bar/slot-drawer"></doc-example>
 

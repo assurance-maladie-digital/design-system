@@ -68,8 +68,8 @@
 
 					<slot name="navigation-bar-content" />
 
-					<template #navigation-bar-content-append>
-						<slot name="navigation-bar-content-append" />
+					<template #navigation-bar-secondary-content>
+						<slot name="navigation-bar-secondary-content" />
 					</template>
 				</HeaderNavigationBar>
 			</template>
@@ -87,14 +87,14 @@
 				:mobile-version="isMobileVersion"
 				:vuetify-options="options.navigationDrawer"
 			>
-				<template #navigation-drawer-content-prepend>
-					<slot name="navigation-drawer-content-prepend" />
+				<template #prepend>
+					<slot name="prepend" />
 				</template>
 
 				<slot name="navigation-drawer-content" />
 
-				<template #navigation-drawer-content-append>
-					<slot name="navigation-drawer-content-append" />
+				<template #append>
+					<slot name="append" />
 				</template>
 			</HeaderNavigationDrawer>
 		</slot>

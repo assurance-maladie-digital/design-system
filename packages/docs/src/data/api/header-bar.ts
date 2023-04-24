@@ -134,19 +134,19 @@ export const api: Api = {
 			},
 			{
 				name: 'navigation-bar-content',
-				description: 'Slot pour remplacer le contenu de la barre de navigation.'
+				description: 'Slot pour remplacer le contenu par défaut de la barre de navigation.'
 			},
 			{
 				name: 'navigation-bar-content-prepend',
-				description: 'Slot pour ajouter du contenu avant le contenu de la barre de navigation.'
+				description: 'Slot pour ajouter du contenu avant le contenu par défaut de la barre de navigation.'
 			},
 			{
-				name: 'navigation-bar-content-append',
-				description: 'Slot pour ajouter du contenu après le contenu de la barre de navigation.'
+				name: 'navigation-bar-secondary-content',
+				description: 'Slot pour ajouter du contenu après le contenu par défaut de la barre de navigation.'
 			},
 			{
 				name: 'navigation-drawer',
-				description: 'Slot pour remplacer le menu de navigation sur les écrans mobiles.',
+				description: 'Slot pour remplacer le menu de navigation par défaut sur les écrans mobiles.',
 				props: {
 					drawer: 'boolean',
 					updateDrawer: '(value: boolean) => void'
@@ -154,15 +154,15 @@ export const api: Api = {
 			},
 			{
 				name: 'navigation-drawer-content',
-				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
+				description: 'Slot pour remplacer le contenu par défaut du menu de navigation sur les écrans mobiles.'
 			},
 			{
-				name: 'navigation-drawer-content-prepend',
-				description: 'Slot pour ajouter du contenu avant le contenu du menu de navigation sur les écrans mobiles.'
+				name: 'prepend',
+				description: 'Slot pour ajouter du contenu avant le contenu par défaut du menu de navigation sur les écrans mobiles.'
 			},
 			{
-				name: 'navigation-drawer-content-append',
-				description: 'Slot pour ajouter du contenu après le contenu du menu de navigation sur les écrans mobiles.'
+				name: 'append',
+				description: 'Slot pour ajouter du contenu après le contenu par défaut du menu de navigation sur les écrans mobiles.'
 			}
 		]
 	},

@@ -1,6 +1,6 @@
 <template>
 	<HeaderBar :navigation-items="navigationItems">
-		<template #navigation-bar-content-append>
+		<template #navigation-bar-secondary-content>
 			<div class="d-flex align-center justify-center">
 				<VBtn color="primary">
 					Se connecter
@@ -17,7 +17,7 @@ import Component from 'vue-class-component';
 import { NavigationItem } from '@cnamts/vue-dot/src/patterns/HeaderBar/types';
 
 @Component
-export default class HeaderBarNavigationBarAppend extends Vue {
+export default class HeaderBarNavigationBarSecondaryContent extends Vue {
 	navigationItems: NavigationItem[] = [
 		{
 			label: 'Accueil'

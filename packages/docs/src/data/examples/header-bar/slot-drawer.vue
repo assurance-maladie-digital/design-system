@@ -3,7 +3,7 @@
 		:navigation-items="navigationItems"
 		:show-nav-bar-menu-btn="false"
 	>
-		<template #navigation-drawer-content-prepend>
+		<template #prepend>
 			<div class="d-flex align-center justify-center">
 				<VBtn
 					color="primary"
@@ -14,7 +14,7 @@
 				</VBtn>
 			</div>
 		</template>
-		<template #navigation-drawer-content-append>
+		<template #append>
 			<div class="d-flex align-center justify-center">
 				<VBtn
 					color="primary"
