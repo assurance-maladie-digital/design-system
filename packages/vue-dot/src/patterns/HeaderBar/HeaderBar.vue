@@ -7,6 +7,7 @@
 			}"
 			ref="appBar"
 			v-scroll:[targetSelector]="onScroll"
+			role="banner"
 			:height="height"
 			:fixed="sticky"
 			class="vd-header-bar transition-ease-in-out"
