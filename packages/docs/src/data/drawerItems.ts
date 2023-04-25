@@ -223,6 +223,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'DataListGroup',
 						to: '/composants/donnees/data-list-group'
+					},
+					{
+						title: 'FilePreview',
+						to: '/composants/donnees/file-preview'
 					}
 				]
 			},

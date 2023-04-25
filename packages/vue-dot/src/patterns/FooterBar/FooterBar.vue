@@ -5,6 +5,7 @@
 			...$attrs
 		}"
 		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+		role="contentinfo"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
 		<div
