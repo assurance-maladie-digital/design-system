@@ -9,6 +9,7 @@
 			v-scroll:[targetSelector]="onScroll"
 			:height="height"
 			:fixed="sticky"
+			role="banner"
 			class="vd-header-bar transition-ease-in-out"
 		>
 			<VSheet
