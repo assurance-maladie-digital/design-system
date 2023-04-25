@@ -102,6 +102,10 @@
 			hideLogoutBtn: {
 				type: Boolean,
 				default: false
+			},
+			mobileVersion: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -125,6 +129,14 @@
 
 		get hasListContent(): boolean {
 			return Boolean(this.$slots.default || !this.hideLogoutBtn);
+		}
+
+		get isMobileVersion(): boolean {
+			if (this.mobileVersion) {
+				return true;
+			}
+
+			return this.$vuetify.breakpoint.smAndDown;
 		}
 	}
 </script>
@@ -150,7 +162,7 @@
 
 	.vd-user-menu-content {
 		right: 0 !important;
-		left: auto !important;
+		left: 0 !important;
 		top: 100% !important;
 	}
 
