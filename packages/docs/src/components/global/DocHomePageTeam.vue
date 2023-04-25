@@ -92,11 +92,6 @@
 				name: 'David Fyon',
 				role: 'Développeur Front',
 				img: 'person.svg'
-			},
-			{
-				name: 'Julien Baylac',
-				role: 'Développeur Front',
-				img: 'julien_b.jpg'
 			}
 		];
 
