@@ -8,8 +8,8 @@
 	>
 		<template #append>
 			<VBtn
+				:aria-label="btnLabel"
 				icon
-				:aria-label="showEyeIcon ? 'Hide password' : 'Show password'"
 				class="mt-n2"
 				@click="showEyeIcon = !showEyeIcon"
 			>
@@ -28,6 +28,11 @@
 
 	import { mdiEye, mdiEyeOff } from '@mdi/js';
 
+	const locales = {
+		hidePassword: 'Masquer le mot de passe',
+		showPassword: 'Afficher le mot de passe'
+	};
+
 	const MixinsDeclaration = mixins(FieldComponent);
 
 	@Component
@@ -36,5 +41,9 @@
 		eyeOffIcon = mdiEyeOff;
 
 		showEyeIcon = false;
+
+		get btnLabel(): string {
+			return this.showEyeIcon ? locales.hidePassword : locales.showPassword;
+		}
 	}
 </script>
