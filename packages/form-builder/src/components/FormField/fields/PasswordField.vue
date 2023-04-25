@@ -2,12 +2,23 @@
 	<VTextField
 		v-bind="field.fieldOptions"
 		:value="field.value"
-		:append-icon="showEyeIcon ? eyeIcon : eyeOffIcon"
 		:type="showEyeIcon ? 'text' : 'password'"
 		class="vd-form-input"
-		@click:append="showEyeIcon = !showEyeIcon"
 		@change="emitChangeEvent"
-	/>
+	>
+		<template #append>
+			<VBtn
+				icon
+				:aria-label="showEyeIcon ? 'Hide password' : 'Show password'"
+				class="mt-n2"
+				@click="showEyeIcon = !showEyeIcon"
+			>
+				<VIcon>
+					{{ showEyeIcon ? eyeIcon : eyeOffIcon }}
+				</VIcon>
+			</VBtn>
+		</template>
+	</VTextField>
 </template>
 
 <script lang="ts">
