@@ -93,7 +93,7 @@
 
 	import { LogoSizeEnum } from '../../elements/Logo/LogoSizeEnum';
 
-	import SocialMediaLinks from './SocialMediaLinks';
+	import SocialMediaLinks from './SocialMediaLinks/SocialMediaLinks.vue';
 	import { SocialMediaLink } from './SocialMediaLinks/types';
 
 	import { config } from './config';
