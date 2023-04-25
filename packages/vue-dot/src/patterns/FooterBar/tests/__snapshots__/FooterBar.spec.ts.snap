@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FooterBar renders correctly 1`] = `
-<vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" class="vd-footer-bar flex-column align-stretch pa-3 w-100">
+<vfooter-stub color="#fff" elevation="3" height="auto" minheight="40px" tag="footer" role="contentinfo" class="vd-footer-bar flex-column align-stretch pa-3 w-100">
   <!---->
   <!---->
   <!---->
