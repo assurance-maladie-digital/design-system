@@ -13,7 +13,7 @@ description: L’élément `FilePreview` est utilisé pour afficher une image ou
 
 #### Afficher un fichier depuis une API
 
-Vous pouvez afficher une image ou un fichier récupéré depuis une API sous forme de `Blob`.
+Vous pouvez afficher une image ou un fichier PDF récupéré depuis une API sous forme de `Blob`.
 
 <doc-example file="file-preview/from-api"></doc-example>
 
