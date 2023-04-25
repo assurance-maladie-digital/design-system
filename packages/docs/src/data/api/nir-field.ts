@@ -23,6 +23,12 @@ export const api: Api = {
 				description: 'Rends le ou les champ(s) obligatoire(s) en utilisant la règle de validation [`required`](/composants-techniques/regles-de-validation/required).'
 			},
 			{
+				name: 'suffix',
+				type: 'boolean',
+				default: false,
+				description: 'Ajoute un astérisque à côté du ou des champ(s) pour indiquer qu’il(s) est(sont) obligatoire(s).'
+			},
+			{
 				name: 'tooltip',
 				type: 'string',
 				default: null,

@@ -7,6 +7,7 @@
 			:value="computedNumberValue"
 			:label="locales.numberLabel"
 			:hint="locales.numberHint"
+			:suffix="suffix ? '*' : ''"
 			:rules="numberRules"
 			:success="numberFilled"
 			class="vd-number-field flex-grow-0 mx-1 mx-sm-2"
@@ -32,6 +33,7 @@
 			:value="keyValue"
 			:label="locales.keyLabel"
 			:hint="locales.keyHint"
+			:suffix="suffix ? '*' : ''"
 			:rules="keyRules"
 			:success="keyFilled"
 			class="vd-key-field flex-grow-0 mx-1 mx-sm-2"
@@ -112,6 +114,10 @@
 				}
 			},
 			required: {
+				type: Boolean,
+				default: false
+			},
+			suffix: {
 				type: Boolean,
 				default: false
 			},

@@ -25,7 +25,8 @@
 
 		options = {
 			booleans: [
-				'required'
+				'required',
+				'suffix'
 			],
 			textFields: [
 				'tooltip'
