@@ -11,9 +11,18 @@
 						{{ pageTitle }}
 					</h2>
 
-					<p class="mb-0">
+					<p class="mb-10">
 						{{ message }}
 					</p>
+
+					<VBtn
+						v-if="btn"
+						:to="btnRoute"
+						color="primary"
+						exact
+					>
+						{{ btnText }}
+					</VBtn>
 				</VCol>
 
 				<VCol
@@ -34,10 +43,11 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { locales } from './locales';
+	import { RawLocation } from 'vue-router';
 
 	const Props = Vue.extend({
 		props: {
@@ -48,6 +58,18 @@
 			message: {
 				type: String,
 				default: locales.message
+			},
+			btn: {
+				type: Boolean,
+				default: false
+			},
+			btnText: {
+				type: String,
+				default: locales.btnText
+			},
+			btnRoute: {
+				type: [Array, Object, String] as PropType<RawLocation>,
+				default: () => ({ name: 'home' })
 			}
 		}
 	});

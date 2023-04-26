@@ -22,13 +22,18 @@
 
 		propsHiddenByDefault = [
 			'pageTitle',
-			'message'
+			'message',
+			'btnText'
 		];
 
 		options = {
+			booleans: [
+				'btn'
+			],
 			textFields: [
 				'pageTitle',
-				'message'
+				'message',
+				'btnText'
 			]
 		};
 	}
