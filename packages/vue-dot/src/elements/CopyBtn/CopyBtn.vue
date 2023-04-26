@@ -93,6 +93,6 @@
 		padding: 6px 16px;
 		box-shadow: none;
 		margin-top: 2px;
-		background: rgba(97, 97, 97, .9);
+		background: rgba(114,114,114,1);
 	}
 </style>

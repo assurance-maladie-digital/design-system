@@ -112,6 +112,11 @@
 			}
 		}
 	}
+
+	// Fix tooltips opacity
+	.v-tooltip__content, .v-icon.vd-tooltip-icon {
+		opacity: 1 !important;
+	}
 }
 
 // Fix font size (default for these elements is 16px)
