@@ -46,6 +46,18 @@ export const api: Api = {
 				description: 'Désactive la fermeture de la boîte de dialogue lors de l’appui sur la touche *Échap* ou du clic en-dehors de l’élément.'
 			},
 			{
+				name: 'overlay-color',
+				type: 'string',
+				default: `'rgb(33, 33, 33)'`,
+				description: 'La couleur de l’arrière-plan de la boîte de dialogue.'
+			},
+			{
+				name: 'overlay-opacity',
+				type: 'number',
+				default: `0.6`,
+				description: 'L’opacité de l’arrière-plan de la boîte de dialogue.'
+			},
+			{
 				name: 'vuetify-options',
 				type: 'Options',
 				default: 'undefined',
