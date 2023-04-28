@@ -24,15 +24,10 @@
 			{{ notification.message }}
 
 			<VDivider
-				v-if="mobileVersion && $slots.actions"
+				v-if="$slots.actions"
 				:color="textColor"
-				class="h-line"
-			/>
-			<VDivider
-				v-if="!mobileVersion && $slots.actions"
-				:color="textColor"
-				vertical
-				class="ml-3 v-line"
+				:vertical="!mobileVersion"
+				:class="mobileVersion ? 'h-line' : 'ml-3 v-line'"
 			/>
 		</div>
 
