@@ -1,3 +1,65 @@
+## v2.9.0-beta.4
+
+**Version publiée le 28/04/2023.**
+
+Cette version comporte l'ajout du composant `ContextualMenu`, la refonte des composants `NirField`, `AccessibilityBanner`, `CollapsibleList` et `RatingPicker` et de la gestion des liens dans le composant `FooterBar`, ainsi que des corrections sur Vue Dot et le FormBuilder et la documentation du composant `FilePreview`.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **ContextualMenu:** Ajout d'un nouveau composant ([#2572](https://github.com/assurance-maladie-digital/design-system/pull/2572))
+
+- 🐛 **Corrections de bugs**
+  - **Logo:** Correction d'une faute d'orthographe dans le texte alternatif ([#2731](https://github.com/assurance-maladie-digital/design-system/pull/2731))
+  - **LogoBrandSection:** Correction de la valeur par défaut de la prop `theme` ([#2729](https://github.com/assurance-maladie-digital/design-system/pull/2729))
+  - **LogoBrandSection:** Correction du style lien au focus ([#2728](https://github.com/assurance-maladie-digital/design-system/pull/2728))
+  - **LogoBrandSection:** Correction de l'utilisation de `RouterLink` pour Nuxt ([#2730](https://github.com/assurance-maladie-digital/design-system/pull/2730))
+  - **UploadWorkflow:** Correction des options pour le composant `FilePreview` ([#2767](https://github.com/assurance-maladie-digital/design-system/pull/2767))
+
+- ♻️ **Refactoring**
+  - **NirField:** Refonte du composant ([#2705](https://github.com/assurance-maladie-digital/design-system/pull/2705))
+  - **AccessibilityBanner:** Refonte du composant en `SkipLink` ([#2711](https://github.com/assurance-maladie-digital/design-system/pull/2711))
+  - **CollapsibleList:** Refonte du composant ([#2733](https://github.com/assurance-maladie-digital/design-system/pull/2733))
+  - **FooterBar:** Refonte de la gestion des liens ([#2725](https://github.com/assurance-maladie-digital/design-system/pull/2725))
+  - **RatingPicker:** Refonte du composant ([#2738](https://github.com/assurance-maladie-digital/design-system/pull/2738))
+
+- ♿️ **Accessibilité**
+  - **FooterBar:** Ajout du rôle `contentinfo` ([#2747](https://github.com/assurance-maladie-digital/design-system/pull/2747))
+  - **HeaderBar:** Ajout du rôle `banner` ([#2748](https://github.com/assurance-maladie-digital/design-system/pull/2748))
+
+### FormBuilder
+
+- ♿️ **Accessibilité**
+  - **PasswordField:** Correction de la valeur de l'attribut `aria-label` ([#2752](https://github.com/assurance-maladie-digital/design-system/pull/2752))
+
+### Documentation
+
+- ✨ **Nouvelles fonctionnalités**
+  - **global:** Ajout des pages *Vue d'ensemble* ([#2489](https://github.com/assurance-maladie-digital/design-system/pull/2489))
+
+- 🐛 **Corrections de bugs**
+  - **global:** Correction des exemples avec une mauvaise structure ([#2708](https://github.com/assurance-maladie-digital/design-system/pull/2708))
+
+- ♻️ **Refactoring**
+  - **introduction:** Mise à jour de l'équipe ([#2746](https://github.com/assurance-maladie-digital/design-system/pull/2746))
+
+- 📝 **Documentation**
+  - **FilePreview:** Documentation du composant ([#2722](https://github.com/assurance-maladie-digital/design-system/pull/2722))
+
+### Interne
+
+- ⬆️ **Dépendances**
+  - **vuetify:** Mise à jour vers la `v2.6.15` ([#2706](https://github.com/assurance-maladie-digital/design-system/pull/2706))
+  - **core-js:** Mise à jour vers la `v3.30.1` ([#2709](https://github.com/assurance-maladie-digital/design-system/pull/2709))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.11.0` ([#2712](https://github.com/assurance-maladie-digital/design-system/pull/2712))
+  - **typescript-eslint:** Mise à jour vers la `v5.59.1` ([#2745](https://github.com/assurance-maladie-digital/design-system/pull/2745))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v43.1.1` ([#2750](https://github.com/assurance-maladie-digital/design-system/pull/2750))
+  - **@vue/eslint-config-typescript:** Mise à jour vers la `v11.0.3` ([#2759](https://github.com/assurance-maladie-digital/design-system/pull/2759))
+  - **@types/node:** Mise à jour vers la `v16.18.25` ([#2760](https://github.com/assurance-maladie-digital/design-system/pull/2760))
+  - **@docsearch/js:** Mise à jour vers la `v3.3.4` ([#2763](https://github.com/assurance-maladie-digital/design-system/pull/2763))
+  - **lint-staged:** Mise à jour vers la `v13.2.2` ([#2764](https://github.com/assurance-maladie-digital/design-system/pull/2764))
+  - **netlify-cli:** Mise à jour vers la `v14.3.1` ([#2765](https://github.com/assurance-maladie-digital/design-system/pull/2765))
+
 ## v2.9.0-beta.3
 
 **Version publiée le 11/04/2023.**
@@ -70,8 +132,8 @@ Cette version comporte l'ajout du thème *Compte Ameli* et de la prop `sticky` a
 ### Documentation
 
 - 🐛 **Corrections de bugs**
-  - **docs:** Correction des attributs `scoped` manquants ([#2657](https://github.com/assurance-maladie-digital/design-system/pull/2657)) ([c0a18f](https://github.com/assurance-maladie-digital/design-system/commit/c0a18fdde58a73453185ade490f2fe35273b189e))
-  - **docs:** Correction des warnings PostCSS ([#2642](https://github.com/assurance-maladie-digital/design-system/pull/2642)) ([daf6ea9](https://github.com/assurance-maladie-digital/design-system/commit/daf6ea9f2914338e605c4d616be973c907ed39b7))
+  - **global:** Correction des attributs `scoped` manquants ([#2657](https://github.com/assurance-maladie-digital/design-system/pull/2657)) ([c0a18f](https://github.com/assurance-maladie-digital/design-system/commit/c0a18fdde58a73453185ade490f2fe35273b189e))
+  - **global:** Correction des warnings PostCSS ([#2642](https://github.com/assurance-maladie-digital/design-system/pull/2642)) ([daf6ea9](https://github.com/assurance-maladie-digital/design-system/commit/daf6ea9f2914338e605c4d616be973c907ed39b7))
 
 - 📝 **Documentation**
   - **FooterBar:** Ajout d'un exemple d'utilisation des slots de contenu ([#2631](https://github.com/assurance-maladie-digital/design-system/pull/2631)) ([baeb4b1](https://github.com/assurance-maladie-digital/design-system/commit/baeb4b1492220012d4bc598839e312cd0c6c691e))
