@@ -5,16 +5,16 @@ import { customizable } from './shared/mixins/customizable';
 const themeProp = {
 	name: 'theme',
 	type: 'string',
-	required: true,
+	default: `'default'`,
 	description: 'Le thème de l’en-tête.',
-	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'risque-pro' | 'compte-entreprise'`
+	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'compte-ameli' | 'risque-pro' | 'compte-entreprise'`
 };
 
 const mobileVersionProp = {
 	name: 'mobile-version',
 	type: 'boolean',
 	default: false,
-	description: 'Affiche le header en version en version pour les écrans mobiles.<br>Par défaut, ce mode est activé à partir du [breakpoint `sm`](https://vuetifyjs.com/en/features/breakpoints/).'
+	description: 'Affiche le header en version pour les écrans mobiles.<br>Par défaut, ce mode est activé à partir du [breakpoint `sm`](https://vuetifyjs.com/en/features/breakpoints/).'
 };
 
 const innerWidthProp = {
@@ -59,7 +59,7 @@ const homeLinkProp = {
 
 const homeHrefProp = {
 	name: 'home-href',
-	type: 'String',
+	type: 'string',
 	default: 'undefined',
 	description: 'Un lien externe à l’application vers la page d’accueil.'
 };
@@ -96,16 +96,28 @@ export const api: Api = {
 				description: 'Affiche le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles.'
 			},
 			mobileVersionProp,
+			{
+				name: 'sticky',
+				type: 'boolean',
+				default: false,
+				description: 'Fixe le header en haut de la page et réduit sa hauteur lors du défilement.'
+			},
+			{
+				name: 'target',
+				type: 'string',
+				default: 'undefined',
+				description: 'L’id de l’élément à sélectionner pour la gestion du défilement en mode *sticky*.<br>Par défaut, l’élément `window` est utilisé.'
+			},
 			...customizable(`{
 	appBar: 'VAppBar',
 	contentSheet: 'VSheet',
 	innerSheet: 'VSheet',
 	spacer: 'VSpacer',
-	brandSection: 'HeaderBrandSection',
+	brandSection: 'LogoBrandSection',
 	menuBtn: 'HeaderMenuBtn',
 	navigationBar: 'HeaderNavigationBar',
 	navigationDrawer: 'HeaderNavigationDrawer',
-}`, ', ainsi que des composants `HeaderBrandSection`, `HeaderMenuBtn`, `HeaderNavigationBar` et `HeaderNavigationDrawer`')
+}`, ', ainsi que des composants `LogoBrandSection`, `HeaderMenuBtn`, `HeaderNavigationBar` et `HeaderNavigationDrawer`')
 		],
 		slots: [
 			{
@@ -139,22 +151,6 @@ export const api: Api = {
 			{
 				name: 'navigation-drawer-content',
 				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
-			}
-		]
-	},
-	HeaderBrandSection: {
-		props: [
-			themeProp,
-			titleProp,
-			subTitleProp,
-			mobileVersionProp,
-			homeLinkProp,
-			homeHrefProp
-		],
-		slots: [
-			{
-				name: 'default',
-				description: 'Slot pour remplacer le contenu et afficher une marque partenaire.'
 			}
 		]
 	},

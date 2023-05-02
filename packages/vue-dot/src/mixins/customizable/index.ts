@@ -6,7 +6,6 @@ import type { Customizable, Options } from './types';
 
 /**
  * Mixin that merge default options with options passed as props
- *
  * @example
  * Usage in your component:
  * mixins: [ customizable({ btn: { color: 'primary' } }) ]

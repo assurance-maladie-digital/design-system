@@ -1,7 +1,7 @@
 <template>
 	<label
 		v-ripple="!noRipple"
-		class="vd-file-upload d-block pa-4"
+		:style="widthStyles"
 		:class="[
 			{
 				'dragover': dragover,
@@ -9,7 +9,7 @@
 			},
 			colors.label
 		]"
-		:style="widthStyles"
+		class="vd-file-upload d-block pa-4"
 		@dragover.prevent="dragover = true"
 		@dragleave="dragover = false"
 		@drop.prevent="dropHandler"
@@ -33,8 +33,8 @@
 				</slot>
 
 				<span
-					class="mt-1 font-weight-medium"
 					:class="colors.multiple"
+					class="mt-1 font-weight-medium"
 				>
 					<slot
 						name="action-text"
@@ -45,20 +45,15 @@
 				</span>
 
 				<span
-					class="mb-2"
 					:class="colors.info"
+					class="mb-2"
 				>
 					<slot name="or">
 						{{ locales.or }}
 					</slot>
 				</span>
 
-				<span
-					class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2"
-					:class="{ 'primary lighten-1': hover }"
-					@mouseover="hover = true"
-					@mouseleave="hover = false"
-				>
+				<span class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 					<slot name="button-text">
 						{{ locales.chooseFile }}
 					</slot>
@@ -73,7 +68,7 @@
 						:max-size="maxSizeReadable"
 						:extensions="extensions"
 					>
-						{{ locales.infoText(maxSizeReadable, extensions) }}
+						{{ locales.infoText(maxSizeReadable, extensions, allowedExtensions.length) }}
 					</slot>
 				</span>
 			</span>
@@ -145,8 +140,6 @@
 		locales = locales;
 
 		uploadIcon = mdiCloudUpload;
-
-		hover = false;
 
 		get colors(): IndexedObject {
 			return {

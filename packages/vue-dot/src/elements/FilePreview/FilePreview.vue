@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-file-preview">
+	<div
+		v-if="file"
+		class="vd-file-preview"
+	>
 		<object
 			v-if="isPdf"
 			:data="fileURL"
@@ -7,18 +10,23 @@
 			type="application/pdf"
 			@load="revokeFileURL"
 		>
-			<p>{{ locales.previewNotAvailable }}</p>
+			<p class="mb-0">
+				{{ locales.previewNotAvailable }}
+			</p>
 		</object>
 
 		<img
 			v-else-if="isImage"
 			:src="fileURL"
+			:alt="filePreviewOptions.image.alt || ''"
 			v-bind="filePreviewOptions.image"
 			@load="revokeFileURL"
 		>
 
 		<slot v-else>
-			<p>{{ locales.previewTypeNotAvailable }}</p>
+			<p class="mb-0">
+				{{ locales.previewTypeNotAvailable }}
+			</p>
 		</slot>
 	</div>
 </template>
@@ -39,12 +47,16 @@
 			file: {
 				// File is not a valid prop type,
 				// use null to allow any type & provide custom validation
-				type: null as unknown as PropType<File>,
-				required: true,
+				type: null as unknown as PropType<File | Blob>,
+				default: null,
 				/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
-				validator(val): boolean {
-					return val !== null && typeof val === 'object';
+				validator(value): boolean {
+					return typeof value === 'object';
 				}
+			},
+			options: {
+				type: Object as PropType<Options>,
+				default: () => ({})
 			}
 		}
 	});
@@ -66,7 +78,7 @@
 		fileURL = '';
 
 		get filePreviewOptions(): Options {
-			return deepMerge<Options>(config, this.$attrs);
+			return deepMerge<Options>(config, this.options);
 		}
 
 		get isPdf(): boolean {
@@ -78,6 +90,10 @@
 		}
 
 		getFileURL(): void {
+			if (!this.file) {
+				return;
+			}
+
 			this.fileURL = window.URL.createObjectURL(this.file);
 		}
 

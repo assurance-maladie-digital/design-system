@@ -73,6 +73,13 @@ export const drawerItems: DrawerItem[] = [
 		icon: mdiViewDashboard,
 		items: [
 			{
+				title: 'Vue d’ensemble',
+				to: '/composants/vue-ensemble'
+			},
+			{
+				divider: true
+			},
+			{
 				title: 'Structure',
 				items: [
 					{
@@ -108,6 +115,14 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ExternalLinks',
 						to: '/composants/navigation/external-links'
+					},
+					{
+						title: 'ContextualMenu',
+						to: '/composants/navigation/contextual-menu'
+					},
+					{
+						title: 'SkipLink',
+						to: '/composants/navigation/skip-link'
 					}
 				]
 			},
@@ -117,6 +132,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'BackBtn',
 						to: '/composants/boutons/back-btn'
+					},
+					{
+						title: 'BackToTopBtn',
+						to: '/composants/boutons/back-to-top-btn'
 					},
 					{
 						title: 'CopyBtn',
@@ -204,6 +223,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'DataListGroup',
 						to: '/composants/donnees/data-list-group'
+					},
+					{
+						title: 'FilePreview',
+						to: '/composants/donnees/file-preview'
 					}
 				]
 			},
@@ -225,6 +248,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'HeaderLoading',
 						to: '/composants/feedback/header-loading'
+					},
+					{
+						title: 'RatingPicker',
+						to: '/composants/feedback/rating-picker'
 					}
 				]
 			}
@@ -235,12 +262,27 @@ export const drawerItems: DrawerItem[] = [
 		icon: mdiBookOpenPageVariantOutline,
 		items: [
 			{
+				title: 'Vue d’ensemble',
+				to: '/templates/vue-ensemble'
+			},
+			{
+				divider: true
+			},
+			{
 				title: 'CookiesPage',
 				to: '/templates/cookies-page'
 			},
 			{
 				title: 'ErrorPage',
 				to: '/templates/error-page'
+			},
+			{
+				title: 'NotFoundPage',
+				to: '/templates/not-found-page'
+			},
+			{
+				title: 'MaintenancePage',
+				to: '/templates/maintenance-page'
 			}
 		]
 	},

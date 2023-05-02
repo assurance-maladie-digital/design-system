@@ -4,13 +4,13 @@
 			<VCol
 				v-for="(member, index) in team"
 				:key="index"
-				cols="12"
-				sm="6"
+				cols="auto"
+				sm="4"
 				md="4"
 				class="d-flex flex-column"
 			>
 				<img
-					:src="require('../../assets/img/team/' + member.img)"
+					:src="require('../../assets/images/team/' + member.img)"
 					class="doc-img-team mb-4"
 				>
 
@@ -64,29 +64,24 @@
 	export default class DocHomePageTeam extends Vue {
 		team = [
 			{
-				name: 'Julien Baylac',
-				role: 'Développeur Front',
-				img: 'julien_b.jpg'
-			},
-			{
 				name: 'Dr Valentin Becquet',
 				role: 'UX/UI Designer',
 				img: 'valentin_b.jpg'
 			},
 			{
-				name: 'Dylan Broussard',
-				role: 'Tech Lead Front',
-				img: 'dylan_b.jpg'
-			},
-			{
-				name: 'François Coué',
-				role: 'Product Designer',
-				img: 'francois_c.jpg'
+				name: 'Melissa Rolas',
+				role: 'UX/UI Designer',
+				img: 'person.svg'
 			},
 			{
 				name: 'Edouard Le Gall',
 				role: 'UX/UI Designer',
 				img: 'person.svg'
+			},
+			{
+				name: 'Dylan Broussard',
+				role: 'Tech Lead Front',
+				img: 'dylan_b.jpg'
 			},
 			{
 				name: 'Christophe Gaon',
@@ -97,15 +92,16 @@
 				name: 'David Fyon',
 				role: 'Développeur Front',
 				img: 'person.svg'
-			},
-			{
-				name: 'Melissa Rolas',
-				role: 'UX/UI Designer',
-				img: 'person.svg'
 			}
 		];
 
-		oldTeamMembers: Contributor[] = [];
+		oldTeamMembers: Contributor[] = [
+			{
+				id: '64596909',
+				login: 'francoiscoue',
+				html_url: 'https://github.com/francoiscoue'
+			}
+		];
 
 		@Fetch
 		async fetch(): Promise<void> {
@@ -126,12 +122,12 @@
 </script>
 
 <style lang="scss" scoped>
-	ul {
-		list-style: none;
-	}
-
 	.doc-img-team {
 		height: 160px;
 		width: 160px;
+	}
+
+	ul {
+		list-style: none;
 	}
 </style>

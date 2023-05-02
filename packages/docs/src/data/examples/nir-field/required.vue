@@ -3,7 +3,6 @@
 		v-model="nir"
 		required
 		outlined
-		class="vd-form-input"
 	/>
 </template>
 

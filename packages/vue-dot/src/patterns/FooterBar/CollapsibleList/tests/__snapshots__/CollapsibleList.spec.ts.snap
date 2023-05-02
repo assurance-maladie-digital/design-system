@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollapsibleList renders correctly 1`] = `
+<div class="vd-collapse-list">
+  <h4 class="text-subtitle-1 font-weight-bold mb-3">
+    Santé
+  </h4>
+  <ul class="pl-0">
+    <li class="mb-2"><a href="https://www.ameli.fr/assure/sante/mon-espace-sante" class="text-body-2 text-decoration-none text--primary">
+        Mon espace santé
+      </a></li>
+    <li class=""><a href="https://www.ameli.fr/assure/sante/bons-gestes" class="text-body-2 text-decoration-none text--primary">
+        Accomplir les bons gestes
+      </a></li>
+  </ul>
+</div>
+`;

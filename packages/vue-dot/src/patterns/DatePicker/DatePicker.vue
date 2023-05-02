@@ -23,7 +23,7 @@
 				@keydown.enter.prevent="saveFromTextField"
 				@input="errorMessages = null"
 				@change="dateFormatted = $event"
-				v-on="$listeners"
+				v-on="listeners"
 			>
 				<template #prepend>
 					<VBtn
@@ -203,6 +203,14 @@
 			}
 
 			return textFieldClasses;
+		}
+
+		/* eslint-disable @typescript-eslint/ban-types */
+		get listeners(): Record<string, Function | Function[]> {
+			// Remove 'change' event to avoid event duplication
+			delete this.$listeners.change;
+
+			return this.$listeners;
 		}
 
 		textFieldClicked(): void {

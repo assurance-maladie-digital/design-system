@@ -1,27 +1,84 @@
 <template>
-	<VTextField
-		v-facade="mask"
-		v-bind="textFieldOptions"
-		:value="computedValue"
-		:rules="rules"
-		:counter="counter"
-		:counter-value="noSpacesCounter"
-		:label="locales.label"
-		:hint="hint"
-		@input.native="setInternalValue"
-		@change="emitChangeEvent"
-	/>
+	<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
+		<VTextField
+			ref="number"
+			v-facade="numberMask"
+			v-bind="textFieldOptions"
+			:value="computedNumberValue"
+			:label="locales.numberLabel"
+			:hint="locales.numberHint"
+			:rules="numberRules"
+			:success="numberFilled"
+			class="vd-number-field flex-grow-0 mx-1 mx-sm-2"
+			@keydown="focusKeyField"
+			@input.native="setNumberValue"
+			@change="emitChangeEvent"
+		>
+			<template #append>
+				<VIcon
+					v-if="numberFilled"
+					v-bind="options.icon"
+				>
+					{{ checkIcon }}
+				</VIcon>
+			</template>
+		</VTextField>
+
+		<VTextField
+			v-if="!isSingleField"
+			ref="key"
+			v-facade="keyMask"
+			v-bind="textFieldOptions"
+			:value="keyValue"
+			:label="locales.keyLabel"
+			:hint="locales.keyHint"
+			:rules="keyRules"
+			:success="keyFilled"
+			class="vd-key-field flex-grow-0 mx-1 mx-sm-2"
+			@keyup.delete="focusNumberField"
+			@input.native="setKeyValue"
+			@change="emitChangeEvent"
+		>
+			<template #append>
+				<VIcon
+					v-if="keyFilled"
+					v-bind="options.icon"
+				>
+					{{ checkIcon }}
+				</VIcon>
+			</template>
+		</VTextField>
+
+		<VTooltip
+			v-if="tooltip"
+			v-bind="options.tooltip"
+		>
+			<template #activator="{ on, attrs }">
+				<VIcon
+					v-bind="attrs"
+					class="vd-tooltip-icon mt-4 ml-0 ml-sm-2"
+					v-on="on"
+				>
+					{{ infoIcon }}
+				</VIcon>
+			</template>
+
+			<slot name="tooltip">
+				{{ tooltip }}
+			</slot>
+		</VTooltip>
+	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { InputFacadeEvent } from '../../types';
+	import { InputFacadeEvent, Refs } from '../../types';
 
-	import { Options } from '../../mixins/customizable';
+	import { customizable, Options } from '../../mixins/customizable';
 
 	import { required } from '../../rules/required';
 	import { exactLength } from '../../rules/exactLength';
@@ -29,7 +86,17 @@
 
 	import { formatNir } from '../../functions/formatNir';
 
+	import { mdiCheck, mdiInformationOutline } from '@mdi/js';
+
 	import deepMerge from 'deepmerge';
+
+	enum FieldTypesEnum {
+		SINGLE = 13,
+		DOUBLE = 15
+	}
+
+	const NUMBER_LENGTH = 13;
+	const KEY_LENGTH = 2;
 
 	const Props = Vue.extend({
 		props: {
@@ -38,79 +105,182 @@
 				default: null
 			},
 			nirLength: {
-				type: Number,
-				default: 15,
+				type: Number as PropType<FieldTypesEnum>,
+				default: FieldTypesEnum.DOUBLE,
 				validator(value): boolean {
-					return value === 15 || value === 13;
+					return value === FieldTypesEnum.SINGLE || value === FieldTypesEnum.DOUBLE;
 				}
 			},
 			required: {
 				type: Boolean,
 				default: false
+			},
+			tooltip: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component({
+	@Component<NirField>({
+		inheritAttrs: false,
 		model: {
 			prop: 'value',
 			event: 'change'
 		},
-		inheritAttrs: false
+		watch: {
+			value: {
+				handler(value: string | null) {
+					if (!value) {
+						return;
+					}
+
+					if (this.value.length >= FieldTypesEnum.SINGLE) {
+						this.numberValue = value;
+					}
+
+					if (this.value.length === FieldTypesEnum.DOUBLE) {
+						this.numberValue = value.slice(0, -KEY_LENGTH);
+						this.keyValue = value.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH);
+					}
+				},
+				immediate: true
+			}
+		}
 	})
 	export default class NirField extends MixinsDeclaration {
+		$refs!: Refs<{
+			number: HTMLElement;
+			key: HTMLElement;
+		}>;
+
 		locales = locales;
 
-		internalValue: string | null = null;
+		checkIcon = mdiCheck;
+		infoIcon = mdiInformationOutline;
 
-		counter = this.nirLength;
+		numberValue: string | null = null;
+		keyValue: string | null = null;
+
+		numberMask = '# ## ## #X ### ###';
+		keyMask = '##';
 
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
 
-		get mask(): string {
-			const mask = '# ## ## #X ### ### ##';
-
-			if (this.nirLength === 13) {
-				return mask.slice(0, -3);
-			}
-
-			return mask;
+		get numberFilled(): boolean {
+			return this.numberValue?.length === NUMBER_LENGTH;
 		}
 
-		get rules(): ValidationRule[] {
-			const rules = [];
+		get numberRules(): ValidationRule[] {
+			const rulesNumber = [];
 
 			if (this.required) {
-				rules.push(required);
+				rulesNumber.push(required);
 			}
 
-			rules.push(exactLength(this.nirLength, true));
+			rulesNumber.push(exactLength(NUMBER_LENGTH, true));
 
-			return rules;
+			return rulesNumber;
 		}
 
-		get computedValue(): string | null {
-			return this.value ? formatNir(this.value) : null;
+		setNumberValue(event: InputFacadeEvent): void {
+			this.numberValue = event.target?.unmaskedValue ?? null;
 		}
 
-		get hint(): string {
-			return locales.hint(this.nirLength);
+		get keyFilled(): boolean {
+			return this.keyValue?.length === KEY_LENGTH;
 		}
 
-		noSpacesCounter(value?: string | undefined): number {
-			return value?.replace(/\s/g, '').length || 0;
+		get keyRules(): ValidationRule[] {
+			const rulesKey = [];
+
+			if (this.required) {
+				rulesKey.push(required);
+			}
+
+			rulesKey.push(exactLength(KEY_LENGTH, true));
+
+			return rulesKey;
 		}
 
-		setInternalValue(event: InputFacadeEvent): void {
-			this.internalValue = event.target?.unmaskedValue ?? null;
+		setKeyValue(event: InputFacadeEvent): void {
+			this.keyValue = event.target?.unmaskedValue ?? null;
+		}
+
+		get computedNumberValue(): string | null {
+			return this.numberValue ? formatNir(this.numberValue) : null;
+		}
+
+		get internalValue(): string | null {
+			if (this.isSingleField && this.numberFilled) {
+				return this.numberValue;
+			}
+
+			if (!this.numberFilled || !this.keyFilled) {
+				return null;
+			}
+
+			return this.numberValue as string + this.keyValue as string;
+		}
+
+		get isSingleField(): boolean {
+			return this.nirLength === FieldTypesEnum.SINGLE;
+		}
+
+		focusKeyField({ key, altKey, ctrlKey, metaKey, shiftKey }: KeyboardEvent): void {
+			const isSingleField = this.isSingleField;
+			const notFilled = !this.numberFilled;
+			// Don't move focus for combo (eg. Ctrl + A)
+			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey;
+			// Don't move focus for other keys (eg. ArrowRight)
+			const isNotSingleAlphaNumChar = !/^[a-zA-Z0-9| ]$/.test(key);
+			// Don't move focus is content is selected to allow overwrite
+			const isContentSelected = document.getSelection()?.toString() === this.computedNumberValue;
+
+			const shouldNotFocus = isSingleField || notFilled || keyHasModifier || isNotSingleAlphaNumChar || isContentSelected;
+
+			if (shouldNotFocus) {
+				return;
+			}
+
+			this.$refs.key.focus();
+		}
+
+		focusNumberField(): void {
+			if (this.keyValue?.length !== 0) {
+				return;
+			}
+
+			this.$refs.number.focus();
 		}
 
 		emitChangeEvent(): void {
+			if (!this.internalValue) {
+				return;
+			}
+
 			this.$emit('change', this.internalValue);
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-number-field {
+		width: 296px;
+	}
+
+	.vd-key-field {
+		width: 84px;
+	}
+
+	// Don't allow resize for these elements
+	.vd-nir-field :deep(.v-input__append-inner),
+	.vd-key-field,
+	.vd-tooltip-icon {
+		flex: none;
+	}
+</style>

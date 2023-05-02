@@ -11,6 +11,17 @@ export const api: Api = {
 				example: `'non-compliant' | 'partially-compliant' | 'fully-compliant'`
 			},
 			{
+				name: 'link-items',
+				type: 'LinkItem[]',
+				default: null,
+				description: 'Les liens de navigation à afficher dans le pied de page.',
+				example: `{
+	text: string;
+	to?: RawLocation;
+	href?: string;
+}[]`
+			},
+			{
 				name: 'sitemap-route',
 				type: 'RawLocation',
 				default: `{ name: 'sitemap' }`,
@@ -21,6 +32,12 @@ export const api: Api = {
 				type: 'RawLocation',
 				default: `{ name: 'cgu' }`,
 				description: 'La valeur de la prop `to` du lien vers les *Conditions générales d’utilisation*.'
+			},
+			{
+				name: 'cookies-route',
+				type: 'RawLocation',
+				default: `{ name: 'cookies' }`,
+				description: 'La valeur de la prop `to` du lien vers la *Gestion des cookies*.'
 			},
 			{
 				name: 'legal-notice-route',
@@ -45,6 +62,12 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Masque le lien vers les *Conditions générales d’utilisation*.'
+			},
+			{
+				name: 'hide-cookies-link',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le lien vers la *Gestion des cookies*.'
 			},
 			{
 				name: 'hide-legal-notice-link',
@@ -96,9 +119,14 @@ export const api: Api = {
 	spacer: 'VSpacer',
 	goTopBtn: 'VBtn',
 	goTopBtnIcon: 'VIcon',
-	divider: 'VDivider',
-	routerLink: 'RouterLink'
+	divider: 'VDivider'
 }`
+			},
+			{
+				name: 'dark',
+				type: 'boolean',
+				default: false,
+				description: 'Active le mode sombre.'
 			}
 		],
 		slots: [
@@ -124,13 +152,33 @@ export const api: Api = {
 			}
 		]
 	},
+	CollapsibleList: {
+		props: [
+			{
+				name: 'list-title',
+				type: 'string',
+				default: null,
+				description: 'Le titre de la liste.'
+			},
+			{
+				name: 'items',
+				type: 'ListItem[]',
+				default: null,
+				description: 'Les éléments de la liste.',
+				example: `{
+	text: string;
+	href: string;
+}[]`
+			}
+		]
+	},
 	SocialMediaLinks: {
 		props: [
 			{
 				name: 'links',
 				type: 'SocialMediaLink[]',
-				description: 'Liste des réseaux sociaux.',
 				default: null,
+				description: 'Liste des réseaux sociaux.',
 				example: `{
 	icon: string;
 	href: string;

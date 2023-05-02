@@ -5,18 +5,19 @@
 			...$attrs
 		}"
 		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+		role="contentinfo"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
 		<div
 			v-if="extendedMode"
-			class="d-flex align-center mb-6"
+			class="d-flex align-start align-sm-center mb-6"
 		>
 			<div class="d-flex flex-grow-1 flex-column flex-sm-row">
 				<slot name="logo">
 					<Logo
 						v-if="!hideLogo"
 						:size="logoSize"
-						class="mb-2 mb-sm-0"
+						:class="{ 'mb-2 mb-sm-0': !hideSocialMediaLinks }"
 					/>
 				</slot>
 
@@ -33,8 +34,8 @@
 
 			<VBtn
 				v-bind="options.goTopBtn"
-				:aria-label="locales.goTopBtn"
-				@click="$vuetify.goTo(0, 0)"
+				:aria-label="locales.goTopBtnLabel"
+				@click="scrollToTop"
 			>
 				<VIcon v-bind="options.goTopBtnIcon">
 					{{ arrowTopIcon }}
@@ -45,6 +46,7 @@
 		<VDivider
 			v-if="extendedMode"
 			v-bind="options.divider"
+			class="mb-3"
 		/>
 
 		<slot />
@@ -52,7 +54,7 @@
 		<VDivider
 			v-if="extendedMode"
 			v-bind="options.divider"
-			class="mb-6"
+			class="mt-3 mb-6"
 		/>
 
 		<div
@@ -61,37 +63,16 @@
 		>
 			<slot name="prepend" />
 
-			<RouterLink
-				v-if="!hideSitemapLink"
-				v-bind="options.routerLink"
-				:to="sitemapRoute"
+			<component
+				:is="getLinkComponent(item)"
+				v-for="(item, index) in footerLinksMapping"
+				:key="index"
+				:href="item.href"
+				:to="item.to"
+				class="text--primary my-3 mx-4"
 			>
-				{{ locales.sitemapLabel }}
-			</RouterLink>
-
-			<RouterLink
-				v-if="!hideCguLink"
-				v-bind="options.routerLink"
-				:to="cguRoute"
-			>
-				{{ locales.cguLabel }}
-			</RouterLink>
-
-			<RouterLink
-				v-if="!hideLegalNoticeLink"
-				v-bind="options.routerLink"
-				:to="legalNoticeRoute"
-			>
-				{{ locales.legalNoticeLabel }}
-			</RouterLink>
-
-			<RouterLink
-				v-if="!hideA11yLink && a11yComplianceLabel"
-				v-bind="options.routerLink"
-				:to="a11yStatementRoute"
-			>
-				{{ a11yComplianceLabel }}
-			</RouterLink>
+				{{ item.text }}
+			</component>
 
 			<p
 				v-if="version"
@@ -118,7 +99,8 @@
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { links } from './links';
+	import { LinkItem } from './types';
+	import { defaultSocialMediaLinks } from './defaultSocialMediaLinks';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
 
 	import { propValidator } from '../../helpers/propValidator';
@@ -134,6 +116,10 @@
 				default: A11yComplianceEnum.NON_COMPLIANT,
 				validator: (value: A11yComplianceEnum) => propValidator('a11y-compliance', A11Y_COMPLIANCE_ENUM_VALUES, value)
 			},
+			linkItems: {
+				type: [Array] as PropType<LinkItem[]>,
+				default: null
+			},
 			sitemapRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'sitemap' })
@@ -141,6 +127,10 @@
 			cguRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cgu' })
+			},
+			cookiesRoute: {
+				type: [Array, Object, String] as PropType<RawLocation>,
+				default: () => ({ name: 'cookies' })
 			},
 			legalNoticeRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
@@ -155,6 +145,10 @@
 				default: false
 			},
 			hideCguLink: {
+				type: Boolean,
+				default: false
+			},
+			hideCookiesLink: {
 				type: Boolean,
 				default: false
 			},
@@ -180,7 +174,7 @@
 			},
 			socialMediaLinks: {
 				type: Array as PropType<SocialMediaLink[]>,
-				default: () => links
+				default: () => defaultSocialMediaLinks
 			}
 		}
 	});
@@ -190,6 +184,7 @@
 	@Component({
 		inheritAttrs: false,
 		components: {
+			FooterBar,
 			SocialMediaLinks
 		}
 	})
@@ -198,12 +193,8 @@
 
 		arrowTopIcon = mdiArrowUp;
 
-		get a11yComplianceLabel(): string | null {
+		get a11yComplianceLabel(): string {
 			const complianceLabel = locales[this.a11yCompliance];
-
-			if (!complianceLabel) {
-				return null;
-			}
 
 			return locales.a11yLabel(complianceLabel);
 		}
@@ -215,13 +206,79 @@
 		get logoSize(): LogoSizeEnum {
 			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
 		}
+
+		get footerLinksMapping(): LinkItem[] {
+			if (this.linkItems) {
+				return this.linkItems;
+			}
+
+			const linksMapping = [
+				{
+					text: locales.sitemapLabel,
+					to: this.sitemapRoute,
+					hidden: this.hideSitemapLink
+				},
+				{
+					text: locales.cguLabel,
+					to: this.cguRoute,
+					hidden: this.hideCguLink
+				},
+				{
+					text: locales.cookiesLabel,
+					to: this.cookiesRoute,
+					hidden: this.hideCguLink
+				},
+				{
+					text: locales.legalNoticeLabel,
+					to: this.legalNoticeRoute,
+					hidden: this.hideLegalNoticeLink
+				},
+				{
+					text: this.a11yComplianceLabel,
+					to: this.a11yStatementRoute,
+					hidden: this.hideA11yLink
+				}
+			];
+
+			return linksMapping.filter((item) => !item.hidden);
+		}
+
+		getLinkComponent(item: LinkItem): string {
+			return item.href ? 'a' : 'RouterLink';
+		}
+
+		scrollToTop(): void {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
+	$white: #fff;
+
 	// Use deep selector to style user content as well
+	.vd-footer-bar.theme--dark :deep() {
+		background-color: $vd-grey-darken-20 !important;
+
+		.vd-footer-bar-links a {
+			color: $white !important;
+		}
+
+		p,
+		.primary--text {
+			color: rgba($white, .6) !important;
+		}
+
+		svg {
+			fill: $white !important;
+		}
+	}
+
 	.vd-footer-bar-links :deep() {
 		a {
 			transition: .15s;

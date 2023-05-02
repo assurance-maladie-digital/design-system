@@ -1,5 +1,6 @@
 // Import visually-hidden mixin
 @import 'vuetify/src/styles/tools/_display.sass';
+@import '@cnamts/design-tokens/dist/tokens';
 
 // Reset max-width for some elements to make them work properly
 // (due to `max-width: 100%` applied to `*` in base.css)
@@ -11,7 +12,8 @@
 .v-simple-checkbox svg,
 .v-slide-group__content,
 .v-slider__tick-label,
-.v-slider__thumb-container * {
+.v-slider__thumb-container *,
+.row {
 	max-width: none;
 }
 
@@ -48,8 +50,8 @@
 	}
 }
 
-// Fix color contrast of disabled elements
 .theme--light {
+	// Fix color contrast of disabled elements
 	&.v-label--is-disabled,
 	&.v-input--is-disabled .v-label,
 	&.v-icon.v-icon--disabled,
@@ -85,6 +87,29 @@
 			&,
 			> .v-icon {
 				color: #767676 !important;
+			}
+		}
+	}
+
+	// Fix fieldset border color
+	.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state) {
+		> .v-input__control > .v-input__slot fieldset {
+			color: rgba(0, 0, 0, .42) !important;
+		}
+	}
+
+	// Fix alerts color
+	.v-alert {
+		&.warning {
+			background-color: $vd-yellow-darken-40 !important;
+		}
+
+		&.warning--text {
+			color: $vd-yellow-darken-40 !important;
+			caret-color: $vd-yellow-darken-40 !important;
+
+			svg {
+				fill: $vd-yellow-darken-40 !important;
 			}
 		}
 	}

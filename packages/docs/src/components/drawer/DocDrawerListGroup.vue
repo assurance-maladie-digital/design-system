@@ -9,10 +9,9 @@
 	>
 		<template #activator>
 			<VListItemContent>
-				<VListItemTitle
-					v-if="item.title"
-					v-text="item.title"
-				/>
+				<VListItemTitle v-if="item.title">
+					{{ item.title }}
+				</VListItemTitle>
 			</VListItemContent>
 		</template>
 
@@ -22,8 +21,9 @@
 				:key="`heading-${index}`"
 				inset
 				class="text--primary font-weight-black text-uppercase"
-				v-text="child.title"
-			/>
+			>
+				{{ child.title }}
+			</VSubheader>
 
 			<VDivider
 				v-else-if="child.divider"
@@ -99,7 +99,8 @@
 		}
 
 		genGroupNamespace(items: DrawerItem[]): string {
-			const groupItems = items.map((item) => {
+			const filteredItems = items.filter((item) => item.items || item.to);
+			const groupItems = filteredItems.map((item) => {
 				if (item.items) {
 					return this.genGroupNamespace(item.items);
 				}
@@ -112,8 +113,8 @@
 	}
 </script>
 
-<style lang="scss">
-	.v-list-group.v-list-group--default .v-list-group__header {
+<style lang="scss" scoped>
+	.v-list-group.v-list-group--default :deep(.v-list-group__header) {
 		min-height: 32px;
 
 		> .v-list-item__icon {

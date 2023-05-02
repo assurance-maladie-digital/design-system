@@ -18,11 +18,13 @@
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
 				@mouseleave="hover = false"
+				@focusin="hover = true"
+				@focusout="hover = false"
 				v-on="on"
 			>
 				<span
 					:class="btnTextSpacing"
-					class="vd-external-links-btn-text white--text text-none"
+					class="vd-external-links-btn-text white--text"
 				>
 					{{ btnText }}
 				</span>

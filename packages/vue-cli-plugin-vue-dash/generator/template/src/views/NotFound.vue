@@ -1,12 +1,5 @@
 <template>
-	<ErrorPage
-		<% if (i18n) { %>:code="$t('views.notFound.code')"
-		:page-title="$t('views.notFound.error')"
-		:message="$t('views.notFound.message')"<% } else { %>code="404"
-		page-title="Page non trouvée"
-		message="Il semblerait qu'il y ait eu une erreur !"<% } if (cypress) { %>
-		data-cy="errorPage"<% } %>
-	/>
+	<NotFoundPage />
 </template>
 
 <script lang="ts">
@@ -15,7 +8,6 @@
 
 	import { Meta, MetaInfo } from '@/decorators';
 
-	/** 404 page */
 	@Component
 	export default class NotFound extends Vue {
 		/* istanbul ignore next */

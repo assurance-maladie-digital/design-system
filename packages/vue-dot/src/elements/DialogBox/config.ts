@@ -16,11 +16,10 @@ export const config = {
 	},
 	cancelBtn: {
 		color: 'primary',
-		class: 'text-none',
 		text: true
 	},
 	confirmBtn: {
 		color: 'primary',
-		class: 'text-none ml-4'
+		class: 'ml-4'
 	}
 };

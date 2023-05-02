@@ -1,8 +1,10 @@
 <template>
 	<VApp>
+		<SkipLink />
+
 		<DocHeader />
 
-		<VMain>
+		<VMain id="main">
 			<PageContainer
 				class="h-100"
 				spacing="pa-5 pa-sm-8 pa-md-12 pa-lg-16"
@@ -16,7 +18,7 @@
 						<h1
 							v-if="document.title && !document.hideTitle"
 							v-text="document.title"
-							class="text-h5 text-sm-h4 font-weight-bold mb-4"
+							class="text-h4 text-sm-h3 font-weight-bold mb-4"
 						/>
 
 						<div
@@ -28,7 +30,7 @@
 
 					<VDivider
 						v-if="document.divider"
-						class="mt-6 mb-6"
+						class="my-6"
 					/>
 
 					<NuxtContent :document="document" />
@@ -51,6 +53,8 @@
 	import Component from 'vue-class-component';
 
 	import { MetaInfo } from 'vue-meta';
+
+	import { NuxtError } from '@nuxt/types';
 
 	import {
 		Content,
@@ -80,7 +84,7 @@
 		document?: ContentDocument;
 
 		@AsyncData
-		async asyncData({ $content, params, error }: AsyncDataParams): Promise<PageData | void> {
+		async asyncData({ $content, params, error }: AsyncDataParams): Promise<PageData | NuxtError> {
 			const path =`/${params.pathMatch || 'index'}`;
 			const [document] = await $content({ deep: true })
 				.where({ path })

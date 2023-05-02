@@ -5,31 +5,36 @@
 				...options.appBar,
 				...$attrs
 			}"
+			ref="appBar"
+			v-scroll:[targetSelector]="onScroll"
 			:height="height"
-			class="vd-header-bar"
+			:fixed="sticky"
+			role="banner"
+			class="vd-header-bar transition-ease-in-out"
 		>
 			<VSheet
 				v-bind="options.contentSheet"
 				:height="contentSheetHeight"
 				:class="spacingClass"
-				class="vd-header-bar-content d-flex justify-center"
+				class="vd-header-bar-content d-flex justify-center transition-ease-in-out"
 			>
 				<VSheet
 					v-bind="options.innerSheet"
 					:width="innerWidth"
 				>
 					<slot name="logo">
-						<HeaderBrandSection
+						<LogoBrandSection
 							v-bind="options.brandSection"
 							:theme="theme"
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
 							:mobile-version="isMobileVersion"
+							:reduce-logo="sticky && scrolled"
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
 							<slot name="secondary-logo" />
-						</HeaderBrandSection>
+						</LogoBrandSection>
 					</slot>
 
 					<VSpacer
@@ -89,7 +94,7 @@
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import HeaderBrandSection from './HeaderBrandSection';
+	import LogoBrandSection from '../../elements/LogoBrandSection';
 	import HeaderMenuBtn from './HeaderMenuBtn';
 	import HeaderNavigationBar from './HeaderNavigationBar';
 	import HeaderNavigationDrawer from './HeaderNavigationDrawer';
@@ -102,7 +107,8 @@
 	import { propValidator } from '../../helpers/propValidator';
 
 	import { customizable } from '../../mixins/customizable';
-	import { Next } from '../../types';
+	import { Next, Refs } from '../../types';
+	import { Scroll } from 'vuetify/lib/directives';
 
 	const Props = Vue.extend({
 		props: {
@@ -142,6 +148,14 @@
 			mobileVersion: {
 				type: Boolean,
 				default: false
+			},
+			sticky: {
+				type: Boolean,
+				default: false
+			},
+			target: {
+				type: String,
+				default: undefined
 			}
 		}
 	});
@@ -150,16 +164,24 @@
 
 	@Component({
 		inheritAttrs: false,
+		directives: {
+			Scroll
+		},
 		components: {
-			HeaderBrandSection,
+			LogoBrandSection,
 			HeaderMenuBtn,
 			HeaderNavigationBar,
 			HeaderNavigationDrawer
 		}
 	})
 	export default class HeaderBar extends MixinsDeclaration {
+		$refs!: Refs<{
+			appBar: Vue;
+		}>;
+
 		drawer: boolean | null = null;
 		tab: number | null = null;
+		scrolled = false;
 
 		get isMobileVersion(): boolean {
 			if (this.mobileVersion) {
@@ -169,11 +191,27 @@
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
+		get targetSelector(): string | null {
+			if (!this.target) {
+				return null;
+			}
+
+			return `#${this.target}`;
+		}
+
 		get spacingClass(): string {
+			if (this.sticky && this.scrolled) {
+				return this.isMobileVersion ? 'px-4 py-1' : 'px-14 py-1';
+			}
+
 			return this.isMobileVersion ? 'pa-4' : 'px-14 py-7';
 		}
 
 		get contentSheetHeight(): number {
+			if (this.scrolled) {
+				return this.isMobileVersion ? 52 : 72;
+			}
+
 			return this.isMobileVersion ? 72 : 120;
 		}
 
@@ -213,6 +251,19 @@
 
 		updateDrawer(value: boolean): void {
 			this.drawer = value;
+		}
+
+		onScroll(e: MouseEvent): void {
+			if (!this.sticky) {
+				return;
+			}
+
+			const target = e.currentTarget as HTMLElement | Window;
+			const header = this.$refs.appBar.$el;
+			const headerHeight = header?.clientHeight || 0;
+			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
+
+			this.scrolled = this.sticky && scrollPosition > headerHeight;
 		}
 	}
 </script>

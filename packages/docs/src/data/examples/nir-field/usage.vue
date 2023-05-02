@@ -3,7 +3,6 @@
 		<NirField
 			v-bind="$attrs"
 			v-on="$listeners"
-			class="vd-form-input"
 		/>
 	</div>
 </template>
@@ -16,10 +15,27 @@
 		inheritAttrs: false
 	})
 	export default class NirFieldUsage extends Vue {
+		defaultProps = {
+			nirLength: 15
+		};
+
+		propsHiddenByDefault = [
+			'nirLength'
+		];
+
 		options = {
 			booleans: [
 				'required'
-			]
+			],
+			textFields: [
+				'tooltip'
+			],
+			selects: {
+				nirLength: [
+					13,
+					15
+				]
+			}
 		};
 
 		tabs = [

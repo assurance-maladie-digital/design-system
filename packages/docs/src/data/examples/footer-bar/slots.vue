@@ -1,7 +1,7 @@
 <template>
 	<FooterBar v-bind="docProps">
 		<template #logo>
-			<HeaderBrandSection theme="ameli" />
+			<LogoBrandSection theme="ameli" />
 		</template>
 
 		<template #social-media-links>
@@ -18,7 +18,7 @@
 		</template>
 
 		<template #default>
-			<p class="text--secondary my-3">
+			<p class="text--secondary mb-0">
 				Contenu supplémentaire.
 			</p>
 		</template>
@@ -35,19 +35,14 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import HeaderBrandSection from '@cnamts/vue-dot/src/patterns/HeaderBar/HeaderBrandSection';
-
 	import { mdiTwitter } from '@mdi/js';
 
-	@Component({
-		components: {
-			HeaderBrandSection
-		}
-	})
+	@Component
 	export default class FooterBarSlots extends Vue {
 		docProps = {
 			sitemapRoute: '/',
 			cguRoute: '/',
+			cookiesRoute: '/',
 			legalNoticeRoute: '/',
 			a11yStatementRoute: '/'
 		};

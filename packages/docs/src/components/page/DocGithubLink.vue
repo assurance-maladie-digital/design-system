@@ -9,7 +9,7 @@
 			:href="link"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="text-decoration-none primary--text font-weight-medium d-inline-block"
+			class="text-decoration-none primary--text d-inline-block"
 		>
 			GitHub
 

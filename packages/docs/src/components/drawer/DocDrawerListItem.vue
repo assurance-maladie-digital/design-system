@@ -11,11 +11,15 @@
 		color="primary"
 	>
 		<VListItemIcon v-if="item.icon">
-			<VIcon v-text="item.icon" />
+			<VIcon>
+				{{ item.icon }}
+			</VIcon>
 		</VListItemIcon>
 
 		<VListItemContent>
-			<VListItemTitle v-text="item.title" />
+			<VListItemTitle>
+				{{ item.title }}
+			</VListItemTitle>
 		</VListItemContent>
 	</VListItem>
 </template>
@@ -41,7 +45,7 @@
 	export default class DocDrawerListItem extends MixinsDeclaration {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.v-list-item.v-list-item.v-list-item--default {
 		min-height: 32px;
 

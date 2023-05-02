@@ -15,10 +15,20 @@ describe('NirField', () => {
 		expect(html(wrapper)).toMatchSnapshot();
 	});
 
-	it('renders correctly with 13 characters NIR', () => {
+	it('renders correctly with 13 characters', () => {
 		wrapper = mountComponent(NirField, {
 			propsData: {
 				nirLength: 13
+			}
+		}, true);
+
+		expect(html(wrapper)).toMatchSnapshot();
+	});
+
+	it('renders correctly with a tooltip', () => {
+		wrapper = mountComponent(NirField, {
+			propsData: {
+				tooltip: 'Information sur le NIR'
 			}
 		}, true);
 
