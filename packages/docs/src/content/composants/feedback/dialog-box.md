@@ -44,12 +44,6 @@ Les propriétés non définies dans la section API seront reportées directement
 
 <doc-tab-item label="Personnalisation">
 
-### Overlay
-
-Vous pouvez personnaliser l’overlay en utilisant les props `overlay-color` et `overlay-opacity`.
-
-<doc-example file="dialog-box/overlay"></doc-example>
-
 ### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans l’élément `DialogBox` en utilisant la prop `vuetify-options`.
