@@ -9,7 +9,6 @@ export function downloadFile(
 ): void {
 	/**
 	 * \ufeff = UTF-8 encoding
-	 *
 	 * @see https://stackoverflow.com/a/18925211
 	 */
 	const blobContent: BlobPart[] = utf8Bom ? ['\ufeff', content] : [content];

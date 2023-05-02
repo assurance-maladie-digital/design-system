@@ -15,11 +15,6 @@ function createTestComponent() {
 
 describe('RatingMixin', () => {
 	const label = 'Pouvez-vous nous en dire plus ?';
-	const itemLabels = [
-		'non je dis rien',
-		'faut voir',
-		'je dirais tout ce que vous voulez'
-	];
 
 	it('verifies props', () => {
 		const testComponent = createTestComponent();
