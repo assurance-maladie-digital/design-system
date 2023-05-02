@@ -21,7 +21,11 @@ description: Le template `MaintenancePage` est utilisé pour afficher une page d
 
 Vous pouvez utiliser le slot `illustration` pour modifier l’image d’illustration par défaut.
 
-<doc-example file="maintenance-page/slots"></doc-example>
+<doc-example file="maintenance-page/slot-illustration"></doc-example>
+
+Vous pouvez utiliser le slot `content` pour ajouter du contenu supplémentaire.
+
+<doc-example file="maintenance-page/slot-content"></doc-example>
 
 </doc-tab-item>
 
