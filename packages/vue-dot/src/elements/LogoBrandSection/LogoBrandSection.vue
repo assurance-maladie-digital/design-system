@@ -96,7 +96,11 @@
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
 
-	import { NuxtApp } from '@nuxt/types/app';
+	/** Define a local interface since Nuxt isn't a dependency */
+	interface MaybeNuxtInstance extends Vue {
+		/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+		$nuxt: any;
+	}
 
 	const Props = Vue.extend({
 		props: {
@@ -194,7 +198,7 @@
 		}
 
 		get isNuxt(): boolean {
-			return (this as unknown as NuxtApp).$nuxt !== undefined;
+			return (this as unknown as MaybeNuxtInstance).$nuxt !== undefined;
 		}
 
 		get logoContainerComponent(): string {
