@@ -8,6 +8,18 @@ export const api: Api = {
 				type: 'boolean',
 				description: 'Masque l’icône du bouton.',
 				default: false
+			},
+			{
+				name: 'no-padding',
+				type: 'boolean',
+				description: 'Supprime le padding horizontal du bouton.',
+				default: false
+			},
+			{
+				name: 'elevation',
+				type: 'number',
+				description: 'Élévation du bouton.',
+				default: 0
 			}
 		],
 		slots: [

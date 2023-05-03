@@ -1,17 +1,18 @@
 <template>
 	<VBtn
 		v-bind="$attrs"
-		:class="{ 'pr-1': !hideBackIcon }"
-		text
+		:text="!dark"
+		:elevation="elevation"
 		color="primary"
-		class="vd-back-btn px-0"
+		class="vd-back-btn"
+		:class="noPadding ? 'px-0' : 'px-4'"
 		v-on="$listeners"
 	>
 		<slot name="icon">
 			<VIcon
 				v-if="!hideBackIcon"
-				color="primary"
-				class="mr-1"
+				:color="dark ? 'white' : 'primary'"
+				class="ml-n1 mr-1"
 			>
 				{{ backIcon }}
 			</VIcon>
@@ -34,6 +35,18 @@
 	const Props = Vue.extend({
 		props: {
 			hideBackIcon: {
+				type: Boolean,
+				default: false
+			},
+			noPadding: {
+				type: Boolean,
+				default: false
+			},
+			elevation: {
+				type: [Number, String],
+				default: 0
+			},
+			dark: {
 				type: Boolean,
 				default: false
 			}
