@@ -230,6 +230,13 @@ export const componentList: ComponentSection[] = [
 				href: '/composants/donnees/data-list-group',
 				image: 'components/data-list-group.svg',
 				status: ComponentStatusEnum.READY
+			},
+			{
+				name: 'FileList',
+				description: 'Utilisé pour afficher une liste de fichiers.',
+				href: '/composants/donnees/file-list',
+				image: 'components/file-list.svg',
+				status: ComponentStatusEnum.READY
 			}
 		]
 	},
