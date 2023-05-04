@@ -21,24 +21,31 @@ function mockDocument(options: TSelection) {
 	document.getSelection = () => {
 		return options;
 	};
-
-	document.execCommand = () => true;
 }
 
 const txt = 'test';
+document.execCommand = jest.fn();
 
 describe('copyToClipboard', () => {
-	it('is called correctly', () => {
+	it('copies text to the clipboard', async() => {
 		mockDocument({
 			rangeCount: 0,
 			getRangeAt: () => null,
 			removeAllRanges: () => null
 		});
 
-		expect(copyToClipboard(txt)).toBeUndefined();
+		if (navigator.clipboard) {
+			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+			await copyToClipboard(txt);
+			expect(writeTextSpy).toHaveBeenCalledWith(txt);
+			expect(document.execCommand).not.toHaveBeenCalled();
+		} else {
+			await copyToClipboard(txt);
+			expect(document.execCommand).toHaveBeenCalledWith('copy');
+		}
 	});
 
-	it('is called correctly when text is already selected', () => {
+	it('does not copy when text is already selected', async() => {
 		mockDocument({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
@@ -46,12 +53,28 @@ describe('copyToClipboard', () => {
 			addRange: () => null
 		});
 
-		expect(copyToClipboard(txt)).toBeUndefined();
+		if (navigator.clipboard) {
+			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+			await copyToClipboard(txt);
+			expect(writeTextSpy).not.toHaveBeenCalled();
+			expect(document.execCommand).not.toHaveBeenCalled();
+		} else {
+			await copyToClipboard(txt);
+			expect(document.execCommand).not.toHaveBeenCalled();
+		}
 	});
 
-	it('is called correctly when getSelection is unavailable', () => {
+	it('does not copy when getSelection is unavailable', async() => {
 		document.getSelection = jest.fn(() => null);
 
-		expect(copyToClipboard(txt)).toBeUndefined();
+		if (navigator.clipboard) {
+			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+			await copyToClipboard(txt);
+			expect(writeTextSpy).not.toHaveBeenCalled();
+			expect(document.execCommand).not.toHaveBeenCalled();
+		} else {
+			await copyToClipboard(txt);
+			expect(document.execCommand).not.toHaveBeenCalled();
+		}
 	});
 });

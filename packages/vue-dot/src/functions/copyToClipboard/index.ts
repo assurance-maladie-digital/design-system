@@ -20,7 +20,21 @@ export function copyToClipboard(textToCopy: string): void {
 	}
 
 	el.select();
-	document.execCommand('copy'); // TODO: Use Clipboard API when supported
+
+	const navigatorClipboard = new Promise<void>((resolve, reject) => {
+		if (navigator.clipboard) {
+			navigator.clipboard.writeText(textToCopy)
+				.then(resolve)
+				.catch(reject);
+		} else {
+			if (document.execCommand('copy')) {
+				resolve();
+			} else {
+				reject(new Error('La copie dans le presse-papier a échoué.'));
+			}
+		}
+	});
+
 	document.body.removeChild(el);
 
 	// If a selection existed before copying
