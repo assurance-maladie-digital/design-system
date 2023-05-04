@@ -45,7 +45,7 @@ describe('copyToClipboard', () => {
 		}
 	});
 
-	it('does not copy when text is already selected', async() => {
+	it('copy txt when text is already selected', async() => {
 		mockDocument({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
@@ -56,11 +56,11 @@ describe('copyToClipboard', () => {
 		if (navigator.clipboard) {
 			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
 			await copyToClipboard(txt);
-			expect(writeTextSpy).not.toHaveBeenCalled();
+			expect(writeTextSpy).toHaveBeenCalledWith(txt);
 			expect(document.execCommand).not.toHaveBeenCalled();
 		} else {
 			await copyToClipboard(txt);
-			expect(document.execCommand).not.toHaveBeenCalled();
+			expect(document.execCommand).toHaveBeenCalledWith('copy');
 		}
 	});
 
