@@ -1,5 +1,6 @@
 export enum FileStateEnum {
 	INITIAL = 'initial',
 	SUCCESS = 'success',
-	ERROR = 'error'
+	ERROR = 'error',
+	VIEWING = 'viewing'
 }

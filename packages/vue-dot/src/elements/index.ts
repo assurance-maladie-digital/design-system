@@ -7,6 +7,7 @@ import DialogBox from './DialogBox';
 import DownloadBtn from './DownloadBtn';
 import ExternalLinks from './ExternalLinks';
 import FilePreview from './FilePreview';
+import FileList from './FileList';
 import FranceConnectBtn from './FranceConnectBtn';
 import HeaderLoading from './HeaderLoading';
 import Logo from './Logo';
@@ -25,6 +26,7 @@ export const elements = {
 	DownloadBtn,
 	ExternalLinks,
 	FilePreview,
+	FileList,
 	FranceConnectBtn,
 	HeaderLoading,
 	Logo,

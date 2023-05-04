@@ -3,7 +3,7 @@ import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
 
-import FileList from '../';
+import FileList from './.';
 
 let wrapper: Wrapper<Vue>;
 

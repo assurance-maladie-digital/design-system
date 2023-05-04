@@ -1,4 +1,4 @@
-export type FileState = 'initial' | 'success' | 'error';
+export type FileState = 'initial' | 'success' | 'error' | 'viewing';
 
 export interface FileItem {
 	id?: string;

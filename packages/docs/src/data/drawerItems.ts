@@ -227,6 +227,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'FilePreview',
 						to: '/composants/donnees/file-preview'
+					},
+					{
+						title: 'FileList',
+						to: '/composants/donnees/file-list'
 					}
 				]
 			},

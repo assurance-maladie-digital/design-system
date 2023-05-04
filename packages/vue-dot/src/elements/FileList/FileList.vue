@@ -45,7 +45,10 @@
 					</VListItemSubtitle>
 				</VListItemContent>
 
-				<VListItemAction v-bind="options.listItemAction">
+				<VListItemAction
+					v-if="!noActions"
+					v-bind="options.listItemAction"
+				>
 					<VBtn
 						v-if="file.state === FileStateEnum.INITIAL"
 						v-bind="options.uploadBtn"
@@ -75,7 +78,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
+						v-if="(showViewBtn && file.state === FileStateEnum.SUCCESS) || file.state === FileStateEnum.VIEWING"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
 						@click="$emit('view-file', file)"
@@ -89,7 +92,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state !== FileStateEnum.INITIAL"
+						v-if="file.state !== FileStateEnum.INITIAL && file.state !== FileStateEnum.VIEWING"
 						v-bind="options.deleteFileBtn"
 						@click="$emit('delete-file', index)"
 					>
@@ -123,8 +126,8 @@
 
 	import { FileStateEnum } from './FileStateEnum';
 
-	import { customizable } from '../../../mixins/customizable';
-	import { Widthable } from '../../../mixins/widthable';
+	import { customizable } from '../../mixins/customizable';
+	import { Widthable } from '../../mixins/widthable';
 
 	import {
 		mdiRefresh,
@@ -145,6 +148,10 @@
 			files: {
 				type: Array as PropType<FileItem[]>,
 				required: true
+			},
+			noActions: {
+				type: Boolean,
+				default: false
 			},
 			hideLastDivider: {
 				type: Boolean,

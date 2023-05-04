@@ -75,7 +75,7 @@
 
 	import { UploadWorkflowCore } from './mixins/uploadWorkflowCore';
 
-	import FileList from './FileList';
+	import FileList from '../../elements/FileList';
 	import FilePreview from '../../elements/FilePreview';
 
 	const Props = Vue.extend({

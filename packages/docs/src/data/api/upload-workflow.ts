@@ -108,7 +108,7 @@ export const api: Api = {
 				name: 'show-view-btn',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche le bouton *Afficher le fichier*.'
+				description: 'Affiche le bouton *Afficher le fichier* après l\'upload.'
 			},
 			{
 				name: 'hide-last-divider',
