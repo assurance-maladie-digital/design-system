@@ -11,10 +11,18 @@
 			>
 				<VListItemAvatar v-bind="options.listItemAvatar">
 					<VIcon
+						v-if="!file.type"
 						v-bind="options.listItemAvatarIcon"
-						:color="getIconInfo(file.state).color"
+						:color="getStateIcon(file.state).color"
 					>
-						{{ getIconInfo(file.state).icon }}
+						{{ getStateIcon(file.state).icon }}
+					</VIcon>
+					<VIcon
+						v-if="file.type || (file.state && file.type)"
+						v-bind="options.listItemAvatarIcon"
+						:color="getTypeIcon(file.type).color"
+					>
+						{{ getTypeIcon(file.type).icon }}
 					</VIcon>
 				</VListItemAvatar>
 
@@ -124,6 +132,7 @@
 
 	import { FileItem, IconInfo } from './types';
 	import { FileStateEnum } from './FileStateEnum';
+	import { FileTypeEnum } from './FileTypeEnum';
 
 	import { customizable } from '../../mixins/customizable';
 	import { Widthable } from '../../mixins/widthable';
@@ -135,7 +144,16 @@
 		mdiAlertCircle,
 		mdiCheckCircle,
 		mdiUpload,
-		mdiFile
+		mdiFile,
+		mdiFilePdfBox,
+		mdiFileWordBox,
+		mdiFileExcelBox,
+		mdiFilePowerpointBox,
+		mdiFileImage,
+		mdiFileVideo,
+		mdiFileMusic,
+		mdiZipBox,
+		mdiTextBox
 	} from '@mdi/js';
 
 	const Props = Vue.extend({
@@ -169,6 +187,7 @@
 	export default class FileList extends MixinsDeclaration {
 		locales = locales;
 		FileStateEnum = FileStateEnum;
+		FileTypeEnum = FileTypeEnum;
 
 		refreshIcon = mdiRefresh;
 		eyeIcon = mdiEye;
@@ -179,7 +198,7 @@
 			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';
 		}
 
-		getIconInfo(state: FileStateEnum): IconInfo {
+		getStateIcon(state: FileStateEnum): IconInfo {
 			switch (state) {
 				case FileStateEnum.ERROR: {
 					return {
@@ -192,6 +211,80 @@
 					return {
 						icon: mdiCheckCircle,
 						color: 'success'
+					};
+				}
+
+				default: {
+					return {
+						icon: mdiFile,
+						color: 'grey'
+					};
+				}
+			}
+		}
+
+		getTypeIcon(type: FileTypeEnum): IconInfo {
+			switch (type) {
+				case FileTypeEnum.PDF: {
+					return {
+						icon: mdiFilePdfBox,
+						color: 'red'
+					};
+				}
+
+				case FileTypeEnum.WORD: {
+					return {
+						icon: mdiFileWordBox,
+						color: 'blue'
+					};
+				}
+
+				case FileTypeEnum.EXCEL: {
+					return {
+						icon: mdiFileExcelBox,
+						color: 'green'
+					};
+				}
+
+				case FileTypeEnum.POWERPOINT: {
+					return {
+						icon: mdiFilePowerpointBox,
+						color: 'orange'
+					};
+				}
+
+				case FileTypeEnum.IMAGE: {
+					return {
+						icon: mdiFileImage,
+						color: 'purple'
+					};
+				}
+
+				case FileTypeEnum.VIDEO: {
+					return {
+						icon: mdiFileVideo,
+						color: 'pink'
+					};
+				}
+
+				case FileTypeEnum.AUDIO: {
+					return {
+						icon: mdiFileMusic,
+						color: 'deep-purple'
+					};
+				}
+
+				case FileTypeEnum.ARCHIVE: {
+					return {
+						icon: mdiZipBox,
+						color: 'deep-orange'
+					};
+				}
+
+				case FileTypeEnum.TEXT: {
+					return {
+						icon: mdiTextBox,
+						color: 'brown'
 					};
 				}
 
