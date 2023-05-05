@@ -44,6 +44,12 @@ export const api: Api = {
 				default: false,
 				description: 'Active la prévisualisation du fichier avant validation.'
 			},
+			{
+				name: 'hide-input',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le l\'input d\'ajout de fichier.'
+			},
 			...widthable,
 			...customizable(`{
 	fileUpload: 'FileUpload',

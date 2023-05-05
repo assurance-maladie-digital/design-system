@@ -14,6 +14,8 @@
 			v-if="showFileList"
 			v-bind="options.fileList"
 			:files="fileList"
+			:hide-last-divider="hideInput"
+			actions
 			@delete-file="resetFile"
 			@retry="uploadInline"
 			@upload="uploadInline"
@@ -24,6 +26,7 @@
 			ref="fileUpload"
 			v-bind="options.fileUpload"
 			v-model="uploadedFile"
+			:class="{'d-none': hideInput}"
 			@error="uploadError"
 			@change="fileSelected"
 		/>
@@ -83,6 +86,10 @@
 			sectionTitle: {
 				type: String,
 				default: undefined
+			},
+			hideInput: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});

@@ -47,6 +47,12 @@ Vous pouvez laisser l’utilisateur sélectionner le nombre de fichiers qu’il 
 
 <doc-example file="upload-workflow/unrestricted"></doc-example>
 
+#### Mode restreint
+
+Vous pouvez masquer l'input d'upload et laisser l'utilisateur sélectionner des fichiers dans une liste prédéfinie.
+
+<doc-example file="upload-workflow/restricted"></doc-example>
+
 #### Prévisualisation des fichiers
 
 Vous pouvez permettre à l’utilisateur de prévisualiser le fichier qu’il vient de sélectionner avant de valider en utilisant la prop `show-file-preview`.

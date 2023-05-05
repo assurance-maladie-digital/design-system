@@ -9,7 +9,7 @@
 			},
 			colors.label
 		]"
-		class="vd-file-upload d-block pa-4"
+		class="vd-file-upload pa-4"
 		@dragover.prevent="dragover = true"
 		@dragleave="dragover = false"
 		@drop.prevent="dropHandler"
@@ -171,6 +171,7 @@
 		position: relative;
 		border: 1px dashed;
 		transition: background .25s;
+		display: block;
 
 		&:hover,
 		&:focus-within,

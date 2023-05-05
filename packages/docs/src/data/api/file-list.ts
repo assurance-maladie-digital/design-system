@@ -14,7 +14,7 @@ export const api: Api = {
 				example: `{
 	id: string;
 	title: string;
-	state: FileState;
+	state?: FileState;
 	name?: string;
 	optional?: boolean;
 }`
@@ -26,10 +26,10 @@ export const api: Api = {
 				description: 'Masque la dernière ligne de séparation de la liste.'
 			},
 			{
-				name: 'no-actions',
+				name: 'actions',
 				type: 'boolean',
 				default: false,
-				description: 'Masque les boutons d’action.'
+				description: 'Affiche les boutons d’action.'
 			},
 			...widthable,
 			...customizable(`{

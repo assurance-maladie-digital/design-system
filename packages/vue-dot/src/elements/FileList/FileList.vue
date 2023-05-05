@@ -46,7 +46,7 @@
 				</VListItemContent>
 
 				<VListItemAction
-					v-if="!noActions"
+					v-if="actions"
 					v-bind="options.listItemAction"
 				>
 					<VBtn
@@ -123,7 +123,6 @@
 	import { locales } from './locales';
 
 	import { FileItem, IconInfo } from './types';
-
 	import { FileStateEnum } from './FileStateEnum';
 
 	import { customizable } from '../../mixins/customizable';
@@ -149,7 +148,7 @@
 				type: Array as PropType<FileItem[]>,
 				required: true
 			},
-			noActions: {
+			actions: {
 				type: Boolean,
 				default: false
 			},

@@ -20,22 +20,16 @@
 			{
 				id: '1',
 				title: 'file1',
-				name: 'file1.pdf',
-				state: 'initial',
 				optional: false
 			},
 			{
 				id: '2',
 				title: 'file2',
-				name: 'file2.pdf',
-				state: 'success',
 				optional: true
 			},
 			{
 				id: '3',
 				title: 'file3',
-				name: 'file3.pdf',
-				state: 'error',
 				optional: false
 			}
 		];
