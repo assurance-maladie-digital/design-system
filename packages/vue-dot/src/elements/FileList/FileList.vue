@@ -248,14 +248,14 @@
 				case FileTypeEnum.PDF: {
 					return {
 						icon: mdiFilePdfBox,
-						color: 'red'
+						color: 'brick'
 					};
 				}
 
 				case FileTypeEnum.WORD: {
 					return {
 						icon: mdiFileWordBox,
-						color: 'blue'
+						color: 'am-blue-lighten-20'
 					};
 				}
 
@@ -276,7 +276,7 @@
 				case FileTypeEnum.IMAGE: {
 					return {
 						icon: mdiFileImage,
-						color: 'purple'
+						color: 'mauve-darken-20'
 					};
 				}
 
@@ -290,21 +290,21 @@
 				case FileTypeEnum.AUDIO: {
 					return {
 						icon: mdiFileMusic,
-						color: 'deep-purple'
+						color: 'mauve'
 					};
 				}
 
 				case FileTypeEnum.ARCHIVE: {
 					return {
 						icon: mdiZipBox,
-						color: 'deep-orange'
+						color: 'orange'
 					};
 				}
 
 				case FileTypeEnum.TEXT: {
 					return {
 						icon: mdiTextBox,
-						color: 'brown'
+						color: 'orange-darken-80'
 					};
 				}
 

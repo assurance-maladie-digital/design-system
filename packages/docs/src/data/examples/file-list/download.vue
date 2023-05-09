@@ -37,7 +37,7 @@
 			}
 		];
 
-		downloadFile(file: FileItem) {
+		downloadFile(file: FileItem): void {
 			console.log(file);
 		}
 	}
