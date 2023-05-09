@@ -6,25 +6,25 @@ exports[`NumberPicker renders correctly 1`] = `
     Pourriez-vous donner une note ?
   </div>
   <div class="d-inline-block">
-    <div class="v-rating d-flex flex-wrap mx-n1 max-width-none"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 1 sur 10"><span class="v-btn__content">
+    <div class="v-rating d-flex flex-wrap mx-n1 max-width-none"><button tabindex="1" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 1 sur 10"><span class="v-btn__content">
 						1
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 2 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="2" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 2 sur 10"><span class="v-btn__content">
 						2
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 3 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="3" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 3 sur 10"><span class="v-btn__content">
 						3
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 4 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="4" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 4 sur 10"><span class="v-btn__content">
 						4
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 5 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="5" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 5 sur 10"><span class="v-btn__content">
 						5
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 6 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="6" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 6 sur 10"><span class="v-btn__content">
 						6
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 7 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="7" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 7 sur 10"><span class="v-btn__content">
 						7
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 8 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="8" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 8 sur 10"><span class="v-btn__content">
 						8
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 9 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="9" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 9 sur 10"><span class="v-btn__content">
 						9
-					</span></button><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 10 sur 10"><span class="v-btn__content">
+					</span></button><button tabindex="10" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 10 sur 10"><span class="v-btn__content">
 						10
 					</span></button></div>
     <!---->
