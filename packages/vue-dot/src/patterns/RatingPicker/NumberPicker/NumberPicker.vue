@@ -33,6 +33,7 @@
 					<template #item="{ index, click }">
 						<VBtn
 							:aria-label="locales.ariaLabel(index + 1, length)"
+							:tabindex="index + 1"
 							x-small
 							outlined
 							color="primary"

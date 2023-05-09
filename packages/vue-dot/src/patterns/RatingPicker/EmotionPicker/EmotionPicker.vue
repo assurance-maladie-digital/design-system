@@ -22,6 +22,8 @@
 					]"
 					:min-height="btnSize"
 					:min-width="btnSize"
+					:aria-label="getEmotionLabel(index)"
+					:tabindex="index + 1"
 					text
 					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
 					@click="click"
@@ -156,7 +158,7 @@
 		}
 
 		&.happy {
-			color: $vd-turquoise-darken-20 !important;
+			color: $vd-success !important;
 		}
 
 		&::before {
@@ -186,7 +188,7 @@
 			}
 
 			&.happy::before {
-				background: $vd-turquoise-lighten-90;
+				background: $vd-green-lighten-90;
 			}
 		}
 	}
