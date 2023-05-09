@@ -26,10 +26,10 @@ export const api: Api = {
 				description: 'Masque la dernière ligne de séparation de la liste.'
 			},
 			{
-				name: 'actions',
+				name: 'downloadable',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche les boutons d’action.'
+				description: 'Affiche l\'option de téléchargement des fichiers.'
 			},
 			...widthable,
 			...customizable(`{
@@ -41,9 +41,6 @@ export const api: Api = {
 	listItemTitle: 'VListItemTitle',
 	listItemSubtitle: 'VListItemSubtitle',
 	listItemAction: 'VListItemAction',
-	retryBtn: 'VBtn',
-	viewFileBtn: 'VBtn',
-	deleteFileBtn: 'VBtn',
 	downloadFileBtn: 'VBtn',
 	icon: 'VIcon',
 	divider: 'VDivider'
