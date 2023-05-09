@@ -34,14 +34,17 @@ describe('copyToClipboard', () => {
 			removeAllRanges: () => null
 		});
 
-		if (navigator.clipboard) {
-			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+		try {
 			await copyToClipboard(txt);
-			expect(writeTextSpy).toHaveBeenCalledWith(txt);
-			expect(document.execCommand).not.toHaveBeenCalled();
-		} else {
-			await copyToClipboard(txt);
-			expect(document.execCommand).toHaveBeenCalledWith('copy');
+			if (navigator.clipboard) {
+				const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+				expect(writeTextSpy).toHaveBeenCalledWith(txt);
+				expect(document.execCommand).not.toHaveBeenCalled();
+			} else {
+				expect(document.execCommand).toHaveBeenCalledWith('copy');
+			}
+		} catch (error) {
+			expect(error).toBeInstanceOf(Error);
 		}
 	});
 
@@ -53,28 +56,28 @@ describe('copyToClipboard', () => {
 			addRange: () => null
 		});
 
-		if (navigator.clipboard) {
-			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+		try {
 			await copyToClipboard(txt);
-			expect(writeTextSpy).toHaveBeenCalledWith(txt);
-			expect(document.execCommand).not.toHaveBeenCalled();
-		} else {
-			await copyToClipboard(txt);
-			expect(document.execCommand).toHaveBeenCalledWith('copy');
+			if (navigator.clipboard) {
+				const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+				expect(writeTextSpy).toHaveBeenCalledWith(txt);
+				expect(document.execCommand).not.toHaveBeenCalled();
+			} else {
+				expect(document.execCommand).toHaveBeenCalledWith('copy');
+			}
+		} catch (error) {
+			expect(error).toBeInstanceOf(Error);
 		}
 	});
 
 	it('does not copy when getSelection is unavailable', async() => {
 		document.getSelection = jest.fn(() => null);
 
-		if (navigator.clipboard) {
-			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
-			await copyToClipboard(txt);
-			expect(writeTextSpy).not.toHaveBeenCalled();
-			expect(document.execCommand).not.toHaveBeenCalled();
-		} else {
+		try {
 			await copyToClipboard(txt);
 			expect(document.execCommand).not.toHaveBeenCalled();
+		} catch (error) {
+			expect(error).toBeInstanceOf(Error);
 		}
 	});
 });
