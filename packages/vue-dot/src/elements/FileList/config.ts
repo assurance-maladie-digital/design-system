@@ -24,6 +24,9 @@ export const config = {
 	uploadBtn: {
 		icon: true
 	},
+	downloadBtn: {
+		icon: true
+	},
 	viewFileBtn: {
 		icon: true,
 		class: 'mr-2'

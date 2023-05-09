@@ -58,6 +58,20 @@
 					v-bind="options.listItemAction"
 				>
 					<VBtn
+						v-if="file.state === FileStateEnum.DOWNLOAD"
+						v-bind="options.downloadBtn"
+						:aria-label="locales.downloadFile"
+						@click="$emit('download', file.id)"
+					>
+						<VIcon
+							v-bind="options.icon"
+							:color="iconColor"
+						>
+							{{ downloadIcon }}
+						</VIcon>
+					</VBtn>
+
+					<VBtn
 						v-if="file.state === FileStateEnum.INITIAL"
 						v-bind="options.uploadBtn"
 						:aria-label="locales.uploadFile"
@@ -86,7 +100,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="(showViewBtn && file.state === FileStateEnum.SUCCESS) || file.state === FileStateEnum.VIEWING"
+						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
 						@click="$emit('view-file', file)"
@@ -100,7 +114,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state !== FileStateEnum.INITIAL && file.state !== FileStateEnum.VIEWING"
+						v-if="file.state !== FileStateEnum.INITIAL && file.state !== FileStateEnum.DOWNLOAD && file.state !== undefined"
 						v-bind="options.deleteFileBtn"
 						@click="$emit('delete-file', index)"
 					>
@@ -144,6 +158,7 @@
 		mdiAlertCircle,
 		mdiCheckCircle,
 		mdiUpload,
+		mdiDownload,
 		mdiFile,
 		mdiFilePdfBox,
 		mdiFileWordBox,
@@ -193,6 +208,7 @@
 		eyeIcon = mdiEye;
 		deleteIcon = mdiDelete;
 		uploadIcon = mdiUpload;
+		downloadIcon = mdiDownload;
 
 		get iconColor(): string {
 			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';

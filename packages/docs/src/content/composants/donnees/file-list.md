@@ -18,6 +18,12 @@ Les types supportés sont `pdf`, `word`, `excel`, `powerpoint`, `image`, `video`
 
 <doc-example file="file-list/types"></doc-example>
 
+#### Ajouter un bouton de téléchargement
+
+Vous pouvez ajouter un bouton de téléchargement en utilisant la propriété `actions` ainsi que la valeur `download` pour le state.
+
+<doc-example file="file-list/download"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">

@@ -44,6 +44,7 @@ export const api: Api = {
 	retryBtn: 'VBtn',
 	viewFileBtn: 'VBtn',
 	deleteFileBtn: 'VBtn',
+	downloadFileBtn: 'VBtn',
 	icon: 'VIcon',
 	divider: 'VDivider'
 }`)

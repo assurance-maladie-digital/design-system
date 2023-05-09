@@ -1,4 +1,4 @@
-export type FileState = 'initial' | 'success' | 'error';
+export type FileState = 'initial' | 'success' | 'error' | 'download';
 export type FileType = 'pdf' | 'word' | 'excel' | 'powerpoint' | 'image' | 'video' | 'audio' | 'archive' | 'text' | 'other';
 
 export interface FileItem {
