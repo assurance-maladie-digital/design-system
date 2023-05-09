@@ -20,7 +20,7 @@ Les types supportés sont `pdf`, `word`, `excel`, `powerpoint`, `image`, `video`
 
 #### Ajouter un bouton de téléchargement
 
-Vous pouvez ajouter un bouton de téléchargement en utilisant la propriété `actions` ainsi que la valeur `download` pour le state.
+Vous pouvez ajouter un bouton de téléchargement en utilisant la propriété `downloadable` ainsi que la valeur `download` pour la propriété `state` du fichier.
 
 <doc-example file="file-list/download"></doc-example>
 

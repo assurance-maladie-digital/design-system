@@ -3,7 +3,8 @@
 		<FileList
 			:files="fileList"
 			hide-last-divider
-			actions
+			downloadable
+			@download="downloadFile"
 		/>
 	</div>
 </template>
@@ -35,5 +36,9 @@
 				optional: true
 			}
 		];
+
+		downloadFile(file: FileItem) {
+			console.log(file);
+		}
 	}
 </script>

@@ -54,14 +54,14 @@
 				</VListItemContent>
 
 				<VListItemAction
-					v-if="actions"
+					v-if="actions || downloadable"
 					v-bind="options.listItemAction"
 				>
 					<VBtn
-						v-if="file.state === FileStateEnum.DOWNLOAD"
+						v-if="downloadable && file.state === FileStateEnum.DOWNLOAD"
 						v-bind="options.downloadBtn"
 						:aria-label="locales.downloadFile"
-						@click="$emit('download', file.id)"
+						@click="$emit('download', file)"
 					>
 						<VIcon
 							v-bind="options.icon"
@@ -182,6 +182,10 @@
 				required: true
 			},
 			actions: {
+				type: Boolean,
+				default: false
+			},
+			downloadable: {
 				type: Boolean,
 				default: false
 			},
