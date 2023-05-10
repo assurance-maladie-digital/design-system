@@ -28,11 +28,16 @@
 									'v-btn--before-active': isBeforeActive(index)
 								}"
 								icon
+								@mouseover="hoverValue = index"
+								@focus="hoverValue = index"
+								@mouseleave="hoverValue = -1"
+								@focusout="hoverValue = -1"
 							>
 								<VIcon
 									x-large
 									color="primary"
 									class="pa-1"
+									:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
 								>
 									{{ starOutlineIcon }}
 								</VIcon>
@@ -67,12 +72,16 @@
 	@Component
 	export default class StarsPicker extends MixinsDeclaration {
 		starOutlineIcon = mdiStarOutline;
+		hoverValue = -1;
 
 		isActive(index: number): boolean {
 			return index === this.value - 1;
 		}
 		isBeforeActive(index: number): boolean {
 			return index < this.value - 1;
+		}
+		isAfterHover(index: number): boolean {
+			return index > this.hoverValue;
 		}
 	}
 </script>
@@ -89,7 +98,9 @@
 			color: $vd-primary !important;
 			&--active.v-btn--disabled .v-icon {
 				color: $vd-primary !important;
+				opacity: 1 !important;
 			}
+
 			&:focus,
 			&--active {
 				color: $vd-primary !important;
@@ -99,7 +110,11 @@
 			color: $vd-primary !important;
 			.v-icon {
 				color: $vd-primary !important;
+				opacity: 1 !important;
 			}
+		}
+		.v-btn.v-btn--after-hover .v-icon {
+			opacity: 0.5;
 		}
 	}
 	.v-input--selection-controls {
