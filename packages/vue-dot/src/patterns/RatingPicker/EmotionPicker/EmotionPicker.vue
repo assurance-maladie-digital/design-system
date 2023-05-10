@@ -8,42 +8,50 @@
 			:value="value"
 			:length="length"
 			:readonly="readonly"
-			:class="{ 'justify-center': readonly && value !== -1 }"
 			large
-			class="max-width-none mx-n1 mx-sm-n2"
+			class="d-flex flex-wrap max-width-none mx-n1 mx-sm-n2"
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
-				<VBtn
-					:disabled="readonly"
-					:class="[
-						getColor(index),
-						{ 'v-btn--active': isActive(index) }
-					]"
-					:min-height="btnSize"
-					:min-width="btnSize"
-					:aria-label="getEmotionLabel(index)"
-					:tabindex="index + 1"
-					text
-					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
-					@click="click"
-				>
-					<VIcon
-						x-large
-						color="currentColor"
-						class="pa-0"
+				<VRadioGroup>
+					<VRadio
+						:key="index"
+						:value="index"
+						hide-details
+						@click="click"
 					>
-						{{ getIcon(index) }}
-					</VIcon>
+						<template #label>
+							<VBtn
+								:disabled="readonly"
+								:class="[
+									getColor(index),
+									{ 'v-btn--active': isActive(index) }
+								]"
+								:min-height="btnSize"
+								:min-width="btnSize"
+								:aria-label="getEmotionLabel(index)"
+								text
+								class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
+							>
+								<VIcon
+									x-large
+									color="currentColor"
+									class="pa-0"
+								>
+									{{ getIcon(index) }}
+								</VIcon>
 
-					<span
-						v-if="getEmotionLabel(index)"
-						:class="{ 'text--secondary': !isActive(index) }"
-						class="text-subtitle-2 mt-1"
-					>
-						{{ getEmotionLabel(index) }}
-					</span>
-				</VBtn>
+								<span
+									v-if="getEmotionLabel(index)"
+									:class="{ 'text--secondary': !isActive(index) }"
+									class="text-subtitle-2 mt-1"
+								>
+									{{ getEmotionLabel(index) }}
+								</span>
+							</VBtn>
+						</template>
+					</VRadio>
+				</VRadioGroup>
 			</template>
 		</VRating>
 	</div>
@@ -138,58 +146,73 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.v-rating .v-btn {
-		transition: 0.2s;
-		border: 1px solid transparent;
-
-		:deep(.v-btn__content) {
-			flex-direction: column;
-		}
-
-		&.sad {
-			color: $vd-orange-darken-20 !important;
-		}
-
-		&.neutral {
-			color: $vd-yellow-darken-20 !important;
-		}
-
-		&.happy {
-			color: $vd-success !important;
-		}
-
-		&::before {
-			opacity: 1;
+	.vd-emotion-picker {
+		.v-rating .v-btn {
 			transition: 0.2s;
-			background: transparent;
-		}
+			border: 1px solid transparent;
 
-		&--active.v-btn--disabled .v-icon {
-			color: currentColor !important;
-		}
-
-		&:focus,
-		&--active {
-			border-color: currentColor !important;
-		}
-
-		&:hover,
-		&:focus,
-		&--active {
-			&.sad::before {
-				background: $vd-orange-lighten-90;
+			.v-btn__content {
+				flex-direction: column;
 			}
 
-			&.neutral::before {
-				background: $vd-yellow-lighten-90;
+			&.sad {
+				color: $vd-orange-darken-20 !important;
 			}
 
-			&.happy::before {
-				background: $vd-green-lighten-90;
+			&.neutral {
+				color: $vd-yellow-darken-20 !important;
 			}
+
+			&.happy {
+				color: $vd-success !important;
+			}
+
+			&::before {
+				opacity: 1;
+				transition: 0.2s;
+				background: transparent;
+			}
+
+			&--active.v-btn--disabled .v-icon {
+				color: currentColor !important;
+			}
+
+			&:focus,
+			&--active {
+				border-color: currentColor !important;
+			}
+
+			&:hover,
+			&:focus,
+			&--active {
+				&.sad::before {
+					background: $vd-orange-lighten-90;
+				}
+
+				&.neutral::before {
+					background: $vd-yellow-lighten-90;
+				}
+
+				&.happy::before {
+					background: $vd-green-lighten-90;
+				}
+			}
+		}
+		.v-input--selection-controls {
+			margin: 0;
+			padding: 0;
+		}
+		.v-input--selection-controls__input {
+			display: none !important;
+		}
+		.v-input__slot {
+			margin-bottom: 0;
+		}
+		.v-messages {
+			display: none;
 		}
 	}
 </style>

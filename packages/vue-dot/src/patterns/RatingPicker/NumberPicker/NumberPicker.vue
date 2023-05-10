@@ -157,8 +157,18 @@
 		.theme--light.v-btn.v-btn--disabled {
 			color: $vd-primary !important;
 		}
+		.v-input--selection-controls {
+			margin: 0;
+			padding: 0;
+		}
 		.v-input--selection-controls__input {
 			display: none !important;
+		}
+		.v-input__slot {
+			margin-bottom: 0;
+		}
+		.v-messages {
+			display: none;
 		}
 	}
 </style>
