@@ -8,13 +8,37 @@
 			:value="value"
 			:length="length"
 			:readonly="readonly"
-			:ripple="false"
-			background-color="am-blue-lighten-60"
-			size="36px"
-			hover
-			class="max-width-none mx-n3"
+			class="d-flex flex-wrap max-width-none"
 			@input="emitInputEvent"
-		/>
+		>
+			<template #item="{ index, click }">
+				<VRadioGroup>
+					<VRadio
+						:key="index"
+						:value="index"
+						hide-details
+						class="pr-2"
+						@click="click"
+					>
+						<template #label>
+							<VBtn
+								:disabled="readonly"
+								:class="{ 'v-btn--active': isActive(index) }"
+								icon
+							>
+								<VIcon
+									x-large
+									color="primary"
+									class="pa-1"
+								>
+									{{ starOutlineIcon }}
+								</VIcon>
+							</VBtn>
+						</template>
+					</VRadio>
+				</VRadioGroup>
+			</template>
+		</VRating>
 	</div>
 </template>
 
@@ -23,6 +47,8 @@
 	import Component, { mixins } from 'vue-class-component';
 
 	import { RatingMixin } from '../RatingMixin';
+
+	import { mdiStar, mdiStarOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -36,13 +62,51 @@
 	const MixinsDeclaration = mixins(Props, RatingMixin);
 
 	@Component
-	export default class StarsPicker extends MixinsDeclaration {}
+	export default class StarsPicker extends MixinsDeclaration {
+		starIcon = mdiStar;
+		starOutlineIcon = mdiStarOutline;
+
+		isActive(index: number): boolean {
+			return index === this.value - 1;
+		}
+	}
 </script>
 
-<style lang="scss" scoped>
-	.v-rating :deep(button) {
-		height: auto !important;
-		width: auto !important;
-		padding: 0 8px;
+<style lang="scss">
+	@import '@cnamts/design-tokens/dist/tokens';
+
+	.vd-stars-picker {
+		.v-rating {
+			height: auto !important;
+			width: auto !important;
+			padding: 0;
+			.v-btn {
+				color: $vd-primary !important;
+				&--active.v-btn--disabled .v-icon {
+					color: $vd-primary !important;
+				}
+
+				&:focus,
+				&--active {
+					color: $vd-primary !important;
+				}
+			}
+			.v-btn.v-btn--disabled {
+				color: $vd-primary !important;
+			}
+		}
+		.v-input--selection-controls {
+			margin: 0;
+			padding: 0;
+		}
+		.v-input--selection-controls__input {
+			display: none !important;
+		}
+		.v-input__slot {
+			margin-bottom: 0;
+		}
+		.v-messages {
+			display: none;
+		}
 	}
 </style>

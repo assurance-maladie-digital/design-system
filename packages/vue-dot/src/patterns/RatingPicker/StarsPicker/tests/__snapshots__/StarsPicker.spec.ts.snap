@@ -5,6 +5,6 @@ exports[`StarsPicker renders correctly 1`] = `
   <div class="text-h6 mb-6">
     Pourriez-vous donner une note ?
   </div>
-  <vrating-stub color="primary" opendelay="0" closedelay="0" backgroundcolor="am-blue-lighten-60" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" hover="true" length="5" size="36px" value="-1" iconlabel="$vuetify.rating.ariaLabel.icon" class="max-width-none mx-n3"></vrating-stub>
+  <vrating-stub color="primary" opendelay="0" closedelay="0" ripple="true" backgroundcolor="accent" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" length="5" value="-1" iconlabel="$vuetify.rating.ariaLabel.icon" class="d-flex flex-wrap max-width-none"></vrating-stub>
 </div>
 `;
