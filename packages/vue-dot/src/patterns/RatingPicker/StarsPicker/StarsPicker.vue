@@ -23,7 +23,10 @@
 						<template #label>
 							<VBtn
 								:disabled="readonly"
-								:class="{ 'v-btn--active': isActive(index) }"
+								:class="{
+									'v-btn--active': isActive(index),
+									'v-btn--before-active': isBeforeActive(index)
+								}"
 								icon
 							>
 								<VIcon
@@ -69,6 +72,9 @@
 		isActive(index: number): boolean {
 			return index === this.value - 1;
 		}
+		isBeforeActive(index: number): boolean {
+			return index < this.value - 1;
+		}
 	}
 </script>
 
@@ -91,8 +97,11 @@
 					color: $vd-primary !important;
 				}
 			}
-			.v-btn.v-btn--disabled {
+			.v-btn.v-btn--disabled.v-btn--before-active {
 				color: $vd-primary !important;
+				.v-icon {
+					color: $vd-primary !important;
+				}
 			}
 		}
 		.v-input--selection-controls {
