@@ -31,18 +31,27 @@
 					@input="setValue"
 				>
 					<template #item="{ index, click }">
-						<VBtn
-							:aria-label="locales.ariaLabel(index + 1, length)"
-							:tabindex="index + 1"
-							x-small
-							outlined
-							color="primary"
-							height="36px"
-							class="text-body-2 mx-1 pa-0"
-							@click="click"
-						>
-							{{ index + 1 }}
-						</VBtn>
+						<VRadioGroup>
+							<VRadio
+								:key="index + 1"
+								:value="index + 1"
+								hide-details
+								@click="click"
+							>
+								<template #label>
+									<VBtn
+										:aria-label="locales.ariaLabel(index + 1, length)"
+										x-small
+										outlined
+										color="primary"
+										height="36px"
+										class="text-body-2 mx-1 pa-0"
+									>
+										{{ index + 1 }}
+									</VBtn>
+								</template>
+							</VRadio>
+						</VRadioGroup>
 					</template>
 				</VRating>
 
@@ -141,10 +150,15 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.theme--light.v-btn.v-btn--disabled {
-		color: $vd-primary !important;
+	.vd-number-picker {
+		.theme--light.v-btn.v-btn--disabled {
+			color: $vd-primary !important;
+		}
+		.v-input--selection-controls__input {
+			display: none !important;
+		}
 	}
 </style>

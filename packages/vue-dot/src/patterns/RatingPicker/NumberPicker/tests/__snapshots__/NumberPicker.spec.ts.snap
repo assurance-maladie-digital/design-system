@@ -6,27 +6,188 @@ exports[`NumberPicker renders correctly 1`] = `
     Pourriez-vous donner une note ?
   </div>
   <div class="d-inline-block">
-    <div class="v-rating d-flex flex-wrap mx-n1 max-width-none"><button tabindex="1" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 1 sur 10"><span class="v-btn__content">
-						1
-					</span></button><button tabindex="2" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 2 sur 10"><span class="v-btn__content">
-						2
-					</span></button><button tabindex="3" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 3 sur 10"><span class="v-btn__content">
-						3
-					</span></button><button tabindex="4" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 4 sur 10"><span class="v-btn__content">
-						4
-					</span></button><button tabindex="5" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 5 sur 10"><span class="v-btn__content">
-						5
-					</span></button><button tabindex="6" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 6 sur 10"><span class="v-btn__content">
-						6
-					</span></button><button tabindex="7" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 7 sur 10"><span class="v-btn__content">
-						7
-					</span></button><button tabindex="8" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 8 sur 10"><span class="v-btn__content">
-						8
-					</span></button><button tabindex="9" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 9 sur 10"><span class="v-btn__content">
-						9
-					</span></button><button tabindex="10" type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 10 sur 10"><span class="v-btn__content">
-						10
-					</span></button></div>
+    <div class="v-rating d-flex flex-wrap mx-n1 max-width-none">
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-3" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-4" role="radio" type="radio" name="radio-3" value="1" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-4" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 1 sur 10"><span class="v-btn__content">
+									1
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-9" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-10" role="radio" type="radio" name="radio-9" value="2" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-10" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 2 sur 10"><span class="v-btn__content">
+									2
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-15" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-16" role="radio" type="radio" name="radio-15" value="3" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-16" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 3 sur 10"><span class="v-btn__content">
+									3
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-21" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-22" role="radio" type="radio" name="radio-21" value="4" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-22" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 4 sur 10"><span class="v-btn__content">
+									4
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-27" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-28" role="radio" type="radio" name="radio-27" value="5" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-28" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 5 sur 10"><span class="v-btn__content">
+									5
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-33" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-34" role="radio" type="radio" name="radio-33" value="6" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-34" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 6 sur 10"><span class="v-btn__content">
+									6
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-39" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-40" role="radio" type="radio" name="radio-39" value="7" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-40" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 7 sur 10"><span class="v-btn__content">
+									7
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-45" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-46" role="radio" type="radio" name="radio-45" value="8" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-46" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 8 sur 10"><span class="v-btn__content">
+									8
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-51" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-52" role="radio" type="radio" name="radio-51" value="9" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-52" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 9 sur 10"><span class="v-btn__content">
+									9
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+      <div class="v-input theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column">
+        <div class="v-input__control">
+          <div class="v-input__slot" style="height: auto;">
+            <div role="radiogroup" aria-labelledby="input-57" class="v-input--radio-group__input">
+              <div class="v-radio theme--light">
+                <div class="v-input--selection-controls__input"><i aria-hidden="true" class="v-icon notranslate mdi mdi-radiobox-blank theme--light"></i><input aria-checked="false" id="input-58" role="radio" type="radio" name="radio-57" value="10" hide-details="">
+                  <div class="v-input--selection-controls__ripple"></div>
+                </div><label for="input-58" class="v-label theme--light" style="left: 0px; position: relative;"><button type="button" class="text-body-2 mx-1 pa-0 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 10 sur 10"><span class="v-btn__content">
+									10
+								</span></button></label>
+              </div>
+            </div>
+          </div>
+          <div class="v-messages theme--light">
+            <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+          </div>
+        </div>
+      </div>
+    </div>
     <!---->
   </div>
 </div>
