@@ -51,7 +51,7 @@
 
 	import { RatingMixin } from '../RatingMixin';
 
-	import { mdiStar, mdiStarOutline } from '@mdi/js';
+	import { mdiStarOutline } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -66,7 +66,6 @@
 
 	@Component
 	export default class StarsPicker extends MixinsDeclaration {
-		starIcon = mdiStar;
 		starOutlineIcon = mdiStarOutline;
 
 		isActive(index: number): boolean {
@@ -79,43 +78,42 @@
 </script>
 
 <style lang="scss">
-	@import '@cnamts/design-tokens/dist/tokens';
+@import '@cnamts/design-tokens/dist/tokens';
 
-	.vd-stars-picker {
-		.v-rating {
-			height: auto !important;
-			width: auto !important;
-			padding: 0;
-			.v-btn {
+.vd-stars-picker {
+	.v-rating {
+		height: auto !important;
+		width: auto !important;
+		padding: 0;
+		.v-btn {
+			color: $vd-primary !important;
+			&--active.v-btn--disabled .v-icon {
 				color: $vd-primary !important;
-				&--active.v-btn--disabled .v-icon {
-					color: $vd-primary !important;
-				}
-
-				&:focus,
-				&--active {
-					color: $vd-primary !important;
-				}
 			}
-			.v-btn.v-btn--disabled.v-btn--before-active {
+			&:focus,
+			&--active {
 				color: $vd-primary !important;
-				.v-icon {
-					color: $vd-primary !important;
-				}
 			}
 		}
-		.v-input--selection-controls {
-			margin: 0;
-			padding: 0;
-		}
-		.v-input--selection-controls__input {
-			display: none !important;
-		}
-		.v-input__slot {
-			margin-bottom: 0;
-		}
-		.v-messages {
-			display: none;
+		.v-btn.v-btn--disabled.v-btn--before-active {
+			color: $vd-primary !important;
+			.v-icon {
+				color: $vd-primary !important;
+			}
 		}
 	}
+	.v-input--selection-controls {
+		margin: 0;
+		padding: 0;
+	}
+	.v-input--selection-controls__input {
+		display: none !important;
+	}
+	.v-input__slot {
+		margin-bottom: 0;
+	}
+	.v-messages {
+		display: none;
+	}
+}
 </style>
