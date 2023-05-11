@@ -211,17 +211,17 @@ export const componentList: ComponentSection[] = [
 		title: 'Filtres',
 		components: [
 			{
-				name: 'inlineFilters',
+				name: 'InlineFilters',
 				description: 'Utilisation des filtres en ligne.',
 				href: '/composants/filtres/inline-filters',
-				image: 'components/filter-module.svg',
+				image: 'components/inline-filters.svg',
 				status: ComponentStatusEnum.NEW
 			},
 			{
-				name: 'filtersSidebar',
+				name: 'FiltersSidebar',
 				description: 'Utilisation des filtres dans une sidebar.',
-				href: '/composants/filtres/filters-sidebar',
-				image: 'components/filter-module.svg',
+				href: '/composants/filtres/filters-side-bar',
+				image: 'components/filters-sidebar.svg',
 				status: ComponentStatusEnum.NEW
 			},
 			{
