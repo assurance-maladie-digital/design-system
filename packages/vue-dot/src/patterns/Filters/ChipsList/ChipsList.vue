@@ -84,6 +84,7 @@
 
 		get showExpandChip(): boolean {
 			const currentFilter = this.filter;
+
 			return !currentFilter.showAll && (currentFilter.chips.length > this.chipsLimit);
 		}
 
