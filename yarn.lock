@@ -2412,10 +2412,10 @@
     cpy "^8.1.0"
     path-exists "^5.0.0"
 
-"@netlify/functions@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-1.4.0.tgz#027a2e5d54df5519ccbd14cf450231e97bbbf93a"
-  integrity sha512-gy7ULTIRroc2/jyFVGx1djCmmBMVisIwrvkqggq5B6iDcInRSy2Tpkm+V5C63hKJVkNRskKWtLQKm9ecCaQTjA==
+"@netlify/functions@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-1.5.0.tgz#b6936b6954a760d3cc73402371d3fdaac28550e8"
+  integrity sha512-xjNW7w5WEPo53gXlp02XJ4JWoymPTVhHu7hLagaKKhozJSCQbwtaHq+2uj0Vr+BfVLmQV4ucisapfU6UGGbk1A==
   dependencies:
     is-promise "^4.0.0"
 
