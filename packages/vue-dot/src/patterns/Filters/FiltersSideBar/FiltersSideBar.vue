@@ -107,7 +107,7 @@
 							:block="isMobile || applyButton"
 							:outlined="applyButton"
 							:text="!applyButton"
-							color="indigo"
+							color="primary"
 							@click="closeSidebar"
 						>
 							{{ locales.close }}
@@ -118,7 +118,7 @@
 							:class="isMobile ? '' : 'mr-4 button-complex-mode'"
 							:block="isMobile || applyButton"
 							outlined
-							color="indigo"
+							color="primary"
 							@click.stop="resetAllFilters"
 						>
 							{{ locales.reset }}
@@ -129,7 +129,7 @@
 							:class="isMobile ? '' : 'ml-4 button-complex-mode'"
 							:block="isMobile || applyButton"
 							outlined
-							color="indigo"
+							color="primary"
 							@click.stop="resetAllFilters"
 						>
 							{{ locales.reset }}

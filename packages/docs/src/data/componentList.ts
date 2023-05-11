@@ -199,18 +199,37 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY
 			},
 			{
-				name: 'FilterModule',
-				description: 'Utilisé pour permettre à l’utilisateur de sélectionner des filtres.',
-				href: '/composants/tableaux/filter-module',
-				image: 'components/filter-module.svg',
-				status: ComponentStatusEnum.READY
-			},
-			{
 				name: 'TableToolbar',
 				description: 'Utilisé pour afficher une barre au-dessus des tableaux.',
 				href: '/composants/tableaux/table-toolbar',
 				image: 'components/table-toolbar.svg',
 				status: ComponentStatusEnum.READY
+			}
+		]
+	},
+	{
+		title: 'Filtres',
+		components: [
+			{
+				name: 'inlineFilters',
+				description: 'Utilisation des filtres en ligne.',
+				href: '/composants/filtres/inline-filters',
+				image: 'components/filter-module.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'filtersSidebar',
+				description: 'Utilisation des filtres dans une sidebar.',
+				href: '/composants/filtres/filters-sidebar',
+				image: 'components/filter-module.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'FilterModule',
+				description: 'Module de gestion des filtres.',
+				href: '/composants/filtres/filter-module',
+				image: 'components/filter-module.svg',
+				status: ComponentStatusEnum.NEW
 			}
 		]
 	},

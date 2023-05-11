@@ -25,11 +25,7 @@
 	export default class ChoiceAutocompleteField extends MixinsDeclaration {
 		searchInput: string | null = null;
 
-		/**
-		 * Clear the search input
-		 *
-		 * @see https://github.com/vuetifyjs/vuetify/issues/5926
-		 */
+		// Clear the search input @see https://github.com/vuetifyjs/vuetify/issues/5926
 		valueUpdated(value: ChoiceFieldValue): void {
 			this.searchInput = '';
 			this.emitChangeEvent(value);
