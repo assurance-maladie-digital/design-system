@@ -10,13 +10,14 @@ let wrapper: Wrapper<Vue>;
 
 describe('EmotionPicker', () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(EmotionPicker,{
+		wrapper = mountComponent(EmotionPicker, {
 			propsData: {
-				questionDatas: {
-					name: 'first-question',
-					type: 'stars',
-					question: 'Pourriez-vous donner une note ?'
-				}
+				label: 'Pourriez-vous donner une note ?',
+				itemLabels: [
+					'Pas du tout',
+					'Peut-être',
+					'Oui super'
+				]
 			}
 		});
 

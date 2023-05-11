@@ -11,6 +11,12 @@ description: Le pattern `FooterBar` est utilisé pour afficher un pied de page.
 
 ### Exemples
 
+#### Modification des liens
+
+Vous pouvez modifier la liste des liens en utilisant la prop `link-items` afin de les réorganiser, d’en ajouter, d’en supprimer ou de modifier leur destination.
+
+<doc-example file="footer-bar/link-items"></doc-example>
+
 #### Contenu supplémentaire
 
 Vous pouvez ajouter du contenu au début ou à la fin du pied de page en utilisant les slots `prepend` et `append`.
@@ -28,6 +34,13 @@ Vous pouvez ajouter du contenu dans le slot par défaut, cela activera le mode �
 Vous pouvez masquer les réseaux sociaux ou le logo de l’Assurance Maladie en utilisant les props `hide-logo` et `hide-social-media-links`.
 
 <doc-example file="footer-bar/hide-social-media-links"></doc-example>
+
+#### Liste adaptative
+
+Vous pouvez utiliser le sous-composant `CollapsibleList` pour afficher des listes de liens dans le slot par défaut.
+Cette liste affiche tout le contenu sur les grands écrans et une liste accordéon sur mobile.
+
+<doc-example file="footer-bar/collapsible-list"></doc-example>
 
 #### Mode sombre
 
@@ -54,13 +67,7 @@ Les propriétés non définies dans la section API seront reportées directement
 
 Vous pouvez personnaliser la liste des réseaux sociaux en utilisant la prop `social-media-links`.
 
-<doc-example file="footer-bar/socialMediaLinks"></doc-example>
-
-#### Liens externes
-
-Vous pouvez changer les liens par défaut par des liens externes en utilisant les props `sitemap-external-link`, `cgu-external-link`, `cookies-external-link`, `legal-notice-external-link` et  `a11y-statement-external-link`.
-
-<doc-example file="footer-bar/externalsLinks"></doc-example>
+<doc-example file="footer-bar/social-media-links"></doc-example>
 
 #### Composants Vuetify
 

@@ -5,18 +5,19 @@
 			...$attrs
 		}"
 		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+		role="contentinfo"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
 		<div
 			v-if="extendedMode"
-			class="d-flex align-center mb-6"
+			class="d-flex align-start align-sm-center mb-6"
 		>
 			<div class="d-flex flex-grow-1 flex-column flex-sm-row">
 				<slot name="logo">
 					<Logo
 						v-if="!hideLogo"
 						:size="logoSize"
-						class="mb-2 mb-sm-0"
+						:class="{ 'mb-2 mb-sm-0': !hideSocialMediaLinks }"
 					/>
 				</slot>
 
@@ -45,6 +46,7 @@
 		<VDivider
 			v-if="extendedMode"
 			v-bind="options.divider"
+			class="mb-3"
 		/>
 
 		<slot />
@@ -52,7 +54,7 @@
 		<VDivider
 			v-if="extendedMode"
 			v-bind="options.divider"
-			class="mb-6"
+			class="mt-3 mb-6"
 		/>
 
 		<div
@@ -61,50 +63,16 @@
 		>
 			<slot name="prepend" />
 
-			<FooterLink
-				v-if="!hideSitemapLink"
-				:external-link="sitemapExternalLink"
-				:route="sitemapRoute"
-				:options="options.routerLink"
+			<component
+				:is="getLinkComponent(item)"
+				v-for="(item, index) in footerLinksMapping"
+				:key="index"
+				:href="item.href"
+				:to="item.to"
+				class="text--primary my-3 mx-4"
 			>
-				{{ locales.sitemapLabel }}
-			</FooterLink>
-
-			<FooterLink
-				v-if="!hideCguLink"
-				:external-link="cguExternalLink"
-				:route="cguRoute"
-				:options="options.routerLink"
-			>
-				{{ locales.cguLabel }}
-			</FooterLink>
-
-			<FooterLink
-				v-if="!hideCookiesLink"
-				:external-link="cookiesExternalLink"
-				:route="cookiesRoute"
-				:options="options.routerLink"
-			>
-				{{ locales.cookiesLabel }}
-			</FooterLink>
-
-			<FooterLink
-				v-if="!hideLegalNoticeLink"
-				:external-link="legalNoticeExternalLink"
-				:route="legalNoticeRoute"
-				:options="options.routerLink"
-			>
-				{{ locales.legalNoticeLabel }}
-			</FooterLink>
-
-			<FooterLink
-				v-if="!hideA11yLink"
-				:external-link="a11yStatementExternalLink"
-				:route="a11yStatementRoute"
-				:options="options.routerLink"
-			>
-				{{ a11yComplianceLabel }}
-			</FooterLink>
+				{{ item.text }}
+			</component>
 
 			<p
 				v-if="version"
@@ -128,11 +96,11 @@
 
 	import SocialMediaLinks from './SocialMediaLinks';
 	import { SocialMediaLink } from './SocialMediaLinks/types';
-	import FooterLink from './FooterLink';
 
 	import { config } from './config';
 	import { locales } from './locales';
-	import { links } from './links';
+	import { LinkItem } from './types';
+	import { defaultSocialMediaLinks } from './defaultSocialMediaLinks';
 	import { A11yComplianceEnum, A11Y_COMPLIANCE_ENUM_VALUES } from './A11yComplianceEnum';
 
 	import { propValidator } from '../../helpers/propValidator';
@@ -148,45 +116,29 @@
 				default: A11yComplianceEnum.NON_COMPLIANT,
 				validator: (value: A11yComplianceEnum) => propValidator('a11y-compliance', A11Y_COMPLIANCE_ENUM_VALUES, value)
 			},
+			linkItems: {
+				type: [Array] as PropType<LinkItem[]>,
+				default: null
+			},
 			sitemapRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'sitemap' })
-			},
-			sitemapExternalLink: {
-				type: String as PropType<string>,
-				default: null
 			},
 			cguRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cgu' })
 			},
-			cguExternalLink: {
-				type: String as PropType<string>,
-				default: null
-			},
 			cookiesRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'cookies' })
-			},
-			cookiesExternalLink: {
-				type: String as PropType<string>,
-				default: null
 			},
 			legalNoticeRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'legalNotice' })
 			},
-			legalNoticeExternalLink: {
-				type: String as PropType<string>,
-				default: null
-			},
 			a11yStatementRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'a11yStatement' })
-			},
-			a11yStatementExternalLink: {
-				type: String as PropType<string>,
-				default: null
 			},
 			hideSitemapLink: {
 				type: Boolean,
@@ -222,7 +174,7 @@
 			},
 			socialMediaLinks: {
 				type: Array as PropType<SocialMediaLink[]>,
-				default: () => links
+				default: () => defaultSocialMediaLinks
 			}
 		}
 	});
@@ -233,7 +185,6 @@
 		inheritAttrs: false,
 		components: {
 			FooterBar,
-			FooterLink,
 			SocialMediaLinks
 		}
 	})
@@ -242,12 +193,8 @@
 
 		arrowTopIcon = mdiArrowUp;
 
-		get a11yComplianceLabel(): string | null {
+		get a11yComplianceLabel(): string {
 			const complianceLabel = locales[this.a11yCompliance];
-
-			if (!complianceLabel) {
-				return null;
-			}
 
 			return locales.a11yLabel(complianceLabel);
 		}
@@ -258,6 +205,46 @@
 
 		get logoSize(): LogoSizeEnum {
 			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
+		}
+
+		get footerLinksMapping(): LinkItem[] {
+			if (this.linkItems) {
+				return this.linkItems;
+			}
+
+			const linksMapping = [
+				{
+					text: locales.sitemapLabel,
+					to: this.sitemapRoute,
+					hidden: this.hideSitemapLink
+				},
+				{
+					text: locales.cguLabel,
+					to: this.cguRoute,
+					hidden: this.hideCguLink
+				},
+				{
+					text: locales.cookiesLabel,
+					to: this.cookiesRoute,
+					hidden: this.hideCguLink
+				},
+				{
+					text: locales.legalNoticeLabel,
+					to: this.legalNoticeRoute,
+					hidden: this.hideLegalNoticeLink
+				},
+				{
+					text: this.a11yComplianceLabel,
+					to: this.a11yStatementRoute,
+					hidden: this.hideA11yLink
+				}
+			];
+
+			return linksMapping.filter((item) => !item.hidden);
+		}
+
+		getLinkComponent(item: LinkItem): string {
+			return item.href ? 'a' : 'RouterLink';
 		}
 
 		scrollToTop(): void {

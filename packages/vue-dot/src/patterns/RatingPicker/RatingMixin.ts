@@ -1,15 +1,23 @@
 import Vue from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
+export interface RatingMixinInterface extends Vue {
+	emitInputEvent(event: number): void;
+}
+
+export enum RatingEnum {
+	EMOTION = 'emotion',
+	NUMBER = 'number',
+	STARS = 'stars'
+}
+
+export const RATING_ENUM_VALUES = Object.values(RatingEnum);
+
 const Props = Vue.extend({
 	props: {
 		label: {
 			type: String,
 			required: true
-		},
-		length: {
-			type: Number,
-			default: 5
 		},
 		readonly: {
 			type: Boolean,
@@ -17,20 +25,21 @@ const Props = Vue.extend({
 		},
 		value: {
 			type: Number,
-			default: 0
+			default: -1
 		}
 	}
 });
 
 const MixinsDeclaration = mixins(Props);
 
-@Component
-export class RatingMixin extends MixinsDeclaration {
-	valueInternal= this.value;
-	lengthInternal = this.length;
-	readonlyInternal = false;
-
-	onDispatchValue(event: number): void {
-		this.$emit('input', event);
+@Component({
+	model: {
+		prop: 'value',
+		event: 'input'
+	}
+})
+export class RatingMixin extends MixinsDeclaration implements RatingMixinInterface {
+	emitInputEvent(value: number): void {
+		this.$emit('input', value);
 	}
 }

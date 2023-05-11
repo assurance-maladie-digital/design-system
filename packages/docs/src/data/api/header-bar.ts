@@ -5,7 +5,7 @@ import { customizable } from './shared/mixins/customizable';
 const themeProp = {
 	name: 'theme',
 	type: 'string',
-	required: true,
+	default: `'default'`,
 	description: 'Le thème de l’en-tête.',
 	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'compte-ameli' | 'risque-pro' | 'compte-entreprise'`
 };

@@ -8,6 +8,7 @@ export function notify(commit: Commit, state: NotificationState, notification: N
 		commit('CLEAR');
 
 		setTimeout(() => commit('ADD', notification), 250);
+
 		return;
 	}
 

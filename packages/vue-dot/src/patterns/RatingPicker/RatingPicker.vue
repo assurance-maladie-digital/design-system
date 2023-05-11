@@ -1,306 +1,141 @@
 <template>
 	<div class="vd-rating-picker">
-		<!--first step-->
-		<div
-			class="step"
-			:class="{'green-background': checkBackgroundGreen(0), 'shadow-box': shadowMode}"
-		>
-			<EmotionPicker
-				v-if="mainQuestion.type === 'emotions'"
-				class="ma-6"
-				step-name="mainQuestion"
-				main-question
-				:simple-mode="mainQuestion.simpleMode"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<StarsPicker
-				v-if="mainQuestion.type === 'stars'"
-				class="ma-6"
-				step-name="mainQuestion"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<NumberPicker
-				v-if="mainQuestion.type === 'numbers'"
-				class="ma-6"
-				step-name="mainQuestion"
-				:question-datas="mainQuestion"
-				@update-result="updateFirstStep"
-			/>
-			<div class="d-flex justify-end">
-				<div
-					v-if="firstStep.result !== null"
-					class="w-100 d-flex justify-center align-center py-3 px-4 mx-5"
-					:class="!shadowMode ? 'border-green' : ''"
-				>
-					<VIcon
-						color="success"
-						class="mr-4"
-					>
-						{{ checkIcon }}
-					</VIcon>
-					<span class="turquoise-darken-60--text">{{ afterValidate[0].message }}</span>
-				</div>
-				<VBtn
-					v-if="firstStep.result === null && !hideCloseButtons"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					text
-					@click="onClose()"
-				>
-					{{ locales.later }}
-				</VBtn>
-			</div>
-			<div class="d-flex justify-end">
-				<VBtn
-					v-if="!checkFirstStep && firstStep.result !== null && !hideCloseButtons"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					text
-					@click="onClose()"
-				>
-					{{ locales.close }}
-				</VBtn>
-			</div>
-		</div>
+		<component
+			:is="ratingComponent"
+			:label="label"
+			:length="length"
+			:readonly="hasAnswered || readonly"
+			:item-labels="itemLabels || undefined"
+			:value="internalValue"
+			@input="setValue"
+		/>
 
-		<!--second step-->
-		<div
-			v-if="questionsList.length && checkFirstStep"
-			class="step mt-2"
-			:class="{'green-background': checkBackgroundGreen(1), 'shadow-box': shadowMode}"
-		>
-			<p
-				class="mb-7 ml-4 mt-3 font-weight-bold"
+		<template v-if="hasAnswered">
+			<VAlert
+				:class="{ 'mb-0': !displayAdditionalContent }"
+				outlined
+				type="success"
+				class="mt-4"
 			>
-				{{ locales.more }}
-			</p>
-			<div
-				v-for="(question, index) in questionsList"
-				:key="index"
-			>
-				<div v-if="index <= secondStep.length">
-					<EmotionPicker
-						v-if="question.type === 'emotions'"
-						class="ma-6"
-						step-name="secondStep"
-						:question-datas="question"
-						:is-validated="validated"
-						@update-result="updateSecondStep"
-					/>
-				</div>
-			</div>
+				{{ locales.thanks }}
+			</VAlert>
 
-			<div
-				v-if="validated"
-				class="d-flex justify-center align-center border-green py-3 mx-6"
-			>
-				<VIcon
-					color="success"
-					class="mr-4"
-				>
-					{{ checkIcon }}
-				</VIcon>
-				<span class="turquoise-darken-60--text">{{ afterValidate[1].message }}</span>
-			</div>
-
-			<div
-				class="mx-4 pb-3 d-flex"
-				:class="validated || hideCloseButtons ? 'justify-end' : 'justify-space-between'"
-			>
-				<VBtn
-					v-if="!hideCloseButtons"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					text
-					@click="onClose()"
-				>
-					{{ locales.close }}
-				</VBtn>
-				<VBtn
-					v-if="!validated"
-					class="mr-2 mt-5 close-button"
-					color="primary"
-					:disabled="secondStep.length == 0"
-					depressed
-					@click="validateSecondStep"
-				>
-					{{ validateTextButton }}
-				</VBtn>
-			</div>
-		</div>
+			<slot v-if="displayAdditionalContent" />
+		</template>
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
-	import { locales } from './locales';
-
-	import { StepItem } from './types';
-	import { AfterValidateItem } from './types';
 
 	import EmotionPicker from './EmotionPicker';
-	import StarsPicker from './StarsPicker';
 	import NumberPicker from './NumberPicker';
+	import StarsPicker from './StarsPicker';
 
-	import { mdiCheckCircleOutline } from '@mdi/js';
+	import { RATING_ENUM_VALUES, RatingEnum } from './RatingMixin';
+
+	import { propValidator } from '../../helpers/propValidator';
+
+	import { locales } from './locales';
 
 	const Props = Vue.extend({
 		props: {
-			shadowMode: {
-				type: Boolean,
-				required: false
+			type: {
+				type: String as PropType<RatingEnum>,
+				required: true,
+				validator: (value: string) => propValidator('type', RATING_ENUM_VALUES, value)
 			},
-			hideCloseButtons: {
-				type: Boolean,
-				required: false
-			},
-			mainQuestion: {
-				type: Object,
+			label: {
+				type: String,
 				required: true
 			},
-			questionsList: {
-				type: Array,
-				default: () => []
+			readonly: {
+				type: Boolean,
+				default: false
 			},
-			validateTextButton: {
-				type: String,
-				default: 'Transmettre mon avis'
+			itemLabels: {
+				type: Array as PropType<string[]>,
+				default: null
 			},
-			afterValidate: {
-				type: Array as PropType<AfterValidateItem[]>,
-				default: () => [
-					{
-						message: 'Merci pour votre réponse',
-						greenBackground: false
-					},
-					{
-						message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
-						greenBackground: false
-					}
-				]
+			twoEmotions: {
+				type: Boolean,
+				default: false
+			},
+			value: {
+				type: Number,
+				default: -1
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props);
 
-	@Component({
-		model: {
-			prop: 'datas',
-			event: 'on-validate'
-		},
+	@Component<RatingPicker>({
 		components: {
 			EmotionPicker,
-			StarsPicker,
-			NumberPicker
+			NumberPicker,
+			StarsPicker
+		},
+		model: {
+			prop: 'value',
+			event: 'change'
+		},
+		watch: {
+			value: {
+				handler(value: number): void {
+					this.internalValue = value;
+					this.hasAnswered = value !== -1;
+				},
+				immediate: true
+			}
 		}
 	})
 	export default class RatingPicker extends MixinsDeclaration {
 		locales = locales;
-		checkIcon = mdiCheckCircleOutline;
-		question = {
-			type: '',
-			answers: []
+
+		internalValue = -1;
+		hasAnswered = false;
+		displayAdditionalContent = false;
+
+		ratingComponentMapping = {
+			[RatingEnum.EMOTION]: 'EmotionPicker',
+			[RatingEnum.STARS]: 'StarsPicker',
+			[RatingEnum.NUMBER]: 'NumberPicker'
 		};
 
-		firstStep: StepItem = {
-			step: '',
-			result: null
-		};
-		secondStep: StepItem[] = [];
+		get ratingComponent(): string {
+			return this.ratingComponentMapping[this.type];
+		}
 
-		validated = false;
-
-		afterValidateItem: AfterValidateItem = {
-			message: '',
-			greenBackground: false
-		};
-
-		get checkFirstStep(): boolean {
-			if (this.firstStep.result !== null) {
-				if (this.mainQuestion.type === 'emotions') {
-					return this.firstStep.result === 'sad' || this.firstStep.result === 'neutral' ? true : false;
-				} else if (this.mainQuestion.type === 'stars') {
-					return this.firstStep.result < 4 ? true : false;
-				} else if (this.mainQuestion.type === 'numbers') {
-					return this.firstStep.result < 7 ? true : false;
-				}
+		get length(): number | undefined {
+			if (this.type === RatingEnum.EMOTION) {
+				return this.twoEmotions ? 2 : 3;
 			}
-			return false;
+
+			return undefined;
 		}
 
-		updateFirstStep(result: StepItem): void {
-			this.firstStep = result;
-			this.$emit('change', [this.firstStep]);
-			this.afterFirstQuestion();
-			this.validateFirstStep();
-		}
+		showAdditionalContent(value: number): void {
+			const starsUnsatisfied = this.type === RatingEnum.STARS && value <= 3;
+			const numberUnsatisfied = this.type === RatingEnum.NUMBER && value <= 7;
 
-		updateSecondStep(result: StepItem): void {
-			const alreadyExist = this.secondStep.find(el => el.step === result.step);
-			if (alreadyExist) {
-				this.secondStep.splice(this.secondStep.indexOf(alreadyExist), 1, result);
-			} else {
-				this.secondStep.push(result);
+			const isEmotion = this.type === RatingEnum.EMOTION;
+			const isEmotionLow = this.twoEmotions ? value < 2 : value < 3;
+			const emotionUnsatisfied = isEmotion && isEmotionLow;
+
+			if (starsUnsatisfied || numberUnsatisfied || emotionUnsatisfied) {
+				this.displayAdditionalContent = true;
 			}
 		}
 
-		checkBackgroundGreen(number: number): boolean {
-			if (number) {
-				return this.afterValidate[number].greenBackground && this.validated ? true : false;
-			} else {
-				return this.afterValidate[number].greenBackground && this.firstStep.result ? true : false;
-			}
-		}
+		setValue(value: number): void {
+			this.internalValue = value;
+			this.hasAnswered = true;
 
-		validateFirstStep(): void {
-			this.$emit('on-validate', [this.firstStep]);
-		}
+			this.showAdditionalContent(value);
 
-		validateSecondStep(): void {
-			this.$emit('on-validate', [this.firstStep, ...this.secondStep]);
-			this.validated = true;
-		}
-
-		onClose(): void {
-			this.$emit('on-close');
-		}
-
-		afterFirstQuestion(): void {
-			this.$emit('after-first-question');
+			this.$emit('change', value);
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
-
-p {
-	font-size: 16px;
-}
-.step {
-	max-width: 450px !important;
-	padding: 16px;
-	border-radius: 8px;
-
-	.close-button {
-		text-transform: none;
-	}
-	.border-green {
-		border: 1px solid $vd-turquoise-darken-40;
-		border-radius: 4px;
-	}
-}
-.shadow-box {
-	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.123);
-}
-.green-background {
-	background-color: $vd-turquoise-lighten-97;
-}
-.v-icon {
-	min-width: 24px;
-}
-</style>

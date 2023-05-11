@@ -1,4 +1,4 @@
-import AccessibilityBanner from './AccessibilityBanner';
+import ContextualMenu from './ContextualMenu';
 import CookieBanner from './CookieBanner';
 import DataListGroup from './DataListGroup';
 import DatePicker from './DatePicker';
@@ -21,7 +21,7 @@ import InlineFilters from './Filters/InlineFilters';
 import FiltersSideBar from './Filters/FiltersSideBar';
 
 export const patterns = {
-	AccessibilityBanner,
+	ContextualMenu,
 	CookieBanner,
 	DataListGroup,
 	DatePicker,

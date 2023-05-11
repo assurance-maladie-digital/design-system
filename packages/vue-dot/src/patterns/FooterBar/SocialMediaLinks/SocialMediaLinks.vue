@@ -1,6 +1,6 @@
 <template>
 	<div class="vd-social-media-links">
-		<span class="text-body-2 primary--text">
+		<span class="text-subtitle-2 primary--text">
 			{{ locales.followUs }}
 		</span>
 
