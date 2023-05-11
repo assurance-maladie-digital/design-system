@@ -98,6 +98,11 @@
 		}
 	}
 
+	// Fix overlay color
+	.v-overlay {
+		background-color: rgba(33, 33, 33, .48);
+	}
+
 	// Fix alerts color
 	.v-alert {
 		&.warning {
