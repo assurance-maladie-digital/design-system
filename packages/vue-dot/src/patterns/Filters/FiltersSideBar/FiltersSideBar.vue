@@ -15,11 +15,9 @@
 			>
 				{{ filtersCount }}
 			</VChip>
-
 			<span class="mr-2 primary--text">
 				{{ filters.length > 1 ? 'Filtres' : 'Filtre' }}
 			</span>
-
 			<VIcon color="primary">
 				{{ filterIcon }}
 			</VIcon>
@@ -57,7 +55,6 @@
 										({{ filters[index].chips.length }})
 									</span>
 								</span>
-
 								<div>
 									<VIcon class="header-title down-icon">
 										{{ downIcon }}
@@ -68,7 +65,6 @@
 									</VIcon>
 								</div>
 							</div>
-
 							<ChipsList
 								v-if="filters[index].chips.length"
 								class="ml-4"
@@ -83,7 +79,6 @@
 							<span class="description-text-filter mb-2">
 								{{ filter.description }}
 							</span>
-
 							<div class="mt-4">
 								<slot
 									:on="{
@@ -97,7 +92,6 @@
 								/>
 							</div>
 						</VExpansionPanelContent>
-
 						<VDivider />
 					</VExpansionPanel>
 				</VExpansionPanels>
@@ -164,7 +158,7 @@
 	import { FilterMixin } from '../../../mixins/filters';
 	import { FilterItem } from './types';
 	import { locales } from './locales';
-	import { mdiChevronUp  } from '@mdi/js';
+	import { mdiChevronUp } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
