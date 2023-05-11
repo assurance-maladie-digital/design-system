@@ -103,6 +103,44 @@
 				</VExpansionPanels>
 
 				<div class="px-5 mb-6 mt-10">
+					<div
+						:class="(isMobile || applyButton) ? '' : 'd-flex justify-center'"
+						class="mt-3"
+					>
+						<VBtn
+							class="mb-3"
+							:class="isMobile ? '' : 'button-complex-mode'"
+							:block="isMobile || applyButton"
+							:outlined="applyButton"
+							:text="!applyButton"
+							color="indigo"
+							@click="closeSidebar"
+						>
+							{{ locales.close }}
+						</VBtn>
+						<VBtn
+							v-if="isMobile || applyButton"
+							class="mb-3"
+							:class="isMobile ? '' : 'mr-4 button-complex-mode'"
+							:block="isMobile || applyButton"
+							outlined
+							color="indigo"
+							@click.stop="resetAllFilters"
+						>
+							{{ locales.reset }}
+						</VBtn>
+						<VBtn
+							v-if="!(isMobile || applyButton)"
+							class="mb-3"
+							:class="isMobile ? '' : 'ml-4 button-complex-mode'"
+							:block="isMobile || applyButton"
+							outlined
+							color="indigo"
+							@click.stop="resetAllFilters"
+						>
+							{{ locales.reset }}
+						</VBtn>
+					</div>
 					<VBtn
 						v-if="applyButton"
 						:block="isMobile || applyButton"
@@ -112,44 +150,6 @@
 					>
 						{{ locales.apply }}
 					</VBtn>
-
-					<div
-						:class="(isMobile || applyButton) ? '' : 'd-flex justify-center'"
-						class="mt-3"
-					>
-						<VBtn
-							v-if="isMobile || applyButton"
-							:class="isMobile ? '' : 'mb-3 mr-4 button-complex-mode'"
-							:block="isMobile || applyButton"
-							outlined
-							color="indigo"
-							@click.stop="resetAllFilters"
-						>
-							{{ locales.reset }}
-						</VBtn>
-
-						<VBtn
-							:class="isMobile ? 'mb-2 mt-Z' : 'button-complex-mode'"
-							:outlined="isMobile"
-							:text="!isMobile"
-							:block="isMobile || applyButton"
-							color="indigo"
-							@click="closeSidebar"
-						>
-							{{ locales.close }}
-						</VBtn>
-
-						<VBtn
-							v-if="!(isMobile || applyButton)"
-							:class="isMobile ? '' : 'mb-3 ml-4 button-complex-mode'"
-							:block="isMobile || applyButton"
-							outlined
-							color="indigo"
-							@click.stop="resetAllFilters"
-						>
-							{{ locales.reset }}
-						</VBtn>
-					</div>
 				</div>
 			</VNavigationDrawer>
 		</VScrollXTransition>
