@@ -1,12 +1,10 @@
 <template>
 	<VBtn
 		v-bind="$attrs"
-		:text="!dark && !outlined"
-		:outlined="outlined"
-		:elevation="elevation"
-		:color="dark && outlined ? 'white' : 'primary'"
+		:text="!dark"
+		:color="dark ? 'white' : 'primary'"
+		:outlined="dark"
 		class="vd-back-btn"
-		:class="noPadding ? 'px-0' : 'px-4'"
 		v-on="$listeners"
 	>
 		<slot name="icon">
@@ -39,18 +37,6 @@
 				type: Boolean,
 				default: false
 			},
-			noPadding: {
-				type: Boolean,
-				default: false
-			},
-			elevation: {
-				type: [Number, String],
-				default: 0
-			},
-			outlined: {
-				type: Boolean,
-				default: false
-			},
 			dark: {
 				type: Boolean,
 				default: false
@@ -63,7 +49,6 @@
 	@Component
 	export default class BackBtn extends MixinsDeclaration {
 		locales = locales;
-
 		backIcon = mdiArrowLeft;
 	}
 </script>

@@ -17,17 +17,8 @@
 	export default class BackBtnUsage extends Vue {
 		options = {
 			booleans: [
-				'hideBackIcon',
-				'noPadding',
-				'dark',
-				'outlined'
-			],
-			sliders: {
-				elevation: {
-					min: 0,
-					max: 10
-				}
-			},
+				'hideBackIcon'
+			]
 		};
 	}
 </script>

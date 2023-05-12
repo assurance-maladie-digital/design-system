@@ -31,6 +31,12 @@ Les propriétés non définies dans la section API seront reportées directement
 
 <doc-tab-item label="Personnalisation">
 
+### Dark mode
+
+Vous pouvez utiliser la propriété `dark` pour afficher le bouton dans le thème sombre.
+
+<doc-example file="back-btn/dark"></doc-example>
+
 ### Slots
 
 Vous pouvez utiliser le slot par défaut pour remplacer le texte du bouton et le slot `icon` pour remplacer l'icône par défaut.
