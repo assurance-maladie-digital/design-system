@@ -18,7 +18,7 @@ export const api: Api = {
 		],
 		slots: [
 			{
-				name: 'content',
+				name: 'default',
 				description: 'Slot pour afficher du contenu supplémentaire.'
 			},
 			{

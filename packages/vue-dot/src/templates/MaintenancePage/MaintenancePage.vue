@@ -15,7 +15,7 @@
 						{{ message }}
 					</p>
 
-					<slot name="content" />
+					<slot />
 				</VCol>
 
 				<VCol
