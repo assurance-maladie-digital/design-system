@@ -19,7 +19,8 @@
 			booleans: [
 				'hideBackIcon',
 				'noPadding',
-				'dark'
+				'dark',
+				'outlined'
 			],
 			sliders: {
 				elevation: {

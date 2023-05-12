@@ -1,9 +1,10 @@
 <template>
 	<VBtn
 		v-bind="$attrs"
-		:text="!dark"
+		:text="!dark && !outlined"
+		:outlined="outlined"
 		:elevation="elevation"
-		color="primary"
+		:color="dark && outlined ? 'white' : 'primary'"
 		class="vd-back-btn"
 		:class="noPadding ? 'px-0' : 'px-4'"
 		v-on="$listeners"
@@ -45,6 +46,10 @@
 			elevation: {
 				type: [Number, String],
 				default: 0
+			},
+			outlined: {
+				type: Boolean,
+				default: false
 			},
 			dark: {
 				type: Boolean,

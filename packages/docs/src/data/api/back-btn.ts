@@ -10,6 +10,18 @@ export const api: Api = {
 				default: false
 			},
 			{
+				name: 'dark',
+				type: 'boolean',
+				description: 'Applique un thème sombre au bouton.',
+				default: false
+			},
+			{
+				name: 'outlined',
+				type: 'boolean',
+				description: 'Applique un style de bouton avec contour.',
+				default: false
+			},
+			{
 				name: 'no-padding',
 				type: 'boolean',
 				description: 'Supprime le padding horizontal du bouton.',
