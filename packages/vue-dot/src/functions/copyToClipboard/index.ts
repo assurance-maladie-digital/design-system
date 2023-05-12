@@ -1,5 +1,5 @@
 /** Copy text to the clipboard */
-export function copyToClipboard(textToCopy: string): Promise<void> {
+export function copyToClipboard(textToCopy: string): void {
 	// Use a textarea, so we can use execCommand
 	const el = document.createElement('textarea');
 
@@ -21,19 +21,11 @@ export function copyToClipboard(textToCopy: string): Promise<void> {
 
 	el.select();
 
-	const navigatorClipboard = new Promise<void>((resolve, reject) => {
-		if (navigator.clipboard) {
-			navigator.clipboard.writeText(textToCopy)
-				.then(resolve)
-				.catch(reject);
-		} else {
-			if (document.execCommand('copy')) {
-				resolve();
-			} else {
-				reject(new Error('La copie dans le presse-papier a échoué.'));
-			}
-		}
-	});
+	if (navigator.clipboard) {
+		navigator.clipboard.writeText(textToCopy);
+	} else {
+		document.execCommand('copy');
+	}
 
 	document.body.removeChild(el);
 
@@ -42,6 +34,4 @@ export function copyToClipboard(textToCopy: string): Promise<void> {
 		selection.removeAllRanges(); // Unselect everything on the HTML document
 		selection.addRange(selected); // Restore the original selection
 	}
-
-	return navigatorClipboard;
 }

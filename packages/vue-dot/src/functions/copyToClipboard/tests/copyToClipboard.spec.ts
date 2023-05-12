@@ -27,28 +27,25 @@ const txt = 'test';
 document.execCommand = jest.fn();
 
 describe('copyToClipboard', () => {
-	it('copies text to the clipboard', async() => {
+	it('copies text to the clipboard', () => {
 		mockDocument({
 			rangeCount: 0,
 			getRangeAt: () => null,
 			removeAllRanges: () => null
 		});
 
-		try {
-			await copyToClipboard(txt);
-			if (navigator.clipboard) {
-				const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
-				expect(writeTextSpy).toHaveBeenCalledWith(txt);
-				expect(document.execCommand).not.toHaveBeenCalled();
-			} else {
-				expect(document.execCommand).toHaveBeenCalledWith('copy');
-			}
-		} catch (error) {
-			expect(error).toBeInstanceOf(Error);
+		copyToClipboard(txt);
+
+		if (navigator.clipboard) {
+			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+			expect(writeTextSpy).toHaveBeenCalledWith(txt);
+			expect(document.execCommand).not.toHaveBeenCalled();
+		} else {
+			expect(document.execCommand).toHaveBeenCalledWith('copy');
 		}
 	});
 
-	it('copy txt when text is already selected', async() => {
+	it('copy txt when text is already selected', () => {
 		mockDocument({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
@@ -56,28 +53,20 @@ describe('copyToClipboard', () => {
 			addRange: () => null
 		});
 
-		try {
-			await copyToClipboard(txt);
-			if (navigator.clipboard) {
-				const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
-				expect(writeTextSpy).toHaveBeenCalledWith(txt);
-				expect(document.execCommand).not.toHaveBeenCalled();
-			} else {
-				expect(document.execCommand).toHaveBeenCalledWith('copy');
-			}
-		} catch (error) {
-			expect(error).toBeInstanceOf(Error);
+		copyToClipboard(txt);
+
+		if (navigator.clipboard) {
+			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
+			expect(writeTextSpy).toHaveBeenCalledWith(txt);
+			expect(document.execCommand).not.toHaveBeenCalled();
+		} else {
+			expect(document.execCommand).toHaveBeenCalledWith('copy');
 		}
 	});
 
-	it('does not copy when getSelection is unavailable', async() => {
+	it('does not copy when getSelection is unavailable', () => {
 		document.getSelection = jest.fn(() => null);
 
-		try {
-			await copyToClipboard(txt);
-			expect(document.execCommand).not.toHaveBeenCalled();
-		} catch (error) {
-			expect(error).toBeInstanceOf(Error);
-		}
+		expect(copyToClipboard(txt)).toBeUndefined();
 	});
 });
