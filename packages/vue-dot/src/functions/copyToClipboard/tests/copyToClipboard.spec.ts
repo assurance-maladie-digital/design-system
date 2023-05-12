@@ -34,18 +34,19 @@ describe('copyToClipboard', () => {
 			removeAllRanges: () => null
 		});
 
+		const writeTextMock = jest.fn();
+		Object.defineProperty(navigator, 'clipboard', {
+			value: { writeText: writeTextMock },
+			writable: true
+		});
+
 		copyToClipboard(txt);
 
-		if (navigator.clipboard) {
-			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
-			expect(writeTextSpy).toHaveBeenCalledWith(txt);
-			expect(document.execCommand).not.toHaveBeenCalled();
-		} else {
-			expect(document.execCommand).toHaveBeenCalledWith('copy');
-		}
+		expect(writeTextMock).toHaveBeenCalledWith(txt);
+		expect(document.execCommand).not.toHaveBeenCalled();
 	});
 
-	it('copy txt when text is already selected', () => {
+	it('copies text to the clipboard when text is already selected', () => {
 		mockDocument({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
@@ -53,15 +54,34 @@ describe('copyToClipboard', () => {
 			addRange: () => null
 		});
 
+		const writeTextMock = jest.fn();
+		Object.defineProperty(navigator, 'clipboard', {
+			value: { writeText: writeTextMock },
+			writable: true
+		});
+
 		copyToClipboard(txt);
 
-		if (navigator.clipboard) {
-			const writeTextSpy = jest.spyOn(navigator.clipboard, 'writeText');
-			expect(writeTextSpy).toHaveBeenCalledWith(txt);
-			expect(document.execCommand).not.toHaveBeenCalled();
-		} else {
-			expect(document.execCommand).toHaveBeenCalledWith('copy');
-		}
+		expect(writeTextMock).toHaveBeenCalledWith(txt);
+		expect(document.execCommand).not.toHaveBeenCalled();
+	});
+
+	it('copies text to the clipboard when text is already selected and navigator.clipboard is unavailable', () => {
+		mockDocument({
+			rangeCount: 2,
+			getRangeAt: (index: number) => ['a', 'b'][index],
+			removeAllRanges: () => null,
+			addRange: () => null
+		});
+
+		Object.defineProperty(navigator, 'clipboard', {
+			value: null,
+			writable: true
+		});
+
+		copyToClipboard(txt);
+
+		expect(document.execCommand).toHaveBeenCalledWith('copy');
 	});
 
 	it('does not copy when getSelection is unavailable', () => {
