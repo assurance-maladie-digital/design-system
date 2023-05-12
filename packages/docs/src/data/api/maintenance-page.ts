@@ -18,6 +18,10 @@ export const api: Api = {
 		],
 		slots: [
 			{
+				name: 'default',
+				description: 'Slot pour afficher du contenu supplémentaire.'
+			},
+			{
 				name: 'illustration',
 				description: 'Slot pour remplacer l’illustration par défaut.'
 			}
