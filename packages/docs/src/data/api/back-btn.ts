@@ -8,6 +8,12 @@ export const api: Api = {
 				type: 'boolean',
 				description: 'Masque l’icône du bouton.',
 				default: false
+			},
+			{
+				name: 'dark',
+				type: 'boolean',
+				description: 'Active le mode sombre.',
+				default: false
 			}
 		],
 		slots: [

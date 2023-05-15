@@ -1,5 +1,8 @@
 <template>
-	<div class="d-flex flex-wrap align-center justify-center">
+	<div
+		:class="{ 'primary': $attrs.dark }"
+		class="d-flex flex-wrap align-center justify-center w-100"
+	>
 		<BackBtn
 			v-bind="$attrs"
 			v-on="$listeners"
@@ -17,7 +20,8 @@
 	export default class BackBtnUsage extends Vue {
 		options = {
 			booleans: [
-				'hideBackIcon'
+				'hideBackIcon',
+				'dark'
 			]
 		};
 	}
