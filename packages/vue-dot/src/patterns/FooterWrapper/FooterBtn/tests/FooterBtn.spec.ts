@@ -4,7 +4,6 @@ import { Wrapper } from '@vue/test-utils';
 import consola from 'consola';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import FooterBtn from '../';
 

@@ -42,7 +42,6 @@ import Vuetify from 'vuetify';
 // Import des différentes fonctions utilitaires de Vue Dot
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
@@ -82,7 +81,7 @@ describe('AppFooter', () => {
 
 <doc-alert type="warning">
 
-La function `html()` qui permet de ne pas inclure le code source des fonctions dans les snapshots est une fonction dépréciée. Elle sera supprimée dans la prochaine version majeure de Vue Dot.
+La function `html()`, qui permettait de contourner un bug et de ne pas inclure le code source des fonctions dans les snapshots, est dépréciée car le bug a été corrigé. Elle sera supprimée dans la prochaine version majeure.
 
 </doc-alert>
 
@@ -103,7 +102,6 @@ import VueRouter from 'vue-router';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createRouter
@@ -163,7 +161,6 @@ import { MutationTree, Store } from 'vuex';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createStore,

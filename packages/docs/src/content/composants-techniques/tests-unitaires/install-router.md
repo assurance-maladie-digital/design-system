@@ -14,7 +14,6 @@ import Component from '../';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	installRouter,

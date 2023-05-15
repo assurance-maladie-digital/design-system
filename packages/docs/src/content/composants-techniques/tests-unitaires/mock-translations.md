@@ -12,7 +12,6 @@ import Vue from 'vue';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	installGlobalPlugins,

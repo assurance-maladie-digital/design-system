@@ -3,7 +3,6 @@ import Vuetify from 'vuetify';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,

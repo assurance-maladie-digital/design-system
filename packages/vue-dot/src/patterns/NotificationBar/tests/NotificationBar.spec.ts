@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { localVue, mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import Vuex from 'vuex';
 localVue.use(Vuex);
