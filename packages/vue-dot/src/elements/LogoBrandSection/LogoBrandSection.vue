@@ -1,7 +1,7 @@
 <template>
 	<VSheet
 		:height="height"
-		class="vd-header-brand-section d-flex"
+		class="vd-logo-brand-section d-flex"
 	>
 		<component
 			:is="logoContainerComponent"
@@ -9,7 +9,7 @@
 			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 			:href="homeHref"
-			class="vd-header-home-link"
+			class="vd-home-link"
 		>
 			<Logo
 				:hide-signature="hideSignature"
@@ -31,6 +31,7 @@
 				aria-hidden="true"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 22 64"
+				class="vd-divider"
 			>
 				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
 			</svg>
@@ -42,7 +43,7 @@
 				:aria-label="secondaryLogoLabel"
 				:to="homeLink"
 				:href="homeHref"
-				class="vd-header-home-link"
+				class="vd-home-link"
 			>
 				<img
 					:src="secondaryLogo.src"
@@ -51,14 +52,14 @@
 			</component>
 
 			<div
-				v-else-if="service.title || service.subTitle || $slots['brand-content']"
-				class="vd-header-title-container d-flex justify-center flex-column primary--text"
+				v-else-if="showBrandContent"
+				class="vd-title-container d-flex justify-center flex-column primary--text"
 			>
 				<slot name="brand-content">
 					<h1
 						v-if="service.title"
 						:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
-						class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
+						class="vd-title text-caption text-md-subtitle-1 font-weight-medium"
 					>
 						<template v-if="isCompteEntreprise">
 							{{ service.title.text }}
@@ -72,7 +73,7 @@
 
 					<h2
 						v-if="showServiceSubTitle"
-						class="vd-header-title text-caption"
+						class="vd-title text-caption"
 					>
 						{{ service.subTitle }}
 					</h2>
@@ -239,12 +240,16 @@
 			return false;
 		}
 
+		get showBrandContent(): boolean {
+			return Boolean(this.service.title || this.service.subTitle || this.$slots['brand-content']);
+		}
+
 		get showDivider(): boolean {
 			if (this.reduceLogo) {
 				return false;
 			}
 
-			return Boolean(this.hasSecondaryLogo || this.service.title || this.$slots['brand-content']);
+			return this.showBrandContent;
 		}
 
 		get showServiceSubTitle(): boolean {
@@ -297,12 +302,12 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-brand-section {
-		.vd-header-title-container {
+	.vd-logo-brand-section {
+		.vd-title-container {
 			overflow: hidden;
 		}
 
-		.vd-header-title {
+		.vd-title {
 			line-height: 1.45 !important;
 		}
 
@@ -321,7 +326,7 @@
 		}
 
 		svg,
-		.vd-header-home-link {
+		.vd-home-link {
 			flex: none;
 		}
 	}

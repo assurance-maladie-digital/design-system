@@ -1,11 +1,9 @@
 <template>
 	<HeaderBar>
 		<template #brand-content>
-			<div class="d-flex justify-center flex-column primary--text">
-				<h1 class="font-weight-bold">
-					Mon <span class="green--text">titre</span>
-				</h1>
-			</div>
+			<h1 class="text-caption text-md-h6 font-weight-medium green--text">
+				Pharmacies de garde
+			</h1>
 		</template>
 	</HeaderBar>
 </template>
@@ -17,3 +15,15 @@
 	@Component
 	export default class HeaderBarBrandContent extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
+	h1 {
+		line-height: 1 !important;
+	}
+
+	.vd-header-bar-container :deep(.vd-divider) {
+		fill: $vd-green-base;
+	}
+</style>

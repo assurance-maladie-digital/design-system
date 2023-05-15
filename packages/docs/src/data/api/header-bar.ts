@@ -125,16 +125,16 @@ export const api: Api = {
 				description: 'Slot pour afficher du contenu dans la partie droite de l’en-tête.'
 			},
 			{
-				name: 'brand-content',
-				description: 'Slot pour personnaliser le contenu du bloc marque (titre, sous-titre...)'
-			},
-			{
 				name: 'logo',
 				description: 'Slot pour remplacer le logo.'
 			},
 			{
 				name: 'secondary-logo',
 				description: 'Slot pour remplacer le bloc marque secondaire et afficher une marque partenaire.'
+			},
+			{
+				name: 'brand-content',
+				description: 'Slot pour personnaliser le contenu de la marque.'
 			},
 			{
 				name: 'navigation-bar-content',
