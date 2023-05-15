@@ -33,6 +33,10 @@
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
+							<template #brand-content>
+								<slot name="brand-content" />
+							</template>
+
 							<slot name="secondary-logo" />
 						</LogoBrandSection>
 					</slot>

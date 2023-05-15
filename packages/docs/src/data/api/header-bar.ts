@@ -133,6 +133,10 @@ export const api: Api = {
 				description: 'Slot pour remplacer le bloc marque secondaire et afficher une marque partenaire.'
 			},
 			{
+				name: 'brand-content',
+				description: 'Slot pour personnaliser le contenu de la marque.'
+			},
+			{
 				name: 'navigation-bar-content',
 				description: 'Slot pour remplacer le contenu de la barre de navigation.'
 			},
