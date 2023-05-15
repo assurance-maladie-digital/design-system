@@ -35,7 +35,7 @@
 		methods: mapActions('notification', ['addNotification'])
 	})
 	export default class NotificationBarSlot extends Vue {
-		get NotificationBarSlot(): boolean {
+		get showNotificationBar(): boolean {
 			return this.notification?.ref === EXAMPLE_REF;
 		}
 
