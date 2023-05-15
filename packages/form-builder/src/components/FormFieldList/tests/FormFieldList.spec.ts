@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@cnamts/vue-dot/tests';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
 
 import FormFieldList from '../';
 
@@ -18,6 +17,6 @@ describe('FormFieldList', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

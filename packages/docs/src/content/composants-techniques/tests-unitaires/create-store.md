@@ -18,7 +18,6 @@ import Component from '../';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createStore,
@@ -57,7 +56,7 @@ describe('Component', () => {
 			store
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```
