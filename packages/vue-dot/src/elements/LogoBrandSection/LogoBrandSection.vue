@@ -51,33 +51,33 @@
 			</component>
 
 			<div
-				v-else-if="service.title || service.subTitle"
-				class="vd-header-title-container d-flex justify-center flex-column primary--text"
+				v-else-if="service.title || service.subTitle || $slots['brand-content']"
+				class="d-flex justify-center flex-column primary--text"
 			>
-				<h1
-					v-if="service.title"
-					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
-					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
-				>
-					<template v-if="isCompteEntreprise">
-						{{ service.title.text }}
-						<span>{{ service.title.highlight }}</span>
-					</template>
+				<slot name="brand-content">
+					<h1
+						v-if="service.title"
+						:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
+						class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
+					>
+						<template v-if="isCompteEntreprise">
+							{{ service.title.text }}
+							<span>{{ service.title.highlight }}</span>
+						</template>
 
-					<template v-else>
-						{{ service.title }}
-					</template>
-				</h1>
+						<template v-else>
+							{{ service.title }}
+						</template>
+					</h1>
 
-				<h2
-					v-if="showServiceSubTitle"
-					class="vd-header-title text-caption"
-				>
-					{{ service.subTitle }}
-				</h2>
+					<h2
+						v-if="showServiceSubTitle"
+						class="vd-header-title text-caption"
+					>
+						{{ service.subTitle }}
+					</h2>
+				</slot>
 			</div>
-
-			<slot name="custom-brand-content" />
 		</slot>
 	</VSheet>
 </template>
@@ -244,7 +244,7 @@
 				return false;
 			}
 
-			return Boolean(this.hasSecondaryLogo || this.service.title || this.$slots['custom-brand-content']);
+			return Boolean(this.hasSecondaryLogo || this.service.title || this.$slots['brand-content']);
 		}
 
 		get showServiceSubTitle(): boolean {

@@ -1,6 +1,6 @@
 <template>
 	<HeaderBar>
-		<template #custom-brand-content>
+		<template #brand-content>
 			<div class="d-flex justify-center flex-column primary--text">
 				<h1 class="font-weight-bold">
 					Mon <span class="green--text">titre</span>
@@ -15,5 +15,5 @@
 	import Component from 'vue-class-component';
 
 	@Component
-	export default class HeaderBarCustomBrandContent extends Vue {}
+	export default class HeaderBarBrandContent extends Vue {}
 </script>

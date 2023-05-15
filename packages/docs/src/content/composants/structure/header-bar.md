@@ -77,9 +77,9 @@ Vous pouvez afficher le bouton pour activer le menu dans la barre de navigation 
 
 ### Contenus personnalisés
 
-Vous pouvez personnaliser le contenu de la marque (titres, sous-titres...) en utilisant le slot `custom-brand-content`.
+Vous pouvez personnaliser le contenu de la marque (titres, sous-titres...) en utilisant le slot `brand-content`.
 
-<doc-example file="header-bar/custom-brand-content"></doc-example>
+<doc-example file="header-bar/brand-content"></doc-example>
 
 ### Composants Vuetify
 

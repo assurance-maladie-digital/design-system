@@ -125,7 +125,7 @@ export const api: Api = {
 				description: 'Slot pour afficher du contenu dans la partie droite de l’en-tête.'
 			},
 			{
-				name: 'custom-brand-content',
+				name: 'brand-content',
 				description: 'Slot pour personnaliser le contenu du bloc marque (titre, sous-titre...)'
 			},
 			{
