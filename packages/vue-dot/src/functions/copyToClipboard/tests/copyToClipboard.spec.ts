@@ -21,10 +21,11 @@ function mockDocument(options: TSelection) {
 	document.getSelection = () => {
 		return options;
 	};
+
+	document.execCommand = jest.fn();
 }
 
 const txt = 'test';
-document.execCommand = jest.fn();
 
 describe('copyToClipboard', () => {
 	it('copies text to the clipboard', () => {
@@ -35,8 +36,11 @@ describe('copyToClipboard', () => {
 		});
 
 		const writeTextMock = jest.fn();
+
 		Object.defineProperty(navigator, 'clipboard', {
-			value: { writeText: writeTextMock },
+			value: {
+				writeText: writeTextMock
+			},
 			writable: true
 		});
 
@@ -55,8 +59,11 @@ describe('copyToClipboard', () => {
 		});
 
 		const writeTextMock = jest.fn();
+
 		Object.defineProperty(navigator, 'clipboard', {
-			value: { writeText: writeTextMock },
+			value: {
+				writeText: writeTextMock
+			},
 			writable: true
 		});
 
@@ -84,7 +91,7 @@ describe('copyToClipboard', () => {
 		expect(document.execCommand).toHaveBeenCalledWith('copy');
 	});
 
-	it('does not copy when getSelection is unavailable', () => {
+	it('does not copies text when getSelection is unavailable', () => {
 		document.getSelection = jest.fn(() => null);
 
 		expect(copyToClipboard(txt)).toBeUndefined();
