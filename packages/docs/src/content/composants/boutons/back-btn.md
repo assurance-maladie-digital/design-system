@@ -15,6 +15,12 @@ Par défaut, le composant `BackBtn` n'effectue aucune action, vous devez implém
 
 </doc-alert>
 
+### Mode sombre
+
+Vous pouvez afficher le composant en mode sombre en utilisant la prop `dark`.
+
+<doc-example file="back-btn/dark"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
@@ -30,12 +36,6 @@ Les propriétés non définies dans la section API seront reportées directement
 </doc-tab-item>
 
 <doc-tab-item label="Personnalisation">
-
-### Dark mode
-
-Vous pouvez utiliser la propriété `dark` pour afficher le bouton dans le thème sombre.
-
-<doc-example file="back-btn/dark"></doc-example>
 
 ### Slots
 

@@ -2,8 +2,13 @@
 	<VBtn
 		v-bind="$attrs"
 		:text="!dark"
+		:dark="dark"
 		:color="dark ? 'white' : 'primary'"
 		:outlined="dark"
+		:class="{
+			'px-0': !dark,
+			'pr-1': !dark && !hideBackIcon
+		}"
 		class="vd-back-btn"
 		v-on="$listeners"
 	>
@@ -11,7 +16,8 @@
 			<VIcon
 				v-if="!hideBackIcon"
 				:color="dark ? 'white' : 'primary'"
-				class="ml-n1 mr-1"
+				:class="{ 'ml-n1': dark }"
+				class="mr-1"
 			>
 				{{ backIcon }}
 			</VIcon>
@@ -49,14 +55,15 @@
 	@Component
 	export default class BackBtn extends MixinsDeclaration {
 		locales = locales;
+
 		backIcon = mdiArrowLeft;
 	}
 </script>
 
 <style lang="scss" scoped>
 	.v-btn {
-		// Disable hover state
-		&::before {
+		// Disable hover state on light theme
+		&.theme--light::before {
 			content: none;
 		}
 

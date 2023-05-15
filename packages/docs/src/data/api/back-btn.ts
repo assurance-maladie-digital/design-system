@@ -12,7 +12,7 @@ export const api: Api = {
 			{
 				name: 'dark',
 				type: 'boolean',
-				description: 'Applique un thème sombre au bouton.',
+				description: 'Active le mode sombre.',
 				default: false
 			}
 		],

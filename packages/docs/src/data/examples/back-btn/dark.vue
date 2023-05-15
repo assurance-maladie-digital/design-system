@@ -1,11 +1,9 @@
 <template>
 	<VSheet
 		color="primary"
-		class="pa-4 d-flex flex-wrap align-center justify-center"
+		class="pa-4"
 	>
-		<BackBtn
-			dark
-		/>
+		<BackBtn dark />
 	</VSheet>
 </template>
 
