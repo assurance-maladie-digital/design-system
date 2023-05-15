@@ -52,7 +52,7 @@
 
 			<div
 				v-else-if="service.title || service.subTitle || $slots['brand-content']"
-				class="d-flex justify-center flex-column primary--text"
+				class="vd-header-title-container d-flex justify-center flex-column primary--text"
 			>
 				<slot name="brand-content">
 					<h1
