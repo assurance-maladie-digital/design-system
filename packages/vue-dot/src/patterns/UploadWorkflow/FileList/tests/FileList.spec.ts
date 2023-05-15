@@ -22,6 +22,6 @@ describe('FileList', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

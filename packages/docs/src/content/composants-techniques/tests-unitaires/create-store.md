@@ -57,7 +57,7 @@ describe('Component', () => {
 			store
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

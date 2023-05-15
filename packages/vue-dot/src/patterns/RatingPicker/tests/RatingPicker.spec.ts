@@ -26,7 +26,7 @@ describe('RatingPicker', () => {
 	it('renders correctly', () => {
 		wrapper = createTestComponent();
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('sets readonly internal value on update', () => {

@@ -12,6 +12,6 @@ describe('HeaderMenuBtn', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(HeaderMenuBtn);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

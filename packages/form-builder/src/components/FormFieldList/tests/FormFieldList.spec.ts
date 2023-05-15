@@ -18,6 +18,6 @@ describe('FormFieldList', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -15,6 +15,6 @@ describe('FooterBar', () => {
 			stubs: ['RouterLink']
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

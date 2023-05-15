@@ -21,7 +21,7 @@ describe('DataListGroup', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders loading state correctly', async() => {
@@ -32,6 +32,6 @@ describe('DataListGroup', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -20,7 +20,7 @@ describe('FooterBtn', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(FooterBtn);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 		expect(spy).toHaveBeenCalledWith('FooterBtn is deprecated since v2.2.0, use FooterBar instead.');
 	});
 });

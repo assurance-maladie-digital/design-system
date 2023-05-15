@@ -12,6 +12,6 @@ describe('BackBtn', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(BackBtn);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

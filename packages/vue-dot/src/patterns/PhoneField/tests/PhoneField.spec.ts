@@ -12,6 +12,6 @@ describe('PhoneField', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(PhoneField, undefined, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -12,6 +12,6 @@ describe('HeaderBar', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(HeaderBar);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

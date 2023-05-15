@@ -34,6 +34,6 @@ describe('DatePicker', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

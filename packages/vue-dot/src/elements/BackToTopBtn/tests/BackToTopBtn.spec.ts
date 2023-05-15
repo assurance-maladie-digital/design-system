@@ -12,6 +12,6 @@ describe('BackToTopBtn', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(BackToTopBtn);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

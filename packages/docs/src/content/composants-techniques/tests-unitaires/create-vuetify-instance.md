@@ -40,7 +40,7 @@ describe('Component', () => {
 			vuetify
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

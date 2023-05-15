@@ -13,6 +13,6 @@ describe('SocialMediaLinks', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(SocialMediaLinks);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -12,6 +12,6 @@ describe('PageContainer', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(PageContainer);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

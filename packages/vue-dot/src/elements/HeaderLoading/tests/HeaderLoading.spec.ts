@@ -12,6 +12,6 @@ describe('HeaderLoading', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(HeaderLoading);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

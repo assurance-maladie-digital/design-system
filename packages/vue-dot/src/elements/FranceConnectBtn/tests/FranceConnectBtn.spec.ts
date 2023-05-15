@@ -16,6 +16,6 @@ describe('FranceConnectBtn', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -12,6 +12,6 @@ describe('DialogBox', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(DialogBox);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

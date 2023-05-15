@@ -19,7 +19,7 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a header', () => {
@@ -29,7 +29,7 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with more items', () => {
@@ -39,7 +39,7 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly in row mode', () => {
@@ -50,6 +50,6 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

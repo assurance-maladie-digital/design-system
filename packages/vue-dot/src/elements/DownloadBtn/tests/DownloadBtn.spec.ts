@@ -25,7 +25,7 @@ describe('DownloadBtn', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('calls download function when pressed', async() => {

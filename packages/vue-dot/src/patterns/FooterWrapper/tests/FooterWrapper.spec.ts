@@ -20,7 +20,7 @@ describe('FooterWrapper', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(FooterWrapper);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 		expect(spy).toHaveBeenCalledWith('FooterWrapper is deprecated since v2.2.0, use FooterBar instead.');
 	});
 });

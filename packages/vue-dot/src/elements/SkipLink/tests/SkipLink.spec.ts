@@ -12,6 +12,6 @@ describe('SkipLink', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(SkipLink);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

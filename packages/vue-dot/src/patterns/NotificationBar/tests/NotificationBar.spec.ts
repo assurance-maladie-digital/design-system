@@ -47,7 +47,7 @@ describe('NotificationBar', () => {
 			store
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a custom icon', () => {
@@ -61,6 +61,6 @@ describe('NotificationBar', () => {
 			store
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

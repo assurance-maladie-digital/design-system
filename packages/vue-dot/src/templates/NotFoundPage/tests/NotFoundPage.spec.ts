@@ -15,6 +15,6 @@ describe('NotFoundPage', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(NotFoundPage);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

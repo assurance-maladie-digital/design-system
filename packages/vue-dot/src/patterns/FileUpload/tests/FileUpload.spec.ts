@@ -12,7 +12,7 @@ describe('FileUpload', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(FileUpload);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with only one extension allowed', () => {
@@ -22,6 +22,6 @@ describe('FileUpload', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

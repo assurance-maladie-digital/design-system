@@ -40,7 +40,7 @@ describe('FilterManager', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a single filter', () => {
@@ -50,6 +50,6 @@ describe('FilterManager', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

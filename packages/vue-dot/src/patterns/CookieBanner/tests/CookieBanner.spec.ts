@@ -13,6 +13,6 @@ describe('CookieBanner', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(CookieBanner);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -49,6 +49,6 @@ describe('About', () => {
 			})<% } %>
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

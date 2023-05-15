@@ -45,7 +45,7 @@ describe('Component', () => {
 			router
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

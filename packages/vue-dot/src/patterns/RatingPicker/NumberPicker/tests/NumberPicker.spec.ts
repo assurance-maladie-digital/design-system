@@ -16,6 +16,6 @@ describe('NumberPicker', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

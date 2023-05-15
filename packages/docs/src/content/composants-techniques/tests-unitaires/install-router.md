@@ -34,7 +34,7 @@ describe('Component', () => {
 			localVue
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

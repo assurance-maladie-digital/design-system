@@ -21,7 +21,7 @@ describe('SubHeader', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders loading state correctly', async() => {
@@ -33,6 +33,6 @@ describe('SubHeader', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

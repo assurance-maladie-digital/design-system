@@ -75,10 +75,16 @@ describe('AppFooter', () => {
 
 		// On vérifie que le composant n'a pas changé soudainement
 		// Voir https://jestjs.io/fr/docs/snapshot-testing
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```
+
+<doc-alert type="warning">
+
+La function `html()` qui permet de ne pas inclure le code source des fonctions dans les snapshots est une fonction dépréciée. Elle sera supprimée dans la prochaine version majeure de Vue Dot.
+
+</doc-alert>
 
 <doc-alert type="info">
 
@@ -141,7 +147,7 @@ describe('Home', () => {
 			router // Utilisation du routeur
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```
@@ -207,7 +213,7 @@ describe('Home', () => {
 			mocks
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 		// Vérification du bon appel de la mutation
 		expect(mutations.updateUserInformation).toHaveBeenCalled();
 	});
@@ -250,7 +256,7 @@ describe('AppForm', () => {
 			mocks
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```
@@ -296,7 +302,7 @@ describe('Home', () => {
 			mocks
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

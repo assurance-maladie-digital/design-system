@@ -12,6 +12,6 @@ describe('Logo', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(Logo);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

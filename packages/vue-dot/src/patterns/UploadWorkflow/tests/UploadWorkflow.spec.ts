@@ -34,7 +34,7 @@ describe('UploadWorkflow', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a single file', () => {
@@ -48,6 +48,6 @@ describe('UploadWorkflow', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -15,6 +15,6 @@ describe('MaintenancePage', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(MaintenancePage);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

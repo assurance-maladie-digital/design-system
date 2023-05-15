@@ -44,7 +44,7 @@ describe('Component', () => {
 			mocks
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

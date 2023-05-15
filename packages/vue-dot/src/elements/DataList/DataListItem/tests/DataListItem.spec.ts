@@ -16,7 +16,7 @@ describe('DataListItem', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a value', () => {
@@ -27,7 +27,7 @@ describe('DataListItem', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly a value with HTML as text', () => {
@@ -64,7 +64,7 @@ describe('DataListItem', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with an action', () => {
@@ -75,7 +75,7 @@ describe('DataListItem', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('emits click:action event when the action button is pressed', async() => {
@@ -110,6 +110,6 @@ describe('DataListItem', () => {
 		const elExists = wrapper.find('.vd-row').exists();
 		expect(elExists).toBe(true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
