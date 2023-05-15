@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RatingPicker renders correctly 1`] = `
+<div class="vd-rating-picker">
+  <div class="vd-stars-picker">
+    <div class="text-h6 mb-6">
+      Pouvez-vous nous en dire plus ?
+    </div>
+    <div class="v-rating max-width-none mx-n3"><button type="button" aria-label="Rating 1 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light am-blue-lighten-60--text" style="font-size: 36px;"></button><button type="button" aria-label="Rating 2 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light am-blue-lighten-60--text" style="font-size: 36px;"></button><button type="button" aria-label="Rating 3 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light am-blue-lighten-60--text" style="font-size: 36px;"></button><button type="button" aria-label="Rating 4 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light am-blue-lighten-60--text" style="font-size: 36px;"></button><button type="button" aria-label="Rating 5 of 5" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light am-blue-lighten-60--text" style="font-size: 36px;"></button></div>
+  </div>
+  <!---->
+</div>
+`;

@@ -1,7 +1,7 @@
 <template>
 	<VSheet
 		:height="height"
-		class="vd-header-brand-section d-flex"
+		class="vd-logo-brand-section d-flex"
 	>
 		<component
 			:is="logoContainerComponent"
@@ -9,7 +9,7 @@
 			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 			:href="homeHref"
-			class="vd-header-home-link"
+			class="vd-home-link"
 		>
 			<Logo
 				:hide-signature="hideSignature"
@@ -31,6 +31,7 @@
 				aria-hidden="true"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 22 64"
+				class="vd-divider"
 			>
 				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
 			</svg>
@@ -42,7 +43,7 @@
 				:aria-label="secondaryLogoLabel"
 				:to="homeLink"
 				:href="homeHref"
-				class="vd-header-home-link"
+				class="vd-home-link"
 			>
 				<img
 					:src="secondaryLogo.src"
@@ -51,30 +52,32 @@
 			</component>
 
 			<div
-				v-else-if="service.title || service.subTitle"
-				class="d-flex justify-center flex-column primary--text"
+				v-else-if="showBrandContent"
+				class="vd-title-container d-flex justify-center flex-column primary--text"
 			>
-				<h1
-					v-if="service.title"
-					:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
-					class="vd-header-title text-caption text-md-subtitle-1 font-weight-medium"
-				>
-					<template v-if="isCompteEntreprise">
-						{{ service.title.text }}
-						<span>{{ service.title.highlight }}</span>
-					</template>
+				<slot name="brand-content">
+					<h1
+						v-if="service.title"
+						:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
+						class="vd-title text-caption text-md-subtitle-1 font-weight-medium"
+					>
+						<template v-if="isCompteEntreprise">
+							{{ service.title.text }}
+							<span>{{ service.title.highlight }}</span>
+						</template>
 
-					<template v-else>
-						{{ service.title }}
-					</template>
-				</h1>
+						<template v-else>
+							{{ service.title }}
+						</template>
+					</h1>
 
-				<h2
-					v-if="showServiceSubTitle"
-					class="vd-header-title text-caption"
-				>
-					{{ service.subTitle }}
-				</h2>
+					<h2
+						v-if="showServiceSubTitle"
+						class="vd-title text-caption"
+					>
+						{{ service.subTitle }}
+					</h2>
+				</slot>
 			</div>
 		</slot>
 	</VSheet>
@@ -96,11 +99,17 @@
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
 
+	/** Define a local interface since Nuxt isn't a dependency */
+	interface MaybeNuxtInstance extends Vue {
+		/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+		$nuxt: any;
+	}
+
 	const Props = Vue.extend({
 		props: {
 			theme: {
 				type: String as PropType<ThemeEnum>,
-				required: true
+				default: ThemeEnum.DEFAULT
 			},
 			serviceTitle: {
 				type: String,
@@ -191,12 +200,20 @@
 			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
 		}
 
+		get isNuxt(): boolean {
+			return (this as unknown as MaybeNuxtInstance).$nuxt !== undefined;
+		}
+
 		get logoContainerComponent(): string {
 			if (this.homeHref) {
 				return 'a';
 			}
 
-			return this.homeLink ? 'RouterLink' : 'div';
+			if (!this.homeLink) {
+				return 'div';
+			}
+
+			return this.isNuxt ? 'NuxtLink' : 'RouterLink';
 		}
 
 		get secondaryLogoCtnComponent(): string {
@@ -223,12 +240,16 @@
 			return false;
 		}
 
+		get showBrandContent(): boolean {
+			return Boolean(this.service.title || this.service.subTitle || this.$slots['brand-content']);
+		}
+
 		get showDivider(): boolean {
 			if (this.reduceLogo) {
 				return false;
 			}
 
-			return Boolean(this.hasSecondaryLogo || this.service.title);
+			return this.showBrandContent;
 		}
 
 		get showServiceSubTitle(): boolean {
@@ -281,10 +302,12 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-header-brand-section {
-		overflow: hidden;
+	.vd-logo-brand-section {
+		.vd-title-container {
+			overflow: hidden;
+		}
 
-		.vd-header-title {
+		.vd-title {
 			line-height: 1.45 !important;
 		}
 
@@ -303,7 +326,7 @@
 		}
 
 		svg,
-		.vd-header-home-link {
+		.vd-home-link {
 			flex: none;
 		}
 	}

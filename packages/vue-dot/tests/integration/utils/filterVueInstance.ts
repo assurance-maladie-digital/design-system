@@ -2,7 +2,6 @@ import { VueInstance } from './types';
 
 /**
  * Filter out globally registered elements from a Vue instance property
- *
  * @param {VueInstance} instance The Vue instance
  * @param {string[]} defaults The elements to filter out
  * @param {string} property The property to filter (eg. components or directives)

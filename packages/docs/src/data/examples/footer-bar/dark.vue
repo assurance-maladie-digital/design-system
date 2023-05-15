@@ -3,7 +3,7 @@
 		v-bind="docProps"
 		dark
 	>
-		<p class="text--secondary my-3">
+		<p class="text--secondary mb-0">
 			Contenu supplémentaire.
 		</p>
 	</FooterBar>

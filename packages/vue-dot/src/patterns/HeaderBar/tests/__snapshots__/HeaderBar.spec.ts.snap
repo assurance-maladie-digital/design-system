@@ -2,10 +2,10 @@
 
 exports[`HeaderBar renders correctly 1`] = `
 <div class="vd-header-bar-container w-100">
-  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" class="vd-header-bar transition-ease-in-out w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/"></logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>

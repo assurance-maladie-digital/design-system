@@ -5,7 +5,6 @@ import { VueInstance } from './types';
 
 /**
  * Get the custom components from the Vue instance
- *
  * @param {VueConstructor} Vue The Vue instance
  * @returns {string[]} The list of custom components
  */
@@ -24,7 +23,6 @@ export function getComponents(Vue: VueConstructor): string[] {
 
 /**
  * Get the custom directives from the Vue instance
- *
  * @param {VueConstructor} Vue The Vue instance
  * @returns {string[]} The list of custom directives
  */

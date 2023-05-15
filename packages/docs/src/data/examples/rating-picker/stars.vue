@@ -1,44 +1,35 @@
 <template>
 	<RatingPicker
-		:main-question="firstQuestion"
-		:after-validate="afterValidate"
-		@on-validate="onValidate"
-		@on-close="onClose"
-	/>
+		v-model="rating"
+		label="Quelle note donnez-vous à ce service ?"
+		type="stars"
+	>
+		<VTextarea
+			label="Que pouvons-nous améliorer ?"
+			hide-details
+			outlined
+			class="mb-4"
+		/>
+
+		<div class="d-flex">
+			<VSpacer />
+
+			<VBtn
+				right
+				color="primary"
+			>
+				Terminé
+			</VBtn>
+		</div>
+	</RatingPicker>
 </template>
 
 <script lang="ts">
 	import Vue from 'vue';
-	import Component from "vue-class-component";
+	import Component from 'vue-class-component';
 
-	@Component({
-		inheritAttrs: false
-	})
+	@Component
 	export default class RatingPickerStars extends Vue {
-		firstQuestion = {
-			name: 'first-step',
-			type: 'stars',
-			labels: ['Mauvais', 'Génial !'],
-			question: 'Pourriez vous donner une note ? '
-		};
-
-		afterValidate = [
-			{
-				message: 'Merci !',
-				greenBackground: true
-			}
-		];
-
-		afterFirstQuestion(): void {
-			console.log('Validation de la première question');
-		}
-
-		onValidate(): void {
-			console.log('Validation');
-		}
-
-		onClose(): void {
-			console.log('Fermeture');
-		}
+		rating = -1;
 	}
 </script>

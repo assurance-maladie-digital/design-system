@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { localVue, mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import Vuex from 'vuex';
 localVue.use(Vuex);
@@ -47,7 +46,7 @@ describe('NotificationBar', () => {
 			store
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a custom icon', () => {
@@ -61,6 +60,6 @@ describe('NotificationBar', () => {
 			store
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

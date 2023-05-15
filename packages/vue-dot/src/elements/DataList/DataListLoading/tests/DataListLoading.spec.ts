@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import DataListLoading from '../';
 import HeaderLoading from '../../../HeaderLoading';
@@ -19,7 +18,7 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a header', () => {
@@ -29,7 +28,7 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with more items', () => {
@@ -39,7 +38,7 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly in row mode', () => {
@@ -50,6 +49,6 @@ describe('DataListLoading', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

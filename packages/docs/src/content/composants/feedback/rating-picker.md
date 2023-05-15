@@ -1,113 +1,63 @@
 ---
 title: RatingPicker
-description: L’élément `RatingPicker` permet de receuillir l'avis d'un utilisateur.
+description: L’élément `RatingPicker` permet de recueillir l’avis d’un utilisateur.
 ---
 
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
-## Question principale
+<doc-usage name="rating-picker"></doc-usage>
 
-La question principale peut être posée seule ou suivie de questions secondaires si la noté est considéré comme mauvaise.
-La réponse à la question principale n'est plus modifiable après la selection.
-La note est récupérée de trois façons :
+### Exemples
 
-#### Une note sur 5 étoiles.
+#### Note sur 5 étoiles
 
-Les questions secondaires s'afficheront si la note est de `3` ou moins.
+Vous pouvez demander une note sur 5 étoiles en utilisant le type `stars`.
+
+<doc-alert type="info">
+Les questions secondaires passées dans le slot par défaut s’afficheront si la note est inférieure ou égale à trois.
+</doc-alert>
 
 <doc-example file="rating-picker/stars"></doc-example>
 
-#### Une note de 1 à 10
+#### Note de 1 à 10
 
-Les label indiquent à quoi correspond les notes 1 et 10 via des labels.
+Vous pouvez demander une note sur 10 en utilisant le type `number`.
 
-Les questions secondaires s'afficheront si la note est de `7` ou moins.
+<doc-alert type="info">
 
-<doc-example file="rating-picker/numbers"></doc-example>
+Les questions secondaires passées dans le slot par défaut s’afficheront si la note est inférieure ou égale à sept.<br>
+En mobile, le composant affichera un `VSelect` pour faciliter la saisie.
 
-#### Une évaluation par émotion
+</doc-alert>
 
-Les questions secondaires s'afficheront si la note est de `medium` ou moins.
+<doc-example file="rating-picker/number"></doc-example>
 
-<doc-example file="rating-picker/emotions"></doc-example>
+#### Note par émotions
 
-Il est possible de n'afficher que deux choix en utilisant le `simpleMode`.
+Vous pouvez demander une note par émotions en utilisant le type `emotion`.
 
-<doc-example file="rating-picker/emotions-2"></doc-example>
+<doc-alert type="info">
 
-Il est possible de changer les labels des émotions.
+Les questions secondaires passées dans le slot par défaut s’afficheront si la note n’est pas maximale.<br>
+Vous pouvez utiliser la prop `item-labels` pour adapter les labels à la question posée.
 
-<doc-example file="rating-picker/emotions-labels"></doc-example>
+</doc-alert>
 
-## Les questions secondaires
+<doc-example file="rating-picker/emotion"></doc-example>
 
-Les questions secondaires apparaissent les unes après les autres à mesure que l'utilisateur y répond.
-Les réponses aux questions secondaires sont modifiables jusqu'à la validation finale.
-Les notes sont récupérée de trois façons :
+#### Note par émotion en question secondaire
 
-#### Une évaluation par émotion
+Vous pouvez utiliser le composant `EmotionPicker` en tant que question secondaire.
 
-Avec les émotions également mais la réponse reste modifiable jusqu'à la validation finale.
-
-<doc-example file="rating-picker/emotions-second-step"></doc-example>
-
-#### Une réponse à choix multiple
-
-<doc-example file="rating-picker/multi-answer"></doc-example>
-
-La réponse à choix multiple peut laisser la possibilité d'une réponse différente que celles proposées
-
-<doc-example file="rating-picker/multi-answer-others"></doc-example>
-
-#### Une zone de texte
-
-<doc-example file="rating-picker/text-area"></doc-example>
-
-#### Suite de question secondaire
-
-Il est possible d'ajouter plusieurs question secondaire en les ajoutants dans le tableau `questionsList`.
-
-<doc-example file="rating-picker/multi-questions"></doc-example>
-
-## Récupération des données
-
-Les données peuvent être récupérées par l'intermédiaire d'un v-model, `datas` dans cet exemple.
-
-<doc-example file="rating-picker/datas"></doc-example>
+<doc-example file="rating-picker/emotion-question"></doc-example>
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
 
-<doc-alert type="info">
-
-Les propriétés non définies dans la section API seront reportées directement sur le composant `VBtn`.
-
-</doc-alert>
-
 <doc-api name="rating-picker"></doc-api>
-
-</doc-tab-item>
-
-<doc-tab-item label="Personnalisation">
-
-Le mode avec ombre n'est pas actif par defaut.
-Pour l'activer, il faut utiliser la props `shadow-mode`.
-
-<doc-example file="rating-picker/shadow-mode"></doc-example>
-
-Le fond vert après validation n'est pas actif par defaut.
-Pour l'activer, il faut ajouter `true` dans les objets `afterValidate`.
-Les deux parties peuvent avoir un fond différent.
-
-<doc-example file="rating-picker/green-background"></doc-example>
-
-Il est possible de masquer les boutons de fermeture.
-Pour l'activer, il faut utiliser la props `hide-close-buttons`.
-
-<doc-example file="rating-picker/close-buttons"></doc-example>
 
 </doc-tab-item>
 

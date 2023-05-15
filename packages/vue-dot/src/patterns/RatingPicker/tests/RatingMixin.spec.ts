@@ -1,11 +1,7 @@
 import Vue from 'vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-import { RatingMixin } from '../RatingMixin';
-
-interface TestComponent extends Vue {
-	onDispatchValue(event: number): void;
-}
+import { RatingMixin, RatingMixinInterface } from '../RatingMixin';
 
 /** Create the test component */
 function createTestComponent() {
@@ -18,23 +14,22 @@ function createTestComponent() {
 }
 
 describe('RatingMixin', () => {
-	const label = 'Pourriez-vous donner une note ?';
+	const label = 'Pouvez-vous nous en dire plus ?';
 
-	it('sets initial values for props', () => {
+	it('verifies props', () => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
 			propsData: {
 				label
 			}
-		}) as Wrapper<TestComponent>;
+		}) as Wrapper<RatingMixinInterface>;
 
 		expect(wrapper.props().label).toBe(label);
-		expect(wrapper.props().length).toBe(5);
 		expect(wrapper.props().readonly).toBeFalsy();
 	});
 
-	it('dispatch input event', async() => {
+	it('emits input event', async() => {
 		const testComponent = createTestComponent();
 
 		const wrapper = mount(testComponent, {
@@ -42,9 +37,9 @@ describe('RatingMixin', () => {
 				label,
 				length: 10
 			}
-		}) as Wrapper<TestComponent>;
+		}) as Wrapper<RatingMixinInterface>;
 
-		wrapper.vm.onDispatchValue(3);
+		wrapper.vm.emitInputEvent(3);
 
 		await wrapper.vm.$nextTick(); // Wait until $emits have been handled
 

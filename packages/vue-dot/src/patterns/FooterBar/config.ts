@@ -8,8 +8,5 @@ export const config = {
 		small: true,
 		icon: true,
 		color: 'primary'
-	},
-	routerLink: {
-		class: 'text--primary my-3 mx-4'
 	}
 };

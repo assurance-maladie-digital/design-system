@@ -10,12 +10,9 @@
 		</template>
 
 		<template #append>
-			<a
-				href="https://ameli.fr/assure/aide"
-				class="text--primary my-3 mx-4"
-			>
-				Aide
-			</a>
+			<p class="text--secondary my-3 mx-4">
+				{{ currentYear }}
+			</p>
 		</template>
 	</FooterBar>
 </template>
@@ -33,5 +30,7 @@
 			legalNoticeRoute: '/',
 			a11yStatementRoute: '/'
 		};
+
+		currentYear = new Date().getFullYear();
 	}
 </script>

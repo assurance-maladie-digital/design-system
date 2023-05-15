@@ -3,7 +3,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import CollapsibleList from '../';
 
@@ -13,20 +12,20 @@ describe('CollapsibleList', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(CollapsibleList, {
 			propsData: {
-				title: 'Title',
-				content: [
+				listTitle: 'Santé',
+				items: [
 					{
-						text: 'Item 1',
-						url: '/item1'
+						text: 'Mon espace santé',
+						href: 'https://www.ameli.fr/assure/sante/mon-espace-sante'
 					},
 					{
-						text: 'Item 2',
-						url: '/item2'
+						text: 'Accomplir les bons gestes',
+						href: 'https://www.ameli.fr/assure/sante/bons-gestes'
 					}
 				]
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

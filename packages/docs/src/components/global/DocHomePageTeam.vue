@@ -10,7 +10,7 @@
 				class="d-flex flex-column"
 			>
 				<img
-					:src="require('../../assets/img/team/' + member.img)"
+					:src="require('../../assets/images/team/' + member.img)"
 					class="doc-img-team mb-4"
 				>
 
@@ -92,11 +92,6 @@
 				name: 'David Fyon',
 				role: 'Développeur Front',
 				img: 'person.svg'
-			},
-			{
-				name: 'Julien Baylac',
-				role: 'Développeur Front',
-				img: 'julien_b.jpg'
 			}
 		];
 

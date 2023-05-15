@@ -14,7 +14,6 @@ import Component from '../';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	installRouter,
@@ -34,7 +33,7 @@ describe('Component', () => {
 			localVue
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

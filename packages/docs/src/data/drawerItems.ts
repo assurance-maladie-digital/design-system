@@ -60,11 +60,11 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'Logo',
-				to: '/fondamentaux/logo',
+				to: '/fondamentaux/logo'
 			},
 			{
 				title: 'Éco-conception',
-				to: '/fondamentaux/eco-conception',
+				to: '/fondamentaux/eco-conception'
 			}
 		]
 	},
@@ -72,6 +72,13 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Composants',
 		icon: mdiViewDashboard,
 		items: [
+			{
+				title: 'Vue d’ensemble',
+				to: '/composants/vue-ensemble'
+			},
+			{
+				divider: true
+			},
 			{
 				title: 'Structure',
 				items: [
@@ -108,6 +115,14 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ExternalLinks',
 						to: '/composants/navigation/external-links'
+					},
+					{
+						title: 'ContextualMenu',
+						to: '/composants/navigation/contextual-menu'
+					},
+					{
+						title: 'SkipLink',
+						to: '/composants/navigation/skip-link'
 					}
 				]
 			},
@@ -208,6 +223,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'DataListGroup',
 						to: '/composants/donnees/data-list-group'
+					},
+					{
+						title: 'FilePreview',
+						to: '/composants/donnees/file-preview'
 					}
 				]
 			},
@@ -221,10 +240,6 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'NotificationBar',
 						to: '/composants/feedback/notification-bar'
-					},
-					{
-						title: 'AccessibilityBanner',
-						to: '/composants/feedback/accessibility-banner'
 					},
 					{
 						title: 'CookieBanner',
@@ -246,6 +261,13 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Templates',
 		icon: mdiBookOpenPageVariantOutline,
 		items: [
+			{
+				title: 'Vue d’ensemble',
+				to: '/templates/vue-ensemble'
+			},
+			{
+				divider: true
+			},
 			{
 				title: 'CookiesPage',
 				to: '/templates/cookies-page'

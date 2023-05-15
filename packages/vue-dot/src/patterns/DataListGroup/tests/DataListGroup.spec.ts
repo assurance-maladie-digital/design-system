@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import DataListGroup from '../';
 import HeaderLoading from '../../../elements/HeaderLoading';
@@ -21,7 +20,7 @@ describe('DataListGroup', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders loading state correctly', async() => {
@@ -32,6 +31,6 @@ describe('DataListGroup', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
