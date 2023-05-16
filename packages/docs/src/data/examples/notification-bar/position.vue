@@ -2,7 +2,7 @@
 	<div>
 		<NotificationBar
 			v-show="showNotificationBar"
-			:vuetify-options="vuetifyOptions"
+			bottom
 		/>
 
 		<VBtn
@@ -20,25 +20,13 @@
 
 	import { mapActions, mapState } from 'vuex';
 
-	const EXAMPLE_REF = 'options-example';
+	const EXAMPLE_REF = 'usage-example';
 
 	@Component({
 		computed: mapState('notification', ['notification']),
 		methods: mapActions('notification', ['addNotification'])
 	})
-	export default class NotificationBarOptions extends Vue {
-		vuetifyOptions = {
-			snackBar: {
-				rounded: 'pill'
-			},
-			icon: {
-				class: 'mr-3'
-			},
-			btn: {
-				rounded: true
-			}
-		};
-
+	export default class NotificationBarPosition extends Vue {
 		get showNotificationBar(): boolean {
 			return this.notification?.ref === EXAMPLE_REF;
 		}

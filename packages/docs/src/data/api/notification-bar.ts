@@ -11,6 +11,12 @@ export const api: Api = {
 				default: `'Fermer'`,
 				description: 'Le texte du bouton *Fermer*.'
 			},
+			{
+				name: 'bottom',
+				type: 'boolean',
+				default: 'false',
+				description: 'Position de la barre de notification en bas'
+			},
 			...customizable(`{
 	snackBar: 'VSnackbar',
 	icon: 'VIcon',
