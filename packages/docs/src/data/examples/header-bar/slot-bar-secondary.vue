@@ -1,9 +1,16 @@
 <template>
 	<HeaderBar :navigation-items="navigationItems">
+		<template #navigation-bar-prepend>
+			<div class="d-flex align-center justify-center">
+				<VBtn color="primary">
+					Prepend
+				</VBtn>
+			</div>
+		</template>
 		<template #navigation-bar-secondary-content>
 			<div class="d-flex align-center justify-center">
 				<VBtn color="primary">
-					Se connecter
+					Secondary
 				</VBtn>
 			</div>
 		</template>

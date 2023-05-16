@@ -10,7 +10,7 @@
 					block
 					class="mb-4"
 				>
-					Se connecter
+					Prepend
 				</VBtn>
 			</div>
 		</template>
@@ -20,7 +20,7 @@
 					color="primary"
 					block
 				>
-					Se connecter
+					Append
 				</VBtn>
 			</div>
 		</template>
