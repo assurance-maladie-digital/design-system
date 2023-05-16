@@ -6,6 +6,7 @@ import 'custom-event-polyfill';
 
 import { vuetify } from './vuetify';
 import './vue-dot';
+import './form-builder';
 
 import App from './App.vue';
 

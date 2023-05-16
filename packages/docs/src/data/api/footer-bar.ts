@@ -11,16 +11,21 @@ export const api: Api = {
 				example: `'non-compliant' | 'partially-compliant' | 'fully-compliant'`
 			},
 			{
+				name: 'link-items',
+				type: 'LinkItem[]',
+				default: null,
+				description: 'Les liens de navigation à afficher dans le pied de page.',
+				example: `{
+	text: string;
+	to?: RawLocation;
+	href?: string;
+}[]`
+			},
+			{
 				name: 'sitemap-route',
 				type: 'RawLocation',
 				default: `{ name: 'sitemap' }`,
 				description: 'La valeur de la prop `to` du lien vers le *Plan du site*.'
-			},
-			{
-				name: 'sitemap-external-link',
-				type: 'string',
-				default: null,
-				description: 'L’URL du lien vers le *Plan du site* si celui-ci est externe à l’application.'
 			},
 			{
 				name: 'cgu-route',
@@ -29,22 +34,10 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers les *Conditions générales d’utilisation*.'
 			},
 			{
-				name: 'cgu-external-link',
-				type: 'string',
-				default: null,
-				description: 'L’URL du lien vers les *Conditions générales d’utilisation* si celui-ci est externe à l’application.'
-			},
-			{
 				name: 'cookies-route',
 				type: 'RawLocation',
 				default: `{ name: 'cookies' }`,
 				description: 'La valeur de la prop `to` du lien vers la *Gestion des cookies*.'
-			},
-			{
-				name: 'cookies-external-link',
-				type: 'string',
-				default: null,
-				description: 'L’URL du lien vers la *Gestion des cookies* si celui-ci est externe à l’application.'
 			},
 			{
 				name: 'legal-notice-route',
@@ -53,22 +46,10 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du lien vers les *Mentions légales*.'
 			},
 			{
-				name: 'legal-notice-external-link',
-				type: 'string',
-				default: null,
-				description: 'L’URL du lien vers les *Mentions légales* si celui-ci est externe à l’application.'
-			},
-			{
 				name: 'a11y-statement-route',
 				type: 'RawLocation',
 				default: `{ name: 'a11yStatement' }`,
 				description: 'La valeur de la prop `to` du lien vers la *Déclaration d’accessibilité*.'
-			},
-			{
-				name: 'a11y-statement-external-link',
-				type: 'string',
-				default: null,
-				description: 'L’URL du lien vers la *Déclaration d’accessibilité* si celui-ci est externe à l’application.'
 			},
 			{
 				name: 'hide-sitemap-link',
@@ -138,8 +119,7 @@ export const api: Api = {
 	spacer: 'VSpacer',
 	goTopBtn: 'VBtn',
 	goTopBtnIcon: 'VIcon',
-	divider: 'VDivider',
-	routerLink: 'RouterLink'
+	divider: 'VDivider'
 }`
 			},
 			{
@@ -172,13 +152,33 @@ export const api: Api = {
 			}
 		]
 	},
+	CollapsibleList: {
+		props: [
+			{
+				name: 'list-title',
+				type: 'string',
+				default: null,
+				description: 'Le titre de la liste.'
+			},
+			{
+				name: 'items',
+				type: 'ListItem[]',
+				default: null,
+				description: 'Les éléments de la liste.',
+				example: `{
+	text: string;
+	href: string;
+}[]`
+			}
+		]
+	},
 	SocialMediaLinks: {
 		props: [
 			{
 				name: 'links',
 				type: 'SocialMediaLink[]',
-				description: 'Liste des réseaux sociaux.',
 				default: null,
+				description: 'Liste des réseaux sociaux.',
 				example: `{
 	icon: string;
 	href: string;

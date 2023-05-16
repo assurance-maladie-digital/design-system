@@ -1,24 +1,48 @@
 <template>
-	<div>
-		<h6>{{ label }}</h6>
+	<div class="vd-stars-picker">
+		<div class="text-h6 mb-6">
+			{{ label }}
+		</div>
 
 		<VRating
-			:length="lengthInternal"
-			:readonly="readonlyInternal"
+			:value="value"
+			:length="length"
+			:readonly="readonly"
+			:ripple="false"
+			background-color="am-blue-lighten-60"
+			size="36px"
 			hover
-			color="primary"
-			background-color="primary lighten-4"
-			class="d-flex flex-wrap"
-			@input="onDispatchValue"
+			class="max-width-none mx-n3"
+			@input="emitInputEvent"
 		/>
 	</div>
 </template>
 
 <script lang="ts">
-	import Component from 'vue-class-component';
+	import Vue from 'vue';
+	import Component, { mixins } from 'vue-class-component';
 
 	import { RatingMixin } from '../RatingMixin';
 
+	const Props = Vue.extend({
+		props: {
+			length: {
+				type: Number,
+				default: 5
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props, RatingMixin);
+
 	@Component
-	export default class StarsPicker extends RatingMixin {}
+	export default class StarsPicker extends MixinsDeclaration {}
 </script>
+
+<style lang="scss" scoped>
+	.v-rating :deep(button) {
+		height: auto !important;
+		width: auto !important;
+		padding: 0 8px;
+	}
+</style>

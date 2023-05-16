@@ -15,7 +15,6 @@ import Component from '../';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
@@ -40,7 +39,7 @@ describe('Component', () => {
 			vuetify
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

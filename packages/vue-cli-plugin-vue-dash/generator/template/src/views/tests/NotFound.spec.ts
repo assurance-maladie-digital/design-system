@@ -3,7 +3,6 @@ import Vuetify from 'vuetify';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
@@ -30,6 +29,6 @@ describe('NotFound', () => {
 			vuetify
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

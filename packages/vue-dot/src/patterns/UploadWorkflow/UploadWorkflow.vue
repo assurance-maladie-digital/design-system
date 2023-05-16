@@ -54,7 +54,7 @@
 
 			<FilePreview
 				v-if="showFilePreview"
-				v-bind="options.filePreview"
+				:options="options.filePreview"
 				:file="uploadedFile"
 			/>
 		</DialogBox>

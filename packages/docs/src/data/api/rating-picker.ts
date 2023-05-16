@@ -1,83 +1,113 @@
 import { Api } from '~/types';
 
+import { ratingMixinProps, ratingMixinEvents } from './shared/mixins/rating-mixin';
+
 export const api: Api = {
 	RatingPicker: {
 		props: [
 			{
-				name: 'main-question',
-				type: 'object',
-				required: true,
-				example: `{
-	name: 'first-step',
-	type: 'emotions',
-	question: 'Pourriez vous donner une note ? '
-}`,
-				description: 'Définit le nom, le type d’affichage et le texte de la première question.',
-			},
-			{
-				name: 'questions-list',
-				type: 'object[]',
-				description: 'Définit le nom, le type d’affichage et le texte des questions secondaires.',
-				example: `[
-	{
-		name: 'question-secondaire',
-		type: 'multi',
-		question: 'Avez vous aimé notre première question ?',
-		answers: ['Réponse 1', 'Réponse 2', 'Réponse 3', 'Réponse 4']
-	},
-]`,
-				default: `[]`,
-			},
-			{
-				name: 'shadow-mode',
-				type: 'boolean',
-				description: 'Ajoute une ombre au composant et retire la  bordure de la première question',
-				default: false
-			},
-			{
-				name: 'hide-close-buttons',
-				type: 'boolean',
-				description: 'Masque les boutons de fermeture.',
-				default: false
-			},
-			{
-				name: 'validate-text-button',
+				name: 'type',
 				type: 'string',
-				description: 'Change le texte du bouton de validation',
-				default: 'Valider'
+				required: true,
+				description: 'Le type de champ à afficher.',
+				example: `'number' | 'stars' | 'emotion'`
 			},
 			{
-				name: 'after-validate',
-				type: 'Array',
-				description: 'Définit le message et le fond du RatingPicker après la validation',
-				default: `[
-	{
-		message: 'Merci pour votre réponse',
-		greenBackground: false
-	},
-	{
-		message: 'Merci pour vos remarques utiles à l\'amélioration du site.',
-		greenBackground: false
-	}
-]`
+				name: 'label',
+				type: 'string',
+				required: true,
+				description: 'Le label du champ.'
+			},
+			{
+				name: 'readonly',
+				type: 'boolean',
+				default: false,
+				description: 'Passe le champ en lecture seule.'
+			},
+			{
+				name: 'item-labels',
+				type: 'string[]',
+				default: null,
+				description: 'Liste des labels pour les boutons.'
+			},
+			{
+				name: 'two-emotions',
+				type: 'boolean',
+				default: false,
+				description: 'Limite la sélection à deux choix lorsque que le champ est de type `emotion`.'
+			},
+			{
+				name: 'value',
+				type: 'number',
+				default: -1,
+				description: 'La note sélectionnée par l’utilisateur.'
+			}
+		],
+		slots: [
+			{
+				name: 'default',
+				description: 'Slot pour ajouter du contenu affiché après la sélection de l’utilisateur.'
 			}
 		],
 		events: [
 			{
-				name: 'on-validate',
-				description: 'Événement émis lorsque l’utilisateur clique sur le bouton "Transmettre mon avis"',
-				value: `void`
-			},
-			{
-				name: 'on-close',
-				description: 'Événement émis lorsque l’utilisateur clique sur les boutons de fermeture',
-				value: `void`
-			},
-			{
-				name: 'after-first-question',
-				description: 'Événement émis lorsque l’utilisateur valide la première question',
-				value: `void`
+				name: 'change',
+				description: 'Événement émis lorsque la valeur est mise à jour.',
+				value: 'number'
 			}
 		]
+	},
+	EmotionPicker: {
+		props: [
+			...ratingMixinProps,
+			{
+				name: 'length',
+				type: 'number',
+				default: 3,
+				description: 'Limite la sélection à deux ou trois choix.',
+				example: '2 | 3'
+			},
+			{
+				name: 'item-labels',
+				type: 'string[]',
+				default: `[
+	'Pas du tout',
+	'Moyen',
+	'Parfait !'
+]`,
+				description: 'Liste des labels pour les boutons.'
+			}
+		],
+		events: ratingMixinEvents
+	},
+	NumberPicker: {
+		props: [
+			...ratingMixinProps,
+			{
+				name: 'length',
+				type: 'number',
+				default: 10,
+				description: 'Le nombre de choix possibles.'
+			},
+			{
+				name: 'item-labels',
+				type: 'string[]',
+				default: null,
+				description: 'Les deux labels à afficher.'
+			}
+		],
+		events: ratingMixinEvents
+	},
+	StarsPicker: {
+		props: [
+			...ratingMixinProps,
+			{
+				name: 'length',
+				type: 'number',
+				default: 5,
+				description: 'Le nombre de choix possibles.'
+			}
+		],
+		events: ratingMixinEvents
 	}
 };

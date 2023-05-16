@@ -1,5 +1,15 @@
 <template>
 	<MaintenancePage>
+		<template #default>
+			<VBtn
+				color="primary"
+				to="/"
+				class="mt-8"
+			>
+				Retour à l’accueil
+			</VBtn>
+		</template>
+
 		<template #illustration>
 			<img
 				:src="require('@cnamts/vue-dot/src/assets/images/empty-sheets.svg')"

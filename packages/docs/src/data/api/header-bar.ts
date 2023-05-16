@@ -5,7 +5,7 @@ import { customizable } from './shared/mixins/customizable';
 const themeProp = {
 	name: 'theme',
 	type: 'string',
-	required: true,
+	default: `'default'`,
 	description: 'Le thème de l’en-tête.',
 	example: `'default' | 'cnam' | 'ameli' | 'ameli-pro' | 'compte-ameli' | 'risque-pro' | 'compte-entreprise'`
 };
@@ -131,6 +131,10 @@ export const api: Api = {
 			{
 				name: 'secondary-logo',
 				description: 'Slot pour remplacer le bloc marque secondaire et afficher une marque partenaire.'
+			},
+			{
+				name: 'brand-content',
+				description: 'Slot pour personnaliser le contenu de la marque.'
 			},
 			{
 				name: 'navigation-bar-content',

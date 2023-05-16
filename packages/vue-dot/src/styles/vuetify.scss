@@ -12,7 +12,8 @@
 .v-simple-checkbox svg,
 .v-slide-group__content,
 .v-slider__tick-label,
-.v-slider__thumb-container * {
+.v-slider__thumb-container *,
+.row {
 	max-width: none;
 }
 
@@ -95,6 +96,11 @@
 		> .v-input__control > .v-input__slot fieldset {
 			color: rgba(0, 0, 0, .42) !important;
 		}
+	}
+
+	// Fix overlay color
+	.v-overlay {
+		background-color: rgba(33, 33, 33, .48);
 	}
 
 	// Fix alerts color

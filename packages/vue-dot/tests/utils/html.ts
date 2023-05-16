@@ -18,7 +18,7 @@ interface HTMLFnOpts {
  *
  * `functionRemplacement` is used to ensure a deterministic snapshot
  * (workaround of https://github.com/vuejs/vue-test-utils/issues/975)
- * TODO: check if still required
+ * @deprecated Bug fixed, not useful anymore
  */
 export function html(wrapper: Wrapper<Vue>, options?: HTMLFnOpts): string {
 	const opts = {
