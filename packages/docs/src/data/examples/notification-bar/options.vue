@@ -29,7 +29,8 @@
 	export default class NotificationBarOptions extends Vue {
 		vuetifyOptions = {
 			snackBar: {
-				rounded: 'pill'
+				rounded: 'pill',
+				top: true
 			},
 			icon: {
 				class: 'mr-3'
