@@ -7,37 +7,39 @@
 		@input="drawerUpdated"
 	>
 		<slot>
-			<div class="d-flex align-center justify-end mb-8">
-				<VBtn
-					v-bind="options.closeBtn"
-					:aria-label="locales.closeBtn"
-					@click="emitChangeEvent"
-				>
-					<VIcon v-bind="options.closeIcon">
-						{{ closeIcon }}
-					</VIcon>
-				</VBtn>
-			</div>
+			<div class="d-flex flex-column justify-space-between h-100">
+				<div>
+					<div class="d-flex align-center justify-end mb-8">
+						<VBtn
+							v-bind="options.closeBtn"
+							:aria-label="locales.closeBtn"
+							@click="emitChangeEvent"
+						>
+							<VIcon v-bind="options.closeIcon">
+								{{ closeIcon }}
+							</VIcon>
+						</VBtn>
+					</div>
 
-			<div class="nav d-flex flex-column justify-between">
-				<slot name="navigation-drawer-prepend" />
+					<slot name="navigation-drawer-prepend" />
 
-				<VTabs
-					v-bind="options.tabs"
-					:value="tab"
-					optional
-					@change="emitTabUpdateEvent"
-				>
-					<VTab
-						v-for="(item, index) in items"
-						:key="index"
-						v-bind="options.tab"
-						:href="item.href"
-						:to="item.to"
+					<VTabs
+						v-bind="options.tabs"
+						:value="tab"
+						optional
+						@change="emitTabUpdateEvent"
 					>
-						{{ item.label }}
-					</VTab>
-				</VTabs>
+						<VTab
+							v-for="(item, index) in items"
+							:key="index"
+							v-bind="options.tab"
+							:href="item.href"
+							:to="item.to"
+						>
+							{{ item.label }}
+						</VTab>
+					</VTabs>
+				</div>
 
 				<slot name="navigation-drawer-append" />
 			</div>
