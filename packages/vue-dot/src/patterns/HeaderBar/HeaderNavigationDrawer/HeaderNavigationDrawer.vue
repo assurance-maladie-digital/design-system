@@ -19,6 +19,8 @@
 				</VBtn>
 			</div>
 
+			<slot name="navigation-drawer-prepend" />
+
 			<VTabs
 				v-bind="options.tabs"
 				:value="tab"
@@ -35,6 +37,10 @@
 					{{ item.label }}
 				</VTab>
 			</VTabs>
+
+			<VSpacer />
+
+			<slot name="navigation-drawer-append" />
 		</slot>
 	</VNavigationDrawer>
 </template>
@@ -117,11 +123,19 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-navigation-drawer .v-tab {
-		height: 40px !important;
+	.v-navigation-drawer {
+		.v-tab {
+			height: 40px !important;
 
-		&.v-tab--active {
-			background: rgba($color: #fff, $alpha: .1);
+			&.v-tab--active {
+				background: rgba($color: #fff, $alpha: .1);
+			}
+		}
+
+		:deep(.v-navigation-drawer__content) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
 		}
 	}
 </style>

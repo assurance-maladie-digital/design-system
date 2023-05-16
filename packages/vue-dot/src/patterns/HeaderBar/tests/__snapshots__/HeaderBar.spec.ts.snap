@@ -12,6 +12,6 @@ exports[`HeaderBar renders correctly 1`] = `
     </vsheet-stub>
     <!---->
   </vappbar-stub>
-  <headernavigationdrawer-stub theme="default"></headernavigationdrawer-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
 </div>
 `;

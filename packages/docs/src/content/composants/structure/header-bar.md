@@ -42,6 +42,18 @@ Vous pouvez ajouter du contenu dans la partie droite du header en utilisant le s
 
 <doc-example file="header-bar/default-slot"></doc-example>
 
+#### Contenu supplémentaire dans la barre de navigation
+
+Vous pouvez ajouter du contenu avant ou après le contenu principal de la barre de navigation en utilisant les slots `navigation-bar-prepend` et `navigation-bar-secondary-content`.
+
+<doc-example file="header-bar/navigation-bar-slots"></doc-example>
+
+#### Contenu supplémentaire dans le menu mobile
+
+Vous pouvez ajouter du contenu avant ou après le contenu principal du menu sur mobile en utilisant les slots `navigation-drawer-prepend` et `navigation-drawer-append`.
+
+<doc-example file="header-bar/drawer-slots"></doc-example>
+
 #### Thème
 
 Vous pouvez utiliser un thème différent en utilisant la prop `theme`.
@@ -89,7 +101,7 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `Heade
 
 ### Slots
 
-Vous pouvez utiliser les slots `navigation-bar-content` et `navigation-drawer-content` pour remplacer le contenu de la barre de navigation ainsi que du menu sur les écrans mobiles.
+Vous pouvez remplacer le contenu de la barre de navigation ainsi que du menu sur les écrans mobiles en utilisant les slots `navigation-bar-content` et `navigation-drawer-content`.
 
 <doc-example file="header-bar/slots"></doc-example>
 

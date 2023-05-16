@@ -9,6 +9,8 @@
 			v-bind="options.innerSheet"
 			:width="innerWidth"
 		>
+			<slot name="navigation-bar-prepend" />
+
 			<slot>
 				<HeaderMenuBtn
 					v-if="mobileVersion"
