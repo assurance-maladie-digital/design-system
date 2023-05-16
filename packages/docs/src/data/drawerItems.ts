@@ -391,6 +391,15 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Helpers',
+				items: [
+					{
+						title: 'convertToUnit',
+						to: '/composants-techniques/helpers/convert-to-unit'
+					}
+				]
+			},
+			{
 				title: 'Tests unitaires',
 				items: [
 					{
