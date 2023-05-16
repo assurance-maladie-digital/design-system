@@ -138,19 +138,19 @@ export const api: Api = {
 			},
 			{
 				name: 'navigation-bar-content',
-				description: 'Slot pour remplacer le contenu par défaut de la barre de navigation.'
+				description: 'Slot pour remplacer le contenu de la barre de navigation.'
 			},
 			{
 				name: 'navigation-bar-prepend',
-				description: 'Slot pour ajouter du contenu avant le contenu par défaut de la barre de navigation.'
+				description: 'Slot pour ajouter du contenu avant le contenu principal de la barre de navigation.'
 			},
 			{
 				name: 'navigation-bar-secondary-content',
-				description: 'Slot pour ajouter du contenu après le contenu par défaut de la barre de navigation.'
+				description: 'Slot pour ajouter du contenu après le contenu principal de la barre de navigation.'
 			},
 			{
 				name: 'navigation-drawer',
-				description: 'Slot pour remplacer le menu de navigation par défaut sur les écrans mobiles.',
+				description: 'Slot pour remplacer le menu de navigation sur les écrans mobiles.',
 				props: {
 					drawer: 'boolean',
 					updateDrawer: '(value: boolean) => void'
@@ -158,15 +158,15 @@ export const api: Api = {
 			},
 			{
 				name: 'navigation-drawer-content',
-				description: 'Slot pour remplacer le contenu par défaut du menu de navigation sur les écrans mobiles.'
+				description: 'Slot pour remplacer le contenu du menu de navigation sur les écrans mobiles.'
 			},
 			{
 				name: 'navigation-drawer-prepend',
-				description: 'Slot pour ajouter du contenu avant le contenu par défaut du menu de navigation sur les écrans mobiles.'
+				description: 'Slot pour ajouter du contenu avant le contenu principal du menu de navigation sur les écrans mobiles.'
 			},
 			{
 				name: 'navigation-drawer-append',
-				description: 'Slot pour ajouter du contenu après le contenu par défaut du menu de navigation sur les écrans mobiles.'
+				description: 'Slot pour ajouter du contenu après le contenu principal du menu de navigation sur les écrans mobiles.'
 			}
 		]
 	},
@@ -208,6 +208,14 @@ export const api: Api = {
 			{
 				name: 'default',
 				description: 'Slot pour remplacer le contenu.'
+			},
+			{
+				name: 'navigation-bar-prepend',
+				description: 'Slot pour ajouter du contenu avant le contenu principal.'
+			},
+			{
+				name: 'navigation-bar-secondary-content',
+				description: 'Slot pour ajouter du contenu après le contenu principal.'
 			}
 		]
 	},
@@ -229,6 +237,14 @@ export const api: Api = {
 			{
 				name: 'default',
 				description: 'Slot pour remplacer le contenu.'
+			},
+			{
+				name: 'navigation-drawer-prepend',
+				description: 'Slot pour ajouter du contenu avant le contenu principal.'
+			},
+			{
+				name: 'navigation-drawer-append',
+				description: 'Slot pour ajouter du contenu après le contenu principal.'
 			}
 		]
 	}

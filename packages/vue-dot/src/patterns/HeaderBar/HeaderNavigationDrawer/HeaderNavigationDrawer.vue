@@ -7,42 +7,40 @@
 		@input="drawerUpdated"
 	>
 		<slot>
-			<div class="d-flex flex-column justify-space-between h-100">
-				<div>
-					<div class="d-flex align-center justify-end mb-8">
-						<VBtn
-							v-bind="options.closeBtn"
-							:aria-label="locales.closeBtn"
-							@click="emitChangeEvent"
-						>
-							<VIcon v-bind="options.closeIcon">
-								{{ closeIcon }}
-							</VIcon>
-						</VBtn>
-					</div>
-
-					<slot name="navigation-drawer-prepend" />
-
-					<VTabs
-						v-bind="options.tabs"
-						:value="tab"
-						optional
-						@change="emitTabUpdateEvent"
-					>
-						<VTab
-							v-for="(item, index) in items"
-							:key="index"
-							v-bind="options.tab"
-							:href="item.href"
-							:to="item.to"
-						>
-							{{ item.label }}
-						</VTab>
-					</VTabs>
-				</div>
-
-				<slot name="navigation-drawer-append" />
+			<div class="d-flex align-center justify-end mb-8">
+				<VBtn
+					v-bind="options.closeBtn"
+					:aria-label="locales.closeBtn"
+					@click="emitChangeEvent"
+				>
+					<VIcon v-bind="options.closeIcon">
+						{{ closeIcon }}
+					</VIcon>
+				</VBtn>
 			</div>
+
+			<slot name="navigation-drawer-prepend" />
+
+			<VTabs
+				v-bind="options.tabs"
+				:value="tab"
+				optional
+				@change="emitTabUpdateEvent"
+			>
+				<VTab
+					v-for="(item, index) in items"
+					:key="index"
+					v-bind="options.tab"
+					:href="item.href"
+					:to="item.to"
+				>
+					{{ item.label }}
+				</VTab>
+			</VTabs>
+
+			<VSpacer />
+
+			<slot name="navigation-drawer-append" />
 		</slot>
 	</VNavigationDrawer>
 </template>
@@ -125,14 +123,19 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-navigation-drawer .v-tab {
-		height: 40px !important;
+	.v-navigation-drawer {
+		.v-tab {
+			height: 40px !important;
 
-		&.v-tab--active {
-			background: rgba($color: #fff, $alpha: .1);
+			&.v-tab--active {
+				background: rgba($color: #fff, $alpha: .1);
+			}
 		}
-	}
-	.nav {
-		height: calc(100% - 68px);
+
+		:deep(.v-navigation-drawer__content) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 </style>
