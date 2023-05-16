@@ -15,7 +15,7 @@ export const api: Api = {
 				name: 'bottom',
 				type: 'boolean',
 				default: 'false',
-				description: 'Position de la barre de notification en bas'
+				description: 'Positionne la barre de notification en bas de l’écran.'
 			},
 			...customizable(`{
 	snackBar: 'VSnackbar',

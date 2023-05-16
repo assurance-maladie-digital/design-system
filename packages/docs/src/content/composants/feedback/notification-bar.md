@@ -40,7 +40,7 @@ Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la pro
 
 #### Position
 
-Vous pouvez modifier la position du composant `NotificationBar` en utilisant la prop `bottom`.
+Vous pouvez positionner la barre de notification en bas de l’écran en utilisant la prop `bottom`.
 
 <doc-example file="notification-bar/position"></doc-example>
 
