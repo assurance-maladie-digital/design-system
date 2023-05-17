@@ -1,14 +1,9 @@
 <template>
 	<div>
 		<NotificationBar v-show="showNotificationBar">
-			<template #actions>
-				<VBtn
-					color="white"
-					class="mr-3"
-					elevation="0"
-					outlined
-				>
-					Bouton
+			<template #action="{ attrs }">
+				<VBtn v-bind="attrs">
+					Valider
 				</VBtn>
 			</template>
 		</NotificationBar>
@@ -28,21 +23,32 @@
 
 	import { mapActions, mapState } from 'vuex';
 
-	const EXAMPLE_REF = 'slot-example';
+	import { NotificationTypes } from '@cnamts/vue-dot/src/modules/notification/types';
+
+	const EXAMPLE_REF = 'action-example';
 
 	@Component({
 		computed: mapState('notification', ['notification']),
 		methods: mapActions('notification', ['addNotification'])
 	})
-	export default class NotificationBarSlot extends Vue {
+	export default class NotificationBarAction extends Vue {
 		get showNotificationBar(): boolean {
 			return this.notification?.ref === EXAMPLE_REF;
 		}
 
 		notifyUser(): void {
+			const notificationTypes: NotificationTypes[] = [
+				'success',
+				'error',
+				'info',
+				'warning'
+			];
+
+			const randomIndex = Math.floor(Math.random() * notificationTypes.length);
+
 			this.addNotification({
 				ref: EXAMPLE_REF,
-				type: 'info',
+				type: notificationTypes[randomIndex],
 				message: 'Exemple de notification.'
 			});
 		}

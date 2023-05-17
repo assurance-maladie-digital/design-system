@@ -5,56 +5,72 @@
 		:color="snackbarColor"
 		:top="!bottom"
 		:bottom="bottom"
-		:vertical="mobileVersion && ($slots.actions || longText)"
-		:class="textColor + '--text'"
+		:vertical="mobileVersion && hasLongContent"
+		width="960px"
 		role="status"
 		class="vd-notification-bar"
 	>
 		<div
 			v-if="notification"
-			class="d-flex align-center"
+			:class="contentColor + '--text'"
+			class="d-flex align-center text-wrap"
 		>
 			<VIcon
 				v-if="!mobileVersion"
 				v-bind="options.icon"
-				:color="textColor"
+				:color="contentColor"
 				class="vd-notification-icon"
 			>
 				{{ icon }}
 			</VIcon>
 
 			{{ notification.message }}
-
-			<VDivider
-				v-if="$slots.actions"
-				:color="textColor"
-				:vertical="!mobileVersion"
-				:class="mobileVersion ? 'h-line' : 'ml-3 v-line'"
-			/>
 		</div>
 
 		<template #action="{ attrs }">
-			<slot name="actions" />
-			<VBtn
-				v-bind="{
-					...attrs,
-					...options.btn
+			<VDivider
+				v-if="hasLongContent"
+				:color="contentColor"
+				:vertical="!mobileVersion"
+				:class="{
+					'mx-4': !mobileVersion,
+					'my-4': mobileVersion && hasLongContent
 				}"
-				:color="textColor"
-				:icon="mobileVersion && !longText && !$slots.actions"
-				:class="'ma-0' ? mobileVersion && !longText && !$slots.actions : ''"
-				@click="clearNotification"
-			>
-				<span :class="{ 'd-sr-only': mobileVersion && !longText && !$slots.actions }">
-					{{ closeBtnText }}
-				</span>
-				<VIcon
-					v-if="mobileVersion && !longText && !$slots.actions"
-					v-bind="options.closeIcon"
+				:style="{ borderColor: dividerColor }"
+			/>
+
+			<div class="vd-notification-bar-actions d-flex">
+				<slot
+					name="action"
+					v-bind="{
+						attrs: actionSlotAttrs
+					}"
+				/>
+
+				<VSpacer />
+
+				<VBtn
+					v-bind="{
+						...attrs,
+						...options.btn
+					}"
+					:color="contentColor"
+					:icon="smallCloseBtn"
+					:class="{ 'ma-0': smallCloseBtn }"
+					@click="clearNotification"
 				>
-					{{ closeIcon }}
-				</VIcon>
-			</VBtn>
+					<span :class="{ 'd-sr-only': smallCloseBtn }">
+						{{ closeBtnText }}
+					</span>
+
+					<VIcon
+						v-if="smallCloseBtn"
+						v-bind="options.closeIcon"
+					>
+						{{ closeIcon }}
+					</VIcon>
+				</VBtn>
+			</div>
 		</template>
 	</VSnackbar>
 </template>
@@ -74,10 +90,10 @@
 	import { NotificationObj } from '../../modules/notification/types';
 
 	import {
-		mdiCheck,
-		mdiAlertCircle,
-		mdiInformation,
-		mdiAlert,
+		mdiCheckCircleOutline,
+		mdiAlertCircleOutline,
+		mdiInformationOutline,
+		mdiAlertOutline,
 		mdiClose
 	} from '@mdi/js';
 
@@ -118,10 +134,10 @@
 		notification!: NotificationObj | null;
 
 		iconMapping: IndexedObject = {
-			success: mdiCheck,
-			error: mdiAlertCircle,
-			info: mdiInformation,
-			warning: mdiAlert
+			success: mdiCheckCircleOutline,
+			error: mdiAlertCircleOutline,
+			info: mdiInformationOutline,
+			warning: mdiAlertOutline
 		};
 
 		snackbarColor: string | null = null;
@@ -134,23 +150,43 @@
 			return this.notification.icon || this.iconMapping[this.notification.type];
 		}
 
-		get textColor(): string {
+		get isDarkText(): boolean {
 			const isSuccess = this.notification?.type === 'success';
 			const isWarning = this.notification?.type === 'warning';
 
-			if (isSuccess || isWarning) {
-				return 'grey-darken-80';
-			}
-
-			return 'white';
+			return isSuccess || isWarning;
 		}
 
-		get longText(): boolean {
-			return this.notification ? this.notification.message.length > 50 : false;
+		get contentColor(): string {
+			return this.isDarkText ? 'grey-darken-80' : 'white';
+		}
+
+		get dividerColor(): string {
+			return this.isDarkText ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.25)';
 		}
 
 		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.xs;
+		}
+
+		get isLongText(): boolean {
+			return this.notification ? this.notification.message.length > 50 : false;
+		}
+
+		get hasLongContent(): boolean {
+			return this.isLongText || Boolean(this.$scopedSlots.action);
+		}
+
+		get smallCloseBtn(): boolean {
+			return this.mobileVersion && !this.hasLongContent;
+		}
+
+		get actionSlotAttrs(): Record<string, string | boolean> {
+			return {
+				color: this.contentColor,
+				outlined: true,
+				class: 'mr-4'
+			};
 		}
 
 		created() {
@@ -167,45 +203,41 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+
 	$breakpoint-xs: 600px;
 
 	// Use min-width to avoid shrinking with flexbox
-	.vd-notification-bar :deep(.v-snack__wrapper) {
-		min-width: 0;
-		color: currentColor;
-	}
-	.vd-notification-bar :deep(.rounded-pill) {
-		@media screen and (max-width: $breakpoint-xs) {
-			border-radius: 30px !important;
+	.vd-notification-bar :deep() {
+		.v-snack__wrapper {
+			padding: 16px;
+			min-width: 0;
+			max-width: none;
+
+			@media only screen and (max-width: $breakpoint-xs) {
+				padding: 10px 16px;
+			}
+		}
+
+		.v-snack__content,
+		.v-snack__action {
+			margin: 0;
+			padding: 0;
 		}
 	}
 
-	.vd-notification-bar :deep(.v-snack__content) {
-		width: 100%;
-		position: relative;
-	}
+	.vd-notification-bar.v-snack--vertical :deep() {
+		.v-snack__wrapper {
+			align-items: stretch;
+		}
 
-	.vd-notification-bar :deep(.v-snack__action) {
-		margin-bottom: 0;
-		@media screen and (max-width: $breakpoint-xs) {
-			padding: 14px 16px;
-			margin-right: 0;
+		.v-snack__action {
+			align-self: stretch;
+			align-items: stretch;
+			flex-direction: column;
 		}
 	}
 
 	.vd-notification-icon {
 		min-width: 24px;
-	}
-
-	.v-divider.v-line {
-		min-height: 36px;
-	}
-	.v-divider.h-line {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		margin-left: 16px;
-		margin-right: 16px;
-		width: calc(100% - 32px);
 	}
 </style>

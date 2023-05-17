@@ -20,7 +20,7 @@
 
 	import { mapActions, mapState } from 'vuex';
 
-	const EXAMPLE_REF = 'usage-example';
+	const EXAMPLE_REF = 'position-example';
 
 	@Component({
 		computed: mapState('notification', ['notification']),
