@@ -3,10 +3,12 @@
 		v-bind="options.snackBar"
 		:value="Boolean(notification)"
 		:color="snackbarColor"
+		:top="!bottom"
+		:bottom="bottom"
+		:vertical="mobileVersion && ($slots.actions || longText)"
+		:class="textColor + '--text'"
 		role="status"
 		class="vd-notification-bar"
-		:class="textColor + '--text'"
-		:vertical="mobileVersion && ($slots.actions || longText)"
 	>
 		<div
 			v-if="notification"
@@ -84,6 +86,10 @@
 			closeBtnText: {
 				type: String,
 				default: locales.close
+			},
+			bottom: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
