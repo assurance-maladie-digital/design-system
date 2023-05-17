@@ -28,7 +28,7 @@
 		options = {
 			booleans: [
 				'mobileVersion',
-				'reduce-logo'
+				'reduceLogo'
 			],
 			selects: {
 				theme: [

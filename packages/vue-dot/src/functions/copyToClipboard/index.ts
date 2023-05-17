@@ -20,7 +20,13 @@ export function copyToClipboard(textToCopy: string): void {
 	}
 
 	el.select();
-	document.execCommand('copy'); // TODO: Use Clipboard API when supported
+
+	if (navigator.clipboard) {
+		navigator.clipboard.writeText(textToCopy);
+	} else {
+		document.execCommand('copy');
+	}
+
 	document.body.removeChild(el);
 
 	// If a selection existed before copying

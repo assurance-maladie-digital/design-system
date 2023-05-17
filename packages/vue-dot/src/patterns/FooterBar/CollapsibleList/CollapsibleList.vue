@@ -1,58 +1,53 @@
 <template>
-	<div
+	<VExpansionPanels
 		v-if="isMobile"
-		class="vd-collapse-list pa-0"
+		class="vd-collapse-list-mobile"
+		accordion
+		flat
 	>
-		<VExpansionPanels
-			accordion
-			flat
-		>
-			<VExpansionPanel>
-				<VExpansionPanelHeader>
-					<h4 class="font-weight-bold">
-						{{ listItems.title }}
-					</h4>
-				</VExpansionPanelHeader>
+		<VExpansionPanel>
+			<VExpansionPanelHeader class="text-subtitle-2 pl-0 py-4">
+				{{ listTitle }}
+			</VExpansionPanelHeader>
 
-				<VExpansionPanelContent>
-					<ul class="pa-0">
-						<li
-							v-for="item in listItems.content"
-							:key="item.name"
-							class="mb-2"
+			<VExpansionPanelContent>
+				<ul class="pl-0">
+					<li
+						v-for="(item, index) in items"
+						:key="index"
+						class="py-3"
+					>
+						<a
+							:href="item.href"
+							class="text-body-2 text-decoration-none text--primary"
 						>
-							<a
-								:href="item.url"
-								class="text-body-2 text-decoration-none black--text"
-							>
-								{{ item.name }}
-							</a>
-						</li>
-					</ul>
-				</VExpansionPanelContent>
-			</VExpansionPanel>
-		</VExpansionPanels>
-	</div>
+							{{ item.text }}
+						</a>
+					</li>
+				</ul>
+			</VExpansionPanelContent>
+		</VExpansionPanel>
+	</VExpansionPanels>
 
 	<div
 		v-else
-		class="pa-0"
+		class="vd-collapse-list"
 	>
-		<h4 class="mb-3 text-subtitle-1 font-weight-bold">
-			{{ listItems.title }}
+		<h4 class="text-subtitle-1 font-weight-bold mb-3">
+			{{ listTitle }}
 		</h4>
 
-		<ul class="pa-0">
+		<ul class="pl-0">
 			<li
-				v-for="item in listItems.content"
-				:key="item.name"
-				class="mb-2"
+				v-for="(item, index) in items"
+				:key="index"
+				:class="{ 'mb-2': index < items.length - 1 }"
 			>
 				<a
-					:href="item.url"
-					class="text-body-2 text-decoration-none black--text"
+					:href="item.href"
+					class="text-body-2 text-decoration-none text--primary"
 				>
-					{{ item.name }}
+					{{ item.text }}
 				</a>
 			</li>
 		</ul>
@@ -67,9 +62,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			listItems: {
-				type: Object as PropType<ListItem>,
-				default: () => ({})
+			listTitle: {
+				type: String,
+				default: null
+			},
+			items: {
+				type: Array as PropType<ListItem[]>,
+				default: () => []
 			}
 		}
 	});
@@ -79,13 +78,28 @@
 	@Component
 	export default class CollapsibleList extends MixinsDeclaration {
 		get isMobile(): boolean {
-			return this.$vuetify.breakpoint.smAndDown;
+			return this.$vuetify.breakpoint.xs;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.v-expansion-panel :deep(.v-expansion-panel-content__wrap) {
+		padding: 0;
+	}
+
 	li {
 		list-style: none;
+	}
+
+	a {
+		transition: .15s;
+		padding-top: 1px; // Add top padding to account for bottom border
+		border-bottom: 1px solid transparent;
+
+		&:hover,
+		&:focus {
+			border-color: currentColor;
+		}
 	}
 </style>

@@ -24,6 +24,12 @@ Vous pouvez envoyer des notifications de types *succès*, *erreur*, *avertisseme
 
 <doc-example file="notification-bar/types"></doc-example>
 
+#### Action supplémentaire
+
+Vous pouvez ajouter un bouton d’action supplémentaire en utilisant le slot `action`.
+
+<doc-example file="notification-bar/action"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
@@ -37,6 +43,12 @@ Vous pouvez envoyer des notifications de types *succès*, *erreur*, *avertisseme
 Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la prop `close-btn-text`.
 
 <doc-example file="notification-bar/label"></doc-example>
+
+#### Position
+
+Vous pouvez positionner la barre de notification en bas de l’écran en utilisant la prop `bottom`.
+
+<doc-example file="notification-bar/position"></doc-example>
 
 #### Composants Vuetify
 

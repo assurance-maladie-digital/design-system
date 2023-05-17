@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import SubHeader from '../';
 import HeaderLoading from '../../../elements/HeaderLoading';
@@ -21,7 +20,7 @@ describe('SubHeader', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders loading state correctly', async() => {
@@ -33,6 +32,6 @@ describe('SubHeader', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -19,7 +19,7 @@ Ce composant requiert l’installation de la librairie [FormBuilder](/demarrer/i
 
 #### Titre, description et texte d’aide
 
-Vous pouvez un titre, une description ainsi qu’un texte d’aide sur le champ en utilisant les attributs `title`, `description` et `tooltip`.
+Vous pouvez ajouter un titre, une description ainsi qu’un texte d’aide sur le champ en utilisant les attributs `title`, `description` et `tooltip`.
 
 <doc-alert type="warning">
 
