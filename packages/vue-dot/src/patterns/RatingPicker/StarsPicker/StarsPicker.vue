@@ -12,39 +12,34 @@
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
-				<VRadioGroup>
-					<VRadio
-						:key="index"
+				<label
+					@mouseover="hoverValue = index"
+					@focus="hoverValue = index"
+					@mouseleave="hoverValue = -1"
+					@focusout="hoverValue = -1"
+				>
+					<input
+						type="radio"
+						class="d-none"
+						:name="'stars-' + index"
 						:value="index"
-						hide-details
-						class="pr-2"
+						:checked="isActive(index)"
+						:disabled="readonly"
 						@click="click"
 					>
-						<template #label>
-							<VBtn
-								:disabled="readonly"
-								:class="{
-									'v-btn--active': isActive(index),
-									'v-btn--before-active': isBeforeActive(index)
-								}"
-								icon
-								@mouseover="hoverValue = index"
-								@focus="hoverValue = index"
-								@mouseleave="hoverValue = -1"
-								@focusout="hoverValue = -1"
-							>
-								<VIcon
-									x-large
-									color="primary"
-									class="pa-1"
-									:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
-								>
-									{{ starOutlineIcon }}
-								</VIcon>
-							</VBtn>
-						</template>
-					</VRadio>
-				</VRadioGroup>
+					<VIcon
+						x-large
+						color="primary"
+						class="pa-1"
+						:class="{
+							'active': isActive(index),
+							'before-active': isBeforeActive(index)
+						}"
+						:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
+					>
+						{{ starOutlineIcon }}
+					</VIcon>
+				</label>
 			</template>
 		</VRating>
 	</div>
@@ -94,41 +89,13 @@
 		height: auto !important;
 		width: auto !important;
 		padding: 0;
-		.v-btn {
-			color: $vd-primary !important;
-			&--active.v-btn--disabled .v-icon {
-				color: $vd-primary !important;
-				opacity: 1 !important;
-			}
-
-			&:focus,
-			&--active {
-				color: $vd-primary !important;
-			}
+		label {
+			cursor: pointer;
 		}
-		.v-btn.v-btn--disabled.v-btn--before-active {
-			color: $vd-primary !important;
-			.v-icon {
-				color: $vd-primary !important;
-				opacity: 1 !important;
-			}
+		.active, .before-active {
+			color: $vd-primary;
+			opacity: 1 !important;
 		}
-		.v-btn.v-btn--after-hover .v-icon {
-			opacity: 0.5;
-		}
-	}
-	.v-input--selection-controls {
-		margin: 0;
-		padding: 0;
-	}
-	.v-input--selection-controls__input {
-		display: none !important;
-	}
-	.v-input__slot {
-		margin-bottom: 0;
-	}
-	.v-messages {
-		display: none;
 	}
 }
 </style>
