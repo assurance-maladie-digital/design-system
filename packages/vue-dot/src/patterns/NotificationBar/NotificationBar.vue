@@ -3,8 +3,8 @@
 		v-bind="options.snackBar"
 		:value="Boolean(notification)"
 		:color="snackbarColor"
-		:top="top && !bottom"
-		:bottom="bottom && !top"
+		:top="!bottom"
+		:bottom="bottom"
 		:class="textColor + '--text'"
 		role="status"
 		class="vd-notification-bar"
@@ -77,10 +77,6 @@
 			closeBtnText: {
 				type: String,
 				default: locales.close
-			},
-			top: {
-				type: Boolean,
-				default: true
 			},
 			bottom: {
 				type: Boolean,
