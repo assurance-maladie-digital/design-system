@@ -23,6 +23,19 @@ export const api: Api = {
 	btn: 'VBtn',
 	closeIcon: 'VIcon'
 }`)
+		],
+		slots: [
+			{
+				name: 'action',
+				description: 'Slot pour ajouter un bouton d’action supplémentaire.',
+				props: {
+					attrs: {
+						outlined: 'true',
+						color: 'string',
+						class: 'string'
+					}
+				}
+			}
 		]
 	}
 };
