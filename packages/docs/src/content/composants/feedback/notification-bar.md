@@ -38,6 +38,12 @@ Vous pouvez modifier le texte par défaut du bouton *Fermer* en utilisant la pro
 
 <doc-example file="notification-bar/label"></doc-example>
 
+#### Position
+
+Vous pouvez positionner la barre de notification en bas de l’écran en utilisant la prop `bottom`.
+
+<doc-example file="notification-bar/position"></doc-example>
+
 #### Composants Vuetify
 
 Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `NotificationBar` en utilisant la prop `vuetify-options`.
