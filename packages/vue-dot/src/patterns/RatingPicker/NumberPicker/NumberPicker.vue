@@ -43,7 +43,6 @@
 										:aria-label="locales.ariaLabel(index + 1, length)"
 										x-small
 										outlined
-										tag
 										color="primary"
 										height="36px"
 										class="text-body-2 mx-1 pa-0"
