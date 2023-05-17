@@ -28,6 +28,7 @@
 									'v-btn--before-active': isBeforeActive(index)
 								}"
 								icon
+								tag
 								@mouseover="hoverValue = index"
 								@focus="hoverValue = index"
 								@mouseleave="hoverValue = -1"

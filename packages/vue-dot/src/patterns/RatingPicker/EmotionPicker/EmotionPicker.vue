@@ -31,6 +31,7 @@
 								:min-width="btnSize"
 								:aria-label="getEmotionLabel(index)"
 								text
+								tag
 								class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
 							>
 								<VIcon
