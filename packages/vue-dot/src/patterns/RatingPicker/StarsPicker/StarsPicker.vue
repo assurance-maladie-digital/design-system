@@ -23,7 +23,7 @@
 					<input
 						type="radio"
 						class="d-none"
-						:name="'stars-' + index"
+						:name="'star-' + index"
 						:value="index"
 						:checked="isActive(index)"
 						:disabled="readonly"

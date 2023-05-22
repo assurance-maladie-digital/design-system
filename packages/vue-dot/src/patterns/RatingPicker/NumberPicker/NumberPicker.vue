@@ -31,27 +31,29 @@
 					@input="setValue"
 				>
 					<template #item="{ index, click }">
-						<VRadioGroup>
-							<VRadio
-								:key="index + 1"
+						<label
+							:tabindex="index + 1"
+							class="mx-1 pa-0"
+							@keydown.enter="click"
+							@click="click"
+						>
+							<input
+								type="radio"
+								class="d-none"
+								:name="'number-' + index + 1"
 								:value="index + 1"
-								hide-details
-								@click="click"
 							>
-								<template #label>
-									<VBtn
-										:aria-label="locales.ariaLabel(index + 1, length)"
-										x-small
-										outlined
-										color="primary"
-										height="36px"
-										class="text-body-2 mx-1 pa-0"
-									>
-										{{ index + 1 }}
-									</VBtn>
-								</template>
-							</VRadio>
-						</VRadioGroup>
+							<VBtn
+								:aria-label="locales.ariaLabel(index + 1, length)"
+								x-small
+								outlined
+								color="primary"
+								height="36px"
+								class="text-body-2"
+							>
+								{{ index + 1 }}
+							</VBtn>
+						</label>
 					</template>
 				</VRating>
 
@@ -156,19 +158,6 @@
 	.vd-number-picker {
 		.theme--light.v-btn.v-btn--disabled {
 			color: $vd-primary !important;
-		}
-		.v-input--selection-controls {
-			margin: 0;
-			padding: 0;
-		}
-		.v-input--selection-controls__input {
-			display: none !important;
-		}
-		.v-input__slot {
-			margin-bottom: 0;
-		}
-		.v-messages {
-			display: none;
 		}
 	}
 </style>
