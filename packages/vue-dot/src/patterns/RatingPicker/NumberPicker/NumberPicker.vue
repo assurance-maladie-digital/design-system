@@ -32,7 +32,6 @@
 				>
 					<template #item="{ index, click }">
 						<label
-							:tabindex="index + 1"
 							class="mx-1 pa-0"
 							@keydown.enter="click"
 							@click="click"
@@ -45,6 +44,7 @@
 							>
 							<VBtn
 								:aria-label="locales.ariaLabel(index + 1, length)"
+								:tabindex="index + 1"
 								x-small
 								outlined
 								color="primary"

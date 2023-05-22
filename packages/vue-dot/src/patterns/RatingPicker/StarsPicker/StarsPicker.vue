@@ -111,6 +111,11 @@
 		label {
 			cursor: pointer;
 		}
+		label {
+			&:focus {
+				outline: none;
+			}
+		}
 		.active, .before-active, .after-active {
 			color: $vd-primary;
 		}
