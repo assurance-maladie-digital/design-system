@@ -13,6 +13,8 @@
 		>
 			<template #item="{ index, click }">
 				<label
+					:tabindex="index + 1"
+					@keydown.enter="click"
 					@mouseover="hoverValue = index"
 					@focus="hoverValue = index"
 					@mouseleave="hoverValue = -1"
