@@ -15,8 +15,8 @@
 				<label
 					:tabindex="index + 1"
 					@keydown.enter="click"
-					@mouseover="hoverValue = index"
-					@focus="hoverValue = index"
+					@mouseover="!readonly && (hoverValue = index)"
+					@focus="!readonly && (hoverValue = index)"
 					@mouseleave="hoverValue = -1"
 					@focusout="hoverValue = -1"
 				>
@@ -34,6 +34,9 @@
 						x-large
 						color="primary"
 						class="pa-1"
+						:class="{
+							'after-active': isAfterActive(index)
+						}"
 						:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
 					>
 						{{ starOutlineIcon }}
@@ -88,6 +91,9 @@
 		isBeforeActive(index: number): boolean {
 			return index < this.value - 1;
 		}
+		isAfterActive(index: number): boolean {
+			return index > this.value - 1;
+		}
 		isAfterHover(index: number): boolean {
 			return index > this.hoverValue;
 		}
@@ -105,8 +111,10 @@
 		label {
 			cursor: pointer;
 		}
-		.active, .before-active {
+		.active, .before-active, .after-active {
 			color: $vd-primary;
+		}
+		.active, .before-active {
 			opacity: 1 !important;
 		}
 	}
