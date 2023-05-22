@@ -13,7 +13,7 @@
 		>
 			<template #item="{ index, click }">
 				<label
-					:tabindex="index + 1"
+					:tabindex="(uniqueId * 100) + index + 1"
 					@keydown.enter="click"
 					@mouseover="!readonly && (hoverValue = index)"
 					@focus="!readonly && (hoverValue = index)"
@@ -84,6 +84,7 @@
 		starOutlineIcon = mdiStarOutline;
 		starIcon = mdiStar;
 		hoverValue = -1;
+		uniqueId = Math.floor(Math.random() * 10000);
 
 		isActive(index: number): boolean {
 			return index === this.value - 1;

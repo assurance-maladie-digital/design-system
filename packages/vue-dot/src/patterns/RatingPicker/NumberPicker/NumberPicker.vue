@@ -44,7 +44,7 @@
 							>
 							<VBtn
 								:aria-label="locales.ariaLabel(index + 1, length)"
-								:tabindex="index + 1"
+								:tabindex="(uniqueId * 100) + index + 1"
 								x-small
 								outlined
 								color="primary"
@@ -131,8 +131,8 @@
 	})
 	export default class NumberPicker extends MixinsDeclaration {
 		locales = locales;
-
 		readonlyInternal = false;
+		uniqueId = Math.floor(Math.random() * 10000);
 
 		get selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({

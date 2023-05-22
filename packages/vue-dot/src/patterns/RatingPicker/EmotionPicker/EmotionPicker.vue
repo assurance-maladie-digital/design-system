@@ -21,7 +21,7 @@
 					<input
 						type="radio"
 						class="d-none"
-						:tabindex="index + 1"
+						:tabindex="(uniqueId * 100) + index + 1"
 						:name="'emotion-' + index"
 						:value="index + 1"
 					>
@@ -95,6 +95,7 @@
 		sadIcon = mdiEmoticonSadOutline;
 		neutralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
+		uniqueId = Math.floor(Math.random() * 10000);
 
 		get btnSize(): string {
 			return this.$vuetify.breakpoint.xs ? '70px' : '88px';
