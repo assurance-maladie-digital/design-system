@@ -30,6 +30,16 @@
 						@click="click"
 					>
 					<VIcon
+						v-if="isAfterHover(index) && !isActive(index) && !isBeforeActive(index)"
+						x-large
+						color="primary"
+						class="pa-1"
+						:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
+					>
+						{{ starOutlineIcon }}
+					</VIcon>
+					<VIcon
+						v-else
 						x-large
 						color="primary"
 						class="pa-1"
@@ -39,7 +49,7 @@
 						}"
 						:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
 					>
-						{{ starOutlineIcon }}
+						{{ starIcon }}
 					</VIcon>
 				</label>
 			</template>
@@ -53,7 +63,7 @@
 
 	import { RatingMixin } from '../RatingMixin';
 
-	import { mdiStarOutline } from '@mdi/js';
+	import { mdiStarOutline, mdiStar } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -69,6 +79,7 @@
 	@Component
 	export default class StarsPicker extends MixinsDeclaration {
 		starOutlineIcon = mdiStarOutline;
+		starIcon = mdiStar;
 		hoverValue = -1;
 
 		isActive(index: number): boolean {
