@@ -13,45 +13,47 @@
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
-				<VRadioGroup>
-					<VRadio
-						:key="index"
-						:value="index"
-						hide-details
-						@click="click"
+				<label
+					class="mx-1 mx-sm-2 rounded-lg"
+					@keydown.enter="click"
+					@click="click"
+				>
+					<input
+						type="radio"
+						class="d-none"
+						:tabindex="index + 1"
+						:name="'emotion-' + index"
+						:value="index + 1"
 					>
-						<template #label>
-							<VBtn
-								:disabled="readonly"
-								:class="[
-									getColor(index),
-									{ 'v-btn--active': isActive(index) }
-								]"
-								:min-height="btnSize"
-								:min-width="btnSize"
-								:aria-label="getEmotionLabel(index)"
-								text
-								class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
-							>
-								<VIcon
-									x-large
-									color="currentColor"
-									class="pa-0"
-								>
-									{{ getIcon(index) }}
-								</VIcon>
+					<VBtn
+						:disabled="readonly"
+						:class="[
+							getColor(index),
+							{ 'v-btn--active': isActive(index) }
+						]"
+						:min-height="btnSize"
+						:min-width="btnSize"
+						:aria-label="getEmotionLabel(index)"
+						text
+						class="rounded-lg px-1 px-sm-4"
+					>
+						<VIcon
+							x-large
+							color="currentColor"
+							class="pa-0"
+						>
+							{{ getIcon(index) }}
+						</VIcon>
 
-								<span
-									v-if="getEmotionLabel(index)"
-									:class="{ 'text--secondary': !isActive(index) }"
-									class="text-subtitle-2 mt-1"
-								>
-									{{ getEmotionLabel(index) }}
-								</span>
-							</VBtn>
-						</template>
-					</VRadio>
-				</VRadioGroup>
+						<span
+							v-if="getEmotionLabel(index)"
+							:class="{ 'text--secondary': !isActive(index) }"
+							class="text-subtitle-2 mt-1"
+						>
+							{{ getEmotionLabel(index) }}
+						</span>
+					</VBtn>
+				</label>
 			</template>
 		</VRating>
 	</div>
@@ -200,19 +202,6 @@
 					background: $vd-green-lighten-90;
 				}
 			}
-		}
-		.v-input--selection-controls {
-			margin: 0;
-			padding: 0;
-		}
-		.v-input--selection-controls__input {
-			display: none !important;
-		}
-		.v-input__slot {
-			margin-bottom: 0;
-		}
-		.v-messages {
-			display: none;
 		}
 	}
 </style>
