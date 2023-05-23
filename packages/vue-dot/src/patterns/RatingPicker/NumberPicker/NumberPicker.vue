@@ -39,7 +39,7 @@
 							<input
 								type="radio"
 								class="d-none"
-								:tabindex="uniqueId + (index + 1)"
+								:tabindex="index + 1"
 								:name="'number-' + (index + 1)"
 								:value="index + 1"
 							>
@@ -132,7 +132,6 @@
 	export default class NumberPicker extends MixinsDeclaration {
 		locales = locales;
 		readonlyInternal = false;
-		uniqueId = Math.floor(Math.random() * 10);
 
 		get selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({
