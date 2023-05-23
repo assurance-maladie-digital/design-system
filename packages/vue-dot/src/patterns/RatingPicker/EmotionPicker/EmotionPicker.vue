@@ -96,7 +96,6 @@
 		sadIcon = mdiEmoticonSadOutline;
 		neutralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
-		uniqueId = Math.floor(Math.random() * 10);
 
 		get btnSize(): string {
 			return this.$vuetify.breakpoint.xs ? '70px' : '88px';
