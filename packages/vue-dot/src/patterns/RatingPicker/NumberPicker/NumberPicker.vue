@@ -37,6 +37,7 @@
 							@click="click"
 						>
 							<input
+								:key="index"
 								type="radio"
 								class="d-none"
 								:tabindex="index + 1"
