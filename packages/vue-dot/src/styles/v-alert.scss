@@ -43,6 +43,11 @@
 		flex: none;
 	}
 
+	.v-alert__dismissible {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
 	@include redesign('warning', (
 		'background': $vd-yellow-lighten-80,
 		'accent': $vd-yellow-darken-60,
