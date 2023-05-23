@@ -21,7 +21,7 @@
 					<input
 						type="radio"
 						class="d-none"
-						:tabindex="(uniqueId * 100) + index + 1"
+						:tabindex="uniqueId + index + 1"
 						:name="'emotion-' + index"
 						:value="index + 1"
 					>

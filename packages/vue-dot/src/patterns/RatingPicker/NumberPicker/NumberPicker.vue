@@ -44,7 +44,7 @@
 							>
 							<VBtn
 								:aria-label="locales.ariaLabel(index + 1, length)"
-								:tabindex="(uniqueId * 100) + index + 1"
+								:tabindex="uniqueId + index + 1"
 								x-small
 								outlined
 								color="primary"
