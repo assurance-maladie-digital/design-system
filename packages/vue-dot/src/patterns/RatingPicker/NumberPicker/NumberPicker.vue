@@ -39,12 +39,12 @@
 							<input
 								type="radio"
 								class="d-none"
-								:name="'number-' + index + 1"
+								:name="'number-' + (index + 1)"
 								:value="index + 1"
 							>
 							<VBtn
 								:aria-label="locales.ariaLabel(index + 1, length)"
-								:tabindex="uniqueId + index + 1"
+								:tabindex="uniqueId + (index + 1)"
 								x-small
 								outlined
 								color="primary"
