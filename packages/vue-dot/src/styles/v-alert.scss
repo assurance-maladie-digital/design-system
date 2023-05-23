@@ -40,6 +40,7 @@
 	.v-alert__wrapper > .v-icon {
 		width: 56px;
 		height: 56px;
+		flex: none;
 	}
 
 	@include redesign('warning', (
