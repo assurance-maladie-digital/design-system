@@ -84,7 +84,7 @@
 		starOutlineIcon = mdiStarOutline;
 		starIcon = mdiStar;
 		hoverValue = -1;
-		uniqueId = Math.floor(Math.random() * 10000);
+		uniqueId = Math.floor(Math.random() * 10);
 
 		isActive(index: number): boolean {
 			return index === this.value - 1;

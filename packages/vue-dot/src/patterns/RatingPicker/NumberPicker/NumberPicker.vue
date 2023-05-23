@@ -132,7 +132,7 @@
 	export default class NumberPicker extends MixinsDeclaration {
 		locales = locales;
 		readonlyInternal = false;
-		uniqueId = Math.floor(Math.random() * 10000);
+		uniqueId = Math.floor(Math.random() * 10);
 
 		get selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({
