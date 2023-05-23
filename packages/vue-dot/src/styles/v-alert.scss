@@ -1,0 +1,76 @@
+@import '@cnamts/design-tokens/dist/tokens';
+
+@mixin redesign($type, $map) {
+	&.#{$type} {
+		background: map-get($map, 'background') !important;
+		border-color: map-get($map, 'border') !important;
+
+		.v-alert__wrapper > .v-icon {
+			background: map-get($map, 'icon-bg');
+		}
+
+		svg {
+			fill: map-get($map, 'icon') !important;
+		}
+
+		&--text {
+			color: map-get($map, 'accent') !important;
+			border-color: map-get($map, 'accent') !important;
+
+			.v-alert__wrapper > .v-icon {
+				background: map-get($map, 'icon-bg');
+			}
+
+			svg {
+				fill: map-get($map, 'accent') !important;
+			}
+		}
+	}
+}
+
+.v-application .v-alert {
+	border-left: solid 4px;
+	color: rgba(0, 0, 0, 0.87) !important;
+
+	&--outlined,
+	&--border-left {
+		border-left: none;
+	}
+
+	.v-alert__wrapper > .v-icon {
+		width: 56px;
+		height: 56px;
+	}
+
+	@include redesign('warning', (
+		'background': $vd-yellow-lighten-80,
+		'accent': $vd-yellow-darken-60,
+		'border': $vd-yellow-darken-20,
+		'icon': $vd-yellow-darken-20,
+		'icon-bg': $vd-yellow-lighten-90
+	));
+
+	@include redesign('success', (
+		'background': $vd-turquoise-lighten-80,
+		'accent': $vd-turquoise-darken-60,
+		'border': $vd-turquoise-darken-60,
+		'icon': $vd-turquoise-darken-60,
+		'icon-bg': $vd-turquoise-lighten-90
+	));
+
+	@include redesign('error', (
+		'background': $vd-orange-lighten-80,
+		'accent': $vd-orange-darken-20,
+		'border': $vd-orange-darken-20,
+		'icon': $vd-orange-darken-20,
+		'icon-bg': $vd-orange-lighten-90
+	));
+
+	@include redesign('info', (
+		'background': $vd-am-blue-lighten-80,
+		'accent': $vd-am-blue-base,
+		'border': $vd-am-blue-darken-20,
+		'icon': $vd-am-blue-darken-20,
+		'icon-bg': $vd-am-blue-lighten-90
+	));
+}
