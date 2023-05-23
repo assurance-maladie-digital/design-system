@@ -2,7 +2,7 @@
 
 exports[`ContextualMenu renders correctly 1`] = `
 <ul class="vd-contextual-menu">
-  <li><a href="#example-1" class="d-flex align-center text-decoration-none text-body-1 pl-4 text--secondary">Titre 1</a></li>
-  <li><a href="#example-2" class="d-flex align-center text-decoration-none text-body-1 pl-4 text--secondary">Titre 2</a></li>
+  <li><a href="#example-1" class="d-flex align-center text-decoration-none text-body-1 px-4 py-2 text--secondary">Titre 1</a></li>
+  <li><a href="#example-2" class="d-flex align-center text-decoration-none text-body-1 px-4 py-2 text--secondary">Titre 2</a></li>
 </ul>
 `;

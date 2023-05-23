@@ -15,7 +15,7 @@
 					'ps-12': level === 5,
 					'ps-14': level === 6
 				}"
-				class="d-flex align-center text-decoration-none text-body-1 pl-4"
+				class="d-flex align-center text-decoration-none text-body-1 px-4 py-2"
 				@click.prevent.stop="setHash(hash)"
 				v-text="text"
 			/>
@@ -84,7 +84,6 @@
 	}
 
 	a {
-		height: 40px;
 		position: relative;
 		transition: none;
 
