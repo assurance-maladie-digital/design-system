@@ -2,6 +2,8 @@
 @import 'vuetify/src/styles/tools/_display.sass';
 @import '@cnamts/design-tokens/dist/tokens';
 
+@import './v-alert.scss';
+
 // Reset max-width for some elements to make them work properly
 // (due to `max-width: 100%` applied to `*` in base.css)
 .v-ripple__container,
@@ -101,22 +103,6 @@
 	// Fix overlay color
 	.v-overlay {
 		background-color: rgba(33, 33, 33, .48);
-	}
-
-	// Fix alerts color
-	.v-alert {
-		&.warning {
-			background-color: $vd-yellow-darken-40 !important;
-		}
-
-		&.warning--text {
-			color: $vd-yellow-darken-40 !important;
-			caret-color: $vd-yellow-darken-40 !important;
-
-			svg {
-				fill: $vd-yellow-darken-40 !important;
-			}
-		}
 	}
 }
 
