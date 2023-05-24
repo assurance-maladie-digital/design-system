@@ -439,11 +439,13 @@
 			margin-bottom: 0 !important;
 		}
 	}
+
 	.doc-usage-options :deep() {
 		.v-text-field .v-input__slot::before {
 			border-color: rgba(0, 0, 0, .2);
 		}
 	}
+
 	.doc-code {
 		border-top: thin solid rgba(0, 0, 0, .12);
 	}
