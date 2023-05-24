@@ -32,10 +32,7 @@
 	.text-h3,
 	.text-h4,
 	.text-h5,
-	.text-h6 {
-		font-family: 'Mic 32 New', 'Source Sans Pro', 'Open Sans', sans-serif !important;
-	}
-
+	.text-h6,
 	.text-subtitle-1,
 	.text-subtitle-2,
 	.text-body-1,
@@ -44,6 +41,10 @@
 	.text-overline,
 	.text-mono {
 		font-family: 'Source Sans Pro', 'Open Sans', sans-serif !important;
+	}
+
+	.font-weight-medium {
+		font-weight: 600 !important;
 	}
 
 	// Fix line-height in VSelect with our font
