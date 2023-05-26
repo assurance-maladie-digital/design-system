@@ -1,14 +1,16 @@
 <template>
 	<div class="vd-rating-picker">
-		<component
-			:is="ratingComponent"
-			:label="label"
-			:length="length"
-			:readonly="hasAnswered || readonly"
-			:item-labels="itemLabels || undefined"
-			:value="internalValue"
-			@input="setValue"
-		/>
+		<form>
+			<component
+				:is="ratingComponent"
+				:label="label"
+				:length="length"
+				:readonly="hasAnswered || readonly"
+				:item-labels="itemLabels || undefined"
+				:value="internalValue"
+				@input="setValue"
+			/>
+		</form>
 
 		<template v-if="hasAnswered">
 			<VAlert

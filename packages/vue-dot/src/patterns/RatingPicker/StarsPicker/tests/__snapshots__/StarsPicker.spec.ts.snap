@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StarsPicker renders correctly 1`] = `
-<div class="vd-stars-picker">
-  <div class="text-h6 mb-6">
+<fieldset class="vd-stars-picker">
+  <legend class="text-h6 mb-6">
     Pourriez-vous donner une note ?
-  </div>
+  </legend>
   <vrating-stub color="primary" opendelay="0" closedelay="0" ripple="true" backgroundcolor="accent" emptyicon="$ratingEmpty" fullicon="$ratingFull" halficon="$ratingHalf" length="5" value="-1" iconlabel="$vuetify.rating.ariaLabel.icon" class="d-flex flex-wrap max-width-none"></vrating-stub>
-</div>
+</fieldset>
 `;

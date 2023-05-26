@@ -1,8 +1,8 @@
 <template>
-	<div class="vd-stars-picker">
-		<div class="text-h6 mb-6">
+	<fieldset class="vd-stars-picker">
+		<legend class="text-h6 mb-6">
 			{{ label }}
-		</div>
+		</legend>
 
 		<VRating
 			:value="value"
@@ -57,7 +57,7 @@
 				</label>
 			</template>
 		</VRating>
-	</div>
+	</fieldset>
 </template>
 
 <script lang="ts">

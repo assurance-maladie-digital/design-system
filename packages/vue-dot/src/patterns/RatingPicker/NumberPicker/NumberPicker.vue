@@ -1,5 +1,5 @@
 <template>
-	<div class="vd-number-picker">
+	<fieldset class="vd-number-picker">
 		<VSelect
 			v-if="$vuetify.breakpoint.xs"
 			:value="value"
@@ -13,9 +13,9 @@
 		/>
 
 		<template v-else>
-			<div class="text-h6 mb-6">
+			<legend class="text-h6 mb-6">
 				{{ label }}
-			</div>
+			</legend>
 
 			<div
 				v-if="!readonlyInternal"
@@ -90,7 +90,7 @@
 				/ {{ length }}
 			</div>
 		</template>
-	</div>
+	</fieldset>
 </template>
 
 <script lang="ts">
