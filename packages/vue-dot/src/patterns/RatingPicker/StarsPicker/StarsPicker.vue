@@ -13,7 +13,7 @@
 		>
 			<template #item="{ index, click }">
 				<label
-					:tabindex="randomIndex + '' + index"
+					:tabindex="tabIndex"
 					@keydown.enter="click"
 					@mouseover="!readonly && (hoverValue = index)"
 					@focus="!readonly && (hoverValue = index)"
@@ -21,7 +21,6 @@
 					@focusout="hoverValue = -1"
 				>
 					<input
-						type="radio"
 						:name="'star-' + index"
 						:value="index"
 						:checked="isActive(index)"
@@ -84,7 +83,11 @@
 		starOutlineIcon = mdiStarOutline;
 		starIcon = mdiStar;
 		hoverValue = -1;
-		randomIndex = Math.floor(Math.random() * 1000);
+		defaultIndex = 1;
+
+		get tabIndex(): number {
+			return this.defaultIndex++;
+		}
 
 		isActive(index: number): boolean {
 			return index === this.value - 1;

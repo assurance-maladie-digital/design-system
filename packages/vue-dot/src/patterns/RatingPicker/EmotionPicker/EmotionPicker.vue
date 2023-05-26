@@ -14,12 +14,13 @@
 		>
 			<template #item="{ index, click }">
 				<label
-					:tabindex="randomIndex + '' + index"
+					:tabindex="tabIndex"
 					class="mx-1 mx-sm-2 rounded-lg"
 					@keydown.enter="click"
 					@click="click"
 				>
 					<input
+						:key="index"
 						type="radio"
 						:name="'emotion-' + index"
 						:value="index + 1"
@@ -96,7 +97,11 @@
 		sadIcon = mdiEmoticonSadOutline;
 		neutralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
-		randomIndex = Math.floor(Math.random() * 1000);
+		defaultIndex = 1;
+
+		get tabIndex(): number {
+			return this.defaultIndex++;
+		}
 
 		get btnSize(): string {
 			return this.$vuetify.breakpoint.xs ? '70px' : '88px';

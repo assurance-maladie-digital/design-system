@@ -32,7 +32,7 @@
 				>
 					<template #item="{ index, click }">
 						<label
-							:tabindex="randomIndex + '' + index"
+							:tabindex="tabIndex"
 							class="mx-1 pa-0"
 							@keydown.enter="click"
 							@click="click"
@@ -134,7 +134,11 @@
 	export default class NumberPicker extends MixinsDeclaration {
 		locales = locales;
 		readonlyInternal = false;
-		randomIndex = Math.floor(Math.random() * 1000);
+		defaultIndex = 1;
+
+		get tabIndex(): number {
+			return this.defaultIndex++;
+		}
 
 		get selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({

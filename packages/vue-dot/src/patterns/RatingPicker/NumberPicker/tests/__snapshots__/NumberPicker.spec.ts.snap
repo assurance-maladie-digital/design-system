@@ -6,43 +6,43 @@ exports[`NumberPicker renders correctly 1`] = `
     Pourriez-vous donner une note ?
   </legend>
   <div class="d-inline-block">
-    <div class="v-rating d-flex flex-wrap mx-n1 max-width-none"><label tabindex="9160" class="mx-1 pa-0"><input type="radio" name="number-1" class="d-sr-only" value="1">
+    <div class="v-rating d-flex flex-wrap mx-n1 max-width-none"><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-1" class="d-sr-only" value="1">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 1 sur 10"><span class="v-btn__content">
 							1
 						</span></div>
-      </label><label tabindex="9161" class="mx-1 pa-0"><input type="radio" name="number-2" class="d-sr-only" value="2">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-2" class="d-sr-only" value="2">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 2 sur 10"><span class="v-btn__content">
 							2
 						</span></div>
-      </label><label tabindex="9162" class="mx-1 pa-0"><input type="radio" name="number-3" class="d-sr-only" value="3">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-3" class="d-sr-only" value="3">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 3 sur 10"><span class="v-btn__content">
 							3
 						</span></div>
-      </label><label tabindex="9163" class="mx-1 pa-0"><input type="radio" name="number-4" class="d-sr-only" value="4">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-4" class="d-sr-only" value="4">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 4 sur 10"><span class="v-btn__content">
 							4
 						</span></div>
-      </label><label tabindex="9164" class="mx-1 pa-0"><input type="radio" name="number-5" class="d-sr-only" value="5">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-5" class="d-sr-only" value="5">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 5 sur 10"><span class="v-btn__content">
 							5
 						</span></div>
-      </label><label tabindex="9165" class="mx-1 pa-0"><input type="radio" name="number-6" class="d-sr-only" value="6">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-6" class="d-sr-only" value="6">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 6 sur 10"><span class="v-btn__content">
 							6
 						</span></div>
-      </label><label tabindex="9166" class="mx-1 pa-0"><input type="radio" name="number-7" class="d-sr-only" value="7">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-7" class="d-sr-only" value="7">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 7 sur 10"><span class="v-btn__content">
 							7
 						</span></div>
-      </label><label tabindex="9167" class="mx-1 pa-0"><input type="radio" name="number-8" class="d-sr-only" value="8">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-8" class="d-sr-only" value="8">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 8 sur 10"><span class="v-btn__content">
 							8
 						</span></div>
-      </label><label tabindex="9168" class="mx-1 pa-0"><input type="radio" name="number-9" class="d-sr-only" value="9">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-9" class="d-sr-only" value="9">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 9 sur 10"><span class="v-btn__content">
 							9
 						</span></div>
-      </label><label tabindex="9169" class="mx-1 pa-0"><input type="radio" name="number-10" class="d-sr-only" value="10">
+      </label><label tabindex="1" class="mx-1 pa-0"><input type="radio" name="number-10" class="d-sr-only" value="10">
         <div class="text-body-2 v-btn v-btn--outlined theme--light v-size--x-small primary--text" style="height: 36px;" aria-label="Note de 10 sur 10"><span class="v-btn__content">
 							10
 						</span></div>
