@@ -31,6 +31,9 @@
 				'href',
 				'width',
 				'height'
+			],
+			booleans: [
+				'connect-plus'
 			]
 		};
 	}

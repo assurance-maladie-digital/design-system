@@ -32,6 +32,12 @@ export const api: Api = {
 				],
 				default: 78,
 				description: 'La hauteur du bouton.'
+			},
+			{
+				name: 'connect-plus',
+				type: 'boolean',
+				default: false,
+				description: 'Active le bouton FranceConnect+.'
 			}
 		]
 	}
