@@ -8,50 +8,34 @@
 			:value="value"
 			:length="length"
 			:readonly="readonly"
-			class="d-flex flex-wrap max-width-none"
+			class="d-flex flex-wrap max-width-none mx-n3"
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
+				<!-- eslint-disable-next-line vuejs-accessibility/mouse-events-have-key-events -->
 				<label
-					:tabindex="tabIndex"
-					@keydown.enter="click"
-					@mouseover="!readonly && (hoverValue = index)"
-					@focus="!readonly && (hoverValue = index)"
-					@mouseleave="hoverValue = -1"
-					@focusout="hoverValue = -1"
+					class="px-2"
+					@mouseover="!readonly && (hoverIndex = index)"
+					@mouseleave="hoverIndex = -1"
+					@click="click"
+					@keydown.left.right="click"
 				>
 					<input
-						:name="'star-' + index"
-						:value="index"
 						:checked="isActive(index)"
 						:disabled="readonly"
+						type="radio"
 						class="d-sr-only"
-						@click="click"
+						@focus="!readonly && (hoverIndex = index)"
+						@focusout="hoverIndex = -1"
 					>
+
 					<VIcon
-						v-if="isAfterHover(index) && !isActive(index) && !isBeforeActive(index)"
-						x-large
+						size="36px"
 						color="primary"
-						class="pa-1"
-						:class="{
-							'after-active': isAfterActive(index)
-						}"
-						:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
+						class="pa-0"
+						:class="isFilled(index) ? 'am-blue--text' : 'am-blue-lighten-60--text'"
 					>
-						{{ starOutlineIcon }}
-					</VIcon>
-					<VIcon
-						v-else
-						x-large
-						color="primary"
-						class="pa-1"
-						:class="{
-							'active': isActive(index),
-							'before-active': isBeforeActive(index)
-						}"
-						:style="{ opacity: isAfterHover(index) ? 0.5 : 1 }"
-					>
-						{{ starIcon }}
+						{{ isFilled(index) ? starIcon : starOutlineIcon }}
 					</VIcon>
 				</label>
 			</template>
@@ -82,24 +66,18 @@
 	export default class StarsPicker extends MixinsDeclaration {
 		starOutlineIcon = mdiStarOutline;
 		starIcon = mdiStar;
-		hoverValue = -1;
-		defaultIndex = 1;
 
-		get tabIndex(): number {
-			return this.defaultIndex++;
-		}
+		hoverIndex = -1;
 
 		isActive(index: number): boolean {
-			return index === this.value - 1;
+			return this.value - 1 === index;
 		}
-		isBeforeActive(index: number): boolean {
-			return index < this.value - 1;
-		}
-		isAfterActive(index: number): boolean {
-			return index > this.value - 1;
-		}
-		isAfterHover(index: number): boolean {
-			return index > this.hoverValue;
+
+		isFilled(index: number): boolean {
+			const isHovered = this.hoverIndex >= index;
+			const isActive = this.value - 1 >= index;
+
+			return isHovered || isActive;
 		}
 	}
 </script>
@@ -107,25 +85,11 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.vd-stars-picker {
-		.v-rating {
-			height: auto !important;
-			width: auto !important;
-			padding: 0;
-			label {
-				cursor: pointer;
-			}
-			label {
-				&:focus {
-					outline: none;
-				}
-			}
-			.active, .before-active, .after-active {
-				color: $vd-primary;
-			}
-			.active, .before-active {
-				opacity: 1 !important;
-			}
+	.v-rating label {
+		cursor: pointer;
+
+		.v-icon {
+			pointer-events: none;
 		}
 	}
 </style>

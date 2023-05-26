@@ -8,54 +8,50 @@
 			:value="value"
 			:length="length"
 			:readonly="readonly"
+			:class="{ 'justify-center': readonly && value !== -1 }"
 			large
-			class="d-flex flex-wrap max-width-none mx-n1 mx-sm-n2"
+			class="max-width-none mx-n1 mx-sm-n2"
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
-				<label
-					:tabindex="tabIndex"
-					class="mx-1 mx-sm-2 rounded-lg"
-					@keydown.enter="click"
+				<VBtn
+					:disabled="readonly || value !== -1"
+					:class="[
+						getColor(index),
+						{ 'v-btn--active': isActive(index) }
+					]"
+					:min-height="btnSize"
+					:min-width="btnSize"
+					tag="label"
+					text
+					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
 					@click="click"
 				>
+					<!-- eslint-disable-next-line vuejs-accessibility/form-control-has-label -->
 					<input
-						:key="index"
-						type="radio"
-						:name="'emotion-' + index"
-						:value="index + 1"
-						class="d-sr-only"
-					>
-					<VBtn
+						:checked="isActive(index)"
 						:disabled="readonly"
-						:class="[
-							getColor(index),
-							{ 'v-btn--active': isActive(index) }
-						]"
-						:min-height="btnSize"
-						:min-width="btnSize"
-						:aria-label="getEmotionLabel(index)"
-						text
-						tag
-						class="rounded-lg px-1 px-sm-4"
+						type="radio"
+						class="d-sr-only"
+						@keydown.left.right="click"
 					>
-						<VIcon
-							x-large
-							color="currentColor"
-							class="pa-0"
-						>
-							{{ getIcon(index) }}
-						</VIcon>
 
-						<span
-							v-if="getEmotionLabel(index)"
-							:class="{ 'text--secondary': !isActive(index) }"
-							class="text-subtitle-2 mt-1"
-						>
-							{{ getEmotionLabel(index) }}
-						</span>
-					</VBtn>
-				</label>
+					<VIcon
+						x-large
+						color="currentColor"
+						class="pa-0"
+					>
+						{{ getIcon(index) }}
+					</VIcon>
+
+					<span
+						v-if="getEmotionLabel(index)"
+						:class="{ 'text--secondary': !isActive(index) }"
+						class="text-subtitle-2 mt-1"
+					>
+						{{ getEmotionLabel(index) }}
+					</span>
+				</VBtn>
 			</template>
 		</VRating>
 	</fieldset>
@@ -97,11 +93,6 @@
 		sadIcon = mdiEmoticonSadOutline;
 		neutralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
-		defaultIndex = 1;
-
-		get tabIndex(): number {
-			return this.defaultIndex++;
-		}
 
 		get btnSize(): string {
 			return this.$vuetify.breakpoint.xs ? '70px' : '88px';
@@ -157,57 +148,64 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
-	.vd-emotion-picker {
-		.v-btn {
-			transition: 0.2s;
-			border: 1px solid transparent;
+
+	.v-rating .v-btn {
+		transition: 0.2s;
+		border: 1px solid transparent;
+
+		&:not(.v-btn--disabled) {
 			cursor: pointer;
+		}
 
-			:deep(.v-btn__content) {
-				flex-direction: column !important;
+		:deep(.v-btn__content) {
+			flex-direction: column;
+		}
+
+		&.sad {
+			color: $vd-orange-darken-20 !important;
+		}
+
+		&.neutral {
+			color: $vd-yellow-darken-20 !important;
+		}
+
+		&.happy {
+			color: $vd-turquoise-darken-20 !important;
+		}
+
+		&::before {
+			opacity: 1;
+			transition: 0.2s;
+			background: transparent;
+		}
+
+		&--active {
+			pointer-events: none;
+			border-color: currentColor !important;
+		}
+
+		&:focus-within {
+			border-color: rgba(0, 0, 0, 0.87) !important;
+			outline: 1px solid rgba(0, 0, 0, 0.87);
+		}
+
+		&--active.v-btn--disabled .v-icon {
+			color: currentColor !important;
+		}
+
+		&:hover,
+		&:focus-within,
+		&--active {
+			&.sad::before {
+				background: $vd-orange-lighten-90;
 			}
 
-			&.sad {
-				color: $vd-orange-darken-20 !important;
+			&.neutral::before {
+				background: $vd-yellow-lighten-90;
 			}
 
-			&.neutral {
-				color: $vd-yellow-darken-20 !important;
-			}
-
-			&.happy {
-				color: $vd-success !important;
-			}
-
-			&::before {
-				opacity: 1;
-				transition: 0.2s;
-				background: transparent;
-			}
-
-			&--active.v-btn--disabled .v-icon {
-				color: currentColor !important;
-			}
-
-			&:focus,
-			&--active {
-				border-color: currentColor !important;
-			}
-
-			&:hover,
-			&:focus,
-			&--active {
-				&.sad::before {
-					background: $vd-orange-lighten-90;
-				}
-
-				&.neutral::before {
-					background: $vd-yellow-lighten-90;
-				}
-
-				&.happy::before {
-					background: $vd-green-lighten-90;
-				}
+			&.happy::before {
+				background: $vd-turquoise-lighten-90;
 			}
 		}
 	}

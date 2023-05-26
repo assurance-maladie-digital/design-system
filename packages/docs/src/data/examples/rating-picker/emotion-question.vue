@@ -30,19 +30,9 @@
 				'Neutre',
 				'Géniale'
 			]"
-			:readonly="finalRating !== -1"
 			label="Que pensez-vous de notre enquête de satisfaction ?"
 			class="mb-4"
 		/>
-
-		<template v-if="finalRating !== -1">
-			<VAlert
-				outlined
-				type="success"
-			>
-				Merci d'avoir compléter le formulaire
-			</VAlert>
-		</template>
 
 		<div class="d-flex">
 			<VSpacer />
