@@ -14,17 +14,16 @@
 		>
 			<template #item="{ index, click }">
 				<label
+					:tabindex="randomIndex + '' + index"
 					class="mx-1 mx-sm-2 rounded-lg"
 					@keydown.enter="click"
 					@click="click"
 				>
 					<input
-						:key="index"
 						type="radio"
-						class="d-none"
-						:tabindex="index + 1"
 						:name="'emotion-' + index"
 						:value="index + 1"
+						class="d-sr-only"
 					>
 					<VBtn
 						:disabled="readonly"
@@ -36,6 +35,7 @@
 						:min-width="btnSize"
 						:aria-label="getEmotionLabel(index)"
 						text
+						tag
 						class="rounded-lg px-1 px-sm-4"
 					>
 						<VIcon
@@ -96,6 +96,7 @@
 		sadIcon = mdiEmoticonSadOutline;
 		neutralIcon = mdiEmoticonNeutralOutline;
 		happyIcon = mdiEmoticonHappyOutline;
+		randomIndex = Math.floor(Math.random() * 1000);
 
 		get btnSize(): string {
 			return this.$vuetify.breakpoint.xs ? '70px' : '88px';
@@ -155,6 +156,7 @@
 		.v-btn {
 			transition: 0.2s;
 			border: 1px solid transparent;
+			cursor: pointer;
 
 			:deep(.v-btn__content) {
 				flex-direction: column !important;

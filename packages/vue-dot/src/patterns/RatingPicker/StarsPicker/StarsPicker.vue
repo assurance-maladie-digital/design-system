@@ -13,8 +13,7 @@
 		>
 			<template #item="{ index, click }">
 				<label
-					:key="index"
-					:tabindex="index + 1"
+					:tabindex="randomIndex + '' + index"
 					@keydown.enter="click"
 					@mouseover="!readonly && (hoverValue = index)"
 					@focus="!readonly && (hoverValue = index)"
@@ -23,11 +22,11 @@
 				>
 					<input
 						type="radio"
-						class="d-none"
 						:name="'star-' + index"
 						:value="index"
 						:checked="isActive(index)"
 						:disabled="readonly"
+						class="d-sr-only"
 						@click="click"
 					>
 					<VIcon
@@ -85,6 +84,7 @@
 		starOutlineIcon = mdiStarOutline;
 		starIcon = mdiStar;
 		hoverValue = -1;
+		randomIndex = Math.floor(Math.random() * 1000);
 
 		isActive(index: number): boolean {
 			return index === this.value - 1;

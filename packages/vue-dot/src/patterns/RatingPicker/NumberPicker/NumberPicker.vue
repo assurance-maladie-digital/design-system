@@ -32,22 +32,22 @@
 				>
 					<template #item="{ index, click }">
 						<label
+							:tabindex="randomIndex + '' + index"
 							class="mx-1 pa-0"
 							@keydown.enter="click"
 							@click="click"
 						>
 							<input
-								:key="index"
 								type="radio"
-								class="d-none"
-								:tabindex="index + 1"
 								:name="'number-' + (index + 1)"
 								:value="index + 1"
+								class="d-sr-only"
 							>
 							<VBtn
 								:aria-label="locales.ariaLabel(index + 1, length)"
 								x-small
 								outlined
+								tag
 								color="primary"
 								height="36px"
 								class="text-body-2"
@@ -79,6 +79,7 @@
 					outlined
 					x-small
 					disabled
+					tag
 					color="primary"
 					min-height="36px"
 					class="text-body-2 mr-1 pa-0"
@@ -133,6 +134,7 @@
 	export default class NumberPicker extends MixinsDeclaration {
 		locales = locales;
 		readonlyInternal = false;
+		randomIndex = Math.floor(Math.random() * 1000);
 
 		get selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({
@@ -158,6 +160,9 @@
 	.vd-number-picker {
 		.theme--light.v-btn.v-btn--disabled {
 			color: $vd-primary !important;
+		}
+		.v-btn {
+			cursor: pointer;
 		}
 	}
 </style>
