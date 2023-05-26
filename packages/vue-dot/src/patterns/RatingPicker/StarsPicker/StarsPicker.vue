@@ -101,28 +101,28 @@
 	}
 </script>
 
-<style lang="scss">
-@import '@cnamts/design-tokens/dist/tokens';
+<style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
 
-.vd-stars-picker {
-	.v-rating {
-		height: auto !important;
-		width: auto !important;
-		padding: 0;
-		label {
-			cursor: pointer;
-		}
-		label {
-			&:focus {
-				outline: none;
+	.vd-stars-picker {
+		.v-rating {
+			height: auto !important;
+			width: auto !important;
+			padding: 0;
+			label {
+				cursor: pointer;
+			}
+			label {
+				&:focus {
+					outline: none;
+				}
+			}
+			.active, .before-active, .after-active {
+				color: $vd-primary;
+			}
+			.active, .before-active {
+				opacity: 1 !important;
 			}
 		}
-		.active, .before-active, .after-active {
-			color: $vd-primary;
-		}
-		.active, .before-active {
-			opacity: 1 !important;
-		}
 	}
-}
 </style>

@@ -39,9 +39,8 @@
 			<VAlert
 				outlined
 				type="success"
-				class="mt-4"
 			>
-				Merci pour votre réponse
+				Merci d'avoir compléter le formulaire
 			</VAlert>
 		</template>
 

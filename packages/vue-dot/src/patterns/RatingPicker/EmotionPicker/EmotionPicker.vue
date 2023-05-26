@@ -149,16 +149,15 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
-
 	.vd-emotion-picker {
-		.v-rating .v-btn {
+		.v-btn {
 			transition: 0.2s;
 			border: 1px solid transparent;
 
-			.v-btn__content {
-				flex-direction: column;
+			:deep(.v-btn__content) {
+				flex-direction: column !important;
 			}
 
 			&.sad {
