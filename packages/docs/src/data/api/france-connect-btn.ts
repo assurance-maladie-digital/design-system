@@ -25,15 +25,6 @@ export const api: Api = {
 				description: 'La largeur du bouton.'
 			},
 			{
-				name: 'height',
-				type: [
-					'string',
-					'number'
-				],
-				default: 78,
-				description: 'La hauteur du bouton.'
-			},
-			{
 				name: 'connect-plus',
 				type: 'boolean',
 				default: false,
