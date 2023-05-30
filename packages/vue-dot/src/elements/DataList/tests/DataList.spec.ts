@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import DataList from '../';
 import { getDataList } from './data/dataList';
@@ -27,7 +26,7 @@ describe('DataList', () => {
 		const titleExists = wrapper.find('h4').exists();
 		expect(titleExists).toBe(false);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a title', () => {
@@ -41,7 +40,7 @@ describe('DataList', () => {
 		const elExists = wrapper.find('h4').exists();
 		expect(elExists).toBe(true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with an empty list', () => {
@@ -55,7 +54,7 @@ describe('DataList', () => {
 		const itemsExists = wrapper.find('.vd-data-list-item').exists();
 		expect(itemsExists).toBe(false);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with an icon', () => {
@@ -77,7 +76,7 @@ describe('DataList', () => {
 		const itemsExists = wrapper.find('.vd-data-list-item .v-icon').exists();
 		expect(itemsExists).toBe(true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a class', async() => {
@@ -96,7 +95,7 @@ describe('DataList', () => {
 		const itemsExists = wrapper.find('.vd-data-list-item.custom-class').exists();
 		expect(itemsExists).toBe(true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders loading state correctly', async() => {
@@ -113,7 +112,7 @@ describe('DataList', () => {
 		let itemsExists = wrapper.find('.vd-data-list-item').exists();
 		expect(itemsExists).toBe(false);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 
 		wrapper.setProps({ loading: false });
 
@@ -123,7 +122,7 @@ describe('DataList', () => {
 		itemsExists = wrapper.find('.vd-data-list-item').exists();
 		expect(itemsExists).toBe(true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with an action', async() => {
@@ -139,7 +138,7 @@ describe('DataList', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('emits action event', async() => {

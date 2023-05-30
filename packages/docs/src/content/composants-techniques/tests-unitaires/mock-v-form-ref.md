@@ -12,7 +12,6 @@ import Vue from 'vue';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	installGlobalPlugins,
@@ -38,7 +37,7 @@ describe('Component', () => {
 			mocks
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });
 ```

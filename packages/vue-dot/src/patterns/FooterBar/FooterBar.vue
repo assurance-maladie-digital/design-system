@@ -226,7 +226,7 @@
 				{
 					text: locales.cookiesLabel,
 					to: this.cookiesRoute,
-					hidden: this.hideCguLink
+					hidden: this.hideCookiesLink
 				},
 				{
 					text: locales.legalNoticeLabel,

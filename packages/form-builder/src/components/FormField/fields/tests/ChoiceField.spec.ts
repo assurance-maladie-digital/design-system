@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@cnamts/vue-dot/tests';
-import { html } from '@cnamts/vue-dot/tests/utils/html';
 import { Field } from './../../types';
 
 import ChoiceField from '../ChoiceField.vue';
@@ -45,7 +44,7 @@ describe('ChoiceField', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders the other field', () => {
@@ -67,7 +66,7 @@ describe('ChoiceField', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders the other field when the corresponding choice is selected', () => {
@@ -90,7 +89,7 @@ describe('ChoiceField', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders with single error message', () => {
@@ -110,7 +109,7 @@ describe('ChoiceField', () => {
 			true
 		);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders with multiple error messages', () => {
@@ -133,6 +132,6 @@ describe('ChoiceField', () => {
 			true
 		);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

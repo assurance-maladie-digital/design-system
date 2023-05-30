@@ -6,7 +6,7 @@ export const config = {
 	},
 	innerSheet: {
 		color: 'transparent',
-		class: 'd-flex'
+		class: 'd-flex align-center'
 	},
 	tabs: {
 		backgroundColor: 'transparent'

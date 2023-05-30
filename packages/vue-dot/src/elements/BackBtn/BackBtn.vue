@@ -1,16 +1,22 @@
 <template>
 	<VBtn
 		v-bind="$attrs"
-		:class="{ 'pr-1': !hideBackIcon }"
-		text
-		color="primary"
-		class="vd-back-btn px-0"
+		:text="!dark"
+		:dark="dark"
+		:color="dark ? 'white' : 'primary'"
+		:outlined="dark"
+		:class="{
+			'px-0': !dark,
+			'pr-1': !dark && !hideBackIcon
+		}"
+		class="vd-back-btn"
 		v-on="$listeners"
 	>
 		<slot name="icon">
 			<VIcon
 				v-if="!hideBackIcon"
-				color="primary"
+				:color="dark ? 'white' : 'primary'"
+				:class="{ 'ml-n1': dark }"
 				class="mr-1"
 			>
 				{{ backIcon }}
@@ -36,6 +42,10 @@
 			hideBackIcon: {
 				type: Boolean,
 				default: false
+			},
+			dark: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -52,8 +62,8 @@
 
 <style lang="scss" scoped>
 	.v-btn {
-		// Disable hover state
-		&::before {
+		// Disable hover state on light theme
+		&.theme--light::before {
 			content: none;
 		}
 
