@@ -12,32 +12,21 @@
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
-				<!-- eslint-disable-next-line vuejs-accessibility/mouse-events-have-key-events -->
-				<label
-					class="px-2"
-					@mouseover="!readonly && (hoverIndex = index)"
+				<!-- Using click event on VIcon will convert it into a button -->
+				<VIcon
+					:disabled="readonly || hasAnswered"
+					:aria-pressed="isActive(index).toString()"
+					:class="isFilled(index) ? 'am-blue--text' : 'am-blue-lighten-60--text'"
+					size="36px"
+					class="py-0 px-2"
+					@mouseover="hoverIndex = index"
+					@focus="hoverIndex = index"
 					@mouseleave="hoverIndex = -1"
+					@blur="hoverIndex = -1"
 					@click="click"
-					@keydown.left.right="click"
 				>
-					<input
-						:checked="isActive(index)"
-						:disabled="readonly"
-						type="radio"
-						class="d-sr-only"
-						@focus="!readonly && (hoverIndex = index)"
-						@focusout="hoverIndex = -1"
-					>
-
-					<VIcon
-						size="36px"
-						color="primary"
-						class="pa-0"
-						:class="isFilled(index) ? 'am-blue--text' : 'am-blue-lighten-60--text'"
-					>
-						{{ isFilled(index) ? starIcon : starOutlineIcon }}
-					</VIcon>
-				</label>
+					{{ isFilled(index) ? starIcon : starOutlineIcon }}
+				</VIcon>
 			</template>
 		</VRating>
 	</fieldset>
@@ -69,6 +58,10 @@
 
 		hoverIndex = -1;
 
+		get hasAnswered(): boolean {
+			return this.value !== -1;
+		}
+
 		isActive(index: number): boolean {
 			return this.value - 1 === index;
 		}
@@ -85,11 +78,16 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.v-rating label {
-		cursor: pointer;
+	.v-rating .v-icon {
+		width: 52px !important;
+		height: 36px !important;
 
-		.v-icon {
-			pointer-events: none;
+		&--disabled.am-blue--text {
+			color: $vd-am-blue-base !important;
+		}
+
+		&--disabled.am-blue-lighten-60--text {
+			color: $vd-am-blue-lighten-60 !important;
 		}
 	}
 </style>

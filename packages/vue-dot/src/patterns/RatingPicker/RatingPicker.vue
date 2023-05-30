@@ -85,7 +85,6 @@
 			value: {
 				handler(value: number): void {
 					this.internalValue = value;
-					this.hasAnswered = value !== -1;
 				},
 				immediate: true
 			}
@@ -95,7 +94,6 @@
 		locales = locales;
 
 		internalValue = -1;
-		hasAnswered = false;
 		displayAdditionalContent = false;
 
 		ratingComponentMapping = {
@@ -131,10 +129,8 @@
 
 		setValue(value: number): void {
 			this.internalValue = value;
-			this.hasAnswered = true;
 
 			this.showAdditionalContent(value);
-
 			this.$emit('change', value);
 		}
 	}

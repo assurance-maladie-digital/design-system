@@ -8,34 +8,23 @@
 			:value="value"
 			:length="length"
 			:readonly="readonly"
-			:class="{ 'justify-center': readonly && value !== -1 }"
-			large
 			class="max-width-none mx-n1 mx-sm-n2"
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
 				<VBtn
-					:disabled="readonly || value !== -1"
+					:disabled="readonly || hasAnswered"
+					:aria-pressed="isActive(index).toString()"
 					:class="[
 						getColor(index),
 						{ 'v-btn--active': isActive(index) }
 					]"
 					:min-height="btnSize"
 					:min-width="btnSize"
-					tag="label"
 					text
 					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
 					@click="click"
 				>
-					<!-- eslint-disable-next-line vuejs-accessibility/form-control-has-label -->
-					<input
-						:checked="isActive(index)"
-						:disabled="readonly"
-						type="radio"
-						class="d-sr-only"
-						@keydown.left.right="click"
-					>
-
 					<VIcon
 						x-large
 						color="currentColor"
@@ -98,6 +87,10 @@
 			return this.$vuetify.breakpoint.xs ? '70px' : '88px';
 		}
 
+		get hasAnswered(): boolean {
+			return this.value !== -1;
+		}
+
 		isActive(index: number): boolean {
 			return index === this.value - 1;
 		}
@@ -153,10 +146,6 @@
 		transition: 0.2s;
 		border: 1px solid transparent;
 
-		&:not(.v-btn--disabled) {
-			cursor: pointer;
-		}
-
 		:deep(.v-btn__content) {
 			flex-direction: column;
 		}
@@ -179,22 +168,17 @@
 			background: transparent;
 		}
 
-		&--active {
-			pointer-events: none;
-			border-color: currentColor !important;
-		}
-
-		&:focus-within {
-			border-color: rgba(0, 0, 0, 0.87) !important;
-			outline: 1px solid rgba(0, 0, 0, 0.87);
-		}
-
 		&--active.v-btn--disabled .v-icon {
 			color: currentColor !important;
 		}
 
+		&:focus,
+		&--active {
+			border-color: currentColor !important;
+		}
+
 		&:hover,
-		&:focus-within,
+		&:focus,
 		&--active {
 			&.sad::before {
 				background: $vd-orange-lighten-90;
