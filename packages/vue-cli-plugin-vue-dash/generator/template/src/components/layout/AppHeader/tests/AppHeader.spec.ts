@@ -3,7 +3,6 @@ import Vuetify from 'vuetify';
 
 import {
 	Wrapper,
-	html,
 	shallowMount,
 	createLocalVue,
 	createVuetifyInstance,
@@ -37,7 +36,7 @@ describe('AppHeader', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly when maintenance is enabled', () => {
@@ -49,6 +48,6 @@ describe('AppHeader', () => {
 			}
 		});
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

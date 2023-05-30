@@ -5,7 +5,7 @@
 			class="text-body-1"
 			:class="{ 'mb-2': !field.tooltip }"
 		>
-			<span>{{ field.title }}</span>
+			<span v-html="field.title" />
 
 			<VTooltip
 				v-if="field.tooltip"

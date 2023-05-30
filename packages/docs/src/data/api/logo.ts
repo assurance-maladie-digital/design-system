@@ -90,6 +90,10 @@ export const api: Api = {
 			{
 				name: 'default',
 				description: 'Slot pour remplacer le contenu et afficher une marque partenaire.'
+			},
+			{
+				name: 'brand-content',
+				description: 'Slot pour personnaliser le contenu de la marque.'
 			}
 		]
 	}

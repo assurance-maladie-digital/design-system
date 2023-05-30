@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LogoBrandSection renders correctly 1`] = `
-<vsheet-stub height="64px" tag="div" class="vd-header-brand-section d-flex">
-  <routerlink-stub aria-label="Accueil, l’Assurance Maladie" to="/" class="vd-header-home-link">
+<vsheet-stub height="64px" tag="div" class="vd-logo-brand-section d-flex">
+  <routerlink-stub aria-label="Accueil, l’Assurance Maladie" to="/" class="vd-home-link">
     <logo-stub size="normal" class=""></logo-stub>
   </routerlink-stub>
   <!---->

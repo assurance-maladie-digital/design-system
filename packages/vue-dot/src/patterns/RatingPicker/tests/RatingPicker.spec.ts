@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import RatingPicker from '../';
 
@@ -26,7 +25,7 @@ describe('RatingPicker', () => {
 	it('renders correctly', () => {
 		wrapper = createTestComponent();
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('sets readonly internal value on update', () => {

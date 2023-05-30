@@ -22,23 +22,35 @@ function mockDocument(options: TSelection) {
 		return options;
 	};
 
-	document.execCommand = () => true;
+	document.execCommand = jest.fn();
 }
 
 const txt = 'test';
 
 describe('copyToClipboard', () => {
-	it('is called correctly', () => {
+	it('copies text to the clipboard', () => {
 		mockDocument({
 			rangeCount: 0,
 			getRangeAt: () => null,
 			removeAllRanges: () => null
 		});
 
-		expect(copyToClipboard(txt)).toBeUndefined();
+		const writeTextMock = jest.fn();
+
+		Object.defineProperty(navigator, 'clipboard', {
+			value: {
+				writeText: writeTextMock
+			},
+			writable: true
+		});
+
+		copyToClipboard(txt);
+
+		expect(writeTextMock).toHaveBeenCalledWith(txt);
+		expect(document.execCommand).not.toHaveBeenCalled();
 	});
 
-	it('is called correctly when text is already selected', () => {
+	it('copies text to the clipboard when text is already selected', () => {
 		mockDocument({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
@@ -46,10 +58,40 @@ describe('copyToClipboard', () => {
 			addRange: () => null
 		});
 
-		expect(copyToClipboard(txt)).toBeUndefined();
+		const writeTextMock = jest.fn();
+
+		Object.defineProperty(navigator, 'clipboard', {
+			value: {
+				writeText: writeTextMock
+			},
+			writable: true
+		});
+
+		copyToClipboard(txt);
+
+		expect(writeTextMock).toHaveBeenCalledWith(txt);
+		expect(document.execCommand).not.toHaveBeenCalled();
 	});
 
-	it('is called correctly when getSelection is unavailable', () => {
+	it('copies text to the clipboard when text is already selected and navigator.clipboard is unavailable', () => {
+		mockDocument({
+			rangeCount: 2,
+			getRangeAt: (index: number) => ['a', 'b'][index],
+			removeAllRanges: () => null,
+			addRange: () => null
+		});
+
+		Object.defineProperty(navigator, 'clipboard', {
+			value: null,
+			writable: true
+		});
+
+		copyToClipboard(txt);
+
+		expect(document.execCommand).toHaveBeenCalledWith('copy');
+	});
+
+	it('does not copies text when getSelection is unavailable', () => {
 		document.getSelection = jest.fn(() => null);
 
 		expect(copyToClipboard(txt)).toBeUndefined();
