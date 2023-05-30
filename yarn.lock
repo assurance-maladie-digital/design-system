@@ -2241,15 +2241,15 @@
     yaml "^2.1.3"
     yargs "^17.6.0"
 
-"@netlify/build@29.11.5":
-  version "29.11.5"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-29.11.5.tgz#bc3de1d376f615337b7ddc8cd9ff73fa310bf0bf"
-  integrity sha512-QbgunjWOBwk9tAhmqYbyyiojpUuYiX42mwEym1Q7f+3XbROypTknoO9kJppHqkCmgD7yLS2EZVfwYbMg+vES8w==
+"@netlify/build@29.11.6":
+  version "29.11.6"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-29.11.6.tgz#8b9fad99cb316e025cc57079f5aceea68ee9bb68"
+  integrity sha512-rzxHZlgg2Jp/RngWSsXF78c81tOmfx2cBLnDa92wTLuR5TQeUy9mrKjrw6WGzPy9ON0ZL7ZiD3l4+GLmh6hc+w==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^5.1.5"
     "@netlify/config" "^20.4.3"
-    "@netlify/edge-bundler" "8.14.2"
+    "@netlify/edge-bundler" "8.15.0"
     "@netlify/framework-info" "^9.8.7"
     "@netlify/functions-utils" "^5.2.8"
     "@netlify/git-utils" "^5.1.1"
@@ -2343,10 +2343,10 @@
     validate-npm-package-name "^4.0.0"
     yargs "^17.6.0"
 
-"@netlify/edge-bundler@8.14.2":
-  version "8.14.2"
-  resolved "https://registry.yarnpkg.com/@netlify/edge-bundler/-/edge-bundler-8.14.2.tgz#90631ad0349d0ebb0598e3fd1de2485a6ef003b3"
-  integrity sha512-Ij0eKSefgSgrNuupiKeckIbBvRuHOZFNd/Sn6RyD4BERBfQscA9TfsfxorF04WonoXOh8hBO6w0e2wxPfp7cRA==
+"@netlify/edge-bundler@8.15.0":
+  version "8.15.0"
+  resolved "https://registry.yarnpkg.com/@netlify/edge-bundler/-/edge-bundler-8.15.0.tgz#828c6350ffecba834656bc655767918f86e4291d"
+  integrity sha512-5OKUEtVyzxV1pVYyyt64MqmILjICrUxPG7aVT1TDCqrGmPSECx7xSmguaQH8LVmxLykrgA+g1vLTDzmlySi3Eg==
   dependencies:
     "@import-maps/resolve" "^1.0.1"
     ajv "^8.11.2"
@@ -3420,7 +3420,7 @@
   dependencies:
     "@octokit/types" "^9.0.0"
 
-"@octokit/core@4.2.1", "@octokit/core@^4.0.0", "@octokit/core@^4.1.0":
+"@octokit/core@4.2.1", "@octokit/core@^4.0.0", "@octokit/core@^4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@octokit/core/-/core-4.2.1.tgz#fee6341ad0ce60c29cc455e056cd5b500410a588"
   integrity sha512-tEDxFx8E38zF3gT7sSMDrT1tGumDgsw5yPG6BBh/X+5ClIQfMH/Yqocxz1PnHx6CHyF6pxmovUTOfZAUvQ0Lvw==
@@ -3478,7 +3478,7 @@
   dependencies:
     "@octokit/types" "^6.41.0"
 
-"@octokit/plugin-paginate-rest@^6.1.0":
+"@octokit/plugin-paginate-rest@^6.1.2":
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-6.1.2.tgz#f86456a7a1fe9e58fec6385a85cf1b34072341f8"
   integrity sha512-qhrmtQeHU/IivxucOV1bbI/xZyC/iOBhclokv7Sut5vnejAIAEXVcGQeRpQlU39E0WwK9lNvJHphHri/DB6lbQ==
@@ -3499,7 +3499,7 @@
     "@octokit/types" "^8.1.1"
     deprecation "^2.3.1"
 
-"@octokit/plugin-rest-endpoint-methods@^7.1.0":
+"@octokit/plugin-rest-endpoint-methods@^7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-7.1.2.tgz#b77a8844601d3a394a02200cddb077f3ab841f38"
   integrity sha512-R0oJ7j6f/AdqPLtB9qRXLO+wjI9pctUn8Ka8UGfGaFCcCv3Otx14CshQ89K4E88pmyYZS8p0rNTiprML/81jig==
@@ -3528,6 +3528,16 @@
     node-fetch "^2.6.7"
     universal-user-agent "^6.0.0"
 
+"@octokit/rest@19.0.11":
+  version "19.0.11"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-19.0.11.tgz#2ae01634fed4bd1fca5b642767205ed3fd36177c"
+  integrity sha512-m2a9VhaP5/tUw8FwfnW2ICXlXpLPIqxtg3XcAiGMLj/Xhw3RSBfZ8le/466ktO1Gcjr8oXudGnHhxV1TXJgFxw==
+  dependencies:
+    "@octokit/core" "^4.2.1"
+    "@octokit/plugin-paginate-rest" "^6.1.2"
+    "@octokit/plugin-request-log" "^1.0.4"
+    "@octokit/plugin-rest-endpoint-methods" "^7.1.2"
+
 "@octokit/rest@19.0.3":
   version "19.0.3"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-19.0.3.tgz#b9a4e8dc8d53e030d611c053153ee6045f080f02"
@@ -3537,16 +3547,6 @@
     "@octokit/plugin-paginate-rest" "^3.0.0"
     "@octokit/plugin-request-log" "^1.0.4"
     "@octokit/plugin-rest-endpoint-methods" "^6.0.0"
-
-"@octokit/rest@19.0.8":
-  version "19.0.8"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-19.0.8.tgz#db1e67cb66018859fde2c6c3a49eb5c55dc04d92"
-  integrity sha512-/PKrzqn+zDzXKwBMwLI2IKrvk8yv8cedJOdcmxrjR3gmu6UIzURhP5oQj+4qkn7+uQi1gg7QqV4SqlaQ1HYW1Q==
-  dependencies:
-    "@octokit/core" "^4.1.0"
-    "@octokit/plugin-paginate-rest" "^6.1.0"
-    "@octokit/plugin-request-log" "^1.0.4"
-    "@octokit/plugin-rest-endpoint-methods" "^7.1.0"
 
 "@octokit/tsconfig@^1.0.2":
   version "1.0.2"
@@ -4060,10 +4060,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.2.3.tgz#b31eb300610c3835ac008d690de6f87e28f9b878"
   integrity sha512-pg9d0yC4rVNWQzX8U7xb4olIOFuuVL9za3bzMT2pu2SU0SNEi66i2qrvhE2qt0HvkhuCaWJu7pLNOt/Pj8BIrw==
 
-"@types/node@16.18.33":
-  version "16.18.33"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.33.tgz#0e91a6e18a006d3acfb3efa797cdcfc3a6598cd0"
-  integrity sha512-WjW7iYRVtePnSeLxVfE1e+g1yStJrfR9Anuv4y6JZVgOqYyFcW7GhPBk2/J1d0rC4ZNLrI13lS4e32NUuuRmHA==
+"@types/node@16.18.34":
+  version "16.18.34"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.34.tgz#62d2099b30339dec4b1b04a14c96266459d7c8b2"
+  integrity sha512-VmVm7gXwhkUimRfBwVI1CHhwp86jDWR04B5FGebMMyxV90SlCmFujwUHrxTD4oO+SOYU86SoxvhgeRQJY7iXFg==
 
 "@types/node@^16":
   version "16.18.32"
@@ -9304,10 +9304,10 @@ eslint-plugin-jest-formatting@3.1.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest-formatting/-/eslint-plugin-jest-formatting-3.1.0.tgz#b26dd5a40f432b642dcc880021a771bb1c93dcd2"
   integrity sha512-XyysraZ1JSgGbLSDxjj5HzKKh0glgWf+7CkqxbTqb7zEhW7X2WHo5SBQ8cGhnszKN+2Lj3/oevBlHNbHezoc/A==
 
-eslint-plugin-jsdoc@44.2.5:
-  version "44.2.5"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-44.2.5.tgz#f3186f57f112a230b3b7af34bf236d207bc8d5d7"
-  integrity sha512-KtuhaYy2GmdY2IQE5t+1lup8O4P05c+V4gKcj45PCxFM0OxmRq2uQlfOS1AgYVgPYIBKGE86DxrbKP24HKpORA==
+eslint-plugin-jsdoc@44.2.7:
+  version "44.2.7"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-44.2.7.tgz#5ecdb46ddfca209ecd58fff972a4eb74b8dde599"
+  integrity sha512-PcAJO7Wh4xIHPT+StBRpEbWgwCpIrYk75zL31RMbduVVHpgiy3Y8aXQ6pdbRJOq0fxHuepWSEAve8ZrPWTSKRg==
   dependencies:
     "@es-joy/jsdoccomment" "~0.39.4"
     are-docs-informative "^0.0.2"
@@ -9318,10 +9318,10 @@ eslint-plugin-jsdoc@44.2.5:
     semver "^7.5.1"
     spdx-expression-parse "^3.0.1"
 
-eslint-plugin-vue@9.14.0:
-  version "9.14.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.14.0.tgz#73004a62d794e276a60d471114d81ed8887efcb8"
-  integrity sha512-4O7EuiqPGVQA1wYCzLvCzsBTv9JIPHLHhrf0k55DLzbwtmJbSw2TKS0G/l7pOwi9RWMSkjIT7ftChU5gZpgnJw==
+eslint-plugin-vue@9.14.1:
+  version "9.14.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.14.1.tgz#3b0c9857642dac547c7564031cfb09d283eafdd4"
+  integrity sha512-LQazDB1qkNEKejLe/b5a9VfEbtbczcOaui5lQ4Qw0tbRBbQYREyxxOV5BQgNDTqGPs9pxqiEpbMi9ywuIaF7vw==
   dependencies:
     "@eslint-community/eslint-utils" "^4.3.0"
     natural-compare "^1.4.0"
@@ -15355,21 +15355,21 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0, nested-error-stacks@^2.1
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@15.1.1:
-  version "15.1.1"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-15.1.1.tgz#383b06bae839b73c2aa57b578fbe94065adf2aac"
-  integrity sha512-U+UarUHIbmjUGlINgwqhbRldx2yC+nUPQk4iFzCBiDxXhTzhushTsqvupi5nZ0I5oUZgQBacE79oXT7KUIELnw==
+netlify-cli@15.2.0:
+  version "15.2.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-15.2.0.tgz#176abfc0b15d08d682643870d0938f999692bc29"
+  integrity sha512-yHlJN+OYiKmuzKC+7oMwVb8W0TXGdu9fK6UOMG1Ko+iga284BfQMCH+PCCAs7DbyCGpprxSoO6uzPf77vpw4Hw==
   dependencies:
     "@bugsnag/js" "7.20.2"
     "@fastify/static" "6.10.1"
-    "@netlify/build" "29.11.5"
+    "@netlify/build" "29.11.6"
     "@netlify/build-info" "7.0.2"
     "@netlify/config" "20.4.3"
-    "@netlify/edge-bundler" "8.14.2"
+    "@netlify/edge-bundler" "8.15.0"
     "@netlify/framework-info" "9.8.7"
     "@netlify/local-functions-proxy" "1.1.1"
     "@netlify/zip-it-and-ship-it" "9.6.0"
-    "@octokit/rest" "19.0.8"
+    "@octokit/rest" "19.0.11"
     "@skn0tt/lambda-local" "2.0.3"
     ansi-escapes "6.2.0"
     ansi-styles "6.2.1"
