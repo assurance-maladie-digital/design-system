@@ -1,7 +1,7 @@
 <template>
 	<div class="d-inline-flex flex-column">
 		<a
-			:href="href"
+			:href="disabled ? '#' : href"
 			:aria-label="label"
 			class="vd-france-connect-btn d-inline-flex"
 		>
@@ -125,15 +125,15 @@
 			</svg>
 		</a>
 		<a
-			href="https://franceconnect.gouv.fr/"
+			:href="disabled ? '#' : 'https://franceconnect.gouv.fr/'"
 			target="_blank"
 			class="mt-3 text-decoration-none d-inline-flex align-center"
 		>
-			<span class="link">
+			<span :class="!disabled ? 'link' : 'disabled-link'">
 				{{ connectPlus ? linkLabelPlus : linkLabel }}
 				<VIcon
 					class="icon ml-1"
-					color="primary"
+					:color="!disabled ? 'primary' : '#929292'"
 				>
 					{{ linkIcon }}
 				</VIcon>
@@ -213,6 +213,11 @@
 	}
 	.link {
 		border-bottom: 1px solid #000091;
+	}
+	.disabled-link {
+		border-bottom: 1px solid #929292;
+		color: #929292;
+		cursor: default;
 	}
 	.icon {
 		width: 1rem;
