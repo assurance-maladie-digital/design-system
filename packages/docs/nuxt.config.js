@@ -100,6 +100,7 @@ export default {
 	},
 	googleFonts: {
 		families: {
+			'Source+Sans+Pro': [300, 400, 600, 700],
 			'Open+Sans': [300, 400, 600, 700]
 		},
 		download: false
