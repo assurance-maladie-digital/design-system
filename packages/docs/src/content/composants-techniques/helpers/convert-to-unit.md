@@ -1,6 +1,6 @@
 ---
 title: convertToUnit
-description: Le helper `convertToUnit` permet .
+description: Le helper `convertToUnit` permet de convertir une valeur en unité CSS.
 ---
 
 <doc-tabs>
@@ -8,15 +8,15 @@ description: Le helper `convertToUnit` permet .
 <doc-tab-item label="Utilisation">
 
 ```ts
-import { insertAt } from '@cnamts/vue-dot/src/functions/insertAt';
+import { convertToUnit } from '@cnamts/vue-dot/src/helpers/convertToUnit';
 
-insertAt('Hello!', 5, ' world'); // 'Hello world!'
+convertToUnit(10); // '10px'
 ```
 
 </doc-tab-item>
 
 <doc-tab-item label="API">
-<doc-api name="functions/insert-at"></doc-api>
+<doc-api name="helpers/convert-to-unit"></doc-api>
 </doc-tab-item>
 
 </doc-tabs>
