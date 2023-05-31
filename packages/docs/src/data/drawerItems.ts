@@ -400,6 +400,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'deepCopy',
 						to: '/composants-techniques/helpers/deep-copy'
+					},
+					{
+						title: 'deepRemoveKeys',
+						to: '/composants-techniques/helpers/deep-remove-keys'
 					}
 				]
 			},
