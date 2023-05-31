@@ -8,46 +8,19 @@
 }
 
 @font-face {
-	font-family: 'Source Sans Pro Bold';
+	font-family: 'Source Sans Pro';
 	src:
 		url('./fonts/Source_Sans_Pro/SourceSansPro-Bold.woff2') format('woff2'),
 		url('./fonts/Source_Sans_Pro/SourceSansPro-Bold.woff') format('woff');
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Source Sans Pro Italic';
+	font-family: 'Source Sans Pro';
 	src:
 		url('./fonts/Source_Sans_Pro/SourceSansPro-Italic.woff2') format('woff2'),
 		url('./fonts/Source_Sans_Pro/SourceSansPro-Italic.woff') format('woff');
 	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Open Sans';
-	src:
-		url('./fonts/Open_Sans/OpenSans-Regular.woff2') format('woff2'),
-		url('./fonts/Open_Sans/OpenSans-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Open Sans Bold';
-	src:
-		url('./fonts/Open_Sans/OpenSans-Bold.woff2') format('woff2'),
-		url('./fonts/Open_Sans/OpenSans-Bold.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Open Sans Italic';
-	src:
-		url('./fonts/Open_Sans/OpenSans-Italic.woff2') format('woff2'),
-		url('./fonts/Open_Sans/OpenSans-Italic.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+	font-style: italic;
 }
