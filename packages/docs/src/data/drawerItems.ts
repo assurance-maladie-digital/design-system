@@ -404,6 +404,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'deepRemoveKeys',
 						to: '/composants-techniques/helpers/deep-remove-keys'
+					},
+					{
+						title: 'localStorageUtility',
+						to: '/composants-techniques/helpers/local-storage-utility'
 					}
 				]
 			},
