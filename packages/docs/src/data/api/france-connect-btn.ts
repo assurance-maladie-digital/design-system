@@ -29,6 +29,12 @@ export const api: Api = {
 				type: 'boolean',
 				default: false,
 				description: 'Active le bouton FranceConnect+.'
+			},
+			{
+				name: 'disabled',
+				type: 'boolean',
+				default: false,
+				description: 'Désactive le bouton.'
 			}
 		]
 	}
