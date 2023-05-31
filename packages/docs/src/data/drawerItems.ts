@@ -396,6 +396,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'convertToUnit',
 						to: '/composants-techniques/helpers/convert-to-unit'
+					},
+					{
+						title: 'deepCopy',
+						to: '/composants-techniques/helpers/deep-copy'
 					}
 				]
 			},

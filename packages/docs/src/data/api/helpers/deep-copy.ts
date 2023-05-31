@@ -1,18 +1,18 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	convertToUnit: {
+	deepCopy: {
 		arguments: [
 			{
-				name: 'str',
-				description: 'La valeur à convertir.',
-				type: 'string | number',
+				name: 'o',
+				description: 'L\'objet ou le tableau à copier.',
+				type: 'object | array',
 				required: true
 			}
 		],
 		returnValue: [
 			{
-				type: 'string'
+				type: 'object | array'
 			}
 		]
 	}
