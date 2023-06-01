@@ -418,8 +418,12 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants-techniques/helpers/prop-validator'
 					},
 					{
-						title: 'registerComponent',
-						to: '/composants-techniques/helpers/register-component'
+						title: 'registerComponents',
+						to: '/composants-techniques/helpers/register-components'
+					},
+					{
+						title: 'registerDirectives',
+						to: '/composants-techniques/helpers/register-directives'
 					}
 				]
 			},
