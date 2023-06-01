@@ -10,7 +10,8 @@ description: Le helper `scrollBehavior` permet de définir le comportement du sc
 ```ts
 import { scrollBehavior } from '@cnamts/vue-dot/src/helpers/scrollBehavior';
 
-// TODO : exemple
+const scroll = scrollBehavior({ x: 10, y: 0 });
+scroll();
 ```
 
 </doc-tab-item>
