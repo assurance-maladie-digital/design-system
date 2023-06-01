@@ -412,6 +412,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'parseDate',
 						to: '/composants-techniques/helpers/parse-date'
+					},
+					{
+						title: 'propValidator',
+						to: '/composants-techniques/helpers/prop-validator'
 					}
 				]
 			},
