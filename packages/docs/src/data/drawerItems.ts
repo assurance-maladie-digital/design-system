@@ -408,6 +408,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'localStorageUtility',
 						to: '/composants-techniques/helpers/local-storage-utility'
+					},
+					{
+						title: 'parseDate',
+						to: '/composants-techniques/helpers/parse-date'
 					}
 				]
 			},
