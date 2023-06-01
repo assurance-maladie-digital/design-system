@@ -428,6 +428,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ruleMessage',
 						to: '/composants-techniques/helpers/rule-message'
+					},
+					{
+						title: 'scrollBehavior',
+						to: '/composants-techniques/helpers/scroll-behavior'
 					}
 				]
 			},
