@@ -424,6 +424,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'registerDirectives',
 						to: '/composants-techniques/helpers/register-directives'
+					},
+					{
+						title: 'ruleMessage',
+						to: '/composants-techniques/helpers/rule-message'
 					}
 				]
 			},

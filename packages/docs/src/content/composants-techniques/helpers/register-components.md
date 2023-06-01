@@ -1,5 +1,5 @@
 ---
-title: registerComponent
+title: registerComponents
 description: Le helper `registerComponents` permet d'enregistrer des composants de façon globale.
 ---
 
