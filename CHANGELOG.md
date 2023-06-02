@@ -1,3 +1,60 @@
+## v2.10.0
+
+**Version publiée le 02/06/2023.**
+
+Cette version comporte l'ajout de fonctionnalités aux composants `HeaderBar`, `MaintenancePage`, `BackBtn` et `NotificationBar` ainsi que la mise à jour des styles des composants `VAlert` et `NotificationBar` et des correctifs sur Vue Dot.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **MaintenancePage:** Ajout d'un slot pour ajouter du contenu supplémentaire ([#2761]https://github.com/assurance-maladie-digital/design-system/pull/2761)
+  - **BackBtn:** Ajout de la prop `dark` ([#2782]https://github.com/assurance-maladie-digital/design-system/pull/2782)
+  - **HeaderBar:** Ajout du slot `brand-content` ([2698]https://github.com/assurance-maladie-digital/design-system/pull/2698)
+  - **HeaderBar:** Ajout de slots de contenu ([2723]https://github.com/assurance-maladie-digital/design-system/pull/2723)
+  - **NotificationBar:** Ajout de la prop `bottom` ([2811]https://github.com/assurance-maladie-digital/design-system/pull/2811)
+  - **NotificationBar:** Ajout du slot `action` et mise à jour des styles ([2704]https://github.com/assurance-maladie-digital/design-system/pull/2704)
+
+- 🐛 **Corrections de bugs**
+  - **FooterBar:** Correction de la prop `hide-cookies-link` ([2799]https://github.com/assurance-maladie-digital/design-system/pull/2799)
+  - **ContextualMenu:** Correction de la gestion de textes longs ([2824]https://github.com/assurance-maladie-digital/design-system/pull/2824)
+  - **VAlert:** Correction des styles avec la prop `type` ([2724]https://github.com/assurance-maladie-digital/design-system/pull/2724)
+
+- ♻️ **Refactoring**
+  - **copyToClipboard:** Utilisation de l'API Clipboard ([2784]https://github.com/assurance-maladie-digital/design-system/pull/2784)
+  - **utils:** Dépréciation de la fonction `html` ([2805]https://github.com/assurance-maladie-digital/design-system/pull/2805)
+
+- ♿️ **Accessibilité**
+  - **VOverlay:** Correction de la couleur par défaut ([2766]https://github.com/assurance-maladie-digital/design-system/pull/2766)
+  - **RatingPicker:** Amélioration de l'accessibilité ([2795]https://github.com/assurance-maladie-digital/design-system/pull/2795)
+
+### FormBuilder
+
+- ♻️ **Refactoring**
+  - **FormField:** Utilisation de `v-html` pour afficher le titre ([2829]https://github.com/assurance-maladie-digital/design-system/pull/2829)
+
+### Interne
+
+- 🔧 **Configuration**
+  - **ci:** Mise à jour de `codecov` vers la `v3.2.5` ([#2825](https://github.com/assurance-maladie-digital/design-system/pull/2825))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#2850](https://github.com/assurance-maladie-digital/design-system/pull/2850))
+
+- ⬆️ **Dépendances**
+  - **lerna:** Mise à jour vers la `v6.6.2` ([#2787](https://github.com/assurance-maladie-digital/design-system/pull/2787))
+  - **core-js:** Mise à jour vers la `v3.30.2` ([#2791](https://github.com/assurance-maladie-digital/design-system/pull/2791))
+  - **@netlify/functions:** Mise à jour vers la `v1.6.0` ([#2802](https://github.com/assurance-maladie-digital/design-system/pull/2802))
+  - **@octokit/core:** Mise à jour vers la `v4.2.1` ([#2815](https://github.com/assurance-maladie-digital/design-system/pull/2815))
+  - **vue-input-facade:** Mise à jour vers la `v2.1.0` ([#2816](https://github.com/assurance-maladie-digital/design-system/pull/2816))
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.3.0` ([#2823](https://github.com/assurance-maladie-digital/design-system/pull/2823))
+  - **@docsearch/js:** Mise à jour vers la `v3.4.0` ([#2827](https://github.com/assurance-maladie-digital/design-system/pull/2827))
+  - **netlify-cli:** Mise à jour vers la `v15.2.0` ([#2831](https://github.com/assurance-maladie-digital/design-system/pull/2831))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.14.1` ([#2833](https://github.com/assurance-maladie-digital/design-system/pull/2833))
+  - **@types/node:** Mise à jour vers la `v16.18.34` ([#2835](https://github.com/assurance-maladie-digital/design-system/pull/2835))
+  - **@babel/core:** Mise à jour vers la `v7.22.1` ([#2834](https://github.com/assurance-maladie-digital/design-system/pull/2834))
+  - **typescript-eslint:** Mise à jour du monorepo vers la `v5.59.8` ([#2837](https://github.com/assurance-maladie-digital/design-system/pull/2837))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v46` ([#2841](https://github.com/assurance-maladie-digital/design-system/pull/2841))
+
 ## v2.9.0
 
 **Version publiée le 02/05/2023.**

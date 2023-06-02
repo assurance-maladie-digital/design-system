@@ -19,7 +19,7 @@ description: Le template `MaintenancePage` est utilisé pour afficher une page d
 
 ### Slots
 
-Vous pouvez utiliser le slot `illustration` pour modifier l’image d’illustration par défaut.
+Vous pouvez utiliser le slot par défaut pour ajouter du contenu supplémentaire et le slot `illustration` pour modifier l’image d’illustration.
 
 <doc-example file="maintenance-page/slots"></doc-example>
 

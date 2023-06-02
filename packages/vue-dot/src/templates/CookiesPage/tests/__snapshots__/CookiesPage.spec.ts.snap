@@ -22,7 +22,7 @@ exports[`CookiesPage renders correctly 1`] = `
         </vbtn-stub>
       </div>
       <cookiesinformation-stub type="essentials" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
-      <cookiesinformation-stub type="{[Function]}" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
+      <cookiesinformation-stub type="functional" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
       <cookiesinformation-stub type="analytics" tableitems="[object Object],[object Object]" class="mb-6"></cookiesinformation-stub>
       <div class="d-flex mt-16">
         <vspacer-stub tag="div"></vspacer-stub>

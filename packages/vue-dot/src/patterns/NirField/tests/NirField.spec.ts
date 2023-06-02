@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { Wrapper } from '@vue/test-utils';
 
 import { mountComponent } from '@/tests';
-import { html } from '@/tests/utils/html';
 
 import NirField from '../';
 
@@ -12,7 +11,7 @@ describe('NirField', () => {
 	it('renders correctly', () => {
 		wrapper = mountComponent(NirField, undefined, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with 13 characters', () => {
@@ -22,7 +21,7 @@ describe('NirField', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a tooltip', () => {
@@ -32,6 +31,6 @@ describe('NirField', () => {
 			}
 		}, true);
 
-		expect(html(wrapper)).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 });

@@ -2,9 +2,7 @@
 	<VAlert
 		v-bind="$attrs"
 		v-on="$listeners"
-		border="left"
 		class="doc-alert w-100"
-		text
 	>
 		<slot />
 	</VAlert>

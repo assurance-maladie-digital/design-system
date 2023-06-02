@@ -14,6 +14,8 @@
 					<p class="mb-0">
 						{{ message }}
 					</p>
+
+					<slot />
 				</VCol>
 
 				<VCol
