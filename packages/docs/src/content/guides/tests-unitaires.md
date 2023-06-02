@@ -156,7 +156,7 @@ import {
 	Wrapper,
 	shallowMount,
 	createLocalVue,
-	createRouter
+	createRouter,
 	createVuetifyInstance,
 	installGlobalPlugins,
 	installRouter
