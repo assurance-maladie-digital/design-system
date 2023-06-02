@@ -30,8 +30,7 @@
 				'width'
 			],
 			booleans: [
-				'connect-plus',
-				'disabled',
+				'connect-plus'
 			]
 		};
 	}
