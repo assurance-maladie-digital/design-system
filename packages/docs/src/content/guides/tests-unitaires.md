@@ -79,6 +79,58 @@ describe('AppFooter', () => {
 });
 ```
 
+### Test d’une méthode de composant
+
+Pour tester une méthode de composant, la syntaxe d’un test est la suivante :
+
+```ts
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+
+// Import des différentes fonctions utilitaires de Vue Dot
+import {
+  Wrapper,
+  shallowMount,
+  createLocalVue,
+  createVuetifyInstance,
+  installGlobalPlugins
+} from '@cnamts/vue-dot/src/helpers/testUtils';
+
+import BackBtn from '../';
+
+describe('BackBtn', () => {
+  const localVue = createLocalVue();
+
+  let wrapper: Wrapper<Vue>;
+  let vuetify: Vuetify;
+
+  installGlobalPlugins(localVue);
+
+  // Avant chaque test, on réinitialise l'instance de Vuetify
+  beforeEach(() => {
+    vuetify = createVuetifyInstance();
+  });
+  
+  it('should emit a "click" event when clicked', () => {
+    const wrapper = shallowMount(BackBtn);
+    wrapper.trigger('click');
+    expect(wrapper.emitted('click')).toBeTruthy();
+  });
+
+  it('should call the handleClick method when clicked', () => {
+    const handleClick = jest.spyOn(BackBtn.methods, 'handleClick');
+    const wrapper = shallowMount(BackBtn);
+    wrapper.trigger('click');
+    expect(handleClick).toHaveBeenCalled();
+  });
+
+  it('handleClick method should emit a "back" event', () => {
+    const wrapper = shallowMount(BackBtn);
+    wrapper.vm.handleClick();
+    expect(wrapper.emitted('back')).toBeTruthy();
+  });
+});
+```
 <doc-alert type="warning">
 
 La function `html()`, qui permettait de contourner un bug et de ne pas inclure le code source des fonctions dans les snapshots, est dépréciée car le bug a été corrigé. Elle sera supprimée dans la prochaine version majeure.
