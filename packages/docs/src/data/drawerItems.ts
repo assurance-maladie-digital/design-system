@@ -312,28 +312,28 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Règles de validation',
 				items: [
 					{
-						title: 'required',
-						to: '/composants-techniques/regles-de-validation/required'
+						title: 'email',
+						to: '/composants-techniques/regles-de-validation/email'
 					},
 					{
 						title: 'exactLength',
 						to: '/composants-techniques/regles-de-validation/exact-length'
 					},
 					{
-						title: 'minLength',
-						to: '/composants-techniques/regles-de-validation/min-length'
+						title: 'isDateValid',
+						to: '/composants-techniques/regles-de-validation/is-date-valid'
+					},
+					{
+						title: 'matchPattern',
+						to: '/composants-techniques/regles-de-validation/match-pattern'
 					},
 					{
 						title: 'maxLength',
 						to: '/composants-techniques/regles-de-validation/max-length'
 					},
 					{
-						title: 'email',
-						to: '/composants-techniques/regles-de-validation/email'
-					},
-					{
-						title: 'isDateValid',
-						to: '/composants-techniques/regles-de-validation/is-date-valid'
+						title: 'minLength',
+						to: '/composants-techniques/regles-de-validation/min-length'
 					},
 					{
 						title: 'notAfterDate',
@@ -350,7 +350,11 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'notBeforeToday',
 						to: '/composants-techniques/regles-de-validation/not-before-today'
-					}
+					},
+					{
+						title: 'required',
+						to: '/composants-techniques/regles-de-validation/required'
+					},
 				]
 			},
 			{
