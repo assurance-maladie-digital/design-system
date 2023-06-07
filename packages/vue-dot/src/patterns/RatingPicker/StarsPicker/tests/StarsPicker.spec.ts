@@ -13,7 +13,7 @@ describe('StarsPicker', () => {
 			propsData: {
 				label: 'Pourriez-vous donner une note ?'
 			}
-		});
+		}, true);
 
 		expect(wrapper).toMatchSnapshot();
 	});
