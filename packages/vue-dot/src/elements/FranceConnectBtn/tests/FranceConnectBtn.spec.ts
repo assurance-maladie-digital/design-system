@@ -17,4 +17,15 @@ describe('FranceConnectBtn', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('renders correctly with connect-plus', () => {
+		wrapper = mountComponent(FranceConnectBtn, {
+			propsData: {
+				href: 'https://app.franceconnect.gouv.fr/',
+				connectPlus: true
+			}
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
 });

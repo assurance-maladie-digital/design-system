@@ -10,25 +10,10 @@ export const api: Api = {
 				description: 'L’URL de connexion à FranceConnect.'
 			},
 			{
-				name: 'label',
-				type: 'string',
-				default: `'S’identifier avec FranceConnect'`,
-				description: 'Le label accessible du bouton.',
-			},
-			{
-				name: 'width',
-				type: [
-					'string',
-					'number'
-				],
-				default: 300,
-				description: 'La largeur du bouton.'
-			},
-			{
 				name: 'connect-plus',
 				type: 'boolean',
 				default: false,
-				description: 'Active le bouton FranceConnect+.'
+				description: 'Affiche la variante FranceConnect+.'
 			}
 		]
 	}
