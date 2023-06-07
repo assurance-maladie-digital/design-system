@@ -1,10 +1,10 @@
 <template>
-	<div class="vd-number-picker">
+	<fieldset class="vd-number-picker">
 		<VSelect
 			v-if="$vuetify.breakpoint.xs"
 			:value="value"
 			:label="label"
-			:disabled="readonlyInternal"
+			:disabled="readonly || hasAnswered"
 			:items="selectItems"
 			hide-details
 			outlined
@@ -13,26 +13,25 @@
 		/>
 
 		<template v-else>
-			<div class="text-h6 mb-6">
+			<legend class="text-h6 mb-6">
 				{{ label }}
-			</div>
+			</legend>
 
 			<div
-				v-if="!readonlyInternal"
+				v-if="!hasAnswered"
 				class="d-inline-block"
 			>
 				<VRating
 					:value="value"
 					:length="length"
-					:readonly="readonlyInternal"
-					color="primary"
-					background-color="primary lighten-4"
+					:readonly="readonly || hasAnswered"
 					class="d-flex flex-wrap mx-n1 max-width-none"
 					@input="setValue"
 				>
 					<template #item="{ index, click }">
 						<VBtn
 							:aria-label="locales.ariaLabel(index + 1, length)"
+							:disabled="readonly"
 							x-small
 							outlined
 							color="primary"
@@ -50,33 +49,40 @@
 					class="d-flex justify-space-between mt-1"
 				>
 					<span
+						:aria-label="`${locales.ariaLabel(1, length)} ${itemLabels[0]}.`"
 						class="text-caption"
 						v-text="itemLabels[0]"
 					/>
 
 					<span
+						:aria-label="`${locales.ariaLabel(length, length)} ${itemLabels[1]}.`"
 						class="text-caption"
 						v-text="itemLabels[1]"
 					/>
 				</div>
 			</div>
 
-			<div v-else>
+			<p
+				v-else
+				:aria-label="locales.ariaLabel(value, length)"
+				class="mb-0"
+			>
 				<VBtn
-					outlined
-					x-small
+					aria-hidden="true"
 					disabled
+					x-small
+					outlined
 					color="primary"
-					min-height="36px"
-					class="text-body-2 mr-1 pa-0"
+					height="36px"
+					class="vd-btn-answer text-body-2 mr-1 pa-0"
 				>
 					{{ value }}
 				</VBtn>
 
 				/ {{ length }}
-			</div>
+			</p>
 		</template>
-	</div>
+	</fieldset>
 </template>
 
 <script lang="ts">
@@ -107,20 +113,9 @@
 
 	const MixinsDeclaration = mixins(Props, RatingMixin);
 
-	@Component<NumberPicker>({
-		watch: {
-			readonly: {
-				handler(value: boolean): void {
-					this.readonlyInternal = value;
-				},
-				immediate: true
-			}
-		}
-	})
+	@Component
 	export default class NumberPicker extends MixinsDeclaration {
 		locales = locales;
-
-		readonlyInternal = false;
 
 		get selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({
@@ -133,8 +128,11 @@
 			return this.itemLabels.length === 2;
 		}
 
+		get hasAnswered(): boolean {
+			return this.value !== -1;
+		}
+
 		setValue(value: number): void {
-			this.readonlyInternal = true;
 			this.emitInputEvent(value);
 		}
 	}
@@ -143,7 +141,7 @@
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
 
-	.theme--light.v-btn.v-btn--disabled {
+	.vd-btn-answer.v-btn.v-btn--disabled {
 		color: $vd-primary !important;
 	}
 </style>

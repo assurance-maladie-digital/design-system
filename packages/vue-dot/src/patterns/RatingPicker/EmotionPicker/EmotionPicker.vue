@@ -1,21 +1,20 @@
 <template>
-	<div class="vd-emotion-picker">
-		<div class="text-h6 mb-6">
+	<fieldset class="vd-emotion-picker">
+		<legend class="text-h6 mb-6">
 			{{ label }}
-		</div>
+		</legend>
 
 		<VRating
 			:value="value"
 			:length="length"
 			:readonly="readonly"
-			:class="{ 'justify-center': readonly && value !== -1 }"
-			large
 			class="max-width-none mx-n1 mx-sm-n2"
 			@input="emitInputEvent"
 		>
 			<template #item="{ index, click }">
 				<VBtn
-					:disabled="readonly"
+					:disabled="readonly || hasAnswered"
+					:aria-pressed="isActive(index).toString()"
 					:class="[
 						getColor(index),
 						{ 'v-btn--active': isActive(index) }
@@ -44,7 +43,7 @@
 				</VBtn>
 			</template>
 		</VRating>
-	</div>
+	</fieldset>
 </template>
 
 <script lang="ts">
@@ -86,6 +85,10 @@
 
 		get btnSize(): string {
 			return this.$vuetify.breakpoint.xs ? '70px' : '88px';
+		}
+
+		get hasAnswered(): boolean {
+			return this.value !== -1;
 		}
 
 		isActive(index: number): boolean {
