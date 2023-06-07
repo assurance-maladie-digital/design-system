@@ -18,7 +18,7 @@ describe('EmotionPicker', () => {
 					'Oui super'
 				]
 			}
-		});
+		}, true);
 
 		expect(wrapper).toMatchSnapshot();
 	});
