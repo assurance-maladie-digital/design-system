@@ -26,7 +26,8 @@
 		options = {
 			booleans: [
 				'hideUserIcon',
-				'hideLogoutBtn'
+				'hideLogoutBtn',
+				'mobileVersion'
 			],
 			textFields: [
 				'fullName',

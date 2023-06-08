@@ -35,6 +35,12 @@ export const api: Api = {
 				default: false,
 				description: 'Masque le bouton `Déconnexion` dans le menu.'
 			},
+			{
+				name: 'mobile-version',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche la version mobile du bouton.'
+			},
 			...customizable(`{
 	menu: 'VMenu',
 	btn: 'VBtn',
