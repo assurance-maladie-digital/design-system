@@ -96,11 +96,9 @@ import {
   installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
-import CopyBtn from '../';
+import MyComponent from '../';
 
-let wrapper: Wrapper<Vue>;
-
-describe('CopyBtn', () => {
+describe('MyComponent', () => {
   const localVue = createLocalVue();
 
   let wrapper: Wrapper<Vue>;
@@ -112,23 +110,27 @@ describe('CopyBtn', () => {
   beforeEach(() => {
     vuetify = createVuetifyInstance();
   });
-  
-  // On crée un mock de la fonction copyToClipboard
-	it('copies the text to the clipboard when the button is clicked', () => {
-    const textToCopy = 'Hello, world!';
-    const wrapper = mount(CopyBtn, {
+
+  it('When foo is set to a value, set bar to true', () => {
+    const myItems = [
+      { id: 200, bar: false },
+      { id: 300, bar: false }
+    ]
+    const localVue = createLocalVue()
+    const wrapper = shallowMount(MyComponent, {
+      localVue,
+      vuetify,
       propsData: {
-        label: 'Copy',
-        textToCopy
+        myItems
       }
-    });
+    })
 
-    wrapper.find('button').trigger('click');
+    wrapper.vm.foo = 'value'
 
-    // On vérifie que la fonction copyToClipboard a bien été appelée avec le texte à copier
-    expect(copyToClipboard).toHaveBeenCalledWith(textToCopy);
-  });
-});
+    expect(myItems[0].bar).toBe(true)
+  })
+})
+
 ```
 
 ### Test d’un événement
@@ -148,9 +150,9 @@ import {
   installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
-import BackBtn from '../';
+import MyComponent from '../';
 
-describe('BackBtn', () => {
+describe('MyComponent', () => {
   const localVue = createLocalVue();
 
   let wrapper: Wrapper<Vue>;
@@ -164,23 +166,14 @@ describe('BackBtn', () => {
   });
   
   it('should emit a "click" event when clicked', () => {
-  
-    const wrapper = shallowMount(BackBtn);
+    const wrapper = shallowMount(MyComponent, {
+      localVue,
+      vuetify
+    })
+
     wrapper.trigger('click');
+
     expect(wrapper.emitted('click')).toBeTruthy();
-  });
-
-  it('should call the handleClick method when clicked', () => {
-    const handleClick = jest.spyOn(BackBtn.methods, 'handleClick');
-    const wrapper = shallowMount(BackBtn);
-    wrapper.trigger('click');
-    expect(handleClick).toHaveBeenCalled();
-  });
-
-  it('handleClick method should emit a "back" event', () => {
-    const wrapper = shallowMount(BackBtn);
-    wrapper.vm.handleClick();
-    expect(wrapper.emitted('back')).toBeTruthy();
   });
 });
 ```
