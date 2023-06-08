@@ -19,7 +19,10 @@
 						{{ label }}
 					</span>
 
-					<span class="d-flex flex-column align-end">
+					<span
+						v-if="!mobileVersion"
+						class="d-flex flex-column align-end"
+					>
 						<span class="font-weight-bold">
 							{{ fullName }}
 						</span>
@@ -33,6 +36,7 @@
 						<VIcon
 							v-if="!hideUserIcon"
 							v-bind="options.icon"
+							:class="mobileVersion ? 'ml-0' : 'ml-2'"
 							class="vd-user-icon"
 						>
 							{{ userIcon }}
