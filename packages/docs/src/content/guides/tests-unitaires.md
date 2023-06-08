@@ -96,6 +96,58 @@ import {
   installGlobalPlugins
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
+import CopyBtn from '../';
+
+let wrapper: Wrapper<Vue>;
+
+describe('CopyBtn', () => {
+  const localVue = createLocalVue();
+
+  let wrapper: Wrapper<Vue>;
+  let vuetify: Vuetify;
+
+  installGlobalPlugins(localVue);
+
+  // Avant chaque test, on réinitialise l'instance de Vuetify
+  beforeEach(() => {
+    vuetify = createVuetifyInstance();
+  });
+  
+  // On crée un mock de la fonction copyToClipboard
+	it('copies the text to the clipboard when the button is clicked', () => {
+    const textToCopy = 'Hello, world!';
+    const wrapper = mount(CopyBtn, {
+      propsData: {
+        label: 'Copy',
+        textToCopy
+      }
+    });
+
+    wrapper.find('button').trigger('click');
+
+    // On vérifie que la fonction copyToClipboard a bien été appelée avec le texte à copier
+    expect(copyToClipboard).toHaveBeenCalledWith(textToCopy);
+  });
+});
+```
+
+### Test d’un événement
+
+Pour tester un événement, la syntaxe d’un test est la suivante :
+
+```ts
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+
+// Import des différentes fonctions utilitaires de Vue Dot
+import {
+  Wrapper,
+  shallowMount,
+  createLocalVue,
+  createVuetifyInstance,
+  installGlobalPlugins
+} from '@cnamts/vue-dot/src/helpers/testUtils';
+
 import BackBtn from '../';
 
 describe('BackBtn', () => {
@@ -112,6 +164,7 @@ describe('BackBtn', () => {
   });
   
   it('should emit a "click" event when clicked', () => {
+  
     const wrapper = shallowMount(BackBtn);
     wrapper.trigger('click');
     expect(wrapper.emitted('click')).toBeTruthy();
