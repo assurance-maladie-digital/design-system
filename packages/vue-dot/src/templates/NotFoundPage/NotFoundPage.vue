@@ -1,6 +1,9 @@
 <template>
 	<PageContainer size="m">
-		<VCard class="pa-6 pa-sm-16">
+		<VCard
+			class="pa-6"
+			elevation="2"
+		>
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
