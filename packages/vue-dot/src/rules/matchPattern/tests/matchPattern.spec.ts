@@ -13,6 +13,12 @@ describe('matchPatternFn', () => {
 		expect(rule('ABC')).toBe(true);
 	});
 
+	it('should return an error if the value does not match the pattern', () => {
+		const rule = matchPattern(/^[A-Z]+$/);
+
+		expect(rule('ABC')).toBe('string');
+	});
+
 	it('should return a custom error message if the validation fails', () => {
 		const rule = matchPattern(/^[A-Z]+$/, {
 			default: 'test'
