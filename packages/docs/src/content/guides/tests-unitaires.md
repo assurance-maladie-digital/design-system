@@ -112,6 +112,7 @@ describe('MyComponent', () => {
   });
 
   it('When foo is set to a value, set bar to true', () => {
+    // On monte le composant avec les différentes options souhaitées
     const myItems = [
       { id: 200, bar: false },
       { id: 300, bar: false }
@@ -166,6 +167,7 @@ describe('MyComponent', () => {
   });
   
   it('should emit a "click" event when clicked', () => {
+    // On monte le composant avec les différentes options souhaitées
     const wrapper = shallowMount(MyComponent, {
       localVue,
       vuetify
