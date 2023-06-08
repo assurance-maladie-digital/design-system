@@ -354,7 +354,7 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'required',
 						to: '/composants-techniques/regles-de-validation/required'
-					},
+					}
 				]
 			},
 			{
