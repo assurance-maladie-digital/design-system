@@ -2338,6 +2338,33 @@
     tmp-promise "^3.0.3"
     uuid "^9.0.0"
 
+"@netlify/edge-bundler@8.16.2":
+  version "8.16.2"
+  resolved "https://registry.yarnpkg.com/@netlify/edge-bundler/-/edge-bundler-8.16.2.tgz#8d71f1b028e97cdf24522bd7be527e673a620ab4"
+  integrity sha512-/deN9mBWXqm5s7SCYsdQCy95VgPeg16tw8Lm6buUoOxFThX9WLOf3+5YOiwjxTvzqpbMvO4ALmXn7pdXvuWCtQ==
+  dependencies:
+    "@import-maps/resolve" "^1.0.1"
+    ajv "^8.11.2"
+    ajv-errors "^3.0.0"
+    better-ajv-errors "^1.2.0"
+    common-path-prefix "^3.0.0"
+    env-paths "^3.0.0"
+    execa "^6.0.0"
+    find-up "^6.3.0"
+    get-port "^6.1.2"
+    glob-to-regexp "^0.4.1"
+    is-path-inside "^4.0.0"
+    jsonc-parser "^3.2.0"
+    node-fetch "^3.1.1"
+    node-stream-zip "^1.15.0"
+    p-retry "^5.1.1"
+    p-wait-for "^4.1.0"
+    path-key "^4.0.0"
+    regexp-tree "^0.1.24"
+    semver "^7.3.8"
+    tmp-promise "^3.0.3"
+    uuid "^9.0.0"
+
 "@netlify/esbuild-android-64@0.14.39":
   version "0.14.39"
   resolved "https://registry.yarnpkg.com/@netlify/esbuild-android-64/-/esbuild-android-64-0.14.39.tgz#7bd30aba94a92351d2c5e25e178ceb824f3c2f99"
@@ -15297,17 +15324,17 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0, nested-error-stacks@^2.1
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-netlify-cli@15.4.0:
-  version "15.4.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-15.4.0.tgz#4b35ee9638964daa4671d0da82cdce689187a47b"
-  integrity sha512-sJI17HNRRE0N19aR4tQn/ZWF4lR5OS850cCHU3gvZKHGZUziKOs/NIgm6OV/uLisQqYbGs2bjDPfubsjm6aerw==
+netlify-cli@15.4.1:
+  version "15.4.1"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-15.4.1.tgz#46b2f858e664216f03cbc2b33837bca552359be0"
+  integrity sha512-IX4nDCkNlMwmTGKEs7kOfrzUjQikMxMQOpDr4PtjhTjQfaWylScBtXYl7gKygWA9KcfRpRa/oyRLZKiPBngVyA==
   dependencies:
     "@bugsnag/js" "7.20.2"
     "@fastify/static" "6.10.2"
     "@netlify/build" "29.12.1"
     "@netlify/build-info" "7.0.5"
     "@netlify/config" "20.4.4"
-    "@netlify/edge-bundler" "8.16.1"
+    "@netlify/edge-bundler" "8.16.2"
     "@netlify/framework-info" "9.8.9"
     "@netlify/local-functions-proxy" "1.1.1"
     "@netlify/zip-it-and-ship-it" "9.8.0"
