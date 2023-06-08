@@ -16,7 +16,7 @@ describe('matchPatternFn', () => {
 	it('should return an error if the value does not match the pattern', () => {
 		const rule = matchPattern(/^[A-Z]+$/);
 
-		expect(rule('abc')).toBe('string');
+		expect(typeof rule('abc')).toBe('string');
 	});
 
 	it('should return a custom error message if the validation fails', () => {
