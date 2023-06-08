@@ -114,6 +114,10 @@
 			return undefined;
 		}
 
+		get hasAnswered(): boolean {
+			return this.value !== -1;
+		}
+
 		showAdditionalContent(value: number): void {
 			const starsUnsatisfied = this.type === RatingEnum.STARS && value <= 3;
 			const numberUnsatisfied = this.type === RatingEnum.NUMBER && value <= 7;
