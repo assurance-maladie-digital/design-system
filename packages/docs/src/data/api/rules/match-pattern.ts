@@ -5,18 +5,14 @@ export const api: Api = {
 	matchPattern: {
 		arguments: [
 			{
-				name: 'pattern',
-				type: 'RegExp',
-				description: 'Le motif à respecter.'
-			},
-			{
-				name: 'errorMessages',
-				type: 'ErrorMessages<number>',
-				description: 'Les messages d’erreur personnalisés.',
+				name: "pattern",
+				type: "RegExp",
+				description:
+					"L’expression régulière permettant de valider la valeur.",
 			},
 			...ruleMessages(`{
-				default: 'Le format saisi ne correspond pas.',
-			}`)
-		]
-	}
+	default: 'Le format saisi ne correspond pas au format attendu.',
+}`),
+		],
+	},
 };
