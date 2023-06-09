@@ -2,7 +2,7 @@
 
 exports[`UserMenuBtn renders correctly 1`] = `
 <div class="vd-user-menu-btn-ctn d-inline-block">
-  <vmenu-stub opendelay="0" closedelay="0" openonclick="true" attach="" contentclass="vd-user-menu-content" maxwidth="198px" minwidth="198px" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" zindex="4" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition">
+  <vmenu-stub opendelay="0" closedelay="0" openonclick="true" attach="" contentclass="vd-user-menu-content" maxwidth="198px" minwidth="198px" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" zindex="4" closeonclick="true" closeoncontentclick="true" maxheight="auto" offsety="true" origin="top left" transition="v-menu-transition" class="right-list">
     <vlist-stub tag="div">
       <vlistitem-stub activeclass="" tag="div" class="primary--text">
         <vicon-stub color="primary" class="mr-4">

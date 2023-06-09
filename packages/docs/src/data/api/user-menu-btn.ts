@@ -39,7 +39,13 @@ export const api: Api = {
 				name: 'mobile-version',
 				type: 'boolean',
 				default: false,
-				description: 'Affiche la version mobile du bouton.'
+				description: 'Affiche la version mobile.'
+			},
+			{
+				name: 'list-left',
+				type: 'boolean',
+				default: false,
+				description: 'Positionne la liste du menu à gauche du bouton.'
 			},
 			...customizable(`{
 	menu: 'VMenu',

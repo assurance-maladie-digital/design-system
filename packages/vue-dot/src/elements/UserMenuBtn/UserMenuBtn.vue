@@ -4,6 +4,7 @@
 			v-bind="options.menu"
 			attach
 			content-class="vd-user-menu-content"
+			:class="listLeft ? 'left-list' : 'right-list'"
 		>
 			<template #activator="{ on, attrs }">
 				<VBtn
@@ -12,6 +13,9 @@
 						...options.btn
 					}"
 					:class="btnPadding"
+					:icon="isMobileVersion && !hideUserIcon"
+					:x-large="isMobileVersion && !hideUserIcon"
+					:height="isMobileVersion && !hideUserIcon ? undefined : 'auto'"
 					class="vd-user-menu-btn"
 					v-on="on"
 				>
@@ -30,6 +34,13 @@
 						<span class="grey--text text--darken-2">
 							{{ additionalInformation }}
 						</span>
+					</span>
+
+					<span
+						v-if="mobileVersion && hideUserIcon"
+						class="font-weight-bold text-sm-caption"
+					>
+						{{ fullName }}
 					</span>
 
 					<slot name="icon">
@@ -110,6 +121,10 @@
 			mobileVersion: {
 				type: Boolean,
 				default: false
+			},
+			listLeft: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -128,7 +143,14 @@
 		logoutIcon = mdiLoginVariant;
 
 		get btnPadding(): string {
-			return this.hideUserIcon ? 'pa-1 pa-sm-2' : 'pa-1 pa-sm-3';
+			// return this.hideUserIcon ? 'pa-1 pa-sm-2' : 'pa-1 pa-sm-3';
+			if (this.hideUserIcon) {
+				return 'pa-1 pa-sm-2';
+			} else if (this.mobileVersion) {
+				return 'pa-0';
+			} else {
+				return 'pa-1 pa-sm-3';
+			}
 		}
 
 		get hasListContent(): boolean {
@@ -147,6 +169,7 @@
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+	$breakpoint-xs: 600px;
 
 	.vd-user-menu-btn-ctn {
 		position: relative;
@@ -165,9 +188,20 @@
 	}
 
 	.vd-user-menu-content {
-		right: 0 !important;
-		left: 0 !important;
 		top: 100% !important;
+	}
+	.left-list {
+		.vd-user-menu-content {
+			right: auto !important;
+			left: 0 !important;
+		}
+	}
+
+	.right-list {
+		.vd-user-menu-content {
+			right: 0 !important;
+			left: auto !important;
+		}
 	}
 
 	.vd-user-icon {
@@ -175,5 +209,11 @@
 		height: 40px;
 		background: $vd-grey-lighten-90;
 		border-radius: 50%;
+	}
+	.v-btn--icon.v-size--x-large {
+		.vd-user-icon {
+			width: 40px;
+			height: 40px;
+		}
 	}
 </style>
