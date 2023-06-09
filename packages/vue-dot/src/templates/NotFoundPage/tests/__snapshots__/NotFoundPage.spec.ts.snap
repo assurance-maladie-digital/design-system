@@ -2,7 +2,7 @@
 
 exports[`NotFoundPage renders correctly 1`] = `
 <pagecontainer-stub size="m" color="transparent">
-  <vcard-stub loaderheight="4" tag="div" class="pa-6 pa-sm-16">
+  <vcard-stub loaderheight="4" tag="div" elevation="2" class="pa-6 pa-sm-16">
     <vrow-stub tag="div" class="mx-0">
       <vcol-stub cols="12" md="6" tag="div" class="order-last order-md-first text-center text-md-left">
         <div aria-hidden="true" class="vd-code font-weight-thin primary--text mb-4">
