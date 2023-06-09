@@ -1,6 +1,9 @@
 <template>
 	<PageContainer size="m">
-		<VCard class="pa-6">
+		<VCard
+			:elevation="isMobileVersion ? 0 : 2"
+			class="pa-6 pa-sm-16"
+		>
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
@@ -57,5 +60,11 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class MaintenancePage extends MixinsDeclaration {}
+	export default class MaintenancePage extends MixinsDeclaration {
+		locales = locales;
+
+		get isMobileVersion(): boolean {
+			return this.$vuetify.breakpoint.smAndDown;
+		}
+	}
 </script>

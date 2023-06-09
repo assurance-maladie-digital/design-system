@@ -1,8 +1,8 @@
 <template>
 	<PageContainer size="m">
 		<VCard
-			class="pa-6"
-			elevation="2"
+			:elevation="isMobileVersion ? 0 : 2"
+			class="pa-6 pa-sm-16"
 		>
 			<VRow class="mx-0">
 				<VCol
@@ -96,6 +96,10 @@
 	@Component
 	export default class NotFoundPage extends MixinsDeclaration {
 		locales = locales;
+
+		get isMobileVersion(): boolean {
+			return this.$vuetify.breakpoint.smAndDown;
+		}
 
 		/**
 		 * Support ID is a number added by our firewall if a rule is violated
