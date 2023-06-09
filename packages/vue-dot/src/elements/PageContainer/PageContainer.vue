@@ -59,7 +59,7 @@
 
 			const spacing = spacingMapping[this.$vuetify.breakpoint.name];
 
-			return `py-10 ${spacing}`;
+			return `py-sm-10 ${spacing}`;
 		}
 
 		get containerSize(): number {
