@@ -27,10 +27,11 @@
 					class="d-flex align-center justify-center"
 				>
 					<slot name="illustration">
-						<img
+						<VImg
 							:src="require('../../assets/images/maintenance.svg')"
-							alt=""
-						>
+							:alt="locales.pageTitle"
+							max-width="70%"
+						/>
 					</slot>
 				</VCol>
 			</VRow>

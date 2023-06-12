@@ -41,6 +41,20 @@
 
 		:deep(.v-card) {
 			padding: 24px !important;
+			margin: 0 !important;
+			box-shadow: none !important;
+			@media (min-width: 600px) {
+				.col-sm-6 {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+				.order-sm-first {
+					order: 1 !important;
+				}
+				.text-sm-left {
+					text-align: center !important;
+				}
+			}
 		}
 	}
 </style>
