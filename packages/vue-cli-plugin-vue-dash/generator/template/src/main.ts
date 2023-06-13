@@ -21,6 +21,7 @@ import './plugins/webfontloader';
 
 // Import the theme styles
 import '@/theme/styles.scss';
+import '@/styles/fonts.scss';
 
 // Import application parts
 import App from './App.vue';

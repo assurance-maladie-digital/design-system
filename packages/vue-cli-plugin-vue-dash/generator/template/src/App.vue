@@ -62,5 +62,4 @@
 	$color-pack: false;
 
 	@import '~vuetify/src/styles/main.sass';
-	@import '../styles/fonts.scss';
 </style>
