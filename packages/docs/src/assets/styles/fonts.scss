@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('@cnamts/docs/src/assets/fonts/Source_Sans_3/SourceSans3-Regular.woff2') format('woff2'),
+		url('@cnamts/docs/src/assets/fonts/Source_Sans_3/SourceSans3-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('@cnamts/docs/src/assets/fonts/Source_Sans_3/SourceSans3-Bold.woff2') format('woff2'),
+		url('@cnamts/docs/src/assets/fonts/Source_Sans_3/SourceSans3-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('@cnamts/docs/src/assets/fonts/Source_Sans_3/SourceSans3-Italic.woff2') format('woff2'),
+		url('@cnamts/docs/src/assets/fonts/Source_Sans_3/SourceSans3-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
