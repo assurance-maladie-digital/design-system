@@ -7,30 +7,30 @@ Cette version comporte l'ajout de fonctionnalités aux composants `HeaderBar`, `
 ### Vue Dot
 
 - ✨ **Nouvelles fonctionnalités**
-  - **MaintenancePage:** Ajout d'un slot pour ajouter du contenu supplémentaire ([#2761]https://github.com/assurance-maladie-digital/design-system/pull/2761)
-  - **BackBtn:** Ajout de la prop `dark` ([#2782]https://github.com/assurance-maladie-digital/design-system/pull/2782)
-  - **HeaderBar:** Ajout du slot `brand-content` ([2698]https://github.com/assurance-maladie-digital/design-system/pull/2698)
-  - **HeaderBar:** Ajout de slots de contenu ([2723]https://github.com/assurance-maladie-digital/design-system/pull/2723)
-  - **NotificationBar:** Ajout de la prop `bottom` ([2811]https://github.com/assurance-maladie-digital/design-system/pull/2811)
-  - **NotificationBar:** Ajout du slot `action` et mise à jour des styles ([2704]https://github.com/assurance-maladie-digital/design-system/pull/2704)
+  - **MaintenancePage:** Ajout d'un slot pour ajouter du contenu supplémentaire ([#2761](https://github.com/assurance-maladie-digital/design-system/pull/2761))
+  - **BackBtn:** Ajout de la prop `dark` ([#2782](https://github.com/assurance-maladie-digital/design-system/pull/2782))
+  - **HeaderBar:** Ajout du slot `brand-content` ([2698](https://github.com/assurance-maladie-digital/design-system/pull/2698))
+  - **HeaderBar:** Ajout de slots de contenu ([2723](https://github.com/assurance-maladie-digital/design-system/pull/2723))
+  - **NotificationBar:** Ajout de la prop `bottom` ([2811](https://github.com/assurance-maladie-digital/design-system/pull/2811))
+  - **NotificationBar:** Ajout du slot `action` et mise à jour des styles ([2704](https://github.com/assurance-maladie-digital/design-system/pull/2704))
 
 - 🐛 **Corrections de bugs**
-  - **FooterBar:** Correction de la prop `hide-cookies-link` ([2799]https://github.com/assurance-maladie-digital/design-system/pull/2799)
-  - **ContextualMenu:** Correction de la gestion de textes longs ([2824]https://github.com/assurance-maladie-digital/design-system/pull/2824)
-  - **VAlert:** Correction des styles avec la prop `type` ([2724]https://github.com/assurance-maladie-digital/design-system/pull/2724)
+  - **FooterBar:** Correction de la prop `hide-cookies-link` ([2799](https://github.com/assurance-maladie-digital/design-system/pull/2799))
+  - **ContextualMenu:** Correction de la gestion de textes longs ([2824](https://github.com/assurance-maladie-digital/design-system/pull/2824))
+  - **VAlert:** Correction des styles avec la prop `type` ([2724](https://github.com/assurance-maladie-digital/design-system/pull/2724))
 
 - ♻️ **Refactoring**
-  - **copyToClipboard:** Utilisation de l'API Clipboard ([2784]https://github.com/assurance-maladie-digital/design-system/pull/2784)
-  - **utils:** Dépréciation de la fonction `html` ([2805]https://github.com/assurance-maladie-digital/design-system/pull/2805)
+  - **copyToClipboard:** Utilisation de l'API Clipboard ([2784](https://github.com/assurance-maladie-digital/design-system/pull/2784))
+  - **utils:** Dépréciation de la fonction `html` ([2805](https://github.com/assurance-maladie-digital/design-system/pull/2805))
 
 - ♿️ **Accessibilité**
-  - **VOverlay:** Correction de la couleur par défaut ([2766]https://github.com/assurance-maladie-digital/design-system/pull/2766)
-  - **RatingPicker:** Amélioration de l'accessibilité ([2795]https://github.com/assurance-maladie-digital/design-system/pull/2795)
+  - **VOverlay:** Correction de la couleur par défaut ([2766](https://github.com/assurance-maladie-digital/design-system/pull/2766))
+  - **RatingPicker:** Amélioration de l'accessibilité ([2795](https://github.com/assurance-maladie-digital/design-system/pull/2795))
 
 ### FormBuilder
 
 - ♻️ **Refactoring**
-  - **FormField:** Utilisation de `v-html` pour afficher le titre ([2829]https://github.com/assurance-maladie-digital/design-system/pull/2829)
+  - **FormField:** Utilisation de `v-html` pour afficher le titre ([2829](https://github.com/assurance-maladie-digital/design-system/pull/2829))
 
 ### Interne
 
