@@ -3337,28 +3337,7 @@
     rc9 "^2.0.1"
     std-env "^3.3.1"
 
-"@nuxt/types@2.16.3":
-  version "2.16.3"
-  resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.16.3.tgz#0b5b51109dc8e8513ec30a2c057d6ce94e9127eb"
-  integrity sha512-55c5zU4JaAvyOqFxKGRNhPhBXfxptTLH0ypBXiALUojN15ZAhSjo3AqhtunZUqufBSuCEJtKD+fsBM/Fwvz+0A==
-  dependencies:
-    "@types/babel__core" "7.20.0"
-    "@types/compression" "1.7.2"
-    "@types/connect" "3.4.35"
-    "@types/etag" "1.8.1"
-    "@types/file-loader" "5.0.1"
-    "@types/html-minifier" "4.0.2"
-    "@types/less" "3.0.3"
-    "@types/node" "^16"
-    "@types/optimize-css-assets-webpack-plugin" "5.0.5"
-    "@types/pug" "2.0.6"
-    "@types/serve-static" "1.15.1"
-    "@types/terser-webpack-plugin" "4.2.1"
-    "@types/webpack" "4.41.33"
-    "@types/webpack-bundle-analyzer" "3.9.5"
-    "@types/webpack-hot-middleware" "2.25.5"
-
-"@nuxt/types@^2.15.2":
+"@nuxt/types@2.17.0", "@nuxt/types@^2.15.2":
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-2.17.0.tgz#6bdbebcd7d2e1f9309136b626dee9fb0aaf27d75"
   integrity sha512-McgjOTBpnbicjo830MYiCtI1zzkkq0W23GlxcWfLAsi5vjqjfcBn9w9emVhOCDfNNbhMPsvfp3B5MyPZEaqo9A==
@@ -3890,17 +3869,6 @@
   dependencies:
     "@tufjs/canonical-json" "1.0.0"
     minimatch "^9.0.0"
-
-"@types/babel__core@7.20.0":
-  version "7.20.0"
-  resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.20.0.tgz#61bc5a4cae505ce98e1e36c5445e4bee060d8891"
-  integrity sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==
-  dependencies:
-    "@babel/parser" "^7.20.7"
-    "@babel/types" "^7.20.7"
-    "@types/babel__generator" "*"
-    "@types/babel__template" "*"
-    "@types/babel__traverse" "*"
 
 "@types/babel__core@7.20.1", "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.0", "@types/babel__core@^7.1.7":
   version "7.20.1"
