@@ -1,3 +1,4 @@
 export const locales = {
-	btnText: 'S’identifier avec FranceConnect'
+	btnLabel: (connectPlus: boolean): string => `S’identifier avec FranceConnect${connectPlus ? '+' : ''}`,
+	infoLinkLabel: (connectPlus: boolean): string => `Qu’est-ce que FranceConnect${connectPlus ? '+' : ''} ?`
 };

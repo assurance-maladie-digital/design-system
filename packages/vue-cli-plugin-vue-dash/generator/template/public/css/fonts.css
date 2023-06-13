@@ -1,0 +1,80 @@
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-Black.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-ExtraLight.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-Light.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-Regular.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-Medium.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-SemiBold.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-Bold.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-ExtraBold.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-Black.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src:
+		url('/fonts/Source_Sans_3/SourceSans3-Italic.woff2') format('woff2'),
+		url('/fonts/Source_Sans_3/SourceSans3-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}

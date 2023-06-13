@@ -17,7 +17,6 @@ Component.registerHooks([
 import { vuetify } from './plugins/vuetify';
 import './plugins/vue-dot';
 import './plugins/form-builder';
-import './plugins/webfontloader';
 
 // Import the theme styles
 import '@/theme/styles.scss';

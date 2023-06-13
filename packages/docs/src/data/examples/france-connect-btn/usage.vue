@@ -16,21 +16,15 @@
 	})
 	export default class FranceConnectBtnUsage extends Vue {
 		defaultProps = {
-			href: 'https://app.franceconnect.gouv.fr/',
-			width: 300,
-			height: 78
+			href: 'https://app.franceconnect.gouv.fr/'
 		};
-
-		propsHiddenByDefault = [
-			'width',
-			'height'
-		];
 
 		options = {
 			textFields: [
-				'href',
-				'width',
-				'height'
+				'href'
+			],
+			booleans: [
+				'connect-plus'
 			]
 		};
 	}

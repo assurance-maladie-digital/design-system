@@ -4,7 +4,7 @@
 			:is="ratingComponent"
 			:label="label"
 			:length="length"
-			:readonly="hasAnswered || readonly"
+			:readonly="readonly"
 			:item-labels="itemLabels || undefined"
 			:value="internalValue"
 			@input="setValue"
@@ -85,7 +85,6 @@
 			value: {
 				handler(value: number): void {
 					this.internalValue = value;
-					this.hasAnswered = value !== -1;
 				},
 				immediate: true
 			}
@@ -95,7 +94,6 @@
 		locales = locales;
 
 		internalValue = -1;
-		hasAnswered = false;
 		displayAdditionalContent = false;
 
 		ratingComponentMapping = {
@@ -116,6 +114,10 @@
 			return undefined;
 		}
 
+		get hasAnswered(): boolean {
+			return this.value !== -1;
+		}
+
 		showAdditionalContent(value: number): void {
 			const starsUnsatisfied = this.type === RatingEnum.STARS && value <= 3;
 			const numberUnsatisfied = this.type === RatingEnum.NUMBER && value <= 7;
@@ -131,10 +133,8 @@
 
 		setValue(value: number): void {
 			this.internalValue = value;
-			this.hasAnswered = true;
 
 			this.showAdditionalContent(value);
-
 			this.$emit('change', value);
 		}
 	}

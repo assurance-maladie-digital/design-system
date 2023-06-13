@@ -313,40 +313,31 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
-				title: 'Starter Kit',
-				items: [
-					{
-						title: 'Explorer',
-						to: '/composants-techniques/starter-kit/explorer'
-					}
-				]
-			},
-			{
 				title: 'Règles de validation',
 				items: [
 					{
-						title: 'required',
-						to: '/composants-techniques/regles-de-validation/required'
+						title: 'email',
+						to: '/composants-techniques/regles-de-validation/email'
 					},
 					{
 						title: 'exactLength',
 						to: '/composants-techniques/regles-de-validation/exact-length'
 					},
 					{
-						title: 'minLength',
-						to: '/composants-techniques/regles-de-validation/min-length'
+						title: 'isDateValid',
+						to: '/composants-techniques/regles-de-validation/is-date-valid'
+					},
+					{
+						title: 'matchPattern',
+						to: '/composants-techniques/regles-de-validation/match-pattern'
 					},
 					{
 						title: 'maxLength',
 						to: '/composants-techniques/regles-de-validation/max-length'
 					},
 					{
-						title: 'email',
-						to: '/composants-techniques/regles-de-validation/email'
-					},
-					{
-						title: 'isDateValid',
-						to: '/composants-techniques/regles-de-validation/is-date-valid'
+						title: 'minLength',
+						to: '/composants-techniques/regles-de-validation/min-length'
 					},
 					{
 						title: 'notAfterDate',
@@ -363,6 +354,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'notBeforeToday',
 						to: '/composants-techniques/regles-de-validation/not-before-today'
+					},
+					{
+						title: 'required',
+						to: '/composants-techniques/regles-de-validation/required'
 					}
 				]
 			},
@@ -400,6 +395,47 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'insertAt',
 						to: '/composants-techniques/fonctions/insert-at'
+					}
+				]
+			},
+			{
+				title: 'Helpers',
+				items: [
+					{
+						title: 'convertToUnit',
+						to: '/composants-techniques/helpers/convert-to-unit'
+					},
+					{
+						title: 'deepCopy',
+						to: '/composants-techniques/helpers/deep-copy'
+					},
+					{
+						title: 'deepRemoveKeys',
+						to: '/composants-techniques/helpers/deep-remove-keys'
+					},
+					{
+						title: 'parseDate',
+						to: '/composants-techniques/helpers/parse-date'
+					},
+					{
+						title: 'propValidator',
+						to: '/composants-techniques/helpers/prop-validator'
+					},
+					{
+						title: 'registerComponents',
+						to: '/composants-techniques/helpers/register-components'
+					},
+					{
+						title: 'registerDirectives',
+						to: '/composants-techniques/helpers/register-directives'
+					},
+					{
+						title: 'ruleMessage',
+						to: '/composants-techniques/helpers/rule-message'
+					},
+					{
+						title: 'scrollBehavior',
+						to: '/composants-techniques/helpers/scroll-behavior'
 					}
 				]
 			},
