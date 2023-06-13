@@ -27,7 +27,6 @@
 
 		/**
 		 * Clear the search input
-		 *
 		 * @see https://github.com/vuetifyjs/vuetify/issues/5926
 		 */
 		valueUpdated(value: ChoiceFieldValue): void {
