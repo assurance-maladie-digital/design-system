@@ -69,11 +69,6 @@ Utilisation de [Matomo](https://fr.matomo.org/) pour l’analyse d’audience.
 Le projet sera créé dans un nouveau dossier au nom de votre projet.
 </doc-alert>
 
-<doc-alert type="info">
-
-Vous pouvez retrouver le détail des dossiers et fichiers créés dans le [Starter Kit Explorer](/composants-techniques/starter-kit/explorer).
-
-</doc-alert>
 
 ## Installation dans un projet existant
 
