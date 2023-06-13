@@ -1,7 +1,7 @@
 export interface FilterItem {
 	clearAfterValidate: boolean;
 	limited: boolean;
-	splited: boolean;
+	splitted: boolean;
 	label: string;
 	name: string;
 	description: string;
@@ -9,11 +9,12 @@ export interface FilterItem {
 	icon: string;
 	selection: unknown[];
 	chips: ChipItem[];
-	value: unknown;
+	value: any;
 	defaultValue: unknown;
 	formatting?: (value: unknown) => string;
 	style: string;
 }
+
 export interface ChipItem {
 	text: string;
 	value: unknown;

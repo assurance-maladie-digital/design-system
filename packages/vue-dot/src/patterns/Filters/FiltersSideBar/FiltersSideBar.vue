@@ -1,164 +1,127 @@
 <template>
 	<div class="vd-filters-side-bar">
 		<VBtn
-			depressed
+			:class="{ 'v-btn--active': drawer }"
+			color="primary"
+			text
 			rounded
-			color="transparent"
-			@click="openCloseSidebar"
+			class="px-2"
+			@click="toggleDrawer"
 		>
-			<VChip
+			<!-- <VBadge
 				v-if="filtersCount"
-				color="cyan-darken-40"
-				text-color="white"
+				:content="filtersCount"
+				color="secondary"
+				inline
+				class="ml-n2 mr-2"
+			/> -->
+
+			{{ locales.filterBtnLabel }}
+
+			<VIcon
+				class="ml-2"
 				small
-				class="mr-2"
 			>
-				{{ filtersCount }}
-			</VChip>
-			<span class="mr-2 primary--text">
-				{{ filters.length > 1 ? 'Filtres' : 'Filtre' }}
-			</span>
-			<VIcon color="primary">
 				{{ filterIcon }}
 			</VIcon>
 		</VBtn>
 
-		<VScrollXTransition>
-			<VNavigationDrawer
-				v-if="showSideBar"
-				:elevation="6"
-				permanent
-				absolute
-				right
-				class="d-flex flex-column justify-space-between"
+		<VNavigationDrawer
+			v-model="drawer"
+			fixed
+			right
+			temporary
+			hide-overlay
+			width="395px"
+			class="elevation-6"
+		>
+			<VExpansionPanels
+				accordion
+				flat
 			>
-				<VExpansionPanels
-					accordion
-					flat
-					class="expansion-panels"
+				<VExpansionPanel
+					v-for="(filter, index) in filters"
+					:key="index"
 				>
-					<VExpansionPanel
-						v-for="(filter, index) in filters"
-						:key="index"
-					>
-						<VExpansionPanelHeader class="d-block">
-							<div
-								class="header-title d-flex justify-space-between mt-4 mx-4"
-								:class="{
-									'mb-2': !filters[index].chips.length
-								}"
-							>
-								<span>
-									{{ filter.label }}
+					<VExpansionPanelHeader class="text-subtitle-2">
+						{{ filter.title }}
 
-									<span v-if="filters[index].chips.length">
-										({{ filters[index].chips.length }})
-									</span>
-								</span>
-								<div>
-									<VIcon class="header-title down-icon">
-										{{ downIcon }}
-									</VIcon>
-
-									<VIcon class="header-title up-icon">
-										{{ upIcon }}
-									</VIcon>
-								</div>
-							</div>
-							<ChipsList
-								v-if="filters[index].chips.length"
-								class="ml-4"
-								:chips-limit="chipsLimit"
-								:filter="filters[index]"
-								@remove-chip="removeChip($event)"
-								@reset-filter="resetFilter"
-							/>
-						</VExpansionPanelHeader>
-
-						<VExpansionPanelContent>
-							<span class="description-text-filter mb-2">
-								{{ filter.description }}
+						<!--
+							<span v-if="filters[index].chips.length">
+								({{ filters[index].chips.length }})
 							</span>
-							<div class="mt-4">
-								<slot
-									:on="{
-										change: event => onChange(event, filter),
-										input: event => $set(filter, 'value', event)
-									}"
-									:attrs="{
-										value: filter.value
-									}"
-									:name="`filter-${removeAccents(filter.name)}`"
-								/>
-							</div>
-						</VExpansionPanelContent>
-						<VDivider />
-					</VExpansionPanel>
-				</VExpansionPanels>
+						</div> -->
+					</VExpansionPanelHeader>
 
-				<div class="px-5 mb-6 mt-10">
-					<div
-						:class="(isMobile || applyButton) ? '' : 'd-flex justify-center'"
-						class="mt-3"
-					>
-						<VBtn
-							class="mb-3"
-							:class="isMobile ? '' : 'button-complex-mode'"
-							:block="isMobile || applyButton"
-							:outlined="applyButton"
-							:text="!applyButton"
-							color="primary"
-							@click="closeSidebar"
-						>
-							{{ locales.close }}
-						</VBtn>
-						<VBtn
-							v-if="isMobile || applyButton"
-							class="mb-3"
-							:class="isMobile ? '' : 'mr-4 button-complex-mode'"
-							:block="isMobile || applyButton"
-							outlined
-							color="primary"
-							@click.stop="resetAllFilters"
-						>
-							{{ locales.reset }}
-						</VBtn>
-						<VBtn
-							v-if="!(isMobile || applyButton)"
-							class="mb-3"
-							:class="isMobile ? '' : 'ml-4 button-complex-mode'"
-							:block="isMobile || applyButton"
-							outlined
-							color="primary"
-							@click.stop="resetAllFilters"
-						>
-							{{ locales.reset }}
-						</VBtn>
-					</div>
-					<VBtn
-						v-if="applyButton"
-						:block="isMobile || applyButton"
-						depressed
-						color="primary"
-						@click.stop="applyFunction"
-					>
-						{{ locales.apply }}
-					</VBtn>
-				</div>
-			</VNavigationDrawer>
-		</VScrollXTransition>
+					<VExpansionPanelContent>
+						<ChipsList
+							:chips="getChips(filter.value)"
+							:filter="filters[index]"
+							class="mb-6"
+						/>
+
+						<slot
+							:on="{
+								change: event => onChange(event, filter),
+								input: event => $set(filter, 'value', event)
+							}"
+							:attrs="{
+								value: filter.value
+							}"
+							:name="`${removeAccents(filter.name)}`"
+						/>
+					</VExpansionPanelContent>
+				</VExpansionPanel>
+			</VExpansionPanels>
+
+			<VSpacer />
+
+			<div class="px-4 pb-4 pt-10">
+				<VBtn
+					color="primary"
+					block
+					large
+					outlined
+					class="mb-4"
+					@click="drawer = false"
+				>
+					{{ locales.close }}
+				</VBtn>
+
+				<VBtn
+					color="primary"
+					block
+					large
+					outlined
+					class="mb-4"
+					@click.stop="resetAllFilters"
+				>
+					{{ locales.reset }}
+				</VBtn>
+
+				<VBtn
+					block
+					large
+					color="primary"
+					@click.stop="applyFunction"
+				>
+					{{ locales.apply }}
+				</VBtn>
+			</div>
+		</VNavigationDrawer>
 	</div>
 </template>
 
 <script lang="ts">
 	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
+
 	import ChipsList from '../ChipsList';
 
 	import { FilterMixin } from '../../../mixins/filters';
+
 	import { FilterItem } from './types';
 	import { locales } from './locales';
-	import { mdiChevronUp } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -169,10 +132,7 @@
 		}
 	});
 
-	const MixinsDeclaration = mixins(
-		Props,
-		FilterMixin
-	);
+	const MixinsDeclaration = mixins(Props, FilterMixin);
 
 	@Component<FiltersSideBar>({
 		model: {
@@ -188,99 +148,62 @@
 			ChipsList
 		}
 	})
-
 	export default class FiltersSideBar extends MixinsDeclaration {
-
 		locales = locales;
-		upIcon = mdiChevronUp;
 
-		showSideBar = false;
+		drawer = false;
 
-		filters: FilterItem[] = this.value;
+		filters = this.value;
 
-		get filtersCount(): number {
-			let count = 0;
-
-			this.filters.forEach(filter => {
-				if (filter?.chips?.length) {
-					count++;
+		flattenSelectValue(value: any[]): string[] {
+			return value.flatMap(item => {
+				if (typeof item !== 'object') {
+					return item.toString();
 				}
+
+				return item.text || item.value.toString();
 			});
-
-			return count;
 		}
 
-		openCloseSidebar(): void {
-			this.showSideBar = !this.showSideBar;
-		}
-
-		closeSidebar(): void {
-			this.showSideBar = false;
-		}
-
-		resetAllFilters(): void {
-			for (let index = 0; index < this.filters.length; index++) {
-				this.$set(this.filters[index], 'chips', []);
+		getChips(value: any): string[] { // TODO: generate chips from values
+			console.log(value);
+			if (!value) {
+				return [];
 			}
+
+			if (typeof value === 'string' || typeof value === 'number') {
+				return [value.toString()];
+			}
+
+			if (Array.isArray(value)) {
+				return this.flattenSelectValue(value);
+			}
+
+			return value;
+			// return filterItem.chips.slice(0, this.overflowLimit);
+		}
+
+		toggleDrawer(): void {
+			this.drawer = !this.drawer;
 		}
 	}
 </script>
 
-<style lang="scss">
-	@import '@cnamts/design-tokens/dist/tokens';
+<style lang="scss" scoped>
+	.vd-filters-side-bar :deep() {
+		.v-navigation-drawer {
+			&__content {
+				display: flex;
+				flex-direction: column;
+			}
 
-	.v-navigation-drawer {
-		width: 480px !important;
-	}
-
-	.v-expansion-panel-header {
-		min-height: 0 !important;
-		padding: 2px;
-	}
-
-	.v-expansion-panel-header__icon {
-		display: none !important;
-	}
-
-	.up-icon {
-		display: none !important;
-	}
-
-	.down-icon {
-		display: inline !important;
-	}
-
-	.v-expansion-panel-header--active {
-		.up-icon {
-			display: inline !important;
+			&__border {
+				display: none;
+			}
 		}
 
-		.down-icon {
-			display: none !important;
+		.v-expansion-panel {
+			border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 		}
-	}
-
-	.header-title {
-		font-weight: 500;
-		font-size: 16px;
-	}
-
-	.description-text-filter {
-		color: $vd-grey-lighten-20;
-		font-size: 14px !important;
-	}
-
-	.expansion-panels {
-		margin-left: 1px;
-	}
-
-	.button-complex-mode {
-		width: 49%;
-	}
-
-	.v-navigation-drawer__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
 	}
 </style>

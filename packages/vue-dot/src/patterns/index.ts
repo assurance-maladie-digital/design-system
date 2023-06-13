@@ -14,6 +14,7 @@ import NotificationBar from './NotificationBar';
 import PaginatedTable from './PaginatedTable';
 import PhoneField from './PhoneField';
 import RatingPicker from './RatingPicker';
+import SearchFilter from './SearchFilter';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
@@ -37,6 +38,7 @@ export const patterns = {
 	PaginatedTable,
 	PhoneField,
 	RatingPicker,
+	SearchFilter,
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow,

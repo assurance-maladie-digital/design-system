@@ -1,58 +1,44 @@
 <template>
-	<VChipGroup
-		class="vd-chips-list mb-4"
-		column
+	<div
+		v-if="chips.length"
+		class="vd-chips-list mx-n1"
 	>
 		<VChip
-			v-for="(chip, chipIndex) in limitChips(filter)"
-			:key="chipIndex"
+			v-for="(chip, index) in chips"
+			:key="index"
 			:close-icon="deleteIcon"
-			small
-			close
+			:close-label="locales.chipCloseBtnLabel"
 			color="cyan-darken-40"
 			text-color="white"
-			@click:close="removeChip(chip, chipIndex)"
+			close
+			small
+			class="mx-1"
+			@click:close="emitRemoveEvent"
 		>
-			{{ getChipText(chip) }}
+			{{ chip }}
 		</VChip>
 
 		<VChip
-			v-if="showExpandChip"
-			small
-			outlined
+			v-if="showOverflowChip"
 			color="cyan-lighten-60"
 			text-color="cyan-darken-40"
-			class="mt-2 bg-cyan"
-			@click.stop="displayHiddenChips"
-		>
-			{{ `+${filter.chips.length - chipsLimit}` }}
-		</VChip>
-
-		<VChip
-			v-if="filter.showAll"
 			small
 			outlined
-			color="cyan-lighten-60"
-			text-color="cyan-darken-40"
-			class="mt-2 bg-cyan"
-			@click.stop="() => onHideAll()"
+			class="mt-2"
 		>
-			<VIcon>
-				{{ upIcon }}
-			</VIcon>
+			{{ `+${chips.length - overflowLimit}` }}
 		</VChip>
 
 		<VBtn
-			v-if="filter.chips.length"
-			x-small
-			text
 			color="primary"
-			class="text-none align-self-center mt-2"
-			@click.stop="resetFilter"
+			small
+			text
+			class="align-self-center px-2 ml-2"
+			@click="emitResetEvent"
 		>
 			{{ locales.reset }}
 		</VBtn>
-	</VChipGroup>
+	</div>
 </template>
 
 <script lang="ts">
@@ -60,18 +46,18 @@
 	import Component from 'vue-class-component';
 
 	import { locales } from './locales';
-	import { ChipItem, FilterItem } from './types';
+
 	import { mdiChevronUp, mdiWindowClose } from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
-			filter: {
-				type: Object as PropType<FilterItem>,
-				required: true
+			chips: {
+				type: Array as PropType<string[]>,
+				default: () => []
 			},
-			chipsLimit: {
+			overflowLimit: {
 				type: Number,
-				required: true
+				default: 4
 			}
 		}
 	});
@@ -79,44 +65,20 @@
 	@Component
 	export default class ChipsList extends Props {
 		locales = locales;
+
 		deleteIcon = mdiWindowClose;
 		upIcon = mdiChevronUp;
 
-		get showExpandChip(): boolean {
-			const currentFilter = this.filter;
-
-			return !currentFilter.showAll && (currentFilter.chips.length > this.chipsLimit);
+		get showOverflowChip(): boolean {
+			return this.chips.length > this.overflowLimit;
 		}
 
-		limitChips(filterItem: FilterItem): unknown[] {
-			if (filterItem.showAll) {
-				return filterItem.chips;
-			}
-
-			return filterItem.chips.slice(0, this.chipsLimit);
+		emitResetEvent(): void {
+			this.$emit('reset');
 		}
 
-		removeChip(chip: string, chipIndex: number): void {
-			const chips = this.filter.chips.filter((_, index) => index !== chipIndex);
-			this.$set(this.filter, 'chips', chips);
-			this.$emit('remove-chip', chip);
-		}
-
-		displayHiddenChips(): void {
-			this.$set(this.filter, 'showAll', true);
-		}
-
-		resetFilter(): void {
-			this.$set(this.filter, 'chips', []);
-			this.$emit('reset-filter');
-		}
-
-		onHideAll(): void {
-			this.$set(this.filter, 'showAll', !this.filter.showAll);
-		}
-
-		getChipText(chip: ChipItem): string {
-			return chip.text ?? chip.value ?? chip;
+		emitRemoveEvent(): void {
+			this.$emit('remove', 'TODO:');
 		}
 	}
 </script>

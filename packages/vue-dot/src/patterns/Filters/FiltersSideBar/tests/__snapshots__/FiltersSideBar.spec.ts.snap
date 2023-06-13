@@ -2,16 +2,15 @@
 
 exports[`FilterSideBar renders correctly 1`] = `
 <div class="vd-filters-side-bar" filters="[object Object]" applyfunction="{[Function]}">
-  <vbtn-stub color="transparent" rounded="true" tag="button" activeclass="" depressed="true" type="button">
-    <!----> <span class="mr-2 primary--text">
-			Filtre
-		</span>
-    <vicon-stub color="primary">
+  <vbtn-stub color="primary" rounded="true" tag="button" activeclass="" text="true" type="button" class="px-2">
+    <!---->
+
+    Filtres
+
+    <vicon-stub small="" class="ml-2">
       M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z
     </vicon-stub>
   </vbtn-stub>
-  <vscrollxtransition-stub origin="top center 0">
-    <!---->
-  </vscrollxtransition-stub>
+  <!---->
 </div>
 `;

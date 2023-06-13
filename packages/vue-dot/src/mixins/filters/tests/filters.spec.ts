@@ -24,7 +24,7 @@ const filterExemple: FilterItem = {
 	value: '',
 	clearAfterValidate: true,
 	limited: false,
-	splited: false,
+	splitted: false,
 	description: '',
 	showAll: false,
 	icon: '',
@@ -36,9 +36,9 @@ const limitedFilterExemple: FilterItem = {
 	...filterExemple,
 	limited: true
 };
-const splitedFilterExemple: FilterItem = {
+const splittedFilterExemple: FilterItem = {
 	...filterExemple,
-	splited: true
+	splitted: true
 };
 const defaultValueExemple: FilterItem = {
 	...filterExemple,
@@ -60,7 +60,7 @@ function createTestComponent() {
 				filters: [
 					filterExemple,
 					limitedFilterExemple,
-					splitedFilterExemple,
+					splittedFilterExemple,
 					defaultValueExemple
 				]
 			};
@@ -163,7 +163,7 @@ describe('filters', () => {
 		});
 	});
 
-	it('should split the value into chips when splited is true', () => {
+	it('should split the value into chips when splitted is true', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
@@ -175,7 +175,7 @@ describe('filters', () => {
 		]);
 	});
 
-	it('should not split the value into chips when splited is true and the value is not an object', () => {
+	it('should not split the value into chips when splitted is true and the value is not an object', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 
@@ -208,7 +208,7 @@ describe('filters', () => {
 		}
 	});
 
-	it('should split the value into chips when splited is true and the value of the object use formatting function', () => {
+	it('should split the value into chips when splitted is true and the value of the object use formatting function', () => {
 		const testComponent = createTestComponent();
 		const wrapper = mount(testComponent) as Wrapper<TestComponent>;
 

@@ -221,9 +221,17 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/filtres/filters-side-bar'
 					},
 					{
+						title: 'PeriodFilter',
+						to: '/composants/filtres/period-filter'
+					},
+					{
+						title: 'SearchFilter',
+						to: '/composants/filtres/search-filter'
+					},
+					{
 						title: 'FilterModule',
 						to: '/composants/filtres/filter-module'
-					},
+					}
 				]
 			},
 			{

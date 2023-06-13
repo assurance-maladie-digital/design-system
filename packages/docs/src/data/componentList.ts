@@ -62,14 +62,14 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour pour afficher un menu avec une liste d’ancres pour la navigation.',
 				href: '/composants/navigation/contextual-menu',
 				image: 'components/contextual-menu.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'SkipLink',
 				description: 'Utilisé pour permettre à l’utilisateur d’accéder plus facilement au contenu principal.',
 				href: '/composants/navigation/skip-link',
 				image: 'components/skip-link.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			}
 		]
 	},
@@ -88,7 +88,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour afficher un bouton permettant à l’utilisateur de remonter en haut d’une page.',
 				href: '/composants/boutons/back-to-top-btn',
 				image: 'components/back-to-top-btn.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'CopyBtn',
@@ -212,24 +212,24 @@ export const componentList: ComponentSection[] = [
 		components: [
 			{
 				name: 'InlineFilters',
-				description: 'Utilisation des filtres en ligne.',
+				description: 'Utilisation des filtres directement dans la page.',
 				href: '/composants/filtres/inline-filters',
 				image: 'components/inline-filters.svg',
 				status: ComponentStatusEnum.NEW
 			},
 			{
 				name: 'FiltersSidebar',
-				description: 'Utilisation des filtres dans une sidebar.',
+				description: 'Utilisation des filtres dans un panel dédié.',
 				href: '/composants/filtres/filters-side-bar',
 				image: 'components/filters-sidebar.svg',
 				status: ComponentStatusEnum.NEW
 			},
 			{
 				name: 'FilterModule',
-				description: 'Module de gestion des filtres.',
+				description: 'Utilisé pour permettre à l’utilisateur de sélectionner des filtres.',
 				href: '/composants/filtres/filter-module',
 				image: 'components/filter-module.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.DEPRECATED
 			}
 		]
 	},
@@ -288,7 +288,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Permet de recueillir l’avis d’un utilisateur.',
 				href: '/composants/feedback/rating-picker',
 				image: 'components/rating-picker.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			}
 		]
 	}

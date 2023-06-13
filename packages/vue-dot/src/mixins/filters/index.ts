@@ -6,18 +6,6 @@ import { FilterItem } from './types';
 
 const Props = Vue.extend({
 	props: {
-		chipsLimit: {
-			type: Number,
-			default: 4
-		},
-		applyButton: {
-			type: Boolean,
-			default: false
-		},
-		hideReset: {
-			type: Boolean,
-			default: false
-		},
 		limitedFilters: {
 			type: Array as PropType<string[]>,
 			default: () => []
@@ -35,52 +23,52 @@ export class FilterMixin extends MixinsDeclaration {
 	filterIcon = mdiFilterVariant;
 
 	onChange(event: unknown, filter: FilterItem): void {
-		if (!event) {
-			return;
-		}
+		// if (!event) {
+		// 	return;
+		// }
 
-		if (filter.formatting) {
-			event = filter.formatting(event);
-		}
+		// if (filter.formatting) {
+		// 	event = filter.formatting(event);
+		// }
 
-		const newChip = {
-			text: event,
-			value: event
-		};
+		// const newChip = {
+		// 	text: event,
+		// 	value: event
+		// };
 
-		let chips: { text: unknown; value: unknown }[] = [];
+		// let chips: { text: unknown; value: unknown }[] = [];
 
-		const chipExist = filter.chips.some(chip => chip.value === newChip.value);
+		// const chipExist = filter.chips?.some(chip => chip.value === newChip.value);
 
-		if (chipExist) {
-			return;
-		} else if (filter.splited) {
-			if (typeof event === 'object' && Object.values(event as object).length) {
-				chips = Object.values(event as object).map((value: unknown) => ({
-					text: value,
-					value
-				}));
-			} else {
-				chips = [];
-			}
-		} else if (filter.limited) {
-			chips = [
-				newChip
-			];
-		} else {
-			chips = [
-				...filter.chips,
-				newChip
-			];
-		}
+		// if (chipExist) {
+		// 	return;
+		// } else if (filter.splitted) {
+		// 	if (typeof event === 'object' && Object.values(event as object).length) {
+		// 		chips = Object.values(event as object).map((value: unknown) => ({
+		// 			text: value,
+		// 			value
+		// 		}));
+		// 	} else {
+		// 		chips = [];
+		// 	}
+		// } else if (filter.limited) {
+		// 	chips = [
+		// 		newChip
+		// 	];
+		// } else {
+		// 	chips = [
+		// 		...filter.chips,
+		// 		newChip
+		// 	];
+		// }
 
-		this.$set(filter, 'chips', chips);
+		// this.$set(filter, 'chips', chips);
 
-		if (filter.clearAfterValidate) {
-			this.$set(filter, 'value', filter.defaultValue ?? null);
-		}
+		// if (filter.clearAfterValidate) {
+		// 	this.$set(filter, 'value', filter.defaultValue ?? null);
+		// }
 
-		this.$emit('onchange-filters');
+		// this.$emit('onchange-filters');
 	}
 
 	get isMobile(): boolean {

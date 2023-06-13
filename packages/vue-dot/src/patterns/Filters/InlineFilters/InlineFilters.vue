@@ -150,7 +150,6 @@
 		}
 	})
 	export default class InlineFilters extends MixinsDeclaration {
-
 		locales = locales;
 
 		filters: FilterItem[] = this.value;

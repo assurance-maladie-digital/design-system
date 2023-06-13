@@ -1,23 +1,19 @@
 <template>
 	<div>
-		<div>
-			<DatePicker
-				v-model="internalValue[0]"
-				label="Date de début"
-				outlined
-				@change="emitChangeEvent(internalValue)"
-			/>
-		</div>
+		<DatePicker
+			v-model="internalValue[0]"
+			label="Date de début"
+			outlined
+			text-field-class="mb-2"
+			@change="emitChangeEvent(internalValue)"
+		/>
 
-		<div class="mt-2">
-			<DatePicker
-				v-model="internalValue[1]"
-				label="Date de fin"
-				outlined
-				class="mt-8"
-				@change="emitChangeEvent(internalValue)"
-			/>
-		</div>
+		<DatePicker
+			v-model="internalValue[1]"
+			label="Date de fin"
+			outlined
+			@change="emitChangeEvent(internalValue)"
+		/>
 	</div>
 </template>
 
@@ -33,12 +29,12 @@
 		props: {
 			value: {
 				type: Array as PropType<string[]>,
-				required: true
+				default: () => []
 			}
 		}
 	});
 
-	@Component<PeriodField>({
+	@Component<PeriodField>({ // TODO: refactor & doc
 		watch: {
 			value(newValue: string[]) {
 				this.internalValue = newValue;
@@ -50,7 +46,7 @@
 
 		emitChangeEvent(internalValue: string[]): void {
 			if (internalValue[0] && internalValue[1]) {
-				this.$emit('change', [dayjs(internalValue[0]).format(DATE_FORMAT), dayjs(internalValue[1]).format(DATE_FORMAT)]);
+				this.$emit('input', [dayjs(internalValue[0]).format(DATE_FORMAT), dayjs(internalValue[1]).format(DATE_FORMAT)]);
 			}
 		}
 	}

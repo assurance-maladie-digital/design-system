@@ -1,5 +1,4 @@
 export const locales = {
-	reset: 'Réinitialiser',
-	close: 'Fermer',
-	apply: 'Appliquer'
+	chipCloseBtnLabel: 'Supprimer le filtre',
+	reset: 'Réinitialiser'
 };

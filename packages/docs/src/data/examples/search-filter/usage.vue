@@ -9,7 +9,7 @@
 		>
 			<template #filter-search="{ on, attrs }">
 				<SearchFilter
-					splited="true"
+					splitted="true"
 					height="200"
 					v-bind="attrs"
 					v-on="on"
@@ -35,7 +35,7 @@
 			{
 				name: 'search',
 				label: 'Rechercher',
-				splited: true,
+				splitted: true,
 				chips: [],
 				formatting: (value: string): string => value,
 				clearAfterValidate: true
