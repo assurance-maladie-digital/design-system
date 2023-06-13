@@ -27,7 +27,10 @@ const config = defineConfig({
 		},
 		plugins: [
 			new NodePolyfillPlugin({
-				includeAliases: ['Buffer','querystring']
+				includeAliases: [
+					'Buffer',
+					'querystring'
+				]
 			})
 		]
 	},
