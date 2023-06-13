@@ -5,6 +5,7 @@ process.env.VUE_APP_VERSION = require('./package.json').version;
 
 const { defineConfig } = require('@vue/cli-service');
 const { vueDotLoader } = require('@cnamts/vue-cli-plugin-vue-dash/vueDotLoader');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 const config = defineConfig({
 	chainWebpack: config => {
@@ -23,7 +24,12 @@ const config = defineConfig({
 		},
 		performance: {
 			hints: false
-		}
+		},
+		plugins: [
+			new NodePolyfillPlugin({
+				includeAliases: ['Buffer','querystring']
+			})
+		]
 	},
 	// Transpile ES6 inside dependencies
 	transpileDependencies: [

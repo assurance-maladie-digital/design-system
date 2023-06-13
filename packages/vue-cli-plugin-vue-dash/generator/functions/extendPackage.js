@@ -84,6 +84,7 @@ function extendPackage(api, options, pm) {
 			'jest': '^27.5.1',
 			'jest-serializer-vue': '^2.0.2',
 			'lint-staged': '^12.4.1',
+			'node-polyfill-webpack-plugin': '^2.0.1',
 			'sass': '~1.32.13', /** @see https://github.com/vuetifyjs/vuetify/issues/13694 */
 			'sass-loader': '^12.6.0',
 			'ts-jest': '^27.1.4',
