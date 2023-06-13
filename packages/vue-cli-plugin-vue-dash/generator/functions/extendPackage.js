@@ -62,7 +62,6 @@ function extendPackage(api, options, pm) {
 			'@mdi/js': '^6.6.96',
 			'@rushstack/eslint-patch': '^1.1.3',
 			'@types/jest': '^27.5.1',
-			'@types/webfontloader': '^1.6.34',
 			'@typescript-eslint/eslint-plugin': '^5.23.0',
 			'@typescript-eslint/parser': '^5.23.0',
 			'@vue/cli-plugin-babel': '~5.0.4',
