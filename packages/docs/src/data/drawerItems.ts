@@ -300,15 +300,6 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
-				title: 'Starter Kit',
-				items: [
-					{
-						title: 'Explorer',
-						to: '/composants-techniques/starter-kit/explorer'
-					}
-				]
-			},
-			{
 				title: 'Règles de validation',
 				items: [
 					{
