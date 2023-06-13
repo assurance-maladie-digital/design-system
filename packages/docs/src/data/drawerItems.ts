@@ -386,6 +386,47 @@ export const drawerItems: DrawerItem[] = [
 				]
 			},
 			{
+				title: 'Helpers',
+				items: [
+					{
+						title: 'convertToUnit',
+						to: '/composants-techniques/helpers/convert-to-unit'
+					},
+					{
+						title: 'deepCopy',
+						to: '/composants-techniques/helpers/deep-copy'
+					},
+					{
+						title: 'deepRemoveKeys',
+						to: '/composants-techniques/helpers/deep-remove-keys'
+					},
+					{
+						title: 'parseDate',
+						to: '/composants-techniques/helpers/parse-date'
+					},
+					{
+						title: 'propValidator',
+						to: '/composants-techniques/helpers/prop-validator'
+					},
+					{
+						title: 'registerComponents',
+						to: '/composants-techniques/helpers/register-components'
+					},
+					{
+						title: 'registerDirectives',
+						to: '/composants-techniques/helpers/register-directives'
+					},
+					{
+						title: 'ruleMessage',
+						to: '/composants-techniques/helpers/rule-message'
+					},
+					{
+						title: 'scrollBehavior',
+						to: '/composants-techniques/helpers/scroll-behavior'
+					}
+				]
+			},
+			{
 				title: 'Tests unitaires',
 				items: [
 					{
