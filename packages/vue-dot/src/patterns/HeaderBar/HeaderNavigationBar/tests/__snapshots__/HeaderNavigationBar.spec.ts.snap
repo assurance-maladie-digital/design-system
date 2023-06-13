@@ -2,7 +2,7 @@
 
 exports[`HeaderNavigationBar renders correctly 1`] = `
 <vsheet-stub color="#0a347b" height="48px" dark="true" tag="div" dense="true" class="vd-navigation-bar d-flex align-center justify-center px-14">
-  <vsheet-stub color="transparent" tag="div" class="d-flex">
+  <vsheet-stub color="transparent" tag="div" class="d-flex align-center">
     <vtabs-stub activeclass="" backgroundcolor="transparent" nexticon="$next" optional="true" previcon="$prev" slidersize="2"></vtabs-stub>
   </vsheet-stub>
 </vsheet-stub>

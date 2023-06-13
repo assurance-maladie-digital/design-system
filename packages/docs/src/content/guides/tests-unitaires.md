@@ -33,7 +33,7 @@ describe('formatNir', () => {
 
 ### Test d’un composant
 
-Pour tester un composant, la syntaxe d’un test est la suivante :
+Pour tester un composant, la syntaxe est la suivante :
 
 ```ts
 import Vue from 'vue';
@@ -79,6 +79,100 @@ describe('AppFooter', () => {
 });
 ```
 
+### Test d’une méthode d’un composant
+
+Pour tester une méthode d’un composant, la syntaxe est la suivante :
+
+```ts
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+
+import {
+	Wrapper,
+	shallowMount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins
+} from '@cnamts/vue-dot/src/helpers/testUtils';
+
+import AppHeader from '../';
+
+// On définit une interface avec les méthodes que l'on veut appeler dans nos tests
+interface TestComponent extends Vue {
+	getFullName: (firstname: string, lastname: string) => string;
+}
+
+describe('AppHeader', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<TestComponent>; // On utilise l'interface TestComponent plutôt que Vue
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
+	it('returns the full name of the user', () => {
+		wrapper = shallowMount(AppHeader, {
+			localVue,
+			vuetify
+		}) as Wrapper<TestComponent>; // On caste le type du wrapper pour correspondre à notre composant
+
+		// Appel de la méthode avec les bons paramètres
+		const fullName = wrapper.vm.getFullName('Jean', 'Dupont');
+
+		expect(fullName).toBe('Jean Dupont');
+	});
+});
+```
+
+### Test d’un événement
+
+Pour tester un événement, la syntaxe est la suivante :
+
+```ts
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+
+import {
+	Wrapper,
+	shallowMount,
+	createLocalVue,
+	createVuetifyInstance,
+	installGlobalPlugins
+} from '@cnamts/vue-dot/src/helpers/testUtils';
+
+import AppHeader from '../';
+
+describe('AppHeader', () => {
+	const localVue = createLocalVue();
+
+	let wrapper: Wrapper<Vue>;
+	let vuetify: Vuetify;
+
+	installGlobalPlugins(localVue);
+
+	beforeEach(() => {
+		vuetify = createVuetifyInstance();
+	});
+
+	it('emits a submit event when the button is clicked', async() => {
+		wrapper = shallowMount(AppHeader, {
+			localVue,
+			vuetify
+		});
+
+		// On cherche l'élément avec `find()` et on déclenche un événement avec `trigger()`
+		await wrapper.find('[data-test="button"]').trigger('click');
+
+		// Le clic doit appeler une fonction qui émet un événement `submit`
+		expect(wrapper.emitted('click')).toBeTruthy();
+	});
+});
+```
+
 <doc-alert type="warning">
 
 La function `html()`, qui permettait de contourner un bug et de ne pas inclure le code source des fonctions dans les snapshots, est dépréciée car le bug a été corrigé. Elle sera supprimée dans la prochaine version majeure.
@@ -104,7 +198,7 @@ import {
 	Wrapper,
 	shallowMount,
 	createLocalVue,
-	createRouter
+	createRouter,
 	createVuetifyInstance,
 	installGlobalPlugins,
 	installRouter
