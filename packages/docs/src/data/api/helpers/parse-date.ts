@@ -5,13 +5,20 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'value',
+				description: 'La date à parser.',
 				type: 'string',
-				description: 'The date to parse'
+				required: true
+			},
+			{
+				name: 'format',
+				description: 'Le format de la date à parser.',
+				type: 'string',
+				default: `'DD/MM/YYYY'`
 			}
 		],
 		returnValue: [
 			{
-				type: 'string'
+				type: 'dayjs.Dayjs'
 			}
 		]
 	}

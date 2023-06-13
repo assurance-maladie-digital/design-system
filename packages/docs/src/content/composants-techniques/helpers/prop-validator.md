@@ -1,45 +1,44 @@
 ---
 title: propValidator
-description: Le helper `propValidator` permet de valider les props d'un composant.
+description: Le helper `propValidator` permet de valider la valeur d’une prop `String` d’un composant parmi une lise de valeurs acceptées et de générer une erreur si elle n’est pas valide.
 ---
 
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
 
-```html
-<template>
-  <div :style="{ backgroundColor: color, fontSize: size }">
-  Click me
-</div>
-</template>
+```ts
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-<script>
 import { propValidator } from '@cnamts/vue-dot/src/helpers/propValidator';
 
-export default {
-  name: 'Button',
-  props: {
-    color: {
-      type: String,
-      required: true,
-      validator: (value: string) => propValidator('color', ['red', 'green', 'blue'], value)
-    },
-    size: {
-      type: String,
-      required: true,
-      validator: (value: string) => propValidator('size', ['small', 'medium', 'large'], value)
-    }
-  }
-};
-</script>
+enum ColorEnum {
+	PRIMARY = 'primary',
+	SECONDARY = 'secondary',
+	INFO = 'info'
+}
+
+const COLOR_ENUM_VALUES = Object.values(ColorEnum);
+
+const Props = Vue.extend({
+	props: {
+		color: {
+			type: String,
+			default: ColorEnum.PRIMARY,
+			validator: (value: string) => propValidator(
+				'color',
+				COLOR_ENUM_VALUES,
+				value
+			)
+		}
+	}
+});
+
+@Component
+export default class AppBtn extends Vue {}
 ```
 
-```html
-<template>
-  <Button color="red" size="medium" />
-</template>
-```
 </doc-tab-item>
 
 <doc-tab-item label="API">

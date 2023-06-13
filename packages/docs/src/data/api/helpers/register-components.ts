@@ -1,17 +1,19 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	registerComponent: {
+	registerComponents: {
 		arguments: [
 			{
 				name: 'Vue',
+				description: 'L’instance de Vue sur laquelle enregistrer les composants.',
 				type: 'VueConstructor',
-				description: 'The global Vue instance'
+				required: true
 			},
 			{
 				name: 'components',
+				description: 'Les composants à enregistrer.',
 				type: 'Components',
-				description: 'The components to register'
+				required: true
 			}
 		],
 		returnValue: [

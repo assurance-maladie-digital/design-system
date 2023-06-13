@@ -5,13 +5,15 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'Vue',
+				description: 'L’instance de Vue sur laquelle enregistrer les directives.',
 				type: 'VueConstructor',
-				description: 'The global Vue instance'
+				required: true
 			},
 			{
 				name: 'directives',
+				description: 'Les directives à enregistrer.',
 				type: 'Directives',
-				description: 'The directives to register'
+				required: true
 			}
 		],
 		returnValue: [

@@ -1,6 +1,6 @@
 ---
 title: registerDirectives
-description: Le helper `registerDirectives` permet d'enregistrer des directives de façon globale.
+description: Le helper `registerDirectives` permet d’enregistrer des directives de manière globale.
 ---
 
 <doc-tabs>
@@ -8,12 +8,17 @@ description: Le helper `registerDirectives` permet d'enregistrer des directives 
 <doc-tab-item label="Utilisation">
 
 ```ts
+import Vue from 'vue';
+
+import { customDirective } from './customDirective';
+
 import { registerDirectives } from '@cnamts/vue-dot/src/helpers/registerDirectives';
 
-registerDirectives({
-  'my-directive': MyDirective,
-  'my-other-directive': MyOtherDirective,
-});
+const directives = {
+	customDirective
+};
+
+registerDirectives(Vue, directives);
 ```
 
 </doc-tab-item>

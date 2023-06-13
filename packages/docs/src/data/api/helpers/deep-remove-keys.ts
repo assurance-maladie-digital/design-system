@@ -5,13 +5,20 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'collection',
+				description: 'L’objet ou le tableau duquel supprimer les clés.',
 				type: 'any',
-				description: 'The collection to remove keys from'
+				required: true
+			},
+			{
+				name: 'keys',
+				description: 'La clé ou la liste des clés à supprimer.',
+				type: 'string | string[]',
+				required: true
 			}
 		],
 		returnValue: [
 			{
-				type: 'any',
+				type: 'any'
 			}
 		]
 	}

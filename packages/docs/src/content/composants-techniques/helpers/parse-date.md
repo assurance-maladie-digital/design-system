@@ -1,6 +1,6 @@
 ---
 title: parseDate
-description: Le helper `parseDate` permet de parser une date à l'aide de Dayjs.
+description: Le helper `parseDate` permet de parser une date avec un format personnalisé à l’aide de [Day.js](https://day.js.org/).
 ---
 
 <doc-tabs>
@@ -11,7 +11,7 @@ description: Le helper `parseDate` permet de parser une date à l'aide de Dayjs.
 import { parseDate } from '@cnamts/vue-dot/src/helpers/parseDate';
 
 const date = parseDate('01/06/2023');
-date.format('DD-MM-YYYY');  // 01-06-2023
+date.format('DD-MM-YYYY'); // 01-06-2023
 ```
 
 </doc-tab-item>

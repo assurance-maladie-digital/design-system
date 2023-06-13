@@ -5,18 +5,21 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'to',
+				description: 'La route cible.',
 				type: 'Route',
-				description: 'The target route'
+				required: true
 			},
 			{
 				name: 'from',
+				description: 'La route actuelle.',
 				type: 'Route',
-				description: 'The current route'
+				required: true
 			},
 			{
 				name: 'savedPosition',
-				type: 'void | Position',
-				description: 'The saved position'
+				description: 'La position sauvegardée.',
+				type: 'Position | void',
+				required: true
 			}
 		],
 		returnValue: [

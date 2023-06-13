@@ -5,8 +5,21 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'propName',
+				description: 'Le nom de la prop à valider.',
 				type: 'string',
-				description: 'The name of the prop to validate'
+				required: true
+			},
+			{
+				name: 'acceptedValues',
+				description: 'La liste des valeurs acceptées.',
+				type: 'string | string[]',
+				required: true
+			},
+			{
+				name: 'value',
+				description: 'La valeur passée à la prop.',
+				type: 'string',
+				required: true
 			}
 		],
 		returnValue: [

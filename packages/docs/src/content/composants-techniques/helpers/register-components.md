@@ -1,6 +1,6 @@
 ---
 title: registerComponents
-description: Le helper `registerComponents` permet d'enregistrer des composants de façon globale.
+description: Le helper `registerComponents` permet d’enregistrer des composants de manière globale.
 ---
 
 <doc-tabs>
@@ -8,12 +8,19 @@ description: Le helper `registerComponents` permet d'enregistrer des composants 
 <doc-tab-item label="Utilisation">
 
 ```ts
+import Vue from 'vue';
+
+import AppPage from './AppPage.vue';
+import AppBtn from './AppBtn.vue';
+
 import { registerComponents } from '@cnamts/vue-dot/src/helpers/registerComponents';
 
-registerComponents({
-  'my-component': MyComponent,
-  'my-other-component': MyOtherComponent,
-});
+const components = {
+	AppPage,
+	AppBtn
+};
+
+registerComponents(Vue, components);
 ```
 
 </doc-tab-item>

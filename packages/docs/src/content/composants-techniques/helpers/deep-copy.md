@@ -10,8 +10,31 @@ description: Le helper `deepCopy` permet de copier un objet ou un tableau sans r
 ```ts
 import { deepCopy } from '@cnamts/vue-dot/src/helpers/deepCopy';
 
-deepCopy({ a: 1, b: 2 }); // { a: 1, b: 2 }
-deepCopy([1, 2, 3]); // [1, 2, 3]
+deepCopy({
+	a: 1,
+	b: {
+		c: 2
+	}
+});
+// 'c' est bien copié
+
+deepCopy([
+	1,
+	2,
+	[3]
+]);
+// '[3]' est bien copié
+```
+
+Il est possible de spécifier le type de retour en passant ce type en paramètre.
+
+```ts
+deepCopy<MyObject>({
+	a: 1,
+	b: {
+		c: 2
+	}
+});
 ```
 
 </doc-tab-item>

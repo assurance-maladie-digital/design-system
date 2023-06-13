@@ -1,6 +1,6 @@
 ---
 title: convertToUnit
-description: Le helper `convertToUnit` permet de convertir une valeur en unité CSS.
+description: Le helper `convertToUnit` permet de convertir une valeur en valeur CSS avec une unité.
 ---
 
 <doc-tabs>
@@ -10,6 +10,7 @@ description: Le helper `convertToUnit` permet de convertir une valeur en unité 
 ```ts
 import { convertToUnit } from '@cnamts/vue-dot/src/helpers/convertToUnit';
 
+convertToUnit('10'); // '10px'
 convertToUnit(10); // '10px'
 ```
 

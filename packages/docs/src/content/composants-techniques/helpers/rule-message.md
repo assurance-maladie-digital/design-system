@@ -1,6 +1,6 @@
 ---
 title: ruleMessage
-description: Le helper `ruleMessage` permet de générer un message d'erreur à partir d'une règle de validation.
+description: Le helper `ruleMessage` retourne un message d’erreur en fonction d’une clé à partir d’une liste et exécute la fonction en transmettant les arguments si le message est une fonction.
 ---
 
 <doc-tabs>
@@ -10,8 +10,20 @@ description: Le helper `ruleMessage` permet de générer un message d'erreur à 
 ```ts
 import { ruleMessage } from '@cnamts/vue-dot/src/helpers/ruleMessage';
 
-const message = ruleMessage('required');
-// message === 'Ce champ est requis'
+const messages = {
+	default: 'Message d’erreur par défaut.',
+	tooLarge: 'Le fichier dépasse la limite'
+};
+
+ruleMessage(messages, 'default'); // 'Message d’erreur par défaut.'
+```
+
+```ts
+const messages = {
+	default: (value: number) => `La valeur doit être inférieure à ${value} caractères.`
+};
+
+ruleMessage<number>(messages, 'default', [10]); // 'La valeur doit être inférieure à 10 caractères.'
 ```
 
 </doc-tab-item>

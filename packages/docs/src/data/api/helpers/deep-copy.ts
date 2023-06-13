@@ -5,14 +5,14 @@ export const api: Api = {
 		arguments: [
 			{
 				name: 'o',
-				description: 'L\'objet ou le tableau à copier.',
-				type: 'object | array',
+				description: 'L’objet ou le tableau à copier.',
+				type: 'any',
 				required: true
 			}
 		],
 		returnValue: [
 			{
-				type: 'object | array'
+				type: 'any'
 			}
 		]
 	}
