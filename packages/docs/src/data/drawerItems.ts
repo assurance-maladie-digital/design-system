@@ -427,6 +427,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'scrollBehavior',
 						to: '/composants-techniques/helpers/scroll-behavior'
+					},
+					{
+						title: 'testUtils',
+						to: '/composants-techniques/helpers/test-utils'
 					}
 				]
 			},

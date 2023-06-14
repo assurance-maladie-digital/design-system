@@ -4,31 +4,31 @@ export const api: Api = {
 	localStorageUtility: {
 		arguments: [
 			{
-				name: 'constructor()',
+				name: 'constructor',
 				description: 'Constructor',
 				type: 'LocalStorageUtilityConstructor',
 				required: true
 			},
 			{
-				name: 'getItem()',
+				name: 'getItem',
 				description: 'Récupère un item du localStorage.',
 				type: 'string',
 				required: true
 			},
 			{
-				name: 'setItem()',
+				name: 'setItem',
 				description: 'Ajoute un item au localStorage.',
 				type: 'string',
 				required: true
 			},
 			{
-				name: 'removeItem()',
+				name: 'removeItem',
 				description: 'Supprime un item du localStorage.',
 				type: 'string',
 				required: true
 			},
 			{
-				name: 'clear()',
+				name: 'clear',
 				description: 'Vide le localStorage.',
 				type: 'void',
 				required: true
