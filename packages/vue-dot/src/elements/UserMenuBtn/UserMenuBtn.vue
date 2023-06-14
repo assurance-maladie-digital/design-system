@@ -4,7 +4,7 @@
 			v-bind="options.menu"
 			attach
 			content-class="vd-user-menu-content"
-			:class="listLeft ? 'left-list' : 'right-list'"
+			:disabled="!hasListContent"
 		>
 			<template #activator="{ on, attrs }">
 				<VBtn
@@ -47,7 +47,8 @@
 						<VIcon
 							v-if="!hideUserIcon"
 							v-bind="options.icon"
-							:class="mobileVersion ? 'ml-0' : 'ml-2'"
+							:class="mobileVersion ? 'ml-0 pa-2' : 'ml-2'"
+							:x-large="isMobileVersion && !hideUserIcon"
 							class="vd-user-icon"
 						>
 							{{ userIcon }}
@@ -121,10 +122,6 @@
 			mobileVersion: {
 				type: Boolean,
 				default: false
-			},
-			listLeft: {
-				type: Boolean,
-				default: false
 			}
 		}
 	});
@@ -143,14 +140,14 @@
 		logoutIcon = mdiLoginVariant;
 
 		get btnPadding(): string {
-			// return this.hideUserIcon ? 'pa-1 pa-sm-2' : 'pa-1 pa-sm-3';
 			if (this.hideUserIcon) {
 				return 'pa-1 pa-sm-2';
-			} else if (this.mobileVersion) {
-				return 'pa-0';
-			} else {
-				return 'pa-1 pa-sm-3';
 			}
+			if (this.mobileVersion) {
+				return 'pa-0';
+			}
+
+			return 'pa-1 pa-sm-3';
 		}
 
 		get hasListContent(): boolean {
@@ -190,30 +187,11 @@
 	.vd-user-menu-content {
 		top: 100% !important;
 	}
-	.left-list {
-		.vd-user-menu-content {
-			right: auto !important;
-			left: 0 !important;
-		}
-	}
-
-	.right-list {
-		.vd-user-menu-content {
-			right: 0 !important;
-			left: auto !important;
-		}
-	}
 
 	.vd-user-icon {
 		width: 40px;
 		height: 40px;
 		background: $vd-grey-lighten-90;
 		border-radius: 50%;
-	}
-	.v-btn--icon.v-size--x-large {
-		.vd-user-icon {
-			width: 40px;
-			height: 40px;
-		}
 	}
 </style>

@@ -27,8 +27,7 @@
 			booleans: [
 				'hideUserIcon',
 				'hideLogoutBtn',
-				'mobileVersion',
-				'listLeft'
+				'mobileVersion'
 			],
 			textFields: [
 				'fullName',

@@ -41,12 +41,6 @@ export const api: Api = {
 				default: false,
 				description: 'Affiche la version mobile.'
 			},
-			{
-				name: 'list-left',
-				type: 'boolean',
-				default: false,
-				description: 'Positionne la liste du menu à gauche du bouton.'
-			},
 			...customizable(`{
 	menu: 'VMenu',
 	btn: 'VBtn',
