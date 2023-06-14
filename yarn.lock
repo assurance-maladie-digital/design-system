@@ -22033,10 +22033,10 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-input-facade@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-input-facade/-/vue-input-facade-2.1.0.tgz#89829f775958c60d5f20dafaa88fc35cae851ada"
-  integrity sha512-QvtMncSos47xPxIz8EIRHtJpwGKh7ohgemqSI/9paeH5rDjfKlYV0+Q8KLPKFvERpTu/xfgamC4mnwRnvxtv6g==
+vue-input-facade@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue-input-facade/-/vue-input-facade-2.1.1.tgz#91e0b035752570266ff502748d4858e505ecfc56"
+  integrity sha512-e1p+odk9PTloYN1mxVJFeMgDAzA8oO1cyW8Ooq5jOkt5RxQKY3SYBuG7HEmVaEAHy1ycTuhE1fDWSNI+fkD0fQ==
 
 vue-jest@^3.0.5:
   version "3.0.7"
