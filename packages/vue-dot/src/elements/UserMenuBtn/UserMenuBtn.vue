@@ -13,9 +13,9 @@
 						...options.btn
 					}"
 					:class="btnPadding"
-					:icon="isMobileVersion && !hideUserIcon"
-					:x-large="isMobileVersion && !hideUserIcon"
-					:height="isMobileVersion && !hideUserIcon ? undefined : 'auto'"
+					:icon="isMobileVersionAndShowUserIcon"
+					:x-large="isMobileVersionAndShowUserIcon"
+					:height="isMobileVersionAndShowUserIcon ? undefined : 'auto'"
 					class="vd-user-menu-btn"
 					v-on="on"
 				>
@@ -24,7 +24,7 @@
 					</span>
 
 					<span
-						v-if="!mobileVersion"
+						v-if="!isMobileVersion"
 						class="d-flex flex-column align-end"
 					>
 						<span class="font-weight-bold">
@@ -37,7 +37,7 @@
 					</span>
 
 					<span
-						v-if="mobileVersion && hideUserIcon"
+						v-if="isMobileVersionAndHideUserIcon"
 						class="font-weight-bold text-sm-caption"
 					>
 						{{ fullName }}
@@ -47,8 +47,8 @@
 						<VIcon
 							v-if="!hideUserIcon"
 							v-bind="options.icon"
-							:class="mobileVersion ? 'ml-0 pa-2' : 'ml-2'"
-							:x-large="isMobileVersion && !hideUserIcon"
+							:class="isMobileVersion ? 'ml-0 pa-2' : 'ml-2'"
+							:x-large="isMobileVersionAndShowUserIcon"
 							class="vd-user-icon"
 						>
 							{{ userIcon }}
@@ -143,7 +143,7 @@
 			if (this.hideUserIcon) {
 				return 'pa-1 pa-sm-2';
 			}
-			if (this.mobileVersion) {
+			if (this.isMobileVersion) {
 				return 'pa-0';
 			}
 
@@ -160,6 +160,14 @@
 			}
 
 			return this.$vuetify.breakpoint.smAndDown;
+		}
+
+		get isMobileVersionAndShowUserIcon(): boolean {
+			return this.isMobileVersion && !this.hideUserIcon;
+		}
+
+		get isMobileVersionAndHideUserIcon(): boolean {
+			return this.isMobileVersion && this.hideUserIcon;
 		}
 	}
 </script>
