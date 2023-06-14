@@ -4,12 +4,6 @@ export const api: Api = {
 	localStorageUtility: {
 		arguments: [
 			{
-				name: 'constructor',
-				description: 'Constructor',
-				type: 'LocalStorageUtilityConstructor',
-				required: true
-			},
-			{
 				name: 'getItem',
 				description: 'Récupère un item du localStorage.',
 				type: 'string',
@@ -33,10 +27,16 @@ export const api: Api = {
 				type: 'void',
 				required: true
 			},
+			{
+				name: 'getAll',
+				description: 'Récupère tous les items du localStorage.',
+				type: 'any[]',
+				required: true
+			}
 		],
 		returnValue: [
 			{
-				type: 'LocalStorageUtility'
+				type: 'void'
 			}
 		],
 	},
