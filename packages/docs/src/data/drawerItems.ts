@@ -167,18 +167,6 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/date-picker'
 					},
 					{
-						title: 'FormBuilder',
-						to: '/composants/formulaires/form-builder'
-					},
-					{
-						title: 'FormField',
-						to: '/composants/formulaires/form-field'
-					},
-					{
-						title: 'FormFieldList',
-						to: '/composants/formulaires/form-field-list'
-					},
-					{
 						title: 'FileUpload',
 						to: '/composants/formulaires/file-upload'
 					},
@@ -290,6 +278,23 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Composants techniques',
 		icon: mdiCogs,
 		items: [
+			{
+				title: 'Formulaires',
+				items: [
+					{
+						title: 'FormBuilder',
+						to: '/composants-techniques/formulaires/form-builder'
+					},
+					{
+						title: 'FormField',
+						to: '/composants-techniques/formulaires/form-field'
+					},
+					{
+						title: 'FormFieldList',
+						to: '/composants-techniques/formulaires/form-field-list'
+					}
+				]
+			},
 			{
 				title: 'Directives',
 				items: [
