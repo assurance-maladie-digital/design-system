@@ -2,8 +2,8 @@
 	<div class="vd-user-menu-btn-ctn d-inline-block">
 		<VMenu
 			v-bind="options.menu"
+			:disabled="!hasListContent"
 			attach
-			content-class="vd-user-menu-content"
 		>
 			<template #activator="{ on, attrs }">
 				<VBtn
@@ -12,6 +12,9 @@
 						...options.btn
 					}"
 					:class="btnPadding"
+					:icon="isMobileWithIcon"
+					:x-large="isMobileWithIcon"
+					:height="isMobileWithIcon ? undefined : 'auto'"
 					class="vd-user-menu-btn"
 					v-on="on"
 				>
@@ -19,7 +22,10 @@
 						{{ label }}
 					</span>
 
-					<span class="d-flex flex-column align-end">
+					<span
+						v-if="!isMobileVersion"
+						class="d-flex flex-column align-end"
+					>
 						<span class="font-weight-bold">
 							{{ fullName }}
 						</span>
@@ -29,10 +35,19 @@
 						</span>
 					</span>
 
+					<span
+						v-if="isMobileVersion && hideUserIcon"
+						class="font-weight-bold text-sm-caption"
+					>
+						{{ fullName }}
+					</span>
+
 					<slot name="icon">
 						<VIcon
 							v-if="!hideUserIcon"
 							v-bind="options.icon"
+							:class="isMobileVersion ? 'ml-0 pa-2' : 'ml-2'"
+							:x-large="isMobileWithIcon"
 							class="vd-user-icon"
 						>
 							{{ userIcon }}
@@ -102,6 +117,10 @@
 			hideLogoutBtn: {
 				type: Boolean,
 				default: false
+			},
+			mobileVersion: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -120,11 +139,31 @@
 		logoutIcon = mdiLoginVariant;
 
 		get btnPadding(): string {
-			return this.hideUserIcon ? 'pa-1 pa-sm-2' : 'pa-1 pa-sm-3';
+			if (this.hideUserIcon) {
+				return 'pa-1 pa-sm-2';
+			}
+
+			if (this.isMobileVersion) {
+				return 'pa-0';
+			}
+
+			return 'pa-1 pa-sm-3';
 		}
 
 		get hasListContent(): boolean {
 			return Boolean(this.$slots.default || !this.hideLogoutBtn);
+		}
+
+		get isMobileVersion(): boolean {
+			if (this.mobileVersion) {
+				return true;
+			}
+
+			return this.$vuetify.breakpoint.smAndDown;
+		}
+
+		get isMobileWithIcon(): boolean {
+			return this.isMobileVersion && !this.hideUserIcon;
 		}
 	}
 </script>
@@ -139,19 +178,13 @@
 	.vd-user-menu-btn {
 		&:hover::before {
 			background: #000;
-			opacity: .05;
+			opacity: 0.05;
 		}
 
 		&:focus::before {
 			background: $vd-primary;
-			opacity: .08;
+			opacity: 0.08;
 		}
-	}
-
-	.vd-user-menu-content {
-		right: 0 !important;
-		left: auto !important;
-		top: 100% !important;
 	}
 
 	.vd-user-icon {
