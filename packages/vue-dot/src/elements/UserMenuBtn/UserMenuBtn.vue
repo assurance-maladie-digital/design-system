@@ -2,9 +2,8 @@
 	<div class="vd-user-menu-btn-ctn d-inline-block">
 		<VMenu
 			v-bind="options.menu"
-			attach
-			content-class="vd-user-menu-content"
 			:disabled="!hasListContent"
+			attach
 		>
 			<template #activator="{ on, attrs }">
 				<VBtn
@@ -13,9 +12,9 @@
 						...options.btn
 					}"
 					:class="btnPadding"
-					:icon="isMobileVersionAndShowUserIcon"
-					:x-large="isMobileVersionAndShowUserIcon"
-					:height="isMobileVersionAndShowUserIcon ? undefined : 'auto'"
+					:icon="isMobileWithIcon"
+					:x-large="isMobileWithIcon"
+					:height="isMobileWithIcon ? undefined : 'auto'"
 					class="vd-user-menu-btn"
 					v-on="on"
 				>
@@ -37,7 +36,7 @@
 					</span>
 
 					<span
-						v-if="isMobileVersionAndHideUserIcon"
+						v-if="isMobileVersion && hideUserIcon"
 						class="font-weight-bold text-sm-caption"
 					>
 						{{ fullName }}
@@ -48,7 +47,7 @@
 							v-if="!hideUserIcon"
 							v-bind="options.icon"
 							:class="isMobileVersion ? 'ml-0 pa-2' : 'ml-2'"
-							:x-large="isMobileVersionAndShowUserIcon"
+							:x-large="isMobileWithIcon"
 							class="vd-user-icon"
 						>
 							{{ userIcon }}
@@ -143,6 +142,7 @@
 			if (this.hideUserIcon) {
 				return 'pa-1 pa-sm-2';
 			}
+
 			if (this.isMobileVersion) {
 				return 'pa-0';
 			}
@@ -162,19 +162,14 @@
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
-		get isMobileVersionAndShowUserIcon(): boolean {
+		get isMobileWithIcon(): boolean {
 			return this.isMobileVersion && !this.hideUserIcon;
-		}
-
-		get isMobileVersionAndHideUserIcon(): boolean {
-			return this.isMobileVersion && this.hideUserIcon;
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
-	$breakpoint-xs: 600px;
 
 	.vd-user-menu-btn-ctn {
 		position: relative;
@@ -183,17 +178,13 @@
 	.vd-user-menu-btn {
 		&:hover::before {
 			background: #000;
-			opacity: .05;
+			opacity: 0.05;
 		}
 
 		&:focus::before {
 			background: $vd-primary;
-			opacity: .08;
+			opacity: 0.08;
 		}
-	}
-
-	.vd-user-menu-content {
-		top: 100% !important;
 	}
 
 	.vd-user-icon {
