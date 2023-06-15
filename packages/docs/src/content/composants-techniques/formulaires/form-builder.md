@@ -7,21 +7,11 @@ description: Le composant `FormBuilder` est utilisé pour afficher un questionna
 
 <doc-tab-item label="Utilisation">
 
- <doc-alert type="warning" style="max-height: 250px; overflow-y: auto">
+<doc-alert type="warning">
 
-Le **FormBuilder** est une bibliothèque JavaScript qui permet de créer dynamiquement des formulaires à partir de définitions JSON. Les composants du FormBuilder sont particulièrement utiles dans les cas où vous avez besoin de **générer des formulaires de manière dynamique**, par exemple si vous avez un grand nombre de formulaires différents ou si vous souhaitez permettre à l'utilisateur de créer ses propres formulaires.
+Le `FormBuilder` est prévu pour être utilisé avec le bundle PHP `questionnaire-bundle` ou pour afficher des questionnaires à partir d’un objet JSON.
 
-L'utilisation du FormBuilder peut être recommandée dans les cas suivants :
-
-- Si vous avez besoin de générer des formulaires de manière dynamique **à partir de définitions JSON**.
-- Si vous utilisez le **bundle PHP questionnaire-bundle**, qui fournit une intégration avec le FormBuilder pour créer des formulaires à partir de définitions JSON.
-- Si vous avez besoin de **personnaliser facilement l'apparence et le comportement des formulaires**, par exemple en ajoutant des fonctionnalités telles que des champs de recherche ou des sélecteurs de date.
-
-Cependant, il est important de noter que certaines fonctionnalités, telles que la validation côté client, ne sont pas implémentées dans le FormBuilder. Si vous avez besoin de ces fonctionnalités, il peut être préférable d'utiliser les composants de formulaire de Vuetify.
-
-Les composants de formulaire de Vuetify sont des composants prêts à l'emploi qui permettent de créer des formulaires avec une validation côté client et des fonctionnalités avancées telles que des sélecteurs de date et des champs de recherche. Ils sont particulièrement utiles si vous avez besoin de créer des formulaires simples et standardisés, tels que des formulaires d'inscription ou de connexion.
-
-En résumé, l'utilisation du FormBuilder peut être recommandée dans les cas où vous avez besoin de générer des formulaires de manière dynamique à partir de définitions JSON ou si vous avez besoin de personnaliser facilement l'apparence et le comportement des formulaires. Si vous avez besoin de fonctionnalités avancées telles que la validation côté client, il peut être préférable d'utiliser les composants de formulaire de Vuetify.
+Si vous souhaitez implémenter un formulaire classique, utilisez les champs de formulaire de Vuetify et du Design System.
 
 </doc-alert>
 

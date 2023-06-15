@@ -279,7 +279,7 @@ export const drawerItems: DrawerItem[] = [
 		icon: mdiCogs,
 		items: [
 			{
-				title: 'Formulaires',
+				title: 'Questionnaires',
 				items: [
 					{
 						title: 'FormBuilder',
