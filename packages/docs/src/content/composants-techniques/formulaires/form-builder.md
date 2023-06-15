@@ -7,6 +7,14 @@ description: Le composant `FormBuilder` est utilisé pour afficher un questionna
 
 <doc-tab-item label="Utilisation">
 
+<doc-alert type="warning">
+
+Le `FormBuilder` est prévu pour être utilisé avec le bundle PHP `questionnaire-bundle` ou pour afficher des questionnaires à partir d’un objet JSON.
+
+Si vous souhaitez implémenter un formulaire classique, utilisez les champs de formulaire de Vuetify et du Design System.
+
+</doc-alert>
+
 <doc-alert type="info">
 
 Ce composant requiert l’installation de la librairie [FormBuilder](/demarrer/installation#composants/form-builder).
