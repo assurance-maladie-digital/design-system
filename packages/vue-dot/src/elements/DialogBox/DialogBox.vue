@@ -5,6 +5,8 @@
 		:width="width"
 		:persistent="persistent"
 		aria-modal="true"
+		:aria-labelledby="title ? title : 'dialog-title'"
+		role="dialog"
 		class="vd-dialog-box"
 	>
 		<VCard
@@ -15,6 +17,7 @@
 				<slot name="title">
 					<h2
 						v-if="title"
+						:id="title ? title : 'dialog-title'"
 						class="text-h6 font-weight-bold"
 					>
 						{{ title }}
