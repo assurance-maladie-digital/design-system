@@ -40,7 +40,6 @@
     "@nuxt/types": "2.17.0",
     "@nuxt/typescript-build": "3.0.1",
     "@nuxtjs/dotenv": "1.4.1",
-    "@nuxtjs/google-fonts": "2.0.0",
     "@nuxtjs/vuetify": "1.12.3",
     "raw-loader": "4.0.2"
   }
