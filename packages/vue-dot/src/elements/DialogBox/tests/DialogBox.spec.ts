@@ -8,14 +8,19 @@ import DialogBox from '../DialogBox.vue';
 let wrapper: Wrapper<Vue>;
 
 describe('DialogBox', () => {
-	it('renders correctly', async() => {
+	it('renders correctly', () => {
+		wrapper = mountComponent(DialogBox);
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it('renders correctly title content', () => {
 		wrapper = mountComponent(DialogBox, {
 			propsData: {
 				title: 'Test Dialog'
 			}
 		});
 
-		// test the title
 		expect(wrapper.find('h2').text()).toBe('Test Dialog');
 	});
 });
