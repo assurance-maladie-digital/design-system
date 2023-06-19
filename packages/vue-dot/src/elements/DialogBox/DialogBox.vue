@@ -5,15 +5,16 @@
 		:width="width"
 		:persistent="persistent"
 		aria-modal="true"
-		:aria-labelledby="title ? title : 'dialog-title'"
-		role="dialog"
 		class="vd-dialog-box"
 	>
 		<VCard
 			v-bind="options.card"
 			ref="dialogContent"
 		>
-			<VCardTitle v-bind="options.cardTitle">
+			<VCardTitle
+				v-bind="options.cardTitle"
+				:aria-labelledby="title ? title : 'dialog-title'"
+			>
 				<slot name="title">
 					<h2
 						v-if="title"
@@ -126,6 +127,7 @@
 			}
 		}
 	})
+
 	export default class DialogBox extends MixinsDeclaration {
 		$refs!: Refs<{
 			dialogContent: Vue;
