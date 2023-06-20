@@ -241,7 +241,7 @@
 		}
 
 		get showBrandContent(): boolean {
-			return Boolean(this.service.title || this.service.subTitle || this.$slots['brand-content']);
+			return Boolean(this.service.title || this.service.subTitle || this.$slots['brand-content'] || this.hasSecondaryLogo);
 		}
 
 		get showDivider(): boolean {
