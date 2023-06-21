@@ -139,3 +139,11 @@
 		}
 	}
 </script>
+
+<style lang="scss" scoped>
+:deep(.v-alert__wrapper > .v-icon) {
+	width: auto !important;
+	height: auto !important;
+	background: none !important;
+}
+</style>
