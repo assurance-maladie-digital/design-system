@@ -36,7 +36,7 @@ export const api: Api = {
 		],
 		returnValue: [
 			{
-				type: 'void'
+				type: 'localStorageUtility'
 			}
 		],
 	},

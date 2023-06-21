@@ -1,6 +1,6 @@
 ---
 title: testUtils
-description: Le helper `testUtils` permet de récupérer des fonctions utilitaires pour les tests.
+description: Le helper `testUtils` contient un ensemble de fonctions utilitaires pour les tests unitaires.
 ---
 
 <doc-tabs>
