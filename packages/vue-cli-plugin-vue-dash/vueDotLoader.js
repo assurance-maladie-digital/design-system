@@ -40,7 +40,7 @@ const componentMap = {
 	CookiesPage: 'templates',
 	ErrorPage: 'templates',
 	NotFoundPage: 'templates',
-	MaintenancePage: 'templates',
+	MaintenancePage: 'templates'
 };
 
 /**

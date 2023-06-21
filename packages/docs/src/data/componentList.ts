@@ -138,27 +138,6 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY,
 			},
 			{
-				name: 'FormBuilder',
-				description: 'Utilisé pour afficher un questionnaire.',
-				href: '/composants/formulaires/form-builder',
-				image: 'components/form-builder.svg',
-				status: ComponentStatusEnum.READY
-			},
-			{
-				name: 'FormField',
-				description: 'Utilisé pour afficher un champ de formulaire.',
-				href: '/composants/formulaires/form-field',
-				image: 'components/form-field.svg',
-				status: ComponentStatusEnum.READY
-			},
-			{
-				name: 'FormFieldList',
-				description: 'Utilisé pour afficher un formulaire composé d’une liste de champs.',
-				href: '/composants/formulaires/form-field-list',
-				image: 'components/form-field-list.svg',
-				status: ComponentStatusEnum.READY
-			},
-			{
 				name: 'FileUpload',
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner ou de glisser-déposer des fichiers.',
 				href: '/composants/formulaires/file-upload',

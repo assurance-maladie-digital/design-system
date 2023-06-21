@@ -78,8 +78,8 @@
 	@include redesign('info', (
 		'background': $vd-am-blue-lighten-80,
 		'accent': $vd-am-blue-base,
-		'border': $vd-am-blue-darken-20,
-		'icon': $vd-am-blue-darken-20,
+		'border': $vd-am-blue-base,
+		'icon': $vd-am-blue-base,
 		'icon-bg': $vd-am-blue-lighten-90
 	));
 }

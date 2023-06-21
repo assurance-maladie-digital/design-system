@@ -15,8 +15,7 @@
 		"types": [
 			"node",
 			"jest",
-			"vuetify",
-			"webfontloader"
+			"vuetify"
 		],
 		"paths": {
 			"@/*": [

@@ -5,20 +5,16 @@ import { mountComponent } from '@/tests';
 
 import RatingPicker from '../';
 
-let wrapper: Wrapper<TestComponent>;
-
-interface TestComponent extends Vue {
-	setValue: (value: number) => void;
-}
+let wrapper: Wrapper<Vue>;
 
 /** Create the test component */
-function createTestComponent(): Wrapper<TestComponent> {
+function createTestComponent(): Wrapper<Vue> {
 	return mountComponent(RatingPicker, {
 		propsData: {
 			type: 'stars',
 			label: 'Pouvez-vous nous en dire plus ?'
 		}
-	}, true) as Wrapper<TestComponent>;
+	}, true);
 }
 
 describe('RatingPicker', () => {

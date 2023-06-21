@@ -20,10 +20,6 @@ Lors de l’écriture de votre rapport de bug, essayez de donner le plus de dét
 Lorsque vous créez une reproduction minimale, supprimez tous les éléments, propriétés, variables, données et autres qui ne sont pas nécessaires pour reproduire le bug. Cela facilitera le traitement du rapport et le temps qu’il faudra pour identifier puis résoudre le bug.
 </doc-alert>
 
-## Demande d’évolution
-
-Si une fonctionnalité dont vous avez besoin dans l’un des packages du Design System n’est pas présente ou déjà planifiée, vous pouvez [créer une demande de nouvelle fonctionnalité](https://github.com/assurance-maladie-digital/design-system/issues/new?template=feature_request.md).
-
 ## Documentation
 
 Pour modifier la documentation, vous pouvez simplement suivre le lien « Éditer cette page sur GitHub » présent en bas de page, celui-ci ouvrira l’éditeur en ligne de Github, vous permettant d’éditer directement la documentation, puis de créer une nouvelle branche afin de proposer vos modifications via une [Pull Request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
