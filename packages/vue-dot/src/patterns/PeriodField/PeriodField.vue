@@ -30,9 +30,13 @@
 
 	import { FieldComponent } from './mixins/fieldComponent';
 
-	import { Options } from '@cnamts/vue-dot/src/mixins/customizable';
+	import { customizable, Options } from '../../mixins/customizable';
+	import { config } from './config';
 
-	const MixinsDeclaration = mixins(FieldComponent);
+	const MixinsDeclaration = mixins(
+		FieldComponent,
+		customizable(config)
+	);
 
 	@Component<PeriodField>({
 		components: {
