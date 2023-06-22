@@ -11,6 +11,10 @@ const Props = Vue.extend({
 		field: {
 			type: Object as PropType<Field>,
 			required: true
+		},
+		outlined: {
+			type: Boolean,
+			default: false
 		}
 	}
 });

@@ -4,6 +4,7 @@
 			v-model="periodValue.from"
 			v-bind="fieldOptionsFrom"
 			:vuetify-options="fieldOptionsFrom"
+			:outlined="outlined"
 			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
 			@change="dateUpdated"
 		/>
@@ -12,6 +13,7 @@
 			v-model="periodValue.to"
 			v-bind="fieldOptionsTo"
 			:vuetify-options="fieldOptionsTo"
+			:outlined="outlined"
 			:start-date="periodValue.from"
 			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
 			@change="dateUpdated"
