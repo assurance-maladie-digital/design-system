@@ -2,7 +2,7 @@
 	<PeriodField
 		v-bind="field.fieldOptions"
 		v-model="field"
-		oulined
+		outlined
 	/>
 </template>
 
