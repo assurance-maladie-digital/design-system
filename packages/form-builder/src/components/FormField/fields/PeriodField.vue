@@ -1,5 +1,9 @@
 <template>
-	<FormField v-model="field" />
+	<PeriodField
+		v-bind="field.fieldOptions"
+		v-model="field"
+		oulined
+	/>
 </template>
 
 <script lang="ts">
@@ -9,7 +13,7 @@
 	import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
 	@Component
-	export default class FormFieldPeriod extends Vue {
+	export default class PeriodField extends Vue {
 		field: Field = {
 			type: 'period',
 			value: {
