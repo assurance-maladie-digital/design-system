@@ -9,7 +9,7 @@ export interface IFieldMap {
 import DateField from '../fields/DateField.vue';
 import NumberField from '../fields/NumberField.vue';
 import PasswordField from '../fields/PasswordField.vue';
-import PeriodField from '../fields/PeriodField.vue';
+import PeriodField from '../fields/Period.vue';
 import ChoiceField from '../fields/ChoiceField.vue';
 import RangeField from '../fields/RangeField.vue';
 import TextareaField from '../fields/TextareaField.vue';
