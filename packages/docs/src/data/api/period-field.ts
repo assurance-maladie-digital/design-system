@@ -8,7 +8,13 @@ export const api: Api = {
 				type: 'boolean',
 				description: 'Si défini, le champ sera affiché avec un contour.',
 				default: 'false'
-			}
+			},
+			{
+				name: 'disabled',
+				type: 'boolean',
+				description: 'Si défini, le champ sera désactivé.',
+				default: 'false'
+			},
 		],
 		events: [
 			{

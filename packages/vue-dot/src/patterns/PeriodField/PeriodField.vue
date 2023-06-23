@@ -5,6 +5,7 @@
 			v-bind="fieldOptionsFrom"
 			:vuetify-options="fieldOptionsFrom"
 			:outlined="outlined"
+			:disabled="disabled"
 			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
 			@change="dateUpdated"
 		/>
@@ -14,6 +15,7 @@
 			v-bind="fieldOptionsTo"
 			:vuetify-options="fieldOptionsTo"
 			:outlined="outlined"
+			:disabled="disabled"
 			:start-date="periodValue.from"
 			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
 			@change="dateUpdated"

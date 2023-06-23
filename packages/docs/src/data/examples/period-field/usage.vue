@@ -22,6 +22,12 @@
 			to: null
 		};
 
+		options = {
+			booleans: [
+				'disabled'
+			]
+		};
+
 		tabs = [
 			'outlined'
 		];

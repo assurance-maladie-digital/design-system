@@ -15,6 +15,10 @@ const Props = Vue.extend({
 		outlined: {
 			type: Boolean,
 			default: false
+		},
+		disabled: {
+			type: Boolean,
+			default: false
 		}
 	}
 });
