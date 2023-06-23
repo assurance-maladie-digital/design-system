@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-header-bar-container w-100">
+	<div
+		class="vd-header-bar-container w-100"
+		:style="sticky ? 'margin-bottom: ' + (height - 64) + 'px' : ''"
+	>
 		<VAppBar
 			v-bind="{
 				...options.appBar,
