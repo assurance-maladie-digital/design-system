@@ -1,61 +1,116 @@
-import { Api } from "~/types";
+import { Api } from '~/types';
 
 export const api: Api = {
-	testUtils: {
+	applyGlobalConfig: {
+		returnValue: [
+			{
+				type: 'void',
+			},
+		],
+	},
+	installGlobalPlugins: {
 		arguments: [
 			{
-				name: 'applyGlobalConfig',
-				description: 'Function to apply global config',
-				type: 'void',
-				required: true
+				name: 'localVue',
+				description: 'Local Vue instance',
+				type: 'Vue',
+				required: true,
 			},
-			{
-				name: 'installGlobalPlugins',
-				description: 'Install global plugins on localVue',
-				type: 'void',
-				required: true
-			},
-			{
-				name: 'installRouter',
-				description: 'Install router on localVue',
-				type: 'void',
-				required: true
-			},
-			{
-				name: 'createRouter',
-				description: 'Create a router',
-				type: 'VueRouter',
-				required: true
-			},
-			{
-				name: 'createStore',
-				description: 'Create a store',
-				type: 'Store',
-				required: true
-			},
-			{
-				name: 'createVuetifyInstance',
-				description: 'Create a Vuetify instance',
-				type: 'Vuetify',
-				required: true
-			},
-			{
-				name: 'mockVFormRef',
-				description: 'Mock a VForm ref',
-				type: 'VForm',
-				required: true
-			},
-			{
-				name: 'mockTranslations',
-				description: 'Mock translations',
-				type: 'IndexedObject',
-				required: true
-			}
 		],
 		returnValue: [
 			{
-				type: 'html()'
-			}
+				type: 'void',
+			},
+		],
+	},
+	installRouter: {
+		arguments: [
+			{
+				name: 'localVue',
+				description: 'Local Vue instance',
+				type: 'Vue',
+				required: true,
+			},
+		],
+		returnValue: [
+			{
+				type: 'void',
+			},
+		],
+	},
+	createRouter: {
+		arguments: [
+			{
+				name: 'options',
+				description: 'Router options',
+				type: 'RouterOptions',
+				required: false,
+			},
+		],
+		returnValue: [
+			{
+				type: 'VueRouter',
+			},
+		],
+	},
+	createStore: {
+		arguments: [
+			{
+				name: 'options',
+				description: 'Store options',
+				type: 'StoreOptions',
+				required: false,
+			},
+		],
+		returnValue: [
+			{
+				type: 'Store',
+			},
+		],
+	},
+	createVuetifyInstance: {
+		arguments: [
+			{
+				name: 'preset',
+				description: 'Vuetify preset',
+				type: 'Partial<UserVuetifyPreset>',
+				required: true,
+			},
+		],
+		returnValue: [
+			{
+				type: 'Vuetify',
+			},
+		],
+	},
+	mockVFormRef: {
+		arguments: [
+			{
+				name: 'isValid',
+				description: 'Is valid',
+				type: 'boolean',
+				required: true,
+			},
+		],
+		returnValue: [
+			{
+				type: 'void',
+			},
+		],
+	},
+	mockTranslations: {
+		arguments: [
+			{
+				name: 'translations',
+				description: 'Translations',
+				type: 'IndexedObject',
+				required: true,
+			},
+		],
+		returnValue: [
+			{
+				type: 'void',
+			},
 		],
 	},
 };
