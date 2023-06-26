@@ -12,39 +12,77 @@ import Vue from 'vue';
 import Vuetify from 'vuetify';
 
 import {
-	createLocalVue,
-	createVuetifyInstance,
-	installGlobalPlugins,
-	mockTranslations
+	config,
+	createLocalVue
 } from '@cnamts/vue-dot/src/helpers/testUtils';
 
 import MyComponent from '../';
 
 describe('MyComponent', () => {
-	const localVue = createLocalVue();
+	it('applies the global config', () => {
+    const localVue = createLocalVue();
+    const vuetify = new Vuetify();
 
-	let wrapper: Wrapper<Vue>;
-	let vuetify: Vuetify;
+    const wrapper = mount(MyComponent, {
+      localVue,
+      vuetify,
+    });
 
-	installGlobalPlugins(localVue);
-
-	beforeEach(() => {
-		vuetify = createVuetifyInstance();
+    expect(wrapper.vm.$vuetify.theme.dark).toBe(config.theme.dark);
 	});
 
-	it('renders correctly', () => {
-		wrapper = shallowMount(AppHeader, {
-			localVue,
-			vuetify,
-			mocks: {
-				...mockTranslations<string[]>({
-					'components.layout.myComponent.items': []
-				}),
-				$maintenanceEnabled: false
-			}
-		});
+	it('installs the global plugins', () => {
+    const localVue = createLocalVue();
 
-		expect(wrapper).toMatchSnapshot();
+		installGlobalPlugins(localVue);
+
+		expect(localVue.use).toHaveBeenCalledWith(VueI18n);
+	});
+
+	it('installs the router', () => {
+    const localVue = createLocalVue();
+
+    installRouter(localVue);
+
+    expect(localVue.use).toHaveBeenCalledWith(VueRouter);
+	});
+
+	it('creates a router', () => {  
+    const router = createRouter();
+
+    expect(router).toBeInstanceOf(VueRouter);
+	});
+
+	it('creates a store', () => {
+    const store = createStore();
+
+    expect(store).toBeInstanceOf(Vuex.Store);
+	});
+
+	it('creates a Vuetify instance', () => {
+    const vuetify = createVuetify();
+
+    expect(vuetify).toBeInstanceOf(Vuetify);
+	});
+
+	it('mocks a valid VForm ref', () => {
+    const { validate, reset, resetValidation } = mockVFormRef(true);
+
+		expect(validate()).toBeTruthy();
+		expect(resetValidation()).toBeUndefined();
+		expect(reset()).toBeUndefined();
+	});
+
+	it('mocks translations', () => {
+    const translations = mockTranslations();
+
+    expect(translations).toEqual({
+      fr: {
+        'my-component': {
+          title: 'Mon composant',
+        },
+      },
+    });
 	});
 });
 ```
