@@ -2,42 +2,32 @@ import { Api } from '~/types';
 
 export const api: Api = {
 	localStorageUtility: {
-		arguments: [
+		functions: [
 			{
 				name: 'getItem',
 				description: 'Récupère un item du localStorage.',
-				type: 'string',
-				required: true
+				signature: '(key: string): string | null'
 			},
 			{
 				name: 'setItem',
 				description: 'Ajoute un item au localStorage.',
-				type: 'string',
-				required: true
+				signature: '(key: string, value: string): void'
 			},
 			{
 				name: 'removeItem',
 				description: 'Supprime un item du localStorage.',
-				type: 'string',
-				required: true
+				signature: '(key: string): void'
 			},
 			{
 				name: 'clear',
 				description: 'Vide le localStorage.',
-				type: 'void',
-				required: true
+				signature: '(): void'
 			},
 			{
 				name: 'getAll',
 				description: 'Récupère tous les items du localStorage.',
-				type: 'any[]',
-				required: true
+				signature: '(): string[]'
 			}
-		],
-		returnValue: [
-			{
-				type: 'localStorageUtility'
-			}
-		],
-	},
+		]
+	}
 };

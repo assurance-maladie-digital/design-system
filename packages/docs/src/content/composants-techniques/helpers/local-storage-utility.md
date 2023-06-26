@@ -1,6 +1,6 @@
 ---
 title: localStorageUtility
-description: Le helper `localStorageUtility` permet de manipuler le localStorage.
+description: Le helper `localStorageUtility` offre une gestion de l'expiration et du versioning des données stockées en localStorage.
 ---
 
 <doc-tabs>
