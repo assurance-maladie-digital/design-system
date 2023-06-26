@@ -8,9 +8,6 @@ description: Le helper `localStorageUtility` offre une gestion de l'expiration e
 <doc-tab-item label="Utilisation">
 
 ```ts
-import Vue from 'vue';
-import Vuetify from 'vuetify';
-
 import {
   key,
   getItem,
