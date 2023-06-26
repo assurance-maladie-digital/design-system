@@ -19,55 +19,55 @@ import {
 import MyComponent from '../';
 
 describe('MyComponent', () => {
-	it('applies the global config', () => {
+  it('applies the global config', () => {
     applyGlobalConfig();
 
     expect(Vue.config.devtools).toBeFalsy();
-	});
+  });
 
-	it('installs the global plugins', () => {
+  it('installs the global plugins', () => {
     const localVue = createLocalVue();
 
-		installGlobalPlugins(localVue);
+    installGlobalPlugins(localVue);
 
-		expect(localVue.use).toHaveBeenCalledWith(VueI18n);
-	});
+    expect(localVue.use).toHaveBeenCalledWith(VueI18n);
+  });
 
-	it('installs the router', () => {
+  it('installs the router', () => {
     const localVue = createLocalVue();
 
     installRouter(localVue);
 
     expect(localVue.use).toHaveBeenCalledWith(VueRouter);
-	});
+  });
 
-	it('creates a router', () => {  
+  it('creates a router', () => {  
     const router = createRouter();
 
     expect(router).toBeInstanceOf(VueRouter);
-	});
+  });
 
-	it('creates a store', () => {
+  it('creates a store', () => {
     const store = createStore();
 
     expect(store).toBeInstanceOf(Vuex.Store);
-	});
+  });
 
-	it('creates a Vuetify instance', () => {
+  it('creates a Vuetify instance', () => {
     const vuetify = createVuetify();
 
     expect(vuetify).toBeInstanceOf(Vuetify);
-	});
+  });
 
-	it('mocks a valid VForm ref', () => {
+  it('mocks a valid VForm ref', () => {
     const { validate, reset, resetValidation } = mockVFormRef(true);
 
-		expect(validate()).toBeTruthy();
-		expect(resetValidation()).toBeUndefined();
-		expect(reset()).toBeUndefined();
-	});
+    expect(validate()).toBeTruthy();
+    expect(resetValidation()).toBeUndefined();
+    expect(reset()).toBeUndefined();
+  });
 
-	it('mocks translations', () => {
+  it('mocks translations', () => {
     const translations = mockTranslations();
 
     expect(translations).toEqual({
@@ -77,7 +77,7 @@ describe('MyComponent', () => {
         },
       },
     });
-	});
+  });
 });
 ```
 
