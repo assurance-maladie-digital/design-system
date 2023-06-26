@@ -15,3 +15,147 @@ exports[`HeaderBar renders correctly 1`] = `
   <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
 </div>
 `;
+
+exports[`HeaderBar renders correctly with homeHref 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" homelink="/" homehref="#"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with homeLink 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" homelink="[object Object]"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with innerWidth 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="1000" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with mobileVersion 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="72" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="72" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out pa-4">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" mobileversion="true" homelink="/"> </logobrandsection-stub>
+        <vspacer-stub tag="div" class="h-100 mr-4 mr-md-16"></vspacer-stub>
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default" mobileversion="true"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with navigationItems 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="168" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <headernavigationbar-stub theme="default" items="[object Object],[object Object]" innerwidth="100%"> </headernavigationbar-stub>
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default" items="[object Object],[object Object]"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with showNavBarMenuBtn 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with sticky mode 1`] = `
+<div class="vd-header-bar-container w-100" style="margin-bottom: 56px;">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" fixed="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with theme 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="ameli-pro" homelink="/"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="ameli-pro"> </headernavigationdrawer-stub>
+</div>
+`;
+
+exports[`HeaderBar renders correctly with title and subtitle 1`] = `
+<div class="vd-header-bar-container w-100">
+  <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out px-14 py-7">
+      <vsheet-stub width="100%" tag="div" class="d-flex align-center">
+        <logobrandsection-stub theme="default" servicetitle="Title" servicesubtitle="Subtitle" homelink="/"> </logobrandsection-stub>
+        <!---->
+        <!---->
+      </vsheet-stub>
+    </vsheet-stub>
+    <!---->
+  </vappbar-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
+</div>
+`;

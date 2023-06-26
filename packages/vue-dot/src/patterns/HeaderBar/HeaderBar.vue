@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="vd-header-bar-container w-100"
-		:style="sticky ? 'margin-bottom: ' + (height - 64) + 'px' : ''"
+		:style="sticky ? 'margin-bottom: ' + (height - mainContentPaddingTop) + 'px' : ''"
 	>
 		<VAppBar
 			v-bind="{
@@ -240,6 +240,14 @@
 			}
 
 			return this.contentSheetHeight;
+		}
+
+		get mainContentPaddingTop(): number {
+			if (this.isMobileVersion) {
+				return 56;
+			} else {
+				return 64;
+			}
 		}
 
 		get hasNavigationItems(): boolean {
