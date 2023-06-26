@@ -7,43 +7,57 @@ description: Le helper `localStorageUtility` offre une gestion de l'expiration e
 
 <doc-tab-item label="Utilisation">
 
-```vue
-<template>
-  <div>
-    <input v-model="message" type="text" />
-    <button @click="saveMessage">Save</button>
-    <button @click="loadMessage">Load</button>
-    <button @click="clearStorage">Clear storage</button>
-    <p>{{ loadedMessage }}</p>
-  </div>
-</template>
+```ts
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 
-<script>
-import { localStorageUtility } from '@cnamts/vue-dot/src/helpers/localStorageUtility';
+import {
+  key,
+  getItem,
+  setItem,
+  removeItem,
+  clear,
+  getAll
+} from '@cnamts/vue-dot/src/helpers/localStorageUtility';
 
-export default {
-  data() {
-    return {
-      message: '',
-      loadedMessage: '',
-    };
-  },
-  methods: {
-    saveMessage() {
-      const storage = new LocalStorageUtility();
-      storage.setItem('message', this.message);
-    },
-    loadMessage() {
-      const storage = new LocalStorageUtility();
-      this.loadedMessage = storage.getItem('message');
-    },
-    clearStorage() {
-      const storage = new LocalStorageUtility();
-      storage.clear();
-    },
-  },
-};
-</script>
+describe('localStorageUtility', () => {
+  it('sets an item', () => {
+    setItem('foo', 'bar');
+
+    expect(localStorage.setItem).toHaveBeenCalledWith(
+      key('foo'),
+      JSON.stringify({
+        value: 'bar',
+        version: 1,
+        expiresAt: null
+      })
+    );
+  });
+
+  it('gets an item', () => {
+    getItem('foo');
+
+    expect(localStorage.getItem).toHaveBeenCalledWith(key('foo'));
+  });
+
+  it('removes an item', () => {
+    removeItem('foo');
+
+    expect(localStorage.removeItem).toHaveBeenCalledWith(key('foo'));
+  });
+
+  it('clears all items', () => {
+    clear();
+
+    expect(localStorage.clear).toHaveBeenCalled();
+  });
+
+  it('gets all items', () => {
+    getAll();
+
+    expect(localStorage.getItem).toHaveBeenCalledWith(key('foo'));
+  });
+});
 ```
 
 </doc-tab-item>

@@ -20,15 +20,9 @@ import MyComponent from '../';
 
 describe('MyComponent', () => {
 	it('applies the global config', () => {
-    const localVue = createLocalVue();
-    const vuetify = new Vuetify();
+    applyGlobalConfig();
 
-    const wrapper = mount(MyComponent, {
-      localVue,
-      vuetify,
-    });
-
-    expect(wrapper.vm.$vuetify.theme.dark).toBe(config.theme.dark);
+    expect(Vue.config.devtools).toBeFalsy();
 	});
 
 	it('installs the global plugins', () => {
