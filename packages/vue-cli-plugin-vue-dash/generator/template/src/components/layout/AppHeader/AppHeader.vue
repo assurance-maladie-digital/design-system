@@ -9,7 +9,7 @@
 			<% if (i18n) { %>:additional-information="$t('components.layout.appHeader.role')"<% } else { %>additional-information="Développeur"<% } %>
 		>
 			<VListItem
-				v-for="(item, index) in navigationItems"HeaderBar
+				v-for="(item, index) in navigationItems"
 				:key="index"
 				:disabled="item.disabled"
 				:to="item.to ? item.to : null"

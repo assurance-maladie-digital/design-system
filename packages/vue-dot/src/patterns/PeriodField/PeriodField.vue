@@ -61,7 +61,6 @@
 			}
 		}
 	})
-
 	export default class PeriodField extends MixinsDeclaration {
 		periodValue = {} as PeriodValue;
 
