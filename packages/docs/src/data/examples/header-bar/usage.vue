@@ -24,7 +24,11 @@
 			v-if="$attrs.sticky"
 			height="600px"
 			class="d-flex flex-column align-center"
-		/>
+		>
+			<p class="mt-3">
+				Exemple de contenu
+			</p>
+		</VSheet>
 	</VCard>
 </template>
 
@@ -99,6 +103,7 @@
 	.sticky-header-example {
 		position: sticky !important;
 		top: 0;
+		margin-bottom: 0 !important;
 
 		:deep(.vd-header-bar) {
 			position: static !important;
