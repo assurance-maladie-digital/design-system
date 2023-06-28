@@ -11,14 +11,6 @@ Le champ `PeriodField` est composé de deux [`DatePicker`](/composants/formulair
 
 <doc-usage name="period-field"></doc-usage>
 
-### Exemples
-
-#### Outlined
-
-Vous pouvez afficher le `PeriodField` en mode `outlined` en utilisant la prop du même nom, l’icône passera alors en mode `append` et la position du menu sera également modifiée.
-
-<doc-example file="period-field/outlined"></doc-example>
-
 </doc-tab-item>
 
 <doc-tab-item label="API">
