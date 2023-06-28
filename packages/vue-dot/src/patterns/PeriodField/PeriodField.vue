@@ -13,7 +13,7 @@
 		<DatePicker
 			v-model="periodValue.to"
 			v-bind="fieldOptionsTo"
-			:vuetify-options="fieldOptionsTo"
+			:vuetify-options="fieldOptionsTo || options.fieldOptions.to"
 			:outlined="outlined"
 			:disabled="disabled"
 			:start-date="periodValue.from"
@@ -69,7 +69,7 @@
 				min: this.periodValue.from
 			};
 
-			const fieldOptionsTo = this.field.fieldOptions?.to as Record<string, unknown> | undefined;
+			const fieldOptionsTo = this.field.fieldOptions ? this.field.fieldOptions.to as Record<string, unknown> | undefined : this.options.fieldOptions.to;
 
 			return {
 				datePicker,
@@ -78,7 +78,7 @@
 		}
 
 		get fieldOptionsFrom(): Options {
-			return this.field.fieldOptions?.from as unknown as Options;
+			return this.field.fieldOptions ? this.field.fieldOptions.from as unknown as Options : this.options.fieldOptions.from;
 		}
 
 		dateUpdated(): void {

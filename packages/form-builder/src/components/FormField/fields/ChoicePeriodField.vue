@@ -19,12 +19,24 @@
 			PeriodField
 		}
 	})
-	export default class Period extends Vue {
+	export default class ChoicePeriodField extends Vue {
 		field: Field = {
 			type: 'period',
 			value: {
 				from: null,
 				to: null
+			},
+			fieldOptions: {
+				from: {
+					textField: {
+						label: 'Début'
+					}
+				},
+				to: {
+					textField: {
+						label: 'Fin'
+					}
+				}
 			}
 		};
 	}

@@ -2,7 +2,7 @@
 
 exports[`PeriodField renders correctly 1`] = `
 <div class="vd-period-field d-flex flex-wrap max-width-none mx-n3">
-  <datepicker-stub textfieldclass="vd-period-field-picker flex-grow-1 mx-3" startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" value="2019-01-01"></datepicker-stub>
-  <datepicker-stub textfieldclass="vd-period-field-picker flex-grow-1 mx-3" vuetifyoptions="[object Object]" startdate="2019-01-01" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" value="2019-12-31" datepicker="[object Object]"></datepicker-stub>
+  <datepicker-stub textfieldclass="vd-period-field-picker flex-grow-1 mx-3" vuetifyoptions="[object Object]" startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" value="2019-01-01" textfield="[object Object]"></datepicker-stub>
+  <datepicker-stub textfieldclass="vd-period-field-picker flex-grow-1 mx-3" vuetifyoptions="[object Object]" startdate="2019-01-01" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD" value="2019-12-31" datepicker="[object Object]" textfield="[object Object]"></datepicker-stub>
 </div>
 `;

@@ -1,7 +1,16 @@
 export const config = {
-	datePicker: {
-		firstDayOfWeek: 1,
-		noTitle: true,
-		locale: 'fr'
+	fieldOptions: {
+		from: {
+			textField: {
+				label: 'Début',
+				hint: 'Format JJ/MM/AAAA'
+			}
+		},
+		to: {
+			textField: {
+				label: 'Fin',
+				hint: 'Format JJ/MM/AAAA'
+			}
+		}
 	}
 };
