@@ -14,3 +14,15 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 });
+
+describe('HeaderBar with smallMobileVersion', () => {
+	it('renders correctly', () => {
+		wrapper = mountComponent(HeaderBar, {
+			propsData: {
+				smallMobileVersion: true
+			}
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+});
