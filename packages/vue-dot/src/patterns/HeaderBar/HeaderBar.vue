@@ -28,8 +28,8 @@
 							:theme="theme"
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
-							:mobile-version="isMobileVersion"
-							:reduce-logo="sticky && scrolled"
+							:mobile-version="isMobile"
+							:reduce-logo="sticky && scrolled || isSmallMobileVersion"
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
@@ -61,7 +61,7 @@
 					:tab.sync="tab"
 					:drawer.sync="drawer"
 					:theme="theme"
-					:mobile-version="isMobileVersion"
+					:mobile-version="isMobile"
 					:items="navigationItems"
 					:inner-width="innerWidth"
 					:show-menu-btn="showNavBarMenuBtn"
@@ -89,7 +89,7 @@
 				:tab.sync="tab"
 				:theme="theme"
 				:items="navigationItems"
-				:mobile-version="isMobileVersion"
+				:mobile-version="isMobile"
 				:vuetify-options="options.navigationDrawer"
 			>
 				<template #navigation-drawer-prepend>
@@ -165,6 +165,10 @@
 				type: Boolean,
 				default: false
 			},
+			smallMobileVersion: {
+				type: Boolean,
+				default: false
+			},
 			sticky: {
 				type: Boolean,
 				default: false
@@ -207,6 +211,18 @@
 			return this.$vuetify.breakpoint.smAndDown;
 		}
 
+		get isSmallMobileVersion(): boolean {
+			if (this.smallMobileVersion) {
+				return true;
+			}
+
+			return this.$vuetify.breakpoint.xsOnly;
+		}
+
+		get isMobile(): boolean {
+			return this.isMobileVersion || this.isSmallMobileVersion;
+		}
+
 		get targetSelector(): string | null {
 			if (!this.target) {
 				return null;
@@ -217,18 +233,18 @@
 
 		get spacingClass(): string {
 			if (this.sticky && this.scrolled) {
-				return this.isMobileVersion ? 'px-4 py-1' : 'px-14 py-1';
+				return this.isMobile ? 'px-4 py-1' : 'px-14 py-1';
 			}
 
-			return this.isMobileVersion ? 'pa-4' : 'px-14 py-7';
+			return this.isMobile ? 'pa-4' : 'px-14 py-7';
 		}
 
 		get contentSheetHeight(): number {
 			if (this.scrolled) {
-				return this.isMobileVersion ? 52 : 72;
+				return this.isMobile ? 52 : 72;
 			}
 
-			return this.isMobileVersion ? 72 : 120;
+			return this.isMobile ? 72 : 120;
 		}
 
 		get height(): number {
@@ -246,7 +262,7 @@
 		get showHeaderMenuBtn(): boolean {
 			const hasNavigation = Boolean(this.navigationItems || this.$scopedSlots['navigation-drawer']);
 
-			return !this.showNavBarMenuBtn && this.isMobileVersion && hasNavigation;
+			return !this.showNavBarMenuBtn && this.isMobile && hasNavigation;
 		}
 
 		get showNavigationBar(): boolean {
@@ -262,7 +278,7 @@
 		}
 
 		get showSpacer(): boolean {
-			return Boolean(this.$slots.default) || this.isMobileVersion;
+			return Boolean(this.$slots.default) || this.isMobile;
 		}
 
 		updateDrawer(value: boolean): void {

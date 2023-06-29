@@ -17,6 +17,13 @@ const mobileVersionProp = {
 	description: 'Affiche le header en version pour les écrans mobiles.<br>Par défaut, ce mode est activé à partir du [breakpoint `sm`](https://vuetifyjs.com/en/features/breakpoints/).'
 };
 
+const smallMobileVersionProp = {
+	name: 'small-mobile-version',
+	type: 'boolean',
+	default: false,
+	description: 'Affiche le header en version pour les petits écrans mobiles avec un logo réduit.'
+};
+
 const innerWidthProp = {
 	name: 'inner-width',
 	type: 'string',
