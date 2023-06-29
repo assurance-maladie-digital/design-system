@@ -103,6 +103,7 @@ export const api: Api = {
 				description: 'Affiche le bouton pour activer le menu dans la barre de navigation sur les écrans mobiles.'
 			},
 			mobileVersionProp,
+			smallMobileVersionProp,
 			{
 				name: 'sticky',
 				type: 'boolean',
