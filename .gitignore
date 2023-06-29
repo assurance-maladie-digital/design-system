@@ -35,3 +35,5 @@ package-lock.json*
 # Netlify
 .netlify/
 netlify.toml
+
+packages/docs/src/data/examples/period-field/outlined.vue

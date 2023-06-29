@@ -123,8 +123,8 @@
 
 	import { FileStateEnum } from './FileStateEnum';
 
-	import { customizable } from '../../../mixins/customizable';
-	import { Widthable } from '../../../mixins/widthable';
+	import { customizable } from '../../mixins/customizable';
+	import { Widthable } from '../../mixins/widthable';
 
 	import {
 		mdiRefresh,
