@@ -16,6 +16,7 @@ Array [
   "DownloadBtn",
   "ErrorPage",
   "ExternalLinks",
+  "FileList",
   "FilePreview",
   "FileUpload",
   "FilterModule",
