@@ -15,6 +15,7 @@
 				:class="{ 'mb-0': !displayAdditionalContent }"
 				outlined
 				type="success"
+				:icon="checkIcon"
 				class="mt-4"
 			>
 				{{ locales.thanks }}
@@ -32,6 +33,8 @@
 	import EmotionPicker from './EmotionPicker';
 	import NumberPicker from './NumberPicker';
 	import StarsPicker from './StarsPicker';
+
+	import { mdiCheckCircleOutline } from '@mdi/js';
 
 	import { RATING_ENUM_VALUES, RatingEnum } from './RatingMixin';
 
@@ -92,6 +95,8 @@
 	})
 	export default class RatingPicker extends MixinsDeclaration {
 		locales = locales;
+
+		checkIcon = mdiCheckCircleOutline;
 
 		internalValue = -1;
 		displayAdditionalContent = false;
