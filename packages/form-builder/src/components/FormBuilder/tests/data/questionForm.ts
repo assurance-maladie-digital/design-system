@@ -68,7 +68,7 @@ export const questionForm: Form = {
 					outlined: true,
 					birthdate: true,
 					textField: {
-						label: 'V@otre date de naissance'
+						label: 'Votre date de naissance'
 					}
 				}
 			},
