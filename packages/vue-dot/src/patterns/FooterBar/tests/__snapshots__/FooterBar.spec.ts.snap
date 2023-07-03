@@ -6,19 +6,19 @@ exports[`FooterBar renders correctly 1`] = `
   <!---->
   <!---->
   <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 py-2 py-sm-0">
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    <routerlink-stub to="[object Object]" aria-label="Plan du site" class="text--primary my-3 mx-4">
       Plan du site
     </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    <routerlink-stub to="[object Object]" aria-label="Conditions générales d’utilisation" class="text--primary my-3 mx-4">
       Conditions générales d’utilisation
     </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    <routerlink-stub to="[object Object]" aria-label="Gestion des cookies" class="text--primary my-3 mx-4">
       Gestion des cookies
     </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    <routerlink-stub to="[object Object]" aria-label="Mentions légales" class="text--primary my-3 mx-4">
       Mentions légales
     </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
+    <routerlink-stub to="[object Object]" aria-label="Accessibilité&nbsp;: non conforme" class="text--primary my-3 mx-4">
       Accessibilité&nbsp;: non conforme
     </routerlink-stub>
     <!---->

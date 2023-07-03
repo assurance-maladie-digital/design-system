@@ -13,31 +13,38 @@
 		linkItems: LinkItem[] = [
 			{
 				text: 'Accueil',
-				to: '/'
+				to: '/',
+				ariaLabel: 'Accueil'
 			},
 			{
 				text: 'Conditions générales d’utilisation',
-				to: '/'
+				to: '/',
+				ariaLabel: 'Conditions générales d’utilisation'
 			},
 			{
 				text: 'Mentions légales',
-				to: '/'
+				to: '/',
+				ariaLabel: 'Mentions légales'
 			},
 			{
 				text: 'Gestion des cookies',
-				to: '/'
+				to: '/',
+				ariaLabel: 'Gestion des cookies'
 			},
 			{
 				text: 'Accessibilité : non conforme',
-				to: '/'
+				to: '/',
+				ariaLabel: 'Accessibilité : non conforme'
 			},
 			{
 				text: 'Plan du site',
-				to: '/'
+				to: '/',
+				ariaLabel: 'Plan du site'
 			},
 			{
 				text: 'Aide',
-				href: 'https://www.ameli.fr/assure/aide'
+				href: 'https://www.ameli.fr/assure/aide',
+				ariaLabel: 'Aide'
 			}
 		];
 	}
