@@ -4,7 +4,7 @@ exports[`NotFoundPage renders correctly 1`] = `
 <pagecontainer-stub size="m" color="transparent">
   <vcard-stub loaderheight="4" tag="div" class="pa-6 pa-sm-16">
     <vrow-stub tag="div" class="mx-0">
-      <vcol-stub cols="12" md="6" tag="div" class="order-last order-md-first text-center text-md-left">
+      <vcol-stub cols="12" sm="6" tag="div" class="order-last order-sm-first text-center text-sm-left">
         <div aria-hidden="true" class="vd-code font-weight-thin primary--text mb-4">
           404
         </div>
@@ -19,7 +19,7 @@ exports[`NotFoundPage renders correctly 1`] = `
           Retour à l’accueil
         </vbtn-stub>
       </vcol-stub>
-      <vcol-stub cols="12" md="6" tag="div" class="d-flex align-center justify-center"><img src="" alt=""></vcol-stub>
+      <vcol-stub cols="12" sm="6" tag="div" class="d-flex align-center justify-center"><img src="" alt=""></vcol-stub>
     </vrow-stub>
   </vcard-stub>
 </pagecontainer-stub>
