@@ -4,8 +4,8 @@
 			<VRow class="mx-0">
 				<VCol
 					cols="12"
-					md="6"
-					class="order-last order-md-first text-center text-md-left"
+					sm="6"
+					class="order-last order-sm-first text-center text-sm-left"
 				>
 					<div
 						aria-hidden="true"
@@ -39,7 +39,7 @@
 
 				<VCol
 					cols="12"
-					md="6"
+					sm="6"
 					class="d-flex align-center justify-center"
 				>
 					<slot name="illustration">
