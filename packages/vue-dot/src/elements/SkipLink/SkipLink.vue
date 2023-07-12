@@ -38,12 +38,15 @@
 		}>;
 
 		mounted() {
-			if (!this.$route) {
+			if (!this.$refs.skipLink) {
 				return;
 			}
 
-			this.$watch('$route.path', () => {
-				this.$nextTick(() => this.$refs.skipLink.focus());
+			this.$refs.skipLink.addEventListener('keydown', (event: KeyboardEvent) => {
+				if (event.key === 'Tab') {
+					event.preventDefault();
+					this.$nextTick(() => this.$refs.skipLink.focus());
+				}
 			});
 		}
 	}
