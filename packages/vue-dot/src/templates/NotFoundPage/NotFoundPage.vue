@@ -29,7 +29,8 @@
 					</p>
 
 					<VBtn
-						:to="btnRoute"
+						:to="btnUrl ? null : btnRoute"
+						:href="btnUrl ? btnUrl : null"
 						color="primary"
 						exact
 					>
@@ -84,6 +85,10 @@
 			btnRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'home' })
+			},
+			btnUrl: {
+				type: String,
+				default: null
 			}
 		}
 	});
