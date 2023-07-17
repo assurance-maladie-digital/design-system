@@ -26,6 +26,12 @@ export const api: Api = {
 				type: 'RawLocation',
 				default: `{ name: 'home' }`,
 				description: 'La valeur de la prop `to` du bouton d’action.',
+			},
+			{
+				name: 'btn-url',
+				type: 'string',
+				default: `null`,
+				description: 'La valeur de la prop `href` du bouton d’action en cas de lien externe.',
 			}
 		],
 		slots: [
