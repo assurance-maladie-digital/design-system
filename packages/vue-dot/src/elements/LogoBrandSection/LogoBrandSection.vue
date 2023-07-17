@@ -16,6 +16,7 @@
 				:risque-pro="isRisquePro"
 				:avatar="avatar"
 				:size="logoSize"
+				:mobile-version="mobileVersion"
 				:class="{ 'mr-2': avatar }"
 			/>
 		</component>
