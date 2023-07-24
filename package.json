@@ -30,7 +30,7 @@
 		"core-js": "3.31.0",
 		"cross-env": "7.0.3",
 		"custom-event-polyfill": "1.0.7",
-		"dayjs": "1.11.8",
+		"dayjs": "1.11.9",
 		"deepmerge": "4.3.1",
 		"eslint": "7.32.0",
 		"eslint-plugin-jsdoc": "46.4.3",
