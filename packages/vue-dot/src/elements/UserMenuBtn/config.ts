@@ -3,6 +3,7 @@ import { tokens } from '@cnamts/design-tokens';
 export const config = {
 	menu: {
 		offsetY: true,
+		left: true,
 		zIndex: 4,
 		minWidth: '198px',
 		maxWidth: '198px',

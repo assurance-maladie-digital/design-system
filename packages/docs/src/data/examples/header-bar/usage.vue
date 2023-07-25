@@ -66,6 +66,7 @@
 		options = {
 			booleans: [
 				'mobileVersion',
+				'miniVersion',
 				'sticky'
 			],
 			selects: {

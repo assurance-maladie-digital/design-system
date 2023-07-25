@@ -69,6 +69,7 @@
 				:key="index"
 				:href="item.href"
 				:to="item.to"
+				:aria-label="item.ariaLabel"
 				class="text--primary my-3 mx-4"
 			>
 				{{ item.text }}

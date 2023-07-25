@@ -58,7 +58,6 @@ export default {
 	buildModules: [
 		'@nuxt/typescript-build',
 		'@nuxtjs/vuetify',
-		'@nuxtjs/google-fonts',
 		[
 			'@nuxtjs/dotenv',
 			{
@@ -97,12 +96,6 @@ export default {
 			directives: ['Scroll']
 		},
 		customVariables: ['~/assets/styles/variables.scss']
-	},
-	googleFonts: {
-		families: {
-			'Open+Sans': [300, 400, 600, 700]
-		},
-		download: false
 	},
 	hooks: {
 		'content:file:beforeParse': (document) => {

@@ -1,11 +1,17 @@
 <template>
-	<a
-		ref="skipLink"
-		:href="target"
-		class="vd-skip-link d-block d-sr-only-focusable am-blue-lighten-97 px-2"
-	>
-		<slot>{{ label }}</slot>
-	</a>
+	<div class="vd-skip-link-container">
+		<span
+			ref="skipLinkSpan"
+			tabindex="-1"
+		/>
+
+		<a
+			:href="target"
+			class="vd-skip-link d-block d-sr-only-focusable am-blue-lighten-97 px-2"
+		>
+			<slot>{{ label }}</slot>
+		</a>
+	</div>
 </template>
 
 <script lang="ts">
@@ -34,16 +40,16 @@
 	@Component
 	export default class SkipLink extends MixinsDeclaration {
 		$refs!: Refs<{
-			skipLink: HTMLLinkElement;
+			skipLinkSpan: HTMLLinkElement;
 		}>;
 
 		mounted() {
-			if (!this.$route) {
+			if (!this.$refs.skipLinkSpan) {
 				return;
 			}
 
 			this.$watch('$route.path', () => {
-				this.$nextTick(() => this.$refs.skipLink.focus());
+				this.$nextTick(() => this.$refs.skipLinkSpan.focus());
 			});
 		}
 	}

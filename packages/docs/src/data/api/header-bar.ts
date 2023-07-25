@@ -97,6 +97,12 @@ export const api: Api = {
 			},
 			mobileVersionProp,
 			{
+				name: 'mini-version',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche le header en version pour les petits écrans mobiles avec un logo réduit.'
+			},
+			{
 				name: 'sticky',
 				type: 'boolean',
 				default: false,

@@ -13,4 +13,14 @@ describe('HeaderBar', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('renders correctly with mini version', () => {
+		wrapper = mountComponent(HeaderBar, {
+			propsData: {
+				miniVersion: true
+			}
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
 });
