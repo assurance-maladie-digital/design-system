@@ -50,7 +50,7 @@ function extendPackage(api, options, pm) {
 			'custom-event-polyfill': '^1.0.7',
 			'dayjs': '^1.11.2',
 			'languages': '^0.1.3',
-			'vue': '^2.6.14',
+			'vue': '^2.7.0',
 			'vue-input-facade': '^2.0.1',
 			'vue-meta': '^2.4.0',
 			'vue-router': '^3.5.3',
