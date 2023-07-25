@@ -13,13 +13,11 @@ describe('HeaderBar', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
-});
 
-describe('HeaderBar with smallMobileVersion', () => {
-	it('renders correctly', () => {
+	it('renders correctly with mini version', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
-				smallMobileVersion: true
+				miniVersion: true
 			}
 		});
 

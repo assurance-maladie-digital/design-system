@@ -16,10 +16,10 @@ exports[`HeaderBar renders correctly 1`] = `
 </div>
 `;
 
-exports[`HeaderBar with smallMobileVersion renders correctly 1`] = `
+exports[`HeaderBar renders correctly with mini version 1`] = `
 <div class="vd-header-bar-container w-100">
-  <vappbar-stub color="white" height="72" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
-    <vsheet-stub height="72" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out pa-4">
+  <vappbar-stub color="white" height="52" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar transition-ease-in-out w-100">
+    <vsheet-stub height="52" tag="div" class="vd-header-bar-content d-flex justify-center transition-ease-in-out pa-4">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
         <logobrandsection-stub theme="default" mobileversion="true" reducelogo="true" homelink="/"> </logobrandsection-stub>
         <vspacer-stub tag="div" class="h-100 mr-4 mr-md-16"></vspacer-stub>
@@ -28,6 +28,6 @@ exports[`HeaderBar with smallMobileVersion renders correctly 1`] = `
     </vsheet-stub>
     <!---->
   </vappbar-stub>
-  <headernavigationdrawer-stub theme="default" mobileversion="true"> </headernavigationdrawer-stub>
+  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
 </div>
 `;
