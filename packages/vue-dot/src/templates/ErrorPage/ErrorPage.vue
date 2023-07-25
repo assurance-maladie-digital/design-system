@@ -1,46 +1,55 @@
 <template>
-	<PageContainer size="s">
-		<VCard class="pa-8">
-			<span
-				v-if="code"
-				class="font-weight-bold primary--text vd-code"
-			>
-				{{ code }}
-			</span>
-
-			<h2
-				:class="{
-					'text-h4': !code,
-					'mb-4': !code,
-					'text-h6': code
-				}"
-				class="mb-2 font-weight-bold"
-			>
-				{{ pageTitle }}
-			</h2>
-
-			<p v-if="supportId">
-				{{ locales.supportIdMessage }}
-
-				<b>{{ supportId }}</b>
-			</p>
-
-			<p>{{ message }}</p>
-
-			<div
-				v-if="!noBtn && btnText && btnRoute"
-				class="d-flex mt-6"
-			>
-				<VSpacer />
-
-				<VBtn
-					:to="btnRoute"
-					color="primary"
-					exact
+	<PageContainer size="m">
+		<VCard
+			:elevation="mobileVersion ? 0 : 2"
+			class="pa-6 pa-sm-16"
+		>
+			<VRow class="max-width-none">
+				<VCol
+					:sm="$slots.illustration ? 6 : 12"
+					cols="12"
+					class="order-last order-sm-first text-center text-sm-left"
 				>
-					{{ btnText }}
-				</VBtn>
-			</div>
+					<div
+						aria-hidden="true"
+						class="vd-code font-weight-thin primary--text mb-4"
+					>
+						{{ code }}
+					</div>
+
+					<h2 class="mb-2 font-weight-bold text-h5 mb-4">
+						{{ pageTitle }}
+					</h2>
+
+					<p class="mb-0">
+						{{ message }}
+					</p>
+
+					<slot name="additional-content" />
+
+					<slot name="action">
+						<VBtn
+							v-if="!noBtn && btnText && btnRoute"
+							:to="btnRoute"
+							:href="btnHref"
+							color="primary"
+							exact
+							class="mt-6"
+						>
+							{{ btnText }}
+						</VBtn>
+					</slot>
+				</VCol>
+
+				<VCol
+					v-if="$slots.illustration"
+					cols="12"
+					sm="6"
+					class="d-flex align-center justify-center"
+				>
+					<slot name="illustration" />
+				</VCol>
+			</VRow>
 		</VCard>
 	</PageContainer>
 </template>
@@ -53,20 +62,15 @@
 
 	import { locales } from './locales';
 
-	import { insertAt } from '@cnamts/vue-dot/src/functions/insertAt';
-
-	const SUPPORT_ID_PARAM_NAME = 'support_id';
-	const SPACE_CHARACTER = ' ';
-
 	const Props = Vue.extend({
 		props: {
 			pageTitle: {
 				type: String,
-				required: true
+				default: undefined
 			},
 			message: {
 				type: String,
-				required: true
+				default: undefined
 			},
 			code: {
 				type: String,
@@ -80,6 +84,10 @@
 				type: [Array, Object, String] as PropType<RawLocation>,
 				default: () => ({ name: 'home' })
 			},
+			btnHref: {
+				type: String,
+				default: undefined
+			},
 			noBtn: {
 				type: Boolean,
 				default: false
@@ -90,28 +98,11 @@
 	const MixinsDeclaration = mixins(Props);
 
 	@Component
-	export default class ErrorPage extends MixinsDeclaration {
+	export default class MaintenancePage extends MixinsDeclaration {
 		locales = locales;
 
-		/**
-		 * Support ID is a number added by our firewall if a rule is violated
-		 * This should be displayed to the user so it can be used to track down the error
-		 */
-		get supportId(): string | null {
-			const params = new URLSearchParams(document.location.search);
-			let supportId = params.get(SUPPORT_ID_PARAM_NAME);
-
-			if (!supportId) {
-				return null;
-			}
-
-			const SPACE_POSITIONS = [4, 9, 14, 19];
-
-			SPACE_POSITIONS.forEach((position) => {
-				supportId = insertAt(supportId as string, position, SPACE_CHARACTER);
-			});
-
-			return supportId.trim();
+		get mobileVersion(): boolean {
+			return this.$vuetify.breakpoint.xsOnly;
 		}
 	}
 </script>
@@ -120,9 +111,5 @@
 	.vd-code {
 		font-size: 6rem;
 		line-height: 6rem;
-	}
-
-	.v-btn--active::before {
-		opacity: 0;
 	}
 </style>
