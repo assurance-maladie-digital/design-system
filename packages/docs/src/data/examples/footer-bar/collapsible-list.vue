@@ -51,41 +51,34 @@
 		remboursementItems: ListItem[] = [
 			{
 				text: 'Ce qui est remboursé',
-				href: 'https://www.ameli.fr/assure/remboursements/rembourse',
-				ariaLabel: 'Ce qui est remboursé'
+				href: 'https://www.ameli.fr/assure/remboursements/rembourse'
 			},
 			{
 				text: 'Ce qui reste à votre charge',
-				href: 'https://www.ameli.fr/assure/remboursements/reste-charge',
-				ariaLabel: 'Ce qui reste à votre charge'
+				href: 'https://www.ameli.fr/assure/remboursements/reste-charge'
 			},
 			{
 				text: 'Être bien remboursé',
-				href: 'https://www.ameli.fr/assure/remboursements/etre-bien-rembourse',
-				ariaLabel: 'Être bien remboursé'
+				href: 'https://www.ameli.fr/assure/remboursements/etre-bien-rembourse'
 			}
 		];
 
 		healthItems: ListItem[] = [
 			{
 				text: 'Mon espace santé',
-				href: 'https://www.ameli.fr/assure/sante/mon-espace-sante',
-				ariaLabel: 'Mon espace santé'
+				href: 'https://www.ameli.fr/assure/sante/mon-espace-sante'
 			},
 			{
 				text: 'Accomplir les bons gestes',
-				href: 'https://www.ameli.fr/assure/sante/bons-gestes',
-				ariaLabel: 'Accomplir les bons gestes'
+				href: 'https://www.ameli.fr/assure/sante/bons-gestes'
 			},
 			{
 				text: 'Réagir en cas d’urgence',
-				href: 'https://www.ameli.fr/assure/sante/urgence',
-				ariaLabel: 'Réagir en cas d’urgence'
+				href: 'https://www.ameli.fr/assure/sante/urgence'
 			},
 			{
 				text: 'Télésanté',
-				href: 'https://www.ameli.fr/assure/sante/telesante',
-				ariaLabel: 'Télésanté'
+				href: 'https://www.ameli.fr/assure/sante/telesante'
 			}
 		];
 	}

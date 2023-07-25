@@ -217,31 +217,26 @@
 				{
 					text: locales.sitemapLabel,
 					to: this.sitemapRoute,
-					ariaLabel: locales.sitemapLabel,
 					hidden: this.hideSitemapLink
 				},
 				{
 					text: locales.cguLabel,
 					to: this.cguRoute,
-					ariaLabel: locales.cguLabel,
 					hidden: this.hideCguLink
 				},
 				{
 					text: locales.cookiesLabel,
 					to: this.cookiesRoute,
-					ariaLabel: locales.cookiesLabel,
 					hidden: this.hideCookiesLink
 				},
 				{
 					text: locales.legalNoticeLabel,
 					to: this.legalNoticeRoute,
-					ariaLabel: locales.legalNoticeLabel,
 					hidden: this.hideLegalNoticeLink
 				},
 				{
 					text: this.a11yComplianceLabel,
 					to: this.a11yStatementRoute,
-					ariaLabel: this.a11yComplianceLabel,
 					hidden: this.hideA11yLink
 				}
 			];
