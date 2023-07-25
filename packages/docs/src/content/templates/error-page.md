@@ -21,15 +21,11 @@ Cette utilisation du composant est dépréciée en faveur du composant [`Mainten
 
 </doc-alert>
 
-<doc-example file="error-page/no-btn"></doc-example>
+<doc-example file="error-page/maintenance"></doc-example>
 
-#### Page 404 avec ID de support
+#### Page 404
 
-Vous pouvez créer une page 404, et lorsque le paramètre `support_id` est présent dans l’URL, celui-ci sera affiché afin que l’utilisateur puisse communiquer cet identifiant au support pour analyse.
-
-<doc-alert type="info">
-Cet identifiant de support est ajouté automatiquement par notre pare-feu, il a une longueur de 19 caractères.
-</doc-alert>
+Vous pouvez créer une page 404 en utilisant les props `no-btn` et `code`.
 
 <doc-alert type="warning">
 
@@ -37,7 +33,7 @@ Cette utilisation du composant est dépréciée en faveur du composant [`NotFoun
 
 </doc-alert>
 
-<doc-example file="error-page/support-id"></doc-example>
+<doc-example file="error-page/not-found"></doc-example>
 
 </doc-tab-item>
 

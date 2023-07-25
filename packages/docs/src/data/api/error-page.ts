@@ -6,13 +6,13 @@ export const api: Api = {
 			{
 				name: 'page-title',
 				type: 'string',
-				required: true,
+				default: 'undefined',
 				description: 'Le titre de la page.'
 			},
 			{
 				name: 'message',
 				type: 'string',
-				required: true,
+				default: 'undefined',
 				description: 'Le message d’erreur à afficher à l’utilisateur.'
 			},
 			{
@@ -34,10 +34,30 @@ export const api: Api = {
 				description: 'La valeur de la prop `to` du bouton d’action.'
 			},
 			{
+				name: 'btn-href',
+				type: 'string',
+				default: 'undefined',
+				description: 'La valeur de la prop `href` du bouton d’action.'
+			},
+			{
 				name: 'no-btn',
 				type: 'boolean',
 				default: false,
-				description: 'Désactive le bouton d’action.'
+				description: 'Masque le bouton d’action.'
+			}
+		],
+		slots: [
+			{
+				name: 'additional-content',
+				description: 'Contenu additionnel à afficher sous le message d’erreur.'
+			},
+			{
+				name: 'action',
+				description: 'Contenu à afficher à la place du bouton d’action.'
+			},
+			{
+				name: 'illustration',
+				description: 'Illustration à afficher en plus du contenu.'
 			}
 		]
 	}

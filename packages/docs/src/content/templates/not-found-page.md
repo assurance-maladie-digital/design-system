@@ -7,7 +7,7 @@ description: Le template `NotFoundPage` est utilisé pour afficher une page d’
 
 <doc-tab-item label="Utilisation">
 
-<doc-usage name="not-found-page"></doc-usage>
+<doc-example file="not-found-page/usage"></doc-example>
 
 ### Exemples
 
@@ -20,20 +20,6 @@ Cet identifiant de support est ajouté automatiquement par notre pare-feu, il a 
 </doc-alert>
 
 <doc-example file="not-found-page/support-id"></doc-example>
-
-</doc-tab-item>
-
-<doc-tab-item label="API">
-<doc-api name="not-found-page"></doc-api>
-</doc-tab-item>
-
-<doc-tab-item label="Personnalisation">
-
-### Slots
-
-Vous pouvez utiliser le slot `illustration` pour modifier l’image d’illustration par défaut.
-
-<doc-example file="not-found-page/slots"></doc-example>
 
 </doc-tab-item>
 
