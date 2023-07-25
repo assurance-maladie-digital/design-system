@@ -13,10 +13,10 @@
 		>
 			<Logo
 				:hide-signature="hideSignature"
+				:hide-organism="isCompteAmeliMobile"
 				:risque-pro="isRisquePro"
 				:avatar="avatar"
 				:size="logoSize"
-				:mobile-version="mobileVersion"
 				:class="{ 'mr-2': avatar }"
 			/>
 		</component>
@@ -181,8 +181,12 @@
 			return this.theme === ThemeEnum.COMPTE_ENTREPRISE;
 		}
 
+		get isCompteAmeliMobile(): boolean {
+			return this.theme === ThemeEnum.COMPTE_AMELI && this.mobileVersion;
+		}
+
 		get hideSignature(): boolean {
-			if (this.reduceLogo || this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
+			if (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile) {
 				return true;
 			}
 
