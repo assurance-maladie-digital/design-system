@@ -33,11 +33,13 @@
 			},
 			{
 				text: 'Plan du site',
-				to: '/'
+				to: '/',
+				ariaLabel: 'Plan du site'
 			},
 			{
 				text: 'Aide',
-				href: 'https://www.ameli.fr/assure/aide'
+				href: 'https://www.ameli.fr/assure/aide',
+				ariaLabel: 'Aide (s’ouvre sur le site ameli.fr)'
 			}
 		];
 	}
