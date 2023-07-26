@@ -19,6 +19,7 @@
 					>
 						<a
 							:href="item.href"
+							:aria-label="item.ariaLabel"
 							class="text-body-2 text-decoration-none text--primary"
 						>
 							{{ item.text }}
@@ -45,6 +46,7 @@
 			>
 				<a
 					:href="item.href"
+					:aria-label="item.ariaLabel"
 					class="text-body-2 text-decoration-none text--primary"
 				>
 					{{ item.text }}

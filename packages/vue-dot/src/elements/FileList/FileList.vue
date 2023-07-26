@@ -123,8 +123,8 @@
 
 	import { FileStateEnum } from './FileStateEnum';
 
-	import { customizable } from '../../../mixins/customizable';
-	import { Widthable } from '../../../mixins/widthable';
+	import { customizable } from '../../mixins/customizable';
+	import { Widthable } from '../../mixins/widthable';
 
 	import {
 		mdiRefresh,
@@ -138,13 +138,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			showViewBtn: {
-				type: Boolean,
-				default: false
-			},
 			files: {
 				type: Array as PropType<FileItem[]>,
 				required: true
+			},
+			showViewBtn: {
+				type: Boolean,
+				default: false
 			},
 			hideLastDivider: {
 				type: Boolean,
