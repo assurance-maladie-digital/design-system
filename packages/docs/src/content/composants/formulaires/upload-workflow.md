@@ -31,7 +31,7 @@ Lorsque que la liste ne contient qu’un seul fichier, la boîte de dialogue dem
 
 #### Fichiers optionnels
 
-Vous pouvez spécifier des fichiers optionnels en utilisant la prop `optional`.
+Vous pouvez spécifier des fichiers optionnels en utilisant la propriété `optional`.
 
 <doc-example file="upload-workflow/optional"></doc-example>
 
