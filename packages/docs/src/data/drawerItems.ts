@@ -410,6 +410,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants-techniques/helpers/deep-remove-keys'
 					},
 					{
+						title: 'localStorageUtility',
+						to: '/composants-techniques/helpers/local-storage-utility'
+					},
+					{
 						title: 'parseDate',
 						to: '/composants-techniques/helpers/parse-date'
 					},
@@ -432,6 +436,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'scrollBehavior',
 						to: '/composants-techniques/helpers/scroll-behavior'
+					},
+					{
+						title: 'testUtils',
+						to: '/composants-techniques/helpers/test-utils'
 					}
 				]
 			},

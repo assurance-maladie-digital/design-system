@@ -25,6 +25,7 @@
 				v-bind="options.tabs"
 				:value="tab"
 				optional
+				class="flex-grow-0"
 				@change="emitTabUpdateEvent"
 			>
 				<VTab
@@ -37,8 +38,6 @@
 					{{ item.label }}
 				</VTab>
 			</VTabs>
-
-			<VSpacer />
 
 			<slot name="navigation-drawer-append" />
 		</slot>

@@ -4,9 +4,9 @@ import { Wrapper } from '@vue/test-utils';
 import { mountComponent } from '@/tests';
 
 import MaintenancePage from '../';
-import PageContainer from '../../../elements/PageContainer';
+import ErrorPage from '../../../templates/ErrorPage';
 
-Vue.component('PageContainer', PageContainer);
+Vue.component('ErrorPage', ErrorPage);
 
 let wrapper: Wrapper<Vue>;
 

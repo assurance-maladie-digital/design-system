@@ -19,6 +19,7 @@ export const api: Api = {
 	text: string;
 	to?: RawLocation;
 	href?: string;
+	ariaLabel?: string;
 }[]`
 			},
 			{

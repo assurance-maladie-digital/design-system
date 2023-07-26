@@ -29,7 +29,7 @@
 							:service-title="serviceTitle"
 							:service-sub-title="serviceSubTitle"
 							:mobile-version="isMobileVersion"
-							:reduce-logo="sticky && scrolled"
+							:reduce-logo="isMiniVersion"
 							:home-link="homeLink"
 							:home-href="homeHref"
 						>
@@ -165,6 +165,10 @@
 				type: Boolean,
 				default: false
 			},
+			miniVersion: {
+				type: Boolean,
+				default: false
+			},
 			sticky: {
 				type: Boolean,
 				default: false
@@ -200,11 +204,15 @@
 		scrolled = false;
 
 		get isMobileVersion(): boolean {
-			if (this.mobileVersion) {
+			if (this.mobileVersion || this.miniVersion) {
 				return true;
 			}
 
 			return this.$vuetify.breakpoint.smAndDown;
+		}
+
+		get isMiniVersion(): boolean {
+			return this.miniVersion || (this.sticky && this.scrolled);
 		}
 
 		get targetSelector(): string | null {
@@ -224,7 +232,7 @@
 		}
 
 		get contentSheetHeight(): number {
-			if (this.scrolled) {
+			if (this.scrolled || this.miniVersion) {
 				return this.isMobileVersion ? 52 : 72;
 			}
 
