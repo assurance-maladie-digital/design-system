@@ -3,7 +3,7 @@
 		<ErrorPage
 			v-bind="$attrs"
 			v-on="$listeners"
-			btn-route="/templates/error-page"
+			btn-route="/"
 		/>
 	</div>
 </template>
@@ -20,8 +20,12 @@
 			pageTitle: 'Erreur serveur',
 			message: 'La page ne fonctionne pas correctement.',
 			code: '500',
-			btnText: 'Actualiser la page'
+			btnText: 'Retour à l’accueil'
 		};
+
+		propsHiddenByDefault = [
+			'btnText'
+		];
 
 		options = {
 			booleans: [
@@ -36,3 +40,22 @@
 		};
 	}
 </script>
+
+<style lang="scss" scoped>
+	.vd-page-container {
+		padding: 0 !important;
+
+		:deep(.v-card) {
+			box-shadow: none !important;
+			padding: 24px !important;
+
+			.order-sm-first {
+				order: 1 !important;
+			}
+
+			.text-sm-left {
+				text-align: center !important;
+			}
+		}
+	}
+</style>
