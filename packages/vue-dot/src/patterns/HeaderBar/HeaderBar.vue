@@ -89,7 +89,7 @@
 				:tab.sync="tab"
 				:theme="theme"
 				:items="navigationItems"
-				:mobile-version="isMobile"
+				:mobile-version="isMobileVersion"
 				:vuetify-options="options.navigationDrawer"
 			>
 				<template #navigation-drawer-prepend>

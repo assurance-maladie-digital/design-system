@@ -28,6 +28,6 @@ exports[`HeaderBar renders correctly with mini version 1`] = `
     </vsheet-stub>
     <!---->
   </vappbar-stub>
-  <headernavigationdrawer-stub theme="default"> </headernavigationdrawer-stub>
+  <headernavigationdrawer-stub theme="default" mobileversion="true"> </headernavigationdrawer-stub>
 </div>
 `;
