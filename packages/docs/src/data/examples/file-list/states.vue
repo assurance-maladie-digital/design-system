@@ -9,19 +9,22 @@
 	import { FileItem } from '@cnamts/vue-dot/src/elements/FileList/types';
 
 	@Component
-	export default class FileListUsage extends Vue {
+	export default class FileListStates extends Vue {
 		fileList: FileItem[] = [
 			{
 				title: 'RIB',
-				state: 'initial'
+				name: 'rib.pdf',
+				state: 'success'
 			},
 			{
 				title: 'Carte d’identité recto / verso',
-				state: 'initial'
+				name: 'carte-identite.jpg',
+				state: 'success'
 			},
 			{
 				title: 'Passport',
-				state: 'initial'
+				name: 'passport.jpg',
+				state: 'error'
 			}
 		];
 	}

@@ -9,7 +9,7 @@
 	import { FileItem } from '@cnamts/vue-dot/src/elements/FileList/types';
 
 	@Component
-	export default class FileListUsage extends Vue {
+	export default class FileListOptional extends Vue {
 		fileList: FileItem[] = [
 			{
 				title: 'RIB',
@@ -21,7 +21,8 @@
 			},
 			{
 				title: 'Passport',
-				state: 'initial'
+				state: 'initial',
+				optional: true
 			}
 		];
 	}

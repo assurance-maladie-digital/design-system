@@ -1,36 +1,35 @@
-import { Api } from "~/types";
+import { Api } from '~/types';
 
-import { widthable } from "./shared/mixins/widthable";
-import { customizable } from "./shared/mixins/customizable";
+import { widthable } from './shared/mixins/widthable';
+import { customizable } from './shared/mixins/customizable';
 
 export const api: Api = {
 	FileList: {
 		props: [
 			{
-				name: "files",
-				type: "FileItem[]",
+				name: 'files',
+				type: 'FileItem[]',
 				required: true,
-				description: "La liste des fichiers à afficher.",
+				description: 'La liste des fichiers à afficher.',
 				example: `{
 	id: string;
 	title: string;
-	state?: FileState;
+	state: FileState;
 	name?: string;
 	optional?: boolean;
-}`,
+}`
 			},
 			{
-				name: "hide-last-divider",
-				type: "boolean",
+				name: 'show-view-btn',
+				type: 'boolean',
 				default: false,
-				description:
-					"Masque la dernière ligne de séparation de la liste.",
+				description: 'Affiche le bouton *Afficher le fichier*.'
 			},
 			{
-				name: "downloadable",
-				type: "boolean",
+				name: 'hide-last-divider',
+				type: 'boolean',
 				default: false,
-				description: "Affiche l'option de téléchargement des fichiers.",
+				description: 'Masque la dernière ligne de séparation de la liste.'
 			},
 			...widthable,
 			...customizable(`{
@@ -42,10 +41,29 @@ export const api: Api = {
 	listItemTitle: 'VListItemTitle',
 	listItemSubtitle: 'VListItemSubtitle',
 	listItemAction: 'VListItemAction',
-	downloadFileBtn: 'VBtn',
+	retryBtn: 'VBtn',
+	viewFileBtn: 'VBtn',
+	deleteFileBtn: 'VBtn',
 	icon: 'VIcon',
 	divider: 'VDivider'
-}`),
+}`)
 		],
-	},
+		events: [
+			{
+				name: 'retry',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Réessayer*, retourne la propriété `id` du fichier sélectionné.',
+				value: 'string'
+			},
+			{
+				name: 'delete-file',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Supprimer*, retourne la propriété `id` du fichier sélectionné.',
+				value: 'string'
+			},
+			{
+				name: 'view-file',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Afficher le fichier*, retourne le fichier sélectionné.',
+				value: 'FileItem'
+			}
+		]
+	}
 };

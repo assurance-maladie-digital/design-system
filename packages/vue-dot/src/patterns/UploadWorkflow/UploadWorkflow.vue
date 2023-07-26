@@ -75,9 +75,6 @@
 
 	import { UploadWorkflowCore } from './mixins/uploadWorkflowCore';
 
-	import FileList from '../../elements/FileList';
-	import FilePreview from '../../elements/FilePreview';
-
 	const Props = Vue.extend({
 		props: {
 			sectionTitle: {
@@ -90,10 +87,6 @@
 	const MixinsDeclaration = mixins(Props, customizable(config), UploadWorkflowCore, Widthable);
 
 	@Component<UploadWorkflow>({
-		components: {
-			FileList,
-			FilePreview
-		},
 		model: {
 			prop: 'value',
 			event: 'change'

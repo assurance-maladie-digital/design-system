@@ -1,5 +1,8 @@
 <template>
-	<FileList :files="fileList" />
+	<FileList
+		:files="fileList"
+		show-view-btn
+	/>
 </template>
 
 <script lang="ts">
@@ -9,7 +12,7 @@
 	import { FileItem } from '@cnamts/vue-dot/src/elements/FileList/types';
 
 	@Component
-	export default class FileListUsage extends Vue {
+	export default class FileListShowViewBtn extends Vue {
 		fileList: FileItem[] = [
 			{
 				title: 'RIB',
@@ -21,7 +24,7 @@
 			},
 			{
 				title: 'Passport',
-				state: 'initial'
+				state: 'success'
 			}
 		];
 	}

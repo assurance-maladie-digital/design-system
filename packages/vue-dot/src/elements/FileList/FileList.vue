@@ -138,13 +138,13 @@
 
 	const Props = Vue.extend({
 		props: {
-			showViewBtn: {
-				type: Boolean,
-				default: false
-			},
 			files: {
 				type: Array as PropType<FileItem[]>,
 				required: true
+			},
+			showViewBtn: {
+				type: Boolean,
+				default: false
 			},
 			hideLastDivider: {
 				type: Boolean,
