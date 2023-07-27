@@ -45,7 +45,7 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('renders correctly with navigationItems', () => {
+	it('renders correctly with navigation-items', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				navigationItems: [
@@ -64,7 +64,7 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('renders correctly with innerWidth', () => {
+	it('renders correctly with inner-width', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				innerWidth: '1000'
@@ -74,7 +74,7 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('renders correctly with homeLink', () => {
+	it('renders correctly with home-link', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				homeLink: {
@@ -87,7 +87,7 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('renders correctly with homeHref', () => {
+	it('renders correctly with home-href', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				homeHref: '#'
@@ -97,7 +97,7 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('renders correctly with showNavBarMenuBtn', () => {
+	it('renders correctly with show-nav-bar-menu-btn', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				showNavBarMenuBtn: true
@@ -107,7 +107,7 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('renders correctly with mobileVersion', () => {
+	it('renders correctly with mobile-version', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				mobileVersion: true
@@ -124,9 +124,9 @@ describe('HeaderBar', () => {
 			}
 		});
 
-		expect(
-			wrapper.find('.vd-header-bar-container').attributes('style')
-		).toContain('margin-bottom');
+		const container = wrapper.find('.vd-header-bar-container');
+
+		expect(container.attributes('style')).toContain('margin-top');
 
 		expect(wrapper).toMatchSnapshot();
 	});

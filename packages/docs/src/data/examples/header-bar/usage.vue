@@ -25,7 +25,7 @@
 			height="600px"
 			class="d-flex flex-column align-center"
 		>
-			<p class="mt-3">
+			<p class="mt-4">
 				Exemple de contenu
 			</p>
 		</VSheet>
@@ -103,8 +103,8 @@
 <style lang="scss" scoped>
 	.sticky-header-example {
 		position: sticky !important;
+		margin-top: 0 !important;
 		top: 0;
-		margin-bottom: 0 !important;
 
 		:deep(.vd-header-bar) {
 			position: static !important;
