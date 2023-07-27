@@ -1,5 +1,8 @@
 <template>
-	<div class="vd-header-bar-container w-100">
+	<div
+		:style="mainContentMargin"
+		class="vd-header-bar-container w-100"
+	>
 		<VAppBar
 			v-bind="{
 				...options.appBar,
@@ -10,13 +13,13 @@
 			:height="height"
 			:fixed="sticky"
 			role="banner"
-			class="vd-header-bar transition-ease-in-out"
+			class="vd-header-bar"
 		>
 			<VSheet
 				v-bind="options.contentSheet"
 				:height="contentSheetHeight"
 				:class="spacingClass"
-				class="vd-header-bar-content d-flex justify-center transition-ease-in-out"
+				class="vd-header-bar-content d-flex justify-center"
 			>
 				<VSheet
 					v-bind="options.innerSheet"
@@ -232,11 +235,17 @@
 		}
 
 		get contentSheetHeight(): number {
-			if (this.scrolled || this.miniVersion) {
+			if (this.isMiniVersion) {
 				return this.isMobileVersion ? 52 : 72;
 			}
 
 			return this.isMobileVersion ? 72 : 120;
+		}
+
+		get fullHeight(): number {
+			const height = this.isMobileVersion ? 72 : 120;
+
+			return this.showNavigationBar ? height + 48 : height;
 		}
 
 		get height(): number {
@@ -245,6 +254,10 @@
 			}
 
 			return this.contentSheetHeight;
+		}
+
+		get mainContentMargin(): string {
+			return this.sticky ? `margin-top: ${this.fullHeight}px` : '';
 		}
 
 		get hasNavigationItems(): boolean {
@@ -277,12 +290,12 @@
 			this.drawer = value;
 		}
 
-		onScroll(e: MouseEvent): void {
+		onScroll(event: MouseEvent): void {
 			if (!this.sticky) {
 				return;
 			}
 
-			const target = e.currentTarget as HTMLElement | Window;
+			const target = event.currentTarget as HTMLElement | Window;
 			const header = this.$refs.appBar.$el;
 			const headerHeight = header?.clientHeight || 0;
 			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
@@ -295,6 +308,11 @@
 <style lang="scss" scoped>
 	.vd-header-bar {
 		z-index: 1;
+	}
+
+	.vd-header-bar,
+	.vd-header-bar-content {
+		transition: 0.1s cubic-bezier(0.4, 0, 0.6, 1) !important;
 	}
 
 	.vd-header-bar :deep(.v-toolbar__content) {
