@@ -1,60 +1,78 @@
 <template>
-	<div class="vd-period-field d-flex flex-wrap max-width-none mx-n3">
+	<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
 		<DatePicker
 			v-model="periodValue.from"
-			v-bind="fieldOptionsFrom"
-			:vuetify-options="fieldOptionsFrom"
+			:vuetify-options="datePickerOptions.from"
 			:outlined="outlined"
 			:disabled="disabled"
-			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
+			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
 			@change="dateUpdated"
 		/>
 
 		<DatePicker
 			v-model="periodValue.to"
-			v-bind="fieldOptionsTo"
-			:vuetify-options="fieldOptionsTo || options.fieldOptions.to"
+			:vuetify-options="datePickerOptions.to"
 			:outlined="outlined"
 			:disabled="disabled"
 			:start-date="periodValue.from"
-			text-field-class="vd-period-field-picker flex-grow-1 mx-3"
+			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
 			@change="dateUpdated"
 		/>
 	</div>
 </template>
 
 <script lang="ts">
+	import Vue, { PropType } from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
-	import DatePicker from '@cnamts/vue-dot/src/patterns/DatePicker';
+	import { customizable, Options } from '../../mixins/customizable';
 
 	import { PeriodValue } from './types';
-
-	import { FieldComponent } from './mixins/fieldComponent';
-
-	import { customizable, Options } from '../../mixins/customizable';
 	import { config } from './config';
 
-	const MixinsDeclaration = mixins(
-		FieldComponent,
-		customizable(config)
-	);
+	import deepMerge from 'deepmerge';
+
+	const Props = Vue.extend({
+		props: {
+			value: {
+				type: Object as PropType<PeriodValue>,
+				default: () => ({
+					from: null,
+					to: null
+				})
+			},
+			outlined: {
+				type: Boolean,
+				default: false
+			},
+			disabled: {
+				type: Boolean,
+				default: false
+			}
+		}
+	});
+
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component<PeriodField>({
-		components: {
-			DatePicker
+		model: {
+			prop: 'value',
+			event: 'change'
 		},
 		watch: {
-			'field.value': {
-				handler(value: PeriodValue | null): void {
-					if (!value) {
-						this.periodValue = {
-							from: null,
-							to: null
-						};
-					} else {
+			value: {
+				handler(value: PeriodValue): void {
+					if (value) {
 						this.periodValue = value;
+
+						return;
 					}
+
+					this.periodValue = {
+						from: null,
+						to: null
+					};
+
 				},
 				immediate: true,
 				deep: true
@@ -64,24 +82,11 @@
 	export default class PeriodField extends MixinsDeclaration {
 		periodValue = {} as PeriodValue;
 
-		get fieldOptionsTo(): Options {
-			const datePicker = {
-				min: this.periodValue.from
-			};
-
-			const fieldOptionsTo = this.field.fieldOptions ? this.field.fieldOptions.to as Record<string, unknown> | undefined : this.options.fieldOptions.to;
-
-			return {
-				datePicker,
-				...fieldOptionsTo
-			};
+		get datePickerOptions(): Options {
+			return deepMerge<Options>(config, this.options);
 		}
 
-		get fieldOptionsFrom(): Options {
-			return this.field.fieldOptions ? this.field.fieldOptions.from as unknown as Options : this.options.fieldOptions.from;
-		}
-
-		dateUpdated(): void {
+		async dateUpdated(): Promise<void> {
 			const fromGreaterThanTo = (
 				this.periodValue.from &&
 				this.periodValue.to &&
@@ -92,9 +97,9 @@
 				this.periodValue.to = null;
 			}
 
-			this.$nextTick(() => {
-				this.emitChangeEvent(this.periodValue);
-			});
+			await this.$nextTick();
+
+			this.$emit('change', this.periodValue);
 		}
 	}
 </script>

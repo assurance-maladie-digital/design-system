@@ -5,7 +5,7 @@ Object {
   "date": "DateField",
   "number": "NumberField",
   "password": "PasswordField",
-  "period": "PeriodField",
+  "period": "ChoicePeriodField",
   "range": "RangeField",
   "select": "ChoiceField",
   "text": "TextField",

@@ -74,21 +74,7 @@ export const questionForm: Form = {
 			},
 			questionPeriod: {
 				type: 'period',
-				value: null,
-				fieldOptions: {
-					from: {
-						outlined: true,
-						textField: {
-							label: 'Début'
-						}
-					},
-					to: {
-						outlined: true,
-						textField: {
-							label: 'Fin'
-						}
-					}
-				}
+				value: null
 			}
 		}
 	},
