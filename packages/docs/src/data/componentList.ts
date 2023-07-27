@@ -135,7 +135,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner ou de saisir une date.',
 				href: '/composants/formulaires/date-picker',
 				image: 'components/date-picker.svg',
-				status: ComponentStatusEnum.READY,
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'FileUpload',
@@ -157,6 +157,13 @@ export const componentList: ComponentSection[] = [
 				href: '/composants/formulaires/phone-field',
 				image: 'components/phone-field.svg',
 				status: ComponentStatusEnum.READY
+			},
+			{
+				name: 'PeriodField',
+				description: 'Utilisé pour permettre à l’utilisateur de saisir une période.',
+				href: '/composants/formulaires/period-field',
+				image: 'components/period-field.svg',
+				status: ComponentStatusEnum.NEW
 			},
 			{
 				name: 'UploadWorkflow',

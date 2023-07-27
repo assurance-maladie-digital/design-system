@@ -15,16 +15,6 @@
 			value: {
 				from: null,
 				to: null
-			},
-			fieldOptions: {
-				from: {
-					label: 'Début',
-					outlined: true
-				},
-				to: {
-					label: 'Fin',
-					outlined: true
-				}
 			}
 		};
 	}

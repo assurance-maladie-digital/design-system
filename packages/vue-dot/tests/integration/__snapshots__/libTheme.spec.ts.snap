@@ -35,6 +35,7 @@ Object {
     "NotificationBar",
     "PageContainer",
     "PaginatedTable",
+    "PeriodField",
     "PhoneField",
     "RatingPicker",
     "SkipLink",

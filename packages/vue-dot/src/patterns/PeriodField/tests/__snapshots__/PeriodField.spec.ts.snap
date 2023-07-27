@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PeriodField renders correctly 1`] = `
+<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
+  <datepicker-stub textfieldclass="vd-period-field-picker flex-grow-1 ma-2" vuetifyoptions="[object Object]" startdate="" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD"></datepicker-stub>
+  <datepicker-stub textfieldclass="vd-period-field-picker flex-grow-1 ma-2" vuetifyoptions="[object Object]" warningrules="" dateformat="DD/MM/YYYY" dateformatreturn="YYYY-MM-DD"></datepicker-stub>
+</div>
+`;
