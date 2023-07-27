@@ -5,6 +5,7 @@ import { mountComponent } from '@/tests';
 
 import FileUpload from '../../FileUpload';
 import DialogBox from '../../../elements/DialogBox';
+import FileList from '../../../elements/FileList';
 
 import UploadWorkflow from '../';
 
@@ -26,7 +27,8 @@ describe('UploadWorkflow', () => {
 		wrapper = mountComponent(UploadWorkflow, {
 			stubs: {
 				FileUpload,
-				DialogBox
+				DialogBox,
+				FileList
 			},
 			propsData: {
 				value: files
@@ -40,7 +42,8 @@ describe('UploadWorkflow', () => {
 		wrapper = mountComponent(UploadWorkflow, {
 			stubs: {
 				FileUpload,
-				DialogBox
+				DialogBox,
+				FileList
 			},
 			propsData: {
 				value: [files[0]]

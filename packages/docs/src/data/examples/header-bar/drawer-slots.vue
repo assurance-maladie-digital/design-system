@@ -11,6 +11,8 @@
 		</template>
 
 		<template #navigation-drawer-append>
+			<VSpacer />
+
 			<VBtn
 				color="white"
 				outlined

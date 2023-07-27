@@ -63,22 +63,20 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY,
 			},
 			{
-				name: "ContextualMenu",
-				description:
-					"Utilisé pour pour afficher un menu avec une liste d’ancres pour la navigation.",
-				href: "/composants/navigation/contextual-menu",
-				image: "components/contextual-menu.svg",
-				status: ComponentStatusEnum.NEW,
+				name: 'ContextualMenu',
+				description: 'Utilisé pour pour afficher un menu avec une liste d’ancres pour la navigation.',
+				href: '/composants/navigation/contextual-menu',
+				image: 'components/contextual-menu.svg',
+				status: ComponentStatusEnum.READY
 			},
 			{
-				name: "SkipLink",
-				description:
-					"Utilisé pour permettre à l’utilisateur d’accéder plus facilement au contenu principal.",
-				href: "/composants/navigation/skip-link",
-				image: "components/skip-link.svg",
-				status: ComponentStatusEnum.NEW,
-			},
-		],
+				name: 'SkipLink',
+				description: 'Utilisé pour permettre à l’utilisateur d’accéder plus facilement au contenu principal.',
+				href: '/composants/navigation/skip-link',
+				image: 'components/skip-link.svg',
+				status: ComponentStatusEnum.READY
+			}
+		]
 	},
 	{
 		title: "Boutons",
@@ -92,12 +90,11 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY,
 			},
 			{
-				name: "BackToTopBtn",
-				description:
-					"Utilisé pour afficher un bouton permettant à l’utilisateur de remonter en haut d’une page.",
-				href: "/composants/boutons/back-to-top-btn",
-				image: "components/back-to-top-btn.svg",
-				status: ComponentStatusEnum.NEW,
+				name: 'BackToTopBtn',
+				description: 'Utilisé pour afficher un bouton permettant à l’utilisateur de remonter en haut d’une page.',
+				href: '/composants/boutons/back-to-top-btn',
+				image: 'components/back-to-top-btn.svg',
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: "CopyBtn",
@@ -234,13 +231,20 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY,
 			},
 			{
-				name: "DataListGroup",
-				description: "Utilisé pour afficher une liste de DataList.",
-				href: "/composants/donnees/data-list-group",
-				image: "components/data-list-group.svg",
-				status: ComponentStatusEnum.READY,
+				name: 'DataListGroup',
+				description: 'Utilisé pour afficher une liste de DataList.',
+				href: '/composants/donnees/data-list-group',
+				image: 'components/data-list-group.svg',
+				status: ComponentStatusEnum.READY
 			},
-		],
+			{
+				name: 'FileList',
+				description: 'Utilisé pour afficher une liste de fichiers.',
+				href: '/composants/donnees/file-list',
+				image: 'components/file-list.svg',
+				status: ComponentStatusEnum.NEW
+			}
+		]
 	},
 	{
 		title: "Feedback",
@@ -278,12 +282,12 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY,
 			},
 			{
-				name: "RatingPicker",
-				description: "Permet de recueillir l’avis d’un utilisateur.",
-				href: "/composants/feedback/rating-picker",
-				image: "components/rating-picker.svg",
-				status: ComponentStatusEnum.NEW,
-			},
-		],
-	},
+				name: 'RatingPicker',
+				description: 'Permet de recueillir l’avis d’un utilisateur.',
+				href: '/composants/feedback/rating-picker',
+				image: 'components/rating-picker.svg',
+				status: ComponentStatusEnum.READY
+			}
+		]
+	}
 ];

@@ -24,7 +24,11 @@
 			v-if="$attrs.sticky"
 			height="600px"
 			class="d-flex flex-column align-center"
-		/>
+		>
+			<p class="mt-4">
+				Exemple de contenu
+			</p>
+		</VSheet>
 	</VCard>
 </template>
 
@@ -66,6 +70,7 @@
 		options = {
 			booleans: [
 				'mobileVersion',
+				'miniVersion',
 				'sticky'
 			],
 			selects: {
@@ -98,6 +103,7 @@
 <style lang="scss" scoped>
 	.sticky-header-example {
 		position: sticky !important;
+		margin-top: 0 !important;
 		top: 0;
 
 		:deep(.vd-header-bar) {

@@ -1,4 +1,4 @@
-import { FileState } from './FileList/types';
+import { FileState } from '../../elements/FileList/types';
 
 export interface FileListItem {
 	id: string;
