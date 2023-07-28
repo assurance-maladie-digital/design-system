@@ -31,6 +31,7 @@ const componentMap = {
 	NirField: 'patterns',
 	NotificationBar: 'patterns',
 	PaginatedTable: 'patterns',
+	PeriodField: 'patterns',
 	PhoneField: 'patterns',
 	RatingPicker: 'patterns',
 	SubHeader: 'patterns',

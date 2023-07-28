@@ -50,7 +50,7 @@ function extendPackage(api, options, pm) {
 			'custom-event-polyfill': '^1.0.7',
 			'dayjs': '^1.11.2',
 			'languages': '^0.1.3',
-			'vue': '^2.6.14',
+			'vue': '^2.7.14',
 			'vue-input-facade': '^2.0.1',
 			'vue-meta': '^2.4.0',
 			'vue-router': '^3.5.3',
@@ -92,7 +92,7 @@ function extendPackage(api, options, pm) {
 			'typescript': '~4.6.4',
 			'vue-class-component': '^7.2.6',
 			'vue-cli-plugin-vuetify': '^2.4.8',
-			'vue-template-compiler': '^2.6.14',
+			'vue-template-compiler': '^2.7.14',
 			'vuetify-loader': '^1.7.3',
 			'webfontloader': '^1.6.28',
 			'webpack': '^5.72.1'

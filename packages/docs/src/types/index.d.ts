@@ -33,7 +33,7 @@ interface ApiHeaderList {
 	events: ItemEvent[];
 	functions: ItemFunction[];
 	modifiers: ItemModifier[];
-	typeArguments: ItemTypeArgument[]
+	typeArguments: ItemTypeArgument[];
 	arguments: ItemArgument[];
 	errorMessages: ErrorMessages[];
 	returnValue: ReturnValue[];
