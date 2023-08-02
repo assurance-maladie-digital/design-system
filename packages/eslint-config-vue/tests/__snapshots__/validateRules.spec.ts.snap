@@ -33,6 +33,7 @@ Array [
     },
     "line": 4,
     "message": "Expected a space before '/>', but not found.",
+    "messageId": "missing",
     "nodeType": "VStartTag",
     "ruleId": "vue/html-closing-bracket-spacing",
     "severity": 1,
