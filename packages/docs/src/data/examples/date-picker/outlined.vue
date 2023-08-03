@@ -1,3 +1,0 @@
-<template>
-	<DatePicker outlined />
-</template>

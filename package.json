@@ -66,8 +66,5 @@
 	"engines": {
 		"node": "^14 || ^16",
 		"yarn": "^1.12"
-	},
-	"gitHooks": {
-		"pre-commit": "lerna run pre-commit --stream"
 	}
 }
