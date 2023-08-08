@@ -1,5 +1,17 @@
 {
-	"$schema": "node_modules/lerna/schemas/lerna-schema.json",
+	"packages": [
+		"packages/*"
+	],
+	"npmClient": "yarn",
 	"useWorkspaces": true,
-	"version": "0.0.0"
+	"command": {
+		"publish": {
+			"allowBranch": [
+				"main",
+				"dev"
+			],
+			"message": "🔖 %s"
+		}
+	},
+	"version": "3.0.0"
 }

@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"strict": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"preserveSymlinks": true,
+		"types": [
+			"node",
+			"fs-extra"
+		],
+		"lib": [
+			"esnext",
+			"dom"
+		]
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
