@@ -2554,11 +2554,12 @@
     cpy "^9.0.0"
     path-exists "^5.0.0"
 
-"@netlify/functions@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-1.6.0.tgz#c373423e6fef0e6f7422ac0345e8bbf2cb692366"
-  integrity sha512-6G92AlcpFrQG72XU8YH8pg94eDnq7+Q0YJhb8x4qNpdGsvuzvrfHWBmqFGp/Yshmv4wex9lpsTRZOocdrA2erQ==
+"@netlify/functions@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-2.0.1.tgz#97122db5d21cb5a4dfb267485ea242d77d0433e9"
+  integrity sha512-YrgCmz078II0LKknXKj5NbtGBuzek1JC+ZYi4xHcLhZD+HIGlerlmkhnVydWVPoA7fdd2IeSUd9CFFL7bY+y5Q==
   dependencies:
+    "@netlify/serverless-functions-api" "1.7.1"
     is-promise "^4.0.0"
 
 "@netlify/git-utils@^5.1.1":
@@ -2650,6 +2651,11 @@
     "@netlify/local-functions-proxy-win32-ia32" "1.1.1"
     "@netlify/local-functions-proxy-win32-x64" "1.1.1"
 
+"@netlify/node-cookies@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@netlify/node-cookies/-/node-cookies-0.1.0.tgz#dda912ba618527695cf519fafa221c5e6777c612"
+  integrity sha512-OAs1xG+FfLX0LoRASpqzVntVV/RpYkgpI0VrUnw2u0Q1qiZUzcPffxRK8HF3gc4GjuhG5ahOEMJ9bswBiZPq0g==
+
 "@netlify/open-api@^2.19.1":
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-2.20.0.tgz#a9bacaa5a02fb1f8e2efa657ed7d900139f981dc"
@@ -2671,6 +2677,14 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@netlify/serverless-functions-api/-/serverless-functions-api-1.5.2.tgz#cb78ad64c1474b70c14c14fcc06ad832c1cd86f8"
   integrity sha512-E9ZqnuWwGftXgO0JhGOl6h05bpnrH5EswQOuHIdTXBmhi4LedXjTNZ6xoSMgnhsE+x13WWq2P0yhaAl8Ly9lKw==
+
+"@netlify/serverless-functions-api@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@netlify/serverless-functions-api/-/serverless-functions-api-1.7.1.tgz#325a972f4d2b0035c87c8c372ded3554f4b3cfa2"
+  integrity sha512-vF9g62n+BFfBXtWtmVBJ5debyMERVDtuLlMlKDPYBp6QjEuJnaggxczLlRofZ2mtsBXs7mAlna6gIcBswFLJJQ==
+  dependencies:
+    "@netlify/node-cookies" "^0.1.0"
+    urlpattern-polyfill "8.0.2"
 
 "@netlify/serverless-functions-api@^1.5.2", "@netlify/serverless-functions-api@^1.6.0":
   version "1.6.0"
