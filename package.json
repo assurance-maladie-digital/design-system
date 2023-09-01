@@ -64,7 +64,7 @@
 		"vue-template-compiler": "2.7.14"
 	},
 	"engines": {
-		"node": "^14 || ^16",
+		"node": "^16 || ^18",
 		"yarn": "^1.12"
 	}
 }
