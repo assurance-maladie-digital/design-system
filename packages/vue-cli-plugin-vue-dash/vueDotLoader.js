@@ -8,6 +8,7 @@ const componentMap = {
 	DialogBox: 'elements',
 	DownloadBtn: 'elements',
 	ExternalLinks: 'elements',
+	FileList: 'elements',
 	FilePreview: 'elements',
 	FranceConnectBtn: 'elements',
 	HeaderLoading: 'elements',
