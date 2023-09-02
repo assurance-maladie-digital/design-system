@@ -97,6 +97,10 @@
 				this.periodValue.to = null;
 			}
 
+			if (!this.periodValue.from || !this.periodValue.to) {
+				return;
+			}
+
 			await this.$nextTick();
 
 			this.$emit('change', this.periodValue);

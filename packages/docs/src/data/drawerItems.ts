@@ -183,6 +183,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/phone-field'
 					},
 					{
+						title: 'SearchListField',
+						to: '/composants/formulaires/search-list-field'
+					},
+					{
 						title: 'UploadWorkflow',
 						to: '/composants/formulaires/upload-workflow'
 					}
@@ -196,18 +200,35 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/tableaux/paginated-table'
 					},
 					{
-						title: 'FilterModule',
-						to: '/composants/tableaux/filter-module'
-					},
-					{
 						title: 'TableToolbar',
 						to: '/composants/tableaux/table-toolbar'
 					}
 				]
 			},
 			{
+				title: 'Filtres',
+				items: [
+					{
+						title: 'FiltersInline',
+						to: '/composants/filtres/filters-inline'
+					},
+					{
+						title: 'FiltersSideBar',
+						to: '/composants/filtres/filters-side-bar'
+					},
+					{
+						title: 'FilterModule',
+						to: '/composants/filtres/filter-module'
+					}
+				]
+			},
+			{
 				title: 'Données',
 				items: [
+					{
+						title: 'ChipList',
+						to: '/composants/donnees/chip-list'
+					},
 					{
 						title: 'DataList',
 						to: '/composants/donnees/data-list'
