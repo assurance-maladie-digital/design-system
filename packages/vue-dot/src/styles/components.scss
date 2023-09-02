@@ -56,4 +56,9 @@
 			}
 		}
 	}
+
+	// Move fixed HeaderBar down when SkipLink is focused
+	.vd-skip-link-container:focus-within + .vd-header-bar-container .v-app-bar--fixed {
+		top: 28px;
+	}
 }

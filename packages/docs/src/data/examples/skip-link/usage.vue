@@ -3,7 +3,9 @@
 		min-height="80px"
 		class="d-flex flex-wrap align-center justify-center"
 	>
-		<p>Pour afficher le composant, cliquez à l’intérieur et appuyez sur <kbd>Tab</kbd>.</p>
+		<p class="mb-0">
+			Pour afficher le composant, cliquez à l’intérieur et appuyez sur <kbd>Tab</kbd>.
+		</p>
 
 		<SkipLink
 			v-bind="$attrs"

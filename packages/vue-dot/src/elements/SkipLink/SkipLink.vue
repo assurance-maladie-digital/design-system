@@ -7,7 +7,7 @@
 
 		<a
 			:href="target"
-			class="vd-skip-link d-block d-sr-only-focusable am-blue-lighten-97 px-2"
+			class="vd-skip-link d-block d-sr-only-focusable px-2"
 		>
 			<slot>{{ label }}</slot>
 		</a>
@@ -56,10 +56,16 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '@cnamts/design-tokens/dist/tokens';
+
 	.vd-skip-link {
 		z-index: 150;
-		transition: none;
 		position: fixed;
+		top: 0;
+		transition: none;
 		width: 100%;
+		background: #fff;
+		outline: none; // Disable outline to use border
+		border: 2px solid $vd-am-blue-darken-60;
 	}
 </style>
