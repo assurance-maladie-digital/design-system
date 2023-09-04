@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
-import { resolve } from 'pathe'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import dts from "vite-plugin-dts";
+import { resolve } from "pathe";
+import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
 	resolve: {
@@ -13,7 +14,17 @@ export default defineConfig({
 		vue(),
 		dts({
 			insertTypesEntry: true,
-		})
+		}),
+		Components({
+			dts: true,
+			deep: true,
+			directives: true,
+			globs: [
+				"src/elements/**/*.{vue, ts}",
+				"src/patterns/**/*.{vue, ts}",
+				"src/templates/**/*.{vue, ts}",
+			],
+		}),
 	],
 	build: {
 		lib: {

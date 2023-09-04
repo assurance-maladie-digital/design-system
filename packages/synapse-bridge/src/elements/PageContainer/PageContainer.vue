@@ -16,16 +16,16 @@ const props = defineProps({
 	size: {
 		type: String,
 		default: SizeEnum.X_LARGE,
-		validator: (value: string) => propValidator('size', SIZE_ENUM_VALUES, value)
+		validator: (value: string) => propValidator('size', SIZE_ENUM_VALUES, value),
 	},
 	spacing: {
 		type: String,
-		default: undefined
+		default: undefined,
 	},
 	color: {
 		type: String,
-		default: 'transparent'
-	}
+		default: 'transparent',
+	},
 });
 
 const { breakpoint } = useDisplay();
