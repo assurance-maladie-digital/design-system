@@ -1,9 +1,9 @@
 {
-    "name": "vite-vue-lib-template",
-    "version": "0.0.0-development",
+    "name": "synapse-bridge",
+    "version": "1.0.0",
     "private": false,
-    "description": "Vite Vue lib template.",
-    "author": "Ehsan Shahvirdi",
+    "description": "Bridge pour passer le Design System en vue 3",
+    "author": "CNAM",
     "license": "MIT",
     "files": [
         "dist"
@@ -14,15 +14,15 @@
         "template"
     ],
     "type": "module",
-    "main": "./dist/vite-vue-lib-template.umd.cjs",
-    "module": "./dist/vite-vue-lib-template.js",
+    "main": "./dist/synapse-bridge.umd.cjs",
+    "module": "./dist/synapse-bridge.js",
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/vite-vue-lib-template.js",
-            "require": "./dist/vite-vue-lib-template.umd.cjs"
+            "import": "./dist/synapse-bridge.js",
+            "require": "./dist/synapse-bridge.umd.cjs"
         },
-        "./*": "./dist/vite-vue-lib-template.js"
+        "./*": "./dist/synapse-bridge.js"
     },
     "scripts": {
         "dev": "vite",
@@ -30,7 +30,6 @@
         "preview": "vite preview",
         "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
         "format": "prettier .  --write --ignore-path .gitignore",
-        "prepare": "husky install",
         "commit": "git-cz"
     },
     "dependencies": {
@@ -46,16 +45,16 @@
         "cz-conventional-changelog": "3.3.0",
         "eslint": "^8.22.0",
         "eslint-plugin-vue": "^9.3.0",
-        "husky": "^8.0.0",
         "lint-staged": "^13.1.0",
         "npm-run-all": "^4.1.5",
         "pathe": "^1.1.0",
         "prettier": "^2.7.1",
+        "semantic-release": "^20.1.0",
         "typescript": "~4.7.4",
         "vite": "^4.0.0",
         "vite-plugin-dts": "^1.7.1",
         "vue-tsc": "^1.0.12",
-        "semantic-release": "^20.1.0"
+        "vuetify": "^3.3.14"
     },
     "lint-staged": {
         "*.{js,ts,vue}": "eslint --fix",

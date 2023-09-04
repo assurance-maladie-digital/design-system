@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`registerDirectives should register the directives 1`] = `
+Array [
+  "TestA",
+  "TestB",
+]
+`;

@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import Button from './components/Button.vue'
-</script>
-
 <template>
-    <Button text="Hello World!" />
+	<PageContainer> Contenu de la page. </PageContainer>
 </template>
 
-<style scoped></style>
+<script setup lang="ts">
+import PageContainer from "./elements/PageContainer/PageContainer.vue";
+</script>

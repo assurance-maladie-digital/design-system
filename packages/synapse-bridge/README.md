@@ -1,4 +1,4 @@
-# vite-vue-lib-template
+# synapse-bridge
 
 > Fully automated.
 
@@ -19,7 +19,3 @@
 5.  `git add .`
 6.  `yarn commit`
 7.  `git push`
-
-## Real Example:
-
-[vue-tradingviewWidgets](https://github.com/ehsan-shv/vue-tradingviewWidgets)
