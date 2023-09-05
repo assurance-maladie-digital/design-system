@@ -1,6 +1,6 @@
 ---
 title: scrollBehavior
-description: Le helper `scrollBehavior` permet de définir le comportement du scroll lors de la navigation avec [Vue Router](https://v3.router.vuejs.org/).
+description: Le helper `scrollBehavior` permet de définir le comportement du scroll lors de la navigation avec [Vue Router](https://v3.router.vuejs.org/fr/).
 ---
 
 <doc-tabs>
