@@ -20,6 +20,7 @@ export const api: Api = {
 	to?: RawLocation;
 	href?: string;
 	ariaLabel?: string;
+	openInNewTab?: boolean;
 }[]`
 			},
 			{

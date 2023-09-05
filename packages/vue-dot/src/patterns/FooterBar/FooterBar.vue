@@ -70,6 +70,8 @@
 				:href="item.href"
 				:to="item.to"
 				:aria-label="item.ariaLabel"
+				:target="item.openInNewTab ? '_blank' : undefined"
+				:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
 				class="text--primary my-3 mx-4"
 			>
 				{{ item.text }}
