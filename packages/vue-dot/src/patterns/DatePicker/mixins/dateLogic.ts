@@ -95,10 +95,8 @@ export class DateLogic extends MixinsDeclaration {
 	errorMessages: string[] | null = null;
 
 	mounted() {
-		// Watch VTextField 'hasError' computed value
-		// because 'update:error' event isn't reliable
-		// (it's not fired at initial state and 'validateOnBlur'
-		// can cause issues as well)
+		// Watch VTextField 'hasError' computed value since 'update:error' event isn't reliable
+		// (it's not fired at initial state and 'validateOnBlur' can cause issues as well)
 		this.$watch(
 			() => this.$refs.input.hasError,
 			(error: boolean) => {

@@ -37,6 +37,7 @@ Array [
   "NotificationBar",
   "PageContainer",
   "PaginatedTable",
+  "PasswordField",
   "PeriodField",
   "PhoneField",
   "RatingPicker",

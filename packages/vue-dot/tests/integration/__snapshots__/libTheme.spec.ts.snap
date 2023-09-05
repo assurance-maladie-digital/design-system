@@ -38,6 +38,7 @@ Object {
     "NotificationBar",
     "PageContainer",
     "PaginatedTable",
+    "PasswordField",
     "PeriodField",
     "PhoneField",
     "RatingPicker",

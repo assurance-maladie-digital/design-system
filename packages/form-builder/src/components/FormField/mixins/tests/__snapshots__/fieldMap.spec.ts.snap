@@ -4,7 +4,7 @@ exports[`FieldMap contains the map of fields and their components 1`] = `
 Object {
   "date": "DateField",
   "number": "NumberField",
-  "password": "PasswordField",
+  "password": "FormPasswordField",
   "period": "ChoicePeriodField",
   "range": "RangeField",
   "select": "ChoiceField",

@@ -13,6 +13,7 @@ import LangBtn from './LangBtn';
 import NirField from './NirField';
 import NotificationBar from './NotificationBar';
 import PaginatedTable from './PaginatedTable';
+import PasswordField from './PasswordField';
 import PeriodField from './PeriodField';
 import PhoneField from './PhoneField';
 import RatingPicker from './RatingPicker';
@@ -37,6 +38,7 @@ export const patterns = {
 	NirField,
 	NotificationBar,
 	PaginatedTable,
+	PasswordField,
 	PeriodField,
 	PhoneField,
 	RatingPicker,

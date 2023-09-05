@@ -8,7 +8,7 @@ export interface IFieldMap {
 // We import them all because the form can use any of them
 import DateField from '../fields/DateField.vue';
 import NumberField from '../fields/NumberField.vue';
-import PasswordField from '../fields/PasswordField.vue';
+import FormPasswordField from '../fields/FormPasswordField.vue';
 import ChoicePeriodField from '../fields/ChoicePeriodField.vue';
 import ChoiceField from '../fields/ChoiceField.vue';
 import RangeField from '../fields/RangeField.vue';
@@ -19,7 +19,7 @@ import TextField from '../fields/TextField.vue';
 	components: {
 		DateField,
 		NumberField,
-		PasswordField,
+		FormPasswordField,
 		ChoicePeriodField,
 		ChoiceField,
 		RangeField,
@@ -31,7 +31,7 @@ export class FieldMap extends Vue {
 	fieldMap: IFieldMap = {
 		date: 'DateField',
 		number: 'NumberField',
-		password: 'PasswordField',
+		password: 'FormPasswordField',
 		period: 'ChoicePeriodField',
 		select: 'ChoiceField',
 		range: 'RangeField',
