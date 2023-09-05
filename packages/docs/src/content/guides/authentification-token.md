@@ -50,7 +50,7 @@ Vous devez définir le module `authentication` du store, pour cela vous pouvez c
 
 </doc-alert>
 
-Cette fonction prend en paramètre les propriétés `to` et `from` de [Vue Router](https://router.vuejs.org/fr/guide/advanced/navigation-guards.html) ainsi que la fonction `next`, qui permet de naviguer vers la prochaine route.
+Cette fonction prend en paramètre les propriétés `to` et `from` de [Vue Router](https://v3.router.vuejs.org/fr/guide/advanced/navigation-guards.html) ainsi que la fonction `next`, qui permet de naviguer vers la prochaine route.
 
 Elle sera appelée depuis le fichier `src/router/navigationRedirectGuard.ts` lorsque l’on voudra connecter l’utilisateur :
 
