@@ -59,28 +59,30 @@
 				</VSheet>
 			</VSheet>
 
-			<template v-if="showNavigationBar && !scrolled || showNavigationBar && (scrolled && showStickyNavBar)">
-				<HeaderNavigationBar
-					:tab.sync="tab"
-					:drawer.sync="drawer"
-					:theme="theme"
-					:mobile-version="isMobileVersion"
-					:items="navigationItems"
-					:inner-width="innerWidth"
-					:show-menu-btn="showNavBarMenuBtn"
-					:vuetify-options="options.navigationBar"
-				>
-					<template #navigation-bar-prepend>
-						<slot name="navigation-bar-prepend" />
-					</template>
+			<Transition>
+				<template v-if="showNavigationBar && isStickyNavBar">
+					<HeaderNavigationBar
+						:tab.sync="tab"
+						:drawer.sync="drawer"
+						:theme="theme"
+						:mobile-version="isMobileVersion"
+						:items="navigationItems"
+						:inner-width="innerWidth"
+						:show-menu-btn="showNavBarMenuBtn"
+						:vuetify-options="options.navigationBar"
+					>
+						<template #navigation-bar-prepend>
+							<slot name="navigation-bar-prepend" />
+						</template>
 
-					<slot name="navigation-bar-content" />
+						<slot name="navigation-bar-content" />
 
-					<template #navigation-bar-secondary-content>
-						<slot name="navigation-bar-secondary-content" />
-					</template>
-				</HeaderNavigationBar>
-			</template>
+						<template #navigation-bar-secondary-content>
+							<slot name="navigation-bar-secondary-content" />
+						</template>
+					</HeaderNavigationBar>
+				</template>
+			</Transition>
 		</VAppBar>
 
 		<slot
@@ -286,6 +288,10 @@
 			return this.hasNavigationItems;
 		}
 
+		get isStickyNavBar(): boolean {
+			return !this.scrolled || (this.scrolled && this.showStickyNavBar);
+		}
+
 		get showSpacer(): boolean {
 			return Boolean(this.$slots.default) || this.isMobileVersion;
 		}
@@ -332,5 +338,15 @@
 		.v-icon {
 			margin: 0 !important;
 		}
+	}
+
+	.v-enter-active,
+	.v-leave-active {
+		transition: opacity 0.2s ease;
+	}
+
+	.v-enter-from,
+	.v-leave-to {
+		opacity: 0;
 	}
 </style>
