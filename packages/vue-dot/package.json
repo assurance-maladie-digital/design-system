@@ -1,6 +1,6 @@
 {
   "name": "@cnamts/vue-dot",
-  "version": "2.12.0",
+  "version": "2.13.0",
   "description": "Implementation of our Design System for the French Health Insurance",
   "keywords": [
     "cnam",
@@ -55,7 +55,7 @@
     "vuex": "^3.5.0"
   },
   "devDependencies": {
-    "@cnamts/eslint-config-vue": "^2.12.0",
+    "@cnamts/eslint-config-vue": "^2.13.0",
     "@cnamts/shared": "^2.12.0",
     "@vue/cli-plugin-babel": "4.5.19",
     "@vue/cli-plugin-eslint": "4.5.19",
