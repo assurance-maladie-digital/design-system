@@ -152,6 +152,13 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY
 			},
 			{
+				name: 'PasswordField',
+				description: 'Utilisé pour permettre à l’utilisateur de saisir un mot de passe.',
+				href: '/composants/formulaires/password-field',
+				image: 'components/password-field.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
 				name: 'PhoneField',
 				description: 'Utilisé pour permettre à l’utilisateur de saisir un numéro de téléphone.',
 				href: '/composants/formulaires/phone-field',

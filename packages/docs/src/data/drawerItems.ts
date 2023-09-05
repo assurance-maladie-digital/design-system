@@ -179,6 +179,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/nir-field'
 					},
 					{
+						title: 'PasswordField',
+						to: '/composants/formulaires/password-field'
+					},
+					{
 						title: 'PhoneField',
 						to: '/composants/formulaires/phone-field'
 					},
