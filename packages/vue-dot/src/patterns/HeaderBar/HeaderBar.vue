@@ -59,7 +59,7 @@
 				</VSheet>
 			</VSheet>
 
-			<template v-if="showNavigationBar">
+			<template v-if="showNavigationBar && !scrolled || showNavigationBar && (scrolled && showStickyNavBar)">
 				<HeaderNavigationBar
 					:tab.sync="tab"
 					:drawer.sync="drawer"
@@ -176,6 +176,10 @@
 				type: Boolean,
 				default: false
 			},
+			showStickyNavBar: {
+				type: Boolean,
+				default: false
+			},
 			target: {
 				type: String,
 				default: undefined
@@ -249,7 +253,7 @@
 		}
 
 		get height(): number {
-			if (this.showNavigationBar) {
+			if (this.showNavigationBar && !this.scrolled || this.showNavigationBar && this.showStickyNavBar) {
 				return this.contentSheetHeight + 48;
 			}
 

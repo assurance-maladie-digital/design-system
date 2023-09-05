@@ -71,7 +71,8 @@
 			booleans: [
 				'mobileVersion',
 				'miniVersion',
-				'sticky'
+				'sticky',
+				'showStickyNavBar'
 			],
 			selects: {
 				theme: [
