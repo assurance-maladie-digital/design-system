@@ -1,3 +1,46 @@
+## v2.13.0
+
+**Version publiée le 05/09/2023.**
+
+Cette version comporte l'ajout des composants `FiltersInline`, `FiltersSidebar`, `SearchListField` et `ChipList`, des correctifs sur Vue Dot et Vue Dash ainsi que la complétion de la documentation.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **FiltersInline/FiltersSidebar/SearchListField/ChipList:** Ajout de nouveaux composants ([#3010](https://github.com/assurance-maladie-digital/design-system/pull/3010))
+
+- 🐛 **Corrections de bugs**
+  - **SkipLink:** Correction du fonctionnement avec le composant `HeaderBar` ([#3033](https://github.com/assurance-maladie-digital/design-system/pull/3033))
+  - **LogoBrandSection:** Correction du logo du thème *Compte Ameli* ([#3036](https://github.com/assurance-maladie-digital/design-system/pull/3036))
+
+### Vue Dash
+
+- 🐛 **Corrections de bugs**
+  - **template:** Correction de la déclaration des polices ([#3031](https://github.com/assurance-maladie-digital/design-system/pull/3031))
+  - **template:** Ajout des composants manquants pour le tree-shaking de VueDot ([#3032](https://github.com/assurance-maladie-digital/design-system/pull/3032))
+
+- 📝 **Documentation**
+  - **guide:** Ajout d'un guide sur la configuration d'un sous-chemin personnalisé ([#3040](https://github.com/assurance-maladie-digital/design-system/pull/3040))
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3041](https://github.com/assurance-maladie-digital/design-system/pull/3041))
+
+- ⬆️ **Dépendances**
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.3.3` ([#3004](https://github.com/assurance-maladie-digital/design-system/pull/3004))
+  - **vuetify:** Mise à jour vers la `v2.7.1` ([#3007](https://github.com/assurance-maladie-digital/design-system/pull/3007))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.17.0` ([#3008](https://github.com/assurance-maladie-digital/design-system/pull/3008))
+  - **netlify-cli:** Mise à jour vers la `v15.11.0` ([#3003](https://github.com/assurance-maladie-digital/design-system/pull/3003))
+  - **eslint-plugin-vuejs-accessibility:** Mise à jour vers la `v2.2.0` ([#3005](https://github.com/assurance-maladie-digital/design-system/pull/3005))
+  - **vue-input-facade:** Mise à jour vers la `v2.1.3` ([#3015](https://github.com/assurance-maladie-digital/design-system/pull/3015))
+  - **@docsearch/js:** Mise à jour vers la `v3.5.2` ([#3013](https://github.com/assurance-maladie-digital/design-system/pull/3013))
+  - **lint-staged:** Mise à jour vers la `v14` ([#3012](https://github.com/assurance-maladie-digital/design-system/pull/3012))
+  - **core-js:** Mise à jour vers la `v3.32.1` ([#3016](https://github.com/assurance-maladie-digital/design-system/pull/3016))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v46.5.1` ([#3023](https://github.com/assurance-maladie-digital/design-system/pull/3023))
+  - **@types/node:** Mise à jour vers la `v16.18.48` ([#3034](https://github.com/assurance-maladie-digital/design-system/pull/3034))
+  - **@babel/core:** Mise à jour vers la `v7.22.15` ([#3035](https://github.com/assurance-maladie-digital/design-system/pull/3035))
+
 ## v2.12.0
 
 **Version publiée le 28/07/2023.**

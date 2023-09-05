@@ -166,6 +166,13 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.NEW
 			},
 			{
+				name: 'SearchListField',
+				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une valeur dans une liste.',
+				href: '/composants/formulaires/search-list-field',
+				image: 'placeholder.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
 				name: 'UploadWorkflow',
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une liste de fichiers.',
 				href: '/composants/formulaires/upload-workflow',
@@ -185,13 +192,6 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY
 			},
 			{
-				name: 'FilterModule',
-				description: 'Utilisé pour permettre à l’utilisateur de sélectionner des filtres.',
-				href: '/composants/tableaux/filter-module',
-				image: 'components/filter-module.svg',
-				status: ComponentStatusEnum.READY
-			},
-			{
 				name: 'TableToolbar',
 				description: 'Utilisé pour afficher une barre au-dessus des tableaux.',
 				href: '/composants/tableaux/table-toolbar',
@@ -201,8 +201,41 @@ export const componentList: ComponentSection[] = [
 		]
 	},
 	{
+		title: 'Filtres',
+		components: [
+			{
+				name: 'FiltersInline',
+				description: 'Utilisé pour afficher des filtres directement dans la page.',
+				href: '/composants/filtres/filters-inline',
+				image: 'components/filters-inline.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'FiltersSidebar',
+				description: 'Utilisé pour afficher des filtres dans un panel dédié.',
+				href: '/composants/filtres/filters-side-bar',
+				image: 'components/filters-sidebar.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'FilterModule',
+				description: 'Utilisé pour permettre à l’utilisateur de sélectionner des filtres.',
+				href: '/composants/filtres/filter-module',
+				image: 'components/filter-module.svg',
+				status: ComponentStatusEnum.DEPRECATED
+			}
+		]
+	},
+	{
 		title: 'Données',
 		components: [
+			{
+				name: 'ChipList',
+				description: 'Utilisé pour afficher une liste de puces.',
+				href: '/composants/donnees/chip-list',
+				image: 'placeholder.svg',
+				status: ComponentStatusEnum.NEW
+			},
 			{
 				name: 'DataList',
 				description: 'Utilisé pour afficher une liste de données.',

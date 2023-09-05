@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterSideBar renders correctly 1`] = `
+<div class="vd-filters-side-bar">
+  <vbtn-stub color="primary" rounded="true" tag="button" activeclass="" text="true" type="button" class="px-2">
+    <!---->
+
+    Filtres
+
+    <vicon-stub small="" class="ml-2">
+      M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z
+    </vicon-stub>
+  </vbtn-stub>
+  <vnavigationdrawer-stub fixed="true" mobilebreakpoint="1264" hideoverlay="true" height="100%" minivariantwidth="56" right="true" src="" tag="aside" temporary="true" width="395px" class="elevation-6">
+    <vexpansionpanels-stub valuecomparator="[Function]" activeclass="v-item--active" tag="div" accordion="true" flat="true">
+      <vexpansionpanel-stub class="vd-filter-name">
+        <vexpansionpanelheader-stub expandicon="$expand" class="text-subtitle-2">
+
+
+          <!---->
+        </vexpansionpanelheader-stub>
+        <vexpansionpanelcontent-stub>
+          <chiplist-stub items="" overflowlimit="4" class="mb-5"></chiplist-stub>
+        </vexpansionpanelcontent-stub>
+      </vexpansionpanel-stub>
+    </vexpansionpanels-stub>
+    <vspacer-stub tag="div"></vspacer-stub>
+    <div class="px-4 pb-4 pt-10">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" block="true" type="button" class="mb-4">
+        Fermer
+      </vbtn-stub>
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" block="true" type="button" class="mb-4">
+        Réinitialiser
+      </vbtn-stub>
+      <vbtn-stub color="primary" tag="button" activeclass="" large="true" block="true" type="button">
+        Appliquer
+      </vbtn-stub>
+    </div>
+  </vnavigationdrawer-stub>
+</div>
+`;
+
+exports[`FilterSideBar renders correctly with an active filter 1`] = `
+<div class="vd-filters-side-bar">
+  <vbtn-stub color="primary" rounded="true" tag="button" activeclass="" text="true" type="button" class="px-2">
+    <vbadge-stub color="secondary" value="true" transition="scale-rotate-transition" content="1" label="1 filtre" inline="true" class="ml-n1 mr-1"></vbadge-stub>
+
+    Filtres
+
+    <vicon-stub small="" class="ml-2">
+      M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z
+    </vicon-stub>
+  </vbtn-stub>
+  <vnavigationdrawer-stub fixed="true" mobilebreakpoint="1264" hideoverlay="true" height="100%" minivariantwidth="56" right="true" src="" tag="aside" temporary="true" width="395px" class="elevation-6">
+    <vexpansionpanels-stub valuecomparator="[Function]" activeclass="v-item--active" tag="div" accordion="true" flat="true">
+      <vexpansionpanel-stub class="vd-filter-name">
+        <vexpansionpanelheader-stub expandicon="$expand" class="text-subtitle-2">
+
+
+          <span class="ml-1">
+						(1)
+					</span></vexpansionpanelheader-stub>
+        <vexpansionpanelcontent-stub>
+          <chiplist-stub items="[object Object]" overflowlimit="4" class="mb-5"></chiplist-stub>
+        </vexpansionpanelcontent-stub>
+      </vexpansionpanel-stub>
+    </vexpansionpanels-stub>
+    <vspacer-stub tag="div"></vspacer-stub>
+    <div class="px-4 pb-4 pt-10">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" block="true" type="button" class="mb-4">
+        Fermer
+      </vbtn-stub>
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" block="true" type="button" class="mb-4">
+        Réinitialiser
+      </vbtn-stub>
+      <vbtn-stub color="primary" tag="button" activeclass="" large="true" block="true" type="button">
+        Appliquer
+      </vbtn-stub>
+    </div>
+  </vnavigationdrawer-stub>
+</div>
+`;
+
+exports[`FilterSideBar renders correctly with multiple active filters 1`] = `
+<div class="vd-filters-side-bar">
+  <vbtn-stub color="primary" rounded="true" tag="button" activeclass="" text="true" type="button" class="px-2">
+    <vbadge-stub color="secondary" value="true" transition="scale-rotate-transition" content="2" label="2 filtres" inline="true" class="ml-n1 mr-1"></vbadge-stub>
+
+    Filtres
+
+    <vicon-stub small="" class="ml-2">
+      M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z
+    </vicon-stub>
+  </vbtn-stub>
+  <vnavigationdrawer-stub fixed="true" mobilebreakpoint="1264" hideoverlay="true" height="100%" minivariantwidth="56" right="true" src="" tag="aside" temporary="true" width="395px" class="elevation-6">
+    <vexpansionpanels-stub valuecomparator="[Function]" activeclass="v-item--active" tag="div" accordion="true" flat="true">
+      <vexpansionpanel-stub class="vd-filter-name">
+        <vexpansionpanelheader-stub expandicon="$expand" class="text-subtitle-2">
+
+
+          <span class="ml-1">
+						(1)
+					</span></vexpansionpanelheader-stub>
+        <vexpansionpanelcontent-stub>
+          <chiplist-stub items="[object Object]" overflowlimit="4" class="mb-5"></chiplist-stub>
+        </vexpansionpanelcontent-stub>
+      </vexpansionpanel-stub>
+      <vexpansionpanel-stub class="vd-filter-age">
+        <vexpansionpanelheader-stub expandicon="$expand" class="text-subtitle-2">
+
+
+          <span class="ml-1">
+						(1)
+					</span></vexpansionpanelheader-stub>
+        <vexpansionpanelcontent-stub>
+          <chiplist-stub items="[object Object]" overflowlimit="4" class="mb-5"></chiplist-stub>
+        </vexpansionpanelcontent-stub>
+      </vexpansionpanel-stub>
+    </vexpansionpanels-stub>
+    <vspacer-stub tag="div"></vspacer-stub>
+    <div class="px-4 pb-4 pt-10">
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" block="true" type="button" class="mb-4">
+        Fermer
+      </vbtn-stub>
+      <vbtn-stub color="primary" outlined="true" tag="button" activeclass="" large="true" block="true" type="button" class="mb-4">
+        Réinitialiser
+      </vbtn-stub>
+      <vbtn-stub color="primary" tag="button" activeclass="" large="true" block="true" type="button">
+        Appliquer
+      </vbtn-stub>
+    </div>
+  </vnavigationdrawer-stub>
+</div>
+`;

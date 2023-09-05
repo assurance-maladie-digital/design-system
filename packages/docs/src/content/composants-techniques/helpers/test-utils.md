@@ -37,7 +37,7 @@ installGlobalPlugins(localVue);
 
 ### installRouter
 
-La fonction `installRouter` permet d’installer [Vue Router](https://router.vuejs.org/) pour les tests.
+La fonction `installRouter` permet d’installer [Vue Router](https://v3.router.vuejs.org/fr/) pour les tests.
 
 ```ts
 import { createLocalVue, installRouter } from '@cnamts/vue-dot/src/helpers/testUtils';
@@ -49,7 +49,7 @@ installRouter(localVue);
 
 ### createRouter
 
-La fonction `createRouter` permet de créer une instance de [Vue Router](https://router.vuejs.org/) pour les tests.
+La fonction `createRouter` permet de créer une instance de [Vue Router](https://v3.router.vuejs.org/fr/) pour les tests.
 
 ```ts
 import { createRouter } from '@cnamts/vue-dot/src/helpers/testUtils';
