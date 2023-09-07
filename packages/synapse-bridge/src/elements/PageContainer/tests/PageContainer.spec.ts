@@ -1,4 +1,4 @@
-import { test, it } from "vitest";
+import { test, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 
 import PageContainer from "../";

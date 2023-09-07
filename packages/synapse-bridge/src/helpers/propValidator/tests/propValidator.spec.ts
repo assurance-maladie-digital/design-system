@@ -1,4 +1,4 @@
-import { test, it } from "vitest";
+import { vi, test, it, expect } from "vitest";
 import { propValidator } from "../";
 
 const PROP_NAME = 'test';
@@ -6,7 +6,7 @@ const ACCEPTED_VALUES = ['value1', 'value2'];
 
 test("propValidator", () => {
 	it("does not log anything if the prop is valid", () => {
-		const logMock = jest.spyOn(console, "error").mockImplementation();
+		const logMock = vi.spyOn(console, "error").mockImplementation();
 
 		const result = propValidator(PROP_NAME, ACCEPTED_VALUES, "value1");
 
@@ -17,7 +17,7 @@ test("propValidator", () => {
 	});
 
 	it("logs an error if the prop is not valid", () => {
-		const logMock = jest.spyOn(console, "error").mockImplementation();
+		const logMock = vi.spyOn(console, "error").mockImplementation();
 
 		const result = propValidator(PROP_NAME, ACCEPTED_VALUES, "wrongValue");
 
@@ -28,7 +28,7 @@ test("propValidator", () => {
 	});
 
 	it("logs an error if the prop is not valid", () => {
-		const logMock = jest.spyOn(console, "error").mockImplementation();
+		const logMock = vi.spyOn(console, "error").mockImplementation();
 
 		const result = propValidator(PROP_NAME, ACCEPTED_VALUES, "wrongValue");
 

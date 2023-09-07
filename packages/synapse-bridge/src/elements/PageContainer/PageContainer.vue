@@ -28,7 +28,7 @@ const props = defineProps({
 	},
 });
 
-const { breakpoint } = useDisplay();
+const { name } = useDisplay();
 
 const spacingClass = computed(() => {
 	if (props.spacing) {
@@ -43,7 +43,7 @@ const spacingClass = computed(() => {
 		xl: "px-8",
 	};
 
-	const spacingValue = spacingMapping[breakpoint];
+	const spacingValue = spacingMapping[name.value];
 
 	return `py-10 ${spacingValue}`;
 });
