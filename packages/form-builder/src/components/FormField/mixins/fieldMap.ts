@@ -11,7 +11,7 @@ import NumberField from '../fields/NumberField.vue';
 import FormPasswordField from '../fields/FormPasswordField.vue';
 import ChoicePeriodField from '../fields/ChoicePeriodField.vue';
 import ChoiceField from '../fields/ChoiceField.vue';
-import RangeField from '../fields/RangeField.vue';
+import FormRangeField from '../fields/FormRangeField.vue';
 import TextareaField from '../fields/TextareaField.vue';
 import TextField from '../fields/TextField.vue';
 
@@ -22,7 +22,7 @@ import TextField from '../fields/TextField.vue';
 		FormPasswordField,
 		ChoicePeriodField,
 		ChoiceField,
-		RangeField,
+		FormRangeField,
 		TextareaField,
 		TextField
 	}
@@ -34,7 +34,7 @@ export class FieldMap extends Vue {
 		password: 'FormPasswordField',
 		period: 'ChoicePeriodField',
 		select: 'ChoiceField',
-		range: 'RangeField',
+		range: 'FormRangeField',
 		text: 'TextField',
 		textarea: 'TextareaField'
 	};

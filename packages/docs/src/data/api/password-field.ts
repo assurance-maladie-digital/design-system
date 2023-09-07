@@ -18,7 +18,7 @@ export const api: Api = {
 		],
 		events: [
 			{
-				name: 'update:value',
+				name: 'change',
 				description: 'Événement émis lorsque la valeur est mise à jour.',
 				value: 'string'
 			}

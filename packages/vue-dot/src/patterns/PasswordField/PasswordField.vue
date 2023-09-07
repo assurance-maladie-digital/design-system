@@ -55,7 +55,7 @@
 	@Component({
 		model: {
 			prop: 'value',
-			event: 'update:value'
+			event: 'change'
 		},
 		inheritAttrs: false
 	})
