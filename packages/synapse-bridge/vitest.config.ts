@@ -7,7 +7,7 @@ export default mergeConfig(
 	defineConfig({
 		test: {
 			environment: "happy-dom",
-			// TODO: Remove this excludes once when all tests are written
+			// TODO: Remove this excludes when all tests are written
 			exclude: [
 				"**/directives/**",
 				"**/functions/**",
