@@ -4,17 +4,29 @@ export const api: Api = {
 	RangeField: {
 		props: [
 			{
+				name: 'min',
+				type: 'string',
+				default: 0,
+				description: 'La valeur minimale de l’intervalle possible.'
+			},
+			{
+				name: 'max',
+				type: 'string',
+				default: 0,
+				description: 'La valeur maximale de l’intervalle possible.'
+			},
+			{
 				name: 'value',
 				type: 'string',
-				default: null,
+				default: 'undefined',
 				description: 'La valeur saisie par l’utilisateur.'
 			},
 			{
-				name: 'required',
+				name: 'outlined',
 				type: 'boolean',
-				default: false,
-				description: 'Rends le champ obligatoire en utilisant la règle de validation [`required`](/composants-techniques/regles-de-validation/required).'
-			}
+				description: 'Affiche les `VTextField` en mode `outlined`.',
+				default: false
+			},
 		],
 		events: [
 			{

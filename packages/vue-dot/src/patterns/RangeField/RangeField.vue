@@ -5,38 +5,35 @@
 			class="d-flex flex-wrap max-width-none ma-n3"
 		>
 			<VTextField
-				:value="rangeValue[0]"
+				v-bind="options.textField"
+				:value="minValue"
 				:label="locales.minLabel"
-				hide-details
-				outlined
-				class="ma-3"
+				:outlined="outlined"
 				@input="updateMinValue"
 			/>
 
 			<VTextField
-				:value="rangeValue[1]"
+				v-bind="options.textField"
+				:value="maxValue"
 				:label="locales.maxLabel"
-				hide-details
-				outlined
-				class="ma-3"
+				:outlined="outlined"
 				@input="updateMaxValue"
 			/>
 		</div>
 
 		<VRangeSlider
 			v-model="rangeValue"
-			:max="field.max"
-			:min="field.min"
-			hide-details
-			class="align-center mt-2 mb-6"
-			@change="emitChangeEvent(rangeValue)"
+			v-bind="options.rangeSlider"
+			:max="max"
+			:min="min"
+			@change="emitChangeEvent"
 		>
 			<template #prepend>
-				{{ field.min }}
+				{{ min }}
 			</template>
 
 			<template #append>
-				{{ field.max }}
+				{{ max }}
 			</template>
 		</VRangeSlider>
 	</div>
@@ -46,7 +43,10 @@
 	import Vue from 'vue';
 	import Component, { mixins } from 'vue-class-component';
 
+	import { customizable } from '../../mixins/customizable';
+
 	import { locales } from './locales';
+	import { config } from './config';
 
 	enum RangeEnum {
 		MIN = 0,
@@ -55,18 +55,26 @@
 
 	const Props = Vue.extend({
 		props: {
+			min: {
+				type: Number,
+				default: 0
+			},
+			max: {
+				type: Number,
+				default: 0
+			},
 			value: {
 				type: String,
 				default: undefined
 			},
-			required: {
+			outlined: {
 				type: Boolean,
 				default: false
 			}
 		}
 	});
 
-	const MixinsDeclaration = mixins(Props);
+	const MixinsDeclaration = mixins(Props, customizable(config));
 
 	@Component<RangeField>({
 		model: {
@@ -77,6 +85,11 @@
 			value: {
 				handler(value: number[] | null): void {
 					if (!value) {
+						this.rangeValue = [
+							this.min,
+							this.max
+						];
+
 						return;
 					}
 
@@ -91,6 +104,14 @@
 		locales = locales;
 
 		rangeValue: number[] = [];
+
+		get minValue(): number {
+			return this.rangeValue[RangeEnum.MIN];
+		}
+
+		get maxValue(): number {
+			return this.rangeValue[RangeEnum.MAX];
+		}
 
 		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.xs;

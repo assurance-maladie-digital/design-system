@@ -38,6 +38,7 @@ const componentMap = {
 	PasswordField: 'patterns',
 	PeriodField: 'patterns',
 	PhoneField: 'patterns',
+	RangeField: 'patterns',
 	RatingPicker: 'patterns',
 	SearchListField: 'patterns',
 	SubHeader: 'patterns',

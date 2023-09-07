@@ -41,6 +41,7 @@ Object {
     "PasswordField",
     "PeriodField",
     "PhoneField",
+    "RangeField",
     "RatingPicker",
     "SearchListField",
     "SkipLink",

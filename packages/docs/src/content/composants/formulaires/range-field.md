@@ -9,14 +9,6 @@ description: Le pattern `RangeField` est utilisé pour permettre à l’utilisat
 
 <doc-usage name="range-field"></doc-usage>
 
-### Exemples
-
-#### Obligatoire
-
-Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required` :
-
-<doc-example file="range-field/required"></doc-example>
-
 </doc-tab-item>
 
 <doc-tab-item label="API">
