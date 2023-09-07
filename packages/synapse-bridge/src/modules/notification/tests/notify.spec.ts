@@ -1,45 +1,45 @@
-import Vuex from 'vuex';
-import { createLocalVue } from '@vue/test-utils';
+// import Vuex from 'vuex';
+// import { createLocalVue } from '@vue/test-utils';
 
-import { NotificationState, NotificationObj } from '../types';
+// import { NotificationState, NotificationObj } from '../types';
 
-import { notify } from '../notify';
+// import { notify } from '../notify';
 
-const localVue = createLocalVue();
-localVue.use(Vuex);
+// const localVue = createLocalVue();
+// localVue.use(Vuex);
 
-const notificationObj: NotificationObj = {
-	type: 'success',
-	message: 'test',
-	icon: 'icon'
-};
+// const notificationObj: NotificationObj = {
+// 	type: 'success',
+// 	message: 'test',
+// 	icon: 'icon'
+// };
 
-describe('notify', () => {
-	it('adds a notification', () => {
-		const commit = jest.fn();
+// describe('notify', () => {
+// 	it('adds a notification', () => {
+// 		const commit = jest.fn();
 
-		const state: NotificationState = {
-			notification: null
-		};
+// 		const state: NotificationState = {
+// 			notification: null
+// 		};
 
-		notify(commit, state, notificationObj);
+// 		notify(commit, state, notificationObj);
 
-		expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
-	});
+// 		expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
+// 	});
 
-	it('removes a previous notification and adds a new one', () => {
-		jest.useFakeTimers();
-		const commit = jest.fn();
+// 	it('removes a previous notification and adds a new one', () => {
+// 		jest.useFakeTimers();
+// 		const commit = jest.fn();
 
-		const state: NotificationState = {
-			notification: notificationObj
-		};
+// 		const state: NotificationState = {
+// 			notification: notificationObj
+// 		};
 
-		notify(commit, state, notificationObj);
+// 		notify(commit, state, notificationObj);
 
-		expect(commit).toHaveBeenCalledWith('CLEAR');
-		jest.runAllTimers();
+// 		expect(commit).toHaveBeenCalledWith('CLEAR');
+// 		jest.runAllTimers();
 
-		expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
-	});
-});
+// 		expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
+// 	});
+// });

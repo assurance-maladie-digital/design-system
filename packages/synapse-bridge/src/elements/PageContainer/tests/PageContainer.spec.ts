@@ -1,15 +1,11 @@
-import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import { test, it } from "vitest";
+import { mount } from "@vue/test-utils";
 
-import { mountComponent } from '@/tests';
+import PageContainer from "../";
 
-import PageContainer from '../';
-
-let wrapper: Wrapper<Vue>;
-
-describe('PageContainer', () => {
+test("PageContainer", () => {
 	it('renders correctly', () => {
-		wrapper = mountComponent(PageContainer);
+		const wrapper = mount(PageContainer);
 
 		expect(wrapper).toMatchSnapshot();
 	});

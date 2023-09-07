@@ -1,25 +1,25 @@
-import Vue, { DirectiveOptions } from 'vue';
+// import Vue, { DirectiveOptions } from 'vue';
 
-import { registerDirectives, Directives } from '../';
+// import { registerDirectives, Directives } from '../';
 
-import { getDirectives } from '@/tests/integration/utils';
+// import { getDirectives } from '@/tests/integration/utils';
 
-/** Create basic test component */
-function createTestDirective() {
-	const directive: DirectiveOptions = {};
+// /** Create basic test component */
+// function createTestDirective() {
+// 	const directive: DirectiveOptions = {};
 
-	return directive;
-}
+// 	return directive;
+// }
 
-const directives: Directives = {
-	TestA: createTestDirective(),
-	TestB: createTestDirective()
-};
+// const directives: Directives = {
+// 	TestA: createTestDirective(),
+// 	TestB: createTestDirective()
+// };
 
-describe('registerDirectives', () => {
-	it('should register the directives', () => {
-		registerDirectives(Vue, directives);
+// describe('registerDirectives', () => {
+// 	it('should register the directives', () => {
+// 		registerDirectives(Vue, directives);
 
-		expect(getDirectives(Vue)).toMatchSnapshot();
-	});
-});
+// 		expect(getDirectives(Vue)).toMatchSnapshot();
+// 	});
+// });

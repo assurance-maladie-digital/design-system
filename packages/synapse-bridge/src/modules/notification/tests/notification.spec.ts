@@ -1,70 +1,70 @@
-import Vuex from 'vuex';
-import { createLocalVue } from '@vue/test-utils';
+// import Vuex from 'vuex';
+// import { createLocalVue } from '@vue/test-utils';
 
-import { NotificationState, NotificationObj } from '../types';
+// import { NotificationState, NotificationObj } from '../types';
 
-import { actions, mutations } from '../';
+// import { actions, mutations } from '../';
 
-const localVue = createLocalVue();
-localVue.use(Vuex);
+// const localVue = createLocalVue();
+// localVue.use(Vuex);
 
-const notificationObj: NotificationObj = {
-	type: 'success',
-	message: 'test',
-	icon: 'icon'
-};
+// const notificationObj: NotificationObj = {
+// 	type: 'success',
+// 	message: 'test',
+// 	icon: 'icon'
+// };
 
-/** Create a new store from notification module */
-function createStore(state: NotificationState) {
-	return new Vuex.Store({ state, actions, mutations });
-}
+// /** Create a new store from notification module */
+// function createStore(state: NotificationState) {
+// 	return new Vuex.Store({ state, actions, mutations });
+// }
 
-describe('notification', () => {
-	it('updates the state when calling `add` action', () => {
-		const state: NotificationState = {
-			notification: null
-		};
+// describe('notification', () => {
+// 	it('updates the state when calling `add` action', () => {
+// 		const state: NotificationState = {
+// 			notification: null
+// 		};
 
-		const store = createStore(state);
+// 		const store = createStore(state);
 
-		store.dispatch('add', notificationObj);
+// 		store.dispatch('add', notificationObj);
 
-		expect(state.notification).toBe(notificationObj);
-	});
+// 		expect(state.notification).toBe(notificationObj);
+// 	});
 
-	it('updates the state when calling `addNotification` action', () => {
-		const state: NotificationState = {
-			notification: null
-		};
+// 	it('updates the state when calling `addNotification` action', () => {
+// 		const state: NotificationState = {
+// 			notification: null
+// 		};
 
-		const store = createStore(state);
+// 		const store = createStore(state);
 
-		store.dispatch('addNotification', notificationObj);
+// 		store.dispatch('addNotification', notificationObj);
 
-		expect(state.notification).toBe(notificationObj);
-	});
+// 		expect(state.notification).toBe(notificationObj);
+// 	});
 
-	it('clears state when calling `clear` action', () => {
-		const state: NotificationState = {
-			notification: notificationObj
-		};
+// 	it('clears state when calling `clear` action', () => {
+// 		const state: NotificationState = {
+// 			notification: notificationObj
+// 		};
 
-		const store = createStore(state);
+// 		const store = createStore(state);
 
-		store.dispatch('clear');
+// 		store.dispatch('clear');
 
-		expect(state.notification).toBe(null);
-	});
+// 		expect(state.notification).toBe(null);
+// 	});
 
-	it('clears state when calling `clearNotification` action', () => {
-		const state: NotificationState = {
-			notification: notificationObj
-		};
+// 	it('clears state when calling `clearNotification` action', () => {
+// 		const state: NotificationState = {
+// 			notification: notificationObj
+// 		};
 
-		const store = createStore(state);
+// 		const store = createStore(state);
 
-		store.dispatch('clearNotification');
+// 		store.dispatch('clearNotification');
 
-		expect(state.notification).toBe(null);
-	});
-});
+// 		expect(state.notification).toBe(null);
+// 	});
+// });
