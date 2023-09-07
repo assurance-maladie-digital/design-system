@@ -7,14 +7,13 @@ export default mergeConfig(
 	defineConfig({
 		test: {
 			environment: "happy-dom",
-			// TODO: Remove this excludes when all tests are written
 			exclude: [
-				"**/directives/**",
-				"**/functions/**",
-				"**/helpers/**",
-				"**/mixins/**",
-				"**/modules/**",
-				"**/rules/**",
+				// "**/directives/**",
+				// "**/functions/**",
+				// "**/helpers/**",
+				// "**/mixins/**",
+				// "**/modules/**",
+				// "**/rules/**",
 			],
 		},
 	})
