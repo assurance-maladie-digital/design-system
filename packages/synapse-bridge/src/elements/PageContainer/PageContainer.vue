@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useDisplay } from 'vuetify';
+import { useDisplay } from "vuetify";
 import { SizeEnum, SIZE_ENUM_VALUES } from "./SizeEnum";
 import { propValidator } from "../../helpers/propValidator";
 
@@ -16,7 +16,7 @@ const props = defineProps({
 	size: {
 		type: String,
 		default: SizeEnum.X_LARGE,
-		validator: (value: string) => propValidator('size', SIZE_ENUM_VALUES, value),
+		validator: (value: string) => propValidator("size", SIZE_ENUM_VALUES, value),
 	},
 	spacing: {
 		type: String,
@@ -24,7 +24,7 @@ const props = defineProps({
 	},
 	color: {
 		type: String,
-		default: 'transparent',
+		default: "transparent",
 	},
 });
 

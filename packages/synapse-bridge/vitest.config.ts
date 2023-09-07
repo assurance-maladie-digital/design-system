@@ -15,6 +15,9 @@ export default mergeConfig(
 				// "**/modules/**",
 				// "**/rules/**",
 			],
+			coverage: {
+				provider: "istanbul", // or 'v8'
+			},
 		},
 	})
 );
