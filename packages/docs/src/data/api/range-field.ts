@@ -1,7 +1,7 @@
 import { Api } from '~/types';
 
 export const api: Api = {
-	PasswordField: {
+	RangeField: {
 		props: [
 			{
 				name: 'value',
@@ -13,7 +13,7 @@ export const api: Api = {
 				name: 'required',
 				type: 'boolean',
 				default: false,
-				description: 'Rends le ou les champ(s) obligatoire(s) en utilisant la règle de validation [`required`](/composants-techniques/regles-de-validation/required).'
+				description: 'Rends le champ obligatoire en utilisant la règle de validation [`required`](/composants-techniques/regles-de-validation/required).'
 			}
 		],
 		events: [

@@ -159,18 +159,25 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.NEW
 			},
 			{
-				name: 'PhoneField',
-				description: 'Utilisé pour permettre à l’utilisateur de saisir un numéro de téléphone.',
-				href: '/composants/formulaires/phone-field',
-				image: 'components/phone-field.svg',
-				status: ComponentStatusEnum.READY
-			},
-			{
 				name: 'PeriodField',
 				description: 'Utilisé pour permettre à l’utilisateur de saisir une période.',
 				href: '/composants/formulaires/period-field',
 				image: 'components/period-field.svg',
 				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'RangeField',
+				description: 'Utilisé pour permettre à l’utilisateur de sélectionner un intervalle.',
+				href: '/composants/formulaires/range-field',
+				image: 'components/range-field.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'PhoneField',
+				description: 'Utilisé pour permettre à l’utilisateur de saisir un numéro de téléphone.',
+				href: '/composants/formulaires/phone-field',
+				image: 'components/phone-field.svg',
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'SearchListField',

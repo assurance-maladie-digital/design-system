@@ -167,10 +167,6 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/date-picker'
 					},
 					{
-						title: 'PeriodField',
-						to: '/composants/formulaires/period-field'
-					},
-					{
 						title: 'FileUpload',
 						to: '/composants/formulaires/file-upload'
 					},
@@ -183,8 +179,16 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/password-field'
 					},
 					{
+						title: 'PeriodField',
+						to: '/composants/formulaires/period-field'
+					},
+					{
 						title: 'PhoneField',
 						to: '/composants/formulaires/phone-field'
+					},
+					{
+						title: 'RangeField',
+						to: '/composants/formulaires/range-field'
 					},
 					{
 						title: 'SearchListField',
