@@ -23,14 +23,14 @@ export const templateList: ComponentSection[] = [
 				description: 'Utilisé pour afficher une page d’erreur.',
 				href: '/templates/not-found-page',
 				image: 'templates/not-found-page.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'MaintenancePage',
 				description: 'Utilisé pour afficher une page de maintenance.',
 				href: '/templates/maintenance-page',
 				image: 'templates/maintenance-page.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			}
 		]
 	}

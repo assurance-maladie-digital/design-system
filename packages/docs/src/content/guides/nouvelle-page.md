@@ -5,7 +5,7 @@ description: Création d’une nouvelle page dans un projet standard.
 
 ## Création de la page
 
-Une page est une *Vue* qui contient des composants et qui sera affichée en allant accédant à une URL spécifique définie grâce à [Vue Router](https://router.vuejs.org/fr/).
+Une page est une *Vue* qui contient des composants et qui sera affichée en allant accédant à une URL spécifique définie grâce à [Vue Router](https://v3.router.vuejs.org/fr/).
 
 Pour cela, vous pouvez créer un nouveau fichier `UserDeclaration.vue` dans le dossier `views` :
 

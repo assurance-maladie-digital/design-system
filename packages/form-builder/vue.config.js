@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 const LIB_MODE = Boolean(process.env.LIB_MODE);
-const LIMIT_SIZE = 350_000;
+const LIMIT_SIZE = 650_000;
 
 process.env.VUE_APP_VERSION = require('./package.json').version;
 

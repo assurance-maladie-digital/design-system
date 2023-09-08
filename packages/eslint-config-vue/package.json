@@ -1,6 +1,6 @@
 {
   "name": "@cnamts/eslint-config-vue",
-  "version": "2.12.0",
+  "version": "2.13.0",
   "description": "ESLint configuration used across our Vue.js projects",
   "keywords": [
     "cnam",
