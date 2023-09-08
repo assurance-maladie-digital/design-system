@@ -131,7 +131,7 @@ describe('HeaderBar', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('renders correctly with sticky mode and show sticky navbar', () => {
+	it('renders correctly with sticky mode and show-sticky-nav-bar', () => {
 		wrapper = mountComponent(HeaderBar, {
 			propsData: {
 				sticky: true,

@@ -59,8 +59,8 @@
 				</VSheet>
 			</VSheet>
 
-			<Transition>
-				<template v-if="showNavigationBar && isStickyNavBar">
+			<VFadeTransition>
+				<template v-if="showNavigationBar">
 					<HeaderNavigationBar
 						:tab.sync="tab"
 						:drawer.sync="drawer"
@@ -82,7 +82,7 @@
 						</template>
 					</HeaderNavigationBar>
 				</template>
-			</Transition>
+			</VFadeTransition>
 		</VAppBar>
 
 		<slot
@@ -256,7 +256,7 @@
 		}
 
 		get height(): number {
-			if (this.showNavigationBar && !this.scrolled || this.showNavigationBar && this.showStickyNavBar) {
+			if (this.showNavigationBar) {
 				return this.contentSheetHeight + 48;
 			}
 
@@ -278,6 +278,12 @@
 		}
 
 		get showNavigationBar(): boolean {
+			const isStickyNavBar = !this.scrolled || (this.scrolled && this.showStickyNavBar);
+
+			if (!isStickyNavBar) {
+				return false;
+			}
+
 			if (this.$slots['navigation-bar-content']) {
 				return true;
 			}
@@ -287,10 +293,6 @@
 			}
 
 			return this.hasNavigationItems;
-		}
-
-		get isStickyNavBar(): boolean {
-			return !this.scrolled || (this.scrolled && this.showStickyNavBar);
 		}
 
 		get showSpacer(): boolean {
@@ -340,15 +342,5 @@
 		.v-icon {
 			margin: 0 !important;
 		}
-	}
-
-	.v-enter-active,
-	.v-leave-active {
-		transition: opacity 0.2s ease;
-	}
-
-	.v-enter-from,
-	.v-leave-to {
-		opacity: 0;
 	}
 </style>
