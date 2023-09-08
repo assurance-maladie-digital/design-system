@@ -59,28 +59,30 @@
 				</VSheet>
 			</VSheet>
 
-			<template v-if="showNavigationBar">
-				<HeaderNavigationBar
-					:tab.sync="tab"
-					:drawer.sync="drawer"
-					:theme="theme"
-					:mobile-version="isMobileVersion"
-					:items="navigationItems"
-					:inner-width="innerWidth"
-					:show-menu-btn="showNavBarMenuBtn"
-					:vuetify-options="options.navigationBar"
-				>
-					<template #navigation-bar-prepend>
-						<slot name="navigation-bar-prepend" />
-					</template>
+			<VFadeTransition>
+				<template v-if="showNavigationBar">
+					<HeaderNavigationBar
+						:tab.sync="tab"
+						:drawer.sync="drawer"
+						:theme="theme"
+						:mobile-version="isMobileVersion"
+						:items="navigationItems"
+						:inner-width="innerWidth"
+						:show-menu-btn="showNavBarMenuBtn"
+						:vuetify-options="options.navigationBar"
+					>
+						<template #navigation-bar-prepend>
+							<slot name="navigation-bar-prepend" />
+						</template>
 
-					<slot name="navigation-bar-content" />
+						<slot name="navigation-bar-content" />
 
-					<template #navigation-bar-secondary-content>
-						<slot name="navigation-bar-secondary-content" />
-					</template>
-				</HeaderNavigationBar>
-			</template>
+						<template #navigation-bar-secondary-content>
+							<slot name="navigation-bar-secondary-content" />
+						</template>
+					</HeaderNavigationBar>
+				</template>
+			</VFadeTransition>
 		</VAppBar>
 
 		<slot
@@ -173,6 +175,10 @@
 				default: false
 			},
 			sticky: {
+				type: Boolean,
+				default: false
+			},
+			showStickyNavBar: {
 				type: Boolean,
 				default: false
 			},
@@ -271,6 +277,12 @@
 		}
 
 		get showNavigationBar(): boolean {
+			const isStickyNavBar = !this.scrolled || (this.scrolled && this.showStickyNavBar);
+
+			if (!isStickyNavBar) {
+				return false;
+			}
+
 			if (this.$slots['navigation-bar-content']) {
 				return true;
 			}
@@ -296,11 +308,9 @@
 			}
 
 			const target = event.currentTarget as HTMLElement | Window;
-			const header = this.$refs.appBar.$el;
-			const headerHeight = header?.clientHeight || 0;
 			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
 
-			this.scrolled = this.sticky && scrollPosition > headerHeight;
+			this.scrolled = this.sticky && scrollPosition > this.height;
 		}
 	}
 </script>

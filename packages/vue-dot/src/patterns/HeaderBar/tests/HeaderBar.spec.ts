@@ -130,4 +130,19 @@ describe('HeaderBar', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('renders correctly with sticky mode and show-sticky-nav-bar', () => {
+		wrapper = mountComponent(HeaderBar, {
+			propsData: {
+				sticky: true,
+				showStickyNavBar: true
+			}
+		});
+
+		const container = wrapper.find('.vd-header-bar-container');
+
+		expect(container.attributes('style')).toContain('margin-top');
+
+		expect(wrapper).toMatchSnapshot();
+	});
 });

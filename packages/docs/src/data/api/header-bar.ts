@@ -109,6 +109,12 @@ export const api: Api = {
 				description: 'Fixe le header en haut de la page et réduit sa hauteur lors du défilement.'
 			},
 			{
+				name: 'show-sticky-nav-bar',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche la barre de navigation au scroll en mode *sticky*.'
+			},
+			{
 				name: 'target',
 				type: 'string',
 				default: 'undefined',
