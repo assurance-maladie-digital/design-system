@@ -187,6 +187,13 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY
 			},
 			{
+				name: 'SelectBtnField',
+				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une valeur dans une liste.',
+				href: '/composants/formulaires/select-btn-field',
+				image: 'components/select-btn-field.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
 				name: 'UploadWorkflow',
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une liste de fichiers.',
 				href: '/composants/formulaires/upload-workflow',

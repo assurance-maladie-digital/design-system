@@ -195,6 +195,10 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/search-list-field'
 					},
 					{
+						title: 'SelectBtnField',
+						to: '/composants/formulaires/select-btn-field'
+					},
+					{
 						title: 'UploadWorkflow',
 						to: '/composants/formulaires/upload-workflow'
 					}

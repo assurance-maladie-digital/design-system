@@ -41,6 +41,7 @@ const componentMap = {
 	RangeField: 'patterns',
 	RatingPicker: 'patterns',
 	SearchListField: 'patterns',
+	SelectBtnField: 'patterns',
 	SubHeader: 'patterns',
 	TableToolbar: 'patterns',
 	UploadWorkflow: 'patterns',

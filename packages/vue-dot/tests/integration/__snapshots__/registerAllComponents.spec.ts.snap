@@ -43,6 +43,7 @@ Array [
   "RangeField",
   "RatingPicker",
   "SearchListField",
+  "SelectBtnField",
   "SkipLink",
   "SubHeader",
   "TableToolbar",
