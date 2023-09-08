@@ -16,7 +16,7 @@ import PageContainer from './PageContainer';
 // import SkipLink from './SkipLink';
 // import UserMenuBtn from './UserMenuBtn';
 
-export const elements = {
+export {
 	// BackBtn,
 	// BackToTopBtn,
 	// CopyBtn,

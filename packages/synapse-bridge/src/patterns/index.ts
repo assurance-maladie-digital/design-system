@@ -18,7 +18,7 @@
 // import TableToolbar from './TableToolbar';
 // import UploadWorkflow from './UploadWorkflow';
 
-export const patterns = {
+export {
 	// ContextualMenu,
 	// CookieBanner,
 	// DataListGroup,

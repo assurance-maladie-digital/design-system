@@ -27,10 +27,16 @@ export default defineConfig({
 		}),
 	],
 	build: {
+		emptyOutDir: false,
+		outDir: "dist",
+		sourcemap: true,
 		lib: {
-			entry: resolve(__dirname, "src/index.ts"),
+			entry: {
+				elements: "./src/elements/index.ts",
+				patterns: "./src/patterns/index.ts",
+				templates: "./src/templates/index.ts",
+			},
 			name: "synapse-bridge",
-			fileName: "synapse-bridge",
 		},
 		watch: {
 			include: [resolve(__dirname, "src")],

@@ -3,7 +3,7 @@
 // import MaintenancePage from './MaintenancePage';
 // import NotFoundPage from './NotFoundPage';
 
-export const templates = {
+export {
 	// CookiesPage,
 	// ErrorPage,
 	// MaintenancePage,

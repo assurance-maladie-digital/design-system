@@ -14,15 +14,19 @@
         "template"
     ],
     "type": "module",
-    "main": "./dist/synapse-bridge.umd.cjs",
-    "module": "./dist/synapse-bridge.js",
-    "types": "./dist/index.d.ts",
     "exports": {
-        ".": {
-            "import": "./dist/synapse-bridge.js",
-            "require": "./dist/synapse-bridge.umd.cjs"
-        },
-        "./*": "./dist/synapse-bridge.js"
+        "./elements": {
+			"import": "./dist/elements.js",
+			"require": "./dist/elements.cjs"
+		},
+		"./patterns": {
+			"import": "./dist/patterns.js",
+			"require": "./dist/patterns.cjs"
+		},
+		"./templates": {
+			"import": "./dist/templates.js",
+			"require": "./dist/templates.cjs"
+		}
     },
     "scripts": {
         "dev": "vite",
