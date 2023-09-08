@@ -23,7 +23,7 @@ test("propValidator", () => {
 			.spyOn(console, "error")
 			.mockImplementation(() => undefined);
 
-		const result = propValidator(PROP_NAME, ACCEPTED_VALUES, "wrongValue");
+		const result = propValidator(PROP_NAME, ACCEPTED_VALUES, "value1");
 
 		expect(result).toBeTruthy();
 		expect(logMock).not.toHaveBeenCalled();
