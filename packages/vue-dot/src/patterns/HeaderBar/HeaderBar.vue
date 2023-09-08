@@ -211,7 +211,6 @@
 		drawer: boolean | null = null;
 		tab: number | null = null;
 		scrolled = false;
-		prevScrollPosition = 0;
 
 		get isMobileVersion(): boolean {
 			if (this.mobileVersion || this.miniVersion) {
@@ -309,12 +308,9 @@
 			}
 
 			const target = event.currentTarget as HTMLElement | Window;
-			const header = this.$refs.appBar.$el;
-			const headerHeight = header?.clientHeight || 0;
 			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
 
-			this.scrolled = this.sticky && scrollPosition > headerHeight && scrollPosition > this.prevScrollPosition;
-			this.prevScrollPosition = scrollPosition;
+			this.scrolled = this.sticky && scrollPosition > this.height;
 		}
 	}
 </script>
