@@ -9,16 +9,13 @@
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
 		"preserveSymlinks": true,
-		"types": [
-			"node",
-			"fs-extra"
-		],
-		"lib": [
-			"esnext",
-			"dom"
-		]
+		"types": ["node", "fs-extra"],
+		"lib": ["esnext", "dom"]
 	},
-	"exclude": [
-		"node_modules"
-	]
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.vue",
+		"src/**/*.json"
+	],
+	"exclude": ["node_modules"]
 }
