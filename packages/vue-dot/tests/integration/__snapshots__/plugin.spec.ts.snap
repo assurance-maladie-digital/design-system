@@ -44,6 +44,7 @@ Object {
     "RangeField",
     "RatingPicker",
     "SearchListField",
+    "SelectBtnField",
     "SkipLink",
     "SubHeader",
     "TableToolbar",

@@ -81,6 +81,14 @@ Pour limiter les caractères que les utilisateurs peuvent entrer à des chiffres
 
 <doc-example file="form-field/select-button"></doc-example>
 
+##### Champ select bouton avec champ *Autre*
+
+<doc-example file="form-field/select-button-other"></doc-example>
+
+##### Champ select bouton avec champ *Autre* unique
+
+<doc-example file="form-field/select-button-unique"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">

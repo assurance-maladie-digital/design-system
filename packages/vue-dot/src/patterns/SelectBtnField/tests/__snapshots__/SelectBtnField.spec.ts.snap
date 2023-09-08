@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectBtnField renders correctly 1`] = `
+<div class="vd-select-btn-field vd-form-input">
+  <vbtntoggle-stub valuecomparator="[Function]" activeclass="v-item--active" tag="div" role="listbox" class="vd-select-btn-field-toggle d-flex flex-wrap primary--text flex-column"></vbtntoggle-stub>
+  <!---->
+</div>
+`;

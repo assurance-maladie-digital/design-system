@@ -15,7 +15,7 @@ Le champ `NirField` est composé d’un ou de deux [`VTextField`](https://vuetif
 
 #### Obligatoire
 
-Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required` :
+Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required`.
 
 <doc-example file="nir-field/required"></doc-example>
 

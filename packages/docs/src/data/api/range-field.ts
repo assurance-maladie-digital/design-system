@@ -1,5 +1,7 @@
 import { Api } from '~/types';
 
+import { customizable } from './shared/mixins/customizable';
+
 export const api: Api = {
 	RangeField: {
 		props: [
@@ -27,6 +29,10 @@ export const api: Api = {
 				description: 'Affiche les `VTextField` en mode `outlined`.',
 				default: false
 			},
+			...customizable(`{
+	textField: 'VTextField',
+	rangeSlider: 'VRangeSlider'
+}`)
 		],
 		events: [
 			{

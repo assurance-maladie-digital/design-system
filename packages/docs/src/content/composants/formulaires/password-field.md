@@ -11,7 +11,7 @@ description: Le pattern `PasswordField` est utilisé pour permettre à l’utili
 
 #### Obligatoire
 
-Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required` :
+Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required`.
 
 <doc-example file="password-field/required"></doc-example>
 

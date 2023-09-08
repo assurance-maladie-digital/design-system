@@ -19,6 +19,7 @@ import PhoneField from './PhoneField';
 import RangeField from './RangeField';
 import RatingPicker from './RatingPicker';
 import SearchListField from './SearchListField';
+import SelectBtnField from './SelectBtnField';
 import SubHeader from './SubHeader';
 import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
@@ -45,6 +46,7 @@ export const patterns = {
 	RangeField,
 	RatingPicker,
 	SearchListField,
+	SelectBtnField,
 	SubHeader,
 	TableToolbar,
 	UploadWorkflow

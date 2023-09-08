@@ -18,7 +18,7 @@ export const api: Api = {
 	label: string;
 	value: unknown;
 }[]`
-			},
+			}
 		],
 		events: [
 			{
