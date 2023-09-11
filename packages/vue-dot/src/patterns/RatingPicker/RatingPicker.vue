@@ -11,14 +11,14 @@
 		/>
 
 		<template v-if="hasAnswered">
-			<VAlert
+			<AlertWrapper
 				:class="{ 'mb-0': !displayAdditionalContent }"
 				outlined
 				type="success"
 				class="mt-4"
 			>
 				{{ locales.thanks }}
-			</VAlert>
+			</AlertWrapper>
 
 			<slot v-if="displayAdditionalContent" />
 		</template>

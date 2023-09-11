@@ -1,3 +1,4 @@
+import AlertWrapper from './AlertWrapper';
 import ContextualMenu from './ContextualMenu';
 import CookieBanner from './CookieBanner';
 import DataListGroup from './DataListGroup';
@@ -25,6 +26,7 @@ import TableToolbar from './TableToolbar';
 import UploadWorkflow from './UploadWorkflow';
 
 export const patterns = {
+	AlertWrapper,
 	ContextualMenu,
 	CookieBanner,
 	DataListGroup,

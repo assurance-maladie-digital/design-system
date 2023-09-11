@@ -263,6 +263,10 @@ export const drawerItems: DrawerItem[] = [
 				title: 'Feedback',
 				items: [
 					{
+						title: 'AlertWrapper',
+						to: '/composants/feedback/alert-wrapper'
+					},
+					{
 						title: 'DialogBox',
 						to: '/composants/feedback/dialog-box'
 					},
