@@ -596,10 +596,6 @@ export const drawerItems: DrawerItem[] = [
 				to: '/guides/utilisation-icones'
 			},
 			{
-				title: 'Gestion des droits',
-				to: '/guides/gestion-droits'
-			},
-			{
 				title: 'Sous-chemin personnalisé',
 				to: '/guides/sous-chemin'
 			}
