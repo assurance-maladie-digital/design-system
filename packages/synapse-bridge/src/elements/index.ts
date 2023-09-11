@@ -1,6 +1,6 @@
 // import BackBtn from './BackBtn';
 // import BackToTopBtn from './BackToTopBtn';
-// import CopyBtn from './CopyBtn';
+import CopyBtn from './CopyBtn';
 // import CustomIcon from './CustomIcon';
 // import DataList from './DataList';
 // import DialogBox from './DialogBox';
@@ -19,7 +19,7 @@ import PageContainer from './PageContainer';
 export {
 	// BackBtn,
 	// BackToTopBtn,
-	// CopyBtn,
+	CopyBtn,
 	// CustomIcon,
 	// DataList,
 	// DialogBox,
