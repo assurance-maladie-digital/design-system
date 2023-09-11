@@ -20,6 +20,7 @@ const componentMap = {
 	UserMenuBtn: 'elements',
 	// Patterns
 	AccessibilityBanner: 'patterns',
+	AlertWrapper: 'patterns',
 	ContextualMenu: 'patterns',
 	CookieBanner: 'patterns',
 	DataListGroup: 'patterns',

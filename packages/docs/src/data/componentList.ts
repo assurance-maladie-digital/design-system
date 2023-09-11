@@ -284,6 +284,13 @@ export const componentList: ComponentSection[] = [
 		title: 'Feedback',
 		components: [
 			{
+				name: 'AlertWrapper',
+				description: 'Utilisé pour afficher une alerte.',
+				href: '/composants/feedback/alert-wrapper',
+				image: 'components/alert-wrapper.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
 				name: 'DialogBox',
 				description: 'Utilisé pour afficher une boîte de dialogue avec des boutons d’actions.',
 				href: '/composants/feedback/dialog-box',
