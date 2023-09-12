@@ -1,15 +1,15 @@
 <template>
 	<div class="vd-copy-btn">
-		<VMenu v-model="tooltip" v-bind="options.menu" :disabled="hideTooltip">
+		<VMenu v-model="tooltip" v-bind="options?.menu" :disabled="hideTooltip">
 			<template v-slot:activator="{ on }">
 				<VBtn
-					v-bind="options.btn"
+					v-bind="options?.btn"
 					:aria-label="label"
 					v-on="on"
 					@click="copy"
 				>
 					<slot name="icon">
-						<VIcon v-bind="options.icon">
+						<VIcon v-bind="options?.icon">
 							{{ copyIcon }}
 						</VIcon>
 					</slot>
@@ -31,7 +31,7 @@ import { config } from "./config";
 import { locales } from "./locales";
 
 import { copyToClipboard } from "../../functions/copyToClipboard";
-import { customizable } from "../../mixins/customizable";
+import { customizable } from "../../composables/customizable";
 
 const props = defineProps({
 	label: {
@@ -52,14 +52,18 @@ const props = defineProps({
 	},
 });
 
-const { options } = customizable(config);
-
+const { options } = customizable(config) || {};
 const tooltip = ref(false);
 const copyIcon = mdiContentCopy;
 
+/**
+ *
+ */
 function copy(): void {
 	const contentToCopy =
-		typeof props.textToCopy === "function" ? props.textToCopy() : props.textToCopy;
+		typeof props.textToCopy === "function"
+			? props.textToCopy()
+			: props.textToCopy;
 	copyToClipboard(contentToCopy);
 
 	if (props.hideTooltip) {
