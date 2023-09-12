@@ -1,61 +1,99 @@
 <template>
-	<div :class="spacingClass" class="vd-page-container d-flex justify-center">
-		<VSheet :width="containerSize" :color="color">
-			<slot />
-		</VSheet>
+	<div class="vd-copy-btn">
+		<VMenu v-model="tooltip" v-bind="options.menu" :disabled="hideTooltip">
+			<template #activator="{ on }">
+				<VBtn
+					v-bind="options.btn"
+					:aria-label="label"
+					v-on="on"
+					@click="copy"
+				>
+					<slot name="icon">
+						<VIcon v-bind="options.icon">
+							{{ copyIcon }}
+						</VIcon>
+					</slot>
+				</VBtn>
+			</template>
+
+			<slot name="tooltip">
+				{{ locales.tooltip }}
+			</slot>
+		</VMenu>
 	</div>
 </template>
 
-<script setup lang="ts">
-import { computed } from "vue";
-import { useDisplay } from "vuetify";
-import { SizeEnum, SIZE_ENUM_VALUES } from "./SizeEnum";
-import { propValidator } from "../../helpers/propValidator";
+<script lang="ts">
+import Vue, { PropType } from "vue";
+import Options, { mixins } from "vue-class-component";
 
-const props = defineProps({
-	size: {
-		type: String,
-		default: SizeEnum.X_LARGE,
-		validator: (value: string) => propValidator("size", SIZE_ENUM_VALUES, value),
-	},
-	spacing: {
-		type: String,
-		default: undefined,
-	},
-	color: {
-		type: String,
-		default: "transparent",
+import { config } from "./config";
+import { locales } from "./locales";
+
+import { customizable } from "../../mixins/customizable";
+
+import { copyToClipboard } from "../../functions/copyToClipboard";
+
+import { mdiContentCopy } from "@mdi/js";
+
+const Props = Vue.extend({
+	props: {
+		label: {
+			type: String,
+			required: true,
+		},
+		textToCopy: {
+			type: [Function, String] as PropType<() => string | string>,
+			required: true,
+		},
+		hideTooltip: {
+			type: Boolean,
+			default: false,
+		},
+		tooltipDuration: {
+			type: Number,
+			default: 2500,
+		},
 	},
 });
 
-const { name } = useDisplay();
+const MixinsDeclaration = mixins(Props, customizable(config));
 
-const spacingClass = computed(() => {
-	if (props.spacing) {
-		return props.spacing;
+@Options({
+	components: {},
+})
+export default class CopyBtn extends MixinsDeclaration {
+	locales = locales;
+
+	copyIcon = mdiContentCopy;
+
+	tooltip = false;
+
+	copy(): void {
+		const contentToCopy =
+			typeof this.textToCopy === "function"
+				? this.textToCopy()
+				: this.textToCopy;
+
+		copyToClipboard(contentToCopy);
+
+		if (this.hideTooltip) {
+			return;
+		}
+
+		setTimeout(() => {
+			this.tooltip = false;
+		}, this.tooltipDuration);
 	}
-
-	const spacingMapping = {
-		xs: "px-0",
-		sm: "px-4",
-		md: "px-8",
-		lg: "px-8",
-		xl: "px-8",
-	};
-
-	const spacingValue = spacingMapping[name.value];
-
-	return `py-10 ${spacingValue}`;
-});
-
-const containerSize = computed(() => {
-	const sizeMapping = {
-		[SizeEnum.X_LARGE]: 1440,
-		[SizeEnum.LARGE]: 960,
-		[SizeEnum.MEDIUM]: 800,
-		[SizeEnum.SMALL]: 600,
-	};
-
-	return sizeMapping[props.size];
-});
+}
 </script>
+
+<style lang="scss">
+// Make the tooltip menu look like a tooltip
+.vd-copy-tooltip-menu {
+	padding: 6px 16px;
+	box-shadow: none;
+	margin-top: 2px;
+	background: rgba(97, 97, 97, 0.9);
+}
+</style>

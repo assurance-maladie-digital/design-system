@@ -1,15 +1,15 @@
 <template>
 	<div class="vd-copy-btn">
-		<VMenu v-model="tooltip" v-bind="options?.menu" :disabled="hideTooltip">
-			<template v-slot:activator="{ on }">
+		<VMenu v-model="tooltip" v-bind="options.menu" :disabled="hideTooltip">
+			<template #activator="{ on }">
 				<VBtn
-					v-bind="options?.btn"
+					v-bind="options.btn"
 					:aria-label="label"
 					v-on="on"
 					@click="copy"
 				>
 					<slot name="icon">
-						<VIcon v-bind="options?.icon">
+						<VIcon v-bind="options.icon">
 							{{ copyIcon }}
 						</VIcon>
 					</slot>
@@ -23,57 +23,68 @@
 	</div>
 </template>
 
-<script setup lang="ts">
-import { ref, PropType } from "vue";
-import { mdiContentCopy } from "@mdi/js";
+<script lang="ts">
+import { PropType } from "vue";
+import { Component, Vue, Prop, Watch, toNative } from "vue-facing-decorator";
 
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { copyToClipboard } from "../../functions/copyToClipboard";
-import { customizable } from "../../composables/customizable";
+import { customizable } from "../../mixins/customizable";
 
-const props = defineProps({
-	label: {
-		type: String,
-		required: true,
-	},
-	textToCopy: {
+import { copyToClipboard } from "../../functions/copyToClipboard";
+
+import { mdiContentCopy } from "@mdi/js";
+
+@Component({
+	mixins: [customizable(config)],
+})
+class CopyBtn extends Vue {
+	locales = locales;
+	copyIcon = mdiContentCopy;
+	tooltip = false;
+
+	@Prop({ type: String, required: true })
+	label!: string;
+
+	@Prop({
 		type: [Function, String] as PropType<() => string | string>,
 		required: true,
-	},
-	hideTooltip: {
-		type: Boolean,
-		default: false,
-	},
-	tooltipDuration: {
-		type: Number,
-		default: 2500,
-	},
-});
+	})
+	textToCopy!: () => string | string;
 
-const { options } = customizable(config) || {};
-const tooltip = ref(false);
-const copyIcon = mdiContentCopy;
+	@Prop({ type: Boolean, default: false })
+	hideTooltip!: boolean;
 
-/**
- *
- */
-function copy(): void {
-	const contentToCopy =
-		typeof props.textToCopy === "function"
-			? props.textToCopy()
-			: props.textToCopy;
-	copyToClipboard(contentToCopy);
+	@Prop({ type: Number, default: 2500 })
+	tooltipDuration!: number;
 
-	if (props.hideTooltip) {
-		return;
+	@Watch("hideTooltip")
+	onHideTooltipChanged(newValue: boolean): void {
+		if (newValue && this.tooltip) {
+			this.tooltip = false;
+		}
 	}
 
-	setTimeout(() => {
-		tooltip.value = false;
-	}, props.tooltipDuration);
+	copy(): void {
+		const contentToCopy =
+			typeof this.textToCopy === "function"
+				? this.textToCopy()
+				: this.textToCopy;
+
+		copyToClipboard(contentToCopy);
+
+		if (this.hideTooltip) {
+			return;
+		}
+
+		setTimeout(() => {
+			this.tooltip = false;
+		}, this.tooltipDuration);
+	}
 }
+
+export default toNative(CopyBtn);
 </script>
 
 <style lang="scss">
