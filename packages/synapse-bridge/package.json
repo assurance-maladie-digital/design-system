@@ -16,17 +16,17 @@
     "type": "module",
     "exports": {
         "./elements": {
-			"import": "./dist/elements.js",
-			"require": "./dist/elements.cjs"
-		},
-		"./patterns": {
-			"import": "./dist/patterns.js",
-			"require": "./dist/patterns.cjs"
-		},
-		"./templates": {
-			"import": "./dist/templates.js",
-			"require": "./dist/templates.cjs"
-		}
+            "import": "./dist/elements.js",
+            "require": "./dist/elements.cjs"
+        },
+        "./patterns": {
+            "import": "./dist/patterns.js",
+            "require": "./dist/patterns.cjs"
+        },
+        "./templates": {
+            "import": "./dist/templates.js",
+            "require": "./dist/templates.cjs"
+        }
     },
     "scripts": {
         "dev": "vite",
@@ -63,6 +63,7 @@
         "vite": "^4.0.0",
         "vite-plugin-dts": "^1.7.1",
         "vitest": "^0.34.3",
+        "vue-facing-decorator": "^3.0.2",
         "vue-tsc": "^1.0.12",
         "vuetify": "^3.3.14"
     },
