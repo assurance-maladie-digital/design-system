@@ -1,8 +1,13 @@
 <template>
 	<div class="vd-copy-btn">
 		<VMenu v-model="tooltip" v-bind="options?.menu" :disabled="hideTooltip">
-			<template>
-				<VBtn v-bind="options?.btn" :aria-label="label" @click="copy">
+			<template #activator="{ on }">
+				<VBtn
+					v-bind="options?.btn"
+					:aria-label="label"
+					v-on="on"
+					@click="copy"
+				>
 					<slot name="icon">
 						<VIcon v-bind="options?.icon">
 							{{ copyIcon }}
@@ -53,6 +58,11 @@ class CopyBtn extends Vue {
 
 	@Prop({ type: Number, default: 2500 })
 	tooltipDuration!: number;
+
+	get options() {
+		// Access defaultOptions from the mixin
+		return this.$options.defaultOptions;
+	}
 
 	copy(): void {
 		const contentToCopy =
