@@ -7,8 +7,7 @@
   "command": {
     "publish": {
       "allowBranch": [
-        "main",
-        "dev"
+        "v2"
       ],
       "message": "🔖 %s"
     }
