@@ -93,7 +93,7 @@
 		mdiCheckCircleOutline,
 		mdiAlertCircleOutline,
 		mdiInformationOutline,
-		mdiAlertOutline,
+		mdiAlertOctagonOutline,
 		mdiClose
 	} from '@mdi/js';
 
@@ -134,10 +134,10 @@
 		notification!: NotificationObj | null;
 
 		iconMapping: IndexedObject = {
-			success: mdiCheckCircleOutline,
-			error: mdiAlertCircleOutline,
 			info: mdiInformationOutline,
-			warning: mdiAlertOutline
+			success: mdiCheckCircleOutline,
+			warning: mdiAlertCircleOutline,
+			error: mdiAlertOctagonOutline
 		};
 
 		snackbarColor: string | null = null;
