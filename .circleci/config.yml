@@ -140,13 +140,13 @@ workflows:
             - deploy-preview
           filters:
             branches:
-              only: main
+              only: v2
       - deploy:
           requires:
             - hold_for_deploy
           filters:
             branches:
-              only: main
+              only: v2
   nightly:
     triggers:
       - schedule:
@@ -154,7 +154,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - v2
     jobs:
       - install
       - build:
@@ -165,4 +165,4 @@ workflows:
             - build
           filters:
             branches:
-              only: main
+              only: v2
