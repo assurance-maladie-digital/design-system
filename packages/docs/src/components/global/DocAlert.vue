@@ -1,11 +1,11 @@
 <template>
-	<VAlert
+	<AlertWrapper
 		v-bind="$attrs"
 		v-on="$listeners"
 		class="doc-alert w-100"
 	>
 		<slot />
-	</VAlert>
+	</AlertWrapper>
 </template>
 
 <script lang="ts">

@@ -1,8 +1,5 @@
 // Import visually-hidden mixin
 @import 'vuetify/src/styles/tools/_display.sass';
-@import '@cnamts/design-tokens/dist/tokens';
-
-@import './v-alert.scss';
 
 // Reset max-width for some elements to make them work properly
 // (due to `max-width: 100%` applied to `*` in base.css)
@@ -35,6 +32,7 @@
 	.text-h6 {
 		font-family: 'Mic 32 New', 'Source Sans 3', 'Source Sans Pro', 'Open Sans', sans-serif !important;
 	}
+
 	.text-subtitle-1,
 	.text-subtitle-2,
 	.text-body-1,

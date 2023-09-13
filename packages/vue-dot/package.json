@@ -40,7 +40,8 @@
   },
   "dependencies": {
     "content-disposition-header": "^0.6.0",
-    "deepmerge": "^4.2.2"
+    "deepmerge": "^4.2.2",
+	"slugify": "^1.6.6"
   },
   "peerDependencies": {
     "@cnamts/design-tokens": "^2.5.0",

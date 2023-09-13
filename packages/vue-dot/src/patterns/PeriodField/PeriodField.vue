@@ -11,10 +11,10 @@
 
 		<DatePicker
 			v-model="periodValue.to"
-			:vuetify-options="datePickerOptions.to"
 			:outlined="outlined"
 			:disabled="disabled"
 			:start-date="periodValue.from"
+			:vuetify-options="toPickerOptions"
 			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
 			@change="dateUpdated"
 		/>
@@ -29,6 +29,7 @@
 
 	import { PeriodValue } from './types';
 	import { config } from './config';
+	import { locales } from './locales';
 
 	import deepMerge from 'deepmerge';
 
@@ -82,8 +83,21 @@
 	export default class PeriodField extends MixinsDeclaration {
 		periodValue = {} as PeriodValue;
 
+		errorMessages: string[] = [];
+
 		get datePickerOptions(): Options {
 			return deepMerge<Options>(config, this.options);
+		}
+
+		get toPickerOptions(): Options {
+			const { to } = this.datePickerOptions;
+
+			to.textField = {
+				...to.textField,
+				errorMessages: this.errorMessages
+			};
+
+			return to;
 		}
 
 		async dateUpdated(): Promise<void> {
@@ -94,7 +108,9 @@
 			);
 
 			if (fromGreaterThanTo) {
-				this.periodValue.to = null;
+				this.errorMessages = [locales.greaterThanTo];
+			} else {
+				this.errorMessages = [];
 			}
 
 			if (!this.periodValue.from || !this.periodValue.to) {
@@ -103,6 +119,10 @@
 
 			await this.$nextTick();
 
+			this.emitChangeEvent();
+		}
+
+		emitChangeEvent(): void {
 			this.$emit('change', this.periodValue);
 		}
 	}

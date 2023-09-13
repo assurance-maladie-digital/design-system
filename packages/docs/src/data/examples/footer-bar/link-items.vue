@@ -39,7 +39,8 @@
 			{
 				text: 'Aide',
 				href: 'https://www.ameli.fr/assure/aide',
-				ariaLabel: 'Aide (s’ouvre sur le site ameli.fr)'
+				ariaLabel: 'Aide (s’ouvre sur le site ameli.fr)',
+				openInNewTab: true
 			}
 		];
 	}

@@ -15,7 +15,7 @@ Le champ `PhoneField` est composé d’un [`VTextField`](https://vuetifyjs.com/e
 
 #### Obligatoire
 
-Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required` :
+Vous pouvez rendre la saisie d’une valeur obligatoire en utilisant la prop `required`.
 
 <doc-example file="phone-field/required"></doc-example>
 

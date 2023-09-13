@@ -15,7 +15,10 @@
 				v-if="choiceSelected"
 				hide-on-leave
 			>
-				<div v-if="showOtherTextareaField">
+				<div
+					v-if="showOtherTextareaField"
+					class="vd-other-field mt-4"
+				>
 					<h4
 						v-if="otherField.label"
 						class="text-body-1 mb-1"

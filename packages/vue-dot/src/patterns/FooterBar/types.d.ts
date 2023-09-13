@@ -5,4 +5,5 @@ export interface LinkItem {
 	to?: RawLocation;
 	href?: string;
 	ariaLabel?: string;
+	openInNewTab?: boolean;
 }

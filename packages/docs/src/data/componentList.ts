@@ -152,6 +152,27 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY
 			},
 			{
+				name: 'PasswordField',
+				description: 'Utilisé pour permettre à l’utilisateur de saisir un mot de passe.',
+				href: '/composants/formulaires/password-field',
+				image: 'components/password-field.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
+				name: 'PeriodField',
+				description: 'Utilisé pour permettre à l’utilisateur de saisir une période.',
+				href: '/composants/formulaires/period-field',
+				image: 'components/period-field.svg',
+				status: ComponentStatusEnum.READY
+			},
+			{
+				name: 'RangeField',
+				description: 'Utilisé pour permettre à l’utilisateur de sélectionner un intervalle.',
+				href: '/composants/formulaires/range-field',
+				image: 'components/range-field.svg',
+				status: ComponentStatusEnum.NEW
+			},
+			{
 				name: 'PhoneField',
 				description: 'Utilisé pour permettre à l’utilisateur de saisir un numéro de téléphone.',
 				href: '/composants/formulaires/phone-field',
@@ -159,17 +180,17 @@ export const componentList: ComponentSection[] = [
 				status: ComponentStatusEnum.READY
 			},
 			{
-				name: 'PeriodField',
-				description: 'Utilisé pour permettre à l’utilisateur de saisir une période.',
-				href: '/composants/formulaires/period-field',
-				image: 'components/period-field.svg',
-				status: ComponentStatusEnum.NEW
-			},
-			{
 				name: 'SearchListField',
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une valeur dans une liste.',
 				href: '/composants/formulaires/search-list-field',
-				image: 'placeholder.svg',
+				image: 'components/search-list-field.svg',
+				status: ComponentStatusEnum.READY
+			},
+			{
+				name: 'SelectBtnField',
+				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une valeur dans une liste.',
+				href: '/composants/formulaires/select-btn-field',
+				image: 'components/select-btn-field.svg',
 				status: ComponentStatusEnum.NEW
 			},
 			{
@@ -208,14 +229,14 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour afficher des filtres directement dans la page.',
 				href: '/composants/filtres/filters-inline',
 				image: 'components/filters-inline.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'FiltersSidebar',
 				description: 'Utilisé pour afficher des filtres dans un panel dédié.',
 				href: '/composants/filtres/filters-side-bar',
 				image: 'components/filters-sidebar.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'FilterModule',
@@ -233,8 +254,8 @@ export const componentList: ComponentSection[] = [
 				name: 'ChipList',
 				description: 'Utilisé pour afficher une liste de puces.',
 				href: '/composants/donnees/chip-list',
-				image: 'placeholder.svg',
-				status: ComponentStatusEnum.NEW
+				image: 'components/chip-list.svg',
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'DataList',
@@ -255,13 +276,20 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour afficher une liste de fichiers.',
 				href: '/composants/donnees/file-list',
 				image: 'components/file-list.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.READY
 			}
 		]
 	},
 	{
 		title: 'Feedback',
 		components: [
+			{
+				name: 'AlertWrapper',
+				description: 'Utilisé pour afficher une alerte.',
+				href: '/composants/feedback/alert-wrapper',
+				image: 'components/alert-wrapper.svg',
+				status: ComponentStatusEnum.NEW
+			},
 			{
 				name: 'DialogBox',
 				description: 'Utilisé pour afficher une boîte de dialogue avec des boutons d’actions.',

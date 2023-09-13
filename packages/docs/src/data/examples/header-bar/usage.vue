@@ -71,7 +71,8 @@
 			booleans: [
 				'mobileVersion',
 				'miniVersion',
-				'sticky'
+				'sticky',
+				'showStickyNavBar'
 			],
 			selects: {
 				theme: [
@@ -107,7 +108,7 @@
 		top: 0;
 
 		:deep(.vd-header-bar) {
-			position: static !important;
+			position: absolute !important;
 		}
 
 		:deep(.v-navigation-drawer--fixed) {

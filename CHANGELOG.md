@@ -1,3 +1,45 @@
+## v2.14.0
+
+**Version publiée le 13/09/2023.**
+
+Cette version comporte l'ajout des composants `PasswordField`, `RangeField`, `PeriodField`, `SelectBtnField` et `AlertWrapper`, des correctifs sur Vue Dot et la complétion de la documentation.
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **FooterBar:** Ajout de la propriété `openInNewTab` ([#3042](https://github.com/assurance-maladie-digital/design-system/pull/3042))
+  - **PasswordField:** Ajout d'un nouveau composant ([#3043](https://github.com/assurance-maladie-digital/design-system/pull/3043))
+  - **RangeField:** Ajout d'un nouveau composant ([#3046](https://github.com/assurance-maladie-digital/design-system/pull/3046))
+  - **PeriodField:** Ajout de la validation ([#3049](https://github.com/assurance-maladie-digital/design-system/pull/3049))
+  - **HeaderBar:** Ajout de la propriété `show-sticky-nav-bar` ([#3037](https://github.com/assurance-maladie-digital/design-system/pull/3037))
+  - **SelectBtnField:** Ajout d'un nouveau composant ([#3054](https://github.com/assurance-maladie-digital/design-system/pull/3054))
+  - **AlertWrapper:** Ajout d'un nouveau composant ([#3062](https://github.com/assurance-maladie-digital/design-system/pull/3062))
+
+- 🐛 **Corrections de bugs**
+  - **global:** Correction d'une dépendance manquante ([#3050](https://github.com/assurance-maladie-digital/design-system/pull/3050))
+  - **NotificationBar:** Correction de l'icône d'erreur ([#3067](https://github.com/assurance-maladie-digital/design-system/pull/3067))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **global:** Mise à jour de la liste des composants ([#3048](https://github.com/assurance-maladie-digital/design-system/pull/3048))
+  - **roadmap:** Mise à jour de la page ([#3055](https://github.com/assurance-maladie-digital/design-system/pull/3055))
+  - **guide:** Suppression du guide sur la gestion des droits ([#3063](https://github.com/assurance-maladie-digital/design-system/pull/3063))
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3068](https://github.com/assurance-maladie-digital/design-system/pull/3068))
+
+- ⬆️ **Dépendances**
+  - **webpack:** Mise à jour vers la `v4.47.0` ([#3045](https://github.com/assurance-maladie-digital/design-system/pull/3045))
+  - **core-js:** Mise à jour vers la `v3.32.2` ([#3047](https://github.com/assurance-maladie-digital/design-system/pull/3047))
+  - **@babel/core:** Mise à jour vers la `v7.22.17` ([#3052](https://github.com/assurance-maladie-digital/design-system/pull/3052))
+  - **@types/node:** Mise à jour vers la `v16.18.50` ([#3053](https://github.com/assurance-maladie-digital/design-system/pull/3053))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v46.6.0` ([#3056](https://github.com/assurance-maladie-digital/design-system/pull/3056))
+  - **@vue/eslint-config-typescript:** Mise à jour vers la `v12` ([#3065](https://github.com/assurance-maladie-digital/design-system/pull/3065))
+  - **jq:** Mise à jour de l'orb vers la `v3` ([#3066](https://github.com/assurance-maladie-digital/design-system/pull/3066))
+
 ## v2.13.0
 
 **Version publiée le 05/09/2023.**
@@ -18,6 +60,8 @@ Cette version comporte l'ajout des composants `FiltersInline`, `FiltersSidebar`,
 - 🐛 **Corrections de bugs**
   - **template:** Correction de la déclaration des polices ([#3031](https://github.com/assurance-maladie-digital/design-system/pull/3031))
   - **template:** Ajout des composants manquants pour le tree-shaking de VueDot ([#3032](https://github.com/assurance-maladie-digital/design-system/pull/3032))
+
+### Documentation
 
 - 📝 **Documentation**
   - **guide:** Ajout d'un guide sur la configuration d'un sous-chemin personnalisé ([#3040](https://github.com/assurance-maladie-digital/design-system/pull/3040))

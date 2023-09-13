@@ -2,6 +2,7 @@
 
 exports[`registerAllComponents should register all components 1`] = `
 Array [
+  "AlertWrapper",
   "BackBtn",
   "BackToTopBtn",
   "ChipList",
@@ -37,10 +38,13 @@ Array [
   "NotificationBar",
   "PageContainer",
   "PaginatedTable",
+  "PasswordField",
   "PeriodField",
   "PhoneField",
+  "RangeField",
   "RatingPicker",
   "SearchListField",
+  "SelectBtnField",
   "SkipLink",
   "SubHeader",
   "TableToolbar",

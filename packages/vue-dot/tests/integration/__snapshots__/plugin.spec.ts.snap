@@ -3,6 +3,7 @@
 exports[`plugin should register components & directives 1`] = `
 Object {
   "components": Array [
+    "AlertWrapper",
     "BackBtn",
     "BackToTopBtn",
     "ChipList",
@@ -38,10 +39,13 @@ Object {
     "NotificationBar",
     "PageContainer",
     "PaginatedTable",
+    "PasswordField",
     "PeriodField",
     "PhoneField",
+    "RangeField",
     "RatingPicker",
     "SearchListField",
+    "SelectBtnField",
     "SkipLink",
     "SubHeader",
     "TableToolbar",

@@ -167,10 +167,6 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/date-picker'
 					},
 					{
-						title: 'PeriodField',
-						to: '/composants/formulaires/period-field'
-					},
-					{
 						title: 'FileUpload',
 						to: '/composants/formulaires/file-upload'
 					},
@@ -179,12 +175,28 @@ export const drawerItems: DrawerItem[] = [
 						to: '/composants/formulaires/nir-field'
 					},
 					{
+						title: 'PasswordField',
+						to: '/composants/formulaires/password-field'
+					},
+					{
+						title: 'PeriodField',
+						to: '/composants/formulaires/period-field'
+					},
+					{
 						title: 'PhoneField',
 						to: '/composants/formulaires/phone-field'
 					},
 					{
+						title: 'RangeField',
+						to: '/composants/formulaires/range-field'
+					},
+					{
 						title: 'SearchListField',
 						to: '/composants/formulaires/search-list-field'
+					},
+					{
+						title: 'SelectBtnField',
+						to: '/composants/formulaires/select-btn-field'
 					},
 					{
 						title: 'UploadWorkflow',
@@ -250,6 +262,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Feedback',
 				items: [
+					{
+						title: 'AlertWrapper',
+						to: '/composants/feedback/alert-wrapper'
+					},
 					{
 						title: 'DialogBox',
 						to: '/composants/feedback/dialog-box'
@@ -578,10 +594,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Utilisation des icônes',
 				to: '/guides/utilisation-icones'
-			},
-			{
-				title: 'Gestion des droits',
-				to: '/guides/gestion-droits'
 			},
 			{
 				title: 'Sous-chemin personnalisé',
