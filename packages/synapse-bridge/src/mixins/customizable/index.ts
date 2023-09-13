@@ -1,5 +1,5 @@
 import { PropType } from "vue";
-import { Component, Vue, Prop, Watch } from "vue-facing-decorator";
+import { Component, Vue, Prop } from "vue-facing-decorator";
 
 import deepMerge from "deepmerge";
 
@@ -22,11 +22,8 @@ export function customizable(defaultOptions: Options): Customizable {
 		@Prop({ type: Object as PropType<Options>, default: () => ({}) })
 		vuetifyOptions!: Options;
 
-		options: Options = {};
-
-		@Watch("vuetifyOptions", { immediate: true, deep: true })
-		onVuetifyOptionsChanged(options: Options) {
-			this.options = deepMerge(defaultOptions, options);
+		get options(): Options {
+			return deepMerge(defaultOptions, this.vuetifyOptions);
 		}
 	}
 

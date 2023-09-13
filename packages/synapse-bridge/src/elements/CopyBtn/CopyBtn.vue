@@ -1,15 +1,10 @@
 <template>
 	<div class="vd-copy-btn">
-		<VMenu v-model="tooltip" v-bind="options.menu" :disabled="hideTooltip">
-			<template #activator="{ on }">
-				<VBtn
-					v-bind="options.btn"
-					:aria-label="label"
-					v-on="on"
-					@click="copy"
-				>
+		<VMenu v-model="tooltip" v-bind="options?.menu" :disabled="hideTooltip">
+			<template>
+				<VBtn v-bind="options?.btn" :aria-label="label" @click="copy">
 					<slot name="icon">
-						<VIcon v-bind="options.icon">
+						<VIcon v-bind="options?.icon">
 							{{ copyIcon }}
 						</VIcon>
 					</slot>
@@ -25,7 +20,7 @@
 
 <script lang="ts">
 import { PropType } from "vue";
-import { Component, Vue, Prop, Watch, toNative } from "vue-facing-decorator";
+import { Component, Vue, Prop, toNative } from "vue-facing-decorator";
 
 import { config } from "./config";
 import { locales } from "./locales";
@@ -51,20 +46,13 @@ class CopyBtn extends Vue {
 		type: [Function, String] as PropType<() => string | string>,
 		required: true,
 	})
-	textToCopy!: () => string | string;
+	textToCopy!: (() => string) | string;
 
 	@Prop({ type: Boolean, default: false })
 	hideTooltip!: boolean;
 
 	@Prop({ type: Number, default: 2500 })
 	tooltipDuration!: number;
-
-	@Watch("hideTooltip")
-	onHideTooltipChanged(newValue: boolean): void {
-		if (newValue && this.tooltip) {
-			this.tooltip = false;
-		}
-	}
 
 	copy(): void {
 		const contentToCopy =
