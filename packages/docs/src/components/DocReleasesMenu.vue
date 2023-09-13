@@ -95,11 +95,6 @@
 			},
 			{
 				type: ItemTypeEnum.ITEM,
-				label: 'dev',
-				href: 'https://dev--digital-design-system.netlify.app/demarrer/introduction/'
-			},
-			{
-				type: ItemTypeEnum.ITEM,
 				label: 'v1.x',
 				href: 'https://v1-digital-design-system.netlify.app/'
 			},

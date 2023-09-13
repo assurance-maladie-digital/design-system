@@ -178,4 +178,4 @@ async function sendForm(): Promise<void> {
 
 #### Ancienne syntaxe
 
-[L’ancienne syntaxe de l’enum](https://github.com/assurance-maladie-digital/design-system/blob/dev/packages/vue-dot/src/constants/enums/StateEnum.ts#L9) est toujours disponible, mais est dépréciée.
+[L’ancienne syntaxe de l’enum](https://github.com/assurance-maladie-digital/design-system/blob/v2/packages/vue-dot/src/constants/enums/StateEnum.ts#L9) est toujours disponible, mais est dépréciée.

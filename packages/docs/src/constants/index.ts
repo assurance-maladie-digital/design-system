@@ -1,5 +1,5 @@
 export const REPO = 'assurance-maladie-digital/design-system';
-export const DEFAULT_BRANCH = 'dev';
+export const DEFAULT_BRANCH = 'v2';
 export const DEFAULT_DIR = 'packages/docs/src';
 
 export const TEAM_MEMBER_IDS = [
