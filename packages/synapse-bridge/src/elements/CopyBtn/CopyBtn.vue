@@ -1,15 +1,15 @@
 <template>
 	<div class="vd-copy-btn">
-		<VMenu v-model="tooltip" v-bind="options?.menu" :disabled="hideTooltip">
-			<template #activator="{ on }">
+		<VMenu v-model="tooltip" v-bind="options.menu" :disabled="hideTooltip">
+			<template #activator="{ props }">
 				<VBtn
-					v-bind="options?.btn"
+					v-bind="options.btn"
+					v-on="props"
 					:aria-label="label"
-					v-on="on"
 					@click="copy"
 				>
 					<slot name="icon">
-						<VIcon v-bind="options?.icon">
+						<VIcon v-bind="options.icon">
 							{{ copyIcon }}
 						</VIcon>
 					</slot>
@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { PropType } from "vue";
-import { Component, Vue, Prop, toNative } from "vue-facing-decorator";
+import { Component, Vue, Prop } from "vue-facing-decorator";
 
 import { config } from "./config";
 import { locales } from "./locales";
@@ -39,10 +39,16 @@ import { mdiContentCopy } from "@mdi/js";
 @Component({
 	mixins: [customizable(config)],
 })
-class CopyBtn extends Vue {
+export default class CopyBtn extends Vue {
 	locales = locales;
 	copyIcon = mdiContentCopy;
 	tooltip = false;
+
+	options = {
+		menu: {},
+		btn: {},
+		icon: {},
+	};
 
 	@Prop({ type: String, required: true })
 	label!: string;
@@ -58,11 +64,6 @@ class CopyBtn extends Vue {
 
 	@Prop({ type: Number, default: 2500 })
 	tooltipDuration!: number;
-
-	get options() {
-		// Access defaultOptions from the mixin
-		return this.$options.defaultOptions;
-	}
 
 	copy(): void {
 		const contentToCopy =
@@ -81,8 +82,6 @@ class CopyBtn extends Vue {
 		}, this.tooltipDuration);
 	}
 }
-
-export default toNative(CopyBtn);
 </script>
 
 <style lang="scss">
