@@ -25,21 +25,21 @@
 
 <script lang="ts">
 import { PropType } from "vue";
-import { Component, Vue, Prop } from "vue-facing-decorator";
+import { Component, Vue, Prop, toNative } from "vue-facing-decorator";
 
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { customizable } from "../../mixins/customizable";
+import mixin from "../../mixins/customizable";
 
 import { copyToClipboard } from "../../functions/copyToClipboard";
 
 import { mdiContentCopy } from "@mdi/js";
 
 @Component({
-	mixins: [customizable(config)],
+	mixins: [mixin],
 })
-export default class CopyBtn extends Vue {
+class CopyBtn extends Vue {
 	locales = locales;
 	copyIcon = mdiContentCopy;
 	tooltip = false;
@@ -82,6 +82,8 @@ export default class CopyBtn extends Vue {
 		}, this.tooltipDuration);
 	}
 }
+
+export default toNative(CopyBtn);
 </script>
 
 <style lang="scss">
