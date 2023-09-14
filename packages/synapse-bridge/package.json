@@ -1,0 +1,31 @@
+{
+	"name": "@cnamts/synapse-bridge",
+	"version": "0.0.0",
+	"type": "module",
+	"files": ["dist"],
+	"main": "./dist/synapse-bridge.umd.cjs",
+	"module": "./dist/synapse-bridge.js",
+	"exports": {
+		".": {
+			"import": "./dist/synapse-bridge.js",
+			"require": "./dist/synapse-bridge.umd.cjs"
+		}
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"vue": "3.3.4"
+	},
+	"devDependencies": {
+		"@types/node": "18.11.9",
+		"@vitejs/plugin-vue": "4.3.4",
+		"typescript": "5.2.2",
+		"vite": "4.4.9",
+		"vite-plugin-vuetify": "1.0.2",
+		"vue-tsc": "1.8.11",
+		"vuetify": "3.3.16"
+	}
+}

@@ -1,1 +1,1 @@
-# Synapse Bridge
+# Synapse
