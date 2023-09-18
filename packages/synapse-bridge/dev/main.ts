@@ -5,7 +5,7 @@ import "vuetify/styles";
 import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 
-import "@cnamts/design-tokens/dist/tokens";
+import { tokens } from "@cnamts/design-tokens/dist/tokens";
 import "@/styles/index.scss";
 
 const vuetify = createVuetify({
@@ -14,6 +14,23 @@ const vuetify = createVuetify({
 		aliases,
 		sets: {
 			mdi,
+		},
+	},
+	theme: {
+		defaultTheme: "light",
+		themes: {
+			light: {
+				colors: {
+					primary: tokens.colors.primary,
+					secondary: tokens.colors.secondary,
+					accent: tokens.colors.accent,
+					error: tokens.colors.error,
+					info: tokens.colors.info,
+					success: tokens.colors.success,
+					warning: tokens.colors.warning,
+					risquePro: tokens.colors.risquePro,
+				},
+			},
 		},
 	},
 });
