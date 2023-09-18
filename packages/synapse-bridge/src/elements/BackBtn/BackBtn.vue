@@ -1,7 +1,7 @@
 <template>
 	<VBtn
 		v-bind="$attrs"
-		:text="!dark"
+		:variant="dark ? 'outlined' : 'text'"
 		:dark="dark"
 		:color="dark ? 'white' : 'primary'"
 		:outlined="dark"
@@ -10,7 +10,6 @@
 			'pr-1': !dark && !hideBackIcon,
 		}"
 		class="vd-back-btn"
-		v-on="$listeners"
 	>
 		<slot name="icon">
 			<VIcon
