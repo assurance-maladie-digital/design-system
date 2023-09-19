@@ -118,7 +118,6 @@ VueWrapper {
               "icon": true,
               "variant": "text",
             },
-            "default": [Function],
             "icon": {
               "color": "grey-darken-2",
             },
@@ -128,7 +127,6 @@ VueWrapper {
               "offset": 16,
               "zIndex": 8,
             },
-            "type": [Function],
           },
           "textToCopy": "test",
           "tooltip": false,
@@ -156,7 +154,6 @@ VueWrapper {
                 "icon": true,
                 "variant": "text",
               },
-              "default": [Function],
               "icon": {
                 "color": "grey-darken-2",
               },
@@ -166,7 +163,6 @@ VueWrapper {
                 "offset": 16,
                 "zIndex": 8,
               },
-              "type": [Function],
             },
             "textToCopy": "test",
             "tooltip": false,
@@ -187,7 +183,6 @@ VueWrapper {
                 "icon": true,
                 "variant": "text",
               },
-              "default": [Function],
               "icon": {
                 "color": "grey-darken-2",
               },
@@ -197,7 +192,6 @@ VueWrapper {
                 "offset": 16,
                 "zIndex": 8,
               },
-              "type": [Function],
             },
             "textToCopy": "test",
             "tooltip": false,
@@ -269,7 +263,6 @@ VueWrapper {
               "icon": true,
               "variant": "text",
             },
-            "default": [Function],
             "icon": {
               "color": "grey-darken-2",
             },
@@ -279,7 +272,6 @@ VueWrapper {
               "offset": 16,
               "zIndex": 8,
             },
-            "type": [Function],
           },
           "textToCopy": "test",
           "tooltip": false,
@@ -302,7 +294,6 @@ VueWrapper {
               "icon": true,
               "variant": "text",
             },
-            "default": [Function],
             "icon": {
               "color": "grey-darken-2",
             },
@@ -312,7 +303,6 @@ VueWrapper {
               "offset": 16,
               "zIndex": 8,
             },
-            "type": [Function],
           },
           "textToCopy": "test",
           "tooltip": false,
@@ -375,7 +365,6 @@ VueWrapper {
               "icon": true,
               "variant": "text",
             },
-            "default": [Function],
             "icon": {
               "color": "grey-darken-2",
             },
@@ -385,7 +374,6 @@ VueWrapper {
               "offset": 16,
               "zIndex": 8,
             },
-            "type": [Function],
           },
           "textToCopy": "test",
           "tooltip": false,
@@ -482,7 +470,6 @@ VueWrapper {
                 "icon": true,
                 "variant": "text",
               },
-              "default": [Function],
               "icon": {
                 "color": "grey-darken-2",
               },
@@ -492,7 +479,6 @@ VueWrapper {
                 "offset": 16,
                 "zIndex": 8,
               },
-              "type": [Function],
             },
             "textToCopy": "test",
             "tooltip": false,
@@ -617,7 +603,6 @@ VueWrapper {
                 "icon": true,
                 "variant": "text",
               },
-              "default": [Function],
               "icon": {
                 "color": "grey-darken-2",
               },
@@ -627,7 +612,6 @@ VueWrapper {
                 "offset": 16,
                 "zIndex": 8,
               },
-              "type": [Function],
             },
             "textToCopy": "test",
             "tooltip": false,
@@ -661,7 +645,6 @@ VueWrapper {
                       "icon": true,
                       "variant": "text",
                     },
-                    "default": [Function],
                     "icon": {
                       "color": "grey-darken-2",
                     },
@@ -671,7 +654,6 @@ VueWrapper {
                       "offset": 16,
                       "zIndex": 8,
                     },
-                    "type": [Function],
                   },
                   "dep": Set {
                     ReactiveEffect {
@@ -704,7 +686,11 @@ VueWrapper {
                   },
                   "effect": [Circular],
                 },
-                "deps": [],
+                "deps": [
+                  Set {
+                    [Circular],
+                  },
+                ],
                 "fn": [Function],
                 "parent": undefined,
                 "scheduler": [Function],
@@ -1517,7 +1503,6 @@ VueWrapper {
         "icon": true,
         "variant": "text",
       },
-      "default": [Function],
       "icon": {
         "color": "grey-darken-2",
       },
@@ -1527,7 +1512,6 @@ VueWrapper {
         "offset": 16,
         "zIndex": 8,
       },
-      "type": [Function],
     },
     "textToCopy": "test",
     "tooltip": false,
@@ -1550,7 +1534,6 @@ VueWrapper {
           "icon": true,
           "variant": "text",
         },
-        "default": [Function],
         "icon": {
           "color": "grey-darken-2",
         },
@@ -1560,7 +1543,6 @@ VueWrapper {
           "offset": 16,
           "zIndex": 8,
         },
-        "type": [Function],
       },
       "textToCopy": "test",
       "tooltip": false,

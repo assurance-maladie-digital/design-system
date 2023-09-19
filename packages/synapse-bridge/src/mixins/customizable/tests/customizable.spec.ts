@@ -2,7 +2,7 @@ import { defineComponent } from "vue";
 import { shallowMount } from "@vue/test-utils";
 import deepMerge from "deepmerge";
 
-import customizable from "../customizable";
+import customizable from "../";
 import { Options } from "../types";
 
 const DEFAULT_OPTIONS = {
@@ -41,7 +41,9 @@ describe("customizable", () => {
 		});
 
 		const merged = deepMerge<Options>(DEFAULT_OPTIONS, CUSTOM_OPTIONS);
+		console.log(wrapper.vm.options);
+		console.log(merged);
 
-		expect(wrapper.vm.options).toEqual(merged);
+		expect(wrapper.vm.options).toStrictEqual(merged);
 	});
 });
