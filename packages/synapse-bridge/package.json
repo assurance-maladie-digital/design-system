@@ -20,6 +20,7 @@
 		"test": "jest --silent"
 	},
 	"dependencies": {
+		"@cnamts/design-tokens": "^2.12.0",
 		"vue": "3.3.4",
 		"vuetify": "3.3.16"
 	},
