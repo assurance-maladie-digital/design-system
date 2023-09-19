@@ -1,0 +1,1588 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyBtn renders correctly 1`] = `
+VueWrapper {
+  "__app": {
+    "_component": {
+      "name": "VTU_ROOT",
+      "render": [Function],
+      "setup": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <div
+        class="vd-copy-btn"
+      >
+        <vmenu
+          contentclass="vd-copy-tooltip-menu text-white text-body-2 ml-2"
+          disabled="false"
+          location="end center"
+          modelvalue="false"
+          offset="16"
+          zindex="8"
+        >
+          
+          Texte copié !
+          
+        </vmenu>
+      </div>
+    </div>,
+    "_context": {
+      "app": [Circular],
+      "components": {
+        "transition": {
+          "name": "transition",
+        },
+        "transition-group": {
+          "name": "transition-group",
+        },
+      },
+      "config": {
+        "compilerOptions": {},
+        "errorHandler": undefined,
+        "globalProperties": {},
+        "isNativeTag": [Function],
+        "optionMergeStrategies": {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": {},
+      "emitsCache": WeakMap {},
+      "mixins": [
+        {
+          "beforeCreate": [Function],
+        },
+      ],
+      "optionsCache": WeakMap {},
+      "propsCache": WeakMap {},
+      "provides": {},
+      "reload": [Function],
+    },
+    "_instance": {
+      "a": null,
+      "accessCache": {},
+      "appContext": {
+        "app": [Circular],
+        "components": {
+          "transition": {
+            "name": "transition",
+          },
+          "transition-group": {
+            "name": "transition-group",
+          },
+        },
+        "config": {
+          "compilerOptions": {},
+          "errorHandler": undefined,
+          "globalProperties": {},
+          "isNativeTag": [Function],
+          "optionMergeStrategies": {},
+          "performance": false,
+          "warnHandler": undefined,
+        },
+        "directives": {},
+        "emitsCache": WeakMap {},
+        "mixins": [
+          {
+            "beforeCreate": [Function],
+          },
+        ],
+        "optionsCache": WeakMap {},
+        "propsCache": WeakMap {},
+        "provides": {},
+        "reload": [Function],
+      },
+      "asyncDep": null,
+      "asyncResolved": false,
+      "attrs": {},
+      "attrsProxy": null,
+      "bc": null,
+      "bm": null,
+      "bu": null,
+      "bum": null,
+      "c": null,
+      "components": null,
+      "ctx": {
+        "VTU_COMPONENT": {
+          "copy": [Function],
+          "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+          "hideTooltip": false,
+          "label": "test",
+          "locales": {
+            "tooltip": "Texte copié !",
+          },
+          "options": {
+            "btn": {
+              "density": "comfortable",
+              "icon": true,
+              "variant": "text",
+            },
+            "default": [Function],
+            "icon": {
+              "color": "grey-darken-2",
+            },
+            "menu": {
+              "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+              "location": "end center",
+              "offset": 16,
+              "zIndex": 8,
+            },
+            "type": [Function],
+          },
+          "textToCopy": "test",
+          "tooltip": false,
+          "tooltipDuration": 2500,
+          "vuetifyOptions": {},
+        },
+      },
+      "da": null,
+      "data": {},
+      "devtoolsRawSetupState": {
+        "VTU_COMPONENT": RefImpl {
+          "__v_isRef": true,
+          "__v_isShallow": false,
+          "_rawValue": {
+            "copy": [Function],
+            "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+            "hideTooltip": false,
+            "label": "test",
+            "locales": {
+              "tooltip": "Texte copié !",
+            },
+            "options": {
+              "btn": {
+                "density": "comfortable",
+                "icon": true,
+                "variant": "text",
+              },
+              "default": [Function],
+              "icon": {
+                "color": "grey-darken-2",
+              },
+              "menu": {
+                "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+                "location": "end center",
+                "offset": 16,
+                "zIndex": 8,
+              },
+              "type": [Function],
+            },
+            "textToCopy": "test",
+            "tooltip": false,
+            "tooltipDuration": 2500,
+            "vuetifyOptions": {},
+          },
+          "_value": {
+            "copy": [Function],
+            "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+            "hideTooltip": false,
+            "label": "test",
+            "locales": {
+              "tooltip": "Texte copié !",
+            },
+            "options": {
+              "btn": {
+                "density": "comfortable",
+                "icon": true,
+                "variant": "text",
+              },
+              "default": [Function],
+              "icon": {
+                "color": "grey-darken-2",
+              },
+              "menu": {
+                "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+                "location": "end center",
+                "offset": 16,
+                "zIndex": 8,
+              },
+              "type": [Function],
+            },
+            "textToCopy": "test",
+            "tooltip": false,
+            "tooltipDuration": 2500,
+            "vuetifyOptions": {},
+          },
+          "dep": undefined,
+        },
+      },
+      "directives": null,
+      "ec": null,
+      "effect": ReactiveEffect {
+        "active": true,
+        "allowRecurse": true,
+        "deps": [
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+        ],
+        "fn": [Function],
+        "onTrack": undefined,
+        "onTrigger": undefined,
+        "parent": undefined,
+        "scheduler": [Function],
+      },
+      "emit": [Function],
+      "emitsOptions": null,
+      "emitted": null,
+      "exposeProxy": null,
+      "exposed": null,
+      "inheritAttrs": undefined,
+      "isDeactivated": false,
+      "isMounted": true,
+      "isUnmounted": false,
+      "m": null,
+      "next": null,
+      "parent": null,
+      "props": {},
+      "propsDefaults": {},
+      "propsOptions": [
+        {},
+        [],
+      ],
+      "provides": {},
+      "proxy": {
+        "VTU_COMPONENT": {
+          "copy": [Function],
+          "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+          "hideTooltip": false,
+          "label": "test",
+          "locales": {
+            "tooltip": "Texte copié !",
+          },
+          "options": {
+            "btn": {
+              "density": "comfortable",
+              "icon": true,
+              "variant": "text",
+            },
+            "default": [Function],
+            "icon": {
+              "color": "grey-darken-2",
+            },
+            "menu": {
+              "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+              "location": "end center",
+              "offset": 16,
+              "zIndex": 8,
+            },
+            "type": [Function],
+          },
+          "textToCopy": "test",
+          "tooltip": false,
+          "tooltipDuration": 2500,
+          "vuetifyOptions": {},
+        },
+      },
+      "refs": {
+        "VTU_COMPONENT": {
+          "copy": [Function],
+          "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+          "hideTooltip": false,
+          "label": "test",
+          "locales": {
+            "tooltip": "Texte copié !",
+          },
+          "options": {
+            "btn": {
+              "density": "comfortable",
+              "icon": true,
+              "variant": "text",
+            },
+            "default": [Function],
+            "icon": {
+              "color": "grey-darken-2",
+            },
+            "menu": {
+              "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+              "location": "end center",
+              "offset": 16,
+              "zIndex": 8,
+            },
+            "type": [Function],
+          },
+          "textToCopy": "test",
+          "tooltip": false,
+          "tooltipDuration": 2500,
+          "vuetifyOptions": {},
+        },
+      },
+      "render": [Function],
+      "renderCache": [],
+      "root": [Circular],
+      "rtc": null,
+      "rtg": null,
+      "scope": EffectScope {
+        "_active": true,
+        "cleanups": [],
+        "detached": true,
+        "effects": [
+          ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "parent": undefined,
+            "scheduler": [Function],
+          },
+        ],
+        "parent": undefined,
+      },
+      "setupContext": null,
+      "setupState": {
+        "VTU_COMPONENT": {
+          "copy": [Function],
+          "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+          "hideTooltip": false,
+          "label": "test",
+          "locales": {
+            "tooltip": "Texte copié !",
+          },
+          "options": {
+            "btn": {
+              "density": "comfortable",
+              "icon": true,
+              "variant": "text",
+            },
+            "default": [Function],
+            "icon": {
+              "color": "grey-darken-2",
+            },
+            "menu": {
+              "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+              "location": "end center",
+              "offset": 16,
+              "zIndex": 8,
+            },
+            "type": [Function],
+          },
+          "textToCopy": "test",
+          "tooltip": false,
+          "tooltipDuration": 2500,
+          "vuetifyOptions": {},
+        },
+      },
+      "slots": {},
+      "slotsProxy": null,
+      "sp": null,
+      "subTree": {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": null,
+        "children": null,
+        "component": {
+          "a": null,
+          "accessCache": {
+            "@@__IMMUTABLE_ITERABLE__@@": 0,
+            "@@__IMMUTABLE_RECORD__@@": 0,
+            "__v_isReadonly": 0,
+            "__v_isRef": 0,
+            "__v_isShallow": 0,
+            "__v_raw": 0,
+            "__v_skip": 4,
+            "_isMockFunction": 0,
+            "constructor": 0,
+            "copy": 4,
+            "copyIcon": 2,
+            "hideTooltip": 3,
+            "label": 3,
+            "locales": 2,
+            "options": 4,
+            "textToCopy": 3,
+            "toJSON": 0,
+            "tooltip": 2,
+            "tooltipDuration": 3,
+            "vuetifyOptions": 3,
+            Symbol(Symbol.toStringTag): 0,
+          },
+          "appContext": {
+            "app": [Circular],
+            "components": {
+              "transition": {
+                "name": "transition",
+              },
+              "transition-group": {
+                "name": "transition-group",
+              },
+            },
+            "config": {
+              "compilerOptions": {},
+              "errorHandler": undefined,
+              "globalProperties": {},
+              "isNativeTag": [Function],
+              "optionMergeStrategies": {},
+              "performance": false,
+              "warnHandler": undefined,
+            },
+            "directives": {},
+            "emitsCache": WeakMap {},
+            "mixins": [
+              {
+                "beforeCreate": [Function],
+              },
+            ],
+            "optionsCache": WeakMap {},
+            "propsCache": WeakMap {},
+            "provides": {},
+            "reload": [Function],
+          },
+          "asyncDep": null,
+          "asyncResolved": false,
+          "attrs": {},
+          "attrsProxy": null,
+          "bc": null,
+          "bm": null,
+          "bu": null,
+          "bum": null,
+          "c": null,
+          "components": {},
+          "ctx": {
+            "copy": [Function],
+            "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+            "hideTooltip": false,
+            "label": "test",
+            "locales": {
+              "tooltip": "Texte copié !",
+            },
+            "options": {
+              "btn": {
+                "density": "comfortable",
+                "icon": true,
+                "variant": "text",
+              },
+              "default": [Function],
+              "icon": {
+                "color": "grey-darken-2",
+              },
+              "menu": {
+                "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+                "location": "end center",
+                "offset": 16,
+                "zIndex": 8,
+              },
+              "type": [Function],
+            },
+            "textToCopy": "test",
+            "tooltip": false,
+            "tooltipDuration": 2500,
+            "vuetifyOptions": {},
+          },
+          "da": null,
+          "data": {
+            "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+            "locales": {
+              "tooltip": "Texte copié !",
+            },
+            "tooltip": false,
+          },
+          "directives": null,
+          "ec": null,
+          "effect": ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "parent": undefined,
+            "scheduler": [Function],
+          },
+          "emit": [Function],
+          "emitsOptions": null,
+          "emitted": null,
+          "exposeProxy": null,
+          "exposed": null,
+          "inheritAttrs": undefined,
+          "isDeactivated": false,
+          "isMounted": true,
+          "isUnmounted": false,
+          "m": null,
+          "next": null,
+          "parent": [Circular],
+          "props": {
+            "hideTooltip": false,
+            "label": "test",
+            "textToCopy": "test",
+            "tooltipDuration": 2500,
+            "vuetifyOptions": {},
+          },
+          "propsDefaults": {
+            "vuetifyOptions": {},
+          },
+          "propsOptions": [
+            {
+              "hideTooltip": {
+                "0": true,
+                "1": true,
+                "default": false,
+                "type": [Function],
+              },
+              "label": {
+                "0": false,
+                "1": true,
+                "required": true,
+                "type": [Function],
+              },
+              "textToCopy": {
+                "0": false,
+                "1": true,
+                "required": true,
+                "type": [
+                  [Function],
+                  [Function],
+                ],
+              },
+              "tooltipDuration": {
+                "0": false,
+                "1": true,
+                "default": 2500,
+                "type": [Function],
+              },
+              "vuetifyOptions": {
+                "0": false,
+                "1": true,
+                "default": [Function],
+                "type": [Function],
+              },
+            },
+            [
+              "vuetifyOptions",
+              "hideTooltip",
+              "tooltipDuration",
+            ],
+          ],
+          "provides": {},
+          "proxy": {
+            "copy": [Function],
+            "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+            "hideTooltip": false,
+            "label": "test",
+            "locales": {
+              "tooltip": "Texte copié !",
+            },
+            "options": {
+              "btn": {
+                "density": "comfortable",
+                "icon": true,
+                "variant": "text",
+              },
+              "default": [Function],
+              "icon": {
+                "color": "grey-darken-2",
+              },
+              "menu": {
+                "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+                "location": "end center",
+                "offset": 16,
+                "zIndex": 8,
+              },
+              "type": [Function],
+            },
+            "textToCopy": "test",
+            "tooltip": false,
+            "tooltipDuration": 2500,
+            "vuetifyOptions": {},
+          },
+          "refs": {},
+          "render": [Function],
+          "renderCache": [
+            [Function],
+          ],
+          "root": [Circular],
+          "rtc": null,
+          "rtg": null,
+          "scope": EffectScope {
+            "_active": true,
+            "cleanups": [],
+            "detached": true,
+            "effects": [
+              ReactiveEffect {
+                "active": true,
+                "computed": ComputedRefImpl {
+                  "__v_isReadonly": false,
+                  "__v_isRef": true,
+                  "_cacheable": true,
+                  "_dirty": false,
+                  "_setter": [Function],
+                  "_value": {
+                    "btn": {
+                      "density": "comfortable",
+                      "icon": true,
+                      "variant": "text",
+                    },
+                    "default": [Function],
+                    "icon": {
+                      "color": "grey-darken-2",
+                    },
+                    "menu": {
+                      "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+                      "location": "end center",
+                      "offset": 16,
+                      "zIndex": 8,
+                    },
+                    "type": [Function],
+                  },
+                  "dep": Set {
+                    ReactiveEffect {
+                      "active": true,
+                      "allowRecurse": true,
+                      "deps": [
+                        Set {
+                          [Circular],
+                        },
+                        [Circular],
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                        },
+                      ],
+                      "fn": [Function],
+                      "onTrack": undefined,
+                      "onTrigger": undefined,
+                      "parent": undefined,
+                      "scheduler": [Function],
+                    },
+                  },
+                  "effect": [Circular],
+                },
+                "deps": [],
+                "fn": [Function],
+                "parent": undefined,
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
+                "allowRecurse": true,
+                "deps": [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "onTrack": undefined,
+                "onTrigger": undefined,
+                "parent": undefined,
+                "scheduler": [Function],
+              },
+            ],
+            "parent": undefined,
+          },
+          "setupContext": null,
+          "setupState": {},
+          "slots": {},
+          "slotsProxy": null,
+          "sp": null,
+          "subTree": {
+            "__v_isVNode": true,
+            "__v_skip": true,
+            "anchor": null,
+            "appContext": null,
+            "children": [
+              {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": [
+                  {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": ,
+                    "appContext": null,
+                    "children": [
+                      {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Texte copié !",
+                        "component": null,
+                        "ctx": [Circular],
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": Texte copié !,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 8,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(v-txt),
+                      },
+                    ],
+                    "component": null,
+                    "ctx": [Circular],
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": ,
+                    "key": "_tooltip",
+                    "patchFlag": -2,
+                    "props": {
+                      "key": "_tooltip",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 16,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(v-fgt),
+                  },
+                ],
+                "component": null,
+                "ctx": [Circular],
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": [
+                  "modelValue",
+                  "disabled",
+                ],
+                "el": <vmenu
+                  contentclass="vd-copy-tooltip-menu text-white text-body-2 ml-2"
+                  disabled="false"
+                  location="end center"
+                  modelvalue="false"
+                  offset="16"
+                  zindex="8"
+                >
+                  
+                  Texte copié !
+                  
+                </vmenu>,
+                "key": null,
+                "patchFlag": 16,
+                "props": {
+                  "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+                  "disabled": false,
+                  "location": "end center",
+                  "modelValue": false,
+                  "offset": 16,
+                  "onUpdate:modelValue": [Function],
+                  "zIndex": 8,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "VMenu",
+              },
+            ],
+            "component": null,
+            "ctx": [Circular],
+            "dirs": null,
+            "dynamicChildren": [
+              {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": ,
+                "appContext": null,
+                "children": [
+                  {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Texte copié !",
+                    "component": null,
+                    "ctx": [Circular],
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": Texte copié !,
+                    "key": null,
+                    "patchFlag": 1,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(v-txt),
+                  },
+                ],
+                "component": null,
+                "ctx": [Circular],
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": ,
+                "key": "_tooltip",
+                "patchFlag": -2,
+                "props": {
+                  "key": "_tooltip",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 16,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(v-fgt),
+              },
+              {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": [
+                  {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": ,
+                    "appContext": null,
+                    "children": [
+                      {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Texte copié !",
+                        "component": null,
+                        "ctx": [Circular],
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": Texte copié !,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 8,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(v-txt),
+                      },
+                    ],
+                    "component": null,
+                    "ctx": [Circular],
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": ,
+                    "key": "_tooltip",
+                    "patchFlag": -2,
+                    "props": {
+                      "key": "_tooltip",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 16,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(v-fgt),
+                  },
+                ],
+                "component": null,
+                "ctx": [Circular],
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": [
+                  "modelValue",
+                  "disabled",
+                ],
+                "el": <vmenu
+                  contentclass="vd-copy-tooltip-menu text-white text-body-2 ml-2"
+                  disabled="false"
+                  location="end center"
+                  modelvalue="false"
+                  offset="16"
+                  zindex="8"
+                >
+                  
+                  Texte copié !
+                  
+                </vmenu>,
+                "key": null,
+                "patchFlag": 16,
+                "props": {
+                  "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+                  "disabled": false,
+                  "location": "end center",
+                  "modelValue": false,
+                  "offset": 16,
+                  "onUpdate:modelValue": [Function],
+                  "zIndex": 8,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "VMenu",
+              },
+            ],
+            "dynamicProps": null,
+            "el": <div
+              class="vd-copy-btn"
+            >
+              <vmenu
+                contentclass="vd-copy-tooltip-menu text-white text-body-2 ml-2"
+                disabled="false"
+                location="end center"
+                modelvalue="false"
+                offset="16"
+                zindex="8"
+              >
+                
+                Texte copié !
+                
+              </vmenu>
+            </div>,
+            "key": null,
+            "patchFlag": 0,
+            "props": {
+              "class": "vd-copy-btn",
+            },
+            "ref": null,
+            "scopeId": null,
+            "shapeFlag": 17,
+            "slotScopeIds": null,
+            "ssContent": null,
+            "ssFallback": null,
+            "staticCount": 0,
+            "suspense": null,
+            "target": null,
+            "targetAnchor": null,
+            "transition": null,
+            "type": "div",
+          },
+          "suspense": null,
+          "suspenseId": 0,
+          "type": {
+            "components": {},
+            "data": [Function],
+            "methods": {
+              "copy": [Function],
+            },
+            "mixins": [
+              {
+                "computed": {
+                  "options": [Function],
+                },
+                "props": {
+                  "vuetifyOptions": {
+                    "default": [Function],
+                    "type": [Function],
+                  },
+                },
+              },
+            ],
+            "props": {
+              "hideTooltip": {
+                "default": false,
+                "type": [Function],
+              },
+              "label": {
+                "required": true,
+                "type": [Function],
+              },
+              "textToCopy": {
+                "required": true,
+                "type": [
+                  [Function],
+                  [Function],
+                ],
+              },
+              "tooltipDuration": {
+                "default": 2500,
+                "type": [Function],
+              },
+            },
+            "propsData": {
+              "label": "test",
+              "textToCopy": "test",
+            },
+            "render": [Function],
+          },
+          "u": null,
+          "uid": 1,
+          "um": null,
+          "update": [Function],
+          "vnode": [Circular],
+          "withProxy": null,
+        },
+        "ctx": [Circular],
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <div
+          class="vd-copy-btn"
+        >
+          <vmenu
+            contentclass="vd-copy-tooltip-menu text-white text-body-2 ml-2"
+            disabled="false"
+            location="end center"
+            modelvalue="false"
+            offset="16"
+            zindex="8"
+          >
+            
+            Texte copié !
+            
+          </vmenu>
+        </div>,
+        "key": null,
+        "patchFlag": 0,
+        "props": {
+          "label": "test",
+          "ref": "VTU_COMPONENT",
+          "textToCopy": "test",
+        },
+        "ref": {
+          "f": false,
+          "i": [Circular],
+          "k": undefined,
+          "r": "VTU_COMPONENT",
+        },
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": {
+          "components": {},
+          "data": [Function],
+          "methods": {
+            "copy": [Function],
+          },
+          "mixins": [
+            {
+              "computed": {
+                "options": [Function],
+              },
+              "props": {
+                "vuetifyOptions": {
+                  "default": [Function],
+                  "type": [Function],
+                },
+              },
+            },
+          ],
+          "props": {
+            "hideTooltip": {
+              "default": false,
+              "type": [Function],
+            },
+            "label": {
+              "required": true,
+              "type": [Function],
+            },
+            "textToCopy": {
+              "required": true,
+              "type": [
+                [Function],
+                [Function],
+              ],
+            },
+            "tooltipDuration": {
+              "default": 2500,
+              "type": [Function],
+            },
+          },
+          "propsData": {
+            "label": "test",
+            "textToCopy": "test",
+          },
+          "render": [Function],
+        },
+      },
+      "suspense": null,
+      "suspenseId": 0,
+      "type": {
+        "name": "VTU_ROOT",
+        "render": [Function],
+        "setup": [Function],
+      },
+      "u": null,
+      "uid": 0,
+      "um": null,
+      "update": [Function],
+      "vnode": {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": {
+          "app": [Circular],
+          "components": {
+            "transition": {
+              "name": "transition",
+            },
+            "transition-group": {
+              "name": "transition-group",
+            },
+          },
+          "config": {
+            "compilerOptions": {},
+            "errorHandler": undefined,
+            "globalProperties": {},
+            "isNativeTag": [Function],
+            "optionMergeStrategies": {},
+            "performance": false,
+            "warnHandler": undefined,
+          },
+          "directives": {},
+          "emitsCache": WeakMap {},
+          "mixins": [
+            {
+              "beforeCreate": [Function],
+            },
+          ],
+          "optionsCache": WeakMap {},
+          "propsCache": WeakMap {},
+          "provides": {},
+          "reload": [Function],
+        },
+        "children": null,
+        "component": [Circular],
+        "ctx": null,
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <div
+          class="vd-copy-btn"
+        >
+          <vmenu
+            contentclass="vd-copy-tooltip-menu text-white text-body-2 ml-2"
+            disabled="false"
+            location="end center"
+            modelvalue="false"
+            offset="16"
+            zindex="8"
+          >
+            
+            Texte copié !
+            
+          </vmenu>
+        </div>,
+        "key": null,
+        "patchFlag": 0,
+        "props": null,
+        "ref": null,
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": {
+          "name": "VTU_ROOT",
+          "render": [Function],
+          "setup": [Function],
+        },
+      },
+      "withProxy": null,
+    },
+    "_props": null,
+    "_uid": 0,
+    "component": [Function],
+    "config": {
+      "compilerOptions": {},
+      "errorHandler": undefined,
+      "globalProperties": {},
+      "isNativeTag": [Function],
+      "optionMergeStrategies": {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "runWithContext": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.3.4",
+  },
+  "__setProps": [Function],
+  "cleanUpCallbacks": [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "componentVM": {
+    "copy": [Function],
+    "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+    "hideTooltip": false,
+    "label": "test",
+    "locales": {
+      "tooltip": "Texte copié !",
+    },
+    "options": {
+      "btn": {
+        "density": "comfortable",
+        "icon": true,
+        "variant": "text",
+      },
+      "default": [Function],
+      "icon": {
+        "color": "grey-darken-2",
+      },
+      "menu": {
+        "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+        "location": "end center",
+        "offset": 16,
+        "zIndex": 8,
+      },
+      "type": [Function],
+    },
+    "textToCopy": "test",
+    "tooltip": false,
+    "tooltipDuration": 2500,
+    "vuetifyOptions": {},
+  },
+  "isDisabled": [Function],
+  "rootVM": {
+    "VTU_COMPONENT": {
+      "copy": [Function],
+      "copyIcon": "M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z",
+      "hideTooltip": false,
+      "label": "test",
+      "locales": {
+        "tooltip": "Texte copié !",
+      },
+      "options": {
+        "btn": {
+          "density": "comfortable",
+          "icon": true,
+          "variant": "text",
+        },
+        "default": [Function],
+        "icon": {
+          "color": "grey-darken-2",
+        },
+        "menu": {
+          "contentClass": "vd-copy-tooltip-menu text-white text-body-2 ml-2",
+          "location": "end center",
+          "offset": 16,
+          "zIndex": 8,
+        },
+        "type": [Function],
+      },
+      "textToCopy": "test",
+      "tooltip": false,
+      "tooltipDuration": 2500,
+      "vuetifyOptions": {},
+    },
+  },
+  "wrapperElement": <div
+    class="vd-copy-btn"
+  >
+    <vmenu
+      contentclass="vd-copy-tooltip-menu text-white text-body-2 ml-2"
+      disabled="false"
+      location="end center"
+      modelvalue="false"
+      offset="16"
+      zindex="8"
+    >
+      
+      Texte copié !
+      
+    </vmenu>
+  </div>,
+}
+`;

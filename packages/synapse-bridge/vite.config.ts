@@ -4,7 +4,18 @@ import vue from "@vitejs/plugin-vue";
 import vuetify from "vite-plugin-vuetify";
 
 export default defineConfig({
-	plugins: [vue(), vuetify()],
+	plugins: [
+		vue({
+			template: {
+				compilerOptions: {
+					isCustomElement: (tag) => {
+						return tag.startsWith("v-");
+					},
+				},
+			},
+		}),
+		vuetify(),
+	],
 	resolve: {
 		alias: {
 			"@": resolve(__dirname, "src"),

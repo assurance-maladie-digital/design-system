@@ -34,6 +34,7 @@ const config: Config.InitialOptions = {
 	globals: {
 		API_URL: "http://localhost:8080",
 	},
+	transformIgnorePatterns: ["./node_modules/(?!vuetify)"],
 };
 
 export default config;

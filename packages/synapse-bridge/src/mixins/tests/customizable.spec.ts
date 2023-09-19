@@ -1,13 +1,9 @@
-import { VueWrapper, shallowMount } from "@vue/test-utils";
 import { defineComponent } from "vue";
+import { shallowMount } from "@vue/test-utils";
 import deepMerge from "deepmerge";
 
-import { customizable, Options } from "../";
-
-interface TestComponent {
-	vuetifyOptions: Options;
-	options: Options;
-}
+import customizable from "../customizable";
+import { Options } from "../types";
 
 const DEFAULT_OPTIONS = {
 	test: {
@@ -29,6 +25,11 @@ function createTestComponent() {
 	});
 }
 
+export default defineComponent({
+	name: "TestComponent",
+	extends: createTestComponent(),
+});
+
 describe("customizable", () => {
 	it("merges correctly default and custom options into a computed property", () => {
 		const testComponent = createTestComponent();
@@ -37,7 +38,7 @@ describe("customizable", () => {
 			props: {
 				vuetifyOptions: CUSTOM_OPTIONS,
 			},
-		}) as VueWrapper<TestComponent>;
+		});
 
 		const merged = deepMerge<Options>(DEFAULT_OPTIONS, CUSTOM_OPTIONS);
 

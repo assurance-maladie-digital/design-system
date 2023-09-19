@@ -10,7 +10,7 @@ interface Computed {
 }
 
 interface Props {
-	vuetifyOptions: Options
+	vuetifyOptions: Options;
 }
 
 export type Customizable = ExtendedVue<Vue, unknown, unknown, Props, Computed, unknown>
