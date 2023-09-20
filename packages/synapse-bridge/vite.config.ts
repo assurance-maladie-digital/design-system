@@ -10,7 +10,7 @@ export default defineConfig({
 			"@": fileURLToPath(new URL("./src", import.meta.url)),
 		},
 	},
-	plugins: [vue(), vuetify()],
+	plugins: [vue(), vuetify({ autoImport: true })],
 	build: {
 		lib: {
 			entry: resolve(__dirname, "dev/main.ts"),

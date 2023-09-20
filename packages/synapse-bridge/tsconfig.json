@@ -2,8 +2,7 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"useDefineForClassFields": true,
-		"module": "ESNext",
-		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"module": "commonjs",
 		"skipLibCheck": true,
 
 		/* Bundler mode */
