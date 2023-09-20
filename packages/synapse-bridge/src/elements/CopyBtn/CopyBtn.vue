@@ -1,15 +1,11 @@
 <template>
 	<div class="vd-copy-btn">
-		<VMenu
-			v-model="tooltip"
-			v-bind="options.menu"
-			:disabled="hideTooltip"
-		>
+		<VMenu v-model="tooltip" v-bind="options.menu" :disabled="hideTooltip">
 			<template #activator="{ props }">
 				<VBtn
 					v-bind="{
 						...props,
-						...options.btn
+						...options.btn,
 					}"
 					:aria-label="label"
 					@click="copy"
@@ -30,68 +26,71 @@
 </template>
 
 <script lang="ts">
-	import { defineComponent } from 'vue'
-	import type { PropType } from 'vue'
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
 
-	import { config } from './config'
-	import { locales } from './locales'
+import { config } from "./config";
+import { locales } from "./locales";
 
-	import { customizable } from '../../mixins/customizable'
-	import { copyToClipboard } from '../../functions/copyToClipboard'
+import { customizable } from "../../mixins/customizable";
+import { copyToClipboard } from "../../functions/copyToClipboard";
 
-	import { mdiContentCopy } from '@mdi/js'
+import { mdiContentCopy } from "@mdi/js";
 
-	export default defineComponent({
-		mixins: [customizable(config)],
-		props: {
-			label: {
-				type: String,
-				required: true
-			},
-			textToCopy: {
-				type: [Function, String] as PropType<() => string | string>,
-				required: true
-			},
-			hideTooltip: {
-				type: Boolean,
-				default: false
-			},
-			tooltipDuration: {
-				type: Number,
-				default: 2500
-			}
+export default defineComponent({
+	mixins: [customizable(config)],
+	props: {
+		label: {
+			type: String,
+			required: true,
 		},
-		data() {
-			return {
-				tooltip: false,
-				copyIcon: mdiContentCopy,
-				locales
-			}
+		textToCopy: {
+			type: [Function, String] as PropType<() => string | string>,
+			required: true,
 		},
-		methods: {
-			copy(): void {
-				const contentToCopy = typeof this.textToCopy === 'function' ? this.textToCopy() : this.textToCopy
+		hideTooltip: {
+			type: Boolean,
+			default: false,
+		},
+		tooltipDuration: {
+			type: Number,
+			default: 2500,
+		},
+	},
+	data() {
+		return {
+			tooltip: false,
+			copyIcon: mdiContentCopy,
+			locales,
+		};
+	},
+	methods: {
+		copy(): void {
+			const contentToCopy =
+				typeof this.textToCopy === "function"
+					? this.textToCopy()
+					: this.textToCopy;
 
-				copyToClipboard(contentToCopy)
+			copyToClipboard(contentToCopy);
 
-				if (this.hideTooltip) {
-					return
-				}
-
-				setTimeout(() => {
-					this.tooltip = false
-				}, this.tooltipDuration)
+			if (this.hideTooltip) {
+				return;
 			}
-		}
-	})
+
+			setTimeout(() => {
+				this.tooltip = false;
+			}, this.tooltipDuration);
+		},
+	},
+});
 </script>
 
 <style lang="scss">
-	// Make the tooltip menu look like a tooltip
-	.vd-copy-tooltip-menu {
-		padding: 6px 16px;
-		box-shadow: none;
-		margin-top: 2px;
-		background: rgba(97, 97, 97, .9);
-	}
+// Make the tooltip menu look like a tooltip
+.vd-copy-tooltip-menu {
+	padding: 6px 16px;
+	box-shadow: none;
+	margin-top: 2px;
+	background: rgba(97, 97, 97, 0.9);
+}
 </style>
