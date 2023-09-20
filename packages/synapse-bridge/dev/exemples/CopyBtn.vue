@@ -5,10 +5,7 @@
 			:text-to-copy="() => 'example-1'"
 		/>
 
-		<CopyBtn
-			label="Copier le numéro de dossier"
-			text-to-copy="example-2"
-		/>
+		<CopyBtn label="Copier le numéro de dossier" text-to-copy="example-2" />
 
 		<CopyBtn
 			label="Copier le numéro de patient"
@@ -22,19 +19,14 @@
 			text-to-copy="example-4"
 		/>
 
-		<CopyBtn
-			label="Copier le numéro de ticket"
-			text-to-copy="example-6"
-		>
+		<CopyBtn label="Copier le numéro de ticket" text-to-copy="example-6">
 			<template #icon>
 				<VIcon>
-					{{ mdiContentDuplicate }}
+					{{ duplicateIcon }}
 				</VIcon>
 			</template>
 
-			<template #tooltip>
-				Le texte a bien été copié
-			</template>
+			<template #tooltip> Le texte a bien été copié </template>
 		</CopyBtn>
 
 		<CopyBtn
@@ -45,20 +37,32 @@
 	</div>
 </template>
 
-<script lang="ts" setup>
-	import CopyBtn from '../../src/elements/CopyBtn'
-	import { mdiContentDuplicate } from '@mdi/js'
+<script lang="ts">
+import CopyBtn from "../src/elements/CopyBtn";
+import { defineComponent } from "vue";
 
-	const vuetifyOptions = {
-		menu: {
-			location: 'bottom center',
-			offset: 2
-		},
-		btn: {
-			density: 'default'
-		},
-		icon: {
-			color: 'indigo'
-		}
-	}
+import { mdiContentDuplicate } from "@mdi/js";
+
+export default defineComponent({
+	components: {
+		CopyBtn,
+	},
+	data() {
+		return {
+			duplicateIcon: mdiContentDuplicate,
+			vuetifyOptions: {
+				menu: {
+					location: "bottom center",
+					offset: 2,
+				},
+				btn: {
+					density: "default",
+				},
+				icon: {
+					color: "indigo",
+				},
+			},
+		};
+	},
+});
 </script>

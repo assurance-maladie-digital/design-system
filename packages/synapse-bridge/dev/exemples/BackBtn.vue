@@ -16,9 +16,20 @@
 	</BackBtn>
 </template>
 
-<script lang="ts" setup>
-import BackBtn from "../../src/elements/BackBtn";
+<script lang="ts">
+import BackBtn from "../src/elements/BackBtn";
+import { defineComponent } from "vue";
+
 import { mdiChevronLeft } from "@mdi/js";
 
-const backIcon = mdiChevronLeft;
+export default defineComponent({
+	components: {
+		BackBtn,
+	},
+	data() {
+		return {
+			backIcon: mdiChevronLeft,
+		};
+	},
+});
 </script>

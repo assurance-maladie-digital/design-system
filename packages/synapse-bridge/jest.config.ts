@@ -1,6 +1,7 @@
 import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
+	preset: "ts-jest",
 	testEnvironment: "jsdom",
 	testEnvironmentOptions: {
 		customExportConditions: ["node", "node-addons"],
@@ -12,7 +13,7 @@ const config: Config.InitialOptions = {
 	moduleNameMapper: {
 		"^@/(.*)$": "<rootDir>/$1",
 	},
-	preset: "ts-jest",
+
 	transform: {
 		"^.+\\.(js)$": "babel-jest",
 		"^.+\\.(ts)$": "ts-jest",
