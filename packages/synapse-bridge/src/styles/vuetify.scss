@@ -105,6 +105,11 @@
 	}
 }
 
+// Fix Chips shadows
+.v-chip.v-chip--variant-elevated {
+	box-shadow: none !important;
+}
+
 // Fix font size (default for these elements is 16px)
 .v-input,
 .v-label {
