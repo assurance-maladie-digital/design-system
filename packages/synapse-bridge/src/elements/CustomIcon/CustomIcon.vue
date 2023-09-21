@@ -82,7 +82,7 @@ const Props = {
 export default defineComponent({
 	mixins: [customizable(Props, ThemeIcon)],
 	props: {
-		...Props.props
+		...Props.props,
 	},
 	data() {
 		return {
