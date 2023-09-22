@@ -14,46 +14,45 @@
 	opacity: 0;
 }
 
-.v-application {
-	// Warning rules: Change the main color when a warning is present
-	.vd-warning-rules {
-		&.success--text,
-		.success--text {
-			color: $vd-warning !important;
-			caret-color: $vd-warning !important;
+
+// Warning rules: Change the main color when a warning is present
+.vd-warning-rules {
+	&.success--text,
+	.success--text {
+		color: $vd-warning !important;
+		caret-color: $vd-warning !important;
+	}
+}
+
+// VDataTable: Custom styles
+.vd-data-table {
+	border-top: thin solid rgba(0, 0, 0, .12);
+
+	thead {
+		background: $vd-am-blue-lighten-97;
+	}
+
+	table thead tr {
+		white-space: nowrap;
+	}
+
+	&.row-clickable table tbody tr {
+		cursor: pointer;
+	}
+
+	&.fixed-min-height {
+		.v-data-table__wrapper {
+			min-height: 540px;
 		}
 	}
 
-	// VDataTable: Custom styles
-	.vd-data-table {
-		border-top: thin solid rgba(0, 0, 0, .12);
-
-		thead {
-			background: $vd-am-blue-lighten-97;
+	&.no-mobile-header {
+		.v-data-table-header-mobile {
+			display: none;
 		}
 
-		table thead tr {
-			white-space: nowrap;
-		}
-
-		&.row-clickable table tbody tr {
-			cursor: pointer;
-		}
-
-		&.fixed-min-height {
-			.v-data-table__wrapper {
-				min-height: 540px;
-			}
-		}
-
-		&.no-mobile-header {
-			.v-data-table-header-mobile {
-				display: none;
-			}
-
-			table {
-				border-top: 2px solid #eee;
-			}
+		table {
+			border-top: 2px solid #eee;
 		}
 	}
 }

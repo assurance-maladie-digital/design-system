@@ -50,7 +50,7 @@
 	}
 }
 
-.v-application .v-alert {
+.v-alert {
 	@include redesign('warning', (
 		'background': $vd-yellow-lighten-80,
 		'accent': $vd-yellow-darken-60,

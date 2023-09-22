@@ -1,35 +1,33 @@
 @import '@cnamts/design-tokens/dist/tokens';
 
-.v-application {
-	.w-100 {
-		width: 100%;
+.w-100 {
+	width: 100%;
+}
+
+.h-100 {
+	height: 100%;
+}
+
+.max-width-none {
+	max-width: none;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.vd-form-input {
+	width: $vd-input-medium;
+
+	&-s {
+		width: $vd-input-small;
 	}
 
-	.h-100 {
-		height: 100%;
+	&-l {
+		width: $vd-input-large;
 	}
 
-	.max-width-none {
-		max-width: none;
-	}
-
-	.pointer {
-		cursor: pointer;
-	}
-
-	.vd-form-input {
-		width: $vd-input-medium;
-
-		&-s {
-			width: $vd-input-small;
-		}
-
-		&-l {
-			width: $vd-input-large;
-		}
-
-		&-xl {
-			width: $vd-input-x-large;
-		}
+	&-xl {
+		width: $vd-input-x-large;
 	}
 }

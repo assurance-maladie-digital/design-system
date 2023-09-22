@@ -25,31 +25,31 @@
 	min-height: 46px;
 }
 
-.v-application {
-	// Change font
-	.text-h1,
-	.text-h2,
-	.text-h3,
-	.text-h4,
-	.text-h5,
-	.text-h6 {
-		font-family: 'Mic 32 New', 'Source Sans 3', 'Source Sans Pro', 'Open Sans', sans-serif !important;
-	}
-	.text-subtitle-1,
-	.text-subtitle-2,
-	.text-body-1,
-	.text-body-2,
-	.text-caption,
-	.text-overline,
-	.text-mono {
-		font-family: 'Source Sans 3', 'Source Sans Pro', 'Open Sans', sans-serif !important;
-	}
 
-	// Fix line-height in VSelect with our font
-	.v-select__selections {
-		line-height: 20px;
-	}
+// Change font
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6 {
+	font-family: 'Mic 32 New', 'Source Sans 3', 'Source Sans Pro', 'Open Sans', sans-serif !important;
 }
+.text-subtitle-1,
+.text-subtitle-2,
+.text-body-1,
+.text-body-2,
+.text-caption,
+.text-overline,
+.text-mono {
+	font-family: 'Source Sans 3', 'Source Sans Pro', 'Open Sans', sans-serif !important;
+}
+
+// Fix line-height in VSelect with our font
+.v-select__selections {
+	line-height: 20px;
+}
+
 
 .theme--light {
 	// Fix color contrast of disabled elements

@@ -1,3 +1,41 @@
 @import './components.scss';
 @import './utilities.scss';
 @import './vuetify.scss';
+
+@import './fonts.scss';
+
+@import '@cnamts/design-tokens/dist/tokens';
+
+/* Default, global styles */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	max-width: 100%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Source Sans 3', 'Source Sans Pro', 'Open Sans', sans-serif;
+}
+
+html,
+body {
+	/* Font size defined by the browser */
+	font-size: 100%;
+}
+
+/* Hide the application while Vue.js is loading */
+[v-cloak] {
+	display: none;
+}
+
+#app {
+	width: 100%;
+	display: flex;
+	min-height: 100vh;
+	background: $vd-am-blue-lighten-97;
+}
+
+/* Apply default transition to links */
+a {
+	transition: .25s;
+}
