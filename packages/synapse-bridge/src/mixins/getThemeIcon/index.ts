@@ -2,9 +2,9 @@ import { defineComponent } from "vue";
 
 export const GetThemeIcon = defineComponent({
 	methods: {
-		getThemeIcon(iconName) {
+		getThemeIcon(iconName: string): string | undefined {
 			if (!this.$vd?.theme?.icons) {
-				return undefined;
+				return;
 			}
 
 			return this.$vd.theme.icons[iconName];
