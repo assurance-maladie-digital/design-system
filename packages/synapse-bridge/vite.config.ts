@@ -27,4 +27,15 @@ export default defineConfig({
 			},
 		},
 	},
+	css: {
+		preprocessorOptions: {
+			sass: {
+				additionalData: [
+					// Make the variables defined in these files available to all components, without requiring an explicit
+					'@import "@/styles/variables"',
+					"", // end with newline
+				].join("\n"),
+			},
+		},
+	},
 });

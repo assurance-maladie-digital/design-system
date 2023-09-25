@@ -188,4 +188,9 @@ export default defineComponent({
 .v-card__title > * {
 	line-height: 1em;
 }
+.v-btn--icon {
+	color: rgba(0,0,0,.54);
+	position: absolute;
+	right: 24px;
+}
 </style>

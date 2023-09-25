@@ -7,6 +7,7 @@ export const config = {
 	},
 	closeBtn: {
 		icon: true,
+		elevation: 0,
 		width: "32px",
 		height: "32px",
 		class: "mt-n2 mr-n2 ml-4",
