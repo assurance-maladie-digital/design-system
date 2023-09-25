@@ -2044,6 +2044,11 @@ config-chain@^1.1.13:
     ini "^1.3.4"
     proto-list "~1.2.1"
 
+content-disposition-header@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/content-disposition-header/-/content-disposition-header-0.6.0.tgz#6346d1e9311bbe739ec5036dabbd38cdb87681a7"
+  integrity sha512-+PKF6Y7JHgwD2Dld48L5jozC6pGDdnioJHfM7VyfF92pAU6wDF/N8K/cfecoq7b19KnelOnjntkVyN5hMm2F+w==
+
 convert-source-map@^1.6.0, convert-source-map@^1.7.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.9.0.tgz#7faae62353fb4213366d0ca98358d22e8368b05f"
