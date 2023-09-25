@@ -21,7 +21,9 @@
 	},
 	"dependencies": {
 		"@cnamts/design-tokens": "^2.12.0",
+		"axios": "^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0",
 		"content-disposition-header": "^0.6.0",
+		"dayjs": "^1.8.0",
 		"vue": "3.3.4",
 		"vuetify": "^3.3.17"
 	},
