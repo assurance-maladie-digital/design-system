@@ -1,6 +1,16 @@
-version: 21
+version: 2.1
 
-general:
-  branches:
-    only:
-      - v2
+jobs:
+  dummy:
+    docker:
+      - image: cimg/node:16.20-browsers
+    steps:
+      - run: echo "Hello World"
+
+workflows:
+  build-deploy:
+    jobs:
+      - dummy:
+          filters:
+            branches:
+              only: v2
