@@ -10,7 +10,13 @@ export default defineConfig({
 			"@": path.resolve(__dirname, "src"),
 		},
 	},
-	plugins: [vue(), vuetify({ autoImport: true })],
+	plugins: [
+		vue(),
+		vuetify({
+			autoImport: true,
+			customVariables: ["@/styles/variables.scss"],
+		}),
+	],
 	build: {
 		lib: {
 			entry: resolve(__dirname, "dev/main.ts"),
@@ -24,17 +30,6 @@ export default defineConfig({
 					vue: "Vue",
 					vuetify: "Vuetify",
 				},
-			},
-		},
-	},
-	css: {
-		preprocessorOptions: {
-			sass: {
-				additionalData: [
-					// Make the variables defined in these files available to all components, without requiring an explicit
-					'@import "@/styles/variables"',
-					"", // end with newline
-				].join("\n"),
 			},
 		},
 	},
