@@ -1,0 +1,6 @@
+version: 21
+
+general:
+  branches:
+    only:
+      - v2
