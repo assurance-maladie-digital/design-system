@@ -144,7 +144,6 @@ export default defineComponent({
 			hover: false,
 			menu: false,
 			linkIcon: mdiOpenInNew,
-			menuClass: "",
 		};
 	},
 	computed: {
