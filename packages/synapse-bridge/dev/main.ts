@@ -9,6 +9,12 @@ import { tokens } from "@cnamts/design-tokens/dist/tokens";
 import "@/styles/index.scss";
 
 const vuetify = createVuetify({
+	defaults: {
+		VBtn: {
+			variant: "flat",
+			style: "text-transform: none; font-weight: 600; letter-spacing: 0.005em;",
+		},
+	},
 	icons: {
 		defaultSet: "mdi",
 		aliases,

@@ -14,7 +14,6 @@ export default defineConfig({
 		vue(),
 		vuetify({
 			autoImport: true,
-			customVariables: ["@/styles/variables.scss"],
 		}),
 	],
 	build: {
