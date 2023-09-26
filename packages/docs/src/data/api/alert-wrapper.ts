@@ -27,6 +27,10 @@ export const api: Api = {
 			{
 				name: 'default',
 				description: 'Slot pour ajouter du contenu à l’alerte.'
+			},
+			{
+				name: 'icon',
+				description: 'Slot pour remplacer l’icône par défaut.'
 			}
 		],
 		events: [
