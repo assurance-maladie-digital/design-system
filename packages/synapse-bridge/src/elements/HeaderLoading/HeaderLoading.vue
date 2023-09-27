@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { VSkeletonLoader } from 'vuetify/labs/VSkeletonLoader'
 
 const Props = {
 	width: {
@@ -28,6 +29,9 @@ const Props = {
  * to provide a loader that you can size as needed
  */
 export default defineComponent({
+	components: {
+		VSkeletonLoader,
+	},
 	inheritAttrs: false,
 	mixins: [Props],
 	props: Props,
