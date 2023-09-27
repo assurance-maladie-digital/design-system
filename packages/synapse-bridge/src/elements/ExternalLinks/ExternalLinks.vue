@@ -1,6 +1,5 @@
 <template>
 	<VMenu
-		ref="menu"
 		v-model="menu"
 		v-bind="options.menu"
 		:top="bottom"
@@ -13,7 +12,6 @@
 					...props,
 					...options.btn,
 				}"
-				ref="btn"
 				:style="btnStyle"
 				class="vd-external-links-btn"
 				@mouseenter="hover = true"
@@ -47,15 +45,17 @@
 				:href="item.href"
 				v-bind="options.listItem"
 			>
-				<VListItemTitle v-bind="options.listItemTitle">
-					{{ item.text }}
-				</VListItemTitle>
+				<div class="d-flex flex-row justify-space-between">
+					<VListItemTitle v-bind="options.listItemTitle">
+						{{ item.text }}
+					</VListItemTitle>
 
-				<slot name="link-icon">
-					<VIcon v-bind="options.linkIcon">
-						{{ linkIcon }}
-					</VIcon>
-				</slot>
+					<slot name="link-icon">
+						<VIcon v-bind="options.linkIcon">
+							{{ linkIcon }}
+						</VIcon>
+					</slot>
+				</div>
 			</VListItem>
 		</VList>
 
@@ -246,7 +246,6 @@ $list-max-height: 248px;
 		flex-direction: inherit;
 	}
 }
-
 .vd-external-links-list {
 	max-height: $list-max-height;
 	overflow-y: auto;

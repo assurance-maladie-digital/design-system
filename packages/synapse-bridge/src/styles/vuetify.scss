@@ -105,6 +105,19 @@
 	}
 }
 
+// Fix VMenu border radius
+.v-menu > .v-overlay__content {
+	border-radius: 0 !important;
+}
+
+// Fix VList icon color
+.v-list {
+		.v-icon {
+			color: rgba(0,0,0,.54);
+			margin-left: 16px;
+		}
+	}
+
 // Fix font size (default for these elements is 16px)
 .v-input,
 .v-label {
