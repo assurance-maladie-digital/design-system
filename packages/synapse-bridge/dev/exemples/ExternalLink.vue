@@ -10,6 +10,8 @@ import { defineComponent } from "vue";
 
 import { tokens } from '@cnamts/design-tokens';
 
+import type { ExternalLink } from '../src/elements/ExternalLinks/types';
+
 export default defineComponent({
 	components: {
 		ExternalLinks,
@@ -26,7 +28,7 @@ export default defineComponent({
 					href: 'https://espacepro.ameli.fr/',
 					text: 'Ameli Pro'
 				}
-			]
+			] as ExternalLink[]
 		};
 	},
 });

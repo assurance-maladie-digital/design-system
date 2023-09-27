@@ -10,7 +10,7 @@
 		<template #activator="{ props }">
 			<VBtn
 				v-bind="{
-					props,
+					...props,
 					...options.btn,
 				}"
 				ref="btn"
