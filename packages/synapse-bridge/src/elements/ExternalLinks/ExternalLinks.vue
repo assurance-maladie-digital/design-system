@@ -2,7 +2,6 @@
 	<VMenu
 		v-model="menu"
 		v-bind="options.menu"
-		:top="bottom"
 		attach
 		class="vd-external-links"
 		transition="fade-transition"
