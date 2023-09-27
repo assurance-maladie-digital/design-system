@@ -1,3 +1,31 @@
+## v2.14.1
+
+**Version publiée le 27/09/2023.**
+
+Cette version comporte des correctifs sur Vue Dot.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **AlertWrapper:** Correction du slot `icon` manquant ([#3113](https://github.com/assurance-maladie-digital/design-system/pull/3113))
+
+- ⬆️ **Dépendances**
+  - **@vue/eslint-config-typescript:** Annulation de la mise à jour vers la `v12` ([#3111](https://github.com/assurance-maladie-digital/design-system/pull/3111))
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3119](https://github.com/assurance-maladie-digital/design-system/pull/3119))
+
+- ⬆️ **Dépendances**
+  - **@types/fs-extra:** Mise à jour vers la `v11.0.2` ([#3072](https://github.com/assurance-maladie-digital/design-system/pull/3072))
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.5.0` ([#3075](https://github.com/assurance-maladie-digital/design-system/pull/3075))
+  - **@types/node:** Mise à jour vers la `v16.18.54` ([#3076](https://github.com/assurance-maladie-digital/design-system/pull/3076))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v46.8.2` ([#3079](https://github.com/assurance-maladie-digital/design-system/pull/3079))
+  - **@babel/core:** Mise à jour vers la `v7.23.0` ([#3080](https://github.com/assurance-maladie-digital/design-system/pull/3080))
+  - **dayjs:** Mise à jour vers la `v1.11.10` ([#3085](https://github.com/assurance-maladie-digital/design-system/pull/3085))
+  - **codecov:** Mise à jour de l'orb vers la `v3.3.0` ([#3114](https://github.com/assurance-maladie-digital/design-system/pull/3114))
+
 ## v2.14.0
 
 **Version publiée le 13/09/2023.**
