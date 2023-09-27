@@ -5,6 +5,7 @@
 		:top="bottom"
 		attach
 		class="vd-external-links"
+		transition="fade-transition"
 	>
 		<template #activator="{ props }">
 			<VBtn

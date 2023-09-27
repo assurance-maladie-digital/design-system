@@ -1,6 +1,7 @@
 <template>
 	<VCard min-height="274px" class="mx-auto overflow-hidden">
-		<ExternalLinks :items="links" nudge-top="80px" position="top left" />
+		<ExternalLinks :items="links" position="top left" />
+		<ExternalLinks :items="links" nudge-top="80px" position="top right" />
 	</VCard>
 </template>
 
