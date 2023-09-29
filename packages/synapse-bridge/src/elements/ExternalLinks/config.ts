@@ -4,27 +4,30 @@ export const config = {
 	menu: {
 		offsetY: true,
 		tile: true,
-		zIndex: 4
+		zIndex: 4,
 	},
 	btn: {
 		tile: true,
-		minHeight: '48px',
-		width: '328px',
+		minHeight: "48px",
+		width: "328px",
 		color: tokens.colors.parme.base,
-		class: 'd-flex px-3'
+		class: "d-flex px-3",
 	},
 	btnIcon: {
-		color: 'white'
+		color: "white",
+	},
+	linkIcon: {
+		color: "rgba(0, 0, 0, .54)",
 	},
 	list: {
-		class: 'py-0'
+		class: "py-0",
 	},
 	listItem: {
-		target: '_blank',
-		rel: 'noopener noreferrer'
+		target: "_blank",
+		rel: "noopener noreferrer",
 	},
 	sheet: {
 		elevation: 0,
-		class: 'px-4 py-3'
-	}
+		class: "px-4 py-3",
+	},
 };

@@ -110,13 +110,11 @@
 	border-radius: 0 !important;
 }
 
-// Fix VList icon color
-.v-list {
-		.v-icon {
-			color: rgba(0,0,0,.54);
-			margin-left: 16px;
-		}
-	}
+// Fix icon default size
+.v-icon__component, .v-icon__svg {
+	height: 24px;
+	width: 24px
+}
 
 // Fix font size (default for these elements is 16px)
 .v-input,
