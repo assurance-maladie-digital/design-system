@@ -2,7 +2,6 @@
 	<VMenu
 		v-model="menu"
 		v-bind="options.menu"
-		attach
 		class="vd-external-links"
 		transition="fade-transition"
 	>
@@ -93,50 +92,48 @@ import {
 const SPACE_CHARACTER = " ";
 
 const Props = {
-	props: {
-		position: {
-			type: String,
-			required: true,
-			validator: (value: string) => {
-				const { TOP, BOTTOM, RIGHT, LEFT } = PositionEnum;
+	position: {
+		type: String,
+		required: true,
+		validator: (value: string) => {
+			const { TOP, BOTTOM, RIGHT, LEFT } = PositionEnum;
 
-				const acceptedValues = [
-					[TOP, RIGHT],
-					[TOP, LEFT],
-					[BOTTOM, RIGHT],
-					[BOTTOM, LEFT],
-				].map((item) => item.join(SPACE_CHARACTER));
+			const acceptedValues = [
+				[TOP, RIGHT],
+				[TOP, LEFT],
+				[BOTTOM, RIGHT],
+				[BOTTOM, LEFT],
+			].map((item) => item.join(SPACE_CHARACTER));
 
-				return propValidator("position", acceptedValues, value);
-			},
+			return propValidator("position", acceptedValues, value);
 		},
-		items: {
-			type: Array as PropType<ExternalLink[]>,
-			default: () => [],
-		},
-		btnText: {
-			type: String,
-			default: locales.btnText,
-		},
-		nudgeTop: {
-			type: [String, Number],
-			default: 0,
-		},
-		nudgeBottom: {
-			type: [String, Number],
-			default: 0,
-		},
-		fixed: {
-			type: Boolean,
-			default: false,
-		},
+	},
+	items: {
+		type: Array as PropType<ExternalLink[]>,
+		default: () => [],
+	},
+	btnText: {
+		type: String,
+		default: locales.btnText,
+	},
+	nudgeTop: {
+		type: [String, Number],
+		default: 0,
+	},
+	nudgeBottom: {
+		type: [String, Number],
+		default: 0,
+	},
+	fixed: {
+		type: Boolean,
+		default: false,
 	},
 };
 
 export default defineComponent({
 	mixins: [Props, customizable(config)],
 	props: {
-		...Props.props,
+		...Props,
 	},
 	data() {
 		return {
