@@ -2,8 +2,10 @@
 	<VMenu
 		v-model="menu"
 		v-bind="options.menu"
+		attach
 		class="vd-external-links"
 		transition="fade-transition"
+		:location="bottom ? 'top' : 'bottom'"
 	>
 		<template #activator="{ props }">
 			<VBtn
