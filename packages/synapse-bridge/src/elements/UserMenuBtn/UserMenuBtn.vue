@@ -46,7 +46,7 @@
 						<VIcon
 							v-if="!hideUserIcon"
 							v-bind="options.icon"
-							:class="isMobileVersion ? 'ml-0 pa-2' : 'ml-2'"
+							:class="isMobileVersion ? 'ml-0 pa-2' : 'ml-2 pa-2'"
 							:size="isMobileWithIcon ? 'x-large' : 'default'"
 							class="vd-user-icon"
 						>

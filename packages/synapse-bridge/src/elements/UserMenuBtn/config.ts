@@ -8,7 +8,6 @@ export const config = {
 		minWidth: "198px",
 		maxWidth: "198px",
 		nudgeRight: 0,
-		borderRadius: "0",
 	},
 	btn: {
 		variant: "text",
@@ -16,7 +15,6 @@ export const config = {
 	},
 	icon: {
 		color: tokens.colors.cyan.darken20,
-		class: "ml-2 ml-sm-5",
 	},
 	logoutListItem: {
 		class: "primary--text",
