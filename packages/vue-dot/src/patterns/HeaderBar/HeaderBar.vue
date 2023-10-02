@@ -217,7 +217,7 @@
 				return true;
 			}
 
-			return this.$vuetify.breakpoint.smAndDown;
+			return this.$vuetify.breakpoint.xsOnly;
 		}
 
 		get isMiniVersion(): boolean {
