@@ -11,5 +11,8 @@
 	},
 	"include": [
 		"vite.config.ts"
-	]
+	],
+	"ts-node": {
+		"esm": true
+	}
 }
