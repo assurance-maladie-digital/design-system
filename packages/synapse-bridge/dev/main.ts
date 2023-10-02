@@ -4,6 +4,7 @@ import Playground from './Playground.vue'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
+import router from "../src/router";
 
 // import { colorTheme } from '@cnamts/design-tokens'
 
@@ -25,4 +26,7 @@ const vuetify = createVuetify({
 	}
 })
 
-createApp(Playground).use(vuetify).mount('#app')
+createApp(Playground)
+	.use(vuetify)
+	.use(router)
+	.mount('#app')
