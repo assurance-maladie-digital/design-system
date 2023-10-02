@@ -1,6 +1,11 @@
 {
 	"private": true,
 	"name": "@cnamts/synapse",
+	"scripts": {
+		"pnpm:devPreinstall": "lerna run dev:setup",
+		"dev": "lerna run dev",
+		"build": "lerna run build"
+	},
 	"devDependencies": {
 		"lerna": "7.3.0",
 		"typescript": "5.2.2"
