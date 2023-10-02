@@ -161,7 +161,7 @@
 				}
 			}
 
-			@media screen and (max-width: 640px) {
+			@media screen and (max-width: 599px) {
 				&,
 				&--text {
 					:deep(.v-alert__wrapper) {
