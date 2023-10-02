@@ -1,7 +1,7 @@
 <template>
 	<div
 		:style="widthStyles"
-		class="vd-upload-workflow white"
+		class="vd-upload-workflow"
 	>
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">

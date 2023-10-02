@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UploadWorkflow renders correctly 1`] = `
-<div class="vd-upload-workflow white" style="width: 100%;">
+<div class="vd-upload-workflow" style="width: 100%;">
   <h4 class="text-h6 mb-2">
     Documents à nous transmettre
   </h4>
-  <div role="list" class="v-list vd-file-list v-sheet theme--light" style="width: 100%;">
+  <div role="list" class="v-list vd-file-list v-sheet theme--light transparent" style="width: 100%;">
     <div tabindex="-1" role="listitem" class="v-list-item v-list-item--two-line theme--light flex-wrap">
       <div class="v-avatar v-list-item__avatar my-2" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 24px; height: 24px; width: 24px;"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
       <div class="v-list-item__content">
@@ -54,11 +54,11 @@ exports[`UploadWorkflow renders correctly 1`] = `
 `;
 
 exports[`UploadWorkflow renders correctly with a single file 1`] = `
-<div class="vd-upload-workflow white" style="width: 100%;">
+<div class="vd-upload-workflow" style="width: 100%;">
   <h4 class="text-h6 mb-2">
     Document à nous transmettre
   </h4>
-  <div role="list" class="v-list vd-file-list v-sheet theme--light" style="width: 100%;">
+  <div role="list" class="v-list vd-file-list v-sheet theme--light transparent" style="width: 100%;">
     <div tabindex="-1" role="listitem" class="v-list-item v-list-item--two-line theme--light flex-wrap">
       <div class="v-avatar v-list-item__avatar my-2" style="height: 40px; min-width: 40px; width: 40px;"><span aria-hidden="true" class="v-icon notranslate theme--light grey--text" style="font-size: 24px; height: 24px; width: 24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg" style="font-size: 24px; height: 24px; width: 24px;"><path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"></path></svg></span></div>
       <div class="v-list-item__content">
