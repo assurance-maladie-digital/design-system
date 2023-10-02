@@ -1,5 +1,5 @@
-import Vue from "vue";
-import { NavigationGuardNext } from "vue-router";
+import Vue from 'vue'
+import { NavigationGuardNext } from 'vue-router'
 
 /**
  * Extend $refs, eg:
@@ -7,10 +7,10 @@ import { NavigationGuardNext } from "vue-router";
  *  myProp: MyType;
  * }>;
  */
-export type Refs<T extends Record<string, unknown>> = Vue["$refs"] & T;
+export type Refs<Type extends Record<string, unknown>> = Vue['$refs'] & Type
 
-export interface IndexedObject<T = string> {
-	[key: string]: T;
+export interface IndexedObject<Type = string> {
+	[key: string]: Type
 }
 
 export type Next = NavigationGuardNext<Vue>;

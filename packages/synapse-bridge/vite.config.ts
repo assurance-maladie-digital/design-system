@@ -18,18 +18,21 @@ export default defineConfig({
 	],
 	build: {
 		lib: {
-			entry: resolve(__dirname, "dev/main.ts"),
-			name: "SynapseBridge",
-			fileName: "synapse-bridge",
+			entry: resolve(__dirname, 'dev/main.ts'),
+			name: 'SynapseBridge',
+			fileName: 'synapse-bridge'
 		},
 		rollupOptions: {
-			external: ["vue", "vuetify"],
+			external: [
+				'vue',
+				'vuetify'
+			],
 			output: {
 				globals: {
-					vue: "Vue",
-					vuetify: "Vuetify",
-				},
-			},
-		},
-	},
-});
+					vue: 'Vue',
+					vuetify: 'Vuetify'
+				}
+			}
+		}
+	}
+})

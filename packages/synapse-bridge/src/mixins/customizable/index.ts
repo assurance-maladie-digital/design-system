@@ -1,28 +1,39 @@
-import { PropType, defineComponent, ComputedRef } from "vue";
-import deepMerge from "deepmerge";
-import { Options } from "./types";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-interface Customizable {
-	options: ComputedRef<Options>;
-}
+import deepMerge from 'deepmerge'
 
+import type { Customizable, Options } from './types'
+
+/**
+ * Mixin that merge default options with options passed as props
+ * @example
+ * Usage in your component:
+ * mixins: [ customizable({ btn: { color: 'primary' } }) ]
+ *
+ * <VBtn v-bind="options.btn" />
+ *
+ * Final API
+ * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
+ */
 export function customizable(defaultOptions: Options): Customizable {
 	return defineComponent({
 		props: {
 			vuetifyOptions: {
 				type: Object as PropType<Options>,
-				default: () => ({}),
-			},
+				default: undefined
+			}
 		},
 		computed: {
-			options(): ComputedRef<Options> {
-				return deepMerge(
-					defaultOptions,
-					this.vuetifyOptions
-				) as ComputedRef<Options>;
-			},
-		},
-	}) as unknown as Customizable;
+			options(): Options {
+				if (this.vuetifyOptions) {
+					return deepMerge<Options>(defaultOptions, this.vuetifyOptions)
+				}
+
+				return defaultOptions
+			}
+		}
+	})
 }
 
-export default customizable;
+export type { Options }
