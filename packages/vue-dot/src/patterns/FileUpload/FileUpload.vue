@@ -170,6 +170,7 @@
 		cursor: pointer;
 		position: relative;
 		border: 1px dashed;
+		background: #fff;
 		transition: background .25s;
 
 		&:hover,

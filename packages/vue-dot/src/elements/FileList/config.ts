@@ -1,4 +1,7 @@
 export const config = {
+	list: {
+		color: 'transparent'
+	},
 	listItem: {
 		twoLine: true,
 		class: 'flex-wrap'
