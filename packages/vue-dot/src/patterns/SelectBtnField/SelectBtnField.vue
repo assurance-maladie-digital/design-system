@@ -10,7 +10,7 @@
 			:class="{ 'flex-column': !inline }"
 			:aria-label="label"
 			role="listbox"
-			class="vd-select-btn-field-toggle d-flex flex-wrap primary--text"
+			class="vd-select-btn-field-toggle d-flex overflow-y-auto primary--text"
 		>
 			<VBtn
 				v-for="(item, index) in filteredItems"
