@@ -1,12 +1,12 @@
-import { createApp } from "vue";
-import Playground from "./Playground.vue";
+import { createApp } from 'vue'
+import Playground from './Playground.vue'
 
-import "vuetify/styles";
-import { createVuetify } from "vuetify";
-import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 
+// import { colorTheme } from '@cnamts/design-tokens'
 import { tokens } from "@cnamts/design-tokens/dist/tokens";
-import "@/styles/index.scss";
 
 import { IndexedObject } from "../src/types";
 
@@ -200,14 +200,14 @@ Object.entries(palette).forEach(([colorName, colorValues]) => {
 
 const vuetify = createVuetify({
 	icons: {
-		defaultSet: "mdi",
+		defaultSet: 'mdi',
 		aliases,
 		sets: {
-			mdi,
-		},
+			mdi
+		}
 	},
 	theme: {
-		defaultTheme: "light",
+		defaultTheme: 'light',
 		themes: {
 			light: {
 				colors: {
@@ -219,4 +219,4 @@ const vuetify = createVuetify({
 	},
 });
 
-createApp(Playground).use(vuetify).mount("#app");
+createApp(Playground).use(vuetify).mount('#app')

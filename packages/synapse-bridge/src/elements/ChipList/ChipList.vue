@@ -120,4 +120,8 @@ export default defineComponent({
 		outline: 2px solid;
 	}
 }
+
+.v-chip--variant-elevated {
+	box-shadow: none;
+}
 </style>

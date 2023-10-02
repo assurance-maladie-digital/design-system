@@ -2,7 +2,7 @@ import { defineComponent } from "vue";
 import { shallowMount } from "@vue/test-utils";
 import deepMerge from "deepmerge";
 
-import customizable from "../";
+import { customizable } from "../";
 import { Options } from "../types";
 
 const DEFAULT_OPTIONS = {
