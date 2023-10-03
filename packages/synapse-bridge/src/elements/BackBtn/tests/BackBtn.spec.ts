@@ -1,13 +1,30 @@
-import { VueWrapper, shallowMount } from "@vue/test-utils";
+import { describe, it, expect } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
+import { vuetify } from '../../../../tests/unit/setup'
 
-import BackBtn from "../";
+import BackBtn from '../'
 
-let wrapper: VueWrapper<any>;
+describe('BackBtn', () => {
+	it('renders correctly', () => {
+		const wrapper = shallowMount(BackBtn, {
+			global: {
+				plugins: [vuetify]
+			}
+		})
 
-describe("BackBtn", () => {
-	it("renders correctly", () => {
-		wrapper = shallowMount(BackBtn);
+		expect(wrapper.html()).toMatchSnapshot()
+	})
 
-		expect(wrapper).toMatchSnapshot();
-	});
-});
+	it('renders correctly in dark mode', () => {
+		const wrapper = shallowMount(BackBtn, {
+			props: {
+				dark: true
+			},
+			global: {
+				plugins: [vuetify]
+			}
+		})
+
+		expect(wrapper.html()).toMatchSnapshot()
+	})
+})

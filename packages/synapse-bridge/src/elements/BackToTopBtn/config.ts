@@ -1,13 +1,13 @@
 export const config = {
 	btn: {
-		fixed: true,
-		outlined: true,
+		position: 'fixed',
+		variant: 'outlined',
 		color: 'primary',
 		class: 'text-wrap px-0 px-md-4'
 	},
 	icon: {
 		color: 'primary',
-		small: true,
+		size: 'small',
 		class: 'ml-0 ml-md-1'
 	}
-};
+}

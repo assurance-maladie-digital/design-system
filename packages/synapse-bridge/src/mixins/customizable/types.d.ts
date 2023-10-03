@@ -1,17 +1,6 @@
-import Vue from 'vue'
-import { ExtendedVue } from 'vue/types/vue'
-
-import { IndexedObject } from '../../types'
+import type { ComponentOptionsMixin } from 'vue'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export type Options = IndexedObject<any>
+export type Options = Record<string, any>
 
-interface Computed {
-	options: Options
-}
-
-interface Props {
-	vuetifyOptions: Options
-}
-
-export type Customizable = ExtendedVue<Vue, unknown, unknown, Props, Computed, unknown>
+export { ComponentOptionsMixin as Customizable }

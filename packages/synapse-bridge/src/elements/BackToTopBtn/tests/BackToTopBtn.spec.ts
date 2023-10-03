@@ -1,13 +1,17 @@
-import { VueWrapper, shallowMount } from "@vue/test-utils";
+import { describe, it, expect } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
+import { vuetify } from '../../../../tests/unit/setup'
 
-import BackToBtn from "../";
+import BackToTopBtn from '../'
 
-let wrapper: VueWrapper<any>;
+describe('BackToTopBtn', () => {
+	it('renders correctly', () => {
+		const wrapper = shallowMount(BackToTopBtn, {
+			global: {
+				plugins: [vuetify]
+			}
+		})
 
-describe("BackToBtn", () => {
-	it("renders correctly", () => {
-		wrapper = shallowMount(BackToBtn);
-
-		expect(wrapper).toMatchSnapshot();
-	});
-});
+		expect(wrapper.html()).toMatchSnapshot()
+	})
+})

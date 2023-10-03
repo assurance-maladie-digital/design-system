@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`customizable > merges correctly default and custom options into a computed property 1`] = `
+<div>{
+  "a": "a",
+  "b": "b"
+  }</div>
+`;

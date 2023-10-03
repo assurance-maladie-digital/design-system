@@ -1,18 +1,21 @@
-import { VueWrapper, shallowMount } from "@vue/test-utils";
+import { describe, it, expect } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
+import { vuetify } from '../../../../tests/unit/setup'
 
-import CopyBtn from "../";
+import CopyBtn from '../'
 
-let wrapper: VueWrapper<any>;
-
-describe("CopyBtn", () => {
-	it("renders correctly", () => {
-		wrapper = shallowMount(CopyBtn, {
+describe('CopyBtn', () => {
+	it('renders correctly', () => {
+		const wrapper = shallowMount(CopyBtn, {
 			propsData: {
-				label: "test",
-				textToCopy: "test",
+				label: 'test',
+				textToCopy: () => 'test'
 			},
-		});
+			global: {
+				plugins: [vuetify]
+			}
+		})
 
-		expect(wrapper).toMatchSnapshot();
-	});
-});
+		expect(wrapper.html()).toMatchSnapshot()
+	})
+})

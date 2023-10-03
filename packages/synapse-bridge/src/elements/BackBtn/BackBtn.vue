@@ -1,15 +1,41 @@
+<script lang="ts">
+	import { defineComponent } from 'vue'
+	import { mdiArrowLeft } from '@mdi/js'
+
+	import { locales } from './locales'
+
+	export default defineComponent({
+		props: {
+			hideBackIcon: {
+				type: Boolean,
+				default: false
+			},
+			dark: {
+				type: Boolean,
+				default: false
+			}
+		},
+		data() {
+			return {
+				backIcon: mdiArrowLeft,
+				locales
+			}
+		}
+	})
+</script>
+
 <template>
 	<VBtn
 		v-bind="$attrs"
 		:variant="dark ? 'outlined' : 'text'"
-		:dark="dark"
+		:theme="dark ? 'dark' : 'light'"
 		:color="dark ? 'white' : 'primary'"
 		:outlined="dark"
 		:class="{
 			'px-0': !dark,
-			'pr-1': !dark && !hideBackIcon,
+			'pr-1': !dark && !hideBackIcon
 		}"
-		class="vd-back-btn"
+		class="vd-back-btn text-none"
 	>
 		<slot name="icon">
 			<VIcon
@@ -28,53 +54,12 @@
 	</VBtn>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { locales } from "./locales";
-
-import { mdiArrowLeft } from "@mdi/js";
-
-const Props = {
-	props: {
-		hideBackIcon: {
-			type: Boolean,
-			default: false,
-		},
-		dark: {
-			type: Boolean,
-			default: false,
-		},
-	},
-};
-
-export default defineComponent({
-	mixins: [Props],
-	props: {
-		...Props.props,
-	},
-	data() {
-		return {
-			backIcon: mdiArrowLeft,
-			locales,
-		};
-	},
-});
-</script>
-
 <style lang="scss" scoped>
-.v-btn {
 	// Disable hover state on light theme
-	&.theme--light::before {
-		content: none;
+	.v-btn.v-theme--light:deep() {
+		.v-btn__underlay,
+		.v-btn__overlay {
+			display: none;
+		}
 	}
-
-	&:focus-visible {
-		outline: 2px solid;
-	}
-
-	.v-icon {
-		flex: none;
-	}
-}
 </style>

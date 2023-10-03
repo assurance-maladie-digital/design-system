@@ -1,13 +1,30 @@
-import { VueWrapper, shallowMount } from "@vue/test-utils";
+import { describe, it, expect } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
+import { vuetify } from '../../../../tests/unit/setup'
 
-import PageContainer from "../";
+import PageContainer from '../'
 
-let wrapper: VueWrapper<any>;
+describe('PageContainer', () => {
+	it('renders correctly', () => {
+		const wrapper = shallowMount(PageContainer, {
+			global: {
+				plugins: [vuetify]
+			}
+		})
 
-describe("PageContainer", () => {
-	it("renders correctly", () => {
-		wrapper = shallowMount(PageContainer);
+		expect(wrapper.html()).toMatchSnapshot()
+	})
 
-		expect(wrapper).toMatchSnapshot();
-	});
-});
+	it('renders correctly with spacing class', () => {
+		const wrapper = shallowMount(PageContainer, {
+			props: {
+				spacing: 'ma-4'
+			},
+			global: {
+				plugins: [vuetify]
+			}
+		})
+
+		expect(wrapper.html()).toMatchSnapshot()
+	})
+})
