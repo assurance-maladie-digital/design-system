@@ -3,8 +3,8 @@
 	import type { PropType } from 'vue'
 	import { mdiContentCopy } from '@mdi/js'
 
-	import { customizable } from '../../mixins/customizable'
-	import { copyToClipboard } from '../../functions/copyToClipboard'
+	import { customizable } from '@/mixins/customizable'
+	import { copyToClipboard } from '@/functions/copyToClipboard'
 
 	import { config } from './config'
 	import { locales } from './locales'

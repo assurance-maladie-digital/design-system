@@ -1,50 +1,55 @@
-/// <reference types="vitest" />
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
+import { resolve } from 'node:path'
+import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import vuetify from 'vite-plugin-vuetify'
+import dts from 'vite-plugin-dts'
+import { visualizer } from 'rollup-plugin-visualizer'
 
-export default defineConfig({
-	plugins: [
-		vue({
-			template: {
-				transformAssetUrls
+export default defineConfig(({ mode }) => {
+	const config = {
+		plugins: [
+			vue(),
+			dts({
+				rollupTypes: true
+			})
+		],
+		resolve: {
+			alias: {
+				'@': fileURLToPath(new URL('./src', import.meta.url)),
+				'@tests': fileURLToPath(new URL('./tests', import.meta.url))
 			}
-		}),
-		vuetify({
-			autoImport: true
-		})
-	],
-	test: {
-		environment: 'jsdom',
-		coverage: {
-			enabled: true,
-			provider: 'v8',
-			reportsDirectory: './tests/unit/coverage'
 		},
-		deps: {
-			// @see https://github.com/vuetifyjs/vuetify/issues/18396
-			inline: ['vuetify']
-		},
-		setupFiles: ['./tests/unit/setup.ts']
-	},
-	build: {
-		lib: {
-			entry: resolve(__dirname, 'dev/main.ts'),
-			name: 'SynapseBridge',
-			fileName: 'synapse-bridge'
-		},
-		rollupOptions: {
-			external: [
-				'vue',
-				'vuetify'
-			],
-			output: {
-				globals: {
-					vue: 'Vue',
-					vuetify: 'Vuetify'
+		build: {
+			lib: {
+				entry: resolve(__dirname, 'src/main.ts'),
+				name: 'SynapseBridge',
+				fileName: 'synapse-bridge'
+			},
+			rollupOptions: {
+				external: [
+					'vue',
+					/vuetify/
+				],
+				output: {
+					globals: {
+						vue: 'Vue',
+						vuetify: 'Vuetify'
+					}
 				}
 			}
 		}
 	}
+
+	if (mode === 'development') {
+		config.plugins.push(vuetify() as unknown as Plugin)
+	}
+
+	if (mode === 'analyze') {
+		config.plugins.push(visualizer({
+			filename: 'dist/stats.html'
+		}))
+	}
+
+	return config
 })
