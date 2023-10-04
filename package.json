@@ -1,12 +1,18 @@
 {
 	"private": true,
 	"name": "@cnamts/synapse",
+	"scripts": {
+		"prepare": "lerna run dev:setup",
+		"dev": "lerna run dev",
+		"test:unit": "lerna run test:unit",
+		"build": "lerna run build"
+	},
 	"devDependencies": {
 		"lerna": "7.3.0",
 		"typescript": "5.2.2"
 	},
 	"engines": {
-		"node": "^18.0.0",
-		"pnpm": "^8.0.0"
+		"node": ">=18.0.0",
+		"pnpm": ">=8.0.0"
 	}
 }

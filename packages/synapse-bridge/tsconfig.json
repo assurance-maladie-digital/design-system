@@ -16,7 +16,6 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "preserve",
 
 		/* Linting */
 		"strict": true,
@@ -26,7 +25,6 @@
 	},
 	"include": [
 		"src/**/*.ts",
-		"src/**/*.tsx",
 		"src/**/*.vue"
 	],
 	"references": [

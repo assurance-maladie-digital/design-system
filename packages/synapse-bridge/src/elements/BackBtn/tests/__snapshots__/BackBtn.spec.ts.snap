@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BackBtn > renders correctly 1`] = `<v-btn-stub data-v-a7a95b6c="" theme="light" color="primary" class="px-0 pr-1 vd-back-btn text-none" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="default" tag="button" variant="text" outlined="false"></v-btn-stub>`;
+
+exports[`BackBtn > renders correctly in dark mode 1`] = `<v-btn-stub data-v-a7a95b6c="" theme="dark" color="white" class="vd-back-btn text-none" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="default" tag="button" variant="outlined" outlined="true"></v-btn-stub>`;

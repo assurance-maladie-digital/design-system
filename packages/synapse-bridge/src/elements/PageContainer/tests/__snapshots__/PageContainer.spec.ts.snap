@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PageContainer > renders correctly 1`] = `
+<div class="py-10 px-8 vd-page-container d-flex justify-center">
+  <v-sheet-stub width="1440" color="transparent" border="false" tag="div"></v-sheet-stub>
+</div>
+`;
+
+exports[`PageContainer > renders correctly with spacing class 1`] = `
+<div class="ma-4 vd-page-container d-flex justify-center">
+  <v-sheet-stub width="1440" color="transparent" border="false" tag="div"></v-sheet-stub>
+</div>
+`;
