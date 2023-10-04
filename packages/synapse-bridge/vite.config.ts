@@ -1,16 +1,36 @@
+/// <reference types="vitest" />
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vuetify from 'vite-plugin-vuetify'
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineConfig({
 	plugins: [
-		vue(),
-		vuetify()
+		vue({
+			template: {
+				transformAssetUrls
+			}
+		}),
+		vuetify({
+			autoImport: true
+		})
 	],
+	test: {
+		environment: 'jsdom',
+		coverage: {
+			enabled: true,
+			provider: 'v8',
+			reportsDirectory: './tests/unit/coverage'
+		},
+		deps: {
+			// @see https://github.com/vuetifyjs/vuetify/issues/18396
+			inline: ['vuetify']
+		},
+		setupFiles: ['./tests/unit/setup.ts']
+	},
 	build: {
 		lib: {
-			entry: resolve(__dirname, 'src/main.ts'),
+			entry: resolve(__dirname, 'dev/main.ts'),
 			name: 'SynapseBridge',
 			fileName: 'synapse-bridge'
 		},
