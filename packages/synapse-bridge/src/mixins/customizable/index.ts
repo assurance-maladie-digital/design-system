@@ -1,8 +1,8 @@
 import { defineComponent } from 'vue'
-import type { PropType, ComponentOptionsMixin } from 'vue'
+import type { PropType } from 'vue'
 import deepMerge from 'deepmerge'
 
-import { Options } from './types'
+import { Customizable, Options } from './types'
 
 /**
  * Mixin that merge default options with options passed as props
@@ -15,7 +15,7 @@ import { Options } from './types'
  * Final API
  * <MyComponent :vuetify-options="{ btn: { color: 'white' } }" />
  */
-export function customizable(defaultOptions: Options): ComponentOptionsMixin {
+export function customizable(defaultOptions: Options): Customizable {
 	return defineComponent({
 		props: {
 			vuetifyOptions: {

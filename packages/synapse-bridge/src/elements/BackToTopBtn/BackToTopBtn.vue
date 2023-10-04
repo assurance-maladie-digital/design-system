@@ -80,6 +80,11 @@
 			},
 
 			scrollToTop(): void {
+				if (!this.target) {
+					window.scrollTo(0, 0)
+					return
+				}
+
 				const target = document.getElementById(this.target) || window
 				target.scrollTo(0, 0)
 			}
