@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DataList > renders correctly with an action 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <fade-transition-stub data-v-617a628e="" disabled="false" group="false" hideonleave="false" leaveabsolute="false" mode="out-in"></fade-transition-stub>
+</div>
+`;
+
+exports[`DataList > renders correctly with an empty list 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <fade-transition-stub data-v-617a628e="" disabled="false" group="false" hideonleave="false" leaveabsolute="false" mode="out-in"></fade-transition-stub>
+</div>
+`;
+
+exports[`DataList > renders loading state correctly 1`] = `
+<div data-v-617a628e="" aria-label="Le contenu est en cours de chargement." style="width: 100%;" class="vd-data-list">
+  <fade-transition-stub data-v-617a628e="" disabled="false" group="false" hideonleave="false" leaveabsolute="false" mode="out-in"></fade-transition-stub>
+</div>
+`;

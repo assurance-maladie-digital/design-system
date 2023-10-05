@@ -54,6 +54,8 @@ import { locales } from "./locales";
 
 import { customizable } from "../../../mixins/customizable";
 
+import { useTheme } from 'vuetify';
+
 const Props = {
 	props: {
 		label: {
@@ -98,7 +100,8 @@ export default defineComponent({
 	},
 	computed: {
 		labelColor(): string {
-			return this.$vuetify.theme.dark ? 'rgba(255, 255, 255, .7)' : 'rgba(0, 0, 0, .6)';
+			const theme = useTheme();
+			return theme.current.value.dark ? 'rgba(255, 255, 255, .7)' : 'rgba(0, 0, 0, .6)';
 		},
 		itemValue(): string {
 			if (typeof this.value === 'number') {

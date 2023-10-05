@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { shallowMount } from "@vue/test-utils";
+import { vuetify } from "../../../../../tests/unit/setup";
 
 import DataListItem from "../";
 
@@ -8,6 +9,9 @@ describe("DataListItem", () => {
 		const wrapper = shallowMount(DataListItem, {
 			propsData: {
 				label: "Test",
+			},
+			global: {
+				plugins: [vuetify],
 			},
 		});
 
@@ -20,6 +24,9 @@ describe("DataListItem", () => {
 				label: "Test",
 				value: "value",
 			},
+			global: {
+				plugins: [vuetify],
+			},
 		});
 
 		expect(wrapper).toMatchSnapshot();
@@ -30,6 +37,9 @@ describe("DataListItem", () => {
 			propsData: {
 				label: "Name",
 				value: "Paul<br> Dupont",
+			},
+			global: {
+				plugins: [vuetify],
 			},
 		});
 
@@ -44,6 +54,9 @@ describe("DataListItem", () => {
 				value: "Paul<br> Dupont",
 				renderHtmlValue: true,
 			},
+			global: {
+				plugins: [vuetify],
+			},
 		});
 
 		const elValue = wrapper.find(".vd-data-list-item-value span");
@@ -57,6 +70,9 @@ describe("DataListItem", () => {
 				value: "value",
 				chip: true,
 			},
+			global: {
+				plugins: [vuetify],
+			},
 		});
 
 		expect(wrapper).toMatchSnapshot();
@@ -68,22 +84,25 @@ describe("DataListItem", () => {
 				label: "Test",
 				action: "action",
 			},
+			global: {
+				plugins: [vuetify],
+			},
 		});
 
 		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("emits click:action event when the action button is pressed", async () => {
-		const wrapper = shallowMount(
-			DataListItem,
-			{
-				propsData: {
-					label: "Test",
-					value: "value",
-					action: "Action",
-				},
+		const wrapper = shallowMount(DataListItem, {
+			propsData: {
+				label: "Test",
+				value: "value",
+				action: "Action",
 			},
-		);
+			global: {
+				plugins: [vuetify],
+			},
+		});
 
 		const actionBtn = wrapper.find(".vd-data-list-item-action-btn");
 		expect(actionBtn.exists()).toBe(true);
@@ -102,6 +121,9 @@ describe("DataListItem", () => {
 				value: "value",
 				action: "Action",
 				row: true,
+			},
+			global: {
+				plugins: [vuetify],
 			},
 		});
 
