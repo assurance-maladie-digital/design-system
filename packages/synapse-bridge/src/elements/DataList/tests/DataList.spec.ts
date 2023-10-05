@@ -4,11 +4,13 @@ import { shallowMount } from "@vue/test-utils";
 import DataList from "../";
 import { getDataList } from "./data/dataList";
 
+const items = getDataList();
+
 describe("DataList", () => {
 	it("renders correctly", () => {
 		const wrapper = shallowMount(DataList, {
 			propsData: {
-				items: getDataList(),
+				items: items,
 			},
 		});
 
@@ -28,7 +30,7 @@ describe("DataList", () => {
 	it("renders correctly with a title", () => {
 		const wrapper = shallowMount(DataList, {
 			propsData: {
-				items: getDataList(),
+				items: items,
 				listTitle: "Informations",
 			},
 		});
@@ -54,7 +56,7 @@ describe("DataList", () => {
 	});
 
 	it("renders correctly with an icon", () => {
-		const listWithIcon = getDataList();
+		const listWithIcon = items;
 
 		// Add an action to the second item
 		listWithIcon[1].icon = "mdiTest";
@@ -79,7 +81,7 @@ describe("DataList", () => {
 	});
 
 	it("renders correctly with a class", async () => {
-		const listWithClass = getDataList();
+		const listWithClass = items;
 
 		// Add a class to the second item
 		listWithClass[1].class = "custom-class";
@@ -102,7 +104,7 @@ describe("DataList", () => {
 	it("renders loading state correctly", async () => {
 		const wrapper = shallowMount(DataList, {
 			propsData: {
-				items: getDataList(),
+				items: items,
 				loading: true,
 				itemsNumberLoading: 3,
 				headingLoading: true,
@@ -127,7 +129,7 @@ describe("DataList", () => {
 	});
 
 	it("renders correctly with an action", async () => {
-		const listWithAction = getDataList();
+		const listWithAction = items;
 
 		// Add an action to the second item
 		listWithAction[1].action = "Edit";
@@ -145,7 +147,7 @@ describe("DataList", () => {
 	});
 
 	it("emits action event", async () => {
-		const listWithAction = getDataList();
+		const listWithAction = items;
 
 		// Add an action to the second item
 		listWithAction[2].action = "Edit";
