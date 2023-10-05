@@ -16,22 +16,12 @@ const CUSTOM_OPTIONS = {
 	}
 }
 
-/** Create the test component */
-function createTestComponent() {
-	return defineComponent({
-		mixins: [customizable(DEFAULT_OPTIONS)],
-		template: '<div>{{ options.test }}</div>'
-	})
-}
-
-export default defineComponent({
-	name: 'TestComponent',
-	extends: createTestComponent()
-})
-
 describe('customizable', () => {
 	it('merges correctly default and custom options into a computed property', () => {
-		const testComponent = createTestComponent()
+		const testComponent = defineComponent({
+			mixins: [customizable(DEFAULT_OPTIONS)],
+			template: '<div>{{ options.test }}</div>'
+		})
 
 		const wrapper = mount(testComponent, {
 			props: {

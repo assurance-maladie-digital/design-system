@@ -5,16 +5,19 @@
 	import { locales } from './locales'
 
 	export default defineComponent({
+		inheritAttrs: false,
 		props: {
 			hideBackIcon: {
 				type: Boolean,
 				default: false
 			},
+
 			dark: {
 				type: Boolean,
 				default: false
 			}
 		},
+
 		data() {
 			return {
 				backIcon: mdiArrowLeft,

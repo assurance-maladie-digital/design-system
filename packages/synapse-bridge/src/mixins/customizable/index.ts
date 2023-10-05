@@ -23,7 +23,9 @@ export function customizable(defaultOptions: Options): Customizable {
 				default: undefined
 			}
 		},
+
 		computed: {
+			// eslint-disable-next-line vue/no-unused-properties
 			options(): Options {
 				if (this.vuetifyOptions) {
 					return deepMerge<Options>(defaultOptions, this.vuetifyOptions)

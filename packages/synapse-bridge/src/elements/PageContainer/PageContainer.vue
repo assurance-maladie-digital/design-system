@@ -13,24 +13,18 @@
 				default: SizeEnum.X_LARGE,
 				validator: (value: string) => propValidator('size', SIZE_ENUM_VALUES, value)
 			},
+
 			spacing: {
 				type: String,
 				default: undefined
 			},
+
 			color: {
 				type: String,
 				default: 'transparent'
 			}
 		},
-		data() {
-			return {
-				props: {
-					size: this.size,
-					spacing: this.spacing,
-					color: this.color
-				}
-			}
-		},
+
 		computed: {
 			spacingClass(): string {
 				if (this.spacing) {
@@ -66,8 +60,14 @@
 </script>
 
 <template>
-	<div :class="spacingClass" class="vd-page-container d-flex justify-center">
-		<VSheet :width="containerSize" :color="color">
+	<div
+		:class="spacingClass"
+		class="vd-page-container d-flex justify-center"
+	>
+		<VSheet
+			:width="containerSize"
+			:color="color"
+		>
 			<slot />
 		</VSheet>
 	</div>

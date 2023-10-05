@@ -16,19 +16,23 @@
 				type: String,
 				required: true
 			},
+
 			textToCopy: {
 				type: [Function, String] as PropType<() => string | string>,
 				required: true
 			},
+
 			hideTooltip: {
 				type: Boolean,
 				default: false
 			},
+
 			tooltipDuration: {
 				type: Number,
 				default: 2500
 			}
 		},
+
 		data() {
 			return {
 				tooltip: false,
@@ -36,9 +40,12 @@
 				locales
 			}
 		},
+
 		methods: {
 			copy(): void {
-				const contentToCopy = typeof this.textToCopy === 'function' ? this.textToCopy() : this.textToCopy
+				const contentToCopy = typeof this.textToCopy === 'function' ?
+					this.textToCopy() :
+					this.textToCopy
 
 				copyToClipboard(contentToCopy)
 

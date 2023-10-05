@@ -10,25 +10,30 @@
 	import { locales } from './locales'
 
 	export default defineComponent({
+		inheritAttrs: false,
 		mixins: [customizable(config)],
 		props: {
 			threshold: {
 				type: Number,
 				default: 120
 			},
+
 			nudgeRight: {
 				type: [String, Number],
 				default: '16px'
 			},
+
 			nudgeBottom: {
 				type: [String, Number],
 				default: '16px'
 			},
+
 			target: {
 				type: String,
 				default: undefined
 			}
 		},
+
 		data() {
 			return {
 				topIcon: mdiArrowUp,
@@ -36,6 +41,7 @@
 				locales
 			}
 		},
+
 		computed: {
 			targetSelector(): string | null {
 				if (!this.target) {
@@ -68,6 +74,7 @@
 				return { 'd-sr-only': this.isMobile }
 			}
 		},
+
 		methods: {
 			onScroll(e: MouseEvent): void {
 				const target = e.currentTarget as HTMLElement | Window

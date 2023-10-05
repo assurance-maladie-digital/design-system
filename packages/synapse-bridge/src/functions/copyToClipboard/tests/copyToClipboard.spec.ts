@@ -74,7 +74,7 @@ describe('copyToClipboard', () => {
 		expect(document.execCommand).not.toHaveBeenCalled()
 	})
 
-	it('copies text to the clipboard when text is already selected and navigator.clipboard is unavailable', () => {
+	it('copies text to the clipboard when text is already selected and Clipboard API is unavailable', () => {
 		mockDocument({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],

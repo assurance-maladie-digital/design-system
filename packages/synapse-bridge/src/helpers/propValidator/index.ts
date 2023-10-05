@@ -7,8 +7,9 @@ export function propValidator(propName: string, acceptedValues: string[], value:
 	const isValid = value.match(valuesRegexp) !== null
 
 	if (!isValid) {
-		// eslint-disable-next-line no-console
-		console.error(`Wrong value for the \`${propName}\` prop. Given: "${value}", expected "${formattedValues}".`)
+		const error = `Wrong value for the \`${propName}\` prop.`
+		const explanation = `Given: "${value}", expected "${formattedValues}".`
+		console.error(error, explanation)
 	}
 
 	return true

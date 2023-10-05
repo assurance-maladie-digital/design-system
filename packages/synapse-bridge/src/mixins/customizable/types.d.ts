@@ -1,6 +1,6 @@
 import type { DefineComponent, ComponentOptionsMixin } from 'vue'
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// /* eslint-disable @typescript-eslint/no-explicit-any */
 export type Options = Record<string, any>
 
 type Props = {
@@ -22,4 +22,16 @@ type EE = string
 type PublicProps = {}
 type Defaults = {}
 
-export type Customizable = DefineComponent<Props, RawBindings, Data, Computed, Methods, Mixins, Extends, Emits, EE, PublicProps, Defaults>
+export type Customizable = DefineComponent<
+	Props,
+	RawBindings,
+	Data,
+	Computed,
+	Methods,
+	Mixins,
+	Extends,
+	Emits,
+	EE,
+	PublicProps,
+	Defaults
+>

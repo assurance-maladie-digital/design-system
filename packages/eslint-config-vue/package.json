@@ -1,0 +1,34 @@
+{
+	"name": "@cnamts/eslint-config-vue",
+	"version": "2.0.0-bridge.0",
+	"description": "ESLint configurations used across our Vue.js projects",
+	"keywords": [
+		"cnam",
+		"lint",
+		"eslint",
+		"vue"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "CNAM",
+		"email": "digital_TL.cnam@assurance-maladie.fr"
+	},
+	"files": [
+		"configs"
+	],
+	"main": "configs/base.js",
+	"scripts": {
+		"lint": "eslint . --fix"
+	},
+	"peerDependencies": {
+		"eslint": ">=8.0.0",
+		"eslint-plugin-vue": ">=9.0.0"
+	},
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "6.7.4",
+		"@typescript-eslint/parser": "6.7.4"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
