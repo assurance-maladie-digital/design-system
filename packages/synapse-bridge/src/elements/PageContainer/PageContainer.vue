@@ -2,7 +2,7 @@
 	import { defineComponent } from 'vue'
 	import { useDisplay } from 'vuetify'
 
-	import { propValidator } from '../../helpers/propValidator'
+	import { propValidator } from '@/helpers/propValidator'
 
 	import { SizeEnum, SIZE_ENUM_VALUES } from './SizeEnum'
 
