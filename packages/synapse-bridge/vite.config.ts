@@ -42,7 +42,11 @@ export default defineConfig(({ mode }) => {
 	}
 
 	if (mode === 'development') {
-		config.plugins.push(vuetify() as unknown as Plugin)
+		config.plugins.push(vuetify({
+			styles: {
+				configFile: 'src/styles/settings.scss'
+			}
+		}) as unknown as Plugin)
 	}
 
 	if (mode === 'analyze') {
