@@ -3,8 +3,8 @@
 	import { useDisplay } from 'vuetify'
 	import { mdiArrowUp } from '@mdi/js'
 
-	import { customizable } from '../../mixins/customizable'
-	import { convertToUnit } from '../../helpers/convertToUnit'
+	import { customizable } from '@/mixins/customizable'
+	import { convertToUnit } from '@/helpers/convertToUnit'
 
 	import { config } from './config'
 	import { locales } from './locales'

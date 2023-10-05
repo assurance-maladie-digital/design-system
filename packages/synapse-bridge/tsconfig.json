@@ -1,4 +1,5 @@
 {
+	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"target": "ES2020",
 		"useDefineForClassFields": true,
@@ -8,22 +9,21 @@
 			"DOM",
 			"DOM.Iterable"
 		],
-		"skipLibCheck": true,
+		"paths": {
+			"@/*": ["./src/*"],
+			"@tests/*": ["./tests/*"]
+		},
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
-
-		/* Linting */
-		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
+		"noEmit": true
 	},
 	"include": [
+		"dev/**/*.ts",
+		"dev/**/*.vue",
 		"src/**/*.ts",
 		"src/**/*.vue"
 	],

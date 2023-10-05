@@ -1,4 +1,4 @@
-import type { DefineComponent, ComponentOptionsMixin, ComponentOptionsMixin } from 'vue'
+import type { DefineComponent, ComponentOptionsMixin } from 'vue'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export type Options = Record<string, any>

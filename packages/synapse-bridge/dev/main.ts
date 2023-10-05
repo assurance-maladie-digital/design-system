@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import Playground from './Playground.vue'
 
-import '../src/styles/main.scss'
+import '@/styles/main.scss'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 
