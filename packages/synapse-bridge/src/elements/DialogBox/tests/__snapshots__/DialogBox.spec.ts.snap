@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DialogBox > renders correctly 1`] = `
+<vdialog data-v-ee61b14d="" modelvalue="false" width="800px" persistent="false" aria-modal="true" class="vd-dialog-box">
+  <vcard data-v-ee61b14d="" class="pa-6">
+    <vcardtitle data-v-ee61b14d="" class="d-flex align-start flex-nowrap pa-0 mb-6">
+      <!--v-if-->
+      <vspacer data-v-ee61b14d=""></vspacer>
+      <vbtn data-v-ee61b14d="" icon="true" elevation="0" width="32px" height="32px" class="mt-n2 mr-n2 ml-4" aria-label="Fermer la boîte de dialogue">
+        <vicon data-v-ee61b14d="">M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z</vicon>
+      </vbtn>
+    </vcardtitle>
+    <div data-v-ee61b14d="" class="d-flex flex-wrap mt-6 vd-dialog-box-actions-ctn">
+      <vspacer data-v-ee61b14d=""></vspacer>
+      <vbtn data-v-ee61b14d="" color="primary" variant="text">Annuler</vbtn>
+      <vbtn data-v-ee61b14d="" color="primary" class="ml-4">Valider</vbtn>
+    </div>
+  </vcard>
+</vdialog>
+`;
