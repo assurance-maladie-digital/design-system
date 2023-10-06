@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { shallowMount } from "@vue/test-utils";
+import { vuetify } from "@tests/unit/setup";
 
 import FranceConnectBtn from "../";
 
@@ -8,6 +9,9 @@ describe("FranceConnectBtn", () => {
 		const wrapper = shallowMount(FranceConnectBtn, {
 			propsData: {
 				href: "https://app.franceconnect.gouv.fr/",
+			},
+			global: {
+				plugins: [vuetify],
 			},
 		});
 
@@ -19,6 +23,9 @@ describe("FranceConnectBtn", () => {
 			propsData: {
 				href: "https://app.franceconnect.gouv.fr/",
 				connectPlus: true,
+			},
+			global: {
+				plugins: [vuetify],
 			},
 		});
 
