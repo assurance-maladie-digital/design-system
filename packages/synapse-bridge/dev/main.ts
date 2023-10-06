@@ -1,8 +1,8 @@
 import { createApp } from "vue";
-import router from "../src/router";
+import router from "@/router";
 import Playground from "./Playground.vue";
 
-import "../src/styles/main.scss";
+import "vuetify/styles";
 import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 
