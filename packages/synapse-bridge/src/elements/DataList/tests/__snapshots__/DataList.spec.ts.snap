@@ -1,5 +1,53 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`DataList > renders correctly 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <vfadetransition data-v-617a628e="" mode="out-in">
+    <div data-v-617a628e="">
+      <!-- The title slot can be used to change the title level -->
+      <!--v-if-->
+      <ul data-v-617a628e="" class="pl-0">
+        <data-list-item-stub data-v-617a628e="" label="Civility" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="mb-2 vd-data-list-item text-body-1" value=""></data-list-item-stub>
+        <data-list-item-stub data-v-617a628e="" label="Name" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="mb-2 vd-data-list-item text-body-1" value="Dupont"></data-list-item-stub>
+        <data-list-item-stub data-v-617a628e="" label="First name" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="vd-data-list-item text-body-1" value="Paul"></data-list-item-stub>
+      </ul>
+    </div>
+  </vfadetransition>
+</div>
+`;
+
+exports[`DataList > renders correctly with a class 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <vfadetransition data-v-617a628e="" mode="out-in">
+    <div data-v-617a628e="">
+      <!-- The title slot can be used to change the title level -->
+      <!--v-if-->
+      <ul data-v-617a628e="" class="pl-0">
+        <data-list-item-stub data-v-617a628e="" label="Civility" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="mb-2 vd-data-list-item text-body-1" value=""></data-list-item-stub>
+        <data-list-item-stub data-v-617a628e="" label="Name" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="mb-2 custom-class vd-data-list-item text-body-1" value="Dupont"></data-list-item-stub>
+        <data-list-item-stub data-v-617a628e="" label="First name" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="vd-data-list-item text-body-1" value="Paul"></data-list-item-stub>
+      </ul>
+    </div>
+  </vfadetransition>
+</div>
+`;
+
+exports[`DataList > renders correctly with a title 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <vfadetransition data-v-617a628e="" mode="out-in">
+    <div data-v-617a628e="">
+      <!-- The title slot can be used to change the title level -->
+      <h4 data-v-617a628e="" class="text-subtitle-1 font-weight-bold mb-3">Informations</h4>
+      <ul data-v-617a628e="" class="pl-0">
+        <data-list-item-stub data-v-617a628e="" label="Civility" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="mb-2 vd-data-list-item text-body-1" value=""></data-list-item-stub>
+        <data-list-item-stub data-v-617a628e="" label="Name" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="mb-2 vd-data-list-item text-body-1" value="Dupont"></data-list-item-stub>
+        <data-list-item-stub data-v-617a628e="" label="First name" placeholder="…" chip="false" row="false" renderhtmlvalue="false" class="vd-data-list-item text-body-1" value="Paul"></data-list-item-stub>
+      </ul>
+    </div>
+  </vfadetransition>
+</div>
+`;
+
 exports[`DataList > renders correctly with an action 1`] = `
 <div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
   <fade-transition-stub data-v-617a628e="" disabled="false" group="false" hideonleave="false" leaveabsolute="false" mode="out-in"></fade-transition-stub>
