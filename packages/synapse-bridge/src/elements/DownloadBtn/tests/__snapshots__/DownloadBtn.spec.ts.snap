@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DownloadBtn > renders correctly 1`] = `
+<vbtn data-v-7802df62="" variant="outlined" color="primary" class="text-wrap vd-download-btn" minheight="36px" height="auto" loading="false">
+  <vicon data-v-7802df62="" color="primary" class="mr-3">M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z</vicon>justificatif.pdf
+</vbtn>
+`;
