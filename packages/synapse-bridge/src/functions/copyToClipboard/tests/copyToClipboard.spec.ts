@@ -1,104 +1,92 @@
-import { describe, it, expect, afterEach, vi } from 'vitest'
-import { copyToClipboard } from '../'
+import {
+	describe,
+	it,
+	vi,
+	expect,
+	beforeEach,
+	afterEach,
+} from 'vitest'
 
-interface TSelection {
-	rangeCount?: number
-	getRangeAt?: (index: number) => string | null
-	removeAllRanges?: () => null
-	addRange?: () => null
-}
-
-// Custom document type
-interface TDocument {
-	getSelection: () => TSelection | null
-	execCommand: () => boolean
-}
-
-// Override default type
-declare let document: TDocument
-
-/** Mock functions on document */
-function mockDocument(options: TSelection) {
-	document.getSelection = () => {
-		return options
-	}
-
-	document.execCommand = vi.fn()
-}
-
-const txt = 'test'
+import { copyToClipboard } from '..'
 
 describe('copyToClipboard', () => {
+	const testStr = 'test'
+
+	beforeEach(() => {
+		Object.defineProperty(document, 'execCommand', {
+			value: vi.fn(() => true),
+			writable: true,
+		})
+	})
+
+	afterEach(() => {
+		vi.clearAllMocks()
+
+		Object.defineProperty(navigator, 'clipboard', {
+			value: null,
+			writable: true,
+		})
+	})
+
 	it('copies text to the clipboard', () => {
-		mockDocument({
+		vi.spyOn(document, 'getSelection').mockImplementation(() => ({
 			rangeCount: 0,
 			getRangeAt: () => null,
-			removeAllRanges: () => null
-		})
+			removeAllRanges: () => null,
+		}) as unknown as Selection)
 
 		const writeTextMock = vi.fn()
 
 		Object.defineProperty(navigator, 'clipboard', {
 			value: {
-				writeText: writeTextMock
+				writeText: writeTextMock,
 			},
-			writable: true
+			writable: true,
 		})
 
-		copyToClipboard(txt)
+		copyToClipboard(testStr)
 
-		expect(writeTextMock).toHaveBeenCalledWith(txt)
+		expect(writeTextMock).toHaveBeenCalledWith(testStr)
 		expect(document.execCommand).not.toHaveBeenCalled()
 	})
 
 	it('copies text to the clipboard when text is already selected', () => {
-		mockDocument({
+		vi.spyOn(document, 'getSelection').mockImplementation(() => ({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
 			removeAllRanges: () => null,
-			addRange: () => null
-		})
+			addRange: () => null,
+		}) as unknown as Selection)
 
 		const writeTextMock = vi.fn()
 
 		Object.defineProperty(navigator, 'clipboard', {
 			value: {
-				writeText: writeTextMock
+				writeText: writeTextMock,
 			},
-			writable: true
+			writable: true,
 		})
 
-		copyToClipboard(txt)
+		copyToClipboard(testStr)
 
-		expect(writeTextMock).toHaveBeenCalledWith(txt)
+		expect(writeTextMock).toHaveBeenCalledWith(testStr)
 		expect(document.execCommand).not.toHaveBeenCalled()
 	})
 
 	it('copies text to the clipboard when text is already selected and Clipboard API is unavailable', () => {
-		mockDocument({
+		vi.spyOn(document, 'getSelection').mockImplementation(() => ({
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
 			removeAllRanges: () => null,
-			addRange: () => null
-		})
+			addRange: () => null,
+		}) as unknown as Selection)
 
-		Object.defineProperty(navigator, 'clipboard', {
-			value: null,
-			writable: true
-		})
-
-		copyToClipboard(txt)
+		copyToClipboard(testStr)
 
 		expect(document.execCommand).toHaveBeenCalledWith('copy')
 	})
 
 	it('does not copies text when getSelection is unavailable', () => {
-		document.getSelection = vi.fn(() => null)
-
-		expect(copyToClipboard(txt)).toBeUndefined()
-	})
-
-	afterEach(() => {
-		vi.clearAllMocks()
+		expect(copyToClipboard(testStr)).toBeUndefined()
 	})
 })

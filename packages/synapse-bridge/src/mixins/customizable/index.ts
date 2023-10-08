@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import type { PropType } from 'vue'
+import { type PropType } from 'vue'
 import deepMerge from 'deepmerge'
 
 import { Customizable, Options } from './types'
@@ -20,20 +20,19 @@ export function customizable(defaultOptions: Options): Customizable {
 		props: {
 			vuetifyOptions: {
 				type: Object as PropType<Options>,
-				default: undefined
-			}
+				default: undefined,
+			},
 		},
 
 		computed: {
-			// eslint-disable-next-line vue/no-unused-properties
 			options(): Options {
 				if (this.vuetifyOptions) {
 					return deepMerge<Options>(defaultOptions, this.vuetifyOptions)
 				}
 
 				return defaultOptions
-			}
-		}
+			},
+		},
 	})
 }
 

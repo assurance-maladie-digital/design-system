@@ -1,6 +1,7 @@
-import { existsSync, copyFile } from 'node:fs'
+import { existsSync } from 'node:fs'
+import { copyFile } from 'node:fs/promises'
 
-function createPlayground(): void {
+async function createPlayground(): Promise<void> {
 	const devFolder = './dev'
 	const targetFile = `${devFolder}/Playground.vue`
 
@@ -8,11 +9,11 @@ function createPlayground(): void {
 		return
 	}
 
-	copyFile(`${devFolder}/Playground.template.vue`, targetFile, (error) => {
-		if (error) {
-			throw error
-		}
-	})
+	try {
+		await copyFile(`${devFolder}/Playground.template.vue`, targetFile)
+	} catch (error) {
+		console.error(error)
+	}
 }
 
 createPlayground()

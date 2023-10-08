@@ -1,30 +1,30 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
-	import { mdiArrowLeft } from '@mdi/js'
+import { defineComponent } from 'vue'
+import { mdiArrowLeft } from '@mdi/js'
 
-	import { locales } from './locales'
+import { locales } from './locales'
 
-	export default defineComponent({
-		inheritAttrs: false,
-		props: {
-			hideBackIcon: {
-				type: Boolean,
-				default: false
-			},
-
-			dark: {
-				type: Boolean,
-				default: false
-			}
+export default defineComponent({
+	inheritAttrs: false,
+	props: {
+		hideBackIcon: {
+			type: Boolean,
+			default: false,
 		},
 
-		data() {
-			return {
-				backIcon: mdiArrowLeft,
-				locales
-			}
+		dark: {
+			type: Boolean,
+			default: false,
+		},
+	},
+
+	data() {
+		return {
+			backIcon: mdiArrowLeft,
+			locales,
 		}
-	})
+	},
+})
 </script>
 
 <template>

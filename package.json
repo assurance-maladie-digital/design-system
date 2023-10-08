@@ -2,14 +2,21 @@
 	"private": true,
 	"name": "@cnamts/synapse",
 	"scripts": {
-		"prepare": "lerna run dev:setup",
+		"prepare": "lerna run dev:setup && husky install",
 		"dev": "lerna run dev",
+		"lint": "lerna run lint --parallel",
+		"check-spelling": "cspell lint '**' --quiet",
 		"test:unit": "lerna run test:unit",
 		"build": "lerna run build"
 	},
 	"devDependencies": {
+		"@cspell/dict-fr-fr": "2.2.2",
+		"@types/node": "18.11.9",
+		"cspell": "7.3.8",
 		"lerna": "7.3.0",
-		"typescript": "5.2.2"
+		"lint-staged": "15.0.2",
+		"typescript": "5.2.2",
+		"husky": "8.0.3"
 	},
 	"engines": {
 		"node": ">=18.0.0",

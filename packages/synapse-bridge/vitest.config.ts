@@ -9,13 +9,13 @@ export default defineConfig(configEnv => mergeConfig(
 			coverage: {
 				enabled: true,
 				provider: 'v8',
-				reportsDirectory: './tests/unit/coverage'
+				reportsDirectory: './tests/unit/coverage',
 			},
 			deps: {
 				// @see https://github.com/vuetifyjs/vuetify/issues/18396
-				inline: ['vuetify']
+				inline: ['vuetify'],
 			},
-			setupFiles: ['./tests/unit/setup.ts']
-		}
-	})
+			setupFiles: ['./tests/unit/setup.ts'],
+		},
+	}),
 ))

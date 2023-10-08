@@ -1,32 +1,37 @@
-import { describe, it, expect } from 'vitest'
+import {
+	describe,
+	it,
+	expect,
+} from 'vitest'
+
 import { mount } from '@vue/test-utils'
 import { defineComponent } from 'vue'
 
-import { customizable } from '../'
+import { customizable } from '..'
 
 const DEFAULT_OPTIONS = {
 	test: {
-		a: 'a'
-	}
+		a: 'a',
+	},
 }
 
 const CUSTOM_OPTIONS = {
 	test: {
-		b: 'b'
-	}
+		b: 'b',
+	},
 }
 
 describe('customizable', () => {
 	it('merges correctly default and custom options into a computed property', () => {
 		const testComponent = defineComponent({
 			mixins: [customizable(DEFAULT_OPTIONS)],
-			template: '<div>{{ options.test }}</div>'
+			template: '<div>{{ options.test }}</div>',
 		})
 
 		const wrapper = mount(testComponent, {
 			props: {
-				vuetifyOptions: CUSTOM_OPTIONS
-			}
+				vuetifyOptions: CUSTOM_OPTIONS,
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()

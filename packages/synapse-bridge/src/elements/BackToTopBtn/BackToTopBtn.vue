@@ -1,102 +1,104 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
-	import { useDisplay } from 'vuetify'
-	import { mdiArrowUp } from '@mdi/js'
+import { defineComponent } from 'vue'
+import { useDisplay } from 'vuetify'
+import { mdiArrowUp } from '@mdi/js'
 
-	import { customizable } from '@/mixins/customizable'
-	import { convertToUnit } from '@/helpers/convertToUnit'
+import { config } from './config'
+import { locales } from './locales'
+import { customizable } from '@/mixins/customizable'
+import { convertToUnit } from '@/helpers/convertToUnit'
 
-	import { config } from './config'
-	import { locales } from './locales'
-
-	export default defineComponent({
-		inheritAttrs: false,
-		mixins: [customizable(config)],
-		props: {
-			threshold: {
-				type: Number,
-				default: 120
-			},
-
-			nudgeRight: {
-				type: [String, Number],
-				default: '16px'
-			},
-
-			nudgeBottom: {
-				type: [String, Number],
-				default: '16px'
-			},
-
-			target: {
-				type: String,
-				default: undefined
-			}
+export default defineComponent({
+	inheritAttrs: false,
+	mixins: [customizable(config)],
+	props: {
+		threshold: {
+			type: Number,
+			default: 120,
 		},
 
-		data() {
-			return {
-				topIcon: mdiArrowUp,
-				showBtn: false,
-				locales
-			}
+		nudgeRight: {
+			type: [String, Number],
+			default: '16px',
 		},
 
-		computed: {
-			targetSelector(): string | null {
-				if (!this.target) {
-					return null
-				}
-
-				return `#${this.target}`
-			},
-
-			isMobile(): boolean {
-				const { name } = useDisplay()
-				return name.value === 'sm'
-			},
-
-			btnStyle(): Record<string, string> {
-				const right = convertToUnit(this.nudgeRight) || '0'
-				const bottom = convertToUnit(this.nudgeBottom) || '0'
-
-				return {
-					bottom,
-					right
-				}
-			},
-
-			minWidth(): string | null {
-				return this.isMobile ? '36px' : null
-			},
-
-			labelClasses(): Record<string, boolean> {
-				return { 'd-sr-only': this.isMobile }
-			}
+		nudgeBottom: {
+			type: [String, Number],
+			default: '16px',
 		},
 
-		methods: {
-			onScroll(e: MouseEvent): void {
-				const target = e.currentTarget as HTMLElement | Window
+		target: {
+			type: String,
+			default: undefined,
+		},
+	},
 
-				if (target === window) {
-					this.showBtn = window.scrollY > this.threshold
-				} else {
-					this.showBtn = (target as HTMLElement).scrollTop > this.threshold
-				}
-			},
-
-			scrollToTop(): void {
-				if (!this.target) {
-					window.scrollTo(0, 0)
-					return
-				}
-
-				const target = document.getElementById(this.target) || window
-				target.scrollTo(0, 0)
-			}
+	data() {
+		return {
+			topIcon: mdiArrowUp,
+			showBtn: false,
+			locales,
 		}
-	})
+	},
+
+	computed: {
+		targetSelector(): string | null {
+			if (!this.target) {
+				return null
+			}
+
+			return `#${this.target}`
+		},
+
+		isMobile(): boolean {
+			const { name } = useDisplay()
+
+			return name.value === 'sm'
+		},
+
+		btnStyle(): Record<string, string> {
+			const right = convertToUnit(this.nudgeRight) || '0'
+			const bottom = convertToUnit(this.nudgeBottom) || '0'
+
+			return {
+				bottom,
+				right,
+			}
+		},
+
+		minWidth(): string | null {
+			return this.isMobile ? '36px' : null
+		},
+
+		labelClasses(): Record<string, boolean> {
+			return { 'd-sr-only': this.isMobile }
+		},
+	},
+
+	methods: {
+		onScroll(e: MouseEvent): void {
+			const target = e.currentTarget as HTMLElement | Window
+
+			if (target === window) {
+				this.showBtn = window.scrollY > this.threshold
+			} else {
+				this.showBtn = (target as HTMLElement).scrollTop > this.threshold
+			}
+		},
+
+		scrollToTop(): void {
+			if (!this.target) {
+				window.scrollTo(0, 0)
+
+				return
+			}
+
+			const target = document.getElementById(this.target) || window
+
+			target.scrollTo(0, 0)
+		},
+	},
+})
 </script>
 
 <template>

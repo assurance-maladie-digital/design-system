@@ -1,3 +1,3 @@
 export const locales = {
-	label: 'Retour'
+	label: 'Retour',
 }

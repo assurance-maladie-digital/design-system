@@ -9,6 +9,7 @@ export function propValidator(propName: string, acceptedValues: string[], value:
 	if (!isValid) {
 		const error = `Wrong value for the \`${propName}\` prop.`
 		const explanation = `Given: "${value}", expected "${formattedValues}".`
+
 		console.error(error, explanation)
 	}
 
