@@ -58,15 +58,12 @@ export default defineComponent({
 	},
 	computed: {
 		ratingComponent(): string {
-			switch (this.type) {
-				case RatingEnum.EMOTION:
-					return 'EmotionPicker';
-				case RatingEnum.STARS:
-					return 'StarsPicker';
-				case RatingEnum.NUMBER:
-					return 'NumberPicker';
-				default:
-					return 'StarsPicker';
+			if (this.type === RatingEnum.EMOTION) {
+				return 'EmotionPicker';
+			} else if (this.type === RatingEnum.NUMBER) {
+				return 'NumberPicker';
+			} else {
+				return 'StarsPicker';
 			}
 		},
 		length(): number | undefined {

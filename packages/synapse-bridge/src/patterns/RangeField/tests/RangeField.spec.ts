@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
 import RangeField from "../";
 
 describe("RangeField", () => {
 	it("renders correctly", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -21,7 +21,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with outlined prop", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -35,7 +35,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with value null", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -48,7 +48,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with value NaN", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -63,7 +63,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly minValue computed", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -78,7 +78,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with value < min", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -95,7 +95,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with value > max", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -112,7 +112,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with min value > max", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -129,7 +129,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with max value < min", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -146,7 +146,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly maxValue computed", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -161,7 +161,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly mobileVersion computed", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -176,7 +176,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with updateMinValue function", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -193,7 +193,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly updateMaxValue function", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -210,7 +210,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly updateRange function", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -227,7 +227,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly setRangeValue function", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -246,7 +246,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with change event", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -261,7 +261,7 @@ describe("RangeField", () => {
 	});
 
 	it("renders correctly with emitChangeEvent function", () => {
-		const wrapper = shallowMount(RangeField, {
+		const wrapper = mount(RangeField, {
 			global: {
 				plugins: [vuetify],
 			},
