@@ -101,7 +101,7 @@ body {
 	display: none;
 }
 
-.v-ripple__container {
+.v-ripple__container :not(.vd-file-upload) {
 	width: fit-content;
 }
 
