@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FileList > renders correctly 1`] = `
+<vlist data-v-e73e8a82="" style="width: 100%;" class="vd-file-list">
+  <vlistitem data-v-e73e8a82="" twoline="true" class="flex-wrap">
+    <vlistitemtitle data-v-e73e8a82="" class="text-wrap text-wrap">test</vlistitemtitle>
+    <!--v-if-->
+    <!--v-if-->
+  </vlistitem>
+  <vdivider data-v-e73e8a82="" inset="true"></vdivider>
+</vlist>
+`;
