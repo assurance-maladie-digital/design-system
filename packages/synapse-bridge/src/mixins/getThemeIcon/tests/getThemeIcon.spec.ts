@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 import { defineComponent } from "vue";
 
-import { GetThemeIcon } from "../";
+import GetThemeIcon from "../";
 
 const VD_OPTIONS = {
 	theme: {
