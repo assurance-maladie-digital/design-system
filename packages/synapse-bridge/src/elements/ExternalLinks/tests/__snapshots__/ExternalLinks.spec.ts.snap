@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ExternalLinks > renders correctly 1`] = `
+<vmenu data-v-519bcf8b="" modelvalue="false" offsety="true" tile="true" zindex="4" attach="" class="vd-external-links" transition="fade-transition" location="bottom">
+  <vsheet data-v-519bcf8b="" elevation="0" class="px-4 py-3">
+    <p data-v-519bcf8b="" class="mb-0">Pas de données.</p>
+  </vsheet>
+</vmenu>
+`;
