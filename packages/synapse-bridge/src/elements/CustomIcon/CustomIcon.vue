@@ -22,7 +22,7 @@
 			<span v-if="themeIcon" v-html="themeIcon" />
 		</slot>
 
-		<pre>{{ themeIcon }}</pre>
+		<pre>{{ ThemeIcon }}</pre>
 	</span>
 </template>
 

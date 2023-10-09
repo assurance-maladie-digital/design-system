@@ -1,5 +1,5 @@
 import { defineComponent } from "vue";
-import { GetThemeIcon } from "../../../mixins/getThemeIcon";
+import GetThemeIcon from "../../../mixins/getThemeIcon";
 
 const Props = {
 	props: {
