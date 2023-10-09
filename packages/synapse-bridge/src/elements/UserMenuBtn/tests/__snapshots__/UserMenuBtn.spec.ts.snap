@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UserMenuBtn > renders correctly 1`] = `
+<div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block">
+  <vmenu data-v-3b944ebf="" offsety="true" location="bottom left" zindex="4" minwidth="198px" maxwidth="198px" nudgeright="0" disabled="false" attach="" transition="fade-transition">
+    <vlist data-v-3b944ebf="">
+      <vlistitem data-v-3b944ebf="" class="primary--text">
+        <div data-v-3b944ebf="" class="d-flex">
+          <vicon data-v-3b944ebf="" color="primary" class="mr-4">M19,3H5C3.89,3 3,3.89 3,5V9H5V5H19V19H5V15H3V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10.08,15.58L11.5,17L16.5,12L11.5,7L10.08,8.41L12.67,11H3V13H12.67L10.08,15.58Z</vicon>
+          <vlistitemtitle data-v-3b944ebf="">Déconnexion</vlistitemtitle>
+        </div>
+      </vlistitem>
+    </vlist>
+  </vmenu>
+</div>
+`;
