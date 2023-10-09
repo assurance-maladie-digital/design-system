@@ -21,8 +21,6 @@
 		<slot>
 			<span v-if="themeIcon" v-html="themeIcon" />
 		</slot>
-
-		<pre>{{ ThemeIcon }}</pre>
 	</span>
 </template>
 
@@ -85,7 +83,17 @@ export default defineComponent({
 	mixins: [customizable(Props, ThemeIcon)],
 	props: {
 		...Props.props,
-	}
+	},
+	data() {
+		return {
+			ThemeIcon: undefined,
+		};
+	},
+	computed: {
+		themeIcon(): string | undefined {
+			return this.ThemeIcon;
+		},
+	},
 });
 </script>
 
