@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BackToTopBtn > renders correctly 1`] = `<valert data-v-3e25d558="" type="info" class="info vd-alert-wrapper" variant="tonal" closable="false" border="start"></valert>`;
