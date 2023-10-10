@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LogoBrandSection > renders correctly 1`] = `
+<vsheet data-v-d2756505="" height="64px" class="vd-logo-brand-section d-flex">
+  <router-link data-v-d2756505="" aria-label="Accueil, l’Assurance Maladie" to="/" class="vd-home-link">
+    <logo-stub data-v-d2756505="" hidesignature="false" hideorganism="false" risquepro="false" avatar="false" dark="false" size="normal" class=""></logo-stub>
+  </router-link>
+  <!--v-if-->
+  <!--v-if-->
+</vsheet>
+`;
