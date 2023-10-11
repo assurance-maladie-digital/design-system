@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CookieBanner > renders correctly 1`] = `<v-sheet-stub data-v-619c97ab="" width="800px" maxwidth="100%" elevation="3" class="pa-8 vd-cookie-banner" border="false" rounded="true" tag="div" aria-label="Gestion des cookies" role="region"></v-sheet-stub>`;
