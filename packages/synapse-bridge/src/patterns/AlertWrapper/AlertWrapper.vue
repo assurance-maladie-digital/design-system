@@ -104,20 +104,15 @@ export default defineComponent({
 @import "@cnamts/design-tokens/dist/tokens";
 
 @mixin redesign($type, $map) {
-	border-left: solid 4px;
 	color: rgba(0, 0, 0, 0.87) !important;
+
+	.v-alert__border {
+		border-inline-start-width: 4px !important;
+	}
 
 	&.#{$type} {
 		background: map-get($map, "background") !important;
 		border-color: map-get($map, "border") !important;
-
-		.v-alert__wrapper > .v-icon {
-			background: map-get($map, "icon-bg");
-
-			:deep(svg) {
-				fill: map-get($map, "icon") !important;
-			}
-		}
 	}
 
 	&.#{$type},
@@ -126,6 +121,10 @@ export default defineComponent({
 			width: 56px;
 			height: 56px;
 			flex: none;
+			background: map-get($map, "icon-bg");
+			:deep(svg) {
+				fill: map-get($map, "accent") !important;
+			}
 		}
 
 		.v-alert__dismissible {
@@ -167,14 +166,6 @@ export default defineComponent({
 	&.text-#{$type} {
 		color: map-get($map, "accent") !important;
 		border-color: map-get($map, "accent") !important;
-
-		.v-alert__wrapper > .v-icon {
-			background: map-get($map, "icon-bg");
-
-			:deep(svg) {
-				fill: map-get($map, "accent") !important;
-			}
-		}
 
 		.vd-close-btn {
 			color: map-get($map, "accent") !important;
