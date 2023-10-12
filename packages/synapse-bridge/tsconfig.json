@@ -20,7 +20,8 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"typeRoots" : ["./types"]
+		"typeRoots" : ["./types"],
+		"allowSyntheticDefaultImports": true
 	},
 	"include": [
 		"dev/**/*.ts",
