@@ -1,28 +1,29 @@
-import { createApp } from 'vue'
-import Playground from './Playground.vue'
+import { createApp } from "vue";
+import router from "@/router";
+import Playground from "./Playground.vue";
 
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
+import "vuetify/styles";
+import { createVuetify } from "vuetify";
+import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 
-import { colorTheme } from '@cnamts/design-tokens/src/colors'
+import { colorTheme } from "@cnamts/design-tokens/src/colors";
 
 const vuetify = createVuetify({
 	icons: {
-		defaultSet: 'mdi',
+		defaultSet: "mdi",
 		aliases,
 		sets: {
-			mdi
-		}
+			mdi,
+		},
 	},
 	theme: {
-		defaultTheme: 'light',
+		defaultTheme: "light",
 		themes: {
 			light: {
-				colors: colorTheme
-			}
-		}
-	}
-})
+				colors: colorTheme,
+			},
+		},
+	},
+});
 
-createApp(Playground).use(vuetify).mount('#app')
+createApp(Playground).use(vuetify).use(router).mount("#app");
