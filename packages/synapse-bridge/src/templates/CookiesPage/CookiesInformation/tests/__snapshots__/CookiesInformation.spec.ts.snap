@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CookiesInformation > renders correctly 1`] = `
+<div data-v-7eab3eb5="" class="vd-cookies-information">
+  <h2 data-v-7eab3eb5="" class="text-subtitle-1 font-weight-bold mb-2">Cookies fonctionnels</h2>
+  <p data-v-7eab3eb5="">Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.</p>
+  <details data-v-7eab3eb5="">
+    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <vicon data-v-7eab3eb5="" class="mr-2">M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z</vicon>
+    </summary>
+    <cookies-table-stub data-v-7eab3eb5="" items="[object Object],[object Object]" class="mb-2"></cookies-table-stub>
+  </details>
+  <vradiogroup data-v-7eab3eb5="" rules="(value) => {
+    let valid;
+    if (Array.isArray(value)) {
+      valid = value.length !== 0;
+    } else {
+      valid = Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
+    }
+    return valid || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;);
+  }" inline="" hide-details="auto" class="mt-0">
+    <vspacer data-v-7eab3eb5=""></vspacer>
+    <vradio data-v-7eab3eb5="" label="Refuser" color="primary" value="reject"></vradio>
+    <vradio data-v-7eab3eb5="" label="Accepter" class="mr-0" color="primary" value="accept"></vradio>
+  </vradiogroup>
+</div>
+`;

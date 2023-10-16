@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CookiesPage > renders correctly 1`] = `<page-container-stub size="m" color="transparent" class="vd-cookies-page"></page-container-stub>`;
