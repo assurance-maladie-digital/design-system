@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TableToolbar > renders correctly 1`] = `<v-toolbar-stub data-v-81f4d2a8="" color="#FFFFFF" class="d-flex vd-table-toolbar px-4 d-flex flex-wrap align-center justify-space-between" absolute="false" collapse="false" density="default" extended="false" extensionheight="48" flat="true" floating="false" height="auto" border="false" tile="false" tag="header" minheight="56px"></v-toolbar-stub>`;
+
+exports[`TableToolbar > renders correctly when loading 1`] = `<v-toolbar-stub data-v-81f4d2a8="" color="#FFFFFF" class="d-flex vd-table-toolbar px-4 d-flex flex-wrap align-center justify-space-between" absolute="false" collapse="false" density="default" extended="false" extensionheight="48" flat="true" floating="false" height="auto" border="false" tile="false" tag="header" minheight="56px"></v-toolbar-stub>`;
+
+exports[`TableToolbar > renders correctly with content slot 1`] = `<v-toolbar-stub data-v-81f4d2a8="" color="#FFFFFF" class="d-flex vd-table-toolbar px-4 d-flex flex-wrap align-center justify-space-between" absolute="false" collapse="false" density="default" extended="false" extensionheight="48" flat="true" floating="false" height="auto" border="false" tile="false" tag="header" minheight="56px"></v-toolbar-stub>`;
+
+exports[`TableToolbar > renders correctly with no items 1`] = `<v-toolbar-stub data-v-81f4d2a8="" color="#FFFFFF" class="d-flex vd-table-toolbar px-4 d-flex flex-wrap align-center justify-space-between" absolute="false" collapse="false" density="default" extended="false" extensionheight="48" flat="true" floating="false" height="auto" border="false" tile="false" tag="header" minheight="56px"></v-toolbar-stub>`;

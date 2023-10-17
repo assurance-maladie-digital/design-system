@@ -71,7 +71,7 @@ exports[`SelectBtnField > render correctly in multiple mode 1`] = `
       <!--v-if--></span>
       <!---->
       <!---->
-    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value=""><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
       <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 2</span>
       <!--v-if--></span>
       <!---->
@@ -100,7 +100,7 @@ exports[`SelectBtnField > renders correctly with props 1`] = `
       <!--v-if--></span>
       <!---->
       <!---->
-    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value=""><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
       <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 2</span>
       <!--v-if--></span>
       <!---->
