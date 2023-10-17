@@ -14,7 +14,7 @@
 		"generate": "lerna run generate --stream"
 	},
 	"devDependencies": {
-		"@babel/core": "7.23.0",
+		"@babel/core": "7.23.2",
 		"@mdi/js": "7.3.67",
 		"@rushstack/eslint-patch": "1.5.1",
 		"@types/eslint": "8.4.1",
