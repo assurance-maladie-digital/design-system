@@ -221,6 +221,14 @@ a {
 		}
 	}
 }
+.v-text-field {
+	.v-field__clearable {
+		.v-icon {
+			color: $vd-primary !important;
+			opacity: 1 !important;
+		}
+	}
+}
 
 // Form Input : Custom sizes
 .vd-form-input {
