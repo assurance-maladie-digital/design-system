@@ -1,3 +1,14 @@
 @forward 'vuetify/settings' with (
 	$color-pack: false
 );
+
+@import '@cnamts/design-tokens/dist/tokens';
+
+.v-text-field {
+	.v-field__clearable {
+		.v-icon {
+			color: $vd-primary !important;
+			opacity: 1 !important;
+		}
+	}
+}

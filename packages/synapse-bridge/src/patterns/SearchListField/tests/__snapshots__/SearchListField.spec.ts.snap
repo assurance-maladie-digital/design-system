@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SearchListField > renders correctly 1`] = `
+<div data-v-4d322540="" class="vd-search-list">
+  <v-text-field-stub data-v-4d322540="" label="Rechercher" color="primary" autofocus="false" counter="false" persistentplaceholder="false" persistentcounter="false" type="text" hidedetails="true" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="" focused="false" clearable="true" clearicon="$clear" active="false" dirty="false" flat="false" persistentclear="false" reverse="false" singleline="false" variant="outlined" loading="false"></v-text-field-stub>
+  <v-list-stub data-v-4d322540="" class="pb-0" disabled="false" lines="one" nav="false" selectstrategy="single-leaf" openstrategy="list" mandatory="false" border="false" density="default" itemtype="type" items="" itemtitle="title" itemvalue="value" itemchildren="children" itemprops="props" returnobject="false" valuecomparator="[Function]" tag="div" variant="text"></v-list-stub>
+</div>
+`;
