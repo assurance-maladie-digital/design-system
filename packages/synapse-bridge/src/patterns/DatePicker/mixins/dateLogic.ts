@@ -49,7 +49,7 @@ export const DateLogic = defineComponent({
 			}>,
 
 			// DatePicker mixin
-			options as Options;
+			options: null as Options | null,
 
 			// WarningRules mixin
 			validate: function (value: string): void {},

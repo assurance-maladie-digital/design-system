@@ -26,10 +26,12 @@ export const Eventable = defineComponent({
 		...Props.props,
 	},
 	data() {
-		// Customizable mixin
-		options as Options,
-		// DatePicker mixin
-		date as string
+		return {
+			// Customizable mixin
+			options: null as Options | null,
+			// DatePicker mixin
+			date: "",
+		};
 	},
 	methods: {
 		calendarEvents(date: string): Events {

@@ -1,12 +1,12 @@
 <template>
-	<VMenu ref="menu" v-bind="menuOptions" v-model="menu">
+	<VMenu ref="menu" v-bind="menuOptions" :modelValue="menu">
 		<template #activator="{}">
 			<VTextField
 				ref="input"
 				v-facade="maskValue"
 				v-bind="textFieldOptions"
-				:value="dateFormatted"
-				:outlined="outlined"
+				:modelValue="dateFormatted"
+				:variant="outlined ? 'outlined' : undefined"
 				:class="textFieldClasses"
 				:success-messages="
 					textFieldOptions.successMessages || successMessages
@@ -23,7 +23,6 @@
 				@keydown.enter.prevent="saveFromTextField"
 				@input="errorMessages = null"
 				@change="dateFormatted = $event"
-				v-on="listeners"
 			>
 				<template #prepend>
 					<VBtn
@@ -71,7 +70,7 @@
 
 		<VDatePicker
 			v-if="!noCalendar"
-			v-model="date"
+			:modelValue="date"
 			v-bind="options.datePicker"
 			type="date"
 			:active-picker.sync="activePicker"
@@ -102,6 +101,8 @@ import { PickerDate } from "./mixins/pickerDate";
 import { ErrorProp } from "./mixins/errorProp";
 
 import { mdiCalendar } from "@mdi/js";
+
+import { VDatePicker } from 'vuetify/labs/VDatePicker';
 
 import deepMerge from "deepmerge";
 
@@ -139,6 +140,9 @@ const Props = {
 };
 
 export default defineComponent({
+	components: {
+		VDatePicker,
+	},
 	inheritAttrs: false,
 	mixins: [
 		Props,
@@ -158,7 +162,7 @@ export default defineComponent({
 		return {
 			locales: locales,
 			calendarIcon: mdiCalendar,
-			menu: false
+			menu: false,
 		};
 	},
 	computed: {
