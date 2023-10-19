@@ -5,7 +5,7 @@ import { LogoSizeEnum } from './LogoSizeEnum';
 
 export const logoDimensionsMapping: IndexedObject<Dimensions> = {
 	[LogoSizeEnum.X_SMALL]: {
-		width: '105',
+		width: '103',
 		height: '32'
 	},
 	[LogoSizeEnum.SMALL]: {

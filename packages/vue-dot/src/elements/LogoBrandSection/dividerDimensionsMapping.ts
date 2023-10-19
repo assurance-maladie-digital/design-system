@@ -2,7 +2,7 @@ import { Dimensions, IndexedObject } from '../../types';
 
 export const dividerDimensionsMapping: IndexedObject<Dimensions> = {
 	xSmall: {
-		width: '11',
+		width: '4',
 		height: '32'
 	},
 	small: {
@@ -10,7 +10,7 @@ export const dividerDimensionsMapping: IndexedObject<Dimensions> = {
 		height: '40'
 	},
 	normal: {
-		width: '22',
+		width: '21',
 		height: '64'
 	}
 };
