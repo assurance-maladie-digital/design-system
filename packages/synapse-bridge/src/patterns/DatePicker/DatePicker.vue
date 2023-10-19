@@ -3,7 +3,7 @@
 		<template #activator="{}">
 			<VTextField
 				ref="input"
-				v-facade="maskValue"
+				v-maska:[maskValue]
 				v-bind="textFieldOptions"
 				:modelValue="dateFormatted"
 				:variant="outlined ? 'outlined' : undefined"
@@ -18,7 +18,7 @@
 				:disabled="disabled"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"
-				@click.native="textFieldClicked"
+				@click="textFieldClicked"
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
 				@input="errorMessages = null"
@@ -103,6 +103,7 @@ import { ErrorProp } from "./mixins/errorProp";
 import { mdiCalendar } from "@mdi/js";
 
 import { VDatePicker } from 'vuetify/labs/VDatePicker';
+import { vMaska } from "maska";
 
 import deepMerge from "deepmerge";
 
@@ -144,6 +145,8 @@ export default defineComponent({
 		VDatePicker,
 	},
 	inheritAttrs: false,
+	directives: { maska: vMaska },
+	emits: ['change'],
 	mixins: [
 		Props,
 		customizable(config),
@@ -180,11 +183,13 @@ export default defineComponent({
 				nudgeRight: this.outlined ? 0 : 45
 			};
 
-			return deepMerge<Options>(position, this.options.menu);
+			return deepMerge<Options>(this.menuOptions, {
+				position: position,
+			});
 		},
 
 		textFieldOptions(): Options {
-			return deepMerge<Options>(this.options.textField, this.$attrs);
+			return deepMerge<Options>(this.textFieldOptions, this.$attrs);
 		},
 
 		textFieldClasses(): (string | string[])[] {
