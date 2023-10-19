@@ -133,8 +133,13 @@
 </script>
 
 <style lang="scss" scoped>
-	.vd-table-toolbar :deep(.v-toolbar__content) {
-		width: 100%;
-		flex-wrap: wrap;
+	.vd-table-toolbar {
+		z-index: 1; // Display content above the table on mobile
+		contain: none; // Allow fixed elements to be displayed properly
+
+		:deep(.v-toolbar__content) {
+			width: 100%;
+			flex-wrap: wrap;
+		}
 	}
 </style>
