@@ -31,10 +31,18 @@
 				focusable="false"
 				aria-hidden="true"
 				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 22 64"
+				:viewBox="mobileWithSecondaryLogo ? '0 0 5 32' : '0 0 22 64'"
 				class="vd-divider"
 			>
-				<path d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z" />
+				<path
+					v-if="mobileWithSecondaryLogo"
+					d="M1.02 24.63c-.13 0-.22-.1-.22-.2V7.09c0-.11.09-.2.22-.2.12 0 .21.09.21.2v17.34c0 .1-.09.2-.21.2Z"
+				/>
+
+				<path
+					v-else
+					d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z"
+				/>
 			</svg>
 
 			<component
@@ -161,8 +169,12 @@
 			};
 		}
 
+		get mobileWithSecondaryLogo(): boolean {
+			return this.mobileVersion && this.hasSecondaryLogo;
+		}
+
 		get height(): string {
-			if (this.mobileVersion && this.hasSecondaryLogo) {
+			if (this.mobileWithSecondaryLogo) {
 				return '32px';
 			}
 
@@ -281,7 +293,7 @@
 		get dividerDimensions(): Dimensions {
 			const { xSmall, small, normal } = dividerDimensionsMapping;
 
-			if (this.mobileVersion && this.hasSecondaryLogo) {
+			if (this.mobileWithSecondaryLogo) {
 				return xSmall;
 			}
 
@@ -293,7 +305,7 @@
 		}
 
 		get logoSize(): LogoSizeEnum {
-			if (this.mobileVersion && this.hasSecondaryLogo) {
+			if (this.mobileWithSecondaryLogo) {
 				return LogoSizeEnum.X_SMALL;
 			}
 

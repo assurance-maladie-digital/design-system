@@ -236,6 +236,10 @@
 				return '0 0 64 64';
 			}
 
+			if (this.hideSignature) {
+				return '0 0 206 64';
+			}
+
 			return '0 0 211 64';
 		}
 
