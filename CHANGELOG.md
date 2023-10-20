@@ -1,3 +1,40 @@
+## v2.14.2
+
+**Version publiée le 20/10/2023.**
+
+Cette version comporte des correctifs sur Vue Dot.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **SelectBtnField:** Correction du mode `inline` en mobile ([#3134](https://github.com/assurance-maladie-digital/design-system/pull/3134))
+  - **UploadWorkflow:** Correction de la couleur de fond ([#3135](https://github.com/assurance-maladie-digital/design-system/pull/3135))
+  - **AlertWrapper:** Correction du breakpoint mobile ([#3136](https://github.com/assurance-maladie-digital/design-system/pull/3136))
+  - **HeaderBar:** Correction du breakpoint mobile ([#3137](https://github.com/assurance-maladie-digital/design-system/pull/3137))
+  - **TableToolbar:** Correction de l'intégration avec le composant `VDataTable` ([#3213](https://github.com/assurance-maladie-digital/design-system/pull/3213))
+  - **Logo/LogoBrandSection:** Correction des espacements internes ([#3214](https://github.com/assurance-maladie-digital/design-system/pull/3214))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **global:** Suppression des tags `script` inutiles dans les exemples ([#3143](https://github.com/assurance-maladie-digital/design-system/pull/3143))
+
+### Interne
+
+- 🔒 **Sécurité**
+  - **@babel/traverse:** Mise à jour de la `v7.23.0` vers la `v7.23.2` ([#3200](https://github.com/assurance-maladie-digital/design-system/pull/3200))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3220](https://github.com/assurance-maladie-digital/design-system/pull/3220))
+
+- ⬆️ **Dépendances**
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.5.1` ([#3128](https://github.com/assurance-maladie-digital/design-system/pull/3128))
+  - **@mdi/js:** Mise à jour vers la `v7.3.67` ([#3157](https://github.com/assurance-maladie-digital/design-system/pull/3157))
+  - **@babel/core:** Mise à jour vers la `v7.23.2` ([#3176](https://github.com/assurance-maladie-digital/design-system/pull/3176))
+  - **@types/fs-extra:** Mise à jour vers la `v11.0.3` ([#3207](https://github.com/assurance-maladie-digital/design-system/pull/3207))
+  - **@types/node:** Mise à jour vers la `v16.18.59` ([#3203](https://github.com/assurance-maladie-digital/design-system/pull/3203))
+  - **core-js:** Mise à jour vers la `v3.33.1` ([#3215](https://github.com/assurance-maladie-digital/design-system/pull/3215))
+
 ## v2.14.1
 
 **Version publiée le 27/09/2023.**
