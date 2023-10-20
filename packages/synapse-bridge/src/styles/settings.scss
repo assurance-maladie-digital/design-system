@@ -175,15 +175,20 @@ a {
 }
 
 // VDataTable: Custom styles
-.vd-data-table {
-	border-top: thin solid rgba(0, 0, 0, .12);
-
-	thead {
-		background: $vd-am-blue-lighten-97;
-	}
-
+.vd-data-table, .v-data-table {
 	table thead tr {
 		white-space: nowrap;
+	}
+
+	table thead th {
+		color: rgba(0, 0, 0, .6);
+		font-size: .875rem;
+	}
+
+	table :not(thead) tr {
+		&:hover {
+			background-color: rgba(0, 0, 0, .1);
+		}
 	}
 
 	&.row-clickable table tbody tr {
@@ -206,6 +211,14 @@ a {
 		}
 	}
 }
+.v-data-table-progress {
+	.v-progress-linear {
+		height: 4px !important;
+	}
+	.v-progress-linear__background, .v-progress-linear__indeterminate {
+		background: $vd-primary;
+	}
+}
 
 // Input : Custom styles
 .v-input, .v-input input, .v-input textarea {
@@ -218,6 +231,11 @@ a {
 		.v-field__prepend-inner > .v-icon, .v-field__append-inner > .v-icon, .v-field__clearable > .v-icon {
 			opacity: 1;
 			color: $vd-primary;
+		}
+	}
+	&--focused {
+		.v-field__outline {
+			border-color: $vd-primary;
 		}
 	}
 }
