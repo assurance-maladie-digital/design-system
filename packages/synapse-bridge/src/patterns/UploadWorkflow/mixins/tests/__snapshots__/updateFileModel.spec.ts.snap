@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`updateFileModel > deletes the key if the value is undefined 1`] = `
+{
+  "file": {},
+  "id": "file1",
+  "title": "UploadWorkflow",
+}
+`;
+
+exports[`updateFileModel > does not overwrite existing state 1`] = `
+[
+  {
+    "file": {},
+    "id": "file1",
+    "name": "avatar.png",
+    "state": "success",
+    "title": "UploadWorkflow",
+  },
+]
+`;
+
+exports[`updateFileModel > inits the file list 1`] = `
+[
+  {
+    "file": {},
+    "id": "file1",
+    "name": "avatar.png",
+    "state": "initial",
+    "title": "UploadWorkflow",
+  },
+]
+`;

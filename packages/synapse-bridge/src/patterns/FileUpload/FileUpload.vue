@@ -66,6 +66,11 @@ export default defineComponent({
 		extensions(): string {
 			return this.allowedExtensions.join(', ').toUpperCase();
 		}
+	},
+	methods: {
+		retry(): void {
+			this.$refs.vdInputEl.click();
+		}
 	}
 });
 </script>
