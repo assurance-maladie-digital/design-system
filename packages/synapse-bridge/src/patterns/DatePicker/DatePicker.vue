@@ -102,7 +102,7 @@ import { ErrorProp } from "./mixins/errorProp";
 
 import { mdiCalendar } from "@mdi/js";
 
-import { VDatePicker } from 'vuetify/labs/VDatePicker';
+import { VDatePicker } from "vuetify/labs/VDatePicker";
 import { vMaska } from "maska";
 
 import deepMerge from "deepmerge";
@@ -146,7 +146,7 @@ export default defineComponent({
 	},
 	inheritAttrs: false,
 	directives: { maska: vMaska },
-	emits: ['change'],
+	emits: ["change"],
 	mixins: [
 		Props,
 		customizable(config),
@@ -180,7 +180,7 @@ export default defineComponent({
 		menuOptions(): Options {
 			const position: Options = {
 				nudgeBottom: this.outlined ? 56 : 45,
-				nudgeRight: this.outlined ? 0 : 45
+				nudgeRight: this.outlined ? 0 : 45,
 			};
 
 			return deepMerge<Options>(this.menuOptions, {
@@ -196,15 +196,18 @@ export default defineComponent({
 			const textFieldClasses = [];
 
 			if (this.warningRules.length) {
-				textFieldClasses.push('vd-warning-rules');
+				textFieldClasses.push("vd-warning-rules");
 			}
 
 			if (!this.showPrependIcon) {
-				textFieldClasses.push('vd-no-prepend-icon');
+				textFieldClasses.push("vd-no-prepend-icon");
 			}
 
 			if (this.textFieldClass) {
-				const classes = typeof this.textFieldClass === 'object' ? this.textFieldClass : [this.textFieldClass];
+				const classes =
+					typeof this.textFieldClass === "object"
+						? this.textFieldClass
+						: [this.textFieldClass];
 
 				textFieldClasses.push(classes);
 			}
@@ -217,15 +220,15 @@ export default defineComponent({
 			delete this.$listeners.change;
 
 			return this.$listeners;
-		}
+		},
 	},
 	methods: {
 		textFieldClicked(): void {
 			if (this.textFieldActivator) {
 				this.menu = true;
 			}
-		}
-	}
+		},
+	},
 });
 </script>
 
