@@ -93,6 +93,7 @@ export default defineComponent({
 		},
 	},
 	created() {
+		console.log(this.LocalStorageUtility);
 		this.localOptions =
 			this.localStorageUtility.getItem(this.storageKey) ||
 			({} as DataOptions);
