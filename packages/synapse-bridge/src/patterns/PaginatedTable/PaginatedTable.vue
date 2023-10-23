@@ -1,5 +1,12 @@
 <template>
-	<VDataTable v-if="$attrs" v-bind="$attrs" :options.sync="optionsCalc" />
+	<VDataTable v-if="$attrs" v-bind="$attrs" :options.sync="optionsCalc">
+		<template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+			<slot :name="slot" v-bind="scope"/>
+		</template>
+	</VDataTable>
+
+	<pre>{{ options }}</pre>
+	<pre>{{ optionsCalc }}</pre>
 </template>
 
 <script lang="ts">
