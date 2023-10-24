@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FiltersInline > renders correctly 1`] = `
+<div data-v-b2f0aefb="" class="vd-filters-inline d-flex flex-wrap max-width-none ma-n2">
+  <v-menu-stub data-v-b2f0aefb="" minwidth="300px" width="400px" offset="12" attach="false" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="2000" activatorprops="[object Object]" openonhover="false" closeoncontentclick="false" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom" origin="auto" scrollstrategy="reposition" transition="[object Object]" nudge-bottom="10px"></v-menu-stub>
+</div>
+`;
+
+exports[`FiltersInline > renders correctly with an active filter 1`] = `
+<div data-v-b2f0aefb="" class="vd-filters-inline d-flex flex-wrap max-width-none ma-n2">
+  <v-menu-stub data-v-b2f0aefb="" minwidth="300px" width="400px" offset="12" attach="false" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="2000" activatorprops="[object Object]" openonhover="false" closeoncontentclick="false" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom" origin="auto" scrollstrategy="reposition" transition="[object Object]" nudge-bottom="10px"></v-menu-stub>
+</div>
+`;
+
+exports[`FiltersInline > renders correctly with multiple active filters 1`] = `
+<div data-v-b2f0aefb="" class="vd-filters-inline d-flex flex-wrap max-width-none ma-n2">
+  <v-menu-stub data-v-b2f0aefb="" minwidth="300px" width="400px" offset="12" attach="false" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="2000" activatorprops="[object Object]" openonhover="false" closeoncontentclick="false" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom" origin="auto" scrollstrategy="reposition" transition="[object Object]" nudge-bottom="10px"></v-menu-stub>
+  <v-menu-stub data-v-b2f0aefb="" minwidth="300px" width="400px" offset="12" attach="false" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="2000" activatorprops="[object Object]" openonhover="false" closeoncontentclick="false" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom" origin="auto" scrollstrategy="reposition" transition="[object Object]" nudge-bottom="10px"></v-menu-stub>
+</div>
+`;
+
+exports[`FiltersInline locales > should return the correct locale 1`] = `"0 filtre"`;
+
+exports[`FiltersInline locales > should return the correct locale 2`] = `"1 filtre"`;
+
+exports[`FiltersInline locales > should return the correct locale 3`] = `"2 filtres"`;
