@@ -37,7 +37,7 @@ describe("Filterable", () => {
 						plugins: [vuetify],
 					},
 				}
-			);
+			) as unknown as TestComponent;
 
 			const name = wrapper.vm.formatFilterName("Test Name");
 
@@ -51,7 +51,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -81,7 +81,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -98,7 +98,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -120,7 +120,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -142,7 +142,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -170,7 +170,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -190,7 +190,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -223,7 +223,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -249,7 +249,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -286,7 +286,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -323,7 +323,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -364,7 +364,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {} as FilterItem;
 
@@ -380,7 +380,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -402,7 +402,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -424,7 +424,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -455,7 +455,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const periodFilter = {
 				name: "Test",
@@ -483,7 +483,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const periodFilter = {
 				name: "Test",
@@ -511,7 +511,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const arrayFilter = {
 				name: "Test",
@@ -533,7 +533,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const arrayFilter = {
 				name: "Test",
@@ -568,7 +568,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const arrayFilter = {
 				name: "Test",
@@ -590,7 +590,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const arrayFilter = {
 				name: "Test",
@@ -614,7 +614,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filter = {
 				name: "Test",
@@ -633,7 +633,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filters = [
 				{
@@ -663,7 +663,7 @@ describe("Filterable", () => {
 
 			const wrapper = shallowMount(
 				testComponent
-			);
+			) as unknown as TestComponent;
 
 			const filters = [
 				{
