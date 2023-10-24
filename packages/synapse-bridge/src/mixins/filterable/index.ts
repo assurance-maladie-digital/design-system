@@ -179,6 +179,7 @@ export const Filterable = defineComponent({
 			this.filters.forEach((filter) => {
 				filter.value = undefined;
 			});
+			this.updateValue();
 		},
 
 		updateValue(): void {

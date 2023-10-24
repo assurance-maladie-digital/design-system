@@ -424,20 +424,9 @@ describe('Methods', () => {
 		expect(formattedDate).toStrictEqual(['15/04/2023', '20/04/2023']);
 	});
 
-	it('returns true when isValidDate is called with a valid date', () => {
-		const wrapper = shallowMount(DatePicker);
-		const date = dayjs().format('DD/MM/YYYY');
-		expect(wrapper.vm.isValidDate(date)).toBe(true);
-	});
-
-	it('returns false when isValidDate is called with an invalid date', () => {
-		const wrapper = shallowMount(DatePicker);
-		const date = 'invalid date';
-		expect(wrapper.vm.isValidDate(date)).toBe(false);
-	});
 	it('trims the last character of indexedThis[historyKey] if value.data is null', async () => {
 		const wrapper = shallowMount(DatePicker);
-		await wrapper.vm.updateInputValue({ data: null }, 'inputValue');
+		wrapper.vm.updateInputValue({ data: null }, 'inputValue');
 		expect(wrapper.vm.indexedThis.inputValue).toBe('');
 	});
 	it('trims indexedThis[historyKey] to 10 characters if its length is more than 10', async () => {

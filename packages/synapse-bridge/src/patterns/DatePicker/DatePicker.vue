@@ -387,21 +387,12 @@ export default defineComponent({
 			this.indexedThis.inputValue = this.indexedThis.inputValue.slice(0, 10);
 		},
 
-		isValidDate(date: string): any {
-			const validFormats = [this.dateFormat, this.dateFormatReturn];
-			return validFormats.some(format => dayjs(date, format).isValid());
-		},
-
 		validate(value: any) {
 			const allRules = [...(this.warningRules || []), ...(this.rules || [])];
-			if (!this.isValidDate(value)) {
-				this.errorMessages = ['La date saisie n\'est pas valide'];
-			} else {
 				const ruleErrors = allRules
 					.map((rule: any) => rule(value))
 					.filter(result => result !== true);
 				this.errorMessages = ruleErrors.length > 0 ? ruleErrors : [];
-			}
 			// Check if the error prop is true
 			if (this.error) {
 				// If it is, add an error message
@@ -453,7 +444,7 @@ export default defineComponent({
 </script>
 
 <template>
-	<div>
+	<div class="vd-date-picker">
 		<!--	doc:	https://vue3datepicker.com-->
 		<VueDatePicker
 			v-model="date"

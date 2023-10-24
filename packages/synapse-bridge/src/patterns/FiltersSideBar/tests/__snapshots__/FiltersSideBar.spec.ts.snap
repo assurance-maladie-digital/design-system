@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FilterSideBar > renders correctly 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div data-v-af9db0af="" class="vd-filters-side-bar"><button data-v-af9db0af="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text px-2"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+        <!----><span class="v-btn__content" data-no-activator=""><!--v-if--> Filtres <i data-v-af9db0af="" class="M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z mdi v-icon notranslate v-theme--light v-icon--size-small ml-2" aria-hidden="true"></i></span>
+        <!---->
+        <!---->
+      </button>
+      <nav class="v-navigation-drawer v-navigation-drawer--right v-navigation-drawer--rail v-navigation-drawer--temporary v-theme--light v-navigation-drawer--mobile rounded-0 elevation-6" style="right: 0px; z-index: 1004; transform: translateX(110%); position: fixed; transition: none;" data-v-af9db0af="">
+        <!---->
+        <!---->
+        <div class="v-navigation-drawer__content">
+          <div data-v-af9db0af="" class="v-expansion-panels v-theme--light v-expansion-panels--variant-accordion"></div>
+          <div data-v-af9db0af="" class="v-spacer"></div>
+          <div data-v-af9db0af="" class="px-4 pb-4 pt-10"><button data-v-af9db0af="" type="button" class="v-btn v-btn--block v-theme--light text-primary v-btn--density-default v-btn--size-large v-btn--variant-outlined mb-4"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+              <!----><span class="v-btn__content" data-no-activator="">Fermer</span>
+              <!---->
+              <!---->
+            </button><button data-v-af9db0af="" type="button" class="v-btn v-btn--block v-theme--light text-primary v-btn--density-default v-btn--size-large v-btn--variant-outlined mb-4"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+              <!----><span class="v-btn__content" data-no-activator="">Réinitialiser</span>
+              <!---->
+              <!---->
+            </button><button data-v-af9db0af="" type="button" class="v-btn v-btn--block v-btn--elevated v-theme--light bg-primary v-btn--density-default v-btn--size-large v-btn--variant-elevated"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+              <!----><span class="v-btn__content" data-no-activator="">Appliquer</span>
+              <!---->
+              <!---->
+            </button></div>
+        </div>
+        <!---->
+      </nav>
+      <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;
