@@ -3,7 +3,7 @@
 		<VBtn
 			:class="{ 'v-btn--active': drawer }"
 			color="primary"
-			text
+			variant="text"
 			rounded
 			class="px-2"
 			@click="toggleDrawer"
@@ -21,24 +21,23 @@
 
 			<VIcon
 				class="ml-2"
-				small
+				size="small"
 			>
 				{{ filterIcon }}
 			</VIcon>
 		</VBtn>
 
 		<VNavigationDrawer
-			v-model="drawer"
-			fixed
-			right
+			:model-value="drawer"
+			sticky
 			temporary
-			hide-overlay
+			location="right"
+			scrim="false"
 			width="395px"
 			class="elevation-6"
 		>
 			<VExpansionPanels
-				accordion
-				flat
+				variant="accordion"
 			>
 				<VExpansionPanel
 					v-for="filter in filters"
@@ -85,8 +84,8 @@
 				<VBtn
 					color="primary"
 					block
-					large
-					outlined
+					size="large"
+					variant="outlined"
 					class="mb-4"
 					@click="drawer = false"
 				>
@@ -96,8 +95,8 @@
 				<VBtn
 					color="primary"
 					block
-					large
-					outlined
+					size="large"
+					variant="outlined"
 					class="mb-4"
 					@click.stop="resetAllFilters"
 				>
