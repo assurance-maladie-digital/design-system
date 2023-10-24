@@ -71,10 +71,15 @@ import { locales } from './locales';
 
 import { Filterable } from '../../mixins/filterable';
 
+import ChipList from '@/elements/ChipList/ChipList.vue';
+
 import { mdiChevronDown } from '@mdi/js';
 
 export default defineComponent({
 	name: 'FiltersInline',
+	components: {
+		ChipList
+	},
 	mixins: [Filterable],
 	data() {
 		return {
