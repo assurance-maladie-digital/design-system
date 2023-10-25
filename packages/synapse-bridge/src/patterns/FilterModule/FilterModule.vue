@@ -112,7 +112,7 @@ export default defineComponent({
 				this.appliedFilters = deepCopy<Field[]>(this.filters);
 			}
 
-			this.$set(this.appliedFilters, this.filterIndex, this.dialogContent);
+			this.appliedFilters[this.filterIndex] = this.dialogContent;
 			this.emitFilterListEvent();
 			this.dialog = false;
 		},
@@ -122,7 +122,7 @@ export default defineComponent({
 				return;
 			}
 
-			this.$set(this.appliedFilters[index], 'value', null);
+			this.appliedFilters[index].value = null;
 
 			if (this.filtersCount === 0) {
 				this.resetFilters();
