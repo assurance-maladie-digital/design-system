@@ -1,64 +1,56 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`DataListLoading > renders correctly 1`] = `
-<div data-v-d4601975="" aria-hidden="true" class="vd-data-list-loading">
+<div aria-hidden="true" class="vd-data-list-loading">
   <!--v-if-->
-  <ul data-v-d4601975="" class="pl-0">
-    <li data-v-d4601975="" class="vd-data-list-loading-item">
-      <headerloading data-v-d4601975="" width="60px" height="1rem" class="mb-1"></headerloading>
-      <headerloading data-v-d4601975="" width="90px" height="1.5rem"></headerloading>
+  <ul>
+    <li class="vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
     </li>
   </ul>
 </div>
 `;
 
 exports[`DataListLoading > renders correctly in row mode 1`] = `
-<div data-v-d4601975="" aria-hidden="true" class="vd-data-list-loading">
+<div aria-hidden="true" class="vd-data-list-loading">
   <!--v-if-->
-  <ul data-v-d4601975="" class="pl-0">
-    <li data-v-d4601975="" class="vd-data-list-loading-item mb-4">
+  <ul>
+    <li class="vd-data-list-loading-item">
       <!--v-if-->
-      <headerloading data-v-d4601975="" width="150px" height="1.5rem"></headerloading>
-    </li>
-    <li data-v-d4601975="" class="vd-data-list-loading-item mb-4">
-      <!--v-if-->
-      <headerloading data-v-d4601975="" width="150px" height="1.5rem"></headerloading>
-    </li>
-    <li data-v-d4601975="" class="vd-data-list-loading-item">
-      <!--v-if-->
-      <headerloading data-v-d4601975="" width="150px" height="1.5rem"></headerloading>
+      <header-loading-stub width="150px" height="1.5rem"></header-loading-stub>
     </li>
   </ul>
 </div>
 `;
 
 exports[`DataListLoading > renders correctly with a header 1`] = `
-<div data-v-d4601975="" aria-hidden="true" class="vd-data-list-loading">
-  <headerloading data-v-d4601975="" width="100px" height="1.5rem" class="mb-4"></headerloading>
-  <ul data-v-d4601975="" class="pl-0">
-    <li data-v-d4601975="" class="vd-data-list-loading-item">
-      <headerloading data-v-d4601975="" width="60px" height="1rem" class="mb-1"></headerloading>
-      <headerloading data-v-d4601975="" width="90px" height="1.5rem"></headerloading>
+<div aria-hidden="true" class="vd-data-list-loading">
+  <header-loading-stub width="100px" height="1.5rem" class="mb-4"></header-loading-stub>
+  <ul>
+    <li class="vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
     </li>
   </ul>
 </div>
 `;
 
 exports[`DataListLoading > renders correctly with more items 1`] = `
-<div data-v-d4601975="" aria-hidden="true" class="vd-data-list-loading">
+<div aria-hidden="true" class="vd-data-list-loading">
   <!--v-if-->
-  <ul data-v-d4601975="" class="pl-0">
-    <li data-v-d4601975="" class="vd-data-list-loading-item mb-4">
-      <headerloading data-v-d4601975="" width="60px" height="1rem" class="mb-1"></headerloading>
-      <headerloading data-v-d4601975="" width="90px" height="1.5rem"></headerloading>
+  <ul>
+    <li class="mb-4 vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
     </li>
-    <li data-v-d4601975="" class="vd-data-list-loading-item mb-4">
-      <headerloading data-v-d4601975="" width="60px" height="1rem" class="mb-1"></headerloading>
-      <headerloading data-v-d4601975="" width="90px" height="1.5rem"></headerloading>
+    <li class="mb-4 vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
     </li>
-    <li data-v-d4601975="" class="vd-data-list-loading-item">
-      <headerloading data-v-d4601975="" width="60px" height="1rem" class="mb-1"></headerloading>
-      <headerloading data-v-d4601975="" width="90px" height="1.5rem"></headerloading>
+    <li class="vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
     </li>
   </ul>
 </div>

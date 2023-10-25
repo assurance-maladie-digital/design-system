@@ -23,11 +23,3 @@ exports[`Widthable > computes the styles when min-width is defined 1`] = `
   "width": "100%",
 }
 `;
-
-exports[`Widthable > computes the styles when width is null 1`] = `
-{
-  "maxWidth": undefined,
-  "minWidth": undefined,
-  "width": undefined,
-}
-`;

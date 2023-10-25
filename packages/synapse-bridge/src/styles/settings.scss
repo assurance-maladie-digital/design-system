@@ -1,7 +1,3 @@
 @forward 'vuetify/settings' with (
 	$color-pack: false
 );
-
-.v-chip.bg-primary, .v-chip.bg-secondary, .v-chip.bg-success, .v-chip.bg-info, .v-chip.bg-warning, .v-chip.bg-error {
-	color: white !important;
-}
