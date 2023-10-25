@@ -7,8 +7,8 @@ export const config = {
 		class: 'mt-1'
 	},
 	actionBtn: {
-		text: true,
-		small: true,
+		variant: 'text',
+		size: 'small',
 		color: 'accent',
 		class: 'text-body-1 pa-0'
 	}

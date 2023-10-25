@@ -36,7 +36,6 @@
 				<VBtn
 					v-if="action"
 					v-bind="options.actionBtn"
-					variant="text"
 					class="vd-data-list-item-action-btn"
 					@click="$emit('click:action')"
 				>
