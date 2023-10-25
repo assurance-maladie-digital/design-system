@@ -1,5 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`DataListItem > emits click:action event when the action button is pressed 1`] = `
+<li data-v-55bfbadb="" class="vd-data-list-item d-flex flex-wrap">
+  <!--v-if-->
+  <div data-v-55bfbadb="" class="vd-data-list-item-content">
+    <div data-v-55bfbadb="" class="">
+      <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Test</div>
+      <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">value</span></div>
+    </div>
+    <v-btn-stub data-v-55bfbadb="" color="accent" class="text-body-1 pa-0 vd-data-list-item-action-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text"></v-btn-stub>
+  </div>
+</li>
+`;
+
 exports[`DataListItem > renders correctly 1`] = `
 <li data-v-55bfbadb="" class="vd-data-list-item d-flex flex-wrap">
   <!--v-if-->
@@ -7,6 +20,32 @@ exports[`DataListItem > renders correctly 1`] = `
     <div data-v-55bfbadb="" class="">
       <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Test</div>
       <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
+    </div>
+    <!--v-if-->
+  </div>
+</li>
+`;
+
+exports[`DataListItem > renders correctly a value as plain HTML 1`] = `
+<li data-v-55bfbadb="" class="vd-data-list-item d-flex flex-wrap">
+  <!--v-if-->
+  <div data-v-55bfbadb="" class="vd-data-list-item-content">
+    <div data-v-55bfbadb="" class="">
+      <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+      <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul<br> Dupont</span></div>
+    </div>
+    <!--v-if-->
+  </div>
+</li>
+`;
+
+exports[`DataListItem > renders correctly a value with HTML as text 1`] = `
+<li data-v-55bfbadb="" class="vd-data-list-item d-flex flex-wrap">
+  <!--v-if-->
+  <div data-v-55bfbadb="" class="vd-data-list-item-content">
+    <div data-v-55bfbadb="" class="">
+      <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+      <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul&lt;br&gt; Dupont</span></div>
     </div>
     <!--v-if-->
   </div>

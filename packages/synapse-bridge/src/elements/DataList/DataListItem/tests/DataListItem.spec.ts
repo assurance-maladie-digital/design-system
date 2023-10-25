@@ -45,6 +45,8 @@ describe("DataListItem", () => {
 
 		const elValue = wrapper.find(".vd-data-list-item-value span");
 		expect(elValue.text()).toBe("Paul<br> Dupont");
+
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("renders correctly a value as plain HTML", () => {
@@ -61,6 +63,8 @@ describe("DataListItem", () => {
 
 		const elValue = wrapper.find(".vd-data-list-item-value span");
 		expect(elValue.text()).toBe("Paul Dupont");
+
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("renders correctly value in a chip", () => {
@@ -82,12 +86,15 @@ describe("DataListItem", () => {
 		const wrapper = shallowMount(DataListItem, {
 			propsData: {
 				label: "Test",
-				action: "action",
+				action: "Action",
 			},
 			global: {
 				plugins: [vuetify],
 			},
 		});
+
+		const actionBtn = wrapper.find(".vd-data-list-item-action-btn");
+		expect(actionBtn.exists()).toBe(true);
 
 		expect(wrapper).toMatchSnapshot();
 	});
@@ -110,8 +117,9 @@ describe("DataListItem", () => {
 		actionBtn.trigger("click");
 
 		await wrapper.vm.$nextTick();
-
 		expect(wrapper.emitted("click:action")).toBeTruthy();
+
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("renders correctly in row mode", () => {
