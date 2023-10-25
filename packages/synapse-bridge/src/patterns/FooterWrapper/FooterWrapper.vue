@@ -1,7 +1,6 @@
 <template>
 	<VLayout>
 		<VFooter
-			min-height="64"
 			width="100%"
 			elevation="1"
 			color="#fafafa"
@@ -19,8 +18,6 @@ import { defineComponent } from "vue";
 
 import consola from "consola";
 
-/** @deprecated Use FooterBar instead */
-
 export default defineComponent({
 	mounted() {
 		// eslint-disable-next-line no-console
@@ -30,3 +27,9 @@ export default defineComponent({
 	},
 });
 </script>
+
+<style lang="scss" scoped>
+.v-footer {
+	min-height: 64px;
+}
+</style>

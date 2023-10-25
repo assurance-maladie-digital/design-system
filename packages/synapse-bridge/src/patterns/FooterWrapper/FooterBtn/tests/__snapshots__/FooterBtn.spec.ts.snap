@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FooterBtn > renders correctly 1`] = `<vbtn data-v-b213ecd2="" disabled="false" tag="button" rounded="0" class="vd-footer-btn overflow-hidden text-subtitle-2 grey-lighten-80 mx-4 my-2" width="180" height="32" variant="tonal"></vbtn>`;
