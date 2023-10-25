@@ -5,7 +5,7 @@ import { vuetify } from '@tests/unit/setup'
 import ChipList from '../'
 
 describe('ChipList', () => {
-	it('renders correctly', () => {
+	it('renders correctly without items', () => {
 		const wrapper = shallowMount(ChipList, {
 			global: {
 				plugins: [vuetify],
@@ -15,7 +15,7 @@ describe('ChipList', () => {
 		expect(wrapper.html()).toMatchSnapshot()
 	})
 
-	it('renders correctly with chips', () => {
+	it('renders correctly with items', () => {
 		const wrapper = shallowMount(ChipList, {
 			global: {
 				plugins: [vuetify],
@@ -70,7 +70,6 @@ describe('ChipList', () => {
 		expect(wrapper.emitted('remove')).toBeTruthy()
 	})
 
-	// reset event
 	it('emits reset event when reset button is clicked', async () => {
 		const wrapper = mount(ChipList, {
 			global: {
