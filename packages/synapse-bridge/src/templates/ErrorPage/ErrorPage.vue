@@ -82,7 +82,7 @@
 						{{ pageTitle }}
 					</h2>
 
-					<p class="mb-0">
+					<p>
 						{{ message }}
 					</p>
 
