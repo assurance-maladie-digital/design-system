@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CookieBanner > renders correctly 1`] = `
+<div data-v-619c97ab="" class="v-sheet v-theme--light elevation-3 v-sheet--rounded pa-8 vd-cookie-banner" style="max-width: 100%; width: 800px;" aria-label="Gestion des cookies" role="region">
+  <div data-v-619c97ab="" class="d-flex align-start flex-nowrap pa-0 mb-6">
+    <h2 data-v-619c97ab="" class="text-h5 font-weight-bold">À propos des cookies</h2>
+    <div data-v-619c97ab="" class="v-spacer"></div><button data-v-619c97ab="" type="button" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text mt-n2 mr-n2 ml-4" style="height: 32px; width: 32px;" aria-label="Continuer sans accepter"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><i data-v-619c97ab="" class="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+  <p data-v-619c97ab="">Ce site utilise des cookies qui nous permettent de vous proposer une expérience en ligne optimale en enregistrant certaines informations lors de votre navigation.</p>
+  <div data-v-619c97ab="" class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
+    <div data-v-619c97ab="" class="v-spacer"></div><a data-v-619c97ab="" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined text-wrap ma-2" style="height: auto; min-height: 44px; width: auto;" data-test-id="customize"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator="">Personnaliser mes choix</span>
+      <!---->
+      <!---->
+    </a><button data-v-619c97ab="" type="button" class="v-btn v-btn--elevated v-theme--light bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated text-wrap ma-2" style="height: auto; min-height: 44px; width: auto;" data-test-id="reject"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator="">Continuer sans accepter</span>
+      <!---->
+      <!---->
+    </button><button data-v-619c97ab="" type="button" class="v-btn v-btn--elevated v-theme--light bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated text-wrap ma-2" style="height: auto; min-height: 44px; width: auto;" data-test-id="accept"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator="">Tout accepter</span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+</div>
+`;
+
+exports[`CookieBanner > renders correctly on small screens 1`] = `
+<div data-v-619c97ab="" class="v-sheet v-theme--light elevation-3 v-sheet--rounded pa-8 vd-cookie-banner" style="max-width: 100%; width: 800px;" aria-label="Gestion des cookies" role="region">
+  <div data-v-619c97ab="" class="d-flex align-start flex-nowrap pa-0 mb-6">
+    <h2 data-v-619c97ab="" class="text-h5 font-weight-bold">À propos des cookies</h2>
+    <div data-v-619c97ab="" class="v-spacer"></div><button data-v-619c97ab="" type="button" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text mt-n2 mr-n2 ml-4" style="height: 32px; width: 32px;" aria-label="Continuer sans accepter"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><i data-v-619c97ab="" class="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+  <p data-v-619c97ab="">Ce site utilise des cookies qui nous permettent de vous proposer une expérience en ligne optimale en enregistrant certaines informations lors de votre navigation.</p>
+  <div data-v-619c97ab="" class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
+    <div data-v-619c97ab="" class="v-spacer"></div><a data-v-619c97ab="" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined text-wrap ma-2" style="height: auto; min-height: 44px; width: auto;" data-test-id="customize"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator="">Personnaliser mes choix</span>
+      <!---->
+      <!---->
+    </a><button data-v-619c97ab="" type="button" class="v-btn v-btn--elevated v-theme--light bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated text-wrap ma-2" style="height: auto; min-height: 44px; width: auto;" data-test-id="reject"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator="">Continuer sans accepter</span>
+      <!---->
+      <!---->
+    </button><button data-v-619c97ab="" type="button" class="v-btn v-btn--elevated v-theme--light bg-primary v-btn--density-default v-btn--size-default v-btn--variant-elevated text-wrap ma-2" style="height: auto; min-height: 44px; width: auto;" data-test-id="accept"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator="">Tout accepter</span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+</div>
+`;
