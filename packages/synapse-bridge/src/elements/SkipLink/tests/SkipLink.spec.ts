@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach, vi, SpyInstance } from 'vitest'
+import { describe, it, expect, afterEach, vi } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 
 import SkipLink from '../'

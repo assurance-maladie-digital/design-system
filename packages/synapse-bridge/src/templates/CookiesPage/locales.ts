@@ -4,5 +4,5 @@ export const locales = {
 	cookieDefinition: 'Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette ou mobile) lors de la visite d’un site ou lors de la consultation d’une publicité. Il contient plusieurs données\xa0: le nom du service qui l’a déposé, un identifiant sous forme de numéro unique, une valeur et éventuellement une date d’expiration.',
 	rejectAll: 'Tout refuser',
 	acceptAll: 'Tout accepter',
-	saveBtn: 'Enregistrer mes choix'
-};
+	saveBtn: 'Enregistrer mes choix',
+}
