@@ -1,3 +1,3 @@
-import FooterBtn from './FooterBtn.vue';
+import FooterBtn from './FooterBtn.vue'
 
-export default FooterBtn;
+export default FooterBtn
