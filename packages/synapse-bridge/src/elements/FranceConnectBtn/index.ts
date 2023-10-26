@@ -1,3 +1,3 @@
-import FranceConnectBtn from './FranceConnectBtn.vue';
+import FranceConnectBtn from './FranceConnectBtn.vue'
 
-export default FranceConnectBtn;
+export default FranceConnectBtn

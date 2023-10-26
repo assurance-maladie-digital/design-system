@@ -1,3 +1,42 @@
+<script lang="ts">
+	import { defineComponent } from 'vue'
+
+	import { locales } from './locales'
+
+	import { mdiOpenInNew } from '@mdi/js'
+
+	export default defineComponent({
+		props: {
+			href: {
+				type: String,
+				required: true,
+			},
+			connectPlus: {
+				type: Boolean,
+				default: false,
+			}
+		},
+		data() {
+			return {
+				locales,
+				linkIcon: mdiOpenInNew,
+			}
+		},
+		computed: {
+			btnWidth(): string {
+				return this.connectPlus ? '245' : '209'
+			},
+			btnViewBox(): string {
+				return `0 0 ${this.btnWidth} 56`
+			},
+			infoLinkUrl(): string {
+				const baseUrl = 'https://franceconnect.gouv.fr/'
+				return this.connectPlus ? baseUrl + 'france-connect-plus' : baseUrl
+			},
+		},
+	})
+</script>
+
 <template>
 	<div class="vd-france-connect-btn d-flex flex-column align-start">
 		<a
@@ -63,68 +102,31 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { locales } from './locales';
-
-import { mdiOpenInNew } from '@mdi/js';
-
-const Props = {
-	href: {
-		type: String,
-		required: true
-	},
-	connectPlus: {
-		type: Boolean,
-		default: false
-	}
-};
-
-export default defineComponent({
-	mixins: [Props],
-	props: Props,
-	data() {
-		return {
-			locales,
-			linkIcon: mdiOpenInNew
-		};
-	},
-	computed: {
-		btnWidth(): string {
-			return this.connectPlus ? '245' : '209';
-		},
-		btnViewBox(): string {
-			return `0 0 ${this.btnWidth} 56`;
-		},
-		infoLinkUrl(): string {
-			const baseUrl = 'https://franceconnect.gouv.fr/';
-			return this.connectPlus ? baseUrl + 'france-connect-plus' : baseUrl;
-		}
-	},
-});
-</script>
-
 <style lang="scss" scoped>
 	.vd-france-connect-btn a {
 		color: #000091;
 	}
+
 	.vd-france-connect-link {
+
 		background: #000091;
 		&:hover,
 		&:focus {
 			background: #1212ff;
 			transition: all 0.2s ease-in-out;
 		}
+
 		&:active {
 			background: #2323ff;
 		}
 	}
+
 	.vd-france-connect-info-link {
 		background-image: linear-gradient(currentColor, currentColor);
 		background-position: 0% 100%;
 		background-repeat: no-repeat;
 		background-size: 100% 1px;
+
 		&:hover {
 			background-size: 100% 2px;
 		}
