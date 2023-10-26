@@ -35,7 +35,8 @@
 		"vuetify": "^3.3.0"
 	},
 	"dependencies": {
-		"@cnamts/design-tokens": "2.12.0"
+		"@cnamts/design-tokens": "2.12.0",
+		"vue-router": "4.2.5"
 	},
 	"devDependencies": {
 		"@mdi/js": "7.2.96",
