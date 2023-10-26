@@ -20,6 +20,9 @@ importers:
       '@cnamts/design-tokens':
         specifier: 2.12.0
         version: 2.12.0
+      consola:
+        specifier: 2.15.3
+        version: 2.15.3
       vue:
         specifier: ^3.3.0
         version: 3.3.4
@@ -1979,6 +1982,10 @@ packages:
       ini: 1.3.8
       proto-list: 1.2.4
     dev: true
+
+  /consola@2.15.3:
+    resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
+    dev: false
 
   /console-control-strings@1.1.0:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}
