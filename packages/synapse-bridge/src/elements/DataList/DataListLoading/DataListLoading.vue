@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { defineComponent } from 'vue'
 
-	import { HeaderLoading } from '@/main'
+	import HeaderLoading from '@/elements/HeaderLoading'
 
 	export default defineComponent({
 		components: {
