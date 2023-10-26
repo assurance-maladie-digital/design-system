@@ -1,3 +1,3 @@
-import CookieBanner from './CookieBanner.vue';
+import CookieBanner from './CookieBanner.vue'
 
-export default CookieBanner;
+export default CookieBanner

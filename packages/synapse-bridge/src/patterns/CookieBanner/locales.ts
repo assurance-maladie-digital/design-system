@@ -6,5 +6,5 @@ export const locales = {
 	moreInformationLabel: 'En savoir plus',
 	customizeBtnText: 'Personnaliser mes choix',
 	rejectBtnText: 'Continuer sans accepter',
-	acceptBtnText: 'Tout accepter'
-};
+	acceptBtnText: 'Tout accepter',
+}

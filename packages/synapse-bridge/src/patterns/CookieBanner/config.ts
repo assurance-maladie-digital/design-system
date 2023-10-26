@@ -2,8 +2,8 @@ const commonBtnConfig = {
 	color: 'primary',
 	height: 'auto',
 	minHeight: '44px',
-	class: 'text-wrap ma-2'
-};
+	class: 'text-wrap ma-2',
+}
 
 export const config = {
 	sheet: {
@@ -11,22 +11,23 @@ export const config = {
 		maxWidth: '100%',
 		rounded: true,
 		elevation: 3,
-		class: 'pa-8'
+		class: 'pa-8',
 	},
 	closeBtn: {
+		icon: true,
 		variant: 'text',
 		width: '32px',
 		height: '32px',
-		class: 'mt-n2 mr-n2 ml-4'
+		class: 'mt-n2 mr-n2 ml-4',
 	},
 	customizeBtn: {
 		...commonBtnConfig,
-		variant: 'outlined'
+		variant: 'outlined',
 	},
 	rejectBtn: {
-		...commonBtnConfig
+		...commonBtnConfig,
 	},
 	acceptBtn: {
-		...commonBtnConfig
-	}
-};
+		...commonBtnConfig,
+	},
+}

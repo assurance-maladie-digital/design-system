@@ -32,7 +32,6 @@
 	},
 	"peerDependencies": {
 		"vue": "^3.3.0",
-		"vue-router": "^4.0.13",
 		"vuetify": "^3.3.0"
 	},
 	"dependencies": {
