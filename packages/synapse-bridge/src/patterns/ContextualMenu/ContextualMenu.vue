@@ -98,4 +98,7 @@ a {
 		opacity: 1;
 	}
 }
+.text-secondary {
+    color: rgba(0,0,0,.6)!important;
+}
 </style>
