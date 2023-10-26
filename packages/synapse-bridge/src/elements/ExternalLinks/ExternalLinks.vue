@@ -26,9 +26,6 @@
 				>
 					{{ btnText }}
 				</span>
-
-				<VSpacer v-bind="options.spacer" />
-
 				<VIcon v-bind="options.btnIcon">
 					{{ arrowIcon }}
 				</VIcon>
@@ -216,7 +213,7 @@ export default defineComponent({
 				zIndex
 			};
 		},
-		
+
 		arrowIcon(): string {
 			const iconMapping: IndexedObject = {
 				right: this.open ? rightArrowIcon : leftArrowIcon,
@@ -236,6 +233,11 @@ $list-max-height: 248px;
 	max-width: none;
 	:deep(.v-btn__content) {
 		flex-direction: inherit;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.v-icon {
+		font-size: 1.5rem;
 	}
 }
 .vd-external-links-list {
