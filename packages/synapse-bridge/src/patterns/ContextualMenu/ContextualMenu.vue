@@ -8,7 +8,7 @@
 				:href="hash"
 				:class="{
 					'text-primary active': $route.hash === hash,
-					'text--secondary': $route.hash !== hash,
+					'text-secondary': $route.hash !== hash,
 					'ps-4': level === 2,
 					'ps-6': level === 3,
 					'ps-9': level === 4,
