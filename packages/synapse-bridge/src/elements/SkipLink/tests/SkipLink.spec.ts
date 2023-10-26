@@ -1,12 +1,30 @@
-import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { describe, it, expect, beforeEach, afterEach, vi, SpyInstance } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
 
-import SkipLink from "../";
+import SkipLink from '../'
 
-describe("SkipLink", () => {
-	it("renders correctly", () => {
-		const wrapper = shallowMount(SkipLink);
+describe('SkipLink', () => {
+	afterEach(() => {
+		vi.restoreAllMocks()
+	})
 
-		expect(wrapper).toMatchSnapshot();
-	});
-});
+	it('renders correctly', () => {
+		const wrapper = shallowMount(SkipLink)
+
+		expect(wrapper).toMatchSnapshot()
+	})
+
+	it('focuses the skip link on route change', async () => {
+		const wrapper = shallowMount(SkipLink)
+		const focusSpy = vi.fn();
+
+		(wrapper.vm.$refs.skipLinkSpan as HTMLLinkElement).focus = focusSpy
+
+		// @ts-ignore
+		wrapper.vm.$options.watch.$route.call(wrapper.vm)
+
+		await wrapper.vm.$nextTick()
+
+		expect(focusSpy).toHaveBeenCalled()
+	})
+})
