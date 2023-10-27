@@ -36,7 +36,7 @@ describe('CookiesInformation', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
 
-	it('renders correctly when details is toggled', () => {
+	it('renders correctly when details is toggled', async () => {
 		const wrapper = mount(CookiesInformation, {
 			global: {
 				plugins: [vuetify],
@@ -50,7 +50,7 @@ describe('CookiesInformation', () => {
 		const details = wrapper.find('details')
 		details.element.open = true
 
-		details.trigger('toggle')
+		await details.trigger('toggle')
 
 		expect(wrapper).toMatchSnapshot()
 	})
@@ -69,11 +69,9 @@ describe('CookiesInformation', () => {
 
 		expect(wrapper.vm.parsedValue).toBe(RadioValuesEnum.ACCEPT)
 
-		wrapper.setProps({
+		await wrapper.setProps({
 			modelValue: false,
 		})
-
-		await wrapper.vm.$nextTick()
 
 		expect(wrapper.vm.parsedValue).toBe(RadioValuesEnum.REJECT)
 	})

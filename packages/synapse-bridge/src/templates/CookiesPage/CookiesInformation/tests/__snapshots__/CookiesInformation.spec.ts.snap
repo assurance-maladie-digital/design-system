@@ -26,7 +26,7 @@ exports[`CookiesInformation > renders correctly when details is toggled 1`] = `
   <h2 data-v-7eab3eb5="" class="text-subtitle-1 font-weight-bold mb-2">Cookies fonctionnels</h2>
   <p data-v-7eab3eb5="" class="mb-4">Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.</p>
   <details data-v-7eab3eb5="" open="">
-    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <i data-v-7eab3eb5="" class="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z mdi v-icon notranslate v-theme--light v-icon--size-default mr-2" aria-hidden="true"></i></summary>
+    <summary data-v-7eab3eb5="" class="mb-1">Masquer les cookies <i data-v-7eab3eb5="" class="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z mdi v-icon notranslate v-theme--light v-icon--size-default mr-2" aria-hidden="true"></i></summary>
     <div data-v-ad3c06ce="" data-v-7eab3eb5="" class="v-table v-theme--light v-table--density-default vd-cookie-table mb-2">
       <!---->
       <div class="v-table__wrapper">

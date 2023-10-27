@@ -134,9 +134,9 @@ describe('DataList', () => {
 
 		expect(wrapper).toMatchSnapshot()
 
-		wrapper.setProps({ loading: false })
-
-		await wrapper.vm.$nextTick()
+		await wrapper.setProps({
+			loading: false
+		})
 
 		// Check that items now exist
 		itemsExists = wrapper.find('.vd-data-list-item').exists()
@@ -185,9 +185,7 @@ describe('DataList', () => {
 		const actionBtn = (itemWithAction as DOMWrapper<Element>).find('.vd-data-list-item-action-btn')
 		expect(actionBtn.exists()).toBe(true)
 
-		actionBtn.trigger('click')
-
-		await wrapper.vm.$nextTick()
+		await actionBtn.trigger('click')
 
 		expect(wrapper.emitted('click:item-action')).toEqual([[2]])
 	})
