@@ -1,9 +1,9 @@
 import { TypeEnum } from './CookiesInformation/TypeEnum'
 import { CookiesList } from './CookiesTable/types'
 
-export type CookiesPageItems = Partial<{
-	[key in TypeEnum]: CookiesList[]
-}>
+export type CookiesPageItems = {
+	[key in TypeEnum]?: CookiesList[]
+}
 
 export type Preferences = {
 	[key: string]: boolean | null

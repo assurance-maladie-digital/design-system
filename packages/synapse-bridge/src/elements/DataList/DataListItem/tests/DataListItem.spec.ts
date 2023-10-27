@@ -73,8 +73,8 @@ describe('DataListItem', () => {
 		})
 
 		const elValue = wrapper.find('.vd-data-list-item-value span')
-		expect(elValue.text()).toBe('Paul<br> Dupont')
 
+		expect(elValue.text()).toBe('Paul<br> Dupont')
 		expect(wrapper).toMatchSnapshot()
 	})
 
@@ -91,8 +91,8 @@ describe('DataListItem', () => {
 		})
 
 		const elValue = wrapper.find('.vd-data-list-item-value span')
-		expect(elValue.text()).toBe('Paul Dupont')
 
+		expect(elValue.text()).toBe('Paul Dupont')
 		expect(wrapper).toMatchSnapshot()
 	})
 
@@ -123,8 +123,8 @@ describe('DataListItem', () => {
 		})
 
 		const actionBtn = wrapper.find('.vd-data-list-item-action-btn')
-		expect(actionBtn.exists()).toBe(true)
 
+		expect(actionBtn.exists()).toBe(true)
 		expect(wrapper).toMatchSnapshot()
 	})
 
@@ -143,11 +143,9 @@ describe('DataListItem', () => {
 		const actionBtn = wrapper.find('.vd-data-list-item-action-btn')
 		expect(actionBtn.exists()).toBe(true)
 
-		actionBtn.trigger('click')
+		await actionBtn.trigger('click')
 
-		await wrapper.vm.$nextTick()
 		expect(wrapper.emitted('click:action')).toBeTruthy()
-
 		expect(wrapper).toMatchSnapshot()
 	})
 
@@ -165,8 +163,8 @@ describe('DataListItem', () => {
 		})
 
 		const elExists = wrapper.find('.vd-row').exists()
-		expect(elExists).toBe(true)
 
+		expect(elExists).toBe(true)
 		expect(wrapper).toMatchSnapshot()
 	})
 

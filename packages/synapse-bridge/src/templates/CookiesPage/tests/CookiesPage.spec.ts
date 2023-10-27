@@ -6,6 +6,7 @@ import CookiesPage from '../'
 import { TypeEnum } from '../CookiesInformation/TypeEnum'
 import { cookies, cookiesList } from './fixtures'
 import { VForm } from '@/types'
+import CookiesInformation from '../CookiesInformation'
 
 describe('CookiesPage', () => {
 	it('renders correctly', () => {
@@ -21,7 +22,7 @@ describe('CookiesPage', () => {
 		expect(wrapper.html()).toMatchSnapshot()
 	})
 
-	it('sets global preferences', () => {
+	it('sets global preferences', async () => {
 		const wrapper = mount(CookiesPage, {
 			global: {
 				plugins: [vuetify],
@@ -31,18 +32,39 @@ describe('CookiesPage', () => {
 			},
 		})
 
-		wrapper.find('[data-test-id="reject-all"]').trigger('click')
+		await wrapper.find('[data-test-id="reject-all"]').trigger('click')
 
 		expect(wrapper.vm.preferences).toStrictEqual({
 			[TypeEnum.FUNCTIONAL]: false,
 			[TypeEnum.ANALYTICS]: false,
 		})
 
-		wrapper.find('[data-test-id="accept-all"]').trigger('click')
+		await wrapper.find('[data-test-id="accept-all"]').trigger('click')
 
 		expect(wrapper.vm.preferences).toStrictEqual({
 			[TypeEnum.FUNCTIONAL]: true,
 			[TypeEnum.ANALYTICS]: true,
+		})
+	})
+
+	it('updates preferences when CookiesInformation is updated', async () => {
+		const wrapper = mount(CookiesPage, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				items: cookiesList,
+			},
+		})
+
+		const cookiesInformation = wrapper.findAllComponents(CookiesInformation)
+
+		cookiesInformation[1].vm.$emit('update:modelValue', true)
+		cookiesInformation[2].vm.$emit('update:modelValue', false)
+
+		expect(wrapper.vm.preferences).toStrictEqual({
+			[TypeEnum.FUNCTIONAL]: true,
+			[TypeEnum.ANALYTICS]: false,
 		})
 	})
 
