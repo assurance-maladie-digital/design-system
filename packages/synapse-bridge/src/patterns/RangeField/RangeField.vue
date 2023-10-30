@@ -1,45 +1,3 @@
-<template>
-	<div class="vd-range-field">
-		<div
-			:class="{ 'flex-column': mobileVersion }"
-			class="d-flex flex-wrap max-width-none ma-n3"
-		>
-			<VTextField
-				v-bind="options.textField"
-				:modelValue="minValue"
-				:label="locales.minLabel"
-				:variant="outlined ? 'outlined' : undefined"
-				@update:modelValue="updateMinValue"
-			/>
-
-			<VTextField
-				v-bind="options.textField"
-				:modelValue="maxValue"
-				:label="locales.maxLabel"
-				:variant="outlined ? 'outlined' : undefined"
-				@update:modelValue="updateMaxValue"
-			/>
-		</div>
-
-		<VRangeSlider
-			v-model="rangeValue"
-			v-bind="options.rangeSlider"
-			color="primary"
-			:max="max"
-			:min="min"
-			@change="emitChangeEvent"
-		>
-			<template #prepend>
-				{{ min }}
-			</template>
-
-			<template #append>
-				{{ max }}
-			</template>
-		</VRangeSlider>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -55,7 +13,8 @@ enum RangeEnum {
 
 import { useDisplay } from "vuetify";
 
-const Props = {
+export default defineComponent({
+	mixins: [customizable(config)],
 	props: {
 		min: {
 			type: Number,
@@ -73,13 +32,6 @@ const Props = {
 			type: Boolean,
 			default: false,
 		},
-	},
-};
-
-export default defineComponent({
-	mixins: [Props, customizable(config)],
-	props: {
-		...Props.props,
 	},
 	data() {
 		return {
@@ -149,3 +101,45 @@ export default defineComponent({
 	},
 });
 </script>
+
+<template>
+	<div class="vd-range-field">
+		<div
+			:class="{ 'flex-column': mobileVersion }"
+			class="d-flex flex-wrap max-width-none ma-n3"
+		>
+			<VTextField
+				v-bind="options.textField"
+				:modelValue="minValue"
+				:label="locales.minLabel"
+				:variant="outlined ? 'outlined' : undefined"
+				@update:modelValue="updateMinValue"
+			/>
+
+			<VTextField
+				v-bind="options.textField"
+				:modelValue="maxValue"
+				:label="locales.maxLabel"
+				:variant="outlined ? 'outlined' : undefined"
+				@update:modelValue="updateMaxValue"
+			/>
+		</div>
+
+		<VRangeSlider
+			v-model="rangeValue"
+			v-bind="options.rangeSlider"
+			color="primary"
+			:max="max"
+			:min="min"
+			@change="emitChangeEvent"
+		>
+			<template #prepend>
+				{{ min }}
+			</template>
+
+			<template #append>
+				{{ max }}
+			</template>
+		</VRangeSlider>
+	</div>
+</template>
