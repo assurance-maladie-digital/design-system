@@ -1,3 +1,52 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { mdiMagnify } from "@mdi/js";
+
+import { SearchListItem } from "./types";
+import { locales } from "./locales";
+
+export default defineComponent({
+	props: {
+		value: {
+			type: Array as PropType<unknown[]>,
+			default: () => [],
+		},
+		items: {
+			type: Array as PropType<SearchListItem[]>,
+			default: () => [],
+		},
+	},
+	emits: ["update:modelValue"],
+	data() {
+		return {
+			search: null as string | null,
+			searchIcon: mdiMagnify,
+			locales,
+		};
+	},
+	computed: {
+		filteredItems(): SearchListItem[] {
+			if (this.search === null) {
+				return this.items;
+			}
+
+			return this.items.filter((item) => {
+				return item.label
+					.toLowerCase()
+					.includes((this.search as string).toLowerCase());
+			});
+		},
+	},
+	methods: {
+		emitChangeEvent(value: unknown[]): void {
+			this.$emit("update:modelValue", value);
+		},
+	},
+});
+</script>
+
 <template>
 	<div class="vd-search-list">
 		<VTextField
@@ -15,7 +64,7 @@
 			</template>
 		</VTextField>
 
-		<VList class="pb-0">
+		<VList select-strategy="classic" class="pb-0">
 			<VListItem
 				v-for="(item, index) in filteredItems"
 				:key="index"
@@ -42,64 +91,8 @@
 	</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { mdiMagnify } from "@mdi/js";
-
-import { SearchListItem } from "./types";
-import { locales } from "./locales";
-
-const Props = {
-	props: {
-		value: {
-			type: Array as PropType<unknown[]>,
-			default: () => [],
-		},
-		items: {
-			type: Array as PropType<SearchListItem[]>,
-			default: () => [],
-		},
-	},
-};
-
-export default defineComponent({
-	mixins: [Props],
-	props: {
-		...Props.props,
-	},
-	emits: ["change"],
-	data() {
-		return {
-			search: null as string | null,
-			searchIcon: mdiMagnify,
-			locales,
-		};
-	},
-	computed: {
-		filteredItems(): SearchListItem[] {
-			if (this.search === null) {
-				return this.items;
-			}
-
-			return this.items.filter((item) => {
-				return item.label
-					.toLowerCase()
-					.includes((this.search as string).toLowerCase());
-			});
-		},
-	},
-	methods: {
-		emitChangeEvent(value: unknown[]): void {
-			this.$emit("change", value);
-		},
-	},
-});
-</script>
-
 <style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
+@import "@cnamts/design-tokens/dist/tokens";
 
 .vd-search-list .v-list-item--active::before {
 	opacity: 0;
