@@ -17,7 +17,7 @@
 				required: true
 			},
 			textToCopy: {
-				type: [Function, String] as PropType<() => string | string>,
+				type: [Function, String] as unknown as PropType<(() => string) | string>,
 				required: true
 			},
 			hideTooltip: {
@@ -68,6 +68,7 @@
 						...options.btn
 					}"
 					:aria-label="label"
+					data-test-id="copy-btn"
 					@click="copy"
 				>
 					<slot name="icon">

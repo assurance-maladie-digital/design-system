@@ -1,26 +1,3 @@
-<template>
-	<VTextField
-		v-bind="textFieldOptions"
-		:model-value="value"
-		:rules="rules"
-		:type="showEyeIcon ? 'text' : 'password'"
-		@change="emitChangeEvent"
-	>
-		<template #append>
-			<VBtn
-				v-bind="options.btn"
-				:aria-label="btnLabel"
-				class="mt-n2"
-				@click="showEyeIcon = !showEyeIcon"
-			>
-				<VIcon v-bind="options.icon">
-					{{ showEyeIcon ? eyeIcon : eyeOffIcon }}
-				</VIcon>
-			</VBtn>
-		</template>
-	</VTextField>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -36,7 +13,9 @@ import { ValidationRule } from "../../rules/types";
 import { mdiEye, mdiEyeOff } from "@mdi/js";
 import deepMerge from "deepmerge";
 
-const Props = {
+export default defineComponent({
+	inheritAttrs: false,
+	mixins: [customizable(config)],
 	props: {
 		value: {
 			type: String,
@@ -46,14 +25,6 @@ const Props = {
 			type: Boolean,
 			default: false,
 		},
-	},
-};
-
-export default defineComponent({
-	inheritAttrs: false,
-	mixins: [Props, customizable(config)],
-	props: {
-		...Props.props,
 	},
 	data() {
 		return {
@@ -89,6 +60,29 @@ export default defineComponent({
 	}
 });
 </script>
+
+<template>
+	<VTextField
+		v-bind="textFieldOptions"
+		:model-value="value"
+		:rules="rules"
+		:type="showEyeIcon ? 'text' : 'password'"
+		@change="emitChangeEvent"
+	>
+		<template #append>
+			<VBtn
+				v-bind="options.btn"
+				:aria-label="btnLabel"
+				class="mt-n2"
+				@click="showEyeIcon = !showEyeIcon"
+			>
+				<VIcon v-bind="options.icon">
+					{{ showEyeIcon ? eyeIcon : eyeOffIcon }}
+				</VIcon>
+			</VBtn>
+		</template>
+	</VTextField>
+</template>
 
 <style lang="scss" scoped>
 .v-btn--icon {
