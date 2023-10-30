@@ -1,57 +1,3 @@
-<template>
-	<VDialog
-		v-model="dialog"
-		v-bind="$attrs"
-		:width="width"
-		:persistent="persistent"
-		aria-modal="true"
-		class="vd-dialog-box"
-	>
-		<VCard v-bind="options.card" ref="dialogContent">
-			<VCardTitle v-bind="options.cardTitle">
-				<slot name="title">
-					<h2 v-if="title" class="text-h6 font-weight-bold">
-						{{ title }}
-					</h2>
-				</slot>
-
-				<VSpacer v-bind="options.spacer" />
-
-				<VBtn
-					v-if="!persistent"
-					v-bind="options.closeBtn"
-					:aria-label="locales.closeBtn"
-					@click="$emit('update:modelValue', false)"
-				>
-					<VIcon v-bind="options.icon">
-						{{ closeIcon }}
-					</VIcon>
-				</VBtn>
-			</VCardTitle>
-
-			<slot />
-
-			<div
-				v-if="!hideActions"
-				v-bind="options.actionsCtn"
-				class="vd-dialog-box-actions-ctn"
-			>
-				<VSpacer v-bind="options.actionsSpacer" />
-
-				<slot name="actions">
-					<VBtn v-bind="options.cancelBtn" @click="$emit('cancel')">
-						{{ cancelBtnText }}
-					</VBtn>
-
-					<VBtn v-bind="options.confirmBtn" @click="$emit('confirm')">
-						{{ confirmBtnText }}
-					</VBtn>
-				</slot>
-			</div>
-		</VCard>
-	</VDialog>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -63,7 +9,9 @@ import { Refs } from "../../types";
 
 import { mdiClose } from "@mdi/js";
 
-const Props = {
+export default defineComponent({
+	inheritAttrs: false,
+	mixins: [customizable(config)],
 	props: {
 		value: {
 			type: Boolean,
@@ -94,12 +42,6 @@ const Props = {
 			default: false,
 		},
 	},
-};
-
-export default defineComponent({
-	inheritAttrs: false,
-	mixins: [customizable(config)],
-	...Props,
 	data() {
 		return {
 			$refs: {} as Refs<{
@@ -170,6 +112,60 @@ export default defineComponent({
 	},
 });
 </script>
+
+<template>
+	<VDialog
+		v-model="dialog"
+		v-bind="$attrs"
+		:width="width"
+		:persistent="persistent"
+		aria-modal="true"
+		class="vd-dialog-box"
+	>
+		<VCard v-bind="options.card" ref="dialogContent">
+			<VCardTitle v-bind="options.cardTitle">
+				<slot name="title">
+					<h2 v-if="title" class="text-h6 font-weight-bold">
+						{{ title }}
+					</h2>
+				</slot>
+
+				<VSpacer v-bind="options.spacer" />
+
+				<VBtn
+					v-if="!persistent"
+					v-bind="options.closeBtn"
+					:aria-label="locales.closeBtn"
+					@click="$emit('update:modelValue', false)"
+				>
+					<VIcon v-bind="options.icon">
+						{{ closeIcon }}
+					</VIcon>
+				</VBtn>
+			</VCardTitle>
+
+			<slot />
+
+			<div
+				v-if="!hideActions"
+				v-bind="options.actionsCtn"
+				class="vd-dialog-box-actions-ctn"
+			>
+				<VSpacer v-bind="options.actionsSpacer" />
+
+				<slot name="actions">
+					<VBtn v-bind="options.cancelBtn" @click="$emit('cancel')">
+						{{ cancelBtnText }}
+					</VBtn>
+
+					<VBtn v-bind="options.confirmBtn" @click="$emit('confirm')">
+						{{ confirmBtnText }}
+					</VBtn>
+				</slot>
+			</div>
+		</VCard>
+	</VDialog>
+</template>
 
 <style lang="scss" scoped>
 .v-card__title > * {

@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Widthable > computes the default styles 1`] = `
+{
+  "maxWidth": undefined,
+  "minWidth": undefined,
+  "width": "100%",
+}
+`;
+
+exports[`Widthable > computes the styles when max-width is defined 1`] = `
+{
+  "maxWidth": "512px",
+  "minWidth": undefined,
+  "width": "100%",
+}
+`;
+
+exports[`Widthable > computes the styles when min-width is defined 1`] = `
+{
+  "maxWidth": undefined,
+  "minWidth": "512px",
+  "width": "100%",
+}
+`;
