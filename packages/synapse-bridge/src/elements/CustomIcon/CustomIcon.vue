@@ -1,36 +1,11 @@
-<template>
-	<span
-		:class="{
-			'vd-small': small,
-			'vd-medium': medium,
-			'vd-large': large,
-			'vd-x-large': xLarge,
-			'vd-custom-color': Boolean(color),
-		}"
-		:style="{
-			color,
-			width: size,
-			height: size,
-		}"
-		:aria-hidden="!label"
-		:aria-label="label"
-		role="img"
-		focusable="false"
-		class="vd-custom-icon"
-	>
-		<slot>
-			<span v-if="themeIcon" v-html="themeIcon" />
-		</slot>
-	</span>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
 import { customizable } from "../../mixins/customizable";
 import { ThemeIcon } from "./mixins/themeIcon";
 
-const Props = {
+export default defineComponent({
+	mixins: [customizable(ThemeIcon)],
 	props: {
 		/**
 		 * The color of the icon (any CSS value)
@@ -77,13 +52,6 @@ const Props = {
 			default: undefined,
 		},
 	},
-};
-
-export default defineComponent({
-	mixins: [customizable(Props, ThemeIcon)],
-	props: {
-		...Props.props,
-	},
 	data() {
 		return {
 			ThemeIcon: undefined,
@@ -96,6 +64,32 @@ export default defineComponent({
 	},
 });
 </script>
+
+<template>
+	<span
+		:class="{
+			'vd-small': small,
+			'vd-medium': medium,
+			'vd-large': large,
+			'vd-x-large': xLarge,
+			'vd-custom-color': Boolean(color),
+		}"
+		:style="{
+			color,
+			width: size,
+			height: size,
+		}"
+		:aria-hidden="!label"
+		:aria-label="label"
+		role="img"
+		focusable="false"
+		class="vd-custom-icon"
+	>
+		<slot>
+			<span v-if="themeIcon" v-html="themeIcon" />
+		</slot>
+	</span>
+</template>
 
 <style lang="scss" scoped>
 $default: 1.35em;
