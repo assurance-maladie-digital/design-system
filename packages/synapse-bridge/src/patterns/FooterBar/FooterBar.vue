@@ -1,3 +1,180 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { RawLocation } from "vue-router";
+
+import { LogoSizeEnum } from "../../elements/Logo/LogoSizeEnum";
+
+import SocialMediaLinks from "./SocialMediaLinks";
+import { SocialMediaLink } from "./SocialMediaLinks/types";
+
+import { config } from "./config";
+import { locales } from "./locales";
+import { LinkItem } from "./types";
+import { defaultSocialMediaLinks } from "./defaultSocialMediaLinks";
+import {
+	A11yComplianceEnum,
+	A11Y_COMPLIANCE_ENUM_VALUES,
+} from "./A11yComplianceEnum";
+
+import { propValidator } from "../../helpers/propValidator";
+
+import { customizable } from "../../mixins/customizable";
+
+import { mdiArrowUp } from "@mdi/js";
+
+export default defineComponent({
+	inheritAttrs: false,
+	components: {
+		SocialMediaLinks,
+	},
+	mixins: [customizable(config)],
+	props: {
+		a11yCompliance: {
+			type: String as PropType<A11yComplianceEnum>,
+			default: A11yComplianceEnum.NON_COMPLIANT,
+			validator: (value: A11yComplianceEnum) =>
+				propValidator(
+					"a11y-compliance",
+					A11Y_COMPLIANCE_ENUM_VALUES,
+					value
+				),
+		},
+		linkItems: {
+			type: [Array] as PropType<LinkItem[]>,
+			default: null,
+		},
+		sitemapRoute: {
+			type: [Array, Object, String] as PropType<RawLocation>,
+			default: () => ({ name: "sitemap" }),
+		},
+		cguRoute: {
+			type: [Array, Object, String] as PropType<RawLocation>,
+			default: () => ({ name: "cgu" }),
+		},
+		cookiesRoute: {
+			type: [Array, Object, String] as PropType<RawLocation>,
+			default: () => ({ name: "cookies" }),
+		},
+		legalNoticeRoute: {
+			type: [Array, Object, String] as PropType<RawLocation>,
+			default: () => ({ name: "legalNotice" }),
+		},
+		a11yStatementRoute: {
+			type: [Array, Object, String] as PropType<RawLocation>,
+			default: () => ({ name: "a11yStatement" }),
+		},
+		hideSitemapLink: {
+			type: Boolean,
+			default: false,
+		},
+		hideCguLink: {
+			type: Boolean,
+			default: false,
+		},
+		hideCookiesLink: {
+			type: Boolean,
+			default: false,
+		},
+		hideLegalNoticeLink: {
+			type: Boolean,
+			default: false,
+		},
+		hideA11yLink: {
+			type: Boolean,
+			default: false,
+		},
+		version: {
+			type: String,
+			default: undefined,
+		},
+		hideLogo: {
+			type: Boolean,
+			default: false,
+		},
+		hideSocialMediaLinks: {
+			type: Boolean,
+			default: false,
+		},
+		socialMediaLinks: {
+			type: Array as PropType<SocialMediaLink[]>,
+			default: () => defaultSocialMediaLinks,
+		},
+		...config
+	},
+	data() {
+		return {
+			locales,
+			arrowTopIcon: mdiArrowUp,
+		};
+	},
+	computed: {
+		a11yComplianceLabel(): string {
+			const complianceLabel = locales[this.a11yCompliance];
+
+			return locales.a11yLabel(complianceLabel);
+		},
+
+		extendedMode(): boolean {
+			return Boolean(this.$slots.default);
+		},
+
+		logoSize(): LogoSizeEnum {
+			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
+		},
+
+		footerLinksMapping(): LinkItem[] {
+			if (this.linkItems) {
+				return this.linkItems;
+			}
+
+			const linksMapping = [
+				{
+					text: locales.sitemapLabel,
+					to: this.sitemapRoute,
+					hidden: this.hideSitemapLink
+				},
+				{
+					text: locales.cguLabel,
+					to: this.cguRoute,
+					hidden: this.hideCguLink
+				},
+				{
+					text: locales.cookiesLabel,
+					to: this.cookiesRoute,
+					hidden: this.hideCookiesLink
+				},
+				{
+					text: locales.legalNoticeLabel,
+					to: this.legalNoticeRoute,
+					hidden: this.hideLegalNoticeLink
+				},
+				{
+					text: this.a11yComplianceLabel,
+					to: this.a11yStatementRoute,
+					hidden: this.hideA11yLink
+				}
+			];
+
+			return linksMapping.filter((item) => !item.hidden);
+		}
+	},
+	methods: {
+		getLinkComponent(item: LinkItem): string {
+			return item.href ? 'a' : 'RouterLink';
+		},
+
+		scrollToTop(): void {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
+	}
+});
+</script>
+
 <template>
 	<VFooter
 		v-bind="{
@@ -81,189 +258,6 @@
 		</div>
 	</VFooter>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { RawLocation } from "vue-router";
-
-import { LogoSizeEnum } from "../../elements/Logo/LogoSizeEnum";
-
-import SocialMediaLinks from "./SocialMediaLinks";
-import { SocialMediaLink } from "./SocialMediaLinks/types";
-
-import { config } from "./config";
-import { locales } from "./locales";
-import { LinkItem } from "./types";
-import { defaultSocialMediaLinks } from "./defaultSocialMediaLinks";
-import {
-	A11yComplianceEnum,
-	A11Y_COMPLIANCE_ENUM_VALUES,
-} from "./A11yComplianceEnum";
-
-import { propValidator } from "../../helpers/propValidator";
-
-import { customizable } from "../../mixins/customizable";
-
-import { mdiArrowUp } from "@mdi/js";
-
-const Props = {
-	props: {
-		a11yCompliance: {
-			type: String as PropType<A11yComplianceEnum>,
-			default: A11yComplianceEnum.NON_COMPLIANT,
-			validator: (value: A11yComplianceEnum) =>
-				propValidator(
-					"a11y-compliance",
-					A11Y_COMPLIANCE_ENUM_VALUES,
-					value
-				),
-		},
-		linkItems: {
-			type: [Array] as PropType<LinkItem[]>,
-			default: null,
-		},
-		sitemapRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
-			default: () => ({ name: "sitemap" }),
-		},
-		cguRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
-			default: () => ({ name: "cgu" }),
-		},
-		cookiesRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
-			default: () => ({ name: "cookies" }),
-		},
-		legalNoticeRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
-			default: () => ({ name: "legalNotice" }),
-		},
-		a11yStatementRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
-			default: () => ({ name: "a11yStatement" }),
-		},
-		hideSitemapLink: {
-			type: Boolean,
-			default: false,
-		},
-		hideCguLink: {
-			type: Boolean,
-			default: false,
-		},
-		hideCookiesLink: {
-			type: Boolean,
-			default: false,
-		},
-		hideLegalNoticeLink: {
-			type: Boolean,
-			default: false,
-		},
-		hideA11yLink: {
-			type: Boolean,
-			default: false,
-		},
-		version: {
-			type: String,
-			default: undefined,
-		},
-		hideLogo: {
-			type: Boolean,
-			default: false,
-		},
-		hideSocialMediaLinks: {
-			type: Boolean,
-			default: false,
-		},
-		socialMediaLinks: {
-			type: Array as PropType<SocialMediaLink[]>,
-			default: () => defaultSocialMediaLinks,
-		},
-	},
-};
-
-export default defineComponent({
-	inheritAttrs: false,
-	components: {
-		SocialMediaLinks,
-	},
-	mixins: [Props, customizable(config)],
-	props: {
-		...Props.props,
-		...config,
-	},
-	data() {
-		return {
-			locales,
-			arrowTopIcon: mdiArrowUp,
-		};
-	},
-	computed: {
-		a11yComplianceLabel(): string {
-			const complianceLabel = locales[this.a11yCompliance];
-
-			return locales.a11yLabel(complianceLabel);
-		},
-
-		extendedMode(): boolean {
-			return Boolean(this.$slots.default);
-		},
-
-		logoSize(): LogoSizeEnum {
-			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
-		},
-
-		footerLinksMapping(): LinkItem[] {
-			if (this.linkItems) {
-				return this.linkItems;
-			}
-
-			const linksMapping = [
-				{
-					text: locales.sitemapLabel,
-					to: this.sitemapRoute,
-					hidden: this.hideSitemapLink
-				},
-				{
-					text: locales.cguLabel,
-					to: this.cguRoute,
-					hidden: this.hideCguLink
-				},
-				{
-					text: locales.cookiesLabel,
-					to: this.cookiesRoute,
-					hidden: this.hideCookiesLink
-				},
-				{
-					text: locales.legalNoticeLabel,
-					to: this.legalNoticeRoute,
-					hidden: this.hideLegalNoticeLink
-				},
-				{
-					text: this.a11yComplianceLabel,
-					to: this.a11yStatementRoute,
-					hidden: this.hideA11yLink
-				}
-			];
-
-			return linksMapping.filter((item) => !item.hidden);
-		}
-	},
-	methods: {
-		getLinkComponent(item: LinkItem): string {
-			return item.href ? 'a' : 'RouterLink';
-		},
-
-		scrollToTop(): void {
-			window.scrollTo({
-				top: 0,
-				behavior: 'smooth'
-			});
-		}
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";

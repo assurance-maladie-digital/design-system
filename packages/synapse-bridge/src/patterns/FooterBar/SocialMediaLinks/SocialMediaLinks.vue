@@ -1,3 +1,34 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { locales } from "../locales";
+
+import { SocialMediaLink } from "./types";
+
+import { useDisplay } from "vuetify";
+
+export default defineComponent({
+	props: {
+		links: {
+			type: Array as PropType<SocialMediaLink[]>,
+			default: null,
+		},
+	},
+	data() {
+		return {
+			locales,
+		};
+	},
+	computed: {
+		isMobile(): boolean {
+			const { name } = useDisplay();
+			return name.value === "xs" || name.value === "sm";
+		},
+	},
+});
+</script>
+
 <template>
 	<div class="vd-social-media-links">
 		<span class="text-subtitle-2 primary--text">
@@ -22,37 +53,3 @@
 		</div>
 	</div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { locales } from "../locales";
-
-import { SocialMediaLink } from "./types";
-
-import { useDisplay } from "vuetify";
-
-const Props = {
-	props: {
-		links: {
-			type: Array as PropType<SocialMediaLink[]>,
-			default: null,
-		},
-	},
-};
-
-export default defineComponent({
-	data() {
-		return {
-			locales,
-		};
-	},
-	computed: {
-		isMobile(): boolean {
-			const { name } = useDisplay();
-			return name.value === "xs" || name.value === "sm";
-		},
-	},
-});
-</script>

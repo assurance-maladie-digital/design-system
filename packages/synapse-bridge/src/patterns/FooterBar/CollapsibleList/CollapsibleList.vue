@@ -1,3 +1,31 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { ListItem } from "./types";
+
+import { useDisplay } from "vuetify";
+
+export default defineComponent({
+	props: {
+		listTitle: {
+			type: String,
+			default: null,
+		},
+		items: {
+			type: Array as PropType<ListItem[]>,
+			default: () => [],
+		},
+	},
+	computed: {
+		isMobile(): boolean {
+			const { name } = useDisplay();
+			return name.value === "xs" || name.value === "sm";
+		},
+	}
+});
+</script>
+
 <template>
 	<VExpansionPanels
 		v-if="isMobile"
@@ -52,38 +80,6 @@
 		</ul>
 	</div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { ListItem } from "./types";
-
-import { useDisplay } from "vuetify";
-
-const Props = {
-	props: {
-		listTitle: {
-			type: String,
-			default: null,
-		},
-		items: {
-			type: Array as PropType<ListItem[]>,
-			default: () => [],
-		},
-	},
-};
-
-export default defineComponent({
-	props: Props.props,
-	computed: {
-		isMobile(): boolean {
-			const { name } = useDisplay();
-			return name.value === "xs" || name.value === "sm";
-		},
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 .v-expansion-panel :deep(.v-expansion-panel-content__wrap) {

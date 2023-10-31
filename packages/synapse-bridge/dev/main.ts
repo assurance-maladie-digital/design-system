@@ -1,6 +1,6 @@
-import { createApp } from "vue";
-import router from "@/router";
-import Playground from "./Playground.vue";
+import { createApp } from 'vue'
+import Playground from './Playground.vue'
+import { router } from './router'
 
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
@@ -24,6 +24,9 @@ const vuetify = createVuetify({
 			},
 		},
 	},
-});
+})
 
-createApp(Playground).use(vuetify).use(router).mount("#app");
+createApp(Playground)
+	.use(vuetify)
+	.use(router)
+	.mount('#app')
