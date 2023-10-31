@@ -1,3 +1,58 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+import { propValidator } from "../../helpers/propValidator";
+
+import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from "./AlertTypeEnum";
+import { locales } from "./locales";
+
+import {
+	mdiAlertCircleOutline,
+	mdiAlertOctagonOutline,
+	mdiCheckCircleOutline,
+	mdiInformationOutline,
+	mdiClose,
+} from "@mdi/js";
+
+export default defineComponent({
+	inheritAttrs: false,
+	props: {
+		type: {
+			type: String,
+			default: AlertTypeEnum.INFO,
+			validator: (value: string) =>
+				propValidator("type", ALERT_TYPE_ENUM_VALUES, value),
+		},
+		dismissible: {
+			type: Boolean,
+			default: false,
+		},
+		outlined: {
+			type: Boolean,
+			default: false,
+		}
+	},
+	data() {
+		return {
+			locales,
+			closeIcon: mdiClose,
+		};
+	},
+	computed: {
+		alertIcon(): string {
+			const icons: Record<string, string> = {
+				info: mdiInformationOutline,
+				success: mdiCheckCircleOutline,
+				warning: mdiAlertCircleOutline,
+				error: mdiAlertOctagonOutline,
+			};
+
+			return icons[this.type];
+		},
+	},
+});
+</script>
+
 <template>
 	<VAlert
 		v-bind="$attrs"
@@ -38,68 +93,6 @@
 	</VAlert>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { propValidator } from "../../helpers/propValidator";
-
-import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from "./AlertTypeEnum";
-import { locales } from "./locales";
-
-import {
-	mdiAlertCircleOutline,
-	mdiAlertOctagonOutline,
-	mdiCheckCircleOutline,
-	mdiInformationOutline,
-	mdiClose,
-} from "@mdi/js";
-
-const Props = {
-	props: {
-		type: {
-			type: String,
-			default: AlertTypeEnum.INFO,
-			validator: (value: string) =>
-				propValidator("type", ALERT_TYPE_ENUM_VALUES, value),
-		},
-		dismissible: {
-			type: Boolean,
-			default: false,
-		},
-		outlined: {
-			type: Boolean,
-			default: false,
-		},
-	},
-};
-
-export default defineComponent({
-	inheritAttrs: false,
-	mixins: [Props],
-	props: {
-		...Props.props,
-	},
-	data() {
-		return {
-			locales,
-			closeIcon: mdiClose,
-		};
-	},
-	computed: {
-		alertIcon(): string {
-			const icons: Record<string, string> = {
-				info: mdiInformationOutline,
-				success: mdiCheckCircleOutline,
-				warning: mdiAlertCircleOutline,
-				error: mdiAlertOctagonOutline,
-			};
-
-			return icons[this.type];
-		},
-	},
-});
-</script>
-
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
 
@@ -117,9 +110,9 @@ export default defineComponent({
 
 	&.#{$type},
 	&.text-#{$type} {
-		.v-alert__wrapper > .v-icon {
-			width: 56px;
-			height: 56px;
+		.vd-alert-wrapper > .v-icon {
+			width: 56px !important;
+			height: 56px !important;
 			flex: none;
 			background: map-get($map, "icon-bg");
 			:deep(svg) {
@@ -148,7 +141,7 @@ export default defineComponent({
 				align-items: flex-start;
 			}
 
-			.v-alert__wrapper > .v-icon {
+			.vd-alert-wrapper > .v-icon {
 				width: 24px;
 				height: 24px;
 				background: none;
