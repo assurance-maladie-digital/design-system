@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { shallowMount } from "@vue/test-utils";
+import { vuetify } from "@tests/unit/setup";
 
 import DownloadBtn from "../";
 
@@ -11,17 +12,17 @@ interface TestComponent {
 
 describe("DownloadBtn", () => {
 	it("renders correctly", () => {
-		const wrapper = shallowMount(
-			DownloadBtn,
-			{
-				propsData: {
-					filePromise,
-				},
-				slots: {
-					default: "justificatif.pdf",
-				},
-			}
-		);
+		const wrapper = shallowMount(DownloadBtn, {
+			propsData: {
+				filePromise,
+			},
+			slots: {
+				default: "justificatif.pdf",
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
 
 		expect(wrapper).toMatchSnapshot();
 	});
@@ -36,6 +37,7 @@ describe("DownloadBtn", () => {
 				mocks: {
 					download: downloadMock,
 				},
+				plugins: [vuetify],
 			},
 			slots: {
 				default: "justificatif.pdf",
