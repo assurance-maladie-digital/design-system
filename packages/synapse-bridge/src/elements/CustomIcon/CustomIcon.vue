@@ -52,15 +52,10 @@ export default defineComponent({
 			default: undefined,
 		},
 	},
-	data() {
+	data () {
 		return {
-			ThemeIcon: undefined,
+			themeIcon: undefined,
 		};
-	},
-	computed: {
-		themeIcon(): string | undefined {
-			return this.ThemeIcon;
-		},
 	},
 });
 </script>

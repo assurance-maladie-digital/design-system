@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 
-const GetThemeIcon = defineComponent({
+export const GetThemeIcon = defineComponent({
 	methods: {
 		getThemeIcon(iconName: string): string | undefined {
 			if (!this.$vd?.theme?.icons) {
@@ -11,5 +11,3 @@ const GetThemeIcon = defineComponent({
 		},
 	},
 });
-
-export default GetThemeIcon;
