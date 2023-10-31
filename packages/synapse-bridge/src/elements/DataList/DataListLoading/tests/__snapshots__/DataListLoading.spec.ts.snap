@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DataListLoading > renders correctly 1`] = `
+<div aria-hidden="true" class="vd-data-list-loading">
+  <!--v-if-->
+  <ul>
+    <li class="vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DataListLoading > renders correctly in row mode 1`] = `
+<div aria-hidden="true" class="vd-data-list-loading">
+  <!--v-if-->
+  <ul>
+    <li class="vd-data-list-loading-item">
+      <!--v-if-->
+      <header-loading-stub width="150px" height="1.5rem"></header-loading-stub>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DataListLoading > renders correctly with a header 1`] = `
+<div aria-hidden="true" class="vd-data-list-loading">
+  <header-loading-stub width="100px" height="1.5rem" class="mb-4"></header-loading-stub>
+  <ul>
+    <li class="vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DataListLoading > renders correctly with more items 1`] = `
+<div aria-hidden="true" class="vd-data-list-loading">
+  <!--v-if-->
+  <ul>
+    <li class="mb-4 vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
+    </li>
+    <li class="mb-4 vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
+    </li>
+    <li class="vd-data-list-loading-item">
+      <header-loading-stub width="60px" height="1rem" class="mb-1"></header-loading-stub>
+      <header-loading-stub width="90px" height="1.5rem"></header-loading-stub>
+    </li>
+  </ul>
+</div>
+`;

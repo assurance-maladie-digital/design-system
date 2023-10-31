@@ -1,3 +1,104 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { config } from "./config";
+import { locales } from "./locales";
+
+import { FileItem, IconInfo } from "./types";
+
+import { FileStateEnum } from "./FileStateEnum";
+
+import { customizable } from "../../mixins/customizable";
+import { Widthable } from "../../mixins/widthable";
+
+import { useTheme } from "vuetify";
+
+import {
+	mdiRefresh,
+	mdiEye,
+	mdiDelete,
+	mdiAlertCircle,
+	mdiCheckCircle,
+	mdiUpload,
+	mdiFile,
+} from "@mdi/js";
+
+export default defineComponent({
+	mixins: [customizable(config), Widthable],
+	props: {
+		files: {
+			type: Array as PropType<FileItem[]>,
+			required: true,
+		},
+		showViewBtn: {
+			type: Boolean,
+			default: false,
+		},
+		hideLastDivider: {
+			type: Boolean,
+			default: false,
+		},
+		optionalFileText: {
+			type: String,
+			default: locales.optional,
+		},
+	},
+	data() {
+		return {
+			locales,
+			FileStateEnum,
+			refreshIcon: mdiRefresh,
+			eyeIcon: mdiEye,
+			deleteIcon: mdiDelete,
+			uploadIcon: mdiUpload,
+		};
+	},
+	computed: {
+		iconColor() {
+			const theme = useTheme();
+			return theme.current.value.dark ? "grey-lighten-40" : "grey";
+		},
+	},
+	methods: {
+		getIconInfo(state: FileStateEnum): IconInfo {
+			switch (state) {
+				case FileStateEnum.ERROR: {
+					return {
+						icon: mdiAlertCircle,
+						color: "error",
+					};
+				}
+				case FileStateEnum.SUCCESS: {
+					return {
+						icon: mdiCheckCircle,
+						color: "success",
+					};
+				}
+				default: {
+					return {
+						icon: mdiFile,
+						color: "grey",
+					};
+				}
+			}
+		},
+		getItemColor(state: string): string | undefined {
+			if (state === FileStateEnum.SUCCESS) {
+				return;
+			}
+			return "grey--text";
+		},
+		showDivider(index: number): boolean {
+			if (this.hideLastDivider) {
+				return index + 1 !== this.files.length;
+			}
+			return true;
+		},
+	},
+});
+</script>
+
 <template>
 	<VList v-bind="options.list" :style="widthStyles" class="vd-file-list">
 		<template v-for="(file, index) in files" :key="index">
@@ -95,111 +196,6 @@
 		</template>
 	</VList>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { config } from "./config";
-import { locales } from "./locales";
-
-import { FileItem, IconInfo } from "./types";
-
-import { FileStateEnum } from "./FileStateEnum";
-
-import { customizable } from "../../mixins/customizable";
-import { Widthable } from "../../mixins/widthable";
-
-import { useTheme } from "vuetify";
-
-import {
-	mdiRefresh,
-	mdiEye,
-	mdiDelete,
-	mdiAlertCircle,
-	mdiCheckCircle,
-	mdiUpload,
-	mdiFile,
-} from "@mdi/js";
-
-const Props = {
-	files: {
-		type: Array as PropType<FileItem[]>,
-		required: true,
-	},
-	showViewBtn: {
-		type: Boolean,
-		default: false,
-	},
-	hideLastDivider: {
-		type: Boolean,
-		default: false,
-	},
-	optionalFileText: {
-		type: String,
-		default: locales.optional,
-	},
-};
-
-export default defineComponent({
-	mixins: [Props, customizable(config), Widthable],
-	props: {
-		...Props,
-	},
-	data() {
-		return {
-			locales,
-			FileStateEnum,
-			refreshIcon: mdiRefresh,
-			eyeIcon: mdiEye,
-			deleteIcon: mdiDelete,
-			uploadIcon: mdiUpload,
-		};
-	},
-	computed: {
-		iconColor() {
-			const theme = useTheme();
-			return theme.current.value.dark ? "grey-lighten-40" : "grey";
-		},
-	},
-	methods: {
-		getIconInfo(state: FileStateEnum): IconInfo {
-			switch (state) {
-				case FileStateEnum.ERROR: {
-					return {
-						icon: mdiAlertCircle,
-						color: "error",
-					};
-				}
-				case FileStateEnum.SUCCESS: {
-					return {
-						icon: mdiCheckCircle,
-						color: "success",
-					};
-				}
-				default: {
-					return {
-						icon: mdiFile,
-						color: "grey",
-					};
-				}
-			}
-		},
-		getItemColor(state: string): string | undefined {
-			if (state === FileStateEnum.SUCCESS) {
-				return;
-			}
-			return "grey--text";
-		},
-		showDivider(index: number): boolean {
-			if (this.hideLastDivider) {
-				return index + 1 !== this.files.length;
-			}
-			return true;
-		},
-	},
-});
-</script>
 
 <style lang="scss" scoped>
 .v-list-item__prepend > .v-icon,
