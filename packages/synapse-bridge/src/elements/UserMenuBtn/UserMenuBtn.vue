@@ -1,3 +1,82 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+import { mdiAccount, mdiLoginVariant } from '@mdi/js';
+
+import { customizable } from '../../mixins/customizable';
+import type { Refs } from '../../types';
+
+import { useDisplay } from "vuetify";
+
+import { config } from './config';
+import { locales } from './locales';
+
+export default defineComponent({
+	mixins: [customizable(config)],
+	props: {
+		fullName: {
+			type: String,
+			required: true
+		},
+		additionalInformation: {
+			type: String,
+			default: undefined
+		},
+		label: {
+			type: String,
+			default: locales.label
+		},
+		hideUserIcon: {
+			type: Boolean,
+			default: false
+		},
+		hideLogoutBtn: {
+			type: Boolean,
+			default: false
+		},
+		mobileVersion: {
+			type: Boolean,
+			default: false
+		}
+	},
+	data() {
+		return {
+			$refs: {} as Refs<{
+				btn?: HTMLButtonElement;
+			}>,
+			locales,
+			userIcon: mdiAccount,
+			logoutIcon: mdiLoginVariant,
+		};
+	},
+	computed: {
+		btnPadding(): string {
+			if (this.hideUserIcon) {
+				return 'pa-1 pa-sm-2';
+			}
+			if (this.isMobileVersion) {
+				return 'pa-0';
+			}
+			return 'pa-1 pa-sm-3';
+		},
+		hasListContent(): boolean {
+			return Boolean(this.$slots.default || !this.hideLogoutBtn);
+		},
+		isMobileVersion(): boolean {
+			if (this.mobileVersion) {
+				return true;
+			}
+
+			const { name } = useDisplay();
+			return name.value === 'xs' || name.value === 'sm';
+		},
+		isMobileWithIcon(): boolean {
+			return this.isMobileVersion && !this.hideUserIcon;
+		}
+	}
+});
+</script>
+
 <template>
 	<div class="vd-user-menu-btn-ctn d-inline-block">
 		<VMenu
@@ -30,7 +109,7 @@
 							{{ fullName }}
 						</span>
 
-						<span class="grey--text text--darken-2">
+						<span class="text-grey text-darken-2">
 							{{ additionalInformation }}
 						</span>
 					</span>
@@ -86,87 +165,6 @@
 		</VMenu>
 	</div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { mdiAccount, mdiLoginVariant } from '@mdi/js';
-
-import { customizable } from '../../mixins/customizable';
-import type { Refs } from '../../types';
-
-import { useDisplay } from "vuetify";
-
-import { config } from './config';
-import { locales } from './locales';
-
-const Props = {
-	fullName: {
-		type: String,
-		required: true
-	},
-	additionalInformation: {
-		type: String,
-		default: undefined
-	},
-	label: {
-		type: String,
-		default: locales.label
-	},
-	hideUserIcon: {
-		type: Boolean,
-		default: false
-	},
-	hideLogoutBtn: {
-		type: Boolean,
-		default: false
-	},
-	mobileVersion: {
-		type: Boolean,
-		default: false
-	}
-}
-
-export default defineComponent({
-	mixins: [Props, customizable(config)],
-	props: Props,
-	data() {
-		return {
-			$refs: {} as Refs<{
-				btn?: HTMLButtonElement;
-			}>,
-			locales,
-			userIcon: mdiAccount,
-			logoutIcon: mdiLoginVariant,
-		};
-	},
-	computed: {
-		btnPadding(): string {
-			if (this.hideUserIcon) {
-				return 'pa-1 pa-sm-2';
-			}
-			if (this.isMobileVersion) {
-				return 'pa-0';
-			}
-			return 'pa-1 pa-sm-3';
-		},
-		hasListContent(): boolean {
-			return Boolean(this.$slots.default || !this.hideLogoutBtn);
-		},
-		isMobileVersion(): boolean {
-			if (this.mobileVersion) {
-				return true;
-			}
-			
-			const { name } = useDisplay();
-			return name.value === 'xs' || name.value === 'sm';
-		},
-		isMobileWithIcon(): boolean {
-			return this.isMobileVersion && !this.hideUserIcon;
-		}
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';

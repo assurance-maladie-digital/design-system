@@ -17,7 +17,7 @@ export const config = {
 		color: tokens.colors.cyan.darken20,
 	},
 	logoutListItem: {
-		class: "primary--text",
+		class: "text-primary",
 	},
 	logoutIcon: {
 		color: "primary",
