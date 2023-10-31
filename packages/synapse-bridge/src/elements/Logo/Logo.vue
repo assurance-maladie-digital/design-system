@@ -1,3 +1,109 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+import { tokens } from "@cnamts/design-tokens";
+import { locales } from "./locales";
+
+import { LogoSizeEnum, LOGO_SIZE_ENUM_VALUES } from "./LogoSizeEnum";
+
+import {
+	logoDimensionsMapping,
+	logoAvatarDimensionsMapping,
+} from "./logoDimensionsMapping";
+
+import { propValidator } from "../../helpers/propValidator";
+import { Dimensions } from "../../types";
+
+export default defineComponent({
+	props: {
+		hideSignature: {
+			type: Boolean,
+			default: false,
+		},
+		hideOrganism: {
+			type: Boolean,
+			default: false,
+		},
+		risquePro: {
+			type: Boolean,
+			default: false,
+		},
+		avatar: {
+			type: Boolean,
+			default: false,
+		},
+		dark: {
+			type: Boolean,
+			default: false,
+		},
+		size: {
+			type: String,
+			default: LogoSizeEnum.NORMAL,
+			validator: (value: string) =>
+				propValidator("size", LOGO_SIZE_ENUM_VALUES, value),
+		},
+	},
+	data () {
+		return {
+			locales,
+			risqueProColor: tokens.colors.risquePro
+		};
+	},
+	computed: {
+		fillColor(): string {
+			if (this.dark) {
+				return '#fff';
+			}
+
+			return tokens.colors.primary;
+		},
+
+		dimensions(): Dimensions {
+			if (this.avatar) {
+				return logoAvatarDimensionsMapping[this.size];
+			}
+
+			return logoDimensionsMapping[this.size];
+		},
+
+		viewBox(): string {
+			if (this.avatar) {
+				return '0 0 64 64';
+			}
+
+			return '0 0 211 64';
+		},
+
+		label(): string {
+			if (this.avatar) {
+				// Return an empty string since there is no text,
+				// this is an illustration image
+				return '';
+			}
+
+			const COLON_SEPARATOR = ' : ';
+			const COMMA_SEPARATOR = ', ';
+
+			let label = `${locales.assuranceMaladie}`;
+
+			if (!this.hideOrganism) {
+				label = locales.organism.concat(COMMA_SEPARATOR, label);
+			}
+
+			if (!this.hideSignature) {
+				label = label.concat(COLON_SEPARATOR, locales.signature);
+			}
+
+			if (this.risquePro) {
+				label = label.concat(COLON_SEPARATOR, locales.risquePro);
+			}
+
+			return label;
+		}
+	}
+});
+</script>
+
 <template>
 	<svg
 		:fill="fillColor"
@@ -282,118 +388,3 @@
 		/>
 	</svg>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { tokens } from "@cnamts/design-tokens";
-import { locales } from "./locales";
-
-import { customizable } from '@/mixins/customizable';
-
-import { LogoSizeEnum, LOGO_SIZE_ENUM_VALUES } from "./LogoSizeEnum";
-
-import {
-	logoDimensionsMapping,
-	logoAvatarDimensionsMapping,
-} from "./logoDimensionsMapping";
-
-import { propValidator } from "../../helpers/propValidator";
-import { Dimensions } from "../../types";
-
-const Props = {
-	props: {
-		hideSignature: {
-			type: Boolean,
-			default: false,
-		},
-		hideOrganism: {
-			type: Boolean,
-			default: false,
-		},
-		risquePro: {
-			type: Boolean,
-			default: false,
-		},
-		avatar: {
-			type: Boolean,
-			default: false,
-		},
-		dark: {
-			type: Boolean,
-			default: false,
-		},
-		size: {
-			type: String,
-			default: LogoSizeEnum.NORMAL,
-			validator: (value: string) =>
-				propValidator("size", LOGO_SIZE_ENUM_VALUES, value),
-		},
-	},
-};
-
-export default defineComponent({
-	mixins: [customizable(Props)],
-	props: {
-		...Props.props,
-	},
-	data () {
-		return {
-			locales,
-			risqueProColor: tokens.colors.risquePro
-		};
-	},
-	computed: {
-		fillColor(): string {
-			if (this.dark) {
-				return '#fff';
-			}
-
-			return tokens.colors.primary;
-		},
-
-		dimensions(): Dimensions {
-			if (this.avatar) {
-				return logoAvatarDimensionsMapping[this.size];
-			}
-
-			return logoDimensionsMapping[this.size];
-		},
-
-		viewBox(): string {
-			if (this.avatar) {
-				return '0 0 64 64';
-			}
-
-			return '0 0 211 64';
-		},
-
-		label(): string {
-			if (this.avatar) {
-				// Return an empty string since there is no text,
-				// this is an illustration image
-				return '';
-			}
-
-			const COLON_SEPARATOR = ' : ';
-			const COMMA_SEPARATOR = ', ';
-
-			let label = `${locales.assuranceMaladie}`;
-
-			if (!this.hideOrganism) {
-				label = locales.organism.concat(COMMA_SEPARATOR, label);
-			}
-
-			if (!this.hideSignature) {
-				label = label.concat(COLON_SEPARATOR, locales.signature);
-			}
-
-			if (this.risquePro) {
-				label = label.concat(COLON_SEPARATOR, locales.risquePro);
-			}
-
-			return label;
-		}
-	}
-});
-</script>
