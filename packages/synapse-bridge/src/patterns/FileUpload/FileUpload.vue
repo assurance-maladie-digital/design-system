@@ -1,3 +1,82 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { config } from "./config";
+import { locales } from "./locales";
+
+import FileUploadCore from "./mixins/fileUploadCore";
+import { Widthable } from "../../mixins/widthable";
+
+import { customizable } from "../../mixins/customizable";
+import { calcHumanFileSize } from "../../functions/calcHumanFileSize";
+
+import { mdiCloudUpload } from "@mdi/js";
+
+import { IndexedObject } from "../../types";
+
+export default defineComponent({
+	mixins: [customizable(config), FileUploadCore, Widthable],
+	props: {
+		value: {
+			// File is not a valid prop type,
+			// use null to allow any type & provide custom validation
+			type: null as unknown as PropType<File | File[] | null>,
+			default: null,
+			/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
+			validator(val): boolean {
+				if (val === null) {
+					return true;
+				}
+				const value = Array.isArray(val) ? val : [val];
+				const isValid = value.every(
+					(v) => v !== null && typeof v === "object"
+				);
+				return isValid;
+			},
+		},
+		multiple: {
+			type: Boolean,
+			default: false,
+		},
+		noRipple: {
+			type: Boolean,
+			default: false,
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	data() {
+		return {
+			locales,
+			uploadIcon: mdiCloudUpload
+		};
+	},
+	computed: {
+		colors(): IndexedObject {
+			return {
+				label: 'text-primary',
+				multiple: 'text-black',
+				info: 'text-grey'
+			};
+		},
+		maxSizeReadable(): string {
+			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
+		},
+		extensions(): string {
+			return this.allowedExtensions.join(', ').toUpperCase();
+		}
+	},
+	methods: {
+		retry(): void {
+			this.$refs.vdInputEl.click();
+		}
+	}
+});
+</script>
+
 <template>
 	<label
 		v-ripple="!noRipple"
@@ -49,7 +128,7 @@
 				</span>
 
 				<span
-					class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2"
+					class="vd-file-upload-btn primary text-white text-uppercase py-2 px-4 elevation-2"
 				>
 					<slot name="button-text">
 						{{ locales.chooseFile }}
@@ -78,89 +157,6 @@
 		</slot>
 	</label>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { config } from "./config";
-import { locales } from "./locales";
-
-import FileUploadCore from "./mixins/fileUploadCore";
-import { Widthable } from "../../mixins/widthable";
-
-import { customizable } from "../../mixins/customizable";
-import { calcHumanFileSize } from "../../functions/calcHumanFileSize";
-
-import { mdiCloudUpload } from "@mdi/js";
-
-import { IndexedObject } from "../../types";
-
-const Props = {
-	value: {
-		// File is not a valid prop type,
-		// use null to allow any type & provide custom validation
-		type: null as unknown as PropType<File | File[] | null>,
-		default: null,
-		/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
-		validator(val): boolean {
-			if (val === null) {
-				return true;
-			}
-			const value = Array.isArray(val) ? val : [val];
-			const isValid = value.every(
-				(v) => v !== null && typeof v === "object"
-			);
-			return isValid;
-		},
-	},
-	multiple: {
-		type: Boolean,
-		default: false,
-	},
-	noRipple: {
-		type: Boolean,
-		default: false,
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-};
-
-export default defineComponent({
-	mixins: [Props, customizable(config), FileUploadCore, Widthable],
-	props: {
-		...Props
-	},
-	data() {
-		return {
-			locales,
-			uploadIcon: mdiCloudUpload
-		};
-	},
-	computed: {
-		colors(): IndexedObject {
-			return {
-				label: 'primary--text',
-				multiple: 'black--text',
-				info: 'grey--text'
-			};
-		},
-		maxSizeReadable(): string {
-			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
-		},
-		extensions(): string {
-			return this.allowedExtensions.join(', ').toUpperCase();
-		}
-	},
-	methods: {
-		retry(): void {
-			this.$refs.vdInputEl.click();
-		}
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";

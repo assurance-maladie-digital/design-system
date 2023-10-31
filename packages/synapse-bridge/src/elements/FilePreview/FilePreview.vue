@@ -1,33 +1,3 @@
-<template>
-	<div v-if="file" class="vd-file-preview">
-		<object
-			v-if="isPdf"
-			:data="fileURL"
-			v-bind="filePreviewOptions.pdf"
-			type="application/pdf"
-			@load="revokeFileURL"
-		>
-			<p class="mb-0">
-				{{ locales.previewNotAvailable }}
-			</p>
-		</object>
-
-		<img
-			v-else-if="isImage"
-			:src="fileURL"
-			:alt="filePreviewOptions.image.alt || ''"
-			v-bind="filePreviewOptions.image"
-			@load="revokeFileURL"
-		/>
-
-		<slot v-else>
-			<p class="mb-0">
-				{{ locales.previewTypeNotAvailable }}
-			</p>
-		</slot>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
@@ -39,26 +9,23 @@ import { Options } from "../../mixins/customizable";
 
 import deepMerge from "deepmerge";
 
-const Props = {
-	file: {
-		// File is not a valid prop type,
-		// use null to allow any type & provide custom validation
-		type: null as unknown as PropType<File | Blob>,
-		default: null,
-		/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
-		validator(value): boolean {
-			return typeof value === "object";
+export default defineComponent({
+	props: {
+		file: {
+			// File is not a valid prop type,
+			// use null to allow any type & provide custom validation
+			type: null as unknown as PropType<File | Blob>,
+			default: null,
+			/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
+			validator(value): boolean {
+				return typeof value === "object";
+			},
+		},
+		options: {
+			type: Object as PropType<Options>,
+			default: () => ({}),
 		},
 	},
-	options: {
-		type: Object as PropType<Options>,
-		default: () => ({}),
-	},
-};
-
-export default defineComponent({
-	mixins: [Props],
-	props: Props,
 	data() {
 		return {
 			locales,
@@ -97,3 +64,33 @@ export default defineComponent({
 	}
 });
 </script>
+
+<template>
+	<div v-if="file" class="vd-file-preview">
+		<object
+			v-if="isPdf"
+			:data="fileURL"
+			v-bind="filePreviewOptions.pdf"
+			type="application/pdf"
+			@load="revokeFileURL"
+		>
+			<p class="mb-0">
+				{{ locales.previewNotAvailable }}
+			</p>
+		</object>
+
+		<img
+			v-else-if="isImage"
+			:src="fileURL"
+			:alt="filePreviewOptions.image.alt || ''"
+			v-bind="filePreviewOptions.image"
+			@load="revokeFileURL"
+		/>
+
+		<slot v-else>
+			<p class="mb-0">
+				{{ locales.previewTypeNotAvailable }}
+			</p>
+		</slot>
+	</div>
+</template>
