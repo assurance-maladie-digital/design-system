@@ -28,7 +28,7 @@ export default defineComponent({
 	},
 	inheritAttrs: false,
 	directives: { maska: vMaska },
-	emits: ["change"],
+	emits: ["change", "update:modelValue"],
 	mixins: [
 		customizable(config),
 		Eventable,
@@ -141,13 +141,13 @@ export default defineComponent({
 </script>
 
 <template>
-	<VMenu ref="menu" v-bind="menuOptions" :modelValue="menu">
+	<VMenu ref="menu" v-bind="menuOptions" :model-value="menu">
 		<template #activator="{}">
 			<VTextField
 				ref="input"
 				v-maska:[maskValue]
 				v-bind="textFieldOptions"
-				:modelValue="dateFormatted"
+				:model-value="dateFormatted"
 				:variant="outlined ? 'outlined' : undefined"
 				:class="textFieldClasses"
 				:success-messages="
@@ -163,7 +163,7 @@ export default defineComponent({
 				@click="textFieldClicked"
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
-				@input="errorMessages = null"
+				@update:model-value="errorMessages = null"
 				@change="dateFormatted = $event"
 			>
 				<template #prepend>
@@ -212,7 +212,7 @@ export default defineComponent({
 
 		<VDatePicker
 			v-if="!noCalendar"
-			:modelValue="date"
+			:model-value="date"
 			v-bind="options.datePicker"
 			type="date"
 			:active-picker.sync="activePicker"
