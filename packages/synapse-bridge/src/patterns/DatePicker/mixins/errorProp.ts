@@ -1,17 +1,11 @@
 import { defineComponent } from "vue";
 
-const Props = {
+export const ErrorProp = defineComponent({
 	props: {
 		error: {
 			type: Boolean,
 			default: false,
 		},
-	},
-};
-
-export const ErrorProp = defineComponent({
-	props: {
-		...Props.props,
 	},
 	computed: {
 		internalErrorProp: {
@@ -19,8 +13,8 @@ export const ErrorProp = defineComponent({
 				return this.error;
 			},
 			set(value) {
-				this.$emit('update:error', value);
-			}
-		}
-	}
+				this.$emit("update:error", value);
+			},
+		},
+	},
 });

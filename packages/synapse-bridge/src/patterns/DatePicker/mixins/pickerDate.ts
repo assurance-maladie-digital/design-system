@@ -2,24 +2,17 @@ import { defineComponent } from "vue";
 
 const BIRTHDATE_DEFAULT_VALUE = "1990-01";
 
-const Props = {
+export const PickerDate = defineComponent({
 	props: {
 		pickerDate: {
 			type: String,
 			default: undefined,
 		},
 	},
-};
-
-export const PickerDate = defineComponent({
-	props: {
-		...Props.props,
-	},
 	data() {
 		return {
 			// Birthdate mixin
 			birthdate: false,
-
 			bufferValue: null as string | null,
 		};
 	},
@@ -39,8 +32,8 @@ export const PickerDate = defineComponent({
 				// Store the value in a buffer to update the
 				// value internally if sync prop is not used
 				this.bufferValue = value;
-				this.$emit('update:picker-date', value);
-			}
-		}
-	}
+				this.$emit("update:picker-date", value);
+			},
+		},
+	},
 });

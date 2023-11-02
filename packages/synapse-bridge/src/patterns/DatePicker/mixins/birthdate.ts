@@ -3,18 +3,12 @@ import { defineComponent } from "vue";
 
 import { INTERNAL_FORMAT } from "./dateLogic";
 
-const Props = {
+export const Birthdate = defineComponent({
 	props: {
 		birthdate: {
 			type: Boolean,
 			default: false,
 		},
-	},
-};
-
-export const Birthdate = defineComponent({
-	props: {
-		...Props.props,
 	},
 	data() {
 		return {

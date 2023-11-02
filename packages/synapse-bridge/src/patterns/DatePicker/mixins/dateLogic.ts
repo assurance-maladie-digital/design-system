@@ -14,7 +14,7 @@ const locales = {
 	invalidDate: "La date saisie n’est pas valide.",
 };
 
-const Props = {
+export const DateLogic = defineComponent({
 	props: {
 		dateFormat: {
 			type: String,
@@ -28,12 +28,6 @@ const Props = {
 			type: String,
 			default: "",
 		},
-	},
-};
-
-export const DateLogic = defineComponent({
-	props: {
-		...Props.props,
 	},
 	data() {
 		return {
@@ -55,10 +49,10 @@ export const DateLogic = defineComponent({
 			validate: function (value: string): void {},
 
 			/** YYYY-MM-DD format */
-			date: '',
+			date: "",
 
 			/** DDMMYYYY format */
-			textFieldDate: '',
+			textFieldDate: "",
 
 			errorMessages: null as string[] | null,
 		};
@@ -84,7 +78,7 @@ export const DateLogic = defineComponent({
 				this.validate(this.textFieldDate);
 				this.validateVuetify();
 			},
-			immediate: true
+			immediate: true,
 		},
 		/**
 		 * This method is fired every time textFieldDate changes,
@@ -95,7 +89,7 @@ export const DateLogic = defineComponent({
 			if (!this.validateOnBlurEnabled) {
 				this.validate(value);
 			}
-		}
+		},
 	},
 	mounted() {
 		// Watch VTextField 'hasError' computed value since 'update:error' event isn't reliable
@@ -103,10 +97,10 @@ export const DateLogic = defineComponent({
 		this.$watch(
 			() => this.$refs.input.hasError,
 			(error: boolean) => {
-				this.$emit('error', error);
+				this.$emit("error", error);
 			},
 			{
-				deep: true // Required since watching $refs object
+				deep: true, // Required since watching $refs object
 			}
 		);
 	},
@@ -117,18 +111,20 @@ export const DateLogic = defineComponent({
 
 		dateFormatted: {
 			get() {
-				if (this.date === '') {
-					return '';
+				if (this.date === "") {
+					return "";
 				}
 
-				const formatted = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
+				const formatted = parseDate(this.date, INTERNAL_FORMAT).format(
+					this.dateFormat
+				);
 
 				return formatted;
 			},
 			set(value) {
 				this.textFieldDate = value;
-			}
-		}
+			},
+		},
 	},
 	methods: {
 		/** Parse a date with dateFormatReturn format to internal format */
@@ -156,7 +152,9 @@ export const DateLogic = defineComponent({
 		},
 
 		setTextFieldModel(): void {
-			this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
+			this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(
+				this.dateFormat
+			);
 		},
 
 		saveFromCalendar(): void {
@@ -178,7 +176,7 @@ export const DateLogic = defineComponent({
 
 		saveFromTextField(): void {
 			if (!this.textFieldDate) {
-				this.$emit('change', '');
+				this.$emit("change", "");
 				this.clearInternalModel();
 
 				return;
@@ -195,7 +193,7 @@ export const DateLogic = defineComponent({
 		},
 
 		saveFromPasted(event: ClipboardEvent): void {
-			const value = event.clipboardData?.getData('text/plain');
+			const value = event.clipboardData?.getData("text/plain");
 
 			if (!value) {
 				return;
@@ -207,7 +205,10 @@ export const DateLogic = defineComponent({
 				this.date = parsedWithDisplayFormat.format(INTERNAL_FORMAT);
 			}
 
-			const parsedWithReturnFormat = parseDate(value, this.dateFormatReturn);
+			const parsedWithReturnFormat = parseDate(
+				value,
+				this.dateFormatReturn
+			);
 
 			if (parsedWithReturnFormat.isValid()) {
 				this.date = parsedWithReturnFormat.format(INTERNAL_FORMAT);
@@ -217,12 +218,17 @@ export const DateLogic = defineComponent({
 		},
 
 		clearInternalModel(): void {
-			this.date = '';
-			this.textFieldDate = '';
+			this.date = "";
+			this.textFieldDate = "";
 		},
 
 		emitChangeEvent(): void {
-			this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
+			this.$emit(
+				"change",
+				parseDate(this.date, INTERNAL_FORMAT).format(
+					this.dateFormatReturn
+				)
+			);
 		},
 
 		validateVuetify(): void {
@@ -245,5 +251,5 @@ export const DateLogic = defineComponent({
 				this.validate(this.textFieldDate);
 			}
 		},
-	}
+	},
 });

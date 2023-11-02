@@ -1,22 +1,16 @@
 import { defineComponent } from "vue";
 
-const Props = {
+export const MaskValue = defineComponent({
 	props: {
 		mask: {
 			type: [String, Boolean],
 			default: undefined,
 		},
 	},
-};
-
-export const MaskValue = defineComponent({
-	props: {
-		...Props.props,
-	},
 	data() {
 		return {
 			// DatePicker mixin
-			dateFormat: '',
+			dateFormat: "",
 		};
 	},
 	computed: {
@@ -25,11 +19,11 @@ export const MaskValue = defineComponent({
 				return;
 			}
 
-			if (typeof this.mask === 'string') {
+			if (typeof this.mask === "string") {
 				return this.mask;
 			}
 
-			return this.dateFormat.replace(/[a-z]/gmi, '#');
-		}
-	}
+			return this.dateFormat.replace(/[a-z]/gim, "#");
+		},
+	},
 });
