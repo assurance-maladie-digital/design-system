@@ -62,11 +62,16 @@ export default defineComponent({
 
 		<template #illustration>
 			<img
-				src="../../assets/images/not-found.svg"
+				src="@/assets/images/not-found.svg"
 				:alt="locales.pageTitle"
-				width="170px"
-				height="170px"
 			>
 		</template>
 	</ErrorPage>
 </template>
+
+<style lang="scss" scoped>
+img {
+	width: 170px;
+	height: 170px;
+}
+</style>
