@@ -1,38 +1,10 @@
-<template>
-	<ErrorPage
-		:code="locales.code"
-		:page-title="locales.pageTitle"
-		:message="locales.message"
-	>
-		<template
-			v-if="supportId"
-			#additional-content
-		>
-			<p class="mt-4">
-				{{ locales.supportIdMessage }}
-
-				<b>{{ supportId }}</b>.
-			</p>
-		</template>
-
-		<template #illustration>
-			<img
-				src="../../assets/images/not-found.svg"
-				alt=""
-				width="170px"
-				height="170px"
-			>
-		</template>
-	</ErrorPage>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
 import { locales } from './locales';
-import { insertAt } from '../../functions/insertAt';
+import { insertAt } from '@/functions/insertAt';
 
-import ErrorPage from "@/templates/ErrorPage/ErrorPage.vue";
+import ErrorPage from "@/templates/ErrorPage";
 
 export default defineComponent({
 	components: {
@@ -70,3 +42,31 @@ export default defineComponent({
 	}
 });
 </script>
+
+<template>
+	<ErrorPage
+		:code="locales.code"
+		:page-title="locales.pageTitle"
+		:message="locales.message"
+	>
+		<template
+			v-if="supportId"
+			#additional-content
+		>
+			<p class="mt-4">
+				{{ locales.supportIdMessage }}
+
+				<b>{{ supportId }}</b>.
+			</p>
+		</template>
+
+		<template #illustration>
+			<img
+				src="../../assets/images/not-found.svg"
+				:alt="locales.pageTitle"
+				width="170px"
+				height="170px"
+			>
+		</template>
+	</ErrorPage>
+</template>
