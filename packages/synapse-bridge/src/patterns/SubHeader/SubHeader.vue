@@ -101,14 +101,14 @@ import type { PropType } from "vue";
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { customizable } from "../../mixins/customizable";
-import { Widthable } from "../../mixins/widthable";
+import { customizable } from "@/mixins/customizable";
+import { Widthable } from "@/mixins/widthable";
 
-import DataListGroup from "../../patterns/DataListGroup";
+import DataListGroup from "@/patterns/DataListGroup";
 import {
 	DataListActionEvent,
 	DataListGroupItems,
-} from "../DataListGroup/types";
+} from "@/patterns/DataListGroup/types";
 
 import { mdiKeyboardBackspace } from "@mdi/js";
 
