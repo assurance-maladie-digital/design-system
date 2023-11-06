@@ -17,7 +17,6 @@ export default defineComponent({
 });
 </script>
 
-
 <template>
 	<ErrorPage
 		:page-title="locales.pageTitle"
