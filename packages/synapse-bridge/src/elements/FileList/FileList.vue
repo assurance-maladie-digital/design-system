@@ -87,7 +87,7 @@ export default defineComponent({
 			if (state === FileStateEnum.SUCCESS) {
 				return;
 			}
-			return "grey--text";
+			return "text-grey";
 		},
 		showDivider(index: number): boolean {
 			if (this.hideLastDivider) {

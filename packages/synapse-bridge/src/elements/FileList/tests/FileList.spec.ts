@@ -15,7 +15,7 @@ describe("FileList", () => {
 	it("renders correctly", () => {
 		const wrapper = shallowMount(FileList, {
 			propsData: {
-				files,
+				files
 			},
 		});
 
