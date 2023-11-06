@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PhoneField > renders correctly 1`] = `
+<vtextfield validateonblur="true" rules="(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
+`;

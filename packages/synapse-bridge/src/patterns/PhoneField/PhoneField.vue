@@ -1,64 +1,40 @@
-<template>
-	<VTextField
-		v-maska:[phonemask]
-		v-bind="textFieldOptions"
-		:model-value="computedValue"
-		:rules="rules"
-		:counter="counter"
-		:counter-value="noSpacesCounter"
-		:label="locales.label"
-		@input="setInternalValue"
-		@change="emitChangeEvent"
-	>
-		<template #append-inner>
-			<VIcon>
-				{{ phoneIcon }}
-			</VIcon>
-		</template>
-	</VTextField>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { config } from './config';
-import { locales } from './locales';
-import { InputFacadeEvent } from '../../types';
+import { config } from "./config";
+import { locales } from "./locales";
 
-import { Options } from '../../mixins/customizable';
+import { Options } from "../../mixins/customizable";
 
-import { required } from '../../rules/required';
-import { exactLength } from '../../rules/exactLength';
-import { ValidationRule } from '../../rules/types';
+import { required } from "../../rules/required";
+import { exactLength } from "../../rules/exactLength";
+import { ValidationRule } from "../../rules/types";
 
-import { mdiPhone } from '@mdi/js';
+import { mdiPhone } from "@mdi/js";
 
 import { vMaska } from "maska";
 
-import deepMerge from 'deepmerge';
+import deepMerge from "deepmerge";
 
 const PHONE_LENGTH = 10;
 
-const Props = {
+export default defineComponent({
+	inheritAttrs: false,
+	directives: { maska: vMaska },
+	emits: ["change", "update:modelValue"],
 	props: {
 		value: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 		required: {
 			type: Boolean,
-			default: false
-		}
-	}
-};
-
-export default defineComponent({
-	inheritAttrs: false,
-	mixins: [Props],
-	directives: { maska: vMaska },
-	emits: ["change"],
-	props: {
-		...Props.props,
+			default: false,
+		},
+		outlined: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -67,7 +43,7 @@ export default defineComponent({
 			internalValue: null as string | null,
 			counter: PHONE_LENGTH,
 			phonemask: { mask: "## ## ## ## ##" },
-		}
+		};
 	},
 	computed: {
 		textFieldOptions(): Options {
@@ -88,30 +64,51 @@ export default defineComponent({
 
 		computedValue(): string | null {
 			return this.value ? this.formatPhone(this.value) : null;
-		}
+		},
 	},
 	methods: {
 		formatPhone(value: string): string {
 			const phone = value.match(/.{1,2}/g);
 
 			if (!phone) {
-				return '';
+				return "";
 			}
 
-			return phone.join(' ');
+			return phone.join(" ");
 		},
 
 		noSpacesCounter(value?: string | undefined): number {
-			return value?.replace(/\s/g, '').length || 0;
+			return value?.replace(/\s/g, "").length || 0;
 		},
 
-		setInternalValue(event: InputFacadeEvent): void {
-			this.internalValue = event.target?.unmaskedValue ?? null;
+		setInternalValue(event: any): void {
+			this.internalValue = event.target.value.replace(/\s/g, "");
 		},
 
 		emitChangeEvent(): void {
-			this.$emit('change', this.internalValue);
-		}
+			this.$emit("change", this.internalValue);
+		},
 	},
 });
 </script>
+
+<template>
+	<VTextField
+		v-maska:[phonemask]
+		v-bind="textFieldOptions"
+		:model-value="computedValue"
+		:rules="rules"
+		:counter="counter"
+		:counter-value="noSpacesCounter"
+		:label="locales.label"
+		:variant="outlined ? 'outlined' : 'underlined'"
+		@input="setInternalValue"
+		@change="emitChangeEvent"
+	>
+		<template #append-inner>
+			<VIcon>
+				{{ phoneIcon }}
+			</VIcon>
+		</template>
+	</VTextField>
+</template>
