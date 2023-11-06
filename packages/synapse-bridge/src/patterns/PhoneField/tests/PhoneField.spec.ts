@@ -9,4 +9,24 @@ describe("PhoneField", () => {
 
 		expect(wrapper.html()).toMatchSnapshot();
 	});
+
+	it("renders correctly with required prop", () => {
+		const wrapper = shallowMount(PhoneField, {
+			props: {
+				required: true,
+			},
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+
+	it("renders correctly with outlined prop", () => {
+		const wrapper = shallowMount(PhoneField, {
+			props: {
+				outlined: true,
+			},
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
+	});
 });

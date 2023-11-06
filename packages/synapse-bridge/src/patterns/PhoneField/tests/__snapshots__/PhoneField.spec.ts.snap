@@ -1,7 +1,75 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`PhoneField > not renders correctly with empty format 1`] = `
+<vtextfield validateonblur="true" rules="(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
+`;
+
+exports[`PhoneField > not renders correctly with wrong format 1`] = `
+<vtextfield validateonblur="true" model-value="12 34 56 78 91" rules="(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
+`;
+
 exports[`PhoneField > renders correctly 1`] = `
 <vtextfield validateonblur="true" rules="(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
+`;
+
+exports[`PhoneField > renders correctly with empty format 1`] = `
+<vtextfield validateonblur="true" rules="(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
+`;
+
+exports[`PhoneField > renders correctly with outlined prop 1`] = `
+<vtextfield validateonblur="true" rules="(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="outlined"></vtextfield>
+`;
+
+exports[`PhoneField > renders correctly with required prop 1`] = `
+<vtextfield validateonblur="true" rules="(value) => {
+    let valid;
+    if (Array.isArray(value)) {
+      valid = value.length !== 0;
+    } else {
+      valid = Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
+    }
+    return valid || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;);
+  },(value) => {
     if (!value) {
       return true;
     }
