@@ -30,6 +30,16 @@ describe("PhoneField", () => {
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 
+	it("renders correctly with value prop", () => {
+		const wrapper = shallowMount(PhoneField, {
+			props: {
+				value: "1234 567890",
+			},
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
+	})
+
 	it("formats phone number correctly", () => {
 		const wrapper = shallowMount(PhoneField);
 
@@ -45,17 +55,23 @@ describe("PhoneField", () => {
 		expect(wrapper.vm.noSpacesCounter("12 34 56 78 90")).toBe(10);
 	});
 
-	// it("sets internal value correctly", () => {
-	// 	const wrapper = shallowMount(PhoneField);
+	it("sets internal value correctly", () => {
+		const wrapper = shallowMount(PhoneField);
 
-	// 	expect(wrapper.vm.setInternalValue("12 34 56 78 90")).toBe(
-	// 		"1234567890"
-	// 	);
-	// });
+		wrapper.vm.setInternalValue({
+			target: {
+				value: "1234567890",
+			},
+		});
 
-	// it("emits change event correctly", () => {
-	// 	const wrapper = shallowMount(PhoneField);
+		expect(wrapper.vm.internalValue).toBe("1234567890");
+	});
 
-	// 	expect(wrapper.vm.emitChangeEvent).toBe("1234567890");
-	// });
+	it("emits change event correctly", () => {
+		const wrapper = shallowMount(PhoneField);
+
+		wrapper.vm.emitChangeEvent();
+
+		expect(wrapper.emitted("change")).toBeTruthy();
+	});
 });

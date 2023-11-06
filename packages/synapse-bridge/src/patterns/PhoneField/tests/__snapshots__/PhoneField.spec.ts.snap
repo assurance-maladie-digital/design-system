@@ -36,6 +36,18 @@ exports[`PhoneField > renders correctly 1`] = `
   }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
 `;
 
+exports[`PhoneField > renders correctly with computedValue prop 1`] = `
+<vtextfield validateonblur="true" computedvalue="1234567890" rules="(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
+`;
+
 exports[`PhoneField > renders correctly with empty format 1`] = `
 <vtextfield validateonblur="true" rules="(value) => {
     if (!value) {
@@ -70,6 +82,18 @@ exports[`PhoneField > renders correctly with required prop 1`] = `
     }
     return valid || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;);
   },(value) => {
+    if (!value) {
+      return true;
+    }
+    if (ignoreSpaces) {
+      value = value.replace(/\\s/g, &quot;&quot;);
+    }
+    return value.length === lengthValue || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;, [lengthValue]);
+  }" counter="10" counter-value="function () { [native code] }" label="Numéro de téléphone" variant="underlined"></vtextfield>
+`;
+
+exports[`PhoneField > renders correctly with value prop 1`] = `
+<vtextfield validateonblur="true" model-value="12 34  5 67 89 0" rules="(value) => {
     if (!value) {
       return true;
     }
