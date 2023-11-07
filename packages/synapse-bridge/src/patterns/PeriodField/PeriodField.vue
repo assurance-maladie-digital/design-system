@@ -1,26 +1,3 @@
-<template>
-	<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
-		<DatePicker
-			:modelValue="periodValue.from"
-			:vuetify-options="datePickerOptions.from"
-			:variant="outlined ? 'outlined' : undefined"
-			:disabled="disabled"
-			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
-			@update:modelValue="dateUpdated"
-		/>
-
-		<DatePicker
-			:modelValue="periodValue.to"
-			:variant="outlined ? 'outlined' : undefined"
-			:disabled="disabled"
-			:start-date="periodValue.from"
-			:vuetify-options="toPickerOptions"
-			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
-			@update:modelValue="dateUpdated"
-		/>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
@@ -35,7 +12,11 @@ import { locales } from "./locales";
 
 import deepMerge from "deepmerge";
 
-const Props = {
+export default defineComponent({
+	components: {
+		DatePicker
+	},
+	mixins: [customizable(config)],
 	props: {
 		value: {
 			type: Object as PropType<PeriodValue>,
@@ -52,16 +33,6 @@ const Props = {
 			type: Boolean,
 			default: false,
 		},
-	},
-};
-
-export default defineComponent({
-	components: {
-		DatePicker
-	},
-	mixins: [Props, customizable(config)],
-	props: {
-		...Props.props,
 	},
 	emits: ['update:modelValue'],
 	data() {
@@ -116,6 +87,29 @@ export default defineComponent({
 	},
 });
 </script>
+
+<template>
+	<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
+		<DatePicker
+			:modelValue="periodValue.from"
+			:vuetify-options="datePickerOptions.from"
+			:variant="outlined ? 'outlined' : undefined"
+			:disabled="disabled"
+			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
+			@update:modelValue="dateUpdated"
+		/>
+
+		<DatePicker
+			:modelValue="periodValue.to"
+			:variant="outlined ? 'outlined' : undefined"
+			:disabled="disabled"
+			:start-date="periodValue.from"
+			:vuetify-options="toPickerOptions"
+			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
+			@update:modelValue="dateUpdated"
+		/>
+	</div>
+</template>
 
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
