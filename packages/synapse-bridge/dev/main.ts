@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import Playground from './Playground.vue'
+import { router } from './router'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -12,17 +13,20 @@ const vuetify = createVuetify({
 		defaultSet: 'mdi',
 		aliases,
 		sets: {
-			mdi
-		}
+			mdi,
+		},
 	},
 	theme: {
 		defaultTheme: 'light',
 		themes: {
 			light: {
-				colors: colorTheme
-			}
-		}
-	}
+				colors: colorTheme,
+			},
+		},
+	},
 })
 
-createApp(Playground).use(vuetify).mount('#app')
+createApp(Playground)
+	.use(vuetify)
+	.use(router)
+	.mount('#app')
