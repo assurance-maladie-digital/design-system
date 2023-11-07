@@ -1,8 +1,72 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+import { config } from "./config";
+import { locales } from "./locales";
+
+import { required } from "@/rules/required";
+
+import { customizable } from "@/mixins/customizable";
+import { Widthable } from "@/mixins/widthable";
+
+import UploadWorkflowCore from "./mixins/uploadWorkflowCore";
+
+import FileList from "@/elements/FileList/FileList.vue";
+import FileUpload from "@/patterns/FileUpload/FileUpload.vue";
+import DialogBox from "@/elements/DialogBox/DialogBox.vue";
+import FilePreview from "@/elements/FilePreview/FilePreview.vue";
+
+export default defineComponent({
+	components: {
+		FileList,
+		FileUpload,
+		DialogBox,
+		FilePreview,
+	},
+	mixins: [customizable(config), UploadWorkflowCore, Widthable],
+	props: {
+		sectionTitle: {
+			type: String,
+			default: undefined,
+		},
+	},
+	data() {
+		return {
+			locales,
+			// UploadWorkflowCore mixin
+			inlineSelect: false,
+			selectRules: [required],
+		};
+	},
+	computed: {
+		computedTitle(): string {
+			if (this.sectionTitle) {
+				return this.sectionTitle;
+			}
+
+			if (!this.internalFileListItems.length) {
+				return locales.importTitle;
+			}
+
+			return locales.title(this.internalFileListItems.length > 1);
+		},
+
+		showFileList(): boolean {
+			return this.value.length > 0 || this.fileListItems?.length > 0;
+		},
+	},
+	methods: {
+		uploadInline(id: string): void {
+			this.$refs.fileUpload.retry();
+			this.selectedItem = id;
+			this.inlineSelect = true;
+		},
+	},
+});
+</script>
+
 <template>
-	<div
-		:style="widthStyles"
-		class="vd-upload-workflow white"
-	>
+	<div :style="widthStyles" class="vd-upload-workflow white">
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
 			<h4 class="text-h6 mb-2">
@@ -60,64 +124,3 @@
 		</DialogBox>
 	</div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { config } from './config';
-import { locales } from './locales';
-
-import { required } from '../../rules/required';
-
-import { customizable } from '../../mixins/customizable';
-import { Widthable } from '../../mixins/widthable';
-
-import UploadWorkflowCore from './mixins/uploadWorkflowCore';
-
-const Props = {
-	props: {
-		sectionTitle: {
-			type: String,
-			default: undefined
-		}
-	}
-};
-
-export default defineComponent({
-	mixins: [Props, customizable(config), UploadWorkflowCore, Widthable],
-	data() {
-		return {
-			locales,
-			// UploadWorkflowCore mixin
-			inlineSelect: false,
-			selectRules: [
-				required
-			]
-		};
-	},
-	computed: {
-		computedTitle(): string {
-			if (this.sectionTitle) {
-				return this.sectionTitle;
-			}
-
-			if (!this.internalFileListItems.length) {
-				return locales.importTitle;
-			}
-
-			return locales.title(this.internalFileListItems.length > 1);
-		},
-
-		showFileList(): boolean {
-			return this.value.length > 0 || this.fileListItems?.length > 0;
-		}
-	},
-	methods: {
-		uploadInline(id: string): void {
-			this.$refs.fileUpload.retry();
-			this.selectedItem = id;
-			this.inlineSelect = true;
-		}
-	}
-});
-</script>
