@@ -1,3 +1,29 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+import { locales } from './locales';
+
+import { Filterable } from '@/mixins/filterable';
+
+import ChipList from '@/elements/ChipList/ChipList.vue';
+
+import { mdiChevronDown } from '@mdi/js';
+
+export default defineComponent({
+	name: 'FiltersInline',
+	components: {
+		ChipList
+	},
+	mixins: [Filterable],
+	data() {
+		return {
+			locales,
+			downIcon: mdiChevronDown
+		};
+	}
+});
+</script>
+
 <template>
 	<div class="vd-filters-inline d-flex flex-wrap max-width-none ma-n2">
 		<VMenu
@@ -63,32 +89,6 @@
 		</VMenu>
 	</div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { locales } from './locales';
-
-import { Filterable } from '../../mixins/filterable';
-
-import ChipList from '@/elements/ChipList/ChipList.vue';
-
-import { mdiChevronDown } from '@mdi/js';
-
-export default defineComponent({
-	name: 'FiltersInline',
-	components: {
-		ChipList
-	},
-	mixins: [Filterable],
-	data() {
-		return {
-			locales,
-			downIcon: mdiChevronDown
-		};
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
