@@ -1,47 +1,3 @@
-<template>
-	<fieldset class="vd-emotion-picker">
-		<legend class="text-h6 mb-6">
-			{{ label }}
-		</legend>
-
-		<VRating
-			:model-value="value"
-			:length="length"
-			:readonly="readonly"
-			class="max-width-none mx-n1 mx-sm-n2"
-			@update:model-value="emitInputEvent"
-		>
-			<template #item="{ index, click }">
-				<VBtn
-					:disabled="readonly || hasAnswered"
-					:aria-pressed="isActive(index).toString()"
-					:class="[
-						getColor(index),
-						{ 'v-btn--active': isActive(index) },
-					]"
-					:min-height="btnSize"
-					:min-width="btnSize"
-					text
-					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
-					@click="click"
-				>
-					<VIcon x-large color="currentColor" class="pa-0">
-						{{ getIcon(index) }}
-					</VIcon>
-
-					<span
-						v-if="getEmotionLabel(index)"
-						:class="{ 'text--secondary': !isActive(index) }"
-						class="text-subtitle-2 mt-1"
-					>
-						{{ getEmotionLabel(index) }}
-					</span>
-				</VBtn>
-			</template>
-		</VRating>
-	</fieldset>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
@@ -59,7 +15,9 @@ import {
 	mdiEmoticonNeutralOutline,
 } from "@mdi/js";
 
-const Props = {
+export default defineComponent({
+	mixins: [RatingMixin],
+	emits: ["update:modelValue"],
 	props: {
 		length: {
 			type: Number,
@@ -72,11 +30,6 @@ const Props = {
 			default: () => locales.defaultEmotionLabels,
 		},
 	},
-};
-
-export default defineComponent({
-	mixins: [Props, RatingMixin],
-	emits: ["update:modelValue"],
 	data() {
 		return {
 			sadIcon: mdiEmoticonSadOutline,
@@ -143,6 +96,50 @@ export default defineComponent({
 	}
 });
 </script>
+
+<template>
+	<fieldset class="vd-emotion-picker">
+		<legend class="text-h6 mb-6">
+			{{ label }}
+		</legend>
+
+		<VRating
+			:model-value="value"
+			:length="length"
+			:readonly="readonly"
+			class="max-width-none mx-n1 mx-sm-n2"
+			@update:model-value="emitInputEvent"
+		>
+			<template #item="{ index, click }">
+				<VBtn
+					:disabled="readonly || hasAnswered"
+					:aria-pressed="isActive(index).toString()"
+					:class="[
+						getColor(index),
+						{ 'v-btn--active': isActive(index) },
+					]"
+					:min-height="btnSize"
+					:min-width="btnSize"
+					text
+					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
+					@click="click"
+				>
+					<VIcon x-large color="currentColor" class="pa-0">
+						{{ getIcon(index) }}
+					</VIcon>
+
+					<span
+						v-if="getEmotionLabel(index)"
+						:class="{ 'text--secondary': !isActive(index) }"
+						class="text-subtitle-2 mt-1"
+					>
+						{{ getEmotionLabel(index) }}
+					</span>
+				</VBtn>
+			</template>
+		</VRating>
+	</fieldset>
+</template>
 
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";

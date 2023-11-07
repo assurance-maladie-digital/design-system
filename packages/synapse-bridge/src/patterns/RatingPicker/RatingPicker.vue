@@ -1,30 +1,3 @@
-<template>
-	<div class="vd-rating-picker">
-		<component
-			:is="ratingComponent"
-			:label="label"
-			:length="length"
-			:readonly="readonly"
-			:item-labels="itemLabels || undefined"
-			:model-value="internalValue"
-			@update:model-value="setValue"
-		/>
-
-		<template v-if="hasAnswered">
-			<AlertWrapper
-				:class="{ 'mb-0': !displayAdditionalContent }"
-				outlined
-				type="success"
-				class="mt-4"
-			>
-				{{ locales.thanks }}
-			</AlertWrapper>
-
-			<slot v-if="displayAdditionalContent" />
-		</template>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
@@ -41,7 +14,14 @@ import { propValidator } from '../../helpers/propValidator';
 
 import { locales } from './locales';
 
-const Props = {
+export default defineComponent({
+	components: {
+		EmotionPicker,
+		NumberPicker,
+		StarsPicker,
+		AlertWrapper
+	},
+	emits: ["update:modelValue"],
 	props: {
 		type: {
 			type: String as PropType<RatingEnum>,
@@ -68,18 +48,7 @@ const Props = {
 			type: Number,
 			default: -1
 		}
-	}
-};
-
-export default defineComponent({
-	components: {
-		EmotionPicker,
-		NumberPicker,
-		StarsPicker,
-		AlertWrapper
 	},
-	mixins: [Props],
-	emits: ["update:modelValue"],
 	data() {
 		return {
 			locales,
@@ -134,3 +103,30 @@ export default defineComponent({
 	}
 });
 </script>
+
+<template>
+	<div class="vd-rating-picker">
+		<component
+			:is="ratingComponent"
+			:label="label"
+			:length="length"
+			:readonly="readonly"
+			:item-labels="itemLabels || undefined"
+			:model-value="internalValue"
+			@update:model-value="setValue"
+		/>
+
+		<template v-if="hasAnswered">
+			<AlertWrapper
+				:class="{ 'mb-0': !displayAdditionalContent }"
+				outlined
+				type="success"
+				class="mt-4"
+			>
+				{{ locales.thanks }}
+			</AlertWrapper>
+
+			<slot v-if="displayAdditionalContent" />
+		</template>
+	</div>
+</template>

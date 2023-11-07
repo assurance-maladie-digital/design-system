@@ -12,7 +12,7 @@ export enum RatingEnum {
 
 export const RATING_ENUM_VALUES = Object.values(RatingEnum);
 
-const Props = {
+export const RatingMixin = defineComponent({
 	props: {
 		label: {
 			type: String,
@@ -27,10 +27,6 @@ const Props = {
 			default: -1,
 		},
 	},
-};
-
-export const RatingMixin = defineComponent({
-	mixins: [Props],
 	emits: ["input"],
 	methods: {
 		emitInputEvent(value: number): void {

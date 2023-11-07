@@ -1,3 +1,46 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+import { RatingMixin } from '../RatingMixin';
+
+import { mdiStarOutline, mdiStar } from '@mdi/js';
+
+export default defineComponent({
+	mixins: [RatingMixin],
+	emits: ["update:modelValue"],
+	props: {
+		length: {
+			type: Number,
+			default: 5
+		}
+	},
+	data() {
+		return {
+			starOutlineIcon: mdiStarOutline,
+			starIcon: mdiStar,
+			hoverIndex: -1
+		};
+	},
+	computed: {
+		hasAnswered(): boolean {
+			return this.value !== -1;
+		}
+	},
+	methods: {
+		isActive(index: number): boolean {
+			return this.value - 1 === index;
+		},
+
+		isFilled(index: number): boolean {
+			const isHovered = this.hoverIndex >= index;
+			const isActive = this.value - 1 >= index;
+
+			return isHovered || isActive;
+		}
+	}
+});
+</script>
+
 <template>
 	<fieldset class="vd-stars-picker">
 		<legend class="text-h6 mb-6">
@@ -31,52 +74,6 @@
 		</VRating>
 	</fieldset>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-import { RatingMixin } from '../RatingMixin';
-
-import { mdiStarOutline, mdiStar } from '@mdi/js';
-
-const Props = {
-	props: {
-		length: {
-			type: Number,
-			default: 5
-		}
-	}
-};
-
-export default defineComponent({
-	mixins: [Props, RatingMixin],
-	emits: ["update:modelValue"],
-	data() {
-		return {
-			starOutlineIcon: mdiStarOutline,
-			starIcon: mdiStar,
-			hoverIndex: -1
-		};
-	},
-	computed: {
-		hasAnswered(): boolean {
-			return this.value !== -1;
-		}
-	},
-	methods: {
-		isActive(index: number): boolean {
-			return this.value - 1 === index;
-		},
-
-		isFilled(index: number): boolean {
-			const isHovered = this.hoverIndex >= index;
-			const isActive = this.value - 1 >= index;
-
-			return isHovered || isActive;
-		}
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';

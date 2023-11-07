@@ -1,3 +1,58 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { RatingMixin } from "../RatingMixin";
+
+import { locales } from "./locales";
+
+interface SelectItem {
+	text: string;
+	value: number;
+}
+
+export default defineComponent({
+	mixins: [RatingMixin],
+	emits: ["update:modelValue"],
+	props: {
+		length: {
+			type: Number,
+			default: 10,
+		},
+		itemLabels: {
+			type: Array as PropType<string[]>,
+			default: () => [],
+		},
+	},
+	data() {
+		return {
+			locales,
+		};
+	},
+	computed: {
+		selectItems(): SelectItem[] {
+			return [...Array(this.length)].map((_, index) => ({
+				text: `${index + 1}`,
+				value: index + 1
+			}));
+		},
+
+		shouldDisplayLabels(): boolean {
+			return this.itemLabels.length === 2;
+		},
+
+		hasAnswered(): boolean {
+			return this.value !== -1;
+		}
+	},
+	methods: {
+		setValue(value: number): void {
+			this.emitInputEvent(value);
+		}
+	}
+});
+</script>
+
 <template>
 	<fieldset class="vd-number-picker">
 		<VSelect
@@ -85,64 +140,6 @@
 		</template>
 	</fieldset>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { RatingMixin } from "../RatingMixin";
-
-import { locales } from "./locales";
-
-interface SelectItem {
-	text: string;
-	value: number;
-}
-
-const Props = {
-	props: {
-		length: {
-			type: Number,
-			default: 10,
-		},
-		itemLabels: {
-			type: Array as PropType<string[]>,
-			default: () => [],
-		},
-	},
-};
-
-export default defineComponent({
-	mixins: [Props, RatingMixin],
-	emits: ["update:modelValue"],
-	data() {
-		return {
-			locales,
-		};
-	},
-	computed: {
-		selectItems(): SelectItem[] {
-			return [...Array(this.length)].map((_, index) => ({
-				text: `${index + 1}`,
-				value: index + 1
-			}));
-		},
-
-		shouldDisplayLabels(): boolean {
-			return this.itemLabels.length === 2;
-		},
-
-		hasAnswered(): boolean {
-			return this.value !== -1;
-		}
-	},
-	methods: {
-		setValue(value: number): void {
-			this.emitInputEvent(value);
-		}
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
