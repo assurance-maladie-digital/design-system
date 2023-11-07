@@ -1,14 +1,3 @@
-<template>
-	<VDataTable v-if="$attrs" v-bind="$attrs" :options.sync="optionsCalc">
-		<template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
-			<slot :name="slot" v-bind="scope"/>
-		</template>
-	</VDataTable>
-
-	<pre>{{ options }}</pre>
-	<pre>{{ optionsCalc }}</pre>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
@@ -18,7 +7,11 @@ import { VDataTable } from "vuetify/labs/VDataTable";
 
 import { LocalStorageUtility } from "../../helpers/localStorageUtility";
 
-const Props = {
+export default defineComponent({
+	inheritAttrs: false,
+	components: {
+		VDataTable,
+	},
 	props: {
 		options: {
 			type: Object as PropType<DataOptions>,
@@ -32,14 +25,6 @@ const Props = {
 			default: undefined,
 		},
 	},
-};
-
-export default defineComponent({
-	inheritAttrs: false,
-	components: {
-		VDataTable,
-	},
-	mixins: [Props],
 	data() {
 		return {
 			localStorageUtility: this.newLocalStorageInstance(),
@@ -100,3 +85,15 @@ export default defineComponent({
 	},
 });
 </script>
+
+
+<template>
+	<VDataTable v-if="$attrs" v-bind="$attrs" :options.sync="optionsCalc">
+		<template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+			<slot :name="slot" v-bind="scope"/>
+		</template>
+	</VDataTable>
+
+	<pre>{{ options }}</pre>
+	<pre>{{ optionsCalc }}</pre>
+</template>
