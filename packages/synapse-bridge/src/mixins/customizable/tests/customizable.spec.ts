@@ -6,28 +6,22 @@ import { customizable } from '../'
 
 const DEFAULT_OPTIONS = {
 	test: {
-		a: 'a'
-	}
+		a: 'a',
+	},
 }
 
 const CUSTOM_OPTIONS = {
 	test: {
-		b: 'b'
-	}
+		b: 'b',
+	},
 }
 
-/** Create the test component */
 function createTestComponent() {
 	return defineComponent({
 		mixins: [customizable(DEFAULT_OPTIONS)],
-		template: '<div>{{ options.test }}</div>'
+		template: '<div>{{ options.test }}</div>',
 	})
 }
-
-export default defineComponent({
-	name: 'TestComponent',
-	extends: createTestComponent()
-})
 
 describe('customizable', () => {
 	it('merges correctly default and custom options into a computed property', () => {
