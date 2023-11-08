@@ -1,109 +1,8 @@
-<template>
-	<div :style="mainContentMargin" class="vd-header-bar-container w-100">
-		<VAppBar
-			v-bind="{
-				...options.appBar,
-				...$attrs,
-			}"
-			ref="appBar"
-			v-scroll:[targetSelector]="onScroll"
-			:height="height"
-			:fixed="sticky"
-			role="banner"
-			class="vd-header-bar"
-		>
-			<VSheet
-				v-bind="options.contentSheet"
-				:height="contentSheetHeight"
-				:class="spacingClass"
-				class="vd-header-bar-content d-flex justify-center"
-			>
-				<VSheet v-bind="options.innerSheet" :width="innerWidth">
-					<slot name="logo">
-						<LogoBrandSection
-							v-bind="options.brandSection"
-							:theme="theme"
-							:service-title="serviceTitle"
-							:service-sub-title="serviceSubTitle"
-							:mobile-version="isMobileVersion"
-							:reduce-logo="isMiniVersion"
-							:home-link="homeLink"
-							:home-href="homeHref"
-						>
-							<template #brand-content>
-								<slot name="brand-content" />
-							</template>
-
-							<slot name="secondary-logo" />
-						</LogoBrandSection>
-					</slot>
-
-					<VSpacer v-if="showSpacer" v-bind="options.spacer" />
-
-					<slot />
-
-					<HeaderMenuBtn
-						v-if="showHeaderMenuBtn"
-						:vuetify-options="options.menuBtn"
-						@click="updateDrawer(!drawer)"
-					/>
-				</VSheet>
-			</VSheet>
-
-			<VFadeTransition>
-				<template v-if="showNavigationBar">
-					<HeaderNavigationBar
-						:tab.sync="tab"
-						:drawer.sync="drawer"
-						:theme="theme"
-						:mobile-version="isMobileVersion"
-						:items="navigationItems"
-						:inner-width="innerWidth"
-						:show-menu-btn="showNavBarMenuBtn"
-						:vuetify-options="options.navigationBar"
-					>
-						<template #navigation-bar-prepend>
-							<slot name="navigation-bar-prepend" />
-						</template>
-
-						<slot name="navigation-bar-content" />
-
-						<template #navigation-bar-secondary-content>
-							<slot name="navigation-bar-secondary-content" />
-						</template>
-					</HeaderNavigationBar>
-				</template>
-			</VFadeTransition>
-		</VAppBar>
-
-		<slot name="navigation-drawer" v-bind="{ drawer, updateDrawer }">
-			<HeaderNavigationDrawer
-				v-model="drawer"
-				:tab.sync="tab"
-				:theme="theme"
-				:items="navigationItems"
-				:mobile-version="isMobileVersion"
-				:vuetify-options="options.navigationDrawer"
-			>
-				<template #navigation-drawer-prepend>
-					<slot name="navigation-drawer-prepend" />
-				</template>
-
-				<slot name="navigation-drawer-content" />
-
-				<template #navigation-drawer-append>
-					<slot name="navigation-drawer-append" />
-				</template>
-			</HeaderNavigationDrawer>
-		</slot>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
 
-import LogoBrandSection from "../../elements/LogoBrandSection";
+import LogoBrandSection from "@/elements/LogoBrandSection";
 import HeaderMenuBtn from "./HeaderMenuBtn";
 import HeaderNavigationBar from "./HeaderNavigationBar";
 import HeaderNavigationDrawer from "./HeaderNavigationDrawer";
@@ -113,13 +12,20 @@ import { NavigationItem } from "./types";
 import { ThemeEnum, THEME_ENUM_VALUES } from "./ThemeEnum";
 import { config } from "./config";
 
-import { propValidator } from "../../helpers/propValidator";
+import { propValidator } from "@/helpers/propValidator";
 
-import { customizable } from "../../mixins/customizable";
-import { Next, Refs } from "../../types";
-import { Scroll } from "vuetify/lib/directives";
+import { customizable } from "@/mixins/customizable";
+import { Next, Refs } from "@/types";
 
-const Props = {
+export default defineComponent({
+	inheritAttrs: false,
+	components: {
+		LogoBrandSection,
+		HeaderMenuBtn,
+		HeaderNavigationBar,
+		HeaderNavigationDrawer
+	},
+	mixins: [customizable(config)],
 	props: {
 		theme: {
 			type: String as PropType<ThemeEnum>,
@@ -175,23 +81,6 @@ const Props = {
 			type: String,
 			default: undefined,
 		},
-	},
-};
-
-export default defineComponent({
-	inheritAttrs: false,
-	components: {
-		LogoBrandSection,
-		HeaderMenuBtn,
-		HeaderNavigationBar,
-		HeaderNavigationDrawer
-	},
-	mixins: [Props, customizable(config)],
-	props: {
-		...Props.props,
-	},
-	directives: {
-		Scroll
 	},
 	data() {
 		return {
@@ -309,6 +198,107 @@ export default defineComponent({
 	}
 });
 </script>
+
+<template>
+	<div :style="mainContentMargin" class="vd-header-bar-container w-100">
+		<VAppBar
+			v-bind="{
+				...options.appBar,
+				...$attrs,
+			}"
+			ref="appBar"
+			v-scroll:[targetSelector]="onScroll"
+			:height="height"
+			:fixed="sticky"
+			role="banner"
+			class="vd-header-bar"
+		>
+			<VSheet
+				v-bind="options.contentSheet"
+				:height="contentSheetHeight"
+				:class="spacingClass"
+				class="vd-header-bar-content d-flex justify-center"
+			>
+				<VSheet v-bind="options.innerSheet" :width="innerWidth">
+					<slot name="logo">
+						<LogoBrandSection
+							v-bind="options.brandSection"
+							:theme="theme"
+							:service-title="serviceTitle"
+							:service-sub-title="serviceSubTitle"
+							:mobile-version="isMobileVersion"
+							:reduce-logo="isMiniVersion"
+							:home-link="homeLink"
+							:home-href="homeHref"
+						>
+							<template #brand-content>
+								<slot name="brand-content" />
+							</template>
+
+							<slot name="secondary-logo" />
+						</LogoBrandSection>
+					</slot>
+
+					<VSpacer v-if="showSpacer" v-bind="options.spacer" />
+
+					<slot />
+
+					<HeaderMenuBtn
+						v-if="showHeaderMenuBtn"
+						:vuetify-options="options.menuBtn"
+						@click="updateDrawer(!drawer)"
+					/>
+				</VSheet>
+			</VSheet>
+
+			<VFadeTransition>
+				<template v-if="showNavigationBar">
+					<HeaderNavigationBar
+						:tab.sync="tab"
+						:drawer.sync="drawer"
+						:theme="theme"
+						:mobile-version="isMobileVersion"
+						:items="navigationItems"
+						:inner-width="innerWidth"
+						:show-menu-btn="showNavBarMenuBtn"
+						:vuetify-options="options.navigationBar"
+					>
+						<template #navigation-bar-prepend>
+							<slot name="navigation-bar-prepend" />
+						</template>
+
+						<slot name="navigation-bar-content" />
+
+						<template #navigation-bar-secondary-content>
+							<slot name="navigation-bar-secondary-content" />
+						</template>
+					</HeaderNavigationBar>
+				</template>
+			</VFadeTransition>
+		</VAppBar>
+
+		<slot name="navigation-drawer" v-bind="{ drawer, updateDrawer }">
+			<HeaderNavigationDrawer
+				v-model="drawer"
+				:tab.sync="tab"
+				:theme="theme"
+				:items="navigationItems"
+				:mobile-version="isMobileVersion"
+				:vuetify-options="options.navigationDrawer"
+			>
+				<template #navigation-drawer-prepend>
+					<slot name="navigation-drawer-prepend" />
+				</template>
+
+				<slot name="navigation-drawer-content" />
+
+				<template #navigation-drawer-append>
+					<slot name="navigation-drawer-append" />
+				</template>
+			</HeaderNavigationDrawer>
+		</slot>
+	</div>
+</template>
 
 <style lang="scss" scoped>
 .vd-header-bar {

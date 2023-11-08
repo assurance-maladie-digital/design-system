@@ -1,3 +1,76 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { mdiClose } from "@mdi/js";
+
+import { config } from "./config";
+import { locales } from "./locales";
+import { NavigationItem } from "../types";
+import { colorMapping } from "../colorMapping";
+
+import { ThemeEnum } from "../ThemeEnum";
+
+import { customizable } from "@/mixins/customizable";
+
+export default defineComponent({
+	mixins: [customizable(config)],
+	props: {
+		theme: {
+			type: String as PropType<ThemeEnum>,
+			required: true,
+		},
+		items: {
+			type: Array as PropType<NavigationItem[]>,
+			default: undefined,
+		},
+		mobileVersion: {
+			type: Boolean,
+			default: false,
+		},
+		drawer: {
+			type: Boolean,
+			default: false,
+		},
+		tab: {
+			type: [Number, String],
+			default: null,
+		},
+	},
+	emits: ["change", "update:tab"],
+	data() {
+		return {
+			closeIcon: mdiClose,
+			locales,
+		};
+	},
+	computed: {
+		spacingClass(): string {
+			return this.mobileVersion ? 'px-4' : 'px-14';
+		},
+
+		backgroundColor(): string {
+			return colorMapping[this.theme];
+		}
+	},
+	methods: {
+		drawerUpdated(value: boolean): void {
+			if (value === false) {
+				this.$emit('change', false);
+			}
+		},
+
+		emitChangeEvent(): void {
+			this.$emit('change', !this.drawer);
+		},
+
+		emitTabUpdateEvent(value: number): void {
+			this.$emit('update:tab', value);
+		}
+	}
+});
+</script>
+
 <template>
 	<VNavigationDrawer
 		v-if="mobileVersion && items"
@@ -43,85 +116,6 @@
 		</slot>
 	</VNavigationDrawer>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { mdiClose } from "@mdi/js";
-
-import { config } from "./config";
-import { locales } from "./locales";
-import { NavigationItem } from "../types";
-import { colorMapping } from "../colorMapping";
-
-import { ThemeEnum } from "../ThemeEnum";
-
-import { customizable } from "../../../mixins/customizable";
-
-const Props = {
-	props: {
-		theme: {
-			type: String as PropType<ThemeEnum>,
-			required: true,
-		},
-		items: {
-			type: Array as PropType<NavigationItem[]>,
-			default: undefined,
-		},
-		mobileVersion: {
-			type: Boolean,
-			default: false,
-		},
-		drawer: {
-			type: Boolean,
-			default: false,
-		},
-		tab: {
-			type: [Number, String],
-			default: null,
-		},
-	},
-};
-
-export default defineComponent({
-	mixins: [Props, customizable(config)],
-	props: {
-		...Props.props,
-	},
-	emits: ["change", "update:tab"],
-	data() {
-		return {
-			closeIcon: mdiClose,
-			locales,
-		};
-	},
-	computed: {
-		spacingClass(): string {
-			return this.mobileVersion ? 'px-4' : 'px-14';
-		},
-
-		backgroundColor(): string {
-			return colorMapping[this.theme];
-		}
-	},
-	methods: {
-		drawerUpdated(value: boolean): void {
-			if (value === false) {
-				this.$emit('change', false);
-			}
-		},
-
-		emitChangeEvent(): void {
-			this.$emit('change', !this.drawer);
-		},
-
-		emitTabUpdateEvent(value: number): void {
-			this.$emit('update:tab', value);
-		}
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 .v-navigation-drawer {
