@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ContextualMenu > renders correctly with items 1`] = `
+<ul data-v-32a4b695="" class="vd-contextual-menu">
+  <li data-v-32a4b695=""><a data-v-32a4b695="" href="#example-1" class="text-primary active d-flex align-center text-decoration-none text-body-1 px-4 py-2">Titre 1</a></li>
+  <li data-v-32a4b695=""><a data-v-32a4b695="" href="#example-2" class="text-medium-emphasis d-flex align-center text-decoration-none text-body-1 px-4 py-2">Titre 2</a></li>
+</ul>
+`;
+
+exports[`ContextualMenu > renders correctly without items 1`] = `<!--v-if-->`;

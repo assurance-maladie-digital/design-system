@@ -1,40 +1,3 @@
-<template>
-	<div class="vd-filter-module">
-		<FilterManager
-			v-if="filtersCount"
-			:applied-filters="appliedFilters"
-			@edit-filter="editFilter"
-			@clear-filter="clearFilter"
-			@reset-filters="resetFilters"
-		/>
-
-		<FilterSelector
-			:filters="filters"
-			@filter-selected="openDialog($event, filters)"
-		/>
-
-		<DialogBox
-			v-model="dialog"
-			v-bind="options.dialog"
-			:title="filterTitle"
-		>
-			<div
-				class="vd-filter-module-dialog-content d-flex flex-column-reverse"
-			>
-				<FormField v-model="dialogContent" />
-
-				<div class="vd-filter-module-dialog-actions d-flex mb-10">
-					<VSpacer v-bind="options.spacer" />
-
-					<VBtn v-bind="options.validateBtn" @click="applyFilter">
-						{{ locales.apply }}
-					</VBtn>
-				</div>
-			</div>
-		</DialogBox>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
@@ -45,21 +8,12 @@ import { locales } from "./locales";
 import FilterManager from "./FilterManager";
 import FilterSelector from "./FilterSelector";
 
-import { customizable } from "../../mixins/customizable";
+import { customizable } from "@/mixins/customizable";
 
-import FormField from '@cnamts/form-builder/src/components/FormField';
-import { Field } from '@cnamts/form-builder/src/components/FormField/types';
+// import FormField from '@cnamts/form-builder/src/components/FormField';
+// import { Field } from '@cnamts/form-builder/src/components/FormField/types';
 
-import { deepCopy } from "../../helpers/deepCopy";
-
-const Props = {
-	props: {
-		filters: {
-			type: Array as PropType<Field[]>,
-			required: true,
-		},
-	},
-};
+import { deepCopy } from "@/helpers/deepCopy";
 
 export default defineComponent({
 	components: {
@@ -67,9 +21,12 @@ export default defineComponent({
 		FilterSelector,
 		FormField,
 	},
-	mixins: [Props, customizable(config)],
+	mixins: [customizable(config)],
 	props: {
-		...Props.props
+		filters: {
+			type: Array as PropType<Field[]>,
+			required: true,
+		},
 	},
 	data() {
 		return {
@@ -152,3 +109,40 @@ export default defineComponent({
 	}
 });
 </script>
+
+<template>
+	<div class="vd-filter-module">
+		<FilterManager
+			v-if="filtersCount"
+			:applied-filters="appliedFilters"
+			@edit-filter="editFilter"
+			@clear-filter="clearFilter"
+			@reset-filters="resetFilters"
+		/>
+
+		<FilterSelector
+			:filters="filters"
+			@filter-selected="openDialog($event, filters)"
+		/>
+
+		<DialogBox
+			v-model="dialog"
+			v-bind="options.dialog"
+			:title="filterTitle"
+		>
+			<div
+				class="vd-filter-module-dialog-content d-flex flex-column-reverse"
+			>
+				<FormField v-model="dialogContent" />
+
+				<div class="vd-filter-module-dialog-actions d-flex mb-10">
+					<VSpacer v-bind="options.spacer" />
+
+					<VBtn v-bind="options.validateBtn" @click="applyFilter">
+						{{ locales.apply }}
+					</VBtn>
+				</div>
+			</div>
+		</DialogBox>
+	</div>
+</template>
