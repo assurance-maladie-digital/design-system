@@ -1,3 +1,49 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
+
+import { Filterable } from '@/mixins/filterable';
+import { FilterItem } from '@/mixins/filterable/types';
+
+import { locales } from './locales';
+
+import { mdiFilterVariant } from '@mdi/js';
+
+export default defineComponent({
+	mixins: [Filterable],
+	props: {
+		value: {
+			type: Array as PropType<FilterItem[]>,
+			default: () => []
+		}
+	},
+	data() {
+		return {
+			drawer: false,
+			locales,
+			filterIcon: mdiFilterVariant
+		};
+	},
+	computed: {
+		activeFiltersCount(): number {
+			return this.value.reduce((count, filter) => {
+				return count + this.getFilterCount(filter);
+			}, 0);
+		}
+	},
+	methods: {
+		toggleDrawer(): void {
+			this.drawer = !this.drawer;
+		},
+
+		applyFilters(): void {
+			this.updateValue();
+			this.drawer = false;
+		}
+	}
+});
+</script>
+
 <template>
 	<div class="vd-filters-side-bar">
 		<VBtn
@@ -105,7 +151,7 @@
 
 				<VBtn
 					block
-					large
+					size="large"
 					color="primary"
 					@click.stop="applyFilters"
 				>
@@ -115,58 +161,6 @@
 		</VNavigationDrawer>
 	</div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-
-import { Filterable } from '../../mixins/filterable';
-import { FilterItem } from '../../mixins/filterable/types';
-
-import { locales } from './locales';
-
-import { mdiFilterVariant } from '@mdi/js';
-
-const Props = {
-	props: {
-		value: {
-			type: Array as PropType<FilterItem[]>,
-			default: () => []
-		}
-	}
-};
-
-export default defineComponent({
-	mixins: [Props, Filterable],
-	props: {
-		...Props.props,
-	},
-	data() {
-		return {
-			drawer: false,
-			locales,
-			filterIcon: mdiFilterVariant
-		};
-	},
-	computed: {
-		activeFiltersCount(): number {
-			return this.value.reduce((count, filter) => {
-				return count + this.getFilterCount(filter);
-			}, 0);
-		}
-	},
-	methods: {
-		toggleDrawer(): void {
-			this.drawer = !this.drawer;
-		},
-
-		applyFilters(): void {
-			this.updateValue();
-			this.drawer = false;
-		}
-	}
-});
-</script>
 
 <style lang="scss" scoped>
 	.vd-filters-side-bar :deep() {
