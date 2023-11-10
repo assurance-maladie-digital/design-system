@@ -55,20 +55,22 @@ export default defineComponent({
 		},
 	},
 	data() {
-		$refs: {} as Refs<{
-			otherFieldRef: HTMLInputElement;
-		}>,
+		return {
+			$refs: {} as Refs<{
+				otherFieldRef: HTMLInputElement;
+			}>,
 
-		choiceValue: {} as ChoiceValue,
+			choiceValue: {} as ChoiceValue,
 
-		otherFieldValue: null as OtherFieldValue | null,
+			otherFieldValue: null as OtherFieldValue | null,
 
-		selectFieldMap: {
-			select: 'ChoiceSelectField',
-			choiceAutocomplete: 'ChoiceAutocompleteField',
-			choiceButton: 'ChoiceButtonField',
-			choiceSlider: 'ChoiceSliderField'
-		} as IFieldMap,
+			selectFieldMap: {
+				select: "ChoiceSelectField",
+				choiceAutocomplete: "ChoiceAutocompleteField",
+				choiceButton: "ChoiceButtonField",
+				choiceSlider: "ChoiceSliderField",
+			} as IFieldMap,
+		};
 	},
 	computed: {
 		otherField(): OtherField | undefined {
@@ -100,7 +102,10 @@ export default defineComponent({
 		},
 
 		choiceSelected(): boolean {
-			return this.otherField?.selectedChoice !== undefined && this.otherField?.selectedChoice !== null;
+			return (
+				this.otherField?.selectedChoice !== undefined &&
+				this.otherField?.selectedChoice !== null
+			);
 		},
 
 		otherActive(): boolean {
@@ -117,42 +122,46 @@ export default defineComponent({
 		},
 
 		choiceField(): string {
-			const metadataType = this.field.fieldOptions?.type as string || undefined;
+			const metadataType =
+				(this.field.fieldOptions?.type as string) || undefined;
 
-			return metadataType ? this.selectFieldMap[metadataType] : this.selectFieldMap.select;
+			return metadataType
+				? this.selectFieldMap[metadataType]
+				: this.selectFieldMap.select;
 		},
 
 		errorMessages(): ChoiceFieldErrorMessages {
 			const errorMessages = this.fieldOptions?.errorMessages;
 
-			if (typeof errorMessages === 'string') {
+			if (typeof errorMessages === "string") {
 				return {
 					value: [errorMessages],
-					other: undefined
+					other: undefined,
 				};
 			}
 
 			if (Array.isArray(errorMessages)) {
 				return {
 					value: errorMessages,
-					other: undefined
+					other: undefined,
 				};
 			}
 
-			if (typeof errorMessages === 'object') {
-				let { value, other } = errorMessages as ChoiceFieldErrorMessages;
+			if (typeof errorMessages === "object") {
+				let { value, other } =
+					errorMessages as ChoiceFieldErrorMessages;
 
-				value = typeof value === 'string' ? [value] : value;
-				other = typeof other === 'string' ? [other] : other;
+				value = typeof value === "string" ? [value] : value;
+				other = typeof other === "string" ? [other] : other;
 
 				return {
 					value,
-					other
+					other,
 				};
 			}
 
 			return {};
-		}
+		},
 	},
 	methods: {
 		choiceUpdated(choiceFieldValue: ChoiceFieldValue): void {
@@ -174,7 +183,9 @@ export default defineComponent({
 		},
 
 		setOtherValue(otherFieldValue: OtherFieldValue): void {
-			this.otherFieldValue = otherFieldValue?.length ? otherFieldValue : null;
+			this.otherFieldValue = otherFieldValue?.length
+				? otherFieldValue
+				: null;
 
 			if (this.otherFieldValue && !this.field.multiple) {
 				this.choiceValue.value = null;
@@ -182,12 +193,14 @@ export default defineComponent({
 		},
 
 		otherUpdated(otherFieldValue: OtherFieldValue): void {
-			this.otherFieldValue = otherFieldValue?.length ? otherFieldValue : null;
+			this.otherFieldValue = otherFieldValue?.length
+				? otherFieldValue
+				: null;
 			this.choiceValue.other = this.otherFieldValue;
 
 			this.emitChangeEvent(this.choiceValue);
-		}
-	}
+		},
+	},
 });
 </script>
 

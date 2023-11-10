@@ -4,8 +4,8 @@ import { defineComponent } from "vue";
 import { ChoiceComponent } from "../mixins/choiceComponent";
 import { FieldValue } from "../types";
 
-import { convertToUnit } from "@cnamts/vue-dot/src/helpers/convertToUnit";
-import { IndexedObject } from "@cnamts/vue-dot/src/types";
+import { convertToUnit } from "@/helpers/convertToUnit";
+import { IndexedObject } from "@/types";
 
 type ThumbLabelValue = boolean | string | undefined;
 

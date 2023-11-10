@@ -7,7 +7,7 @@ import { Field } from "../FormField/types";
 
 import { Fields } from "./types";
 
-import { useTheme } from 'vuetify'
+import { useTheme } from "vuetify";
 
 export default defineComponent({
 	components: {
@@ -32,7 +32,7 @@ export default defineComponent({
 		return {
 			theme: useTheme(),
 		};
-	}
+	},
 	methods: {
 		fieldUpdated(field: Field, fieldName: string): void {
 			const fields = { ...this.fields };

@@ -8,7 +8,7 @@ import { FieldComponent } from '../mixins/fieldComponent';
 export default defineComponent({
 	components: {
 		PeriodField
-	}
+	},
 	emits: ['change'],
 	mixins: [FieldComponent],
 });
