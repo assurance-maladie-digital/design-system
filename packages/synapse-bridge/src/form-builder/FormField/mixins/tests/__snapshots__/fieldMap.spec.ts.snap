@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FieldMap > contains the map of fields and their components 1`] = `
+{
+  "date": "DateField",
+  "number": "NumberField",
+  "password": "FormPasswordField",
+  "period": "ChoicePeriodField",
+  "range": "FormRangeField",
+  "select": "ChoiceField",
+  "text": "TextField",
+  "textarea": "TextareaField",
+}
+`;

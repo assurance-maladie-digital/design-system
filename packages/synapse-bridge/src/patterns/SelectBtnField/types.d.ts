@@ -1,4 +1,4 @@
-export type SelectBtnValue = string | number | Array<string | number> | null;
+export type SelectBtnValue = string | number | Array<string | number | null | undefined> | null;
 
 export interface SelectBtnItem {
 	text: string;

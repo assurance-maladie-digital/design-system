@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`getFormValues > returns all values 1`] = `
+{
+  "streetLabel": "streetLabel",
+  "streetNumber": 1,
+  "streetNumberComplement": "bis",
+}
+`;

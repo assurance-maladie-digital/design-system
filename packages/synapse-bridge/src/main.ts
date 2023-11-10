@@ -1,4 +1,5 @@
 export * from './elements'
+export * from './form-builder'
 export * from './patterns'
 export * from './templates'
 export * from './constants'
