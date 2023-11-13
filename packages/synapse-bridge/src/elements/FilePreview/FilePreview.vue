@@ -5,7 +5,7 @@ import type { PropType } from "vue";
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { Options } from "../../mixins/customizable";
+import { Options } from "@/mixins/customizable";
 
 import deepMerge from "deepmerge";
 

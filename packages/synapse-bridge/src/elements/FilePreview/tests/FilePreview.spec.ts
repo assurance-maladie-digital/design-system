@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 
 import FilePreview from "../";
@@ -10,7 +10,7 @@ const testFile = {
 } as File;
 
 describe("FilePreview", () => {
-	global.URL.createObjectURL = jest.fn();
+	global.URL.createObjectURL = vi.fn();
 
 	it("renders correctly", () => {
 		const wrapper = shallowMount(FilePreview, {

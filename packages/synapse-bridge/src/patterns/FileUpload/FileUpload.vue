@@ -6,14 +6,14 @@ import { config } from "./config";
 import { locales } from "./locales";
 
 import FileUploadCore from "./mixins/fileUploadCore";
-import { Widthable } from "../../mixins/widthable";
+import { Widthable } from "@/mixins/widthable";
 
-import { customizable } from "../../mixins/customizable";
-import { calcHumanFileSize } from "../../functions/calcHumanFileSize";
+import { customizable } from "@/mixins/customizable";
+import { calcHumanFileSize } from "@/functions/calcHumanFileSize";
 
 import { mdiCloudUpload } from "@mdi/js";
 
-import { IndexedObject } from "../../types";
+import { IndexedObject } from "@/types";
 
 export default defineComponent({
 	mixins: [customizable(config), FileUploadCore, Widthable],
@@ -48,6 +48,7 @@ export default defineComponent({
 			default: false,
 		},
 	},
+	emits: ["change"],
 	data() {
 		return {
 			locales,
