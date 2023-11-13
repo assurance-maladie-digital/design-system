@@ -6,7 +6,7 @@ export const ThemeIcon = defineComponent({
 	props: {
 		icon: {
 			type: String,
-			default: undefined,
+			default: "",
 		},
 	},
 	computed: {
@@ -15,3 +15,4 @@ export const ThemeIcon = defineComponent({
 		},
 	},
 });
+

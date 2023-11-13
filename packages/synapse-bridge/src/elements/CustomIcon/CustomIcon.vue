@@ -52,10 +52,16 @@ export default defineComponent({
 			default: undefined,
 		},
 	},
-	data () {
+	data() {
 		return {
-			themeIcon: undefined,
+			ThemeIcon: undefined,
 		};
+	},
+	computed: {
+		themeIcon(): string | undefined {
+			console?.log("themeIcon", this.ThemeIcon);
+			return this.ThemeIcon;
+		},
 	},
 });
 </script>
