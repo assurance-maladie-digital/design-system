@@ -55,11 +55,11 @@
 					:on="{
 						input: value => {
 							$set(filter, 'value', value);
-							emitUpdateValue(value);
+							updateValue();
 						},
 						change: value => {
 							$set(filter, 'value', value);
-							emitUpdateValue(value);
+							updateValue();
 						}
 					}"
 					:attrs="{
@@ -86,10 +86,6 @@
 		locales = locales;
 
 		downIcon = mdiChevronDown;
-
-		emitUpdateValue(value: unknown): void {
-			this.$emit('update:value', value);
-		}
 	}
 </script>
 

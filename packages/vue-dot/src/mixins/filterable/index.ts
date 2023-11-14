@@ -124,7 +124,6 @@ export class Filterable extends Props {
 
 		if (isString || isNumber) {
 			this.$set(filter, 'value', undefined);
-			this.updateValue();
 		}
 
 		if (isArray) {
@@ -165,8 +164,8 @@ export class Filterable extends Props {
 
 			delete typedValue[chipValue];
 			this.$set(filter, 'value', typedValue);
-			this.updateValue();
 		}
+		this.updateValue();
 	}
 
 	resetFilter(filter: FilterItem): void {
