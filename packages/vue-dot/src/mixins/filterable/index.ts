@@ -124,6 +124,7 @@ export class Filterable extends Props {
 
 		if (isString || isNumber) {
 			this.$set(filter, 'value', undefined);
+			this.$emit('update:value', this.filters);
 		}
 
 		if (isArray) {
@@ -145,6 +146,7 @@ export class Filterable extends Props {
 			const newValue = filteredValue.length ? filteredValue : undefined;
 
 			this.$set(filter, 'value', newValue);
+			this.$emit('update:value', this.filters);
 
 			return;
 		}
@@ -156,22 +158,26 @@ export class Filterable extends Props {
 
 			if (isPeriodField) {
 				this.$set(filter, 'value', undefined);
+				this.$emit('update:value', this.filters);
 
 				return;
 			}
 
 			delete typedValue[chipValue];
 			this.$set(filter, 'value', typedValue);
+			this.$emit('update:value', this.filters);
 		}
 	}
 
 	resetFilter(filter: FilterItem): void {
 		this.$set(filter, 'value', undefined);
+		this.$emit('update:value', this.filters);
 	}
 
 	resetAllFilters(): void {
 		this.filters.forEach(filter => {
 			this.$set(filter, 'value', undefined);
+			this.$emit('update:value', this.filters);
 		});
 	}
 

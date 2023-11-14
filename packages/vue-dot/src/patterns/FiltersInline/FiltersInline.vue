@@ -53,8 +53,14 @@
 
 				<slot
 					:on="{
-						input: value => $set(filter, 'value', value),
-						change: value => $set(filter, 'value', value)
+						input: (value: string) => {
+							$set(filter, 'value', value);
+							emitFilterValue(value);
+						},
+						change: (value: string) => {
+							$set(filter, 'value', value);
+							emitFilterValue(value);
+						}
 					}"
 					:attrs="{
 						value: filter.value
@@ -80,6 +86,10 @@
 		locales = locales;
 
 		downIcon = mdiChevronDown;
+
+		emitFilterValue(value: string): void {
+			this.$emit('update:value', value);
+		}
 	}
 </script>
 
