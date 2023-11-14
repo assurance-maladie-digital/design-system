@@ -53,13 +53,13 @@
 
 				<slot
 					:on="{
-						input: (value: string) => {
+						input: value => {
 							$set(filter, 'value', value);
-							emitFilterValue(value);
+							emitUpdateValue(value);
 						},
-						change: (value: string) => {
+						change: value => {
 							$set(filter, 'value', value);
-							emitFilterValue(value);
+							emitUpdateValue(value);
 						}
 					}"
 					:attrs="{
@@ -87,7 +87,7 @@
 
 		downIcon = mdiChevronDown;
 
-		emitFilterValue(value: string): void {
+		emitUpdateValue(value: unknown): void {
 			this.$emit('update:value', value);
 		}
 	}
