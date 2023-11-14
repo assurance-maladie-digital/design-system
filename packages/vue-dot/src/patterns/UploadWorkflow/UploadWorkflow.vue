@@ -14,6 +14,9 @@
 			v-if="showFileList"
 			v-bind="options.fileList"
 			:files="fileList"
+			:show-view-btn="showViewBtn"
+			:hide-last-divider="hideLastDivider"
+			:optional-file-text="optionalFileText"
 			@delete-file="resetFile"
 			@retry="uploadInline"
 			@upload="uploadInline"
@@ -24,6 +27,9 @@
 			ref="fileUpload"
 			v-bind="options.fileUpload"
 			v-model="uploadedFile"
+			:multiple="multiple"
+			:no-ripple="noRipple"
+			:disabled="disabled"
 			@error="uploadError"
 			@change="fileSelected"
 		/>
@@ -80,6 +86,30 @@
 			sectionTitle: {
 				type: String,
 				default: undefined
+			},
+			showViewBtn: {
+				type: Boolean,
+				default: false
+			},
+			hideLastDivider: {
+				type: Boolean,
+				default: false
+			},
+			optionalFileText: {
+				type: String,
+				default: undefined
+			},
+			multiple: {
+				type: Boolean,
+				default: false
+			},
+			noRipple: {
+				type: Boolean,
+				default: false
+			},
+			disabled: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
