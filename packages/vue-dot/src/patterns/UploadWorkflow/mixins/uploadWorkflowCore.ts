@@ -114,7 +114,19 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		this.emitChangeEvent();
 	}
 
+	deleteFile(index: number): void {
+		console.log('deleteFile', index);
+		if (!this.internalFileListItems.length) {
+			this.$delete(this.fileList, index);
+		} else {
+			this.internalFileListItems.splice(index, 1);
+		}
+
+		this.emitChangeEvent();
+	}
+
 	resetFile(index: number): void {
+		console.log('resetFile', index);
 		if (!this.internalFileListItems.length) {
 			this.$delete(this.fileList, index);
 		} else {

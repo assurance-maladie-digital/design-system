@@ -164,10 +164,6 @@
 	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
 	@Component<FileList>({
-		model: {
-			prop: 'files',
-			event: 'change'
-		},
 		watch: {
 			simpleMode: {
 				handler(files: FileItem[]): void {

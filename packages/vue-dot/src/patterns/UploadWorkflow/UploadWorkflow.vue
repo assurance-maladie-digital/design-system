@@ -17,7 +17,7 @@
 			:show-view-btn="simpleMode ? true : showViewBtn"
 			:hide-last-divider="hideLastDivider"
 			:simple-mode="simpleMode"
-			@delete-file="resetFile"
+			@delete-file="simpleMode ? deleteFile : resetFile"
 			@retry="uploadInline"
 			@upload="uploadInline"
 			@view-file="emitViewFileEvent"
