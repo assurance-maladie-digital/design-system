@@ -75,7 +75,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="(showViewBtn && file.state === FileStateEnum.SUCCESS)"
+						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
 						@click="$emit('view-file', file)"
