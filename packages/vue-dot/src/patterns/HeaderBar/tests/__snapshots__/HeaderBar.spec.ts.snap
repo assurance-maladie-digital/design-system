@@ -5,7 +5,7 @@ exports[`HeaderBar renders correctly 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -23,7 +23,7 @@ exports[`HeaderBar renders correctly with home-href 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/" homehref="#"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/" homehref="#"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -41,7 +41,7 @@ exports[`HeaderBar renders correctly with home-link 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="[object Object]"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="[object Object]"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -59,7 +59,7 @@ exports[`HeaderBar renders correctly with inner-width 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="1000" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -77,7 +77,7 @@ exports[`HeaderBar renders correctly with mini version 1`] = `
   <vappbar-stub color="white" height="52" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="52" tag="div" class="vd-header-bar-content d-flex justify-center pa-4">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" mobileversion="true" reducelogo="true" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" mobileversion="true" reducelogo="true" homelink="/"></logobrandsection-stub>
         <vspacer-stub tag="div" class="h-100 mr-4 mr-md-16"></vspacer-stub>
         <!---->
       </vsheet-stub>
@@ -95,7 +95,7 @@ exports[`HeaderBar renders correctly with mobile-version 1`] = `
   <vappbar-stub color="white" height="72" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="72" tag="div" class="vd-header-bar-content d-flex justify-center pa-4">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" mobileversion="true" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" mobileversion="true" homelink="/"></logobrandsection-stub>
         <vspacer-stub tag="div" class="h-100 mr-4 mr-md-16"></vspacer-stub>
         <!---->
       </vsheet-stub>
@@ -113,7 +113,7 @@ exports[`HeaderBar renders correctly with navigation-items 1`] = `
   <vappbar-stub color="white" height="168" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -131,7 +131,7 @@ exports[`HeaderBar renders correctly with show-nav-bar-menu-btn 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -149,7 +149,7 @@ exports[`HeaderBar renders correctly with sticky mode 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" fixed="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -167,7 +167,7 @@ exports[`HeaderBar renders correctly with sticky mode and show-sticky-nav-bar 1`
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" fixed="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -185,7 +185,7 @@ exports[`HeaderBar renders correctly with theme 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="ameli-pro" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="ameli-pro" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
@@ -203,7 +203,7 @@ exports[`HeaderBar renders correctly with title and subtitle 1`] = `
   <vappbar-stub color="white" height="120" tag="header" extensionheight="48" src="" value="true" role="banner" class="vd-header-bar w-100">
     <vsheet-stub height="120" tag="div" class="vd-header-bar-content d-flex justify-center px-14 py-7">
       <vsheet-stub width="100%" tag="div" class="d-flex align-center">
-        <logobrandsection-stub theme="default" servicetitle="Title" servicesubtitle="Subtitle" homelink="/"> </logobrandsection-stub>
+        <logobrandsection-stub theme="default" servicetitle="Title" servicesubtitle="Subtitle" homelink="/"></logobrandsection-stub>
         <!---->
         <!---->
       </vsheet-stub>
