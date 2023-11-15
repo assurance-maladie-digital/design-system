@@ -14,9 +14,9 @@
 			v-if="showFileList"
 			v-bind="options.fileList"
 			:files="fileList"
-			:show-view-btn="showViewBtn"
+			:show-view-btn="simpleMode ? true : showViewBtn"
 			:hide-last-divider="hideLastDivider"
-			:optional-file-text="optionalFileText"
+			:simple-mode="simpleMode"
 			@delete-file="resetFile"
 			@retry="uploadInline"
 			@upload="uploadInline"
@@ -95,10 +95,6 @@
 				type: Boolean,
 				default: false
 			},
-			optionalFileText: {
-				type: String,
-				default: undefined
-			},
 			multiple: {
 				type: Boolean,
 				default: false
@@ -108,6 +104,10 @@
 				default: false
 			},
 			disabled: {
+				type: Boolean,
+				default: false
+			},
+			simpleMode: {
 				type: Boolean,
 				default: false
 			}

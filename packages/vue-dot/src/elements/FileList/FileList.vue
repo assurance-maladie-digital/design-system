@@ -4,7 +4,7 @@
 		:style="widthStyles"
 		class="vd-file-list"
 	>
-		<template v-for="(file, index) in files">
+		<template v-for="(file, index) in files[0]">
 			<VListItem
 				:key="index"
 				v-bind="options.listItem"
@@ -75,7 +75,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
+						v-if="(showViewBtn && file.state === FileStateEnum.SUCCESS)"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
 						@click="$emit('view-file', file)"
@@ -153,13 +153,33 @@
 			optionalFileText: {
 				type: String,
 				default: locales.optional
+			},
+			simpleMode: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
 
 	const MixinsDeclaration = mixins(Props, customizable(config), Widthable);
 
-	@Component
+	@Component<FileList>({
+		model: {
+			prop: 'files',
+			event: 'change'
+		},
+		watch: {
+			simpleMode: {
+				handler(files: FileItem[]): void {
+					for (const file of files) {
+						file.state = FileStateEnum.SUCCESS;
+					}
+				},
+				immediate: true,
+				deep: true
+			}
+		}
+	})
 	export default class FileList extends MixinsDeclaration {
 		locales = locales;
 		FileStateEnum = FileStateEnum;
@@ -168,6 +188,10 @@
 		eyeIcon = mdiEye;
 		deleteIcon = mdiDelete;
 		uploadIcon = mdiUpload;
+
+		mounted() {
+			console.log(this.files[0]);
+		}
 
 		get iconColor(): string {
 			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';
