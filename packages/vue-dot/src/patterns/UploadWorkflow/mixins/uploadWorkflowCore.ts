@@ -96,7 +96,9 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			return;
 		}
 
-		const index = this.internalFileListItems.findIndex((file) => file.id === this.selectedItem);
+		const index = this.internalFileListItems.findIndex(
+			(file) => file.id === this.selectedItem
+		);
 
 		if (index === -1) {
 			return;
@@ -115,18 +117,12 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	deleteFile(index: number): void {
-		console.log('deleteFile', index);
-		if (!this.internalFileListItems.length) {
-			this.$delete(this.fileList, index);
-		} else {
-			this.internalFileListItems.splice(index, 1);
-		}
+		this.$delete(this.fileList[0], index);
 
 		this.emitChangeEvent();
 	}
 
 	resetFile(index: number): void {
-		console.log('resetFile', index);
 		if (!this.internalFileListItems.length) {
 			this.$delete(this.fileList, index);
 		} else {
@@ -158,7 +154,11 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	async dialogConfirm(): Promise<void> {
 		await this.$nextTick();
 
-		if (this.showFilePreview && !this.internalFileListItems.length && this.uploadedFile) {
+		if (
+			this.showFilePreview &&
+			!this.internalFileListItems.length &&
+			this.uploadedFile
+		) {
 			this.fileList.push(this.uploadedFile);
 			this.emitChangeEvent();
 			this.dialog = false;

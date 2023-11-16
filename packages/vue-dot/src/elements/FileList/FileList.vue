@@ -189,10 +189,6 @@
 		deleteIcon = mdiDelete;
 		uploadIcon = mdiUpload;
 
-		mounted() {
-			console.log(this.files);
-		}
-
 		get iconColor(): string {
 			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';
 		}

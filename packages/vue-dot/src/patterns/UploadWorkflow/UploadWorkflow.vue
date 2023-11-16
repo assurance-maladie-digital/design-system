@@ -17,7 +17,7 @@
 			:show-view-btn="simpleMode ? true : showViewBtn"
 			:hide-last-divider="hideLastDivider"
 			:simple-mode="simpleMode"
-			@delete-file="simpleMode ? deleteFile : resetFile"
+			@delete-file="deleteResetFile"
 			@retry="uploadInline"
 			@upload="uploadInline"
 			@view-file="emitViewFileEvent"
@@ -64,6 +64,8 @@
 				:file="uploadedFile"
 			/>
 		</DialogBox>
+
+		<pre>{{ fileList[0] }}</pre>
 	</div>
 </template>
 
@@ -152,6 +154,14 @@
 			this.$refs.fileUpload.retry();
 			this.selectedItem = id;
 			this.inlineSelect = true;
+		}
+
+		deleteResetFile(index: number): void {
+			if (this.simpleMode) {
+				this.deleteFile(index);
+			} else {
+				this.resetFile(index);
+			}
 		}
 	}
 </script>
