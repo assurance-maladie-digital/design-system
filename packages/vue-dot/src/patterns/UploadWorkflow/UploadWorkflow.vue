@@ -13,7 +13,7 @@
 		<FileList
 			v-if="showFileList"
 			v-bind="options.fileList"
-			:files="fileList"
+			:files="fileList[0]"
 			:show-view-btn="simpleMode ? true : showViewBtn"
 			:hide-last-divider="hideLastDivider"
 			:simple-mode="simpleMode"

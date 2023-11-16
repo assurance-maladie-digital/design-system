@@ -4,7 +4,7 @@
 		:style="widthStyles"
 		class="vd-file-list"
 	>
-		<template v-for="(file, index) in files[0]">
+		<template v-for="(file, index) in files">
 			<VListItem
 				:key="index"
 				v-bind="options.listItem"
@@ -165,10 +165,14 @@
 
 	@Component<FileList>({
 		watch: {
-			simpleMode: {
+			files: {
 				handler(files: FileItem[]): void {
 					for (const file of files) {
-						file.state = FileStateEnum.SUCCESS;
+						if (file.state !== FileStateEnum.ERROR) {
+							file.state = FileStateEnum.SUCCESS;
+						} else {
+							file.state = FileStateEnum.ERROR;
+						}
 					}
 				},
 				immediate: true,
@@ -186,7 +190,7 @@
 		uploadIcon = mdiUpload;
 
 		mounted() {
-			console.log(this.files[0]);
+			console.log(this.files);
 		}
 
 		get iconColor(): string {
