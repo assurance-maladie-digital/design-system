@@ -89,7 +89,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state !== FileStateEnum.INITIAL"
+						v-if="file.state !== FileStateEnum.INITIAL && !hideDeleteBtn"
 						v-bind="options.deleteFileBtn"
 						@click="$emit('delete-file', index)"
 					>
@@ -143,6 +143,10 @@
 				required: true
 			},
 			showViewBtn: {
+				type: Boolean,
+				default: false
+			},
+			hideDeleteBtn: {
 				type: Boolean,
 				default: false
 			},
