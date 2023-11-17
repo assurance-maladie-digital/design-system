@@ -101,14 +101,6 @@
 	.v-overlay.v-overlay--active {
 		background-color: rgba(0, 0, 0, .48);
 	}
-
-	// Fix success color in FileList
-	.vd-file-list {
-		.success--text {
-			color: $vd-turquoise-darken-60 !important;
-			caret-color: $vd-turquoise-darken-60 !important;
-		}
-	}
 }
 
 // Fix font size (default for these elements is 16px)
