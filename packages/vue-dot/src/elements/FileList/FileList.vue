@@ -78,6 +78,7 @@
 						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
+						:class="hideDeleteBtn ? 'mr-0' : ''"
 						@click="$emit('view-file', file)"
 					>
 						<VIcon
