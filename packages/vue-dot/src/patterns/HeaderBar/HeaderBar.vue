@@ -39,9 +39,8 @@
 							<template #brand-content>
 								<slot name="brand-content" />
 							</template>
-
-							<slot name="secondary-logo" />
 						</LogoBrandSection>
+						<slot name="secondary-logo" />
 					</slot>
 
 					<VSpacer
