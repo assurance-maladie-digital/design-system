@@ -1,5 +1,29 @@
 ## v2.14.2
 
+**Version publiée le 20/11/2023.**
+
+Cette version comporte des correctifs sur Vue Dot.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **FiltersInline:** dispatch update value for parent component ([#3252](https://github.com/assurance-maladie-digital/design-system/pull/3252))
+  - **HeaderBar:** fix display both secondary-logo and brand-content ([#3253](https://github.com/assurance-maladie-digital/design-system/pull/3253))
+
+
+### Interne
+
+- 🔒 **Sécurité**
+  - **browserify-sign:** Mise à jour de la `v4.2.1` vers la `v4.2.2` ([#3239](https://github.com/assurance-maladie-digital/design-system/pull/3239))
+
+- ⬆️ **Dépendances**
+  - ⬆️ **monorepo:** Mise à jour vers la `v2.7.15` ([#3221](https://github.com/assurance-maladie-digital/design-system/pull/3221))
+  - ⬆️ **eslint-plugin-vue:** Mise à jour vers la `v9.18.0` ([#3229](https://github.com/assurance-maladie-digital/design-system/pull/3229))
+  - ⬆️ **nuxtjs:** Mise à jour vers la `v2.17.2` ([#3225](https://github.com/assurance-maladie-digital/design-system/pull/3225))
+  - ⬆️ **eslint-plugin-vue:** Mise à jour vers la `v9.18.1` ([#3238](https://github.com/assurance-maladie-digital/design-system/pull/3238))
+
+## v2.14.2
+
 **Version publiée le 20/10/2023.**
 
 Cette version comporte des correctifs sur Vue Dot.
