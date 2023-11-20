@@ -10,16 +10,15 @@
 
 	import { AxiosResponse } from '~/plugins/axios';
 
-	const file: AxiosResponse<string> = {
+	const file = {
 		data: 'test',
 		status: 200,
 		statusText: 'OK',
 		headers: {
 			'content-disposition': 'attachment; filename="attestation.txt"',
 			'content-type': 'text/plain'
-		},
-		config: {}
-	};
+		}
+	} as unknown as AxiosResponse<string>;
 
 	@Component
 	export default class DownloadBtnNameType extends Vue {

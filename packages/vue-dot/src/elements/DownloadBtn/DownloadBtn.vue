@@ -23,7 +23,7 @@
 	import deepMerge from 'deepmerge';
 	import { mapActions } from 'vuex';
 
-	import { AxiosResponse } from 'axios';
+	import { AxiosResponse, AxiosResponseHeaders } from 'axios';
 	import { parse } from 'content-disposition-header';
 
 	import { mdiDownload } from '@mdi/js';
@@ -34,7 +34,6 @@
 	import { NotificationObj } from '../../modules/notification/types';
 
 	import { StateEnum } from '../../constants/enums/StateEnum';
-	import { IndexedObject } from '../../types';
 	import { ContentHeadersEnum } from './ContentHeadersEnum';
 	import { FileInfo } from './types';
 
@@ -82,7 +81,7 @@
 			return dayjs().format('YYYY-MM-DD - HH[h]mm[m]ss[s]');
 		}
 
-		getFileInfo(headers: IndexedObject): FileInfo {
+		getFileInfo(headers: AxiosResponseHeaders): FileInfo {
 			const contentType = headers[ContentHeadersEnum.TYPE];
 			const contentDispositionHeader = headers[ContentHeadersEnum.DISPOSITION] as string;
 			let filename: string | null = null;
@@ -113,7 +112,7 @@
 
 			try {
 				const { data, headers } = await this.filePromise();
-				const { name, type } = this.getFileInfo(headers);
+				const { name, type } = this.getFileInfo(headers as AxiosResponseHeaders);
 
 				downloadFile(data, name, type);
 

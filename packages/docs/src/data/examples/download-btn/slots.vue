@@ -37,16 +37,15 @@
 
 	import { mdiDownload, mdiFile } from '@mdi/js';
 
-	const file: AxiosResponse<string> = {
+	const file = {
 		data: 'test',
 		status: 200,
 		statusText: 'OK',
 		headers: {
-			'content-disposition': 'attachment; filename="attestation.txt"',
-			'content-type': 'text/plain'
-		},
-		config: {}
-	};
+		'content-disposition': 'attachment; filename="attestation.txt"',
+		'content-type': 'text/plain'
+		}
+	} as unknown as AxiosResponse<string>;
 
 	@Component
 	export default class DownloadBtnSlots extends Vue {

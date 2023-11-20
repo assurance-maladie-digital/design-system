@@ -11,8 +11,7 @@ export function filePromise(): Promise<AxiosResponse<string>> {
 			headers: {
 				[ContentHeadersEnum.TYPE]: 'text/plain',
 				[ContentHeadersEnum.DISPOSITION]: 'attachment; filename="attestation.txt"'
-			},
-			config: {}
-		});
+			}
+		} as unknown as AxiosResponse<string>);
 	});
 }
