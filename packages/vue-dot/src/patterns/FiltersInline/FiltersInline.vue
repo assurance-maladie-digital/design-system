@@ -53,8 +53,14 @@
 
 				<slot
 					:on="{
-						input: value => $set(filter, 'value', value),
-						change: value => $set(filter, 'value', value)
+						input: value => {
+							$set(filter, 'value', value);
+							updateValue();
+						},
+						change: value => {
+							$set(filter, 'value', value);
+							updateValue();
+						}
 					}"
 					:attrs="{
 						value: filter.value

@@ -145,6 +145,7 @@ export class Filterable extends Props {
 			const newValue = filteredValue.length ? filteredValue : undefined;
 
 			this.$set(filter, 'value', newValue);
+			this.updateValue();
 
 			return;
 		}
@@ -156,6 +157,7 @@ export class Filterable extends Props {
 
 			if (isPeriodField) {
 				this.$set(filter, 'value', undefined);
+				this.updateValue();
 
 				return;
 			}
@@ -163,15 +165,18 @@ export class Filterable extends Props {
 			delete typedValue[chipValue];
 			this.$set(filter, 'value', typedValue);
 		}
+		this.updateValue();
 	}
 
 	resetFilter(filter: FilterItem): void {
 		this.$set(filter, 'value', undefined);
+		this.updateValue();
 	}
 
 	resetAllFilters(): void {
 		this.filters.forEach(filter => {
 			this.$set(filter, 'value', undefined);
+			this.updateValue();
 		});
 	}
 
