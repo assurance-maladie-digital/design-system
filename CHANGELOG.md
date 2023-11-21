@@ -1,6 +1,6 @@
-## v2.14.2
+## v2.14.3
 
-**Version publiée le 20/11/2023.**
+**Version publiée le 21/11/2023.**
 
 Cette version comporte des correctifs sur Vue Dot.
 
