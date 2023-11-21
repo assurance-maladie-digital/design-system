@@ -185,7 +185,7 @@
 				case FileStateEnum.SUCCESS: {
 					return {
 						icon: mdiCheckCircle,
-						color: 'success'
+						color: 'turquoise-darken-60'
 					};
 				}
 
