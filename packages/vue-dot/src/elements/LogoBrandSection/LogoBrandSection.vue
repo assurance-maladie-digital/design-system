@@ -87,7 +87,6 @@
 						{{ service.subTitle }}
 					</h2>
 				</slot>
-				<slot name="secondary-logo" />
 			</div>
 		</slot>
 	</VSheet>
