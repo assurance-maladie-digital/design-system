@@ -61,16 +61,18 @@ export class Filterable extends Props {
 				return [];
 			}
 
-			return [{
-				text: typedValue.toString(),
-				value: typedValue
-			}];
+			return [
+				{
+					text: typedValue.toString(),
+					value: typedValue
+				}
+			];
 		}
 
 		if (isArray) {
 			const typedValue = value as any[];
 
-			return typedValue.map(item => {
+			return typedValue.map((item) => {
 				if (typeof item !== 'object') {
 					return {
 						text: item.toString(),
@@ -87,23 +89,29 @@ export class Filterable extends Props {
 
 		if (isObject) {
 			const typedValue = value as Record<string, any>;
-			const isPeriodField = typedValue.from !== undefined && typedValue.to !== undefined;
+			const isPeriodField =
+				typedValue.from !== undefined && typedValue.to !== undefined;
 
 			if (isPeriodField) {
 				if (typedValue.from === null || typedValue.to === null) {
 					return [];
 				}
 
-				return [{
-					text: `${typedValue.from} – ${typedValue.to}`,
-					value: typedValue
-				}];
+				return [
+					{
+						text: `${typedValue.from} – ${typedValue.to}`,
+						value: typedValue
+					}
+				];
 			}
 
 			// Any object
-			return Object.keys(typedValue).map(key => {
+			return Object.keys(typedValue).map((key) => {
 				// Use text property if it exists, else use value property or default to key value
-				const text = typedValue[key].text || typedValue[key].value?.toString() || typedValue[key].toString();
+				const text =
+					typedValue[key].text ||
+					typedValue[key].value?.toString() ||
+					typedValue[key].toString();
 
 				return {
 					text,
@@ -130,7 +138,7 @@ export class Filterable extends Props {
 			const typedValue = value as any[];
 			const chipValue = chip.value as any;
 
-			const filteredValue = typedValue.filter(item => {
+			const filteredValue = typedValue.filter((item) => {
 				if (Array.isArray(chipValue)) {
 					return !chipValue.includes(item);
 				}
@@ -145,7 +153,6 @@ export class Filterable extends Props {
 			const newValue = filteredValue.length ? filteredValue : undefined;
 
 			this.$set(filter, 'value', newValue);
-			this.updateValue();
 
 			return;
 		}
@@ -153,11 +160,11 @@ export class Filterable extends Props {
 		if (isObject) {
 			const typedValue = value as Record<string, any>;
 			const chipValue = chip.value as any;
-			const isPeriodField = typedValue.from !== undefined && typedValue.to !== undefined;
+			const isPeriodField =
+				typedValue.from !== undefined && typedValue.to !== undefined;
 
 			if (isPeriodField) {
 				this.$set(filter, 'value', undefined);
-				this.updateValue();
 
 				return;
 			}
@@ -165,18 +172,15 @@ export class Filterable extends Props {
 			delete typedValue[chipValue];
 			this.$set(filter, 'value', typedValue);
 		}
-		this.updateValue();
 	}
 
 	resetFilter(filter: FilterItem): void {
 		this.$set(filter, 'value', undefined);
-		this.updateValue();
 	}
 
 	resetAllFilters(): void {
-		this.filters.forEach(filter => {
+		this.filters.forEach((filter) => {
 			this.$set(filter, 'value', undefined);
-			this.updateValue();
 		});
 	}
 
