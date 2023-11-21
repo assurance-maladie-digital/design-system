@@ -1,3 +1,43 @@
+## v2.14.3
+
+**Version publiée le 21/11/2023.**
+
+Cette version comporte des correctifs sur Vue Dot et la complétion de la documentation.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **FiltersInline:** Correction de la valeur ne se mettant pas à jour ([#3252](https://github.com/assurance-maladie-digital/design-system/pull/3252))
+
+- ♿️ **Accessibilité**
+  - **FileList:** Correction de la couleur de l'icône de succès ([#3255](https://github.com/assurance-maladie-digital/design-system/pull/3255))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **HeaderBar/FileList:** Ajout d'informations sur les slots ([#3262](https://github.com/assurance-maladie-digital/design-system/pull/3262))
+
+### Interne
+
+- 🔒 **Sécurité**
+  - **browserify-sign:** Mise à jour de la `v4.2.1` vers la `v4.2.2` ([#3239](https://github.com/assurance-maladie-digital/design-system/pull/3239))
+  - **axios:** Mise à jour de la `v0.27.2` à la `v1.6.0` ([#3258](https://github.com/assurance-maladie-digital/design-system/pull/3258))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3220](https://github.com/assurance-maladie-digital/design-system/pull/3220))
+
+- ⬆️ **Dépendances**
+  - **vue:** Mise à jour du monorepo vers la `v2.7.15` ([#3221](https://github.com/assurance-maladie-digital/design-system/pull/3221))
+  - **nuxtjs:** Mise à jour du monorepo vers la `v2.17.2` ([#3225](https://github.com/assurance-maladie-digital/design-system/pull/3225))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.18.1` ([#3238](https://github.com/assurance-maladie-digital/design-system/pull/3238))
+  - **core-js:** Mise à jour vers la `v3.33.3` ([#3240](https://github.com/assurance-maladie-digital/design-system/pull/3240))
+  - **@types/fs-extra:** Mise à jour vers la `v11.0.4` ([#3244](https://github.com/assurance-maladie-digital/design-system/pull/3244))
+  - **@babel/core:** Mise à jour vers la `v7.23.3` ([#3245](https://github.com/assurance-maladie-digital/design-system/pull/3245))
+  - **@nuxt/typescript-build:** Mise à jour vers la `v3.0.2` ([#3254](https://github.com/assurance-maladie-digital/design-system/pull/3254))
+  - **eslint-plugin-jsdoc:** Mise à jour vers la `v46.9.0` ([#3246](https://github.com/assurance-maladie-digital/design-system/pull/3246))
+  - **axios:** Mise à jour vers la `v1.6.2` ([#3259](https://github.com/assurance-maladie-digital/design-system/pull/3259))
+  - **@types/node:** Mise à jour vers la `v16.18.63` ([#3260](https://github.com/assurance-maladie-digital/design-system/pull/3260))
+
 ## v2.14.2
 
 **Version publiée le 20/10/2023.**
