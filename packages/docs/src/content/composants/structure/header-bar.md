@@ -31,7 +31,7 @@ Vous pouvez afficher un menu de navigation en utilisant la prop `navigation-item
 Vous pouvez afficher une marque partenaire en utilisant le slot `secondary-logo`.
 
 <doc-alert type="info">
-L’utilisation de ce slot va masquer le séparateur vertical après le logo de l’Assurance Maladie et masquer la signature du logo.
+L’utilisation de ce slot va masquer le séparateur vertical après le logo de l’Assurance Maladie et masquer la signature du logo. Le logo secondaire sera masqué.
 </doc-alert>
 
 <doc-example file="header-bar/secondary-logo-slot"></doc-example>
