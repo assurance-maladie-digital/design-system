@@ -21,10 +21,10 @@ Vous pouvez afficher de logo de l’Assurance Maladie accompagné de la marque s
 
 #### Marque partenaire
 
-Vous pouvez afficher une marque partenaire en utilisant le slot `secondary-logo`.
+Vous pouvez afficher une marque partenaire en utilisant le slot par défaut.
 
 <doc-alert type="info">
-L’utilisation de ce slot va masquer le séparateur vertical après le logo de l’Assurance Maladie et masquer la signature du logo.
+L’utilisation de ce slot va masquer le séparateur vertical après le logo de l’Assurance Maladie, la signature du logo, ainsi que le logo secondaire.
 </doc-alert>
 
 <doc-example file="logo-brand-section/slot"></doc-example>
