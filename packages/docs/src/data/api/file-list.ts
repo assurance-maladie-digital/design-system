@@ -26,7 +26,7 @@ export const api: Api = {
 				description: 'Affiche le bouton *Afficher le fichier*.'
 			},
 			{
-				name: "hide-delete-btn",
+				name: 'hide-delete-btn',
 				type: 'boolean',
 				default: false,
 				description: 'Masque le bouton *Supprimer*.'
