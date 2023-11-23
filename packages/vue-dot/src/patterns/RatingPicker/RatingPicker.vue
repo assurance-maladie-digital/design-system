@@ -9,19 +9,9 @@
 			:value="internalValue"
 			@input="setValue"
 		/>
-
-		<template v-if="hasAnswered">
-			<AlertWrapper
-				:class="{ 'mb-0': !displayAdditionalContent }"
-				outlined
-				type="success"
-				class="mt-4"
-			>
-				{{ locales.thanks }}
-			</AlertWrapper>
-
-			<slot v-if="displayAdditionalContent" />
-		</template>
+		<slot v-if="displayAdditionalContent" />
+		<slot name="success" />
+		<slot name="validation" />
 	</div>
 </template>
 
@@ -112,10 +102,6 @@
 			}
 
 			return undefined;
-		}
-
-		get hasAnswered(): boolean {
-			return this.value !== -1;
 		}
 
 		showAdditionalContent(value: number): void {
