@@ -8,19 +8,32 @@
 			label="Que pouvons-nous améliorer ?"
 			hide-details
 			outlined
-			class="mb-4"
+			class="my-4"
 		/>
+		<template
+			v-if="rating > -1"
+			#success
+		>
+			<AlertWrapper
+				outlined
+				type="success"
+				class="mt-4"
+			>
+				Merci pour votre réponse
+			</AlertWrapper>
+		</template>
 
-		<div class="d-flex">
-			<VSpacer />
-
+		<template
+			v-if="rating > -1"
+			#validation
+		>
 			<VBtn
 				right
 				color="primary"
 			>
 				Terminé
 			</VBtn>
-		</div>
+		</template>
 	</RatingPicker>
 </template>
 

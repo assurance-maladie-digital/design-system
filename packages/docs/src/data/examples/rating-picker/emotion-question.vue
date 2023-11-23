@@ -12,7 +12,7 @@
 			label="Que pouvons-nous améliorer ?"
 			hide-details
 			outlined
-			class="mb-4"
+			class="my-4"
 		/>
 
 		<VSelect
@@ -34,16 +34,30 @@
 			class="mb-4"
 		/>
 
-		<div class="d-flex">
-			<VSpacer />
+		<template
+			v-if="rating > 5 || rating > -1 && rating < 5 && finalRating > -1"
+			#success
+		>
+			<AlertWrapper
+				outlined
+				type="success"
+				class="mt-4"
+			>
+				Merci pour vos réponses
+			</AlertWrapper>
+		</template>
 
+		<template
+			v-if="rating > 5 || rating > -1 && rating < 5 && finalRating > -1"
+			#validation
+		>
 			<VBtn
 				right
 				color="primary"
 			>
 				Terminé
 			</VBtn>
-		</div>
+		</template>
 	</RatingPicker>
 </template>
 

@@ -6,19 +6,33 @@
 	>
 		<FormField
 			v-model="field"
-			class="mb-4"
+			class="my-4"
 		/>
 
-		<div class="d-flex">
-			<VSpacer />
+		<template
+			v-if="rating > 5 || rating > -1 && rating < 5 && field.value"
+			#success
+		>
+			<AlertWrapper
+				outlined
+				type="success"
+				class="mt-4"
+			>
+				Merci pour votre réponse
+			</AlertWrapper>
+		</template>
 
+		<template
+			v-if="rating > 5 || rating > -1 && rating < 5 && field.value"
+			#validation
+		>
 			<VBtn
 				right
 				color="primary"
 			>
 				Terminé
 			</VBtn>
-		</div>
+		</template>
 	</RatingPicker>
 </template>
 
