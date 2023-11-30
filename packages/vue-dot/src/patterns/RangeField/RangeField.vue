@@ -9,7 +9,8 @@
 				:value="minValue"
 				:label="locales.minLabel"
 				:outlined="outlined"
-				@input="updateMinValue"
+				type="number"
+				@change="updateMinValue"
 			/>
 
 			<VTextField
@@ -17,7 +18,8 @@
 				:value="maxValue"
 				:label="locales.maxLabel"
 				:outlined="outlined"
-				@input="updateMaxValue"
+				type="number"
+				@change="updateMaxValue"
 			/>
 		</div>
 
@@ -64,7 +66,7 @@
 				default: 0
 			},
 			value: {
-				type: String,
+				type: Array as () => number[] | undefined,
 				default: undefined
 			},
 			outlined: {
@@ -117,12 +119,12 @@
 			return this.$vuetify.breakpoint.xs;
 		}
 
-		updateMinValue(value: number): void {
-			this.updateRange(RangeEnum.MIN, value);
+		updateMinValue(value: string): void {
+			this.updateRange(RangeEnum.MIN, Number(value));
 		}
 
-		updateMaxValue(value: number): void {
-			this.updateRange(RangeEnum.MAX, value);
+		updateMaxValue(value: string): void {
+			this.updateRange(RangeEnum.MAX, Number(value));
 		}
 
 		updateRange(index: RangeEnum, value: number): void {
@@ -149,3 +151,21 @@
 		}
 	}
 </script>
+
+<style scoped>
+	/* Hide the arrows on the fields */
+
+	/* Chrome like browsers */
+	::v-deep .v-text-field input[type=number]::-webkit-outer-spin-button,
+	::v-deep .v-text-field input[type=number]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	::v-deep .v-text-field input[type=number] {
+		appearance: textfield;
+		-moz-appearance: textfield;
+	}
+
+</style>
