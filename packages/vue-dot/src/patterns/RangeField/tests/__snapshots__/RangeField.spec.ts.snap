@@ -6,14 +6,14 @@ exports[`RangeField renders correctly 1`] = `
     <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field ma-3">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-2" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Valeur min</label><input id="input-2" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-2" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Valeur min</label><input id="input-2" type="number"></div>
         </div>
       </div>
     </div>
     <div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field ma-3">
       <div class="v-input__control">
         <div class="v-input__slot">
-          <div class="v-text-field__slot"><label for="input-3" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Valeur max</label><input id="input-3" type="text"></div>
+          <div class="v-text-field__slot"><label for="input-3" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Valeur max</label><input id="input-3" type="number"></div>
         </div>
       </div>
     </div>
