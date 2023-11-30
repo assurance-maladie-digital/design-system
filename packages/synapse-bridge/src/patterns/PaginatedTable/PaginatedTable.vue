@@ -2,10 +2,10 @@
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
 
-import { DataOptions } from "vuetify/types";
+import { DataOptions } from "./types";
 import { VDataTable } from "vuetify/labs/VDataTable";
 
-import { LocalStorageUtility } from "../../helpers/localStorageUtility";
+import { LocalStorageUtility } from "@/helpers/localStorageUtility";
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -28,7 +28,7 @@ export default defineComponent({
 	data() {
 		return {
 			localStorageUtility: this.newLocalStorageInstance(),
-			localOptions: {} as DataOptions,
+			localOptions: {} as DataOptions
 		};
 	},
 	watch: {
@@ -39,13 +39,11 @@ export default defineComponent({
 	computed: {
 		optionsCalc: {
 			get(): DataOptions {
-				const PREFIX = "pagination";
-
-				if (this.suffix) {
-					return `${PREFIX}-${this.suffix}`;
+				if (Object.keys(this.localOptions).length) {
+					return this.localOptions;
 				}
 
-				return PREFIX;
+				return this.options;
 			},
 			set(value: DataOptions): void {
 				if (Object.keys(this.localOptions).length) {
@@ -66,6 +64,7 @@ export default defineComponent({
 	},
 	methods: {
 		newLocalStorageInstance(): LocalStorageUtility {
+			// TODO : Fix this $vd
 			if (!this.$vd || !this.$vd.localStorageControl) {
 				return new LocalStorageUtility();
 			}
@@ -78,7 +77,7 @@ export default defineComponent({
 		},
 	},
 	created() {
-		console.log(this.LocalStorageUtility);
+		console.log(this.$attrs);
 		this.localOptions =
 			this.localStorageUtility.getItem(this.storageKey) ||
 			({} as DataOptions);
@@ -86,14 +85,18 @@ export default defineComponent({
 });
 </script>
 
-
 <template>
 	<VDataTable v-if="$attrs" v-bind="$attrs" :options.sync="optionsCalc">
 		<template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
-			<slot :name="slot" v-bind="scope"/>
+			<slot :name="slot" v-bind="scope" />
 		</template>
+		<!-- <slot
+			v-for="slot in Object.keys($slots)"
+			:slot="slot"
+			:name="slot"
+		/> -->
 	</VDataTable>
 
 	<pre>{{ options }}</pre>
-	<pre>{{ optionsCalc }}</pre>
+	<pre>{{ localOptions }}</pre>
 </template>
