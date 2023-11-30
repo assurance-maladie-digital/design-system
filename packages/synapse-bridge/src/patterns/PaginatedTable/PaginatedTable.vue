@@ -77,7 +77,6 @@ export default defineComponent({
 		},
 	},
 	created() {
-		console.log(this.$attrs);
 		this.localOptions =
 			this.localStorageUtility.getItem(this.storageKey) ||
 			({} as DataOptions);
@@ -87,16 +86,8 @@ export default defineComponent({
 
 <template>
 	<VDataTable v-if="$attrs" v-bind="$attrs" :options.sync="optionsCalc">
-		<template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+		<template v-for="slot of $slots" v-slot:[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
-		<!-- <slot
-			v-for="slot in Object.keys($slots)"
-			:slot="slot"
-			:name="slot"
-		/> -->
 	</VDataTable>
-
-	<pre>{{ options }}</pre>
-	<pre>{{ localOptions }}</pre>
 </template>
