@@ -30,7 +30,7 @@
 							{{ fullName }}
 						</span>
 
-						<span class="grey--text text--darken-2">
+						<span class="grey--text text--darken-20">
 							{{ additionalInformation }}
 						</span>
 					</span>

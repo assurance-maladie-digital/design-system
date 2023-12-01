@@ -11,7 +11,7 @@
 				:href="social.href"
 				target="_blank"
 				rel="noopener noreferrer"
-				color="grey darken-2"
+				color="grey darken-20"
 				icon
 				class="mx-1"
 			>
