@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { propValidator } from "../../helpers/propValidator";
+import { propValidator } from "@/helpers/propValidator";
 
 import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from "./AlertTypeEnum";
 import { locales } from "./locales";
@@ -50,6 +50,11 @@ export default defineComponent({
 			return icons[this.type];
 		},
 	},
+	methods: {
+		dismissAlert() {
+			this.$emit("update:modelValue", false);
+		},
+	}
 });
 </script>
 
@@ -75,13 +80,13 @@ export default defineComponent({
 			<slot />
 		</template>
 
-		<template v-if="dismissible" #close="{ toggle }">
+		<template v-if="dismissible" #close>
 			<VBtn
 				:color="outlined ? undefined : 'primary'"
 				:ripple="false"
 				variant="text"
 				class="vd-close-btn pl-0 pr-1 ml-4"
-				@click="toggle"
+				@click="dismissAlert"
 			>
 				<VIcon size="small" class="mr-1">
 					{{ closeIcon }}
