@@ -30,7 +30,7 @@ export default defineComponent({
 		outlined: {
 			type: Boolean,
 			default: false,
-		}
+		},
 	},
 	data() {
 		return {
@@ -54,7 +54,7 @@ export default defineComponent({
 		dismissAlert() {
 			this.$emit("update:modelValue", false);
 		},
-	}
+	},
 });
 </script>
 
@@ -63,9 +63,9 @@ export default defineComponent({
 		v-bind="$attrs"
 		:type="type"
 		:class="type"
+		:style="!outlined ? 'border-left: 4px solid' : ''"
 		:variant="outlined ? 'outlined' : 'tonal'"
 		:closable="dismissible"
-		border="start"
 		class="vd-alert-wrapper"
 	>
 		<template #prepend>
@@ -100,26 +100,32 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
-
 @mixin redesign($type, $map) {
-	color: rgba(0, 0, 0, 0.87) !important;
-
-	.v-alert__border {
-		border-inline-start-width: 4px !important;
+	.v-alert__close {
+		.vd-close-btn {
+			width: auto;
+			height: auto;
+		}
 	}
 
-	&.#{$type} {
+	&.#{$type}.v-alert--variant-tonal {
 		background: map-get($map, "background") !important;
+		color: map-get($map, "outline-color") !important;
+	}
+
+	&.#{$type}.v-alert--variant-outlined {
+		background: transparent !important;
 		border-color: map-get($map, "border") !important;
 	}
 
 	&.#{$type},
 	&.text-#{$type} {
-		.vd-alert-wrapper > .v-icon {
+		.v-alert__prepend > .v-icon {
 			width: 56px !important;
 			height: 56px !important;
+			padding: 16px !important;
 			flex: none;
-			background: map-get($map, "icon-bg");
+			background: map-get($map, "icon-bg") !important;
 			:deep(svg) {
 				fill: map-get($map, "accent") !important;
 			}
@@ -138,6 +144,9 @@ export default defineComponent({
 			&:focus-visible {
 				outline: 2px solid;
 			}
+			&:hover {
+				background: transparent !important;
+			}
 		}
 
 		@media screen and (max-width: 640px) {
@@ -146,7 +155,7 @@ export default defineComponent({
 				align-items: flex-start;
 			}
 
-			.vd-alert-wrapper > .v-icon {
+			.v-alert__prepend > .v-icon {
 				width: 24px;
 				height: 24px;
 				background: none;
@@ -170,51 +179,55 @@ export default defineComponent({
 			border-color: map-get($map, "accent") !important;
 		}
 	}
+}
 
-	.v-alert {
-		@include redesign(
-			"warning",
-			(
-				"background": $vd-yellow-lighten-80,
-				"accent": $vd-yellow-darken-60,
-				"border": $vd-yellow-darken-20,
-				"icon": $vd-yellow-darken-20,
-				"icon-bg": $vd-yellow-lighten-90,
-			)
-		);
+.v-alert {
+	@include redesign(
+		"warning",
+		(
+			"background": $vd-yellow-lighten-80,
+			"accent": $vd-yellow-darken-60,
+			"border": $vd-yellow-darken-60,
+			"icon": $vd-yellow-darken-60,
+			"icon-bg": $vd-yellow-lighten-90,
+			"outline-color": $vd-grey-darken-80,
+		)
+	);
 
-		@include redesign(
-			"success",
-			(
-				"background": $vd-turquoise-lighten-80,
-				"accent": $vd-turquoise-darken-60,
-				"border": $vd-turquoise-darken-60,
-				"icon": $vd-turquoise-darken-60,
-				"icon-bg": $vd-turquoise-lighten-90,
-			)
-		);
+	@include redesign(
+		"success",
+		(
+			"background": $vd-turquoise-lighten-80,
+			"accent": $vd-turquoise-darken-60,
+			"border": $vd-turquoise-darken-60,
+			"icon": $vd-turquoise-darken-60,
+			"icon-bg": $vd-turquoise-lighten-90,
+			"outline-color": $vd-grey-darken-80,
+		)
+	);
 
-		@include redesign(
-			"error",
-			(
-				"background": $vd-orange-lighten-80,
-				"accent": $vd-orange-darken-20,
-				"border": $vd-orange-darken-20,
-				"icon": $vd-orange-darken-20,
-				"icon-bg": $vd-orange-lighten-90,
-			)
-		);
+	@include redesign(
+		"error",
+		(
+			"background": $vd-orange-lighten-80,
+			"accent": $vd-orange-darken-20,
+			"border": $vd-orange-darken-20,
+			"icon": $vd-orange-darken-20,
+			"icon-bg": $vd-orange-lighten-90,
+			"outline-color": $vd-grey-darken-80,
+		)
+	);
 
-		@include redesign(
-			"info",
-			(
-				"background": $vd-am-blue-lighten-80,
-				"accent": $vd-am-blue-base,
-				"border": $vd-am-blue-base,
-				"icon": $vd-am-blue-base,
-				"icon-bg": $vd-am-blue-lighten-90,
-			)
-		);
-	}
+	@include redesign(
+		"info",
+		(
+			"background": $vd-am-blue-lighten-80,
+			"accent": $vd-am-blue-base,
+			"border": $vd-am-blue-base,
+			"icon": $vd-am-blue-base,
+			"icon-bg": $vd-am-blue-lighten-90,
+			"outline-color": $vd-grey-darken-80,
+		)
+	);
 }
 </style>
