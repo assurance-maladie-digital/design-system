@@ -101,26 +101,75 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
 
-@mixin redesign($type, $map) {
-	:deep(.v-alert__close) {
-		align-self: center;
-		.vd-close-btn {
-			font-size: 0.9rem;
-			width: auto;
-			height: auto;
-			height: 36px;
-			min-width: 64px;
-			padding: 0 16px;
-			border-radius: 4px;
-			&:hover {
-				background: transparent !important;
-			}
-		}
-		.v-btn__overlay {
-			background: transparent;
+:deep(.v-alert__close) {
+	align-self: center;
+	.vd-close-btn {
+		font-size: 0.9rem;
+		width: auto;
+		height: auto;
+		height: 36px;
+		min-width: 64px;
+		padding: 0 16px;
+		border-radius: 4px;
+		&:hover {
+			background: transparent !important;
 		}
 	}
+	.v-btn__overlay {
+		background: transparent;
+	}
+}
 
+.v-alert__prepend {
+	.v-icon {
+		width: 56px !important;
+		height: 56px !important;
+		padding: 16px;
+		flex: none;
+	}
+}
+
+.v-alert__dismissible {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.vd-close-btn {
+	&::before {
+		content: none;
+	}
+
+	&:focus-visible {
+		outline: 2px solid;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.v-alert__prepend {
+		.v-icon {
+			width: 24px !important;
+			height: 24px !important;
+			background: transparent !important;
+			margin-bottom: 16px;
+			padding: 0;
+		}
+	}
+	.vd-alert-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.vd-close-btn {
+		margin-left: 0 !important;
+		margin-top: 16px;
+	}
+	:deep(.v-alert__close) {
+		align-self: flex-end;
+	}
+}
+
+@mixin redesign($type, $map) {
 	&.#{$type}.v-alert--variant-tonal {
 		background: map-get($map, "background") !important;
 		color: map-get($map, "outline-color") !important;
@@ -134,28 +183,9 @@ export default defineComponent({
 	&.#{$type},
 	&.text-#{$type} {
 		.v-alert__prepend > .v-icon {
-			width: 56px !important;
-			height: 56px !important;
-			padding: 16px !important;
-			flex: none;
-			background: map-get($map, "icon-bg") !important;
+			background: map-get($map, "icon-bg");
 			:deep(svg) {
-				fill: map-get($map, "accent") !important;
-			}
-		}
-
-		.v-alert__dismissible {
-			margin-right: 0;
-			margin-left: 0;
-		}
-
-		.vd-close-btn {
-			&::before {
-				content: none;
-			}
-
-			&:focus-visible {
-				outline: 2px solid;
+				fill: map-get($map, "accent");
 			}
 		}
 	}
@@ -167,26 +197,6 @@ export default defineComponent({
 		.vd-close-btn {
 			color: map-get($map, "accent") !important;
 			border-color: map-get($map, "accent") !important;
-		}
-	}
-
-	@media screen and (max-width: 640px) {
-		:deep(.v-alert__wrapper) {
-			flex-direction: column;
-			align-items: flex-start;
-		}
-
-		.v-alert__prepend > .v-icon {
-			width: 24px;
-			height: 24px;
-			background: none;
-			margin-bottom: 16px;
-		}
-
-		.vd-close-btn {
-			margin-left: 0 !important;
-			margin-top: 16px;
-			align-self: flex-end;
 		}
 	}
 }
