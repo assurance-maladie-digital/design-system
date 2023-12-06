@@ -100,11 +100,24 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
+
 @mixin redesign($type, $map) {
-	.v-alert__close {
+	:deep(.v-alert__close) {
+		align-self: center;
 		.vd-close-btn {
+			font-size: 0.9rem;
 			width: auto;
 			height: auto;
+			height: 36px;
+			min-width: 64px;
+			padding: 0 16px;
+			border-radius: 4px;
+			&:hover {
+				background: transparent !important;
+			}
+		}
+		.v-btn__overlay {
+			background: transparent;
 		}
 	}
 
@@ -144,29 +157,6 @@ export default defineComponent({
 			&:focus-visible {
 				outline: 2px solid;
 			}
-			&:hover {
-				background: transparent !important;
-			}
-		}
-
-		@media screen and (max-width: 640px) {
-			:deep(.v-alert__wrapper) {
-				flex-direction: column;
-				align-items: flex-start;
-			}
-
-			.v-alert__prepend > .v-icon {
-				width: 24px;
-				height: 24px;
-				background: none;
-				margin-bottom: 16px;
-			}
-
-			.vd-close-btn {
-				margin-left: 0 !important;
-				margin-top: 16px;
-				align-self: flex-end;
-			}
 		}
 	}
 
@@ -177,6 +167,26 @@ export default defineComponent({
 		.vd-close-btn {
 			color: map-get($map, "accent") !important;
 			border-color: map-get($map, "accent") !important;
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		:deep(.v-alert__wrapper) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.v-alert__prepend > .v-icon {
+			width: 24px;
+			height: 24px;
+			background: none;
+			margin-bottom: 16px;
+		}
+
+		.vd-close-btn {
+			margin-left: 0 !important;
+			margin-top: 16px;
+			align-self: flex-end;
 		}
 	}
 }
