@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`AlertWrapper > renders correctly 1`] = `<valert data-v-3e25d558="" type="info" class="info vd-alert-wrapper" style="border-left: 4px solid;" variant="tonal" closable="false"></valert>`;
+
+exports[`AlertWrapper > renders correctly with props 1`] = `<v-alert-stub data-v-3e25d558="" title="title" type="success" class="success vd-alert-wrapper" border="false" closable="false" closeicon="$close" closelabel="$vuetify.close" modelvalue="true" prominent="false" style="border-left: 4px solid;" density="default" tag="div" variant="tonal" message="message"></v-alert-stub>`;
+
 exports[`BackToTopBtn > renders correctly 1`] = `<valert data-v-3e25d558="" type="info" class="info vd-alert-wrapper" variant="tonal" closable="false" border="start"></valert>`;
