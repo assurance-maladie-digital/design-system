@@ -43,6 +43,7 @@ describe("AlertWrapper", () => {
 				title: "title",
 				message: "message",
 				type: "success",
+				outlined: true,
 			},
 			global: {
 				plugins: [vuetify],
