@@ -16,9 +16,6 @@ describe("DownloadBtn", () => {
 			propsData: {
 				filePromise,
 			},
-			slots: {
-				default: "justificatif.pdf",
-			},
 			global: {
 				plugins: [vuetify],
 			},
@@ -38,9 +35,6 @@ describe("DownloadBtn", () => {
 					download: downloadMock,
 				},
 				plugins: [vuetify],
-			},
-			slots: {
-				default: "justificatif.pdf",
 			},
 		});
 

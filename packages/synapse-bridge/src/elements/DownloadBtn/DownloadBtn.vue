@@ -1,20 +1,3 @@
-<template>
-	<VBtn
-		v-bind="btnOptions"
-		:loading="state === StateEnum.PENDING"
-		class="vd-download-btn"
-		@click.native="download"
-	>
-		<slot name="icon">
-			<VIcon v-bind="options.icon">
-				{{ downloadIcon }}
-			</VIcon>
-		</slot>
-
-		<slot />
-	</VBtn>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
@@ -28,38 +11,35 @@ import { parse } from "content-disposition-header";
 
 import { mdiDownload } from "@mdi/js";
 
-import { downloadFile } from "../../functions/downloadFile";
+import { downloadFile } from "@/functions/downloadFile";
 
-import { customizable, Options } from "../../mixins/customizable";
+import { customizable, Options } from "@/mixins/customizable";
 
-import { StateEnum } from "../../constants/enums/StateEnum";
-import { IndexedObject } from "../../types";
+import { StateEnum } from "@/constants/enums/StateEnum";
+import { IndexedObject } from "@/types";
 import { ContentHeadersEnum } from "./ContentHeadersEnum";
 import { FileInfo } from "./types";
 
 import { config } from "./config";
 import { locales } from "./locales";
 
-const Props = {
-	filePromise: {
-		type: Function as PropType<() => Promise<AxiosResponse<Blob>>>,
-		required: true,
-	},
-	fallbackFilename: {
-		type: String,
-		default: undefined,
-	},
-	notification: {
-		type: [Boolean, String],
-		default: locales.downloadSuccess,
-	},
-};
-
 export default defineComponent({
 	inheritAttrs: false,
 	mixins: [customizable(config)],
+	emits: ["error"],
 	props: {
-		...Props,
+		filePromise: {
+			type: Function as PropType<() => Promise<AxiosResponse<Blob>>>,
+			required: true,
+		},
+		fallbackFilename: {
+			type: String,
+			default: undefined,
+		},
+		notification: {
+			type: [Boolean, String],
+			default: locales.downloadSuccess,
+		},
 	},
 	data() {
 		return {
@@ -123,6 +103,23 @@ export default defineComponent({
 	},
 });
 </script>
+
+<template>
+	<VBtn
+		v-bind="btnOptions"
+		:loading="state === StateEnum.PENDING"
+		class="vd-download-btn"
+		@click="download"
+	>
+		<slot name="icon">
+			<VIcon v-bind="options.icon">
+				{{ downloadIcon }}
+			</VIcon>
+		</slot>
+
+		<slot />
+	</VBtn>
+</template>
 
 <style lang="scss" scoped>
 .vd-download-btn :deep() {
