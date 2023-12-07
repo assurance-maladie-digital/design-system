@@ -10,8 +10,27 @@ describe("RangeField", () => {
 			global: {
 				plugins: [vuetify],
 			},
+			propsData: {
+				value: [50, 80],
+				min: 0,
+				max: 100,
+			},
 		});
 
-		expect(wrapper.html()).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("renders correctly with no value", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				min: 0,
+				max: 100,
+			},
+		});
+
+		expect(wrapper).toMatchSnapshot();
 	});
 });
