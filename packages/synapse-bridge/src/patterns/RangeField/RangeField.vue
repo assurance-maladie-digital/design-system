@@ -25,7 +25,7 @@ export default defineComponent({
 			default: 0,
 		},
 		value: {
-			type: String,
+			type: Array as () => number[] | undefined,
 			default: undefined,
 		},
 		outlined: {
@@ -69,11 +69,11 @@ export default defineComponent({
 	},
 	methods: {
 		updateMinValue(value: number): void {
-			this.updateRange(RangeEnum.MIN, value);
+			this.updateRange(RangeEnum.MIN, Number(value));
 		},
 
 		updateMaxValue(value: number): void {
-			this.updateRange(RangeEnum.MAX, value);
+			this.updateRange(RangeEnum.MAX, Number(value));
 		},
 
 		updateRange(index: RangeEnum, value: number): void {
