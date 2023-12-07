@@ -8,32 +8,29 @@ import { locales } from "../locales";
 import { ErrorEvent } from "../types";
 import { ErrorCodes } from "../errorCodes";
 
-const Props = {
-	multiple: {
-		type: Boolean,
-		default: false,
-	},
-	fileSizeMax: {
-		type: Number,
-		default: 10_485_760, // 10MB
-	},
-	fileSizeUnits: {
-		type: Array as PropType<string[]>,
-		default: () => locales.fileSizeUnits,
-	},
-	allowedExtensions: {
-		type: Array as PropType<string[]>,
-		default: (): string[] => ["pdf", "jpg", "jpeg", "png"],
-	},
-	accept: {
-		type: String,
-		default: undefined,
-	},
-};
-
 export default defineComponent({
-	mixins: [Props],
-	props: Props,
+	props: {
+		multiple: {
+			type: Boolean,
+			default: false,
+		},
+		fileSizeMax: {
+			type: Number,
+			default: 10_485_760, // 10MB
+		},
+		fileSizeUnits: {
+			type: Array as PropType<string[]>,
+			default: () => locales.fileSizeUnits,
+		},
+		allowedExtensions: {
+			type: Array as PropType<string[]>,
+			default: (): string[] => ["pdf", "jpg", "jpeg", "png"],
+		},
+		accept: {
+			type: String,
+			default: undefined,
+		},
+	},
 	data() {
 		return {
 			files: [] as File[],

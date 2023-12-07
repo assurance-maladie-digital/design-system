@@ -7,6 +7,7 @@ import { HTMLInputEvent } from "../types";
 
 export default defineComponent({
 	mixins: [FileValidation],
+	emits: ["change"],
 	data() {
 		return {
 			$refs: {} as Refs<{

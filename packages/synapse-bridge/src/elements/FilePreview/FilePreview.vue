@@ -29,7 +29,7 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
-			fileURL: ''
+			fileURL: "",
 		};
 	},
 	watch: {
@@ -37,19 +37,19 @@ export default defineComponent({
 			handler(): void {
 				this.getFileURL();
 			},
-			immediate: true
-		}
+			immediate: true,
+		},
 	},
 	computed: {
 		filePreviewOptions(): Options {
 			return deepMerge<Options>(config, this.options);
 		},
 		isPdf(): boolean {
-			return this.file?.type === 'application/pdf';
+			return this.file?.type === "application/pdf";
 		},
 		isImage(): boolean {
 			return this.file ? /^image\/.*$/.test(this.file.type) : false;
-		}
+		},
 	},
 	methods: {
 		getFileURL(): void {
@@ -60,8 +60,8 @@ export default defineComponent({
 		},
 		revokeFileURL(): void {
 			URL.revokeObjectURL(this.fileURL);
-		}
-	}
+		},
+	},
 });
 </script>
 
