@@ -20,7 +20,7 @@ describe("RangeField", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly with no value", () => {
+	it("renders correctly with updateMinValue function", () => {
 		const wrapper = shallowMount(RangeField, {
 			global: {
 				plugins: [vuetify],
@@ -31,6 +31,56 @@ describe("RangeField", () => {
 			},
 		});
 
-		expect(wrapper).toMatchSnapshot();
+		wrapper.vm.updateMinValue(50);
+
+		expect(wrapper.vm.rangeValue).toEqual([50, 100]);
+	});
+
+	it("renders correctly updateMaxValue function", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				min: 0,
+				max: 100,
+			},
+		});
+
+		wrapper.vm.updateMaxValue(90);
+
+		expect(wrapper.vm.rangeValue).toEqual([0, 90]);
+	});
+
+	it("renders correctly updateRange function", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				min: 0,
+				max: 100,
+			},
+		});
+
+		wrapper.vm.updateRange(0, 90);
+
+		expect(wrapper.vm.rangeValue).toEqual([90, 100]);
+	});
+
+	it("renders correctly setRangeValue function", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				min: 0,
+				max: 100,
+			},
+		});
+
+		wrapper.vm.setRangeValue(0, 90);
+
+		expect(wrapper.vm.rangeValue[0]).toEqual(90);
 	});
 });
