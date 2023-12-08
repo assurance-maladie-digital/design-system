@@ -80,11 +80,11 @@ export default defineComponent({
 			const [min, max] = this.rangeValue;
 
 			if (value < min) {
-				this.setRangeValue(RangeEnum.MIN, value);
+				this.setRangeValue(RangeEnum.MIN, this.minValue);
 			}
 
 			if (value > max) {
-				this.setRangeValue(RangeEnum.MAX, value);
+				this.setRangeValue(RangeEnum.MAX, this.maxValue);
 			}
 
 			this.setRangeValue(index, value);
