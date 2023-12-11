@@ -1,14 +1,14 @@
-import { describe, it, expect } from "vitest";
-import { shallowMount, mount } from "@vue/test-utils";
-import { vuetify } from "@tests/unit/setup";
+import { describe, it, expect } from 'vitest';
+import { shallowMount, mount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import UserMenuBtn from "../";
+import UserMenuBtn from '../';
 
-describe("UserMenuBtn", () => {
-	it("renders correctly", () => {
+describe('UserMenuBtn', () => {
+	it('renders correctly', () => {
 		const wrapper = shallowMount(UserMenuBtn, {
 			props: {
-				fullName: "Firstname Lastname",
+				fullName: 'Firstname Lastname',
 			},
 			global: {
 				plugins: [vuetify],
@@ -18,10 +18,10 @@ describe("UserMenuBtn", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly without user icon", () => {
+	it('renders correctly without user icon', () => {
 		const wrapper = shallowMount(UserMenuBtn, {
 			props: {
-				fullName: "Firstname Lastname",
+				fullName: 'Firstname Lastname',
 				hideUserIcon: true,
 			},
 			global: {
@@ -32,10 +32,10 @@ describe("UserMenuBtn", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly in mobile mode", () => {
+	it('renders correctly in mobile mode', () => {
 		const wrapper = mount(UserMenuBtn, {
 			props: {
-				fullName: "Firstname Lastname",
+				fullName: 'Firstname Lastname',
 				mobileVersion: true,
 			},
 			global: {
@@ -46,28 +46,28 @@ describe("UserMenuBtn", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly in mobile mode with additional information", () => {
+	it('renders correctly in mobile mode with additional information', () => {
 		const wrapper = mount(UserMenuBtn, {
 			props: {
-				fullName: "Firstname Lastname",
+				fullName: 'Firstname Lastname',
 				mobileVersion: true,
-				additionalInformation: "Additional information",
+				additionalInformation: 'Additional information',
 			},
 			global: {
 				plugins: [vuetify],
 			},
 			slots: {
-				default: "<p>the menu</p>",
+				default: '<p>the menu</p>',
 			},
 		});
 
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly in mobile mode without user icon", () => {
+	it('renders correctly in mobile mode without user icon', () => {
 		const wrapper = mount(UserMenuBtn, {
 			props: {
-				fullName: "Firstname Lastname",
+				fullName: 'Firstname Lastname',
 				mobileVersion: true,
 				hideUserIcon: true,
 			},
@@ -79,13 +79,13 @@ describe("UserMenuBtn", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly without the logout button", () => {
+	it('renders correctly without the logout button', () => {
 		const wrapper = mount(UserMenuBtn, {
 			props: {
-				fullName: "Firstname Lastname",
+				fullName: 'Firstname Lastname',
 				hideLogoutBtn: true,
-				additionalInformation: "Additional information",
-				label: "Label",
+				additionalInformation: 'Additional information',
+				label: 'Label',
 			},
 			global: {
 				plugins: [vuetify],
@@ -95,24 +95,21 @@ describe("UserMenuBtn", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly when the breakpoint is xs", () => {
-
-	it("Display the menu on click", async () => {
+	it('Display the menu on click', async () => {
 		const wrapper = mount(UserMenuBtn, {
 			props: {
-				fullName: "Firstname Lastname",
+				fullName: 'Firstname Lastname',
 			},
 			global: {
 				plugins: [vuetify],
 			},
 			slots: {
-				default: "<p>the menu</p>",
+				default: '<p>the menu</p>',
 			},
 		});
 
-		await wrapper.find(".v-btn").trigger("click");
-		expect(wrapper.find(".v-btn").attributes()["aria-expanded"]).toBe("true");
-		expect(wrapper.html()).toContain("the menu");
+		await wrapper.find('.v-btn').trigger('click');
+		expect(wrapper.find('.v-btn').attributes()['aria-expanded']).toBe('true');
+		expect(wrapper.html()).toContain('the menu');
 	});
 });
-
