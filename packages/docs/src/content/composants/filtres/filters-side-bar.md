@@ -24,6 +24,15 @@ De ce fait, si vous combinez les valeurs d’un champ dans une seule puce, le no
 
 <doc-example file="filters-side-bar/chip-format"></doc-example>
 
+#### Filtres Multiples
+
+Vous avez la possibilité d'utiliser plusieurs composants de filtres (patterns filters) pour un seul et même filtre. Cela offre la flexibilité de modifier un filtre à différents endroits sur une page.
+
+Pour ce faire, vous devez utiliser la propriété `filters` et lui passer un tableau de modèles de filtres.
+Vous devez utiliser la même propriété `filters` réactive pour chaque composant de filtre.
+
+<doc-example file="filters-inline/filters-combination"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
