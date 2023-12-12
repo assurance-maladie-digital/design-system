@@ -4,8 +4,8 @@ import { defineComponent } from "vue";
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { customizable } from "../../mixins/customizable";
-import { Refs } from "../../types";
+import { customizable } from "@/mixins/customizable";
+import { Refs } from "@/types";
 
 import { mdiClose } from "@mdi/js";
 
@@ -61,7 +61,7 @@ export default defineComponent({
 		async getSelectableElements(): Promise<HTMLElement[]> {
 			await this.$nextTick();
 			const elements = Array.from(
-				this.$refs.dialogContent.querySelectorAll(
+				this.$refs.dialogContent?.querySelectorAll(
 					"button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"
 				)
 			) as HTMLElement[];
