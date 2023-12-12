@@ -56,11 +56,8 @@ export default defineComponent({
 		};
 	},
 	computed: {
-		themeColor() {
-			return this.theme.current.dark ? "dark" : "light";
-		},
 		iconColor() {
-			return this.themeColor === "dark" ? "grey-lighten-40" : "grey";
+			return this.theme.current.dark ? "grey-lighten-40" : "grey";
 		},
 	},
 	methods: {

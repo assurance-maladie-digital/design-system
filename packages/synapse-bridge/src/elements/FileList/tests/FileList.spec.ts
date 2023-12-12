@@ -41,19 +41,6 @@ describe("FileList", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders themeColor correctly", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
-		expect(wrapper.vm.themeColor).toBe("light");
-	});
-
 	it("renders iconColor grey correctly", () => {
 		const wrapper = shallowMount(FileList, {
 			propsData: {
@@ -74,15 +61,10 @@ describe("FileList", () => {
 			},
 			global: {
 				plugins: [vuetify],
-				mocks: {
-					$vuetify: {
-						theme: {
-							dark: true,
-						},
-					},
-				},
 			},
 		});
+
+		wrapper.vm.$vuetify.theme.current.dark = true;
 
 		expect(wrapper.vm.iconColor).toBe("grey-lighten-40");
 	});
