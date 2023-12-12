@@ -52,12 +52,15 @@ export default defineComponent({
 			eyeIcon: mdiEye,
 			deleteIcon: mdiDelete,
 			uploadIcon: mdiUpload,
+			theme: useTheme(),
 		};
 	},
 	computed: {
+		themeColor() {
+			return this.theme.current.dark ? "dark" : "light";
+		},
 		iconColor() {
-			const theme = useTheme();
-			return theme.current.value.dark ? "grey-lighten-40" : "grey";
+			return this.themeColor === "dark" ? "grey-lighten-40" : "grey";
 		},
 	},
 	methods: {
