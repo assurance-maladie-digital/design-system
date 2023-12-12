@@ -1,59 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`UserMenuBtn > renders correctly 1`] = `
-<div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block">
-  <v-menu-stub data-v-3b944ebf="" minwidth="198px" maxwidth="198px" attach="true" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="4" activatorprops="[object Object]" openonhover="false" closeoncontentclick="true" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom left" origin="auto" scrollstrategy="reposition" transition="fade-transition" offsety="true" nudgeright="0"></v-menu-stub>
-</div>
-`;
-
-exports[`UserMenuBtn > renders correctly in mobile mode 1`] = `
-<div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block"><button data-v-3b944ebf="" type="button" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-x-large v-btn--variant-text pa-0 vd-user-menu-btn" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><span data-v-3b944ebf="" class="d-sr-only">Menu utilisateur</span>
-    <!--v-if-->
-    <!--v-if--><i data-v-3b944ebf="" class="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z mdi v-icon notranslate v-theme--light v-icon--size-x-large ml-0 pa-2 vd-user-icon" style="color: rgb(0, 132, 178); caret-color: #0084b2;" aria-hidden="true"></i></span>
-    <!---->
-    <!---->
-  </button>
-  <!---->
-</div>
-`;
-
-exports[`UserMenuBtn > renders correctly in mobile mode with additional information 1`] = `
-<div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block"><button data-v-3b944ebf="" type="button" class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-x-large v-btn--variant-text pa-0 vd-user-menu-btn" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><span data-v-3b944ebf="" class="d-sr-only">Menu utilisateur</span>
-    <!--v-if-->
-    <!--v-if--><i data-v-3b944ebf="" class="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z mdi v-icon notranslate v-theme--light v-icon--size-x-large ml-0 pa-2 vd-user-icon" style="color: rgb(0, 132, 178); caret-color: #0084b2;" aria-hidden="true"></i></span>
-    <!---->
-    <!---->
-  </button>
-  <!---->
-</div>
-`;
-
-exports[`UserMenuBtn > renders correctly in mobile mode without user icon 1`] = `
-<div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block"><button data-v-3b944ebf="" type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text pa-1 pa-sm-2 vd-user-menu-btn" style="height: auto;" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><span data-v-3b944ebf="" class="d-sr-only">Menu utilisateur</span>
-    <!--v-if--><span data-v-3b944ebf="" class="font-weight-bold text-sm-caption">Firstname Lastname</span>
-    <!--v-if--></span>
-    <!---->
-    <!---->
-  </button>
-  <!---->
-</div>
-`;
-
-exports[`UserMenuBtn > renders correctly without the logout button 1`] = `
-<div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block"><button data-v-3b944ebf="" type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text pa-1 pa-sm-3 vd-user-menu-btn" style="height: auto;" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><span data-v-3b944ebf="" class="d-sr-only">Label</span><span data-v-3b944ebf="" class="d-flex flex-column align-end"><span data-v-3b944ebf="" class="font-weight-bold">Firstname Lastname</span><span data-v-3b944ebf="" class="text-grey text-darken-2">Additional information</span></span>
-    <!--v-if--><i data-v-3b944ebf="" class="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z mdi v-icon notranslate v-theme--light v-icon--size-default ml-2 pa-2 vd-user-icon" style="color: rgb(0, 132, 178); caret-color: #0084b2;" aria-hidden="true"></i></span>
-    <!---->
-    <!---->
-  </button>
-  <!---->
-</div>
-`;
-
-exports[`UserMenuBtn > renders correctly without user icon 1`] = `
+exports[`UserMenuBtn > renders correctly with props 1`] = `
 <div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block">
   <v-menu-stub data-v-3b944ebf="" minwidth="198px" maxwidth="198px" attach="true" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="4" activatorprops="[object Object]" openonhover="false" closeoncontentclick="true" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom left" origin="auto" scrollstrategy="reposition" transition="fade-transition" offsety="true" nudgeright="0"></v-menu-stub>
 </div>
