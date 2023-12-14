@@ -84,6 +84,53 @@ describe('UserMenuBtn', () => {
 		expect(wrapper.vm.isMobileVersion).toBe(true);
 	});
 
+	it("renders isMobileWithIcon computed correctly", () => {
+		const wrapper = mount(UserMenuBtn, {
+			props: {
+				fullName: "Firstname Lastname",
+				mobileVersion: true,
+				hideUserIcon: false,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		wrapper.vm.isMobileVersion = true;
+
+		expect(wrapper.vm.isMobileWithIcon).toBe(true);
+	});
+
+	it("renders the full name correctly", () => {
+		const wrapper = mount(UserMenuBtn, {
+			props: {
+				fullName: "Firstname Lastname",
+				hideUserIcon: true,
+				mobileVersion: false,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.find(".text-sm-caption").exists()).toBe(false);
+	});
+
+	it("renders the full name correctly in mobile mode", () => {
+		const wrapper = mount(UserMenuBtn, {
+			props: {
+				fullName: "Firstname Lastname",
+				hideUserIcon: true,
+				mobileVersion: true,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.find(".text-sm-caption").exists()).toBe(true);
+	});
+
 	it("Display the menu on click", async () => {
 		const wrapper = mount(UserMenuBtn, {
 			props: {
@@ -103,4 +150,22 @@ describe('UserMenuBtn', () => {
 		);
 		expect(wrapper.html()).toContain("the menu");
 	});
+
+	// it("emits logout event", async () => {
+	// 	const wrapper = mount(UserMenuBtn, {
+	// 		props: {
+	// 			fullName: "Firstname Lastname",
+	// 			hideLogoutBtn: false,
+	// 		},
+	// 		global: {
+	// 			plugins: [vuetify],
+	// 		},
+	// 		slots: {
+	// 			logoutItem: "<p>logout</p>",
+	// 		},
+	// 	});
+
+	// 	await wrapper.find(".v-list-item").trigger("click");
+	// 	expect(wrapper.emitted()).toHaveProperty("logout");
+	// });
 });
