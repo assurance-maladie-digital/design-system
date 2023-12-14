@@ -189,6 +189,29 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.secondaryLogoLabel).toBe("Accueil, AmeliPro");
 	});
 
+	it("renders correctly with avatar", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo", "Avatar"],
+			propsData: {
+				reduceLogo: false,
+			},
+		});
+
+		expect(wrapper.vm.avatar).toBe(false);
+	});
+
+	it("renders correctly with dividerColor", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo", "Avatar"],
+			propsData: {
+				theme: ThemeEnum.AMELI_PRO,
+				mobileVersion: true,
+			},
+		});
+
+		expect(wrapper.vm.dividerColor).toBe("#006386");
+	});
+
 	it("renders correctly with dividerDimensions", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
