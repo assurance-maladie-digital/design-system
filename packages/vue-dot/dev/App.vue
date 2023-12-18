@@ -33,7 +33,6 @@
 
 <style lang="scss">
 	@import '@cnamts/design-tokens/dist/tokens';
-	@import '../src/styles/index.scss';
 
 	/* Default, global styles */
 	* {
