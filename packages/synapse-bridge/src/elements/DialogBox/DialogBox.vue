@@ -176,4 +176,7 @@ export default defineComponent({
 	position: absolute;
 	right: 24px;
 }
+h2 {
+	word-break: break-word;
+}
 </style>
