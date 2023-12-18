@@ -1,24 +1,16 @@
 <script lang="ts">
-import Vue, { defineComponent, PropType } from "vue";
-
-import { tokens } from "@cnamts/design-tokens";
-
-import { LogoSizeEnum } from "../../elements/Logo/LogoSizeEnum";
-
-import { ThemeEnum } from "../../constants/enums/ThemeEnum";
-import { Dimensions, Next } from "../../types";
-
-import Logo from "../Logo";
-import { LogoInfo, Service } from "./types";
-import { locales } from "./locales";
-import { secondaryLogoMapping } from "./secondaryLogoMapping";
+import { defineComponent, getCurrentInstance } from "vue";
 import { dividerDimensionsMapping } from "./dividerDimensionsMapping";
+import { locales } from "./locales";
+import { LogoSizeEnum } from "../../elements/Logo/LogoSizeEnum";
+import { secondaryLogoMapping } from "./secondaryLogoMapping";
+import { ThemeEnum } from "../../constants/enums/ThemeEnum";
+import { tokens } from "@cnamts/design-tokens";
+import Logo from "../Logo";
 
-/** Define a local interface since Nuxt isn't a dependency */
-interface MaybeNuxtInstance extends Vue {
-	/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-	$nuxt: any;
-}
+import type { Dimensions, Next } from "../../types";
+import type { LogoInfo, Service } from "./types";
+import type { PropType } from "vue";
 
 export default defineComponent({
 	components: {
@@ -62,29 +54,26 @@ export default defineComponent({
 	computed: {
 		service(): Service {
 			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
-				const { title, subTitle } = locales.compteEntreprise;
-
-				return {
-					title,
-					subTitle,
-				};
+				return locales.compteEntreprise;
 			}
 
 			return {
-				title: this.serviceTitle,
-				subTitle: this.serviceSubTitle,
+				title: this.serviceTitle || "",
+				subTitle: this.serviceSubTitle || "",
 			};
 		},
 
 		height(): string {
-			if (this.mobileVersion && this.hasSecondaryLogo) {
+			if (!this.mobileVersion) {
+				return "64px";
+			} else if(this.hasSecondaryLogo) {
 				return "32px";
+			} else {
+				return "40px";
 			}
-
-			return this.mobileVersion ? "40px" : "64px";
 		},
 
-		isRisquePro(): boolean {
+		displayRisqueProLogo(): boolean {
 			if (this.reduceLogo) {
 				return false;
 			}
@@ -128,7 +117,8 @@ export default defineComponent({
 		},
 
 		isNuxt(): boolean {
-			return this.$data.$nuxt as unknown as MaybeNuxtInstance !== undefined;
+			return !! getCurrentInstance()
+				?.appContext.config.globalProperties.$nuxt;
 		},
 
 		logoContainerComponent(): string {
@@ -210,17 +200,15 @@ export default defineComponent({
 		},
 
 		dividerDimensions(): Dimensions {
-			const { xSmall, small, normal } = dividerDimensionsMapping;
-
 			if (this.mobileVersion && this.hasSecondaryLogo) {
-				return xSmall;
+				return dividerDimensionsMapping.xSmall;
 			}
 
 			if (this.mobileVersion) {
-				return small;
+				return dividerDimensionsMapping.small;
 			}
 
-			return normal;
+			return dividerDimensionsMapping.normal;
 		},
 
 		logoSize(): LogoSizeEnum {
@@ -251,7 +239,7 @@ export default defineComponent({
 			<Logo
 				:hide-signature="hideSignature"
 				:hide-organism="isCompteAmeliMobile"
-				:risque-pro="isRisquePro"
+				:risque-pro="displayRisqueProLogo"
 				:avatar="avatar"
 				:size="logoSize"
 				:class="{ 'mr-2': avatar }"
@@ -300,13 +288,13 @@ export default defineComponent({
 						}"
 						class="vd-title text-caption text-md-subtitle-1 font-weight-medium"
 					>
-						<template v-if="isCompteEntreprise">
-							{{ service.title.text }}
-							<span>{{ service.title.highlight }}</span>
+						<template v-if="typeof service.title === 'string'">
+							{{ service.title }}
 						</template>
 
 						<template v-else>
-							{{ service.title }}
+							{{ service.title.text }}
+							<span>{{ service.title.highlight }}</span>
 						</template>
 					</h1>
 
