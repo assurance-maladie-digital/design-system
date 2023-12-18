@@ -206,4 +206,7 @@
 	.v-card__title > * {
 		line-height: 1em;
 	}
+	h2 {
+		word-break: break-word;
+	}
 </style>
