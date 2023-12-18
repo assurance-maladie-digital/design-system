@@ -1,11 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`LogoBrandSection > renders correctly 1`] = `
-<vsheet data-v-d2756505="" height="64px" class="vd-logo-brand-section d-flex">
-  <router-link data-v-d2756505="" aria-label="Accueil, l’Assurance Maladie" to="/" class="vd-home-link">
+<vsheet data-v-d2756505="" height="64px" class="vd-logo-brand-section d-flex"><a data-v-d2756505="" aria-label="Accueil, l’Assurance Maladie" to="/" href="#" class="vd-home-link">
     <logo-stub data-v-d2756505="" hidesignature="false" hideorganism="false" risquepro="false" avatar="false" dark="false" size="normal" class=""></logo-stub>
-  </router-link>
-  <!--v-if-->
-  <!--v-if-->
+  </a><svg data-v-d2756505="" width="22" height="64" fill="#0c419a" role="img" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 64" class="vd-divider">
+    <path data-v-d2756505="" d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z"></path>
+  </svg>
+  <div data-v-d2756505="" class="vd-title-container d-flex justify-center flex-column text-primary">
+    <h1 data-v-d2756505="" class="vd-title text-caption text-md-subtitle-1 font-weight-medium">Service Title</h1>
+    <h2 data-v-d2756505="" class="vd-title text-caption">Service Sub Title</h2>
+  </div>
 </vsheet>
 `;
