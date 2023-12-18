@@ -56,7 +56,7 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.height).toBe("64px");
 	});
 
-	it("renders correctly with isRisquePro", () => {
+	it("renders correctly with risquePro", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
 			propsData: {
@@ -64,7 +64,7 @@ describe("LogoBrandSection", () => {
 			},
 		});
 
-		expect(wrapper.vm.isRisquePro).toBe(false);
+		expect(wrapper.vm.displayRisqueProLogo).toBe(false);
 	});
 
 	it("renders correctly with isCompteEntreprise", () => {
