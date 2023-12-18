@@ -1,4 +1,4 @@
-// @see https://vuetifyjs.com/en/features/sass-variables/
+// @see https://v2.vuetifyjs.com/en/features/sass-variables/
 $body-font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
 $heading-font-family: 'Mic 32 New', 'Source Sans 3', 'Source Sans Pro', sans-serif;
 
@@ -82,3 +82,5 @@ $btn-font-sizes: (
 $btn-letter-spacing: 0.005em;
 $btn-font-weight: 600;
 $btn-text-transform: none;
+
+$alert-font-size: map-get( map-get($headings, 'body-1'), 'size');
