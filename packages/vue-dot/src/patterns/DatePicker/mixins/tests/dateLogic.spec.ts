@@ -34,6 +34,7 @@ interface TestComponent extends Vue {
 	parseTextFieldDate: (date: string) => string;
 	textFieldBlur: () => void;
 	dateFormatted: string;
+	dateFormattedReturn: (value: string) => string;
 }
 
 /** Create fake VMenu for refs */
@@ -305,5 +306,15 @@ describe('DateLogic', () => {
 		});
 
 		expect(wrapper.vm.dateFormatted).toBe('29/10/2019');
+	});
+
+	// dateFormattedReturn
+	it('returns an empty string when the value is empty', () => {
+		const date = '29/10/2019';
+		const wrapper = createWrapper();
+
+		wrapper.vm.dateFormatted = date;
+
+		expect(wrapper.vm.dateFormattedReturn(date)).toBe('2019-10-29');
 	});
 });
