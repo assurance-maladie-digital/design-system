@@ -21,8 +21,8 @@
 				@click.native="textFieldClicked"
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
-				@input="errorMessages = null"
-				@change="dateFormatted = $event"
+				@input="saveDate($event)"
+				@change="saveFromTextField"
 				v-on="listeners"
 			>
 				<template #prepend>
@@ -217,6 +217,11 @@
 			if (this.textFieldActivator) {
 				this.menu = true;
 			}
+		}
+
+		saveDate(value: string): void {
+			this.errorMessages = null;
+			this.$emit('change', this.dateFormattedReturn(value));
 		}
 	}
 </script>

@@ -176,8 +176,8 @@ export class Filterable extends Props {
 	resetAllFilters(): void {
 		this.filters.forEach(filter => {
 			this.$set(filter, 'value', undefined);
-			this.updateValue();
 		});
+		this.updateValue();
 	}
 
 	updateValue(): void {

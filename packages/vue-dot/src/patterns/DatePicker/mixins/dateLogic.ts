@@ -137,7 +137,9 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	setTextFieldModel(): void {
-		this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
+		this.textFieldDate = parseDate(this.date, INTERNAL_FORMAT).format(
+			this.dateFormat
+		);
 	}
 
 	get dateFormatted(): string {
@@ -145,7 +147,9 @@ export class DateLogic extends MixinsDeclaration {
 			return '';
 		}
 
-		const formatted = parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormat);
+		const formatted = parseDate(this.date, INTERNAL_FORMAT).format(
+			this.dateFormat
+		);
 
 		return formatted;
 	}
@@ -217,7 +221,7 @@ export class DateLogic extends MixinsDeclaration {
 	}
 
 	emitChangeEvent(): void {
-		this.$emit('change', parseDate(this.date, INTERNAL_FORMAT).format(this.dateFormatReturn));
+		this.$emit('change', this.date);
 	}
 
 	validateVuetify(): void {
@@ -239,5 +243,9 @@ export class DateLogic extends MixinsDeclaration {
 		if (this.validateOnBlurEnabled) {
 			this.validate(this.textFieldDate);
 		}
+	}
+
+	dateFormattedReturn(date: string): string {
+		return parseDate(date).format(this.dateFormatReturn);
 	}
 }
