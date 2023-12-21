@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NirField Displays an error message when the fields are not totaly filled 1`] = `
+<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
+  <div class="v-input v-input--has-state v-input--is-label-active v-input--is-dirty theme--light error--text">
+    <div class="v-input__control">
+      <div class="v-input__slot">
+        <div class="v-input vd-number-field flex-grow-0 mx-1 mx-sm-2 v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-35" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-35" type="text"></div>
+            </div>
+          </div>
+        </div>
+        <div class="v-input vd-key-field flex-grow-0 mx-1 mx-sm-2 v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-text-field__slot"><label for="input-38" class="v-label v-label--active theme--light" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-38" type="text"></div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div class="v-messages theme--light error--text" role="alert">
+        <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+          <div class="v-messages__message">La longueur du numéro de sécurité social doit être de 13 caractères.</div>
+          <div class="v-messages__message">La longueur de la clé doit être de 2 caractères.</div>
+        </transition-group-stub>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`NirField renders correctly 1`] = `
 <div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
   <div class="v-input v-input--is-label-active v-input--is-dirty theme--light">
