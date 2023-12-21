@@ -1,72 +1,60 @@
 <template>
 	<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
-		<VTextField
-			ref="number"
-			v-facade="numberMask"
-			v-bind="textFieldOptions"
-			:value="computedNumberValue"
-			:label="locales.numberLabel"
-			:hint="locales.numberHint"
-			:rules="numberRules"
-			:success="numberFilled"
-			class="vd-number-field flex-grow-0 mx-1 mx-sm-2"
-			@keydown="focusKeyField"
-			@input.native="setNumberValue"
-			@change="emitChangeEvent"
+		<v-input
+			:value="[computedNumberValue, keyValue]"
+			:error-count="5"
+			:rules="errors"
 		>
-			<template #append>
-				<VIcon
-					v-if="numberFilled"
-					v-bind="options.icon"
-				>
-					{{ checkIcon }}
-				</VIcon>
-			</template>
-		</VTextField>
+			<VTextField
+				ref="numberField"
+				v-facade="numberMask"
+				v-bind="textFieldOptions"
+				:value="computedNumberValue"
+				:label="locales.numberLabel"
+				:hint="locales.numberHint"
+				:success="numberFilled"
+				:hide-details="errors.length > 0"
+				class="vd-number-field flex-grow-0 mx-1 mx-sm-2"
+				@keydown="focusKeyField"
+				@input.native="setNumberValue"
+				@change="validateNumberValue"
+			/>
 
-		<VTextField
-			v-if="!isSingleField"
-			ref="key"
-			v-facade="keyMask"
-			v-bind="textFieldOptions"
-			:value="keyValue"
-			:label="locales.keyLabel"
-			:hint="locales.keyHint"
-			:rules="keyRules"
-			:success="keyFilled"
-			class="vd-key-field flex-grow-0 mx-1 mx-sm-2"
-			@keyup.delete="focusNumberField"
-			@input.native="setKeyValue"
-			@change="emitChangeEvent"
-		>
-			<template #append>
-				<VIcon
-					v-if="keyFilled"
-					v-bind="options.icon"
-				>
-					{{ checkIcon }}
-				</VIcon>
-			</template>
-		</VTextField>
+			<VTextField
+				v-if="!isSingleField"
+				ref="keyField"
+				v-facade="keyMask"
+				v-bind="textFieldOptions"
+				:value="keyValue"
+				:label="locales.keyLabel"
+				:hint="locales.keyHint"
+				:success="keyFilled"
+				:hide-details="errors.length > 0"
+				class="vd-key-field flex-grow-0 mx-1 mx-sm-2"
+				@keyup.delete="focusNumberField"
+				@input.native="setKeyValue"
+				@change="validateKeyValue"
+			/>
 
-		<VTooltip
-			v-if="tooltip"
-			v-bind="options.tooltip"
-		>
-			<template #activator="{ on, attrs }">
-				<VIcon
-					v-bind="attrs"
-					class="vd-tooltip-icon mt-4 ml-0 ml-sm-2"
-					v-on="on"
-				>
-					{{ infoIcon }}
-				</VIcon>
-			</template>
+			<VTooltip
+				v-if="tooltip"
+				v-bind="options.tooltip"
+			>
+				<template #activator="{ on, attrs }">
+					<VIcon
+						v-bind="attrs"
+						class="vd-tooltip-icon mt-4 ml-0 ml-sm-2"
+						v-on="on"
+					>
+						{{ infoIcon }}
+					</VIcon>
+				</template>
 
-			<slot name="tooltip">
-				{{ tooltip }}
-			</slot>
-		</VTooltip>
+				<slot name="tooltip">
+					{{ tooltip }}
+				</slot>
+			</VTooltip>
+		</v-input>
 	</div>
 </template>
 
@@ -80,7 +68,7 @@
 
 	import { customizable, Options } from '../../mixins/customizable';
 
-	import { required } from '../../rules/required';
+	import { requiredFn } from '../../rules/required';
 	import { exactLength } from '../../rules/exactLength';
 	import { ValidationRule } from '../../rules/types';
 
@@ -145,6 +133,11 @@
 						this.numberValue = value.slice(0, -KEY_LENGTH);
 						this.keyValue = value.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH);
 					}
+
+					this.validateNumberValue();
+					if (!this.isSingleField) {
+						this.validateKeyValue();
+					}
 				},
 				immediate: true
 			}
@@ -152,8 +145,8 @@
 	})
 	export default class NirField extends MixinsDeclaration {
 		$refs!: Refs<{
-			number: HTMLElement;
-			key: HTMLElement;
+			numberField: HTMLElement;
+			keyField: HTMLElement;
 		}>;
 
 		locales = locales;
@@ -167,6 +160,9 @@
 		numberMask = '# ## ## #X ### ###';
 		keyMask = '##';
 
+		numberErrors: string[] = [];
+		keyErrors: string[] = [];
+
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
@@ -175,14 +171,21 @@
 			return this.numberValue?.length === NUMBER_LENGTH;
 		}
 
+		/**
+		 * Generate the validation rules for the number field
+		 */
 		get numberRules(): ValidationRule[] {
 			const rulesNumber = [];
 
 			if (this.required) {
-				rulesNumber.push(required);
+				rulesNumber.push(
+					requiredFn({ default: locales.errorRequiredNumber })
+				);
 			}
 
-			rulesNumber.push(exactLength(NUMBER_LENGTH, true));
+			rulesNumber.push(exactLength(NUMBER_LENGTH, true, {
+				default: locales.errorLengthNumber
+			}));
 
 			return rulesNumber;
 		}
@@ -195,16 +198,65 @@
 			return this.keyValue?.length === KEY_LENGTH;
 		}
 
+		/**
+		 * Generate the validation rules for the key field
+		 */
 		get keyRules(): ValidationRule[] {
 			const rulesKey = [];
 
 			if (this.required) {
-				rulesKey.push(required);
+				rulesKey.push(
+					requiredFn({ default: locales.errorRequiredKey })
+				);
 			}
 
-			rulesKey.push(exactLength(KEY_LENGTH, true));
+			rulesKey.push(exactLength(KEY_LENGTH, true, {
+				default: locales.errorLengthKey
+			}));
 
 			return rulesKey;
+		}
+
+		/**
+		 * Execute the validation rules for the number field
+		 */
+		validateNumberValue(): void {
+			const newNumberErrors = [];
+
+			for (const rule of this.numberRules) {
+				const error = rule(this.numberValue);
+
+				if (error) {
+					newNumberErrors.push(error);
+				}
+			}
+
+			this.numberErrors = newNumberErrors as string[];
+
+			this.emitChangeEvent();
+		}
+
+		/**
+		 * Execute the validation rules for the key field
+		 */
+		validateKeyValue(): void {
+			const newKeyErrors = [];
+
+			for (const rule of this.keyRules) {
+				const error = rule(this.keyValue);
+
+				if (error) {
+					newKeyErrors.push(error);
+				}
+			}
+
+			this.keyErrors = newKeyErrors as string[];
+
+			this.emitChangeEvent();
+		}
+
+		get errors(): string[] {
+			return [...this.numberErrors, ...this.keyErrors];
 		}
 
 		setKeyValue(event: InputFacadeEvent): void {
@@ -247,7 +299,7 @@
 				return;
 			}
 
-			this.$refs.key.focus();
+			this.$refs.keyField.focus();
 		}
 
 		focusNumberField(): void {
@@ -255,7 +307,7 @@
 				return;
 			}
 
-			this.$refs.number.focus();
+			this.$refs.numberField.focus();
 		}
 
 		emitChangeEvent(): void {
