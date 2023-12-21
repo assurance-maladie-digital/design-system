@@ -21,6 +21,7 @@ describe("SearchListField", () => {
 						name: "Item 2",
 					},
 				],
+				value: 1,
 			},
 		});
 
@@ -51,6 +52,32 @@ describe("SearchListField", () => {
 		wrapper.vm.search = "Item 1";
 		await wrapper.vm.$nextTick();
 		expect(wrapper.vm.filteredItems).toHaveLength(1);
+	});
+
+	it("filteredItems computed property with null search", async () => {
+		const wrapper = mount(SearchListField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				items: [
+					{
+						label: "Item 1",
+						value: 1,
+					},
+					{
+						label: "Item 2",
+						value: 2,
+					},
+				],
+			},
+		});
+
+		expect(wrapper.vm.filteredItems).toHaveLength(2);
+
+		wrapper.vm.search = null;
+		await wrapper.vm.$nextTick();
+		expect(wrapper.vm.filteredItems).toHaveLength(2);
 	});
 
 	it("emitChangeEvent method", async () => {

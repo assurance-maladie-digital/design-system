@@ -40,7 +40,7 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		emitChangeEvent(value: unknown[]): void {
+		emitChangeEvent(value: any): void {
 			this.$emit("update:modelValue", value);
 		},
 	},
