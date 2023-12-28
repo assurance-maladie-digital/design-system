@@ -8,12 +8,13 @@ import { customizable } from "@/mixins/customizable";
 import { Refs } from "@/types";
 
 import { mdiClose } from "@mdi/js";
+import { VCard, VDialog } from "vuetify/components";
 
 export default defineComponent({
 	inheritAttrs: false,
 	mixins: [customizable(config)],
 	props: {
-		value: {
+		modelValue: {
 			type: Boolean,
 			default: false,
 		},
@@ -45,26 +46,35 @@ export default defineComponent({
 	data() {
 		return {
 			$refs: {} as Refs<{
-				dialogContent: HTMLElement;
+				dialogContent: VDialog;
 			}>,
-			dialog: this.value,
 			closeIcon: mdiClose,
 			locales,
+			dialog: this.modelValue,
 		};
 	},
 	watch: {
 		dialog() {
 			this.setEventListeners();
 		},
+		modelValue(newValue) {
+			this.dialog = newValue;
+		},
 	},
+	emits: ["update:modelValue", "cancel", "confirm"],
 	methods: {
 		async getSelectableElements(): Promise<HTMLElement[]> {
 			await this.$nextTick();
+			const parentNode = this.$refs.dialogContent?.$el; // Is undefined when dialog is closed
+			if (!parentNode) {
+				return [];
+			}
 			const elements = Array.from(
-				this.$refs.dialogContent?.querySelectorAll(
+				parentNode.querySelectorAll(
 					"button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"
 				)
 			) as HTMLElement[];
+
 			const filteredElements: HTMLElement[] = [];
 			elements.forEach((element) => {
 				if (
@@ -94,7 +104,7 @@ export default defineComponent({
 						} else {
 							elements[i + 1].focus();
 						}
-					} else {
+					} else { // backward
 						if (i === 0) {
 							elements[elements.length - 1].focus();
 						} else {
@@ -110,6 +120,9 @@ export default defineComponent({
 			}
 		},
 	},
+	mounted() {
+		this.setEventListeners();
+	},
 });
 </script>
 
@@ -119,6 +132,7 @@ export default defineComponent({
 		v-bind="$attrs"
 		:width="width"
 		:persistent="persistent"
+		:retain-focus="false"
 		aria-modal="true"
 		class="vd-dialog-box"
 	>
