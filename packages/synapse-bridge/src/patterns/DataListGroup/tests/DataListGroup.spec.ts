@@ -46,7 +46,7 @@ describe("DataListGroup", () => {
 
 		const button = wrapper.find('button');
 		await button.trigger('click');
-		console.log(wrapper.emitted('click:list-item'));
+
 		expect(wrapper.emitted('click:list-item')).toEqual(
 			[[{dataListIndex: 1, itemIndex: 0}]]
 		);

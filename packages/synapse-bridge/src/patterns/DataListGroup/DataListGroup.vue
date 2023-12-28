@@ -1,8 +1,10 @@
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import type { PropType } from "vue";
 
-import { DataListIcons } from "../../elements/DataList/types";
-import { DataListGroupItems, DataListActionEvent } from "./types";
+import { defineComponent } from "vue";
+
+import type { DataListIcons } from "../../elements/DataList/types";
+import type { DataListGroupItems, DataListActionEvent } from "./types";
 
 import DataList from "../../elements/DataList/DataList.vue";
 
