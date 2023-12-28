@@ -1,9 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, mount } from "@vue/test-utils";
 
 import DataListGroup from "../";
 
 import { dataListGroupItems } from "./data/dataListGroupItems";
+import { vuetify } from "@tests/unit/setup";
 
 describe("DataListGroup", () => {
 	it("renders correctly", () => {
@@ -28,5 +29,26 @@ describe("DataListGroup", () => {
 		);
 
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	it('emit the right event when clicking on a item button', async () => {
+		const wrapper = mount(
+			DataListGroup,
+			{
+				propsData: {
+					items: dataListGroupItems,
+				},
+				global: {
+					plugins: [vuetify],
+				},
+			},
+		);
+
+		const button = wrapper.find('button');
+		await button.trigger('click');
+		console.log(wrapper.emitted('click:list-item'));
+		expect(wrapper.emitted('click:list-item')).toEqual(
+			[[{dataListIndex: 1, itemIndex: 0}]]
+		);
 	});
 });
