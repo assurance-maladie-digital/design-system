@@ -7,8 +7,8 @@ import { locales } from "./locales";
 
 import { PositionEnum } from "./PositionEnum";
 
-import { ExternalLink, Position } from "./types";
-import { IndexedObject } from "../../types";
+import type { ExternalLink, Position } from "./types";
+import type { IndexedObject } from "../../types";
 
 import { customizable } from "../../mixins/customizable";
 
