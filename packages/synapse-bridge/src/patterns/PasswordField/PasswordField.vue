@@ -53,8 +53,8 @@ export default defineComponent({
 		}
 	},
 	methods: {
-		emitChangeEvent(e: Event): void {
-			this.$emit('change', e.target.value);
+		emitChangeEvent(value: string): void {
+			this.$emit('change', value);
 		}
 	}
 });
