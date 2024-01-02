@@ -4,7 +4,7 @@ import type { PropType } from "vue";
 
 import { mdiMagnify } from "@mdi/js";
 
-import { SearchListItem } from "./types";
+import type { SearchListItem } from "./types";
 import { locales } from "./locales";
 
 export default defineComponent({

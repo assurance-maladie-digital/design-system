@@ -13,15 +13,15 @@ describe("SearchListField", () => {
 			propsData: {
 				items: [
 					{
-						id: 1,
-						name: "Item 1",
+						label: "Item 1",
+						value: 1,
 					},
 					{
-						id: 2,
-						name: "Item 2",
+						label: "Item 2",
+						value: 2,
 					},
 				],
-				value: 1,
+				value: [1],
 			},
 		});
 
@@ -102,10 +102,8 @@ describe("SearchListField", () => {
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
-		expect(wrapper.emitted("update:modelValue")[0][0]).toBe(1);
-		expect(
-			wrapper.find(".vd-search-list .v-list-item--active").exists()
-		).toBe(true);
+		expect(wrapper.emitted("update:modelValue")?.[0]?.[0]).toBe(1);
+		expect(listItem.classes()).toContain("v-list-item--active");
 	});
 
 	it("filters items based on search input", async () => {
@@ -265,7 +263,7 @@ describe("SearchListField", () => {
 			},
 		});
 
-		wrapper.vm.emitChangeEvent();
+		wrapper.vm.emitChangeEvent('');
 		await wrapper.vm.$nextTick();
 		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
 	});
@@ -294,6 +292,6 @@ describe("SearchListField", () => {
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
-		expect(wrapper.emitted("update:modelValue")[0][0]).toBe(1);
+		expect(wrapper.emitted("update:modelValue")?.[0]?.[0]).toBe(1);
 	});
 });
