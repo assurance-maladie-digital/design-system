@@ -98,8 +98,8 @@ describe("PhoneField", () => {
 			}
 		});
 
-		wrapper.vm.emitChangeEvent();
+		wrapper.find("input").setValue("1234567890");
 
-		expect(wrapper.emitted("change")).toBeTruthy();
+		expect(wrapper.emitted("change")).toEqual([["1234567890"]]);
 	});
 });
