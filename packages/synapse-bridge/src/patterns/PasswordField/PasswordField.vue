@@ -6,7 +6,6 @@ import { locales } from "./locales";
 
 import { customizable, Options } from "../../mixins/customizable";
 
-import { Refs } from "../../types";
 import { required } from "../../rules/required";
 import { ValidationRule } from "../../rules/types";
 
@@ -67,7 +66,7 @@ export default defineComponent({
 		:model-value="value"
 		:rules="rules"
 		:type="showEyeIcon ? 'text' : 'password'"
-		@change="emitChangeEvent"
+		@update:model-value="emitChangeEvent"
 	>
 		<template #append>
 			<VBtn
