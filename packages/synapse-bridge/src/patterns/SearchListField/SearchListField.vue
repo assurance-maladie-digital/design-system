@@ -9,7 +9,7 @@ import { locales } from "./locales";
 
 export default defineComponent({
 	props: {
-		value: {
+		modelValue: {
 			type: Array as PropType<unknown[]>,
 			default: () => [],
 		},
@@ -40,7 +40,7 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		emitChangeEvent(value: any): void {
+		emitChangeEvent(value: unknown[]): void {
 			this.$emit("update:modelValue", value);
 		},
 	},
@@ -64,14 +64,19 @@ export default defineComponent({
 			</template>
 		</VTextField>
 
-		<VList select-strategy="classic" class="pb-0">
+		<VList
+			select-strategy="classic"
+			class="pb-0"
+			:selected="modelValue"
+			@update:selected="emitChangeEvent"
+
+		>
 			<VListItem
 				v-for="(item, index) in filteredItems"
 				:key="index"
 				:value="item.value"
 				active-class="text-primary"
 				class="d-flex align-center justify-start"
-				@click="emitChangeEvent(item.value)"
 			>
 				<template v-slot:prepend="{ isActive }">
 					<VListItemAction start>
