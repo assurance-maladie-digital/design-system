@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
@@ -21,7 +21,17 @@ describe("SearchListField", () => {
 						value: 2,
 					},
 				],
-				value: [1],
+				modelValue: [1],
+			},
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+
+	it("renders correctly with empty item prop", () => {
+		const wrapper = mount(SearchListField, {
+			global: {
+				plugins: [vuetify],
 			},
 		});
 
@@ -69,7 +79,7 @@ describe("SearchListField", () => {
 						value: 2,
 					},
 				],
-				value: [],
+				modelValue: [],
 			},
 		});
 
@@ -98,11 +108,11 @@ describe("SearchListField", () => {
 		});
 
 		const listItem = wrapper.find(".vd-search-list .v-list-item");
-		listItem.trigger("click");
+		await listItem.trigger("click");
 		await wrapper.vm.$nextTick();
 
-		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
-		expect(wrapper.emitted("update:modelValue")?.[0]?.[0]).toBe(1);
+		expect(wrapper.emitted("update:modelValue")).toEqual([[[1]]]);
+		console.log(wrapper.html());
 		expect(listItem.classes()).toContain("v-list-item--active");
 	});
 
@@ -263,7 +273,7 @@ describe("SearchListField", () => {
 			},
 		});
 
-		wrapper.vm.emitChangeEvent('');
+		wrapper.vm.emitChangeEvent(['']);
 		await wrapper.vm.$nextTick();
 		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
 	});
@@ -292,6 +302,37 @@ describe("SearchListField", () => {
 		await wrapper.vm.$nextTick();
 
 		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
-		expect(wrapper.emitted("update:modelValue")?.[0]?.[0]).toBe(1);
+		expect(wrapper.emitted("update:modelValue")).toEqual([[[1]]]);
+	});
+
+	it("Update the value when the modelValue prop changes", async () => {
+		const wrapper = mount(SearchListField, {
+			global: {
+				plugins: [vuetify],
+			},
+			props: {
+				items: [
+					{
+						label: "Item 1",
+						value: 1,
+					},
+					{
+						label: "Item 1",
+						value: 2,
+					},
+				],
+				modelValue: [1],
+			},
+		});
+
+		const secondItem = wrapper.find(".vd-search-list .v-list-item:nth-child(2)");
+
+		expect(secondItem.classes()).not.toContain("v-list-item--active");
+
+		await wrapper.setProps({
+			modelValue: [2],
+		});
+
+		expect(secondItem.classes()).toContain("v-list-item--active");
 	});
 });
