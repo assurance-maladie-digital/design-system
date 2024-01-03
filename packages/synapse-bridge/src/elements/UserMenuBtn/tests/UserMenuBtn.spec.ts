@@ -96,8 +96,6 @@ describe('UserMenuBtn', () => {
 			},
 		});
 
-		wrapper.vm.isMobileVersion = true;
-
 		expect(wrapper.vm.isMobileWithIcon).toBe(true);
 	});
 
@@ -151,21 +149,22 @@ describe('UserMenuBtn', () => {
 		expect(wrapper.html()).toContain("the menu");
 	});
 
-	// it("emits logout event", async () => {
-	// 	const wrapper = mount(UserMenuBtn, {
-	// 		props: {
-	// 			fullName: "Firstname Lastname",
-	// 			hideLogoutBtn: false,
-	// 		},
-	// 		global: {
-	// 			plugins: [vuetify],
-	// 		},
-	// 		slots: {
-	// 			logoutItem: "<p>logout</p>",
-	// 		},
-	// 	});
+	it("emits logout event", async () => {
+		const wrapper = mount(UserMenuBtn, {
+			props: {
+				fullName: "Firstname Lastname",
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
 
-	// 	await wrapper.find(".v-list-item").trigger("click");
-	// 	expect(wrapper.emitted()).toHaveProperty("logout");
-	// });
+		// Open the popup
+		await wrapper.find(".v-btn").trigger("click");
+
+		// Click on the logout button
+		await wrapper.find(".v-list-item").trigger("click");
+
+		expect(wrapper.emitted()).toHaveProperty("logout");
+	});
 });
