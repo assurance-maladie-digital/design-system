@@ -14,6 +14,7 @@ import { calcHumanFileSize } from "@/functions/calcHumanFileSize";
 import { mdiCloudUpload } from "@mdi/js";
 
 import type { IndexedObject } from "@/types";
+import type { HTMLInputEvent } from "./types";
 
 export default defineComponent({
 	mixins: [customizable(config), FileUploadCore, Widthable],
@@ -85,7 +86,7 @@ export default defineComponent({
 		:class="[
 			{
 				dragover: dragover,
-				'dark-mode': $vuetify.theme.dark,
+				'dark-mode': $vuetify.theme.current.dark,
 			},
 			colors.label,
 		]"
@@ -101,7 +102,7 @@ export default defineComponent({
 			:multiple="multiple"
 			:accept="computedAccept"
 			class="vd-file-upload-input"
-			@change="inputValueChanged"
+			@change="e=>inputValueChanged(e as HTMLInputEvent)"
 		/>
 
 		<slot name="placeholder">
