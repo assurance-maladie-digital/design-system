@@ -22,9 +22,15 @@ export default defineComponent({
 	data() {
 		return {
 			search: null as string | null,
+			internalValue: this.modelValue,
 			searchIcon: mdiMagnify,
 			locales,
 		};
+	},
+	watch: {
+		modelValue(value: unknown[]): void {
+			this.internalValue = value;
+		},
 	},
 	computed: {
 		filteredItems(): SearchListItem[] {
@@ -67,7 +73,7 @@ export default defineComponent({
 		<VList
 			select-strategy="classic"
 			class="pb-0"
-			:selected="modelValue"
+			v-model:selected="internalValue"
 			@update:selected="emitChangeEvent"
 
 		>
