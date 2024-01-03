@@ -2,12 +2,12 @@ import { defineComponent } from "vue";
 
 import FileValidation from "./fileValidation";
 
-import { Refs } from "../../../types";
-import { HTMLInputEvent } from "../types";
+import type { Refs } from "../../../types";
+import type { HTMLInputEvent } from "../types";
 
 export default defineComponent({
 	mixins: [FileValidation],
-	emits: ["change"],
+	emits: ["update:modelValue"],
 	data() {
 		return {
 			$refs: {} as Refs<{
@@ -45,7 +45,7 @@ export default defineComponent({
 			if (!this.error) {
 				const eventValue = this.multiple ? this.files : this.files[0];
 
-				this.$emit("change", eventValue);
+				this.$emit("update:modelValue", eventValue);
 			}
 
 			// Reset file input after everything for IE

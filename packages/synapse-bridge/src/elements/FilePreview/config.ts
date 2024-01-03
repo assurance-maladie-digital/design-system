@@ -4,6 +4,7 @@ export const config = {
 		width: "100%",
 	},
 	image: {
-		width: "100%",
+		// https://github.com/vuejs/core/issues/2801
+		style: "width: 100%;"
 	},
 };

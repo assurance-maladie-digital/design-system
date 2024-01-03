@@ -14,7 +14,7 @@ export default defineComponent({
 		file: {
 			// File is not a valid prop type,
 			// use null to allow any type & provide custom validation
-			type: null as unknown as PropType<File | Blob>,
+			type: null as unknown as PropType<File | Blob | null>,
 			default: null,
 			/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
 			validator(value): boolean {

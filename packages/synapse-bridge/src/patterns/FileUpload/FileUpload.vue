@@ -13,12 +13,12 @@ import { calcHumanFileSize } from "@/functions/calcHumanFileSize";
 
 import { mdiCloudUpload } from "@mdi/js";
 
-import { IndexedObject } from "@/types";
+import type { IndexedObject } from "@/types";
 
 export default defineComponent({
 	mixins: [customizable(config), FileUploadCore, Widthable],
 	props: {
-		value: {
+		modelValue: {
 			// File is not a valid prop type,
 			// use null to allow any type & provide custom validation
 			type: null as unknown as PropType<File | File[] | null>,
@@ -48,7 +48,7 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	emits: ["change"],
+	emits: ["update:modelValue"],
 	data() {
 		return {
 			locales,
