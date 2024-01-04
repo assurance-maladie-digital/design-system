@@ -47,6 +47,17 @@ Vous pouvez utiliser la prop `item-labels` pour adapter les labels à la questio
 
 <doc-example file="rating-picker/emotion"></doc-example>
 
+<doc-alert type="warning">
+
+Quand vous utilisez des sous-questions, le message de confirmation ne s'affiche pas par défaut si celles-ci sont activées.
+
+Vous pouvez utiliser la propriété `setAcknowledgement` dans le slot pour afficher un message de confirmation.
+`setAcknowledgement` est une fonction que vous pouvez invoquer une fois que l'utilisateur a répondu à la sous-question.
+
+</doc-alert>
+
+<doc-example file="rating-picker/set-aknowledgement"></doc-example>
+
 #### Note par émotion en question secondaire
 
 Vous pouvez utiliser le composant `EmotionPicker` en tant que question secondaire.
