@@ -9,19 +9,19 @@
 			:value="internalValue"
 			@input="setValue"
 		/>
-
-		<template v-if="hasAnswered">
-			<AlertWrapper
-				:class="{ 'mb-0': !displayAdditionalContent }"
-				outlined
-				type="success"
-				class="mt-4"
-			>
-				{{ locales.thanks }}
-			</AlertWrapper>
-
-			<slot v-if="displayAdditionalContent" />
-		</template>
+		<slot
+			v-if="hasAnswered && displayAdditionalContent"
+			v-bind="{setAcknowledgement}"
+		/>
+		<AlertWrapper
+			v-if="showAknowledgement"
+			:class="{ 'mb-0': !displayAdditionalContent }"
+			outlined
+			type="success"
+			class="mt-4"
+		>
+			{{ locales.thanks }}
+		</AlertWrapper>
 	</div>
 </template>
 
@@ -95,6 +95,7 @@
 
 		internalValue = -1;
 		displayAdditionalContent = false;
+		showAknowledgement = false;
 
 		ratingComponentMapping = {
 			[RatingEnum.EMOTION]: 'EmotionPicker',
@@ -129,6 +130,13 @@
 			if (starsUnsatisfied || numberUnsatisfied || emotionUnsatisfied) {
 				this.displayAdditionalContent = true;
 			}
+
+			if (
+				!this.displayAdditionalContent ||
+				this.$scopedSlots.default === undefined
+			) {
+				this.setAcknowledgement();
+			}
 		}
 
 		setValue(value: number): void {
@@ -136,6 +144,10 @@
 
 			this.showAdditionalContent(value);
 			this.$emit('change', value);
+		}
+
+		setAcknowledgement(): void {
+			this.showAknowledgement = true;
 		}
 	}
 </script>

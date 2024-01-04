@@ -19,5 +19,6 @@ exports[`RatingPicker renders correctly 1`] = `
         </svg></button></div>
   </fieldset>
   <!---->
+  <!---->
 </div>
 `;
