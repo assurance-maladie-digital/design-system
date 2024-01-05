@@ -3,6 +3,7 @@
 		<RatingPicker
 			v-bind="$attrs"
 			v-on="$listeners"
+			v-model="rating"
 		/>
 	</div>
 </template>
@@ -20,10 +21,13 @@
 			label: 'Êtes-vous satisfait de ce service ?'
 		};
 
+		rating = -1;
+
 		options = {
 			booleans: [
 				'readonly',
-				'twoEmotions'
+				'twoEmotions',
+				'hideAlert'
 			],
 			textFields: [
 				'label'
@@ -34,7 +38,7 @@
 					'number',
 					'stars'
 				]
-			}
+			},
 		};
 	}
 </script>
