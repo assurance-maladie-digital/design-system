@@ -31,6 +31,7 @@ export default defineComponent({
 			default: undefined,
 		},
 	},
+	emmits: ["error"],
 	data() {
 		return {
 			files: [] as File[],

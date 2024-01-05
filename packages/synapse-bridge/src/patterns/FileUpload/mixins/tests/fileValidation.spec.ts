@@ -1,17 +1,10 @@
-import Vue from "vue";
+import { defineComponent } from "vue";
 import { describe, it, expect, vi } from "vitest";
 import { shallowMount } from "@vue/test-utils";
+import FileValidation from "../fileValidation";
 
-import { FileValidation } from "../fileValidation";
-
-interface TestComponent extends Vue {
-	files: File[];
-	computedAccept: string;
-	validateFile: (file: File) => boolean;
-	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
-}
-
-const component = Vue.component("TestComponent", {
+const component = defineComponent( {
+	name: "TestComponent",
 	mixins: [FileValidation],
 	template: "<div />",
 });
@@ -25,9 +18,9 @@ const file = {
 describe("FileValidation", () => {
 	// computedAccept
 	it("computes the default accept string", () => {
-		const wrapper = shallowMount(component) as unknown as TestComponent;
+		const wrapper = shallowMount(component);
 
-		expect(wrapper.computedAccept).toBe(".pdf,.jpg,.jpeg,.png");
+		expect(wrapper.vm.computedAccept).toBe(".pdf,.jpg,.jpeg,.png");
 	});
 
 	it("returns the accept prop value is provided", () => {
@@ -35,17 +28,17 @@ describe("FileValidation", () => {
 			propsData: {
 				accept: ".pdf",
 			},
-		}) as unknown as TestComponent;
+		});
 
-		expect(wrapper.computedAccept).toBe(".pdf");
+		expect(wrapper.vm.computedAccept).toBe(".pdf");
 	});
 
 	// validateFile
 	it("returns true if the file is valid", () => {
-		const wrapper = shallowMount(component) as unknown as TestComponent;
+		const wrapper = shallowMount(component);
 
-		expect(wrapper.validateFile(file)).toBe(true);
-		expect(wrapper.files).toStrictEqual([file]);
+		expect(wrapper.vm.validateFile(file)).toBe(true);
+		expect(wrapper.vm.files).toStrictEqual([file]);
 	});
 
 	it("returns false if the file is too large", () => {
@@ -53,9 +46,9 @@ describe("FileValidation", () => {
 			propsData: {
 				fileSizeMax: 500,
 			},
-		}) as unknown as TestComponent;
+		});
 
-		expect(wrapper.validateFile(file)).toBe(false);
+		expect(wrapper.vm.validateFile(file)).toBe(false);
 		expect(wrapper.emitted("error")).toBeTruthy();
 	});
 
@@ -64,28 +57,29 @@ describe("FileValidation", () => {
 			propsData: {
 				allowedExtensions: ["pdf"],
 			},
-		}) as unknown as TestComponent;
+		});
 
-		expect(wrapper.validateFile(file)).toBe(false);
+		expect(wrapper.vm.validateFile(file)).toBe(false);
 		expect(wrapper.emitted("error")).toBeTruthy();
 	});
 
 	// ifTooManyFiles
 	it("returns false if there is only one file", () => {
-		const wrapper = shallowMount(component) as unknown as TestComponent;
+		const wrapper = shallowMount(component);
 
 		const files = [file] as unknown as FileList;
 
-		expect(wrapper.ifTooManyFiles(files)).toBe(false);
+		expect(wrapper.vm.ifTooManyFiles(files)).toBe(false);
 		expect(wrapper.emitted("error")).toBeFalsy();
 	});
 
 	it("returns true if there is more than one file", () => {
-		const wrapper = shallowMount(component) as unknown as TestComponent;
+		const wrapper = shallowMount(component);
 
 		const files = [file, file] as unknown as FileList;
 
-		expect(wrapper.ifTooManyFiles(files)).toBe(true);
+		expect(wrapper.vm.ifTooManyFiles(files)).toBe(true);
 		expect(wrapper.emitted("error")).toBeTruthy();
 	});
 });
+
