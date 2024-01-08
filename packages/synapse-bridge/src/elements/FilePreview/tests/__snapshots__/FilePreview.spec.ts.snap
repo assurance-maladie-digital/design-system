@@ -1,3 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`FilePreview > renders correctly 1`] = `<div class="vd-file-preview"><img alt="" style="width: 100%;"></div>`;
+exports[`FilePreview > renders correctly with a pdf 1`] = `
+<div class="vd-file-preview"><object height="556px" width="100%" type="application/pdf">
+    <p class="mb-0">Impossible de prévisualiser le fichier.</p>
+  </object></div>
+`;
+
+exports[`FilePreview > renders correctly with an image 1`] = `<div class="vd-file-preview"><img alt="" style="width: 100%;"></div>`;
