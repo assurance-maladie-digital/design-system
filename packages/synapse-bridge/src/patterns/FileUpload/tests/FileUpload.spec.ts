@@ -48,17 +48,4 @@ describe("FileUpload", () => {
 		const mockArg: null | string = consoleMock.mock.calls?.[0]?.[0];
 		expect(mockArg).toContain("[Vue warn]: Invalid prop: custom validator check failed for prop \"modelValue\"");
 	});
-
-	it("do accept the props", () => {
-		shallowMount(FileUpload, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: null,
-			},
-		});
-
-		expect(consoleMock).toHaveBeenCalledTimes(0);
-	});
 });

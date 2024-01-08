@@ -26,9 +26,6 @@ export default defineComponent({
 			default: null,
 			/** @see https://github.com/vuetifyjs/vuetify/blob/9e4daa81bfe3046fcf7e4a731809c3d554b3df54/packages/vuetify/src/components/VFileInput/VFileInput.tsx#L72C13-L72C13 */
 			validator(val): boolean {
-				if (val === null) {
-					return true;
-				}
 				const value = Array.isArray(val) ? val : [val];
 				const isValid = value.every(
 					(v) => v !== null && typeof v === "object"
