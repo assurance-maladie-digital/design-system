@@ -24,7 +24,7 @@ export const DateLogic = defineComponent({
 			type: String,
 			default: "YYYY-MM-DD",
 		},
-		value: {
+		modelValue: {
 			type: String,
 			default: "",
 		},
@@ -41,12 +41,6 @@ export const DateLogic = defineComponent({
 					hasError: boolean;
 				};
 			}>,
-
-			// DatePicker mixin
-			options: null as Options | null,
-
-			// WarningRules mixin
-			validate: function (value: string): void {},
 
 			/** YYYY-MM-DD format */
 			date: "",
@@ -106,7 +100,7 @@ export const DateLogic = defineComponent({
 	},
 	computed: {
 		validateOnBlurEnabled(): boolean {
-			return Boolean(this.options.textField?.validateOnBlur);
+			return Boolean(this.options?.textField?.validateOnBlur);
 		},
 
 		dateFormatted: {
@@ -121,7 +115,7 @@ export const DateLogic = defineComponent({
 
 				return formatted;
 			},
-			set(value) {
+			set(value: string) {
 				this.textFieldDate = value;
 			},
 		},
@@ -176,7 +170,7 @@ export const DateLogic = defineComponent({
 
 		saveFromTextField(): void {
 			if (!this.textFieldDate) {
-				this.$emit("change", "");
+				this.$emit("update:modelValue", "");
 				this.clearInternalModel();
 
 				return;
@@ -224,7 +218,7 @@ export const DateLogic = defineComponent({
 
 		emitChangeEvent(): void {
 			this.$emit(
-				"change",
+				"update:modelValue",
 				parseDate(this.date, INTERNAL_FORMAT).format(
 					this.dateFormatReturn
 				)

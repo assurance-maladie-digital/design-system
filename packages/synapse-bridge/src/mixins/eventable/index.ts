@@ -1,7 +1,5 @@
 import { defineComponent } from "vue";
 
-import { Options } from "../customizable";
-
 import { isWeekend } from "../../functions/validation/isWeekend";
 import { isDateInRange } from "../../functions/validation/isDateInRange";
 
@@ -27,15 +25,13 @@ export const Eventable = defineComponent({
 	},
 	data() {
 		return {
-			// Customizable mixin
-			options: null as Options | null,
 			// DatePicker mixin
 			date: "",
 		};
 	},
 	methods: {
 		calendarEvents(date: string): Events {
-			const userEvents = this.options.datePicker?.events as EventsFunction | null;
+			const userEvents = this.options?.datePicker?.events as EventsFunction | null;
 
 			if (userEvents) {
 				return typeof userEvents === 'function' ? userEvents(date) : userEvents;
@@ -48,7 +44,7 @@ export const Eventable = defineComponent({
 			}
 
 			if (this.showWeekends) {
-				const weekEndColor = this.$vuetify.theme.dark ? 'grey darken-1' : 'grey lighten-1';
+				const weekEndColor = this.$vuetify.theme.current.dark ? 'grey darken-1' : 'grey lighten-1';
 
 				return isWeekend(date) ? `vd-custom-event ${weekEndColor}` : false;
 			}

@@ -28,7 +28,7 @@ export default defineComponent({
 	},
 	inheritAttrs: false,
 	directives: { maska: vMaska },
-	emits: ["change", "update:modelValue"],
+	emits: ["update:modelValue"],
 	mixins: [
 		customizable(config),
 		Eventable,
@@ -97,7 +97,8 @@ export default defineComponent({
 		},
 
 		textFieldOptions(): Options {
-			return deepMerge<Options>(this.textFieldOptions, this.$attrs);
+			console.log(this.options);
+			return deepMerge<Options>(this.options?.textField, this.$attrs);
 		},
 
 		textFieldClasses(): (string | string[])[] {
@@ -112,22 +113,14 @@ export default defineComponent({
 			}
 
 			if (this.textFieldClass) {
-				const classes =
-					typeof this.textFieldClass === "object"
-						? this.textFieldClass
-						: [this.textFieldClass];
-
-				textFieldClasses.push(classes);
+				if(Array.isArray(this.textFieldClass)) {
+					textFieldClasses.concat(this.textFieldClass);
+				} else {
+					textFieldClasses.push(this.textFieldClass);
+				}
 			}
 
 			return textFieldClasses;
-		},
-
-		listeners(): Record<string, Function | Function[]> {
-			// Remove 'change' event to avoid event duplication
-			delete this.$listeners.change;
-
-			return this.$listeners;
 		},
 	},
 	methods: {
@@ -156,7 +149,7 @@ export default defineComponent({
 				:error-messages="
 					textFieldOptions.errorMessages || errorMessages
 				"
-				:error.sync="internalErrorProp"
+				v-model:error="internalErrorProp"
 				:disabled="disabled"
 				class="vd-date-picker-text-field"
 				@blur="textFieldBlur"

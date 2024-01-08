@@ -12,7 +12,7 @@ export const ErrorProp = defineComponent({
 			get() {
 				return this.error;
 			},
-			set(value) {
+			set(value: unknown) {
 				this.$emit("update:error", value);
 			},
 		},

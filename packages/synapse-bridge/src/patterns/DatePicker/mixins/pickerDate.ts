@@ -11,8 +11,6 @@ export const PickerDate = defineComponent({
 	},
 	data() {
 		return {
-			// Birthdate mixin
-			birthdate: false,
 			bufferValue: null as string | null,
 		};
 	},

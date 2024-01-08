@@ -7,12 +7,6 @@ export const MaskValue = defineComponent({
 			default: undefined,
 		},
 	},
-	data() {
-		return {
-			// DatePicker mixin
-			dateFormat: "",
-		};
-	},
 	computed: {
 		maskValue(): string | undefined {
 			if (this.mask === false) {
