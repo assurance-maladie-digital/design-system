@@ -205,5 +205,7 @@
 <style lang="scss" scoped>
 	.v-card__title > * {
 		line-height: 1em;
+		word-break: break-word;
+		text-wrap: balance;
 	}
 </style>
