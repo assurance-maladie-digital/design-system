@@ -73,7 +73,7 @@ export const api: Api = {
 		slots: [
 			{
 				name: 'default',
-				description: 'Slot pour ajouter du contenu affiché après la sélection de l’utilisateur.'
+				description: 'Slot pour ajouter du contenu affiché après la sélection de l’utilisateur.<br> Le contenu s’affichera si la note n’est pas optimale.'
 			}
 		],
 		events: [
