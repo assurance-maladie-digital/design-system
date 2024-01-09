@@ -2,9 +2,9 @@ import { defineComponent } from "vue";
 
 import { parseDate } from "../../../helpers/parseDate";
 
-import { Options } from "../../../mixins/customizable";
-
-import { Refs } from "../../../types";
+import { Refs } from "@/types";
+import { VTextField } from "vuetify/components";
+import { WarningRules } from "@/mixins/warningRules";
 
 export const INTERNAL_FORMAT = "YYYY-MM-DD";
 export const INTERNAL_FORMAT_REGEX =
@@ -15,6 +15,7 @@ const locales = {
 };
 
 export const DateLogic = defineComponent({
+	mixins: [WarningRules],
 	props: {
 		dateFormat: {
 			type: String,
@@ -35,11 +36,7 @@ export const DateLogic = defineComponent({
 				menu: {
 					save: (date: string) => void;
 				};
-				input: {
-					validate: () => boolean;
-					hasFocused: boolean;
-					hasError: boolean;
-				};
+				input: VTextField;
 			}>,
 
 			/** YYYY-MM-DD format */
@@ -52,13 +49,15 @@ export const DateLogic = defineComponent({
 		};
 	},
 	watch: {
-		value: {
+		modelValue: {
 			handler(date: string): void {
 				if (!date) {
 					this.clearInternalModel();
 
 					return;
 				}
+
+				console.log(date);
 
 				const parsed = this.parseDateForModel(date);
 
@@ -88,6 +87,7 @@ export const DateLogic = defineComponent({
 	mounted() {
 		// Watch VTextField 'hasError' computed value since 'update:error' event isn't reliable
 		// (it's not fired at initial state and 'validateOnBlur' can cause issues as well)
+
 		this.$watch(
 			() => this.$refs.input.hasError,
 			(error: boolean) => {
@@ -100,7 +100,7 @@ export const DateLogic = defineComponent({
 	},
 	computed: {
 		validateOnBlurEnabled(): boolean {
-			return Boolean(this.options?.textField?.validateOnBlur);
+			return true; //Boolean(this.options?.textField?.validateOnBlur);
 		},
 
 		dateFormatted: {

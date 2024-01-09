@@ -1,8 +1,10 @@
 import { defineComponent } from "vue";
+import { Birthdate } from "./birthdate";
 
 const BIRTHDATE_DEFAULT_VALUE = "1990-01";
 
 export const PickerDate = defineComponent({
+	mixins: [Birthdate],
 	props: {
 		pickerDate: {
 			type: String,

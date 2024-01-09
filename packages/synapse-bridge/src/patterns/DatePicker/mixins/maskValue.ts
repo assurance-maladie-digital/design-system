@@ -1,6 +1,8 @@
 import { defineComponent } from "vue";
+import { DateLogic } from "./dateLogic";
 
 export const MaskValue = defineComponent({
+	mixins: [DateLogic],
 	props: {
 		mask: {
 			type: [String, Boolean],
@@ -8,16 +10,18 @@ export const MaskValue = defineComponent({
 		},
 	},
 	computed: {
-		maskValue(): string | undefined {
+		maskValue(): {mask: string} | undefined {
 			if (this.mask === false) {
 				return;
 			}
 
 			if (typeof this.mask === "string") {
-				return this.mask;
+				return { mask: this.mask };
 			}
 
-			return this.dateFormat.replace(/[a-z]/gim, "#");
+			return {
+				mask: this.dateFormat.replace(/[a-z]/gim, "#")
+			};
 		},
 	},
 });

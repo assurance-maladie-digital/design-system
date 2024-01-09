@@ -97,7 +97,6 @@ export default defineComponent({
 		},
 
 		textFieldOptions(): Options {
-			console.log(this.options);
 			return deepMerge<Options>(this.options?.textField, this.$attrs);
 		},
 
