@@ -21,6 +21,7 @@
 		/>
 
 		<FileUpload
+			v-if="showFileUpload"
 			ref="fileUpload"
 			v-bind="options.fileUpload"
 			v-model="uploadedFile"
@@ -116,6 +117,10 @@
 
 		get showFileList(): boolean {
 			return this.value.length > 0 || this.fileListItems?.length > 0;
+		}
+
+		get showFileUpload(): boolean {
+			return this.fileListItems?.some((item) => item.state !== 'success');
 		}
 
 		uploadInline(id: string): void {
