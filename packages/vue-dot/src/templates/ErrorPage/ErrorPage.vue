@@ -102,7 +102,6 @@
 		locales = locales;
 		route: RawLocation | undefined = this.btnRoute;
 
-		// If btnHref is set, the props btnRoute is ignored
 		mounted() {
 			if (this.btnHref) {
 				this.route = undefined;
