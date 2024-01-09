@@ -3,36 +3,23 @@ import { shallowMount } from "@vue/test-utils";
 
 import CustomIcon from "../";
 
-const VD_OPTIONS = {
-	theme: {
-		icons: {
-			test: "icon-src",
-		},
-	},
-};
-
-const mocks = {
-	$vd: VD_OPTIONS,
-};
-
 describe("CustomIcon", () => {
-	it("renders correctly", () => {
+	it("renders correctly without icon", () => {
 		const wrapper = shallowMount(CustomIcon, {
-			mocks,
 			propsData: {
-				icon: "test",
+				icon: undefined,
 			},
 		});
 
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly with a custom size", () => {
+	it("renders correctly with icon", () => {
 		const wrapper = shallowMount(CustomIcon, {
-			mocks,
 			propsData: {
 				icon: "test",
 				size: "64px",
+				color: "red",
 			},
 		});
 

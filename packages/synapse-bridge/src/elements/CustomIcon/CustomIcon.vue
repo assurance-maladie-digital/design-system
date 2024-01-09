@@ -1,12 +1,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-
-import { customizable } from "../../mixins/customizable";
-import { ThemeIcon } from "./mixins/themeIcon";
+import { themeIcon } from "./mixins/themeIcon";
 
 export default defineComponent({
-	mixins: [customizable(ThemeIcon)],
+	mixins: [themeIcon],
 	props: {
+		icon: {
+			type: String,
+			default: undefined,
+		},
 		/**
 		 * The color of the icon (any CSS value)
 		 * By default it's inherited from the text color
@@ -52,17 +54,6 @@ export default defineComponent({
 			default: undefined,
 		},
 	},
-	data() {
-		return {
-			ThemeIcon: undefined,
-		};
-	},
-	computed: {
-		themeIcon(): string | undefined {
-			console?.log("themeIcon", this.ThemeIcon);
-			return this.ThemeIcon;
-		},
-	},
 });
 </script>
 
@@ -87,7 +78,7 @@ export default defineComponent({
 		class="vd-custom-icon"
 	>
 		<slot>
-			<span v-if="themeIcon" v-html="themeIcon" />
+			<span v-if="themeIcon" v-html="getThemeIcon()" />
 		</slot>
 	</span>
 </template>

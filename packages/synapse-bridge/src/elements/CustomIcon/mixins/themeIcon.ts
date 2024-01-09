@@ -1,17 +1,20 @@
 import { defineComponent } from "vue";
-import { GetThemeIcon } from "../../../mixins/getThemeIcon";
 
-export const ThemeIcon = defineComponent({
-	mixins: [GetThemeIcon],
+export const themeIcon = defineComponent({
 	props: {
 		icon: {
 			type: String,
-			default: "",
+			default: undefined,
 		},
 	},
 	computed: {
-		themeIcon(): string | undefined {
-			return this.getThemeIcon(this.icon);
+		themeIcon(): boolean {
+			return this.icon !== undefined;
+		},
+	},
+	methods: {
+		getThemeIcon(): any {
+			return this.icon;
 		},
 	},
 });
