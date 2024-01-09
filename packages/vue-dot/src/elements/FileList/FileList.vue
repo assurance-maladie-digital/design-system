@@ -78,6 +78,7 @@
 						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
+						:class="{ 'mr-0': hideDeleteBtn }"
 						@click="$emit('view-file', file)"
 					>
 						<VIcon
@@ -89,7 +90,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state !== FileStateEnum.INITIAL"
+						v-if="file.state !== FileStateEnum.INITIAL && !hideDeleteBtn"
 						v-bind="options.deleteFileBtn"
 						@click="$emit('delete-file', index)"
 					>
@@ -143,6 +144,10 @@
 				required: true
 			},
 			showViewBtn: {
+				type: Boolean,
+				default: false
+			},
+			hideDeleteBtn: {
 				type: Boolean,
 				default: false
 			},
