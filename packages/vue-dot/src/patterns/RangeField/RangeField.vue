@@ -5,20 +5,22 @@
 			class="d-flex flex-wrap max-width-none ma-n3"
 		>
 			<VTextField
+				v-facade="mask"
 				v-bind="options.textField"
 				:value="minValue"
 				:label="locales.minLabel"
 				:outlined="outlined"
-				type="number"
+				inputmode="numeric"
 				@change="updateMinValue"
 			/>
 
 			<VTextField
+				v-facade="mask"
 				v-bind="options.textField"
 				:value="maxValue"
 				:label="locales.maxLabel"
 				:outlined="outlined"
-				type="number"
+				inputmode="numeric"
 				@change="updateMaxValue"
 			/>
 		</div>
@@ -95,6 +97,10 @@
 						return;
 					}
 
+					if (isNaN(value[RangeEnum.MIN]) || isNaN(value[RangeEnum.MAX])) {
+						return;
+					}
+
 					this.rangeValue = value;
 				},
 				immediate: true,
@@ -104,6 +110,8 @@
 	})
 	export default class RangeField extends MixinsDeclaration {
 		locales = locales;
+
+		mask = '-?#*';
 
 		rangeValue: number[] = [];
 
@@ -151,21 +159,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-	/* Hide the arrows on the fields */
-
-	/* Chrome like browsers */
-	::v-deep .v-text-field input[type=number]::-webkit-outer-spin-button,
-	::v-deep .v-text-field input[type=number]::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-
-	/* Firefox */
-	::v-deep .v-text-field input[type=number] {
-		appearance: textfield;
-		-moz-appearance: textfield;
-	}
-
-</style>
