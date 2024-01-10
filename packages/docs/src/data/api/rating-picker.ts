@@ -67,7 +67,7 @@ export const api: Api = {
 				name: 'hide-alert',
 				type: 'boolean',
 				default: false,
-				description: 'Ne pas afficher l’alerte de validation.'
+				description: 'Masque l’alerte de validation.'
 			},
 			{
 				name: 'value',

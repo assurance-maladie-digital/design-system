@@ -38,7 +38,7 @@
 					'number',
 					'stars'
 				]
-			},
+			}
 		};
 	}
 </script>
