@@ -12,6 +12,7 @@
 
 		<template v-if="hasAnswered">
 			<AlertWrapper
+				v-if="!hideAlert"
 				:class="{ 'mb-0': !displayAdditionalContent }"
 				outlined
 				type="success"
@@ -59,6 +60,10 @@
 				default: null
 			},
 			twoEmotions: {
+				type: Boolean,
+				default: false
+			},
+			hideAlert: {
 				type: Boolean,
 				default: false
 			},

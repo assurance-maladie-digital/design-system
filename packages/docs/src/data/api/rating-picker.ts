@@ -64,6 +64,12 @@ export const api: Api = {
 				description: 'Limite la sélection à deux choix lorsque que le champ est de type `emotion`.'
 			},
 			{
+				name: 'hide-alert',
+				type: 'boolean',
+				default: false,
+				description: 'Masque l’alerte de validation.'
+			},
+			{
 				name: 'value',
 				type: 'number',
 				default: -1,
