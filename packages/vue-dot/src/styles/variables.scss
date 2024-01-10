@@ -83,4 +83,4 @@ $btn-letter-spacing: 0.005em;
 $btn-font-weight: 600;
 $btn-text-transform: none;
 
-$alert-font-size: map-get( $headings, 'body-1', 'size');
+$alert-font-size: map-get($headings, 'body-1', 'size');
