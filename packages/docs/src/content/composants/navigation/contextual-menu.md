@@ -12,23 +12,9 @@ description: L’élément `ContextualMenu` est utilisé pour afficher un menu a
 
 <doc-alert type="info">
 
-  Pour faire fonctionner le scroll avec des ancres, vous pouvez avoir besoin d'ajouter la propriété `scrollBehavior` à la configuration de vue-router.
-
-  Plus d'information sur la documentation de vue-router:<br>
-  [https://v3.router.vuejs.org/guide/advanced/scroll-behavior.html](https://v3.router.vuejs.org/guide/advanced/scroll-behavior.html)
+Pour faire fonctionner le scroll avec des ancres, vous pouvez avoir besoin d’ajouter le [helper `scrollBehavior`](/composants-techniques/helpers/scroll-behavior/) à la configuration de Vue Router.
 
 </doc-alert>
-
-```ts
-scrollBehavior(to, _from, _savedPosition) {
-  if (to.hash) {
-    return {
-      selector: to.hash
-    };
-  }
-}
-```
-
 ### Exemples
 
 #### Titres de niveaux différents
