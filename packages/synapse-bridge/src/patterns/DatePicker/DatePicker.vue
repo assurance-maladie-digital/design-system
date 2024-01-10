@@ -155,8 +155,7 @@ export default defineComponent({
 				@click="textFieldClicked"
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
-				@update:model-value="errorMessages = null"
-				@change="dateFormatted = $event"
+				@update:model-value="e=>{errorMessages = null; dateFormatted = e;}"
 			>
 				<template #prepend>
 					<VBtn

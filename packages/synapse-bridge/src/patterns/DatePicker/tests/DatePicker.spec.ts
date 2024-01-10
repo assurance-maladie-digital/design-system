@@ -1,34 +1,22 @@
-import Vue from "vue";
+
 import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, mount } from "@vue/test-utils";
 
 import DatePicker from "../";
-
-/** Create fake VTextField for refs */
-function createTextField() {
-	return Vue.component('VTextField', {
-		data() {
-			return {
-				hasError: false,
-				hasFocused: false
-			};
-		},
-		methods: {
-			validate() {
-				return null;
-			}
-		},
-		template: '<div />'
-	});
-}
+import { vuetify } from "@tests/unit/setup";
 
 describe("DatePicker", () => {
 	it("renders correctly", () => {
-		const wrapper = shallowMount(
+		const wrapper = mount(
 			DatePicker,
 			{
-				stubs: {
-					textField: createTextField(),
+				global: {
+					plugins: [
+						vuetify,
+					],
+				},
+				propsData: {
+					modelValue: "2021-01-01",
 				},
 			},
 		);
@@ -36,3 +24,4 @@ describe("DatePicker", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 });
+
