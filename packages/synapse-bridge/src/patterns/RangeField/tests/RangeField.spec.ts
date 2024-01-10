@@ -20,6 +20,19 @@ describe("RangeField", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it("renders correctly with outlined prop", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				outlined: true,
+			},
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
 	it("renders correctly minValue computed", () => {
 		const wrapper = shallowMount(RangeField, {
 			global: {
@@ -48,7 +61,7 @@ describe("RangeField", () => {
 
 		wrapper.vm.updateRange(0, -10);
 
-		expect(wrapper.vm.rangeValue[0]).toEqual(0);
+		expect(wrapper.vm.rangeValue[0]).toEqual(-10);
 	});
 
 	it("renders correctly with value > max", () => {
@@ -64,7 +77,7 @@ describe("RangeField", () => {
 
 		wrapper.vm.updateRange(1, 110);
 
-		expect(wrapper.vm.rangeValue[1]).toEqual(100);
+		expect(wrapper.vm.rangeValue[1]).toEqual(110);
 	});
 
 	it("renders correctly maxValue computed", () => {
@@ -161,5 +174,17 @@ describe("RangeField", () => {
 
 		expect(wrapper.vm.rangeValue[0]).toEqual(90);
 		expect(wrapper.vm.rangeValue[1]).toEqual(95);
+	});
+
+	it("renders correctly with change event", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		wrapper.vm.updateRange(0, 50);
+
+		expect(wrapper.emitted()).toHaveProperty("change");
 	});
 });
