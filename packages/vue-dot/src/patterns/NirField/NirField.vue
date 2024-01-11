@@ -1,5 +1,10 @@
 <template>
-	<div class="vd-nir-field d-flex align-start">
+	<div
+		class="vd-nir-field d-flex align-start"
+		:class="{
+			'vd-nir-field--outlined': $attrs.hasOwnProperty('outlined'),
+		}"
+	>
 		<VInput
 			:value="[computedNumberValue, keyValue]"
 			:error-count="5"
@@ -344,6 +349,8 @@
 </script>
 
 <style lang="scss" scoped>
+	@import 'vuetify/src/components/VTextField/variables';
+
 	.vd-number-field {
 		width: 296px;
 	}
@@ -361,5 +368,9 @@
 
 	::v-deep .v-messages__message {
 		margin-bottom: 4px;
+	}
+
+	.vd-nir-field--outlined ::v-deep .v-messages.error--text {
+		padding: $text-field-enclosed-details-padding;
 	}
 </style>
