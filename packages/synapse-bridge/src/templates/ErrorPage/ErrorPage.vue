@@ -47,6 +47,12 @@
 		data() {
 			return {
 				locales,
+				route: this.btnRoute as RouteRecordRaw | string | undefined,
+			}
+		},
+		created() {
+			if (this.btnHref) {
+				this.route = undefined;
 			}
 		},
 		computed: {
@@ -90,8 +96,8 @@
 
 					<slot name="action">
 						<VBtn
-							v-if="!noBtn && btnText && btnRoute"
-							:to="btnRoute"
+							v-if="!noBtn && btnText && (route || btnHref)"
+							:to="route"
 							:href="btnHref"
 							color="primary"
 							exact
@@ -99,6 +105,7 @@
 						>
 							{{ btnText }}
 						</VBtn>
+
 					</slot>
 				</VCol>
 
