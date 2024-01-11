@@ -104,7 +104,7 @@ export default defineComponent({
 :deep(.v-alert__close) {
 	align-self: center;
 	.vd-close-btn {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		width: auto;
 		height: auto;
 		height: 36px;

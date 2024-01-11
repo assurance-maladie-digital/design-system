@@ -70,5 +70,9 @@
 			'weight': 400
 		),
 	),
-	$alert-border-opacity: 1
+	$alert-border-opacity: 1,
 );
+
+.v-alert {
+	font-size: 1.125rem;
+}
