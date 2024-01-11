@@ -21,6 +21,7 @@
 				@keydown="focusKeyField"
 				@input.native="setNumberValue"
 				@change="validateNumberValue"
+				@blur="validateNumberValue"
 			/>
 
 			<div
@@ -47,6 +48,7 @@
 					@keyup.delete="focusNumberField"
 					@input.native="setKeyValue"
 					@change="validateKeyValue"
+					@blur="validateKeyValue"
 				/>
 
 				<div
