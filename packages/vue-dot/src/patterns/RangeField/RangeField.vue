@@ -5,19 +5,23 @@
 			class="d-flex flex-wrap max-width-none ma-n3"
 		>
 			<VTextField
+				v-facade="mask"
 				v-bind="options.textField"
 				:value="minValue"
 				:label="locales.minLabel"
 				:outlined="outlined"
-				@input="updateMinValue"
+				inputmode="numeric"
+				@change="updateMinValue"
 			/>
 
 			<VTextField
+				v-facade="mask"
 				v-bind="options.textField"
 				:value="maxValue"
 				:label="locales.maxLabel"
 				:outlined="outlined"
-				@input="updateMaxValue"
+				inputmode="numeric"
+				@change="updateMaxValue"
 			/>
 		</div>
 
@@ -64,7 +68,7 @@
 				default: 0
 			},
 			value: {
-				type: String,
+				type: Array as () => number[] | undefined,
 				default: undefined
 			},
 			outlined: {
@@ -93,6 +97,10 @@
 						return;
 					}
 
+					if (isNaN(value[RangeEnum.MIN]) || isNaN(value[RangeEnum.MAX])) {
+						return;
+					}
+
 					this.rangeValue = value;
 				},
 				immediate: true,
@@ -102,6 +110,8 @@
 	})
 	export default class RangeField extends MixinsDeclaration {
 		locales = locales;
+
+		mask = '-?#*';
 
 		rangeValue: number[] = [];
 
@@ -117,12 +127,12 @@
 			return this.$vuetify.breakpoint.xs;
 		}
 
-		updateMinValue(value: number): void {
-			this.updateRange(RangeEnum.MIN, value);
+		updateMinValue(value: string): void {
+			this.updateRange(RangeEnum.MIN, Number(value));
 		}
 
-		updateMaxValue(value: number): void {
-			this.updateRange(RangeEnum.MAX, value);
+		updateMaxValue(value: string): void {
+			this.updateRange(RangeEnum.MAX, Number(value));
 		}
 
 		updateRange(index: RangeEnum, value: number): void {

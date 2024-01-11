@@ -29,8 +29,8 @@
 
 					<slot name="action">
 						<VBtn
-							v-if="!noBtn && btnText && btnRoute"
-							:to="btnRoute"
+							v-if="!noBtn && btnText && (route || btnHref)"
+							:to="route"
 							:href="btnHref"
 							color="primary"
 							exact
@@ -100,6 +100,13 @@
 	@Component
 	export default class MaintenancePage extends MixinsDeclaration {
 		locales = locales;
+		route: RawLocation | undefined = this.btnRoute;
+
+		mounted() {
+			if (this.btnHref) {
+				this.route = undefined;
+			}
+		}
 
 		get mobileVersion(): boolean {
 			return this.$vuetify.breakpoint.xsOnly;

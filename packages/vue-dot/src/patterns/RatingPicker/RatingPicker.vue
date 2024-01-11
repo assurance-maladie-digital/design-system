@@ -52,6 +52,10 @@
 				type: Boolean,
 				default: false
 			},
+			hideAlert: {
+				type: Boolean,
+				default: false
+			},
 			value: {
 				type: Number,
 				default: -1

@@ -1,5 +1,5 @@
 <template>
-	<PhoneField
+	<PasswordField
 		v-model="password"
 		required
 		outlined
