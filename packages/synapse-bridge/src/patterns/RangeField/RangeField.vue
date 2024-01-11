@@ -25,8 +25,8 @@ export default defineComponent({
 			default: 0,
 		},
 		value: {
-			type: Array as () => number[] | undefined,
-			default: undefined,
+			type: Array as () => number[] | null,
+			default: null,
 		},
 		outlined: {
 			type: Boolean,
@@ -119,6 +119,7 @@ export default defineComponent({
 			<VTextField
 				v-bind="options.textField"
 				:modelValue="maxValue"
+				:ripple="false"
 				:label="locales.maxLabel"
 				:variant="outlined ? 'outlined' : undefined"
 				@update:modelValue="updateMaxValue"
