@@ -68,11 +68,11 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		updateMinValue(value: number): void {
+		updateMinValue(value: string): void {
 			this.updateRange(RangeEnum.MIN, Number(value));
 		},
 
-		updateMaxValue(value: number): void {
+		updateMaxValue(value: string): void {
 			this.updateRange(RangeEnum.MAX, Number(value));
 		},
 
@@ -113,6 +113,7 @@ export default defineComponent({
 				:modelValue="minValue"
 				:label="locales.minLabel"
 				:variant="outlined ? 'outlined' : undefined"
+				inputmode="numeric"
 				@update:modelValue="updateMinValue"
 			/>
 
@@ -122,6 +123,7 @@ export default defineComponent({
 				:ripple="false"
 				:label="locales.maxLabel"
 				:variant="outlined ? 'outlined' : undefined"
+				inputmode="numeric"
 				@update:modelValue="updateMaxValue"
 			/>
 		</div>
