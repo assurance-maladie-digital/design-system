@@ -1,10 +1,9 @@
 import { describe, it, expect, vi } from "vitest";
-import { shallowMount, mount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
 import DialogBox from "../";
-import { VCard, VDialog } from "vuetify/components";
-import { components } from "vuetify/dist/vuetify-labs.js";
+import { VCard } from "vuetify/components";
 
 describe("DialogBox", () => {
 	it("renders correctly with props", () => {
@@ -26,7 +25,7 @@ describe("DialogBox", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('it closed when model value is false', async() => {
+	it("it closed when model value is false", async () => {
 		const wrapper = mount(DialogBox, {
 			props: {
 				modelValue: false,
@@ -60,7 +59,7 @@ describe("DialogBox", () => {
 		expect(card.isVisible()).toBe(true);
 	});
 
-	it('Get the correct focusable elements', async() => {
+	it("Get the correct focusable elements", async () => {
 		const wrapper = mount(DialogBox, {
 			slots: {
 				default: `
@@ -82,15 +81,19 @@ describe("DialogBox", () => {
 
 		const modal = wrapper.getComponent(VCard);
 
-		const firstBtn = modal.find<HTMLElement>('#first');
-		const thirdBtn = modal.find<HTMLElement>('#third');
-		const theLink = modal.find<HTMLElement>('#the-link');
+		const firstBtn = modal.find<HTMLElement>("#first");
+		const thirdBtn = modal.find<HTMLElement>("#third");
+		const theLink = modal.find<HTMLElement>("#the-link");
 		await modal.vm.$nextTick();
 
-		expect(await wrapper.vm.getSelectableElements()).toEqual([firstBtn.element, thirdBtn.element, theLink.element]);
+		expect(await wrapper.vm.getSelectableElements()).toEqual([
+			firstBtn.element,
+			thirdBtn.element,
+			theLink.element,
+		]);
 	});
 
-	it('Handle the internal tab navigation', async() => {
+	it("Handle the internal tab navigation", async () => {
 		const wrapper = mount(DialogBox, {
 			slots: {
 				default: `
@@ -114,19 +117,19 @@ describe("DialogBox", () => {
 		});
 
 		async function triggerTab() {
-			modal.find(':focus').trigger('keydown', {
+			modal.find(":focus").trigger("keydown", {
 				keyCode: 9,
-				key: 'Tab',
-				code: 'Tab',
+				key: "Tab",
+				code: "Tab",
 			});
 			await wrapper.vm.$nextTick();
 		}
 
 		async function triggerShiftTab() {
-			modal.find(':focus').trigger('keydown', {
+			modal.find(":focus").trigger("keydown", {
 				keyCode: 9,
-				key: 'Tab',
-				code: 'Tab',
+				key: "Tab",
+				code: "Tab",
 				shiftKey: true,
 			});
 			await wrapper.vm.$nextTick();
@@ -134,18 +137,18 @@ describe("DialogBox", () => {
 
 		const modal = wrapper.getComponent(VCard);
 
-		const firstBtn = modal.find<HTMLElement>('#first');
-		const thirdBtn = modal.find<HTMLElement>('#third');
+		const firstBtn = modal.find<HTMLElement>("#first");
+		const thirdBtn = modal.find<HTMLElement>("#third");
 		await modal.vm.$nextTick();
 
 		firstBtn.element.focus();
 		await modal.vm.$nextTick();
 
 		// Enter event should be ignored
-		modal.find(':focus').trigger('keydown', {
+		modal.find(":focus").trigger("keydown", {
 			keyCode: 13,
-			key: 'Enter',
-			code: 'Enter',
+			key: "Enter",
+			code: "Enter",
 		});
 		await wrapper.vm.$nextTick();
 		expect(firstBtn.element).toEqual(document.activeElement);
@@ -166,10 +169,10 @@ describe("DialogBox", () => {
 
 		// If we reach the beginning, we should go back to the end
 		await triggerShiftTab();
-		expect(modal.find('#the-link').element).toEqual(document.activeElement);
+		expect(modal.find("#the-link").element).toEqual(document.activeElement);
 	});
 
-	it('emit event when close button is clicked', async() => {
+	it("emit event when close button is clicked", async () => {
 		const wrapper = mount(DialogBox, {
 			props: {
 				modelValue: true,
@@ -183,12 +186,12 @@ describe("DialogBox", () => {
 
 		expect(wrapper.vm.$data.dialog).toBe(true);
 
-		const closeBtn = modal.find('button');
-		await closeBtn.trigger('click');
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy();
+		const closeBtn = modal.find("button");
+		await closeBtn.trigger("click");
+		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
 	});
 
-	it('emit cancel event when cancel button is clicked', async() => {
+	it("emit cancel event when cancel button is clicked", async () => {
 		const wrapper = mount(DialogBox, {
 			props: {
 				modelValue: true,
@@ -200,12 +203,12 @@ describe("DialogBox", () => {
 
 		const modal = wrapper.getComponent(VCard);
 
-		const cancelBtn = modal.find('.vd-dialog-box-actions-ctn button');
-		await cancelBtn.trigger('click');
-		expect(wrapper.emitted('cancel')).toBeTruthy();
+		const cancelBtn = modal.find(".vd-dialog-box-actions-ctn button");
+		await cancelBtn.trigger("click");
+		expect(wrapper.emitted("cancel")).toBeTruthy();
 	});
 
-	it('emit confirm event when confirm button is clicked', async() => {
+	it("emit confirm event when confirm button is clicked", async () => {
 		const wrapper = mount(DialogBox, {
 			props: {
 				modelValue: true,
@@ -217,8 +220,10 @@ describe("DialogBox", () => {
 
 		const modal = wrapper.getComponent(VCard);
 
-		const confirmBtn = modal.find('.vd-dialog-box-actions-ctn button:last-child');
-		await confirmBtn.trigger('click');
-		expect(wrapper.emitted('confirm')).toBeTruthy();
+		const confirmBtn = modal.find(
+			".vd-dialog-box-actions-ctn button:last-child"
+		);
+		await confirmBtn.trigger("click");
+		expect(wrapper.emitted("confirm")).toBeTruthy();
 	});
 });

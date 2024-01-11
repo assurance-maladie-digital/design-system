@@ -192,5 +192,6 @@ export default defineComponent({
 }
 h2 {
 	word-break: break-word;
+	text-wrap: balance;
 }
 </style>
