@@ -35,6 +35,10 @@ export default defineComponent({
 			type: Boolean,
 			default: false,
 		},
+		hideDeleteBtn: {
+			type: Boolean,
+			default: false,
+		},
 		hideLastDivider: {
 			type: Boolean,
 			default: false,
@@ -168,6 +172,7 @@ export default defineComponent({
 							"
 							v-bind="options.viewFileBtn"
 							:aria-label="locales.viewFile"
+							:class="hideDeleteBtn ? 'mr-0' : 'mr-2'"
 							@click="$emit('view-file', file)"
 						>
 							<VIcon v-bind="options.icon" :color="iconColor">
@@ -176,7 +181,7 @@ export default defineComponent({
 						</VBtn>
 
 						<VBtn
-							v-if="file.state !== FileStateEnum.INITIAL"
+							v-if="file.state !== FileStateEnum.INITIAL && !hideDeleteBtn"
 							v-bind="options.deleteFileBtn"
 							@click="$emit('delete-file', index)"
 						>

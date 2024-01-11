@@ -29,7 +29,6 @@ export const config = {
 	viewFileBtn: {
 		icon: true,
 		variant: "text",
-		class: "mr-2",
 	},
 	deleteFileBtn: {
 		icon: true,
