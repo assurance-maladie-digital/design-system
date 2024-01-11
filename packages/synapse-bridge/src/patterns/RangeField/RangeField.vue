@@ -6,6 +6,8 @@ import { customizable } from "../../mixins/customizable";
 import { locales } from "./locales";
 import { config } from "./config";
 
+import { vMaska } from "maska";
+
 enum RangeEnum {
 	MIN = 0,
 	MAX = 1,
@@ -15,6 +17,7 @@ import { useDisplay } from "vuetify";
 
 export default defineComponent({
 	mixins: [customizable(config)],
+	directives: { maska: vMaska },
 	props: {
 		min: {
 			type: Number,
@@ -37,6 +40,7 @@ export default defineComponent({
 		return {
 			locales,
 			rangeValue: [] as number[],
+			fieldMask: { mask: "#*" },
 		};
 	},
 	emits: ["change"],
@@ -46,6 +50,10 @@ export default defineComponent({
 				if (!value) {
 					this.rangeValue = [this.min, this.max];
 
+					return;
+				}
+
+				if (isNaN(value[RangeEnum.MIN]) || isNaN(value[RangeEnum.MAX])) {
 					return;
 				}
 
@@ -110,6 +118,7 @@ export default defineComponent({
 		>
 			<VTextField
 				v-bind="options.textField"
+				v-maska:[fieldMask]
 				:modelValue="minValue"
 				:label="locales.minLabel"
 				:variant="outlined ? 'outlined' : undefined"
@@ -119,6 +128,7 @@ export default defineComponent({
 
 			<VTextField
 				v-bind="options.textField"
+				v-maska:[fieldMask]
 				:modelValue="maxValue"
 				:ripple="false"
 				:label="locales.maxLabel"

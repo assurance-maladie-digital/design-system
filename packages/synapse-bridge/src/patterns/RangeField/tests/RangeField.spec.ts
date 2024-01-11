@@ -47,6 +47,21 @@ describe("RangeField", () => {
 		expect(wrapper.vm.rangeValue).toStrictEqual([0, 0]);
 	});
 
+	it("renders correctly with value NaN", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				value: [NaN, NaN],
+				min: 0,
+				max: 100,
+			},
+		});
+
+		expect(wrapper.vm.rangeValue).toStrictEqual([]);
+	});
+
 	it("renders correctly minValue computed", () => {
 		const wrapper = shallowMount(RangeField, {
 			global: {
