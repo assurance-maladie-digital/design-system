@@ -1,6 +1,6 @@
 <template>
-	<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
-		<v-input
+	<div class="vd-nir-field d-flex align-start">
+		<VInput
 			:value="[computedNumberValue, keyValue]"
 			:error-count="5"
 			:rules="errors"
@@ -14,27 +14,48 @@
 				:hint="locales.numberHint"
 				:success="numberFilled"
 				:hide-details="errors.length > 0"
-				class="vd-number-field flex-grow-0 mx-1 mx-sm-2"
+				:error="numberErrors.length > 0"
+				:aria-invalid="numberErrors.length > 0"
+				:aria-errormessage="numberErrors.length > 0 ? 'number-field-errors' : undefined"
+				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@input.native="setNumberValue"
 				@change="validateNumberValue"
 			/>
 
-			<VTextField
-				v-if="!isSingleField"
-				ref="keyField"
-				v-facade="keyMask"
-				v-bind="textFieldOptions"
-				:value="keyValue"
-				:label="locales.keyLabel"
-				:hint="locales.keyHint"
-				:success="keyFilled"
-				:hide-details="errors.length > 0"
-				class="vd-key-field flex-grow-0 mx-1 mx-sm-2"
-				@keyup.delete="focusNumberField"
-				@input.native="setKeyValue"
-				@change="validateKeyValue"
-			/>
+			<div
+				id="number-field-errors"
+				class="d-sr-only"
+			>
+				{{ keyErrors.join(' ') }}
+			</div>
+
+			<template v-if="!isSingleField">
+				<VTextField
+					ref="keyField"
+					v-facade="keyMask"
+					v-bind="textFieldOptions"
+					:value="keyValue"
+					:label="locales.keyLabel"
+					:hint="locales.keyHint"
+					:success="keyFilled"
+					:hide-details="errors.length > 0"
+					:error="keyErrors.length > 0"
+					:aria-invalid="keyErrors.length > 0"
+					:aria-errormessage="(keyErrors.length > 0 ? 'key-field-errors' : undefined)"
+					class="vd-key-field flex-grow-0"
+					@keyup.delete="focusNumberField"
+					@input.native="setKeyValue"
+					@change="validateKeyValue"
+				/>
+
+				<div
+					id="key-field-errors"
+					class="d-sr-only"
+				>
+					{{ numberErrors.join(' ') }}
+				</div>
+			</template>
 
 			<VTooltip
 				v-if="tooltip"
@@ -54,7 +75,7 @@
 					{{ tooltip }}
 				</slot>
 			</VTooltip>
-		</v-input>
+		</VInput>
 	</div>
 </template>
 
@@ -226,7 +247,7 @@
 			for (const rule of this.numberRules) {
 				const error = rule(this.numberValue);
 
-				if (error) {
+				if (error && typeof error === 'string') {
 					newNumberErrors.push(error);
 				}
 			}
@@ -245,7 +266,7 @@
 			for (const rule of this.keyRules) {
 				const error = rule(this.keyValue);
 
-				if (error) {
+				if (error && typeof error === 'string') {
 					newKeyErrors.push(error);
 				}
 			}
@@ -334,5 +355,9 @@
 	.vd-key-field,
 	.vd-tooltip-icon {
 		flex: none;
+	}
+
+	::v-deep .v-messages__message {
+		margin-bottom: 4px;
 	}
 </style>
