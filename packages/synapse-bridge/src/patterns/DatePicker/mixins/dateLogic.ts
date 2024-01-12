@@ -1,10 +1,11 @@
 import { defineComponent } from "vue";
 
-import { parseDate } from "../../../helpers/parseDate";
+import { parseDate } from "@/helpers/parseDate";
 
 import { Refs } from "@/types";
-import { VTextField } from "vuetify/components";
+import { VMenu, VTextField } from "vuetify/components";
 import { WarningRules } from "@/mixins/warningRules";
+import dayjs from 'dayjs';
 
 export const INTERNAL_FORMAT = "YYYY-MM-DD";
 export const INTERNAL_FORMAT_REGEX =
@@ -33,11 +34,12 @@ export const DateLogic = defineComponent({
 	data() {
 		return {
 			$refs: {} as Refs<{
-				menu: {
-					save: (date: string) => void;
-				};
+				menu: VMenu;
 				input: VTextField;
 			}>,
+
+			/* Js date object */
+			dateObject: new Date(this.modelValue),
 
 			/** YYYY-MM-DD format */
 			date: "",
@@ -57,15 +59,14 @@ export const DateLogic = defineComponent({
 					return;
 				}
 
-				console.log(date);
-
-				const parsed = this.parseDateForModel(date);
+				const parsed = this.parseDatetoInternalFormat(date);
 
 				if (!parsed) {
 					return;
 				}
 
 				this.date = parsed;
+				this.dateObject = new Date(parsed);
 				this.setTextFieldModel();
 
 				this.validate(this.textFieldDate);
@@ -122,7 +123,7 @@ export const DateLogic = defineComponent({
 	},
 	methods: {
 		/** Parse a date with dateFormatReturn format to internal format */
-		parseDateForModel(date: string): string | null {
+		parseDatetoInternalFormat(date: string): string | null {
 			const parsed = parseDate(date, this.dateFormatReturn);
 
 			if (!parsed.isValid()) {
@@ -152,8 +153,7 @@ export const DateLogic = defineComponent({
 		},
 
 		saveFromCalendar(): void {
-			this.$refs.menu.save(this.date);
-
+			this.date = dayjs(this.dateObject).format(INTERNAL_FORMAT);
 			this.setTextFieldModel();
 
 			// Trigger validation when the calendar is clicked since
@@ -214,6 +214,7 @@ export const DateLogic = defineComponent({
 		clearInternalModel(): void {
 			this.date = "";
 			this.textFieldDate = "";
+			this.dateObject = new Date();
 		},
 
 		emitChangeEvent(): void {

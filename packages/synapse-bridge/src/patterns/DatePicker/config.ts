@@ -14,9 +14,7 @@ export const config = {
 		icon: true
 	},
 	datePicker: {
-		firstDayOfWeek: 1,
-		noTitle: true,
-		locale: 'fr'
+		hideHeader: true,
 	},
 	icon: {
 		color: '#808080'

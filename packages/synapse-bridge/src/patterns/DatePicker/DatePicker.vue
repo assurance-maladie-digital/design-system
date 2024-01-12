@@ -6,37 +6,30 @@ import { config } from "./config";
 import { locales } from "./locales";
 
 import { customizable, Options } from "../../mixins/customizable";
-import { Eventable } from "../../mixins/eventable";
 import { WarningRules } from "../../mixins/warningRules";
 
 import { DateLogic } from "./mixins/dateLogic";
 import { MaskValue } from "./mixins/maskValue";
-import { Birthdate } from "./mixins/birthdate";
-import { PickerDate } from "./mixins/pickerDate";
 import { ErrorProp } from "./mixins/errorProp";
 
 import { mdiCalendar } from "@mdi/js";
-
-import { VDatePicker } from "vuetify/labs/VDatePicker";
 import { vMaska } from "maska";
 
 import deepMerge from "deepmerge";
+import { VDatePicker } from 'vuetify/components/VDatePicker';
 
 export default defineComponent({
 	components: {
-		VDatePicker,
+		VDatePicker
 	},
 	inheritAttrs: false,
 	directives: { maska: vMaska },
 	emits: ["update:modelValue"],
 	mixins: [
 		customizable(config),
-		Eventable,
 		WarningRules,
 		DateLogic,
 		MaskValue,
-		Birthdate,
-		PickerDate,
 		ErrorProp,
 	],
 	props: {
@@ -73,7 +66,7 @@ export default defineComponent({
 		return {
 			locales: locales,
 			calendarIcon: mdiCalendar,
-			menu: false,
+			menuOpen: false,
 		};
 	},
 	computed: {
@@ -86,46 +79,29 @@ export default defineComponent({
 		},
 
 		menuOptions(): Options {
-			const position: Options = {
-				nudgeBottom: this.outlined ? 56 : 45,
-				nudgeRight: this.outlined ? 0 : 45,
-			};
-
-			return deepMerge<Options>(this.menuOptions, {
-				position: position,
-			});
+			// TODO: add Nudge when the field is outlined
+			return deepMerge<Options>(this.menuOptions, this.options.menu);
 		},
 
 		textFieldOptions(): Options {
 			return deepMerge<Options>(this.options?.textField, this.$attrs);
 		},
 
-		textFieldClasses(): (string | string[])[] {
-			const textFieldClasses = [];
-
-			if (this.warningRules.length) {
-				textFieldClasses.push("vd-warning-rules");
-			}
-
-			if (!this.showPrependIcon) {
-				textFieldClasses.push("vd-no-prepend-icon");
-			}
-
-			if (this.textFieldClass) {
-				if(Array.isArray(this.textFieldClass)) {
-					textFieldClasses.concat(this.textFieldClass);
-				} else {
-					textFieldClasses.push(this.textFieldClass);
+		textFieldClasses() {
+			const classes: (string | Record<string, boolean>)[] = [
+				{
+					"vd-warning-rules": !!this.warningRules.length,
+					"vd-no-prepend-icon": !this.showPrependIcon,
 				}
-			}
+			];
 
-			return textFieldClasses;
+			return classes.concat(this.textFieldClass || []);
 		},
 	},
 	methods: {
 		textFieldClicked(): void {
 			if (this.textFieldActivator) {
-				this.menu = true;
+				this.menuOpen = true;
 			}
 		},
 	},
@@ -133,8 +109,9 @@ export default defineComponent({
 </script>
 
 <template>
-	<VMenu ref="menu" v-bind="menuOptions" :model-value="menu">
+	<VMenu ref="menu" v-bind="menuOptions" v-model="menuOpen">
 		<template #activator="{}">
+
 			<VTextField
 				ref="input"
 				v-maska:[maskValue]
@@ -155,7 +132,7 @@ export default defineComponent({
 				@click="textFieldClicked"
 				@paste.prevent="saveFromPasted"
 				@keydown.enter.prevent="saveFromTextField"
-				@update:model-value="e=>{errorMessages = null; dateFormatted = e;}"
+				@update:model-value="(e:string)=>{errorMessages = null; dateFormatted = e;}"
 			>
 				<template #prepend>
 					<VBtn
@@ -163,7 +140,7 @@ export default defineComponent({
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
 						:disabled="disabled"
-						@click="menu = true"
+						@click="menuOpen = true"
 					>
 						<slot name="prepend-icon">
 							<VIcon v-bind="options.icon">
@@ -179,7 +156,7 @@ export default defineComponent({
 						v-bind="options.btn"
 						:aria-label="locales.openCalendar"
 						:disabled="disabled"
-						@click="menu = true"
+						@click="menuOpen = true"
 					>
 						<slot name="append-icon">
 							<VIcon v-bind="options.icon">
@@ -203,15 +180,9 @@ export default defineComponent({
 
 		<VDatePicker
 			v-if="!noCalendar"
-			:model-value="date"
+			v-model="dateObject"
 			v-bind="options.datePicker"
-			type="date"
-			:active-picker.sync="activePicker"
-			:picker-date.sync="internalPickerDate"
-			:max="options.datePicker.max || max"
-			:min="options.datePicker.min || min"
-			:events="calendarEvents"
-			@change="saveFromCalendar"
+			@update:modelValue="saveFromCalendar"
 		/>
 	</VMenu>
 </template>
