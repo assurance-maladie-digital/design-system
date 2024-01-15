@@ -7,3 +7,5 @@ exports[`FilePreview > renders correctly with a pdf 1`] = `
 `;
 
 exports[`FilePreview > renders correctly with an image 1`] = `<div class="vd-file-preview"><img alt="" style="width: 100%;"></div>`;
+
+exports[`FilePreview > renders correctly with filePreviewOptions 1`] = `<div class="vd-file-preview" filepreviewoptions="[object Object]"><img alt="" style="width: 100%;"></div>`;

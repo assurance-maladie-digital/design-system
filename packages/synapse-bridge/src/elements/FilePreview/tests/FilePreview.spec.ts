@@ -91,6 +91,72 @@ describe("FilePreview", () => {
 		expect(wrapper.text()).toBe("");
 	});
 
+	it("returns true when the file is a pdf", () => {
+		const wrapper = shallowMount(FilePreview, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				file: testFilePdf,
+			},
+		});
+
+		expect(wrapper.vm.isPdf).toBe(true);
+	});
+
+	it("returns false when the file is not a pdf", () => {
+		const wrapper = shallowMount(FilePreview, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				file: testFileImg,
+			},
+		});
+
+		expect(wrapper.vm.isPdf).toBe(false);
+	});
+
+	it("returns true when the file is an image", () => {
+		const wrapper = shallowMount(FilePreview, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				file: testFileImg,
+			},
+		});
+
+		expect(wrapper.vm.isImage).toBe(true);
+	});
+
+	it("returns false when the file is not an image", () => {
+		const wrapper = shallowMount(FilePreview, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				file: testFilePdf,
+			},
+		});
+
+		expect(wrapper.vm.isImage).toBe(false);
+	});
+
+	it("returns false when the file is undefined", () => {
+		const wrapper = shallowMount(FilePreview, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				file: undefined,
+			},
+		});
+
+		expect(wrapper.vm.isImage).toBe(false);
+		expect(wrapper.vm.isPdf).toBe(false);
+	});
+
 	it("revokes the file URL when the component is destroyed", () => {
 		const wrapper = shallowMount(FilePreview, {
 			global: {
@@ -111,6 +177,7 @@ describe("FilePreview", () => {
 
 		expect(mockRevokeObjectURL).toHaveBeenCalled();
 
+		// Restore the original implementation after the test
 		URL.revokeObjectURL = originalRevokeObjectURL;
 	});
 });
