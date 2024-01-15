@@ -70,7 +70,7 @@
 						:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
 						class="vd-title text-caption text-md-subtitle-1 font-weight-medium"
 					>
-						<template v-if="isCompteEntreprise && typeof service.title === 'object'">
+						<template v-if="isCompteEntrepriseTitle(service.title)">
 							{{ service.title.text }}
 							<span>{{ service.title.highlight }}</span>
 						</template>
@@ -103,7 +103,7 @@
 	import { ThemeEnum } from '../../constants/enums/ThemeEnum';
 	import { Dimensions, Next } from '../../types';
 
-	import { LogoInfo, Service } from './types';
+	import { HighlightedTitle, LogoInfo, Service } from './types';
 	import { locales } from './locales';
 	import { secondaryLogoMapping } from './secondaryLogoMapping';
 	import { dividerDimensionsMapping } from './dividerDimensionsMapping';
@@ -314,6 +314,10 @@
 			}
 
 			return LogoSizeEnum.NORMAL;
+		}
+
+		isCompteEntrepriseTitle(_title: string | HighlightedTitle): _title is HighlightedTitle {
+			return this.isCompteEntreprise;
 		}
 	}
 </script>
