@@ -9,7 +9,7 @@ export const api: Api = {
 				default: '[]',
 				description: 'La liste des puces.',
 				example: `{
-	name: string;
+	text: string;
 	value: unknown;
 }[]`
 			},
