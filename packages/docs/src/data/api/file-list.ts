@@ -56,14 +56,19 @@ export const api: Api = {
 		],
 		events: [
 			{
-				name: 'retry',
-				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Réessayer*, retourne la propriété `id` du fichier sélectionné.',
+				name: 'upload',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Téléverser*, retourne la propriété `id` du fichier sélectionné.',
 				value: 'string'
 			},
 			{
+				name: 'retry',
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Réessayer*, retourne la position du fichier sélectionné dans la liste.',
+				value: 'number'
+			},
+			{
 				name: 'delete-file',
-				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Supprimer*, retourne la propriété `id` du fichier sélectionné.',
-				value: 'string'
+				description: 'Événement émis lorsque l’utilisateur clique sur le bouton *Supprimer*, retourne la position du fichier sélectionné dans la liste.',
+				value: 'number'
 			},
 			{
 				name: 'view-file',
