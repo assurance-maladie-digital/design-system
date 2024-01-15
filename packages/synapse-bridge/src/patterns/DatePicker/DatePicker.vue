@@ -17,11 +17,11 @@ import { mdiCalendar } from "@mdi/js";
 import { vMaska } from "maska";
 
 import deepMerge from "deepmerge";
-import { VDatePicker } from 'vuetify/components/VDatePicker';
+import { VDatePicker } from "vuetify/components/VDatePicker";
 
 export default defineComponent({
 	components: {
-		VDatePicker
+		VDatePicker,
 	},
 	inheritAttrs: false,
 	directives: { maska: vMaska },
@@ -81,7 +81,6 @@ export default defineComponent({
 		},
 
 		menuOptions(): Options {
-			// TODO: add Nudge when the field is outlined
 			return deepMerge<Options>(this.menuOptions, this.options.menu);
 		},
 
@@ -94,10 +93,16 @@ export default defineComponent({
 				{
 					"vd-warning-rules": !!this.warningRules.length,
 					"vd-no-prepend-icon": !this.showPrependIcon,
-				}
+				},
 			];
 
 			return classes.concat(this.textFieldClass || []);
+		},
+
+		menuOffset() {
+			const right = this.outlined ? -18 : 0;
+			const bottom = -22;
+			return [bottom, right];
 		},
 	},
 	methods: {
@@ -111,11 +116,14 @@ export default defineComponent({
 </script>
 
 <template>
-	<div>
-
-		<VMenu ref="menu" v-bind="menuOptions" v-model="menuOpen">
-			<template #activator="{}">
-
+	<VMenu
+		ref="menu"
+		v-bind="menuOptions"
+		v-model="menuOpen"
+		:offset="menuOffset"
+	>
+		<template #activator="{ props }">
+			<div v-bind="props">
 				<VTextField
 					ref="input"
 					v-maska:[maskValue]
@@ -144,7 +152,6 @@ export default defineComponent({
 							v-bind="options.btn"
 							:aria-label="locales.openCalendar"
 							:disabled="disabled"
-							@click="menuOpen = true"
 						>
 							<slot name="prepend-icon">
 								<VIcon v-bind="options.icon">
@@ -154,13 +161,12 @@ export default defineComponent({
 						</VBtn>
 					</template>
 
-					<template #append>
+					<template #append-inner>
 						<VBtn
 							v-show="showAppendIcon"
 							v-bind="options.btn"
 							:aria-label="locales.openCalendar"
 							:disabled="disabled"
-							@click="menuOpen = true"
 						>
 							<slot name="append-icon">
 								<VIcon v-bind="options.icon">
@@ -180,19 +186,19 @@ export default defineComponent({
 						:name="name"
 					/>
 				</VTextField>
-			</template>
-			<VDatePicker
-				v-if="!noCalendar"
-				v-model="dateObject"
-				v-model:viewMode="activePicker"
-				v-bind="options.datePicker"
-				@update:modelValue="saveFromCalendar"
-				@update:viewMode="log"
-				:max="options.datePicker.max || max"
-				:min="options.datePicker.min || min"
-			/>
-		</VMenu>
-	</div>
+			</div>
+		</template>
+		<VDatePicker
+			v-if="!noCalendar"
+			v-model="dateObject"
+			v-model:viewMode="activePicker"
+			v-bind="options.datePicker"
+			@update:modelValue="saveFromCalendar"
+			@update:viewMode="changePicker"
+			:max="options.datePicker.max || max"
+			:min="options.datePicker.min || min"
+		/>
+	</VMenu>
 </template>
 
 <style lang="scss" scoped>

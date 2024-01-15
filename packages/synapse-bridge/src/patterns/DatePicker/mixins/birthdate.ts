@@ -30,7 +30,7 @@ export const Birthdate = defineComponent({
 			this.activePicker = "year";
 			this.oldActivePicker = "year";
 		},
-		log(){
+		changePicker(){
 			if(!this.birthdate) return;
 			if(this.oldActivePicker === 'year') {
 				this.activePicker = 'months';
