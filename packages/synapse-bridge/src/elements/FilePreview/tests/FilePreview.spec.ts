@@ -88,6 +88,29 @@ describe("FilePreview", () => {
 
 		expect(wrapper.find("img").exists()).toBe(false);
 		expect(wrapper.find("object").exists()).toBe(false);
-		expect(wrapper.text()).toBe('');
+		expect(wrapper.text()).toBe("");
+	});
+
+	it("revokes the file URL when the component is destroyed", () => {
+		const wrapper = shallowMount(FilePreview, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				file: testFileImg,
+			},
+		});
+
+		const mockRevokeObjectURL = vi.fn();
+		const originalRevokeObjectURL = URL.revokeObjectURL;
+
+		URL.revokeObjectURL = mockRevokeObjectURL;
+
+		wrapper.vm.revokeFileURL();
+		wrapper.unmount();
+
+		expect(mockRevokeObjectURL).toHaveBeenCalled();
+
+		URL.revokeObjectURL = originalRevokeObjectURL;
 	});
 });
