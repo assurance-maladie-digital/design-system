@@ -5,12 +5,13 @@ import type { PropType } from "vue";
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { customizable, Options } from "../../mixins/customizable";
+import { customizable, type Options } from "../../mixins/customizable";
 import { WarningRules } from "../../mixins/warningRules";
 
 import { DateLogic } from "./mixins/dateLogic";
 import { MaskValue } from "./mixins/maskValue";
 import { ErrorProp } from "./mixins/errorProp";
+import { Birthdate } from "./mixins/birthdate";
 
 import { mdiCalendar } from "@mdi/js";
 import { vMaska } from "maska";
@@ -31,6 +32,7 @@ export default defineComponent({
 		DateLogic,
 		MaskValue,
 		ErrorProp,
+		Birthdate,
 	],
 	props: {
 		noCalendar: {
@@ -109,82 +111,88 @@ export default defineComponent({
 </script>
 
 <template>
-	<VMenu ref="menu" v-bind="menuOptions" v-model="menuOpen">
-		<template #activator="{}">
+	<div>
 
-			<VTextField
-				ref="input"
-				v-maska:[maskValue]
-				v-bind="textFieldOptions"
-				:model-value="dateFormatted"
-				:variant="outlined ? 'outlined' : undefined"
-				:class="textFieldClasses"
-				:success-messages="
-					textFieldOptions.successMessages || successMessages
-				"
-				:error-messages="
-					textFieldOptions.errorMessages || errorMessages
-				"
-				v-model:error="internalErrorProp"
-				:disabled="disabled"
-				class="vd-date-picker-text-field"
-				@blur="textFieldBlur"
-				@click="textFieldClicked"
-				@paste.prevent="saveFromPasted"
-				@keydown.enter.prevent="saveFromTextField"
-				@update:model-value="(e:string)=>{errorMessages = null; dateFormatted = e;}"
-			>
-				<template #prepend>
-					<VBtn
-						v-show="showPrependIcon"
-						v-bind="options.btn"
-						:aria-label="locales.openCalendar"
-						:disabled="disabled"
-						@click="menuOpen = true"
-					>
-						<slot name="prepend-icon">
-							<VIcon v-bind="options.icon">
-								{{ calendarIcon }}
-							</VIcon>
-						</slot>
-					</VBtn>
-				</template>
+		<VMenu ref="menu" v-bind="menuOptions" v-model="menuOpen">
+			<template #activator="{}">
 
-				<template #append>
-					<VBtn
-						v-show="showAppendIcon"
-						v-bind="options.btn"
-						:aria-label="locales.openCalendar"
-						:disabled="disabled"
-						@click="menuOpen = true"
-					>
-						<slot name="append-icon">
-							<VIcon v-bind="options.icon">
-								{{ calendarIcon }}
-							</VIcon>
-						</slot>
-					</VBtn>
-				</template>
+				<VTextField
+					ref="input"
+					v-maska:[maskValue]
+					v-bind="textFieldOptions"
+					:model-value="dateFormatted"
+					:variant="outlined ? 'outlined' : undefined"
+					:class="textFieldClasses"
+					:success-messages="
+						textFieldOptions.successMessages || successMessages
+					"
+					:error-messages="
+						textFieldOptions.errorMessages || errorMessages
+					"
+					v-model:error="internalErrorProp"
+					:disabled="disabled"
+					class="vd-date-picker-text-field"
+					@blur="textFieldBlur"
+					@click="textFieldClicked"
+					@paste.prevent="saveFromPasted"
+					@keydown.enter.prevent="saveFromTextField"
+					@update:model-value="(e:string)=>{errorMessages = null; dateFormatted = e;}"
+				>
+					<template #prepend>
+						<VBtn
+							v-show="showPrependIcon"
+							v-bind="options.btn"
+							:aria-label="locales.openCalendar"
+							:disabled="disabled"
+							@click="menuOpen = true"
+						>
+							<slot name="prepend-icon">
+								<VIcon v-bind="options.icon">
+									{{ calendarIcon }}
+								</VIcon>
+							</slot>
+						</VBtn>
+					</template>
 
-				<!--
-					Pass down slots
-					@see https://stackoverflow.com/questions/50891858/vue-how-to-pass-down-slots-inside-wrapper-component/52823029#52823029
-				-->
-				<slot
-					v-for="name in Object.keys($slots)"
-					:slot="name"
-					:name="name"
-				/>
-			</VTextField>
-		</template>
+					<template #append>
+						<VBtn
+							v-show="showAppendIcon"
+							v-bind="options.btn"
+							:aria-label="locales.openCalendar"
+							:disabled="disabled"
+							@click="menuOpen = true"
+						>
+							<slot name="append-icon">
+								<VIcon v-bind="options.icon">
+									{{ calendarIcon }}
+								</VIcon>
+							</slot>
+						</VBtn>
+					</template>
 
-		<VDatePicker
-			v-if="!noCalendar"
-			v-model="dateObject"
-			v-bind="options.datePicker"
-			@update:modelValue="saveFromCalendar"
-		/>
-	</VMenu>
+					<!--
+						Pass down slots
+						@see https://stackoverflow.com/questions/50891858/vue-how-to-pass-down-slots-inside-wrapper-component/52823029#52823029
+					-->
+					<slot
+						v-for="name in Object.keys($slots)"
+						:slot="name"
+						:name="name"
+					/>
+				</VTextField>
+			</template>
+			<VDatePicker
+				v-if="!noCalendar"
+				v-model="dateObject"
+				v-model:viewMode="activePicker"
+				v-bind="options.datePicker"
+				@update:modelValue="saveFromCalendar"
+				@update:viewMode="log"
+				:max="options.datePicker.max || max"
+				:min="options.datePicker.min || min"
+			/>
+		</VMenu>
+	</div>
 </template>
 
 <style lang="scss" scoped>
