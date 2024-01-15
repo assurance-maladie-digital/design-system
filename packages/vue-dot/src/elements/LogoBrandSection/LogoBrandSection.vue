@@ -70,7 +70,7 @@
 						:class="{ 'vd-compte-entreprise-title': isCompteEntreprise }"
 						class="vd-title text-caption text-md-subtitle-1 font-weight-medium"
 					>
-						<template v-if="isCompteEntreprise">
+						<template v-if="isCompteEntreprise && typeof service.title === 'object'">
 							{{ service.title.text }}
 							<span>{{ service.title.highlight }}</span>
 						</template>
