@@ -40,8 +40,7 @@ describe("PaginatedTable", () => {
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 
-	// get DataOptions
-	it("get DataOptions correctly", () => {
+	it("get optionsCalc computed correctly with localOptions", async () => {
 		const wrapper = shallowMount(PaginatedTable, {
 			propsData: {
 				options: {} as DataOptions,
@@ -51,6 +50,18 @@ describe("PaginatedTable", () => {
 			},
 		});
 
-		expect(wrapper.vm.dataOptions).toEqual({} as DataOptions);
+		await wrapper.setData({
+			localOptions: {
+				itemsPerPage: 10,
+				page: 1,
+			},
+		});
+
+		expect(wrapper.vm.optionsCalc).toEqual({
+			headers: [],
+			items: [],
+			itemsPerPage: 10,
+			page: 1,
+		});
 	});
 });

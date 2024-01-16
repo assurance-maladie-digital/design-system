@@ -37,19 +37,12 @@ export default defineComponent({
 		},
 	},
 	computed: {
-		optionsCalc: {
-			get(): DataOptions {
-				if (Object.keys(this.localOptions).length) {
-					return this.localOptions;
-				}
+		optionsCalc(): DataOptions {
+			if (Object.keys(this.localOptions).length) {
+				return this.localOptions;
+			}
 
-				return this.options;
-			},
-			set(): DataOptions {
-				if (Object.keys(this.localOptions).length) {
-					this.localOptions = {} as DataOptions;
-				}
-			},
+			return this.options;
 		},
 
 		storageKey(): string {
