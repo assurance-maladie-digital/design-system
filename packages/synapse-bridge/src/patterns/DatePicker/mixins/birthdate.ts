@@ -28,14 +28,9 @@ export const Birthdate = defineComponent({
 	methods: {
 		setActivePicker(): void {
 			this.activePicker = "year";
-			this.oldActivePicker = "year";
 		},
-		changePicker(){
-			if(!this.birthdate) return;
-			if(this.oldActivePicker === 'year') {
-				this.activePicker = 'months';
-			}
-			this.oldActivePicker = this.activePicker;
+		changePicker(): void {
+			if(this.birthdate) this.activePicker="months";
 		}
 	},
 });

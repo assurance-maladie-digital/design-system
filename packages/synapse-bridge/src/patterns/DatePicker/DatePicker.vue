@@ -194,7 +194,7 @@ export default defineComponent({
 			v-model:viewMode="activePicker"
 			v-bind="options.datePicker"
 			@update:modelValue="saveFromCalendar"
-			@update:viewMode="changePicker"
+			@update:year="changePicker"
 			:max="options.datePicker.max || max"
 			:min="options.datePicker.min || min"
 		/>
@@ -205,64 +205,5 @@ export default defineComponent({
 .vd-date-picker-menu {
 	// Hide scrollbar in VMenu
 	overflow: hidden;
-
-	// Custom events
-	// Disabled when the btn is active
-	:deep() {
-		.v-btn:not(.v-btn--active) {
-			.v-date-picker-table__events {
-				// Make the container take full space
-				height: 100%;
-				bottom: 0 !important;
-
-				// Put the content in front
-				.v-btn__content {
-					z-index: 2;
-				}
-
-				// Make the dot take full space
-				.vd-custom-event {
-					position: absolute;
-					height: 100%;
-					width: 100%;
-					margin: 0;
-					left: 0;
-					// Make sure we still see the text
-					opacity: 0.4;
-				}
-			}
-		}
-
-		// Don't show custom events when the date is selected
-		.v-btn.v-btn--active {
-			.vd-custom-event {
-				display: none;
-			}
-		}
-
-		// Fix https://github.com/vuetifyjs/vuetify/issues/11809
-		.v-picker--date {
-			display: flex;
-		}
-	}
-}
-
-// Fix margin-top on enclosed text field
-// since we're using a slot with a button
-.vd-date-picker-text-field.v-text-field--enclosed :deep() {
-	.v-input__prepend-outer,
-	.v-input__prepend-inner,
-	.v-input__append-inner,
-	.v-input__append-outer {
-		.v-btn--icon {
-			margin-top: -7px;
-		}
-	}
-}
-
-// Remove spacing on prepend slot since we're using v-show
-// @see https://github.com/assurance-maladie-digital/design-system/issues/907
-.vd-no-prepend-icon :deep() .v-input__prepend-outer {
-	margin: 0 !important;
 }
 </style>

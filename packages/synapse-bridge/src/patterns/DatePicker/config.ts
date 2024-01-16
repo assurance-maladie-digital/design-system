@@ -11,13 +11,14 @@ export const config = {
 		contentClass: 'vd-date-picker-menu',
 	},
 	btn: {
-		icon: true
+		icon: true,
+		variant: 'text'
 	},
 	datePicker: {
 		hideHeader: true,
 		location: 'bottom end',
 	},
 	icon: {
-		color: '#808080'
+		color: '#808080',
 	}
 };
