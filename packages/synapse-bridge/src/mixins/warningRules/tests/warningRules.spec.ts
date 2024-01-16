@@ -1,17 +1,12 @@
 import { defineComponent } from "vue";
 import { describe, it, expect } from "vitest";
 import { shallowMount } from "@vue/test-utils";
-
 import { WarningRules } from "../";
-
-interface TestComponent {
-	validate: (value: string) => void;
-	successMessages: string[];
-}
 
 /** Create the wrapper */
 function createWrapper() {
-	defineComponent("TestComponent", {
+	const component = defineComponent( {
+		name: "TestComponent",
 		mixins: [WarningRules],
 		template: "<div />",
 	});
@@ -20,7 +15,7 @@ function createWrapper() {
 		propsData: {
 			warningRules: [
 				// Required rule
-				(value: string) => Boolean(value) || "error",
+				(value) => Boolean(value) || "error",
 			],
 		},
 	});

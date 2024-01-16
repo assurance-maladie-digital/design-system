@@ -1,4 +1,9 @@
+import {
+	describe,it,expect
+} from 'vitest';
+
 import { isWeekend } from '../';
+
 
 describe('isWeekend', () => {
 	it('returns true if the day is in a weekend', () => {
