@@ -13,7 +13,6 @@ export const Birthdate = defineComponent({
 	data() {
 		return {
 			activePicker: null as string | null,
-			oldActivePicker: null as string | null,
 			max: this.birthdate ? dayjs().format(INTERNAL_FORMAT) : null,
 			min: this.birthdate ? "1900-01-01" : null,
 		};
