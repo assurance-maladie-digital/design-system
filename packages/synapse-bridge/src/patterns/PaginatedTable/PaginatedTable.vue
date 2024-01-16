@@ -45,7 +45,7 @@ export default defineComponent({
 
 				return this.options;
 			},
-			set(value: DataOptions): void {
+			set(): DataOptions {
 				if (Object.keys(this.localOptions).length) {
 					this.localOptions = {} as DataOptions;
 				}
@@ -64,16 +64,7 @@ export default defineComponent({
 	},
 	methods: {
 		newLocalStorageInstance(): LocalStorageUtility {
-			// TODO : Fix this $vd
-			if (!this.$vd || !this.$vd.localStorageControl) {
-				return new LocalStorageUtility();
-			}
-
-			return new LocalStorageUtility(
-				this.$vd.localStorageControl.version,
-				this.$vd.localStorageControl.expiration,
-				this.$vd.localStorageControl.prefix
-			);
+			return new LocalStorageUtility();
 		},
 	},
 	created() {
