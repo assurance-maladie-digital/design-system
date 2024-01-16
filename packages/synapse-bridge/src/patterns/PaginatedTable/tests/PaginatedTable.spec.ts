@@ -2,14 +2,15 @@ import { describe, it, expect } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
+import { DataOptions } from "../types";
+
 import PaginatedTable from "../";
 
 describe("PaginatedTable", () => {
 	it("renders correctly", () => {
 		const wrapper = shallowMount(PaginatedTable, {
 			propsData: {
-				options: {},
-				serverItemsLength: 0
+				options: {} as DataOptions,
 			},
 			global: {
 				plugins: [vuetify],
@@ -17,5 +18,39 @@ describe("PaginatedTable", () => {
 		});
 
 		expect(wrapper.html()).toMatchSnapshot();
+	});
+
+	it("watch options correctly", async () => {
+		const wrapper = shallowMount(PaginatedTable, {
+			propsData: {
+				options: {} as DataOptions,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		await wrapper.setProps({
+			options: {
+				items: [],
+				headers: [],
+			} as DataOptions,
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+
+	// get DataOptions
+	it("get DataOptions correctly", () => {
+		const wrapper = shallowMount(PaginatedTable, {
+			propsData: {
+				options: {} as DataOptions,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.dataOptions).toEqual({} as DataOptions);
 	});
 });
