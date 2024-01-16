@@ -64,4 +64,18 @@ describe("PaginatedTable", () => {
 			page: 1,
 		});
 	});
+
+	it("get storageKey computed correctly with localOptions", async () => {
+		const wrapper = shallowMount(PaginatedTable, {
+			propsData: {
+				options: {} as DataOptions,
+				suffix: "test",
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.storageKey).toEqual("pagination-test");
+	});
 });
