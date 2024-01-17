@@ -14,6 +14,7 @@ interface TestComponent extends Vue {
 	updateFileModel<T>(id: string, key: string, value: T): void;
 
 	setFileInList: () => void;
+	setInternalModel: () => void;
 	resetFile: (index: number) => void;
 	dialogConfirm: () => void;
 	uploadedFile: File | null;
@@ -56,7 +57,7 @@ const testFile = {
 } as File;
 
 /** Create the wrapper */
-function createWrapper(fileListItems = fileList, showFilePreview = false) {
+function createWrapper(fileListItems: null | FileListItem[] = fileList , showFilePreview = false) {
 	const component = Vue.component('TestComponent', {
 		mixins: [
 			UploadWorkflowCore
@@ -154,7 +155,8 @@ describe('EventsFileFired', () => {
 	});
 
 	it('deletes an item from the list in unrestricted mode', () => {
-		const wrapper = createWrapper([]) as Wrapper<TestComponent>;
+		const wrapper = createWrapper(null) as Wrapper<TestComponent>;
+
 		wrapper.vm.resetFile(0);
 
 		expect(wrapper.vm.fileList).toEqual([]);
@@ -237,8 +239,7 @@ describe('EventsFileFired', () => {
 	});
 
 	it('skips the dialog and add the file in the list in unrestricted mode', () => {
-		const wrapper = createWrapper([]) as Wrapper<TestComponent>;
-		wrapper.vm.freeMode = true;
+		const wrapper = createWrapper(null) as Wrapper<TestComponent>;
 		wrapper.vm.uploadedFile = testFile;
 		wrapper.vm.fileSelected();
 
