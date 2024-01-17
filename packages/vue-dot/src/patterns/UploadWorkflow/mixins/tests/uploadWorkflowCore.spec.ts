@@ -20,6 +20,7 @@ interface TestComponent extends Vue {
 	fileList: FileListItem[];
 	error: boolean;
 	dialog: boolean;
+	freeMode: boolean;
 	inlineSelect: boolean;
 	selectedItem: string;
 	internalFileListItems: FileListItem[] | null;
@@ -237,6 +238,7 @@ describe('EventsFileFired', () => {
 
 	it('skips the dialog and add the file in the list in unrestricted mode', () => {
 		const wrapper = createWrapper([]) as Wrapper<TestComponent>;
+		wrapper.vm.freeMode = true;
 		wrapper.vm.uploadedFile = testFile;
 		wrapper.vm.fileSelected();
 
