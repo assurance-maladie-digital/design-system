@@ -9,6 +9,7 @@
 			:value="[computedNumberValue, keyValue]"
 			:error-count="5"
 			:rules="errors"
+			class="vd-nir-field__fields-wrapper"
 		>
 			<VTextField
 				ref="numberField"
@@ -67,6 +68,7 @@
 			<VTooltip
 				v-if="tooltip"
 				v-bind="options.tooltip"
+				class="vd-tooltip"
 			>
 				<template #activator="{ on, attrs }">
 					<VIcon
@@ -373,4 +375,37 @@
 	.vd-nir-field--outlined ::v-deep .v-messages.error--text {
 		padding: $text-field-enclosed-details-padding;
 	}
+
+	.vd-nir-field {
+		container-type: inline-size;
+		container-name: nirFieldwrapper;
+	}
+
+	@mixin responsive-nir-wrapper {
+		.vd-nir-field__fields-wrapper ::v-deep > * > .v-input__slot {
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 4px;
+			margin-bottom: 4px;
+
+			.vd-number-field {
+				flex: 100% 0 0;
+			}
+
+			.vd-tooltip-icon {
+				float: end;
+				margin-left: auto;
+			}
+		}
+	}
+
+	@container nirFieldwrapper (max-width: 300px) {
+		@include responsive-nir-wrapper;
+	}
+
+	/* fallback for IE11 */
+	@media screen and (max-width: 360px) {
+		@include responsive-nir-wrapper;
+	}
+
 </style>
