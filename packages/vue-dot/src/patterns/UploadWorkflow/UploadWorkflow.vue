@@ -108,11 +108,11 @@
 				return this.sectionTitle;
 			}
 
-			if (!this.internalFileListItems.length) {
+			if (this.freeMode) {
 				return locales.importTitle;
 			}
 
-			return locales.title(this.internalFileListItems.length > 1);
+			return locales.title(this.internalFileListItems.length > 1 && !this.freeMode);
 		}
 
 		get showFileList(): boolean {
@@ -120,6 +120,10 @@
 		}
 
 		get showFileUpload(): boolean {
+			if (!this.fileListItems) {
+				return true;
+			}
+
 			return this.fileListItems?.some((item) => item.state !== 'success');
 		}
 

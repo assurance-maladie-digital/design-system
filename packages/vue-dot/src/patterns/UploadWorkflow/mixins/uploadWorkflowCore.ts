@@ -60,6 +60,9 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	internalFileListItems = [] as FileListItem[];
 
+	// Is there a predefined list of files to upload using fileListItems or value(deprecated)
+	freeMode = false;
+
 	get singleMode(): boolean {
 		return this.internalFileListItems.length === 1;
 	}
@@ -83,6 +86,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		this.internalFileListItems = this.fileListItems ?? this.value;
 
 		if (this.fileListItems === null && !this.value.length) {
+			this.freeMode = true;
 			this.resetInternalModel();
 		}
 
@@ -115,7 +119,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	resetFile(index: number): void {
-		if (!this.internalFileListItems.length) {
+		if (this.freeMode) {
 			this.$delete(this.fileList, index);
 		} else {
 			this.updateFileModel(index, 'state', 'initial');
@@ -172,8 +176,9 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			return;
 		}
 
-		if (!this.internalFileListItems.length && this.uploadedFile) {
+		if (this.freeMode && this.uploadedFile) {
 			this.fileList.push(this.uploadedFile);
+			this.updateFileModel(this.fileList.length - 1, 'state', 'success');
 			this.emitChangeEvent();
 
 			return;
