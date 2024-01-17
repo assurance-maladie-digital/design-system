@@ -55,15 +55,13 @@ export class Filterable extends Props {
 		const isArray = Array.isArray(value);
 
 		if (isString || isNumber) {
-			const typedValue = String(value);
-
-			if (typedValue === '') {
+			if (value === '') {
 				return [];
 			}
 
 			return [{
-				text: typedValue.toString(),
-				value: typedValue
+				text: value.toString(),
+				value
 			}];
 		}
 
