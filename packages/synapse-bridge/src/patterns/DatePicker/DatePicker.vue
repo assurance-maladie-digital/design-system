@@ -141,7 +141,7 @@ export default defineComponent({
 					:disabled="disabled"
 					class="vd-date-picker-text-field"
 					@blur="textFieldBlur"
-					@click="textFieldClicked"
+					@click.stop="textFieldClicked"
 					@paste.prevent="saveFromPasted"
 					@keydown.enter.prevent="saveFromTextField"
 					@update:model-value="(e:string)=>{errorMessages = null; dateFormatted = e;}"
@@ -152,6 +152,7 @@ export default defineComponent({
 							v-bind="options.btn"
 							:aria-label="locales.openCalendar"
 							:disabled="disabled"
+							@click.stop="menuOpen = !menuOpen"
 						>
 							<slot name="prepend-icon">
 								<VIcon v-bind="options.icon">
@@ -167,6 +168,7 @@ export default defineComponent({
 							v-bind="options.btn"
 							:aria-label="locales.openCalendar"
 							:disabled="disabled"
+							@click.stop="menuOpen = !menuOpen"
 						>
 							<slot name="append-icon">
 								<VIcon v-bind="options.icon">
