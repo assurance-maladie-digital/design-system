@@ -34,7 +34,7 @@ const Props = Vue.extend({
 	}
 })
 export class Filterable extends Props {
-	filters = [] as FilterItem[];
+	filters: FilterItem[] = [];
 
 	getFilterCount(filter: FilterItem): number {
 		return this.getChips(filter).length;
@@ -55,22 +55,18 @@ export class Filterable extends Props {
 		const isArray = Array.isArray(value);
 
 		if (isString || isNumber) {
-			const typedValue = value as string;
-
-			if (typedValue === '') {
+			if (value === '') {
 				return [];
 			}
 
 			return [{
-				text: typedValue.toString(),
-				value: typedValue
+				text: value.toString(),
+				value
 			}];
 		}
 
 		if (isArray) {
-			const typedValue = value as any[];
-
-			return typedValue.map(item => {
+			return value.map(item => {
 				if (typeof item !== 'object') {
 					return {
 						text: item.toString(),
@@ -85,8 +81,8 @@ export class Filterable extends Props {
 			});
 		}
 
-		if (isObject) {
-			const typedValue = value as Record<string, any>;
+		if (isObject && value !== null) {
+			const typedValue: Record<string, any> = value;
 			const isPeriodField = typedValue.from !== undefined && typedValue.to !== undefined;
 
 			if (isPeriodField) {
@@ -127,7 +123,7 @@ export class Filterable extends Props {
 		}
 
 		if (isArray) {
-			const typedValue = value as any[];
+			const typedValue = value;
 			const chipValue = chip.value as any;
 
 			const filteredValue = typedValue.filter(item => {
@@ -135,7 +131,7 @@ export class Filterable extends Props {
 					return !chipValue.includes(item);
 				}
 
-				if (typeof item === 'object') {
+				if (typeof item === 'object' && item !== null) {
 					return item.value !== chipValue.value;
 				}
 
