@@ -54,7 +54,7 @@ const homeLinkProp = {
 	name: 'home-link',
 	type: 'false | string | Location',
 	default: `'/'`,
-	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.<br> L\'object de type [`Location`](https://v3.router.vuejs.org/api/#to) sera transmit au composant `router-link` ou `nuxt-link`.'
+	description: 'Le lien vers la page d’accueil.<br>La valeur `false` permet de désactiver le lien.<br> L’object de type [`Location`](https://v3.router.vuejs.org/api/#to) sera transmit au composant `RouterLink` ou `NuxtLink`.'
 };
 
 const homeHrefProp = {
@@ -138,7 +138,7 @@ export const api: Api = {
 			},
 			{
 				name: 'logo',
-				description: 'Slot pour remplacer le logo.<br>Ecrasera le slot `brand-content` et `secondary-logo`.'
+				description: 'Slot pour remplacer le logo.<br>Écrasera les slots `brand-content` et `secondary-logo`.'
 			},
 			{
 				name: 'secondary-logo',
@@ -162,7 +162,7 @@ export const api: Api = {
 			},
 			{
 				name: 'navigation-drawer',
-				description: 'Slot pour remplacer le menu de navigation sur les écrans mobiles.<br>Ecrasera le slot `navigation-drawer-content`, `navigation-drawer-prepend` et `navigation-drawer-append`.',
+				description: 'Slot pour remplacer le menu de navigation sur les écrans mobiles.<br>Écrasera les slots `navigation-drawer-content`, `navigation-drawer-prepend` et `navigation-drawer-append`.',
 				props: {
 					drawer: 'boolean',
 					updateDrawer: '(value: boolean) => void'
