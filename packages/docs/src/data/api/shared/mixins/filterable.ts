@@ -7,7 +7,7 @@ export const filterableProps: Props = [
 		default: '[]',
 		description: 'La liste des filtres.',
 		example: `{
-	title: string;
+	title?: string;
 	name: string;
 	value: unknown;
 	formatChip?: (value: unknown) => ChipItem[];
