@@ -97,7 +97,7 @@ exports[`DatePicker > renders correctly 1`] = `
             <!---->Date
           </label>
           <!---->
-          <div class="v-field__input" data-no-activator=""><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" validateonblur="true" success-messages="" data-maska-value="01/01/2021"></div>
+          <div class="v-field__input" data-no-activator=""><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" validateonblur="true" data-maska-value="01/01/2021"></div>
           <!---->
         </div>
         <!---->
