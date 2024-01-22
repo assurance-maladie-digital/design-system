@@ -44,7 +44,7 @@ export const DateLogic = defineComponent({
 			/** YYYY-MM-DD format */
 			date: "",
 
-			/** DDMMYYYY format */
+			/** DD/MM/YYYY format */
 			textFieldDate: "",
 
 			errorMessages: null as string[] | null,
@@ -52,14 +52,16 @@ export const DateLogic = defineComponent({
 	},
 	watch: {
 		modelValue: {
-			handler(date: string): void {
-				if (!date) {
+			// YYYY-MM-DD format
+			handler(newDate: string): void {
+
+				if (!newDate) {
 					this.clearInternalModel();
 
 					return;
 				}
 
-				const parsed = this.parseDatetoInternalFormat(date);
+				const parsed = this.parseDatetoInternalFormat(newDate);
 
 				if (!parsed) {
 					return;
@@ -80,10 +82,14 @@ export const DateLogic = defineComponent({
 		 * on input if validateOnBlur is true
 		 */
 		textFieldDate(value: string): void {
+			this.errorMessages = null;
 			if (!this.validateOnBlurEnabled) {
 				this.validate(value);
 			}
 		},
+		date(): void {
+			this.errorMessages = null;
+		}
 	},
 	mounted() {
 		// Watch VTextField 'hasError' computed value since 'update:error' event isn't reliable
@@ -103,23 +109,6 @@ export const DateLogic = defineComponent({
 		validateOnBlurEnabled(): boolean {
 			return true; //Boolean(this.options?.textField?.validateOnBlur);
 		},
-
-		dateFormatted: {
-			get() {
-				if (this.date === "") {
-					return "";
-				}
-
-				const formatted = parseDate(this.date, INTERNAL_FORMAT).format(
-					this.dateFormat
-				);
-
-				return formatted;
-			},
-			set(value: string) {
-				this.textFieldDate = value;
-			},
-		},
 	},
 	methods: {
 		/** Parse a date with dateFormatReturn format to internal format */
@@ -133,6 +122,7 @@ export const DateLogic = defineComponent({
 			return parsed.format(INTERNAL_FORMAT);
 		},
 
+		// Take a date in DD/MM/YYYY format and return it in YYYY-MM-DD format
 		parseTextFieldDate(date: string): string | null {
 			const parsed = parseDate(date, this.dateFormat);
 			const formatted = parsed.format(INTERNAL_FORMAT);

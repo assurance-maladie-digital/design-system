@@ -18,20 +18,21 @@ export const WarningRules = defineComponent({
 	},
 	data() {
 		return {
-			successMessages: [] as string[],
+			messages: [] as string[],
 		};
 	},
 	methods: {
-		validate(value: string): void {
-		this.successMessages = [];
+		// dd/mm/yyyy
+		validate(date: string): void {
+			this.messages = [];
 
-		this.warningRules.forEach((rule) => {
-			const result = rule(value);
+			this.warningRules.forEach((rule) => {
+				const result = rule(date);
 
-			if (typeof result === 'string') {
-				this.successMessages.push(result);
-			}
-		});
+				if (typeof result === 'string') {
+					this.messages.push(result);
+				}
+			});
 		},
 	},
 });

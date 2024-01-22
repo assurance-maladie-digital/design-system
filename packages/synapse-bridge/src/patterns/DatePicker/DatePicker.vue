@@ -91,7 +91,7 @@ export default defineComponent({
 		textFieldClasses() {
 			const classes: (string | Record<string, boolean>)[] = [
 				{
-					"vd-warning-rules": !!this.warningRules.length,
+					"vd-warning-rules": this.warningRules.length > 0 && this.messages.length > 0 && !this.errorMessages,
 					"vd-no-prepend-icon": !this.showPrependIcon,
 				},
 			];
@@ -103,6 +103,12 @@ export default defineComponent({
 			const right = this.outlined ? -18 : 0;
 			const bottom = -22;
 			return [bottom, right];
+		},
+
+		hint() {
+			return !!this.textFieldOptions.successMessages || !!this.messages.length
+				? undefined
+				: this.textFieldOptions.hint;
 		},
 	},
 	methods: {
@@ -128,11 +134,12 @@ export default defineComponent({
 					ref="input"
 					v-maska:[maskValue]
 					v-bind="textFieldOptions"
-					:model-value="dateFormatted"
+					:hint="hint"
+					v-model="textFieldDate"
 					:variant="outlined ? 'outlined' : undefined"
 					:class="textFieldClasses"
-					:success-messages="
-						textFieldOptions.successMessages || successMessages
+					:messages="
+						textFieldOptions.successMessages || messages
 					"
 					:error-messages="
 						textFieldOptions.errorMessages || errorMessages
@@ -144,7 +151,6 @@ export default defineComponent({
 					@click.stop="textFieldClicked"
 					@paste.prevent="saveFromPasted"
 					@keydown.enter.prevent="saveFromTextField"
-					@update:model-value="(e:string)=>{errorMessages = null; dateFormatted = e;}"
 				>
 					<template #prepend>
 						<VBtn
@@ -204,8 +210,14 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+@import '@cnamts/design-tokens/dist/tokens';
 .vd-date-picker-menu {
 	// Hide scrollbar in VMenu
 	overflow: hidden;
+}
+
+:deep(.vd-warning-rules) {
+	color: $vd-warning !important;
+	caret-color: $vd-warning !important;
 }
 </style>

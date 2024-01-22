@@ -27,7 +27,7 @@ describe("WarningRules", () => {
 
 		wrapper.vm.validate("");
 
-		expect(wrapper.vm.successMessages[0]).toBe("error");
+		expect(wrapper.vm.messages[0]).toBe("error");
 	});
 
 	it("validates the value correctly on success", () => {
@@ -35,6 +35,6 @@ describe("WarningRules", () => {
 
 		wrapper.vm.validate("test");
 
-		expect(wrapper.vm.successMessages[0]).toBeUndefined();
+		expect(wrapper.vm.messages[0]).toBeUndefined();
 	});
 });
