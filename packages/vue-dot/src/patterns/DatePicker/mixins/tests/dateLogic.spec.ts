@@ -29,7 +29,7 @@ interface TestComponent extends Vue {
 	textFieldDate: string;
 	errorMessages: string[];
 	saveFromTextField: () => void;
-	saveFromCalendar: () => void;
+	saveFromCalendar: () => Promise<void>;
 	saveFromPasted: (event: ClipboardEvent) => void;
 	parseTextFieldDate: (date: string) => string;
 	textFieldBlur: () => void;
@@ -171,27 +171,27 @@ describe('DateLogic', () => {
 	});
 
 	// saveFromCalendar
-	it('emits change event when called', () => {
+	it('emits change event when called', async () => {
 		const wrapper = createWrapper();
 
-		wrapper.vm.saveFromCalendar();
+		await wrapper.vm.saveFromCalendar();
 
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('validates the VTextField when validateOnBlur is true', () => {
+	it('validates the VTextField when validateOnBlur is true', async () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
 			}
 		});
 
-		wrapper.vm.saveFromCalendar();
+		await wrapper.vm.saveFromCalendar();
 
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('does not set hasFocused if it is undefined', () => {
+	it('does not set hasFocused if it is undefined', async () => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
@@ -200,7 +200,7 @@ describe('DateLogic', () => {
 
 		delete wrapper.vm.$refs.input.hasFocused;
 
-		wrapper.vm.saveFromCalendar();
+		await wrapper.vm.saveFromCalendar();
 
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});

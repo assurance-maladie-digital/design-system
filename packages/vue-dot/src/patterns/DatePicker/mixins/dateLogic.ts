@@ -154,10 +154,12 @@ export class DateLogic extends MixinsDeclaration {
 		this.textFieldDate = value;
 	}
 
-	saveFromCalendar(): void {
+	async saveFromCalendar(): Promise<void> {
 		this.$refs.menu.save(this.date);
 
 		this.setTextFieldModel();
+
+		await this.$nextTick();
 
 		// Trigger validation when the calendar is clicked since
 		// the input loose focus and fires textFieldBlur
@@ -167,6 +169,8 @@ export class DateLogic extends MixinsDeclaration {
 			// Validate the VTextField since no blur event is emitted
 			this.validateVuetify();
 		}
+
+		await this.$nextTick();
 
 		this.emitChangeEvent();
 	}
