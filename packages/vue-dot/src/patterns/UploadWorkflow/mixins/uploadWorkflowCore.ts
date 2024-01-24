@@ -53,8 +53,21 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	dialog = false;
 	error = false;
 	inlineSelect = false;
+	unrestricted = false;
 
-	uploadedFile: File | null = null;
+	uploadedFile: File | File[] | null = null;
+
+	get uploadedFiles(): File[] {
+		if (!this.uploadedFile) {
+			return [];
+		}
+
+		if (Array.isArray(this.uploadedFile)) {
+			return this.uploadedFile;
+		}
+
+		return [this.uploadedFile];
+	}
 
 	selectedItem = '';
 
@@ -65,7 +78,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	get selectItems(): SelectItem[] {
-		if (!this.internalFileListItems.length) {
+		if (this.unrestricted) {
 			return [];
 		}
 
@@ -88,11 +101,14 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 		if (this.internalFileListItems.length) {
 			this.initFileList(this.internalFileListItems);
+		} else {
+			this.unrestricted = true;
 		}
 	}
 
 	setFileInList(): void {
-		if (!this.internalFileListItems.length) {
+		if (this.unrestricted) {
+			//
 			return;
 		}
 
@@ -104,9 +120,11 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 		this.updateFileModel(index, 'state', this.error ? 'error' : 'success');
 
-		if (this.uploadedFile) {
-			this.updateFileModel(index, 'name', this.uploadedFile.name);
-			this.updateFileModel(index, 'file', this.uploadedFile);
+		if (this.uploadedFiles.length) {
+			this.uploadedFiles.forEach((file) => {
+				this.updateFileModel(index, 'name', file.name);
+				this.updateFileModel(index, 'file', file);
+			});
 		}
 
 		this.error = false;
@@ -115,7 +133,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	resetFile(index: number): void {
-		if (!this.internalFileListItems.length) {
+		if (this.unrestricted) {
 			this.$delete(this.fileList, index);
 		} else {
 			this.updateFileModel(index, 'state', 'initial');
@@ -146,8 +164,8 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	async dialogConfirm(): Promise<void> {
 		await this.$nextTick();
 
-		if (this.showFilePreview && !this.internalFileListItems.length && this.uploadedFile) {
-			this.fileList.push(this.uploadedFile);
+		if (this.showFilePreview && this.unrestricted && this.uploadedFiles.length) {
+			this.fileList.push(...this.uploadedFiles);
 			this.emitChangeEvent();
 			this.dialog = false;
 
@@ -172,8 +190,8 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			return;
 		}
 
-		if (!this.internalFileListItems.length && this.uploadedFile) {
-			this.fileList.push(this.uploadedFile);
+		if (this.unrestricted && this.uploadedFiles.length) {
+			this.fileList.push(...this.uploadedFiles);
 			this.emitChangeEvent();
 
 			return;

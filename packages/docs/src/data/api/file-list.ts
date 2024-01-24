@@ -20,10 +20,22 @@ export const api: Api = {
 }`
 			},
 			{
+				name: 'hide-upload-btn',
+				type: 'boolean',
+				default: false,
+				description: 'Masque le bouton *Téléverser*.'
+			},
+			{
 				name: 'show-view-btn',
 				type: 'boolean',
 				default: false,
 				description: 'Affiche le bouton *Afficher le fichier*.'
+			},
+			{
+				name: 'always-show-delete-btn',
+				type: 'boolean',
+				default: false,
+				description: 'Affiche toujours le bouton *Supprimer*.'
 			},
 			{
 				name: 'hide-delete-btn',

@@ -40,7 +40,7 @@
 						name="action-text"
 						:multiple="multiple"
 					>
-						{{ multiple ? 'Placez vos fichiers ici' : 'Placez votre fichier ici' }}
+						{{ locales.placeFile(multiple) }}
 					</slot>
 				</span>
 
@@ -55,7 +55,7 @@
 
 				<span class="vd-file-upload-btn primary white--text text-uppercase py-2 px-4 elevation-2">
 					<slot name="button-text">
-						{{ locales.chooseFile }}
+						{{ locales.chooseFile(multiple) }}
 					</slot>
 				</span>
 

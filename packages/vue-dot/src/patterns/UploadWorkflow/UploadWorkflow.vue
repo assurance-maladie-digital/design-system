@@ -14,6 +14,8 @@
 			v-if="showFileList"
 			v-bind="options.fileList"
 			:files="fileList"
+			:hide-upload-btn="unrestricted"
+			:always-show-delete-btn="unrestricted"
 			@delete-file="resetFile"
 			@retry="uploadInline"
 			@upload="uploadInline"
@@ -25,6 +27,7 @@
 			ref="fileUpload"
 			v-bind="options.fileUpload"
 			v-model="uploadedFile"
+			:multiple="unrestricted && multiple"
 			@error="uploadError"
 			@change="fileSelected"
 		/>
@@ -81,6 +84,10 @@
 			sectionTitle: {
 				type: String,
 				default: undefined
+			},
+			multiple: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -120,7 +127,9 @@
 		}
 
 		get showFileUpload(): boolean {
-			return this.fileListItems?.some((item) => item.state !== 'success');
+			const hasNonValidatedFiles = Boolean(this.internalFileListItems?.some((item) => item.state !== 'success'));
+
+			return this.unrestricted || hasNonValidatedFiles;
 		}
 
 		uploadInline(id: string): void {

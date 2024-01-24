@@ -47,7 +47,7 @@
 
 				<VListItemAction v-bind="options.listItemAction">
 					<VBtn
-						v-if="file.state === FileStateEnum.INITIAL"
+						v-if="file.state === FileStateEnum.INITIAL && !hideUploadBtn"
 						v-bind="options.uploadBtn"
 						:aria-label="locales.uploadFile"
 						@click="$emit('upload', file.id)"
@@ -90,7 +90,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state !== FileStateEnum.INITIAL && !hideDeleteBtn"
+						v-if="shouldDisplayDeleteBtn(file)"
 						v-bind="options.deleteFileBtn"
 						@click="$emit('delete-file', index)"
 					>
@@ -143,7 +143,15 @@
 				type: Array as PropType<FileItem[]>,
 				required: true
 			},
+			hideUploadBtn: {
+				type: Boolean,
+				default: false
+			},
 			showViewBtn: {
+				type: Boolean,
+				default: false
+			},
+			alwaysShowDeleteBtn: {
 				type: Boolean,
 				default: false
 			},
@@ -176,6 +184,14 @@
 
 		get iconColor(): string {
 			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';
+		}
+
+		shouldDisplayDeleteBtn(file: FileItem): boolean {
+			if (this.hideDeleteBtn) {
+				return false;
+			}
+
+			return file.state !== FileStateEnum.INITIAL || this.alwaysShowDeleteBtn;
 		}
 
 		getIconInfo(state: FileStateEnum): IconInfo {

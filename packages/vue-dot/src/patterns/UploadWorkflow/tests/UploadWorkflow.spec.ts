@@ -33,7 +33,7 @@ describe('UploadWorkflow', () => {
 			propsData: {
 				value: files
 			}
-		});
+		}, true);
 
 		expect(wrapper).toMatchSnapshot();
 	});
@@ -48,7 +48,7 @@ describe('UploadWorkflow', () => {
 			propsData: {
 				value: [files[0]]
 			}
-		});
+		}, true);
 
 		expect(wrapper).toMatchSnapshot();
 	});

@@ -16,7 +16,7 @@ interface TestComponent extends Vue {
 	setFileInList: () => void;
 	resetFile: (index: number) => void;
 	dialogConfirm: () => void;
-	uploadedFile: File | null;
+	uploadedFile: File[] | File | null;
 	fileList: FileListItem[];
 	error: boolean;
 	dialog: boolean;
@@ -243,6 +243,21 @@ describe('EventsFileFired', () => {
 		expect(wrapper.vm.selectItems).toEqual([]);
 		expect(wrapper.vm.dialog).toBeFalsy();
 		expect(wrapper.vm.fileList[0]).toEqual(testFile);
+	});
+
+	it('skips the dialog and adds the files in the list in unrestricted mode', () => {
+		const wrapper = createWrapper([]) as Wrapper<TestComponent>;
+		wrapper.vm.uploadedFile = [
+			testFile,
+			testFile
+		];
+
+		wrapper.vm.fileSelected();
+
+		expect(wrapper.vm.selectItems).toEqual([]);
+		expect(wrapper.vm.dialog).toBeFalsy();
+		expect(wrapper.vm.fileList[0]).toEqual(testFile);
+		expect(wrapper.vm.fileList[1]).toEqual(testFile);
 	});
 
 	it('open the dialog in unrestricted mode for preview file', async() => {
