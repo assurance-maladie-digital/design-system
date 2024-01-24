@@ -91,7 +91,7 @@ describe("RangeField", () => {
 
 		wrapper.vm.updateRange(0, -10);
 
-		expect(wrapper.vm.rangeValue[0]).toEqual(-10);
+		expect(wrapper.vm.rangeValue[0]).toEqual(0);
 	});
 
 	it("renders correctly with value > max", () => {
@@ -108,7 +108,41 @@ describe("RangeField", () => {
 
 		wrapper.vm.updateRange(1, 110);
 
-		expect(wrapper.vm.rangeValue[1]).toEqual(110);
+		expect(wrapper.vm.rangeValue[1]).toEqual(100);
+	});
+
+	it("renders correctly with min value > max", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				value: [50, 80],
+				min: 0,
+				max: 100,
+			},
+		});
+
+		wrapper.vm.updateRange(0, 110);
+
+		expect(wrapper.vm.rangeValue[0]).toEqual(80);
+	});
+
+	it("renders correctly with max value < min", () => {
+		const wrapper = shallowMount(RangeField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				value: [50, 80],
+				min: 0,
+				max: 100,
+			},
+		});
+
+		wrapper.vm.updateRange(1, -10);
+
+		expect(wrapper.vm.rangeValue[1]).toEqual(50);
 	});
 
 	it("renders correctly maxValue computed", () => {

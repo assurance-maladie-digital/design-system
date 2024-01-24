@@ -81,14 +81,32 @@ export default defineComponent({
 		},
 
 		updateRange(index: RangeEnum, value: number): void {
-			const [min, max] = this.rangeValue;
+			if (index === RangeEnum.MIN && value < this.min) {
+				this.setRangeValue(RangeEnum.MIN, this.min);
+				this.emitChangeEvent();
 
-			if (value < min) {
-				this.setRangeValue(RangeEnum.MIN, this.minValue);
+				return;
 			}
 
-			if (value > max) {
-				this.setRangeValue(RangeEnum.MAX, this.maxValue);
+			if (index === RangeEnum.MIN && value > this.rangeValue[RangeEnum.MAX]) {
+				this.setRangeValue(RangeEnum.MIN, this.rangeValue[RangeEnum.MAX]);
+				this.emitChangeEvent();
+
+				return;
+			}
+
+			if (index === RangeEnum.MAX && value > this.max) {
+				this.setRangeValue(RangeEnum.MAX, this.max);
+				this.emitChangeEvent();
+
+				return;
+			}
+
+			if (index === RangeEnum.MAX && value < this.rangeValue[RangeEnum.MIN]) {
+				this.setRangeValue(RangeEnum.MAX, this.rangeValue[RangeEnum.MIN]);
+				this.emitChangeEvent();
+
+				return;
 			}
 
 			this.setRangeValue(index, value);
