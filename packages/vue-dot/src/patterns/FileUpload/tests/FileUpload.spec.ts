@@ -23,4 +23,14 @@ describe('FileUpload', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it('renders correctly with the multiple prop', () => {
+		wrapper = mountComponent(FileUpload, {
+			propsData: {
+				multiple: true
+			}
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
 });

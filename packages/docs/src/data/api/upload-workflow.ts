@@ -44,6 +44,12 @@ export const api: Api = {
 				default: false,
 				description: 'Active la prévisualisation du fichier avant validation.'
 			},
+			{
+				name: 'multiple',
+				type: 'boolean',
+				default: false,
+				description: 'Active la sélection multiple.'
+			},
 			...widthable,
 			...customizable(`{
 	fileUpload: 'FileUpload',
