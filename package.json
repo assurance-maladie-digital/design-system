@@ -5,6 +5,11 @@
 		"lerna": "7.3.0",
 		"typescript": "5.2.2"
 	},
+	"scripts": {
+		"lint": "lerna run lint --stream",
+		"test": "lerna run test --stream",
+		"build": "lerna run build --stream"
+	},
 	"engines": {
 		"node": "^20.11.0",
 		"pnpm": "^8.0.0"
