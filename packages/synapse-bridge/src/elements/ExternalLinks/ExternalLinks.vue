@@ -8,12 +8,12 @@ import { locales } from "./locales";
 import { PositionEnum } from "./PositionEnum";
 
 import type { ExternalLink, Position } from "./types";
-import type { IndexedObject } from "../../types";
+import type { IndexedObject } from "@/types";
 
-import { customizable } from "../../mixins/customizable";
+import { customizable } from "@/mixins/customizable";
 
-import { convertToUnit } from "../../helpers/convertToUnit";
-import { propValidator } from "../../helpers/propValidator";
+import { convertToUnit } from "@/helpers/convertToUnit";
+import { propValidator } from "@/helpers/propValidator";
 
 import {
 	mdiChevronRight as rightArrowIcon,
