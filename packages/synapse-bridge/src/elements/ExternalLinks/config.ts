@@ -13,7 +13,7 @@ export const config = {
 		class: "d-flex px-3",
 	},
 	btnIcon: {
-		color: "white",
+		color: "white"
 	},
 	linkIcon: {
 		color: "rgba(0, 0, 0, .54)",
