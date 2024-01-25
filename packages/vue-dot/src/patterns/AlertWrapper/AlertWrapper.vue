@@ -52,7 +52,7 @@
 	import { locales } from './locales';
 
 	import {
-		mdiAlertCircleOutline,
+		mdiAlertOutline,
 		mdiAlertOctagonOutline,
 		mdiCheckCircleOutline,
 		mdiInformationOutline,
@@ -91,7 +91,7 @@
 			const icons: Record<string, string> = {
 				info: mdiInformationOutline,
 				success: mdiCheckCircleOutline,
-				warning: mdiAlertCircleOutline,
+				warning: mdiAlertOutline,
 				error: mdiAlertOctagonOutline
 			};
 
