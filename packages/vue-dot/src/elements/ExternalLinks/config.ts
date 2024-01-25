@@ -9,7 +9,7 @@ export const config = {
 	btn: {
 		tile: true,
 		minHeight: '48px',
-		width: '328px',
+		minWidth: '328px',
 		color: tokens.colors.parme.base,
 		class: 'd-flex px-3'
 	},

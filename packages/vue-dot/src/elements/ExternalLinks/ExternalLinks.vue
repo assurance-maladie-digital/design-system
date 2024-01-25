@@ -181,7 +181,7 @@
 		}
 
 		get btnTextSpacing(): string {
-			return this.right ? 'ml-2' : 'mr-2';
+			return this.right ? 'ml-2' : 'mr-3';
 		}
 
 		get transform(): string {
