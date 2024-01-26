@@ -7,11 +7,11 @@
 		v-on="$listeners"
 	>
 		<template #prepend>
-			<slot name="icon">
-				<VIcon class="vd-alert-icon rounded-circle mr-4">
+			<VIcon class="vd-alert-icon rounded-circle mr-4">
+				<slot name="icon">
 					{{ alertIcon }}
-				</VIcon>
-			</slot>
+				</slot>
+			</VIcon>
 		</template>
 
 		<template #default>
@@ -52,7 +52,7 @@
 	import { locales } from './locales';
 
 	import {
-		mdiAlertCircleOutline,
+		mdiAlertOutline,
 		mdiAlertOctagonOutline,
 		mdiCheckCircleOutline,
 		mdiInformationOutline,
@@ -91,7 +91,7 @@
 			const icons: Record<string, string> = {
 				info: mdiInformationOutline,
 				success: mdiCheckCircleOutline,
-				warning: mdiAlertCircleOutline,
+				warning: mdiAlertOutline,
 				error: mdiAlertOctagonOutline
 			};
 
