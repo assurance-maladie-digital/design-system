@@ -7,7 +7,7 @@ import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from "./AlertTypeEnum";
 import { locales } from "./locales";
 
 import {
-	mdiAlertCircleOutline,
+	mdiAlertOutline,
 	mdiAlertOctagonOutline,
 	mdiCheckCircleOutline,
 	mdiInformationOutline,
@@ -43,7 +43,7 @@ export default defineComponent({
 			const icons: Record<string, string> = {
 				info: mdiInformationOutline,
 				success: mdiCheckCircleOutline,
-				warning: mdiAlertCircleOutline,
+				warning: mdiAlertOutline,
 				error: mdiAlertOctagonOutline,
 			};
 
@@ -69,11 +69,11 @@ export default defineComponent({
 		class="vd-alert-wrapper"
 	>
 		<template #prepend>
-			<slot name="icon">
-				<VIcon class="vd-alert-icon rounded-circle mr-4">
+			<VIcon class="vd-alert-icon rounded-circle mr-4">
+				<slot name="icon">
 					{{ alertIcon }}
-				</VIcon>
-			</slot>
+				</slot>
+			</VIcon>
 		</template>
 
 		<template #default>
