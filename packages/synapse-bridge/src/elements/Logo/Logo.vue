@@ -51,27 +51,15 @@ export default defineComponent({
 	},
 	computed: {
 		fillColor(): string {
-			if (this.dark) {
-				return '#fff';
-			}
-
-			return tokens.colors.primary;
+			return this.dark ? '#fff' : tokens.colors.primary;
 		},
 
 		dimensions(): Dimensions {
-			if (this.avatar) {
-				return logoAvatarDimensionsMapping[this.size];
-			}
-
-			return logoDimensionsMapping[this.size];
+			return this.avatar ? logoAvatarDimensionsMapping[this.size] : logoDimensionsMapping[this.size];
 		},
 
 		viewBox(): string {
-			if (this.avatar) {
-				return '0 0 64 64';
-			}
-
-			return '0 0 211 64';
+			return this.avatar ? '0 0 64 64' : '0 0 211 64';
 		},
 
 		label(): string {
