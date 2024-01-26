@@ -7,11 +7,11 @@
 		v-on="$listeners"
 	>
 		<template #prepend>
-			<slot name="icon">
-				<VIcon class="vd-alert-icon rounded-circle mr-4">
+			<VIcon class="vd-alert-icon rounded-circle mr-4">
+				<slot name="icon">
 					{{ alertIcon }}
-				</VIcon>
-			</slot>
+				</slot>
+			</VIcon>
 		</template>
 
 		<template #default>
