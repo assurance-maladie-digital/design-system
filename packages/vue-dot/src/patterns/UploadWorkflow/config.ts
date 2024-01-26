@@ -4,7 +4,10 @@ export const config = {
 	},
 	dialog: {
 		persistent: true,
-		width: '550'
+		width: '550px'
+	},
+	previewDialog: {
+		width: '550px'
 	},
 	card: {
 		class: 'pa-4'

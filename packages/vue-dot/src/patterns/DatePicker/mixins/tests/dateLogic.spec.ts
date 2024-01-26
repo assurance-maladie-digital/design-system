@@ -171,7 +171,7 @@ describe('DateLogic', () => {
 	});
 
 	// saveFromCalendar
-	it('emits change event when called', async () => {
+	it('emits change event when called', async() => {
 		const wrapper = createWrapper();
 
 		await wrapper.vm.saveFromCalendar();
@@ -179,7 +179,7 @@ describe('DateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('validates the VTextField when validateOnBlur is true', async () => {
+	it('validates the VTextField when validateOnBlur is true', async() => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true
@@ -191,7 +191,7 @@ describe('DateLogic', () => {
 		expect(wrapper.emitted('change')).toBeTruthy();
 	});
 
-	it('does not set hasFocused if it is undefined', async () => {
+	it('does not set hasFocused if it is undefined', async() => {
 		const wrapper = createWrapper(undefined, {
 			textField: {
 				validateOnBlur: true

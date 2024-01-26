@@ -45,6 +45,12 @@ export const api: Api = {
 				description: 'Active la prévisualisation du fichier avant validation.'
 			},
 			{
+				name: 'show-view-btn',
+				type: 'boolean',
+				default: false,
+				description: 'Active le bouton *Afficher le fichier*.'
+			},
+			{
 				name: 'multiple',
 				type: 'boolean',
 				default: false,
@@ -54,6 +60,7 @@ export const api: Api = {
 			...customizable(`{
 	fileUpload: 'FileUpload',
 	dialog: 'DialogBox',
+	persistentDialog: 'DialogBox',
 	form: 'VForm',
 	select: 'VSelect',
 	fileList: 'FileList',

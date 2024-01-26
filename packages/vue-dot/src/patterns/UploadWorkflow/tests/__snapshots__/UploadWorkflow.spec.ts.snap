@@ -50,6 +50,7 @@ exports[`UploadWorkflow renders correctly 1`] = `
   <div class="v-dialog__container vd-dialog-box" aria-modal="true">
     <!---->
   </div>
+  <!---->
 </div>
 `;
 
@@ -87,5 +88,6 @@ exports[`UploadWorkflow renders correctly with a single file 1`] = `
   <div class="v-dialog__container vd-dialog-box" aria-modal="true">
     <!---->
   </div>
+  <!---->
 </div>
 `;
