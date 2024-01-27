@@ -16,10 +16,11 @@
 			:files="fileList"
 			:hide-upload-btn="unrestricted"
 			:always-show-delete-btn="unrestricted"
+			:show-view-btn="displayShowViewBtn"
 			@delete-file="resetFile"
 			@retry="uploadInline"
 			@upload="uploadInline"
-			@view-file="emitViewFileEvent"
+			@view-file="previewFile"
 		/>
 
 		<FileUpload
@@ -60,6 +61,21 @@
 				v-if="showFilePreview"
 				:options="options.filePreview"
 				:file="uploadedFile"
+			/>
+		</DialogBox>
+
+		<DialogBox
+			v-if="showViewBtn"
+			v-model="previewDialog"
+			v-bind="options.previewDialog"
+			@cancel="previewDialog = false"
+			@confirm="previewDialog = false"
+		>
+			<slot name="preview-description" />
+
+			<FilePreview
+				:options="options.filePreview"
+				:file="fileToPreview"
 			/>
 		</DialogBox>
 	</div>
@@ -124,6 +140,10 @@
 
 		get showFileList(): boolean {
 			return this.value.length > 0 || this.fileListItems?.length > 0;
+		}
+
+		get displayShowViewBtn(): boolean {
+			return this.showViewBtn || this.options.fileList?.showViewBtn;
 		}
 
 		get showFileUpload(): boolean {

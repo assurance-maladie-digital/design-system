@@ -1,6 +1,8 @@
 import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
+import consola from 'consola';
+
 import { UpdateFileModel } from './updateFileModel';
 
 import { Refs } from '../../../types';
@@ -20,6 +22,10 @@ const Props = Vue.extend({
 			default: null
 		},
 		showFilePreview: {
+			type: Boolean,
+			default: false
+		},
+		showViewBtn: {
 			type: Boolean,
 			default: false
 		}
@@ -51,11 +57,13 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}>;
 
 	dialog = false;
+	previewDialog = false;
 	error = false;
 	inlineSelect = false;
 	unrestricted = false;
 
 	uploadedFile: File | File[] | null = null;
+	fileToPreview: File | null = null;
 
 	get uploadedFiles(): File[] {
 		if (!this.uploadedFile) {
@@ -108,7 +116,6 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 
 	setFileInList(): void {
 		if (this.unrestricted) {
-			//
 			return;
 		}
 
@@ -149,16 +156,25 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		this.internalFileListItems = [];
 	}
 
-	emitChangeEvent(): void {
-		this.$nextTick(() => {
-			this.$emit('change', this.fileList);
-		});
+	async emitChangeEvent(): Promise<void> {
+		await this.$nextTick();
+		this.$emit('change', this.fileList);
 	}
 
-	emitViewFileEvent(file: FileListItem): void {
-		this.$nextTick(() => {
+	async previewFile(file: FileListItem): Promise<void> {
+		if (!this.showViewBtn) {
+			consola.warn('Using `vuetify-options` for this functionality is deprecated since v2.16.0, use the `show-view-btn` prop instead.');
+
+			await this.$nextTick();
 			this.$emit('view-file', file);
-		});
+		}
+
+		if (!file.file) {
+			return;
+		}
+
+		this.fileToPreview = file.file;
+		this.previewDialog = true;
 	}
 
 	async dialogConfirm(): Promise<void> {

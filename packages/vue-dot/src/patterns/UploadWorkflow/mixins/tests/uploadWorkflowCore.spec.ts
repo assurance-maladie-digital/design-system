@@ -5,6 +5,7 @@ import { UploadWorkflowCore } from '../uploadWorkflowCore';
 
 import { FileListItem, SelectItem } from '../../types';
 import { Refs } from '../../../../types';
+import { Options } from '../../../../mixins/customizable';
 
 interface TestComponent extends Vue {
 	$refs: Refs<{
@@ -27,7 +28,11 @@ interface TestComponent extends Vue {
 	fileSelected(): void;
 	selectItems: SelectItem[];
 	uploadError(error: string): void;
-	emitViewFileEvent(file: FileListItem): void;
+	previewFile(file: FileListItem): Promise<void>;
+	showViewBtn: boolean;
+	vuetifyOptions: Options;
+	fileToPreview: File | null;
+	previewDialog: boolean;
 }
 
 /** Create fake VForm for refs */
@@ -55,7 +60,7 @@ const testFile = {
 } as File;
 
 /** Create the wrapper */
-function createWrapper(fileListItems = fileList, showFilePreview = false) {
+function createWrapper(fileListItems = fileList, showFilePreview = false, propsData?: Partial<TestComponent>) {
 	const component = Vue.component('TestComponent', {
 		mixins: [
 			UploadWorkflowCore
@@ -69,7 +74,8 @@ function createWrapper(fileListItems = fileList, showFilePreview = false) {
 		},
 		propsData: {
 			fileListItems,
-			showFilePreview
+			showFilePreview,
+			...propsData
 		}
 	});
 }
@@ -311,14 +317,35 @@ describe('EventsFileFired', () => {
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 
-	// viewFile
-	it('emits view-file event', async() => {
-		const wrapper = createWrapper() as Wrapper<TestComponent>;
+	// previewFile
+	it('emits view-file event with showViewBtn set in vuetify-options', async() => {
+		const wrapper = createWrapper(undefined, undefined, {
+			vuetifyOptions: {
+				fileList: {
+					showViewBtn: true
+				}
+			}
+		}) as Wrapper<TestComponent>;
 
-		wrapper.vm.emitViewFileEvent(fileListItem);
-
-		await wrapper.vm.$nextTick();
+		await wrapper.vm.previewFile(fileListItem);
 
 		expect(wrapper.emitted('view-file')).toBeTruthy();
+	});
+
+	it('emits view-file event with showViewBtn set in vuetify-options', async() => {
+		const wrapper = createWrapper(undefined, undefined, {
+			showViewBtn: true
+		}) as Wrapper<TestComponent>;
+
+		const fileItem = {
+			...fileListItem,
+			file: testFile
+		};
+
+		await wrapper.vm.previewFile(fileItem);
+
+		expect(wrapper.emitted('view-file')).toBeFalsy();
+		expect(wrapper.vm.fileToPreview).toBe(fileItem.file);
+		expect(wrapper.vm.previewDialog).toBeTruthy();
 	});
 });

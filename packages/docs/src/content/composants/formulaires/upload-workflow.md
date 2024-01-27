@@ -37,7 +37,17 @@ Vous pouvez spécifier des fichiers optionnels en utilisant la propriété `opti
 
 #### Bouton _Afficher le fichier_
 
-Vous pouvez afficher un bouton permettant de visualiser un fichier sélectionné en utilisant l’option `showViewBtn` du composant `FileList`.
+Vous pouvez afficher un bouton permettant de visualiser un fichier sélectionné en utilisant la prop `show-view-btn`.
+
+<doc-alert type="info">
+Seuls les fichiers de type PDF et les images peuvent être visualisés.
+</doc-alert>
+
+<doc-alert type="warning">
+
+Il est toujours possible d’utiliser l’option `showViewBtn` du composant `FileList` pour afficher le bouton et personnaliser son comportement, mais ce fonctionnement est déprécié depuis la [version 2.16.0](https://github.com/assurance-maladie-digital/design-system/releases/tag/v2.16.0) et sera supprimé dans la prochaine version majeure.
+
+</doc-alert>
 
 <doc-example file="upload-workflow/view-file"></doc-example>
 

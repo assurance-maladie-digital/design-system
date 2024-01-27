@@ -1,31 +1,9 @@
 <template>
-	<div>
-		<UploadWorkflow
-			v-model="selectedFiles"
-			:file-list-items="fileListItems"
-			:vuetify-options="vuetifyOptions"
-			@view-file="showFileInfo"
-		/>
-
-		<DialogBox
-			v-if="displayedFile"
-			v-model="dialog"
-			:title="displayedFile.title"
-		>
-			<template #default>
-				Vous avez sélectionné le fichier <b>{{ displayedFile.name }}</b>.
-			</template>
-
-			<template #actions>
-				<VBtn
-					color="primary"
-					@click="dialog = false"
-				>
-					Retour
-				</VBtn>
-			</template>
-		</DialogBox>
-	</div>
+	<UploadWorkflow
+		v-model="selectedFiles"
+		:file-list-items="fileListItems"
+		show-view-btn
+	/>
 </template>
 
 <script lang="ts">
@@ -37,9 +15,6 @@
 	@Component
 	export default class UploadWorkflowViewFile extends Vue {
 		selectedFiles: SelectedFile[] = [];
-
-		dialog = false;
-		displayedFile: SelectedFile | null = null;
 
 		fileListItems: FileListItem[] = [
 			{
@@ -55,16 +30,5 @@
 				title: 'Passeport'
 			}
 		];
-
-		vuetifyOptions = {
-			fileList: {
-				showViewBtn: true
-			}
-		};
-
-		showFileInfo(file: SelectedFile): void {
-			this.displayedFile = file;
-			this.dialog = true;
-		}
 	}
 </script>
