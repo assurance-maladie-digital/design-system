@@ -24,6 +24,12 @@ De ce fait, si vous combinez les valeurs d’un champ dans une seule puce, le no
 
 <doc-example file="filters-inline/chip-format"></doc-example>
 
+#### Combinaison de composants filtres
+
+Vous pouvez utiliser plusieurs composants de filtres pour un seul et même filtre afin de pouvoir modifier un filtre à différents endroits sur une page.
+
+<doc-example file="filters-inline/filter-combination"></doc-example>
+
 </doc-tab-item>
 
 <doc-tab-item label="API">
