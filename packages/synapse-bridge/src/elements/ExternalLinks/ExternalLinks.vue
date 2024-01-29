@@ -97,7 +97,7 @@ export default defineComponent({
 		},
 
 		btnTextSpacing(): string {
-			return this.right ? "ml-2" : "mr-3";
+			return this.right ? "ml-3" : "mr-3";
 		},
 
 		transform(): string {
