@@ -16,6 +16,7 @@
 		"node": ">=20.0.0"
 	},
 	"scripts": {
+		"dev:setup": "tsx scripts/devSetup.ts",
 		"dev": "vite",
 		"build": "run-p type-check \"build-only {@}\" --",
 		"preview": "vite preview",
