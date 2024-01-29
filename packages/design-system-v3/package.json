@@ -1,0 +1,62 @@
+{
+	"name": "design-system-v3",
+	"version": "0.0.0",
+	"license": "MIT",
+	"author": {
+		"name": "CNAM",
+		"email": "digital_TL.cnam@assurance-maladie.fr"
+	},
+	"type": "module",
+	"files": [
+		"dist",
+		"src"
+	],
+	"engines": {
+		"pnpm": ">=8.0.0",
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "run-p type-check \"build-only {@}\" --",
+		"preview": "vite preview",
+		"test:unit": "vitest",
+		"build-only": "vite build",
+		"type-check": "vue-tsc --build --force",
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+		"format": "prettier --write src/"
+	},
+	"peerDependencies": {
+		"vue": "^3.3.11",
+		"vuetify": "3.3.23"
+	},
+	"dependencies": {
+		"@cnamts/design-tokens": "2.12.0",
+		"maska": "^2.1.11",
+		"pinia": "^2.1.7",
+		"vue-router": "^4.2.5"
+	},
+	"devDependencies": {
+		"@rushstack/eslint-patch": "^1.3.3",
+		"@tsconfig/node18": "^18.2.2",
+		"@types/jsdom": "^21.1.6",
+		"@types/node": "^18.19.3",
+		"@vitejs/plugin-vue": "^4.5.2",
+		"@vue/eslint-config-prettier": "^8.0.0",
+		"@vue/eslint-config-typescript": "^12.0.0",
+		"@vue/test-utils": "^2.4.3",
+		"@vue/tsconfig": "^0.5.0",
+		"eslint": "^8.56.0",
+		"eslint-plugin-vue": "^9.17.0",
+		"jsdom": "^23.0.1",
+		"npm-run-all2": "^6.1.1",
+		"prettier": "^3.0.3",
+		"sass": "1.67.0",
+		"sass-loader": "13.3.2",
+		"typescript": "~5.3.0",
+		"vite": "^4.4.9",
+		"vite-plugin-vuetify": "1.0.2",
+		"vitest": "^1.0.4",
+		"vue-tsc": "^1.8.25",
+		"vuetify": "3.3.23"
+	}
+}
