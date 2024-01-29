@@ -207,4 +207,7 @@ export default defineComponent({
 .v-list-item__append > .v-icon {
 	opacity: 1 !important;
 }
+.v-list-item-subtitle {
+	line-height: 1.;
+}
 </style>
