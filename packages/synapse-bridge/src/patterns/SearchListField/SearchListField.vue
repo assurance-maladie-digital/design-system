@@ -4,12 +4,12 @@ import type { PropType } from "vue";
 
 import { mdiMagnify } from "@mdi/js";
 
-import { SearchListItem } from "./types";
+import type { SearchListItem } from "./types";
 import { locales } from "./locales";
 
 export default defineComponent({
 	props: {
-		value: {
+		modelValue: {
 			type: Array as PropType<unknown[]>,
 			default: () => [],
 		},
@@ -22,9 +22,15 @@ export default defineComponent({
 	data() {
 		return {
 			search: null as string | null,
+			internalValue: this.modelValue,
 			searchIcon: mdiMagnify,
 			locales,
 		};
+	},
+	watch: {
+		modelValue(value: unknown[]): void {
+			this.internalValue = value;
+		},
 	},
 	computed: {
 		filteredItems(): SearchListItem[] {
@@ -37,7 +43,7 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		emitChangeEvent(value: any): void {
+		emitChangeEvent(value: unknown[]): void {
 			this.$emit("update:modelValue", value);
 		},
 	},
@@ -61,14 +67,19 @@ export default defineComponent({
 			</template>
 		</VTextField>
 
-		<VList select-strategy="classic" class="pb-0">
+		<VList
+			select-strategy="classic"
+			class="pb-0"
+			v-model:selected="internalValue"
+			@update:selected="emitChangeEvent"
+
+		>
 			<VListItem
 				v-for="(item, index) in filteredItems"
 				:key="index"
 				:value="item.value"
 				active-class="text-primary"
 				class="d-flex align-center justify-start"
-				@click="emitChangeEvent(item.value)"
 			>
 				<template v-slot:prepend="{ isActive }">
 					<VListItemAction start>
