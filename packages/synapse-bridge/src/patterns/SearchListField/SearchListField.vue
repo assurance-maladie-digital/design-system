@@ -32,11 +32,8 @@ export default defineComponent({
 				return this.items;
 			}
 
-			return this.items.filter((item) => {
-				return item.label
-					.toLowerCase()
-					.includes((this.search as string).toLowerCase());
-			});
+			const searchLower = this.search.toLowerCase();
+			return this.items.filter(item => item.label.toLowerCase().includes(searchLower));
 		},
 	},
 	methods: {
