@@ -208,6 +208,6 @@ export default defineComponent({
 	opacity: 1 !important;
 }
 .v-list-item-subtitle {
-	line-height: 1.;
+	line-height: 1.2;
 }
 </style>
