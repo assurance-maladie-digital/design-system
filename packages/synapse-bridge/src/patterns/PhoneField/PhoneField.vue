@@ -27,7 +27,7 @@ export default defineComponent({
 			type: String,
 			default: undefined,
 		},
-		required: {
+		isRequired: {
 			type: Boolean,
 			default: false,
 		},
@@ -51,15 +51,7 @@ export default defineComponent({
 		},
 
 		rules(): ValidationRule[] {
-			const rules = [];
-
-			if (this.required) {
-				rules.push(required);
-			}
-
-			rules.push(exactLength(PHONE_LENGTH, true));
-
-			return rules;
+			return this.isRequired ? [required, exactLength(PHONE_LENGTH, true)] : [exactLength(PHONE_LENGTH, true)];
 		},
 
 		computedValue(): string | null {
@@ -68,13 +60,7 @@ export default defineComponent({
 	},
 	methods: {
 		formatPhone(value: string): string {
-			const phone = value.match(/.{1,2}/g);
-
-			if (!phone) {
-				return "";
-			}
-
-			return phone.join(" ");
+			return value.replace(/(.{2})/g, "$1 ").trim();
 		},
 
 		noSpacesCounter(value?: string | undefined): number {

@@ -21,7 +21,7 @@ describe("PhoneField", () => {
 				plugins: [vuetify],
 			},
 			props: {
-				required: true,
+				isRequired: true,
 			},
 		});
 
