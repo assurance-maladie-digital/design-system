@@ -162,7 +162,7 @@ export default defineComponent({
 <template>
 	<VMenu
 		v-model="menu"
-		:options="menu"
+		v-bind="options.menu"
 		attach
 		class="vd-external-links"
 		transition="fade-transition"
@@ -187,7 +187,7 @@ export default defineComponent({
 				>
 					{{ btnText }}
 				</span>
-				<VIcon :options="btnIcon">
+				<VIcon v-bind="options.btnIcon">
 					{{ arrowIcon }}
 				</VIcon>
 			</VBtn>
@@ -195,22 +195,22 @@ export default defineComponent({
 
 		<VList
 			v-if="items.length"
-			:options="list"
+			v-bind="options.list"
 			class="vd-external-links-list"
 		>
 			<VListItem
 				v-for="(item, index) in items"
 				:key="index"
 				:href="item.href"
-				:options="listItem"
+				v-bind="options.listItem"
 			>
 				<div class="d-flex flex-row justify-space-between">
-					<VListItemTitle :options="listItemTitle">
+					<VListItemTitle v-bind="options.listItemTitle">
 						{{ item.text }}
 					</VListItemTitle>
 
 					<slot name="link-icon">
-						<VIcon :options="linkIcon">
+						<VIcon v-bind="options.linkIcon">
 							{{ linkIcon }}
 						</VIcon>
 					</slot>
@@ -218,7 +218,7 @@ export default defineComponent({
 			</VListItem>
 		</VList>
 
-		<VSheet v-else :options="sheet">
+		<VSheet v-else v-bind="options.sheet">
 			<p class="mb-0">
 				{{ locales.noData }}
 			</p>
