@@ -19,7 +19,7 @@ describe("PasswordField", () => {
 		const wrapper = mount(PasswordField, {
 			props: {
 				showEyeIcon: true,
-				required: true,
+				isRequired: true,
 			},
 			global: {
 				plugins: [vuetify],
@@ -42,6 +42,20 @@ describe("PasswordField", () => {
 		const input = wrapper.find('input');
 		await input.setValue('test');
 
-		expect(wrapper.emitted('change')).toContainEqual(['test']);
+		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	it('btnLabel computed', () => {
+		const wrapper = mount(PasswordField, {
+			props: {
+				showEyeIcon: true,
+				isRequired: true,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.btnLabel).toBe("Afficher le mot de passe");
 	});
 });

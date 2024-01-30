@@ -15,12 +15,13 @@ import deepMerge from "deepmerge";
 export default defineComponent({
 	inheritAttrs: false,
 	mixins: [customizable(config)],
+	emits: ['change'],
 	props: {
 		value: {
 			type: String,
 			default: undefined,
 		},
-		required: {
+		isRequired: {
 			type: Boolean,
 			default: false,
 		},
@@ -45,11 +46,7 @@ export default defineComponent({
 		rules(): ValidationRule[] {
 			const rules = (this.$attrs.rules as unknown as ValidationRule[]) || [];
 
-			if (this.required) {
-				rules.push(required);
-			}
-
-			return rules;
+			return this.isRequired ? [...rules, required] : rules;
 		}
 	},
 	methods: {
@@ -66,7 +63,7 @@ export default defineComponent({
 		:model-value="value"
 		:rules="rules"
 		:type="showEyeIcon ? 'text' : 'password'"
-		@update:model-value="emitChangeEvent"
+		@change="emitChangeEvent"
 	>
 		<template #append>
 			<VBtn
