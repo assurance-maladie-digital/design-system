@@ -1,0 +1,10 @@
+name: Library DS CI
+
+on:
+  pull_request:
+
+jobs:
+  ci:
+    uses: ./actions/build.yml
+
+
