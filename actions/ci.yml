@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      #              cache: 'pnpm'
+          cache: 'pnpm'
       - run: corepack enable
       - name : install dependency
         run: pnpm install --frozen-lockfile

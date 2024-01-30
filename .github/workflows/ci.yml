@@ -1,4 +1,4 @@
-name: Library DS CI
+name: Library DS CI - Synpase
 
 on:
   pull_request:
