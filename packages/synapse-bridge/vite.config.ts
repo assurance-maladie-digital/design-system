@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vuetify from 'vite-plugin-vuetify'
 import dts from 'vite-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
+import Components from 'unplugin-vue-components/vite' // This imports the plugin
 
 export default defineConfig(({ mode }) => {
 	const config = {
@@ -12,7 +13,8 @@ export default defineConfig(({ mode }) => {
 			vue(),
 			dts({
 				rollupTypes: true
-			})
+			}),
+			Components ({dirs: ["src/elements","src/patterns", "src/templates"] }),
 		],
 		resolve: {
 			alias: {
