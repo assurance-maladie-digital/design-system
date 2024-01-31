@@ -37,7 +37,6 @@ export default defineComponent({
 			if (this.search === null) {
 				return this.items;
 			}
-
 			const searchLower = this.search.toLowerCase();
 			return this.items.filter(item => item.label.toLowerCase().includes(searchLower));
 		},
