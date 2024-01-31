@@ -52,7 +52,7 @@ export default defineComponent({
 	<div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4">
 		<DataList
 			v-for="(dataList, index) in items"
-			:key="'vd-data-list-' + index"
+			:key="`vd-data-list-${index}`"
 			:loading="loading"
 			:render-html-value="renderHtmlValue"
 			:list-title="dataList.title"
