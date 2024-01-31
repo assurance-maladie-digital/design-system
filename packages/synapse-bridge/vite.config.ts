@@ -11,13 +11,13 @@ export default defineConfig(({ mode }) => {
 	const config = {
 		outputDir: 'dist',
 		configureWebpack: {
-			entry: resolve(__dirname, 'src/main.ts'),
+			entry: process.env.NODE_ENV !== 'production' ? './playground/main.ts' : './src/main.ts',
 			output: {
 				libraryExport: 'default'
 			}
 		},
 		css: {
-			extract: false
+			extract: true
 		},
 		plugins: [
 			vue(),
