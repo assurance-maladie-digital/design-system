@@ -10,6 +10,11 @@ export default defineConfig(({ mode }) => {
 	const config = {
 		plugins: [
 			vue(),
+			vuetify(
+				{
+					autoImport: true
+				}
+			),
 			dts({
 				rollupTypes: true
 			})
