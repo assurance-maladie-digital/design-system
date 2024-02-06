@@ -1,129 +1,149 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+	import { defineComponent } from 'vue'
 
-import { config } from "./config";
-import { locales } from "./locales";
+	import { config } from './config'
+	import { locales } from './locales'
 
-import { customizable } from "@/mixins/customizable";
-import { Refs } from "@/types";
+	import { customizable } from '@/mixins/customizable'
+	import { Refs } from '@/types'
 
-import { mdiClose } from "@mdi/js";
-import { VCard, VDialog } from "vuetify/components";
+	import { mdiClose } from '@mdi/js'
+	import type { VDialog } from 'vuetify/components'
 
-export default defineComponent({
-	inheritAttrs: false,
-	mixins: [customizable(config)],
-	props: {
-		modelValue: {
-			type: Boolean,
-			default: false,
+	export default defineComponent({
+		inheritAttrs: false,
+
+		mixins: [customizable(config)],
+
+		props: {
+			modelValue: {
+				type: Boolean,
+				default: false,
+			},
+			title: {
+				type: String,
+				default: undefined,
+			},
+			width: {
+				type: String,
+				default: '800px',
+			},
+			cancelBtnText: {
+				type: String,
+				default: locales.cancelBtn,
+			},
+			confirmBtnText: {
+				type: String,
+				default: locales.confirmBtn,
+			},
+			hideActions: {
+				type: Boolean,
+				default: false,
+			},
+			persistent: {
+				type: Boolean,
+				default: false,
+			},
 		},
-		title: {
-			type: String,
-			default: undefined,
-		},
-		width: {
-			type: String,
-			default: "800px",
-		},
-		cancelBtnText: {
-			type: String,
-			default: locales.cancelBtn,
-		},
-		confirmBtnText: {
-			type: String,
-			default: locales.confirmBtn,
-		},
-		hideActions: {
-			type: Boolean,
-			default: false,
-		},
-		persistent: {
-			type: Boolean,
-			default: false,
-		},
-	},
-	data() {
-		return {
-			$refs: {} as Refs<{
-				dialogContent: VDialog;
-			}>,
-			closeIcon: mdiClose,
-			locales,
-			dialog: this.modelValue,
-		};
-	},
-	watch: {
-		dialog() {
-			this.setEventListeners();
-		},
-		modelValue(newValue) {
-			this.dialog = newValue;
-		},
-	},
-	emits: ["update:modelValue", "cancel", "confirm"],
-	methods: {
-		async getSelectableElements(): Promise<HTMLElement[]> {
-			await this.$nextTick();
-			const parentNode = this.$refs.dialogContent?.$el; // Is undefined when dialog is closed
-			if (!parentNode) {
-				return [];
+
+		emits: ['update:modelValue', 'cancel', 'confirm'],
+
+		data() {
+			return {
+				$refs: {} as Refs<{
+					dialogContent: VDialog
+				}>,
+				closeIcon: mdiClose,
+				locales,
+				dialog: this.modelValue,
 			}
-			const elements = Array.from(
-				parentNode.querySelectorAll(
-					"button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"
-				)
-			) as HTMLElement[];
+		},
 
-			const filteredElements: HTMLElement[] = [];
-			elements.forEach((element) => {
-				if (
-					element.hasAttribute("disabled") ||
-					element.getAttribute("aria-hidden")
-				) {
-					return;
+		watch: {
+			dialog() {
+				this.setEventListeners()
+			},
+			modelValue(newValue) {
+				this.dialog = newValue
+			},
+		},
+
+		methods: {
+			async getSelectableElements(): Promise<HTMLElement[]> {
+				await this.$nextTick()
+
+				const parentNode = this.$refs.dialogContent?.$el // Is undefined when dialog is closed
+
+				if (!parentNode) {
+					return []
 				}
-				filteredElements.push(element);
-			});
-			return filteredElements;
-		},
-		async setEventListeners(): Promise<void> {
-			const elements = await this.getSelectableElements();
-			if (!elements.length) {
-				return;
-			}
-			for (let i = 0; i < elements.length; i++) {
-				const setFocus = (e: KeyboardEvent) => {
-					if (e.key !== "Tab") {
-						return;
+
+				const elements = Array.from(
+					parentNode.querySelectorAll(
+						'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+					)
+				) as HTMLElement[]
+
+				const filteredElements: HTMLElement[] = []
+
+				elements.forEach((element) => {
+					if (
+						element.hasAttribute('disabled') ||
+						element.getAttribute('aria-hidden')
+					) {
+						return
 					}
-					e.preventDefault();
-					if (!e.shiftKey) {
-						if (i === elements.length - 1) {
-							elements[0].focus();
-						} else {
-							elements[i + 1].focus();
-						}
-					} else { // backward
-						if (i === 0) {
-							elements[elements.length - 1].focus();
-						} else {
-							elements[i - 1].focus();
-						}
-					}
-				};
-				if (!this.dialog) {
-					removeEventListener("keydown", setFocus);
-					return;
+
+					filteredElements.push(element)
+				})
+
+				return filteredElements
+			},
+
+			async setEventListeners(): Promise<void> {
+				const elements = await this.getSelectableElements()
+
+				if (!elements.length) {
+					return
 				}
-				elements[i].addEventListener("keydown", setFocus);
-			}
+
+				for (let i = 0; i < elements.length; i++) {
+					const setFocus = (e: KeyboardEvent) => {
+						if (e.key !== 'Tab') {
+							return
+						}
+
+						e.preventDefault()
+
+						if (!e.shiftKey) {
+							if (i === elements.length - 1) {
+								elements[0].focus()
+							} else {
+								elements[i + 1].focus()
+							}
+						} else {
+							if (i === 0) {
+								elements[elements.length - 1].focus()
+							} else {
+								elements[i - 1].focus()
+							}
+						}
+					}
+
+					if (!this.dialog) {
+						removeEventListener('keydown', setFocus)
+						return
+					}
+
+					elements[i].addEventListener('keydown', setFocus)
+				}
+			},
 		},
-	},
-	mounted() {
-		this.setEventListeners();
-	},
-});
+
+		mounted() {
+			this.setEventListeners()
+		},
+	})
 </script>
 
 <template>
@@ -136,10 +156,16 @@ export default defineComponent({
 		aria-modal="true"
 		class="vd-dialog-box"
 	>
-		<VCard v-bind="options.card" ref="dialogContent">
+		<VCard
+			v-bind="options.card"
+			ref="dialogContent"
+		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
-					<h2 v-if="title" class="text-h6 font-weight-bold">
+					<h2
+						v-if="title"
+						class="text-h6 font-weight-bold"
+					>
 						{{ title }}
 					</h2>
 				</slot>
@@ -168,11 +194,17 @@ export default defineComponent({
 				<VSpacer v-bind="options.actionsSpacer" />
 
 				<slot name="actions">
-					<VBtn v-bind="options.cancelBtn" @click="$emit('cancel')">
+					<VBtn
+						v-bind="options.cancelBtn"
+						@click="$emit('cancel')"
+					>
 						{{ cancelBtnText }}
 					</VBtn>
 
-					<VBtn v-bind="options.confirmBtn" @click="$emit('confirm')">
+					<VBtn
+						v-bind="options.confirmBtn"
+						@click="$emit('confirm')"
+					>
 						{{ confirmBtnText }}
 					</VBtn>
 				</slot>
@@ -182,16 +214,18 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-.v-card__title > * {
-	line-height: 1em;
-}
-.v-btn--icon {
-	color: rgba(0,0,0,.54);
-	position: absolute;
-	right: 24px;
-}
-h2 {
-	word-break: break-word;
-	text-wrap: balance;
-}
+	.v-card__title > * {
+		line-height: 1em;
+	}
+
+	.v-btn--icon {
+		color: rgba(0, 0, 0, .54);
+		position: absolute;
+		right: 24px;
+	}
+
+	h2 {
+		word-break: break-word;
+		text-wrap: balance;
+	}
 </style>
