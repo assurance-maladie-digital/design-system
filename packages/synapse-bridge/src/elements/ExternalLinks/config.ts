@@ -1,4 +1,4 @@
-import { tokens } from "@cnamts/design-tokens";
+import { tokens } from '@cnamts/design-tokens'
 
 export const config = {
 	menu: {
@@ -7,25 +7,25 @@ export const config = {
 	},
 	btn: {
 		tile: true,
-		minHeight: "48px",
-		minWidth: "328px",
+		minHeight: '48px',
+		minWidth: '328px',
 		color: tokens.colors.parme.base,
-		class: "d-flex px-3",
+		class: 'd-flex px-3',
 	},
 	btnIcon: {
-		color: "white"
+		color: 'white',
 	},
 	linkIcon: {
-		color: "rgba(0, 0, 0, .54)",
+		color: 'rgba(0, 0, 0, .54)',
 	},
 	list: {
-		class: "py-0",
+		class: 'py-0',
 	},
 	listItem: {
-		target: "_blank",
-		rel: "noopener noreferrer",
+		target: '_blank',
+		rel: 'noopener noreferrer',
 	},
 	sheet: {
-		class: "px-4 py-3",
+		class: 'px-4 py-3',
 	},
-};
+}
