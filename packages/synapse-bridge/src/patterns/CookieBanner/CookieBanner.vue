@@ -26,13 +26,12 @@
 				locales: locales,
 				closeIcon: mdiClose,
 				active: true,
+				display: useDisplay().name
 			}
 		},
 		computed: {
 			btnWidth(): string {
-				const { name } = useDisplay()
-
-				return name.value === 'sm' ? '100%' : 'auto'
+				return this.display === 'sm' ? '100%' : 'auto'
 			},
 		},
 		methods: {

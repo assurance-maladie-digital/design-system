@@ -33,7 +33,8 @@
 			return {
 				topIcon: mdiArrowUp,
 				showBtn: false,
-				locales
+				locales,
+				display: useDisplay().name
 			}
 		},
 		computed: {
@@ -46,8 +47,7 @@
 			},
 
 			isMobile(): boolean {
-				const { name } = useDisplay()
-				return name.value === 'sm'
+				return this.display === 'sm'
 			},
 
 			btnStyle(): Record<string, string> {

@@ -47,13 +47,12 @@
 		data() {
 			return {
 				locales,
+				display: useDisplay().name
 			}
 		},
 		computed: {
 			mobileVersion(): boolean {
-				const { name } = useDisplay()
-
-				return name.value === 'xs' || name.value === 'sm'
+				return this.display === 'xs' || this.display === 'sm'
 			},
 		},
 	})

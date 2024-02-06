@@ -28,7 +28,8 @@
 					size: this.size,
 					spacing: this.spacing,
 					color: this.color
-				}
+				},
+				display: useDisplay().name
 			}
 		},
 		computed: {
@@ -45,8 +46,7 @@
 					xl: 'px-8'
 				}
 
-				const { name } = useDisplay()
-				const spacing = spacingMapping[name.value]
+				const spacing = spacingMapping[this.display]
 
 				return `py-10 ${spacing}`
 			},
