@@ -79,10 +79,20 @@
 
 	const MixinsDeclaration = mixins(Props, customizable(config));
 
-	@Component({
+	@Component<LangBtn>({
 		model: {
 			prop: 'value',
 			event: 'change'
+		},
+		watch: {
+			value: {
+				handler(value: string): void {
+					if (this.availableLanguages === '*' || this.availableLanguages.includes(value)) {
+						this.currentLang = value;
+					}
+				},
+				immediate: false
+			}
 		}
 	})
 	export default class LangBtn extends MixinsDeclaration {
