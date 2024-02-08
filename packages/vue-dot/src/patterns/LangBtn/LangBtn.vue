@@ -92,6 +92,18 @@
 					}
 				},
 				immediate: false
+			},
+			availableLanguages: {
+				handler(value: string[] | AllLanguagesChar): void {
+					if (value !== '*' && !value.includes(this.currentLang)) {
+						if (Array.isArray(value) && value.length) {
+							this.$emit('change', value[0]);
+						} else {
+							this.availableLanguages = '*';
+						}
+					}
+				},
+				immediate: true
 			}
 		}
 	})
