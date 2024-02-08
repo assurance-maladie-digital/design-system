@@ -1,4 +1,5 @@
-export enum RadioValuesEnum {
-	ACCEPT = 'accept',
-	REJECT = 'reject',
+const RadioValuesEnum  = {
+	ACCEPT:'accept',
+	REJECT: 'reject',
 }
+export { RadioValuesEnum }

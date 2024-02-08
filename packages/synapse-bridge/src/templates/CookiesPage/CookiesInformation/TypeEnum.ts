@@ -1,7 +1,9 @@
-export enum TypeEnum {
-	ESSENTIALS = 'essentials',
-	FUNCTIONAL = 'functional',
-	ANALYTICS = 'analytics',
+const TypeEnum  = {
+	ESSENTIALS:'essentials',
+	FUNCTIONAL: 'functional',
+	ANALYTICS: 'analytics',
 }
 
-export const TYPE_ENUM_VALUES = Object.values(TypeEnum)
+const TYPE_ENUM_VALUES = Object.values(TypeEnum)
+
+export { TypeEnum, TYPE_ENUM_VALUES }

@@ -14,12 +14,12 @@ type Computed = {
 	options(): Options;
 }
 
-type Methods = {}
+type Methods = object
 type Mixins = ComponentOptionsMixin
 type Extends = ComponentOptionsMixin
-type Emits = {}
+type Emits = object
 type EE = string
-type PublicProps = {}
-type Defaults = {}
+type PublicProps = object
+type Defaults = object
 
 export type Customizable = DefineComponent<Props, RawBindings, Data, Computed, Methods, Mixins, Extends, Emits, EE, PublicProps, Defaults>

@@ -23,7 +23,7 @@
 		emits: ['update:modelValue'],
 		props: {
 			type: {
-				type: String as PropType<TypeEnum>,
+				type: String as PropType<string>,
 				required: true,
 				validator: (value: string) => propValidator('type', TYPE_ENUM_VALUES, value),
 			},

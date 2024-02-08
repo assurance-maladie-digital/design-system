@@ -20,7 +20,7 @@ describe('SkipLink', () => {
 
 		(wrapper.vm.$refs.skipLinkSpan as HTMLLinkElement).focus = focusSpy
 
-		// @ts-ignore
+		//@ts-expect-error" linter error
 		wrapper.vm.$options.watch.$route.call(wrapper.vm)
 
 		await wrapper.vm.$nextTick()

@@ -4,6 +4,8 @@
  *  myProp: MyType
  * }>
  */
+import Vue from 'vue'
+
 export type Refs<T extends Record<string, unknown>> = Vue['$refs'] & T
 
 export interface IndexedObject<Type = string> {
