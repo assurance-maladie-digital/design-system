@@ -11,7 +11,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [50, 80],
+				modelValue: [50, 80],
 				min: 0,
 				max: 100,
 			},
@@ -26,7 +26,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [50, 80],
+				modelValue: [50, 80],
 				outlined: true,
 			},
 		});
@@ -40,7 +40,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: null,
+				modelValue: null,
 			},
 		});
 
@@ -53,7 +53,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [NaN, NaN],
+				modelValue: [NaN, NaN],
 				min: 0,
 				max: 100,
 			},
@@ -68,7 +68,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [50, 80],
+				modelValue: [50, 80],
 				min: 0,
 				max: 100,
 			},
@@ -83,7 +83,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [0, 100],
+				modelValue: [0, 100],
 				min: 0,
 				max: 100,
 			},
@@ -100,7 +100,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [0, 100],
+				modelValue: [0, 100],
 				min: 0,
 				max: 100,
 			},
@@ -117,7 +117,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [50, 80],
+				modelValue: [50, 80],
 				min: 0,
 				max: 100,
 			},
@@ -134,7 +134,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [50, 80],
+				modelValue: [50, 80],
 				min: 0,
 				max: 100,
 			},
@@ -151,7 +151,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [50, 80],
+				modelValue: [50, 80],
 				min: 0,
 				max: 100,
 			},
@@ -166,7 +166,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [50, 80],
+				modelValue: [50, 80],
 				min: 0,
 				max: 100,
 			},
@@ -181,7 +181,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [0, 100],
+				modelValue: [0, 100],
 				min: 0,
 				max: 100,
 			},
@@ -198,7 +198,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [0, 100],
+				modelValue: [0, 100],
 				min: 0,
 				max: 100,
 			},
@@ -215,7 +215,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [0, 100],
+				modelValue: [0, 100],
 				min: 0,
 				max: 100,
 			},
@@ -232,7 +232,7 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [0, 100],
+				modelValue: [0, 100],
 				min: 0,
 				max: 100,
 			},
@@ -251,13 +251,13 @@ describe("RangeField", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				value: [0, 100],
+				modelValue: [0, 100],
 			},
 		});
 
 		wrapper.vm.updateRange(0, 50);
 
-		expect(wrapper.emitted()).toHaveProperty("change");
+		expect(wrapper.emitted()).toHaveProperty("update:modelValue");
 	});
 
 	it("renders correctly with emitChangeEvent function", () => {
@@ -269,6 +269,6 @@ describe("RangeField", () => {
 
 		wrapper.vm.emitChangeEvent();
 
-		expect(wrapper.emitted()).toHaveProperty("change");
+		expect(wrapper.emitted()).toHaveProperty("update:modelValue");
 	});
 });

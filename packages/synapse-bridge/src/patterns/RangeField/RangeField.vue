@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { customizable } from "../../mixins/customizable";
+import { customizable } from "@/mixins/customizable";
 
 import { locales } from "./locales";
 import { config } from "./config";
@@ -22,7 +22,7 @@ export default defineComponent({
 			type: Number,
 			default: 0,
 		},
-		value: {
+		modelValue: {
 			type: Array as () => number[] | null,
 			default: null,
 		},
@@ -37,9 +37,9 @@ export default defineComponent({
 			rangeValue: [] as number[],
 		};
 	},
-	emits: ["change"],
+	emits: ["update:modelValue"],
 	watch: {
-		value: {
+		modelValue: {
 			handler(value: number[] | null): void {
 				if (!value) {
 					this.rangeValue = [this.min, this.max];
@@ -52,6 +52,8 @@ export default defineComponent({
 				}
 
 				this.rangeValue = value;
+				this.rangeValue[RangeEnum.MIN] = Math.round(this.rangeValue[RangeEnum.MIN]);
+				this.rangeValue[RangeEnum.MAX] = Math.round(this.rangeValue[RangeEnum.MAX]);
 			},
 			immediate: true,
 			deep: true,
@@ -115,7 +117,7 @@ export default defineComponent({
 		},
 
 		emitChangeEvent(): void {
-			this.$emit("change", this.rangeValue);
+			this.$emit("update:modelValue", this.rangeValue);
 		},
 	},
 });
@@ -154,7 +156,7 @@ export default defineComponent({
 			color="primary"
 			:max="max"
 			:min="min"
-			@change="emitChangeEvent"
+			@update:modelValue="emitChangeEvent"
 		>
 			<template #prepend>
 				{{ min }}
