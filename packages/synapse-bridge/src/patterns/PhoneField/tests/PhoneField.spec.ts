@@ -21,7 +21,7 @@ describe("PhoneField", () => {
 				plugins: [vuetify],
 			},
 			props: {
-				isRequired: true,
+				required: true,
 			},
 		});
 
@@ -47,7 +47,7 @@ describe("PhoneField", () => {
 				plugins: [vuetify],
 			},
 			props: {
-				value: "1234 567890",
+				modelValue: "1234 567890",
 			},
 		});
 
@@ -100,6 +100,6 @@ describe("PhoneField", () => {
 
 		wrapper.find("input").setValue("1234567890");
 
-		expect(wrapper.emitted("change")).toEqual([["1234567890"]]);
+		expect(wrapper.emitted("update:modelValue")).toEqual([["1234567890"]]);
 	});
 });

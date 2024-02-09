@@ -4,11 +4,11 @@ import { defineComponent } from "vue";
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { Options } from "../../mixins/customizable";
+import { Options } from "@/mixins/customizable";
 
-import { required } from "../../rules/required";
-import { exactLength } from "../../rules/exactLength";
-import { ValidationRule } from "../../rules/types";
+import { required } from "@/rules/required";
+import { exactLength } from "@/rules/exactLength";
+import { ValidationRule } from "@/rules/types";
 
 import { mdiPhone } from "@mdi/js";
 
@@ -23,11 +23,11 @@ export default defineComponent({
 	directives: { maska: vMaska },
 	emits: ["change", "update:modelValue"],
 	props: {
-		value: {
+		modelValue: {
 			type: String,
 			default: undefined,
 		},
-		isRequired: {
+		required: {
 			type: Boolean,
 			default: false,
 		},
@@ -51,11 +51,11 @@ export default defineComponent({
 		},
 
 		rules(): ValidationRule[] {
-			return this.isRequired ? [required, exactLength(PHONE_LENGTH, true)] : [exactLength(PHONE_LENGTH, true)];
+			return this.required ? [required, exactLength(PHONE_LENGTH, true)] : [exactLength(PHONE_LENGTH, true)];
 		},
 
 		computedValue(): string | null {
-			return this.value ? this.formatPhone(this.value) : null;
+			return this.modelValue ? this.formatPhone(this.modelValue) : null;
 		},
 	},
 	methods: {
@@ -72,7 +72,7 @@ export default defineComponent({
 		},
 
 		emitChangeEvent(): void {
-			this.$emit("change", this.internalValue);
+			this.$emit("update:modelValue", this.internalValue);
 		},
 	},
 });
