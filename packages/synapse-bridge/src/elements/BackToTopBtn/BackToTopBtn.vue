@@ -32,7 +32,7 @@
 			return {
 				topIcon: mdiArrowUp,
 				showBtn: false,
-				locales,
+				locales
 			}
 		},
 		computed: {
