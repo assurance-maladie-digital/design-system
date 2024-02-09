@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { defineComponent } from 'vue'
-	import { useDisplay } from 'vuetify'
 
 	import { propValidator } from '@/helpers/propValidator'
 
@@ -29,7 +28,6 @@
 					spacing: this.spacing,
 					color: this.color
 				},
-				display: useDisplay().name
 			}
 		},
 		computed: {
@@ -46,7 +44,7 @@
 					xl: 'px-8'
 				}
 
-				const spacing = spacingMapping[this.display]
+				const spacing = spacingMapping[this.$vuetify.display.name]
 
 				return `py-10 ${spacing}`
 			},

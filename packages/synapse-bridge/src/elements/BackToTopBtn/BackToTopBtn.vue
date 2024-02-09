@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { defineComponent } from 'vue'
-	import { useDisplay } from 'vuetify'
 	import { mdiArrowUp } from '@mdi/js'
 
 	import { customizable } from '@/mixins/customizable'
@@ -34,7 +33,6 @@
 				topIcon: mdiArrowUp,
 				showBtn: false,
 				locales,
-				display: useDisplay().name
 			}
 		},
 		computed: {
@@ -47,7 +45,7 @@
 			},
 
 			isMobile(): boolean {
-				return this.display === 'sm'
+				return this.$vuetify.display.name === 'sm'
 			},
 
 			btnStyle(): Record<string, string> {

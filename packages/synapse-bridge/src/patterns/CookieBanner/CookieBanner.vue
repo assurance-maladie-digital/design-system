@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { defineComponent, PropType } from 'vue'
-	import { useDisplay } from 'vuetify'
 
 	import { RouteRecordRaw } from 'vue-router'
 
@@ -25,13 +24,12 @@
 			return {
 				locales: locales,
 				closeIcon: mdiClose,
-				active: true,
-				display: useDisplay().name
+				active: true
 			}
 		},
 		computed: {
 			btnWidth(): string {
-				return this.display === 'sm' ? '100%' : 'auto'
+				return this.$vuetify.display.name === 'sm' ? '100%' : 'auto'
 			},
 		},
 		methods: {
