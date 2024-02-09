@@ -18,6 +18,7 @@ export const config = {
 	},
 	logoutListItem: {
 		class: "text-primary",
+		minWidth: "198px",
 	},
 	logoutIcon: {
 		color: "primary",
