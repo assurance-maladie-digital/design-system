@@ -11,8 +11,6 @@ enum RangeEnum {
 	MAX = 1,
 }
 
-import { useDisplay } from "vuetify";
-
 export default defineComponent({
 	mixins: [customizable(config)],
 	props: {
@@ -67,8 +65,7 @@ export default defineComponent({
 			return Math.round(this.rangeValue[RangeEnum.MAX]);
 		},
 		mobileVersion(): boolean {
-			const { name } = useDisplay();
-			return name.value === "xs";
+			return this.$vuetify.display.name === "xs";
 		},
 	},
 	methods: {
