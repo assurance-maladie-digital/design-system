@@ -3,10 +3,10 @@ import type { PropType } from "vue";
 
 import { defineComponent } from "vue";
 
-import type { DataListIcons } from "../../elements/DataList/types";
+import type { DataListIcons } from "@/elements/DataList/types";
 import type { DataListGroupItems, DataListActionEvent } from "./types";
 
-import DataList from "../../elements/DataList/DataList.vue";
+import DataList from "@/elements/DataList/DataList.vue";
 
 export default defineComponent({
 	components: {
