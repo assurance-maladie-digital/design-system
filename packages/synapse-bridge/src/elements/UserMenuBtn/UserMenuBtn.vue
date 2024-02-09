@@ -49,23 +49,13 @@ export default defineComponent({
 	},
 	computed: {
 		btnPadding(): string {
-			if (this.hideUserIcon) {
-				return 'pa-1 pa-sm-2';
-			}
-			if (this.isMobileVersion) {
-				return 'pa-0';
-			}
-			return 'pa-1 pa-sm-3';
+      return this.hideUserIcon ? 'pa-1 pa-sm-2' : this.isMobileVersion ? 'pa-0' : 'pa-1 pa-sm-3';
 		},
 		hasListContent(): boolean {
 			return Boolean(this.$slots.default || !this.hideLogoutBtn);
 		},
 		isMobileVersion(): boolean {
-			if (this.mobileVersion) {
-				return true;
-			}
-
-			return this.$vuetify.display.name === 'xs' || this.$vuetify.display.name === 'sm';
+      return this.mobileVersion || ['xs', 'sm'].includes(this.$vuetify.display.name);
 		},
 		isMobileWithIcon(): boolean {
 			return this.isMobileVersion && !this.hideUserIcon;
