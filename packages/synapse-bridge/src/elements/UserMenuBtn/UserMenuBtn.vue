@@ -6,8 +6,6 @@ import { mdiAccount, mdiLoginVariant } from '@mdi/js';
 import { customizable } from '../../mixins/customizable';
 import type { Refs } from '../../types';
 
-import { useDisplay } from "vuetify";
-
 import { config } from './config';
 import { locales } from './locales';
 
@@ -67,8 +65,7 @@ export default defineComponent({
 				return true;
 			}
 
-			const { name } = useDisplay();
-			return name.value === 'xs' || name.value === 'sm';
+			return this.$vuetify.display.name === 'xs' || this.$vuetify.display.name === 'sm';
 		},
 		isMobileWithIcon(): boolean {
 			return this.isMobileVersion && !this.hideUserIcon;
