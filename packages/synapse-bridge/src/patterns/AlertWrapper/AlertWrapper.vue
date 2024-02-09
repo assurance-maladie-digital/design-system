@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import type { PropType } from 'vue';
 
 import { propValidator } from "@/helpers/propValidator";
 
@@ -18,7 +19,7 @@ export default defineComponent({
 	inheritAttrs: false,
 	props: {
 		type: {
-			type: String,
+			type: String as PropType<AlertTypeEnum>,
 			default: AlertTypeEnum.INFO,
 			validator: (value: string) =>
 				propValidator("type", ALERT_TYPE_ENUM_VALUES, value),
