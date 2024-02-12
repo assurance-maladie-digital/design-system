@@ -6,8 +6,6 @@
 
 	import { locales } from './locales'
 
-	import { useDisplay } from 'vuetify'
-
 	import PageContainer from '@/elements/PageContainer'
 
 	export default defineComponent({
@@ -46,14 +44,12 @@
 		},
 		data() {
 			return {
-				locales,
+				locales
 			}
 		},
 		computed: {
 			mobileVersion(): boolean {
-				const { name } = useDisplay()
-
-				return name.value === 'xs' || name.value === 'sm'
+				return this.$vuetify.display.name === 'xs' || this.$vuetify.display.name === 'sm'
 			},
 		},
 	})
