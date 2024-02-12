@@ -68,6 +68,19 @@ describe("LogoBrandSection", () => {
 
 		expect(wrapper.vm.showServiceSubTitle).toBe(true);
 	});
+	
+	it("renders correctly with no showServiceSubTitle", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				serviceTitle: "Service Title",
+				serviceSubTitle: "",
+			},
+		});
+
+		expect(wrapper.vm.showServiceSubTitle).toBe(false);
+	});
 
 	it("renders correctly with cnam theme", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
