@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 
 import LogoBrandSection from "../";
-import { ThemeEnum } from "../../../constants/enums/ThemeEnum";
+import { ThemeEnum } from "@/constants/enums/ThemeEnum";
 
 describe("LogoBrandSection", () => {
 	it("renders correctly", () => {
@@ -68,7 +68,7 @@ describe("LogoBrandSection", () => {
 
 		expect(wrapper.vm.showServiceSubTitle).toBe(true);
 	});
-	
+
 	it("renders correctly with no showServiceSubTitle", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
