@@ -50,7 +50,7 @@ describe("Logo", () => {
 		expect(wrapper.vm.dimensions.width).toBe("40");
 	});
 
-	it("renders correctly with viewBox", () => {
+	it("renders correctly with small viewBox", () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
 				size: "small",
@@ -62,6 +62,19 @@ describe("Logo", () => {
 		});
 
 		expect(wrapper.vm.viewBox).toBe("0 0 64 64");
+	});
+
+	it("renders correctly with no signature viewBox", () => {
+		const wrapper = shallowMount(Logo, {
+			propsData: {
+				hideSignature: true,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.viewBox).toBe("0 0 206 64");
 	});
 
 	it("renders correctly with label", () => {

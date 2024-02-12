@@ -11,8 +11,8 @@ import {
 	logoAvatarDimensionsMapping,
 } from "./logoDimensionsMapping";
 
-import { propValidator } from "../../helpers/propValidator";
-import { Dimensions } from "../../types";
+import { propValidator } from "@/helpers/propValidator";
+import { Dimensions } from "@/types";
 
 export default defineComponent({
 	props: {
@@ -59,7 +59,15 @@ export default defineComponent({
 		},
 
 		viewBox(): string {
-			return this.avatar ? '0 0 64 64' : '0 0 211 64';
+			if (this.avatar) {
+				return '0 0 64 64';
+			}
+
+			if (this.hideSignature) {
+				return '0 0 206 64';
+			}
+
+			return '0 0 211 64';
 		},
 
 		label(): string {

@@ -2,13 +2,13 @@
 import { defineComponent, getCurrentInstance } from "vue";
 import { dividerDimensionsMapping } from "./dividerDimensionsMapping";
 import { locales } from "./locales";
-import { LogoSizeEnum } from "../../elements/Logo/LogoSizeEnum";
+import { LogoSizeEnum } from "@/elements/Logo/LogoSizeEnum";
 import { secondaryLogoMapping } from "./secondaryLogoMapping";
-import { ThemeEnum } from "../../constants/enums/ThemeEnum";
+import { ThemeEnum } from "@/constants/enums/ThemeEnum";
 import { tokens } from "@cnamts/design-tokens";
 import Logo from "../Logo";
 
-import type { Dimensions, Next } from "../../types";
+import type { Dimensions, Next } from "@/types";
 import type { LogoInfo, Service } from "./types";
 import type { PropType } from "vue";
 
@@ -54,7 +54,12 @@ export default defineComponent({
 	computed: {
 		service(): Service {
 			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
-				return locales.compteEntreprise;
+				const { title, subTitle } = locales.compteEntreprise;
+
+				return {
+					title,
+					subTitle
+				};
 			}
 
 			return {
@@ -63,17 +68,19 @@ export default defineComponent({
 			};
 		},
 
-		height(): string {
-			if (!this.mobileVersion) {
-				return "64px";
-			} else if(this.hasSecondaryLogo) {
-				return "32px";
-			} else {
-				return "40px";
-			}
+		mobileWithSecondaryLogo(): boolean {
+			return this.mobileVersion && this.hasSecondaryLogo;
 		},
 
-		displayRisqueProLogo(): boolean {
+		height(): string {
+			if (this.mobileWithSecondaryLogo) {
+				return '32px';
+			}
+
+			return this.mobileVersion ? '40px' : '64px';
+		},
+
+		isRisquePro(): boolean {
 			if (this.reduceLogo) {
 				return false;
 			}
@@ -90,11 +97,7 @@ export default defineComponent({
 		},
 
 		hideSignature(): boolean {
-			if (
-				this.reduceLogo ||
-				this.isCompteEntreprise ||
-				this.isCompteAmeliMobile
-			) {
+			if (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile) {
 				return true;
 			}
 
@@ -110,7 +113,7 @@ export default defineComponent({
 		},
 
 		hasSecondaryLogoLink(): boolean {
-			return (
+			return Boolean(
 				this.theme === ThemeEnum.AMELI_PRO ||
 				this.theme === ThemeEnum.AMELI
 			);
@@ -239,7 +242,7 @@ export default defineComponent({
 			<Logo
 				:hide-signature="hideSignature"
 				:hide-organism="isCompteAmeliMobile"
-				:risque-pro="displayRisqueProLogo"
+				:risque-pro="isRisquePro"
 				:avatar="avatar"
 				:size="logoSize"
 				:class="{ 'mr-2': avatar }"

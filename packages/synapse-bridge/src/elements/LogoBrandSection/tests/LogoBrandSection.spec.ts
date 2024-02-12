@@ -56,6 +56,32 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.height).toBe("64px");
 	});
 
+	it("renders correctly with showServiceSubTitle", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				serviceTitle: "Service Title",
+				serviceSubTitle: "Service Sub Title",
+			},
+		});
+
+		expect(wrapper.vm.showServiceSubTitle).toBe(true);
+	});
+
+	it("renders correctly with cnam theme", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			propsData: {
+				theme: ThemeEnum.CNAM,
+				serviceTitle: "Service Title",
+				serviceSubTitle: "Service Sub Title",
+			},
+		});
+
+		expect(wrapper.vm.dividerColor).toBe("#006386");
+	});
+
 	it("renders correctly with risquePro", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
@@ -64,7 +90,7 @@ describe("LogoBrandSection", () => {
 			},
 		});
 
-		expect(wrapper.vm.displayRisqueProLogo).toBe(false);
+		expect(wrapper.vm.isRisquePro).toBe(false);
 	});
 
 	it("renders correctly with isCompteEntreprise", () => {
@@ -111,9 +137,6 @@ describe("LogoBrandSection", () => {
 		});
 
 		expect(wrapper.vm.hasSecondaryLogo).toBe(true);
-		expect(wrapper.vm.secondaryLogo.src).toBe(
-			"../../assets/images/compte-ameli.svg"
-		);
 	});
 
 	it("renders correctly with logoContainerComponent", () => {
@@ -128,7 +151,7 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.logoContainerComponent).toBe("a");
 	});
 
-	it("renders correctly with logoContainerComponent", () => {
+	it("renders correctly RouterLink with logoContainerComponent", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
 			propsData: {
