@@ -49,7 +49,16 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
+			isNuxt: false,
+			hasSecondaryLogo: false,
+			hasSecondaryLogoLink: false,
 		};
+	},
+	created() {
+		this.isNuxt = !!getCurrentInstance()?.appContext.config.globalProperties.$nuxt;
+		this.hasSecondaryLogo = Boolean(this.$slots.default || this.secondaryLogo);
+		this.hasSecondaryLogoLink = Boolean(this.theme === ThemeEnum.AMELI_PRO ||
+			this.theme === ThemeEnum.AMELI);
 	},
 	computed: {
 		service(): Service {
@@ -106,22 +115,6 @@ export default defineComponent({
 
 		secondaryLogo(): LogoInfo | undefined {
 			return secondaryLogoMapping[this.theme];
-		},
-
-		hasSecondaryLogo(): boolean {
-			return Boolean(this.$slots.default || this.secondaryLogo);
-		},
-
-		hasSecondaryLogoLink(): boolean {
-			return Boolean(
-				this.theme === ThemeEnum.AMELI_PRO ||
-				this.theme === ThemeEnum.AMELI
-			);
-		},
-
-		isNuxt(): boolean {
-			return !! getCurrentInstance()
-				?.appContext.config.globalProperties.$nuxt;
 		},
 
 		logoContainerComponent(): string {

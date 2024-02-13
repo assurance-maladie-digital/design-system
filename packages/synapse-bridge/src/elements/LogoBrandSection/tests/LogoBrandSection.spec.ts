@@ -3,11 +3,15 @@ import { shallowMount } from "@vue/test-utils";
 
 import LogoBrandSection from "../";
 import { ThemeEnum } from "@/constants/enums/ThemeEnum";
+import { vuetify } from '@tests/unit/setup'
 
 describe("LogoBrandSection", () => {
 	it("renders correctly", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				serviceTitle: "Service Title",
@@ -25,6 +29,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with service computed", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				serviceTitle: "Service Title",
@@ -42,6 +49,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with height", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				serviceTitle: "Service Title",
@@ -59,6 +69,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with showServiceSubTitle", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				serviceTitle: "Service Title",
@@ -72,6 +85,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with no showServiceSubTitle", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				serviceTitle: "Service Title",
@@ -85,6 +101,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with cnam theme", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.CNAM,
 				serviceTitle: "Service Title",
@@ -98,6 +117,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with risquePro", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				reduceLogo: true,
 			},
@@ -109,6 +131,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with isCompteEntreprise", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.COMPTE_ENTREPRISE,
 			},
@@ -120,6 +145,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with isCompteAmeliMobile", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.COMPTE_AMELI,
 				mobileVersion: true,
@@ -132,6 +160,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with hideSignature", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				reduceLogo: true,
@@ -144,6 +175,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with secondaryLogo", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.COMPTE_AMELI,
 			},
@@ -155,6 +189,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with logoContainerComponent", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				homeHref: "#",
@@ -167,6 +204,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly RouterLink with logoContainerComponent", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				homeLink: "/",
@@ -178,9 +218,29 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.logoContainerComponent).toBe("router-link");
 	});
 
+	it("renders correctly RouterLink with logoContainerComponent", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["NuxtLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				homeLink: "/",
+			},
+		});
+
+		wrapper.vm.isNuxt = true;
+
+		expect(wrapper.vm.logoContainerComponent).toBe("nuxt-link");
+	});
+
 	it("renders correctly with logoContainerComponent", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				homeLink: false,
@@ -193,6 +253,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with secondaryLogoCtnComponent", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 			},
@@ -204,6 +267,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with secondaryLogoCtnComponent", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.AMELI_PRO,
 			},
@@ -217,6 +283,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with secondaryLogoLabel", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.AMELI_PRO,
 			},
@@ -228,6 +297,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with avatar", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo", "Avatar"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				reduceLogo: false,
 			},
@@ -239,6 +311,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with dividerColor", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo", "Avatar"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.AMELI_PRO,
 				mobileVersion: true,
@@ -251,6 +326,9 @@ describe("LogoBrandSection", () => {
 	it("renders correctly with dividerDimensions", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.AMELI_PRO,
 				mobileVersion: true,
@@ -262,17 +340,90 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.dividerDimensions.width).toBe("11");
 	});
 
-	it("renders correctly with dividerDimensions", () => {
+	it("renders correctly with normal dividerDimensions", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+			},
+		});
+
+		expect(wrapper.vm.dividerDimensions.width).toBe("22");
+	});
+
+	it("renders correctly with small dividerDimensions", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
 			propsData: {
 				theme: ThemeEnum.DEFAULT,
 				mobileVersion: true,
 			},
 		});
 
-		wrapper.vm.hasSecondaryLogo = false;
-
 		expect(wrapper.vm.dividerDimensions.width).toBe("14");
+	});
+
+	it("renders correctly with x-small dividerDimensions", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: true,
+			}
+		});
+
+		wrapper.vm.hasSecondaryLogo = true;
+
+		expect(wrapper.vm.dividerDimensions.width).toBe("11");
+	});
+
+	it("renders correctly with normal logoSize", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+		});
+
+		expect(wrapper.vm.logoSize).toBe("normal");
+	});
+
+	it("renders correctly with small logoSize", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				mobileVersion: true,
+			}
+		});
+
+		expect(wrapper.vm.logoSize).toBe("small");
+	});
+
+	it("renders correctly with x-small logoSize", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				mobileVersion: true,
+			},
+		});
+
+		wrapper.vm.hasSecondaryLogo = true;
+
+		expect(wrapper.vm.logoSize).toBe("x-small");
 	});
 });
