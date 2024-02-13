@@ -36,14 +36,24 @@ describe("LogoBrandSection", () => {
 				theme: ThemeEnum.DEFAULT,
 				serviceTitle: "Service Title",
 				serviceSubTitle: "Service Sub Title",
-				mobileVersion: false,
-				reduceLogo: false,
-				homeLink: "/",
-				homeHref: "#",
 			},
 		});
 
 		expect(wrapper.vm.service.title).toBe("Service Title");
+	});
+
+	it("renders correctly with service computed", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				theme: ThemeEnum.COMPTE_ENTREPRISE,
+			},
+		});
+
+		expect(wrapper.vm.service.title).toStrictEqual({ text: "Compte", highlight: "entreprise" });
 	});
 
 	it("renders correctly with height", () => {
@@ -98,6 +108,21 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.showServiceSubTitle).toBe(false);
 	});
 
+	it("renders correctly with default theme", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				serviceTitle: "Service Title",
+				serviceSubTitle: "Service Sub Title",
+			},
+		});
+
+		expect(wrapper.vm.dividerColor).toBe("#0c419a");
+	});
+
 	it("renders correctly with cnam theme", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
@@ -114,6 +139,22 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.dividerColor).toBe("#006386");
 	});
 
+	it("renders correctly with compte entreprise theme", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				theme: ThemeEnum.COMPTE_ENTREPRISE,
+				serviceTitle: "Service Title",
+				serviceSubTitle: "Service Sub Title",
+			},
+		});
+
+		expect(wrapper.vm.dividerColor).toBe("#cd545b");
+	});
+
 	it("renders correctly with risquePro", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo"],
@@ -126,6 +167,21 @@ describe("LogoBrandSection", () => {
 		});
 
 		expect(wrapper.vm.isRisquePro).toBe(false);
+	});
+
+	it("renders correctly with risquePro if no reduceLogo", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				reduceLogo: false,
+				theme: ThemeEnum.RISQUE_PRO,
+			}
+		});
+
+		expect(wrapper.vm.isRisquePro).toBe(true);
 	});
 
 	it("renders correctly with isCompteEntreprise", () => {
@@ -154,7 +210,9 @@ describe("LogoBrandSection", () => {
 			},
 		});
 
+		expect(wrapper.vm.isCompteAmeliMobile).toBe(true);
 		expect(wrapper.vm.theme).toBe(ThemeEnum.COMPTE_AMELI);
+		expect(wrapper.vm.mobileVersion).toBe(true);
 	});
 
 	it("renders correctly with hideSignature", () => {
@@ -170,6 +228,21 @@ describe("LogoBrandSection", () => {
 		});
 
 		expect(wrapper.vm.hideSignature).toBe(true);
+	});
+
+	it("renders correctly without hideSignature", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				reduceLogo: false,
+			},
+		});
+
+		expect(wrapper.vm.hideSignature).toBe(false);
 	});
 
 	it("renders correctly with secondaryLogo", () => {
@@ -294,7 +367,21 @@ describe("LogoBrandSection", () => {
 		expect(wrapper.vm.secondaryLogoLabel).toBe("Accueil, AmeliPro");
 	});
 
-	it("renders correctly with avatar", () => {
+	it("renders correctly with no secondaryLogoLabel", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+			},
+		});
+
+		expect(wrapper.vm.secondaryLogoLabel).toBe(null);
+	});
+
+	it("renders correctly with no avatar", () => {
 		const wrapper = shallowMount(LogoBrandSection, {
 			stubs: ["RouterLink", "Logo", "Avatar"],
 			global: {
@@ -306,6 +393,22 @@ describe("LogoBrandSection", () => {
 		});
 
 		expect(wrapper.vm.avatar).toBe(false);
+	});
+
+	it("renders correctly with avatar", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo", "Avatar"],
+			global: {
+				plugins: [vuetify]
+			},
+			propsData: {
+				reduceLogo: true,
+			},
+		});
+
+		wrapper.vm.hasSecondaryLogo = true;
+
+		expect(wrapper.vm.avatar).toBe(true);
 	});
 
 	it("renders correctly with dividerColor", () => {
@@ -425,5 +528,35 @@ describe("LogoBrandSection", () => {
 		wrapper.vm.hasSecondaryLogo = true;
 
 		expect(wrapper.vm.logoSize).toBe("x-small");
+	});
+
+	it("renders correctly with showDivider and no reduce logo", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				reduceLogo: false,
+			},
+		});
+
+		wrapper.vm.hasSecondaryLogo = true;
+
+		expect(wrapper.vm.showDivider).toBe(true);
+	});
+
+	it("renders correctly with showDivider and reduce logo", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			stubs: ["RouterLink", "Logo"],
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				reduceLogo: true,
+			},
+		});
+
+		expect(wrapper.vm.showDivider).toBe(false);
 	});
 });
