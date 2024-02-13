@@ -90,11 +90,7 @@ export default defineComponent({
 		},
 
 		isRisquePro(): boolean {
-			if (this.reduceLogo) {
-				return false;
-			}
-
-			return this.theme === ThemeEnum.RISQUE_PRO;
+			return !this.reduceLogo && this.theme === ThemeEnum.RISQUE_PRO;
 		},
 
 		isCompteEntreprise(): boolean {
@@ -106,11 +102,7 @@ export default defineComponent({
 		},
 
 		hideSignature(): boolean {
-			if (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile) {
-				return true;
-			}
-
-			return Boolean(this.$slots.default);
+			return (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile) ? true : Boolean(this.$slots.default);
 		},
 
 		secondaryLogo(): LogoInfo | undefined {
@@ -130,27 +122,15 @@ export default defineComponent({
 		},
 
 		secondaryLogoCtnComponent(): string {
-			if (this.hasSecondaryLogoLink) {
-				return this.logoContainerComponent;
-			}
-
-			return "div";
+			return this.hasSecondaryLogoLink ? this.logoContainerComponent : "div";
 		},
 
 		secondaryLogoLabel(): string | null {
-			if (this.hasSecondaryLogoLink && this.secondaryLogo) {
-				return `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}`;
-			}
-
-			return null;
+			return (this.hasSecondaryLogoLink && this.secondaryLogo) ? `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}` : null;
 		},
 
 		avatar(): boolean {
-			if (this.reduceLogo) {
-				return this.hasSecondaryLogo;
-			}
-
-			return false;
+			return this.reduceLogo ? this.hasSecondaryLogo : false;
 		},
 
 		showBrandContent(): boolean {
@@ -181,41 +161,26 @@ export default defineComponent({
 		dividerColor(): string {
 			switch (this.theme) {
 				case ThemeEnum.CNAM:
-				case ThemeEnum.AMELI_PRO: {
+				case ThemeEnum.AMELI_PRO:
 					return tokens.colors.secondary;
-				}
-
-				case ThemeEnum.COMPTE_ENTREPRISE: {
+				case ThemeEnum.COMPTE_ENTREPRISE:
 					return tokens.colors.brick.base;
-				}
-
-				default: {
+				default:
 					return tokens.colors.primary;
-				}
 			}
 		},
 
 		dividerDimensions(): Dimensions {
-			if (this.mobileVersion && this.hasSecondaryLogo) {
-				return dividerDimensionsMapping.xSmall;
-			}
-
 			if (this.mobileVersion) {
-				return dividerDimensionsMapping.small;
+				return this.hasSecondaryLogo ? dividerDimensionsMapping.xSmall : dividerDimensionsMapping.small;
 			}
-
 			return dividerDimensionsMapping.normal;
 		},
 
 		logoSize(): LogoSizeEnum {
-			if (this.mobileVersion && this.hasSecondaryLogo) {
-				return LogoSizeEnum.X_SMALL;
-			}
-
 			if (this.mobileVersion) {
-				return LogoSizeEnum.SMALL;
+				return this.hasSecondaryLogo ? LogoSizeEnum.X_SMALL : LogoSizeEnum.SMALL;
 			}
-
 			return LogoSizeEnum.NORMAL;
 		},
 	},
