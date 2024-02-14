@@ -117,7 +117,7 @@ export default defineComponent({
 			return Boolean(this.navigationItems || this.$slots['navigation-drawer-content']);
 		},
 		showHeaderMenuBtn(): boolean {
-			const hasNavigation = Boolean(this.navigationItems || this.$scopedSlots['navigation-drawer']);
+			const hasNavigation = Boolean(this.navigationItems || this.$slots['navigation-drawer']);
 			return !this.showNavBarMenuBtn && this.isMobileVersion && hasNavigation;
 		},
 		showNavigationBar(): boolean {
@@ -191,28 +191,29 @@ export default defineComponent({
 				</VSheet>
 			</VSheet>
 
-			<VFadeTransition v-if="showNavigationBar">
-				<HeaderNavigationBar
-					:tab.sync="tab"
-					:drawer.sync="drawer"
-					:theme="theme"
-					:mobile-version="isMobileVersion"
-					:items="navigationItems"
-					:inner-width="innerWidth"
-					:show-menu-btn="showNavBarMenuBtn"
-					:vuetify-options="options.navigationBar"
-				>
-					<template #navigation-bar-prepend>
-						<slot name="navigation-bar-prepend" />
-					</template>
+      <VFadeTransition v-if="showNavigationBar">
+        <HeaderNavigationBar
+            :tab.sync="tab"
+            :drawer.sync="drawer"
+            :theme="theme"
+            :mobile-version="isMobileVersion"
+            :items="navigationItems"
+            :inner-width="innerWidth"
+            :show-menu-btn="showNavBarMenuBtn"
+            :vuetify-options="options.navigationBar"
+        >
+          <template #navigation-bar-prepend>
+            <slot name="navigation-bar-prepend" />
+          </template>
 
-					<slot name="navigation-bar-content" />
+          <slot name="navigation-bar-content" />
 
-					<template #navigation-bar-secondary-content>
-						<slot name="navigation-bar-secondary-content" />
-					</template>
-				</HeaderNavigationBar>
-			</VFadeTransition>
+          <template #navigation-bar-secondary-content>
+            <slot name="navigation-bar-secondary-content" />
+          </template>
+        </HeaderNavigationBar>
+      </VFadeTransition>
+
 		</VAppBar>
 
 		<slot name="navigation-drawer" v-bind="{ drawer, updateDrawer }">
