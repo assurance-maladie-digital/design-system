@@ -7,7 +7,14 @@
 export type Refs<T extends Record<string, unknown>> = Vue['$refs'] & T
 
 export interface IndexedObject<Type = string> {
-	[key: string]: Type
+	[key: string]: Type;
+}
+
+export type Next = NavigationGuardNext<Vue>;
+
+export interface Dimensions {
+	width: string;
+	height: string;
 }
 
 export interface VForm {
