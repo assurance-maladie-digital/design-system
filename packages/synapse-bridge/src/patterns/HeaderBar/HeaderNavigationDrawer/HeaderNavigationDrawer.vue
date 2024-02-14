@@ -49,7 +49,7 @@ export default defineComponent({
 	},
 	methods: {
 		drawerUpdated(value: boolean): void {
-			if (value === false) {
+			if (!value) {
 				this.$emit('change', false);
 			}
 		},
