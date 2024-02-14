@@ -10,7 +10,7 @@ import { ThemeEnum, THEME_ENUM_VALUES } from "./ThemeEnum";
 import { config } from "./config.ts";
 import { propValidator } from "@/helpers/propValidator";
 import { customizable } from "@/mixins/customizable";
-import { Next, Refs } from "@/types";
+import { Next } from "@/types";
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -79,11 +79,8 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			$refs: {} as Refs<{
-				appBar: Vue;
-			}>,
-			drawer: null as boolean | null,
-			tab: null as number | null | string,
+			drawer: false,
+			tab: 0,
 			scrolled: false
 		};
 	},
@@ -122,7 +119,7 @@ export default defineComponent({
 		},
 		showNavigationBar(): boolean {
 			const isStickyNavBar = !this.scrolled || (this.scrolled && this.showStickyNavBar);
-			return isStickyNavBar && (this.$slots['navigation-bar-content'] || (!this.showHeaderMenuBtn && this.hasNavigationItems));
+			return isStickyNavBar && (Boolean(this.$slots['navigation-bar-content']) || (!this.showHeaderMenuBtn && this.hasNavigationItems));
 		},
 		showSpacer(): boolean {
 			return Boolean(this.$slots.default) || this.isMobileVersion;
@@ -252,7 +249,7 @@ export default defineComponent({
 	display: block;
 	padding: 0;
 }
-.vd-header-menu-btn :deep() {
+.vd-header-menu-btn :deep(.v-btn__content) {
 	.v-btn__content {
 		flex-direction: column;
 	}
