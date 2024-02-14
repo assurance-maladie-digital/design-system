@@ -64,7 +64,6 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-app>
     <VNavigationDrawer
         v-if="mobileVersion && items"
         v-bind="options"
@@ -108,7 +107,6 @@ export default defineComponent({
         <slot name="navigation-drawer-append" />
       </slot>
     </VNavigationDrawer>
-  </v-app>
 </template>
 
 <style lang="scss" scoped>

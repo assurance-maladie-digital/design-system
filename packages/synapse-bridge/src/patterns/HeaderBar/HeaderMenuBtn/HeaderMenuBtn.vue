@@ -33,7 +33,6 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-app>
     <VBtn
         v-bind="{
 			...options.btn,
@@ -49,5 +48,4 @@ export default defineComponent({
 
       {{ locales.menu }}
     </VBtn>
-  </v-app>
 </template>
