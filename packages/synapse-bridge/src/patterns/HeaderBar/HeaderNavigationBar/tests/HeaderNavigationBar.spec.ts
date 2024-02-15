@@ -1,13 +1,14 @@
 import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
 import HeaderNavigationBar from "../";
-import {ThemeEnum} from "@/constants/enums/ThemeEnum.ts";
+import { ThemeEnum } from "@/constants/enums/ThemeEnum.ts";
+import HeaderMenuBtn from "../../HeaderMenuBtn/HeaderMenuBtn.vue";
 
 describe("HeaderNavigationBar", () => {
 	it("renders correctly", () => {
-		const wrapper = shallowMount(HeaderNavigationBar, {
+		const wrapper = mount(HeaderNavigationBar, {
 			global: {
 				plugins: [vuetify],
 			},
@@ -17,5 +18,48 @@ describe("HeaderNavigationBar", () => {
 		});
 
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("emits 'update:drawer' event when HeaderMenuBtn is clicked on mobileVersion", async () => {
+		const wrapper = mount(HeaderNavigationBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: true, // Simulate mobileVersion
+			},
+		});
+
+		await wrapper.findComponent(HeaderMenuBtn).trigger("click");
+
+		expect(wrapper.emitted("update:drawer")).toBeTruthy();
+	});
+
+	it("computes spacingClass correctly based on mobileVersion prop", () => {
+		const wrapper = mount(HeaderNavigationBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: true, // Simulate mobileVersion
+			},
+		});
+
+		expect(wrapper.vm.spacingClass).toBe("px-4");
+	});
+
+	it("computes backgroundColor correctly based on theme prop", () => {
+		const wrapper = mount(HeaderNavigationBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DARK,
+			},
+		});
+
+		expect(wrapper.vm.backgroundColor).toBe(/* Expected color based on ThemeEnum.DARK */);
 	});
 });
