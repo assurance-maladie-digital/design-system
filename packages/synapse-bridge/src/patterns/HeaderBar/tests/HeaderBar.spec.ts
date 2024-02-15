@@ -247,4 +247,27 @@ describe("HeaderBar", () => {
 		expect(wrapper.vm.drawer).toBe(true);
 	});
 
+	it("computes showStickyNavBar correctly before scroll", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.showStickyNavBar).toBe(false);
+	});
+
+	it("computes showHeaderMenuBtn correctly", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				mobileVersion: true,
+			},
+		});
+
+		expect(wrapper.vm.showHeaderMenuBtn).toBe(false);
+	});
+
 });

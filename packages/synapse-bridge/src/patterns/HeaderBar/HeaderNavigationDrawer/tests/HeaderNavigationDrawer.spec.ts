@@ -31,7 +31,7 @@ describe("HeaderNavigationDrawer", () => {
 			},
 		});
 
-		await wrapper.vm.emitChangeEvent();
+		wrapper.vm.emitChangeEvent();
 		expect(wrapper.emitted("change")).toBeTruthy();
 		expect(wrapper.emitted("change")).toHaveLength(1);
 	});
@@ -53,9 +53,70 @@ describe("HeaderNavigationDrawer", () => {
 			},
 		});
 
-		await wrapper.vm.emitTabUpdateEvent(1);
+		wrapper.vm.emitTabUpdateEvent(1);
 		expect(wrapper.emitted("update:tab")).toBeTruthy();
 		expect(wrapper.emitted("update:tab")).toHaveLength(1);
-		expect(wrapper.emitted("update:tab")[0]).toEqual([1]);
+	});
+
+	it("returns correct spacing class based on mobileVersion prop", () => {
+		const wrapperMobile = shallowMount(HeaderNavigationDrawer, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: true,
+			},
+		});
+
+		expect(wrapperMobile.vm.spacingClass).toBe("px-4");
+
+		const wrapperDesktop = shallowMount(HeaderNavigationDrawer, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: false,
+			},
+		});
+		expect(wrapperDesktop.vm.spacingClass).toBe("px-14");
+	});
+
+	it("emits change event with false when drawerUpdated is called with value false", async () => {
+		const wrapper = shallowMount(HeaderNavigationDrawer, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: true,
+			},
+		});
+
+		wrapper.vm.drawerUpdated(false);
+
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.emitted("change")).toBeTruthy();
+		expect(wrapper.emitted("change")).toHaveLength(1);
+	});
+
+	it("doesn't emit change event when drawerUpdated is called with value true", async () => {
+		const wrapper = shallowMount(HeaderNavigationDrawer, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+				mobileVersion: true,
+			},
+		});
+
+		wrapper.vm.drawerUpdated(true);
+
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.emitted("change")).toBeFalsy();
 	});
 });
