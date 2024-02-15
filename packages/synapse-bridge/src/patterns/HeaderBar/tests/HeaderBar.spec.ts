@@ -178,4 +178,73 @@ describe("HeaderBar", () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	it("renders correctly with target", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				target: "exampleTarget",
+			},
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("renders correctly with sticky mode and scrolled", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				sticky: true,
+			},
+		});
+
+		// Simulate scroll event
+		wrapper.vm.scrolled = true;
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("renders correctly with showNavBarMenuBtn on mobile version", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				showNavBarMenuBtn: true,
+				mobileVersion: true,
+			},
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("renders correctly with custom target", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				target: "customTarget",
+			},
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("updates drawer correctly", async () => {
+		const wrapper = mount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		 wrapper.vm.updateDrawer(true);
+
+		expect(wrapper.vm.drawer).toBe(true);
+	});
+
 });
