@@ -56,10 +56,10 @@ describe("HeaderNavigationBar", () => {
 				plugins: [vuetify],
 			},
 			propsData: {
-				theme: ThemeEnum.DARK,
+				theme: ThemeEnum.DEFAULT,
 			},
 		});
 
-		expect(wrapper.vm.backgroundColor).toBe(/* Expected color based on ThemeEnum.DARK */);
+		expect(wrapper.vm.backgroundColor).toBe("#0a347b");
 	});
 });
