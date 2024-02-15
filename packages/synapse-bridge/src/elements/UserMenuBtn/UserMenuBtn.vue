@@ -3,8 +3,8 @@ import { defineComponent } from "vue";
 
 import { mdiAccount, mdiLoginVariant } from '@mdi/js';
 
-import { customizable } from '../../mixins/customizable';
-import type { Refs } from '../../types';
+import { customizable } from '@/mixins/customizable';
+import type { Refs } from '@/types';
 
 import { config } from './config';
 import { locales } from './locales';
@@ -49,13 +49,13 @@ export default defineComponent({
 	},
 	computed: {
 		btnPadding(): string {
-      return this.hideUserIcon ? 'pa-1 pa-sm-2' : this.isMobileVersion ? 'pa-0' : 'pa-1 pa-sm-3';
+      		return this.hideUserIcon ? 'pa-1 pa-sm-2' : this.isMobileVersion ? 'pa-0' : 'pa-1 pa-sm-3';
 		},
 		hasListContent(): boolean {
 			return Boolean(this.$slots.default || !this.hideLogoutBtn);
 		},
 		isMobileVersion(): boolean {
-      return this.mobileVersion || ['xs', 'sm'].includes(this.$vuetify.display.name);
+      		return this.mobileVersion || ['xs', 'sm'].includes(this.$vuetify.display.name);
 		},
 		isMobileWithIcon(): boolean {
 			return this.isMobileVersion && !this.hideUserIcon;
@@ -96,7 +96,7 @@ export default defineComponent({
 							{{ fullName }}
 						</span>
 
-						<span class="text-grey text-darken-2">
+						<span class="text-grey text-darken-2 font-weight-medium">
 							{{ additionalInformation }}
 						</span>
 					</span>
@@ -155,6 +155,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+
 	.vd-user-menu-btn-ctn {
 		position: relative;
 	}
