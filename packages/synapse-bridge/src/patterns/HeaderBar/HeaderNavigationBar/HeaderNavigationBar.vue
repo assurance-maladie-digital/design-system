@@ -110,10 +110,8 @@ export default defineComponent({
 .vd-navigation-bar {
 	overflow: hidden;
 }
-<<<<<<< HEAD
-=======
+
 .header-navigation-background {
 	background-color: v-bind(backgroundColor);
 }
->>>>>>> 849749d4 (fix header color)
 </style>
