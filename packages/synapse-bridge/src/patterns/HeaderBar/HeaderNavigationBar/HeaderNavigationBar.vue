@@ -74,7 +74,8 @@ export default defineComponent({
         :class="spacingClass"
         class="vd-navigation-bar d-flex align-center justify-center"
     >
-      <VSheet v-bind="options.innerSheet" :width="innerWidth">
+
+      <VSheet class="header-navigation-background" v-bind="options.innerSheet" :width="innerWidth">
         <slot name="navigation-bar-prepend" />
 
         <slot>
@@ -109,4 +110,10 @@ export default defineComponent({
 .vd-navigation-bar {
 	overflow: hidden;
 }
+<<<<<<< HEAD
+=======
+.header-navigation-background {
+	background-color: v-bind(backgroundColor);
+}
+>>>>>>> 849749d4 (fix header color)
 </style>
