@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import type { PropType } from "vue";
 import LogoBrandSection from "@/elements/LogoBrandSection";
 import HeaderMenuBtn from "@/patterns/HeaderBar/HeaderMenuBtn/HeaderMenuBtn.vue";
@@ -81,7 +81,8 @@ export default defineComponent({
 		return {
 			drawer: false,
 			tab: 0,
-			scrolled: false
+			scrolled: false,
+			appBarRef: ref<HTMLElement | null>(null)
 		};
 	},
 	computed: {
@@ -140,7 +141,7 @@ export default defineComponent({
 </script>
 
 <template>
-	<v-app>
+	<VLayout>
 	<div :style="mainContentMargin" class="vd-header-bar-container w-100">
 		<VAppBar
 			v-bind="{ ...options.appBar, ...$attrs }"
@@ -234,7 +235,7 @@ export default defineComponent({
 			</HeaderNavigationDrawer>
 		</slot>
 	</div>
-	</v-app>
+	</VLayout>
 </template>
 
 <style lang="scss" scoped>
