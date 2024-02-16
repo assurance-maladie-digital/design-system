@@ -63,31 +63,7 @@ describe("HeaderNavigationBar", () => {
 		expect(wrapper.vm.backgroundColor).toBe("#0a347b");
 	});
 
-	it("returns color from options if present", () => {
-		// Arrange
-		const wrapper = mount(HeaderNavigationBar, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				theme: ThemeEnum.DEFAULT,
-			},
-			data() {
-				return {
-					options: {
-						color: "red",
-					},
-				};
-			},
-		});
-
-		const result = wrapper.vm.backgroundColor;
-
-		expect(result).toBe("red");
-	});
-
 	it("returns default color if options color is not present", () => {
-		// Arrange
 		const wrapper = mount(HeaderNavigationBar, {
 			global: {
 				plugins: [vuetify],

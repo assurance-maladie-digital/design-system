@@ -42,7 +42,6 @@ export default defineComponent({
 	data() {
 		return {
 			mdiClose,
-			options: {}
 		};
 	},
 	computed: {
