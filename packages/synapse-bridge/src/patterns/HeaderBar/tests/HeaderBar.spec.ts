@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { shallowMount, mount } from "@vue/test-utils";
 import { ThemeEnum } from "../ThemeEnum.ts"
 import { vuetify } from "@tests/unit/setup";
+import HeaderMenuBtn from "../HeaderMenuBtn/HeaderMenuBtn.vue";
 
 import HeaderBar from "../";
 
@@ -330,7 +331,158 @@ it("showNavigationBar is true and isMobileVersion is false", () => {
 
 		expect(wrapper.vm.showHeaderMenuBtn).toBe(false);
 	});
+	it('returns margin-top with fullHeight when sticky is true', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			propsData: {
+				sticky: true,
+			},
+			data() {
+				return {
+					fullHeight: 200,
+				};
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
 
+		expect(wrapper.vm.mainContentMargin).toBe('margin-top: 200px');
+	});
 
+	it('returns empty string when sticky is false', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			propsData: {
+				sticky: false,
+			},
+		});
+
+		expect(wrapper.vm.mainContentMargin).toBe('');
+	});
+
+	it('returns true when default slot is provided', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			slots: {
+				default: '<div>Default slot content</div>',
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.showSpacer).toBe(true);
+	});
+
+	it('returns true when isMobileVersion is true', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			propsData: {
+				mobileVersion: true,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.showSpacer).toBe(true);
+	});
+
+	it('returns false when default slot is not provided and isMobileVersion is false', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.showSpacer).toBe(false);
+	});
+
+	it('renders HeaderMenuBtn when showHeaderMenuBtn is true', () => {
+		const wrapper = mount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+				components: {
+					HeaderMenuBtn,
+				},
+			},
+			data() {
+				return {
+					showHeaderMenuBtn: true,
+				};
+			}
+		});
+
+		expect(wrapper.findComponent(HeaderMenuBtn).exists()).toBe(true);
+	});
+
+	it('updates scrolled property when sticky is true and scroll position is greater than height', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			}
+		});
+
+		Object.defineProperty(window, 'scrollY', { value: 100 });
+
+		wrapper.setData({ sticky: true, height: 50 });
+
+		wrapper.vm.onScroll({ currentTarget: window } as MouseEvent);
+
+		expect(wrapper.vm.scrolled).toBe(true);
+	});
+
+	it('does not update scrolled property when sticky is false', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		Object.defineProperty(window, 'scrollY', { value: 100 });
+
+		wrapper.setData({ sticky: false });
+
+		wrapper.vm.onScroll({ currentTarget: window } as MouseEvent);
+
+		expect(wrapper.vm.scrolled).toBe(false);
+	});
+
+	it('does not update scrolled property when scroll position is less than or equal to height', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		Object.defineProperty(window, 'scrollY', { value: 40 });
+
+		wrapper.setData({ sticky: true, height: 50 });
+
+		wrapper.vm.onScroll({ currentTarget: window } as MouseEvent);
+
+		expect(wrapper.vm.scrolled).toBe(false);
+	});
+
+	it('returns null when target is not set', () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.targetSelector).toBeNull();
+	});
+
+	it('returns the correct target selector when target is set', () => {
+		const targetId = 'myTarget';
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				target: targetId,
+			},
+		});
+
+		expect(wrapper.vm.targetSelector).toBe(`#${targetId}`);
+	});
 
 });
