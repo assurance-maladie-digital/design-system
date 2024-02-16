@@ -160,14 +160,21 @@ export default defineComponent({
 		position: relative;
 	}
 	.vd-user-menu-btn {
-		&:hover::before {
+		outline: none;
+		&:hover:before {
 			background: #000;
 			opacity: 0.05;
 		}
-		&:focus::before {
+		&:focus:before {
 			background: $vd-primary;
 			opacity: 0.08;
 		}
+		&:focus {
+			background: rgba($vd-primary, 0.08) !important;
+		}
+	}
+	:deep(.vd-user-menu-btn:focus > .v-btn__overlay) {
+		opacity: 0 !important;
 	}
 	.vd-user-icon {
 		width: 40px;
