@@ -102,10 +102,10 @@ export default defineComponent({
 		},
 		fullHeight(): number {
 			const height = this.isMobileVersion ? 72 : 120;
-			return this.showNavigationBar ? height + 48 : height;
+			return this.showNavigationBar ? (height + 48) : height;
 		},
 		height(): number {
-			return this.showNavigationBar ? this.contentSheetHeight + 48 : this.contentSheetHeight;
+			return this.showNavigationBar ? (this.contentSheetHeight + 48) : this.contentSheetHeight;
 		},
 		mainContentMargin(): string {
 			return this.sticky ? `margin-top: ${this.fullHeight}px` : '';

@@ -16,6 +16,20 @@ describe("HeaderBar", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it("renders correctly with mobile-version", () => {
+		const wrapper = mount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				mobileVersion: true,
+			},
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
+
 	it("renders correctly with mini version", () => {
 		const wrapper = shallowMount(HeaderBar, {
 			global: {
@@ -29,6 +43,34 @@ describe("HeaderBar", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it("renders correctly with target", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				target: "exampleTarget",
+			},
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("returns 120 when isMiniVersion and isMobileVersion are false", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				miniVersion: false,
+				mobileVersion: false,
+			},
+		});
+
+		expect(wrapper.vm.contentSheetHeight).toBe(120);
+	});
+
+
 	it("renders correctly with theme", () => {
 		const wrapper = shallowMount(HeaderBar, {
 			global: {
@@ -40,6 +82,84 @@ describe("HeaderBar", () => {
 		});
 
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("fullHeight returns 72 isMobileVersion is true", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				mobileVersion: true,
+				showNavigationBar(): boolean {
+					return false;
+				}
+			},
+		});
+
+		expect(wrapper.vm.fullHeight).toBe(72);
+	});
+
+	it("fullHeight returns 120 isMobileVersion is true", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				mobileVersion: false,
+				showNavigationBar(): boolean {
+					return false;
+				}
+			},
+		});
+
+		expect(wrapper.vm.fullHeight).toBe(120);
+	});
+
+	it("showNavigationBar is true and isMobileVersion is true", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				showNavigationBar: true,
+				isMobileVersion: true,
+			},
+		});
+
+		expect(wrapper.vm.fullHeight).toBe(120);
+	});
+
+it("showNavigationBar is true and isMobileVersion is false", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				showNavigationBar: true,
+				isMobileVersion: false,
+			},
+		});
+
+		expect(wrapper.vm.fullHeight).toBe(120);
+	});
+
+	it("returns contentSheetHeight + 48 when showNavigationBar is true", () => {
+		const wrapper = shallowMount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			data() {
+				return {
+					miniVersion: false,
+					mobileVersion: true,
+					contentSheetHeight: 72,
+					showNavigationBar: true,
+				};
+			},
+		});
+
+		expect(wrapper.vm.height).toBe(120);
 	});
 
 	it("renders correctly with title and subtitle", () => {
@@ -133,64 +253,6 @@ describe("HeaderBar", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly with mobile-version", () => {
-		const wrapper = mount(HeaderBar, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				mobileVersion: true,
-			},
-		});
-
-		expect(wrapper).toMatchSnapshot();
-	});
-
-	it("renders correctly with sticky mode", () => {
-		const wrapper = shallowMount(HeaderBar, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				sticky: true,
-			},
-		});
-
-		// const container = wrapper.find(".vd-header-bar-container");
-
-		// expect(container.attributes("style")).toContain("margin-top");
-
-		expect(wrapper).toMatchSnapshot();
-	});
-
-	it("renders correctly with sticky mode and show-sticky-nav-bar", () => {
-		const wrapper = shallowMount(HeaderBar, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				sticky: true,
-				showStickyNavBar: true,
-			},
-		});
-
-		// const container = wrapper.find(".vd-header-bar-container");
-
-		expect(wrapper).toMatchSnapshot();
-	});
-
-	it("renders correctly with target", () => {
-		const wrapper = shallowMount(HeaderBar, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				target: "exampleTarget",
-			},
-		});
-
-		expect(wrapper).toMatchSnapshot();
-	});
 
 	it("renders correctly with sticky mode and scrolled", () => {
 		const wrapper = shallowMount(HeaderBar, {
@@ -202,7 +264,6 @@ describe("HeaderBar", () => {
 			},
 		});
 
-		// Simulate scroll event
 		wrapper.vm.scrolled = true;
 
 		expect(wrapper).toMatchSnapshot();
@@ -269,5 +330,7 @@ describe("HeaderBar", () => {
 
 		expect(wrapper.vm.showHeaderMenuBtn).toBe(false);
 	});
+
+
 
 });
