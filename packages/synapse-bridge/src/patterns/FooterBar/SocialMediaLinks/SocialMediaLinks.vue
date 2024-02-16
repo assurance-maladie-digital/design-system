@@ -1,12 +1,8 @@
 <script lang="ts">
-import { defineComponent } from "vue";
 import type { PropType } from "vue";
-
+import { defineComponent } from "vue";
 import { locales } from "../locales";
-
-import { SocialMediaLink } from "./types";
-
-import { useDisplay } from "vuetify";
+import type { SocialMediaLink } from "./types";
 
 export default defineComponent({
 	props: {
@@ -20,12 +16,6 @@ export default defineComponent({
 			locales,
 		};
 	},
-	computed: {
-		isMobile(): boolean {
-			const { name } = useDisplay();
-			return name.value === "xs" || name.value === "sm";
-		},
-	},
 });
 </script>
 
@@ -37,14 +27,15 @@ export default defineComponent({
 
 		<div class="d-flex justify-start justify-sm-end max-width-none mx-n2">
 			<VBtn
-				v-for="social in links"
-				:key="social.index"
+				v-for="social, index in links"
+				:key="index"
 				:href="social.href"
 				target="_blank"
 				rel="noopener noreferrer"
-				color="grey darken-2"
 				icon
 				class="mx-1"
+				elevation='0'
+				variant="text"
 			>
 				<VIcon size="30px">
 					{{ social.icon }}

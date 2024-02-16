@@ -5,8 +5,12 @@ export const config = {
 		minHeight: '40px'
 	},
 	goTopBtn: {
-		size: 'small',
-		icon: true,
+		density: 'compact',
+		icon: 'true',
+		variant: 'text',
+		elevation: 0
+	},
+	goTopBtnIcon: {
 		color: 'primary'
 	}
 };

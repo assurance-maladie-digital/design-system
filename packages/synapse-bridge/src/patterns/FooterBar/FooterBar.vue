@@ -1,33 +1,28 @@
 <script lang="ts">
-import { defineComponent } from "vue";
 import type { PropType } from "vue";
-
-import { RawLocation } from "vue-router";
-
-import { LogoSizeEnum } from "../../elements/Logo/LogoSizeEnum";
-
+import { defineComponent } from "vue";
+import { type RouteLocationRaw } from "vue-router";
+import Logo from "@/elements/Logo/Logo.vue";
+import { LogoSizeEnum } from "@/elements/Logo/LogoSizeEnum";
 import SocialMediaLinks from "./SocialMediaLinks";
 import { SocialMediaLink } from "./SocialMediaLinks/types";
-
-import { config } from "./config";
-import { locales } from "./locales";
-import { LinkItem } from "./types";
-import { defaultSocialMediaLinks } from "./defaultSocialMediaLinks";
 import {
-	A11yComplianceEnum,
 	A11Y_COMPLIANCE_ENUM_VALUES,
+	A11yComplianceEnum,
 } from "./A11yComplianceEnum";
-
-import { propValidator } from "../../helpers/propValidator";
-
-import { customizable } from "../../mixins/customizable";
-
+import { config } from "./config";
+import { defaultSocialMediaLinks } from "./defaultSocialMediaLinks";
+import { locales } from "./locales";
+import { type LinkItem } from "./types";
+import { propValidator } from "@/helpers/propValidator";
+import { customizable } from "@/mixins/customizable";
 import { mdiArrowUp } from "@mdi/js";
 
 export default defineComponent({
 	inheritAttrs: false,
 	components: {
 		SocialMediaLinks,
+		Logo
 	},
 	mixins: [customizable(config)],
 	props: {
@@ -46,23 +41,23 @@ export default defineComponent({
 			default: null,
 		},
 		sitemapRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
+			type: [Array, Object, String] as PropType<RouteLocationRaw>,
 			default: () => ({ name: "sitemap" }),
 		},
 		cguRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
+			type: [Array, Object, String] as PropType<RouteLocationRaw>,
 			default: () => ({ name: "cgu" }),
 		},
 		cookiesRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
+			type: [Array, Object, String] as PropType<RouteLocationRaw>,
 			default: () => ({ name: "cookies" }),
 		},
 		legalNoticeRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
+			type: [Array, Object, String] as PropType<RouteLocationRaw>,
 			default: () => ({ name: "legalNotice" }),
 		},
 		a11yStatementRoute: {
-			type: [Array, Object, String] as PropType<RawLocation>,
+			type: [Array, Object, String] as PropType<RouteLocationRaw>,
 			default: () => ({ name: "a11yStatement" }),
 		},
 		hideSitemapLink: {
@@ -101,7 +96,6 @@ export default defineComponent({
 			type: Array as PropType<SocialMediaLink[]>,
 			default: () => defaultSocialMediaLinks,
 		},
-		...config
 	},
 	data() {
 		return {
@@ -111,7 +105,7 @@ export default defineComponent({
 	},
 	computed: {
 		a11yComplianceLabel(): string {
-			const complianceLabel = locales[this.a11yCompliance];
+			const complianceLabel = locales[this.a11yCompliance as A11yComplianceEnum];
 
 			return locales.a11yLabel(complianceLabel);
 		},
@@ -121,7 +115,7 @@ export default defineComponent({
 		},
 
 		logoSize(): LogoSizeEnum {
-			return this.$vuetify.breakpoint.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
+			return this.$vuetify.display.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
 		},
 
 		footerLinksMapping(): LinkItem[] {

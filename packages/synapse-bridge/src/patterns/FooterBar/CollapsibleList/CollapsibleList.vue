@@ -4,8 +4,6 @@ import type { PropType } from "vue";
 
 import { ListItem } from "./types";
 
-import { useDisplay } from "vuetify";
-
 export default defineComponent({
 	props: {
 		listTitle: {
@@ -19,10 +17,9 @@ export default defineComponent({
 	},
 	computed: {
 		isMobile(): boolean {
-			const { name } = useDisplay();
-			return name.value === "xs" || name.value === "sm";
+			return this.$vuetify.display.smAndDown;
 		},
-	}
+	},
 });
 </script>
 
@@ -34,11 +31,11 @@ export default defineComponent({
 		flat
 	>
 		<VExpansionPanel>
-			<VExpansionPanelHeader class="text-subtitle-2 pl-0 py-4">
+			<VExpansionPanelTitle class="text-subtitle-2 pl-0 py-4">
 				{{ listTitle }}
-			</VExpansionPanelHeader>
+			</VExpansionPanelTitle>
 
-			<VExpansionPanelContent>
+			<VExpansionPanelText>
 				<ul class="pl-0">
 					<li
 						v-for="(item, index) in items"
@@ -54,7 +51,7 @@ export default defineComponent({
 						</a>
 					</li>
 				</ul>
-			</VExpansionPanelContent>
+			</VExpansionPanelText>
 		</VExpansionPanel>
 	</VExpansionPanels>
 
