@@ -261,7 +261,7 @@ export default defineComponent({
 
 					<h2
 						v-if="showServiceSubTitle"
-						class="vd-title text-caption"
+						class="vd-title text-caption subtitle"
 					>
 						{{ service.subTitle }}
 					</h2>

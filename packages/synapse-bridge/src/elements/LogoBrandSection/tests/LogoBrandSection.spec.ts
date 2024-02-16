@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, mount } from "@vue/test-utils";
 
 import LogoBrandSection from "../";
 import { ThemeEnum } from "@/constants/enums/ThemeEnum";
@@ -559,4 +559,59 @@ describe("LogoBrandSection", () => {
 
 		expect(wrapper.vm.showDivider).toBe(false);
 	});
+
+	it("renders service sub title when showServiceSubTitle is true", () => {
+		const wrapper = mount(LogoBrandSection, {
+			global: {
+				plugins: [vuetify],
+			},
+			props: {
+				theme: ThemeEnum.DEFAULT,
+				serviceTitle: "Service Title",
+				serviceSubTitle: "Service Sub Title",
+				mobileVersion: false,
+				reduceLogo: false,
+				homeLink: "/",
+				homeHref: "#",
+			},
+		});
+
+		const subTitleElement = wrapper.find(".subtitle");
+		expect(subTitleElement.text()).toBe("Service Sub Title");
+	});
+
+	it("does not render service sub title when showServiceSubTitle is false", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			global: {
+				plugins: [vuetify],
+			},
+			props: {
+				theme: ThemeEnum.DEFAULT,
+				serviceTitle: "Service Title",
+				serviceSubTitle: "",
+				mobileVersion: false,
+				reduceLogo: false,
+				homeLink: "/",
+				homeHref: "#",
+			},
+		});
+
+		const subTitleElement = wrapper.find(".vd-title.text-caption");
+		expect(subTitleElement.exists()).toBe(false);
+	});
+
+
+	it("does not render secondary logo when secondaryLogo is not present", () => {
+		const wrapper = shallowMount(LogoBrandSection, {
+			props: {
+				theme: ThemeEnum.DEFAULT,
+				homeLink: "/",
+				homeHref: "#",
+			},
+		});
+
+		const secondaryLogoElement = wrapper.find(".vd-home-link img");
+		expect(secondaryLogoElement.exists()).toBe(false);
+	});
+
 });

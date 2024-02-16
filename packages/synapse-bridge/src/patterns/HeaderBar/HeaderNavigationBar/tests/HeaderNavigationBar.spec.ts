@@ -62,4 +62,69 @@ describe("HeaderNavigationBar", () => {
 
 		expect(wrapper.vm.backgroundColor).toBe("#0a347b");
 	});
+
+	it("returns color from options if present", () => {
+		// Arrange
+		const wrapper = mount(HeaderNavigationBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+			},
+			data() {
+				return {
+					options: {
+						color: "red",
+					},
+				};
+			},
+		});
+
+		const result = wrapper.vm.backgroundColor;
+
+		expect(result).toBe("red");
+	});
+
+	it("returns default color if options color is not present", () => {
+		// Arrange
+		const wrapper = mount(HeaderNavigationBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+			},
+		});
+
+		// Act
+		const result = wrapper.vm.backgroundColor;
+
+		// Assert
+		expect(result).toBe("#0a347b"); // Ensure it returns default color
+	});
+
+
+	it("emits 'update:tab' event with the correct value", async () => {
+		// Arrange
+		const wrapper = mount(HeaderNavigationBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				theme: ThemeEnum.DEFAULT,
+			},
+		});
+
+		const tabValue = 42;
+
+		wrapper.vm.emitTabUpdateEvent(tabValue);
+
+		const emittedEvent = wrapper.emitted("update:tab");
+		expect(emittedEvent).toBeTruthy();
+		if (emittedEvent) {
+			expect(emittedEvent[0]).toEqual([tabValue]);
+		}
+
+	});
 });
