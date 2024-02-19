@@ -97,4 +97,10 @@ a {
 		border-color: currentColor;
 	}
 }
+
+.vd-collapse-list.theme--dark :deep() {
+	h4, ul, a {
+		color: white !important;
+	}
+}
 </style>
