@@ -181,6 +181,11 @@ describe("HeaderBar", () => {
 		expect(wrapper.vm.showHeaderMenuBtn).toBe(false);
 	});
 
+	it('renders with vuetitfy options', () => {
+		const wrapper = createWrapper();
+		expect(wrapper.vm.$vuetify).toBe(vuetify);
+	});
+
 	it('updates scrolled property when sticky is true and scroll position is greater than height', () => {
 		const wrapper = createWrapper();
 		Object.defineProperty(window, 'scrollY', { value: 100 });
