@@ -613,5 +613,4 @@ describe("LogoBrandSection", () => {
 		const secondaryLogoElement = wrapper.find(".vd-home-link img");
 		expect(secondaryLogoElement.exists()).toBe(false);
 	});
-
 });
