@@ -153,8 +153,6 @@ describe("FooterBar", () => {
 			},
 		});
 
-		console.log(wrapper.html());
-
 		expect(wrapper.html()).toContain(locales.versionLabel + " v1.0.0");
 	});
 });
