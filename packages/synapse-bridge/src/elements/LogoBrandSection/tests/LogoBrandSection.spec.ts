@@ -3,7 +3,6 @@ import { shallowMount, mount } from "@vue/test-utils";
 import LogoBrandSection from "../";
 import { ThemeEnum } from "@/constants/enums/ThemeEnum";
 import { vuetify } from '@tests/unit/setup';
-
 const mountLogoBrandSection = (propsData = {}) => {
 	return shallowMount(LogoBrandSection, {
 		stubs: ["RouterLink", "Logo"],
@@ -36,6 +35,7 @@ describe('LogoBrandSection', () => {
 			serviceSubTitle: "Service Sub Title",
 		});
 		expect(wrapper.vm.service.title).toBe("Service Title");
+		expect(wrapper.vm.service.subTitle).toBe("Service Sub Title");
 	});
 
 	it("renders correctly with service computed", () => {
@@ -55,6 +55,23 @@ describe('LogoBrandSection', () => {
 			homeHref: "#",
 		});
 		expect(wrapper.vm.height).toBe("64px");
+	});
+
+	it("renders correct height for mobile version with secondary logo", () => {
+		const wrapper = mountLogoBrandSection({
+			mobileVersion: true,
+			theme: ThemeEnum.AMELI_PRO,
+		});
+		const sheetElement = wrapper.find(".vd-logo-brand-section");
+		expect(sheetElement.attributes("height")).toBe("32px");
+	});
+
+	it("renders correct height for mobile version without secondary logo", () => {
+		const wrapper = mountLogoBrandSection({
+			mobileVersion: true,
+		});
+		const sheetElement = wrapper.find(".vd-logo-brand-section");
+		expect(sheetElement.attributes("height")).toBe("40px");
 	});
 
 	it("renders correctly with showServiceSubTitle", () => {
@@ -346,4 +363,5 @@ describe('LogoBrandSection', () => {
 		const secondaryLogoElement = wrapper.find(".vd-home-link img");
 		expect(secondaryLogoElement.exists()).toBe(false);
 	});
+
 });
