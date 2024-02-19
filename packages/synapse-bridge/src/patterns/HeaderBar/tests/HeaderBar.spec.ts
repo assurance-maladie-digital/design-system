@@ -3,6 +3,7 @@ import { shallowMount, mount } from "@vue/test-utils";
 import { ThemeEnum } from "../ThemeEnum.ts";
 import { vuetify } from "@tests/unit/setup";
 import HeaderBar from "../";
+import HeaderMenuBtn from "@/patterns/HeaderBar/HeaderMenuBtn/HeaderMenuBtn.vue";
 
 const commonMountOptions = {
 	global: {
@@ -181,9 +182,10 @@ describe("HeaderBar", () => {
 		expect(wrapper.vm.showHeaderMenuBtn).toBe(false);
 	});
 
-	it('renders with vuetitfy options', () => {
+	it('does not render HeaderMenuBtn when showHeaderMenuBtn is false', () => {
 		const wrapper = createWrapper();
-		expect(wrapper.vm.$vuetify).toBe(vuetify);
+		wrapper.setData({ showHeaderMenuBtn: false });
+		expect(wrapper.findComponent(HeaderMenuBtn).exists()).toBe(false);
 	});
 
 	it('updates scrolled property when sticky is true and scroll position is greater than height', () => {
