@@ -1,11 +1,7 @@
 <script lang="ts">
 	import { defineComponent } from 'vue'
-	import { VSkeletonLoader } from 'vuetify/labs/components'
 
 	export default defineComponent({
-		components: {
-			VSkeletonLoader
-		},
 		props: {
 			width: {
 				type: String,
