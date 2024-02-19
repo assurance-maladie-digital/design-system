@@ -4,14 +4,15 @@ import { vuetify } from "@tests/unit/setup";
 
 import HeaderMenuBtn from "../";
 
+const globalConfig = {
+	global: {
+		plugins: [vuetify],
+	},
+};
+
 describe("HeaderMenuBtn", () => {
 	it("renders correctly", () => {
-		const wrapper = shallowMount(HeaderMenuBtn, {
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
+		const wrapper = shallowMount(HeaderMenuBtn, globalConfig);
 		expect(wrapper).toMatchSnapshot();
 	});
 
@@ -21,56 +22,33 @@ describe("HeaderMenuBtn", () => {
 				color: "primary",
 				icon: "mdi-menu",
 			},
-			global: {
-				plugins: [vuetify],
-			},
+			...globalConfig,
 		});
-
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("renders correctly menuBtnActionLabel", () => {
-		const wrapper = shallowMount(HeaderMenuBtn, {
-			props: {
-				drawer: false,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-			data() {
-				return {
-					locales: {
-						close: "Fermer",
-						open: "Ouvrir",
-						menuBtnLabel: (action: string): string => `${action} le menu`,
-						menu: "Menu",
-					},
-				};
-			}
-		});
+	const dataWithDrawer = (drawer: any) => ({
+		props: { drawer },
+		data() {
+			return {
+				locales: {
+					close: "Fermer",
+					open: "Ouvrir",
+					menuBtnLabel: (action : any) => `${action} le menu`,
+					menu: "Menu",
+				},
+			};
+		},
+		...globalConfig,
+	});
 
-		expect(wrapper.vm.menuBtnActionLabel).toBe("Ouvrir le menu");	});
+	it("renders correctly menuBtnActionLabel", () => {
+		const wrapper = shallowMount(HeaderMenuBtn, dataWithDrawer(false));
+		expect(wrapper.vm.menuBtnActionLabel).toBe("Ouvrir le menu");
+	});
 
 	it("computes menuBtnActionLabel correctly when drawer is true", () => {
-		const wrapper = shallowMount(HeaderMenuBtn, {
-			props: {
-				drawer: true,
-			},
-			data() {
-				return {
-					locales: {
-						close: "Fermer",
-						open: "Ouvrir",
-						menuBtnLabel: (action: string): string => `${action} le menu`,
-						menu: "Menu",
-					},
-				};
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
+		const wrapper = shallowMount(HeaderMenuBtn, dataWithDrawer(true));
 		expect(wrapper.vm.menuBtnActionLabel).toBe("Fermer le menu");
 	});
 });
