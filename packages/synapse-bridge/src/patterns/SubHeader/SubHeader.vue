@@ -85,8 +85,8 @@ export default defineComponent({
 					v-if="loading"
 					max-height="28"
 					type="button"
-					width="100"
 					color="secondary"
+					class="vd-subheader-loading mb-4"
 				/>
 				<VBtn
 					v-else
@@ -151,17 +151,15 @@ export default defineComponent({
 			</div>
 
 			<slot name="right-content">
-				<VThemeProvider theme="dark">
-					<DataListGroup
-						v-if="dataListGroupItems"
-						:items="dataListGroupItems"
-						:loading="loading"
-						:render-html-value="renderHtmlValue"
-						item-width="auto"
-						class="flex-nowrap flex-shrink-0"
-						@click:list-item="emitItemAction"
-					/>
-				</VThemeProvider>
+				<DataListGroup
+					v-if="dataListGroupItems"
+					:items="dataListGroupItems"
+					:loading="loading"
+					:render-html-value="renderHtmlValue"
+					item-width="auto"
+					class="flex-nowrap flex-shrink-0"
+					@click:list-item="emitItemAction"
+				/>
 			</slot>
 		</div>
 	</VSheet>
@@ -169,7 +167,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use '@cnamts/design-tokens/dist/tokens';
-
 
 .vd-sub-header {
 	overflow-x: auto;
@@ -207,4 +204,15 @@ export default defineComponent({
 		color: #fff !important;
 	}
 }
+
+.vd-subheader-loading :deep() {
+	background: transparent;
+	.v-skeleton-loader__button {
+		margin: 0;
+		min-height: 28px;
+		height: auto;
+		background: rgba(white, var(--v-border-opacity));
+	}
+}
+
 </style>

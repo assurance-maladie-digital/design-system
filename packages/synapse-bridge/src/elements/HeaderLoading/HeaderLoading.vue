@@ -27,10 +27,21 @@
 </template>
 
 <style lang="scss" scoped>
-	.vd-header-loading :deep(.v-skeleton-loader__heading) {
+.vd-header-loading :deep() {
+	background: transparent;
+	.v-skeleton-loader__heading {
 		width: 100%;
 		height: 100%;
-		margin: 0;
 		border-radius: 35px;
+		margin: 0;
+		background: rgba(white, var(--v-border-opacity));
 	}
+}
+
+// Remove border radius when tile option is activated
+.vd-header-loading.v-skeleton-loader--tile :deep()	{
+	.v-skeleton-loader__heading {
+		border-radius: 0;
+	}
+}
 </style>
