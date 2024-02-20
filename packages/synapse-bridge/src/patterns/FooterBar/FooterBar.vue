@@ -258,6 +258,11 @@ export default defineComponent({
 
 $white: #fff;
 
+// Todo: put in order the colorssla
+:deep() .text--primary {
+	color: rgba(black, 0.87);
+}
+
 // Use deep selector to style user content as well
 .vd-footer-bar.theme--dark :deep() {
 	background-color: $vd-grey-darken-20 !important;
@@ -267,7 +272,7 @@ $white: #fff;
 	}
 
 	p,
-	.primary--text {
+	.text--primary {
 		color: rgba($white, 0.6) !important;
 	}
 

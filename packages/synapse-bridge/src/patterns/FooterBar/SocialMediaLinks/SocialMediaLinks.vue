@@ -21,7 +21,7 @@ export default defineComponent({
 
 <template>
 	<div class="vd-social-media-links">
-		<span class="text-subtitle-2 primary--text">
+		<span class="vd-social-media-links-label text-subtitle-2 text--primary">
 			{{ locales.followUs }}
 		</span>
 
@@ -37,10 +37,23 @@ export default defineComponent({
 				elevation='0'
 				variant="text"
 			>
-				<VIcon size="30px">
+				<VIcon size="30px" class="vd-social-media-links-icon">
 					{{ social.icon }}
 				</VIcon>
 			</VBtn>
 		</div>
 	</div>
 </template>
+
+<style lang="scss" scoped>
+	@use "@cnamts/design-tokens/dist/tokens";
+
+	.vd-social-media-links-label.text--primary {
+		color: tokens.$vd-primary;
+	}
+
+	.vd-social-media-links-icon {
+		color: tokens.$vd-grey-base;
+	}
+
+</style>

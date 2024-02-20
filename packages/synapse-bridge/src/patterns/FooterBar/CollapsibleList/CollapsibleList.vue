@@ -27,15 +27,19 @@ export default defineComponent({
 	<VExpansionPanels
 		v-if="isMobile"
 		class="vd-collapse-list-mobile"
-		accordion
+		variant="accordion"
 		flat
 	>
-		<VExpansionPanel>
-			<VExpansionPanelTitle class="text-subtitle-2 pl-0 py-4">
+		<VExpansionPanel
+			class="vd-panel"
+			elevation="0"
+			bg-color="transparent"
+		>
+			<VExpansionPanelTitle class="vd-panel-title text-subtitle-2 pl-0 py-4">
 				{{ listTitle }}
 			</VExpansionPanelTitle>
 
-			<VExpansionPanelText>
+			<VExpansionPanelText class="vd-panel-text">
 				<ul class="pl-0">
 					<li
 						v-for="(item, index) in items"
@@ -79,8 +83,18 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-.v-expansion-panel :deep(.v-expansion-panel-content__wrap) {
+
+.vd-panel {
+	background-color: transparent;
+}
+
+.vd-panel-title :deep(.v-expansion-panel-title__overlay) {
+	background: transparent !important;
+}
+
+.vd-panel-text :deep(.v-expansion-panel-text__wrapper) {
 	padding: 0;
+	padding-top: 0;
 }
 
 li {
@@ -98,8 +112,18 @@ a {
 	}
 }
 
+.vd-collapse-list a {
+	color: black;
+}
+
 .vd-collapse-list.theme--dark :deep() {
-	h4, ul, a {
+	h4, ul, a, button {
+		color: white !important;
+	}
+}
+
+.vd-collapse-list-mobile.theme--dark :deep() {
+	button {
 		color: white !important;
 	}
 }
