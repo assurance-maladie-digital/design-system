@@ -16,7 +16,6 @@ import {
 
 import { mdiKeyboardBackspace } from "@mdi/js";
 import HeaderLoading from '@/elements/HeaderLoading';
-import { tokens } from '@cnamts/design-tokens';
 
 export default defineComponent({
 	components: {
