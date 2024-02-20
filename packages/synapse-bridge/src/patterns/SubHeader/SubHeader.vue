@@ -214,5 +214,4 @@ export default defineComponent({
 		background: rgba(white, var(--v-border-opacity));
 	}
 }
-
 </style>
