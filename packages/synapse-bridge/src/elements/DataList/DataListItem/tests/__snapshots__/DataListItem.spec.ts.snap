@@ -8,7 +8,7 @@ exports[`DataListItem > emits click:action event when the action button is press
       <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Test</div>
       <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">value</span></div>
     </div>
-    <v-btn-stub data-v-55bfbadb="" color="accent" class="text-body-1 pa-0 vd-data-list-item-action-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" slim="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text"></v-btn-stub>
+    <v-btn-stub data-v-55bfbadb="" color="accent" class="text-body-1 pa-0 vd-data-list-item-action-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text"></v-btn-stub>
   </div>
 </li>
 `;
@@ -76,7 +76,7 @@ exports[`DataListItem > renders correctly in row mode 1`] = `
       <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Test</div>
       <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">value</span></div>
     </div>
-    <v-btn-stub data-v-55bfbadb="" color="accent" class="text-body-1 pa-0 vd-data-list-item-action-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" slim="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text"></v-btn-stub>
+    <v-btn-stub data-v-55bfbadb="" color="accent" class="text-body-1 pa-0 vd-data-list-item-action-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text"></v-btn-stub>
   </div>
 </li>
 `;
@@ -143,7 +143,7 @@ exports[`DataListItem > renders correctly with an action 1`] = `
       <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Test</div>
       <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
     </div>
-    <v-btn-stub data-v-55bfbadb="" color="accent" class="text-body-1 pa-0 vd-data-list-item-action-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" slim="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text"></v-btn-stub>
+    <v-btn-stub data-v-55bfbadb="" color="accent" class="text-body-1 pa-0 vd-data-list-item-action-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text"></v-btn-stub>
   </div>
 </li>
 `;
