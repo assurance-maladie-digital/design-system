@@ -23,8 +23,9 @@ export default defineComponent({
 		supportId(): string | null {
 			const SUPPORT_ID_PARAM_NAME = "support_id";
 			const SPACE_CHARACTER = " ";
-
+			console.log('search' ,document.location.search);
 			const params = new URLSearchParams(document.location.search);
+			console.log('params' ,params);
 			let supportId = params.get(SUPPORT_ID_PARAM_NAME);
 
 			if (!supportId) {
