@@ -70,7 +70,9 @@ export default defineComponent({
 			v-bind="options.menu"
 			:disabled="!hasListContent"
 			transition="fade-transition"
-			attach
+			location="bottom end"
+			:attach="false"
+			z-index="9999"
 		>
 			<template #activator="{ props }">
 				<VBtn
