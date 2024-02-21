@@ -27,12 +27,12 @@ export default defineComponent({
 
 		<div class="d-flex justify-start justify-sm-end max-width-none mx-n2">
 			<VBtn
-				v-for="social, index in links"
+				v-for="(social, index) in links"
 				:key="index"
 				:href="social.href"
 				target="_blank"
 				rel="noopener noreferrer"
-				icon
+				:icon="true"
 				class="mx-1"
 				elevation='0'
 				variant="text"
@@ -56,4 +56,12 @@ export default defineComponent({
 		color: tokens.$vd-grey-base;
 	}
 
+	.v-btn--icon.v-btn--density-default {
+		width: calc(var(--v-btn-height) + 5px);
+		height: calc(var(--v-btn-height) + 5px);
+	}
+
+	.theme--dark .v-btn--variant-text:hover :deep() {
+		background: rgba(white , 0.1);
+	}
 </style>

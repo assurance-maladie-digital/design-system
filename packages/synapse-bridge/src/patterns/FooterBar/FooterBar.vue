@@ -258,9 +258,16 @@ export default defineComponent({
 
 $white: #fff;
 
-// Todo: put in order the colorssla
+a {
+	cursor: pointer;
+}
+
 :deep() .text--primary {
-	color: rgba(black, 0.87);
+	color: rgba(0,0,0, .87);
+}
+
+:deep() .text--secondary {
+	color: rgba(0,0,0, .6);
 }
 
 // Use deep selector to style user content as well
@@ -274,6 +281,14 @@ $white: #fff;
 	p,
 	.text--primary {
 		color: rgba($white, 0.6) !important;
+	}
+
+	a.text--primary {
+		color: $white !important;
+	}
+
+	.v-divider {
+		border-color: rgba($white, 1) !important;
 	}
 
 	svg {
@@ -297,5 +312,8 @@ $white: #fff;
 	p {
 		padding: 1px 0;
 	}
+}
+.theme--dark button.v-btn:hover :deep() {
+	background: rgba(white , 0.1);
 }
 </style>

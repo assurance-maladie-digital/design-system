@@ -94,7 +94,6 @@ export default defineComponent({
 
 .vd-panel-text :deep(.v-expansion-panel-text__wrapper) {
 	padding: 0;
-	padding-top: 0;
 }
 
 li {
