@@ -1,4 +1,4 @@
-import { DataList } from '../../../../elements/DataList/types';
+import { DataList } from '@/elements/DataList/types';
 import { DataListGroupItems } from '../../types';
 
 export const dataListItems: DataList = [
