@@ -237,8 +237,8 @@ export default defineComponent({
 				:href="item.href"
 				:to="item.to"
 				:aria-label="item.ariaLabel"
-				:tabindex="index"
 				:target="item.openInNewTab ? '_blank' : undefined"
+				:tabindex="index"
 				:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
 				class="text--primary my-3 mx-4"
 			>

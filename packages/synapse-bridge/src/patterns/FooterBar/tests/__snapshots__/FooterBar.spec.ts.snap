@@ -8,11 +8,11 @@ exports[`FooterBar > renders correctly 1`] = `
       <!--v-if-->
       <!--v-if-->
       <div data-v-4fc2321c="" class="py-2 py-sm-0 vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3">
-        <routerlink data-v-4fc2321c="" to="[object Object]" class="text--primary my-3 mx-4">Plan du site</routerlink>
-        <routerlink data-v-4fc2321c="" to="[object Object]" class="text--primary my-3 mx-4">Conditions générales d’utilisation</routerlink>
-        <routerlink data-v-4fc2321c="" to="[object Object]" class="text--primary my-3 mx-4">Gestion des cookies</routerlink>
-        <routerlink data-v-4fc2321c="" to="[object Object]" class="text--primary my-3 mx-4">Mentions légales</routerlink>
-        <routerlink data-v-4fc2321c="" to="[object Object]" class="text--primary my-3 mx-4">Accessibilité&nbsp;: non conforme</routerlink>
+        <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="0" class="text--primary my-3 mx-4">Plan du site</routerlink>
+        <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="1" class="text--primary my-3 mx-4">Conditions générales d’utilisation</routerlink>
+        <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="2" class="text--primary my-3 mx-4">Gestion des cookies</routerlink>
+        <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="3" class="text--primary my-3 mx-4">Mentions légales</routerlink>
+        <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="4" class="text--primary my-3 mx-4">Accessibilité&nbsp;: non conforme</routerlink>
         <!--v-if-->
       </div>
     </footer>
