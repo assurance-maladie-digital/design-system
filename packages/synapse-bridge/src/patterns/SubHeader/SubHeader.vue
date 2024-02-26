@@ -16,11 +16,13 @@ import {
 
 import { mdiKeyboardBackspace } from "@mdi/js";
 import HeaderLoading from '@/elements/HeaderLoading';
+import * as VSkeletonLoader from 'vuetify';
 
 export default defineComponent({
 	components: {
 		DataListGroup,
-		HeaderLoading
+		HeaderLoading,
+		VSkeletonLoader
 	},
 	mixins: [customizable(config), Widthable],
 	props: {

@@ -32,7 +32,7 @@
 	},
 	"peerDependencies": {
 		"vue": "^3.3.0",
-		"vuetify": "^3.4.0"
+		"vuetify": "^3.3.0"
 	},
 	"dependencies": {
 		"@cnamts/design-tokens": "2.12.0",
