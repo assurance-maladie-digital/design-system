@@ -9,7 +9,7 @@ exports[`CookiesInformation > renders correctly 1`] = `
     </summary>
     <cookies-table-stub data-v-7eab3eb5="" items="[object Object],[object Object]" class="mb-2"></cookies-table-stub>
   </details>
-  <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
+  <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
     let valid;
     if (Array.isArray(value)) {
       valid = value.length !== 0;
@@ -94,7 +94,7 @@ exports[`CookiesInformation > renders correctly without items 1`] = `
     </summary>
     <cookies-table-stub data-v-7eab3eb5="" items="" class="mb-2"></cookies-table-stub>
   </details>
-  <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
+  <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
     let valid;
     if (Array.isArray(value)) {
       valid = value.length !== 0;
