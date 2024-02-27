@@ -1,3 +1,5 @@
+import {NavigationGuardNext} from "vue-router";
+/**
 /**
  * Extend $refs, eg:
  * $refs!: Refs<{
