@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { defineComponent } from 'vue';
-	import * as VSkeletonLoader from 'vuetify';
+	import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
 
 	export default defineComponent({
 		components: {
@@ -15,7 +15,7 @@
 				type: String,
 				default: '1rem'
 			}
-		}
+		},
 	})
 </script>
 
@@ -25,7 +25,7 @@
 		:width="width"
 		:height="height"
 		type="heading"
-		aria-hidden="true"
+		:aria-hidden="true"
 		class="vd-header-loading"
 	/>
 </template>

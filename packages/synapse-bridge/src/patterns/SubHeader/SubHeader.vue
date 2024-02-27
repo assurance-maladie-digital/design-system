@@ -16,7 +16,7 @@ import {
 
 import { mdiKeyboardBackspace } from "@mdi/js";
 import HeaderLoading from '@/elements/HeaderLoading';
-import * as VSkeletonLoader from 'vuetify';
+import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
 
 export default defineComponent({
 	components: {
