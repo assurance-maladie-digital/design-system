@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import {describe, it, expect, vi} from "vitest";
 import { shallowMount, mount } from "@vue/test-utils";
 import { ThemeEnum } from "../ThemeEnum.ts";
 import { vuetify } from "@tests/unit/setup";
@@ -223,4 +223,41 @@ describe("HeaderBar", () => {
 		expect(wrapper.vm.targetSelector).toBe(`#${targetId}`);
 	});
 
+	it('render correctly with showHeaderMenuBtn computed property', () => {
+		const wrapper = createWrapper();
+		expect(wrapper.vm.showHeaderMenuBtn).toBe(false);
+	});
+
+	it('updateDrawer is called correctly', () => {
+		const wrapper = createWrapper();
+		wrapper.vm.updateDrawer(true);
+		expect(wrapper.vm.drawer).toBe(true);
+	});
+
+	it('should update drawer when HeaderMenuBtn is clicked', async () => {
+		const wrapper = mount(HeaderBar, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				showNavBarMenuBtn: true,
+				mobileVersion: true,
+				navigationItems: [
+					{ label: "Item 1", href: "#" },
+					{ label: "Item 2", href: "#" },
+				],
+			},
+		})
+
+		// Spy on the updateDrawer method
+		const updateDrawerSpy = vi.spyOn(wrapper.vm, 'updateDrawer').mockReturnValue((value) => {
+			wrapper.vm.drawer = value
+		})
+
+		// Simulate a click on the HeaderMenuBtn
+		await wrapper.find('.vd-header-menu-btn').trigger('click');
+		await wrapper.find('.vd-header-menu-btn').trigger('click');
+
+		expect(updateDrawerSpy).toHaveBeenCalledTimes(2);
+	});
 });

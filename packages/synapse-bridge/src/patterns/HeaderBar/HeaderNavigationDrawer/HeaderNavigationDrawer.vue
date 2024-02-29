@@ -66,46 +66,46 @@ export default defineComponent({
 <template>
     <VNavigationDrawer
         v-if="mobileVersion && items"
-        v-bind="options"
-        :value="drawer"
         :color="backgroundColor"
+        :value="drawer"
+        v-bind="options"
         @input="drawerUpdated"
     >
-      <slot>
-        <div class="d-flex align-center justify-end mb-8">
-          <VBtn
-              v-bind="options.closeBtn"
-              :aria-label="locales.closeBtn"
-              @click="emitChangeEvent"
-          >
-            <VIcon v-bind="options.closeIcon">
-              {{ closeIcon }}
-            </VIcon>
-          </VBtn>
-        </div>
+      	<slot>
+			<div class="d-flex align-center justify-end mb-8">
+				  <VBtn
+					  :aria-label="locales.closeBtn"
+					  v-bind="options.closeBtn"
+					  @click="emitChangeEvent"
+				  >
+						<VIcon v-bind="options.closeIcon">
+						  	{{ closeIcon }}
+						</VIcon>
+				  </VBtn>
+			</div>
 
-        <slot name="navigation-drawer-prepend" />
+			<slot name="navigation-drawer-prepend" />
 
-        <VTabs
-            v-bind="options.tabs"
-            :value="tab"
-            optional
-            class="flex-grow-0"
-            @change="emitTabUpdateEvent"
-        >
-          <VTab
-              v-for="(item, index) in items"
-              :key="index"
-              v-bind="options.tab"
-              :href="item.href"
-              :to="item.to"
-          >
-            {{ item.label }}
-          </VTab>
-        </VTabs>
+			<VTabs
+				:value="tab"
+				class="flex-grow-0"
+				optional
+				v-bind="options.tabs"
+				@change="emitTabUpdateEvent"
+			>
+				  <VTab
+					  v-for="(item, index) in items"
+					  :key="index"
+					  :href="item.href"
+					  :to="item.to"
+					  v-bind="options.tab"
+				  >
+						{{ item.label }}
+				  </VTab>
+			</VTabs>
 
-        <slot name="navigation-drawer-append" />
-      </slot>
+			<slot name="navigation-drawer-append" />
+		</slot>
     </VNavigationDrawer>
 </template>
 

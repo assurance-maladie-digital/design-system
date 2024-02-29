@@ -1,12 +1,15 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
+
 import { mdiClose } from "@mdi/js";
 import { NavigationItem } from "../types";
 import { config } from "./config";
 import { colorMapping } from "../colorMapping";
 import { ThemeEnum } from "../ThemeEnum";
+
 import HeaderMenuBtn from "../HeaderMenuBtn/HeaderMenuBtn.vue";
+
 import { customizable } from "@/mixins/customizable";
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -49,9 +52,6 @@ export default defineComponent({
 			return this.mobileVersion ? 'px-4' : 'px-14';
 		},
 		backgroundColor(): string {
-			if (this.options.color) {
-				return this.options.color;
-			}
 			return colorMapping[this.theme];
 		}
 	},
@@ -67,14 +67,12 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-app>
     <VSheet
         v-bind="options.sheet"
         :color="backgroundColor"
         :class="spacingClass"
         class="vd-navigation-bar d-flex align-center justify-center"
     >
-
       <VSheet class="header-navigation-background" v-bind="options.innerSheet" :width="innerWidth">
         <slot name="navigation-bar-prepend" />
 
@@ -103,7 +101,6 @@ export default defineComponent({
         <slot name="navigation-bar-secondary-content" />
       </VSheet>
     </VSheet>
-  </v-app>
 </template>
 
 <style lang="scss" scoped>

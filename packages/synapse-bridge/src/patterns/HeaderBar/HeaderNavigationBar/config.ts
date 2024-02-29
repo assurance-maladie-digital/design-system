@@ -13,5 +13,5 @@ export const config = {
 	},
 	tabs: {
 		backgroundColor: 'transparent'
-	}
+	},
 };

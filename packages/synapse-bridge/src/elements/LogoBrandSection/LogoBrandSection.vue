@@ -136,9 +136,9 @@ export default defineComponent({
 		showBrandContent(): boolean {
 			return Boolean(
 				this.service.title ||
-					this.service.subTitle ||
-					this.$slots["brand-content"] ||
-					this.hasSecondaryLogo
+				this.service.subTitle ||
+				this.$slots["brand-content"] ||
+				this.hasSecondaryLogo
 			);
 		},
 
@@ -153,8 +153,8 @@ export default defineComponent({
 		showServiceSubTitle(): boolean {
 			return Boolean(
 				this.service.title &&
-					this.service.subTitle &&
-					!this.mobileVersion
+				this.service.subTitle &&
+				!this.mobileVersion
 			);
 		},
 
@@ -261,7 +261,7 @@ export default defineComponent({
 
 					<h2
 						v-if="showServiceSubTitle"
-						class="vd-title text-caption subtitle"
+						class="vd-title text-caption"
 					>
 						{{ service.subTitle }}
 					</h2>
