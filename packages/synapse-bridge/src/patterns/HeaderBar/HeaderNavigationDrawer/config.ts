@@ -1,19 +1,19 @@
 export const config = {
 	app: true,
+	dark: true,
+	temporary: true,
+	width: '320px',
 	class: 'pa-4',
 	closeBtn: {
 		icon: true
 	},
-	dark: true,
+	tabs: {
+		density: 'compact',
+		direction: 'vertical',
+		backgroundColor: 'transparent'
+	},
 	tab: {
 		exact: true,
 		class: 'justify-start mb-2'
-	},
-	tabs: {
-		dense: true,
-		vertical: true,
-		backgroundColor: 'transparent'
-	},
-	temporary: true,
-	width: '320px'
+	}
 };

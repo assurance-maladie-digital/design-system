@@ -77,6 +77,7 @@ export default defineComponent({
 			<div class="d-flex align-center justify-end mb-8">
 				  <VBtn
 					  v-bind="options.closeBtn"
+					  variant="text"
 					  :aria-label="locales.closeBtn"
 					  @click="emitChangeEvent"
 				  >
@@ -92,7 +93,6 @@ export default defineComponent({
 				v-bind="options.tabs"
 				:modelValue="tab"
 				class="flex-grow-0"
-				optional
 				@change="emitTabUpdateEvent"
 			>
 				  <VTab

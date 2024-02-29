@@ -234,6 +234,7 @@ export default defineComponent({
 					:items="navigationItems"
 					:mobile-version="isMobileVersion"
 					:vuetify-options="options.navigationDrawer"
+					@change="updateDrawer(!drawer)"
 				>
 					<template #navigation-drawer-prepend>
 						<slot name="navigation-drawer-prepend" />
@@ -261,6 +262,9 @@ export default defineComponent({
 .vd-header-bar :deep(.v-toolbar__content) {
 	display: block;
 	padding: 0;
+}
+.v-tab :deep() {
+	text-transform: uppercase;
 }
 .vd-header-menu-btn :deep() {
 	.v-btn__content {
