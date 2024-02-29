@@ -3,7 +3,7 @@ import { defineComponent, ref } from "vue";
 import type { PropType } from "vue";
 
 import LogoBrandSection from "@/elements/LogoBrandSection";
-import HeaderMenuBtn from "@/patterns/HeaderBar/HeaderMenuBtn/HeaderMenuBtn.vue";
+import HeaderMenuBtn from "./HeaderMenuBtn/HeaderMenuBtn.vue";
 import HeaderNavigationBar from "./HeaderNavigationBar/HeaderNavigationBar.vue";
 import HeaderNavigationDrawer from "./HeaderNavigationDrawer";
 
@@ -201,8 +201,10 @@ export default defineComponent({
 
 				<VFadeTransition v-if="showNavigationBar">
 					<HeaderNavigationBar
-						:tab.sync="tab"
-						:drawer.sync="drawer"
+						:tab="tab"
+						@update:tab="tab = $event"
+						:drawer="drawer"
+						@update:drawer="drawer = $event"
 						:theme="theme"
 						:mobile-version="isMobileVersion"
 						:items="navigationItems"
@@ -220,14 +222,14 @@ export default defineComponent({
 								<slot name="navigation-bar-secondary-content" />
 						  </template>
 					</HeaderNavigationBar>
-			  </VFadeTransition>
-
+				</VFadeTransition>
 			</VAppBar>
 
 			<slot name="navigation-drawer" v-bind="{ drawer, updateDrawer }">
 				<HeaderNavigationDrawer
 					v-model="drawer"
-					:tab.sync="tab"
+					:tab="tab"
+					@update:tab="tab = $event"
 					:theme="theme"
 					:items="navigationItems"
 					:mobile-version="isMobileVersion"

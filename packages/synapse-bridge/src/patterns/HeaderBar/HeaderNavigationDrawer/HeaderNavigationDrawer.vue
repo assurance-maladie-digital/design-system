@@ -1,12 +1,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
+
 import { mdiClose } from "@mdi/js";
 import { config } from "./config";
 import { locales } from "./locales";
 import { NavigationItem } from "../types";
 import { colorMapping } from "../colorMapping";
 import { ThemeEnum } from "../ThemeEnum";
+
 import { customizable } from "@/mixins/customizable";
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -67,15 +69,15 @@ export default defineComponent({
     <VNavigationDrawer
         v-if="mobileVersion && items"
         :color="backgroundColor"
-        :value="drawer"
+        :modelValue="drawer"
         v-bind="options"
         @input="drawerUpdated"
     >
       	<slot>
 			<div class="d-flex align-center justify-end mb-8">
 				  <VBtn
-					  :aria-label="locales.closeBtn"
 					  v-bind="options.closeBtn"
+					  :aria-label="locales.closeBtn"
 					  @click="emitChangeEvent"
 				  >
 						<VIcon v-bind="options.closeIcon">
@@ -87,10 +89,10 @@ export default defineComponent({
 			<slot name="navigation-drawer-prepend" />
 
 			<VTabs
-				:value="tab"
+				v-bind="options.tabs"
+				:modelValue="tab"
 				class="flex-grow-0"
 				optional
-				v-bind="options.tabs"
 				@change="emitTabUpdateEvent"
 			>
 				  <VTab

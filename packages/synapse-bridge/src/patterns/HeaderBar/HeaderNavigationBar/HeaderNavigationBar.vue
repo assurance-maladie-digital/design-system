@@ -16,6 +16,7 @@ export default defineComponent({
 	components: {
 		HeaderMenuBtn,
 	},
+	emits: ["update:drawer", "update:tab"],
 	props: {
 		theme: {
 			type: String as PropType<ThemeEnum>,
@@ -82,7 +83,7 @@ export default defineComponent({
           <VTabs
               v-else
               v-bind="options.tabs"
-              :value="tab"
+              :modelValue="tab"
               optional
               @change="emitTabUpdateEvent"
           >
