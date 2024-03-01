@@ -48,17 +48,8 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			locales,
-			isNuxt: false,
-			hasSecondaryLogo: false,
-			hasSecondaryLogoLink: false,
+			locales
 		};
-	},
-	created() {
-		this.isNuxt = !!getCurrentInstance()?.appContext.config.globalProperties.$nuxt;
-		this.hasSecondaryLogo = Boolean(this.$slots.default || this.secondaryLogo);
-		this.hasSecondaryLogoLink = Boolean(this.theme === ThemeEnum.AMELI_PRO ||
-			this.theme === ThemeEnum.AMELI);
 	},
 	computed: {
 		service(): Service {
@@ -102,11 +93,23 @@ export default defineComponent({
 		},
 
 		hideSignature(): boolean {
-			return (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile) ? true : Boolean(this.$slots.default);
+			return (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile);
 		},
 
 		secondaryLogo(): LogoInfo | undefined {
 			return secondaryLogoMapping[this.theme];
+		},
+
+		hasSecondaryLogo(): boolean {
+			return Boolean(this.secondaryLogo);
+		},
+
+		hasSecondaryLogoLink(): boolean {
+			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
+		},
+
+		isNuxt(): boolean {
+			return !!getCurrentInstance()?.appContext.config.globalProperties.$nuxt;
 		},
 
 		logoContainerComponent(): string {
@@ -137,7 +140,6 @@ export default defineComponent({
 			return Boolean(
 				this.service.title ||
 				this.service.subTitle ||
-				this.$slots["brand-content"] ||
 				this.hasSecondaryLogo
 			);
 		},
