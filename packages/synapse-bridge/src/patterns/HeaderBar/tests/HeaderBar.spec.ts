@@ -249,15 +249,8 @@ describe("HeaderBar", () => {
 			},
 		})
 
-		// Spy on the updateDrawer method
-		const updateDrawerSpy = vi.spyOn(wrapper.vm, 'updateDrawer').mockReturnValue((value) => {
-			wrapper.vm.drawer = value
-		})
-
-		// Simulate a click on the HeaderMenuBtn
-		await wrapper.find('.vd-header-menu-btn').trigger('click');
-		await wrapper.find('.vd-header-menu-btn').trigger('click');
-
-		expect(updateDrawerSpy).toHaveBeenCalledTimes(2);
+		const headerMenuBtn = wrapper.findComponent(HeaderMenuBtn);
+		await headerMenuBtn.trigger('click');
+		expect(wrapper.vm.drawer).toBe(true);
 	});
 });
