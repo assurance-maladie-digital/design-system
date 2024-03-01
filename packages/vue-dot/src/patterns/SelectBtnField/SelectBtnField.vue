@@ -23,6 +23,7 @@
 				:class="{ 'error--text': error }"
 				:aria-selected="isSelected(item.value)"
 				role="option"
+				:aria-disabled="readonly"
 				@click="toggleItem(item)"
 			>
 				<span class="text-body-1">
@@ -105,6 +106,10 @@
 			errorMessages: {
 				type: Array as PropType<string[]>,
 				default: undefined
+			},
+			readonly: {
+				type: Boolean,
+				default: false
 			}
 		}
 	});
@@ -200,6 +205,9 @@
 		}
 
 		toggleItem(item: SelectBtnItem): void {
+			if (this.readonly) {
+				return;
+			}
 			const newValue = this.getNewValue(item);
 
 			this.internalValue = newValue;
