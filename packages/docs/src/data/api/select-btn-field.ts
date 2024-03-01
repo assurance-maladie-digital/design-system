@@ -57,6 +57,11 @@ export const api: Api = {
 				type: 'string[]',
 				default: 'undefined',
 				description: 'Les messages d’erreur à afficher.'
+			},{
+				name: 'readonly',
+				type: 'boolean',
+				default: false,
+				description: 'Fige la valeur du champ.'
 			},
 			...customizable(`{
 	btnToggle: 'VBtnToggle',
