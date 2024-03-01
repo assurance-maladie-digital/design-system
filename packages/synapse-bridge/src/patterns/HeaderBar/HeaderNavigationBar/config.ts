@@ -12,6 +12,7 @@ export const config = {
 		exact: true
 	},
 	tabs: {
+		height: '48px',
 		backgroundColor: 'transparent'
 	},
 };

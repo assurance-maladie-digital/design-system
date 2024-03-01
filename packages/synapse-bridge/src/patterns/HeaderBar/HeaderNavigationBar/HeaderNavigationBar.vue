@@ -84,7 +84,6 @@ export default defineComponent({
               v-else
               v-bind="options.tabs"
               :modelValue="tab"
-              optional
               @change="emitTabUpdateEvent"
           >
             <VTab

@@ -263,7 +263,7 @@ export default defineComponent({
 	display: block;
 	padding: 0;
 }
-.v-tab :deep() {
+.vd-header-bar :deep(.v-tab) {
 	text-transform: uppercase;
 }
 .vd-header-menu-btn :deep() {
@@ -273,6 +273,14 @@ export default defineComponent({
 
 	.v-icon {
 		margin: 0 !important;
+	}
+}
+:deep(.v-tab)  {
+	&.v-tab--selected {
+		background: rgba($color: #fff, $alpha: 0.1);
+	}
+	&.v-tab:not(.v-tab--selected) {
+		color: hsla(0, 0%, 100%, .6);
 	}
 }
 </style>

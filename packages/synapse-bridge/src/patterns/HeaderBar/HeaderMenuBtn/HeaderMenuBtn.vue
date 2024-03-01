@@ -2,7 +2,7 @@
 import { defineComponent } from "vue";
 import { mdiMenu } from "@mdi/js";
 import { locales } from "./locales";
-import { config } from "../config.ts";
+import { config } from "./config.ts";
 import { customizable } from "@/mixins/customizable";
 export default defineComponent({
 	inheritAttrs: false,

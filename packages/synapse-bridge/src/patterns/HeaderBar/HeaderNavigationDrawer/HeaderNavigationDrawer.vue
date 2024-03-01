@@ -113,16 +113,16 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-navigation-drawer {
-	.v-tab {
-		height: 40px !important;
-		&.v-tab--active {
-			background: rgba($color: #fff, $alpha: 0.1);
-		}
-	}
 	:deep(.v-navigation-drawer__content) {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		.v-slide-group {
+			width: 100%;
+		}
+		.v-tab {
+			text-transform: uppercase;
+		}
 	}
 }
 </style>
