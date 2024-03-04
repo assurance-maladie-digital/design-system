@@ -1,233 +1,234 @@
 import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
+import {mount, shallowMount} from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
 import DialogBox from '../'
 import { VCard } from 'vuetify/components'
 
+const defaultProps = {
+	modelValue: true,
+	title: 'Test title',
+	width: '600px',
+	cancelBtnText: 'Cancel',
+	confirmBtnText: 'Confirm',
+	hideActions: false,
+	persistent: false,
+}
+
 describe('DialogBox', () => {
-	it('renders correctly with props', () => {
-		const wrapper = mount(DialogBox, {
-			props: {
-				modelValue: true,
-				title: 'Test title',
-				width: '600px',
-				cancelBtnText: 'Cancel',
-				confirmBtnText: 'Confirm',
-				hideActions: false,
-				persistent: false,
-			},
-			global: {
-				plugins: [vuetify],
-			},
+	describe('rendering and props', () => {
+		it('renders correctly with props', () => {
+			const wrapper = shallowMount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
+
+			expect(wrapper.html()).toMatchSnapshot()
+		});
+
+		it('is closed when model value is false', async () => {
+			const wrapper = mount(DialogBox, {
+				props: {
+					...defaultProps,
+					modelValue: false,
+				},
+				global: {
+					plugins: [vuetify],
+				},
+			})
+
+			expect(wrapper).toMatchSnapshot()
 		})
 
-		expect(wrapper).toMatchSnapshot()
+		it('becomes visible when the model value is updated', async () => {
+			const wrapper = mount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
+
+			const card = wrapper.getComponent(VCard)
+			expect(card.isVisible()).toBe(true)
+
+			await wrapper.setProps({ modelValue: false })
+			expect(card.isVisible()).toBe(false)
+
+			await wrapper.setProps({ modelValue: true })
+			expect(card.isVisible()).toBe(true)
+		})
 	})
 
-	it('is closed when model value is false', async () => {
-		const wrapper = mount(DialogBox, {
-			props: {
-				modelValue: false,
-			},
-			global: {
-				plugins: [vuetify],
-			},
+	describe('focusable elements and tab navigation', () => {
+		it('gets the correct focusable elements', async () => {
+			const wrapper = mount(DialogBox, {
+				slots: {
+					default: `
+						<button id="first">First</button>
+						<button id="second" disabled>Second</button>
+						<button id="third">third</button>
+						<a href="https://www.ameli.fr/" id="link">ameli.fr</a>
+					`,
+				},
+				props: {
+					...defaultProps,
+					hideActions: true,
+					persistent: true,
+				},
+				global: {
+					plugins: [vuetify],
+				},
+			})
+
+			const modal = wrapper.getComponent(VCard)
+
+			const firstBtn = modal.find<HTMLElement>('#first')
+			const thirdBtn = modal.find<HTMLElement>('#third')
+			const theLink = modal.find<HTMLElement>('#link')
+
+			await modal.vm.$nextTick()
+
+			expect(await wrapper.vm.getSelectableElements()).toEqual([
+				firstBtn.element,
+				thirdBtn.element,
+				theLink.element,
+			])
 		})
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		it('handles the internal tab navigation', async () => {
+			const wrapper = mount(DialogBox, {
+				slots: {
+					default: `
+						<button id="first">First</button>
+						<button id="second" disabled>Second</button>
+						<button id="third">third</button>
+						<a href="https://www.ameli.fr/" id="link">ameli.fr</a>
+					`,
+					title: `
+						<h2>Test title</h2>
+					`,
+				},
+				props: {
+					...defaultProps,
+					hideActions: true,
+					persistent: true,
+				},
+				global: {
+					plugins: [vuetify],
+				},
+			})
 
-	it('becomes visible when the model value is updated', async () => {
-		const wrapper = mount(DialogBox, {
-			props: {
-				modelValue: true,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
+			async function triggerTab() {
+				modal.find(':focus').trigger('keydown', {
+					keyCode: 9,
+					key: 'Tab',
+					code: 'Tab',
+				})
 
-		const card = wrapper.getComponent(VCard)
-		expect(card.isVisible()).toBe(true)
+				await wrapper.vm.$nextTick()
+			}
 
-		await wrapper.setProps({ modelValue: false })
-		expect(card.isVisible()).toBe(false)
+			async function triggerShiftTab() {
+				modal.find(':focus').trigger('keydown', {
+					keyCode: 9,
+					key: 'Tab',
+					code: 'Tab',
+					shiftKey: true,
+				})
 
-		await wrapper.setProps({ modelValue: true })
-		expect(card.isVisible()).toBe(true)
-	})
+				await wrapper.vm.$nextTick()
+			}
 
-	it('gets the correct focusable elements', async () => {
-		const wrapper = mount(DialogBox, {
-			slots: {
-				default: `
-					<button id="first">First</button>
-					<button id="second" disabled>Second</button>
-					<button id="third">third</button>
-					<a href="https://www.ameli.fr/" id="link">ameli.fr</a>
-				`,
-			},
-			props: {
-				modelValue: true,
-				hideActions: true,
-				persistent: true,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
+			const modal = wrapper.getComponent(VCard)
 
-		const modal = wrapper.getComponent(VCard)
+			const firstBtn = modal.find<HTMLElement>('#first')
+			const thirdBtn = modal.find<HTMLElement>('#third')
+			await modal.vm.$nextTick()
 
-		const firstBtn = modal.find<HTMLElement>('#first')
-		const thirdBtn = modal.find<HTMLElement>('#third')
-		const theLink = modal.find<HTMLElement>('#link')
+			firstBtn.element.focus()
+			await modal.vm.$nextTick()
 
-		await modal.vm.$nextTick()
-
-		expect(await wrapper.vm.getSelectableElements()).toEqual([
-			firstBtn.element,
-			thirdBtn.element,
-			theLink.element,
-		])
-	})
-
-	it('handles the internal tab navigation', async () => {
-		const wrapper = mount(DialogBox, {
-			slots: {
-				default: `
-					<button id="first">First</button>
-					<button id="second" disabled>Second</button>
-					<button id="third">third</button>
-					<a href="https://www.ameli.fr/" id="link">ameli.fr</a>
-				`,
-				title: `
-					<h2>Test title</h2>
-				`,
-			},
-			props: {
-				modelValue: true,
-				hideActions: true,
-				persistent: true,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		async function triggerTab() {
+			// Enter event should be ignored
 			modal.find(':focus').trigger('keydown', {
-				keyCode: 9,
-				key: 'Tab',
-				code: 'Tab',
+				keyCode: 13,
+				key: 'Enter',
+				code: 'Enter',
 			})
 
 			await wrapper.vm.$nextTick()
-		}
+			expect(firstBtn.element).toEqual(document.activeElement)
 
-		async function triggerShiftTab() {
-			modal.find(':focus').trigger('keydown', {
-				keyCode: 9,
-				key: 'Tab',
-				code: 'Tab',
-				shiftKey: true,
+			// The second button is disabled, so it should be ignored
+			await triggerTab()
+			expect(thirdBtn.element).toEqual(document.activeElement)
+
+			// If we reach the end, we should go back to the beginning
+			await triggerTab()
+			await triggerTab()
+			expect(firstBtn.element).toEqual(document.activeElement)
+
+			// If the shift key is pressed, we should go backwards
+			await triggerTab()
+			await triggerShiftTab()
+			expect(firstBtn.element).toEqual(document.activeElement)
+
+			// If we reach the beginning, we should go back to the end
+			await triggerShiftTab()
+			expect(modal.find('#link').element).toEqual(document.activeElement)
+		})
+	})
+
+	describe('event emissions', () => {
+		it('emits an event when close button is clicked', async () => {
+			const wrapper = mount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
 			})
 
-			await wrapper.vm.$nextTick()
-		}
+			const modal = wrapper.getComponent(VCard)
 
-		const modal = wrapper.getComponent(VCard)
+			expect(wrapper.vm.$data.dialog).toBe(true)
 
-		const firstBtn = modal.find<HTMLElement>('#first')
-		const thirdBtn = modal.find<HTMLElement>('#third')
-		await modal.vm.$nextTick()
+			const closeBtn = modal.find('button')
+			await closeBtn.trigger('click')
 
-		firstBtn.element.focus()
-		await modal.vm.$nextTick()
-
-		// Enter event should be ignored
-		modal.find(':focus').trigger('keydown', {
-			keyCode: 13,
-			key: 'Enter',
-			code: 'Enter',
+			expect(wrapper.emitted('update:modelValue')).toBeTruthy()
 		})
 
-		await wrapper.vm.$nextTick()
-		expect(firstBtn.element).toEqual(document.activeElement)
+		it('emits a cancel event when cancel button is clicked', async () => {
+			const wrapper = mount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
 
-		// The second button is disabled, so it should be ignored
-		await triggerTab()
-		expect(thirdBtn.element).toEqual(document.activeElement)
+			const modal = wrapper.getComponent(VCard)
 
-		// If we reach the end, we should go back to the beginning
-		await triggerTab()
-		await triggerTab()
-		expect(firstBtn.element).toEqual(document.activeElement)
+			const cancelBtn = modal.find('.vd-dialog-box-actions-ctn button')
+			await cancelBtn.trigger('click')
 
-		// If the shift key is pressed, we should go backwards
-		await triggerTab()
-		await triggerShiftTab()
-		expect(firstBtn.element).toEqual(document.activeElement)
-
-		// If we reach the beginning, we should go back to the end
-		await triggerShiftTab()
-		expect(modal.find('#link').element).toEqual(document.activeElement)
-	})
-
-	it('emits an event when close button is clicked', async () => {
-		const wrapper = mount(DialogBox, {
-			props: {
-				modelValue: true,
-			},
-			global: {
-				plugins: [vuetify],
-			},
+			expect(wrapper.emitted('cancel')).toBeTruthy()
 		})
 
-		const modal = wrapper.getComponent(VCard)
+		it('emits a confirm event when confirm button is clicked', async () => {
+			const wrapper = mount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
 
-		expect(wrapper.vm.$data.dialog).toBe(true)
+			const modal = wrapper.getComponent(VCard)
 
-		const closeBtn = modal.find('button')
-		await closeBtn.trigger('click')
+			const confirmBtn= modal.find('[data-test-id="confirm-btn"]')
+			await confirmBtn.trigger('click')
 
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
-	})
-
-	it('emits a cancel event when cancel button is clicked', async () => {
-		const wrapper = mount(DialogBox, {
-			props: {
-				modelValue: true,
-			},
-			global: {
-				plugins: [vuetify],
-			},
+			expect(wrapper.emitted('confirm')).toBeTruthy()
 		})
-
-		const modal = wrapper.getComponent(VCard)
-
-		const cancelBtn = modal.find('.vd-dialog-box-actions-ctn button')
-		await cancelBtn.trigger('click')
-
-		expect(wrapper.emitted('cancel')).toBeTruthy()
-	})
-
-	it('emits a confirm event when confirm button is clicked', async () => {
-		const wrapper = mount(DialogBox, {
-			props: {
-				modelValue: true,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const modal = wrapper.getComponent(VCard)
-
-		const confirmBtn= modal.find('[data-test-id="confirm-btn"]')
-		await confirmBtn.trigger('click')
-
-		expect(wrapper.emitted('confirm')).toBeTruthy()
 	})
 })
