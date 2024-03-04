@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import {mount, shallowMount} from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
@@ -229,6 +229,19 @@ describe('DialogBox', () => {
 			await confirmBtn.trigger('click')
 
 			expect(wrapper.emitted('confirm')).toBeTruthy()
+		})
+	})
+
+	describe('Test methods', () => {
+		it('getSelectableElements if this.$refs.dialogContent.$el is undefined', async () => {
+			const wrapper = shallowMount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
+			const result = await wrapper.vm.getSelectableElements()
+			expect(result).toEqual([])
 		})
 	})
 })

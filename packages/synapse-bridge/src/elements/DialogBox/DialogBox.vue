@@ -129,10 +129,11 @@
 							}
 						}
 					}
-
 					if (!this.dialog) {
 						removeEventListener('keydown', setFocus)
 						return
+					} else {
+						elements[0].focus()
 					}
 
 					elements[i].addEventListener('keydown', setFocus)
