@@ -61,9 +61,15 @@ describe("HeaderBar", () => {
 		expect(wrapper.vm.contentSheetHeight).toBe(72);
 	});
 
-	it('contentSheetHeight returns 52 when isMiniVersion is true and isMobileVersion is true', () => {
-		const wrapper = createWrapper({ miniVersion: true, mobileVersion: true});
+	it("contentSheetHeight returns 52 when isMiniVersion is true and isMobileVersion is true", () => {
+		const wrapper = createWrapper({ miniVersion: true, mobileVersion: true });
 		expect(wrapper.vm.contentSheetHeight).toBe(52);
+	});
+
+	it("contentSheetHeight returns 72 when isMiniVersion is false and sticky is true", () => {
+		const wrapper = createWrapper({ miniVersion: false, sticky: true});
+		wrapper.vm.scrolled = true;
+		expect(wrapper.vm.contentSheetHeight).toBe(72);
 	});
 
 	it("height returns 72 when isMobileVersion is true", () => {
@@ -243,7 +249,7 @@ describe("HeaderBar", () => {
 		wrapper.vm.onScroll({ currentTarget: window } as unknown as MouseEvent);
 		expect(wrapper.vm.scrolled).toBe(false);
 	});
-	
+
 	it('does not update scrolled property when currentTarget is not window', () => {
 		const wrapper = createWrapper();
 		Object.defineProperty(window, 'scrollY', { value: 100 });
