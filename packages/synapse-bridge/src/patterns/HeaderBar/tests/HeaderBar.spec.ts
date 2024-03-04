@@ -46,9 +46,40 @@ describe("HeaderBar", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it("returns 120 when isMiniVersion and isMobileVersion are false", () => {
-		const wrapper = createWrapper({ miniVersion: false, mobileVersion: false });
+	it('contentSheetHeight returns 52 when isMiniVersion', () => {
+		const wrapper = createWrapper({ miniVersion: true });
+		expect(wrapper.vm.contentSheetHeight).toBe(52);
+	});
+
+	it("contentSheetHeight returns 120 when isMiniVersion is false", () => {
+		const wrapper = createWrapper({ miniVersion: false });
 		expect(wrapper.vm.contentSheetHeight).toBe(120);
+	});
+
+	it('contentSheetHeight returns 72 when isMiniVersion is false and isMobileVersion is true', () => {
+		const wrapper = createWrapper({ miniVersion: false, mobileVersion: true});
+		expect(wrapper.vm.contentSheetHeight).toBe(72);
+	});
+
+	it('contentSheetHeight returns 52 when isMiniVersion is true and isMobileVersion is true', () => {
+		const wrapper = createWrapper({ miniVersion: true, mobileVersion: true});
+		expect(wrapper.vm.contentSheetHeight).toBe(52);
+	});
+
+	it("height returns 72 when isMobileVersion is true", () => {
+		const wrapper = createWrapper({ mobileVersion: true });
+		expect(wrapper.vm.height).toBe(72);
+	});
+
+	it("height returns 120 when isMobileVersion is false", () => {
+		const wrapper = createWrapper({ mobileVersion: false });
+		expect(wrapper.vm.height).toBe(120);
+	});
+
+	it("height returns 168", () => {
+		const wrapper = createWrapper();
+		wrapper.setData({ scrolled: true, showStickyNavBar: true, showHeaderMenuBtn: false, hasNavigationItems: true });
+		expect(wrapper.vm.height).toBe(168);
 	});
 
 	it("renders correctly with theme", () => {
@@ -66,16 +97,11 @@ describe("HeaderBar", () => {
 		expect(wrapper.vm.fullHeight).toBe(120);
 	});
 
-	it("showNavigationBar is true and isMobileVersion is false", () => {
-		const wrapper = createWrapper({ showNavigationBar: true, mobileVersion: false });
-		expect(wrapper.vm.fullHeight).toBe(120);
+	it("fullHeight returns 168 if sticky + nav", () => {
+		const wrapper = createWrapper();
+		wrapper.setData({ scrolled: true, showStickyNavBar: true, showHeaderMenuBtn: false, hasNavigationItems: true });
+		expect(wrapper.vm.fullHeight).toBe(168);
 	});
-
-	it("showNavigationBar is false and isMobileVersion is false", () => {
-		const wrapper = createWrapper({ showNavigationBar: false, mobileVersion: false });
-		expect(wrapper.vm.fullHeight).toBe(120);
-	});
-
 
 	it("renders correctly with title and subtitle", () => {
 		const wrapper = createWrapper({ serviceTitle: "Title", serviceSubTitle: "Subtitle" });
@@ -215,6 +241,14 @@ describe("HeaderBar", () => {
 		Object.defineProperty(window, 'scrollY', { value: 40 });
 		wrapper.setData({ sticky: true, height: 50 });
 		wrapper.vm.onScroll({ currentTarget: window } as unknown as MouseEvent);
+		expect(wrapper.vm.scrolled).toBe(false);
+	});
+	
+	it('does not update scrolled property when currentTarget is not window', () => {
+		const wrapper = createWrapper();
+		Object.defineProperty(window, 'scrollY', { value: 100 });
+		wrapper.setData({ sticky: true, height: 50 });
+		wrapper.vm.onScroll({ currentTarget: document } as unknown as MouseEvent);
 		expect(wrapper.vm.scrolled).toBe(false);
 	});
 
