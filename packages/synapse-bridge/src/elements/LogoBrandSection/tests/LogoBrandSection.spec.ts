@@ -4,7 +4,6 @@ import { mount } from "@vue/test-utils";
 import LogoBrandSection from "../";
 import { ThemeEnum } from "@/constants/enums/ThemeEnum";
 import { vuetify } from '@tests/unit/setup'
-import {getCurrentInstance} from "vue";
 
 describe("LogoBrandSection", () => {
 	it("renders correctly", () => {

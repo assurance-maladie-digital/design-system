@@ -193,8 +193,8 @@ export default defineComponent({
 
 						<HeaderMenuBtn
 							v-if="showHeaderMenuBtn"
-							:vuetify-options="options.menuBtn"
 							@click="updateDrawer(!drawer)"
+							:vuetify-options="options.menuBtn"
 						/>
 					</VSheet>
 				</VSheet>

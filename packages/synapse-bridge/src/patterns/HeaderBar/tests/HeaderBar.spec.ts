@@ -31,7 +31,14 @@ describe("HeaderBar", () => {
 
 	it("renders correctly with mini version", () => {
 		const wrapper = createWrapper({ miniVersion: true });
+		expect(wrapper.vm.isMiniVersion).toBe(true);
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	it("renders correctly with mini version and sticky", () => {
+		const wrapper = createWrapper({ sticky: true, miniVersion: false});
+		wrapper.vm.scrolled = true;
+		expect(wrapper.vm.isMiniVersion).toBe(true);
 	});
 
 	it("renders correctly with target", () => {
@@ -110,7 +117,6 @@ describe("HeaderBar", () => {
 		wrapper.vm.scrolled = true;
 		expect(wrapper).toMatchSnapshot();
 	});
-
 
 	it("returns true when scrolled is true, showStickyNavBar is true, showHeaderMenuBtn is false, and hasNavigationItems is true", () => {
 		const wrapper = createWrapper();
@@ -223,6 +229,28 @@ describe("HeaderBar", () => {
 		expect(wrapper.vm.targetSelector).toBe(`#${targetId}`);
 	});
 
+	it("renders correctly with spacingClass computed", () => {
+		const wrapper = createWrapper();
+		expect(wrapper.vm.spacingClass).toBe("px-14 py-7");
+	});
+
+	it("renders correctly with spacingClass computed with sticky", () => {
+		const wrapper = createWrapper({ sticky: true });
+		wrapper.vm.scrolled = true;
+		expect(wrapper.vm.spacingClass).toBe("px-14 py-1");
+	});
+
+	it("renders correctly with spacingClass computed with sticky and mobile version", () => {
+		const wrapper = createWrapper({ sticky: true, mobileVersion: true });
+		wrapper.vm.scrolled = true;
+		expect(wrapper.vm.spacingClass).toBe("px-4 py-1");
+	});
+
+	it("renders correctly with spacingClass computed with mobile version", () => {
+		const wrapper = createWrapper({ mobileVersion: true });
+		expect(wrapper.vm.spacingClass).toBe("pa-4");
+	});
+
 	it('render correctly with showHeaderMenuBtn computed property', () => {
 		const wrapper = createWrapper();
 		expect(wrapper.vm.showHeaderMenuBtn).toBe(false);
@@ -239,18 +267,25 @@ describe("HeaderBar", () => {
 			global: {
 				plugins: [vuetify],
 			},
-			propsData: {
-				showNavBarMenuBtn: true,
+			props: {
+				showNavBarMenuBtn: false,
 				mobileVersion: true,
 				navigationItems: [
 					{ label: "Item 1", href: "#" },
 					{ label: "Item 2", href: "#" },
 				],
+				vuetifyOptions: {
+					menuBtn: {
+						color: "secondary",
+					}
+				}
 			},
 		})
 
 		const headerMenuBtn = wrapper.findComponent(HeaderMenuBtn);
 		await headerMenuBtn.trigger('click');
+
+		expect(wrapper.vm.showHeaderMenuBtn).toBe(true);
 		expect(wrapper.vm.drawer).toBe(true);
 	});
 });
