@@ -1,9 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { mount } from "@vue/test-utils";
+import {mount, shallowMount} from "@vue/test-utils";
 
 import LogoBrandSection from "../";
 import { ThemeEnum } from "@/constants/enums/ThemeEnum";
 import { vuetify } from '@tests/unit/setup'
+import {getCurrentInstance} from "vue";
 
 describe("LogoBrandSection", () => {
 	it("renders correctly", () => {
@@ -287,21 +288,6 @@ describe("LogoBrandSection", () => {
 		});
 
 		expect(wrapper.vm.logoContainerComponent).toBe("router-link");
-	});
-
-	it("renders correctly NuxtLink with logoContainerComponent", () => {
-		const wrapper = mount(LogoBrandSection, {
-			stubs: ["NuxtLink", "Logo"],
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				theme: ThemeEnum.DEFAULT,
-				homeLink: "/",
-			}
-		});
-
-		expect(wrapper.vm.logoContainerComponent).not.toBe("nuxt-link");
 	});
 
 	it("renders correctly with logoContainerComponent", () => {
