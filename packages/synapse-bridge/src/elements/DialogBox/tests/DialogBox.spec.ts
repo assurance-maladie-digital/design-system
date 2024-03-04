@@ -225,7 +225,7 @@ describe('DialogBox', () => {
 
 		const modal = wrapper.getComponent(VCard)
 
-		const confirmBtn = modal.find('.vd-dialog-box-actions-ctn button:last-child')
+		const confirmBtn= modal.find('[data-test-id="confirm-btn"]')
 		await confirmBtn.trigger('click')
 
 		expect(wrapper.emitted('confirm')).toBeTruthy()

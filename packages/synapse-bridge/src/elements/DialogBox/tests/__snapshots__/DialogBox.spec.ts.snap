@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`DialogBox > is closed when model value is false 1`] = ``;
+
 exports[`DialogBox > it closed when model value is false 1`] = ``;
 
 exports[`DialogBox > renders correctly with props 1`] = `

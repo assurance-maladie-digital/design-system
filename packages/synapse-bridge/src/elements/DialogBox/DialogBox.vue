@@ -203,6 +203,7 @@
 
 					<VBtn
 						v-bind="options.confirmBtn"
+						data-test-id="confirm-btn"
 						@click="$emit('confirm')"
 					>
 						{{ confirmBtnText }}
