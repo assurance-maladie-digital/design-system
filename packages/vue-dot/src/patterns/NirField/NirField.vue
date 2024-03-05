@@ -1,9 +1,9 @@
 <template>
 	<div
-		class="vd-nir-field d-flex align-start"
 		:class="{
 			'vd-nir-field--outlined': $attrs.hasOwnProperty('outlined'),
 		}"
+		class="vd-nir-field"
 	>
 		<VInput
 			:value="[computedNumberValue, keyValue]"
@@ -19,23 +19,14 @@
 				:label="locales.numberLabel"
 				:hint="locales.numberHint"
 				:success="numberFilled"
-				:hide-details="errors.length > 0"
 				:error="numberErrors.length > 0"
 				:aria-invalid="numberErrors.length > 0"
-				:aria-errormessage="numberErrors.length > 0 ? 'number-field-errors' : undefined"
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@input.native="setNumberValue"
 				@change="validateNumberValue"
 				@blur="validateNumberValue"
 			/>
-
-			<div
-				id="number-field-errors"
-				class="d-sr-only"
-			>
-				{{ keyErrors.join(' ') }}
-			</div>
 
 			<template v-if="!isSingleField">
 				<VTextField
@@ -46,23 +37,14 @@
 					:label="locales.keyLabel"
 					:hint="locales.keyHint"
 					:success="keyFilled"
-					:hide-details="errors.length > 0"
 					:error="keyErrors.length > 0"
 					:aria-invalid="keyErrors.length > 0"
-					:aria-errormessage="(keyErrors.length > 0 ? 'key-field-errors' : undefined)"
 					class="vd-key-field flex-grow-0"
 					@keyup.delete="focusNumberField"
 					@input.native="setKeyValue"
 					@change="validateKeyValue"
 					@blur="validateKeyValue"
 				/>
-
-				<div
-					id="key-field-errors"
-					class="d-sr-only"
-				>
-					{{ numberErrors.join(' ') }}
-				</div>
 			</template>
 
 			<VTooltip
@@ -73,7 +55,7 @@
 				<template #activator="{ on, attrs }">
 					<VIcon
 						v-bind="attrs"
-						class="vd-tooltip-icon mt-4 ml-0 ml-sm-2"
+						class="vd-tooltip-icon mt-4 ml-2"
 						v-on="on"
 					>
 						{{ infoIcon }}
@@ -165,6 +147,7 @@
 					}
 
 					this.validateNumberValue();
+
 					if (!this.isSingleField) {
 						this.validateKeyValue();
 					}
@@ -201,9 +184,6 @@
 			return this.numberValue?.length === NUMBER_LENGTH;
 		}
 
-		/**
-		 * Generate the validation rules for the number field
-		 */
 		get numberRules(): ValidationRule[] {
 			const rulesNumber = [];
 
@@ -228,9 +208,6 @@
 			return this.keyValue?.length === KEY_LENGTH;
 		}
 
-		/**
-		 * Generate the validation rules for the key field
-		 */
 		get keyRules(): ValidationRule[] {
 			const rulesKey = [];
 
@@ -247,9 +224,6 @@
 			return rulesKey;
 		}
 
-		/**
-		 * Execute the validation rules for the number field
-		 */
 		validateNumberValue(): void {
 			const newNumberErrors = [];
 
@@ -266,9 +240,6 @@
 			this.emitChangeEvent();
 		}
 
-		/**
-		 * Execute the validation rules for the key field
-		 */
 		validateKeyValue(): void {
 			const newKeyErrors = [];
 
@@ -351,8 +322,6 @@
 </script>
 
 <style lang="scss" scoped>
-	@import 'vuetify/src/components/VTextField/variables';
-
 	.vd-number-field {
 		width: 296px;
 	}
@@ -363,49 +332,18 @@
 
 	// Don't allow resize for these elements
 	.vd-nir-field :deep(.v-input__append-inner),
+	.vd-number-field,
 	.vd-key-field,
 	.vd-tooltip-icon {
 		flex: none;
 	}
 
-	::v-deep .v-messages__message {
-		margin-bottom: 4px;
+	:deep(.v-messages__message + .v-messages__message) {
+		margin-top: 4px;
 	}
 
-	.vd-nir-field--outlined ::v-deep .v-messages.error--text {
-		padding: $text-field-enclosed-details-padding;
+	:deep(.v-input__slot) {
+		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
-
-	.vd-nir-field {
-		container-type: inline-size;
-		container-name: nirFieldwrapper;
-	}
-
-	@mixin responsive-nir-wrapper {
-		.vd-nir-field__fields-wrapper ::v-deep > * > .v-input__slot {
-			justify-content: space-between;
-			flex-wrap: wrap;
-			gap: 4px;
-			margin-bottom: 4px;
-
-			.vd-number-field {
-				flex: 100% 0 0;
-			}
-
-			.vd-tooltip-icon {
-				float: end;
-				margin-left: auto;
-			}
-		}
-	}
-
-	@container nirFieldwrapper (max-width: 300px) {
-		@include responsive-nir-wrapper;
-	}
-
-	/* fallback for IE11 */
-	@media screen and (max-width: 360px) {
-		@include responsive-nir-wrapper;
-	}
-
 </style>

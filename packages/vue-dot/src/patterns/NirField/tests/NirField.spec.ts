@@ -15,40 +15,27 @@ describe('NirField', () => {
 	});
 
 	it('renders correctly with 13 characters', () => {
-		wrapper = mountComponent(
-			NirField,
-			{
-				propsData: {
-					nirLength: 13
-				}
-			},
-			true
-		);
+		wrapper = mountComponent(NirField, {
+			propsData: {
+				nirLength: 13
+			}
+		}, true);
 
 		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('renders correctly with a tooltip', () => {
-		wrapper = mountComponent(
-			NirField,
-			{
-				propsData: {
-					tooltip: 'Information sur le NIR'
-				}
-			},
-			true
-		);
+		wrapper = mountComponent(NirField, {
+			propsData: {
+				tooltip: 'Information sur le NIR'
+			}
+		}, true);
 
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('Displays an error message when the fields are not totaly filled', async() => {
-		wrapper = mountComponent(
-			NirField,
-			{
-			},
-			true
-		);
+	it('displays an error message when the fields are not totally filled', async() => {
+		wrapper = mountComponent(NirField, undefined, true);
 
 		document.getSelection = jest.fn(() => null);
 

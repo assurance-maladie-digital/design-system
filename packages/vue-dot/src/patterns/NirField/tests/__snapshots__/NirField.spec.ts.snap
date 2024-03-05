@@ -1,29 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NirField Displays an error message when the fields are not totaly filled 1`] = `
-<div class="vd-nir-field d-flex align-start">
+exports[`NirField displays an error message when the fields are not totally filled 1`] = `
+<div class="vd-nir-field">
   <div class="v-input vd-nir-field__fields-wrapper v-input--has-state v-input--is-label-active v-input--is-dirty theme--light error--text">
     <div class="v-input__control">
       <div class="v-input__slot">
-        <div class="v-input vd-number-field flex-grow-0 mr-2 mr-sm-4 v-input--has-state v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field error--text">
+        <div class="v-input vd-number-field flex-grow-0 mr-2 mr-sm-4 v-input--has-state v-input--is-label-active v-input--is-dirty theme--light v-text-field error--text">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-35" class="v-label v-label--active theme--light error--text" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-35" type="text" aria-invalid="true" aria-errormessage="number-field-errors"></div>
+              <div class="v-text-field__slot"><label for="input-35" class="v-label v-label--active theme--light error--text" style="left: 0px; position: absolute;">Numéro de sécurité sociale</label><input icon="[object Object]" tooltip="[object Object]" id="input-35" type="text" aria-invalid="true"></div>
+            </div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light">
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+                  <div class="v-messages__message">13 caractères</div>
+                </transition-group-stub>
+              </div>
             </div>
           </div>
         </div>
-        <div id="number-field-errors" class="d-sr-only">
-          La longueur de la clé doit être de 2 caractères.
-        </div>
-        <div class="v-input vd-key-field flex-grow-0 v-input--has-state v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field error--text">
+        <div class="v-input vd-key-field flex-grow-0 v-input--has-state v-input--is-label-active v-input--is-dirty theme--light v-text-field error--text">
           <div class="v-input__control">
             <div class="v-input__slot">
-              <div class="v-text-field__slot"><label for="input-38" class="v-label v-label--active theme--light error--text" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-38" type="text" aria-invalid="true" aria-errormessage="key-field-errors"></div>
+              <div class="v-text-field__slot"><label for="input-38" class="v-label v-label--active theme--light error--text" style="left: 0px; position: absolute;">Clé</label><input icon="[object Object]" tooltip="[object Object]" id="input-38" type="text" aria-invalid="true"></div>
+            </div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--light">
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
+                  <div class="v-messages__message">2 chiffres</div>
+                </transition-group-stub>
+              </div>
             </div>
           </div>
-        </div>
-        <div id="key-field-errors" class="d-sr-only">
-          La longueur du numéro de sécurité social doit être de 13 caractères.
         </div>
         <!---->
       </div>
@@ -39,7 +47,7 @@ exports[`NirField Displays an error message when the fields are not totaly fille
 `;
 
 exports[`NirField renders correctly 1`] = `
-<div class="vd-nir-field d-flex align-start">
+<div class="vd-nir-field">
   <div class="v-input vd-nir-field__fields-wrapper v-input--is-label-active v-input--is-dirty theme--light">
     <div class="v-input__control">
       <div class="v-input__slot">
@@ -57,9 +65,6 @@ exports[`NirField renders correctly 1`] = `
             </div>
           </div>
         </div>
-        <div id="number-field-errors" class="d-sr-only">
-
-        </div>
         <div class="v-input vd-key-field flex-grow-0 theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
@@ -74,9 +79,6 @@ exports[`NirField renders correctly 1`] = `
             </div>
           </div>
         </div>
-        <div id="key-field-errors" class="d-sr-only">
-
-        </div>
         <!---->
       </div>
       <div class="v-messages theme--light">
@@ -88,7 +90,7 @@ exports[`NirField renders correctly 1`] = `
 `;
 
 exports[`NirField renders correctly with 13 characters 1`] = `
-<div class="vd-nir-field d-flex align-start">
+<div class="vd-nir-field">
   <div class="v-input vd-nir-field__fields-wrapper v-input--is-label-active v-input--is-dirty theme--light">
     <div class="v-input__control">
       <div class="v-input__slot">
@@ -106,9 +108,6 @@ exports[`NirField renders correctly with 13 characters 1`] = `
             </div>
           </div>
         </div>
-        <div id="number-field-errors" class="d-sr-only">
-
-        </div>
         <!---->
         <!---->
       </div>
@@ -121,7 +120,7 @@ exports[`NirField renders correctly with 13 characters 1`] = `
 `;
 
 exports[`NirField renders correctly with a tooltip 1`] = `
-<div class="vd-nir-field d-flex align-start">
+<div class="vd-nir-field">
   <div class="v-input vd-nir-field__fields-wrapper v-input--is-label-active v-input--is-dirty theme--light">
     <div class="v-input__control">
       <div class="v-input__slot">
@@ -139,9 +138,6 @@ exports[`NirField renders correctly with a tooltip 1`] = `
             </div>
           </div>
         </div>
-        <div id="number-field-errors" class="d-sr-only">
-
-        </div>
         <div class="v-input vd-key-field flex-grow-0 theme--light v-text-field">
           <div class="v-input__control">
             <div class="v-input__slot">
@@ -155,10 +151,7 @@ exports[`NirField renders correctly with a tooltip 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div id="key-field-errors" class="d-sr-only">
-
-        </div> <span class="v-tooltip vd-tooltip v-tooltip--top"><!----><span aria-hidden="true" aria-haspopup="true" aria-expanded="false" class="v-icon notranslate vd-tooltip-icon mt-4 ml-0 ml-sm-2 theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span>
+        </div> <span class="v-tooltip vd-tooltip v-tooltip--top"><!----><span aria-hidden="true" aria-haspopup="true" aria-expanded="false" class="v-icon notranslate vd-tooltip-icon mt-4 ml-2 theme--light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"></path></svg></span></span>
       </div>
       <div class="v-messages theme--light">
         <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
