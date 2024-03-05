@@ -23,7 +23,7 @@
 				:class="{ 'error--text': error }"
 				:aria-selected="isSelected(item.value)"
 				role="option"
-				:aria-disabled="readonly"
+				:aria-readonly="readonly"
 				@click="toggleItem(item)"
 			>
 				<span class="text-body-1">
