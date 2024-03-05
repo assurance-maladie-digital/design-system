@@ -19,7 +19,21 @@ describe('ErrorPage', () => {
 		expect(wrapper.html()).toMatchSnapshot()
 	})
 
-	// mobile version
+	it('renders correctly with undefined route', () => {
+		const wrapper = mount(ErrorPage, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				pageTitle: 'Error',
+				message: 'Error message',
+				btnHref: 'https://google.com',
+			},
+		})
+
+		expect(wrapper.html()).toMatchSnapshot()
+	})
+
 	it('renders correctly on mobile', () => {
 		const wrapper = mount(ErrorPage, {
 			global: {
