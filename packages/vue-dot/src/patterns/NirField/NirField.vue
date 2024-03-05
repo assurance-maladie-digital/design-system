@@ -1,72 +1,72 @@
 <template>
-	<div class="vd-nir-field d-flex align-start mx-n1 mx-sm-n2">
-		<VTextField
-			ref="number"
-			v-facade="numberMask"
-			v-bind="textFieldOptions"
-			:value="computedNumberValue"
-			:label="locales.numberLabel"
-			:hint="locales.numberHint"
-			:rules="numberRules"
-			:success="numberFilled"
-			class="vd-number-field flex-grow-0 mx-1 mx-sm-2"
-			@keydown="focusKeyField"
-			@input.native="setNumberValue"
-			@change="emitChangeEvent"
+	<div
+		:class="{
+			'vd-nir-field--outlined': $attrs.hasOwnProperty('outlined'),
+		}"
+		class="vd-nir-field"
+	>
+		<VInput
+			:value="[computedNumberValue, keyValue]"
+			:error-count="5"
+			:rules="errors"
+			class="vd-nir-field__fields-wrapper"
 		>
-			<template #append>
-				<VIcon
-					v-if="numberFilled"
-					v-bind="options.icon"
-				>
-					{{ checkIcon }}
-				</VIcon>
-			</template>
-		</VTextField>
+			<VTextField
+				ref="numberField"
+				v-facade="numberMask"
+				v-bind="textFieldOptions"
+				:value="computedNumberValue"
+				:label="locales.numberLabel"
+				:hint="locales.numberHint"
+				:success="numberFilled"
+				:error="numberErrors.length > 0"
+				:aria-invalid="numberErrors.length > 0"
+				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
+				@keydown="focusKeyField"
+				@input.native="setNumberValue"
+				@change="validateNumberValue"
+				@blur="validateNumberValue"
+			/>
 
-		<VTextField
-			v-if="!isSingleField"
-			ref="key"
-			v-facade="keyMask"
-			v-bind="textFieldOptions"
-			:value="keyValue"
-			:label="locales.keyLabel"
-			:hint="locales.keyHint"
-			:rules="keyRules"
-			:success="keyFilled"
-			class="vd-key-field flex-grow-0 mx-1 mx-sm-2"
-			@keyup.delete="focusNumberField"
-			@input.native="setKeyValue"
-			@change="emitChangeEvent"
-		>
-			<template #append>
-				<VIcon
-					v-if="keyFilled"
-					v-bind="options.icon"
-				>
-					{{ checkIcon }}
-				</VIcon>
-			</template>
-		</VTextField>
-
-		<VTooltip
-			v-if="tooltip"
-			v-bind="options.tooltip"
-		>
-			<template #activator="{ on, attrs }">
-				<VIcon
-					v-bind="attrs"
-					class="vd-tooltip-icon mt-4 ml-0 ml-sm-2"
-					v-on="on"
-				>
-					{{ infoIcon }}
-				</VIcon>
+			<template v-if="!isSingleField">
+				<VTextField
+					ref="keyField"
+					v-facade="keyMask"
+					v-bind="textFieldOptions"
+					:value="keyValue"
+					:label="locales.keyLabel"
+					:hint="locales.keyHint"
+					:success="keyFilled"
+					:error="keyErrors.length > 0"
+					:aria-invalid="keyErrors.length > 0"
+					class="vd-key-field flex-grow-0"
+					@keyup.delete="focusNumberField"
+					@input.native="setKeyValue"
+					@change="validateKeyValue"
+					@blur="validateKeyValue"
+				/>
 			</template>
 
-			<slot name="tooltip">
-				{{ tooltip }}
-			</slot>
-		</VTooltip>
+			<VTooltip
+				v-if="tooltip"
+				v-bind="options.tooltip"
+				class="vd-tooltip"
+			>
+				<template #activator="{ on, attrs }">
+					<VIcon
+						v-bind="attrs"
+						class="vd-tooltip-icon mt-4 ml-2"
+						v-on="on"
+					>
+						{{ infoIcon }}
+					</VIcon>
+				</template>
+
+				<slot name="tooltip">
+					{{ tooltip }}
+				</slot>
+			</VTooltip>
+		</VInput>
 	</div>
 </template>
 
@@ -80,7 +80,7 @@
 
 	import { customizable, Options } from '../../mixins/customizable';
 
-	import { required } from '../../rules/required';
+	import { requiredFn } from '../../rules/required';
 	import { exactLength } from '../../rules/exactLength';
 	import { ValidationRule } from '../../rules/types';
 
@@ -145,6 +145,12 @@
 						this.numberValue = value.slice(0, -KEY_LENGTH);
 						this.keyValue = value.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH);
 					}
+
+					this.validateNumberValue();
+
+					if (!this.isSingleField) {
+						this.validateKeyValue();
+					}
 				},
 				immediate: true
 			}
@@ -152,8 +158,8 @@
 	})
 	export default class NirField extends MixinsDeclaration {
 		$refs!: Refs<{
-			number: HTMLElement;
-			key: HTMLElement;
+			numberField: HTMLElement;
+			keyField: HTMLElement;
 		}>;
 
 		locales = locales;
@@ -167,6 +173,9 @@
 		numberMask = '# ## ## #X ### ###';
 		keyMask = '##';
 
+		numberErrors: string[] = [];
+		keyErrors: string[] = [];
+
 		get textFieldOptions(): Options {
 			return deepMerge<Options>(config, this.$attrs);
 		}
@@ -179,10 +188,14 @@
 			const rulesNumber = [];
 
 			if (this.required) {
-				rulesNumber.push(required);
+				rulesNumber.push(
+					requiredFn({ default: locales.errorRequiredNumber })
+				);
 			}
 
-			rulesNumber.push(exactLength(NUMBER_LENGTH, true));
+			rulesNumber.push(exactLength(NUMBER_LENGTH, true, {
+				default: locales.errorLengthNumber
+			}));
 
 			return rulesNumber;
 		}
@@ -199,12 +212,52 @@
 			const rulesKey = [];
 
 			if (this.required) {
-				rulesKey.push(required);
+				rulesKey.push(
+					requiredFn({ default: locales.errorRequiredKey })
+				);
 			}
 
-			rulesKey.push(exactLength(KEY_LENGTH, true));
+			rulesKey.push(exactLength(KEY_LENGTH, true, {
+				default: locales.errorLengthKey
+			}));
 
 			return rulesKey;
+		}
+
+		validateNumberValue(): void {
+			const newNumberErrors = [];
+
+			for (const rule of this.numberRules) {
+				const error = rule(this.numberValue);
+
+				if (error && typeof error === 'string') {
+					newNumberErrors.push(error);
+				}
+			}
+
+			this.numberErrors = newNumberErrors as string[];
+
+			this.emitChangeEvent();
+		}
+
+		validateKeyValue(): void {
+			const newKeyErrors = [];
+
+			for (const rule of this.keyRules) {
+				const error = rule(this.keyValue);
+
+				if (error && typeof error === 'string') {
+					newKeyErrors.push(error);
+				}
+			}
+
+			this.keyErrors = newKeyErrors as string[];
+
+			this.emitChangeEvent();
+		}
+
+		get errors(): string[] {
+			return [...this.numberErrors, ...this.keyErrors];
 		}
 
 		setKeyValue(event: InputFacadeEvent): void {
@@ -247,7 +300,7 @@
 				return;
 			}
 
-			this.$refs.key.focus();
+			this.$refs.keyField.focus();
 		}
 
 		focusNumberField(): void {
@@ -255,7 +308,7 @@
 				return;
 			}
 
-			this.$refs.number.focus();
+			this.$refs.numberField.focus();
 		}
 
 		emitChangeEvent(): void {
@@ -279,8 +332,18 @@
 
 	// Don't allow resize for these elements
 	.vd-nir-field :deep(.v-input__append-inner),
+	.vd-number-field,
 	.vd-key-field,
 	.vd-tooltip-icon {
 		flex: none;
+	}
+
+	:deep(.v-messages__message + .v-messages__message) {
+		margin-top: 4px;
+	}
+
+	:deep(.v-input__slot) {
+		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
 </style>
