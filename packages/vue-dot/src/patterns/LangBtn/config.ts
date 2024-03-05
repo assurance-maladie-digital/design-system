@@ -3,7 +3,7 @@ export const config = {
 		offsetY: true
 	},
 	btn: {
-		color: 'currentColor',
+		color: 'primary',
 		depressed: true,
 		outlined: true,
 		ripple: true
