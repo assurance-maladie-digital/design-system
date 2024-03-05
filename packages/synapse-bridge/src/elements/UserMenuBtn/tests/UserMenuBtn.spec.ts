@@ -3,7 +3,6 @@ import { shallowMount, mount } from '@vue/test-utils';
 import { vuetify } from '@tests/unit/setup';
 
 import UserMenuBtn from '../';
-import {fail} from "assert";
 
 describe('UserMenuBtn', () => {
 	it("renders correctly with props", () => {
@@ -171,22 +170,17 @@ describe('UserMenuBtn', () => {
 		expect(wrapper.find(".menu").exists()).toBe(false);
 	});
 
-	// it("emits logout event", async () => {
-	// 	const wrapper = mount(UserMenuBtn, {
-	// 		props: {
-	// 			fullName: "Firstname Lastname",
-	// 		},
-	// 		global: {
-	// 			plugins: [vuetify],
-	// 		},
-	// 	});
-	//
-	// 	// Open the popup
-	// 	await wrapper.find(".v-btn").trigger("click");
-	//
-	// 	// Click on the logout button
-	// 	await wrapper.find(".v-list-item").trigger("click");
-	//
-	// 	expect(wrapper.emitted()).toHaveProperty("logout");
-	// });
+	it("renders the logout emit event correctly", () => {
+		const wrapper = mount(UserMenuBtn, {
+			props: {
+				fullName: "Firstname Lastname",
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		wrapper.vm.$emit("logout");
+		expect(wrapper.emitted("logout")).toBeTruthy();
+	});
 });
