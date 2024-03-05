@@ -92,12 +92,14 @@
 		get toPickerOptions(): Options {
 			const { to } = this.datePickerOptions;
 
-			to.textField = {
+			const textField = {
 				...to.textField,
 				errorMessages: this.errorMessages
 			};
 
-			return to;
+			return Object.assign({}, to, {
+				textField
+			});
 		}
 
 		async dateUpdated(): Promise<void> {
