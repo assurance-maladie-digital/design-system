@@ -208,6 +208,7 @@
 			if (this.readonly) {
 				return;
 			}
+
 			const newValue = this.getNewValue(item);
 
 			this.internalValue = newValue;

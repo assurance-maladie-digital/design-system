@@ -57,7 +57,8 @@ export const api: Api = {
 				type: 'string[]',
 				default: 'undefined',
 				description: 'Les messages d’erreur à afficher.'
-			},{
+			},
+			{
 				name: 'readonly',
 				type: 'boolean',
 				default: false,
