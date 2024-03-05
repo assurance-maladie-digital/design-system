@@ -52,7 +52,7 @@
 		},
 		created() {
 			if (this.btnHref) {
-				this.route = undefined;
+				this.route = undefined
 			}
 		},
 		computed: {
@@ -105,7 +105,6 @@
 						>
 							{{ btnText }}
 						</VBtn>
-
 					</slot>
 				</VCol>
 
