@@ -128,12 +128,17 @@
 		inheritAttrs: false,
 		model: {
 			prop: 'value',
-			event: 'change'
+			event: 'input'
 		},
 		watch: {
 			value: {
 				handler(value: string | null) {
 					if (!value) {
+						this.numberValue = null;
+						this.keyValue = null;
+						this.numberErrors = [];
+						this.keyErrors = [];
+
 						return;
 					}
 
@@ -144,12 +149,6 @@
 					if (this.value.length === FieldTypesEnum.DOUBLE) {
 						this.numberValue = value.slice(0, -KEY_LENGTH);
 						this.keyValue = value.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH);
-					}
-
-					this.validateNumberValue();
-
-					if (!this.isSingleField) {
-						this.validateKeyValue();
 					}
 				},
 				immediate: true
@@ -202,6 +201,7 @@
 
 		setNumberValue(event: InputFacadeEvent): void {
 			this.numberValue = event.target?.unmaskedValue ?? null;
+			this.emitInputEvent();
 		}
 
 		get keyFilled(): boolean {
@@ -262,6 +262,7 @@
 
 		setKeyValue(event: InputFacadeEvent): void {
 			this.keyValue = event.target?.unmaskedValue ?? null;
+			this.emitInputEvent();
 		}
 
 		get computedNumberValue(): string | null {
@@ -278,6 +279,13 @@
 			}
 
 			return this.numberValue as string + this.keyValue as string;
+		}
+
+		get rawInternalValue(): string | null {
+			const numberValue = this.numberValue ?? '';
+			const keyValue = this.keyValue ?? '';
+
+			return numberValue + keyValue;
 		}
 
 		get isSingleField(): boolean {
@@ -317,6 +325,10 @@
 			}
 
 			this.$emit('change', this.internalValue);
+		}
+
+		emitInputEvent(): void {
+			this.$emit('input', this.rawInternalValue);
 		}
 	}
 </script>

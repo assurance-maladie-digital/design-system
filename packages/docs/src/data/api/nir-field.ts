@@ -37,8 +37,13 @@ export const api: Api = {
 		],
 		events: [
 			{
-				name: 'change',
+				name: 'input',
 				description: 'Événement émis lorsque la valeur est mise à jour.',
+				value: 'string'
+			},
+			{
+				name: 'change',
+				description: 'Événement émis lorsque tous les champs sont complétés.',
 				value: 'string'
 			}
 		]
