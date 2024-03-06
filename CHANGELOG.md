@@ -1,3 +1,48 @@
+## v2.15.1
+
+**Version publiée le 06/03/2024.**
+
+Cette version comporte des correctifs sur Vue Dot et la complétion de la documentation.
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **NirField:** Correction de l'affichage des erreurs pour la clé de validation et suppression des icônes de validation ([#3302](https://github.com/assurance-maladie-digital/design-system/pull/3302))
+  - **NirField:** Mise à jour de la valeur bind par le `v-model avant la complétion du champ ([#3410](https://github.com/assurance-maladie-digital/design-system/pull/3410))
+  - **LangBtn:** Correction d'un bug d'affichage du champ si la valeur est mise à jour de manière externe  ([#3386](https://github.com/assurance-maladie-digital/design-system/pull/3386))
+  - **PeriodField:** Correction d'un problème de réactivité qui empêchait l'erreur de s'afficher quand la date de fin est ultérieur à la date de début. ([#3387](https://github.com/assurance-maladie-digital/design-system/pull/3387))
+  - **UserMenuBtn:** Correction de la couleur des informations additionnelles ([#3391](https://github.com/assurance-maladie-digital/design-system/pull/3391))
+  - **SelectBtnField:** Ajout d'une props `readonly` au composant ([#3412](https://github.com/assurance-maladie-digital/design-system/pull/3412))
+  - **UploadWorkflow:** Ajout d'une props `show-view-btn` au composant pour visualiser un fichier sélectionné ([#3376](https://github.com/assurance-maladie-digital/design-system/pull/3376))
+  - **UploadWorkflow:** Correction d'un bug sur le mode sélection libre ([#3353](https://github.com/assurance-maladie-digital/design-system/pull/3353))
+  - **AlertWrapper:** Correction de l'icône alert et de l'affichage su slot ([#3373](https://github.com/assurance-maladie-digital/design-system/pull/3373))
+  - **ExernalLinks:** Permettre l'ajout de textes longs dans les liens ([#3369](https://github.com/assurance-maladie-digital/design-system/pull/3369))
+  - **DatePicker:** Correction du format de retour du DatePicker ([#3363](https://github.com/assurance-maladie-digital/design-system/issues/3233))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **SelectBtnField:** Ajout d'une props `readonly` au composant ([#3412](https://github.com/assurance-maladie-digital/design-system/pull/3412))
+  - **UploadWorkflow:** Ajout d'une props `show-view-btn` au composant ([#3376](https://github.com/assurance-maladie-digital/design-system/pull/3376))
+
+### Interne
+
+- 🔒 **Sécurité**
+  - **bump-ip:** Mise à jour de la `v1.1.8` vers la `v1.1.9` ([#3400](https://github.com/assurance-maladie-digital/design-system/pull/3400))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3220](https://github.com/assurance-maladie-digital/design-system/pull/3220))
+
+- ⬆️ **Dépendances**
+  - **vuetify:** Mise à jour vers la `v2.7.2` ([#3393](https://github.com/assurance-maladie-digital/design-system/pull/3393))
+  - **core-js:** Mise à jour vers la `v3.36.0` ([#3394](https://github.com/assurance-maladie-digital/design-system/pull/3394))
+  - **@babel/core:** Mise à jour vers la `v7.24.0` ([#3409](https://github.com/assurance-maladie-digital/design-system/pull/3409))
+  - **codecov-orb:** Mise à jour vers la `v4.0.1` ([#3382](https://github.com/assurance-maladie-digital/design-system/pull/3382))
+  - **@types/node:** Mise à jour vers la `v16.18.86` ([#3380](https://github.com/assurance-maladie-digital/design-system/pull/3380))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.22.0` ([#3379](https://github.com/assurance-maladie-digital/design-system/pull/3379))
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.7.2` ([#3375](https://github.com/assurance-maladie-digital/design-system/pull/3375))
+  - **axios:** Mise à jour vers la `v1.6.7` ([#3368](https://github.com/assurance-maladie-digital/design-system/pull/3368))
+
 ## v2.15.0
 
 **Version publiée le 22/01/2024.**
