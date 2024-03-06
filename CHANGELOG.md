@@ -31,7 +31,7 @@ Cette version comporte des correctifs sur Vue Dot et la complétion de la docume
   - **bump-ip:** Mise à jour de la `v1.1.8` vers la `v1.1.9` ([#3400](https://github.com/assurance-maladie-digital/design-system/pull/3400))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3220](https://github.com/assurance-maladie-digital/design-system/pull/3220))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3414](https://github.com/assurance-maladie-digital/design-system/pull/3414))
 
 - ⬆️ **Dépendances**
   - **vuetify:** Mise à jour vers la `v2.7.2` ([#3393](https://github.com/assurance-maladie-digital/design-system/pull/3393))
