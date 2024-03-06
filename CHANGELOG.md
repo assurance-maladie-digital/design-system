@@ -6,14 +6,16 @@ Cette version comporte des correctifs sur Vue Dot et la complétion de la docume
 
 ### Vue Dot
 
+- ✨ **Nouvelles fonctionnalités**
+  - **SelectBtnField:** Ajout d'une props `readonly` au composant ([#3412](https://github.com/assurance-maladie-digital/design-system/pull/3412))
+  - **UploadWorkflow:** Ajout d'une props `show-view-btn` au composant pour visualiser un fichier sélectionné ([#3376](https://github.com/assurance-maladie-digital/design-system/pull/3376))
+
 - 🐛 **Corrections de bugs**
   - **NirField:** Correction de l'affichage des erreurs pour la clé de validation et suppression des icônes de validation ([#3302](https://github.com/assurance-maladie-digital/design-system/pull/3302))
   - **NirField:** Mise à jour de la valeur bind par le `v-model avant la complétion du champ ([#3410](https://github.com/assurance-maladie-digital/design-system/pull/3410))
   - **LangBtn:** Correction d'un bug d'affichage du champ si la valeur est mise à jour de manière externe  ([#3386](https://github.com/assurance-maladie-digital/design-system/pull/3386))
   - **PeriodField:** Correction d'un problème de réactivité qui empêchait l'erreur de s'afficher quand la date de fin est ultérieur à la date de début. ([#3387](https://github.com/assurance-maladie-digital/design-system/pull/3387))
   - **UserMenuBtn:** Correction de la couleur des informations additionnelles ([#3391](https://github.com/assurance-maladie-digital/design-system/pull/3391))
-  - **SelectBtnField:** Ajout d'une props `readonly` au composant ([#3412](https://github.com/assurance-maladie-digital/design-system/pull/3412))
-  - **UploadWorkflow:** Ajout d'une props `show-view-btn` au composant pour visualiser un fichier sélectionné ([#3376](https://github.com/assurance-maladie-digital/design-system/pull/3376))
   - **UploadWorkflow:** Correction d'un bug sur le mode sélection libre ([#3353](https://github.com/assurance-maladie-digital/design-system/pull/3353))
   - **AlertWrapper:** Correction de l'icône alert et de l'affichage su slot ([#3373](https://github.com/assurance-maladie-digital/design-system/pull/3373))
   - **ExernalLinks:** Permettre l'ajout de textes longs dans les liens ([#3369](https://github.com/assurance-maladie-digital/design-system/pull/3369))
