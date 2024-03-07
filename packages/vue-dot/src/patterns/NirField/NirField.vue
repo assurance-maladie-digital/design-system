@@ -341,7 +341,6 @@
 	.vd-key-field {
 		width: 84px;
 	}
-
 	// Don't allow resize for these elements
 	.vd-nir-field :deep(.v-input__append-inner),
 	.vd-number-field,
@@ -350,6 +349,10 @@
 		flex: none;
 	}
 
+	.v-icon {
+		display: flex;
+		align-self: baseline;
+	}
 	:deep(.v-messages__message + .v-messages__message) {
 		margin-top: 4px;
 	}
