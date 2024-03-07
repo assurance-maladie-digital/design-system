@@ -152,10 +152,11 @@
 		v-model="dialog"
 		v-bind="$attrs"
 		:width="width"
-		:persistent="persistent"
+		:pfersistent="persistent"
 		:retain-focus="false"
 		aria-modal="true"
 		class="vd-dialog-box"
+		@update:model-value="$emit('update:modelValue', false)"
 	>
 		<VCard
 			v-bind="options.card"

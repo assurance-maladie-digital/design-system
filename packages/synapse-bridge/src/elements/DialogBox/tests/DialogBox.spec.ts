@@ -3,7 +3,8 @@ import {mount, shallowMount} from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
 import DialogBox from '../'
-import { VCard } from 'vuetify/components'
+import { VBtn, VCard, VDialog } from 'vuetify/components'
+import { defineComponent } from 'vue'
 
 const defaultProps = {
 	modelValue: true,
@@ -13,7 +14,7 @@ const defaultProps = {
 	confirmBtnText: 'Confirm',
 	hideActions: false,
 	persistent: false,
-}
+} as const;
 
 describe('DialogBox', () => {
 	describe('rendering and props', () => {
@@ -230,6 +231,48 @@ describe('DialogBox', () => {
 
 			expect(wrapper.emitted('confirm')).toBeTruthy()
 		})
+
+		it('emits a update:modelValue event when the outside is clicked', async () => {
+			const parentComponent = defineComponent({
+				components: { DialogBox },
+				template: `
+					<div>
+						<VBtn id="toto">Open dialog</VBtn>
+						<DialogBox v-model="dialog" title="Test title" width="600px" cancelBtnText="Cancel" confirmBtnText="Confirm" hideActions>
+							<div>Content</div>
+						</DialogBox>
+					</div>
+				`,
+				data() {
+					return {
+						dialog: true,
+					}
+				},
+			})
+
+			const wrapper = mount(parentComponent, {
+				global: {
+					plugins: [vuetify],
+				},
+				attachTo: document.body
+			});
+			const dialogBoxWrapper = wrapper.getComponent(DialogBox)
+
+
+			// Create a click event
+			const clickEvent = new Event('click', {
+				bubbles: true,
+				cancelable: true,
+			});
+
+			// Dispatch the click event on the body
+			document.documentElement.dispatchEvent(clickEvent);
+
+
+			await wrapper.vm.$nextTick();
+
+			expect(dialogBoxWrapper.emitted('update:modelValue')).toBeTruthy()
+		});
 	})
 
 	describe('Test methods', () => {
