@@ -59,12 +59,13 @@
 
 		<ul
 			:class="{ 'py-2 py-sm-0': !extendedMode }"
-			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3"
+			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 pa-0"
 		>
 			<slot name="prepend" />
 			<li
 				v-for="(item, index) in footerLinksMapping"
 				:key="index"
+				class="my-3 mx-4"
 			>
 				<component
 					:is="getLinkComponent(item)"
@@ -73,7 +74,7 @@
 					:aria-label="item.ariaLabel"
 					:target="item.openInNewTab ? '_blank' : undefined"
 					:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
-					class="text--primary my-3 mx-4"
+					class="text--primary"
 				>
 					{{ item.text }}
 				</component>
@@ -285,6 +286,7 @@
 	.vd-footer-bar-links :deep() {
 		li {
 			list-style: none;
+			display: flex;
 		}
 
 		a {

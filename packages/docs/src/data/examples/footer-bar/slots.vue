@@ -24,9 +24,9 @@
 		</template>
 
 		<template #append>
-			<p class="text--secondary my-3 mx-4">
+			<li class="text--secondary my-3 mx-4">
 				Informations partenaires
-			</p>
+			</li>
 		</template>
 	</FooterBar>
 </template>

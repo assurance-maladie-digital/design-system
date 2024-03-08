@@ -1,18 +1,17 @@
 <template>
 	<FooterBar v-bind="docProps">
 		<template #prepend>
-			<a
-				href="/"
-				class="text--primary my-3 mx-4"
-			>
-				Accueil
-			</a>
+			<li class="my-3 mx-4">
+				<a href="/" class="text--primary">
+					Accueil
+				</a>
+			</li>
 		</template>
 
 		<template #append>
-			<p class="text--secondary my-3 mx-4">
+			<li class="text--secondary my-3 mx-4">
 				{{ currentYear }}
-			</p>
+			</li>
 		</template>
 	</FooterBar>
 </template>
