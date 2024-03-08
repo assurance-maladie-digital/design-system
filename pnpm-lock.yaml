@@ -30,7 +30,7 @@ importers:
         specifier: 4.2.5
         version: 4.2.5(vue@3.3.4)
       vuetify:
-        specifier: 3.4.0
+        specifier: ^3.3.0
         version: 3.4.0(typescript@5.0.4)(vite-plugin-vuetify@1.0.2)(vue@3.3.4)
     devDependencies:
       '@mdi/js':
