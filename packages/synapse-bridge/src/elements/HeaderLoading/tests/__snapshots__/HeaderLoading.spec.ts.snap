@@ -1,3 +1,3 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`HeaderLoading > renders correctly 1`] = `<v-skeleton-loader-stub data-v-cb4098f7="" width="100px" height="1rem" boilerplate="false" loading="false" loadingtext="$vuetify.loading" type="heading" aria-hidden="true" class="vd-header-loading"></v-skeleton-loader-stub>`;
+exports[`HeaderLoading > renders correctly 1`] = `<vskeletonloader data-v-cb4098f7="" width="100px" height="1rem" type="heading" aria-hidden="true" class="vd-header-loading"></vskeletonloader>`;

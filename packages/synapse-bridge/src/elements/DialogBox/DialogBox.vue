@@ -152,7 +152,7 @@
 		v-model="dialog"
 		v-bind="$attrs"
 		:width="width"
-		:pfersistent="persistent"
+		:persistent="persistent"
 		:retain-focus="false"
 		aria-modal="true"
 		class="vd-dialog-box"
