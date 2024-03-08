@@ -1,4 +1,4 @@
-name: Library DS CI - Synpase
+name: Synpase
 
 on:
   pull_request:
@@ -6,5 +6,4 @@ on:
 jobs:
   ci:
     uses: ./actions/ci.yml
-
 
