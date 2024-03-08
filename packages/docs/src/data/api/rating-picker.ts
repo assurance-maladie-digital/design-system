@@ -4,7 +4,7 @@ const ratingMixinProps: Props = [
 	{
 		name: 'label',
 		type: 'string',
-		required: true,
+		default: null,
 		description: 'Le label du champ.'
 	},
 	{
@@ -42,7 +42,7 @@ export const api: Api = {
 			{
 				name: 'label',
 				type: 'string',
-				required: true,
+				default: null,
 				description: 'Le label du champ.'
 			},
 			{
