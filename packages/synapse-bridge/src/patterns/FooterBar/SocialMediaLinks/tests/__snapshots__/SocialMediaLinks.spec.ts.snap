@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SocialMediaLinks > renders correctly 1`] = `
+<div data-v-c55a2df7="" class="vd-social-media-links"><span data-v-c55a2df7="" class="vd-social-media-links-label text-subtitle-2 text--primary">Suivez-nous</span>
+  <div data-v-c55a2df7="" class="d-flex justify-start justify-sm-end max-width-none mx-n2"></div>
+</div>
+`;

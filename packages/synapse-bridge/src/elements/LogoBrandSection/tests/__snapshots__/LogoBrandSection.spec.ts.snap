@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LogoBrandSection > renders correctly 1`] = `<v-sheet-stub data-v-d2756505="" height="64px" class="vd-logo-brand-section d-flex" border="false" tag="div"></v-sheet-stub>`;

@@ -9,7 +9,7 @@ exports[`ChipList > renders correctly with items 1`] = `
   </div>
   <div data-v-cd944f18="">
     <!--v-if-->
-    <v-btn-stub data-v-cd944f18="" color="primary" class="vd-overflow-btn px-1 ml-0 my-1" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text" data-test-id="reset-btn"></v-btn-stub>
+    <v-btn-stub data-v-cd944f18="" color="primary" class="vd-overflow-btn px-1 ml-0 my-1" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" slim="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" replace="false" exact="false" size="small" tag="button" variant="text" data-test-id="reset-btn"></v-btn-stub>
   </div>
 </div>
 `;

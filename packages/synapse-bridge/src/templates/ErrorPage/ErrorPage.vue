@@ -6,8 +6,6 @@
 
 	import { locales } from './locales'
 
-	import { useDisplay } from 'vuetify'
-
 	import PageContainer from '@/elements/PageContainer'
 
 	export default defineComponent({
@@ -47,13 +45,17 @@
 		data() {
 			return {
 				locales,
+				route: this.btnRoute as RouteRecordRaw | string | undefined,
+			}
+		},
+		created() {
+			if (this.btnHref) {
+				this.route = undefined
 			}
 		},
 		computed: {
 			mobileVersion(): boolean {
-				const { name } = useDisplay()
-
-				return name.value === 'xs' || name.value === 'sm'
+				return this.$vuetify.display.name === 'xs' || this.$vuetify.display.name === 'sm'
 			},
 		},
 	})
@@ -90,8 +92,8 @@
 
 					<slot name="action">
 						<VBtn
-							v-if="!noBtn && btnText && btnRoute"
-							:to="btnRoute"
+							v-if="!noBtn && btnText && (route || btnHref)"
+							:to="route"
 							:href="btnHref"
 							color="primary"
 							exact

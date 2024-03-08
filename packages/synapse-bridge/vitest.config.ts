@@ -11,9 +11,10 @@ export default defineConfig(configEnv => mergeConfig(
 				provider: 'v8',
 				reportsDirectory: './tests/unit/coverage'
 			},
-			deps: {
-				// @see https://github.com/vuetifyjs/vuetify/issues/18396
-				inline: ['vuetify']
+			server: {
+				deps: {
+					inline: ['vuetify']
+				}
 			},
 			setupFiles: ['./tests/unit/setup.ts']
 		}
