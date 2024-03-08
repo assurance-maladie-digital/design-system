@@ -1,7 +1,7 @@
 import { defineComponent } from "vue";
 
 export interface RatingMixinInterface {
-	emitInputEvent(event: number): void;
+	emitInputEvent(event: string | number): void;
 }
 
 export enum RatingEnum {
@@ -22,15 +22,15 @@ export const RatingMixin = defineComponent({
 			type: Boolean,
 			default: false,
 		},
-		value: {
+		modelValue: {
 			type: Number,
 			default: -1,
 		},
 	},
-	emits: ["input"],
+	emits: ["update:modelValue"],
 	methods: {
-		emitInputEvent(value: number): void {
-			this.$emit("input", value);
+		emitInputEvent(value: string | number): void {
+			this.$emit("update:modelValue", value);
 		},
 	},
 });

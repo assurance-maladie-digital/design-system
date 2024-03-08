@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RatingPicker > renders correctly 1`] = `
+<div class="vd-rating-picker">
+  <!---->
+  <!--v-if-->
+</div>
+`;

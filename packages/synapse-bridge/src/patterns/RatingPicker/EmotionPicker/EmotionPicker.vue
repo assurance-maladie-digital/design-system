@@ -44,12 +44,12 @@ export default defineComponent({
 		},
 
 		hasAnswered(): boolean {
-			return this.value !== -1;
+			return this.modelValue !== -1;
 		}
 	},
 	methods: {
 		isActive(index: number): boolean {
-			return index === this.value - 1;
+			return index === this.modelValue - 1;
 		},
 
 		getIcon(index: number): string {
@@ -104,13 +104,12 @@ export default defineComponent({
 		</legend>
 
 		<VRating
-			:model-value="value"
+			:model-value="modelValue"
 			:length="length"
 			:readonly="readonly"
 			class="max-width-none mx-n1 mx-sm-n2"
-			@update:model-value="emitInputEvent"
 		>
-			<template #item="{ index, click }">
+			<template #item="{ index }">
 				<VBtn
 					:disabled="readonly || hasAnswered"
 					:aria-pressed="isActive(index).toString()"
@@ -120,9 +119,9 @@ export default defineComponent({
 					]"
 					:min-height="btnSize"
 					:min-width="btnSize"
-					text
+					variant="text"
 					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
-					@click="click"
+					@click="emitInputEvent(index)"
 				>
 					<VIcon x-large color="currentColor" class="pa-0">
 						{{ getIcon(index) }}
@@ -130,7 +129,7 @@ export default defineComponent({
 
 					<span
 						v-if="getEmotionLabel(index)"
-						:class="{ 'text--secondary': !isActive(index) }"
+						:class="{ 'text-secondary': !isActive(index) }"
 						class="text-subtitle-2 mt-1"
 					>
 						{{ getEmotionLabel(index) }}

@@ -70,5 +70,10 @@
 			'weight': 400
 		),
 	),
+	$alert-border-opacity: 1,
 	$skeleton-loader-actions-button-margin: 0px,
 );
+
+.v-alert {
+	font-size: 1.125rem;
+}

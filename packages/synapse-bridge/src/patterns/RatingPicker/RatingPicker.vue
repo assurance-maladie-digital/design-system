@@ -13,6 +13,7 @@ import { RATING_ENUM_VALUES, RatingEnum } from './RatingMixin';
 import { propValidator } from '../../helpers/propValidator';
 
 import { locales } from './locales';
+import { AlertTypeEnum } from "../AlertWrapper/AlertTypeEnum";
 
 export default defineComponent({
 	components: {
@@ -44,7 +45,7 @@ export default defineComponent({
 			type: Boolean,
 			default: false
 		},
-		value: {
+		modelValue: {
 			type: Number,
 			default: -1
 		}
@@ -52,7 +53,7 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
-
+			AlertTypeEnum: AlertTypeEnum,
 			internalValue: -1,
 			displayAdditionalContent: false,
 
@@ -77,7 +78,7 @@ export default defineComponent({
 		},
 
 		hasAnswered(): boolean {
-			return this.value !== -1;
+			return this.modelValue !== -1;
 		}
 	},
 	methods: {
@@ -98,7 +99,7 @@ export default defineComponent({
 			this.internalValue = value;
 
 			this.showAdditionalContent(value);
-			this.$emit('change', value);
+			this.$emit('update:modelValue', value);
 		}
 	}
 });
@@ -113,14 +114,14 @@ export default defineComponent({
 			:readonly="readonly"
 			:item-labels="itemLabels || undefined"
 			:model-value="internalValue"
-			@update:model-value="setValue"
+			@update:modelValue="setValue"
 		/>
 
 		<template v-if="hasAnswered">
 			<AlertWrapper
 				:class="{ 'mb-0': !displayAdditionalContent }"
 				outlined
-				type="success"
+				:type="AlertTypeEnum.SUCCESS"
 				class="mt-4"
 			>
 				{{ locales.thanks }}

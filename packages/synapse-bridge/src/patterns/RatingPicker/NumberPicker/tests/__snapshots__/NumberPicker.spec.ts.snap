@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NumberPicker > renders correctly 1`] = `
+<fieldset data-v-1cb226ec="" class="vd-number-picker">
+  <legend data-v-1cb226ec="" class="text-h6 mb-6">Pourriez-vous donner une note ?</legend>
+  <div data-v-1cb226ec="" class="d-inline-block">
+    <v-rating-stub data-v-1cb226ec="" class="d-flex flex-wrap mx-n1 max-width-none" itemarialabel="$vuetify.rating.ariaLabel.item" clearable="false" disabled="false" emptyicon="$ratingEmpty" fullicon="$ratingFull" halfincrements="false" hover="false" length="10" modelvalue="-1" itemlabelposition="top" ripple="false" density="default" size="default" tag="div"></v-rating-stub>
+    <!--v-if-->
+  </div>
+</fieldset>
+`;

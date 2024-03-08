@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StarsPicker > renders correctly 1`] = `
+<fieldset data-v-e2cb1ead="" class="vd-stars-picker">
+  <legend data-v-e2cb1ead="" class="text-h6 mb-6">Pourriez-vous donner une note ?</legend>
+  <v-rating-stub data-v-e2cb1ead="" class="d-flex flex-wrap max-width-none mx-n3" itemarialabel="$vuetify.rating.ariaLabel.item" clearable="false" disabled="false" emptyicon="$ratingEmpty" fullicon="$ratingFull" halfincrements="false" hover="false" length="5" modelvalue="-1" itemlabelposition="top" ripple="false" density="default" size="default" tag="div"></v-rating-stub>
+</fieldset>
+`;

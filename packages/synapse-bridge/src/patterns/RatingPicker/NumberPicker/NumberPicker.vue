@@ -42,11 +42,11 @@ export default defineComponent({
 		},
 
 		hasAnswered(): boolean {
-			return this.value !== -1;
+			return this.modelValue !== -1;
 		}
 	},
 	methods: {
-		setValue(value: number): void {
+		setValue(value: string | number): void {
 			this.emitInputEvent(value);
 		}
 	}
@@ -56,8 +56,8 @@ export default defineComponent({
 <template>
 	<fieldset class="vd-number-picker">
 		<VSelect
-			v-if="$vuetify.breakpoint.xs"
-			:model-value="value"
+			v-if="$vuetify.display.xs"
+			:model-value="modelValue"
 			:label="label"
 			:disabled="readonly || hasAnswered"
 			:items="selectItems"
@@ -74,13 +74,13 @@ export default defineComponent({
 
 			<div v-if="!hasAnswered" class="d-inline-block">
 				<VRating
-					:model-value="value"
+					:model-value="modelValue"
 					:length="length"
 					:readonly="readonly || hasAnswered"
 					class="d-flex flex-wrap mx-n1 max-width-none"
-					@update:model-value="setValue"
+					@update:modelValue="setValue"
 				>
-					<template #item="{ index, click }">
+					<template #item="{ index }">
 						<VBtn
 							:aria-label="locales.ariaLabel(index + 1, length)"
 							:disabled="readonly"
@@ -89,7 +89,6 @@ export default defineComponent({
 							color="primary"
 							height="36px"
 							class="text-body-2 mx-1 pa-0"
-							@click="click"
 						>
 							{{ index + 1 }}
 						</VBtn>
@@ -120,7 +119,7 @@ export default defineComponent({
 
 			<p
 				v-else
-				:aria-label="locales.ariaLabel(value, length)"
+				:aria-label="locales.ariaLabel(modelValue, length)"
 				class="mb-0"
 			>
 				<VBtn
@@ -132,7 +131,7 @@ export default defineComponent({
 					height="36px"
 					class="vd-btn-answer text-body-2 mr-1 pa-0"
 				>
-					{{ value }}
+					{{ modelValue }}
 				</VBtn>
 
 				/ {{ length }}

@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EmotionPicker > renders correctly 1`] = `
+<fieldset data-v-62a645b1="" class="vd-emotion-picker">
+  <legend data-v-62a645b1="" class="text-h6 mb-6">Pourriez-vous donner une note ?</legend>
+  <v-rating-stub data-v-62a645b1="" class="max-width-none mx-n1 mx-sm-n2" itemarialabel="$vuetify.rating.ariaLabel.item" clearable="false" disabled="false" emptyicon="$ratingEmpty" fullicon="$ratingFull" halfincrements="false" hover="false" length="3" modelvalue="-1" itemlabelposition="top" ripple="false" density="default" size="default" tag="div"></v-rating-stub>
+</fieldset>
+`;

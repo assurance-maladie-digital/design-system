@@ -23,17 +23,17 @@ export default defineComponent({
 	},
 	computed: {
 		hasAnswered(): boolean {
-			return this.value !== -1;
+			return this.modelValue !== -1;
 		}
 	},
 	methods: {
 		isActive(index: number): boolean {
-			return this.value - 1 === index;
+			return this.modelValue - 1 === index;
 		},
 
 		isFilled(index: number): boolean {
 			const isHovered = this.hoverIndex >= index;
-			const isActive = this.value - 1 >= index;
+			const isActive = this.modelValue - 1 >= index;
 
 			return isHovered || isActive;
 		}
@@ -48,25 +48,24 @@ export default defineComponent({
 		</legend>
 
 		<VRating
-			:model-value="value"
+			:model-value="modelValue"
 			:length="length"
 			:readonly="readonly"
 			class="d-flex flex-wrap max-width-none mx-n3"
-			@update:model-value="emitInputEvent"
+			@update:modelValue="emitInputEvent"
 		>
-			<template #item="{ index, click }">
+			<template #item="{ index }">
 				<!-- Using click event on VIcon will convert it into a button -->
 				<VIcon
 					:disabled="readonly || hasAnswered"
 					:aria-pressed="isActive(index).toString()"
-					:class="isFilled(index) ? 'am-blue--text' : 'am-blue-lighten-60--text'"
+					:class="isFilled(index) ? 'text-am-blue' : 'text-am-blue-lighten-60'"
 					size="36px"
 					class="py-0 px-2"
 					@mouseover="hoverIndex = index"
 					@focus="hoverIndex = index"
 					@mouseleave="hoverIndex = -1"
 					@blur="hoverIndex = -1"
-					@click="click"
 				>
 					{{ isFilled(index) ? starIcon : starOutlineIcon }}
 				</VIcon>
