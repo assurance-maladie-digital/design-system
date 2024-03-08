@@ -5,7 +5,7 @@ exports[`ErrorPage renders correctly 1`] = `
   <vcard-stub loaderheight="4" tag="div" elevation="2" class="pa-6 pa-sm-16">
     <vrow-stub tag="div" class="max-width-none">
       <vcol-stub cols="12" sm="12" tag="div" class="order-last order-sm-first text-center text-sm-left">
-        <div aria-hidden="true" class="vd-code font-weight-thin primary--text mb-4">
+        <div class="vd-code font-weight-thin primary--text mb-4"><span class="d-sr-only">Code d'erreur&nbsp;: </span>
 
         </div>
         <h2 class="mb-2 font-weight-bold text-h5 mb-4">

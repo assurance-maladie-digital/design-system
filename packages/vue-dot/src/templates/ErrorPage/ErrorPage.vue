@@ -11,9 +11,9 @@
 					class="order-last order-sm-first text-center text-sm-left"
 				>
 					<div
-						aria-hidden="true"
 						class="vd-code font-weight-thin primary--text mb-4"
 					>
+						<span class="d-sr-only">{{ codeErrorText }}</span>
 						{{ code }}
 					</div>
 
@@ -79,6 +79,10 @@
 			btnText: {
 				type: String,
 				default: locales.btnText
+			},
+			codeErrorText: {
+				type: String,
+				default: locales.errorCodeText
 			},
 			btnRoute: {
 				type: [Array, Object, String] as PropType<RawLocation>,
