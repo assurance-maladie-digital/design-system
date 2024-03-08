@@ -156,6 +156,7 @@
 		:retain-focus="false"
 		aria-modal="true"
 		class="vd-dialog-box"
+		@update:model-value="$emit('update:modelValue', false)"
 	>
 		<VCard
 			v-bind="options.card"
