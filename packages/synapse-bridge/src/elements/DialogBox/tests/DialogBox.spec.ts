@@ -262,5 +262,23 @@ describe('DialogBox', () => {
 			const result = await wrapper.vm.getSelectableElements()
 			expect(result).toEqual([])
 		})
+
+		it('setEventListeners is called', async () => {
+			const wrapper = shallowMount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
+
+			const spy = vi.spyOn(wrapper.vm, 'setEventListeners').mockReturnValue(
+				Promise.resolve()
+			)
+
+			await wrapper.vm.setEventListeners()
+			await wrapper.vm.$nextTick()
+
+			expect(spy).toHaveBeenCalled()
+		})
 	})
 })
