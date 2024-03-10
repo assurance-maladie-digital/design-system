@@ -71,4 +71,9 @@
 		),
 	),
 	$skeleton-loader-actions-button-margin: 0px,
+	$alert-border-opacity: 1,
 );
+
+.v-alert {
+	font-size: 1.125rem;
+}
