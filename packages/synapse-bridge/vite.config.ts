@@ -5,9 +5,20 @@ import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import dts from 'vite-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
+import { en } from 'vuetify/locale'
 
 export default defineConfig(({ mode }) => {
 	const config = {
+		outputDir: 'dist',
+		configureWebpack: {
+			entry: process.env.NODE_ENV !== 'production' ? './playground/main.ts' : './src/main.ts',
+			output: {
+				libraryExport: 'default'
+			}
+		},
+		css: {
+			extract: true
+		},
 		plugins: [
 			vue({
 				template: { transformAssetUrls }
