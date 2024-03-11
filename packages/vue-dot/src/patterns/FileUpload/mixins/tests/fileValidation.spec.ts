@@ -6,7 +6,7 @@ import { FileValidation } from '../fileValidation';
 interface TestComponent extends Vue {
 	files: File[];
 	computedAccept: string;
-	validateFile: (file: File) => boolean;
+	validateAndSaveFiles: (file: File) => boolean;
 	ifTooManyFiles: (files: FileList | DataTransferItemList) => boolean;
 }
 
@@ -41,11 +41,11 @@ describe('FileValidation', () => {
 		expect(wrapper.vm.computedAccept).toBe('.pdf');
 	});
 
-	// validateFile
+	// validateAndSaveFiles
 	it('returns true if the file is valid', () => {
 		const wrapper = mount(component) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.validateFile(file)).toBe(true);
+		expect(wrapper.vm.validateAndSaveFiles(file)).toBe(true);
 		expect(wrapper.vm.files).toStrictEqual([file]);
 	});
 
@@ -56,7 +56,7 @@ describe('FileValidation', () => {
 			}
 		}) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.validateFile(file)).toBe(false);
+		expect(wrapper.vm.validateAndSaveFiles(file)).toBe(false);
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 
@@ -67,7 +67,7 @@ describe('FileValidation', () => {
 			}
 		}) as Wrapper<TestComponent>;
 
-		expect(wrapper.vm.validateFile(file)).toBe(false);
+		expect(wrapper.vm.validateAndSaveFiles(file)).toBe(false);
 		expect(wrapper.emitted('error')).toBeTruthy();
 	});
 
