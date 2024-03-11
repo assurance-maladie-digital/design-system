@@ -6,7 +6,6 @@
 		<component
 			:is="logoContainerComponent"
 			:aria-current-value="null"
-			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 			:href="homeHref"
 			class="vd-home-link"
@@ -15,6 +14,7 @@
 				:hide-signature="hideSignature"
 				:hide-organism="isCompteAmeliMobile"
 				:risque-pro="isRisquePro"
+				:aria-label="linkLabel"
 				:avatar="avatar"
 				:size="logoSize"
 				:class="{ 'mr-2': avatar }"
@@ -50,8 +50,8 @@
 				v-if="secondaryLogo"
 				:aria-current-value="null"
 				:aria-label="secondaryLogoLabel"
-				:to="homeLink"
-				:href="homeHref"
+				:to="secondaryLogoCtnComponent !== 'div' ? homeLink : undefined"
+				:href="secondaryLogoCtnComponent !== 'div' ? homeHref : undefined"
 				class="vd-home-link"
 			>
 				<img
@@ -141,6 +141,10 @@
 				default: '/'
 			},
 			homeHref: {
+				type: String,
+				default: undefined
+			},
+			linkLabel: {
 				type: String,
 				default: undefined
 			}

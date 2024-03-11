@@ -84,6 +84,12 @@ export const api: Api = {
 				type: 'string',
 				default: 'undefined',
 				description: 'Un lien externe à l’application vers la page d’accueil.'
+			},
+			{
+				name: 'link-label',
+				type: 'string',
+				default: 'undefined',
+				description: 'Le libellé du lien.'
 			}
 		],
 		slots: [

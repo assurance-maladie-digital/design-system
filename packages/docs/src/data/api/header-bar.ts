@@ -90,6 +90,12 @@ export const api: Api = {
 			homeLinkProp,
 			homeHrefProp,
 			{
+				name: 'link-label',
+				type: 'string',
+				default: 'undefined',
+				description: 'Le libellé du lien vers la page d’accueil. Si non défini, un libellé sera généré automatiquement.'
+			},
+			{
 				name: 'show-nav-bar-menu-btn',
 				type: 'boolean',
 				default: false,

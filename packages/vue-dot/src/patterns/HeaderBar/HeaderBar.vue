@@ -35,6 +35,7 @@
 							:reduce-logo="isMiniVersion"
 							:home-link="homeLink"
 							:home-href="homeHref"
+							:link-label="linkLabel"
 						>
 							<template #brand-content>
 								<slot name="brand-content" />
@@ -159,6 +160,10 @@
 				default: undefined
 			},
 			homeHref: {
+				type: String,
+				default: undefined
+			},
+			linkLabel: {
 				type: String,
 				default: undefined
 			},
