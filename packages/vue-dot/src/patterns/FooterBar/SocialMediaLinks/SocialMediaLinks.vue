@@ -5,10 +5,11 @@
 		</span>
 
 		<ul class="d-flex justify-start justify-sm-end max-width-none mx-n2">
-			<li>
+			<li
+				v-for="social in links"
+				:key="social.index"
+			>
 				<VBtn
-					v-for="social in links"
-					:key="social.index"
 					:href="social.href"
 					target="_blank"
 					rel="noopener noreferrer"
