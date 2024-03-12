@@ -22,7 +22,7 @@
 
 				<VListItemContent v-bind="options.listItemContent">
 					<VListItemTitle
-						v-if="'title' in file && file.title"
+						v-if="isFileItem(file) && file.title"
 						v-bind="options.listItemTitle"
 						:class="[
 							options.listItemTitle.class,
@@ -33,7 +33,7 @@
 					</VListItemTitle>
 
 					<VListItemSubtitle
-						v-if="'optional' in file && file.optional"
+						v-if="isFileItem(file) && file.optional"
 						v-bind="options.listItemSubtitle"
 					>
 						{{ optionalFileText }}
@@ -49,7 +49,7 @@
 
 				<VListItemAction v-bind="options.listItemAction">
 					<VBtn
-						v-if="'state' in file && file.state === FileStateEnum.INITIAL && !hideUploadBtn"
+						v-if="isFileItem(file) && file.state === FileStateEnum.INITIAL && !hideUploadBtn"
 						v-bind="options.uploadBtn"
 						:aria-label="locales.uploadFile"
 						@click="$emit('upload', file.id)"
@@ -63,7 +63,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="'state' in file && file?.state === FileStateEnum.ERROR"
+						v-if="isFileItem(file) && file.state === FileStateEnum.ERROR"
 						v-bind="options.retryBtn"
 						:aria-label="locales.uploadFile"
 						@click="$emit('retry', index)"
@@ -77,7 +77,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="showViewBtn && (!('state' in file) || file.state === FileStateEnum.SUCCESS)"
+						v-if="showViewBtn && (!isFileItem(file) || file.state === FileStateEnum.SUCCESS)"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
 						:class="{ 'mr-0': hideDeleteBtn }"
@@ -188,16 +188,20 @@
 			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';
 		}
 
+		isFileItem(file: FileItem | File): file is FileItem {
+			return !(file instanceof File);
+		}
+
 		shouldDisplayDeleteBtn(file: FileItem | File): boolean {
 			if (this.hideDeleteBtn) {
 				return false;
 			}
 
-			return ('state' in file && file.state !== FileStateEnum.INITIAL) || this.alwaysShowDeleteBtn;
+			return (this.isFileItem(file) && file.state !== FileStateEnum.INITIAL) || this.alwaysShowDeleteBtn;
 		}
 
 		getIconInfo(file: FileItem | File): IconInfo {
-			const state = 'state' in file ? file.state : '';
+			const state = this.isFileItem(file) ? file.state : '';
 			switch (state) {
 				case FileStateEnum.ERROR: {
 					return {
