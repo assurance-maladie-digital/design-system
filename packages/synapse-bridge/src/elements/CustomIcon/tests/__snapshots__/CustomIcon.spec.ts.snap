@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CustomIcon > renders correctly with icon 1`] = `<span data-v-fa7bb665="" class="vd-custom-color vd-custom-icon" style="color: red; width: 64px; height: 64px;" aria-hidden="true" role="img" focusable="false"><span data-v-fa7bb665="">test</span></span>`;
+
+exports[`CustomIcon > renders correctly without icon 1`] = `<span data-v-fa7bb665="" class="vd-custom-color vd-custom-icon" style="color: currentColor;" aria-hidden="true" role="img" focusable="false"><!--v-if--></span>`;
