@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CollapsibleList > render correctly without items 1`] = `
+<div data-v-f37cf97e="" class="v-expansion-panels v-expansion-panels--flat v-theme--light v-expansion-panels--variant-accordion vd-collapse-list-mobile">
+  <div data-v-f37cf97e="" class="v-expansion-panel bg-transparent vd-panel">
+    <div class="v-expansion-panel__shadow elevation-0"></div>
+    <!---->
+    <!----><button data-v-f37cf97e="" class="v-expansion-panel-title vd-panel-title text-subtitle-2 pl-0 py-4" type="button" aria-expanded="false"><span class="v-expansion-panel-title__overlay"></span>Santé<span class="v-expansion-panel-title__icon"><i class="mdi-chevron-down mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span></button>
+    <transition-stub data-v-f37cf97e="" name="expand-transition" appear="false" persisted="false" css="true">
+      <div class="v-expansion-panel-text vd-panel-text" style="display: none;">
+        <!---->
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`CollapsibleList > renders correctly 1`] = `
+<div data-v-f37cf97e="" class="vd-collapse-list">
+  <h4 data-v-f37cf97e="" class="text-subtitle-1 font-weight-bold mb-3">Santé</h4>
+  <ul data-v-f37cf97e="" class="pl-0">
+    <li data-v-f37cf97e="" class="mb-2"><a data-v-f37cf97e="" href="https://www.ameli.fr/assure/sante/mon-espace-sante" class="text-body-2 text-decoration-none text--primary">Mon espace santé</a></li>
+    <li data-v-f37cf97e="" class=""><a data-v-f37cf97e="" href="https://www.ameli.fr/assure/sante/bons-gestes" class="text-body-2 text-decoration-none text--primary">Accomplir les bons gestes</a></li>
+  </ul>
+</div>
+`;
+
+exports[`CollapsibleList > renders correctly with in mobile mode 1`] = `
+<div data-v-f37cf97e="" class="vd-collapse-list">
+  <h4 data-v-f37cf97e="" class="text-subtitle-1 font-weight-bold mb-3">Santé</h4>
+  <ul data-v-f37cf97e="" class="pl-0">
+    <li data-v-f37cf97e="" class="mb-2"><a data-v-f37cf97e="" href="https://www.ameli.fr/assure/sante/mon-espace-sante" class="text-body-2 text-decoration-none text--primary">Mon espace santé</a></li>
+    <li data-v-f37cf97e="" class=""><a data-v-f37cf97e="" href="https://www.ameli.fr/assure/sante/bons-gestes" class="text-body-2 text-decoration-none text--primary">Accomplir les bons gestes</a></li>
+  </ul>
+</div>
+`;

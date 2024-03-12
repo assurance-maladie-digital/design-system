@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { defineComponent } from 'vue'
-	import { useDisplay } from 'vuetify'
 	import { mdiArrowUp } from '@mdi/js'
 
 	import { customizable } from '@/mixins/customizable'
@@ -46,8 +45,7 @@
 			},
 
 			isMobile(): boolean {
-				const { name } = useDisplay()
-				return name.value === 'sm'
+				return this.$vuetify.display.name === 'sm'
 			},
 
 			btnStyle(): Record<string, string> {
