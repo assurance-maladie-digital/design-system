@@ -2,6 +2,8 @@
 	<div
 		:class="{
 			'vd-nir-field--outlined': $attrs.hasOwnProperty('outlined'),
+			'vd-nir-field--simple': isSingleField,
+			'vd-nir-field--double': !isSingleField
 		}"
 		class="vd-nir-field"
 	>
@@ -362,5 +364,9 @@
 	:deep(.v-input__slot) {
 		flex-wrap: wrap;
 		justify-content: flex-start;
+	}
+
+	.vd-nir-field--simple .vd-number-field {
+		margin-right: 0 !important;
 	}
 </style>

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NirField displays an error message when the fields are not totally filled 1`] = `
-<div class="vd-nir-field">
+<div class="vd-nir-field vd-nir-field--double">
   <div class="v-input vd-nir-field__fields-wrapper v-input--has-state v-input--is-label-active v-input--is-dirty theme--light error--text">
     <div class="v-input__control">
       <div class="v-input__slot">
@@ -47,7 +47,7 @@ exports[`NirField displays an error message when the fields are not totally fill
 `;
 
 exports[`NirField renders correctly 1`] = `
-<div class="vd-nir-field">
+<div class="vd-nir-field vd-nir-field--double">
   <div class="v-input vd-nir-field__fields-wrapper v-input--is-label-active v-input--is-dirty theme--light">
     <div class="v-input__control">
       <div class="v-input__slot">
@@ -90,7 +90,7 @@ exports[`NirField renders correctly 1`] = `
 `;
 
 exports[`NirField renders correctly with 13 characters 1`] = `
-<div class="vd-nir-field">
+<div class="vd-nir-field vd-nir-field--simple">
   <div class="v-input vd-nir-field__fields-wrapper v-input--is-label-active v-input--is-dirty theme--light">
     <div class="v-input__control">
       <div class="v-input__slot">
@@ -120,7 +120,7 @@ exports[`NirField renders correctly with 13 characters 1`] = `
 `;
 
 exports[`NirField renders correctly with a tooltip 1`] = `
-<div class="vd-nir-field">
+<div class="vd-nir-field vd-nir-field--double">
   <div class="v-input vd-nir-field__fields-wrapper v-input--is-label-active v-input--is-dirty theme--light">
     <div class="v-input__control">
       <div class="v-input__slot">
