@@ -55,7 +55,7 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		...mapActions("notification", ["addNotification"]),
+		...mapActions('notification', ['addNotification']),
 		getTimestampFilename(): string {
 			return dayjs().format("YYYY-MM-DD - HH[h]mm[m]ss[s]");
 		},
@@ -109,6 +109,7 @@ export default defineComponent({
 		v-bind="btnOptions"
 		:loading="state === StateEnum.PENDING"
 		class="vd-download-btn"
+		data-testid="download-btn"
 		@click="download"
 	>
 		<slot name="icon">
