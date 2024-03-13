@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`CollapsibleList > render correctly without items 1`] = `
-<div data-v-f37cf97e="" class="v-expansion-panels v-theme--light v-expansion-panels--variant-accordion vd-collapse-list-mobile" flat="">
+<div data-v-f37cf97e="" class="v-expansion-panels v-expansion-panels--flat v-theme--light v-expansion-panels--variant-accordion vd-collapse-list-mobile">
   <div data-v-f37cf97e="" class="v-expansion-panel bg-transparent vd-panel">
     <div class="v-expansion-panel__shadow elevation-0"></div>
     <!---->

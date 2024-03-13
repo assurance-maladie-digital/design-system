@@ -2,7 +2,7 @@
 
 exports[`RatingPicker > renders correctly 1`] = `
 <div class="vd-rating-picker">
-  <!---->
+  <!--[object Object]-->
   <!--v-if-->
 </div>
 `;
