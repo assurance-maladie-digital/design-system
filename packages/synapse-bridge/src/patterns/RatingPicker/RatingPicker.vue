@@ -30,8 +30,8 @@ export default defineComponent({
 			validator: (value: string) => propValidator('type', RATING_ENUM_VALUES, value)
 		},
 		label: {
-			type: String,
-			required: true
+			type: String as PropType<string | null>,
+			default: null
 		},
 		readonly: {
 			type: Boolean,
@@ -115,7 +115,13 @@ export default defineComponent({
 			:item-labels="itemLabels || undefined"
 			:model-value="internalValue"
 			@update:modelValue="setValue"
-		/>
+		>
+			<template #label>
+				<slot name="label">
+					{{ label }}
+				</slot>
+			</template>
+		</component>
 
 		<template v-if="hasAnswered">
 			<AlertWrapper

@@ -100,7 +100,9 @@ export default defineComponent({
 <template>
 	<fieldset class="vd-emotion-picker">
 		<legend class="text-h6 mb-6">
-			{{ label }}
+			<slot name="label">
+				{{ label }}
+			</slot>
 		</legend>
 
 		<VRating

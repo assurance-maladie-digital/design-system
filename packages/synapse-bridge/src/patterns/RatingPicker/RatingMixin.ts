@@ -1,4 +1,4 @@
-import { defineComponent } from "vue";
+import { PropType, defineComponent } from "vue";
 
 export interface RatingMixinInterface {
 	emitInputEvent(event: string | number): void;
@@ -15,8 +15,8 @@ export const RATING_ENUM_VALUES = Object.values(RatingEnum);
 export const RatingMixin = defineComponent({
 	props: {
 		label: {
-			type: String,
-			required: true,
+			type: String as PropType<string | null>,
+			default: null
 		},
 		readonly: {
 			type: Boolean,
