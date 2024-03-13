@@ -20,6 +20,6 @@ export const secondaryLogoMapping: IndexedObject<LogoInfo> = {
 	},
 	[ThemeEnum.COMPTE_AMELI]: {
 		src: "/src/assets/images/compte-ameli.svg",
-		alt: locales.logoAmeli,
+		alt: locales.logoCompteAmeli,
 	},
 };
