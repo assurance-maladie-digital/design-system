@@ -4,8 +4,6 @@ exports[`SocialMediaLinks renders correctly 1`] = `
 <div class="vd-social-media-links"><span class="text-subtitle-2 primary--text">
 		Suivez-nous
 	</span>
-  <ul class="d-flex justify-start justify-sm-end max-width-none mx-n2">
-    <li></li>
-  </ul>
+  <ul class="d-flex justify-start justify-sm-end max-width-none mx-n2"></ul>
 </div>
 `;
