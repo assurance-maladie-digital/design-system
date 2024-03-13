@@ -7,7 +7,7 @@ import { RatingMixin, RatingMixinInterface } from "../RatingMixin";
 
 /** Create the test component */
 function createTestComponent() {
-	return defineComponent('TestComponent', {
+	return defineComponent( {
 		mixins: [
 			RatingMixin
 		],
@@ -40,7 +40,6 @@ describe("RatingMixin", () => {
 		const wrapper = shallowMount(testComponent, {
 			propsData: {
 				label,
-				length: 10,
 			},
 			global: {
 				plugins: [vuetify],
@@ -51,7 +50,7 @@ describe("RatingMixin", () => {
 
 		await wrapper.vm.$nextTick(); // Wait until $emits have been handled
 
-		expect(wrapper.emitted("input")).toBeTruthy();
-		expect(wrapper.emitted("input")?.pop()).toEqual([3]);
+		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
+		expect(wrapper.emitted("update:modelValue")?.pop()).toEqual([3]);
 	});
 });
