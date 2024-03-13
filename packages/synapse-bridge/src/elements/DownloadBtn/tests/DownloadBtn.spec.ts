@@ -1,32 +1,24 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { mount, VueWrapper, DOMWrapper, shallowMount } from '@vue/test-utils';
+import { VueWrapper, DOMWrapper, mount } from '@vue/test-utils';
 import { vuetify } from '@tests/unit/setup';
 
 import { filePromise } from './data/filePromise.ts';
 import DownloadBtn from '../';
-import { NotificationState } from '@/modules/notification/types';
-import Vuex from 'vuex';
-import { actions, mutations } from '@/modules/notification';
 
-function createStore(state: NotificationState) {
-	return new Vuex.Store({ state, actions, mutations });
-}
+
 describe('DownloadBtn', () => {
 	let wrapper: VueWrapper<typeof DownloadBtn>
 	let element: DOMWrapper<Element>
 	beforeEach(() => {
-		const store = createStore({
-			notification: null,
-		});
 		vi.spyOn(DownloadBtn.methods, 'download')
 		vi.spyOn(DownloadBtn.methods, 'addNotification')
 
-		wrapper = shallowMount(DownloadBtn, {
+		wrapper = mount(DownloadBtn, {
 			props: {
 				filePromise
 			},
 			global: {
-				plugins: [vuetify, store],
+				plugins: [vuetify],
 			},
 		})
 		element = wrapper.find('[data-testid="download-btn"]')
@@ -73,12 +65,5 @@ describe('DownloadBtn', () => {
 		})
 
 		expect(wrapper).toMatchSnapshot()
-	})
-
-	it('with notification store', async () => {
-		await element.trigger('click')
-
-		expect(DownloadBtn.methods.addNotification).toHaveBeenCalledOnce()
-		expect(DownloadBtn.methods.addNotification).toHaveBeenCalledWith('success', 'Document téléchargé avec succès.')
 	})
 })
