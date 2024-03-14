@@ -125,7 +125,7 @@ export default defineComponent({
 
 		<template v-if="hasAnswered">
 			<AlertWrapper
-				:class="{ 'mb-0': !displayAdditionalContent }"
+				:class="{ 'mb-4': displayAdditionalContent }"
 				outlined
 				:type="AlertTypeEnum.SUCCESS"
 				class="mt-4"

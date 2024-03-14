@@ -1,9 +1,9 @@
 import { defineComponent } from "vue";
 import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
-import { RatingMixin, RatingMixinInterface } from "../RatingMixin";
+import { RatingMixin } from "../RatingMixin";
 
 /** Create the test component */
 function createTestComponent() {
@@ -21,7 +21,7 @@ describe("RatingMixin", () => {
 	it("verifies props", () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = shallowMount(testComponent, {
+		const wrapper = mount(testComponent, {
 			propsData: {
 				label,
 			},
@@ -37,7 +37,7 @@ describe("RatingMixin", () => {
 	it("emits input event", async () => {
 		const testComponent = createTestComponent();
 
-		const wrapper = shallowMount(testComponent, {
+		const wrapper = mount(testComponent, {
 			propsData: {
 				label,
 			},

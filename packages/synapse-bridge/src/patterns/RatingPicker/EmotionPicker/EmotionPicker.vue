@@ -39,8 +39,8 @@ export default defineComponent({
 	},
 	computed: {
 		btnSize(): string {
-			const { name } = useDisplay();
-			return name.value === 'xs' ? '70px' : '88px';
+			const name = this.$vuetify.display.name;
+			return name === 'xs' ? '70px' : '88px';
 		},
 
 		hasAnswered(): boolean {
@@ -72,7 +72,9 @@ export default defineComponent({
 			];
 
 			if (this.length === 2) {
-				const filteredColors = colors.filter((item) => item !== 'neutral');
+				const filteredColors = colors.filter(
+					(item) => item !== 'neutral'
+				);
 
 				return filteredColors[index];
 			}
@@ -81,12 +83,10 @@ export default defineComponent({
 		},
 
 		getEmotionLabel(value: number): string {
-			if (value === -1) {
-				return '';
-			}
-
 			if (this.length === 2) {
-				const filteredLabels = this.itemLabels.filter((_, index) => index !== 1);
+				const filteredLabels = this.itemLabels.filter(
+					(_, index) => index !== 1
+				);
 
 				return filteredLabels[value];
 			}
@@ -123,9 +123,9 @@ export default defineComponent({
 					:min-width="btnSize"
 					variant="text"
 					class="rounded-lg px-1 px-sm-4 mx-1 mx-sm-2"
-					@click="emitInputEvent(index)"
+					@click="emitInputEvent(index + 1)"
 				>
-					<VIcon x-large color="currentColor" class="pa-0">
+					<VIcon size="40" color="currentColor" class="pa-0">
 						{{ getIcon(index) }}
 					</VIcon>
 
@@ -145,12 +145,23 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
 
+.vd-emotion-picker {
+	border: 0;
+}
+
 .v-rating .v-btn {
 	transition: 0.2s;
 	border: 1px solid transparent;
+	opacity: 1;
+		transition: 0.2s;
+		background: transparent;
 
 	:deep(.v-btn__content) {
 		flex-direction: column;
+	}
+
+	.text-secondary {
+		color: $vd-grey-lighten-20 !important;
 	}
 
 	&.sad {
@@ -165,12 +176,6 @@ export default defineComponent({
 		color: $vd-turquoise-darken-20 !important;
 	}
 
-	&::before {
-		opacity: 1;
-		transition: 0.2s;
-		background: transparent;
-	}
-
 	&--active.v-btn--disabled .v-icon {
 		color: currentColor !important;
 	}
@@ -183,17 +188,25 @@ export default defineComponent({
 	&:hover,
 	&:focus,
 	&--active {
-		&.sad::before {
+		:deep(.v-btn__overlay, .v-btn__underlay) {
+			display: none;
+		}
+
+		&.sad {
 			background: $vd-orange-lighten-90;
 		}
 
-		&.neutral::before {
+		&.neutral {
 			background: $vd-yellow-lighten-90;
 		}
 
-		&.happy::before {
+		&.happy {
 			background: $vd-turquoise-lighten-90;
 		}
 	}
+}
+
+.v-theme--light.v-btn--disabled :deep(.v-icon) {
+	color: $vd-grey-lighten-20 !important
 }
 </style>

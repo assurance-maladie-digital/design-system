@@ -50,27 +50,30 @@ export default defineComponent({
 		</legend>
 
 		<VRating
-			:model-value="modelValue"
+			:modelValue="modelValue"
 			:length="length"
-			:readonly="readonly"
+			:readonly="readonly || hasAnswered"
 			class="d-flex flex-wrap max-width-none mx-n3"
 			@update:modelValue="emitInputEvent"
 		>
 			<template #item="{ index }">
 				<!-- Using click event on VIcon will convert it into a button -->
-				<VIcon
-					:disabled="readonly || hasAnswered"
-					:aria-pressed="isActive(index).toString()"
-					:class="isFilled(index) ? 'text-am-blue' : 'text-am-blue-lighten-60'"
-					size="36px"
-					class="py-0 px-2"
+				<button
 					@mouseover="hoverIndex = index"
 					@focus="hoverIndex = index"
 					@mouseleave="hoverIndex = -1"
 					@blur="hoverIndex = -1"
+					:disabled="readonly"
+					:aria-pressed="isActive(index)"
 				>
-					{{ isFilled(index) ? starIcon : starOutlineIcon }}
-				</VIcon>
+					<VIcon
+						:class="isFilled(index) ? 'text-am-blue' : 'text-am-blue-lighten-60'"
+						size="36px"
+						class="py-0 px-2"
+					>
+						{{ isFilled(index) ? starIcon : starOutlineIcon }}
+					</VIcon>
+				</button>
 			</template>
 		</VRating>
 	</fieldset>
@@ -78,6 +81,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
+
+	.vd-stars-picker {
+		border: 0;
+	}
 
 	.v-rating .v-icon {
 		width: 52px !important;

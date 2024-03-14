@@ -1,13 +1,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
-
 import { RatingMixin } from "../RatingMixin";
-
 import { locales } from "./locales";
 
 interface SelectItem {
-	text: string;
+	title: string;
 	value: number;
 }
 
@@ -32,7 +30,7 @@ export default defineComponent({
 	computed: {
 		selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({
-				text: `${index + 1}`,
+				title: `${index + 1}`,
 				value: index + 1
 			}));
 		},
@@ -57,14 +55,14 @@ export default defineComponent({
 	<fieldset class="vd-number-picker">
 		<VSelect
 			v-if="$vuetify.display.xs"
-			:model-value="modelValue"
-			:label="label"
+			:modelValue="modelValue === -1 ? null : modelValue"
+			:label="label ?? ''"
 			:disabled="readonly || hasAnswered"
 			:items="selectItems"
 			hide-details
-			outlined
+			variant="outlined"
 			class="vd-form-input"
-			@change="setValue"
+			@update:modelValue="setValue"
 		/>
 
 		<template v-else>
@@ -76,21 +74,21 @@ export default defineComponent({
 
 			<div v-if="!hasAnswered" class="d-inline-block">
 				<VRating
-					:model-value="modelValue"
+					:modelValue="modelValue"
 					:length="length"
 					:readonly="readonly || hasAnswered"
-					class="d-flex flex-wrap mx-n1 max-width-none"
+					class="d-flex flex-wrap max-width-none"
 					@update:modelValue="setValue"
 				>
 					<template #item="{ index }">
 						<VBtn
 							:aria-label="locales.ariaLabel(index + 1, length)"
 							:disabled="readonly"
-							x-small
-							outlined
+							size="x-small"
+							variant="outlined"
 							color="primary"
 							height="36px"
-							class="text-body-2 mx-1 pa-0"
+							class="text-body-2 pa-0 mr-2"
 						>
 							{{ index + 1 }}
 						</VBtn>
@@ -113,7 +111,7 @@ export default defineComponent({
 						:aria-label="`${locales.ariaLabel(length, length)} ${
 							itemLabels[1]
 						}.`"
-						class="text-caption"
+						class="text-caption mr-2"
 						v-text="itemLabels[1]"
 					/>
 				</div>
@@ -122,13 +120,13 @@ export default defineComponent({
 			<p
 				v-else
 				:aria-label="locales.ariaLabel(modelValue, length)"
-				class="mb-0"
+				class="mb-0 d-flex align-center"
 			>
 				<VBtn
 					aria-hidden="true"
 					disabled
-					x-small
-					outlined
+					size="x-small"
+					variant="outlined"
 					color="primary"
 					height="36px"
 					class="vd-btn-answer text-body-2 mr-1 pa-0"
@@ -145,7 +143,11 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@cnamts/design-tokens/dist/tokens";
 
+.vd-number-picker {
+	border: 0;
+}
+
 .vd-btn-answer.v-btn.v-btn--disabled {
-	color: $vd-primary !important;
+	opacity: 1;
 }
 </style>
