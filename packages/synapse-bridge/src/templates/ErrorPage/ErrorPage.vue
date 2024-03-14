@@ -1,9 +1,10 @@
 <script lang="ts">
-	import PageContainer from '@/elements/PageContainer'
 	import type { PropType } from 'vue'
 	import { defineComponent } from 'vue'
 	import { RouteRecordRaw } from 'vue-router'
 	import { locales } from './locales'
+
+	import PageContainer from '@/elements/PageContainer'
 
 	export default defineComponent({
 		components: {
