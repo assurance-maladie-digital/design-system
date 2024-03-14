@@ -2,10 +2,10 @@ import { describe, it, expect, afterEach, vi } from 'vitest'
 import { copyToClipboard } from '../'
 
 interface TSelection {
-	rangeCount?: number
-	getRangeAt?: (index: number) => string | null
-	removeAllRanges?: () => null
-	addRange?: () => null
+	rangeCount?: number;
+	getRangeAt?: () => string | null;
+	removeAllRanges?: () => null;
+	addRange?: () => null;
 }
 
 // Custom document type

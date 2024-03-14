@@ -1,9 +1,15 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"target": "ES2020",
+		"target": "esnext",
+		"module": "esnext",
+		"strict": true,
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"jsx": "preserve",
+		"types": ["vite/client", "webpack-env", "jest"],
+		"plugins": [{ "name": "typescript-tslint-plugin" }, { "name": "jsx-a11y-plugin" }],
 		"useDefineForClassFields": true,
-		"module": "ESNext",
 		"lib": [
 			"ES2020",
 			"DOM",
@@ -15,7 +21,6 @@
 		},
 
 		/* Bundler mode */
-		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
