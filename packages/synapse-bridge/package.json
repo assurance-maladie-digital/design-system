@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/synapse-bridge",
-	"version": "0.0.0",
+	"version": "1.0.0-alpha.0",
 	"description": "Portage of our components to Vue 3 without breaking changes",
 	"license": "MIT",
 	"author": {
@@ -32,7 +32,8 @@
 	},
 	"peerDependencies": {
 		"vue": "^3.3.0",
-		"vuetify": "^3.3.0"
+		"vuetify": "^3.3.0",
+		"vuex": "^4.1.0"
 	},
 	"dependencies": {
 		"@cnamts/design-tokens": "2.12.0",

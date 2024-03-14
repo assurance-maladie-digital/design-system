@@ -71,4 +71,37 @@
 		),
 	),
 	$skeleton-loader-actions-button-margin: 0px,
+	$alert-border-opacity: 1,
 );
+
+@import './fonts.scss';
+
+/* Default, global styles */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	max-width: 100%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	/* Font size defined by the browser */
+	font-size: 100%;
+}
+
+/* Hide the application while Vue.js is loading */
+[v-cloak] {
+	display: none;
+}
+
+/* Apply default transition to links */
+a {
+	transition: .25s;
+}
+
+.v-alert {
+	font-size: 1.125rem;
+}

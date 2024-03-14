@@ -59,6 +59,25 @@ describe('DialogBox', () => {
 			await wrapper.setProps({ modelValue: true })
 			expect(card.isVisible()).toBe(true)
 		})
+
+		it('renders the title slot', async () => {
+			const wrapper = mount(DialogBox, {
+				slots: {
+					title: '<h2>Test title</h2>',
+				},
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
+
+			const modal = wrapper.getComponent(VCard)
+			const title = modal.find<HTMLElement>('h2').text()
+
+			await modal.vm.$nextTick()
+
+			expect(title).toBe('Test title')
+		})
 	})
 
 	describe('focusable elements and tab navigation', () => {
@@ -242,6 +261,24 @@ describe('DialogBox', () => {
 			})
 			const result = await wrapper.vm.getSelectableElements()
 			expect(result).toEqual([])
+		})
+
+		it('setEventListeners is called', async () => {
+			const wrapper = shallowMount(DialogBox, {
+				props: defaultProps,
+				global: {
+					plugins: [vuetify],
+				},
+			})
+
+			const spy = vi.spyOn(wrapper.vm, 'setEventListeners').mockReturnValue(
+				Promise.resolve()
+			)
+
+			await wrapper.vm.setEventListeners()
+			await wrapper.vm.$nextTick()
+
+			expect(spy).toHaveBeenCalled()
 		})
 	})
 })

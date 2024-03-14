@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AlertWrapper > renders correctly with props 1`] = `<v-alert-stub data-v-3e25d558="" title="title" type="success" class="success vd-alert-wrapper" border="false" closable="false" closeicon="$close" closelabel="$vuetify.close" modelvalue="true" prominent="false" style="border-left: 4px solid;" density="default" tile="false" tag="div" variant="tonal" message="message"></v-alert-stub>`;
