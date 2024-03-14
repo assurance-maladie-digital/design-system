@@ -105,3 +105,7 @@ a {
 .v-alert {
 	font-size: 1.125rem;
 }
+
+.bg-primary, .bg-secondary {
+	--v-theme-overlay-multiplier: 0 !important;
+}

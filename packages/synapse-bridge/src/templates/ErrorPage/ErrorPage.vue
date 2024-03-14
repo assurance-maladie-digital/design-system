@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
 	import type { PropType } from 'vue'
-
+	import { defineComponent } from 'vue'
 	import { RouteRecordRaw } from 'vue-router'
-
 	import { locales } from './locales'
 
 	import PageContainer from '@/elements/PageContainer'
@@ -41,6 +39,10 @@
 				type: Boolean,
 				default: false,
 			},
+			codeErrorText: {
+				type: String,
+				default: locales.errorCodeText
+			},
 		},
 		data() {
 			return {
@@ -73,11 +75,8 @@
 					cols="12"
 					class="order-last order-sm-first text-center text-sm-left"
 				>
-					<div
-						aria-hidden="true"
-						class="vd-code font-weight-thin text-primary mb-4"
-					>
-						{{ code }}
+					<div class="vd-code font-weight-thin text-primary mb-4">
+						<span class="d-sr-only">{{ codeErrorText }}</span> {{ code }}
 					</div>
 
 					<h2 class="mb-2 font-weight-bold text-h5 mb-4">
