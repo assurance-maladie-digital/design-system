@@ -105,3 +105,14 @@ a {
 .v-alert {
 	font-size: 1.125rem;
 }
+
+@import '@cnamts/design-tokens/dist/tokens';
+
+.v-text-field {
+	.v-field__clearable {
+		.v-icon {
+			color: $vd-primary !important;
+			opacity: 1 !important;
+		}
+	}
+}
