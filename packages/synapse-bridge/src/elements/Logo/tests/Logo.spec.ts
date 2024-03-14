@@ -91,4 +91,18 @@ describe("Logo", () => {
 			"Sécurité sociale, l’Assurance Maladie : Agir ensemble, protéger chacun : Risques Professionnels"
 		);
 	});
+
+	it("renders correctly with ariaLabel", () => {
+		const wrapper = shallowMount(Logo, {
+			propsData: {
+				risquePro: true,
+				ariaLabel: "test",
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.label).toBe("test");
+	});
 });
