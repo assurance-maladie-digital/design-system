@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotificationBar > Rendering > renders correctly with actionSlotAttrs prop 1`] = `
+<!---->
+<div data-v-629b7edf="" class="text-grey-darken-80 vd-notification-content"><i data-v-629b7edf="" class="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-grey-darken-80 mr-2 vd-notification-icon" aria-hidden="true"></i> test <div data-v-629b7edf="" class="v-spacer"></div><!--v-if-->
+  <div data-v-629b7edf="" class="d-flex flex-row justify-space-between">
+    <hr data-v-629b7edf="" class="v-divider v-divider--vertical v-theme--light text-grey-darken-80 mx-4" style="border-color: rgba(0, 0, 0, 1);" aria-orientation="vertical" role="separator">{
+    "attrs": {
+    "color": "grey-darken-80",
+    "variant": "outlined",
+    "class": "mr-4"
+    }
+    }<button data-v-629b7edf="" type="button" class="v-btn v-theme--light text-grey-darken-80 v-btn--density-default v-btn--size-default v-btn--variant-text ml-4"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><span data-v-629b7edf="" class="">Fermer</span><!--v-if--></span><!----><!----></button>
+  </div>
+</div>
+`;

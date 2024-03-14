@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DialogBox > rendering and props > is closed when model value is false 1`] = ``;
+
+exports[`DialogBox > rendering and props > renders correctly with props 1`] = `<v-dialog-stub data-v-ee61b14d="" width="600px" class="vd-dialog-box" fullscreen="false" retainfocus="false" scrollable="false" absolute="false" attach="false" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="true" persistent="false" scrim="true" zindex="2400" activatorprops="[object Object]" openonhover="false" closeoncontentclick="false" eager="false" locationstrategy="static" location="bottom" origin="center center" scrollstrategy="block" transition="[object Object]" aria-modal="true"></v-dialog-stub>`;
