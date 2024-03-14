@@ -55,7 +55,7 @@ export default defineComponent({
 			type: String,
 			default: undefined
 		},
-		linkLabel: {
+		homeArialabel: {
 			type: String,
 			default: undefined
 		},
@@ -190,7 +190,7 @@ export default defineComponent({
 								:reduce-logo="isMiniVersion"
 								:home-link="homeLink"
 								:home-href="homeHref"
-								:link-label="linkLabel"
+								:home-arialabel="homeArialabel"
 							>
 								<template #brand-content>
 									<slot name="brand-content" />
