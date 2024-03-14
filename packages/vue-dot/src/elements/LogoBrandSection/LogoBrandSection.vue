@@ -14,7 +14,7 @@
 				:hide-signature="hideSignature"
 				:hide-organism="isCompteAmeliMobile"
 				:risque-pro="isRisquePro"
-				:aria-label="linkLabel"
+				:aria-label="homeArialabel"
 				:avatar="avatar"
 				:size="logoSize"
 				:class="{ 'mr-2': avatar }"
@@ -144,7 +144,7 @@
 				type: String,
 				default: undefined
 			},
-			linkLabel: {
+			homeArialabel: {
 				type: String,
 				default: undefined
 			}

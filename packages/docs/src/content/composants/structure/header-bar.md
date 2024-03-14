@@ -22,7 +22,7 @@ Le sous-titre sera automatiquement masqué sur les écrans mobiles.
 
 #### Accessibilité
 
-Vous pouvez personnaliser la propriété `aria-label` du lien de retour à l’accueil en utilisant la prop `link-label`.
+Vous pouvez personnaliser la propriété `aria-label` du lien de retour à l’accueil en utilisant la prop `home-arialabel`.
 
 <doc-example file="header-bar/ally"></doc-example>
 

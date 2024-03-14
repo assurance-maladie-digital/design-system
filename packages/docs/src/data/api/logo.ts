@@ -86,7 +86,7 @@ export const api: Api = {
 				description: 'Un lien externe à l’application vers la page d’accueil.'
 			},
 			{
-				name: 'link-label',
+				name: 'home-arialabel',
 				type: 'string',
 				default: 'undefined',
 				description: 'Le libellé du lien.'

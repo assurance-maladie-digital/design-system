@@ -1,6 +1,6 @@
 <template>
 	<HeaderBar
 		service-title="Design System"
-		link-label="Accueil - Documentation du Design System"
+		home-arialabel="Accueil - Documentation du Design System"
 	/>
 </template>

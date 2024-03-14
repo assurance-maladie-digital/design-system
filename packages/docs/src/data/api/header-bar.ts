@@ -90,7 +90,7 @@ export const api: Api = {
 			homeLinkProp,
 			homeHrefProp,
 			{
-				name: 'link-label',
+				name: 'home-arialabel',
 				type: 'string',
 				default: 'undefined',
 				description: 'Le libellé du lien vers la page d’accueil. Si non défini, un libellé sera généré automatiquement.'
