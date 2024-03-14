@@ -45,6 +45,10 @@ export default defineComponent({
 			type: String,
 			default: undefined,
 		},
+		linkLabel: {
+			type: String,
+			default: undefined
+		}
 	},
 	data() {
 		return {
@@ -199,7 +203,6 @@ export default defineComponent({
 		<component
 			:is="logoContainerComponent"
 			:aria-current-value="null"
-			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 			:href="homeHref"
 			class="vd-home-link"
@@ -208,6 +211,7 @@ export default defineComponent({
 				:hide-signature="hideSignature"
 				:hide-organism="isCompteAmeliMobile"
 				:risque-pro="isRisquePro"
+				:aria-label="linkLabel"
 				:avatar="avatar"
 				:size="logoSize"
 				:class="{ 'mr-2': avatar }"
@@ -237,8 +241,8 @@ export default defineComponent({
 				v-if="secondaryLogo"
 				:aria-current-value="null"
 				:aria-label="secondaryLogoLabel"
-				:to="homeLink"
-				:href="homeHref"
+				:to="secondaryLogoCtnComponent !== 'div' ? homeLink : undefined"
+				:href="secondaryLogoCtnComponent !== 'div' ? homeHref : undefined"
 				class="vd-home-link"
 			>
 				<img :src="secondaryLogo.src" :alt="secondaryLogo.alt" />

@@ -55,6 +55,10 @@ export default defineComponent({
 			type: String,
 			default: undefined
 		},
+		linkLabel: {
+			type: String,
+			default: undefined
+		},
 		showNavBarMenuBtn: {
 			type: Boolean,
 			default: false
@@ -186,6 +190,7 @@ export default defineComponent({
 								:reduce-logo="isMiniVersion"
 								:home-link="homeLink"
 								:home-href="homeHref"
+								:link-label="linkLabel"
 							>
 								<template #brand-content>
 									<slot name="brand-content" />

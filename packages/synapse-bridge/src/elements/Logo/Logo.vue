@@ -28,6 +28,10 @@ export default defineComponent({
 			type: Boolean,
 			default: false,
 		},
+		ariaLabel: {
+			type: String,
+			default: undefined
+		},
 		avatar: {
 			type: Boolean,
 			default: false,
@@ -71,6 +75,10 @@ export default defineComponent({
 		},
 
 		label(): string {
+			if (this.ariaLabel) {
+				return this.ariaLabel;
+			}
+
 			if (this.avatar) {
 				// Return an empty string since there is no text,
 				// this is an illustration image
