@@ -274,6 +274,11 @@ a {
 	color: rgba(0,0,0, .6);
 }
 
+// Fix footer bar height in SK
+.v-footer {
+	flex-grow: 0 !important;
+}
+
 // Use deep selector to style user content as well
 .vd-footer-bar.theme--dark :deep() {
 	background-color: $vd-grey-darken-20 !important;
