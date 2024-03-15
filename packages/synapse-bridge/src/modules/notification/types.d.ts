@@ -1,9 +1,9 @@
 export type NotificationTypes = 'success' | 'error' | 'info' | 'warning';
 
 export interface NotificationObj {
-	type: NotificationTypes;
+	type: NotificationTypes | null;
 	message: string;
-	icon?: string;
+	icon?: string | null;
 	ref?: string;
 }
 

@@ -141,7 +141,10 @@ export default defineComponent({
 		},
 
 		hasBrandSlot() {
-			return Boolean(!!this.$slots["brand-content"] && this.$slots["brand-content"]()[0].children.length > 0);
+			return Boolean(
+				this.$slots["brand-content"] &&
+				(this.$slots["brand-content"]()[0] as any)?.children?.length > 0
+			);
 		},
 
 		showBrandContent(): boolean {
