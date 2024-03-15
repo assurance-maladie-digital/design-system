@@ -274,6 +274,10 @@ a {
 	color: rgba(0,0,0, .6);
 }
 
+:deep(.vd-footer-bar) {
+	flex-grow: 0;
+}
+
 // Use deep selector to style user content as well
 .vd-footer-bar.theme--dark :deep() {
 	background-color: $vd-grey-darken-20 !important;
