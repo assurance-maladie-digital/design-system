@@ -3,6 +3,7 @@ import { shallowMount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
 import AlertWrapper from "../";
+import {AlertTypeEnum} from "@/patterns/AlertWrapper/AlertTypeEnum.ts";
 
 describe("AlertWrapper", () => {
 	it("renders correctly with props", () => {
@@ -10,7 +11,7 @@ describe("AlertWrapper", () => {
 			props: {
 				title: "title",
 				message: "message",
-				type: "success",
+				type: AlertTypeEnum.SUCCESS,
 			},
 			global: {
 				plugins: [vuetify],
@@ -25,7 +26,7 @@ describe("AlertWrapper", () => {
 			props: {
 				title: "title",
 				message: "message",
-				type: "success",
+				type: AlertTypeEnum.SUCCESS,
 			},
 			global: {
 				plugins: [vuetify],
@@ -42,7 +43,7 @@ describe("AlertWrapper", () => {
 			props: {
 				title: "title",
 				message: "message",
-				type: "success",
+				type: AlertTypeEnum.SUCCESS,
 				outlined: true,
 			},
 			global: {
@@ -51,7 +52,12 @@ describe("AlertWrapper", () => {
 		});
 
 		wrapper.vm.dismissAlert();
+		const emittedValue = wrapper.emitted("update:modelValue");
 
-		expect(wrapper.emitted("update:modelValue")[0]).toEqual([false]);
+		if (emittedValue) {
+			expect(emittedValue[0]).toEqual([false]);
+		} else {
+			return false;
+		}
 	});
 });

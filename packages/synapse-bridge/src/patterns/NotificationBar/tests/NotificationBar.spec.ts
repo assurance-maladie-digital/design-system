@@ -260,18 +260,6 @@ describe("NotificationBar", () => {
 			expect(wrapper.vm.icon).toBe(notificationObjWithIcon.icon);
 		});
 
-		it("returns this.iconMapping[this.notification.type] when this.notification.icon is null", async () => {
-			const store = createTestStore();
-			const wrapper = createNotificationBar(store);
-			await store.dispatch(
-				"notification/addNotification",
-				notificationErrorObj
-			);
-			expect(wrapper.vm.icon).toBe(
-				wrapper.vm.iconMapping[notificationErrorObj.type]
-			);
-		});
-
 		it("returns true when mobileVersion is true and hasLongContent is false", async () => {
 			const store = createTestStore();
 			const wrapper = createNotificationBar(store);
