@@ -5,7 +5,6 @@ import { vuetify } from '@tests/unit/setup';
 import { filePromise } from './data/filePromise.ts';
 import DownloadBtn from '../';
 
-
 describe('DownloadBtn', () => {
 	let wrapper: VueWrapper<typeof DownloadBtn>
 	let element: DOMWrapper<Element>

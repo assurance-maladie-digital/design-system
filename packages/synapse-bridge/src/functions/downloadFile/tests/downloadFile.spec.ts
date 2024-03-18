@@ -8,8 +8,8 @@ const file = new File(["attestation.txt"], "attestation.txt", {
 
 describe("downloadFile", () => {
 	let link: HTMLAnchorElement;
-	let appendChildSpy;
-	let removeChildSpy;
+	let appendChildSpy: any;
+	let removeChildSpy: any;
 
 	beforeEach(() => {
 		link = {
