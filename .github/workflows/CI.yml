@@ -1,28 +1,13 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  pull_request:
 
 jobs:
   tests:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/cache@v3
-        with:
-          path: /home/runner/.local/share/pnpm/store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: true
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
-
       - name: Install dependencies
         run: pnpm install
 
