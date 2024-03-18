@@ -85,7 +85,7 @@ describe("HeaderBar render", () => {
 		expect(wrapper.vm.height).toBe(120);
 	});
 
-	it("height returns 168", () => {
+	it("height returns 168 if sticky and scrolled", () => {
 		const wrapper = createWrapper();
 		wrapper.setData({ scrolled: true, showStickyNavBar: true, showHeaderMenuBtn: false, hasNavigationItems: true });
 		expect(wrapper.vm.height).toBe(168);

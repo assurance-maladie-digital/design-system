@@ -3,7 +3,6 @@ import Playground from './Playground.vue'
 import { router } from './router'
 import { createStore } from "vuex";
 
-
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
