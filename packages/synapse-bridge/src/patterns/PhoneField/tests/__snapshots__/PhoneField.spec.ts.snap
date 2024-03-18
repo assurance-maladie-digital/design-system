@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`PhoneField > renders correctly 1`] = `
-<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-text-field--plain-underlined">
+<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined">
   <!---->
   <div class="v-input__control">
     <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
@@ -9,11 +9,11 @@ exports[`PhoneField > renders correctly 1`] = `
       <div class="v-field__loader">
         <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
           <!---->
-          <div class="v-progress-linear__background" style="width: 100%;"></div>
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
           <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
             <div class="v-progress-linear__indeterminate">
-              <div class="v-progress-linear__indeterminate long"></div>
-              <div class="v-progress-linear__indeterminate short"></div>
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
             </div>
           </transition-stub>
           <!---->
@@ -40,9 +40,9 @@ exports[`PhoneField > renders correctly 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-group-stub>
+    </transition-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">0 / 10</div>
@@ -60,11 +60,11 @@ exports[`PhoneField > renders correctly with outlined prop 1`] = `
       <div class="v-field__loader">
         <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
           <!---->
-          <div class="v-progress-linear__background" style="width: 100%;"></div>
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
           <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
             <div class="v-progress-linear__indeterminate">
-              <div class="v-progress-linear__indeterminate long"></div>
-              <div class="v-progress-linear__indeterminate short"></div>
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
             </div>
           </transition-stub>
           <!---->
@@ -94,9 +94,9 @@ exports[`PhoneField > renders correctly with outlined prop 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-group-stub>
+    </transition-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">0 / 10</div>
@@ -106,7 +106,7 @@ exports[`PhoneField > renders correctly with outlined prop 1`] = `
 `;
 
 exports[`PhoneField > renders correctly with required prop 1`] = `
-<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-text-field--plain-underlined">
+<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined">
   <!---->
   <div class="v-input__control">
     <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
@@ -114,11 +114,11 @@ exports[`PhoneField > renders correctly with required prop 1`] = `
       <div class="v-field__loader">
         <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
           <!---->
-          <div class="v-progress-linear__background" style="width: 100%;"></div>
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
           <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
             <div class="v-progress-linear__indeterminate">
-              <div class="v-progress-linear__indeterminate long"></div>
-              <div class="v-progress-linear__indeterminate short"></div>
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
             </div>
           </transition-stub>
           <!---->
@@ -145,9 +145,9 @@ exports[`PhoneField > renders correctly with required prop 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-group-stub>
+    </transition-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">0 / 10</div>
@@ -157,7 +157,7 @@ exports[`PhoneField > renders correctly with required prop 1`] = `
 `;
 
 exports[`PhoneField > renders correctly with value prop 1`] = `
-<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-text-field--plain-underlined">
+<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-input--plain-underlined">
   <!---->
   <div class="v-input__control">
     <div class="v-field v-field--active v-field--appended v-field--dirty v-field--variant-underlined v-theme--light v-locale--is-ltr">
@@ -165,11 +165,11 @@ exports[`PhoneField > renders correctly with value prop 1`] = `
       <div class="v-field__loader">
         <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
           <!---->
-          <div class="v-progress-linear__background" style="width: 100%;"></div>
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
           <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
             <div class="v-progress-linear__indeterminate">
-              <div class="v-progress-linear__indeterminate long"></div>
-              <div class="v-progress-linear__indeterminate short"></div>
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
             </div>
           </transition-stub>
           <!---->
@@ -196,9 +196,9 @@ exports[`PhoneField > renders correctly with value prop 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-group-stub>
+    </transition-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">10 / 10</div>
