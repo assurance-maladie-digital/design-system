@@ -88,6 +88,7 @@ export default defineComponent({
 		:counter-value="noSpacesCounter"
 		:label="locales.label"
 		:variant="outlined ? 'outlined' : 'underlined'"
+		color="primary"
 		@input="setInternalValue"
 		@change="emitChangeEvent"
 	>
