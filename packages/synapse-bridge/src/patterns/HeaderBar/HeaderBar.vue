@@ -265,6 +265,9 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+.v-layout {
+	display: contents !important;
+}
 .vd-header-bar {
 	z-index: 1;
 }
