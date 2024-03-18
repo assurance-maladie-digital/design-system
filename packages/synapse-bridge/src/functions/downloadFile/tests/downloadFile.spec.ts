@@ -2,72 +2,57 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 
 import { downloadFile } from "../";
 
-const file = new File(["attestation.txt"], "attestation.txt", {
-	type: "text/plain",
-});
 
-describe("downloadFile", () => {
-	let link: HTMLAnchorElement;
-	let appendChildSpy: any;
-	let removeChildSpy: any;
+describe('downloadFile', () => {
+	const mockCreateObjectURL = vi.fn();
+	const mockRevokeObjectURL = vi.fn();
+
+	const file = new File(['test'], 'attestation.txt', {
+		type: 'text/plain',
+	});
 
 	beforeEach(() => {
-		link = {
-			style: {},
-			click: vi.fn(),
-		} as unknown as HTMLAnchorElement;
-
-		vi.spyOn(document, "createElement").mockImplementation(() => link);
-
-		appendChildSpy = vi.spyOn(document.body, "appendChild")
-		removeChildSpy = vi.spyOn(document.body, "removeChild")
+		global.URL.createObjectURL = mockCreateObjectURL;
+		global.URL.revokeObjectURL = mockRevokeObjectURL;
 	});
-
 	afterEach(() => {
-		vi.restoreAllMocks();
-	});
+		vi.resetAllMocks();
+		document.body.innerHTML = '';
+	})
 
-	global.URL.createObjectURL = vi.fn();
-	global.URL.revokeObjectURL = vi.fn();
-
-	it("it downloads a file", () => {
+	it('download a file', () => {
+		mockCreateObjectURL.mockReturnValue('blob:test');
 		downloadFile(file, file.name, file.type);
-
-		expect(appendChildSpy).toHaveBeenCalledTimes(1);
-		expect(removeChildSpy).toHaveBeenCalledTimes(1);
-		expect(link.rel).toEqual("noopener noreferrer");
-		expect(link.target).toEqual("_blank");
-		expect(link.download).toEqual(file.name);
-		expect(link.style.display).toEqual("none");
-		expect(link.click).toHaveBeenCalledTimes(1);
+		expect(mockCreateObjectURL).toHaveBeenCalledWith(new Blob([file], { type: file.type }));
+		expect(mockRevokeObjectURL).toHaveBeenCalledWith('blob:test');
 	});
 
-	it("it downloads a file with utf8Bom", () => {
+	it('download a file with utf8Bom', () => {
+		mockCreateObjectURL.mockReturnValue('blob:test-bom');
 		downloadFile(file, file.name, file.type, true);
-
-		expect(link.click).toHaveBeenCalledTimes(1);
+		expect(mockCreateObjectURL).toHaveBeenCalled();
+		expect(mockRevokeObjectURL).toHaveBeenCalledWith('blob:test-bom');
 	});
 
-	it("it downloads a file with content type BufferSource", () => {
+	it('download a file with content type BufferSource', () => {
 		const buffer = new ArrayBuffer(8);
-
+		mockCreateObjectURL.mockReturnValue('blob:test-buffer');
 		downloadFile(buffer, file.name, file.type);
-
-		expect(link.click).toHaveBeenCalledTimes(1);
+		expect(mockCreateObjectURL).toHaveBeenCalledWith(new Blob([buffer], { type: file.type }));
+		expect(mockRevokeObjectURL).toHaveBeenCalledWith('blob:test-buffer');
 	});
 
-	it("it downloads a file with content type String", () => {
-		downloadFile("test", file.name, file.type);
-
-		expect(link.click).toHaveBeenCalledTimes(1);
+	it('download a file with content type String', () => {
+		mockCreateObjectURL.mockReturnValue('blob:test-string');
+		downloadFile('test', file.name, file.type);
+		expect(mockCreateObjectURL).toHaveBeenCalledWith(new Blob(['test'], { type: file.type }));
+		expect(mockRevokeObjectURL).toHaveBeenCalledWith('blob:test-string');
 	});
 
-	it("it downloads a file on Internet Explorer", () => {
-		window.navigator.msSaveOrOpenBlob = vi.fn(() => true);
-		const navigatorSpy = vi.spyOn(global, "navigator", "get");
-
+	it('download a file on Internet Explorer', () => {
+		const mockSaveOrOpenBlob = vi.fn();
+		window.navigator.msSaveOrOpenBlob = mockSaveOrOpenBlob;
 		downloadFile(file, file.name, file.type);
-
-		expect(navigatorSpy).toHaveBeenCalledTimes(2);
+		expect(mockSaveOrOpenBlob).toHaveBeenCalledWith(new Blob([file], { type: file.type }), file.name);
 	});
 });
