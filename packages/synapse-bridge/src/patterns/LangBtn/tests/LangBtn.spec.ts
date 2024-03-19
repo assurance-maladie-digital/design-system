@@ -66,8 +66,8 @@ describe("LangBtn", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('update the current lang to a valid value when it is set to en invalide value', async () => {
-		const wrapper = mount(LangBtn, {
+	it('update the current lang to a valid value', async () => {
+		const wrapper: any = mount(LangBtn, {
 			propsData: {
 				availableLanguages: ["fr", "en"],
 				modelValue: "fr",
