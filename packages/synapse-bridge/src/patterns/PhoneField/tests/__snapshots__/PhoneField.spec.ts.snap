@@ -40,9 +40,9 @@ exports[`PhoneField > renders correctly 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-stub>
+    </transition-group-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">0 / 10</div>
@@ -94,9 +94,9 @@ exports[`PhoneField > renders correctly with outlined prop 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-stub>
+    </transition-group-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">0 / 10</div>
@@ -145,9 +145,9 @@ exports[`PhoneField > renders correctly with required prop 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-stub>
+    </transition-group-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">0 / 10</div>
@@ -196,9 +196,9 @@ exports[`PhoneField > renders correctly with value prop 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-stub>
+    </transition-group-stub>
     <!----><span></span>
     <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
       <div class="v-counter" style="display: none;">10 / 10</div>
