@@ -25,28 +25,35 @@ export default defineComponent({
 			{{ locales.followUs }}
 		</span>
 
-		<div class="d-flex justify-start justify-sm-end max-width-none mx-n2">
-			<VBtn
+		<ul class="d-flex justify-start justify-sm-end max-width-none mx-n2">
+			<li
 				v-for="(social, index) in links"
 				:key="index"
-				:href="social.href"
-				target="_blank"
-				rel="noopener noreferrer"
-				:icon="true"
-				class="mx-1"
-				elevation='0'
-				variant="text"
 			>
-				<VIcon size="30px" class="vd-social-media-links-icon">
-					{{ social.icon }}
-				</VIcon>
-			</VBtn>
-		</div>
+				<VBtn
+					:href="social.href"
+					target="_blank"
+					rel="noopener noreferrer"
+					:icon="true"
+					class="mx-1"
+					elevation='0'
+					variant="text"
+				>
+					<VIcon size="30px" class="vd-social-media-links-icon">
+						{{ social.icon }}
+					</VIcon>
+				</VBtn>
+			</li>
+		</ul>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 	@use "@cnamts/design-tokens/dist/tokens";
+
+	li {
+		list-style: none;
+	}
 
 	.vd-social-media-links-label.text--primary {
 		color: tokens.$vd-primary;

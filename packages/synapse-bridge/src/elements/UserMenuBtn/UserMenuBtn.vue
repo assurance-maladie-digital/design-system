@@ -69,8 +69,9 @@ export default defineComponent({
 		<VMenu
 			v-bind="options.menu"
 			:disabled="!hasListContent"
-			attach
 			transition="fade-transition"
+			location="bottom end"
+			z-index="9999"
 		>
 			<template #activator="{ props }">
 				<VBtn
@@ -133,6 +134,7 @@ export default defineComponent({
 						<VListItem
 							v-if="!hideLogoutBtn"
 							v-bind="options.logoutListItem"
+							class="logout"
 							@click="$emit('logout')"
 						>
 
@@ -155,7 +157,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 	@import '@cnamts/design-tokens/dist/tokens';
-
 	.vd-user-menu-btn-ctn {
 		position: relative;
 	}

@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeaderNavigationBar > renders correctly 1`] = `
+<div data-v-4e12d466="" class="v-sheet v-theme--dark px-14 vd-navigation-bar d-flex align-center justify-center" style="background-color: rgb(10, 52, 123); color: rgb(255, 255, 255); caret-color: #fff; height: 48px; width: 100%;" dense="true">
+  <div data-v-4e12d466="" class="v-sheet v-theme--dark bg-transparent header-navigation-background d-flex align-center">
+    <div data-v-4e12d466="" class="v-slide-group v-slide-group--mobile v-tabs v-tabs--horizontal v-tabs--align-tabs-start v-tabs--density-default" tabindex="0" role="tablist" backgroundcolor="transparent">
+      <!---->
+      <div class="v-slide-group__container">
+        <div class="v-slide-group__content" style="transform: translateX(0px);"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+</div>
+`;

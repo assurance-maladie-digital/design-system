@@ -45,20 +45,15 @@ export default defineComponent({
 			type: String,
 			default: undefined,
 		},
+		homeArialabel: {
+			type: String,
+			default: undefined
+		}
 	},
 	data() {
 		return {
 			locales,
-			isNuxt: false,
-			hasSecondaryLogo: false,
-			hasSecondaryLogoLink: false,
 		};
-	},
-	created() {
-		this.isNuxt = !!getCurrentInstance()?.appContext.config.globalProperties.$nuxt;
-		this.hasSecondaryLogo = Boolean(this.$slots.default || this.secondaryLogo);
-		this.hasSecondaryLogoLink = Boolean(this.theme === ThemeEnum.AMELI_PRO ||
-			this.theme === ThemeEnum.AMELI);
 	},
 	computed: {
 		service(): Service {
@@ -102,11 +97,23 @@ export default defineComponent({
 		},
 
 		hideSignature(): boolean {
-			return (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile) ? true : Boolean(this.$slots.default);
+			return (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile);
 		},
 
 		secondaryLogo(): LogoInfo | undefined {
 			return secondaryLogoMapping[this.theme];
+		},
+
+		hasSecondaryLogo(): boolean {
+			return Boolean(this.secondaryLogo);
+		},
+
+		hasSecondaryLogoLink(): boolean {
+			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
+		},
+
+		isNuxt(): boolean {
+			return !!getCurrentInstance()?.appContext.config.globalProperties.$nuxt;
 		},
 
 		logoContainerComponent(): string {
@@ -133,12 +140,19 @@ export default defineComponent({
 			return this.reduceLogo ? this.hasSecondaryLogo : false;
 		},
 
+		hasBrandSlot() {
+			return Boolean(
+				this.$slots["brand-content"] &&
+				(this.$slots["brand-content"]()[0] as any)?.children?.length > 0
+			);
+		},
+
 		showBrandContent(): boolean {
 			return Boolean(
 				this.service.title ||
-					this.service.subTitle ||
-					this.$slots["brand-content"] ||
-					this.hasSecondaryLogo
+				this.service.subTitle ||
+				this.hasBrandSlot ||
+				this.hasSecondaryLogo
 			);
 		},
 
@@ -153,8 +167,8 @@ export default defineComponent({
 		showServiceSubTitle(): boolean {
 			return Boolean(
 				this.service.title &&
-					this.service.subTitle &&
-					!this.mobileVersion
+				this.service.subTitle &&
+				!this.mobileVersion
 			);
 		},
 
@@ -192,7 +206,6 @@ export default defineComponent({
 		<component
 			:is="logoContainerComponent"
 			:aria-current-value="null"
-			:aria-label="locales.homeLinkLabel"
 			:to="homeLink"
 			:href="homeHref"
 			class="vd-home-link"
@@ -201,6 +214,7 @@ export default defineComponent({
 				:hide-signature="hideSignature"
 				:hide-organism="isCompteAmeliMobile"
 				:risque-pro="isRisquePro"
+				:aria-label="homeArialabel"
 				:avatar="avatar"
 				:size="logoSize"
 				:class="{ 'mr-2': avatar }"
@@ -230,8 +244,8 @@ export default defineComponent({
 				v-if="secondaryLogo"
 				:aria-current-value="null"
 				:aria-label="secondaryLogoLabel"
-				:to="homeLink"
-				:href="homeHref"
+				:to="secondaryLogoCtnComponent !== 'div' ? homeLink : undefined"
+				:href="secondaryLogoCtnComponent !== 'div' ? homeHref : undefined"
 				class="vd-home-link"
 			>
 				<img :src="secondaryLogo.src" :alt="secondaryLogo.alt" />

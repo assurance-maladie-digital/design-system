@@ -1,11 +1,11 @@
 export enum ThemeEnum {
-	DEFAULT = 'default',
-	CNAM = 'cnam',
 	AMELI = 'ameli',
 	AMELI_PRO = 'ameli-pro',
+	CNAM = 'cnam',
 	COMPTE_AMELI = 'compte-ameli',
-	RISQUE_PRO = 'risque-pro',
-	COMPTE_ENTREPRISE = 'compte-entreprise'
+	COMPTE_ENTREPRISE = 'compte-entreprise',
+	DEFAULT = 'default',
+	RISQUE_PRO = 'risque-pro'
 }
 
 export const THEME_ENUM_VALUES = Object.values(ThemeEnum);
