@@ -179,4 +179,17 @@ describe("RatingPicker", () => {
 		expect(wrapper.findComponent(EmotionPicker).props("length")).toBe(3);
 		expect(wrapper.findComponent(EmotionPicker).props("itemLabels")).toEqual(emotionPickerlocales.defaultEmotionLabels);
 	});
+
+	it("renders the NumberPicker by default", () => {
+		const wrapper = mount(RatingPicker, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				type: '',
+			},
+		});
+
+		expect(wrapper.findComponent(StarsPicker).exists()).toBe(true);
+	});
 });

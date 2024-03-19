@@ -5,9 +5,7 @@ import type { PropType } from "vue";
 import { RatingMixin } from "../RatingMixin";
 import { locales } from "./locales";
 
-import { propValidator } from "../../../helpers/propValidator";
-
-import { useDisplay } from 'vuetify';
+import { propValidator } from "@/helpers/propValidator";
 
 import {
 	mdiEmoticonHappyOutline,

@@ -10,7 +10,7 @@ import AlertWrapper from '@/patterns/AlertWrapper/AlertWrapper.vue';
 
 import { RATING_ENUM_VALUES, RatingEnum } from './RatingMixin';
 
-import { propValidator } from '../../helpers/propValidator';
+import { propValidator } from '@/helpers/propValidator';
 
 import { locales } from './locales';
 import { AlertTypeEnum } from "../AlertWrapper/AlertTypeEnum";
@@ -25,7 +25,7 @@ export default defineComponent({
 	emits: ["update:modelValue"],
 	props: {
 		type: {
-			type: String as PropType<RatingEnum>,
+			type: String,
 			required: true,
 			validator: (value: string) => propValidator('type', RATING_ENUM_VALUES, value)
 		},
@@ -45,6 +45,10 @@ export default defineComponent({
 			type: Boolean,
 			default: false
 		},
+		hideAlert: {
+			type: Boolean,
+			default: false
+		},
 		modelValue: {
 			type: Number,
 			default: -1
@@ -56,17 +60,20 @@ export default defineComponent({
 			AlertTypeEnum: AlertTypeEnum,
 			internalValue: -1,
 			displayAdditionalContent: false,
-
-			ratingComponentMapping: {
-				[RatingEnum.EMOTION]: 'EmotionPicker',
-				[RatingEnum.STARS]: 'StarsPicker',
-				[RatingEnum.NUMBER]: 'NumberPicker',
-			}
 		};
 	},
 	computed: {
 		ratingComponent(): string {
-			return this.ratingComponentMapping[this.type];
+			switch (this.type) {
+				case RatingEnum.EMOTION:
+					return 'EmotionPicker';
+				case RatingEnum.STARS:
+					return 'StarsPicker';
+				case RatingEnum.NUMBER:
+					return 'NumberPicker';
+				default:
+					return 'StarsPicker';
+			}
 		},
 
 		length(): number | undefined {
@@ -125,6 +132,7 @@ export default defineComponent({
 
 		<template v-if="hasAnswered">
 			<AlertWrapper
+				v-if="!hideAlert"
 				:class="{ 'mb-4': displayAdditionalContent }"
 				outlined
 				:type="AlertTypeEnum.SUCCESS"

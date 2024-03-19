@@ -108,7 +108,7 @@ exports[`NumberPicker > renders correctly in xs window 1`] = `
   <div data-v-1cb226ec="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-input--disabled v-text-field v-select v-select--single v-select--selected vd-form-input">
     <!---->
     <div class="v-input__control">
-      <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--disabled v-field--dirty v-field--no-label v-field--variant-outlined v-theme--light v-locale--is-ltr" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-owns="v-menu-22">
+      <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--disabled v-field--dirty v-field--no-label v-field--variant-outlined v-theme--light v-locale--is-ltr" role="button" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-22">
         <div class="v-field__overlay"></div>
         <div class="v-field__loader">
           <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">

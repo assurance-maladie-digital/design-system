@@ -124,7 +124,7 @@ export default defineComponent({
 			>
 				<VBtn
 					aria-hidden="true"
-					disabled
+					:disabled="true"
 					size="x-small"
 					variant="outlined"
 					color="primary"
