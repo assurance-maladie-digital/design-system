@@ -92,12 +92,13 @@ export default defineComponent({
 				const { name, type } = this.getFileInfo(headers);
 				downloadFile(data, name, type);
 				this.state = StateEnum.RESOLVED;
-				if (this.notification) {
-					this.notifyUser();
-				}
 			} catch (error) {
 				this.$emit("error", error);
 				this.state = StateEnum.REJECTED;
+				return;
+			}
+			if (this.notification) {
+				this.notifyUser();
 			}
 		},
 	},
