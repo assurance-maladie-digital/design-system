@@ -6,4 +6,3 @@ on:
 jobs:
   ci:
     uses: ./actions/ci.yml
-
