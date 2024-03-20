@@ -64,9 +64,7 @@ export default defineComponent({
 		},
 
 		computedRowsText(): string {
-			const plural = this.nbTotal > 1;
-
-			return locales.rowText(this.rowText, plural);
+			return locales.rowText(this.rowText, this.nbTotal > 1);
 		},
 
 		textFieldClasses(): string {
