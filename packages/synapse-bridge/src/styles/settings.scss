@@ -75,6 +75,7 @@
 );
 
 @import './fonts.scss';
+@import '@cnamts/design-tokens/dist/tokens';
 
 /* Default, global styles */
 * {
@@ -108,4 +109,64 @@ a {
 
 .bg-primary, .bg-secondary {
 	--v-theme-overlay-multiplier: 0 !important;
+}
+
+.flex-column .v-btn {
+	border-inline-start: inherit !important;
+	border-inline-end: inherit !important;
+	border-width: 1px !important;
+}
+
+// FormInput styles
+.vd-form-input {
+	width: $vd-input-medium;
+
+	&-s {
+		width: $vd-input-small;
+	}
+
+	&-l {
+		width: $vd-input-large;
+	}
+
+	&-xl {
+		width: $vd-input-x-large;
+	}
+}
+
+// Global Colors
+.bg-primary, .bg-error {
+	--v-theme-overlay-multiplier: 0 !important;
+}
+
+// VBtnGroup styles
+.v-btn-group {
+	height: auto !important;
+	.v-btn__content {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+	}
+	.v-btn:not(:first-child) {
+		border-inline-start: inherit;
+	}
+}
+
+// Global Colors
+.bg-primary, .bg-error {
+	--v-theme-overlay-multiplier: 0 !important;
+}
+
+// VMessages styles
+.v-application--is-ltr .v-messages {
+	text-align: left;
+}
+
+.v-messages {
+	flex: 1 1 auto;
+	font-size: 12px;
+	min-height: 14px;
+	min-width: 1px;
+	position: relative;
+	color: rgba(0,0,0,.6);
 }
