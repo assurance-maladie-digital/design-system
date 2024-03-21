@@ -1,3 +1,5 @@
+import type { VDataTable } from 'vuetify/components'
+
 export interface DataOptions {
 	page: number;
 	itemsPerPage: number;
@@ -8,3 +10,5 @@ export interface DataOptions {
 	multiSort: boolean;
 	mustSort: boolean;
 }
+
+export type DataTableHeaders = VDataTable['$props']['headers']

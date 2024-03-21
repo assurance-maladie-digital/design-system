@@ -31,51 +31,26 @@ describe("PaginatedTable", () => {
 		});
 
 		await wrapper.setProps({
-			options: {
-				items: [],
-				headers: [],
-			} as DataOptions,
+			items: [],
+			headers: [],
+			options: {} as DataOptions,
 		});
 
 		expect(wrapper.html()).toMatchSnapshot();
-	});
-
-	it("get optionsCalc computed correctly with localOptions", async () => {
-		const wrapper = shallowMount(PaginatedTable, {
-			propsData: {
-				options: {} as DataOptions,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
-		await wrapper.setData({
-			localOptions: {
-				itemsPerPage: 10,
-				page: 1,
-			},
-		});
-
-		expect(wrapper.vm.optionsCalc).toEqual({
-			headers: [],
-			items: [],
-			itemsPerPage: 10,
-			page: 1,
-		});
 	});
 
 	it("get storageKey computed correctly with localOptions", async () => {
 		const wrapper = shallowMount(PaginatedTable, {
 			propsData: {
 				options: {} as DataOptions,
-				suffix: "test",
+				suffix: 'test',
+				shouldPersistOptions: true
 			},
 			global: {
 				plugins: [vuetify],
 			},
 		});
 
-		expect(wrapper.vm.storageKey).toEqual("pagination-test");
+		expect(wrapper.vm.storageKey).toEqual('pagination-test');
 	});
 });

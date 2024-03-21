@@ -3,7 +3,7 @@ import { defineComponent } from "vue";
 import type { PropType } from "vue";
 
 import { DataOptions } from "./types";
-import { VDataTable } from "vuetify/labs/VDataTable";
+import { VDataTable } from "vuetify/components";
 
 import { LocalStorageUtility } from "@/helpers/localStorageUtility";
 
@@ -24,41 +24,35 @@ export default defineComponent({
 			type: String,
 			default: undefined,
 		},
+		shouldPersistOptions: {
+			type: Boolean,
+			default: false
+		}
 	},
 	data() {
 		return {
-			localStorageUtility: this.newLocalStorageInstance(),
-			localOptions: {} as DataOptions
+			localStorageUtility: this.newLocalStorageInstance() as LocalStorageUtility,
+			localOptions: this.options
 		};
 	},
 	watch: {
-		options(): void {
-			this.localStorageUtility.setItem(this.storageKey, this.options);
+		localOptions(newOptions: DataOptions): void {
+			if (this.shouldPersistOptions) {
+				this.localStorageUtility.setItem(this.storageKey, newOptions);				
+			}
 		},
 	},
 	computed: {
-		optionsCalc(): DataOptions {
-			if (Object.keys(this.localOptions).length) {
-				return this.localOptions;
-			}
-
-			return this.options;
-		},
-
 		storageKey(): string {
-			const PREFIX = "pagination";
+			const prefix = 'pagination';
 
-			if (this.suffix) {
-				return `${PREFIX}-${this.suffix}`;
-			}
-
-			return PREFIX;
+			return this.suffix ? `${prefix}-${this.suffix}` : prefix
 		},
 	},
 	methods: {
 		newLocalStorageInstance(): LocalStorageUtility {
 			return new LocalStorageUtility();
-		},
+		}
 	},
 	created() {
 		this.localOptions =
@@ -69,7 +63,7 @@ export default defineComponent({
 </script>
 
 <template>
-	<VDataTable v-if="$attrs" v-bind="$attrs" :options.sync="optionsCalc">
+	<VDataTable v-if="$attrs" v-bind="$attrs" @update:options="(options: DataOptions) => localOptions = options">
 		<template v-for="slot of $slots" v-slot:[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
