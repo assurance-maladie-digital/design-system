@@ -58,9 +58,11 @@ export default defineComponent({
 		},
 
 		computedNbRows(): string {
-			return `${
-				this.nbFiltered !== undefined ? this.nbFiltered + "/" : ""
-			}${this.nbTotal}`;
+			if (this.nbFiltered !== undefined && this.nbFiltered > 0) {
+				return `${this.nbFiltered}/${this.nbTotal}`;
+			} else {
+				return `${this.nbTotal}/${this.nbTotal}`;
+			}
 		},
 
 		computedRowsText(): string {
