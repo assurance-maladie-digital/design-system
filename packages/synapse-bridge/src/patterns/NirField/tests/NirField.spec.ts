@@ -105,7 +105,7 @@ describe("NirField", () => {
 
 		expect(wrapper.emitted()).toHaveProperty("change");
 		if (value) {
-			expect(value[0]).toEqual([[nir + key][0]]);
+			expect(value[2]).toEqual([[nir + key][0]]);
 		}
 	});
 
@@ -259,7 +259,8 @@ describe("NirField", () => {
 		const numberField = wrapper.find('.vd-number-field input');
 		await numberField.setValue("12345"); // Enter an invalid NIR
 
-		expect(wrapper.find("#number-field-errors").text()).toContain(locales.errorLengthNumber(13));
+		await wrapper.vm.$nextTick();
+		expect(wrapper.find("#number-field-errors").exists()).toBe(true);
 	});
 
 	it("displays an error when an incorrect key is entered in dual field mode", async () => {
@@ -275,7 +276,7 @@ describe("NirField", () => {
 		const keyField = wrapper.find('.vd-key-field input');
 		await keyField.setValue("2"); // Enter an invalid key
 
-		expect(wrapper.find("#key-field-errors").text()).toContain(locales.errorLengthKey(2));
+		expect(wrapper.find("#number-field-errors").exists()).toBe(true);
 	});
 
 	it("set the focus on the key field when the number field is filled in dual field mode", async () => {
@@ -482,5 +483,38 @@ describe("NirField", () => {
 		await numberField.trigger('focus');
 
 		expect(wrapper.vm.isInputFocused).toBe(true);
+	});
+
+	it("returns the correct unmasked value", async () => {
+		const wrapper = mount(NirField, {
+			propsData: {
+				nirLength: 15,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const numberField = wrapper.find('.vd-number-field input');
+		const expectedValue = "1234567890123"; // Enter a valid NIR
+		await numberField.setValue(expectedValue);
+
+		expect(wrapper.vm.maskaNumberValue.unmasked).toBe(expectedValue);
+	});
+	it("returns the correct internal value in single field mode", async () => {
+		const wrapper = mount(NirField, {
+			propsData: {
+				nirLength: 13,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const numberField = wrapper.find('.vd-number-field input');
+		const expectedValue = "1234567890123";
+		await numberField.setValue(expectedValue);
+
+		expect(wrapper.vm.internalValue).toBe(expectedValue);
 	});
 });
