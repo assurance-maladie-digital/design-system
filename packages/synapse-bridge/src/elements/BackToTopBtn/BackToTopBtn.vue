@@ -118,3 +118,13 @@
 		</VBtn>
 	</VFadeTransition>
 </template>
+
+<style lang="scss" scoped>
+	.vd-back-to-top-btn {
+		z-index: 999;
+		opacity: 1;
+	}
+	.v-btn--variant-outlined {
+		background: white;
+	}
+</style>
