@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeaderBar render > renders correctly 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with custom target 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with home-href 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with home-link 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with inner-width 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with mini version 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with mobile-version 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with navigation-items 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with show-nav-bar-menu-btn 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with showNavBarMenuBtn on mobile version 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with sticky mode and scrolled 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with target 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with theme 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;
+
+exports[`HeaderBar render > renders correctly with title and subtitle 1`] = `<v-layout-stub data-v-fe04ea20="" overlaps="" fullheight="false"></v-layout-stub>`;

@@ -1,12 +1,8 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
 	import type { PropType } from 'vue'
-
+	import { defineComponent } from 'vue'
 	import { RouteRecordRaw } from 'vue-router'
-
 	import { locales } from './locales'
-
-	import { useDisplay } from 'vuetify'
 
 	import PageContainer from '@/elements/PageContainer'
 
@@ -43,17 +39,25 @@
 				type: Boolean,
 				default: false,
 			},
+			codeErrorText: {
+				type: String,
+				default: locales.errorCodeText
+			},
 		},
 		data() {
 			return {
 				locales,
+				route: this.btnRoute as RouteRecordRaw | string | undefined,
+			}
+		},
+		created() {
+			if (this.btnHref) {
+				this.route = undefined
 			}
 		},
 		computed: {
 			mobileVersion(): boolean {
-				const { name } = useDisplay()
-
-				return name.value === 'xs' || name.value === 'sm'
+				return this.$vuetify.display.name === 'xs' || this.$vuetify.display.name === 'sm'
 			},
 		},
 	})
@@ -71,11 +75,8 @@
 					cols="12"
 					class="order-last order-sm-first text-center text-sm-left"
 				>
-					<div
-						aria-hidden="true"
-						class="vd-code font-weight-thin text-primary mb-4"
-					>
-						{{ code }}
+					<div class="vd-code font-weight-thin text-primary mb-4">
+						<span class="d-sr-only">{{ codeErrorText }}</span> {{ code }}
 					</div>
 
 					<h2 class="mb-2 font-weight-bold text-h5 mb-4">
@@ -90,8 +91,8 @@
 
 					<slot name="action">
 						<VBtn
-							v-if="!noBtn && btnText && btnRoute"
-							:to="btnRoute"
+							v-if="!noBtn && btnText && (route || btnHref)"
+							:to="route"
 							:href="btnHref"
 							color="primary"
 							exact
