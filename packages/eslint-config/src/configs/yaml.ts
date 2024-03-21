@@ -1,7 +1,7 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { ESLint } from 'eslint'
-import { GLOB_YAML } from '../globs'
-import { parserYaml, pluginYaml } from '../plugins'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { ESLint } from 'eslint';
+import { GLOB_YAML } from '../globs';
+import { parserYaml, pluginYaml } from '../plugins';
 
 export const yaml: FlatESLintConfigItem[] = [
 	{
@@ -42,4 +42,4 @@ export const yaml: FlatESLintConfigItem[] = [
 			'yaml/spaced-comment': 'error',
 		},
 	},
-]
+];

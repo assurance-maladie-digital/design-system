@@ -1,5 +1,5 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { pluginAntfu, pluginStylistic } from '../plugins'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { pluginAntfu, pluginStylistic } from '../plugins';
 
 export const stylistic: FlatESLintConfigItem[] = [
 	{
@@ -265,7 +265,7 @@ export const stylistic: FlatESLintConfigItem[] = [
 				},
 			],
 			'style/rest-spread-spacing': ['error', 'never'],
-			'style/semi': ['error', 'never'],
+			'style/semi': ['error', 'always'],
 			'style/semi-spacing': [
 				'error',
 				{
@@ -332,4 +332,4 @@ export const stylistic: FlatESLintConfigItem[] = [
 			'style/yield-star-spacing': ['error', 'both'],
 		},
 	},
-]
+];

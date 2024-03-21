@@ -1,7 +1,7 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { ESLint } from 'eslint'
-import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs'
-import { parserJsonc, pluginJsonc } from '../plugins'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { ESLint } from 'eslint';
+import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs';
+import { parserJsonc, pluginJsonc } from '../plugins';
 
 export const jsonc: FlatESLintConfigItem[] = [
 	{
@@ -66,4 +66,4 @@ export const jsonc: FlatESLintConfigItem[] = [
 			'jsonc/space-unary-ops': 'error',
 		},
 	},
-]
+];

@@ -1,6 +1,6 @@
-import { cnamts } from './default'
+import { cnamts } from './default';
 
-export * from './configs'
-export * from './plugins'
+export * from './configs';
+export * from './plugins';
 
-export default cnamts
+export default cnamts;

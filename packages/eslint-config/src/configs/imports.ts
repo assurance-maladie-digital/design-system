@@ -1,5 +1,5 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { pluginAntfu, pluginImport } from '../plugins'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { pluginAntfu, pluginImport } from '../plugins';
 
 export const imports: FlatESLintConfigItem[] = [
 	{
@@ -68,4 +68,4 @@ export const imports: FlatESLintConfigItem[] = [
 			'import/order': 'error',
 		},
 	},
-]
+];

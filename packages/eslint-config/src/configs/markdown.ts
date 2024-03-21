@@ -1,6 +1,6 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { GLOB_MARKDOWN, GLOB_SRC, GLOB_VUE } from '../globs'
-import { pluginMarkdown } from '../plugins'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { GLOB_MARKDOWN, GLOB_SRC, GLOB_VUE } from '../globs';
+import { pluginMarkdown } from '../plugins';
 
 export const markdown: FlatESLintConfigItem[] = [
 	{
@@ -67,4 +67,4 @@ export const markdown: FlatESLintConfigItem[] = [
 			'ts/unbound-method': 'off',
 		},
 	},
-]
+];

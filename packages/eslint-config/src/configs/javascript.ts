@@ -1,7 +1,7 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import globals from 'globals'
-import { pluginAntfu, pluginUnusedImports } from '../plugins'
-import { GLOB_SRC, GLOB_SRC_EXT } from '../globs'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import globals from 'globals';
+import { pluginAntfu, pluginUnusedImports } from '../plugins';
+import { GLOB_SRC, GLOB_SRC_EXT } from '../globs';
 
 export const javascript: FlatESLintConfigItem[] = [
 	{
@@ -38,4 +38,4 @@ export const javascript: FlatESLintConfigItem[] = [
 			'no-console': 'off',
 		},
 	},
-]
+];
