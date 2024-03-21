@@ -347,10 +347,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '@cnamts/design-tokens/dist/tokens';
+:deep(.v-field.v-field--active .v-label.v-field-label--floating) {
+	opacity: 1;
+}
 .multi-line {
 	white-space: pre-line !important;
 }
-
 :deep(.vd-nir-field__hint) {
 	color: rgba(0, 0, 0, 0.54) !important;
 }
@@ -372,6 +374,7 @@ export default defineComponent({
 .vd-nir-field--outlined :deep(.v-messages.error--text) {
 	padding: 6px;
 }
+
 .vd-nir-field {
 	container-type: inline-size;
 	container-name: nirFieldwrapper;
