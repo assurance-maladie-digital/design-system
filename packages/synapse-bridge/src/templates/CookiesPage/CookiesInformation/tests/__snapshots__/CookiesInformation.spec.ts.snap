@@ -1,0 +1,107 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CookiesInformation > renders correctly 1`] = `
+<div data-v-7eab3eb5="" class="vd-cookies-information">
+  <h2 data-v-7eab3eb5="" class="text-subtitle-1 font-weight-bold mb-2">Cookies fonctionnels</h2>
+  <p data-v-7eab3eb5="" class="mb-4">Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.</p>
+  <details data-v-7eab3eb5="">
+    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <v-icon-stub data-v-7eab3eb5="" class="mr-2" disabled="false" start="false" end="false" size="default" tag="i"></v-icon-stub>
+    </summary>
+    <cookies-table-stub data-v-7eab3eb5="" items="[object Object],[object Object]" class="mb-2"></cookies-table-stub>
+  </details>
+  <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
+    let valid;
+    if (Array.isArray(value)) {
+      valid = value.length !== 0;
+    } else {
+      valid = Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
+    }
+    return valid || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;);
+  }" focused="false" inline="true" falseicon="$radioOff" trueicon="$radioOn" ripple="true" type="radio" valuecomparator="[Function]" data-test-id="radio-group"></v-radio-group-stub>
+</div>
+`;
+
+exports[`CookiesInformation > renders correctly when details is toggled 1`] = `
+<div data-v-7eab3eb5="" class="vd-cookies-information">
+  <h2 data-v-7eab3eb5="" class="text-subtitle-1 font-weight-bold mb-2">Cookies fonctionnels</h2>
+  <p data-v-7eab3eb5="" class="mb-4">Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.</p>
+  <details data-v-7eab3eb5="" open="">
+    <summary data-v-7eab3eb5="" class="mb-1">Masquer les cookies <i data-v-7eab3eb5="" class="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z mdi v-icon notranslate v-theme--light v-icon--size-default mr-2" aria-hidden="true"></i></summary>
+    <div data-v-ad3c06ce="" data-v-7eab3eb5="" class="v-table v-theme--light v-table--density-default vd-cookie-table mb-2">
+      <!---->
+      <div class="v-table__wrapper">
+        <table>
+          <thead data-v-ad3c06ce="">
+            <tr data-v-ad3c06ce="">
+              <th data-v-ad3c06ce="" style="width: 180px;" class="text-left">Dénomination du cookie</th>
+              <th data-v-ad3c06ce="" style="width: 328px;" class="text-left">Finalité</th>
+              <th data-v-ad3c06ce="" style="width: 180px;" class="text-left">Durée de conservation</th>
+            </tr>
+          </thead>
+          <tbody data-v-ad3c06ce="">
+            <tr data-v-ad3c06ce="">
+              <td data-v-ad3c06ce="">lorem-ipsum</td>
+              <td data-v-ad3c06ce="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+              <td data-v-ad3c06ce="">XX mois</td>
+            </tr>
+            <tr data-v-ad3c06ce="">
+              <td data-v-ad3c06ce="">lorem-ipsum</td>
+              <td data-v-ad3c06ce="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+              <td data-v-ad3c06ce="">XX mois</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!---->
+    </div>
+  </details>
+  <div data-v-7eab3eb5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-radio-group mt-0" data-test-id="radio-group">
+    <!---->
+    <div class="v-input__control">
+      <!---->
+      <div class="v-selection-control-group v-selection-control-group--inline" role="radiogroup" aria-describedby="radio-group-0-messages">
+        <div data-v-7eab3eb5="" class="v-spacer"></div>
+        <div data-v-7eab3eb5="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-3" aria-disabled="false" type="radio" name="radio-group-0" value="reject"></div>
+          </div><label class="v-label v-label--clickable" for="input-3">
+            <!---->Refuser
+          </label>
+        </div>
+        <div data-v-7eab3eb5="" class="v-selection-control v-selection-control--inline v-selection-control--density-default mr-0 v-radio mr-0">
+          <div class="v-selection-control__wrapper">
+            <!---->
+            <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-4" aria-disabled="false" type="radio" name="radio-group-0" value="accept"></div>
+          </div><label class="v-label v-label--clickable" for="input-4">
+            <!---->Accepter
+          </label>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`CookiesInformation > renders correctly without items 1`] = `
+<div data-v-7eab3eb5="" class="vd-cookies-information">
+  <h2 data-v-7eab3eb5="" class="text-subtitle-1 font-weight-bold mb-2">Cookies fonctionnels</h2>
+  <p data-v-7eab3eb5="" class="mb-4">Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.</p>
+  <details data-v-7eab3eb5="">
+    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <v-icon-stub data-v-7eab3eb5="" class="mr-2" disabled="false" start="false" end="false" size="default" tag="i"></v-icon-stub>
+    </summary>
+    <cookies-table-stub data-v-7eab3eb5="" items="" class="mb-2"></cookies-table-stub>
+  </details>
+  <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
+    let valid;
+    if (Array.isArray(value)) {
+      valid = value.length !== 0;
+    } else {
+      valid = Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
+    }
+    return valid || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;);
+  }" focused="false" inline="true" falseicon="$radioOff" trueicon="$radioOn" ripple="true" type="radio" valuecomparator="[Function]" data-test-id="radio-group"></v-radio-group-stub>
+</div>
+`;

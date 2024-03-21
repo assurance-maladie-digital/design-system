@@ -2,18 +2,28 @@ import { resolve } from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vuetify from 'vite-plugin-vuetify'
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import dts from 'vite-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig(({ mode }) => {
 	const config = {
 		plugins: [
-			vue(),
+			vue({
+				template: { transformAssetUrls }
+			}),
+			vuetify(
+				{
+					autoImport: true
+				}
+			),
 			dts({
 				rollupTypes: true,
 			}),
 		],
+		define: {
+			__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
+		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL('./src', import.meta.url)),

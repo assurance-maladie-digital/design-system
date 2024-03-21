@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UserMenuBtn > renders correctly with props 1`] = `
+<div data-v-3b944ebf="" class="vd-user-menu-btn-ctn d-inline-block">
+  <v-menu-stub data-v-3b944ebf="" minwidth="198px" maxwidth="198px" attach="false" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="9999" activatorprops="[object Object]" openonhover="false" closeoncontentclick="true" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom end" origin="auto" scrollstrategy="reposition" transition="fade-transition" offsety="true" nudgeright="0"></v-menu-stub>
+</div>
+`;

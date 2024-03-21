@@ -1,3 +1,172 @@
 @forward 'vuetify/settings' with (
-	$color-pack: false
+	$color-pack: false,
+	$body-font-family: ('Source Sans 3', 'Source Sans Pro', sans-serif),
+	$heading-font-family: ('Mic 32 New', 'Source Sans 3', 'Source Sans Pro', sans-serif),
+	$typography: (
+		'h1': (
+			'size': 4.5rem,
+			'letter-spacing': -0.015em,
+			'weight': 700
+		),
+		'h2': (
+			'size': 3rem,
+			'letter-spacing': 0.015em,
+			'weight': 500
+		),
+		'h3': (
+			'size': 2.125rem,
+			'letter-spacing': 0.0025em,
+			'weight': 700
+		),
+		'h4': (
+			'size': 1.5rem,
+			'letter-spacing': normal,
+			'weight': 500
+		),
+		'h5': (
+			'size': 1.5rem,
+			'letter-spacing': 0.01em,
+			'weight': 300
+		),
+		'h6': (
+			'size': 1.25rem,
+			'letter-spacing': 0.0015em,
+			'weight': 600
+		),
+		'subtitle-1': (
+			'size': 1.125rem,
+			'letter-spacing': 0.0015em,
+			'weight': 600
+		),
+		'subtitle-2': (
+			'size': 1rem,
+			'letter-spacing': 0.001em,
+			'weight': 600
+		),
+		'body-1': (
+			'size': 1.125rem,
+			'letter-spacing': 0.005em,
+			'weight': 400
+		),
+		'body-2': (
+			'size': 1rem,
+			'letter-spacing': 0.0025em,
+			'weight': 400
+		),
+		'button': (
+			'size': 1rem,
+			'letter-spacing': 0.005em,
+			'weight': 600,
+			'text-transform': none
+		),
+		'caption': (
+			'size': .875rem,
+			'letter-spacing': 0.004em,
+			'weight': 400
+		),
+		'overline': (
+			'size': .75rem,
+			'letter-spacing': 0.015em,
+			'weight': 400
+		),
+	),
+	$skeleton-loader-actions-button-margin: 0px,
+	$alert-border-opacity: 1,
 );
+
+@import './fonts.scss';
+@import '@cnamts/design-tokens/dist/tokens';
+
+/* Default, global styles */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	max-width: 100%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	/* Font size defined by the browser */
+	font-size: 100%;
+}
+
+/* Hide the application while Vue.js is loading */
+[v-cloak] {
+	display: none;
+}
+
+/* Apply default transition to links */
+a {
+	transition: .25s;
+}
+
+.v-alert {
+	font-size: 1.125rem;
+}
+
+.bg-primary, .bg-secondary {
+	--v-theme-overlay-multiplier: 0 !important;
+}
+
+.flex-column .v-btn {
+	border-inline-start: inherit !important;
+	border-inline-end: inherit !important;
+	border-width: 1px !important;
+}
+
+// FormInput styles
+.vd-form-input {
+	width: $vd-input-medium;
+
+	&-s {
+		width: $vd-input-small;
+	}
+
+	&-l {
+		width: $vd-input-large;
+	}
+
+	&-xl {
+		width: $vd-input-x-large;
+	}
+}
+
+// Global Colors
+.bg-primary, .bg-error {
+	--v-theme-overlay-multiplier: 0 !important;
+}
+
+// VBtnGroup styles
+.v-btn-group {
+	height: auto !important;
+	.v-btn__content {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+	}
+	.v-btn:not(:first-child) {
+		border-inline-start: inherit;
+	}
+}
+
+// Global Colors
+.bg-primary, .bg-error {
+	--v-theme-overlay-multiplier: 0 !important;
+}
+
+// VMessages styles
+.v-application--is-ltr .v-messages {
+	text-align: left;
+}
+
+.v-messages {
+	flex: 1 1 auto;
+	font-size: 12px;
+	min-height: 14px;
+	min-width: 1px;
+	position: relative;
+	color: rgba(0,0,0,.6);
+}

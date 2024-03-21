@@ -19,7 +19,8 @@
 		"resolveJsonModule": true,
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
-		"isolatedModules": true
+		"isolatedModules": true,
+		"typeRoots" : ["./types"]
 	},
 	"references": [
 		{

@@ -1,0 +1,304 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DataList > renders correctly 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="">
+      <!--v-if-->
+      <ul data-v-617a628e="">
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Civility</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Dupont</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">First name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`DataList > renders correctly with a class 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="">
+      <!--v-if-->
+      <ul data-v-617a628e="">
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Civility</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 custom-class vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Dupont</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">First name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`DataList > renders correctly with a title 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="">
+      <h4 data-v-617a628e="" class="text-subtitle-1 font-weight-bold mb-3">Informations</h4>
+      <ul data-v-617a628e="">
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Civility</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Dupont</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">First name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`DataList > renders correctly with an action 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="">
+      <!--v-if-->
+      <ul data-v-617a628e="">
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Civility</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 custom-class vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Dupont</span></div>
+            </div><button data-v-55bfbadb="" type="button" class="v-btn v-theme--light text-accent v-btn--density-default v-btn--size-small v-btn--variant-text text-body-1 pa-0 vd-data-list-item-action-btn"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+              <!----><span class="v-btn__content" data-no-activator="">Edit</span>
+              <!---->
+              <!---->
+            </button>
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">First name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`DataList > renders correctly with an empty list 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="">
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`DataList > renders correctly with an icon 1`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="">
+      <!--v-if-->
+      <ul data-v-617a628e="">
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Civility</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1"><i data-v-55bfbadb="" class="test mdi v-icon notranslate v-theme--light mr-4 mt-2" style="font-size: 24px; height: 24px; width: 24px;" aria-hidden="true"></i>
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Dupont</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">First name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`DataList > renders loading state correctly 1`] = `
+<div data-v-617a628e="" aria-label="Le contenu est en cours de chargement." style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="" aria-hidden="true" class="vd-data-list-loading" title-class="text-subtitle-1 font-weight-bold mb-3">
+      <div data-v-cb4098f7="" class="v-skeleton-loader v-theme--light mb-4 vd-header-loading mb-4" style="height: 1.5rem; width: 100px;" aria-busy="true" aria-live="polite" aria-label="Loading..." role="alert" aria-hidden="true">
+        <div class="v-skeleton-loader__bone v-skeleton-loader__heading"></div>
+      </div>
+      <ul>
+        <li class="mb-4 vd-data-list-loading-item">
+          <div data-v-cb4098f7="" class="v-skeleton-loader v-theme--light mb-1 vd-header-loading mb-1" style="height: 1rem; width: 60px;" aria-busy="true" aria-live="polite" aria-label="Loading..." role="alert" aria-hidden="true">
+            <div class="v-skeleton-loader__bone v-skeleton-loader__heading"></div>
+          </div>
+          <div data-v-cb4098f7="" class="v-skeleton-loader v-theme--light vd-header-loading" style="height: 1.5rem; width: 90px;" aria-busy="true" aria-live="polite" aria-label="Loading..." role="alert" aria-hidden="true">
+            <div class="v-skeleton-loader__bone v-skeleton-loader__heading"></div>
+          </div>
+        </li>
+        <li class="mb-4 vd-data-list-loading-item">
+          <div data-v-cb4098f7="" class="v-skeleton-loader v-theme--light mb-1 vd-header-loading mb-1" style="height: 1rem; width: 60px;" aria-busy="true" aria-live="polite" aria-label="Loading..." role="alert" aria-hidden="true">
+            <div class="v-skeleton-loader__bone v-skeleton-loader__heading"></div>
+          </div>
+          <div data-v-cb4098f7="" class="v-skeleton-loader v-theme--light vd-header-loading" style="height: 1.5rem; width: 90px;" aria-busy="true" aria-live="polite" aria-label="Loading..." role="alert" aria-hidden="true">
+            <div class="v-skeleton-loader__bone v-skeleton-loader__heading"></div>
+          </div>
+        </li>
+        <li class="vd-data-list-loading-item">
+          <div data-v-cb4098f7="" class="v-skeleton-loader v-theme--light mb-1 vd-header-loading mb-1" style="height: 1rem; width: 60px;" aria-busy="true" aria-live="polite" aria-label="Loading..." role="alert" aria-hidden="true">
+            <div class="v-skeleton-loader__bone v-skeleton-loader__heading"></div>
+          </div>
+          <div data-v-cb4098f7="" class="v-skeleton-loader v-theme--light vd-header-loading" style="height: 1.5rem; width: 90px;" aria-busy="true" aria-live="polite" aria-label="Loading..." role="alert" aria-hidden="true">
+            <div class="v-skeleton-loader__bone v-skeleton-loader__heading"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`DataList > renders loading state correctly 2`] = `
+<div data-v-617a628e="" style="width: 100%;" class="vd-data-list">
+  <transition-stub data-v-617a628e="" name="fade-transition" mode="out-in" appear="false" persisted="false" css="true">
+    <div data-v-617a628e="">
+      <!--v-if-->
+      <ul data-v-617a628e="">
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Civility</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">…</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap mb-2 custom-class vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">Name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Dupont</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+        <li data-v-55bfbadb="" data-v-617a628e="" class="vd-data-list-item d-flex flex-wrap vd-data-list-item text-body-1">
+          <!--v-if-->
+          <div data-v-55bfbadb="" class="vd-data-list-item-content">
+            <div data-v-55bfbadb="" class="">
+              <div data-v-55bfbadb="" class="vd-data-list-item-label text-caption" style="color: rgba(0, 0, 0, 0.6);">First name</div>
+              <div data-v-55bfbadb="" class="vd-data-list-item-value"><span data-v-55bfbadb="" class="text-body-1">Paul</span></div>
+            </div>
+            <!--v-if-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
+</div>
+`;

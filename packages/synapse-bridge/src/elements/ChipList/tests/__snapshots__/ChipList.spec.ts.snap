@@ -1,0 +1,47 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChipList > renders correctly with items 1`] = `
+<div data-v-cd944f18="" class="vd-chip-list d-flex flex-wrap max-width-none mx-n1 mt-n1">
+  <div data-v-cd944f18="" class="d-flex flex-wrap align-center mr-1">
+    <v-chip-stub data-v-cd944f18="" color="cyan-darken-40" class="ma-1" closable="true" closeicon="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" closelabel="Supprimer le filtre pour cette valeur" draggable="false" filter="false" filtericon="$complete" label="false" pill="false" ripple="true" modelvalue="true" border="false" density="default" disabled="false" tile="false" replace="false" exact="false" size="small" tag="span" variant="flat" text-color="white"></v-chip-stub>
+    <v-chip-stub data-v-cd944f18="" color="cyan-darken-40" class="ma-1" closable="true" closeicon="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" closelabel="Supprimer le filtre pour cette valeur" draggable="false" filter="false" filtericon="$complete" label="false" pill="false" ripple="true" modelvalue="true" border="false" density="default" disabled="false" tile="false" replace="false" exact="false" size="small" tag="span" variant="flat" text-color="white"></v-chip-stub>
+    <v-chip-stub data-v-cd944f18="" color="cyan-darken-40" class="ma-1" closable="true" closeicon="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" closelabel="Supprimer le filtre pour cette valeur" draggable="false" filter="false" filtericon="$complete" label="false" pill="false" ripple="true" modelvalue="true" border="false" density="default" disabled="false" tile="false" replace="false" exact="false" size="small" tag="span" variant="flat" text-color="white"></v-chip-stub>
+  </div>
+  <div data-v-cd944f18="">
+    <!--v-if-->
+    <v-btn-stub data-v-cd944f18="" color="primary" class="vd-overflow-btn px-1 ml-0 my-1" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" slim="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" tile="false" replace="false" exact="false" size="small" tag="button" variant="text" data-test-id="reset-btn"></v-btn-stub>
+  </div>
+</div>
+`;
+
+exports[`ChipList > renders correctly without items 1`] = `<!--v-if-->`;
+
+exports[`ChipList > shows overflow button when chips overflow 1`] = `
+<div data-v-cd944f18="" class="flex-column vd-chip-list d-flex flex-wrap max-width-none mx-n1 mt-n1">
+  <div data-v-cd944f18="" class="d-flex flex-wrap align-center mr-1"><span data-v-cd944f18="" class="v-chip v-theme--light bg-cyan-darken-40 v-chip--density-default v-chip--size-small v-chip--variant-flat ma-1" draggable="false" text-color="white"><!----><span class="v-chip__underlay"></span>
+    <!---->
+    <!---->
+    <div class="v-chip__content" data-no-activator="">Chip 1</div>
+    <!----><button class="v-chip__close" type="button" aria-label="Supprimer le filtre pour cette valeur"><i class="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z mdi v-icon notranslate v-theme--light v-icon--size-x-small" aria-hidden="true"></i></button></span><span data-v-cd944f18="" class="v-chip v-theme--light bg-cyan-darken-40 v-chip--density-default v-chip--size-small v-chip--variant-flat ma-1" draggable="false" text-color="white"><!----><span class="v-chip__underlay"></span>
+    <!---->
+    <!---->
+    <div class="v-chip__content" data-no-activator="">Chip 2</div>
+    <!----><button class="v-chip__close" type="button" aria-label="Supprimer le filtre pour cette valeur"><i class="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z mdi v-icon notranslate v-theme--light v-icon--size-x-small" aria-hidden="true"></i></button></span><span data-v-cd944f18="" class="v-chip v-theme--light bg-cyan-darken-40 v-chip--density-default v-chip--size-small v-chip--variant-flat ma-1" draggable="false" text-color="white"><!----><span class="v-chip__underlay"></span>
+    <!---->
+    <!---->
+    <div class="v-chip__content" data-no-activator="">Chip 3</div>
+    <!----><button class="v-chip__close" type="button" aria-label="Supprimer le filtre pour cette valeur"><i class="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z mdi v-icon notranslate v-theme--light v-icon--size-x-small" aria-hidden="true"></i></button></span>
+  </div>
+  <div data-v-cd944f18=""><span data-v-cd944f18="" class="v-chip v-theme--light bg-cyan-lighten-90 v-chip--density-default v-chip--size-small v-chip--variant-flat vd-overflow-chip text-cyan-darken-40 ma-1" draggable="false"><!----><span class="v-chip__underlay"></span>
+    <!---->
+    <!---->
+    <div class="v-chip__content" data-no-activator="">+2</div>
+    <!---->
+    <!----></span><button data-v-cd944f18="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-small v-btn--variant-text vd-overflow-btn px-1 ml-0 my-1" data-test-id="reset-btn"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator="">Réinitialiser le filtre</span>
+      <!---->
+      <!---->
+    </button>
+  </div>
+</div>
+`;
