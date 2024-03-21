@@ -332,7 +332,7 @@ export default defineComponent({
 				v-bind="options.tooltip"
 			>
 				<template #activator="{ props }">
-					<VIcon v-bind="props" class="vd-tooltip-icon mt-8 ml-2">
+					<VIcon v-bind="props" class="vd-tooltip-icon mt-4 ml-2">
 						{{ infoIcon }}
 					</VIcon>
 				</template>
