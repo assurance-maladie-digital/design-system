@@ -11,6 +11,7 @@ import { colorTheme } from "@cnamts/design-tokens/src/colors";
 
 import { notification } from "@/modules/notification";
 
+
 const vuetify = createVuetify({
 	icons: {
 		defaultSet: "mdi",

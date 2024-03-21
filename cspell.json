@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+	"version": "0.2",
+	"useGitignore": true,
+	"language": "en,fr",
+	"import": ["@cspell/dict-fr-fr/cspell-ext.json"],
+	"ignorePaths": [
+		"package.json",
+		"nx.json",
+		"pnpm-lock.yaml",
+		"pnpm-workspace.yaml",
+		"*.snap",
+		"*.svg"
+	],
+	"words": [
+		"cnamts",
+		"vuetify",
+		"nuxt",
+		"tsup"
+	]
+}

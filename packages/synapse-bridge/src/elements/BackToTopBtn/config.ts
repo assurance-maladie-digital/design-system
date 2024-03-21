@@ -3,11 +3,11 @@ export const config = {
 		position: 'fixed',
 		variant: 'outlined',
 		color: 'primary',
-		class: 'text-wrap px-0 px-md-4'
+		class: 'text-wrap px-0 px-md-4',
 	},
 	icon: {
 		color: 'primary',
 		size: 'small',
-		class: 'ml-0 ml-md-1'
-	}
+		class: 'ml-0 ml-md-1',
+	},
 }

@@ -2,7 +2,7 @@ import { describe, it, expect, vi, afterEach, beforeEach } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
-import CopyBtn from '../'
+import CopyBtn from '..'
 
 describe('CopyBtn', () => {
 	const copy = vi.fn()
@@ -30,8 +30,8 @@ describe('CopyBtn', () => {
 				textToCopy: 'test'
 			},
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()

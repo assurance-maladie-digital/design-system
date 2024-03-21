@@ -2,7 +2,7 @@ import { describe, it, expect, vi, afterEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
-import BackToTopBtn from '../'
+import BackToTopBtn from '..'
 
 describe('BackToTopBtn', () => {
 	afterEach(() => {
@@ -12,8 +12,8 @@ describe('BackToTopBtn', () => {
 	it('renders correctly', () => {
 		const wrapper = mount(BackToTopBtn, {
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()
