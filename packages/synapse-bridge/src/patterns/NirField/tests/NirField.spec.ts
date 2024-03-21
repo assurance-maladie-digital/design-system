@@ -105,7 +105,7 @@ describe("NirField", () => {
 
 		expect(wrapper.emitted()).toHaveProperty("change");
 		if (value) {
-			expect(value[0]).toEqual([nir + key]);
+			expect(value[0]).toEqual([[nir + key][0]]);
 		}
 	});
 
