@@ -1,6 +1,6 @@
-import { existsSync } from 'node:fs'
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import gitignore from 'eslint-config-flat-gitignore'
+import { existsSync } from 'node:fs';
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import gitignore from 'eslint-config-flat-gitignore';
 
 import {
 	casePolice,
@@ -19,15 +19,15 @@ import {
 	unicorn,
 	vue,
 	yaml,
-} from './configs'
+} from './configs';
 
-import { hasVue } from './env'
+import { hasVue } from './env';
 
 export function cnamts(config: FlatESLintConfigItem | FlatESLintConfigItem[] = []): FlatESLintConfigItem[] {
-	const configs = []
+	const configs = [];
 
 	if (existsSync('.gitignore')) {
-		configs.push(gitignore() as FlatESLintConfigItem)
+		configs.push(gitignore() as FlatESLintConfigItem);
 	}
 
 	configs.push(
@@ -46,15 +46,15 @@ export function cnamts(config: FlatESLintConfigItem | FlatESLintConfigItem[] = [
 		...typescript,
 		...unicorn,
 		...yaml,
-	)
+	);
 
 	if (hasVue) {
-		configs.push(...vue)
+		configs.push(...vue);
 	}
 
 	if (Object.keys(config).length > 0) {
-		configs.push(...Array.isArray(config) ? config : [config])
+		configs.push(...Array.isArray(config) ? config : [config]);
 	}
 
-	return configs
+	return configs;
 }

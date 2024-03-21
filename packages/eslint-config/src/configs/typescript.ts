@@ -1,8 +1,8 @@
-import { ESLint } from 'eslint'
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { parserTs, pluginTs } from '../plugins'
-import { GLOB_TS } from '../globs'
-import { renameRules } from '../utils'
+import { ESLint } from 'eslint';
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { parserTs, pluginTs } from '../plugins';
+import { GLOB_TS } from '../globs';
+import { renameRules } from '../utils';
 
 export const typescript: FlatESLintConfigItem[] = [
 	{
@@ -34,4 +34,4 @@ export const typescript: FlatESLintConfigItem[] = [
 			'ts/no-non-null-assertion': 'off',
 		},
 	},
-]
+];

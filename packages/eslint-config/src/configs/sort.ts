@@ -1,4 +1,4 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
 
 /**
  * Sort package.json
@@ -90,7 +90,7 @@ export const sortPackageJson: FlatESLintConfigItem[] = [
 			],
 		},
 	},
-]
+];
 
 /**
  * Sort tsconfig.json
@@ -225,4 +225,4 @@ export const sortTsconfig: FlatESLintConfigItem[] = [
 			],
 		},
 	},
-]
+];

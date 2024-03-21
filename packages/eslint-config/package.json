@@ -29,7 +29,8 @@
 		"node": ">=18.0.0"
 	},
 	"scripts": {
-		"lint": "eslint",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix .",
 		"build": "tsup"
 	},
 	"peerDependencies": {
@@ -49,7 +50,7 @@
 		"eslint-plugin-jsonc": "2.10.0",
 		"eslint-plugin-markdown": "3.0.1",
 		"eslint-plugin-n": "16.1.0",
-		"eslint-plugin-unicorn": "48.0.1",
+		"eslint-plugin-unicorn": "51.0.1",
 		"eslint-plugin-unused-imports": "3.0.0",
 		"eslint-plugin-vitest": "0.3.2",
 		"eslint-plugin-vue": "9.17.0",
@@ -62,8 +63,8 @@
 	},
 	"devDependencies": {
 		"@cnamts/eslint-config": "workspace:*",
-		"eslint": "8.52.0",
-		"tsup": "7.2.0"
+		"eslint": "8.57.0",
+		"tsup": "8.0.2"
 	},
 	"publishConfig": {
 		"access": "public"

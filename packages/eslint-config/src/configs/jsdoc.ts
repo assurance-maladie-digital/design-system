@@ -1,5 +1,5 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { pluginJsdoc } from '../plugins'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { pluginJsdoc } from '../plugins';
 
 export const jsdoc: FlatESLintConfigItem[] = [
 	{
@@ -33,4 +33,4 @@ export const jsdoc: FlatESLintConfigItem[] = [
 			'jsdoc/tag-lines': 'error',
 		},
 	},
-]
+];

@@ -1,7 +1,7 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { pluginVitest } from '../plugins'
-import { GLOB_TESTS } from '../globs'
-import { isInEditor } from '../env'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { pluginVitest } from '../plugins';
+import { GLOB_TESTS } from '../globs';
+import { isInEditor } from '../env';
 
 export const tests: FlatESLintConfigItem[] = [
 	{
@@ -51,4 +51,4 @@ export const tests: FlatESLintConfigItem[] = [
 			'tests/valid-title': 'error',
 		},
 	},
-]
+];

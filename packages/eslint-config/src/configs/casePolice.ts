@@ -1,6 +1,6 @@
-import { type FlatESLintConfigItem } from 'eslint-define-config'
-import { ESLint } from 'eslint'
-import { pluginCasePolice } from '../plugins'
+import { type FlatESLintConfigItem } from 'eslint-define-config';
+import { ESLint } from 'eslint';
+import { pluginCasePolice } from '../plugins';
 
 export const casePolice: FlatESLintConfigItem[] = [
 	{
@@ -11,4 +11,4 @@ export const casePolice: FlatESLintConfigItem[] = [
 			'case/string-check': 'error',
 		},
 	},
-]
+];
